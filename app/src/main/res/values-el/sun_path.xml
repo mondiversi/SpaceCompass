@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="sun_path_title">Ημερήσια πορεία του ήλιου</string>
+    <string name="sun_path_sunrise">Ανατολή</string>
+    <string name="sun_path_culmination">Κορύφωση</string>
+    <string name="sun_path_sunset">Δύση</string>
+    <string name="sun_path_show">Εμφάνιση της πορείας</string>
+    <string name="sun_path_note">Υπολογισμένες ώρες για ανεμπόδιστο ορίζοντα. Το ανάγλυφο και ο καιρός μπορεί να επηρεάσουν την ορατότητα.</string>
+    <string name="sun_path_previous">Προηγούμενο σημείο</string>
+    <string name="sun_path_next">Επόμενο σημείο</string>
+    <string name="sun_path_minimum">Ελάχιστο</string>
+</resources>

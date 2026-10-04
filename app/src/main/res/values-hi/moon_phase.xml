@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="moon_phase_new">अमावस्या</string>
+    <string name="moon_phase_waxing_crescent">बढ़ता चंद्राकार</string>
+    <string name="moon_phase_first_quarter">प्रथम चतुर्थांश</string>
+    <string name="moon_phase_waxing_gibbous">बढ़ता उन्नतोदर चंद्रमा</string>
+    <string name="moon_phase_full">पूर्णिमा</string>
+    <string name="moon_phase_waning_gibbous">घटता उन्नतोदर चंद्रमा</string>
+    <string name="moon_phase_last_quarter">अंतिम चतुर्थांश</string>
+    <string name="moon_phase_waning_crescent">घटता चंद्राकार</string>
+    <string name="moon_phase_description">%1$s · %2$s%% प्रकाशित</string>
+    <string name="celestial_speed_loading">गति अपडेट हो रही है…</string>
+    <string name="celestial_speed_unavailable">गति उपलब्ध नहीं है</string>
+</resources>

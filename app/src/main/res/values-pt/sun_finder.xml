@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="sun_finder_info_action">Informações sobre dados celestes</string>
+    <string name="sun_finder_title">Bússola celeste</string>
+    <string name="sun_finder_below_horizon">Sol abaixo do horizonte horizontal</string>
+    <string name="sun_finder_heading">Direção: %1$s</string>
+    <string name="sun_finder_tilt">Inclinação: %1$s</string>
+    <string name="sun_finder_azimuth">Azimute solar: %1$s</string>
+    <string name="sun_finder_elevation">Altura do sol: %1$s</string>
+    <string name="sun_finder_altitude">Altitude GPS: %1$s</string>
+    <string name="sun_finder_location_accuracy">Precisão: ±%1$s</string>
+    <string name="sun_finder_terrain_note">Posição calculada: terreno e obstáculos não são detetados. A altitude GPS é elipsoidal.</string>
+    <string name="sun_finder_safety">Não olhes diretamente para o sol.</string>
+    <string name="sun_finder_location_permission">Permite o acesso à localização para calcular posições celestes.</string>
+    <string name="sun_finder_location_disabled">A localização está desativada.</string>
+    <string name="sun_finder_location_error">Localização indisponível.</string>
+    <string name="sun_finder_location_searching">A procurar a localização…</string>
+    <string name="sun_finder_compass_missing">Este dispositivo não dispõe de bússola.</string>
+    <string name="sun_finder_orientation_searching">A ler a orientação…</string>
+    <string name="sun_finder_compass_accuracy">Bússola pouco precisa. Afasta objetos magnéticos e calibra o telefone.</string>
+    <string name="sun_finder_allow_location">Permitir localização</string>
+    <string name="sun_finder_enable_location">Ativar localização</string>
+    <string name="sun_finder_retry">Tentar novamente</string>
+    <string name="sun_finder_sky_description">Vista virtual das posições celestes</string>
+    <string name="sun_weather_clear">Céu limpo</string>
+    <string name="sun_weather_partial">Parcialmente nublado</string>
+    <string name="sun_weather_cloudy">Nublado</string>
+    <string name="sun_weather_fog">Nevoeiro</string>
+    <string name="sun_weather_drizzle">Chuvisco</string>
+    <string name="sun_weather_rain">Chuva</string>
+    <string name="sun_weather_snow">Neve</string>
+    <string name="sun_weather_storm">Trovoada</string>
+    <string name="sun_weather_unavailable">Meteorologia indisponível</string>
+    <string name="sun_weather_loading">A atualizar meteorologia…</string>
+    <string name="sun_weather_estimate">Tempo estimado: %1$s</string>
+    <string name="sun_weather_privacy">A meteorologia online usa uma localização aproximada.</string>
+</resources>

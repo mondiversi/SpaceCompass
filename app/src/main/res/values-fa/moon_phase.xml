@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="moon_phase_new">ماه نو</string>
+    <string name="moon_phase_waxing_crescent">هلال افزاینده</string>
+    <string name="moon_phase_first_quarter">تربیع اول</string>
+    <string name="moon_phase_waxing_gibbous">ماه کوژ افزاینده</string>
+    <string name="moon_phase_full">ماه کامل</string>
+    <string name="moon_phase_waning_gibbous">ماه کوژ کاهنده</string>
+    <string name="moon_phase_last_quarter">تربیع آخر</string>
+    <string name="moon_phase_waning_crescent">هلال کاهنده</string>
+    <string name="moon_phase_description">%1$s · %2$s%% روشن</string>
+    <string name="celestial_speed_loading">در حال به‌روزرسانی سرعت…</string>
+    <string name="celestial_speed_unavailable">سرعت در دسترس نیست</string>
+</resources>

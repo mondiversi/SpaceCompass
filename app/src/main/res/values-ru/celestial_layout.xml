@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="celestial_table_distance">Расстояние: %1$s</string>
+    <string name="celestial_table_speed">Скорость: %1$s</string>
+    <string name="celestial_environment_info_title">Ориентация и окружение</string>
+    <string name="celestial_environment_info_action">Информация об ориентации и окружении</string>
+    <string name="celestial_environment_orientation_note">Направление и наклон описывают, куда направлен телефон. Магнитные предметы могут влиять на компас. Точность GPS показывает оценочную неопределённость положения.</string>
+    <string name="celestial_altitude">Высота: %1$s</string>
+    <string name="celestial_details_compact">Подробности</string>
+    <string name="celestial_gps_coordinates">Координаты GPS: %1$s</string>
+    <string name="celestial_gps_coordinate_accuracy">Точность координат: ±%1$s</string>
+</resources>

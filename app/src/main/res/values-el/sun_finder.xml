@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="sun_finder_info_action">Πληροφορίες ουράνιων δεδομένων</string>
+    <string name="sun_finder_title">Ουράνια πυξίδα</string>
+    <string name="sun_finder_below_horizon">Ήλιος κάτω από τον οριζόντιο ορίζοντα</string>
+    <string name="sun_finder_heading">Κατεύθυνση: %1$s</string>
+    <string name="sun_finder_tilt">Κλίση: %1$s</string>
+    <string name="sun_finder_azimuth">Αζιμούθιο ήλιου: %1$s</string>
+    <string name="sun_finder_elevation">Ύψος ήλιου: %1$s</string>
+    <string name="sun_finder_altitude">Υψόμετρο GPS: %1$s</string>
+    <string name="sun_finder_location_accuracy">Ακρίβεια: ±%1$s</string>
+    <string name="sun_finder_terrain_note">Υπολογισμένη θέση: το έδαφος και τα εμπόδια δεν ανιχνεύονται. Το υψόμετρο GPS είναι ελλειψοειδές.</string>
+    <string name="sun_finder_safety">Μην κοιτάζεις απευθείας τον ήλιο.</string>
+    <string name="sun_finder_location_permission">Επιτρέψτε πρόσβαση στην τοποθεσία για τον υπολογισμό ουράνιων θέσεων.</string>
+    <string name="sun_finder_location_disabled">Η τοποθεσία είναι απενεργοποιημένη.</string>
+    <string name="sun_finder_location_error">Η θέση δεν είναι διαθέσιμη.</string>
+    <string name="sun_finder_location_searching">Αναζήτηση θέσης…</string>
+    <string name="sun_finder_compass_missing">Δεν υπάρχει διαθέσιμη πυξίδα στη συσκευή.</string>
+    <string name="sun_finder_orientation_searching">Ανάγνωση προσανατολισμού…</string>
+    <string name="sun_finder_compass_accuracy">Χαμηλή ακρίβεια πυξίδας. Απομάκρυνε μαγνητικά αντικείμενα και βαθμονόμησε το τηλέφωνο.</string>
+    <string name="sun_finder_allow_location">Επίτρεψε την τοποθεσία</string>
+    <string name="sun_finder_enable_location">Ενεργοποίησε την τοποθεσία</string>
+    <string name="sun_finder_retry">Δοκίμασε ξανά</string>
+    <string name="sun_finder_sky_description">Εικονική προβολή ουράνιων θέσεων</string>
+    <string name="sun_weather_clear">Αίθριος</string>
+    <string name="sun_weather_partial">Μερική συννεφιά</string>
+    <string name="sun_weather_cloudy">Συννεφιά</string>
+    <string name="sun_weather_fog">Ομίχλη</string>
+    <string name="sun_weather_drizzle">Ψιλόβροχο</string>
+    <string name="sun_weather_rain">Βροχή</string>
+    <string name="sun_weather_snow">Χιόνι</string>
+    <string name="sun_weather_storm">Καταιγίδα</string>
+    <string name="sun_weather_unavailable">Μη διαθέσιμος καιρός</string>
+    <string name="sun_weather_loading">Ενημέρωση καιρού…</string>
+    <string name="sun_weather_estimate">Εκτιμώμενος καιρός: %1$s</string>
+    <string name="sun_weather_privacy">Ο διαδικτυακός καιρός χρησιμοποιεί κατά προσέγγιση τοποθεσία.</string>
+</resources>

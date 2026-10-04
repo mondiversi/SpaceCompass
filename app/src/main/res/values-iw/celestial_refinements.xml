@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="celestial_polaris" formatted="false">כוכב הצפון</string>
+    <string name="celestial_point_azimuth">אזימוט: %1$s</string>
+    <string name="celestial_point_elevation">גובה: %1$s</string>
+    <string name="celestial_polaris_model" formatted="false">איור של הכוכב, לא צילום מפורט של פניו. הציר והסיבוב אינם ידועים.</string>
+    <string name="celestial_polaris_facts" formatted="false">התנועה היומית הנראית נובעת מסיבוב כדור הארץ, לא ממסלול סביבו. הקוטר והמסה מתייחסים ל־Polaris Aa (2024); המרחק הוא כ־447 שנות אור. נתונים לא ידועים מסומנים ב־—.</string>
+    <string name="celestial_free_rotation_hint" formatted="false">סיבוב מואץ. גררו בחופשיות; הקישו לשחזור הציר המקורי.</string>
+    <string name="celestial_polaris_derived" formatted="false">הכבידה הממוצעת על פני השטח והצפיפות הממוצעת הן הערכות לפי המסה והרדיוס הממוצע. כוכב הצפון הוא כוכב פועם; אלה ערכים מקורבים, לא מדידות בזמן אמת.</string>
+</resources>

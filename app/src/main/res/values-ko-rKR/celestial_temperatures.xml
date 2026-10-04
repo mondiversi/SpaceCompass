@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="celestial_temperature" formatted="false">온도</string>
+    <string name="celestial_temperature_surface_mean" formatted="false">평균 표면 온도</string>
+    <string name="celestial_temperature_day_maximum" formatted="false">햇빛 받는 표면 (최고)</string>
+    <string name="celestial_temperature_night_minimum" formatted="false">밤 표면 (최저)</string>
+    <string name="celestial_temperature_surface_range" formatted="false">표면 온도 범위</string>
+    <string name="celestial_temperature_atmosphere" formatted="false">대기 온도 (1 bar)</string>
+    <string name="celestial_temperature_photosphere" formatted="false">광구 온도</string>
+    <string name="celestial_temperature_effective" formatted="false">평균 유효 온도</string>
+    <string name="celestial_temperature_note" formatted="false">실시간 데이터가 아닌 참고 온도입니다. 낮/밤 값은 국지적 극값이며 반구 평균이 아닙니다. 위치와 시간에 따라 달라집니다.</string>
+</resources>

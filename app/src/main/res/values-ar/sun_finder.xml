@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="sun_finder_info_action">معلومات البيانات السماوية</string>
+    <string name="sun_finder_title">البوصلة السماوية</string>
+    <string name="sun_finder_below_horizon">الشمس تحت الأفق الأفقي</string>
+    <string name="sun_finder_heading">الاتجاه: %1$s</string>
+    <string name="sun_finder_tilt">الميل: %1$s</string>
+    <string name="sun_finder_azimuth">سمت الشمس: %1$s</string>
+    <string name="sun_finder_elevation">ارتفاع الشمس: %1$s</string>
+    <string name="sun_finder_altitude">ارتفاع GPS: %1$s</string>
+    <string name="sun_finder_location_accuracy">الدقة: ±%1$s</string>
+    <string name="sun_finder_terrain_note">موضع محسوب: لا يتم رصد التضاريس والعوائق. ارتفاع GPS مرجعه سطح إهليلجي.</string>
+    <string name="sun_finder_safety">لا تنظر مباشرة إلى الشمس.</string>
+    <string name="sun_finder_location_permission">اسمح بالوصول إلى الموقع لحساب المواضع السماوية.</string>
+    <string name="sun_finder_location_disabled">الموقع معطّل.</string>
+    <string name="sun_finder_location_error">الموقع غير متاح.</string>
+    <string name="sun_finder_location_searching">جارٍ البحث عن الموقع…</string>
+    <string name="sun_finder_compass_missing">البوصلة غير متاحة على هذا الجهاز.</string>
+    <string name="sun_finder_orientation_searching">جارٍ قراءة الاتجاه…</string>
+    <string name="sun_finder_compass_accuracy">دقة البوصلة منخفضة. ابتعد عن الأجسام المغناطيسية وعاير الهاتف.</string>
+    <string name="sun_finder_allow_location">السماح بالموقع</string>
+    <string name="sun_finder_enable_location">تفعيل الموقع</string>
+    <string name="sun_finder_retry">أعد المحاولة</string>
+    <string name="sun_finder_sky_description">عرض افتراضي للمواضع السماوية</string>
+    <string name="sun_weather_clear">صافٍ</string>
+    <string name="sun_weather_partial">غائم جزئيًا</string>
+    <string name="sun_weather_cloudy">غائم</string>
+    <string name="sun_weather_fog">ضباب</string>
+    <string name="sun_weather_drizzle">رذاذ</string>
+    <string name="sun_weather_rain">مطر</string>
+    <string name="sun_weather_snow">ثلج</string>
+    <string name="sun_weather_storm">عاصفة رعدية</string>
+    <string name="sun_weather_unavailable">الطقس غير متاح</string>
+    <string name="sun_weather_loading">جارٍ تحديث الطقس…</string>
+    <string name="sun_weather_estimate">الطقس التقديري: %1$s</string>
+    <string name="sun_weather_privacy">يستخدم الطقس عبر الإنترنت موقعًا تقريبيًا.</string>
+</resources>

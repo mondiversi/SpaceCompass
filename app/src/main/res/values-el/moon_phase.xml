@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="moon_phase_new">Νέα Σελήνη</string>
+    <string name="moon_phase_waxing_crescent">Αύξων μηνίσκος</string>
+    <string name="moon_phase_first_quarter">Πρώτο τέταρτο</string>
+    <string name="moon_phase_waxing_gibbous">Αύξουσα αμφίκυρτη Σελήνη</string>
+    <string name="moon_phase_full">Πανσέληνος</string>
+    <string name="moon_phase_waning_gibbous">Φθίνουσα αμφίκυρτη Σελήνη</string>
+    <string name="moon_phase_last_quarter">Τελευταίο τέταρτο</string>
+    <string name="moon_phase_waning_crescent">Φθίνων μηνίσκος</string>
+    <string name="moon_phase_description">%1$s · %2$s%% φωτισμένο</string>
+    <string name="celestial_speed_loading">Ενημέρωση ταχύτητας…</string>
+    <string name="celestial_speed_unavailable">Η ταχύτητα δεν είναι διαθέσιμη</string>
+</resources>

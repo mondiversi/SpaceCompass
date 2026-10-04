@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="celestial_sun">Jua</string>
+    <string name="celestial_moon">Mwezi</string>
+    <string name="celestial_mercury">Zebaki</string>
+    <string name="celestial_venus">Zuhura</string>
+    <string name="celestial_mars">Mirihi</string>
+    <string name="celestial_jupiter">Mshtarii</string>
+    <string name="celestial_saturn">Zohali</string>
+    <string name="celestial_uranus">Uranusi</string>
+    <string name="celestial_neptune">Neptuni</string>
+    <string name="celestial_pluto">Pluto</string>
+    <string name="celestial_sedna">Sedna</string>
+    <string name="celestial_iss">ISS</string>
+    <string name="celestial_voyager_1">Voyager 1</string>
+    <string name="celestial_voyager_2">Voyager 2</string>
+    <string name="celestial_select">Chagua kitu cha angani</string>
+    <string name="celestial_daily_path">Njia ya kila siku</string>
+    <string name="celestial_iss_path">Obiti ya ISS</string>
+    <string name="celestial_rise">Kuchomoza</string>
+    <string name="celestial_set">Kuchwa</string>
+    <string name="celestial_azimuth">Azimuthi (%1$s): %2$s</string>
+    <string name="celestial_elevation">Mwinuko (%1$s): %2$s</string>
+    <string name="celestial_below">%1$s iko chini ya upeo wa macho</string>
+    <string name="celestial_loading">Inasasisha data ya obiti…</string>
+    <string name="celestial_unavailable">Data ya %1$s haipatikani. Muunganisho wa intaneti unahitajika kuisasisha.</string>
+    <string name="celestial_iss_old">Data ya obiti ya ISS ina zaidi ya saa 24: usahihi unaweza kupungua.</string>
+    <string name="celestial_iss_note">Mzunguko kamili karibu na muda wa sasa, hata chini ya upeo, wenye nukta 24 zilizo sawa pamoja na kuchomoza, kilele na kuzama. Maelezo ni ya kupita kwa sasa au kunakofuata ndani ya saa 24; kuonekana hakuhakikishwi.</string>
+    <string name="celestial_model_note">Nafasi na umbali vinakokotolewa; uelekezaji hutegemea usahihi wa dira. ISS inahitaji data mpya ya obiti. Sedna na Voyager hutumia njia zilizotabiriwa na NASA/JPL, si telemetria ya moja kwa moja.</string>
+    <string name="celestial_weather_mainly_clear">Anga wazi kwa kiasi kikubwa</string>
+    <string name="celestial_speed_earth_orbit">Kasi ya obiti (Dunia): %1$s km/s</string>
+    <string name="celestial_speed_orbit_earth">Kasi ya obiti (Dunia): %1$s km/s</string>
+    <string name="celestial_speed_orbit_sun">Kasi ya obiti (Jua): %1$s km/s</string>
+    <string name="celestial_speed_outward_sun">Kasi ya kujitenga (Jua): %1$s km/s</string>
+    <string name="celestial_speed_note">Ukichagua Jua, kasi ya Dunia katika obiti yake kuzunguka Jua huonyeshwa. Sayari nyingine na Sedna huzunguka Jua; Mwezi na ISS huzunguka Dunia. Voyager huonyesha kasi ya kuongezeka kwa umbali kutoka Jua, si kutoka Dunia.</string>
+    <string name="celestial_pass">Kupita</string>
+    <string name="celestial_orbit">Obiti</string>
+    <string name="celestial_iss_no_pass">Hakuna upitaji unaopatikana ndani ya saa 24 kwa data ya sasa ya obiti.</string>
+</resources>

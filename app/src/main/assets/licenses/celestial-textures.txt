@@ -1,0 +1,38 @@
+Solar System Scope textures by INOVE
+Source: https://www.solarsystemscope.com/textures/
+License: Creative Commons Attribution 4.0 International
+https://creativecommons.org/licenses/by/4.0/
+
+Assets: sun.jpg, mercury.jpg, venus_atmosphere.jpg, mars.jpg, jupiter.jpg,
+saturn.jpg, uranus.jpg, neptune.jpg.
+Maps based on NASA imagery with colour adjustments by the original publisher.
+Planet Compass caps maps at 2048x1024 and applies calculated lighting at runtime.
+Public distribution copy: TanvirAhmedArnab/SolarSystem, SourceAssets/ThirdParty/
+Textures/SolarSystemScope. Copyright/license of the maps remains with INOVE.
+
+Moon: NASA/GSFC/Arizona State University, CGI Moon Kit.
+https://svs.gsfc.nasa.gov/4720/
+2025 colour map: https://svs.gsfc.nasa.gov/vis/a000000/a004700/a004720/lroc_color_2k.jpg
+Pluto: NASA/JHUAPL/SwRI, New Horizons global colour mosaic.
+https://science.nasa.gov/resource/pluto-global-color-map/
+NASA maps are resampled at runtime for display. No endorsement is implied.
+
+Io: NASA/JPL/USGS Voyager/Galileo SSI Global Mosaic 1km.
+https://astrogeology.usgs.gov/search/map/io_voyager_galileo_ssi_global_mosaic_1km
+Europa: NASA/JPL/USGS Voyager/Galileo SSI Global Mosaic 500m.
+https://astrogeology.usgs.gov/search/map/europa_voyager_galileo_ssi_global_mosaic_500m
+USGS public-domain products; original source credits retained. Native grayscale
+512x256 browse mosaics, not new telescope photographs or invented colour.
+Public byte-identical distribution copies:
+https://github.com/TanvirAhmedArnab/SolarSystem/tree/main/SourceAssets/ThirdParty/Textures/USGS
+io_global_mosaic_browse.jpg -> io.jpg, SHA-256:
+de69759452f5479b6f56ff5c72a90ed402ab8d7f11219524c26e5b60610b9597
+europa_global_mosaic_browse.jpg -> europa.jpg, SHA-256:
+3369ba56cbfa447347b5afc003b80b69fbf87dd90a724d59f09abad8691a9819
+Longitude-domain/seam and illumination conventions: docs/CELESTIAL_VIEWER.md.
+
+Physical and orbital reference values: NASA NSSDCA Planetary Fact Sheets;
+Sedna diameter: Pal et al. 2012, https://arxiv.org/abs/1204.0899;
+Sedna orbital/rotation reference snapshot: JPL SBDB, 2026-10-04.
+Spacecraft reference dimensions: NASA ISS and Voyager fact pages.
+Full qualifications and sources: docs/CELESTIAL_VIEWER.md in the Planet Compass source.

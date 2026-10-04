@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="celestial_polaris" formatted="false">Polarstern</string>
+    <string name="celestial_point_azimuth">Azimut: %1$s</string>
+    <string name="celestial_point_elevation">Höhe: %1$s</string>
+    <string name="celestial_polaris_model" formatted="false">Illustrative Sterndarstellung, keine aufgelöste Fotografie. Achse und Rotation sind unbekannt.</string>
+    <string name="celestial_polaris_facts" formatted="false">Die scheinbare tägliche Bewegung entsteht durch die Erdrotation, nicht durch eine Erdumlaufbahn. Durchmesser und Masse beziehen sich auf Polaris Aa (2024); die Entfernung beträgt etwa 447 Lichtjahre. Unbekannte Werte erscheinen als —.</string>
+    <string name="celestial_free_rotation_hint" formatted="false">Beschleunigte Rotation. Frei ziehen; Antippen stellt die ursprüngliche Achse wieder her.</string>
+    <string name="celestial_polaris_derived" formatted="false">Mittlere Oberflächengravitation und Dichte werden aus Masse und mittlerem Radius geschätzt. Polaris pulsiert; dies sind Näherungswerte, keine Echtzeitmessungen.</string>
+</resources>

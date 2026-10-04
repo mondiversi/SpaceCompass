@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="celestial_view_open" formatted="false">表示</string>
+    <string name="celestial_view_current" formatted="false">現在の姿</string>
+    <string name="celestial_view_rotation" formatted="false">自転</string>
+    <string name="celestial_view_resume" formatted="false">自転を再開</string>
+    <string name="celestial_view_diameter" formatted="false">直径</string>
+    <string name="celestial_view_antenna" formatted="false">アンテナ直径</string>
+    <string name="celestial_view_size" formatted="false">最大寸法</string>
+    <string name="celestial_view_mass" formatted="false">質量</string>
+    <string name="celestial_view_gravity" formatted="false">表面重力</string>
+    <string name="celestial_view_density" formatted="false">密度</string>
+    <string name="celestial_view_parent" formatted="false">中心天体</string>
+    <string name="celestial_view_earth" formatted="false">地球</string>
+    <string name="celestial_view_rotation_period" formatted="false">自転周期</string>
+    <string name="celestial_view_retrograde" formatted="false">逆行自転</string>
+    <string name="celestial_view_yes" formatted="false">はい</string>
+    <string name="celestial_view_no" formatted="false">いいえ</string>
+    <string name="celestial_view_revolution_period" formatted="false">公転周期</string>
+    <string name="celestial_view_min_distance" formatted="false">中心天体からの最短距離</string>
+    <string name="celestial_view_max_distance" formatted="false">中心天体からの最長距離</string>
+    <string name="celestial_view_observer_distance" formatted="false">観測者からの距離</string>
+    <string name="celestial_view_phase" formatted="false">月相</string>
+    <string name="celestial_view_illuminated" formatted="false">照らされた円盤</string>
+    <string name="celestial_view_information" formatted="false">情報</string>
+    <string name="celestial_view_rotation_hint" formatted="false">加速した自転デモです。ドラッグで探索し、ダブルタップで自転を再開します。</string>
+    <string name="celestial_view_craft_note" formatted="false">構造の説明用モデルです。宇宙機の現在の姿勢は不明です。</string>
+    <string name="celestial_view_sedna_note" formatted="false">表面と向きは不明です。説明用モデルを表示します。</string>
+    <string name="celestial_view_map_note" formatted="false">位相と向きを計算した再現図です。静的な地図でありライブ画像ではありません。</string>
+    <string name="celestial_view_location_needed" formatted="false">現在の姿には位置情報が必要です。自転はGPSなしでも利用できます。</string>
+    <string name="celestial_view_facts_note" formatted="false">概算の参考値です。ガス惑星の重力は1 barでの値、軌道距離は中心天体からの距離です。</string>
+    <string name="celestial_view_sun_note" formatted="false">太陽の自転は緯度によって異なります。周期は参考値です。</string>
+    <string name="celestial_view_sedna_facts" formatted="false">直径は推定値です。自転と軌道要素には不確かさがあります。</string>
+    <string name="celestial_view_iss_note" formatted="false">ISSの寸法と質量は構成や訪問する宇宙機によって変わります。</string>
+    <string name="celestial_view_render_failed" formatted="false">モデルを表示できません。</string>
+    <string name="celestial_view_zoom_in" formatted="false">拡大</string>
+    <string name="celestial_view_zoom_out" formatted="false">縮小</string>
+    <string name="celestial_view_reset_zoom" formatted="false">ズームをリセット</string>
+    <string name="celestial_view_zoom_level">ズーム: %1$d%%</string>
+</resources>

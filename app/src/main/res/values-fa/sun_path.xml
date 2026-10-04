@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="sun_path_title">مسیر روزانه خورشید</string>
+    <string name="sun_path_sunrise">طلوع</string>
+    <string name="sun_path_culmination">اوج</string>
+    <string name="sun_path_sunset">غروب</string>
+    <string name="sun_path_show">نمایش مسیر</string>
+    <string name="sun_path_note">زمان‌ها برای افق بدون مانع محاسبه شده‌اند. زمین و آب‌وهوا ممکن است بر دید تأثیر بگذارند.</string>
+    <string name="sun_path_previous">نقطه قبلی</string>
+    <string name="sun_path_next">نقطه بعدی</string>
+    <string name="sun_path_minimum">کمترین ارتفاع</string>
+</resources>

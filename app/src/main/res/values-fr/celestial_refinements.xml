@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="celestial_polaris" formatted="false">Étoile polaire</string>
+    <string name="celestial_point_azimuth">Azimut : %1$s</string>
+    <string name="celestial_point_elevation">Hauteur : %1$s</string>
+    <string name="celestial_polaris_model" formatted="false">Représentation illustrative de l’étoile, pas une photographie résolue. Axe et rotation inconnus.</string>
+    <string name="celestial_polaris_facts" formatted="false">Le mouvement quotidien apparent provient de la rotation terrestre, pas d’une orbite autour de la Terre. Diamètre et masse concernent Polaris Aa (2024) ; distance d’environ 447 années-lumière. Les paramètres inconnus sont indiqués par —.</string>
+    <string name="celestial_free_rotation_hint" formatted="false">Rotation accélérée. Faites glisser librement ; touchez pour rétablir l’axe initial.</string>
+    <string name="celestial_polaris_derived" formatted="false">La gravité de surface moyenne et la densité moyenne sont estimées à partir de la masse et du rayon moyen. Polaris est une étoile pulsante ; ce sont des approximations, pas des mesures en temps réel.</string>
+</resources>

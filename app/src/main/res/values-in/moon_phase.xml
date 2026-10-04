@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="moon_phase_new">Bulan baru</string>
+    <string name="moon_phase_waxing_crescent">Sabit membesar</string>
+    <string name="moon_phase_first_quarter">Perbani awal</string>
+    <string name="moon_phase_waxing_gibbous">Cembung membesar</string>
+    <string name="moon_phase_full">Bulan purnama</string>
+    <string name="moon_phase_waning_gibbous">Cembung mengecil</string>
+    <string name="moon_phase_last_quarter">Perbani akhir</string>
+    <string name="moon_phase_waning_crescent">Sabit mengecil</string>
+    <string name="moon_phase_description">%1$s · %2$s%% diterangi</string>
+    <string name="celestial_speed_loading">Memperbarui kecepatan…</string>
+    <string name="celestial_speed_unavailable">Kecepatan tidak tersedia</string>
+</resources>

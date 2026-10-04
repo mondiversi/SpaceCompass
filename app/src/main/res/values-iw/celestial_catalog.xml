@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="celestial_io">איו</string>
+    <string name="celestial_europa">אירופה</string>
+    <string name="celestial_catalog_distance">מרחק מהשמש</string>
+    <string name="celestial_speed_orbit_jupiter">מהירות מסלול (צדק): %1$s km/s</string>
+</resources>

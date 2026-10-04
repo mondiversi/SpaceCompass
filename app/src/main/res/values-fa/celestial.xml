@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="celestial_sun">خورشید</string>
+    <string name="celestial_moon">ماه</string>
+    <string name="celestial_mercury">عطارد</string>
+    <string name="celestial_venus">زهره</string>
+    <string name="celestial_mars">مریخ</string>
+    <string name="celestial_jupiter">مشتری</string>
+    <string name="celestial_saturn">زحل</string>
+    <string name="celestial_uranus">اورانوس</string>
+    <string name="celestial_neptune">نپتون</string>
+    <string name="celestial_pluto">پلوتون</string>
+    <string name="celestial_sedna">سدنا</string>
+    <string name="celestial_iss">ISS</string>
+    <string name="celestial_voyager_1">Voyager 1</string>
+    <string name="celestial_voyager_2">Voyager 2</string>
+    <string name="celestial_select">انتخاب جرم آسمانی</string>
+    <string name="celestial_daily_path">مسیر روزانه</string>
+    <string name="celestial_iss_path">مدار ISS</string>
+    <string name="celestial_rise">طلوع</string>
+    <string name="celestial_set">غروب</string>
+    <string name="celestial_azimuth">سمت (%1$s): %2$s</string>
+    <string name="celestial_elevation">ارتفاع (%1$s): %2$s</string>
+    <string name="celestial_below">%1$s زیر افق است</string>
+    <string name="celestial_loading">به‌روزرسانی داده‌های مداری…</string>
+    <string name="celestial_unavailable">داده‌های %1$s موجود نیست. برای به‌روزرسانی به اینترنت نیاز است.</string>
+    <string name="celestial_iss_old">داده‌های مدار ISS بیش از ۲۴ ساعت قدمت دارد: دقت ممکن است کاهش یابد.</string>
+    <string name="celestial_iss_note">یک گردش کامل پیرامون زمان کنونی، حتی زیر افق، با 24 نقطه منظم به‌علاوه طلوع، اوج و غروب. جزئیات گذر مربوط به گذر کنونی یا بعدی در 24 ساعت است؛ دیده‌شدن تضمین نمی‌شود.</string>
+    <string name="celestial_model_note">موقعیت‌ها و فاصله‌ها محاسبه شده‌اند؛ جهت‌یابی به دقت قطب‌نما وابسته است. ISS داده‌های مداری تازه نیاز دارد. سدنا و وویجر از مسیرهای پیش‌بینی‌شده NASA/JPL استفاده می‌کنند، نه داده‌های زنده تله‌متری.</string>
+    <string name="celestial_weather_mainly_clear">عمدتاً صاف</string>
+    <string name="celestial_speed_earth_orbit">سرعت مداری (زمین): %1$s km/s</string>
+    <string name="celestial_speed_orbit_earth">سرعت مداری (زمین): %1$s km/s</string>
+    <string name="celestial_speed_orbit_sun">سرعت مداری (خورشید): %1$s km/s</string>
+    <string name="celestial_speed_outward_sun">سرعت دور شدن (خورشید): %1$s km/s</string>
+    <string name="celestial_speed_note">با انتخاب خورشید، سرعت مداری زمین به دور خورشید نمایش داده می‌شود. دیگر سیاره‌ها و سدنا به دور خورشید و ماه و ISS به دور زمین می‌گردند. برای وویجر سرعت افزایش فاصله از خورشید نمایش داده می‌شود، نه از زمین.</string>
+    <string name="celestial_pass">گذر</string>
+    <string name="celestial_orbit">مدار</string>
+    <string name="celestial_iss_no_pass">با داده‌های مداری فعلی، گذری در ۲۴ ساعت در دسترس نیست.</string>
+</resources>

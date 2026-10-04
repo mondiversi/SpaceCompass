@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="moon_phase_new">Neumond</string>
+    <string name="moon_phase_waxing_crescent">Zunehmende Sichel</string>
+    <string name="moon_phase_first_quarter">Erstes Viertel</string>
+    <string name="moon_phase_waxing_gibbous">Zunehmender Dreiviertelmond</string>
+    <string name="moon_phase_full">Vollmond</string>
+    <string name="moon_phase_waning_gibbous">Abnehmender Dreiviertelmond</string>
+    <string name="moon_phase_last_quarter">Letztes Viertel</string>
+    <string name="moon_phase_waning_crescent">Abnehmende Sichel</string>
+    <string name="moon_phase_description">%1$s · %2$s%% beleuchtet</string>
+    <string name="celestial_speed_loading">Geschwindigkeit wird aktualisiert…</string>
+    <string name="celestial_speed_unavailable">Geschwindigkeit nicht verfügbar</string>
+</resources>

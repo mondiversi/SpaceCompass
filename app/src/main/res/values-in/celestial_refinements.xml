@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="celestial_polaris" formatted="false">Bintang Utara</string>
+    <string name="celestial_point_azimuth">Azimut: %1$s</string>
+    <string name="celestial_point_elevation">Ketinggian: %1$s</string>
+    <string name="celestial_polaris_model" formatted="false">Ilustrasi bintang, bukan foto permukaan yang terurai. Sumbu dan rotasi tidak diketahui.</string>
+    <string name="celestial_polaris_facts" formatted="false">Gerak harian semu berasal dari rotasi Bumi, bukan orbit mengelilingi Bumi. Diameter dan massa mengacu pada Polaris Aa (2024); jaraknya sekitar 447 tahun cahaya. Parameter yang tidak diketahui ditampilkan sebagai —.</string>
+    <string name="celestial_free_rotation_hint" formatted="false">Rotasi dipercepat. Seret bebas; ketuk untuk memulihkan sumbu asli.</string>
+    <string name="celestial_polaris_derived" formatted="false">Gravitasi permukaan rata-rata dan massa jenis rata-rata diperkirakan dari massa dan radius rata-rata. Polaris adalah bintang berdenyut; ini nilai pendekatan, bukan pengukuran langsung.</string>
+</resources>

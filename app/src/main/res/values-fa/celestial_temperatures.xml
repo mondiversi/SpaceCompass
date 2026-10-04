@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="celestial_temperature" formatted="false">دما</string>
+    <string name="celestial_temperature_surface_mean" formatted="false">میانگین دمای سطح</string>
+    <string name="celestial_temperature_day_maximum" formatted="false">سطح روشن (بیشینه)</string>
+    <string name="celestial_temperature_night_minimum" formatted="false">سطح شبانه (کمینه)</string>
+    <string name="celestial_temperature_surface_range" formatted="false">بازه دمای سطح</string>
+    <string name="celestial_temperature_atmosphere" formatted="false">دمای جو (۱ بار)</string>
+    <string name="celestial_temperature_photosphere" formatted="false">دمای نورسپهر</string>
+    <string name="celestial_temperature_effective" formatted="false">میانگین دمای مؤثر</string>
+    <string name="celestial_temperature_note" formatted="false">دماهای مرجع، نه داده‌های زنده. مقادیر روز و شب حدهای محلی هستند، نه میانگین نیمکره. مقادیر با مکان و زمان تغییر می‌کنند.</string>
+</resources>

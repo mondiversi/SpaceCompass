@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="celestial_view_open" formatted="false">نمایش</string>
+    <string name="celestial_view_current" formatted="false">نمای کنونی</string>
+    <string name="celestial_view_rotation" formatted="false">چرخش</string>
+    <string name="celestial_view_resume" formatted="false">ادامه چرخش</string>
+    <string name="celestial_view_diameter" formatted="false">قطر</string>
+    <string name="celestial_view_antenna" formatted="false">قطر آنتن</string>
+    <string name="celestial_view_size" formatted="false">بیشترین گستره</string>
+    <string name="celestial_view_mass" formatted="false">جرم</string>
+    <string name="celestial_view_gravity" formatted="false">گرانش سطحی</string>
+    <string name="celestial_view_density" formatted="false">چگالی</string>
+    <string name="celestial_view_parent" formatted="false">جرم اصلی</string>
+    <string name="celestial_view_earth" formatted="false">زمین</string>
+    <string name="celestial_view_rotation_period" formatted="false">دوره چرخش</string>
+    <string name="celestial_view_retrograde" formatted="false">چرخش وارونه</string>
+    <string name="celestial_view_yes" formatted="false">بله</string>
+    <string name="celestial_view_no" formatted="false">خیر</string>
+    <string name="celestial_view_revolution_period" formatted="false">دوره مداری</string>
+    <string name="celestial_view_min_distance" formatted="false">کمترین فاصله از جرم اصلی</string>
+    <string name="celestial_view_max_distance" formatted="false">بیشترین فاصله از جرم اصلی</string>
+    <string name="celestial_view_observer_distance" formatted="false">فاصله از ناظر</string>
+    <string name="celestial_view_phase" formatted="false">فاز ماه</string>
+    <string name="celestial_view_illuminated" formatted="false">قرص روشن</string>
+    <string name="celestial_view_information" formatted="false">اطلاعات</string>
+    <string name="celestial_view_rotation_hint" formatted="false">چرخش نمایشی شتاب‌یافته. برای بررسی بکشید؛ برای ادامه دو بار ضربه بزنید.</string>
+    <string name="celestial_view_craft_note" formatted="false">مدل ساختاری نمایشی: جهت‌گیری کنونی فضاپیما در دسترس نیست.</string>
+    <string name="celestial_view_sedna_note" formatted="false">سطح و جهت‌گیری ناشناخته‌اند: مدل نمایشی.</string>
+    <string name="celestial_view_map_note" formatted="false">نمای بازسازی‌شده با فاز و جهت‌گیری محاسبه‌شده. نقشه‌های ثابت، نه تصاویر زنده.</string>
+    <string name="celestial_view_location_needed" formatted="false">برای نمای کنونی مکان لازم است. چرخش بدون GPS در دسترس است.</string>
+    <string name="celestial_view_facts_note" formatted="false">مقادیر تقریبی. گرانش غول‌های گازی در ۱ بار؛ فاصله‌های مداری از جرم اصلی.</string>
+    <string name="celestial_view_sun_note" formatted="false">چرخش خورشید با عرض جغرافیایی تغییر می‌کند؛ دوره یک مقدار مرجع است.</string>
+    <string name="celestial_view_sedna_facts" formatted="false">قطر تخمینی است. چرخش و عناصر مداری عدم قطعیت دارند.</string>
+    <string name="celestial_view_iss_note" formatted="false">ابعاد و جرم ISS با پیکربندی و فضاپیماهای مهمان تغییر می‌کنند.</string>
+    <string name="celestial_view_render_failed" formatted="false">نمایش مدل امکان‌پذیر نیست.</string>
+    <string name="celestial_view_zoom_in" formatted="false">بزرگ‌نمایی</string>
+    <string name="celestial_view_zoom_out" formatted="false">کوچک‌نمایی</string>
+    <string name="celestial_view_reset_zoom" formatted="false">بازنشانی بزرگ‌نمایی</string>
+    <string name="celestial_view_zoom_level">بزرگ‌نمایی: %1$d%%</string>
+</resources>

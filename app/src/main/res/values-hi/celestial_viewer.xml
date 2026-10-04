@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="celestial_view_open" formatted="false">देखें</string>
+    <string name="celestial_view_current" formatted="false">वर्तमान दृश्य</string>
+    <string name="celestial_view_rotation" formatted="false">घूर्णन</string>
+    <string name="celestial_view_resume" formatted="false">घूर्णन फिर शुरू करें</string>
+    <string name="celestial_view_diameter" formatted="false">व्यास</string>
+    <string name="celestial_view_antenna" formatted="false">एंटीना का व्यास</string>
+    <string name="celestial_view_size" formatted="false">अधिकतम विस्तार</string>
+    <string name="celestial_view_mass" formatted="false">द्रव्यमान</string>
+    <string name="celestial_view_gravity" formatted="false">सतही गुरुत्वाकर्षण</string>
+    <string name="celestial_view_density" formatted="false">घनत्व</string>
+    <string name="celestial_view_parent" formatted="false">मुख्य पिंड</string>
+    <string name="celestial_view_earth" formatted="false">पृथ्वी</string>
+    <string name="celestial_view_rotation_period" formatted="false">घूर्णन अवधि</string>
+    <string name="celestial_view_retrograde" formatted="false">विपरीत घूर्णन</string>
+    <string name="celestial_view_yes" formatted="false">हाँ</string>
+    <string name="celestial_view_no" formatted="false">नहीं</string>
+    <string name="celestial_view_revolution_period" formatted="false">परिक्रमण अवधि</string>
+    <string name="celestial_view_min_distance" formatted="false">मुख्य पिंड से न्यूनतम दूरी</string>
+    <string name="celestial_view_max_distance" formatted="false">मुख्य पिंड से अधिकतम दूरी</string>
+    <string name="celestial_view_observer_distance" formatted="false">प्रेक्षक से दूरी</string>
+    <string name="celestial_view_phase" formatted="false">चंद्र चरण</string>
+    <string name="celestial_view_illuminated" formatted="false">प्रकाशित चक्र</string>
+    <string name="celestial_view_information" formatted="false">जानकारी</string>
+    <string name="celestial_view_rotation_hint" formatted="false">तेज प्रदर्शन घूर्णन। देखने के लिए खींचें; फिर शुरू करने के लिए दो बार टैप करें।</string>
+    <string name="celestial_view_craft_note" formatted="false">चित्रात्मक संरचनात्मक मॉडल: अंतरिक्ष यान का वर्तमान रुख उपलब्ध नहीं है।</string>
+    <string name="celestial_view_sedna_note" formatted="false">सतह और दिशा अज्ञात हैं: चित्रात्मक मॉडल।</string>
+    <string name="celestial_view_map_note" formatted="false">गणना किए चरण और दिशा वाला पुनर्निर्मित दृश्य। स्थिर मानचित्र, लाइव चित्र नहीं।</string>
+    <string name="celestial_view_location_needed" formatted="false">वर्तमान दृश्य के लिए स्थान चाहिए। घूर्णन GPS के बिना उपलब्ध है।</string>
+    <string name="celestial_view_facts_note" formatted="false">अनुमानित मान। गैस दैत्यों का गुरुत्व 1 बार पर; कक्षीय दूरियाँ मुख्य पिंड से हैं।</string>
+    <string name="celestial_view_sun_note" formatted="false">सौर घूर्णन अक्षांश के साथ बदलता है; अवधि एक संदर्भ मान है।</string>
+    <string name="celestial_view_sedna_facts" formatted="false">व्यास अनुमानित है। घूर्णन और कक्षीय तत्वों में अनिश्चितताएँ हैं।</string>
+    <string name="celestial_view_iss_note" formatted="false">ISS का आकार और द्रव्यमान विन्यास और आने वाले यानों के साथ बदलते हैं।</string>
+    <string name="celestial_view_render_failed" formatted="false">मॉडल प्रदर्शित नहीं किया जा सकता।</string>
+    <string name="celestial_view_zoom_in" formatted="false">ज़ूम इन करें</string>
+    <string name="celestial_view_zoom_out" formatted="false">ज़ूम आउट करें</string>
+    <string name="celestial_view_reset_zoom" formatted="false">ज़ूम रीसेट करें</string>
+    <string name="celestial_view_zoom_level">ज़ूम: %1$d%%</string>
+</resources>

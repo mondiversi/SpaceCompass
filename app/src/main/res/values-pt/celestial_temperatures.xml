@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="celestial_temperature" formatted="false">Temperatura</string>
+    <string name="celestial_temperature_surface_mean" formatted="false">Temperatura média superficial</string>
+    <string name="celestial_temperature_day_maximum" formatted="false">Superfície iluminada (máx.)</string>
+    <string name="celestial_temperature_night_minimum" formatted="false">Superfície noturna (mín.)</string>
+    <string name="celestial_temperature_surface_range" formatted="false">Intervalo de temperatura superficial</string>
+    <string name="celestial_temperature_atmosphere" formatted="false">Temperatura atmosférica (1 bar)</string>
+    <string name="celestial_temperature_photosphere" formatted="false">Temperatura da fotosfera</string>
+    <string name="celestial_temperature_effective" formatted="false">Temperatura efetiva média</string>
+    <string name="celestial_temperature_note" formatted="false">Temperaturas de referência, não dados em tempo real. Os valores diurnos/noturnos são extremos locais, não médias hemisféricas. Variam com o local e o tempo.</string>
+</resources>

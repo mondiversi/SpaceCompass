@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="celestial_sun">태양</string>
+    <string name="celestial_moon">달</string>
+    <string name="celestial_mercury">수성</string>
+    <string name="celestial_venus">금성</string>
+    <string name="celestial_mars">화성</string>
+    <string name="celestial_jupiter">목성</string>
+    <string name="celestial_saturn">토성</string>
+    <string name="celestial_uranus">천왕성</string>
+    <string name="celestial_neptune">해왕성</string>
+    <string name="celestial_pluto">명왕성</string>
+    <string name="celestial_sedna">세드나</string>
+    <string name="celestial_iss">ISS</string>
+    <string name="celestial_voyager_1">Voyager 1</string>
+    <string name="celestial_voyager_2">Voyager 2</string>
+    <string name="celestial_select">천체 선택</string>
+    <string name="celestial_daily_path">일일 경로</string>
+    <string name="celestial_iss_path">ISS 궤도</string>
+    <string name="celestial_rise">뜸</string>
+    <string name="celestial_set">짐</string>
+    <string name="celestial_azimuth">방위각 (%1$s): %2$s</string>
+    <string name="celestial_elevation">고도 (%1$s): %2$s</string>
+    <string name="celestial_below">%1$s 지평선 아래</string>
+    <string name="celestial_loading">궤도 데이터 업데이트 중…</string>
+    <string name="celestial_unavailable">%1$s 데이터가 없습니다. 갱신하려면 인터넷 연결이 필요합니다.</string>
+    <string name="celestial_iss_old">ISS 궤도 데이터가 24시간 이상 오래되어 정확도가 낮아질 수 있습니다.</string>
+    <string name="celestial_iss_note">현재 시각을 중심으로 지평선 아래까지 한 바퀴를 표시하며, 24개의 일정한 간격의 점과 뜨는 시각, 최고 고도, 지는 시각을 포함합니다. 통과 정보는 현재 또는 24시간 이내 다음 통과에 해당하며 관측 가능성을 보장하지 않습니다.</string>
+    <string name="celestial_model_note">위치와 거리는 계산값이며 방향은 나침반 정확도에 달려 있습니다. ISS에는 최신 궤도 데이터가 필요합니다. 세드나와 보이저는 실시간 원격 측정이 아닌 NASA/JPL 예측 경로를 사용합니다.</string>
+    <string name="celestial_weather_mainly_clear">대체로 맑음</string>
+    <string name="celestial_speed_earth_orbit">궤도 속도 (지구): %1$s km/s</string>
+    <string name="celestial_speed_orbit_earth">궤도 속도 (지구): %1$s km/s</string>
+    <string name="celestial_speed_orbit_sun">궤도 속도 (태양): %1$s km/s</string>
+    <string name="celestial_speed_outward_sun">멀어지는 속도 (태양): %1$s km/s</string>
+    <string name="celestial_speed_note">태양을 선택하면 지구가 태양을 공전하는 속도를 표시합니다. 다른 행성과 세드나는 태양을, 달과 ISS는 지구를 기준으로 한 궤도 속도입니다. 보이저는 지구가 아닌 태양으로부터 거리가 증가하는 속도를 표시합니다.</string>
+    <string name="celestial_pass">통과</string>
+    <string name="celestial_orbit">궤도</string>
+    <string name="celestial_iss_no_pass">현재 궤도 데이터로는 24시간 이내의 통과 정보를 제공할 수 없습니다.</string>
+</resources>

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="sun_path_title">מסלול השמש היומי</string>
+    <string name="sun_path_sunrise">זריחה</string>
+    <string name="sun_path_culmination">שיא הגובה</string>
+    <string name="sun_path_sunset">שקיעה</string>
+    <string name="sun_path_show">הצג את המסלול</string>
+    <string name="sun_path_note">הזמנים מחושבים לאופק ללא מכשולים. פני השטח ומזג האוויר עשויים להשפיע על הנראות.</string>
+    <string name="sun_path_previous">הנקודה הקודמת</string>
+    <string name="sun_path_next">הנקודה הבאה</string>
+    <string name="sun_path_minimum">הגובה הנמוך ביותר</string>
+</resources>

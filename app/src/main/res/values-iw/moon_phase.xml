@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="moon_phase_new">ירח חדש</string>
+    <string name="moon_phase_waxing_crescent">סהר מתמלא</string>
+    <string name="moon_phase_first_quarter">רבע ראשון</string>
+    <string name="moon_phase_waxing_gibbous">ירח קמור מתמלא</string>
+    <string name="moon_phase_full">ירח מלא</string>
+    <string name="moon_phase_waning_gibbous">ירח קמור מתמעט</string>
+    <string name="moon_phase_last_quarter">רבע אחרון</string>
+    <string name="moon_phase_waning_crescent">סהר מתמעט</string>
+    <string name="moon_phase_description">%1$s · %2$s%% מואר</string>
+    <string name="celestial_speed_loading">מעדכן מהירות…</string>
+    <string name="celestial_speed_unavailable">המהירות אינה זמינה</string>
+</resources>

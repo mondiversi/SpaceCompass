@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="sun_finder_info_action">מידע על נתונים שמימיים</string>
+    <string name="sun_finder_title">מצפן שמימי</string>
+    <string name="sun_finder_below_horizon">השמש מתחת לאופק האופקי</string>
+    <string name="sun_finder_heading">כיוון: %1$s</string>
+    <string name="sun_finder_tilt">הטיה: %1$s</string>
+    <string name="sun_finder_azimuth">אזימוט השמש: %1$s</string>
+    <string name="sun_finder_elevation">גובה השמש: %1$s</string>
+    <string name="sun_finder_altitude">גובה GPS: %1$s</string>
+    <string name="sun_finder_location_accuracy">דיוק: ±%1$s</string>
+    <string name="sun_finder_terrain_note">מיקום מחושב: תוואי שטח ומכשולים אינם מזוהים. גובה GPS הוא אליפסואידי.</string>
+    <string name="sun_finder_safety">אין להביט ישירות בשמש.</string>
+    <string name="sun_finder_location_permission">אפשר גישה למיקום כדי לחשב מיקומים שמימיים.</string>
+    <string name="sun_finder_location_disabled">המיקום כבוי.</string>
+    <string name="sun_finder_location_error">המיקום אינו זמין.</string>
+    <string name="sun_finder_location_searching">מחפש מיקום…</string>
+    <string name="sun_finder_compass_missing">מצפן אינו זמין במכשיר זה.</string>
+    <string name="sun_finder_orientation_searching">קורא את הכיוון…</string>
+    <string name="sun_finder_compass_accuracy">דיוק המצפן נמוך. התרחק מעצמים מגנטיים וכייל את הטלפון.</string>
+    <string name="sun_finder_allow_location">אפשר מיקום</string>
+    <string name="sun_finder_enable_location">הפעל מיקום</string>
+    <string name="sun_finder_retry">נסה שוב</string>
+    <string name="sun_finder_sky_description">תצוגה וירטואלית של מיקומים שמימיים</string>
+    <string name="sun_weather_clear">בהיר</string>
+    <string name="sun_weather_partial">מעונן חלקית</string>
+    <string name="sun_weather_cloudy">מעונן</string>
+    <string name="sun_weather_fog">ערפל</string>
+    <string name="sun_weather_drizzle">טפטוף</string>
+    <string name="sun_weather_rain">גשם</string>
+    <string name="sun_weather_snow">שלג</string>
+    <string name="sun_weather_storm">סופת רעמים</string>
+    <string name="sun_weather_unavailable">מזג האוויר לא זמין</string>
+    <string name="sun_weather_loading">עדכון מזג האוויר…</string>
+    <string name="sun_weather_estimate">מזג אוויר משוער: %1$s</string>
+    <string name="sun_weather_privacy">מזג האוויר המקוון משתמש במיקום משוער.</string>
+</resources>

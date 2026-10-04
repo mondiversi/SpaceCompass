@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="celestial_polaris" formatted="false">Polaris</string>
+    <string name="celestial_point_azimuth">Azimuth: %1$s</string>
+    <string name="celestial_point_elevation">Altitude: %1$s</string>
+    <string name="celestial_polaris_model" formatted="false">Stellar illustration, not a resolved photograph. Axis and rotation are unknown.</string>
+    <string name="celestial_polaris_facts" formatted="false">Apparent daily motion comes from Earth’s rotation, not an orbit around Earth. Diameter and mass refer to Polaris Aa (2024); distance is approximately 447 light-years. Unknown parameters are shown as —.</string>
+    <string name="celestial_free_rotation_hint" formatted="false">Accelerated rotation. Drag freely; tap to restore the original axis.</string>
+    <string name="celestial_polaris_derived" formatted="false">Mean surface gravity and bulk density are estimates derived from mass and mean radius. Polaris is a pulsating star; these are reference approximations, not live measurements.</string>
+</resources>

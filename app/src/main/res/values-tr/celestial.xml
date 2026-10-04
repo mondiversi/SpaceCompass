@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="celestial_sun">Güneş</string>
+    <string name="celestial_moon">Ay</string>
+    <string name="celestial_mercury">Merkür</string>
+    <string name="celestial_venus">Venüs</string>
+    <string name="celestial_mars">Mars</string>
+    <string name="celestial_jupiter">Jüpiter</string>
+    <string name="celestial_saturn">Satürn</string>
+    <string name="celestial_uranus">Uranüs</string>
+    <string name="celestial_neptune">Neptün</string>
+    <string name="celestial_pluto">Plüton</string>
+    <string name="celestial_sedna">Sedna</string>
+    <string name="celestial_iss">ISS</string>
+    <string name="celestial_voyager_1">Voyager 1</string>
+    <string name="celestial_voyager_2">Voyager 2</string>
+    <string name="celestial_select">Gök cismi seç</string>
+    <string name="celestial_daily_path">Günlük yol</string>
+    <string name="celestial_iss_path">ISS yörüngesi</string>
+    <string name="celestial_rise">Doğuş</string>
+    <string name="celestial_set">Batış</string>
+    <string name="celestial_azimuth">Azimut (%1$s): %2$s</string>
+    <string name="celestial_elevation">Yükseklik (%1$s): %2$s</string>
+    <string name="celestial_below">%1$s ufkun altında</string>
+    <string name="celestial_loading">Yörünge verileri güncelleniyor…</string>
+    <string name="celestial_unavailable">%1$s verileri yok. Güncellemek için internet bağlantısı gerekir.</string>
+    <string name="celestial_iss_old">ISS yörünge verileri 24 saatten eski: doğruluk azalabilir.</string>
+    <string name="celestial_iss_note">Şu anki saat çevresinde, ufkun altı dahil bir tam tur; 24 düzenli nokta ile doğuş, en yüksek konum ve batış gösterilir. Geçiş bilgileri mevcut veya 24 saat içindeki sonraki geçişe aittir; görünürlük garanti edilmez.</string>
+    <string name="celestial_model_note">Konum ve uzaklıklar hesaplanır; yön bulma pusula doğruluğuna bağlıdır. ISS güncel yörünge verileri gerektirir. Sedna ve Voyager canlı telemetri değil, NASA/JPL tahmini yollarını kullanır.</string>
+    <string name="celestial_weather_mainly_clear">Çoğunlukla açık</string>
+    <string name="celestial_speed_earth_orbit">Yörünge hızı (Dünya): %1$s km/s</string>
+    <string name="celestial_speed_orbit_earth">Yörünge hızı (Dünya): %1$s km/s</string>
+    <string name="celestial_speed_orbit_sun">Yörünge hızı (Güneş): %1$s km/s</string>
+    <string name="celestial_speed_outward_sun">Uzaklaşma hızı (Güneş): %1$s km/s</string>
+    <string name="celestial_speed_note">Güneş seçildiğinde Dünya’nın Güneş çevresindeki yörünge hızı gösterilir. Diğer gezegenler ve Sedna Güneş’in; Ay ve ISS Dünya’nın çevresinde döner. Voyager için Dünya’dan değil, Güneş’ten uzaklaşma hızı gösterilir.</string>
+    <string name="celestial_pass">Geçiş</string>
+    <string name="celestial_orbit">Yörünge</string>
+    <string name="celestial_iss_no_pass">Mevcut yörünge verileriyle 24 saat içinde bir geçiş bulunamıyor.</string>
+</resources>

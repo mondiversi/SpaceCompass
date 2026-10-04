@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<network-security-config>
+    <!-- Only JPL needs this public root on older Android trust stores.
+         All other domains retain Android's defaults. HTTPS validation and
+         hostname verification stay enabled; no leaf certificate is pinned.
+         Official source: http://crt.sectigo.com/SectigoPublicServerAuthenticationRootR46.crt
+         SHA-256 verified against Mozilla CCADB case 00001215:
+         7BB647A62AEEAC88BF257AA522D01FFEA395E0AB45C73F93F65654EC38F25A06
+         https://ccadb.my.salesforce-sites.com/mozilla/PrintViewForCase?CaseNumber=00001215 -->
+    <domain-config cleartextTrafficPermitted="false">
+        <domain includeSubdomains="false">ssd.jpl.nasa.gov</domain>
+        <trust-anchors>
+            <certificates src="system" />
+            <certificates src="@raw/sectigo_server_root_r46" />
+        </trust-anchors>
+    </domain-config>
+</network-security-config>

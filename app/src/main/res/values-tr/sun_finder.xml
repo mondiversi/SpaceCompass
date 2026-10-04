@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="sun_finder_info_action">Gök verileri hakkında bilgi</string>
+    <string name="sun_finder_title">Gökyüzü pusulası</string>
+    <string name="sun_finder_below_horizon">Güneş yatay ufkun altında</string>
+    <string name="sun_finder_heading">Yön: %1$s</string>
+    <string name="sun_finder_tilt">Eğim: %1$s</string>
+    <string name="sun_finder_azimuth">Güneş azimutu: %1$s</string>
+    <string name="sun_finder_elevation">Güneş yüksekliği: %1$s</string>
+    <string name="sun_finder_altitude">GPS yüksekliği: %1$s</string>
+    <string name="sun_finder_location_accuracy">Doğruluk: ±%1$s</string>
+    <string name="sun_finder_terrain_note">Hesaplanan konum: arazi ve engeller algılanmaz. GPS yüksekliği elipsoidaldir.</string>
+    <string name="sun_finder_safety">Doğrudan güneşe bakma.</string>
+    <string name="sun_finder_location_permission">Gök konumlarını hesaplamak için konum erişimine izin verin.</string>
+    <string name="sun_finder_location_disabled">Konum kapalı.</string>
+    <string name="sun_finder_location_error">Konum kullanılamıyor.</string>
+    <string name="sun_finder_location_searching">Konum aranıyor…</string>
+    <string name="sun_finder_compass_missing">Bu cihazda pusula kullanılamıyor.</string>
+    <string name="sun_finder_orientation_searching">Yönelim okunuyor…</string>
+    <string name="sun_finder_compass_accuracy">Pusula doğruluğu düşük. Manyetik nesnelerden uzaklaş ve telefonu kalibre et.</string>
+    <string name="sun_finder_allow_location">Konuma izin ver</string>
+    <string name="sun_finder_enable_location">Konumu etkinleştir</string>
+    <string name="sun_finder_retry">Tekrar dene</string>
+    <string name="sun_finder_sky_description">Gök konumlarının sanal görünümü</string>
+    <string name="sun_weather_clear">Açık</string>
+    <string name="sun_weather_partial">Parçalı bulutlu</string>
+    <string name="sun_weather_cloudy">Bulutlu</string>
+    <string name="sun_weather_fog">Sis</string>
+    <string name="sun_weather_drizzle">Çisenti</string>
+    <string name="sun_weather_rain">Yağmur</string>
+    <string name="sun_weather_snow">Kar</string>
+    <string name="sun_weather_storm">Gök gürültülü fırtına</string>
+    <string name="sun_weather_unavailable">Hava durumu kullanılamıyor</string>
+    <string name="sun_weather_loading">Hava durumu güncelleniyor…</string>
+    <string name="sun_weather_estimate">Tahmini hava durumu: %1$s</string>
+    <string name="sun_weather_privacy">Çevrimiçi hava durumu yaklaşık konumu kullanır.</string>
+</resources>

@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="celestial_io">آیو</string>
+    <string name="celestial_europa">اروپا</string>
+    <string name="celestial_catalog_distance">فاصله از خورشید</string>
+    <string name="celestial_speed_orbit_jupiter">سرعت مداری (مشتری): %1$s km/s</string>
+</resources>

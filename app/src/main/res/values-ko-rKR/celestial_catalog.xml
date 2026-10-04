@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="celestial_io">이오</string>
+    <string name="celestial_europa">유로파</string>
+    <string name="celestial_catalog_distance">태양으로부터의 거리</string>
+    <string name="celestial_speed_orbit_jupiter">공전 속도 (목성): %1$s km/s</string>
+</resources>

@@ -1,0 +1,13 @@
+SGP4 Java implementation by aholinch, based on Vallado et al.
+https://github.com/aholinch/sgp4
+Pinned upstream revision: 552cb1489a52c3023ae70cb6c7e239e84c5950fe
+License: Unlicense (see LICENSE).
+Source: app/src/main/java/sgp4/{SGP4,ElsetRec,TLE}.java.
+Inherited UVIR change: TLE.parseEpoch creates a UTC calendar without changing the process default timezone.
+Planet Compass change: explicit braces around independent TLE identifier checks/normalization;
+formatting-only cleanup for Android lint, with unchanged control flow.
+No changes to the SGP4 propagation equations.
+
+Astronomy Engine Kotlin 2.1.19 by Don Cross, MIT license.
+https://github.com/cosinekitty/astronomy
+Supplied as the pinned Gradle dependency io.github.cosinekitty:astronomy:2.1.19.

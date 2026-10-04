@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="sun_finder_info_action">天体データの説明</string>
+    <string name="sun_finder_title">天体コンパス</string>
+    <string name="sun_finder_below_horizon">太陽は水平な地平線の下にあります</string>
+    <string name="sun_finder_heading">方向：%1$s</string>
+    <string name="sun_finder_tilt">傾き：%1$s</string>
+    <string name="sun_finder_azimuth">太陽の方位角：%1$s</string>
+    <string name="sun_finder_elevation">太陽の高度：%1$s</string>
+    <string name="sun_finder_altitude">GPS標高：%1$s</string>
+    <string name="sun_finder_location_accuracy">精度：±%1$s</string>
+    <string name="sun_finder_terrain_note">計算上の位置です。地形や障害物は検出しません。GPS標高は楕円体基準です。</string>
+    <string name="sun_finder_safety">太陽を直接見ないでください。</string>
+    <string name="sun_finder_location_permission">天体の位置を計算するために位置情報へのアクセスを許可してください。</string>
+    <string name="sun_finder_location_disabled">位置情報がオフです。</string>
+    <string name="sun_finder_location_error">位置情報を取得できません。</string>
+    <string name="sun_finder_location_searching">位置情報を取得中…</string>
+    <string name="sun_finder_compass_missing">この端末ではコンパスを利用できません。</string>
+    <string name="sun_finder_orientation_searching">端末の向きを取得中…</string>
+    <string name="sun_finder_compass_accuracy">コンパスの精度が低い状態です。磁気を帯びた物から離れ、端末を調整してください。</string>
+    <string name="sun_finder_allow_location">位置情報を許可</string>
+    <string name="sun_finder_enable_location">位置情報を有効化</string>
+    <string name="sun_finder_retry">再試行</string>
+    <string name="sun_finder_sky_description">天体の位置を表示する仮想ビュー</string>
+    <string name="sun_weather_clear">晴れ</string>
+    <string name="sun_weather_partial">一部曇り</string>
+    <string name="sun_weather_cloudy">曇り</string>
+    <string name="sun_weather_fog">霧</string>
+    <string name="sun_weather_drizzle">霧雨</string>
+    <string name="sun_weather_rain">雨</string>
+    <string name="sun_weather_snow">雪</string>
+    <string name="sun_weather_storm">雷雨</string>
+    <string name="sun_weather_unavailable">天気情報を取得できません</string>
+    <string name="sun_weather_loading">天気を更新中…</string>
+    <string name="sun_weather_estimate">推定天気：%1$s</string>
+    <string name="sun_weather_privacy">オンラインの天気にはおおよその位置を使用します。</string>
+</resources>

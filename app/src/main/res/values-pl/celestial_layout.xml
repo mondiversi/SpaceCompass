@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="celestial_table_distance">Odległość: %1$s</string>
+    <string name="celestial_table_speed">Prędkość: %1$s</string>
+    <string name="celestial_environment_info_title">Orientacja i otoczenie</string>
+    <string name="celestial_environment_info_action">Informacje o orientacji i otoczeniu</string>
+    <string name="celestial_environment_orientation_note">Kierunek i nachylenie opisują, gdzie skierowany jest telefon. Przedmioty magnetyczne mogą wpływać na kompas. Dokładność GPS wskazuje szacowaną niepewność położenia.</string>
+    <string name="celestial_altitude">Wysokość: %1$s</string>
+    <string name="celestial_details_compact">Szczegóły</string>
+    <string name="celestial_gps_coordinates">Współrzędne GPS: %1$s</string>
+    <string name="celestial_gps_coordinate_accuracy">Dokładność współrzędnych: ±%1$s</string>
+</resources>

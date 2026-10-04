@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="celestial_view_open" formatted="false">Lihat</string>
+    <string name="celestial_view_current" formatted="false">Tampilan saat ini</string>
+    <string name="celestial_view_rotation" formatted="false">Rotasi</string>
+    <string name="celestial_view_resume" formatted="false">Lanjutkan rotasi</string>
+    <string name="celestial_view_diameter" formatted="false">Diameter</string>
+    <string name="celestial_view_antenna" formatted="false">Diameter antena</string>
+    <string name="celestial_view_size" formatted="false">Bentang maksimum</string>
+    <string name="celestial_view_mass" formatted="false">Massa</string>
+    <string name="celestial_view_gravity" formatted="false">Gravitasi permukaan</string>
+    <string name="celestial_view_density" formatted="false">Kerapatan</string>
+    <string name="celestial_view_parent" formatted="false">Benda utama</string>
+    <string name="celestial_view_earth" formatted="false">Bumi</string>
+    <string name="celestial_view_rotation_period" formatted="false">Periode rotasi</string>
+    <string name="celestial_view_retrograde" formatted="false">Rotasi retrograd</string>
+    <string name="celestial_view_yes" formatted="false">Ya</string>
+    <string name="celestial_view_no" formatted="false">Tidak</string>
+    <string name="celestial_view_revolution_period" formatted="false">Periode orbit</string>
+    <string name="celestial_view_min_distance" formatted="false">Jarak minimum dari benda utama</string>
+    <string name="celestial_view_max_distance" formatted="false">Jarak maksimum dari benda utama</string>
+    <string name="celestial_view_observer_distance" formatted="false">Jarak dari pengamat</string>
+    <string name="celestial_view_phase" formatted="false">Fase Bulan</string>
+    <string name="celestial_view_illuminated" formatted="false">Cakram diterangi</string>
+    <string name="celestial_view_information" formatted="false">Informasi</string>
+    <string name="celestial_view_rotation_hint" formatted="false">Rotasi demonstrasi dipercepat. Seret untuk menjelajah; ketuk dua kali untuk melanjutkan.</string>
+    <string name="celestial_view_craft_note" formatted="false">Model struktur ilustratif: orientasi wahana saat ini tidak tersedia.</string>
+    <string name="celestial_view_sedna_note" formatted="false">Permukaan dan orientasi tidak diketahui: model ilustratif.</string>
+    <string name="celestial_view_map_note" formatted="false">Tampilan direkonstruksi dengan fase dan orientasi terhitung. Peta statis, bukan gambar langsung.</string>
+    <string name="celestial_view_location_needed" formatted="false">Lokasi diperlukan untuk tampilan saat ini. Rotasi tersedia tanpa GPS.</string>
+    <string name="celestial_view_facts_note" formatted="false">Nilai perkiraan. Gravitasi raksasa gas pada 1 bar; jarak orbit dari benda utama.</string>
+    <string name="celestial_view_sun_note" formatted="false">Rotasi Matahari berubah menurut lintang; periodenya merupakan nilai acuan.</string>
+    <string name="celestial_view_sedna_facts" formatted="false">Diameter adalah perkiraan. Rotasi dan elemen orbit memiliki ketidakpastian.</string>
+    <string name="celestial_view_iss_note" formatted="false">Dimensi dan massa ISS berubah menurut konfigurasi dan wahana yang berkunjung.</string>
+    <string name="celestial_view_render_failed" formatted="false">Model tidak dapat ditampilkan.</string>
+    <string name="celestial_view_zoom_in" formatted="false">Perbesar</string>
+    <string name="celestial_view_zoom_out" formatted="false">Perkecil</string>
+    <string name="celestial_view_reset_zoom" formatted="false">Atur ulang zoom</string>
+    <string name="celestial_view_zoom_level">Zoom: %1$d%%</string>
+</resources>

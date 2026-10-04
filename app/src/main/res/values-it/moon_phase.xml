@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="moon_phase_new">Luna nuova</string>
+    <string name="moon_phase_waxing_crescent">Luna crescente</string>
+    <string name="moon_phase_first_quarter">Primo quarto</string>
+    <string name="moon_phase_waxing_gibbous">Gibbosa crescente</string>
+    <string name="moon_phase_full">Luna piena</string>
+    <string name="moon_phase_waning_gibbous">Gibbosa calante</string>
+    <string name="moon_phase_last_quarter">Ultimo quarto</string>
+    <string name="moon_phase_waning_crescent">Luna calante</string>
+    <string name="moon_phase_description">%1$s · %2$s%% illuminata</string>
+    <string name="celestial_speed_loading">Aggiornamento della velocità…</string>
+    <string name="celestial_speed_unavailable">Velocità non disponibile</string>
+</resources>

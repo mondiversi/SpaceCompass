@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="celestial_sun">Matahari</string>
+    <string name="celestial_moon">Bulan</string>
+    <string name="celestial_mercury">Merkurius</string>
+    <string name="celestial_venus">Venus</string>
+    <string name="celestial_mars">Mars</string>
+    <string name="celestial_jupiter">Jupiter</string>
+    <string name="celestial_saturn">Saturnus</string>
+    <string name="celestial_uranus">Uranus</string>
+    <string name="celestial_neptune">Neptunus</string>
+    <string name="celestial_pluto">Pluto</string>
+    <string name="celestial_sedna">Sedna</string>
+    <string name="celestial_iss">ISS</string>
+    <string name="celestial_voyager_1">Voyager 1</string>
+    <string name="celestial_voyager_2">Voyager 2</string>
+    <string name="celestial_select">Pilih benda langit</string>
+    <string name="celestial_daily_path">Lintasan harian</string>
+    <string name="celestial_iss_path">Orbit ISS</string>
+    <string name="celestial_rise">Terbit</string>
+    <string name="celestial_set">Terbenam</string>
+    <string name="celestial_azimuth">Azimut (%1$s): %2$s</string>
+    <string name="celestial_elevation">Ketinggian (%1$s): %2$s</string>
+    <string name="celestial_below">%1$s di bawah cakrawala</string>
+    <string name="celestial_loading">Memperbarui data orbit…</string>
+    <string name="celestial_unavailable">Data %1$s tidak tersedia. Koneksi internet diperlukan untuk memperbaruinya.</string>
+    <string name="celestial_iss_old">Data orbit ISS lebih dari 24 jam: akurasi mungkin berkurang.</string>
+    <string name="celestial_iss_note">Satu putaran penuh di sekitar waktu saat ini, termasuk di bawah cakrawala, dengan 24 titik teratur serta terbit, kulminasi, dan terbenam. Detail lintasan merujuk pada lintasan saat ini atau berikutnya dalam 24 jam; keterlihatan tidak dijamin.</string>
+    <string name="celestial_model_note">Posisi dan jarak dihitung; arah bergantung pada akurasi kompas. ISS membutuhkan data orbit baru. Sedna dan Voyager memakai prediksi lintasan NASA/JPL, bukan telemetri langsung.</string>
+    <string name="celestial_weather_mainly_clear">Sebagian besar cerah</string>
+    <string name="celestial_speed_earth_orbit">Kecepatan orbit (Bumi): %1$s km/s</string>
+    <string name="celestial_speed_orbit_earth">Kecepatan orbit (Bumi): %1$s km/s</string>
+    <string name="celestial_speed_orbit_sun">Kecepatan orbit (Matahari): %1$s km/s</string>
+    <string name="celestial_speed_outward_sun">Kecepatan menjauh (Matahari): %1$s km/s</string>
+    <string name="celestial_speed_note">Memilih Matahari menampilkan kecepatan orbit Bumi mengelilingi Matahari. Planet lain dan Sedna mengorbit Matahari; Bulan dan ISS mengorbit Bumi. Voyager menampilkan laju pertambahan jarak dari Matahari, bukan dari Bumi.</string>
+    <string name="celestial_pass">Lintasan</string>
+    <string name="celestial_orbit">Orbit</string>
+    <string name="celestial_iss_no_pass">Tidak ada lintasan yang tersedia dalam 24 jam berdasarkan data orbit saat ini.</string>
+</resources>

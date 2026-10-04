@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="sun_finder_info_action">Informasi data benda langit</string>
+    <string name="sun_finder_title">Kompas langit</string>
+    <string name="sun_finder_below_horizon">Matahari di bawah cakrawala horizontal</string>
+    <string name="sun_finder_heading">Arah: %1$s</string>
+    <string name="sun_finder_tilt">Kemiringan: %1$s</string>
+    <string name="sun_finder_azimuth">Azimut matahari: %1$s</string>
+    <string name="sun_finder_elevation">Elevasi matahari: %1$s</string>
+    <string name="sun_finder_altitude">Ketinggian GPS: %1$s</string>
+    <string name="sun_finder_location_accuracy">Akurasi: ±%1$s</string>
+    <string name="sun_finder_terrain_note">Posisi hasil perhitungan: medan dan penghalang tidak terdeteksi. Ketinggian GPS bersifat elipsoidal.</string>
+    <string name="sun_finder_safety">Jangan melihat langsung ke matahari.</string>
+    <string name="sun_finder_location_permission">Izinkan akses lokasi untuk menghitung posisi benda langit.</string>
+    <string name="sun_finder_location_disabled">Lokasi dinonaktifkan.</string>
+    <string name="sun_finder_location_error">Lokasi tidak tersedia.</string>
+    <string name="sun_finder_location_searching">Mencari lokasi…</string>
+    <string name="sun_finder_compass_missing">Kompas tidak tersedia pada perangkat ini.</string>
+    <string name="sun_finder_orientation_searching">Membaca orientasi…</string>
+    <string name="sun_finder_compass_accuracy">Akurasi kompas rendah. Jauhkan benda magnetis dan kalibrasi ponsel.</string>
+    <string name="sun_finder_allow_location">Izinkan lokasi</string>
+    <string name="sun_finder_enable_location">Aktifkan lokasi</string>
+    <string name="sun_finder_retry">Coba lagi</string>
+    <string name="sun_finder_sky_description">Tampilan virtual posisi benda langit</string>
+    <string name="sun_weather_clear">Cerah</string>
+    <string name="sun_weather_partial">Sebagian berawan</string>
+    <string name="sun_weather_cloudy">Berawan</string>
+    <string name="sun_weather_fog">Kabut</string>
+    <string name="sun_weather_drizzle">Gerimis</string>
+    <string name="sun_weather_rain">Hujan</string>
+    <string name="sun_weather_snow">Salju</string>
+    <string name="sun_weather_storm">Badai petir</string>
+    <string name="sun_weather_unavailable">Cuaca tidak tersedia</string>
+    <string name="sun_weather_loading">Memperbarui cuaca…</string>
+    <string name="sun_weather_estimate">Perkiraan cuaca: %1$s</string>
+    <string name="sun_weather_privacy">Cuaca daring menggunakan lokasi perkiraan.</string>
+</resources>

@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="celestial_sun">Солнце</string>
+    <string name="celestial_moon">Луна</string>
+    <string name="celestial_mercury">Меркурий</string>
+    <string name="celestial_venus">Венера</string>
+    <string name="celestial_mars">Марс</string>
+    <string name="celestial_jupiter">Юпитер</string>
+    <string name="celestial_saturn">Сатурн</string>
+    <string name="celestial_uranus">Уран</string>
+    <string name="celestial_neptune">Нептун</string>
+    <string name="celestial_pluto">Плутон</string>
+    <string name="celestial_sedna">Седна</string>
+    <string name="celestial_iss">МКС</string>
+    <string name="celestial_voyager_1">Voyager 1</string>
+    <string name="celestial_voyager_2">Voyager 2</string>
+    <string name="celestial_select">Выбрать небесный объект</string>
+    <string name="celestial_daily_path">Суточная траектория</string>
+    <string name="celestial_iss_path">Орбита МКС</string>
+    <string name="celestial_rise">Восход</string>
+    <string name="celestial_set">Заход</string>
+    <string name="celestial_azimuth">Азимут (%1$s): %2$s</string>
+    <string name="celestial_elevation">Высота (%1$s): %2$s</string>
+    <string name="celestial_below">%1$s ниже горизонта</string>
+    <string name="celestial_loading">Обновление орбитальных данных…</string>
+    <string name="celestial_unavailable">Данные для %1$s недоступны. Для обновления нужен Интернет.</string>
+    <string name="celestial_iss_old">Орбитальным данным МКС более 24 часов: точность может снизиться.</string>
+    <string name="celestial_iss_note">Полный оборот вокруг текущего времени, включая участок под горизонтом, с 24 равномерными точками, восходом, кульминацией и заходом. Данные относятся к текущему или следующему пролёту в течение 24 часов; видимость не гарантирована.</string>
+    <string name="celestial_model_note">Положения и расстояния рассчитаны; наведение зависит от точности компаса. МКС нужны свежие орбитальные данные. Седна и «Вояджер» используют прогнозные траектории NASA/JPL, а не телеметрию в реальном времени.</string>
+    <string name="celestial_weather_mainly_clear">Преимущественно ясно</string>
+    <string name="celestial_speed_earth_orbit">Орбитальная скорость (Земля): %1$s km/s</string>
+    <string name="celestial_speed_orbit_earth">Орбитальная скорость (Земля): %1$s km/s</string>
+    <string name="celestial_speed_orbit_sun">Орбитальная скорость (Солнце): %1$s km/s</string>
+    <string name="celestial_speed_outward_sun">Скорость удаления (Солнце): %1$s km/s</string>
+    <string name="celestial_speed_note">При выборе Солнца показана орбитальная скорость Земли вокруг Солнца. Другие планеты и Седна обращаются вокруг Солнца; Луна и МКС — вокруг Земли. Для Voyager показана скорость удаления от Солнца, а не от Земли.</string>
+    <string name="celestial_pass">Пролёт</string>
+    <string name="celestial_orbit">Орбита</string>
+    <string name="celestial_iss_no_pass">С текущими орбитальными данными пролёт в течение 24 часов недоступен.</string>
+</resources>

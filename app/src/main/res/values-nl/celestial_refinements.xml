@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="celestial_polaris" formatted="false">Poolster</string>
+    <string name="celestial_point_azimuth">Azimut: %1$s</string>
+    <string name="celestial_point_elevation">Hoogte: %1$s</string>
+    <string name="celestial_polaris_model" formatted="false">Illustratieve sterweergave, geen opgeloste foto. As en rotatie zijn onbekend.</string>
+    <string name="celestial_polaris_facts" formatted="false">De schijnbare dagelijkse beweging komt door de aardrotatie, niet door een baan rond de aarde. Diameter en massa betreffen Polaris Aa (2024); de afstand is ongeveer 447 lichtjaar. Onbekende waarden worden weergegeven als —.</string>
+    <string name="celestial_free_rotation_hint" formatted="false">Versnelde rotatie. Sleep vrij; tik om de oorspronkelijke as te herstellen.</string>
+    <string name="celestial_polaris_derived" formatted="false">Gemiddelde oppervlaktezwaartekracht en dichtheid worden geschat uit massa en gemiddelde straal. Polaris is een pulserende ster; dit zijn benaderingen, geen live metingen.</string>
+</resources>

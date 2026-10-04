@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="celestial_polaris" formatted="false">Полярная звезда</string>
+    <string name="celestial_point_azimuth">Азимут: %1$s</string>
+    <string name="celestial_point_elevation">Высота: %1$s</string>
+    <string name="celestial_polaris_model" formatted="false">Условное изображение звезды, не снимок её поверхности. Ось и вращение неизвестны.</string>
+    <string name="celestial_polaris_facts" formatted="false">Видимое суточное движение вызвано вращением Земли, а не орбитой вокруг неё. Диаметр и масса относятся к Polaris Aa (2024); расстояние около 447 световых лет. Неизвестные параметры обозначены —.</string>
+    <string name="celestial_free_rotation_hint" formatted="false">Ускоренное вращение. Перетаскивайте свободно; коснитесь для возврата к исходной оси.</string>
+    <string name="celestial_polaris_derived" formatted="false">Средняя поверхностная гравитация и плотность оценены по массе и среднему радиусу. Полярная звезда пульсирует: это приближённые значения, не измерения в реальном времени.</string>
+</resources>

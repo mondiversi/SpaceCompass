@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="celestial_sun">Zon</string>
+    <string name="celestial_moon">Maan</string>
+    <string name="celestial_mercury">Mercurius</string>
+    <string name="celestial_venus">Venus</string>
+    <string name="celestial_mars">Mars</string>
+    <string name="celestial_jupiter">Jupiter</string>
+    <string name="celestial_saturn">Saturnus</string>
+    <string name="celestial_uranus">Uranus</string>
+    <string name="celestial_neptune">Neptunus</string>
+    <string name="celestial_pluto">Pluto</string>
+    <string name="celestial_sedna">Sedna</string>
+    <string name="celestial_iss">ISS</string>
+    <string name="celestial_voyager_1">Voyager 1</string>
+    <string name="celestial_voyager_2">Voyager 2</string>
+    <string name="celestial_select">Hemelobject kiezen</string>
+    <string name="celestial_daily_path">Dagelijkse baan</string>
+    <string name="celestial_iss_path">ISS-baan</string>
+    <string name="celestial_rise">Opkomst</string>
+    <string name="celestial_set">Ondergang</string>
+    <string name="celestial_azimuth">Azimut (%1$s): %2$s</string>
+    <string name="celestial_elevation">Hoogte (%1$s): %2$s</string>
+    <string name="celestial_below">%1$s staat onder de horizon</string>
+    <string name="celestial_loading">Baangegevens bijwerken…</string>
+    <string name="celestial_unavailable">Gegevens voor %1$s zijn niet beschikbaar. Een internetverbinding is nodig om ze te vernieuwen.</string>
+    <string name="celestial_iss_old">ISS-baangegevens zijn ouder dan 24 uur: nauwkeurigheid kan afnemen.</string>
+    <string name="celestial_iss_note">Een volledige omloop rond de huidige tijd, ook onder de horizon, met 24 gelijkmatig verdeelde punten plus opkomst, culminatie en ondergang. De details gelden voor de huidige of volgende passage binnen 24 uur; zichtbaarheid is niet gegarandeerd.</string>
+    <string name="celestial_model_note">Berekende posities en afstanden; richten hangt af van de kompasnauwkeurigheid. ISS vereist recente baangegevens. Sedna en Voyager gebruiken voorspelde NASA/JPL-trajecten, geen live telemetrie.</string>
+    <string name="celestial_weather_mainly_clear">Overwegend helder</string>
+    <string name="celestial_speed_earth_orbit">Omloopsnelheid (aarde): %1$s km/s</string>
+    <string name="celestial_speed_orbit_earth">Omloopsnelheid (aarde): %1$s km/s</string>
+    <string name="celestial_speed_orbit_sun">Omloopsnelheid (zon): %1$s km/s</string>
+    <string name="celestial_speed_outward_sun">Verwijderingssnelheid (Zon): %1$s km/s</string>
+    <string name="celestial_speed_note">Bij selectie van de zon wordt de omloopsnelheid van de aarde rond de zon getoond. Andere planeten en Sedna draaien rond de zon; de maan en ISS rond de aarde. Voyager toont de snelheid waarmee de afstand tot de zon toeneemt, niet tot de aarde.</string>
+    <string name="celestial_pass">Passage</string>
+    <string name="celestial_orbit">Baan</string>
+    <string name="celestial_iss_no_pass">Met de huidige baangegevens is geen passage binnen 24 uur beschikbaar.</string>
+</resources>

@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="sun_finder_info_action">천체 데이터 설명</string>
+    <string name="sun_finder_title">천체 나침반</string>
+    <string name="sun_finder_below_horizon">태양이 수평 지평선 아래에 있습니다</string>
+    <string name="sun_finder_heading">방향: %1$s</string>
+    <string name="sun_finder_tilt">기울기: %1$s</string>
+    <string name="sun_finder_azimuth">태양 방위각: %1$s</string>
+    <string name="sun_finder_elevation">태양 고도: %1$s</string>
+    <string name="sun_finder_altitude">GPS 높이: %1$s</string>
+    <string name="sun_finder_location_accuracy">정확도: ±%1$s</string>
+    <string name="sun_finder_terrain_note">계산된 위치이며 지형과 장애물은 감지하지 않습니다. GPS 높이는 타원체 기준입니다.</string>
+    <string name="sun_finder_safety">태양을 직접 바라보지 마세요.</string>
+    <string name="sun_finder_location_permission">천체 위치를 계산하려면 위치 접근을 허용하세요.</string>
+    <string name="sun_finder_location_disabled">위치가 꺼져 있습니다.</string>
+    <string name="sun_finder_location_error">위치를 사용할 수 없습니다.</string>
+    <string name="sun_finder_location_searching">위치 검색 중…</string>
+    <string name="sun_finder_compass_missing">이 기기에서는 나침반을 사용할 수 없습니다.</string>
+    <string name="sun_finder_orientation_searching">방향을 읽는 중…</string>
+    <string name="sun_finder_compass_accuracy">나침반 정확도가 낮습니다. 자성 물체에서 멀리 떨어져 휴대전화를 보정하세요.</string>
+    <string name="sun_finder_allow_location">위치 허용</string>
+    <string name="sun_finder_enable_location">위치 켜기</string>
+    <string name="sun_finder_retry">다시 시도</string>
+    <string name="sun_finder_sky_description">천체 위치 가상 보기</string>
+    <string name="sun_weather_clear">맑음</string>
+    <string name="sun_weather_partial">구름 조금</string>
+    <string name="sun_weather_cloudy">흐림</string>
+    <string name="sun_weather_fog">안개</string>
+    <string name="sun_weather_drizzle">이슬비</string>
+    <string name="sun_weather_rain">비</string>
+    <string name="sun_weather_snow">눈</string>
+    <string name="sun_weather_storm">뇌우</string>
+    <string name="sun_weather_unavailable">날씨 정보를 사용할 수 없음</string>
+    <string name="sun_weather_loading">날씨 업데이트 중…</string>
+    <string name="sun_weather_estimate">추정 날씨: %1$s</string>
+    <string name="sun_weather_privacy">온라인 날씨는 대략적인 위치를 사용합니다.</string>
+</resources>

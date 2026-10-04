@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="sun_finder_info_action">Информация о небесных данных</string>
+    <string name="sun_finder_title">Небесный компас</string>
+    <string name="sun_finder_below_horizon">Солнце ниже горизонтального горизонта</string>
+    <string name="sun_finder_heading">Направление: %1$s</string>
+    <string name="sun_finder_tilt">Наклон: %1$s</string>
+    <string name="sun_finder_azimuth">Азимут солнца: %1$s</string>
+    <string name="sun_finder_elevation">Высота солнца: %1$s</string>
+    <string name="sun_finder_altitude">Высота GPS: %1$s</string>
+    <string name="sun_finder_location_accuracy">Точность: ±%1$s</string>
+    <string name="sun_finder_terrain_note">Расчётная позиция: рельеф и препятствия не учитываются. Высота GPS эллипсоидальная.</string>
+    <string name="sun_finder_safety">Не смотрите прямо на солнце.</string>
+    <string name="sun_finder_location_permission">Разрешите доступ к местоположению для расчёта небесных положений.</string>
+    <string name="sun_finder_location_disabled">Геопозиция отключена.</string>
+    <string name="sun_finder_location_error">Геопозиция недоступна.</string>
+    <string name="sun_finder_location_searching">Поиск геопозиции…</string>
+    <string name="sun_finder_compass_missing">Компас недоступен на этом устройстве.</string>
+    <string name="sun_finder_orientation_searching">Определение ориентации…</string>
+    <string name="sun_finder_compass_accuracy">Низкая точность компаса. Удалите магнитные предметы и откалибруйте телефон.</string>
+    <string name="sun_finder_allow_location">Разрешить геопозицию</string>
+    <string name="sun_finder_enable_location">Включить геопозицию</string>
+    <string name="sun_finder_retry">Повторить</string>
+    <string name="sun_finder_sky_description">Виртуальный вид небесных положений</string>
+    <string name="sun_weather_clear">Ясно</string>
+    <string name="sun_weather_partial">Переменная облачность</string>
+    <string name="sun_weather_cloudy">Облачно</string>
+    <string name="sun_weather_fog">Туман</string>
+    <string name="sun_weather_drizzle">Морось</string>
+    <string name="sun_weather_rain">Дождь</string>
+    <string name="sun_weather_snow">Снег</string>
+    <string name="sun_weather_storm">Гроза</string>
+    <string name="sun_weather_unavailable">Погода недоступна</string>
+    <string name="sun_weather_loading">Обновление погоды…</string>
+    <string name="sun_weather_estimate">Оценка погоды: %1$s</string>
+    <string name="sun_weather_privacy">Погода онлайн использует приблизительное местоположение.</string>
+</resources>

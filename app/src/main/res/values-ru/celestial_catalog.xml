@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="celestial_io">Ио</string>
+    <string name="celestial_europa">Европа</string>
+    <string name="celestial_catalog_distance">Расстояние от Солнца</string>
+    <string name="celestial_speed_orbit_jupiter">Орбитальная скорость (Юпитер): %1$s km/s</string>
+</resources>

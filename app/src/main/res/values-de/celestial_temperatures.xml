@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="celestial_temperature" formatted="false">Temperatur</string>
+    <string name="celestial_temperature_surface_mean" formatted="false">Mittlere Oberflächentemperatur</string>
+    <string name="celestial_temperature_day_maximum" formatted="false">Besonnte Oberfläche (max.)</string>
+    <string name="celestial_temperature_night_minimum" formatted="false">Nächtliche Oberfläche (min.)</string>
+    <string name="celestial_temperature_surface_range" formatted="false">Bereich der Oberflächentemperatur</string>
+    <string name="celestial_temperature_atmosphere" formatted="false">Atmosphärentemperatur (1 bar)</string>
+    <string name="celestial_temperature_photosphere" formatted="false">Temperatur der Photosphäre</string>
+    <string name="celestial_temperature_effective" formatted="false">Mittlere effektive Temperatur</string>
+    <string name="celestial_temperature_note" formatted="false">Referenztemperaturen, keine Live-Daten. Tag-/Nachtwerte sind lokale Extremwerte, keine Mittelwerte einer Hemisphäre. Die Werte variieren mit Ort und Zeit.</string>
+</resources>

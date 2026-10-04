@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="celestial_temperature" formatted="false">温度</string>
+    <string name="celestial_temperature_surface_mean" formatted="false">平均表面温度</string>
+    <string name="celestial_temperature_day_maximum" formatted="false">日照面（最高）</string>
+    <string name="celestial_temperature_night_minimum" formatted="false">夜側表面（最低）</string>
+    <string name="celestial_temperature_surface_range" formatted="false">表面温度の範囲</string>
+    <string name="celestial_temperature_atmosphere" formatted="false">大気温度（1 bar）</string>
+    <string name="celestial_temperature_photosphere" formatted="false">光球温度</string>
+    <string name="celestial_temperature_effective" formatted="false">平均有効温度</string>
+    <string name="celestial_temperature_note" formatted="false">参考温度であり、リアルタイムのデータではありません。昼夜の値は局所的な極値で、半球の平均ではありません。場所と時間によって変化します。</string>
+</resources>

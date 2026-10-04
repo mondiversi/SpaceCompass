@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="sun_path_title">Trajectoire quotidienne</string>
+    <string name="sun_path_sunrise">Lever du soleil</string>
+    <string name="sun_path_culmination">Culmination</string>
+    <string name="sun_path_sunset">Coucher du soleil</string>
+    <string name="sun_path_show">Afficher la trajectoire</string>
+    <string name="sun_path_note">Horaires calculés pour un horizon dégagé. Le relief et la météo peuvent affecter la visibilité.</string>
+    <string name="sun_path_previous">Point précédent</string>
+    <string name="sun_path_next">Point suivant</string>
+    <string name="sun_path_minimum">Minimum</string>
+</resources>

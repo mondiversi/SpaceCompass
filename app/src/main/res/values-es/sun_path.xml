@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="sun_path_title">Trayectoria diaria</string>
+    <string name="sun_path_sunrise">Amanecer</string>
+    <string name="sun_path_culmination">Culminación</string>
+    <string name="sun_path_sunset">Atardecer</string>
+    <string name="sun_path_show">Mostrar la trayectoria</string>
+    <string name="sun_path_note">Horas calculadas para un horizonte despejado. El terreno y el tiempo pueden afectar a la visibilidad.</string>
+    <string name="sun_path_previous">Punto anterior</string>
+    <string name="sun_path_next">Punto siguiente</string>
+    <string name="sun_path_minimum">Mínimo</string>
+</resources>

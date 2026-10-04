@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="sun_path_title">Günlük güneş yolu</string>
+    <string name="sun_path_sunrise">Gün doğumu</string>
+    <string name="sun_path_culmination">En yüksek nokta</string>
+    <string name="sun_path_sunset">Gün batımı</string>
+    <string name="sun_path_show">Yolu göster</string>
+    <string name="sun_path_note">Saatler engelsiz bir ufuk için hesaplanır. Arazi ve hava durumu görünürlüğü etkileyebilir.</string>
+    <string name="sun_path_previous">Önceki nokta</string>
+    <string name="sun_path_next">Sonraki nokta</string>
+    <string name="sun_path_minimum">En alçak nokta</string>
+</resources>

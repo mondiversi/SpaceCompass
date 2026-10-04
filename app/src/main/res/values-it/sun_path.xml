@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="sun_path_title">Percorso giornaliero</string>
+    <string name="sun_path_sunrise">Alba</string>
+    <string name="sun_path_culmination">Culmine</string>
+    <string name="sun_path_sunset">Tramonto</string>
+    <string name="sun_path_show">Mostra la traiettoria</string>
+    <string name="sun_path_note">Orari calcolati per un orizzonte libero. Terreno e meteo possono influire sulla visibilità.</string>
+    <string name="sun_path_previous">Punto precedente</string>
+    <string name="sun_path_next">Punto successivo</string>
+    <string name="sun_path_minimum">Minimo</string>
+</resources>

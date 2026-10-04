@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="celestial_polaris" formatted="false">Estrella Polar</string>
+    <string name="celestial_point_azimuth">Acimut: %1$s</string>
+    <string name="celestial_point_elevation">Altura: %1$s</string>
+    <string name="celestial_polaris_model" formatted="false">Representación ilustrativa de la estrella, no una fotografía resuelta. Eje y rotación desconocidos.</string>
+    <string name="celestial_polaris_facts" formatted="false">El movimiento diario aparente se debe a la rotación terrestre, no a una órbita alrededor de la Tierra. Diámetro y masa corresponden a Polaris Aa (2024); distancia aproximada de 447 años luz. Los parámetros desconocidos se indican con —.</string>
+    <string name="celestial_free_rotation_hint" formatted="false">Rotación acelerada. Arrastra libremente; toca para restaurar el eje original.</string>
+    <string name="celestial_polaris_derived" formatted="false">La gravedad superficial media y la densidad media se estiman a partir de la masa y del radio medio. Polaris es una estrella pulsante: son aproximaciones, no mediciones en tiempo real.</string>
+</resources>

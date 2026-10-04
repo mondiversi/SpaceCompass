@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="sun_path_title">Daily sun path</string>
+    <string name="sun_path_sunrise">Sunrise</string>
+    <string name="sun_path_culmination">Culmination</string>
+    <string name="sun_path_sunset">Sunset</string>
+    <string name="sun_path_show">Show the path</string>
+    <string name="sun_path_note">Calculated times for an unobstructed horizon. Terrain and weather may affect visibility.</string>
+    <string name="sun_path_previous">Previous point</string>
+    <string name="sun_path_next">Next point</string>
+    <string name="sun_path_minimum">Minimum</string>
+</resources>

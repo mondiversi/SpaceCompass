@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="celestial_polaris" formatted="false">ستاره قطبی</string>
+    <string name="celestial_point_azimuth">سمت: %1$s</string>
+    <string name="celestial_point_elevation">ارتفاع: %1$s</string>
+    <string name="celestial_polaris_model" formatted="false">نمایش تصویری ستاره، نه عکس تفکیک‌شده سطح آن. محور و چرخش نامشخص است.</string>
+    <string name="celestial_polaris_facts" formatted="false">حرکت روزانه ظاهری ناشی از چرخش زمین است، نه مدار به دور زمین. قطر و جرم مربوط به Polaris Aa (2024) است؛ فاصله حدود 447 سال نوری است. پارامترهای نامشخص با — نمایش داده می‌شوند.</string>
+    <string name="celestial_free_rotation_hint" formatted="false">چرخش سریع‌شده. آزادانه بکشید؛ برای بازگرداندن محور اصلی ضربه بزنید.</string>
+    <string name="celestial_polaris_derived" formatted="false">گرانش متوسط سطح و چگالی متوسط از جرم و شعاع متوسط برآورد شده‌اند. ستاره قطبی یک ستاره تپنده است؛ این مقادیر تقریبی هستند، نه اندازه‌گیری زنده.</string>
+</resources>

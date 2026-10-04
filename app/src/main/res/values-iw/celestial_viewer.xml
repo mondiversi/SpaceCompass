@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="celestial_view_open" formatted="false">הצגה</string>
+    <string name="celestial_view_current" formatted="false">מראה נוכחי</string>
+    <string name="celestial_view_rotation" formatted="false">סיבוב</string>
+    <string name="celestial_view_resume" formatted="false">המשך סיבוב</string>
+    <string name="celestial_view_diameter" formatted="false">קוטר</string>
+    <string name="celestial_view_antenna" formatted="false">קוטר האנטנה</string>
+    <string name="celestial_view_size" formatted="false">ממד מרבי</string>
+    <string name="celestial_view_mass" formatted="false">מסה</string>
+    <string name="celestial_view_gravity" formatted="false">כבידה על פני השטח</string>
+    <string name="celestial_view_density" formatted="false">צפיפות</string>
+    <string name="celestial_view_parent" formatted="false">גוף ראשי</string>
+    <string name="celestial_view_earth" formatted="false">כדור הארץ</string>
+    <string name="celestial_view_rotation_period" formatted="false">זמן סיבוב</string>
+    <string name="celestial_view_retrograde" formatted="false">סיבוב נסוג</string>
+    <string name="celestial_view_yes" formatted="false">כן</string>
+    <string name="celestial_view_no" formatted="false">לא</string>
+    <string name="celestial_view_revolution_period" formatted="false">זמן הקפה</string>
+    <string name="celestial_view_min_distance" formatted="false">מרחק מזערי מהגוף הראשי</string>
+    <string name="celestial_view_max_distance" formatted="false">מרחק מרבי מהגוף הראשי</string>
+    <string name="celestial_view_observer_distance" formatted="false">מרחק מהצופה</string>
+    <string name="celestial_view_phase" formatted="false">מופע הירח</string>
+    <string name="celestial_view_illuminated" formatted="false">דסקה מוארת</string>
+    <string name="celestial_view_information" formatted="false">מידע</string>
+    <string name="celestial_view_rotation_hint" formatted="false">סיבוב הדגמה מואץ. גררו לחקירה; הקישו פעמיים להמשך הסיבוב.</string>
+    <string name="celestial_view_craft_note" formatted="false">דגם מבני להמחשה: הכיוון הנוכחי של החללית אינו זמין.</string>
+    <string name="celestial_view_sedna_note" formatted="false">פני השטח והכיוון אינם ידועים: דגם להמחשה.</string>
+    <string name="celestial_view_map_note" formatted="false">מראה משוחזר עם מופע וכיוון מחושבים. מפות קבועות, לא תמונות חיות.</string>
+    <string name="celestial_view_location_needed" formatted="false">המראה הנוכחי דורש מיקום. הסיבוב זמין גם ללא GPS.</string>
+    <string name="celestial_view_facts_note" formatted="false">ערכי ייחוס משוערים. כבידת ענקי גז בלחץ 1 בר; מרחקי מסלול מהגוף הראשי.</string>
+    <string name="celestial_view_sun_note" formatted="false">סיבוב השמש משתנה לפי קו הרוחב; הזמן המוצג הוא ערך ייחוס.</string>
+    <string name="celestial_view_sedna_facts" formatted="false">הקוטר משוער. הסיבוב ורכיבי המסלול אינם ודאיים.</string>
+    <string name="celestial_view_iss_note" formatted="false">מידות ומסת ISS משתנות לפי התצורה והחלליות המבקרות.</string>
+    <string name="celestial_view_render_failed" formatted="false">לא ניתן להציג את המודל.</string>
+    <string name="celestial_view_zoom_in" formatted="false">הגדלה</string>
+    <string name="celestial_view_zoom_out" formatted="false">הקטנה</string>
+    <string name="celestial_view_reset_zoom" formatted="false">איפוס הזום</string>
+    <string name="celestial_view_zoom_level">זום: %1$d%%</string>
+</resources>

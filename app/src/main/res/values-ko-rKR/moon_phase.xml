@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="moon_phase_new">삭</string>
+    <string name="moon_phase_waxing_crescent">차오르는 초승달</string>
+    <string name="moon_phase_first_quarter">상현달</string>
+    <string name="moon_phase_waxing_gibbous">차오르는 볼록달</string>
+    <string name="moon_phase_full">보름달</string>
+    <string name="moon_phase_waning_gibbous">기우는 볼록달</string>
+    <string name="moon_phase_last_quarter">하현달</string>
+    <string name="moon_phase_waning_crescent">기우는 그믐달</string>
+    <string name="moon_phase_description">%1$s · %2$s%% 밝음</string>
+    <string name="celestial_speed_loading">속도 업데이트 중…</string>
+    <string name="celestial_speed_unavailable">속도를 확인할 수 없음</string>
+</resources>

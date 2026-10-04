@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="celestial_io">Ío</string>
+    <string name="celestial_europa">Europa</string>
+    <string name="celestial_catalog_distance">Distancia al Sol</string>
+    <string name="celestial_speed_orbit_jupiter">Velocidad orbital (Júpiter): %1$s km/s</string>
+</resources>

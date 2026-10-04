@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="celestial_view_open" formatted="false">Bekijken</string>
+    <string name="celestial_view_current" formatted="false">Huidig aanzicht</string>
+    <string name="celestial_view_rotation" formatted="false">Rotatie</string>
+    <string name="celestial_view_resume" formatted="false">Rotatie hervatten</string>
+    <string name="celestial_view_diameter" formatted="false">Diameter</string>
+    <string name="celestial_view_antenna" formatted="false">Antennediameter</string>
+    <string name="celestial_view_size" formatted="false">Maximale omvang</string>
+    <string name="celestial_view_mass" formatted="false">Massa</string>
+    <string name="celestial_view_gravity" formatted="false">Oppervlaktezwaartekracht</string>
+    <string name="celestial_view_density" formatted="false">Dichtheid</string>
+    <string name="celestial_view_parent" formatted="false">Hoofdlichaam</string>
+    <string name="celestial_view_earth" formatted="false">Aarde</string>
+    <string name="celestial_view_rotation_period" formatted="false">Rotatieperiode</string>
+    <string name="celestial_view_retrograde" formatted="false">Retrograde rotatie</string>
+    <string name="celestial_view_yes" formatted="false">Ja</string>
+    <string name="celestial_view_no" formatted="false">Nee</string>
+    <string name="celestial_view_revolution_period" formatted="false">Omlooptijd</string>
+    <string name="celestial_view_min_distance" formatted="false">Minimumafstand tot hoofdlichaam</string>
+    <string name="celestial_view_max_distance" formatted="false">Maximumafstand tot hoofdlichaam</string>
+    <string name="celestial_view_observer_distance" formatted="false">Afstand tot waarnemer</string>
+    <string name="celestial_view_phase" formatted="false">Maanfase</string>
+    <string name="celestial_view_illuminated" formatted="false">Verlichte schijf</string>
+    <string name="celestial_view_information" formatted="false">Informatie</string>
+    <string name="celestial_view_rotation_hint" formatted="false">Versnelde demonstratierotatie. Sleep om te verkennen; dubbeltik om te hervatten.</string>
+    <string name="celestial_view_craft_note" formatted="false">Illustratief structuurmodel: de huidige stand van het ruimtevaartuig is niet beschikbaar.</string>
+    <string name="celestial_view_sedna_note" formatted="false">Oppervlak en oriëntatie zijn onbekend: illustratief model.</string>
+    <string name="celestial_view_map_note" formatted="false">Gereconstrueerd aanzicht met berekende fase en oriëntatie. Statische kaarten, geen livebeelden.</string>
+    <string name="celestial_view_location_needed" formatted="false">Voor het huidige aanzicht is een locatie nodig. Rotatie werkt ook zonder GPS.</string>
+    <string name="celestial_view_facts_note" formatted="false">Benaderde waarden. Zwaartekracht van gasreuzen bij 1 bar; baanafstanden tot het hoofdlichaam.</string>
+    <string name="celestial_view_sun_note" formatted="false">De zonnerotatie varieert met de breedtegraad; de periode is een referentiewaarde.</string>
+    <string name="celestial_view_sedna_facts" formatted="false">De diameter is geschat. Rotatie en baanelementen hebben onzekerheden.</string>
+    <string name="celestial_view_iss_note" formatted="false">Afmetingen en massa van het ISS variëren met configuratie en bezoekende voertuigen.</string>
+    <string name="celestial_view_render_failed" formatted="false">Het model kan niet worden weergegeven.</string>
+    <string name="celestial_view_zoom_in" formatted="false">Inzoomen</string>
+    <string name="celestial_view_zoom_out" formatted="false">Uitzoomen</string>
+    <string name="celestial_view_reset_zoom" formatted="false">Zoom herstellen</string>
+    <string name="celestial_view_zoom_level">Zoom: %1$d%%</string>
+</resources>

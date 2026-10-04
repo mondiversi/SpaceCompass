@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="celestial_temperature" formatted="false">טמפרטורה</string>
+    <string name="celestial_temperature_surface_mean" formatted="false">טמפרטורת פני שטח ממוצעת</string>
+    <string name="celestial_temperature_day_maximum" formatted="false">פני שטח מוארים (מקסימום)</string>
+    <string name="celestial_temperature_night_minimum" formatted="false">פני שטח בלילה (מינימום)</string>
+    <string name="celestial_temperature_surface_range" formatted="false">טווח טמפרטורת פני השטח</string>
+    <string name="celestial_temperature_atmosphere" formatted="false">טמפרטורת האטמוספרה (1 בר)</string>
+    <string name="celestial_temperature_photosphere" formatted="false">טמפרטורת הפוטוספרה</string>
+    <string name="celestial_temperature_effective" formatted="false">טמפרטורה אפקטיבית ממוצעת</string>
+    <string name="celestial_temperature_note" formatted="false">טמפרטורות ייחוס, לא נתונים בזמן אמת. ערכי יום ולילה הם קיצונים מקומיים, לא ממוצעים של חצי כדור. הערכים משתנים לפי מקום וזמן.</string>
+</resources>

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="celestial_table_distance">Afstand: %1$s</string>
+    <string name="celestial_table_speed">Snelheid: %1$s</string>
+    <string name="celestial_environment_info_title">Oriëntatie en omgeving</string>
+    <string name="celestial_environment_info_action">Informatie over oriëntatie en omgeving</string>
+    <string name="celestial_environment_orientation_note">Richting en kanteling beschrijven waar de telefoon naartoe wijst. Magnetische voorwerpen kunnen het kompas beïnvloeden. GPS-nauwkeurigheid geeft de geschatte onzekerheid van de positie aan.</string>
+    <string name="celestial_altitude">Hoogte: %1$s</string>
+    <string name="celestial_details_compact">Details</string>
+    <string name="celestial_gps_coordinates">GPS-coördinaten: %1$s</string>
+    <string name="celestial_gps_coordinate_accuracy">Nauwkeurigheid coördinaten: ±%1$s</string>
+</resources>

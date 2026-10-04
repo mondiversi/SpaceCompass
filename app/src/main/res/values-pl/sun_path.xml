@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="sun_path_title">Dzienna droga słońca</string>
+    <string name="sun_path_sunrise">Wschód słońca</string>
+    <string name="sun_path_culmination">Kulminacja</string>
+    <string name="sun_path_sunset">Zachód słońca</string>
+    <string name="sun_path_show">Pokaż trajektorię</string>
+    <string name="sun_path_note">Godziny obliczono dla niezasłoniętego horyzontu. Teren i pogoda mogą wpływać na widoczność.</string>
+    <string name="sun_path_previous">Poprzedni punkt</string>
+    <string name="sun_path_next">Następny punkt</string>
+    <string name="sun_path_minimum">Minimum</string>
+</resources>

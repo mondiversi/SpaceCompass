@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="sun_path_title">Dagelijkse zonnebaan</string>
+    <string name="sun_path_sunrise">Zonsopkomst</string>
+    <string name="sun_path_culmination">Hoogste punt</string>
+    <string name="sun_path_sunset">Zonsondergang</string>
+    <string name="sun_path_show">Toon de zonnebaan</string>
+    <string name="sun_path_note">Tijden berekend voor een vrije horizon. Terrein en weer kunnen de zichtbaarheid beïnvloeden.</string>
+    <string name="sun_path_previous">Vorig punt</string>
+    <string name="sun_path_next">Volgend punt</string>
+    <string name="sun_path_minimum">Laagste punt</string>
+</resources>

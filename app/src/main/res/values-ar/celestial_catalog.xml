@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="celestial_io">آيو</string>
+    <string name="celestial_europa">أوروبا</string>
+    <string name="celestial_catalog_distance">المسافة من الشمس</string>
+    <string name="celestial_speed_orbit_jupiter">السرعة المدارية (المشتري): %1$s km/s</string>
+</resources>

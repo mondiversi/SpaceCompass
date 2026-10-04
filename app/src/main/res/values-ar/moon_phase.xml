@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="moon_phase_new">محاق</string>
+    <string name="moon_phase_waxing_crescent">هلال متزايد</string>
+    <string name="moon_phase_first_quarter">التربيع الأول</string>
+    <string name="moon_phase_waxing_gibbous">أحدب متزايد</string>
+    <string name="moon_phase_full">بدر</string>
+    <string name="moon_phase_waning_gibbous">أحدب متناقص</string>
+    <string name="moon_phase_last_quarter">التربيع الأخير</string>
+    <string name="moon_phase_waning_crescent">هلال متناقص</string>
+    <string name="moon_phase_description">%1$s · الجزء المضاء %2$s%%</string>
+    <string name="celestial_speed_loading">جارٍ تحديث السرعة…</string>
+    <string name="celestial_speed_unavailable">السرعة غير متاحة</string>
+</resources>

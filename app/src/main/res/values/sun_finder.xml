@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="sun_finder_info_action">Celestial data information</string>
+    <string name="sun_finder_title">Celestial compass</string>
+    <string name="sun_finder_below_horizon">Sun below the horizontal horizon</string>
+    <string name="sun_finder_heading">Direction: %1$s</string>
+    <string name="sun_finder_tilt">Tilt: %1$s</string>
+    <string name="sun_finder_azimuth">Sun azimuth: %1$s</string>
+    <string name="sun_finder_elevation">Sun elevation: %1$s</string>
+    <string name="sun_finder_altitude">GPS altitude: %1$s</string>
+    <string name="sun_finder_location_accuracy">Accuracy: ±%1$s</string>
+    <string name="sun_finder_terrain_note">Calculated position: terrain and obstacles are not detected. GPS altitude is ellipsoidal.</string>
+    <string name="sun_finder_safety">Do not look directly at the sun.</string>
+    <string name="sun_finder_location_permission">Allow location access to calculate celestial positions.</string>
+    <string name="sun_finder_location_disabled">Location is turned off.</string>
+    <string name="sun_finder_location_error">Location unavailable.</string>
+    <string name="sun_finder_location_searching">Finding your location…</string>
+    <string name="sun_finder_compass_missing">A compass is not available on this device.</string>
+    <string name="sun_finder_orientation_searching">Reading the phone orientation…</string>
+    <string name="sun_finder_compass_accuracy">Compass accuracy is low. Move away from magnetic objects and calibrate the phone.</string>
+    <string name="sun_finder_allow_location">Allow location</string>
+    <string name="sun_finder_enable_location">Enable location</string>
+    <string name="sun_finder_retry">Try again</string>
+    <string name="sun_finder_sky_description">Virtual view of celestial positions</string>
+    <string name="sun_weather_clear">Clear</string>
+    <string name="sun_weather_partial">Partly cloudy</string>
+    <string name="sun_weather_cloudy">Cloudy</string>
+    <string name="sun_weather_fog">Fog</string>
+    <string name="sun_weather_drizzle">Drizzle</string>
+    <string name="sun_weather_rain">Rain</string>
+    <string name="sun_weather_snow">Snow</string>
+    <string name="sun_weather_storm">Thunderstorm</string>
+    <string name="sun_weather_unavailable">Weather unavailable</string>
+    <string name="sun_weather_loading">Updating weather…</string>
+    <string name="sun_weather_estimate">Estimated weather: %1$s</string>
+    <string name="sun_weather_privacy">Online weather uses an approximate location.</string>
+</resources>

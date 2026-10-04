@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="moon_phase_new">Nieuwe maan</string>
+    <string name="moon_phase_waxing_crescent">Wassende sikkel</string>
+    <string name="moon_phase_first_quarter">Eerste kwartier</string>
+    <string name="moon_phase_waxing_gibbous">Wassende bolle maan</string>
+    <string name="moon_phase_full">Volle maan</string>
+    <string name="moon_phase_waning_gibbous">Afnemende bolle maan</string>
+    <string name="moon_phase_last_quarter">Laatste kwartier</string>
+    <string name="moon_phase_waning_crescent">Afnemende sikkel</string>
+    <string name="moon_phase_description">%1$s · %2$s%% verlicht</string>
+    <string name="celestial_speed_loading">Snelheid wordt bijgewerkt…</string>
+    <string name="celestial_speed_unavailable">Snelheid niet beschikbaar</string>
+</resources>

@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="celestial_sun">Słońce</string>
+    <string name="celestial_moon">Księżyc</string>
+    <string name="celestial_mercury">Merkury</string>
+    <string name="celestial_venus">Wenus</string>
+    <string name="celestial_mars">Mars</string>
+    <string name="celestial_jupiter">Jowisz</string>
+    <string name="celestial_saturn">Saturn</string>
+    <string name="celestial_uranus">Uran</string>
+    <string name="celestial_neptune">Neptun</string>
+    <string name="celestial_pluto">Pluton</string>
+    <string name="celestial_sedna">Sedna</string>
+    <string name="celestial_iss">ISS</string>
+    <string name="celestial_voyager_1">Voyager 1</string>
+    <string name="celestial_voyager_2">Voyager 2</string>
+    <string name="celestial_select">Wybierz ciało niebieskie</string>
+    <string name="celestial_daily_path">Tor dzienny</string>
+    <string name="celestial_iss_path">Orbita ISS</string>
+    <string name="celestial_rise">Wschód</string>
+    <string name="celestial_set">Zachód</string>
+    <string name="celestial_azimuth">Azymut (%1$s): %2$s</string>
+    <string name="celestial_elevation">Wysokość (%1$s): %2$s</string>
+    <string name="celestial_below">%1$s poniżej horyzontu</string>
+    <string name="celestial_loading">Aktualizacja danych orbitalnych…</string>
+    <string name="celestial_unavailable">Dane dla %1$s są niedostępne. Do ich aktualizacji potrzebne jest połączenie z Internetem.</string>
+    <string name="celestial_iss_old">Dane orbitalne ISS mają ponad 24 godziny: dokładność może być mniejsza.</string>
+    <string name="celestial_iss_note">Pełny obieg wokół bieżącej godziny, także pod horyzontem, z 24 równomiernymi punktami oraz wschodem, kulminacją i zachodem. Szczegóły dotyczą bieżącego lub następnego przelotu w ciągu 24 godzin; widoczność nie jest gwarantowana.</string>
+    <string name="celestial_model_note">Obliczone pozycje i odległości; wskazania zależą od dokładności kompasu. ISS wymaga aktualnych danych orbitalnych. Sedna i Voyager korzystają z przewidywanych trajektorii NASA/JPL, a nie z telemetrii na żywo.</string>
+    <string name="celestial_weather_mainly_clear">Przeważnie bezchmurnie</string>
+    <string name="celestial_speed_earth_orbit">Prędkość orbitalna (Ziemia): %1$s km/s</string>
+    <string name="celestial_speed_orbit_earth">Prędkość orbitalna (Ziemia): %1$s km/s</string>
+    <string name="celestial_speed_orbit_sun">Prędkość orbitalna (Słońce): %1$s km/s</string>
+    <string name="celestial_speed_outward_sun">Prędkość oddalania (Słońce): %1$s km/s</string>
+    <string name="celestial_speed_note">Po wybraniu Słońca wyświetlana jest prędkość orbitalna Ziemi wokół Słońca. Inne planety i Sedna krążą wokół Słońca; Księżyc i ISS wokół Ziemi. Dla Voyager wyświetlana jest prędkość oddalania od Słońca, nie od Ziemi.</string>
+    <string name="celestial_pass">Przelot</string>
+    <string name="celestial_orbit">Orbita</string>
+    <string name="celestial_iss_no_pass">Brak dostępnego przelotu w ciągu 24 godzin na podstawie aktualnych danych orbitalnych.</string>
+</resources>

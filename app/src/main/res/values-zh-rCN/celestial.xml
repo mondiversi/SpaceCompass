@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="celestial_sun">太阳</string>
+    <string name="celestial_moon">月球</string>
+    <string name="celestial_mercury">水星</string>
+    <string name="celestial_venus">金星</string>
+    <string name="celestial_mars">火星</string>
+    <string name="celestial_jupiter">木星</string>
+    <string name="celestial_saturn">土星</string>
+    <string name="celestial_uranus">天王星</string>
+    <string name="celestial_neptune">海王星</string>
+    <string name="celestial_pluto">冥王星</string>
+    <string name="celestial_sedna">塞德娜</string>
+    <string name="celestial_iss">国际空间站</string>
+    <string name="celestial_voyager_1">Voyager 1</string>
+    <string name="celestial_voyager_2">Voyager 2</string>
+    <string name="celestial_select">选择天体</string>
+    <string name="celestial_daily_path">每日轨迹</string>
+    <string name="celestial_iss_path">空间站轨道</string>
+    <string name="celestial_rise">升起</string>
+    <string name="celestial_set">落下</string>
+    <string name="celestial_azimuth">方位角 (%1$s)：%2$s</string>
+    <string name="celestial_elevation">高度角 (%1$s)：%2$s</string>
+    <string name="celestial_below">%1$s 在地平线下</string>
+    <string name="celestial_loading">正在更新轨道数据…</string>
+    <string name="celestial_unavailable">%1$s的数据不可用。更新需要互联网连接。</string>
+    <string name="celestial_iss_old">空间站轨道数据已超过24小时，精度可能降低。</string>
+    <string name="celestial_iss_note">显示当前时刻前后的完整一圈，包括地平线以下部分，含24个等间隔点以及升起、最高点和落下。过境详情对应当前或24小时内的下一次过境；不保证能够看见。</string>
+    <string name="celestial_model_note">位置和距离为计算值，指向取决于罗盘精度。空间站需要最新轨道数据。塞德娜和旅行者使用NASA/JPL预测轨迹，并非实时遥测。</string>
+    <string name="celestial_weather_mainly_clear">大致晴朗</string>
+    <string name="celestial_speed_earth_orbit">轨道速度（地球）: %1$s km/s</string>
+    <string name="celestial_speed_orbit_earth">轨道速度（地球）: %1$s km/s</string>
+    <string name="celestial_speed_orbit_sun">轨道速度（太阳）: %1$s km/s</string>
+    <string name="celestial_speed_outward_sun">远离速度 (太阳): %1$s km/s</string>
+    <string name="celestial_speed_note">选择太阳时显示地球绕太阳的公转速度。其他行星和塞德娜以太阳为参考，月球和国际空间站以地球为参考。旅行者号显示与太阳距离增加的速度，而不是与地球距离增加的速度。</string>
+    <string name="celestial_pass">过境</string>
+    <string name="celestial_orbit">轨道</string>
+    <string name="celestial_iss_no_pass">根据当前轨道数据，无法提供24小时内的过境信息。</string>
+</resources>

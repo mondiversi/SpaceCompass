@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="celestial_view_open" formatted="false">Tazama</string>
+    <string name="celestial_view_current" formatted="false">Mwonekano wa sasa</string>
+    <string name="celestial_view_rotation" formatted="false">Mzunguko</string>
+    <string name="celestial_view_resume" formatted="false">Endelea kuzunguka</string>
+    <string name="celestial_view_diameter" formatted="false">Kipenyo</string>
+    <string name="celestial_view_antenna" formatted="false">Kipenyo cha antena</string>
+    <string name="celestial_view_size" formatted="false">Ukubwa wa juu</string>
+    <string name="celestial_view_mass" formatted="false">Masi</string>
+    <string name="celestial_view_gravity" formatted="false">Mvuto kwenye uso</string>
+    <string name="celestial_view_density" formatted="false">Msongamano</string>
+    <string name="celestial_view_parent" formatted="false">Mwili mkuu</string>
+    <string name="celestial_view_earth" formatted="false">Dunia</string>
+    <string name="celestial_view_rotation_period" formatted="false">Kipindi cha kujizungusha</string>
+    <string name="celestial_view_retrograde" formatted="false">Mzunguko wa kinyume</string>
+    <string name="celestial_view_yes" formatted="false">Ndiyo</string>
+    <string name="celestial_view_no" formatted="false">Hapana</string>
+    <string name="celestial_view_revolution_period" formatted="false">Kipindi cha obiti</string>
+    <string name="celestial_view_min_distance" formatted="false">Umbali wa chini kutoka mwili mkuu</string>
+    <string name="celestial_view_max_distance" formatted="false">Umbali wa juu kutoka mwili mkuu</string>
+    <string name="celestial_view_observer_distance" formatted="false">Umbali kutoka mtazamaji</string>
+    <string name="celestial_view_phase" formatted="false">Awamu ya Mwezi</string>
+    <string name="celestial_view_illuminated" formatted="false">Diski iliyoangazwa</string>
+    <string name="celestial_view_information" formatted="false">Maelezo</string>
+    <string name="celestial_view_rotation_hint" formatted="false">Mzunguko wa mfano ulioharakishwa. Buruta kuchunguza; gusa mara mbili kuendelea.</string>
+    <string name="celestial_view_craft_note" formatted="false">Mfano wa muundo: mwelekeo wa sasa wa chombo haupatikani.</string>
+    <string name="celestial_view_sedna_note" formatted="false">Uso na mwelekeo havijulikani: mfano wa kuonyesha.</string>
+    <string name="celestial_view_map_note" formatted="false">Mwonekano ulioundwa kwa awamu na mwelekeo uliohesabiwa. Ramani tuli, si picha za moja kwa moja.</string>
+    <string name="celestial_view_location_needed" formatted="false">Eneo linahitajika kwa mwonekano wa sasa. Mzunguko unapatikana bila GPS.</string>
+    <string name="celestial_view_facts_note" formatted="false">Thamani za makadirio. Mvuto wa majitu ya gesi kwa bar 1; umbali wa obiti kutoka mwili mkuu.</string>
+    <string name="celestial_view_sun_note" formatted="false">Mzunguko wa Jua hubadilika kwa latitudo; kipindi ni thamani ya marejeo.</string>
+    <string name="celestial_view_sedna_facts" formatted="false">Kipenyo ni makadirio. Mzunguko na vigezo vya obiti vina kutokuwa na uhakika.</string>
+    <string name="celestial_view_iss_note" formatted="false">Vipimo na masi ya ISS hubadilika kwa mpangilio na vyombo vinavyotembelea.</string>
+    <string name="celestial_view_render_failed" formatted="false">Imeshindikana kuonyesha modeli.</string>
+    <string name="celestial_view_zoom_in" formatted="false">Kuza</string>
+    <string name="celestial_view_zoom_out" formatted="false">Punguza</string>
+    <string name="celestial_view_reset_zoom" formatted="false">Weka upya ukuzaji</string>
+    <string name="celestial_view_zoom_level">Ukuzaji: %1$d%%</string>
+</resources>

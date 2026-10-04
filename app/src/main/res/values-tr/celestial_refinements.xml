@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="celestial_polaris" formatted="false">Kutup Yıldızı</string>
+    <string name="celestial_point_azimuth">Azimut: %1$s</string>
+    <string name="celestial_point_elevation">Yükseklik: %1$s</string>
+    <string name="celestial_polaris_model" formatted="false">Yıldızın temsili görüntüsü; yüzeyi çözülmüş bir fotoğraf değildir. Eksen ve dönüş bilinmiyor.</string>
+    <string name="celestial_polaris_facts" formatted="false">Görünen günlük hareket, Dünya çevresindeki bir yörüngeden değil Dünya’nın dönüşünden kaynaklanır. Çap ve kütle Polaris Aa’ya aittir (2024); uzaklık yaklaşık 447 ışık yılıdır. Bilinmeyen değerler — ile gösterilir.</string>
+    <string name="celestial_free_rotation_hint" formatted="false">Hızlandırılmış dönüş. Serbestçe sürükleyin; özgün ekseni geri yüklemek için dokunun.</string>
+    <string name="celestial_polaris_derived" formatted="false">Ortalama yüzey çekimi ve yoğunluk, kütle ve ortalama yarıçaptan tahmin edilir. Kutup Yıldızı titreşen bir yıldızdır; bunlar yaklaşık referans değerleridir, canlı ölçümler değildir.</string>
+</resources>

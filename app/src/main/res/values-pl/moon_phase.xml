@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="moon_phase_new">Nów</string>
+    <string name="moon_phase_waxing_crescent">Przybywający sierp</string>
+    <string name="moon_phase_first_quarter">Pierwsza kwadra</string>
+    <string name="moon_phase_waxing_gibbous">Przybywający Księżyc garbaty</string>
+    <string name="moon_phase_full">Pełnia</string>
+    <string name="moon_phase_waning_gibbous">Ubywający Księżyc garbaty</string>
+    <string name="moon_phase_last_quarter">Ostatnia kwadra</string>
+    <string name="moon_phase_waning_crescent">Ubywający sierp</string>
+    <string name="moon_phase_description">%1$s · %2$s%% oświetlenia</string>
+    <string name="celestial_speed_loading">Aktualizowanie prędkości…</string>
+    <string name="celestial_speed_unavailable">Prędkość niedostępna</string>
+</resources>

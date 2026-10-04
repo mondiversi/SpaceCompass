@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="celestial_temperature" formatted="false">درجة الحرارة</string>
+    <string name="celestial_temperature_surface_mean" formatted="false">متوسط حرارة السطح</string>
+    <string name="celestial_temperature_day_maximum" formatted="false">السطح المضاء (الحد الأقصى)</string>
+    <string name="celestial_temperature_night_minimum" formatted="false">السطح الليلي (الحد الأدنى)</string>
+    <string name="celestial_temperature_surface_range" formatted="false">نطاق حرارة السطح</string>
+    <string name="celestial_temperature_atmosphere" formatted="false">حرارة الغلاف الجوي (1 بار)</string>
+    <string name="celestial_temperature_photosphere" formatted="false">حرارة الغلاف الضوئي</string>
+    <string name="celestial_temperature_effective" formatted="false">متوسط الحرارة الفعالة</string>
+    <string name="celestial_temperature_note" formatted="false">درجات حرارة مرجعية وليست بيانات مباشرة. قيم النهار والليل حدود محلية وليست متوسطات لنصف الكرة. تختلف القيم حسب المكان والوقت.</string>
+</resources>

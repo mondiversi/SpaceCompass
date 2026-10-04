@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="celestial_table_distance">Απόσταση: %1$s</string>
+    <string name="celestial_table_speed">Ταχύτητα: %1$s</string>
+    <string name="celestial_environment_info_title">Προσανατολισμός και περιβάλλον</string>
+    <string name="celestial_environment_info_action">Πληροφορίες προσανατολισμού και περιβάλλοντος</string>
+    <string name="celestial_environment_orientation_note">Η κατεύθυνση και η κλίση περιγράφουν πού δείχνει το τηλέφωνο. Μαγνητικά αντικείμενα μπορούν να επηρεάσουν την πυξίδα. Η ακρίβεια GPS δείχνει την εκτιμώμενη αβεβαιότητα της θέσης.</string>
+    <string name="celestial_altitude">Υψόμετρο: %1$s</string>
+    <string name="celestial_details_compact">Λεπτομέρειες</string>
+    <string name="celestial_gps_coordinates">Συντεταγμένες GPS: %1$s</string>
+    <string name="celestial_gps_coordinate_accuracy">Ακρίβεια συντεταγμένων: ±%1$s</string>
+</resources>

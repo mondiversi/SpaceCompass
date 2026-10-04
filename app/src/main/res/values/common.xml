@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+<string name="select_all">SELECT ALL</string>
+<string name="close">CLOSE</string>
+<string name="navigate_back">Back</string>
+</resources>

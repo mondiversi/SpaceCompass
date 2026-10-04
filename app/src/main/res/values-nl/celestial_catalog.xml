@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="celestial_io">Io</string>
+    <string name="celestial_europa">Europa</string>
+    <string name="celestial_catalog_distance">Afstand tot de zon</string>
+    <string name="celestial_speed_orbit_jupiter">Omloopsnelheid (Jupiter): %1$s km/s</string>
+</resources>

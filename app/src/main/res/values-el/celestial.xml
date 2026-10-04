@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="celestial_sun">Ήλιος</string>
+    <string name="celestial_moon">Σελήνη</string>
+    <string name="celestial_mercury">Ερμής</string>
+    <string name="celestial_venus">Αφροδίτη</string>
+    <string name="celestial_mars">Άρης</string>
+    <string name="celestial_jupiter">Δίας</string>
+    <string name="celestial_saturn">Κρόνος</string>
+    <string name="celestial_uranus">Ουρανός</string>
+    <string name="celestial_neptune">Ποσειδώνας</string>
+    <string name="celestial_pluto">Πλούτωνας</string>
+    <string name="celestial_sedna">Σέντνα</string>
+    <string name="celestial_iss">ISS</string>
+    <string name="celestial_voyager_1">Voyager 1</string>
+    <string name="celestial_voyager_2">Voyager 2</string>
+    <string name="celestial_select">Επιλογή ουράνιου σώματος</string>
+    <string name="celestial_daily_path">Ημερήσια τροχιά</string>
+    <string name="celestial_iss_path">Τροχιά ISS</string>
+    <string name="celestial_rise">Ανατολή</string>
+    <string name="celestial_set">Δύση</string>
+    <string name="celestial_azimuth">Αζιμούθιο (%1$s): %2$s</string>
+    <string name="celestial_elevation">Ύψος (%1$s): %2$s</string>
+    <string name="celestial_below">%1$s κάτω από τον ορίζοντα</string>
+    <string name="celestial_loading">Ενημέρωση τροχιακών δεδομένων…</string>
+    <string name="celestial_unavailable">Δεν υπάρχουν δεδομένα για %1$s. Απαιτείται Internet για την ενημέρωσή τους.</string>
+    <string name="celestial_iss_old">Τα δεδομένα ISS είναι άνω των 24 ωρών: πιθανή μειωμένη ακρίβεια.</string>
+    <string name="celestial_iss_note">Μία πλήρης περιφορά γύρω από την τρέχουσα ώρα, και κάτω από τον ορίζοντα, με 24 ισαπέχοντα σημεία και ανατολή, μεσουράνηση και δύση. Τα στοιχεία διέλευσης αφορούν την τρέχουσα ή επόμενη διέλευση εντός 24 ωρών· η ορατότητα δεν είναι εγγυημένη.</string>
+    <string name="celestial_model_note">Υπολογισμένες θέσεις και αποστάσεις· η στόχευση εξαρτάται από την ακρίβεια της πυξίδας. Ο ISS χρειάζεται πρόσφατα τροχιακά δεδομένα. Σέντνα και Voyager χρησιμοποιούν προβλεπόμενες τροχιές NASA/JPL, όχι ζωντανή τηλεμετρία.</string>
+    <string name="celestial_weather_mainly_clear">Κυρίως αίθριος</string>
+    <string name="celestial_speed_earth_orbit">Τροχιακή ταχύτητα (Γη): %1$s km/s</string>
+    <string name="celestial_speed_orbit_earth">Τροχιακή ταχύτητα (Γη): %1$s km/s</string>
+    <string name="celestial_speed_orbit_sun">Τροχιακή ταχύτητα (Ήλιος): %1$s km/s</string>
+    <string name="celestial_speed_outward_sun">Ταχύτητα απομάκρυνσης (Ήλιος): %1$s km/s</string>
+    <string name="celestial_speed_note">Η επιλογή του Ήλιου δείχνει την τροχιακή ταχύτητα της Γης γύρω από τον Ήλιο. Οι άλλοι πλανήτες και η Σέντνα περιφέρονται γύρω από τον Ήλιο· η Σελήνη και ο ISS γύρω από τη Γη. Για τα Voyager εμφανίζεται η ταχύτητα απομάκρυνσης από τον Ήλιο, όχι από τη Γη.</string>
+    <string name="celestial_pass">Διέλευση</string>
+    <string name="celestial_orbit">Τροχιά</string>
+    <string name="celestial_iss_no_pass">Δεν υπάρχει διαθέσιμη διέλευση εντός 24 ωρών με τα τρέχοντα τροχιακά δεδομένα.</string>
+</resources>

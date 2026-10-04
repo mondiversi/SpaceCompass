@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="celestial_view_open" formatted="false">Görüntüle</string>
+    <string name="celestial_view_current" formatted="false">Güncel görünüm</string>
+    <string name="celestial_view_rotation" formatted="false">Dönüş</string>
+    <string name="celestial_view_resume" formatted="false">Dönüşü sürdür</string>
+    <string name="celestial_view_diameter" formatted="false">Çap</string>
+    <string name="celestial_view_antenna" formatted="false">Anten çapı</string>
+    <string name="celestial_view_size" formatted="false">En büyük boyut</string>
+    <string name="celestial_view_mass" formatted="false">Kütle</string>
+    <string name="celestial_view_gravity" formatted="false">Yüzey yerçekimi</string>
+    <string name="celestial_view_density" formatted="false">Yoğunluk</string>
+    <string name="celestial_view_parent" formatted="false">Ana cisim</string>
+    <string name="celestial_view_earth" formatted="false">Dünya</string>
+    <string name="celestial_view_rotation_period" formatted="false">Dönüş süresi</string>
+    <string name="celestial_view_retrograde" formatted="false">Ters yönde dönüş</string>
+    <string name="celestial_view_yes" formatted="false">Evet</string>
+    <string name="celestial_view_no" formatted="false">Hayır</string>
+    <string name="celestial_view_revolution_period" formatted="false">Yörünge süresi</string>
+    <string name="celestial_view_min_distance" formatted="false">Ana cisme en yakın mesafe</string>
+    <string name="celestial_view_max_distance" formatted="false">Ana cisme en uzak mesafe</string>
+    <string name="celestial_view_observer_distance" formatted="false">Gözlemciye uzaklık</string>
+    <string name="celestial_view_phase" formatted="false">Ay evresi</string>
+    <string name="celestial_view_illuminated" formatted="false">Aydınlık disk</string>
+    <string name="celestial_view_information" formatted="false">Bilgiler</string>
+    <string name="celestial_view_rotation_hint" formatted="false">Hızlandırılmış gösterim. Keşfetmek için sürükleyin; dönüşü sürdürmek için çift dokunun.</string>
+    <string name="celestial_view_craft_note" formatted="false">Temsili yapısal model: aracın güncel yönelimi mevcut değil.</string>
+    <string name="celestial_view_sedna_note" formatted="false">Yüzey ve yönelim bilinmiyor: temsili model.</string>
+    <string name="celestial_view_map_note" formatted="false">Hesaplanan evre ve yönelimle oluşturulan görünüm. Sabit haritalar, canlı görüntü değil.</string>
+    <string name="celestial_view_location_needed" formatted="false">Güncel görünüm için konum gerekir. Dönüş GPS olmadan kullanılabilir.</string>
+    <string name="celestial_view_facts_note" formatted="false">Yaklaşık değerler. Gaz devlerinin yerçekimi 1 bar düzeyinde; yörünge mesafeleri ana cisme göredir.</string>
+    <string name="celestial_view_sun_note" formatted="false">Güneşin dönüşü enleme göre değişir; süre bir referans değeridir.</string>
+    <string name="celestial_view_sedna_facts" formatted="false">Çap tahminidir. Dönüş ve yörünge öğeleri belirsizlik içerir.</string>
+    <string name="celestial_view_iss_note" formatted="false">ISS boyutları ve kütlesi yapılandırma ve ziyaret eden araçlara göre değişir.</string>
+    <string name="celestial_view_render_failed" formatted="false">Model görüntülenemiyor.</string>
+    <string name="celestial_view_zoom_in" formatted="false">Yakınlaştır</string>
+    <string name="celestial_view_zoom_out" formatted="false">Uzaklaştır</string>
+    <string name="celestial_view_reset_zoom" formatted="false">Yakınlaştırmayı sıfırla</string>
+    <string name="celestial_view_zoom_level">Yakınlaştırma: %1$d%%</string>
+</resources>

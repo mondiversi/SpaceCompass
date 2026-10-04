@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="celestial_polaris" formatted="false">北极星</string>
+    <string name="celestial_point_azimuth">方位角：%1$s</string>
+    <string name="celestial_point_elevation">高度：%1$s</string>
+    <string name="celestial_polaris_model" formatted="false">恒星示意图，并非可分辨表面的照片。自转轴与自转周期未知。</string>
+    <string name="celestial_polaris_facts" formatted="false">视日周运动来自地球自转，而非绕地球的轨道。直径和质量为Polaris Aa（2024）的数据；距离约447光年。未知参数显示为 —。</string>
+    <string name="celestial_free_rotation_hint" formatted="false">加速演示自转。自由拖动；轻触即可恢复原始轴。</string>
+    <string name="celestial_polaris_derived" formatted="false">平均表面重力和平均密度由质量及平均半径估算。北极星是一颗脉动恒星，这些数值是参考近似值，并非实时测量值。</string>
+</resources>

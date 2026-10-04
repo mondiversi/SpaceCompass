@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="celestial_sun">Sole</string>
+    <string name="celestial_moon">Luna</string>
+    <string name="celestial_mercury">Mercurio</string>
+    <string name="celestial_venus">Venere</string>
+    <string name="celestial_mars">Marte</string>
+    <string name="celestial_jupiter">Giove</string>
+    <string name="celestial_saturn">Saturno</string>
+    <string name="celestial_uranus">Urano</string>
+    <string name="celestial_neptune">Nettuno</string>
+    <string name="celestial_pluto">Plutone</string>
+    <string name="celestial_sedna">Sedna</string>
+    <string name="celestial_iss">ISS</string>
+    <string name="celestial_voyager_1">Voyager 1</string>
+    <string name="celestial_voyager_2">Voyager 2</string>
+    <string name="celestial_select">Seleziona oggetto celeste</string>
+    <string name="celestial_daily_path">Percorso giornaliero</string>
+    <string name="celestial_iss_path">Orbita ISS</string>
+    <string name="celestial_rise">Sorge</string>
+    <string name="celestial_set">Tramonta</string>
+    <string name="celestial_azimuth">Azimut (%1$s): %2$s</string>
+    <string name="celestial_elevation">Altezza (%1$s): %2$s</string>
+    <string name="celestial_below">%1$s sotto l’orizzonte</string>
+    <string name="celestial_loading">Aggiornamento dati orbitali…</string>
+    <string name="celestial_unavailable">Dati di %1$s non disponibili. Per aggiornarli è necessaria una connessione Internet.</string>
+    <string name="celestial_iss_old">Dati orbitali ISS di oltre 24 ore fa: la precisione può essere ridotta.</string>
+    <string name="celestial_iss_note">Un giro completo attorno all’ora attuale, anche sotto l’orizzonte, con 24 punti regolari più sorgere, culmine e tramonto. I dettagli del passaggio si riferiscono a quello attuale o al prossimo entro 24 ore; la visibilità non è garantita.</string>
+    <string name="celestial_model_note">Posizioni e distanze calcolate; il puntamento dipende dalla precisione della bussola. L’ISS richiede dati orbitali recenti. Sedna e Voyager usano traiettorie previste NASA/JPL, non telemetria in tempo reale.</string>
+    <string name="celestial_weather_mainly_clear">Prevalentemente sereno</string>
+    <string name="celestial_speed_earth_orbit">Velocità orbitale (Terra): %1$s km/s</string>
+    <string name="celestial_speed_orbit_earth">Velocità orbitale (Terra): %1$s km/s</string>
+    <string name="celestial_speed_orbit_sun">Velocità orbitale (Sole): %1$s km/s</string>
+    <string name="celestial_speed_outward_sun">Allontanamento (Sole): %1$s km/s</string>
+    <string name="celestial_speed_note">Selezionando il Sole si mostra la velocità orbitale della Terra attorno al Sole. Per gli altri pianeti e Sedna il riferimento è il Sole; per Luna e ISS è la Terra. Per le Voyager si mostra la velocità di allontanamento dal Sole, non dalla Terra.</string>
+    <string name="celestial_pass">Passaggio</string>
+    <string name="celestial_orbit">Orbita</string>
+    <string name="celestial_iss_no_pass">Nessun passaggio disponibile entro 24 ore con i dati orbitali attuali.</string>
+</resources>

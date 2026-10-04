@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="sun_path_title">Суточная траектория солнца</string>
+    <string name="sun_path_sunrise">Восход</string>
+    <string name="sun_path_culmination">Кульминация</string>
+    <string name="sun_path_sunset">Закат</string>
+    <string name="sun_path_show">Показать траекторию</string>
+    <string name="sun_path_note">Время рассчитано для открытого горизонта. Рельеф и погода могут влиять на видимость.</string>
+    <string name="sun_path_previous">Предыдущая точка</string>
+    <string name="sun_path_next">Следующая точка</string>
+    <string name="sun_path_minimum">Минимум</string>
+</resources>

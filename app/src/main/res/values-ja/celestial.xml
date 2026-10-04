@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="celestial_sun">太陽</string>
+    <string name="celestial_moon">月</string>
+    <string name="celestial_mercury">水星</string>
+    <string name="celestial_venus">金星</string>
+    <string name="celestial_mars">火星</string>
+    <string name="celestial_jupiter">木星</string>
+    <string name="celestial_saturn">土星</string>
+    <string name="celestial_uranus">天王星</string>
+    <string name="celestial_neptune">海王星</string>
+    <string name="celestial_pluto">冥王星</string>
+    <string name="celestial_sedna">セドナ</string>
+    <string name="celestial_iss">ISS</string>
+    <string name="celestial_voyager_1">Voyager 1</string>
+    <string name="celestial_voyager_2">Voyager 2</string>
+    <string name="celestial_select">天体を選択</string>
+    <string name="celestial_daily_path">一日の軌跡</string>
+    <string name="celestial_iss_path">ISSの軌道</string>
+    <string name="celestial_rise">出</string>
+    <string name="celestial_set">入り</string>
+    <string name="celestial_azimuth">方位角 (%1$s): %2$s</string>
+    <string name="celestial_elevation">高度 (%1$s): %2$s</string>
+    <string name="celestial_below">%1$s は地平線の下です</string>
+    <string name="celestial_loading">軌道データを更新中…</string>
+    <string name="celestial_unavailable">%1$sのデータがありません。更新にはインターネット接続が必要です。</string>
+    <string name="celestial_iss_old">ISSの軌道データは24時間以上前のものです。精度が低下する可能性があります。</string>
+    <string name="celestial_iss_note">現在時刻を中心とした1周分を、地平線の下も含めて表示します。24個の等間隔の点に出現・最高高度・沈下を加えます。通過情報は現在または24時間以内の次の通過を示し、見えることを保証するものではありません。</string>
+    <string name="celestial_model_note">位置と距離は計算値で、方向はコンパスの精度に依存します。ISSには新しい軌道データが必要です。セドナとボイジャーはNASA/JPLの予測軌道を使用し、リアルタイムのテレメトリーではありません。</string>
+    <string name="celestial_weather_mainly_clear">ほぼ快晴</string>
+    <string name="celestial_speed_earth_orbit">軌道速度（地球）: %1$s km/s</string>
+    <string name="celestial_speed_orbit_earth">軌道速度（地球）: %1$s km/s</string>
+    <string name="celestial_speed_orbit_sun">軌道速度（太陽）: %1$s km/s</string>
+    <string name="celestial_speed_outward_sun">遠ざかる速度 (太陽): %1$s km/s</string>
+    <string name="celestial_speed_note">太陽を選択すると地球が太陽を公転する速度を表示します。他の惑星とセドナは太陽、月とISSは地球を基準とした軌道速度です。ボイジャーは地球からではなく、太陽からの距離が増える速度を表示します。</string>
+    <string name="celestial_pass">通過</string>
+    <string name="celestial_orbit">軌道</string>
+    <string name="celestial_iss_no_pass">現在の軌道データでは24時間以内の通過情報を取得できません。</string>
+</resources>

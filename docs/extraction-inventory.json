@@ -1,0 +1,1987 @@
+[
+  {
+    "source": "app/src/main/java/me/mondiversi/uvir/UvirCelestialAltitudeFormatting.kt",
+    "target": "app/src/main/java/me/mondiversi/planetcompass/PlanetCompassCelestialAltitudeFormatting.kt",
+    "sourceSha256": "B81FD3AD2A459D0F11B32E74AC2DC5BE4B2C9A4E028EAD9B902A98F09482F066"
+  },
+  {
+    "source": "app/src/main/java/me/mondiversi/uvir/UvirCelestialBodyDataIsland.kt",
+    "target": "app/src/main/java/me/mondiversi/planetcompass/PlanetCompassCelestialBodyDataIsland.kt",
+    "sourceSha256": "3BD6FB81691F2E64564C4278BBC4A84B67A2D56C354416C6A2EAF947DF9A4771"
+  },
+  {
+    "source": "app/src/main/java/me/mondiversi/uvir/UvirCelestialCatalog.kt",
+    "target": "app/src/main/java/me/mondiversi/planetcompass/PlanetCompassCelestialCatalog.kt",
+    "sourceSha256": "D48DE1B804020E13A640E2C7FD0CD14AA45378DEB6A8F840CF987AD4569B53BA"
+  },
+  {
+    "source": "app/src/main/java/me/mondiversi/uvir/UvirCelestialCompactReadouts.kt",
+    "target": "app/src/main/java/me/mondiversi/planetcompass/PlanetCompassCelestialCompactReadouts.kt",
+    "sourceSha256": "1B2E369815B96EDB37D89349F39C964BBFE4FA6CFB051EAA6810837E6A6E7AB1"
+  },
+  {
+    "source": "app/src/main/java/me/mondiversi/uvir/UvirCelestialControls.kt",
+    "target": "app/src/main/java/me/mondiversi/planetcompass/PlanetCompassCelestialControls.kt",
+    "sourceSha256": "8B2DF40A0C36A92AB1A600C94D385CB6F7FB1232117E4842BC552EC88DA58DDD"
+  },
+  {
+    "source": "app/src/main/java/me/mondiversi/uvir/UvirCelestialCraftModel.kt",
+    "target": "app/src/main/java/me/mondiversi/planetcompass/PlanetCompassCelestialCraftModel.kt",
+    "sourceSha256": "0B09A96B5FA1CD819CF97C88E551F0339FD2943BC08454A88418041241F27DAF"
+  },
+  {
+    "source": "app/src/main/java/me/mondiversi/uvir/UvirCelestialFacts.kt",
+    "target": "app/src/main/java/me/mondiversi/planetcompass/PlanetCompassCelestialFacts.kt",
+    "sourceSha256": "BF02A20D438FC7C7A5EEB0DBB38ECDFFEB645B08B03D0E1BE1EDAE63C8A3AD26"
+  },
+  {
+    "source": "app/src/main/java/me/mondiversi/uvir/UvirCelestialGlRenderer.kt",
+    "target": "app/src/main/java/me/mondiversi/planetcompass/PlanetCompassCelestialGlRenderer.kt",
+    "sourceSha256": "955E1BAEB17996439C1B7FE89C658E336DE9AF36E8F6EE46339686AF93439BCA"
+  },
+  {
+    "source": "app/src/main/java/me/mondiversi/uvir/UvirCelestialGpsFormatting.kt",
+    "target": "app/src/main/java/me/mondiversi/planetcompass/PlanetCompassCelestialGpsFormatting.kt",
+    "sourceSha256": "92E13BF5F4F4BD0E6D261C9D51713982EF4C7C9BBA6060811227A9DBC4A771AC"
+  },
+  {
+    "source": "app/src/main/java/me/mondiversi/uvir/UvirCelestialIconControl.kt",
+    "target": "app/src/main/java/me/mondiversi/planetcompass/PlanetCompassCelestialIconControl.kt",
+    "sourceSha256": "1ABD0CD55F99BF63293AD1EC9F1C0DFFF9A64992CF34F224AFF2C2449A86CB8C"
+  },
+  {
+    "source": "app/src/main/java/me/mondiversi/uvir/UvirCelestialLiveMarker.kt",
+    "target": "app/src/main/java/me/mondiversi/planetcompass/PlanetCompassCelestialLiveMarker.kt",
+    "sourceSha256": "CE761CC1B7ADF77A7FCB16819C6E2B99755F833E970ACBEAC6FE65E43B5F8F51"
+  },
+  {
+    "source": "app/src/main/java/me/mondiversi/uvir/UvirCelestialModel.kt",
+    "target": "app/src/main/java/me/mondiversi/planetcompass/PlanetCompassCelestialModel.kt",
+    "sourceSha256": "E844BD3136624933B57804D369B741BE77193E93A56D7B4E84A7084439247BB8"
+  },
+  {
+    "source": "app/src/main/java/me/mondiversi/uvir/UvirCelestialModelViewport.kt",
+    "target": "app/src/main/java/me/mondiversi/planetcompass/PlanetCompassCelestialModelViewport.kt",
+    "sourceSha256": "0712C3EFFCC81055F67282BB9CA2FCBA624CDE867C39B3FB86358CCCA87A0AE6"
+  },
+  {
+    "source": "app/src/main/java/me/mondiversi/uvir/UvirCelestialOffscreenGeometry.kt",
+    "target": "app/src/main/java/me/mondiversi/planetcompass/PlanetCompassCelestialOffscreenGeometry.kt",
+    "sourceSha256": "0453C17742688E2E07311D27BD55A9EFE1C8CED05EB6B02B0A0614AF902C7C59"
+  },
+  {
+    "source": "app/src/main/java/me/mondiversi/uvir/UvirCelestialOffscreenMarker.kt",
+    "target": "app/src/main/java/me/mondiversi/planetcompass/PlanetCompassCelestialOffscreenMarker.kt",
+    "sourceSha256": "52FAAADD97793F74DF203DA64F4824B793B794AF8CD33A83A3461AD29E2D1349"
+  },
+  {
+    "source": "app/src/main/java/me/mondiversi/uvir/UvirCelestialOverlays.kt",
+    "target": "app/src/main/java/me/mondiversi/planetcompass/PlanetCompassCelestialOverlays.kt",
+    "sourceSha256": "CB10F5E43BEC43EB7F2A828B3E4FEF8D43B90425051317BF68DCB345E910FBC7"
+  },
+  {
+    "source": "app/src/main/java/me/mondiversi/uvir/UvirCelestialPath.kt",
+    "target": "app/src/main/java/me/mondiversi/planetcompass/PlanetCompassCelestialPath.kt",
+    "sourceSha256": "66BE0D14134A075DD2B845FF4524FADA1BBDD25A983F5A66F270F9479A14EFE6"
+  },
+  {
+    "source": "app/src/main/java/me/mondiversi/uvir/UvirCelestialPathExtrema.kt",
+    "target": "app/src/main/java/me/mondiversi/planetcompass/PlanetCompassCelestialPathExtrema.kt",
+    "sourceSha256": "FC95D3DA6C107159841ADA7F34E406DBEFF215EFA8363778298E19ACE6EA7017"
+  },
+  {
+    "source": "app/src/main/java/me/mondiversi/uvir/UvirCelestialPathTint.kt",
+    "target": "app/src/main/java/me/mondiversi/planetcompass/PlanetCompassCelestialPathTint.kt",
+    "sourceSha256": "7993C3B98B6CF1DDE7574358ECBA540E5F92436F9BA1EE1F5FE1AEF184F614A7"
+  },
+  {
+    "source": "app/src/main/java/me/mondiversi/uvir/UvirCelestialPointAngles.kt",
+    "target": "app/src/main/java/me/mondiversi/planetcompass/PlanetCompassCelestialPointAngles.kt",
+    "sourceSha256": "F926C2E8B79C4FF451EAE147D884DBFBEC8A1CA11380DFB91EA12B5F77F2DD40"
+  },
+  {
+    "source": "app/src/main/java/me/mondiversi/uvir/UvirCelestialRefreshPolicy.kt",
+    "target": "app/src/main/java/me/mondiversi/planetcompass/PlanetCompassCelestialRefreshPolicy.kt",
+    "sourceSha256": "65AD4BD936AB25A031702F9A4667615BC75EFB307F2CE90C91C45E880469C898"
+  },
+  {
+    "source": "app/src/main/java/me/mondiversi/uvir/UvirCelestialRemote.kt",
+    "target": "app/src/main/java/me/mondiversi/planetcompass/PlanetCompassCelestialRemote.kt",
+    "sourceSha256": "0E29CEE597CA5487893AF2EABB4A64E086D3C2062391CB9BE2BF50D653751157"
+  },
+  {
+    "source": "app/src/main/java/me/mondiversi/uvir/UvirCelestialSceneInteraction.kt",
+    "target": "app/src/main/java/me/mondiversi/planetcompass/PlanetCompassCelestialSceneInteraction.kt",
+    "sourceSha256": "E465080A57631CCF7E6192E41644EEAC3FB711DBC1B34FFD7BE268C9F7322825"
+  },
+  {
+    "source": "app/src/main/java/me/mondiversi/uvir/UvirCelestialSceneTargets.kt",
+    "target": "app/src/main/java/me/mondiversi/planetcompass/PlanetCompassCelestialSceneTargets.kt",
+    "sourceSha256": "466CEA5C39E954F4760436FE2E4F1D02E9F0A17A79CE6D74A34F7D5B60C4BBD0"
+  },
+  {
+    "source": "app/src/main/java/me/mondiversi/uvir/UvirCelestialSelection.kt",
+    "target": "app/src/main/java/me/mondiversi/planetcompass/PlanetCompassCelestialSelection.kt",
+    "sourceSha256": "491E4038CACE4CC2356BAE9788D4BED501CFA41C9480A34CE4D16B74EEE8B1FC"
+  },
+  {
+    "source": "app/src/main/java/me/mondiversi/uvir/UvirCelestialTelescopeIcon.kt",
+    "target": "app/src/main/java/me/mondiversi/planetcompass/PlanetCompassCelestialTelescopeIcon.kt",
+    "sourceSha256": "6239C94B2FDD17398E388C4F2AED927D8DF43EC9F9A2864AE252CFA5E191E0D9"
+  },
+  {
+    "source": "app/src/main/java/me/mondiversi/uvir/UvirCelestialTemperatures.kt",
+    "target": "app/src/main/java/me/mondiversi/planetcompass/PlanetCompassCelestialTemperatures.kt",
+    "sourceSha256": "DBA7A30A469FD3A0BC6F7ED7DD56213AF1D2D7C3A822DA3F3C2D39CA93626AC3"
+  },
+  {
+    "source": "app/src/main/java/me/mondiversi/uvir/UvirCelestialThumbnail.kt",
+    "target": "app/src/main/java/me/mondiversi/planetcompass/PlanetCompassCelestialThumbnail.kt",
+    "sourceSha256": "6997D8C17304E82C89C759899EF759758F2C1CF5DFBDE955710729698304EC6B"
+  },
+  {
+    "source": "app/src/main/java/me/mondiversi/uvir/UvirCelestialTime.kt",
+    "target": "app/src/main/java/me/mondiversi/planetcompass/PlanetCompassCelestialTime.kt",
+    "sourceSha256": "59995FE758BF9026F98E40445F10B8327829087F7239E1530F8B6460BA8357BD"
+  },
+  {
+    "source": "app/src/main/java/me/mondiversi/uvir/UvirCelestialTimeBadge.kt",
+    "target": "app/src/main/java/me/mondiversi/planetcompass/PlanetCompassCelestialTimeBadge.kt",
+    "sourceSha256": "FD80D0E61C4050225C1E6E1BB0ADACE5D328FA23B15C01D38E8AD5A7B60DFBE8"
+  },
+  {
+    "source": "app/src/main/java/me/mondiversi/uvir/UvirCelestialVelocity.kt",
+    "target": "app/src/main/java/me/mondiversi/planetcompass/PlanetCompassCelestialVelocity.kt",
+    "sourceSha256": "54EC2EF778DA8CB66C3C1873AC344D4BD437EA97B0DA97F278B7169941BBE3D0"
+  },
+  {
+    "source": "app/src/main/java/me/mondiversi/uvir/UvirCelestialViewerScreen.kt",
+    "target": "app/src/main/java/me/mondiversi/planetcompass/PlanetCompassCelestialViewerScreen.kt",
+    "sourceSha256": "ABC13ED7B8C8D8EE817E662E89F70F08F190D24313C6F54FAF62A0F49785EEAA"
+  },
+  {
+    "source": "app/src/main/java/me/mondiversi/uvir/UvirCelestialViewGeometry.kt",
+    "target": "app/src/main/java/me/mondiversi/planetcompass/PlanetCompassCelestialViewGeometry.kt",
+    "sourceSha256": "4D3E811F4DCE31A6130915F118499C8645E061A932BB87EC8766C882CAA1D2AC"
+  },
+  {
+    "source": "app/src/main/java/me/mondiversi/uvir/UvirCelestialViewportState.kt",
+    "target": "app/src/main/java/me/mondiversi/planetcompass/PlanetCompassCelestialViewportState.kt",
+    "sourceSha256": "6C70E529E16E6456E6BB70344B39B71B4826E1DBDD965571108A976F2E427FED"
+  },
+  {
+    "source": "app/src/main/java/me/mondiversi/uvir/UvirHorizonsEphemeris.kt",
+    "target": "app/src/main/java/me/mondiversi/planetcompass/PlanetCompassHorizonsEphemeris.kt",
+    "sourceSha256": "F7D15665C5CFE0388D251FAF5C566D067132B3C021006149BB625092E45CCC30"
+  },
+  {
+    "source": "app/src/main/java/me/mondiversi/uvir/UvirIssOrbit.kt",
+    "target": "app/src/main/java/me/mondiversi/planetcompass/PlanetCompassIssOrbit.kt",
+    "sourceSha256": "9427E0CB8D35C520B3EB57C1AE7B77E6B076D7EECBAE63BCC3D58E5AC0768070"
+  },
+  {
+    "source": "app/src/main/java/me/mondiversi/uvir/UvirIssPath.kt",
+    "target": "app/src/main/java/me/mondiversi/planetcompass/PlanetCompassIssPath.kt",
+    "sourceSha256": "CC9C60CA2EAEB07F54AA3423A94E80E30593E9C1E439F27CCDB723B748936E9A"
+  },
+  {
+    "source": "app/src/main/java/me/mondiversi/uvir/UvirJovianMoons.kt",
+    "target": "app/src/main/java/me/mondiversi/planetcompass/PlanetCompassJovianMoons.kt",
+    "sourceSha256": "49AE95639F466D1BD3BD03F6DB1975678EBFEA418B6605A2068893AB254EF8EA"
+  },
+  {
+    "source": "app/src/main/java/me/mondiversi/uvir/UvirMoonMarkerPhase.kt",
+    "target": "app/src/main/java/me/mondiversi/planetcompass/PlanetCompassMoonMarkerPhase.kt",
+    "sourceSha256": "9D9F7A1EA91895A4F3D50FD5195652B29EAB2F5F35C66D671E4F6F35496F9053"
+  },
+  {
+    "source": "app/src/main/java/me/mondiversi/uvir/UvirMoonPhase.kt",
+    "target": "app/src/main/java/me/mondiversi/planetcompass/PlanetCompassMoonPhase.kt",
+    "sourceSha256": "E689BAD620C7FE5010C2D6DB852693BA2384F5FA2FC46596E8EE11397098A484"
+  },
+  {
+    "source": "app/src/main/java/me/mondiversi/uvir/UvirMoonPhaseIcon.kt",
+    "target": "app/src/main/java/me/mondiversi/planetcompass/PlanetCompassMoonPhaseIcon.kt",
+    "sourceSha256": "6A8DBCE4459B5F20534D2DB81F58026A4480E6E00C275F345C38B212B46F0B87"
+  },
+  {
+    "source": "app/src/main/java/me/mondiversi/uvir/UvirPolaris.kt",
+    "target": "app/src/main/java/me/mondiversi/planetcompass/PlanetCompassPolaris.kt",
+    "sourceSha256": "A07BA714F860FFD7C496DD1725CB57EF4818D72B548AAB6CD127A1148CCECE7D"
+  },
+  {
+    "source": "app/src/main/java/me/mondiversi/uvir/UvirSatelliteOrbit.kt",
+    "target": "app/src/main/java/me/mondiversi/planetcompass/PlanetCompassSatelliteOrbit.kt",
+    "sourceSha256": "E860566FA2A138857F692D4BD5B93836DC26396B5FE613745C0DF950ADA206C4"
+  },
+  {
+    "source": "app/src/main/java/me/mondiversi/uvir/UvirStarlinkOrbit.kt",
+    "target": "app/src/main/java/me/mondiversi/planetcompass/PlanetCompassStarlinkOrbit.kt",
+    "sourceSha256": "55EA1CD785D52CFEEA7C757AB66D22FFA3F8A61104E339703A846F2526E77273"
+  },
+  {
+    "source": "app/src/main/java/me/mondiversi/uvir/UvirSunAppearance.kt",
+    "target": "app/src/main/java/me/mondiversi/planetcompass/PlanetCompassSunAppearance.kt",
+    "sourceSha256": "42681EDE3F82E296F98FFDB6243CD92386E823DB33189D498EFF476B446027E3"
+  },
+  {
+    "source": "app/src/main/java/me/mondiversi/uvir/UvirSunCompass.kt",
+    "target": "app/src/main/java/me/mondiversi/planetcompass/PlanetCompassSunCompass.kt",
+    "sourceSha256": "6229EDE77BF862FFE2B9C2F22BB744DDE4ED9BBF8096C009FB4824EBE655517A"
+  },
+  {
+    "source": "app/src/main/java/me/mondiversi/uvir/UvirSunCompassGeometry.kt",
+    "target": "app/src/main/java/me/mondiversi/planetcompass/PlanetCompassSunCompassGeometry.kt",
+    "sourceSha256": "3717797B3E340FB8243ABE5DBD9FF0AD30139FAF67B125A32F2C52A802840D0F"
+  },
+  {
+    "source": "app/src/main/java/me/mondiversi/uvir/UvirSunCompassReliability.kt",
+    "target": "app/src/main/java/me/mondiversi/planetcompass/PlanetCompassSunCompassReliability.kt",
+    "sourceSha256": "80EF2291D16A6D84B9544781DE279EE8D4F3C126E888C5BD7070C8CA7919BC60"
+  },
+  {
+    "source": "app/src/main/java/me/mondiversi/uvir/UvirSunDailyPath.kt",
+    "target": "app/src/main/java/me/mondiversi/planetcompass/PlanetCompassSunDailyPath.kt",
+    "sourceSha256": "9E18BD60A52D84A6D4555EA48FF54C59A557F34BFA7B1338DC8C18ABD003EBD7"
+  },
+  {
+    "source": "app/src/main/java/me/mondiversi/uvir/UvirSunDailyPathControls.kt",
+    "target": "app/src/main/java/me/mondiversi/planetcompass/PlanetCompassSunDailyPathControls.kt",
+    "sourceSha256": "1402453307F0E67721DEC16DCD15815B779D8490EA2687B4B61DE94CB824B66F"
+  },
+  {
+    "source": "app/src/main/java/me/mondiversi/uvir/UvirSunDailyPathLayer.kt",
+    "target": "app/src/main/java/me/mondiversi/planetcompass/PlanetCompassSunDailyPathLayer.kt",
+    "sourceSha256": "69C4D06B026EDC48E14DC37AC8630D95270B061C9633C47D98E334C6B2D714EA"
+  },
+  {
+    "source": "app/src/main/java/me/mondiversi/uvir/UvirSunDataPresentation.kt",
+    "target": "app/src/main/java/me/mondiversi/planetcompass/PlanetCompassSunDataPresentation.kt",
+    "sourceSha256": "D24975BAA1BC8139FA8851B8F3B3C2EBDB7E2B950DA2BBD7B77B5A7E928BC70A"
+  },
+  {
+    "source": "app/src/main/java/me/mondiversi/uvir/UvirSunFinderDataPanel.kt",
+    "target": "app/src/main/java/me/mondiversi/planetcompass/PlanetCompassSunFinderDataPanel.kt",
+    "sourceSha256": "DC6B11EE30FD81416A505CE2516E981026BA4D57C3A65C76E8F4F4D6207D0E74"
+  },
+  {
+    "source": "app/src/main/java/me/mondiversi/uvir/UvirSunFinderScreen.kt",
+    "target": "app/src/main/java/me/mondiversi/planetcompass/PlanetCompassSunFinderScreen.kt",
+    "sourceSha256": "3253B4D36BCA08A853B39AC509091144EB26B6BA21F4CED2E7B3A3013A541A7C"
+  },
+  {
+    "source": "app/src/main/java/me/mondiversi/uvir/UvirSunFinderSensors.kt",
+    "target": "app/src/main/java/me/mondiversi/planetcompass/PlanetCompassSunFinderSensors.kt",
+    "sourceSha256": "F1BAB7DEE93BFB2CFFBA56C65F7F5286B7F2043FD17A4F7636BCC99F1EC7C073"
+  },
+  {
+    "source": "app/src/main/java/me/mondiversi/uvir/UvirSunFinderSky.kt",
+    "target": "app/src/main/java/me/mondiversi/planetcompass/PlanetCompassSunFinderSky.kt",
+    "sourceSha256": "3F6211B81D959423C75CB97E22F66D59D9384A27631F69DAFD7CBAFB11E945F8"
+  },
+  {
+    "source": "app/src/main/java/me/mondiversi/uvir/UvirSunGroundAppearance.kt",
+    "target": "app/src/main/java/me/mondiversi/planetcompass/PlanetCompassSunGroundAppearance.kt",
+    "sourceSha256": "FC6503BBDD33AE97D1C05BD72AD6A99053FF598E5CB9268FDFAB2B7F1008B7E7"
+  },
+  {
+    "source": "app/src/main/java/me/mondiversi/uvir/UvirSunGroundBackdrop.kt",
+    "target": "app/src/main/java/me/mondiversi/planetcompass/PlanetCompassSunGroundBackdrop.kt",
+    "sourceSha256": "04FC3F9379638CB8F1682AD980F55DF780BA635A7CAD09CC665959366E2E3231"
+  },
+  {
+    "source": "app/src/main/java/me/mondiversi/uvir/UvirSunGroundProjection.kt",
+    "target": "app/src/main/java/me/mondiversi/planetcompass/PlanetCompassSunGroundProjection.kt",
+    "sourceSha256": "C111AB6FBFB145F8A16C8E89000F05193C7F7D5AB5DE8CC884AAE9264214E302"
+  },
+  {
+    "source": "app/src/main/java/me/mondiversi/uvir/UvirSunMagneticOrientation.kt",
+    "target": "app/src/main/java/me/mondiversi/planetcompass/PlanetCompassSunMagneticOrientation.kt",
+    "sourceSha256": "B2D0243E8594B2819C640223D23824538C3658DE79672A130A08417C3727E526"
+  },
+  {
+    "source": "app/src/main/java/me/mondiversi/uvir/UvirSunPathDirection.kt",
+    "target": "app/src/main/java/me/mondiversi/planetcompass/PlanetCompassSunPathDirection.kt",
+    "sourceSha256": "E59A2FD7D1856B2D3690CAA64FB0F232AC9D11224893558297097D9A585F8672"
+  },
+  {
+    "source": "app/src/main/java/me/mondiversi/uvir/UvirSunPathPointNames.kt",
+    "target": "app/src/main/java/me/mondiversi/planetcompass/PlanetCompassSunPathPointNames.kt",
+    "sourceSha256": "6133D2AF043BF6FC4A28321409FC77CAA2AB89F761963729C76C62254F3671E4"
+  },
+  {
+    "source": "app/src/main/java/me/mondiversi/uvir/UvirSunPathSelectedPanel.kt",
+    "target": "app/src/main/java/me/mondiversi/planetcompass/PlanetCompassSunPathSelectedPanel.kt",
+    "sourceSha256": "C52EB03331CC1ECD1330F649FD43671874E82838BC126F9CE96C3491EFB70FA3"
+  },
+  {
+    "source": "app/src/main/java/me/mondiversi/uvir/UvirSunPosition.kt",
+    "target": "app/src/main/java/me/mondiversi/planetcompass/PlanetCompassSunPosition.kt",
+    "sourceSha256": "44222497C07617A85F7DBE1C2F8E39C0879B7A962E998A9C442AD345B776DFE3"
+  },
+  {
+    "source": "app/src/main/java/me/mondiversi/uvir/UvirSunSkyModel.kt",
+    "target": "app/src/main/java/me/mondiversi/planetcompass/PlanetCompassSunSkyModel.kt",
+    "sourceSha256": "8EE6E201EE54183D52C4CF65022B18DDE1EE9EBA0C0880C07720F62E2F2F08EC"
+  },
+  {
+    "source": "app/src/main/java/me/mondiversi/uvir/UvirSunWeather.kt",
+    "target": "app/src/main/java/me/mondiversi/planetcompass/PlanetCompassSunWeather.kt",
+    "sourceSha256": "2D8696CB2A6DF82DEB6C458B12BAFEA21CB43EF6D333544C88B60BE323703843"
+  },
+  {
+    "source": "app/src/test/java/me/mondiversi/uvir/UvirCelestialAltitudeFormattingTest.kt",
+    "target": "app/src/test/java/me/mondiversi/planetcompass/PlanetCompassCelestialAltitudeFormattingTest.kt",
+    "sourceSha256": "C4292DE01990DBAD4A0AD43E43BD36AB60CDFCDE1E4D2E7B141163AE9575B0A7"
+  },
+  {
+    "source": "app/src/test/java/me/mondiversi/uvir/UvirCelestialCatalogTest.kt",
+    "target": "app/src/test/java/me/mondiversi/planetcompass/PlanetCompassCelestialCatalogTest.kt",
+    "sourceSha256": "996EB2156F72D83BD2D36BFFD30300077BA355AE91428BD82E6AFAF203FC21E4"
+  },
+  {
+    "source": "app/src/test/java/me/mondiversi/uvir/UvirCelestialCatalogTranslationTest.kt",
+    "target": "app/src/test/java/me/mondiversi/planetcompass/PlanetCompassCelestialCatalogTranslationTest.kt",
+    "sourceSha256": "83E4BE127B4137468FE72024AC39B66CC2F0E30C22D2D5782A5FF2F10182FC63"
+  },
+  {
+    "source": "app/src/test/java/me/mondiversi/uvir/UvirCelestialControlStyleTest.kt",
+    "target": "app/src/test/java/me/mondiversi/planetcompass/PlanetCompassCelestialControlStyleTest.kt",
+    "sourceSha256": "970114841A31BD42E05AADEC403A0E86C70523DD3BE3C10FB726E1D8522F83C2"
+  },
+  {
+    "source": "app/src/test/java/me/mondiversi/uvir/UvirCelestialDistanceFormattingTest.kt",
+    "target": "app/src/test/java/me/mondiversi/planetcompass/PlanetCompassCelestialDistanceFormattingTest.kt",
+    "sourceSha256": "E7B91F8A79E7E26B0BD9250542CC699E8F2C21FC50A1522BE421CE09F4795A45"
+  },
+  {
+    "source": "app/src/test/java/me/mondiversi/uvir/UvirCelestialGpsFormattingTest.kt",
+    "target": "app/src/test/java/me/mondiversi/planetcompass/PlanetCompassCelestialGpsFormattingTest.kt",
+    "sourceSha256": "2C6B72F0E9D193E36206D1B1AD37832F6AC77AC128BA47D3AB8075CCBDAC432F"
+  },
+  {
+    "source": "app/src/test/java/me/mondiversi/uvir/UvirCelestialGravityFormattingTest.kt",
+    "target": "app/src/test/java/me/mondiversi/planetcompass/PlanetCompassCelestialGravityFormattingTest.kt",
+    "sourceSha256": "808E60AC60ED34BE0AC62700AACFDC1563094F16807DEBB579FF3158E4AA8D0B"
+  },
+  {
+    "source": "app/src/test/java/me/mondiversi/uvir/UvirCelestialLiveSelectionTest.kt",
+    "target": "app/src/test/java/me/mondiversi/planetcompass/PlanetCompassCelestialLiveSelectionTest.kt",
+    "sourceSha256": "7E43C36E0E48E39A8989802C0D9608408D66522092A266F7ED1CD372EF522297"
+  },
+  {
+    "source": "app/src/test/java/me/mondiversi/uvir/UvirCelestialMarkerContractTest.kt",
+    "target": "app/src/test/java/me/mondiversi/planetcompass/PlanetCompassCelestialMarkerContractTest.kt",
+    "sourceSha256": "B392CA3E20E425004743044E6F50D8DCA67AA2F6112E6AF7E7B148DCBB8CC439"
+  },
+  {
+    "source": "app/src/test/java/me/mondiversi/uvir/UvirCelestialModelTest.kt",
+    "target": "app/src/test/java/me/mondiversi/planetcompass/PlanetCompassCelestialModelTest.kt",
+    "sourceSha256": "8AE4595B7E17CDA5AF2DC1E8BE14AB5618DA0BE1F6B6735613098861E2255FFC"
+  },
+  {
+    "source": "app/src/test/java/me/mondiversi/uvir/UvirCelestialOffscreenGeometryTest.kt",
+    "target": "app/src/test/java/me/mondiversi/planetcompass/PlanetCompassCelestialOffscreenGeometryTest.kt",
+    "sourceSha256": "9EA4C4B2E520D4D0AF41508779632B148072BB67361BC1C85E7CBBF21A286B96"
+  },
+  {
+    "source": "app/src/test/java/me/mondiversi/uvir/UvirCelestialPathMinimumTest.kt",
+    "target": "app/src/test/java/me/mondiversi/planetcompass/PlanetCompassCelestialPathMinimumTest.kt",
+    "sourceSha256": "97A42B24DE55DB1DF0A66967532B8D1818FF451351E3355E4EB2837A9A7AEE50"
+  },
+  {
+    "source": "app/src/test/java/me/mondiversi/uvir/UvirCelestialPathTintTest.kt",
+    "target": "app/src/test/java/me/mondiversi/planetcompass/PlanetCompassCelestialPathTintTest.kt",
+    "sourceSha256": "6288AECBA8CFDB8014AB37028054680D58308172BC56735A580B3A4607F03A9B"
+  },
+  {
+    "source": "app/src/test/java/me/mondiversi/uvir/UvirCelestialPointCaptionTest.kt",
+    "target": "app/src/test/java/me/mondiversi/planetcompass/PlanetCompassCelestialPointCaptionTest.kt",
+    "sourceSha256": "2EE842C27AC9CDE6936667EB039F41EDA5E65200DBE3986861BBADBCF883B765"
+  },
+  {
+    "source": "app/src/test/java/me/mondiversi/uvir/UvirCelestialPointTranslationTest.kt",
+    "target": "app/src/test/java/me/mondiversi/planetcompass/PlanetCompassCelestialPointTranslationTest.kt",
+    "sourceSha256": "ED4253631B1AEAE49D1D050625060697DEFDAD932A28BA8889EDE624E1125AE9"
+  },
+  {
+    "source": "app/src/test/java/me/mondiversi/uvir/UvirCelestialRefreshPolicyTest.kt",
+    "target": "app/src/test/java/me/mondiversi/planetcompass/PlanetCompassCelestialRefreshPolicyTest.kt",
+    "sourceSha256": "2D6D30D070AA8A987E90FAF174FD1893AC9C18918D722AA648B7DB94BABF0D33"
+  },
+  {
+    "source": "app/src/test/java/me/mondiversi/uvir/UvirCelestialSceneTargetsTest.kt",
+    "target": "app/src/test/java/me/mondiversi/planetcompass/PlanetCompassCelestialSceneTargetsTest.kt",
+    "sourceSha256": "AEB2D4AD2ECE276AA49596F807F483A11289D025A94A31FBD91EF6ACEADB9076"
+  },
+  {
+    "source": "app/src/test/java/me/mondiversi/uvir/UvirCelestialSelectionTest.kt",
+    "target": "app/src/test/java/me/mondiversi/planetcompass/PlanetCompassCelestialSelectionTest.kt",
+    "sourceSha256": "01B24FB2E9067CC87FA3CED5C54A3744BAB28510BAA4DEB803C71D9B59A260E5"
+  },
+  {
+    "source": "app/src/test/java/me/mondiversi/uvir/UvirCelestialTabularLayoutTest.kt",
+    "target": "app/src/test/java/me/mondiversi/planetcompass/PlanetCompassCelestialTabularLayoutTest.kt",
+    "sourceSha256": "EAF611564D52FD0FEC47F7FCB2212191138864F07DB817D2C3E89866CAB98B77"
+  },
+  {
+    "source": "app/src/test/java/me/mondiversi/uvir/UvirCelestialTemperatureTest.kt",
+    "target": "app/src/test/java/me/mondiversi/planetcompass/PlanetCompassCelestialTemperatureTest.kt",
+    "sourceSha256": "4795A09F9B356463258049D6717121E6014BF4483E296B89649591E91E2891D3"
+  },
+  {
+    "source": "app/src/test/java/me/mondiversi/uvir/UvirCelestialTimeFocusTest.kt",
+    "target": "app/src/test/java/me/mondiversi/planetcompass/PlanetCompassCelestialTimeFocusTest.kt",
+    "sourceSha256": "59BDA08DC451ACA5225F5439DB53BFCF80F848890E4612674F839E07E7198DAE"
+  },
+  {
+    "source": "app/src/test/java/me/mondiversi/uvir/UvirCelestialTimeTest.kt",
+    "target": "app/src/test/java/me/mondiversi/planetcompass/PlanetCompassCelestialTimeTest.kt",
+    "sourceSha256": "A8B25651B2F704E64EAB233D3622F26586AAD6139036BE1B44DAAC3761458B00"
+  },
+  {
+    "source": "app/src/test/java/me/mondiversi/uvir/UvirCelestialTlsContractTest.kt",
+    "target": "app/src/test/java/me/mondiversi/planetcompass/PlanetCompassCelestialTlsContractTest.kt",
+    "sourceSha256": "F2CB760C47EAA7D6E0405C07A0DE90D1D7D7E9DA3E2BDEDA783ABD69590DD963"
+  },
+  {
+    "source": "app/src/test/java/me/mondiversi/uvir/UvirCelestialVelocityTest.kt",
+    "target": "app/src/test/java/me/mondiversi/planetcompass/PlanetCompassCelestialVelocityTest.kt",
+    "sourceSha256": "29B7DF6DF52DE8314F3D5F8BDC6A8DEFBB05A75A8F76FA6319F9C26795A4C075"
+  },
+  {
+    "source": "app/src/test/java/me/mondiversi/uvir/UvirCelestialViewerTest.kt",
+    "target": "app/src/test/java/me/mondiversi/planetcompass/PlanetCompassCelestialViewerTest.kt",
+    "sourceSha256": "639933EEBA6963F604BA1321E0B94C742B45AF22CE24FAB85A3B815905D12BDD"
+  },
+  {
+    "source": "app/src/test/java/me/mondiversi/uvir/UvirCelestialViewportStateTest.kt",
+    "target": "app/src/test/java/me/mondiversi/planetcompass/PlanetCompassCelestialViewportStateTest.kt",
+    "sourceSha256": "3C73B5AD6C84A8755C5FEFEF0F5B9F6D7B1C4A84B1811483F0DB933FB4B0DEEF"
+  },
+  {
+    "source": "app/src/test/java/me/mondiversi/uvir/UvirIssPathTest.kt",
+    "target": "app/src/test/java/me/mondiversi/planetcompass/PlanetCompassIssPathTest.kt",
+    "sourceSha256": "4611A071F2FDDD6CC704E0FC3C15552BBC36948A62EAE08B3FFE89792EBC8338"
+  },
+  {
+    "source": "app/src/test/java/me/mondiversi/uvir/UvirJovianMoonsTest.kt",
+    "target": "app/src/test/java/me/mondiversi/planetcompass/PlanetCompassJovianMoonsTest.kt",
+    "sourceSha256": "05D28B9926EA8A89947B8FBD3F45B6069E0BEEEED8EC09D5743E03376C43DA0B"
+  },
+  {
+    "source": "app/src/test/java/me/mondiversi/uvir/UvirMoonPhaseTest.kt",
+    "target": "app/src/test/java/me/mondiversi/planetcompass/PlanetCompassMoonPhaseTest.kt",
+    "sourceSha256": "EC0B9DAD5AB189CF41E4667270BB05AE58BA6A7BC55020463D8DEE937B1335A2"
+  },
+  {
+    "source": "app/src/test/java/me/mondiversi/uvir/UvirPolarisTest.kt",
+    "target": "app/src/test/java/me/mondiversi/planetcompass/PlanetCompassPolarisTest.kt",
+    "sourceSha256": "6FD31246B6D1F7E303DCC9D3449E518A6E22C35DBCAA6D970C4F8E0E9170106E"
+  },
+  {
+    "source": "app/src/test/java/me/mondiversi/uvir/UvirStarlinkOrbitTest.kt",
+    "target": "app/src/test/java/me/mondiversi/planetcompass/PlanetCompassStarlinkOrbitTest.kt",
+    "sourceSha256": "84989C111B036133E5C878FA37E4B7AF4E0A093E5B255E5F3B6F655120B505E0"
+  },
+  {
+    "source": "app/src/test/java/me/mondiversi/uvir/UvirStarlinkTranslationTest.kt",
+    "target": "app/src/test/java/me/mondiversi/planetcompass/PlanetCompassStarlinkTranslationTest.kt",
+    "sourceSha256": "5B3BEEB8495B174BFA0D89FAB09579E439973D630FCE62D947FA74914F5566FC"
+  },
+  {
+    "source": "app/src/test/java/me/mondiversi/uvir/UvirSunAppearanceTest.kt",
+    "target": "app/src/test/java/me/mondiversi/planetcompass/PlanetCompassSunAppearanceTest.kt",
+    "sourceSha256": "E08BE1DDE46EFC2FA26E5685819080DAA5FE1A7E8E3AC2DC0B6867E3150D1CEF"
+  },
+  {
+    "source": "app/src/test/java/me/mondiversi/uvir/UvirSunCompassTest.kt",
+    "target": "app/src/test/java/me/mondiversi/planetcompass/PlanetCompassSunCompassTest.kt",
+    "sourceSha256": "FEDBBACD6F585E482B98E47A0B7E82B045A47CBB7EDFF5D40E5F94A23BFEFF1B"
+  },
+  {
+    "source": "app/src/test/java/me/mondiversi/uvir/UvirSunDailyPathTest.kt",
+    "target": "app/src/test/java/me/mondiversi/planetcompass/PlanetCompassSunDailyPathTest.kt",
+    "sourceSha256": "D6ACC7A6660687AE44F5D6E57678BFE0549A233AB46B8273AAAF772CC90D08D6"
+  },
+  {
+    "source": "app/src/test/java/me/mondiversi/uvir/UvirSunDataPresentationTest.kt",
+    "target": "app/src/test/java/me/mondiversi/planetcompass/PlanetCompassSunDataPresentationTest.kt",
+    "sourceSha256": "664BC388F96E222C5A161F0FB4312BF77A35858E768C6680DD0681122BB1656D"
+  },
+  {
+    "source": "app/src/test/java/me/mondiversi/uvir/UvirSunGroundAppearanceTest.kt",
+    "target": "app/src/test/java/me/mondiversi/planetcompass/PlanetCompassSunGroundAppearanceTest.kt",
+    "sourceSha256": "C6B533F3A33ED27619A014936441B56667A3A75FA5FB6B2FF0EDB1B22B5CB9F9"
+  },
+  {
+    "source": "app/src/test/java/me/mondiversi/uvir/UvirSunGroundProjectionTest.kt",
+    "target": "app/src/test/java/me/mondiversi/planetcompass/PlanetCompassSunGroundProjectionTest.kt",
+    "sourceSha256": "986E19F84EC1D776366F1140D59552EC8D64EF368CCC6AB1AE452A5394AA5D6E"
+  },
+  {
+    "source": "app/src/test/java/me/mondiversi/uvir/UvirSunPathDirectionTest.kt",
+    "target": "app/src/test/java/me/mondiversi/planetcompass/PlanetCompassSunPathDirectionTest.kt",
+    "sourceSha256": "7978C04F1F720BC5A2E9CBE441190C0F8532D761FBA6D6FACD91827C66156D9D"
+  },
+  {
+    "source": "app/src/test/java/me/mondiversi/uvir/UvirSunPathHitTestTest.kt",
+    "target": "app/src/test/java/me/mondiversi/planetcompass/PlanetCompassSunPathHitTestTest.kt",
+    "sourceSha256": "8799674DEA652E595DAFBA5A392659E25F74BF080FEBAA4061DB9A9F70C5FE34"
+  },
+  {
+    "source": "app/src/test/java/me/mondiversi/uvir/UvirSunPathPointNamesTest.kt",
+    "target": "app/src/test/java/me/mondiversi/planetcompass/PlanetCompassSunPathPointNamesTest.kt",
+    "sourceSha256": "CE953F8CB8ADBFD0432936603BBB5A9010652788363534D6BFE8F29633D907C6"
+  },
+  {
+    "source": "app/src/test/java/me/mondiversi/uvir/UvirSunPositionTest.kt",
+    "target": "app/src/test/java/me/mondiversi/planetcompass/PlanetCompassSunPositionTest.kt",
+    "sourceSha256": "35C872287D5E060D514E984E4A3E48FFD369350ED995DB2C80AC11110F333257"
+  },
+  {
+    "source": "app/src/test/java/me/mondiversi/uvir/UvirSunSkyModelTest.kt",
+    "target": "app/src/test/java/me/mondiversi/planetcompass/PlanetCompassSunSkyModelTest.kt",
+    "sourceSha256": "A46B5E59B5ADF1ABFAF51A323604F53578BCC58EC063279CD64F82FC93C22F75"
+  },
+  {
+    "source": "app/src/test/java/me/mondiversi/uvir/UvirVoyagerEphemerisTest.kt",
+    "target": "app/src/test/java/me/mondiversi/planetcompass/PlanetCompassVoyagerEphemerisTest.kt",
+    "sourceSha256": "275FDBBD7C0DFFAF7F22169E2CFDBD9309A170A4E617BC6D1893629309D05679"
+  },
+  {
+    "source": "app/src/androidTest/java/me/mondiversi/uvir/UvirCelestialCompassTest.kt",
+    "target": "app/src/androidTest/java/me/mondiversi/planetcompass/PlanetCompassCelestialCompassTest.kt",
+    "sourceSha256": "137D6373A96A96E81E29EC945A4A052779DF8B3E12B5E3F3D3E243F6590765FB"
+  },
+  {
+    "source": "app/src/androidTest/java/me/mondiversi/uvir/UvirCelestialLandscapeLayoutTest.kt",
+    "target": "app/src/androidTest/java/me/mondiversi/planetcompass/PlanetCompassCelestialLandscapeLayoutTest.kt",
+    "sourceSha256": "7E8B4B936704CFDE135E0A747D1D4B14A0135539BAF0ADA53EA34B7FB1AD4B49"
+  },
+  {
+    "source": "app/src/androidTest/java/me/mondiversi/uvir/UvirCelestialMarkerRenderingTest.kt",
+    "target": "app/src/androidTest/java/me/mondiversi/planetcompass/PlanetCompassCelestialMarkerRenderingTest.kt",
+    "sourceSha256": "B392E8440133B79B31E8A86E82C7A84A5C8209E2DC16E0854F8DD32B62889896"
+  },
+  {
+    "source": "app/src/androidTest/java/me/mondiversi/uvir/UvirCelestialMultiSelectionUiTest.kt",
+    "target": "app/src/androidTest/java/me/mondiversi/planetcompass/PlanetCompassCelestialMultiSelectionUiTest.kt",
+    "sourceSha256": "553C9E67EC1C98A8F1DE49E632DDE5C39F34BA2FB35416A4E4CE19B371757F15"
+  },
+  {
+    "source": "app/src/androidTest/java/me/mondiversi/uvir/UvirCelestialSceneInteractionTest.kt",
+    "target": "app/src/androidTest/java/me/mondiversi/planetcompass/PlanetCompassCelestialSceneInteractionTest.kt",
+    "sourceSha256": "03FCD29E2F7C410AB7118B89012D4530E22B103971E876B00F1FA33D423A2B28"
+  },
+  {
+    "source": "app/src/androidTest/java/me/mondiversi/uvir/UvirCelestialTimeBadgeTest.kt",
+    "target": "app/src/androidTest/java/me/mondiversi/planetcompass/PlanetCompassCelestialTimeBadgeTest.kt",
+    "sourceSha256": "D1013878A0CDAD98BB9B848018BDBFA9B6F2085C705F33B83426DF785F04741D"
+  },
+  {
+    "source": "app/src/androidTest/java/me/mondiversi/uvir/UvirCelestialViewerUiTest.kt",
+    "target": "app/src/androidTest/java/me/mondiversi/planetcompass/PlanetCompassCelestialViewerUiTest.kt",
+    "sourceSha256": "62F993592D3893C726426093CE3556809719B36B42DBEAC1EF5F05B710A6664D"
+  },
+  {
+    "source": "app/src/androidTest/java/me/mondiversi/uvir/UvirStarlinkSelectionUiTest.kt",
+    "target": "app/src/androidTest/java/me/mondiversi/planetcompass/PlanetCompassStarlinkSelectionUiTest.kt",
+    "sourceSha256": "F0401A23B4418A32A2BF9A1A58C2B28987E9F4E2C1E772BFABB4C90DB75E9F2A"
+  },
+  {
+    "source": "app/src/androidTest/java/me/mondiversi/uvir/UvirSunCompassRenderingTest.kt",
+    "target": "app/src/androidTest/java/me/mondiversi/planetcompass/PlanetCompassSunCompassRenderingTest.kt",
+    "sourceSha256": "A6C36767B99DDFCE0C2510D9C6579B25314692A3A25A83E05183C0322C74C362"
+  },
+  {
+    "source": "app/src/androidTest/java/me/mondiversi/uvir/UvirSunDailyPathPopupTest.kt",
+    "target": "app/src/androidTest/java/me/mondiversi/planetcompass/PlanetCompassSunDailyPathPopupTest.kt",
+    "sourceSha256": "68E4A2E4F5DD3C20A144AE73032E1E8F7C20ED5E302F41F3FE2B682EBA085A11"
+  },
+  {
+    "source": "app/src/androidTest/java/me/mondiversi/uvir/UvirSunDailyPathRenderingTest.kt",
+    "target": "app/src/androidTest/java/me/mondiversi/planetcompass/PlanetCompassSunDailyPathRenderingTest.kt",
+    "sourceSha256": "0813FD0A5C39D2D53013F0E0FBDC60AF322F77C252ECDCC4F1900BA26AD8F430"
+  },
+  {
+    "source": "app/src/androidTest/java/me/mondiversi/uvir/UvirSunGroundAppearanceRenderingTest.kt",
+    "target": "app/src/androidTest/java/me/mondiversi/planetcompass/PlanetCompassSunGroundAppearanceRenderingTest.kt",
+    "sourceSha256": "6F5D35E8E30F7F9A6A69FD65D058966FC73BE48BCBF181198138E67D7A7DD8B9"
+  },
+  {
+    "source": "app/src/androidTest/java/me/mondiversi/uvir/UvirSunMagneticOrientationTest.kt",
+    "target": "app/src/androidTest/java/me/mondiversi/planetcompass/PlanetCompassSunMagneticOrientationTest.kt",
+    "sourceSha256": "C007D45EF6EAE0A49FB50A88C33586DD0C29AE8E08ECDA97359EB195E5D05404"
+  },
+  {
+    "source": "app/src/androidTest/java/me/mondiversi/uvir/UvirSunPathPointLabelsUiTest.kt",
+    "target": "app/src/androidTest/java/me/mondiversi/planetcompass/PlanetCompassSunPathPointLabelsUiTest.kt",
+    "sourceSha256": "42F4C3219F4434D9249A3A467949959CA738155305B55642BCE7CC1D4B12F3C5"
+  },
+  {
+    "source": "app/src/main/java/me/mondiversi/uvir/UvirAdaptiveDropdownMenu.kt",
+    "target": "app/src/main/java/me/mondiversi/planetcompass/PlanetCompassAdaptiveDropdownMenu.kt",
+    "sourceSha256": "3292670A988D1690ECD89E53085FA90059F46E675D30F513AB1B1F04D7027013"
+  },
+  {
+    "source": "app/src/main/java/me/mondiversi/uvir/UvirDateFormatting.kt",
+    "target": "app/src/main/java/me/mondiversi/planetcompass/PlanetCompassDateFormatting.kt",
+    "sourceSha256": "2DC58BCC7A6023E4ED1BA6187390111337B93EEA475DD4D3FAFF195DCD884EC9"
+  },
+  {
+    "source": "app/src/main/java/me/mondiversi/uvir/UvirDialogTitle.kt",
+    "target": "app/src/main/java/me/mondiversi/planetcompass/PlanetCompassDialogTitle.kt",
+    "sourceSha256": "7157E014253953E43D599D1B098E8FB10C8F5E06BDBEE2DEEB7DA0B8C7BCAC97"
+  },
+  {
+    "source": "app/src/main/java/me/mondiversi/uvir/UvirNavigationChrome.kt",
+    "target": "app/src/main/java/me/mondiversi/planetcompass/PlanetCompassNavigationChrome.kt",
+    "sourceSha256": "F41F470FC3116F0E772290995380558E57BFAD4419F65FB454B58488C1A8B143"
+  },
+  {
+    "source": "app/src/main/java/me/mondiversi/uvir/UvirSelectionControlColors.kt",
+    "target": "app/src/main/java/me/mondiversi/planetcompass/PlanetCompassSelectionControlColors.kt",
+    "sourceSha256": "2937CA7B4148BF922C76EFE96C601F05781A93873DE2FCCAC3EA75CF4A41AA47"
+  },
+  {
+    "source": "app/src/main/java/me/mondiversi/uvir/UvirScrollingText.kt",
+    "target": "app/src/main/java/me/mondiversi/planetcompass/PlanetCompassScrollingText.kt",
+    "sourceSha256": "13AAA91FE70DA397AE7B9E903525CB89D70E6EA09EC08FAEB196682DD0AC6CDC"
+  },
+  {
+    "source": "app/src/main/java/me/mondiversi/uvir/UvirScrollbarGeometry.kt",
+    "target": "app/src/main/java/me/mondiversi/planetcompass/PlanetCompassScrollbarGeometry.kt",
+    "sourceSha256": "8561EF515FEB3B885ECA345257E090304458200911D6FA4138510DEC7704E3CC"
+  },
+  {
+    "source": "app/src/main/java/me/mondiversi/uvir/UvirAccessibility.kt",
+    "target": "app/src/main/java/me/mondiversi/planetcompass/PlanetCompassAccessibility.kt",
+    "sourceSha256": "CDCE1FCD125B84AE20B0C556A02D5C3AA4837C984D52FB5AC99A8F755B260C02"
+  },
+  {
+    "source": "app/src/main/java/me/mondiversi/uvir/UvirActionIconBadge.kt",
+    "target": "app/src/main/java/me/mondiversi/planetcompass/PlanetCompassActionIconBadge.kt",
+    "sourceSha256": "D43699655827F534697285166BE4C225A18365A22A038D55FEC186DFC3F67980"
+  },
+  {
+    "source": "app/src/main/java/me/mondiversi/uvir/UvirButtonStyles.kt",
+    "target": "app/src/main/java/me/mondiversi/planetcompass/PlanetCompassButtonStyles.kt",
+    "sourceSha256": "9131103E27AC91B504A839DEE92A34AC6DE7C953DF550A3598C311C96D87D511"
+  },
+  {
+    "source": "app/src/main/java/me/mondiversi/uvir/UvirHaptics.kt",
+    "target": "app/src/main/java/me/mondiversi/planetcompass/PlanetCompassHaptics.kt",
+    "sourceSha256": "3523F941F0B3C94044E4DA3D9688C296787AD8BD9F1DAED7CE5ABC2FA08E31D1"
+  },
+  {
+    "source": "app/src/main/java/me/mondiversi/uvir/UvirAdaptiveDisplay.kt",
+    "target": "app/src/main/java/me/mondiversi/planetcompass/PlanetCompassAdaptiveDisplay.kt",
+    "sourceSha256": "CF1FC7703E985100D0F2E622C8837C86E72580572ED70290B34E4B2C295E232E"
+  },
+  {
+    "source": "app/src/main/java/me/mondiversi/uvir/UvirSystemBarsContent.kt",
+    "target": "app/src/main/java/me/mondiversi/planetcompass/PlanetCompassSystemBarsContent.kt",
+    "sourceSha256": "EEB593199CD037B7FEABFF9AB973EE1AB5E12305E5024664FC110DEA84F7A8A7"
+  },
+  {
+    "source": "app/src/main/java/me/mondiversi/uvir/UvirNumericFormatting.kt",
+    "target": "app/src/main/java/me/mondiversi/planetcompass/PlanetCompassNumericFormatting.kt",
+    "sourceSha256": "880907AA579308635141E3808AC8E2314F6169663CE48B45482C96E5F6ED0C47"
+  },
+  {
+    "source": "app/src/main/java/me/mondiversi/uvir/UvirScrollAndPage.kt",
+    "target": "app/src/main/java/me/mondiversi/planetcompass/PlanetCompassScrolling.kt",
+    "sourceSha256": "8057B37D370A1017E919C4443A648C9FF22721FCC4882F6D39528AA3EEC5A9CE"
+  },
+  {
+    "source": "app/src/main/java/me/mondiversi/uvir/UvirUiComponents.kt",
+    "target": "app/src/main/java/me/mondiversi/planetcompass/PlanetCompassCountBadge.kt",
+    "sourceSha256": "EA26D23BB742835A9039AE67EB2815FA6E8329CDF1D14247067DD6EFF1A96A55"
+  },
+  {
+    "source": "app/src/main/java/me/mondiversi/uvir/UvirIcons.kt",
+    "target": "app/src/main/java/me/mondiversi/planetcompass/PlanetCompassCommonIcons.kt",
+    "sourceSha256": "2FDBD2C821EC8C07FEE9363942F299997B8D85B644F7FCA712A92BC2F6E870CE"
+  },
+  {
+    "source": "app/src/main/java/sgp4/ElsetRec.java",
+    "target": "app/src/main/java/sgp4/ElsetRec.java",
+    "sourceSha256": "8FB1AFA7A5710903AF43BB71BBAB302A8E315C5186EB4BFECC119B3310769AAD"
+  },
+  {
+    "source": "app/src/main/java/sgp4/SGP4.java",
+    "target": "app/src/main/java/sgp4/SGP4.java",
+    "sourceSha256": "92D760A59B0005E6C82455560FEEDA4889D6016684CFFF9D92B5BF430E17EB32"
+  },
+  {
+    "source": "app/src/main/java/sgp4/TLE.java",
+    "target": "app/src/main/java/sgp4/TLE.java",
+    "sourceSha256": "7A3CE5DEDF8D48B7147C9F0BAAA9E5C6A8B3F0E4339B33FB3B1C9EBC1582C069"
+  },
+  {
+    "source": "app/src/main/assets/celestial/europa.jpg",
+    "target": "app/src/main/assets/celestial/europa.jpg",
+    "sourceSha256": "3369BA56CBFA447347B5AFC003B80B69FBF87DD90A724D59F09ABAD8691A9819"
+  },
+  {
+    "source": "app/src/main/assets/celestial/io.jpg",
+    "target": "app/src/main/assets/celestial/io.jpg",
+    "sourceSha256": "DE69759452F5479B6F56FF5C72A90ED402AB8D7F11219524C26E5B60610B9597"
+  },
+  {
+    "source": "app/src/main/assets/celestial/jupiter.jpg",
+    "target": "app/src/main/assets/celestial/jupiter.jpg",
+    "sourceSha256": "B0F04D005350252636B0E3396FC592548CBD9E9126B269D32D5C6ABD4B0E4F2B"
+  },
+  {
+    "source": "app/src/main/assets/celestial/mars.jpg",
+    "target": "app/src/main/assets/celestial/mars.jpg",
+    "sourceSha256": "2D187F3E77A98EAA8CEA5F4CC722F633C122EF170B9E94ACE6B5FB6CBC3F8E01"
+  },
+  {
+    "source": "app/src/main/assets/celestial/mercury.jpg",
+    "target": "app/src/main/assets/celestial/mercury.jpg",
+    "sourceSha256": "5A5C80607F643496BAC9A631E71957DEF35ED788895F18B678AC849C2B38E48A"
+  },
+  {
+    "source": "app/src/main/assets/celestial/moon.jpg",
+    "target": "app/src/main/assets/celestial/moon.jpg",
+    "sourceSha256": "F7130A1822681FA7512D7DCFD40DB8C10B9BA4F06777910348698260ED7A2170"
+  },
+  {
+    "source": "app/src/main/assets/celestial/neptune.jpg",
+    "target": "app/src/main/assets/celestial/neptune.jpg",
+    "sourceSha256": "CB42EA82709741D28B0AF44D8B283CBC6DBD0C521A7F0E1E1E010ADE00977DF6"
+  },
+  {
+    "source": "app/src/main/assets/celestial/pluto.jpg",
+    "target": "app/src/main/assets/celestial/pluto.jpg",
+    "sourceSha256": "D63DA5EE9EAB8D0B98EBEF3C0CDC3A92676D7C9B247B2383294FB5DA5C67A71A"
+  },
+  {
+    "source": "app/src/main/assets/celestial/saturn.jpg",
+    "target": "app/src/main/assets/celestial/saturn.jpg",
+    "sourceSha256": "54A900CA9BF7AB62E70F862852759ABDF342E6D6436A95A2FE9EBDB6BCD3BBAC"
+  },
+  {
+    "source": "app/src/main/assets/celestial/sun.jpg",
+    "target": "app/src/main/assets/celestial/sun.jpg",
+    "sourceSha256": "FF0F076BA65E03B5AB518451BC96699325BE38E3CCBDD5869EE1C00F3A0C8816"
+  },
+  {
+    "source": "app/src/main/assets/celestial/uranus.jpg",
+    "target": "app/src/main/assets/celestial/uranus.jpg",
+    "sourceSha256": "D15239D46F82D3EA13D2B260B5B29B2A382F42F2916DAE0694D0387B1204A09D"
+  },
+  {
+    "source": "app/src/main/assets/celestial/venus_atmosphere.jpg",
+    "target": "app/src/main/assets/celestial/venus_atmosphere.jpg",
+    "sourceSha256": "225012AD4911730605C4E189CA2A3BF674FCE50CC48AAB4102B936B47D6991AC"
+  },
+  {
+    "source": "third_party/sgp4/LICENSE",
+    "target": "third_party/sgp4/LICENSE",
+    "sourceSha256": "88D9B4EB60579C191EC391CA04C16130572D7EEDC4A86DAA58BF28C6E14C9BCD"
+  },
+  {
+    "source": "third_party/sgp4/NOTICE.txt",
+    "target": "third_party/sgp4/NOTICE.txt",
+    "sourceSha256": "37FA3B48F51724B0E89E413FD151D8D57D25D2FAB4C1771040F0061F99A8D6E9"
+  },
+  {
+    "source": "app/src/test/resources/celestial/sedna-heliocentric-motion-jpl-2026-10-03.txt",
+    "target": "app/src/test/resources/celestial/sedna-heliocentric-motion-jpl-2026-10-03.txt",
+    "sourceSha256": "0ACA6B0C0CA7738475E307ACE3D321E6A6ABCB00E54258FC0805627FF526EA57"
+  },
+  {
+    "source": "app/src/test/resources/celestial/sedna-motion-jpl-2026-10-03.txt",
+    "target": "app/src/test/resources/celestial/sedna-motion-jpl-2026-10-03.txt",
+    "sourceSha256": "C4F07DD2AAFAEAD261358EFAE1EC9722C14D4D162EECAC4F85D485BD5D29426A"
+  },
+  {
+    "source": "app/src/test/resources/celestial/starlink-40083.csv",
+    "target": "app/src/test/resources/celestial/starlink-40083.csv",
+    "sourceSha256": "F36DE8E16F93B7D96CF3F1561F37EBBFF8F41F4776B69FD7AB718C4B60A9BFEF"
+  },
+  {
+    "source": "app/src/test/resources/celestial/voyager-1-heliocentric-motion-jpl-2026-10-03.txt",
+    "target": "app/src/test/resources/celestial/voyager-1-heliocentric-motion-jpl-2026-10-03.txt",
+    "sourceSha256": "1C3CAFF34A2B3673894528CFC0A14BC660BED2541AD0397C8FDAC53B3C41961B"
+  },
+  {
+    "source": "app/src/test/resources/celestial/voyager-1-jpl-2026-10-03.txt",
+    "target": "app/src/test/resources/celestial/voyager-1-jpl-2026-10-03.txt",
+    "sourceSha256": "A2333B65BA98CF11312349F21B868E0D39253E83136BF8CBCEB9DD9EF0930485"
+  },
+  {
+    "source": "app/src/test/resources/celestial/voyager-1-motion-jpl-2026-10-03.txt",
+    "target": "app/src/test/resources/celestial/voyager-1-motion-jpl-2026-10-03.txt",
+    "sourceSha256": "1A48E656FE81D0542ECE16F69478C72ABE30AD448C97E75E34CCDB766B79DC60"
+  },
+  {
+    "source": "app/src/test/resources/celestial/voyager-2-heliocentric-motion-jpl-2026-10-03.txt",
+    "target": "app/src/test/resources/celestial/voyager-2-heliocentric-motion-jpl-2026-10-03.txt",
+    "sourceSha256": "3878D7E384D295DAD2342177F5498630BD03D40254444793DC080C02206D9352"
+  },
+  {
+    "source": "app/src/test/resources/celestial/voyager-2-jpl-2026-10-03.txt",
+    "target": "app/src/test/resources/celestial/voyager-2-jpl-2026-10-03.txt",
+    "sourceSha256": "644F7553C333BB653C99F326428D2453131118E683BE8D5E25E3C1EA70E4ED59"
+  },
+  {
+    "source": "app/src/test/resources/celestial/voyager-2-motion-jpl-2026-10-03.txt",
+    "target": "app/src/test/resources/celestial/voyager-2-motion-jpl-2026-10-03.txt",
+    "sourceSha256": "E47A97D61E6323A5A85E71E18D1285E4E0355C5E23BFDCBF323C106DAAF146BA"
+  },
+  {
+    "source": "gradlew",
+    "target": "gradlew",
+    "sourceSha256": "3238AFB2AED5CB16EB7D6718077E7138059108F007B54179E9CC157C5A6E0E89"
+  },
+  {
+    "source": "gradlew.bat",
+    "target": "gradlew.bat",
+    "sourceSha256": "1D297E00BD21DE3ACE22B4D7F2DE1F9DFA858883D66BBF7C1CCBECCCEC8F4F3B"
+  },
+  {
+    "source": "gradle/wrapper/gradle-wrapper.jar",
+    "target": "gradle/wrapper/gradle-wrapper.jar",
+    "sourceSha256": "76805E32C009C0CF0DD5D206BDDC9FB22EA42E84DB904B764F3047DE095493F3"
+  },
+  {
+    "source": "gradle/wrapper/gradle-wrapper.properties",
+    "target": "gradle/wrapper/gradle-wrapper.properties",
+    "sourceSha256": "967256A02B760A990536E285786CED82DAE1A92402E92E3DC480FF6B9FBC2873"
+  },
+  {
+    "source": "gradle/libs.versions.toml",
+    "target": "gradle/libs.versions.toml",
+    "sourceSha256": "FF9490D98364B3C6C6608AC1AE0122E519DE8220CF61A950741D6072CD596598"
+  },
+  {
+    "source": "LICENSE",
+    "target": "LICENSE",
+    "sourceSha256": "605E9047A563C5C8396FFB18232AA4304EC56586AEE537C45064C6FB425E44AD"
+  },
+  {
+    "source": "docs/CELESTIAL_VIEWER.md",
+    "target": "docs/CELESTIAL_VIEWER.md",
+    "sourceSha256": "6AC710892A9ED659435E40329F0CDF35E3F6EA581A6A3678886FA9D61F9F632D"
+  },
+  {
+    "source": "app/src/main/res/raw/sectigo_server_root_r46.pem",
+    "target": "app/src/main/res/raw/sectigo_server_root_r46.pem",
+    "sourceSha256": "1BC1C83EC5A7CE5896715740F133CAD548F842E5F0AEC59688DD1209548C01FF"
+  },
+  {
+    "source": "app/src/main/res/xml/network_security_config.xml",
+    "target": "app/src/main/res/xml/network_security_config.xml",
+    "sourceSha256": "EF677B5BD8602B702A290FD2D38DCC6415AB7B740833C09DA38E4A7BC523345F"
+  },
+  {
+    "source": "app/src/main/res/values/celestial_catalog.xml",
+    "target": "app/src/main/res/values/celestial_catalog.xml",
+    "sourceSha256": "44B6E17F2FE736AABDC385DE16A4E60A771C1B07EB5568F6DB4D16143F05C9A6"
+  },
+  {
+    "source": "app/src/main/res/values/celestial_layout.xml",
+    "target": "app/src/main/res/values/celestial_layout.xml",
+    "sourceSha256": "3E9685B93BCDC389BF2CBB9C6522D9CC9413E58906C9CAF7118325723D361771"
+  },
+  {
+    "source": "app/src/main/res/values/celestial_refinements.xml",
+    "target": "app/src/main/res/values/celestial_refinements.xml",
+    "sourceSha256": "BAB1073E29F76577C2741941BF62DF72CE2C640298AC2D87FD3C117E78CB006E"
+  },
+  {
+    "source": "app/src/main/res/values/celestial_temperatures.xml",
+    "target": "app/src/main/res/values/celestial_temperatures.xml",
+    "sourceSha256": "D0E465B4F9066AB65A3BFC046EF4DCDCAEE00F10ADE99D30FCEF66D3DB0FF946"
+  },
+  {
+    "source": "app/src/main/res/values/celestial_time.xml",
+    "target": "app/src/main/res/values/celestial_time.xml",
+    "sourceSha256": "4692E31C440EC727CBF2A52AFA4ADB8881EA20156E04BDB4A5442906CFFD87DE"
+  },
+  {
+    "source": "app/src/main/res/values/celestial_viewer.xml",
+    "target": "app/src/main/res/values/celestial_viewer.xml",
+    "sourceSha256": "A565B1422430A6A76D9C68A1116D2E2F0468A8CF329BAFF81154E5822EA99C31"
+  },
+  {
+    "source": "app/src/main/res/values/celestial.xml",
+    "target": "app/src/main/res/values/celestial.xml",
+    "sourceSha256": "F4CBD2B244E22D4AC44DCE3193540E5426FCCEC13E93C8046FFA2EF98E62205F"
+  },
+  {
+    "source": "app/src/main/res/values/moon_phase.xml",
+    "target": "app/src/main/res/values/moon_phase.xml",
+    "sourceSha256": "4E6F771FFB36F8CE77B004DB18D6C628D991FDA70061EAC5E04BB711D4904F83"
+  },
+  {
+    "source": "app/src/main/res/values/starlink_name.xml",
+    "target": "app/src/main/res/values/starlink_name.xml",
+    "sourceSha256": "28483037248C9730BA2BAC2F9558597D5974B70F1EE95DABA3AFE90153819D9C"
+  },
+  {
+    "source": "app/src/main/res/values/starlink.xml",
+    "target": "app/src/main/res/values/starlink.xml",
+    "sourceSha256": "1EC28DC22FE998A59D0D9BFB399D513E0E3FA70E9E36FF322A26870DE12CC25D"
+  },
+  {
+    "source": "app/src/main/res/values/sun_finder.xml",
+    "target": "app/src/main/res/values/sun_finder.xml",
+    "sourceSha256": "5343E50B5267028CF8238115B05414946DA3F66B879BA7F7DBD9406558983C81"
+  },
+  {
+    "source": "app/src/main/res/values/sun_path.xml",
+    "target": "app/src/main/res/values/sun_path.xml",
+    "sourceSha256": "827C4183AC3591B713BB6711B5E44CACEA46EAC30F8AD5D02C2DA775A44CA19D"
+  },
+  {
+    "source": "app/src/main/res/values-ar/celestial_catalog.xml",
+    "target": "app/src/main/res/values-ar/celestial_catalog.xml",
+    "sourceSha256": "0ADCF6339825A196D0D0018347364F6E9F752519BF20520AADB84F36AECDB6DC"
+  },
+  {
+    "source": "app/src/main/res/values-ar/celestial_layout.xml",
+    "target": "app/src/main/res/values-ar/celestial_layout.xml",
+    "sourceSha256": "06ABDBFDF82BA9EEA8614BDBD926B511B486E2E8D49B35A6DD42D7F5C86F6DA7"
+  },
+  {
+    "source": "app/src/main/res/values-ar/celestial_refinements.xml",
+    "target": "app/src/main/res/values-ar/celestial_refinements.xml",
+    "sourceSha256": "F9A9C2C7810B46D39E8A5342709F9050EECA892A407EBEC5ED6CE45C732F3961"
+  },
+  {
+    "source": "app/src/main/res/values-ar/celestial_temperatures.xml",
+    "target": "app/src/main/res/values-ar/celestial_temperatures.xml",
+    "sourceSha256": "CA2DC86DCCE6F00CA1BC42B204ED2942DC3836589BA307441838D1AAF8F9EF85"
+  },
+  {
+    "source": "app/src/main/res/values-ar/celestial_time.xml",
+    "target": "app/src/main/res/values-ar/celestial_time.xml",
+    "sourceSha256": "D61D8792441FEE6F636B4867223532ABA4AAC83FE635FD14ABE79AFCFB654D4D"
+  },
+  {
+    "source": "app/src/main/res/values-ar/celestial_viewer.xml",
+    "target": "app/src/main/res/values-ar/celestial_viewer.xml",
+    "sourceSha256": "5316ADB80F5035C612E44A1A678871349CE9BA80F67D96D99BA0009634D4B9BD"
+  },
+  {
+    "source": "app/src/main/res/values-ar/celestial.xml",
+    "target": "app/src/main/res/values-ar/celestial.xml",
+    "sourceSha256": "05DB97D8D542EA2DC75559EDC8E52A7F9E15E974E62921B3D8CF58973B898A95"
+  },
+  {
+    "source": "app/src/main/res/values-ar/moon_phase.xml",
+    "target": "app/src/main/res/values-ar/moon_phase.xml",
+    "sourceSha256": "318172337680C390C61F1866EDF66DE0C9B29DE1D93357DF4064C953B208F3BE"
+  },
+  {
+    "source": "app/src/main/res/values-ar/starlink.xml",
+    "target": "app/src/main/res/values-ar/starlink.xml",
+    "sourceSha256": "553C07E2D7EBFAF6E5BC657FED7078DA647AFA027619FB1A1055ACB9B294E6E4"
+  },
+  {
+    "source": "app/src/main/res/values-ar/sun_finder.xml",
+    "target": "app/src/main/res/values-ar/sun_finder.xml",
+    "sourceSha256": "E92A392665A5443445FECF67B531E558C9E58F886F1237BD3EC5A5C36960D135"
+  },
+  {
+    "source": "app/src/main/res/values-ar/sun_path.xml",
+    "target": "app/src/main/res/values-ar/sun_path.xml",
+    "sourceSha256": "111250899BAC2ADAF6215A86D40605613E2BD9999E87396231B5E6AD8A28DC79"
+  },
+  {
+    "source": "app/src/main/res/values-de/celestial_catalog.xml",
+    "target": "app/src/main/res/values-de/celestial_catalog.xml",
+    "sourceSha256": "6665DA7DBAF8C5C95DEC95C4426CB5499D1752C25404483A1BE5FA0D8C22C86B"
+  },
+  {
+    "source": "app/src/main/res/values-de/celestial_layout.xml",
+    "target": "app/src/main/res/values-de/celestial_layout.xml",
+    "sourceSha256": "A5B0D21A8D1244BB602A686C99F9F496A6F164D1D0A72DA1CBF077E187FE317A"
+  },
+  {
+    "source": "app/src/main/res/values-de/celestial_refinements.xml",
+    "target": "app/src/main/res/values-de/celestial_refinements.xml",
+    "sourceSha256": "21C87DAD88199B0132795BC1E12102175DC6C2DB829A1F5ECC7F61214F9D2368"
+  },
+  {
+    "source": "app/src/main/res/values-de/celestial_temperatures.xml",
+    "target": "app/src/main/res/values-de/celestial_temperatures.xml",
+    "sourceSha256": "367B5789CF2FF50525F631F95CD27C6B2AC7BB7B8923EC6CD2DF9AF6D1A89A15"
+  },
+  {
+    "source": "app/src/main/res/values-de/celestial_time.xml",
+    "target": "app/src/main/res/values-de/celestial_time.xml",
+    "sourceSha256": "7899A01632ED67B4922334AFF2626DB056F9461028C3329846AD7366605D619C"
+  },
+  {
+    "source": "app/src/main/res/values-de/celestial_viewer.xml",
+    "target": "app/src/main/res/values-de/celestial_viewer.xml",
+    "sourceSha256": "35D84318CA4FD83C5EC17FC290D9583A5C544537AF1BED4E212878043B203E28"
+  },
+  {
+    "source": "app/src/main/res/values-de/celestial.xml",
+    "target": "app/src/main/res/values-de/celestial.xml",
+    "sourceSha256": "E6256CE41372F2D28AF2D1E915B73FB9FE88E1A4BE6A3C01F58B9F8F7F03B4C4"
+  },
+  {
+    "source": "app/src/main/res/values-de/moon_phase.xml",
+    "target": "app/src/main/res/values-de/moon_phase.xml",
+    "sourceSha256": "A35F394D4442908A009B737626B19C2C24632DF3A3A2361CBD3F7CE5C7885097"
+  },
+  {
+    "source": "app/src/main/res/values-de/starlink.xml",
+    "target": "app/src/main/res/values-de/starlink.xml",
+    "sourceSha256": "C53EBA219FB9243D06AC9AD5B5718A7DE76E49DFAC8BE76BA5D16AA13706E063"
+  },
+  {
+    "source": "app/src/main/res/values-de/sun_finder.xml",
+    "target": "app/src/main/res/values-de/sun_finder.xml",
+    "sourceSha256": "26B2CDFD321F147D1A7D5E0BF0A862BBC2AE013279DA33EFA7150B2085C48D94"
+  },
+  {
+    "source": "app/src/main/res/values-de/sun_path.xml",
+    "target": "app/src/main/res/values-de/sun_path.xml",
+    "sourceSha256": "D7B2DD956217CB8E037EA2C4B890288E85DB8B3070C9EAD991310E80FC6DC0A9"
+  },
+  {
+    "source": "app/src/main/res/values-el/celestial_catalog.xml",
+    "target": "app/src/main/res/values-el/celestial_catalog.xml",
+    "sourceSha256": "77DCD981F2862D504E895266AE325776C6FE09DDD3664B123BB4C02A1F6EC4AA"
+  },
+  {
+    "source": "app/src/main/res/values-el/celestial_layout.xml",
+    "target": "app/src/main/res/values-el/celestial_layout.xml",
+    "sourceSha256": "59E82E03A78D62308DEF76A37678B8CB2EB415A9F92A085C590FE1720A2FF6D1"
+  },
+  {
+    "source": "app/src/main/res/values-el/celestial_refinements.xml",
+    "target": "app/src/main/res/values-el/celestial_refinements.xml",
+    "sourceSha256": "87176CC6B7D2BCB46271216F2E59C96B53E97CCF355AF7A8E6879144780858EB"
+  },
+  {
+    "source": "app/src/main/res/values-el/celestial_temperatures.xml",
+    "target": "app/src/main/res/values-el/celestial_temperatures.xml",
+    "sourceSha256": "A397C6399BDDC67A0A78A0C7E5246EB970EE8599A0B59B489B0A3BA35CA32F75"
+  },
+  {
+    "source": "app/src/main/res/values-el/celestial_time.xml",
+    "target": "app/src/main/res/values-el/celestial_time.xml",
+    "sourceSha256": "274B274E6368F8B1782269BA9141CAE40961D27D01531E7D48D4C986D3740681"
+  },
+  {
+    "source": "app/src/main/res/values-el/celestial_viewer.xml",
+    "target": "app/src/main/res/values-el/celestial_viewer.xml",
+    "sourceSha256": "368A0BA84D8F122AB9ADF0D3C6A2E57BDC28B0DC77F874CE50D6947F1A98A94C"
+  },
+  {
+    "source": "app/src/main/res/values-el/celestial.xml",
+    "target": "app/src/main/res/values-el/celestial.xml",
+    "sourceSha256": "403F498969990E2CFD6B65446FDC886E1F5E448ECF3541D886F5524D27BA3907"
+  },
+  {
+    "source": "app/src/main/res/values-el/moon_phase.xml",
+    "target": "app/src/main/res/values-el/moon_phase.xml",
+    "sourceSha256": "07D1900F7BACCC6ECD2A20AAF645B5EFE2CD214AE5C8CB94B5FD7460736BE29F"
+  },
+  {
+    "source": "app/src/main/res/values-el/starlink.xml",
+    "target": "app/src/main/res/values-el/starlink.xml",
+    "sourceSha256": "C1F9401588DD8E09AE8EFD1D23ED423E6965173CEF49CDC48687CE08663663BA"
+  },
+  {
+    "source": "app/src/main/res/values-el/sun_finder.xml",
+    "target": "app/src/main/res/values-el/sun_finder.xml",
+    "sourceSha256": "A2BEF2470639E343D576C6F309CA549FF47A390E990F67922F29F4B7929A9216"
+  },
+  {
+    "source": "app/src/main/res/values-el/sun_path.xml",
+    "target": "app/src/main/res/values-el/sun_path.xml",
+    "sourceSha256": "B77F5D273943A3E255FAE384877C433B4BD49E2A038B7BD6D5A0C2A798AF3F23"
+  },
+  {
+    "source": "app/src/main/res/values-es/celestial_catalog.xml",
+    "target": "app/src/main/res/values-es/celestial_catalog.xml",
+    "sourceSha256": "6246C793E3F755440E98B25CF2446B9F41C237A723442688BBC314AAEC95D686"
+  },
+  {
+    "source": "app/src/main/res/values-es/celestial_layout.xml",
+    "target": "app/src/main/res/values-es/celestial_layout.xml",
+    "sourceSha256": "6F0694FF56048DBB487721B58569729118B7FFE82AB46B6A43484E0CC99978D2"
+  },
+  {
+    "source": "app/src/main/res/values-es/celestial_refinements.xml",
+    "target": "app/src/main/res/values-es/celestial_refinements.xml",
+    "sourceSha256": "E45AAA1FF1DE2BD335DF4E47223CCDD269C79ABE7735792903D3866B0AB2E932"
+  },
+  {
+    "source": "app/src/main/res/values-es/celestial_temperatures.xml",
+    "target": "app/src/main/res/values-es/celestial_temperatures.xml",
+    "sourceSha256": "19E2A53F18F4E17A91EF6EF942C3018022F19623F6C58A2B485078B89CBA4D7C"
+  },
+  {
+    "source": "app/src/main/res/values-es/celestial_time.xml",
+    "target": "app/src/main/res/values-es/celestial_time.xml",
+    "sourceSha256": "EDF88286BDC88FB5E8E73DB9C185C0E5CF1625474F9DAA65DAEF67E5010C92D8"
+  },
+  {
+    "source": "app/src/main/res/values-es/celestial_viewer.xml",
+    "target": "app/src/main/res/values-es/celestial_viewer.xml",
+    "sourceSha256": "0E08CC24C22286167F9F6FC95363651A411B838FD37F6D094F89E51716DE4D38"
+  },
+  {
+    "source": "app/src/main/res/values-es/celestial.xml",
+    "target": "app/src/main/res/values-es/celestial.xml",
+    "sourceSha256": "C7A43A9AD1E19B95049033352C02590897C0FB36DDE10AB366424BD21315F4D5"
+  },
+  {
+    "source": "app/src/main/res/values-es/moon_phase.xml",
+    "target": "app/src/main/res/values-es/moon_phase.xml",
+    "sourceSha256": "92FEF87989DE6BED8B850608CC03982343A16926F65928E5903738321E4921B5"
+  },
+  {
+    "source": "app/src/main/res/values-es/starlink.xml",
+    "target": "app/src/main/res/values-es/starlink.xml",
+    "sourceSha256": "D9E52417DEB5B8EAD2FD34AEC2566C99D5BAE48704DDBCD516EE0174A141199D"
+  },
+  {
+    "source": "app/src/main/res/values-es/sun_finder.xml",
+    "target": "app/src/main/res/values-es/sun_finder.xml",
+    "sourceSha256": "EFB9C5EDB74D156D209C8B4BF3375891E7B575998B71968B87F2E2AA16147C66"
+  },
+  {
+    "source": "app/src/main/res/values-es/sun_path.xml",
+    "target": "app/src/main/res/values-es/sun_path.xml",
+    "sourceSha256": "B1CDDD06163452DD13EEB42455C60139EE61F3673C821D3323D2E28EF9C6D72A"
+  },
+  {
+    "source": "app/src/main/res/values-fa/celestial_catalog.xml",
+    "target": "app/src/main/res/values-fa/celestial_catalog.xml",
+    "sourceSha256": "A03523B10E475E8581933DC5E91158D6009CA9D38FBB844581E8154C138CBECF"
+  },
+  {
+    "source": "app/src/main/res/values-fa/celestial_layout.xml",
+    "target": "app/src/main/res/values-fa/celestial_layout.xml",
+    "sourceSha256": "4BE5A13EDE2F2288AFCF4C9E0A22F61007A1875B45B346E5C1E3EB7653C6A5DC"
+  },
+  {
+    "source": "app/src/main/res/values-fa/celestial_refinements.xml",
+    "target": "app/src/main/res/values-fa/celestial_refinements.xml",
+    "sourceSha256": "616C8A946124AA696C2A88CD112D0635F34F1EC1E5467D58CE41E30886637149"
+  },
+  {
+    "source": "app/src/main/res/values-fa/celestial_temperatures.xml",
+    "target": "app/src/main/res/values-fa/celestial_temperatures.xml",
+    "sourceSha256": "EEF8038A04FB7E2D5106069B474DD9A1EDC4C70BB527924ACEB26BD866B798C0"
+  },
+  {
+    "source": "app/src/main/res/values-fa/celestial_time.xml",
+    "target": "app/src/main/res/values-fa/celestial_time.xml",
+    "sourceSha256": "A05C109DFEE821226531E0B911BD19383F3D03025C4AE7440AB2D4EF2F1AF4D1"
+  },
+  {
+    "source": "app/src/main/res/values-fa/celestial_viewer.xml",
+    "target": "app/src/main/res/values-fa/celestial_viewer.xml",
+    "sourceSha256": "A98245615EF4CD8054D6BF93FB8C6BE6429E6A8A9FCE0C0F50F6DB6DB3E67A96"
+  },
+  {
+    "source": "app/src/main/res/values-fa/celestial.xml",
+    "target": "app/src/main/res/values-fa/celestial.xml",
+    "sourceSha256": "1DA53FC2BA5C84732B453C7E2D60C1F34DCB011FAE2445BAA87226E479C6204E"
+  },
+  {
+    "source": "app/src/main/res/values-fa/moon_phase.xml",
+    "target": "app/src/main/res/values-fa/moon_phase.xml",
+    "sourceSha256": "FBF5D2C35702C68D1FAE0F477BCC263397FD712DC53D8BB502ACB72FFA6224A8"
+  },
+  {
+    "source": "app/src/main/res/values-fa/starlink.xml",
+    "target": "app/src/main/res/values-fa/starlink.xml",
+    "sourceSha256": "F198AF9CF60D99CAF4615B6C3D65DA2D513B4F3EFACEA4BBB5FB68F6F0D77CC9"
+  },
+  {
+    "source": "app/src/main/res/values-fa/sun_finder.xml",
+    "target": "app/src/main/res/values-fa/sun_finder.xml",
+    "sourceSha256": "13FC167CE003D897897AEF6B7C883DBFAFB3090239687899B924C7C4052CB87D"
+  },
+  {
+    "source": "app/src/main/res/values-fa/sun_path.xml",
+    "target": "app/src/main/res/values-fa/sun_path.xml",
+    "sourceSha256": "1E39F466CB835EA9F83A14AA073F6EE4C2B7745438028704C7DC937437D9A4A3"
+  },
+  {
+    "source": "app/src/main/res/values-fr/celestial_catalog.xml",
+    "target": "app/src/main/res/values-fr/celestial_catalog.xml",
+    "sourceSha256": "07D9047608761F9A41BD49BCF126C2CBF2AEC7AEE26C8BF75C9157A142558479"
+  },
+  {
+    "source": "app/src/main/res/values-fr/celestial_layout.xml",
+    "target": "app/src/main/res/values-fr/celestial_layout.xml",
+    "sourceSha256": "F0944E50F6C28066B817883D30F4A260FBE704AA5E8AF53BFB520D2FE05D460A"
+  },
+  {
+    "source": "app/src/main/res/values-fr/celestial_refinements.xml",
+    "target": "app/src/main/res/values-fr/celestial_refinements.xml",
+    "sourceSha256": "63118FCBBF44BC84542BA0A6DFC7EED714B9981D053EF092EF6D6172BE9F02F5"
+  },
+  {
+    "source": "app/src/main/res/values-fr/celestial_temperatures.xml",
+    "target": "app/src/main/res/values-fr/celestial_temperatures.xml",
+    "sourceSha256": "96DE81D55CF5A3016351D84949E1C3FB234CDD1BDBF63F332B14EC9D010CD579"
+  },
+  {
+    "source": "app/src/main/res/values-fr/celestial_time.xml",
+    "target": "app/src/main/res/values-fr/celestial_time.xml",
+    "sourceSha256": "0422C74B301591C9EF10F8230DD1A330513ADDF4B11079720F8DF8718F6B139C"
+  },
+  {
+    "source": "app/src/main/res/values-fr/celestial_viewer.xml",
+    "target": "app/src/main/res/values-fr/celestial_viewer.xml",
+    "sourceSha256": "B4D3F5359D8C62F3976F63C60853452155877FE496022F33F0561182000F8F69"
+  },
+  {
+    "source": "app/src/main/res/values-fr/celestial.xml",
+    "target": "app/src/main/res/values-fr/celestial.xml",
+    "sourceSha256": "FC728D4A0325486F2B8B146C3969C7E34F0CD268201B78F588DE25E3C0A2FFFF"
+  },
+  {
+    "source": "app/src/main/res/values-fr/moon_phase.xml",
+    "target": "app/src/main/res/values-fr/moon_phase.xml",
+    "sourceSha256": "86B7B494F9E07547AEEAA465050AFDAAE2299C0F1C0CF16B6043BC7C14B4C338"
+  },
+  {
+    "source": "app/src/main/res/values-fr/starlink.xml",
+    "target": "app/src/main/res/values-fr/starlink.xml",
+    "sourceSha256": "66FF9036347FADCDB58544FA7312A40A739B14DF61AB4B9A3BFE996CADA96DB7"
+  },
+  {
+    "source": "app/src/main/res/values-fr/sun_finder.xml",
+    "target": "app/src/main/res/values-fr/sun_finder.xml",
+    "sourceSha256": "2F68F9C6E5538510453759304A4D49CB40231BC3730DB4F9FB4731D87B195EF4"
+  },
+  {
+    "source": "app/src/main/res/values-fr/sun_path.xml",
+    "target": "app/src/main/res/values-fr/sun_path.xml",
+    "sourceSha256": "3CFD383841507E792FC388CA9334C71680796E783B3F621C050891E748870F43"
+  },
+  {
+    "source": "app/src/main/res/values-hi/celestial_catalog.xml",
+    "target": "app/src/main/res/values-hi/celestial_catalog.xml",
+    "sourceSha256": "C5546BD07304EB917B8E970545E0ADE4B2EAD95F4A5B89D9DE30D4F5E5FEAE37"
+  },
+  {
+    "source": "app/src/main/res/values-hi/celestial_layout.xml",
+    "target": "app/src/main/res/values-hi/celestial_layout.xml",
+    "sourceSha256": "8C7FFBDC4A77F70C9A400A0625D714E6DC143990CCAA4AC60CF8FEEED4362113"
+  },
+  {
+    "source": "app/src/main/res/values-hi/celestial_refinements.xml",
+    "target": "app/src/main/res/values-hi/celestial_refinements.xml",
+    "sourceSha256": "FFABC4D14610E0842BF005CF064CA728C4D13A0FD4563C6A5A08193EBB9014BE"
+  },
+  {
+    "source": "app/src/main/res/values-hi/celestial_temperatures.xml",
+    "target": "app/src/main/res/values-hi/celestial_temperatures.xml",
+    "sourceSha256": "BC0CD47915E5CD2E588F98E16D2400C5087CF02B69A0DF7A96C167E6479B51F8"
+  },
+  {
+    "source": "app/src/main/res/values-hi/celestial_time.xml",
+    "target": "app/src/main/res/values-hi/celestial_time.xml",
+    "sourceSha256": "3E03C46542AA024342AA81355BC2978E6811D3D39C74595EB2974470122F5CD6"
+  },
+  {
+    "source": "app/src/main/res/values-hi/celestial_viewer.xml",
+    "target": "app/src/main/res/values-hi/celestial_viewer.xml",
+    "sourceSha256": "C125DFEFAC8F8AB5EEA217B9DE2AA4D872CBF09523F4C6E8B4A771BC2192E489"
+  },
+  {
+    "source": "app/src/main/res/values-hi/celestial.xml",
+    "target": "app/src/main/res/values-hi/celestial.xml",
+    "sourceSha256": "42FC5CCACB08CBD6BF64C5FF7659CB891870D65831B0AC25147BE578F4AEEAB2"
+  },
+  {
+    "source": "app/src/main/res/values-hi/moon_phase.xml",
+    "target": "app/src/main/res/values-hi/moon_phase.xml",
+    "sourceSha256": "175CB80D5CBD4707F68C7B6D07365A911C1595750B81DCCFD4C5FC1774DD7D95"
+  },
+  {
+    "source": "app/src/main/res/values-hi/starlink.xml",
+    "target": "app/src/main/res/values-hi/starlink.xml",
+    "sourceSha256": "59960DA8EDDB79BF91D3EAB92600555694294E250F1A31B210EDEA3C6935BCB5"
+  },
+  {
+    "source": "app/src/main/res/values-hi/sun_finder.xml",
+    "target": "app/src/main/res/values-hi/sun_finder.xml",
+    "sourceSha256": "3D0129D7BE8162D3DCA35704939C01AB362F442761965DA0FA3624A644ABBC5F"
+  },
+  {
+    "source": "app/src/main/res/values-hi/sun_path.xml",
+    "target": "app/src/main/res/values-hi/sun_path.xml",
+    "sourceSha256": "3D7F5C67AC02C04B6576FF881005226F7A215DFF867CC9F233B6A0C351092E1E"
+  },
+  {
+    "source": "app/src/main/res/values-in/celestial_catalog.xml",
+    "target": "app/src/main/res/values-in/celestial_catalog.xml",
+    "sourceSha256": "3878D566B191E1AD4E8651B8343C9690DE88810719FAE4E672E4CAF75E0946C0"
+  },
+  {
+    "source": "app/src/main/res/values-in/celestial_layout.xml",
+    "target": "app/src/main/res/values-in/celestial_layout.xml",
+    "sourceSha256": "D128EC759938B871142A5257036272A2E77DCA47E163FF0DBFDB8CD86797BE49"
+  },
+  {
+    "source": "app/src/main/res/values-in/celestial_refinements.xml",
+    "target": "app/src/main/res/values-in/celestial_refinements.xml",
+    "sourceSha256": "D3AEF5B51F471D948CDC984F350D2AC1F87D15E38E1535BDE04EB54E01388905"
+  },
+  {
+    "source": "app/src/main/res/values-in/celestial_temperatures.xml",
+    "target": "app/src/main/res/values-in/celestial_temperatures.xml",
+    "sourceSha256": "88C4C0BA16D9B136C9821EE1C0B6F4DE75F72E49A53DAFB60A981235FDA2759D"
+  },
+  {
+    "source": "app/src/main/res/values-in/celestial_time.xml",
+    "target": "app/src/main/res/values-in/celestial_time.xml",
+    "sourceSha256": "26129E6CA34BEAA7A38D6C3D7F5B537D5BEE5C52BBD9297F57FB98C062137052"
+  },
+  {
+    "source": "app/src/main/res/values-in/celestial_viewer.xml",
+    "target": "app/src/main/res/values-in/celestial_viewer.xml",
+    "sourceSha256": "5964754F0CA3EAF247BBD1B10AB67986AF65129DA12F9AF588D4913CA8603C01"
+  },
+  {
+    "source": "app/src/main/res/values-in/celestial.xml",
+    "target": "app/src/main/res/values-in/celestial.xml",
+    "sourceSha256": "4300510FCC4BD50D1FDAD879214A8751D107FCF84937A108BACE381AC79CEC36"
+  },
+  {
+    "source": "app/src/main/res/values-in/moon_phase.xml",
+    "target": "app/src/main/res/values-in/moon_phase.xml",
+    "sourceSha256": "1868C96FC99C9D065FAAC69778DD748970A3C3F56918423A0B4EB8EA854FC32B"
+  },
+  {
+    "source": "app/src/main/res/values-in/starlink.xml",
+    "target": "app/src/main/res/values-in/starlink.xml",
+    "sourceSha256": "C223A90E5BD0F875C268872528CDF463E56AC5705E1CD4F80E2AE0E2E7CEF043"
+  },
+  {
+    "source": "app/src/main/res/values-in/sun_finder.xml",
+    "target": "app/src/main/res/values-in/sun_finder.xml",
+    "sourceSha256": "8F9D35F57B110B04250C02267E2284603166C653A9A91A2ABDEF8B283E2AC179"
+  },
+  {
+    "source": "app/src/main/res/values-in/sun_path.xml",
+    "target": "app/src/main/res/values-in/sun_path.xml",
+    "sourceSha256": "79DD878137FAAF34EEAB50219D3C81AE0F71F85C8FEEDB962587C48A4CB49BDC"
+  },
+  {
+    "source": "app/src/main/res/values-it/celestial_catalog.xml",
+    "target": "app/src/main/res/values-it/celestial_catalog.xml",
+    "sourceSha256": "CB3E443E06CAC8698849F53E7C549727C3DB4528741D194645BB654A24B1B72F"
+  },
+  {
+    "source": "app/src/main/res/values-it/celestial_layout.xml",
+    "target": "app/src/main/res/values-it/celestial_layout.xml",
+    "sourceSha256": "99A0BF344B2BA38631A724185E1CBEE0CA7BCDCDC7B68B55499E0F0A8A473CB7"
+  },
+  {
+    "source": "app/src/main/res/values-it/celestial_refinements.xml",
+    "target": "app/src/main/res/values-it/celestial_refinements.xml",
+    "sourceSha256": "35D3281B6A7C08ECBE29F86CBD44A9D3F193794353EFF87EA75933CBC199D533"
+  },
+  {
+    "source": "app/src/main/res/values-it/celestial_temperatures.xml",
+    "target": "app/src/main/res/values-it/celestial_temperatures.xml",
+    "sourceSha256": "30F994DD998191B999AD386F98104911BC4A687364CA750F9E1106FCBBB658E5"
+  },
+  {
+    "source": "app/src/main/res/values-it/celestial_time.xml",
+    "target": "app/src/main/res/values-it/celestial_time.xml",
+    "sourceSha256": "969F2F16F24C15CCAAB037EF84294F5F5B5BD1931F9B9F39A3374E744DD15870"
+  },
+  {
+    "source": "app/src/main/res/values-it/celestial_viewer.xml",
+    "target": "app/src/main/res/values-it/celestial_viewer.xml",
+    "sourceSha256": "050039B1BB6AE2B7B37C4D60FB0E50BC7B0E5CAD7B711A55006ABE4601570D51"
+  },
+  {
+    "source": "app/src/main/res/values-it/celestial.xml",
+    "target": "app/src/main/res/values-it/celestial.xml",
+    "sourceSha256": "FA54F7723E7660DB2408EE93BEC1DBD8EC7E38678C1982CC8DC7FCB3E06E65E7"
+  },
+  {
+    "source": "app/src/main/res/values-it/moon_phase.xml",
+    "target": "app/src/main/res/values-it/moon_phase.xml",
+    "sourceSha256": "E367DAE101B896C430ECA8181F9C8EC6C3F26AE06815D5E3E4E934B859682E27"
+  },
+  {
+    "source": "app/src/main/res/values-it/starlink.xml",
+    "target": "app/src/main/res/values-it/starlink.xml",
+    "sourceSha256": "42382D1F7165A69B4AD7D933864EFB69B24329327128B7DB27307D6520D67845"
+  },
+  {
+    "source": "app/src/main/res/values-it/sun_finder.xml",
+    "target": "app/src/main/res/values-it/sun_finder.xml",
+    "sourceSha256": "19BCAB18531846CE5ECDEBF8C1AEA62675A20FB05447B9C4EADD6DE83F59524A"
+  },
+  {
+    "source": "app/src/main/res/values-it/sun_path.xml",
+    "target": "app/src/main/res/values-it/sun_path.xml",
+    "sourceSha256": "1D78B8018211D483AAF7309E59298749E1A5EE491E6F64E78861AA9D2769E73B"
+  },
+  {
+    "source": "app/src/main/res/values-iw/celestial_catalog.xml",
+    "target": "app/src/main/res/values-iw/celestial_catalog.xml",
+    "sourceSha256": "11BA34EB82CA2AB36FE600D343DBAEBBE2964AFA3B2525D333FA792997CF4109"
+  },
+  {
+    "source": "app/src/main/res/values-iw/celestial_layout.xml",
+    "target": "app/src/main/res/values-iw/celestial_layout.xml",
+    "sourceSha256": "453D85162470E8FA01FCFBBD170335F40769307D66BFC87C82B7FD0DAC8FA439"
+  },
+  {
+    "source": "app/src/main/res/values-iw/celestial_refinements.xml",
+    "target": "app/src/main/res/values-iw/celestial_refinements.xml",
+    "sourceSha256": "8857592A2722B34F12DF73CDB94A6F966CBB97EF565BD1427607F3C2887A7EC4"
+  },
+  {
+    "source": "app/src/main/res/values-iw/celestial_temperatures.xml",
+    "target": "app/src/main/res/values-iw/celestial_temperatures.xml",
+    "sourceSha256": "E0CD4B9434552E99AD023E973D89EAA9721BCC1104C9511D73B9040795526B04"
+  },
+  {
+    "source": "app/src/main/res/values-iw/celestial_time.xml",
+    "target": "app/src/main/res/values-iw/celestial_time.xml",
+    "sourceSha256": "45CCC3409E12A818C6B2FDA6AA030ADEA795D53B6B27AF212513586A5ABCBDF6"
+  },
+  {
+    "source": "app/src/main/res/values-iw/celestial_viewer.xml",
+    "target": "app/src/main/res/values-iw/celestial_viewer.xml",
+    "sourceSha256": "979C8B0000C86C4C65A9F08BBBF6720D621C498C39233B6D7CA10E487BBF4329"
+  },
+  {
+    "source": "app/src/main/res/values-iw/celestial.xml",
+    "target": "app/src/main/res/values-iw/celestial.xml",
+    "sourceSha256": "055881C1F668C2074B257A804EB0B790C24B2645CF2372219C0C2FE2F47C8667"
+  },
+  {
+    "source": "app/src/main/res/values-iw/moon_phase.xml",
+    "target": "app/src/main/res/values-iw/moon_phase.xml",
+    "sourceSha256": "430003911EC38E6DA4A5A37661FDAEB5FDE4FBA405037719DBCA851E9293EA55"
+  },
+  {
+    "source": "app/src/main/res/values-iw/starlink.xml",
+    "target": "app/src/main/res/values-iw/starlink.xml",
+    "sourceSha256": "B3A25AB808930A1D92112760AB3A8270A0F94014939DA5E5A4679D4630DC4201"
+  },
+  {
+    "source": "app/src/main/res/values-iw/sun_finder.xml",
+    "target": "app/src/main/res/values-iw/sun_finder.xml",
+    "sourceSha256": "F859070EA022A4D2176AF0C7B492E85E5D03043A1AAAF72CB6CFFDF7888BFFB1"
+  },
+  {
+    "source": "app/src/main/res/values-iw/sun_path.xml",
+    "target": "app/src/main/res/values-iw/sun_path.xml",
+    "sourceSha256": "520634D395641EA09E1D63309B15C86D754A3E5110EC02F077680B9825DF672A"
+  },
+  {
+    "source": "app/src/main/res/values-ja/celestial_catalog.xml",
+    "target": "app/src/main/res/values-ja/celestial_catalog.xml",
+    "sourceSha256": "12359443DCA5FB678051A1C6C452F3506600FB33280585B1D881BAC1A779C6B9"
+  },
+  {
+    "source": "app/src/main/res/values-ja/celestial_layout.xml",
+    "target": "app/src/main/res/values-ja/celestial_layout.xml",
+    "sourceSha256": "2CF5D6DEF2AC3663F27EF627257EFD6001C051C4BE325C52E22756B570ECB7B0"
+  },
+  {
+    "source": "app/src/main/res/values-ja/celestial_refinements.xml",
+    "target": "app/src/main/res/values-ja/celestial_refinements.xml",
+    "sourceSha256": "F00B0DF146C27AFF03EE5400D2319EB1B59C599BCE1069FA34457F863CBB1356"
+  },
+  {
+    "source": "app/src/main/res/values-ja/celestial_temperatures.xml",
+    "target": "app/src/main/res/values-ja/celestial_temperatures.xml",
+    "sourceSha256": "6C8F41BF3FC4DA76ABF745065557EF93B3038EAC77F532A0F3861B7ABBE3B7BD"
+  },
+  {
+    "source": "app/src/main/res/values-ja/celestial_time.xml",
+    "target": "app/src/main/res/values-ja/celestial_time.xml",
+    "sourceSha256": "E73067149BC7477769C09018F59014869DC353ED6D28CEBF291E24525B18948A"
+  },
+  {
+    "source": "app/src/main/res/values-ja/celestial_viewer.xml",
+    "target": "app/src/main/res/values-ja/celestial_viewer.xml",
+    "sourceSha256": "B2456CE45244C031BB383927B27E3DF099D0E6B63EA430A2532D00E0A74BF886"
+  },
+  {
+    "source": "app/src/main/res/values-ja/celestial.xml",
+    "target": "app/src/main/res/values-ja/celestial.xml",
+    "sourceSha256": "9ACC1F0937AEF31AA0CE7A7A8502402D5110FB4707A66A2B0B7B162039D4CE78"
+  },
+  {
+    "source": "app/src/main/res/values-ja/moon_phase.xml",
+    "target": "app/src/main/res/values-ja/moon_phase.xml",
+    "sourceSha256": "05C08E5F5011F9B175F7BC47853B5A6293D75480E841DFF1BC2D1707B2308433"
+  },
+  {
+    "source": "app/src/main/res/values-ja/starlink.xml",
+    "target": "app/src/main/res/values-ja/starlink.xml",
+    "sourceSha256": "99AB12D24B215BAB273FA316367F1B20C943635BC0075F59BA6DE567FB03118A"
+  },
+  {
+    "source": "app/src/main/res/values-ja/sun_finder.xml",
+    "target": "app/src/main/res/values-ja/sun_finder.xml",
+    "sourceSha256": "4B1A8D8B089E4755A4E146AC99CA9894D590C4E3D4CFA695E03D824D7887B72F"
+  },
+  {
+    "source": "app/src/main/res/values-ja/sun_path.xml",
+    "target": "app/src/main/res/values-ja/sun_path.xml",
+    "sourceSha256": "9AE771B5B9F3328250699F6C60DB7FA9EBCF5D1697C37C7A249BB78EF7C1770D"
+  },
+  {
+    "source": "app/src/main/res/values-ko-rKR/celestial_catalog.xml",
+    "target": "app/src/main/res/values-ko-rKR/celestial_catalog.xml",
+    "sourceSha256": "C4DA4D4DF8E7003F03FCD5218CA74278F8119F9860259C554F929D0DB0EA84B0"
+  },
+  {
+    "source": "app/src/main/res/values-ko-rKR/celestial_layout.xml",
+    "target": "app/src/main/res/values-ko-rKR/celestial_layout.xml",
+    "sourceSha256": "1D650483145DD4001C52EEBA86F63B0DC27504BB3086B966654C1E00D1E28106"
+  },
+  {
+    "source": "app/src/main/res/values-ko-rKR/celestial_refinements.xml",
+    "target": "app/src/main/res/values-ko-rKR/celestial_refinements.xml",
+    "sourceSha256": "FBB38AA5C3097E33DCA7BAEC92929CD6AF20C150C4DC8E226D6FC439F585197E"
+  },
+  {
+    "source": "app/src/main/res/values-ko-rKR/celestial_temperatures.xml",
+    "target": "app/src/main/res/values-ko-rKR/celestial_temperatures.xml",
+    "sourceSha256": "0655C20F38E822D3D1FE92EA7062798FB57AA163E32A8EA2291BF2E1CAAB6802"
+  },
+  {
+    "source": "app/src/main/res/values-ko-rKR/celestial_time.xml",
+    "target": "app/src/main/res/values-ko-rKR/celestial_time.xml",
+    "sourceSha256": "0F8EB1BEA079AC84033CC056ED12B9D11E82190C37A66EF02DE1D615595C6EA1"
+  },
+  {
+    "source": "app/src/main/res/values-ko-rKR/celestial_viewer.xml",
+    "target": "app/src/main/res/values-ko-rKR/celestial_viewer.xml",
+    "sourceSha256": "6B4C1EE46689067484F980F48B5899A510EE1F3E866C11FECFA4896FAADBB802"
+  },
+  {
+    "source": "app/src/main/res/values-ko-rKR/celestial.xml",
+    "target": "app/src/main/res/values-ko-rKR/celestial.xml",
+    "sourceSha256": "CAEF4452BFEA6E653BD446DA9CFD5C4B38243BBFBB1D129C077A5A9A4BCAE2AB"
+  },
+  {
+    "source": "app/src/main/res/values-ko-rKR/moon_phase.xml",
+    "target": "app/src/main/res/values-ko-rKR/moon_phase.xml",
+    "sourceSha256": "3A0F943A0AC119CB699248BCEFF1A91DCAF32A36362D1216614ABB8EC812EF1A"
+  },
+  {
+    "source": "app/src/main/res/values-ko-rKR/starlink.xml",
+    "target": "app/src/main/res/values-ko-rKR/starlink.xml",
+    "sourceSha256": "63CA553F8EB6017534847FF08B75D0723D752FF46BEC6F8960B87C13DC0E70B2"
+  },
+  {
+    "source": "app/src/main/res/values-ko-rKR/sun_finder.xml",
+    "target": "app/src/main/res/values-ko-rKR/sun_finder.xml",
+    "sourceSha256": "63966449B751D56EEF85DD14AAD179FE957F6A7638D8770D656EFB252AE84150"
+  },
+  {
+    "source": "app/src/main/res/values-ko-rKR/sun_path.xml",
+    "target": "app/src/main/res/values-ko-rKR/sun_path.xml",
+    "sourceSha256": "04B769452173D6621EB268F5437147A4CEEB482E5DE0EF28DC7C4884CDF4DA87"
+  },
+  {
+    "source": "app/src/main/res/values-nl/celestial_catalog.xml",
+    "target": "app/src/main/res/values-nl/celestial_catalog.xml",
+    "sourceSha256": "39169DADAECF25336161F56B7C0550D859A41813DC3C82AD146CDC26B3F98F94"
+  },
+  {
+    "source": "app/src/main/res/values-nl/celestial_layout.xml",
+    "target": "app/src/main/res/values-nl/celestial_layout.xml",
+    "sourceSha256": "9889C7C3F881F0344498C32FD2D121AA702C478B282D39BD134E62C653C93926"
+  },
+  {
+    "source": "app/src/main/res/values-nl/celestial_refinements.xml",
+    "target": "app/src/main/res/values-nl/celestial_refinements.xml",
+    "sourceSha256": "5BA084D8375526D9C128DE55453FB1C6D52A007E6B65074A39C246E4BBDE9B27"
+  },
+  {
+    "source": "app/src/main/res/values-nl/celestial_temperatures.xml",
+    "target": "app/src/main/res/values-nl/celestial_temperatures.xml",
+    "sourceSha256": "2F477BB818017429A6137D4634BD2E7B758C2AEC37A8B82B8EC808FE675AD8E5"
+  },
+  {
+    "source": "app/src/main/res/values-nl/celestial_time.xml",
+    "target": "app/src/main/res/values-nl/celestial_time.xml",
+    "sourceSha256": "DA29A589CABDD55B9A51DBA989BA497FB407B6138D5FBE3C5042379D8E7ED881"
+  },
+  {
+    "source": "app/src/main/res/values-nl/celestial_viewer.xml",
+    "target": "app/src/main/res/values-nl/celestial_viewer.xml",
+    "sourceSha256": "51BC422E00A8EF361E20BE979BEF583EB4495F63344C4AAAF475CD3C89DF4FA6"
+  },
+  {
+    "source": "app/src/main/res/values-nl/celestial.xml",
+    "target": "app/src/main/res/values-nl/celestial.xml",
+    "sourceSha256": "F9BB91520D16A663F1680A3CFECE46C713C724EDFBE4380C5DC4E5D2CCA8E2F8"
+  },
+  {
+    "source": "app/src/main/res/values-nl/moon_phase.xml",
+    "target": "app/src/main/res/values-nl/moon_phase.xml",
+    "sourceSha256": "781369B3007D830FAB014A42FC14B12BA777E42E83B969EBDAE49895E2273B4F"
+  },
+  {
+    "source": "app/src/main/res/values-nl/starlink.xml",
+    "target": "app/src/main/res/values-nl/starlink.xml",
+    "sourceSha256": "6361F10353118A932749F8B3B8763B362BAE05A14E2485604D89CBE48895737E"
+  },
+  {
+    "source": "app/src/main/res/values-nl/sun_finder.xml",
+    "target": "app/src/main/res/values-nl/sun_finder.xml",
+    "sourceSha256": "427CC3819F3E984C418C0469E6EC9C25A92C5F9C842C3E0D30740562EF99A223"
+  },
+  {
+    "source": "app/src/main/res/values-nl/sun_path.xml",
+    "target": "app/src/main/res/values-nl/sun_path.xml",
+    "sourceSha256": "5B58C84B99D0375908C5FB58BAE1FE400133F59155A3BFDD1D6A8F6696051166"
+  },
+  {
+    "source": "app/src/main/res/values-pl/celestial_catalog.xml",
+    "target": "app/src/main/res/values-pl/celestial_catalog.xml",
+    "sourceSha256": "08C50B2E85BFDA883BA63385A375AADB71BDC3D0FFE6E075AEED270C54507062"
+  },
+  {
+    "source": "app/src/main/res/values-pl/celestial_layout.xml",
+    "target": "app/src/main/res/values-pl/celestial_layout.xml",
+    "sourceSha256": "B341145B7FA5880D921801C7144E4B4A9BAC653EBE9101F027E40174897E2F0F"
+  },
+  {
+    "source": "app/src/main/res/values-pl/celestial_refinements.xml",
+    "target": "app/src/main/res/values-pl/celestial_refinements.xml",
+    "sourceSha256": "C149DCB0DE0FE413878AAB28BB9D8B1E6B385BCCA412B9EC9BF1C82BFF90C111"
+  },
+  {
+    "source": "app/src/main/res/values-pl/celestial_temperatures.xml",
+    "target": "app/src/main/res/values-pl/celestial_temperatures.xml",
+    "sourceSha256": "1CD43E8C0B0DBF506C38C32BF57F591E8B5702C6FCD425038F2B943C6984F479"
+  },
+  {
+    "source": "app/src/main/res/values-pl/celestial_time.xml",
+    "target": "app/src/main/res/values-pl/celestial_time.xml",
+    "sourceSha256": "B2E09078B2CEF5C072429DA12E22BBB650D0B4D0E04F22FDE137F20DECFA8DE3"
+  },
+  {
+    "source": "app/src/main/res/values-pl/celestial_viewer.xml",
+    "target": "app/src/main/res/values-pl/celestial_viewer.xml",
+    "sourceSha256": "E3E1E6C93731DDEB230129D02F591D8AF6E1EFD07D226B33B04E2F066F5E7850"
+  },
+  {
+    "source": "app/src/main/res/values-pl/celestial.xml",
+    "target": "app/src/main/res/values-pl/celestial.xml",
+    "sourceSha256": "5184D2A2950689D8A73FCD21B5BEEF83CF1034A02DF46B4C8733C9E1DE563415"
+  },
+  {
+    "source": "app/src/main/res/values-pl/moon_phase.xml",
+    "target": "app/src/main/res/values-pl/moon_phase.xml",
+    "sourceSha256": "6E73249DB99D7C985905CA0FA2A85B9FF71E4CBCB287458151883C95EB67FA51"
+  },
+  {
+    "source": "app/src/main/res/values-pl/starlink.xml",
+    "target": "app/src/main/res/values-pl/starlink.xml",
+    "sourceSha256": "E749867B73AEA1CB90A79A9A630A11E72387F7EC48CF132317D93FDBCA91A1BA"
+  },
+  {
+    "source": "app/src/main/res/values-pl/sun_finder.xml",
+    "target": "app/src/main/res/values-pl/sun_finder.xml",
+    "sourceSha256": "C8492920496CB84DD9848A70B7E64B7A928E7B5AD28CF15D5D25ED3EB882C7E5"
+  },
+  {
+    "source": "app/src/main/res/values-pl/sun_path.xml",
+    "target": "app/src/main/res/values-pl/sun_path.xml",
+    "sourceSha256": "BF048A24D6A0791B266B3D05497F0351EC7D2AB64B74BD09C3D0EA47174B1B45"
+  },
+  {
+    "source": "app/src/main/res/values-pt/celestial_catalog.xml",
+    "target": "app/src/main/res/values-pt/celestial_catalog.xml",
+    "sourceSha256": "48E8E08795828A0F2953B49FBDE30370B915909D7E77DF16DF9AD498D64B2B6E"
+  },
+  {
+    "source": "app/src/main/res/values-pt/celestial_layout.xml",
+    "target": "app/src/main/res/values-pt/celestial_layout.xml",
+    "sourceSha256": "EB74D168C3CF3F8726A516B9E54FF8DADBF5A7552EBD209738EA278377F7B0BF"
+  },
+  {
+    "source": "app/src/main/res/values-pt/celestial_refinements.xml",
+    "target": "app/src/main/res/values-pt/celestial_refinements.xml",
+    "sourceSha256": "3D06E12DF16391A208F13D6CD1C60471FE33517BCA962F21A3141B39A8E3F768"
+  },
+  {
+    "source": "app/src/main/res/values-pt/celestial_temperatures.xml",
+    "target": "app/src/main/res/values-pt/celestial_temperatures.xml",
+    "sourceSha256": "175CF62DC6B11236078CEF0DD8F6F325A73447AEF32CA0678DC0BEA83E0144FB"
+  },
+  {
+    "source": "app/src/main/res/values-pt/celestial_time.xml",
+    "target": "app/src/main/res/values-pt/celestial_time.xml",
+    "sourceSha256": "3EA9C05775390A094506205E09968F36F8257728C529486FAAB509668EDE717B"
+  },
+  {
+    "source": "app/src/main/res/values-pt/celestial_viewer.xml",
+    "target": "app/src/main/res/values-pt/celestial_viewer.xml",
+    "sourceSha256": "24549B3C2DAEFE3D4DAD82A1DBC5166EFF53E934A1E3E358984764397327BDB8"
+  },
+  {
+    "source": "app/src/main/res/values-pt/celestial.xml",
+    "target": "app/src/main/res/values-pt/celestial.xml",
+    "sourceSha256": "253F441EAF5A5D8D12A0830D7EB22AC3A382065F8CF76959179A9B3B3EADA3CC"
+  },
+  {
+    "source": "app/src/main/res/values-pt/moon_phase.xml",
+    "target": "app/src/main/res/values-pt/moon_phase.xml",
+    "sourceSha256": "52C1AE9F253A391398922BF5A0C156918950C0685CA1E720A70BAA18FF8A6CC9"
+  },
+  {
+    "source": "app/src/main/res/values-pt/starlink.xml",
+    "target": "app/src/main/res/values-pt/starlink.xml",
+    "sourceSha256": "D82C9B427B13B9BCF0ED535C2298400B319D835C79445DC25466024FDFF4183D"
+  },
+  {
+    "source": "app/src/main/res/values-pt/sun_finder.xml",
+    "target": "app/src/main/res/values-pt/sun_finder.xml",
+    "sourceSha256": "ADAC93A702C9D799443A08B4C247C51F9F16A449D82E67C8CD7EBAF4047FC280"
+  },
+  {
+    "source": "app/src/main/res/values-pt/sun_path.xml",
+    "target": "app/src/main/res/values-pt/sun_path.xml",
+    "sourceSha256": "DE6F52287F27AF6A249056F2AD6652A5C06D864DEDD39BC7381FC70E4D22145D"
+  },
+  {
+    "source": "app/src/main/res/values-ru/celestial_catalog.xml",
+    "target": "app/src/main/res/values-ru/celestial_catalog.xml",
+    "sourceSha256": "FBF53EAEF329412DD46CF926CEF64960BD19384C1D4376FFF854ACFC5551F90E"
+  },
+  {
+    "source": "app/src/main/res/values-ru/celestial_layout.xml",
+    "target": "app/src/main/res/values-ru/celestial_layout.xml",
+    "sourceSha256": "BFECC03FB773CC0B024196397536037EDE55FE1AB4A545BDCF881067138F9DC8"
+  },
+  {
+    "source": "app/src/main/res/values-ru/celestial_refinements.xml",
+    "target": "app/src/main/res/values-ru/celestial_refinements.xml",
+    "sourceSha256": "2269E906312CD511F7EDA87482893C34A34E2A26DE737752C6B626BC85A841FF"
+  },
+  {
+    "source": "app/src/main/res/values-ru/celestial_temperatures.xml",
+    "target": "app/src/main/res/values-ru/celestial_temperatures.xml",
+    "sourceSha256": "FAE1DFC1D8B9160B5FB9ADE65A998AC16C85A4D6AC20704C60B280A7D4E7E01B"
+  },
+  {
+    "source": "app/src/main/res/values-ru/celestial_time.xml",
+    "target": "app/src/main/res/values-ru/celestial_time.xml",
+    "sourceSha256": "596CEBAB2463E658774B6537A729A9D13D50C764532C887B005EA4BB4E29738F"
+  },
+  {
+    "source": "app/src/main/res/values-ru/celestial_viewer.xml",
+    "target": "app/src/main/res/values-ru/celestial_viewer.xml",
+    "sourceSha256": "47B27A389A6234FC706755870F813BF50D90DDAC0231F5ED37839DD4D86F68D4"
+  },
+  {
+    "source": "app/src/main/res/values-ru/celestial.xml",
+    "target": "app/src/main/res/values-ru/celestial.xml",
+    "sourceSha256": "65312A8A720D1E0FDAB4D6ADDE0F7A42C52F33326635D37FD87EDEB7AAA8E085"
+  },
+  {
+    "source": "app/src/main/res/values-ru/moon_phase.xml",
+    "target": "app/src/main/res/values-ru/moon_phase.xml",
+    "sourceSha256": "F470D7319DC96FB85ECE2DF24E3CC7BE5B8D203DC901DD48C57CE60C19C27ADA"
+  },
+  {
+    "source": "app/src/main/res/values-ru/starlink.xml",
+    "target": "app/src/main/res/values-ru/starlink.xml",
+    "sourceSha256": "F08C90BE87B69EAE336D7584EA53269726362F5DCC23623A93BBFCC605978E45"
+  },
+  {
+    "source": "app/src/main/res/values-ru/sun_finder.xml",
+    "target": "app/src/main/res/values-ru/sun_finder.xml",
+    "sourceSha256": "66A0D3B1BC26E21847C39F3D9C79B4D06F7B7A8880A006BB3E66908E082D488B"
+  },
+  {
+    "source": "app/src/main/res/values-ru/sun_path.xml",
+    "target": "app/src/main/res/values-ru/sun_path.xml",
+    "sourceSha256": "4419BAC2B23FC65ABB4FD6D2DA66A288C17A7DEA841027825B6CD73A63F4780C"
+  },
+  {
+    "source": "app/src/main/res/values-sw/celestial_catalog.xml",
+    "target": "app/src/main/res/values-sw/celestial_catalog.xml",
+    "sourceSha256": "948AC0C603DAB65081F74B58CB648B13B351309699FFD8D1046A1D81FA44AA82"
+  },
+  {
+    "source": "app/src/main/res/values-sw/celestial_layout.xml",
+    "target": "app/src/main/res/values-sw/celestial_layout.xml",
+    "sourceSha256": "5418AF7D16D5F072965EF42D789DB5B5667068EAA02AB06E58FB94C9E5D87303"
+  },
+  {
+    "source": "app/src/main/res/values-sw/celestial_refinements.xml",
+    "target": "app/src/main/res/values-sw/celestial_refinements.xml",
+    "sourceSha256": "0D1C4FDA9BC7414C41D6B9AC029167719EB7DA1E7D187C3AE8060F2C37611C17"
+  },
+  {
+    "source": "app/src/main/res/values-sw/celestial_temperatures.xml",
+    "target": "app/src/main/res/values-sw/celestial_temperatures.xml",
+    "sourceSha256": "25ADB70E95C43520152C2500F46BFD2B5B52CDAD4E1DA429180A292F687FF1CC"
+  },
+  {
+    "source": "app/src/main/res/values-sw/celestial_time.xml",
+    "target": "app/src/main/res/values-sw/celestial_time.xml",
+    "sourceSha256": "0DA48A96C392DF43A89F8870DBDAB73A2B33979987B14456539D15B370FFB6EC"
+  },
+  {
+    "source": "app/src/main/res/values-sw/celestial_viewer.xml",
+    "target": "app/src/main/res/values-sw/celestial_viewer.xml",
+    "sourceSha256": "36B67A1E628850488F807B01F1279C423FC4797A75FA103A61C3692CA870AAAA"
+  },
+  {
+    "source": "app/src/main/res/values-sw/celestial.xml",
+    "target": "app/src/main/res/values-sw/celestial.xml",
+    "sourceSha256": "BDC3A78069C1863393D3B8E856361A96CD40749F2BF70F9B3E4C4AED9DC3951B"
+  },
+  {
+    "source": "app/src/main/res/values-sw/moon_phase.xml",
+    "target": "app/src/main/res/values-sw/moon_phase.xml",
+    "sourceSha256": "A0BA17461D2DE093D4A12CDE07C29D6DF00E57BCD4EC9941221E1D206FFC36AB"
+  },
+  {
+    "source": "app/src/main/res/values-sw/starlink.xml",
+    "target": "app/src/main/res/values-sw/starlink.xml",
+    "sourceSha256": "2A537334A0A7F1853AEC060E0CB5DC03FC1C0F534CEB0684BE878FC2978BC338"
+  },
+  {
+    "source": "app/src/main/res/values-sw/sun_finder.xml",
+    "target": "app/src/main/res/values-sw/sun_finder.xml",
+    "sourceSha256": "7C5B998C0F7A7218FC7BF3DFF95A3C6CAF9A3B98E6327B6FC3B7C9EEED2A7752"
+  },
+  {
+    "source": "app/src/main/res/values-sw/sun_path.xml",
+    "target": "app/src/main/res/values-sw/sun_path.xml",
+    "sourceSha256": "86EDC9EFB181BE10FA504B527414063F3A1900A8F6DF7B0666D113F63056A557"
+  },
+  {
+    "source": "app/src/main/res/values-tr/celestial_catalog.xml",
+    "target": "app/src/main/res/values-tr/celestial_catalog.xml",
+    "sourceSha256": "BEB4CEC0E60405BB4F6FC8E2C255627FD6EAE6A019529D69FED4A1E84518FE40"
+  },
+  {
+    "source": "app/src/main/res/values-tr/celestial_layout.xml",
+    "target": "app/src/main/res/values-tr/celestial_layout.xml",
+    "sourceSha256": "3392243AE4B011C8305DF4E488CF1303C5F6BA05993427F3802FE6554EB57B05"
+  },
+  {
+    "source": "app/src/main/res/values-tr/celestial_refinements.xml",
+    "target": "app/src/main/res/values-tr/celestial_refinements.xml",
+    "sourceSha256": "CE0DD13E241DBA2A15530D69F4E84F12D6FDC323F990C1FE89A651094E5A0893"
+  },
+  {
+    "source": "app/src/main/res/values-tr/celestial_temperatures.xml",
+    "target": "app/src/main/res/values-tr/celestial_temperatures.xml",
+    "sourceSha256": "1A81624BF7A28BBE098CCCBF8610306B5B6743BE6749EA9BAB4D5B402A9E259D"
+  },
+  {
+    "source": "app/src/main/res/values-tr/celestial_time.xml",
+    "target": "app/src/main/res/values-tr/celestial_time.xml",
+    "sourceSha256": "8D50E6C4535D3204687F164404F31A52085323DF1981F914266E26E92E0215B1"
+  },
+  {
+    "source": "app/src/main/res/values-tr/celestial_viewer.xml",
+    "target": "app/src/main/res/values-tr/celestial_viewer.xml",
+    "sourceSha256": "6DA269D484F250186F5D909422590DC0022913DB1F664E220BB39BE6261D7848"
+  },
+  {
+    "source": "app/src/main/res/values-tr/celestial.xml",
+    "target": "app/src/main/res/values-tr/celestial.xml",
+    "sourceSha256": "E92B928FBCD329C115740A8CB87E368844871E42C8B0103626324E1D6D5879F9"
+  },
+  {
+    "source": "app/src/main/res/values-tr/moon_phase.xml",
+    "target": "app/src/main/res/values-tr/moon_phase.xml",
+    "sourceSha256": "0B26307D5FDEF5CCF0DA3B8D3F7E159B5FDB21B61C1C6B8EE2BDDC75FFC27042"
+  },
+  {
+    "source": "app/src/main/res/values-tr/starlink.xml",
+    "target": "app/src/main/res/values-tr/starlink.xml",
+    "sourceSha256": "ED5AEE62D6B93DDEBC4E9DFB03C1AD05BC3EC397E2BE00FE5C30585ED310CB21"
+  },
+  {
+    "source": "app/src/main/res/values-tr/sun_finder.xml",
+    "target": "app/src/main/res/values-tr/sun_finder.xml",
+    "sourceSha256": "7EAA13F01682C2F3F09F57EF486D9BFF59719F6B32AB0F3295949778A7B9CD8C"
+  },
+  {
+    "source": "app/src/main/res/values-tr/sun_path.xml",
+    "target": "app/src/main/res/values-tr/sun_path.xml",
+    "sourceSha256": "56ACE0864816559F4D67669A6457D3B06AEB125D7503D5240A843BD6D7CB6822"
+  },
+  {
+    "source": "app/src/main/res/values-zh-rCN/celestial_catalog.xml",
+    "target": "app/src/main/res/values-zh-rCN/celestial_catalog.xml",
+    "sourceSha256": "CD1C7FAB4ED97B2E867291AC85E22702569092ACA92352D147F33369EE1125D7"
+  },
+  {
+    "source": "app/src/main/res/values-zh-rCN/celestial_layout.xml",
+    "target": "app/src/main/res/values-zh-rCN/celestial_layout.xml",
+    "sourceSha256": "0CBA0A266D1A1443770826606C1F5D44BD63DD360D66E30039CB469A8A147C47"
+  },
+  {
+    "source": "app/src/main/res/values-zh-rCN/celestial_refinements.xml",
+    "target": "app/src/main/res/values-zh-rCN/celestial_refinements.xml",
+    "sourceSha256": "AF91811900B8F9DFD50E948084E83DBF7B0F412B576F7833A583F57DF5E4E7E5"
+  },
+  {
+    "source": "app/src/main/res/values-zh-rCN/celestial_temperatures.xml",
+    "target": "app/src/main/res/values-zh-rCN/celestial_temperatures.xml",
+    "sourceSha256": "E1AF40BD72AE8E867CB1DFDF15550FDC078FC432440F221E13EA399BDB5F9648"
+  },
+  {
+    "source": "app/src/main/res/values-zh-rCN/celestial_time.xml",
+    "target": "app/src/main/res/values-zh-rCN/celestial_time.xml",
+    "sourceSha256": "E71CB9C58D2D91C7FC8C4F864B38A2D0E21228FA06BC10DE1295240D6F292DFD"
+  },
+  {
+    "source": "app/src/main/res/values-zh-rCN/celestial_viewer.xml",
+    "target": "app/src/main/res/values-zh-rCN/celestial_viewer.xml",
+    "sourceSha256": "61BA46C5FA4E540B807B650BEDFF22AD735C1DC6618C4E4AAB38FA6761B6E14F"
+  },
+  {
+    "source": "app/src/main/res/values-zh-rCN/celestial.xml",
+    "target": "app/src/main/res/values-zh-rCN/celestial.xml",
+    "sourceSha256": "1142EB45C1E89992123C1906A2FA16DDC7C2A20CB9FDE11941276E8B5E013C98"
+  },
+  {
+    "source": "app/src/main/res/values-zh-rCN/moon_phase.xml",
+    "target": "app/src/main/res/values-zh-rCN/moon_phase.xml",
+    "sourceSha256": "2CC418AEC80A4F3F181204478CC49839E0D01B9D3995194B26565CC71CB8AED9"
+  },
+  {
+    "source": "app/src/main/res/values-zh-rCN/starlink.xml",
+    "target": "app/src/main/res/values-zh-rCN/starlink.xml",
+    "sourceSha256": "C18069AE1ED7E54A63E3A44FD5817139428B2AD35DD8537064B3BFACF31F7990"
+  },
+  {
+    "source": "app/src/main/res/values-zh-rCN/sun_finder.xml",
+    "target": "app/src/main/res/values-zh-rCN/sun_finder.xml",
+    "sourceSha256": "4C671760D5691A3F1EE43C6B3ED8489F5561E93395EFBE4ABFA789B0AF8A10B7"
+  },
+  {
+    "source": "app/src/main/res/values-zh-rCN/sun_path.xml",
+    "target": "app/src/main/res/values-zh-rCN/sun_path.xml",
+    "sourceSha256": "F4A7BF5134CD3D8F2B4B3D1EBD7AAA776B9E979E79020D455ACEAFBDC84CB8D9"
+  }
+]

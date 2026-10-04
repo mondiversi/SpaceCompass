@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="sun_path_title">太阳每日轨迹</string>
+    <string name="sun_path_sunrise">日出</string>
+    <string name="sun_path_culmination">最高点</string>
+    <string name="sun_path_sunset">日落</string>
+    <string name="sun_path_show">显示轨迹</string>
+    <string name="sun_path_note">时间按无遮挡的地平线计算。地形和天气可能影响可见性。</string>
+    <string name="sun_path_previous">上一个点</string>
+    <string name="sun_path_next">下一个点</string>
+    <string name="sun_path_minimum">最低高度</string>
+</resources>

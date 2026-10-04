@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="celestial_view_open" formatted="false">عرض</string>
+    <string name="celestial_view_current" formatted="false">الوجه الحالي</string>
+    <string name="celestial_view_rotation" formatted="false">الدوران</string>
+    <string name="celestial_view_resume" formatted="false">استئناف الدوران</string>
+    <string name="celestial_view_diameter" formatted="false">القطر</string>
+    <string name="celestial_view_antenna" formatted="false">قطر الهوائي</string>
+    <string name="celestial_view_size" formatted="false">أقصى امتداد</string>
+    <string name="celestial_view_mass" formatted="false">الكتلة</string>
+    <string name="celestial_view_gravity" formatted="false">الجاذبية السطحية</string>
+    <string name="celestial_view_density" formatted="false">الكثافة</string>
+    <string name="celestial_view_parent" formatted="false">الجسم الرئيسي</string>
+    <string name="celestial_view_earth" formatted="false">الأرض</string>
+    <string name="celestial_view_rotation_period" formatted="false">فترة الدوران</string>
+    <string name="celestial_view_retrograde" formatted="false">دوران تراجعي</string>
+    <string name="celestial_view_yes" formatted="false">نعم</string>
+    <string name="celestial_view_no" formatted="false">لا</string>
+    <string name="celestial_view_revolution_period" formatted="false">الفترة المدارية</string>
+    <string name="celestial_view_min_distance" formatted="false">أدنى مسافة من الجسم الرئيسي</string>
+    <string name="celestial_view_max_distance" formatted="false">أقصى مسافة من الجسم الرئيسي</string>
+    <string name="celestial_view_observer_distance" formatted="false">المسافة من الراصد</string>
+    <string name="celestial_view_phase" formatted="false">طور القمر</string>
+    <string name="celestial_view_illuminated" formatted="false">القرص المضاء</string>
+    <string name="celestial_view_information" formatted="false">المعلومات</string>
+    <string name="celestial_view_rotation_hint" formatted="false">دوران توضيحي مسرع. اسحب للاستكشاف؛ انقر مرتين لاستئناف الدوران.</string>
+    <string name="celestial_view_craft_note" formatted="false">نموذج هيكلي توضيحي: اتجاه المركبة الحالي غير متاح.</string>
+    <string name="celestial_view_sedna_note" formatted="false">السطح والاتجاه غير معروفين: نموذج توضيحي.</string>
+    <string name="celestial_view_map_note" formatted="false">مظهر معاد بناؤه بطور واتجاه محسوبين. خرائط ثابتة وليست صورا مباشرة.</string>
+    <string name="celestial_view_location_needed" formatted="false">يلزم تحديد الموقع للوجه الحالي. الدوران متاح دون GPS.</string>
+    <string name="celestial_view_facts_note" formatted="false">قيم تقريبية. جاذبية العمالقة الغازية عند 1 بار؛ المسافات المدارية من الجسم الرئيسي.</string>
+    <string name="celestial_view_sun_note" formatted="false">يتغير دوران الشمس مع خط العرض؛ الفترة قيمة مرجعية.</string>
+    <string name="celestial_view_sedna_facts" formatted="false">القطر تقديري. الدوران والعناصر المدارية غير مؤكدة.</string>
+    <string name="celestial_view_iss_note" formatted="false">تتغير أبعاد المحطة وكتلتها حسب التكوين والمركبات الزائرة.</string>
+    <string name="celestial_view_render_failed" formatted="false">تعذر عرض النموذج.</string>
+    <string name="celestial_view_zoom_in" formatted="false">تكبير</string>
+    <string name="celestial_view_zoom_out" formatted="false">تصغير</string>
+    <string name="celestial_view_reset_zoom" formatted="false">إعادة ضبط التكبير</string>
+    <string name="celestial_view_zoom_level">التكبير: %1$d%%</string>
+</resources>

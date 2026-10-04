@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="celestial_polaris" formatted="false">Nyota ya Kaskazini</string>
+    <string name="celestial_point_azimuth">Azimuthi: %1$s</string>
+    <string name="celestial_point_elevation">Mwinuko: %1$s</string>
+    <string name="celestial_polaris_model" formatted="false">Mchoro wa nyota, si picha yenye maelezo ya uso wake. Mhimili na mzunguko havijulikani.</string>
+    <string name="celestial_polaris_facts" formatted="false">Mwendo wa kila siku unaoonekana unatokana na mzunguko wa Dunia, si obiti kuizunguka. Kipenyo na uzito vinahusu Polaris Aa (2024); umbali ni takriban miaka mwanga 447. Vigezo visivyojulikana huonyeshwa kwa —.</string>
+    <string name="celestial_free_rotation_hint" formatted="false">Mzunguko ulioharakishwa. Buruta kwa uhuru; gusa kurejesha mhimili wa awali.</string>
+    <string name="celestial_polaris_derived" formatted="false">Mvuto wa wastani wa uso na msongamano wa wastani hukadiriwa kutoka uzito na radius ya wastani. Polaris ni nyota inayopiga; haya ni makadirio, si vipimo vya moja kwa moja.</string>
+</resources>

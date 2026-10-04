@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="sun_path_title">مسار الشمس اليومي</string>
+    <string name="sun_path_sunrise">الشروق</string>
+    <string name="sun_path_culmination">الذروة</string>
+    <string name="sun_path_sunset">الغروب</string>
+    <string name="sun_path_show">إظهار المسار</string>
+    <string name="sun_path_note">أوقات محسوبة لأفق خالٍ من العوائق. قد تؤثر التضاريس والطقس على الرؤية.</string>
+    <string name="sun_path_previous">النقطة السابقة</string>
+    <string name="sun_path_next">النقطة التالية</string>
+    <string name="sun_path_minimum">أدنى ارتفاع</string>
+</resources>

@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="celestial_view_open" formatted="false">Visualizar</string>
+    <string name="celestial_view_current" formatted="false">Vista atual</string>
+    <string name="celestial_view_rotation" formatted="false">Rotação</string>
+    <string name="celestial_view_resume" formatted="false">Retomar rotação</string>
+    <string name="celestial_view_diameter" formatted="false">Diâmetro</string>
+    <string name="celestial_view_antenna" formatted="false">Diâmetro da antena</string>
+    <string name="celestial_view_size" formatted="false">Extensão máxima</string>
+    <string name="celestial_view_mass" formatted="false">Massa</string>
+    <string name="celestial_view_gravity" formatted="false">Gravidade superficial</string>
+    <string name="celestial_view_density" formatted="false">Densidade</string>
+    <string name="celestial_view_parent" formatted="false">Corpo principal</string>
+    <string name="celestial_view_earth" formatted="false">Terra</string>
+    <string name="celestial_view_rotation_period" formatted="false">Período de rotação</string>
+    <string name="celestial_view_retrograde" formatted="false">Rotação retrógrada</string>
+    <string name="celestial_view_yes" formatted="false">Sim</string>
+    <string name="celestial_view_no" formatted="false">Não</string>
+    <string name="celestial_view_revolution_period" formatted="false">Período orbital</string>
+    <string name="celestial_view_min_distance" formatted="false">Distância mínima ao corpo principal</string>
+    <string name="celestial_view_max_distance" formatted="false">Distância máxima ao corpo principal</string>
+    <string name="celestial_view_observer_distance" formatted="false">Distância do observador</string>
+    <string name="celestial_view_phase" formatted="false">Fase lunar</string>
+    <string name="celestial_view_illuminated" formatted="false">Disco iluminado</string>
+    <string name="celestial_view_information" formatted="false">Informações</string>
+    <string name="celestial_view_rotation_hint" formatted="false">Rotação demonstrativa acelerada. Arraste para explorar; toque duas vezes para retomar.</string>
+    <string name="celestial_view_craft_note" formatted="false">Modelo estrutural ilustrativo: a orientação atual não está disponível.</string>
+    <string name="celestial_view_sedna_note" formatted="false">Superfície e orientação desconhecidas: modelo ilustrativo.</string>
+    <string name="celestial_view_map_note" formatted="false">Aspeto reconstruído: fase e orientação calculadas. Mapas estáticos, não imagens em direto.</string>
+    <string name="celestial_view_location_needed" formatted="false">É necessária a localização para a vista atual. A rotação está disponível sem GPS.</string>
+    <string name="celestial_view_facts_note" formatted="false">Valores aproximados. Gravidade dos gigantes gasosos a 1 bar; distâncias orbitais ao corpo principal.</string>
+    <string name="celestial_view_sun_note" formatted="false">A rotação solar varia com a latitude; o período é um valor de referência.</string>
+    <string name="celestial_view_sedna_facts" formatted="false">Diâmetro estimado. Rotação e elementos orbitais têm incertezas.</string>
+    <string name="celestial_view_iss_note" formatted="false">Dimensões e massa da ISS variam com a configuração e os veículos visitantes.</string>
+    <string name="celestial_view_render_failed" formatted="false">Não é possível apresentar o modelo.</string>
+    <string name="celestial_view_zoom_in" formatted="false">Ampliar</string>
+    <string name="celestial_view_zoom_out" formatted="false">Reduzir</string>
+    <string name="celestial_view_reset_zoom" formatted="false">Repor zoom</string>
+    <string name="celestial_view_zoom_level">Zoom: %1$d%%</string>
+</resources>

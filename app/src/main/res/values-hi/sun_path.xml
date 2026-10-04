@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="sun_path_title">सूर्य का दैनिक पथ</string>
+    <string name="sun_path_sunrise">सूर्योदय</string>
+    <string name="sun_path_culmination">सर्वोच्च स्थिति</string>
+    <string name="sun_path_sunset">सूर्यास्त</string>
+    <string name="sun_path_show">पथ दिखाएँ</string>
+    <string name="sun_path_note">समय खुले क्षितिज के लिए गणना किए गए हैं। भूभाग और मौसम दृश्यता को प्रभावित कर सकते हैं।</string>
+    <string name="sun_path_previous">पिछला बिंदु</string>
+    <string name="sun_path_next">अगला बिंदु</string>
+    <string name="sun_path_minimum">न्यूनतम</string>
+</resources>

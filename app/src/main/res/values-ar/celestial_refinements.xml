@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="celestial_polaris" formatted="false">النجم القطبي</string>
+    <string name="celestial_point_azimuth">السمت: %1$s</string>
+    <string name="celestial_point_elevation">الارتفاع: %1$s</string>
+    <string name="celestial_polaris_model" formatted="false">رسم توضيحي للنجم، وليس صورة مفصلة لسطحه. المحور والدوران غير معروفين.</string>
+    <string name="celestial_polaris_facts" formatted="false">تنتج الحركة اليومية الظاهرية عن دوران الأرض، لا عن مدار حولها. القطر والكتلة يخصان Polaris Aa (2024)؛ والمسافة نحو 447 سنة ضوئية. تظهر المعلمات غير المعروفة بالرمز —.</string>
+    <string name="celestial_free_rotation_hint" formatted="false">دوران مسرع. اسحب بحرية؛ انقر لاستعادة المحور الأصلي.</string>
+    <string name="celestial_polaris_derived" formatted="false">الجاذبية السطحية المتوسطة والكثافة المتوسطة تقديرات مستنتجة من الكتلة ونصف القطر المتوسط. النجم القطبي نجم نابض؛ هذه قيم تقريبية وليست قياسات آنية.</string>
+</resources>

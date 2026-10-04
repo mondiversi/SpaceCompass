@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="celestial_polaris" formatted="false">Πολικός αστέρας</string>
+    <string name="celestial_point_azimuth">Αζιμούθιο: %1$s</string>
+    <string name="celestial_point_elevation">Ύψος: %1$s</string>
+    <string name="celestial_polaris_model" formatted="false">Ενδεικτική απεικόνιση του άστρου, όχι αναλυτική φωτογραφία. Άξονας και περιστροφή άγνωστα.</string>
+    <string name="celestial_polaris_facts" formatted="false">Η φαινόμενη ημερήσια κίνηση οφείλεται στην περιστροφή της Γης, όχι σε τροχιά γύρω της. Διάμετρος και μάζα αφορούν τον Polaris Aa (2024)· απόσταση περίπου 447 έτη φωτός. Άγνωστες τιμές εμφανίζονται ως —.</string>
+    <string name="celestial_free_rotation_hint" formatted="false">Επιταχυνόμενη περιστροφή. Σύρετε ελεύθερα· πατήστε για επαναφορά του αρχικού άξονα.</string>
+    <string name="celestial_polaris_derived" formatted="false">Η μέση επιφανειακή βαρύτητα και πυκνότητα εκτιμώνται από τη μάζα και τη μέση ακτίνα. Ο Πολικός Αστέρας πάλλεται· πρόκειται για προσεγγίσεις, όχι ζωντανές μετρήσεις.</string>
+</resources>

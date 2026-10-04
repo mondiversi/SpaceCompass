@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="celestial_temperature" formatted="false">Temperatuur</string>
+    <string name="celestial_temperature_surface_mean" formatted="false">Gemiddelde oppervlaktetemperatuur</string>
+    <string name="celestial_temperature_day_maximum" formatted="false">Zonbeschenen oppervlak (max.)</string>
+    <string name="celestial_temperature_night_minimum" formatted="false">Nachtelijk oppervlak (min.)</string>
+    <string name="celestial_temperature_surface_range" formatted="false">Bereik van oppervlaktetemperatuur</string>
+    <string name="celestial_temperature_atmosphere" formatted="false">Atmosfeertemperatuur (1 bar)</string>
+    <string name="celestial_temperature_photosphere" formatted="false">Temperatuur van de fotosfeer</string>
+    <string name="celestial_temperature_effective" formatted="false">Gemiddelde effectieve temperatuur</string>
+    <string name="celestial_temperature_note" formatted="false">Referentietemperaturen, geen livegegevens. Dag-/nachtwaarden zijn lokale uitersten, geen gemiddelden van een halfrond. Waarden variëren met plaats en tijd.</string>
+</resources>

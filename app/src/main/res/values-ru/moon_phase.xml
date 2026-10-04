@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="moon_phase_new">Новолуние</string>
+    <string name="moon_phase_waxing_crescent">Растущий серп</string>
+    <string name="moon_phase_first_quarter">Первая четверть</string>
+    <string name="moon_phase_waxing_gibbous">Растущая выпуклая Луна</string>
+    <string name="moon_phase_full">Полнолуние</string>
+    <string name="moon_phase_waning_gibbous">Убывающая выпуклая Луна</string>
+    <string name="moon_phase_last_quarter">Последняя четверть</string>
+    <string name="moon_phase_waning_crescent">Убывающий серп</string>
+    <string name="moon_phase_description">%1$s · освещено %2$s%%</string>
+    <string name="celestial_speed_loading">Обновление скорости…</string>
+    <string name="celestial_speed_unavailable">Скорость недоступна</string>
+</resources>

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="celestial_polaris" formatted="false">북극성</string>
+    <string name="celestial_point_azimuth">방위각: %1$s</string>
+    <string name="celestial_point_elevation">고도: %1$s</string>
+    <string name="celestial_polaris_model" formatted="false">별의 모식도이며 표면을 분해한 사진이 아닙니다. 축과 자전은 알려져 있지 않습니다.</string>
+    <string name="celestial_polaris_facts" formatted="false">겉보기 일주 운동은 지구 공전 궤도가 아니라 지구 자전으로 발생합니다. 지름과 질량은 Polaris Aa(2024)의 값이며 거리는 약 447광년입니다. 알려지지 않은 값은 —로 표시합니다.</string>
+    <string name="celestial_free_rotation_hint" formatted="false">빠르게 재현한 자전입니다. 자유롭게 드래그하고 탭하여 원래 축으로 복원하세요.</string>
+    <string name="celestial_polaris_derived" formatted="false">평균 표면 중력과 평균 밀도는 질량과 평균 반지름으로 계산한 추정값입니다. 북극성은 맥동하는 별이므로 실시간 측정값이 아닌 근사 참고값입니다.</string>
+</resources>

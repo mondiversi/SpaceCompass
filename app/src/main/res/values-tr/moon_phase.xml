@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="moon_phase_new">Yeni ay</string>
+    <string name="moon_phase_waxing_crescent">Büyüyen hilal</string>
+    <string name="moon_phase_first_quarter">İlk dördün</string>
+    <string name="moon_phase_waxing_gibbous">Büyüyen şişkin ay</string>
+    <string name="moon_phase_full">Dolunay</string>
+    <string name="moon_phase_waning_gibbous">Küçülen şişkin ay</string>
+    <string name="moon_phase_last_quarter">Son dördün</string>
+    <string name="moon_phase_waning_crescent">Küçülen hilal</string>
+    <string name="moon_phase_description">%1$s · %2$s%% aydınlık</string>
+    <string name="celestial_speed_loading">Hız güncelleniyor…</string>
+    <string name="celestial_speed_unavailable">Hız kullanılamıyor</string>
+</resources>

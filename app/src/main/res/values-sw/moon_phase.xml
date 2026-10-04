@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="moon_phase_new">Mwezi mpya</string>
+    <string name="moon_phase_waxing_crescent">Hilali inayoongezeka</string>
+    <string name="moon_phase_first_quarter">Robo ya kwanza</string>
+    <string name="moon_phase_waxing_gibbous">Mwezi nundu unaoongezeka</string>
+    <string name="moon_phase_full">Mwezi mpevu</string>
+    <string name="moon_phase_waning_gibbous">Mwezi nundu unaopungua</string>
+    <string name="moon_phase_last_quarter">Robo ya mwisho</string>
+    <string name="moon_phase_waning_crescent">Hilali inayopungua</string>
+    <string name="moon_phase_description">%1$s · %2$s%% imeangazwa</string>
+    <string name="celestial_speed_loading">Inasasisha kasi…</string>
+    <string name="celestial_speed_unavailable">Kasi haipatikani</string>
+</resources>

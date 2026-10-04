@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="celestial_io">Ιώ</string>
+    <string name="celestial_europa">Ευρώπη</string>
+    <string name="celestial_catalog_distance">Απόσταση από τον Ήλιο</string>
+    <string name="celestial_speed_orbit_jupiter">Τροχιακή ταχύτητα (Δίας): %1$s km/s</string>
+</resources>

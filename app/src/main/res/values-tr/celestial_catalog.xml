@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="celestial_io">Io</string>
+    <string name="celestial_europa">Europa</string>
+    <string name="celestial_catalog_distance">Güneş’ten uzaklık</string>
+    <string name="celestial_speed_orbit_jupiter">Yörünge hızı (Jüpiter): %1$s km/s</string>
+</resources>

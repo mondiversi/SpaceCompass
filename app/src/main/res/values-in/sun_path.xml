@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="sun_path_title">Lintasan matahari harian</string>
+    <string name="sun_path_sunrise">Matahari terbit</string>
+    <string name="sun_path_culmination">Puncak</string>
+    <string name="sun_path_sunset">Matahari terbenam</string>
+    <string name="sun_path_show">Tampilkan lintasan</string>
+    <string name="sun_path_note">Waktu dihitung untuk cakrawala tanpa halangan. Medan dan cuaca dapat memengaruhi visibilitas.</string>
+    <string name="sun_path_previous">Titik sebelumnya</string>
+    <string name="sun_path_next">Titik berikutnya</string>
+    <string name="sun_path_minimum">Titik terendah</string>
+</resources>

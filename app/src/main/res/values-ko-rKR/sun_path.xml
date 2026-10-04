@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="sun_path_title">태양의 하루 경로</string>
+    <string name="sun_path_sunrise">일출</string>
+    <string name="sun_path_culmination">최고 고도</string>
+    <string name="sun_path_sunset">일몰</string>
+    <string name="sun_path_show">경로 표시</string>
+    <string name="sun_path_note">시간은 장애물이 없는 지평선을 기준으로 계산됩니다. 지형과 날씨가 가시성에 영향을 줄 수 있습니다.</string>
+    <string name="sun_path_previous">이전 지점</string>
+    <string name="sun_path_next">다음 지점</string>
+    <string name="sun_path_minimum">최저 고도</string>
+</resources>

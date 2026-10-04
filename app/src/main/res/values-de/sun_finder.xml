@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="sun_finder_info_action">Informationen zu Himmelsdaten</string>
+    <string name="sun_finder_title">Himmelskompass</string>
+    <string name="sun_finder_below_horizon">Sonne unter dem horizontalen Horizont</string>
+    <string name="sun_finder_heading">Richtung: %1$s</string>
+    <string name="sun_finder_tilt">Neigung: %1$s</string>
+    <string name="sun_finder_azimuth">Sonnenazimut: %1$s</string>
+    <string name="sun_finder_elevation">Sonnenhöhe: %1$s</string>
+    <string name="sun_finder_altitude">GPS-Höhe: %1$s</string>
+    <string name="sun_finder_location_accuracy">Genauigkeit: ±%1$s</string>
+    <string name="sun_finder_terrain_note">Berechnete Position: Gelände und Hindernisse werden nicht erkannt. Die GPS-Höhe ist ellipsoidisch.</string>
+    <string name="sun_finder_safety">Nicht direkt in die Sonne schauen.</string>
+    <string name="sun_finder_location_permission">Erlaube den Standortzugriff, um Himmelspositionen zu berechnen.</string>
+    <string name="sun_finder_location_disabled">Die Standortfunktion ist ausgeschaltet.</string>
+    <string name="sun_finder_location_error">Standort nicht verfügbar.</string>
+    <string name="sun_finder_location_searching">Standort wird gesucht…</string>
+    <string name="sun_finder_compass_missing">Auf diesem Gerät ist kein Kompass verfügbar.</string>
+    <string name="sun_finder_orientation_searching">Ausrichtung wird ermittelt…</string>
+    <string name="sun_finder_compass_accuracy">Geringe Kompassgenauigkeit. Entferne magnetische Gegenstände und kalibriere das Telefon.</string>
+    <string name="sun_finder_allow_location">Standort erlauben</string>
+    <string name="sun_finder_enable_location">Standort aktivieren</string>
+    <string name="sun_finder_retry">Erneut versuchen</string>
+    <string name="sun_finder_sky_description">Virtuelle Ansicht der Himmelspositionen</string>
+    <string name="sun_weather_clear">Klar</string>
+    <string name="sun_weather_partial">Teilweise bewölkt</string>
+    <string name="sun_weather_cloudy">Bewölkt</string>
+    <string name="sun_weather_fog">Nebel</string>
+    <string name="sun_weather_drizzle">Nieselregen</string>
+    <string name="sun_weather_rain">Regen</string>
+    <string name="sun_weather_snow">Schnee</string>
+    <string name="sun_weather_storm">Gewitter</string>
+    <string name="sun_weather_unavailable">Wetter nicht verfügbar</string>
+    <string name="sun_weather_loading">Wetter wird aktualisiert…</string>
+    <string name="sun_weather_estimate">Geschätztes Wetter: %1$s</string>
+    <string name="sun_weather_privacy">Online-Wetter nutzt einen ungefähren Standort.</string>
+</resources>

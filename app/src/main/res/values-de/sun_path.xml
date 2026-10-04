@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="sun_path_title">Tägliche Sonnenbahn</string>
+    <string name="sun_path_sunrise">Sonnenaufgang</string>
+    <string name="sun_path_culmination">Höchststand</string>
+    <string name="sun_path_sunset">Sonnenuntergang</string>
+    <string name="sun_path_show">Sonnenbahn anzeigen</string>
+    <string name="sun_path_note">Berechnete Zeiten für einen freien Horizont. Gelände und Wetter können die Sichtbarkeit beeinflussen.</string>
+    <string name="sun_path_previous">Vorheriger Punkt</string>
+    <string name="sun_path_next">Nächster Punkt</string>
+    <string name="sun_path_minimum">Tiefststand</string>
+</resources>

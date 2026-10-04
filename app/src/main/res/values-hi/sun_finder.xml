@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="sun_finder_info_action">खगोलीय डेटा की जानकारी</string>
+    <string name="sun_finder_title">खगोलीय दिशा-सूचक</string>
+    <string name="sun_finder_below_horizon">सूर्य क्षैतिज क्षितिज के नीचे है</string>
+    <string name="sun_finder_heading">दिशा: %1$s</string>
+    <string name="sun_finder_tilt">झुकाव: %1$s</string>
+    <string name="sun_finder_azimuth">सूर्य का दिगंश: %1$s</string>
+    <string name="sun_finder_elevation">सूर्य की ऊँचाई: %1$s</string>
+    <string name="sun_finder_altitude">GPS ऊँचाई: %1$s</string>
+    <string name="sun_finder_location_accuracy">सटीकता: ±%1$s</string>
+    <string name="sun_finder_terrain_note">गणना की गई स्थिति: भूभाग और अवरोध नहीं पहचाने जाते। GPS ऊँचाई दीर्घवृत्ताभ के सापेक्ष है।</string>
+    <string name="sun_finder_safety">सीधे सूर्य की ओर न देखें।</string>
+    <string name="sun_finder_location_permission">खगोलीय स्थिति की गणना के लिए स्थान का उपयोग करने दें।</string>
+    <string name="sun_finder_location_disabled">स्थान बंद है।</string>
+    <string name="sun_finder_location_error">स्थान उपलब्ध नहीं है।</string>
+    <string name="sun_finder_location_searching">स्थान खोज रहे हैं…</string>
+    <string name="sun_finder_compass_missing">इस उपकरण पर कंपास उपलब्ध नहीं है।</string>
+    <string name="sun_finder_orientation_searching">फ़ोन का अभिविन्यास पढ़ रहे हैं…</string>
+    <string name="sun_finder_compass_accuracy">कंपास की सटीकता कम है। चुंबकीय वस्तुओं से दूर जाएँ और फ़ोन को कैलिब्रेट करें।</string>
+    <string name="sun_finder_allow_location">स्थान की अनुमति दें</string>
+    <string name="sun_finder_enable_location">स्थान चालू करें</string>
+    <string name="sun_finder_retry">फिर प्रयास करें</string>
+    <string name="sun_finder_sky_description">खगोलीय स्थितियों का आभासी दृश्य</string>
+    <string name="sun_weather_clear">साफ़</string>
+    <string name="sun_weather_partial">आंशिक बादल</string>
+    <string name="sun_weather_cloudy">बादल</string>
+    <string name="sun_weather_fog">कोहरा</string>
+    <string name="sun_weather_drizzle">बूंदाबांदी</string>
+    <string name="sun_weather_rain">बारिश</string>
+    <string name="sun_weather_snow">बर्फ़</string>
+    <string name="sun_weather_storm">गरज के साथ तूफ़ान</string>
+    <string name="sun_weather_unavailable">मौसम उपलब्ध नहीं</string>
+    <string name="sun_weather_loading">मौसम अपडेट हो रहा है…</string>
+    <string name="sun_weather_estimate">अनुमानित मौसम: %1$s</string>
+    <string name="sun_weather_privacy">ऑनलाइन मौसम अनुमानित स्थान का उपयोग करता है।</string>
+</resources>

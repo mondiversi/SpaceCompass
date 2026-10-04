@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="celestial_polaris" formatted="false">北極星</string>
+    <string name="celestial_point_azimuth">方位角: %1$s</string>
+    <string name="celestial_point_elevation">高度: %1$s</string>
+    <string name="celestial_polaris_model" formatted="false">恒星の模式図であり、表面を解像した写真ではありません。軸と自転は不明です。</string>
+    <string name="celestial_polaris_facts" formatted="false">見かけの日周運動は地球の自転によるもので、地球周回軌道ではありません。直径と質量はPolaris Aa（2024）の値で、距離は約447光年です。不明な値は — で表示します。</string>
+    <string name="celestial_free_rotation_hint" formatted="false">加速した自転。自由にドラッグし、タップで元の軸に戻します。</string>
+    <string name="celestial_polaris_derived" formatted="false">平均表面重力と平均密度は、質量と平均半径から算出した推定値です。北極星は脈動する恒星であり、これらは参考値で、リアルタイムの測定値ではありません。</string>
+</resources>

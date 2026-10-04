@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="celestial_temperature" formatted="false">Sıcaklık</string>
+    <string name="celestial_temperature_surface_mean" formatted="false">Ortalama yüzey sıcaklığı</string>
+    <string name="celestial_temperature_day_maximum" formatted="false">Güneş alan yüzey (maks.)</string>
+    <string name="celestial_temperature_night_minimum" formatted="false">Gece yüzeyi (min.)</string>
+    <string name="celestial_temperature_surface_range" formatted="false">Yüzey sıcaklığı aralığı</string>
+    <string name="celestial_temperature_atmosphere" formatted="false">Atmosfer sıcaklığı (1 bar)</string>
+    <string name="celestial_temperature_photosphere" formatted="false">Fotosfer sıcaklığı</string>
+    <string name="celestial_temperature_effective" formatted="false">Ortalama etkin sıcaklık</string>
+    <string name="celestial_temperature_note" formatted="false">Referans sıcaklıklarıdır, canlı veri değildir. Gündüz/gece değerleri yerel uç değerlerdir, yarımküre ortalamaları değildir. Değerler yere ve zamana göre değişir.</string>
+</resources>

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="celestial_polaris" formatted="false">Gwiazda Polarna</string>
+    <string name="celestial_point_azimuth">Azymut: %1$s</string>
+    <string name="celestial_point_elevation">Wysokość: %1$s</string>
+    <string name="celestial_polaris_model" formatted="false">Ilustracja gwiazdy, nie zdjęcie rozdzielonej powierzchni. Oś i obrót są nieznane.</string>
+    <string name="celestial_polaris_facts" formatted="false">Pozorny ruch dobowy wynika z obrotu Ziemi, a nie z orbity wokół niej. Średnica i masa dotyczą Polaris Aa (2024); odległość wynosi około 447 lat świetlnych. Nieznane parametry oznaczono —.</string>
+    <string name="celestial_free_rotation_hint" formatted="false">Przyspieszony obrót. Przeciągaj swobodnie; stuknij, aby przywrócić pierwotną oś.</string>
+    <string name="celestial_polaris_derived" formatted="false">Średnią grawitację powierzchniową i gęstość oszacowano z masy i średniego promienia. Polaris jest gwiazdą pulsującą: to przybliżenia, nie pomiary na żywo.</string>
+</resources>

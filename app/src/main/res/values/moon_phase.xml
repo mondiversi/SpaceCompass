@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="moon_phase_new">New moon</string>
+    <string name="moon_phase_waxing_crescent">Waxing crescent</string>
+    <string name="moon_phase_first_quarter">First quarter</string>
+    <string name="moon_phase_waxing_gibbous">Waxing gibbous</string>
+    <string name="moon_phase_full">Full moon</string>
+    <string name="moon_phase_waning_gibbous">Waning gibbous</string>
+    <string name="moon_phase_last_quarter">Last quarter</string>
+    <string name="moon_phase_waning_crescent">Waning crescent</string>
+    <string name="moon_phase_description">%1$s · %2$s%% illuminated</string>
+    <string name="celestial_speed_loading">Updating speed…</string>
+    <string name="celestial_speed_unavailable">Speed unavailable</string>
+</resources>

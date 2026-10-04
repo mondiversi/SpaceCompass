@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="sun_path_title">Njia ya jua ya kila siku</string>
+    <string name="sun_path_sunrise">Macheo</string>
+    <string name="sun_path_culmination">Kilele</string>
+    <string name="sun_path_sunset">Machweo</string>
+    <string name="sun_path_show">Onyesha njia</string>
+    <string name="sun_path_note">Nyakati zimehesabiwa kwa upeo usio na vizuizi. Mandhari na hali ya hewa vinaweza kuathiri mwonekano.</string>
+    <string name="sun_path_previous">Nukta iliyotangulia</string>
+    <string name="sun_path_next">Nukta inayofuata</string>
+    <string name="sun_path_minimum">Kiwango cha chini</string>
+</resources>

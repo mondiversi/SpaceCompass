@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="moon_phase_new">新月</string>
+    <string name="moon_phase_waxing_crescent">満ちていく三日月</string>
+    <string name="moon_phase_first_quarter">上弦の月</string>
+    <string name="moon_phase_waxing_gibbous">満ちていく凸月</string>
+    <string name="moon_phase_full">満月</string>
+    <string name="moon_phase_waning_gibbous">欠けていく凸月</string>
+    <string name="moon_phase_last_quarter">下弦の月</string>
+    <string name="moon_phase_waning_crescent">欠けていく三日月</string>
+    <string name="moon_phase_description">%1$s · 照明率 %2$s%%</string>
+    <string name="celestial_speed_loading">速度を更新中…</string>
+    <string name="celestial_speed_unavailable">速度を取得できません</string>
+</resources>

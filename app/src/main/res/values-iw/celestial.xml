@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="celestial_sun">שמש</string>
+    <string name="celestial_moon">ירח</string>
+    <string name="celestial_mercury">כוכב חמה</string>
+    <string name="celestial_venus">נוגה</string>
+    <string name="celestial_mars">מאדים</string>
+    <string name="celestial_jupiter">צדק</string>
+    <string name="celestial_saturn">שבתאי</string>
+    <string name="celestial_uranus">אורנוס</string>
+    <string name="celestial_neptune">נפטון</string>
+    <string name="celestial_pluto">פלוטו</string>
+    <string name="celestial_sedna">סדנה</string>
+    <string name="celestial_iss">ISS</string>
+    <string name="celestial_voyager_1">Voyager 1</string>
+    <string name="celestial_voyager_2">Voyager 2</string>
+    <string name="celestial_select">בחירת גוף שמימי</string>
+    <string name="celestial_daily_path">מסלול יומי</string>
+    <string name="celestial_iss_path">מסלול ISS</string>
+    <string name="celestial_rise">זריחה</string>
+    <string name="celestial_set">שקיעה</string>
+    <string name="celestial_azimuth">אזימוט (%1$s): %2$s</string>
+    <string name="celestial_elevation">גובה (%1$s): %2$s</string>
+    <string name="celestial_below">%1$s מתחת לאופק</string>
+    <string name="celestial_loading">עדכון נתוני מסלול…</string>
+    <string name="celestial_unavailable">הנתונים של %1$s אינם זמינים. נדרש חיבור לאינטרנט כדי לעדכן אותם.</string>
+    <string name="celestial_iss_old">נתוני מסלול ISS ישנים מ־24 שעות: הדיוק עלול לרדת.</string>
+    <string name="celestial_iss_note">הקפה מלאה סביב השעה הנוכחית, גם מתחת לאופק, עם 24 נקודות סדירות וכן זריחה, שיא גובה ושקיעה. פרטי המעבר מתייחסים למעבר הנוכחי או הבא בתוך 24 שעות; הנראות אינה מובטחת.</string>
+    <string name="celestial_model_note">המיקומים והמרחקים מחושבים; הכיוון תלוי בדיוק המצפן. ISS דורש נתוני מסלול עדכניים. סדנה וויאג׳ר משתמשים במסלולים חזויים של NASA/JPL, ולא בטלמטריה בזמן אמת.</string>
+    <string name="celestial_weather_mainly_clear">בהיר ברובו</string>
+    <string name="celestial_speed_earth_orbit">מהירות מסלולית (כדור הארץ): %1$s km/s</string>
+    <string name="celestial_speed_orbit_earth">מהירות מסלולית (כדור הארץ): %1$s km/s</string>
+    <string name="celestial_speed_orbit_sun">מהירות מסלולית (השמש): %1$s km/s</string>
+    <string name="celestial_speed_outward_sun">מהירות התרחקות (שמש): %1$s km/s</string>
+    <string name="celestial_speed_note">בחירת השמש מציגה את מהירות ההקפה של כדור הארץ סביב השמש. שאר כוכבי הלכת וסדנה מקיפים את השמש; הירח ותחנת החלל מקיפים את כדור הארץ. עבור וויאג׳ר מוצגת מהירות ההתרחקות מהשמש, ולא מכדור הארץ.</string>
+    <string name="celestial_pass">מעבר</string>
+    <string name="celestial_orbit">מסלול</string>
+    <string name="celestial_iss_no_pass">אין מעבר זמין בתוך 24 שעות לפי נתוני המסלול הנוכחיים.</string>
+</resources>

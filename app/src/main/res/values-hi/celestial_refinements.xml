@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="celestial_polaris" formatted="false">ध्रुव तारा</string>
+    <string name="celestial_point_azimuth">दिगंश: %1$s</string>
+    <string name="celestial_point_elevation">ऊँचाई: %1$s</string>
+    <string name="celestial_polaris_model" formatted="false">तारे का चित्रात्मक रूप, सतह की विस्तृत तस्वीर नहीं। अक्ष और घूर्णन अज्ञात हैं।</string>
+    <string name="celestial_polaris_facts" formatted="false">दैनिक आभासी गति पृथ्वी के घूर्णन से होती है, पृथ्वी की परिक्रमा से नहीं। व्यास और द्रव्यमान Polaris Aa (2024) के हैं; दूरी लगभग 447 प्रकाश वर्ष है। अज्ञात मान — से दिखाए जाते हैं।</string>
+    <string name="celestial_free_rotation_hint" formatted="false">तेज घूर्णन। स्वतंत्र रूप से खींचें; मूल अक्ष बहाल करने के लिए टैप करें।</string>
+    <string name="celestial_polaris_derived" formatted="false">औसत सतही गुरुत्व और औसत घनत्व द्रव्यमान और औसत त्रिज्या से अनुमानित हैं। ध्रुव तारा स्पंदित होता है; ये अनुमानित संदर्भ मान हैं, वास्तविक समय के माप नहीं।</string>
+</resources>

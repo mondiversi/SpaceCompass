@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="celestial_view_open" formatted="false">Показать</string>
+    <string name="celestial_view_current" formatted="false">Текущий вид</string>
+    <string name="celestial_view_rotation" formatted="false">Вращение</string>
+    <string name="celestial_view_resume" formatted="false">Продолжить вращение</string>
+    <string name="celestial_view_diameter" formatted="false">Диаметр</string>
+    <string name="celestial_view_antenna" formatted="false">Диаметр антенны</string>
+    <string name="celestial_view_size" formatted="false">Максимальный размер</string>
+    <string name="celestial_view_mass" formatted="false">Масса</string>
+    <string name="celestial_view_gravity" formatted="false">Поверхностная гравитация</string>
+    <string name="celestial_view_density" formatted="false">Плотность</string>
+    <string name="celestial_view_parent" formatted="false">Главное тело</string>
+    <string name="celestial_view_earth" formatted="false">Земля</string>
+    <string name="celestial_view_rotation_period" formatted="false">Период вращения</string>
+    <string name="celestial_view_retrograde" formatted="false">Обратное вращение</string>
+    <string name="celestial_view_yes" formatted="false">Да</string>
+    <string name="celestial_view_no" formatted="false">Нет</string>
+    <string name="celestial_view_revolution_period" formatted="false">Период обращения</string>
+    <string name="celestial_view_min_distance" formatted="false">Минимальное расстояние до главного тела</string>
+    <string name="celestial_view_max_distance" formatted="false">Максимальное расстояние до главного тела</string>
+    <string name="celestial_view_observer_distance" formatted="false">Расстояние от наблюдателя</string>
+    <string name="celestial_view_phase" formatted="false">Фаза Луны</string>
+    <string name="celestial_view_illuminated" formatted="false">Освещённый диск</string>
+    <string name="celestial_view_information" formatted="false">Информация</string>
+    <string name="celestial_view_rotation_hint" formatted="false">Ускоренное демонстрационное вращение. Перетаскивайте для осмотра; двойное касание возобновит вращение.</string>
+    <string name="celestial_view_craft_note" formatted="false">Иллюстративная модель конструкции: текущая ориентация аппарата недоступна.</string>
+    <string name="celestial_view_sedna_note" formatted="false">Поверхность и ориентация неизвестны: иллюстративная модель.</string>
+    <string name="celestial_view_map_note" formatted="false">Воссозданный вид: фаза и ориентация рассчитаны. Статичные карты, не прямые изображения.</string>
+    <string name="celestial_view_location_needed" formatted="false">Для текущего вида нужно местоположение. Вращение доступно без GPS.</string>
+    <string name="celestial_view_facts_note" formatted="false">Приблизительные значения. Гравитация газовых гигантов при 1 бар; орбитальные расстояния до главного тела.</string>
+    <string name="celestial_view_sun_note" formatted="false">Вращение Солнца зависит от широты; указан справочный период.</string>
+    <string name="celestial_view_sedna_facts" formatted="false">Диаметр оценочный. Вращение и элементы орбиты имеют неопределённости.</string>
+    <string name="celestial_view_iss_note" formatted="false">Размеры и масса МКС зависят от конфигурации и прибывающих аппаратов.</string>
+    <string name="celestial_view_render_failed" formatted="false">Не удалось отобразить модель.</string>
+    <string name="celestial_view_zoom_in" formatted="false">Увеличить</string>
+    <string name="celestial_view_zoom_out" formatted="false">Уменьшить</string>
+    <string name="celestial_view_reset_zoom" formatted="false">Сбросить масштаб</string>
+    <string name="celestial_view_zoom_level">Масштаб: %1$d%%</string>
+</resources>
