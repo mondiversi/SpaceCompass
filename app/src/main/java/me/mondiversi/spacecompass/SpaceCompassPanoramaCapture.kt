@@ -76,9 +76,9 @@ internal fun rememberSpaceCompassPanoramaAction(timeMs: Long, latitude: Double?,
                 val snapshot = SpaceCompassPanoramaSnapshot(timeMs, latitude, longitude, altitude, phase, weather,
                     spaceCompassCelestialCatalogOrder.filter { it in bodies }.map {
                         SpaceCompassPanoramaObject(it, resources.getString(it.nameResource), overlays[it]?.path)
-                    }, remote, "Space Compass Â· $date Â· $time Â· ${zone.getDisplayName(zone.inDaylightTime(java.util.Date(timeMs)), TimeZone.SHORT, locale)}",
+                    }, remote, "Space Compass · $date · $time · ${zone.getDisplayName(zone.inDaylightTime(java.util.Date(timeMs)), TimeZone.SHORT, locale)}",
                     listOf(R.string.panorama_north, R.string.panorama_east, R.string.panorama_south, R.string.panorama_west).map(resources::getString),
-                    listOf(60.0, 30.0, 0.0, -30.0, -60.0).map { "${formatSpaceCompassNumber(it, 0, numeric, grouping = false)}Â°" },
+                    listOf(60.0, 30.0, 0.0, -30.0, -60.0).map { "${formatSpaceCompassNumber(it, 0, numeric, grouping = false)}°" },
                     resources.getString(R.string.panorama_data_unavailable), resources.getString(R.string.panorama_path_unavailable))
                 if (Build.VERSION.SDK_INT < 29 && ContextCompat.checkSelfPermission(context,
                         Manifest.permission.WRITE_EXTERNAL_STORAGE) != PackageManager.PERMISSION_GRANTED) {

@@ -4,10 +4,10 @@
 
 | Check | Result |
 | --- | --- |
-| Debug APK build | Passed, version 0.1.12 |
-| Release APK build | Passed, version 0.1.12 |
+| Debug APK build | Passed, version 0.1.13 |
+| Release APK build | Passed, version 0.1.13 |
 | Release lint | Completed, 0 errors; remaining findings retained in reports |
-| JVM unit tests | 459 passed, 0 failures |
+| JVM unit tests | 460 passed, 0 failures |
 | Android instrumentation sources | Compiled; 3 targeted panorama tests passed on Android 15 |
 | Phone UI checks | Samsung SM-G970U1, Android 12 / API 31 |
 | Tablet UI checks | Pixel Tablet emulator, Android 15 / API 35 |
@@ -34,9 +34,9 @@ No Play Store submission is part of this release.
 The current CI result is available on the repository's Actions page; the local
 results above do not stand in for a successful hosted run.
 
-## Orbit names and gallery capture — version 0.1.12
+## Orbit names and gallery capture — version 0.1.13
 
-Debug/release builds, 459 JVM tests and Android test-source compilation passed;
+Debug/release builds, 460 JVM tests and Android test-source compilation passed;
 release lint completed with zero errors. The three targeted Android 15 panorama
 tests passed: frozen solar-position rendering, complete Latin/Arabic/Persian/Hebrew
 names on curved paths and a JPEG gallery round trip with capture date/album checks.

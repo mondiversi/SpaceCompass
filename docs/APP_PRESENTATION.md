@@ -1,6 +1,6 @@
 # App presentation and preferences
 
-## Orbit names and Capture — version 0.1.12
+## Orbit names and Capture — version 0.1.13
 
 Capture appears below Units in the main menu and saves a complete 360° sky map
 with all selected objects, available paths, direction arrows and live positions

@@ -143,7 +143,7 @@ internal fun renderSpaceCompassPanorama(snapshot: SpaceCompassPanoramaSnapshot, 
             val y = sceneHeight + (55 + index / columns * 50) * scale
             val status = if (observations[item] == null) snapshot.unavailable else
                 if (item.body.supportsDailyPath && item.path == null) snapshot.pathUnavailable else ""
-            val label = item.name + if (status.isEmpty()) "" else " Â· $status"
+            val label = item.name + if (status.isEmpty()) "" else " · $status"
             text.textSize = 28 * scale
             val size = (28 * scale * min(1f, (width / columns.toFloat() - 32 * scale) / text.measureText(label))).coerceAtLeast(17 * scale)
             textAt(label, x, y, size, spaceCompassCelestialPathTint(item.body).toArgb())
