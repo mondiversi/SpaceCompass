@@ -16,5 +16,4 @@
     <string name="update_incompatible">Η νέα έκδοση απαιτεί νεότερη έκδοση Android.</string>
     <string name="update_install_cancelled">Η εγκατάσταση ακυρώθηκε. Μπορείς να δοκιμάσεις ξανά.</string>
     <string name="update_installer_unavailable">Δεν ήταν δυνατό να ανοίξει το πρόγραμμα εγκατάστασης Android.</string>
-    <string name="update_repository_description">Άνοιξε το έργο ή έλεγξε για νέα έκδοση της εφαρμογής.</string>
 </resources>

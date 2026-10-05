@@ -16,5 +16,4 @@
     <string name="update_incompatible">新しいバージョンには、より新しいAndroidが必要です。</string>
     <string name="update_install_cancelled">インストールをキャンセルしました。再試行できます。</string>
     <string name="update_installer_unavailable">Androidのインストーラーを開けません。</string>
-    <string name="update_repository_description">プロジェクトを開くか、アプリの新しいバージョンを確認します。</string>
 </resources>

@@ -16,5 +16,4 @@
     <string name="update_incompatible">Yeni sürüm daha yeni bir Android sürümü gerektiriyor.</string>
     <string name="update_install_cancelled">Kurulum iptal edildi. Tekrar deneyebilirsin.</string>
     <string name="update_installer_unavailable">Android yükleyicisi açılamadı.</string>
-    <string name="update_repository_description">Projeyi aç veya uygulamanın yeni bir sürümünü denetle.</string>
 </resources>

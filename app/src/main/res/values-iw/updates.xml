@@ -16,5 +16,4 @@
     <string name="update_incompatible">הגרסה החדשה דורשת גרסת Android חדשה יותר.</string>
     <string name="update_install_cancelled">ההתקנה בוטלה. ניתן לנסות שוב.</string>
     <string name="update_installer_unavailable">לא ניתן לפתוח את תוכנית ההתקנה של Android.</string>
-    <string name="update_repository_description">פתיחת הפרויקט או בדיקה אם קיימת גרסה חדשה של האפליקציה.</string>
 </resources>

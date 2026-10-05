@@ -16,5 +16,4 @@
     <string name="update_incompatible">Die neue Version erfordert eine neuere Android-Version.</string>
     <string name="update_install_cancelled">Installation abgebrochen. Du kannst es erneut versuchen.</string>
     <string name="update_installer_unavailable">Das Android-Installationsprogramm kann nicht geöffnet werden.</string>
-    <string name="update_repository_description">Öffne das Projekt oder suche nach einer neuen Version der App.</string>
 </resources>

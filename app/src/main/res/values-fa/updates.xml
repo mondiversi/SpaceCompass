@@ -16,5 +16,4 @@
     <string name="update_incompatible">نسخهٔ جدید به نسخهٔ جدیدتری از Android نیاز دارد.</string>
     <string name="update_install_cancelled">نصب لغو شد. می‌توانی دوباره تلاش کنی.</string>
     <string name="update_installer_unavailable">باز کردن نصب‌کنندهٔ Android ممکن نیست.</string>
-    <string name="update_repository_description">پروژه را باز کن یا نسخهٔ جدید برنامه را بررسی کن.</string>
 </resources>

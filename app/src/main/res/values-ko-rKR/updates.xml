@@ -16,5 +16,4 @@
     <string name="update_incompatible">새 버전에는 더 최신 Android 버전이 필요합니다.</string>
     <string name="update_install_cancelled">설치가 취소되었습니다. 다시 시도할 수 있습니다.</string>
     <string name="update_installer_unavailable">Android 설치 프로그램을 열 수 없습니다.</string>
-    <string name="update_repository_description">프로젝트를 열거나 앱의 새 버전을 확인하세요.</string>
 </resources>

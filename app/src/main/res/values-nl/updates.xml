@@ -16,5 +16,4 @@
     <string name="update_incompatible">De nieuwe versie vereist een nieuwere Android-versie.</string>
     <string name="update_install_cancelled">Installatie geannuleerd. Je kunt het opnieuw proberen.</string>
     <string name="update_installer_unavailable">Kan het Android-installatieprogramma niet openen.</string>
-    <string name="update_repository_description">Open het project of zoek naar een nieuwe versie van de app.</string>
 </resources>

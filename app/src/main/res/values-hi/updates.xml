@@ -16,5 +16,4 @@
     <string name="update_incompatible">नए संस्करण के लिए Android का नया संस्करण चाहिए।</string>
     <string name="update_install_cancelled">इंस्टॉलेशन रद्द किया गया। आप फिर कोशिश कर सकते हैं।</string>
     <string name="update_installer_unavailable">Android इंस्टॉलर नहीं खोल सके।</string>
-    <string name="update_repository_description">प्रोजेक्ट खोलें या ऐप का नया संस्करण खोजें।</string>
 </resources>

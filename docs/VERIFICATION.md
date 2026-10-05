@@ -4,8 +4,8 @@
 
 | Check | Result |
 | --- | --- |
-| Debug APK build | Passed, version 0.1.2 |
-| Release APK build | Passed, version 0.1.2 |
+| Debug APK build | Passed, version 0.1.3 |
+| Release APK build | Passed, version 0.1.3 |
 | Release lint | Completed, 0 errors; remaining findings retained in reports |
 | JVM unit tests | 395 passed, 0 failures |
 | Android instrumentation sources | Compiled; not executed |
@@ -32,6 +32,16 @@ The repository contains no signing key or local SDK configuration. GitHub APK di
 No Play Store submission is part of this release.
 The current CI result is available on the repository's Actions page; the local
 results above do not stand in for a successful hosted run.
+
+## Repository presentation — version 0.1.3
+
+The repository island contains the project URL followed by **Open repository**
+and **Check for updates**. The package identifier, explanatory sentence and
+persistent check-result line were removed. Update results still use the localized
+temporary notice or update dialog. The unused explanatory resource was removed
+consistently from all twenty languages; existing parity checks passed.
+Signed APK installation and device UI results are recorded in this version's
+GitHub release validation notes.
 
 ## GitHub updater checks — version 0.1.2
 

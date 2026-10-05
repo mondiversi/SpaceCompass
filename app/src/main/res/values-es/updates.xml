@@ -16,5 +16,4 @@
     <string name="update_incompatible">La nueva versión requiere una versión de Android más reciente.</string>
     <string name="update_install_cancelled">Instalación cancelada. Puedes intentarlo de nuevo.</string>
     <string name="update_installer_unavailable">No se puede abrir el instalador de Android.</string>
-    <string name="update_repository_description">Abre el proyecto o busca una nueva versión de la app.</string>
 </resources>

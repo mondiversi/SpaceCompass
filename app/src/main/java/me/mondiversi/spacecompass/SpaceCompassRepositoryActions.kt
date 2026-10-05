@@ -21,9 +21,7 @@ internal fun SpaceCompassRepositoryActions() {
     val uri = LocalUriHandler.current
     val state by SpaceCompassUpdates.state.collectAsState()
     val text = MaterialTheme.colorScheme.onSurface
-    Text(stringResource(R.string.update_repository_description), fontSize = 12.sp, color = text.copy(alpha = .65f))
     Text("github.com/mondiversi/SpaceCompass", fontSize = 12.sp, color = text.copy(alpha = .65f))
-    Text(BuildConfig.APPLICATION_ID, fontSize = 12.sp, color = text.copy(alpha = .65f))
     CompositionLocalProvider(LocalSpaceCompassSettingsActionButtons provides true) {
         Column(Modifier.fillMaxWidth(), verticalArrangement = Arrangement.spacedBy(8.dp)) {
             OutlinedButton(onClick = { uri.openUri(SpaceCompassUpdatePolicy.REPOSITORY_URL) },
@@ -42,7 +40,6 @@ internal fun SpaceCompassRepositoryActions() {
                 Spacer(Modifier.width(8.dp))
                 Text(stringResource(if (state.checking) R.string.update_checking else R.string.check_for_updates))
             }
-            state.notice?.let { Text(stringResource(it), fontSize = 12.sp, color = text.copy(alpha = .72f)) }
         }
     }
 }

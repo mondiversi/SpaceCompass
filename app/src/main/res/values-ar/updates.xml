@@ -16,5 +16,4 @@
     <string name="update_incompatible">يتطلب الإصدار الجديد إصدارًا أحدث من Android.</string>
     <string name="update_install_cancelled">أُلغي التثبيت. يمكنك المحاولة مجددًا.</string>
     <string name="update_installer_unavailable">تعذّر فتح برنامج تثبيت Android.</string>
-    <string name="update_repository_description">افتح المشروع أو ابحث عن إصدار جديد من التطبيق.</string>
 </resources>

@@ -16,5 +16,4 @@
     <string name="update_incompatible">Для новой версии требуется более новая версия Android.</string>
     <string name="update_install_cancelled">Установка отменена. Можно попробовать снова.</string>
     <string name="update_installer_unavailable">Не удалось открыть установщик Android.</string>
-    <string name="update_repository_description">Открой проект или проверь наличие новой версии приложения.</string>
 </resources>

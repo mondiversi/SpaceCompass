@@ -16,5 +16,4 @@
     <string name="update_incompatible">Toleo jipya linahitaji toleo jipya zaidi la Android.</string>
     <string name="update_install_cancelled">Usakinishaji umeghairiwa. Unaweza kujaribu tena.</string>
     <string name="update_installer_unavailable">Haiwezi kufungua kisakinishi cha Android.</string>
-    <string name="update_repository_description">Fungua mradi au utafute toleo jipya la programu.</string>
 </resources>

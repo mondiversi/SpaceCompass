@@ -16,5 +16,4 @@
     <string name="update_incompatible">新版本需要更新的 Android 版本。</string>
     <string name="update_install_cancelled">安装已取消。你可以重试。</string>
     <string name="update_installer_unavailable">无法打开 Android 安装程序。</string>
-    <string name="update_repository_description">打开项目或检查应用是否有新版本。</string>
 </resources>
