@@ -1,6 +1,6 @@
 <resources>
     <string name="info_news_title">Últimas novedades · %1$s</string>
-    <string name="info_news_units">Unidades simplificadas de distancia y velocidad, con kilogramos/libras independientes y valores coherentes de masa y densidad.</string>
+    <string name="info_news_units">Las masas siguen los kilogramos/libras elegidos; a partir de 10 masas solares se usa M☉.</string>
     <string name="info_news_pressure">Presión atmosférica cuando hay datos disponibles, con elección independiente entre bar, pascal y psi.</string>
     <string name="info_news_updates">Actualizaciones firmadas de GitHub, comprobadas al inicio o desde la sección del repositorio.</string>
 </resources>

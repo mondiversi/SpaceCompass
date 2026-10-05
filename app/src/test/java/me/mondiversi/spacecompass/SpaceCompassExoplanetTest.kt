@@ -35,7 +35,7 @@ class SpaceCompassExoplanetTest {
         assertEquals("TRAPPIST-1", facts.parentName)
         assertTrue(facts.diameterKm!! in 11700.0..11800.0)
         assertTrue(facts.gravity!! in 7.9..8.1)
-        assertFalse(spaceCompassUsesSolarMass(body, facts))
+        assertFalse(spaceCompassUsesSolarMass(facts))
         assertTrue(formatSpaceCompassCelestialMass(body, facts, SpaceCompassNumericFormat.EUROPEAN).contains("kg"))
         assertNull(facts.rotationHours)
         assertTrue(SpaceCompassCelestialBody.PROXIMA_CENTAURI.deepSkyReference!!.distanceLy < body.deepSkyReference!!.distanceLy)

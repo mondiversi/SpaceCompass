@@ -41,10 +41,10 @@ class SpaceCompassMassUnitsTest {
         assertEquals("it", after["language"])
     }
 
-    @Test fun allNonstellarMassReadoutsConvertAndKeepApproximationAndNumericConventions() {
+    @Test fun massReadoutsWithoutUncertaintyConvertAndKeepApproximationAndNumericConventions() {
         for (format in SpaceCompassNumericFormat.entries) for (body in SpaceCompassCelestialBody.entries) {
             val facts = spaceCompassCelestialFacts(body)
-            if (spaceCompassUsesSolarMass(body, facts) || facts.massKg == null) continue
+            if (spaceCompassUsesSolarMass(facts) || facts.massKg == null || facts.massSolarError != null) continue
             val prefix = if (facts.massEstimated) "≈ " else ""
             assertEquals(prefix + formatSpaceCompassScientificNumber(facts.massKg / 0.45359237, format) + " lb",
                 formatSpaceCompassCelestialMass(body, facts, format, pounds = true))
@@ -55,10 +55,10 @@ class SpaceCompassMassUnitsTest {
             SpaceCompassCelestialFacts(massKg = 0.45359237), numeric, pounds = true))
     }
 
-    @Test fun stellarMassUnitsAndUncertaintiesAreUnchangedByPoundSelection() {
+    @Test fun largeSolarMassUnitsAndUncertaintiesAreUnchangedByPoundSelection() {
         for (body in SpaceCompassCelestialBody.entries) for (format in SpaceCompassNumericFormat.entries) {
             val facts = spaceCompassCelestialFacts(body)
-            if (!spaceCompassUsesSolarMass(body, facts)) continue
+            if (!spaceCompassUsesSolarMass(facts)) continue
             assertEquals(formatSpaceCompassCelestialMass(body, facts, format),
                 formatSpaceCompassCelestialMass(body, facts, format, pounds = true))
         }

@@ -461,3 +461,11 @@ Provider documentation: https://docs.satcat.com/ (public metadata/TLE publicatio
 
 The viewer conditionally displays supported atmospheric/exospheric reference pressures
 with the independent bar/Pa/psi preference. See [values, sources and exclusions](ATMOSPHERIC_PRESSURE.md).
+
+## Dynamic mass presentation — version 0.1.8
+
+Every mass/component row uses the shared dynamic kg/lb/M☉ formatter: kg/lb below
+10 solar masses, M☉ at or above the threshold. Converted uncertainties share a
+scientific exponent for compact display, with estimate/model notes retained in
+all twenty languages. Reference data, physical calculations and binary A+B
+identification are unchanged; unknown current stellar mass remains unavailable.

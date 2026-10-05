@@ -4,10 +4,10 @@
 
 | Check | Result |
 | --- | --- |
-| Debug APK build | Passed, version 0.1.7 |
-| Release APK build | Passed, version 0.1.7 |
+| Debug APK build | Passed, version 0.1.8 |
+| Release APK build | Passed, version 0.1.8 |
 | Release lint | Completed, 0 errors; remaining findings retained in reports |
-| JVM unit tests | 418 passed, 0 failures |
+| JVM unit tests | 425 passed, 0 failures |
 | Android instrumentation sources | Compiled; not executed |
 | Phone UI checks | Samsung SM-G970U1, Android 12 / API 31 |
 | Tablet UI checks | Pixel Tablet emulator, Android 15 / API 35 |
@@ -32,6 +32,24 @@ The repository contains no signing key or local SDK configuration. GitHub APK di
 No Play Store submission is part of this release.
 The current CI result is available on the repository's Actions page; the local
 results above do not stand in for a successful hosted run.
+
+## Dynamic mass display — version 0.1.8
+
+Seven new JVM tests cover both sides of the exact 10-solar-mass threshold in kg
+and M☉ references, independence from category and pound choice, Sun conversion,
+lower stellar/compact masses, converted uncertainties/qualifiers, binary totals
+and separate components, unchanged high-mass references and invalid/missing data.
+All 425 JVM tests passed, together with debug/release builds, instrumentation-source
+compilation and release lint (zero errors). The instrumentation suite was not run.
+Complete translatable-string parity passed for all twenty interface languages;
+recent news and the plain estimate/model note are localized.
+
+The signed candidate was checked on the Android 15 tablet: Sun kg/lb in portrait
+and landscape, pound preference surviving process restart, Alpha Centauri A+B
+and both resolved components in pounds with uncertainties, and Rigel retaining
+solar masses with the pound choice. Original automatic mass units, free rotation
+and Sun/Moon selection were restored. Final distribution installation is recorded
+in the release notes. No new phone UI pass is implied by these tablet checks.
 
 ## Atmospheric pressure — version 0.1.7
 

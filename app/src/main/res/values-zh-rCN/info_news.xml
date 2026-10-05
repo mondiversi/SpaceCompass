@@ -1,6 +1,6 @@
 <resources>
     <string name="info_news_title">最新变化 · %1$s</string>
-    <string name="info_news_units">简化距离和速度单位，独立选择千克或磅，并统一质量和密度数值。</string>
+    <string name="info_news_units">质量按所选千克/磅显示；达到10个太阳质量时使用M☉。</string>
     <string name="info_news_pressure">在数据可用时显示大气压力，并独立选择巴、帕斯卡或 psi。</string>
     <string name="info_news_updates">从 GitHub 获取签名更新，在启动时或仓库页面检查。</string>
 </resources>

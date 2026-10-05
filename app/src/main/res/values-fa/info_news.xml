@@ -1,6 +1,6 @@
 <resources>
     <string name="info_news_title">تازه‌ترین تغییرات · %1$s</string>
-    <string name="info_news_units">واحدهای ساده‌تر برای فاصله و سرعت، انتخاب مستقل کیلوگرم یا پوند و مقادیر هماهنگ جرم و چگالی.</string>
+    <string name="info_news_units">جرم‌ها با کیلوگرم/پوند انتخاب‌شده نمایش داده می‌شوند؛ از ۱۰ جرم خورشیدی به بالا از M☉ استفاده می‌شود.</string>
     <string name="info_news_pressure">فشار جو در صورت وجود داده، با انتخاب مستقل بار، پاسکال یا psi.</string>
     <string name="info_news_updates">به‌روزرسانی‌های امضاشده از GitHub، با بررسی هنگام راه‌اندازی یا از بخش مخزن.</string>
 </resources>

@@ -30,7 +30,7 @@ PSR J0437-4715 is the nearest known millisecond radio pulsar, not asserted to be
 
 ## Solar-mass references
 
-Stellar/compact-object mass readouts use M☉; planet and spacecraft masses use the selected kg/lb unit. Existing kg physics values are unchanged (conversion reference 1.9884e30 kg). Missing estimates remain unknown rather than applying a generic star mass. The UI defines ≈ as a published approximate estimate and † as an assumed model input, not an object measurement.
+Mass presentation switches to M☉ at 10 solar masses (inclusive); lower masses use the selected kg/lb unit, including the Sun, low-mass stars, pulsars and neutron stars. This is an app display policy, not a new physical classification. Existing kg physics values are unchanged (conversion reference 1.9884e30 kg). Missing estimates remain unknown rather than applying a generic star mass. The UI defines ≈ as a published approximate estimate and † as an assumed model input, not an object measurement.
 
 - Sagittarius A*: ≈4.297e6 M☉, GRAVITY orbit-based best fit, statistical and systematic errors not collapsed into a misleading single uncertainty: https://www.aanda.org/articles/aa/full_html/2022/01/aa42465-21/aa42465-21.html .
 - M31*: ≈1.4e8 M☉ for the central black hole, not the whole galaxy/nuclear cluster: https://science.nasa.gov/asset/hubble/our-neighboring-galaxys-unusual-core/ .
@@ -40,7 +40,7 @@ Stellar/compact-object mass readouts use M☉; planet and spacecraft masses use 
 
 These mass references do not populate Newtonian surface gravity or density rows for black holes and neutron stars, whose physical interpretation would require additional relativistic models and measured radii.
 
-Alpha Centauri mass is the A+B total, 1.988 solar masses (1.0788 + 0.9092), excluding Proxima. Component masses: https://doi.org/10.3847/1538-3881/abfaff . No individual total uncertainty is invented from potentially correlated component errors. Stephenson 2-18 retains an unknown present-day mass with M☉ shown; published initial-mass population estimates and mass-loss rates must not be represented as a measured current mass.
+Alpha Centauri mass is the A+B total, 1.988 solar masses (1.0788 + 0.9092), excluding Proxima. Component masses: https://doi.org/10.3847/1538-3881/abfaff . No individual total uncertainty is invented from potentially correlated component errors. Stephenson 2-18 retains an unknown present-day mass with no inferred display threshold; published initial-mass population estimates and mass-loss rates must not be represented as a measured current mass.
 Nearby distances (Moon, ISS, Starlink) use normal km/mi units, independently of astronomical-distance preferences. The catalog uses Earth-centred range labelled Earth for those objects; other entries keep their existing heliocentric catalog reference. Observer-distance fields retain their actual topocentric range.
 
 
@@ -85,3 +85,18 @@ assert an observed surface, ocean or atmosphere.
 
 Proxima Centauri already represents the nearest red dwarf; its note now makes
 that classification explicit in every supported language.
+
+## Dynamic mass display — version 0.1.8
+
+The threshold is evaluated from the canonical reference before rounding and before
+kg/lb conversion. Explicit solar references take precedence over kg references;
+invalid or unavailable mass never invents a value or a unit threshold. Below 10 M☉,
+both mass and published uncertainty convert using the existing 1.9884e30 kg solar
+reference and exact pound conversion. A shared scientific exponent keeps the
+value/uncertainty compact. Approximation (≈), model assumption (†), Alpha Centauri
+A+B identification and all source values are retained. The resolved A/B component
+rows use the same preference and each component's own threshold. Large objects
+such as Rigel and the three central black holes retain M☉ regardless of kg/lb.
+The threshold does not alter density, luminosity, gravity, horizons, temperatures,
+positions, paths or distance formatting. Mass presentation resides in
+SpaceCompassMassUnits.kt; scientific reference facts remain separately stored.

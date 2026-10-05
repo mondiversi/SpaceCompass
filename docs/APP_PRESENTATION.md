@@ -1,5 +1,18 @@
 # App presentation and preferences
 
+## Dynamic mass display — version 0.1.8
+
+The kg/lb preference now applies to every known mass below 10 solar masses,
+including the Sun, nearby stars and compact stars. At the inclusive 10 M☉
+threshold, presentation switches to solar masses independently of kg/lb and object
+category. Published uncertainties, approximation/model qualifiers and binary
+component identification survive conversion. Components use the same preference
+and their own mass, rather than inheriting a binary total's display unit.
+Unknown masses remain unknown. Twenty-language recent news and the plain mass
+qualification note describe the updated behavior; no preference migration/reset
+or new user setting is needed. Scientific calculations and density units are
+unchanged. See [DEEP_SKY.md](DEEP_SKY.md) for reference/display distinctions.
+
 ## Mass/density and pressure — version 0.1.7
 
 The Mass island is renamed Mass and density without changing its saved kg/lb
@@ -152,7 +165,7 @@ ranges, including the object's selector, use Mkm/Mmi with the AU reference retai
 The selector still measures distance from the Sun; the main panel and observer row
 measure distance from the observer. These are intentionally distinct quantities.
 Mass readouts follow the independent kg/lb preference; density combines that
-choice with the selected m³/ft³ volume. Stellar/compact-object masses retain M☉.
+choice with the selected m³/ft³ volume. Masses from 10 solar masses use M☉; lower masses, including the Sun and compact stars, follow kg/lb.
 Surface acceleration remains explicitly labelled in SI (m/s²).
 
 All reference temperatures follow Celsius/Fahrenheit, including the stellar

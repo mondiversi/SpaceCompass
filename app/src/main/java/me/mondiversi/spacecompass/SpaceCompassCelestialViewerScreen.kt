@@ -178,7 +178,7 @@ internal fun SpaceCompassCelestialViewerScreen(body: SpaceCompassCelestialBody, 
                     spaceCompassStellarComponentTemperature(component)), numeric, units.fahrenheit))
             add(stringResource(R.string.celestial_view_mass) + " (${component.name})" to
                 formatSpaceCompassCelestialMass(SpaceCompassCelestialBody.SUN, SpaceCompassCelestialFacts(
-                    massSolar = component.massSolar, massSolarError = component.massError), numeric))
+                    massSolar = component.massSolar, massSolarError = component.massError), numeric, units.pounds))
             add(stringResource(R.string.celestial_view_diameter) + " (${component.name})" to
                 formatSpaceCompassPhysicalLength(2 * component.radiusSolar * 695700000, 0, numeric, units.feet, large = true) +
                 " (±" + formatSpaceCompassPhysicalLength(2 * component.radiusError * 695700000, 0, numeric, units.feet, large = true) + ")")
@@ -262,8 +262,10 @@ internal fun SpaceCompassCelestialViewerScreen(body: SpaceCompassCelestialBody, 
             }
             if (temperatures.isNotEmpty()) Text(stringResource(R.string.celestial_temperature_note),
                 color = secondaryText, fontSize = 11.sp, lineHeight = 14.sp)
-            if (spaceCompassUsesSolarMass(body, facts) && (facts.massSolar != null || facts.massKg != null))
+            if (spaceCompassUsesSolarMass(facts))
                 Text(stringResource(R.string.celestial_solar_mass_note), color = secondaryText, fontSize = 11.sp, lineHeight = 14.sp)
+            else if (spaceCompassCelestialMassKilograms(facts) != null && (facts.massModelAssumption || facts.massEstimated))
+                Text(stringResource(R.string.celestial_mass_reference_note), color = secondaryText, fontSize = 11.sp, lineHeight = 14.sp)
             if (body.deepSkyReference != null) Text(stringResource(body.deepSkyNoteResource),
                 color = secondaryText, fontSize = 11.sp, lineHeight = 14.sp)
             if (body == SpaceCompassCelestialBody.POLARIS) Text(stringResource(R.string.celestial_polaris_derived),

@@ -1,6 +1,6 @@
 <resources>
     <string name="info_news_title">Последние новости · %1$s</string>
-    <string name="info_news_units">Упрощённые единицы расстояния и скорости, отдельный выбор килограммов/фунтов и согласованные значения массы и плотности.</string>
+    <string name="info_news_units">Массы отображаются в выбранных килограммах/фунтах; начиная с 10 масс Солнца используется M☉.</string>
     <string name="info_news_pressure">Атмосферное давление при наличии данных, с отдельным выбором баров, паскалей или psi.</string>
     <string name="info_news_updates">Подписанные обновления с GitHub: проверка при запуске или в разделе репозитория.</string>
 </resources>

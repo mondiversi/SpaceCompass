@@ -140,26 +140,6 @@ internal fun formatSpaceCompassScientificNumber(value: Double, numeric: SpaceCom
 }
 
 internal const val SPACE_COMPASS_SOLAR_MASS_KG = 1.9884e30
-internal fun spaceCompassUsesSolarMass(body: SpaceCompassCelestialBody, facts: SpaceCompassCelestialFacts): Boolean =
-    facts.massSolar != null || body == SpaceCompassCelestialBody.SUN || (body.isExtrasolar && body != SpaceCompassCelestialBody.TRAPPIST_1_E)
-
-internal fun formatSpaceCompassCelestialMass(body: SpaceCompassCelestialBody,
-    facts: SpaceCompassCelestialFacts, numeric: SpaceCompassNumericFormat, pounds: Boolean = false): String {
-    if (!spaceCompassUsesSolarMass(body, facts))
-        return facts.massKg?.takeIf { it.isFinite() && it > 0 }
-            ?.let { (if (facts.massEstimated) "≈ " else "") + formatSpaceCompassScientificNumber(spaceCompassMassForDisplay(it, pounds), numeric) +
-                if (pounds) " lb" else " kg" } ?: "—"
-    val mass = facts.massSolar ?: facts.massKg?.div(SPACE_COMPASS_SOLAR_MASS_KG) ?: return "— M☉"
-    if (!mass.isFinite() || mass <= 0) return "—"
-    val uncertainty = facts.massSolarError
-    if (uncertainty != null && (!uncertainty.isFinite() || uncertainty <= 0)) return "—"
-    val value = if (mass >= 1e6) formatSpaceCompassScientificNumber(mass, numeric)
-        else formatSpaceCompassNumber(mass, 3, numeric, minimumDigits = 0)
-    val error = uncertainty?.let { " ± " + formatSpaceCompassNumber(it, 3, numeric, minimumDigits = 0) } ?: ""
-    val prefix = if (facts.massModelAssumption) "† " else if (facts.massEstimated) "≈ " else ""
-    return prefix + value + error + " M☉" + if (body == SpaceCompassCelestialBody.ALPHA_CENTAURI) " (A+B)" else ""
-}
-
 /** Pulse periods use seconds/ms so fast rotators never round to zero hours. */
 internal fun formatSpaceCompassRotationPeriod(facts: SpaceCompassCelestialFacts, numeric: SpaceCompassNumericFormat): String {
     facts.rotationSeconds?.let {
