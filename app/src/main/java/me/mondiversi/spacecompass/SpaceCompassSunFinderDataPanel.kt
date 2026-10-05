@@ -123,7 +123,7 @@ private fun SpaceCompassSunFinderDataTable(
                 // Right edges align, but a short speed must not reserve the distance's whole width.
                 val valueWidth = with(density) { measurer.measure(row.value, style).size.width.toDp() + 2.dp }
                     .coerceAtMost(maximumValueWidth)
-                val valueStyle = if (density.fontScale > 1.4f) style else style.copy(fontSize =
+                val valueStyle = if (density.fontScale > 1.4f || row.tag == "sun-info-estimated-place") style else style.copy(fontSize =
                     fitSpaceCompassButtonFontSize(style.fontSize.value, 10f) { candidate ->
                         !measurer.measure(row.value, style.copy(fontSize = candidate.sp),
                             maxLines = row.value.count { it == '\n' } + 1,

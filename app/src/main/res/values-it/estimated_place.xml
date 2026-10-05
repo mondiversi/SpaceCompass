@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="environment_estimated_place">Posizione stimata: %1$s</string>
+    <string name="environment_place_loading">Ricerca località…</string>
+    <string name="environment_place_unavailable">Non disponibile</string>
+    <string name="info_news_place">Nei dettagli ambiente trovi città, regione e Paese stimati, quando disponibili.</string>
+</resources>

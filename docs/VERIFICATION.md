@@ -4,10 +4,10 @@
 
 | Check | Result |
 | --- | --- |
-| Debug APK build | Passed, version 0.1.10 |
-| Release APK build | Passed, version 0.1.10 |
+| Debug APK build | Passed, version 0.1.11 |
+| Release APK build | Passed, version 0.1.11 |
 | Release lint | Completed, 0 errors; remaining findings retained in reports |
-| JVM unit tests | 439 passed, 0 failures |
+| JVM unit tests | 451 passed, 0 failures |
 | Android instrumentation sources | Compiled; not executed |
 | Phone UI checks | Samsung SM-G970U1, Android 12 / API 31 |
 | Tablet UI checks | Pixel Tablet emulator, Android 15 / API 35 |
@@ -32,6 +32,24 @@ The repository contains no signing key or local SDK configuration. GitHub APK di
 No Play Store submission is part of this release.
 The current CI result is available on the repository's Actions page; the local
 results above do not stand in for a successful hosted run.
+
+## Estimated place — version 0.1.11
+
+Debug/release builds, all 451 JVM tests, Android test-source compilation and
+release lint (zero errors) passed. The instrumentation suite was not executed.
+Twelve new tests cover readable/partial names, county/district fallback,
+duplicate/Unicode whitespace handling, invalid/boundary coordinates, stable
+GPS cells, locale/location isolation, successful/failed expiry and bounded LRU
+reuse. Full twenty-language string-key/placeholder integrity checks passed.
+
+Live Android 15 tablet checks used synthetic Rome and Milan GPS positions. The
+device geocoder resolved city, region and country correctly; moving the position
+replaced the old place and returning to Rome reused its cache. Reopening the
+environment page retained the available label. Visual inspection confirmed the
+island below GPS altitude and above weather, right-aligned names, unchanged
+coordinate/altitude formats and portrait/landscape readability. Synthetic Rome
+GPS and free rotation were restored. Final phone/tablet installation and any
+additional device checks are recorded separately in the release notes.
 
 ## Info heading icons — version 0.1.10
 

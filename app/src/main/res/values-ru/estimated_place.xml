@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="environment_estimated_place">Примерное местоположение: %1$s</string>
+    <string name="environment_place_loading">Поиск населённого пункта…</string>
+    <string name="environment_place_unavailable">Недоступно</string>
+    <string name="info_news_place">В сведениях об окружении показаны примерные город, регион и страна, если они доступны.</string>
+</resources>

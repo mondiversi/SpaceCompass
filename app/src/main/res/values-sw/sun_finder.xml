@@ -33,5 +33,5 @@
     <string name="sun_weather_unavailable">Hali ya hewa haipatikani</string>
     <string name="sun_weather_loading">Inasasisha hali ya hewa…</string>
     <string name="sun_weather_estimate">Makadirio ya hali ya hewa: %1$s</string>
-    <string name="sun_weather_privacy">Hali ya hewa mtandaoni hutumia eneo la kukadiria.</string>
+    <string name="sun_weather_privacy">Hali ya hewa mtandaoni na majina ya maeneo yaliyokadiriwa hutumia mahali pa takriban.</string>
 </resources>

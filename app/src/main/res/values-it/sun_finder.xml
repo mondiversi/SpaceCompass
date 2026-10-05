@@ -33,5 +33,5 @@
     <string name="sun_weather_unavailable">Meteo non disponibile</string>
     <string name="sun_weather_loading">Aggiornamento meteo…</string>
     <string name="sun_weather_estimate">Meteo stimato: %1$s</string>
-    <string name="sun_weather_privacy">Il meteo online usa la posizione approssimata.</string>
+    <string name="sun_weather_privacy">Il meteo online e la località stimata usano la posizione approssimata.</string>
 </resources>

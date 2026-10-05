@@ -33,5 +33,5 @@
     <string name="sun_weather_unavailable">날씨 정보를 사용할 수 없음</string>
     <string name="sun_weather_loading">날씨 업데이트 중…</string>
     <string name="sun_weather_estimate">추정 날씨: %1$s</string>
-    <string name="sun_weather_privacy">온라인 날씨는 대략적인 위치를 사용합니다.</string>
+    <string name="sun_weather_privacy">온라인 날씨와 장소 이름 추정에는 대략적인 위치를 사용합니다.</string>
 </resources>

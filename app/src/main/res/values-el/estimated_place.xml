@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="environment_estimated_place">Εκτιμώμενη τοποθεσία: %1$s</string>
+    <string name="environment_place_loading">Αναζήτηση περιοχής…</string>
+    <string name="environment_place_unavailable">Μη διαθέσιμο</string>
+    <string name="info_news_place">Οι λεπτομέρειες περιβάλλοντος δείχνουν την εκτιμώμενη πόλη, περιοχή και χώρα, όταν είναι διαθέσιμες.</string>
+</resources>

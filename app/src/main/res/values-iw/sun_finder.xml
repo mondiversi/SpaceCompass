@@ -33,5 +33,5 @@
     <string name="sun_weather_unavailable">מזג האוויר לא זמין</string>
     <string name="sun_weather_loading">עדכון מזג האוויר…</string>
     <string name="sun_weather_estimate">מזג אוויר משוער: %1$s</string>
-    <string name="sun_weather_privacy">מזג האוויר המקוון משתמש במיקום משוער.</string>
+    <string name="sun_weather_privacy">מזג האוויר המקוון ושמות המקומות המשוערים משתמשים במיקום מקורב.</string>
 </resources>

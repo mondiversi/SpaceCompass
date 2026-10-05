@@ -33,5 +33,5 @@
     <string name="sun_weather_unavailable">मौसम उपलब्ध नहीं</string>
     <string name="sun_weather_loading">मौसम अपडेट हो रहा है…</string>
     <string name="sun_weather_estimate">अनुमानित मौसम: %1$s</string>
-    <string name="sun_weather_privacy">ऑनलाइन मौसम अनुमानित स्थान का उपयोग करता है।</string>
+    <string name="sun_weather_privacy">ऑनलाइन मौसम और अनुमानित स्थान के नाम के लिए अनुमानित स्थिति का उपयोग होता है।</string>
 </resources>

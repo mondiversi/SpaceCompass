@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="environment_estimated_place">Geschatte locatie: %1$s</string>
+    <string name="environment_place_loading">Plaats zoeken…</string>
+    <string name="environment_place_unavailable">Niet beschikbaar</string>
+    <string name="info_news_place">Omgevingsdetails tonen de geschatte plaats, regio en het land wanneer beschikbaar.</string>
+</resources>

@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="environment_estimated_place">موقعیت تخمینی: %1$s</string>
+    <string name="environment_place_loading">در حال یافتن مکان…</string>
+    <string name="environment_place_unavailable">در دسترس نیست</string>
+    <string name="info_news_place">جزئیات محیط، شهر، منطقه و کشور تخمینی را در صورت دسترسی نمایش می‌دهد.</string>
+</resources>

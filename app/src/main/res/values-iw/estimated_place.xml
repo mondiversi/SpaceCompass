@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="environment_estimated_place">מיקום משוער: %1$s</string>
+    <string name="environment_place_loading">חיפוש יישוב…</string>
+    <string name="environment_place_unavailable">לא זמין</string>
+    <string name="info_news_place">פרטי הסביבה מציגים את העיר, האזור והמדינה המשוערים, כאשר הם זמינים.</string>
+</resources>

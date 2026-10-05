@@ -1,5 +1,18 @@
 # App presentation and preferences
 
+## Estimated place — version 0.1.11
+
+Environment details adds an Estimated location island directly below GPS altitude
+and before weather. Available city, region and country names occupy separate
+right-aligned lines at the normal data font size. Duplicate administrative names
+are removed; absent names are not fabricated. Loading and unavailable states,
+the recent-news summary and online-data note are translated in all twenty locales.
+The underlying GPS coordinate/accuracy/altitude formatting is unchanged.
+
+The foreground-only device-geocoder lookup reuses a small memory cache across
+navigation, changes its key with approximate coordinates/interface language, and
+never shares another location's label. See [ESTIMATED_LOCATION.md](ESTIMATED_LOCATION.md).
+
 ## Info heading icons — version 0.1.10
 
 The repository heading reuses the existing GitHub glyph, and Credits and licences

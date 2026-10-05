@@ -11,7 +11,7 @@ application extracted from [UVIR](https://github.com/mondiversi/Uvir).
 
 Space Compass is distributed on GitHub. Open the
 [Releases page](https://github.com/mondiversi/SpaceCompass/releases) and download
-`space-compass-0.1.10.apk` from the **Assets** section of the v0.1.10 preview release.
+`space-compass-0.1.11.apk` from the **Assets** section of the v0.1.11 preview release.
 Android 8.0 or newer is required. Open the downloaded APK and follow Android's
 installation prompts. If requested, allow installation for the browser or file
 manager you used to open the file.
@@ -76,8 +76,12 @@ shown explicitly instead of invented.
 
 Sun, Moon and major-planet calculations run locally. Satellite elements and
 Sedna/Voyager ephemerides use bounded HTTPS requests and app-private caches.
-Weather uses a rounded location cell with Open-Meteo. Network failure does not
-disable valid offline calculations. Review provider terms before commercial
+Weather uses a rounded location cell with Open-Meteo. Opening environment details
+can resolve rounded observer coordinates into city/region/country names using the
+device's Android geocoder, which may use its provider's network service. Lookups
+are foreground-only and their bounded cache stays in memory; street addresses,
+place names and observer coordinates are not added to error logs or app files.
+Network failure does not disable valid offline calculations. Review provider terms before commercial
 distribution, especially the free Open-Meteo endpoint.
 
 ## Project documentation

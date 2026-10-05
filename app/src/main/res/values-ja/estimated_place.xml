@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="environment_estimated_place">推定位置：%1$s</string>
+    <string name="environment_place_loading">地名を検索中…</string>
+    <string name="environment_place_unavailable">利用できません</string>
+    <string name="info_news_place">環境の詳細に、取得できた都市、地域、国の推定情報を表示します。</string>
+</resources>

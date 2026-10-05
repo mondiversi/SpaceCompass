@@ -33,5 +33,5 @@
     <string name="sun_weather_unavailable">Погода недоступна</string>
     <string name="sun_weather_loading">Обновление погоды…</string>
     <string name="sun_weather_estimate">Оценка погоды: %1$s</string>
-    <string name="sun_weather_privacy">Погода онлайн использует приблизительное местоположение.</string>
+    <string name="sun_weather_privacy">Онлайн-погода и определение населённого пункта используют приблизительное местоположение.</string>
 </resources>

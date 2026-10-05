@@ -33,5 +33,5 @@
     <string name="sun_weather_unavailable">Weer niet beschikbaar</string>
     <string name="sun_weather_loading">Weer bijwerken…</string>
     <string name="sun_weather_estimate">Geschat weer: %1$s</string>
-    <string name="sun_weather_privacy">Online weer gebruikt een geschatte locatie.</string>
+    <string name="sun_weather_privacy">Onlineweer en geschatte plaatsnamen gebruiken een globale locatie.</string>
 </resources>

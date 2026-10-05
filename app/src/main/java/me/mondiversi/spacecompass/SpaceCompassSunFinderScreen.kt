@@ -110,7 +110,8 @@ internal fun SpaceCompassSunFinderScreen(
         time, primaryText, secondaryText, backgroundColor,
         weather = weather,
         remote = remote, body = selectedBody, onBodyChange = { applySelection(SpaceCompassCelestialSelection(selectedBodies, it)) },
-        selectedBodies = selectedBodies, onSelectionChange = ::applySelection, onDismissRequest = onDismissRequest) {
+        selectedBodies = selectedBodies, onSelectionChange = ::applySelection, onDismissRequest = onDismissRequest,
+        resumed = resumed && !catalogOpen.value) {
         val intent = when (visibleReadings.locationStatus) {
             SpaceCompassSunLocationStatus.PERMISSION -> Intent(Settings.ACTION_APPLICATION_DETAILS_SETTINGS,
                 Uri.parse("package:${context.packageName}"))
@@ -142,7 +143,7 @@ internal fun SpaceCompassSunFinderContent(
     onBodyChange: (SpaceCompassCelestialBody) -> Unit = {},
     selectedBodies: Set<SpaceCompassCelestialBody> = setOf(body),
     onSelectionChange: ((SpaceCompassCelestialSelection) -> Unit)? = null,
-    onDismissRequest: (() -> Unit)? = null, onLocationAction: () -> Unit = {}
+    onDismissRequest: (() -> Unit)? = null, resumed: Boolean = true, onLocationAction: () -> Unit = {}
 ) {
     val dailyPathUiState = rememberSpaceCompassSunDailyPathUiState()
     var showEnvironment by rememberSaveable { mutableStateOf(false) }
@@ -150,6 +151,8 @@ internal fun SpaceCompassSunFinderContent(
     val hasActiveBody = body in selectedBodies
     val bodyName = if (hasActiveBody) stringResource(body.nameResource) else "—"
     val fix = readings.location
+    val estimatedPlace = rememberSpaceCompassEstimatedPlace(fix?.latitude, fix?.longitude,
+        enabled = showEnvironment && resumed)
     val altitude = fix?.takeIf { it.hasAltitude() && it.altitude.isFinite() && it.altitude in -500.0..20_000.0 }?.altitude
     val sun = remember(timeMs, fix?.latitude, fix?.longitude, altitude) {
         fix?.let { calculateSpaceCompassSunPosition(timeMs, it.latitude, it.longitude, altitude ?: 0.0) }
@@ -254,7 +257,10 @@ internal fun SpaceCompassSunFinderContent(
         spaceCompassSunOptionalDataRow(stringResource(R.string.celestial_gps_coordinate_accuracy, SPACE_COMPASS_SUN_DATA_MARKER),
             fix?.takeIf { it.hasAccuracy() && it.accuracy.isFinite() && it.accuracy >= 0f }
                 ?.let { formatSpaceCompassPhysicalLength(it.accuracy.toDouble(), 0, numeric, units.feet) }, "sun-info-accuracy"),
-        spaceCompassSunDataRow(stringResource(R.string.sun_finder_altitude, SPACE_COMPASS_SUN_DATA_MARKER), height, "sun-info-altitude")
+        spaceCompassSunDataRow(stringResource(R.string.sun_finder_altitude, SPACE_COMPASS_SUN_DATA_MARKER), height, "sun-info-altitude"),
+        spaceCompassSunDataRow(stringResource(R.string.environment_estimated_place, SPACE_COMPASS_SUN_DATA_MARKER),
+            estimatedPlace.text ?: stringResource(if (estimatedPlace.loading)
+                R.string.environment_place_loading else R.string.environment_place_unavailable), "sun-info-estimated-place")
     )
     val weatherValue = if (currentWeather == null) stringResource(
         if (weather.loading && sun != null) R.string.sun_weather_loading else R.string.sun_weather_unavailable

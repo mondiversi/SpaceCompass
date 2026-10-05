@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="environment_estimated_place">Tahmini konum: %1$s</string>
+    <string name="environment_place_loading">Yer aranıyor…</string>
+    <string name="environment_place_unavailable">Kullanılamıyor</string>
+    <string name="info_news_place">Çevre ayrıntıları, mevcut olduğunda tahmini şehir, bölge ve ülkeyi gösterir.</string>
+</resources>

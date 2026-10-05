@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="environment_estimated_place">추정 위치: %1$s</string>
+    <string name="environment_place_loading">장소 검색 중…</string>
+    <string name="environment_place_unavailable">사용할 수 없음</string>
+    <string name="info_news_place">환경 상세 정보에 가능한 경우 추정 도시, 지역 및 국가가 표시됩니다.</string>
+</resources>

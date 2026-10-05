@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="environment_estimated_place">Perkiraan lokasi: %1$s</string>
+    <string name="environment_place_loading">Mencari tempat…</string>
+    <string name="environment_place_unavailable">Tidak tersedia</string>
+    <string name="info_news_place">Detail lingkungan menampilkan perkiraan kota, wilayah, dan negara jika tersedia.</string>
+</resources>

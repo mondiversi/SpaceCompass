@@ -33,5 +33,5 @@
     <string name="sun_weather_unavailable">Μη διαθέσιμος καιρός</string>
     <string name="sun_weather_loading">Ενημέρωση καιρού…</string>
     <string name="sun_weather_estimate">Εκτιμώμενος καιρός: %1$s</string>
-    <string name="sun_weather_privacy">Ο διαδικτυακός καιρός χρησιμοποιεί κατά προσέγγιση τοποθεσία.</string>
+    <string name="sun_weather_privacy">Ο διαδικτυακός καιρός και τα εκτιμώμενα ονόματα τόπων χρησιμοποιούν κατά προσέγγιση θέση.</string>
 </resources>

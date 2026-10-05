@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="environment_estimated_place">Mahali panapokadiriwa: %1$s</string>
+    <string name="environment_place_loading">Inatafuta eneo…</string>
+    <string name="environment_place_unavailable">Haipatikani</string>
+    <string name="info_news_place">Maelezo ya mazingira yanaonyesha jiji, eneo na nchi zinazokadiriwa inapowezekana.</string>
+</resources>
