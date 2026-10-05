@@ -7,6 +7,23 @@ celestial objects. Point your phone or tablet, explore daily sky trajectories,
 inspect reference facts and view textured models. Space Compass is an independent
 application extracted from [UVIR](https://github.com/mondiversi/Uvir).
 
+## Download and install
+
+Space Compass is distributed on GitHub. Open the
+[Releases page](https://github.com/mondiversi/SpaceCompass/releases) and download
+`space-compass-0.1.0.apk` from the **Assets** section of the v0.1.0 preview release.
+Android 8.0 or newer is required. Open the downloaded APK and follow Android's
+installation prompts. If requested, allow installation for the browser or file
+manager you used to open the file.
+
+Updates are manual: download the APK from a newer release and install it over
+the existing app to keep your settings and selections. There is no need to
+uninstall the app. The ZIP/TAR source archives and Actions debug builds are not
+the signed release APK.
+
+The download includes a `SHA256SUMS.txt` file for checking its integrity.
+See [GitHub release and signing notes](docs/GITHUB_RELEASES.md).
+
 ## Features
 
 - Live azimuth and altitude, compass guidance, daily paths and satellite passes.
@@ -42,8 +59,10 @@ On Windows, use `gradlew.bat`. The debug APK is written to
 the debug APK and JVM test reports as development artifacts. Instrumentation
 sources are compiled; executing them requires a device or emulator.
 
+GitHub release APKs are built with the release variant and signed locally.
 Signing keys, local SDK paths and private configuration are excluded from the
-repository. Store release signing and distribution are separate release steps.
+repository and are not stored in GitHub Actions. Automated debug artifacts are
+for development; published release APKs are listed separately under Releases.
 
 ## Permissions and online data
 

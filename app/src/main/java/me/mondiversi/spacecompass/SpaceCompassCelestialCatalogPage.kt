@@ -61,7 +61,7 @@ internal fun SpaceCompassCelestialCatalogPage(timeMs: Long, remote: SpaceCompass
         catalogPreferences = updated
         saveSpaceCompassCatalogPreferences(preferences, updated)
     }
-    val locale = androidx.compose.ui.platform.LocalContext.current.resources.configuration.locales[0]
+    val locale = androidx.compose.ui.platform.LocalConfiguration.current.locales[0]
     val localizedNames = spaceCompassCelestialCatalogOrder.associateWith { body ->
         stringResource(if (body == SpaceCompassCelestialBody.ANDROMEDA_CORE) R.string.celestial_andromeda_short else body.nameResource)
     }

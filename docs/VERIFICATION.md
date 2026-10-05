@@ -5,15 +5,18 @@
 | Check | Result |
 | --- | --- |
 | Debug APK build | Passed, version 0.1.0 |
+| Release APK build | Passed, version 0.1.0 |
+| Release lint | Completed, 0 errors; remaining findings retained in reports |
 | JVM unit tests | 381 passed, 0 failures |
 | Android instrumentation sources | Compiled; not executed |
 | Phone UI checks | Samsung SM-G970U1, Android 12 / API 31 |
 | Tablet UI checks | Pixel Tablet emulator, Android 15 / API 35 |
-| GitHub automation | Build, JVM tests and instrumentation compilation configured |
+| GitHub automation | Debug/release builds, JVM tests, instrumentation compilation and release lint |
 
 The current local command is `gradlew.bat :app:assembleDebug
 :app:testDebugUnitTest :app:compileDebugAndroidTestKotlin`, using Android Studio's
-JDK 25 and the installed Android SDK/cache. The Android UI checks above were
+JDK 25 and the installed Android SDK/cache. Release preparation additionally ran
+:app:assembleRelease and :app:lintRelease. The Android UI checks above were
 manual checks, not an execution of the instrumentation test suite.
 
 Phone and tablet checks include shared toolbar dimensions, dropdown scaling,
@@ -23,10 +26,10 @@ synthetic location and orientation. Existing application data was retained durin
 updates. The verification of one layout does not imply every Android version or
 device configuration has been tested.
 
-Source code and GitHub automation are prepared for publication at
+Source code and GitHub automation are published at
 [mondiversi/SpaceCompass](https://github.com/mondiversi/SpaceCompass).
-The repository contains no signing key or local SDK configuration. Store
-submission, a privacy policy and a production release remain separate work.
+The repository contains no signing key or local SDK configuration. GitHub APK distribution is described in [GITHUB_RELEASES.md](GITHUB_RELEASES.md).
+No Play Store submission is part of this release.
 The current CI result is available on the repository's Actions page; the local
 results above do not stand in for a successful hosted run.
 
