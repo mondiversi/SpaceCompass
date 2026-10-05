@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="open_github_repository">AÇIK DEPO</string>
+    <string name="check_for_updates">GÜNCELLEMELERİ KONTROL EDİN</string>
+    <string name="update_available">Güncellemeler mevcut</string>
+    <string name="update_none">Güncelleme yok</string>
+    <string name="update_app">Uygulamayı güncelle</string>
+    <string name="update_download">İndirme ve doğrulama…</string>
+    <string name="update_permission">Android ayarlarında Space Compass uygulamasına güncelleme yükleme izni verin.</string>
+    <string name="update_checking">Güncellemeler aranıyor…</string>
+    <string name="update_check_failed">Güncellemeler denetlenemedi. Bağlantını kontrol edip tekrar dene.</string>
+    <string name="update_failed">Güncelleme indirilemedi veya doğrulanamadı. Tekrar dene.</string>
+    <string name="update_later">Daha sonra</string>
+    <string name="update_version">Space Compass %1$s kullanılabilir.</string>
+    <string name="update_install_note">İndirme tamamlanınca Android’de kurulumu onayla. Verilerin korunacak.</string>
+    <string name="update_incompatible">Yeni sürüm daha yeni bir Android sürümü gerektiriyor.</string>
+    <string name="update_install_cancelled">Kurulum iptal edildi. Tekrar deneyebilirsin.</string>
+    <string name="update_installer_unavailable">Android yükleyicisi açılamadı.</string>
+    <string name="update_repository_description">Projeyi aç veya uygulamanın yeni bir sürümünü denetle.</string>
+</resources>

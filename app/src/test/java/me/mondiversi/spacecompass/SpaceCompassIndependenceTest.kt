@@ -19,15 +19,20 @@ class SpaceCompassIndependenceTest {
         }
     }
 
-    @Test fun onlyForegroundLocationAndInternetPermissionsAreDeclared() {
+    @Test fun onlyForegroundLocationNetworkingAndExplicitUpdatePermissionsAreDeclared() {
         val manifest = File(root, "AndroidManifest.xml").readText()
-        for (permission in listOf("ACCESS_FINE_LOCATION", "ACCESS_COARSE_LOCATION", "INTERNET"))
+        for (permission in listOf("ACCESS_FINE_LOCATION", "ACCESS_COARSE_LOCATION", "INTERNET", "REQUEST_INSTALL_PACKAGES"))
             assertTrue(manifest.contains("android.permission.$permission"))
         for (permission in listOf("CAMERA", "BLUETOOTH_CONNECT", "ACCESS_BACKGROUND_LOCATION",
-            "REQUEST_INSTALL_PACKAGES", "FOREGROUND_SERVICE_CONNECTED_DEVICE"))
+            "FOREGROUND_SERVICE_CONNECTED_DEVICE"))
             assertFalse(manifest.contains("android.permission.$permission"))
         assertFalse(manifest.contains("usb.host"))
         assertFalse(manifest.contains("<service"))
+        val paths = File(root, "res/xml/update_paths.xml").readText()
+        assertTrue(manifest.contains("android:exported=\"false\""))
+        assertTrue(paths.contains("<cache-path name=\"app_updates\" path=\"updates/\""))
+        assertFalse(paths.contains("<root-path"))
+        assertFalse(paths.contains("<external-path"))
     }
 
     @Test fun originalMapsAndSatelliteImplementationHaveTheirCredits() {

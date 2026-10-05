@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="open_github_repository">BUKA REPOSITORI</string>
+    <string name="check_for_updates">PERIKSA PEMBARUAN</string>
+    <string name="update_available">Pembaruan tersedia</string>
+    <string name="update_none">Tidak ada pembaruan tersedia</string>
+    <string name="update_app">Perbarui aplikasi</string>
+    <string name="update_download">Mengunduh dan memverifikasi…</string>
+    <string name="update_permission">Izinkan Space Compass memasang pembaruan di pengaturan Android.</string>
+    <string name="update_checking">Memeriksa pembaruan…</string>
+    <string name="update_check_failed">Tidak dapat memeriksa pembaruan. Periksa koneksi dan coba lagi.</string>
+    <string name="update_failed">Tidak dapat mengunduh atau memverifikasi pembaruan. Coba lagi.</string>
+    <string name="update_later">Nanti</string>
+    <string name="update_version">Space Compass %1$s tersedia.</string>
+    <string name="update_install_note">Setelah diunduh, konfirmasikan pemasangan di Android. Data kamu akan tetap tersimpan.</string>
+    <string name="update_incompatible">Versi baru memerlukan versi Android yang lebih baru.</string>
+    <string name="update_install_cancelled">Pemasangan dibatalkan. Kamu dapat mencoba lagi.</string>
+    <string name="update_installer_unavailable">Tidak dapat membuka pemasang Android.</string>
+    <string name="update_repository_description">Buka proyek atau periksa versi baru aplikasi.</string>
+</resources>

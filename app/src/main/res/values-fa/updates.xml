@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="open_github_repository">باز کردن مخزن</string>
+    <string name="check_for_updates">برای به روز رسانی ها را بررسی کنید</string>
+    <string name="update_available">به‌روزرسانی موجود است</string>
+    <string name="update_none">به‌روزرسانی موجود نیست</string>
+    <string name="update_app">به‌روزرسانی برنامه</string>
+    <string name="update_download">دانلود و بررسی…</string>
+    <string name="update_permission">در تنظیمات Android به Space Compass اجازه نصب به‌روزرسانی بدهید.</string>
+    <string name="update_checking">در حال بررسی به‌روزرسانی‌ها…</string>
+    <string name="update_check_failed">بررسی به‌روزرسانی ممکن نیست. اتصال را بررسی کن و دوباره تلاش کن.</string>
+    <string name="update_failed">دریافت یا تأیید به‌روزرسانی ممکن نیست. دوباره تلاش کن.</string>
+    <string name="update_later">بعداً</string>
+    <string name="update_version">Space Compass %1$s در دسترس است.</string>
+    <string name="update_install_note">پس از دریافت، نصب را در Android تأیید کن. داده‌هایت حفظ می‌شوند.</string>
+    <string name="update_incompatible">نسخهٔ جدید به نسخهٔ جدیدتری از Android نیاز دارد.</string>
+    <string name="update_install_cancelled">نصب لغو شد. می‌توانی دوباره تلاش کنی.</string>
+    <string name="update_installer_unavailable">باز کردن نصب‌کنندهٔ Android ممکن نیست.</string>
+    <string name="update_repository_description">پروژه را باز کن یا نسخهٔ جدید برنامه را بررسی کن.</string>
+</resources>

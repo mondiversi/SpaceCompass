@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="open_github_repository">ओपन रPOSITORY</string>
+    <string name="check_for_updates">अपडेट्स के लिए जाँच करें</string>
+    <string name="update_available">अपडेट उपलब्ध हैं</string>
+    <string name="update_none">कोई अपडेट उपलब्ध नहीं है</string>
+    <string name="update_app">ऐप अपडेट करें</string>
+    <string name="update_download">डाउनलोड और सत्यापन…</string>
+    <string name="update_permission">Android सेटिंग में Space Compass को अपडेट स्थापित करने दें।</string>
+    <string name="update_checking">अपडेट खोजे जा रहे हैं…</string>
+    <string name="update_check_failed">अपडेट नहीं खोज सके। अपना कनेक्शन जाँचें और फिर कोशिश करें।</string>
+    <string name="update_failed">अपडेट डाउनलोड या सत्यापित नहीं कर सके। फिर कोशिश करें।</string>
+    <string name="update_later">बाद में</string>
+    <string name="update_version">Space Compass %1$s उपलब्ध है।</string>
+    <string name="update_install_note">डाउनलोड के बाद Android में इंस्टॉलेशन की पुष्टि करें। आपका डेटा सुरक्षित रहेगा।</string>
+    <string name="update_incompatible">नए संस्करण के लिए Android का नया संस्करण चाहिए।</string>
+    <string name="update_install_cancelled">इंस्टॉलेशन रद्द किया गया। आप फिर कोशिश कर सकते हैं।</string>
+    <string name="update_installer_unavailable">Android इंस्टॉलर नहीं खोल सके।</string>
+    <string name="update_repository_description">प्रोजेक्ट खोलें या ऐप का नया संस्करण खोजें।</string>
+</resources>

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="open_github_repository">リポジトリを開く</string>
+    <string name="check_for_updates">更新を確認</string>
+    <string name="update_available">更新があります</string>
+    <string name="update_none">利用可能な更新はありません</string>
+    <string name="update_app">アプリを更新</string>
+    <string name="update_download">ダウンロードと検証中…</string>
+    <string name="update_permission">Android 設定で Space Compass に更新のインストールを許可してください。</string>
+    <string name="update_checking">更新を確認中…</string>
+    <string name="update_check_failed">更新を確認できません。接続を確認して再試行してください。</string>
+    <string name="update_failed">更新をダウンロードまたは検証できません。再試行してください。</string>
+    <string name="update_later">後で</string>
+    <string name="update_version">Space Compass %1$s を利用できます。</string>
+    <string name="update_install_note">ダウンロード後、Androidでインストールを確認してください。データは保持されます。</string>
+    <string name="update_incompatible">新しいバージョンには、より新しいAndroidが必要です。</string>
+    <string name="update_install_cancelled">インストールをキャンセルしました。再試行できます。</string>
+    <string name="update_installer_unavailable">Androidのインストーラーを開けません。</string>
+    <string name="update_repository_description">プロジェクトを開くか、アプリの新しいバージョンを確認します。</string>
+</resources>

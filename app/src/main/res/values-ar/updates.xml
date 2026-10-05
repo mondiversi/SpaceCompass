@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="open_github_repository">فتح المستودع</string>
+    <string name="check_for_updates">التحقق من التحديثات</string>
+    <string name="update_available">تحديثات متاحة</string>
+    <string name="update_none">لا توجد تحديثات متاحة</string>
+    <string name="update_app">تحديث التطبيق</string>
+    <string name="update_download">التنزيل والتحقق…</string>
+    <string name="update_permission">اسمح لتطبيق Space Compass بتثبيت التحديثات في إعدادات Android.</string>
+    <string name="update_checking">جارٍ البحث عن تحديثات…</string>
+    <string name="update_check_failed">تعذّر البحث عن تحديثات. تحقّق من اتصالك وحاول مجددًا.</string>
+    <string name="update_failed">تعذّر تنزيل التحديث أو التحقّق منه. حاول مجددًا.</string>
+    <string name="update_later">لاحقًا</string>
+    <string name="update_version">يتوفر Space Compass %1$s.</string>
+    <string name="update_install_note">بعد التنزيل، أكّد التثبيت في Android. سيتم الاحتفاظ ببياناتك.</string>
+    <string name="update_incompatible">يتطلب الإصدار الجديد إصدارًا أحدث من Android.</string>
+    <string name="update_install_cancelled">أُلغي التثبيت. يمكنك المحاولة مجددًا.</string>
+    <string name="update_installer_unavailable">تعذّر فتح برنامج تثبيت Android.</string>
+    <string name="update_repository_description">افتح المشروع أو ابحث عن إصدار جديد من التطبيق.</string>
+</resources>

@@ -56,7 +56,7 @@ The celestial selector now has a neutral circular surface, outline and shadow.
 The intro keeps its animated glow/orbits but removes the decorative color bars.
 Tapping the main title opens Info with version, description, an Earth-only-use
 joke, repository status, compass precision explanation and bundled credits.
-There is no update-check control. No GitHub URL is shown until a remote exists.
+The current Information page contains the public GitHub repository, with separate open/check-update buttons and a global update dialog; see [UPDATES.md](UPDATES.md).
 
 Appearance, Language and Formats are full-screen pages with neutral light/dark
 gray cards and direct radio selections. Format order is speed, distance,

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="open_github_repository">REPOSITORY OPENEN</string>
+    <string name="check_for_updates">NAAR UPDATES ZOEKEN</string>
+    <string name="update_available">Updates beschikbaar</string>
+    <string name="update_none">Geen updates beschikbaar</string>
+    <string name="update_app">App bijwerken</string>
+    <string name="update_download">Downloaden en controleren…</string>
+    <string name="update_permission">Sta Space Compass toe om updates te installeren in de Android-instellingen.</string>
+    <string name="update_checking">Zoeken naar updates…</string>
+    <string name="update_check_failed">Kan niet naar updates zoeken. Controleer je verbinding en probeer het opnieuw.</string>
+    <string name="update_failed">Kan de update niet downloaden of controleren. Probeer het opnieuw.</string>
+    <string name="update_later">Later</string>
+    <string name="update_version">Space Compass %1$s is beschikbaar.</string>
+    <string name="update_install_note">Bevestig na het downloaden de installatie in Android. Je gegevens blijven bewaard.</string>
+    <string name="update_incompatible">De nieuwe versie vereist een nieuwere Android-versie.</string>
+    <string name="update_install_cancelled">Installatie geannuleerd. Je kunt het opnieuw proberen.</string>
+    <string name="update_installer_unavailable">Kan het Android-installatieprogramma niet openen.</string>
+    <string name="update_repository_description">Open het project of zoek naar een nieuwe versie van de app.</string>
+</resources>

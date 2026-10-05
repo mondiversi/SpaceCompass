@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="open_github_repository">REPOSITORY ÖFFNEN</string>
+    <string name="check_for_updates">NACH UPDATES SUCHEN</string>
+    <string name="update_available">Updates verfügbar</string>
+    <string name="update_none">Keine Updates verfügbar</string>
+    <string name="update_app">App aktualisieren</string>
+    <string name="update_download">Download und Prüfung…</string>
+    <string name="update_permission">Space Compass in den Android-Einstellungen die Installation von Updates erlauben.</string>
+    <string name="update_checking">Updates werden gesucht…</string>
+    <string name="update_check_failed">Updates können nicht gesucht werden. Prüfe deine Verbindung und versuche es erneut.</string>
+    <string name="update_failed">Das Update kann nicht heruntergeladen oder überprüft werden. Versuche es erneut.</string>
+    <string name="update_later">Später</string>
+    <string name="update_version">Space Compass %1$s ist verfügbar.</string>
+    <string name="update_install_note">Bestätige nach dem Download die Installation in Android. Deine Daten bleiben erhalten.</string>
+    <string name="update_incompatible">Die neue Version erfordert eine neuere Android-Version.</string>
+    <string name="update_install_cancelled">Installation abgebrochen. Du kannst es erneut versuchen.</string>
+    <string name="update_installer_unavailable">Das Android-Installationsprogramm kann nicht geöffnet werden.</string>
+    <string name="update_repository_description">Öffne das Projekt oder suche nach einer neuen Version der App.</string>
+</resources>

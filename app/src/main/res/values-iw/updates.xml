@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="open_github_repository">פתח מאגר</string>
+    <string name="check_for_updates">בדוק לעדכונים</string>
+    <string name="update_available">עדכונים זמינים</string>
+    <string name="update_none">אין עדכונים זמינים</string>
+    <string name="update_app">עדכון האפליקציה</string>
+    <string name="update_download">הורדה ואימות…</string>
+    <string name="update_permission">יש לאפשר ל־Space Compass להתקין עדכונים בהגדרות Android.</string>
+    <string name="update_checking">מחפש עדכונים…</string>
+    <string name="update_check_failed">לא ניתן לחפש עדכונים. יש לבדוק את החיבור ולנסות שוב.</string>
+    <string name="update_failed">לא ניתן להוריד או לאמת את העדכון. יש לנסות שוב.</string>
+    <string name="update_later">מאוחר יותר</string>
+    <string name="update_version">Space Compass %1$s זמין.</string>
+    <string name="update_install_note">לאחר ההורדה, יש לאשר את ההתקנה ב־Android. הנתונים שלך יישמרו.</string>
+    <string name="update_incompatible">הגרסה החדשה דורשת גרסת Android חדשה יותר.</string>
+    <string name="update_install_cancelled">ההתקנה בוטלה. ניתן לנסות שוב.</string>
+    <string name="update_installer_unavailable">לא ניתן לפתוח את תוכנית ההתקנה של Android.</string>
+    <string name="update_repository_description">פתיחת הפרויקט או בדיקה אם קיימת גרסה חדשה של האפליקציה.</string>
+</resources>

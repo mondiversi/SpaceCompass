@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="open_github_repository">FUNGUA HAZINA</string>
+    <string name="check_for_updates">ANGALIA KWA USASISHAJI</string>
+    <string name="update_available">Masasisho yanapatikana</string>
+    <string name="update_none">Hakuna masasisho</string>
+    <string name="update_app">Sasisha programu</string>
+    <string name="update_download">Inapakua na kuthibitisha…</string>
+    <string name="update_permission">Ruhusu Space Compass kusakinisha masasisho katika mipangilio ya Android.</string>
+    <string name="update_checking">Inatafuta masasisho…</string>
+    <string name="update_check_failed">Haiwezi kutafuta masasisho. Kagua muunganisho wako na ujaribu tena.</string>
+    <string name="update_failed">Haiwezi kupakua au kuthibitisha sasisho. Jaribu tena.</string>
+    <string name="update_later">Baadaye</string>
+    <string name="update_version">Space Compass %1$s inapatikana.</string>
+    <string name="update_install_note">Baada ya kupakua, thibitisha usakinishaji kwenye Android. Data yako itahifadhiwa.</string>
+    <string name="update_incompatible">Toleo jipya linahitaji toleo jipya zaidi la Android.</string>
+    <string name="update_install_cancelled">Usakinishaji umeghairiwa. Unaweza kujaribu tena.</string>
+    <string name="update_installer_unavailable">Haiwezi kufungua kisakinishi cha Android.</string>
+    <string name="update_repository_description">Fungua mradi au utafute toleo jipya la programu.</string>
+</resources>

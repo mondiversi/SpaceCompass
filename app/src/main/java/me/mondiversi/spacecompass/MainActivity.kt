@@ -19,6 +19,7 @@ class MainActivity : ComponentActivity() {
         super.onCreate(savedInstanceState)
         SpaceCompassErrorLog.install(applicationContext)
         enableEdgeToEdge()
+        if (savedInstanceState == null) SpaceCompassUpdates.check(applicationContext, manual = false)
         setContent {
             SpaceCompassPreferences {
                 val dark = isSystemInDarkTheme()
@@ -43,6 +44,7 @@ class MainActivity : ComponentActivity() {
                                 SpaceCompassAppPages {
                                     SpaceCompassSunFinderScreen(background, primary, secondary) { finish() }
                                 }
+                                SpaceCompassUpdateHost()
                             }
                         }
                     }
