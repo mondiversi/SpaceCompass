@@ -3,4 +3,7 @@
     <string name="units_metric">أمتار / كيلومترات</string>
     <string name="units_imperial">أقدام / أميال</string>
     <string name="units_distance_speed_description">اختر وحدات المسافات والسرعات.</string>
+    <string name="units_kilograms">كيلوغرامات</string>
+    <string name="units_pounds">أرطال</string>
+    <string name="units_mass_description">اختر وحدات الكتلة والكثافة.</string>
 </resources>

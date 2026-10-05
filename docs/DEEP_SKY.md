@@ -30,7 +30,7 @@ PSR J0437-4715 is the nearest known millisecond radio pulsar, not asserted to be
 
 ## Solar-mass references
 
-Stellar/compact-object mass readouts use M☉; planet and spacecraft masses retain kg. Existing kg physics values are unchanged (conversion reference 1.9884e30 kg). Missing estimates remain unknown rather than applying a generic star mass. The UI defines ≈ as a published approximate estimate and † as an assumed model input, not an object measurement.
+Stellar/compact-object mass readouts use M☉; planet and spacecraft masses use the selected kg/lb unit. Existing kg physics values are unchanged (conversion reference 1.9884e30 kg). Missing estimates remain unknown rather than applying a generic star mass. The UI defines ≈ as a published approximate estimate and † as an assumed model input, not an object measurement.
 
 - Sagittarius A*: ≈4.297e6 M☉, GRAVITY orbit-based best fit, statistical and systematic errors not collapsed into a misleading single uncertainty: https://www.aanda.org/articles/aa/full_html/2022/01/aa42465-21/aa42465-21.html .
 - M31*: ≈1.4e8 M☉ for the central black hole, not the whole galaxy/nuclear cluster: https://science.nasa.gov/asset/hubble/our-neighboring-galaxys-unusual-core/ .

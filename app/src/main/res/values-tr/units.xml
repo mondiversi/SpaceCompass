@@ -3,4 +3,7 @@
     <string name="units_metric">Metre / kilometre</string>
     <string name="units_imperial">Fit / mil</string>
     <string name="units_distance_speed_description">Mesafeler ve hızlar için birimleri seçin.</string>
+    <string name="units_kilograms">Kilogram</string>
+    <string name="units_pounds">Libre</string>
+    <string name="units_mass_description">Kütle ve yoğunluk birimlerini seçin.</string>
 </resources>

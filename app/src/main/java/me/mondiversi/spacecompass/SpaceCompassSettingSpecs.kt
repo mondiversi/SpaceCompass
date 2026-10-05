@@ -28,6 +28,11 @@ internal fun spaceCompassUnitSettings(): List<SpaceCompassSettingSpec> {
             "system" to stringResource(R.string.numeric_format_system),
             "metric" to stringResource(R.string.units_metric),
             "imperial" to stringResource(R.string.units_imperial)), description = stringResource(R.string.units_distance_speed_description)),
+        SpaceCompassSettingSpec(R.string.celestial_view_mass, SPACE_COMPASS_MASS_UNIT_KEY, "system", listOf(
+            "system" to stringResource(R.string.numeric_format_system),
+            "kg" to stringResource(R.string.units_kilograms),
+            "lb" to stringResource(R.string.units_pounds)), description = stringResource(R.string.units_mass_description),
+            examples = mapOf("kg" to "kg", "lb" to "lb")),
         SpaceCompassSettingSpec(R.string.pc_temperature, "temperature", "system", listOf("system" to stringResource(R.string.numeric_format_system), "c" to "°C", "f" to "°F"), description = stringResource(R.string.format_temperature_description)),
         SpaceCompassSettingSpec(R.string.pc_coordinates, "coordinates", "system", listOf("system" to stringResource(R.string.numeric_format_system),
             "decimal" to stringResource(R.string.pc_decimal_degrees), "dms" to stringResource(R.string.pc_dms)), description = stringResource(R.string.format_coordinates_description)),

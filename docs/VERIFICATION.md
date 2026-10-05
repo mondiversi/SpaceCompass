@@ -4,10 +4,10 @@
 
 | Check | Result |
 | --- | --- |
-| Debug APK build | Passed, version 0.1.4 |
-| Release APK build | Passed, version 0.1.4 |
+| Debug APK build | Passed, version 0.1.5 |
+| Release APK build | Passed, version 0.1.5 |
 | Release lint | Completed, 0 errors; remaining findings retained in reports |
-| JVM unit tests | 401 passed, 0 failures |
+| JVM unit tests | 409 passed, 0 failures |
 | Android instrumentation sources | Compiled; not executed |
 | Phone UI checks | Samsung SM-G970U1, Android 12 / API 31 |
 | Tablet UI checks | Pixel Tablet emulator, Android 15 / API 35 |
@@ -32,6 +32,18 @@ The repository contains no signing key or local SDK configuration. GitHub APK di
 No Play Store submission is part of this release.
 The current CI result is available on the repository's Actions page; the local
 results above do not stand in for a successful hosted run.
+
+## Mass units — version 0.1.5
+
+All 409 JVM tests passed, including eight new checks for exact kg/lb conversion,
+automatic regional defaults, explicit mass/length independence, presentation
+preference reload, all available nonstellar mass readouts, unchanged solar masses,
+invalid/unknown values and all four mass/volume combinations for density.
+The twenty interface languages have complete translatable-string parity; the
+new island follows distances/speeds and includes an icon, description and kg/lb examples.
+Debug/release builds, instrumentation-source compilation and release lint passed.
+The instrumentation suite was not executed. Focused signed-APK device checks are
+recorded in the release notes after installation.
 
 ## Units and viewer controls — version 0.1.4
 

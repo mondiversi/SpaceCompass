@@ -3,4 +3,7 @@
     <string name="units_metric">メートル / キロメートル</string>
     <string name="units_imperial">フィート / マイル</string>
     <string name="units_distance_speed_description">距離と速度の単位を選択します。</string>
+    <string name="units_kilograms">キログラム</string>
+    <string name="units_pounds">ポンド</string>
+    <string name="units_mass_description">質量と密度の単位を選択します。</string>
 </resources>

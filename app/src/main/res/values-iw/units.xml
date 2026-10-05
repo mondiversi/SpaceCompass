@@ -3,4 +3,7 @@
     <string name="units_metric">מטרים / קילומטרים</string>
     <string name="units_imperial">רגל / מיילים</string>
     <string name="units_distance_speed_description">בחר יחידות למרחקים ולמהירויות.</string>
+    <string name="units_kilograms">קילוגרמים</string>
+    <string name="units_pounds">פאונדים</string>
+    <string name="units_mass_description">בחרו את יחידות המסה והצפיפות.</string>
 </resources>

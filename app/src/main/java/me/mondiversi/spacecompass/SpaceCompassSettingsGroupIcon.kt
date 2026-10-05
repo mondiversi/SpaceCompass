@@ -155,6 +155,17 @@ internal fun SpaceCompassSettingsGroupIcon(key: String, tint: Color) {
                 drawRoundRect(tint, point(.12f, .28f), Size(size.width * .76f, size.height * .44f), CornerRadius(2.dp.toPx()), style = outline)
                 for (x in listOf(.3f, .5f, .7f)) drawLine(tint, point(x, .28f), point(x, .48f), strokeWidth)
             }
+            SPACE_COMPASS_MASS_UNIT_KEY -> {
+                drawCircle(tint, size.minDimension * .13f, point(.5f, .23f), style = outline)
+                val weight = Path().apply {
+                    moveTo(size.width * .28f, size.height * .39f)
+                    lineTo(size.width * .72f, size.height * .39f)
+                    lineTo(size.width * .85f, size.height * .85f)
+                    lineTo(size.width * .15f, size.height * .85f)
+                    close()
+                }
+                drawPath(weight, tint, style = outline)
+            }
             "temperature" -> {
                 drawRoundRect(tint, point(.4f, .1f), Size(size.width * .2f, size.height * .58f), CornerRadius(size.width * .1f), style = outline)
                 drawCircle(tint, size.minDimension * .17f, point(.5f, .74f), style = outline)

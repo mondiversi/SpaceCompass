@@ -5,7 +5,7 @@ import androidx.compose.runtime.*
 
 /** Only presentation preferences participate in configuration and settings UI updates. */
 internal val spaceCompassPresentationKeys = setOf(
-    "theme", "language", "display", SPACE_COMPASS_DISTANCE_SPEED_UNIT_KEY, "temperature", "coordinates",
+    "theme", "language", "display", SPACE_COMPASS_DISTANCE_SPEED_UNIT_KEY, SPACE_COMPASS_MASS_UNIT_KEY, "temperature", "coordinates",
     SPACE_COMPASS_NUMERIC_FORMAT_KEY, SPACE_COMPASS_DATE_FORMAT_KEY, SPACE_COMPASS_TIME_FORMAT_KEY
 )
 

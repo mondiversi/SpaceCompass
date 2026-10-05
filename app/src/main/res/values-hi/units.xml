@@ -3,4 +3,7 @@
     <string name="units_metric">मीटर / किलोमीटर</string>
     <string name="units_imperial">फ़ीट / मील</string>
     <string name="units_distance_speed_description">दूरी और गति के लिए इकाइयाँ चुनें।</string>
+    <string name="units_kilograms">किलोग्राम</string>
+    <string name="units_pounds">पाउंड</string>
+    <string name="units_mass_description">द्रव्यमान और घनत्व की इकाइयाँ चुनें।</string>
 </resources>

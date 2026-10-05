@@ -144,10 +144,11 @@ internal fun spaceCompassUsesSolarMass(body: SpaceCompassCelestialBody, facts: S
     facts.massSolar != null || body == SpaceCompassCelestialBody.SUN || (body.isExtrasolar && body != SpaceCompassCelestialBody.TRAPPIST_1_E)
 
 internal fun formatSpaceCompassCelestialMass(body: SpaceCompassCelestialBody,
-    facts: SpaceCompassCelestialFacts, numeric: SpaceCompassNumericFormat): String {
+    facts: SpaceCompassCelestialFacts, numeric: SpaceCompassNumericFormat, pounds: Boolean = false): String {
     if (!spaceCompassUsesSolarMass(body, facts))
         return facts.massKg?.takeIf { it.isFinite() && it > 0 }
-            ?.let { (if (facts.massEstimated) "≈ " else "") + formatSpaceCompassScientificNumber(it, numeric) + " kg" } ?: "—"
+            ?.let { (if (facts.massEstimated) "≈ " else "") + formatSpaceCompassScientificNumber(spaceCompassMassForDisplay(it, pounds), numeric) +
+                if (pounds) " lb" else " kg" } ?: "—"
     val mass = facts.massSolar ?: facts.massKg?.div(SPACE_COMPASS_SOLAR_MASS_KG) ?: return "— M☉"
     if (!mass.isFinite() || mass <= 0) return "—"
     val uncertainty = facts.massSolarError

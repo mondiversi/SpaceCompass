@@ -3,4 +3,7 @@
     <string name="units_metric">米 / 千米</string>
     <string name="units_imperial">英尺 / 英里</string>
     <string name="units_distance_speed_description">选择距离和速度的单位。</string>
+    <string name="units_kilograms">千克</string>
+    <string name="units_pounds">磅</string>
+    <string name="units_mass_description">选择质量和密度的单位。</string>
 </resources>

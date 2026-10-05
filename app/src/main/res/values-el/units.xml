@@ -3,4 +3,7 @@
     <string name="units_metric">Μέτρα / χιλιόμετρα</string>
     <string name="units_imperial">Πόδια / μίλια</string>
     <string name="units_distance_speed_description">Επιλέξτε μονάδες για αποστάσεις και ταχύτητες.</string>
+    <string name="units_kilograms">Κιλά</string>
+    <string name="units_pounds">Λίβρες</string>
+    <string name="units_mass_description">Επιλέξτε τις μονάδες μάζας και πυκνότητας.</string>
 </resources>

@@ -3,4 +3,7 @@
     <string name="units_metric">Metros / quilómetros</string>
     <string name="units_imperial">Pés / milhas</string>
     <string name="units_distance_speed_description">Escolha as unidades para distâncias e velocidades.</string>
+    <string name="units_kilograms">Quilogramas</string>
+    <string name="units_pounds">Libras</string>
+    <string name="units_mass_description">Escolha as unidades de massa e densidade.</string>
 </resources>

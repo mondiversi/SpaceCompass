@@ -3,4 +3,7 @@
     <string name="units_metric">Метры / километры</string>
     <string name="units_imperial">Футы / мили</string>
     <string name="units_distance_speed_description">Выберите единицы для расстояний и скоростей.</string>
+    <string name="units_kilograms">Килограммы</string>
+    <string name="units_pounds">Фунты</string>
+    <string name="units_mass_description">Выберите единицы массы и плотности.</string>
 </resources>

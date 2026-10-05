@@ -4,10 +4,12 @@ import java.util.Locale
 
 internal const val SPACE_COMPASS_DISTANCE_SPEED_UNIT_KEY = "distance_speed_unit"
 internal val spaceCompassDistanceSpeedOptions = setOf("system", "metric", "imperial")
+internal const val SPACE_COMPASS_MASS_UNIT_KEY = "mass_unit"
 
 internal data class SpaceCompassUnits(
     val miles: Boolean = false, val distance: String = "default",
-    val feet: Boolean = false, val fahrenheit: Boolean = false, val dms: Boolean = false
+    val feet: Boolean = false, val fahrenheit: Boolean = false, val dms: Boolean = false,
+    val pounds: Boolean = false
 )
 
 /** Migrate an explicit distance choice first, then nearby length, then speed.
@@ -25,7 +27,7 @@ internal fun spaceCompassDistanceSpeedPreference(preference: (String) -> String?
 }
 
 /** Device-region defaults are independent of the chosen interface language.
- * All distance/length/speed displays derive from one family; temperature stays separate.
+ * All distance/length/speed displays derive from one family; mass and temperature stay separate.
  */
 internal fun spaceCompassResolveUnits(region: String, preference: (String) -> String?): SpaceCompassUnits {
     val deviceRegion = region.uppercase(Locale.ROOT)
@@ -40,5 +42,9 @@ internal fun spaceCompassResolveUnits(region: String, preference: (String) -> St
     }
     return SpaceCompassUnits(imperial, if (imperial) "mmi" else "mkm", imperial,
         selected("temperature", "f", deviceRegion in setOf("US", "BS", "BZ", "KY", "PW", "FM", "MH")),
-        selected("coordinates", "dms", false))
+        selected("coordinates", "dms", false), pounds = when (preference(SPACE_COMPASS_MASS_UNIT_KEY)) {
+            "kg" -> false
+            "lb" -> true
+            else -> deviceRegion in setOf("US", "LR", "MM")
+        })
 }

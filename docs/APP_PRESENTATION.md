@@ -1,5 +1,20 @@
 # App presentation and preferences
 
+## Mass units — version 0.1.5
+
+The Mass island follows Distances and speeds, with System, Kilograms and Pounds.
+System resolves from the device region (US/LR/MM use pounds; other/unknown regions
+use kilograms), independently of interface language and the length/speed choice.
+The saved preference is observed immediately and retained across app/device restarts.
+Planet, moon and spacecraft mass readouts convert at presentation time using
+1 lb = 0.45359237 kg exactly ([NIST SP 811](https://tsapps.nist.gov/publication/get_pdf.cfm?pub_id=200349)).
+Density combines the chosen mass and length units: kg/m³, lb/m³, kg/ft³ or lb/ft³.
+One cubic foot is exactly 0.028316846592 cubic meters. Reference data/calculations,
+solar-mass readouts, published uncertainties and unknown-value markers are preserved.
+The island includes a weight icon, description and right-aligned kg/lb examples in
+all twenty interface languages.
+
+
 ## Units and viewer selection — version 0.1.4
 
 The Units page replaces the separate speed/astronomical/normal-distance controls
@@ -113,8 +128,9 @@ Normal-distance preferences also control spacecraft dimensions and antenna sizes
 ranges, including the object's selector, use Mkm/Mmi with the AU reference retained.
 The selector still measures distance from the Sun; the main panel and observer row
 measure distance from the observer. These are intentionally distinct quantities.
-Mass, density and surface acceleration retain their explicitly labelled scientific
-SI units because there is no mass, density or acceleration preference.
+Mass readouts follow the independent kg/lb preference; density combines that
+choice with the selected m³/ft³ volume. Stellar/compact-object masses retain M☉.
+Surface acceleration remains explicitly labelled in SI (m/s²).
 
 All reference temperatures follow Celsius/Fahrenheit, including the stellar
 effective temperature; its Kelvin reference is retained in parentheses. System

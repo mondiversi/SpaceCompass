@@ -3,4 +3,7 @@
     <string name="units_metric">متر / کیلومتر</string>
     <string name="units_imperial">فوت / مایل</string>
     <string name="units_distance_speed_description">واحدهای فاصله و سرعت را انتخاب کنید.</string>
+    <string name="units_kilograms">کیلوگرم</string>
+    <string name="units_pounds">پوند</string>
+    <string name="units_mass_description">واحدهای جرم و چگالی را انتخاب کنید.</string>
 </resources>

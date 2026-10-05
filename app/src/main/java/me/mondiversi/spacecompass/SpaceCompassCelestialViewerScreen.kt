@@ -133,10 +133,11 @@ internal fun SpaceCompassCelestialViewerScreen(body: SpaceCompassCelestialBody, 
         stringResource(R.string.celestial_view_diameter) to ((if (facts.diameterEstimated) "≈ " else "") + formatSpaceCompassPhysicalLength(facts.diameterKm?.times(1000), if (facts.diameterEstimated) 2 else 0, numeric, units.feet, large = true) +
             (facts.diameterErrorPlusKm?.let { " (+${formatSpaceCompassPhysicalLength(it * 1000, 2, numeric, units.feet, large = true)} / −${formatSpaceCompassPhysicalLength(facts.diameterErrorMinusKm?.times(1000), 2, numeric, units.feet, large = true)})" } ?: facts.diameterErrorKm?.let { " (±${formatSpaceCompassPhysicalLength(it * 1000, 0, numeric, units.feet, large = true)})" } ?: "")),
         stringResource(if (body.isVoyager) R.string.celestial_view_antenna else R.string.celestial_view_size) to formatSpaceCompassPhysicalLength(facts.dimensionMeters, 1, numeric, units.feet),
-        stringResource(R.string.celestial_view_mass) to formatSpaceCompassCelestialMass(body, facts, numeric),
+        stringResource(R.string.celestial_view_mass) to formatSpaceCompassCelestialMass(body, facts, numeric, units.pounds),
         stringResource(R.string.celestial_view_gravity) to formatSpaceCompassCelestialGravity(facts.gravity, numeric,
             siFractionDigits = if (body == SpaceCompassCelestialBody.POLARIS) 2 else 1),
-        stringResource(R.string.celestial_view_density) to number(facts.density, if (body == SpaceCompassCelestialBody.POLARIS) 3 else 0, "kg/m³"),
+        stringResource(R.string.celestial_view_density) to formatSpaceCompassCelestialDensity(facts.density, numeric, units,
+            fractionDigits = if (body == SpaceCompassCelestialBody.POLARIS) 3 else 0),
     ) + temperatureRows + listOf(
         stringResource(R.string.celestial_view_parent) to when {
             facts.parentName != null -> facts.parentName
