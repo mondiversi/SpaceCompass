@@ -1,5 +1,14 @@
 # App presentation and preferences
 
+## Info heading icons — version 0.1.10
+
+The repository heading reuses the existing GitHub glyph, and Credits and licences
+has a copyright glyph. Both use the Latest news heading's 20 dp icon slot, title
+color and 10 dp separation. The introduction keeps its existing app logo.
+Decorative icons do not duplicate spoken headings and inherit the existing
+light/dark theme, RTL row order and tablet density scaling. No strings or saved
+preferences changed.
+
 ## Unit and numeric consistency — version 0.1.9
 
 Gravity, gas-giant reference pressure, numeric counts/zoom and every point clock

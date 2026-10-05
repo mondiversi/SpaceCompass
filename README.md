@@ -11,7 +11,7 @@ application extracted from [UVIR](https://github.com/mondiversi/Uvir).
 
 Space Compass is distributed on GitHub. Open the
 [Releases page](https://github.com/mondiversi/SpaceCompass/releases) and download
-`space-compass-0.1.9.apk` from the **Assets** section of the v0.1.9 preview release.
+`space-compass-0.1.10.apk` from the **Assets** section of the v0.1.10 preview release.
 Android 8.0 or newer is required. Open the downloaded APK and follow Android's
 installation prompts. If requested, allow installation for the browser or file
 manager you used to open the file.

@@ -4,8 +4,8 @@
 
 | Check | Result |
 | --- | --- |
-| Debug APK build | Passed, version 0.1.9 |
-| Release APK build | Passed, version 0.1.9 |
+| Debug APK build | Passed, version 0.1.10 |
+| Release APK build | Passed, version 0.1.10 |
 | Release lint | Completed, 0 errors; remaining findings retained in reports |
 | JVM unit tests | 439 passed, 0 failures |
 | Android instrumentation sources | Compiled; not executed |
@@ -32,6 +32,15 @@ The repository contains no signing key or local SDK configuration. GitHub APK di
 No Play Store submission is part of this release.
 The current CI result is available on the repository's Actions page; the local
 results above do not stand in for a successful hosted run.
+
+## Info heading icons — version 0.1.10
+
+Debug/release builds, all 439 JVM tests, Android test-source compilation and
+release lint (zero errors) passed. The instrumentation suite was not executed.
+The signed candidate was checked on the Android 15 tablet in light and dark
+themes and portrait rotation. Visual inspection covered the GitHub and copyright
+heading glyphs, spacing, readability and scrolling. The original System theme
+and free rotation were restored. No new phone UI pass is claimed.
 
 ## Unit and numeric consistency — version 0.1.9
 

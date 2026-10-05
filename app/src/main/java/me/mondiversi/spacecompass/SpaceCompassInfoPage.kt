@@ -39,10 +39,10 @@ internal fun SpaceCompassInfoPage(modifier: Modifier) {
                     color = MaterialTheme.colorScheme.onSurface.copy(alpha = .75f))
             }
         }
-        SpaceCompassSettingsIsland(stringResource(R.string.github_repository_title)) {
+        SpaceCompassSettingsIsland(stringResource(R.string.github_repository_title), iconKey = "repository") {
             SpaceCompassRepositoryActions()
         }
-        SpaceCompassSettingsIsland(stringResource(R.string.pc_info_credits)) {
+        SpaceCompassSettingsIsland(stringResource(R.string.pc_info_credits), iconKey = "credits") {
             Text(stringResource(R.string.about_copyright), fontSize = 13.sp)
             Text("GPL-3.0 · Astronomy Engine (MIT) · SGP4", fontSize = 13.sp)
             Text("NASA · JPL · USGS · Solar System Scope / INOVE", fontSize = 13.sp)

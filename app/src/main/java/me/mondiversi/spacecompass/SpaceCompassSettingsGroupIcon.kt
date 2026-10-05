@@ -2,6 +2,7 @@ package me.mondiversi.spacecompass
 
 import androidx.compose.foundation.Canvas
 import androidx.compose.foundation.layout.size
+import androidx.compose.material3.Icon
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.geometry.CornerRadius
@@ -12,16 +13,27 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.Path
 import androidx.compose.ui.graphics.StrokeCap
 import androidx.compose.ui.graphics.drawscope.Stroke
+import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.unit.dp
 
 /** Decorative section glyphs inherit the title color in both themes. */
 @Composable
 internal fun SpaceCompassSettingsGroupIcon(key: String, tint: Color) {
+    if (key == "repository") {
+        Icon(painterResource(R.drawable.ic_repository), contentDescription = null,
+            modifier = Modifier.size(20.dp), tint = tint)
+        return
+    }
     Canvas(Modifier.size(20.dp)) {
         val strokeWidth = maxOf(1.6.dp.toPx(), size.minDimension * 0.08f)
         val outline = Stroke(strokeWidth, cap = StrokeCap.Round)
         fun point(x: Float, y: Float) = Offset(size.width * x, size.height * y)
         when (key) {
+            "credits" -> {
+                drawCircle(tint, size.minDimension * .37f, center, style = outline)
+                drawArc(tint, 55f, 250f, false, point(.32f, .32f),
+                    Size(size.width * .36f, size.height * .36f), style = outline)
+            }
             "whats_new" -> {
                 for ((x, y, radius) in listOf(Triple(.42f, .42f, .27f), Triple(.73f, .72f, .12f))) {
                     drawLine(tint, point(x, y - radius), point(x, y + radius), strokeWidth, StrokeCap.Round)
