@@ -1,0 +1,6 @@
+<resources>
+    <string name="info_news_title">Últimas novidades · %1$s</string>
+    <string name="info_news_units">Unidades de distância e velocidade simplificadas, com escolha independente de quilogramas/libras e valores coerentes de massa e densidade.</string>
+    <string name="info_news_viewer">Controles mais claros de visualização e rotação dos objetos celestes.</string>
+    <string name="info_news_updates">Atualizações assinadas do GitHub, verificadas ao iniciar ou na seção do repositório.</string>
+</resources>

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="pc_info">Información</string>
+    <string name="pc_info">Info y novedades</string>
     <string name="pc_display_automatic">Escala automática</string>
     <string name="pc_info_description">Una brújula astronómica para encontrar objetos celestes, explorar sus trayectorias y ver modelos y fases lunares.</string>
     <string name="pc_info_earth">Pensada para la Tierra: en el espacio, mejor pedir indicaciones a un astronauta 🙂</string>

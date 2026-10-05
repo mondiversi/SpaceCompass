@@ -22,6 +22,12 @@ internal fun SpaceCompassSettingsGroupIcon(key: String, tint: Color) {
         val outline = Stroke(strokeWidth, cap = StrokeCap.Round)
         fun point(x: Float, y: Float) = Offset(size.width * x, size.height * y)
         when (key) {
+            "whats_new" -> {
+                for ((x, y, radius) in listOf(Triple(.42f, .42f, .27f), Triple(.73f, .72f, .12f))) {
+                    drawLine(tint, point(x, y - radius), point(x, y + radius), strokeWidth, StrokeCap.Round)
+                    drawLine(tint, point(x - radius, y), point(x + radius, y), strokeWidth, StrokeCap.Round)
+                }
+            }
             "theme" -> {
                 val radius = size.minDimension * 0.34f
                 drawCircle(tint, radius, center, style = Stroke(width = strokeWidth))

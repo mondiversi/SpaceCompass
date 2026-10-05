@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="pc_info">जानकारी</string>
+    <string name="pc_info">जानकारी और नया क्या है</string>
     <string name="pc_display_automatic">स्वचालित आकार समायोजन</string>
     <string name="pc_info_description">खगोलीय पिंडों को खोजने, उनके पथों का अन्वेषण करने और मॉडल तथा चंद्रमा की कलाएँ देखने के लिए खगोलीय कंपास।</string>
     <string name="pc_info_earth">पृथ्वी पर उपयोग के लिए बना है: अंतरिक्ष में किसी अंतरिक्ष यात्री से रास्ता पूछना बेहतर है 🙂</string>

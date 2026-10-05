@@ -1,0 +1,6 @@
+<resources>
+    <string name="info_news_title">החידושים האחרונים · %1$s</string>
+    <string name="info_news_units">יחידות מרחק ומהירות פשוטות יותר, בחירה נפרדת בקילוגרמים או פאונדים וערכי מסה וצפיפות עקביים.</string>
+    <string name="info_news_viewer">פקדי תצוגה וסיבוב ברורים יותר עבור גרמי השמיים.</string>
+    <string name="info_news_updates">עדכונים חתומים מ־GitHub, הנבדקים בהפעלה או דרך אזור המאגר.</string>
+</resources>

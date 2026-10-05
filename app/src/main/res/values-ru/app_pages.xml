@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="pc_info">Информация</string>
+    <string name="pc_info">Информация и новости</string>
     <string name="pc_display_automatic">Автоматическое масштабирование</string>
     <string name="pc_info_description">Астрономический компас для поиска небесных объектов, изучения их траекторий, просмотра моделей и фаз Луны.</string>
     <string name="pc_info_earth">Создано для Земли: в космосе лучше спросить дорогу у космонавта 🙂</string>

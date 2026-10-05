@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="pc_info">Informazioni</string>
+    <string name="pc_info">Info e novità</string>
     <string name="pc_display_automatic">Ridimensionamento automatico</string>
     <string name="pc_info_description">Una bussola astronomica per trovare oggetti celesti, esplorare le loro traiettorie e osservare modelli e fasi lunari.</string>
     <string name="pc_info_earth">Pensata per essere usata sulla Terra: nello spazio, meglio chiedere indicazioni a un astronauta 🙂</string>

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="pc_info">Informasi</string>
+    <string name="pc_info">Info dan kabar terbaru</string>
     <string name="pc_display_automatic">Penskalaan otomatis</string>
     <string name="pc_info_description">Kompas astronomi untuk menemukan benda langit, menjelajahi lintasannya, serta melihat model dan fase Bulan.</string>
     <string name="pc_info_earth">Dirancang untuk Bumi: di luar angkasa, lebih baik bertanya arah kepada astronaut 🙂</string>

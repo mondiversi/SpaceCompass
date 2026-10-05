@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="pc_info">Informationen</string>
+    <string name="pc_info">Infos und Neuigkeiten</string>
     <string name="pc_display_automatic">Automatische Skalierung</string>
     <string name="pc_info_description">Ein astronomischer Kompass zum Finden von Himmelsobjekten, Erkunden ihrer Bahnen sowie Betrachten von Modellen und Mondphasen.</string>
     <string name="pc_info_earth">Für die Erde gedacht: im Weltraum lieber einen Astronauten nach dem Weg fragen 🙂</string>

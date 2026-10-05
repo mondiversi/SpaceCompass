@@ -4,8 +4,8 @@
 
 | Check | Result |
 | --- | --- |
-| Debug APK build | Passed, version 0.1.5 |
-| Release APK build | Passed, version 0.1.5 |
+| Debug APK build | Passed, version 0.1.6 |
+| Release APK build | Passed, version 0.1.6 |
 | Release lint | Completed, 0 errors; remaining findings retained in reports |
 | JVM unit tests | 409 passed, 0 failures |
 | Android instrumentation sources | Compiled; not executed |
@@ -32,6 +32,17 @@ The repository contains no signing key or local SDK configuration. GitHub APK di
 No Play Store submission is part of this release.
 The current CI result is available on the repository's Actions page; the local
 results above do not stand in for a successful hosted run.
+
+## Info and news — version 0.1.6
+
+The renamed page and three-item recent-news summary are localized in all twenty
+languages, with matching resource keys and version placeholders. The news island
+follows the description/Earth-use note and precedes GitHub/credits; it uses the
+existing app island component and UVIR's two-sparkle glyph.
+Debug/release builds, all 409 JVM tests, instrumentation-source compilation and
+release lint passed. No new test mirroring this reversible text/layout change
+was added. The instrumentation suite was not executed. Focused signed-APK UI
+checks are recorded in the release notes after installation.
 
 ## Mass units — version 0.1.5
 

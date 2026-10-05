@@ -1,0 +1,6 @@
+<resources>
+    <string name="info_news_title">Perubahan terbaru · %1$s</string>
+    <string name="info_news_units">Satuan jarak dan kecepatan yang lebih sederhana, pilihan kilogram/pon terpisah serta nilai massa dan massa jenis yang konsisten.</string>
+    <string name="info_news_viewer">Kontrol tampilan dan rotasi benda langit yang lebih jelas.</string>
+    <string name="info_news_updates">Pembaruan bertanda tangan dari GitHub, diperiksa saat mulai atau dari bagian repositori.</string>
+</resources>

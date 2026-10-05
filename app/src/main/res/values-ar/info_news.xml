@@ -1,0 +1,6 @@
+<resources>
+    <string name="info_news_title">آخر المستجدات · %1$s</string>
+    <string name="info_news_units">وحدات مبسطة للمسافة والسرعة، مع اختيار مستقل للكيلوغرامات أو الأرطال وقيم متسقة للكتلة والكثافة.</string>
+    <string name="info_news_viewer">عناصر تحكم أوضح لعرض الأجرام السماوية وتدويرها.</string>
+    <string name="info_news_updates">تحديثات موقّعة من GitHub، يتم التحقق منها عند بدء التشغيل أو من قسم المستودع.</string>
+</resources>

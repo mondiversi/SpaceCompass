@@ -1,5 +1,15 @@
 # App presentation and preferences
 
+## Info and news — version 0.1.6
+
+The app-title destination is now called Info and news in all twenty languages.
+A separate latest-news island immediately follows the description/Earth-use note,
+before GitHub and credits. It reuses the app island styling and the same two-sparkle
+glyph as UVIR, with the current version and three short localized summaries of
+recent units/mass changes, clearer viewer controls and signed GitHub updates.
+It scales with the existing UI and preserves light/dark styling, scrolling and RTL.
+
+
 ## Mass units — version 0.1.5
 
 The Mass island follows Distances and speeds, with System, Kilograms and Pounds.

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="pc_info">المعلومات</string>
+    <string name="pc_info">معلومات ومستجدات</string>
     <string name="pc_display_automatic">تحجيم تلقائي</string>
     <string name="pc_info_description">بوصلة فلكية للعثور على الأجرام السماوية، واستكشاف مساراتها وعرض النماذج وأطوار القمر.</string>
     <string name="pc_info_earth">مصممة للأرض: في الفضاء، من الأفضل سؤال رائد فضاء عن الاتجاهات 🙂</string>

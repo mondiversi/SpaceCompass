@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="pc_info">Bilgiler</string>
+    <string name="pc_info">Bilgi ve yenilikler</string>
     <string name="pc_display_automatic">Otomatik ölçekleme</string>
     <string name="pc_info_description">Gök cisimlerini bulmak, yörüngelerini keşfetmek, modelleri ve Ay evrelerini görmek için astronomik pusula.</string>
     <string name="pc_info_earth">Dünya için tasarlandı: uzayda yol tarifini bir astronota sormak daha iyi 🙂</string>

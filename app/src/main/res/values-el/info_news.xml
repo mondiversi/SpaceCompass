@@ -1,0 +1,6 @@
+<resources>
+    <string name="info_news_title">Τελευταία νέα · %1$s</string>
+    <string name="info_news_units">Απλούστερες μονάδες απόστασης και ταχύτητας, ανεξάρτητη επιλογή κιλών/λιβρών και συνεπείς τιμές μάζας και πυκνότητας.</string>
+    <string name="info_news_viewer">Σαφέστερα χειριστήρια προβολής και περιστροφής των ουράνιων σωμάτων.</string>
+    <string name="info_news_updates">Υπογεγραμμένες ενημερώσεις από το GitHub, με έλεγχο κατά την εκκίνηση ή από την ενότητα αποθετηρίου.</string>
+</resources>

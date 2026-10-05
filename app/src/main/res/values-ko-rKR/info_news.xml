@@ -1,0 +1,6 @@
+<resources>
+    <string name="info_news_title">최근 변경 사항 · %1$s</string>
+    <string name="info_news_units">거리와 속도 단위를 간소화하고, 킬로그램/파운드를 별도로 선택해 질량과 밀도 값에 일관되게 적용합니다.</string>
+    <string name="info_news_viewer">천체의 보기와 회전 조작을 더 명확하게 표시합니다.</string>
+    <string name="info_news_updates">GitHub의 서명된 업데이트를 시작 시 또는 저장소 화면에서 확인합니다.</string>
+</resources>

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="pc_info">מידע</string>
+    <string name="pc_info">מידע וחידושים</string>
     <string name="pc_display_automatic">התאמת גודל אוטומטית</string>
     <string name="pc_info_description">מצפן אסטרונומי למציאת גרמי שמיים, לחקירת המסלולים שלהם ולצפייה בדגמים ובמופעי הירח.</string>
     <string name="pc_info_earth">מיועדת לכדור הארץ: בחלל עדיף לבקש הוראות מאסטרונאוט 🙂</string>
