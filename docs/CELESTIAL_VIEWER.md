@@ -455,3 +455,9 @@ The identified STARLINK-40083 / NORAD 100855 / 2026-225A retains CelesTrak OMM a
 The public HTML is bounded at 512 KiB and requires one unambiguous matching pre/code TLE block. Missing/changed markup, duplicate records, corrupt checksums, other spacecraft and stale epochs fail closed. This is a website fallback rather than a guaranteed versioned API; a site markup change can make it unavailable. Provider and Space-Track credits are shown with the object information.
 
 Provider documentation: https://docs.satcat.com/ (public metadata/TLE publication), https://www.satcat.com/terms-of-use. Space-Track grants blanket basic-SSA redistribution with appropriate citation: https://www.space-track.org/documentation. No publication or paid service has been configured.
+
+
+## Atmospheric pressure
+
+The viewer conditionally displays supported atmospheric/exospheric reference pressures
+with the independent bar/Pa/psi preference. See [values, sources and exclusions](ATMOSPHERIC_PRESSURE.md).

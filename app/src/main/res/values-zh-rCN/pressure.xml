@@ -1,0 +1,11 @@
+<resources>
+    <string name="units_mass_density">质量和密度</string>
+    <string name="units_pressure">气压</string>
+    <string name="units_pressure_description">选择大气压力的单位。</string>
+    <string name="units_pressure_bar">巴</string>
+    <string name="units_pressure_pascal">帕斯卡</string>
+    <string name="celestial_pressure_surface">大气压力</string>
+    <string name="celestial_pressure_exosphere">外逸层压力</string>
+    <string name="celestial_pressure_night_exosphere">外逸层压力（夜间）</string>
+    <string name="celestial_pressure_reference_note">参考压力值，并非当前测量值；可能随地点和季节变化。</string>
+</resources>

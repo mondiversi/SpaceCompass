@@ -1,0 +1,11 @@
+<resources>
+    <string name="units_mass_density">Масса и плотность</string>
+    <string name="units_pressure">Давление</string>
+    <string name="units_pressure_description">Выберите единицы атмосферного давления.</string>
+    <string name="units_pressure_bar">Бар</string>
+    <string name="units_pressure_pascal">Паскаль</string>
+    <string name="celestial_pressure_surface">Атмосферное давление</string>
+    <string name="celestial_pressure_exosphere">Давление экзосферы</string>
+    <string name="celestial_pressure_night_exosphere">Давление экзосферы (ночь)</string>
+    <string name="celestial_pressure_reference_note">Справочные значения давления, не текущие измерения; они зависят от места и сезона.</string>
+</resources>

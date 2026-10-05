@@ -1,0 +1,11 @@
+<resources>
+    <string name="units_mass_density">Masa y densidad</string>
+    <string name="units_pressure">Presión</string>
+    <string name="units_pressure_description">Elige las unidades de presión atmosférica.</string>
+    <string name="units_pressure_bar">Bar</string>
+    <string name="units_pressure_pascal">Pascal</string>
+    <string name="celestial_pressure_surface">Presión atmosférica</string>
+    <string name="celestial_pressure_exosphere">Presión de la exosfera</string>
+    <string name="celestial_pressure_night_exosphere">Presión de la exosfera (noche)</string>
+    <string name="celestial_pressure_reference_note">Presiones de referencia, no mediciones actuales; pueden variar según el lugar y la estación.</string>
+</resources>

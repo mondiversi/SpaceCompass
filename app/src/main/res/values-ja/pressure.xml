@@ -1,0 +1,11 @@
+<resources>
+    <string name="units_mass_density">質量と密度</string>
+    <string name="units_pressure">気圧</string>
+    <string name="units_pressure_description">大気圧の単位を選択します。</string>
+    <string name="units_pressure_bar">バール</string>
+    <string name="units_pressure_pascal">パスカル</string>
+    <string name="celestial_pressure_surface">大気圧</string>
+    <string name="celestial_pressure_exosphere">外気圏の圧力</string>
+    <string name="celestial_pressure_night_exosphere">外気圏の圧力（夜間）</string>
+    <string name="celestial_pressure_reference_note">現在の測定値ではなく参考気圧です。場所や季節によって変動します。</string>
+</resources>

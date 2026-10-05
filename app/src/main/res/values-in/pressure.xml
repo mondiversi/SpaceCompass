@@ -1,0 +1,11 @@
+<resources>
+    <string name="units_mass_density">Massa dan massa jenis</string>
+    <string name="units_pressure">Tekanan</string>
+    <string name="units_pressure_description">Pilih satuan tekanan atmosfer.</string>
+    <string name="units_pressure_bar">Bar</string>
+    <string name="units_pressure_pascal">Pascal</string>
+    <string name="celestial_pressure_surface">Tekanan atmosfer</string>
+    <string name="celestial_pressure_exosphere">Tekanan eksosfer</string>
+    <string name="celestial_pressure_night_exosphere">Tekanan eksosfer (malam)</string>
+    <string name="celestial_pressure_reference_note">Nilai tekanan referensi, bukan pengukuran terkini; dapat berubah menurut lokasi dan musim.</string>
+</resources>

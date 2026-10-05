@@ -1,0 +1,11 @@
+<resources>
+    <string name="units_mass_density">Kütle ve yoğunluk</string>
+    <string name="units_pressure">Basınç</string>
+    <string name="units_pressure_description">Atmosfer basıncı birimlerini seçin.</string>
+    <string name="units_pressure_bar">Bar</string>
+    <string name="units_pressure_pascal">Paskal</string>
+    <string name="celestial_pressure_surface">Atmosfer basıncı</string>
+    <string name="celestial_pressure_exosphere">Ekzosfer basıncı</string>
+    <string name="celestial_pressure_night_exosphere">Ekzosfer basıncı (gece)</string>
+    <string name="celestial_pressure_reference_note">Referans basınç değerleridir, güncel ölçümler değildir; konuma ve mevsime göre değişebilir.</string>
+</resources>

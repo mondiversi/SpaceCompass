@@ -5,13 +5,13 @@ import org.junit.Test
 
 class SpaceCompassRegionalUnitsTest {
     @Test fun phoneRegionControlsDefaultsAndUnknownRegionUsesMetric() {
-        assertEquals(SpaceCompassUnits(true, "mmi", true, true, false, pounds = true), spaceCompassResolveUnits("US") { null })
+        assertEquals(SpaceCompassUnits(true, "mmi", true, true, false, pounds = true, pressure = SpaceCompassPressureUnit.PSI), spaceCompassResolveUnits("US") { null })
         for (region in listOf("IT", "GB", ""))
             assertEquals(SpaceCompassUnits(false, "mkm", false, false, false), spaceCompassResolveUnits(region) { "system" })
     }
     @Test fun explicitUnitsOverridePhoneDefaultsAndLegacyDistancesStayValid() {
         val choices = mapOf("speed" to "km", "distance" to "km", "altitude" to "m", "temperature" to "c", "coordinates" to "dms")
-        assertEquals(SpaceCompassUnits(false, "mkm", false, false, true, pounds = true), spaceCompassResolveUnits("US", choices::get))
+        assertEquals(SpaceCompassUnits(false, "mkm", false, false, true, pounds = true, pressure = SpaceCompassPressureUnit.PSI), spaceCompassResolveUnits("US", choices::get))
         assertEquals("mmi", spaceCompassResolveUnits("IT") { if (it == "distance") "mi" else null }.distance)
     }
     @Test fun selectedMillionUnitsKeepAstronomicalUnitsAlongside() {
@@ -24,7 +24,7 @@ class SpaceCompassRegionalUnitsTest {
     @Test fun unifiedChoiceOverridesEveryLegacyLengthAndSpeedChoice() {
         val oldImperial = mapOf("speed" to "mi", "distance" to "mmi", "altitude" to "ft")
         val metric = oldImperial + (SPACE_COMPASS_DISTANCE_SPEED_UNIT_KEY to "metric")
-        assertEquals(SpaceCompassUnits(false, "mkm", false, true, false, pounds = true), spaceCompassResolveUnits("US", metric::get))
+        assertEquals(SpaceCompassUnits(false, "mkm", false, true, false, pounds = true, pressure = SpaceCompassPressureUnit.PSI), spaceCompassResolveUnits("US", metric::get))
         val oldMetric = mapOf("speed" to "km", "distance" to "mkm", "altitude" to "m")
         val imperial = oldMetric + (SPACE_COMPASS_DISTANCE_SPEED_UNIT_KEY to "imperial")
         assertEquals(SpaceCompassUnits(true, "mmi", true, false, false), spaceCompassResolveUnits("IT", imperial::get))
@@ -33,7 +33,7 @@ class SpaceCompassRegionalUnitsTest {
     @Test fun unifiedSystemChoiceIgnoresLegacyOverridesAndFollowsDeviceRegion() {
         val saved = mapOf(SPACE_COMPASS_DISTANCE_SPEED_UNIT_KEY to "system", "distance" to "mmi", "altitude" to "ft", "speed" to "mi")
         assertEquals(SpaceCompassUnits(false, "mkm", false, false, false), spaceCompassResolveUnits("IT", saved::get))
-        assertEquals(SpaceCompassUnits(true, "mmi", true, true, false, pounds = true), spaceCompassResolveUnits("US", saved::get))
+        assertEquals(SpaceCompassUnits(true, "mmi", true, true, false, pounds = true, pressure = SpaceCompassPressureUnit.PSI), spaceCompassResolveUnits("US", saved::get))
     }
 
     @Test fun legacyMigrationHasDeterministicDistanceThenLengthThenSpeedPriority() {
@@ -59,6 +59,6 @@ class SpaceCompassRegionalUnitsTest {
 
     @Test fun temperatureAndCoordinatesRemainIndependentOfUnifiedLengthUnits() {
         val saved = mapOf(SPACE_COMPASS_DISTANCE_SPEED_UNIT_KEY to "imperial", "temperature" to "c", "coordinates" to "dms")
-        assertEquals(SpaceCompassUnits(true, "mmi", true, false, true, pounds = true), spaceCompassResolveUnits("US", saved::get))
+        assertEquals(SpaceCompassUnits(true, "mmi", true, false, true, pounds = true, pressure = SpaceCompassPressureUnit.PSI), spaceCompassResolveUnits("US", saved::get))
     }
 }

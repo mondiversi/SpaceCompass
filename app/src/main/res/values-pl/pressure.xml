@@ -1,0 +1,11 @@
+<resources>
+    <string name="units_mass_density">Masa i gęstość</string>
+    <string name="units_pressure">Ciśnienie</string>
+    <string name="units_pressure_description">Wybierz jednostki ciśnienia atmosferycznego.</string>
+    <string name="units_pressure_bar">Bar</string>
+    <string name="units_pressure_pascal">Paskal</string>
+    <string name="celestial_pressure_surface">Ciśnienie atmosferyczne</string>
+    <string name="celestial_pressure_exosphere">Ciśnienie egzosfery</string>
+    <string name="celestial_pressure_night_exosphere">Ciśnienie egzosfery (noc)</string>
+    <string name="celestial_pressure_reference_note">Referencyjne wartości ciśnienia, nie bieżące pomiary; mogą zależeć od miejsca i pory roku.</string>
+</resources>

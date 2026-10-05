@@ -1,0 +1,11 @@
+<resources>
+    <string name="units_mass_density">الكتلة والكثافة</string>
+    <string name="units_pressure">الضغط</string>
+    <string name="units_pressure_description">اختر وحدات الضغط الجوي.</string>
+    <string name="units_pressure_bar">بار</string>
+    <string name="units_pressure_pascal">باسكال</string>
+    <string name="celestial_pressure_surface">الضغط الجوي</string>
+    <string name="celestial_pressure_exosphere">ضغط الغلاف الخارجي</string>
+    <string name="celestial_pressure_night_exosphere">ضغط الغلاف الخارجي (ليلًا)</string>
+    <string name="celestial_pressure_reference_note">قيم ضغط مرجعية وليست قياسات حالية؛ قد تختلف حسب الموقع والموسم.</string>
+</resources>

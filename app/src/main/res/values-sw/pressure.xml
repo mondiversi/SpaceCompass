@@ -1,0 +1,11 @@
+<resources>
+    <string name="units_mass_density">Uzito na msongamano</string>
+    <string name="units_pressure">Shinikizo</string>
+    <string name="units_pressure_description">Chagua vipimo vya shinikizo la angahewa.</string>
+    <string name="units_pressure_bar">Baa</string>
+    <string name="units_pressure_pascal">Paskali</string>
+    <string name="celestial_pressure_surface">Shinikizo la angahewa</string>
+    <string name="celestial_pressure_exosphere">Shinikizo la eksosfera</string>
+    <string name="celestial_pressure_night_exosphere">Shinikizo la eksosfera (usiku)</string>
+    <string name="celestial_pressure_reference_note">Thamani za marejeleo za shinikizo, si vipimo vya sasa; zinaweza kubadilika kulingana na mahali na msimu.</string>
+</resources>

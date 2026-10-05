@@ -1,5 +1,18 @@
 # App presentation and preferences
 
+## Mass/density and pressure — version 0.1.7
+
+The Mass island is renamed Mass and density without changing its saved kg/lb
+choice. Pressure follows it in the unit list, with System, bar, pascal and psi.
+It has an icon, description and aligned unit examples in all twenty languages.
+Pressure has its own presentation preference and regional default, independently
+of length/mass/interface-language choices. The viewer shows a pressure row only
+for supported atmosphere/exosphere reference facts, with surface/night/upper-limit
+and constituent qualifications retained. The recent-news box now summarizes pressure.
+Scientific sources, unit definitions and excluded cases are in
+[ATMOSPHERIC_PRESSURE.md](ATMOSPHERIC_PRESSURE.md).
+
+
 ## Info and news — version 0.1.6
 
 The app-title destination is now called Info and news in all twenty languages.

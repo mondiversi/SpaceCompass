@@ -1,6 +1,6 @@
 <resources>
     <string name="info_news_title">Laatste nieuws · %1$s</string>
     <string name="info_news_units">Eenvoudigere afstands- en snelheidseenheden, een aparte keuze voor kilogrammen/ponden en consistente massa- en dichtheidswaarden.</string>
-    <string name="info_news_viewer">Duidelijkere bediening voor weergave en rotatie van hemelobjecten.</string>
+    <string name="info_news_pressure">Atmosferische druk waar gegevens beschikbaar zijn, met een aparte keuze voor bar, pascal of psi.</string>
     <string name="info_news_updates">Ondertekende GitHub-updates, gecontroleerd bij het opstarten of via het repositorygedeelte.</string>
 </resources>

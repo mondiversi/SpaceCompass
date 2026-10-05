@@ -1,0 +1,11 @@
+<resources>
+    <string name="units_mass_density">Massa en dichtheid</string>
+    <string name="units_pressure">Druk</string>
+    <string name="units_pressure_description">Kies de eenheden voor atmosferische druk.</string>
+    <string name="units_pressure_bar">Bar</string>
+    <string name="units_pressure_pascal">Pascal</string>
+    <string name="celestial_pressure_surface">Atmosferische druk</string>
+    <string name="celestial_pressure_exosphere">Exosfeerdruk</string>
+    <string name="celestial_pressure_night_exosphere">Exosfeerdruk (nacht)</string>
+    <string name="celestial_pressure_reference_note">Referentiedrukken, geen actuele metingen; ze kunnen variëren met plaats en seizoen.</string>
+</resources>

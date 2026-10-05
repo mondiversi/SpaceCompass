@@ -26,7 +26,7 @@ class SpaceCompassPresentationSettingsTest {
         assertEquals(SpaceCompassNumericFormat.SYSTEM, SpaceCompassNumericFormat.fromStoredValue(empty[SPACE_COMPASS_NUMERIC_FORMAT_KEY]))
         assertEquals(SpaceCompassDateFormat.SYSTEM, SpaceCompassDateFormat.fromStoredValue(empty[SPACE_COMPASS_DATE_FORMAT_KEY]))
         assertEquals(SpaceCompassTimeFormat.SYSTEM, SpaceCompassTimeFormat.fromStoredValue(empty[SPACE_COMPASS_TIME_FORMAT_KEY]))
-        assertEquals(SpaceCompassUnits(true, "mmi", true, true, false, pounds = true), spaceCompassResolveUnits("US", empty::get))
+        assertEquals(SpaceCompassUnits(true, "mmi", true, true, false, pounds = true, pressure = SpaceCompassPressureUnit.PSI), spaceCompassResolveUnits("US", empty::get))
         val migrated = spaceCompassDistanceSpeedPreference { if (it == "distance") "mi" else null }
         val restored = spaceCompassReadPresentationSettings { if (it == SPACE_COMPASS_DISTANCE_SPEED_UNIT_KEY) migrated else null }
         assertEquals(SpaceCompassUnits(true, "mmi", true, false, false), spaceCompassResolveUnits("IT", restored::get))

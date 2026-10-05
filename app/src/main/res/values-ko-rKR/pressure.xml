@@ -1,0 +1,11 @@
+<resources>
+    <string name="units_mass_density">질량과 밀도</string>
+    <string name="units_pressure">압력</string>
+    <string name="units_pressure_description">대기압 단위를 선택하세요.</string>
+    <string name="units_pressure_bar">바</string>
+    <string name="units_pressure_pascal">파스칼</string>
+    <string name="celestial_pressure_surface">대기압</string>
+    <string name="celestial_pressure_exosphere">외기권 압력</string>
+    <string name="celestial_pressure_night_exosphere">외기권 압력 (야간)</string>
+    <string name="celestial_pressure_reference_note">현재 측정값이 아닌 참고 압력이며, 위치와 계절에 따라 달라질 수 있습니다.</string>
+</resources>

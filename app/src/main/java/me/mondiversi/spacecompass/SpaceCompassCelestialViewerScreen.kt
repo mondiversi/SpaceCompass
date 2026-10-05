@@ -129,6 +129,12 @@ internal fun SpaceCompassCelestialViewerScreen(body: SpaceCompassCelestialBody, 
     val temperatureRows = if (temperatures.isEmpty()) listOf(
         stringResource(R.string.celestial_temperature) to "—"
     ) else temperatures.map { stringResource(it.kind.labelResource) to formatSpaceCompassCelestialTemperature(it, numeric, units.fahrenheit) }
+    val pressure = spaceCompassAtmosphericPressure(body)
+    val pressureRows = pressure?.let { reference ->
+        formatSpaceCompassAtmosphericPressure(reference, numeric, units.pressure)?.let {
+            listOf(stringResource(reference.kind.labelResource) to it)
+        }
+    } ?: emptyList()
     val rows = listOf(
         stringResource(R.string.celestial_view_diameter) to ((if (facts.diameterEstimated) "≈ " else "") + formatSpaceCompassPhysicalLength(facts.diameterKm?.times(1000), if (facts.diameterEstimated) 2 else 0, numeric, units.feet, large = true) +
             (facts.diameterErrorPlusKm?.let { " (+${formatSpaceCompassPhysicalLength(it * 1000, 2, numeric, units.feet, large = true)} / −${formatSpaceCompassPhysicalLength(facts.diameterErrorMinusKm?.times(1000), 2, numeric, units.feet, large = true)})" } ?: facts.diameterErrorKm?.let { " (±${formatSpaceCompassPhysicalLength(it * 1000, 0, numeric, units.feet, large = true)})" } ?: "")),
@@ -138,7 +144,7 @@ internal fun SpaceCompassCelestialViewerScreen(body: SpaceCompassCelestialBody, 
             siFractionDigits = if (body == SpaceCompassCelestialBody.POLARIS) 2 else 1),
         stringResource(R.string.celestial_view_density) to formatSpaceCompassCelestialDensity(facts.density, numeric, units,
             fractionDigits = if (body == SpaceCompassCelestialBody.POLARIS) 3 else 0),
-    ) + temperatureRows + listOf(
+    ) + pressureRows + temperatureRows + listOf(
         stringResource(R.string.celestial_view_parent) to when {
             facts.parentName != null -> facts.parentName
             facts.parentIsEarth -> stringResource(R.string.celestial_view_earth)
@@ -249,6 +255,11 @@ internal fun SpaceCompassCelestialViewerScreen(body: SpaceCompassCelestialBody, 
             } }
             HorizontalDivider(color = secondaryText.copy(alpha = 0.22f))
             Text(stringResource(if (body == SpaceCompassCelestialBody.EARTH_CENTER) R.string.celestial_earth_center_note else R.string.celestial_view_facts_note), color = secondaryText, fontSize = 11.sp, lineHeight = 14.sp)
+            if (pressureRows.isNotEmpty()) {
+                Text(stringResource(R.string.celestial_pressure_reference_note), color = secondaryText,
+                    fontSize = 11.sp, lineHeight = 14.sp)
+                if (body.isJovianMoon) Text("Bagenal & Dols (2020)", color = secondaryText, fontSize = 10.sp, lineHeight = 13.sp)
+            }
             if (temperatures.isNotEmpty()) Text(stringResource(R.string.celestial_temperature_note),
                 color = secondaryText, fontSize = 11.sp, lineHeight = 14.sp)
             if (spaceCompassUsesSolarMass(body, facts) && (facts.massSolar != null || facts.massKg != null))

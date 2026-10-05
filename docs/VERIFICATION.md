@@ -4,10 +4,10 @@
 
 | Check | Result |
 | --- | --- |
-| Debug APK build | Passed, version 0.1.6 |
-| Release APK build | Passed, version 0.1.6 |
+| Debug APK build | Passed, version 0.1.7 |
+| Release APK build | Passed, version 0.1.7 |
 | Release lint | Completed, 0 errors; remaining findings retained in reports |
-| JVM unit tests | 409 passed, 0 failures |
+| JVM unit tests | 418 passed, 0 failures |
 | Android instrumentation sources | Compiled; not executed |
 | Phone UI checks | Samsung SM-G970U1, Android 12 / API 31 |
 | Tablet UI checks | Pixel Tablet emulator, Android 15 / API 35 |
@@ -32,6 +32,29 @@ The repository contains no signing key or local SDK configuration. GitHub APK di
 No Play Store submission is part of this release.
 The current CI result is available on the repository's Actions page; the local
 results above do not stand in for a successful hosted run.
+
+## Atmospheric pressure — version 0.1.7
+
+Nine new JVM tests cover exact bar/Pa/psi conversion, regional defaults and explicit
+pressure independence, saved preference observation/reload, invalid data omission,
+published pressure scales, supported/unsupported bodies, qualified upper/night
+limits, negative exponents and localized numeric conventions. All 418 JVM tests,
+debug/release builds, instrumentation-source compilation and release lint passed;
+lint reported zero errors. The instrumentation suite was not executed.
+
+All twenty interface languages have complete translatable-string parity, including
+nine new pressure/mass-density labels and the recent-news summary. The pressure
+island follows mass/density and uses the shared island/radio/example layout.
+Atmospheric/exosphere reference data and exclusions are documented in
+[ATMOSPHERIC_PRESSURE.md](ATMOSPHERIC_PRESSURE.md).
+
+The signed candidate was checked on the Android 15 tablet using synthetic GPS:
+Moon pressure conversions to bar, Pa and psi; retained kg/m³ density; process
+restart preserving PSI and active Moon; missing Sun pressure row; pressure radio
+choices in light/dark themes and portrait/landscape. System pressure, original
+theme, free rotation and active Sun were restored. The final distribution package
+is rebuilt from the committed source; final phone/tablet installation is recorded
+in the release notes. No new phone UI result is implied by tablet checks.
 
 ## Info and news — version 0.1.6
 

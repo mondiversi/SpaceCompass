@@ -1,0 +1,11 @@
+<resources>
+    <string name="units_mass_density">Masse und Dichte</string>
+    <string name="units_pressure">Druck</string>
+    <string name="units_pressure_description">Wähle die Einheiten für den Atmosphärendruck.</string>
+    <string name="units_pressure_bar">Bar</string>
+    <string name="units_pressure_pascal">Pascal</string>
+    <string name="celestial_pressure_surface">Atmosphärendruck</string>
+    <string name="celestial_pressure_exosphere">Exosphärendruck</string>
+    <string name="celestial_pressure_night_exosphere">Exosphärendruck (Nacht)</string>
+    <string name="celestial_pressure_reference_note">Referenzdrücke, keine aktuellen Messungen; sie können mit Ort und Jahreszeit variieren.</string>
+</resources>

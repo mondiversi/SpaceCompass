@@ -1,6 +1,6 @@
 <resources>
     <string name="info_news_title">Mambo mapya · %1$s</string>
     <string name="info_news_units">Vipimo rahisi vya umbali na kasi, chaguo tofauti la kilogramu/pauni na thamani zinazolingana za uzito na msongamano.</string>
-    <string name="info_news_viewer">Vidhibiti vilivyo wazi zaidi vya mwonekano na mzunguko wa vitu vya angani.</string>
+    <string name="info_news_pressure">Shinikizo la angahewa pale data inapopatikana, na chaguo tofauti la baa, paskali au psi.</string>
     <string name="info_news_updates">Masasisho yaliyotiwa saini kutoka GitHub, yanayokaguliwa wakati wa kufungua au katika sehemu ya hifadhi.</string>
 </resources>

@@ -1,0 +1,11 @@
+<resources>
+    <string name="units_mass_density">جرم و چگالی</string>
+    <string name="units_pressure">فشار</string>
+    <string name="units_pressure_description">واحدهای فشار جو را انتخاب کنید.</string>
+    <string name="units_pressure_bar">بار</string>
+    <string name="units_pressure_pascal">پاسکال</string>
+    <string name="celestial_pressure_surface">فشار جو</string>
+    <string name="celestial_pressure_exosphere">فشار برون‌سپهر</string>
+    <string name="celestial_pressure_night_exosphere">فشار برون‌سپهر (شب)</string>
+    <string name="celestial_pressure_reference_note">فشارهای مرجع، نه اندازه‌گیری‌های فعلی؛ ممکن است با مکان و فصل تغییر کنند.</string>
+</resources>

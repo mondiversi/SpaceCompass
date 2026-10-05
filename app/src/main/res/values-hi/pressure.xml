@@ -1,0 +1,11 @@
+<resources>
+    <string name="units_mass_density">द्रव्यमान और घनत्व</string>
+    <string name="units_pressure">दाब</string>
+    <string name="units_pressure_description">वायुमंडलीय दाब की इकाइयाँ चुनें।</string>
+    <string name="units_pressure_bar">बार</string>
+    <string name="units_pressure_pascal">पास्कल</string>
+    <string name="celestial_pressure_surface">वायुमंडलीय दाब</string>
+    <string name="celestial_pressure_exosphere">बहिर्मंडल का दाब</string>
+    <string name="celestial_pressure_night_exosphere">बहिर्मंडल का दाब (रात)</string>
+    <string name="celestial_pressure_reference_note">दाब के संदर्भ मान, वर्तमान माप नहीं; ये स्थान और ऋतु के साथ बदल सकते हैं।</string>
+</resources>

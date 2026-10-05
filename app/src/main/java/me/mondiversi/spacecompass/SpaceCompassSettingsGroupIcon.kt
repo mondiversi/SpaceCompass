@@ -172,6 +172,15 @@ internal fun SpaceCompassSettingsGroupIcon(key: String, tint: Color) {
                 }
                 drawPath(weight, tint, style = outline)
             }
+            SPACE_COMPASS_PRESSURE_UNIT_KEY -> {
+                drawCircle(tint, size.minDimension * .36f, center, style = outline)
+                for (x in listOf(.27f, .5f, .73f)) {
+                    val y = if (x == .5f) .18f else .29f
+                    drawLine(tint, point(x, y), point(x, y + .10f), strokeWidth, StrokeCap.Round)
+                }
+                drawLine(tint, center, point(.68f, .35f), strokeWidth, StrokeCap.Round)
+                drawCircle(tint, size.minDimension * .06f, center)
+            }
             "temperature" -> {
                 drawRoundRect(tint, point(.4f, .1f), Size(size.width * .2f, size.height * .58f), CornerRadius(size.width * .1f), style = outline)
                 drawCircle(tint, size.minDimension * .17f, point(.5f, .74f), style = outline)

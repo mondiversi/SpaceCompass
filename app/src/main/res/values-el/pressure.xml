@@ -1,0 +1,11 @@
+<resources>
+    <string name="units_mass_density">Μάζα και πυκνότητα</string>
+    <string name="units_pressure">Πίεση</string>
+    <string name="units_pressure_description">Επιλέξτε τις μονάδες ατμοσφαιρικής πίεσης.</string>
+    <string name="units_pressure_bar">Bar</string>
+    <string name="units_pressure_pascal">Πασκάλ</string>
+    <string name="celestial_pressure_surface">Ατμοσφαιρική πίεση</string>
+    <string name="celestial_pressure_exosphere">Πίεση εξώσφαιρας</string>
+    <string name="celestial_pressure_night_exosphere">Πίεση εξώσφαιρας (νύχτα)</string>
+    <string name="celestial_pressure_reference_note">Τιμές πίεσης αναφοράς, όχι τρέχουσες μετρήσεις· μπορεί να διαφέρουν ανά τόπο και εποχή.</string>
+</resources>
