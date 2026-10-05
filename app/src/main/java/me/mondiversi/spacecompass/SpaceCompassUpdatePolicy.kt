@@ -118,3 +118,7 @@ internal object SpaceCompassUpdatePolicy {
 
     private fun hex(bytes: ByteArray): String = bytes.joinToString("") { "%02x".format(it.toInt() and 255) }
 }
+
+/** A restored Activity in a fresh process is still an app startup; recreation in a live process is not. */
+internal fun spaceCompassShouldCheckOnLaunch(processStarted: Boolean, freshLaunch: Boolean): Boolean =
+    !processStarted || freshLaunch

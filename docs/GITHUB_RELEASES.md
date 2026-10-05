@@ -15,7 +15,7 @@ Install subsequent releases over the existing installation to retain app-private
 settings, selected objects, the active target, filters, sorting and cached data.
 Do not clear app data or uninstall as part of a normal update. Published updates
 must retain the application ID and compatible signing certificate and increase
-`versionCode`. From v0.1.1 the app checks public GitHub releases at every fresh
+`versionCode`. From v0.1.2 the app checks public GitHub releases at every fresh
 launch, including preview releases, and offers a newer compatible version.
 The Repository island provides separate **Open repository** and **Check for updates**
 buttons. Startup failures remain silent; manual checks provide localized feedback.

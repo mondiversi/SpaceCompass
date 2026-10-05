@@ -19,7 +19,7 @@ class MainActivity : ComponentActivity() {
         super.onCreate(savedInstanceState)
         SpaceCompassErrorLog.install(applicationContext)
         enableEdgeToEdge()
-        if (savedInstanceState == null) SpaceCompassUpdates.check(applicationContext, manual = false)
+        SpaceCompassUpdates.start(applicationContext, freshLaunch = savedInstanceState == null)
         setContent {
             SpaceCompassPreferences {
                 val dark = isSystemInDarkTheme()

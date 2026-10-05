@@ -1,6 +1,8 @@
 # App updates
 
-From 0.1.1, Space Compass performs a silent check on each fresh Activity launch.
+From 0.1.2, Space Compass performs a silent check on each fresh Activity launch,
+including an Activity restored in a fresh process. Recreation inside a live process
+does not duplicate that check.
 Returning from an internal page does not restart the check or the main compass.
 The Information page has separate repository-open and manual-update-check actions.
 Only a newer compatible release opens the global **Updates available** dialog.
@@ -33,10 +35,10 @@ The decoded payload has this schema (replace example size/hash with the final AP
   "repository": "mondiversi/SpaceCompass",
   "app": {
     "package": "me.mondiversi.spacecompass",
-    "version": "0.1.1",
-    "code": 2,
+    "version": "0.1.2",
+    "code": 3,
     "min_sdk": 26,
-    "url": "https://github.com/mondiversi/SpaceCompass/releases/download/v0.1.1/space-compass-0.1.1.apk",
+    "url": "https://github.com/mondiversi/SpaceCompass/releases/download/v0.1.2/space-compass-0.1.2.apk",
     "bytes": 12345678,
     "sha256": "replace-with-64-lowercase-hex-digits"
   }

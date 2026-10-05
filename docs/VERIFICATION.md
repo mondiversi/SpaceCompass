@@ -4,10 +4,10 @@
 
 | Check | Result |
 | --- | --- |
-| Debug APK build | Passed, version 0.1.1 |
-| Release APK build | Passed, version 0.1.1 |
+| Debug APK build | Passed, version 0.1.2 |
+| Release APK build | Passed, version 0.1.2 |
 | Release lint | Completed, 0 errors; remaining findings retained in reports |
-| JVM unit tests | 394 passed, 0 failures |
+| JVM unit tests | 395 passed, 0 failures |
 | Android instrumentation sources | Compiled; not executed |
 | Phone UI checks | Samsung SM-G970U1, Android 12 / API 31 |
 | Tablet UI checks | Pixel Tablet emulator, Android 15 / API 35 |
@@ -33,15 +33,15 @@ No Play Store submission is part of this release.
 The current CI result is available on the repository's Actions page; the local
 results above do not stand in for a successful hosted run.
 
-## GitHub updater checks — version 0.1.1
+## GitHub updater checks — version 0.1.2
 
-The update feature adds 13 JVM checks covering signature tampering, different
+The update feature adds 14 JVM checks covering signature tampering, different
 signing keys, downgrade prevention, Android compatibility, restricted HTTPS URLs,
 truncated/oversized/checksum-invalid transfers and interrupted-download cleanup.
 The twenty-language resource-parity/placeholder checks also passed.
 
 Repository buttons and the real manual update check were verified in landscape
-on the Android 15 tablet emulator. The signed 0.1.1 APK was installed as an update
+on the Android 15 tablet emulator. The signed 0.1.2 APK was installed as an update
 on the Android 12 Samsung phone, retaining data; the phone was locked during the
 new Repository UI attempt, so that attempt is not reported as a passed UI check.
 The earlier phone checks above describe the previous layout baseline.
@@ -60,7 +60,7 @@ historical and do not supersede the current development checks.
 
 | Check | Space Compass | UVIR after removal |
 | --- | --- | --- |
-| Debug APK build | Passed, version 0.1.1 | Passed, version 1.3.0 |
+| Debug APK build | Passed, version 0.1.2 | Passed, version 1.3.0 |
 | JVM unit tests | 331 passed, 0 failures | 564 passed, 0 failures |
 | Android instrumentation sources | Compiled | Compiled |
 | Android lint | 0 errors, 52 warnings | Not rerun in this extraction |

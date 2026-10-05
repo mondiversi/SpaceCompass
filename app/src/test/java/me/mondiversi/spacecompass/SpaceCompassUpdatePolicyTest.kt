@@ -11,6 +11,13 @@ import org.junit.rules.TemporaryFolder
 
 class SpaceCompassUpdatePolicyTest {
     @get:Rule val temporary = TemporaryFolder()
+    @Test fun restoredColdProcessStillChecksButLiveActivityRecreationDoesNotDuplicateIt() {
+        assertTrue(spaceCompassShouldCheckOnLaunch(processStarted = false, freshLaunch = false))
+        assertTrue(spaceCompassShouldCheckOnLaunch(processStarted = false, freshLaunch = true))
+        assertTrue(spaceCompassShouldCheckOnLaunch(processStarted = true, freshLaunch = true))
+        assertFalse(spaceCompassShouldCheckOnLaunch(processStarted = true, freshLaunch = false))
+    }
+
     private val abcHash = "ba7816bf8f01cfea414140de5dae2223b00361a396177a9cb410ff61f20015ad"
     private fun release(code: Long, sdk: Int = 26, version: String = "0.1.$code") = SpaceCompassVerifiedRelease(
         SpaceCompassAppRelease(version, code, sdk,

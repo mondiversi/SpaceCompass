@@ -32,6 +32,14 @@ internal object SpaceCompassUpdates {
     private val scope = CoroutineScope(SupervisorJob() + Dispatchers.Main.immediate)
     private val mutableState = MutableStateFlow(SpaceCompassUpdateState())
     val state = mutableState.asStateFlow()
+    private var processStarted = false
+
+    fun start(context: Context, freshLaunch: Boolean) {
+        if (spaceCompassShouldCheckOnLaunch(processStarted, freshLaunch)) {
+            processStarted = true
+            check(context, manual = false)
+        }
+    }
 
     fun check(context: Context, manual: Boolean) {
         if (state.value.checking || state.value.busy) return
