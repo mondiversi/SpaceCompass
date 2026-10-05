@@ -1,0 +1,10 @@
+<resources>
+    <string name="format_speed_description">Hız birimini seçin.</string>
+    <string name="format_astronomical_distance_description">Astronomik mesafeler için birimi seçin.</string>
+    <string name="format_normal_distance_description">Yakın mesafeler, rakım ve GPS doğruluğu için metrik veya İngiliz birimlerini seçin.</string>
+    <string name="format_temperature_description">Sıcaklık birimini seçin.</string>
+    <string name="format_coordinates_description">Koordinat biçimini seçin.</string>
+    <string name="format_numeric_description">Sayı biçimini seçin.</string>
+    <string name="format_date_description">Tarih biçimini seçin.</string>
+    <string name="format_time_description">Saat biçimini seçin.</string>
+</resources>

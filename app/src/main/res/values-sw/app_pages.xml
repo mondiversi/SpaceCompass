@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="pc_info">Maelezo</string>
+    <string name="pc_display_automatic">Kubadilisha ukubwa kiotomatiki</string>
+    <string name="pc_info_description">Dira ya anga ya kutafuta vitu vya angani, kuchunguza njia zao na kuona modeli na awamu za Mwezi.</string>
+    <string name="pc_info_earth">Imeundwa kwa Dunia: ukiwa angani, ni bora kumwuliza mwanaanga njia 🙂</string>
+    <string name="pc_info_compass">Usahihi wa dira</string>
+    <string name="pc_info_accuracy">Usahihi mdogo unamaanisha simu inaripoti kiwango cha chini cha urekebishaji wa sumaku. Mwelekeo hubaki wa kukadiria hadi usahihi wa kihisi uboreshwe.</string>
+    <string name="pc_info_credits">Vyanzo na leseni</string>
+    <string name="pc_info_credits_detail">Ramani ni picha za marejeleo, si picha za moja kwa moja. Leseni na taarifa za vyanzo asili zimejumuishwa kwenye programu.</string>
+    <string name="settings_theme_description">Chagua mandhari ya programu ili kubinafsisha mwonekano wa maudhui.</string>
+    <string name="language_description">Chagua lugha ya kiolesura.</string>
+    <string name="github_repository_title">Malipo ya GitHub</string>
+    <string name="about_copyright">Hakimiliki © 2026 Mondiversi</string>
+</resources>

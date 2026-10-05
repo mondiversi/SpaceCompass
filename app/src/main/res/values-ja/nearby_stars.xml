@@ -1,0 +1,6 @@
+<resources>
+    <string name="celestial_proxima_centauri">プロキシマ・ケンタウリ</string>
+    <string name="celestial_rigel">リゲル</string>
+    <string name="celestial_proxima_note">太陽に最も近い恒星である赤色矮星。参考推定値です。重力と密度は計算値で、図は模式図です。</string>
+    <string name="celestial_rigel_note">青色超巨星。データはリゲルAのもので、質量と大きさは推定値です。模式図です。</string>
+</resources>

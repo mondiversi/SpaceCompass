@@ -1,0 +1,5 @@
+<resources>
+    <string name="celestial_trappist_1_e">TRAPPIST-1 e</string>
+    <string name="catalog_type_exoplanet">Экзопланеты</string>
+    <string name="celestial_trappist_note">Экзопланета размером с Землю в обитаемой зоне. Атмосфера и жизнь не подтверждены. Направление указывает на звезду TRAPPIST-1; планета отдельно не разрешается. Символическое изображение; гравитация рассчитана, температура поверхности неизвестна.</string>
+</resources>

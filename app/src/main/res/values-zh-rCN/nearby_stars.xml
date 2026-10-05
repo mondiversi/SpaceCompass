@@ -1,0 +1,6 @@
+<resources>
+    <string name="celestial_proxima_centauri">比邻星</string>
+    <string name="celestial_rigel">参宿七</string>
+    <string name="celestial_proxima_note">距离太阳最近的恒星，是一颗红矮星。数据为参考估计，重力和密度为推算值。图像为示意图。</string>
+    <string name="celestial_rigel_note">蓝超巨星：数据指参宿七A，质量与大小为估计值。示意图。</string>
+</resources>

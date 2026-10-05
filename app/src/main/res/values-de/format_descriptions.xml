@@ -1,0 +1,10 @@
+<resources>
+    <string name="format_speed_description">Wähle die Geschwindigkeitseinheit.</string>
+    <string name="format_astronomical_distance_description">Wähle die Einheit für astronomische Entfernungen.</string>
+    <string name="format_normal_distance_description">Wähle metrische oder imperiale Einheiten für nahe Entfernungen, Höhe und GPS-Genauigkeit.</string>
+    <string name="format_temperature_description">Wähle die Temperatureinheit.</string>
+    <string name="format_coordinates_description">Wähle das Koordinatenformat.</string>
+    <string name="format_numeric_description">Wählen Sie das Zahlenformat.</string>
+    <string name="format_date_description">Wählen Sie das Datumsformat.</string>
+    <string name="format_time_description">Wählen Sie das Zeitformat.</string>
+</resources>

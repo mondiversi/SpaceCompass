@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="settings_section_display">Görüntüleme</string>
+    <string name="settings_theme_title">Tema</string>
+    <string name="settings_theme_default">Varsayılan</string>
+    <string name="settings_theme_light">Açık</string>
+    <string name="settings_theme_dark">Koyu</string>
+    <string name="settings_display_unavailable">Bu özellik henüz kullanılamıyor.</string>
+    <string name="format_numbers_heading">Sayılar</string>
+    <string name="format_date_time_heading">Tarih</string>
+    <string name="format_time_heading">Saat</string>
+    <string name="time_format_24_hours">24 saat</string>
+    <string name="time_format_12_hours">12 saat</string>
+    <string name="date_format_american">Amerikan</string>
+    <string name="numeric_format_system">Varsayılan</string>
+    <string name="numeric_format_international">Uluslararası</string>
+    <string name="numeric_format_european">Avrupa</string>
+    <string name="settings_section_language">Dil</string>
+    <string name="language_system">Varsayılan</string>
+    <string name="settings_section_appearance">Görünüm</string>
+    <string name="settings_section_language_formats">Biçimler</string>
+    <string name="pc_settings">Ayarlar</string>
+    <string name="pc_loading">Yükleniyor…</string>
+    <string name="pc_speed">Hız</string>
+    <string name="pc_distance">Mesafe</string>
+    <string name="pc_temperature">Sıcaklık</string>
+    <string name="pc_altitude">Rakım ve GPS doğruluğu</string>
+    <string name="pc_coordinates">Koordinatlar</string>
+    <string name="pc_decimal_degrees">Ondalık derece</string>
+    <string name="pc_dms">Derece, dakika, saniye</string>
+    <string name="pc_compass_approximate">Düşük doğruluk</string>
+</resources>

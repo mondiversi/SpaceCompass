@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="pc_info">Informasi</string>
+    <string name="pc_display_automatic">Penskalaan otomatis</string>
+    <string name="pc_info_description">Kompas astronomi untuk menemukan benda langit, menjelajahi lintasannya, serta melihat model dan fase Bulan.</string>
+    <string name="pc_info_earth">Dirancang untuk Bumi: di luar angkasa, lebih baik bertanya arah kepada astronaut 🙂</string>
+    <string name="pc_info_compass">Akurasi kompas</string>
+    <string name="pc_info_accuracy">Akurasi rendah berarti ponsel melaporkan kalibrasi magnetik rendah. Arah tetap berupa perkiraan sampai akurasi sensor membaik.</string>
+    <string name="pc_info_credits">Kredit dan lisensi</string>
+    <string name="pc_info_credits_detail">Peta adalah gambar referensi, bukan foto langsung. Lisensi dan atribusi asli disertakan dalam aplikasi.</string>
+    <string name="settings_theme_description">Pilih tema aplikasi untuk menyesuaikan tampilan konten.</string>
+    <string name="language_description">Pilih bahasa antarmuka.</string>
+    <string name="github_repository_title">Repositori GitHub</string>
+    <string name="about_copyright">Hak cipta © 2026 Mondiversi</string>
+</resources>

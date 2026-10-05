@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="settings_section_display">Visualizzazione</string>
+    <string name="settings_theme_title">Tema</string>
+    <string name="settings_theme_default">Predefinito</string>
+    <string name="settings_theme_light">Chiaro</string>
+    <string name="settings_theme_dark">Scuro</string>
+    <string name="settings_display_unavailable">Questa funzionalità non è ancora disponibile.</string>
+    <string name="format_numbers_heading">Numeri</string>
+    <string name="format_date_time_heading">Data</string>
+    <string name="format_time_heading">Ora</string>
+    <string name="time_format_24_hours">24 ore</string>
+    <string name="time_format_12_hours">12 ore</string>
+    <string name="date_format_american">Americano</string>
+    <string name="numeric_format_system">Predefinito</string>
+    <string name="numeric_format_international">Internazionale</string>
+    <string name="numeric_format_european">Europeo</string>
+    <string name="settings_section_language">Lingua</string>
+    <string name="language_system">Predefinito</string>
+    <string name="settings_section_appearance">Aspetto</string>
+    <string name="settings_section_language_formats">Formati</string>
+    <string name="pc_settings">Impostazioni</string>
+    <string name="pc_loading">Caricamento…</string>
+    <string name="pc_speed">Velocità</string>
+    <string name="pc_distance">Distanza</string>
+    <string name="pc_temperature">Temperatura</string>
+    <string name="pc_altitude">Altitudine e precisione GPS</string>
+    <string name="pc_coordinates">Coordinate</string>
+    <string name="pc_decimal_degrees">Gradi decimali</string>
+    <string name="pc_dms">Gradi, minuti, secondi</string>
+    <string name="pc_compass_approximate">Precisione ridotta</string>
+</resources>

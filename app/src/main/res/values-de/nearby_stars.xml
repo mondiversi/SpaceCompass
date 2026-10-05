@@ -1,0 +1,6 @@
+<resources>
+    <string name="celestial_proxima_centauri">Proxima Centauri</string>
+    <string name="celestial_rigel">Rigel</string>
+    <string name="celestial_proxima_note">Roter Zwerg und nächster Stern zur Sonne. Referenzschätzungen; Schwerkraft und Dichte sind abgeleitet. Symbolische Darstellung.</string>
+    <string name="celestial_rigel_note">Blauer Überriese: Daten für Rigel A. Masse und Größe sind Schätzungen. Symbolische Darstellung.</string>
+</resources>

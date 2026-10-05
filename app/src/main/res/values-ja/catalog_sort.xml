@@ -1,0 +1,7 @@
+<resources>
+    <string name="catalog_sort">並べ替え</string>
+    <string name="catalog_sort_alphabetical">名前順</string>
+    <string name="catalog_sort_ascending">昇順</string>
+    <string name="catalog_sort_descending">降順</string>
+    <string name="catalog_sort_original">デフォルト</string>
+</resources>

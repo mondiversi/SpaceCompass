@@ -1,0 +1,22 @@
+<resources>
+    <string name="catalog_type_planet">Planeten</string>
+    <string name="catalog_type_dwarf">Dwergplaneten en kandidaten</string>
+    <string name="catalog_type_moon">Natuurlijke satellieten</string>
+    <string name="catalog_type_star">Sterren</string>
+    <string name="catalog_type_black_hole">Zwarte gaten</string>
+    <string name="catalog_type_neutron">Neutronensterren en pulsars</string>
+    <string name="catalog_type_station">Ruimtestations</string>
+    <string name="catalog_type_satellite">Kunstmatige satellieten</string>
+    <string name="catalog_type_probe">Ruimtesondes</string>
+    <string name="catalog_filters">Filters</string>
+    <string name="catalog_reset_filters">Filters wissen</string>
+    <string name="catalog_filter_type">Type</string>
+    <string name="catalog_visibility">Zichtbaarheid</string>
+    <string name="catalog_all">Alle</string>
+    <string name="catalog_above_horizon">Boven de horizon</string>
+    <string name="catalog_below_horizon">Onder de horizon</string>
+    <string name="catalog_no_results">Geen objecten komen overeen met de filters.</string>
+    <string name="celestial_earth_center">Middelpunt van de aarde</string>
+    <string name="celestial_earth_center_note">Geometrisch referentiepunt onder je voeten, niet de aardkern. De afstand wordt gemeten vanaf de waarnemer.</string>
+    <string name="catalog_distance_from_sun">Afstand tot de zon</string>
+</resources>

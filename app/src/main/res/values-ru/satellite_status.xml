@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+  <string name="celestial_satellite_unavailable">Данные для %1$s недоступны. CelesTrak может быть недоступен даже при работающем подключении к Интернету.</string>
+  <string name="celestial_satellite_timeout">CelesTrak не ответил вовремя: не удалось загрузить данные для %1$s. Попробуйте другую сеть.</string>
+  <string name="celestial_starlink_unavailable">Данные для %1$s недоступны. CelesTrak / Satcat может быть недоступен даже при работающем подключении к Интернету.</string>
+  <string name="celestial_starlink_timeout">CelesTrak / Satcat не ответил вовремя: не удалось загрузить данные для %1$s. Попробуйте другую сеть.</string>
+</resources>

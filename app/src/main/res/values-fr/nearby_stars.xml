@@ -1,0 +1,6 @@
+<resources>
+    <string name="celestial_proxima_centauri">Proxima Centauri</string>
+    <string name="celestial_rigel">Rigel</string>
+    <string name="celestial_proxima_note">Naine rouge, étoile la plus proche du Soleil. Estimations de référence ; gravité et densité calculées. Illustration symbolique.</string>
+    <string name="celestial_rigel_note">Supergéante bleue : données de Rigel A. Masse et dimensions estimées. Illustration symbolique.</string>
+</resources>

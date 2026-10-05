@@ -1,0 +1,10 @@
+<resources>
+    <string name="format_speed_description">选择速度单位。</string>
+    <string name="format_astronomical_distance_description">选择天文距离单位。</string>
+    <string name="format_normal_distance_description">为近距离、海拔和 GPS 精度选择公制或英制单位。</string>
+    <string name="format_temperature_description">选择温度单位。</string>
+    <string name="format_coordinates_description">选择坐标格式。</string>
+    <string name="format_numeric_description">选择数字格式。</string>
+    <string name="format_date_description">选择日期格式。</string>
+    <string name="format_time_description">选择时间格式。</string>
+</resources>

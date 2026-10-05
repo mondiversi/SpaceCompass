@@ -2,6 +2,6 @@
 <resources>
     <string name="celestial_point_time">%1$s · %2$s</string>
     <string name="celestial_point_number">Punto %1$d</string>
-    <string name="celestial_current_position">Posizione attuale</string>
+    <string name="celestial_current_position">Attuale</string>
     <string name="celestial_point_current">Attuale</string>
 </resources>

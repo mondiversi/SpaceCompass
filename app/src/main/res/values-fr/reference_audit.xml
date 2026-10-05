@@ -1,0 +1,7 @@
+<resources>
+    <string name="celestial_spectral_type">Type spectral</string>
+    <string name="celestial_horizon_diameter">Diamètre de l’horizon (2rₛ)</string>
+    <string name="celestial_reference_estimates_note">Estimations de référence, sans mesure en temps réel. 2rₛ suppose un trou noir sans rotation ; le diamètre du pulsar est équatorial.</string>
+    <string name="celestial_mass_unavailable_note">Masse actuelle fiable indisponible ; la perte de masse n’est pas la masse totale.</string>
+    <string name="celestial_luminosity">Luminosité</string>
+</resources>

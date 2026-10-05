@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="pc_info">정보</string>
+    <string name="pc_display_automatic">자동 크기 조정</string>
+    <string name="pc_info_description">천체를 찾고 궤적을 탐색하며 모델과 달의 위상을 관찰하는 천문 나침반입니다.</string>
+    <string name="pc_info_earth">지구에서 사용하도록 만들었습니다. 우주에서는 우주비행사에게 길을 물어보세요 🙂</string>
+    <string name="pc_info_compass">나침반 정확도</string>
+    <string name="pc_info_accuracy">정확도 낮음은 휴대전화가 낮은 자기 보정 수준을 보고한다는 뜻입니다. 센서 정확도가 개선될 때까지 방향은 대략적입니다.</string>
+    <string name="pc_info_credits">출처 및 라이선스</string>
+    <string name="pc_info_credits_detail">지도는 참고 이미지이며 실시간 사진이 아닙니다. 원본 라이선스와 출처 정보가 앱에 포함되어 있습니다.</string>
+    <string name="settings_theme_description">앱의 테마를 선택해 콘텐츠의 표시 스타일을 조정하세요.</string>
+    <string name="language_description">인터페이스 언어를 선택하세요.</string>
+    <string name="github_repository_title">GitHub 저장소</string>
+    <string name="about_copyright">저작권 © 2026 Mondiversi</string>
+</resources>

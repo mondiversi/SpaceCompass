@@ -1,0 +1,6 @@
+<resources>
+    <string name="celestial_proxima_centauri">프록시마 센타우리</string>
+    <string name="celestial_rigel">리겔</string>
+    <string name="celestial_proxima_note">태양에서 가장 가까운 별인 적색 왜성입니다. 기준 추정값이며 중력과 밀도는 계산값입니다. 상징적 그림입니다.</string>
+    <string name="celestial_rigel_note">청색 초거성: 데이터는 리겔 A에 해당합니다. 질량과 크기는 추정값입니다. 상징적 그림입니다.</string>
+</resources>

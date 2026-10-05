@@ -1,0 +1,7 @@
+<resources>
+    <string name="celestial_spectral_type">Φασματικός τύπος</string>
+    <string name="celestial_horizon_diameter">Διάμετρος ορίζοντα (2rₛ)</string>
+    <string name="celestial_reference_estimates_note">Εκτιμήσεις αναφοράς, όχι ζωντανές μετρήσεις. Το 2rₛ υποθέτει μη περιστρεφόμενη μαύρη τρύπα· η διάμετρος του πάλσαρ είναι ισημερινή.</string>
+    <string name="celestial_mass_unavailable_note">Δεν υπάρχει αξιόπιστη τρέχουσα μάζα· η απώλεια μάζας δεν είναι η συνολική μάζα.</string>
+    <string name="celestial_luminosity">Φωτεινότητα</string>
+</resources>

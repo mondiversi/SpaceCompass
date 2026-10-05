@@ -1,0 +1,10 @@
+<resources>
+    <string name="format_speed_description">Kies de snelheidseenheid.</string>
+    <string name="format_astronomical_distance_description">Kies de eenheid voor astronomische afstanden.</string>
+    <string name="format_normal_distance_description">Kies metrische of imperiale eenheden voor nabije afstanden, hoogte en GPS-nauwkeurigheid.</string>
+    <string name="format_temperature_description">Kies de temperatuureenheid.</string>
+    <string name="format_coordinates_description">Kies het coördinatenformaat.</string>
+    <string name="format_numeric_description">Kies het getalformaat.</string>
+    <string name="format_date_description">Kies het datumformaat.</string>
+    <string name="format_time_description">Kies het tijdformaat.</string>
+</resources>

@@ -1,707 +1,707 @@
 [
   {
     "source": "app/src/main/java/me/mondiversi/uvir/UvirCelestialAltitudeFormatting.kt",
-    "target": "app/src/main/java/me/mondiversi/planetcompass/PlanetCompassCelestialAltitudeFormatting.kt",
+    "target": "app/src/main/java/me/mondiversi/spacecompass/SpaceCompassCelestialAltitudeFormatting.kt",
     "sourceSha256": "B81FD3AD2A459D0F11B32E74AC2DC5BE4B2C9A4E028EAD9B902A98F09482F066"
   },
   {
     "source": "app/src/main/java/me/mondiversi/uvir/UvirCelestialBodyDataIsland.kt",
-    "target": "app/src/main/java/me/mondiversi/planetcompass/PlanetCompassCelestialBodyDataIsland.kt",
+    "target": "app/src/main/java/me/mondiversi/spacecompass/SpaceCompassCelestialBodyDataIsland.kt",
     "sourceSha256": "3BD6FB81691F2E64564C4278BBC4A84B67A2D56C354416C6A2EAF947DF9A4771"
   },
   {
     "source": "app/src/main/java/me/mondiversi/uvir/UvirCelestialCatalog.kt",
-    "target": "app/src/main/java/me/mondiversi/planetcompass/PlanetCompassCelestialCatalog.kt",
+    "target": "app/src/main/java/me/mondiversi/spacecompass/SpaceCompassCelestialCatalog.kt",
     "sourceSha256": "D48DE1B804020E13A640E2C7FD0CD14AA45378DEB6A8F840CF987AD4569B53BA"
   },
   {
     "source": "app/src/main/java/me/mondiversi/uvir/UvirCelestialCompactReadouts.kt",
-    "target": "app/src/main/java/me/mondiversi/planetcompass/PlanetCompassCelestialCompactReadouts.kt",
+    "target": "app/src/main/java/me/mondiversi/spacecompass/SpaceCompassCelestialCompactReadouts.kt",
     "sourceSha256": "1B2E369815B96EDB37D89349F39C964BBFE4FA6CFB051EAA6810837E6A6E7AB1"
   },
   {
     "source": "app/src/main/java/me/mondiversi/uvir/UvirCelestialControls.kt",
-    "target": "app/src/main/java/me/mondiversi/planetcompass/PlanetCompassCelestialControls.kt",
+    "target": "app/src/main/java/me/mondiversi/spacecompass/SpaceCompassCelestialControls.kt",
     "sourceSha256": "8B2DF40A0C36A92AB1A600C94D385CB6F7FB1232117E4842BC552EC88DA58DDD"
   },
   {
     "source": "app/src/main/java/me/mondiversi/uvir/UvirCelestialCraftModel.kt",
-    "target": "app/src/main/java/me/mondiversi/planetcompass/PlanetCompassCelestialCraftModel.kt",
+    "target": "app/src/main/java/me/mondiversi/spacecompass/SpaceCompassCelestialCraftModel.kt",
     "sourceSha256": "0B09A96B5FA1CD819CF97C88E551F0339FD2943BC08454A88418041241F27DAF"
   },
   {
     "source": "app/src/main/java/me/mondiversi/uvir/UvirCelestialFacts.kt",
-    "target": "app/src/main/java/me/mondiversi/planetcompass/PlanetCompassCelestialFacts.kt",
+    "target": "app/src/main/java/me/mondiversi/spacecompass/SpaceCompassCelestialFacts.kt",
     "sourceSha256": "BF02A20D438FC7C7A5EEB0DBB38ECDFFEB645B08B03D0E1BE1EDAE63C8A3AD26"
   },
   {
     "source": "app/src/main/java/me/mondiversi/uvir/UvirCelestialGlRenderer.kt",
-    "target": "app/src/main/java/me/mondiversi/planetcompass/PlanetCompassCelestialGlRenderer.kt",
+    "target": "app/src/main/java/me/mondiversi/spacecompass/SpaceCompassCelestialGlRenderer.kt",
     "sourceSha256": "955E1BAEB17996439C1B7FE89C658E336DE9AF36E8F6EE46339686AF93439BCA"
   },
   {
     "source": "app/src/main/java/me/mondiversi/uvir/UvirCelestialGpsFormatting.kt",
-    "target": "app/src/main/java/me/mondiversi/planetcompass/PlanetCompassCelestialGpsFormatting.kt",
+    "target": "app/src/main/java/me/mondiversi/spacecompass/SpaceCompassCelestialGpsFormatting.kt",
     "sourceSha256": "92E13BF5F4F4BD0E6D261C9D51713982EF4C7C9BBA6060811227A9DBC4A771AC"
   },
   {
     "source": "app/src/main/java/me/mondiversi/uvir/UvirCelestialIconControl.kt",
-    "target": "app/src/main/java/me/mondiversi/planetcompass/PlanetCompassCelestialIconControl.kt",
+    "target": "app/src/main/java/me/mondiversi/spacecompass/SpaceCompassCelestialIconControl.kt",
     "sourceSha256": "1ABD0CD55F99BF63293AD1EC9F1C0DFFF9A64992CF34F224AFF2C2449A86CB8C"
   },
   {
     "source": "app/src/main/java/me/mondiversi/uvir/UvirCelestialLiveMarker.kt",
-    "target": "app/src/main/java/me/mondiversi/planetcompass/PlanetCompassCelestialLiveMarker.kt",
+    "target": "app/src/main/java/me/mondiversi/spacecompass/SpaceCompassCelestialLiveMarker.kt",
     "sourceSha256": "CE761CC1B7ADF77A7FCB16819C6E2B99755F833E970ACBEAC6FE65E43B5F8F51"
   },
   {
     "source": "app/src/main/java/me/mondiversi/uvir/UvirCelestialModel.kt",
-    "target": "app/src/main/java/me/mondiversi/planetcompass/PlanetCompassCelestialModel.kt",
+    "target": "app/src/main/java/me/mondiversi/spacecompass/SpaceCompassCelestialModel.kt",
     "sourceSha256": "E844BD3136624933B57804D369B741BE77193E93A56D7B4E84A7084439247BB8"
   },
   {
     "source": "app/src/main/java/me/mondiversi/uvir/UvirCelestialModelViewport.kt",
-    "target": "app/src/main/java/me/mondiversi/planetcompass/PlanetCompassCelestialModelViewport.kt",
+    "target": "app/src/main/java/me/mondiversi/spacecompass/SpaceCompassCelestialModelViewport.kt",
     "sourceSha256": "0712C3EFFCC81055F67282BB9CA2FCBA624CDE867C39B3FB86358CCCA87A0AE6"
   },
   {
     "source": "app/src/main/java/me/mondiversi/uvir/UvirCelestialOffscreenGeometry.kt",
-    "target": "app/src/main/java/me/mondiversi/planetcompass/PlanetCompassCelestialOffscreenGeometry.kt",
+    "target": "app/src/main/java/me/mondiversi/spacecompass/SpaceCompassCelestialOffscreenGeometry.kt",
     "sourceSha256": "0453C17742688E2E07311D27BD55A9EFE1C8CED05EB6B02B0A0614AF902C7C59"
   },
   {
     "source": "app/src/main/java/me/mondiversi/uvir/UvirCelestialOffscreenMarker.kt",
-    "target": "app/src/main/java/me/mondiversi/planetcompass/PlanetCompassCelestialOffscreenMarker.kt",
+    "target": "app/src/main/java/me/mondiversi/spacecompass/SpaceCompassCelestialOffscreenMarker.kt",
     "sourceSha256": "52FAAADD97793F74DF203DA64F4824B793B794AF8CD33A83A3461AD29E2D1349"
   },
   {
     "source": "app/src/main/java/me/mondiversi/uvir/UvirCelestialOverlays.kt",
-    "target": "app/src/main/java/me/mondiversi/planetcompass/PlanetCompassCelestialOverlays.kt",
+    "target": "app/src/main/java/me/mondiversi/spacecompass/SpaceCompassCelestialOverlays.kt",
     "sourceSha256": "CB10F5E43BEC43EB7F2A828B3E4FEF8D43B90425051317BF68DCB345E910FBC7"
   },
   {
     "source": "app/src/main/java/me/mondiversi/uvir/UvirCelestialPath.kt",
-    "target": "app/src/main/java/me/mondiversi/planetcompass/PlanetCompassCelestialPath.kt",
+    "target": "app/src/main/java/me/mondiversi/spacecompass/SpaceCompassCelestialPath.kt",
     "sourceSha256": "66BE0D14134A075DD2B845FF4524FADA1BBDD25A983F5A66F270F9479A14EFE6"
   },
   {
     "source": "app/src/main/java/me/mondiversi/uvir/UvirCelestialPathExtrema.kt",
-    "target": "app/src/main/java/me/mondiversi/planetcompass/PlanetCompassCelestialPathExtrema.kt",
+    "target": "app/src/main/java/me/mondiversi/spacecompass/SpaceCompassCelestialPathExtrema.kt",
     "sourceSha256": "FC95D3DA6C107159841ADA7F34E406DBEFF215EFA8363778298E19ACE6EA7017"
   },
   {
     "source": "app/src/main/java/me/mondiversi/uvir/UvirCelestialPathTint.kt",
-    "target": "app/src/main/java/me/mondiversi/planetcompass/PlanetCompassCelestialPathTint.kt",
+    "target": "app/src/main/java/me/mondiversi/spacecompass/SpaceCompassCelestialPathTint.kt",
     "sourceSha256": "7993C3B98B6CF1DDE7574358ECBA540E5F92436F9BA1EE1F5FE1AEF184F614A7"
   },
   {
     "source": "app/src/main/java/me/mondiversi/uvir/UvirCelestialPointAngles.kt",
-    "target": "app/src/main/java/me/mondiversi/planetcompass/PlanetCompassCelestialPointAngles.kt",
+    "target": "app/src/main/java/me/mondiversi/spacecompass/SpaceCompassCelestialPointAngles.kt",
     "sourceSha256": "F926C2E8B79C4FF451EAE147D884DBFBEC8A1CA11380DFB91EA12B5F77F2DD40"
   },
   {
     "source": "app/src/main/java/me/mondiversi/uvir/UvirCelestialRefreshPolicy.kt",
-    "target": "app/src/main/java/me/mondiversi/planetcompass/PlanetCompassCelestialRefreshPolicy.kt",
+    "target": "app/src/main/java/me/mondiversi/spacecompass/SpaceCompassCelestialRefreshPolicy.kt",
     "sourceSha256": "65AD4BD936AB25A031702F9A4667615BC75EFB307F2CE90C91C45E880469C898"
   },
   {
     "source": "app/src/main/java/me/mondiversi/uvir/UvirCelestialRemote.kt",
-    "target": "app/src/main/java/me/mondiversi/planetcompass/PlanetCompassCelestialRemote.kt",
+    "target": "app/src/main/java/me/mondiversi/spacecompass/SpaceCompassCelestialRemote.kt",
     "sourceSha256": "0E29CEE597CA5487893AF2EABB4A64E086D3C2062391CB9BE2BF50D653751157"
   },
   {
     "source": "app/src/main/java/me/mondiversi/uvir/UvirCelestialSceneInteraction.kt",
-    "target": "app/src/main/java/me/mondiversi/planetcompass/PlanetCompassCelestialSceneInteraction.kt",
+    "target": "app/src/main/java/me/mondiversi/spacecompass/SpaceCompassCelestialSceneInteraction.kt",
     "sourceSha256": "E465080A57631CCF7E6192E41644EEAC3FB711DBC1B34FFD7BE268C9F7322825"
   },
   {
     "source": "app/src/main/java/me/mondiversi/uvir/UvirCelestialSceneTargets.kt",
-    "target": "app/src/main/java/me/mondiversi/planetcompass/PlanetCompassCelestialSceneTargets.kt",
+    "target": "app/src/main/java/me/mondiversi/spacecompass/SpaceCompassCelestialSceneTargets.kt",
     "sourceSha256": "466CEA5C39E954F4760436FE2E4F1D02E9F0A17A79CE6D74A34F7D5B60C4BBD0"
   },
   {
     "source": "app/src/main/java/me/mondiversi/uvir/UvirCelestialSelection.kt",
-    "target": "app/src/main/java/me/mondiversi/planetcompass/PlanetCompassCelestialSelection.kt",
+    "target": "app/src/main/java/me/mondiversi/spacecompass/SpaceCompassCelestialSelection.kt",
     "sourceSha256": "491E4038CACE4CC2356BAE9788D4BED501CFA41C9480A34CE4D16B74EEE8B1FC"
   },
   {
     "source": "app/src/main/java/me/mondiversi/uvir/UvirCelestialTelescopeIcon.kt",
-    "target": "app/src/main/java/me/mondiversi/planetcompass/PlanetCompassCelestialTelescopeIcon.kt",
+    "target": "app/src/main/java/me/mondiversi/spacecompass/SpaceCompassCelestialTelescopeIcon.kt",
     "sourceSha256": "6239C94B2FDD17398E388C4F2AED927D8DF43EC9F9A2864AE252CFA5E191E0D9"
   },
   {
     "source": "app/src/main/java/me/mondiversi/uvir/UvirCelestialTemperatures.kt",
-    "target": "app/src/main/java/me/mondiversi/planetcompass/PlanetCompassCelestialTemperatures.kt",
+    "target": "app/src/main/java/me/mondiversi/spacecompass/SpaceCompassCelestialTemperatures.kt",
     "sourceSha256": "DBA7A30A469FD3A0BC6F7ED7DD56213AF1D2D7C3A822DA3F3C2D39CA93626AC3"
   },
   {
     "source": "app/src/main/java/me/mondiversi/uvir/UvirCelestialThumbnail.kt",
-    "target": "app/src/main/java/me/mondiversi/planetcompass/PlanetCompassCelestialThumbnail.kt",
+    "target": "app/src/main/java/me/mondiversi/spacecompass/SpaceCompassCelestialThumbnail.kt",
     "sourceSha256": "6997D8C17304E82C89C759899EF759758F2C1CF5DFBDE955710729698304EC6B"
   },
   {
     "source": "app/src/main/java/me/mondiversi/uvir/UvirCelestialTime.kt",
-    "target": "app/src/main/java/me/mondiversi/planetcompass/PlanetCompassCelestialTime.kt",
+    "target": "app/src/main/java/me/mondiversi/spacecompass/SpaceCompassCelestialTime.kt",
     "sourceSha256": "59995FE758BF9026F98E40445F10B8327829087F7239E1530F8B6460BA8357BD"
   },
   {
     "source": "app/src/main/java/me/mondiversi/uvir/UvirCelestialTimeBadge.kt",
-    "target": "app/src/main/java/me/mondiversi/planetcompass/PlanetCompassCelestialTimeBadge.kt",
+    "target": "app/src/main/java/me/mondiversi/spacecompass/SpaceCompassCelestialTimeBadge.kt",
     "sourceSha256": "FD80D0E61C4050225C1E6E1BB0ADACE5D328FA23B15C01D38E8AD5A7B60DFBE8"
   },
   {
     "source": "app/src/main/java/me/mondiversi/uvir/UvirCelestialVelocity.kt",
-    "target": "app/src/main/java/me/mondiversi/planetcompass/PlanetCompassCelestialVelocity.kt",
+    "target": "app/src/main/java/me/mondiversi/spacecompass/SpaceCompassCelestialVelocity.kt",
     "sourceSha256": "54EC2EF778DA8CB66C3C1873AC344D4BD437EA97B0DA97F278B7169941BBE3D0"
   },
   {
     "source": "app/src/main/java/me/mondiversi/uvir/UvirCelestialViewerScreen.kt",
-    "target": "app/src/main/java/me/mondiversi/planetcompass/PlanetCompassCelestialViewerScreen.kt",
+    "target": "app/src/main/java/me/mondiversi/spacecompass/SpaceCompassCelestialViewerScreen.kt",
     "sourceSha256": "ABC13ED7B8C8D8EE817E662E89F70F08F190D24313C6F54FAF62A0F49785EEAA"
   },
   {
     "source": "app/src/main/java/me/mondiversi/uvir/UvirCelestialViewGeometry.kt",
-    "target": "app/src/main/java/me/mondiversi/planetcompass/PlanetCompassCelestialViewGeometry.kt",
+    "target": "app/src/main/java/me/mondiversi/spacecompass/SpaceCompassCelestialViewGeometry.kt",
     "sourceSha256": "4D3E811F4DCE31A6130915F118499C8645E061A932BB87EC8766C882CAA1D2AC"
   },
   {
     "source": "app/src/main/java/me/mondiversi/uvir/UvirCelestialViewportState.kt",
-    "target": "app/src/main/java/me/mondiversi/planetcompass/PlanetCompassCelestialViewportState.kt",
+    "target": "app/src/main/java/me/mondiversi/spacecompass/SpaceCompassCelestialViewportState.kt",
     "sourceSha256": "6C70E529E16E6456E6BB70344B39B71B4826E1DBDD965571108A976F2E427FED"
   },
   {
     "source": "app/src/main/java/me/mondiversi/uvir/UvirHorizonsEphemeris.kt",
-    "target": "app/src/main/java/me/mondiversi/planetcompass/PlanetCompassHorizonsEphemeris.kt",
+    "target": "app/src/main/java/me/mondiversi/spacecompass/SpaceCompassHorizonsEphemeris.kt",
     "sourceSha256": "F7D15665C5CFE0388D251FAF5C566D067132B3C021006149BB625092E45CCC30"
   },
   {
     "source": "app/src/main/java/me/mondiversi/uvir/UvirIssOrbit.kt",
-    "target": "app/src/main/java/me/mondiversi/planetcompass/PlanetCompassIssOrbit.kt",
+    "target": "app/src/main/java/me/mondiversi/spacecompass/SpaceCompassIssOrbit.kt",
     "sourceSha256": "9427E0CB8D35C520B3EB57C1AE7B77E6B076D7EECBAE63BCC3D58E5AC0768070"
   },
   {
     "source": "app/src/main/java/me/mondiversi/uvir/UvirIssPath.kt",
-    "target": "app/src/main/java/me/mondiversi/planetcompass/PlanetCompassIssPath.kt",
+    "target": "app/src/main/java/me/mondiversi/spacecompass/SpaceCompassIssPath.kt",
     "sourceSha256": "CC9C60CA2EAEB07F54AA3423A94E80E30593E9C1E439F27CCDB723B748936E9A"
   },
   {
     "source": "app/src/main/java/me/mondiversi/uvir/UvirJovianMoons.kt",
-    "target": "app/src/main/java/me/mondiversi/planetcompass/PlanetCompassJovianMoons.kt",
+    "target": "app/src/main/java/me/mondiversi/spacecompass/SpaceCompassJovianMoons.kt",
     "sourceSha256": "49AE95639F466D1BD3BD03F6DB1975678EBFEA418B6605A2068893AB254EF8EA"
   },
   {
     "source": "app/src/main/java/me/mondiversi/uvir/UvirMoonMarkerPhase.kt",
-    "target": "app/src/main/java/me/mondiversi/planetcompass/PlanetCompassMoonMarkerPhase.kt",
+    "target": "app/src/main/java/me/mondiversi/spacecompass/SpaceCompassMoonMarkerPhase.kt",
     "sourceSha256": "9D9F7A1EA91895A4F3D50FD5195652B29EAB2F5F35C66D671E4F6F35496F9053"
   },
   {
     "source": "app/src/main/java/me/mondiversi/uvir/UvirMoonPhase.kt",
-    "target": "app/src/main/java/me/mondiversi/planetcompass/PlanetCompassMoonPhase.kt",
+    "target": "app/src/main/java/me/mondiversi/spacecompass/SpaceCompassMoonPhase.kt",
     "sourceSha256": "E689BAD620C7FE5010C2D6DB852693BA2384F5FA2FC46596E8EE11397098A484"
   },
   {
     "source": "app/src/main/java/me/mondiversi/uvir/UvirMoonPhaseIcon.kt",
-    "target": "app/src/main/java/me/mondiversi/planetcompass/PlanetCompassMoonPhaseIcon.kt",
+    "target": "app/src/main/java/me/mondiversi/spacecompass/SpaceCompassMoonPhaseIcon.kt",
     "sourceSha256": "6A8DBCE4459B5F20534D2DB81F58026A4480E6E00C275F345C38B212B46F0B87"
   },
   {
     "source": "app/src/main/java/me/mondiversi/uvir/UvirPolaris.kt",
-    "target": "app/src/main/java/me/mondiversi/planetcompass/PlanetCompassPolaris.kt",
+    "target": "app/src/main/java/me/mondiversi/spacecompass/SpaceCompassPolaris.kt",
     "sourceSha256": "A07BA714F860FFD7C496DD1725CB57EF4818D72B548AAB6CD127A1148CCECE7D"
   },
   {
     "source": "app/src/main/java/me/mondiversi/uvir/UvirSatelliteOrbit.kt",
-    "target": "app/src/main/java/me/mondiversi/planetcompass/PlanetCompassSatelliteOrbit.kt",
+    "target": "app/src/main/java/me/mondiversi/spacecompass/SpaceCompassSatelliteOrbit.kt",
     "sourceSha256": "E860566FA2A138857F692D4BD5B93836DC26396B5FE613745C0DF950ADA206C4"
   },
   {
     "source": "app/src/main/java/me/mondiversi/uvir/UvirStarlinkOrbit.kt",
-    "target": "app/src/main/java/me/mondiversi/planetcompass/PlanetCompassStarlinkOrbit.kt",
+    "target": "app/src/main/java/me/mondiversi/spacecompass/SpaceCompassStarlinkOrbit.kt",
     "sourceSha256": "55EA1CD785D52CFEEA7C757AB66D22FFA3F8A61104E339703A846F2526E77273"
   },
   {
     "source": "app/src/main/java/me/mondiversi/uvir/UvirSunAppearance.kt",
-    "target": "app/src/main/java/me/mondiversi/planetcompass/PlanetCompassSunAppearance.kt",
+    "target": "app/src/main/java/me/mondiversi/spacecompass/SpaceCompassSunAppearance.kt",
     "sourceSha256": "42681EDE3F82E296F98FFDB6243CD92386E823DB33189D498EFF476B446027E3"
   },
   {
     "source": "app/src/main/java/me/mondiversi/uvir/UvirSunCompass.kt",
-    "target": "app/src/main/java/me/mondiversi/planetcompass/PlanetCompassSunCompass.kt",
+    "target": "app/src/main/java/me/mondiversi/spacecompass/SpaceCompassSunCompass.kt",
     "sourceSha256": "6229EDE77BF862FFE2B9C2F22BB744DDE4ED9BBF8096C009FB4824EBE655517A"
   },
   {
     "source": "app/src/main/java/me/mondiversi/uvir/UvirSunCompassGeometry.kt",
-    "target": "app/src/main/java/me/mondiversi/planetcompass/PlanetCompassSunCompassGeometry.kt",
+    "target": "app/src/main/java/me/mondiversi/spacecompass/SpaceCompassSunCompassGeometry.kt",
     "sourceSha256": "3717797B3E340FB8243ABE5DBD9FF0AD30139FAF67B125A32F2C52A802840D0F"
   },
   {
     "source": "app/src/main/java/me/mondiversi/uvir/UvirSunCompassReliability.kt",
-    "target": "app/src/main/java/me/mondiversi/planetcompass/PlanetCompassSunCompassReliability.kt",
+    "target": "app/src/main/java/me/mondiversi/spacecompass/SpaceCompassSunCompassReliability.kt",
     "sourceSha256": "80EF2291D16A6D84B9544781DE279EE8D4F3C126E888C5BD7070C8CA7919BC60"
   },
   {
     "source": "app/src/main/java/me/mondiversi/uvir/UvirSunDailyPath.kt",
-    "target": "app/src/main/java/me/mondiversi/planetcompass/PlanetCompassSunDailyPath.kt",
+    "target": "app/src/main/java/me/mondiversi/spacecompass/SpaceCompassSunDailyPath.kt",
     "sourceSha256": "9E18BD60A52D84A6D4555EA48FF54C59A557F34BFA7B1338DC8C18ABD003EBD7"
   },
   {
     "source": "app/src/main/java/me/mondiversi/uvir/UvirSunDailyPathControls.kt",
-    "target": "app/src/main/java/me/mondiversi/planetcompass/PlanetCompassSunDailyPathControls.kt",
+    "target": "app/src/main/java/me/mondiversi/spacecompass/SpaceCompassSunDailyPathControls.kt",
     "sourceSha256": "1402453307F0E67721DEC16DCD15815B779D8490EA2687B4B61DE94CB824B66F"
   },
   {
     "source": "app/src/main/java/me/mondiversi/uvir/UvirSunDailyPathLayer.kt",
-    "target": "app/src/main/java/me/mondiversi/planetcompass/PlanetCompassSunDailyPathLayer.kt",
+    "target": "app/src/main/java/me/mondiversi/spacecompass/SpaceCompassSunDailyPathLayer.kt",
     "sourceSha256": "69C4D06B026EDC48E14DC37AC8630D95270B061C9633C47D98E334C6B2D714EA"
   },
   {
     "source": "app/src/main/java/me/mondiversi/uvir/UvirSunDataPresentation.kt",
-    "target": "app/src/main/java/me/mondiversi/planetcompass/PlanetCompassSunDataPresentation.kt",
+    "target": "app/src/main/java/me/mondiversi/spacecompass/SpaceCompassSunDataPresentation.kt",
     "sourceSha256": "D24975BAA1BC8139FA8851B8F3B3C2EBDB7E2B950DA2BBD7B77B5A7E928BC70A"
   },
   {
     "source": "app/src/main/java/me/mondiversi/uvir/UvirSunFinderDataPanel.kt",
-    "target": "app/src/main/java/me/mondiversi/planetcompass/PlanetCompassSunFinderDataPanel.kt",
+    "target": "app/src/main/java/me/mondiversi/spacecompass/SpaceCompassSunFinderDataPanel.kt",
     "sourceSha256": "DC6B11EE30FD81416A505CE2516E981026BA4D57C3A65C76E8F4F4D6207D0E74"
   },
   {
     "source": "app/src/main/java/me/mondiversi/uvir/UvirSunFinderScreen.kt",
-    "target": "app/src/main/java/me/mondiversi/planetcompass/PlanetCompassSunFinderScreen.kt",
+    "target": "app/src/main/java/me/mondiversi/spacecompass/SpaceCompassSunFinderScreen.kt",
     "sourceSha256": "3253B4D36BCA08A853B39AC509091144EB26B6BA21F4CED2E7B3A3013A541A7C"
   },
   {
     "source": "app/src/main/java/me/mondiversi/uvir/UvirSunFinderSensors.kt",
-    "target": "app/src/main/java/me/mondiversi/planetcompass/PlanetCompassSunFinderSensors.kt",
+    "target": "app/src/main/java/me/mondiversi/spacecompass/SpaceCompassSunFinderSensors.kt",
     "sourceSha256": "F1BAB7DEE93BFB2CFFBA56C65F7F5286B7F2043FD17A4F7636BCC99F1EC7C073"
   },
   {
     "source": "app/src/main/java/me/mondiversi/uvir/UvirSunFinderSky.kt",
-    "target": "app/src/main/java/me/mondiversi/planetcompass/PlanetCompassSunFinderSky.kt",
+    "target": "app/src/main/java/me/mondiversi/spacecompass/SpaceCompassSunFinderSky.kt",
     "sourceSha256": "3F6211B81D959423C75CB97E22F66D59D9384A27631F69DAFD7CBAFB11E945F8"
   },
   {
     "source": "app/src/main/java/me/mondiversi/uvir/UvirSunGroundAppearance.kt",
-    "target": "app/src/main/java/me/mondiversi/planetcompass/PlanetCompassSunGroundAppearance.kt",
+    "target": "app/src/main/java/me/mondiversi/spacecompass/SpaceCompassSunGroundAppearance.kt",
     "sourceSha256": "FC6503BBDD33AE97D1C05BD72AD6A99053FF598E5CB9268FDFAB2B7F1008B7E7"
   },
   {
     "source": "app/src/main/java/me/mondiversi/uvir/UvirSunGroundBackdrop.kt",
-    "target": "app/src/main/java/me/mondiversi/planetcompass/PlanetCompassSunGroundBackdrop.kt",
+    "target": "app/src/main/java/me/mondiversi/spacecompass/SpaceCompassSunGroundBackdrop.kt",
     "sourceSha256": "04FC3F9379638CB8F1682AD980F55DF780BA635A7CAD09CC665959366E2E3231"
   },
   {
     "source": "app/src/main/java/me/mondiversi/uvir/UvirSunGroundProjection.kt",
-    "target": "app/src/main/java/me/mondiversi/planetcompass/PlanetCompassSunGroundProjection.kt",
+    "target": "app/src/main/java/me/mondiversi/spacecompass/SpaceCompassSunGroundProjection.kt",
     "sourceSha256": "C111AB6FBFB145F8A16C8E89000F05193C7F7D5AB5DE8CC884AAE9264214E302"
   },
   {
     "source": "app/src/main/java/me/mondiversi/uvir/UvirSunMagneticOrientation.kt",
-    "target": "app/src/main/java/me/mondiversi/planetcompass/PlanetCompassSunMagneticOrientation.kt",
+    "target": "app/src/main/java/me/mondiversi/spacecompass/SpaceCompassSunMagneticOrientation.kt",
     "sourceSha256": "B2D0243E8594B2819C640223D23824538C3658DE79672A130A08417C3727E526"
   },
   {
     "source": "app/src/main/java/me/mondiversi/uvir/UvirSunPathDirection.kt",
-    "target": "app/src/main/java/me/mondiversi/planetcompass/PlanetCompassSunPathDirection.kt",
+    "target": "app/src/main/java/me/mondiversi/spacecompass/SpaceCompassSunPathDirection.kt",
     "sourceSha256": "E59A2FD7D1856B2D3690CAA64FB0F232AC9D11224893558297097D9A585F8672"
   },
   {
     "source": "app/src/main/java/me/mondiversi/uvir/UvirSunPathPointNames.kt",
-    "target": "app/src/main/java/me/mondiversi/planetcompass/PlanetCompassSunPathPointNames.kt",
+    "target": "app/src/main/java/me/mondiversi/spacecompass/SpaceCompassSunPathPointNames.kt",
     "sourceSha256": "6133D2AF043BF6FC4A28321409FC77CAA2AB89F761963729C76C62254F3671E4"
   },
   {
     "source": "app/src/main/java/me/mondiversi/uvir/UvirSunPathSelectedPanel.kt",
-    "target": "app/src/main/java/me/mondiversi/planetcompass/PlanetCompassSunPathSelectedPanel.kt",
+    "target": "app/src/main/java/me/mondiversi/spacecompass/SpaceCompassSunPathSelectedPanel.kt",
     "sourceSha256": "C52EB03331CC1ECD1330F649FD43671874E82838BC126F9CE96C3491EFB70FA3"
   },
   {
     "source": "app/src/main/java/me/mondiversi/uvir/UvirSunPosition.kt",
-    "target": "app/src/main/java/me/mondiversi/planetcompass/PlanetCompassSunPosition.kt",
+    "target": "app/src/main/java/me/mondiversi/spacecompass/SpaceCompassSunPosition.kt",
     "sourceSha256": "44222497C07617A85F7DBE1C2F8E39C0879B7A962E998A9C442AD345B776DFE3"
   },
   {
     "source": "app/src/main/java/me/mondiversi/uvir/UvirSunSkyModel.kt",
-    "target": "app/src/main/java/me/mondiversi/planetcompass/PlanetCompassSunSkyModel.kt",
+    "target": "app/src/main/java/me/mondiversi/spacecompass/SpaceCompassSunSkyModel.kt",
     "sourceSha256": "8EE6E201EE54183D52C4CF65022B18DDE1EE9EBA0C0880C07720F62E2F2F08EC"
   },
   {
     "source": "app/src/main/java/me/mondiversi/uvir/UvirSunWeather.kt",
-    "target": "app/src/main/java/me/mondiversi/planetcompass/PlanetCompassSunWeather.kt",
+    "target": "app/src/main/java/me/mondiversi/spacecompass/SpaceCompassSunWeather.kt",
     "sourceSha256": "2D8696CB2A6DF82DEB6C458B12BAFEA21CB43EF6D333544C88B60BE323703843"
   },
   {
     "source": "app/src/test/java/me/mondiversi/uvir/UvirCelestialAltitudeFormattingTest.kt",
-    "target": "app/src/test/java/me/mondiversi/planetcompass/PlanetCompassCelestialAltitudeFormattingTest.kt",
+    "target": "app/src/test/java/me/mondiversi/spacecompass/SpaceCompassCelestialAltitudeFormattingTest.kt",
     "sourceSha256": "C4292DE01990DBAD4A0AD43E43BD36AB60CDFCDE1E4D2E7B141163AE9575B0A7"
   },
   {
     "source": "app/src/test/java/me/mondiversi/uvir/UvirCelestialCatalogTest.kt",
-    "target": "app/src/test/java/me/mondiversi/planetcompass/PlanetCompassCelestialCatalogTest.kt",
+    "target": "app/src/test/java/me/mondiversi/spacecompass/SpaceCompassCelestialCatalogTest.kt",
     "sourceSha256": "996EB2156F72D83BD2D36BFFD30300077BA355AE91428BD82E6AFAF203FC21E4"
   },
   {
     "source": "app/src/test/java/me/mondiversi/uvir/UvirCelestialCatalogTranslationTest.kt",
-    "target": "app/src/test/java/me/mondiversi/planetcompass/PlanetCompassCelestialCatalogTranslationTest.kt",
+    "target": "app/src/test/java/me/mondiversi/spacecompass/SpaceCompassCelestialCatalogTranslationTest.kt",
     "sourceSha256": "83E4BE127B4137468FE72024AC39B66CC2F0E30C22D2D5782A5FF2F10182FC63"
   },
   {
     "source": "app/src/test/java/me/mondiversi/uvir/UvirCelestialControlStyleTest.kt",
-    "target": "app/src/test/java/me/mondiversi/planetcompass/PlanetCompassCelestialControlStyleTest.kt",
+    "target": "app/src/test/java/me/mondiversi/spacecompass/SpaceCompassCelestialControlStyleTest.kt",
     "sourceSha256": "970114841A31BD42E05AADEC403A0E86C70523DD3BE3C10FB726E1D8522F83C2"
   },
   {
     "source": "app/src/test/java/me/mondiversi/uvir/UvirCelestialDistanceFormattingTest.kt",
-    "target": "app/src/test/java/me/mondiversi/planetcompass/PlanetCompassCelestialDistanceFormattingTest.kt",
+    "target": "app/src/test/java/me/mondiversi/spacecompass/SpaceCompassCelestialDistanceFormattingTest.kt",
     "sourceSha256": "E7B91F8A79E7E26B0BD9250542CC699E8F2C21FC50A1522BE421CE09F4795A45"
   },
   {
     "source": "app/src/test/java/me/mondiversi/uvir/UvirCelestialGpsFormattingTest.kt",
-    "target": "app/src/test/java/me/mondiversi/planetcompass/PlanetCompassCelestialGpsFormattingTest.kt",
+    "target": "app/src/test/java/me/mondiversi/spacecompass/SpaceCompassCelestialGpsFormattingTest.kt",
     "sourceSha256": "2C6B72F0E9D193E36206D1B1AD37832F6AC77AC128BA47D3AB8075CCBDAC432F"
   },
   {
     "source": "app/src/test/java/me/mondiversi/uvir/UvirCelestialGravityFormattingTest.kt",
-    "target": "app/src/test/java/me/mondiversi/planetcompass/PlanetCompassCelestialGravityFormattingTest.kt",
+    "target": "app/src/test/java/me/mondiversi/spacecompass/SpaceCompassCelestialGravityFormattingTest.kt",
     "sourceSha256": "808E60AC60ED34BE0AC62700AACFDC1563094F16807DEBB579FF3158E4AA8D0B"
   },
   {
     "source": "app/src/test/java/me/mondiversi/uvir/UvirCelestialLiveSelectionTest.kt",
-    "target": "app/src/test/java/me/mondiversi/planetcompass/PlanetCompassCelestialLiveSelectionTest.kt",
+    "target": "app/src/test/java/me/mondiversi/spacecompass/SpaceCompassCelestialLiveSelectionTest.kt",
     "sourceSha256": "7E43C36E0E48E39A8989802C0D9608408D66522092A266F7ED1CD372EF522297"
   },
   {
     "source": "app/src/test/java/me/mondiversi/uvir/UvirCelestialMarkerContractTest.kt",
-    "target": "app/src/test/java/me/mondiversi/planetcompass/PlanetCompassCelestialMarkerContractTest.kt",
+    "target": "app/src/test/java/me/mondiversi/spacecompass/SpaceCompassCelestialMarkerContractTest.kt",
     "sourceSha256": "B392CA3E20E425004743044E6F50D8DCA67AA2F6112E6AF7E7B148DCBB8CC439"
   },
   {
     "source": "app/src/test/java/me/mondiversi/uvir/UvirCelestialModelTest.kt",
-    "target": "app/src/test/java/me/mondiversi/planetcompass/PlanetCompassCelestialModelTest.kt",
+    "target": "app/src/test/java/me/mondiversi/spacecompass/SpaceCompassCelestialModelTest.kt",
     "sourceSha256": "8AE4595B7E17CDA5AF2DC1E8BE14AB5618DA0BE1F6B6735613098861E2255FFC"
   },
   {
     "source": "app/src/test/java/me/mondiversi/uvir/UvirCelestialOffscreenGeometryTest.kt",
-    "target": "app/src/test/java/me/mondiversi/planetcompass/PlanetCompassCelestialOffscreenGeometryTest.kt",
+    "target": "app/src/test/java/me/mondiversi/spacecompass/SpaceCompassCelestialOffscreenGeometryTest.kt",
     "sourceSha256": "9EA4C4B2E520D4D0AF41508779632B148072BB67361BC1C85E7CBBF21A286B96"
   },
   {
     "source": "app/src/test/java/me/mondiversi/uvir/UvirCelestialPathMinimumTest.kt",
-    "target": "app/src/test/java/me/mondiversi/planetcompass/PlanetCompassCelestialPathMinimumTest.kt",
+    "target": "app/src/test/java/me/mondiversi/spacecompass/SpaceCompassCelestialPathMinimumTest.kt",
     "sourceSha256": "97A42B24DE55DB1DF0A66967532B8D1818FF451351E3355E4EB2837A9A7AEE50"
   },
   {
     "source": "app/src/test/java/me/mondiversi/uvir/UvirCelestialPathTintTest.kt",
-    "target": "app/src/test/java/me/mondiversi/planetcompass/PlanetCompassCelestialPathTintTest.kt",
+    "target": "app/src/test/java/me/mondiversi/spacecompass/SpaceCompassCelestialPathTintTest.kt",
     "sourceSha256": "6288AECBA8CFDB8014AB37028054680D58308172BC56735A580B3A4607F03A9B"
   },
   {
     "source": "app/src/test/java/me/mondiversi/uvir/UvirCelestialPointCaptionTest.kt",
-    "target": "app/src/test/java/me/mondiversi/planetcompass/PlanetCompassCelestialPointCaptionTest.kt",
+    "target": "app/src/test/java/me/mondiversi/spacecompass/SpaceCompassCelestialPointCaptionTest.kt",
     "sourceSha256": "2EE842C27AC9CDE6936667EB039F41EDA5E65200DBE3986861BBADBCF883B765"
   },
   {
     "source": "app/src/test/java/me/mondiversi/uvir/UvirCelestialPointTranslationTest.kt",
-    "target": "app/src/test/java/me/mondiversi/planetcompass/PlanetCompassCelestialPointTranslationTest.kt",
+    "target": "app/src/test/java/me/mondiversi/spacecompass/SpaceCompassCelestialPointTranslationTest.kt",
     "sourceSha256": "ED4253631B1AEAE49D1D050625060697DEFDAD932A28BA8889EDE624E1125AE9"
   },
   {
     "source": "app/src/test/java/me/mondiversi/uvir/UvirCelestialRefreshPolicyTest.kt",
-    "target": "app/src/test/java/me/mondiversi/planetcompass/PlanetCompassCelestialRefreshPolicyTest.kt",
+    "target": "app/src/test/java/me/mondiversi/spacecompass/SpaceCompassCelestialRefreshPolicyTest.kt",
     "sourceSha256": "2D6D30D070AA8A987E90FAF174FD1893AC9C18918D722AA648B7DB94BABF0D33"
   },
   {
     "source": "app/src/test/java/me/mondiversi/uvir/UvirCelestialSceneTargetsTest.kt",
-    "target": "app/src/test/java/me/mondiversi/planetcompass/PlanetCompassCelestialSceneTargetsTest.kt",
+    "target": "app/src/test/java/me/mondiversi/spacecompass/SpaceCompassCelestialSceneTargetsTest.kt",
     "sourceSha256": "AEB2D4AD2ECE276AA49596F807F483A11289D025A94A31FBD91EF6ACEADB9076"
   },
   {
     "source": "app/src/test/java/me/mondiversi/uvir/UvirCelestialSelectionTest.kt",
-    "target": "app/src/test/java/me/mondiversi/planetcompass/PlanetCompassCelestialSelectionTest.kt",
+    "target": "app/src/test/java/me/mondiversi/spacecompass/SpaceCompassCelestialSelectionTest.kt",
     "sourceSha256": "01B24FB2E9067CC87FA3CED5C54A3744BAB28510BAA4DEB803C71D9B59A260E5"
   },
   {
     "source": "app/src/test/java/me/mondiversi/uvir/UvirCelestialTabularLayoutTest.kt",
-    "target": "app/src/test/java/me/mondiversi/planetcompass/PlanetCompassCelestialTabularLayoutTest.kt",
+    "target": "app/src/test/java/me/mondiversi/spacecompass/SpaceCompassCelestialTabularLayoutTest.kt",
     "sourceSha256": "EAF611564D52FD0FEC47F7FCB2212191138864F07DB817D2C3E89866CAB98B77"
   },
   {
     "source": "app/src/test/java/me/mondiversi/uvir/UvirCelestialTemperatureTest.kt",
-    "target": "app/src/test/java/me/mondiversi/planetcompass/PlanetCompassCelestialTemperatureTest.kt",
+    "target": "app/src/test/java/me/mondiversi/spacecompass/SpaceCompassCelestialTemperatureTest.kt",
     "sourceSha256": "4795A09F9B356463258049D6717121E6014BF4483E296B89649591E91E2891D3"
   },
   {
     "source": "app/src/test/java/me/mondiversi/uvir/UvirCelestialTimeFocusTest.kt",
-    "target": "app/src/test/java/me/mondiversi/planetcompass/PlanetCompassCelestialTimeFocusTest.kt",
+    "target": "app/src/test/java/me/mondiversi/spacecompass/SpaceCompassCelestialTimeFocusTest.kt",
     "sourceSha256": "59BDA08DC451ACA5225F5439DB53BFCF80F848890E4612674F839E07E7198DAE"
   },
   {
     "source": "app/src/test/java/me/mondiversi/uvir/UvirCelestialTimeTest.kt",
-    "target": "app/src/test/java/me/mondiversi/planetcompass/PlanetCompassCelestialTimeTest.kt",
+    "target": "app/src/test/java/me/mondiversi/spacecompass/SpaceCompassCelestialTimeTest.kt",
     "sourceSha256": "A8B25651B2F704E64EAB233D3622F26586AAD6139036BE1B44DAAC3761458B00"
   },
   {
     "source": "app/src/test/java/me/mondiversi/uvir/UvirCelestialTlsContractTest.kt",
-    "target": "app/src/test/java/me/mondiversi/planetcompass/PlanetCompassCelestialTlsContractTest.kt",
+    "target": "app/src/test/java/me/mondiversi/spacecompass/SpaceCompassCelestialTlsContractTest.kt",
     "sourceSha256": "F2CB760C47EAA7D6E0405C07A0DE90D1D7D7E9DA3E2BDEDA783ABD69590DD963"
   },
   {
     "source": "app/src/test/java/me/mondiversi/uvir/UvirCelestialVelocityTest.kt",
-    "target": "app/src/test/java/me/mondiversi/planetcompass/PlanetCompassCelestialVelocityTest.kt",
+    "target": "app/src/test/java/me/mondiversi/spacecompass/SpaceCompassCelestialVelocityTest.kt",
     "sourceSha256": "29B7DF6DF52DE8314F3D5F8BDC6A8DEFBB05A75A8F76FA6319F9C26795A4C075"
   },
   {
     "source": "app/src/test/java/me/mondiversi/uvir/UvirCelestialViewerTest.kt",
-    "target": "app/src/test/java/me/mondiversi/planetcompass/PlanetCompassCelestialViewerTest.kt",
+    "target": "app/src/test/java/me/mondiversi/spacecompass/SpaceCompassCelestialViewerTest.kt",
     "sourceSha256": "639933EEBA6963F604BA1321E0B94C742B45AF22CE24FAB85A3B815905D12BDD"
   },
   {
     "source": "app/src/test/java/me/mondiversi/uvir/UvirCelestialViewportStateTest.kt",
-    "target": "app/src/test/java/me/mondiversi/planetcompass/PlanetCompassCelestialViewportStateTest.kt",
+    "target": "app/src/test/java/me/mondiversi/spacecompass/SpaceCompassCelestialViewportStateTest.kt",
     "sourceSha256": "3C73B5AD6C84A8755C5FEFEF0F5B9F6D7B1C4A84B1811483F0DB933FB4B0DEEF"
   },
   {
     "source": "app/src/test/java/me/mondiversi/uvir/UvirIssPathTest.kt",
-    "target": "app/src/test/java/me/mondiversi/planetcompass/PlanetCompassIssPathTest.kt",
+    "target": "app/src/test/java/me/mondiversi/spacecompass/SpaceCompassIssPathTest.kt",
     "sourceSha256": "4611A071F2FDDD6CC704E0FC3C15552BBC36948A62EAE08B3FFE89792EBC8338"
   },
   {
     "source": "app/src/test/java/me/mondiversi/uvir/UvirJovianMoonsTest.kt",
-    "target": "app/src/test/java/me/mondiversi/planetcompass/PlanetCompassJovianMoonsTest.kt",
+    "target": "app/src/test/java/me/mondiversi/spacecompass/SpaceCompassJovianMoonsTest.kt",
     "sourceSha256": "05D28B9926EA8A89947B8FBD3F45B6069E0BEEEED8EC09D5743E03376C43DA0B"
   },
   {
     "source": "app/src/test/java/me/mondiversi/uvir/UvirMoonPhaseTest.kt",
-    "target": "app/src/test/java/me/mondiversi/planetcompass/PlanetCompassMoonPhaseTest.kt",
+    "target": "app/src/test/java/me/mondiversi/spacecompass/SpaceCompassMoonPhaseTest.kt",
     "sourceSha256": "EC0B9DAD5AB189CF41E4667270BB05AE58BA6A7BC55020463D8DEE937B1335A2"
   },
   {
     "source": "app/src/test/java/me/mondiversi/uvir/UvirPolarisTest.kt",
-    "target": "app/src/test/java/me/mondiversi/planetcompass/PlanetCompassPolarisTest.kt",
+    "target": "app/src/test/java/me/mondiversi/spacecompass/SpaceCompassPolarisTest.kt",
     "sourceSha256": "6FD31246B6D1F7E303DCC9D3449E518A6E22C35DBCAA6D970C4F8E0E9170106E"
   },
   {
     "source": "app/src/test/java/me/mondiversi/uvir/UvirStarlinkOrbitTest.kt",
-    "target": "app/src/test/java/me/mondiversi/planetcompass/PlanetCompassStarlinkOrbitTest.kt",
+    "target": "app/src/test/java/me/mondiversi/spacecompass/SpaceCompassStarlinkOrbitTest.kt",
     "sourceSha256": "84989C111B036133E5C878FA37E4B7AF4E0A093E5B255E5F3B6F655120B505E0"
   },
   {
     "source": "app/src/test/java/me/mondiversi/uvir/UvirStarlinkTranslationTest.kt",
-    "target": "app/src/test/java/me/mondiversi/planetcompass/PlanetCompassStarlinkTranslationTest.kt",
+    "target": "app/src/test/java/me/mondiversi/spacecompass/SpaceCompassStarlinkTranslationTest.kt",
     "sourceSha256": "5B3BEEB8495B174BFA0D89FAB09579E439973D630FCE62D947FA74914F5566FC"
   },
   {
     "source": "app/src/test/java/me/mondiversi/uvir/UvirSunAppearanceTest.kt",
-    "target": "app/src/test/java/me/mondiversi/planetcompass/PlanetCompassSunAppearanceTest.kt",
+    "target": "app/src/test/java/me/mondiversi/spacecompass/SpaceCompassSunAppearanceTest.kt",
     "sourceSha256": "E08BE1DDE46EFC2FA26E5685819080DAA5FE1A7E8E3AC2DC0B6867E3150D1CEF"
   },
   {
     "source": "app/src/test/java/me/mondiversi/uvir/UvirSunCompassTest.kt",
-    "target": "app/src/test/java/me/mondiversi/planetcompass/PlanetCompassSunCompassTest.kt",
+    "target": "app/src/test/java/me/mondiversi/spacecompass/SpaceCompassSunCompassTest.kt",
     "sourceSha256": "FEDBBACD6F585E482B98E47A0B7E82B045A47CBB7EDFF5D40E5F94A23BFEFF1B"
   },
   {
     "source": "app/src/test/java/me/mondiversi/uvir/UvirSunDailyPathTest.kt",
-    "target": "app/src/test/java/me/mondiversi/planetcompass/PlanetCompassSunDailyPathTest.kt",
+    "target": "app/src/test/java/me/mondiversi/spacecompass/SpaceCompassSunDailyPathTest.kt",
     "sourceSha256": "D6ACC7A6660687AE44F5D6E57678BFE0549A233AB46B8273AAAF772CC90D08D6"
   },
   {
     "source": "app/src/test/java/me/mondiversi/uvir/UvirSunDataPresentationTest.kt",
-    "target": "app/src/test/java/me/mondiversi/planetcompass/PlanetCompassSunDataPresentationTest.kt",
+    "target": "app/src/test/java/me/mondiversi/spacecompass/SpaceCompassSunDataPresentationTest.kt",
     "sourceSha256": "664BC388F96E222C5A161F0FB4312BF77A35858E768C6680DD0681122BB1656D"
   },
   {
     "source": "app/src/test/java/me/mondiversi/uvir/UvirSunGroundAppearanceTest.kt",
-    "target": "app/src/test/java/me/mondiversi/planetcompass/PlanetCompassSunGroundAppearanceTest.kt",
+    "target": "app/src/test/java/me/mondiversi/spacecompass/SpaceCompassSunGroundAppearanceTest.kt",
     "sourceSha256": "C6B533F3A33ED27619A014936441B56667A3A75FA5FB6B2FF0EDB1B22B5CB9F9"
   },
   {
     "source": "app/src/test/java/me/mondiversi/uvir/UvirSunGroundProjectionTest.kt",
-    "target": "app/src/test/java/me/mondiversi/planetcompass/PlanetCompassSunGroundProjectionTest.kt",
+    "target": "app/src/test/java/me/mondiversi/spacecompass/SpaceCompassSunGroundProjectionTest.kt",
     "sourceSha256": "986E19F84EC1D776366F1140D59552EC8D64EF368CCC6AB1AE452A5394AA5D6E"
   },
   {
     "source": "app/src/test/java/me/mondiversi/uvir/UvirSunPathDirectionTest.kt",
-    "target": "app/src/test/java/me/mondiversi/planetcompass/PlanetCompassSunPathDirectionTest.kt",
+    "target": "app/src/test/java/me/mondiversi/spacecompass/SpaceCompassSunPathDirectionTest.kt",
     "sourceSha256": "7978C04F1F720BC5A2E9CBE441190C0F8532D761FBA6D6FACD91827C66156D9D"
   },
   {
     "source": "app/src/test/java/me/mondiversi/uvir/UvirSunPathHitTestTest.kt",
-    "target": "app/src/test/java/me/mondiversi/planetcompass/PlanetCompassSunPathHitTestTest.kt",
+    "target": "app/src/test/java/me/mondiversi/spacecompass/SpaceCompassSunPathHitTestTest.kt",
     "sourceSha256": "8799674DEA652E595DAFBA5A392659E25F74BF080FEBAA4061DB9A9F70C5FE34"
   },
   {
     "source": "app/src/test/java/me/mondiversi/uvir/UvirSunPathPointNamesTest.kt",
-    "target": "app/src/test/java/me/mondiversi/planetcompass/PlanetCompassSunPathPointNamesTest.kt",
+    "target": "app/src/test/java/me/mondiversi/spacecompass/SpaceCompassSunPathPointNamesTest.kt",
     "sourceSha256": "CE953F8CB8ADBFD0432936603BBB5A9010652788363534D6BFE8F29633D907C6"
   },
   {
     "source": "app/src/test/java/me/mondiversi/uvir/UvirSunPositionTest.kt",
-    "target": "app/src/test/java/me/mondiversi/planetcompass/PlanetCompassSunPositionTest.kt",
+    "target": "app/src/test/java/me/mondiversi/spacecompass/SpaceCompassSunPositionTest.kt",
     "sourceSha256": "35C872287D5E060D514E984E4A3E48FFD369350ED995DB2C80AC11110F333257"
   },
   {
     "source": "app/src/test/java/me/mondiversi/uvir/UvirSunSkyModelTest.kt",
-    "target": "app/src/test/java/me/mondiversi/planetcompass/PlanetCompassSunSkyModelTest.kt",
+    "target": "app/src/test/java/me/mondiversi/spacecompass/SpaceCompassSunSkyModelTest.kt",
     "sourceSha256": "A46B5E59B5ADF1ABFAF51A323604F53578BCC58EC063279CD64F82FC93C22F75"
   },
   {
     "source": "app/src/test/java/me/mondiversi/uvir/UvirVoyagerEphemerisTest.kt",
-    "target": "app/src/test/java/me/mondiversi/planetcompass/PlanetCompassVoyagerEphemerisTest.kt",
+    "target": "app/src/test/java/me/mondiversi/spacecompass/SpaceCompassVoyagerEphemerisTest.kt",
     "sourceSha256": "275FDBBD7C0DFFAF7F22169E2CFDBD9309A170A4E617BC6D1893629309D05679"
   },
   {
     "source": "app/src/androidTest/java/me/mondiversi/uvir/UvirCelestialCompassTest.kt",
-    "target": "app/src/androidTest/java/me/mondiversi/planetcompass/PlanetCompassCelestialCompassTest.kt",
+    "target": "app/src/androidTest/java/me/mondiversi/spacecompass/SpaceCompassCelestialCompassTest.kt",
     "sourceSha256": "137D6373A96A96E81E29EC945A4A052779DF8B3E12B5E3F3D3E243F6590765FB"
   },
   {
     "source": "app/src/androidTest/java/me/mondiversi/uvir/UvirCelestialLandscapeLayoutTest.kt",
-    "target": "app/src/androidTest/java/me/mondiversi/planetcompass/PlanetCompassCelestialLandscapeLayoutTest.kt",
+    "target": "app/src/androidTest/java/me/mondiversi/spacecompass/SpaceCompassCelestialLandscapeLayoutTest.kt",
     "sourceSha256": "7E8B4B936704CFDE135E0A747D1D4B14A0135539BAF0ADA53EA34B7FB1AD4B49"
   },
   {
     "source": "app/src/androidTest/java/me/mondiversi/uvir/UvirCelestialMarkerRenderingTest.kt",
-    "target": "app/src/androidTest/java/me/mondiversi/planetcompass/PlanetCompassCelestialMarkerRenderingTest.kt",
+    "target": "app/src/androidTest/java/me/mondiversi/spacecompass/SpaceCompassCelestialMarkerRenderingTest.kt",
     "sourceSha256": "B392E8440133B79B31E8A86E82C7A84A5C8209E2DC16E0854F8DD32B62889896"
   },
   {
     "source": "app/src/androidTest/java/me/mondiversi/uvir/UvirCelestialMultiSelectionUiTest.kt",
-    "target": "app/src/androidTest/java/me/mondiversi/planetcompass/PlanetCompassCelestialMultiSelectionUiTest.kt",
+    "target": "app/src/androidTest/java/me/mondiversi/spacecompass/SpaceCompassCelestialMultiSelectionUiTest.kt",
     "sourceSha256": "553C9E67EC1C98A8F1DE49E632DDE5C39F34BA2FB35416A4E4CE19B371757F15"
   },
   {
     "source": "app/src/androidTest/java/me/mondiversi/uvir/UvirCelestialSceneInteractionTest.kt",
-    "target": "app/src/androidTest/java/me/mondiversi/planetcompass/PlanetCompassCelestialSceneInteractionTest.kt",
+    "target": "app/src/androidTest/java/me/mondiversi/spacecompass/SpaceCompassCelestialSceneInteractionTest.kt",
     "sourceSha256": "03FCD29E2F7C410AB7118B89012D4530E22B103971E876B00F1FA33D423A2B28"
   },
   {
     "source": "app/src/androidTest/java/me/mondiversi/uvir/UvirCelestialTimeBadgeTest.kt",
-    "target": "app/src/androidTest/java/me/mondiversi/planetcompass/PlanetCompassCelestialTimeBadgeTest.kt",
+    "target": "app/src/androidTest/java/me/mondiversi/spacecompass/SpaceCompassCelestialTimeBadgeTest.kt",
     "sourceSha256": "D1013878A0CDAD98BB9B848018BDBFA9B6F2085C705F33B83426DF785F04741D"
   },
   {
     "source": "app/src/androidTest/java/me/mondiversi/uvir/UvirCelestialViewerUiTest.kt",
-    "target": "app/src/androidTest/java/me/mondiversi/planetcompass/PlanetCompassCelestialViewerUiTest.kt",
+    "target": "app/src/androidTest/java/me/mondiversi/spacecompass/SpaceCompassCelestialViewerUiTest.kt",
     "sourceSha256": "62F993592D3893C726426093CE3556809719B36B42DBEAC1EF5F05B710A6664D"
   },
   {
     "source": "app/src/androidTest/java/me/mondiversi/uvir/UvirStarlinkSelectionUiTest.kt",
-    "target": "app/src/androidTest/java/me/mondiversi/planetcompass/PlanetCompassStarlinkSelectionUiTest.kt",
+    "target": "app/src/androidTest/java/me/mondiversi/spacecompass/SpaceCompassStarlinkSelectionUiTest.kt",
     "sourceSha256": "F0401A23B4418A32A2BF9A1A58C2B28987E9F4E2C1E772BFABB4C90DB75E9F2A"
   },
   {
     "source": "app/src/androidTest/java/me/mondiversi/uvir/UvirSunCompassRenderingTest.kt",
-    "target": "app/src/androidTest/java/me/mondiversi/planetcompass/PlanetCompassSunCompassRenderingTest.kt",
+    "target": "app/src/androidTest/java/me/mondiversi/spacecompass/SpaceCompassSunCompassRenderingTest.kt",
     "sourceSha256": "A6C36767B99DDFCE0C2510D9C6579B25314692A3A25A83E05183C0322C74C362"
   },
   {
     "source": "app/src/androidTest/java/me/mondiversi/uvir/UvirSunDailyPathPopupTest.kt",
-    "target": "app/src/androidTest/java/me/mondiversi/planetcompass/PlanetCompassSunDailyPathPopupTest.kt",
+    "target": "app/src/androidTest/java/me/mondiversi/spacecompass/SpaceCompassSunDailyPathPopupTest.kt",
     "sourceSha256": "68E4A2E4F5DD3C20A144AE73032E1E8F7C20ED5E302F41F3FE2B682EBA085A11"
   },
   {
     "source": "app/src/androidTest/java/me/mondiversi/uvir/UvirSunDailyPathRenderingTest.kt",
-    "target": "app/src/androidTest/java/me/mondiversi/planetcompass/PlanetCompassSunDailyPathRenderingTest.kt",
+    "target": "app/src/androidTest/java/me/mondiversi/spacecompass/SpaceCompassSunDailyPathRenderingTest.kt",
     "sourceSha256": "0813FD0A5C39D2D53013F0E0FBDC60AF322F77C252ECDCC4F1900BA26AD8F430"
   },
   {
     "source": "app/src/androidTest/java/me/mondiversi/uvir/UvirSunGroundAppearanceRenderingTest.kt",
-    "target": "app/src/androidTest/java/me/mondiversi/planetcompass/PlanetCompassSunGroundAppearanceRenderingTest.kt",
+    "target": "app/src/androidTest/java/me/mondiversi/spacecompass/SpaceCompassSunGroundAppearanceRenderingTest.kt",
     "sourceSha256": "6F5D35E8E30F7F9A6A69FD65D058966FC73BE48BCBF181198138E67D7A7DD8B9"
   },
   {
     "source": "app/src/androidTest/java/me/mondiversi/uvir/UvirSunMagneticOrientationTest.kt",
-    "target": "app/src/androidTest/java/me/mondiversi/planetcompass/PlanetCompassSunMagneticOrientationTest.kt",
+    "target": "app/src/androidTest/java/me/mondiversi/spacecompass/SpaceCompassSunMagneticOrientationTest.kt",
     "sourceSha256": "C007D45EF6EAE0A49FB50A88C33586DD0C29AE8E08ECDA97359EB195E5D05404"
   },
   {
     "source": "app/src/androidTest/java/me/mondiversi/uvir/UvirSunPathPointLabelsUiTest.kt",
-    "target": "app/src/androidTest/java/me/mondiversi/planetcompass/PlanetCompassSunPathPointLabelsUiTest.kt",
+    "target": "app/src/androidTest/java/me/mondiversi/spacecompass/SpaceCompassSunPathPointLabelsUiTest.kt",
     "sourceSha256": "42F4C3219F4434D9249A3A467949959CA738155305B55642BCE7CC1D4B12F3C5"
   },
   {
     "source": "app/src/main/java/me/mondiversi/uvir/UvirAdaptiveDropdownMenu.kt",
-    "target": "app/src/main/java/me/mondiversi/planetcompass/PlanetCompassAdaptiveDropdownMenu.kt",
+    "target": "app/src/main/java/me/mondiversi/spacecompass/SpaceCompassAdaptiveDropdownMenu.kt",
     "sourceSha256": "3292670A988D1690ECD89E53085FA90059F46E675D30F513AB1B1F04D7027013"
   },
   {
     "source": "app/src/main/java/me/mondiversi/uvir/UvirDateFormatting.kt",
-    "target": "app/src/main/java/me/mondiversi/planetcompass/PlanetCompassDateFormatting.kt",
+    "target": "app/src/main/java/me/mondiversi/spacecompass/SpaceCompassDateFormatting.kt",
     "sourceSha256": "2DC58BCC7A6023E4ED1BA6187390111337B93EEA475DD4D3FAFF195DCD884EC9"
   },
   {
     "source": "app/src/main/java/me/mondiversi/uvir/UvirDialogTitle.kt",
-    "target": "app/src/main/java/me/mondiversi/planetcompass/PlanetCompassDialogTitle.kt",
+    "target": "app/src/main/java/me/mondiversi/spacecompass/SpaceCompassDialogTitle.kt",
     "sourceSha256": "7157E014253953E43D599D1B098E8FB10C8F5E06BDBEE2DEEB7DA0B8C7BCAC97"
   },
   {
     "source": "app/src/main/java/me/mondiversi/uvir/UvirNavigationChrome.kt",
-    "target": "app/src/main/java/me/mondiversi/planetcompass/PlanetCompassNavigationChrome.kt",
+    "target": "app/src/main/java/me/mondiversi/spacecompass/SpaceCompassNavigationChrome.kt",
     "sourceSha256": "F41F470FC3116F0E772290995380558E57BFAD4419F65FB454B58488C1A8B143"
   },
   {
     "source": "app/src/main/java/me/mondiversi/uvir/UvirSelectionControlColors.kt",
-    "target": "app/src/main/java/me/mondiversi/planetcompass/PlanetCompassSelectionControlColors.kt",
+    "target": "app/src/main/java/me/mondiversi/spacecompass/SpaceCompassSelectionControlColors.kt",
     "sourceSha256": "2937CA7B4148BF922C76EFE96C601F05781A93873DE2FCCAC3EA75CF4A41AA47"
   },
   {
     "source": "app/src/main/java/me/mondiversi/uvir/UvirScrollingText.kt",
-    "target": "app/src/main/java/me/mondiversi/planetcompass/PlanetCompassScrollingText.kt",
+    "target": "app/src/main/java/me/mondiversi/spacecompass/SpaceCompassScrollingText.kt",
     "sourceSha256": "13AAA91FE70DA397AE7B9E903525CB89D70E6EA09EC08FAEB196682DD0AC6CDC"
   },
   {
     "source": "app/src/main/java/me/mondiversi/uvir/UvirScrollbarGeometry.kt",
-    "target": "app/src/main/java/me/mondiversi/planetcompass/PlanetCompassScrollbarGeometry.kt",
+    "target": "app/src/main/java/me/mondiversi/spacecompass/SpaceCompassScrollbarGeometry.kt",
     "sourceSha256": "8561EF515FEB3B885ECA345257E090304458200911D6FA4138510DEC7704E3CC"
   },
   {
     "source": "app/src/main/java/me/mondiversi/uvir/UvirAccessibility.kt",
-    "target": "app/src/main/java/me/mondiversi/planetcompass/PlanetCompassAccessibility.kt",
+    "target": "app/src/main/java/me/mondiversi/spacecompass/SpaceCompassAccessibility.kt",
     "sourceSha256": "CDCE1FCD125B84AE20B0C556A02D5C3AA4837C984D52FB5AC99A8F755B260C02"
   },
   {
     "source": "app/src/main/java/me/mondiversi/uvir/UvirActionIconBadge.kt",
-    "target": "app/src/main/java/me/mondiversi/planetcompass/PlanetCompassActionIconBadge.kt",
+    "target": "app/src/main/java/me/mondiversi/spacecompass/SpaceCompassActionIconBadge.kt",
     "sourceSha256": "D43699655827F534697285166BE4C225A18365A22A038D55FEC186DFC3F67980"
   },
   {
     "source": "app/src/main/java/me/mondiversi/uvir/UvirButtonStyles.kt",
-    "target": "app/src/main/java/me/mondiversi/planetcompass/PlanetCompassButtonStyles.kt",
+    "target": "app/src/main/java/me/mondiversi/spacecompass/SpaceCompassButtonStyles.kt",
     "sourceSha256": "9131103E27AC91B504A839DEE92A34AC6DE7C953DF550A3598C311C96D87D511"
   },
   {
     "source": "app/src/main/java/me/mondiversi/uvir/UvirHaptics.kt",
-    "target": "app/src/main/java/me/mondiversi/planetcompass/PlanetCompassHaptics.kt",
+    "target": "app/src/main/java/me/mondiversi/spacecompass/SpaceCompassHaptics.kt",
     "sourceSha256": "3523F941F0B3C94044E4DA3D9688C296787AD8BD9F1DAED7CE5ABC2FA08E31D1"
   },
   {
     "source": "app/src/main/java/me/mondiversi/uvir/UvirAdaptiveDisplay.kt",
-    "target": "app/src/main/java/me/mondiversi/planetcompass/PlanetCompassAdaptiveDisplay.kt",
+    "target": "app/src/main/java/me/mondiversi/spacecompass/SpaceCompassAdaptiveDisplay.kt",
     "sourceSha256": "CF1FC7703E985100D0F2E622C8837C86E72580572ED70290B34E4B2C295E232E"
   },
   {
     "source": "app/src/main/java/me/mondiversi/uvir/UvirSystemBarsContent.kt",
-    "target": "app/src/main/java/me/mondiversi/planetcompass/PlanetCompassSystemBarsContent.kt",
+    "target": "app/src/main/java/me/mondiversi/spacecompass/SpaceCompassSystemBarsContent.kt",
     "sourceSha256": "EEB593199CD037B7FEABFF9AB973EE1AB5E12305E5024664FC110DEA84F7A8A7"
   },
   {
     "source": "app/src/main/java/me/mondiversi/uvir/UvirNumericFormatting.kt",
-    "target": "app/src/main/java/me/mondiversi/planetcompass/PlanetCompassNumericFormatting.kt",
+    "target": "app/src/main/java/me/mondiversi/spacecompass/SpaceCompassNumericFormatting.kt",
     "sourceSha256": "880907AA579308635141E3808AC8E2314F6169663CE48B45482C96E5F6ED0C47"
   },
   {
     "source": "app/src/main/java/me/mondiversi/uvir/UvirScrollAndPage.kt",
-    "target": "app/src/main/java/me/mondiversi/planetcompass/PlanetCompassScrolling.kt",
+    "target": "app/src/main/java/me/mondiversi/spacecompass/SpaceCompassScrolling.kt",
     "sourceSha256": "8057B37D370A1017E919C4443A648C9FF22721FCC4882F6D39528AA3EEC5A9CE"
   },
   {
     "source": "app/src/main/java/me/mondiversi/uvir/UvirUiComponents.kt",
-    "target": "app/src/main/java/me/mondiversi/planetcompass/PlanetCompassCountBadge.kt",
+    "target": "app/src/main/java/me/mondiversi/spacecompass/SpaceCompassCountBadge.kt",
     "sourceSha256": "EA26D23BB742835A9039AE67EB2815FA6E8329CDF1D14247067DD6EFF1A96A55"
   },
   {
     "source": "app/src/main/java/me/mondiversi/uvir/UvirIcons.kt",
-    "target": "app/src/main/java/me/mondiversi/planetcompass/PlanetCompassCommonIcons.kt",
+    "target": "app/src/main/java/me/mondiversi/spacecompass/SpaceCompassCommonIcons.kt",
     "sourceSha256": "2FDBD2C821EC8C07FEE9363942F299997B8D85B644F7FCA712A92BC2F6E870CE"
   },
   {

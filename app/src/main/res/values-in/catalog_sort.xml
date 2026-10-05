@@ -1,0 +1,7 @@
+<resources>
+    <string name="catalog_sort">Urutan</string>
+    <string name="catalog_sort_alphabetical">Alfabetis</string>
+    <string name="catalog_sort_ascending">Menaik</string>
+    <string name="catalog_sort_descending">Menurun</string>
+    <string name="catalog_sort_original">Default</string>
+</resources>

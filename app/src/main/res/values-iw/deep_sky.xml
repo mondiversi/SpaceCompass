@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="celestial_alpha_centauri">אלפא קנטאורי AB</string>
+    <string name="celestial_sagittarius_a">Sagittarius A*</string>
+    <string name="celestial_andromeda_core">M31* · ליבת אנדרומדה</string>
+    <string name="celestial_deep_sky_note">מיקום קטלוגי ומרחק משוער. איור סמלי: לגרם זה אין משטח פלנטרי יחיד או מסלול סביב השמש.</string>
+    <string name="celestial_andromeda_short">M31* · אנדרומדה</string>
+    <string name="celestial_ton_618">TON 618</string>
+    <string name="celestial_ton_618_note">קוואזר המוזן בידי אחד החורים השחורים המסיביים ביותר הידועים. מרחק קו־נע משוער, התלוי במודל הקוסמולוגי. איור סמלי.</string>
+    <string name="celestial_stephenson_2_18">Stephenson 2-18</string>
+    <string name="celestial_rx_j1856">RX J1856.5−3754</string>
+    <string name="celestial_psr_j0437">PSR J0437−4715</string>
+    <string name="celestial_stephenson_note">על־ענק אדום: מועמד בין הכוכבים הגדולים ביותר; הגודל והמרחק אינם ודאיים. מיקום קטלוגי, מרחק משוער. איור סמלי.</string>
+    <string name="celestial_rx_note">כוכב נייטרונים קרוב ומבודד עם פעימות בקרינת רנטגן. מיקום קטלוגי, מרחק משוער. איור סמלי.</string>
+    <string name="celestial_psr_note">פולסר הרדיו באלפיות השנייה הקרוב ביותר הידוע. מיקום קטלוגי, מרחק משוער. איור סמלי.</string>
+    <string name="celestial_solar_mass_note">M☉: מסות שמש. ≈: הערכה. †: מסה שהונחה במודל, ולא נמדדה.</string>
+</resources>

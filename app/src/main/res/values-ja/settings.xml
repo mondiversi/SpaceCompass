@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="settings_section_display">表示</string>
+    <string name="settings_theme_title">テーマ</string>
+    <string name="settings_theme_default">デフォルト</string>
+    <string name="settings_theme_light">ライト</string>
+    <string name="settings_theme_dark">ダーク</string>
+    <string name="settings_display_unavailable">この機能はまだ利用できません。</string>
+    <string name="format_numbers_heading">数値</string>
+    <string name="format_date_time_heading">日付</string>
+    <string name="format_time_heading">時刻</string>
+    <string name="time_format_24_hours">24時間</string>
+    <string name="time_format_12_hours">12時間</string>
+    <string name="date_format_american">米国形式</string>
+    <string name="numeric_format_system">既定</string>
+    <string name="numeric_format_international">国際形式</string>
+    <string name="numeric_format_european">欧州形式</string>
+    <string name="settings_section_language">言語</string>
+    <string name="language_system">既定</string>
+    <string name="settings_section_appearance">外観</string>
+    <string name="settings_section_language_formats">形式</string>
+    <string name="pc_settings">設定</string>
+    <string name="pc_loading">読み込み中…</string>
+    <string name="pc_speed">速度</string>
+    <string name="pc_distance">距離</string>
+    <string name="pc_temperature">温度</string>
+    <string name="pc_altitude">高度とGPS精度</string>
+    <string name="pc_coordinates">座標</string>
+    <string name="pc_decimal_degrees">十進法の度数</string>
+    <string name="pc_dms">度・分・秒</string>
+    <string name="pc_compass_approximate">精度が低下しています</string>
+</resources>

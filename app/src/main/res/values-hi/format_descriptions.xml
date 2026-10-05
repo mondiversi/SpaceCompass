@@ -1,0 +1,10 @@
+<resources>
+    <string name="format_speed_description">गति की इकाई चुनें।</string>
+    <string name="format_astronomical_distance_description">खगोलीय दूरियों की इकाई चुनें।</string>
+    <string name="format_normal_distance_description">पास की दूरियों, ऊँचाई और GPS सटीकता के लिए मीट्रिक या इम्पीरियल इकाइयाँ चुनें।</string>
+    <string name="format_temperature_description">तापमान की इकाई चुनें।</string>
+    <string name="format_coordinates_description">निर्देशांक का प्रारूप चुनें।</string>
+    <string name="format_numeric_description">संख्या प्रारूप चुनें।</string>
+    <string name="format_date_description">दिनांक प्रारूप चुनें।</string>
+    <string name="format_time_description">समय प्रारूप चुनें।</string>
+</resources>

@@ -1,0 +1,10 @@
+<resources>
+    <string name="format_speed_description">速度の単位を選択します。</string>
+    <string name="format_astronomical_distance_description">天文学的距離の単位を選択します。</string>
+    <string name="format_normal_distance_description">近距離、高度、GPS精度にはメートル法またはヤード・ポンド法の単位を選択します。</string>
+    <string name="format_temperature_description">温度の単位を選択します。</string>
+    <string name="format_coordinates_description">座標の形式を選択します。</string>
+    <string name="format_numeric_description">数値形式を選択します。</string>
+    <string name="format_date_description">日付形式を選択します。</string>
+    <string name="format_time_description">時刻形式を選択します。</string>
+</resources>

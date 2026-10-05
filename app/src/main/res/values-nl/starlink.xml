@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="celestial_satellite_old">De baangegevens van %1$s zijn meer dan 24 uur oud: de nauwkeurigheid kan lager zijn.</string>
-    <string name="celestial_starlink_note">STARLINK-40083 · NORAD 100855 · 2026-225A. Baan van CelesTrak. Illustratief model: de werkelijke oriëntatie en afmetingen van de satelliet zijn niet beschikbaar.</string>
+    <string name="celestial_starlink_note">STARLINK-40083 · NORAD 100855 · 2026-225A. Baan van CelesTrak. Illustratief model: de werkelijke oriëntatie en afmetingen van de satelliet zijn niet beschikbaar.\nCelesTrak / Satcat · Space-Track</string>
 </resources>

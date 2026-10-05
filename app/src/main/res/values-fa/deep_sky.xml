@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="celestial_alpha_centauri">آلفا قنطورس AB</string>
+    <string name="celestial_sagittarius_a">Sagittarius A*</string>
+    <string name="celestial_andromeda_core">M31* · هستهٔ آندرومدا</string>
+    <string name="celestial_deep_sky_note">موقعیت فهرستی و فاصلهٔ تقریبی. تصویر نمادین: این جرم سطح سیاره‌ای واحد یا مداری به دور خورشید ندارد.</string>
+    <string name="celestial_andromeda_short">M31* · آندرومدا</string>
+    <string name="celestial_ton_618">TON 618</string>
+    <string name="celestial_ton_618_note">کوازار با یکی از پرجرم‌ترین سیاه‌چاله‌های شناخته‌شده. فاصلهٔ هم‌رو تقریبی و وابسته به مدل کیهان‌شناسی است. تصویر نمادین.</string>
+    <string name="celestial_stephenson_2_18">Stephenson 2-18</string>
+    <string name="celestial_rx_j1856">RX J1856.5−3754</string>
+    <string name="celestial_psr_j0437">PSR J0437−4715</string>
+    <string name="celestial_stephenson_note">ابرغول سرخ: نامزد یکی از بزرگ‌ترین ستارگان؛ اندازه و فاصله نامطمئن هستند. موقعیت فهرست، فاصلهٔ تقریبی. تصویر نمادین.</string>
+    <string name="celestial_rx_note">ستارهٔ نوترونی نزدیک و منزوی با تپش پرتو ایکس. موقعیت فهرست، فاصلهٔ تقریبی. تصویر نمادین.</string>
+    <string name="celestial_psr_note">نزدیک‌ترین تپ‌اختر رادیویی میلی‌ثانیه‌ای شناخته‌شده. موقعیت فهرست، فاصلهٔ تقریبی. تصویر نمادین.</string>
+    <string name="celestial_solar_mass_note">M☉: جرم خورشیدی. ≈: برآورد. †: جرم فرض‌شده در مدل، نه اندازه‌گیری‌شده.</string>
+</resources>

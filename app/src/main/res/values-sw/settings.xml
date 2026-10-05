@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="settings_section_display">Mwonekano</string>
+    <string name="settings_theme_title">Mandhari</string>
+    <string name="settings_theme_default">Chaguomsingi</string>
+    <string name="settings_theme_light">Angavu</string>
+    <string name="settings_theme_dark">Giza</string>
+    <string name="settings_display_unavailable">Kipengele hiki bado hakipatikani.</string>
+    <string name="format_numbers_heading">Nambari</string>
+    <string name="format_date_time_heading">Tarehe</string>
+    <string name="format_time_heading">Saa</string>
+    <string name="time_format_24_hours">Saa 24</string>
+    <string name="time_format_12_hours">Saa 12</string>
+    <string name="date_format_american">Kimarekani</string>
+    <string name="numeric_format_system">Chaguomsingi</string>
+    <string name="numeric_format_international">Kimataifa</string>
+    <string name="numeric_format_european">Ulaya</string>
+    <string name="settings_section_language">Lugha</string>
+    <string name="language_system">Chaguomsingi</string>
+    <string name="settings_section_appearance">Mwonekano</string>
+    <string name="settings_section_language_formats">Miundo</string>
+    <string name="pc_settings">Mipangilio</string>
+    <string name="pc_loading">Inapakia…</string>
+    <string name="pc_speed">Kasi</string>
+    <string name="pc_distance">Umbali</string>
+    <string name="pc_temperature">Halijoto</string>
+    <string name="pc_altitude">Mwinuko na usahihi wa GPS</string>
+    <string name="pc_coordinates">Viwianishi</string>
+    <string name="pc_decimal_degrees">Digrii za desimali</string>
+    <string name="pc_dms">Digrii, dakika, sekunde</string>
+    <string name="pc_compass_approximate">Usahihi mdogo</string>
+</resources>

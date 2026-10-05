@@ -6,7 +6,7 @@
     <string name="celestial_view_resume" formatted="false">Reprendre la rotation</string>
     <string name="celestial_view_diameter" formatted="false">Diamètre</string>
     <string name="celestial_view_antenna" formatted="false">Diamètre de l’antenne</string>
-    <string name="celestial_view_size" formatted="false">Envergure maximale</string>
+    <string name="celestial_view_size" formatted="false">Dimension maximale</string>
     <string name="celestial_view_mass" formatted="false">Masse</string>
     <string name="celestial_view_gravity" formatted="false">Gravité de surface</string>
     <string name="celestial_view_density" formatted="false">Densité</string>

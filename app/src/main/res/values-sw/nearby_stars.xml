@@ -1,0 +1,6 @@
+<resources>
+    <string name="celestial_proxima_centauri">Proxima Centauri</string>
+    <string name="celestial_rigel">Rigel</string>
+    <string name="celestial_proxima_note">Nyota kibete nyekundu, nyota iliyo karibu zaidi na Jua. Makadirio ya marejeo; mvuto na msongamano vimekokotolewa. Mchoro wa mfano.</string>
+    <string name="celestial_rigel_note">Nyota kubwa sana ya buluu: data ni za Rigel A. Masi na ukubwa ni makadirio. Mchoro wa mfano.</string>
+</resources>

@@ -2,11 +2,11 @@
 <resources>
     <string name="celestial_table_distance">Uzaklık: %1$s</string>
     <string name="celestial_table_speed">Hız: %1$s</string>
-    <string name="celestial_environment_info_title">Yönelim ve çevre</string>
+    <string name="celestial_environment_info_title">Çevre ayrıntıları</string>
     <string name="celestial_environment_info_action">Yönelim ve çevre bilgileri</string>
     <string name="celestial_environment_orientation_note">Yön ve eğim, telefonun nereye doğrultulduğunu gösterir. Manyetik nesneler pusulayı etkileyebilir. GPS doğruluğu, konumun tahmini belirsizliğini belirtir.</string>
     <string name="celestial_altitude">Rakım: %1$s</string>
-    <string name="celestial_details_compact">Ayrıntılar</string>
+    <string name="celestial_details_compact">GPS koordinatları ve ayrıntılar</string>
     <string name="celestial_gps_coordinates">GPS koordinatları: %1$s</string>
     <string name="celestial_gps_coordinate_accuracy">Koordinat doğruluğu: ±%1$s</string>
 </resources>

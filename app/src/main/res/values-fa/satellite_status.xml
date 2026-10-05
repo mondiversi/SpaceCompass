@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+  <string name="celestial_satellite_unavailable">داده‌های %1$s در دسترس نیست. ممکن است حتی با اتصال فعال اینترنت، دسترسی به CelesTrak ممکن نباشد.</string>
+  <string name="celestial_satellite_timeout">CelesTrak به‌موقع پاسخ نداد: دریافت داده‌های %1$s ممکن نشد. شبکهٔ دیگری را امتحان کنید.</string>
+  <string name="celestial_starlink_unavailable">داده‌های %1$s در دسترس نیست. ممکن است حتی با اتصال فعال اینترنت، دسترسی به CelesTrak / Satcat ممکن نباشد.</string>
+  <string name="celestial_starlink_timeout">CelesTrak / Satcat به‌موقع پاسخ نداد: دریافت داده‌های %1$s ممکن نشد. شبکهٔ دیگری را امتحان کنید.</string>
+</resources>

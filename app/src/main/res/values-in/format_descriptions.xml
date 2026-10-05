@@ -1,0 +1,10 @@
+<resources>
+    <string name="format_speed_description">Pilih satuan kecepatan.</string>
+    <string name="format_astronomical_distance_description">Pilih satuan jarak astronomis.</string>
+    <string name="format_normal_distance_description">Pilih satuan metrik atau imperial untuk jarak dekat, ketinggian dan akurasi GPS.</string>
+    <string name="format_temperature_description">Pilih satuan suhu.</string>
+    <string name="format_coordinates_description">Pilih format koordinat.</string>
+    <string name="format_numeric_description">Pilih format angka.</string>
+    <string name="format_date_description">Pilih format tanggal.</string>
+    <string name="format_time_description">Pilih format waktu.</string>
+</resources>

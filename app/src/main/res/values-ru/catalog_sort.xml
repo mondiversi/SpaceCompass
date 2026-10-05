@@ -1,0 +1,7 @@
+<resources>
+    <string name="catalog_sort">Сортировка</string>
+    <string name="catalog_sort_alphabetical">По алфавиту</string>
+    <string name="catalog_sort_ascending">По возрастанию</string>
+    <string name="catalog_sort_descending">По убыванию</string>
+    <string name="catalog_sort_original">По умолчанию</string>
+</resources>

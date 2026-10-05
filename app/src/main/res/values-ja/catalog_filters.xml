@@ -1,0 +1,22 @@
+<resources>
+    <string name="catalog_type_planet">惑星</string>
+    <string name="catalog_type_dwarf">準惑星と候補天体</string>
+    <string name="catalog_type_moon">天然衛星</string>
+    <string name="catalog_type_star">恒星</string>
+    <string name="catalog_type_black_hole">ブラックホール</string>
+    <string name="catalog_type_neutron">中性子星とパルサー</string>
+    <string name="catalog_type_station">宇宙ステーション</string>
+    <string name="catalog_type_satellite">人工衛星</string>
+    <string name="catalog_type_probe">宇宙探査機</string>
+    <string name="catalog_filters">フィルター</string>
+    <string name="catalog_reset_filters">フィルターをリセット</string>
+    <string name="catalog_filter_type">種類</string>
+    <string name="catalog_visibility">可視性</string>
+    <string name="catalog_all">すべて</string>
+    <string name="catalog_above_horizon">地平線より上</string>
+    <string name="catalog_below_horizon">地平線より下</string>
+    <string name="catalog_no_results">フィルターに一致する天体はありません。</string>
+    <string name="celestial_earth_center">地球の中心</string>
+    <string name="celestial_earth_center_note">足元にある幾何学的な基準点であり、地球の核ではありません。距離は観測者から測定されます。</string>
+    <string name="catalog_distance_from_sun">太陽からの距離</string>
+</resources>

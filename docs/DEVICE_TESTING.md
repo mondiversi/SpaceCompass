@@ -5,8 +5,8 @@ fixtures inject synthetic GPS/orientation and do not need a real location.
 
 Build first. On a physical device, install only after user authorization, using
 an archive-preserving update (`adb install -r`) for an existing installation. Never
-uninstall or clear data to work around a signature error. Planet Compass must be
-installed as `me.mondiversi.planetcompass`, never over the UVIR package.
+uninstall or clear data to work around a signature error. Space Compass must be
+installed as `me.mondiversi.spacecompass`, never over the UVIR package.
 
 The Gradle project retains test options that prevent uninstalling the target app
 after instrumentation or silently uninstalling an incompatible package. Preserve

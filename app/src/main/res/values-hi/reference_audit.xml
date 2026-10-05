@@ -1,0 +1,7 @@
+<resources>
+    <string name="celestial_spectral_type">वर्णक्रमीय प्रकार</string>
+    <string name="celestial_horizon_diameter">क्षितिज व्यास (2rₛ)</string>
+    <string name="celestial_reference_estimates_note">संदर्भ अनुमान, प्रत्यक्ष माप नहीं। 2rₛ बिना घूर्णन वाला ब्लैक होल मानता है; पल्सर का व्यास विषुवतीय है।</string>
+    <string name="celestial_mass_unavailable_note">विश्वसनीय वर्तमान द्रव्यमान उपलब्ध नहीं; द्रव्यमान हानि कुल द्रव्यमान नहीं है।</string>
+    <string name="celestial_luminosity">दीप्ति</string>
+</resources>

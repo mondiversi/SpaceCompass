@@ -1,0 +1,5 @@
+<resources>
+    <string name="celestial_trappist_1_e">TRAPPIST-1 e</string>
+    <string name="catalog_type_exoplanet">Exoplanets</string>
+    <string name="celestial_trappist_note">Earth-sized exoplanet in the habitable zone. Atmosphere and life unconfirmed. Pointing follows the host star TRAPPIST-1; the planet is unresolved. Symbolic illustration; gravity derived, surface temperature unknown.</string>
+</resources>

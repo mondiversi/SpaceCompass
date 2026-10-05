@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="settings_section_display">תצוגה</string>
+    <string name="settings_theme_title">ערכת נושא</string>
+    <string name="settings_theme_default">ברירת מחדל</string>
+    <string name="settings_theme_light">בהירה</string>
+    <string name="settings_theme_dark">כהה</string>
+    <string name="settings_display_unavailable">התכונה הזו עדיין אינה זמינה.</string>
+    <string name="format_numbers_heading">מספרים</string>
+    <string name="format_date_time_heading">תאריך</string>
+    <string name="format_time_heading">שעה</string>
+    <string name="time_format_24_hours">24 שעות</string>
+    <string name="time_format_12_hours">12 שעות</string>
+    <string name="date_format_american">אמריקאי</string>
+    <string name="numeric_format_system">ברירת מחדל</string>
+    <string name="numeric_format_international">בינלאומי</string>
+    <string name="numeric_format_european">אירופי</string>
+    <string name="settings_section_language">שפה</string>
+    <string name="language_system">ברירת מחדל</string>
+    <string name="settings_section_appearance">מראה</string>
+    <string name="settings_section_language_formats">תבניות</string>
+    <string name="pc_settings">הגדרות</string>
+    <string name="pc_loading">בטעינה…</string>
+    <string name="pc_speed">מהירות</string>
+    <string name="pc_distance">מרחק</string>
+    <string name="pc_temperature">טמפרטורה</string>
+    <string name="pc_altitude">גובה ודיוק GPS</string>
+    <string name="pc_coordinates">קואורדינטות</string>
+    <string name="pc_decimal_degrees">מעלות עשרוניות</string>
+    <string name="pc_dms">מעלות, דקות, שניות</string>
+    <string name="pc_compass_approximate">דיוק מופחת</string>
+</resources>

@@ -1,0 +1,5 @@
+<resources>
+    <string name="celestial_trappist_1_e">TRAPPIST-1 e</string>
+    <string name="catalog_type_exoplanet">太陽系外惑星</string>
+    <string name="celestial_trappist_note">ハビタブルゾーンにある地球サイズの系外惑星。大気と生命は未確認です。方向は恒星TRAPPIST-1を示し、惑星は個別に分解されません。模式図です。重力は計算値で、表面温度は不明です。</string>
+</resources>

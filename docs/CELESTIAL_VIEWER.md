@@ -99,7 +99,7 @@ archives, associations or preferences with UVIR.
   follows the foreground lifecycle. GPU mipmaps smooth reduced views; zoom only
   updates projection uniforms, never rebuilds/downloads textures. Texture size
   also respects device limits. Spacecraft use small depth-sorted vector meshes.
-* The screen title is Planet Compass in every language, independent of the active object.
+* The screen title is Space Compass in every language, independent of the active object.
   In landscape, equal-width sky/data columns place the toolbar above the sky only;
   the data islands use the full right-column height. Portrait retains its full-width toolbar.
   A neutral ringed-planet action at the toolbar's end opens a bounded-width,
@@ -446,3 +446,12 @@ model or live attitude. Unknown satellite mass and dimensions remain em dashes.
 The named spacecraft is consistent across locales; its warning and identification
 note are supplied in all 20 languages. The checked-in public CSV is a deterministic
 test fixture only, never a bundled live-data fallback.
+
+
+## Starlink public-provider fallback
+
+The identified STARLINK-40083 / NORAD 100855 / 2026-225A retains CelesTrak OMM as its initial source. On failure, the app reads the public copyable TLE block from https://www.satcat.com/sats/100855 (Space-Track source, as attributed there). No account, authenticated API, executable scripts or private endpoints are used. The complete Alpha-5 ID A0855 maps to 100855; the name, launch identifier, both checksums and element ranges are verified. UTC epoch and exact TLE mean elements are normalized into the existing CSV parser/cache and independently tested against SGP4 TLE propagation. Freshness and cache intervals remain unchanged. Rejected HTTP providers stop independently for the session; cancellation never initiates a fallback. The last successful source is preferred on the next refresh.
+
+The public HTML is bounded at 512 KiB and requires one unambiguous matching pre/code TLE block. Missing/changed markup, duplicate records, corrupt checksums, other spacecraft and stale epochs fail closed. This is a website fallback rather than a guaranteed versioned API; a site markup change can make it unavailable. Provider and Space-Track credits are shown with the object information.
+
+Provider documentation: https://docs.satcat.com/ (public metadata/TLE publication), https://www.satcat.com/terms-of-use. Space-Track grants blanket basic-SSA redistribution with appropriate citation: https://www.space-track.org/documentation. No publication or paid service has been configured.

@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="settings_section_display">Отображение</string>
+    <string name="settings_theme_title">Тема</string>
+    <string name="settings_theme_default">По умолчанию</string>
+    <string name="settings_theme_light">Светлая</string>
+    <string name="settings_theme_dark">Тёмная</string>
+    <string name="settings_display_unavailable">Эта функция пока недоступна.</string>
+    <string name="format_numbers_heading">Числа</string>
+    <string name="format_date_time_heading">Дата</string>
+    <string name="format_time_heading">Время</string>
+    <string name="time_format_24_hours">24 часа</string>
+    <string name="time_format_12_hours">12 часов</string>
+    <string name="date_format_american">Американский</string>
+    <string name="numeric_format_system">По умолчанию</string>
+    <string name="numeric_format_international">Международный</string>
+    <string name="numeric_format_european">Европейский</string>
+    <string name="settings_section_language">Язык</string>
+    <string name="language_system">По умолчанию</string>
+    <string name="settings_section_appearance">Оформление</string>
+    <string name="settings_section_language_formats">Форматы</string>
+    <string name="pc_settings">Настройки</string>
+    <string name="pc_loading">Загрузка…</string>
+    <string name="pc_speed">Скорость</string>
+    <string name="pc_distance">Расстояние</string>
+    <string name="pc_temperature">Температура</string>
+    <string name="pc_altitude">Высота и точность GPS</string>
+    <string name="pc_coordinates">Координаты</string>
+    <string name="pc_decimal_degrees">Десятичные градусы</string>
+    <string name="pc_dms">Градусы, минуты, секунды</string>
+    <string name="pc_compass_approximate">Низкая точность</string>
+</resources>

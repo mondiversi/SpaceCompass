@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="pc_info">Informatie</string>
+    <string name="pc_display_automatic">Automatische schaal</string>
+    <string name="pc_info_description">Een astronomisch kompas om hemelobjecten te vinden, hun banen te verkennen en modellen en maanfasen te bekijken.</string>
+    <string name="pc_info_earth">Gemaakt voor de aarde: vraag in de ruimte liever een astronaut de weg 🙂</string>
+    <string name="pc_info_compass">Kompasnauwkeurigheid</string>
+    <string name="pc_info_accuracy">Lagere nauwkeurigheid betekent dat de telefoon een lage magnetische kalibratie meldt. De richting blijft bij benadering totdat de sensor nauwkeuriger wordt.</string>
+    <string name="pc_info_credits">Bronnen en licenties</string>
+    <string name="pc_info_credits_detail">Kaarten zijn referentiebeelden, geen livefoto’s. Originele licenties en bronvermeldingen zijn opgenomen in de app.</string>
+    <string name="settings_theme_description">Kies het thema van de app om de weergave van de inhoud aan te passen.</string>
+    <string name="language_description">Kies de interfacetaal.</string>
+    <string name="github_repository_title">GitHub-repository</string>
+    <string name="about_copyright">Copyright © 2026 Mondiversi</string>
+</resources>

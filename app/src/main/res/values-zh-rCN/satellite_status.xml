@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+  <string name="celestial_satellite_unavailable">%1$s的数据不可用。即使互联网连接正常，也可能无法访问CelesTrak。</string>
+  <string name="celestial_satellite_timeout">CelesTrak未及时响应，无法下载%1$s的数据。请尝试其他网络。</string>
+  <string name="celestial_starlink_unavailable">%1$s的数据不可用。即使互联网连接正常，也可能无法访问CelesTrak / Satcat。</string>
+  <string name="celestial_starlink_timeout">CelesTrak / Satcat未及时响应，无法下载%1$s的数据。请尝试其他网络。</string>
+</resources>

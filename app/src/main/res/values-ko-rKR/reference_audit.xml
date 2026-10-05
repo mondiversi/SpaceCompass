@@ -1,0 +1,7 @@
+<resources>
+    <string name="celestial_spectral_type">분광형</string>
+    <string name="celestial_horizon_diameter">지평선 지름 (2rₛ)</string>
+    <string name="celestial_reference_estimates_note">참고 추정값이며 실시간 측정이 아닙니다. 2rₛ는 회전하지 않는 블랙홀을 가정하며 펄서 지름은 적도 지름입니다.</string>
+    <string name="celestial_mass_unavailable_note">신뢰할 수 있는 현재 질량은 없습니다. 질량 손실은 전체 질량이 아닙니다.</string>
+    <string name="celestial_luminosity">광도</string>
+</resources>

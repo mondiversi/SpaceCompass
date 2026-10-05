@@ -1,0 +1,7 @@
+<resources>
+    <string name="catalog_sort">Ordine</string>
+    <string name="catalog_sort_alphabetical">Alfabetico</string>
+    <string name="catalog_sort_ascending">Crescente</string>
+    <string name="catalog_sort_descending">Decrescente</string>
+    <string name="catalog_sort_original">Predefinito</string>
+</resources>

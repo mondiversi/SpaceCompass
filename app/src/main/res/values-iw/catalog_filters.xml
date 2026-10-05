@@ -1,0 +1,22 @@
+<resources>
+    <string name="catalog_type_planet">כוכבי לכת</string>
+    <string name="catalog_type_dwarf">כוכבי לכת ננסיים ומועמדים</string>
+    <string name="catalog_type_moon">לוויינים טבעיים</string>
+    <string name="catalog_type_star">כוכבים</string>
+    <string name="catalog_type_black_hole">חורים שחורים</string>
+    <string name="catalog_type_neutron">כוכבי נייטרונים ופולסרים</string>
+    <string name="catalog_type_station">תחנות חלל</string>
+    <string name="catalog_type_satellite">לוויינים מלאכותיים</string>
+    <string name="catalog_type_probe">גשושיות חלל</string>
+    <string name="catalog_filters">מסננים</string>
+    <string name="catalog_reset_filters">איפוס מסננים</string>
+    <string name="catalog_filter_type">סוג</string>
+    <string name="catalog_visibility">נראות</string>
+    <string name="catalog_all">הכול</string>
+    <string name="catalog_above_horizon">מעל האופק</string>
+    <string name="catalog_below_horizon">מתחת לאופק</string>
+    <string name="catalog_no_results">אין עצמים התואמים למסננים.</string>
+    <string name="celestial_earth_center">מרכז כדור הארץ</string>
+    <string name="celestial_earth_center_note">נקודת ייחוס גאומטרית מתחת לרגליך, ולא ליבת כדור הארץ. המרחק נמדד מהצופה.</string>
+    <string name="catalog_distance_from_sun">מרחק מהשמש</string>
+</resources>

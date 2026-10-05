@@ -1,0 +1,5 @@
+<resources>
+    <string name="celestial_trappist_1_e">TRAPPIST-1 e</string>
+    <string name="catalog_type_exoplanet">Exoplanetas</string>
+    <string name="celestial_trappist_note">Exoplaneta de dimensão semelhante à Terra na zona habitável. Atmosfera e vida não confirmadas. A direção segue a estrela TRAPPIST-1; o planeta não é resolvido. Ilustração simbólica; gravidade calculada, temperatura superficial desconhecida.</string>
+</resources>

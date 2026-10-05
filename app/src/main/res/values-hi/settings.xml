@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="settings_section_display">प्रदर्शन</string>
+    <string name="settings_theme_title">थीम</string>
+    <string name="settings_theme_default">डिफ़ॉल्ट</string>
+    <string name="settings_theme_light">हल्की</string>
+    <string name="settings_theme_dark">गहरी</string>
+    <string name="settings_display_unavailable">यह सुविधा अभी उपलब्ध नहीं है।</string>
+    <string name="format_numbers_heading">संख्याएँ</string>
+    <string name="format_date_time_heading">दिनांक</string>
+    <string name="format_time_heading">समय</string>
+    <string name="time_format_24_hours">24 घंटे</string>
+    <string name="time_format_12_hours">12 घंटे</string>
+    <string name="date_format_american">अमेरिकी</string>
+    <string name="numeric_format_system">डिफ़ॉल्ट</string>
+    <string name="numeric_format_international">अंतरराष्ट्रीय</string>
+    <string name="numeric_format_european">यूरोपीय</string>
+    <string name="settings_section_language">भाषा</string>
+    <string name="language_system">डिफ़ॉल्ट</string>
+    <string name="settings_section_appearance">दिखावट</string>
+    <string name="settings_section_language_formats">प्रारूप</string>
+    <string name="pc_settings">सेटिंग</string>
+    <string name="pc_loading">लोड हो रहा है…</string>
+    <string name="pc_speed">गति</string>
+    <string name="pc_distance">दूरी</string>
+    <string name="pc_temperature">तापमान</string>
+    <string name="pc_altitude">ऊँचाई और GPS सटीकता</string>
+    <string name="pc_coordinates">निर्देशांक</string>
+    <string name="pc_decimal_degrees">दशमलव डिग्री</string>
+    <string name="pc_dms">डिग्री, मिनट, सेकंड</string>
+    <string name="pc_compass_approximate">कम सटीकता</string>
+</resources>

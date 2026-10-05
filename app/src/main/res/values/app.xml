@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name" translatable="false">Planet Compass</string>
-    <style name="Theme.PlanetCompass" parent="android:style/Theme.Material.Light.NoActionBar">
+    <string name="app_name" translatable="false">Space Compass</string>
+    <style name="Theme.SpaceCompass" parent="android:style/Theme.Material.Light.NoActionBar">
         <item name="android:windowActionModeOverlay">true</item>
         <item name="android:windowLightStatusBar">true</item>
-        <item name="android:windowBackground">#101418</item>
+        <item name="android:windowBackground">@drawable/pc_splash</item>
     </style>
 </resources>

@@ -1,0 +1,7 @@
+<resources>
+    <string name="catalog_sort">Sorteren</string>
+    <string name="catalog_sort_alphabetical">Alfabetisch</string>
+    <string name="catalog_sort_ascending">Oplopend</string>
+    <string name="catalog_sort_descending">Aflopend</string>
+    <string name="catalog_sort_original">Standaard</string>
+</resources>

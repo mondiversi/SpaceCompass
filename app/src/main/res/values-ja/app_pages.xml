@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="pc_info">情報</string>
+    <string name="pc_display_automatic">自動スケーリング</string>
+    <string name="pc_info_description">天体を探し、その軌跡をたどり、モデルや月の満ち欠けを観察するための天文コンパス。</string>
+    <string name="pc_info_earth">地球で使うためのアプリです。宇宙では宇宙飛行士に道を聞きましょう 🙂</string>
+    <string name="pc_info_compass">コンパスの精度</string>
+    <string name="pc_info_accuracy">精度の低下は、スマートフォンが磁気校正の精度が低いと報告していることを意味します。センサーの精度が改善するまで方向は概算です。</string>
+    <string name="pc_info_credits">クレジットとライセンス</string>
+    <string name="pc_info_credits_detail">マップは参考画像であり、リアルタイムの写真ではありません。元のライセンスと出典情報はアプリに含まれています。</string>
+    <string name="settings_theme_description">アプリのテーマを選択して、コンテンツの表示をカスタマイズします。</string>
+    <string name="language_description">インターフェースの言語を選択します。</string>
+    <string name="github_repository_title">GitHub リポジトリ</string>
+    <string name="about_copyright">著作権 © 2026 Mondiversi</string>
+</resources>

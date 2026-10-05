@@ -1,0 +1,7 @@
+<resources>
+    <string name="catalog_sort">Panga</string>
+    <string name="catalog_sort_alphabetical">Alfabeti</string>
+    <string name="catalog_sort_ascending">Kupanda</string>
+    <string name="catalog_sort_descending">Kushuka</string>
+    <string name="catalog_sort_original">Chaguo-msingi</string>
+</resources>

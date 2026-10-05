@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="settings_section_display">Weergave</string>
+    <string name="settings_theme_title">Thema</string>
+    <string name="settings_theme_default">Standaard</string>
+    <string name="settings_theme_light">Licht</string>
+    <string name="settings_theme_dark">Donker</string>
+    <string name="settings_display_unavailable">Deze functie is nog niet beschikbaar.</string>
+    <string name="format_numbers_heading">Getallen</string>
+    <string name="format_date_time_heading">Datum</string>
+    <string name="format_time_heading">Tijd</string>
+    <string name="time_format_24_hours">24 uur</string>
+    <string name="time_format_12_hours">12 uur</string>
+    <string name="date_format_american">Amerikaans</string>
+    <string name="numeric_format_system">Standaard</string>
+    <string name="numeric_format_international">Internationaal</string>
+    <string name="numeric_format_european">Europees</string>
+    <string name="settings_section_language">Taal</string>
+    <string name="language_system">Standaard</string>
+    <string name="settings_section_appearance">Uiterlijk</string>
+    <string name="settings_section_language_formats">Formaten</string>
+    <string name="pc_settings">Instellingen</string>
+    <string name="pc_loading">Laden…</string>
+    <string name="pc_speed">Snelheid</string>
+    <string name="pc_distance">Afstand</string>
+    <string name="pc_temperature">Temperatuur</string>
+    <string name="pc_altitude">Hoogte en GPS-nauwkeurigheid</string>
+    <string name="pc_coordinates">Coördinaten</string>
+    <string name="pc_decimal_degrees">Decimale graden</string>
+    <string name="pc_dms">Graden, minuten, seconden</string>
+    <string name="pc_compass_approximate">Lagere nauwkeurigheid</string>
+</resources>

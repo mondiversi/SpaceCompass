@@ -1,0 +1,22 @@
+<resources>
+    <string name="catalog_type_planet">Gezegenler</string>
+    <string name="catalog_type_dwarf">Cüce gezegenler ve adayları</string>
+    <string name="catalog_type_moon">Doğal uydular</string>
+    <string name="catalog_type_star">Yıldızlar</string>
+    <string name="catalog_type_black_hole">Kara delikler</string>
+    <string name="catalog_type_neutron">Nötron yıldızları ve pulsarlar</string>
+    <string name="catalog_type_station">Uzay istasyonları</string>
+    <string name="catalog_type_satellite">Yapay uydular</string>
+    <string name="catalog_type_probe">Uzay sondaları</string>
+    <string name="catalog_filters">Filtreler</string>
+    <string name="catalog_reset_filters">Filtreleri sıfırla</string>
+    <string name="catalog_filter_type">Tür</string>
+    <string name="catalog_visibility">Görünürlük</string>
+    <string name="catalog_all">Tümü</string>
+    <string name="catalog_above_horizon">Ufkun üstünde</string>
+    <string name="catalog_below_horizon">Ufkun altında</string>
+    <string name="catalog_no_results">Filtrelerle eşleşen nesne yok.</string>
+    <string name="celestial_earth_center">Dünya’nın merkezi</string>
+    <string name="celestial_earth_center_note">Ayaklarınızın altındaki geometrik referans noktasıdır, Dünya’nın çekirdeği değildir. Uzaklık gözlemciden ölçülür.</string>
+    <string name="catalog_distance_from_sun">Güneş’e uzaklık</string>
+</resources>

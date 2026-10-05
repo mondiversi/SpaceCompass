@@ -1,4 +1,4 @@
-# Planet Compass development
+# Space Compass development
 
 - This is an independent Android application, not a UVIR module. Work inside this
   repository. Do not edit the former UVIR repository unless the user explicitly asks.

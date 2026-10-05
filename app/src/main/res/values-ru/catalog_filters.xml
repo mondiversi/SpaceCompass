@@ -1,0 +1,22 @@
+<resources>
+    <string name="catalog_type_planet">Планеты</string>
+    <string name="catalog_type_dwarf">Карликовые планеты и кандидаты</string>
+    <string name="catalog_type_moon">Естественные спутники</string>
+    <string name="catalog_type_star">Звёзды</string>
+    <string name="catalog_type_black_hole">Чёрные дыры</string>
+    <string name="catalog_type_neutron">Нейтронные звёзды и пульсары</string>
+    <string name="catalog_type_station">Космические станции</string>
+    <string name="catalog_type_satellite">Искусственные спутники</string>
+    <string name="catalog_type_probe">Космические зонды</string>
+    <string name="catalog_filters">Фильтры</string>
+    <string name="catalog_reset_filters">Сбросить фильтры</string>
+    <string name="catalog_filter_type">Тип</string>
+    <string name="catalog_visibility">Видимость</string>
+    <string name="catalog_all">Все</string>
+    <string name="catalog_above_horizon">Над горизонтом</string>
+    <string name="catalog_below_horizon">Под горизонтом</string>
+    <string name="catalog_no_results">Нет объектов, соответствующих фильтрам.</string>
+    <string name="celestial_earth_center">Центр Земли</string>
+    <string name="celestial_earth_center_note">Геометрическая опорная точка под ногами, а не ядро Земли. Расстояние измеряется от наблюдателя.</string>
+    <string name="catalog_distance_from_sun">Расстояние от Солнца</string>
+</resources>

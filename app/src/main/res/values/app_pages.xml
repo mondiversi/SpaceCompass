@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="pc_info">Information</string>
+    <string name="pc_display_automatic">Automatic scaling</string>
+    <string name="pc_info_description">An astronomical compass to find celestial objects, explore their paths and view models and lunar phases.</string>
+    <string name="pc_info_earth">Designed for use on Earth: in space, better ask an astronaut for directions 🙂</string>
+    <string name="pc_info_compass">Compass accuracy</string>
+    <string name="pc_info_accuracy">Reduced accuracy means the phone reports low magnetic calibration. Pointing remains approximate until sensor accuracy improves.</string>
+    <string name="pc_info_credits">Credits and licenses</string>
+    <string name="pc_info_credits_detail">Maps are reference images, not live photographs. Original licenses and attributions are included in the app.</string>
+    <string name="settings_theme_description">Choose the app theme to customize how the content looks.</string>
+    <string name="language_description">Choose the interface language.</string>
+    <string name="github_repository_title">GitHub repository</string>
+    <string name="about_copyright">Copyright © 2026 Mondiversi</string>
+</resources>

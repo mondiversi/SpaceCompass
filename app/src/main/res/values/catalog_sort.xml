@@ -1,0 +1,7 @@
+<resources>
+    <string name="catalog_sort">Sort</string>
+    <string name="catalog_sort_alphabetical">Alphabetical</string>
+    <string name="catalog_sort_ascending">Ascending</string>
+    <string name="catalog_sort_descending">Descending</string>
+    <string name="catalog_sort_original">Default</string>
+</resources>

@@ -1,0 +1,10 @@
+<resources>
+    <string name="format_speed_description">اختر وحدة السرعة.</string>
+    <string name="format_astronomical_distance_description">اختر وحدة المسافات الفلكية.</string>
+    <string name="format_normal_distance_description">اختر الوحدات المترية أو الإمبراطورية للمسافات القريبة والارتفاع ودقة GPS.</string>
+    <string name="format_temperature_description">اختر وحدة درجة الحرارة.</string>
+    <string name="format_coordinates_description">اختر تنسيق الإحداثيات.</string>
+    <string name="format_numeric_description">اختر تنسيق الأرقام.</string>
+    <string name="format_date_description">اختر تنسيق التاريخ.</string>
+    <string name="format_time_description">اختر تنسيق الوقت.</string>
+</resources>

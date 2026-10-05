@@ -1,0 +1,10 @@
+<resources>
+    <string name="format_speed_description">واحد سرعت را انتخاب کنید.</string>
+    <string name="format_astronomical_distance_description">واحد فاصله‌های نجومی را انتخاب کنید.</string>
+    <string name="format_normal_distance_description">واحدهای متریک یا امپریال را برای فاصله‌های نزدیک، ارتفاع و دقت GPS انتخاب کنید.</string>
+    <string name="format_temperature_description">واحد دما را انتخاب کنید.</string>
+    <string name="format_coordinates_description">قالب مختصات را انتخاب کنید.</string>
+    <string name="format_numeric_description">قالب عددی را انتخاب کنید.</string>
+    <string name="format_date_description">قالب تاریخ را انتخاب کنید.</string>
+    <string name="format_time_description">قالب زمان را انتخاب کنید.</string>
+</resources>

@@ -1,8 +1,43 @@
-# Extraction verification — 2026-10-04
+# Verification
 
-## Completed checks
+## Current development checks — 2026-10-05
 
-| Check | Planet Compass | UVIR after removal |
+| Check | Result |
+| --- | --- |
+| Debug APK build | Passed, version 0.1.0 |
+| JVM unit tests | 381 passed, 0 failures |
+| Android instrumentation sources | Compiled; not executed |
+| Phone UI checks | Samsung SM-G970U1, Android 12 / API 31 |
+| Tablet UI checks | Pixel Tablet emulator, Android 15 / API 35 |
+| GitHub automation | Build, JVM tests and instrumentation compilation configured |
+
+The current local command is `gradlew.bat :app:assembleDebug
+:app:testDebugUnitTest :app:compileDebugAndroidTestKotlin`, using Android Studio's
+JDK 25 and the installed Android SDK/cache. The Android UI checks above were
+manual checks, not an execution of the instrumentation test suite.
+
+Phone and tablet checks include shared toolbar dimensions, dropdown scaling,
+catalog filters/sorting, the filter separator, title-only Information navigation,
+point captions and offscreen-arrow colors. Tablet rotation was checked using
+synthetic location and orientation. Existing application data was retained during
+updates. The verification of one layout does not imply every Android version or
+device configuration has been tested.
+
+Source code and GitHub automation are prepared for publication at
+[mondiversi/SpaceCompass](https://github.com/mondiversi/SpaceCompass).
+The repository contains no signing key or local SDK configuration. Store
+submission, a privacy policy and a production release remain separate work.
+The current CI result is available on the repository's Actions page; the local
+results above do not stand in for a successful hosted run.
+
+The following records describe the original extraction baseline. They are
+historical and do not supersede the current development checks.
+
+## Historical extraction checks — 2026-10-04
+
+### Extraction results
+
+| Check | Space Compass | UVIR after removal |
 | --- | --- | --- |
 | Debug APK build | Passed, version 0.1.0 | Passed, version 1.3.0 |
 | JVM unit tests | 331 passed, 0 failures | 564 passed, 0 failures |
@@ -11,7 +46,7 @@
 | Real-device/emulator UI execution | Not performed | Not performed |
 
 The final build tasks were `:app:assembleDebug`, `:app:testDebugUnitTest` and
-`:app:compileDebugAndroidTestKotlin`, plus `:app:lintDebug` for Planet Compass.
+`:app:compileDebugAndroidTestKotlin`, plus `:app:lintDebug` for Space Compass.
 Builds used the installed Android Studio JDK/SDK and the existing offline
 Gradle cache. A workstation-only initialization script resolved cached plugin
 artifacts; it is not required by or distributed with this repository.
@@ -20,14 +55,14 @@ Regression checks cover celestial mathematics, satellite propagation, rendering
 geometry, input contracts, all 20 resource catalogs and extraction boundaries.
 The UVIR contract verifies that the logo is again an ordinary Info action and
 that no celestial feature code, maps, resource catalogs or dedicated license
-assets remain. Planet Compass checks its independent launcher, package,
+assets remain. Space Compass checks its independent launcher, package,
 permissions, textures and license notices.
 
 Two lint errors in inherited code were corrected without changing equations or
 layout: explicit control-flow braces in TLE identifier normalization and removal
 of an unused constraint-aware container in the trajectory layer.
 
-## Non-blocking lint follow-up
+### Historical lint follow-up
 
 The 52 warnings comprise screen-size API guidance (7), explicit backup-rule
 guidance (1), a Compose modifier convention (1), Java indentation suggestions
@@ -36,7 +71,7 @@ and a version-catalog suggestion (1). No insecure TLS workaround was introduced.
 These warnings are follow-up cleanup, not a claim that release preparation is
 complete. Application backup is currently disabled in the manifest.
 
-## Delivery boundaries
+### Extraction delivery boundaries
 
 - A new local Git repository is initialized independently from UVIR.
 - No GitHub remote, release, store listing or production signing was created.

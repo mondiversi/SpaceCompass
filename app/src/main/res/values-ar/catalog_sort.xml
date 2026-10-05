@@ -1,0 +1,7 @@
+<resources>
+    <string name="catalog_sort">الترتيب</string>
+    <string name="catalog_sort_alphabetical">أبجدي</string>
+    <string name="catalog_sort_ascending">تصاعدي</string>
+    <string name="catalog_sort_descending">تنازلي</string>
+    <string name="catalog_sort_original">الافتراضي</string>
+</resources>

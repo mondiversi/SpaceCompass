@@ -1,0 +1,5 @@
+<resources>
+    <string name="celestial_trappist_1_e">TRAPPIST-1 e</string>
+    <string name="catalog_type_exoplanet">Exoplaneten</string>
+    <string name="celestial_trappist_note">Erdgroßer Exoplanet in der bewohnbaren Zone. Atmosphäre und Leben sind nicht bestätigt. Die Richtung folgt dem Stern TRAPPIST-1; der Planet ist nicht aufgelöst. Symbolische Darstellung; Schwerkraft abgeleitet, Oberflächentemperatur unbekannt.</string>
+</resources>

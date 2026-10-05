@@ -1,0 +1,5 @@
+<resources>
+    <string name="celestial_trappist_1_e">TRAPPIST-1 e</string>
+    <string name="catalog_type_exoplanet">Egzoplanety</string>
+    <string name="celestial_trappist_note">Egzoplaneta wielkości Ziemi w strefie zamieszkiwalnej. Atmosfera i życie niepotwierdzone. Kierunek wskazuje gwiazdę TRAPPIST-1; planeta nie jest rozdzielona optycznie. Ilustracja symboliczna; grawitacja obliczona, temperatura powierzchni nieznana.</string>
+</resources>

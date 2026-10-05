@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="pc_info">المعلومات</string>
+    <string name="pc_display_automatic">تحجيم تلقائي</string>
+    <string name="pc_info_description">بوصلة فلكية للعثور على الأجرام السماوية، واستكشاف مساراتها وعرض النماذج وأطوار القمر.</string>
+    <string name="pc_info_earth">مصممة للأرض: في الفضاء، من الأفضل سؤال رائد فضاء عن الاتجاهات 🙂</string>
+    <string name="pc_info_compass">دقة البوصلة</string>
+    <string name="pc_info_accuracy">الدقة المنخفضة تعني أن الهاتف يبلغ عن معايرة مغناطيسية منخفضة. يبقى التوجيه تقريبياً حتى تتحسن دقة المستشعر.</string>
+    <string name="pc_info_credits">المصادر والتراخيص</string>
+    <string name="pc_info_credits_detail">الخرائط صور مرجعية وليست صوراً مباشرة. التراخيص والإسنادات الأصلية مضمنة في التطبيق.</string>
+    <string name="settings_theme_description">اختر مظهر التطبيق لتخصيص طريقة عرض المحتوى.</string>
+    <string name="language_description">اختر لغة الواجهة.</string>
+    <string name="github_repository_title">مستودع GitHub</string>
+    <string name="about_copyright">حقوق النشر © 2026 Mondiversi</string>
+</resources>

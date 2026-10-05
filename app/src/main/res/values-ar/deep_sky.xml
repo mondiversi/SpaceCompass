@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="celestial_alpha_centauri">ألفا قنطورس AB</string>
+    <string name="celestial_sagittarius_a">Sagittarius A*</string>
+    <string name="celestial_andromeda_core">M31* · نواة أندروميدا</string>
+    <string name="celestial_deep_sky_note">موضع فهرسي ومسافة تقريبية. رسم رمزي: ليس لهذا الجرم سطح كوكبي واحد أو مدار حول الشمس.</string>
+    <string name="celestial_andromeda_short">M31* · أندروميدا</string>
+    <string name="celestial_ton_618">TON 618</string>
+    <string name="celestial_ton_618_note">كوازار تغذيه إحدى أضخم الثقوب السوداء المعروفة. المسافة المسايرة تقريبية وتعتمد على النموذج الكوني. رسم رمزي.</string>
+    <string name="celestial_stephenson_2_18">Stephenson 2-18</string>
+    <string name="celestial_rx_j1856">RX J1856.5−3754</string>
+    <string name="celestial_psr_j0437">PSR J0437−4715</string>
+    <string name="celestial_stephenson_note">نجم عملاق أحمر مرشح ضمن أكبر النجوم؛ تقديرات الحجم والمسافة غير مؤكدة. موقع من الفهرس ومسافة تقريبية. رسم رمزي.</string>
+    <string name="celestial_rx_note">نجم نيوتروني قريب ومعزول ذو نبضات أشعة سينية. موقع من الفهرس ومسافة تقريبية. رسم رمزي.</string>
+    <string name="celestial_psr_note">أقرب نابض راديوي معروف من فئة الميلي ثانية. موقع من الفهرس ومسافة تقريبية. رسم رمزي.</string>
+    <string name="celestial_solar_mass_note">M☉: كتل شمسية. ≈: تقدير. †: كتلة مفترضة في النموذج وليست مقاسة.</string>
+</resources>

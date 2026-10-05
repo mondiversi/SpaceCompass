@@ -3,5 +3,5 @@
     <string name="celestial_io">Io</string>
     <string name="celestial_europa">Europe</string>
     <string name="celestial_catalog_distance">Distance au Soleil</string>
-    <string name="celestial_speed_orbit_jupiter">Vitesse orbitale (Jupiter): %1$s km/s</string>
+    <string name="celestial_speed_orbit_jupiter">Vitesse orbitale (Jupiter) : %1$s km/s</string>
 </resources>

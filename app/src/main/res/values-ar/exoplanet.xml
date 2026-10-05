@@ -1,0 +1,5 @@
+<resources>
+    <string name="celestial_trappist_1_e">TRAPPIST-1 e</string>
+    <string name="catalog_type_exoplanet">كواكب خارج المجموعة الشمسية</string>
+    <string name="celestial_trappist_note">كوكب بحجم الأرض في المنطقة الصالحة للسكن. الغلاف الجوي والحياة غير مؤكدين. الاتجاه يتبع النجم TRAPPIST-1؛ لا يمكن تمييز الكوكب منفرداً. رسم رمزي؛ الجاذبية محسوبة ودرجة حرارة السطح مجهولة.</string>
+</resources>

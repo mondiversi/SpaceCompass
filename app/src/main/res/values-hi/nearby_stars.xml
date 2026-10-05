@@ -1,0 +1,6 @@
+<resources>
+    <string name="celestial_proxima_centauri">प्रॉक्सिमा सेंटॉरी</string>
+    <string name="celestial_rigel">रिगेल</string>
+    <string name="celestial_proxima_note">लाल बौना, सूर्य के सबसे निकट का तारा। संदर्भ अनुमान; गुरुत्व और घनत्व गणना से प्राप्त हैं। प्रतीकात्मक चित्र।</string>
+    <string name="celestial_rigel_note">नीला महादानव: डेटा रिगेल A के हैं। द्रव्यमान और आकार अनुमानित हैं। प्रतीकात्मक चित्र।</string>
+</resources>

@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="celestial_table_distance">Distance: %1$s</string>
-    <string name="celestial_table_speed">Vitesse: %1$s</string>
-    <string name="celestial_environment_info_title">Orientation et environnement</string>
+    <string name="celestial_table_distance">Distance : %1$s</string>
+    <string name="celestial_table_speed">Vitesse : %1$s</string>
+    <string name="celestial_environment_info_title">Détails de l’environnement</string>
     <string name="celestial_environment_info_action">Informations sur l’orientation et l’environnement</string>
     <string name="celestial_environment_orientation_note">La direction et l’inclinaison décrivent où pointe le téléphone. Les objets magnétiques peuvent affecter la boussole. La précision GPS indique l’incertitude estimée de la position.</string>
-    <string name="celestial_altitude">Altitude: %1$s</string>
-    <string name="celestial_details_compact">Détails</string>
+    <string name="celestial_altitude">Altitude : %1$s</string>
+    <string name="celestial_details_compact">Coordonnées GPS et détails</string>
     <string name="celestial_gps_coordinates">Coordonnées GPS : %1$s</string>
     <string name="celestial_gps_coordinate_accuracy">Précision des coordonnées : ±%1$s</string>
 </resources>

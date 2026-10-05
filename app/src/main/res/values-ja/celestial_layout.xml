@@ -2,11 +2,11 @@
 <resources>
     <string name="celestial_table_distance">距離: %1$s</string>
     <string name="celestial_table_speed">速度: %1$s</string>
-    <string name="celestial_environment_info_title">向きと周辺環境</string>
+    <string name="celestial_environment_info_title">環境の詳細</string>
     <string name="celestial_environment_info_action">向きと周辺環境の情報</string>
     <string name="celestial_environment_orientation_note">方位と傾きは端末が向いている方向を示します。磁性体はコンパスに影響することがあります。GPS精度は位置の推定不確かさを示します。</string>
     <string name="celestial_altitude">標高: %1$s</string>
-    <string name="celestial_details_compact">詳細</string>
+    <string name="celestial_details_compact">GPS座標と詳細</string>
     <string name="celestial_gps_coordinates">GPS座標: %1$s</string>
     <string name="celestial_gps_coordinate_accuracy">座標精度: ±%1$s</string>
 </resources>

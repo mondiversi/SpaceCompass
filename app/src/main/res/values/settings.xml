@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="settings_section_display">Display</string>
+    <string name="settings_theme_title">Theme</string>
+    <string name="settings_theme_default">Default</string>
+    <string name="settings_theme_light">Light</string>
+    <string name="settings_theme_dark">Dark</string>
+    <string name="settings_display_unavailable">This feature is not available yet.</string>
+    <string name="format_numbers_heading">Numbers</string>
+    <string name="format_date_time_heading">Date</string>
+    <string name="format_time_heading">Time</string>
+    <string name="time_format_24_hours">24 hours</string>
+    <string name="time_format_12_hours">12 hours</string>
+    <string name="date_format_american">American</string>
+    <string name="numeric_format_system">Default</string>
+    <string name="numeric_format_international">International</string>
+    <string name="numeric_format_european">European</string>
+    <string name="settings_section_language">Language</string>
+    <string name="language_system">Default</string>
+    <string name="settings_section_appearance">Appearance</string>
+    <string name="settings_section_language_formats">Formats</string>
+    <string name="pc_settings">Settings</string>
+    <string name="pc_loading">Loading…</string>
+    <string name="pc_speed">Speed</string>
+    <string name="pc_distance">Distance</string>
+    <string name="pc_temperature">Temperature</string>
+    <string name="pc_altitude">Altitude and GPS accuracy</string>
+    <string name="pc_coordinates">Coordinates</string>
+    <string name="pc_decimal_degrees">Decimal degrees</string>
+    <string name="pc_dms">Degrees, minutes, seconds</string>
+    <string name="pc_compass_approximate">Reduced accuracy</string>
+</resources>

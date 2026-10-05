@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="celestial_alpha_centauri">अल्फा सेंटॉरी AB</string>
+    <string name="celestial_sagittarius_a">Sagittarius A*</string>
+    <string name="celestial_andromeda_core">M31* · एंड्रोमेडा का केंद्र</string>
+    <string name="celestial_deep_sky_note">सूचीबद्ध स्थिति और अनुमानित दूरी। प्रतीकात्मक चित्र: इस पिंड की कोई एक ग्रह जैसी सतह या सूर्य के चारों ओर कक्षा नहीं है।</string>
+    <string name="celestial_andromeda_short">M31* · एंड्रोमेडा</string>
+    <string name="celestial_ton_618">TON 618</string>
+    <string name="celestial_ton_618_note">क्वासर, जिसके केंद्र में ज्ञात सबसे विशाल द्रव्यमान वाले ब्लैक होल में से एक है। अनुमानित सहगामी दूरी ब्रह्माण्डीय मॉडल पर निर्भर है। प्रतीकात्मक चित्र।</string>
+    <string name="celestial_stephenson_2_18">Stephenson 2-18</string>
+    <string name="celestial_rx_j1856">RX J1856.5−3754</string>
+    <string name="celestial_psr_j0437">PSR J0437−4715</string>
+    <string name="celestial_stephenson_note">लाल महादानव: सबसे बड़े तारों के उम्मीदवारों में से एक; आकार और दूरी अनिश्चित हैं। कैटलॉग स्थिति, अनुमानित दूरी। प्रतीकात्मक चित्र।</string>
+    <string name="celestial_rx_note">एक निकटवर्ती अकेला न्यूट्रॉन तारा, जिसमें एक्स-रे स्पंदन हैं। कैटलॉग स्थिति, अनुमानित दूरी। प्रतीकात्मक चित्र।</string>
+    <string name="celestial_psr_note">सबसे निकट ज्ञात मिलीसेकंड रेडियो पल्सर। कैटलॉग स्थिति, अनुमानित दूरी। प्रतीकात्मक चित्र।</string>
+    <string name="celestial_solar_mass_note">M☉: सौर द्रव्यमान। ≈: अनुमान। †: मॉडल में माना गया द्रव्यमान, मापा नहीं गया।</string>
+</resources>

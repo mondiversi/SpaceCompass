@@ -1,0 +1,7 @@
+<resources>
+    <string name="catalog_sort">정렬</string>
+    <string name="catalog_sort_alphabetical">이름순</string>
+    <string name="catalog_sort_ascending">오름차순</string>
+    <string name="catalog_sort_descending">내림차순</string>
+    <string name="catalog_sort_original">기본값</string>
+</resources>

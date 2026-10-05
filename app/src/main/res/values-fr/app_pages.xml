@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="pc_info">Informations</string>
+    <string name="pc_display_automatic">Mise à l’échelle automatique</string>
+    <string name="pc_info_description">Une boussole astronomique pour trouver les objets célestes, explorer leurs trajectoires et observer des modèles et les phases lunaires.</string>
+    <string name="pc_info_earth">Conçue pour la Terre : dans l’espace, mieux vaut demander son chemin à un astronaute 🙂</string>
+    <string name="pc_info_compass">Précision de la boussole</string>
+    <string name="pc_info_accuracy">Une précision réduite signifie que le téléphone signale un faible étalonnage magnétique. Le pointage reste approximatif jusqu’à ce que la précision du capteur s’améliore.</string>
+    <string name="pc_info_credits">Crédits et licences</string>
+    <string name="pc_info_credits_detail">Les cartes sont des images de référence, pas des photographies en direct. Les licences et attributions originales sont incluses dans l’application.</string>
+    <string name="settings_theme_description">Choisis le thème de l’application pour personnaliser l’apparence du contenu.</string>
+    <string name="language_description">Choisissez la langue de l’interface.</string>
+    <string name="github_repository_title">Dépôt GitHub</string>
+    <string name="about_copyright">Copyright © 2026 Mondiversi</string>
+</resources>

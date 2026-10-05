@@ -3,10 +3,10 @@ plugins {
     alias(libs.plugins.kotlin.compose)
 }
 android {
-    namespace = "me.mondiversi.planetcompass"
+    namespace = "me.mondiversi.spacecompass"
     compileSdk { version = release(37) }
     defaultConfig {
-        applicationId = "me.mondiversi.planetcompass"
+        applicationId = "me.mondiversi.spacecompass"
         minSdk = 26
         targetSdk = 37
         versionCode = 1
@@ -38,4 +38,11 @@ dependencies {
     androidTestImplementation(libs.androidx.junit)
     debugImplementation(libs.androidx.compose.ui.test.manifest)
     debugImplementation(libs.androidx.compose.ui.tooling)
+}
+
+// Localization tests read XML directly, so resource edits must invalidate their cached results.
+tasks.withType<org.gradle.api.tasks.testing.Test>().configureEach {
+    inputs.files(fileTree("src/main/res") { include("**/*.xml") })
+        .withPropertyName("localizationResources")
+        .withPathSensitivity(org.gradle.api.tasks.PathSensitivity.RELATIVE)
 }

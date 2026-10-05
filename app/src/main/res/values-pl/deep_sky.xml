@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="celestial_alpha_centauri">Alfa Centauri AB</string>
+    <string name="celestial_sagittarius_a">Sagittarius A*</string>
+    <string name="celestial_andromeda_core">M31* · Jądro Andromedy</string>
+    <string name="celestial_deep_sky_note">Pozycja katalogowa i przybliżona odległość. Ilustracja symboliczna: obiekt nie ma jednej powierzchni planetarnej ani orbity wokół Słońca.</string>
+    <string name="celestial_andromeda_short">M31* · Andromeda</string>
+    <string name="celestial_ton_618">TON 618</string>
+    <string name="celestial_ton_618_note">Kwazar z jedną z najbardziej masywnych znanych czarnych dziur. Przybliżona odległość współporuszająca, zależna od modelu kosmologicznego. Symboliczna ilustracja.</string>
+    <string name="celestial_stephenson_2_18">Stephenson 2-18</string>
+    <string name="celestial_rx_j1856">RX J1856.5−3754</string>
+    <string name="celestial_psr_j0437">PSR J0437−4715</string>
+    <string name="celestial_stephenson_note">Czerwony nadolbrzym: kandydat wśród największych gwiazd; rozmiar i odległość są niepewne. Pozycja katalogowa, przybliżona odległość. Symboliczna ilustracja.</string>
+    <string name="celestial_rx_note">Bliska izolowana gwiazda neutronowa z pulsacjami rentgenowskimi. Pozycja katalogowa, przybliżona odległość. Symboliczna ilustracja.</string>
+    <string name="celestial_psr_note">Najbliższy znany radiowy pulsar milisekundowy. Pozycja katalogowa, przybliżona odległość. Symboliczna ilustracja.</string>
+    <string name="celestial_solar_mass_note">M☉: masy Słońca. ≈: oszacowanie. †: masa przyjęta w modelu, nie zmierzona.</string>
+</resources>

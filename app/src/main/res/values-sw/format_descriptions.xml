@@ -1,0 +1,10 @@
+<resources>
+    <string name="format_speed_description">Chagua kipimo cha kasi.</string>
+    <string name="format_astronomical_distance_description">Chagua kipimo cha umbali wa angani.</string>
+    <string name="format_normal_distance_description">Chagua vipimo vya metriki au vya kifalme kwa umbali wa karibu, mwinuko na usahihi wa GPS.</string>
+    <string name="format_temperature_description">Chagua kipimo cha joto.</string>
+    <string name="format_coordinates_description">Chagua muundo wa viwianishi.</string>
+    <string name="format_numeric_description">Chagua muundo wa nambari.</string>
+    <string name="format_date_description">Chagua muundo wa tarehe.</string>
+    <string name="format_time_description">Chagua muundo wa saa.</string>
+</resources>

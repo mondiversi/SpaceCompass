@@ -3,7 +3,7 @@
 ## Application boundary
 
 `MainActivity` owns the standalone launcher, system-bar insets, adaptive density,
-theme and foreground screen-awake request. It opens `PlanetCompassSunFinderScreen`
+theme and foreground screen-awake request. It opens `SpaceCompassSunFinderScreen`
 directly. The inherited internal SunFinder naming denotes the evolved celestial
 compass, not a second application or hidden UVIR entry point.
 
@@ -13,17 +13,17 @@ is required at build time. Shared UI helpers were copied and renamed, not linked
 
 ## Code groups
 
-- `PlanetCompassSunFinder*`: lifecycle-scoped location/orientation, sky/ground
+- `SpaceCompassSunFinder*`: lifecycle-scoped location/orientation, sky/ground
   rendering, adaptive layout and environment panels.
-- `PlanetCompassCelestial*`: catalog, selection, per-body ephemerides, refresh
+- `SpaceCompassCelestial*`: catalog, selection, per-body ephemerides, refresh
   policy, path interaction, thumbnails, data facts and OpenGL model viewer.
-- `PlanetCompassMoon*`: continuous lunar phase geometry and shared live marker mask.
-- `PlanetCompassIss*`, `PlanetCompassSatellite*`, `PlanetCompassStarlink*`, `sgp4`:
+- `SpaceCompassMoon*`: continuous lunar phase geometry and shared live marker mask.
+- `SpaceCompassIss*`, `SpaceCompassSatellite*`, `SpaceCompassStarlink*`, `sgp4`:
   validated satellite elements and SGP4 propagation.
-- `PlanetCompassHorizonsEphemeris`: validated JPL ephemerides and motion parsing.
+- `SpaceCompassHorizonsEphemeris`: validated JPL ephemerides and motion parsing.
 - Copied presentation helpers: accessible controls, dropdowns, bounded dialogs,
   scrollbars, numeric/date formatting, title overflow and screen scaling.
-- `PlanetCompassErrorLog`: independent bounded app-private error/crash log.
+- `SpaceCompassErrorLog`: independent bounded app-private error/crash log.
 
 Astronomy calculations and downloads remain off the UI thread according to the
 existing refresh policy. Orientation updates project cached paths; they must
@@ -38,6 +38,65 @@ localization and source-level UI/security contracts. Ported instrumentation test
 use synthetic location and orientation rather than recording a user's position.
 They need a device or emulator; compilation alone is not execution.
 
-Keep future settings, release signing/updater, persisted object selection and
-onboarding within this application's boundary. Do not reintroduce UVIR sensor
+Keep settings, release signing, persisted object selection and onboarding
+within this application's boundary. Do not reintroduce UVIR sensor
 credentials, database migrations or hardware services into this project.
+
+## Presentation preferences and page boundaries
+
+`SpaceCompassAppPages` owns navigation and retains the main compass composition.
+`SpaceCompassSettingSpecs` defines the choices, `SpaceCompassSettingsChoices`
+renders their shared controls, and `SpaceCompassInfoPage` owns information and credits.
+`SpaceCompassRegionalUnits` resolves unit defaults without an Android/UI dependency.
+
+`SpaceCompassPresentationSettings` observes only presentation keys, once per provider.
+The provider and choice rows share the same immutable snapshot; object selections and
+remote-cache metadata do not invalidate it. Configuration resources are memoized by
+system configuration, theme and language, rather than every preference write.
+Missing preferences remain system defaults, and existing storage keys are preserved.
+Device-region formats remain independent of the explicitly selected interface language.
+
+The complete 20-language resource sets are checked for exact key parity, placeholders,
+empty text, duplicate keys, broken UTF-8 and untranslated long English sentences.
+Catalog identifiers, scientific unit symbols and proper names can legitimately match.
+
+Island-based pages use the shared `SpaceCompassPageSpacing` defaults: 8 dp outer
+horizontal margins and 14 dp island horizontal padding, with existing vertical spacing
+and accessible touch targets preserved. New pages should use these same defaults.
+
+Secondary page toolbars have no separate background fill. Island content begins
+directly below the toolbar with no top content margin; the main toolbar is independent.
+
+## Celestial catalog filters
+
+The catalog page owns a single observation/range snapshot for its opening time and
+quantized GPS observer. Its filter panel combines an OR-set of object types with
+a geometric-horizon visibility filter. Missing/stale satellite positions remain
+available only under All. Filters never mutate object selection. Select-all acts
+only on displayed objects and preserves hidden checked objects and a valid active
+object. Both the back button and Android Back first collapse the animated panel.
+Earth centre is a custom geocentric reference, not an Astronomy Engine body passed
+into observer-relative planet ephemerides, and has no artificial daily sky path.
+
+
+Catalog sorting uses localized collation for names and a separate heliocentric-AU
+snapshot for numeric distances. Nearby Earth-centred/GPS display ranges never
+serve as solar-distance sort keys. Missing distances stay last in both directions;
+ties retain catalog order. `SpaceCompassCatalogPreferences` restores and immediately
+persists `catalog_sort`, `catalog_types` and `catalog_visibility` together in the
+app-private SharedPreferences file. Both app/process restarts and device restarts
+restore the chosen values. Missing keys keep existing defaults and unknown enum
+names are discarded safely. Filter reset saves the empty type set and All visibility
+without changing the sort, selected objects or the active compass target. The panel's
+open/closed state remains transient. Select-all is
+unlabelled above the checkbox column and still affects only filtered rows.
+
+
+Point captions share a compact time slot: the localized wall-clock moment and
+UTC elapsed/remaining duration alternate every two seconds. T− counts down to
+future points; T+ counts elapsed time after them. Both use whole hours and minutes, without seconds.
+Hours can exceed 24 and durations do not inherit timezone/DST offsets. The live
+screen clock feeds both badge and selected panel; each reserves the measured
+width of both alternatives to retain right-edge angle alignment. Point names
+remain fixed, only the time slot slides. Invisible text is excluded from
+accessibility, and reduced-motion settings suppress the sliding transition.

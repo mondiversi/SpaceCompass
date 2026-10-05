@@ -1,0 +1,22 @@
+<resources>
+    <string name="catalog_type_planet">ग्रह</string>
+    <string name="catalog_type_dwarf">बौने ग्रह और उम्मीदवार</string>
+    <string name="catalog_type_moon">प्राकृतिक उपग्रह</string>
+    <string name="catalog_type_star">तारे</string>
+    <string name="catalog_type_black_hole">ब्लैक होल</string>
+    <string name="catalog_type_neutron">न्यूट्रॉन तारे और पल्सर</string>
+    <string name="catalog_type_station">अंतरिक्ष स्टेशन</string>
+    <string name="catalog_type_satellite">कृत्रिम उपग्रह</string>
+    <string name="catalog_type_probe">अंतरिक्ष जांच यान</string>
+    <string name="catalog_filters">फ़िल्टर</string>
+    <string name="catalog_reset_filters">फ़िल्टर रीसेट करें</string>
+    <string name="catalog_filter_type">प्रकार</string>
+    <string name="catalog_visibility">दृश्यता</string>
+    <string name="catalog_all">सभी</string>
+    <string name="catalog_above_horizon">क्षितिज के ऊपर</string>
+    <string name="catalog_below_horizon">क्षितिज के नीचे</string>
+    <string name="catalog_no_results">फ़िल्टर से मेल खाने वाला कोई पिंड नहीं है।</string>
+    <string name="celestial_earth_center">पृथ्वी का केंद्र</string>
+    <string name="celestial_earth_center_note">आपके पैरों के नीचे ज्यामितीय संदर्भ बिंदु, पृथ्वी का केंद्रक नहीं। दूरी पर्यवेक्षक से मापी जाती है।</string>
+    <string name="catalog_distance_from_sun">सूर्य से दूरी</string>
+</resources>

@@ -1,0 +1,5 @@
+<resources>
+    <string name="celestial_trappist_1_e">TRAPPIST-1 e</string>
+    <string name="catalog_type_exoplanet">Exoplanètes</string>
+    <string name="celestial_trappist_note">Exoplanète de taille terrestre dans la zone habitable. Atmosphère et vie non confirmées. Le pointage suit l’étoile TRAPPIST-1 ; la planète n’est pas résolue. Illustration symbolique ; gravité calculée, température de surface inconnue.</string>
+</resources>

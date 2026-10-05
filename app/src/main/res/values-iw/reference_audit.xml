@@ -1,0 +1,7 @@
+<resources>
+    <string name="celestial_spectral_type">סוג ספקטרלי</string>
+    <string name="celestial_horizon_diameter">קוטר האופק (2rₛ)</string>
+    <string name="celestial_reference_estimates_note">הערכות ייחוס, לא מדידות בזמן אמת. 2rₛ מניח חור שחור שאינו מסתובב; קוטר הפולסר הוא משווני.</string>
+    <string name="celestial_mass_unavailable_note">אין מסה נוכחית אמינה; אובדן מסה אינו המסה הכוללת.</string>
+    <string name="celestial_luminosity">בהירות</string>
+</resources>

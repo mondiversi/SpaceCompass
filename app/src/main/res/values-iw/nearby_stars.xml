@@ -1,0 +1,6 @@
+<resources>
+    <string name="celestial_proxima_centauri">פרוקסימה קנטאורי</string>
+    <string name="celestial_rigel">ריגל</string>
+    <string name="celestial_proxima_note">ננס אדום, הכוכב הקרוב ביותר לשמש. הערכות ייחוס; הכבידה והצפיפות מחושבות. איור סמלי.</string>
+    <string name="celestial_rigel_note">על־ענק כחול: הנתונים מתייחסים לריגל A. מסה וגודל מוערכים. איור סמלי.</string>
+</resources>

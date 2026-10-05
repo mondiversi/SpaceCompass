@@ -2,11 +2,11 @@
 <resources>
     <string name="celestial_table_distance">Entfernung: %1$s</string>
     <string name="celestial_table_speed">Geschwindigkeit: %1$s</string>
-    <string name="celestial_environment_info_title">Ausrichtung und Umgebung</string>
+    <string name="celestial_environment_info_title">Umgebungsdetails</string>
     <string name="celestial_environment_info_action">Informationen zu Ausrichtung und Umgebung</string>
     <string name="celestial_environment_orientation_note">Richtung und Neigung beschreiben, wohin das Telefon zeigt. Magnetische Objekte können den Kompass beeinflussen. Die GPS-Genauigkeit gibt die geschätzte Unsicherheit der Position an.</string>
     <string name="celestial_altitude">Höhe: %1$s</string>
-    <string name="celestial_details_compact">Details</string>
+    <string name="celestial_details_compact">GPS-Koordinaten und Details</string>
     <string name="celestial_gps_coordinates">GPS-Koordinaten: %1$s</string>
     <string name="celestial_gps_coordinate_accuracy">Koordinatengenauigkeit: ±%1$s</string>
 </resources>

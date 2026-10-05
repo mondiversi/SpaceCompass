@@ -2,11 +2,11 @@
 <resources>
     <string name="celestial_table_distance">Jarak: %1$s</string>
     <string name="celestial_table_speed">Kecepatan: %1$s</string>
-    <string name="celestial_environment_info_title">Orientasi dan lingkungan</string>
+    <string name="celestial_environment_info_title">Detail lingkungan</string>
     <string name="celestial_environment_info_action">Informasi orientasi dan lingkungan</string>
     <string name="celestial_environment_orientation_note">Arah dan kemiringan menunjukkan ke mana ponsel mengarah. Benda magnetis dapat memengaruhi kompas. Akurasi GPS menunjukkan perkiraan ketidakpastian posisi.</string>
     <string name="celestial_altitude">Ketinggian: %1$s</string>
-    <string name="celestial_details_compact">Detail</string>
+    <string name="celestial_details_compact">Koordinat GPS dan detail</string>
     <string name="celestial_gps_coordinates">Koordinat GPS: %1$s</string>
     <string name="celestial_gps_coordinate_accuracy">Akurasi koordinat: ±%1$s</string>
 </resources>

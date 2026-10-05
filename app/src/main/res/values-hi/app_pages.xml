@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="pc_info">जानकारी</string>
+    <string name="pc_display_automatic">स्वचालित आकार समायोजन</string>
+    <string name="pc_info_description">खगोलीय पिंडों को खोजने, उनके पथों का अन्वेषण करने और मॉडल तथा चंद्रमा की कलाएँ देखने के लिए खगोलीय कंपास।</string>
+    <string name="pc_info_earth">पृथ्वी पर उपयोग के लिए बना है: अंतरिक्ष में किसी अंतरिक्ष यात्री से रास्ता पूछना बेहतर है 🙂</string>
+    <string name="pc_info_compass">कंपास की सटीकता</string>
+    <string name="pc_info_accuracy">कम सटीकता का मतलब है कि फोन कम चुंबकीय कैलिब्रेशन बताता है। सेंसर की सटीकता बेहतर होने तक दिशा अनुमानित रहती है।</string>
+    <string name="pc_info_credits">श्रेय और लाइसेंस</string>
+    <string name="pc_info_credits_detail">मानचित्र संदर्भ चित्र हैं, लाइव तस्वीरें नहीं। मूल लाइसेंस और श्रेय ऐप में शामिल हैं।</string>
+    <string name="settings_theme_description">सामग्री का रूप बदलने के लिए ऐप की थीम चुनें।</string>
+    <string name="language_description">इंटरफ़ेस की भाषा चुनें।</string>
+    <string name="github_repository_title">GitHub भंडार</string>
+    <string name="about_copyright">कॉपीराइट © 2026 मोन्डिवर्सी</string>
+</resources>

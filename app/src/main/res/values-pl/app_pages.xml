@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="pc_info">Informacje</string>
+    <string name="pc_display_automatic">Automatyczne skalowanie</string>
+    <string name="pc_info_description">Kompas astronomiczny do znajdowania obiektów niebieskich, badania ich torów oraz oglądania modeli i faz Księżyca.</string>
+    <string name="pc_info_earth">Zaprojektowany dla Ziemi: w kosmosie lepiej zapytać astronautę o drogę 🙂</string>
+    <string name="pc_info_compass">Dokładność kompasu</string>
+    <string name="pc_info_accuracy">Obniżona dokładność oznacza, że telefon zgłasza niski poziom kalibracji magnetycznej. Kierunek pozostaje przybliżony, dopóki dokładność czujnika się nie poprawi.</string>
+    <string name="pc_info_credits">Autorzy i licencje</string>
+    <string name="pc_info_credits_detail">Mapy są obrazami referencyjnymi, a nie zdjęciami na żywo. Oryginalne licencje i informacje o autorach są dołączone do aplikacji.</string>
+    <string name="settings_theme_description">Wybierz motyw aplikacji, aby dostosować wygląd treści.</string>
+    <string name="language_description">Wybierz język interfejsu.</string>
+    <string name="github_repository_title">Repozytorium GitHub</string>
+    <string name="about_copyright">Copyright © 2026 Mondiversi</string>
+</resources>

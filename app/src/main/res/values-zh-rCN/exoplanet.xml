@@ -1,0 +1,5 @@
+<resources>
+    <string name="celestial_trappist_1_e">TRAPPIST-1 e</string>
+    <string name="catalog_type_exoplanet">系外行星</string>
+    <string name="celestial_trappist_note">位于宜居带的地球大小系外行星。大气和生命尚未确认。指向采用主星 TRAPPIST-1 的方向，行星无法单独分辨。示意图；重力为推算值，表面温度未知。</string>
+</resources>

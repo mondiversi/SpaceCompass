@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="settings_section_display">Wyświetlanie</string>
+    <string name="settings_theme_title">Motyw</string>
+    <string name="settings_theme_default">Domyślny</string>
+    <string name="settings_theme_light">Jasny</string>
+    <string name="settings_theme_dark">Ciemny</string>
+    <string name="settings_display_unavailable">Ta funkcja nie jest jeszcze dostępna.</string>
+    <string name="format_numbers_heading">Liczby</string>
+    <string name="format_date_time_heading">Data</string>
+    <string name="format_time_heading">Godzina</string>
+    <string name="time_format_24_hours">24 godziny</string>
+    <string name="time_format_12_hours">12 godzin</string>
+    <string name="date_format_american">Amerykański</string>
+    <string name="numeric_format_system">Domyślne</string>
+    <string name="numeric_format_international">Międzynarodowy</string>
+    <string name="numeric_format_european">Europejski</string>
+    <string name="settings_section_language">Język</string>
+    <string name="language_system">Domyślne</string>
+    <string name="settings_section_appearance">Wygląd</string>
+    <string name="settings_section_language_formats">Formaty</string>
+    <string name="pc_settings">Ustawienia</string>
+    <string name="pc_loading">Wczytywanie…</string>
+    <string name="pc_speed">Prędkość</string>
+    <string name="pc_distance">Odległość</string>
+    <string name="pc_temperature">Temperatura</string>
+    <string name="pc_altitude">Wysokość i dokładność GPS</string>
+    <string name="pc_coordinates">Współrzędne</string>
+    <string name="pc_decimal_degrees">Stopnie dziesiętne</string>
+    <string name="pc_dms">Stopnie, minuty, sekundy</string>
+    <string name="pc_compass_approximate">Obniżona dokładność</string>
+</resources>

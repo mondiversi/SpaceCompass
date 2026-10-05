@@ -1,0 +1,7 @@
+<resources>
+    <string name="catalog_sort">Sortowanie</string>
+    <string name="catalog_sort_alphabetical">Alfabetycznie</string>
+    <string name="catalog_sort_ascending">Rosnąco</string>
+    <string name="catalog_sort_descending">Malejąco</string>
+    <string name="catalog_sort_original">Domyślnie</string>
+</resources>

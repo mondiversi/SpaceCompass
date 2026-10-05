@@ -1,0 +1,5 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+  <string name="pc_million_km">Mkm (milioni di chilometri)</string>
+  <string name="pc_million_miles">Mmi (milioni di miglia)</string>
+</resources>

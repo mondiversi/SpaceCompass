@@ -1,0 +1,22 @@
+<resources>
+    <string name="catalog_type_planet">سیاره‌ها</string>
+    <string name="catalog_type_dwarf">سیاره‌های کوتوله و نامزدها</string>
+    <string name="catalog_type_moon">قمرهای طبیعی</string>
+    <string name="catalog_type_star">ستاره‌ها</string>
+    <string name="catalog_type_black_hole">سیاه‌چاله‌ها</string>
+    <string name="catalog_type_neutron">ستاره‌های نوترونی و تپ‌اخترها</string>
+    <string name="catalog_type_station">ایستگاه‌های فضایی</string>
+    <string name="catalog_type_satellite">ماهواره‌های مصنوعی</string>
+    <string name="catalog_type_probe">کاوشگرهای فضایی</string>
+    <string name="catalog_filters">فیلترها</string>
+    <string name="catalog_reset_filters">بازنشانی فیلترها</string>
+    <string name="catalog_filter_type">نوع</string>
+    <string name="catalog_visibility">دیدپذیری</string>
+    <string name="catalog_all">همه</string>
+    <string name="catalog_above_horizon">بالای افق</string>
+    <string name="catalog_below_horizon">پایین افق</string>
+    <string name="catalog_no_results">هیچ جرمی با فیلترها مطابقت ندارد.</string>
+    <string name="celestial_earth_center">مرکز زمین</string>
+    <string name="celestial_earth_center_note">نقطهٔ مرجع هندسی زیر پای شما، نه هستهٔ زمین. فاصله از ناظر اندازه‌گیری می‌شود.</string>
+    <string name="catalog_distance_from_sun">فاصله از خورشید</string>
+</resources>

@@ -1,0 +1,5 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+  <string name="pc_astronomical_distances">天文距離</string>
+  <string name="pc_normal_distances">通常の距離</string>
+</resources>

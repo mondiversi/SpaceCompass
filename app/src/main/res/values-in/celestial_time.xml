@@ -2,6 +2,6 @@
 <resources>
     <string name="celestial_point_time">%1$s · %2$s</string>
     <string name="celestial_point_number">Titik %1$d</string>
-    <string name="celestial_current_position">Posisi saat ini</string>
+    <string name="celestial_current_position">Saat ini</string>
     <string name="celestial_point_current">Saat ini</string>
 </resources>

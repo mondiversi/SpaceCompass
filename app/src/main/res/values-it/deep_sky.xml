@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="celestial_alpha_centauri">Alpha Centauri AB</string>
+    <string name="celestial_sagittarius_a">Sagittarius A*</string>
+    <string name="celestial_andromeda_core">M31* · Nucleo di Andromeda</string>
+    <string name="celestial_deep_sky_note">Posizione di catalogo e distanza approssimativa. Illustrazione simbolica: questo oggetto non ha una singola superficie planetaria né un’orbita intorno al Sole.</string>
+    <string name="celestial_andromeda_short">M31* · Andromeda</string>
+    <string name="celestial_ton_618">TON 618</string>
+    <string name="celestial_ton_618_note">Quasar alimentato da uno dei buchi neri più massicci conosciuti. Distanza comovente approssimativa, dipendente dal modello cosmologico. Illustrazione simbolica.</string>
+    <string name="celestial_stephenson_2_18">Stephenson 2-18</string>
+    <string name="celestial_rx_j1856">RX J1856.5−3754</string>
+    <string name="celestial_psr_j0437">PSR J0437−4715</string>
+    <string name="celestial_stephenson_note">Supergigante rossa: candidata tra le stelle più grandi; dimensioni e distanza sono incerte. Posizione di catalogo, distanza approssimativa. Illustrazione simbolica.</string>
+    <string name="celestial_rx_note">Stella di neutroni isolata vicina, con pulsazioni nei raggi X. Posizione di catalogo, distanza approssimativa. Illustrazione simbolica.</string>
+    <string name="celestial_psr_note">La pulsar radio a millisecondi più vicina conosciuta. Posizione di catalogo, distanza approssimativa. Illustrazione simbolica.</string>
+    <string name="celestial_solar_mass_note">M☉: masse solari. ≈: stima. †: massa assunta dal modello, non misurata.</string>
+</resources>

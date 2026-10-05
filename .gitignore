@@ -12,3 +12,14 @@ captures/
 keystore.properties
 .DS_Store
 Thumbs.db
+
+# Local credentials and generated native/crash output
+.env
+.env.*
+!.env.example
+signing.properties
+*.p12
+*.pfx
+*.key
+.cxx/
+hs_err_pid*.log

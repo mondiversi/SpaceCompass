@@ -1,0 +1,22 @@
+<resources>
+    <string name="catalog_type_planet">行星</string>
+    <string name="catalog_type_dwarf">矮行星与候选天体</string>
+    <string name="catalog_type_moon">天然卫星</string>
+    <string name="catalog_type_star">恒星</string>
+    <string name="catalog_type_black_hole">黑洞</string>
+    <string name="catalog_type_neutron">中子星与脉冲星</string>
+    <string name="catalog_type_station">空间站</string>
+    <string name="catalog_type_satellite">人造卫星</string>
+    <string name="catalog_type_probe">空间探测器</string>
+    <string name="catalog_filters">筛选</string>
+    <string name="catalog_reset_filters">重置筛选</string>
+    <string name="catalog_filter_type">类型</string>
+    <string name="catalog_visibility">可见性</string>
+    <string name="catalog_all">全部</string>
+    <string name="catalog_above_horizon">地平线上方</string>
+    <string name="catalog_below_horizon">地平线下方</string>
+    <string name="catalog_no_results">没有符合筛选条件的天体。</string>
+    <string name="celestial_earth_center">地球中心</string>
+    <string name="celestial_earth_center_note">脚下的几何参考点，并非地核。距离从观测者的位置测量。</string>
+    <string name="catalog_distance_from_sun">距太阳的距离</string>
+</resources>

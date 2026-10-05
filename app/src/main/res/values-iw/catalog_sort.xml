@@ -1,0 +1,7 @@
+<resources>
+    <string name="catalog_sort">מיון</string>
+    <string name="catalog_sort_alphabetical">אלפביתי</string>
+    <string name="catalog_sort_ascending">עולה</string>
+    <string name="catalog_sort_descending">יורד</string>
+    <string name="catalog_sort_original">ברירת מחדל</string>
+</resources>

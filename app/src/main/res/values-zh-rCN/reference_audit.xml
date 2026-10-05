@@ -1,0 +1,7 @@
+<resources>
+    <string name="celestial_spectral_type">光谱类型</string>
+    <string name="celestial_horizon_diameter">视界直径 (2rₛ)</string>
+    <string name="celestial_reference_estimates_note">参考估计值，并非实时测量。2rₛ假设黑洞不旋转；脉冲星直径为赤道直径。</string>
+    <string name="celestial_mass_unavailable_note">没有可靠的当前质量数据；质量损失不是总质量。</string>
+    <string name="celestial_luminosity">光度</string>
+</resources>

@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="settings_section_display">Προβολή</string>
+    <string name="settings_theme_title">Θέμα</string>
+    <string name="settings_theme_default">Προεπιλογή</string>
+    <string name="settings_theme_light">Φωτεινό</string>
+    <string name="settings_theme_dark">Σκοτεινό</string>
+    <string name="settings_display_unavailable">Αυτή η λειτουργία δεν είναι ακόμη διαθέσιμη.</string>
+    <string name="format_numbers_heading">Αριθμοί</string>
+    <string name="format_date_time_heading">Ημερομηνία</string>
+    <string name="format_time_heading">Ώρα</string>
+    <string name="time_format_24_hours">24 ώρες</string>
+    <string name="time_format_12_hours">12 ώρες</string>
+    <string name="date_format_american">Αμερικανική</string>
+    <string name="numeric_format_system">Προεπιλογή</string>
+    <string name="numeric_format_international">Διεθνής</string>
+    <string name="numeric_format_european">Ευρωπαϊκή</string>
+    <string name="settings_section_language">Γλώσσα</string>
+    <string name="language_system">Προεπιλογή</string>
+    <string name="settings_section_appearance">Εμφάνιση</string>
+    <string name="settings_section_language_formats">Μορφές</string>
+    <string name="pc_settings">Ρυθμίσεις</string>
+    <string name="pc_loading">Φόρτωση…</string>
+    <string name="pc_speed">Ταχύτητα</string>
+    <string name="pc_distance">Απόσταση</string>
+    <string name="pc_temperature">Θερμοκρασία</string>
+    <string name="pc_altitude">Υψόμετρο και ακρίβεια GPS</string>
+    <string name="pc_coordinates">Συντεταγμένες</string>
+    <string name="pc_decimal_degrees">Δεκαδικές μοίρες</string>
+    <string name="pc_dms">Μοίρες, λεπτά, δευτερόλεπτα</string>
+    <string name="pc_compass_approximate">Μειωμένη ακρίβεια</string>
+</resources>

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="celestial_alpha_centauri">南门二 AB</string>
+    <string name="celestial_sagittarius_a">Sagittarius A*</string>
+    <string name="celestial_andromeda_core">M31* · 仙女座星系核</string>
+    <string name="celestial_deep_sky_note">星表位置和近似距离。此图为示意图：该天体没有单一的行星表面，也没有绕太阳运行的轨道。</string>
+    <string name="celestial_andromeda_short">M31* · 仙女座</string>
+    <string name="celestial_ton_618">TON 618</string>
+    <string name="celestial_ton_618_note">由已知质量最大的黑洞之一驱动的类星体。共动距离为近似值，取决于宇宙学模型。图示为示意图。</string>
+    <string name="celestial_stephenson_2_18">Stephenson 2-18</string>
+    <string name="celestial_rx_j1856">RX J1856.5−3754</string>
+    <string name="celestial_psr_j0437">PSR J0437−4715</string>
+    <string name="celestial_stephenson_note">红超巨星：最大恒星的候选者之一，大小和距离估计存在不确定性。 星表位置，距离为近似值。图示为示意图。</string>
+    <string name="celestial_rx_note">附近的一颗孤立中子星，具有X射线脉冲。 星表位置，距离为近似值。图示为示意图。</string>
+    <string name="celestial_psr_note">已知最近的毫秒射电脉冲星。 星表位置，距离为近似值。图示为示意图。</string>
+    <string name="celestial_solar_mass_note">M☉：太阳质量。≈：估计值。†：模型假定的质量，并非测量值。</string>
+</resources>

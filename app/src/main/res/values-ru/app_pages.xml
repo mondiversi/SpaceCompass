@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="pc_info">Информация</string>
+    <string name="pc_display_automatic">Автоматическое масштабирование</string>
+    <string name="pc_info_description">Астрономический компас для поиска небесных объектов, изучения их траекторий, просмотра моделей и фаз Луны.</string>
+    <string name="pc_info_earth">Создано для Земли: в космосе лучше спросить дорогу у космонавта 🙂</string>
+    <string name="pc_info_compass">Точность компаса</string>
+    <string name="pc_info_accuracy">Низкая точность означает, что телефон сообщает о низком уровне магнитной калибровки. Наведение остаётся приблизительным, пока точность датчика не улучшится.</string>
+    <string name="pc_info_credits">Авторы и лицензии</string>
+    <string name="pc_info_credits_detail">Карты — справочные изображения, а не фотографии в реальном времени. Исходные лицензии и сведения об авторах включены в приложение.</string>
+    <string name="settings_theme_description">Выберите тему приложения, чтобы настроить внешний вид содержимого.</string>
+    <string name="language_description">Выберите язык интерфейса.</string>
+    <string name="github_repository_title">Репозиторий GitHub</string>
+    <string name="about_copyright">© 2026 Мондиверси</string>
+</resources>

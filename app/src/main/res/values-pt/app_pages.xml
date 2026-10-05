@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="pc_info">Informações</string>
+    <string name="pc_display_automatic">Escala automática</string>
+    <string name="pc_info_description">Uma bússola astronômica para encontrar objetos celestes, explorar suas trajetórias e observar modelos e fases lunares.</string>
+    <string name="pc_info_earth">Feita para a Terra: no espaço, melhor pedir orientação a um astronauta 🙂</string>
+    <string name="pc_info_compass">Precisão da bússola</string>
+    <string name="pc_info_accuracy">Precisão reduzida significa que o telefone indica baixa calibração magnética. A orientação continua aproximada até a precisão do sensor melhorar.</string>
+    <string name="pc_info_credits">Créditos e licenças</string>
+    <string name="pc_info_credits_detail">Os mapas são imagens de referência, não fotografias ao vivo. As licenças e atribuições originais estão incluídas no aplicativo.</string>
+    <string name="settings_theme_description">Escolhe o tema da app para personalizar a aparência dos conteúdos.</string>
+    <string name="language_description">Escolha o idioma da interface.</string>
+    <string name="github_repository_title">Repositório GitHub</string>
+    <string name="about_copyright">Direitos autorais © 2026 Mondiversi</string>
+</resources>

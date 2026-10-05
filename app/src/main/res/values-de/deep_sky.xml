@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="celestial_alpha_centauri">Alpha Centauri AB</string>
+    <string name="celestial_sagittarius_a">Sagittarius A*</string>
+    <string name="celestial_andromeda_core">M31* · Andromedakern</string>
+    <string name="celestial_deep_sky_note">Katalogposition und ungefähre Entfernung. Symbolische Darstellung: Dieses Objekt hat keine einzelne Planetenoberfläche und keine Umlaufbahn um die Sonne.</string>
+    <string name="celestial_andromeda_short">M31* · Andromeda</string>
+    <string name="celestial_ton_618">TON 618</string>
+    <string name="celestial_ton_618_note">Quasar mit einem der massereichsten bekannten Schwarzen Löcher. Ungefähre mitbewegte Entfernung, abhängig vom kosmologischen Modell. Symbolische Darstellung.</string>
+    <string name="celestial_stephenson_2_18">Stephenson 2-18</string>
+    <string name="celestial_rx_j1856">RX J1856.5−3754</string>
+    <string name="celestial_psr_j0437">PSR J0437−4715</string>
+    <string name="celestial_stephenson_note">Roter Überriese: Kandidat für die größte Sternengröße; Größe und Entfernung sind unsicher. Katalogposition, ungefähre Entfernung. Symbolische Darstellung.</string>
+    <string name="celestial_rx_note">Naher isolierter Neutronenstern mit Röntgenpulsationen. Katalogposition, ungefähre Entfernung. Symbolische Darstellung.</string>
+    <string name="celestial_psr_note">Nächster bekannter Radio-Millisekundenpulsar. Katalogposition, ungefähre Entfernung. Symbolische Darstellung.</string>
+    <string name="celestial_solar_mass_note">M☉: Sonnenmassen. ≈: Schätzung. †: im Modell angenommene, nicht gemessene Masse.</string>
+</resources>

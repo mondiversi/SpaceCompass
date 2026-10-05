@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="celestial_alpha_centauri">Άλφα Κενταύρου AB</string>
+    <string name="celestial_sagittarius_a">Sagittarius A*</string>
+    <string name="celestial_andromeda_core">M31* · Πυρήνας Ανδρομέδας</string>
+    <string name="celestial_deep_sky_note">Θέση καταλόγου και κατά προσέγγιση απόσταση. Συμβολική απεικόνιση: το αντικείμενο δεν έχει ενιαία πλανητική επιφάνεια ή τροχιά γύρω από τον Ήλιο.</string>
+    <string name="celestial_andromeda_short">M31* · Ανδρομέδα</string>
+    <string name="celestial_ton_618">TON 618</string>
+    <string name="celestial_ton_618_note">Κβάζαρ με μία από τις μεγαλύτερες γνωστές μαύρες τρύπες σε μάζα. Προσεγγιστική συνκινούμενη απόσταση, ανάλογα με το κοσμολογικό μοντέλο. Συμβολική απεικόνιση.</string>
+    <string name="celestial_stephenson_2_18">Stephenson 2-18</string>
+    <string name="celestial_rx_j1856">RX J1856.5−3754</string>
+    <string name="celestial_psr_j0437">PSR J0437−4715</string>
+    <string name="celestial_stephenson_note">Ερυθρός υπεργίγαντας: υποψήφιος μεταξύ των μεγαλύτερων άστρων· μέγεθος και απόσταση αβέβαια. Θέση καταλόγου, προσεγγιστική απόσταση. Συμβολική απεικόνιση.</string>
+    <string name="celestial_rx_note">Κοντινός απομονωμένος αστέρας νετρονίων με παλμούς ακτίνων Χ. Θέση καταλόγου, προσεγγιστική απόσταση. Συμβολική απεικόνιση.</string>
+    <string name="celestial_psr_note">Ο κοντινότερος γνωστός ραδιοπάλσαρ χιλιοστού του δευτερολέπτου. Θέση καταλόγου, προσεγγιστική απόσταση. Συμβολική απεικόνιση.</string>
+    <string name="celestial_solar_mass_note">M☉: ηλιακές μάζες. ≈: εκτίμηση. †: μάζα που υποθέτει το μοντέλο, όχι μετρημένη.</string>
+</resources>

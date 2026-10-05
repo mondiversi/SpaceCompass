@@ -1,0 +1,5 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+  <string name="pc_astronomical_distances">천문 거리</string>
+  <string name="pc_normal_distances">일반 거리</string>
+</resources>

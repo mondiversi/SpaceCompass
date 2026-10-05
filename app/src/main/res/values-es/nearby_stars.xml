@@ -1,0 +1,6 @@
+<resources>
+    <string name="celestial_proxima_centauri">Proxima Centauri</string>
+    <string name="celestial_rigel">Rigel</string>
+    <string name="celestial_proxima_note">Enana roja, la estrella más cercana al Sol. Estimaciones de referencia; gravedad y densidad derivadas. Ilustración simbólica.</string>
+    <string name="celestial_rigel_note">Supergigante azul: los datos corresponden a Rigel A. Masa y tamaño estimados. Ilustración simbólica.</string>
+</resources>

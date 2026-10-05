@@ -1,0 +1,22 @@
+<resources>
+    <string name="catalog_type_planet">Planet</string>
+    <string name="catalog_type_dwarf">Planet katai dan kandidat</string>
+    <string name="catalog_type_moon">Satelit alami</string>
+    <string name="catalog_type_star">Bintang</string>
+    <string name="catalog_type_black_hole">Lubang hitam</string>
+    <string name="catalog_type_neutron">Bintang neutron dan pulsar</string>
+    <string name="catalog_type_station">Stasiun antariksa</string>
+    <string name="catalog_type_satellite">Satelit buatan</string>
+    <string name="catalog_type_probe">Wahana antariksa</string>
+    <string name="catalog_filters">Filter</string>
+    <string name="catalog_reset_filters">Atur ulang filter</string>
+    <string name="catalog_filter_type">Jenis</string>
+    <string name="catalog_visibility">Visibilitas</string>
+    <string name="catalog_all">Semua</string>
+    <string name="catalog_above_horizon">Di atas cakrawala</string>
+    <string name="catalog_below_horizon">Di bawah cakrawala</string>
+    <string name="catalog_no_results">Tidak ada objek yang sesuai dengan filter.</string>
+    <string name="celestial_earth_center">Pusat Bumi</string>
+    <string name="celestial_earth_center_note">Titik acuan geometris di bawah kaki Anda, bukan inti Bumi. Jarak diukur dari pengamat.</string>
+    <string name="catalog_distance_from_sun">Jarak dari Matahari</string>
+</resources>

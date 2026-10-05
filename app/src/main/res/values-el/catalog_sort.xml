@@ -1,0 +1,7 @@
+<resources>
+    <string name="catalog_sort">Ταξινόμηση</string>
+    <string name="catalog_sort_alphabetical">Αλφαβητικά</string>
+    <string name="catalog_sort_ascending">Αύξουσα</string>
+    <string name="catalog_sort_descending">Φθίνουσα</string>
+    <string name="catalog_sort_original">Προεπιλογή</string>
+</resources>

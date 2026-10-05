@@ -1,0 +1,10 @@
+<resources>
+    <string name="format_speed_description">Выберите единицу скорости.</string>
+    <string name="format_astronomical_distance_description">Выберите единицу астрономических расстояний.</string>
+    <string name="format_normal_distance_description">Выберите метрические или имперские единицы для близких расстояний, высоты и точности GPS.</string>
+    <string name="format_temperature_description">Выберите единицу температуры.</string>
+    <string name="format_coordinates_description">Выберите формат координат.</string>
+    <string name="format_numeric_description">Выберите формат чисел.</string>
+    <string name="format_date_description">Выберите формат даты.</string>
+    <string name="format_time_description">Выберите формат времени.</string>
+</resources>

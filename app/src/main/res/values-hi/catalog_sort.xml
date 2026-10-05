@@ -1,0 +1,7 @@
+<resources>
+    <string name="catalog_sort">क्रम</string>
+    <string name="catalog_sort_alphabetical">वर्णानुक्रम</string>
+    <string name="catalog_sort_ascending">आरोही</string>
+    <string name="catalog_sort_descending">अवरोही</string>
+    <string name="catalog_sort_original">डिफ़ॉल्ट</string>
+</resources>

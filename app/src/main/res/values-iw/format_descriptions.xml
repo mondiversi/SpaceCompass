@@ -1,0 +1,10 @@
+<resources>
+    <string name="format_speed_description">בחר את יחידת המהירות.</string>
+    <string name="format_astronomical_distance_description">בחר את יחידת המרחקים האסטרונומיים.</string>
+    <string name="format_normal_distance_description">בחר יחידות מטריות או אימפריאליות למרחקים קרובים, לגובה ולדיוק GPS.</string>
+    <string name="format_temperature_description">בחר את יחידת הטמפרטורה.</string>
+    <string name="format_coordinates_description">בחר את תבנית הקואורדינטות.</string>
+    <string name="format_numeric_description">בחר את תבנית המספרים.</string>
+    <string name="format_date_description">בחר את תבנית התאריך.</string>
+    <string name="format_time_description">בחר את תבנית השעה.</string>
+</resources>

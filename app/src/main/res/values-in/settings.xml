@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="settings_section_display">Tampilan</string>
+    <string name="settings_theme_title">Tema</string>
+    <string name="settings_theme_default">Bawaan</string>
+    <string name="settings_theme_light">Terang</string>
+    <string name="settings_theme_dark">Gelap</string>
+    <string name="settings_display_unavailable">Fitur ini belum tersedia.</string>
+    <string name="format_numbers_heading">Angka</string>
+    <string name="format_date_time_heading">Tanggal</string>
+    <string name="format_time_heading">Waktu</string>
+    <string name="time_format_24_hours">24 jam</string>
+    <string name="time_format_12_hours">12 jam</string>
+    <string name="date_format_american">Amerika</string>
+    <string name="numeric_format_system">Bawaan</string>
+    <string name="numeric_format_international">Internasional</string>
+    <string name="numeric_format_european">Eropa</string>
+    <string name="settings_section_language">Bahasa</string>
+    <string name="language_system">Bawaan</string>
+    <string name="settings_section_appearance">Tampilan</string>
+    <string name="settings_section_language_formats">Format</string>
+    <string name="pc_settings">Pengaturan</string>
+    <string name="pc_loading">Memuat…</string>
+    <string name="pc_speed">Kecepatan</string>
+    <string name="pc_distance">Jarak</string>
+    <string name="pc_temperature">Suhu</string>
+    <string name="pc_altitude">Ketinggian dan akurasi GPS</string>
+    <string name="pc_coordinates">Koordinat</string>
+    <string name="pc_decimal_degrees">Derajat desimal</string>
+    <string name="pc_dms">Derajat, menit, detik</string>
+    <string name="pc_compass_approximate">Akurasi rendah</string>
+</resources>

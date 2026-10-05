@@ -1,0 +1,10 @@
+<resources>
+    <string name="format_speed_description">Επιλέξτε μονάδα ταχύτητας.</string>
+    <string name="format_astronomical_distance_description">Επιλέξτε μονάδα αστρονομικών αποστάσεων.</string>
+    <string name="format_normal_distance_description">Επιλέξτε μετρικές ή αυτοκρατορικές μονάδες για κοντινές αποστάσεις, υψόμετρο και ακρίβεια GPS.</string>
+    <string name="format_temperature_description">Επιλέξτε μονάδα θερμοκρασίας.</string>
+    <string name="format_coordinates_description">Επιλέξτε μορφή συντεταγμένων.</string>
+    <string name="format_numeric_description">Επιλέξτε τη μορφή αριθμών.</string>
+    <string name="format_date_description">Επιλέξτε τη μορφή ημερομηνίας.</string>
+    <string name="format_time_description">Επιλέξτε τη μορφή ώρας.</string>
+</resources>

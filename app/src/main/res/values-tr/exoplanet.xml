@@ -1,0 +1,5 @@
+<resources>
+    <string name="celestial_trappist_1_e">TRAPPIST-1 e</string>
+    <string name="catalog_type_exoplanet">Ötegezegenler</string>
+    <string name="celestial_trappist_note">Yaşanabilir bölgede Dünya boyutunda ötegezegen. Atmosfer ve yaşam doğrulanmadı. Yön TRAPPIST-1 yıldızını izler; gezegen ayrı olarak çözümlenmez. Simgesel çizim; yerçekimi hesaplanmıştır, yüzey sıcaklığı bilinmez.</string>
+</resources>

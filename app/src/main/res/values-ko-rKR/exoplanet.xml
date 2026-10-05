@@ -1,0 +1,5 @@
+<resources>
+    <string name="celestial_trappist_1_e">TRAPPIST-1 e</string>
+    <string name="catalog_type_exoplanet">외계 행성</string>
+    <string name="celestial_trappist_note">거주 가능 영역에 있는 지구 크기의 외계 행성입니다. 대기와 생명은 확인되지 않았습니다. 방향은 모항성 TRAPPIST-1을 따르며 행성은 따로 분해되지 않습니다. 상징적 그림입니다. 중력은 계산값이며 표면 온도는 알려지지 않았습니다.</string>
+</resources>

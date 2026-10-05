@@ -23,4 +23,4 @@ The full map attribution and Astronomy Engine MIT notice are also bundled in
 NASA credits do not imply endorsement. Surface maps are reference composites,
 not live photographs. Unknown surfaces, spacecraft attitude and the Polaris
 model remain explicitly illustrative. No new bitmap artwork was introduced by
-the extraction; the launcher is an original code-native placeholder vector.
+the extraction; the launcher and loading artwork are original code-native vectors featuring a ringed planet and compass pointer.

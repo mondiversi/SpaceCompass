@@ -1,0 +1,22 @@
+<resources>
+    <string name="catalog_type_planet">Planets</string>
+    <string name="catalog_type_dwarf">Dwarf planets and candidates</string>
+    <string name="catalog_type_moon">Natural satellites</string>
+    <string name="catalog_type_star">Stars</string>
+    <string name="catalog_type_black_hole">Black holes</string>
+    <string name="catalog_type_neutron">Neutron stars and pulsars</string>
+    <string name="catalog_type_station">Space stations</string>
+    <string name="catalog_type_satellite">Artificial satellites</string>
+    <string name="catalog_type_probe">Space probes</string>
+    <string name="catalog_filters">Filters</string>
+    <string name="catalog_reset_filters">Reset filters</string>
+    <string name="catalog_filter_type">Type</string>
+    <string name="catalog_visibility">Visibility</string>
+    <string name="catalog_all">All</string>
+    <string name="catalog_above_horizon">Above the horizon</string>
+    <string name="catalog_below_horizon">Below the horizon</string>
+    <string name="catalog_no_results">No objects match the filters.</string>
+    <string name="celestial_earth_center">Earth’s centre</string>
+    <string name="celestial_earth_center_note">Geometric reference point beneath your feet, not the Earth’s core. The distance is measured from the observer.</string>
+    <string name="catalog_distance_from_sun">Distance from the Sun</string>
+</resources>

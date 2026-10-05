@@ -1,0 +1,7 @@
+<resources>
+    <string name="celestial_spectral_type">نوع طیفی</string>
+    <string name="celestial_horizon_diameter">قطر افق (2rₛ)</string>
+    <string name="celestial_reference_estimates_note">برآوردهای مرجع، نه اندازه‌گیری زنده. 2rₛ سیاه‌چاله‌ای بدون چرخش را فرض می‌کند؛ قطر تپ‌اختر استوایی است.</string>
+    <string name="celestial_mass_unavailable_note">جرم فعلی قابل اعتماد موجود نیست؛ کاهش جرم همان جرم کل نیست.</string>
+    <string name="celestial_luminosity">درخشندگی</string>
+</resources>

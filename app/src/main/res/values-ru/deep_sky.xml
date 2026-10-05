@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="celestial_alpha_centauri">Альфа Центавра AB</string>
+    <string name="celestial_sagittarius_a">Sagittarius A*</string>
+    <string name="celestial_andromeda_core">M31* · Ядро Андромеды</string>
+    <string name="celestial_deep_sky_note">Каталожное положение и приблизительное расстояние. Символическое изображение: у объекта нет единой планетной поверхности или орбиты вокруг Солнца.</string>
+    <string name="celestial_andromeda_short">M31* · Андромеда</string>
+    <string name="celestial_ton_618">TON 618</string>
+    <string name="celestial_ton_618_note">Квазар с одной из самых массивных известных чёрных дыр. Приблизительное сопутствующее расстояние зависит от космологической модели. Символическое изображение.</string>
+    <string name="celestial_stephenson_2_18">Stephenson 2-18</string>
+    <string name="celestial_rx_j1856">RX J1856.5−3754</string>
+    <string name="celestial_psr_j0437">PSR J0437−4715</string>
+    <string name="celestial_stephenson_note">Красный сверхгигант: кандидат в число крупнейших звёзд; размер и расстояние неточны. Положение из каталога, приблизительное расстояние. Символическое изображение.</string>
+    <string name="celestial_rx_note">Близкая изолированная нейтронная звезда с рентгеновскими пульсациями. Положение из каталога, приблизительное расстояние. Символическое изображение.</string>
+    <string name="celestial_psr_note">Ближайший известный миллисекундный радиопульсар. Положение из каталога, приблизительное расстояние. Символическое изображение.</string>
+    <string name="celestial_solar_mass_note">M☉: массы Солнца. ≈: оценка. †: масса принята в модели, а не измерена.</string>
+</resources>

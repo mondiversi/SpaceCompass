@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="settings_section_display">العرض</string>
+    <string name="settings_theme_title">المظهر</string>
+    <string name="settings_theme_default">افتراضي</string>
+    <string name="settings_theme_light">فاتح</string>
+    <string name="settings_theme_dark">داكن</string>
+    <string name="settings_display_unavailable">هذه الميزة غير متاحة بعد.</string>
+    <string name="format_numbers_heading">الأرقام</string>
+    <string name="format_date_time_heading">التاريخ</string>
+    <string name="date_format_american">أمريكي</string>
+    <string name="numeric_format_system">افتراضي</string>
+    <string name="numeric_format_international">دولي</string>
+    <string name="numeric_format_european">أوروبي</string>
+    <string name="format_time_heading">الوقت</string>
+    <string name="time_format_24_hours">24 ساعة</string>
+    <string name="time_format_12_hours">12 ساعة</string>
+    <string name="settings_section_language">اللغة</string>
+    <string name="language_system">افتراضي</string>
+    <string name="settings_section_appearance">المظهر</string>
+    <string name="settings_section_language_formats">التنسيقات</string>
+    <string name="pc_settings">الإعدادات</string>
+    <string name="pc_loading">جارٍ التحميل…</string>
+    <string name="pc_speed">السرعة</string>
+    <string name="pc_distance">المسافة</string>
+    <string name="pc_temperature">درجة الحرارة</string>
+    <string name="pc_altitude">الارتفاع ودقة GPS</string>
+    <string name="pc_coordinates">الإحداثيات</string>
+    <string name="pc_decimal_degrees">درجات عشرية</string>
+    <string name="pc_dms">درجات، دقائق، ثوانٍ</string>
+    <string name="pc_compass_approximate">دقة منخفضة</string>
+</resources>

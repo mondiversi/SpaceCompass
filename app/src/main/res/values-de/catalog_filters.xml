@@ -1,0 +1,22 @@
+<resources>
+    <string name="catalog_type_planet">Planeten</string>
+    <string name="catalog_type_dwarf">Zwergplaneten und Kandidaten</string>
+    <string name="catalog_type_moon">Natürliche Satelliten</string>
+    <string name="catalog_type_star">Sterne</string>
+    <string name="catalog_type_black_hole">Schwarze Löcher</string>
+    <string name="catalog_type_neutron">Neutronensterne und Pulsare</string>
+    <string name="catalog_type_station">Raumstationen</string>
+    <string name="catalog_type_satellite">Künstliche Satelliten</string>
+    <string name="catalog_type_probe">Raumsonden</string>
+    <string name="catalog_filters">Filter</string>
+    <string name="catalog_reset_filters">Filter zurücksetzen</string>
+    <string name="catalog_filter_type">Typ</string>
+    <string name="catalog_visibility">Sichtbarkeit</string>
+    <string name="catalog_all">Alle</string>
+    <string name="catalog_above_horizon">Über dem Horizont</string>
+    <string name="catalog_below_horizon">Unter dem Horizont</string>
+    <string name="catalog_no_results">Keine Objekte entsprechen den Filtern.</string>
+    <string name="celestial_earth_center">Erdmittelpunkt</string>
+    <string name="celestial_earth_center_note">Geometrischer Bezugspunkt unter deinen Füßen, nicht der Erdkern. Die Entfernung wird vom Beobachter aus gemessen.</string>
+    <string name="catalog_distance_from_sun">Entfernung zur Sonne</string>
+</resources>

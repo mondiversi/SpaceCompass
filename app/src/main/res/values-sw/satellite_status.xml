@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+  <string name="celestial_satellite_unavailable">Data za %1$s hazipatikani. CelesTrak huenda haifikiki hata ukiwa na muunganisho wa Intaneti.</string>
+  <string name="celestial_satellite_timeout">CelesTrak haikujibu kwa wakati: imeshindikana kupakua data za %1$s. Jaribu mtandao mwingine.</string>
+  <string name="celestial_starlink_unavailable">Data za %1$s hazipatikani. CelesTrak / Satcat huenda haifikiki hata ukiwa na muunganisho wa Intaneti.</string>
+  <string name="celestial_starlink_timeout">CelesTrak / Satcat haikujibu kwa wakati: imeshindikana kupakua data za %1$s. Jaribu mtandao mwingine.</string>
+</resources>

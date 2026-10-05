@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+  <string name="celestial_satellite_unavailable">%1$s के डेटा उपलब्ध नहीं हैं। इंटरनेट कनेक्शन सक्रिय होने पर भी CelesTrak तक पहुँचना संभव नहीं हो सकता।</string>
+  <string name="celestial_satellite_timeout">CelesTrak ने समय पर जवाब नहीं दिया: %1$s का डेटा डाउनलोड नहीं हो सका। दूसरा नेटवर्क आज़माएँ।</string>
+  <string name="celestial_starlink_unavailable">%1$s के डेटा उपलब्ध नहीं हैं। इंटरनेट कनेक्शन सक्रिय होने पर भी CelesTrak / Satcat तक पहुँचना संभव नहीं हो सकता।</string>
+  <string name="celestial_starlink_timeout">CelesTrak / Satcat ने समय पर जवाब नहीं दिया: %1$s का डेटा डाउनलोड नहीं हो सका। दूसरा नेटवर्क आज़माएँ।</string>
+</resources>

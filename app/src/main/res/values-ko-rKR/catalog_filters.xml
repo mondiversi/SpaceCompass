@@ -1,0 +1,22 @@
+<resources>
+    <string name="catalog_type_planet">행성</string>
+    <string name="catalog_type_dwarf">왜행성과 후보 천체</string>
+    <string name="catalog_type_moon">자연 위성</string>
+    <string name="catalog_type_star">항성</string>
+    <string name="catalog_type_black_hole">블랙홀</string>
+    <string name="catalog_type_neutron">중성자별과 펄서</string>
+    <string name="catalog_type_station">우주 정거장</string>
+    <string name="catalog_type_satellite">인공위성</string>
+    <string name="catalog_type_probe">우주 탐사선</string>
+    <string name="catalog_filters">필터</string>
+    <string name="catalog_reset_filters">필터 초기화</string>
+    <string name="catalog_filter_type">유형</string>
+    <string name="catalog_visibility">가시성</string>
+    <string name="catalog_all">모두</string>
+    <string name="catalog_above_horizon">지평선 위</string>
+    <string name="catalog_below_horizon">지평선 아래</string>
+    <string name="catalog_no_results">필터에 일치하는 천체가 없습니다.</string>
+    <string name="celestial_earth_center">지구 중심</string>
+    <string name="celestial_earth_center_note">발 아래의 기하학적 기준점이며 지구의 핵이 아닙니다. 거리는 관측자로부터 측정됩니다.</string>
+    <string name="catalog_distance_from_sun">태양으로부터의 거리</string>
+</resources>

@@ -1,0 +1,7 @@
+<resources>
+    <string name="catalog_sort">مرتب‌سازی</string>
+    <string name="catalog_sort_alphabetical">الفبایی</string>
+    <string name="catalog_sort_ascending">صعودی</string>
+    <string name="catalog_sort_descending">نزولی</string>
+    <string name="catalog_sort_original">پیش‌فرض</string>
+</resources>

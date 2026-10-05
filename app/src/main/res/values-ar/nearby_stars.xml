@@ -1,0 +1,6 @@
+<resources>
+    <string name="celestial_proxima_centauri">بروكسيما سنتوري</string>
+    <string name="celestial_rigel">رجل الجبار</string>
+    <string name="celestial_proxima_note">قزم أحمر، أقرب نجم إلى الشمس. تقديرات مرجعية؛ الجاذبية والكثافة محسوبتان. رسم رمزي.</string>
+    <string name="celestial_rigel_note">عملاق أزرق فائق: البيانات تخص Rigel A. الكتلة والحجم تقديريان. رسم رمزي.</string>
+</resources>

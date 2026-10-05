@@ -2,11 +2,11 @@
 <resources>
     <string name="celestial_table_distance">Umbali: %1$s</string>
     <string name="celestial_table_speed">Kasi: %1$s</string>
-    <string name="celestial_environment_info_title">Mwelekeo na mazingira</string>
+    <string name="celestial_environment_info_title">Maelezo ya mazingira</string>
     <string name="celestial_environment_info_action">Maelezo ya mwelekeo na mazingira</string>
     <string name="celestial_environment_orientation_note">Mwelekeo na mwinamo vinaeleza simu inaelekea wapi. Vitu vya sumaku vinaweza kuathiri dira. Usahihi wa GPS unaonyesha kutokuwa na uhakika kwa makadirio ya mahali.</string>
     <string name="celestial_altitude">Mwinuko: %1$s</string>
-    <string name="celestial_details_compact">Maelezo</string>
+    <string name="celestial_details_compact">Viwianishi vya GPS na maelezo</string>
     <string name="celestial_gps_coordinates">Viwianishi vya GPS: %1$s</string>
     <string name="celestial_gps_coordinate_accuracy">Usahihi wa viwianishi: ±%1$s</string>
 </resources>

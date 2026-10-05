@@ -28,10 +28,10 @@
     <string name="celestial_iss_note">Une révolution complète autour de l’heure actuelle, même sous l’horizon, avec 24 points réguliers plus le lever, la culmination et le coucher. Les détails concernent le passage actuel ou suivant dans les 24 heures ; la visibilité n’est pas garantie.</string>
     <string name="celestial_model_note">Positions et distances calculées ; le pointage dépend de la précision de la boussole. ISS nécessite des données orbitales récentes. Sedna et Voyager utilisent les trajectoires prévues NASA/JPL, et non une télémétrie en direct.</string>
     <string name="celestial_weather_mainly_clear">Généralement dégagé</string>
-    <string name="celestial_speed_earth_orbit">Vitesse orbitale (Terre): %1$s km/s</string>
-    <string name="celestial_speed_orbit_earth">Vitesse orbitale (Terre): %1$s km/s</string>
-    <string name="celestial_speed_orbit_sun">Vitesse orbitale (Soleil): %1$s km/s</string>
-    <string name="celestial_speed_outward_sun">Éloignement (Soleil): %1$s km/s</string>
+    <string name="celestial_speed_earth_orbit">Vitesse orbitale (Terre) : %1$s km/s</string>
+    <string name="celestial_speed_orbit_earth">Vitesse orbitale (Terre) : %1$s km/s</string>
+    <string name="celestial_speed_orbit_sun">Vitesse orbitale (Soleil) : %1$s km/s</string>
+    <string name="celestial_speed_outward_sun">Éloignement (Soleil) : %1$s km/s</string>
     <string name="celestial_speed_note">Sélectionner le Soleil affiche la vitesse orbitale de la Terre autour du Soleil. Les autres planètes et Sedna orbitent autour du Soleil ; la Lune et ISS autour de la Terre. Pour Voyager, la vitesse indique l’augmentation de la distance au Soleil, pas à la Terre.</string>
     <string name="celestial_pass">Passage</string>
     <string name="celestial_orbit">Orbite</string>

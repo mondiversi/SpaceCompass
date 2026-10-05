@@ -1,0 +1,7 @@
+<resources>
+    <string name="catalog_sort">Sıralama</string>
+    <string name="catalog_sort_alphabetical">Alfabetik</string>
+    <string name="catalog_sort_ascending">Artan</string>
+    <string name="catalog_sort_descending">Azalan</string>
+    <string name="catalog_sort_original">Varsayılan</string>
+</resources>

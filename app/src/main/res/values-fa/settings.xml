@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="settings_section_display">نمایش</string>
+    <string name="settings_theme_title">پوسته</string>
+    <string name="settings_theme_default">پیش‌فرض</string>
+    <string name="settings_theme_light">روشن</string>
+    <string name="settings_theme_dark">تیره</string>
+    <string name="settings_display_unavailable">این قابلیت هنوز در دسترس نیست.</string>
+    <string name="format_numbers_heading">اعداد</string>
+    <string name="format_date_time_heading">تاریخ</string>
+    <string name="format_time_heading">زمان</string>
+    <string name="time_format_24_hours">۲۴ ساعته</string>
+    <string name="time_format_12_hours">۱۲ ساعته</string>
+    <string name="date_format_american">آمریکایی</string>
+    <string name="numeric_format_system">پیش‌فرض</string>
+    <string name="numeric_format_international">بین‌المللی</string>
+    <string name="numeric_format_european">اروپایی</string>
+    <string name="settings_section_language">زبان</string>
+    <string name="language_system">پیش‌فرض</string>
+    <string name="settings_section_appearance">ظاهر</string>
+    <string name="settings_section_language_formats">قالب‌ها</string>
+    <string name="pc_settings">تنظیمات</string>
+    <string name="pc_loading">در حال بارگذاری…</string>
+    <string name="pc_speed">سرعت</string>
+    <string name="pc_distance">فاصله</string>
+    <string name="pc_temperature">دما</string>
+    <string name="pc_altitude">ارتفاع و دقت GPS</string>
+    <string name="pc_coordinates">مختصات</string>
+    <string name="pc_decimal_degrees">درجه اعشاری</string>
+    <string name="pc_dms">درجه، دقیقه، ثانیه</string>
+    <string name="pc_compass_approximate">دقت کم</string>
+</resources>

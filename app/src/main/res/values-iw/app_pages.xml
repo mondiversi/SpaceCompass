@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="pc_info">מידע</string>
+    <string name="pc_display_automatic">התאמת גודל אוטומטית</string>
+    <string name="pc_info_description">מצפן אסטרונומי למציאת גרמי שמיים, לחקירת המסלולים שלהם ולצפייה בדגמים ובמופעי הירח.</string>
+    <string name="pc_info_earth">מיועדת לכדור הארץ: בחלל עדיף לבקש הוראות מאסטרונאוט 🙂</string>
+    <string name="pc_info_compass">דיוק המצפן</string>
+    <string name="pc_info_accuracy">דיוק מופחת אומר שהטלפון מדווח על כיול מגנטי נמוך. הכיוון נשאר משוער עד שדיוק החיישן משתפר.</string>
+    <string name="pc_info_credits">קרדיטים ורישיונות</string>
+    <string name="pc_info_credits_detail">המפות הן תמונות עזר, לא צילומים בזמן אמת. הרישיונות והייחוסים המקוריים כלולים באפליקציה.</string>
+    <string name="settings_theme_description">בחרו את ערכת הנושא של האפליקציה כדי להתאים את מראה התוכן.</string>
+    <string name="language_description">בחר את שפת הממשק.</string>
+    <string name="github_repository_title">מאגר GitHub</string>
+    <string name="about_copyright">זכויות יוצרים © 2026 Mondiversi</string>
+</resources>

@@ -2,7 +2,7 @@
 <resources>
     <string name="sun_path_title">太陽の一日の軌道</string>
     <string name="sun_path_sunrise">日の出</string>
-    <string name="sun_path_culmination">南中</string>
+    <string name="sun_path_culmination">最高高度</string>
     <string name="sun_path_sunset">日の入り</string>
     <string name="sun_path_show">軌道を表示</string>
     <string name="sun_path_note">時刻は遮るもののない地平線を基準に計算されます。地形や天候は見え方に影響することがあります。</string>

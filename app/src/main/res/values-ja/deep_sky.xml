@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="celestial_alpha_centauri">ケンタウルス座α星 AB</string>
+    <string name="celestial_sagittarius_a">Sagittarius A*</string>
+    <string name="celestial_andromeda_core">M31* · アンドロメダ銀河核</string>
+    <string name="celestial_deep_sky_note">カタログの位置と概算距離。模式図です。この天体には単一の惑星表面や太陽を回る軌道はありません。</string>
+    <string name="celestial_andromeda_short">M31* · アンドロメダ</string>
+    <string name="celestial_ton_618">TON 618</string>
+    <string name="celestial_ton_618_note">既知の最も大質量なブラックホールの一つを持つクエーサー。共動距離は概算で、宇宙論モデルに依存します。模式図です。</string>
+    <string name="celestial_stephenson_2_18">Stephenson 2-18</string>
+    <string name="celestial_rx_j1856">RX J1856.5−3754</string>
+    <string name="celestial_psr_j0437">PSR J0437−4715</string>
+    <string name="celestial_stephenson_note">赤色超巨星。最大級の恒星の候補ですが、大きさと距離には不確かさがあります。 カタログ位置、概算距離。模式図です。</string>
+    <string name="celestial_rx_note">X線の脈動を示す、近傍の孤立した中性子星。 カタログ位置、概算距離。模式図です。</string>
+    <string name="celestial_psr_note">既知の最も近いミリ秒電波パルサー。 カタログ位置、概算距離。模式図です。</string>
+    <string name="celestial_solar_mass_note">M☉：太陽質量。≈：推定値。†：測定値ではなく、モデルで仮定した質量。</string>
+</resources>

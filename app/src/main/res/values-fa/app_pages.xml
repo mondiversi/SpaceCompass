@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="pc_info">اطلاعات</string>
+    <string name="pc_display_automatic">مقیاس‌بندی خودکار</string>
+    <string name="pc_info_description">قطب‌نمای نجومی برای یافتن اجرام آسمانی، بررسی مسیرهای آن‌ها و مشاهده مدل‌ها و فازهای ماه.</string>
+    <string name="pc_info_earth">برای زمین طراحی شده: در فضا بهتر است از یک فضانورد راه بپرسید 🙂</string>
+    <string name="pc_info_compass">دقت قطب‌نما</string>
+    <string name="pc_info_accuracy">دقت کم یعنی گوشی کالیبراسیون مغناطیسی پایین را گزارش می‌کند. جهت‌گیری تا بهبود دقت حسگر تقریبی است.</string>
+    <string name="pc_info_credits">منابع و مجوزها</string>
+    <string name="pc_info_credits_detail">نقشه‌ها تصاویر مرجع هستند، نه عکس‌های زنده. مجوزها و انتساب‌های اصلی در برنامه گنجانده شده‌اند.</string>
+    <string name="settings_theme_description">برای شخصی‌سازی ظاهر محتوا، پوسته برنامه را انتخاب کنید.</string>
+    <string name="language_description">زبان رابط را انتخاب کنید.</string>
+    <string name="github_repository_title">مخزن GitHub</string>
+    <string name="about_copyright">حق چاپ © 2026 Mondiversi</string>
+</resources>

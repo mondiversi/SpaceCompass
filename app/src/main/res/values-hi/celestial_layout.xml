@@ -2,11 +2,11 @@
 <resources>
     <string name="celestial_table_distance">दूरी: %1$s</string>
     <string name="celestial_table_speed">गति: %1$s</string>
-    <string name="celestial_environment_info_title">दिशा और परिवेश</string>
+    <string name="celestial_environment_info_title">परिवेश का विवरण</string>
     <string name="celestial_environment_info_action">दिशा और परिवेश की जानकारी</string>
     <string name="celestial_environment_orientation_note">दिशा और झुकाव बताते हैं कि फ़ोन कहाँ इंगित कर रहा है। चुंबकीय वस्तुएँ कंपास को प्रभावित कर सकती हैं। GPS सटीकता स्थिति की अनुमानित अनिश्चितता बताती है।</string>
     <string name="celestial_altitude">ऊँचाई: %1$s</string>
-    <string name="celestial_details_compact">विवरण</string>
+    <string name="celestial_details_compact">GPS निर्देशांक और विवरण</string>
     <string name="celestial_gps_coordinates">GPS निर्देशांक: %1$s</string>
     <string name="celestial_gps_coordinate_accuracy">निर्देशांक सटीकता: ±%1$s</string>
 </resources>

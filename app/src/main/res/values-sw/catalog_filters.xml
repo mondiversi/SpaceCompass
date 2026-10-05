@@ -1,0 +1,22 @@
+<resources>
+    <string name="catalog_type_planet">Sayari</string>
+    <string name="catalog_type_dwarf">Sayari kibete na wagombea</string>
+    <string name="catalog_type_moon">Satelaiti za asili</string>
+    <string name="catalog_type_star">Nyota</string>
+    <string name="catalog_type_black_hole">Mashimo meusi</string>
+    <string name="catalog_type_neutron">Nyota za nyutroni na pulsar</string>
+    <string name="catalog_type_station">Vituo vya anga</string>
+    <string name="catalog_type_satellite">Satelaiti bandia</string>
+    <string name="catalog_type_probe">Vyombo vya uchunguzi wa anga</string>
+    <string name="catalog_filters">Vichujio</string>
+    <string name="catalog_reset_filters">Weka upya vichujio</string>
+    <string name="catalog_filter_type">Aina</string>
+    <string name="catalog_visibility">Mwonekano</string>
+    <string name="catalog_all">Vyote</string>
+    <string name="catalog_above_horizon">Juu ya upeo wa macho</string>
+    <string name="catalog_below_horizon">Chini ya upeo wa macho</string>
+    <string name="catalog_no_results">Hakuna vitu vinavyolingana na vichujio.</string>
+    <string name="celestial_earth_center">Kitovu cha Dunia</string>
+    <string name="celestial_earth_center_note">Sehemu ya rejea ya kijiometri chini ya miguu yako, si kiini cha Dunia. Umbali hupimwa kutoka kwa mtazamaji.</string>
+    <string name="catalog_distance_from_sun">Umbali kutoka Jua</string>
+</resources>

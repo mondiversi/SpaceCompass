@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="pc_info">Πληροφορίες</string>
+    <string name="pc_display_automatic">Αυτόματη κλιμάκωση</string>
+    <string name="pc_info_description">Μια αστρονομική πυξίδα για τον εντοπισμό ουράνιων αντικειμένων, την εξερεύνηση των τροχιών τους και την προβολή μοντέλων και σεληνιακών φάσεων.</string>
+    <string name="pc_info_earth">Σχεδιασμένη για τη Γη: στο διάστημα καλύτερα να ρωτήσετε έναν αστροναύτη για οδηγίες 🙂</string>
+    <string name="pc_info_compass">Ακρίβεια πυξίδας</string>
+    <string name="pc_info_accuracy">Μειωμένη ακρίβεια σημαίνει ότι το τηλέφωνο αναφέρει χαμηλή μαγνητική βαθμονόμηση. Η κατεύθυνση παραμένει κατά προσέγγιση μέχρι να βελτιωθεί η ακρίβεια του αισθητήρα.</string>
+    <string name="pc_info_credits">Συντελεστές και άδειες</string>
+    <string name="pc_info_credits_detail">Οι χάρτες είναι εικόνες αναφοράς, όχι ζωντανές φωτογραφίες. Οι αρχικές άδειες και αναφορές περιλαμβάνονται στην εφαρμογή.</string>
+    <string name="settings_theme_description">Επίλεξε το θέμα της εφαρμογής για να προσαρμόσεις την εμφάνιση του περιεχομένου.</string>
+    <string name="language_description">Επιλέξτε τη γλώσσα της διεπαφής.</string>
+    <string name="github_repository_title">Αποθετήριο GitHub</string>
+    <string name="about_copyright">Πνευματικά δικαιώματα © 2026 Mondiversi</string>
+</resources>

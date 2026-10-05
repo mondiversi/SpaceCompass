@@ -1,0 +1,6 @@
+<resources>
+    <string name="celestial_proxima_centauri">Проксима Центавра</string>
+    <string name="celestial_rigel">Ригель</string>
+    <string name="celestial_proxima_note">Красный карлик, ближайшая к Солнцу звезда. Справочные оценки; гравитация и плотность рассчитаны. Символическое изображение.</string>
+    <string name="celestial_rigel_note">Голубой сверхгигант: данные относятся к Ригелю A. Масса и размеры оценочные. Символическая иллюстрация.</string>
+</resources>
