@@ -28,7 +28,7 @@
     <string name="celestial_view_sedna_note" formatted="false">Surface and orientation are unknown: illustrative model.</string>
     <string name="celestial_view_map_note" formatted="false">Reconstructed appearance: calculated phase and orientation. Static maps, not live images.</string>
     <string name="celestial_view_location_needed" formatted="false">A location fix is needed for the current face. Rotation is available without GPS.</string>
-    <string name="celestial_view_facts_note" formatted="false">Approximate reference values. Gas-giant gravity is at 1 bar; orbital distances refer to the parent body.</string>
+    <string name="celestial_view_facts_note">Approximate reference values. Gas-giant gravity is at %1$s; orbital distances refer to the parent body.</string>
     <string name="celestial_view_sun_note" formatted="false">Solar rotation varies with latitude; the listed period is a reference value.</string>
     <string name="celestial_view_sedna_facts" formatted="false">Diameter is an estimate. Rotation and orbital elements are uncertain.</string>
     <string name="celestial_view_iss_note" formatted="false">ISS dimensions and mass vary with configuration and visiting vehicles.</string>
@@ -37,5 +37,5 @@
     <string name="celestial_view_zoom_in" formatted="false">Zoom in</string>
     <string name="celestial_view_zoom_out" formatted="false">Zoom out</string>
     <string name="celestial_view_reset_zoom" formatted="false">Reset zoom</string>
-    <string name="celestial_view_zoom_level">Zoom: %1$d%%</string>
+    <string name="celestial_view_zoom_level">Zoom: %1$s%%</string>
 </resources>

@@ -5,7 +5,7 @@
     <string name="celestial_temperature_day_maximum" formatted="false">Uso unaopigwa na jua (kiwango cha juu)</string>
     <string name="celestial_temperature_night_minimum" formatted="false">Uso wa usiku (kiwango cha chini)</string>
     <string name="celestial_temperature_surface_range" formatted="false">Masafa ya halijoto ya uso</string>
-    <string name="celestial_temperature_atmosphere" formatted="false">Halijoto ya angahewa (bar 1)</string>
+    <string name="celestial_temperature_atmosphere">Halijoto ya angahewa (%1$s)</string>
     <string name="celestial_temperature_photosphere" formatted="false">Halijoto ya fotosfera</string>
     <string name="celestial_temperature_effective" formatted="false">Wastani wa halijoto efektif</string>
     <string name="celestial_temperature_note" formatted="false">Halijoto za marejeleo, si data za moja kwa moja. Thamani za mchana/usiku ni viwango vya juu/chini vya mahali fulani, si wastani wa nusutufe. Thamani hutofautiana kwa mahali na wakati.</string>

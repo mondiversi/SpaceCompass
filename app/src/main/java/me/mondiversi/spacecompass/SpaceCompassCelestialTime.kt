@@ -1,9 +1,7 @@
 package me.mondiversi.spacecompass
 
-import java.text.SimpleDateFormat
 import java.time.Instant
 import java.time.ZoneId
-import java.util.Date
 import java.util.Locale
 import java.util.TimeZone
 
@@ -65,20 +63,21 @@ internal fun <T : Any> focusedSpaceCompassCelestialPathPoint(
 /** Display only: never substitutes a path point's time for the live ephemeris time. */
 internal fun formatSpaceCompassCelestialMoment(
     timeMs: Long, nowMs: Long, zone: ZoneId, timeFormat: SpaceCompassTimeFormat,
-    dateFormat: SpaceCompassDateFormat, locale: Locale, deviceLocale: Locale = locale
+    dateFormat: SpaceCompassDateFormat, locale: Locale, deviceLocale: Locale = locale,
+    numeric: SpaceCompassNumericFormat = SpaceCompassNumericFormat.SYSTEM
 ): String {
     require(timeFormat != SpaceCompassTimeFormat.SYSTEM) // Resolved from Android before entering this pure formatter.
     val local = Instant.ofEpochMilli(timeMs).atZone(zone)
     val nowDate = Instant.ofEpochMilli(nowMs).atZone(zone).toLocalDate()
     val timezone = TimeZone.getTimeZone(zone)
-    val time = SimpleDateFormat(if (timeFormat == SpaceCompassTimeFormat.H12) "h:mm a" else "HH:mm", locale)
-        .apply { timeZone = timezone }.format(Date(timeMs))
+    val time = formatSpaceCompassTimeOnly(timeMs, timeFormat, locale, timezone, numeric, deviceLocale,
+        includeSeconds = false)
     // Distinguish the two occurrences of a repeated local hour when daylight saving ends.
     val offset = if (zone.rules.getValidOffsets(local.toLocalDateTime()).size > 1)
         " (UTC${local.offset.id})" else ""
     val date = if (local.toLocalDate() != nowDate)
         " · ${formatSpaceCompassDateOnly(timeMs, dateFormat,
-            if (dateFormat == SpaceCompassDateFormat.SYSTEM) deviceLocale else locale, timezone)}" else ""
+            if (dateFormat == SpaceCompassDateFormat.SYSTEM) deviceLocale else locale, timezone, numeric, deviceLocale)}" else ""
     return time + offset + date
 }
 

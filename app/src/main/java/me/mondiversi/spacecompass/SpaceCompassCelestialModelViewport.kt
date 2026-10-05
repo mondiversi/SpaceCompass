@@ -46,7 +46,9 @@ internal fun SpaceCompassCelestialModelViewport(body: SpaceCompassCelestialBody,
     val zoomIn = stringResource(R.string.celestial_view_zoom_in)
     val zoomOut = stringResource(R.string.celestial_view_zoom_out)
     val reset = stringResource(R.string.celestial_view_reset_zoom)
-    val zoomDescription = stringResource(R.string.celestial_view_zoom_level, (viewport.zoom * 100).roundToInt())
+    val zoomDescription = stringResource(R.string.celestial_view_zoom_level,
+        formatSpaceCompassNumber((viewport.zoom * 100).roundToInt().toDouble(), 0,
+            LocalSpaceCompassNumericFormat.current, grouping = false))
     val gestures = Modifier.pointerInput(body, rotating) {
         awaitEachGesture {
             awaitFirstDown(requireUnconsumed = false)

@@ -5,7 +5,7 @@
     <string name="celestial_temperature_day_maximum" formatted="false">प्रकाशित सतह (अधिकतम)</string>
     <string name="celestial_temperature_night_minimum" formatted="false">रात्रि सतह (न्यूनतम)</string>
     <string name="celestial_temperature_surface_range" formatted="false">सतही तापमान की सीमा</string>
-    <string name="celestial_temperature_atmosphere" formatted="false">वायुमंडलीय तापमान (1 बार)</string>
+    <string name="celestial_temperature_atmosphere">वायुमंडलीय तापमान (%1$s)</string>
     <string name="celestial_temperature_photosphere" formatted="false">प्रकाशमंडल का तापमान</string>
     <string name="celestial_temperature_effective" formatted="false">औसत प्रभावी तापमान</string>
     <string name="celestial_temperature_note" formatted="false">संदर्भ तापमान, लाइव डेटा नहीं। दिन/रात के मान स्थानीय चरम हैं, गोलार्ध के औसत नहीं। मान स्थान और समय के साथ बदलते हैं।</string>

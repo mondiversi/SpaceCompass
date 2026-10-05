@@ -5,7 +5,7 @@
     <string name="celestial_temperature_day_maximum" formatted="false">Φωτισμένη επιφάνεια (μέγ.)</string>
     <string name="celestial_temperature_night_minimum" formatted="false">Νυχτερινή επιφάνεια (ελάχ.)</string>
     <string name="celestial_temperature_surface_range" formatted="false">Εύρος θερμοκρασίας επιφάνειας</string>
-    <string name="celestial_temperature_atmosphere" formatted="false">Θερμοκρασία ατμόσφαιρας (1 bar)</string>
+    <string name="celestial_temperature_atmosphere">Θερμοκρασία ατμόσφαιρας (%1$s)</string>
     <string name="celestial_temperature_photosphere" formatted="false">Θερμοκρασία φωτόσφαιρας</string>
     <string name="celestial_temperature_effective" formatted="false">Μέση ενεργός θερμοκρασία</string>
     <string name="celestial_temperature_note" formatted="false">Θερμοκρασίες αναφοράς, όχι ζωντανά δεδομένα. Οι τιμές ημέρας/νύχτας είναι τοπικά άκρα, όχι μέσοι όροι ημισφαιρίου. Οι τιμές ποικίλλουν με τον τόπο και τον χρόνο.</string>

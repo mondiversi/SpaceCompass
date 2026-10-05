@@ -28,7 +28,7 @@
     <string name="celestial_view_sedna_note" formatted="false">Yüzey ve yönelim bilinmiyor: temsili model.</string>
     <string name="celestial_view_map_note" formatted="false">Hesaplanan evre ve yönelimle oluşturulan görünüm. Sabit haritalar, canlı görüntü değil.</string>
     <string name="celestial_view_location_needed" formatted="false">Güncel görünüm için konum gerekir. Dönüş GPS olmadan kullanılabilir.</string>
-    <string name="celestial_view_facts_note" formatted="false">Yaklaşık değerler. Gaz devlerinin yerçekimi 1 bar düzeyinde; yörünge mesafeleri ana cisme göredir.</string>
+    <string name="celestial_view_facts_note">Yaklaşık değerler. Gaz devlerinin yerçekimi %1$s düzeyinde; yörünge mesafeleri ana cisme göredir.</string>
     <string name="celestial_view_sun_note" formatted="false">Güneşin dönüşü enleme göre değişir; süre bir referans değeridir.</string>
     <string name="celestial_view_sedna_facts" formatted="false">Çap tahminidir. Dönüş ve yörünge öğeleri belirsizlik içerir.</string>
     <string name="celestial_view_iss_note" formatted="false">ISS boyutları ve kütlesi yapılandırma ve ziyaret eden araçlara göre değişir.</string>
@@ -36,5 +36,5 @@
     <string name="celestial_view_zoom_in" formatted="false">Yakınlaştır</string>
     <string name="celestial_view_zoom_out" formatted="false">Uzaklaştır</string>
     <string name="celestial_view_reset_zoom" formatted="false">Yakınlaştırmayı sıfırla</string>
-    <string name="celestial_view_zoom_level">Yakınlaştırma: %1$d%%</string>
+    <string name="celestial_view_zoom_level">Yakınlaştırma: %1$s%%</string>
 </resources>

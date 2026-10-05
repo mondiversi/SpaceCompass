@@ -3,6 +3,7 @@ package me.mondiversi.spacecompass
 import android.content.Context
 import androidx.compose.runtime.staticCompositionLocalOf
 import androidx.core.content.edit
+import java.text.DecimalFormat
 import java.text.DateFormat
 import java.text.SimpleDateFormat
 import java.util.Date
@@ -123,6 +124,13 @@ internal fun resolveSpaceCompassTimeFormat(
         format
     }
 
+/** No digit grouping in calendar fields; translated AM/PM stays in the interface language. */
+private fun spaceCompassTemporalNumberFormat(numeric: SpaceCompassNumericFormat, deviceLocale: Locale) =
+    DecimalFormat("0", spaceCompassNumericFormatSymbols(numeric, deviceLocale)).apply {
+        isGroupingUsed = false
+        isParseIntegerOnly = true
+    }
+
 private fun spaceCompassDateFormatter(
     format: SpaceCompassDateFormat,
     locale: Locale,
@@ -160,7 +168,9 @@ internal fun formatSpaceCompassDateOnly(
     timestamp: Long,
     format: SpaceCompassDateFormat,
     locale: Locale = Locale.getDefault(),
-    timeZone: TimeZone = TimeZone.getDefault()
+    timeZone: TimeZone = TimeZone.getDefault(),
+    numeric: SpaceCompassNumericFormat = SpaceCompassNumericFormat.SYSTEM,
+    deviceLocale: Locale = locale
 ): String =
     if (timestamp <= 0L) {
         "—"
@@ -169,37 +179,43 @@ internal fun formatSpaceCompassDateOnly(
             format,
             locale,
             timeZone
-        ).format(Date(timestamp))
+        ).apply {
+            numberFormat = spaceCompassTemporalNumberFormat(numeric, deviceLocale)
+        }.format(Date(timestamp))
     }
 
 internal fun formatSpaceCompassTimeOnly(
     timestamp: Long,
     format: SpaceCompassTimeFormat,
     locale: Locale = Locale.getDefault(),
-    timeZone: TimeZone = TimeZone.getDefault()
+    timeZone: TimeZone = TimeZone.getDefault(),
+    numeric: SpaceCompassNumericFormat = SpaceCompassNumericFormat.SYSTEM,
+    deviceLocale: Locale = locale,
+    includeSeconds: Boolean = true
 ): String =
     if (timestamp <= 0L) {
         "—"
     } else when (format) {
         SpaceCompassTimeFormat.SYSTEM ->
             DateFormat.getTimeInstance(
-                DateFormat.MEDIUM,
+                if (includeSeconds) DateFormat.MEDIUM else DateFormat.SHORT,
                 locale
             )
 
         SpaceCompassTimeFormat.H24 ->
             SimpleDateFormat(
-                "HH:mm:ss",
+                if (includeSeconds) "HH:mm:ss" else "HH:mm",
                 locale
             )
 
         SpaceCompassTimeFormat.H12 ->
             SimpleDateFormat(
-                "h:mm:ss a",
+                if (includeSeconds) "h:mm:ss a" else "h:mm a",
                 locale
             )
     }.apply {
         this.timeZone = timeZone
+        numberFormat = spaceCompassTemporalNumberFormat(numeric, deviceLocale)
     }.format(Date(timestamp))
 
 internal fun formatSpaceCompassDateTime(
@@ -208,7 +224,9 @@ internal fun formatSpaceCompassDateTime(
     locale: Locale = Locale.getDefault(),
     timeZone: TimeZone = TimeZone.getDefault(),
     separator: String = "  ",
-    timeFormat: SpaceCompassTimeFormat = SpaceCompassTimeFormat.H24
+    timeFormat: SpaceCompassTimeFormat = SpaceCompassTimeFormat.H24,
+    numeric: SpaceCompassNumericFormat = SpaceCompassNumericFormat.SYSTEM,
+    deviceLocale: Locale = locale
 ): String {
     if (timestamp <= 0L) return "—"
     val date =
@@ -216,14 +234,18 @@ internal fun formatSpaceCompassDateTime(
             timestamp,
             format,
             locale,
-            timeZone
+            timeZone,
+            numeric,
+            deviceLocale
         )
     val time =
         formatSpaceCompassTimeOnly(
             timestamp = timestamp,
             format = timeFormat,
             locale = locale,
-            timeZone = timeZone
+            timeZone = timeZone,
+            numeric = numeric,
+            deviceLocale = deviceLocale
         )
     return "$date$separator$time"
 }
@@ -236,7 +258,8 @@ internal fun formatSpaceCompassInternationalDateTime(
         format = SpaceCompassDateFormat.INTERNATIONAL,
         locale = Locale.US,
         separator = " ",
-        timeFormat = SpaceCompassTimeFormat.H24
+        timeFormat = SpaceCompassTimeFormat.H24,
+        numeric = SpaceCompassNumericFormat.INTERNATIONAL
     )
 
 fun formatDateTime(

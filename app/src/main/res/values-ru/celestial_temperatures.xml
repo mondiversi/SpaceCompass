@@ -5,7 +5,7 @@
     <string name="celestial_temperature_day_maximum" formatted="false">Освещённая поверхность (макс.)</string>
     <string name="celestial_temperature_night_minimum" formatted="false">Ночная поверхность (мин.)</string>
     <string name="celestial_temperature_surface_range" formatted="false">Диапазон температуры поверхности</string>
-    <string name="celestial_temperature_atmosphere" formatted="false">Температура атмосферы (1 бар)</string>
+    <string name="celestial_temperature_atmosphere">Температура атмосферы (%1$s)</string>
     <string name="celestial_temperature_photosphere" formatted="false">Температура фотосферы</string>
     <string name="celestial_temperature_effective" formatted="false">Средняя эффективная температура</string>
     <string name="celestial_temperature_note" formatted="false">Справочные температуры, не текущие данные. Дневные/ночные значения — локальные экстремумы, не средние по полушарию. Значения зависят от места и времени.</string>

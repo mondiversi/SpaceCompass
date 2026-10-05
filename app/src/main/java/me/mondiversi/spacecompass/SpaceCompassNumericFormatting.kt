@@ -76,10 +76,10 @@ internal fun formatSpaceCompassNumber(
     minimumDigits: Int = fractionDigits
 ): String {
     if (!value.isFinite()) {
-        return value.toString()
+        return "—"
     }
 
-    val symbols = numericFormatSymbols(format)
+    val symbols = spaceCompassNumericFormatSymbols(format)
     val pattern =
         buildString {
             append(if (grouping) "#,##0" else "0")
@@ -107,24 +107,25 @@ internal fun formatSpaceCompassExportNumber(
     format: SpaceCompassNumericFormat
 ): String {
     if (!value.isFinite()) {
-        return value.toString()
+        return "—"
     }
 
     return DecimalFormat(
         "0.#########",
-        numericFormatSymbols(format)
+        spaceCompassNumericFormatSymbols(format)
     ).apply {
         isGroupingUsed = false
         roundingMode = RoundingMode.HALF_UP
     }.format(value)
 }
 
-private fun numericFormatSymbols(
-    format: SpaceCompassNumericFormat
+internal fun spaceCompassNumericFormatSymbols(
+    format: SpaceCompassNumericFormat,
+    systemLocale: Locale = Locale.getDefault()
 ): DecimalFormatSymbols =
     when (format) {
         SpaceCompassNumericFormat.SYSTEM ->
-            DecimalFormatSymbols.getInstance(Locale.getDefault())
+            DecimalFormatSymbols.getInstance(systemLocale)
 
         SpaceCompassNumericFormat.INTERNATIONAL ->
             DecimalFormatSymbols.getInstance(Locale.US).apply {

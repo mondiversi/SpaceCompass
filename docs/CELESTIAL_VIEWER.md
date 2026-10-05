@@ -187,20 +187,22 @@ archives, associations or preferences with UVIR.
 
 ## Reference values
 
-Surface gravity is displayed both in m/s² and in standard Earth gravities (g),
+Surface gravity follows the selected length family (m/s² or ft/s²) and also displays standard Earth gravities (g),
 using exactly 1 g = 9.80665 m/s². The comparison is derived from the same reference
 acceleration, not an additional measurement. Up to three decimals in g preserve
 small values such as Polaris (~0.067 g); unavailable quantities still use —.
 Source: https://goldbook.iupac.org/terms/view/S05905
 
-The viewer's observer-distance row uses two lines for every object: millions of
-kilometres (Mkm), with at most two decimal places, followed by AU with at most four.
-Both follow the configured numeric locale. Positive ranges smaller than 0.01 Mkm
-or 0.0001 AU show a less-than bound rather than a misleading zero. Missing or
-invalid ranges show only —. The compass uses one line, Mkm · AU. Its small/live
-distances retain six Mkm decimals for ISS/Voyager and four for the Moon, so live
-range updates are not lost to coarse rounding; other bodies use two. AU remains
-limited to four decimals. Missing speed/range values stay a bare —, not zero.
+The observer-distance row uses selected km/mi for the Moon, Earth centre and
+Earth satellites. More distant Solar System ranges use selected Mkm/Mmi with an
+AU reference; extrasolar ranges use light years only. Main, catalogue and viewer
+rows share the selected-distance formatter. Voyager ranges retain six million-unit
+decimals; other distant bodies use two. AU keeps at most four decimals, and
+positive values smaller than a display step show a less-than bound. Missing
+speed/range values stay a bare —. Physical sizes and their uncertainties follow
+the length family; mass/density and pressure retain independent preferences.
+Gas-giant temperature/reference-note pressure levels also convert to the selected
+bar/Pa/psi unit. See [UNIT_FORMAT_AUDIT.md](UNIT_FORMAT_AUDIT.md).
 
 ### Polaris
 

@@ -41,7 +41,7 @@ internal fun SpaceCompassPointTimeCaption(pointName: String, moment: String, tim
                 translationY = -progress * size.height
             }.then(if (showCountdown) Modifier.clearAndSetSemantics {} else Modifier),
                 color = color, fontSize = fontSize, fontWeight = FontWeight.Normal, lineHeight = lineHeight, maxLines = 1,
-                textAlign = TextAlign.End, overflow = TextOverflow.Ellipsis)
+                textAlign = TextAlign.End, style = TextStyle(textDirection = TextDirection.Ltr), overflow = TextOverflow.Ellipsis)
             Text(countdown, Modifier.fillMaxWidth().graphicsLayer {
                 alpha = progress
                 translationY = (1f - progress) * size.height

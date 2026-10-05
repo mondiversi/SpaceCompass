@@ -105,11 +105,11 @@ private fun jovianFacts(radiusKm: Double, gmKm3S2: Double, density: Double, spin
 internal const val SPACE_COMPASS_STANDARD_GRAVITY_M_S2 = 9.80665
 
 internal fun formatSpaceCompassCelestialGravity(value: Double?, numeric: SpaceCompassNumericFormat,
-    siFractionDigits: Int = 1): String {
+    fractionDigits: Int = 1, feet: Boolean = false): String {
     if (value == null || !value.isFinite() || value <= 0) return "—"
-    val si = formatSpaceCompassNumber(value, siFractionDigits, numeric)
+    val acceleration = formatSpaceCompassNumber(if (feet) value / 0.3048 else value, fractionDigits, numeric)
     val earthG = formatSpaceCompassNumber(value / SPACE_COMPASS_STANDARD_GRAVITY_M_S2, 3, numeric, minimumDigits = 0)
-    return "$si m/s² ($earthG g)"
+    return "$acceleration ${if (feet) "ft/s²" else "m/s²"} ($earthG g)"
 }
 
 internal val SpaceCompassCelestialBody.viewerTexture: String?

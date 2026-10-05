@@ -1,5 +1,14 @@
 # App presentation and preferences
 
+## Unit and numeric consistency — version 0.1.9
+
+Gravity, gas-giant reference pressure, numeric counts/zoom and every point clock
+now honor the saved units/digit choices. Daily table, island, balloon and live
+marker share one time formatter; device digits remain independent of the app
+language. Mass, density, pressure and temperature choices remain independent.
+The complete presentation inventory, conversion definitions and regression
+coverage are documented in [UNIT_FORMAT_AUDIT.md](UNIT_FORMAT_AUDIT.md).
+
 ## Dynamic mass display — version 0.1.8
 
 The kg/lb preference now applies to every known mass below 10 solar masses,
@@ -166,7 +175,7 @@ The selector still measures distance from the Sun; the main panel and observer r
 measure distance from the observer. These are intentionally distinct quantities.
 Mass readouts follow the independent kg/lb preference; density combines that
 choice with the selected m³/ft³ volume. Masses from 10 solar masses use M☉; lower masses, including the Sun and compact stars, follow kg/lb.
-Surface acceleration remains explicitly labelled in SI (m/s²).
+Surface acceleration follows the saved length family (m/s² or ft/s²) as of version 0.1.9; the comparison in standard Earth g remains invariant.
 
 All reference temperatures follow Celsius/Fahrenheit, including the stellar
 effective temperature; its Kelvin reference is retained in parentheses. System

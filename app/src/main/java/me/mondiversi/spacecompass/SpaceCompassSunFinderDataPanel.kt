@@ -10,6 +10,7 @@ import androidx.compose.material3.*
 import androidx.compose.runtime.*
 import androidx.compose.runtime.saveable.rememberSaveable
 import androidx.compose.ui.Alignment
+import androidx.compose.ui.text.style.TextDirection
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
@@ -138,7 +139,7 @@ private fun SpaceCompassSunFinderDataTable(
                     horizontalArrangement = Arrangement.spacedBy(8.dp)) {
                     Text(row.label, Modifier.weight(1f), color = secondaryText, style = style)
                     Text(row.value, Modifier.width(valueWidth), color = primaryText,
-                        style = valueStyle,
+                        style = valueStyle.copy(textDirection = TextDirection.ContentOrLtr),
                         textAlign = TextAlign.End,
                         maxLines = if (row.tag == "celestial-distance" && density.fontScale <= 1.4f) 1 else Int.MAX_VALUE)
                 }
@@ -173,9 +174,11 @@ internal fun SpaceCompassSunFinderModelInfo(
                                 horizontalArrangement = Arrangement.spacedBy(12.dp)) {
                                 Column(Modifier.weight(1f), verticalArrangement = Arrangement.spacedBy(3.dp)) {
                                     Text(row.label, color = secondaryText, fontSize = 13.sp, lineHeight = 18.sp)
-                                    accuracy?.let { Text("(${it.value})", color = secondaryText, fontSize = 11.sp, lineHeight = 14.sp) }
+                                    accuracy?.let { Text("(${it.value})", color = secondaryText, fontSize = 11.sp, lineHeight = 14.sp,
+                                        style = TextStyle(textDirection = TextDirection.ContentOrLtr)) }
                                 }
                                 Text(row.value, color = primaryText, fontSize = 13.sp, lineHeight = 18.sp,
+                                    style = TextStyle(textDirection = TextDirection.ContentOrLtr),
                                     textAlign = TextAlign.End)
                             }
                         } else SpaceCompassSunFinderDataTable(listOf(row),

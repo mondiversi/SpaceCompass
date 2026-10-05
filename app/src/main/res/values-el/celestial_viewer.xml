@@ -28,7 +28,7 @@
     <string name="celestial_view_sedna_note" formatted="false">Άγνωστη επιφάνεια και προσανατολισμός: ενδεικτικό μοντέλο.</string>
     <string name="celestial_view_map_note" formatted="false">Ανακατασκευασμένη όψη με υπολογισμένη φάση και προσανατολισμό. Στατικοί χάρτες, όχι ζωντανές εικόνες.</string>
     <string name="celestial_view_location_needed" formatted="false">Απαιτείται τοποθεσία για την τρέχουσα όψη. Η περιστροφή λειτουργεί και χωρίς GPS.</string>
-    <string name="celestial_view_facts_note" formatted="false">Προσεγγιστικές τιμές. Βαρύτητα αέριων γιγάντων στο 1 bar· τροχιακές αποστάσεις από το κύριο σώμα.</string>
+    <string name="celestial_view_facts_note">Προσεγγιστικές τιμές. Βαρύτητα αέριων γιγάντων στο %1$s· τροχιακές αποστάσεις από το κύριο σώμα.</string>
     <string name="celestial_view_sun_note" formatted="false">Η ηλιακή περιστροφή μεταβάλλεται με το γεωγραφικό πλάτος· η περίοδος είναι τιμή αναφοράς.</string>
     <string name="celestial_view_sedna_facts" formatted="false">Εκτιμώμενη διάμετρος. Περιστροφή και τροχιακά στοιχεία έχουν αβεβαιότητες.</string>
     <string name="celestial_view_iss_note" formatted="false">Οι διαστάσεις και η μάζα του ISS μεταβάλλονται με τη διαμόρφωση και τα επισκεπτόμενα σκάφη.</string>
@@ -36,5 +36,5 @@
     <string name="celestial_view_zoom_in" formatted="false">Μεγέθυνση</string>
     <string name="celestial_view_zoom_out" formatted="false">Σμίκρυνση</string>
     <string name="celestial_view_reset_zoom" formatted="false">Επαναφορά μεγέθυνσης</string>
-    <string name="celestial_view_zoom_level">Μεγέθυνση: %1$d%%</string>
+    <string name="celestial_view_zoom_level">Μεγέθυνση: %1$s%%</string>
 </resources>

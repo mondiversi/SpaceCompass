@@ -1,6 +1,6 @@
 <resources>
     <string name="info_news_title">החידושים האחרונים · %1$s</string>
     <string name="info_news_units">המסות מוצגות בקילוגרמים/ליברות שנבחרו; החל מ־10 מסות שמש משתמשים ב־M☉.</string>
-    <string name="info_news_pressure">לחץ אטמוספרי כשיש נתונים זמינים, עם בחירה נפרדת בבר, פסקל או psi.</string>
+    <string name="info_news_pressure">יחידות ותבניות מספרים עקביות בכל האפליקציה, כולל כבידה ולחצי ייחוס.</string>
     <string name="info_news_updates">עדכונים חתומים מ־GitHub, הנבדקים בהפעלה או דרך אזור המאגר.</string>
 </resources>

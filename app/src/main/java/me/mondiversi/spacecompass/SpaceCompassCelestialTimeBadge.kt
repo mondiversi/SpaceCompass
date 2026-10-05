@@ -37,8 +37,9 @@ internal fun SpaceCompassCelestialTimeBadge(
     val timeFormat = resolveSpaceCompassTimeFormat(LocalContext.current, LocalSpaceCompassTimeFormat.current)
     val dateFormat = LocalSpaceCompassDateFormat.current
     val deviceLocale = LocalSpaceCompassDeviceLocale.current
-    val moment = remember(timeMs, nowMs, zone, timeFormat, dateFormat, locale, deviceLocale) {
-        formatSpaceCompassCelestialMoment(timeMs, nowMs, zone, timeFormat, dateFormat, locale, deviceLocale)
+    val numeric = LocalSpaceCompassNumericFormat.current
+    val moment = remember(timeMs, nowMs, zone, timeFormat, dateFormat, locale, deviceLocale, numeric) {
+        formatSpaceCompassCelestialMoment(timeMs, nowMs, zone, timeFormat, dateFormat, locale, deviceLocale, numeric)
     }
     val shape = RoundedCornerShape(10.dp)
     Layout(content = {

@@ -5,7 +5,7 @@
     <string name="celestial_temperature_day_maximum" formatted="false">Superficie iluminada (máx.)</string>
     <string name="celestial_temperature_night_minimum" formatted="false">Superficie nocturna (mín.)</string>
     <string name="celestial_temperature_surface_range" formatted="false">Rango de temperatura superficial</string>
-    <string name="celestial_temperature_atmosphere" formatted="false">Temperatura atmosférica (1 bar)</string>
+    <string name="celestial_temperature_atmosphere">Temperatura atmosférica (%1$s)</string>
     <string name="celestial_temperature_photosphere" formatted="false">Temperatura de la fotosfera</string>
     <string name="celestial_temperature_effective" formatted="false">Temperatura efectiva media</string>
     <string name="celestial_temperature_note" formatted="false">Temperaturas de referencia, no datos en directo. Los valores diurnos/nocturnos son extremos locales, no medias hemisféricas. Varían con el lugar y el tiempo.</string>

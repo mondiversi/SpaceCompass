@@ -28,7 +28,7 @@
     <string name="celestial_view_sedna_note" formatted="false">표면과 방향은 알려지지 않아 설명용 모델을 표시합니다.</string>
     <string name="celestial_view_map_note" formatted="false">위상과 방향을 계산한 재현도입니다. 정적 지도이며 실시간 영상이 아닙니다.</string>
     <string name="celestial_view_location_needed" formatted="false">현재 모습에는 위치 정보가 필요합니다. 자전은 GPS 없이도 이용할 수 있습니다.</string>
-    <string name="celestial_view_facts_note" formatted="false">대략적인 참고값입니다. 가스 행성의 중력은 1 bar 기준이며 궤도 거리는 중심 천체 기준입니다.</string>
+    <string name="celestial_view_facts_note">대략적인 참고값입니다. 가스 행성의 중력은 %1$s 기준이며 궤도 거리는 중심 천체 기준입니다.</string>
     <string name="celestial_view_sun_note" formatted="false">태양의 자전은 위도에 따라 달라지며 주기는 참고값입니다.</string>
     <string name="celestial_view_sedna_facts" formatted="false">지름은 추정값이며 자전과 궤도 요소에는 불확실성이 있습니다.</string>
     <string name="celestial_view_iss_note" formatted="false">ISS의 크기와 질량은 구성과 방문 우주선에 따라 달라집니다.</string>
@@ -36,5 +36,5 @@
     <string name="celestial_view_zoom_in" formatted="false">확대</string>
     <string name="celestial_view_zoom_out" formatted="false">축소</string>
     <string name="celestial_view_reset_zoom" formatted="false">확대/축소 초기화</string>
-    <string name="celestial_view_zoom_level">확대/축소: %1$d%%</string>
+    <string name="celestial_view_zoom_level">확대/축소: %1$s%%</string>
 </resources>

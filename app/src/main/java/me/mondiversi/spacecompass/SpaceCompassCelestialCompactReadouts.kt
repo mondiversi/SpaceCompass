@@ -4,6 +4,7 @@ import androidx.compose.foundation.layout.*
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
+import androidx.compose.ui.text.style.TextDirection
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.platform.testTag
@@ -28,7 +29,7 @@ internal fun SpaceCompassCelestialInlineAngles(rows: List<SpaceCompassSunDataRow
                 Text(row.value, Modifier.testTag(row.tag).clearAndSetSemantics {
                     contentDescription = row.announcement
                     text = AnnotatedString(row.value)
-                }, color = primaryText, style = style, textAlign = TextAlign.End)
+                }, color = primaryText, style = style.copy(textDirection = TextDirection.Ltr), textAlign = TextAlign.End)
             }
         }
     }

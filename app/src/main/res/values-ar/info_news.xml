@@ -1,6 +1,6 @@
 <resources>
     <string name="info_news_title">آخر المستجدات · %1$s</string>
     <string name="info_news_units">تُعرض الكتل بالكيلوغرامات/الأرطال المختارة؛ ابتداءً من 10 كتل شمسية تُستخدم M☉.</string>
-    <string name="info_news_pressure">الضغط الجوي حيث تتوفر البيانات، مع اختيار مستقل بين البار والباسكال وpsi.</string>
+    <string name="info_news_pressure">وحدات وتنسيقات أرقام متسقة في التطبيق كله، بما في ذلك الجاذبية والضغوط المرجعية.</string>
     <string name="info_news_updates">تحديثات موقّعة من GitHub، يتم التحقق منها عند بدء التشغيل أو من قسم المستودع.</string>
 </resources>

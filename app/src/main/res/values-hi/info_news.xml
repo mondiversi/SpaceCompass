@@ -1,6 +1,6 @@
 <resources>
     <string name="info_news_title">हाल के बदलाव · %1$s</string>
     <string name="info_news_units">द्रव्यमान चुने गए किलोग्राम/पाउंड में दिखते हैं; 10 सौर द्रव्यमान से M☉ का उपयोग होता है।</string>
-    <string name="info_news_pressure">डेटा उपलब्ध होने पर वायुमंडलीय दाब, साथ में बार, पास्कल या psi का अलग चयन।</string>
+    <string name="info_news_pressure">गुरुत्वाकर्षण और संदर्भ दबावों सहित पूरे ऐप में एकसमान इकाइयाँ और संख्या प्रारूप।</string>
     <string name="info_news_updates">GitHub से हस्ताक्षरित अपडेट, जिनकी जाँच शुरुआत में या रिपॉज़िटरी अनुभाग से होती है।</string>
 </resources>

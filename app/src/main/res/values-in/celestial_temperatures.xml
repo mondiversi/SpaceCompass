@@ -5,7 +5,7 @@
     <string name="celestial_temperature_day_maximum" formatted="false">Permukaan tersinari (maks.)</string>
     <string name="celestial_temperature_night_minimum" formatted="false">Permukaan malam (min.)</string>
     <string name="celestial_temperature_surface_range" formatted="false">Rentang suhu permukaan</string>
-    <string name="celestial_temperature_atmosphere" formatted="false">Suhu atmosfer (1 bar)</string>
+    <string name="celestial_temperature_atmosphere">Suhu atmosfer (%1$s)</string>
     <string name="celestial_temperature_photosphere" formatted="false">Suhu fotosfer</string>
     <string name="celestial_temperature_effective" formatted="false">Suhu efektif rata-rata</string>
     <string name="celestial_temperature_note" formatted="false">Suhu acuan, bukan data langsung. Nilai siang/malam adalah ekstrem lokal, bukan rata-rata hemisfer. Nilai bervariasi menurut tempat dan waktu.</string>

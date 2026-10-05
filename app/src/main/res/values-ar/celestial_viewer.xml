@@ -28,7 +28,7 @@
     <string name="celestial_view_sedna_note" formatted="false">السطح والاتجاه غير معروفين: نموذج توضيحي.</string>
     <string name="celestial_view_map_note" formatted="false">مظهر معاد بناؤه بطور واتجاه محسوبين. خرائط ثابتة وليست صورا مباشرة.</string>
     <string name="celestial_view_location_needed" formatted="false">يلزم تحديد الموقع للوجه الحالي. الدوران متاح دون GPS.</string>
-    <string name="celestial_view_facts_note" formatted="false">قيم تقريبية. جاذبية العمالقة الغازية عند 1 بار؛ المسافات المدارية من الجسم الرئيسي.</string>
+    <string name="celestial_view_facts_note">قيم تقريبية. جاذبية العمالقة الغازية عند %1$s؛ المسافات المدارية من الجسم الرئيسي.</string>
     <string name="celestial_view_sun_note" formatted="false">يتغير دوران الشمس مع خط العرض؛ الفترة قيمة مرجعية.</string>
     <string name="celestial_view_sedna_facts" formatted="false">القطر تقديري. الدوران والعناصر المدارية غير مؤكدة.</string>
     <string name="celestial_view_iss_note" formatted="false">تتغير أبعاد المحطة وكتلتها حسب التكوين والمركبات الزائرة.</string>
@@ -36,5 +36,5 @@
     <string name="celestial_view_zoom_in" formatted="false">تكبير</string>
     <string name="celestial_view_zoom_out" formatted="false">تصغير</string>
     <string name="celestial_view_reset_zoom" formatted="false">إعادة ضبط التكبير</string>
-    <string name="celestial_view_zoom_level">التكبير: %1$d%%</string>
+    <string name="celestial_view_zoom_level">التكبير: %1$s%%</string>
 </resources>

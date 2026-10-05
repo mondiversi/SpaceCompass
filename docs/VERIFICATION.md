@@ -4,10 +4,10 @@
 
 | Check | Result |
 | --- | --- |
-| Debug APK build | Passed, version 0.1.8 |
-| Release APK build | Passed, version 0.1.8 |
+| Debug APK build | Passed, version 0.1.9 |
+| Release APK build | Passed, version 0.1.9 |
 | Release lint | Completed, 0 errors; remaining findings retained in reports |
-| JVM unit tests | 425 passed, 0 failures |
+| JVM unit tests | 439 passed, 0 failures |
 | Android instrumentation sources | Compiled; not executed |
 | Phone UI checks | Samsung SM-G970U1, Android 12 / API 31 |
 | Tablet UI checks | Pixel Tablet emulator, Android 15 / API 35 |
@@ -32,6 +32,34 @@ The repository contains no signing key or local SDK configuration. GitHub APK di
 No Play Store submission is part of this release.
 The current CI result is available on the repository's Actions page; the local
 results above do not stand in for a successful hosted run.
+
+## Unit and numeric consistency — version 0.1.9
+
+Fourteen additional regression tests cover reference conversions, mixed saved
+preferences, all available catalogue gravity/density/temperature facts, formatted
+pressure reference placeholders, all twenty app-language clocks, Arabic versus
+explicit digit choices, localized AM/PM/date order, DST repeated hours, count/zoom
+arguments and unavailable numbers. All 439 JVM tests passed. Debug/release builds,
+instrumentation-source compilation and release lint (zero errors) succeeded.
+The instrumentation suite was not executed. Complete twenty-language string-key
+and formatting-argument parity passed. See [UNIT_FORMAT_AUDIT.md](UNIT_FORMAT_AUDIT.md).
+
+The signed candidate was checked on the Android 15 tablet using synthetic GPS
+and orientation. A mixed profile used imperial length/speed, kilograms, pascals,
+Celsius, American numbers, international date order and a 12-hour clock. Sun
+diameter/mass/gravity/density/temperature rows were verified in landscape and
+portrait and retained their preferences after process restart. Jupiter's
+temperature-layer label and reference note both showed the selected 100,000 Pa
+level without creating a nonexistent surface-pressure row.
+
+Arabic-interface checks covered the daily table, selected-point island, reticle
+balloon, localized AM/PM and whole-minute T+/T− captions. Explicit American
+numbers and System/Italian-device conventions both retained Latin clock digits;
+the angles changed from dot to comma appropriately. Visual inspection confirmed
+that negative-angle signs precede their values in RTL. Original automatic units,
+number/date/time/language choices, Sun/Moon selection and free rotation were
+restored. Final installation is recorded in the release notes; this does not
+claim a new phone UI pass.
 
 ## Dynamic mass display — version 0.1.8
 

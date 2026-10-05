@@ -39,7 +39,8 @@ internal fun SpaceCompassCelestialLiveMarker(body: SpaceCompassCelestialBody, pr
     val timeFormat = resolveSpaceCompassTimeFormat(LocalContext.current, LocalSpaceCompassTimeFormat.current)
     val locale = LocalConfiguration.current.locales[0]
     val moment = point?.let { formatSpaceCompassCelestialMoment(it.timeMs, it.timeMs, ZoneId.systemDefault(),
-        timeFormat, LocalSpaceCompassDateFormat.current, locale, LocalSpaceCompassDeviceLocale.current) }
+        timeFormat, LocalSpaceCompassDateFormat.current, locale, LocalSpaceCompassDeviceLocale.current,
+        LocalSpaceCompassNumericFormat.current) }
     val current = stringResource(R.string.celestial_current_position)
     val label = moment?.let { "$name, ${stringResource(R.string.celestial_point_time, current, it)}" } ?: name
     Layout(modifier = Modifier.fillMaxSize(), content = {

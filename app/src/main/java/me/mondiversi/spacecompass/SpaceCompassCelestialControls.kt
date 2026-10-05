@@ -52,9 +52,11 @@ internal fun SpaceCompassCelestialSelector(body: SpaceCompassCelestialBody, colo
     onToggleAll: (() -> Unit)? = null, onSelect: (SpaceCompassCelestialBody) -> Unit) {
     val catalogOpen = LocalSpaceCompassCatalogOpen.current
     val label = stringResource(R.string.celestial_select)
+    val count = formatSpaceCompassNumber(selectedBodies.size.toDouble(), 0,
+        LocalSpaceCompassNumericFormat.current, grouping = false)
     Box(modifier) {
         Surface(onClick = { catalogOpen?.value = true }, modifier = Modifier.size(48.dp).testTag("celestial-select").semantics {
-            stateDescription = selectedBodies.size.toString()
+            stateDescription = count
             contentDescription = label
         }, shape = CircleShape, color = background.copy(alpha = .94f), contentColor = color,
             border = androidx.compose.foundation.BorderStroke(1.dp, color.copy(alpha = .35f)), shadowElevation = 3.dp) {
@@ -68,7 +70,7 @@ internal fun SpaceCompassCelestialSelector(body: SpaceCompassCelestialBody, colo
                 .background(background, CircleShape).border(1.dp, color.copy(alpha = .5f), CircleShape)
                 .testTag("celestial-selection-count").clearAndSetSemantics {},
             contentAlignment = Alignment.Center
-        ) { Text(selectedBodies.size.toString(), color = color, fontSize = 9.sp, lineHeight = 10.sp, maxLines = 1) }
+        ) { Text(count, color = color, fontSize = 9.sp, lineHeight = 10.sp, maxLines = 1) }
 
     }
 }

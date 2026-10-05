@@ -259,11 +259,11 @@ class SpaceCompassCelestialTabularLayoutTest {
         val controls = source("SpaceCompassCelestialControls.kt")
         val badge = controls.substringAfter("if (selectedBodies.isNotEmpty()) Box(")
             .substringBefore("SpaceCompassAdaptiveDropdownMenu")
-        assertTrue(badge.contains("selectedBodies.size.toString()"))
+        assertTrue(badge.contains("Text(count"))
         assertTrue(badge.contains("size(16.dp)"))
         assertTrue(badge.contains("CircleShape"))
         assertFalse(badge.contains("remote.") || badge.contains("body.name"))
-        assertTrue(controls.contains("stateDescription = selectedBodies.size.toString()"))
+        assertTrue(controls.contains("stateDescription = count"))
     }
 
     @Test fun everyOrbitalAndOutwardSpeedLabelUsesParenthesesInAllTwentyLanguages() {

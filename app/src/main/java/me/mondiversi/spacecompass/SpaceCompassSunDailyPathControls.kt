@@ -12,6 +12,8 @@ import androidx.compose.material3.HorizontalDivider
 import androidx.compose.material3.Text
 import androidx.compose.runtime.*
 import androidx.compose.ui.Alignment
+import androidx.compose.ui.text.TextStyle
+import androidx.compose.ui.text.style.TextDirection
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
@@ -24,9 +26,6 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import java.text.SimpleDateFormat
-import java.time.Instant
-import java.util.Date
 import java.util.TimeZone
 
 /** User interaction belongs to the screen, not to a replaceable GPS-derived curve. */
@@ -79,7 +78,8 @@ internal fun rememberSpaceCompassSunPathLabels(path: SpaceCompassSunDailyPath): 
     val locale = LocalConfiguration.current.locales[0]
     val timeFormat = resolveSpaceCompassTimeFormat(context, LocalSpaceCompassTimeFormat.current)
     val dateFormat = LocalSpaceCompassDateFormat.current
-    val dateLocale = if (dateFormat == SpaceCompassDateFormat.SYSTEM) LocalSpaceCompassDeviceLocale.current else locale
+    val deviceLocale = LocalSpaceCompassDeviceLocale.current
+    val dateLocale = if (dateFormat == SpaceCompassDateFormat.SYSTEM) deviceLocale else locale
     val numeric = LocalSpaceCompassNumericFormat.current
     val rise = stringResource(R.string.celestial_rise)
     val culmination = stringResource(R.string.sun_path_culmination)
@@ -88,27 +88,17 @@ internal fun rememberSpaceCompassSunPathLabels(path: SpaceCompassSunDailyPath): 
     val current = stringResource(R.string.celestial_current_position)
     val numbered = stringResource(R.string.celestial_point_number)
     val pointTime = stringResource(R.string.celestial_point_time)
-    return remember(path, locale, dateLocale, timeFormat, dateFormat, numeric, rise, culmination, set, minimum, current, numbered, pointTime) {
+    return remember(path, locale, deviceLocale, dateLocale, timeFormat, dateFormat, numeric, rise, culmination, set, minimum, current, numbered, pointTime) {
         val names = SpaceCompassSunPathPointNames(path.markers, rise, culmination, set, minimum, current) {
-            String.format(locale, numbered.replace("%1\$d", "%1\$s"),
+            String.format(locale, numbered,
                 formatSpaceCompassNumber(it.toDouble(), 0, numeric, grouping = false))
         }
         val zone = TimeZone.getTimeZone(path.zone)
-        val firstDate = Instant.ofEpochMilli(path.samples.first().timeMs).atZone(path.zone).toLocalDate()
-        val formatter = SimpleDateFormat(if (timeFormat == SpaceCompassTimeFormat.H12) "h:mm a" else "HH:mm", locale)
-            .apply { timeZone = zone }
         val moment: (SpaceCompassSunPathPoint) -> String = { point ->
-            val local = Instant.ofEpochMilli(point.timeMs).atZone(path.zone)
-            val repeated = point.event == SpaceCompassSunPathEvent.HOUR && path.markers.any {
-                it.event == SpaceCompassSunPathEvent.HOUR && it.timeMs != point.timeMs &&
-                    Instant.ofEpochMilli(it.timeMs).atZone(path.zone).toLocalDateTime() == local.toLocalDateTime()
-            }
-            formatter.format(Date(point.timeMs)) +
-                (if (repeated) " (UTC${local.offset.id})" else "") +
-                (if (local.toLocalDate() != firstDate)
-                    " · ${formatSpaceCompassDateOnly(point.timeMs, dateFormat, dateLocale, zone)}" else "")
+            formatSpaceCompassCelestialMoment(point.timeMs, path.samples.first().timeMs, path.zone,
+                timeFormat, dateFormat, locale, deviceLocale, numeric)
         }
-        SpaceCompassSunPathLabels(formatSpaceCompassDateOnly(path.samples.first().timeMs, dateFormat, dateLocale, zone),
+        SpaceCompassSunPathLabels(formatSpaceCompassDateOnly(path.samples.first().timeMs, dateFormat, dateLocale, zone, numeric, deviceLocale),
             name = names::name,
             point = { String.format(locale, pointTime, names.name(it), moment(it)) },
             current = { String.format(locale, pointTime, names.current, moment(it)) },
@@ -146,10 +136,12 @@ internal fun SpaceCompassSunDailyPathPage(
             contentDescription = "$azimuthLabel: ${labels.angle(point.position.azimuthDegrees)}, $elevationLabel: ${labels.angle(point.position.elevationDegrees)}"
         }, verticalAlignment = Alignment.CenterVertically) {
             Text(labels.angle(point.position.azimuthDegrees), Modifier.width(64.dp),
-                color = secondaryText, fontSize = 12.sp, textAlign = androidx.compose.ui.text.style.TextAlign.End)
+                color = secondaryText, fontSize = 12.sp, style = TextStyle(textDirection = TextDirection.Ltr),
+                textAlign = androidx.compose.ui.text.style.TextAlign.End)
             Spacer(Modifier.width(12.dp))
             Text(labels.angle(point.position.elevationDegrees), Modifier.width(64.dp),
-                color = secondaryText, fontSize = 12.sp, textAlign = androidx.compose.ui.text.style.TextAlign.End)
+                color = secondaryText, fontSize = 12.sp, style = TextStyle(textDirection = TextDirection.Ltr),
+                textAlign = androidx.compose.ui.text.style.TextAlign.End)
         }
     }
     BackHandler(onBack = state::closeMenu)

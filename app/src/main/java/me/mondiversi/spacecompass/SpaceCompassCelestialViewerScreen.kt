@@ -11,6 +11,8 @@ import androidx.compose.runtime.*
 import androidx.compose.runtime.saveable.Saver
 import androidx.compose.runtime.saveable.rememberSaveable
 import androidx.compose.ui.Alignment
+import androidx.compose.ui.text.TextStyle
+import androidx.compose.ui.text.style.TextDirection
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
@@ -125,10 +127,16 @@ internal fun SpaceCompassCelestialViewerScreen(body: SpaceCompassCelestialBody, 
         }
     }
     BackHandler(onBack = onBack)
-    fun number(value: Double?, decimals: Int, unit: String) = value?.let { "${formatSpaceCompassNumber(it, decimals, numeric)} $unit" } ?: "—"
+    fun number(value: Double?, decimals: Int, unit: String) = value?.takeIf { it.isFinite() }
+        ?.let { "${formatSpaceCompassNumber(it, decimals, numeric)} $unit" } ?: "—"
+    val referencePressure = formatSpaceCompassPressure(SpaceCompassPressureUnit.BAR.pascals, numeric, units.pressure)!!
     val temperatureRows = if (temperatures.isEmpty()) listOf(
         stringResource(R.string.celestial_temperature) to "—"
-    ) else temperatures.map { stringResource(it.kind.labelResource) to formatSpaceCompassCelestialTemperature(it, numeric, units.fahrenheit) }
+    ) else temperatures.map {
+        val label = if (it.kind == SpaceCompassCelestialTemperatureKind.ATMOSPHERE_ONE_BAR)
+            stringResource(it.kind.labelResource, referencePressure) else stringResource(it.kind.labelResource)
+        label to formatSpaceCompassCelestialTemperature(it, numeric, units.fahrenheit)
+    }
     val pressure = spaceCompassAtmosphericPressure(body)
     val pressureRows = pressure?.let { reference ->
         formatSpaceCompassAtmosphericPressure(reference, numeric, units.pressure)?.let {
@@ -141,7 +149,7 @@ internal fun SpaceCompassCelestialViewerScreen(body: SpaceCompassCelestialBody, 
         stringResource(if (body.isVoyager) R.string.celestial_view_antenna else R.string.celestial_view_size) to formatSpaceCompassPhysicalLength(facts.dimensionMeters, 1, numeric, units.feet),
         stringResource(R.string.celestial_view_mass) to formatSpaceCompassCelestialMass(body, facts, numeric, units.pounds),
         stringResource(R.string.celestial_view_gravity) to formatSpaceCompassCelestialGravity(facts.gravity, numeric,
-            siFractionDigits = if (body == SpaceCompassCelestialBody.POLARIS) 2 else 1),
+            fractionDigits = if (body == SpaceCompassCelestialBody.POLARIS) 2 else 1, feet = units.feet),
         stringResource(R.string.celestial_view_density) to formatSpaceCompassCelestialDensity(facts.density, numeric, units,
             fractionDigits = if (body == SpaceCompassCelestialBody.POLARIS) 3 else 0),
     ) + pressureRows + temperatureRows + listOf(
@@ -251,10 +259,12 @@ internal fun SpaceCompassCelestialViewerScreen(body: SpaceCompassCelestialBody, 
             informationRows.forEach { (label, value) -> Row(Modifier.fillMaxWidth(), verticalAlignment = Alignment.CenterVertically,
                 horizontalArrangement = Arrangement.spacedBy(10.dp)) {
                 Text(label, Modifier.weight(0.52f), color = secondaryText, fontSize = 12.sp, lineHeight = 16.sp)
-                Text(value, Modifier.weight(0.48f), color = primaryText, fontSize = 12.sp, lineHeight = 16.sp)
+                Text(value, Modifier.weight(0.48f), color = primaryText, fontSize = 12.sp, lineHeight = 16.sp,
+                    style = TextStyle(textDirection = TextDirection.ContentOrLtr))
             } }
             HorizontalDivider(color = secondaryText.copy(alpha = 0.22f))
-            Text(stringResource(if (body == SpaceCompassCelestialBody.EARTH_CENTER) R.string.celestial_earth_center_note else R.string.celestial_view_facts_note), color = secondaryText, fontSize = 11.sp, lineHeight = 14.sp)
+            Text(if (body == SpaceCompassCelestialBody.EARTH_CENTER) stringResource(R.string.celestial_earth_center_note)
+                else stringResource(R.string.celestial_view_facts_note, referencePressure), color = secondaryText, fontSize = 11.sp, lineHeight = 14.sp)
             if (pressureRows.isNotEmpty()) {
                 Text(stringResource(R.string.celestial_pressure_reference_note), color = secondaryText,
                     fontSize = 11.sp, lineHeight = 14.sp)

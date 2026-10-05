@@ -28,7 +28,7 @@
     <string name="celestial_view_sedna_note" formatted="false">表面と向きは不明です。説明用モデルを表示します。</string>
     <string name="celestial_view_map_note" formatted="false">位相と向きを計算した再現図です。静的な地図でありライブ画像ではありません。</string>
     <string name="celestial_view_location_needed" formatted="false">現在の姿には位置情報が必要です。自転はGPSなしでも利用できます。</string>
-    <string name="celestial_view_facts_note" formatted="false">概算の参考値です。ガス惑星の重力は1 barでの値、軌道距離は中心天体からの距離です。</string>
+    <string name="celestial_view_facts_note">概算の参考値です。ガス惑星の重力は%1$sでの値、軌道距離は中心天体からの距離です。</string>
     <string name="celestial_view_sun_note" formatted="false">太陽の自転は緯度によって異なります。周期は参考値です。</string>
     <string name="celestial_view_sedna_facts" formatted="false">直径は推定値です。自転と軌道要素には不確かさがあります。</string>
     <string name="celestial_view_iss_note" formatted="false">ISSの寸法と質量は構成や訪問する宇宙機によって変わります。</string>
@@ -36,5 +36,5 @@
     <string name="celestial_view_zoom_in" formatted="false">拡大</string>
     <string name="celestial_view_zoom_out" formatted="false">縮小</string>
     <string name="celestial_view_reset_zoom" formatted="false">ズームをリセット</string>
-    <string name="celestial_view_zoom_level">ズーム: %1$d%%</string>
+    <string name="celestial_view_zoom_level">ズーム: %1$s%%</string>
 </resources>

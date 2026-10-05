@@ -5,7 +5,7 @@
     <string name="celestial_temperature_day_maximum" formatted="false">Sunlit surface (max.)</string>
     <string name="celestial_temperature_night_minimum" formatted="false">Night surface (min.)</string>
     <string name="celestial_temperature_surface_range" formatted="false">Surface temperature range</string>
-    <string name="celestial_temperature_atmosphere" formatted="false">Atmosphere temperature (1 bar)</string>
+    <string name="celestial_temperature_atmosphere">Atmosphere temperature (%1$s)</string>
     <string name="celestial_temperature_photosphere" formatted="false">Photosphere temperature</string>
     <string name="celestial_temperature_effective" formatted="false">Mean effective temperature</string>
     <string name="celestial_temperature_note" formatted="false">Reference temperatures, not live data. Day/night values are local extremes, not hemisphere averages. Values vary with place and time.</string>

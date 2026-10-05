@@ -5,7 +5,7 @@
     <string name="celestial_temperature_day_maximum" formatted="false">受光表面（最高）</string>
     <string name="celestial_temperature_night_minimum" formatted="false">夜间表面（最低）</string>
     <string name="celestial_temperature_surface_range" formatted="false">表面温度范围</string>
-    <string name="celestial_temperature_atmosphere" formatted="false">大气温度（1 bar）</string>
+    <string name="celestial_temperature_atmosphere">大气温度（%1$s）</string>
     <string name="celestial_temperature_photosphere" formatted="false">光球温度</string>
     <string name="celestial_temperature_effective" formatted="false">平均有效温度</string>
     <string name="celestial_temperature_note" formatted="false">参考温度，非实时数据。昼夜值是局部极值，不是整个半球的平均值。数值随地点和时间变化。</string>

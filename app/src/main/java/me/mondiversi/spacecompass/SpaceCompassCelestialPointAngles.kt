@@ -9,6 +9,8 @@ import androidx.compose.ui.text.AnnotatedString
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.compose.runtime.Composable
+import androidx.compose.ui.text.TextStyle
+import androidx.compose.ui.text.style.TextDirection
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.stringResource
@@ -31,7 +33,8 @@ internal fun SpaceCompassCelestialPointAngles(position: SpaceCompassSunPosition,
             contentDescription = row.announcement; text = AnnotatedString(row.value)
         }, verticalAlignment = Alignment.CenterVertically, horizontalArrangement = Arrangement.spacedBy(12.dp)) {
             Text(row.label, Modifier.weight(1f), color = secondaryText, fontSize = fontSize, lineHeight = lineHeight)
-            Text(row.value, color = primaryText, fontSize = fontSize, lineHeight = lineHeight, textAlign = TextAlign.End)
+            Text(row.value, color = primaryText, fontSize = fontSize, lineHeight = lineHeight,
+                style = TextStyle(textDirection = TextDirection.Ltr), textAlign = TextAlign.End)
         }
     } }
 }

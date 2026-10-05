@@ -28,7 +28,7 @@
     <string name="celestial_view_sedna_note" formatted="false">Permukaan dan orientasi tidak diketahui: model ilustratif.</string>
     <string name="celestial_view_map_note" formatted="false">Tampilan direkonstruksi dengan fase dan orientasi terhitung. Peta statis, bukan gambar langsung.</string>
     <string name="celestial_view_location_needed" formatted="false">Lokasi diperlukan untuk tampilan saat ini. Rotasi tersedia tanpa GPS.</string>
-    <string name="celestial_view_facts_note" formatted="false">Nilai perkiraan. Gravitasi raksasa gas pada 1 bar; jarak orbit dari benda utama.</string>
+    <string name="celestial_view_facts_note">Nilai perkiraan. Gravitasi raksasa gas pada %1$s; jarak orbit dari benda utama.</string>
     <string name="celestial_view_sun_note" formatted="false">Rotasi Matahari berubah menurut lintang; periodenya merupakan nilai acuan.</string>
     <string name="celestial_view_sedna_facts" formatted="false">Diameter adalah perkiraan. Rotasi dan elemen orbit memiliki ketidakpastian.</string>
     <string name="celestial_view_iss_note" formatted="false">Dimensi dan massa ISS berubah menurut konfigurasi dan wahana yang berkunjung.</string>
@@ -36,5 +36,5 @@
     <string name="celestial_view_zoom_in" formatted="false">Perbesar</string>
     <string name="celestial_view_zoom_out" formatted="false">Perkecil</string>
     <string name="celestial_view_reset_zoom" formatted="false">Atur ulang zoom</string>
-    <string name="celestial_view_zoom_level">Zoom: %1$d%%</string>
+    <string name="celestial_view_zoom_level">Zoom: %1$s%%</string>
 </resources>

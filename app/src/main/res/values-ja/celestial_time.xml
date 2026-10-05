@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="celestial_point_time">%1$s · %2$s</string>
-    <string name="celestial_point_number">地点 %1$d</string>
+    <string name="celestial_point_number">地点 %1$s</string>
     <string name="celestial_current_position">現在</string>
     <string name="celestial_point_current">現在</string>
 </resources>

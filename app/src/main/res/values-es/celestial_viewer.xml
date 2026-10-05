@@ -28,7 +28,7 @@
     <string name="celestial_view_sedna_note" formatted="false">Superficie y orientación desconocidas: modelo ilustrativo.</string>
     <string name="celestial_view_map_note" formatted="false">Aspecto reconstruido: fase y orientación calculadas. Mapas estáticos, no imágenes en directo.</string>
     <string name="celestial_view_location_needed" formatted="false">Se necesita la ubicación para la vista actual. La rotación está disponible sin GPS.</string>
-    <string name="celestial_view_facts_note" formatted="false">Valores aproximados. Gravedad de los gigantes gaseosos a 1 bar; distancias orbitales al cuerpo principal.</string>
+    <string name="celestial_view_facts_note">Valores aproximados. Gravedad de los gigantes gaseosos a %1$s; distancias orbitales al cuerpo principal.</string>
     <string name="celestial_view_sun_note" formatted="false">La rotación solar varía con la latitud; el periodo es un valor de referencia.</string>
     <string name="celestial_view_sedna_facts" formatted="false">Diámetro estimado. Rotación y elementos orbitales tienen incertidumbres.</string>
     <string name="celestial_view_iss_note" formatted="false">Dimensiones y masa de la ISS varían con la configuración y los vehículos visitantes.</string>
@@ -36,5 +36,5 @@
     <string name="celestial_view_zoom_in" formatted="false">Ampliar</string>
     <string name="celestial_view_zoom_out" formatted="false">Reducir</string>
     <string name="celestial_view_reset_zoom" formatted="false">Restablecer zoom</string>
-    <string name="celestial_view_zoom_level">Zoom: %1$d%%</string>
+    <string name="celestial_view_zoom_level">Zoom: %1$s%%</string>
 </resources>

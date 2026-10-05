@@ -28,7 +28,7 @@
     <string name="celestial_view_sedna_note" formatted="false">Powierzchnia i orientacja są nieznane: model ilustracyjny.</string>
     <string name="celestial_view_map_note" formatted="false">Odtworzony wygląd z obliczoną fazą i orientacją. Stałe mapy, nie obraz na żywo.</string>
     <string name="celestial_view_location_needed" formatted="false">Aktualny widok wymaga lokalizacji. Obrót jest dostępny bez GPS.</string>
-    <string name="celestial_view_facts_note" formatted="false">Wartości przybliżone. Grawitacja gazowych olbrzymów przy 1 bar; odległości orbitalne od ciała głównego.</string>
+    <string name="celestial_view_facts_note">Wartości przybliżone. Grawitacja gazowych olbrzymów przy %1$s; odległości orbitalne od ciała głównego.</string>
     <string name="celestial_view_sun_note" formatted="false">Obrót Słońca zależy od szerokości; okres jest wartością odniesienia.</string>
     <string name="celestial_view_sedna_facts" formatted="false">Średnica jest szacunkowa. Obrót i elementy orbity mają niepewności.</string>
     <string name="celestial_view_iss_note" formatted="false">Wymiary i masa ISS zmieniają się z konfiguracją i odwiedzającymi pojazdami.</string>
@@ -36,5 +36,5 @@
     <string name="celestial_view_zoom_in" formatted="false">Powiększ</string>
     <string name="celestial_view_zoom_out" formatted="false">Pomniejsz</string>
     <string name="celestial_view_reset_zoom" formatted="false">Resetuj powiększenie</string>
-    <string name="celestial_view_zoom_level">Powiększenie: %1$d%%</string>
+    <string name="celestial_view_zoom_level">Powiększenie: %1$s%%</string>
 </resources>

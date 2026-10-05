@@ -1,6 +1,6 @@
 <resources>
     <string name="info_news_title">Dernières nouveautés · %1$s</string>
     <string name="info_news_units">Les masses suivent les kilogrammes/livres choisis ; à partir de 10 masses solaires, M☉ est utilisé.</string>
-    <string name="info_news_pressure">Pression atmosphérique lorsque les données sont disponibles, avec un choix indépendant entre bar, pascal et psi.</string>
+    <string name="info_news_pressure">Unités et formats numériques cohérents dans toute l’application, y compris la gravité et les pressions de référence.</string>
     <string name="info_news_updates">Mises à jour signées depuis GitHub, recherchées au démarrage ou dans la section du dépôt.</string>
 </resources>

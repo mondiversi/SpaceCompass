@@ -28,7 +28,7 @@
     <string name="celestial_view_sedna_note" formatted="false">Oppervlak en oriëntatie zijn onbekend: illustratief model.</string>
     <string name="celestial_view_map_note" formatted="false">Gereconstrueerd aanzicht met berekende fase en oriëntatie. Statische kaarten, geen livebeelden.</string>
     <string name="celestial_view_location_needed" formatted="false">Voor het huidige aanzicht is een locatie nodig. Rotatie werkt ook zonder GPS.</string>
-    <string name="celestial_view_facts_note" formatted="false">Benaderde waarden. Zwaartekracht van gasreuzen bij 1 bar; baanafstanden tot het hoofdlichaam.</string>
+    <string name="celestial_view_facts_note">Benaderde waarden. Zwaartekracht van gasreuzen bij %1$s; baanafstanden tot het hoofdlichaam.</string>
     <string name="celestial_view_sun_note" formatted="false">De zonnerotatie varieert met de breedtegraad; de periode is een referentiewaarde.</string>
     <string name="celestial_view_sedna_facts" formatted="false">De diameter is geschat. Rotatie en baanelementen hebben onzekerheden.</string>
     <string name="celestial_view_iss_note" formatted="false">Afmetingen en massa van het ISS variëren met configuratie en bezoekende voertuigen.</string>
@@ -36,5 +36,5 @@
     <string name="celestial_view_zoom_in" formatted="false">Inzoomen</string>
     <string name="celestial_view_zoom_out" formatted="false">Uitzoomen</string>
     <string name="celestial_view_reset_zoom" formatted="false">Zoom herstellen</string>
-    <string name="celestial_view_zoom_level">Zoom: %1$d%%</string>
+    <string name="celestial_view_zoom_level">Zoom: %1$s%%</string>
 </resources>

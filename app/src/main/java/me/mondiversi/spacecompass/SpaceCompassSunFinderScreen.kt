@@ -238,7 +238,7 @@ internal fun SpaceCompassSunFinderContent(
         spaceCompassSunOptionalDataRow(stringResource(R.string.celestial_table_distance, SPACE_COMPASS_SUN_DATA_MARKER),
             formatSpaceCompassSelectedDistance(body, shownDistance, numeric, units.distance, units.feet), "celestial-distance"),
         spaceCompassSunOptionalDataRow(if (units.miles) speedTemplate.replace("km/s", "mi/s") else speedTemplate,
-            speed?.takeIf { it.isFinite() && (it >= 0 || body.isVoyager) }?.let { formatSpaceCompassNumber(if (units.miles) it / 1.609344 else it, 2, numeric) },
+            formatSpaceCompassSpeed(speed, numeric, units.miles, allowNegative = body.isVoyager),
             "celestial-speed"),
         spaceCompassSunDataRow(stringResource(R.string.celestial_point_azimuth, SPACE_COMPASS_SUN_DATA_MARKER),
             angle(target?.azimuthDegrees), "sun-data-azimuth"),
@@ -253,7 +253,7 @@ internal fun SpaceCompassSunFinderContent(
             formatSpaceCompassSelectedCoordinates(fix?.latitude, fix?.longitude, numeric, units.dms), "sun-info-coordinates"),
         spaceCompassSunOptionalDataRow(stringResource(R.string.celestial_gps_coordinate_accuracy, SPACE_COMPASS_SUN_DATA_MARKER),
             fix?.takeIf { it.hasAccuracy() && it.accuracy.isFinite() && it.accuracy >= 0f }
-                ?.let { "${formatSpaceCompassNumber(it.accuracy.toDouble() * (if (units.feet) 1 / 0.3048 else 1.0), 0, numeric)} ${if (units.feet) "ft" else "m"}" }, "sun-info-accuracy"),
+                ?.let { formatSpaceCompassPhysicalLength(it.accuracy.toDouble(), 0, numeric, units.feet) }, "sun-info-accuracy"),
         spaceCompassSunDataRow(stringResource(R.string.sun_finder_altitude, SPACE_COMPASS_SUN_DATA_MARKER), height, "sun-info-altitude")
     )
     val weatherValue = if (currentWeather == null) stringResource(

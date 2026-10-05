@@ -46,3 +46,10 @@ internal fun formatSpaceCompassPhysicalLength(meters: Double?, digits: Int,
     val unit = if (large) { if (feet) "mi" else "km" } else { if (feet) "ft" else "m" }
     return "${formatSpaceCompassNumber(meters / divisor, digits, numeric)} $unit"
 }
+
+/** Speeds arrive in km/s; signed outward probe speeds remain signed after conversion. */
+internal fun formatSpaceCompassSpeed(value: Double?, numeric: SpaceCompassNumericFormat,
+    miles: Boolean, allowNegative: Boolean = false): String? =
+    value?.takeIf { it.isFinite() && (it >= 0 || allowNegative) }?.let {
+        formatSpaceCompassNumber(if (miles) it / 1.609344 else it, 2, numeric)
+    }

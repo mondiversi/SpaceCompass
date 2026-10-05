@@ -28,7 +28,7 @@
     <string name="celestial_view_sedna_note" formatted="false">سطح و جهت‌گیری ناشناخته‌اند: مدل نمایشی.</string>
     <string name="celestial_view_map_note" formatted="false">نمای بازسازی‌شده با فاز و جهت‌گیری محاسبه‌شده. نقشه‌های ثابت، نه تصاویر زنده.</string>
     <string name="celestial_view_location_needed" formatted="false">برای نمای کنونی مکان لازم است. چرخش بدون GPS در دسترس است.</string>
-    <string name="celestial_view_facts_note" formatted="false">مقادیر تقریبی. گرانش غول‌های گازی در ۱ بار؛ فاصله‌های مداری از جرم اصلی.</string>
+    <string name="celestial_view_facts_note">مقادیر تقریبی. گرانش غول‌های گازی در %1$s؛ فاصله‌های مداری از جرم اصلی.</string>
     <string name="celestial_view_sun_note" formatted="false">چرخش خورشید با عرض جغرافیایی تغییر می‌کند؛ دوره یک مقدار مرجع است.</string>
     <string name="celestial_view_sedna_facts" formatted="false">قطر تخمینی است. چرخش و عناصر مداری عدم قطعیت دارند.</string>
     <string name="celestial_view_iss_note" formatted="false">ابعاد و جرم ISS با پیکربندی و فضاپیماهای مهمان تغییر می‌کنند.</string>
@@ -36,5 +36,5 @@
     <string name="celestial_view_zoom_in" formatted="false">بزرگ‌نمایی</string>
     <string name="celestial_view_zoom_out" formatted="false">کوچک‌نمایی</string>
     <string name="celestial_view_reset_zoom" formatted="false">بازنشانی بزرگ‌نمایی</string>
-    <string name="celestial_view_zoom_level">بزرگ‌نمایی: %1$d%%</string>
+    <string name="celestial_view_zoom_level">بزرگ‌نمایی: %1$s%%</string>
 </resources>

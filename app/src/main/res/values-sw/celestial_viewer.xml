@@ -28,7 +28,7 @@
     <string name="celestial_view_sedna_note" formatted="false">Uso na mwelekeo havijulikani: mfano wa kuonyesha.</string>
     <string name="celestial_view_map_note" formatted="false">Mwonekano ulioundwa kwa awamu na mwelekeo uliohesabiwa. Ramani tuli, si picha za moja kwa moja.</string>
     <string name="celestial_view_location_needed" formatted="false">Eneo linahitajika kwa mwonekano wa sasa. Mzunguko unapatikana bila GPS.</string>
-    <string name="celestial_view_facts_note" formatted="false">Thamani za makadirio. Mvuto wa majitu ya gesi kwa bar 1; umbali wa obiti kutoka mwili mkuu.</string>
+    <string name="celestial_view_facts_note">Thamani za makadirio. Mvuto wa majitu ya gesi kwa %1$s; umbali wa obiti kutoka mwili mkuu.</string>
     <string name="celestial_view_sun_note" formatted="false">Mzunguko wa Jua hubadilika kwa latitudo; kipindi ni thamani ya marejeo.</string>
     <string name="celestial_view_sedna_facts" formatted="false">Kipenyo ni makadirio. Mzunguko na vigezo vya obiti vina kutokuwa na uhakika.</string>
     <string name="celestial_view_iss_note" formatted="false">Vipimo na masi ya ISS hubadilika kwa mpangilio na vyombo vinavyotembelea.</string>
@@ -36,5 +36,5 @@
     <string name="celestial_view_zoom_in" formatted="false">Kuza</string>
     <string name="celestial_view_zoom_out" formatted="false">Punguza</string>
     <string name="celestial_view_reset_zoom" formatted="false">Weka upya ukuzaji</string>
-    <string name="celestial_view_zoom_level">Ukuzaji: %1$d%%</string>
+    <string name="celestial_view_zoom_level">Ukuzaji: %1$s%%</string>
 </resources>

@@ -1,6 +1,6 @@
 <resources>
     <string name="info_news_title">最新变化 · %1$s</string>
     <string name="info_news_units">质量按所选千克/磅显示；达到10个太阳质量时使用M☉。</string>
-    <string name="info_news_pressure">在数据可用时显示大气压力，并独立选择巴、帕斯卡或 psi。</string>
+    <string name="info_news_pressure">在整个应用中统一单位和数字格式，包括重力和参考压力。</string>
     <string name="info_news_updates">从 GitHub 获取签名更新，在启动时或仓库页面检查。</string>
 </resources>
