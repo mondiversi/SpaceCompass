@@ -19,7 +19,14 @@ internal val LocalSpaceCompassPreferences = staticCompositionLocalOf<SharedPrefe
 @Composable
 internal fun SpaceCompassPreferences(content: @Composable () -> Unit) {
     val context = LocalContext.current
-    val preferences = remember { context.getSharedPreferences(SPACE_COMPASS_PREFERENCES_NAME, Context.MODE_PRIVATE) }
+    val preferences = remember {
+        context.getSharedPreferences(SPACE_COMPASS_PREFERENCES_NAME, Context.MODE_PRIVATE).also { saved ->
+            if (saved.getString(SPACE_COMPASS_DISTANCE_SPEED_UNIT_KEY, null) !in spaceCompassDistanceSpeedOptions) {
+                val migrated = spaceCompassDistanceSpeedPreference { saved.getString(it, null) }
+                saved.edit().putString(SPACE_COMPASS_DISTANCE_SPEED_UNIT_KEY, migrated).apply()
+            }
+        }
+    }
     val settings by rememberSpaceCompassPresentationSettings(preferences)
     val system = LocalConfiguration.current
     val theme = settings["theme"]

@@ -18,7 +18,7 @@
     <string name="settings_section_language">Taal</string>
     <string name="language_system">Standaard</string>
     <string name="settings_section_appearance">Uiterlijk</string>
-    <string name="settings_section_language_formats">Formaten</string>
+    <string name="settings_section_units">Eenheden</string>
     <string name="pc_settings">Instellingen</string>
     <string name="pc_loading">Laden…</string>
     <string name="pc_speed">Snelheid</string>

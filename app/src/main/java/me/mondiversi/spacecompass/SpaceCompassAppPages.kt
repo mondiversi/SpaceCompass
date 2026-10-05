@@ -60,7 +60,7 @@ internal fun SpaceCompassSettingsButton() {
         SpaceCompassAdaptiveDropdownMenu(expanded, { expanded = false }, containerColor = card,
             modifier = Modifier.testTag("app-settings-menu"), shape = RoundedCornerShape(16.dp)) {
             listOf("appearance" to R.string.settings_section_appearance, "language" to R.string.settings_section_language,
-                "formats" to R.string.settings_section_language_formats).forEachIndexed { index, (route, title) ->
+                "units" to R.string.settings_section_units).forEachIndexed { index, (route, title) ->
                 if (index > 0) HorizontalDivider(color = foreground.copy(alpha = .10f))
                 DropdownMenuItem(text = {
                     Row(verticalAlignment = Alignment.CenterVertically, horizontalArrangement = Arrangement.spacedBy(8.dp)) {
@@ -81,7 +81,7 @@ internal fun SpaceCompassAppPage(route: String, onBack: () -> Unit) {
     val title = when (route) {
         "appearance" -> R.string.settings_section_appearance
         "language" -> R.string.settings_section_language
-        "formats" -> R.string.settings_section_language_formats
+        "units" -> R.string.settings_section_units
         else -> R.string.pc_info
     }
     Surface(color = spaceCompassPageBackground(), contentColor = MaterialTheme.colorScheme.onSurface, modifier = Modifier.fillMaxSize().testTag("page-$route")) {
@@ -95,7 +95,7 @@ internal fun SpaceCompassAppPage(route: String, onBack: () -> Unit) {
                         description = stringResource(R.string.language_description)), languageCodes = true)
                 }
                 else -> {
-                    val settings = if (route == "appearance") spaceCompassAppearanceSettings() else spaceCompassFormatSettings()
+                    val settings = if (route == "appearance") spaceCompassAppearanceSettings() else spaceCompassUnitSettings()
                     LazyVerticalGrid(columns = GridCells.Adaptive(280.dp), modifier = Modifier.fillMaxWidth().weight(1f),
                         contentPadding = spaceCompassPageContentPadding, horizontalArrangement = Arrangement.spacedBy(6.dp),
                         verticalArrangement = Arrangement.spacedBy(12.dp)) {

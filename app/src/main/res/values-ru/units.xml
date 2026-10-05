@@ -1,0 +1,6 @@
+<resources>
+    <string name="units_distance_speed">Расстояния и скорости</string>
+    <string name="units_metric">Метры / километры</string>
+    <string name="units_imperial">Футы / мили</string>
+    <string name="units_distance_speed_description">Выберите единицы для расстояний и скоростей.</string>
+</resources>

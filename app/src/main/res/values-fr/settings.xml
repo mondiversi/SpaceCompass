@@ -18,7 +18,7 @@
     <string name="settings_section_language">Langue</string>
     <string name="language_system">Par défaut</string>
     <string name="settings_section_appearance">Apparence</string>
-    <string name="settings_section_language_formats">Formats</string>
+    <string name="settings_section_units">Unités</string>
     <string name="pc_settings">Paramètres</string>
     <string name="pc_loading">Chargement…</string>
     <string name="pc_speed">Vitesse</string>

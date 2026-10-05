@@ -1,0 +1,6 @@
+<resources>
+    <string name="units_distance_speed">Entfernungen und Geschwindigkeiten</string>
+    <string name="units_metric">Meter / Kilometer</string>
+    <string name="units_imperial">Fuß / Meilen</string>
+    <string name="units_distance_speed_description">Wähle die Einheiten für Entfernungen und Geschwindigkeiten.</string>
+</resources>

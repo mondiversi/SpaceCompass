@@ -18,7 +18,7 @@
     <string name="settings_section_language">שפה</string>
     <string name="language_system">ברירת מחדל</string>
     <string name="settings_section_appearance">מראה</string>
-    <string name="settings_section_language_formats">תבניות</string>
+    <string name="settings_section_units">יחידות</string>
     <string name="pc_settings">הגדרות</string>
     <string name="pc_loading">בטעינה…</string>
     <string name="pc_speed">מהירות</string>

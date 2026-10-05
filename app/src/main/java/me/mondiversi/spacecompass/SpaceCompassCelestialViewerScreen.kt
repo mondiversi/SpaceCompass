@@ -208,19 +208,20 @@ internal fun SpaceCompassCelestialViewerScreen(body: SpaceCompassCelestialBody, 
                 if (body.deepSkyReference == null && body != SpaceCompassCelestialBody.EARTH_CENTER) Row(Modifier.align(Alignment.TopEnd).padding(4.dp)) {
                     SpaceCompassCelestialIconControl(!rotating, actual, { rotating = false },
                         Modifier.testTag("celestial-view-current")) {
-                        SpaceCompassPasswordVisibilityIcon(true, Modifier.size(18.dp), Color.White)
+                        SpaceCompassPasswordVisibilityIcon(true, Modifier.size(18.dp), LocalContentColor.current)
                     }
                     SpaceCompassCelestialIconControl(rotating, spin, { rotating = true },
                         Modifier.testTag("celestial-view-rotation")) {
+                        val iconColor = LocalContentColor.current
                         Canvas(Modifier.size(18.dp)) {
                             val inset = 2.dp.toPx()
-                            drawArc(Color.White, -45f, 285f, false, Offset(inset, inset),
+                            drawArc(iconColor, -45f, 285f, false, Offset(inset, inset),
                                 Size(size.width - 2 * inset, size.height - 2 * inset),
                                 style = Stroke(1.6.dp.toPx(), cap = StrokeCap.Round))
                             val tip = Offset(size.width - inset, size.height * 0.30f)
-                            drawLine(Color.White, tip - Offset(4.dp.toPx(), 0f), tip,
+                            drawLine(iconColor, tip - Offset(4.dp.toPx(), 0f), tip,
                                 1.6.dp.toPx(), StrokeCap.Round)
-                            drawLine(Color.White, tip + Offset(0f, 4.dp.toPx()), tip,
+                            drawLine(iconColor, tip + Offset(0f, 4.dp.toPx()), tip,
                                 1.6.dp.toPx(), StrokeCap.Round)
                         }
                     }

@@ -18,7 +18,7 @@
     <string name="settings_section_language">Γλώσσα</string>
     <string name="language_system">Προεπιλογή</string>
     <string name="settings_section_appearance">Εμφάνιση</string>
-    <string name="settings_section_language_formats">Μορφές</string>
+    <string name="settings_section_units">Μονάδες</string>
     <string name="pc_settings">Ρυθμίσεις</string>
     <string name="pc_loading">Φόρτωση…</string>
     <string name="pc_speed">Ταχύτητα</string>

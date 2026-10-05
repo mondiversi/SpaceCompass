@@ -151,7 +151,7 @@ internal fun SpaceCompassSettingsGroupIcon(key: String, tint: Color) {
                 drawCircle(tint, size.minDimension * .25f, center, style = outline)
                 drawOval(tint, point(.06f, .35f), Size(size.width * .88f, size.height * .3f), style = outline)
             }
-            "altitude" -> {
+            SPACE_COMPASS_DISTANCE_SPEED_UNIT_KEY, "altitude" -> {
                 drawRoundRect(tint, point(.12f, .28f), Size(size.width * .76f, size.height * .44f), CornerRadius(2.dp.toPx()), style = outline)
                 for (x in listOf(.3f, .5f, .7f)) drawLine(tint, point(x, .28f), point(x, .48f), strokeWidth)
             }

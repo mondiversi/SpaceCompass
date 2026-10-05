@@ -19,15 +19,15 @@ internal fun spaceCompassAppearanceSettings() = listOf(
 )
 
 @Composable
-internal fun spaceCompassFormatSettings(): List<SpaceCompassSettingSpec> {
+internal fun spaceCompassUnitSettings(): List<SpaceCompassSettingSpec> {
     val regional = listOf("system" to stringResource(R.string.numeric_format_system),
         "international" to stringResource(R.string.numeric_format_international),
         "european" to stringResource(R.string.numeric_format_european), "american" to stringResource(R.string.date_format_american))
     return listOf(
-        SpaceCompassSettingSpec(R.string.pc_speed, "speed", "system", listOf("system" to stringResource(R.string.numeric_format_system), "km" to "km/s", "mi" to "mi/s"), description = stringResource(R.string.format_speed_description)),
-        SpaceCompassSettingSpec(R.string.pc_astronomical_distances, "distance", "default", listOf(
-            "default" to stringResource(R.string.numeric_format_system), "mkm" to stringResource(R.string.pc_million_km), "mmi" to stringResource(R.string.pc_million_miles)), description = stringResource(R.string.format_astronomical_distance_description)),
-        SpaceCompassSettingSpec(R.string.pc_normal_distances, "altitude", "system", listOf("system" to stringResource(R.string.numeric_format_system), "m" to "m", "ft" to "ft"), description = stringResource(R.string.format_normal_distance_description)),
+        SpaceCompassSettingSpec(R.string.units_distance_speed, SPACE_COMPASS_DISTANCE_SPEED_UNIT_KEY, "system", listOf(
+            "system" to stringResource(R.string.numeric_format_system),
+            "metric" to stringResource(R.string.units_metric),
+            "imperial" to stringResource(R.string.units_imperial)), description = stringResource(R.string.units_distance_speed_description)),
         SpaceCompassSettingSpec(R.string.pc_temperature, "temperature", "system", listOf("system" to stringResource(R.string.numeric_format_system), "c" to "°C", "f" to "°F"), description = stringResource(R.string.format_temperature_description)),
         SpaceCompassSettingSpec(R.string.pc_coordinates, "coordinates", "system", listOf("system" to stringResource(R.string.numeric_format_system),
             "decimal" to stringResource(R.string.pc_decimal_degrees), "dms" to stringResource(R.string.pc_dms)), description = stringResource(R.string.format_coordinates_description)),

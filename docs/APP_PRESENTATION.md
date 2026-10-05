@@ -1,5 +1,21 @@
 # App presentation and preferences
 
+## Units and viewer selection — version 0.1.4
+
+The Units page replaces the separate speed/astronomical/normal-distance controls
+with one distances-and-speeds island. System follows the device region; explicit
+meters/kilometers or feet/miles controls every corresponding display, including
+Mkm/Mmi, km/s or mi/s, GPS altitude/accuracy and physical sizes. Extrasolar distances
+retain light-years, and AU references remain where already present. Temperature,
+coordinate notation, numeric formatting and date/time remain separate choices.
+Legacy preferences migrate once without clearing app data. If older length/speed
+choices differ, explicit astronomical distance wins, then nearby length, then speed.
+
+The planet viewer current-view/rotation tabs use light fill/dark glyph when
+selected and dark fill/white glyph when inactive. Their shape, touch targets and
+accessible selection semantics remain unchanged in both app themes.
+
+
 The independent package remains `me.mondiversi.spacecompass`.
 
 The original vector identity combines a ringed planet, compass pointer and star.
@@ -11,7 +27,7 @@ Location permission prompting starts only when the compass screen is mounted.
 
 The main toolbar displays Space Compass with a 16 dp start inset and settings.
 The celestial selection control is at the sky viewport end below the toolbar,
-with a compact 16 dp circular counter. Settings open Appearance, Language and Formats panels. Display settings
+with a compact 16 dp circular counter. Settings open Appearance, Language and Units panels. Display settings
 remain unavailable; existing adaptive phone/tablet behavior is preserved.
 The language selector offers the 20 existing catalogs, including Greek and Persian.
 App preferences remain in the independent Space Compass preference file.
@@ -58,9 +74,9 @@ Tapping the main title opens Info with version, description, an Earth-only-use
 joke, repository status, compass precision explanation and bundled credits.
 The current Information page contains the public GitHub repository, with separate open/check-update buttons and a global update dialog; see [UPDATES.md](UPDATES.md).
 
-Appearance, Language and Formats are full-screen pages with neutral light/dark
-gray cards and direct radio selections. Format order is speed, distance,
-temperature, altitude/GPS accuracy, coordinates, numbers, date and time.
+Appearance, Language and Units are full-screen pages with neutral light/dark
+gray cards and direct radio selections. Unit page order is distances/speeds,
+temperature, coordinates, numbers, date and time.
 All new interface text is present in the 20 existing resource catalogs.
 Navigation saves the compass selection via a saveable-state holder. Sensors stop
 while a settings/info page replaces the compass and resume when it returns.

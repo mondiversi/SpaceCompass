@@ -1,0 +1,6 @@
+<resources>
+    <string name="units_distance_speed">거리 및 속도</string>
+    <string name="units_metric">미터 / 킬로미터</string>
+    <string name="units_imperial">피트 / 마일</string>
+    <string name="units_distance_speed_description">거리와 속도의 단위를 선택하세요.</string>
+</resources>

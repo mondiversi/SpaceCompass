@@ -4,10 +4,10 @@
 
 | Check | Result |
 | --- | --- |
-| Debug APK build | Passed, version 0.1.3 |
-| Release APK build | Passed, version 0.1.3 |
+| Debug APK build | Passed, version 0.1.4 |
+| Release APK build | Passed, version 0.1.4 |
 | Release lint | Completed, 0 errors; remaining findings retained in reports |
-| JVM unit tests | 395 passed, 0 failures |
+| JVM unit tests | 401 passed, 0 failures |
 | Android instrumentation sources | Compiled; not executed |
 | Phone UI checks | Samsung SM-G970U1, Android 12 / API 31 |
 | Tablet UI checks | Pixel Tablet emulator, Android 15 / API 35 |
@@ -32,6 +32,22 @@ The repository contains no signing key or local SDK configuration. GitHub APK di
 No Play Store submission is part of this release.
 The current CI result is available on the repository's Actions page; the local
 results above do not stand in for a successful hosted run.
+
+## Units and viewer controls — version 0.1.4
+
+Distances, astronomical distances and speed share one persisted selection:
+System, meters/kilometers or feet/miles. Regression checks cover migration of
+older choices, precedence of the unified setting, device-region defaults,
+temperature/coordinate independence and nearby/astronomical/physical-size output.
+Older explicit distance choices take precedence, followed by nearby length then
+speed; no other preferences or celestial selections are cleared.
+Twenty-language string parity passed, including the renamed Units page.
+
+Viewer tabs use an opaque light fill with a dark symbol when selected, versus
+the existing dark fill and white symbol when inactive. Tests require at least
+4.5:1 contrast for the glyph and between active/inactive fills, including presses.
+Sky action buttons and the existing 48 dp touch targets remain covered by their
+regression checks. Signed APK/device checks are recorded in release notes.
 
 ## Repository presentation — version 0.1.3
 

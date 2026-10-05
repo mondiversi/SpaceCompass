@@ -86,7 +86,7 @@ internal fun SpaceCompassSettingsMenuIcon(route: String, tint: Color) {
                     )
                 }
             }
-            "formats" -> {
+            "units" -> {
                 drawLine(
                     color = tint,
                     start = Offset(

@@ -5,7 +5,7 @@ import org.junit.Test
 
 class SpaceCompassPresentationSettingsTest {
     @Test fun selectionAndCacheWritesDoNotChangePresentationSettings() {
-        val preferences = mutableMapOf("language" to "system", "theme" to "dark", "distance" to "mmi")
+        val preferences = mutableMapOf("language" to "system", "theme" to "dark", SPACE_COMPASS_DISTANCE_SPEED_UNIT_KEY to "imperial")
         val before = spaceCompassReadPresentationSettings(preferences::get)
         preferences["celestial_active"] = "RIGEL"
         preferences["celestial_selected"] = "RIGEL,PROXIMA_CENTAURI"
@@ -15,7 +15,7 @@ class SpaceCompassPresentationSettingsTest {
         val after = spaceCompassReadPresentationSettings(preferences::get)
         assertEquals("it", after["language"])
         assertEquals("dark", after["theme"])
-        assertEquals("mmi", after["distance"])
+        assertEquals("imperial", after[SPACE_COMPASS_DISTANCE_SPEED_UNIT_KEY])
         assertNotEquals(before, after)
     }
 
@@ -27,8 +27,9 @@ class SpaceCompassPresentationSettingsTest {
         assertEquals(SpaceCompassDateFormat.SYSTEM, SpaceCompassDateFormat.fromStoredValue(empty[SPACE_COMPASS_DATE_FORMAT_KEY]))
         assertEquals(SpaceCompassTimeFormat.SYSTEM, SpaceCompassTimeFormat.fromStoredValue(empty[SPACE_COMPASS_TIME_FORMAT_KEY]))
         assertEquals(SpaceCompassUnits(true, "mmi", true, true, false), spaceCompassResolveUnits("US", empty::get))
-        val legacy = spaceCompassReadPresentationSettings { if (it == "distance") "mi" else null }
-        assertEquals("mmi", spaceCompassResolveUnits("IT", legacy::get).distance)
+        val migrated = spaceCompassDistanceSpeedPreference { if (it == "distance") "mi" else null }
+        val restored = spaceCompassReadPresentationSettings { if (it == SPACE_COMPASS_DISTANCE_SPEED_UNIT_KEY) migrated else null }
+        assertEquals(SpaceCompassUnits(true, "mmi", true, false, false), spaceCompassResolveUnits("IT", restored::get))
         assertEquals(empty, spaceCompassReadPresentationSettings { null })
     }
 }

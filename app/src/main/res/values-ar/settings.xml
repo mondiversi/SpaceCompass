@@ -18,7 +18,7 @@
     <string name="settings_section_language">اللغة</string>
     <string name="language_system">افتراضي</string>
     <string name="settings_section_appearance">المظهر</string>
-    <string name="settings_section_language_formats">التنسيقات</string>
+    <string name="settings_section_units">الوحدات</string>
     <string name="pc_settings">الإعدادات</string>
     <string name="pc_loading">جارٍ التحميل…</string>
     <string name="pc_speed">السرعة</string>

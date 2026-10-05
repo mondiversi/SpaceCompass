@@ -9,31 +9,27 @@ import org.junit.Assert.*
 import org.junit.Test
 
 class SpaceCompassCelestialControlStyleTest {
-    @Test fun allControlsHaveOneOutlineWhetherSelectedOrNot() {
-        val normal = spaceCompassCelestialControlStyle(false)
-        val selected = spaceCompassCelestialControlStyle(true)
-        assertEquals(normal.border, selected.border)
-        assertEquals(Color.White.copy(alpha = 0.65f), normal.border)
-        assertNotEquals(normal.background, selected.background)
-        assertTrue(selected.background.red > normal.background.red)
-        for (isSelected in listOf(false, true)) {
-            val resting = spaceCompassCelestialControlStyle(isSelected)
-            val pressed = spaceCompassCelestialControlStyle(isSelected, pressed = true)
-            assertEquals(resting.border, pressed.border)
-            assertTrue(pressed.background.red > resting.background.red)
-        }
-        for (style in listOf(normal, selected, spaceCompassCelestialControlStyle(false, true), spaceCompassCelestialControlStyle(true, true))) {
-            assertEquals(style.background.red, style.background.green, 1e-6f)
-            assertEquals(style.background.red, style.background.blue, 1e-6f)
+    private fun contrast(a: Color, b: Color): Float =
+        (maxOf(a.luminance(), b.luminance()) + 0.05f) / (minOf(a.luminance(), b.luminance()) + 0.05f)
+
+    @Test fun viewerTabsHaveStronglyDifferentSelectedAndInactiveStatesEvenWhenPressed() {
+        for (pressed in listOf(false, true)) {
+            val inactive = spaceCompassCelestialControlStyle(false, pressed)
+            val selected = spaceCompassCelestialControlStyle(true, pressed)
+            assertTrue(contrast(inactive.background, selected.background) >= 4.5f)
+            assertNotEquals(inactive.content, selected.content)
+            assertNotEquals(inactive.border, selected.border)
+            assertEquals(1f, selected.background.alpha)
+            assertEquals(1f, inactive.background.alpha)
         }
     }
 
-    @Test fun whiteSymbolsHaveReadableContrastOnLightAndDarkSkyOrModelImages() {
+    @Test fun actualGlyphTintHasReadableContrastOnLightAndDarkSkyOrModelImages() {
         val scenes = listOf(Color.White, Color.Black, Color(0xFF90CAF9), Color(0xFF28314A), Color(0xFFD0B080))
         for (selected in listOf(false, true)) for (pressed in listOf(false, true)) for (scene in scenes) {
-            val fill = spaceCompassCelestialControlStyle(selected, pressed).background.compositeOver(scene)
-            val contrast = (Color.White.luminance() + 0.05f) / (fill.luminance() + 0.05f)
-            assertTrue("selected=$selected, pressed=$pressed on $scene: contrast=$contrast", contrast >= 3f)
+            val style = spaceCompassCelestialControlStyle(selected, pressed)
+            val fill = style.background.compositeOver(scene)
+            assertTrue("selected=$selected, pressed=$pressed on $scene", contrast(style.content, fill) >= 4.5f)
         }
     }
 

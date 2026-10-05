@@ -1,0 +1,6 @@
+<resources>
+    <string name="units_distance_speed">Odległości i prędkości</string>
+    <string name="units_metric">Metry / kilometry</string>
+    <string name="units_imperial">Stopy / mile</string>
+    <string name="units_distance_speed_description">Wybierz jednostki odległości i prędkości.</string>
+</resources>

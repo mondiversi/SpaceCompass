@@ -89,4 +89,23 @@ class SpaceCompassUnitFormattingTest {
         assertTrue(formatSpaceCompassSelectedDistance(SpaceCompassCelestialBody.VOYAGER_1,
             200 * SPACE_COMPASS_AU_KM, numeric, "mmi")!!.contains("Mmi"))
     }
+
+    @Test fun unifiedFamilyReachesNearbyAstronomicalAndPhysicalLengthDisplays() {
+        for (choice in listOf("metric", "imperial")) {
+            val units = spaceCompassResolveUnits("IT") { if (it == SPACE_COMPASS_DISTANCE_SPEED_UNIT_KEY) choice else null }
+            val imperial = choice == "imperial"
+            for (body in listOf(SpaceCompassCelestialBody.MOON, SpaceCompassCelestialBody.ISS, SpaceCompassCelestialBody.EARTH_CENTER))
+                assertEquals(if (imperial) "1.00 mi" else "1.61 km",
+                    formatSpaceCompassSelectedDistance(body, 1.609344, numeric, units.distance, units.feet))
+            assertEquals(if (imperial) "92.96 Mmi\n1 AU" else "149.6 Mkm\n1 AU",
+                formatSpaceCompassCelestialCatalogDistance(1.0, numeric, units.distance))
+            assertEquals(if (imperial) "10.0 ft" else "3.0 m",
+                formatSpaceCompassPhysicalLength(3.048, 1, numeric, units.feet))
+            assertEquals(if (imperial) "1.0 mi" else "1.6 km",
+                formatSpaceCompassPhysicalLength(1609.344, 1, numeric, units.feet, large = true))
+            assertEquals(imperial, units.miles)
+            assertEquals("4.2 ly", formatSpaceCompassSelectedDistance(SpaceCompassCelestialBody.PROXIMA_CENTAURI,
+                4.2 * SPACE_COMPASS_LIGHT_YEAR_KM, numeric, units.distance, units.feet))
+        }
+    }
 }

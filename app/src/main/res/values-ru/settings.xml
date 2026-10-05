@@ -18,7 +18,7 @@
     <string name="settings_section_language">Язык</string>
     <string name="language_system">По умолчанию</string>
     <string name="settings_section_appearance">Оформление</string>
-    <string name="settings_section_language_formats">Форматы</string>
+    <string name="settings_section_units">Единицы</string>
     <string name="pc_settings">Настройки</string>
     <string name="pc_loading">Загрузка…</string>
     <string name="pc_speed">Скорость</string>

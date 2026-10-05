@@ -18,7 +18,7 @@
     <string name="settings_section_language">Dil</string>
     <string name="language_system">Varsayılan</string>
     <string name="settings_section_appearance">Görünüm</string>
-    <string name="settings_section_language_formats">Biçimler</string>
+    <string name="settings_section_units">Birimler</string>
     <string name="pc_settings">Ayarlar</string>
     <string name="pc_loading">Yükleniyor…</string>
     <string name="pc_speed">Hız</string>

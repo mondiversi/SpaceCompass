@@ -18,7 +18,7 @@
     <string name="settings_section_language">语言</string>
     <string name="language_system">默认</string>
     <string name="settings_section_appearance">外观</string>
-    <string name="settings_section_language_formats">格式</string>
+    <string name="settings_section_units">单位</string>
     <string name="pc_settings">设置</string>
     <string name="pc_loading">加载中…</string>
     <string name="pc_speed">速度</string>

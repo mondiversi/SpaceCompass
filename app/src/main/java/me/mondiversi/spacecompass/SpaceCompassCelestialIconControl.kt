@@ -8,6 +8,7 @@ import androidx.compose.foundation.selection.selectable
 import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.material3.*
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.CompositionLocalProvider
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.remember
 import androidx.compose.ui.Alignment
@@ -18,18 +19,18 @@ import androidx.compose.ui.graphics.compositeOver
 import androidx.compose.ui.semantics.Role
 import androidx.compose.ui.unit.dp
 
-internal data class SpaceCompassCelestialControlStyle(val background: Color, val border: Color)
+internal data class SpaceCompassCelestialControlStyle(val background: Color, val border: Color, val content: Color)
 
-/** Sky actions have the same dark-grey fill whether the trajectory is shown or hidden.
- * Only mutually exclusive viewer tabs use a selected fill. All outlines/dimensions match.
- */
+/** Viewer tabs invert their fill and glyph when selected; sky action buttons retain their dark fill. */
 internal fun spaceCompassCelestialControlStyle(selected: Boolean, pressed: Boolean = false,
     role: Role = Role.Tab): SpaceCompassCelestialControlStyle {
-    val base = Color(0xFF424242)
-    val background = if (selected && role == Role.Tab) Color.White.copy(alpha = 0.16f).compositeOver(base) else base
+    val active = selected && role == Role.Tab
+    val base = if (active) Color(0xFFE0F4FA) else Color(0xFF424242)
+    val feedback = if (active) Color.Black else Color.White
     return SpaceCompassCelestialControlStyle(
-        if (pressed) Color.White.copy(alpha = 0.12f).compositeOver(background) else background,
-        Color.White.copy(alpha = 0.65f))
+        if (pressed) feedback.copy(alpha = 0.12f).compositeOver(base) else base,
+        if (active) Color(0xFF4DD8F0) else Color.White.copy(alpha = 0.65f),
+        if (active) Color(0xFF123743) else Color.White)
 }
 
 /** Shared sky/viewer geometry: 30 dp visible circle, independent 48 dp touch target. */
@@ -51,7 +52,9 @@ internal fun SpaceCompassCelestialIconControl(selected: Boolean, label: String, 
                 onClick = onClick), contentAlignment = Alignment.Center) {
             Box(Modifier.size(30.dp).clip(CircleShape).background(style.background)
                 .border(1.dp, style.border, CircleShape),
-                contentAlignment = Alignment.Center) { icon() }
+                contentAlignment = Alignment.Center) {
+                CompositionLocalProvider(LocalContentColor provides style.content) { icon() }
+            }
         }
     }
 }

@@ -1,0 +1,6 @@
+<resources>
+    <string name="units_distance_speed">दूरी और गति</string>
+    <string name="units_metric">मीटर / किलोमीटर</string>
+    <string name="units_imperial">फ़ीट / मील</string>
+    <string name="units_distance_speed_description">दूरी और गति के लिए इकाइयाँ चुनें।</string>
+</resources>
