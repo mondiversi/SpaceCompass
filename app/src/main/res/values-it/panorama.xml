@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="panorama_capture">Scatta</string>
+    <string name="panorama_saving">Salvataggio panorama…</string>
+    <string name="panorama_saved">Panorama salvato nella galleria, nell’album SpaceCompass.</string>
+    <string name="panorama_error">Impossibile salvare il panorama. Riprova.</string>
+    <string name="panorama_permission">Consenti l’accesso alla memoria per salvare il panorama.</string>
+    <string name="panorama_not_ready">Servono una posizione GPS e almeno un oggetto selezionato.</string>
+    <string name="panorama_data_unavailable">Dati non disponibili</string>
+    <string name="panorama_path_unavailable">Orbita non disponibile</string>
+    <string name="info_news_panorama">Scatta salva nella galleria un panorama a 360° degli oggetti selezionati e delle loro orbite.</string>
+    <string name="info_news_orbit_names">I nomi degli oggetti seguono le curve delle orbite vicino alle frecce di direzione.</string>
+    <string name="panorama_north">Nord</string>
+    <string name="panorama_east">Est</string>
+    <string name="panorama_south">Sud</string>
+    <string name="panorama_west">Ovest</string>
+</resources>

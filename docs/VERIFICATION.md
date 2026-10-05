@@ -4,11 +4,11 @@
 
 | Check | Result |
 | --- | --- |
-| Debug APK build | Passed, version 0.1.11 |
-| Release APK build | Passed, version 0.1.11 |
+| Debug APK build | Passed, version 0.1.12 |
+| Release APK build | Passed, version 0.1.12 |
 | Release lint | Completed, 0 errors; remaining findings retained in reports |
-| JVM unit tests | 451 passed, 0 failures |
-| Android instrumentation sources | Compiled; not executed |
+| JVM unit tests | 459 passed, 0 failures |
+| Android instrumentation sources | Compiled; 3 targeted panorama tests passed on Android 15 |
 | Phone UI checks | Samsung SM-G970U1, Android 12 / API 31 |
 | Tablet UI checks | Pixel Tablet emulator, Android 15 / API 35 |
 | GitHub automation | Debug/release builds, JVM tests, instrumentation compilation and release lint |
@@ -16,8 +16,9 @@
 The current local command is `gradlew.bat :app:assembleDebug
 :app:testDebugUnitTest :app:compileDebugAndroidTestKotlin`, using Android Studio's
 JDK 25 and the installed Android SDK/cache. Release preparation additionally ran
-:app:assembleRelease and :app:lintRelease. The Android UI checks above were
-manual checks, not an execution of the instrumentation test suite.
+:app:assembleRelease and :app:lintRelease. The Android UI checks above were manual checks. Three targeted panorama
+instrumentation tests ran on Android 15; the complete instrumentation suite was
+not executed.
 
 Phone and tablet checks include shared toolbar dimensions, dropdown scaling,
 catalog filters/sorting, the filter separator, title-only Information navigation,
@@ -32,6 +33,25 @@ The repository contains no signing key or local SDK configuration. GitHub APK di
 No Play Store submission is part of this release.
 The current CI result is available on the repository's Actions page; the local
 results above do not stand in for a successful hosted run.
+
+## Orbit names and gallery capture — version 0.1.12
+
+Debug/release builds, 459 JVM tests and Android test-source compilation passed;
+release lint completed with zero errors. The three targeted Android 15 panorama
+tests passed: frozen solar-position rendering, complete Latin/Arabic/Persian/Hebrew
+names on curved paths and a JPEG gallery round trip with capture date/album checks.
+The rest of the instrumentation suite was not executed.
+
+Manual Android 15 tablet checks used synthetic Rome GPS and orientation. Capture
+appears below Units and saved a 4096-pixel-wide JPEG in DCIM/SpaceCompass, including
+the complete horizon, dashed underground paths, current Sun/Moon markers and
+repeated curve names. The live viewport shows readable names near arrows when
+they fit inside its actual bounds. The saved capture timestamp is backed by EXIF,
+so MediaStore scanning retains it. Preferences and selections are preserved.
+Android 8/9 legacy permission/storage handling is implemented and API-checked,
+but no Android 8/9 device was available for a live storage check.
+
+See [PANORAMA_CAPTURE.md](PANORAMA_CAPTURE.md) for geometry, storage and coverage.
 
 ## Estimated place — version 0.1.11
 

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="panorama_capture">Vastleggen</string>
+    <string name="panorama_saving">Panorama opslaan…</string>
+    <string name="panorama_saved">Panorama opgeslagen in het galeriealbum SpaceCompass.</string>
+    <string name="panorama_error">Panorama kon niet worden opgeslagen. Probeer het opnieuw.</string>
+    <string name="panorama_permission">Sta opslagtoegang toe om het panorama op te slaan.</string>
+    <string name="panorama_not_ready">Een GPS-positie en minstens één geselecteerd object zijn nodig.</string>
+    <string name="panorama_data_unavailable">Gegevens niet beschikbaar</string>
+    <string name="panorama_path_unavailable">Baan niet beschikbaar</string>
+    <string name="info_news_panorama">Vastleggen slaat een volledig 360°-panorama van geselecteerde objecten en hun banen op in de galerie.</string>
+    <string name="info_news_orbit_names">Objectnamen volgen de baancurven bij de richtingspijlen.</string>
+    <string name="panorama_north">Noord</string>
+    <string name="panorama_east">Oost</string>
+    <string name="panorama_south">Zuid</string>
+    <string name="panorama_west">West</string>
+</resources>

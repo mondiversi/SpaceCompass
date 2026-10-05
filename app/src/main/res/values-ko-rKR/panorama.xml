@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="panorama_capture">촬영</string>
+    <string name="panorama_saving">파노라마 저장 중…</string>
+    <string name="panorama_saved">파노라마를 갤러리의 SpaceCompass 앨범에 저장했습니다.</string>
+    <string name="panorama_error">파노라마를 저장하지 못했습니다. 다시 시도하세요.</string>
+    <string name="panorama_permission">파노라마를 저장하려면 저장 공간 접근을 허용하세요.</string>
+    <string name="panorama_not_ready">GPS 위치와 하나 이상의 선택된 천체가 필요합니다.</string>
+    <string name="panorama_data_unavailable">데이터 없음</string>
+    <string name="panorama_path_unavailable">궤도 데이터 없음</string>
+    <string name="info_news_panorama">촬영으로 선택한 천체와 궤도의 전체 360° 파노라마를 갤러리에 저장합니다.</string>
+    <string name="info_news_orbit_names">천체 이름이 방향 화살표 근처에서 궤도 곡선을 따라 표시됩니다.</string>
+    <string name="panorama_north">북쪽</string>
+    <string name="panorama_east">동쪽</string>
+    <string name="panorama_south">남쪽</string>
+    <string name="panorama_west">서쪽</string>
+</resources>

@@ -77,6 +77,8 @@ internal fun SpaceCompassSunDailyPathLayer(
     val above = pathTint ?: spaceCompassCelestialPathTint(path.body)
     // The same subdued treatment preserves each object's identity below the horizon.
     val below = spaceCompassCelestialPathVisibilityTint(above, true)
+    val objectName = stringResource(path.body.nameResource)
+    val orbitText = remember(density) { spaceCompassOrbitTextPaint(with(density) { 13.sp.toPx() }) }
     Box(Modifier.fillMaxSize().onSizeChanged { viewport = it }) {
         if (orientation != null) Canvas(Modifier.fillMaxSize().testTag("sun-daily-path")
             // Orientation updates must not cancel a finger already touching the trajectory.
@@ -103,6 +105,7 @@ internal fun SpaceCompassSunDailyPathLayer(
                 drawPath(curve, spaceCompassCelestialPathLineTint(above, underground),
                     style = Stroke(1.5.dp.toPx(), pathEffect = dash))
             }
+            val occupiedLabels = mutableListOf<android.graphics.RectF>()
             // Decorative only: neither add hit targets nor cover hourly/event/live markers.
             arrows.forEach { arrow ->
                 if (points.any { (_, point) -> hypot(point.x - arrow.center.x, point.y - arrow.center.y) < 16.dp.toPx() } ||
@@ -117,6 +120,10 @@ internal fun SpaceCompassSunDailyPathLayer(
                     style = Stroke(3.5.dp.toPx(), cap = StrokeCap.Round, join = StrokeJoin.Round))
                 drawPath(chevron, (if (arrow.belowHorizon) below else above).copy(alpha = 0.95f),
                     style = Stroke(1.5.dp.toPx(), cap = StrokeCap.Round, join = StrokeJoin.Round))
+            }
+            arrows.forEach { arrow ->
+                drawSpaceCompassOrbitName(drawContext.canvas.nativeCanvas, objectName, segments, arrow, orbitText,
+                    (if (arrow.belowHorizon) below else above).toArgb(), 9.dp.toPx(), occupiedLabels, size.width, size.height)
             }
             points.forEach { (marker, projected) ->
                 val point = Offset(projected.x.toFloat(), projected.y.toFloat())

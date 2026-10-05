@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="panorama_capture">Aufnehmen</string>
+    <string name="panorama_saving">Panorama wird gespeichert…</string>
+    <string name="panorama_saved">Panorama im Galeriealbum SpaceCompass gespeichert.</string>
+    <string name="panorama_error">Panorama konnte nicht gespeichert werden. Bitte erneut versuchen.</string>
+    <string name="panorama_permission">Erlaube den Speicherzugriff, um das Panorama zu speichern.</string>
+    <string name="panorama_not_ready">Eine GPS-Position und mindestens ein ausgewähltes Objekt sind erforderlich.</string>
+    <string name="panorama_data_unavailable">Daten nicht verfügbar</string>
+    <string name="panorama_path_unavailable">Umlaufbahn nicht verfügbar</string>
+    <string name="info_news_panorama">Aufnehmen speichert ein vollständiges 360°-Panorama der ausgewählten Objekte und ihrer Umlaufbahnen in der Galerie.</string>
+    <string name="info_news_orbit_names">Objektnamen folgen den Umlaufbahnen neben den Richtungspfeilen.</string>
+    <string name="panorama_north">Norden</string>
+    <string name="panorama_east">Osten</string>
+    <string name="panorama_south">Süden</string>
+    <string name="panorama_west">Westen</string>
+</resources>

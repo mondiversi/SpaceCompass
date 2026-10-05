@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="panorama_capture">Λήψη</string>
+    <string name="panorama_saving">Αποθήκευση πανοράματος…</string>
+    <string name="panorama_saved">Το πανόραμα αποθηκεύτηκε στο άλμπουμ SpaceCompass της συλλογής.</string>
+    <string name="panorama_error">Δεν ήταν δυνατή η αποθήκευση του πανοράματος. Δοκιμάστε ξανά.</string>
+    <string name="panorama_permission">Επιτρέψτε την πρόσβαση στον χώρο αποθήκευσης για να αποθηκεύσετε το πανόραμα.</string>
+    <string name="panorama_not_ready">Απαιτούνται θέση GPS και τουλάχιστον ένα επιλεγμένο αντικείμενο.</string>
+    <string name="panorama_data_unavailable">Μη διαθέσιμα δεδομένα</string>
+    <string name="panorama_path_unavailable">Μη διαθέσιμη τροχιά</string>
+    <string name="info_news_panorama">Η Λήψη αποθηκεύει στη συλλογή ένα πλήρες πανόραμα 360° των επιλεγμένων αντικειμένων και των τροχιών τους.</string>
+    <string name="info_news_orbit_names">Τα ονόματα των αντικειμένων ακολουθούν τις καμπύλες των τροχιών κοντά στα βέλη κατεύθυνσης.</string>
+    <string name="panorama_north">Βορράς</string>
+    <string name="panorama_east">Ανατολή</string>
+    <string name="panorama_south">Νότος</string>
+    <string name="panorama_west">Δύση</string>
+</resources>

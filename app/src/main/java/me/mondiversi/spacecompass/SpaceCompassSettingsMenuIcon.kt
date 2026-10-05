@@ -18,6 +18,21 @@ internal fun SpaceCompassSettingsMenuIcon(route: String, tint: Color) {
     Canvas(Modifier.size(20.dp)) {
         val strokeWidth = maxOf(1.6.dp.toPx(), size.minDimension * 0.08f)
         when (route) {
+            "capture" -> {
+                val camera = Path().apply {
+                    moveTo(size.width * .10f, size.height * .30f)
+                    lineTo(size.width * .30f, size.height * .30f)
+                    lineTo(size.width * .38f, size.height * .18f)
+                    lineTo(size.width * .62f, size.height * .18f)
+                    lineTo(size.width * .70f, size.height * .30f)
+                    lineTo(size.width * .90f, size.height * .30f)
+                    lineTo(size.width * .90f, size.height * .80f)
+                    lineTo(size.width * .10f, size.height * .80f)
+                    close()
+                }
+                drawPath(camera, tint, style = Stroke(strokeWidth, cap = StrokeCap.Round))
+                drawCircle(tint, size.width * .16f, Offset(size.width * .50f, size.height * .55f), style = Stroke(strokeWidth))
+            }
             "appearance" -> {
                 val palette = Path().apply {
                     moveTo(size.width * 0.53f, size.height * 0.12f)

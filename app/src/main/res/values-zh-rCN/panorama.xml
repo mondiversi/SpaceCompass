@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="panorama_capture">拍摄</string>
+    <string name="panorama_saving">正在保存全景图…</string>
+    <string name="panorama_saved">全景图已保存到图库的SpaceCompass相册。</string>
+    <string name="panorama_error">无法保存全景图，请重试。</string>
+    <string name="panorama_permission">请允许访问存储空间以保存全景图。</string>
+    <string name="panorama_not_ready">需要GPS位置和至少一个已选天体。</string>
+    <string name="panorama_data_unavailable">数据不可用</string>
+    <string name="panorama_path_unavailable">轨道不可用</string>
+    <string name="info_news_panorama">拍摄功能可将所选天体及其轨道的完整360°全景图保存到图库。</string>
+    <string name="info_news_orbit_names">天体名称沿轨道曲线显示在方向箭头附近。</string>
+    <string name="panorama_north">北</string>
+    <string name="panorama_east">东</string>
+    <string name="panorama_south">南</string>
+    <string name="panorama_west">西</string>
+</resources>

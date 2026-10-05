@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="panorama_capture">撮影</string>
+    <string name="panorama_saving">パノラマを保存中…</string>
+    <string name="panorama_saved">パノラマをギャラリーのSpaceCompassアルバムに保存しました。</string>
+    <string name="panorama_error">パノラマを保存できませんでした。もう一度お試しください。</string>
+    <string name="panorama_permission">パノラマを保存するにはストレージへのアクセスを許可してください。</string>
+    <string name="panorama_not_ready">GPS位置情報と、少なくとも1つの選択された天体が必要です。</string>
+    <string name="panorama_data_unavailable">データなし</string>
+    <string name="panorama_path_unavailable">軌道データなし</string>
+    <string name="info_news_panorama">撮影で、選択した天体とその軌道の360°パノラマをギャラリーに保存できます。</string>
+    <string name="info_news_orbit_names">天体名が方向矢印の近くで軌道の曲線に沿って表示されます。</string>
+    <string name="panorama_north">北</string>
+    <string name="panorama_east">東</string>
+    <string name="panorama_south">南</string>
+    <string name="panorama_west">西</string>
+</resources>

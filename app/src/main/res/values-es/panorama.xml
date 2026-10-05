@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="panorama_capture">Capturar</string>
+    <string name="panorama_saving">Guardando panorama…</string>
+    <string name="panorama_saved">Panorama guardado en el álbum SpaceCompass de la galería.</string>
+    <string name="panorama_error">No se pudo guardar el panorama. Inténtalo de nuevo.</string>
+    <string name="panorama_permission">Permite el acceso al almacenamiento para guardar el panorama.</string>
+    <string name="panorama_not_ready">Se necesita una posición GPS y al menos un objeto seleccionado.</string>
+    <string name="panorama_data_unavailable">Datos no disponibles</string>
+    <string name="panorama_path_unavailable">Órbita no disponible</string>
+    <string name="info_news_panorama">Capturar guarda en la galería un panorama completo de 360° de los objetos seleccionados y sus órbitas.</string>
+    <string name="info_news_orbit_names">Los nombres de los objetos siguen las curvas de las órbitas junto a las flechas de dirección.</string>
+    <string name="panorama_north">Norte</string>
+    <string name="panorama_east">Este</string>
+    <string name="panorama_south">Sur</string>
+    <string name="panorama_west">Oeste</string>
+</resources>

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="panorama_capture">Piga picha</string>
+    <string name="panorama_saving">Inahifadhi panorama…</string>
+    <string name="panorama_saved">Panorama imehifadhiwa kwenye albamu ya SpaceCompass katika galeria.</string>
+    <string name="panorama_error">Panorama haikuweza kuhifadhiwa. Jaribu tena.</string>
+    <string name="panorama_permission">Ruhusu ufikiaji wa hifadhi ili kuhifadhi panorama.</string>
+    <string name="panorama_not_ready">Mahali pa GPS na angalau kitu kimoja kilichochaguliwa vinahitajika.</string>
+    <string name="panorama_data_unavailable">Data haipatikani</string>
+    <string name="panorama_path_unavailable">Obiti haipatikani</string>
+    <string name="info_news_panorama">Piga picha huhifadhi panorama kamili ya 360° ya vitu vilivyochaguliwa na obiti zake katika galeria.</string>
+    <string name="info_news_orbit_names">Majina ya vitu hufuata mikunjo ya obiti karibu na mishale ya mwelekeo.</string>
+    <string name="panorama_north">Kaskazini</string>
+    <string name="panorama_east">Mashariki</string>
+    <string name="panorama_south">Kusini</string>
+    <string name="panorama_west">Magharibi</string>
+</resources>

@@ -1,5 +1,16 @@
 # App presentation and preferences
 
+## Orbit names and Capture — version 0.1.12
+
+Capture appears below Units in the main menu and saves a complete 360° sky map
+with all selected objects, available paths, direction arrows and live positions
+to the SpaceCompass gallery album. Repeated object names follow the actual orbit
+curves near arrows in the live scene and saved image. The snapshot freezes the
+current position/time and selections; capture never changes saved preferences.
+Sky/ground colors follow the same solar phase/weather model, unavailable data
+remain explicit and new strings are complete in all twenty languages.
+See [PANORAMA_CAPTURE.md](PANORAMA_CAPTURE.md) for rendering/storage details.
+
 ## Estimated place — version 0.1.11
 
 Environment details adds an Estimated location island directly below GPS altitude

@@ -171,6 +171,10 @@ internal fun SpaceCompassSunFinderContent(
     val pathAltitude = round((altitude ?: 0.0) / 10) * 10
     val allOverlays = rememberSpaceCompassCelestialOverlays(spaceCompassCelestialCatalogOrder.toSet(), timeMs, date, zone,
         pathLatitude, pathLongitude, pathAltitude, remote, pathBodies = selectedBodies)
+    val selectedOverlays = spaceCompassSelectedCelestialEntries(allOverlays, selectedBodies)
+    val currentWeather = weather.snapshot?.takeIf { sun != null && spaceCompassSunWeatherTimeUsable(it.modelTimeMs, timeMs) }
+    val panorama = rememberSpaceCompassPanoramaAction(timeMs, fix?.latitude, fix?.longitude, altitude ?: 0.0,
+        phase, currentWeather, selectedBodies, selectedOverlays, remote)
     // Data producers stay composed while a child page is visible: returning reuses their caches.
     if (showViewer && hasActiveBody) {
         val location = readings.location
@@ -184,14 +188,12 @@ internal fun SpaceCompassSunFinderContent(
         return
     }
     // Catalogue calculations are not visibility: unchecked live positions must not enter the scene.
-    val selectedOverlays = spaceCompassSelectedCelestialEntries(allOverlays, selectedBodies)
     val activeOverlay = selectedOverlays[body]
     val target = if (!hasActiveBody) null else if (body == SpaceCompassCelestialBody.SUN) sun else activeOverlay?.observation?.position
     val speed = activeOverlay?.speedKmSecond
     val shownDistance = activeOverlay?.distanceKm
     val dailyPath = activeOverlay?.path
     val overlays = selectedOverlays - body
-    val currentWeather = weather.snapshot?.takeIf { sun != null && spaceCompassSunWeatherTimeUsable(it.modelTimeMs, timeMs) }
     val numeric = LocalSpaceCompassNumericFormat.current
     val units = LocalSpaceCompassUnits.current
     val largeText = LocalDensity.current.fontScale > 1.4f
@@ -347,7 +349,7 @@ internal fun SpaceCompassSunFinderContent(
                             indication = null, role = androidx.compose.ui.semantics.Role.Button) { navigate("info") },
                     color = primaryText)
             }
-            SpaceCompassSettingsButton()
+            SpaceCompassSettingsButton(panorama)
         }
     }
     val pointing: @Composable (Boolean) -> Unit = { landscape ->

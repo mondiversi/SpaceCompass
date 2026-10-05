@@ -47,7 +47,7 @@ internal fun spaceCompassPageBackground() = if (isSystemInDarkTheme()) Color(0xF
 internal fun spaceCompassSettingsCardColor() = if (isSystemInDarkTheme()) Color(0xFF282D33) else Color(0xFFE6E9EB)
 
 @Composable
-internal fun SpaceCompassSettingsButton() {
+internal fun SpaceCompassSettingsButton(panorama: SpaceCompassPanoramaAction? = null) {
     var expanded by rememberSaveable { mutableStateOf(false) }
     val navigate = LocalSpaceCompassNavigate.current
     val card = spaceCompassSettingsCardColor()
@@ -70,6 +70,16 @@ internal fun SpaceCompassSettingsButton() {
                 },
                     modifier = Modifier.testTag("open-$route"),
                     onClick = { expanded = false; navigate(route) })
+            }
+            if (panorama != null) {
+                HorizontalDivider(color = foreground.copy(alpha = .10f))
+                DropdownMenuItem(text = {
+                    Row(verticalAlignment = Alignment.CenterVertically, horizontalArrangement = Arrangement.spacedBy(8.dp)) {
+                        SpaceCompassSettingsMenuIcon("capture", foreground)
+                        Text(stringResource(R.string.panorama_capture), color = foreground)
+                    }
+                }, modifier = Modifier.testTag("capture-panorama"), enabled = !panorama.busy,
+                    onClick = { expanded = false; panorama.capture() })
             }
         }
     }

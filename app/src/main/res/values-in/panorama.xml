@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="panorama_capture">Ambil gambar</string>
+    <string name="panorama_saving">Menyimpan panorama…</string>
+    <string name="panorama_saved">Panorama tersimpan di album SpaceCompass dalam galeri.</string>
+    <string name="panorama_error">Panorama tidak dapat disimpan. Coba lagi.</string>
+    <string name="panorama_permission">Izinkan akses penyimpanan untuk menyimpan panorama.</string>
+    <string name="panorama_not_ready">Diperlukan posisi GPS dan setidaknya satu objek yang dipilih.</string>
+    <string name="panorama_data_unavailable">Data tidak tersedia</string>
+    <string name="panorama_path_unavailable">Orbit tidak tersedia</string>
+    <string name="info_news_panorama">Ambil gambar menyimpan panorama 360° lengkap dari objek yang dipilih dan orbitnya ke galeri.</string>
+    <string name="info_news_orbit_names">Nama objek mengikuti lengkungan orbit di dekat panah arah.</string>
+    <string name="panorama_north">Utara</string>
+    <string name="panorama_east">Timur</string>
+    <string name="panorama_south">Selatan</string>
+    <string name="panorama_west">Barat</string>
+</resources>

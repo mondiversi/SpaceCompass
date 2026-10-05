@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="panorama_capture">التقاط</string>
+    <string name="panorama_saving">جارٍ حفظ الصورة البانورامية…</string>
+    <string name="panorama_saved">تم حفظ الصورة البانورامية في ألبوم SpaceCompass في المعرض.</string>
+    <string name="panorama_error">تعذر حفظ الصورة البانورامية. حاول مجددًا.</string>
+    <string name="panorama_permission">اسمح بالوصول إلى التخزين لحفظ الصورة البانورامية.</string>
+    <string name="panorama_not_ready">يلزم موقع GPS وجسم واحد محدد على الأقل.</string>
+    <string name="panorama_data_unavailable">البيانات غير متاحة</string>
+    <string name="panorama_path_unavailable">المدار غير متاح</string>
+    <string name="info_news_panorama">يحفظ الالتقاط في المعرض صورة بانورامية كاملة بزاوية 360° للأجسام المحددة ومداراتها.</string>
+    <string name="info_news_orbit_names">تتبع أسماء الأجسام منحنيات المدارات قرب أسهم الاتجاه.</string>
+    <string name="panorama_north">الشمال</string>
+    <string name="panorama_east">الشرق</string>
+    <string name="panorama_south">الجنوب</string>
+    <string name="panorama_west">الغرب</string>
+</resources>

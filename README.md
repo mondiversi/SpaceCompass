@@ -11,7 +11,7 @@ application extracted from [UVIR](https://github.com/mondiversi/Uvir).
 
 Space Compass is distributed on GitHub. Open the
 [Releases page](https://github.com/mondiversi/SpaceCompass/releases) and download
-`space-compass-0.1.11.apk` from the **Assets** section of the v0.1.11 preview release.
+`space-compass-0.1.12.apk` from the **Assets** section of the v0.1.12 preview release.
 Android 8.0 or newer is required. Open the downloaded APK and follow Android's
 installation prompts. If requested, allow installation for the browser or file
 manager you used to open the file.
@@ -28,7 +28,8 @@ See [GitHub release and signing notes](docs/GITHUB_RELEASES.md).
 
 ## Features
 
-- Live azimuth and altitude, compass guidance, daily paths and satellite passes.
+- Live azimuth and altitude, compass guidance, named daily paths and satellite passes.
+- Capture a complete 360° sky/orbit panorama into the phone or tablet gallery.
 - A catalog of 29 objects, including the Sun, Moon, planets, natural and artificial
   satellites, nearby stars, compact objects, an exoplanet and Voyager spacecraft.
 - Multiple-object selection, type/visibility filters and name/solar-distance sorting.
@@ -71,7 +72,9 @@ for development; published release APKs are listed separately under Releases.
 
 Location is requested at runtime for observer-dependent positions. Orientation
 and location listeners run only in the foreground. The app has no camera access,
-background location, advertising or analytics. Denied or missing location is
+background location, advertising or analytics. Capture saves an app-rendered JPEG
+into the SpaceCompass gallery album; only Android 8/9 asks for legacy storage
+write access when saving. It never reads other apps' photographs. Denied or missing location is
 shown explicitly instead of invented.
 
 Sun, Moon and major-planet calculations run locally. Satellite elements and

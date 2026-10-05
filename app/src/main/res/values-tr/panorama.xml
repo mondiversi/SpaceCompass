@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="panorama_capture">Çek</string>
+    <string name="panorama_saving">Panorama kaydediliyor…</string>
+    <string name="panorama_saved">Panorama galerideki SpaceCompass albümüne kaydedildi.</string>
+    <string name="panorama_error">Panorama kaydedilemedi. Lütfen tekrar deneyin.</string>
+    <string name="panorama_permission">Panoramayı kaydetmek için depolama erişimine izin verin.</string>
+    <string name="panorama_not_ready">Bir GPS konumu ve en az bir seçili nesne gereklidir.</string>
+    <string name="panorama_data_unavailable">Veri kullanılamıyor</string>
+    <string name="panorama_path_unavailable">Yörünge kullanılamıyor</string>
+    <string name="info_news_panorama">Çek, seçili nesnelerin ve yörüngelerinin tam 360° panoramasını galeriye kaydeder.</string>
+    <string name="info_news_orbit_names">Nesne adları yön oklarının yanında yörünge eğrilerini izler.</string>
+    <string name="panorama_north">Kuzey</string>
+    <string name="panorama_east">Doğu</string>
+    <string name="panorama_south">Güney</string>
+    <string name="panorama_west">Batı</string>
+</resources>

@@ -34,9 +34,8 @@ import androidx.compose.ui.text.style.TextAlign
 import java.time.ZoneId
 import kotlin.math.*
 
-/** Full-screen backdrop, separate from the pointing viewport so panels never get an opaque sky margin. */
-@Composable
-internal fun SpaceCompassSunSkyBackdrop(phase: SpaceCompassSunSkyPhase, weather: SpaceCompassSunWeatherSnapshot?, modifier: Modifier) {
+internal fun spaceCompassSunSkyColors(phase: SpaceCompassSunSkyPhase,
+    weather: SpaceCompassSunWeatherSnapshot?): Pair<Color, Color> {
     val palette = when (phase) {
         SpaceCompassSunSkyPhase.NIGHT -> Color(0xFF071327) to Color(0xFF203B5C)
         SpaceCompassSunSkyPhase.DAWN -> Color(0xFF5D71A2) to Color(0xFFF4C091)
@@ -51,8 +50,18 @@ internal fun SpaceCompassSunSkyBackdrop(phase: SpaceCompassSunSkyPhase, weather:
     val night = phase == SpaceCompassSunSkyPhase.NIGHT || phase == SpaceCompassSunSkyPhase.EVENING
     val greyTop = if (night) Color(0xFF172231) else Color(0xFF536677)
     val greyBottom = if (night) Color(0xFF394555) else Color(0xFFB7C4CE)
-    val top by animateColorAsState(lerp(palette.first, greyTop, cloudy), tween(2_000), label = "solar sky top")
-    val bottom by animateColorAsState(lerp(palette.second, greyBottom, cloudy), tween(2_000), label = "solar sky horizon")
+    return lerp(palette.first, greyTop, cloudy) to lerp(palette.second, greyBottom, cloudy)
+}
+
+/** Full-screen backdrop, separate from the pointing viewport so panels never get an opaque sky margin. */
+@Composable
+internal fun SpaceCompassSunSkyBackdrop(phase: SpaceCompassSunSkyPhase, weather: SpaceCompassSunWeatherSnapshot?, modifier: Modifier) {
+    val palette = spaceCompassSunSkyColors(phase, weather)
+    val cover = spaceCompassSunDisplayCloudCover(weather)
+    val storm = weather?.kind == SpaceCompassSunWeatherKind.STORM
+    val night = phase == SpaceCompassSunSkyPhase.NIGHT || phase == SpaceCompassSunSkyPhase.EVENING
+    val top by animateColorAsState(palette.first, tween(2_000), label = "solar sky top")
+    val bottom by animateColorAsState(palette.second, tween(2_000), label = "solar sky horizon")
     Canvas(modifier.testTag("sun-finder-backdrop")) {
         drawRect(Brush.verticalGradient(listOf(top, bottom)))
         if (night && weather != null && cover < 0.65f && weather.kind != SpaceCompassSunWeatherKind.FOG) {

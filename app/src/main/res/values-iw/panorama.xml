@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="panorama_capture">צילום</string>
+    <string name="panorama_saving">שמירת פנורמה…</string>
+    <string name="panorama_saved">הפנורמה נשמרה באלבום SpaceCompass בגלריה.</string>
+    <string name="panorama_error">לא ניתן לשמור את הפנורמה. יש לנסות שוב.</string>
+    <string name="panorama_permission">יש לאפשר גישה לאחסון כדי לשמור את הפנורמה.</string>
+    <string name="panorama_not_ready">נדרשים מיקום GPS ולפחות עצם נבחר אחד.</string>
+    <string name="panorama_data_unavailable">הנתונים אינם זמינים</string>
+    <string name="panorama_path_unavailable">המסלול אינו זמין</string>
+    <string name="info_news_panorama">צילום שומר בגלריה פנורמה מלאה של 360° של העצמים הנבחרים ומסלוליהם.</string>
+    <string name="info_news_orbit_names">שמות העצמים נכתבים לאורך עקומות המסלולים ליד חיצי הכיוון.</string>
+    <string name="panorama_north">צפון</string>
+    <string name="panorama_east">מזרח</string>
+    <string name="panorama_south">דרום</string>
+    <string name="panorama_west">מערב</string>
+</resources>
