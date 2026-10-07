@@ -1,0 +1,31 @@
+<resources>
+    <string name="observer_title">场景</string>
+    <string name="observer_place">位置</string>
+    <string name="observer_search">搜索地点</string>
+    <string name="observer_search_action">搜索</string>
+    <string name="observer_map">在地图上选择</string>
+    <string name="observer_latitude">纬度</string>
+    <string name="observer_longitude">经度</string>
+    <string name="observer_automatic">获取海拔和时区</string>
+    <string name="observer_altitude">海拔</string>
+    <string name="observer_zone">时区</string>
+    <string name="observer_terrain_note">地形海拔估计值，可编辑。</string>
+    <string name="observer_lookup_failed">无法自动查询。请启用海拔和时区后手动输入。</string>
+    <string name="observer_moment">日期和时间</string>
+    <string name="observer_date">日期</string>
+    <string name="observer_time">时间</string>
+    <string name="observer_limits">部分轨道数据在有效日期之外不可用。有天气估算时予以显示；否则使用默认晴朗天空。</string>
+    <string name="observer_privacy">搜索使用Android地理编码服务。地图使用OpenStreetMap；所选坐标会发送至Open-Meteo以获取海拔和时区。</string>
+    <string name="observer_apply">设置</string>
+    <string name="observer_invalid">请检查坐标、海拔、日期、时间和时区。日期范围为1900–2100年。夏令时切换时不存在的时间不可使用。</string>
+    <string name="observer_use_place">使用此位置</string>
+    <string name="observer_simulation">场景</string>
+    <string name="observer_coordinates_value">坐标：%1$s</string>
+    <string name="observer_altitude_value">海拔：%1$s</string>
+    <string name="observer_simulation_active">场景已启用</string>
+    <string name="observer_enable_position">模拟位置</string>
+    <string name="observer_enable_time">模拟日期和时间</string>
+    <string name="observer_current_metadata">获取当前位置的海拔和时区</string>
+    <string name="observer_enable_altitude">模拟海拔</string>
+    <string name="observer_enable_zone">模拟时区</string>
+</resources>

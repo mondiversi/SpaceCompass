@@ -8,12 +8,12 @@
     <string name="update_download">Téléchargement et vérification…</string>
     <string name="update_permission">Autorisez Space Compass à installer des mises à jour dans les paramètres Android.</string>
     <string name="update_checking">Recherche de mises à jour…</string>
-    <string name="update_check_failed">Impossible de rechercher des mises à jour. Vérifie ta connexion et réessaie.</string>
-    <string name="update_failed">Impossible de télécharger ou de vérifier la mise à jour. Réessaie.</string>
+    <string name="update_check_failed">Impossible de rechercher des mises à jour. Vérifiez votre connexion et réessayez.</string>
+    <string name="update_failed">Impossible de télécharger ou de vérifier la mise à jour. Réessayez.</string>
     <string name="update_later">Plus tard</string>
     <string name="update_version">Space Compass %1$s est disponible.</string>
-    <string name="update_install_note">Après le téléchargement, confirme l’installation dans Android. Tes données seront conservées.</string>
+    <string name="update_install_note">Après le téléchargement, confirmez l’installation dans Android. Vos données seront conservées.</string>
     <string name="update_incompatible">La nouvelle version nécessite une version plus récente d’Android.</string>
-    <string name="update_install_cancelled">Installation annulée. Tu peux réessayer.</string>
+    <string name="update_install_cancelled">Installation annulée. Vous pouvez réessayer.</string>
     <string name="update_installer_unavailable">Impossible d’ouvrir le programme d’installation Android.</string>
 </resources>

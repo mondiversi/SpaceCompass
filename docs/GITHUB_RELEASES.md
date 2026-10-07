@@ -2,8 +2,10 @@
 
 Space Compass is distributed as a signed APK through
 [GitHub Releases](https://github.com/mondiversi/SpaceCompass/releases).
-The first public preview is v0.1.0, application ID
-`me.mondiversi.spacecompass`, version code 1, minimum Android API 26.
+The first stable release is **1.0**, tagged **v1.0.0**, application ID
+`me.mondiversi.spacecompass`, Android version name **1.0.0**, version code **15**,
+minimum Android API 26. The three-part tag/version name retains compatibility with
+the signed update protocol used since preview 0.1.2.
 
 ## Installation and updates
 
@@ -26,8 +28,8 @@ See [the update protocol](UPDATES.md) for signed metadata and verification detai
 
 ## Build and signing
 
-The release build uses `:app:assembleRelease`, with optimization disabled in the
-current Gradle configuration. GitHub Actions checks the release build without
+The release build uses `:app:assembleRelease`, with R8 code and resource optimization
+enabled in the release configuration from stable 1.0 onward. GitHub Actions checks the release build without
 access to the distribution key. The unsigned APK is aligned and signed locally
 with Android SDK tools; the final published APK is not debuggable or test-only.
 

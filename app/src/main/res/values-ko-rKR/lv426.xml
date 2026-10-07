@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="celestial_lv426_model_note">가상의 위성 · 독창적인 일러스트\n하늘 방향: ζ² Reticuli</string>
+    <string name="celestial_lv426_description">아케론은 Alien에 등장하는 칼파모스의 가상 위성이며 해들리의 희망 식민지가 있는 곳입니다. 암석 표면에는 가혹한 대기가 있습니다. 수치는 이야기의 설정이며, 지름은 자료마다 다르고 평균 온도는 테라포밍 시대를 기준으로 합니다. 질량, 밀도, 기압, 궤도 요소는 알려지지 않았습니다. 방향은 ζ² Reticuli를 연출용 기준으로 사용하며 실제 위성 천체력이 아닙니다.</string>
+    <string name="celestial_lv426_credits">Alien: 가상의 세계. 자료: ALIEN RPG / Xenopedia. 방향: SIMBAD. AI로 생성한 독창적인 일러스트이며 영화 이미지는 사용하지 않았습니다.</string>
+</resources>

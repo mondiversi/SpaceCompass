@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="catalog_temperature_mean" formatted="false">表面平均值</string>
+    <string name="catalog_temperature_range" formatted="false">表面温度范围</string>
+    <string name="catalog_temperature_atmosphere">大气（%1$s）</string>
+    <string name="catalog_temperature_photosphere" formatted="false">光球</string>
+    <string name="catalog_temperature_effective" formatted="false">有效温度</string>
+    <string name="catalog_temperature_estimate" formatted="false">表面估算</string>
+    <string name="catalog_temperature_equilibrium" formatted="false">平衡模型</string>
+    <string name="catalog_temperature_historical" formatted="false">历史观测范围</string>
+    <string name="catalog_temperature_thermal" formatted="false">热模型</string>
+</resources>

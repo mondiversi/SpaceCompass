@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="celestial_temperature_surface_estimate" formatted="false">估算表面温度</string>
+    <string name="celestial_temperature_equilibrium_model" formatted="false">平衡温度（模型）</string>
+    <string name="celestial_temperature_historical_range" formatted="false">表面温度范围（历史观测）</string>
+    <string name="celestial_temperature_thermal_model" formatted="false">热辐射（模型）</string>
+    <string name="celestial_temperature_reference_note" formatted="false">估算取决于模型假设。带年份的范围表示过去的观测，并非当前温度。致密星的温度来自光谱模型，而非昼夜测量。</string>
+    <string name="celestial_stephenson_reference_note" formatted="false">有效温度是模型采用的假设值。光度和推算直径以星团距离为前提，但是否属于该星团尚不确定。当前质量未知。</string>
+</resources>

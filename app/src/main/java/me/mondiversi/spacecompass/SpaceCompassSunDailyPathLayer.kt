@@ -35,7 +35,7 @@ internal fun SpaceCompassSunDailyPathLayer(
     showSelectedPanel: Boolean = true,
     onVisualize: (() -> Unit)? = null, currentPoint: SpaceCompassSunPathPoint? = null,
     showActions: Boolean = true, interactive: Boolean = true, pathTint: Color? = null,
-    highlightedPoint: SpaceCompassSunPathPoint? = null
+    highlightedPoint: SpaceCompassSunPathPoint? = null, perspective: SpaceCompassPerspective? = null
 ) {
     val selected = state.selectedIn(path)
     val labels = rememberSpaceCompassSunPathLabels(path)
@@ -45,26 +45,26 @@ internal fun SpaceCompassSunDailyPathLayer(
     val density = LocalDensity.current
     val layoutDirection = LocalLayoutDirection.current
     val radius = with(density) { SPACE_COMPASS_SUN_PATH_TOUCH_RADIUS_DP.dp.toPx() }
-    val segments = remember(path, orientation, viewport) {
+    val segments = remember(path, orientation, viewport, perspective) {
         if (orientation == null) emptyList() else projectSpaceCompassSunDailyPath(path, orientation,
-            viewport.width.toDouble(), viewport.height.toDouble())
+            viewport.width.toDouble(), viewport.height.toDouble(), perspective)
     }
-    val points = remember(path, orientation, viewport) {
+    val points = remember(path, orientation, viewport, perspective) {
         if (orientation == null || viewport.width == 0 || viewport.height == 0) emptyList() else
             path.markers.mapNotNull { marker ->
-                projectSpaceCompassSun(marker.position, orientation, viewport.width.toDouble(), viewport.height.toDouble())
+                projectSpaceCompassSun(marker.position, orientation, viewport.width.toDouble(), viewport.height.toDouble(), perspective)
                     .takeIf { it.visible }?.let { marker to SpaceCompassSunScenePoint(it.x, it.y) }
             }
     }
     val directions = remember(path) { spaceCompassSunPathDirections(path) }
-    val arrows = remember(directions, orientation, viewport, density) {
+    val arrows = remember(directions, orientation, viewport, density, perspective) {
         if (orientation == null) emptyList() else directions.mapNotNull {
             projectSpaceCompassSunPathArrow(it, orientation, viewport.width.toDouble(), viewport.height.toDouble(),
-                with(density) { 5.dp.toPx().toDouble() })
+                with(density) { 5.dp.toPx().toDouble() }, perspective)
         }
     }
     val projectedCurrent = if (orientation == null || currentPoint == null || viewport.width <= 0 || viewport.height <= 0) null else
-        projectSpaceCompassSun(currentPoint.position, orientation, viewport.width.toDouble(), viewport.height.toDouble())
+        projectSpaceCompassSun(currentPoint.position, orientation, viewport.width.toDouble(), viewport.height.toDouble(), perspective)
             .takeIf { it.visible }?.let { SpaceCompassSunScenePoint(it.x, it.y) }
     val currentPoints by rememberUpdatedState(selectableSpaceCompassCelestialPathPoints(
         points, currentPoint, projectedCurrent))
@@ -170,7 +170,7 @@ internal fun SpaceCompassSunDailyPathLayer(
             SpaceCompassCelestialTimeBadge(focused.point.timeMs, timeMs, path.zone, focused.point.position, orientation,
                 primaryText, secondaryText, backgroundColor,
                 if (focused.isCurrent) stringResource(R.string.celestial_point_current) else labels.name(focused.point),
-                path.body, excluded)
+                path.body, excluded, perspective)
         }
         if (showActions) SpaceCompassCelestialSkyActions(path.body, onVisualize, { state.openMenu(path) }, title, true,
             Modifier.align(Alignment.TopEnd).padding(4.dp).onSizeChanged { menuSize = it })

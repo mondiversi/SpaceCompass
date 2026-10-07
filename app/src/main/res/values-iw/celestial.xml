@@ -25,7 +25,7 @@
     <string name="celestial_loading">עדכון נתוני מסלול…</string>
     <string name="celestial_unavailable">הנתונים של %1$s אינם זמינים. נדרש חיבור לאינטרנט כדי לעדכן אותם.</string>
     <string name="celestial_iss_old">נתוני מסלול ISS ישנים מ־24 שעות: הדיוק עלול לרדת.</string>
-    <string name="celestial_iss_note">הקפה מלאה סביב השעה הנוכחית, גם מתחת לאופק, עם 24 נקודות סדירות וכן זריחה, שיא גובה ושקיעה. פרטי המעבר מתייחסים למעבר הנוכחי או הבא בתוך 24 שעות; הנראות אינה מובטחת.</string>
+    <string name="celestial_iss_note">הקפה מלאה סביב השעה הנוכחית, גם מתחת לאופק, עם 24 נקודות סדירות וכן זריחה, שיא גובה ושקיעה. פרטי המעבר מתייחסים למעבר הנוכחי או הבא בתוך 24 שעות; הנראות אינה מובטחת.\nCelesTrak / Satcat · Space-Track</string>
     <string name="celestial_model_note">המיקומים והמרחקים מחושבים; הכיוון תלוי בדיוק המצפן. ISS דורש נתוני מסלול עדכניים. סדנה וויאג׳ר משתמשים במסלולים חזויים של NASA/JPL, ולא בטלמטריה בזמן אמת.</string>
     <string name="celestial_weather_mainly_clear">בהיר ברובו</string>
     <string name="celestial_speed_earth_orbit">מהירות מסלולית (כדור הארץ): %1$s km/s</string>

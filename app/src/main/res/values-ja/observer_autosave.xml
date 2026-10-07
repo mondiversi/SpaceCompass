@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="settings_saved">設定を保存しました。</string>
+    <string name="observer_not_saved">変更が未完了のため、最後の有効な設定を保持します。</string>
+</resources>

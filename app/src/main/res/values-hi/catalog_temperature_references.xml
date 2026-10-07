@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="catalog_temperature_mean" formatted="false">सतही औसत</string>
+    <string name="catalog_temperature_range" formatted="false">सतही सीमा</string>
+    <string name="catalog_temperature_atmosphere">वायुमंडल (%1$s)</string>
+    <string name="catalog_temperature_photosphere" formatted="false">प्रकाशमंडल</string>
+    <string name="catalog_temperature_effective" formatted="false">प्रभावी</string>
+    <string name="catalog_temperature_estimate" formatted="false">सतही अनुमान</string>
+    <string name="catalog_temperature_equilibrium" formatted="false">संतुलन मॉडल</string>
+    <string name="catalog_temperature_historical" formatted="false">ऐतिहासिक सीमा</string>
+    <string name="catalog_temperature_thermal" formatted="false">तापीय मॉडल</string>
+</resources>

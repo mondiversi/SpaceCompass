@@ -38,7 +38,9 @@ class SpaceCompassDeepSkyTest {
                 assertEquals(1, spaceCompassCelestialTemperatures(body).size)
             } else {
                 assertNull(spaceCompassCelestialFacts(body).gravity)
-                assertTrue(spaceCompassCelestialTemperatures(body).isEmpty())
+                if (body in setOf(SpaceCompassCelestialBody.SAGITTARIUS_A, SpaceCompassCelestialBody.ANDROMEDA_CORE,
+                        SpaceCompassCelestialBody.TON_618)) assertTrue(spaceCompassCelestialTemperatures(body).isEmpty())
+                else assertTrue(spaceCompassCelestialTemperatures(body).isNotEmpty())
             }
             assertFalse(body.usesHorizons)
         }

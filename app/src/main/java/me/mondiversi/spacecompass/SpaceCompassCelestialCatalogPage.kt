@@ -50,10 +50,13 @@ import kotlinx.coroutines.withContext
 internal fun SpaceCompassCelestialCatalogPage(timeMs: Long, remote: SpaceCompassCelestialRemoteData,
     selectedBodies: Set<SpaceCompassCelestialBody>, color: Color, background: Color,
     onBack: () -> Unit, onToggleAll: (Set<SpaceCompassCelestialBody>) -> Unit, onSelect: (SpaceCompassCelestialBody) -> Unit,
-    latitude: Double? = null, longitude: Double? = null, altitude: Double = 0.0) {
+    latitude: Double? = null, longitude: Double? = null, altitude: Double = 0.0,
+    onRefresh: () -> Unit = {}, onRevealHiddenObject: () -> Unit = {}) {
     val preferences = LocalSpaceCompassPreferences.current
+    val availableBodies = remember(selectedBodies) { spaceCompassAvailableCelestialCatalog(selectedBodies) }
     var catalogPreferences by remember(preferences) { mutableStateOf(readSpaceCompassCatalogPreferences(preferences)) }
     val sort = catalogPreferences.sort
+    val valueField = sort.valueField
     val types = catalogPreferences.types
     val visibility = catalogPreferences.visibility
     fun updateCatalogPreferences(updated: SpaceCompassCatalogPreferences) {
@@ -62,52 +65,89 @@ internal fun SpaceCompassCelestialCatalogPage(timeMs: Long, remote: SpaceCompass
         saveSpaceCompassCatalogPreferences(preferences, updated)
     }
     val locale = androidx.compose.ui.platform.LocalConfiguration.current.locales[0]
-    val localizedNames = spaceCompassCelestialCatalogOrder.associateWith { body ->
+    val localizedNames = availableBodies.associateWith { body ->
         stringResource(if (body == SpaceCompassCelestialBody.ANDROMEDA_CORE) R.string.celestial_andromeda_short else body.nameResource)
     }
     var solarDistances by remember { mutableStateOf<Map<SpaceCompassCelestialBody, Double?>>(emptyMap()) }
     var filtersOpen by rememberSaveable { mutableStateOf(false) }
+    var pendingHiddenReveal by remember { mutableStateOf(false) }
     val catalogScroll = rememberLazyListState()
     LaunchedEffect(sort, types, visibility) { catalogScroll.scrollToItem(0) }
     val handleBack = { if (filtersOpen) filtersOpen = false else onBack() }
     androidx.activity.compose.BackHandler(onBack = handleBack)
     val stringResourceForSelection = stringResource(R.string.select_all)
     val numeric = LocalSpaceCompassNumericFormat.current
+    val catalogCount = formatSpaceCompassNumber(availableBodies.size.toDouble(),
+        0, numeric, grouping = false)
     val units = LocalSpaceCompassUnits.current
+    val resources = androidx.compose.ui.platform.LocalResources.current
+    val referencePressure = formatSpaceCompassPressure(SpaceCompassPressureUnit.BAR.pascals, numeric, units.pressure)!!
+    val referenceLabel: (Int) -> String = { id ->
+        if (id == R.string.catalog_temperature_atmosphere) resources.getString(id, referencePressure)
+        else resources.getString(id)
+    }
     val distanceUnit = units.distance
     var distances by remember { mutableStateOf<Map<SpaceCompassCelestialBody,Double?>>(emptyMap()) }
-    // Keep one catalog snapshot while the user is scrolling; refresh on reopening.
-    val catalogTime = remember { timeMs }
-    val catalogRemote = remember { remote }
+    var refreshRevision by remember { mutableIntStateOf(0) }
+    var calculating by remember { mutableStateOf(true) }
+    // Loading flags alone must not trigger catalog calculations.
+    val catalogRemote = remember(remote.iss, remote.starlink, remote.ephemerides, remote.motions) { remote }
     var observations by remember { mutableStateOf<Map<SpaceCompassCelestialBody, SpaceCompassCelestialObservation?>>(emptyMap()) }
     val catalogLatitude = latitude?.let { round(it * 10000) / 10000 }
     val catalogLongitude = longitude?.let { round(it * 10000) / 10000 }
     val catalogAltitude = round(altitude / 10) * 10
-    LaunchedEffect(catalogLatitude, catalogLongitude, catalogAltitude) {
-        val snapshot = withContext(Dispatchers.Default) {
-            val positions = spaceCompassCelestialCatalogOrder.associateWith { body ->
+    // Distance rows refresh every ten minutes; arriving models/location update immediately.
+    val catalogTime = remember(timeMs / SPACE_COMPASS_CELESTIAL_CATALOG_REFRESH_MS, refreshRevision,
+        catalogRemote, catalogLatitude, catalogLongitude, catalogAltitude) { timeMs }
+    // Keep horizon filtering on its existing minute cadence, independently of distance rows.
+    val visibilityTime = remember(timeMs / 60_000L, refreshRevision,
+        catalogRemote, catalogLatitude, catalogLongitude, catalogAltitude) { timeMs }
+    LaunchedEffect(availableBodies, visibilityTime, refreshRevision, catalogRemote, catalogLatitude, catalogLongitude, catalogAltitude) {
+        observations = withContext(Dispatchers.Default) {
+            availableBodies.associateWith { body ->
                 if (catalogLatitude == null || catalogLongitude == null) null else runCatching {
-                    calculateSpaceCompassCelestialObservation(body, catalogTime, catalogLatitude, catalogLongitude, catalogAltitude, catalogRemote)
+                    calculateSpaceCompassCelestialObservation(body, visibilityTime, catalogLatitude, catalogLongitude, catalogAltitude, catalogRemote)
                 }.getOrNull()
             }
-            val ranges = spaceCompassCelestialCatalogOrder.associateWith { body -> runCatching {
-                when {
-                    body == SpaceCompassCelestialBody.EARTH_CENTER -> positions[body]?.distanceKm
-                    body.isEarthSatellite || body == SpaceCompassCelestialBody.MOON -> spaceCompassNearbyCatalogDistanceKm(body, catalogTime, catalogRemote)
-                    else -> spaceCompassCelestialCatalogDistanceAu(body, catalogTime, catalogRemote)
-                }
-            }.getOrNull() }
-            Triple(ranges, positions, spaceCompassCelestialCatalogOrder.associateWith { body ->
-                runCatching { spaceCompassCelestialCatalogDistanceAu(body, catalogTime, catalogRemote) }.getOrNull()
-            })
         }
-        distances = snapshot.first
-        observations = snapshot.second
-        solarDistances = snapshot.third
     }
+    LaunchedEffect(availableBodies, catalogTime, refreshRevision, catalogRemote, catalogLatitude, catalogLongitude, catalogAltitude) {
+        calculating = true
+        try {
+            val snapshot = withContext(Dispatchers.Default) {
+                val ranges = availableBodies.associateWith { body -> runCatching {
+                    when {
+                        body == SpaceCompassCelestialBody.EARTH_CENTER ->
+                            if (catalogLatitude == null || catalogLongitude == null) null else
+                                calculateSpaceCompassCelestialObservation(body, catalogTime, catalogLatitude, catalogLongitude, catalogAltitude, catalogRemote)?.distanceKm
+                        body.isEarthSatellite || body == SpaceCompassCelestialBody.MOON -> spaceCompassNearbyCatalogDistanceKm(body, catalogTime, catalogRemote)
+                        else -> spaceCompassCelestialCatalogDistanceAu(body, catalogTime, catalogRemote)
+                    }
+                }.getOrNull() }
+                ranges to availableBodies.associateWith { body ->
+                    runCatching { spaceCompassCelestialCatalogDistanceAu(body, catalogTime, catalogRemote) }.getOrNull()
+                }
+            }
+            distances = snapshot.first
+            solarDistances = snapshot.second
+        } finally { calculating = false }
+    }
+    // Newly revealed distant objects enter the correct sort position in the same frame.
+    val readySolarDistances = spaceCompassCatalogDistancesWithReferences(solarDistances, availableBodies)
+    val readyDistances = spaceCompassCatalogDistancesWithReferences(distances, availableBodies)
     val visibleBodies = spaceCompassSortCatalog(
-        spaceCompassFilterCatalog(types, visibility, observations.mapValues { it.value?.position?.elevationDegrees }),
-        sort, localizedNames, solarDistances, locale)
+        spaceCompassFilterCatalog(types, visibility, observations.mapValues { it.value?.position?.elevationDegrees }, availableBodies),
+        sort, localizedNames, readySolarDistances, locale)
+    LaunchedEffect(pendingHiddenReveal, visibleBodies) {
+        if (pendingHiddenReveal) {
+            val index = visibleBodies.indexOf(SpaceCompassCelestialBody.LV_426)
+            if (index >= 0) {
+                // Include the table header in the item offset; preserve existing filter/sort preferences.
+                catalogScroll.scrollToItem(index + 1)
+                pendingHiddenReveal = false
+            }
+        }
+    }
     val checkedCount = visibleBodies.count { it in selectedBodies }
     val checkedState = when {
         checkedCount == 0 -> ToggleableState.Off
@@ -116,8 +156,11 @@ internal fun SpaceCompassCelestialCatalogPage(timeMs: Long, remote: SpaceCompass
     }
     Surface(Modifier.fillMaxSize().testTag("celestial-menu"), color = background, contentColor = color) {
         Column(Modifier.fillMaxSize()) {
-            SpaceCompassPageToolbar(stringResource(R.string.pc_celestial_object), handleBack,
-                titleColor = color) {
+            SpaceCompassPageToolbar(stringResource(R.string.pc_celestial_object, catalogCount), handleBack,
+                titleColor = color, titleModifier = spaceCompassHiddenObjectHold {
+                    pendingHiddenReveal = true
+                    onRevealHiddenObject()
+                }.testTag("catalog-title")) {
                 SpaceCompassCatalogSortButton(sort, color) {
                     updateCatalogPreferences(catalogPreferences.copy(sort = it))
                 }
@@ -127,9 +170,17 @@ internal fun SpaceCompassCelestialCatalogPage(timeMs: Long, remote: SpaceCompass
                         MaterialTheme.colorScheme.primary else color) {
                     Icon(painterResource(R.drawable.ic_filter), contentDescription = null)
                 }
+                val refreshing = remote.refreshing || calculating
+                SpaceCompassTitleActionButton(stringResource(if (refreshing) R.string.catalog_refreshing else R.string.catalog_refresh),
+                    onClick = { refreshRevision++; onRefresh() }, enabled = !refreshing,
+                    modifier = Modifier.width(48.dp).testTag("catalog-refresh"), iconColor = color) {
+                    if (refreshing) CircularProgressIndicator(Modifier.size(22.dp), strokeWidth = 2.dp,
+                        color = color.copy(alpha = .65f))
+                    else Icon(painterResource(R.drawable.ic_refresh), contentDescription = null)
+                }
             }
             AnimatedVisibility(filtersOpen, enter = expandVertically() + fadeIn(), exit = shrinkVertically() + fadeOut()) {
-                SpaceCompassCatalogFilterBar(types, visibility,
+                SpaceCompassCatalogFilterBar(types, visibility, visibleCount = visibleBodies.size,
                     onType = { type -> updateCatalogPreferences(catalogPreferences.copy(
                         types = if (type in types) types - type else types + type)) },
                     onAllTypes = { updateCatalogPreferences(catalogPreferences.copy(types = emptySet())) },
@@ -150,7 +201,7 @@ internal fun SpaceCompassCelestialCatalogPage(timeMs: Long, remote: SpaceCompass
                                 contentDescription = stringResourceForSelection
                             })
                     }
-                    Text(stringResource(R.string.catalog_distance_from_sun), Modifier.weight(1f),
+                    Text(stringResource(valueField.label), Modifier.weight(1f).testTag("catalog-value-header"),
                         color = color.copy(alpha = 0.65f), fontSize = 11.sp,
                         textAlign = androidx.compose.ui.text.style.TextAlign.End)
                 }
@@ -162,7 +213,9 @@ internal fun SpaceCompassCelestialCatalogPage(timeMs: Long, remote: SpaceCompass
             items(visibleBodies, key = { it.name }) { candidate ->
                 DropdownMenuItem(text = { Text(stringResource(if (candidate == SpaceCompassCelestialBody.ANDROMEDA_CORE)
                     R.string.celestial_andromeda_short else candidate.nameResource), color = color, fontSize = 14.sp,
-                    maxLines = if (candidate == SpaceCompassCelestialBody.EARTH_CENTER || candidate == SpaceCompassCelestialBody.ANDROMEDA_CORE || candidate == SpaceCompassCelestialBody.TON_618 ||
+                    maxLines = if (valueField == SpaceCompassCatalogSortField.DAY_TEMPERATURE ||
+                        valueField == SpaceCompassCatalogSortField.NIGHT_TEMPERATURE ||
+                        candidate == SpaceCompassCelestialBody.EARTH_CENTER || candidate == SpaceCompassCelestialBody.ANDROMEDA_CORE || candidate == SpaceCompassCelestialBody.TON_618 ||
                         candidate == SpaceCompassCelestialBody.STEPHENSON_2_18 || candidate == SpaceCompassCelestialBody.RX_J1856 ||
                         candidate == SpaceCompassCelestialBody.PSR_J0437 || candidate == SpaceCompassCelestialBody.PROXIMA_CENTAURI) 2 else 1, lineHeight = 16.sp, overflow = TextOverflow.Ellipsis,
                     fontWeight = if (candidate in selectedBodies) FontWeight.Bold else FontWeight.Normal) },
@@ -180,10 +233,16 @@ internal fun SpaceCompassCelestialCatalogPage(timeMs: Long, remote: SpaceCompass
                     },
                     trailingIcon = { Row(verticalAlignment = Alignment.CenterVertically,
                         horizontalArrangement = Arrangement.spacedBy(8.dp)) {
-                        Text(if (candidate.isEarthSatellite || candidate == SpaceCompassCelestialBody.MOON || candidate == SpaceCompassCelestialBody.EARTH_CENTER)
-                            (formatSpaceCompassSelectedDistance(candidate, distances[candidate], numeric, distanceUnit, units.feet) ?: "—") + "\n" + (if (candidate == SpaceCompassCelestialBody.EARTH_CENTER) "GPS" else stringResource(R.string.celestial_view_earth))
-                            else formatSpaceCompassCelestialCatalogDistance(distances[candidate], numeric, distanceUnit),
-                            modifier = Modifier.widthIn(max = 144.dp), textAlign = androidx.compose.ui.text.style.TextAlign.End,
+                        Text(if (valueField != SpaceCompassCatalogSortField.DISTANCE)
+                            formatSpaceCompassCatalogPhysicalValue(candidate, valueField, numeric, units, referenceLabel)
+                            else if (sort.field == SpaceCompassCatalogSortField.DISTANCE)
+                            formatSpaceCompassCelestialCatalogDistance(readySolarDistances[candidate], numeric, distanceUnit)
+                            else if (readyDistances[candidate] == null && spaceCompassCelestialDataOutsideDate(candidate, catalogTime, catalogRemote))
+                            stringResource(R.string.catalog_date_unavailable)
+                            else if (candidate.isEarthSatellite || candidate == SpaceCompassCelestialBody.MOON || candidate == SpaceCompassCelestialBody.EARTH_CENTER)
+                            (formatSpaceCompassSelectedDistance(candidate, readyDistances[candidate], numeric, distanceUnit, units.feet) ?: "—") + "\n" + (if (candidate == SpaceCompassCelestialBody.EARTH_CENTER) "GPS" else stringResource(R.string.celestial_view_earth))
+                            else formatSpaceCompassCelestialCatalogDistance(readyDistances[candidate], numeric, distanceUnit),
+                            modifier = Modifier.widthIn(max = 144.dp).testTag("catalog-value-${candidate.name}"), textAlign = androidx.compose.ui.text.style.TextAlign.End,
                             color = color.copy(alpha = 0.60f), fontSize = 11.sp, lineHeight = 14.sp)
                     } })
             }

@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="observer_detect_selected">从设定位置获取</string>
+    <string name="observer_detect_current">从当前位置获取</string>
+    <string name="observer_zone_search">搜索时区</string>
+    <string name="observer_zone_no_results">没有匹配的时区。</string>
+    <string name="observer_metadata_failed">无法获取。请重试或输入数值。</string>
+</resources>

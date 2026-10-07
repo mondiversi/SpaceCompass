@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="celestial_temperature_surface_estimate" formatted="false">دمای تخمینی سطح</string>
+    <string name="celestial_temperature_equilibrium_model" formatted="false">دمای تعادل (مدل)</string>
+    <string name="celestial_temperature_historical_range" formatted="false">بازهٔ سطح (رصد تاریخی)</string>
+    <string name="celestial_temperature_thermal_model" formatted="false">تابش گرمایی (مدل)</string>
+    <string name="celestial_temperature_reference_note" formatted="false">تخمین‌ها به فرض‌های مدل بستگی دارند. بازه‌های دارای سال، رصدهای گذشته را بیان می‌کنند نه دمای کنونی. دمای ستاره‌های فشرده از مدل‌های طیفی به دست می‌آید، نه اندازه‌گیری روز و شب.</string>
+    <string name="celestial_stephenson_reference_note" formatted="false">دمای مؤثر در مدل فرض شده است. درخشندگی و قطر محاسبه‌شده بر فاصلهٔ خوشه تکیه دارند؛ عضویت در خوشه نامطمئن است. جرم کنونی ناشناخته است.</string>
+</resources>

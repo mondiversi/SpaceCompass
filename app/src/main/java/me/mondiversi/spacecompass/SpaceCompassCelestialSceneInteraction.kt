@@ -17,7 +17,7 @@ import java.time.ZoneId
 internal fun SpaceCompassCelestialSceneInteraction(targets: List<SpaceCompassCelestialSceneTarget>,
     focused: SpaceCompassCelestialSceneTarget?, state: SpaceCompassSunDailyPathUiState, nowMs: Long?,
     orientation: SpaceCompassSunOrientation?, primaryText: Color, secondaryText: Color, backgroundColor: Color,
-    excluded: List<SpaceCompassSunSceneFrame>, onActivateBody: ((SpaceCompassCelestialBody) -> Unit)?) {
+    excluded: List<SpaceCompassSunSceneFrame>, onActivateBody: ((SpaceCompassCelestialBody) -> Unit)?, perspective: SpaceCompassPerspective? = null) {
     val currentTargets by rememberUpdatedState(targets)
     val activate by rememberUpdatedState(onActivateBody)
     val radius = with(LocalDensity.current) { SPACE_COMPASS_SUN_PATH_TOUCH_RADIUS_DP.dp.toPx().toDouble() }
@@ -33,7 +33,7 @@ internal fun SpaceCompassCelestialSceneInteraction(targets: List<SpaceCompassCel
     if (focused != null && nowMs != null) {
         val name = if (focused.isCurrent) stringResource(R.string.celestial_point_current)
             else focused.path?.let { rememberSpaceCompassSunPathLabels(it).name(focused.point) }.orEmpty()
-        SpaceCompassCelestialTimeBadge(focused.point.timeMs, nowMs, focused.path?.zone ?: ZoneId.systemDefault(),
-            focused.point.position, orientation, primaryText, secondaryText, backgroundColor, name, focused.body, excluded)
+        SpaceCompassCelestialTimeBadge(focused.point.timeMs, nowMs, focused.path?.zone ?: spaceCompassObservationZone(),
+            focused.point.position, orientation, primaryText, secondaryText, backgroundColor, name, focused.body, excluded, perspective)
     }
 }

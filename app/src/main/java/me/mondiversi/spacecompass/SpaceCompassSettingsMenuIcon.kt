@@ -12,26 +12,54 @@ import androidx.compose.ui.graphics.StrokeCap
 import androidx.compose.ui.graphics.drawscope.Stroke
 import androidx.compose.ui.unit.dp
 
-/** The three settings glyphs match UVIR's existing visual vocabulary. */
+/** Compact menu glyphs follow the app's existing visual vocabulary. */
 @Composable
 internal fun SpaceCompassSettingsMenuIcon(route: String, tint: Color) {
     Canvas(Modifier.size(20.dp)) {
         val strokeWidth = maxOf(1.6.dp.toPx(), size.minDimension * 0.08f)
         when (route) {
             "capture" -> {
-                val camera = Path().apply {
-                    moveTo(size.width * .10f, size.height * .30f)
-                    lineTo(size.width * .30f, size.height * .30f)
-                    lineTo(size.width * .38f, size.height * .18f)
-                    lineTo(size.width * .62f, size.height * .18f)
-                    lineTo(size.width * .70f, size.height * .30f)
-                    lineTo(size.width * .90f, size.height * .30f)
-                    lineTo(size.width * .90f, size.height * .80f)
-                    lineTo(size.width * .10f, size.height * .80f)
+                drawCircle(tint, size.minDimension * .39f, style = Stroke(strokeWidth))
+                repeat(6) { index ->
+                    val angle = Math.toRadians(index * 60.0)
+                    val next = angle + Math.toRadians(60.0)
+                    drawLine(tint, Offset(center.x + kotlin.math.cos(angle).toFloat() * size.width * .38f,
+                        center.y + kotlin.math.sin(angle).toFloat() * size.height * .38f),
+                        Offset(center.x + kotlin.math.cos(next).toFloat() * size.width * .16f,
+                            center.y + kotlin.math.sin(next).toFloat() * size.height * .16f), strokeWidth)
+                }
+            }
+            "observer" -> {
+                // A place pin and clock distinguish location/time scenarios from live GPS.
+                val pin = Path().apply {
+                    moveTo(size.width * .31f, size.height * .67f)
+                    cubicTo(size.width * .24f, size.height * .57f,
+                        size.width * .10f, size.height * .43f,
+                        size.width * .10f, size.height * .31f)
+                    cubicTo(size.width * .10f, size.height * .04f,
+                        size.width * .52f, size.height * .04f,
+                        size.width * .52f, size.height * .31f)
+                    cubicTo(size.width * .52f, size.height * .43f,
+                        size.width * .38f, size.height * .57f,
+                        size.width * .31f, size.height * .67f)
                     close()
                 }
-                drawPath(camera, tint, style = Stroke(strokeWidth, cap = StrokeCap.Round))
-                drawCircle(tint, size.width * .16f, Offset(size.width * .50f, size.height * .55f), style = Stroke(strokeWidth))
+                drawPath(pin, tint, style = Stroke(strokeWidth, cap = StrokeCap.Round))
+                drawCircle(tint, size.minDimension * .065f,
+                    Offset(size.width * .31f, size.height * .30f))
+                val clockCenter = Offset(size.width * .70f, size.height * .67f)
+                drawCircle(tint, size.minDimension * .23f, clockCenter,
+                    style = Stroke(strokeWidth))
+                drawLine(tint, clockCenter, Offset(size.width * .70f, size.height * .53f),
+                    strokeWidth, StrokeCap.Round)
+                drawLine(tint, clockCenter, Offset(size.width * .79f, size.height * .72f),
+                    strokeWidth, StrokeCap.Round)
+            }
+            "info" -> {
+                drawCircle(tint, size.minDimension * .39f, style = Stroke(strokeWidth))
+                drawCircle(tint, strokeWidth * .7f, Offset(center.x, size.height * .31f))
+                drawLine(tint, Offset(center.x, size.height * .45f), Offset(center.x, size.height * .70f),
+                    strokeWidth, StrokeCap.Round)
             }
             "appearance" -> {
                 val palette = Path().apply {

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="panorama_preview" formatted="false">Panorama</string>
+    <string name="panorama_preparing" formatted="false">Przygotowywanie panoramy…</string>
+    <string name="panorama_save" formatted="false">Zapisz</string>
+    <string name="panorama_share" formatted="false">Udostępnij</string>
+    <string name="panorama_gallery" formatted="false">Galeria zdjęć</string>
+    <string name="panorama_choose_location" formatted="false">Wybierz lokalizację…</string>
+    <string name="panorama_exported" formatted="false">Panorama wyeksportowana.</string>
+    <string name="panorama_cloud_cover" formatted="false">Zachmurzenie</string>
+    <string name="panorama_weather_time" formatted="false">Czas modelu pogody</string>
+    <string name="panorama_northeast" formatted="false">Północny wschód</string>
+    <string name="panorama_southeast" formatted="false">Południowy wschód</string>
+    <string name="panorama_southwest" formatted="false">Południowy zachód</string>
+    <string name="panorama_northwest" formatted="false">Północny zachód</string>
+</resources>

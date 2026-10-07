@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="celestial_temperature_surface_estimate" formatted="false">추정 표면 온도</string>
+    <string name="celestial_temperature_equilibrium_model" formatted="false">평형 온도 (모델)</string>
+    <string name="celestial_temperature_historical_range" formatted="false">표면 범위 (과거 관측)</string>
+    <string name="celestial_temperature_thermal_model" formatted="false">열 방출 (모델)</string>
+    <string name="celestial_temperature_reference_note" formatted="false">추정치는 모델의 가정에 따라 달라집니다. 연도가 표시된 범위는 현재 온도가 아닌 과거 관측값입니다. 밀집성의 온도는 낮과 밤의 측정이 아니라 스펙트럼 모델에서 얻은 값입니다.</string>
+    <string name="celestial_stephenson_reference_note" formatted="false">유효 온도는 모델에서 가정한 값입니다. 광도와 산출된 지름은 성단의 거리를 가정하지만, 성단에 속하는지는 불확실합니다. 현재 질량은 알려져 있지 않습니다.</string>
+</resources>

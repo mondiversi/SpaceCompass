@@ -2,16 +2,25 @@
 <resources>
     <string name="panorama_capture">Снимок</string>
     <string name="panorama_saving">Сохранение панорамы…</string>
-    <string name="panorama_saved">Панорама сохранена в альбоме SpaceCompass в галерее.</string>
+    <string name="panorama_saved">Изображение сохранено в галерее.</string>
     <string name="panorama_error">Не удалось сохранить панораму. Повторите попытку.</string>
     <string name="panorama_permission">Разрешите доступ к хранилищу для сохранения панорамы.</string>
     <string name="panorama_not_ready">Нужны координаты GPS и хотя бы один выбранный объект.</string>
     <string name="panorama_data_unavailable">Данные недоступны</string>
     <string name="panorama_path_unavailable">Орбита недоступна</string>
-    <string name="info_news_panorama">Снимок сохраняет в галерее полную панораму 360° выбранных объектов и их орбит.</string>
-    <string name="info_news_orbit_names">Названия объектов следуют изгибам орбит рядом со стрелками направления.</string>
+    <string name="info_news_panorama">Наложения на изображение камеры и панорамы 360° с необязательными линиями и подписями; экспорт в галерею, файл или для отправки.</string>
+    <string name="info_news_orbit_names">Компас в реальном времени, суточные траектории и текстурированные виды 30 небесных объектов.</string>
     <string name="panorama_north">Север</string>
     <string name="panorama_east">Восток</string>
     <string name="panorama_south">Юг</string>
     <string name="panorama_west">Запад</string>
+    <string name="panorama_position">Местоположение на снимке</string>
+    <string name="panorama_position_description">Выберите данные местоположения для сохранения и отправки. Время и орбиты всё равно могут указывать на приблизительную область.</string>
+    <string name="panorama_position_complete">Полностью</string>
+    <string name="panorama_position_complete_detail">Место, координаты, высота и точность</string>
+    <string name="panorama_position_area">Только регион</string>
+    <string name="panorama_position_area_detail">Регион и страна</string>
+    <string name="panorama_position_hidden">Скрыто</string>
+    <string name="panorama_position_hidden_detail">Без данных местоположения</string>
+    <string name="panorama_point_labels">Подписи</string>
 </resources>

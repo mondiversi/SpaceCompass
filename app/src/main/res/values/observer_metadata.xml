@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="observer_detect_selected">Detect from set position</string>
+    <string name="observer_detect_current">Detect from current position</string>
+    <string name="observer_zone_search">Search time zone</string>
+    <string name="observer_zone_no_results">No matching time zones.</string>
+    <string name="observer_metadata_failed">Lookup unavailable. Try again or enter a value.</string>
+</resources>

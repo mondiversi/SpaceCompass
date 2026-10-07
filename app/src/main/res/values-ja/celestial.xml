@@ -25,7 +25,7 @@
     <string name="celestial_loading">軌道データを更新中…</string>
     <string name="celestial_unavailable">%1$sのデータがありません。更新にはインターネット接続が必要です。</string>
     <string name="celestial_iss_old">ISSの軌道データは24時間以上前のものです。精度が低下する可能性があります。</string>
-    <string name="celestial_iss_note">現在時刻を中心とした1周分を、地平線の下も含めて表示します。24個の等間隔の点に出現・最高高度・沈下を加えます。通過情報は現在または24時間以内の次の通過を示し、見えることを保証するものではありません。</string>
+    <string name="celestial_iss_note">現在時刻を中心とした1周分を、地平線の下も含めて表示します。24個の等間隔の点に出現・最高高度・沈下を加えます。通過情報は現在または24時間以内の次の通過を示し、見えることを保証するものではありません。\nCelesTrak / Satcat · Space-Track</string>
     <string name="celestial_model_note">位置と距離は計算値で、方向はコンパスの精度に依存します。ISSには新しい軌道データが必要です。セドナとボイジャーはNASA/JPLの予測軌道を使用し、リアルタイムのテレメトリーではありません。</string>
     <string name="celestial_weather_mainly_clear">ほぼ快晴</string>
     <string name="celestial_speed_earth_orbit">軌道速度（地球）: %1$s km/s</string>

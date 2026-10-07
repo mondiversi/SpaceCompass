@@ -36,9 +36,9 @@ import androidx.compose.ui.unit.Constraints
 internal fun SpaceCompassSunFinderDataPanel(
     rows: List<SpaceCompassSunDataRow>, locationRows: List<SpaceCompassSunDataRow>,
     orientation: SpaceCompassSunOrientation?, compassReliable: Boolean,
-    message: String?, weatherText: String,
+    weatherText: String,
     hasWeather: Boolean, primaryText: Color, secondaryText: Color, backgroundColor: Color,
-    modifier: Modifier, compact: Boolean, locationActionLabel: String?, onLocationAction: () -> Unit,
+    modifier: Modifier, compact: Boolean,
     bodyName: String? = null, bodyNavigation: SpaceCompassCelestialBodyNavigation? = null,
     orientationRows: List<SpaceCompassSunDataRow> = emptyList(),
     locationInfoRows: List<SpaceCompassSunDataRow> = emptyList(),
@@ -53,12 +53,6 @@ internal fun SpaceCompassSunFinderDataPanel(
         // Normally fits without scrolling. Keep a fallback for large accessibility fonts/windows.
         .scrollbarOverlay(scroll, secondaryText.copy(alpha = 0.46f))
         .verticalScroll(scroll), verticalArrangement = Arrangement.spacedBy(8.dp)) {
-        if (message != null || locationActionLabel != null) SpaceCompassSunFinderDataIsland(
-            primaryText, backgroundColor, compact, "sun-finder-status-island") {
-            if (message != null) Text(message, color = primaryText, style = style, fontWeight = FontWeight.Bold)
-            if (locationActionLabel != null) TextButton(onClick = onLocationAction,
-                contentPadding = PaddingValues(horizontal = 8.dp, vertical = 2.dp)) { Text(locationActionLabel) }
-        }
         if (rows.isNotEmpty()) SpaceCompassCelestialBodyDataIsland(bodyName, primaryText, backgroundColor, compact, bodyNavigation, bodyActions) {
             val angles = rows.filter { it.tag == "sun-data-azimuth" || it.tag == "sun-data-elevation" }
             Column(Modifier.fillMaxWidth().testTag("sun-finder-pointing-data")) {
@@ -153,52 +147,8 @@ private fun SpaceCompassSunFinderDataTable(
 @Composable
 internal fun SpaceCompassSunFinderModelInfo(
     hasWeather: Boolean, weatherRow: SpaceCompassSunDataRow, locationInfoRows: List<SpaceCompassSunDataRow>, primaryText: Color,
-    secondaryText: Color, backgroundColor: Color, onDismiss: () -> Unit
+    secondaryText: Color, backgroundColor: Color, latitude: Double? = null, longitude: Double? = null,
+    onDismiss: () -> Unit
 ) {
-    val context = LocalContext.current
-    BackHandler(onBack = onDismiss)
-    Surface(Modifier.fillMaxSize().testTag("sun-finder-model-info"), color = backgroundColor, contentColor = primaryText) {
-        Column(Modifier.fillMaxSize()) {
-            SpaceCompassPageToolbar(stringResource(R.string.celestial_environment_info_title), onDismiss,
-                titleColor = primaryText)
-            Column(Modifier.weight(1f).fillMaxWidth().verticalScroll(rememberScrollState()).padding(spaceCompassPageContentPadding),
-                verticalArrangement = Arrangement.spacedBy(16.dp)) {
-                val accuracy = locationInfoRows.firstOrNull { it.tag == "sun-info-accuracy" }
-                locationInfoRows.forEach { row ->
-                    if (row.tag == "sun-info-accuracy") return@forEach
-                    SpaceCompassSunFinderDataIsland(primaryText, backgroundColor, false, "detail-${row.tag}") {
-                        if (row.tag == "sun-info-coordinates") {
-                            Row(Modifier.fillMaxWidth().padding(vertical = 6.dp).clearAndSetSemantics {
-                                contentDescription = row.announcement + (accuracy?.let { ", ${it.announcement}" } ?: "")
-                            }, verticalAlignment = Alignment.CenterVertically,
-                                horizontalArrangement = Arrangement.spacedBy(12.dp)) {
-                                Column(Modifier.weight(1f), verticalArrangement = Arrangement.spacedBy(3.dp)) {
-                                    Text(row.label, color = secondaryText, fontSize = 13.sp, lineHeight = 18.sp)
-                                    accuracy?.let { Text("(${it.value})", color = secondaryText, fontSize = 11.sp, lineHeight = 14.sp,
-                                        style = TextStyle(textDirection = TextDirection.ContentOrLtr)) }
-                                }
-                                Text(row.value, color = primaryText, fontSize = 13.sp, lineHeight = 18.sp,
-                                    style = TextStyle(textDirection = TextDirection.ContentOrLtr),
-                                    textAlign = TextAlign.End)
-                            }
-                        } else SpaceCompassSunFinderDataTable(listOf(row),
-                            TextStyle(fontSize = 13.sp, lineHeight = 18.sp, fontFeatureSettings = "tnum"),
-                            primaryText, secondaryText, false, Modifier.fillMaxWidth().padding(vertical = 6.dp))
-                    }
-                }
-                SpaceCompassSunFinderDataIsland(primaryText, backgroundColor, false, "environment-weather-island") {
-                    SpaceCompassSunFinderDataTable(listOf(weatherRow),
-                        TextStyle(fontSize = 13.sp, lineHeight = 18.sp, fontFeatureSettings = "tnum"),
-                        primaryText, secondaryText, false, Modifier.fillMaxWidth().padding(vertical = 6.dp))
-                }
-                Text(stringResource(R.string.celestial_environment_orientation_note))
-                Text(stringResource(R.string.sun_finder_terrain_note))
-                Text(stringResource(R.string.sun_weather_privacy))
-                if (hasWeather) Text("Open-Meteo · CC BY 4.0", Modifier.clickable {
-                    runCatching { context.startActivity(Intent(Intent.ACTION_VIEW, Uri.parse("https://open-meteo.com/en/licence"))) }
-                        .onFailure { SpaceCompassErrorLog.record(context, "sun_finder:weather_attribution", it) }
-                }, color = secondaryText, textDecoration = TextDecoration.Underline)
-            }
-        }
-    }
+    SpaceCompassPositionDetails(hasWeather, weatherRow, locationInfoRows, latitude, longitude, secondaryText.copy(alpha = 0.46f), onDismiss)
 }

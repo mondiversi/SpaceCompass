@@ -23,6 +23,14 @@ import androidx.compose.ui.unit.LayoutDirection
 import androidx.compose.ui.unit.dp
 import kotlinx.coroutines.delay
 
+/** Native and Compose page titles retain the same UVIR overflow cadence and edge width. */
+internal const val SpaceCompassScrollingInitialPauseMs = 900L
+internal const val SpaceCompassScrollingEndPauseMs = 900L
+internal const val SpaceCompassScrollingStartPauseMs = 1_200L
+internal const val SpaceCompassScrollingFadeDp = 14f
+internal fun spaceCompassScrollingTravelDuration(maximum: Int) =
+    (1_800 + maximum * 12).coerceIn(2_600, 8_000)
+
 /** Shared title/name overflow: full accessible text, fixed viewport and soft edges. */
 @Composable
 internal fun SpaceCompassScrollingText(
@@ -42,20 +50,20 @@ internal fun SpaceCompassScrollingText(
         scrollState.scrollTo(0)
         if (maximum <= 0) return@LaunchedEffect
 
-        val travelDuration = (1_800 + maximum * 12).coerceIn(2_600, 8_000)
-        delay(900)
+        val travelDuration = spaceCompassScrollingTravelDuration(maximum)
+        delay(SpaceCompassScrollingInitialPauseMs)
         while (true) {
             scrollState.animateScrollTo(maximum, tween(travelDuration, easing = LinearEasing))
-            delay(900)
+            delay(SpaceCompassScrollingEndPauseMs)
             scrollState.animateScrollTo(0, tween(travelDuration, easing = LinearEasing))
-            delay(1_200)
+            delay(SpaceCompassScrollingStartPauseMs)
         }
     }
 
     Box(modifier.graphicsLayer { compositingStrategy = CompositingStrategy.Offscreen }
         .drawWithContent {
             drawContent()
-            val fadeWidth = minOf(14.dp.toPx(), size.width / 2f)
+            val fadeWidth = minOf(SpaceCompassScrollingFadeDp.dp.toPx(), size.width / 2f)
             if (fadeLeft) drawRect(
                 Brush.horizontalGradient(listOf(Color.Transparent, Color.Black), 0f, fadeWidth),
                 blendMode = BlendMode.DstIn

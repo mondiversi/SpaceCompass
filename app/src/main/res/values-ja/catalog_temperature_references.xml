@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="catalog_temperature_mean" formatted="false">表面平均</string>
+    <string name="catalog_temperature_range" formatted="false">表面温度範囲</string>
+    <string name="catalog_temperature_atmosphere">大気（%1$s）</string>
+    <string name="catalog_temperature_photosphere" formatted="false">光球</string>
+    <string name="catalog_temperature_effective" formatted="false">有効温度</string>
+    <string name="catalog_temperature_estimate" formatted="false">表面推定値</string>
+    <string name="catalog_temperature_equilibrium" formatted="false">平衡モデル</string>
+    <string name="catalog_temperature_historical" formatted="false">過去の観測範囲</string>
+    <string name="catalog_temperature_thermal" formatted="false">熱モデル</string>
+</resources>

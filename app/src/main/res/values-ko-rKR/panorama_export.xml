@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="panorama_export" formatted="false">내보내기</string>
+    <string name="panorama_export_profile" formatted="false">데이터 형식</string>
+    <string name="panorama_export_selected" formatted="false">설정된 언어 및 형식</string>
+    <string name="panorama_export_international" formatted="false">국제 과학 형식</string>
+    <string name="panorama_save_gallery" formatted="false">갤러리에 저장</string>
+    <string name="panorama_save_phone" formatted="false">휴대전화에 저장</string>
+</resources>

@@ -25,7 +25,7 @@
     <string name="celestial_loading">Yörünge verileri güncelleniyor…</string>
     <string name="celestial_unavailable">%1$s verileri yok. Güncellemek için internet bağlantısı gerekir.</string>
     <string name="celestial_iss_old">ISS yörünge verileri 24 saatten eski: doğruluk azalabilir.</string>
-    <string name="celestial_iss_note">Şu anki saat çevresinde, ufkun altı dahil bir tam tur; 24 düzenli nokta ile doğuş, en yüksek konum ve batış gösterilir. Geçiş bilgileri mevcut veya 24 saat içindeki sonraki geçişe aittir; görünürlük garanti edilmez.</string>
+    <string name="celestial_iss_note">Şu anki saat çevresinde, ufkun altı dahil bir tam tur; 24 düzenli nokta ile doğuş, en yüksek konum ve batış gösterilir. Geçiş bilgileri mevcut veya 24 saat içindeki sonraki geçişe aittir; görünürlük garanti edilmez.\nCelesTrak / Satcat · Space-Track</string>
     <string name="celestial_model_note">Konum ve uzaklıklar hesaplanır; yön bulma pusula doğruluğuna bağlıdır. ISS güncel yörünge verileri gerektirir. Sedna ve Voyager canlı telemetri değil, NASA/JPL tahmini yollarını kullanır.</string>
     <string name="celestial_weather_mainly_clear">Çoğunlukla açık</string>
     <string name="celestial_speed_earth_orbit">Yörünge hızı (Dünya): %1$s km/s</string>

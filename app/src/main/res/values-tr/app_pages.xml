@@ -12,4 +12,5 @@
     <string name="language_description">Arayüz dilini seçin.</string>
     <string name="github_repository_title">GitHub deposu</string>
     <string name="about_copyright">Telif Hakkı © 2026 Mondiversi</string>
+    <string name="settings_section_info">Bilgi</string>
 </resources>

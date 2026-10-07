@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="panorama_preview" formatted="false">Panorama</string>
+    <string name="panorama_preparing" formatted="false">Menyiapkan panorama…</string>
+    <string name="panorama_save" formatted="false">Simpan</string>
+    <string name="panorama_share" formatted="false">Bagikan</string>
+    <string name="panorama_gallery" formatted="false">Galeri gambar</string>
+    <string name="panorama_choose_location" formatted="false">Pilih lokasi…</string>
+    <string name="panorama_exported" formatted="false">Panorama diekspor.</string>
+    <string name="panorama_cloud_cover" formatted="false">Tutupan awan</string>
+    <string name="panorama_weather_time" formatted="false">Waktu model cuaca</string>
+    <string name="panorama_northeast" formatted="false">Timur laut</string>
+    <string name="panorama_southeast" formatted="false">Tenggara</string>
+    <string name="panorama_southwest" formatted="false">Barat daya</string>
+    <string name="panorama_northwest" formatted="false">Barat laut</string>
+</resources>

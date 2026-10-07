@@ -1,6 +1,6 @@
 <resources>
     <string name="info_news_title">최근 변경 사항 · %1$s</string>
-    <string name="info_news_units">질량은 선택한 킬로그램/파운드로 표시하며, 태양 질량의 10배부터 M☉를 사용합니다.</string>
-    <string name="info_news_pressure">중력과 기준 압력을 포함해 앱 전체에서 단위와 숫자 형식을 일관되게 적용합니다.</string>
-    <string name="info_news_updates">GitHub의 서명된 업데이트를 시작 시 또는 저장소 화면에서 확인합니다.</string>
+    <string name="info_news_units">선택, 필터 및 정렬 저장과 지역별 단위 및 형식.</string>
+    <string name="info_news_pressure">20개 언어, 밝은/어두운 테마 및 휴대전화/태블릿에 맞는 레이아웃.</string>
+    <string name="info_news_updates">첫 안정 버전: 최적화된 앱과 서명 및 검증된 GitHub 업데이트.</string>
 </resources>

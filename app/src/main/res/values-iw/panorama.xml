@@ -2,16 +2,25 @@
 <resources>
     <string name="panorama_capture">צילום</string>
     <string name="panorama_saving">שמירת פנורמה…</string>
-    <string name="panorama_saved">הפנורמה נשמרה באלבום SpaceCompass בגלריה.</string>
+    <string name="panorama_saved">התמונה נשמרה בגלריה.</string>
     <string name="panorama_error">לא ניתן לשמור את הפנורמה. יש לנסות שוב.</string>
     <string name="panorama_permission">יש לאפשר גישה לאחסון כדי לשמור את הפנורמה.</string>
     <string name="panorama_not_ready">נדרשים מיקום GPS ולפחות עצם נבחר אחד.</string>
     <string name="panorama_data_unavailable">הנתונים אינם זמינים</string>
     <string name="panorama_path_unavailable">המסלול אינו זמין</string>
-    <string name="info_news_panorama">צילום שומר בגלריה פנורמה מלאה של 360° של העצמים הנבחרים ומסלוליהם.</string>
-    <string name="info_news_orbit_names">שמות העצמים נכתבים לאורך עקומות המסלולים ליד חיצי הכיוון.</string>
+    <string name="info_news_panorama">שכבות על תמונת המצלמה ופנורמות 360° עם קווים ותוויות לבחירה; ייצוא לגלריה, לקובץ או לשיתוף.</string>
+    <string name="info_news_orbit_names">מצפן בזמן אמת, מסלולים יומיים ותצוגות עם מרקמים ל־30 גרמי שמיים.</string>
     <string name="panorama_north">צפון</string>
     <string name="panorama_east">מזרח</string>
     <string name="panorama_south">דרום</string>
     <string name="panorama_west">מערב</string>
+    <string name="panorama_position">מיקום בתמונה</string>
+    <string name="panorama_position_description">בחרו אילו פרטי מיקום יוצגו בעת שמירה או שיתוף. השעה והמסלולים עדיין עשויים להצביע על אזור משוער.</string>
+    <string name="panorama_position_complete">מלא</string>
+    <string name="panorama_position_complete_detail">מקום, קואורדינטות, גובה ודיוק</string>
+    <string name="panorama_position_area">אזור בלבד</string>
+    <string name="panorama_position_area_detail">אזור ומדינה</string>
+    <string name="panorama_position_hidden">מוסתר</string>
+    <string name="panorama_position_hidden_detail">ללא פרטי מיקום</string>
+    <string name="panorama_point_labels">תוויות</string>
 </resources>

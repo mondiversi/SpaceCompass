@@ -6,4 +6,7 @@
     <string name="units_kilograms">Kilogramm</string>
     <string name="units_pounds">Pfund</string>
     <string name="units_mass_description">Wähle die Einheiten für Masse und Dichte.</string>
+    <string name="units_celsius">Celsius</string>
+    <string name="units_fahrenheit">Fahrenheit</string>
+    <string name="settings_resource_language_tag">de</string>
 </resources>

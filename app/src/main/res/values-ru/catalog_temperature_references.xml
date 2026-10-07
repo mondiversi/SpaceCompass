@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="catalog_temperature_mean" formatted="false">Средняя на поверхности</string>
+    <string name="catalog_temperature_range" formatted="false">Диапазон поверхности</string>
+    <string name="catalog_temperature_atmosphere">Атмосфера (%1$s)</string>
+    <string name="catalog_temperature_photosphere" formatted="false">Фотосфера</string>
+    <string name="catalog_temperature_effective" formatted="false">Эффективная</string>
+    <string name="catalog_temperature_estimate" formatted="false">Оценка поверхности</string>
+    <string name="catalog_temperature_equilibrium" formatted="false">Модель равновесия</string>
+    <string name="catalog_temperature_historical" formatted="false">Исторический диапазон</string>
+    <string name="catalog_temperature_thermal" formatted="false">Тепловая модель</string>
+</resources>

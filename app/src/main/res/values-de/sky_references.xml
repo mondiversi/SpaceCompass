@@ -1,0 +1,11 @@
+<resources>
+    <string name="sky_reference_equator">Himmelsäquator</string>
+    <string name="sky_reference_cancer">Wendekreis des Krebses</string>
+    <string name="sky_reference_capricorn">Wendekreis des Steinbocks</string>
+    <string name="sky_reference_arctic">Nördlicher Polarkreis</string>
+    <string name="sky_reference_antarctic">Südlicher Polarkreis</string>
+    <string name="sky_reference_north_pole">Himmelsnordpol</string>
+    <string name="sky_reference_south_pole">Himmelssüdpol</string>
+    <string name="sky_references_hide">Himmelsreferenzlinien ausblenden</string>
+    <string name="sky_references_show">Himmelsreferenzlinien anzeigen</string>
+</resources>

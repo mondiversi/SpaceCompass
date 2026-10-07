@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="catalog_temperature_mean" formatted="false">Średnia powierzchni</string>
+    <string name="catalog_temperature_range" formatted="false">Zakres powierzchni</string>
+    <string name="catalog_temperature_atmosphere">Atmosfera (%1$s)</string>
+    <string name="catalog_temperature_photosphere" formatted="false">Fotosfera</string>
+    <string name="catalog_temperature_effective" formatted="false">Efektywna</string>
+    <string name="catalog_temperature_estimate" formatted="false">Szacunek powierzchni</string>
+    <string name="catalog_temperature_equilibrium" formatted="false">Model równowagi</string>
+    <string name="catalog_temperature_historical" formatted="false">Zakres historyczny</string>
+    <string name="catalog_temperature_thermal" formatted="false">Model cieplny</string>
+</resources>

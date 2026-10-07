@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="catalog_sort_day_temperature" formatted="false">낮 온도</string>
+    <string name="catalog_sort_night_temperature" formatted="false">밤 온도</string>
+    <string name="catalog_type_comet" formatted="false">혜성</string>
+    <string name="position_map_title" formatted="false">지도</string>
+    <string name="position_map_unavailable" formatted="false">지도를 표시할 수 없습니다</string>
+    <string name="celestial_comet_note" formatted="false">상징적인 그림입니다. 크기는 핵을 나타내며 활동과 자전은 달라질 수 있습니다.</string>
+    <string name="celestial_halley" formatted="false">1P/Halley</string>
+    <string name="celestial_comet_67p" formatted="false">67P/Churyumov–Gerasimenko</string>
+</resources>

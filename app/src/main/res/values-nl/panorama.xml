@@ -2,16 +2,25 @@
 <resources>
     <string name="panorama_capture">Vastleggen</string>
     <string name="panorama_saving">Panorama opslaan…</string>
-    <string name="panorama_saved">Panorama opgeslagen in het galeriealbum SpaceCompass.</string>
+    <string name="panorama_saved">Afbeelding opgeslagen in de galerij.</string>
     <string name="panorama_error">Panorama kon niet worden opgeslagen. Probeer het opnieuw.</string>
     <string name="panorama_permission">Sta opslagtoegang toe om het panorama op te slaan.</string>
     <string name="panorama_not_ready">Een GPS-positie en minstens één geselecteerd object zijn nodig.</string>
     <string name="panorama_data_unavailable">Gegevens niet beschikbaar</string>
     <string name="panorama_path_unavailable">Baan niet beschikbaar</string>
-    <string name="info_news_panorama">Vastleggen slaat een volledig 360°-panorama van geselecteerde objecten en hun banen op in de galerie.</string>
-    <string name="info_news_orbit_names">Objectnamen volgen de baancurven bij de richtingspijlen.</string>
+    <string name="info_news_panorama">Camera-overlays en 360°-panorama’s met optionele hulplijnen en labels; export naar de galerij, een bestand of om te delen.</string>
+    <string name="info_news_orbit_names">Livekompas, dagelijkse banen en weergaven met texturen voor 30 hemelobjecten.</string>
     <string name="panorama_north">Noord</string>
     <string name="panorama_east">Oost</string>
     <string name="panorama_south">Zuid</string>
     <string name="panorama_west">West</string>
+    <string name="panorama_position">Locatie in de opname</string>
+    <string name="panorama_position_description">Kies welke locatiegegevens zichtbaar zijn bij opslaan of delen. Tijd en banen kunnen nog steeds een globaal gebied aangeven.</string>
+    <string name="panorama_position_complete">Volledig</string>
+    <string name="panorama_position_complete_detail">Plaats, coördinaten, hoogte en nauwkeurigheid</string>
+    <string name="panorama_position_area">Alleen gebied</string>
+    <string name="panorama_position_area_detail">Regio en land</string>
+    <string name="panorama_position_hidden">Verborgen</string>
+    <string name="panorama_position_hidden_detail">Geen locatiegegevens</string>
+    <string name="panorama_point_labels">Labels</string>
 </resources>

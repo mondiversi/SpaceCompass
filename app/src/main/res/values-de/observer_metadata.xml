@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="observer_detect_selected">Aus eingestellter Position ermitteln</string>
+    <string name="observer_detect_current">Aus aktueller Position ermitteln</string>
+    <string name="observer_zone_search">Zeitzone suchen</string>
+    <string name="observer_zone_no_results">Keine passenden Zeitzonen.</string>
+    <string name="observer_metadata_failed">Ermittlung nicht verfügbar. Erneut versuchen oder einen Wert eingeben.</string>
+</resources>

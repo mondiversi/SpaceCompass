@@ -1,0 +1,31 @@
+<resources>
+    <string name="observer_title">תרחיש</string>
+    <string name="observer_place">מיקום</string>
+    <string name="observer_search">חיפוש מקום</string>
+    <string name="observer_search_action">חיפוש</string>
+    <string name="observer_map">בחירה במפה</string>
+    <string name="observer_latitude">קו רוחב</string>
+    <string name="observer_longitude">קו אורך</string>
+    <string name="observer_automatic">איתור גובה ואזור זמן</string>
+    <string name="observer_altitude">גובה</string>
+    <string name="observer_zone">אזור זמן</string>
+    <string name="observer_terrain_note">גובה קרקע משוער; ניתן לשנות אותו.</string>
+    <string name="observer_lookup_failed">הזיהוי האוטומטי אינו זמין. הפעל גובה ואזור זמן כדי להזין אותם ידנית.</string>
+    <string name="observer_moment">תאריך ושעה</string>
+    <string name="observer_date">תאריך</string>
+    <string name="observer_time">שעה</string>
+    <string name="observer_limits">נתוני מסלול מסוימים אינם זמינים מחוץ לתקופת התוקף. הערכות מזג אוויר כשזמינות; אחרת, שמיים נקיים כברירת מחדל.</string>
+    <string name="observer_privacy">החיפוש משתמש בקידוד הגאוגרפי של Android. המפה משתמשת ב־OpenStreetMap; הקואורדינטות שנבחרו נשלחות ל־Open-Meteo לקביעת גובה ואזור זמן.</string>
+    <string name="observer_apply">הגדר</string>
+    <string name="observer_invalid">בדקו קואורדינטות, גובה, תאריך, שעה ואזור זמן. תאריכים: 1900–2100. שעות שאינן קיימות במעבר לשעון קיץ אינן תקפות.</string>
+    <string name="observer_use_place">שימוש בנקודה זו</string>
+    <string name="observer_simulation">תרחיש</string>
+    <string name="observer_coordinates_value">קואורדינטות: %1$s</string>
+    <string name="observer_altitude_value">גובה: %1$s</string>
+    <string name="observer_simulation_active">תרחיש פעיל</string>
+    <string name="observer_enable_position">הדמיית מיקום</string>
+    <string name="observer_enable_time">הדמיית תאריך ושעה</string>
+    <string name="observer_current_metadata">איתור גובה ואזור זמן מהמיקום הנוכחי</string>
+    <string name="observer_enable_altitude">הדמיית גובה</string>
+    <string name="observer_enable_zone">הדמיית אזור זמן</string>
+</resources>

@@ -1,6 +1,6 @@
 <resources>
     <string name="info_news_title">Neuigkeiten · %1$s</string>
-    <string name="info_news_units">Massen folgen der gewählten Einheit Kilogramm/Pfund; ab 10 Sonnenmassen wird M☉ verwendet.</string>
-    <string name="info_news_pressure">Einheitliche Einheiten und Zahlenformate in der gesamten App, einschließlich Schwerkraft und Referenzdruck.</string>
-    <string name="info_news_updates">Signierte GitHub-Updates, geprüft beim Start oder im Repository-Bereich.</string>
+    <string name="info_news_units">Gespeicherte Auswahl, Filter und Sortierung mit regionalen Einheiten und Formaten.</string>
+    <string name="info_news_pressure">Zwanzig Sprachen, helle/dunkle Designs und anpassbare Smartphone-/Tablet-Layouts.</string>
+    <string name="info_news_updates">Erste stabile Version: optimierte App und geprüfte, signierte GitHub-Updates.</string>
 </resources>

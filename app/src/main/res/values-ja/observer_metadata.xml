@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="observer_detect_selected">設定した位置から取得</string>
+    <string name="observer_detect_current">現在の位置から取得</string>
+    <string name="observer_zone_search">タイムゾーンを検索</string>
+    <string name="observer_zone_no_results">一致するタイムゾーンがありません。</string>
+    <string name="observer_metadata_failed">取得できません。再試行するか値を入力してください。</string>
+</resources>

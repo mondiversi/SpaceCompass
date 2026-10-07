@@ -1,0 +1,31 @@
+<resources>
+    <string name="observer_title">Scenariusz</string>
+    <string name="observer_place">Pozycja</string>
+    <string name="observer_search">Szukaj miejsca</string>
+    <string name="observer_search_action">Szukaj</string>
+    <string name="observer_map">Wybierz na mapie</string>
+    <string name="observer_latitude">Szerokość geograficzna</string>
+    <string name="observer_longitude">Długość geograficzna</string>
+    <string name="observer_automatic">Ustal wysokość i strefę czasową</string>
+    <string name="observer_altitude">Wysokość</string>
+    <string name="observer_zone">Strefa czasowa</string>
+    <string name="observer_terrain_note">Szacowana wysokość terenu; można ją zmienić.</string>
+    <string name="observer_lookup_failed">Automatyczne wyszukiwanie jest niedostępne. Włącz Wysokość i Strefę czasową, aby wpisać je ręcznie.</string>
+    <string name="observer_moment">Data i godzina</string>
+    <string name="observer_date">Data</string>
+    <string name="observer_time">Godzina</string>
+    <string name="observer_limits">Niektóre dane orbitalne są niedostępne poza okresem ważności. Szacowana pogoda, gdy jest dostępna; w przeciwnym razie domyślne bezchmurne niebo.</string>
+    <string name="observer_privacy">Wyszukiwanie korzysta z geokodera Android. Mapa korzysta z OpenStreetMap; wybrane współrzędne są wysyłane do Open-Meteo w celu ustalenia wysokości i strefy.</string>
+    <string name="observer_apply">Ustaw</string>
+    <string name="observer_invalid">Sprawdź współrzędne, wysokość, datę, godzinę i strefę. Daty: 1900–2100. Nieistniejące godziny przy zmianie czasu są nieprawidłowe.</string>
+    <string name="observer_use_place">Użyj tego punktu</string>
+    <string name="observer_simulation">Scenariusz</string>
+    <string name="observer_coordinates_value">Współrzędne: %1$s</string>
+    <string name="observer_altitude_value">Wysokość: %1$s</string>
+    <string name="observer_simulation_active">Aktywny scenariusz</string>
+    <string name="observer_enable_position">Symuluj pozycję</string>
+    <string name="observer_enable_time">Symuluj datę i godzinę</string>
+    <string name="observer_current_metadata">Ustal wysokość i strefę czasową dla bieżącej pozycji</string>
+    <string name="observer_enable_altitude">Symuluj wysokość</string>
+    <string name="observer_enable_zone">Symuluj strefę czasową</string>
+</resources>

@@ -253,7 +253,7 @@ internal fun SpaceCompassLaunchScreen() {
                     contentScale = ContentScale.Fit
                 )
                 Text(
-                    text = BuildConfig.VERSION_NAME,
+                    text = BuildConfig.DISPLAY_VERSION,
                     modifier = Modifier.align(Alignment.BottomCenter).padding(bottom = 14.dp),
                     color = Color.White,
                     fontSize = 12.sp,

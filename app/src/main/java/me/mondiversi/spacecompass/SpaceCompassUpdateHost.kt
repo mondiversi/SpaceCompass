@@ -13,7 +13,6 @@ import androidx.compose.runtime.Composable
 import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.LaunchedEffect
-import android.widget.Toast
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.platform.testTag
@@ -28,7 +27,7 @@ internal fun SpaceCompassUpdateHost() {
     val notice = state.notice?.let { stringResource(it) }
     LaunchedEffect(notice) {
         // Compose resources carry the app language while the Activity context stays intact.
-        notice?.let { Toast.makeText(context, it, Toast.LENGTH_LONG).show() }
+        notice?.let { showSpaceCompassBottomMessage(context, it, longDuration = true) }
     }
     val installer = rememberLauncherForActivityResult(ActivityResultContracts.StartActivityForResult()) {
         SpaceCompassUpdates.installerReturned(it.resultCode)
@@ -55,7 +54,7 @@ internal fun SpaceCompassUpdateHost() {
 internal fun SpaceCompassUpdateDialog(state: SpaceCompassUpdateState, onDismiss: () -> Unit, onUpdate: () -> Unit) {
     val release = state.release?.app ?: return
     if (!state.dialog) return
-    val text = MaterialTheme.colorScheme.onSurface
+    val text = spaceCompassDialogContentColor()
     SpaceCompassAlertDialog(
         onDismissRequest = { if (!state.busy) onDismiss() },
         modifier = Modifier.testTag("app-update-dialog"),
@@ -67,7 +66,7 @@ internal fun SpaceCompassUpdateDialog(state: SpaceCompassUpdateState, onDismiss:
         text = {
             Column(verticalArrangement = Arrangement.spacedBy(12.dp)) {
                 Text(stringResource(R.string.update_version, release.version))
-                Text("${BuildConfig.VERSION_NAME} → ${release.version}", style = MaterialTheme.typography.bodyMedium)
+                Text("${BuildConfig.DISPLAY_VERSION} → ${release.version}", style = MaterialTheme.typography.bodyMedium)
                 Text(stringResource(R.string.update_install_note), style = MaterialTheme.typography.bodySmall)
                 if (state.busy) {
                     Text(stringResource(R.string.update_download))

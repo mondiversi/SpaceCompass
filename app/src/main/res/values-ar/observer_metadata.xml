@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="observer_detect_selected">تحديد من الموقع المحدد</string>
+    <string name="observer_detect_current">تحديد من الموقع الحالي</string>
+    <string name="observer_zone_search">البحث عن منطقة زمنية</string>
+    <string name="observer_zone_no_results">لا توجد مناطق زمنية مطابقة.</string>
+    <string name="observer_metadata_failed">التحديد غير متاح. أعد المحاولة أو أدخل قيمة.</string>
+</resources>

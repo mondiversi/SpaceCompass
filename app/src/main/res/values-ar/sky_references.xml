@@ -1,0 +1,11 @@
+<resources>
+    <string name="sky_reference_equator">خط الاستواء السماوي</string>
+    <string name="sky_reference_cancer">مدار السرطان</string>
+    <string name="sky_reference_capricorn">مدار الجدي</string>
+    <string name="sky_reference_arctic">الدائرة القطبية الشمالية</string>
+    <string name="sky_reference_antarctic">الدائرة القطبية الجنوبية</string>
+    <string name="sky_reference_north_pole">القطب السماوي الشمالي</string>
+    <string name="sky_reference_south_pole">القطب السماوي الجنوبي</string>
+    <string name="sky_references_hide">إخفاء المراجع السماوية</string>
+    <string name="sky_references_show">إظهار المراجع السماوية</string>
+</resources>

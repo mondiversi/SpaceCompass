@@ -1,0 +1,11 @@
+<resources>
+    <string name="sky_reference_equator">קו המשווה השמימי</string>
+    <string name="sky_reference_cancer">חוג הסרטן</string>
+    <string name="sky_reference_capricorn">חוג הגדי</string>
+    <string name="sky_reference_arctic">חוג הקוטב הצפוני</string>
+    <string name="sky_reference_antarctic">חוג הקוטב הדרומי</string>
+    <string name="sky_reference_north_pole">הקוטב השמימי הצפוני</string>
+    <string name="sky_reference_south_pole">הקוטב השמימי הדרומי</string>
+    <string name="sky_references_hide">הסתר קווי עזר שמימיים</string>
+    <string name="sky_references_show">הצג קווי עזר שמימיים</string>
+</resources>

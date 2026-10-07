@@ -1,7 +1,10 @@
 <?xml version='1.0' encoding='utf-8'?>
 <resources>
-  <string name="celestial_satellite_unavailable">%1$s verileri kullanılamıyor. İnternet bağlantısı etkin olsa bile CelesTrak erişilemez olabilir.</string>
-  <string name="celestial_satellite_timeout">CelesTrak zamanında yanıt vermedi: %1$s verileri indirilemedi. Başka bir ağ deneyin.</string>
+  <string name="celestial_satellite_unavailable">%1$s verileri kullanılamıyor. İnternet bağlantısı etkin olsa bile CelesTrak / Satcat erişilemez olabilir.</string>
+  <string name="celestial_satellite_timeout">CelesTrak / Satcat zamanında yanıt vermedi: %1$s verileri indirilemedi. Başka bir ağ deneyin.</string>
   <string name="celestial_starlink_unavailable">%1$s verileri kullanılamıyor. İnternet bağlantısı etkin olsa bile CelesTrak / Satcat erişilemez olabilir.</string>
   <string name="celestial_starlink_timeout">CelesTrak / Satcat zamanında yanıt vermedi: %1$s verileri indirilemedi. Başka bir ağ deneyin.</string>
+  <string name="celestial_data_unavailable_compact">Veriler kullanılamıyor</string>
+  <string name="celestial_date_unavailable">Bu tarih için veri mevcut değil</string>
+  <string name="catalog_date_unavailable">Tarih kapsam dışında</string>
 </resources>

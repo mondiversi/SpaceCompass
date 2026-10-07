@@ -47,7 +47,7 @@ internal fun spaceCompassSunWeatherTile(latitude: Double, longitude: Double): Sp
 }
 
 internal data class SpaceCompassSunWeatherSnapshot(
-    val kind: SpaceCompassSunWeatherKind, val cloudCover: Float, val modelTimeMs: Long
+    val kind: SpaceCompassSunWeatherKind, val cloudCover: Float, val modelTimeMs: Long, val hourly: Boolean = false
 )
 
 /** The visual must agree with the displayed WMO condition, even if model fields disagree. */

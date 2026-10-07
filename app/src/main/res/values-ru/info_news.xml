@@ -1,6 +1,6 @@
 <resources>
     <string name="info_news_title">Последние новости · %1$s</string>
-    <string name="info_news_units">Массы отображаются в выбранных килограммах/фунтах; начиная с 10 масс Солнца используется M☉.</string>
-    <string name="info_news_pressure">Единые единицы измерения и форматы чисел во всём приложении, включая гравитацию и опорные давления.</string>
-    <string name="info_news_updates">Подписанные обновления с GitHub: проверка при запуске или в разделе репозитория.</string>
+    <string name="info_news_units">Сохранённые выбор, фильтры и сортировка, региональные единицы и форматы.</string>
+    <string name="info_news_pressure">Двадцать языков, светлая/тёмная темы и адаптивная компоновка для телефонов и планшетов.</string>
+    <string name="info_news_updates">Первый стабильный выпуск: оптимизированное приложение и проверенные подписанные обновления с GitHub.</string>
 </resources>

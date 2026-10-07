@@ -2,16 +2,25 @@
 <resources>
     <string name="panorama_capture">Capture</string>
     <string name="panorama_saving">Saving panorama…</string>
-    <string name="panorama_saved">Panorama saved in the SpaceCompass gallery album.</string>
+    <string name="panorama_saved">Image saved to gallery.</string>
     <string name="panorama_error">Could not save the panorama. Please try again.</string>
     <string name="panorama_permission">Allow storage access to save the panorama.</string>
     <string name="panorama_not_ready">A GPS position and at least one selected object are needed.</string>
     <string name="panorama_data_unavailable">Data unavailable</string>
     <string name="panorama_path_unavailable">Orbit unavailable</string>
-    <string name="info_news_panorama">Capture now saves a full 360° panorama of selected objects and their orbits to the gallery.</string>
-    <string name="info_news_orbit_names">Object names follow the orbit curves near direction arrows.</string>
+    <string name="info_news_panorama">Camera overlays and 360° panoramas with optional guides and labels; export to the gallery, a file or sharing.</string>
+    <string name="info_news_orbit_names">Live compass, daily paths and textured views for 30 celestial objects.</string>
     <string name="panorama_north">North</string>
     <string name="panorama_east">East</string>
     <string name="panorama_south">South</string>
     <string name="panorama_west">West</string>
+    <string name="panorama_position">Position in capture</string>
+    <string name="panorama_position_description">Choose the location details shown when saving or sharing. Time and orbits can still suggest an approximate area.</string>
+    <string name="panorama_position_complete">Complete</string>
+    <string name="panorama_position_complete_detail">Place, coordinates, altitude and accuracy</string>
+    <string name="panorama_position_area">Area only</string>
+    <string name="panorama_position_area_detail">Region and country</string>
+    <string name="panorama_position_hidden">Hidden</string>
+    <string name="panorama_position_hidden_detail">No location details</string>
+    <string name="panorama_point_labels">Labels</string>
 </resources>

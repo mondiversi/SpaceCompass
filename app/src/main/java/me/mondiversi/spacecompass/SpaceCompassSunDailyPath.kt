@@ -120,20 +120,23 @@ internal fun adjacentSpaceCompassSunPathPoint(markers: List<SpaceCompassSunPathP
 /** Clip in camera space BEFORE perspective division; no false chords across the back of the phone. */
 internal fun projectSpaceCompassSunPathSegment(
     a: SpaceCompassSunVector, b: SpaceCompassSunVector, orientation: SpaceCompassSunOrientation,
-    width: Double, height: Double, belowHorizon: Boolean
+    width: Double, height: Double, belowHorizon: Boolean, perspective: SpaceCompassPerspective? = null
 ): SpaceCompassSunPathSegment? {
     if (width <= 0 || height <= 0 || !width.isFinite() || !height.isFinite()) return null
-    val focal = spaceCompassSunProjectionFocalLength(height)
+    val focal = perspective?.focalY(height) ?: spaceCompassSunProjectionFocalLength(height)
+    val focalX = perspective?.focalX(width) ?: focal
+    val centerX = (perspective?.principalX ?: .5) * width
+    val centerY = (perspective?.principalY ?: .5) * height
     fun camera(v: SpaceCompassSunVector) = doubleArrayOf(v.dot(orientation.right),
         -v.dot(orientation.screenUp), v.dot(orientation.forward))
     val from = camera(a); val to = camera(b)
     var lo = 0.0; var hi = 1.0
     val planes = listOf(
         doubleArrayOf(0.0, 0.0, 1.0, -1e-5),
-        doubleArrayOf(focal, 0.0, width / 2, 0.0),
-        doubleArrayOf(-focal, 0.0, width / 2, 0.0),
-        doubleArrayOf(0.0, focal, height / 2, 0.0),
-        doubleArrayOf(0.0, -focal, height / 2, 0.0)
+        doubleArrayOf(focalX, 0.0, centerX, 0.0),
+        doubleArrayOf(-focalX, 0.0, width - centerX, 0.0),
+        doubleArrayOf(0.0, focal, centerY, 0.0),
+        doubleArrayOf(0.0, -focal, height - centerY, 0.0)
     )
     for (p in planes) {
         fun side(v: DoubleArray) = p[0] * v[0] + p[1] * v[1] + p[2] * v[2] + p[3]
@@ -147,14 +150,15 @@ internal fun projectSpaceCompassSunPathSegment(
     }
     fun screen(t: Double): SpaceCompassSunScenePoint {
         val v = DoubleArray(3) { from[it] + (to[it] - from[it]) * t }
-        return SpaceCompassSunScenePoint((width / 2 + focal * v[0] / v[2]).coerceIn(0.0, width),
-            (height / 2 + focal * v[1] / v[2]).coerceIn(0.0, height))
+        return SpaceCompassSunScenePoint((centerX + focalX * v[0] / v[2]).coerceIn(0.0, width),
+            (centerY + focal * v[1] / v[2]).coerceIn(0.0, height))
     }
     return SpaceCompassSunPathSegment(screen(lo), screen(hi), belowHorizon)
 }
 
 internal fun projectSpaceCompassSunDailyPath(
-    path: SpaceCompassSunDailyPath, orientation: SpaceCompassSunOrientation, width: Double, height: Double
+    path: SpaceCompassSunDailyPath, orientation: SpaceCompassSunOrientation, width: Double, height: Double,
+    perspective: SpaceCompassPerspective? = null
 ): List<SpaceCompassSunPathSegment> = buildList {
     path.samples.zipWithNext().forEach { (a, b) ->
         // Split at the real horizontal horizon so solid/dashed strokes switch exactly there.
@@ -163,10 +167,10 @@ internal fun projectSpaceCompassSunDailyPath(
             val crossing = SpaceCompassSunVector(a.direction.east + (b.direction.east - a.direction.east) * t,
                 a.direction.north + (b.direction.north - a.direction.north) * t, 0.0).normalized()
             projectSpaceCompassSunPathSegment(a.direction, crossing, orientation, width, height,
-                a.direction.up < 0)?.let { add(it) }
+                a.direction.up < 0, perspective)?.let { add(it) }
             projectSpaceCompassSunPathSegment(crossing, b.direction, orientation, width, height,
-                b.direction.up < 0)?.let { add(it) }
+                b.direction.up < 0, perspective)?.let { add(it) }
         } else projectSpaceCompassSunPathSegment(a.direction, b.direction, orientation, width, height,
-            a.direction.up < 0)?.let { add(it) }
+            a.direction.up < 0, perspective)?.let { add(it) }
     }
 }

@@ -1,7 +1,10 @@
 <?xml version='1.0' encoding='utf-8'?>
 <resources>
-  <string name="celestial_satellite_unavailable">Les données de %1$s sont indisponibles. CelesTrak peut être inaccessible même avec une connexion Internet active.</string>
-  <string name="celestial_satellite_timeout">CelesTrak n’a pas répondu à temps : impossible de télécharger les données de %1$s. Essayez un autre réseau.</string>
+  <string name="celestial_satellite_unavailable">Les données de %1$s sont indisponibles. CelesTrak / Satcat peut être inaccessible même avec une connexion Internet active.</string>
+  <string name="celestial_satellite_timeout">CelesTrak / Satcat n’a pas répondu à temps : impossible de télécharger les données de %1$s. Essayez un autre réseau.</string>
   <string name="celestial_starlink_unavailable">Les données de %1$s sont indisponibles. CelesTrak / Satcat peut être inaccessible même avec une connexion Internet active.</string>
   <string name="celestial_starlink_timeout">CelesTrak / Satcat n’a pas répondu à temps : impossible de télécharger les données de %1$s. Essayez un autre réseau.</string>
+  <string name="celestial_data_unavailable_compact">Données indisponibles</string>
+  <string name="celestial_date_unavailable">Données indisponibles pour cette date</string>
+  <string name="catalog_date_unavailable">Date non couverte</string>
 </resources>

@@ -2,16 +2,25 @@
 <resources>
     <string name="panorama_capture">Çek</string>
     <string name="panorama_saving">Panorama kaydediliyor…</string>
-    <string name="panorama_saved">Panorama galerideki SpaceCompass albümüne kaydedildi.</string>
+    <string name="panorama_saved">Görüntü galeriye kaydedildi.</string>
     <string name="panorama_error">Panorama kaydedilemedi. Lütfen tekrar deneyin.</string>
     <string name="panorama_permission">Panoramayı kaydetmek için depolama erişimine izin verin.</string>
     <string name="panorama_not_ready">Bir GPS konumu ve en az bir seçili nesne gereklidir.</string>
     <string name="panorama_data_unavailable">Veri kullanılamıyor</string>
     <string name="panorama_path_unavailable">Yörünge kullanılamıyor</string>
-    <string name="info_news_panorama">Çek, seçili nesnelerin ve yörüngelerinin tam 360° panoramasını galeriye kaydeder.</string>
-    <string name="info_news_orbit_names">Nesne adları yön oklarının yanında yörünge eğrilerini izler.</string>
+    <string name="info_news_panorama">İsteğe bağlı kılavuz ve etiketlerle kamera katmanları ve 360° panoramalar; galeriye, dosyaya aktarma veya paylaşma.</string>
+    <string name="info_news_orbit_names">30 gök cismi için canlı pusula, günlük yollar ve dokulu görünümler.</string>
     <string name="panorama_north">Kuzey</string>
     <string name="panorama_east">Doğu</string>
     <string name="panorama_south">Güney</string>
     <string name="panorama_west">Batı</string>
+    <string name="panorama_position">Görüntüdeki konum</string>
+    <string name="panorama_position_description">Kaydedilen veya paylaşılan görüntüde gösterilecek konum bilgilerini seçin. Saat ve yörüngeler yine de yaklaşık bir bölgeyi gösterebilir.</string>
+    <string name="panorama_position_complete">Tam</string>
+    <string name="panorama_position_complete_detail">Yer, koordinatlar, rakım ve doğruluk</string>
+    <string name="panorama_position_area">Yalnızca bölge</string>
+    <string name="panorama_position_area_detail">Bölge ve ülke</string>
+    <string name="panorama_position_hidden">Gizli</string>
+    <string name="panorama_position_hidden_detail">Konum bilgisi yok</string>
+    <string name="panorama_point_labels">Etiketler</string>
 </resources>

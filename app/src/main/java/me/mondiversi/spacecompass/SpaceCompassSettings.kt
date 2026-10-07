@@ -45,6 +45,15 @@ internal fun SpaceCompassPreferences(content: @Composable () -> Unit) {
         }
     }
     val resources = remember(configuration) { context.createConfigurationContext(configuration).resources }
+    val lastAnnouncedSettings = remember(preferences) { mutableStateOf(settings) }
+    // Announce actual stored changes after applying the new app locale; initial load,
+    // system theme/locale changes and unrelated preference writes stay silent.
+    LaunchedEffect(settings) {
+        if (lastAnnouncedSettings.value != settings) {
+            lastAnnouncedSettings.value = settings
+            showSpaceCompassBottomMessage(context, resources.getString(R.string.settings_saved))
+        }
+    }
     // Resolve regional defaults before applying the app language override.
     val region = system.locales[0].country.uppercase(Locale.ROOT)
     val units = remember(region, settings) { spaceCompassResolveUnits(region, settings::get) }

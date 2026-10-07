@@ -1,0 +1,31 @@
+<resources>
+    <string name="observer_title">シナリオ</string>
+    <string name="observer_place">位置</string>
+    <string name="observer_search">場所を検索</string>
+    <string name="observer_search_action">検索</string>
+    <string name="observer_map">地図で選択</string>
+    <string name="observer_latitude">緯度</string>
+    <string name="observer_longitude">経度</string>
+    <string name="observer_automatic">標高とタイムゾーンを取得</string>
+    <string name="observer_altitude">標高</string>
+    <string name="observer_zone">タイムゾーン</string>
+    <string name="observer_terrain_note">地形の推定標高です。編集できます。</string>
+    <string name="observer_lookup_failed">自動取得できません。高度とタイムゾーンを有効にして手動で入力してください。</string>
+    <string name="observer_moment">日付と時刻</string>
+    <string name="observer_date">日付</string>
+    <string name="observer_time">時刻</string>
+    <string name="observer_limits">一部の軌道データは有効期間外では利用できません。気象推定が利用できる場合は反映し、なければ標準の晴れた空を表示します。</string>
+    <string name="observer_privacy">検索にはAndroidのジオコーダーを使用します。地図はOpenStreetMapを使用し、標高とタイムゾーンの取得時に選択した座標をOpen-Meteoへ送信します。</string>
+    <string name="observer_apply">設定</string>
+    <string name="observer_invalid">座標、標高、日付、時刻、タイムゾーンを確認してください。日付範囲は1900～2100年です。夏時間の切替で存在しない時刻は使用できません。</string>
+    <string name="observer_use_place">この地点を使用</string>
+    <string name="observer_simulation">シナリオ</string>
+    <string name="observer_coordinates_value">座標：%1$s</string>
+    <string name="observer_altitude_value">標高：%1$s</string>
+    <string name="observer_simulation_active">シナリオ有効</string>
+    <string name="observer_enable_position">位置をシミュレート</string>
+    <string name="observer_enable_time">日付と時刻をシミュレート</string>
+    <string name="observer_current_metadata">現在地の標高とタイムゾーンを取得</string>
+    <string name="observer_enable_altitude">高度をシミュレート</string>
+    <string name="observer_enable_zone">タイムゾーンをシミュレート</string>
+</resources>

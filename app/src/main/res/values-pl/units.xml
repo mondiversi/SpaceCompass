@@ -6,4 +6,7 @@
     <string name="units_kilograms">Kilogramy</string>
     <string name="units_pounds">Funty</string>
     <string name="units_mass_description">Wybierz jednostki masy i gęstości.</string>
+    <string name="units_celsius">Celsjusz</string>
+    <string name="units_fahrenheit">Fahrenheit</string>
+    <string name="settings_resource_language_tag">pl</string>
 </resources>

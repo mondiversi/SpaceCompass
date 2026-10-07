@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="panorama_preview" formatted="false">パノラマ</string>
+    <string name="panorama_preparing" formatted="false">パノラマを準備中…</string>
+    <string name="panorama_save" formatted="false">保存</string>
+    <string name="panorama_share" formatted="false">共有</string>
+    <string name="panorama_gallery" formatted="false">画像ギャラリー</string>
+    <string name="panorama_choose_location" formatted="false">保存先を選択…</string>
+    <string name="panorama_exported" formatted="false">パノラマを書き出しました。</string>
+    <string name="panorama_cloud_cover" formatted="false">雲量</string>
+    <string name="panorama_weather_time" formatted="false">気象モデルの時刻</string>
+    <string name="panorama_northeast" formatted="false">北東</string>
+    <string name="panorama_southeast" formatted="false">南東</string>
+    <string name="panorama_southwest" formatted="false">南西</string>
+    <string name="panorama_northwest" formatted="false">北西</string>
+</resources>

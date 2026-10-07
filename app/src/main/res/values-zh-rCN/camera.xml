@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="camera_enable">启用相机视图</string>
+    <string name="camera_disable">关闭相机视图</string>
+    <string name="camera_permission">请允许访问相机以使用实时视图。</string>
+    <string name="camera_unavailable">相机不可用，请重试。</string>
+    <string name="camera_view_description">显示天体位置的实时相机视图</string>
+</resources>

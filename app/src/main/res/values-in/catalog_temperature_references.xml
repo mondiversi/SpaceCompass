@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="catalog_temperature_mean" formatted="false">Rata-rata permukaan</string>
+    <string name="catalog_temperature_range" formatted="false">Rentang permukaan</string>
+    <string name="catalog_temperature_atmosphere">Atmosfer (%1$s)</string>
+    <string name="catalog_temperature_photosphere" formatted="false">Fotosfer</string>
+    <string name="catalog_temperature_effective" formatted="false">Efektif</string>
+    <string name="catalog_temperature_estimate" formatted="false">Perkiraan permukaan</string>
+    <string name="catalog_temperature_equilibrium" formatted="false">Model kesetimbangan</string>
+    <string name="catalog_temperature_historical" formatted="false">Rentang historis</string>
+    <string name="catalog_temperature_thermal" formatted="false">Model termal</string>
+</resources>

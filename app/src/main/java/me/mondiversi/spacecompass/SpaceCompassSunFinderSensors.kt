@@ -28,7 +28,8 @@ internal data class SpaceCompassSunFinderReadings(
     val orientation: SpaceCompassSunOrientation? = null,
     val compassAvailable: Boolean = true,
     val compassReliable: Boolean = false,
-    val compassUsable: Boolean = compassReliable
+    val compassUsable: Boolean = compassReliable,
+    val cameraAttitude: SpaceCompassCameraAttitude? = null
 )
 
 internal const val SPACE_COMPASS_SUN_LOCATION_MAX_AGE_MS = 15 * 60_000L
@@ -144,7 +145,7 @@ internal fun rememberSpaceCompassSunFinderReadings(permissionGranted: Boolean, p
                     !SensorManager.getRotationMatrix(matrix, null, g, m)) {
                     recovery.reset()
                     smoothed = null
-                    readings = readings.copy(orientation = null, compassReliable = false, compassUsable = false)
+                    readings = readings.copy(orientation = null, compassReliable = false, compassUsable = false, cameraAttitude = null)
                     return
                 }
                 val displayRotation = view.display?.rotation ?: Surface.ROTATION_0
@@ -167,7 +168,9 @@ internal fun rememberSpaceCompassSunFinderReadings(permissionGranted: Boolean, p
                 // Recalibration must not blend a previously invalid bearing into a valid one.
                 smoothed = if (usable) smoothSpaceCompassSunOrientation(smoothed, current) else null
                 val reliable = usable && spaceCompassSunMagneticReferenceReliable(magneticAccuracy, fieldMicrotesla, expectedFieldMicrotesla)
-                readings = readings.copy(orientation = smoothed ?: current, compassReliable = reliable, compassUsable = usable)
+                readings = readings.copy(orientation = smoothed ?: current, compassReliable = reliable, compassUsable = usable,
+                    cameraAttitude = spaceCompassSunOrientationFromScreenMatrix(matrix, declination)?.let {
+                        SpaceCompassCameraAttitude(event.timestamp, it, usable) })
             }
         }
         fun stop() {
@@ -183,7 +186,7 @@ internal fun rememberSpaceCompassSunFinderReadings(permissionGranted: Boolean, p
             magneticAccuracy = SensorManager.SENSOR_STATUS_UNRELIABLE
             recovery.reset()
             lastEventTime = 0L
-            readings = readings.copy(orientation = null, compassReliable = false, compassUsable = false)
+            readings = readings.copy(orientation = null, compassReliable = false, compassUsable = false, cameraAttitude = null)
         }
         fun start() {
             if (started) return

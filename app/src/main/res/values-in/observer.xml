@@ -1,0 +1,31 @@
+<resources>
+    <string name="observer_title">Skenario</string>
+    <string name="observer_place">Posisi</string>
+    <string name="observer_search">Cari tempat</string>
+    <string name="observer_search_action">Cari</string>
+    <string name="observer_map">Pilih di peta</string>
+    <string name="observer_latitude">Lintang</string>
+    <string name="observer_longitude">Bujur</string>
+    <string name="observer_automatic">Cari ketinggian dan zona waktu</string>
+    <string name="observer_altitude">Ketinggian</string>
+    <string name="observer_zone">Zona waktu</string>
+    <string name="observer_terrain_note">Perkiraan ketinggian medan; dapat diedit.</string>
+    <string name="observer_lookup_failed">Pencarian otomatis tidak tersedia. Aktifkan Ketinggian dan Zona waktu untuk mengisinya secara manual.</string>
+    <string name="observer_moment">Tanggal dan waktu</string>
+    <string name="observer_date">Tanggal</string>
+    <string name="observer_time">Waktu</string>
+    <string name="observer_limits">Sebagian data orbit tidak tersedia di luar tanggal validnya. Estimasi cuaca jika tersedia; jika tidak, langit dasar yang cerah.</string>
+    <string name="observer_privacy">Pencarian menggunakan geocoder Android. Peta menggunakan OpenStreetMap; koordinat pilihan dikirim ke Open-Meteo untuk ketinggian dan zona waktu.</string>
+    <string name="observer_apply">Tetapkan</string>
+    <string name="observer_invalid">Periksa koordinat, ketinggian, tanggal, waktu dan zona waktu. Tanggal: 1900–2100. Waktu yang tidak ada saat perubahan waktu musim panas tidak valid.</string>
+    <string name="observer_use_place">Gunakan titik ini</string>
+    <string name="observer_simulation">Skenario</string>
+    <string name="observer_coordinates_value">Koordinat: %1$s</string>
+    <string name="observer_altitude_value">Ketinggian: %1$s</string>
+    <string name="observer_simulation_active">Skenario aktif</string>
+    <string name="observer_enable_position">Simulasikan posisi</string>
+    <string name="observer_enable_time">Simulasikan tanggal dan waktu</string>
+    <string name="observer_current_metadata">Cari ketinggian dan zona waktu di lokasi saat ini</string>
+    <string name="observer_enable_altitude">Simulasikan ketinggian</string>
+    <string name="observer_enable_zone">Simulasikan zona waktu</string>
+</resources>

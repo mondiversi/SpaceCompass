@@ -18,3 +18,5 @@
   restricted to the exact JPL host and must not become a global trust override.
 - No GitHub remote, publication, store release or production signing is authorized
   merely by routine local development.
+- Upload code or releases to GitHub only when the user explicitly requests that
+  publication. Keep routine fixes, builds and device installations local.

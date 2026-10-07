@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="celestial_temperature_surface_estimate" formatted="false">Température de surface estimée</string>
+    <string name="celestial_temperature_equilibrium_model" formatted="false">Température d’équilibre (modèle)</string>
+    <string name="celestial_temperature_historical_range" formatted="false">Plage de surface (historique)</string>
+    <string name="celestial_temperature_thermal_model" formatted="false">Émission thermique (modèle)</string>
+    <string name="celestial_temperature_reference_note" formatted="false">Les estimations dépendent des hypothèses du modèle. Les plages datées décrivent des observations passées, pas les températures actuelles. Les températures des étoiles compactes proviennent de modèles spectraux, pas de mesures de jour et de nuit.</string>
+    <string name="celestial_stephenson_reference_note" formatted="false">Le modèle adopte la température effective. La luminosité et le diamètre déduit supposent la distance de l’amas ; l’appartenance à l’amas est incertaine. La masse actuelle est inconnue.</string>
+</resources>

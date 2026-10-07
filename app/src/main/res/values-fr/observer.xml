@@ -1,0 +1,31 @@
+<resources>
+    <string name="observer_title">Scénario</string>
+    <string name="observer_place">Position</string>
+    <string name="observer_search">Rechercher un lieu</string>
+    <string name="observer_search_action">Rechercher</string>
+    <string name="observer_map">Choisir sur la carte</string>
+    <string name="observer_latitude">Latitude</string>
+    <string name="observer_longitude">Longitude</string>
+    <string name="observer_automatic">Déterminer altitude et fuseau</string>
+    <string name="observer_altitude">Altitude</string>
+    <string name="observer_zone">Fuseau horaire</string>
+    <string name="observer_terrain_note">Altitude estimée du terrain ; vous pouvez la modifier.</string>
+    <string name="observer_lookup_failed">Recherche automatique indisponible. Activez Altitude et Fuseau horaire pour les saisir manuellement.</string>
+    <string name="observer_moment">Date et heure</string>
+    <string name="observer_date">Date</string>
+    <string name="observer_time">Heure</string>
+    <string name="observer_limits">Certaines données orbitales sont indisponibles hors de leur période de validité. Estimations météo si disponibles ; sinon, ciel dégagé par défaut.</string>
+    <string name="observer_privacy">La recherche utilise le géocodeur Android. La carte utilise OpenStreetMap ; les coordonnées choisies sont envoyées à Open-Meteo pour l’altitude et le fuseau.</string>
+    <string name="observer_apply">Définir</string>
+    <string name="observer_invalid">Vérifiez coordonnées, altitude, date, heure et fuseau. Dates : 1900–2100. Les heures inexistantes lors du changement d’heure sont invalides.</string>
+    <string name="observer_use_place">Utiliser ce point</string>
+    <string name="observer_simulation">Scénario</string>
+    <string name="observer_coordinates_value">Coordonnées : %1$s</string>
+    <string name="observer_altitude_value">Altitude : %1$s</string>
+    <string name="observer_simulation_active">Scénario actif</string>
+    <string name="observer_enable_position">Simuler la position</string>
+    <string name="observer_enable_time">Simuler la date et l’heure</string>
+    <string name="observer_current_metadata">Déterminer altitude et fuseau depuis la position actuelle</string>
+    <string name="observer_enable_altitude">Simuler une altitude</string>
+    <string name="observer_enable_zone">Simuler un fuseau horaire</string>
+</resources>

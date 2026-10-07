@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="celestial_temperature_surface_estimate" formatted="false">Geschatte oppervlaktetemperatuur</string>
+    <string name="celestial_temperature_equilibrium_model" formatted="false">Evenwichtstemperatuur (model)</string>
+    <string name="celestial_temperature_historical_range" formatted="false">Oppervlaktebereik (historisch)</string>
+    <string name="celestial_temperature_thermal_model" formatted="false">Thermische emissie (model)</string>
+    <string name="celestial_temperature_reference_note" formatted="false">Schattingen hangen af van modelaannames. Bereiken met een jaartal beschrijven eerdere waarnemingen, geen huidige temperaturen. Temperaturen van compacte sterren komen uit spectrale modellen, niet uit dag- en nachtmetingen.</string>
+    <string name="celestial_stephenson_reference_note" formatted="false">Het model neemt de effectieve temperatuur aan. Lichtkracht en afgeleide diameter veronderstellen de afstand van de sterrenhoop; het lidmaatschap is onzeker. De huidige massa is onbekend.</string>
+</resources>

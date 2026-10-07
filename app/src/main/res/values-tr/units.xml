@@ -6,4 +6,7 @@
     <string name="units_kilograms">Kilogram</string>
     <string name="units_pounds">Libre</string>
     <string name="units_mass_description">Kütle ve yoğunluk birimlerini seçin.</string>
+    <string name="units_celsius">Santigrat</string>
+    <string name="units_fahrenheit">Fahrenhayt</string>
+    <string name="settings_resource_language_tag">tr</string>
 </resources>

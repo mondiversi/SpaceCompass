@@ -1,0 +1,11 @@
+<resources>
+    <string name="sky_reference_equator">Gök ekvatoru</string>
+    <string name="sky_reference_cancer">Yengeç Dönencesi</string>
+    <string name="sky_reference_capricorn">Oğlak Dönencesi</string>
+    <string name="sky_reference_arctic">Kuzey Kutup Dairesi</string>
+    <string name="sky_reference_antarctic">Güney Kutup Dairesi</string>
+    <string name="sky_reference_north_pole">Kuzey gök kutbu</string>
+    <string name="sky_reference_south_pole">Güney gök kutbu</string>
+    <string name="sky_references_hide">Gökyüzü referanslarını gizle</string>
+    <string name="sky_references_show">Gökyüzü referanslarını göster</string>
+</resources>

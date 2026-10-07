@@ -1,6 +1,6 @@
 <resources>
     <string name="info_news_title">Perubahan terbaru · %1$s</string>
-    <string name="info_news_units">Massa mengikuti kilogram/pon yang dipilih; mulai 10 massa Matahari digunakan M☉.</string>
-    <string name="info_news_pressure">Satuan dan format angka yang konsisten di seluruh aplikasi, termasuk gravitasi dan tekanan acuan.</string>
-    <string name="info_news_updates">Pembaruan bertanda tangan dari GitHub, diperiksa saat mulai atau dari bagian repositori.</string>
+    <string name="info_news_units">Pilihan, filter dan urutan tersimpan, dengan satuan dan format regional.</string>
+    <string name="info_news_pressure">Dua puluh bahasa, tema terang/gelap dan tata letak adaptif untuk ponsel/tablet.</string>
+    <string name="info_news_updates">Rilis stabil pertama: aplikasi dioptimalkan dan pembaruan GitHub bertanda tangan yang terverifikasi.</string>
 </resources>

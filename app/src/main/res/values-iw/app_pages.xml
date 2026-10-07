@@ -12,4 +12,5 @@
     <string name="language_description">בחר את שפת הממשק.</string>
     <string name="github_repository_title">מאגר GitHub</string>
     <string name="about_copyright">זכויות יוצרים © 2026 Mondiversi</string>
+    <string name="settings_section_info">מידע</string>
 </resources>

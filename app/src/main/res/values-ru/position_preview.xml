@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="panorama_preview" formatted="false">Панорама</string>
+    <string name="panorama_preparing" formatted="false">Подготовка панорамы…</string>
+    <string name="panorama_save" formatted="false">Сохранить</string>
+    <string name="panorama_share" formatted="false">Поделиться</string>
+    <string name="panorama_gallery" formatted="false">Галерея изображений</string>
+    <string name="panorama_choose_location" formatted="false">Выбрать расположение…</string>
+    <string name="panorama_exported" formatted="false">Панорама экспортирована.</string>
+    <string name="panorama_cloud_cover" formatted="false">Облачность</string>
+    <string name="panorama_weather_time" formatted="false">Время модели погоды</string>
+    <string name="panorama_northeast" formatted="false">Северо-восток</string>
+    <string name="panorama_southeast" formatted="false">Юго-восток</string>
+    <string name="panorama_southwest" formatted="false">Юго-запад</string>
+    <string name="panorama_northwest" formatted="false">Северо-запад</string>
+</resources>

@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="settings_saved">Pengaturan disimpan.</string>
+    <string name="observer_not_saved">Perubahan belum lengkap: pengaturan valid terakhir dipertahankan.</string>
+</resources>

@@ -24,21 +24,18 @@ internal fun SpaceCompassRepositoryActions() {
     Text("github.com/mondiversi/SpaceCompass", fontSize = 12.sp, color = text.copy(alpha = .65f))
     CompositionLocalProvider(LocalSpaceCompassSettingsActionButtons provides true) {
         Column(Modifier.fillMaxWidth(), verticalArrangement = Arrangement.spacedBy(8.dp)) {
-            OutlinedButton(onClick = { uri.openUri(SpaceCompassUpdatePolicy.REPOSITORY_URL) },
-                modifier = Modifier.fillMaxWidth().testTag("open-github-repository"),
-                colors = spaceCompassOutlinedActionColors(text), border = spaceCompassOutlinedActionBorder(true, text)) {
+            SpaceCompassSettingsActionButton(stringResource(R.string.open_github_repository),
+                onClick = { uri.openUri(SpaceCompassUpdatePolicy.REPOSITORY_URL) }, primary = false,
+                modifier = Modifier.testTag("open-github-repository")) {
                 Icon(painterResource(R.drawable.ic_repository), null, Modifier.size(20.dp))
-                Spacer(Modifier.width(8.dp))
-                Text(stringResource(R.string.open_github_repository))
             }
             val enabled = !state.checking && !state.busy
-            OutlinedButton(onClick = { SpaceCompassUpdates.check(context, manual = true) }, enabled = enabled,
-                modifier = Modifier.fillMaxWidth().testTag("check-app-updates"),
-                colors = spaceCompassPrimaryOutlinedButtonColors(), border = spaceCompassPrimaryOutlinedButtonBorder(enabled, text)) {
+            SpaceCompassSettingsActionButton(
+                stringResource(if (state.checking) R.string.update_checking else R.string.check_for_updates),
+                onClick = { SpaceCompassUpdates.check(context, manual = true) }, enabled = enabled,
+                modifier = Modifier.testTag("check-app-updates")) {
                 if (state.checking) CircularProgressIndicator(Modifier.size(20.dp), strokeWidth = 2.dp)
                 else Icon(painterResource(R.drawable.ic_update), null, Modifier.size(20.dp))
-                Spacer(Modifier.width(8.dp))
-                Text(stringResource(if (state.checking) R.string.update_checking else R.string.check_for_updates))
             }
         }
     }

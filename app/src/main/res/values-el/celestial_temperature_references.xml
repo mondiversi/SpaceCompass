@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="celestial_temperature_surface_estimate" formatted="false">Εκτίμηση θερμοκρασίας επιφάνειας</string>
+    <string name="celestial_temperature_equilibrium_model" formatted="false">Θερμοκρασία ισορροπίας (μοντέλο)</string>
+    <string name="celestial_temperature_historical_range" formatted="false">Εύρος επιφάνειας (ιστορικό)</string>
+    <string name="celestial_temperature_thermal_model" formatted="false">Θερμική εκπομπή (μοντέλο)</string>
+    <string name="celestial_temperature_reference_note" formatted="false">Οι εκτιμήσεις εξαρτώνται από τις παραδοχές του μοντέλου. Τα εύρη με έτος περιγράφουν παλαιές παρατηρήσεις, όχι τρέχουσες θερμοκρασίες. Οι θερμοκρασίες συμπαγών αστέρων προκύπτουν από φασματικά μοντέλα, όχι από μετρήσεις ημέρας και νύχτας.</string>
+    <string name="celestial_stephenson_reference_note" formatted="false">Η ενεργός θερμοκρασία υιοθετείται στο μοντέλο. Η λαμπρότητα και η υπολογισμένη διάμετρος προϋποθέτουν την απόσταση του σμήνους· η συμμετοχή στο σμήνος είναι αβέβαιη. Η σημερινή μάζα είναι άγνωστη.</string>
+</resources>

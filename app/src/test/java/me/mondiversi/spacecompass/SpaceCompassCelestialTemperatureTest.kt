@@ -6,12 +6,13 @@ import org.junit.Assert.*
 import org.junit.Test
 
 class SpaceCompassCelestialTemperatureTest {
-    @Test fun referenceDataIsFiniteAboveAbsoluteZeroAndDoesNotInventSpacecraftOrSednaReadings() {
+    @Test fun referenceDataIsFiniteAboveAbsoluteZeroAndKeepsNonApplicableBodiesEmpty() {
         SpaceCompassCelestialBody.entries.forEach { body ->
             val values = spaceCompassCelestialTemperatures(body)
-            if (body.isSpacecraft || body == SpaceCompassCelestialBody.EARTH_CENTER || body == SpaceCompassCelestialBody.SEDNA || (body.deepSkyReference != null && body !in setOf(SpaceCompassCelestialBody.PROXIMA_CENTAURI, SpaceCompassCelestialBody.RIGEL))) assertTrue(values.isEmpty())
+            if (body.isSpacecraft || body == SpaceCompassCelestialBody.EARTH_CENTER || body in setOf(
+                SpaceCompassCelestialBody.SAGITTARIUS_A, SpaceCompassCelestialBody.ANDROMEDA_CORE, SpaceCompassCelestialBody.TON_618)) assertTrue(values.isEmpty())
             else assertTrue("Missing reference temperature: $body", values.isNotEmpty())
-            assertEquals(values.size, values.map { it.kind }.distinct().size)
+            assertEquals(values.size, values.map { it.kind to it.component }.distinct().size)
             values.forEach {
                 assertTrue(it.celsius.isFinite() && it.celsius >= -273.15)
                 it.maximumCelsius?.let { maximum -> assertTrue(maximum.isFinite() && maximum >= it.celsius) }

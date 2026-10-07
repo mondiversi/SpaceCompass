@@ -29,22 +29,23 @@ internal fun formatSpaceCompassSelectedDistance(body: SpaceCompassCelestialBody,
 }
 
 internal fun formatSpaceCompassSelectedCoordinates(latitude: Double?, longitude: Double?,
-    numeric: SpaceCompassNumericFormat, dms: Boolean): String? {
-    if (dms) return formatSpaceCompassCelestialGpsCoordinates(latitude, longitude, numeric)
+    numeric: SpaceCompassNumericFormat, dms: Boolean, systemLocale: java.util.Locale = java.util.Locale.getDefault()): String? {
+    if (dms) return formatSpaceCompassCelestialGpsCoordinates(latitude, longitude, numeric, systemLocale)
     if (latitude == null || longitude == null || !latitude.isFinite() || !longitude.isFinite() ||
         latitude !in -90.0..90.0 || longitude !in -180.0..180.0) return null
     fun coordinate(value: Double, positive: String, negative: String) =
-        "${formatSpaceCompassNumber(abs(value), 6, numeric, grouping = false)}° ${if (value < 0) negative else positive}"
+        "${formatSpaceCompassNumber(abs(value), 6, numeric, grouping = false, systemLocale = systemLocale)}° ${if (value < 0) negative else positive}"
     return "${coordinate(latitude, "N", "S")}\n${coordinate(longitude, "E", "W")}"
 }
 
 /** Physical sizes follow normal-distance units; large diameters use their km/mi multiples. */
 internal fun formatSpaceCompassPhysicalLength(meters: Double?, digits: Int,
-    numeric: SpaceCompassNumericFormat, feet: Boolean, large: Boolean = false): String {
+    numeric: SpaceCompassNumericFormat, feet: Boolean, large: Boolean = false,
+    systemLocale: java.util.Locale = java.util.Locale.getDefault()): String {
     if (meters == null || !meters.isFinite() || meters < 0) return "—"
     val divisor = if (large) { if (feet) 1609.344 else 1000.0 } else { if (feet) 0.3048 else 1.0 }
     val unit = if (large) { if (feet) "mi" else "km" } else { if (feet) "ft" else "m" }
-    return "${formatSpaceCompassNumber(meters / divisor, digits, numeric)} $unit"
+    return "${formatSpaceCompassNumber(meters / divisor, digits, numeric, systemLocale = systemLocale)} $unit"
 }
 
 /** Speeds arrive in km/s; signed outward probe speeds remain signed after conversion. */

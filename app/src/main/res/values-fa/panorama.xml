@@ -2,16 +2,25 @@
 <resources>
     <string name="panorama_capture">ثبت تصویر</string>
     <string name="panorama_saving">در حال ذخیرهٔ تصویر پانوراما…</string>
-    <string name="panorama_saved">تصویر پانوراما در آلبوم SpaceCompass در گالری ذخیره شد.</string>
+    <string name="panorama_saved">تصویر در گالری ذخیره شد.</string>
     <string name="panorama_error">ذخیرهٔ تصویر پانوراما ممکن نشد. دوباره تلاش کنید.</string>
     <string name="panorama_permission">برای ذخیرهٔ تصویر پانوراما، دسترسی به حافظه را مجاز کنید.</string>
     <string name="panorama_not_ready">موقعیت GPS و دست‌کم یک جرم انتخاب‌شده لازم است.</string>
     <string name="panorama_data_unavailable">داده‌ها در دسترس نیست</string>
     <string name="panorama_path_unavailable">مدار در دسترس نیست</string>
-    <string name="info_news_panorama">ثبت تصویر، پانورامای کامل ۳۶۰ درجهٔ اجرام انتخاب‌شده و مدارهایشان را در گالری ذخیره می‌کند.</string>
-    <string name="info_news_orbit_names">نام اجرام نزدیک پیکان‌های جهت در امتداد منحنی مدارها قرار می‌گیرد.</string>
+    <string name="info_news_panorama">لایه‌های دوربین و پانوراماهای ۳۶۰ درجه با خطوط و برچسب‌های اختیاری؛ خروجی در گالری، فایل یا اشتراک‌گذاری.</string>
+    <string name="info_news_orbit_names">قطب‌نمای زنده، مسیرهای روزانه و نماهای بافت‌دار برای ۳۰ جرم آسمانی.</string>
     <string name="panorama_north">شمال</string>
     <string name="panorama_east">شرق</string>
     <string name="panorama_south">جنوب</string>
     <string name="panorama_west">غرب</string>
+    <string name="panorama_position">موقعیت در تصویر</string>
+    <string name="panorama_position_description">اطلاعات موقعیت نمایش‌داده‌شده هنگام ذخیره یا اشتراک‌گذاری را انتخاب کنید. زمان و مدارها همچنان می‌توانند محدوده‌ای تقریبی را نشان دهند.</string>
+    <string name="panorama_position_complete">کامل</string>
+    <string name="panorama_position_complete_detail">مکان، مختصات، ارتفاع و دقت</string>
+    <string name="panorama_position_area">فقط منطقه</string>
+    <string name="panorama_position_area_detail">منطقه و کشور</string>
+    <string name="panorama_position_hidden">پنهان</string>
+    <string name="panorama_position_hidden_detail">بدون اطلاعات موقعیت</string>
+    <string name="panorama_point_labels">برچسب‌ها</string>
 </resources>

@@ -25,7 +25,7 @@
     <string name="celestial_loading">Updating orbital data…</string>
     <string name="celestial_unavailable">Data for %1$s is unavailable. An internet connection is needed to refresh it.</string>
     <string name="celestial_iss_old">ISS orbital data is over 24 hours old: accuracy may be reduced.</string>
-    <string name="celestial_iss_note">One complete revolution around the current time, including below the horizon, with 24 regular points plus rise, culmination and set. Pass details refer to the current or next pass within 24 hours; visibility is not guaranteed.</string>
+    <string name="celestial_iss_note">One complete revolution around the current time, including below the horizon, with 24 regular points plus rise, culmination and set. Pass details refer to the current or next pass within 24 hours; visibility is not guaranteed.\nCelesTrak / Satcat · Space-Track</string>
     <string name="celestial_model_note">Calculated positions and distances; pointing depends on compass accuracy. ISS needs recent orbital data. Sedna and Voyager use NASA/JPL predicted trajectories, not live telemetry.</string>
     <string name="celestial_weather_mainly_clear">Mainly clear</string>
     <string name="celestial_speed_earth_orbit">Orbital speed (Earth): %1$s km/s</string>

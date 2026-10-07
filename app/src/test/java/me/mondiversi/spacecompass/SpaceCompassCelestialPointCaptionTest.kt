@@ -12,8 +12,8 @@ class SpaceCompassCelestialPointCaptionTest {
         val badge = source("SpaceCompassCelestialTimeBadge.kt")
         assertTrue(badge.contains("pointName: String, body: SpaceCompassCelestialBody,"))
         assertTrue(badge.indexOf("Text(stringResource(body.nameResource)") < badge.indexOf("SpaceCompassPointTimeCaption("))
-        assertTrue(source("SpaceCompassCelestialSceneInteraction.kt").contains("name, focused.body, excluded)"))
-        assertTrue(source("SpaceCompassSunDailyPathLayer.kt").contains("path.body, excluded)"))
+        assertTrue(source("SpaceCompassCelestialSceneInteraction.kt").contains("name, focused.body, excluded, perspective)"))
+        assertTrue(source("SpaceCompassSunDailyPathLayer.kt").contains("path.body, excluded, perspective)"))
     }
 
     @Test fun tappedPanelKeepsOnlyCurrentOrPathCaptionInNormalWeight() {

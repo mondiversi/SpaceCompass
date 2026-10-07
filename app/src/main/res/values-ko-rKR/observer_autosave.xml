@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="settings_saved">설정을 저장했습니다.</string>
+    <string name="observer_not_saved">변경이 완료되지 않아 마지막 유효한 설정을 유지합니다.</string>
+</resources>

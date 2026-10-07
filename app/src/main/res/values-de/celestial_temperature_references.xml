@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="celestial_temperature_surface_estimate" formatted="false">Geschätzte Oberflächentemperatur</string>
+    <string name="celestial_temperature_equilibrium_model" formatted="false">Gleichgewichtstemperatur (Modell)</string>
+    <string name="celestial_temperature_historical_range" formatted="false">Oberflächenbereich (historisch)</string>
+    <string name="celestial_temperature_thermal_model" formatted="false">Thermische Emission (Modell)</string>
+    <string name="celestial_temperature_reference_note" formatted="false">Schätzungen hängen von den Modellannahmen ab. Bereiche mit Jahresangabe beschreiben frühere Beobachtungen, keine aktuellen Temperaturen. Temperaturen kompakter Sterne stammen aus Spektralmodellen, nicht aus Tag- und Nachtmessungen.</string>
+    <string name="celestial_stephenson_reference_note" formatted="false">Die effektive Temperatur wird im Modell angenommen. Leuchtkraft und abgeleiteter Durchmesser setzen die Entfernung des Sternhaufens voraus; die Zugehörigkeit ist unsicher. Die heutige Masse ist unbekannt.</string>
+</resources>

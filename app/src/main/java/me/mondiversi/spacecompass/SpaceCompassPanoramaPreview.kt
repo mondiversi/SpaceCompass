@@ -1,0 +1,318 @@
+package me.mondiversi.spacecompass
+
+import android.Manifest
+import android.content.ClipData
+import android.content.Intent
+import android.content.pm.PackageManager
+import android.graphics.BitmapFactory
+import android.os.Build
+import android.net.Uri
+import androidx.activity.compose.BackHandler
+import androidx.activity.compose.rememberLauncherForActivityResult
+import androidx.activity.result.contract.ActivityResultContracts
+import androidx.compose.foundation.Image
+import androidx.compose.foundation.background
+import androidx.compose.foundation.BorderStroke
+import androidx.compose.foundation.shape.CircleShape
+import androidx.compose.foundation.gestures.detectTapGestures
+import androidx.compose.foundation.gestures.detectTransformGestures
+import androidx.compose.foundation.layout.*
+import androidx.compose.material3.*
+import androidx.compose.runtime.*
+import androidx.compose.runtime.saveable.rememberSaveable
+import androidx.compose.ui.Alignment
+import androidx.compose.ui.Modifier
+import androidx.compose.ui.geometry.Offset
+import androidx.compose.ui.draw.clipToBounds
+import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.graphics.asImageBitmap
+import androidx.compose.ui.graphics.graphicsLayer
+import androidx.compose.ui.input.pointer.pointerInput
+import androidx.compose.ui.layout.ContentScale
+import androidx.compose.ui.layout.onSizeChanged
+import androidx.compose.ui.platform.LocalContext
+import androidx.compose.ui.platform.LocalResources
+import androidx.compose.ui.platform.testTag
+import androidx.compose.ui.res.stringResource
+import androidx.compose.ui.unit.IntSize
+import androidx.compose.ui.unit.dp
+import androidx.compose.ui.semantics.Role
+import androidx.core.content.ContextCompat
+import androidx.core.content.FileProvider
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.launch
+import kotlinx.coroutines.withContext
+import java.io.File
+import kotlin.math.min
+
+internal data class SpaceCompassPanoramaPreviewData(val file: File, val timeMs: Long,
+    val position: SpaceCompassPanoramaPosition = SpaceCompassPanoramaPosition.COMPLETE,
+    val snapshot: SpaceCompassPanoramaSnapshot? = null, val captionData: SpaceCompassPanoramaCaptionData? = null,
+    val credits: String? = null, val cameraPhoto: SpaceCompassCameraPhotoSnapshot? = null,
+    val selectedPresentation: SpaceCompassPanoramaPresentation? = null)
+
+/** Preview follows the device orientation; portrait starts filled and pannable. */
+@Composable
+internal fun SpaceCompassPanoramaPreview(data: SpaceCompassPanoramaPreviewData, onBack: () -> Unit) {
+    val context = LocalContext.current
+    val resources = LocalResources.current
+    val scope = rememberCoroutineScope()
+    val preferences = LocalSpaceCompassPreferences.current
+    var currentFile by remember(data.file) { mutableStateOf(data.file) }
+    var currentPosition by remember(data.file) { mutableStateOf(data.position) }
+    var requestedPosition by remember(data.file) { mutableStateOf(data.position) }
+    var currentPointLabels by remember(data.file) { mutableStateOf(data.snapshot?.showPointLabels ?: true) }
+    var requestedPointLabels by remember(data.file) { mutableStateOf(data.snapshot?.showPointLabels ?: true) }
+    var currentExportMode by remember(data.file) { mutableStateOf(SpaceCompassPanoramaExportMode.INTERNATIONAL) }
+    var requestedExportMode by remember(data.file) { mutableStateOf(
+        if (data.selectedPresentation == null) SpaceCompassPanoramaExportMode.INTERNATIONAL else
+            SpaceCompassPanoramaExportMode.fromStored(preferences?.getString(SPACE_COMPASS_PANORAMA_EXPORT_MODE_KEY, null))) }
+    var revision by remember(data.file) { mutableIntStateOf(0) }
+    var preparationFailed by remember(data.file) { mutableStateOf(false) }
+    var choosePosition by remember { mutableStateOf(false) }
+    var chooseCenter by remember { mutableStateOf(false) }
+    var currentCenter by remember(data.file) { mutableStateOf(data.snapshot?.center ?: SpaceCompassPanoramaCenter.SOUTH) }
+    var requestedCenter by remember(data.file) { mutableStateOf(data.snapshot?.center ?: SpaceCompassPanoramaCenter.SOUTH) }
+    LaunchedEffect(data, requestedPosition, requestedPointLabels, requestedExportMode, requestedCenter, revision) {
+        preparationFailed = false
+        if (requestedPosition != currentPosition || requestedPointLabels != currentPointLabels || requestedExportMode != currentExportMode || requestedCenter != currentCenter) {
+            val targetPosition = requestedPosition
+            val targetLabels = requestedPointLabels
+            val targetMode = requestedExportMode
+            val targetCenter = requestedCenter
+            try {
+                val file = withContext(Dispatchers.IO) {
+                    prepareSpaceCompassPanoramaVariant(context.applicationContext, data, targetPosition, targetLabels, targetMode, targetCenter)
+                }
+                currentFile = file
+                currentPosition = targetPosition
+                currentPointLabels = targetLabels
+                currentExportMode = targetMode
+                currentCenter = targetCenter
+            } catch (cancelled: kotlinx.coroutines.CancellationException) { throw cancelled
+            } catch (error: Exception) {
+                preparationFailed = true
+                SpaceCompassErrorLog.record(context, "panorama:variant", error)
+                showSpaceCompassBottomMessage(context, resources.getString(R.string.panorama_error), longDuration = true)
+            } catch (error: OutOfMemoryError) {
+                preparationFailed = true
+                showSpaceCompassBottomMessage(context, resources.getString(R.string.panorama_error), longDuration = true)
+            }
+        }
+    }
+    var decoded by remember(currentFile) { mutableStateOf<android.graphics.Bitmap?>(null) }
+    var failed by remember(currentFile) { mutableStateOf(false) }
+    LaunchedEffect(currentFile) {
+        val result = withContext(Dispatchers.IO) { BitmapFactory.decodeFile(currentFile.absolutePath) }
+        if (result == null) failed = true else decoded = result
+    }
+    DisposableEffect(currentFile) { onDispose { decoded?.recycle(); decoded = null } }
+    val snackbar = remember(data.file) { SnackbarHostState() }
+    var savedGalleryUris by rememberSaveable(data.file.absolutePath) { mutableStateOf<Map<String, String>>(emptyMap()) }
+    var documentSource by rememberSaveable(data.file.absolutePath) { mutableStateOf<String?>(null) }
+    var saving by remember { mutableStateOf(false) }
+    var chooseExport by remember { mutableStateOf(false) }
+    var gallerySource by rememberSaveable(data.file.absolutePath) { mutableStateOf<String?>(null) }
+    fun notify(id: Int) = showSpaceCompassBottomMessage(context, resources.getString(id), longDuration = true)
+    fun saveGallery(file: File) {
+        if (saving) return
+        saving = true
+        scope.launch {
+            val status = try {
+                val uri = withContext(Dispatchers.IO) { ensureSpaceCompassPanoramaInGallery(context, file,
+                    data.timeMs, savedGalleryUris[file.absolutePath]?.let(Uri::parse)) }
+                savedGalleryUris = savedGalleryUris + (file.absolutePath to uri.toString())
+                R.string.panorama_saved
+            } catch (cancelled: kotlinx.coroutines.CancellationException) { throw cancelled
+            } catch (error: Exception) {
+                SpaceCompassErrorLog.record(context, "panorama:gallery", error)
+                R.string.panorama_error
+            } finally { saving = false }
+            snackbar.showSnackbar(resources.getString(status),
+                duration = if (status == R.string.panorama_saved) SnackbarDuration.Short else SnackbarDuration.Long)
+        }
+    }
+    val permission = rememberLauncherForActivityResult(ActivityResultContracts.RequestPermission()) {
+        val source = gallerySource?.let(::File)
+        gallerySource = null
+        if (it && source != null) saveGallery(source) else if (!it) scope.launch {
+            snackbar.showSnackbar(resources.getString(R.string.panorama_permission), duration = SnackbarDuration.Long)
+        }
+    }
+    val saveDocument = rememberLauncherForActivityResult(ActivityResultContracts.CreateDocument("image/jpeg")) { uri ->
+        val source = documentSource?.let(::File)
+        documentSource = null
+        if (uri != null && source != null) {
+            saving = true
+            scope.launch {
+                try {
+                    withContext(Dispatchers.IO) {
+                        context.contentResolver.openOutputStream(uri, "w")?.use { output ->
+                            source.inputStream().use { it.copyTo(output) }
+                        } ?: error("Image destination unavailable")
+                    }
+                    notify(R.string.panorama_exported)
+                } catch (cancelled: kotlinx.coroutines.CancellationException) { throw cancelled
+                } catch (error: Exception) {
+                    SpaceCompassErrorLog.record(context, "panorama:document", error); notify(R.string.panorama_error)
+                } finally { saving = false }
+            }
+        }
+    }
+    BackHandler(onBack = onBack)
+    val background = spaceCompassPageBackground()
+    val bitmap = decoded
+    val positionReady = requestedPosition == currentPosition && requestedPointLabels == currentPointLabels &&
+        requestedExportMode == currentExportMode && requestedCenter == currentCenter && !preparationFailed
+    val ready = !saving && positionReady && bitmap != null && !failed
+    val positionState = stringResource(requestedPosition.labelResource)
+    BoxWithConstraints(Modifier.fillMaxSize().background(background).testTag("panorama-preview")) {
+        Box(Modifier.fillMaxSize().testTag("panorama-full-image-viewport")) {
+            if (bitmap == null || !positionReady) Box(Modifier.fillMaxSize(), contentAlignment = Alignment.Center) {
+                if (failed || preparationFailed) Text(stringResource(R.string.panorama_error)) else CircularProgressIndicator()
+            } else SpaceCompassPanoramaZoomImage(bitmap, Modifier.fillMaxSize())
+            SpaceCompassPanoramaCircleButton(stringResource(R.string.navigate_back), onBack,
+                modifier = Modifier.align(Alignment.TopStart).padding(8.dp).testTag("panorama-back")) {
+                SpaceCompassPanoramaControlIcon(SpaceCompassPanoramaControl.BACK)
+            }
+            Column(Modifier.align(Alignment.TopEnd).padding(8.dp), verticalArrangement = Arrangement.spacedBy(8.dp)) {
+                if (data.cameraPhoto == null && data.snapshot != null) SpaceCompassPanoramaCircleButton(
+                    stringResource(R.string.panorama_center), { chooseCenter = true }, enabled = !saving,
+                    modifier = Modifier.testTag("panorama-center"), stateText = stringResource(requestedCenter.labelResource)) {
+                    SpaceCompassPanoramaCompassIcon()
+                }
+                if (data.snapshot != null && data.captionData != null) SpaceCompassPanoramaCircleButton(
+                    stringResource(R.string.panorama_point_labels), {
+                        requestedPointLabels = !requestedPointLabels
+                        preferences?.edit()?.putBoolean(SPACE_COMPASS_PANORAMA_POINT_LABELS_KEY, requestedPointLabels)?.apply()
+                        revision++
+                    }, enabled = !saving, checked = requestedPointLabels,
+                    modifier = Modifier.testTag("panorama-point-labels")) {
+                    SpaceCompassPanoramaLabelsIcon(requestedPointLabels)
+                }
+                if (data.snapshot != null && data.captionData != null) SpaceCompassPanoramaCircleButton(
+                    stringResource(R.string.panorama_position), { choosePosition = true }, enabled = !saving,
+                    modifier = Modifier.testTag("panorama-position"), stateText = positionState) {
+                    SpaceCompassPanoramaPositionIcon(requestedPosition == SpaceCompassPanoramaPosition.HIDDEN)
+                }
+                SpaceCompassPanoramaCircleButton(stringResource(R.string.panorama_export), { chooseExport = true },
+                    enabled = ready, modifier = Modifier.testTag("panorama-export")) {
+                    SpaceCompassPanoramaExportIcon()
+                }
+            }
+            SnackbarHost(snackbar, Modifier.align(Alignment.BottomCenter).padding(horizontal = 72.dp, vertical = 8.dp)
+                .widthIn(max = 360.dp).fillMaxWidth().testTag("panorama-save-status")) { message ->
+                SpaceCompassBottomSnackbar(message)
+            }
+        }
+    if (chooseCenter && data.cameraPhoto == null) SpaceCompassPanoramaCenterDialog(requestedCenter, onSelect = { center ->
+        preferences?.edit()?.putString(SPACE_COMPASS_PANORAMA_CENTER_KEY, center.key)?.apply()
+        requestedCenter = center
+        revision++
+        chooseCenter = false
+    }, onDismiss = { chooseCenter = false })
+    if (choosePosition) SpaceCompassPanoramaPositionDialog(requestedPosition, false, onSelect = { position ->
+        preferences?.edit()?.putString(SPACE_COMPASS_PANORAMA_POSITION_KEY, position.key)?.apply()
+        requestedPosition = position
+        revision++
+        choosePosition = false
+    }, onDismiss = { choosePosition = false })
+    if (chooseExport) SpaceCompassPanoramaExportDialog(requestedExportMode, onModeChange = { mode ->
+        requestedExportMode = mode
+        preferences?.edit()?.putString(SPACE_COMPASS_PANORAMA_EXPORT_MODE_KEY, mode.key)?.apply()
+    }, enabled = ready, onGallery = {
+        if (ready) {
+            chooseExport = false
+            val file = currentFile
+            if (Build.VERSION.SDK_INT < 29 && ContextCompat.checkSelfPermission(context,
+                    Manifest.permission.WRITE_EXTERNAL_STORAGE) != PackageManager.PERMISSION_GRANTED) {
+                gallerySource = file.absolutePath
+                permission.launch(Manifest.permission.WRITE_EXTERNAL_STORAGE)
+            } else saveGallery(file)
+        }
+    }, onDocument = {
+        if (ready) {
+            chooseExport = false
+            documentSource = currentFile.absolutePath
+            saveDocument.launch(spaceCompassPanoramaFileName(data.timeMs))
+        }
+    }, onShare = {
+        if (ready) {
+            chooseExport = false
+            runCatching {
+                val uri = FileProvider.getUriForFile(context, "${context.packageName}.fileprovider", currentFile)
+                val intent = Intent(Intent.ACTION_SEND).apply {
+                    type = "image/jpeg"; putExtra(Intent.EXTRA_STREAM, uri)
+                    clipData = ClipData.newUri(context.contentResolver, "Space Compass", uri)
+                    addFlags(Intent.FLAG_GRANT_READ_URI_PERMISSION)
+                }
+                context.startActivity(Intent.createChooser(intent, resources.getString(R.string.panorama_share)))
+            }.onFailure { SpaceCompassErrorLog.record(context, "panorama:share", it); notify(R.string.panorama_error) }
+        }
+    }, onDismiss = { chooseExport = false })
+    }
+}
+
+@Composable
+private fun SpaceCompassPanoramaZoomImage(bitmap: android.graphics.Bitmap, modifier: Modifier) {
+    val image = remember(bitmap) { bitmap.asImageBitmap() }
+    var size by remember { mutableStateOf(IntSize.Zero) }
+    var zoom by remember { mutableFloatStateOf(1f) }
+    var offset by remember { mutableStateOf(Offset.Zero) }
+    fun bound(value: Offset, scale: Float): Offset {
+        val fit = min(size.width.toFloat() / bitmap.width, size.height.toFloat() / bitmap.height) *
+            spaceCompassCaptureBaseScale(size.width.toFloat(), size.height.toFloat(), bitmap.width, bitmap.height)
+        val x = ((bitmap.width * fit * scale - size.width) / 2).coerceAtLeast(0f)
+        val y = ((bitmap.height * fit * scale - size.height) / 2).coerceAtLeast(0f)
+        return Offset(value.x.coerceIn(-x, x), value.y.coerceIn(-y, y))
+    }
+    val zoomInLabel = stringResource(R.string.celestial_view_zoom_in)
+    val zoomOutLabel = stringResource(R.string.celestial_view_zoom_out)
+    Box(modifier.clipToBounds().background(Color.Black).onSizeChanged { size = it; offset = bound(offset, zoom) }
+        .pointerInput(bitmap, size) { detectTransformGestures { centroid, pan, scale, _ ->
+            val next = (zoom * scale).coerceIn(1f, 8f)
+            val ratio = next / zoom
+            val center = Offset(size.width / 2f, size.height / 2f)
+            offset = bound(offset * ratio + (centroid - center) * (1 - ratio) + pan, next)
+            zoom = next
+        } }.pointerInput(bitmap) { detectTapGestures(onDoubleTap = {
+            zoom = if (zoom > 1f) 1f else 3f; offset = Offset.Zero
+        }) }) {
+        Image(image, stringResource(R.string.panorama_preview), Modifier.fillMaxSize()
+            .graphicsLayer {
+                val base = spaceCompassCaptureBaseScale(size.width.toFloat(), size.height.toFloat(), bitmap.width, bitmap.height)
+                scaleX = zoom * base; scaleY = zoom * base; translationX = offset.x; translationY = offset.y },
+            contentScale = ContentScale.Fit)
+        // Start below Back's 8 dp inset + 48 dp button + 8 dp inter-control gap.
+        Column(Modifier.align(Alignment.TopStart).padding(start = 8.dp, top = 64.dp),
+            verticalArrangement = Arrangement.spacedBy(8.dp)) {
+            SpaceCompassPanoramaCircleButton(zoomInLabel,
+                onClick = { zoom = (zoom * 1.5f).coerceAtMost(8f); offset = bound(offset, zoom) },
+                enabled = zoom < 8f, modifier = Modifier.testTag("panorama-zoom-in")) {
+                SpaceCompassPanoramaControlIcon(SpaceCompassPanoramaControl.ZOOM_IN)
+            }
+            SpaceCompassPanoramaCircleButton(zoomOutLabel,
+                onClick = { zoom = (zoom / 1.5f).coerceAtLeast(1f); offset = bound(offset, zoom) },
+                enabled = zoom > 1f, modifier = Modifier.testTag("panorama-zoom-out")) {
+                SpaceCompassPanoramaControlIcon(SpaceCompassPanoramaControl.ZOOM_OUT)
+            }
+        }
+    }
+}
+
+/** Same neutral circular surface, outline, elevation and touch target as the celestial selector. */
+@Composable
+private fun SpaceCompassPanoramaCircleButton(label: String, onClick: () -> Unit,
+    modifier: Modifier = Modifier, enabled: Boolean = true, checked: Boolean? = null,
+    stateText: String? = null, content: @Composable () -> Unit) {
+    val foreground = MaterialTheme.colorScheme.onSurface
+    Surface(onClick = onClick, enabled = enabled,
+        modifier = modifier.size(48.dp).spaceCompassAccessibleAction(label, enabled = enabled,
+            role = if (checked == null) Role.Button else Role.Checkbox, checkedState = checked,
+            stateText = stateText, onClick = onClick),
+        shape = CircleShape, color = spaceCompassPageBackground().copy(alpha = .94f),
+        contentColor = foreground.copy(alpha = if (enabled) 1f else .38f),
+        border = BorderStroke(1.dp, foreground.copy(alpha = if (enabled) .35f else .16f)), shadowElevation = 3.dp) {
+        Box(contentAlignment = Alignment.Center) { content() }
+    }
+}

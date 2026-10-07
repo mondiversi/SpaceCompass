@@ -30,9 +30,24 @@ internal fun parseSpaceCompassSunWeather(json: String, nowMs: Long): SpaceCompas
     return SpaceCompassSunWeatherSnapshot(kind, (cover / 100).toFloat(), modelTimeMs)
 }
 
+/** Reject missing/misaligned hourly arrays rather than using another date or nearby hour. */
+internal fun parseSpaceCompassObserverWeather(json: String, request: SpaceCompassObserverWeatherRequest): SpaceCompassSunWeatherSnapshot {
+    val hourly = JSONObject(json).getJSONObject("hourly")
+    val times = hourly.getJSONArray("time")
+    val codes = hourly.getJSONArray("weather_code")
+    val covers = hourly.getJSONArray("cloud_cover")
+    require(times.length() in 1..24 && codes.length() == times.length() && covers.length() == times.length()) {
+        "Invalid hourly weather arrays"
+    }
+    val index = (0 until times.length()).firstOrNull { !times.isNull(it) && times.getDouble(it) == request.hourMs / 1000.0 }
+    require(index != null) { "Requested weather hour unavailable" }
+    return requireNotNull(spaceCompassObserverWeatherSnapshot(request, times.getDouble(index),
+        codes.getDouble(index), covers.getDouble(index))) { "Invalid hourly weather values" }
+}
+
 /** Bounded HTTPS request, no redirects, no location in error logs, no camera or device commands. */
-internal suspend fun fetchSpaceCompassSunWeather(tile: SpaceCompassSunWeatherTile): SpaceCompassSunWeatherSnapshot = withContext(Dispatchers.IO) {
-    val connection = URI(tile.url()).toURL().openConnection() as HttpURLConnection
+internal suspend fun fetchSpaceCompassSunWeather(tile: SpaceCompassSunWeatherTile, request: SpaceCompassObserverWeatherRequest? = null): SpaceCompassSunWeatherSnapshot = withContext(Dispatchers.IO) {
+    val connection = URI(request?.url() ?: tile.url()).toURL().openConnection() as HttpURLConnection
     try {
         connection.connectTimeout = 8_000
         connection.readTimeout = 8_000
@@ -53,34 +68,42 @@ internal suspend fun fetchSpaceCompassSunWeather(tile: SpaceCompassSunWeatherTil
             }
             output.toString("UTF-8")
         }
-        parseSpaceCompassSunWeather(body, System.currentTimeMillis())
+        if (request == null) parseSpaceCompassSunWeather(body, System.currentTimeMillis())
+        else parseSpaceCompassObserverWeather(body, request)
     } finally { connection.disconnect() }
 }
 
 /** Foreground-only, memory-only caching. Changing location never shows the old area's weather. */
 @Composable
-internal fun rememberSpaceCompassSunWeather(tile: SpaceCompassSunWeatherTile?, resumed: Boolean): SpaceCompassSunWeatherReading {
+internal fun rememberSpaceCompassSunWeather(tile: SpaceCompassSunWeatherTile?, resumed: Boolean,
+    selectedTimeMs: Long? = null): SpaceCompassSunWeatherReading {
     val context = LocalContext.current
-    var reading by remember(tile) { mutableStateOf(SpaceCompassSunWeatherReading()) }
-    var snapshot by remember(tile) { mutableStateOf<SpaceCompassSunWeatherSnapshot?>(null) }
-    var nextRequestElapsed by remember(tile) { mutableLongStateOf(0L) }
+    val today = java.time.LocalDate.now(java.time.ZoneOffset.UTC)
+    val request = remember(tile, selectedTimeMs, today) {
+        if (tile == null || selectedTimeMs == null) null
+        else spaceCompassObserverWeatherRequest(tile, selectedTimeMs, System.currentTimeMillis())
+    }
+    var reading by remember(tile, selectedTimeMs, request) { mutableStateOf(SpaceCompassSunWeatherReading()) }
+    var snapshot by remember(tile, selectedTimeMs, request) { mutableStateOf<SpaceCompassSunWeatherSnapshot?>(null) }
+    var nextRequestElapsed by remember(tile, selectedTimeMs, request) { mutableLongStateOf(0L) }
     var lastRequestElapsed by remember { mutableLongStateOf(-60_000L) }
-    var reportedFailure by remember { mutableStateOf(false) }
-    LaunchedEffect(tile, resumed) {
-        if (tile == null || !resumed) return@LaunchedEffect
+    var reportedFailure by remember(tile, selectedTimeMs, request) { mutableStateOf(false) }
+    LaunchedEffect(tile, selectedTimeMs, request, resumed) {
+        if (tile == null || !resumed || (selectedTimeMs != null && request == null)) return@LaunchedEffect
         while (true) {
-            val cached = snapshot?.takeIf { spaceCompassSunWeatherTimeUsable(it.modelTimeMs, System.currentTimeMillis()) }
+            val cached = snapshot?.takeIf { spaceCompassSunWeatherSnapshotUsable(it, selectedTimeMs ?: System.currentTimeMillis()) }
             reading = SpaceCompassSunWeatherReading(cached, loading = cached == null)
             val wait = maxOf(nextRequestElapsed, lastRequestElapsed + 60_000L) - android.os.SystemClock.elapsedRealtime()
             if (wait > 0) delay(wait)
             // Throttle even while rapidly switching nearby cells or cancelling the screen.
             lastRequestElapsed = android.os.SystemClock.elapsedRealtime()
             try {
-                val result = fetchSpaceCompassSunWeather(tile)
+                val result = fetchSpaceCompassSunWeather(tile, request)
                 snapshot = result
                 reading = SpaceCompassSunWeatherReading(result)
                 reportedFailure = false
-                nextRequestElapsed = android.os.SystemClock.elapsedRealtime() + SPACE_COMPASS_SUN_WEATHER_REFRESH_MS
+                nextRequestElapsed = android.os.SystemClock.elapsedRealtime() +
+                    if (request?.historical == true) SPACE_COMPASS_OBSERVER_ARCHIVE_WEATHER_REFRESH_MS else SPACE_COMPASS_SUN_WEATHER_REFRESH_MS
             } catch (cancelled: CancellationException) {
                 throw cancelled
             } catch (error: Exception) {

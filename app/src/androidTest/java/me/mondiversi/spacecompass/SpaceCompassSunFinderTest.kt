@@ -196,10 +196,10 @@ class SpaceCompassSunFinderTest {
                             if (index == 4) "1.830 m (±12 m)" else if (index == 5) "8 m" else "194,3°", "table-$index")
                     }
                     SpaceCompassSunFinderDataPanel(rows.take(4), rows.drop(4), SpaceCompassSunOrientation(SpaceCompassSunVector(1.0, 0.0, 0.0),
-                        SpaceCompassSunVector(0.0, 0.0, 1.0), SpaceCompassSunVector(0.0, 1.0, 0.0)), true, null,
+                        SpaceCompassSunVector(0.0, 0.0, 1.0), SpaceCompassSunVector(0.0, 1.0, 0.0)), true,
                         translated.getString(R.string.sun_weather_estimate, translated.getString(R.string.sun_weather_clear)),
                         true, Color.Black, Color.DarkGray, Color.White, Modifier.width(320.dp).height(300.dp),
-                        false, null, {})
+                        false)
                 }
             }
         }

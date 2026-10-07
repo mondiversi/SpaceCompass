@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="celestial_lv426" translatable="false">LV-426 · Acheron</string>
+    <string name="celestial_lv426_model_note">Fictional moon · Original illustration\nSky direction: ζ² Reticuli</string>
+    <string name="celestial_lv426_description">Acheron is the fictional moon of Calpamos in Alien, home to Hadley’s Hope. Its rocky surface has a hostile atmosphere. Values come from the story: the diameter varies between sources and the mean temperature refers to terraforming. Mass, density, pressure and orbital elements are unknown. Sky pointing uses ζ² Reticuli as a scenic reference, not real moon ephemerides.</string>
+    <string name="celestial_lv426_credits">Alien: fictional setting. References: ALIEN RPG / Xenopedia. Direction: SIMBAD. Original AI-generated illustration; no film image.</string>
+</resources>

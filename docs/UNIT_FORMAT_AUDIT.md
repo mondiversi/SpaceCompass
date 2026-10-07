@@ -73,3 +73,20 @@ passed; debug/release builds, Android test-source compilation and release lint
 (zero errors) succeeded. The Android instrumentation suite was not executed.
 
 Device UI verification is recorded separately in [VERIFICATION.md](VERIFICATION.md).
+
+## Catalog value column and ordering
+
+The right column follows numeric ordering: mass, diameter, atmospheric pressure,
+gravity, daytime maximum or nighttime minimum. Its heading reuses the translated
+sort label; values use the same selected-unit, number, uncertainty and solar-mass
+formatters as object details. Missing sort keys display a dash and remain last in
+both directions; spacecraft dimensions do not substitute for absent diameters.
+Day/night sorting prefers exact extrema, then shows a clearly labelled available
+temperature reference. Means, atmospheric layers, effective/model temperatures and
+historical ranges retain their true quantity instead of becoming fabricated extrema.
+Ranges sort by their midpoint; the same fallback is used for both day and night.
+Epoch years, component names and uncertainty widths are retained. See THERMAL_REFERENCE_AUDIT.md. Explicit Distance from Sun ordering displays the
+heliocentric range used by sorting, including nearby objects. Default/alphabetical
+order retain the usual summaries: Earth/GPS distances for nearby objects and
+heliocentric distances for other bodies. Changing sort leaves checked objects,
+units, filters and Scenario values intact.

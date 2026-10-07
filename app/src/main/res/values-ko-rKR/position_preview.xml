@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="panorama_preview" formatted="false">파노라마</string>
+    <string name="panorama_preparing" formatted="false">파노라마 준비 중…</string>
+    <string name="panorama_save" formatted="false">저장</string>
+    <string name="panorama_share" formatted="false">공유</string>
+    <string name="panorama_gallery" formatted="false">이미지 갤러리</string>
+    <string name="panorama_choose_location" formatted="false">위치 선택…</string>
+    <string name="panorama_exported" formatted="false">파노라마를 내보냈습니다.</string>
+    <string name="panorama_cloud_cover" formatted="false">구름량</string>
+    <string name="panorama_weather_time" formatted="false">기상 모델 시각</string>
+    <string name="panorama_northeast" formatted="false">북동</string>
+    <string name="panorama_southeast" formatted="false">남동</string>
+    <string name="panorama_southwest" formatted="false">남서</string>
+    <string name="panorama_northwest" formatted="false">북서</string>
+</resources>

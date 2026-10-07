@@ -2,7 +2,7 @@
 <resources>
     <string name="celestial_table_distance">距离: %1$s</string>
     <string name="celestial_table_speed">速度: %1$s</string>
-    <string name="celestial_environment_info_title">环境详情</string>
+    <string name="celestial_environment_info_title">位置详情</string>
     <string name="celestial_environment_info_action">方向与环境信息</string>
     <string name="celestial_environment_orientation_note">方向和倾斜角表示手机的指向。磁性物体可能影响指南针。GPS精度表示位置的估计不确定性。</string>
     <string name="celestial_altitude">海拔: %1$s</string>

@@ -46,16 +46,17 @@ internal fun spaceCompassSunPathDirections(path: SpaceCompassSunDailyPath): List
  * Reject hidden, stationary or edge-clipped arrows instead of drawing false directions.
  */
 internal fun projectSpaceCompassSunPathArrow(direction: SpaceCompassSunPathDirection, orientation: SpaceCompassSunOrientation,
-    width: Double, height: Double, halfLength: Double): SpaceCompassSunPathArrow? {
+    width: Double, height: Double, halfLength: Double, perspective: SpaceCompassPerspective? = null): SpaceCompassSunPathArrow? {
     if (!width.isFinite() || !height.isFinite() || width <= 0 || height <= 0 ||
         !halfLength.isFinite() || halfLength <= 0) return null
     val depth = direction.center.dot(orientation.forward)
     if (!depth.isFinite() || depth <= 1e-5) return null
-    val focal = spaceCompassSunProjectionFocalLength(height)
-    val center = SpaceCompassSunScenePoint(width / 2 + focal * direction.center.dot(orientation.right) / depth,
-        height / 2 - focal * direction.center.dot(orientation.screenUp) / depth)
+    val focal = perspective?.focalY(height) ?: spaceCompassSunProjectionFocalLength(height)
+    val focalX = perspective?.focalX(width) ?: focal
+    val center = SpaceCompassSunScenePoint((perspective?.principalX ?: .5) * width + focalX * direction.center.dot(orientation.right) / depth,
+        (perspective?.principalY ?: .5) * height - focal * direction.center.dot(orientation.screenUp) / depth)
     val segment = projectSpaceCompassSunPathSegment(direction.start, direction.end, orientation,
-        width, height, direction.center.up < 0) ?: return null
+        width, height, direction.center.up < 0, perspective) ?: return null
     val dx = segment.end.x - segment.start.x
     val dy = segment.end.y - segment.start.y
     val length = hypot(dx, dy)

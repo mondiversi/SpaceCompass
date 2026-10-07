@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="panorama_preview" formatted="false">Panorama</string>
+    <string name="panorama_preparing" formatted="false">Panorama wird erstellt…</string>
+    <string name="panorama_save" formatted="false">Speichern</string>
+    <string name="panorama_share" formatted="false">Teilen</string>
+    <string name="panorama_gallery" formatted="false">Bildergalerie</string>
+    <string name="panorama_choose_location" formatted="false">Speicherort wählen…</string>
+    <string name="panorama_exported" formatted="false">Panorama exportiert.</string>
+    <string name="panorama_cloud_cover" formatted="false">Bewölkung</string>
+    <string name="panorama_weather_time" formatted="false">Zeit des Wettermodells</string>
+    <string name="panorama_northeast" formatted="false">Nordost</string>
+    <string name="panorama_southeast" formatted="false">Südost</string>
+    <string name="panorama_southwest" formatted="false">Südwest</string>
+    <string name="panorama_northwest" formatted="false">Nordwest</string>
+</resources>

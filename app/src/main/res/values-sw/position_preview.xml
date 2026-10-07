@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="panorama_preview" formatted="false">Panorama</string>
+    <string name="panorama_preparing" formatted="false">Inaandaa panorama…</string>
+    <string name="panorama_save" formatted="false">Hifadhi</string>
+    <string name="panorama_share" formatted="false">Shiriki</string>
+    <string name="panorama_gallery" formatted="false">Matunzio ya picha</string>
+    <string name="panorama_choose_location" formatted="false">Chagua mahali…</string>
+    <string name="panorama_exported" formatted="false">Panorama imehamishwa.</string>
+    <string name="panorama_cloud_cover" formatted="false">Ufunikaji wa mawingu</string>
+    <string name="panorama_weather_time" formatted="false">Muda wa modeli ya hali ya hewa</string>
+    <string name="panorama_northeast" formatted="false">Kaskazini-mashariki</string>
+    <string name="panorama_southeast" formatted="false">Kusini-mashariki</string>
+    <string name="panorama_southwest" formatted="false">Kusini-magharibi</string>
+    <string name="panorama_northwest" formatted="false">Kaskazini-magharibi</string>
+</resources>

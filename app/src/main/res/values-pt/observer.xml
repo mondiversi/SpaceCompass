@@ -1,0 +1,31 @@
+<resources>
+    <string name="observer_title">Cenário</string>
+    <string name="observer_place">Posição</string>
+    <string name="observer_search">Pesquisar local</string>
+    <string name="observer_search_action">Pesquisar</string>
+    <string name="observer_map">Escolher no mapa</string>
+    <string name="observer_latitude">Latitude</string>
+    <string name="observer_longitude">Longitude</string>
+    <string name="observer_automatic">Obter altitude e fuso horário</string>
+    <string name="observer_altitude">Altitude</string>
+    <string name="observer_zone">Fuso horário</string>
+    <string name="observer_terrain_note">Altitude estimada do terreno; pode alterá-la.</string>
+    <string name="observer_lookup_failed">Consulta automática indisponível. Ative Altitude e Fuso horário para inserir os valores manualmente.</string>
+    <string name="observer_moment">Data e hora</string>
+    <string name="observer_date">Data</string>
+    <string name="observer_time">Hora</string>
+    <string name="observer_limits">Alguns dados orbitais não estão disponíveis fora das datas de validade. Estimativas meteorológicas quando disponíveis; caso contrário, céu limpo de base.</string>
+    <string name="observer_privacy">A pesquisa usa o geocodificador Android. O mapa usa OpenStreetMap; as coordenadas escolhidas são enviadas ao Open-Meteo para altitude e fuso.</string>
+    <string name="observer_apply">Definir</string>
+    <string name="observer_invalid">Verifique coordenadas, altitude, data, hora e fuso. Datas: 1900–2100. Horas inexistentes na mudança de horário são inválidas.</string>
+    <string name="observer_use_place">Usar este ponto</string>
+    <string name="observer_simulation">Cenário</string>
+    <string name="observer_coordinates_value">Coordenadas: %1$s</string>
+    <string name="observer_altitude_value">Altitude: %1$s</string>
+    <string name="observer_simulation_active">Cenário ativo</string>
+    <string name="observer_enable_position">Simular posição</string>
+    <string name="observer_enable_time">Simular data e hora</string>
+    <string name="observer_current_metadata">Obter altitude e fuso horário da posição atual</string>
+    <string name="observer_enable_altitude">Simular altitude</string>
+    <string name="observer_enable_zone">Simular fuso horário</string>
+</resources>

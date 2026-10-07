@@ -3,5 +3,5 @@
     <string name="environment_estimated_place">Position estimée : %1$s</string>
     <string name="environment_place_loading">Recherche du lieu…</string>
     <string name="environment_place_unavailable">Non disponible</string>
-    <string name="info_news_place">Les détails de l’environnement indiquent la ville, la région et le pays estimés, si disponibles.</string>
+    <string name="info_news_place">Détails de position avec cartes jour/nuit et scénarios avec position, date, altitude et fuseau horaire indépendants.</string>
 </resources>

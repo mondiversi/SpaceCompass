@@ -18,6 +18,8 @@ import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
 
+internal val LocalSpaceCompassMainVisible = staticCompositionLocalOf { true }
+
 internal val LocalSpaceCompassNavigate = staticCompositionLocalOf<(String) -> Unit> { {} }
 
 /** Keep the live compass composition and its data owners through full-screen navigation. */
@@ -25,7 +27,9 @@ internal val LocalSpaceCompassNavigate = staticCompositionLocalOf<(String) -> Un
 internal fun SpaceCompassAppPages(content: @Composable () -> Unit) {
     var route by rememberSaveable { mutableStateOf<String?>(null) }
     val holder = rememberSaveableStateHolder()
-    CompositionLocalProvider(LocalSpaceCompassNavigate provides { route = it }) {
+    val observer = rememberSpaceCompassObserverState()
+    CompositionLocalProvider(LocalSpaceCompassNavigate provides { route = it },
+        LocalSpaceCompassObserver provides observer, LocalSpaceCompassMainVisible provides (route == null)) {
         Box(Modifier.fillMaxSize()) {
             // Keep remember/effects/caches alive. An unplaced layer has no drawing,
             // touch targets or accessibility nodes behind the foreground page.
@@ -47,7 +51,7 @@ internal fun spaceCompassPageBackground() = if (isSystemInDarkTheme()) Color(0xF
 internal fun spaceCompassSettingsCardColor() = if (isSystemInDarkTheme()) Color(0xFF282D33) else Color(0xFFE6E9EB)
 
 @Composable
-internal fun SpaceCompassSettingsButton(panorama: SpaceCompassPanoramaAction? = null) {
+internal fun SpaceCompassSettingsButton() {
     var expanded by rememberSaveable { mutableStateOf(false) }
     val navigate = LocalSpaceCompassNavigate.current
     val card = spaceCompassSettingsCardColor()
@@ -60,7 +64,7 @@ internal fun SpaceCompassSettingsButton(panorama: SpaceCompassPanoramaAction? = 
         SpaceCompassAdaptiveDropdownMenu(expanded, { expanded = false }, containerColor = card,
             modifier = Modifier.testTag("app-settings-menu"), shape = RoundedCornerShape(16.dp)) {
             listOf("appearance" to R.string.settings_section_appearance, "language" to R.string.settings_section_language,
-                "units" to R.string.settings_section_units).forEachIndexed { index, (route, title) ->
+                "units" to R.string.settings_section_units, "observer" to R.string.observer_title, "info" to R.string.settings_section_info).forEachIndexed { index, (route, title) ->
                 if (index > 0) HorizontalDivider(color = foreground.copy(alpha = .10f))
                 DropdownMenuItem(text = {
                     Row(verticalAlignment = Alignment.CenterVertically, horizontalArrangement = Arrangement.spacedBy(8.dp)) {
@@ -71,16 +75,7 @@ internal fun SpaceCompassSettingsButton(panorama: SpaceCompassPanoramaAction? = 
                     modifier = Modifier.testTag("open-$route"),
                     onClick = { expanded = false; navigate(route) })
             }
-            if (panorama != null) {
-                HorizontalDivider(color = foreground.copy(alpha = .10f))
-                DropdownMenuItem(text = {
-                    Row(verticalAlignment = Alignment.CenterVertically, horizontalArrangement = Arrangement.spacedBy(8.dp)) {
-                        SpaceCompassSettingsMenuIcon("capture", foreground)
-                        Text(stringResource(R.string.panorama_capture), color = foreground)
-                    }
-                }, modifier = Modifier.testTag("capture-panorama"), enabled = !panorama.busy,
-                    onClick = { expanded = false; panorama.capture() })
-            }
+
         }
     }
 }
@@ -92,23 +87,25 @@ internal fun SpaceCompassAppPage(route: String, onBack: () -> Unit) {
         "appearance" -> R.string.settings_section_appearance
         "language" -> R.string.settings_section_language
         "units" -> R.string.settings_section_units
+        "observer" -> R.string.observer_title
         else -> R.string.pc_info
     }
     Surface(color = spaceCompassPageBackground(), contentColor = MaterialTheme.colorScheme.onSurface, modifier = Modifier.fillMaxSize().testTag("page-$route")) {
         Column(Modifier.fillMaxSize()) {
             SpaceCompassPageToolbar(stringResource(title), onBack)
+            val resourceLanguageTag = stringResource(R.string.settings_resource_language_tag)
             when (route) {
+                "observer" -> SpaceCompassObserverPage(Modifier.weight(1f))
                 "info" -> SpaceCompassInfoPage(Modifier.weight(1f))
                 "language" -> Column(Modifier.fillMaxWidth().weight(1f).verticalScroll(rememberScrollState()).padding(spaceCompassPageContentPadding)) {
                     SpaceCompassSettingsChoices(SpaceCompassSettingSpec(R.string.settings_section_language,
                         "language", "system", listOf("system" to stringResource(R.string.language_system)) + spaceCompassLanguages,
-                        description = stringResource(R.string.language_description)), languageCodes = true)
+                        description = stringResource(R.string.language_description), examples = mapOf("system" to
+                            (spaceCompassLanguages.firstOrNull { it.first == resourceLanguageTag } ?: spaceCompassLanguages.first()).second)), languageCodes = true)
                 }
                 else -> {
                     val settings = if (route == "appearance") spaceCompassAppearanceSettings() else spaceCompassUnitSettings()
-                    LazyVerticalGrid(columns = GridCells.Adaptive(280.dp), modifier = Modifier.fillMaxWidth().weight(1f),
-                        contentPadding = spaceCompassPageContentPadding, horizontalArrangement = Arrangement.spacedBy(6.dp),
-                        verticalArrangement = Arrangement.spacedBy(12.dp)) {
+                    SpaceCompassIslandGrid(Modifier.fillMaxWidth().weight(1f)) {
                         items(settings, key = { it.key }) { spec -> SpaceCompassSettingsChoices(spec) }
                     }
                 }

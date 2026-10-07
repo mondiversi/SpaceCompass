@@ -1,0 +1,11 @@
+<resources>
+    <string name="sky_reference_equator">Hemelequator</string>
+    <string name="sky_reference_cancer">Kreeftskeerkring</string>
+    <string name="sky_reference_capricorn">Steenbokskeerkring</string>
+    <string name="sky_reference_arctic">Noordpoolcirkel</string>
+    <string name="sky_reference_antarctic">Zuidpoolcirkel</string>
+    <string name="sky_reference_north_pole">Hemelnoordpool</string>
+    <string name="sky_reference_south_pole">Hemelzuidpool</string>
+    <string name="sky_references_hide">Hemelreferentielijnen verbergen</string>
+    <string name="sky_references_show">Hemelreferentielijnen tonen</string>
+</resources>

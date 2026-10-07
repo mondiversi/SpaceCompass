@@ -3,5 +3,5 @@
     <string name="environment_estimated_place">अनुमानित स्थान: %1$s</string>
     <string name="environment_place_loading">स्थान खोजा जा रहा है…</string>
     <string name="environment_place_unavailable">उपलब्ध नहीं</string>
-    <string name="info_news_place">परिवेश विवरण में उपलब्ध होने पर अनुमानित शहर, क्षेत्र और देश दिखाए जाते हैं।</string>
+    <string name="info_news_place">दिन/रात के नक्शों के साथ स्थिति विवरण और स्वतंत्र स्थिति, तारीख, ऊँचाई व समय क्षेत्र वाले परिदृश्य।</string>
 </resources>

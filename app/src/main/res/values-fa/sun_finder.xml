@@ -33,5 +33,5 @@
     <string name="sun_weather_unavailable">آب‌وهوا در دسترس نیست</string>
     <string name="sun_weather_loading">به‌روزرسانی آب‌وهوا…</string>
     <string name="sun_weather_estimate">آب‌وهوای تخمینی: %1$s</string>
-    <string name="sun_weather_privacy">آب‌وهوای آنلاین و نام مکان تخمینی از موقعیت تقریبی استفاده می‌کنند.</string>
+    <string name="sun_weather_privacy">آب‌وهوا و نام مکان‌ها در اینترنت از موقعیت تقریبی استفاده می‌کنند. باز کردن جزئیات موقعیت، مختصات GPS را به OpenStreetMap می‌فرستد.</string>
 </resources>

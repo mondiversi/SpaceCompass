@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="celestial_lv426_model_note">Lune fictive · Illustration originale\nDirection céleste : ζ² Reticuli</string>
+    <string name="celestial_lv426_description">Acheron est la lune fictive de Calpamos dans Alien, où se trouve Hadley’s Hope. Sa surface rocheuse possède une atmosphère hostile. Les valeurs viennent du récit : le diamètre varie selon les sources et la température moyenne correspond à la terraformation. Masse, densité, pression et éléments orbitaux sont inconnus. Le pointage utilise ζ² Reticuli comme repère scénique, sans éphémérides réelles de la lune.</string>
+    <string name="celestial_lv426_credits">Alien : univers fictif. Sources : ALIEN RPG / Xenopedia. Direction : SIMBAD. Illustration originale générée par IA ; aucune image du film.</string>
+</resources>

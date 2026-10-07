@@ -54,13 +54,11 @@ Rigel's J2000 position, motion and 3.78 mas Hipparcos parallax: https://simbad.c
 
 ## Earth-centre reference
 
-The geocentre is appended as a stable catalog ID and displayed immediately after Venus.
-Its topocentric vector is the negative Astronomy Engine observer vector, transformed
-into the local geometric horizon. Range therefore uses the oblate Earth model and observer
-altitude, rather than a fixed mean radius. There is no daily sky orbit or invented core
-temperature; speed is unavailable. This is a geometric point, not the core or
-a physical body. Its viewer shows only observer range; no diameter, mass or
-other planetary physical facts are assigned. The Earth symbol is a locator illustration.
+As of 2026-10-07 the Earth centre is removed from the selectable catalog and
+replaced by a reference-guide cross. An additional cross marks the exact zenith.
+No object facts or viewer are offered for either point. Legacy checks/active IDs
+are migrated while all remaining user preferences are preserved.
+See EARTH_REFERENCE_POINTS.md for geometric/annotation behavior and validation.
 
 
 ## TRAPPIST-1 e

@@ -6,4 +6,7 @@
     <string name="units_kilograms">Quilogramas</string>
     <string name="units_pounds">Libras</string>
     <string name="units_mass_description">Escolha as unidades de massa e densidade.</string>
+    <string name="units_celsius">Celsius</string>
+    <string name="units_fahrenheit">Fahrenheit</string>
+    <string name="settings_resource_language_tag">pt</string>
 </resources>

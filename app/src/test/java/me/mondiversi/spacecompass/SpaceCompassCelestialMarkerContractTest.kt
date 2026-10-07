@@ -17,7 +17,7 @@ class SpaceCompassCelestialMarkerContractTest {
         assertTrue(sky.contains("fitSpaceCompassCelestialOffscreenDiameter(directionalProjections"))
         assertTrue(sky.contains("placeSpaceCompassCelestialOffscreenMarkers(directionalProjections"))
         assertTrue(sky.contains("paths.forEach"))
-        assertTrue(sky.contains("spaceCompassCelestialCatalogOrder.forEach"))
+        assertTrue(sky.contains("spaceCompassAllCelestialOrder.forEach"))
         assertTrue(sky.contains("if (projected.visible) SpaceCompassCelestialLiveMarker"))
         assertTrue(source("SpaceCompassSunFinderScreen.kt").contains("offscreenBody = body.takeIf { hasActiveBody }"))
     }

@@ -19,7 +19,7 @@ internal data class SpaceCompassSunGroundProjection(
  */
 internal fun projectSpaceCompassSunGround(
     orientation: SpaceCompassSunOrientation, frame: SpaceCompassSunSceneFrame,
-    sceneWidth: Double, sceneHeight: Double
+    sceneWidth: Double, sceneHeight: Double, perspective: SpaceCompassPerspective? = null
 ): SpaceCompassSunGroundProjection? {
     val numbers = listOf(frame.left, frame.top, frame.width, frame.height, sceneWidth, sceneHeight,
         orientation.right.up, orientation.screenUp.up, orientation.forward.up)
@@ -29,11 +29,12 @@ internal fun projectSpaceCompassSunGround(
     val yUp = -orientation.screenUp.up
     val zUp = orientation.forward.up
     if (xUp * xUp + yUp * yUp + zUp * zUp < 1e-12) return null
-    val centerX = frame.left + frame.width / 2
-    val centerY = frame.top + frame.height / 2
-    val focal = spaceCompassSunProjectionFocalLength(frame.height)
+    val centerX = frame.left + frame.width * (perspective?.principalX ?: .5)
+    val centerY = frame.top + frame.height * (perspective?.principalY ?: .5)
+    val focal = perspective?.focalY(frame.height) ?: spaceCompassSunProjectionFocalLength(frame.height)
+    val focalX = perspective?.focalX(frame.width) ?: focal
     fun up(point: SpaceCompassSunScenePoint) = zUp +
-        xUp * (point.x - centerX) / focal + yUp * (point.y - centerY) / focal
+        xUp * (point.x - centerX) / focalX + yUp * (point.y - centerY) / focal
     val corners = listOf(SpaceCompassSunScenePoint(0.0, 0.0), SpaceCompassSunScenePoint(sceneWidth, 0.0),
         SpaceCompassSunScenePoint(sceneWidth, sceneHeight), SpaceCompassSunScenePoint(0.0, sceneHeight))
     val ground = mutableListOf<SpaceCompassSunScenePoint>()
@@ -57,12 +58,14 @@ internal fun projectSpaceCompassSunGround(
         if (currentInside) ground += current
         if (abs(currentUp) < 1e-9) addHorizon(current)
     }
-    val length = hypot(xUp, yUp)
-    val direction = if (length > 1e-9) SpaceCompassSunScenePoint(-xUp / length, -yUp / length)
+    val normalX = xUp / focalX
+    val normalY = yUp / focal
+    val length = hypot(normalX, normalY)
+    val direction = if (length > 1e-12) SpaceCompassSunScenePoint(-normalX / length, -normalY / length)
         else SpaceCompassSunScenePoint(0.0, 1.0)
-    val origin = if (length > 1e-4) SpaceCompassSunScenePoint(
-        centerX - xUp * zUp * focal / (length * length),
-        centerY - yUp * zUp * focal / (length * length)) else null
+    val origin = if (hypot(xUp, yUp) > 1e-4) SpaceCompassSunScenePoint(
+        centerX - normalX * zUp / (length * length),
+        centerY - normalY * zUp / (length * length)) else null
     return SpaceCompassSunGroundProjection(ground, horizon.take(2), direction, origin,
-        if (origin != null) focal / length else focal)
+        if (origin != null) 1 / length else focal)
 }

@@ -25,7 +25,9 @@ class SpaceCompassExoplanetTest {
         assertNull(calculateSpaceCompassCelestialSpeed(body, now))
         assertNull(body.viewerTexture)
         assertFalse(body.hasPhysicalFace)
-        assertTrue(spaceCompassCelestialTemperatures(body).isEmpty())
+        assertEquals(SpaceCompassCelestialTemperatureKind.EQUILIBRIUM_MODEL,
+            spaceCompassCelestialTemperatures(body).single().kind)
+        assertNull(spaceCompassAtmosphericPressure(body))
         assertEquals(listOf(body), spaceCompassFilterCatalog(setOf(SpaceCompassCatalogType.EXOPLANET), SpaceCompassCatalogVisibility.ALL, emptyMap()))
     }
     @Test fun planetaryMassIsNotPresentedInSolarUnitsAndUnmeasuredRotationRemainsAbsent() {

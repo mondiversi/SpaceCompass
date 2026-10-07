@@ -3,5 +3,5 @@
     <string name="environment_estimated_place">Εκτιμώμενη τοποθεσία: %1$s</string>
     <string name="environment_place_loading">Αναζήτηση περιοχής…</string>
     <string name="environment_place_unavailable">Μη διαθέσιμο</string>
-    <string name="info_news_place">Οι λεπτομέρειες περιβάλλοντος δείχνουν την εκτιμώμενη πόλη, περιοχή και χώρα, όταν είναι διαθέσιμες.</string>
+    <string name="info_news_place">Λεπτομέρειες θέσης με χάρτες ημέρας/νύχτας και σενάρια με ανεξάρτητη θέση, ημερομηνία, υψόμετρο και ζώνη ώρας.</string>
 </resources>

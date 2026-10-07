@@ -68,21 +68,26 @@ internal fun spaceCompassCelestialCraftMesh(body: SpaceCompassCelestialBody): Li
 internal fun SpaceCompassCelestialCraftCanvas(body: SpaceCompassCelestialBody, geometry: SpaceCompassCelestialViewGeometry,
     viewport: SpaceCompassCelestialViewportState, modifier: Modifier, colorFilter: ColorFilter? = null, opacity: Float = 1f) {
     val mesh = androidx.compose.runtime.remember(body) { spaceCompassCelestialCraftMesh(body) }
-    Canvas(modifier) {
-        drawRect(Color(0xff04060c))
-        val scale = min(size.width,size.height)*0.225f*viewport.zoom.toFloat()
-        fun project(v: SpaceCompassViewVector) = Offset(center.x+v.x.toFloat()*scale+viewport.panX.toFloat()*size.width/2,
-            center.y-v.y.toFloat()*scale-viewport.panY.toFloat()*size.height/2)
-        mesh.map { face -> face to listOf(geometry.toCamera(face.a),geometry.toCamera(face.b),geometry.toCamera(face.c)) }
-            .sortedBy { (_,p) -> p.sumOf { it.z } }.forEach { (face,p) ->
-                val normal=(p[1]-p[0]).cross(p[2]-p[0])
-                val length=sqrt(normal.dot(normal))
-                val brightness=if(length<1e-9)0.5 else 0.25+0.75*abs(normal.dot(geometry.light)/length)
-                val path=Path().apply { val a=project(p[0]); moveTo(a.x,a.y)
-                    p.drop(1).forEach { val b=project(it); lineTo(b.x,b.y) }; close() }
-                drawPath(path,Color(((face.rgb shr 16 and 255)*brightness/255).toFloat(),
-                    ((face.rgb shr 8 and 255)*brightness/255).toFloat(),((face.rgb and 255)*brightness/255).toFloat()),
-                    colorFilter = colorFilter, alpha = opacity)
-            }
-    }
+    Canvas(modifier) { drawSpaceCompassCelestialCraft(mesh, geometry, viewport, colorFilter, opacity) }
+}
+
+internal fun androidx.compose.ui.graphics.drawscope.DrawScope.drawSpaceCompassCelestialCraft(
+    mesh: List<SpaceCompassCraftFace>, geometry: SpaceCompassCelestialViewGeometry,
+    viewport: SpaceCompassCelestialViewportState, colorFilter: ColorFilter? = null, opacity: Float = 1f
+) {
+    drawRect(Color(0xff04060c))
+    val scale = min(size.width,size.height)*0.225f*viewport.zoom.toFloat()
+    fun project(v: SpaceCompassViewVector) = Offset(center.x+v.x.toFloat()*scale+viewport.panX.toFloat()*size.width/2,
+        center.y-v.y.toFloat()*scale-viewport.panY.toFloat()*size.height/2)
+    mesh.map { face -> face to listOf(geometry.toCamera(face.a),geometry.toCamera(face.b),geometry.toCamera(face.c)) }
+        .sortedBy { (_,p) -> p.sumOf { it.z } }.forEach { (face,p) ->
+            val normal=(p[1]-p[0]).cross(p[2]-p[0])
+            val length=sqrt(normal.dot(normal))
+            val brightness=if(length<1e-9)0.5 else 0.25+0.75*abs(normal.dot(geometry.light)/length)
+            val path=Path().apply { val a=project(p[0]); moveTo(a.x,a.y)
+                p.drop(1).forEach { val b=project(it); lineTo(b.x,b.y) }; close() }
+            drawPath(path,Color(((face.rgb shr 16 and 255)*brightness/255).toFloat(),
+                ((face.rgb shr 8 and 255)*brightness/255).toFloat(),((face.rgb and 255)*brightness/255).toFloat()),
+                colorFilter = colorFilter, alpha = opacity)
+        }
 }

@@ -8,8 +8,9 @@
     <string name="pc_info_accuracy">Geringe Genauigkeit bedeutet, dass das Telefon eine niedrige Magnetkalibrierung meldet. Die Ausrichtung bleibt ungefähr, bis sich die Sensorgenauigkeit verbessert.</string>
     <string name="pc_info_credits">Quellen und Lizenzen</string>
     <string name="pc_info_credits_detail">Karten sind Referenzbilder, keine Live-Aufnahmen. Originale Lizenzen und Quellenangaben sind in der App enthalten.</string>
-    <string name="settings_theme_description">Wähle das Design der App, um die Darstellung der Inhalte anzupassen.</string>
+    <string name="settings_theme_description">Wählen Sie das Design der App, um die Darstellung der Inhalte anzupassen.</string>
     <string name="language_description">Wählen Sie die Sprache der Benutzeroberfläche.</string>
     <string name="github_repository_title">GitHub-Repository</string>
     <string name="about_copyright">Copyright © 2026 Mondiversi</string>
+    <string name="settings_section_info">Info</string>
 </resources>

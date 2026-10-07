@@ -3,5 +3,5 @@
     <string name="environment_estimated_place">估计位置：%1$s</string>
     <string name="environment_place_loading">正在查找地点…</string>
     <string name="environment_place_unavailable">不可用</string>
-    <string name="info_news_place">环境详情会在数据可用时显示估计的城市、地区和国家。</string>
+    <string name="info_news_place">位置详情包含日夜地图，场景支持独立设置位置、日期、海拔和时区。</string>
 </resources>

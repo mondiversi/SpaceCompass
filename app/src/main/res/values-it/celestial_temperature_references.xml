@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="celestial_temperature_surface_estimate" formatted="false">Temperatura superficiale stimata</string>
+    <string name="celestial_temperature_equilibrium_model" formatted="false">Temperatura di equilibrio (modello)</string>
+    <string name="celestial_temperature_historical_range" formatted="false">Intervallo superficiale (storico)</string>
+    <string name="celestial_temperature_thermal_model" formatted="false">Emissione termica (modello)</string>
+    <string name="celestial_temperature_reference_note" formatted="false">Le stime dipendono dalle ipotesi del modello. Gli intervalli con un anno descrivono osservazioni passate, non temperature attuali. Per le stelle compatte le temperature derivano da modelli dello spettro, non da misure di giorno e notte.</string>
+    <string name="celestial_stephenson_reference_note" formatted="false">La temperatura efficace è adottata nel modello. Luminosità e diametro derivato assumono la distanza dell’ammasso; l’appartenenza all’ammasso è incerta. La massa attuale è sconosciuta.</string>
+</resources>

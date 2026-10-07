@@ -6,4 +6,7 @@
     <string name="units_kilograms">千克</string>
     <string name="units_pounds">磅</string>
     <string name="units_mass_description">选择质量和密度的单位。</string>
+    <string name="units_celsius">摄氏</string>
+    <string name="units_fahrenheit">华氏</string>
+    <string name="settings_resource_language_tag">zh-CN</string>
 </resources>

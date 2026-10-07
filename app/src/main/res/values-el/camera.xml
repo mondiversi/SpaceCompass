@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="camera_enable">Ενεργοποίηση προβολής κάμερας</string>
+    <string name="camera_disable">Απενεργοποίηση προβολής κάμερας</string>
+    <string name="camera_permission">Επιτρέψτε την πρόσβαση στην κάμερα για τη ζωντανή προβολή.</string>
+    <string name="camera_unavailable">Η κάμερα δεν είναι διαθέσιμη. Δοκιμάστε ξανά.</string>
+    <string name="camera_view_description">Ζωντανή προβολή κάμερας με θέσεις ουράνιων σωμάτων</string>
+</resources>

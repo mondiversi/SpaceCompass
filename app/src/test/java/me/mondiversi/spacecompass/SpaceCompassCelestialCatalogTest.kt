@@ -9,11 +9,11 @@ import kotlin.math.sqrt
 class SpaceCompassCelestialCatalogTest {
     private val now = Instant.parse("2026-10-04T12:00:00Z").toEpochMilli()
     @Test fun requestedPresentationOrderContainsEveryBodyExactlyOnce() {
-        assertEquals(listOf("SUN","MERCURY","VENUS","EARTH_CENTER","ISS","STARLINK_V3","MOON","MARS","JUPITER","IO","EUROPA",
-            "SATURN","URANUS","NEPTUNE","PLUTO","SEDNA","VOYAGER_1","VOYAGER_2","PROXIMA_CENTAURI","ALPHA_CENTAURI","TRAPPIST_1_E","RX_J1856","POLARIS","PSR_J0437","RIGEL","STEPHENSON_2_18","SAGITTARIUS_A","ANDROMEDA_CORE","TON_618"),
+        assertEquals(listOf("SUN","MERCURY","VENUS","ISS","STARLINK_V3","MOON","MARS","JUPITER","IO","EUROPA",
+            "SATURN","URANUS","NEPTUNE","PLUTO","SEDNA","HALLEY","COMET_67P","VOYAGER_1","VOYAGER_2","PROXIMA_CENTAURI","ALPHA_CENTAURI","TRAPPIST_1_E","RX_J1856","POLARIS","PSR_J0437","RIGEL","STEPHENSON_2_18","SAGITTARIUS_A","ANDROMEDA_CORE","TON_618"),
             spaceCompassCelestialCatalogOrder.map { it.name })
-        assertEquals(SpaceCompassCelestialBody.entries.toSet(), spaceCompassCelestialCatalogOrder.toSet())
-        assertEquals(SpaceCompassCelestialBody.entries.size,spaceCompassCelestialCatalogOrder.size)
+        assertEquals(SpaceCompassCelestialBody.entries.filterNot { it.isFictional || it == SpaceCompassCelestialBody.EARTH_CENTER }.toSet(), spaceCompassCelestialCatalogOrder.toSet())
+        assertEquals(SpaceCompassCelestialBody.entries.count { !it.isFictional && it != SpaceCompassCelestialBody.EARTH_CENTER },spaceCompassCelestialCatalogOrder.size)
     }
     @Test fun catalogueUsesSunDistanceRatherThanEarthObserverRange() {
         assertEquals(0.0,spaceCompassCelestialCatalogDistanceAu(SpaceCompassCelestialBody.SUN,now)!!,0.0)

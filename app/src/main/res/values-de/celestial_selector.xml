@@ -1,4 +1,4 @@
 <?xml version='1.0' encoding='utf-8'?>
 <resources>
-  <string name="pc_celestial_object">Himmelsobjekte</string>
+  <string name="pc_celestial_object">%1$s Objekte</string>
 </resources>

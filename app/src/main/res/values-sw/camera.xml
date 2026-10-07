@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="camera_enable">Washa mwonekano wa kamera</string>
+    <string name="camera_disable">Zima mwonekano wa kamera</string>
+    <string name="camera_permission">Ruhusu ufikiaji wa kamera ili kutumia mwonekano wa moja kwa moja.</string>
+    <string name="camera_unavailable">Kamera haipatikani. Jaribu tena.</string>
+    <string name="camera_view_description">Mwonekano wa moja kwa moja wa kamera wenye nafasi za miili ya angani</string>
+</resources>

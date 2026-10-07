@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="panorama_preview" formatted="false">پانوراما</string>
+    <string name="panorama_preparing" formatted="false">در حال آماده‌سازی پانوراما…</string>
+    <string name="panorama_save" formatted="false">ذخیره</string>
+    <string name="panorama_share" formatted="false">اشتراک‌گذاری</string>
+    <string name="panorama_gallery" formatted="false">گالری تصاویر</string>
+    <string name="panorama_choose_location" formatted="false">انتخاب محل ذخیره…</string>
+    <string name="panorama_exported" formatted="false">پانوراما صادر شد.</string>
+    <string name="panorama_cloud_cover" formatted="false">پوشش ابر</string>
+    <string name="panorama_weather_time" formatted="false">زمان مدل هواشناسی</string>
+    <string name="panorama_northeast" formatted="false">شمال شرقی</string>
+    <string name="panorama_southeast" formatted="false">جنوب شرقی</string>
+    <string name="panorama_southwest" formatted="false">جنوب غربی</string>
+    <string name="panorama_northwest" formatted="false">شمال غربی</string>
+</resources>

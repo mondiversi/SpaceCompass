@@ -25,7 +25,7 @@
     <string name="celestial_loading">궤도 데이터 업데이트 중…</string>
     <string name="celestial_unavailable">%1$s 데이터가 없습니다. 갱신하려면 인터넷 연결이 필요합니다.</string>
     <string name="celestial_iss_old">ISS 궤도 데이터가 24시간 이상 오래되어 정확도가 낮아질 수 있습니다.</string>
-    <string name="celestial_iss_note">현재 시각을 중심으로 지평선 아래까지 한 바퀴를 표시하며, 24개의 일정한 간격의 점과 뜨는 시각, 최고 고도, 지는 시각을 포함합니다. 통과 정보는 현재 또는 24시간 이내 다음 통과에 해당하며 관측 가능성을 보장하지 않습니다.</string>
+    <string name="celestial_iss_note">현재 시각을 중심으로 지평선 아래까지 한 바퀴를 표시하며, 24개의 일정한 간격의 점과 뜨는 시각, 최고 고도, 지는 시각을 포함합니다. 통과 정보는 현재 또는 24시간 이내 다음 통과에 해당하며 관측 가능성을 보장하지 않습니다.\nCelesTrak / Satcat · Space-Track</string>
     <string name="celestial_model_note">위치와 거리는 계산값이며 방향은 나침반 정확도에 달려 있습니다. ISS에는 최신 궤도 데이터가 필요합니다. 세드나와 보이저는 실시간 원격 측정이 아닌 NASA/JPL 예측 경로를 사용합니다.</string>
     <string name="celestial_weather_mainly_clear">대체로 맑음</string>
     <string name="celestial_speed_earth_orbit">궤도 속도 (지구): %1$s km/s</string>

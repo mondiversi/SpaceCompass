@@ -1,0 +1,11 @@
+<resources>
+    <string name="sky_reference_equator">Equatore celeste</string>
+    <string name="sky_reference_cancer">Tropico del Cancro</string>
+    <string name="sky_reference_capricorn">Tropico del Capricorno</string>
+    <string name="sky_reference_arctic">Circolo polare artico</string>
+    <string name="sky_reference_antarctic">Circolo polare antartico</string>
+    <string name="sky_reference_north_pole">Polo Nord celeste</string>
+    <string name="sky_reference_south_pole">Polo Sud celeste</string>
+    <string name="sky_references_hide">Nascondi riferimenti celesti</string>
+    <string name="sky_references_show">Mostra riferimenti celesti</string>
+</resources>

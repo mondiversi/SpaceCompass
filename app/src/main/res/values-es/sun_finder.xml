@@ -33,5 +33,5 @@
     <string name="sun_weather_unavailable">Meteorología no disponible</string>
     <string name="sun_weather_loading">Actualizando meteorología…</string>
     <string name="sun_weather_estimate">Tiempo estimado: %1$s</string>
-    <string name="sun_weather_privacy">El tiempo en línea y la localidad estimada usan una ubicación aproximada.</string>
+    <string name="sun_weather_privacy">El tiempo y los nombres de lugares en línea usan una ubicación aproximada. Abrir los detalles de ubicación envía las coordenadas GPS a OpenStreetMap.</string>
 </resources>

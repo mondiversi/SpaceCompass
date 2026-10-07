@@ -1,0 +1,11 @@
+<resources>
+    <string name="sky_reference_equator">天赤道</string>
+    <string name="sky_reference_cancer">北回归线</string>
+    <string name="sky_reference_capricorn">南回归线</string>
+    <string name="sky_reference_arctic">北极圈</string>
+    <string name="sky_reference_antarctic">南极圈</string>
+    <string name="sky_reference_north_pole">北天极</string>
+    <string name="sky_reference_south_pole">南天极</string>
+    <string name="sky_references_hide">隐藏天球参考线</string>
+    <string name="sky_references_show">显示天球参考线</string>
+</resources>

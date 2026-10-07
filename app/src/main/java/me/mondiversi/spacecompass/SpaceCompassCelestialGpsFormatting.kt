@@ -7,16 +7,16 @@ import kotlin.math.roundToLong
  * Round the whole angle first so seconds/minutes carry correctly at their boundaries.
  * N/S/E/W are the international coordinate hemisphere notation, independent of UI language. */
 internal fun formatSpaceCompassCelestialGpsCoordinates(latitude: Double?, longitude: Double?,
-    numeric: SpaceCompassNumericFormat): String? {
+    numeric: SpaceCompassNumericFormat, systemLocale: java.util.Locale = java.util.Locale.getDefault()): String? {
     if (latitude == null || longitude == null || !latitude.isFinite() || !longitude.isFinite() ||
         latitude !in -90.0..90.0 || longitude !in -180.0..180.0) return null
     fun dms(angle: Double, positive: String, negative: String): String {
         val ticks = (abs(angle) * 36_000).roundToLong()
-        val degrees = formatSpaceCompassNumber((ticks / 36_000).toDouble(), 0, numeric, grouping = false)
-        val zero = formatSpaceCompassNumber(0.0, 0, numeric, grouping = false).first()
+        val degrees = formatSpaceCompassNumber((ticks / 36_000).toDouble(), 0, numeric, grouping = false, systemLocale = systemLocale)
+        val zero = formatSpaceCompassNumber(0.0, 0, numeric, grouping = false, systemLocale = systemLocale).first()
         val minutes = formatSpaceCompassNumber((ticks % 36_000 / 600).toDouble(), 0, numeric,
-            grouping = false).padStart(2, zero)
-        val seconds = formatSpaceCompassNumber(ticks % 600 / 10.0, 1, numeric, minimumDigits = 1)
+            grouping = false, systemLocale = systemLocale).padStart(2, zero)
+        val seconds = formatSpaceCompassNumber(ticks % 600 / 10.0, 1, numeric, minimumDigits = 1, systemLocale = systemLocale)
         return "$degrees° $minutes′ $seconds″ ${if (angle < 0) negative else positive}"
     }
     return dms(latitude, "N", "S") + "\n" + dms(longitude, "E", "W")

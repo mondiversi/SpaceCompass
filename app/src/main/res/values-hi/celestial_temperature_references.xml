@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="celestial_temperature_surface_estimate" formatted="false">अनुमानित सतही तापमान</string>
+    <string name="celestial_temperature_equilibrium_model" formatted="false">संतुलन तापमान (मॉडल)</string>
+    <string name="celestial_temperature_historical_range" formatted="false">सतही सीमा (ऐतिहासिक)</string>
+    <string name="celestial_temperature_thermal_model" formatted="false">तापीय उत्सर्जन (मॉडल)</string>
+    <string name="celestial_temperature_reference_note" formatted="false">अनुमान मॉडल की मान्यताओं पर निर्भर करते हैं। वर्ष वाली सीमाएँ पिछले अवलोकन बताती हैं, वर्तमान तापमान नहीं। सघन तारों के तापमान वर्णक्रमीय मॉडल से मिलते हैं, दिन और रात के माप से नहीं।</string>
+    <string name="celestial_stephenson_reference_note" formatted="false">प्रभावी तापमान मॉडल में माना गया है। दीप्ति और निकाला गया व्यास तारागुच्छ की दूरी पर आधारित हैं; तारागुच्छ की सदस्यता अनिश्चित है। वर्तमान द्रव्यमान अज्ञात है।</string>
+</resources>

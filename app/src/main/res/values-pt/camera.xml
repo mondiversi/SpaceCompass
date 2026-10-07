@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="camera_enable">Ativar vista da câmara</string>
+    <string name="camera_disable">Desativar vista da câmara</string>
+    <string name="camera_permission">Permita o acesso à câmara para a vista em direto.</string>
+    <string name="camera_unavailable">Câmara indisponível. Tente novamente.</string>
+    <string name="camera_view_description">Vista da câmara em direto com posições celestes</string>
+</resources>

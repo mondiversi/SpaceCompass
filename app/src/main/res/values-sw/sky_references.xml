@@ -1,0 +1,11 @@
+<resources>
+    <string name="sky_reference_equator">Ikweta ya anga</string>
+    <string name="sky_reference_cancer">Tropiki ya Kansa</string>
+    <string name="sky_reference_capricorn">Tropiki ya Kaprikoni</string>
+    <string name="sky_reference_arctic">Duara la Aktiki</string>
+    <string name="sky_reference_antarctic">Duara la Antaktiki</string>
+    <string name="sky_reference_north_pole">Ncha ya kaskazini ya anga</string>
+    <string name="sky_reference_south_pole">Ncha ya kusini ya anga</string>
+    <string name="sky_references_hide">Ficha mistari ya marejeo ya anga</string>
+    <string name="sky_references_show">Onyesha mistari ya marejeo ya anga</string>
+</resources>

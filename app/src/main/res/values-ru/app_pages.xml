@@ -12,4 +12,5 @@
     <string name="language_description">Выберите язык интерфейса.</string>
     <string name="github_repository_title">Репозиторий GitHub</string>
     <string name="about_copyright">© 2026 Мондиверси</string>
+    <string name="settings_section_info">Информация</string>
 </resources>

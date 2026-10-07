@@ -1,0 +1,31 @@
+<resources>
+    <string name="observer_title">Szenario</string>
+    <string name="observer_place">Position</string>
+    <string name="observer_search">Ort suchen</string>
+    <string name="observer_search_action">Suchen</string>
+    <string name="observer_map">Auf Karte wählen</string>
+    <string name="observer_latitude">Breitengrad</string>
+    <string name="observer_longitude">Längengrad</string>
+    <string name="observer_automatic">Höhe und Zeitzone ermitteln</string>
+    <string name="observer_altitude">Höhe</string>
+    <string name="observer_zone">Zeitzone</string>
+    <string name="observer_terrain_note">Geschätzte Geländehöhe; kann geändert werden.</string>
+    <string name="observer_lookup_failed">Automatische Ermittlung nicht verfügbar. Aktiviere Höhe und Zeitzone zur manuellen Eingabe.</string>
+    <string name="observer_moment">Datum und Uhrzeit</string>
+    <string name="observer_date">Datum</string>
+    <string name="observer_time">Uhrzeit</string>
+    <string name="observer_limits">Manche Bahndaten sind außerhalb ihres Gültigkeitszeitraums nicht verfügbar. Wetterschätzungen, wenn verfügbar; andernfalls ein klarer Standardhimmel.</string>
+    <string name="observer_privacy">Die Suche nutzt den Android-Geocoder. Die Karte nutzt OpenStreetMap; gewählte Koordinaten werden für Höhe und Zeitzone an Open-Meteo gesendet.</string>
+    <string name="observer_apply">Festlegen</string>
+    <string name="observer_invalid">Koordinaten, Höhe, Datum, Uhrzeit und Zeitzone prüfen. Daten: 1900–2100. Nicht existierende Sommerzeit-Uhrzeiten sind ungültig.</string>
+    <string name="observer_use_place">Diesen Punkt verwenden</string>
+    <string name="observer_simulation">Szenario</string>
+    <string name="observer_coordinates_value">Koordinaten: %1$s</string>
+    <string name="observer_altitude_value">Höhe: %1$s</string>
+    <string name="observer_simulation_active">Szenario aktiv</string>
+    <string name="observer_enable_position">Position simulieren</string>
+    <string name="observer_enable_time">Datum und Uhrzeit simulieren</string>
+    <string name="observer_current_metadata">Höhe und Zeitzone am aktuellen Standort ermitteln</string>
+    <string name="observer_enable_altitude">Höhe simulieren</string>
+    <string name="observer_enable_zone">Zeitzone simulieren</string>
+</resources>

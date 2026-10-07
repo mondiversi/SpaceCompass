@@ -34,7 +34,7 @@ internal fun SpaceCompassSunPathSelectedPanel(
     compact: Boolean = false, body: SpaceCompassCelestialBody = path?.body ?: SpaceCompassCelestialBody.SUN, nowMs: Long? = null
 ) {
     val selected = path?.let(state::selectedIn) ?: state.selectedCurrentFor(body) ?: return
-    val zone = path?.zone ?: ZoneId.systemDefault()
+    val zone = path?.zone ?: spaceCompassObservationZone()
     val labelPath = path ?: SpaceCompassSunDailyPath(Instant.ofEpochMilli(selected.timeMs).atZone(zone).toLocalDate(),
         zone, listOf(selected), emptyList(), body)
     val labels = rememberSpaceCompassSunPathLabels(labelPath)

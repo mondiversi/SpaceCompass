@@ -21,25 +21,29 @@ internal enum class SpaceCompassCelestialBody(val nameResource: Int, val engine:
     ANDROMEDA_CORE(R.string.celestial_andromeda_core), TON_618(R.string.celestial_ton_618),
     STEPHENSON_2_18(R.string.celestial_stephenson_2_18), RX_J1856(R.string.celestial_rx_j1856),
     PSR_J0437(R.string.celestial_psr_j0437),
-    PROXIMA_CENTAURI(R.string.celestial_proxima_centauri), RIGEL(R.string.celestial_rigel), EARTH_CENTER(R.string.celestial_earth_center), TRAPPIST_1_E(R.string.celestial_trappist_1_e)
+    PROXIMA_CENTAURI(R.string.celestial_proxima_centauri), RIGEL(R.string.celestial_rigel), EARTH_CENTER(R.string.celestial_earth_center), TRAPPIST_1_E(R.string.celestial_trappist_1_e),
+    HALLEY(R.string.celestial_halley), COMET_67P(R.string.celestial_comet_67p), LV_426(R.string.celestial_lv426)
 }
+internal val SpaceCompassCelestialBody.isComet: Boolean get() = this == SpaceCompassCelestialBody.HALLEY || this == SpaceCompassCelestialBody.COMET_67P
 internal val SpaceCompassCelestialBody.isEarthSatellite: Boolean get() = this == SpaceCompassCelestialBody.ISS || this == SpaceCompassCelestialBody.STARLINK_V3
 internal val SpaceCompassCelestialBody.isJovianMoon: Boolean get() = this == SpaceCompassCelestialBody.IO || this == SpaceCompassCelestialBody.EUROPA
 internal val SpaceCompassCelestialBody.hasPhysicalFace: Boolean get() = engine != null || isJovianMoon
+// EARTH_CENTER is a retired legacy identifier, excluded from selectable catalogs and restored checks.
+// Its old calculation remains for backward compatibility and reference-geometry regression checks.
 // Presentation order is stable: spacecraft stay in the explicitly requested order, not a daily re-sort.
 internal val spaceCompassCelestialCatalogOrder = listOf(SpaceCompassCelestialBody.SUN, SpaceCompassCelestialBody.MERCURY,
-    SpaceCompassCelestialBody.VENUS, SpaceCompassCelestialBody.EARTH_CENTER, SpaceCompassCelestialBody.ISS, SpaceCompassCelestialBody.STARLINK_V3, SpaceCompassCelestialBody.MOON, SpaceCompassCelestialBody.MARS,
+    SpaceCompassCelestialBody.VENUS, SpaceCompassCelestialBody.ISS, SpaceCompassCelestialBody.STARLINK_V3, SpaceCompassCelestialBody.MOON, SpaceCompassCelestialBody.MARS,
     SpaceCompassCelestialBody.JUPITER, SpaceCompassCelestialBody.IO, SpaceCompassCelestialBody.EUROPA, SpaceCompassCelestialBody.SATURN,
-    SpaceCompassCelestialBody.URANUS, SpaceCompassCelestialBody.NEPTUNE, SpaceCompassCelestialBody.PLUTO, SpaceCompassCelestialBody.SEDNA,
+    SpaceCompassCelestialBody.URANUS, SpaceCompassCelestialBody.NEPTUNE, SpaceCompassCelestialBody.PLUTO, SpaceCompassCelestialBody.SEDNA, SpaceCompassCelestialBody.HALLEY, SpaceCompassCelestialBody.COMET_67P,
     SpaceCompassCelestialBody.VOYAGER_1, SpaceCompassCelestialBody.VOYAGER_2, SpaceCompassCelestialBody.PROXIMA_CENTAURI, SpaceCompassCelestialBody.ALPHA_CENTAURI,
     SpaceCompassCelestialBody.TRAPPIST_1_E, SpaceCompassCelestialBody.RX_J1856, SpaceCompassCelestialBody.POLARIS, SpaceCompassCelestialBody.PSR_J0437,
     SpaceCompassCelestialBody.RIGEL, SpaceCompassCelestialBody.STEPHENSON_2_18, SpaceCompassCelestialBody.SAGITTARIUS_A, SpaceCompassCelestialBody.ANDROMEDA_CORE, SpaceCompassCelestialBody.TON_618)
 internal val SpaceCompassCelestialBody.usesHorizons: Boolean
-    get() = this == SpaceCompassCelestialBody.SEDNA || isVoyager
+    get() = this == SpaceCompassCelestialBody.SEDNA || isVoyager || isComet
 internal val SpaceCompassCelestialBody.isVoyager: Boolean
     get() = this == SpaceCompassCelestialBody.VOYAGER_1 || this == SpaceCompassCelestialBody.VOYAGER_2
 internal val SpaceCompassCelestialBody.usesLiveDistance: Boolean
-    get() = this == SpaceCompassCelestialBody.MOON || isEarthSatellite || isVoyager
+    get() = this == SpaceCompassCelestialBody.MOON || isEarthSatellite || isVoyager || isComet
 internal val SpaceCompassCelestialBody.supportsDailyPath: Boolean
     get() = this != SpaceCompassCelestialBody.EARTH_CENTER
 internal data class SpaceCompassCelestialObservation(val position: SpaceCompassSunPosition, val distanceKm: Double)

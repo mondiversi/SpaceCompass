@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="panorama_export" formatted="false">Exporteren</string>
+    <string name="panorama_export_profile" formatted="false">Gegevensformaat</string>
+    <string name="panorama_export_selected" formatted="false">Ingestelde taal en formaten</string>
+    <string name="panorama_export_international" formatted="false">Internationaal wetenschappelijk</string>
+    <string name="panorama_save_gallery" formatted="false">Opslaan in galerij</string>
+    <string name="panorama_save_phone" formatted="false">Opslaan op telefoon</string>
+</resources>

@@ -1,0 +1,11 @@
+<resources>
+    <string name="sky_reference_equator">Ekuator langit</string>
+    <string name="sky_reference_cancer">Garis balik utara</string>
+    <string name="sky_reference_capricorn">Garis balik selatan</string>
+    <string name="sky_reference_arctic">Lingkar Arktik</string>
+    <string name="sky_reference_antarctic">Lingkar Antarktika</string>
+    <string name="sky_reference_north_pole">Kutub langit utara</string>
+    <string name="sky_reference_south_pole">Kutub langit selatan</string>
+    <string name="sky_references_hide">Sembunyikan panduan langit</string>
+    <string name="sky_references_show">Tampilkan panduan langit</string>
+</resources>

@@ -3,5 +3,5 @@
     <string name="environment_estimated_place">Geschätzter Standort: %1$s</string>
     <string name="environment_place_loading">Ort wird gesucht…</string>
     <string name="environment_place_unavailable">Nicht verfügbar</string>
-    <string name="info_news_place">Die Umgebungsdetails zeigen die geschätzte Stadt, Region und das Land, sofern verfügbar.</string>
+    <string name="info_news_place">Positionsdetails mit Tag-/Nachtkarten und Szenarien mit unabhängiger Position, Datum, Höhe und Zeitzone.</string>
 </resources>

@@ -12,4 +12,5 @@
     <string name="language_description">इंटरफ़ेस की भाषा चुनें।</string>
     <string name="github_repository_title">GitHub भंडार</string>
     <string name="about_copyright">कॉपीराइट © 2026 मोन्डिवर्सी</string>
+    <string name="settings_section_info">जानकारी</string>
 </resources>

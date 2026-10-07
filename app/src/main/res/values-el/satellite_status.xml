@@ -1,7 +1,10 @@
 <?xml version='1.0' encoding='utf-8'?>
 <resources>
-  <string name="celestial_satellite_unavailable">Τα δεδομένα για %1$s δεν είναι διαθέσιμα. Το CelesTrak μπορεί να μην είναι προσβάσιμο ακόμη και με ενεργή σύνδεση στο διαδίκτυο.</string>
-  <string name="celestial_satellite_timeout">Το CelesTrak δεν απάντησε έγκαιρα: δεν ήταν δυνατή η λήψη δεδομένων για %1$s. Δοκιμάστε άλλο δίκτυο.</string>
+  <string name="celestial_satellite_unavailable">Τα δεδομένα για %1$s δεν είναι διαθέσιμα. Το CelesTrak / Satcat μπορεί να μην είναι προσβάσιμο ακόμη και με ενεργή σύνδεση στο διαδίκτυο.</string>
+  <string name="celestial_satellite_timeout">Το CelesTrak / Satcat δεν απάντησε έγκαιρα: δεν ήταν δυνατή η λήψη δεδομένων για %1$s. Δοκιμάστε άλλο δίκτυο.</string>
   <string name="celestial_starlink_unavailable">Τα δεδομένα για %1$s δεν είναι διαθέσιμα. Το CelesTrak / Satcat μπορεί να μην είναι προσβάσιμο ακόμη και με ενεργή σύνδεση στο διαδίκτυο.</string>
   <string name="celestial_starlink_timeout">Το CelesTrak / Satcat δεν απάντησε έγκαιρα: δεν ήταν δυνατή η λήψη δεδομένων για %1$s. Δοκιμάστε άλλο δίκτυο.</string>
+  <string name="celestial_data_unavailable_compact">Δεδομένα μη διαθέσιμα</string>
+  <string name="celestial_date_unavailable">Δεν υπάρχουν δεδομένα για αυτή την ημερομηνία</string>
+  <string name="catalog_date_unavailable">Ημερομηνία εκτός κάλυψης</string>
 </resources>

@@ -75,8 +75,9 @@ a geometric-horizon visibility filter. Missing/stale satellite positions remain
 available only under All. Filters never mutate object selection. Select-all acts
 only on displayed objects and preserves hidden checked objects and a valid active
 object. Both the back button and Android Back first collapse the animated panel.
-Earth centre is a custom geocentric reference, not an Astronomy Engine body passed
-into observer-relative planet ephemerides, and has no artificial daily sky path.
+Earth centre is a guide cross, not a selectable object. Legacy selection identifiers
+are migrated without resetting other preferences; zenith and pole crosses share the
+reference-guide renderer and the capture visibility rules.
 
 
 Catalog sorting uses localized collation for names and a separate heliocentric-AU
@@ -100,3 +101,20 @@ screen clock feeds both badge and selected panel; each reserves the measured
 width of both alternatives to retain right-edge angle alignment. Point names
 remain fixed, only the time slot slides. Invisible text is excluded from
 accessibility, and reduced-motion settings suppress the sliding transition.
+
+## Stable 1.0 release boundary
+
+The release variant enables AGP 9.3 R8 code/resource optimization with default Android
+and dependency consumer rules. App entry points are manifest-declared and JSON/maps
+use explicit parsing rather than reflective object serialization. No broad keep rules
+are introduced. Distribution keeps all 20 locale catalogs and original credited images.
+Texture decoding is sampled and capped to device limits, while decoded GPU images are
+released after upload. Native map split-layout parameters are preallocated and reused.
+
+API 26-compatible `LocationCompat` clears vertical accuracy when only altitude is
+simulated; real horizontal accuracy remains intact. AndroidX ExifInterface 1.4.2 writes
+capture timestamps with explicit UTC offsets on all supported versions. Caption time
+and location-disclosure policy remain frozen independently of these EXIF timestamps.
+Composition-observed configuration/resources update preference examples and callbacks
+when locale/theme changes. Display version 1.0 and protocol version 1.0.0 are intentionally
+separate; code 15, signed metadata, APK name and tag share the full protocol identity.

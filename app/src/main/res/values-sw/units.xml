@@ -6,4 +6,7 @@
     <string name="units_kilograms">Kilogramu</string>
     <string name="units_pounds">Pauni</string>
     <string name="units_mass_description">Chagua vipimo vya uzito na msongamano.</string>
+    <string name="units_celsius">Selsiasi</string>
+    <string name="units_fahrenheit">Fahrenhaiti</string>
+    <string name="settings_resource_language_tag">sw</string>
 </resources>

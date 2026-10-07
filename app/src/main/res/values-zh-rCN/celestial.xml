@@ -25,7 +25,7 @@
     <string name="celestial_loading">正在更新轨道数据…</string>
     <string name="celestial_unavailable">%1$s的数据不可用。更新需要互联网连接。</string>
     <string name="celestial_iss_old">空间站轨道数据已超过24小时，精度可能降低。</string>
-    <string name="celestial_iss_note">显示当前时刻前后的完整一圈，包括地平线以下部分，含24个等间隔点以及升起、最高点和落下。过境详情对应当前或24小时内的下一次过境；不保证能够看见。</string>
+    <string name="celestial_iss_note">显示当前时刻前后的完整一圈，包括地平线以下部分，含24个等间隔点以及升起、最高点和落下。过境详情对应当前或24小时内的下一次过境；不保证能够看见。\nCelesTrak / Satcat · Space-Track</string>
     <string name="celestial_model_note">位置和距离为计算值，指向取决于罗盘精度。空间站需要最新轨道数据。塞德娜和旅行者使用NASA/JPL预测轨迹，并非实时遥测。</string>
     <string name="celestial_weather_mainly_clear">大致晴朗</string>
     <string name="celestial_speed_earth_orbit">轨道速度（地球）: %1$s km/s</string>

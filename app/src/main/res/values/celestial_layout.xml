@@ -2,7 +2,7 @@
 <resources>
     <string name="celestial_table_distance">Distance: %1$s</string>
     <string name="celestial_table_speed">Speed: %1$s</string>
-    <string name="celestial_environment_info_title">Environment details</string>
+    <string name="celestial_environment_info_title">Position details</string>
     <string name="celestial_environment_info_action">Orientation and environment information</string>
     <string name="celestial_environment_orientation_note">Direction and tilt describe where the phone points. Magnetic objects can affect the compass. GPS accuracy indicates the estimated uncertainty of the position.</string>
     <string name="celestial_orbits_title" translatable="false">Space Compass</string>

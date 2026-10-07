@@ -6,4 +6,7 @@
     <string name="units_kilograms">Килограммы</string>
     <string name="units_pounds">Фунты</string>
     <string name="units_mass_description">Выберите единицы массы и плотности.</string>
+    <string name="units_celsius">Цельсий</string>
+    <string name="units_fahrenheit">Фаренгейт</string>
+    <string name="settings_resource_language_tag">ru</string>
 </resources>

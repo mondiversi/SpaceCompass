@@ -1,0 +1,11 @@
+<resources>
+    <string name="sky_reference_equator">천구의 적도</string>
+    <string name="sky_reference_cancer">북회귀선</string>
+    <string name="sky_reference_capricorn">남회귀선</string>
+    <string name="sky_reference_arctic">북극권</string>
+    <string name="sky_reference_antarctic">남극권</string>
+    <string name="sky_reference_north_pole">천구의 북극</string>
+    <string name="sky_reference_south_pole">천구의 남극</string>
+    <string name="sky_references_hide">천구 기준선 숨기기</string>
+    <string name="sky_references_show">천구 기준선 표시</string>
+</resources>

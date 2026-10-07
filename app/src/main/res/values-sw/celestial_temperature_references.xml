@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="celestial_temperature_surface_estimate" formatted="false">Makadirio ya joto la uso</string>
+    <string name="celestial_temperature_equilibrium_model" formatted="false">Joto la usawaziko (modeli)</string>
+    <string name="celestial_temperature_historical_range" formatted="false">Masafa ya uso (uchunguzi wa zamani)</string>
+    <string name="celestial_temperature_thermal_model" formatted="false">Utoaji wa joto (modeli)</string>
+    <string name="celestial_temperature_reference_note" formatted="false">Makadirio hutegemea dhana za modeli. Masafa yenye mwaka yanaeleza uchunguzi wa zamani, si joto la sasa. Joto la nyota zenye msongamano mkubwa hutokana na modeli za spektra, si vipimo vya mchana na usiku.</string>
+    <string name="celestial_stephenson_reference_note" formatted="false">Joto fanisi limedhaniwa katika modeli. Mwangazo na kipenyo kilichokokotolewa vinadhania umbali wa kundi la nyota; uanachama wa kundi hauna uhakika. Masi ya sasa haijulikani.</string>
+</resources>

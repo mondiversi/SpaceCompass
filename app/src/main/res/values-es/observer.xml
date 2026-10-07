@@ -1,0 +1,31 @@
+<resources>
+    <string name="observer_title">Escenario</string>
+    <string name="observer_place">Posición</string>
+    <string name="observer_search">Buscar un lugar</string>
+    <string name="observer_search_action">Buscar</string>
+    <string name="observer_map">Elegir en el mapa</string>
+    <string name="observer_latitude">Latitud</string>
+    <string name="observer_longitude">Longitud</string>
+    <string name="observer_automatic">Obtener altitud y zona horaria</string>
+    <string name="observer_altitude">Altitud</string>
+    <string name="observer_zone">Zona horaria</string>
+    <string name="observer_terrain_note">Altitud estimada del terreno; puedes modificarla.</string>
+    <string name="observer_lookup_failed">Consulta automática no disponible. Activa Altitud y Zona horaria para introducirlas manualmente.</string>
+    <string name="observer_moment">Fecha y hora</string>
+    <string name="observer_date">Fecha</string>
+    <string name="observer_time">Hora</string>
+    <string name="observer_limits">Algunos datos orbitales no están disponibles fuera de sus fechas de validez. Estimaciones meteorológicas cuando estén disponibles; en caso contrario, cielo despejado de base.</string>
+    <string name="observer_privacy">La búsqueda usa el geocodificador de Android. El mapa usa OpenStreetMap; las coordenadas elegidas se envían a Open-Meteo para altitud y zona horaria.</string>
+    <string name="observer_apply">Establecer</string>
+    <string name="observer_invalid">Revisa coordenadas, altitud, fecha, hora y zona horaria. Fechas: 1900–2100. Las horas inexistentes por el cambio de horario no son válidas.</string>
+    <string name="observer_use_place">Usar este punto</string>
+    <string name="observer_simulation">Escenario</string>
+    <string name="observer_coordinates_value">Coordenadas: %1$s</string>
+    <string name="observer_altitude_value">Altitud: %1$s</string>
+    <string name="observer_simulation_active">Escenario activo</string>
+    <string name="observer_enable_position">Simular posición</string>
+    <string name="observer_enable_time">Simular fecha y hora</string>
+    <string name="observer_current_metadata">Obtener altitud y zona horaria de la ubicación actual</string>
+    <string name="observer_enable_altitude">Simular altitud</string>
+    <string name="observer_enable_zone">Simular zona horaria</string>
+</resources>

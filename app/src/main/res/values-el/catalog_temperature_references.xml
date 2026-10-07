@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="catalog_temperature_mean" formatted="false">Μέση τιμή επιφάνειας</string>
+    <string name="catalog_temperature_range" formatted="false">Εύρος επιφάνειας</string>
+    <string name="catalog_temperature_atmosphere">Ατμόσφαιρα (%1$s)</string>
+    <string name="catalog_temperature_photosphere" formatted="false">Φωτόσφαιρα</string>
+    <string name="catalog_temperature_effective" formatted="false">Ενεργός</string>
+    <string name="catalog_temperature_estimate" formatted="false">Εκτίμηση επιφάνειας</string>
+    <string name="catalog_temperature_equilibrium" formatted="false">Μοντέλο ισορροπίας</string>
+    <string name="catalog_temperature_historical" formatted="false">Ιστορικό εύρος</string>
+    <string name="catalog_temperature_thermal" formatted="false">Θερμικό μοντέλο</string>
+</resources>

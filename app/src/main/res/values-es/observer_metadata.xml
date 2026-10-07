@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="observer_detect_selected">Detectar desde la posición configurada</string>
+    <string name="observer_detect_current">Detectar desde la posición actual</string>
+    <string name="observer_zone_search">Buscar zona horaria</string>
+    <string name="observer_zone_no_results">No hay zonas horarias coincidentes.</string>
+    <string name="observer_metadata_failed">Detección no disponible. Reintenta o introduce un valor.</string>
+</resources>

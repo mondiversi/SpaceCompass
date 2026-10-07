@@ -1,6 +1,6 @@
 <resources>
     <string name="info_news_title">Últimas novidades · %1$s</string>
-    <string name="info_news_units">As massas seguem os quilogramas/libras escolhidos; a partir de 10 massas solares usa-se M☉.</string>
-    <string name="info_news_pressure">Unidades e formatos numéricos consistentes em toda a aplicação, incluindo gravidade e pressões de referência.</string>
-    <string name="info_news_updates">Atualizações assinadas do GitHub, verificadas ao iniciar ou na seção do repositório.</string>
+    <string name="info_news_units">Seleções, filtros e ordenação salvos, com unidades e formatos regionais.</string>
+    <string name="info_news_pressure">Vinte idiomas, temas claro/escuro e layouts adaptáveis para celulares e tablets.</string>
+    <string name="info_news_updates">Primeira versão estável: aplicativo otimizado e atualizações do GitHub assinadas e verificadas.</string>
 </resources>

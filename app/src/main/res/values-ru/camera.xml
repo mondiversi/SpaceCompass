@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="camera_enable">Включить вид с камеры</string>
+    <string name="camera_disable">Выключить вид с камеры</string>
+    <string name="camera_permission">Разрешите доступ к камере для просмотра в реальном времени.</string>
+    <string name="camera_unavailable">Камера недоступна. Попробуйте ещё раз.</string>
+    <string name="camera_view_description">Вид с камеры в реальном времени с положениями небесных тел</string>
+</resources>

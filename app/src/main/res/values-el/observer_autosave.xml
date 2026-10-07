@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="settings_saved">Οι ρυθμίσεις αποθηκεύτηκαν.</string>
+    <string name="observer_not_saved">Η αλλαγή είναι ελλιπής: διατηρούνται οι τελευταίες έγκυρες ρυθμίσεις.</string>
+</resources>

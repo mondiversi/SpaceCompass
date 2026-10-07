@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="celestial_temperature_surface_estimate" formatted="false">טמפרטורת פני שטח משוערת</string>
+    <string name="celestial_temperature_equilibrium_model" formatted="false">טמפרטורת שיווי משקל (מודל)</string>
+    <string name="celestial_temperature_historical_range" formatted="false">טווח פני שטח (תצפית היסטורית)</string>
+    <string name="celestial_temperature_thermal_model" formatted="false">פליטה תרמית (מודל)</string>
+    <string name="celestial_temperature_reference_note" formatted="false">האומדנים תלויים בהנחות המודל. טווחים עם שנה מתארים תצפיות עבר, לא טמפרטורות נוכחיות. טמפרטורות של כוכבים קומפקטיים מתקבלות ממודלים ספקטרליים, לא ממדידות יום ולילה.</string>
+    <string name="celestial_stephenson_reference_note" formatted="false">הטמפרטורה האפקטיבית היא הנחת המודל. עוצמת ההארה והקוטר המחושב מניחים את מרחק הצביר; השיוך לצביר אינו ודאי. המסה הנוכחית אינה ידועה.</string>
+</resources>

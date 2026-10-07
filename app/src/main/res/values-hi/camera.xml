@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="camera_enable">कैमरा दृश्य चालू करें</string>
+    <string name="camera_disable">कैमरा दृश्य बंद करें</string>
+    <string name="camera_permission">लाइव दृश्य के लिए कैमरे की अनुमति दें।</string>
+    <string name="camera_unavailable">कैमरा उपलब्ध नहीं है। फिर से कोशिश करें।</string>
+    <string name="camera_view_description">खगोलीय पिंडों की स्थिति के साथ लाइव कैमरा दृश्य</string>
+</resources>

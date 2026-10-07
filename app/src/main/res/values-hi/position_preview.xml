@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="panorama_preview" formatted="false">पैनोरमा</string>
+    <string name="panorama_preparing" formatted="false">पैनोरमा तैयार हो रहा है…</string>
+    <string name="panorama_save" formatted="false">सहेजें</string>
+    <string name="panorama_share" formatted="false">साझा करें</string>
+    <string name="panorama_gallery" formatted="false">चित्र गैलरी</string>
+    <string name="panorama_choose_location" formatted="false">स्थान चुनें…</string>
+    <string name="panorama_exported" formatted="false">पैनोरमा निर्यात किया गया।</string>
+    <string name="panorama_cloud_cover" formatted="false">बादलों का आवरण</string>
+    <string name="panorama_weather_time" formatted="false">मौसम मॉडल का समय</string>
+    <string name="panorama_northeast" formatted="false">उत्तर-पूर्व</string>
+    <string name="panorama_southeast" formatted="false">दक्षिण-पूर्व</string>
+    <string name="panorama_southwest" formatted="false">दक्षिण-पश्चिम</string>
+    <string name="panorama_northwest" formatted="false">उत्तर-पश्चिम</string>
+</resources>

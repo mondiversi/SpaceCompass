@@ -98,4 +98,17 @@ class SpaceCompassCelestialRefreshPolicyTest {
         assertEquals(Long.MAX_VALUE, policy.nextAttempt(rejected, false, 0))
         assertEquals(now + SPACE_COMPASS_CELESTIAL_REFRESH_MS, policy.nextAttempt(satellite, true, now))
     }
+    @Test fun manualRetryReleasesSelectedFailuresButPreservesOtherBackoffHttpStopsAndFreshCaches() = runBlocking {
+        val policy = SpaceCompassCelestialRefreshPolicy()
+        val satellite = SpaceCompassCelestialRequest(SpaceCompassCelestialBody.STARLINK_V3)
+        val rejected = SpaceCompassCelestialRequest(SpaceCompassCelestialBody.ISS)
+        policy.attempt(satellite, { now }) { throw java.net.SocketTimeoutException() }
+        policy.attempt(rejected, { now }) { throw SpaceCompassCelestialHttpException(429) }
+        policy.attempt(velocity, { now }) { error("Invalid data") }
+        policy.retryRequested(setOf(satellite.body, rejected.body))
+        assertEquals(0L, policy.nextAttempt(satellite, false, 0))
+        assertEquals(Long.MAX_VALUE, policy.nextAttempt(rejected, false, 0))
+        assertEquals(now + SPACE_COMPASS_CELESTIAL_RETRY_MS, policy.nextAttempt(velocity, false, 0))
+        assertEquals(now + SPACE_COMPASS_CELESTIAL_REFRESH_MS, policy.nextAttempt(satellite, true, now))
+    }
 }

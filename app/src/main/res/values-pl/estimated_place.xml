@@ -3,5 +3,5 @@
     <string name="environment_estimated_place">Szacowana lokalizacja: %1$s</string>
     <string name="environment_place_loading">Wyszukiwanie miejscowości…</string>
     <string name="environment_place_unavailable">Niedostępne</string>
-    <string name="info_news_place">Szczegóły otoczenia pokazują szacowane miasto, region i kraj, jeśli są dostępne.</string>
+    <string name="info_news_place">Szczegóły pozycji z mapami dziennymi/nocnymi i scenariusze z niezależną pozycją, datą, wysokością i strefą czasową.</string>
 </resources>

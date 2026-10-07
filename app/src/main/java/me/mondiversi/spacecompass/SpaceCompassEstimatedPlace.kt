@@ -16,7 +16,7 @@ private fun String?.placeName(): String? = this?.replace(Regex("[\\s\u00a0\u202f
 internal fun formatSpaceCompassEstimatedPlace(parts: SpaceCompassPlaceParts): String? {
     val city = parts.locality.placeName() ?: parts.subAdminArea.placeName() ?: parts.subLocality.placeName()
     return listOfNotNull(city, parts.adminArea.placeName(), parts.country.placeName())
-        .distinctBy { it.lowercase(Locale.ROOT) }.takeIf { it.isNotEmpty() }?.joinToString("\n")
+        .distinctBy { it.lowercase(Locale.ROOT) }.takeIf { it.isNotEmpty() }?.joinToString(", ")
 }
 
 internal data class SpaceCompassPlaceKey(val latitude: Double, val longitude: Double, val languageTag: String)
@@ -31,7 +31,7 @@ internal fun spaceCompassPlaceKey(latitude: Double?, longitude: Double?, languag
 
 internal const val SPACE_COMPASS_PLACE_SUCCESS_TTL_MS = 30 * 60_000L
 internal const val SPACE_COMPASS_PLACE_RETRY_MS = 60_000L
-internal data class SpaceCompassPlaceCacheEntry(val text: String?, val expiresElapsed: Long)
+internal data class SpaceCompassPlaceCacheEntry(val text: String?, val expiresElapsed: Long, val parts: SpaceCompassPlaceParts? = null)
 
 /** Small memory-only cache; different locations/languages never share a label. */
 internal class SpaceCompassPlaceCache(private val capacity: Int = 16) {
@@ -47,10 +47,10 @@ internal class SpaceCompassPlaceCache(private val capacity: Int = 16) {
         return entry
     }
 
-    fun put(key: SpaceCompassPlaceKey, text: String?, elapsed: Long): SpaceCompassPlaceCacheEntry {
+    fun put(key: SpaceCompassPlaceKey, text: String?, elapsed: Long, parts: SpaceCompassPlaceParts? = null): SpaceCompassPlaceCacheEntry {
         val value = text?.takeIf { it.isNotBlank() }
         val entry = SpaceCompassPlaceCacheEntry(value,
-            elapsed + if (value != null) SPACE_COMPASS_PLACE_SUCCESS_TTL_MS else SPACE_COMPASS_PLACE_RETRY_MS)
+            elapsed + (if (value != null) SPACE_COMPASS_PLACE_SUCCESS_TTL_MS else SPACE_COMPASS_PLACE_RETRY_MS), parts)
         entries[key] = entry
         while (entries.size > capacity) entries.remove(entries.keys.first())
         return entry

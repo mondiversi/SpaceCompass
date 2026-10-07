@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="camera_enable">הפעלת תצוגת מצלמה</string>
+    <string name="camera_disable">כיבוי תצוגת מצלמה</string>
+    <string name="camera_permission">יש לאפשר גישה למצלמה כדי להשתמש בתצוגה החיה.</string>
+    <string name="camera_unavailable">המצלמה אינה זמינה. נסו שוב.</string>
+    <string name="camera_view_description">תצוגת מצלמה חיה עם מיקומי גרמי השמיים</string>
+</resources>

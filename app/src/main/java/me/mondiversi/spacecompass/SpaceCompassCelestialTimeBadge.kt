@@ -31,7 +31,7 @@ internal fun SpaceCompassCelestialTimeBadge(
     position: SpaceCompassSunPosition, orientation: SpaceCompassSunOrientation?,
     primaryText: Color, secondaryText: Color, backgroundColor: Color,
     pointName: String, body: SpaceCompassCelestialBody,
-    excluded: List<SpaceCompassSunSceneFrame> = emptyList()
+    excluded: List<SpaceCompassSunSceneFrame> = emptyList(), perspective: SpaceCompassPerspective? = null
 ) {
     val locale = LocalConfiguration.current.locales[0]
     val timeFormat = resolveSpaceCompassTimeFormat(LocalContext.current, LocalSpaceCompassTimeFormat.current)
@@ -60,7 +60,7 @@ internal fun SpaceCompassCelestialTimeBadge(
         val label = measurables.single().measure(constraints.copy(minWidth = 0, minHeight = 0,
             maxWidth = minOf(220.dp.roundToPx(), (constraints.maxWidth - 2 * margin).toInt().coerceAtLeast(0))))
         val anchor = if (orientation == null || constraints.maxWidth <= 0 || constraints.maxHeight <= 0) null else
-            projectSpaceCompassSun(position, orientation, constraints.maxWidth.toDouble(), constraints.maxHeight.toDouble())
+            projectSpaceCompassSun(position, orientation, constraints.maxWidth.toDouble(), constraints.maxHeight.toDouble(), perspective)
                 .let { SpaceCompassSunScenePoint(it.x, it.y) }
         val point = placeSpaceCompassCelestialTimeBadge(constraints.maxWidth.toDouble(), constraints.maxHeight.toDouble(),
             label.width.toDouble(), label.height.toDouble(), anchor, margin, gap, excluded)

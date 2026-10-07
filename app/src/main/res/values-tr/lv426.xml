@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="celestial_lv426_model_note">Kurgusal uydu · Özgün çizim\nGökyüzündeki yön: ζ² Reticuli</string>
+    <string name="celestial_lv426_description">Acheron, Alien evreninde Calpamos’un kurgusal uydusu ve Hadley’s Hope kolonisinin yeridir. Kayalık yüzeyi düşmanca bir atmosfere sahiptir. Değerler hikâyeden alınmıştır: çap kaynaklara göre değişir, ortalama sıcaklık ise dünyalaştırma dönemine aittir. Kütle, yoğunluk, basınç ve yörünge elemanları bilinmez. Yön bulma, gerçek uydu efemerisleri yerine ζ² Reticuli’yi temsili referans olarak kullanır.</string>
+    <string name="celestial_lv426_credits">Alien: kurgusal evren. Kaynaklar: ALIEN RPG / Xenopedia. Yön: SIMBAD. Özgün yapay zekâ çizimi; film görüntüsü içermez.</string>
+</resources>

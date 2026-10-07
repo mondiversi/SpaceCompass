@@ -1,0 +1,11 @@
+<resources>
+    <string name="sky_reference_equator">天の赤道</string>
+    <string name="sky_reference_cancer">北回帰線</string>
+    <string name="sky_reference_capricorn">南回帰線</string>
+    <string name="sky_reference_arctic">北極圏</string>
+    <string name="sky_reference_antarctic">南極圏</string>
+    <string name="sky_reference_north_pole">天の北極</string>
+    <string name="sky_reference_south_pole">天の南極</string>
+    <string name="sky_references_hide">天球の基準線を非表示</string>
+    <string name="sky_references_show">天球の基準線を表示</string>
+</resources>

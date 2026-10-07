@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="catalog_temperature_mean" formatted="false">Wastani wa uso</string>
+    <string name="catalog_temperature_range" formatted="false">Masafa ya uso</string>
+    <string name="catalog_temperature_atmosphere">Anga (%1$s)</string>
+    <string name="catalog_temperature_photosphere" formatted="false">Fotosfera</string>
+    <string name="catalog_temperature_effective" formatted="false">Fanisi</string>
+    <string name="catalog_temperature_estimate" formatted="false">Makadirio ya uso</string>
+    <string name="catalog_temperature_equilibrium" formatted="false">Modeli ya usawaziko</string>
+    <string name="catalog_temperature_historical" formatted="false">Masafa ya zamani</string>
+    <string name="catalog_temperature_thermal" formatted="false">Modeli ya joto</string>
+</resources>

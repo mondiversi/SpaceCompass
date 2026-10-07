@@ -12,4 +12,5 @@
     <string name="language_description">Elige el idioma de la interfaz.</string>
     <string name="github_repository_title">Repositorio de GitHub</string>
     <string name="about_copyright">Copyright © 2026 Mondiversi</string>
+    <string name="settings_section_info">Información</string>
 </resources>

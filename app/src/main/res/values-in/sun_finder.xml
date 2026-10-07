@@ -33,5 +33,5 @@
     <string name="sun_weather_unavailable">Cuaca tidak tersedia</string>
     <string name="sun_weather_loading">Memperbarui cuaca…</string>
     <string name="sun_weather_estimate">Perkiraan cuaca: %1$s</string>
-    <string name="sun_weather_privacy">Cuaca daring dan perkiraan nama tempat menggunakan lokasi perkiraan.</string>
+    <string name="sun_weather_privacy">Cuaca dan nama tempat daring menggunakan perkiraan lokasi. Membuka detail posisi mengirim koordinat GPS ke OpenStreetMap.</string>
 </resources>

@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="celestial_lv426_model_note">Fikcyjny księżyc · Oryginalna ilustracja\nKierunek na niebie: ζ² Reticuli</string>
+    <string name="celestial_lv426_description">Acheron to fikcyjny księżyc Calpamosa z serii Alien, miejsce kolonii Hadley’s Hope. Jego skalistą powierzchnię otacza nieprzyjazna atmosfera. Wartości pochodzą z opowieści: średnica różni się między źródłami, a średnia temperatura dotyczy terraformowania. Masa, gęstość, ciśnienie i elementy orbity są nieznane. Wskazanie wykorzystuje ζ² Reticuli jako umowny punkt odniesienia, bez rzeczywistych efemeryd księżyca.</string>
+    <string name="celestial_lv426_credits">Alien: fikcyjny świat. Źródła: ALIEN RPG / Xenopedia. Kierunek: SIMBAD. Oryginalna ilustracja AI; bez obrazu z filmu.</string>
+</resources>

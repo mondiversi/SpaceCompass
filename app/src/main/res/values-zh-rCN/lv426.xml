@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="celestial_lv426_model_note">虚构卫星 · 原创插图\n天空方向：ζ² Reticuli</string>
+    <string name="celestial_lv426_description">阿刻戎是《异形》中卡尔帕莫斯的虚构卫星，也是哈德利希望殖民地的所在地。其岩石表面拥有恶劣的大气环境。数值来自故事设定：不同资料中的直径不一致，平均温度指的是地球化改造时期。质量、密度、气压和轨道参数未知。指向以ζ² Reticuli为情境参考，并非该卫星的真实星历。</string>
+    <string name="celestial_lv426_credits">Alien：虚构世界。资料：ALIEN RPG / Xenopedia。方向：SIMBAD。AI生成的原创插图，未使用电影图像。</string>
+</resources>

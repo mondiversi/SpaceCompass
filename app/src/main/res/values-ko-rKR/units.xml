@@ -6,4 +6,7 @@
     <string name="units_kilograms">킬로그램</string>
     <string name="units_pounds">파운드</string>
     <string name="units_mass_description">질량과 밀도의 단위를 선택하세요.</string>
+    <string name="units_celsius">섭씨</string>
+    <string name="units_fahrenheit">화씨</string>
+    <string name="settings_resource_language_tag">ko</string>
 </resources>

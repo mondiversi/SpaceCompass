@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="camera_enable">Kamera görünümünü aç</string>
+    <string name="camera_disable">Kamera görünümünü kapat</string>
+    <string name="camera_permission">Canlı görünüm için kamera erişimine izin verin.</string>
+    <string name="camera_unavailable">Kamera kullanılamıyor. Tekrar deneyin.</string>
+    <string name="camera_view_description">Gök cisimlerinin konumlarıyla canlı kamera görünümü</string>
+</resources>

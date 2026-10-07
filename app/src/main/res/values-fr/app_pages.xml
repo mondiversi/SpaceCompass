@@ -8,8 +8,9 @@
     <string name="pc_info_accuracy">Une précision réduite signifie que le téléphone signale un faible étalonnage magnétique. Le pointage reste approximatif jusqu’à ce que la précision du capteur s’améliore.</string>
     <string name="pc_info_credits">Crédits et licences</string>
     <string name="pc_info_credits_detail">Les cartes sont des images de référence, pas des photographies en direct. Les licences et attributions originales sont incluses dans l’application.</string>
-    <string name="settings_theme_description">Choisis le thème de l’application pour personnaliser l’apparence du contenu.</string>
+    <string name="settings_theme_description">Choisissez le thème de l’application pour personnaliser l’apparence du contenu.</string>
     <string name="language_description">Choisissez la langue de l’interface.</string>
     <string name="github_repository_title">Dépôt GitHub</string>
     <string name="about_copyright">Copyright © 2026 Mondiversi</string>
+    <string name="settings_section_info">Infos</string>
 </resources>

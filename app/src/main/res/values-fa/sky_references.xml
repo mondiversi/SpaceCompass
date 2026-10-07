@@ -1,0 +1,11 @@
+<resources>
+    <string name="sky_reference_equator">استوای سماوی</string>
+    <string name="sky_reference_cancer">مدار رأس‌السرطان</string>
+    <string name="sky_reference_capricorn">مدار رأس‌الجدی</string>
+    <string name="sky_reference_arctic">دایره قطب شمال</string>
+    <string name="sky_reference_antarctic">دایره قطب جنوب</string>
+    <string name="sky_reference_north_pole">قطب شمال سماوی</string>
+    <string name="sky_reference_south_pole">قطب جنوب سماوی</string>
+    <string name="sky_references_hide">پنهان کردن راهنماهای آسمانی</string>
+    <string name="sky_references_show">نمایش راهنماهای آسمانی</string>
+</resources>

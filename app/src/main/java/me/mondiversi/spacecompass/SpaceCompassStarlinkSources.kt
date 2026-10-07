@@ -1,6 +1,5 @@
 package me.mondiversi.spacecompass
 
-import kotlinx.coroutines.CancellationException
 import java.math.BigDecimal
 import java.math.RoundingMode
 import java.time.LocalDate
@@ -14,12 +13,7 @@ internal const val SPACE_COMPASS_SATCAT_MAX_BYTES = 512 * 1024
  * A0855 is the complete Alpha-5 representation of 100855, not a truncated ID.
  * Normalize into the same independently validated SGP4 CSV/cache as the primary provider. */
 internal fun spaceCompassSatcatStarlinkCsv(page: String): String {
-    require(page.length <= SPACE_COMPASS_SATCAT_MAX_BYTES)
-    val blocks = Regex("<pre\\b[^>]*>\\s*<code\\b[^>]*>([\\s\\S]*?)</code>\\s*</pre>", RegexOption.IGNORE_CASE)
-        .findAll(page).map { it.groupValues[1].trim().replace("&#10;", "\n").replace("&#13;", "\r") }
-        .filter { it.lineSequence().firstOrNull()?.trim() == "0 $SPACE_COMPASS_STARLINK_OBJECT_NAME" }.toList()
-    require(blocks.size == 1) { "Missing or ambiguous public Starlink TLE" }
-    return spaceCompassStarlinkTleCsv(blocks.single())
+    return spaceCompassStarlinkTleCsv(spaceCompassSatcatTle(page, SPACE_COMPASS_STARLINK_OBJECT_NAME))
 }
 
 internal fun spaceCompassStarlinkTleCsv(text: String): String {
@@ -54,32 +48,11 @@ internal fun spaceCompassStarlinkTleCsv(text: String): String {
     return "$keys\n${values.joinToString(",")}\n".also { SpaceCompassStarlinkOrbit.parse(it) }
 }
 
-/** Remember independent provider stops and prefer the last successful provider for this session. */
+/** Same validated source handling as ISS, retaining the last successful provider. */
 internal class SpaceCompassStarlinkSources {
-    private var preferSatcat = false
-    private val stopped = mutableSetOf<String>()
-
-    suspend fun load(now: Long, fetch: suspend (String, Int) -> String): String {
-        val providers = listOf(SPACE_COMPASS_STARLINK_OMM_URL, SPACE_COMPASS_STARLINK_SATCAT_URL)
-            .let { if (preferSatcat) it.reversed() else it }
-        var lastFailure: Exception? = null
-        for (url in providers.filterNot { it in stopped }) {
-            try {
-                val satcat = url == SPACE_COMPASS_STARLINK_SATCAT_URL
-                val text = fetch(url, if (satcat) SPACE_COMPASS_SATCAT_MAX_BYTES else 65_536)
-                val csv = if (satcat) spaceCompassSatcatStarlinkCsv(text) else text
-                require(SpaceCompassStarlinkOrbit.parse(csv).usable(now)) { "Starlink elements are too old" }
-                preferSatcat = satcat
-                return csv
-            } catch (cancelled: CancellationException) {
-                throw cancelled
-            } catch (error: Exception) {
-                if (error is SpaceCompassCelestialHttpException) stopped += url
-                // Per-provider HTTP stops must not stop the independent alternative.
-                lastFailure = if (error is SpaceCompassCelestialHttpException)
-                    IllegalStateException("Starlink provider rejected the request", error) else error
-            }
-        }
-        throw lastFailure ?: IllegalStateException("Starlink providers are stopped for this session")
+    private val sources = SpaceCompassSatelliteSources(SPACE_COMPASS_STARLINK_OMM_URL,
+        SPACE_COMPASS_STARLINK_SATCAT_URL, ::spaceCompassSatcatStarlinkCsv) { text, now ->
+        require(SpaceCompassStarlinkOrbit.parse(text).usable(now)) { "Starlink elements are too old" }
     }
+    suspend fun load(now: Long, fetch: suspend (String, Int) -> String): String = sources.load(now, fetch)
 }

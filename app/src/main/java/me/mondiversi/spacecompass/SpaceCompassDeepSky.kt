@@ -10,6 +10,10 @@ internal data class SpaceCompassDeepSkyReference(val raHours: Double, val decDeg
     val distanceLy: Double, val pmRaMasYear: Double = 0.0, val pmDecMasYear: Double = 0.0)
 internal val SpaceCompassCelestialBody.deepSkyReference: SpaceCompassDeepSkyReference?
     get() = when (this) {
+        // Fictional placement: use the real host-star direction, never invented moon ephemerides.
+        SpaceCompassCelestialBody.LV_426 -> SpaceCompassDeepSkyReference(
+            3 + 18.0/60 + 12.8188824117/3600, -(62 + 30.0/60 + 22.904711032/3600),
+            39.3, 1331.027, 647.725)
         // Unresolved exoplanet: use the host star direction and proper motion.
         SpaceCompassCelestialBody.TRAPPIST_1_E -> SpaceCompassDeepSkyReference(
             23 + 6.0/60 + 29.3684948589/3600, -(5 + 2.0/60 + 29.037301866/3600),
@@ -76,6 +80,7 @@ internal fun calculateSpaceCompassDeepSkyObservation(body: SpaceCompassCelestial
 
 internal val SpaceCompassCelestialBody.deepSkyNoteResource: Int
     get() = when (this) {
+        SpaceCompassCelestialBody.LV_426 -> R.string.celestial_lv426_description
         SpaceCompassCelestialBody.TRAPPIST_1_E -> R.string.celestial_trappist_note
         SpaceCompassCelestialBody.TON_618 -> R.string.celestial_ton_618_note
         SpaceCompassCelestialBody.PROXIMA_CENTAURI -> R.string.celestial_proxima_note

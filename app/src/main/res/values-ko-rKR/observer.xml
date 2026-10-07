@@ -1,0 +1,31 @@
+<resources>
+    <string name="observer_title">시나리오</string>
+    <string name="observer_place">위치</string>
+    <string name="observer_search">장소 검색</string>
+    <string name="observer_search_action">검색</string>
+    <string name="observer_map">지도에서 선택</string>
+    <string name="observer_latitude">위도</string>
+    <string name="observer_longitude">경도</string>
+    <string name="observer_automatic">고도와 시간대 찾기</string>
+    <string name="observer_altitude">고도</string>
+    <string name="observer_zone">시간대</string>
+    <string name="observer_terrain_note">추정 지형 고도이며 수정할 수 있습니다.</string>
+    <string name="observer_lookup_failed">자동 조회를 사용할 수 없습니다. 고도와 시간대를 활성화하여 직접 입력하세요.</string>
+    <string name="observer_moment">날짜 및 시간</string>
+    <string name="observer_date">날짜</string>
+    <string name="observer_time">시간</string>
+    <string name="observer_limits">일부 궤도 데이터는 유효 기간 밖에서 사용할 수 없습니다. 날씨 추정치를 사용할 수 있으면 반영하고, 없으면 기본 맑은 하늘을 표시합니다.</string>
+    <string name="observer_privacy">검색은 Android 지오코더를 사용합니다. 지도는 OpenStreetMap을 사용하며 고도와 시간대 조회를 위해 선택한 좌표를 Open-Meteo로 보냅니다.</string>
+    <string name="observer_apply">설정</string>
+    <string name="observer_invalid">좌표, 고도, 날짜, 시간과 시간대를 확인하세요. 날짜 범위는 1900–2100년입니다. 서머타임 변경으로 존재하지 않는 시간은 사용할 수 없습니다.</string>
+    <string name="observer_use_place">이 지점 사용</string>
+    <string name="observer_simulation">시나리오</string>
+    <string name="observer_coordinates_value">좌표: %1$s</string>
+    <string name="observer_altitude_value">고도: %1$s</string>
+    <string name="observer_simulation_active">시나리오 활성</string>
+    <string name="observer_enable_position">위치 시뮬레이션</string>
+    <string name="observer_enable_time">날짜 및 시간 시뮬레이션</string>
+    <string name="observer_current_metadata">현재 위치의 고도와 시간대 찾기</string>
+    <string name="observer_enable_altitude">고도 시뮬레이션</string>
+    <string name="observer_enable_zone">시간대 시뮬레이션</string>
+</resources>

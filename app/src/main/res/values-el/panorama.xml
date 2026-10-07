@@ -2,16 +2,25 @@
 <resources>
     <string name="panorama_capture">Λήψη</string>
     <string name="panorama_saving">Αποθήκευση πανοράματος…</string>
-    <string name="panorama_saved">Το πανόραμα αποθηκεύτηκε στο άλμπουμ SpaceCompass της συλλογής.</string>
+    <string name="panorama_saved">Η εικόνα αποθηκεύτηκε στη συλλογή.</string>
     <string name="panorama_error">Δεν ήταν δυνατή η αποθήκευση του πανοράματος. Δοκιμάστε ξανά.</string>
     <string name="panorama_permission">Επιτρέψτε την πρόσβαση στον χώρο αποθήκευσης για να αποθηκεύσετε το πανόραμα.</string>
     <string name="panorama_not_ready">Απαιτούνται θέση GPS και τουλάχιστον ένα επιλεγμένο αντικείμενο.</string>
     <string name="panorama_data_unavailable">Μη διαθέσιμα δεδομένα</string>
     <string name="panorama_path_unavailable">Μη διαθέσιμη τροχιά</string>
-    <string name="info_news_panorama">Η Λήψη αποθηκεύει στη συλλογή ένα πλήρες πανόραμα 360° των επιλεγμένων αντικειμένων και των τροχιών τους.</string>
-    <string name="info_news_orbit_names">Τα ονόματα των αντικειμένων ακολουθούν τις καμπύλες των τροχιών κοντά στα βέλη κατεύθυνσης.</string>
+    <string name="info_news_panorama">Επικαλύψεις κάμερας και πανοράματα 360° με προαιρετικές γραμμές και ετικέτες· εξαγωγή στη συλλογή, σε αρχείο ή για κοινοποίηση.</string>
+    <string name="info_news_orbit_names">Ζωντανή πυξίδα, ημερήσιες τροχιές και προβολές με υφές για 30 ουράνια αντικείμενα.</string>
     <string name="panorama_north">Βορράς</string>
     <string name="panorama_east">Ανατολή</string>
     <string name="panorama_south">Νότος</string>
     <string name="panorama_west">Δύση</string>
+    <string name="panorama_position">Τοποθεσία στην εικόνα</string>
+    <string name="panorama_position_description">Επιλέξτε τα στοιχεία τοποθεσίας που εμφανίζονται κατά την αποθήκευση ή κοινοποίηση. Η ώρα και οι τροχιές μπορούν ακόμη να υποδείξουν μια κατά προσέγγιση περιοχή.</string>
+    <string name="panorama_position_complete">Πλήρης</string>
+    <string name="panorama_position_complete_detail">Τόπος, συντεταγμένες, υψόμετρο και ακρίβεια</string>
+    <string name="panorama_position_area">Μόνο περιοχή</string>
+    <string name="panorama_position_area_detail">Περιοχή και χώρα</string>
+    <string name="panorama_position_hidden">Κρυφή</string>
+    <string name="panorama_position_hidden_detail">Χωρίς στοιχεία τοποθεσίας</string>
+    <string name="panorama_point_labels">Ετικέτες</string>
 </resources>

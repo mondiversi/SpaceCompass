@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="catalog_sort_day_temperature" formatted="false">دمای روز</string>
+    <string name="catalog_sort_night_temperature" formatted="false">دمای شب</string>
+    <string name="catalog_type_comet" formatted="false">دنباله‌دارها</string>
+    <string name="position_map_title" formatted="false">نقشه</string>
+    <string name="position_map_unavailable" formatted="false">نقشه در دسترس نیست</string>
+    <string name="celestial_comet_note" formatted="false">تصویر نمادین. ابعاد به هسته اشاره دارند؛ فعالیت و چرخش ممکن است تغییر کنند.</string>
+    <string name="celestial_halley" formatted="false">1P/Halley</string>
+    <string name="celestial_comet_67p" formatted="false">67P/Churyumov–Gerasimenko</string>
+</resources>

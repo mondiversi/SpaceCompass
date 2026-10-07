@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="celestial_temperature_surface_estimate" formatted="false">Estimated surface temperature</string>
+    <string name="celestial_temperature_equilibrium_model" formatted="false">Equilibrium temperature (model)</string>
+    <string name="celestial_temperature_historical_range" formatted="false">Surface range (historical)</string>
+    <string name="celestial_temperature_thermal_model" formatted="false">Thermal emission (model)</string>
+    <string name="celestial_temperature_reference_note" formatted="false">Estimates depend on model assumptions. Dated ranges describe past observations, not current temperatures. Compact-star temperatures come from spectral models, not day/night readings.</string>
+    <string name="celestial_stephenson_reference_note" formatted="false">The effective temperature is adopted by the model. Luminosity and the derived diameter assume the cluster distance; cluster membership is uncertain. The present-day mass is unknown.</string>
+</resources>

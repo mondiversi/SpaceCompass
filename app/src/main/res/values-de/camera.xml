@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="camera_enable">Kameraansicht aktivieren</string>
+    <string name="camera_disable">Kameraansicht deaktivieren</string>
+    <string name="camera_permission">Erlaube den Kamerazugriff für die Live-Ansicht.</string>
+    <string name="camera_unavailable">Kamera nicht verfügbar. Bitte erneut versuchen.</string>
+    <string name="camera_view_description">Live-Kameraansicht mit Himmelspositionen</string>
+</resources>

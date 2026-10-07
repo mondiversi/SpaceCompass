@@ -23,10 +23,12 @@ import androidx.compose.ui.unit.sp
 
 /** Matches UVIR's paired outlined fields and trailing reset action. */
 @Composable
-internal fun SpaceCompassCatalogFilterBar(types: Set<SpaceCompassCatalogType>, visibility: SpaceCompassCatalogVisibility,
+internal fun SpaceCompassCatalogFilterBar(types: Set<SpaceCompassCatalogType>, visibility: SpaceCompassCatalogVisibility, visibleCount: Int,
     onType: (SpaceCompassCatalogType) -> Unit, onAllTypes: () -> Unit,
     onVisibility: (SpaceCompassCatalogVisibility) -> Unit, onReset: () -> Unit) {
     val all = stringResource(R.string.catalog_all)
+    val resultCount = formatSpaceCompassNumber(visibleCount.toDouble(), 0,
+        LocalSpaceCompassNumericFormat.current, grouping = false)
     val typeChoices = listOf("" to all) + SpaceCompassCatalogType.entries.map { it.name to stringResource(it.label) }
     val selectedTypeLabels = typeChoices.filter { it.first in types.map { type -> type.name } }.map { it.second }
     // AnimatedVisibility overlays sibling layouts; keep the separator below the whole panel.
@@ -36,12 +38,12 @@ internal fun SpaceCompassCatalogFilterBar(types: Set<SpaceCompassCatalogType>, v
             Row(Modifier.fillMaxWidth(), horizontalArrangement = Arrangement.spacedBy(8.dp)) {
                 CatalogFilterChoice(stringResource(R.string.catalog_filter_type),
                     if (types.isEmpty()) all else selectedTypeLabels.joinToString(", "), typeChoices,
-                    Modifier.weight(1f).testTag("catalog-type-menu"), types.map { it.name }.toSet(), true) { key ->
+                    Modifier.weight(1f).testTag("catalog-type-menu"), types.map { it.name }.toSet(), true, resultCount) { key ->
                     if (key.isEmpty()) onAllTypes() else onType(SpaceCompassCatalogType.valueOf(key))
                 }
                 CatalogFilterChoice(stringResource(R.string.catalog_visibility), stringResource(visibility.label),
                     SpaceCompassCatalogVisibility.entries.map { it.name to stringResource(it.label) },
-                    Modifier.weight(1f).testTag("catalog-visibility-menu"), null, false) { key ->
+                    Modifier.weight(1f).testTag("catalog-visibility-menu"), null, false, resultCount) { key ->
                     onVisibility(SpaceCompassCatalogVisibility.valueOf(key))
                 }
             }
@@ -56,16 +58,21 @@ internal fun SpaceCompassCatalogFilterBar(types: Set<SpaceCompassCatalogType>, v
 
 @Composable
 private fun CatalogFilterChoice(label: String, selected: String, choices: List<Pair<String, String>>,
-    modifier: Modifier, selectedKeys: Set<String>?, typeField: Boolean, onSelect: (String) -> Unit) {
+    modifier: Modifier, selectedKeys: Set<String>?, typeField: Boolean, resultCount: String, onSelect: (String) -> Unit) {
     var expanded by remember { mutableStateOf(false) }
     val foreground = MaterialTheme.colorScheme.onSurface
     val labelInset = with(LocalDensity.current) { 14.sp.toDp() / 2 }
-    Box(modifier.semantics(mergeDescendants = true) { contentDescription = "$label: $selected" }) {
+    Box(modifier.semantics(mergeDescendants = true) { contentDescription = "$label: $selected ($resultCount)" }) {
         Surface(onClick = { expanded = true }, shape = RoundedCornerShape(10.dp), color = Color.Transparent,
             border = BorderStroke(1.dp, foreground.copy(alpha = .45f)),
             modifier = Modifier.fillMaxWidth().padding(top = labelInset).heightIn(min = 48.dp)) {
             Row(Modifier.padding(horizontal = 10.dp, vertical = 8.dp), verticalAlignment = Alignment.CenterVertically) {
-                Text(selected, Modifier.weight(1f), fontSize = 13.sp, maxLines = 1, overflow = TextOverflow.Ellipsis)
+                // Reserve the count so long or multiple selections cannot ellipsize it away.
+                Row(Modifier.weight(1f), verticalAlignment = Alignment.CenterVertically) {
+                    Text(selected, Modifier.weight(1f, fill = false), fontSize = 13.sp,
+                        maxLines = 1, overflow = TextOverflow.Ellipsis)
+                    Text("($resultCount)", Modifier.padding(start = 4.dp), fontSize = 13.sp, maxLines = 1)
+                }
                 Canvas(Modifier.size(16.dp)) {
                     val stroke = 2.21.dp.toPx()
                     drawLine(foreground, Offset(size.width * .22f, size.height * .38f),

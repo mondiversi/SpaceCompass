@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="panorama_preview" formatted="false">Panorama</string>
+    <string name="panorama_preparing" formatted="false">Panorama hazırlanıyor…</string>
+    <string name="panorama_save" formatted="false">Kaydet</string>
+    <string name="panorama_share" formatted="false">Paylaş</string>
+    <string name="panorama_gallery" formatted="false">Görsel galerisi</string>
+    <string name="panorama_choose_location" formatted="false">Konum seç…</string>
+    <string name="panorama_exported" formatted="false">Panorama dışa aktarıldı.</string>
+    <string name="panorama_cloud_cover" formatted="false">Bulut örtüsü</string>
+    <string name="panorama_weather_time" formatted="false">Hava modeli saati</string>
+    <string name="panorama_northeast" formatted="false">Kuzeydoğu</string>
+    <string name="panorama_southeast" formatted="false">Güneydoğu</string>
+    <string name="panorama_southwest" formatted="false">Güneybatı</string>
+    <string name="panorama_northwest" formatted="false">Kuzeybatı</string>
+</resources>

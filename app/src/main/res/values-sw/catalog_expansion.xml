@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="catalog_sort_day_temperature" formatted="false">Joto la mchana</string>
+    <string name="catalog_sort_night_temperature" formatted="false">Joto la usiku</string>
+    <string name="catalog_type_comet" formatted="false">Nyotamkia</string>
+    <string name="position_map_title" formatted="false">Ramani</string>
+    <string name="position_map_unavailable" formatted="false">Ramani haipatikani</string>
+    <string name="celestial_comet_note" formatted="false">Mchoro wa mfano. Vipimo vinahusu kiini; shughuli na mzunguko vinaweza kubadilika.</string>
+    <string name="celestial_halley" formatted="false">1P/Halley</string>
+    <string name="celestial_comet_67p" formatted="false">67P/Churyumov–Gerasimenko</string>
+</resources>

@@ -2,16 +2,25 @@
 <resources>
     <string name="panorama_capture">Capturar</string>
     <string name="panorama_saving">Guardando panorama…</string>
-    <string name="panorama_saved">Panorama guardado en el álbum SpaceCompass de la galería.</string>
+    <string name="panorama_saved">Imagen guardada en la galería.</string>
     <string name="panorama_error">No se pudo guardar el panorama. Inténtalo de nuevo.</string>
     <string name="panorama_permission">Permite el acceso al almacenamiento para guardar el panorama.</string>
     <string name="panorama_not_ready">Se necesita una posición GPS y al menos un objeto seleccionado.</string>
     <string name="panorama_data_unavailable">Datos no disponibles</string>
     <string name="panorama_path_unavailable">Órbita no disponible</string>
-    <string name="info_news_panorama">Capturar guarda en la galería un panorama completo de 360° de los objetos seleccionados y sus órbitas.</string>
-    <string name="info_news_orbit_names">Los nombres de los objetos siguen las curvas de las órbitas junto a las flechas de dirección.</string>
+    <string name="info_news_panorama">Superposiciones en la cámara y panoramas de 360° con guías y etiquetas opcionales; exportación a la galería, a un archivo o para compartir.</string>
+    <string name="info_news_orbit_names">Brújula en tiempo real, trayectorias diarias y vistas con texturas para 30 objetos celestes.</string>
     <string name="panorama_north">Norte</string>
     <string name="panorama_east">Este</string>
     <string name="panorama_south">Sur</string>
     <string name="panorama_west">Oeste</string>
+    <string name="panorama_position">Posición en la imagen</string>
+    <string name="panorama_position_description">Elige los datos de ubicación que aparecen al guardar o compartir. La hora y las órbitas aún pueden indicar una zona aproximada.</string>
+    <string name="panorama_position_complete">Completa</string>
+    <string name="panorama_position_complete_detail">Lugar, coordenadas, altitud y precisión</string>
+    <string name="panorama_position_area">Solo zona</string>
+    <string name="panorama_position_area_detail">Región y país</string>
+    <string name="panorama_position_hidden">Oculta</string>
+    <string name="panorama_position_hidden_detail">Sin datos de ubicación</string>
+    <string name="panorama_point_labels">Etiquetas</string>
 </resources>

@@ -2,16 +2,25 @@
 <resources>
     <string name="panorama_capture">Zrób zdjęcie</string>
     <string name="panorama_saving">Zapisywanie panoramy…</string>
-    <string name="panorama_saved">Panorama zapisana w albumie SpaceCompass w galerii.</string>
+    <string name="panorama_saved">Obraz zapisano w galerii.</string>
     <string name="panorama_error">Nie udało się zapisać panoramy. Spróbuj ponownie.</string>
     <string name="panorama_permission">Zezwól na dostęp do pamięci, aby zapisać panoramę.</string>
     <string name="panorama_not_ready">Wymagana jest pozycja GPS i co najmniej jeden wybrany obiekt.</string>
     <string name="panorama_data_unavailable">Dane niedostępne</string>
     <string name="panorama_path_unavailable">Orbita niedostępna</string>
-    <string name="info_news_panorama">Zrób zdjęcie zapisuje w galerii pełną panoramę 360° wybranych obiektów i ich orbit.</string>
-    <string name="info_news_orbit_names">Nazwy obiektów biegną wzdłuż krzywych orbit obok strzałek kierunku.</string>
+    <string name="info_news_panorama">Nakładki na obraz aparatu i panoramy 360° z opcjonalnymi liniami i etykietami; eksport do galerii, pliku lub udostępnianie.</string>
+    <string name="info_news_orbit_names">Kompas na żywo, dzienne trajektorie i widoki z teksturami dla 30 obiektów niebieskich.</string>
     <string name="panorama_north">Północ</string>
     <string name="panorama_east">Wschód</string>
     <string name="panorama_south">Południe</string>
     <string name="panorama_west">Zachód</string>
+    <string name="panorama_position">Pozycja na obrazie</string>
+    <string name="panorama_position_description">Wybierz dane lokalizacji widoczne przy zapisywaniu lub udostępnianiu. Czas i orbity mogą nadal wskazywać przybliżony obszar.</string>
+    <string name="panorama_position_complete">Pełna</string>
+    <string name="panorama_position_complete_detail">Miejsce, współrzędne, wysokość i dokładność</string>
+    <string name="panorama_position_area">Tylko region</string>
+    <string name="panorama_position_area_detail">Region i kraj</string>
+    <string name="panorama_position_hidden">Ukryta</string>
+    <string name="panorama_position_hidden_detail">Bez danych lokalizacji</string>
+    <string name="panorama_point_labels">Etykiety</string>
 </resources>

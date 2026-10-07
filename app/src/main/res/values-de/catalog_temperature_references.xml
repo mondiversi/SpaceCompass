@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="catalog_temperature_mean" formatted="false">Oberflächenmittel</string>
+    <string name="catalog_temperature_range" formatted="false">Oberflächenbereich</string>
+    <string name="catalog_temperature_atmosphere">Atmosphäre (%1$s)</string>
+    <string name="catalog_temperature_photosphere" formatted="false">Photosphäre</string>
+    <string name="catalog_temperature_effective" formatted="false">Effektiv</string>
+    <string name="catalog_temperature_estimate" formatted="false">Oberflächenschätzung</string>
+    <string name="catalog_temperature_equilibrium" formatted="false">Gleichgewichtsmodell</string>
+    <string name="catalog_temperature_historical" formatted="false">Historischer Bereich</string>
+    <string name="catalog_temperature_thermal" formatted="false">Thermisches Modell</string>
+</resources>

@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="settings_saved">تم حفظ الإعدادات.</string>
+    <string name="observer_not_saved">التغيير غير مكتمل: تم الاحتفاظ بآخر إعدادات صالحة.</string>
+</resources>

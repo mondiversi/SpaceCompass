@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="celestial_temperature_surface_estimate" formatted="false">Szacowana temperatura powierzchni</string>
+    <string name="celestial_temperature_equilibrium_model" formatted="false">Temperatura równowagi (model)</string>
+    <string name="celestial_temperature_historical_range" formatted="false">Zakres powierzchniowy (historyczny)</string>
+    <string name="celestial_temperature_thermal_model" formatted="false">Emisja cieplna (model)</string>
+    <string name="celestial_temperature_reference_note" formatted="false">Oszacowania zależą od założeń modelu. Zakresy z podanym rokiem opisują dawne obserwacje, nie aktualne temperatury. Temperatury gwiazd zwartych pochodzą z modeli widma, nie z pomiarów dziennych i nocnych.</string>
+    <string name="celestial_stephenson_reference_note" formatted="false">Model przyjmuje temperaturę efektywną. Jasność i wyznaczona średnica zakładają odległość gromady; przynależność do gromady jest niepewna. Obecna masa jest nieznana.</string>
+</resources>

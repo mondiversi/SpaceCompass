@@ -6,4 +6,7 @@
     <string name="units_kilograms">Κιλά</string>
     <string name="units_pounds">Λίβρες</string>
     <string name="units_mass_description">Επιλέξτε τις μονάδες μάζας και πυκνότητας.</string>
+    <string name="units_celsius">Κελσίου</string>
+    <string name="units_fahrenheit">Φαρενάιτ</string>
+    <string name="settings_resource_language_tag">el</string>
 </resources>

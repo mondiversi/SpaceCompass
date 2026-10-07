@@ -1,0 +1,11 @@
+<resources>
+    <string name="sky_reference_equator">Небесный экватор</string>
+    <string name="sky_reference_cancer">Тропик Рака</string>
+    <string name="sky_reference_capricorn">Тропик Козерога</string>
+    <string name="sky_reference_arctic">Северный полярный круг</string>
+    <string name="sky_reference_antarctic">Южный полярный круг</string>
+    <string name="sky_reference_north_pole">Северный полюс мира</string>
+    <string name="sky_reference_south_pole">Южный полюс мира</string>
+    <string name="sky_references_hide">Скрыть небесные ориентиры</string>
+    <string name="sky_references_show">Показать небесные ориентиры</string>
+</resources>

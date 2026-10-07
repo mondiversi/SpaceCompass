@@ -2,16 +2,25 @@
 <resources>
     <string name="panorama_capture">Capturer</string>
     <string name="panorama_saving">Enregistrement du panorama…</string>
-    <string name="panorama_saved">Panorama enregistré dans l’album SpaceCompass de la galerie.</string>
+    <string name="panorama_saved">Image enregistrée dans la galerie.</string>
     <string name="panorama_error">Impossible d’enregistrer le panorama. Réessayez.</string>
     <string name="panorama_permission">Autorisez l’accès au stockage pour enregistrer le panorama.</string>
     <string name="panorama_not_ready">Une position GPS et au moins un objet sélectionné sont nécessaires.</string>
     <string name="panorama_data_unavailable">Données indisponibles</string>
     <string name="panorama_path_unavailable">Orbite indisponible</string>
-    <string name="info_news_panorama">Capturer enregistre dans la galerie un panorama complet à 360° des objets sélectionnés et de leurs orbites.</string>
-    <string name="info_news_orbit_names">Les noms des objets suivent les courbes des orbites près des flèches de direction.</string>
+    <string name="info_news_panorama">Superpositions sur la caméra et panoramas à 360° avec repères et étiquettes facultatifs ; export vers la galerie, un fichier ou le partage.</string>
+    <string name="info_news_orbit_names">Boussole en direct, trajectoires quotidiennes et vues texturées pour 30 objets célestes.</string>
     <string name="panorama_north">Nord</string>
     <string name="panorama_east">Est</string>
     <string name="panorama_south">Sud</string>
     <string name="panorama_west">Ouest</string>
+    <string name="panorama_position">Position dans l’image</string>
+    <string name="panorama_position_description">Choisissez les données de position affichées lors de l’enregistrement ou du partage. L’heure et les orbites peuvent encore indiquer une zone approximative.</string>
+    <string name="panorama_position_complete">Complète</string>
+    <string name="panorama_position_complete_detail">Lieu, coordonnées, altitude et précision</string>
+    <string name="panorama_position_area">Zone seulement</string>
+    <string name="panorama_position_area_detail">Région et pays</string>
+    <string name="panorama_position_hidden">Masquée</string>
+    <string name="panorama_position_hidden_detail">Aucune donnée de position</string>
+    <string name="panorama_point_labels">Étiquettes</string>
 </resources>

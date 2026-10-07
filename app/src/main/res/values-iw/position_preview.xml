@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="panorama_preview" formatted="false">פנורמה</string>
+    <string name="panorama_preparing" formatted="false">מכין פנורמה…</string>
+    <string name="panorama_save" formatted="false">שמירה</string>
+    <string name="panorama_share" formatted="false">שיתוף</string>
+    <string name="panorama_gallery" formatted="false">גלריית תמונות</string>
+    <string name="panorama_choose_location" formatted="false">בחירת מיקום…</string>
+    <string name="panorama_exported" formatted="false">הפנורמה יוצאה.</string>
+    <string name="panorama_cloud_cover" formatted="false">כיסוי עננים</string>
+    <string name="panorama_weather_time" formatted="false">זמן מודל מזג האוויר</string>
+    <string name="panorama_northeast" formatted="false">צפון־מזרח</string>
+    <string name="panorama_southeast" formatted="false">דרום־מזרח</string>
+    <string name="panorama_southwest" formatted="false">דרום־מערב</string>
+    <string name="panorama_northwest" formatted="false">צפון־מערב</string>
+</resources>

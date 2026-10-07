@@ -23,6 +23,10 @@ internal data class SpaceCompassCelestialFacts(
 )
 
 internal fun spaceCompassCelestialFacts(body: SpaceCompassCelestialBody): SpaceCompassCelestialFacts = when (body) {
+    // Alien fiction: original diameter is disputed across publications; no inferred mass/density.
+    SpaceCompassCelestialBody.LV_426 -> SpaceCompassCelestialFacts(
+        diameterKm = 1200.0, diameterEstimated = true,
+        gravity = .86 * SPACE_COMPASS_STANDARD_GRAVITY_M_S2, rotationHours = 2.0, parentName = "Calpamos")
     // Agol et al. 2021: reference Earth radius 6371 km; gravity is derived.
     SpaceCompassCelestialBody.TRAPPIST_1_E -> SpaceCompassCelestialFacts(
         diameterKm = 2 * .920 * 6371, diameterEstimated = true,
@@ -30,6 +34,15 @@ internal fun spaceCompassCelestialFacts(body: SpaceCompassCelestialBody): SpaceC
         massKg = .692 * 5.9722e24, massEstimated = true, density = 4900.0,
         gravity = 6.67430e-11 * (.692 * 5.9722e24) / Math.pow(.920 * 6371e3, 2.0),
         revolutionDays = 6.101013, parentName = "TRAPPIST-1")
+    // Maximum nucleus extent, not a spherical diameter; reference observations only.
+    SpaceCompassCelestialBody.HALLEY -> SpaceCompassCelestialFacts(
+        dimensionMeters = 15000.0, revolutionDays = 76.1 * 365.25,
+        parent = SpaceCompassCelestialBody.SUN)
+    // Rosetta's 2014/2015 reference mass, density and spin (ESA); outgassing changes them.
+    SpaceCompassCelestialBody.COMET_67P -> SpaceCompassCelestialFacts(
+        massKg = 1.0e13, massEstimated = true,
+        density = 470.0, rotationHours = 12.4, revolutionDays = 6.5 * 365.25,
+        parent = SpaceCompassCelestialBody.SUN)
     SpaceCompassCelestialBody.EARTH_CENTER -> SpaceCompassCelestialFacts()
     SpaceCompassCelestialBody.PROXIMA_CENTAURI -> proximaFacts()
     SpaceCompassCelestialBody.RIGEL -> SpaceCompassCelestialFacts(
@@ -45,7 +58,7 @@ internal fun spaceCompassCelestialFacts(body: SpaceCompassCelestialBody): SpaceC
     // Total of the two resolved stellar components (A+B), not Proxima.
     SpaceCompassCelestialBody.ALPHA_CENTAURI -> SpaceCompassCelestialFacts(massSolar = 1.0788 + 0.9092, binaryPeriodDays = 79.762 * 365.25, spectralType = "A: G2 V; B: K1 V")
     // No reliable present-day mass found; initial mass or mass-loss rate is not current mass.
-    SpaceCompassCelestialBody.STEPHENSON_2_18 -> SpaceCompassCelestialFacts(spectralType = "M6 I")
+    SpaceCompassCelestialBody.STEPHENSON_2_18 -> stephensonFacts()
     SpaceCompassCelestialBody.SAGITTARIUS_A -> SpaceCompassCelestialFacts(massSolar = 4.297e6, massEstimated = true)
     SpaceCompassCelestialBody.ANDROMEDA_CORE -> SpaceCompassCelestialFacts(massSolar = 1.4e8, massEstimated = true)
     SpaceCompassCelestialBody.TON_618 -> SpaceCompassCelestialFacts(massSolar = 6.6e10, massEstimated = true)
@@ -75,6 +88,17 @@ internal fun spaceCompassCelestialFacts(body: SpaceCompassCelestialBody): SpaceC
     // Do not present launch mass as the current mass after decades of propellant use.
     SpaceCompassCelestialBody.VOYAGER_1 -> SpaceCompassCelestialFacts(dimensionMeters = 3.7, massKg = 733.0, massEstimated = true)
     SpaceCompassCelestialBody.VOYAGER_2 -> SpaceCompassCelestialFacts(dimensionMeters = 3.7, massKg = 735.0, massEstimated = true)
+}
+
+private fun stephensonFacts(): SpaceCompassCelestialFacts {
+    // Siebert et al. 2026, DFK 1: 321000 ±115000 Lsun and assumed 3200 K.
+    // Stefan-Boltzmann diameter, conditional on cluster distance; no current mass inference.
+    fun diameter(luminosity: Double) = 2 * 695700 * kotlin.math.sqrt(luminosity) * Math.pow(5772.0 / 3200.0, 2.0)
+    val central = diameter(321000.0)
+    return SpaceCompassCelestialFacts(spectralType = "M6 I", luminositySolar = 321000.0,
+        diameterKm = central, diameterEstimated = true,
+        diameterErrorMinusKm = central - diameter(206000.0),
+        diameterErrorPlusKm = diameter(436000.0) - central)
 }
 
 private fun polarisFacts(): SpaceCompassCelestialFacts {
@@ -114,11 +138,12 @@ internal fun formatSpaceCompassCelestialGravity(value: Double?, numeric: SpaceCo
 
 internal val SpaceCompassCelestialBody.viewerTexture: String?
     get() = when (this) {
-        SpaceCompassCelestialBody.EARTH_CENTER, SpaceCompassCelestialBody.TRAPPIST_1_E -> null
+        SpaceCompassCelestialBody.HALLEY, SpaceCompassCelestialBody.COMET_67P, SpaceCompassCelestialBody.EARTH_CENTER, SpaceCompassCelestialBody.TRAPPIST_1_E -> null
         SpaceCompassCelestialBody.PROXIMA_CENTAURI, SpaceCompassCelestialBody.RIGEL,
         SpaceCompassCelestialBody.ALPHA_CENTAURI, SpaceCompassCelestialBody.SAGITTARIUS_A,
         SpaceCompassCelestialBody.STEPHENSON_2_18, SpaceCompassCelestialBody.RX_J1856,
     SpaceCompassCelestialBody.PSR_J0437, SpaceCompassCelestialBody.TON_618, SpaceCompassCelestialBody.ANDROMEDA_CORE, SpaceCompassCelestialBody.POLARIS, SpaceCompassCelestialBody.SEDNA, SpaceCompassCelestialBody.ISS, SpaceCompassCelestialBody.STARLINK_V3, SpaceCompassCelestialBody.VOYAGER_1, SpaceCompassCelestialBody.VOYAGER_2 -> null
+        SpaceCompassCelestialBody.LV_426 -> "lv426.png"
         SpaceCompassCelestialBody.VENUS -> "venus_atmosphere.jpg"
         else -> "${name.lowercase(java.util.Locale.ROOT)}.jpg"
     }

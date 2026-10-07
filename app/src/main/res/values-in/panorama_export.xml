@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="panorama_export" formatted="false">Ekspor</string>
+    <string name="panorama_export_profile" formatted="false">Format data</string>
+    <string name="panorama_export_selected" formatted="false">Bahasa dan format yang diatur</string>
+    <string name="panorama_export_international" formatted="false">Ilmiah internasional</string>
+    <string name="panorama_save_gallery" formatted="false">Simpan ke galeri</string>
+    <string name="panorama_save_phone" formatted="false">Simpan di ponsel</string>
+</resources>

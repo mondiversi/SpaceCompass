@@ -1,0 +1,31 @@
+<resources>
+    <string name="observer_title">Scenario</string>
+    <string name="observer_place">Positie</string>
+    <string name="observer_search">Plaats zoeken</string>
+    <string name="observer_search_action">Zoeken</string>
+    <string name="observer_map">Kiezen op de kaart</string>
+    <string name="observer_latitude">Breedtegraad</string>
+    <string name="observer_longitude">Lengtegraad</string>
+    <string name="observer_automatic">Hoogte en tijdzone bepalen</string>
+    <string name="observer_altitude">Hoogte</string>
+    <string name="observer_zone">Tijdzone</string>
+    <string name="observer_terrain_note">Geschatte terreinhoogte; je kunt deze aanpassen.</string>
+    <string name="observer_lookup_failed">Automatisch opzoeken niet beschikbaar. Schakel Hoogte en Tijdzone in om ze handmatig in te voeren.</string>
+    <string name="observer_moment">Datum en tijd</string>
+    <string name="observer_date">Datum</string>
+    <string name="observer_time">Tijd</string>
+    <string name="observer_limits">Sommige baangegevens zijn buiten hun geldigheidsperiode niet beschikbaar. Weerschattingen indien beschikbaar; anders een heldere standaardhemel.</string>
+    <string name="observer_privacy">Zoeken gebruikt de Android-geocoder. De kaart gebruikt OpenStreetMap; gekozen coördinaten gaan naar Open-Meteo voor hoogte en tijdzone.</string>
+    <string name="observer_apply">Instellen</string>
+    <string name="observer_invalid">Controleer coördinaten, hoogte, datum, tijd en tijdzone. Datums: 1900–2100. Niet-bestaande tijden bij een zomertijdwisseling zijn ongeldig.</string>
+    <string name="observer_use_place">Dit punt gebruiken</string>
+    <string name="observer_simulation">Scenario</string>
+    <string name="observer_coordinates_value">Coördinaten: %1$s</string>
+    <string name="observer_altitude_value">Hoogte: %1$s</string>
+    <string name="observer_simulation_active">Scenario actief</string>
+    <string name="observer_enable_position">Positie simuleren</string>
+    <string name="observer_enable_time">Datum en tijd simuleren</string>
+    <string name="observer_current_metadata">Hoogte en tijdzone op de huidige locatie bepalen</string>
+    <string name="observer_enable_altitude">Hoogte simuleren</string>
+    <string name="observer_enable_zone">Tijdzone simuleren</string>
+</resources>

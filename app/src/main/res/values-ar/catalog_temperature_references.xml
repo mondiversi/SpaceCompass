@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="catalog_temperature_mean" formatted="false">متوسط السطح</string>
+    <string name="catalog_temperature_range" formatted="false">نطاق السطح</string>
+    <string name="catalog_temperature_atmosphere">الغلاف الجوي (%1$s)</string>
+    <string name="catalog_temperature_photosphere" formatted="false">الغلاف الضوئي</string>
+    <string name="catalog_temperature_effective" formatted="false">فعالة</string>
+    <string name="catalog_temperature_estimate" formatted="false">تقدير السطح</string>
+    <string name="catalog_temperature_equilibrium" formatted="false">نموذج التوازن</string>
+    <string name="catalog_temperature_historical" formatted="false">نطاق تاريخي</string>
+    <string name="catalog_temperature_thermal" formatted="false">نموذج حراري</string>
+</resources>

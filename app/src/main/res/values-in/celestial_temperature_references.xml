@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="celestial_temperature_surface_estimate" formatted="false">Perkiraan suhu permukaan</string>
+    <string name="celestial_temperature_equilibrium_model" formatted="false">Suhu kesetimbangan (model)</string>
+    <string name="celestial_temperature_historical_range" formatted="false">Rentang permukaan (historis)</string>
+    <string name="celestial_temperature_thermal_model" formatted="false">Emisi termal (model)</string>
+    <string name="celestial_temperature_reference_note" formatted="false">Perkiraan bergantung pada asumsi model. Rentang bertahun menunjukkan pengamatan masa lalu, bukan suhu saat ini. Suhu bintang kompak berasal dari model spektrum, bukan pengukuran siang dan malam.</string>
+    <string name="celestial_stephenson_reference_note" formatted="false">Suhu efektif ditetapkan dalam model. Luminositas dan diameter turunan mengasumsikan jarak gugus; keanggotaan gugus belum pasti. Massa saat ini tidak diketahui.</string>
+</resources>

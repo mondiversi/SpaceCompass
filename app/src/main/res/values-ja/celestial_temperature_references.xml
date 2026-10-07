@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="celestial_temperature_surface_estimate" formatted="false">推定表面温度</string>
+    <string name="celestial_temperature_equilibrium_model" formatted="false">平衡温度（モデル）</string>
+    <string name="celestial_temperature_historical_range" formatted="false">表面温度範囲（過去の観測）</string>
+    <string name="celestial_temperature_thermal_model" formatted="false">熱放射（モデル）</string>
+    <string name="celestial_temperature_reference_note" formatted="false">推定値はモデルの仮定に依存します。年を付した範囲は過去の観測であり、現在の温度ではありません。コンパクト星の温度は昼夜の測定ではなく、スペクトルモデルから求めた値です。</string>
+    <string name="celestial_stephenson_reference_note" formatted="false">有効温度はモデルの仮定値です。光度と導出した直径は星団の距離を仮定していますが、星団への所属は不確かです。現在の質量は不明です。</string>
+</resources>

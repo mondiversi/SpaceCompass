@@ -1,0 +1,31 @@
+<resources>
+    <string name="observer_title">سناریو</string>
+    <string name="observer_place">موقعیت</string>
+    <string name="observer_search">جستجوی مکان</string>
+    <string name="observer_search_action">جستجو</string>
+    <string name="observer_map">انتخاب روی نقشه</string>
+    <string name="observer_latitude">عرض جغرافیایی</string>
+    <string name="observer_longitude">طول جغرافیایی</string>
+    <string name="observer_automatic">یافتن ارتفاع و منطقه زمانی</string>
+    <string name="observer_altitude">ارتفاع</string>
+    <string name="observer_zone">منطقه زمانی</string>
+    <string name="observer_terrain_note">ارتفاع تخمینی زمین؛ قابل ویرایش است.</string>
+    <string name="observer_lookup_failed">تشخیص خودکار در دسترس نیست. ارتفاع و منطقه زمانی را برای ورود دستی فعال کنید.</string>
+    <string name="observer_moment">تاریخ و زمان</string>
+    <string name="observer_date">تاریخ</string>
+    <string name="observer_time">زمان</string>
+    <string name="observer_limits">بعضی داده‌های مداری خارج از دوره اعتبار در دسترس نیستند. در صورت دسترسی، برآورد آب‌وهوا استفاده می‌شود؛ در غیر این صورت آسمان صاف پیش‌فرض نمایش داده می‌شود.</string>
+    <string name="observer_privacy">جستجو از زمین‌کدگذار Android استفاده می‌کند. نقشه از OpenStreetMap استفاده می‌کند؛ مختصات انتخابی برای ارتفاع و منطقه زمانی به Open-Meteo ارسال می‌شوند.</string>
+    <string name="observer_apply">تنظیم</string>
+    <string name="observer_invalid">مختصات، ارتفاع، تاریخ، زمان و منطقه زمانی را بررسی کنید. تاریخ‌ها: 1900–2100. زمان‌های ناموجود هنگام تغییر ساعت تابستانی معتبر نیستند.</string>
+    <string name="observer_use_place">استفاده از این نقطه</string>
+    <string name="observer_simulation">سناریو</string>
+    <string name="observer_coordinates_value">مختصات: %1$s</string>
+    <string name="observer_altitude_value">ارتفاع: %1$s</string>
+    <string name="observer_simulation_active">سناریو فعال است</string>
+    <string name="observer_enable_position">شبیه‌سازی موقعیت</string>
+    <string name="observer_enable_time">شبیه‌سازی تاریخ و زمان</string>
+    <string name="observer_current_metadata">یافتن ارتفاع و منطقه زمانی از موقعیت فعلی</string>
+    <string name="observer_enable_altitude">شبیه‌سازی ارتفاع</string>
+    <string name="observer_enable_zone">شبیه‌سازی منطقه زمانی</string>
+</resources>

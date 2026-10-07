@@ -1,0 +1,31 @@
+<resources>
+    <string name="observer_title">Hali</string>
+    <string name="observer_place">Nafasi</string>
+    <string name="observer_search">Tafuta mahali</string>
+    <string name="observer_search_action">Tafuta</string>
+    <string name="observer_map">Chagua kwenye ramani</string>
+    <string name="observer_latitude">Latitudo</string>
+    <string name="observer_longitude">Longitudo</string>
+    <string name="observer_automatic">Pata mwinuko na ukanda wa saa</string>
+    <string name="observer_altitude">Mwinuko</string>
+    <string name="observer_zone">Ukanda wa saa</string>
+    <string name="observer_terrain_note">Makadirio ya mwinuko wa ardhi; unaweza kuyabadilisha.</string>
+    <string name="observer_lookup_failed">Utafutaji wa kiotomatiki haupatikani. Washa Mwinuko na Ukanda wa saa ili kuviingiza mwenyewe.</string>
+    <string name="observer_moment">Tarehe na saa</string>
+    <string name="observer_date">Tarehe</string>
+    <string name="observer_time">Saa</string>
+    <string name="observer_limits">Baadhi ya data za obiti hazipatikani nje ya tarehe halali. Makadirio ya hali ya hewa yakipatikana; vinginevyo anga safi la msingi.</string>
+    <string name="observer_privacy">Utafutaji unatumia huduma ya Android. Ramani inatumia OpenStreetMap; viwianishi vilivyochaguliwa hutumwa kwa Open-Meteo kupata mwinuko na ukanda wa saa.</string>
+    <string name="observer_apply">Weka</string>
+    <string name="observer_invalid">Kagua viwianishi, mwinuko, tarehe, saa na ukanda wa saa. Tarehe: 1900–2100. Saa zisizokuwepo wakati wa kubadili saa za kiangazi si halali.</string>
+    <string name="observer_use_place">Tumia sehemu hii</string>
+    <string name="observer_simulation">Hali</string>
+    <string name="observer_coordinates_value">Viwianishi: %1$s</string>
+    <string name="observer_altitude_value">Mwinuko: %1$s</string>
+    <string name="observer_simulation_active">Hali imewashwa</string>
+    <string name="observer_enable_position">Iga mahali</string>
+    <string name="observer_enable_time">Iga tarehe na saa</string>
+    <string name="observer_current_metadata">Pata mwinuko na ukanda wa saa wa mahali pa sasa</string>
+    <string name="observer_enable_altitude">Iga mwinuko</string>
+    <string name="observer_enable_zone">Iga ukanda wa saa</string>
+</resources>

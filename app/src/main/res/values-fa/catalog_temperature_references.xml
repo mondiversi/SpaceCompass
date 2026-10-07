@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="catalog_temperature_mean" formatted="false">میانگین سطح</string>
+    <string name="catalog_temperature_range" formatted="false">بازهٔ سطح</string>
+    <string name="catalog_temperature_atmosphere">جو (%1$s)</string>
+    <string name="catalog_temperature_photosphere" formatted="false">نورسپهر</string>
+    <string name="catalog_temperature_effective" formatted="false">مؤثر</string>
+    <string name="catalog_temperature_estimate" formatted="false">تخمین سطح</string>
+    <string name="catalog_temperature_equilibrium" formatted="false">مدل تعادل</string>
+    <string name="catalog_temperature_historical" formatted="false">بازهٔ تاریخی</string>
+    <string name="catalog_temperature_thermal" formatted="false">مدل گرمایی</string>
+</resources>

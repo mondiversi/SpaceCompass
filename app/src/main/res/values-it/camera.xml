@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="camera_enable">Attiva vista fotocamera</string>
+    <string name="camera_disable">Disattiva vista fotocamera</string>
+    <string name="camera_permission">Consenti l’accesso alla fotocamera per la vista dal vivo.</string>
+    <string name="camera_unavailable">Fotocamera non disponibile. Riprova.</string>
+    <string name="camera_view_description">Vista fotocamera dal vivo con posizioni celesti</string>
+</resources>

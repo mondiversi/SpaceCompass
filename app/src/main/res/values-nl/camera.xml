@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="camera_enable">Camerabeeld inschakelen</string>
+    <string name="camera_disable">Camerabeeld uitschakelen</string>
+    <string name="camera_permission">Sta cameratoegang toe voor het livebeeld.</string>
+    <string name="camera_unavailable">Camera niet beschikbaar. Probeer het opnieuw.</string>
+    <string name="camera_view_description">Live camerabeeld met hemelposities</string>
+</resources>

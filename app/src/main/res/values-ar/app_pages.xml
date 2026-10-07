@@ -12,4 +12,5 @@
     <string name="language_description">اختر لغة الواجهة.</string>
     <string name="github_repository_title">مستودع GitHub</string>
     <string name="about_copyright">حقوق النشر © 2026 Mondiversi</string>
+    <string name="settings_section_info">معلومات</string>
 </resources>

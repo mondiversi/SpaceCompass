@@ -6,4 +6,7 @@
     <string name="units_kilograms">קילוגרמים</string>
     <string name="units_pounds">פאונדים</string>
     <string name="units_mass_description">בחרו את יחידות המסה והצפיפות.</string>
+    <string name="units_celsius">צלזיוס</string>
+    <string name="units_fahrenheit">פרנהייט</string>
+    <string name="settings_resource_language_tag">he</string>
 </resources>

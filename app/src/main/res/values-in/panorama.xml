@@ -2,16 +2,25 @@
 <resources>
     <string name="panorama_capture">Ambil gambar</string>
     <string name="panorama_saving">Menyimpan panorama…</string>
-    <string name="panorama_saved">Panorama tersimpan di album SpaceCompass dalam galeri.</string>
+    <string name="panorama_saved">Gambar disimpan ke galeri.</string>
     <string name="panorama_error">Panorama tidak dapat disimpan. Coba lagi.</string>
     <string name="panorama_permission">Izinkan akses penyimpanan untuk menyimpan panorama.</string>
     <string name="panorama_not_ready">Diperlukan posisi GPS dan setidaknya satu objek yang dipilih.</string>
     <string name="panorama_data_unavailable">Data tidak tersedia</string>
     <string name="panorama_path_unavailable">Orbit tidak tersedia</string>
-    <string name="info_news_panorama">Ambil gambar menyimpan panorama 360° lengkap dari objek yang dipilih dan orbitnya ke galeri.</string>
-    <string name="info_news_orbit_names">Nama objek mengikuti lengkungan orbit di dekat panah arah.</string>
+    <string name="info_news_panorama">Lapisan kamera dan panorama 360° dengan garis panduan dan label opsional; ekspor ke galeri, berkas atau untuk berbagi.</string>
+    <string name="info_news_orbit_names">Kompas langsung, lintasan harian dan tampilan bertekstur untuk 30 benda langit.</string>
     <string name="panorama_north">Utara</string>
     <string name="panorama_east">Timur</string>
     <string name="panorama_south">Selatan</string>
     <string name="panorama_west">Barat</string>
+    <string name="panorama_position">Lokasi dalam gambar</string>
+    <string name="panorama_position_description">Pilih informasi lokasi yang ditampilkan saat menyimpan atau berbagi. Waktu dan orbit masih dapat menunjukkan perkiraan area.</string>
+    <string name="panorama_position_complete">Lengkap</string>
+    <string name="panorama_position_complete_detail">Tempat, koordinat, ketinggian, dan akurasi</string>
+    <string name="panorama_position_area">Hanya wilayah</string>
+    <string name="panorama_position_area_detail">Wilayah dan negara</string>
+    <string name="panorama_position_hidden">Tersembunyi</string>
+    <string name="panorama_position_hidden_detail">Tanpa informasi lokasi</string>
+    <string name="panorama_point_labels">Label</string>
 </resources>

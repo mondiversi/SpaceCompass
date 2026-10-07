@@ -1,0 +1,31 @@
+<resources>
+    <string name="observer_title">Scenario</string>
+    <string name="observer_place">Posizione</string>
+    <string name="observer_search">Cerca un luogo</string>
+    <string name="observer_search_action">Cerca</string>
+    <string name="observer_map">Scegli sulla mappa</string>
+    <string name="observer_latitude">Latitudine</string>
+    <string name="observer_longitude">Longitudine</string>
+    <string name="observer_automatic">Rileva quota e fuso</string>
+    <string name="observer_altitude">Quota</string>
+    <string name="observer_zone">Fuso orario</string>
+    <string name="observer_terrain_note">Quota stimata del terreno; puoi modificarla.</string>
+    <string name="observer_lookup_failed">Rilevamento non disponibile. Attiva Quota e Fuso orario per inserirli manualmente.</string>
+    <string name="observer_moment">Data e ora</string>
+    <string name="observer_date">Data</string>
+    <string name="observer_time">Ora</string>
+    <string name="observer_limits">Alcuni dati orbitali non sono disponibili fuori dalle date di validità. Stime meteo quando disponibili; altrimenti cielo pulito di base.</string>
+    <string name="observer_privacy">La ricerca usa il geocodificatore Android. La mappa usa OpenStreetMap; le coordinate scelte vengono inviate a Open-Meteo per quota e fuso.</string>
+    <string name="observer_apply">Imposta</string>
+    <string name="observer_invalid">Controlla coordinate, quota, data, ora e fuso. Date: 1900–2100. Le ore inesistenti al cambio dell’ora legale non sono utilizzabili.</string>
+    <string name="observer_use_place">Usa questo punto</string>
+    <string name="observer_simulation">Scenario</string>
+    <string name="observer_coordinates_value">Coordinate: %1$s</string>
+    <string name="observer_altitude_value">Quota: %1$s</string>
+    <string name="observer_simulation_active">Scenario attivo</string>
+    <string name="observer_enable_position">Simula posizione</string>
+    <string name="observer_enable_time">Simula data e ora</string>
+    <string name="observer_current_metadata">Rileva quota e fuso dalla posizione attuale</string>
+    <string name="observer_enable_altitude">Simula quota</string>
+    <string name="observer_enable_zone">Simula fuso orario</string>
+</resources>

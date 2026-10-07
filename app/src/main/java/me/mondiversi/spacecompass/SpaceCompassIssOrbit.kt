@@ -36,6 +36,7 @@ internal class SpaceCompassIssOrbit private constructor(val line1: String, val l
                 val checksum = line.take(68).sumOf { if (it.isDigit()) it.digitToInt() else if (it == '-') 1 else 0 } % 10
                 require(line[68].digitToIntOrNull() == checksum) { "Invalid TLE checksum" }
             }
+            require(lines[0][7] == 'U' && lines[0].substring(9, 17).trim() == "98067A" && lines[0][62] == '0')
             val yearShort = lines[0].substring(18, 20).toInt()
             val year = if (yearShort < 57) 2000 + yearShort else 1900 + yearShort
             val day = lines[0].substring(20, 32).toDouble()

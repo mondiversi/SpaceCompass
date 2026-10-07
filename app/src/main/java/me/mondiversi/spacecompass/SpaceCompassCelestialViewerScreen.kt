@@ -135,7 +135,7 @@ internal fun SpaceCompassCelestialViewerScreen(body: SpaceCompassCelestialBody, 
     ) else temperatures.map {
         val label = if (it.kind == SpaceCompassCelestialTemperatureKind.ATMOSPHERE_ONE_BAR)
             stringResource(it.kind.labelResource, referencePressure) else stringResource(it.kind.labelResource)
-        label to formatSpaceCompassCelestialTemperature(it, numeric, units.fahrenheit)
+        (label + (it.component?.let { name -> " ($name)" } ?: "")) to formatSpaceCompassCelestialTemperature(it, numeric, units.fahrenheit)
     }
     val pressure = spaceCompassAtmosphericPressure(body)
     val pressureRows = pressure?.let { reference ->
@@ -144,8 +144,7 @@ internal fun SpaceCompassCelestialViewerScreen(body: SpaceCompassCelestialBody, 
         }
     } ?: emptyList()
     val rows = listOf(
-        stringResource(R.string.celestial_view_diameter) to ((if (facts.diameterEstimated) "≈ " else "") + formatSpaceCompassPhysicalLength(facts.diameterKm?.times(1000), if (facts.diameterEstimated) 2 else 0, numeric, units.feet, large = true) +
-            (facts.diameterErrorPlusKm?.let { " (+${formatSpaceCompassPhysicalLength(it * 1000, 2, numeric, units.feet, large = true)} / −${formatSpaceCompassPhysicalLength(facts.diameterErrorMinusKm?.times(1000), 2, numeric, units.feet, large = true)})" } ?: facts.diameterErrorKm?.let { " (±${formatSpaceCompassPhysicalLength(it * 1000, 0, numeric, units.feet, large = true)})" } ?: "")),
+        stringResource(R.string.celestial_view_diameter) to formatSpaceCompassCelestialDiameter(facts, numeric, units.feet),
         stringResource(if (body.isVoyager) R.string.celestial_view_antenna else R.string.celestial_view_size) to formatSpaceCompassPhysicalLength(facts.dimensionMeters, 1, numeric, units.feet),
         stringResource(R.string.celestial_view_mass) to formatSpaceCompassCelestialMass(body, facts, numeric, units.pounds),
         stringResource(R.string.celestial_view_gravity) to formatSpaceCompassCelestialGravity(facts.gravity, numeric,
@@ -180,10 +179,6 @@ internal fun SpaceCompassCelestialViewerScreen(body: SpaceCompassCelestialBody, 
         for (component in spaceCompassStellarComponents(body)) {
             add(stringResource(R.string.celestial_luminosity) + " (${component.name})" to
                 formatSpaceCompassNumber(component.luminositySolar, 4, numeric, minimumDigits = 0) + " L☉")
-            add(stringResource(R.string.celestial_temperature_effective) + " (${component.name})" to
-                formatSpaceCompassCelestialTemperature(SpaceCompassCelestialTemperature(
-                    SpaceCompassCelestialTemperatureKind.STELLAR_EFFECTIVE,
-                    spaceCompassStellarComponentTemperature(component)), numeric, units.fahrenheit))
             add(stringResource(R.string.celestial_view_mass) + " (${component.name})" to
                 formatSpaceCompassCelestialMass(SpaceCompassCelestialBody.SUN, SpaceCompassCelestialFacts(
                     massSolar = component.massSolar, massSolarError = component.massError), numeric, units.pounds))
@@ -200,10 +195,12 @@ internal fun SpaceCompassCelestialViewerScreen(body: SpaceCompassCelestialBody, 
     val spin = stringResource(R.string.celestial_view_rotation)
     val resume = stringResource(R.string.celestial_view_resume)
     val note = stringResource(when {
+        body.isFictional -> R.string.celestial_lv426_model_note
         body == SpaceCompassCelestialBody.EARTH_CENTER -> R.string.celestial_earth_center_note
         body.deepSkyReference != null -> body.deepSkyNoteResource
         body == SpaceCompassCelestialBody.POLARIS -> R.string.celestial_polaris_model
         rotating -> R.string.celestial_free_rotation_hint
+        body.isComet -> R.string.celestial_comet_note
         body.isSpacecraft -> R.string.celestial_view_craft_note
         body == SpaceCompassCelestialBody.SEDNA -> R.string.celestial_view_sedna_note
         else -> R.string.celestial_view_map_note
@@ -214,13 +211,13 @@ internal fun SpaceCompassCelestialViewerScreen(body: SpaceCompassCelestialBody, 
                 // Only this restartable region reads the animation angle: facts do not recompose at 30 Hz.
                 val viewGeometry = if (rotating || !body.hasPhysicalFace) rotationState.value.geometry() else geometry.takeIf { hasLocation }
                 if (body == SpaceCompassCelestialBody.EARTH_CENTER) SpaceCompassEarthCenterSymbol(Modifier.fillMaxSize())
-                else if (body.deepSkyReference != null) SpaceCompassDeepSkySymbol(body, Modifier.fillMaxSize())
+                else if (body.usesDeepSkySymbol) SpaceCompassDeepSkySymbol(body, Modifier.fillMaxSize())
                 else if (viewGeometry != null) SpaceCompassCelestialModelViewport(body, viewGeometry, rotating, rotationState.value,
                     { rotationState.value = it }, viewportState.value, { viewportState.value = it },
                     stringResource(body.nameResource), resume, Modifier.fillMaxSize())
                 else Text(stringResource(R.string.celestial_view_location_needed), Modifier.padding(16.dp), color = Color.White, fontSize = 13.sp)
                 // Sibling overlays receive their own touches; the model's drag/pinch never intercepts tabs.
-                if (body.deepSkyReference == null && body != SpaceCompassCelestialBody.EARTH_CENTER) Row(Modifier.align(Alignment.TopEnd).padding(4.dp)) {
+                if (!body.usesDeepSkySymbol && body != SpaceCompassCelestialBody.EARTH_CENTER) Row(Modifier.align(Alignment.TopEnd).padding(4.dp)) {
                     SpaceCompassCelestialIconControl(!rotating, actual, { rotating = false },
                         Modifier.testTag("celestial-view-current")) {
                         SpaceCompassPasswordVisibilityIcon(true, Modifier.size(18.dp), LocalContentColor.current)
@@ -249,52 +246,70 @@ internal fun SpaceCompassCelestialViewerScreen(body: SpaceCompassCelestialBody, 
     }
     val info: @Composable (Modifier) -> Unit = { placement ->
         val scroll = rememberScrollState()
-        Column(placement.testTag("celestial-view-information-island").clip(RoundedCornerShape(18.dp)).background(primaryText.copy(alpha = 0.05f))
-            .scrollbarOverlay(scroll, secondaryText.copy(alpha = 0.46f)).verticalScroll(scroll)
-            .padding(12.dp).testTag("celestial-view-information"), verticalArrangement = Arrangement.spacedBy(8.dp)) {
-            if (body == SpaceCompassCelestialBody.STEPHENSON_2_18)
-                Text(stringResource(R.string.celestial_mass_unavailable_note), color = secondaryText, fontSize = 11.sp, lineHeight = 14.sp)
-            if (body == SpaceCompassCelestialBody.PSR_J0437 || spaceCompassHorizonDiameterKm(body) != null)
-                Text(stringResource(R.string.celestial_reference_estimates_note), color = secondaryText, fontSize = 11.sp, lineHeight = 14.sp)
-            informationRows.forEach { (label, value) -> Row(Modifier.fillMaxWidth(), verticalAlignment = Alignment.CenterVertically,
-                horizontalArrangement = Arrangement.spacedBy(10.dp)) {
-                Text(label, Modifier.weight(0.52f), color = secondaryText, fontSize = 12.sp, lineHeight = 16.sp)
-                Text(value, Modifier.weight(0.48f), color = primaryText, fontSize = 12.sp, lineHeight = 16.sp,
-                    style = TextStyle(textDirection = TextDirection.ContentOrLtr))
-            } }
-            HorizontalDivider(color = secondaryText.copy(alpha = 0.22f))
-            Text(if (body == SpaceCompassCelestialBody.EARTH_CENTER) stringResource(R.string.celestial_earth_center_note)
-                else stringResource(R.string.celestial_view_facts_note, referencePressure), color = secondaryText, fontSize = 11.sp, lineHeight = 14.sp)
-            if (pressureRows.isNotEmpty()) {
-                Text(stringResource(R.string.celestial_pressure_reference_note), color = secondaryText,
-                    fontSize = 11.sp, lineHeight = 14.sp)
-                if (body.isJovianMoon) Text("Bagenal & Dols (2020)", color = secondaryText, fontSize = 10.sp, lineHeight = 13.sp)
+        Column(placement.testTag("celestial-view-information")
+            .scrollbarOverlay(scroll, secondaryText.copy(alpha = 0.46f)).verticalScroll(scroll),
+            verticalArrangement = Arrangement.spacedBy(8.dp)) {
+            Column(Modifier.fillMaxWidth().padding(horizontal = spaceCompassDetailScrollInset)
+                .clip(RoundedCornerShape(18.dp))
+                .background(primaryText.copy(alpha = 0.05f)).padding(12.dp)
+                .testTag("celestial-view-information-island"), verticalArrangement = Arrangement.spacedBy(8.dp)) {
+                informationRows.forEach { (label, value) -> Row(Modifier.fillMaxWidth(), verticalAlignment = Alignment.CenterVertically,
+                    horizontalArrangement = Arrangement.spacedBy(10.dp)) {
+                    Text(label, Modifier.weight(0.52f), color = secondaryText, fontSize = 12.sp, lineHeight = 16.sp)
+                    Text(value, Modifier.weight(0.48f), color = primaryText, fontSize = 12.sp, lineHeight = 16.sp,
+                        style = TextStyle(textDirection = TextDirection.ContentOrLtr))
+                } }
             }
-            if (temperatures.isNotEmpty()) Text(stringResource(R.string.celestial_temperature_note),
-                color = secondaryText, fontSize = 11.sp, lineHeight = 14.sp)
-            if (spaceCompassUsesSolarMass(facts))
-                Text(stringResource(R.string.celestial_solar_mass_note), color = secondaryText, fontSize = 11.sp, lineHeight = 14.sp)
-            else if (spaceCompassCelestialMassKilograms(facts) != null && (facts.massModelAssumption || facts.massEstimated))
-                Text(stringResource(R.string.celestial_mass_reference_note), color = secondaryText, fontSize = 11.sp, lineHeight = 14.sp)
-            if (body.deepSkyReference != null) Text(stringResource(body.deepSkyNoteResource),
-                color = secondaryText, fontSize = 11.sp, lineHeight = 14.sp)
-            if (body == SpaceCompassCelestialBody.POLARIS) Text(stringResource(R.string.celestial_polaris_derived),
-                color = secondaryText, fontSize = 11.sp, lineHeight = 14.sp)
-            if (body == SpaceCompassCelestialBody.STARLINK_V3) Text(stringResource(R.string.celestial_starlink_note),
-                color = secondaryText, fontSize = 11.sp, lineHeight = 14.sp)
-            if (body == SpaceCompassCelestialBody.SUN || body == SpaceCompassCelestialBody.SEDNA || body == SpaceCompassCelestialBody.ISS || body == SpaceCompassCelestialBody.POLARIS) {
-                Text(stringResource(when (body) {
-                    SpaceCompassCelestialBody.SUN -> R.string.celestial_view_sun_note
-                    SpaceCompassCelestialBody.SEDNA -> R.string.celestial_view_sedna_facts
-                    SpaceCompassCelestialBody.POLARIS -> R.string.celestial_polaris_facts
-                    else -> R.string.celestial_view_iss_note
-                }), color = secondaryText, fontSize = 11.sp, lineHeight = 14.sp)
+            Column(Modifier.fillMaxWidth().padding(horizontal = spaceCompassDetailScrollInset, vertical = 4.dp)
+                .testTag("celestial-view-notes"), verticalArrangement = Arrangement.spacedBy(8.dp)) {
+                if (body.isComet) Text(stringResource(R.string.celestial_comet_note), color = secondaryText, fontSize = 11.sp, lineHeight = 14.sp)
+                if (body == SpaceCompassCelestialBody.STEPHENSON_2_18)
+                    Text(stringResource(R.string.celestial_mass_unavailable_note), color = secondaryText, fontSize = 11.sp, lineHeight = 14.sp)
+                if (body == SpaceCompassCelestialBody.PSR_J0437 || spaceCompassHorizonDiameterKm(body) != null)
+                    Text(stringResource(R.string.celestial_reference_estimates_note), color = secondaryText, fontSize = 11.sp, lineHeight = 14.sp)
+                if (!body.isFictional) Text(if (body == SpaceCompassCelestialBody.EARTH_CENTER) stringResource(R.string.celestial_earth_center_note)
+                    else stringResource(R.string.celestial_view_facts_note, referencePressure), color = secondaryText, fontSize = 11.sp, lineHeight = 14.sp)
+                if (pressureRows.isNotEmpty()) {
+                    Text(stringResource(R.string.celestial_pressure_reference_note), color = secondaryText,
+                        fontSize = 11.sp, lineHeight = 14.sp)
+                    if (body.isJovianMoon) Text("Bagenal & Dols (2020)", color = secondaryText, fontSize = 10.sp, lineHeight = 13.sp)
+                }
+                if (temperatures.isNotEmpty() && !body.isFictional) Text(stringResource(R.string.celestial_temperature_note),
+                    color = secondaryText, fontSize = 11.sp, lineHeight = 14.sp)
+                if (temperatures.any { it.kind in setOf(SpaceCompassCelestialTemperatureKind.SURFACE_ESTIMATE,
+                        SpaceCompassCelestialTemperatureKind.EQUILIBRIUM_MODEL,
+                        SpaceCompassCelestialTemperatureKind.HISTORICAL_SURFACE_RANGE,
+                        SpaceCompassCelestialTemperatureKind.THERMAL_MODEL) })
+                    Text(stringResource(R.string.celestial_temperature_reference_note),
+                        color = secondaryText, fontSize = 11.sp, lineHeight = 14.sp)
+                if (body == SpaceCompassCelestialBody.STEPHENSON_2_18)
+                    Text(stringResource(R.string.celestial_stephenson_reference_note),
+                        color = secondaryText, fontSize = 11.sp, lineHeight = 14.sp)
+                if (spaceCompassUsesSolarMass(facts))
+                    Text(stringResource(R.string.celestial_solar_mass_note), color = secondaryText, fontSize = 11.sp, lineHeight = 14.sp)
+                else if (spaceCompassCelestialMassKilograms(facts) != null && (facts.massModelAssumption || facts.massEstimated))
+                    Text(stringResource(R.string.celestial_mass_reference_note), color = secondaryText, fontSize = 11.sp, lineHeight = 14.sp)
+                if (body.deepSkyReference != null) Text(stringResource(body.deepSkyNoteResource),
+                    color = secondaryText, fontSize = 11.sp, lineHeight = 14.sp)
+                if (body == SpaceCompassCelestialBody.POLARIS) Text(stringResource(R.string.celestial_polaris_derived),
+                    color = secondaryText, fontSize = 11.sp, lineHeight = 14.sp)
+                if (body == SpaceCompassCelestialBody.STARLINK_V3) Text(stringResource(R.string.celestial_starlink_note),
+                    color = secondaryText, fontSize = 11.sp, lineHeight = 14.sp)
+                if (body == SpaceCompassCelestialBody.SUN || body == SpaceCompassCelestialBody.SEDNA || body == SpaceCompassCelestialBody.ISS || body == SpaceCompassCelestialBody.POLARIS) {
+                    Text(stringResource(when (body) {
+                        SpaceCompassCelestialBody.SUN -> R.string.celestial_view_sun_note
+                        SpaceCompassCelestialBody.SEDNA -> R.string.celestial_view_sedna_facts
+                        SpaceCompassCelestialBody.POLARIS -> R.string.celestial_polaris_facts
+                        else -> R.string.celestial_view_iss_note
+                    }), color = secondaryText, fontSize = 11.sp, lineHeight = 14.sp)
+                }
+                Text(stringResource(if (body.isFictional) R.string.celestial_lv426_credits else R.string.celestial_view_credits), color = secondaryText, fontSize = 10.sp, lineHeight = 13.sp)
+                if (body.isJovianMoon) Text(stringResource(R.string.celestial_view_jovian_credits), color = secondaryText,
+                    fontSize = 10.sp, lineHeight = 13.sp)
             }
-            Text(stringResource(R.string.celestial_view_credits), color = secondaryText, fontSize = 10.sp, lineHeight = 13.sp)
-            if (body.isJovianMoon) Text(stringResource(R.string.celestial_view_jovian_credits), color = secondaryText,
-                fontSize = 10.sp, lineHeight = 13.sp)
         }
     }
+
     Column(Modifier.fillMaxSize().background(backgroundColor).testTag("celestial-viewer")) {
         SpaceCompassPageToolbar(stringResource(body.nameResource), onBack,
             modifier = Modifier.testTag("celestial-view-toolbar"), titleColor = primaryText)

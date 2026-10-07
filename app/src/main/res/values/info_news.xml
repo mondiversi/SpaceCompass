@@ -1,6 +1,6 @@
 <resources>
     <string name="info_news_title">Latest news · %1$s</string>
-    <string name="info_news_units">Masses follow the selected kilograms/pounds; objects from 10 solar masses use M☉.</string>
-    <string name="info_news_pressure">Consistent units and number formats throughout the app, including gravity and pressure references.</string>
-    <string name="info_news_updates">Signed GitHub updates, checked at startup or from the repository section.</string>
+    <string name="info_news_units">Saved selections, filters and sorting, with regional units and formats.</string>
+    <string name="info_news_pressure">Twenty languages, light/dark themes and adaptive phone/tablet layouts.</string>
+    <string name="info_news_updates">First stable release: optimized app and verified, signed GitHub updates.</string>
 </resources>

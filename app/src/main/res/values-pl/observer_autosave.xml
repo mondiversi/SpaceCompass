@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="settings_saved">Ustawienia zapisane.</string>
+    <string name="observer_not_saved">Zmiana jest niekompletna: zachowano ostatnie prawidłowe ustawienia.</string>
+</resources>

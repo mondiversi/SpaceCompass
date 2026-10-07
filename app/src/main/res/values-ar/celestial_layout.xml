@@ -2,7 +2,7 @@
 <resources>
     <string name="celestial_table_distance">المسافة: %1$s</string>
     <string name="celestial_table_speed">السرعة: %1$s</string>
-    <string name="celestial_environment_info_title">تفاصيل البيئة</string>
+    <string name="celestial_environment_info_title">تفاصيل الموقع</string>
     <string name="celestial_environment_info_action">معلومات الاتجاه والبيئة</string>
     <string name="celestial_environment_orientation_note">يصف الاتجاه والميل جهة توجيه الهاتف. قد تؤثر الأجسام المغناطيسية في البوصلة. تشير دقة GPS إلى عدم اليقين المقدّر في الموقع.</string>
     <string name="celestial_altitude">الارتفاع: %1$s</string>

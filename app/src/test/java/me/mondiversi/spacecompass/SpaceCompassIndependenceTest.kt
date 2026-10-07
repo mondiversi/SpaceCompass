@@ -19,13 +19,14 @@ class SpaceCompassIndependenceTest {
         }
     }
 
-    @Test fun onlyForegroundLocationNetworkingAndExplicitUpdatePermissionsAreDeclared() {
+    @Test fun onlyForegroundLocationCameraNetworkingAndExplicitUpdatePermissionsAreDeclared() {
         val manifest = File(root, "AndroidManifest.xml").readText()
-        for (permission in listOf("ACCESS_FINE_LOCATION", "ACCESS_COARSE_LOCATION", "INTERNET", "REQUEST_INSTALL_PACKAGES"))
+        for (permission in listOf("ACCESS_FINE_LOCATION", "ACCESS_COARSE_LOCATION", "INTERNET", "REQUEST_INSTALL_PACKAGES", "CAMERA"))
             assertTrue(manifest.contains("android.permission.$permission"))
-        for (permission in listOf("CAMERA", "BLUETOOTH_CONNECT", "ACCESS_BACKGROUND_LOCATION",
+        for (permission in listOf("BLUETOOTH_CONNECT", "ACCESS_BACKGROUND_LOCATION",
             "FOREGROUND_SERVICE_CONNECTED_DEVICE"))
             assertFalse(manifest.contains("android.permission.$permission"))
+        assertTrue(manifest.contains("android:name=\"android.hardware.camera\" android:required=\"false\""))
         assertFalse(manifest.contains("usb.host"))
         assertFalse(manifest.contains("<service"))
         val paths = File(root, "res/xml/update_paths.xml").readText()

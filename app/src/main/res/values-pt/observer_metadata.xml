@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="observer_detect_selected">Detetar pela posição definida</string>
+    <string name="observer_detect_current">Detetar pela posição atual</string>
+    <string name="observer_zone_search">Pesquisar fuso horário</string>
+    <string name="observer_zone_no_results">Nenhum fuso horário correspondente.</string>
+    <string name="observer_metadata_failed">Deteção indisponível. Tente novamente ou introduza um valor.</string>
+</resources>

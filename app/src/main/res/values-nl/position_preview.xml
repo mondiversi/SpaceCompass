@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="panorama_preview" formatted="false">Panorama</string>
+    <string name="panorama_preparing" formatted="false">Panorama voorbereiden…</string>
+    <string name="panorama_save" formatted="false">Opslaan</string>
+    <string name="panorama_share" formatted="false">Delen</string>
+    <string name="panorama_gallery" formatted="false">Afbeeldingengalerij</string>
+    <string name="panorama_choose_location" formatted="false">Locatie kiezen…</string>
+    <string name="panorama_exported" formatted="false">Panorama geëxporteerd.</string>
+    <string name="panorama_cloud_cover" formatted="false">Bewolking</string>
+    <string name="panorama_weather_time" formatted="false">Tijd van het weermodel</string>
+    <string name="panorama_northeast" formatted="false">Noordoost</string>
+    <string name="panorama_southeast" formatted="false">Zuidoost</string>
+    <string name="panorama_southwest" formatted="false">Zuidwest</string>
+    <string name="panorama_northwest" formatted="false">Noordwest</string>
+</resources>

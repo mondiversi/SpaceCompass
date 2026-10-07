@@ -1,0 +1,11 @@
+<resources>
+    <string name="sky_reference_equator">खगोलीय भूमध्य रेखा</string>
+    <string name="sky_reference_cancer">कर्क रेखा</string>
+    <string name="sky_reference_capricorn">मकर रेखा</string>
+    <string name="sky_reference_arctic">आर्कटिक वृत्त</string>
+    <string name="sky_reference_antarctic">अंटार्कटिक वृत्त</string>
+    <string name="sky_reference_north_pole">उत्तरी खगोलीय ध्रुव</string>
+    <string name="sky_reference_south_pole">दक्षिणी खगोलीय ध्रुव</string>
+    <string name="sky_references_hide">आकाशीय संदर्भ छिपाएँ</string>
+    <string name="sky_references_show">आकाशीय संदर्भ दिखाएँ</string>
+</resources>

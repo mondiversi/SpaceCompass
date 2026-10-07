@@ -73,13 +73,14 @@ internal fun formatSpaceCompassNumber(
     fractionDigits: Int,
     format: SpaceCompassNumericFormat,
     grouping: Boolean = true,
-    minimumDigits: Int = fractionDigits
+    minimumDigits: Int = fractionDigits,
+    systemLocale: Locale = Locale.getDefault()
 ): String {
     if (!value.isFinite()) {
         return "—"
     }
 
-    val symbols = spaceCompassNumericFormatSymbols(format)
+    val symbols = spaceCompassNumericFormatSymbols(format, systemLocale)
     val pattern =
         buildString {
             append(if (grouping) "#,##0" else "0")

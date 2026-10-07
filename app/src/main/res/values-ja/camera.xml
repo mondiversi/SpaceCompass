@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="camera_enable">カメラ表示を有効にする</string>
+    <string name="camera_disable">カメラ表示を無効にする</string>
+    <string name="camera_permission">ライブ表示を使うにはカメラへのアクセスを許可してください。</string>
+    <string name="camera_unavailable">カメラを使用できません。もう一度お試しください。</string>
+    <string name="camera_view_description">天体の位置を重ねたライブカメラ表示</string>
+</resources>

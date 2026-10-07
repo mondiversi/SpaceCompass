@@ -1,0 +1,31 @@
+<resources>
+    <string name="observer_title">Scenario</string>
+    <string name="observer_place">Position</string>
+    <string name="observer_search">Search for a place</string>
+    <string name="observer_search_action">Search</string>
+    <string name="observer_map">Choose on map</string>
+    <string name="observer_latitude">Latitude</string>
+    <string name="observer_longitude">Longitude</string>
+    <string name="observer_automatic">Find altitude and time zone</string>
+    <string name="observer_altitude">Altitude</string>
+    <string name="observer_zone">Time zone</string>
+    <string name="observer_terrain_note">Terrain altitude estimate; you can edit it.</string>
+    <string name="observer_lookup_failed">Automatic lookup unavailable. Enable Altitude and Time zone to enter them manually.</string>
+    <string name="observer_moment">Date and time</string>
+    <string name="observer_date">Date</string>
+    <string name="observer_time">Time</string>
+    <string name="observer_limits">Some orbital data are unavailable outside their valid dates. Weather estimates when available; otherwise a clear base sky.</string>
+    <string name="observer_privacy">Place search uses Android’s geocoder. Maps use OpenStreetMap; selected coordinates are sent to Open-Meteo for altitude and time zone.</string>
+    <string name="observer_apply">Set</string>
+    <string name="observer_invalid">Check coordinates, altitude, date, time and time zone. Dates: 1900–2100. Nonexistent daylight-saving times cannot be used.</string>
+    <string name="observer_use_place">Use this point</string>
+    <string name="observer_simulation">Scenario</string>
+    <string name="observer_coordinates_value">Coordinates: %1$s</string>
+    <string name="observer_altitude_value">Altitude: %1$s</string>
+    <string name="observer_simulation_active">Scenario active</string>
+    <string name="observer_enable_position">Simulate position</string>
+    <string name="observer_enable_time">Simulate date and time</string>
+    <string name="observer_current_metadata">Find altitude and time zone at current location</string>
+    <string name="observer_enable_altitude">Simulate altitude</string>
+    <string name="observer_enable_zone">Simulate time zone</string>
+</resources>

@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="camera_enable">تفعيل عرض الكاميرا</string>
+    <string name="camera_disable">إيقاف عرض الكاميرا</string>
+    <string name="camera_permission">اسمح بالوصول إلى الكاميرا لاستخدام العرض المباشر.</string>
+    <string name="camera_unavailable">الكاميرا غير متاحة. حاول مجددًا.</string>
+    <string name="camera_view_description">عرض مباشر للكاميرا مع مواقع الأجرام السماوية</string>
+</resources>

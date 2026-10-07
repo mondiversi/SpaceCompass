@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="panorama_export" formatted="false">Dışa aktar</string>
+    <string name="panorama_export_profile" formatted="false">Veri biçimi</string>
+    <string name="panorama_export_selected" formatted="false">Ayarlanan dil ve biçimler</string>
+    <string name="panorama_export_international" formatted="false">Uluslararası bilimsel</string>
+    <string name="panorama_save_gallery" formatted="false">Galeriye kaydet</string>
+    <string name="panorama_save_phone" formatted="false">Telefona kaydet</string>
+</resources>

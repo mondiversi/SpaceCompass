@@ -1,0 +1,31 @@
+<resources>
+    <string name="observer_title">Σενάριο</string>
+    <string name="observer_place">Θέση</string>
+    <string name="observer_search">Αναζήτηση τόπου</string>
+    <string name="observer_search_action">Αναζήτηση</string>
+    <string name="observer_map">Επιλογή στον χάρτη</string>
+    <string name="observer_latitude">Γεωγραφικό πλάτος</string>
+    <string name="observer_longitude">Γεωγραφικό μήκος</string>
+    <string name="observer_automatic">Εύρεση υψομέτρου και ζώνης ώρας</string>
+    <string name="observer_altitude">Υψόμετρο</string>
+    <string name="observer_zone">Ζώνη ώρας</string>
+    <string name="observer_terrain_note">Εκτιμώμενο υψόμετρο εδάφους· μπορείτε να το αλλάξετε.</string>
+    <string name="observer_lookup_failed">Η αυτόματη αναζήτηση δεν είναι διαθέσιμη. Ενεργοποιήστε Υψόμετρο και Ζώνη ώρας για χειροκίνητη εισαγωγή.</string>
+    <string name="observer_moment">Ημερομηνία και ώρα</string>
+    <string name="observer_date">Ημερομηνία</string>
+    <string name="observer_time">Ώρα</string>
+    <string name="observer_limits">Ορισμένα τροχιακά δεδομένα δεν διατίθενται εκτός ισχύος. Εκτιμήσεις καιρού όταν είναι διαθέσιμες· διαφορετικά, βασικός καθαρός ουρανός.</string>
+    <string name="observer_privacy">Η αναζήτηση χρησιμοποιεί τον γεωκωδικοποιητή Android. Ο χάρτης χρησιμοποιεί OpenStreetMap· οι επιλεγμένες συντεταγμένες αποστέλλονται στο Open-Meteo για υψόμετρο και ζώνη ώρας.</string>
+    <string name="observer_apply">Ορισμός</string>
+    <string name="observer_invalid">Ελέγξτε συντεταγμένες, υψόμετρο, ημερομηνία, ώρα και ζώνη. Ημερομηνίες: 1900–2100. Ανύπαρκτες ώρες κατά την αλλαγή θερινής ώρας δεν επιτρέπονται.</string>
+    <string name="observer_use_place">Χρήση αυτού του σημείου</string>
+    <string name="observer_simulation">Σενάριο</string>
+    <string name="observer_coordinates_value">Συντεταγμένες: %1$s</string>
+    <string name="observer_altitude_value">Υψόμετρο: %1$s</string>
+    <string name="observer_simulation_active">Ενεργό σενάριο</string>
+    <string name="observer_enable_position">Προσομοίωση θέσης</string>
+    <string name="observer_enable_time">Προσομοίωση ημερομηνίας και ώρας</string>
+    <string name="observer_current_metadata">Εύρεση υψομέτρου και ζώνης ώρας από την τρέχουσα θέση</string>
+    <string name="observer_enable_altitude">Προσομοίωση υψομέτρου</string>
+    <string name="observer_enable_zone">Προσομοίωση ζώνης ώρας</string>
+</resources>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="panorama_preview" formatted="false">全景</string>
+    <string name="panorama_preparing" formatted="false">正在准备全景…</string>
+    <string name="panorama_save" formatted="false">保存</string>
+    <string name="panorama_share" formatted="false">分享</string>
+    <string name="panorama_gallery" formatted="false">图片库</string>
+    <string name="panorama_choose_location" formatted="false">选择保存位置…</string>
+    <string name="panorama_exported" formatted="false">全景已导出。</string>
+    <string name="panorama_cloud_cover" formatted="false">云量</string>
+    <string name="panorama_weather_time" formatted="false">天气模型时间</string>
+    <string name="panorama_northeast" formatted="false">东北</string>
+    <string name="panorama_southeast" formatted="false">东南</string>
+    <string name="panorama_southwest" formatted="false">西南</string>
+    <string name="panorama_northwest" formatted="false">西北</string>
+</resources>

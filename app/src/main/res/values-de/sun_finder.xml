@@ -33,5 +33,5 @@
     <string name="sun_weather_unavailable">Wetter nicht verfügbar</string>
     <string name="sun_weather_loading">Wetter wird aktualisiert…</string>
     <string name="sun_weather_estimate">Geschätztes Wetter: %1$s</string>
-    <string name="sun_weather_privacy">Onlinewetter und geschätzte Ortsnamen verwenden einen ungefähren Standort.</string>
+    <string name="sun_weather_privacy">Online-Wetter und Ortsnamen verwenden einen ungefähren Standort. Beim Öffnen der Standortdetails werden GPS-Koordinaten an OpenStreetMap gesendet.</string>
 </resources>

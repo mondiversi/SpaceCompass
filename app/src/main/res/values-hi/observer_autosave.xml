@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="settings_saved">सेटिंग सहेजी गईं।</string>
+    <string name="observer_not_saved">बदलाव अधूरा है: पिछली मान्य सेटिंग बरकरार हैं।</string>
+</resources>

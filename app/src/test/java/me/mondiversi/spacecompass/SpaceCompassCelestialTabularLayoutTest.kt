@@ -31,7 +31,7 @@ class SpaceCompassCelestialTabularLayoutTest {
         val portrait = viewer.substringAfter("} else Column(Modifier.fillMaxSize(),")
             .substringBefore("model(Modifier.weight")
         assertFalse(portrait.contains(".padding(top"))
-        assertTrue(viewer.contains(".padding(12.dp).testTag(\"celestial-view-information\")"))
+        assertTrue(viewer.contains(".background(primaryText.copy(alpha = 0.05f)).padding(12.dp)"))
     }
 
     @Test fun everyBodyUsesTwoObserverDistanceUnitsOnOneLineWithoutRepeatingItsName() {
@@ -130,7 +130,7 @@ class SpaceCompassCelestialTabularLayoutTest {
         assertTrue(panel.contains("sun-finder-environment-values"))
         val environment = panel.substringBefore("internal fun SpaceCompassSunFinderModelInfo")
         assertFalse(environment.contains("Text(weatherText"))
-        assertTrue(panel.contains("SpaceCompassSunFinderDataTable(listOf(weatherRow)"))
+        assertTrue(source("SpaceCompassPositionDetails.kt").contains("rows + weatherRow"))
         assertTrue(environment.indexOf("testTag(\"sun-finder-location-data\")") <
             environment.indexOf("testTag(\"sun-finder-info\")"))
         assertTrue(environment.contains("Modifier.fillMaxWidth().testTag(\"sun-finder-info\")"))
@@ -146,7 +146,7 @@ class SpaceCompassCelestialTabularLayoutTest {
         assertTrue(panel.contains("val compassSize = if (compact) 68.dp else 80.dp"))
         assertFalse(panel.contains("SpaceCompassSensorInfoButton"))
         assertFalse(panel.contains("R.string.sun_finder_safety"))
-        assertTrue(panel.contains("R.string.celestial_environment_info_title"))
+        assertTrue(source("SpaceCompassPositionDetails.kt").contains("R.string.celestial_environment_info_title"))
         assertFalse(panel.contains("R.string.sun_finder_title"))
     }
 
@@ -219,9 +219,12 @@ class SpaceCompassCelestialTabularLayoutTest {
         val panel = source("SpaceCompassSunFinderDataPanel.kt")
         assertTrue(panel.contains("SpaceCompassSunFinderDataTable(rows - angles.toSet()"))
         assertTrue(panel.contains("angleRows = angles"))
-        val dialog = panel.substringAfter("internal fun SpaceCompassSunFinderModelInfo")
-        assertTrue(dialog.indexOf("locationInfoRows.forEach") < dialog.indexOf("SpaceCompassSunFinderDataTable(listOf(weatherRow)"))
-        assertTrue(dialog.indexOf("SpaceCompassSunFinderDataTable(listOf(weatherRow)") < dialog.indexOf("celestial_environment_orientation_note"))
+        val details = source("SpaceCompassPositionDetails.kt")
+        assertTrue(details.indexOf("rows + weatherRow") < details.indexOf("celestial_environment_orientation_note"))
+        val table = source("SpaceCompassNativePositionTable.kt")
+        assertTrue(table.contains("data.rows.filter { it.tag != \"sun-info-accuracy\" }"))
+        assertTrue(table.indexOf("accuracy.value") < table.indexOf("label(row.value)"))
+        assertTrue(table.indexOf("column.addView(card)") < table.indexOf("data.notes.forEach"))
         assertFalse(panel.contains("rows.filter { it.tag == \"celestial-distance\" }"))
         assertTrue(screen.contains("SpaceCompassMenuTitle(stringResource(R.string.app_name)"))
         assertTrue(source("SpaceCompassCelestialControls.kt").contains("SpaceCompassCelestialCatalogIcon"))

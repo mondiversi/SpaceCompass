@@ -8,11 +8,11 @@
     <string name="update_download">Загрузка и проверка…</string>
     <string name="update_permission">Разрешите Space Compass устанавливать обновления в настройках Android.</string>
     <string name="update_checking">Поиск обновлений…</string>
-    <string name="update_check_failed">Не удалось проверить обновления. Проверь подключение и попробуй снова.</string>
-    <string name="update_failed">Не удалось скачать или проверить обновление. Попробуй снова.</string>
+    <string name="update_check_failed">Не удалось проверить обновления. Проверьте подключение и попробуйте снова.</string>
+    <string name="update_failed">Не удалось скачать или проверить обновление. Попробуйте снова.</string>
     <string name="update_later">Позже</string>
     <string name="update_version">Доступна версия Space Compass %1$s.</string>
-    <string name="update_install_note">После скачивания подтверди установку в Android. Твои данные будут сохранены.</string>
+    <string name="update_install_note">После скачивания подтвердите установку в Android. Ваши данные будут сохранены.</string>
     <string name="update_incompatible">Для новой версии требуется более новая версия Android.</string>
     <string name="update_install_cancelled">Установка отменена. Можно попробовать снова.</string>
     <string name="update_installer_unavailable">Не удалось открыть установщик Android.</string>

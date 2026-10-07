@@ -25,7 +25,7 @@
     <string name="celestial_loading">Aggiornamento dati orbitali…</string>
     <string name="celestial_unavailable">Dati di %1$s non disponibili. Per aggiornarli è necessaria una connessione Internet.</string>
     <string name="celestial_iss_old">Dati orbitali ISS di oltre 24 ore fa: la precisione può essere ridotta.</string>
-    <string name="celestial_iss_note">Un giro completo attorno all’ora attuale, anche sotto l’orizzonte, con 24 punti regolari più sorgere, culmine e tramonto. I dettagli del passaggio si riferiscono a quello attuale o al prossimo entro 24 ore; la visibilità non è garantita.</string>
+    <string name="celestial_iss_note">Un giro completo attorno all’ora attuale, anche sotto l’orizzonte, con 24 punti regolari più sorgere, culmine e tramonto. I dettagli del passaggio si riferiscono a quello attuale o al prossimo entro 24 ore; la visibilità non è garantita.\nCelesTrak / Satcat · Space-Track</string>
     <string name="celestial_model_note">Posizioni e distanze calcolate; il puntamento dipende dalla precisione della bussola. L’ISS richiede dati orbitali recenti. Sedna e Voyager usano traiettorie previste NASA/JPL, non telemetria in tempo reale.</string>
     <string name="celestial_weather_mainly_clear">Prevalentemente sereno</string>
     <string name="celestial_speed_earth_orbit">Velocità orbitale (Terra): %1$s km/s</string>

@@ -12,4 +12,5 @@
     <string name="language_description">زبان رابط را انتخاب کنید.</string>
     <string name="github_repository_title">مخزن GitHub</string>
     <string name="about_copyright">حق چاپ © 2026 Mondiversi</string>
+    <string name="settings_section_info">اطلاعات</string>
 </resources>

@@ -67,7 +67,7 @@ internal fun placeSpaceCompassCelestialOffscreenMarkers(projections: Map<SpaceCo
     val occupied = excluded.toMutableList()
     val edgeRings = (0..2).map { celestialEdgeSlots(width, height, extent, excluded, it) }
     return buildMap {
-        spaceCompassCelestialCatalogOrder.forEach { body ->
+        spaceCompassAllCelestialOrder.forEach { body ->
             val projection = projections[body] ?: return@forEach
             val original = placeSpaceCompassCelestialOffscreenMarker(projection, width, height, extent, excluded) ?: return@forEach
             // Fill the outer ring before any inward fallback; arbitrary initial positions fragment its capacity.

@@ -6,4 +6,7 @@
     <string name="units_kilograms">किलोग्राम</string>
     <string name="units_pounds">पाउंड</string>
     <string name="units_mass_description">द्रव्यमान और घनत्व की इकाइयाँ चुनें।</string>
+    <string name="units_celsius">सेल्सियस</string>
+    <string name="units_fahrenheit">फ़ारेनहाइट</string>
+    <string name="settings_resource_language_tag">hi</string>
 </resources>

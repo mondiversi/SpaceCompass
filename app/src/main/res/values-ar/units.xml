@@ -6,4 +6,7 @@
     <string name="units_kilograms">كيلوغرامات</string>
     <string name="units_pounds">أرطال</string>
     <string name="units_mass_description">اختر وحدات الكتلة والكثافة.</string>
+    <string name="units_celsius">سيلسيوس</string>
+    <string name="units_fahrenheit">فهرنهايت</string>
+    <string name="settings_resource_language_tag">ar</string>
 </resources>

@@ -12,4 +12,5 @@
     <string name="language_description">选择界面语言。</string>
     <string name="github_repository_title">GitHub 仓库</string>
     <string name="about_copyright">版权所有 © 2026 Mondiversi</string>
+    <string name="settings_section_info">信息</string>
 </resources>

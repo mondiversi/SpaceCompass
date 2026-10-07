@@ -83,9 +83,10 @@ internal data class SpaceCompassSunProjection(
 /** Sun and horizon must use exactly the same perspective. */
 internal fun spaceCompassSunProjectionFocalLength(height: Double): Double = height / (2 * tan(Math.toRadians(30.0)))
 
-/** Perspective projection with a fixed 60-degree VERTICAL field of view; no camera access. */
+/** Virtual 60-degree vertical perspective by default; camera mode supplies the actual lens/crop. */
 internal fun projectSpaceCompassSun(
-    sun: SpaceCompassSunPosition, orientation: SpaceCompassSunOrientation, width: Double, height: Double
+    sun: SpaceCompassSunPosition, orientation: SpaceCompassSunOrientation, width: Double, height: Double,
+    perspective: SpaceCompassPerspective? = null
 ): SpaceCompassSunProjection {
     require(width > 0 && height > 0)
     val az = Math.toRadians(sun.azimuthDegrees)
@@ -94,15 +95,18 @@ internal fun projectSpaceCompassSun(
     val right = vector.dot(orientation.right)
     val up = vector.dot(orientation.screenUp)
     val depth = vector.dot(orientation.forward)
-    val focal = spaceCompassSunProjectionFocalLength(height)
-    val dx = right * focal / depth.coerceAtLeast(1e-9)
+    val focal = perspective?.focalY(height) ?: spaceCompassSunProjectionFocalLength(height)
+    val focalX = perspective?.focalX(width) ?: focal
+    val centerX = (perspective?.principalX ?: .5) * width
+    val centerY = (perspective?.principalY ?: .5) * height
+    val dx = right * focalX / depth.coerceAtLeast(1e-9)
     val dy = -up * focal / depth.coerceAtLeast(1e-9)
-    val visible = depth > 0 && abs(dx) <= width / 2 && abs(dy) <= height / 2
-    if (visible) return SpaceCompassSunProjection(true, width / 2 + dx, height / 2 + dy,
+    val visible = depth > 0 && centerX + dx in 0.0..width && centerY + dy in 0.0..height
+    if (visible) return SpaceCompassSunProjection(true, centerX + dx, centerY + dy,
         Math.toDegrees(acos(depth.coerceIn(-1.0, 1.0))))
     // Off-screen bearing never divides by a negative depth (which would invert the arrow).
-    var ex = right
-    var ey = -up
+    var ex = right * focalX
+    var ey = -up * focal
     if (abs(ex) + abs(ey) < 1e-8) { ex = 1.0; ey = 0.0 } // Directly behind: choose a stable turn.
     val radiusX = max(1.0, width / 2 - 28)
     val radiusY = max(1.0, height / 2 - 28)

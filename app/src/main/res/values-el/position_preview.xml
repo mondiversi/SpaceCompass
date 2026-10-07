@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="panorama_preview" formatted="false">Πανόραμα</string>
+    <string name="panorama_preparing" formatted="false">Προετοιμασία πανοράματος…</string>
+    <string name="panorama_save" formatted="false">Αποθήκευση</string>
+    <string name="panorama_share" formatted="false">Κοινοποίηση</string>
+    <string name="panorama_gallery" formatted="false">Συλλογή εικόνων</string>
+    <string name="panorama_choose_location" formatted="false">Επιλογή τοποθεσίας…</string>
+    <string name="panorama_exported" formatted="false">Το πανόραμα εξήχθη.</string>
+    <string name="panorama_cloud_cover" formatted="false">Νεφοκάλυψη</string>
+    <string name="panorama_weather_time" formatted="false">Ώρα μοντέλου καιρού</string>
+    <string name="panorama_northeast" formatted="false">Βορειοανατολικά</string>
+    <string name="panorama_southeast" formatted="false">Νοτιοανατολικά</string>
+    <string name="panorama_southwest" formatted="false">Νοτιοδυτικά</string>
+    <string name="panorama_northwest" formatted="false">Βορειοδυτικά</string>
+</resources>

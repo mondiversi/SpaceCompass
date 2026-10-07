@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="observer_detect_selected">Определить по заданной позиции</string>
+    <string name="observer_detect_current">Определить по текущей позиции</string>
+    <string name="observer_zone_search">Найти часовой пояс</string>
+    <string name="observer_zone_no_results">Подходящие часовые пояса не найдены.</string>
+    <string name="observer_metadata_failed">Определение недоступно. Повторите попытку или введите значение.</string>
+</resources>

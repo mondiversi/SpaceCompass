@@ -1,0 +1,31 @@
+<resources>
+    <string name="observer_title">Senaryo</string>
+    <string name="observer_place">Konum</string>
+    <string name="observer_search">Yer ara</string>
+    <string name="observer_search_action">Ara</string>
+    <string name="observer_map">Haritada seç</string>
+    <string name="observer_latitude">Enlem</string>
+    <string name="observer_longitude">Boylam</string>
+    <string name="observer_automatic">Rakım ve saat dilimini bul</string>
+    <string name="observer_altitude">Rakım</string>
+    <string name="observer_zone">Saat dilimi</string>
+    <string name="observer_terrain_note">Tahmini arazi rakımı; değiştirebilirsiniz.</string>
+    <string name="observer_lookup_failed">Otomatik sorgulama kullanılamıyor. Elle girmek için Rakım ve Saat dilimini etkinleştirin.</string>
+    <string name="observer_moment">Tarih ve saat</string>
+    <string name="observer_date">Tarih</string>
+    <string name="observer_time">Saat</string>
+    <string name="observer_limits">Bazı yörünge verileri geçerlilik tarihleri dışında kullanılamaz. Varsa hava durumu tahminleri; yoksa temel açık gökyüzü.</string>
+    <string name="observer_privacy">Arama Android coğrafi kodlayıcısını kullanır. Harita OpenStreetMap kullanır; seçilen koordinatlar rakım ve saat dilimi için Open-Meteo’ya gönderilir.</string>
+    <string name="observer_apply">Ayarla</string>
+    <string name="observer_invalid">Koordinat, rakım, tarih, saat ve saat dilimini kontrol edin. Tarihler: 1900–2100. Yaz saati değişimindeki var olmayan saatler geçersizdir.</string>
+    <string name="observer_use_place">Bu noktayı kullan</string>
+    <string name="observer_simulation">Senaryo</string>
+    <string name="observer_coordinates_value">Koordinatlar: %1$s</string>
+    <string name="observer_altitude_value">Rakım: %1$s</string>
+    <string name="observer_simulation_active">Senaryo etkin</string>
+    <string name="observer_enable_position">Konumu simüle et</string>
+    <string name="observer_enable_time">Tarih ve saati simüle et</string>
+    <string name="observer_current_metadata">Geçerli konumun rakımını ve saat dilimini bul</string>
+    <string name="observer_enable_altitude">Rakımı simüle et</string>
+    <string name="observer_enable_zone">Saat dilimini simüle et</string>
+</resources>

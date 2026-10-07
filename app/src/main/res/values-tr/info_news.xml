@@ -1,6 +1,6 @@
 <resources>
     <string name="info_news_title">Son yenilikler · %1$s</string>
-    <string name="info_news_units">Kütleler seçilen kilogram/libre birimini kullanır; 10 Güneş kütlesinden itibaren M☉ kullanılır.</string>
-    <string name="info_news_pressure">Yerçekimi ve referans basınçları dahil, uygulama genelinde tutarlı birimler ve sayı biçimleri.</string>
-    <string name="info_news_updates">Başlangıçta veya depo bölümünden kontrol edilen imzalı GitHub güncellemeleri.</string>
+    <string name="info_news_units">Kaydedilen seçimler, filtreler ve sıralama; bölgesel birimler ve biçimler.</string>
+    <string name="info_news_pressure">Yirmi dil, açık/koyu temalar ve telefon/tablet için uyarlanabilir düzenler.</string>
+    <string name="info_news_updates">İlk kararlı sürüm: optimize edilmiş uygulama ve doğrulanmış, imzalı GitHub güncellemeleri.</string>
 </resources>

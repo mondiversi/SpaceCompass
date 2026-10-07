@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="observer_detect_selected">Détecter depuis la position définie</string>
+    <string name="observer_detect_current">Détecter depuis la position actuelle</string>
+    <string name="observer_zone_search">Rechercher un fuseau horaire</string>
+    <string name="observer_zone_no_results">Aucun fuseau horaire correspondant.</string>
+    <string name="observer_metadata_failed">Détection indisponible. Réessayez ou saisissez une valeur.</string>
+</resources>

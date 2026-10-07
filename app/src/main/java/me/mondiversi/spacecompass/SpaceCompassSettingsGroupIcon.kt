@@ -169,7 +169,21 @@ internal fun SpaceCompassSettingsGroupIcon(key: String, tint: Color) {
                 drawCircle(tint, size.minDimension * .25f, center, style = outline)
                 drawOval(tint, point(.06f, .35f), Size(size.width * .88f, size.height * .3f), style = outline)
             }
-            SPACE_COMPASS_DISTANCE_SPEED_UNIT_KEY, "altitude" -> {
+            "altitude" -> {
+                val mountain = Path().apply {
+                    moveTo(size.width * .09f, size.height * .86f)
+                    lineTo(size.width * .39f, size.height * .17f)
+                    lineTo(size.width * .72f, size.height * .86f)
+                    close()
+                }
+                drawPath(mountain, tint, style = outline)
+                drawLine(tint, point(.59f, .60f), point(.72f, .34f), strokeWidth, StrokeCap.Round)
+                drawLine(tint, point(.72f, .34f), point(.93f, .86f), strokeWidth, StrokeCap.Round)
+                drawLine(tint, point(.72f, .86f), point(.93f, .86f), strokeWidth, StrokeCap.Round)
+                drawLine(tint, point(.30f, .38f), point(.39f, .44f), strokeWidth, StrokeCap.Round)
+                drawLine(tint, point(.39f, .44f), point(.49f, .38f), strokeWidth, StrokeCap.Round)
+            }
+            SPACE_COMPASS_DISTANCE_SPEED_UNIT_KEY -> {
                 drawRoundRect(tint, point(.12f, .28f), Size(size.width * .76f, size.height * .44f), CornerRadius(2.dp.toPx()), style = outline)
                 for (x in listOf(.3f, .5f, .7f)) drawLine(tint, point(x, .28f), point(x, .48f), strokeWidth)
             }

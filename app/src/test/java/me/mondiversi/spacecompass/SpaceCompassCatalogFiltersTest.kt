@@ -19,7 +19,7 @@ class SpaceCompassCatalogFiltersTest {
             SpaceCompassCelestialBody.EARTH_CENTER to -89.8, SpaceCompassCelestialBody.MARS to Double.NaN)
         assertEquals(spaceCompassCelestialCatalogOrder, spaceCompassFilterCatalog(emptySet(), SpaceCompassCatalogVisibility.ALL, elevations))
         assertEquals(listOf(SpaceCompassCelestialBody.SUN), spaceCompassFilterCatalog(emptySet(), SpaceCompassCatalogVisibility.ABOVE, elevations))
-        assertEquals(listOf(SpaceCompassCelestialBody.EARTH_CENTER, SpaceCompassCelestialBody.MOON),
+        assertEquals(listOf(SpaceCompassCelestialBody.MOON),
             spaceCompassFilterCatalog(emptySet(), SpaceCompassCatalogVisibility.BELOW, elevations))
         assertTrue(spaceCompassFilterCatalog(setOf(SpaceCompassCatalogType.STAR), SpaceCompassCatalogVisibility.BELOW, elevations).isEmpty())
     }

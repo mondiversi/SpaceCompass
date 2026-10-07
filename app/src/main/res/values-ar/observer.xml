@@ -1,0 +1,31 @@
+<resources>
+    <string name="observer_title">سيناريو</string>
+    <string name="observer_place">الموقع</string>
+    <string name="observer_search">البحث عن مكان</string>
+    <string name="observer_search_action">بحث</string>
+    <string name="observer_map">اختيار على الخريطة</string>
+    <string name="observer_latitude">خط العرض</string>
+    <string name="observer_longitude">خط الطول</string>
+    <string name="observer_automatic">تحديد الارتفاع والمنطقة الزمنية</string>
+    <string name="observer_altitude">الارتفاع</string>
+    <string name="observer_zone">المنطقة الزمنية</string>
+    <string name="observer_terrain_note">تقدير ارتفاع التضاريس؛ يمكنك تعديله.</string>
+    <string name="observer_lookup_failed">التحديد التلقائي غير متاح. فعّل الارتفاع والمنطقة الزمنية لإدخالهما يدويًا.</string>
+    <string name="observer_moment">التاريخ والوقت</string>
+    <string name="observer_date">التاريخ</string>
+    <string name="observer_time">الوقت</string>
+    <string name="observer_limits">بعض البيانات المدارية غير متاحة خارج فترة صلاحيتها. تُستخدم تقديرات الطقس عند توفرها؛ وإلا تُعرض سماء صافية افتراضية.</string>
+    <string name="observer_privacy">يستخدم البحث الترميز الجغرافي في Android. تستخدم الخريطة OpenStreetMap؛ تُرسل الإحداثيات المختارة إلى Open-Meteo لتحديد الارتفاع والمنطقة الزمنية.</string>
+    <string name="observer_apply">تعيين</string>
+    <string name="observer_invalid">تحقق من الإحداثيات والارتفاع والتاريخ والوقت والمنطقة الزمنية. التواريخ: 1900–2100. الأوقات غير الموجودة بسبب تغيير التوقيت الصيفي غير صالحة.</string>
+    <string name="observer_use_place">استخدام هذه النقطة</string>
+    <string name="observer_simulation">سيناريو</string>
+    <string name="observer_coordinates_value">الإحداثيات: %1$s</string>
+    <string name="observer_altitude_value">الارتفاع: %1$s</string>
+    <string name="observer_simulation_active">السيناريو نشط</string>
+    <string name="observer_enable_position">محاكاة الموقع</string>
+    <string name="observer_enable_time">محاكاة التاريخ والوقت</string>
+    <string name="observer_current_metadata">تحديد الارتفاع والمنطقة الزمنية حسب الموقع الحالي</string>
+    <string name="observer_enable_altitude">محاكاة الارتفاع</string>
+    <string name="observer_enable_zone">محاكاة المنطقة الزمنية</string>
+</resources>

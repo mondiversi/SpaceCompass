@@ -6,4 +6,7 @@
     <string name="units_kilograms">キログラム</string>
     <string name="units_pounds">ポンド</string>
     <string name="units_mass_description">質量と密度の単位を選択します。</string>
+    <string name="units_celsius">摂氏</string>
+    <string name="units_fahrenheit">華氏</string>
+    <string name="settings_resource_language_tag">ja</string>
 </resources>

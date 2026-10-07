@@ -2,7 +2,7 @@
 <resources>
     <string name="celestial_table_distance">Distanza: %1$s</string>
     <string name="celestial_table_speed">Velocità: %1$s</string>
-    <string name="celestial_environment_info_title">Dettagli ambiente</string>
+    <string name="celestial_environment_info_title">Dettagli posizione</string>
     <string name="celestial_environment_info_action">Informazioni su orientamento e ambiente</string>
     <string name="celestial_environment_orientation_note">Direzione e inclinazione descrivono il puntamento del telefono. Gli oggetti magnetici possono influenzare la bussola. La precisione GPS indica l’incertezza stimata della posizione.</string>
     <string name="celestial_altitude">Altitudine: %1$s</string>

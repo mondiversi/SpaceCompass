@@ -120,16 +120,18 @@ class SpaceCompassCelestialMultiSelectionUiTest {
         val row = compose.onNodeWithTag("sun-finder-environment-content").fetchSemanticsNode().boundsInRoot
         val values = compose.onNodeWithTag("sun-finder-environment-values").fetchSemanticsNode().boundsInRoot
         val compass = compose.onNodeWithTag("sun-finder-compass").fetchSemanticsNode().boundsInRoot
-        val info = compose.onNodeWithTag("sun-finder-info").fetchSemanticsNode().boundsInRoot
+        val info = compose.onNodeWithTag("sun-finder-info", useUnmergedTree = true).fetchSemanticsNode().boundsInRoot
         val column = compose.onNodeWithTag("sun-finder-compass-column").fetchSemanticsNode().boundsInRoot
         assertEquals(maxOf(values.height, column.height), row.height, 1f)
-        val altitude = compose.onNodeWithTag("sun-data-altitude").fetchSemanticsNode().boundsInRoot
+        val altitude = compose.onNodeWithTag("sun-data-altitude", useUnmergedTree = true).fetchSemanticsNode().boundsInRoot
         assertTrue(info.bottom > altitude.bottom)
         assertEquals(values.right, info.right, 1f)
         assertTrue(info.left >= compass.right)
         assertTrue(values.left >= column.right)
         assertTrue(compass.width >= with(compose.density) { 79.dp.toPx() })
-        assertTrue(info.height >= with(compose.density) { 47.dp.toPx() })
+        val action = compose.onNode(hasClickAction() and hasAnyDescendant(hasTestTag("sun-finder-info")),
+            useUnmergedTree = true).fetchSemanticsNode().boundsInRoot
+        assertTrue(action.height >= with(compose.density) { 48.dp.toPx() })
         assertEquals(compass.center.y, values.center.y, 1f)
         assertTrue(values.left - compass.right >= with(compose.density) { 13.dp.toPx() })
         val environment = compose.onNodeWithTag("sun-finder-environment-data").fetchSemanticsNode().boundsInRoot
@@ -137,21 +139,28 @@ class SpaceCompassCelestialMultiSelectionUiTest {
         assertEquals(with(compose.density) { 10.dp.toPx() }, environment.bottom - row.bottom, 1f)
         assertTrue(row.height <= with(compose.density) { 82.dp.toPx() })
         compose.onNodeWithTag("sun-data-gps").assertDoesNotExist()
-        compose.onNodeWithTag("sun-data-altitude").assertTextEquals("112 m (±8 m)")
+        compose.onNodeWithTag("sun-data-altitude", useUnmergedTree = true).assertTextEquals("112 m (±8 m)")
         compose.onNodeWithTag("sun-data-accuracy").assertDoesNotExist()
         compose.onNodeWithTag("celestial-environment-weather").assertDoesNotExist()
-        compose.onNodeWithTag("sun-finder-info").performClick()
-        compose.onNodeWithTag("sun-finder-model-info").assertIsDisplayed()
-        compose.onNodeWithTag("celestial-environment-weather").assertIsDisplayed()
-        compose.onNodeWithTag("sun-info-coordinates").assertTextEquals(
-            formatSpaceCompassCelestialGpsCoordinates(45.0, 9.0, SpaceCompassNumericFormat.SYSTEM)!!)
-        val coordinates = compose.onNodeWithTag("sun-info-coordinates").fetchSemanticsNode().boundsInRoot
-        val accuracy = compose.onNodeWithTag("sun-info-accuracy").fetchSemanticsNode().boundsInRoot
-        val height = compose.onNodeWithTag("sun-info-altitude").fetchSemanticsNode().boundsInRoot
-        val weather = compose.onNodeWithTag("celestial-environment-weather").fetchSemanticsNode().boundsInRoot
-        assertTrue(coordinates.bottom <= accuracy.top)
-        assertTrue(accuracy.bottom <= height.top)
-        assertTrue(height.bottom < weather.top)
+        compose.onNodeWithTag("sun-finder-info", useUnmergedTree = true).performClick()
+        androidx.test.espresso.Espresso.onView(androidx.test.espresso.matcher.ViewMatchers.withText(
+            formatSpaceCompassSelectedCoordinates(45.0, 9.0, SpaceCompassNumericFormat.SYSTEM, false)!!))
+            .check(androidx.test.espresso.assertion.ViewAssertions.matches(androidx.test.espresso.matcher.ViewMatchers.isDisplayed()))
+        fun rowBounds(tag: String): android.graphics.Rect {
+            var bounds = android.graphics.Rect()
+            androidx.test.espresso.Espresso.onView(androidx.test.espresso.matcher.ViewMatchers.withTagValue(org.hamcrest.Matchers.`is`(tag)))
+                .check { view, missing ->
+                    if (missing != null) throw missing
+                    val point = IntArray(2); view.getLocationOnScreen(point)
+                    bounds = android.graphics.Rect(point[0], point[1], point[0] + view.width, point[1] + view.height)
+                }
+            return bounds
+        }
+        val coordinates = rowBounds("sun-info-coordinates")
+        val height = rowBounds("sun-info-altitude")
+        val weather = rowBounds("celestial-environment-weather")
+        assertTrue(coordinates.bottom <= height.top)
+        assertTrue(height.bottom <= weather.top)
         compose.onNodeWithTag("sun-data-gps").assertDoesNotExist()
         // The contextual information contains no solar viewing warning.
         val text = androidx.test.platform.app.InstrumentationRegistry.getInstrumentation().targetContext.getString(R.string.sun_finder_safety)

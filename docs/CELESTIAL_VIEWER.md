@@ -193,7 +193,7 @@ acceleration, not an additional measurement. Up to three decimals in g preserve
 small values such as Polaris (~0.067 g); unavailable quantities still use —.
 Source: https://goldbook.iupac.org/terms/view/S05905
 
-The observer-distance row uses selected km/mi for the Moon, Earth centre and
+The observer-distance row uses selected km/mi for the Moon and
 Earth satellites. More distant Solar System ranges use selected Mkm/Mmi with an
 AU reference; extrasolar ranges use light years only. Main, catalogue and viewer
 rows share the selected-distance formatter. Voyager ranges retain six million-unit
@@ -265,8 +265,13 @@ The existing bounded facts scroll handles longer translations and larger fonts.
   a historical reference for the Cepheid component, not live temperature or
   the unresolved triple system as a whole (Usenko et al., 2016).
   https://arxiv.org/abs/1610.03813
-* Sedna and ISS/Starlink/Voyager spacecraft: Temperature —. We do not invent
-  a measured Sedna temperature or a single hull temperature without telemetry.
+* Sedna: discovery-era surface estimate about −240 °C (2004), explicitly marked
+  estimated; no measured/current thermal map is claimed.
+* Comets, TRAPPIST-1e, Alpha Centauri AB, Stephenson 2-18 and the two compact stars
+  now have qualified historical/model references. Sources and assumptions are in
+  [THERMAL_REFERENCE_AUDIT.md](THERMAL_REFERENCE_AUDIT.md).
+* ISS/Starlink/Voyager spacecraft: Temperature —; no single whole-hull reference is
+  substituted from cabin temperatures, engineering limits or one instrument sensor.
 
 #### Other physical reference facts
 
@@ -471,3 +476,42 @@ Every mass/component row uses the shared dynamic kg/lb/M☉ formatter: kg/lb bel
 scientific exponent for compact display, with estimate/model notes retained in
 all twenty languages. Reference data, physical calculations and binary A+B
 identification are unchanged; unknown current stellar mass remains unavailable.
+
+
+## ISS public-source recovery and catalog refresh — local October 6 update
+
+The ISS downloader now shares the Starlink provider state machine, using public
+https://www.satcat.com/sats/25544 as the independent fallback to CelesTrak TLE.
+Its public copyable ISS (ZARYA) record must pass exact identity, international
+identifier, checksums, element/SGP4 range and epoch freshness validation. It is
+stored in the existing AtomicFile TLE cache. Provider-specific HTTP stops and
+normal TLS remain intact. Space-Track / Satcat credit appears in the ISS notes.
+The alternative is a bounded HTML fallback, subject to website markup changes.
+
+The Objects toolbar now exposes Refresh after Filters. Ten-minute local catalog
+updates and immediate manual recalculation use current validated models. Manual
+refresh also reloads all five public JPL targets serially (position and geometric
+motion); fresh satellite elements retain the provider's two-hour download minimum.
+The stable foreground queue is woken, rather than cancelled, by selection/retry
+events, preventing repeated selection changes from abandoning unchecked objects.
+No fabricated data are substituted outside model coverage, including simulated
+times beyond a spacecraft TLE/ephemeris window.
+
+## Current face visibility and static surface initialization — local 2026-10-06
+
+Current face retains its topocentric visible hemisphere, orientation, light vector
+and physical illuminated fraction above or below the local horizon. A presentation
+fill of 0.24 makes the shadow-side map readable even near new phase; this is visual
+inspection lighting, not a measured illuminated fraction or an assertion of optical
+visibility. Rotation keeps the original 0.012 ambient floor, and emissive Sun/Polaris
+shading is unchanged. Sky thumbnails and exported captures use their existing phase
+rendering; this adjustment is confined to the object viewer.
+
+The native GLSurfaceView is now constructed in AndroidView.factory and observes
+the foreground lifecycle only while attached. After a positive resize it posts one
+root layout request: Compose can insert/size the native child during drawing, after
+SurfaceView's initial native pre-draw has seen a zero-sized view. The next native
+traversal creates its buffer, so static Current face no longer needs a Rotation
+toggle to appear. RENDERMODE_WHEN_DIRTY, cached textures and foreground animation
+limits are retained. No recurring timer or render loop is used for static content.
+Factory ownership follows [Android's interoperability guidance](https://developer.android.com/develop/ui/compose/migrate/interoperability-apis/views-in-compose).

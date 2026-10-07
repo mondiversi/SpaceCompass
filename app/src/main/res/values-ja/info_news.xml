@@ -1,6 +1,6 @@
 <resources>
     <string name="info_news_title">最近の変更 · %1$s</string>
-    <string name="info_news_units">質量は選択したキログラム/ポンドで表示し、太陽質量の10倍以上ではM☉を使用します。</string>
-    <string name="info_news_pressure">重力と基準圧力を含め、アプリ全体で単位と数値形式を統一。</string>
-    <string name="info_news_updates">GitHub の署名付き更新を、起動時またはリポジトリ画面から確認できます。</string>
+    <string name="info_news_units">選択、フィルター、並び順を保存し、地域に応じた単位と書式に対応。</string>
+    <string name="info_news_pressure">20言語、ライト／ダークテーマ、スマートフォンとタブレットに適応するレイアウト。</string>
+    <string name="info_news_updates">初の安定版：アプリを最適化し、署名・検証済みのGitHub更新に対応。</string>
 </resources>

@@ -2,7 +2,7 @@
 <resources>
     <string name="celestial_table_distance">Расстояние: %1$s</string>
     <string name="celestial_table_speed">Скорость: %1$s</string>
-    <string name="celestial_environment_info_title">Сведения об окружении</string>
+    <string name="celestial_environment_info_title">Сведения о положении</string>
     <string name="celestial_environment_info_action">Информация об ориентации и окружении</string>
     <string name="celestial_environment_orientation_note">Направление и наклон описывают, куда направлен телефон. Магнитные предметы могут влиять на компас. Точность GPS показывает оценочную неопределённость положения.</string>
     <string name="celestial_altitude">Высота: %1$s</string>

@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="settings_saved">Ayarlar kaydedildi.</string>
+    <string name="observer_not_saved">Değişiklik tamamlanmadı: son geçerli ayarlar korunuyor.</string>
+</resources>

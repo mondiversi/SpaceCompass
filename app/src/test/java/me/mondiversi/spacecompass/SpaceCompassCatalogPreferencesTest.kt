@@ -21,4 +21,13 @@ class SpaceCompassCatalogPreferencesTest {
         assertEquals(SpaceCompassCatalogPreferences(types = setOf(SpaceCompassCatalogType.STAR)),
             restoreSpaceCompassCatalogPreferences("REMOVED_SORT", setOf("STAR", "REMOVED_TYPE"), "REMOVED_VISIBILITY"))
     }
+
+    @Test fun removedAtmosphereSortFallsBackToDefaultWithoutLosingOtherFilters() {
+        for (old in listOf("ATMOSPHERE_TEMPERATURE_ASC", "ATMOSPHERE_TEMPERATURE_DESC")) {
+            assertEquals(SpaceCompassCatalogPreferences(sort = SpaceCompassCatalogSort.CATALOG,
+                types = setOf(SpaceCompassCatalogType.PLANET, SpaceCompassCatalogType.COMET),
+                visibility = SpaceCompassCatalogVisibility.ABOVE),
+                restoreSpaceCompassCatalogPreferences(old, setOf("PLANET", "COMET"), "ABOVE"))
+        }
+    }
 }

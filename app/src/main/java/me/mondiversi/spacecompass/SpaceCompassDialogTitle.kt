@@ -1,5 +1,7 @@
 package me.mondiversi.spacecompass
 
+import android.content.res.Configuration
+import androidx.compose.foundation.isSystemInDarkTheme
 import androidx.compose.foundation.Canvas
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
@@ -18,6 +20,7 @@ import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Surface
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.remember
 import androidx.compose.runtime.CompositionLocalProvider
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
@@ -43,6 +46,10 @@ import androidx.compose.ui.unit.constrainWidth
 import androidx.compose.ui.unit.constrainHeight
 
 @Composable
+internal fun spaceCompassDialogContentColor(): Color =
+    if (isSystemInDarkTheme()) Color.White else Color(0xFF101418)
+
+@Composable
 internal fun SpaceCompassAlertDialog(
     onDismissRequest: () -> Unit,
     confirmButton: (@Composable () -> Unit)?,
@@ -52,19 +59,28 @@ internal fun SpaceCompassAlertDialog(
     title: @Composable (() -> Unit)? = null,
     text: @Composable (() -> Unit)? = null,
     shape: Shape = AlertDialogDefaults.shape,
-    containerColor: Color = AlertDialogDefaults.containerColor,
+    containerColor: Color = spaceCompassSettingsCardColor(),
     iconContentColor: Color = AlertDialogDefaults.iconContentColor,
-    titleContentColor: Color = AlertDialogDefaults.titleContentColor,
-    textContentColor: Color = AlertDialogDefaults.textContentColor,
-    tonalElevation: Dp = AlertDialogDefaults.TonalElevation,
+    titleContentColor: Color = spaceCompassDialogContentColor(),
+    textContentColor: Color = spaceCompassDialogContentColor(),
+    tonalElevation: Dp = 0.dp,
     properties: DialogProperties = DialogProperties(),
     fixedBottomContent: @Composable (() -> Unit)? = null,
-    scrollContent: Boolean = true
+    scrollContent: Boolean = true,
+    rotateContent: Boolean = false
 ) {
     // A Dialog owns another Android Compose view. Restore the host's density
     // AND logical configuration inside that window, before measuring anything.
     val hostDensity = LocalDensity.current
-    val hostConfiguration = LocalConfiguration.current
+    val originalConfiguration = LocalConfiguration.current
+    val hostConfiguration = remember(originalConfiguration, rotateContent) {
+        Configuration(originalConfiguration).apply {
+            if (rotateContent) {
+                screenWidthDp = originalConfiguration.screenHeightDp
+                screenHeightDp = originalConfiguration.screenWidthDp
+            }
+        }
+    }
     // Use the full available window width on every device, without platform side margins.
     val windowProperties = DialogProperties(
         dismissOnBackPress = properties.dismissOnBackPress,
@@ -76,7 +92,8 @@ internal fun SpaceCompassAlertDialog(
     )
     // All popup bodies share one bounded scroll viewport. Titles and actions
     // stay fixed, and the scrollbar is drawn at the window edge only on overflow.
-    val scrollbar = rememberSpaceCompassDialogScrollbar(textContentColor.copy(alpha = 0.58f))
+    val scrollbar = rememberSpaceCompassDialogScrollbar(textContentColor.copy(alpha = 0.58f),
+        maximumHeight = (hostConfiguration.screenHeightDp.dp - 48.dp).coerceAtLeast(1.dp))
     val displayedTitle: @Composable () -> Unit = {
         SpaceCompassClosableDialogTitleContent(
             onDismiss = onDismissRequest,
@@ -116,54 +133,56 @@ internal fun SpaceCompassAlertDialog(
             LocalSpaceCompassSettingsActionButtons provides false,
             LocalSpaceCompassActionGlyphStrokeScale provides 1f
         ) {
-            Surface(
-                modifier = modifier
-                    .fillMaxWidth()
-                    .then(if (scrollContent) scrollbar.dialogModifier else Modifier.heightIn(
-                        max = (hostConfiguration.screenHeightDp.dp - 48.dp).coerceAtLeast(1.dp))),
-                shape = shape,
-                color = containerColor,
-                contentColor = textContentColor,
-                tonalElevation = tonalElevation
-            ) {
-                // Keep the original content inset inside the full-width window.
-                // Host density scales it on tablets without changing touch targets.
-                Column(Modifier.padding(24.dp)) {
-                    if (icon != null) {
-                        Box(Modifier.align(Alignment.CenterHorizontally).padding(bottom = 16.dp)) {
-                            CompositionLocalProvider(LocalContentColor provides iconContentColor) {
-                                icon()
+            SpaceCompassDialogOrientation(rotateContent) {
+                Surface(
+                    modifier = modifier
+                        .fillMaxWidth()
+                        .then(if (scrollContent) scrollbar.dialogModifier else Modifier.heightIn(
+                            max = (hostConfiguration.screenHeightDp.dp - 48.dp).coerceAtLeast(1.dp))),
+                    shape = shape,
+                    color = containerColor,
+                    contentColor = textContentColor,
+                    tonalElevation = tonalElevation
+                ) {
+                    // Keep the original content inset inside the full-width window.
+                    // Host density scales it on tablets without changing touch targets.
+                    Column(Modifier.padding(24.dp)) {
+                        if (icon != null) {
+                            Box(Modifier.align(Alignment.CenterHorizontally).padding(bottom = 16.dp)) {
+                                CompositionLocalProvider(LocalContentColor provides iconContentColor) {
+                                    icon()
+                                }
                             }
                         }
-                    }
-                    CompositionLocalProvider(
-                        LocalContentColor provides titleContentColor,
-                        LocalTextStyle provides MaterialTheme.typography.headlineSmall
-                    ) {
-                        Box(Modifier.fillMaxWidth().padding(bottom = 16.dp)) {
-                            displayedTitle()
-                        }
-                    }
-                    if (displayedText != null) {
                         CompositionLocalProvider(
-                            LocalContentColor provides textContentColor,
-                            LocalTextStyle provides MaterialTheme.typography.bodyMedium
+                            LocalContentColor provides titleContentColor,
+                            LocalTextStyle provides MaterialTheme.typography.headlineSmall
                         ) {
-                            Box(Modifier.weight(1f, fill = false).padding(
-                                bottom = if (confirmButton != null || dismissButton != null) 24.dp else 0.dp
-                            )) {
-                                displayedText()
+                            Box(Modifier.fillMaxWidth().padding(bottom = 16.dp)) {
+                                displayedTitle()
                             }
                         }
-                    }
-                    if (confirmButton != null || dismissButton != null) {
-                        CompositionLocalProvider(
-                            LocalContentColor provides MaterialTheme.colorScheme.primary,
-                            LocalTextStyle provides MaterialTheme.typography.labelLarge
-                        ) {
-                            SpaceCompassDialogActionFlow(Modifier.align(Alignment.End)) {
-                                dismissButton?.invoke()
-                                confirmButton?.invoke()
+                        if (displayedText != null) {
+                            CompositionLocalProvider(
+                                LocalContentColor provides textContentColor,
+                                LocalTextStyle provides MaterialTheme.typography.bodyMedium
+                            ) {
+                                Box(Modifier.weight(1f, fill = false).padding(
+                                    bottom = if (confirmButton != null || dismissButton != null) 24.dp else 0.dp
+                                )) {
+                                    displayedText()
+                                }
+                            }
+                        }
+                        if (confirmButton != null || dismissButton != null) {
+                            CompositionLocalProvider(
+                                LocalContentColor provides MaterialTheme.colorScheme.primary,
+                                LocalTextStyle provides MaterialTheme.typography.labelLarge
+                            ) {
+                                SpaceCompassDialogActionFlow(Modifier.align(Alignment.End)) {
+                                    dismissButton?.invoke()
+                                    confirmButton?.invoke()
+                                }
                             }
                         }
                     }

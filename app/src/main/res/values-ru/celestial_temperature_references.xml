@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="celestial_temperature_surface_estimate" formatted="false">Оценка температуры поверхности</string>
+    <string name="celestial_temperature_equilibrium_model" formatted="false">Равновесная температура (модель)</string>
+    <string name="celestial_temperature_historical_range" formatted="false">Диапазон поверхности (исторический)</string>
+    <string name="celestial_temperature_thermal_model" formatted="false">Тепловое излучение (модель)</string>
+    <string name="celestial_temperature_reference_note" formatted="false">Оценки зависят от допущений модели. Диапазоны с указанием года описывают прошлые наблюдения, а не текущие температуры. Температуры компактных звёзд получены из спектральных моделей, а не из дневных и ночных измерений.</string>
+    <string name="celestial_stephenson_reference_note" formatted="false">Эффективная температура принята в модели. Светимость и вычисленный диаметр предполагают расстояние до скопления; принадлежность к нему не подтверждена. Нынешняя масса неизвестна.</string>
+</resources>

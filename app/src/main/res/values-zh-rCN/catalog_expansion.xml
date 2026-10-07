@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="catalog_sort_day_temperature" formatted="false">白天温度</string>
+    <string name="catalog_sort_night_temperature" formatted="false">夜间温度</string>
+    <string name="catalog_type_comet" formatted="false">彗星</string>
+    <string name="position_map_title" formatted="false">地图</string>
+    <string name="position_map_unavailable" formatted="false">地图暂不可用</string>
+    <string name="celestial_comet_note" formatted="false">示意图。尺寸指彗核，活动与自转可能变化。</string>
+    <string name="celestial_halley" formatted="false">1P/Halley</string>
+    <string name="celestial_comet_67p" formatted="false">67P/Churyumov–Gerasimenko</string>
+</resources>

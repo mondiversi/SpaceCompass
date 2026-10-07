@@ -89,11 +89,15 @@ class SpaceCompassCelestialViewerUiTest {
                 compose.onNodeWithText(formatSpaceCompassCelestialTemperature(value, SpaceCompassNumericFormat.SYSTEM)).assertIsDisplayed()
             }
             compose.runOnIdle { body.value = SpaceCompassCelestialBody.JUPITER }
-            compose.onNodeWithText(resources.getString(R.string.celestial_temperature_atmosphere)).performScrollTo().assertIsDisplayed()
+            compose.onNodeWithText(resources.getString(R.string.celestial_temperature_atmosphere,
+                formatSpaceCompassPressure(SpaceCompassPressureUnit.BAR.pascals, SpaceCompassNumericFormat.SYSTEM,
+                    SpaceCompassPressureUnit.BAR)!!)).performScrollTo().assertIsDisplayed()
             compose.onNodeWithText(resources.getString(R.string.celestial_temperature_day_maximum)).assertDoesNotExist()
             compose.runOnIdle { body.value = SpaceCompassCelestialBody.ISS }
             compose.onNodeWithText(resources.getString(R.string.celestial_temperature)).performScrollTo().assertIsDisplayed()
-            compose.onNodeWithText(resources.getString(R.string.celestial_temperature_atmosphere)).assertDoesNotExist()
+            compose.onNodeWithText(resources.getString(R.string.celestial_temperature_atmosphere,
+                formatSpaceCompassPressure(SpaceCompassPressureUnit.BAR.pascals, SpaceCompassNumericFormat.SYSTEM,
+                    SpaceCompassPressureUnit.BAR)!!)).assertDoesNotExist()
         }
     }
     @Test fun landscapeKeepsTabsInsideModelAndUsesSeparateInformationHalf() {
@@ -141,7 +145,7 @@ class SpaceCompassCelestialViewerUiTest {
                 val root = compose.onNodeWithTag("celestial-viewer").fetchSemanticsNode().boundsInRoot
                 val toolbar = compose.onNodeWithTag("celestial-view-toolbar").fetchSemanticsNode().boundsInRoot
                 val model = compose.onNodeWithTag("celestial-view-model").fetchSemanticsNode().boundsInRoot
-                val info = compose.onNodeWithTag("celestial-view-information-island").fetchSemanticsNode().boundsInRoot
+                val info = compose.onNodeWithTag("celestial-view-information").fetchSemanticsNode().boundsInRoot
                 assertEquals("No added gap above the image", toolbar.bottom, model.top, 1f)
                 if (w > h) assertEquals("Landscape facts start at the same height", model.top, info.top, 1f)
                 else assertEquals("Portrait image/facts spacing is unchanged", 5f, info.top - model.bottom, 1f)

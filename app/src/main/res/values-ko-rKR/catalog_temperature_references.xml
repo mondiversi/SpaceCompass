@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="catalog_temperature_mean" formatted="false">표면 평균</string>
+    <string name="catalog_temperature_range" formatted="false">표면 범위</string>
+    <string name="catalog_temperature_atmosphere">대기 (%1$s)</string>
+    <string name="catalog_temperature_photosphere" formatted="false">광구</string>
+    <string name="catalog_temperature_effective" formatted="false">유효 온도</string>
+    <string name="catalog_temperature_estimate" formatted="false">표면 추정치</string>
+    <string name="catalog_temperature_equilibrium" formatted="false">평형 모델</string>
+    <string name="catalog_temperature_historical" formatted="false">과거 관측 범위</string>
+    <string name="catalog_temperature_thermal" formatted="false">열 모델</string>
+</resources>

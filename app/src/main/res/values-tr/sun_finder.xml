@@ -33,5 +33,5 @@
     <string name="sun_weather_unavailable">Hava durumu kullanılamıyor</string>
     <string name="sun_weather_loading">Hava durumu güncelleniyor…</string>
     <string name="sun_weather_estimate">Tahmini hava durumu: %1$s</string>
-    <string name="sun_weather_privacy">Çevrimiçi hava durumu ve tahmini yer adları yaklaşık konumu kullanır.</string>
+    <string name="sun_weather_privacy">Çevrimiçi hava durumu ve yer adları yaklaşık konum kullanır. Konum ayrıntılarını açmak GPS koordinatlarını OpenStreetMap’e gönderir.</string>
 </resources>

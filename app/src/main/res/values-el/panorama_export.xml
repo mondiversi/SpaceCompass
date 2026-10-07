@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="panorama_export" formatted="false">Εξαγωγή</string>
+    <string name="panorama_export_profile" formatted="false">Μορφή δεδομένων</string>
+    <string name="panorama_export_selected" formatted="false">Ρυθμισμένη γλώσσα και μορφές</string>
+    <string name="panorama_export_international" formatted="false">Διεθνές επιστημονικό</string>
+    <string name="panorama_save_gallery" formatted="false">Αποθήκευση στη συλλογή</string>
+    <string name="panorama_save_phone" formatted="false">Αποθήκευση στο τηλέφωνο</string>
+</resources>

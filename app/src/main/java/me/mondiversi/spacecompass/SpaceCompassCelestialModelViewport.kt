@@ -37,6 +37,10 @@ internal fun SpaceCompassCelestialModelViewport(body: SpaceCompassCelestialBody,
     rotating: Boolean, rotation: SpaceCompassCelestialRotation, onRotation: (SpaceCompassCelestialRotation) -> Unit,
     viewport: SpaceCompassCelestialViewportState, onViewport: (SpaceCompassCelestialViewportState) -> Unit,
     description: String, resumeDescription: String, modifier: Modifier) {
+    if (body.isComet) {
+        SpaceCompassCometSymbol(body, modifier)
+        return
+    }
     val context = LocalContext.current
     val lifecycle = LocalLifecycleOwner.current.lifecycle
     val currentRotation by rememberUpdatedState(rotation)
@@ -120,30 +124,64 @@ internal fun SpaceCompassCelestialModelViewport(body: SpaceCompassCelestialBody,
         if (body.isSpacecraft) SpaceCompassCelestialCraftCanvas(body, geometry, viewport, Modifier.fillMaxSize())
         else {
             var failed by remember(body) { mutableStateOf(false) }
-            val renderer = remember(body) { SpaceCompassCelestialGlRenderer(context.applicationContext, body) {
-                SpaceCompassErrorLog.record(context, "celestial_viewer:renderer", it)
-                android.os.Handler(android.os.Looper.getMainLooper()).post { failed = true }
-            } }
-            val view = remember(body) { GLSurfaceView(context).apply {
-                setEGLContextClientVersion(2); preserveEGLContextOnPause = true
-                setRenderer(renderer); renderMode = GLSurfaceView.RENDERMODE_WHEN_DIRTY
-            } }
-            DisposableEffect(view, lifecycle) {
-                if (lifecycle.currentState.isAtLeast(Lifecycle.State.RESUMED)) view.onResume() else view.onPause()
-                val observer = LifecycleEventObserver { _, event ->
-                    when (event) {
-                        Lifecycle.Event.ON_RESUME -> { view.onResume(); view.requestRender() }
-                        Lifecycle.Event.ON_PAUSE -> view.onPause()
-                        else -> Unit
+            key(body, lifecycle) {
+                AndroidView(factory = { viewContext ->
+                    SpaceCompassCelestialGlSurfaceView(viewContext, lifecycle, body) {
+                        SpaceCompassErrorLog.record(context, "celestial_viewer:renderer", it)
+                        android.os.Handler(android.os.Looper.getMainLooper()).post { failed = true }
                     }
-                }
-                lifecycle.addObserver(observer)
-                onDispose { lifecycle.removeObserver(observer); view.onPause() }
+                }, modifier = Modifier.fillMaxSize(), onRelease = { it.release() }, update = {
+                    it.renderer.geometry = geometry
+                    it.renderer.viewport = viewport
+                    it.renderer.inspectShadows = !rotating
+                    it.requestRender()
+                })
             }
-            AndroidView(factory = { view }, modifier = Modifier.fillMaxSize(), update = {
-                renderer.geometry = geometry; renderer.viewport = viewport; it.requestRender()
-            })
             if (failed) Text(stringResource(R.string.celestial_view_render_failed), color = Color.White)
         }
+    }
+}
+
+/** The native surface belongs to AndroidView; its GL lifecycle begins only after attachment. */
+private class SpaceCompassCelestialGlSurfaceView(context: android.content.Context,
+    private val lifecycle: Lifecycle, body: SpaceCompassCelestialBody,
+    onFailure: (Throwable) -> Unit) : GLSurfaceView(context) {
+    val renderer = SpaceCompassCelestialGlRenderer(context.applicationContext, body, onFailure)
+    private val observer = LifecycleEventObserver { _, event ->
+        when (event) {
+            Lifecycle.Event.ON_RESUME -> { onResume(); requestRender() }
+            Lifecycle.Event.ON_PAUSE -> onPause()
+            else -> Unit
+        }
+    }
+    init {
+        setEGLContextClientVersion(2)
+        preserveEGLContextOnPause = true
+        setRenderer(renderer)
+        renderMode = RENDERMODE_WHEN_DIRTY
+    }
+    override fun onAttachedToWindow() {
+        super.onAttachedToWindow()
+        lifecycle.addObserver(observer)
+        if (lifecycle.currentState.isAtLeast(Lifecycle.State.RESUMED)) {
+            onResume(); requestRender()
+        } else onPause()
+    }
+    override fun onSizeChanged(w: Int, h: Int, oldw: Int, oldh: Int) {
+        super.onSizeChanged(w, h, oldw, oldh)
+        // Compose can size a newly inserted AndroidView during drawing, after the
+        // native pre-draw pass saw a zero-sized SurfaceView. A new root traversal
+        // lets SurfaceView create its buffer before a static model's first frame.
+        if (w > 0 && h > 0) post {
+            if (isAttachedToWindow) rootView.requestLayout()
+        }
+    }
+    override fun onDetachedFromWindow() {
+        release()
+        super.onDetachedFromWindow()
+    }
+    fun release() {
+        lifecycle.removeObserver(observer)
+        onPause()
     }
 }

@@ -12,4 +12,5 @@
     <string name="language_description">インターフェースの言語を選択します。</string>
     <string name="github_repository_title">GitHub リポジトリ</string>
     <string name="about_copyright">著作権 © 2026 Mondiversi</string>
+    <string name="settings_section_info">情報</string>
 </resources>

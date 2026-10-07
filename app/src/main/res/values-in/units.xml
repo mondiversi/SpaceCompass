@@ -6,4 +6,7 @@
     <string name="units_kilograms">Kilogram</string>
     <string name="units_pounds">Pon</string>
     <string name="units_mass_description">Pilih satuan massa dan massa jenis.</string>
+    <string name="units_celsius">Celsius</string>
+    <string name="units_fahrenheit">Fahrenheit</string>
+    <string name="settings_resource_language_tag">id</string>
 </resources>

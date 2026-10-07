@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="catalog_sort_day_temperature" formatted="false">Temperatura w dzień</string>
+    <string name="catalog_sort_night_temperature" formatted="false">Temperatura w nocy</string>
+    <string name="catalog_type_comet" formatted="false">Komety</string>
+    <string name="position_map_title" formatted="false">Mapa</string>
+    <string name="position_map_unavailable" formatted="false">Mapa niedostępna</string>
+    <string name="celestial_comet_note" formatted="false">Ilustracja symboliczna. Wymiary dotyczą jądra; aktywność i rotacja mogą się zmieniać.</string>
+    <string name="celestial_halley" formatted="false">1P/Halley</string>
+    <string name="celestial_comet_67p" formatted="false">67P/Churyumov–Gerasimenko</string>
+</resources>

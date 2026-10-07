@@ -86,8 +86,12 @@ class SpaceCompassUnitsAuditTest {
         for (body in SpaceCompassCelestialBody.entries) for (value in spaceCompassCelestialTemperatures(body)) {
             val text = formatSpaceCompassCelestialTemperature(value, american, true)
             val fields = text.substringAfter('≈').substringBefore(" °F").split(" … ")
-            assertEquals(body.name, value.celsius * 9.0 / 5 + 32, decimal(fields.first(), american), 0.501)
+            assertEquals(body.name, value.celsius * 9.0 / 5 + 32, decimal(fields.first().substringBefore(" ±"), american), 0.501)
             value.maximumCelsius?.let { assertEquals(body.name, it * 9.0 / 5 + 32, decimal(fields.last(), american), 0.501) }
+            value.uncertaintyCelsius?.let {
+                assertEquals(body.name, it * 9.0 / 5, decimal(fields.first().substringAfter(" ±"), american), 0.501)
+            }
+            value.epochYear?.let { assertTrue(text.endsWith("($it)")) }
             if (value.kind == SpaceCompassCelestialTemperatureKind.STELLAR_EFFECTIVE)
                 assertEquals(value.celsius + 273.15, decimal(text.substringAfter('(').substringBefore(" K)"), american), 0.501)
         }

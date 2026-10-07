@@ -61,7 +61,7 @@ internal fun SpaceCompassCelestialSelector(body: SpaceCompassCelestialBody, colo
         }, shape = CircleShape, color = background.copy(alpha = .94f), contentColor = color,
             border = androidx.compose.foundation.BorderStroke(1.dp, color.copy(alpha = .35f)), shadowElevation = 3.dp) {
             Box(contentAlignment = Alignment.Center) {
-                SpaceCompassCelestialCatalogIcon(Modifier.size(26.dp), color)
+                SpaceCompassCelestialCatalogIcon(Modifier.size(26.dp), color, crossed = selectedBodies.isEmpty())
             }
         }
         // A fixed circular counter stays inside the selector's accessible touch target.
@@ -77,7 +77,7 @@ internal fun SpaceCompassCelestialSelector(body: SpaceCompassCelestialBody, colo
 
 /** One familiar ringed planet, using the same neutral toolbar glyph as the other actions. */
 @Composable
-private fun SpaceCompassCelestialCatalogIcon(modifier: Modifier, tint: Color) {
+private fun SpaceCompassCelestialCatalogIcon(modifier: Modifier, tint: Color, crossed: Boolean) {
     Canvas(modifier) {
         val stroke = Stroke(1.8.dp.toPx(), cap = StrokeCap.Round)
         drawCircle(tint, size.minDimension * 0.27f, style = stroke)
@@ -89,6 +89,10 @@ private fun SpaceCompassCelestialCatalogIcon(modifier: Modifier, tint: Color) {
             drawArc(tint, 180f, 28f, false, topLeft, ringSize, style = stroke)
             drawArc(tint, 332f, 28f, false, topLeft, ringSize, style = stroke)
         }
+        if (crossed) drawLine(tint,
+            Offset(size.width * .125f, size.height * .125f),
+            Offset(size.width * .875f, size.height * .875f),
+            strokeWidth = 2.dp.toPx(), cap = StrokeCap.Round)
     }
 }
 /** One kilometer unit only, plus AU. Extra Mkm precision keeps live probe distances visible. */

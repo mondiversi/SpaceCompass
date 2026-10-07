@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="camera_enable">Włącz widok kamery</string>
+    <string name="camera_disable">Wyłącz widok kamery</string>
+    <string name="camera_permission">Zezwól na dostęp do kamery, aby używać podglądu na żywo.</string>
+    <string name="camera_unavailable">Kamera niedostępna. Spróbuj ponownie.</string>
+    <string name="camera_view_description">Podgląd kamery na żywo z pozycjami ciał niebieskich</string>
+</resources>

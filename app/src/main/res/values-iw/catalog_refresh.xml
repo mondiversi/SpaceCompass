@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="catalog_refresh">רענון נתונים</string>
+    <string name="catalog_refreshing">מעדכן נתונים…</string>
+</resources>

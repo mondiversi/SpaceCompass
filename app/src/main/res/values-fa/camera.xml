@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="camera_enable">فعال کردن نمای دوربین</string>
+    <string name="camera_disable">غیرفعال کردن نمای دوربین</string>
+    <string name="camera_permission">برای نمای زنده، اجازهٔ دسترسی به دوربین را بدهید.</string>
+    <string name="camera_unavailable">دوربین در دسترس نیست. دوباره تلاش کنید.</string>
+    <string name="camera_view_description">نمای زندهٔ دوربین با موقعیت اجرام آسمانی</string>
+</resources>

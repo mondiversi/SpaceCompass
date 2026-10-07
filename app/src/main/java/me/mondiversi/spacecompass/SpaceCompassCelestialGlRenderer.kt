@@ -16,8 +16,11 @@ internal class SpaceCompassCelestialGlRenderer(private val context: Context, pri
     private val onFailure: (Throwable) -> Unit) : GLSurfaceView.Renderer {
     @Volatile var geometry = SpaceCompassCelestialRotation().geometry()
     @Volatile var viewport = SpaceCompassCelestialViewportState()
+    @Volatile var inspectShadows = true
     private var program = 0
     private var texture = 0
+    private var positionAttribute = -1
+    private val uniformLocations = IntArray(12)
     private var aspect = 1f
     private var failed = false
     private val vertices = ByteBuffer.allocateDirect(8 * 4).order(ByteOrder.nativeOrder()).asFloatBuffer()
@@ -26,6 +29,9 @@ internal class SpaceCompassCelestialGlRenderer(private val context: Context, pri
         try {
             glClearColor(0.015f, 0.022f, 0.045f, 1f)
             program = link(VERTEX, FRAGMENT)
+            // Handles belong to the current GL context; resolve them once after each link.
+            positionAttribute = glGetAttribLocation(program, "position")
+            for (index in UNIFORM_NAMES.indices) uniformLocations[index] = glGetUniformLocation(program, UNIFORM_NAMES[index])
             val ids = IntArray(1); glGenTextures(1, ids, 0); texture = ids[0]
             glBindTexture(GL_TEXTURE_2D, texture)
             glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR_MIPMAP_LINEAR)
@@ -67,21 +73,24 @@ internal class SpaceCompassCelestialGlRenderer(private val context: Context, pri
         val current = geometry
         val framing = viewport
         glUseProgram(program)
-        val position = glGetAttribLocation(program, "position")
+        val position = positionAttribute
         glEnableVertexAttribArray(position)
         glVertexAttribPointer(position, 2, GL_FLOAT, false, 0, vertices)
-        glUniformMatrix3fv(glGetUniformLocation(program, "bodyToCamera"), 1, false, current.matrix(), 0)
-        glUniform3f(glGetUniformLocation(program, "light"), current.light.x.toFloat(), current.light.y.toFloat(), current.light.z.toFloat())
-        glUniform1f(glGetUniformLocation(program, "aspect"), aspect)
-        glUniform1f(glGetUniformLocation(program, "zoom"), framing.zoom.toFloat())
-        glUniform2f(glGetUniformLocation(program, "pan"), framing.panX.toFloat(), framing.panY.toFloat())
-        glUniform1f(glGetUniformLocation(program, "extent"),
+        glUniformMatrix3fv(uniformLocations[0], 1, false, current.matrix(), 0)
+        glUniform3f(uniformLocations[1], current.light.x.toFloat(), current.light.y.toFloat(), current.light.z.toFloat())
+        glUniform1f(uniformLocations[2], aspect)
+        glUniform1f(uniformLocations[3], framing.zoom.toFloat())
+        glUniform2f(uniformLocations[4], framing.panX.toFloat(), framing.panY.toFloat())
+        glUniform1f(uniformLocations[5],
             (if (body == SpaceCompassCelestialBody.SATURN) 2.65f else 1.30f) / aspect.coerceAtMost(1f))
-        glUniform1f(glGetUniformLocation(program, "emissive"), if (body == SpaceCompassCelestialBody.SUN || body == SpaceCompassCelestialBody.POLARIS) 1f else 0f)
-        glUniform1f(glGetUniformLocation(program, "rings"), if (body == SpaceCompassCelestialBody.SATURN) 1f else 0f)
-        glUniform1f(glGetUniformLocation(program, "mapOffset"), body.textureLongitudeOffset.toFloat())
-        glUniform1f(glGetUniformLocation(program, "unmapped"), if (body.textureHasUnmappedAreas) 1f else 0f)
-        glUniform1i(glGetUniformLocation(program, "map"), 0)
+        glUniform1f(uniformLocations[6], if (body == SpaceCompassCelestialBody.SUN || body == SpaceCompassCelestialBody.POLARIS) 1f else 0f)
+        // Visual fill reveals the observer-facing terrain even at new phase. This is not
+        // measured illumination: the geometric light vector and reported phase remain untouched.
+        glUniform1f(uniformLocations[7], if (inspectShadows) .24f else .012f)
+        glUniform1f(uniformLocations[8], if (body == SpaceCompassCelestialBody.SATURN) 1f else 0f)
+        glUniform1f(uniformLocations[9], body.textureLongitudeOffset.toFloat())
+        glUniform1f(uniformLocations[10], if (body.textureHasUnmappedAreas) 1f else 0f)
+        glUniform1i(uniformLocations[11], 0)
         glActiveTexture(GL_TEXTURE0); glBindTexture(GL_TEXTURE_2D, texture)
         glDrawArrays(GL_TRIANGLE_STRIP, 0, 4)
         glDisableVertexAttribArray(position)
@@ -104,6 +113,7 @@ internal class SpaceCompassCelestialGlRenderer(private val context: Context, pri
         return result
     }
     companion object {
+        private val UNIFORM_NAMES = arrayOf("bodyToCamera", "light", "aspect", "zoom", "pan", "extent", "emissive", "shadowFill", "rings", "mapOffset", "unmapped", "map")
         private const val VERTEX = """
             attribute vec2 position; varying vec2 point;
             void main() { point = position; gl_Position = vec4(position, 0.0, 1.0); }
@@ -114,7 +124,7 @@ internal class SpaceCompassCelestialGlRenderer(private val context: Context, pri
             varying vec2 point; uniform mat3 bodyToCamera;
             uniform vec3 light; uniform sampler2D map;
             uniform vec2 pan; uniform float zoom;
-            uniform float aspect, extent, emissive, rings, mapOffset, unmapped;
+            uniform float aspect, extent, emissive, rings, mapOffset, unmapped, shadowFill;
             void main() {
                 vec2 p = (point - pan) * vec2(aspect, 1.0) * extent / zoom;
                 float rr = dot(p,p); float surfaceZ = rr <= 1.0 ? sqrt(max(0.0,1.0-rr)) : -10.0;
@@ -127,7 +137,7 @@ internal class SpaceCompassCelestialGlRenderer(private val context: Context, pri
                     // Unmapped reference-mosaic pixels are unknown terrain, not physical black craters.
                     if (unmapped > 0.5 && dot(albedo,albedo) < 0.0001) albedo = vec3(0.22,0.20,0.18);
                     float diffuse = max(dot(normal,normalize(light)),0.0);
-                    float brightness = emissive > 0.5 ? 0.58+0.42*surfaceZ : 0.012+0.988*pow(diffuse,0.65);
+                    float brightness = emissive > 0.5 ? 0.58+0.42*surfaceZ : shadowFill+(1.0-shadowFill)*pow(diffuse,0.65);
                     color = albedo * brightness;
                 }
                 if (rings > 0.5) {

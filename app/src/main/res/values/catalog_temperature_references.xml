@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="catalog_temperature_mean" formatted="false">Surface mean</string>
+    <string name="catalog_temperature_range" formatted="false">Surface range</string>
+    <string name="catalog_temperature_atmosphere">Atmosphere (%1$s)</string>
+    <string name="catalog_temperature_photosphere" formatted="false">Photosphere</string>
+    <string name="catalog_temperature_effective" formatted="false">Effective</string>
+    <string name="catalog_temperature_estimate" formatted="false">Surface estimate</string>
+    <string name="catalog_temperature_equilibrium" formatted="false">Equilibrium model</string>
+    <string name="catalog_temperature_historical" formatted="false">Historical range</string>
+    <string name="catalog_temperature_thermal" formatted="false">Thermal model</string>
+</resources>

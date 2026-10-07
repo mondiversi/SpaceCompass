@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="panorama_preview" formatted="false">بانوراما</string>
+    <string name="panorama_preparing" formatted="false">جارٍ إعداد البانوراما…</string>
+    <string name="panorama_save" formatted="false">حفظ</string>
+    <string name="panorama_share" formatted="false">مشاركة</string>
+    <string name="panorama_gallery" formatted="false">معرض الصور</string>
+    <string name="panorama_choose_location" formatted="false">اختيار موقع الحفظ…</string>
+    <string name="panorama_exported" formatted="false">تم تصدير البانوراما.</string>
+    <string name="panorama_cloud_cover" formatted="false">الغطاء السحابي</string>
+    <string name="panorama_weather_time" formatted="false">وقت نموذج الطقس</string>
+    <string name="panorama_northeast" formatted="false">الشمال الشرقي</string>
+    <string name="panorama_southeast" formatted="false">الجنوب الشرقي</string>
+    <string name="panorama_southwest" formatted="false">الجنوب الغربي</string>
+    <string name="panorama_northwest" formatted="false">الشمال الغربي</string>
+</resources>

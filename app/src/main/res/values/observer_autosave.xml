@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="settings_saved">Settings saved.</string>
+    <string name="observer_not_saved">Incomplete change: keeping the last valid settings.</string>
+</resources>

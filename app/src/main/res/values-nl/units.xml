@@ -6,4 +6,7 @@
     <string name="units_kilograms">Kilogrammen</string>
     <string name="units_pounds">Ponden</string>
     <string name="units_mass_description">Kies de eenheden voor massa en dichtheid.</string>
+    <string name="units_celsius">Celsius</string>
+    <string name="units_fahrenheit">Fahrenheit</string>
+    <string name="settings_resource_language_tag">nl</string>
 </resources>

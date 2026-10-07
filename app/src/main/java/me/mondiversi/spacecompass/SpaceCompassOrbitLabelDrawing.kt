@@ -18,14 +18,23 @@ internal fun drawSpaceCompassOrbitName(canvas: Canvas, name: String, segments: L
     arrow: SpaceCompassSunPathArrow, paint: Paint, tint: Int, offset: Float,
     occupied: MutableList<RectF> = mutableListOf(),
     viewportWidth: Float = canvas.width.toFloat(), viewportHeight: Float = canvas.height.toFloat()): Boolean {
-    val span = paint.measureText(name).toDouble() + paint.textSize * .8
-    val baseline = spaceCompassOrbitLabelBaseline(segments, arrow.center, span) ?: return false
+    val baseline = spaceCompassOrbitTextBaseline(segments, arrow.center, paint.measureText(name).toDouble(),
+        paint.textSize.toDouble(), offset.toDouble()) ?: return false
     val bounds = RectF(baseline.minOf { it.x }.toFloat() - paint.textSize,
-        baseline.minOf { it.y }.toFloat() - offset - paint.textSize * 1.6f,
+        baseline.minOf { it.y }.toFloat() - paint.textSize * 1.6f,
         baseline.maxOf { it.x }.toFloat() + paint.textSize,
         baseline.maxOf { it.y }.toFloat() + paint.textSize)
     if (bounds.left < 0 || bounds.top < 0 || bounds.right > viewportWidth || bounds.bottom > viewportHeight ||
         occupied.any { RectF.intersects(it, bounds) }) return false
+    drawSpaceCompassCurveText(canvas, name, baseline, paint, tint)
+    occupied += bounds
+    return true
+}
+
+
+/** One shaped string on its measured baseline; orbit and reference names share glyph spacing/outline. */
+internal fun drawSpaceCompassCurveText(canvas: Canvas, name: String,
+    baseline: List<SpaceCompassSunScenePoint>, paint: Paint, tint: Int) {
     val path = Path().apply {
         moveTo(baseline.first().x.toFloat(), baseline.first().y.toFloat())
         baseline.drop(1).forEach { lineTo(it.x.toFloat(), it.y.toFloat()) }
@@ -36,13 +45,11 @@ internal fun drawSpaceCompassOrbitName(canvas: Canvas, name: String, segments: L
     val start = (length - paint.measureText(name)) / 2
     paint.color = android.graphics.Color.BLACK
     paint.style = Paint.Style.STROKE
-    paint.strokeWidth = paint.textSize * .20f
+    paint.strokeWidth = paint.textSize * .12f
     paint.strokeJoin = Paint.Join.ROUND
-    canvas.drawTextOnPath(name, path, start, -offset, paint)
+    canvas.drawTextOnPath(name, path, start, 0f, paint)
     paint.color = tint
     paint.style = Paint.Style.FILL
-    canvas.drawTextOnPath(name, path, start, -offset, paint)
+    canvas.drawTextOnPath(name, path, start, 0f, paint)
     paint.textAlign = textAlign
-    occupied += bounds
-    return true
 }

@@ -33,5 +33,5 @@
     <string name="sun_weather_unavailable">الطقس غير متاح</string>
     <string name="sun_weather_loading">جارٍ تحديث الطقس…</string>
     <string name="sun_weather_estimate">الطقس التقديري: %1$s</string>
-    <string name="sun_weather_privacy">تستخدم خدمة الطقس عبر الإنترنت وتحديد أسماء الأماكن موقعًا تقريبيًا.</string>
+    <string name="sun_weather_privacy">يستخدم الطقس وأسماء الأماكن على الإنترنت موقعًا تقريبيًا. فتح تفاصيل الموقع يرسل إحداثيات GPS إلى OpenStreetMap.</string>
 </resources>

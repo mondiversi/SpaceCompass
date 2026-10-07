@@ -1,0 +1,31 @@
+<resources>
+    <string name="observer_title">Сценарий</string>
+    <string name="observer_place">Местоположение</string>
+    <string name="observer_search">Поиск места</string>
+    <string name="observer_search_action">Найти</string>
+    <string name="observer_map">Выбрать на карте</string>
+    <string name="observer_latitude">Широта</string>
+    <string name="observer_longitude">Долгота</string>
+    <string name="observer_automatic">Определить высоту и часовой пояс</string>
+    <string name="observer_altitude">Высота</string>
+    <string name="observer_zone">Часовой пояс</string>
+    <string name="observer_terrain_note">Оценка высоты рельефа; её можно изменить.</string>
+    <string name="observer_lookup_failed">Автоматическое определение недоступно. Включите Высоту и Часовой пояс для ручного ввода.</string>
+    <string name="observer_moment">Дата и время</string>
+    <string name="observer_date">Дата</string>
+    <string name="observer_time">Время</string>
+    <string name="observer_limits">Некоторые орбитальные данные недоступны вне срока действия. Оценки погоды, когда доступны; иначе базовое ясное небо.</string>
+    <string name="observer_privacy">Поиск использует геокодер Android. Карта использует OpenStreetMap; выбранные координаты отправляются в Open-Meteo для высоты и часового пояса.</string>
+    <string name="observer_apply">Установить</string>
+    <string name="observer_invalid">Проверьте координаты, высоту, дату, время и часовой пояс. Даты: 1900–2100. Несуществующее время при переходе на летнее время недопустимо.</string>
+    <string name="observer_use_place">Использовать эту точку</string>
+    <string name="observer_simulation">Сценарий</string>
+    <string name="observer_coordinates_value">Координаты: %1$s</string>
+    <string name="observer_altitude_value">Высота: %1$s</string>
+    <string name="observer_simulation_active">Сценарий активен</string>
+    <string name="observer_enable_position">Имитировать положение</string>
+    <string name="observer_enable_time">Имитировать дату и время</string>
+    <string name="observer_current_metadata">Определить высоту и часовой пояс текущего местоположения</string>
+    <string name="observer_enable_altitude">Задать высоту</string>
+    <string name="observer_enable_zone">Задать часовой пояс</string>
+</resources>

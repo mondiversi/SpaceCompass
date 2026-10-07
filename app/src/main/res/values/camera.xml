@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="camera_enable">Enable camera view</string>
+    <string name="camera_disable">Disable camera view</string>
+    <string name="camera_permission">Allow camera access to use the live view.</string>
+    <string name="camera_unavailable">Camera unavailable. Please try again.</string>
+    <string name="camera_view_description">Live camera with celestial positions</string>
+</resources>

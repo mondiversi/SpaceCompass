@@ -8,7 +8,7 @@ class SpaceCompassEstimatedPlaceTest {
         requireNotNull(spaceCompassPlaceKey(latitude, 12.4964, language))
 
     @Test fun formatsAvailableCityRegionAndCountryAsReadableSeparateLines() {
-        assertEquals("Roma\nLazio\nItalia", formatSpaceCompassEstimatedPlace(
+        assertEquals("Roma, Lazio, Italia", formatSpaceCompassEstimatedPlace(
             SpaceCompassPlaceParts(locality = "Roma", adminArea = "Lazio", country = "Italia")))
     }
     @Test fun omitsMissingNamesWithoutInventingZeroOrAnAddress() {
@@ -17,7 +17,7 @@ class SpaceCompassEstimatedPlaceTest {
         assertEquals("Lazio", formatSpaceCompassEstimatedPlace(SpaceCompassPlaceParts(adminArea = "Lazio")))
     }
     @Test fun fallsBackToAvailableCountyThenDistrictWhenCityIsMissing() {
-        assertEquals("County\nRegion", formatSpaceCompassEstimatedPlace(
+        assertEquals("County, Region", formatSpaceCompassEstimatedPlace(
             SpaceCompassPlaceParts(locality = " ", subLocality = "District", subAdminArea = "County", adminArea = "Region")))
         assertEquals("District", formatSpaceCompassEstimatedPlace(SpaceCompassPlaceParts(subLocality = "District")))
     }
@@ -26,9 +26,9 @@ class SpaceCompassEstimatedPlaceTest {
             SpaceCompassPlaceParts(locality = "Singapore", adminArea = "singapore", country = "SINGAPORE")))
     }
     @Test fun normalizesProviderWhitespaceAndPreservesUnicodePlaceNames() {
-        assertEquals("São Paulo\nBrasil", formatSpaceCompassEstimatedPlace(
+        assertEquals("São Paulo, Brasil", formatSpaceCompassEstimatedPlace(
             SpaceCompassPlaceParts(locality = "  São\u00a0 Paulo\n", country = "\tBrasil\u202f")))
-        assertEquals("القاهرة\nمصر", formatSpaceCompassEstimatedPlace(
+        assertEquals("القاهرة, مصر", formatSpaceCompassEstimatedPlace(
             SpaceCompassPlaceParts(locality = "القاهرة", country = "مصر")))
     }
     @Test fun rejectsMissingNonfiniteAndOutOfRangeCoordinates() {

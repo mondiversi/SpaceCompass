@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="catalog_sort_day_temperature" formatted="false">Θερμοκρασία ημέρας</string>
+    <string name="catalog_sort_night_temperature" formatted="false">Θερμοκρασία νύχτας</string>
+    <string name="catalog_type_comet" formatted="false">Κομήτες</string>
+    <string name="position_map_title" formatted="false">Χάρτης</string>
+    <string name="position_map_unavailable" formatted="false">Ο χάρτης δεν είναι διαθέσιμος</string>
+    <string name="celestial_comet_note" formatted="false">Συμβολική απεικόνιση. Οι διαστάσεις αφορούν τον πυρήνα· η δραστηριότητα και η περιστροφή μπορεί να μεταβάλλονται.</string>
+    <string name="celestial_halley" formatted="false">1P/Halley</string>
+    <string name="celestial_comet_67p" formatted="false">67P/Churyumov–Gerasimenko</string>
+</resources>

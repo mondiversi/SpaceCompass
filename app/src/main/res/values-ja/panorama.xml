@@ -2,16 +2,25 @@
 <resources>
     <string name="panorama_capture">撮影</string>
     <string name="panorama_saving">パノラマを保存中…</string>
-    <string name="panorama_saved">パノラマをギャラリーのSpaceCompassアルバムに保存しました。</string>
+    <string name="panorama_saved">画像をギャラリーに保存しました。</string>
     <string name="panorama_error">パノラマを保存できませんでした。もう一度お試しください。</string>
     <string name="panorama_permission">パノラマを保存するにはストレージへのアクセスを許可してください。</string>
     <string name="panorama_not_ready">GPS位置情報と、少なくとも1つの選択された天体が必要です。</string>
     <string name="panorama_data_unavailable">データなし</string>
     <string name="panorama_path_unavailable">軌道データなし</string>
-    <string name="info_news_panorama">撮影で、選択した天体とその軌道の360°パノラマをギャラリーに保存できます。</string>
-    <string name="info_news_orbit_names">天体名が方向矢印の近くで軌道の曲線に沿って表示されます。</string>
+    <string name="info_news_panorama">カメラへの重ね合わせと360°パノラマ。補助線やラベルを切り替え、ギャラリー、ファイル、共有へ書き出せます。</string>
+    <string name="info_news_orbit_names">30個の天体に対応したライブコンパス、日周軌跡、テクスチャ付き表示。</string>
     <string name="panorama_north">北</string>
     <string name="panorama_east">東</string>
     <string name="panorama_south">南</string>
     <string name="panorama_west">西</string>
+    <string name="panorama_position">画像の位置情報</string>
+    <string name="panorama_position_description">保存・共有時に表示する位置情報を選択します。時刻と軌道から、おおよその地域を推測できる場合があります。</string>
+    <string name="panorama_position_complete">すべて表示</string>
+    <string name="panorama_position_complete_detail">地名・座標・高度・精度</string>
+    <string name="panorama_position_area">地域のみ</string>
+    <string name="panorama_position_area_detail">地域と国</string>
+    <string name="panorama_position_hidden">非表示</string>
+    <string name="panorama_position_hidden_detail">位置情報を表示しない</string>
+    <string name="panorama_point_labels">ラベル</string>
 </resources>

@@ -51,22 +51,25 @@ internal fun spaceCompassOrbitLabelBaseline(segments: List<SpaceCompassSunPathSe
 }
 
 /** Equidistant azimuth/elevation panorama: north wraps at the seam, zenith/nadir at top/bottom. */
-internal fun spaceCompassPanoramaPoint(position: SpaceCompassSunPosition, width: Double, height: Double): SpaceCompassSunScenePoint? {
+internal fun spaceCompassPanoramaPoint(position: SpaceCompassSunPosition, width: Double, height: Double,
+    centerAzimuthDegrees: Double = 180.0): SpaceCompassSunScenePoint? {
     if (!width.isFinite() || !height.isFinite() || width <= 0 || height <= 0 ||
-        !position.azimuthDegrees.isFinite() || !position.elevationDegrees.isFinite() || position.elevationDegrees !in -90.0..90.0) return null
-    val az = ((position.azimuthDegrees % 360) + 360) % 360
+        !centerAzimuthDegrees.isFinite() || !position.azimuthDegrees.isFinite() || !position.elevationDegrees.isFinite() || position.elevationDegrees !in -90.0..90.0) return null
+    val az = wrapSpaceCompassSunDegrees(position.azimuthDegrees - (centerAzimuthDegrees - 180.0))
     return SpaceCompassSunScenePoint(az / 360 * width, (90 - position.elevationDegrees) / 180 * height)
 }
 
-internal fun spaceCompassPanoramaVectorPoint(v: SpaceCompassSunVector, width: Double, height: Double): SpaceCompassSunScenePoint? =
+internal fun spaceCompassPanoramaVectorPoint(v: SpaceCompassSunVector, width: Double, height: Double,
+    centerAzimuthDegrees: Double = 180.0): SpaceCompassSunScenePoint? =
     spaceCompassPanoramaPoint(SpaceCompassSunPosition(Math.toDegrees(atan2(v.east, v.north)),
-        Math.toDegrees(atan2(v.up, hypot(v.east, v.north)))), width, height)
+        Math.toDegrees(atan2(v.up, hypot(v.east, v.north)))), width, height, centerAzimuthDegrees)
 
 /** Split the north seam and horizon; never draw a 359°-to-1° chord across the image. */
-internal fun spaceCompassPanoramaSegments(path: SpaceCompassSunDailyPath, width: Double, height: Double): List<SpaceCompassSunPathSegment> = buildList {
+internal fun spaceCompassPanoramaSegments(path: SpaceCompassSunDailyPath, width: Double, height: Double,
+    centerAzimuthDegrees: Double = 180.0): List<SpaceCompassSunPathSegment> = buildList {
     path.samples.zipWithNext().forEach { (a, b) ->
-        val start = spaceCompassPanoramaPoint(a.position, width, height) ?: return@forEach
-        val originalEnd = spaceCompassPanoramaPoint(b.position, width, height) ?: return@forEach
+        val start = spaceCompassPanoramaPoint(a.position, width, height, centerAzimuthDegrees) ?: return@forEach
+        val originalEnd = spaceCompassPanoramaPoint(b.position, width, height, centerAzimuthDegrees) ?: return@forEach
         val dx = originalEnd.x - start.x
         val end = originalEnd.copy(x = originalEnd.x + if (dx > width / 2) -width else if (dx < -width / 2) width else 0.0)
         fun lerp(t: Double) = SpaceCompassSunScenePoint(start.x + (end.x - start.x) * t, start.y + (end.y - start.y) * t)

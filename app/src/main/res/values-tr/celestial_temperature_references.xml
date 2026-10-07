@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="celestial_temperature_surface_estimate" formatted="false">Tahmini yüzey sıcaklığı</string>
+    <string name="celestial_temperature_equilibrium_model" formatted="false">Denge sıcaklığı (model)</string>
+    <string name="celestial_temperature_historical_range" formatted="false">Yüzey aralığı (geçmiş gözlem)</string>
+    <string name="celestial_temperature_thermal_model" formatted="false">Termal ışınım (model)</string>
+    <string name="celestial_temperature_reference_note" formatted="false">Tahminler model varsayımlarına bağlıdır. Yılı belirtilen aralıklar güncel sıcaklıkları değil, geçmiş gözlemleri gösterir. Kompakt yıldız sıcaklıkları gündüz ve gece ölçümlerinden değil, tayf modellerinden gelir.</string>
+    <string name="celestial_stephenson_reference_note" formatted="false">Etkin sıcaklık modelde varsayılmıştır. Parlaklık ve türetilen çap, kümenin uzaklığını esas alır; küme üyeliği belirsizdir. Güncel kütle bilinmemektedir.</string>
+</resources>

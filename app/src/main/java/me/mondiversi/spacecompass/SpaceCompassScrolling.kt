@@ -339,12 +339,13 @@ internal data class SpaceCompassDialogScrollbar(
  */
 @Composable
 internal fun rememberSpaceCompassDialogScrollbar(
-    color: Color
+    color: Color,
+    maximumHeight: Dp? = null
 ): SpaceCompassDialogScrollbar {
     val scrollState = rememberScrollState()
     // Bound the whole window, not just its body, so larger titles and stacked
     // actions reduce the scroll viewport instead of pushing buttons off screen.
-    val maximumDialogHeight = (LocalConfiguration.current.screenHeightDp.dp - 48.dp).coerceAtLeast(1.dp)
+    val maximumDialogHeight = maximumHeight ?: (LocalConfiguration.current.screenHeightDp.dp - 48.dp).coerceAtLeast(1.dp)
     var dialogBounds by remember { mutableStateOf<Rect?>(null) }
     var viewportBounds by remember { mutableStateOf<Rect?>(null) }
     val density = LocalDensity.current

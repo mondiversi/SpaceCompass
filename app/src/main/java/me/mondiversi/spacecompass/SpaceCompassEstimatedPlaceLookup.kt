@@ -45,7 +45,10 @@ private suspend fun legacyPlaceLookup(geocoder: Geocoder, key: SpaceCompassPlace
     runInterruptible(Dispatchers.IO) { geocoder.getFromLocation(key.latitude, key.longitude, 1).orEmpty() }
 
 /** Android 13+ callbacks, legacy worker-thread calls, and bounded waiting on every version. */
-private suspend fun lookupEstimatedPlace(context: Context, key: SpaceCompassPlaceKey): String? {
+internal suspend fun lookupSpaceCompassEstimatedPlace(context: Context, key: SpaceCompassPlaceKey): String? =
+    lookupSpaceCompassEstimatedPlaceParts(context, key)?.let(::formatSpaceCompassEstimatedPlace)
+
+internal suspend fun lookupSpaceCompassEstimatedPlaceParts(context: Context, key: SpaceCompassPlaceKey): SpaceCompassPlaceParts? {
     if (!Geocoder.isPresent()) return null
     val locale = Locale.forLanguageTag(key.languageTag)
     val geocoder = Geocoder(context, locale)
@@ -56,8 +59,8 @@ private suspend fun lookupEstimatedPlace(context: Context, key: SpaceCompassPlac
     val country = address.countryName?.takeIf { it.isNotBlank() }
         ?: address.countryCode?.takeIf { it.matches(Regex("[A-Za-z]{2}")) }
             ?.let { Locale.Builder().setRegion(it).build().getDisplayCountry(locale) }
-    return formatSpaceCompassEstimatedPlace(SpaceCompassPlaceParts(address.locality, address.subLocality,
-        address.subAdminArea, address.adminArea, country))
+    return SpaceCompassPlaceParts(address.locality, address.subLocality,
+        address.subAdminArea, address.adminArea, country)
 }
 
 /** Requests only while environment details are visible and the activity is resumed. */
@@ -88,7 +91,7 @@ internal fun rememberSpaceCompassEstimatedPlace(latitude: Double?, longitude: Do
                     delay(250L)
                     lastRequestElapsed = SystemClock.elapsedRealtime()
                     val result = try {
-                        lookupEstimatedPlace(context, key)
+                        lookupSpaceCompassEstimatedPlace(context, key)
                     } catch (cancelled: CancellationException) {
                         throw cancelled
                     } catch (_: Exception) {

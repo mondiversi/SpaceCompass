@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="celestial_temperature_surface_estimate" formatted="false">درجة حرارة السطح التقديرية</string>
+    <string name="celestial_temperature_equilibrium_model" formatted="false">درجة حرارة التوازن (نموذج)</string>
+    <string name="celestial_temperature_historical_range" formatted="false">نطاق السطح (رصد تاريخي)</string>
+    <string name="celestial_temperature_thermal_model" formatted="false">الانبعاث الحراري (نموذج)</string>
+    <string name="celestial_temperature_reference_note" formatted="false">تعتمد التقديرات على افتراضات النموذج. تصف النطاقات المؤرخة أرصادًا سابقة لا درجات حرارة حالية. تأتي درجات حرارة النجوم المدمجة من نماذج طيفية، لا من قياسات النهار والليل.</string>
+    <string name="celestial_stephenson_reference_note" formatted="false">يعتمد النموذج درجة الحرارة الفعالة. يفترض السطوع والقطر المستنتج مسافة العنقود؛ والانتماء إليه غير مؤكد. الكتلة الحالية غير معروفة.</string>
+</resources>
