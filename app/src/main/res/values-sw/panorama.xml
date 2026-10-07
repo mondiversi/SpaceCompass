@@ -8,8 +8,6 @@
     <string name="panorama_not_ready">Mahali pa GPS na angalau kitu kimoja kilichochaguliwa vinahitajika.</string>
     <string name="panorama_data_unavailable">Data haipatikani</string>
     <string name="panorama_path_unavailable">Obiti haipatikani</string>
-    <string name="info_news_panorama">Michoro juu ya kamera na panorama za 360° zenye mistari na lebo za hiari; hamisha kwenye matunzio, faili au shiriki.</string>
-    <string name="info_news_orbit_names">Dira ya moja kwa moja, njia za kila siku na mwonekano wenye maumbo ya uso kwa vitu 30 vya angani.</string>
     <string name="panorama_north">Kaskazini</string>
     <string name="panorama_east">Mashariki</string>
     <string name="panorama_south">Kusini</string>

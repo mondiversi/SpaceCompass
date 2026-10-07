@@ -8,8 +8,6 @@
     <string name="panorama_not_ready">Eine GPS-Position und mindestens ein ausgewähltes Objekt sind erforderlich.</string>
     <string name="panorama_data_unavailable">Daten nicht verfügbar</string>
     <string name="panorama_path_unavailable">Umlaufbahn nicht verfügbar</string>
-    <string name="info_news_panorama">Kameraüberlagerungen und 360°-Panoramen mit optionalen Hilfslinien und Beschriftungen; Export in die Galerie, als Datei oder zum Teilen.</string>
-    <string name="info_news_orbit_names">Live-Kompass, Tagesbahnen und texturierte Ansichten für 30 Himmelsobjekte.</string>
     <string name="panorama_north">Norden</string>
     <string name="panorama_east">Osten</string>
     <string name="panorama_south">Süden</string>

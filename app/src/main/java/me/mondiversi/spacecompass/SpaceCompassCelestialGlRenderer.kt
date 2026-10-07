@@ -39,10 +39,12 @@ internal class SpaceCompassCelestialGlRenderer(private val context: Context, pri
             glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_REPEAT)
             glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_CLAMP_TO_EDGE)
             val bitmap = loadTexture()
-            GLUtils.texImage2D(GL_TEXTURE_2D, 0, bitmap, 0); bitmap.recycle()
+            try { GLUtils.texImage2D(GL_TEXTURE_2D, 0, bitmap, 0) }
+            finally { bitmap.recycle() }
             glGenerateMipmap(GL_TEXTURE_2D)
             check(glGetError() == GL_NO_ERROR) { "Celestial texture upload failed" }
         } catch (error: Exception) { failed = true; onFailure(error) }
+        catch (error: OutOfMemoryError) { failed = true; onFailure(error) }
     }
     private fun loadTexture(): Bitmap {
         val asset = body.viewerTexture ?: return Bitmap.createBitmap(1, 1, Bitmap.Config.ARGB_8888)
@@ -62,7 +64,8 @@ internal class SpaceCompassCelestialGlRenderer(private val context: Context, pri
         }
         // GLES2 repeat requires a power-of-two texture; cap memory even for the large NASA Pluto map.
         if (decoded.width == width && decoded.height == height) return decoded
-        return Bitmap.createScaledBitmap(decoded, width, height, true).also { if (it !== decoded) decoded.recycle() }
+        return try { Bitmap.createScaledBitmap(decoded, width, height, true) }
+        finally { decoded.recycle() }
     }
     override fun onSurfaceChanged(gl: GL10?, width: Int, height: Int) {
         glViewport(0, 0, width, height); aspect = width.toFloat() / height.coerceAtLeast(1)

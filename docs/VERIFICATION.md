@@ -2456,3 +2456,15 @@ Evidence in the local workspace: `packed-islands-build.log`,
 `packed-islands-local-installation.json`, and `camera-packed-islands-*.png`.
 The initial scripted menu traversal stopped on a stale accessibility snapshot;
 Info/news and portrait checks were completed separately from the observed UI.
+
+
+## 1.1.0 release checks
+
+Version 1.1.0/code 17 includes the local camera zoom/search/capture/control changes
+since 1.0.1. See [the current release audit](RELEASE_1_1.md) for code structure,
+asset sizing and localization. Debug/release builds and release lint pass; all
+698 JVM tests pass with zero failures, errors or skips. Android test sources compile;
+connected instrumentation is not executed. All twenty catalogs have the same 451
+keys and six translated 1.1.0 news items. Source and asset credits are retained.
+Final source provenance, signature/alignment, replacement-installation bytes,
+hosted CI and public downloads are verified as separate publication steps.

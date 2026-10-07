@@ -54,24 +54,26 @@ internal fun SpaceCompassCelestialSelector(body: SpaceCompassCelestialBody, colo
     val label = stringResource(R.string.celestial_select)
     val count = formatSpaceCompassNumber(selectedBodies.size.toDouble(), 0,
         LocalSpaceCompassNumericFormat.current, grouping = false)
-    Box(modifier) {
-        Surface(onClick = { catalogOpen?.value = true }, modifier = Modifier.size(48.dp).testTag("celestial-select").semantics {
-            stateDescription = count
-            contentDescription = label
-        }, shape = CircleShape, color = background.copy(alpha = .94f), contentColor = color,
-            border = androidx.compose.foundation.BorderStroke(1.dp, color.copy(alpha = .35f)), shadowElevation = 3.dp) {
-            Box(contentAlignment = Alignment.Center) {
-                SpaceCompassCelestialCatalogIcon(Modifier.size(26.dp), color, crossed = selectedBodies.isEmpty())
+    SpaceCompassFloatingControlHitRegion {
+        Box(modifier.spaceCompassFloatingControlVisual()) {
+            Surface(onClick = { catalogOpen?.value = true }, modifier = Modifier.size(48.dp).testTag("celestial-select").semantics {
+                stateDescription = count
+                contentDescription = label
+            }, shape = CircleShape, color = background.copy(alpha = .94f), contentColor = color,
+                border = androidx.compose.foundation.BorderStroke(1.dp, color.copy(alpha = .35f)), shadowElevation = 3.dp) {
+                Box(contentAlignment = Alignment.Center) {
+                    SpaceCompassCelestialCatalogIcon(Modifier.size(26.dp), color, crossed = selectedBodies.isEmpty())
+                }
             }
-        }
-        // A fixed circular counter stays inside the selector's accessible touch target.
-        if (selectedBodies.isNotEmpty()) Box(
-            Modifier.align(Alignment.TopEnd).size(16.dp)
-                .background(background, CircleShape).border(1.dp, color.copy(alpha = .5f), CircleShape)
-                .testTag("celestial-selection-count").clearAndSetSemantics {},
-            contentAlignment = Alignment.Center
-        ) { Text(count, color = color, fontSize = 9.sp, lineHeight = 10.sp, maxLines = 1) }
+            // A fixed circular counter stays inside the selector's accessible touch target.
+            if (selectedBodies.isNotEmpty()) Box(
+                Modifier.align(Alignment.TopEnd).size(16.dp)
+                    .background(background, CircleShape).border(1.dp, color.copy(alpha = .5f), CircleShape)
+                    .testTag("celestial-selection-count").clearAndSetSemantics {},
+                contentAlignment = Alignment.Center
+            ) { Text(count, color = color, fontSize = 9.sp, lineHeight = 10.sp, maxLines = 1) }
 
+        }
     }
 }
 

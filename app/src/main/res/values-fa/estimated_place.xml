@@ -3,5 +3,4 @@
     <string name="environment_estimated_place">موقعیت تخمینی: %1$s</string>
     <string name="environment_place_loading">در حال یافتن مکان…</string>
     <string name="environment_place_unavailable">در دسترس نیست</string>
-    <string name="info_news_place">جزئیات موقعیت با نقشه‌های روز/شب و سناریوهایی با موقعیت، تاریخ، ارتفاع و منطقهٔ زمانی مستقل.</string>
 </resources>

@@ -3,5 +3,4 @@
     <string name="environment_estimated_place">推定位置：%1$s</string>
     <string name="environment_place_loading">地名を検索中…</string>
     <string name="environment_place_unavailable">利用できません</string>
-    <string name="info_news_place">昼夜の地図を備えた位置詳細と、位置・日時・標高・タイムゾーンを個別に指定できるシナリオ。</string>
 </resources>

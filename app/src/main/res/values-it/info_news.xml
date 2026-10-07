@@ -1,6 +1,9 @@
 <resources>
     <string name="info_news_title">Ultime novità · %1$s</string>
-    <string name="info_news_units">Selezioni, filtri e ordinamento salvati, con unità e formati regionali.</string>
-    <string name="info_news_pressure">Venti lingue, temi chiaro e scuro e interfaccia adattabile a telefoni e tablet.</string>
-    <string name="info_news_updates">Primo rilascio stabile: app ottimizzata e aggiornamenti GitHub firmati e verificati.</string>
+    <string name="info_news_camera_zoom">Zoom della fotocamera dal grandangolo al massimo, con gesti e selezione diretta del livello.</string>
+    <string name="info_news_catalog_search">Cerca gli oggetti per nome o identificatore del catalogo, insieme ai filtri.</string>
+    <string name="info_news_capture_metadata">Le foto mostrano direzione, inclinazione e campo visivo; le anteprime usano le unità e la lingua scelte.</string>
+    <string name="info_news_capture_controls">Comandi più compatti e centrati nelle anteprime; esporta con le tue impostazioni o il formato internazionale.</string>
+    <string name="info_news_viewer">Switch compatto tra vista attuale e rotazione, con avvisi della bussola più chiari.</string>
+    <string name="info_news_performance">App più leggera, anteprime più affidabili e traduzioni verificate.</string>
 </resources>

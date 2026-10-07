@@ -70,9 +70,10 @@ internal fun SpaceCompassCelestialCatalogPage(timeMs: Long, remote: SpaceCompass
     }
     var solarDistances by remember { mutableStateOf<Map<SpaceCompassCelestialBody, Double?>>(emptyMap()) }
     var filtersOpen by rememberSaveable { mutableStateOf(false) }
+    var query by rememberSaveable { mutableStateOf("") }
     var pendingHiddenReveal by remember { mutableStateOf(false) }
     val catalogScroll = rememberLazyListState()
-    LaunchedEffect(sort, types, visibility) { catalogScroll.scrollToItem(0) }
+    LaunchedEffect(sort, types, visibility, query) { catalogScroll.scrollToItem(0) }
     val handleBack = { if (filtersOpen) filtersOpen = false else onBack() }
     androidx.activity.compose.BackHandler(onBack = handleBack)
     val stringResourceForSelection = stringResource(R.string.select_all)
@@ -136,7 +137,9 @@ internal fun SpaceCompassCelestialCatalogPage(timeMs: Long, remote: SpaceCompass
     val readySolarDistances = spaceCompassCatalogDistancesWithReferences(solarDistances, availableBodies)
     val readyDistances = spaceCompassCatalogDistancesWithReferences(distances, availableBodies)
     val visibleBodies = spaceCompassSortCatalog(
-        spaceCompassFilterCatalog(types, visibility, observations.mapValues { it.value?.position?.elevationDegrees }, availableBodies),
+        spaceCompassSearchCatalog(
+            spaceCompassFilterCatalog(types, visibility, observations.mapValues { it.value?.position?.elevationDegrees }, availableBodies),
+            localizedNames, query),
         sort, localizedNames, readySolarDistances, locale)
     LaunchedEffect(pendingHiddenReveal, visibleBodies) {
         if (pendingHiddenReveal) {
@@ -166,7 +169,7 @@ internal fun SpaceCompassCelestialCatalogPage(timeMs: Long, remote: SpaceCompass
                 }
                 SpaceCompassTitleActionButton(stringResource(R.string.catalog_filters),
                     onClick = { filtersOpen = !filtersOpen }, modifier = Modifier.width(48.dp).testTag("catalog-filter-toggle"),
-                    iconColor = if (types.isNotEmpty() || visibility != SpaceCompassCatalogVisibility.ALL)
+                    iconColor = if (types.isNotEmpty() || visibility != SpaceCompassCatalogVisibility.ALL || query.isNotBlank())
                         MaterialTheme.colorScheme.primary else color) {
                     Icon(painterResource(R.drawable.ic_filter), contentDescription = null)
                 }
@@ -180,30 +183,36 @@ internal fun SpaceCompassCelestialCatalogPage(timeMs: Long, remote: SpaceCompass
                 }
             }
             AnimatedVisibility(filtersOpen, enter = expandVertically() + fadeIn(), exit = shrinkVertically() + fadeOut()) {
-                SpaceCompassCatalogFilterBar(types, visibility, visibleCount = visibleBodies.size,
+                SpaceCompassCatalogFilterBar(types, visibility, visibleCount = visibleBodies.size, searchActive = query.isNotBlank(),
                     onType = { type -> updateCatalogPreferences(catalogPreferences.copy(
                         types = if (type in types) types - type else types + type)) },
                     onAllTypes = { updateCatalogPreferences(catalogPreferences.copy(types = emptySet())) },
                     onVisibility = { updateCatalogPreferences(catalogPreferences.copy(visibility = it)) },
-                    onReset = { updateCatalogPreferences(catalogPreferences.copy(
+                    onReset = { query = ""; updateCatalogPreferences(catalogPreferences.copy(
                         types = emptySet(), visibility = SpaceCompassCatalogVisibility.ALL)) })
             }
             LazyColumn(Modifier.fillMaxWidth().weight(1f)
                 .clipToBounds().lazyScrollbarOverlay(catalogScroll, color.copy(alpha = .58f))
                 .padding(end = 8.dp).testTag("celestial-catalog-scroll"), state = catalogScroll) {
             item(key = "catalog-header") {
-                Row(Modifier.fillMaxWidth().padding(horizontal = 12.dp, vertical = 4.dp),
-                    verticalAlignment = Alignment.CenterVertically) {
-                    Box(Modifier.width(24.dp).height(48.dp), contentAlignment = Alignment.Center) {
-                        TriStateCheckbox(checkedState, onClick = { onToggleAll(visibleBodies.toSet()) },
-                            enabled = visibleBodies.isNotEmpty(), colors = spaceCompassCheckboxColors(),
-                            modifier = Modifier.requiredSize(48.dp).testTag("celestial-select-all").semantics {
-                                contentDescription = stringResourceForSelection
-                            })
+                BoxWithConstraints(Modifier.fillMaxWidth().padding(horizontal = 12.dp, vertical = 4.dp)) {
+                    // Enlarge the previous equal-column field itself, excluding its unchanged outer spacing.
+                    val previousSearchWidth = ((maxWidth - 24.dp) / 2 - 20.dp).coerceAtLeast(0.dp)
+                    val searchWidth = previousSearchWidth * 1.30f + 20.dp
+                    Row(Modifier.fillMaxWidth(), verticalAlignment = Alignment.CenterVertically) {
+                        Box(Modifier.width(24.dp).height(48.dp), contentAlignment = Alignment.Center) {
+                            TriStateCheckbox(checkedState, onClick = { onToggleAll(visibleBodies.toSet()) },
+                                enabled = visibleBodies.isNotEmpty(), colors = spaceCompassCheckboxColors(),
+                                modifier = Modifier.requiredSize(48.dp).testTag("celestial-select-all").semantics {
+                                    contentDescription = stringResourceForSelection
+                                })
+                        }
+                        SpaceCompassCatalogSearchField(query, { query = it },
+                            Modifier.width(searchWidth).padding(start = 12.dp, end = 8.dp))
+                        Text(stringResource(valueField.label), Modifier.weight(1f).testTag("catalog-value-header"),
+                            color = color.copy(alpha = 0.65f), fontSize = 11.sp, lineHeight = 14.sp,
+                            textAlign = androidx.compose.ui.text.style.TextAlign.End)
                     }
-                    Text(stringResource(valueField.label), Modifier.weight(1f).testTag("catalog-value-header"),
-                        color = color.copy(alpha = 0.65f), fontSize = 11.sp,
-                        textAlign = androidx.compose.ui.text.style.TextAlign.End)
                 }
             }
             if (visibleBodies.isEmpty()) item(key = "catalog-empty") {

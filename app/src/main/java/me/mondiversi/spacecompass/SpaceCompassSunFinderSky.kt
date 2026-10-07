@@ -3,9 +3,7 @@ package me.mondiversi.spacecompass
 import androidx.compose.animation.animateColorAsState
 import androidx.compose.animation.core.tween
 import androidx.compose.foundation.Canvas
-import androidx.compose.foundation.layout.BoxWithConstraints
-import androidx.compose.foundation.layout.fillMaxSize
-import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.*
 import androidx.compose.runtime.*
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.Alignment
@@ -131,7 +129,8 @@ internal fun SpaceCompassSunPointingViewport(
     simulationLabel: String? = null, onSimulation: () -> Unit = {},
     perspective: SpaceCompassPerspective? = null, topActionsWidth: androidx.compose.ui.unit.Dp = 62.dp,
     observerLatitude: Double? = null, showSkyReferences: Boolean = SPACE_COMPASS_SKY_REFERENCES_DEFAULT,
-    bottomActionsHeight: androidx.compose.ui.unit.Dp = 0.dp, observerAltitude: Double = 0.0
+    observerAltitude: Double = 0.0, compassCalibrationRequired: Boolean = false,
+    bottomActions: @Composable (Modifier) -> Unit = {}
 ) {
     BoxWithConstraints(modifier.testTag("sun-finder-sky").semantics { contentDescription = description }) {
         val density = LocalDensity.current
@@ -141,6 +140,7 @@ internal fun SpaceCompassSunPointingViewport(
         var menuSize by remember { mutableStateOf(IntSize.Zero) }
         var noticeSize by remember { mutableStateOf(IntSize.Zero) }
         var panelSize by remember { mutableStateOf(IntSize.Zero) }
+        var bottomActionsSize by remember { mutableStateOf(IntSize.Zero) }
         val paths = overlays.mapNotNull { (candidate, overlay) -> overlay.path?.let { candidate to it } }.toMap() +
             (dailyPath?.let { mapOf(body to it) } ?: emptyMap())
         val positions = overlays.mapNotNull { (candidate, overlay) -> overlay.observation?.position?.let { candidate to it } }.toMap() +
@@ -170,8 +170,14 @@ internal fun SpaceCompassSunPointingViewport(
             if (menuSize.width > 0) add(SpaceCompassSunSceneFrame(
                 if (rtl) 0.0 else width - menuSize.width - padding, 0.0,
                 menuSize.width + padding, menuSize.height + padding))
-            if (showSelectedPanel && dailyPathUiState.selectedBody != null && panelSize.height > 0)
-                add(SpaceCompassSunSceneFrame(0.0, height - panelSize.height - padding, width, panelSize.height + padding))
+            val selectedPanelHeight = if (showSelectedPanel && dailyPathUiState.selectedBody != null) panelSize.height else 0
+            if (selectedPanelHeight > 0)
+                add(SpaceCompassSunSceneFrame(0.0, height - selectedPanelHeight - padding, width, selectedPanelHeight + padding))
+            // Include the entire measured zoom/shutter row, which moves above the point panel.
+            if (bottomActionsSize.width > 0 && bottomActionsSize.height > 0)
+                add(SpaceCompassSunSceneFrame(if (rtl) 0.0 else width - bottomActionsSize.width,
+                    height - selectedPanelHeight - bottomActionsSize.height,
+                    bottomActionsSize.width.toDouble(), bottomActionsSize.height.toDouble()))
         }
         val pixelProjections = projections.mapValues { it.value.copy(x = it.value.x * density.density, y = it.value.y * density.density) }
         val liveDiameter = with(density) { SPACE_COMPASS_CELESTIAL_LIVE_PREVIEW_SIZE_DP.dp.toPx().toDouble() }
@@ -234,15 +240,19 @@ internal fun SpaceCompassSunPointingViewport(
                 stringResource(spaceCompassCelestialPathTitle(body)),
                 pathSelected = dailyPath != null,
                 modifier = Modifier.align(Alignment.TopEnd).padding(4.dp).onSizeChanged { menuSize = it })
-            if (showSelectedPanel) dailyPathUiState.selectedBody?.let { selected ->
-                SpaceCompassSunPathSelectedPanel(paths[selected], dailyPathUiState, primaryText, secondaryText, backgroundColor,
-                    Modifier.align(Alignment.BottomCenter).onSizeChanged { panelSize = it }
-                        .padding(bottom = bottomActionsHeight), body = selected, nowMs = timeMs)
+            // Keep the optical viewport fixed: controls stack over the scene instead of resizing it.
+            Column(Modifier.align(Alignment.BottomCenter).fillMaxWidth(), horizontalAlignment = Alignment.End) {
+                bottomActions(Modifier.onSizeChanged { bottomActionsSize = it })
+                if (showSelectedPanel) dailyPathUiState.selectedBody?.let { selected ->
+                    SpaceCompassSunPathSelectedPanel(paths[selected], dailyPathUiState, primaryText, secondaryText, backgroundColor,
+                        Modifier.onSizeChanged { panelSize = it }, body = selected, nowMs = timeMs)
+                }
             }
             SpaceCompassSunStatusNotices(compassWarning, statusMessage, statusActionLabel, onStatusAction,
                 primaryText, secondaryText, backgroundColor,
                 Modifier.align(Alignment.TopStart).padding(start = 4.dp, end = topActionsWidth, top = 4.dp)
-                    .onSizeChanged { noticeSize = it }, simulationLabel, onSimulation)
+                    .onSizeChanged { noticeSize = it }, simulationLabel, onSimulation,
+                compassCalibrationRequired = compassCalibrationRequired)
         }
     }
 }

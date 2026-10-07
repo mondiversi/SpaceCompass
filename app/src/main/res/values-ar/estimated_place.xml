@@ -3,5 +3,4 @@
     <string name="environment_estimated_place">الموقع التقريبي: %1$s</string>
     <string name="environment_place_loading">جارٍ البحث عن المكان…</string>
     <string name="environment_place_unavailable">غير متاح</string>
-    <string name="info_news_place">تفاصيل الموقع مع خرائط نهارية وليلية وسيناريوهات بموقع وتاريخ وارتفاع ومنطقة زمنية مستقلة.</string>
 </resources>

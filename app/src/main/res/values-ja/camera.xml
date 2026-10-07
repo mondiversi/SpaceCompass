@@ -5,4 +5,6 @@
     <string name="camera_permission">ライブ表示を使うにはカメラへのアクセスを許可してください。</string>
     <string name="camera_unavailable">カメラを使用できません。もう一度お試しください。</string>
     <string name="camera_view_description">天体の位置を重ねたライブカメラ表示</string>
+    <string name="camera_zoom_level">ズーム: %1$s</string>
+    <string name="camera_photo_field_of_view">画角（横×縦）: %1$s × %2$s</string>
 </resources>

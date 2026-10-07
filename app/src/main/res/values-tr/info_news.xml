@@ -1,6 +1,9 @@
 <resources>
     <string name="info_news_title">Son yenilikler · %1$s</string>
-    <string name="info_news_units">Kaydedilen seçimler, filtreler ve sıralama; bölgesel birimler ve biçimler.</string>
-    <string name="info_news_pressure">Yirmi dil, açık/koyu temalar ve telefon/tablet için uyarlanabilir düzenler.</string>
-    <string name="info_news_updates">İlk kararlı sürüm: optimize edilmiş uygulama ve doğrulanmış, imzalı GitHub güncellemeleri.</string>
+    <string name="info_news_camera_zoom">Ultra geniş açıdan en yüksek seviyeye kamera yakınlaştırması; kıstırma hareketi ve doğrudan seviye seçimi.</string>
+    <string name="info_news_catalog_search">Nesneleri ad veya katalog kimliğiyle, filtrelerle birlikte arayın.</string>
+    <string name="info_news_capture_metadata">Fotoğraflar yön, eğim ve görüş alanını gösterir; önizlemeler seçtiğiniz birimleri ve dili kullanır.</string>
+    <string name="info_news_capture_controls">Daha kompakt kontroller ve ortalanmış önizleme düğmeleri; kendi ayarlarınızla veya uluslararası biçimde dışa aktarın.</string>
+    <string name="info_news_viewer">Güncel görünüm ve dönüş arasında kompakt anahtar, daha anlaşılır pusula uyarıları.</string>
+    <string name="info_news_performance">Daha küçük uygulama, daha güvenilir önizlemeler ve denetlenmiş çeviriler.</string>
 </resources>

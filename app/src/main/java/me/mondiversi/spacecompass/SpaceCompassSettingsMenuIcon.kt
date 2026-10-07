@@ -14,8 +14,12 @@ import androidx.compose.ui.unit.dp
 
 /** Compact menu glyphs follow the app's existing visual vocabulary. */
 @Composable
-internal fun SpaceCompassSettingsMenuIcon(route: String, tint: Color) {
-    Canvas(Modifier.size(20.dp)) {
+internal fun SpaceCompassSettingsMenuIcon(
+    route: String,
+    tint: Color,
+    modifier: Modifier = Modifier.size(20.dp)
+) {
+    Canvas(modifier) {
         val strokeWidth = maxOf(1.6.dp.toPx(), size.minDimension * 0.08f)
         when (route) {
             "capture" -> {

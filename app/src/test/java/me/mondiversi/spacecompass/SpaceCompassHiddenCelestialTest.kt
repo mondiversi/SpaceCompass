@@ -83,7 +83,7 @@ class SpaceCompassHiddenCelestialTest {
         assertNull(spaceCompassAtmosphericPressure(hidden))
         assertNull(calculateSpaceCompassCelestialSpeed(hidden, Instant.parse("2026-10-06T12:00:00Z").toEpochMilli()))
         assertEquals(10.0, spaceCompassCelestialTemperatures(hidden).single().celsius, 0.0)
-        assertEquals("lv426.png", hidden.viewerTexture)
+        assertEquals("lv426.webp", hidden.viewerTexture)
         assertFalse(hidden.usesDeepSkySymbol)
         assertFalse(hidden.hasPhysicalFace)
         assertFalse(hidden.usesHorizons)

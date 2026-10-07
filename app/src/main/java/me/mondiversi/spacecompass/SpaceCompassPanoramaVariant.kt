@@ -11,7 +11,7 @@ internal fun prepareSpaceCompassPanoramaVariant(context: Context, data: SpaceCom
     position: SpaceCompassPanoramaPosition, showPointLabels: Boolean = data.snapshot?.showPointLabels ?: true,
     exportMode: SpaceCompassPanoramaExportMode = SpaceCompassPanoramaExportMode.INTERNATIONAL,
     center: SpaceCompassPanoramaCenter = data.snapshot?.center ?: SpaceCompassPanoramaCenter.SOUTH): File {
-    if (exportMode == SpaceCompassPanoramaExportMode.INTERNATIONAL && position == data.position &&
+    if (exportMode == data.fileExportMode && position == data.position &&
         showPointLabels == (data.snapshot?.showPointLabels ?: true) && center == (data.snapshot?.center ?: SpaceCompassPanoramaCenter.SOUTH)) return data.file
     val selected = if (exportMode == SpaceCompassPanoramaExportMode.SELECTED) requireNotNull(data.selectedPresentation) else null
     val snapshot = selected?.snapshot ?: requireNotNull(data.snapshot)

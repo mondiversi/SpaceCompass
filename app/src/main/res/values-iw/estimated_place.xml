@@ -3,5 +3,4 @@
     <string name="environment_estimated_place">מיקום משוער: %1$s</string>
     <string name="environment_place_loading">חיפוש יישוב…</string>
     <string name="environment_place_unavailable">לא זמין</string>
-    <string name="info_news_place">פרטי מיקום עם מפות יום/לילה ותרחישים עם מיקום, תאריך, גובה ואזור זמן עצמאיים.</string>
 </resources>

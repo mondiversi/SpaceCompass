@@ -1,6 +1,9 @@
 <resources>
     <string name="info_news_title">Laatste nieuws · %1$s</string>
-    <string name="info_news_units">Opgeslagen selecties, filters en sortering, met regionale eenheden en notaties.</string>
-    <string name="info_news_pressure">Twintig talen, lichte/donkere thema’s en aanpasbare telefoon-/tabletindelingen.</string>
-    <string name="info_news_updates">Eerste stabiele versie: geoptimaliseerde app en gecontroleerde, ondertekende GitHub-updates.</string>
+    <string name="info_news_camera_zoom">Camerazoom van ultragroothoek tot maximaal, met knijpgebaren en directe keuze van het niveau.</string>
+    <string name="info_news_catalog_search">Zoek objecten op naam of cataloguscode, gecombineerd met filters.</string>
+    <string name="info_news_capture_metadata">Foto’s tonen richting, kanteling en beeldhoek; voorvertoningen gebruiken je gekozen eenheden en taal.</string>
+    <string name="info_news_capture_controls">Compactere bediening en gecentreerde knoppen in de voorvertoning; exporteer met je instellingen of internationale notatie.</string>
+    <string name="info_news_viewer">Compacte schakelaar tussen huidige weergave en rotatie, met duidelijkere kompaswaarschuwingen.</string>
+    <string name="info_news_performance">Kleinere app, betrouwbaardere voorvertoningen en gecontroleerde vertalingen.</string>
 </resources>

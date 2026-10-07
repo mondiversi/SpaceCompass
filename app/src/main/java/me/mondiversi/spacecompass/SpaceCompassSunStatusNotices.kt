@@ -29,21 +29,23 @@ import androidx.compose.ui.text.style.TextAlign
 internal fun SpaceCompassSunStatusNotices(
     compassWarning: String?, message: String?, actionLabel: String?, onAction: () -> Unit,
     primaryText: Color, secondaryText: Color, backgroundColor: Color, modifier: Modifier = Modifier,
-    simulationLabel: String? = null, onSimulation: () -> Unit = {}
+    simulationLabel: String? = null, onSimulation: () -> Unit = {},
+    compassCalibrationRequired: Boolean = false
 ) {
     val shape = RoundedCornerShape(14.dp)
     val noticePadding = PaddingValues(horizontal = 12.dp, vertical = 6.dp)
     val noticeBackground = backgroundColor.copy(alpha = 0.90f)
+    // Scenario and calibration warnings share a theme-aware orange; reduced precision stays neutral.
+    val warningOrange = if (backgroundColor.luminance() < .4f) Color(0xFFFF8F1F) else Color(0xFFAB3D00)
     SpaceCompassNoticesByWidth(modifier.widthIn(max = 280.dp)) {
         if (simulationLabel != null) {
-            // Saturated orange in each theme; the daylight shade preserves small-text contrast.
-            val orange = if (backgroundColor.luminance() < .4f) Color(0xFFFF8F1F) else Color(0xFFAB3D00)
-            Text(simulationLabel, color = orange, fontSize = 10.sp, lineHeight = 13.sp,
+            Text(simulationLabel, color = warningOrange, fontSize = 10.sp, lineHeight = 13.sp,
                 modifier = Modifier.testTag("observer-simulation-banner")
                     .background(noticeBackground, shape).clickable(role = Role.Button, onClick = onSimulation)
                     .padding(noticePadding))
         }
-        if (compassWarning != null) Text(compassWarning, color = secondaryText, fontSize = 10.sp,
+        if (compassWarning != null) Text(compassWarning,
+            color = if (compassCalibrationRequired) warningOrange else secondaryText, fontSize = 10.sp,
             lineHeight = 13.sp, modifier = Modifier.background(noticeBackground, shape)
                 .padding(noticePadding).testTag("celestial-compass-warning")
                 .semantics { liveRegion = LiveRegionMode.Polite })

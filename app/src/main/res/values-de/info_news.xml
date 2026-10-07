@@ -1,6 +1,9 @@
 <resources>
     <string name="info_news_title">Neuigkeiten · %1$s</string>
-    <string name="info_news_units">Gespeicherte Auswahl, Filter und Sortierung mit regionalen Einheiten und Formaten.</string>
-    <string name="info_news_pressure">Zwanzig Sprachen, helle/dunkle Designs und anpassbare Smartphone-/Tablet-Layouts.</string>
-    <string name="info_news_updates">Erste stabile Version: optimierte App und geprüfte, signierte GitHub-Updates.</string>
+    <string name="info_news_camera_zoom">Kamera-Zoom vom Ultraweitwinkel bis zum Maximum, per Fingergeste oder direkter Stufenauswahl.</string>
+    <string name="info_news_catalog_search">Objekte nach Namen oder Katalogkennung suchen und mit Filtern kombinieren.</string>
+    <string name="info_news_capture_metadata">Fotos zeigen Richtung, Neigung und Sichtfeld; die Vorschau nutzt die gewählten Einheiten und die Sprache.</string>
+    <string name="info_news_capture_controls">Kompaktere Bedienelemente und zentrierte Vorschauaktionen; Export mit eigenen Einstellungen oder internationaler Formatierung.</string>
+    <string name="info_news_viewer">Kompakter Schalter zwischen aktueller Ansicht und Rotation sowie deutlichere Kompasswarnungen.</string>
+    <string name="info_news_performance">Kleinere App, zuverlässigere Vorschau und geprüfte Übersetzungen.</string>
 </resources>

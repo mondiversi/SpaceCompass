@@ -1,6 +1,9 @@
 <resources>
     <string name="info_news_title">Perubahan terbaru · %1$s</string>
-    <string name="info_news_units">Pilihan, filter dan urutan tersimpan, dengan satuan dan format regional.</string>
-    <string name="info_news_pressure">Dua puluh bahasa, tema terang/gelap dan tata letak adaptif untuk ponsel/tablet.</string>
-    <string name="info_news_updates">Rilis stabil pertama: aplikasi dioptimalkan dan pembaruan GitHub bertanda tangan yang terverifikasi.</string>
+    <string name="info_news_camera_zoom">Zoom kamera dari ultralebar hingga maksimum, dengan gerakan cubit dan pemilihan tingkat langsung.</string>
+    <string name="info_news_catalog_search">Cari objek berdasarkan nama atau pengenal katalog, bersama dengan filter.</string>
+    <string name="info_news_capture_metadata">Foto menampilkan arah, kemiringan, dan bidang pandang; pratinjau menggunakan satuan dan bahasa pilihan Anda.</string>
+    <string name="info_news_capture_controls">Kontrol lebih ringkas dan tombol pratinjau terpusat; ekspor dengan pengaturan Anda atau format internasional.</string>
+    <string name="info_news_viewer">Sakelar ringkas antara tampilan saat ini dan rotasi, dengan peringatan kompas yang lebih jelas.</string>
+    <string name="info_news_performance">Aplikasi lebih ringan, pratinjau lebih andal, dan terjemahan yang diperiksa.</string>
 </resources>

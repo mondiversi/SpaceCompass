@@ -1,6 +1,9 @@
 <resources>
     <string name="info_news_title">تازه‌ترین تغییرات · %1$s</string>
-    <string name="info_news_units">انتخاب‌ها، فیلترها و ترتیب ذخیره‌شده، با واحدها و قالب‌های منطقه‌ای.</string>
-    <string name="info_news_pressure">بیست زبان، پوسته‌های روشن/تیره و چیدمان سازگار با تلفن و تبلت.</string>
-    <string name="info_news_updates">نخستین نسخهٔ پایدار: برنامهٔ بهینه‌شده و به‌روزرسانی‌های امضاشده و تأییدشدهٔ GitHub.</string>
+    <string name="info_news_camera_zoom">بزرگ‌نمایی دوربین از فوق‌عریض تا بیشینه، با حرکت دو انگشت یا انتخاب مستقیم سطح.</string>
+    <string name="info_news_catalog_search">جست‌وجوی اجرام با نام یا شناسهٔ فهرست، همراه با فیلترها.</string>
+    <string name="info_news_capture_metadata">عکس‌ها جهت، شیب و میدان دید را نشان می‌دهند؛ پیش‌نمایش‌ها از واحدها و زبان انتخابی استفاده می‌کنند.</string>
+    <string name="info_news_capture_controls">کنترل‌های فشرده‌تر و دکمه‌های وسط‌چین در پیش‌نمایش؛ خروجی با تنظیمات شما یا قالب بین‌المللی.</string>
+    <string name="info_news_viewer">کلید فشرده بین نمای فعلی و چرخش، با هشدارهای روشن‌تر قطب‌نما.</string>
+    <string name="info_news_performance">برنامهٔ سبک‌تر، پیش‌نمایش‌های مطمئن‌تر و ترجمه‌های بررسی‌شده.</string>
 </resources>

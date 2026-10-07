@@ -15,7 +15,8 @@ internal enum class SpaceCompassPanoramaPosition(val key: String) {
 
 /** Frozen at capture time; changing disclosure never consults live GPS, units or the clock. */
 internal data class SpaceCompassPanoramaCaptionData(val timestamp: String, val completePlace: String?,
-    val areaPlace: String?, val rows: List<SpaceCompassSunDataRow>, val cloudPercent: String?)
+    val areaPlace: String?, val rows: List<SpaceCompassSunDataRow>, val cloudPercent: String?,
+    val cameraPointing: String? = null, val cameraFieldOfView: String? = null)
 
 internal fun spaceCompassPanoramaCaptionForPosition(data: SpaceCompassPanoramaCaptionData,
     position: SpaceCompassPanoramaPosition): String {
@@ -26,7 +27,8 @@ internal fun spaceCompassPanoramaCaptionForPosition(data: SpaceCompassPanoramaCa
     }
     val rows = if (position == SpaceCompassPanoramaPosition.COMPLETE) data.rows
         else data.rows.filter { it.tag == "celestial-environment-weather" }
-    return formatSpaceCompassPanoramaCaption(data.timestamp, place, rows, data.cloudPercent)
+    val caption = formatSpaceCompassPanoramaCaption(data.timestamp, place, rows, data.cloudPercent)
+    return listOfNotNull(caption, data.cameraPointing, data.cameraFieldOfView).filter { it.isNotBlank() }.joinToString(" · ")
 }
 
 /** Coarse disclosure never falls back to a city, district or a parsed full address. */

@@ -1,6 +1,9 @@
 <resources>
     <string name="info_news_title">Últimas novedades · %1$s</string>
-    <string name="info_news_units">Selecciones, filtros y orden guardados, con unidades y formatos regionales.</string>
-    <string name="info_news_pressure">Veinte idiomas, temas claro/oscuro y diseños adaptables para teléfonos y tabletas.</string>
-    <string name="info_news_updates">Primera versión estable: aplicación optimizada y actualizaciones de GitHub firmadas y verificadas.</string>
+    <string name="info_news_camera_zoom">Zoom de cámara desde el ultra gran angular hasta el máximo, con gestos de pellizco y selección directa del nivel.</string>
+    <string name="info_news_catalog_search">Busca objetos por nombre o identificador del catálogo junto con los filtros.</string>
+    <string name="info_news_capture_metadata">Las fotos muestran dirección, inclinación y campo de visión; las vistas previas usan tus unidades e idioma.</string>
+    <string name="info_news_capture_controls">Controles más compactos y centrados en las vistas previas; exporta con tus ajustes o el formato internacional.</string>
+    <string name="info_news_viewer">Conmutador compacto entre vista actual y rotación, con avisos de brújula más claros.</string>
+    <string name="info_news_performance">Aplicación más ligera, vistas previas más fiables y traducciones revisadas.</string>
 </resources>

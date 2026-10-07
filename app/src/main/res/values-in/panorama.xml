@@ -8,8 +8,6 @@
     <string name="panorama_not_ready">Diperlukan posisi GPS dan setidaknya satu objek yang dipilih.</string>
     <string name="panorama_data_unavailable">Data tidak tersedia</string>
     <string name="panorama_path_unavailable">Orbit tidak tersedia</string>
-    <string name="info_news_panorama">Lapisan kamera dan panorama 360° dengan garis panduan dan label opsional; ekspor ke galeri, berkas atau untuk berbagi.</string>
-    <string name="info_news_orbit_names">Kompas langsung, lintasan harian dan tampilan bertekstur untuk 30 benda langit.</string>
     <string name="panorama_north">Utara</string>
     <string name="panorama_east">Timur</string>
     <string name="panorama_south">Selatan</string>

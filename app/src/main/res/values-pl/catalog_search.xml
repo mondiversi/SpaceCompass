@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="catalog_search">Szukaj</string>
+    <string name="catalog_search_clear">Wyczyść wyszukiwanie</string>
+</resources>

@@ -1,6 +1,9 @@
 <resources>
     <string name="info_news_title">最近の変更 · %1$s</string>
-    <string name="info_news_units">選択、フィルター、並び順を保存し、地域に応じた単位と書式に対応。</string>
-    <string name="info_news_pressure">20言語、ライト／ダークテーマ、スマートフォンとタブレットに適応するレイアウト。</string>
-    <string name="info_news_updates">初の安定版：アプリを最適化し、署名・検証済みのGitHub更新に対応。</string>
+    <string name="info_news_camera_zoom">超広角から最大までのカメラズーム。ピンチ操作や倍率の直接選択に対応。</string>
+    <string name="info_news_catalog_search">名前やカタログ識別子で天体を検索し、フィルターと組み合わせられます。</string>
+    <string name="info_news_capture_metadata">写真には方位・傾き・画角を表示。プレビューには選択した単位と言語を使用します。</string>
+    <string name="info_news_capture_controls">操作部を小型化し、プレビューのボタンを中央に配置。選択した設定または国際形式で書き出せます。</string>
+    <string name="info_news_viewer">現在の表示と回転を切り替えるコンパクトなスイッチと、わかりやすいコンパス警告。</string>
+    <string name="info_news_performance">アプリの軽量化、プレビューの安定性向上、翻訳の確認。</string>
 </resources>

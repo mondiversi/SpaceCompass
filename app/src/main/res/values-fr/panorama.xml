@@ -8,8 +8,6 @@
     <string name="panorama_not_ready">Une position GPS et au moins un objet sélectionné sont nécessaires.</string>
     <string name="panorama_data_unavailable">Données indisponibles</string>
     <string name="panorama_path_unavailable">Orbite indisponible</string>
-    <string name="info_news_panorama">Superpositions sur la caméra et panoramas à 360° avec repères et étiquettes facultatifs ; export vers la galerie, un fichier ou le partage.</string>
-    <string name="info_news_orbit_names">Boussole en direct, trajectoires quotidiennes et vues texturées pour 30 objets célestes.</string>
     <string name="panorama_north">Nord</string>
     <string name="panorama_east">Est</string>
     <string name="panorama_south">Sud</string>

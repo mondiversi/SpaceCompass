@@ -25,15 +25,17 @@ internal const val SPACE_COMPASS_SKY_REFERENCES_DEFAULT = false
 @Composable
 internal fun SpaceCompassSkyReferenceButton(checked: Boolean, onCheckedChange: (Boolean) -> Unit,
     color: Color, background: Color) {
-    Surface(Modifier.size(48.dp), shape = CircleShape, color = background.copy(alpha = .94f),
-        contentColor = color, border = BorderStroke(1.dp, color.copy(alpha = .35f)), shadowElevation = 3.dp) {
-        Box(contentAlignment = Alignment.Center) {
-            IconToggleButton(checked = checked, onCheckedChange = onCheckedChange,
-                modifier = Modifier.fillMaxSize().testTag("toggle-sky-references"),
-                colors = IconButtonDefaults.iconToggleButtonColors(contentColor = color, checkedContentColor = color)) {
-                Icon(painterResource(if (checked) R.drawable.ic_sky_references else R.drawable.ic_sky_references_off),
-                    stringResource(if (checked) R.string.sky_references_hide else R.string.sky_references_show),
-                    Modifier.size(26.dp))
+    SpaceCompassFloatingControlHitRegion {
+        Surface(Modifier.spaceCompassFloatingControlVisual().size(48.dp), shape = CircleShape, color = background.copy(alpha = .94f),
+            contentColor = color, border = BorderStroke(1.dp, color.copy(alpha = .35f)), shadowElevation = 3.dp) {
+            Box(contentAlignment = Alignment.Center) {
+                IconToggleButton(checked = checked, onCheckedChange = onCheckedChange,
+                    modifier = Modifier.fillMaxSize().testTag("toggle-sky-references"),
+                    colors = IconButtonDefaults.iconToggleButtonColors(contentColor = color, checkedContentColor = color)) {
+                    Icon(painterResource(if (checked) R.drawable.ic_sky_references else R.drawable.ic_sky_references_off),
+                        stringResource(if (checked) R.string.sky_references_hide else R.string.sky_references_show),
+                        Modifier.size(26.dp))
+                }
             }
         }
     }

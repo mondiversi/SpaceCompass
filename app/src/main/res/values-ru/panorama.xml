@@ -8,8 +8,6 @@
     <string name="panorama_not_ready">Нужны координаты GPS и хотя бы один выбранный объект.</string>
     <string name="panorama_data_unavailable">Данные недоступны</string>
     <string name="panorama_path_unavailable">Орбита недоступна</string>
-    <string name="info_news_panorama">Наложения на изображение камеры и панорамы 360° с необязательными линиями и подписями; экспорт в галерею, файл или для отправки.</string>
-    <string name="info_news_orbit_names">Компас в реальном времени, суточные траектории и текстурированные виды 30 небесных объектов.</string>
     <string name="panorama_north">Север</string>
     <string name="panorama_east">Восток</string>
     <string name="panorama_south">Юг</string>

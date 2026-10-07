@@ -5,4 +5,6 @@
     <string name="camera_permission">برای نمای زنده، اجازهٔ دسترسی به دوربین را بدهید.</string>
     <string name="camera_unavailable">دوربین در دسترس نیست. دوباره تلاش کنید.</string>
     <string name="camera_view_description">نمای زندهٔ دوربین با موقعیت اجرام آسمانی</string>
+    <string name="camera_zoom_level">بزرگ‌نمایی: %1$s</string>
+    <string name="camera_photo_field_of_view">میدان دید افقی×عمودی: %1$s × %2$s</string>
 </resources>

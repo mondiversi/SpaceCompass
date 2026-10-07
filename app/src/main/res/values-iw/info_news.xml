@@ -1,6 +1,9 @@
 <resources>
     <string name="info_news_title">החידושים האחרונים · %1$s</string>
-    <string name="info_news_units">בחירות, מסננים ומיון נשמרים, עם יחידות ותבניות אזוריות.</string>
-    <string name="info_news_pressure">עשרים שפות, ערכות נושא בהירות/כהות ופריסות מותאמות לטלפונים ולטאבלטים.</string>
-    <string name="info_news_updates">גרסה יציבה ראשונה: יישום ממוטב ועדכוני GitHub חתומים ומאומתים.</string>
+    <string name="info_news_camera_zoom">זום המצלמה מזווית רחבה במיוחד עד למקסימום, במחוות צביטה או בבחירה ישירה של הרמה.</string>
+    <string name="info_news_catalog_search">חיפוש עצמים לפי שם או מזהה קטלוג, בשילוב המסננים.</string>
+    <string name="info_news_capture_metadata">התמונות מציגות כיוון, הטיה ושדה ראייה; התצוגות המקדימות משתמשות ביחידות ובשפה שנבחרו.</string>
+    <string name="info_news_capture_controls">פקדים קומפקטיים יותר וכפתורי תצוגה מקדימה ממורכזים; ייצוא לפי ההגדרות שלך או בתבנית בינלאומית.</string>
+    <string name="info_news_viewer">מתג קומפקטי בין התצוגה הנוכחית לסיבוב, עם אזהרות מצפן ברורות יותר.</string>
+    <string name="info_news_performance">יישום קטן יותר, תצוגות מקדימות אמינות יותר ותרגומים שנבדקו.</string>
 </resources>

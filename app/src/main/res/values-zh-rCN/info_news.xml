@@ -1,6 +1,9 @@
 <resources>
     <string name="info_news_title">最新变化 · %1$s</string>
-    <string name="info_news_units">保存选择、筛选和排序，并支持地区单位和格式。</string>
-    <string name="info_news_pressure">20种语言、明暗主题，以及适应手机和平板的布局。</string>
-    <string name="info_news_updates">首个稳定版本：优化应用，并支持经过签名和验证的GitHub更新。</string>
+    <string name="info_news_camera_zoom">相机变焦覆盖超广角至最大倍率，支持双指缩放和直接选择倍率。</string>
+    <string name="info_news_catalog_search">按名称或目录标识搜索天体，并可结合筛选条件。</string>
+    <string name="info_news_capture_metadata">照片显示方向、倾角和视场；预览使用所选单位和语言。</string>
+    <string name="info_news_capture_controls">控件更紧凑，预览按钮居中排列；可按个人设置或国际格式导出。</string>
+    <string name="info_news_viewer">紧凑开关切换当前视图与旋转模式，指南针警告更清晰。</string>
+    <string name="info_news_performance">应用更轻量，预览更可靠，翻译已检查。</string>
 </resources>

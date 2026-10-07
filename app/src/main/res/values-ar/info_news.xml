@@ -1,6 +1,9 @@
 <resources>
     <string name="info_news_title">آخر المستجدات · %1$s</string>
-    <string name="info_news_units">حفظ الاختيارات والمرشحات والترتيب، مع وحدات وتنسيقات إقليمية.</string>
-    <string name="info_news_pressure">عشرون لغة وسمات فاتحة وداكنة وتخطيطات متكيفة للهواتف والأجهزة اللوحية.</string>
-    <string name="info_news_updates">أول إصدار مستقر: تطبيق محسّن وتحديثات GitHub موقّعة ومتحقق منها.</string>
+    <string name="info_news_camera_zoom">تكبير الكاميرا من الزاوية فائقة الاتساع إلى الحد الأقصى، بإيماءات القرص أو اختيار المستوى مباشرة.</string>
+    <string name="info_news_catalog_search">ابحث عن الأجرام بالاسم أو معرّف الكتالوج، مع استخدام المرشحات.</string>
+    <string name="info_news_capture_metadata">تعرض الصور الاتجاه والميل ومجال الرؤية؛ وتستخدم المعاينات الوحدات واللغة المختارة.</string>
+    <string name="info_news_capture_controls">عناصر تحكم أصغر وأزرار معاينة في المنتصف؛ صدّر بإعداداتك أو بالتنسيق الدولي.</string>
+    <string name="info_news_viewer">مفتاح مدمج بين العرض الحالي والدوران، مع تحذيرات بوصلة أوضح.</string>
+    <string name="info_news_performance">تطبيق أخف ومعاينات أكثر موثوقية وترجمات تمت مراجعتها.</string>
 </resources>

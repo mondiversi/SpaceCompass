@@ -5,4 +5,6 @@
     <string name="camera_permission">Allow camera access to use the live view.</string>
     <string name="camera_unavailable">Camera unavailable. Please try again.</string>
     <string name="camera_view_description">Live camera with celestial positions</string>
+    <string name="camera_zoom_level">Zoom: %1$s</string>
+    <string name="camera_photo_field_of_view">Field of view H×V: %1$s × %2$s</string>
 </resources>

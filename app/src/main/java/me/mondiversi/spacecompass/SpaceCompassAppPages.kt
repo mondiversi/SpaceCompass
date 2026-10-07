@@ -57,9 +57,11 @@ internal fun SpaceCompassSettingsButton() {
     val card = spaceCompassSettingsCardColor()
     val foreground = MaterialTheme.colorScheme.onSurface
     Box {
-        IconButton(onClick = { expanded = true }, modifier = Modifier.testTag("app-settings"),
-            colors = IconButtonDefaults.iconButtonColors(contentColor = foreground)) {
-            Icon(painterResource(R.drawable.ic_menu), stringResource(R.string.pc_settings))
+        SpaceCompassFloatingControlHitRegion {
+            IconButton(onClick = { expanded = true }, modifier = Modifier.testTag("app-settings").spaceCompassFloatingControlVisual(),
+                colors = IconButtonDefaults.iconButtonColors(contentColor = foreground)) {
+                Icon(painterResource(R.drawable.ic_menu), stringResource(R.string.pc_settings))
+            }
         }
         SpaceCompassAdaptiveDropdownMenu(expanded, { expanded = false }, containerColor = card,
             modifier = Modifier.testTag("app-settings-menu"), shape = RoundedCornerShape(16.dp)) {

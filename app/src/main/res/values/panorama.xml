@@ -8,8 +8,6 @@
     <string name="panorama_not_ready">A GPS position and at least one selected object are needed.</string>
     <string name="panorama_data_unavailable">Data unavailable</string>
     <string name="panorama_path_unavailable">Orbit unavailable</string>
-    <string name="info_news_panorama">Camera overlays and 360° panoramas with optional guides and labels; export to the gallery, a file or sharing.</string>
-    <string name="info_news_orbit_names">Live compass, daily paths and textured views for 30 celestial objects.</string>
     <string name="panorama_north">North</string>
     <string name="panorama_east">East</string>
     <string name="panorama_south">South</string>

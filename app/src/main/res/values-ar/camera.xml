@@ -5,4 +5,6 @@
     <string name="camera_permission">اسمح بالوصول إلى الكاميرا لاستخدام العرض المباشر.</string>
     <string name="camera_unavailable">الكاميرا غير متاحة. حاول مجددًا.</string>
     <string name="camera_view_description">عرض مباشر للكاميرا مع مواقع الأجرام السماوية</string>
+    <string name="camera_zoom_level">التكبير: %1$s</string>
+    <string name="camera_photo_field_of_view">مجال الرؤية أفقي×رأسي: %1$s × %2$s</string>
 </resources>

@@ -8,8 +8,6 @@
     <string name="panorama_not_ready">GPS 위치와 하나 이상의 선택된 천체가 필요합니다.</string>
     <string name="panorama_data_unavailable">데이터 없음</string>
     <string name="panorama_path_unavailable">궤도 데이터 없음</string>
-    <string name="info_news_panorama">선택 가능한 안내선과 레이블이 있는 카메라 오버레이 및 360° 파노라마. 갤러리, 파일 또는 공유로 내보냅니다.</string>
-    <string name="info_news_orbit_names">30개 천체의 실시간 나침반, 일일 경로 및 텍스처 보기.</string>
     <string name="panorama_north">북쪽</string>
     <string name="panorama_east">동쪽</string>
     <string name="panorama_south">남쪽</string>

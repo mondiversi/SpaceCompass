@@ -1,6 +1,9 @@
 <resources>
     <string name="info_news_title">हाल के बदलाव · %1$s</string>
-    <string name="info_news_units">सहेजे गए चयन, फ़िल्टर और क्रम, क्षेत्रीय इकाइयों और प्रारूपों के साथ।</string>
-    <string name="info_news_pressure">बीस भाषाएँ, हल्की/गहरी थीम और फ़ोन/टैबलेट के लिए अनुकूल लेआउट।</string>
-    <string name="info_news_updates">पहला स्थिर संस्करण: अनुकूलित ऐप और सत्यापित, हस्ताक्षरित GitHub अपडेट।</string>
+    <string name="info_news_camera_zoom">अल्ट्रा-वाइड से अधिकतम तक कैमरा ज़ूम, पिंच जेस्चर और स्तर के सीधे चयन के साथ।</string>
+    <string name="info_news_catalog_search">फ़िल्टर के साथ नाम या कैटलॉग पहचानकर्ता से खगोलीय पिंड खोजें।</string>
+    <string name="info_news_capture_metadata">फ़ोटो में दिशा, झुकाव और दृश्य क्षेत्र दिखते हैं; पूर्वावलोकन चुनी हुई इकाइयों और भाषा का उपयोग करते हैं।</string>
+    <string name="info_news_capture_controls">अधिक सघन नियंत्रण और केंद्रित पूर्वावलोकन बटन; अपनी सेटिंग या अंतरराष्ट्रीय प्रारूप में निर्यात करें।</string>
+    <string name="info_news_viewer">वर्तमान दृश्य और घूर्णन के बीच सघन स्विच, और अधिक स्पष्ट कंपास चेतावनियाँ।</string>
+    <string name="info_news_performance">हल्का ऐप, अधिक भरोसेमंद पूर्वावलोकन और जाँचे गए अनुवाद।</string>
 </resources>

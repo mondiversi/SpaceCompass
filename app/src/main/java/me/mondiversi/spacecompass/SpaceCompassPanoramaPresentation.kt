@@ -9,7 +9,9 @@ internal data class SpaceCompassPanoramaPresentation(val snapshot: SpaceCompassP
 /** Build both presentations at capture time. Export never queries current GPS, weather or the clock. */
 internal fun spaceCompassPanoramaPresentation(snapshot: SpaceCompassPanoramaSnapshot, resources: Resources,
     formatting: SpaceCompassPanoramaFormatting, zone: TimeZone, place: SpaceCompassPlaceParts?,
-    altitude: Double?, accuracy: Double?, simulated: Boolean, simulatedAltitude: Boolean): SpaceCompassPanoramaPresentation {
+    altitude: Double?, accuracy: Double?, simulated: Boolean, simulatedAltitude: Boolean,
+    cameraPointing: SpaceCompassCameraPhotoPointing? = null,
+    cameraFieldOfView: SpaceCompassCameraPhotoFieldOfView? = null): SpaceCompassPanoramaPresentation {
     val timestamp = formatSpaceCompassPanoramaExportTimestamp(snapshot.timeMs, zone, formatting).let {
         if (simulated) it.replaceFirst("Space Compass", "Space Compass · ${resources.getString(R.string.observer_title)}") else it
     }
@@ -31,7 +33,12 @@ internal fun spaceCompassPanoramaPresentation(snapshot: SpaceCompassPanoramaSnap
             SPACE_COMPASS_SUN_DATA_MARKER), weather, formatting)
     val caption = SpaceCompassPanoramaCaptionData(timestamp,
         place?.let(::formatSpaceCompassEstimatedPlace) ?: resources.getString(R.string.environment_place_unavailable),
-        formatSpaceCompassPanoramaArea(place), rows, formatSpaceCompassPanoramaExportCloudCover(snapshot.weather?.cloudCover, formatting))
+        formatSpaceCompassPanoramaArea(place), rows, formatSpaceCompassPanoramaExportCloudCover(snapshot.weather?.cloudCover, formatting),
+        cameraPointing?.let { formatSpaceCompassCameraPhotoPointing(it,
+            resources.getString(R.string.sun_finder_heading, SPACE_COMPASS_SUN_DATA_MARKER),
+            resources.getString(R.string.sun_finder_tilt, SPACE_COMPASS_SUN_DATA_MARKER), formatting) },
+        cameraFieldOfView?.let { formatSpaceCompassCameraPhotoFieldOfView(it,
+            resources.getString(R.string.camera_photo_field_of_view), formatting) })
     fun angle(value: Double) = formatSpaceCompassNumber(value, 0, formatting.numeric,
         grouping = false, systemLocale = formatting.deviceLocale) + "°"
     val objects = snapshot.objects.map { it.copy(name = resources.getString(it.body.nameResource)) }

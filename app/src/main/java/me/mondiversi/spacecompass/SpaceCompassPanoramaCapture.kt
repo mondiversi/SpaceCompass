@@ -5,6 +5,7 @@ import android.os.SystemClock
 import android.content.Context
 import android.content.res.Configuration
 import android.graphics.Bitmap
+import android.graphics.BitmapFactory
 import androidx.compose.runtime.*
 import androidx.compose.ui.platform.LocalConfiguration
 import androidx.compose.ui.platform.LocalResources
@@ -80,10 +81,19 @@ internal fun rememberSpaceCompassPanoramaAction(timeMs: Long, latitude: Double?,
                     try {
                         // Photograph first; geocoding/rendering must never delay the actual shutter.
                         val photoFrame = if (cameraEnabled) requireNotNull(cameraCapture).capturePhoto() else null
+                        val cameraPointing = photoFrame?.let { spaceCompassCameraPhotoPointing(it.attitude) }
                         val captureTime = photoFrame?.capturedTimeMs ?: capturedTime
                         val referenceTime = if (simulatedTime) timeMs else photoFrame?.capturedTimeMs ?: timeMs
                         val referenceSnapshot = snapshot.copy(timeMs = referenceTime)
                         val result = withContext(Dispatchers.IO) {
+                            val cameraFieldOfView = photoFrame?.let { frame ->
+                                // Read JPEG dimensions only; no bitmap allocation or second exposure.
+                                val dimensions = BitmapFactory.Options().apply { inJustDecodeBounds = true }
+                                BitmapFactory.decodeByteArray(frame.jpeg, 0, frame.jpeg.size, dimensions)
+                                require(dimensions.outWidth > 0 && dimensions.outHeight > 0)
+                                spaceCompassCameraPhotoFieldOfView(spaceCompassCameraPhotoGeometry(frame.lens,
+                                    dimensions.outWidth, dimensions.outHeight, frame.displayRotation).perspective)
+                            }
                             suspend fun placeFor(locale: java.util.Locale): SpaceCompassPlaceParts? {
                                 val key = spaceCompassPlaceKey(latitude, longitude, locale.toLanguageTag()) ?: return null
                                 return (placeCache.get(key, SystemClock.elapsedRealtime()) ?: run {
@@ -98,10 +108,11 @@ internal fun rememberSpaceCompassPanoramaAction(timeMs: Long, latitude: Double?,
                             val selectedPlace = if (selectedFormatting.locale.language == spaceCompassPanoramaExportLocale.language)
                                 place else placeFor(selectedFormatting.locale)
                             val international = spaceCompassPanoramaPresentation(referenceSnapshot, exportResources,
-                                spaceCompassPanoramaInternationalFormatting, zone, place, altitude, gpsAccuracyMeters, simulated, simulatedAltitude)
+                                spaceCompassPanoramaInternationalFormatting, zone, place, altitude, gpsAccuracyMeters, simulated, simulatedAltitude, cameraPointing, cameraFieldOfView)
                             val selected = spaceCompassPanoramaPresentation(referenceSnapshot, resources,
-                                selectedFormatting, zone, selectedPlace, altitude, gpsAccuracyMeters, simulated, simulatedAltitude)
+                                selectedFormatting, zone, selectedPlace, altitude, gpsAccuracyMeters, simulated, simulatedAltitude, cameraPointing, cameraFieldOfView)
                             val resolvedSnapshot = international.snapshot.copy(caption = spaceCompassPanoramaCaptionForPosition(international.caption, position))
+                            val previewSnapshot = selected.snapshot.copy(caption = spaceCompassPanoramaCaptionForPosition(selected.caption, position))
                             val cache = File(application.cacheDir, "panoramas")
                             cache.listFiles()?.filter { it.isDirectory && System.currentTimeMillis() - it.lastModified() > 86_400_000L }
                                 ?.forEach { it.deleteRecursively() }
@@ -117,12 +128,13 @@ internal fun rememberSpaceCompassPanoramaAction(timeMs: Long, latitude: Double?,
                                 SpaceCompassCameraPhotoSnapshot(source, frame.lens, frame.displayRotation, frame.attitude,
                                     international.cameraWarning)
                             }
-                            val bitmap = cameraPhoto?.let { renderSpaceCompassCameraPhoto(application, it, resolvedSnapshot) }
-                                ?: renderSpaceCompassPanorama(resolvedSnapshot, if (memory >= 192) 4096 else 3072, application)
+                            val bitmap = cameraPhoto?.let { renderSpaceCompassCameraPhoto(application, it.copy(warning = selected.cameraWarning), previewSnapshot) }
+                                ?: renderSpaceCompassPanorama(previewSnapshot, if (memory >= 192) 4096 else 3072, application)
                             try { target.outputStream().use { check(bitmap.compress(Bitmap.CompressFormat.JPEG, 95, it)) } }
                             finally { bitmap.recycle() }
                             stampSpaceCompassPanoramaFile(target, captureTime, credits)
-                            SpaceCompassPanoramaPreviewData(target, captureTime, position, resolvedSnapshot, international.caption, credits, cameraPhoto, selected)
+                            SpaceCompassPanoramaPreviewData(target, captureTime, position, resolvedSnapshot, international.caption, credits,
+                                cameraPhoto, selected, fileExportMode = SpaceCompassPanoramaExportMode.SELECTED)
                         }
                         preview = result
                     } catch (cancelled: CancellationException) { file?.delete(); cameraSource?.delete(); throw cancelled

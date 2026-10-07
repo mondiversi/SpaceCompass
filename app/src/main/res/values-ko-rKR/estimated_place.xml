@@ -3,5 +3,4 @@
     <string name="environment_estimated_place">추정 위치: %1$s</string>
     <string name="environment_place_loading">장소 검색 중…</string>
     <string name="environment_place_unavailable">사용할 수 없음</string>
-    <string name="info_news_place">주간/야간 지도와 위치 상세 정보, 위치·날짜·고도·시간대를 개별 설정하는 시나리오.</string>
 </resources>

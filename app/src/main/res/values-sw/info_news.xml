@@ -1,6 +1,9 @@
 <resources>
     <string name="info_news_title">Mambo mapya · %1$s</string>
-    <string name="info_news_units">Chaguo, vichujio na mpangilio huhifadhiwa, pamoja na vipimo na miundo ya kikanda.</string>
-    <string name="info_news_pressure">Lugha ishirini, mandhari angavu/meusi na mpangilio unaofaa simu na kompyuta kibao.</string>
-    <string name="info_news_updates">Toleo thabiti la kwanza: programu imeboreshwa na masasisho ya GitHub yametiwa saini na kuthibitishwa.</string>
+    <string name="info_news_camera_zoom">Zoom ya kamera kutoka pembe pana sana hadi kiwango cha juu, kwa kubana vidole au kuchagua kiwango moja kwa moja.</string>
+    <string name="info_news_catalog_search">Tafuta vitu kwa jina au kitambulisho cha katalogi, pamoja na vichujio.</string>
+    <string name="info_news_capture_metadata">Picha zinaonyesha mwelekeo, mwinamo na eneo la mwonekano; hakikisho hutumia vipimo na lugha ulizochagua.</string>
+    <string name="info_news_capture_controls">Vidhibiti vidogo na vitufe vya hakikisho vilivyowekwa katikati; hamisha kwa mipangilio yako au muundo wa kimataifa.</string>
+    <string name="info_news_viewer">Swichi ndogo kati ya mwonekano wa sasa na mzunguko, pamoja na maonyo ya dira yaliyo wazi zaidi.</string>
+    <string name="info_news_performance">Programu nyepesi, hakikisho la kuaminika zaidi na tafsiri zilizokaguliwa.</string>
 </resources>

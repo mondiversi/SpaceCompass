@@ -8,8 +8,6 @@
     <string name="panorama_not_ready">GPS स्थान और कम से कम एक चुना हुआ पिंड आवश्यक है।</string>
     <string name="panorama_data_unavailable">डेटा उपलब्ध नहीं</string>
     <string name="panorama_path_unavailable">कक्षा उपलब्ध नहीं</string>
-    <string name="info_news_panorama">वैकल्पिक रेखाओं और लेबल के साथ कैमरा ओवरले और 360° पैनोरामा; गैलरी, फ़ाइल या साझा करने के लिए निर्यात।</string>
-    <string name="info_news_orbit_names">30 खगोलीय पिंडों के लिए लाइव कंपास, दैनिक पथ और बनावट वाले दृश्य।</string>
     <string name="panorama_north">उत्तर</string>
     <string name="panorama_east">पूर्व</string>
     <string name="panorama_south">दक्षिण</string>

@@ -5,4 +5,6 @@
     <string name="camera_permission">Autorisez l’accès à la caméra pour la vue en direct.</string>
     <string name="camera_unavailable">Caméra indisponible. Réessayez.</string>
     <string name="camera_view_description">Vue caméra en direct avec les positions célestes</string>
+    <string name="camera_zoom_level">Zoom : %1$s</string>
+    <string name="camera_photo_field_of_view">Champ de vision H×V: %1$s × %2$s</string>
 </resources>

@@ -4,8 +4,6 @@ import androidx.activity.compose.BackHandler
 import androidx.compose.foundation.*
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.shape.RoundedCornerShape
-import androidx.compose.foundation.shape.CircleShape
-import androidx.compose.foundation.selection.selectable
 import androidx.compose.material3.*
 import androidx.compose.runtime.*
 import androidx.compose.runtime.saveable.Saver
@@ -16,14 +14,9 @@ import androidx.compose.ui.text.style.TextDirection
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
-import androidx.compose.ui.geometry.Offset
-import androidx.compose.ui.geometry.Size
-import androidx.compose.ui.graphics.StrokeCap
-import androidx.compose.ui.graphics.drawscope.Stroke
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.platform.testTag
 import androidx.compose.ui.res.stringResource
-import androidx.compose.ui.semantics.Role
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
@@ -217,27 +210,9 @@ internal fun SpaceCompassCelestialViewerScreen(body: SpaceCompassCelestialBody, 
                     stringResource(body.nameResource), resume, Modifier.fillMaxSize())
                 else Text(stringResource(R.string.celestial_view_location_needed), Modifier.padding(16.dp), color = Color.White, fontSize = 13.sp)
                 // Sibling overlays receive their own touches; the model's drag/pinch never intercepts tabs.
-                if (!body.usesDeepSkySymbol && body != SpaceCompassCelestialBody.EARTH_CENTER) Row(Modifier.align(Alignment.TopEnd).padding(4.dp)) {
-                    SpaceCompassCelestialIconControl(!rotating, actual, { rotating = false },
-                        Modifier.testTag("celestial-view-current")) {
-                        SpaceCompassPasswordVisibilityIcon(true, Modifier.size(18.dp), LocalContentColor.current)
-                    }
-                    SpaceCompassCelestialIconControl(rotating, spin, { rotating = true },
-                        Modifier.testTag("celestial-view-rotation")) {
-                        val iconColor = LocalContentColor.current
-                        Canvas(Modifier.size(18.dp)) {
-                            val inset = 2.dp.toPx()
-                            drawArc(iconColor, -45f, 285f, false, Offset(inset, inset),
-                                Size(size.width - 2 * inset, size.height - 2 * inset),
-                                style = Stroke(1.6.dp.toPx(), cap = StrokeCap.Round))
-                            val tip = Offset(size.width - inset, size.height * 0.30f)
-                            drawLine(iconColor, tip - Offset(4.dp.toPx(), 0f), tip,
-                                1.6.dp.toPx(), StrokeCap.Round)
-                            drawLine(iconColor, tip + Offset(0f, 4.dp.toPx()), tip,
-                                1.6.dp.toPx(), StrokeCap.Round)
-                        }
-                    }
-                }
+                if (!body.usesDeepSkySymbol && body != SpaceCompassCelestialBody.EARTH_CENTER)
+                    SpaceCompassCelestialViewModeSwitch(rotating, actual, spin, { rotating = it },
+                        Modifier.align(Alignment.TopEnd).padding(4.dp))
                 Text(note, color = Color(0xffd7dae0), fontSize = 10.sp, lineHeight = 12.sp,
                     modifier = Modifier.align(Alignment.BottomCenter).padding(6.dp)
                         .background(Color.Black.copy(alpha = 0.72f), RoundedCornerShape(8.dp))

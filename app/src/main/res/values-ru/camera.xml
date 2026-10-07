@@ -5,4 +5,6 @@
     <string name="camera_permission">Разрешите доступ к камере для просмотра в реальном времени.</string>
     <string name="camera_unavailable">Камера недоступна. Попробуйте ещё раз.</string>
     <string name="camera_view_description">Вид с камеры в реальном времени с положениями небесных тел</string>
+    <string name="camera_zoom_level">Масштаб: %1$s</string>
+    <string name="camera_photo_field_of_view">Угол обзора Г×В: %1$s × %2$s</string>
 </resources>

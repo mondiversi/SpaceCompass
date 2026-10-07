@@ -1,5 +1,28 @@
 # Changelog
 
+## 1.1.0 — camera zoom, catalog search and lighter captures
+
+- Add consistent camera zoom steps, ultrawide lens selection where available,
+  pinch gestures and direct level selection alongside +/−.
+- Add live object search by localized name or catalog identifier, combined with
+  existing type/visibility filters and numeric sorting.
+- Include exposure-time direction, inclination and horizontal/vertical field of
+  view in camera-photo captions. Keep user-formatted previews separate from the
+  persisted international/current-settings export choice.
+- Compact floating controls and object-view mode switch, centre both capture
+  action columns, and keep capture/zoom above a selected point panel in portrait.
+- Match calibration warnings to theme-aware Scenario orange; keep reduced
+  precision neutral.
+- Separate camera UI and lifecycle controller; memoize camera choices and
+  release unfinished bitmap decodes on cancellation or errors.
+- Save 4,450,604 bundled asset bytes: cap Pluto at the existing 2048-pixel GPU
+  texture limit and encode the fictional texture as pixel-identical lossless WebP.
+- Update six concise in-app news items in all twenty languages; retain complete
+  localization, credits, offline calculations and saved settings.
+
+Android/display version: 1.1.0; version code: 17. Same distribution certificate.
+
+
 ## 1.0.1 — landscape island layout fix
 
 - Pack natural-height settings and information islands into the shorter landscape

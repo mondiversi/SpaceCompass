@@ -8,8 +8,6 @@
     <string name="panorama_not_ready">موقعیت GPS و دست‌کم یک جرم انتخاب‌شده لازم است.</string>
     <string name="panorama_data_unavailable">داده‌ها در دسترس نیست</string>
     <string name="panorama_path_unavailable">مدار در دسترس نیست</string>
-    <string name="info_news_panorama">لایه‌های دوربین و پانوراماهای ۳۶۰ درجه با خطوط و برچسب‌های اختیاری؛ خروجی در گالری، فایل یا اشتراک‌گذاری.</string>
-    <string name="info_news_orbit_names">قطب‌نمای زنده، مسیرهای روزانه و نماهای بافت‌دار برای ۳۰ جرم آسمانی.</string>
     <string name="panorama_north">شمال</string>
     <string name="panorama_east">شرق</string>
     <string name="panorama_south">جنوب</string>

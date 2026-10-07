@@ -22,15 +22,17 @@ import androidx.compose.ui.unit.dp
 @Composable
 internal fun SpaceCompassCameraToggleButton(checked: Boolean, onCheckedChange: (Boolean) -> Unit,
     color: Color, background: Color) {
-    Surface(Modifier.size(48.dp), shape = CircleShape, color = background.copy(alpha = .94f),
-        contentColor = color, border = BorderStroke(1.dp, color.copy(alpha = .35f)), shadowElevation = 3.dp) {
-        Box(contentAlignment = Alignment.Center) {
-            IconToggleButton(checked = checked, onCheckedChange = onCheckedChange,
-                modifier = Modifier.fillMaxSize().testTag("toggle-camera"),
-                colors = IconButtonDefaults.iconToggleButtonColors(contentColor = color, checkedContentColor = color)) {
-                Icon(painterResource(if (checked) R.drawable.ic_camera else R.drawable.ic_camera_off),
-                    stringResource(if (checked) R.string.camera_disable else R.string.camera_enable),
-                    Modifier.size(26.dp))
+    SpaceCompassFloatingControlHitRegion {
+        Surface(Modifier.spaceCompassFloatingControlVisual().size(48.dp), shape = CircleShape, color = background.copy(alpha = .94f),
+            contentColor = color, border = BorderStroke(1.dp, color.copy(alpha = .35f)), shadowElevation = 3.dp) {
+            Box(contentAlignment = Alignment.Center) {
+                IconToggleButton(checked = checked, onCheckedChange = onCheckedChange,
+                    modifier = Modifier.fillMaxSize().testTag("toggle-camera"),
+                    colors = IconButtonDefaults.iconToggleButtonColors(contentColor = color, checkedContentColor = color)) {
+                    Icon(painterResource(if (checked) R.drawable.ic_camera else R.drawable.ic_camera_off),
+                        stringResource(if (checked) R.string.camera_disable else R.string.camera_enable),
+                        Modifier.size(26.dp))
+                }
             }
         }
     }

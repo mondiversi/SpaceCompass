@@ -5,4 +5,6 @@
     <string name="camera_permission">Zezwól na dostęp do kamery, aby używać podglądu na żywo.</string>
     <string name="camera_unavailable">Kamera niedostępna. Spróbuj ponownie.</string>
     <string name="camera_view_description">Podgląd kamery na żywo z pozycjami ciał niebieskich</string>
+    <string name="camera_zoom_level">Powiększenie: %1$s</string>
+    <string name="camera_photo_field_of_view">Pole widzenia H×V: %1$s × %2$s</string>
 </resources>

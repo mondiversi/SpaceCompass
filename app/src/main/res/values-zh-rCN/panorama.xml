@@ -8,8 +8,6 @@
     <string name="panorama_not_ready">需要GPS位置和至少一个已选天体。</string>
     <string name="panorama_data_unavailable">数据不可用</string>
     <string name="panorama_path_unavailable">轨道不可用</string>
-    <string name="info_news_panorama">相机叠加层和360°全景，可切换参考线和标签，并导出到相册、文件或分享。</string>
-    <string name="info_news_orbit_names">支持30个天体的实时指南针、每日轨迹和纹理视图。</string>
     <string name="panorama_north">北</string>
     <string name="panorama_east">东</string>
     <string name="panorama_south">南</string>

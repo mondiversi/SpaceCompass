@@ -5,4 +5,6 @@
     <string name="camera_permission">लाइव दृश्य के लिए कैमरे की अनुमति दें।</string>
     <string name="camera_unavailable">कैमरा उपलब्ध नहीं है। फिर से कोशिश करें।</string>
     <string name="camera_view_description">खगोलीय पिंडों की स्थिति के साथ लाइव कैमरा दृश्य</string>
+    <string name="camera_zoom_level">ज़ूम: %1$s</string>
+    <string name="camera_photo_field_of_view">दृश्य क्षेत्र क्षैतिज×ऊर्ध्व: %1$s × %2$s</string>
 </resources>

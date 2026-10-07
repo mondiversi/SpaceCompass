@@ -205,6 +205,10 @@ internal fun SpaceCompassSunFinderContent(
     }
     var cameraPerspective by remember { mutableStateOf<SpaceCompassPerspective?>(null) }
     var cameraCapture by remember { mutableStateOf<SpaceCompassCameraCapture?>(null) }
+    var cameraZoomRequest by remember { mutableFloatStateOf(1f) }
+    var cameraZoomActual by remember { mutableFloatStateOf(1f) }
+    var cameraZoomRange by remember { mutableStateOf<SpaceCompassCameraZoomRange?>(null) }
+    LaunchedEffect(cameraEnabled) { if (!cameraEnabled) { cameraZoomRequest = 1f; cameraZoomActual = 1f } }
     val cameraAttitudes = remember { SpaceCompassCameraAttitudeHistory() }
     SideEffect { readings.cameraAttitude?.let(cameraAttitudes::add) }
     val cameraPermissionMessage = stringResource(R.string.camera_permission)
@@ -371,19 +375,14 @@ internal fun SpaceCompassSunFinderContent(
     })
     var sceneCoordinates by remember { mutableStateOf<LayoutCoordinates?>(null) }
     var pointingCoordinates by remember { mutableStateOf<LayoutCoordinates?>(null) }
-    val skyActionsWidth = 174.dp
+    val skyActionsWidth = spaceCompassFloatingControlSize * 3 + 30.dp
     val selectorSize = with(LocalDensity.current) { skyActionsWidth.toPx().toDouble() }
-    val selectorHeight = with(LocalDensity.current) { 60.dp.toPx().toDouble() }
+    val selectorHeight = with(LocalDensity.current) { (spaceCompassFloatingControlSize + 12.dp).toPx().toDouble() }
     val selectorRtl = androidx.compose.ui.platform.LocalLayoutDirection.current == androidx.compose.ui.unit.LayoutDirection.Rtl
-    val bottomActionHeight = 56.dp
-    val captureSize = with(LocalDensity.current) { bottomActionHeight.toPx().toDouble() }
     val timeBadgeExclusions = pointingCoordinates?.size?.let { bounds ->
         val width = bounds.width.toDouble()
-        val height = bounds.height.toDouble()
-        listOf(
-            SpaceCompassSunSceneFrame(if (selectorRtl) 0.0 else width - selectorSize, 0.0, selectorSize, selectorHeight),
-            SpaceCompassSunSceneFrame(if (selectorRtl) 0.0 else width - captureSize,
-                height - captureSize, captureSize, captureSize))
+        listOf(SpaceCompassSunSceneFrame(if (selectorRtl) 0.0 else width - selectorSize,
+            0.0, selectorSize, selectorHeight))
     }.orEmpty()
     var groundFrame by remember { mutableStateOf<SpaceCompassSunSceneFrame?>(null) }
     fun refreshGroundFrame() {
@@ -442,12 +441,14 @@ internal fun SpaceCompassSunFinderContent(
 
     }
     val pointing: @Composable (Boolean) -> Unit = { landscape ->
-        Box(Modifier.fillMaxSize()) {
+        Box(Modifier.fillMaxSize().spaceCompassCameraPinchZoom(cameraZoomRange, cameraZoomRequest,
+            cameraEnabled && !panorama.busy, cameraCapture != null, { cameraZoomRequest = it })) {
             SpaceCompassSunPointingViewport(target, pointingOrientation.takeIf { !cameraEnabled || cameraPerspective != null },
                 Modifier.fillMaxSize().then(pointingPlacement), skyDescription, dailyPathUiState, rising,
                 readings.compassUsable, dailyPath.takeIf { hasActiveBody }, primaryText, secondaryText, backgroundColor, body, timeMs,
                 timeBadgeExclusions, showSelectedPanel = !landscape, onVisualize = { showViewer = true },
                 compassWarning = messageText.takeIf { message == R.string.sun_finder_compass_accuracy || message == R.string.pc_compass_approximate },
+                compassCalibrationRequired = message == R.string.sun_finder_compass_accuracy,
                 compassAccurate = readings.compassReliable,
                 statusMessage = remoteMessage ?: messageText.takeUnless {
                     message == R.string.sun_finder_compass_accuracy || message == R.string.pc_compass_approximate },
@@ -460,7 +461,16 @@ internal fun SpaceCompassSunFinderContent(
                 onSimulation = { navigate("observer") }, perspective = cameraPerspective.takeIf { cameraEnabled }, topActionsWidth = skyActionsWidth,
                 observerLatitude = fix?.latitude, showSkyReferences = showSkyReferences,
                 observerAltitude = fix?.takeIf { it.hasAltitude() }?.altitude ?: 0.0,
-                bottomActionsHeight = bottomActionHeight)
+                bottomActions = { modifier ->
+                    Row(modifier.padding(4.dp).testTag("celestial-capture-controls"),
+                        verticalAlignment = Alignment.CenterVertically,
+                        horizontalArrangement = Arrangement.spacedBy(8.dp)) {
+                        if (cameraEnabled) SpaceCompassCameraZoomControls(cameraZoomRange, cameraZoomRequest, cameraZoomActual,
+                            !panorama.busy && cameraCapture != null, { cameraZoomRequest = it }, primaryText, backgroundColor)
+                        SpaceCompassCaptureButton(panorama.capture, !panorama.busy && (!cameraEnabled || cameraCapture != null),
+                            primaryText, backgroundColor)
+                    }
+                })
             Row(Modifier.align(Alignment.TopEnd).padding(4.dp),
                 verticalAlignment = Alignment.CenterVertically, horizontalArrangement = Arrangement.spacedBy(8.dp)) {
                 SpaceCompassCameraToggleButton(cameraEnabled, { enabled ->
@@ -478,8 +488,6 @@ internal fun SpaceCompassSunFinderContent(
                     if (onSelectionChange != null) onSelectionChange(selection.toggle(it)) else onBodyChange(it)
                 }
             }
-            SpaceCompassCaptureButton(panorama.capture, !panorama.busy && (!cameraEnabled || cameraCapture != null),
-                primaryText, backgroundColor, Modifier.align(Alignment.BottomEnd).padding(4.dp))
         }
     }
     BoxWithConstraints(Modifier.fillMaxSize().testTag("sun-finder-content").onGloballyPositioned {
@@ -495,7 +503,11 @@ internal fun SpaceCompassSunFinderContent(
                     onCaptureReady = { cameraCapture = it }, attitudeAt = { stamp, rotation -> cameraAttitudes.at(stamp, rotation)?.let { it.copy(usable = it.usable && readings.compassUsable) } }, onError = {
                     cameraEnabled = false
                     showSpaceCompassBottomMessage(cameraContext, cameraUnavailableMessage)
-                })
+                }, zoom = cameraZoomRequest, onZoomRange = { range ->
+                    cameraZoomRange = range
+                    if (range != null) cameraZoomRequest = range.snap(cameraZoomRequest)
+                },
+                    onZoomActual = { cameraZoomActual = it })
             }
             SpaceCompassCameraHorizon(orientation, groundFrame, cameraPerspective, Modifier.fillMaxSize())
         } else {

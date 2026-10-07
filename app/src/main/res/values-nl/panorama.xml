@@ -8,8 +8,6 @@
     <string name="panorama_not_ready">Een GPS-positie en minstens één geselecteerd object zijn nodig.</string>
     <string name="panorama_data_unavailable">Gegevens niet beschikbaar</string>
     <string name="panorama_path_unavailable">Baan niet beschikbaar</string>
-    <string name="info_news_panorama">Camera-overlays en 360°-panorama’s met optionele hulplijnen en labels; export naar de galerij, een bestand of om te delen.</string>
-    <string name="info_news_orbit_names">Livekompas, dagelijkse banen en weergaven met texturen voor 30 hemelobjecten.</string>
     <string name="panorama_north">Noord</string>
     <string name="panorama_east">Oost</string>
     <string name="panorama_south">Zuid</string>

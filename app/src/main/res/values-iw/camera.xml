@@ -5,4 +5,6 @@
     <string name="camera_permission">יש לאפשר גישה למצלמה כדי להשתמש בתצוגה החיה.</string>
     <string name="camera_unavailable">המצלמה אינה זמינה. נסו שוב.</string>
     <string name="camera_view_description">תצוגת מצלמה חיה עם מיקומי גרמי השמיים</string>
+    <string name="camera_zoom_level">זום: %1$s</string>
+    <string name="camera_photo_field_of_view">שדה ראייה אופקי×אנכי: %1$s × %2$s</string>
 </resources>

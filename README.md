@@ -9,8 +9,8 @@ application originally extracted from [UVIR](https://github.com/mondiversi/Uvir)
 
 ## Download and install
 
-Download **space-compass-1.0.1.apk** from the
-[Space Compass 1.0.1 release](https://github.com/mondiversi/SpaceCompass/releases/tag/v1.0.1).
+Download **space-compass-1.1.0.apk** from the
+[Space Compass 1.1.0 release](https://github.com/mondiversi/SpaceCompass/releases/tag/v1.1.0).
 Android 8.0 or newer is required. Open the APK and follow Android's installation
 prompts; allow installation for your browser or file manager if requested.
 
@@ -23,17 +23,21 @@ one manual APK update to acquire this feature.
 The release includes `SHA256SUMS.txt` and a signed update index. GitHub's source
 ZIP/TAR archives and Actions debug artifacts are separate from the signed APK.
 See [distribution and signing](docs/GITHUB_RELEASES.md) and
-[the 1.0 release audit](docs/RELEASE_1_0.md).
+[the 1.1.0 release audit](docs/RELEASE_1_1.md).
 
 ## Features
 
 - Live azimuth/altitude, compass guidance, named daily paths and satellite passes.
 - Thirty ordinary catalog objects: Sun, Moon, planets, natural/artificial satellites,
   comets, Voyager spacecraft, nearby stars, compact objects and an exoplanet.
+- Live search by localized name or catalog identifier, combined with type/visibility filters.
 - Type/visibility filters and numeric sorting by distance, mass, diameter, pressure,
   gravity and temperature. Missing properties remain unavailable and sort last.
 - Selections, active target, filters, sorting, units and interface settings persist.
-- Rear-camera overlays with celestial markers and paths, plus full 360° sky panoramas.
+- Rear-camera overlays with celestial markers and paths, consistent ultrawide/zoom
+  steps, pinch and direct level selection; full 360° sky panoramas.
+- Exposure-time direction, inclination and field of view in camera photos; previews
+  follow selected language/units independently of the export profile.
 - Optional celestial reference curves and pole/zenith/geocentre crosses. Guide and
   camera modes start disabled; Sun and Moon are the initial checked objects.
 - Manual export to the gallery, a document or sharing; selected-language/unit and
@@ -48,7 +52,7 @@ See [distribution and signing](docs/GITHUB_RELEASES.md) and
 - Signed startup/manual GitHub updates with package, certificate, size and checksum verification.
 
 The application ID is `me.mondiversi.spacecompass`. The current stable version is
-**1.0.1**, with Android/update identity `1.0.1` and version code **16**.
+**1.1.0**, with Android/update identity `1.1.0` and version code **17**.
 This preserves the three-part update protocol used by existing preview installations.
 The app has its own preferences and caches and can coexist with UVIR.
 
@@ -100,7 +104,7 @@ before commercial distribution, including the free Open-Meteo endpoint.
 
 - [Architecture](ARCHITECTURE.md), [presentation](docs/APP_PRESENTATION.md) and [verification](docs/VERIFICATION.md).
 - [Celestial models](docs/CELESTIAL_VIEWER.md), [deep-sky data](docs/DEEP_SKY.md) and [reference data](docs/REFERENCE_DATA_AUDIT.md).
-- [Panorama/export](docs/PANORAMA_CAPTURE.md), [camera](docs/CAMERA_VIEW.md) and [curved reference labels](docs/CURVED_REFERENCE_LABELS.md).
+- [Panorama/export](docs/PANORAMA_CAPTURE.md), [camera](docs/CAMERA_VIEW.md), [catalog search](docs/CATALOG_SEARCH.md) and [curved reference labels](docs/CURVED_REFERENCE_LABELS.md).
 - [Assets and third-party credits](ASSET_CREDITS.md).
 
 Copyright © 2026 Mondiversi. Application code is licensed under [GPL-3.0](LICENSE).

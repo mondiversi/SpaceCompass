@@ -8,8 +8,6 @@
     <string name="panorama_not_ready">Servono una posizione GPS e almeno un oggetto selezionato.</string>
     <string name="panorama_data_unavailable">Dati non disponibili</string>
     <string name="panorama_path_unavailable">Orbita non disponibile</string>
-    <string name="info_news_panorama">Orbite sulla fotocamera e panoramiche a 360° con riferimenti ed etichette opzionali; esportazione in galleria, su file o tramite condivisione.</string>
-    <string name="info_news_orbit_names">Bussola in tempo reale, percorsi giornalieri e viste con texture per 30 oggetti celesti.</string>
     <string name="panorama_north">Nord</string>
     <string name="panorama_east">Est</string>
     <string name="panorama_south">Sud</string>

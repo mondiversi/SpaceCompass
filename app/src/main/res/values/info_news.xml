@@ -1,6 +1,9 @@
 <resources>
     <string name="info_news_title">Latest news · %1$s</string>
-    <string name="info_news_units">Saved selections, filters and sorting, with regional units and formats.</string>
-    <string name="info_news_pressure">Twenty languages, light/dark themes and adaptive phone/tablet layouts.</string>
-    <string name="info_news_updates">First stable release: optimized app and verified, signed GitHub updates.</string>
+    <string name="info_news_camera_zoom">Camera zoom from ultrawide to maximum, with pinch gestures and direct level selection.</string>
+    <string name="info_news_catalog_search">Search objects by name or catalog identifier, together with filters.</string>
+    <string name="info_news_capture_metadata">Photos show direction, inclination and field of view; previews use your chosen units and language.</string>
+    <string name="info_news_capture_controls">More compact controls and centered preview actions; export with your settings or international formatting.</string>
+    <string name="info_news_viewer">Compact switch for current view and rotation, with clearer compass warnings.</string>
+    <string name="info_news_performance">Lighter app, more reliable previews and checked translations.</string>
 </resources>

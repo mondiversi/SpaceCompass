@@ -34,8 +34,8 @@ internal fun SpaceCompassInfoPage(modifier: Modifier) {
         item(key = "news") {
             SpaceCompassSettingsIsland(stringResource(R.string.info_news_title, BuildConfig.DISPLAY_VERSION),
                 iconKey = "whats_new") {
-                listOf(R.string.info_news_panorama, R.string.info_news_orbit_names, R.string.info_news_place,
-                    R.string.info_news_units, R.string.info_news_pressure, R.string.info_news_updates).forEach { change ->
+                listOf(R.string.info_news_camera_zoom, R.string.info_news_catalog_search, R.string.info_news_capture_metadata,
+                    R.string.info_news_capture_controls, R.string.info_news_viewer, R.string.info_news_performance).forEach { change ->
                     Text("• ${stringResource(change)}", fontSize = 13.sp, lineHeight = 19.sp,
                         color = MaterialTheme.colorScheme.onSurface.copy(alpha = .75f))
                 }

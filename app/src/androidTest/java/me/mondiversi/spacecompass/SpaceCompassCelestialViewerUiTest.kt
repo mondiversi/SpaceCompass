@@ -45,13 +45,16 @@ class SpaceCompassCelestialViewerUiTest {
             }
         }
     }
-    @Test fun twoTabsAndFactsRemainAvailableWithoutGpsInBothThemes() {
+    @Test fun roundedModeSwitchAndFactsRemainAvailableWithoutGpsInBothThemes() {
         show()
         for (night in listOf(false,true)) {
             compose.runOnIdle { dark.value = night }
+            compose.onNodeWithTag("celestial-view-mode-switch").assertIsDisplayed()
             compose.onNodeWithTag("celestial-view-current").assertIsSelected().assertIsDisplayed()
+            compose.onNodeWithTag("celestial-view-rotation").assertIsNotSelected()
             compose.onNodeWithTag("celestial-view-information").assertIsDisplayed()
             compose.onNodeWithTag("celestial-view-rotation").performClick().assertIsSelected()
+            compose.onNodeWithTag("celestial-view-current").assertIsNotSelected()
             compose.onNodeWithTag("celestial-model-viewport").performTouchInput { swipeLeft() }
             compose.onNodeWithTag("celestial-model-viewport").performTouchInput { doubleClick() }
             compose.onNodeWithTag("celestial-view-current").performClick()

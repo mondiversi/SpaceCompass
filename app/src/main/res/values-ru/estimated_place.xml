@@ -3,5 +3,4 @@
     <string name="environment_estimated_place">Примерное местоположение: %1$s</string>
     <string name="environment_place_loading">Поиск населённого пункта…</string>
     <string name="environment_place_unavailable">Недоступно</string>
-    <string name="info_news_place">Сведения о положении с дневными/ночными картами и сценарии с независимыми положением, датой, высотой и часовым поясом.</string>
 </resources>

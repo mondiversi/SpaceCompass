@@ -8,8 +8,6 @@
     <string name="panorama_not_ready">يلزم موقع GPS وجسم واحد محدد على الأقل.</string>
     <string name="panorama_data_unavailable">البيانات غير متاحة</string>
     <string name="panorama_path_unavailable">المدار غير متاح</string>
-    <string name="info_news_panorama">تراكبات الكاميرا وبانوراما 360° مع خطوط وتسميات اختيارية؛ تصدير إلى المعرض أو ملف أو المشاركة.</string>
-    <string name="info_news_orbit_names">بوصلة مباشرة ومسارات يومية وعروض بخامات لـ30 جرمًا سماويًا.</string>
     <string name="panorama_north">الشمال</string>
     <string name="panorama_east">الشرق</string>
     <string name="panorama_south">الجنوب</string>

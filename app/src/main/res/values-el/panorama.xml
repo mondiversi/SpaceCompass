@@ -8,8 +8,6 @@
     <string name="panorama_not_ready">Απαιτούνται θέση GPS και τουλάχιστον ένα επιλεγμένο αντικείμενο.</string>
     <string name="panorama_data_unavailable">Μη διαθέσιμα δεδομένα</string>
     <string name="panorama_path_unavailable">Μη διαθέσιμη τροχιά</string>
-    <string name="info_news_panorama">Επικαλύψεις κάμερας και πανοράματα 360° με προαιρετικές γραμμές και ετικέτες· εξαγωγή στη συλλογή, σε αρχείο ή για κοινοποίηση.</string>
-    <string name="info_news_orbit_names">Ζωντανή πυξίδα, ημερήσιες τροχιές και προβολές με υφές για 30 ουράνια αντικείμενα.</string>
     <string name="panorama_north">Βορράς</string>
     <string name="panorama_east">Ανατολή</string>
     <string name="panorama_south">Νότος</string>

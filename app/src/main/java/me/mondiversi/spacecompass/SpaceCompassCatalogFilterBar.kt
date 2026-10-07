@@ -25,7 +25,7 @@ import androidx.compose.ui.unit.sp
 @Composable
 internal fun SpaceCompassCatalogFilterBar(types: Set<SpaceCompassCatalogType>, visibility: SpaceCompassCatalogVisibility, visibleCount: Int,
     onType: (SpaceCompassCatalogType) -> Unit, onAllTypes: () -> Unit,
-    onVisibility: (SpaceCompassCatalogVisibility) -> Unit, onReset: () -> Unit) {
+    onVisibility: (SpaceCompassCatalogVisibility) -> Unit, onReset: () -> Unit, searchActive: Boolean = false) {
     val all = stringResource(R.string.catalog_all)
     val resultCount = formatSpaceCompassNumber(visibleCount.toDouble(), 0,
         LocalSpaceCompassNumericFormat.current, grouping = false)
@@ -47,7 +47,7 @@ internal fun SpaceCompassCatalogFilterBar(types: Set<SpaceCompassCatalogType>, v
                     onVisibility(SpaceCompassCatalogVisibility.valueOf(key))
                 }
             }
-            TextButton(onClick = onReset, enabled = types.isNotEmpty() || visibility != SpaceCompassCatalogVisibility.ALL,
+            TextButton(onClick = onReset, enabled = types.isNotEmpty() || visibility != SpaceCompassCatalogVisibility.ALL || searchActive,
                 modifier = Modifier.align(Alignment.End).testTag("catalog-filter-reset")) {
                 Text(stringResource(R.string.catalog_reset_filters))
             }

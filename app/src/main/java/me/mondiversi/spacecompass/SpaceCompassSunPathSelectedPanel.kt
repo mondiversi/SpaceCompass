@@ -26,7 +26,7 @@ import androidx.compose.ui.unit.sp
 import java.time.Instant
 import java.time.ZoneId
 
-/** Same selection and controls, placed over the sky in portrait and above the data in landscape. */
+/** Same selection and controls, below the capture row in portrait and above the data in landscape. */
 @Composable
 internal fun SpaceCompassSunPathSelectedPanel(
     path: SpaceCompassSunDailyPath?, state: SpaceCompassSunDailyPathUiState,

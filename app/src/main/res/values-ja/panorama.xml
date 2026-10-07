@@ -8,8 +8,6 @@
     <string name="panorama_not_ready">GPS位置情報と、少なくとも1つの選択された天体が必要です。</string>
     <string name="panorama_data_unavailable">データなし</string>
     <string name="panorama_path_unavailable">軌道データなし</string>
-    <string name="info_news_panorama">カメラへの重ね合わせと360°パノラマ。補助線やラベルを切り替え、ギャラリー、ファイル、共有へ書き出せます。</string>
-    <string name="info_news_orbit_names">30個の天体に対応したライブコンパス、日周軌跡、テクスチャ付き表示。</string>
     <string name="panorama_north">北</string>
     <string name="panorama_east">東</string>
     <string name="panorama_south">南</string>

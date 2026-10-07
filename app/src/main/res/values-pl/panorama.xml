@@ -8,8 +8,6 @@
     <string name="panorama_not_ready">Wymagana jest pozycja GPS i co najmniej jeden wybrany obiekt.</string>
     <string name="panorama_data_unavailable">Dane niedostępne</string>
     <string name="panorama_path_unavailable">Orbita niedostępna</string>
-    <string name="info_news_panorama">Nakładki na obraz aparatu i panoramy 360° z opcjonalnymi liniami i etykietami; eksport do galerii, pliku lub udostępnianie.</string>
-    <string name="info_news_orbit_names">Kompas na żywo, dzienne trajektorie i widoki z teksturami dla 30 obiektów niebieskich.</string>
     <string name="panorama_north">Północ</string>
     <string name="panorama_east">Wschód</string>
     <string name="panorama_south">Południe</string>

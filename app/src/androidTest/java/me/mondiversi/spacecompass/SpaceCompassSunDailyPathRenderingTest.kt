@@ -191,7 +191,7 @@ class SpaceCompassSunDailyPathRenderingTest {
         }
     }
 
-    @Test fun landscapeMovesTheSelectionAboveDataAndKeepsBodyValuesInTheirOwnIsland() {
+    @Test fun portraitSelectionStaysBelowCaptureAndLandscapeKeepsTheSelectionAboveData() {
         val wide = mutableStateOf(false)
         val dark = mutableStateOf(false)
         val height = mutableStateOf(380.dp)
@@ -216,7 +216,11 @@ class SpaceCompassSunDailyPathRenderingTest {
         compose.waitUntil(5_000) { compose.onAllNodesWithTag("sun-path-open").fetchSemanticsNodes().isNotEmpty() }
         compose.onNodeWithTag("sun-path-open").performClick()
         compose.onNodeWithTag("sun-path-point-0").performScrollTo().performClick()
-        compose.onNodeWithTag("sun-path-selected").assert(hasAnyAncestor(hasTestTag("sun-finder-sky")))
+        val portraitSelection = compose.onNodeWithTag("sun-path-selected")
+            .assert(hasAnyAncestor(hasTestTag("sun-finder-sky"))).fetchSemanticsNode().boundsInRoot
+        val portraitCapture = compose.onNodeWithTag("capture-panorama").assertIsDisplayed()
+            .fetchSemanticsNode().boundsInRoot
+        assertTrue("Portrait capture stays above the point island", portraitCapture.bottom <= portraitSelection.top)
         compose.onNodeWithText(pointCaption(1, "00:00")).assertIsDisplayed()
 
         for (night in listOf(false, true)) for (panelHeight in listOf(380.dp, 700.dp)) {
@@ -226,6 +230,11 @@ class SpaceCompassSunDailyPathRenderingTest {
                 .assert(!hasAnyAncestor(hasTestTag("sun-finder-sky"))).fetchSemanticsNode().boundsInRoot
             val data = compose.onNodeWithTag("sun-finder-details").fetchSemanticsNode().boundsInRoot
             assertTrue("Selection must be above the azimuth/altitude data", selection.bottom <= data.top)
+            val capture = compose.onNodeWithTag("capture-panorama").assertIsDisplayed()
+                .assert(hasAnyAncestor(hasTestTag("sun-finder-sky"))).fetchSemanticsNode().boundsInRoot
+            val sky = compose.onNodeWithTag("sun-finder-sky").fetchSemanticsNode().boundsInRoot
+            assertTrue("Landscape capture stays in the first sky column", capture.left >= sky.left && capture.right <= sky.right)
+            assertTrue("Landscape capture stays near the bottom", sky.bottom - capture.bottom <= 24f)
             for (tag in listOf("celestial-distance", "celestial-speed")) {
                 val bounds = compose.onNodeWithTag(tag).assertIsDisplayed()
                     .assert(hasAnyAncestor(hasTestTag("sun-finder-body-data"))).fetchSemanticsNode().boundsInRoot

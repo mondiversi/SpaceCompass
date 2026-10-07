@@ -116,5 +116,26 @@ simulated; real horizontal accuracy remains intact. AndroidX ExifInterface 1.4.2
 capture timestamps with explicit UTC offsets on all supported versions. Caption time
 and location-disclosure policy remain frozen independently of these EXIF timestamps.
 Composition-observed configuration/resources update preference examples and callbacks
-when locale/theme changes. Display version 1.0 and protocol version 1.0.0 are intentionally
-separate; code 15, signed metadata, APK name and tag share the full protocol identity.
+when locale/theme changes. The initial 1.0 release used display version 1.0 and protocol version 1.0.0.
+Current release 1.1.0 uses the same display/protocol version with code 17; signed
+metadata, APK name and tag share that identity.
+
+
+## Camera and capture responsibilities
+
+`SpaceCompassCameraPreview` only binds Compose state and the native preview view.
+`SpaceCompassCameraPreviewController` owns the camera worker, session, surfaces,
+exposure-matched JPEG metadata and bounded close/open handoffs. Device choices are
+memoized independently of orientation updates. Zoom policy and discovery remain
+separate from camera IO and projection/field-of-view calculations remain pure.
+Preview decoding owns its bitmap across the IO cancellation boundary and transfers
+it to the UI only after a successful return; unfinished images are recycled.
+
+Capture previews always use the captured user presentation. Export prepares a
+separate variant in the persisted selected/international profile. Location
+privacy, label visibility, centre choice and exposure timestamps stay frozen in
+capture snapshots. A change to export format never re-renders the visible preview.
+
+Pluto is distributed at the existing 2048 x 1024 runtime texture limit, avoiding
+an oversized decode and resize. The fictional texture uses pixel-identical
+lossless WebP at its original dimensions. Credits and longitude conventions remain.

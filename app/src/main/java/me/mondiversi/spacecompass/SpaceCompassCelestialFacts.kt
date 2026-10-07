@@ -143,7 +143,7 @@ internal val SpaceCompassCelestialBody.viewerTexture: String?
         SpaceCompassCelestialBody.ALPHA_CENTAURI, SpaceCompassCelestialBody.SAGITTARIUS_A,
         SpaceCompassCelestialBody.STEPHENSON_2_18, SpaceCompassCelestialBody.RX_J1856,
     SpaceCompassCelestialBody.PSR_J0437, SpaceCompassCelestialBody.TON_618, SpaceCompassCelestialBody.ANDROMEDA_CORE, SpaceCompassCelestialBody.POLARIS, SpaceCompassCelestialBody.SEDNA, SpaceCompassCelestialBody.ISS, SpaceCompassCelestialBody.STARLINK_V3, SpaceCompassCelestialBody.VOYAGER_1, SpaceCompassCelestialBody.VOYAGER_2 -> null
-        SpaceCompassCelestialBody.LV_426 -> "lv426.png"
+        SpaceCompassCelestialBody.LV_426 -> "lv426.webp"
         SpaceCompassCelestialBody.VENUS -> "venus_atmosphere.jpg"
         else -> "${name.lowercase(java.util.Locale.ROOT)}.jpg"
     }

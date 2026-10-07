@@ -8,8 +8,6 @@
     <string name="panorama_not_ready">Bir GPS konumu ve en az bir seçili nesne gereklidir.</string>
     <string name="panorama_data_unavailable">Veri kullanılamıyor</string>
     <string name="panorama_path_unavailable">Yörünge kullanılamıyor</string>
-    <string name="info_news_panorama">İsteğe bağlı kılavuz ve etiketlerle kamera katmanları ve 360° panoramalar; galeriye, dosyaya aktarma veya paylaşma.</string>
-    <string name="info_news_orbit_names">30 gök cismi için canlı pusula, günlük yollar ve dokulu görünümler.</string>
     <string name="panorama_north">Kuzey</string>
     <string name="panorama_east">Doğu</string>
     <string name="panorama_south">Güney</string>

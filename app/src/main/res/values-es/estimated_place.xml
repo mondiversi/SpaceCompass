@@ -3,5 +3,4 @@
     <string name="environment_estimated_place">Ubicación estimada: %1$s</string>
     <string name="environment_place_loading">Buscando localidad…</string>
     <string name="environment_place_unavailable">No disponible</string>
-    <string name="info_news_place">Detalles de posición con mapas diurnos/nocturnos y escenarios con posición, fecha, altitud y zona horaria independientes.</string>
 </resources>

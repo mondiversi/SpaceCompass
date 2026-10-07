@@ -24,3 +24,12 @@ NASA credits do not imply endorsement. Surface maps are reference composites,
 not live photographs. Unknown surfaces, spacecraft attitude and the Polaris
 model remain explicitly illustrative. No new bitmap artwork was introduced by
 the extraction; the launcher and loading artwork are original code-native vectors featuring a ringed planet and compass pointer.
+
+
+## 1.1.0 asset packaging
+
+The credited Pluto map is resampled to the viewer's existing 2048 x 1024 texture
+limit and JPEG-encoded at quality 95 with 4:4:4 sampling. Attribution and longitude
+orientation are unchanged. The original fictional LV-426 artwork is packaged as
+lossless `celestial/lv426.webp`; decoded RGB pixels and original dimensions are
+identical to its previous PNG. No third-party artwork or licence is replaced.

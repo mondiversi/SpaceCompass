@@ -6,8 +6,13 @@ indicates off; the ordinary camera indicates on. It starts off on each cold app
 start. Celestial guides also start off until explicitly enabled; the initial
 checked object set contains only Sun and Moon. Existing stored object selections
 remain independent of these first-use defaults. Capture is a separate neutral shutter circle at the bottom trailing corner
-of the sky, including the left sky column in landscape. The selected-point panel
-and point captions reserve space for that action.
+of the sky, including the left sky column in landscape. In portrait, selecting
+a point puts its panel at the bottom of the sky and moves the complete zoom/shutter
+row immediately above it. Closing the panel returns the row to the bottom. Landscape
+keeps the selection above the data in the right column and the capture/zoom row at
+the bottom of the left sky column. The optical viewport does not resize, and
+captions/reference labels/edge locators reserve the measured controls and panel
+bounds in both layouts, including RTL.
 When camera mode is off it generates the synthetic 360-degree panorama. When on,
 it requests a still rear-camera JPEG and draws frozen celestial overlays on it.
 The common preview has one Export control with the same two frozen presentation
@@ -167,3 +172,285 @@ intercardinal marks follow the actual horizon. The preview's compass-centering
 button is reserved for the 360-degree panorama, never a camera photograph.
 See PANORAMA_CENTER_AND_PHOTO_GRID.md for frozen data, optical-center/roll handling,
 export behavior, unreliable-heading policy and validation coverage.
+
+
+## Rear-camera zoom controls
+
+The main pointing viewport shows minus, the current ratio and plus immediately
+before the shutter only while rear-camera mode is enabled. The circular actions
+reuse panorama icons, existing translated zoom labels and the current numeric
+format. Buttons, the ratio list and pinch requests share one adaptive zoom ladder
+with an exact ordinary 1x stop, and disable at the hardware endpoints or while
+capture/the lens handoff is not ready. Camera mode
+still starts disabled; turning it off resets zoom to 1x. Navigation keeps the
+requested ratio without writing camera settings to persistent preferences.
+
+Public rear devices must expose valid optical metadata, preview and JPEG streams.
+The ordinary lens defines 1x. Separately exposed wide/tele lenses use ratios of
+their normalized focal lengths; a bounded camera-busy retry permits asynchronous
+close/open during a handoff. No vendor-only camera IDs or private APIs are used.
+Android 11+ uses the advertised zoom-ratio range; Android 8–10 uses the supported
+centered crop range. Logical zoom coordinates are post-zoom: focal lengths and
+the principal-point offset are transformed into that virtual array instead of
+double-counting the active physical lens's focal length. Both preview and JPEG
+use their own capture-result crop/ratio metadata. Still requests inherit the
+zoom request, and exported grids/orbits use the frozen photographed lens field.
+
+Debug/release builds and release lint pass. All 675 JVM tests pass, including six
+new regressions for lens selection, limits/1x transitions, offset sensor crops,
+native-versus-legacy projection equivalence at all rotations and wide/zoom photo
+fields. Instrumentation sources compile; connected instrumentation is not run.
+No in-app text catalog, version or GitHub release is changed by this local feature.
+
+
+Physical Samsung Android 12 checks completed for public cameras 0 (ordinary) and
+2 (ultrawide). The reported minimum is 0.51x. The advertised maximum is 8x, while
+capture-result metadata reports about 7.96x; the overlay uses that realized ratio.
+Both endpoint controls disable, crossing 1x returns to the ordinary lens, JPEG
+previews open at both extremes, and returning preserves the selected ratio.
+Reviewed portrait/landscape screenshots confirm the controls fit before the
+shutter in the left pointing column. Camera mode was turned off afterwards,
+controls disappeared, and system rotation was restored. No gallery save, file
+export or share occurred. The photographed frames were dark and carried the
+existing reduced-heading-accuracy warning, so no measured room-target angular
+accuracy is claimed; projection equivalence is covered by the JVM regressions.
+
+
+## Compact floating controls
+
+Floating main/capture controls use 80% of their original size, including circles,
+glyphs, selector badges and zoom-ratio badges. This applies to the main menu,
+camera/reference/objects/shutter controls, camera zoom, and the capture preview's
+back/zoom/compass/labels/location/export controls. The user explicitly requested
+smaller hit regions too: the common modifier scales measured layout bounds and
+places the full control in a transformed layer, including pointer and semantic
+coordinates. The original 48 dp controls now occupy approximately 38.4 dp.
+
+Scale is applied outside the original fixed size and Material control minimums.
+A scoped ViewConfiguration override disables automatic minimum-touch expansion
+only inside these actions. Dropdowns, search fields and other controls retain
+their existing touch defaults.
+RTL order and child alignment remain intact. Preview zoom controls start below
+the scaled Back button with the existing 8 dp gap, and main-view annotation
+exclusions follow the reduced control dimensions. Controls in islands, catalog
+search, dropdown rows, dialogs and celestial scene markers remain unmodified.
+
+## Direct zoom selection
+
+Tapping the live zoom ratio opens the adaptive, themed radio dropdown. Buttons and
+pinches use this same fixed ladder; the menu never adds arbitrary gesture values.
+Levels use tenths below 1x, quarters from 1x to 2x, halves to 4x, then whole values
+to 10x and progressively wider regular steps for larger advertised hardware ranges.
+The exact physical minimum/maximum and ordinary 1x remain reachable. Near-round
+optical endpoints receive nominal names (for example 0.51x as 0.5x); aliases cannot
+create duplicate menu labels or remove the separate ordinary lens stop.
+
+The badge maps reported camera zoom to the same nominal ladder, so driver values
+such as 7.96x show the matching 8x level. Unrounded capture metadata still drives
+all preview/JPEG geometry and orbital projection. Labels retain the current numeric
+format without redundant decimal zeroes. Direct choices use the same lens handoff
+and optical calibration as buttons and gestures; dismissing the list changes
+nothing. The control retains its translated accessibility label and shared 80%
+artwork/touch bounds.
+
+
+## Live camera pinch zoom
+
+Two-finger spreading/pinching inside the main sky viewport uses the same bounded
+zoom request as the ratio selector and +/- buttons. The gesture remains attached
+to the stable Compose sky parent when a separately exposed wide/ordinary lens
+is replaced. An already accepted pinch continues through the temporary capture
+readiness gap; a new gesture requires a ready camera and capture must not be busy.
+Each event clamps to the public hardware range, including the ultrawide endpoint,
+so reversing at a limit responds immediately instead of consuming overshoot.
+
+Only a genuine change in finger spacing beyond touch slop changes zoom. Pan and
+rotation do not move the camera, single-finger orbit/control taps remain intact,
+and a two-finger camera gesture cancels scene taps before children process it.
+The gesture is inactive with the camera off or while taking a photograph, and is
+restricted to the sky column in landscape. Actual camera-result optical metadata
+continues to drive both live overlays and the frozen JPEG/export. No translation,
+preference, version or GitHub publication is added by this local feature.
+
+
+Local validation: debug and release builds succeed, all 683 JVM tests pass, and
+instrumentation sources (including the synthetic pinch/tap/handoff cases) compile;
+connected instrumentation is not run. App-scoped two-finger input checks on the
+authorized Samsung Android 12 phone confirm zoom in/out, a continuous pinch from
+the ultrawide lens through 1x to the ordinary lens, maximum clamping, immediate
+reverse zoom at the maximum, and the existing minus and direct-ratio controls.
+The original camera state is restored. The signed APK is installed and its
+checksum verified; no gallery export, share or GitHub publication takes place.
+
+
+## Photograph pointing in the capture header
+
+Photographic headers append the rear-camera bearing and signed inclination relative
+to the local horizon. They use the exposure-matched camera attitude already frozen
+with the JPEG; display rotation changes screen axes but never its photographed
+forward axis. The bearing follows the existing compass trust and near-vertical
+policy. Missing/stale attitudes show dashes, and unavailable heading does not discard
+a valid inclination. Positive tilt points above the horizon and negative tilt below.
+
+Both international and selected export presentations freeze their own formatted
+values with the existing Direction/Tilt translations in all twenty catalogues.
+The one-line header survives location disclosure, label toggles, Save and Share
+without querying subsequent sensors, GPS or process locale. Virtual panoramas have
+no exposure attitude and keep their existing header. No new translated strings,
+preferences, version or GitHub publication are introduced.
+
+
+Local validation: debug/release builds succeed; all 688 JVM tests pass, including
+five new exposure/rotation, missing or untrusted heading, frozen-profile, later
+sensor-change and disclosure regressions. Instrumentation sources compile;
+connected instrumentation is not run. The existing Direction/Tilt templates are
+present in all twenty catalogues. A cache-only real-phone photograph confirms the
+appended header fields; with the phone almost vertically down the inclination is
+near -89 degrees and the undefined horizontal bearing correctly shows a dash.
+The preview opens/closes normally and the original camera state is restored.
+The signed local APK is installed and checksum-verified. No gallery save, export,
+share or GitHub publication is performed.
+
+
+## User formatting in capture previews
+
+Both virtual panoramas and photographs initially render the selected user language,
+number/date/time formats and units. Header pointing, weather/place text, orbital
+labels and angular graduations all come from the same frozen selected presentation.
+Location, label and panorama-center changes preserve that preview profile.
+
+The remembered scientific/selected export choice belongs only to the export dialog.
+Opening it or changing its profile prepares an independently keyed export file and
+never replaces the displayed preview bitmap. Gallery, document and share actions
+wait for that exact profile/disclosure/label/center file and use it, rather than
+assuming the currently displayed file is the export. The original file explicitly
+records its profile, so a selected preview cannot satisfy the scientific fast path.
+Both frozen presentations remain available without consulting later sensors, GPS,
+weather, clock or settings. Legacy fixtures with an international base file retain
+their existing default and cache behavior. No new strings, version or publication
+are introduced.
+
+
+Local validation: debug/release builds succeed and all 688 JVM tests pass.
+Instrumentation sources compile, including a selected-base versus scientific-file
+cache regression; connected instrumentation is not run. The authorized Samsung
+phone shows Italian date/weather/place/cardinal text and comma-decimal orbital
+labels in both virtual and camera previews while Scientific International remains
+the stored export choice. Both export profiles prepare successfully in the dialog.
+After selecting the scientific profile and dismissing the dialog, hashes of the
+displayed preview regions remain identical for both capture types. Export choice
+and camera state are restored. The signed local APK is installed and checksum
+verified; no gallery save, document save, share or GitHub publication occurs.
+
+
+## Unified pinch detents
+
+The finger-distance target accumulates continuously even when successive events
+stay inside the same detent. Only ladder changes are emitted as camera requests,
+avoiding stalled slow pinches and arbitrary ratios. A small hysteresis margin stops
+jitter from repeatedly crossing the ordinary-lens boundary. Continuous targets
+clamp at physical endpoints on every event, so reversing direction does not consume
+overshoot. Range discovery also normalizes any retained request onto this ladder.
+No permission, translation, version, persistent camera setting or publication is
+added; camera/JPEG optical calibration continues to use real capture-result data.
+
+
+Local validation of the unified ladder: debug/release builds succeed, all 693 JVM
+tests pass, and instrumentation sources compile; connected instrumentation is not
+run. App-scoped input on the authorized Samsung Android 12 phone confirms the
+1.25/1.5/1.75/2x button sequence, matching direct and pinch selections, the nominal
+0.5x wide endpoint with its checked radio row, maximum 8x clamping, and the 4/5/4x
+button sequence after reversing a pinch. Original camera state is restored. The
+signed local APK is installed and checksum-verified with app data preserved. No
+gallery save, document export, share or GitHub publication occurs. Real endpoint
+metadata remains separate from nominal labels for optical calibration.
+
+
+Local portrait panel-placement validation: debug/release builds succeed and all
+693 JVM tests pass. Updated instrumentation layout assertions compile; connected
+instrumentation is not run. The authorized Samsung Android 12 phone confirms
+capture and all zoom controls above the selected-point island in portrait, with
+and without camera view, after point navigation and after rotation. Landscape
+retains the selected point above the right data column and capture/zoom at the
+bottom of the left sky column. Closing the island returns capture to the bottom.
+Camera state and Android rotation policy are restored. The signed local APK is
+installed and checksum-verified with app data preserved. No photograph, gallery
+save, document export, share or GitHub publication occurs.
+
+
+## Full photograph field of view
+
+Photographic headers also append horizontal × vertical angular coverage in degrees.
+The field comes from the exposure's lens/crop and the actual JPEG dimensions after
+sensor/display rotation. Edge angles use the real principal point, rather than
+assuming centred optics or dividing an advertised field by the nominal zoom badge.
+The JPEG header is read off the UI thread without allocating another bitmap.
+Both selected and scientific presentations freeze and translate the field at
+capture time. Preview panning/zooming and later sensor, lens or settings changes do
+not alter it. Location disclosure and orbital-label toggles preserve the value;
+virtual 360-degree panoramas have no photographic field appended.
+
+
+Local field-of-view validation: debug/release builds succeed and all 698 JVM tests
+pass, including rotation, JPEG aspect crop, optical-centre asymmetry, zoom and
+frozen-profile/disclosure regressions. Instrumentation sources compile; connected
+instrumentation is not run. All twenty string catalogues retain identical keys
+and the new field template has matching indexed placeholders. Cache-only photo
+previews on the authorized Samsung Android 12 phone show the localized field at
+0.5x, 1x and 2x, narrowing with increasing zoom. Original camera state is restored.
+The signed local APK is installed and checksum-verified with app data preserved.
+No gallery save, document export, share or GitHub publication occurs.
+
+
+## Rounded object-view mode switch
+
+The object detail viewer groups Current View and Rotation in one rounded capsule.
+A single selected surface slides between the eye and rotation glyphs; selecting
+the already active mode leaves it active. The capsule is 60 x 30 dp including its
+outer border, matching the previous circular controls' 30 dp visible height. The
+glyph centres are 30 dp apart, with the 26 dp selected circle aligned to each
+18 dp glyph. Press feedback remains inside that circle. Both halves retain adjacent,
+independent 48 dp touch targets; the glyphs move towards their shared boundary
+while remaining inside their own target, without overlapping touch regions. They retain
+translated accessible labels, selected Tab semantics and tooltips. The existing
+high-contrast viewer palette remains readable over any object image. Relative
+placement mirrors the thumb and choices in RTL. The control remains inside the
+model at its trailing top corner in portrait, tablet and landscape layouts.
+Model gestures, saved viewport/rotation state and animation lifecycle are unchanged.
+No new string, preference, version or GitHub publication is introduced.
+
+
+Local mode-switch validation: debug/release builds succeed and all 698 JVM tests
+pass. Updated viewer instrumentation assertions compile; connected instrumentation
+is not run. The authorized Samsung Android 12 phone confirms adjacent options
+with exactly one selected in portrait and landscape, movement of the light active
+surface between both icons, and an unchanged active mode when selected again.
+Landscape keeps the control inside the first model column. Back returns to the
+main view and the original Android rotation policy is restored. The signed local
+APK is installed and checksum-verified with app data preserved. No preference,
+gallery save, export, share or GitHub publication is changed.
+
+
+## Centred capture-preview control groups
+
+Both photographic and virtual panorama previews centre their left and right
+control groups vertically in the available viewport, in either device orientation.
+Back and both image zoom actions form one left column; the available centre,
+labels, disclosure and export actions form the right column. Their order, 8 dp
+inter-control spacing, 8 dp edge inset and shared 80% visual/touch bounds remain.
+The right column centres its actual contents, including the shorter photograph
+group without panorama direction. Back remains available while an image loads or
+a variant is being prepared. Image fitting, gestures, header data and export
+profiles are unchanged. No new string, preference, version or publication is added.
+
+
+Local centred-controls validation: debug/release builds succeed and all 698 JVM
+tests pass. Instrumentation sources compile; connected instrumentation is not run.
+On the authorized Samsung Android 12 phone, the left and right action bounds centre
+within two pixels of the image viewport's vertical midpoint for virtual panoramas
+and camera photos in both portrait and landscape. The three-button photographic
+right group and four-button virtual group each centre their actual content. Shared
+80% bounds, zoom in/out and Back are verified. Camera state and Android rotation
+policy are restored. The signed local APK is installed and checksum-verified with
+app data preserved. No preference, gallery save, document export, share or GitHub
+publication is changed.

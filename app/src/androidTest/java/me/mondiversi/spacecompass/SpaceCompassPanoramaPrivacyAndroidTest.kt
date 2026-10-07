@@ -149,4 +149,36 @@ class SpaceCompassPanoramaPrivacyAndroidTest {
             assertFalse(selectedFile.readBytes().contentEquals(internationalFile.readBytes()))
         } finally { root.deleteRecursively() }
     }
+
+    @Test fun aUserFormattedBasePreviewCannotBeMistakenForTheScientificExport() {
+        val context = InstrumentationRegistry.getInstrumentation().targetContext
+        val root = File(context.cacheDir, "panorama-selected-base-test-" + UUID.randomUUID()).apply { check(mkdirs()) }
+        try {
+            val original = fixture(root, withPath = true)
+            val resources = context.createConfigurationContext(android.content.res.Configuration(context.resources.configuration).apply {
+                setLocale(java.util.Locale.ITALIAN)
+            }).resources
+            val selected = spaceCompassPanoramaPresentation(requireNotNull(original.snapshot), resources,
+                SpaceCompassPanoramaFormatting(java.util.Locale.ITALIAN, SpaceCompassNumericFormat.EUROPEAN,
+                    SpaceCompassDateFormat.EUROPEAN, feet = true), java.util.TimeZone.getTimeZone("Europe/Rome"),
+                SpaceCompassPlaceParts(locality = "Private town", adminArea = "Region", country = "Country"),
+                99.0, 20.0, simulated = false, simulatedAltitude = false)
+            val snapshot = selected.snapshot.copy(caption = spaceCompassPanoramaCaptionForPosition(selected.caption, original.position))
+            val image = renderSpaceCompassPanorama(snapshot, 512, context)
+            try { original.file.outputStream().use { assertTrue(image.compress(Bitmap.CompressFormat.JPEG, 95, it)) } }
+            finally { image.recycle() }
+            val data = original.copy(selectedPresentation = selected, fileExportMode = SpaceCompassPanoramaExportMode.SELECTED)
+            val preview = original.file.readBytes()
+            assertEquals(data.file, prepareSpaceCompassPanoramaVariant(context, data, data.position,
+                exportMode = SpaceCompassPanoramaExportMode.SELECTED))
+            val scientific = prepareSpaceCompassPanoramaVariant(context, data, data.position,
+                exportMode = SpaceCompassPanoramaExportMode.INTERNATIONAL)
+            assertNotEquals(data.file, scientific)
+            assertFalse(preview.contentEquals(scientific.readBytes()))
+            assertArrayEquals(preview, data.file.readBytes())
+            assertEquals(scientific, prepareSpaceCompassPanoramaVariant(context, data, data.position))
+            assertEquals(data.file, prepareSpaceCompassPanoramaVariant(context, data, data.position,
+                exportMode = SpaceCompassPanoramaExportMode.SELECTED))
+        } finally { root.deleteRecursively() }
+    }
 }

@@ -8,8 +8,6 @@
     <string name="panorama_not_ready">נדרשים מיקום GPS ולפחות עצם נבחר אחד.</string>
     <string name="panorama_data_unavailable">הנתונים אינם זמינים</string>
     <string name="panorama_path_unavailable">המסלול אינו זמין</string>
-    <string name="info_news_panorama">שכבות על תמונת המצלמה ופנורמות 360° עם קווים ותוויות לבחירה; ייצוא לגלריה, לקובץ או לשיתוף.</string>
-    <string name="info_news_orbit_names">מצפן בזמן אמת, מסלולים יומיים ותצוגות עם מרקמים ל־30 גרמי שמיים.</string>
     <string name="panorama_north">צפון</string>
     <string name="panorama_east">מזרח</string>
     <string name="panorama_south">דרום</string>

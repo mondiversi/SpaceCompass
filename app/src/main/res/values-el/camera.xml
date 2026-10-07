@@ -5,4 +5,6 @@
     <string name="camera_permission">Επιτρέψτε την πρόσβαση στην κάμερα για τη ζωντανή προβολή.</string>
     <string name="camera_unavailable">Η κάμερα δεν είναι διαθέσιμη. Δοκιμάστε ξανά.</string>
     <string name="camera_view_description">Ζωντανή προβολή κάμερας με θέσεις ουράνιων σωμάτων</string>
+    <string name="camera_zoom_level">Μεγέθυνση: %1$s</string>
+    <string name="camera_photo_field_of_view">Οπτικό πεδίο Ο×Κ: %1$s × %2$s</string>
 </resources>

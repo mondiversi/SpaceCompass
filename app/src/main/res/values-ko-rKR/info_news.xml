@@ -1,6 +1,9 @@
 <resources>
     <string name="info_news_title">최근 변경 사항 · %1$s</string>
-    <string name="info_news_units">선택, 필터 및 정렬 저장과 지역별 단위 및 형식.</string>
-    <string name="info_news_pressure">20개 언어, 밝은/어두운 테마 및 휴대전화/태블릿에 맞는 레이아웃.</string>
-    <string name="info_news_updates">첫 안정 버전: 최적화된 앱과 서명 및 검증된 GitHub 업데이트.</string>
+    <string name="info_news_camera_zoom">초광각부터 최대 배율까지 카메라 줌을 지원하며, 핀치 제스처나 배율 직접 선택으로 조절합니다.</string>
+    <string name="info_news_catalog_search">필터와 함께 이름 또는 카탈로그 식별자로 천체를 검색합니다.</string>
+    <string name="info_news_capture_metadata">사진에 방향, 기울기와 화각을 표시하며, 미리보기에는 선택한 단위와 언어를 사용합니다.</string>
+    <string name="info_news_capture_controls">더 작은 조작부와 중앙에 배치된 미리보기 버튼; 선택한 설정이나 국제 형식으로 내보낼 수 있습니다.</string>
+    <string name="info_news_viewer">현재 보기와 회전을 전환하는 작은 스위치와 더 명확한 나침반 경고.</string>
+    <string name="info_news_performance">앱 용량 감소, 더 안정적인 미리보기와 번역 검토.</string>
 </resources>
