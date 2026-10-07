@@ -1,5 +1,13 @@
 # Changelog
 
+## 1.0.1 — landscape island layout fix
+
+- Pack natural-height settings and information islands into the shorter landscape
+  column to remove unused row space. Portrait layout is unchanged.
+- Retain the existing in-app news text and saved preferences.
+
+Android/display version: 1.0.1; version code: 16.
+
 ## 1.0 — first stable release
 
 Space Compass 1.0 is the first stable release, bringing together the full sky compass,

@@ -2,7 +2,7 @@ package me.mondiversi.spacecompass
 
 import androidx.compose.foundation.*
 import androidx.compose.foundation.layout.*
-import androidx.compose.foundation.lazy.grid.GridItemSpan
+import androidx.compose.foundation.lazy.staggeredgrid.StaggeredGridItemSpan
 import androidx.compose.material3.*
 import androidx.compose.runtime.*
 import androidx.compose.runtime.saveable.rememberSaveable
@@ -332,7 +332,7 @@ internal fun SpaceCompassObserverPage(modifier: Modifier = Modifier) {
             }
         }
         if (validationError || simulatePosition || simulateTime || simulateAltitude || simulateZone) {
-            item(key = "observer-notes", span = { GridItemSpan(maxLineSpan) }) {
+            item(key = "observer-notes", span = StaggeredGridItemSpan.FullLine) {
                 Column(Modifier.fillMaxWidth(), verticalArrangement = Arrangement.spacedBy(12.dp)) {
                     if (validationError) Text(stringResource(R.string.observer_invalid),
                         Modifier.padding(horizontal = 8.dp).testTag("observer-validation-error"),

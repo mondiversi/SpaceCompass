@@ -2,7 +2,7 @@ package me.mondiversi.spacecompass
 
 import android.content.res.Configuration
 import androidx.compose.foundation.layout.*
-import androidx.compose.foundation.lazy.grid.*
+import androidx.compose.foundation.lazy.staggeredgrid.*
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.LocalConfiguration
@@ -19,9 +19,9 @@ internal fun spaceCompassIslandColumnCount(landscape: Boolean, contentWidthDp: F
     return if (contentWidthDp >= minimumCardWidth * 2 + 12f) 2 else 1
 }
 
-/** The same keyed grid composition survives column changes, retaining scroll, focus and editor state. */
+/** Pack natural-height islands into the shortest column; keyed content survives reflow. */
 @Composable
-internal fun SpaceCompassIslandGrid(modifier: Modifier = Modifier, content: LazyGridScope.() -> Unit) {
+internal fun SpaceCompassIslandGrid(modifier: Modifier = Modifier, content: LazyStaggeredGridScope.() -> Unit) {
     val configuration = LocalConfiguration.current
     val density = LocalDensity.current
     val direction = LocalLayoutDirection.current
@@ -31,10 +31,10 @@ internal fun SpaceCompassIslandGrid(modifier: Modifier = Modifier, content: Lazy
         val columns = spaceCompassIslandColumnCount(
             configuration.orientation == Configuration.ORIENTATION_LANDSCAPE,
             contentWidth.value, density.fontScale)
-        LazyVerticalGrid(columns = GridCells.Fixed(columns),
+        LazyVerticalStaggeredGrid(columns = StaggeredGridCells.Fixed(columns),
             modifier = Modifier.fillMaxSize().testTag("island-grid"),
             contentPadding = spaceCompassPageContentPadding,
             horizontalArrangement = Arrangement.spacedBy(12.dp),
-            verticalArrangement = Arrangement.spacedBy(12.dp), content = content)
+            verticalItemSpacing = 12.dp, content = content)
     }
 }

@@ -9,8 +9,8 @@ application originally extracted from [UVIR](https://github.com/mondiversi/Uvir)
 
 ## Download and install
 
-Download **space-compass-1.0.0.apk** from the
-[Space Compass 1.0 release](https://github.com/mondiversi/SpaceCompass/releases/tag/v1.0.0).
+Download **space-compass-1.0.1.apk** from the
+[Space Compass 1.0.1 release](https://github.com/mondiversi/SpaceCompass/releases/tag/v1.0.1).
 Android 8.0 or newer is required. Open the APK and follow Android's installation
 prompts; allow installation for your browser or file manager if requested.
 
@@ -47,8 +47,8 @@ See [distribution and signing](docs/GITHUB_RELEASES.md) and
 - Twenty interface languages, system-language fallback and regional/unit defaults.
 - Signed startup/manual GitHub updates with package, certificate, size and checksum verification.
 
-The application ID is `me.mondiversi.spacecompass`. Version **1.0** is the first
-stable release; its Android/update identity is `1.0.0`, version code **15**.
+The application ID is `me.mondiversi.spacecompass`. The current stable version is
+**1.0.1**, with Android/update identity `1.0.1` and version code **16**.
 This preserves the three-part update protocol used by existing preview installations.
 The app has its own preferences and caches and can coexist with UVIR.
 

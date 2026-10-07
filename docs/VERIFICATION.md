@@ -2428,3 +2428,31 @@ not exercised. No GitHub publication or connected instrumentation.
 
 See CURVED_REFERENCE_LABELS.md and local curved-guides-validation.json for scope.
 APK SHA-256: `4739d5e1df98ee430b435697317ca68fff88c2366bdd5a7c2fa728bf00db8594`.
+
+## Packed landscape islands — October 7, 2026
+
+The shared settings/information layout now uses a keyed lazy staggered grid.
+In landscape, each natural-height island is placed into the shortest available
+column instead of waiting for the tallest card in a grid row. Appearance, Units,
+Scenario and Info/news share this behavior. The existing width/font-scale policy,
+12 dp gaps, page padding and portrait single-column order are preserved.
+Scenario validation/privacy notes still span both columns after the islands.
+No preference, resource, calculation, version or UVIR source changed.
+
+Debug/release compilation and release lint succeeded (zero lint errors).
+All 669 JVM tests passed, with zero failures, errors or skips. Android
+instrumentation sources compiled; connected instrumentation was not run.
+
+The signed local APK was installed with replacement on the authorized Samsung
+Android 12 phone, preserving data and verifying the signing certificate and
+installed SHA-256: `25e25464d44ca91798fe99232752e1d2452f88f710ee87a3b58b5bc154902545`. Reviewed screenshots confirm landscape packing
+in Units and Info/news, natural island heights in Appearance and disabled
+Scenario, and single-column portrait reflow. Read-only navigation changed no
+app preferences; Android rotation settings were restored and the app returned
+to its main page. Expanded Scenario, RTL, tablet and enlarged-font execution
+were not repeated. No GitHub publication occurred.
+
+Evidence in the local workspace: `packed-islands-build.log`,
+`packed-islands-local-installation.json`, and `camera-packed-islands-*.png`.
+The initial scripted menu traversal stopped on a stale accessibility snapshot;
+Info/news and portrait checks were completed separately from the observed UI.
