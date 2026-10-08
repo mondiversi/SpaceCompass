@@ -1,5 +1,5 @@
 <resources>
-    <string name="observer_title">سناریو</string>
+    <string name="observer_title">سناریوی سفارشی</string>
     <string name="observer_place">موقعیت</string>
     <string name="observer_search">جستجوی مکان</string>
     <string name="observer_search_action">جستجو</string>

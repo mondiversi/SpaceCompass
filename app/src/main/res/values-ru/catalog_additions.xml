@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="celestial_sirius">Сириус</string>
+    <string name="celestial_betelgeuse">Бетельгейзе</string>
+    <string name="celestial_titan">Титан</string>
+    <string name="celestial_orion_nebula">M42 · Туманность Ориона</string>
+    <string name="celestial_pleiades">M45 · Плеяды</string>
+    <string name="catalog_type_nebula">Туманность</string>
+    <string name="catalog_type_cluster">Звёздное скопление</string>
+    <string name="celestial_apparent_magnitude">Видимая звёздная величина</string>
+    <string name="celestial_speed_orbit_saturn">Орбитальная скорость (Сатурн): %1$s km/s</string>
+    <string name="celestial_andromeda_galaxy_title">Галактика Андромеды</string>
+    <string name="celestial_archival_image">Архивное наблюдение, не изображение в реальном времени. Цвета могут обозначать невидимые глазу длины волн.</string>
+    <string name="celestial_image_loading">Загрузка изображения…</string>
+    <string name="celestial_sirius_note">Самая яркая звезда ночного неба. Физические значения относятся к Сириусу A; Сириус B — его спутник, белый карлик. Каталожное положение и приблизительное расстояние.</string>
+    <string name="celestial_betelgeuse_note">Переменный красный сверхгигант в Орионе. Радиус, расстояние и диапазон нынешней массы зависят от модели; яркость меняется со временем.</string>
+    <string name="celestial_titan_note">Крупнейший спутник Сатурна с плотной азотной атмосферой и метановыми озёрами. Температура и давление «Гюйгенса» — справочные измерения в месте посадки в 2005 году. Мозаика поверхности «Кассини» в ближнем инфракрасном диапазоне; траектории NASA/JPL.</string>
+    <string name="celestial_orion_note">Туманность в Орионе, где рождаются звёзды. Направление и суточный путь следуют её каталожному центру. У туманности нет единой планетной поверхности.</string>
+    <string name="celestial_pleiades_note">Рассеянное звёздное скопление в Тельце. Направление указывает на центр скопления. Инфракрасное изображение WISE показывает звёзды и окружающую пыль.</string>
+    <string name="celestial_andromeda_galaxy_note">Андромеда (M31) — спиральная галактика примерно в 2,5 миллиона световых лет. M31* — её центральная чёрная дыра: масса в таблице относится к M31*, а не ко всей галактике. На фотографии показана галактика.</string>
+</resources>

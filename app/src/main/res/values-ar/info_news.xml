@@ -1,9 +1,9 @@
 <resources>
     <string name="info_news_title">آخر المستجدات · %1$s</string>
-    <string name="info_news_star_sky">سماء مرصعة بالنجوم واقعية حسب موقعك والوقت، وأكثر وضوحًا في الصور البانورامية.</string>
-    <string name="info_news_texture_downloads">تطبيق أصغر: تُنزّل خرائط الكواكب عند الحاجة وتبقى متاحة دون اتصال؛ آيو وأوروبا بصيغة WebP بدقة 2K.</string>
-    <string name="info_news_weather">طقس متسق بين العرض الرئيسي والصور البانورامية، مع حفظ خيار العرض.</string>
-    <string name="info_news_viewer_zoom">زرّا + و− بحجم صغير في تفاصيل الجرم؛ الحجم الأولي هو الحد الأدنى للتكبير.</string>
-    <string name="info_news_settings">تحسين الإعدادات والوحدات والسيناريوهات، مع عناصر تحكم موحّدة وصفحة المعلومات والشكر.</string>
-    <string name="info_news_catalog">حفظ تكبير الكاميرا وتأكيد قصير عند اكتمال تحديث بيانات الأجرام.</string>
+    <string name="info_news_star_sky">35 جرمًا: الشعرى اليمانية ومنكب الجوزاء وتيتان وسديم الجبار والثريا؛ صور جديدة لأندروميدا.</string>
+    <string name="info_news_texture_downloads">حزمة الصور 1.1: 18 صورة WebP تُنزّل عند الحاجة، وتُتحقق سلامتها وتبقى متاحة دون اتصال.</string>
+    <string name="info_news_weather">لوحات معلومات قابلة للطي، وعناصر تحكم معاد ترتيبها، ومؤشر أوضح للسيناريو المخصص.</string>
+    <string name="info_news_viewer_zoom">الموقع الحالي في المسارات اليومية، ولوحات نقاط محسّنة، ورسالة حالة واحدة بحسب الأولوية.</string>
+    <string name="info_news_settings">إضاءة تأثيرات الطقس تتبع الفجر والنهار والغروب والليل في العرض الرئيسي والصور البانورامية.</string>
+    <string name="info_news_catalog">عناصر تحكم بانورامية محسّنة، واهتزاز عند الالتقاط، وهوامش للتصدير، وتكبير مدمج للأجرام.</string>
 </resources>

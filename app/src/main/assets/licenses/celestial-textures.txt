@@ -51,3 +51,46 @@ They supersede the earlier 512x256 USGS browse derivatives for this app build.
 Old io.webp and europa.jpg distribution files remain unchanged for older apps.
 North-up orientation and longitude seam match the original reference mosaics.
 NASA/VTAD, NASA/JPL/USGS credits retained; no endorsement is implied.
+
+
+Space Compass catalog additions 1.0
+
+All distribution images: 2048 x 1024 WebP, quality 90, method 6.
+Maps keep geographic orientation. Photographs keep their aspect ratio, with black framing.
+Photographs are archived observations, not live views or resolved surface maps.
+
+titan.webp
+NASA/JPL-Caltech/Space Science Institute
+https://science.nasa.gov/resource/titan-mosaic-the-surface-under-the-haze/
+NASA imagery: retain attribution; no endorsement.
+Lanczos resample, no invented detail
+
+sirius.webp
+NASA, ESA, H. Bond (STScI), and M. Barstow (University of Leicester)
+https://science.nasa.gov/asset/hubble/the-dog-star-sirius-and-its-tiny-companion/
+NASA/ESA Hubble imagery: retain attribution; no endorsement.
+Aspect-preserving fit with black framing; no spherical projection
+
+betelgeuse.webp
+ALMA (ESO/NAOJ/NRAO)/E. O’Gorman/P. Kervella
+https://www.eso.org/public/images/potw1726a/
+CC BY 4.0; https://www.eso.org/public/copyright/
+Aspect-preserving fit with black framing; no spherical projection
+
+orion_nebula.webp
+NASA, ESA, M. Robberto (STScI/ESA), and the Hubble Space Telescope Orion Treasury Project Team
+https://science.nasa.gov/asset/hubble/hubbles-sharpest-view-of-the-orion-nebula/
+NASA/ESA Hubble imagery: retain attribution; no endorsement.
+Aspect-preserving fit with black framing; no spherical projection
+
+pleiades.webp
+NASA/JPL-Caltech/UCLA
+https://science.nasa.gov/photojournal/seven-sisters-get-wise/
+NASA imagery: retain attribution; no endorsement.
+Aspect-preserving fit with black framing; no spherical projection
+
+andromeda_galaxy.webp
+NASA, ESA, Benjamin F. Williams (UWashington), Zhuo Chen (UWashington), L. Clifton Johnson (Northwestern); Image Processing: Joseph DePasquale (STScI)
+https://science.nasa.gov/mission/hubble/science/explore-the-night-sky/hubble-messier-catalog/messier-31/
+NASA/ESA Hubble imagery: retain attribution; no endorsement.
+Aspect-preserving fit with black framing; no spherical projection

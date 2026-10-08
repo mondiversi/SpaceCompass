@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="celestial_sirius">सीरियस</string>
+    <string name="celestial_betelgeuse">बेटेलजूस</string>
+    <string name="celestial_titan">टाइटन</string>
+    <string name="celestial_orion_nebula">M42 · ओरायन नीहारिका</string>
+    <string name="celestial_pleiades">M45 · कृत्तिका</string>
+    <string name="catalog_type_nebula">नीहारिका</string>
+    <string name="catalog_type_cluster">तारा समूह</string>
+    <string name="celestial_apparent_magnitude">दृश्य तारकीय परिमाण</string>
+    <string name="celestial_speed_orbit_saturn">कक्षीय गति (शनि): %1$s km/s</string>
+    <string name="celestial_andromeda_galaxy_title">एंड्रोमेडा आकाशगंगा</string>
+    <string name="celestial_archival_image">संग्रहीत अवलोकन, दूरबीन का सीधा दृश्य नहीं। रंग आँखों को न दिखने वाली तरंगदैर्घ्य दर्शा सकते हैं।</string>
+    <string name="celestial_image_loading">चित्र लोड हो रहा है…</string>
+    <string name="celestial_sirius_note">रात के आकाश का सबसे चमकीला तारा। भौतिक मान सीरियस A के हैं; सीरियस B उसका श्वेत बौना साथी है। सूचीबद्ध स्थिति और अनुमानित दूरी।</string>
+    <string name="celestial_betelgeuse_note">ओरायन का परिवर्ती लाल महादानव। त्रिज्या, दूरी और वर्तमान द्रव्यमान की सीमा मॉडल पर निर्भर हैं; चमक समय के साथ बदलती है।</string>
+    <string name="celestial_titan_note">शनि का सबसे बड़ा चंद्रमा, जिसमें घना नाइट्रोजन वायुमंडल और मीथेन झीलें हैं। ह्यूजेंस के तापमान और दबाव 2005 के उतरने के स्थान के संदर्भ माप हैं। कैसिनी का निकट-अवरक्त सतह मोज़ेक; NASA/JPL प्रक्षेपपथ।</string>
+    <string name="celestial_orion_note">ओरायन की नीहारिका जहाँ तारे बनते हैं। दिशा और दैनिक पथ उसके सूचीबद्ध केंद्र का अनुसरण करते हैं। नीहारिका की कोई एक ग्रह-सतह नहीं होती।</string>
+    <string name="celestial_pleiades_note">वृषभ का खुला तारा समूह। दिशा समूह के केंद्र का अनुसरण करती है। WISE का अवरक्त चित्र तारे और आसपास की धूल दिखाता है।</string>
+    <string name="celestial_andromeda_galaxy_note">एंड्रोमेडा (M31) लगभग 25 लाख प्रकाश-वर्ष दूर एक सर्पिल आकाशगंगा है। M31* उसका केंद्रीय ब्लैक होल है: तालिका का द्रव्यमान M31* का है, पूरी आकाशगंगा का नहीं। तस्वीर आकाशगंगा दिखाती है।</string>
+</resources>

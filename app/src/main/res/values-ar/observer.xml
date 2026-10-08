@@ -1,5 +1,5 @@
 <resources>
-    <string name="observer_title">سيناريو</string>
+    <string name="observer_title">سيناريو مخصص</string>
     <string name="observer_place">الموقع</string>
     <string name="observer_search">البحث عن مكان</string>
     <string name="observer_search_action">بحث</string>

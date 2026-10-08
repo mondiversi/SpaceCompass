@@ -17,9 +17,17 @@ import androidx.compose.ui.unit.dp
 internal fun SpaceCompassCaptureButton(onCapture: () -> Unit, enabled: Boolean, color: Color, background: Color,
     modifier: Modifier = Modifier) {
     val label=stringResource(R.string.panorama_capture)
+    val haptics = rememberSpaceCompassHapticController()
+    // Share one activation path for touch, keyboard and accessibility without double feedback.
+    val capture: () -> Unit = {
+        if (enabled) {
+            haptics.spaceCompassHaptic(SpaceCompassHapticCue.COMMAND)
+            onCapture()
+        }
+    }
     SpaceCompassFloatingControlHitRegion {
-        Surface(onClick=onCapture,enabled=enabled,modifier=modifier.spaceCompassFloatingControlVisual().size(48.dp).testTag("capture-panorama")
-            .spaceCompassAccessibleAction(label,enabled=enabled,onClick=onCapture),
+        Surface(onClick=capture,enabled=enabled,modifier=modifier.spaceCompassFloatingControlVisual().size(48.dp).testTag("capture-panorama")
+            .spaceCompassAccessibleAction(label,enabled=enabled,onClick=capture),
             shape=CircleShape,color=background.copy(alpha=.94f),contentColor=color,
             border=BorderStroke(1.dp,color.copy(alpha=.35f)),shadowElevation=3.dp) {
             Box(contentAlignment = Alignment.Center) {

@@ -1,9 +1,9 @@
 <resources>
     <string name="info_news_title">Mambo mapya · %1$s</string>
-    <string name="info_news_star_sky">Anga halisi lenye nyota kulingana na mahali na wakati wako, lenye uwazi zaidi katika panorama.</string>
-    <string name="info_news_texture_downloads">Programu ndogo zaidi: ramani za sayari hupakuliwa zinapohitajika na hubaki kutumika bila intaneti; Io na Europa katika WebP 2K.</string>
-    <string name="info_news_weather">Hali ya hewa inayolingana kwenye mwonekano mkuu na panorama, huku chaguo la kuonyesha likihifadhiwa.</string>
-    <string name="info_news_viewer_zoom">Vitufe vidogo vya + na − katika maelezo ya kitu; ukubwa wa mwanzo ndio kiwango cha chini cha kukuza.</string>
-    <string name="info_news_settings">Mipangilio, vipimo na hali zimeboreshwa, vidhibiti vinafanana na kuna ukurasa wa maelezo na shukrani.</string>
-    <string name="info_news_catalog">Kiwango cha kukuza cha kamera huhifadhiwa na uthibitisho mfupi huonekana data za vitu zinapomaliza kusasishwa.</string>
+    <string name="info_news_star_sky">Vitu 35: Sirius, Betelgeuse, Titan, Nebula ya Orion na Plejadi; picha mpya za Andromeda.</string>
+    <string name="info_news_texture_downloads">Kifurushi cha picha 1.1: picha 18 za WebP hupakuliwa zinapohitajika, huhakikiwa na hubaki kupatikana bila intaneti.</string>
+    <string name="info_news_weather">Paneli za taarifa zinazokunjika, vidhibiti vilivyopangwa upya na kiashirio wazi zaidi cha hali maalum.</string>
+    <string name="info_news_viewer_zoom">Nafasi ya sasa katika njia za kila siku, paneli za pointi zilizoboreshwa na ujumbe mmoja kulingana na kipaumbele.</string>
+    <string name="info_news_settings">Mwangaza wa athari za hali ya hewa hufuata alfajiri, mchana, machweo na usiku katika mwonekano mkuu na panorama.</string>
+    <string name="info_news_catalog">Vidhibiti bora vya panorama, mtetemo wakati wa kupiga picha, nafasi za kuhamisha na ukuzaji mdogo wa vitu.</string>
 </resources>

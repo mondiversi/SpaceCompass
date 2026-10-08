@@ -15,7 +15,7 @@ class SpaceCompassCelestialTabularLayoutTest {
         assertTrue(split.contains("Column(Modifier.weight(1f).fillMaxHeight())"))
         assertTrue(split.contains("toolbar()"))
         assertTrue(split.contains("pointing(true)"))
-        assertTrue(split.contains("details(Modifier.weight(1f).fillMaxHeight().padding(10.dp)"))
+        assertTrue(split.contains("details(Modifier.width(viewportWidth / 2).fillMaxHeight().padding(10.dp)"))
         assertFalse(screen.contains("viewportWidth * 0.43f"))
         assertTrue(screen.contains("viewportWidth / 2 - 20.dp >= minimumPanelWidth"))
         assertTrue(screen.substringAfter("} else Column(Modifier.fillMaxSize())").contains("toolbar()"))
@@ -266,7 +266,8 @@ class SpaceCompassCelestialTabularLayoutTest {
         assertTrue(badge.contains("size(16.dp)"))
         assertTrue(badge.contains("CircleShape"))
         assertFalse(badge.contains("remote.") || badge.contains("body.name"))
-        assertTrue(controls.contains("stateDescription = count"))
+        assertTrue(controls.contains("stateText = count"))
+        assertTrue(source("SpaceCompassFloatingActionButton.kt").contains("stateText = stateText, onClick = onClick"))
     }
 
     @Test fun everyOrbitalAndOutwardSpeedLabelUsesParenthesesInAllTwentyLanguages() {

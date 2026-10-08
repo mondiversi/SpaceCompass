@@ -1,9 +1,9 @@
 <resources>
     <string name="info_news_title">החידושים האחרונים · %1$s</string>
-    <string name="info_news_star_sky">שמיים זרועי כוכבים המותאמים למיקום ולשעה, חדים יותר בתמונות פנורמיות.</string>
-    <string name="info_news_texture_downloads">יישום קטן יותר: מפות כוכבי הלכת יורדות לפי הצורך וזמינות גם ללא חיבור; איו ואירופה בפורמט WebP ברזולוציית 2K.</string>
-    <string name="info_news_weather">מזג אוויר עקבי בתצוגה הראשית ובפנורמות, עם שמירת אפשרות התצוגה.</string>
-    <string name="info_news_viewer_zoom">כפתורי + ו־− קומפקטיים בפרטי העצם; הגודל ההתחלתי הוא רמת הזום המזערית.</string>
-    <string name="info_news_settings">הגדרות, יחידות ותרחישים משופרים, פקדים אחידים ודף מידע ותודות.</string>
-    <string name="info_news_catalog">שמירת זום המצלמה ואישור קצר בסיום עדכון נתוני העצמים.</string>
+    <string name="info_news_star_sky">35 עצמים: סיריוס, ביטלג’וז, טיטאן, ערפילית אוריון והפליאדות; תמונות חדשות של אנדרומדה.</string>
+    <string name="info_news_texture_downloads">חבילת תמונות 1.1: 18 תמונות WebP מורדות לפי הצורך, מאומתות וזמינות ללא חיבור.</string>
+    <string name="info_news_weather">לוחות מידע מתקפלים, פקדים מסודרים מחדש וחיווי ברור יותר לתרחיש מותאם אישית.</string>
+    <string name="info_news_viewer_zoom">מיקום נוכחי במסלולים היומיים, לוחות נקודות משופרים והודעת מצב אחת לפי עדיפות.</string>
+    <string name="info_news_settings">תאורת אפקטי מזג האוויר תואמת לשחר, ליום, לשקיעה וללילה בתצוגה הראשית ובפנורמות.</string>
+    <string name="info_news_catalog">פקדי פנורמה משופרים, רטט בצילום, מרווחי ייצוא וזום קומפקטי לעצמים.</string>
 </resources>

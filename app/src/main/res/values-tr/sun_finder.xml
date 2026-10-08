@@ -17,7 +17,7 @@
     <string name="sun_finder_location_searching">Konum aranıyor…</string>
     <string name="sun_finder_compass_missing">Bu cihazda pusula kullanılamıyor.</string>
     <string name="sun_finder_orientation_searching">Yönelim okunuyor…</string>
-    <string name="sun_finder_compass_accuracy">Pusula doğruluğu düşük. Manyetik nesnelerden uzaklaş ve telefonu kalibre et.</string>
+    <string name="sun_finder_compass_accuracy">Manyetik nesneleri uzaklaştır</string>
     <string name="sun_finder_allow_location">Konuma izin ver</string>
     <string name="sun_finder_enable_location">Konumu etkinleştir</string>
     <string name="sun_finder_retry">Tekrar dene</string>

@@ -10,6 +10,7 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.Path
 import androidx.compose.ui.graphics.StrokeCap
 import androidx.compose.ui.graphics.drawscope.Stroke
+import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
 
 /** Compact menu glyphs follow the app's existing visual vocabulary. */
@@ -17,10 +18,12 @@ import androidx.compose.ui.unit.dp
 internal fun SpaceCompassSettingsMenuIcon(
     route: String,
     tint: Color,
-    modifier: Modifier = Modifier.size(20.dp)
+    modifier: Modifier = Modifier.size(20.dp),
+    iconStrokeWidth: Dp? = null,
+    crossed: Boolean = false
 ) {
     Canvas(modifier) {
-        val strokeWidth = maxOf(1.6.dp.toPx(), size.minDimension * 0.08f)
+        val strokeWidth = iconStrokeWidth?.toPx() ?: maxOf(1.6.dp.toPx(), size.minDimension * 0.08f)
         when (route) {
             "capture" -> {
                 drawCircle(tint, size.minDimension * .39f, style = Stroke(strokeWidth))
@@ -183,5 +186,9 @@ internal fun SpaceCompassSettingsMenuIcon(
             }
 
         }
+        if (crossed) drawLine(tint,
+            Offset(size.width * .125f, size.height * .125f),
+            Offset(size.width * .875f, size.height * .875f),
+            strokeWidth, StrokeCap.Round)
     }
 }

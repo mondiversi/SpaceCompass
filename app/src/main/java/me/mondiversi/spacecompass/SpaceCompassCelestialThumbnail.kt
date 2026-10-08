@@ -96,6 +96,7 @@ internal fun createSpaceCompassCelestialThumbnail(context: Context?, body: Space
         SpaceCompassCelestialTextures.open(context, body)?.use { requireNotNull(BitmapFactory.decodeStream(it, null, options)) }
     }
     try {
+        if (body.hasCatalogPhotograph && map != null) return createSpaceCompassPhotographicThumbnail(map, extent)
         val pixels = IntArray(extent*extent)
         val radius = if (body == SpaceCompassCelestialBody.SATURN) extent * 17.0 / 64 else extent * 28.0 / 64
         for (y in 0 until extent) for (x in 0 until extent) {

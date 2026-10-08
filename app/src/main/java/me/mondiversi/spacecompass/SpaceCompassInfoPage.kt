@@ -50,7 +50,7 @@ internal fun SpaceCompassInfoPage(modifier: Modifier) {
             SpaceCompassSettingsIsland(stringResource(R.string.pc_info_credits), iconKey = "credits") {
                 Text(stringResource(R.string.about_copyright), fontSize = 11.sp, lineHeight = 14.sp)
                 Text("GPL-3.0 · Astronomy Engine (MIT) · SGP4 · Leaflet (BSD-2-Clause)", fontSize = 11.sp, lineHeight = 14.sp)
-                Text("NASA · VTAD · JPL · USGS · Solar System Scope / INOVE", fontSize = 11.sp, lineHeight = 14.sp)
+                Text("NASA · ESA · Hubble · ALMA (ESO/NAOJ/NRAO) · VTAD · JPL · USGS · Solar System Scope / INOVE", fontSize = 11.sp, lineHeight = 14.sp)
                 Text("Deep Star Maps 2020 · NASA/Goddard SVS · ESA/Gaia/DPAC · Ernie Wright (USRA)", fontSize = 11.sp, lineHeight = 14.sp)
                 Text(stringResource(R.string.pc_info_credits_detail), fontSize = 11.sp, lineHeight = 14.sp)
             }

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="celestial_sirius">Sirio</string>
+    <string name="celestial_betelgeuse">Betelgeuse</string>
+    <string name="celestial_titan">Titano</string>
+    <string name="celestial_orion_nebula">M42 · Nebulosa di Orione</string>
+    <string name="celestial_pleiades">M45 · Pleiadi</string>
+    <string name="catalog_type_nebula">Nebulosa</string>
+    <string name="catalog_type_cluster">Ammasso stellare</string>
+    <string name="celestial_apparent_magnitude">Magnitudine apparente</string>
+    <string name="celestial_speed_orbit_saturn">Velocità orbitale (Saturno): %1$s km/s</string>
+    <string name="celestial_andromeda_galaxy_title">Galassia di Andromeda</string>
+    <string name="celestial_archival_image">Osservazione d’archivio, non una vista dal vivo. I colori possono rappresentare lunghezze d’onda invisibili all’occhio.</string>
+    <string name="celestial_image_loading">Caricamento immagine…</string>
+    <string name="celestial_sirius_note">La stella più luminosa del cielo notturno. I valori fisici si riferiscono a Sirio A; Sirio B è la sua compagna nana bianca. Posizione di catalogo e distanza approssimativa.</string>
+    <string name="celestial_betelgeuse_note">Supergigante rossa variabile in Orione. Raggio, distanza e intervallo di massa attuale dipendono dai modelli; la luminosità varia nel tempo.</string>
+    <string name="celestial_titan_note">La maggiore luna di Saturno, con una densa atmosfera di azoto e laghi di metano. Temperatura e pressione di Huygens sono misure di riferimento del sito di atterraggio del 2005. Mosaico superficiale nel vicino infrarosso di Cassini; traiettorie NASA/JPL.</string>
+    <string name="celestial_orion_note">Nebulosa in Orione dove nascono stelle. Puntamento e percorso giornaliero seguono il centro di catalogo. Una nebulosa non ha una singola superficie planetaria.</string>
+    <string name="celestial_pleiades_note">Ammasso stellare aperto nel Toro. Il puntamento segue il centro dell’ammasso. L’immagine infrarossa WISE mostra stelle e polvere circostante.</string>
+    <string name="celestial_andromeda_galaxy_note">Andromeda (M31) è una galassia a spirale a circa 2,5 milioni di anni luce. M31* è il suo buco nero centrale: la massa tabellata riguarda M31*, non tutta la galassia. La fotografia mostra la galassia.</string>
+</resources>

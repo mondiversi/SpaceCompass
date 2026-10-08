@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="celestial_sirius">Sirius</string>
+    <string name="celestial_betelgeuse">Betelgeuze</string>
+    <string name="celestial_titan">Titan</string>
+    <string name="celestial_orion_nebula">M42 · Orionnevel</string>
+    <string name="celestial_pleiades">M45 · Plejaden</string>
+    <string name="catalog_type_nebula">Nevel</string>
+    <string name="catalog_type_cluster">Sterrenhoop</string>
+    <string name="celestial_apparent_magnitude">Schijnbare magnitude</string>
+    <string name="celestial_speed_orbit_saturn">Baansnelheid (Saturnus): %1$s km/s</string>
+    <string name="celestial_andromeda_galaxy_title">Andromedastelsel</string>
+    <string name="celestial_archival_image">Archiefwaarneming, geen live telescoopbeeld. Kleuren kunnen golflengten voorstellen die het oog niet ziet.</string>
+    <string name="celestial_image_loading">Afbeelding laden…</string>
+    <string name="celestial_sirius_note">Helderste ster aan de nachtelijke hemel. Fysieke waarden gelden voor Sirius A; Sirius B is zijn witte dwergbegeleider. Cataloguspositie en geschatte afstand.</string>
+    <string name="celestial_betelgeuse_note">Veranderlijke rode superreus in Orion. Straal, afstand en huidige massabereik zijn modelafhankelijk; de helderheid verandert.</string>
+    <string name="celestial_titan_note">Grootste maan van Saturnus, met een dichte stikstofatmosfeer en methaanmeren. Huygens-temperatuur en -druk zijn referentiemetingen op de landingsplaats uit 2005. Cassini-oppervlaktemozaïek in nabij-infrarood; NASA/JPL-banen.</string>
+    <string name="celestial_orion_note">Nevel in Orion waarin sterren ontstaan. Richting en dagbaan volgen het cataloguscentrum. Een nevel heeft geen enkel planeetoppervlak.</string>
+    <string name="celestial_pleiades_note">Open sterrenhoop in de Stier. De richting volgt het centrum van de hoop. Het WISE-infraroodbeeld toont sterren en omringend stof.</string>
+    <string name="celestial_andromeda_galaxy_note">Andromeda (M31) is een spiraalstelsel op ongeveer 2,5 miljoen lichtjaar. M31* is zijn centrale zwarte gat: de vermelde massa geldt voor M31*, niet voor het hele stelsel. De foto toont het sterrenstelsel.</string>
+</resources>

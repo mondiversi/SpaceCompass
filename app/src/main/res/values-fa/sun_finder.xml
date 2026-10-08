@@ -17,7 +17,7 @@
     <string name="sun_finder_location_searching">در حال یافتن مکان…</string>
     <string name="sun_finder_compass_missing">قطب‌نما در این دستگاه در دسترس نیست.</string>
     <string name="sun_finder_orientation_searching">در حال خواندن جهت…</string>
-    <string name="sun_finder_compass_accuracy">دقت قطب‌نما پایین است. از اجسام مغناطیسی دور شو و تلفن را کالیبره کن.</string>
+    <string name="sun_finder_compass_accuracy">اجسام مغناطیسی را دور کن</string>
     <string name="sun_finder_allow_location">اجازه دسترسی به مکان</string>
     <string name="sun_finder_enable_location">فعال کردن مکان</string>
     <string name="sun_finder_retry">تلاش دوباره</string>

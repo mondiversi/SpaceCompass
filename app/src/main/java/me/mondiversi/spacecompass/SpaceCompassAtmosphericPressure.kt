@@ -15,6 +15,7 @@ internal data class SpaceCompassAtmosphericPressure(val pascals: Double,
  * Approximate published reference values, not current telemetry. Sources/qualifications
  * and the absence of a defined gas-giant surface are documented separately. */
 internal fun spaceCompassAtmosphericPressure(body: SpaceCompassCelestialBody): SpaceCompassAtmosphericPressure? = when (body) {
+    SpaceCompassCelestialBody.TITAN -> SpaceCompassAtmosphericPressure(146_700.0)
     SpaceCompassCelestialBody.VENUS -> SpaceCompassAtmosphericPressure(9_200_000.0)
     SpaceCompassCelestialBody.MARS -> SpaceCompassAtmosphericPressure(636.0)
     SpaceCompassCelestialBody.PLUTO -> SpaceCompassAtmosphericPressure(1.3)

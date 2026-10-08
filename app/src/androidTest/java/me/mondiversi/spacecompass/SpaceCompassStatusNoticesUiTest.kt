@@ -14,7 +14,6 @@ import androidx.compose.ui.platform.LocalConfiguration
 import androidx.compose.ui.platform.LocalDensity
 import androidx.compose.ui.platform.LocalLayoutDirection
 import androidx.compose.ui.platform.LocalResources
-import androidx.compose.ui.layout.boundsInRoot
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.test.*
 import androidx.compose.ui.test.junit4.createAndroidComposeRule
@@ -63,16 +62,10 @@ class SpaceCompassStatusNoticesUiTest {
         for (w in listOf(360f, 800f)) for (font in listOf(1f, 1.6f)) for (code in languages) {
             compose.runOnIdle { width.value = w; scale.value = font; language.value = code }
             val sky = compose.onNodeWithTag("sun-finder-sky").fetchSemanticsNode().boundsInRoot
-            val warning = compose.onNodeWithTag("celestial-compass-warning").fetchSemanticsNode().boundsInRoot
+            compose.onNodeWithTag("celestial-compass-warning").assertDoesNotExist()
+            compose.onNodeWithTag("observer-simulation-banner").assertDoesNotExist()
             val notice = compose.onNodeWithTag("sun-finder-status-island").assertIsDisplayed().fetchSemanticsNode().boundsInRoot
             val action = compose.onNodeWithTag("sun-finder-status-action").assertIsDisplayed().fetchSemanticsNode().touchBoundsInRoot
-            val visualNotices = listOf("celestial-compass-warning", "sun-finder-status-island", "observer-simulation-banner")
-                .map { compose.onNodeWithTag(it).fetchSemanticsNode().layoutInfo.coordinates.boundsInRoot() }
-                .sortedBy { it.top }
-            visualNotices.zipWithNext().forEach { (upper, lower) ->
-                assertTrue("Wider notices appear first in $code", upper.width + .5f >= lower.width)
-                assertTrue("Visual notices never overlap in $code", lower.top >= upper.bottom + 3f)
-            }
             assertTrue("Notice stays within its sky in $code", notice.left >= sky.left && notice.right <= sky.right)
             assertTrue("Status width stays compact in $code", notice.width <= 280.5f)
             if (font == 1f) assertTrue("Regular-font status has one compact row in $code", notice.height <= 61f)
@@ -91,35 +84,44 @@ class SpaceCompassStatusNoticesUiTest {
         }
     }
 
-    @Test fun widthChangesReorderImmediatelyAndKeepBothActionsWorking() {
-        val warning = mutableStateOf("Compass warning long enough to span the complete corner width")
-        val message = mutableStateOf("Offline")
-        val simulation = mutableStateOf<String?>("Simulation active")
+    @Test fun retryAndLoadingTakePriorityUntilRecoveryThenRestoreTheLatestCompassWarning() {
+        val warning = mutableStateOf("Reduced precision")
+        val message = mutableStateOf<String?>("Offline")
+        val action = mutableStateOf<String?>("Retry")
         var retries = 0
-        var simulationClicks = 0
         compose.activityRule.scenario.onActivity { activity -> activity.setContent {
             CompositionLocalProvider(LocalDensity provides Density(1f, 1f)) {
                 MaterialTheme {
                     Box(Modifier.requiredSize(360.dp, 500.dp)) {
-                        SpaceCompassSunStatusNotices(warning.value, message.value, "Retry", { retries++ },
-                            Color.White, Color.LightGray, Color(0xFF101418),
-                            simulationLabel = simulation.value, onSimulation = { simulationClicks++ })
+                        SpaceCompassSunStatusNotices(warning.value, message.value, action.value, {
+                            retries++
+                            message.value = "Loading"
+                            action.value = null
+                        }, Color.White, Color.LightGray, Color(0xFF101418))
                     }
                 }
             }
         } }
-        fun top(tag: String) = compose.onNodeWithTag(tag).fetchSemanticsNode().layoutInfo.coordinates.boundsInRoot().top
-        assertTrue(top("celestial-compass-warning") < top("sun-finder-status-island"))
-        compose.runOnIdle { warning.value = "Low" }
-        assertTrue(top("sun-finder-status-island") < top("celestial-compass-warning"))
+        compose.onNodeWithTag("sun-finder-status-island").assertIsDisplayed()
+        compose.onNodeWithTag("celestial-compass-warning").assertDoesNotExist()
         compose.onNodeWithTag("sun-finder-status-action").performClick()
-        compose.onNodeWithTag("observer-simulation-banner").performClick()
-        compose.runOnIdle { assertEquals(1, retries); assertEquals(1, simulationClicks) }
+        compose.runOnIdle { assertEquals(1, retries) }
+        compose.onNodeWithText("Loading").assertIsDisplayed()
+        compose.onNodeWithTag("sun-finder-status-action").assertDoesNotExist()
+        compose.onNodeWithTag("celestial-compass-warning").assertDoesNotExist()
+
+        // A failed retry keeps priority even if the sensor state changes in the meantime.
         compose.runOnIdle {
-            warning.value = "A longer compass warning should move back above the other active notices"
-            simulation.value = null
+            warning.value = "Move magnetic objects away"
+            message.value = "Offline"
+            action.value = "Retry"
         }
-        assertTrue(top("celestial-compass-warning") < top("sun-finder-status-island"))
-        compose.onNodeWithTag("observer-simulation-banner").assertDoesNotExist()
+        compose.onNodeWithTag("sun-finder-status-action").assertIsDisplayed().performClick()
+        compose.runOnIdle { assertEquals(2, retries); message.value = null }
+        compose.onNodeWithTag("sun-finder-status-island").assertDoesNotExist()
+        compose.onNodeWithTag("celestial-compass-warning").assertIsDisplayed()
+            .assertTextEquals("Move magnetic objects away")
+        compose.runOnIdle { warning.value = "Reduced precision" }
+        compose.onNodeWithTag("celestial-compass-warning").assertTextEquals("Reduced precision")
     }
 }

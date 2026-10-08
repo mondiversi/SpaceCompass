@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="celestial_sirius">Sirio</string>
+    <string name="celestial_betelgeuse">Betelgeuse</string>
+    <string name="celestial_titan">Titán</string>
+    <string name="celestial_orion_nebula">M42 · Nebulosa de Orión</string>
+    <string name="celestial_pleiades">M45 · Pléyades</string>
+    <string name="catalog_type_nebula">Nebulosa</string>
+    <string name="catalog_type_cluster">Cúmulo estelar</string>
+    <string name="celestial_apparent_magnitude">Magnitud aparente</string>
+    <string name="celestial_speed_orbit_saturn">Velocidad orbital (Saturno): %1$s km/s</string>
+    <string name="celestial_andromeda_galaxy_title">Galaxia de Andrómeda</string>
+    <string name="celestial_archival_image">Observación de archivo, no una vista en directo. Los colores pueden representar longitudes de onda invisibles al ojo.</string>
+    <string name="celestial_image_loading">Cargando imagen…</string>
+    <string name="celestial_sirius_note">La estrella más brillante del cielo nocturno. Los valores físicos corresponden a Sirio A; Sirio B es su compañera enana blanca. Posición de catálogo y distancia aproximada.</string>
+    <string name="celestial_betelgeuse_note">Supergigante roja variable de Orión. El radio, la distancia y el intervalo de masa actual dependen de los modelos; su brillo cambia con el tiempo.</string>
+    <string name="celestial_titan_note">La mayor luna de Saturno, con una densa atmósfera de nitrógeno y lagos de metano. La temperatura y presión de Huygens son mediciones de referencia del lugar de aterrizaje de 2005. Mosaico superficial Cassini en infrarrojo cercano; trayectorias NASA/JPL.</string>
+    <string name="celestial_orion_note">Nebulosa de Orión donde nacen estrellas. La orientación y el recorrido diario siguen su centro de catálogo. Una nebulosa no tiene una única superficie planetaria.</string>
+    <string name="celestial_pleiades_note">Cúmulo estelar abierto de Tauro. La orientación sigue el centro del cúmulo. La imagen infrarroja WISE muestra estrellas y polvo circundante.</string>
+    <string name="celestial_andromeda_galaxy_note">Andrómeda (M31) es una galaxia espiral a unos 2,5 millones de años luz. M31* es su agujero negro central: la masa indicada corresponde a M31*, no a toda la galaxia. La fotografía muestra la galaxia.</string>
+</resources>

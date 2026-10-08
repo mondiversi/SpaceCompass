@@ -1,9 +1,9 @@
 <resources>
     <string name="info_news_title">최근 변경 사항 · %1$s</string>
-    <string name="info_news_star_sky">위치와 시간에 맞춘 사실적인 별빛 하늘을 파노라마에서도 더 선명하게 표시합니다.</string>
-    <string name="info_news_texture_downloads">앱 용량을 줄였습니다. 행성 지도는 필요할 때 다운로드하여 오프라인으로 사용할 수 있으며, 이오와 유로파는 2K WebP로 제공됩니다.</string>
-    <string name="info_news_weather">메인 화면과 파노라마의 날씨 표현을 통일하고 표시 설정을 저장합니다.</string>
-    <string name="info_news_viewer_zoom">천체 상세에 작은 +와 − 버튼을 추가했습니다. 처음 크기가 최소 확대 수준입니다.</string>
-    <string name="info_news_settings">설정, 단위, 시나리오와 조작 버튼을 정돈하고 정보 및 크레딧 페이지를 개선했습니다.</string>
-    <string name="info_news_catalog">카메라 줌을 저장하고 천체 데이터 업데이트가 끝나면 짧게 알립니다.</string>
+    <string name="info_news_star_sky">35개 천체: 시리우스, 베텔게우스, 타이탄, 오리온 성운, 플레이아데스를 추가하고 안드로메다의 새 이미지를 제공합니다.</string>
+    <string name="info_news_texture_downloads">이미지 팩 1.1: WebP 이미지 18장을 필요할 때 다운로드하고 검증하여 오프라인으로 사용할 수 있습니다.</string>
+    <string name="info_news_weather">정보 패널을 접을 수 있으며, 조작 버튼을 재배치하고 사용자 지정 시나리오 표시를 개선했습니다.</string>
+    <string name="info_news_viewer_zoom">일일 경로의 현재 위치와 지점 패널을 개선하고 우선순위에 따라 상태 메시지 하나를 표시합니다.</string>
+    <string name="info_news_settings">메인 화면과 파노라마의 날씨 효과 조명이 새벽, 낮, 일몰, 밤에 맞춰 바뀝니다.</string>
+    <string name="info_news_catalog">파노라마 조작, 촬영 진동, 내보내기 여백과 작은 천체 확대 버튼을 개선했습니다.</string>
 </resources>

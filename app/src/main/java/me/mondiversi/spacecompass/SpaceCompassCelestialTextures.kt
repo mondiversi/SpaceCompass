@@ -37,17 +37,33 @@ internal object SpaceCompassCelestialTextures {
     fun open(context: Context, body: SpaceCompassCelestialBody): InputStream? {
         val name = body.viewerTexture ?: return null
         if (body == SpaceCompassCelestialBody.LV_426) return context.assets.open("celestial/$name")
+        return openImage(context, name)
+    }
+
+    fun openImage(context: Context, name: String?): InputStream? {
         val texture = SpaceCompassCelestialTexturePolicy.texture(name) ?: return null
         return store(context).cached(texture)?.inputStream()
     }
 
-    suspend fun ensure(context: Context, body: SpaceCompassCelestialBody): Boolean = withContext(Dispatchers.IO) {
-        val texture = SpaceCompassCelestialTexturePolicy.texture(body.viewerTexture) ?: return@withContext true
+    suspend fun ensure(context: Context, body: SpaceCompassCelestialBody): Boolean = ensureImage(context, body.viewerTexture)
+
+    suspend fun ensureImage(context: Context, name: String?): Boolean = withContext(Dispatchers.IO) {
+        val texture = SpaceCompassCelestialTexturePolicy.texture(name) ?: return@withContext true
         locks.computeIfAbsent(texture.name) { Mutex() }.withLock {
             val files = store(context)
             if (files.cached(texture) != null) {
                 ready.update { it + texture.name }
                 android.util.Log.d("SpaceCompassTextures", "${texture.name}: reused verified offline map")
+                return@withLock true
+            }
+            val imported = runCatching {
+                files.importVerified(texture, SpaceCompassCelestialTexturePolicy.legacyPacks.map {
+                    File(context.noBackupFilesDir, it)
+                })
+            }.getOrNull()
+            if (imported != null) {
+                ready.update { it + texture.name }
+                android.util.Log.i("SpaceCompassTextures", "${texture.name}: reused verified previous pack")
                 return@withLock true
             }
             val now = android.os.SystemClock.elapsedRealtime()
@@ -68,7 +84,7 @@ internal object SpaceCompassCelestialTextures {
             } catch (cancelled: CancellationException) { throw cancelled
             } catch (error: Exception) {
                 retryAfter[texture.name] = android.os.SystemClock.elapsedRealtime() + 30_000
-                SpaceCompassErrorLog.record(context, "celestial:texture:${body.name}", error)
+                SpaceCompassErrorLog.record(context, "celestial:texture:${texture.name}", error)
                 false
             }
         }
@@ -107,9 +123,13 @@ internal object SpaceCompassCelestialTextures {
 }
 
 @Composable
-internal fun rememberSpaceCompassCelestialTexture(body: SpaceCompassCelestialBody): Boolean {
+internal fun rememberSpaceCompassCelestialTexture(body: SpaceCompassCelestialBody): Boolean =
+    rememberSpaceCompassCelestialImage(body.viewerTexture)
+
+@Composable
+internal fun rememberSpaceCompassCelestialImage(name: String?): Boolean {
     val context = LocalContext.current.applicationContext
-    val texture = SpaceCompassCelestialTexturePolicy.texture(body.viewerTexture) ?: return true
+    val texture = SpaceCompassCelestialTexturePolicy.texture(name) ?: return true
     val ready by SpaceCompassCelestialTextures.ready.collectAsState()
     val lifecycle = LocalLifecycleOwner.current.lifecycle
     var resumed by remember(lifecycle) { mutableStateOf(lifecycle.currentState.isAtLeast(Lifecycle.State.RESUMED)) }
@@ -123,7 +143,7 @@ internal fun rememberSpaceCompassCelestialTexture(body: SpaceCompassCelestialBod
     }
     LaunchedEffect(context, texture.name, resumed) {
         if (!resumed) return@LaunchedEffect
-        while (!SpaceCompassCelestialTextures.ensure(context, body)) delay(30_000)
+        while (!SpaceCompassCelestialTextures.ensureImage(context, name)) delay(30_000)
     }
     return texture.name in ready
 }
@@ -140,5 +160,9 @@ internal fun spaceCompassCelestialPlaceholderColor(body: SpaceCompassCelestialBo
     SpaceCompassCelestialBody.URANUS -> 0xff91c6d5.toInt()
     SpaceCompassCelestialBody.NEPTUNE -> 0xff467bc0.toInt()
     SpaceCompassCelestialBody.POLARIS -> 0xfffff3d6.toInt()
+    SpaceCompassCelestialBody.SIRIUS -> 0xffd2e9ff.toInt()
+    SpaceCompassCelestialBody.BETELGEUSE, SpaceCompassCelestialBody.TITAN -> 0xffd99865.toInt()
+    SpaceCompassCelestialBody.ORION_NEBULA -> 0xffb887a2.toInt()
+    SpaceCompassCelestialBody.PLEIADES -> 0xff89b9d8.toInt()
     else -> 0xff9c4f3a.toInt()
 }

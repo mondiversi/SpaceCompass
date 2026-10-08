@@ -77,3 +77,14 @@ https://science.nasa.gov/resource/io-3d-model/
 https://science.nasa.gov/resource/europa-3d-model/
 NASA Visualization Technology Applications and Development (VTAD);
 NASA/JPL/USGS source imagery, no endorsement implied.
+
+## Release 1.2.0 / image pack 1.1
+
+Six new WebP derivatives add Titan (NASA/JPL-Caltech/Space Science Institute),
+Sirius and M42 (NASA/ESA/Hubble), Betelgeuse (ALMA/ESO/NAOJ/NRAO, CC BY 4.0),
+the Pleiades (NASA/JPL-Caltech/UCLA, WISE) and Andromeda (NASA/ESA/Hubble).
+Exact contributors, source URLs, processing, dimensions and hashes are retained
+in [the pack credits](textures/celestial-textures-v1.1/CREDITS.txt),
+[its manifest](textures/celestial-textures-v1.1/manifest.json) and
+[the catalog sources](docs/CATALOG_ADDITIONS.md). All eighteen runtime images
+are WebP, quality 90, method 6, 2048 x 1024. Legacy release assets remain intact.

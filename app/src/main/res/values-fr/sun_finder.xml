@@ -17,7 +17,7 @@
     <string name="sun_finder_location_searching">Recherche de la position…</string>
     <string name="sun_finder_compass_missing">Aucune boussole disponible sur cet appareil.</string>
     <string name="sun_finder_orientation_searching">Lecture de l’orientation…</string>
-    <string name="sun_finder_compass_accuracy">Boussole peu précise. Éloigne les objets magnétiques et calibre le téléphone.</string>
+    <string name="sun_finder_compass_accuracy">Éloigne les objets magnétiques</string>
     <string name="sun_finder_allow_location">Autoriser la localisation</string>
     <string name="sun_finder_enable_location">Activer la localisation</string>
     <string name="sun_finder_retry">Réessayer</string>

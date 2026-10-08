@@ -112,10 +112,8 @@ internal fun renderSpaceCompassCameraPhoto(context: Context, photo: SpaceCompass
                 text.clearShadowLayer()
             }
         } }
-        // A small translucent header overlays the full photograph instead of cropping camera pixels.
-        paint.style=Paint.Style.FILL; paint.color=0x99000000.toInt()
+        // The shared translucent header overlays the photograph instead of cropping camera pixels.
         val header=SPACE_COMPASS_PANORAMA_HEADER_HEIGHT*scale
-        canvas.drawRect(0f,0f,width.toFloat(),header,paint)
         drawSpaceCompassPanoramaCaption(canvas,snapshot.caption,width,scale)
         if (pointing==null && photo.warning!=null) {
             text.textSize=20*scale; text.color=Color.WHITE; text.textAlign=Paint.Align.CENTER

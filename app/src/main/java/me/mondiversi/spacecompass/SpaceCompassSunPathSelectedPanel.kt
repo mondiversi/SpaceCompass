@@ -42,7 +42,8 @@ internal fun SpaceCompassSunPathSelectedPanel(
     val closeLabel = stringResource(R.string.close)
     val canStep = path != null && path.markers.isNotEmpty()
     val lineHeight = 14.sp
-    Row(modifier.fillMaxWidth().padding(4.dp).clip(RoundedCornerShape(16.dp))
+    // The parent owns the gap below the island; do not add another bottom margin here.
+    Row(modifier.fillMaxWidth().padding(start = 4.dp, top = 4.dp, end = 4.dp).clip(RoundedCornerShape(16.dp))
         .background(backgroundColor.copy(alpha = 0.88f)).testTag("sun-path-selected"),
         verticalAlignment = Alignment.CenterVertically) {
         if (canStep) SpaceCompassSunPathStepButton(false, stringResource(R.string.sun_path_previous), primaryText) {

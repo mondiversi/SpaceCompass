@@ -10,6 +10,18 @@ internal data class SpaceCompassDeepSkyReference(val raHours: Double, val decDeg
     val distanceLy: Double, val pmRaMasYear: Double = 0.0, val pmDecMasYear: Double = 0.0)
 internal val SpaceCompassCelestialBody.deepSkyReference: SpaceCompassDeepSkyReference?
     get() = when (this) {
+        SpaceCompassCelestialBody.SIRIUS -> SpaceCompassDeepSkyReference(
+            6 + 45.0/60 + 8.91728/3600, -(16 + 42.0/60 + 58.0171/3600),
+            1000 / 379.21 * 3.261563777, -546.01, -1223.07)
+        SpaceCompassCelestialBody.BETELGEUSE -> SpaceCompassDeepSkyReference(
+            5 + 55.0/60 + 10.30536/3600, 7 + 24.0/60 + 25.4304/3600,
+            168 * 3.261563777, 27.54, 11.30)
+        // Extended targets use a catalogue centre, not fabricated component or gas trajectories.
+        SpaceCompassCelestialBody.ORION_NEBULA -> SpaceCompassDeepSkyReference(
+            5 + 35.0/60 + 16.8/3600, -(5 + 23.0/60 + 15.0/3600), 414 * 3.261563777)
+        SpaceCompassCelestialBody.PLEIADES -> SpaceCompassDeepSkyReference(
+            3 + 46.0/60 + 24.2/3600, 24 + 6.0/60 + 50.0/3600,
+            1000 / 7.364 * 3.261563777, 19.997, -45.548)
         // Fictional placement: use the real host-star direction, never invented moon ephemerides.
         SpaceCompassCelestialBody.LV_426 -> SpaceCompassDeepSkyReference(
             3 + 18.0/60 + 12.8188824117/3600, -(62 + 30.0/60 + 22.904711032/3600),
@@ -80,6 +92,10 @@ internal fun calculateSpaceCompassDeepSkyObservation(body: SpaceCompassCelestial
 
 internal val SpaceCompassCelestialBody.deepSkyNoteResource: Int
     get() = when (this) {
+        SpaceCompassCelestialBody.SIRIUS -> R.string.celestial_sirius_note
+        SpaceCompassCelestialBody.BETELGEUSE -> R.string.celestial_betelgeuse_note
+        SpaceCompassCelestialBody.ORION_NEBULA -> R.string.celestial_orion_note
+        SpaceCompassCelestialBody.PLEIADES -> R.string.celestial_pleiades_note
         SpaceCompassCelestialBody.LV_426 -> R.string.celestial_lv426_description
         SpaceCompassCelestialBody.TRAPPIST_1_E -> R.string.celestial_trappist_note
         SpaceCompassCelestialBody.TON_618 -> R.string.celestial_ton_618_note

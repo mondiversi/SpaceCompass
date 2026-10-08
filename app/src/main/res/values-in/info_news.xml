@@ -1,9 +1,9 @@
 <resources>
     <string name="info_news_title">Perubahan terbaru · %1$s</string>
-    <string name="info_news_star_sky">Langit berbintang realistis sesuai lokasi dan waktu Anda, lebih tajam dalam panorama.</string>
-    <string name="info_news_texture_downloads">Aplikasi lebih kecil: peta planet diunduh saat diperlukan dan tetap tersedia offline; Io dan Europa dalam WebP 2K.</string>
-    <string name="info_news_weather">Cuaca konsisten antara tampilan utama dan panorama, dengan pilihan tampilan tersimpan.</string>
-    <string name="info_news_viewer_zoom">Kontrol + dan − ringkas pada detail objek; ukuran awal adalah zoom minimum.</string>
-    <string name="info_news_settings">Pengaturan, satuan, dan skenario diperbaiki, kontrol seragam serta halaman Info dan kredit.</string>
-    <string name="info_news_catalog">Zoom kamera tersimpan dan konfirmasi singkat setelah pembaruan data objek selesai.</string>
+    <string name="info_news_star_sky">35 objek: Sirius, Betelgeuse, Titan, Nebula Orion, dan Pleiades; gambar baru Andromeda.</string>
+    <string name="info_news_texture_downloads">Paket gambar 1.1: 18 gambar WebP diunduh saat diperlukan, diverifikasi, dan tersedia offline.</string>
+    <string name="info_news_weather">Panel informasi yang dapat diciutkan, kontrol ditata ulang, dan indikator skenario khusus yang lebih jelas.</string>
+    <string name="info_news_viewer_zoom">Posisi saat ini pada lintasan harian, panel titik yang diperbaiki, dan satu pesan status sesuai prioritas.</string>
+    <string name="info_news_settings">Pencahayaan efek cuaca mengikuti fajar, siang, matahari terbenam, dan malam pada tampilan utama dan panorama.</string>
+    <string name="info_news_catalog">Kontrol panorama diperbaiki, getaran saat mengambil gambar, jarak ekspor, dan zoom objek yang ringkas.</string>
 </resources>

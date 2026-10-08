@@ -49,6 +49,7 @@ private fun orbitalCache(context: Context, body: SpaceCompassCelestialBody, moti
     val name = if (motion) "celestial-${body.name.lowercase(java.util.Locale.ROOT)}-heliocentric-motion-v2.txt" else when (body) {
         SpaceCompassCelestialBody.ISS -> "celestial-iss-v1.tle"
         SpaceCompassCelestialBody.STARLINK_V3 -> "celestial-starlink-40083-v1.csv"
+        SpaceCompassCelestialBody.TITAN -> "celestial-titan-v1.txt"
         SpaceCompassCelestialBody.HALLEY -> "celestial-halley-v1.txt"
         SpaceCompassCelestialBody.COMET_67P -> "celestial-67p-v1.txt"
         SpaceCompassCelestialBody.SEDNA -> "celestial-sedna-v1.txt"

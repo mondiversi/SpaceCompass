@@ -50,11 +50,12 @@ class SpaceCompassCelestialPathMinimumTest {
         val now = Instant.parse("2026-10-03T12:00:00Z").toEpochMilli()
         val begin = Instant.parse("2026-10-02T00:00:00Z").toEpochMilli()
         val remote = SpaceCompassCelestialRemoteData(ephemerides =
-            listOf(SpaceCompassCelestialBody.SEDNA, SpaceCompassCelestialBody.HALLEY, SpaceCompassCelestialBody.COMET_67P)
+            listOf(SpaceCompassCelestialBody.SEDNA, SpaceCompassCelestialBody.HALLEY, SpaceCompassCelestialBody.COMET_67P, SpaceCompassCelestialBody.TITAN)
                 .associateWith { body -> SpaceCompassHorizonsEphemeris(body,
                     (0..72).map { SpaceCompassHorizonsSample(begin + it * 3_600_000L,
-                        if (body.isComet) 2.0 else 38.0, if (body.isComet) 3.0 else 72.0,
-                        if (body.isComet) 1.0 else 12.0) }) })
+                        if (body.isComet) 2.0 else if (body == SpaceCompassCelestialBody.TITAN) 9.0 else 38.0,
+                        if (body.isComet) 3.0 else if (body == SpaceCompassCelestialBody.TITAN) 1.0 else 72.0,
+                        if (body.isComet || body == SpaceCompassCelestialBody.TITAN) 1.0 else 12.0) }) })
         for (body in SpaceCompassCelestialBody.entries.filter { it.supportsDailyPath && !it.isEarthSatellite && !it.isVoyager }) {
             val path = calculateSpaceCompassCelestialPath(body, date, zone, now, 45.0, 9.0, 0.0, remote)!!
             val minimum = path.markers.single { SpaceCompassSunPathEvent.MINIMUM in it.events }

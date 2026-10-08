@@ -1,9 +1,9 @@
 <resources>
     <string name="info_news_title">最近の変更 · %1$s</string>
-    <string name="info_news_star_sky">場所と時刻に合わせたリアルな星空を、パノラマでもより鮮明に表示。</string>
-    <string name="info_news_texture_downloads">アプリを軽量化。惑星マップは必要時にダウンロードしてオフラインで利用可能。イオとエウロパは2K WebPに対応。</string>
-    <string name="info_news_weather">メイン画面とパノラマで天気表示を統一し、表示設定を保存。</string>
-    <string name="info_news_viewer_zoom">天体詳細に小さな＋と−を配置。初期サイズが最小ズームになります。</string>
-    <string name="info_news_settings">設定、単位、シナリオと操作ボタンを統一し、情報とクレジットページを改善。</string>
-    <string name="info_news_catalog">カメラのズームを保存し、天体データの更新完了時に短い通知を表示。</string>
+    <string name="info_news_star_sky">35天体：シリウス、ベテルギウス、タイタン、オリオン大星雲、プレアデス星団を追加。アンドロメダの新しい画像も収録。</string>
+    <string name="info_news_texture_downloads">画像パック1.1：18枚のWebP画像を必要時にダウンロードし、検証してオフラインで利用できます。</string>
+    <string name="info_news_weather">情報パネルを折りたたみ可能にし、操作ボタンとカスタムシナリオの表示を改善。</string>
+    <string name="info_news_viewer_zoom">日周経路の現在位置、ポイントパネルを改善。状態メッセージは優先度に応じて1つ表示。</string>
+    <string name="info_news_settings">メイン画面とパノラマの天気エフェクトが、夜明け、昼、日没、夜の明るさに対応。</string>
+    <string name="info_news_catalog">パノラマ操作、撮影時の振動、エクスポートの余白とコンパクトな天体ズームを改善。</string>
 </resources>

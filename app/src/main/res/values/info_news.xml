@@ -1,9 +1,9 @@
 <resources>
     <string name="info_news_title">Latest news · %1$s</string>
-    <string name="info_news_star_sky">Realistic starry sky aligned with your location and time, clearer in panoramas.</string>
-    <string name="info_news_texture_downloads">Smaller app: planetary maps download on demand and remain available offline; Io and Europa in 2K WebP.</string>
-    <string name="info_news_weather">Consistent weather in the main view and panoramas, with a saved visibility toggle.</string>
-    <string name="info_news_viewer_zoom">Compact + and − in object details; the initial size is the minimum zoom.</string>
-    <string name="info_news_settings">Refined settings, units and scenarios, consistent controls and the Info &amp; credits page.</string>
-    <string name="info_news_catalog">Saved camera zoom and brief confirmation when object data refresh finishes.</string>
+    <string name="info_news_star_sky">35 objects: Sirius, Betelgeuse, Titan, the Orion Nebula and the Pleiades; new images of Andromeda.</string>
+    <string name="info_news_texture_downloads">Image pack 1.1: 18 WebP images downloaded on demand, verified and available offline.</string>
+    <string name="info_news_weather">Collapsible information panels, reorganized controls and a clearer Custom scenario indicator.</string>
+    <string name="info_news_viewer_zoom">Current position in daily paths, refined point panels and a single priority status message.</string>
+    <string name="info_news_settings">Weather lighting follows dawn, daytime, sunset and night in the main view and panoramas.</string>
+    <string name="info_news_catalog">Improved panorama controls, capture vibration, export spacing and compact object zoom.</string>
 </resources>

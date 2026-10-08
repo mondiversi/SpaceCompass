@@ -1,5 +1,5 @@
 <resources>
-    <string name="observer_title">Senaryo</string>
+    <string name="observer_title">Özel senaryo</string>
     <string name="observer_place">Konum</string>
     <string name="observer_search">Yer ara</string>
     <string name="observer_search_action">Ara</string>

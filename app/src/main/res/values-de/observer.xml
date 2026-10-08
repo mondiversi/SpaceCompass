@@ -1,5 +1,5 @@
 <resources>
-    <string name="observer_title">Szenario</string>
+    <string name="observer_title">Benutzerdefiniertes Szenario</string>
     <string name="observer_place">Position</string>
     <string name="observer_search">Ort suchen</string>
     <string name="observer_search_action">Suchen</string>

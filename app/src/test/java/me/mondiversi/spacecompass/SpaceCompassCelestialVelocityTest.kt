@@ -150,8 +150,9 @@ class SpaceCompassCelestialVelocityTest {
         assertTrue(SpaceCompassHorizonsMotion(SpaceCompassCelestialBody.SEDNA, probe.samples).speedAt(now)!! > probe.speedAt(now)!!)
     }
 
-    @Test fun speedLabelsIdentifyAllFourPhysicalReferences() {
+    @Test fun speedLabelsIdentifyAllFivePhysicalReferences() {
         assertEquals(R.string.celestial_speed_earth_orbit, spaceCompassCelestialSpeedLabel(SpaceCompassCelestialBody.SUN))
+        assertEquals(R.string.celestial_speed_orbit_saturn, spaceCompassCelestialSpeedLabel(SpaceCompassCelestialBody.TITAN))
         listOf(SpaceCompassCelestialBody.MOON, SpaceCompassCelestialBody.ISS, SpaceCompassCelestialBody.STARLINK_V3).forEach {
             assertEquals(R.string.celestial_speed_orbit_earth, spaceCompassCelestialSpeedLabel(it))
         }
@@ -159,7 +160,7 @@ class SpaceCompassCelestialVelocityTest {
             assertEquals(R.string.celestial_speed_outward_sun, spaceCompassCelestialSpeedLabel(it))
         }
         SpaceCompassCelestialBody.entries.filter { it != SpaceCompassCelestialBody.EARTH_CENTER && it != SpaceCompassCelestialBody.SUN && it != SpaceCompassCelestialBody.MOON &&
-            !it.isEarthSatellite && !it.isExtrasolar && !it.isVoyager && !it.isJovianMoon }.forEach {
+            !it.isEarthSatellite && !it.isExtrasolar && !it.isVoyager && !it.isJovianMoon && it != SpaceCompassCelestialBody.TITAN }.forEach {
             assertEquals(R.string.celestial_speed_orbit_sun, spaceCompassCelestialSpeedLabel(it))
         }
         SpaceCompassCelestialBody.entries.filter { it.isJovianMoon }.forEach {

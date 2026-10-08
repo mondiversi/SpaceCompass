@@ -17,7 +17,7 @@
     <string name="sun_finder_location_searching">Mencari lokasi…</string>
     <string name="sun_finder_compass_missing">Kompas tidak tersedia pada perangkat ini.</string>
     <string name="sun_finder_orientation_searching">Membaca orientasi…</string>
-    <string name="sun_finder_compass_accuracy">Akurasi kompas rendah. Jauhkan benda magnetis dan kalibrasi ponsel.</string>
+    <string name="sun_finder_compass_accuracy">Jauhkan benda magnetis</string>
     <string name="sun_finder_allow_location">Izinkan lokasi</string>
     <string name="sun_finder_enable_location">Aktifkan lokasi</string>
     <string name="sun_finder_retry">Coba lagi</string>

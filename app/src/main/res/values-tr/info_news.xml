@@ -1,9 +1,9 @@
 <resources>
     <string name="info_news_title">Son yenilikler · %1$s</string>
-    <string name="info_news_star_sky">Konumunuza ve saate göre hizalanan gerçekçi yıldızlı gökyüzü, panoramalarda daha net.</string>
-    <string name="info_news_texture_downloads">Daha küçük uygulama: gezegen haritaları gerektiğinde indirilir ve çevrimdışı kullanılabilir; Io ve Europa 2K WebP biçiminde.</string>
-    <string name="info_news_weather">Ana görünüm ve panoramalarda tutarlı hava durumu, kaydedilen görüntüleme tercihiyle.</string>
-    <string name="info_news_viewer_zoom">Nesne ayrıntılarında kompakt + ve −; başlangıç boyutu en düşük yakınlaştırma seviyesidir.</string>
-    <string name="info_news_settings">İyileştirilmiş ayarlar, birimler ve senaryolar, tutarlı kontroller ve Bilgi ve katkıda bulunanlar sayfası.</string>
-    <string name="info_news_catalog">Kaydedilen kamera yakınlaştırması ve nesne verileri güncellendiğinde kısa onay.</string>
+    <string name="info_news_star_sky">35 nesne: Sirius, Betelgeuse, Titan, Orion Bulutsusu ve Ülker; Andromeda’nın yeni görüntüleri.</string>
+    <string name="info_news_texture_downloads">Görüntü paketi 1.1: 18 WebP görüntüsü gerektiğinde indirilir, doğrulanır ve çevrimdışı kullanılabilir.</string>
+    <string name="info_news_weather">Daraltılabilir bilgi panelleri, yeniden düzenlenen kontroller ve daha belirgin özel senaryo göstergesi.</string>
+    <string name="info_news_viewer_zoom">Günlük yollarda mevcut konum, iyileştirilmiş nokta panelleri ve önceliğe göre tek durum mesajı.</string>
+    <string name="info_news_settings">Hava efektlerinin aydınlatması ana görünüm ve panoramalarda şafak, gündüz, gün batımı ve geceyi takip eder.</string>
+    <string name="info_news_catalog">İyileştirilmiş panorama kontrolleri, çekim titreşimi, dışa aktarma boşlukları ve kompakt nesne yakınlaştırması.</string>
 </resources>

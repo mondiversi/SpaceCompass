@@ -51,28 +51,26 @@ internal fun SpaceCompassCelestialSelector(body: SpaceCompassCelestialBody, colo
     selectedBodies: Set<SpaceCompassCelestialBody> = setOf(body),
     onToggleAll: (() -> Unit)? = null, onSelect: (SpaceCompassCelestialBody) -> Unit) {
     val catalogOpen = LocalSpaceCompassCatalogOpen.current
+    val tint = spaceCompassFloatingControlTint(color, selectedBodies.isNotEmpty())
     val label = stringResource(R.string.celestial_select)
     val count = formatSpaceCompassNumber(selectedBodies.size.toDouble(), 0,
         LocalSpaceCompassNumericFormat.current, grouping = false)
-    Box(modifier) {
-        SpaceCompassTitleActionButton(label, onClick = { catalogOpen?.value = true },
-            modifier = Modifier.width(48.dp).testTag("celestial-select").semantics {
-                stateDescription = count
-            }, iconColor = color) {
-            SpaceCompassCelestialCatalogIcon(Modifier.size(SpaceCompassTitleActionIconSize), color,
-                crossed = selectedBodies.isEmpty())
-        }
-        // The compact badge stays inside the same 48 dp toolbar slot as the menu action.
-        if (selectedBodies.isNotEmpty()) Box(
-            Modifier.align(Alignment.TopEnd).size(16.dp)
-                .background(background, CircleShape).border(1.dp, color.copy(alpha = .5f), CircleShape)
-                .testTag("celestial-selection-count").clearAndSetSemantics {},
-            contentAlignment = Alignment.Center
-        ) { Text(count, color = color, fontSize = 9.sp, lineHeight = 10.sp, maxLines = 1) }
+    SpaceCompassFloatingActionButton(label, { catalogOpen?.value = true }, tint, background,
+        modifier.testTag("celestial-select"), stateText = count,
+        overlay = {
+            if (selectedBodies.isNotEmpty()) Box(
+                Modifier.align(Alignment.TopEnd).size(16.dp)
+                    .background(background, CircleShape).border(1.dp, tint.copy(alpha = .5f), CircleShape)
+                    .testTag("celestial-selection-count").clearAndSetSemantics {},
+                contentAlignment = Alignment.Center
+            ) { Text(count, color = tint, fontSize = 9.sp, lineHeight = 10.sp, maxLines = 1) }
+        }) {
+        SpaceCompassCelestialCatalogIcon(Modifier.size(26.dp), tint,
+            crossed = selectedBodies.isEmpty())
     }
 }
 
-/** One familiar ringed planet, using the same neutral toolbar glyph as the other actions. */
+/** One familiar ringed planet, accented when objects are selected. */
 @Composable
 private fun SpaceCompassCelestialCatalogIcon(modifier: Modifier, tint: Color, crossed: Boolean) {
     Canvas(modifier) {

@@ -1,0 +1,101 @@
+Space Compass image pack 1.1
+18 WebP images, 2048 x 1024, quality 90, method 6.
+
+Solar System Scope textures by INOVE
+Source: https://www.solarsystemscope.com/textures/
+License: Creative Commons Attribution 4.0 International
+https://creativecommons.org/licenses/by/4.0/
+
+Assets: sun.webp, mercury.webp, venus_atmosphere.webp, mars.webp, jupiter.webp,
+saturn.webp, uranus.webp, neptune.webp.
+Maps based on NASA imagery with colour adjustments by the original publisher.
+Space Compass caps maps at 2048x1024 and applies calculated lighting at runtime.
+Public distribution copy: TanvirAhmedArnab/SolarSystem, SourceAssets/ThirdParty/
+Textures/SolarSystemScope. Copyright/license of the maps remains with INOVE.
+
+Moon: NASA/GSFC/Arizona State University, CGI Moon Kit.
+https://svs.gsfc.nasa.gov/4720/
+2025 colour map: https://svs.gsfc.nasa.gov/vis/a000000/a004700/a004720/lroc_color_2k.jpg
+Pluto: NASA/JHUAPL/SwRI, New Horizons global colour mosaic.
+https://science.nasa.gov/resource/pluto-global-color-map/
+NASA maps are resampled at runtime for display. No endorsement is implied.
+
+Io: NASA/JPL/USGS Voyager/Galileo SSI Global Mosaic 1km.
+https://astrogeology.usgs.gov/search/map/io_voyager_galileo_ssi_global_mosaic_1km
+Europa: NASA/JPL/USGS Voyager/Galileo SSI Global Mosaic 500m.
+https://astrogeology.usgs.gov/search/map/europa_voyager_galileo_ssi_global_mosaic_500m
+USGS public-domain products; original source credits retained. Native grayscale
+512x256 browse mosaics, not new telescope photographs or invented colour.
+Public byte-identical distribution copies:
+https://github.com/TanvirAhmedArnab/SolarSystem/tree/main/SourceAssets/ThirdParty/Textures/USGS
+io_global_mosaic_browse.jpg -> io.webp (packaged WebP), original JPEG SHA-256:
+de69759452f5479b6f56ff5c72a90ed402ab8d7f11219524c26e5b60610b9597
+europa_global_mosaic_browse.jpg -> europa.jpg, SHA-256:
+3369ba56cbfa447347b5afc003b80b69fbf87dd90a724d59f09abad8691a9819
+Longitude-domain/seam and illumination conventions: docs/CELESTIAL_VIEWER.md.
+
+Physical and orbital reference values: NASA NSSDCA Planetary Fact Sheets;
+Sedna diameter: Pal et al. 2012, https://arxiv.org/abs/1204.0899;
+Sedna orbital/rotation reference snapshot: JPL SBDB, 2026-10-04.
+Spacecraft reference dimensions: NASA ISS and Voyager fact pages.
+Full qualifications and sources: docs/CELESTIAL_VIEWER.md in the Space Compass source.
+
+Optimized distribution: WebP quality 90 at original packaged dimensions. Europa keeps its smaller original JPEG.
+
+Io and Europa 2048x1024 colour display derivatives:
+NASA Visualization Technology Applications and Development (VTAD), original
+4096x2048 albedo maps embedded in the official NASA Io and Europa 3D models.
+https://science.nasa.gov/resource/io-3d-model/
+https://science.nasa.gov/resource/europa-3d-model/
+Io source: Io_1_3643.glb, embedded color_2016_04_28.jpg (PNG RGBA raster).
+Europa source: Europa_1_3138.glb, embedded color_2016_03_10.jpg (PNG RGBA raster).
+Derivatives: io_2048.webp and europa_2048.webp, WebP quality 90, 2048x1024.
+The NASA display maps contain processed colour and visually filled/blended
+coverage; they do not assert complete measured terrain or live surface imagery.
+They supersede the earlier 512x256 USGS browse derivatives for this app build.
+Old io.webp and europa.jpg distribution files remain unchanged for older apps.
+North-up orientation and longitude seam match the original reference mosaics.
+NASA/VTAD, NASA/JPL/USGS credits retained; no endorsement is implied.
+
+
+Space Compass catalog additions included in image pack 1.1
+
+All distribution images: 2048 x 1024 WebP, quality 90, method 6.
+Maps keep geographic orientation. Photographs keep their aspect ratio, with black framing.
+Photographs are archived observations, not live views or resolved surface maps.
+
+titan.webp
+NASA/JPL-Caltech/Space Science Institute
+https://science.nasa.gov/resource/titan-mosaic-the-surface-under-the-haze/
+NASA imagery: retain attribution; no endorsement.
+Lanczos resample, no invented detail
+
+sirius.webp
+NASA, ESA, H. Bond (STScI), and M. Barstow (University of Leicester)
+https://science.nasa.gov/asset/hubble/the-dog-star-sirius-and-its-tiny-companion/
+NASA/ESA Hubble imagery: retain attribution; no endorsement.
+Aspect-preserving fit with black framing; no spherical projection
+
+betelgeuse.webp
+ALMA (ESO/NAOJ/NRAO)/E. O’Gorman/P. Kervella
+https://www.eso.org/public/images/potw1726a/
+CC BY 4.0; https://www.eso.org/public/copyright/
+Aspect-preserving fit with black framing; no spherical projection
+
+orion_nebula.webp
+NASA, ESA, M. Robberto (STScI/ESA), and the Hubble Space Telescope Orion Treasury Project Team
+https://science.nasa.gov/asset/hubble/hubbles-sharpest-view-of-the-orion-nebula/
+NASA/ESA Hubble imagery: retain attribution; no endorsement.
+Aspect-preserving fit with black framing; no spherical projection
+
+pleiades.webp
+NASA/JPL-Caltech/UCLA
+https://science.nasa.gov/photojournal/seven-sisters-get-wise/
+NASA imagery: retain attribution; no endorsement.
+Aspect-preserving fit with black framing; no spherical projection
+
+andromeda_galaxy.webp
+NASA, ESA, Benjamin F. Williams (UWashington), Zhuo Chen (UWashington), L. Clifton Johnson (Northwestern); Image Processing: Joseph DePasquale (STScI)
+https://science.nasa.gov/mission/hubble/science/explore-the-night-sky/hubble-messier-catalog/messier-31/
+NASA/ESA Hubble imagery: retain attribution; no endorsement.
+Aspect-preserving fit with black framing; no spherical projection

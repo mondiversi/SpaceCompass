@@ -1,7 +1,7 @@
 package me.mondiversi.spacecompass
 
 internal const val SPACE_COMPASS_HIDDEN_OBJECT_HOLD_MS = 3_000L
-// The scenic 39.3-ly reference belongs between Alpha Centauri AB and TRAPPIST-1e.
+// The scenic 39.3-ly reference belongs between Sirius and TRAPPIST-1e.
 internal val spaceCompassAllCelestialOrder = spaceCompassCelestialCatalogOrder.flatMap {
     if (it == SpaceCompassCelestialBody.TRAPPIST_1_E) listOf(SpaceCompassCelestialBody.LV_426, it) else listOf(it)
 }

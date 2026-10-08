@@ -19,10 +19,26 @@ internal data class SpaceCompassCelestialFacts(
     val rotationSeconds: Double? = null, val binaryPeriodDays: Double? = null,
     val diameterEstimated: Boolean = false, val diameterErrorMinusKm: Double? = null,
     val diameterErrorPlusKm: Double? = null, val spectralType: String? = null,
-    val luminositySolar: Double? = null, val rotationErrorHours: Double? = null, val parentName: String? = null
+    val luminositySolar: Double? = null, val rotationErrorHours: Double? = null, val parentName: String? = null,
+    val maximumMassSolar: Double? = null, val apparentMagnitude: Double? = null
 )
 
 internal fun spaceCompassCelestialFacts(body: SpaceCompassCelestialBody): SpaceCompassCelestialFacts = when (body) {
+    SpaceCompassCelestialBody.SIRIUS -> siriusFacts()
+    // Joyce et al. 2020: a present-day model mass range, not an invented symmetric measurement error.
+    SpaceCompassCelestialBody.BETELGEUSE -> SpaceCompassCelestialFacts(
+        diameterKm = 2 * 764.0 * 695700, diameterEstimated = true,
+        diameterErrorMinusKm = 2 * 62.0 * 695700, diameterErrorPlusKm = 2 * 116.0 * 695700,
+        massSolar = 16.5, maximumMassSolar = 19.0, massEstimated = true, spectralType = "M1–M2 Ia–Iab")
+    SpaceCompassCelestialBody.TITAN -> SpaceCompassCelestialFacts(
+        diameterKm = 2 * 2574.76, diameterErrorKm = 2 * .02,
+        massKg = 8978.13710 / 6.67430e-20, gravity = 8978.13710 / (2574.76 * 2574.76) * 1000,
+        density = 1881.4, rotationHours = 15.945448 * 24, revolutionDays = 15.945448,
+        parent = SpaceCompassCelestialBody.SATURN,
+        minimumParentKm = 1_221_900.0 * (1 - .029), maximumParentKm = 1_221_900.0 * (1 + .029))
+    // A nebula/cluster has no planetary surface, axial rotation or single stellar temperature.
+    SpaceCompassCelestialBody.ORION_NEBULA -> SpaceCompassCelestialFacts(apparentMagnitude = 4.0)
+    SpaceCompassCelestialBody.PLEIADES -> SpaceCompassCelestialFacts(apparentMagnitude = 1.6)
     // Alien fiction: original diameter is disputed across publications; no inferred mass/density.
     SpaceCompassCelestialBody.LV_426 -> SpaceCompassCelestialFacts(
         diameterKm = 1200.0, diameterEstimated = true,
@@ -152,9 +168,9 @@ internal val SpaceCompassCelestialBody.viewerTexture: String?
 internal val SpaceCompassCelestialBody.isSpacecraft: Boolean get() = isEarthSatellite || isVoyager
 
 /** Raster X increases eastward even for ISIS PositiveWest coordinate labels.
- * Europa/Pluto span 0..360; the other reference maps are centred on longitude zero. */
+ * Europa/Pluto/Titan span 0..360; the other reference maps are centred on longitude zero. */
 internal val SpaceCompassCelestialBody.textureLongitudeOffset: Double
-    get() = if (this == SpaceCompassCelestialBody.PLUTO || this == SpaceCompassCelestialBody.EUROPA) 0.0 else 0.5
+    get() = if (this == SpaceCompassCelestialBody.PLUTO || this == SpaceCompassCelestialBody.EUROPA || this == SpaceCompassCelestialBody.TITAN) 0.0 else 0.5
 internal val SpaceCompassCelestialBody.textureHasUnmappedAreas: Boolean
     get() = this == SpaceCompassCelestialBody.PLUTO || this == SpaceCompassCelestialBody.EUROPA
 
@@ -206,3 +222,22 @@ private fun proximaFacts(): SpaceCompassCelestialFacts {
         gravity = 6.67430e-11 * mass / (radius * radius), density = 3 * mass / (4 * Math.PI * radius * radius * radius),
         rotationHours = 90.0 * 24, rotationErrorHours = 4.0 * 24, spectralType = "M5.5 V", luminositySolar = 0.0016)
 }
+
+private fun siriusFacts(): SpaceCompassCelestialFacts {
+    // Sirius A only; mass from Bond et al. 2017, radius from Kervella et al. 2003.
+    val radius = 1.711 * 695700000
+    val mass = 2.063 * SPACE_COMPASS_SOLAR_MASS_KG
+    return SpaceCompassCelestialFacts(diameterKm = 2 * radius / 1000,
+        diameterErrorKm = 2 * .013 * 695700, diameterEstimated = true,
+        massSolar = 2.063, massSolarError = .023, massEstimated = true,
+        gravity = 6.67430e-11 * mass / (radius * radius), density = 3 * mass / (4 * Math.PI * radius * radius * radius),
+        spectralType = "A1 V", binaryPeriodDays = 50.1284 * 365.25, apparentMagnitude = -1.46)
+}
+
+internal val SpaceCompassCelestialBody.hasCatalogPhotograph: Boolean get() = when (this) {
+    SpaceCompassCelestialBody.SIRIUS, SpaceCompassCelestialBody.BETELGEUSE,
+    SpaceCompassCelestialBody.ORION_NEBULA, SpaceCompassCelestialBody.PLEIADES -> true
+    else -> false
+}
+internal val SpaceCompassCelestialBody.isExtendedSkyObject: Boolean get() =
+    this == SpaceCompassCelestialBody.ORION_NEBULA || this == SpaceCompassCelestialBody.PLEIADES

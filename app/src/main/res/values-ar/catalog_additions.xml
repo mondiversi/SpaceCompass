@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="celestial_sirius">الشعرى اليمانية</string>
+    <string name="celestial_betelgeuse">منكب الجوزاء</string>
+    <string name="celestial_titan">تيتان</string>
+    <string name="celestial_orion_nebula">M42 · سديم الجبار</string>
+    <string name="celestial_pleiades">M45 · الثريا</string>
+    <string name="catalog_type_nebula">سديم</string>
+    <string name="catalog_type_cluster">عنقود نجمي</string>
+    <string name="celestial_apparent_magnitude">القدر الظاهري</string>
+    <string name="celestial_speed_orbit_saturn">السرعة المدارية (زحل): %1$s km/s</string>
+    <string name="celestial_andromeda_galaxy_title">مجرة أندروميدا</string>
+    <string name="celestial_archival_image">رصد أرشيفي، وليس عرضًا مباشرًا من التلسكوب. قد تمثل الألوان أطوالًا موجية لا تراها العين.</string>
+    <string name="celestial_image_loading">جارٍ تحميل الصورة…</string>
+    <string name="celestial_sirius_note">ألمع نجم في سماء الليل. القيم الفيزيائية تخص الشعرى A؛ والشعرى B رفيقها القزم الأبيض. موقع من الفهرس ومسافة تقريبية.</string>
+    <string name="celestial_betelgeuse_note">عملاق أحمر فائق متغير في الجبار. يعتمد نصف القطر والمسافة ونطاق الكتلة الحالية على النماذج، ويتغير السطوع مع الزمن.</string>
+    <string name="celestial_titan_note">أكبر أقمار زحل، بغلاف جوي كثيف من النيتروجين وبحيرات من الميثان. حرارة وضغط هويغنز قياسات مرجعية في موقع هبوطه عام 2005. فسيفساء سطحية لكاسيني بالأشعة تحت الحمراء القريبة؛ ومسارات NASA/JPL.</string>
+    <string name="celestial_orion_note">سديم في الجبار تتكون فيه النجوم. يتبع التوجيه والمسار اليومي مركزه في الفهرس. ليس للسديم سطح كوكبي واحد.</string>
+    <string name="celestial_pleiades_note">عنقود نجمي مفتوح في الثور. يتبع التوجيه مركز العنقود. تظهر صورة WISE بالأشعة تحت الحمراء النجوم والغبار المحيط.</string>
+    <string name="celestial_andromeda_galaxy_note">أندروميدا (M31) مجرة حلزونية تبعد نحو 2.5 مليون سنة ضوئية. M31* هو ثقبها الأسود المركزي؛ الكتلة في الجدول تخص M31* وليس المجرة كلها. تظهر الصورة المجرة.</string>
+</resources>

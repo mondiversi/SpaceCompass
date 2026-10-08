@@ -57,20 +57,24 @@ internal fun formatSpaceCompassCelestialMass(body: SpaceCompassCelestialBody,
     if (!solar.isFinite() || solar <= 0) return "—"
     val uncertainty = facts.massSolarError
     if (uncertainty != null && (!uncertainty.isFinite() || uncertainty <= 0)) return "—"
+    val upper = facts.maximumMassSolar
+    if (upper != null && (!upper.isFinite() || upper < solar || uncertainty != null)) return "—"
     val amount: String
     val unit: String
     if (spaceCompassUsesSolarMass(facts)) {
         val value = if (solar >= 1e6) formatSpaceCompassScientificNumber(solar, numeric)
             else formatSpaceCompassNumber(solar, 3, numeric, minimumDigits = 0)
         val error = uncertainty?.let { " ± " + formatSpaceCompassNumber(it, 3, numeric, minimumDigits = 0) } ?: ""
-        amount = value + error
+        amount = value + error + (upper?.let { "–" + formatSpaceCompassNumber(it, 3, numeric, minimumDigits = 0) } ?: "")
         unit = "M☉"
     } else {
         val kilograms = spaceCompassCelestialMassKilograms(facts) ?: return "—"
         val value = spaceCompassMassForDisplay(kilograms, pounds)
         val error = uncertainty?.let { spaceCompassMassForDisplay(it * SPACE_COMPASS_SOLAR_MASS_KG, pounds) }
         if (!value.isFinite() || value <= 0 || (error != null && (!error.isFinite() || error <= 0))) return "—"
-        amount = formatSpaceCompassMassWithUncertainty(value, error, numeric)
+        amount = formatSpaceCompassMassWithUncertainty(value, error, numeric) + (upper?.let {
+            "–" + formatSpaceCompassScientificNumber(spaceCompassMassForDisplay(it * SPACE_COMPASS_SOLAR_MASS_KG, pounds), numeric)
+        } ?: "")
         unit = if (pounds) "lb" else "kg"
     }
     val prefix = if (facts.massModelAssumption) "† " else if (facts.massEstimated) "≈ " else ""

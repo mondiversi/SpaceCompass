@@ -1,9 +1,9 @@
 <resources>
     <string name="info_news_title">تازه‌ترین تغییرات · %1$s</string>
-    <string name="info_news_star_sky">آسمان پرستارهٔ واقعی متناسب با مکان و زمان شما، با وضوح بیشتر در پانوراماها.</string>
-    <string name="info_news_texture_downloads">برنامهٔ کوچک‌تر: نقشه‌های سیارات هنگام نیاز دریافت می‌شوند و آفلاین در دسترس می‌مانند؛ آیو و اروپا در قالب WebP با وضوح 2K.</string>
-    <string name="info_news_weather">آب‌وهوای هماهنگ در نمای اصلی و پانوراماها، با ذخیرهٔ انتخاب نمایش.</string>
-    <string name="info_news_viewer_zoom">دکمه‌های کوچک + و − در جزئیات جرم؛ اندازهٔ اولیه کمترین بزرگ‌نمایی است.</string>
-    <string name="info_news_settings">تنظیمات، واحدها و سناریوهای بهبودیافته، کنترل‌های یکسان و صفحهٔ اطلاعات و سپاسگزاری.</string>
-    <string name="info_news_catalog">ذخیرهٔ بزرگ‌نمایی دوربین و تأیید کوتاه پس از پایان به‌روزرسانی داده‌های اجرام.</string>
+    <string name="info_news_star_sky">۳۵ جرم: شباهنگ، ابط‌الجوزا، تیتان، سحابی شکارچی و خوشهٔ پروین؛ تصاویر تازهٔ آندرومدا.</string>
+    <string name="info_news_texture_downloads">بستهٔ تصاویر 1.1: ۱۸ تصویر WebP هنگام نیاز دریافت و بررسی می‌شوند و آفلاین در دسترس می‌مانند.</string>
+    <string name="info_news_weather">پنل‌های اطلاعات جمع‌شونده، کنترل‌های بازچینش‌شده و نشانگر روشن‌تر سناریوی سفارشی.</string>
+    <string name="info_news_viewer_zoom">موقعیت فعلی در مسیرهای روزانه، پنل‌های نقطهٔ بهبودیافته و یک پیام وضعیت بر اساس اولویت.</string>
+    <string name="info_news_settings">نور جلوه‌های آب‌وهوا در نمای اصلی و پانوراماها با سپیده‌دم، روز، غروب و شب هماهنگ است.</string>
+    <string name="info_news_catalog">کنترل‌های بهتر پانوراما، لرزش هنگام ثبت، فاصله‌های خروجی و بزرگ‌نمایی فشردهٔ اجرام.</string>
 </resources>

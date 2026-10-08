@@ -17,7 +17,7 @@
     <string name="sun_finder_location_searching">Inatafuta eneo…</string>
     <string name="sun_finder_compass_missing">Dira haipatikani kwenye kifaa hiki.</string>
     <string name="sun_finder_orientation_searching">Inasoma mwelekeo…</string>
-    <string name="sun_finder_compass_accuracy">Usahihi wa dira ni mdogo. Ondoa vitu vya sumaku na rekebisha dira ya simu.</string>
+    <string name="sun_finder_compass_accuracy">Sogeza vitu vya sumaku mbali</string>
     <string name="sun_finder_allow_location">Ruhusu eneo</string>
     <string name="sun_finder_enable_location">Washa eneo</string>
     <string name="sun_finder_retry">Jaribu tena</string>

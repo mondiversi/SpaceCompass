@@ -27,12 +27,12 @@ class SpaceCompassCelestialTexturePolicyTest {
 
     @Test fun packCoversEveryRemoteMapWithoutFictionalTextureOrDuplicateNames() {
         val images = SpaceCompassCelestialTexturePolicy.images
-        assertEquals(12, images.size)
-        assertEquals(12, images.map { it.name }.distinct().size)
+        assertEquals(18, images.size)
+        assertEquals(18, images.map { it.name }.distinct().size)
         assertFalse(images.any { it.name == "lv426.webp" })
         for (body in SpaceCompassCelestialBody.entries.filter { it.viewerTexture != null && it != SpaceCompassCelestialBody.LV_426 })
             assertNotNull(body.name, SpaceCompassCelestialTexturePolicy.texture(body.viewerTexture))
-        assertEquals(3_109_226, images.sumOf { it.bytes })
+        assertEquals(3_969_738, images.sumOf { it.bytes })
     }
 
     @Test fun byteLengthAndDigestAreBothRequired() {
@@ -87,5 +87,61 @@ class SpaceCompassCelestialTexturePolicyTest {
     @Test fun cacheFilenamesCannotEscapeTheirDirectory() {
         for (name in listOf("../moon.webp", "/moon.webp", "moon.webp/extra", "moon%2ewebp", "moon.png"))
             assertThrows(IllegalArgumentException::class.java) { texture.copy(name = name) }
+    }
+
+    @Test fun matchingPreviousPackIsImportedWithoutRemovingTheOriginal() {
+        val root = Files.createTempDirectory("texture-pack-import").toFile()
+        val old = File(root, "old").apply { mkdir() }
+        val next = File(root, "new")
+        try {
+            File(old, texture.name).writeBytes(bytes)
+            val files = SpaceCompassCelestialTextureFiles(next)
+            assertArrayEquals(bytes, files.importVerified(texture, listOf(old))!!.readBytes())
+            assertArrayEquals(bytes, File(old, texture.name).readBytes())
+            assertArrayEquals(bytes, SpaceCompassCelestialTextureFiles(next).cached(texture)!!.readBytes())
+        } finally { root.walkBottomUp().forEach(File::delete) }
+    }
+
+    @Test fun wrongLegacyDigestIsSkippedAndLaterMatchingPackCanBeReused() {
+        val root = Files.createTempDirectory("texture-pack-corruption").toFile()
+        val wrong = File(root, "wrong").apply { mkdir() }
+        val valid = File(root, "valid").apply { mkdir() }
+        val next = File(root, "new")
+        try {
+            File(wrong, texture.name).writeBytes(ByteArray(bytes.size))
+            val files = SpaceCompassCelestialTextureFiles(next)
+            assertNull(files.importVerified(texture, listOf(wrong)))
+            assertFalse(next.exists())
+            File(valid, texture.name).writeBytes(bytes)
+            assertArrayEquals(bytes, files.importVerified(texture, listOf(wrong, valid))!!.readBytes())
+            assertArrayEquals(ByteArray(bytes.size), File(wrong, texture.name).readBytes())
+        } finally { root.walkBottomUp().forEach(File::delete) }
+    }
+
+    @Test fun failedMigrationLeavesPreviouslyDownloadedMapIntact() {
+        val root = Files.createTempDirectory("texture-pack-failure").toFile()
+        val old = File(root, "old").apply { mkdir() }
+        val blocked = File(root, "blocked").apply { writeText("not a directory") }
+        try {
+            File(old, texture.name).writeBytes(bytes)
+            assertThrows(IllegalStateException::class.java) {
+                SpaceCompassCelestialTextureFiles(blocked).importVerified(texture, listOf(old))
+            }
+            assertArrayEquals(bytes, File(old, texture.name).readBytes())
+            assertEquals("not a directory", blocked.readText())
+        } finally { root.walkBottomUp().forEach(File::delete) }
+    }
+
+    @Test fun allImagesUseTheExactNewPackAndOldReleaseUrlsAreNotDownloaded() {
+        val policy = SpaceCompassCelestialTexturePolicy
+        assertEquals("celestial-textures-v1.1", policy.PACK)
+        for (image in policy.images) {
+            assertTrue(image.name.endsWith(".webp"))
+            assertEquals(2048, image.width)
+            assertEquals(1024, image.height)
+            assertEquals("https://github.com/mondiversi/SpaceCompass/releases/download/celestial-textures-v1.1/${image.name}", image.url)
+            assertFalse(policy.allowedUrl(image.url.replace("celestial-textures-v1.1/", "celestial-textures-v1/")))
+        }
+        assertEquals(listOf("celestial-textures-v1"), policy.legacyPacks)
     }
 }

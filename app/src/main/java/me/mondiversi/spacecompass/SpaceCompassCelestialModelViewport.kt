@@ -118,7 +118,13 @@ internal fun SpaceCompassCelestialModelViewport(body: SpaceCompassCelestialBody,
             if (rotating) add(CustomAccessibilityAction(resumeDescription) { currentCallback(currentRotation.beginReturn()); true })
         }
     }, contentAlignment = Alignment.Center) {
-        if (body.isComet) SpaceCompassCometSymbol(body, Modifier.fillMaxSize().graphicsLayer {
+        if (body.hasCatalogPhotograph) SpaceCompassCatalogPhotograph(requireNotNull(body.viewerTexture),
+            Modifier.fillMaxSize().graphicsLayer {
+                scaleX = viewport.zoom.toFloat(); scaleY = viewport.zoom.toFloat()
+                translationX = (viewport.panX * size.width / 2).toFloat()
+                translationY = (-viewport.panY * size.height / 2).toFloat()
+            })
+        else if (body.isComet) SpaceCompassCometSymbol(body, Modifier.fillMaxSize().graphicsLayer {
             scaleX = viewport.zoom.toFloat(); scaleY = viewport.zoom.toFloat()
             translationX = (viewport.panX * size.width / 2).toFloat()
             translationY = (-viewport.panY * size.height / 2).toFloat()

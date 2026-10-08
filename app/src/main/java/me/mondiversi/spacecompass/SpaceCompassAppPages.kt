@@ -65,7 +65,7 @@ internal fun SpaceCompassSettingsButton() {
         SpaceCompassAdaptiveDropdownMenu(expanded, { expanded = false }, containerColor = card,
             modifier = Modifier.testTag("app-settings-menu"), shape = RoundedCornerShape(16.dp)) {
             listOf("appearance" to R.string.settings_section_appearance, "language" to R.string.settings_section_language,
-                "units" to R.string.settings_section_units, "observer" to R.string.observer_title, "info" to R.string.settings_section_info).forEachIndexed { index, (route, title) ->
+                "units" to R.string.settings_section_units, "info" to R.string.settings_section_info).forEachIndexed { index, (route, title) ->
                 if (index > 0) HorizontalDivider(color = foreground.copy(alpha = .10f))
                 DropdownMenuItem(text = {
                     Row(verticalAlignment = Alignment.CenterVertically, horizontalArrangement = Arrangement.spacedBy(8.dp)) {

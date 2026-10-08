@@ -13,8 +13,10 @@ import android.text.TextPaint
 /** Enough room for a centered full-size line and the reserved +90 degree marker. */
 internal const val SPACE_COMPASS_PANORAMA_HEADER_HEIGHT = 144f
 
-/** Fit the caption to one shaped line and center it vertically above the angular grid. */
+/** Both capture modes share a translucent black band and one centered, shaped caption line. */
 internal fun drawSpaceCompassPanoramaCaption(canvas: Canvas, value: String, width: Int, scale: Float): RectF {
+    val background = Paint().apply { color = 0x99000000.toInt() }
+    canvas.drawRect(0f, 0f, width.toFloat(), SPACE_COMPASS_PANORAMA_HEADER_HEIGHT * scale, background)
     val inset = 32 * scale
     val available = (width - inset * 2).toInt().coerceAtLeast(1)
     val paint = TextPaint(Paint.ANTI_ALIAS_FLAG).apply {

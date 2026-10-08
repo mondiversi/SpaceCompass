@@ -9,9 +9,15 @@ internal fun formatSpaceCompassCelestialDiameter(facts: SpaceCompassCelestialFac
     numeric: SpaceCompassNumericFormat, feet: Boolean): String {
     val diameter = facts.diameterKm?.takeIf { it.isFinite() && it >= 0 } ?: return "—"
     fun length(km: Double?, digits: Int) = formatSpaceCompassPhysicalLength(km?.times(1000), digits, numeric, feet, large = true)
-    return (if (facts.diameterEstimated) "≈ " else "") + length(diameter, if (facts.diameterEstimated) 2 else 0) +
+    // A small published uncertainty must never round to zero (Titan: ±0.04 km).
+    val errorInUnit = facts.diameterErrorKm?.div(if (feet) 1.609344 else 1.0)
+    val errorDigits = errorInUnit?.takeIf { it.isFinite() && it > 0 && it < 1 }?.let {
+        kotlin.math.ceil(-kotlin.math.log10(it)).toInt().coerceIn(0, 6)
+    } ?: 0
+    return (if (facts.diameterEstimated) "≈ " else "") +
+        length(diameter, maxOf(if (facts.diameterEstimated) 2 else 0, errorDigits)) +
         (facts.diameterErrorPlusKm?.let { " (+${length(it, 2)} / −${length(facts.diameterErrorMinusKm, 2)})" }
-            ?: facts.diameterErrorKm?.let { " (±${length(it, 0)})" } ?: "")
+            ?: facts.diameterErrorKm?.let { " (±${length(it, errorDigits)})" } ?: "")
 }
 
 /** The displayed quantity and numeric sort key share one reference; fallback labels are mandatory. */

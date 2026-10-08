@@ -12,7 +12,7 @@ class SpaceCompassHiddenCelestialTest {
 
     @Test fun defaultCatalogAndMasterSelectionDoNotExposeHiddenObjects() {
         val initial = SpaceCompassCelestialSelection()
-        assertEquals(30, spaceCompassAvailableCelestialCatalog(initial.selected).size)
+        assertEquals(35, spaceCompassAvailableCelestialCatalog(initial.selected).size)
         assertFalse(hidden in spaceCompassCelestialCatalogOrder)
         assertFalse(hidden in initial.toggleAll().selected)
         assertEquals(spaceCompassCelestialCatalogOrder.toSet() + hidden, SpaceCompassCelestialBody.entries.filterNot { it == SpaceCompassCelestialBody.EARTH_CENTER }.toSet())
@@ -24,7 +24,7 @@ class SpaceCompassHiddenCelestialTest {
         assertEquals(original.selected + hidden, revealed.selected)
         assertEquals(original.active, revealed.active)
         assertEquals(revealed, revealed.revealHiddenObject())
-        assertEquals(31, spaceCompassAvailableCelestialCatalog(revealed.selected).size)
+        assertEquals(36, spaceCompassAvailableCelestialCatalog(revealed.selected).size)
         assertEquals(hidden, SpaceCompassCelestialSelection(emptySet(), null).revealHiddenObject().active)
     }
 

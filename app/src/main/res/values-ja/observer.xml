@@ -1,5 +1,5 @@
 <resources>
-    <string name="observer_title">シナリオ</string>
+    <string name="observer_title">カスタムシナリオ</string>
     <string name="observer_place">位置</string>
     <string name="observer_search">場所を検索</string>
     <string name="observer_search_action">検索</string>

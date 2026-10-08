@@ -1,9 +1,9 @@
 <resources>
     <string name="info_news_title">Neuigkeiten · %1$s</string>
-    <string name="info_news_star_sky">Realistischer Sternenhimmel passend zu Standort und Uhrzeit, in Panoramen schärfer dargestellt.</string>
-    <string name="info_news_texture_downloads">Kleinere App: Planetenkarten werden bei Bedarf geladen und bleiben offline verfügbar; Io und Europa als 2K-WebP.</string>
-    <string name="info_news_weather">Einheitliche Wetterdarstellung in Hauptansicht und Panoramen, mit gespeicherter Anzeigeoption.</string>
-    <string name="info_news_viewer_zoom">Kompakte + und − in den Objektdetails; die Anfangsgröße ist die kleinste Zoomstufe.</string>
-    <string name="info_news_settings">Überarbeitete Einstellungen, Einheiten und Szenarien, einheitliche Bedienelemente und die Seite Info und Mitwirkende.</string>
-    <string name="info_news_catalog">Gespeicherter Kamerazoom und kurze Bestätigung nach der Aktualisierung der Objektdaten.</string>
+    <string name="info_news_star_sky">35 Objekte: Sirius, Beteigeuze, Titan, Orionnebel und Plejaden; neue Bilder von Andromeda.</string>
+    <string name="info_news_texture_downloads">Bildpaket 1.1: 18 WebP-Bilder werden bei Bedarf geladen, geprüft und bleiben offline verfügbar.</string>
+    <string name="info_news_weather">Einklappbare Informationsbereiche, neu angeordnete Bedienelemente und eine klarere Anzeige für das benutzerdefinierte Szenario.</string>
+    <string name="info_news_viewer_zoom">Aktuelle Position im Tagesverlauf, verbesserte Punktansichten und eine einzelne Statusmeldung nach Priorität.</string>
+    <string name="info_news_settings">Die Beleuchtung der Wettereffekte folgt Morgendämmerung, Tag, Sonnenuntergang und Nacht in Hauptansicht und Panoramen.</string>
+    <string name="info_news_catalog">Verbesserte Panorama-Steuerung, Vibration beim Aufnehmen, Exportabstände und kompakter Objektzoom.</string>
 </resources>

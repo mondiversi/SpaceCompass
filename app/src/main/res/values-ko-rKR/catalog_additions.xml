@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="celestial_sirius">시리우스</string>
+    <string name="celestial_betelgeuse">베텔게우스</string>
+    <string name="celestial_titan">타이탄</string>
+    <string name="celestial_orion_nebula">M42 · 오리온 성운</string>
+    <string name="celestial_pleiades">M45 · 플레이아데스</string>
+    <string name="catalog_type_nebula">성운</string>
+    <string name="catalog_type_cluster">성단</string>
+    <string name="celestial_apparent_magnitude">겉보기 등급</string>
+    <string name="celestial_speed_orbit_saturn">공전 속도 (토성): %1$s km/s</string>
+    <string name="celestial_andromeda_galaxy_title">안드로메다 은하</string>
+    <string name="celestial_archival_image">과거 관측 이미지이며 실시간 망원경 영상이 아닙니다. 색은 눈에 보이지 않는 파장을 나타낼 수 있습니다.</string>
+    <string name="celestial_image_loading">이미지 불러오는 중…</string>
+    <string name="celestial_sirius_note">밤하늘에서 가장 밝은 별입니다. 물리적 값은 시리우스 A를 가리키며 시리우스 B는 백색왜성 동반성입니다. 카탈로그 위치와 대략적인 거리입니다.</string>
+    <string name="celestial_betelgeuse_note">오리온자리의 변광 적색초거성입니다. 반지름, 거리와 현재 질량 범위는 모델에 따라 달라지며 밝기는 시간에 따라 변합니다.</string>
+    <string name="celestial_titan_note">두꺼운 질소 대기와 메탄 호수를 가진 토성의 가장 큰 위성입니다. 하위헌스의 온도와 압력은 2005년 착륙 지점의 참조 측정값입니다. 카시니 근적외선 표면 모자이크와 NASA/JPL 궤적을 사용합니다.</string>
+    <string name="celestial_orion_note">오리온자리에서 별이 태어나는 성운입니다. 방향과 일일 경로는 카탈로그 중심을 따릅니다. 성운에는 하나의 행성 표면이 없습니다.</string>
+    <string name="celestial_pleiades_note">황소자리의 산개성단입니다. 방향은 성단 중심을 따릅니다. WISE 적외선 이미지는 별과 주변 먼지를 보여줍니다.</string>
+    <string name="celestial_andromeda_galaxy_note">안드로메다(M31)는 약 250만 광년 떨어진 나선은하입니다. M31*는 중심 블랙홀이며 표의 질량은 은하 전체가 아닌 M31*의 값입니다. 사진은 은하를 보여줍니다.</string>
+</resources>

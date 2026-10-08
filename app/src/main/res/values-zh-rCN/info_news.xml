@@ -1,9 +1,9 @@
 <resources>
     <string name="info_news_title">最新变化 · %1$s</string>
-    <string name="info_news_star_sky">根据位置和时间呈现真实星空，全景中的星星更加清晰。</string>
-    <string name="info_news_texture_downloads">应用更轻巧：行星贴图按需下载并可离线使用，木卫一和木卫二采用2K WebP。</string>
-    <string name="info_news_weather">主视图与全景中的天气表现保持一致，并保存显示选项。</string>
-    <string name="info_news_viewer_zoom">天体详情中加入紧凑的＋和−按钮，初始大小即最小缩放比例。</string>
-    <string name="info_news_settings">优化设置、单位和场景，统一控件，并完善信息与鸣谢页面。</string>
-    <string name="info_news_catalog">保存相机缩放，天体数据更新完成时显示简短提示。</string>
+    <string name="info_news_star_sky">35个天体：新增天狼星、参宿四、土卫六、猎户座星云和昴星团，并加入仙女座的新图像。</string>
+    <string name="info_news_texture_downloads">图像包1.1：18幅WebP图像按需下载，经验证后可离线使用。</string>
+    <string name="info_news_weather">信息面板可折叠，重新安排操作按钮，并改进自定义场景的状态显示。</string>
+    <string name="info_news_viewer_zoom">每日轨迹加入当前位置，改进轨迹点面板，并按优先级显示一条状态消息。</string>
+    <string name="info_news_settings">主视图和全景中的天气效果亮度随黎明、白天、日落和夜晚变化。</string>
+    <string name="info_news_catalog">改进全景操作、拍摄振动、导出边距及紧凑的天体缩放按钮。</string>
 </resources>

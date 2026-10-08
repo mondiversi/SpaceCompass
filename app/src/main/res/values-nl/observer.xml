@@ -1,5 +1,5 @@
 <resources>
-    <string name="observer_title">Scenario</string>
+    <string name="observer_title">Aangepast scenario</string>
     <string name="observer_place">Positie</string>
     <string name="observer_search">Plaats zoeken</string>
     <string name="observer_search_action">Zoeken</string>

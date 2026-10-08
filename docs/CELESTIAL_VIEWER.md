@@ -533,3 +533,17 @@ confirms north-up orientation and the same longitude seam. The existing
 textureLongitudeOffset values, topocentric calculations and phase lighting
 are unchanged. Viewers, thumbnails and exported markers all read the same
 verified derivative. Old release filenames remain available for older APKs.
+
+## Additional catalogue targets
+
+See [catalogue additions](CATALOG_ADDITIONS.md) for the reviewed Sirius, Betelgeuse,
+Titan, M42/M45 references and Andromeda galaxy supplement, with external WebP credits.
+
+## Image pack 1.1 (app 1.2.0)
+
+The app downloads individual assets from `celestial-textures-v1.1`. Its eighteen
+2048 x 1024 WebP images include Titan, Sirius, Betelgeuse, M42, M45 and Andromeda.
+The original pack remains available for older APKs. Matching cached files are
+verified against the new APK and copied atomically, avoiding duplicate downloads.
+Archival deep-sky photographs are displayed flat with their observational
+qualifications and credits; they are not fictional spherical surface maps.

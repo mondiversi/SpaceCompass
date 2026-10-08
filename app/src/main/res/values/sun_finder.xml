@@ -17,7 +17,7 @@
     <string name="sun_finder_location_searching">Finding your location…</string>
     <string name="sun_finder_compass_missing">A compass is not available on this device.</string>
     <string name="sun_finder_orientation_searching">Reading the phone orientation…</string>
-    <string name="sun_finder_compass_accuracy">Compass accuracy is low. Move away from magnetic objects and calibrate the phone.</string>
+    <string name="sun_finder_compass_accuracy">Move magnetic objects away</string>
     <string name="sun_finder_allow_location">Allow location</string>
     <string name="sun_finder_enable_location">Enable location</string>
     <string name="sun_finder_retry">Try again</string>

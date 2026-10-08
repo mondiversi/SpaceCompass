@@ -17,9 +17,16 @@ internal data class SpaceCompassCelestialTexture(val name: String, val bytes: In
 
 /** Versioned public maps. Digests and dimensions belong to this APK, not a remote manifest. */
 internal object SpaceCompassCelestialTexturePolicy {
-    const val PACK = "celestial-textures-v1"
+    const val PACK = "celestial-textures-v1.1"
+    val legacyPacks = listOf("celestial-textures-v1")
     const val BASE_URL = "https://github.com/mondiversi/SpaceCompass/releases/download/$PACK"
     val images = listOf(
+        SpaceCompassCelestialTexture("titan.webp", 159238, "fbad4d29d878a5d9b9652ab63924eca29b438fbafdfe1c4b43cd7f68d0371aa0", 2048, 1024),
+        SpaceCompassCelestialTexture("sirius.webp", 69180, "fafdbd730eb1123152eca8740d312a2eb29f8e6ba9edc6ec259aa585b5e2e91a", 2048, 1024),
+        SpaceCompassCelestialTexture("betelgeuse.webp", 16418, "a53115d305780f7f3f941873993a8ae5a660ae12ec4c760fb7febfd3a8c8731b", 2048, 1024),
+        SpaceCompassCelestialTexture("orion_nebula.webp", 87134, "e5cf7e78919661ae4c020d41c73119bab8e8e0cda9a9d828303f2a71b04cf441", 2048, 1024),
+        SpaceCompassCelestialTexture("pleiades.webp", 356448, "a99de30f51e4d8f21e4d4cf1037a6ef7e7a0d64077fb15a3e91be826eb1a0c63", 2048, 1024),
+        SpaceCompassCelestialTexture("andromeda_galaxy.webp", 172094, "50f5f3a8cd87cf76558830fba4f051bb3bf0d9d3f817421fe8b1f6c0f2817e5e", 2048, 1024),
         SpaceCompassCelestialTexture("europa_2048.webp", 389900, "ff03436f223b26cd5930edddd4408b8e4a5fad3826b08d7dedb34b4711667a8f", 2048, 1024),
         SpaceCompassCelestialTexture("io_2048.webp", 288958, "0a85feb12c6d85d178b7e01b2c93eba20a546ed7591cf93620a4ffae7be7c462", 2048, 1024),
         SpaceCompassCelestialTexture("jupiter.webp", 209714, "d931cf6adcef7a6b6de141a096327f1dd626729ea8842c72cbe5e03f4cb2a0e4", 2048, 1024),
@@ -33,7 +40,8 @@ internal object SpaceCompassCelestialTexturePolicy {
         SpaceCompassCelestialTexture("uranus.webp", 11406, "fa9608375c2c5805fdd23d879151e6ad187a142474c8298f28441df66740660c", 2048, 1024),
         SpaceCompassCelestialTexture("venus_atmosphere.webp", 66736, "580dfe532a07f54cea30e608dc6f260de39474dff0cfdfc86643b4bfb51eb85d", 2048, 1024)
     )
-    fun texture(name: String?) = images.firstOrNull { it.name == name }
+    private val byName = images.associateBy { it.name }
+    fun texture(name: String?) = byName[name]
     fun allowedUrl(url: String, redirect: Boolean = false): Boolean = runCatching {
         val uri = URI(url)
         if (uri.scheme != "https" || uri.userInfo != null || uri.fragment != null || uri.port !in listOf(-1, 443)) return false

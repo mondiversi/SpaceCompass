@@ -24,7 +24,7 @@ import androidx.compose.ui.unit.sp
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
 
-/** Compact notices share the sky's leading corner without covering each other or its selector. */
+/** Data/location status takes precedence over secondary notices until it clears. */
 @Composable
 internal fun SpaceCompassSunStatusNotices(
     compassWarning: String?, message: String?, actionLabel: String?, onAction: () -> Unit,
@@ -32,24 +32,26 @@ internal fun SpaceCompassSunStatusNotices(
     simulationLabel: String? = null, onSimulation: () -> Unit = {},
     compassCalibrationRequired: Boolean = false
 ) {
+    // Keep the retry/loading status exclusive without changing the underlying compass state.
+    val hasStatus = message != null || actionLabel != null
     val shape = RoundedCornerShape(14.dp)
     val noticePadding = PaddingValues(horizontal = 12.dp, vertical = 6.dp)
     val noticeBackground = backgroundColor.copy(alpha = 0.90f)
     // Scenario and calibration warnings share a theme-aware orange; reduced precision stays neutral.
     val warningOrange = if (backgroundColor.luminance() < .4f) Color(0xFFFF8F1F) else Color(0xFFAB3D00)
     SpaceCompassNoticesByWidth(modifier.widthIn(max = 280.dp)) {
-        if (simulationLabel != null) {
+        if (!hasStatus && simulationLabel != null) {
             Text(simulationLabel, color = warningOrange, fontSize = 10.sp, lineHeight = 13.sp,
                 modifier = Modifier.testTag("observer-simulation-banner")
                     .background(noticeBackground, shape).clickable(role = Role.Button, onClick = onSimulation)
                     .padding(noticePadding))
         }
-        if (compassWarning != null) Text(compassWarning,
+        if (!hasStatus && compassWarning != null) Text(compassWarning,
             color = if (compassCalibrationRequired) warningOrange else secondaryText, fontSize = 10.sp,
             lineHeight = 13.sp, modifier = Modifier.background(noticeBackground, shape)
                 .padding(noticePadding).testTag("celestial-compass-warning")
                 .semantics { liveRegion = LiveRegionMode.Polite })
-        if (message != null || actionLabel != null) Row(
+        if (hasStatus) Row(
             Modifier.width(IntrinsicSize.Max).testTag("sun-finder-status-island")
                 .semantics { liveRegion = LiveRegionMode.Polite }.background(noticeBackground, shape)
                 .padding(noticePadding),

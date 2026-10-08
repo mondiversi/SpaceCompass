@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="celestial_sirius">Sirius</string>
+    <string name="celestial_betelgeuse">Betelgeuse</string>
+    <string name="celestial_titan">Titan</string>
+    <string name="celestial_orion_nebula">M42 · Nebula Orion</string>
+    <string name="celestial_pleiades">M45 · Pleiades</string>
+    <string name="catalog_type_nebula">Nebula</string>
+    <string name="catalog_type_cluster">Gugus bintang</string>
+    <string name="celestial_apparent_magnitude">Magnitudo tampak</string>
+    <string name="celestial_speed_orbit_saturn">Kecepatan orbit (Saturnus): %1$s km/s</string>
+    <string name="celestial_andromeda_galaxy_title">Galaksi Andromeda</string>
+    <string name="celestial_archival_image">Pengamatan arsip, bukan tampilan teleskop langsung. Warna dapat mewakili panjang gelombang yang tidak terlihat oleh mata.</string>
+    <string name="celestial_image_loading">Memuat gambar…</string>
+    <string name="celestial_sirius_note">Bintang paling terang di langit malam. Nilai fisik mengacu pada Sirius A; Sirius B adalah pendamping katai putihnya. Posisi katalog dan jarak perkiraan.</string>
+    <string name="celestial_betelgeuse_note">Maharaksasa merah variabel di Orion. Radius, jarak, dan rentang massa saat ini bergantung pada model; kecerahannya berubah seiring waktu.</string>
+    <string name="celestial_titan_note">Bulan terbesar Saturnus, dengan atmosfer nitrogen tebal dan danau metana. Suhu dan tekanan Huygens merupakan pengukuran acuan di lokasi pendaratan tahun 2005. Mosaik permukaan inframerah dekat Cassini; lintasan NASA/JPL.</string>
+    <string name="celestial_orion_note">Nebula di Orion tempat bintang terbentuk. Arah dan lintasan harian mengikuti pusat katalognya. Nebula tidak memiliki satu permukaan planet.</string>
+    <string name="celestial_pleiades_note">Gugus bintang terbuka di Taurus. Arah mengikuti pusat gugus. Gambar inframerah WISE menunjukkan bintang dan debu di sekitarnya.</string>
+    <string name="celestial_andromeda_galaxy_note">Andromeda (M31) adalah galaksi spiral sekitar 2,5 juta tahun cahaya jauhnya. M31* adalah lubang hitam pusatnya: massa dalam tabel mengacu pada M31*, bukan seluruh galaksi. Foto menunjukkan galaksi.</string>
+</resources>

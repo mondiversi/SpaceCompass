@@ -60,7 +60,7 @@ class SpaceCompassPressureUnitsTest {
     @Test fun onlyKnownAtmospheresAndExospheresHavePressureRows() {
         val known = setOf(SpaceCompassCelestialBody.VENUS, SpaceCompassCelestialBody.MARS,
             SpaceCompassCelestialBody.PLUTO, SpaceCompassCelestialBody.MOON, SpaceCompassCelestialBody.MERCURY,
-            SpaceCompassCelestialBody.IO, SpaceCompassCelestialBody.EUROPA)
+            SpaceCompassCelestialBody.IO, SpaceCompassCelestialBody.EUROPA, SpaceCompassCelestialBody.TITAN)
         assertEquals(known, SpaceCompassCelestialBody.entries.filter { spaceCompassAtmosphericPressure(it) != null }.toSet())
         // Gas giants have no defined solid-surface pressure; 1-bar temperature levels are not surface readings.
         for (body in listOf(SpaceCompassCelestialBody.JUPITER, SpaceCompassCelestialBody.SATURN,

@@ -30,6 +30,7 @@ internal data class SpaceCompassHorizonsEphemeris(val body: SpaceCompassCelestia
 
 private data class SpaceCompassHorizonsTarget(val command: String, val header: String, val rangeAu: ClosedFloatingPointRange<Double>)
 private fun spaceCompassHorizonsTarget(body: SpaceCompassCelestialBody) = when (body) {
+    SpaceCompassCelestialBody.TITAN -> SpaceCompassHorizonsTarget("606", "Titan (606)", 0.0..20.0)
     SpaceCompassCelestialBody.HALLEY -> SpaceCompassHorizonsTarget("DES=1P;NOFRAG;CAP;", "1P/Halley", 0.0..100.0)
     SpaceCompassCelestialBody.COMET_67P -> SpaceCompassHorizonsTarget("DES=67P;NOFRAG;CAP;", "67P/Churyumov-Gerasimenko", 0.0..20.0)
     SpaceCompassCelestialBody.SEDNA -> SpaceCompassHorizonsTarget("90377;", "90377 Sedna", 60.0..120.0)

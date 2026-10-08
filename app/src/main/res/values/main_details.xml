@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="main_details_hide" formatted="false">Hide information panels</string>
+    <string name="main_details_show" formatted="false">Show information panels</string>
+</resources>

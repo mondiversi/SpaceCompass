@@ -31,19 +31,22 @@ internal data class SpaceCompassCelestialViewGeometry(
  * The IAU pole/prime-meridian model includes lunar libration. Maps are composites, not live images.
  */
 internal fun calculateSpaceCompassCelestialViewGeometry(body: SpaceCompassCelestialBody, timeMs: Long,
-    latitude: Double, longitude: Double, altitude: Double = 0.0): SpaceCompassCelestialViewGeometry? {
+    latitude: Double, longitude: Double, altitude: Double = 0.0,
+    remote: SpaceCompassCelestialRemoteData = SpaceCompassCelestialRemoteData()): SpaceCompassCelestialViewGeometry? {
     if (!body.hasPhysicalFace) return null
     val engine = body.engine
     require(latitude.isFinite() && latitude in -90.0..90.0 && longitude.isFinite() && longitude in -180.0..180.0)
     val time = spaceCompassAstronomyTime(timeMs)
     val site = Observer(latitude, longitude, altitude).toVector(time, EquatorEpoch.J2000).viewer()
-    val geo = (if (body.isJovianMoon) spaceCompassJovianMoonGeoVector(body, time, Aberration.None)
+    val geo = (if (body == SpaceCompassCelestialBody.TITAN)
+        remote.ephemerides[body]?.takeIf { it.body == body }?.at(timeMs) ?: return null
+        else if (body.isJovianMoon) spaceCompassJovianMoonGeoVector(body, time, Aberration.None)
         else geoVector(requireNotNull(engine), time, Aberration.None)).viewer()
     val towardObserver = (site - geo).unit()
     val distanceKm = sqrt((site - geo).dot(site - geo)) * SPACE_COMPASS_AU_KM
     // Evaluate the visible face at the emission time, not at the arrival time on Earth.
     val emission = spaceCompassAstronomyTime(timeMs - (distanceKm / 299_792.458 * 1000).toLong())
-    val axis = if (body.isJovianMoon) spaceCompassJovianMoonAxis(body, emission) else rotationAxis(requireNotNull(engine), emission)
+    val axis = if (body == SpaceCompassCelestialBody.TITAN) spaceCompassTitanAxis(emission) else if (body.isJovianMoon) spaceCompassJovianMoonAxis(body, emission) else rotationAxis(requireNotNull(engine), emission)
     val ra = Math.toRadians(axis.ra * 15)
     val pole = axis.north.viewer().unit()
     val node = SpaceCompassViewVector(-sin(ra), cos(ra), 0.0)
@@ -60,7 +63,9 @@ internal fun calculateSpaceCompassCelestialViewGeometry(body: SpaceCompassCelest
     val up = projectedUp.unit()
     val right = up.cross(towardObserver).unit()
     fun camera(v: SpaceCompassViewVector) = SpaceCompassViewVector(v.dot(right), v.dot(up), v.dot(towardObserver))
-    val heliocentric = if (body.isJovianMoon) spaceCompassJovianMoonHelioVector(body, emission).viewer()
+    val heliocentric = if (body == SpaceCompassCelestialBody.TITAN)
+        helioVector(Body.Earth, time).viewer() + geo
+        else if (body.isJovianMoon) spaceCompassJovianMoonHelioVector(body, emission).viewer()
         else if (engine == Body.Moon)
         helioVector(Body.Earth, emission).viewer() + geoVector(Body.Moon, emission, Aberration.None).viewer()
         else helioVector(requireNotNull(engine), emission).viewer()

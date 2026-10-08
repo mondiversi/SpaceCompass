@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="celestial_sirius">Σείριος</string>
+    <string name="celestial_betelgeuse">Μπετελγκέζ</string>
+    <string name="celestial_titan">Τιτάνας</string>
+    <string name="celestial_orion_nebula">M42 · Νεφέλωμα του Ωρίωνα</string>
+    <string name="celestial_pleiades">M45 · Πλειάδες</string>
+    <string name="catalog_type_nebula">Νεφέλωμα</string>
+    <string name="catalog_type_cluster">Αστρικό σμήνος</string>
+    <string name="celestial_apparent_magnitude">Φαινόμενο μέγεθος</string>
+    <string name="celestial_speed_orbit_saturn">Τροχιακή ταχύτητα (Κρόνος): %1$s km/s</string>
+    <string name="celestial_andromeda_galaxy_title">Γαλαξίας της Ανδρομέδας</string>
+    <string name="celestial_archival_image">Αρχειακή παρατήρηση, όχι ζωντανή εικόνα τηλεσκοπίου. Τα χρώματα μπορεί να αναπαριστούν μήκη κύματος αόρατα στο μάτι.</string>
+    <string name="celestial_image_loading">Φόρτωση εικόνας…</string>
+    <string name="celestial_sirius_note">Το λαμπρότερο άστρο του νυχτερινού ουρανού. Οι φυσικές τιμές αφορούν τον Σείριο A· ο Σείριος B είναι ο λευκός νάνος συνοδός του. Θέση καταλόγου και κατά προσέγγιση απόσταση.</string>
+    <string name="celestial_betelgeuse_note">Μεταβλητός ερυθρός υπεργίγαντας στον Ωρίωνα. Ακτίνα, απόσταση και εύρος σημερινής μάζας εξαρτώνται από τα μοντέλα· η λαμπρότητα μεταβάλλεται.</string>
+    <string name="celestial_titan_note">Ο μεγαλύτερος δορυφόρος του Κρόνου, με πυκνή ατμόσφαιρα αζώτου και λίμνες μεθανίου. Θερμοκρασία και πίεση του Huygens είναι μετρήσεις αναφοράς στο σημείο προσεδάφισης του 2005. Μωσαϊκό επιφάνειας Cassini στο εγγύς υπέρυθρο· τροχιές NASA/JPL.</string>
+    <string name="celestial_orion_note">Νεφέλωμα στον Ωρίωνα όπου γεννιούνται άστρα. Η στόχευση και η ημερήσια διαδρομή ακολουθούν το κέντρο του καταλόγου. Το νεφέλωμα δεν έχει ενιαία πλανητική επιφάνεια.</string>
+    <string name="celestial_pleiades_note">Ανοικτό αστρικό σμήνος στον Ταύρο. Η στόχευση ακολουθεί το κέντρο του σμήνους. Η υπέρυθρη εικόνα WISE δείχνει άστρα και γύρω σκόνη.</string>
+    <string name="celestial_andromeda_galaxy_note">Η Ανδρομέδα (M31) είναι σπειροειδής γαλαξίας περίπου 2,5 εκατομμύρια έτη φωτός μακριά. Το M31* είναι η κεντρική μαύρη τρύπα: η μάζα του πίνακα αφορά το M31*, όχι ολόκληρο τον γαλαξία. Η φωτογραφία δείχνει τον γαλαξία.</string>
+</resources>

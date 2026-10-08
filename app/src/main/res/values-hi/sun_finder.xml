@@ -17,7 +17,7 @@
     <string name="sun_finder_location_searching">स्थान खोज रहे हैं…</string>
     <string name="sun_finder_compass_missing">इस उपकरण पर कंपास उपलब्ध नहीं है।</string>
     <string name="sun_finder_orientation_searching">फ़ोन का अभिविन्यास पढ़ रहे हैं…</string>
-    <string name="sun_finder_compass_accuracy">कंपास की सटीकता कम है। चुंबकीय वस्तुओं से दूर जाएँ और फ़ोन को कैलिब्रेट करें।</string>
+    <string name="sun_finder_compass_accuracy">चुंबकीय वस्तुओं को दूर रखें</string>
     <string name="sun_finder_allow_location">स्थान की अनुमति दें</string>
     <string name="sun_finder_enable_location">स्थान चालू करें</string>
     <string name="sun_finder_retry">फिर प्रयास करें</string>

@@ -1,5 +1,5 @@
 <resources>
-    <string name="observer_title">परिदृश्य</string>
+    <string name="observer_title">कस्टम परिदृश्य</string>
     <string name="observer_place">स्थिति</string>
     <string name="observer_search">स्थान खोजें</string>
     <string name="observer_search_action">खोजें</string>

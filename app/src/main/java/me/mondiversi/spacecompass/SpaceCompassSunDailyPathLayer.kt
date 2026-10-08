@@ -172,7 +172,7 @@ internal fun SpaceCompassSunDailyPathLayer(
                 if (focused.isCurrent) stringResource(R.string.celestial_point_current) else labels.name(focused.point),
                 path.body, excluded, perspective)
         }
-        if (showActions) SpaceCompassCelestialSkyActions(path.body, onVisualize, { state.openMenu(path) }, title, true,
+        if (showActions) SpaceCompassCelestialSkyActions(path.body, onVisualize, { state.openMenu(path, currentPoint?.let { spaceCompassCurrentPathPoint(path.body, it.timeMs, it.position) }) }, title, true,
             Modifier.align(Alignment.TopEnd).padding(4.dp).onSizeChanged { menuSize = it })
         if (showSelectedPanel) SpaceCompassSunPathSelectedPanel(path, state, primaryText, secondaryText, backgroundColor,
             Modifier.align(Alignment.BottomCenter).onSizeChanged { selectedPanelSize = it }, nowMs = timeMs)

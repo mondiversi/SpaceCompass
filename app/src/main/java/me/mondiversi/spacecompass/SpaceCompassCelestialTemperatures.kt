@@ -34,6 +34,12 @@ internal fun spaceCompassCelestialTemperatures(body: SpaceCompassCelestialBody):
         value(SpaceCompassCelestialTemperatureKind.DAY_MAXIMUM, day),
         value(SpaceCompassCelestialTemperatureKind.NIGHT_MINIMUM, night))
     return when (body) {
+        SpaceCompassCelestialBody.SIRIUS -> listOf(value(SpaceCompassCelestialTemperatureKind.STELLAR_EFFECTIVE, 9850.0 - 273.15))
+        SpaceCompassCelestialBody.BETELGEUSE -> listOf(value(SpaceCompassCelestialTemperatureKind.STELLAR_EFFECTIVE, 3600.0 - 273.15))
+        // Huygens landing-site measurement; retain its epoch rather than presenting live weather.
+        SpaceCompassCelestialBody.TITAN -> listOf(SpaceCompassCelestialTemperature(
+            SpaceCompassCelestialTemperatureKind.SURFACE_ESTIMATE, 93.7 - 273.15, epochYear = 2005))
+        SpaceCompassCelestialBody.ORION_NEBULA, SpaceCompassCelestialBody.PLEIADES -> emptyList()
         // Licensed ALIEN RPG reference: terraformed Hadley's Hope era, not present-day weather.
         SpaceCompassCelestialBody.LV_426 -> mean(10.0)
         SpaceCompassCelestialBody.EARTH_CENTER -> emptyList()

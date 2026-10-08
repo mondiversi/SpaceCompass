@@ -9,7 +9,7 @@ class SpaceCompassCelestialTemperatureTest {
     @Test fun referenceDataIsFiniteAboveAbsoluteZeroAndKeepsNonApplicableBodiesEmpty() {
         SpaceCompassCelestialBody.entries.forEach { body ->
             val values = spaceCompassCelestialTemperatures(body)
-            if (body.isSpacecraft || body == SpaceCompassCelestialBody.EARTH_CENTER || body in setOf(
+            if (body.isSpacecraft || body.isExtendedSkyObject || body == SpaceCompassCelestialBody.EARTH_CENTER || body in setOf(
                 SpaceCompassCelestialBody.SAGITTARIUS_A, SpaceCompassCelestialBody.ANDROMEDA_CORE, SpaceCompassCelestialBody.TON_618)) assertTrue(values.isEmpty())
             else assertTrue("Missing reference temperature: $body", values.isNotEmpty())
             assertEquals(values.size, values.map { it.kind to it.component }.distinct().size)

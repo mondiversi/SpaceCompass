@@ -15,7 +15,7 @@ class SpaceCompassHiddenObjectOrderTest {
         val revealed = spaceCompassAvailableCelestialCatalog(setOf(hidden))
         assertEquals(public, revealed.filterNot { it == hidden })
         val index = revealed.indexOf(hidden)
-        assertEquals(alpha, revealed[index - 1])
+        assertEquals(SpaceCompassCelestialBody.SIRIUS, revealed[index - 1])
         assertEquals(trappist, revealed[index + 1])
         assertEquals(1, revealed.count { it == hidden })
     }

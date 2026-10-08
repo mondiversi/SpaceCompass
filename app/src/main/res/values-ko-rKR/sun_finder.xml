@@ -17,7 +17,7 @@
     <string name="sun_finder_location_searching">위치 검색 중…</string>
     <string name="sun_finder_compass_missing">이 기기에서는 나침반을 사용할 수 없습니다.</string>
     <string name="sun_finder_orientation_searching">방향을 읽는 중…</string>
-    <string name="sun_finder_compass_accuracy">나침반 정확도가 낮습니다. 자성 물체에서 멀리 떨어져 휴대전화를 보정하세요.</string>
+    <string name="sun_finder_compass_accuracy">자성 물체를 멀리 옮기세요</string>
     <string name="sun_finder_allow_location">위치 허용</string>
     <string name="sun_finder_enable_location">위치 켜기</string>
     <string name="sun_finder_retry">다시 시도</string>

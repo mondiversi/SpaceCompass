@@ -12,8 +12,8 @@ import androidx.compose.ui.unit.DpSize
 import androidx.compose.ui.unit.dp
 import kotlin.math.roundToInt
 
-// Ten percent larger than the preceding 80% controls, including their touch bounds.
-private const val SPACE_COMPASS_FLOATING_CONTROL_SCALE = .88f
+// Reduce the preceding 88% controls by ten percent, including their touch bounds.
+private const val SPACE_COMPASS_FLOATING_CONTROL_SCALE = .792f
 internal val spaceCompassFloatingControlSize = 48.dp * SPACE_COMPASS_FLOATING_CONTROL_SCALE
 
 /** Scale the complete control, including measured bounds, semantics and pointer coordinates. */

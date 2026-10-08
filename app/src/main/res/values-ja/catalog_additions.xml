@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="celestial_sirius">シリウス</string>
+    <string name="celestial_betelgeuse">ベテルギウス</string>
+    <string name="celestial_titan">タイタン</string>
+    <string name="celestial_orion_nebula">M42 · オリオン大星雲</string>
+    <string name="celestial_pleiades">M45 · プレアデス星団</string>
+    <string name="catalog_type_nebula">星雲</string>
+    <string name="catalog_type_cluster">星団</string>
+    <string name="celestial_apparent_magnitude">見かけの等級</string>
+    <string name="celestial_speed_orbit_saturn">公転速度（土星）: %1$s km/s</string>
+    <string name="celestial_andromeda_galaxy_title">アンドロメダ銀河</string>
+    <string name="celestial_archival_image">過去の観測画像で、望遠鏡のライブ映像ではありません。色は目に見えない波長を表す場合があります。</string>
+    <string name="celestial_image_loading">画像を読み込み中…</string>
+    <string name="celestial_sirius_note">夜空で最も明るい恒星です。物理量はシリウスAの値で、シリウスBは伴星の白色矮星です。位置はカタログ値、距離は概算です。</string>
+    <string name="celestial_betelgeuse_note">オリオン座の変光する赤色超巨星です。半径、距離、現在の質量範囲はモデルに依存し、明るさは時間とともに変化します。</string>
+    <string name="celestial_titan_note">土星最大の衛星で、厚い窒素大気とメタンの湖があります。ホイヘンスの温度と気圧は2005年の着陸地点での参考測定値です。カッシーニの近赤外線表面モザイクとNASA/JPLの軌道データを使用します。</string>
+    <string name="celestial_orion_note">オリオン座の恒星が生まれる星雲です。方向と日周軌跡はカタログの中心位置を追います。星雲には単一の惑星表面はありません。</string>
+    <string name="celestial_pleiades_note">おうし座の散開星団です。方向は星団の中心位置を追います。WISEの赤外線画像は恒星と周囲の塵を示しています。</string>
+    <string name="celestial_andromeda_galaxy_note">アンドロメダ（M31）は約250万光年離れた渦巻銀河です。M31*は中心のブラックホールで、表の質量は銀河全体ではなくM31*の値です。写真は銀河を示しています。</string>
+</resources>

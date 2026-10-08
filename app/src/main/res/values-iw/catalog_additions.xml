@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="celestial_sirius">סיריוס</string>
+    <string name="celestial_betelgeuse">ביטלג׳וז</string>
+    <string name="celestial_titan">טיטאן</string>
+    <string name="celestial_orion_nebula">M42 · ערפילית אוריון</string>
+    <string name="celestial_pleiades">M45 · הפליאדות</string>
+    <string name="catalog_type_nebula">ערפילית</string>
+    <string name="catalog_type_cluster">צביר כוכבים</string>
+    <string name="celestial_apparent_magnitude">בהירות נראית</string>
+    <string name="celestial_speed_orbit_saturn">מהירות מסלולית (שבתאי): %1$s km/s</string>
+    <string name="celestial_andromeda_galaxy_title">גלקסיית אנדרומדה</string>
+    <string name="celestial_archival_image">תצפית ארכיון, לא תמונת טלסקופ חיה. הצבעים עשויים לייצג אורכי גל שאינם נראים לעין.</string>
+    <string name="celestial_image_loading">טוען תמונה…</string>
+    <string name="celestial_sirius_note">הכוכב הבהיר ביותר בשמי הלילה. הערכים הפיזיקליים מתייחסים לסיריוס A; סיריוס B הוא בן לווייתו, ננס לבן. מיקום קטלוגי ומרחק משוער.</string>
+    <string name="celestial_betelgeuse_note">על־ענק אדום משתנה באוריון. הרדיוס, המרחק וטווח המסה הנוכחית תלויים במודל; הבהירות משתנה עם הזמן.</string>
+    <string name="celestial_titan_note">הירח הגדול ביותר של שבתאי, עם אטמוספרת חנקן צפופה ואגמי מתאן. הטמפרטורה והלחץ של הויגנס הם מדידות ייחוס באתר הנחיתה מ־2005. פסיפס פני שטח של קאסיני בתת־אדום קרוב; מסלולי NASA/JPL.</string>
+    <string name="celestial_orion_note">ערפילית באוריון שבה נוצרים כוכבים. הכיוון והמסלול היומי עוקבים אחר המרכז הקטלוגי שלה. לערפילית אין משטח פלנטרי יחיד.</string>
+    <string name="celestial_pleiades_note">צביר כוכבים פתוח בשור. הכיוון עוקב אחר מרכז הצביר. תמונת התת־אדום של WISE מציגה כוכבים ואבק סביבם.</string>
+    <string name="celestial_andromeda_galaxy_note">אנדרומדה (M31) היא גלקסיה ספירלית במרחק כ־2.5 מיליון שנות אור. M31* הוא החור השחור המרכזי שלה: המסה בטבלה שייכת ל־M31*, ולא לכל הגלקסיה. התצלום מציג את הגלקסיה.</string>
+</resources>

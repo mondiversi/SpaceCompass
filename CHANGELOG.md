@@ -1,5 +1,17 @@
 # Changelog
 
+## 1.2.0 — 2026-10-08
+
+Space Compass 1.2.0 expands the catalog to 35 objects and improves the live sky, daily paths and capture controls.
+
+- Sirius, Betelgeuse, Titan, the Orion Nebula (M42) and the Pleiades (M45), plus a new Andromeda galaxy image alongside its existing core entry.
+- Image pack 1.1: eighteen 2048 x 1024 WebP images, downloaded individually from the exact pinned release and verified before offline reuse. Matching older cached images are reused without another download.
+- Collapsible main information panels, reorganized floating controls and a clearer orange Custom scenario indicator.
+- Current position included in daily paths, improved selected-point spacing and one priority status notice, with connection retry taking precedence.
+- Weather lighting follows dawn, daytime, sunset and night consistently in the live sky and panoramas.
+- Refined panorama controls and export margins, capture vibration and compact object-viewer zoom.
+- Updated news and complete key/format-argument parity across all 20 language catalogs.
+
 ## 1.1.3 — 2026-10-08
 
 - Add an observer/time-aligned bundled star atlas, with sharper panoramic sampling.

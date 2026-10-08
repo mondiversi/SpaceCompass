@@ -17,7 +17,7 @@
     <string name="sun_finder_location_searching">位置情報を取得中…</string>
     <string name="sun_finder_compass_missing">この端末ではコンパスを利用できません。</string>
     <string name="sun_finder_orientation_searching">端末の向きを取得中…</string>
-    <string name="sun_finder_compass_accuracy">コンパスの精度が低い状態です。磁気を帯びた物から離れ、端末を調整してください。</string>
+    <string name="sun_finder_compass_accuracy">磁気を帯びた物を遠ざけてください</string>
     <string name="sun_finder_allow_location">位置情報を許可</string>
     <string name="sun_finder_enable_location">位置情報を有効化</string>
     <string name="sun_finder_retry">再試行</string>

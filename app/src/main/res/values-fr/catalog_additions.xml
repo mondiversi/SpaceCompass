@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="celestial_sirius">Sirius</string>
+    <string name="celestial_betelgeuse">Bételgeuse</string>
+    <string name="celestial_titan">Titan</string>
+    <string name="celestial_orion_nebula">M42 · Nébuleuse d’Orion</string>
+    <string name="celestial_pleiades">M45 · Pléiades</string>
+    <string name="catalog_type_nebula">Nébuleuse</string>
+    <string name="catalog_type_cluster">Amas stellaire</string>
+    <string name="celestial_apparent_magnitude">Magnitude apparente</string>
+    <string name="celestial_speed_orbit_saturn">Vitesse orbitale (Saturne) : %1$s km/s</string>
+    <string name="celestial_andromeda_galaxy_title">Galaxie d’Andromède</string>
+    <string name="celestial_archival_image">Observation d’archive, pas une vue en direct. Les couleurs peuvent représenter des longueurs d’onde invisibles à l’œil.</string>
+    <string name="celestial_image_loading">Chargement de l’image…</string>
+    <string name="celestial_sirius_note">Étoile la plus brillante du ciel nocturne. Les valeurs physiques concernent Sirius A ; Sirius B est sa compagne naine blanche. Position de catalogue et distance approximative.</string>
+    <string name="celestial_betelgeuse_note">Supergéante rouge variable d’Orion. Le rayon, la distance et l’intervalle de masse actuelle dépendent des modèles ; sa luminosité varie.</string>
+    <string name="celestial_titan_note">Plus grande lune de Saturne, avec une atmosphère dense d’azote et des lacs de méthane. La température et la pression de Huygens sont des mesures de référence du site d’atterrissage de 2005. Mosaïque de surface Cassini en proche infrarouge ; trajectoires NASA/JPL.</string>
+    <string name="celestial_orion_note">Nébuleuse d’Orion où naissent des étoiles. Le pointage et le parcours quotidien suivent son centre de catalogue. Une nébuleuse n’a pas de surface planétaire unique.</string>
+    <string name="celestial_pleiades_note">Amas stellaire ouvert du Taureau. Le pointage suit le centre de l’amas. L’image infrarouge WISE montre les étoiles et la poussière environnante.</string>
+    <string name="celestial_andromeda_galaxy_note">Andromède (M31) est une galaxie spirale distante d’environ 2,5 millions d’années-lumière. M31* est son trou noir central : la masse indiquée concerne M31*, pas la galaxie entière. La photographie montre la galaxie.</string>
+</resources>

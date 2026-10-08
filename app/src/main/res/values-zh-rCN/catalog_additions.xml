@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="celestial_sirius">天狼星</string>
+    <string name="celestial_betelgeuse">参宿四</string>
+    <string name="celestial_titan">土卫六</string>
+    <string name="celestial_orion_nebula">M42 · 猎户座大星云</string>
+    <string name="celestial_pleiades">M45 · 昴星团</string>
+    <string name="catalog_type_nebula">星云</string>
+    <string name="catalog_type_cluster">星团</string>
+    <string name="celestial_apparent_magnitude">视星等</string>
+    <string name="celestial_speed_orbit_saturn">公转速度（土星）: %1$s km/s</string>
+    <string name="celestial_andromeda_galaxy_title">仙女座星系</string>
+    <string name="celestial_archival_image">历史观测图像，并非望远镜实时画面。颜色可能代表肉眼不可见的波长。</string>
+    <string name="celestial_image_loading">正在加载图像…</string>
+    <string name="celestial_sirius_note">夜空中最明亮的恒星。物理数值指天狼星A，天狼星B是其白矮星伴星。采用星表位置和近似距离。</string>
+    <string name="celestial_betelgeuse_note">猎户座的变光红超巨星。半径、距离和当前质量范围取决于模型，亮度随时间变化。</string>
+    <string name="celestial_titan_note">土星最大的卫星，具有浓密的氮气大气和甲烷湖。惠更斯号的温度和气压是2005年着陆地点的参考测量值。采用卡西尼号近红外表面拼接图和NASA/JPL轨迹。</string>
+    <string name="celestial_orion_note">猎户座中孕育恒星的星云。指向和每日路径跟随其星表中心。星云没有单一的行星表面。</string>
+    <string name="celestial_pleiades_note">金牛座的疏散星团。指向跟随星团中心。WISE红外图像展示恒星及周围尘埃。</string>
+    <string name="celestial_andromeda_galaxy_note">仙女座星系（M31）是约250万光年外的螺旋星系。M31*是其中央黑洞，表中的质量属于M31*，而非整个星系。照片展示的是星系。</string>
+</resources>

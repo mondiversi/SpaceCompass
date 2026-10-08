@@ -1,5 +1,5 @@
 <resources>
-    <string name="observer_title">תרחיש</string>
+    <string name="observer_title">תרחיש מותאם אישית</string>
     <string name="observer_place">מיקום</string>
     <string name="observer_search">חיפוש מקום</string>
     <string name="observer_search_action">חיפוש</string>

@@ -17,7 +17,7 @@
     <string name="sun_finder_location_searching">Standort wird gesucht…</string>
     <string name="sun_finder_compass_missing">Auf diesem Gerät ist kein Kompass verfügbar.</string>
     <string name="sun_finder_orientation_searching">Ausrichtung wird ermittelt…</string>
-    <string name="sun_finder_compass_accuracy">Geringe Kompassgenauigkeit. Entferne magnetische Gegenstände und kalibriere das Telefon.</string>
+    <string name="sun_finder_compass_accuracy">Entferne magnetische Gegenstände</string>
     <string name="sun_finder_allow_location">Standort erlauben</string>
     <string name="sun_finder_enable_location">Standort aktivieren</string>
     <string name="sun_finder_retry">Erneut versuchen</string>

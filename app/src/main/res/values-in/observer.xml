@@ -1,5 +1,5 @@
 <resources>
-    <string name="observer_title">Skenario</string>
+    <string name="observer_title">Skenario khusus</string>
     <string name="observer_place">Posisi</string>
     <string name="observer_search">Cari tempat</string>
     <string name="observer_search_action">Cari</string>

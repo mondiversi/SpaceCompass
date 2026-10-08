@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="celestial_sirius">شباهنگ</string>
+    <string name="celestial_betelgeuse">ابط‌الجوزا</string>
+    <string name="celestial_titan">تیتان</string>
+    <string name="celestial_orion_nebula">M42 · سحابی شکارچی</string>
+    <string name="celestial_pleiades">M45 · پروین</string>
+    <string name="catalog_type_nebula">سحابی</string>
+    <string name="catalog_type_cluster">خوشهٔ ستاره‌ای</string>
+    <string name="celestial_apparent_magnitude">قدر ظاهری</string>
+    <string name="celestial_speed_orbit_saturn">سرعت مداری (زحل): %1$s km/s</string>
+    <string name="celestial_andromeda_galaxy_title">کهکشان آندرومدا</string>
+    <string name="celestial_archival_image">رصد آرشیوی، نه نمای زندهٔ تلسکوپ. رنگ‌ها ممکن است طول موج‌های نامرئی برای چشم را نشان دهند.</string>
+    <string name="celestial_image_loading">در حال بارگذاری تصویر…</string>
+    <string name="celestial_sirius_note">درخشان‌ترین ستارهٔ آسمان شب. مقادیر فیزیکی مربوط به شباهنگ A است؛ شباهنگ B همدم کوتولهٔ سفید آن است. موقعیت فهرستی و فاصلهٔ تقریبی.</string>
+    <string name="celestial_betelgeuse_note">ابرغول سرخ متغیر در شکارچی. شعاع، فاصله و بازهٔ جرم کنونی به مدل وابسته‌اند؛ روشنایی با زمان تغییر می‌کند.</string>
+    <string name="celestial_titan_note">بزرگ‌ترین قمر زحل، با جو غلیظ نیتروژن و دریاچه‌های متان. دما و فشار هویگنس اندازه‌گیری‌های مرجع محل فرود سال 2005 هستند. موزاییک سطحی کاسینی در فروسرخ نزدیک؛ مسیرهای NASA/JPL.</string>
+    <string name="celestial_orion_note">سحابی زایش ستاره در شکارچی. جهت و مسیر روزانه از مرکز فهرستی آن پیروی می‌کنند. سحابی یک سطح سیاره‌ای واحد ندارد.</string>
+    <string name="celestial_pleiades_note">خوشهٔ ستاره‌ای باز در گاو. جهت از مرکز خوشه پیروی می‌کند. تصویر فروسرخ WISE ستاره‌ها و غبار پیرامون را نشان می‌دهد.</string>
+    <string name="celestial_andromeda_galaxy_note">آندرومدا (M31) کهکشانی مارپیچی در فاصلهٔ حدود 2.5 میلیون سال نوری است. M31* سیاه‌چالهٔ مرکزی آن است؛ جرم جدول مربوط به M31* است، نه کل کهکشان. عکس کهکشان را نشان می‌دهد.</string>
+</resources>

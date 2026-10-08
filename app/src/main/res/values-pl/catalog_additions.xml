@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="celestial_sirius">Syriusz</string>
+    <string name="celestial_betelgeuse">Betelgeza</string>
+    <string name="celestial_titan">Tytan</string>
+    <string name="celestial_orion_nebula">M42 · Mgławica Oriona</string>
+    <string name="celestial_pleiades">M45 · Plejady</string>
+    <string name="catalog_type_nebula">Mgławica</string>
+    <string name="catalog_type_cluster">Gromada gwiazd</string>
+    <string name="celestial_apparent_magnitude">Jasność pozorna</string>
+    <string name="celestial_speed_orbit_saturn">Prędkość orbitalna (Saturn): %1$s km/s</string>
+    <string name="celestial_andromeda_galaxy_title">Galaktyka Andromedy</string>
+    <string name="celestial_archival_image">Obserwacja archiwalna, nie obraz na żywo. Kolory mogą przedstawiać długości fal niewidoczne dla oka.</string>
+    <string name="celestial_image_loading">Wczytywanie obrazu…</string>
+    <string name="celestial_sirius_note">Najjaśniejsza gwiazda nocnego nieba. Wartości fizyczne dotyczą Syriusza A; Syriusz B jest jego towarzyszem, białym karłem. Pozycja katalogowa i przybliżona odległość.</string>
+    <string name="celestial_betelgeuse_note">Zmienny czerwony nadolbrzym w Orionie. Promień, odległość i zakres obecnej masy zależą od modeli; jasność zmienia się w czasie.</string>
+    <string name="celestial_titan_note">Największy księżyc Saturna, z gęstą atmosferą azotową i jeziorami metanu. Temperatura i ciśnienie Huygensa to pomiary odniesienia w miejscu lądowania z 2005 roku. Mozaika powierzchni Cassini w bliskiej podczerwieni; trajektorie NASA/JPL.</string>
+    <string name="celestial_orion_note">Mgławica w Orionie, w której powstają gwiazdy. Kierunek i dzienny tor śledzą jej centrum katalogowe. Mgławica nie ma jednej powierzchni planetarnej.</string>
+    <string name="celestial_pleiades_note">Otwarta gromada gwiazd w Byku. Kierunek wskazuje centrum gromady. Obraz WISE w podczerwieni pokazuje gwiazdy i otaczający pył.</string>
+    <string name="celestial_andromeda_galaxy_note">Andromeda (M31) to galaktyka spiralna oddalona o około 2,5 miliona lat świetlnych. M31* jest jej centralną czarną dziurą: masa w tabeli dotyczy M31*, nie całej galaktyki. Zdjęcie pokazuje galaktykę.</string>
+</resources>

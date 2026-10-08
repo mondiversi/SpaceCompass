@@ -17,7 +17,7 @@
     <string name="sun_finder_location_searching">جارٍ البحث عن الموقع…</string>
     <string name="sun_finder_compass_missing">البوصلة غير متاحة على هذا الجهاز.</string>
     <string name="sun_finder_orientation_searching">جارٍ قراءة الاتجاه…</string>
-    <string name="sun_finder_compass_accuracy">دقة البوصلة منخفضة. ابتعد عن الأجسام المغناطيسية وعاير الهاتف.</string>
+    <string name="sun_finder_compass_accuracy">أبعد الأجسام المغناطيسية</string>
     <string name="sun_finder_allow_location">السماح بالموقع</string>
     <string name="sun_finder_enable_location">تفعيل الموقع</string>
     <string name="sun_finder_retry">أعد المحاولة</string>

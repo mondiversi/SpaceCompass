@@ -1,5 +1,5 @@
 <resources>
-    <string name="observer_title">Сценарий</string>
+    <string name="observer_title">Пользовательский сценарий</string>
     <string name="observer_place">Местоположение</string>
     <string name="observer_search">Поиск места</string>
     <string name="observer_search_action">Найти</string>

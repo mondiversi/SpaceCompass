@@ -200,6 +200,9 @@ internal fun SpaceCompassSunFinderContent(
     val scenePreferences = LocalSpaceCompassPreferences.current ?: remember(cameraContext) {
         cameraContext.getSharedPreferences(SPACE_COMPASS_PREFERENCES_NAME, android.content.Context.MODE_PRIVATE)
     }
+    var detailsExpanded by remember(scenePreferences) {
+        mutableStateOf(scenePreferences.getBoolean(SPACE_COMPASS_MAIN_DETAILS_KEY, true))
+    }
     var showSkyReferences by remember(scenePreferences) {
         mutableStateOf(scenePreferences.getBoolean(SPACE_COMPASS_SKY_REFERENCES_KEY, SPACE_COMPASS_SKY_REFERENCES_DEFAULT))
     }
@@ -390,15 +393,6 @@ internal fun SpaceCompassSunFinderContent(
     })
     var sceneCoordinates by remember { mutableStateOf<LayoutCoordinates?>(null) }
     var pointingCoordinates by remember { mutableStateOf<LayoutCoordinates?>(null) }
-    val skyActionsWidth = spaceCompassFloatingControlSize * 3 + 30.dp
-    val selectorSize = with(LocalDensity.current) { skyActionsWidth.toPx().toDouble() }
-    val selectorHeight = with(LocalDensity.current) { (spaceCompassFloatingControlSize + 12.dp).toPx().toDouble() }
-    val selectorRtl = androidx.compose.ui.platform.LocalLayoutDirection.current == androidx.compose.ui.unit.LayoutDirection.Rtl
-    val timeBadgeExclusions = pointingCoordinates?.size?.let { bounds ->
-        val width = bounds.width.toDouble()
-        listOf(SpaceCompassSunSceneFrame(if (selectorRtl) 0.0 else width - selectorSize,
-            0.0, selectorSize, selectorHeight))
-    }.orEmpty()
     var groundFrame by remember { mutableStateOf<SpaceCompassSunSceneFrame?>(null) }
     fun refreshGroundFrame() {
         val scene = sceneCoordinates ?: return
@@ -422,7 +416,7 @@ internal fun SpaceCompassSunFinderContent(
     val pathActionTitle = stringResource(spaceCompassCelestialPathTitle(body))
     val details: @Composable (Modifier, Boolean, Boolean) -> Unit = { modifier, compact, landscape ->
         Column(modifier.testTag("celestial-details-column"), horizontalAlignment = Alignment.CenterHorizontally,
-            verticalArrangement = Arrangement.spacedBy(5.dp)) {
+            verticalArrangement = Arrangement.spacedBy(8.dp)) {
             if (landscape) dailyPathUiState.selectedBody?.let { selected ->
                 SpaceCompassSunPathSelectedPanel(selectedOverlays[selected]?.path, dailyPathUiState, primaryText, secondaryText,
                     backgroundColor, compact = compact, body = selected, nowMs = timeMs)
@@ -433,7 +427,7 @@ internal fun SpaceCompassSunFinderContent(
                 bodyName = bodyName, orientationRows = orientationRows,
                 bodyNavigation = navigation, locationInfoRows = locationInfoRows, onInfo = { showEnvironment = true }, bodyActions = {
                     if (hasActiveBody) SpaceCompassCelestialSkyActions(body, { showViewer = true },
-                        dailyPath?.let { path -> { dailyPathUiState.openMenu(path) } }, pathActionTitle, dailyPath != null)
+                        dailyPath?.let { path -> { dailyPathUiState.openMenu(path, spaceCompassCurrentPathPoint(body, timeMs, target)) } }, pathActionTitle, dailyPath != null)
                 })
         }
     }
@@ -453,11 +447,6 @@ internal fun SpaceCompassSunFinderContent(
                             indication = null, role = androidx.compose.ui.semantics.Role.Button) { navigate("info") },
                     color = primaryText)
             }
-            SpaceCompassCelestialSelector(body, primaryText, backgroundColor, Modifier, timeMs, remote,
-                selectedBodies, onSelectionChange?.let { { dailyPathUiState.clearSelection(); it(selection.toggleAll()) } }) {
-                dailyPathUiState.clearSelection()
-                if (onSelectionChange != null) onSelectionChange(selection.toggle(it)) else onBodyChange(it)
-            }
             SpaceCompassSettingsButton()
         }
 
@@ -468,7 +457,7 @@ internal fun SpaceCompassSunFinderContent(
             SpaceCompassSunPointingViewport(target, pointingOrientation.takeIf { !cameraEnabled || cameraPerspective != null },
                 Modifier.fillMaxSize().then(pointingPlacement), skyDescription, dailyPathUiState, rising,
                 readings.compassUsable, dailyPath.takeIf { hasActiveBody }, primaryText, secondaryText, backgroundColor, body, timeMs,
-                timeBadgeExclusions, showSelectedPanel = !landscape, onVisualize = { showViewer = true },
+                showSelectedPanel = !landscape, selectedPanelExpanded = detailsExpanded, onVisualize = { showViewer = true },
                 compassWarning = messageText.takeIf { message == R.string.sun_finder_compass_accuracy || message == R.string.pc_compass_approximate },
                 compassCalibrationRequired = message == R.string.sun_finder_compass_accuracy,
                 compassAccurate = readings.compassReliable,
@@ -479,36 +468,57 @@ internal fun SpaceCompassSunFinderContent(
                 onStatusAction = if (hasActiveBody && target == null && sun != null) onRemoteRetry else onLocationAction,
                 showActions = false, offscreenBody = body.takeIf { hasActiveBody }, overlays = overlays, onActivateBody = {
                     if (it in selectedBodies) onBodyChange(it) },
-                simulationLabel = if (simulated && onDismissRequest != null) stringResource(R.string.observer_simulation_active) else null,
-                onSimulation = { navigate("observer") }, perspective = cameraPerspective.takeIf { cameraEnabled }, topActionsWidth = skyActionsWidth,
+                perspective = cameraPerspective.takeIf { cameraEnabled }, noticesAtBottom = true,
                 observerLatitude = fix?.latitude, showSkyReferences = showSkyReferences,
                 observerAltitude = fix?.takeIf { it.hasAltitude() }?.altitude ?: 0.0,
+                bottomStartActions = { modifier ->
+                    SpaceCompassMainDetailsToggleButton(detailsExpanded, {
+                        detailsExpanded = !detailsExpanded
+                        scenePreferences.edit().putBoolean(SPACE_COMPASS_MAIN_DETAILS_KEY, detailsExpanded).apply()
+                    }, primaryText, backgroundColor, modifier.padding(4.dp), landscape = landscape)
+                },
                 bottomActions = { modifier ->
                     Row(modifier.padding(4.dp).testTag("celestial-capture-controls"),
                         verticalAlignment = Alignment.CenterVertically,
                         horizontalArrangement = Arrangement.spacedBy(8.dp)) {
-                        if (cameraEnabled) SpaceCompassCameraZoomControls(cameraZoomRange, cameraZoomRequest, cameraZoomActual,
-                            !panorama.busy && cameraCapture != null, ::updateCameraZoom, primaryText, backgroundColor)
                         SpaceCompassCaptureButton(panorama.capture, !panorama.busy && (!cameraEnabled || cameraCapture != null),
                             primaryText, backgroundColor)
                     }
+                },
+                topStartActions = { modifier ->
+                    Row(modifier.padding(4.dp), verticalAlignment = Alignment.Top,
+                        horizontalArrangement = Arrangement.spacedBy(8.dp)) {
+                        Column(horizontalAlignment = Alignment.CenterHorizontally,
+                            verticalArrangement = Arrangement.spacedBy(6.dp)) {
+                            SpaceCompassCameraToggleButton(cameraEnabled, { enabled ->
+                                if (!enabled) cameraEnabled = false
+                                else if (hasSpaceCompassCameraPermission(cameraContext)) cameraEnabled = true
+                                else cameraPermission.launch(Manifest.permission.CAMERA)
+                            }, primaryText, backgroundColor)
+                            if (cameraEnabled) SpaceCompassCameraZoomControls(cameraZoomRange, cameraZoomRequest, cameraZoomActual,
+                                !panorama.busy && cameraCapture != null, ::updateCameraZoom, primaryText, backgroundColor)
+                        }
+                        SpaceCompassSkyReferenceButton(showSkyReferences, { enabled ->
+                            showSkyReferences = enabled
+                            scenePreferences.edit().putBoolean(SPACE_COMPASS_SKY_REFERENCES_KEY, enabled).apply()
+                        }, primaryText, backgroundColor)
+                        SpaceCompassWeatherToggleButton(showWeather, { enabled ->
+                            showWeather = enabled
+                            scenePreferences.edit().putBoolean(SPACE_COMPASS_WEATHER_VISIBLE_KEY, enabled).apply()
+                        }, primaryText, backgroundColor, enabled = !cameraEnabled)
+                    }
+                },
+                topEndActions = { modifier ->
+                    Row(modifier.padding(4.dp), verticalAlignment = Alignment.CenterVertically,
+                        horizontalArrangement = Arrangement.spacedBy(8.dp)) {
+                        SpaceCompassScenarioButton(simulated, primaryText, backgroundColor) { navigate("observer") }
+                        SpaceCompassCelestialSelector(body, primaryText, backgroundColor, Modifier, timeMs, remote,
+                            selectedBodies, onSelectionChange?.let { { dailyPathUiState.clearSelection(); it(selection.toggleAll()) } }) {
+                            dailyPathUiState.clearSelection()
+                            if (onSelectionChange != null) onSelectionChange(selection.toggle(it)) else onBodyChange(it)
+                        }
+                    }
                 })
-            Row(Modifier.align(Alignment.TopEnd).padding(4.dp),
-                verticalAlignment = Alignment.CenterVertically, horizontalArrangement = Arrangement.spacedBy(8.dp)) {
-                SpaceCompassCameraToggleButton(cameraEnabled, { enabled ->
-                    if (!enabled) cameraEnabled = false
-                    else if (hasSpaceCompassCameraPermission(cameraContext)) cameraEnabled = true
-                    else cameraPermission.launch(Manifest.permission.CAMERA)
-                }, primaryText, backgroundColor)
-                SpaceCompassSkyReferenceButton(showSkyReferences, { enabled ->
-                    showSkyReferences = enabled
-                    scenePreferences.edit().putBoolean(SPACE_COMPASS_SKY_REFERENCES_KEY, enabled).apply()
-                }, primaryText, backgroundColor)
-                SpaceCompassWeatherToggleButton(showWeather, { enabled ->
-                    showWeather = enabled
-                    scenePreferences.edit().putBoolean(SPACE_COMPASS_WEATHER_VISIBLE_KEY, enabled).apply()
-                }, primaryText, backgroundColor, enabled = !cameraEnabled)
-            }
         }
     }
     BoxWithConstraints(Modifier.fillMaxSize().testTag("sun-finder-content").onGloballyPositioned {
@@ -550,15 +560,22 @@ internal fun SpaceCompassSunFinderContent(
                     }
                 }
                 // Equal insets towards the sky/toolbar and the outer edge, including in RTL.
-                details(Modifier.weight(1f).fillMaxHeight().padding(10.dp), compactPanel, true)
+                SpaceCompassMainDetailsVisibility(detailsExpanded, landscape = true) {
+                    details(Modifier.width(viewportWidth / 2).fillMaxHeight().padding(10.dp), compactPanel, true)
+                }
             }
         } else Column(Modifier.fillMaxSize()) {
             toolbar()
-            Column(Modifier.weight(1f).fillMaxWidth().padding(10.dp), verticalArrangement = Arrangement.spacedBy(8.dp)) {
+            Column(Modifier.weight(1f).fillMaxWidth().padding(10.dp)) {
                 Box(Modifier.weight(1f).fillMaxWidth()) {
                     pointing(false)
                 }
-                details(Modifier.fillMaxWidth().heightIn(max = viewportHeight * 0.56f), compactPanel, false)
+                SpaceCompassMainDetailsVisibility(detailsExpanded, landscape = false) {
+                    Column {
+                        Spacer(Modifier.height(8.dp))
+                        details(Modifier.fillMaxWidth().heightIn(max = viewportHeight * 0.56f), compactPanel, false)
+                    }
+                }
             }
         }
     }

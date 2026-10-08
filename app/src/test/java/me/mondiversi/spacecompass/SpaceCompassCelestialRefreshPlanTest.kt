@@ -6,7 +6,7 @@ import org.junit.Test
 class SpaceCompassCelestialRefreshPlanTest {
     private val allRemote = setOf(SpaceCompassCelestialBody.ISS, SpaceCompassCelestialBody.STARLINK_V3,
         SpaceCompassCelestialBody.SEDNA, SpaceCompassCelestialBody.HALLEY, SpaceCompassCelestialBody.COMET_67P,
-        SpaceCompassCelestialBody.VOYAGER_1, SpaceCompassCelestialBody.VOYAGER_2)
+        SpaceCompassCelestialBody.VOYAGER_1, SpaceCompassCelestialBody.VOYAGER_2, SpaceCompassCelestialBody.TITAN)
 
     @Test fun uncheckedCometsProbesAndSatellitesAreWarmedEvenWithEmptySelection() {
         val plan = spaceCompassCelestialRefreshBodies(emptySet(), emptySet(), true)

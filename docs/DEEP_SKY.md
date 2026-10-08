@@ -98,3 +98,8 @@ such as Rigel and the three central black holes retain M☉ regardless of kg/lb.
 The threshold does not alter density, luminosity, gravity, horizons, temperatures,
 positions, paths or distance formatting. Mass presentation resides in
 SpaceCompassMassUnits.kt; scientific reference facts remain separately stored.
+
+## Additional catalogue targets
+
+See [catalogue additions](CATALOG_ADDITIONS.md) for the reviewed Sirius, Betelgeuse,
+Titan, M42/M45 references and Andromeda galaxy supplement, with external WebP credits.

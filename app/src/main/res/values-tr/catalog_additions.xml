@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="celestial_sirius">Sirius</string>
+    <string name="celestial_betelgeuse">Betelgeuse</string>
+    <string name="celestial_titan">Titan</string>
+    <string name="celestial_orion_nebula">M42 · Orion Bulutsusu</string>
+    <string name="celestial_pleiades">M45 · Ülker</string>
+    <string name="catalog_type_nebula">Bulutsu</string>
+    <string name="catalog_type_cluster">Yıldız kümesi</string>
+    <string name="celestial_apparent_magnitude">Görünür kadir</string>
+    <string name="celestial_speed_orbit_saturn">Yörünge hızı (Satürn): %1$s km/s</string>
+    <string name="celestial_andromeda_galaxy_title">Andromeda Galaksisi</string>
+    <string name="celestial_archival_image">Arşiv gözlemi; canlı teleskop görüntüsü değildir. Renkler gözle görülemeyen dalga boylarını gösterebilir.</string>
+    <string name="celestial_image_loading">Görüntü yükleniyor…</string>
+    <string name="celestial_sirius_note">Gece göğünün en parlak yıldızı. Fiziksel değerler Sirius A’ya aittir; Sirius B onun beyaz cüce eşidir. Katalog konumu ve yaklaşık uzaklık.</string>
+    <string name="celestial_betelgeuse_note">Orion’da değişken kırmızı süperdev. Yarıçap, uzaklık ve güncel kütle aralığı modele bağlıdır; parlaklık zamanla değişir.</string>
+    <string name="celestial_titan_note">Yoğun azot atmosferi ve metan gölleriyle Satürn’ün en büyük uydusu. Huygens sıcaklık ve basıncı, 2005 iniş yerindeki referans ölçümlerdir. Cassini yakın kızılötesi yüzey mozaiği; NASA/JPL yörüngeleri.</string>
+    <string name="celestial_orion_note">Orion’da yıldızların doğduğu bulutsu. Yön ve günlük yol katalog merkezini izler. Bulutsunun tek bir gezegen yüzeyi yoktur.</string>
+    <string name="celestial_pleiades_note">Boğa’da açık yıldız kümesi. Yön, kümenin merkezini izler. WISE kızılötesi görüntüsü yıldızları ve çevredeki tozu gösterir.</string>
+    <string name="celestial_andromeda_galaxy_note">Andromeda (M31), yaklaşık 2,5 milyon ışık yılı uzaktaki sarmal galaksidir. M31* merkezi kara deliğidir: tablodaki kütle tüm galaksiye değil M31*’a aittir. Fotoğraf galaksiyi gösterir.</string>
+</resources>

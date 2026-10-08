@@ -1,5 +1,5 @@
 <resources>
-    <string name="observer_title">场景</string>
+    <string name="observer_title">自定义场景</string>
     <string name="observer_place">位置</string>
     <string name="observer_search">搜索地点</string>
     <string name="observer_search_action">搜索</string>

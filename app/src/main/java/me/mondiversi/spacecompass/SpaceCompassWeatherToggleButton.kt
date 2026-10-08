@@ -25,13 +25,14 @@ internal const val SPACE_COMPASS_WEATHER_VISIBLE_DEFAULT = false
 @Composable
 internal fun SpaceCompassWeatherToggleButton(checked: Boolean, onCheckedChange: (Boolean) -> Unit,
     color: Color, background: Color, enabled: Boolean = true) {
+    val tint = spaceCompassFloatingControlTint(color, checked, enabled)
     SpaceCompassFloatingControlHitRegion {
         Surface(Modifier.spaceCompassFloatingControlVisual().size(48.dp), shape = CircleShape,
-            color = background.copy(alpha = .94f), contentColor = color.copy(alpha = if (enabled) 1f else .38f),
-            border = BorderStroke(1.dp, color.copy(alpha = if (enabled) .35f else .13f)), shadowElevation = 3.dp) {
+            color = background.copy(alpha = .94f), contentColor = tint.copy(alpha = if (enabled) 1f else .38f),
+            border = BorderStroke(1.dp, tint.copy(alpha = if (enabled) .35f else .13f)), shadowElevation = 3.dp) {
             Box(contentAlignment = Alignment.Center) {
                 IconToggleButton(checked, onCheckedChange, enabled = enabled, modifier = Modifier.fillMaxSize().testTag("toggle-weather"),
-                    colors = IconButtonDefaults.iconToggleButtonColors(contentColor = color, checkedContentColor = color,
+                    colors = IconButtonDefaults.iconToggleButtonColors(contentColor = color, checkedContentColor = tint,
                         disabledContentColor = color.copy(alpha = .38f))) {
                     Icon(painterResource(if (checked) R.drawable.ic_weather else R.drawable.ic_weather_off),
                         stringResource(if (checked) R.string.sky_weather_disable else R.string.sky_weather_enable),

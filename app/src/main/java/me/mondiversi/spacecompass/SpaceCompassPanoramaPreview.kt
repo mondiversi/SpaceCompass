@@ -52,6 +52,15 @@ internal data class SpaceCompassPanoramaPreviewData(val file: File, val timeMs: 
     val selectedPresentation: SpaceCompassPanoramaPresentation? = null,
     val fileExportMode: SpaceCompassPanoramaExportMode = SpaceCompassPanoramaExportMode.INTERNATIONAL)
 
+// Match the main sky's 10 dp content inset plus 4 dp action inset, including pixel rounding.
+private fun Modifier.spaceCompassPanoramaControlSideInsets(includeBottom: Boolean = false): Modifier =
+    padding(start = 10.dp, end = 10.dp, bottom = if (includeBottom) 10.dp else 0.dp)
+        .padding(start = 4.dp, end = 4.dp, bottom = if (includeBottom) 4.dp else 0.dp)
+
+// Reserve one floating-control height above each column without increasing the gaps inside it.
+private fun Modifier.spaceCompassPanoramaTopControlInsets(): Modifier =
+    spaceCompassPanoramaControlSideInsets().padding(top = spaceCompassFloatingControlSize + 8.dp, bottom = 8.dp)
+
 /** Preview follows the device orientation; portrait starts filled and pannable. */
 @Composable
 internal fun SpaceCompassPanoramaPreview(data: SpaceCompassPanoramaPreviewData, onBack: () -> Unit) {
@@ -206,17 +215,12 @@ internal fun SpaceCompassPanoramaPreview(data: SpaceCompassPanoramaPreviewData, 
         Box(Modifier.fillMaxSize().testTag("panorama-full-image-viewport")) {
             if (bitmap == null || !positionReady) Box(Modifier.fillMaxSize(), contentAlignment = Alignment.Center) {
                 if (failed || preparationFailed) Text(stringResource(R.string.panorama_error)) else CircularProgressIndicator()
-                Column(Modifier.align(Alignment.CenterStart).padding(8.dp).testTag("panorama-left-controls")) {
+                Column(Modifier.align(Alignment.TopStart).spaceCompassPanoramaTopControlInsets().testTag("panorama-left-controls")) {
                     backButton()
                 }
             } else SpaceCompassPanoramaZoomImage(bitmap, Modifier.fillMaxSize(), backButton)
-            Column(Modifier.align(Alignment.CenterEnd).padding(8.dp).testTag("panorama-right-controls"),
+            Column(Modifier.align(Alignment.TopEnd).spaceCompassPanoramaTopControlInsets().testTag("panorama-right-controls"),
                 verticalArrangement = Arrangement.spacedBy(8.dp)) {
-                if (data.cameraPhoto == null && data.snapshot != null) SpaceCompassPanoramaCircleButton(
-                    stringResource(R.string.panorama_center), { chooseCenter = true }, enabled = !saving,
-                    modifier = Modifier.testTag("panorama-center"), stateText = stringResource(requestedCenter.labelResource)) {
-                    SpaceCompassPanoramaCompassIcon()
-                }
                 if (data.snapshot != null && data.captionData != null) SpaceCompassPanoramaCircleButton(
                     stringResource(R.string.panorama_point_labels), {
                         requestedPointLabels = !requestedPointLabels
@@ -231,10 +235,15 @@ internal fun SpaceCompassPanoramaPreview(data: SpaceCompassPanoramaPreviewData, 
                     modifier = Modifier.testTag("panorama-position"), stateText = positionState) {
                     SpaceCompassPanoramaPositionIcon(requestedPosition == SpaceCompassPanoramaPosition.HIDDEN)
                 }
-                SpaceCompassPanoramaCircleButton(stringResource(R.string.panorama_export), { chooseExport = true },
-                    enabled = ready, modifier = Modifier.testTag("panorama-export")) {
-                    SpaceCompassPanoramaExportIcon()
+                if (data.cameraPhoto == null && data.snapshot != null) SpaceCompassPanoramaCircleButton(
+                    stringResource(R.string.panorama_center), { chooseCenter = true }, enabled = !saving,
+                    modifier = Modifier.testTag("panorama-center"), stateText = stringResource(requestedCenter.labelResource)) {
+                    SpaceCompassPanoramaCompassIcon()
                 }
+            }
+            SpaceCompassPanoramaCircleButton(stringResource(R.string.panorama_export), { chooseExport = true },
+                enabled = ready, modifier = Modifier.align(Alignment.BottomEnd).spaceCompassPanoramaControlSideInsets(includeBottom = true).testTag("panorama-export")) {
+                SpaceCompassPanoramaExportIcon()
             }
         }
     if (chooseCenter && data.cameraPhoto == null) SpaceCompassPanoramaCenterDialog(requestedCenter, onSelect = { center ->
@@ -316,19 +325,19 @@ private fun SpaceCompassPanoramaZoomImage(bitmap: android.graphics.Bitmap, modif
                 val base = spaceCompassCaptureBaseScale(size.width.toFloat(), size.height.toFloat(), bitmap.width, bitmap.height)
                 scaleX = zoom * base; scaleY = zoom * base; translationX = offset.x; translationY = offset.y },
             contentScale = ContentScale.Fit)
-        // Centre Back and both zoom actions as one measured group in either orientation.
-        Column(Modifier.align(Alignment.CenterStart).padding(8.dp).testTag("panorama-left-controls"),
+        // Back, decrease and increase form the leading top column in either orientation.
+        Column(Modifier.align(Alignment.TopStart).spaceCompassPanoramaTopControlInsets().testTag("panorama-left-controls"),
             verticalArrangement = Arrangement.spacedBy(8.dp)) {
             backButton()
-            SpaceCompassPanoramaCircleButton(zoomInLabel,
-                onClick = { zoom = (zoom * 1.5f).coerceAtMost(8f); offset = bound(offset, zoom) },
-                enabled = zoom < 8f, modifier = Modifier.testTag("panorama-zoom-in")) {
-                SpaceCompassPanoramaControlIcon(SpaceCompassPanoramaControl.ZOOM_IN)
-            }
             SpaceCompassPanoramaCircleButton(zoomOutLabel,
                 onClick = { zoom = (zoom / 1.5f).coerceAtLeast(1f); offset = bound(offset, zoom) },
                 enabled = zoom > 1f, modifier = Modifier.testTag("panorama-zoom-out")) {
                 SpaceCompassPanoramaControlIcon(SpaceCompassPanoramaControl.ZOOM_OUT)
+            }
+            SpaceCompassPanoramaCircleButton(zoomInLabel,
+                onClick = { zoom = (zoom * 1.5f).coerceAtMost(8f); offset = bound(offset, zoom) },
+                enabled = zoom < 8f, modifier = Modifier.testTag("panorama-zoom-in")) {
+                SpaceCompassPanoramaControlIcon(SpaceCompassPanoramaControl.ZOOM_IN)
             }
         }
     }
@@ -339,7 +348,8 @@ private fun SpaceCompassPanoramaZoomImage(bitmap: android.graphics.Bitmap, modif
 private fun SpaceCompassPanoramaCircleButton(label: String, onClick: () -> Unit,
     modifier: Modifier = Modifier, enabled: Boolean = true, checked: Boolean? = null,
     stateText: String? = null, content: @Composable () -> Unit) {
-    val foreground = MaterialTheme.colorScheme.onSurface
+    val foreground = spaceCompassFloatingControlTint(MaterialTheme.colorScheme.onSurface,
+        active = checked == true, enabled = enabled)
     SpaceCompassFloatingControlHitRegion {
         Surface(onClick = onClick, enabled = enabled,
             modifier = modifier.spaceCompassFloatingControlVisual().size(48.dp).spaceCompassAccessibleAction(label, enabled = enabled,

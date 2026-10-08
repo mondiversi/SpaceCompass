@@ -1,9 +1,9 @@
 <resources>
     <string name="info_news_title">Ostatnie nowości · %1$s</string>
-    <string name="info_news_star_sky">Realistyczne gwiaździste niebo dopasowane do lokalizacji i czasu, wyraźniejsze na panoramach.</string>
-    <string name="info_news_texture_downloads">Mniejsza aplikacja: mapy planet pobierane w razie potrzeby pozostają dostępne offline; Io i Europa w formacie WebP 2K.</string>
-    <string name="info_news_weather">Spójna pogoda w widoku głównym i panoramach, z zapamiętaną opcją wyświetlania.</string>
-    <string name="info_news_viewer_zoom">Kompaktowe + i − w szczegółach obiektu; rozmiar początkowy to minimalne przybliżenie.</string>
-    <string name="info_news_settings">Ulepszone ustawienia, jednostki i scenariusze, spójne elementy sterujące oraz strona Informacje i autorzy.</string>
-    <string name="info_news_catalog">Zapamiętany zoom aparatu i krótkie potwierdzenie po zakończeniu aktualizacji danych obiektów.</string>
+    <string name="info_news_star_sky">35 obiektów: Syriusz, Betelgeza, Tytan, Mgławica Oriona i Plejady; nowe zdjęcia Andromedy.</string>
+    <string name="info_news_texture_downloads">Pakiet obrazów 1.1: 18 obrazów WebP pobieranych w razie potrzeby, weryfikowanych i dostępnych offline.</string>
+    <string name="info_news_weather">Zwijane panele informacji, przeorganizowane elementy sterujące i czytelniejszy wskaźnik własnego scenariusza.</string>
+    <string name="info_news_viewer_zoom">Aktualna pozycja na dziennych trajektoriach, ulepszone panele punktów i jeden komunikat według priorytetu.</string>
+    <string name="info_news_settings">Oświetlenie efektów pogodowych odpowiada świtowi, dniowi, zachodowi słońca i nocy w widoku głównym i panoramach.</string>
+    <string name="info_news_catalog">Ulepszone sterowanie panoramą, wibracja przy zdjęciu, odstępy eksportu i kompaktowe przybliżanie obiektów.</string>
 </resources>

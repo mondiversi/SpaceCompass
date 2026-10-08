@@ -31,7 +31,10 @@ class SpaceCompassCelestialViewerTest {
     @Test fun everyPhysicalBodyHasAWellConditionedCameraFrame() {
         SpaceCompassCelestialBody.entries.filter { it.hasPhysicalFace }.forEach { body ->
             for (latitude in listOf(-90.0,-33.0,41.9,90.0)) {
-                val g=calculateSpaceCompassCelestialViewGeometry(body,now,latitude,12.5,50.0)!!
+                val titan = SpaceCompassHorizonsEphemeris(SpaceCompassCelestialBody.TITAN,
+                    listOf(now - 3_600_000L, now + 3_600_000L).map { SpaceCompassHorizonsSample(it, 9.0, 1.0, 1.0) })
+                val remote = SpaceCompassCelestialRemoteData(ephemerides = mapOf(SpaceCompassCelestialBody.TITAN to titan))
+                val g=calculateSpaceCompassCelestialViewGeometry(body,now,latitude,12.5,50.0,remote)!!
                 orthonormal(g); assertTrue(g.distanceKm!! > 100_000)
                 if (body != SpaceCompassCelestialBody.SUN) assertTrue(g.illuminatedFraction!! in 0.0..1.0)
             }

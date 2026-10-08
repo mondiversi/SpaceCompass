@@ -17,7 +17,7 @@
     <string name="sun_finder_location_searching">正在定位…</string>
     <string name="sun_finder_compass_missing">此设备无法使用指南针。</string>
     <string name="sun_finder_orientation_searching">正在读取朝向…</string>
-    <string name="sun_finder_compass_accuracy">指南针精度较低。请远离磁性物体并校准手机。</string>
+    <string name="sun_finder_compass_accuracy">移开磁性物体</string>
     <string name="sun_finder_allow_location">允许定位</string>
     <string name="sun_finder_enable_location">开启定位</string>
     <string name="sun_finder_retry">重试</string>

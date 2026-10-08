@@ -33,13 +33,18 @@ import java.util.TimeZone
 internal class SpaceCompassSunDailyPathUiState {
     var menuPath by mutableStateOf<SpaceCompassSunDailyPath?>(null)
         private set
+    var menuCurrentPoint by mutableStateOf<SpaceCompassSunPathPoint?>(null)
+        private set
     private var selection by mutableStateOf<Pair<SpaceCompassSunDailyPath, SpaceCompassSunPathPoint>?>(null)
     private var currentSelection by mutableStateOf<Pair<SpaceCompassCelestialBody, SpaceCompassSunPathPoint>?>(null)
     val selectedBody: SpaceCompassCelestialBody? get() = currentSelection?.first ?: selection?.first?.body
 
     // Freeze the list being consulted: live refreshes must neither dismiss nor move it.
-    fun openMenu(path: SpaceCompassSunDailyPath) { menuPath = path }
-    fun closeMenu() { menuPath = null }
+    fun openMenu(path: SpaceCompassSunDailyPath, currentPoint: SpaceCompassSunPathPoint? = null) {
+        menuPath = path
+        menuCurrentPoint = currentPoint
+    }
+    fun closeMenu() { menuPath = null; menuCurrentPoint = null }
     fun select(path: SpaceCompassSunDailyPath, point: SpaceCompassSunPathPoint) {
         currentSelection = null
         selection = path to point
@@ -113,6 +118,7 @@ internal fun SpaceCompassSunDailyPathPage(
 ) {
     val path = state.menuPath ?: return
     val labels = rememberSpaceCompassSunPathLabels(path)
+    val entries = remember(path, state.menuCurrentPoint) { spaceCompassDailyPathListEntries(path, state.menuCurrentPoint) }
     val azimuthLabel = spaceCompassSunDataRow(stringResource(R.string.celestial_point_azimuth,
         SPACE_COMPASS_SUN_DATA_MARKER), "", "").label
     val elevationLabel = spaceCompassSunDataRow(stringResource(R.string.celestial_point_elevation,
@@ -175,17 +181,25 @@ internal fun SpaceCompassSunDailyPathPage(
                         fontWeight = FontWeight.Bold, modifier = Modifier.padding(bottom = 4.dp))
                 }
                 angleHeading(!path.body.isEarthSatellite)
-                path.markers.forEachIndexed { index, point ->
+                entries.forEach { entry ->
+                    val point = entry.point
+                    val pointId = entry.markerIndex?.toString() ?: "current"
                     Row(Modifier.fillMaxWidth().heightIn(min = 48.dp).clip(RoundedCornerShape(16.dp))
-                        .clickable { state.select(path, point); state.closeMenu() }
-                        .testTag("sun-path-point-$index").padding(horizontal = 8.dp, vertical = 6.dp),
+                        .clickable {
+                            if (entry.isCurrent) state.selectCurrent(path.body, point) else state.select(path, point)
+                            state.closeMenu()
+                        }
+                        .testTag(if (entry.isCurrent) "sun-path-current" else "sun-path-point-$pointId")
+                        .padding(horizontal = 8.dp, vertical = 6.dp),
                         verticalAlignment = Alignment.CenterVertically,
                         horizontalArrangement = Arrangement.spacedBy(8.dp)) {
                         if (path.body == SpaceCompassCelestialBody.MOON) point.moonPhase?.let { phase ->
-                            SpaceCompassMoonPhaseIcon(phase, primaryText, Modifier.testTag("moon-phase-$index"))
+                            SpaceCompassMoonPhaseIcon(phase, primaryText, Modifier.testTag("moon-phase-$pointId"))
                         }
-                        Text(labels.point(point), Modifier.weight(1f), color = primaryText, fontSize = 12.sp, lineHeight = 15.sp,
-                            fontWeight = if (point.event == SpaceCompassSunPathEvent.HOUR) FontWeight.Normal else FontWeight.Bold)
+                        Text(if (entry.isCurrent) labels.current(point) else labels.point(point),
+                            Modifier.weight(1f), color = primaryText, fontSize = 12.sp, lineHeight = 15.sp,
+                            fontWeight = if (!entry.isCurrent && point.event == SpaceCompassSunPathEvent.HOUR)
+                                FontWeight.Normal else FontWeight.Bold)
                         angleValues(point)
                     }
                 }

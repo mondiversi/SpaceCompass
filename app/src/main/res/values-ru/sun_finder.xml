@@ -17,7 +17,7 @@
     <string name="sun_finder_location_searching">Поиск геопозиции…</string>
     <string name="sun_finder_compass_missing">Компас недоступен на этом устройстве.</string>
     <string name="sun_finder_orientation_searching">Определение ориентации…</string>
-    <string name="sun_finder_compass_accuracy">Низкая точность компаса. Удалите магнитные предметы и откалибруйте телефон.</string>
+    <string name="sun_finder_compass_accuracy">Уберите магнитные предметы</string>
     <string name="sun_finder_allow_location">Разрешить геопозицию</string>
     <string name="sun_finder_enable_location">Включить геопозицию</string>
     <string name="sun_finder_retry">Повторить</string>

@@ -1,5 +1,5 @@
 <resources>
-    <string name="observer_title">Σενάριο</string>
+    <string name="observer_title">Προσαρμοσμένο σενάριο</string>
     <string name="observer_place">Θέση</string>
     <string name="observer_search">Αναζήτηση τόπου</string>
     <string name="observer_search_action">Αναζήτηση</string>

@@ -50,12 +50,12 @@ internal fun fitSpaceCompassCelestialOffscreenDiameter(projections: Map<SpaceCom
     if (listOf(width, height, maximum).any { !it.isFinite() || it <= 0 }) return maximum
     val count = projections.values.count { !it.visible && it.x.isFinite() && it.y.isFinite() }
     if (count <= 1) return maximum
-    for (step in 0..30) {
+    for (step in 0..35) {
         val diameter = maximum * (1 - step * 0.02)
         if (celestialEdgeSlots(width, height, diameter, excluded).count { celestialMarkerClear(it, diameter, excluded) } >= count)
             return diameter
     }
-    return maximum * 0.40
+    return maximum * 0.30
 }
 
 /** Pack simultaneous directional markers around the edges, without changing their true bearings. */

@@ -18,17 +18,18 @@ import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
 
-/** Camera opt-in uses the same neutral circular control as the other sky actions. */
+/** Camera opt-in shares the active accent and circular shape of the other sky toggles. */
 @Composable
 internal fun SpaceCompassCameraToggleButton(checked: Boolean, onCheckedChange: (Boolean) -> Unit,
     color: Color, background: Color) {
+    val tint = spaceCompassFloatingControlTint(color, checked)
     SpaceCompassFloatingControlHitRegion {
         Surface(Modifier.spaceCompassFloatingControlVisual().size(48.dp), shape = CircleShape, color = background.copy(alpha = .94f),
-            contentColor = color, border = BorderStroke(1.dp, color.copy(alpha = .35f)), shadowElevation = 3.dp) {
+            contentColor = tint, border = BorderStroke(1.dp, tint.copy(alpha = .35f)), shadowElevation = 3.dp) {
             Box(contentAlignment = Alignment.Center) {
                 IconToggleButton(checked = checked, onCheckedChange = onCheckedChange,
                     modifier = Modifier.fillMaxSize().testTag("toggle-camera"),
-                    colors = IconButtonDefaults.iconToggleButtonColors(contentColor = color, checkedContentColor = color)) {
+                    colors = IconButtonDefaults.iconToggleButtonColors(contentColor = color, checkedContentColor = tint)) {
                     Icon(painterResource(if (checked) R.drawable.ic_camera else R.drawable.ic_camera_off),
                         stringResource(if (checked) R.string.camera_disable else R.string.camera_enable),
                         Modifier.size(26.dp))

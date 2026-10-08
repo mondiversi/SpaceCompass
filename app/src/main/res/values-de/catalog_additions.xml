@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="celestial_sirius">Sirius</string>
+    <string name="celestial_betelgeuse">Beteigeuze</string>
+    <string name="celestial_titan">Titan</string>
+    <string name="celestial_orion_nebula">M42 · Orionnebel</string>
+    <string name="celestial_pleiades">M45 · Plejaden</string>
+    <string name="catalog_type_nebula">Nebel</string>
+    <string name="catalog_type_cluster">Sternhaufen</string>
+    <string name="celestial_apparent_magnitude">Scheinbare Helligkeit</string>
+    <string name="celestial_speed_orbit_saturn">Umlaufgeschwindigkeit (Saturn): %1$s km/s</string>
+    <string name="celestial_andromeda_galaxy_title">Andromedagalaxie</string>
+    <string name="celestial_archival_image">Archivaufnahme, keine Live-Teleskopansicht. Die Farben können für das Auge unsichtbare Wellenlängen darstellen.</string>
+    <string name="celestial_image_loading">Bild wird geladen…</string>
+    <string name="celestial_sirius_note">Hellster Stern am Nachthimmel. Physikalische Werte beziehen sich auf Sirius A; Sirius B ist sein weißer Zwergbegleiter. Katalogposition und ungefähre Entfernung.</string>
+    <string name="celestial_betelgeuse_note">Veränderlicher roter Überriese im Orion. Radius, Entfernung und heutiger Massenbereich sind modellabhängig; seine Helligkeit verändert sich.</string>
+    <string name="celestial_titan_note">Größter Saturnmond mit dichter Stickstoffatmosphäre und Methanseen. Temperatur und Druck von Huygens sind Referenzmessungen am Landeplatz von 2005. Cassini-Oberflächenmosaik im nahen Infrarot; NASA/JPL-Bahndaten.</string>
+    <string name="celestial_orion_note">Sternentstehungsnebel im Orion. Ausrichtung und Tagesbahn folgen dem Katalogzentrum. Ein Nebel hat keine einzelne Planetenoberfläche.</string>
+    <string name="celestial_pleiades_note">Offener Sternhaufen im Stier. Die Ausrichtung folgt dem Haufenzentrum. Das WISE-Infrarotbild zeigt Sterne und umgebenden Staub.</string>
+    <string name="celestial_andromeda_galaxy_note">Andromeda (M31) ist eine Spiralgalaxie in etwa 2,5 Millionen Lichtjahren Entfernung. M31* ist ihr zentrales schwarzes Loch: Die tabellierte Masse gilt für M31*, nicht für die gesamte Galaxie. Das Foto zeigt die Galaxie.</string>
+</resources>

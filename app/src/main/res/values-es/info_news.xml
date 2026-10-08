@@ -1,9 +1,9 @@
 <resources>
     <string name="info_news_title">Últimas novedades · %1$s</string>
-    <string name="info_news_star_sky">Cielo estrellado realista según tu ubicación y hora, más nítido en las panorámicas.</string>
-    <string name="info_news_texture_downloads">Aplicación más ligera: los mapas planetarios se descargan cuando hacen falta y quedan disponibles sin conexión; Ío y Europa en WebP 2K.</string>
-    <string name="info_news_weather">Tiempo coherente entre la vista principal y las panorámicas, con la opción de visualización guardada.</string>
-    <string name="info_news_viewer_zoom">Controles + y − compactos en los detalles del objeto; el tamaño inicial es el zoom mínimo.</string>
-    <string name="info_news_settings">Ajustes, unidades y escenarios mejorados, controles uniformes y página Información y créditos.</string>
-    <string name="info_news_catalog">Zoom de cámara guardado y confirmación breve al terminar de actualizar los datos de los objetos.</string>
+    <string name="info_news_star_sky">35 objetos: Sirio, Betelgeuse, Titán, la nebulosa de Orión y las Pléyades; nuevas imágenes de Andrómeda.</string>
+    <string name="info_news_texture_downloads">Paquete de imágenes 1.1: 18 imágenes WebP descargadas cuando hacen falta, verificadas y disponibles sin conexión.</string>
+    <string name="info_news_weather">Paneles informativos plegables, controles reorganizados e indicador más claro del escenario personalizado.</string>
+    <string name="info_news_viewer_zoom">Posición actual en las trayectorias diarias, paneles de puntos mejorados y un único aviso según su prioridad.</string>
+    <string name="info_news_settings">La iluminación del tiempo sigue el amanecer, el día, el atardecer y la noche en la vista principal y las panorámicas.</string>
+    <string name="info_news_catalog">Controles panorámicos mejorados, vibración al capturar, márgenes de exportación y zoom de objetos compacto.</string>
 </resources>

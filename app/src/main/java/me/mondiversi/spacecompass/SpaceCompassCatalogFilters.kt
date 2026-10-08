@@ -5,12 +5,16 @@ internal enum class SpaceCompassCatalogType(val label: Int) {
     NATURAL_SATELLITE(R.string.catalog_type_moon), COMET(R.string.catalog_type_comet), STAR(R.string.catalog_type_star),
     BLACK_HOLE(R.string.catalog_type_black_hole), NEUTRON_STAR(R.string.catalog_type_neutron),
     SPACE_STATION(R.string.catalog_type_station), ARTIFICIAL_SATELLITE(R.string.catalog_type_satellite),
-    SPACE_PROBE(R.string.catalog_type_probe)
+    SPACE_PROBE(R.string.catalog_type_probe), NEBULA(R.string.catalog_type_nebula), STAR_CLUSTER(R.string.catalog_type_cluster)
 }
 internal enum class SpaceCompassCatalogVisibility(val label: Int) {
     ALL(R.string.catalog_all), ABOVE(R.string.catalog_above_horizon), BELOW(R.string.catalog_below_horizon)
 }
 internal val SpaceCompassCelestialBody.catalogType: SpaceCompassCatalogType get() = when (this) {
+    SpaceCompassCelestialBody.ORION_NEBULA -> SpaceCompassCatalogType.NEBULA
+    SpaceCompassCelestialBody.PLEIADES -> SpaceCompassCatalogType.STAR_CLUSTER
+    SpaceCompassCelestialBody.SIRIUS, SpaceCompassCelestialBody.BETELGEUSE -> SpaceCompassCatalogType.STAR
+    SpaceCompassCelestialBody.TITAN -> SpaceCompassCatalogType.NATURAL_SATELLITE
     SpaceCompassCelestialBody.HALLEY, SpaceCompassCelestialBody.COMET_67P -> SpaceCompassCatalogType.COMET
     SpaceCompassCelestialBody.TRAPPIST_1_E -> SpaceCompassCatalogType.EXOPLANET
     SpaceCompassCelestialBody.MERCURY, SpaceCompassCelestialBody.VENUS, SpaceCompassCelestialBody.EARTH_CENTER,

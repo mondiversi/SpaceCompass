@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="celestial_sirius">Sirius</string>
+    <string name="celestial_betelgeuse">Betelgeuse</string>
+    <string name="celestial_titan">Titan</string>
+    <string name="celestial_orion_nebula">M42 · Nebula ya Orion</string>
+    <string name="celestial_pleiades">M45 · Pleiades</string>
+    <string name="catalog_type_nebula">Nebula</string>
+    <string name="catalog_type_cluster">Kundi la nyota</string>
+    <string name="celestial_apparent_magnitude">Ukubwa unaoonekana</string>
+    <string name="celestial_speed_orbit_saturn">Kasi ya obiti (Zohali): %1$s km/s</string>
+    <string name="celestial_andromeda_galaxy_title">Galaksi ya Andromeda</string>
+    <string name="celestial_archival_image">Uchunguzi wa kumbukumbu, si picha ya darubini ya moja kwa moja. Rangi zinaweza kuwakilisha urefu wa mawimbi usioonekana kwa macho.</string>
+    <string name="celestial_image_loading">Inapakia picha…</string>
+    <string name="celestial_sirius_note">Nyota angavu zaidi katika anga la usiku. Vipimo vya kimwili ni vya Sirius A; Sirius B ni nyota kibete nyeupe mwenzake. Nafasi ya katalogi na umbali wa makadirio.</string>
+    <string name="celestial_betelgeuse_note">Nyota kubwa sana nyekundu inayobadilika katika Orion. Nusu kipenyo, umbali na kiwango cha masi ya sasa hutegemea modeli; uangavu hubadilika.</string>
+    <string name="celestial_titan_note">Mwezi mkubwa zaidi wa Zohali, wenye angahewa nzito ya nitrojeni na maziwa ya methane. Joto na shinikizo la Huygens ni vipimo vya marejeo katika eneo la kutua la 2005. Picha ya uso iliyounganishwa ya Cassini ya infrared ya karibu; njia za NASA/JPL.</string>
+    <string name="celestial_orion_note">Nebula katika Orion ambako nyota huzaliwa. Uelekeo na njia ya kila siku hufuata kitovu cha katalogi. Nebula haina uso mmoja wa sayari.</string>
+    <string name="celestial_pleiades_note">Kundi wazi la nyota katika Taurus. Uelekeo hufuata kitovu cha kundi. Picha ya infrared ya WISE inaonyesha nyota na vumbi linalozizunguka.</string>
+    <string name="celestial_andromeda_galaxy_note">Andromeda (M31) ni galaksi ya ond takriban miaka milioni 2.5 ya nuru kutoka hapa. M31* ni shimo jeusi la kitovu chake: masi kwenye jedwali ni ya M31*, si galaksi yote. Picha inaonyesha galaksi.</string>
+</resources>

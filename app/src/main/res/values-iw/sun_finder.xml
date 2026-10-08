@@ -17,7 +17,7 @@
     <string name="sun_finder_location_searching">מחפש מיקום…</string>
     <string name="sun_finder_compass_missing">מצפן אינו זמין במכשיר זה.</string>
     <string name="sun_finder_orientation_searching">קורא את הכיוון…</string>
-    <string name="sun_finder_compass_accuracy">דיוק המצפן נמוך. התרחק מעצמים מגנטיים וכייל את הטלפון.</string>
+    <string name="sun_finder_compass_accuracy">הרחק עצמים מגנטיים</string>
     <string name="sun_finder_allow_location">אפשר מיקום</string>
     <string name="sun_finder_enable_location">הפעל מיקום</string>
     <string name="sun_finder_retry">נסה שוב</string>

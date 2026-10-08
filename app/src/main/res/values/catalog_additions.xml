@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="celestial_sirius">Sirius</string>
+    <string name="celestial_betelgeuse">Betelgeuse</string>
+    <string name="celestial_titan">Titan</string>
+    <string name="celestial_orion_nebula">M42 · Orion Nebula</string>
+    <string name="celestial_pleiades">M45 · Pleiades</string>
+    <string name="catalog_type_nebula">Nebula</string>
+    <string name="catalog_type_cluster">Star cluster</string>
+    <string name="celestial_apparent_magnitude">Apparent magnitude</string>
+    <string name="celestial_speed_orbit_saturn">Orbital speed (Saturn): %1$s km/s</string>
+    <string name="celestial_andromeda_galaxy_title">Andromeda Galaxy</string>
+    <string name="celestial_archival_image">Archived observation, not a live telescope view. Image colours may represent wavelengths invisible to the eye.</string>
+    <string name="celestial_image_loading">Loading image…</string>
+    <string name="celestial_sirius_note">Brightest star in the night sky. Physical values refer to Sirius A; Sirius B is its white-dwarf companion. Catalogue position and approximate distance.</string>
+    <string name="celestial_betelgeuse_note">Variable red supergiant in Orion. Radius, distance and present-day mass range are model dependent; brightness changes over time.</string>
+    <string name="celestial_titan_note">Saturn’s largest moon, with a dense nitrogen atmosphere and methane lakes. Huygens temperature and pressure are reference measurements from its 2005 landing site. Cassini near-infrared surface mosaic; NASA/JPL trajectories.</string>
+    <string name="celestial_orion_note">Star-forming nebula in Orion. Pointing and daily path follow its catalogue centre. A nebula has no single planetary surface.</string>
+    <string name="celestial_pleiades_note">Open star cluster in Taurus. Pointing follows the cluster centre. The WISE infrared image shows stars and surrounding dust.</string>
+    <string name="celestial_andromeda_galaxy_note">Andromeda (M31) is a spiral galaxy about 2.5 million light-years away. M31* is its central black hole: the tabulated black-hole mass belongs to M31*, not the entire galaxy. The photograph shows the galaxy.</string>
+</resources>

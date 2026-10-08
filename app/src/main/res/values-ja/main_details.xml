@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="main_details_hide" formatted="false">情報パネルを非表示</string>
+    <string name="main_details_show" formatted="false">情報パネルを表示</string>
+</resources>

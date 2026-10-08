@@ -22,6 +22,20 @@ internal class SpaceCompassCelestialTextureFiles(private val directory: File) {
         return file
     }
 
+    /** Reuse only bytes matching this APK's pins; never modify the older pack. */
+    fun importVerified(texture: SpaceCompassCelestialTexture, legacyDirectories: List<File>): File? {
+        cached(texture)?.let { return it }
+        for (legacy in legacyDirectories) {
+            val source = File(legacy, texture.name)
+            if (!source.isFile || source.length() != texture.bytes.toLong()) continue
+            val bytes = runCatching { source.readBytes() }.getOrNull() ?: continue
+            if (!SpaceCompassCelestialTexturePolicy.matches(texture, bytes)) continue
+            // Publish through the same verified atomic store used by HTTPS downloads.
+            return store(texture, bytes)
+        }
+        return null
+    }
+
     fun store(texture: SpaceCompassCelestialTexture, bytes: ByteArray): File {
         require(SpaceCompassCelestialTexturePolicy.matches(texture, bytes))
         check(directory.isDirectory || directory.mkdirs())
