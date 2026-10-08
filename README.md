@@ -9,21 +9,21 @@ application originally extracted from [UVIR](https://github.com/mondiversi/Uvir)
 
 ## Download and install
 
-Download **space-compass-1.1.0.apk** from the
-[Space Compass 1.1.0 release](https://github.com/mondiversi/SpaceCompass/releases/tag/v1.1.0).
+Download **space-compass-1.1.3.apk** from the
+[Space Compass 1.1.3 release](https://github.com/mondiversi/SpaceCompass/releases/tag/v1.1.3).
 Android 8.0 or newer is required. Open the APK and follow Android's installation
 prompts; allow installation for your browser or file manager if requested.
 
 Install over the existing app to retain settings and selections. **Do not uninstall
 or clear app data when updating.** Releases since 0.1.2 check for signed GitHub
-updates at startup; you can also use **Info & news → GitHub repository → Check for
+updates at startup; you can also use **Info & credits → GitHub repository → Check for
 updates**. Download and installation require confirmation. Version 0.1.0 needs
 one manual APK update to acquire this feature.
 
 The release includes `SHA256SUMS.txt` and a signed update index. GitHub's source
 ZIP/TAR archives and Actions debug artifacts are separate from the signed APK.
 See [distribution and signing](docs/GITHUB_RELEASES.md) and
-[the 1.1.0 release audit](docs/RELEASE_1_1.md).
+[the 1.1.3 release audit](docs/RELEASE_1_1_3.md).
 
 ## Features
 
@@ -52,7 +52,7 @@ See [distribution and signing](docs/GITHUB_RELEASES.md) and
 - Signed startup/manual GitHub updates with package, certificate, size and checksum verification.
 
 The application ID is `me.mondiversi.spacecompass`. The current stable version is
-**1.1.0**, with Android/update identity `1.1.0` and version code **17**.
+**1.1.3**, with Android/update identity `1.1.3` and version code **20**.
 This preserves the three-part update protocol used by existing preview installations.
 The app has its own preferences and caches and can coexist with UVIR.
 
@@ -111,3 +111,19 @@ Copyright © 2026 Mondiversi. Application code is licensed under [GPL-3.0](LICEN
 Third-party SGP4 code and image maps retain their respective licenses/credits;
 Astronomy Engine uses MIT, AndroidX uses Apache-2.0 and Leaflet uses BSD-2-Clause.
 Launcher/loading artwork and the fictional Easter-egg texture are original assets.
+
+## Data and graphics packages
+
+Release 1.1.3 also provides a reference-information ZIP and the current 12-map
+2K WebP graphics ZIP, both with file manifests and credits. They are optional
+archives: scientific reference data, all 20 languages, the star atlas and LV-426
+are already included in the APK. Planet maps are downloaded individually from
+the stable [Celestial texture pack 1.0](https://github.com/mondiversi/SpaceCompass/releases/tag/celestial-textures-v1),
+verified and reused offline. The original lower-resolution Io/Europa files remain
+available for older app builds. Runtime satellite and JPL data retain their own
+refresh schedules and are not frozen into the information archive.
+
+The bundled star atlas follows observer location and date, and weather effects
+match the live sky and panoramic capture. Camera, weather effects and reference
+curves start disabled; enabled choices and camera zoom are saved. Object models
+have compact + and - controls, with the opening size as their minimum zoom.

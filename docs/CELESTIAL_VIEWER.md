@@ -79,11 +79,14 @@ archives, associations or preferences with UVIR.
   animations skip the transition. No Euler pitch clamp or gimbal lock.
   Retrograde planets turn in the opposite direction. State survives tab/window
   changes. Animation updates are capped at 30 Hz and stop on pause/background.
-* Both tabs support a two-finger pinch from 0.75× to 3×, with bounded panning and
+* Both tabs support a two-finger pinch from 1× to 3×, with bounded panning and
   a finger-centred zoom. One finger still rotates the model in Rotation; in
   Current face it pans an enlarged image. A double tap resets zoom in Current
   face, or restores the axis/resumes without changing zoom in Rotation. Zoom is shared
-  between tabs and survives resizing. Accessible zoom/reset actions are supplied.
+  between tabs and survives resizing. Compact, bare + and - controls are
+  horizontally aligned with the view-mode switch. The opening size is the minimum
+  zoom, shared by buttons, pinch and accessibility; restored state is normalized
+  to these bounds. Accessible zoom/reset actions are supplied.
 * Planets are GPU-shaded textured spheres. Saturn has a geometric ring model,
   including front/back occlusion and the Cassini gap; ring textures/shadows and
   changing cloud formations are not observational reconstructions.
@@ -515,3 +518,18 @@ traversal creates its buffer, so static Current face no longer needs a Rotation
 toggle to appear. RENDERMODE_WHEN_DIRTY, cached textures and foreground animation
 limits are retained. No recurring timer or render loop is used for static content.
 Factory ownership follows [Android's interoperability guidance](https://developer.android.com/develop/ui/compose/migrate/interoperability-apis/views-in-compose).
+
+## Io and Europa colour display maps
+
+The current download policy uses `io_2048.webp` and `europa_2048.webp` at
+2048 x 1024, lossy WebP quality 90. They are reduced from the original
+4096 x 2048 albedo maps inside NASA VTAD's official Io and Europa models:
+https://science.nasa.gov/resource/io-3d-model/
+https://science.nasa.gov/resource/europa-3d-model/
+These NASA visualization maps contain processed colour and filled/blended
+regions; the app does not interpret those regions as additional measured data.
+Terrain-feature correlation against the earlier NASA/JPL/USGS browse mosaics
+confirms north-up orientation and the same longitude seam. The existing
+textureLongitudeOffset values, topocentric calculations and phase lighting
+are unchanged. Viewers, thumbnails and exported markers all read the same
+verified derivative. Old release filenames remain available for older APKs.

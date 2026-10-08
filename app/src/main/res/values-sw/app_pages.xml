@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="pc_info">Taarifa na mambo mapya</string>
+    <string name="pc_info">Taarifa na shukrani</string>
     <string name="pc_display_automatic">Kubadilisha ukubwa kiotomatiki</string>
     <string name="pc_info_description">Dira ya anga ya kutafuta vitu vya angani, kuchunguza njia zao na kuona modeli na awamu za Mwezi.</string>
     <string name="pc_info_earth">Imeundwa kwa Dunia: ukiwa angani, ni bora kumwuliza mwanaanga njia 🙂</string>

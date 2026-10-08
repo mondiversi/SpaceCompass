@@ -91,6 +91,14 @@ internal fun SpaceCompassCelestialCatalogPage(timeMs: Long, remote: SpaceCompass
     var distances by remember { mutableStateOf<Map<SpaceCompassCelestialBody,Double?>>(emptyMap()) }
     var refreshRevision by remember { mutableIntStateOf(0) }
     var calculating by remember { mutableStateOf(true) }
+    var calculatedRefreshRevision by remember { mutableIntStateOf(-1) }
+    val context = androidx.compose.ui.platform.LocalContext.current
+    val refreshNotice = remember { SpaceCompassCatalogRefreshNotice() }
+    LaunchedEffect(refreshRevision, remote.completedCatalogRefreshRevision, remote.refreshing, calculating, calculatedRefreshRevision) {
+        if (refreshNotice.consumeIfReady(remote.completedCatalogRefreshRevision, remote.refreshing,
+                calculating || calculatedRefreshRevision < remote.completedCatalogRefreshRevision))
+            showSpaceCompassBottomMessage(context, resources.getString(R.string.catalog_refresh_finished))
+    }
     // Loading flags alone must not trigger catalog calculations.
     val catalogRemote = remember(remote.iss, remote.starlink, remote.ephemerides, remote.motions) { remote }
     var observations by remember { mutableStateOf<Map<SpaceCompassCelestialBody, SpaceCompassCelestialObservation?>>(emptyMap()) }
@@ -112,7 +120,7 @@ internal fun SpaceCompassCelestialCatalogPage(timeMs: Long, remote: SpaceCompass
             }
         }
     }
-    LaunchedEffect(availableBodies, catalogTime, refreshRevision, catalogRemote, catalogLatitude, catalogLongitude, catalogAltitude) {
+    LaunchedEffect(availableBodies, catalogTime, refreshRevision, catalogRemote, catalogLatitude, catalogLongitude, catalogAltitude, remote.completedCatalogRefreshRevision) {
         calculating = true
         try {
             val snapshot = withContext(Dispatchers.Default) {
@@ -131,6 +139,7 @@ internal fun SpaceCompassCelestialCatalogPage(timeMs: Long, remote: SpaceCompass
             }
             distances = snapshot.first
             solarDistances = snapshot.second
+            calculatedRefreshRevision = remote.completedCatalogRefreshRevision
         } finally { calculating = false }
     }
     // Newly revealed distant objects enter the correct sort position in the same frame.
@@ -175,9 +184,9 @@ internal fun SpaceCompassCelestialCatalogPage(timeMs: Long, remote: SpaceCompass
                 }
                 val refreshing = remote.refreshing || calculating
                 SpaceCompassTitleActionButton(stringResource(if (refreshing) R.string.catalog_refreshing else R.string.catalog_refresh),
-                    onClick = { refreshRevision++; onRefresh() }, enabled = !refreshing,
+                    onClick = { refreshNotice.requested(remote.completedCatalogRefreshRevision); refreshRevision++; onRefresh() }, enabled = !refreshing,
                     modifier = Modifier.width(48.dp).testTag("catalog-refresh"), iconColor = color) {
-                    if (refreshing) CircularProgressIndicator(Modifier.size(22.dp), strokeWidth = 2.dp,
+                    if (refreshing) CircularProgressIndicator(Modifier.size(20.dp), strokeWidth = 2.dp,
                         color = color.copy(alpha = .65f))
                     else Icon(painterResource(R.drawable.ic_refresh), contentDescription = null)
                 }

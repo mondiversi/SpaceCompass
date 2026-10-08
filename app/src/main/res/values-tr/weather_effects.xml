@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="sky_weather_enable">Hava durumunu aç</string>
+    <string name="sky_weather_disable">Hava durumunu kapat</string>
+    <string name="sky_weather_disabled">Hava durumu kapalı</string>
+</resources>

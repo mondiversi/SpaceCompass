@@ -1,9 +1,9 @@
 <resources>
     <string name="info_news_title">最近の変更 · %1$s</string>
-    <string name="info_news_camera_zoom">超広角から最大までのカメラズーム。ピンチ操作や倍率の直接選択に対応。</string>
-    <string name="info_news_catalog_search">名前やカタログ識別子で天体を検索し、フィルターと組み合わせられます。</string>
-    <string name="info_news_capture_metadata">写真には方位・傾き・画角を表示。プレビューには選択した単位と言語を使用します。</string>
-    <string name="info_news_capture_controls">操作部を小型化し、プレビューのボタンを中央に配置。選択した設定または国際形式で書き出せます。</string>
-    <string name="info_news_viewer">現在の表示と回転を切り替えるコンパクトなスイッチと、わかりやすいコンパス警告。</string>
-    <string name="info_news_performance">アプリの軽量化、プレビューの安定性向上、翻訳の確認。</string>
+    <string name="info_news_star_sky">場所と時刻に合わせたリアルな星空を、パノラマでもより鮮明に表示。</string>
+    <string name="info_news_texture_downloads">アプリを軽量化。惑星マップは必要時にダウンロードしてオフラインで利用可能。イオとエウロパは2K WebPに対応。</string>
+    <string name="info_news_weather">メイン画面とパノラマで天気表示を統一し、表示設定を保存。</string>
+    <string name="info_news_viewer_zoom">天体詳細に小さな＋と−を配置。初期サイズが最小ズームになります。</string>
+    <string name="info_news_settings">設定、単位、シナリオと操作ボタンを統一し、情報とクレジットページを改善。</string>
+    <string name="info_news_catalog">カメラのズームを保存し、天体データの更新完了時に短い通知を表示。</string>
 </resources>

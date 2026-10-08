@@ -117,7 +117,7 @@ capture timestamps with explicit UTC offsets on all supported versions. Caption 
 and location-disclosure policy remain frozen independently of these EXIF timestamps.
 Composition-observed configuration/resources update preference examples and callbacks
 when locale/theme changes. The initial 1.0 release used display version 1.0 and protocol version 1.0.0.
-Current release 1.1.0 uses the same display/protocol version with code 17; signed
+Current release 1.1.3 uses the same display/protocol version with code 20; signed
 metadata, APK name and tag share that identity.
 
 
@@ -137,5 +137,13 @@ privacy, label visibility, centre choice and exposure timestamps stay frozen in
 capture snapshots. A change to export format never re-renders the visible preview.
 
 Pluto is distributed at the existing 2048 x 1024 runtime texture limit, avoiding
-an oversized decode and resize. The fictional texture uses pixel-identical
-lossless WebP at its original dimensions. Credits and longitude conventions remain.
+an oversized decode and resize. LV-426 remains a bundled lossy WebP map. The
+twelve other maps live in the versioned public `celestial-textures-v1` pack;
+reference copies are outside the APK asset tree. A shared two-request queue
+verifies HTTPS downloads against embedded sizes, SHA-256 digests and dimensions
+before atomic publication to private no-backup files. UI, GL and export readers
+use the same persistent files. Visible models use a provisional colored sphere
+until a map arrives, then update without changing their observation or rotation.
+Downloads retry while their miniature/viewer is visible and failures are bounded
+by a 30-second cooldown. Astronomy and trajectories work without image downloads.
+Credits and longitude conventions remain unchanged.

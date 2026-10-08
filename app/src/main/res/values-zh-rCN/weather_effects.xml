@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="sky_weather_enable">开启天气</string>
+    <string name="sky_weather_disable">关闭天气</string>
+    <string name="sky_weather_disabled">天气已关闭</string>
+</resources>

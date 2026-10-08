@@ -1,9 +1,9 @@
 <resources>
     <string name="info_news_title">Últimas novedades · %1$s</string>
-    <string name="info_news_camera_zoom">Zoom de cámara desde el ultra gran angular hasta el máximo, con gestos de pellizco y selección directa del nivel.</string>
-    <string name="info_news_catalog_search">Busca objetos por nombre o identificador del catálogo junto con los filtros.</string>
-    <string name="info_news_capture_metadata">Las fotos muestran dirección, inclinación y campo de visión; las vistas previas usan tus unidades e idioma.</string>
-    <string name="info_news_capture_controls">Controles más compactos y centrados en las vistas previas; exporta con tus ajustes o el formato internacional.</string>
-    <string name="info_news_viewer">Conmutador compacto entre vista actual y rotación, con avisos de brújula más claros.</string>
-    <string name="info_news_performance">Aplicación más ligera, vistas previas más fiables y traducciones revisadas.</string>
+    <string name="info_news_star_sky">Cielo estrellado realista según tu ubicación y hora, más nítido en las panorámicas.</string>
+    <string name="info_news_texture_downloads">Aplicación más ligera: los mapas planetarios se descargan cuando hacen falta y quedan disponibles sin conexión; Ío y Europa en WebP 2K.</string>
+    <string name="info_news_weather">Tiempo coherente entre la vista principal y las panorámicas, con la opción de visualización guardada.</string>
+    <string name="info_news_viewer_zoom">Controles + y − compactos en los detalles del objeto; el tamaño inicial es el zoom mínimo.</string>
+    <string name="info_news_settings">Ajustes, unidades y escenarios mejorados, controles uniformes y página Información y créditos.</string>
+    <string name="info_news_catalog">Zoom de cámara guardado y confirmación breve al terminar de actualizar los datos de los objetos.</string>
 </resources>

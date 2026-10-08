@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="pc_info">Info and news</string>
+    <string name="pc_info">Info and credits</string>
     <string name="pc_display_automatic">Automatic scaling</string>
     <string name="pc_info_description">An astronomical compass to find celestial objects, explore their paths and view models and lunar phases.</string>
     <string name="pc_info_earth">Designed for use on Earth: in space, better ask an astronaut for directions 🙂</string>

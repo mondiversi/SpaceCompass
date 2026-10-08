@@ -1,9 +1,9 @@
 <resources>
     <string name="info_news_title">Ostatnie nowości · %1$s</string>
-    <string name="info_news_camera_zoom">Zoom aparatu od ultraszerokiego kąta do maksimum, gestem szczypania lub bezpośrednim wyborem poziomu.</string>
-    <string name="info_news_catalog_search">Wyszukuj obiekty według nazwy lub identyfikatora katalogowego, łącząc wyszukiwanie z filtrami.</string>
-    <string name="info_news_capture_metadata">Zdjęcia pokazują kierunek, nachylenie i pole widzenia; podglądy używają wybranych jednostek i języka.</string>
-    <string name="info_news_capture_controls">Bardziej zwarte elementy sterujące i wyśrodkowane przyciski podglądu; eksport z własnymi ustawieniami lub formatem międzynarodowym.</string>
-    <string name="info_news_viewer">Kompaktowy przełącznik między widokiem bieżącym a obrotem i czytelniejsze ostrzeżenia kompasu.</string>
-    <string name="info_news_performance">Mniejsza aplikacja, bardziej niezawodne podglądy i sprawdzone tłumaczenia.</string>
+    <string name="info_news_star_sky">Realistyczne gwiaździste niebo dopasowane do lokalizacji i czasu, wyraźniejsze na panoramach.</string>
+    <string name="info_news_texture_downloads">Mniejsza aplikacja: mapy planet pobierane w razie potrzeby pozostają dostępne offline; Io i Europa w formacie WebP 2K.</string>
+    <string name="info_news_weather">Spójna pogoda w widoku głównym i panoramach, z zapamiętaną opcją wyświetlania.</string>
+    <string name="info_news_viewer_zoom">Kompaktowe + i − w szczegółach obiektu; rozmiar początkowy to minimalne przybliżenie.</string>
+    <string name="info_news_settings">Ulepszone ustawienia, jednostki i scenariusze, spójne elementy sterujące oraz strona Informacje i autorzy.</string>
+    <string name="info_news_catalog">Zapamiętany zoom aparatu i krótkie potwierdzenie po zakończeniu aktualizacji danych obiektów.</string>
 </resources>

@@ -4,7 +4,7 @@ From 0.1.2, Space Compass performs a silent check on each fresh Activity launch,
 including an Activity restored in a fresh process. Recreation inside a live process
 does not duplicate that check.
 Returning from an internal page does not restart the check or the main compass.
-The Information page has separate repository-open and manual-update-check actions.
+The Info & credits page has separate repository-open and manual-update-check actions.
 Only a newer compatible release opens the global **Updates available** dialog.
 Manual checks report current-version, unsupported-Android or connection results.
 All update UI strings are localized in the same twenty interface languages.

@@ -2,4 +2,5 @@
 <resources>
     <string name="catalog_refresh">Verileri yenile</string>
     <string name="catalog_refreshing">Veriler güncelleniyor…</string>
+    <string name="catalog_refresh_finished">Nesne güncellemesi tamamlandı.</string>
 </resources>

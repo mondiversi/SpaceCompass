@@ -27,17 +27,17 @@ internal fun SpaceCompassInfoPage(modifier: Modifier) {
                         Text("Space Compass V. ${BuildConfig.DISPLAY_VERSION}", fontWeight = FontWeight.Bold, fontSize = 20.sp)
                     }
                 }
-                Text(stringResource(R.string.pc_info_description), fontSize = 14.sp, lineHeight = 21.sp)
-                Text(stringResource(R.string.pc_info_earth), fontSize = 14.sp, lineHeight = 21.sp)
+                Text(stringResource(R.string.pc_info_description), fontSize = 13.sp, lineHeight = 18.sp)
+                SpaceCompassSettingsDescription(stringResource(R.string.pc_info_earth))
             }
         }
         item(key = "news") {
             SpaceCompassSettingsIsland(stringResource(R.string.info_news_title, BuildConfig.DISPLAY_VERSION),
                 iconKey = "whats_new") {
-                listOf(R.string.info_news_camera_zoom, R.string.info_news_catalog_search, R.string.info_news_capture_metadata,
-                    R.string.info_news_capture_controls, R.string.info_news_viewer, R.string.info_news_performance).forEach { change ->
-                    Text("• ${stringResource(change)}", fontSize = 13.sp, lineHeight = 19.sp,
-                        color = MaterialTheme.colorScheme.onSurface.copy(alpha = .75f))
+                listOf(R.string.info_news_star_sky, R.string.info_news_texture_downloads, R.string.info_news_weather,
+                    R.string.info_news_viewer_zoom, R.string.info_news_settings, R.string.info_news_catalog).forEach { change ->
+                    Text("• ${stringResource(change)}", fontSize = 13.sp, lineHeight = 18.sp,
+                        color = MaterialTheme.colorScheme.onSurface.copy(alpha = .72f))
                 }
             }
         }
@@ -48,10 +48,11 @@ internal fun SpaceCompassInfoPage(modifier: Modifier) {
         }
         item(key = "credits") {
             SpaceCompassSettingsIsland(stringResource(R.string.pc_info_credits), iconKey = "credits") {
-                Text(stringResource(R.string.about_copyright), fontSize = 13.sp)
-                Text("GPL-3.0 · Astronomy Engine (MIT) · SGP4 · Leaflet (BSD-2-Clause)", fontSize = 13.sp)
-                Text("NASA · JPL · USGS · Solar System Scope / INOVE", fontSize = 13.sp)
-                Text(stringResource(R.string.pc_info_credits_detail), fontSize = 13.sp, lineHeight = 18.sp)
+                Text(stringResource(R.string.about_copyright), fontSize = 11.sp, lineHeight = 14.sp)
+                Text("GPL-3.0 · Astronomy Engine (MIT) · SGP4 · Leaflet (BSD-2-Clause)", fontSize = 11.sp, lineHeight = 14.sp)
+                Text("NASA · VTAD · JPL · USGS · Solar System Scope / INOVE", fontSize = 11.sp, lineHeight = 14.sp)
+                Text("Deep Star Maps 2020 · NASA/Goddard SVS · ESA/Gaia/DPAC · Ernie Wright (USRA)", fontSize = 11.sp, lineHeight = 14.sp)
+                Text(stringResource(R.string.pc_info_credits_detail), fontSize = 11.sp, lineHeight = 14.sp)
             }
         }
     }

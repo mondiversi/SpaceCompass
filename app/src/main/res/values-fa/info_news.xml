@@ -1,9 +1,9 @@
 <resources>
     <string name="info_news_title">تازه‌ترین تغییرات · %1$s</string>
-    <string name="info_news_camera_zoom">بزرگ‌نمایی دوربین از فوق‌عریض تا بیشینه، با حرکت دو انگشت یا انتخاب مستقیم سطح.</string>
-    <string name="info_news_catalog_search">جست‌وجوی اجرام با نام یا شناسهٔ فهرست، همراه با فیلترها.</string>
-    <string name="info_news_capture_metadata">عکس‌ها جهت، شیب و میدان دید را نشان می‌دهند؛ پیش‌نمایش‌ها از واحدها و زبان انتخابی استفاده می‌کنند.</string>
-    <string name="info_news_capture_controls">کنترل‌های فشرده‌تر و دکمه‌های وسط‌چین در پیش‌نمایش؛ خروجی با تنظیمات شما یا قالب بین‌المللی.</string>
-    <string name="info_news_viewer">کلید فشرده بین نمای فعلی و چرخش، با هشدارهای روشن‌تر قطب‌نما.</string>
-    <string name="info_news_performance">برنامهٔ سبک‌تر، پیش‌نمایش‌های مطمئن‌تر و ترجمه‌های بررسی‌شده.</string>
+    <string name="info_news_star_sky">آسمان پرستارهٔ واقعی متناسب با مکان و زمان شما، با وضوح بیشتر در پانوراماها.</string>
+    <string name="info_news_texture_downloads">برنامهٔ کوچک‌تر: نقشه‌های سیارات هنگام نیاز دریافت می‌شوند و آفلاین در دسترس می‌مانند؛ آیو و اروپا در قالب WebP با وضوح 2K.</string>
+    <string name="info_news_weather">آب‌وهوای هماهنگ در نمای اصلی و پانوراماها، با ذخیرهٔ انتخاب نمایش.</string>
+    <string name="info_news_viewer_zoom">دکمه‌های کوچک + و − در جزئیات جرم؛ اندازهٔ اولیه کمترین بزرگ‌نمایی است.</string>
+    <string name="info_news_settings">تنظیمات، واحدها و سناریوهای بهبودیافته، کنترل‌های یکسان و صفحهٔ اطلاعات و سپاسگزاری.</string>
+    <string name="info_news_catalog">ذخیرهٔ بزرگ‌نمایی دوربین و تأیید کوتاه پس از پایان به‌روزرسانی داده‌های اجرام.</string>
 </resources>

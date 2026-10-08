@@ -23,6 +23,7 @@ import androidx.compose.ui.viewinterop.AndroidView
 import androidx.compose.material3.Text
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.graphics.graphicsLayer
 import androidx.compose.ui.geometry.Offset
 import androidx.compose.ui.semantics.stateDescription
 import androidx.compose.ui.res.stringResource
@@ -37,10 +38,6 @@ internal fun SpaceCompassCelestialModelViewport(body: SpaceCompassCelestialBody,
     rotating: Boolean, rotation: SpaceCompassCelestialRotation, onRotation: (SpaceCompassCelestialRotation) -> Unit,
     viewport: SpaceCompassCelestialViewportState, onViewport: (SpaceCompassCelestialViewportState) -> Unit,
     description: String, resumeDescription: String, modifier: Modifier) {
-    if (body.isComet) {
-        SpaceCompassCometSymbol(body, modifier)
-        return
-    }
     val context = LocalContext.current
     val lifecycle = LocalLifecycleOwner.current.lifecycle
     val currentRotation by rememberUpdatedState(rotation)
@@ -121,10 +118,16 @@ internal fun SpaceCompassCelestialModelViewport(body: SpaceCompassCelestialBody,
             if (rotating) add(CustomAccessibilityAction(resumeDescription) { currentCallback(currentRotation.beginReturn()); true })
         }
     }, contentAlignment = Alignment.Center) {
-        if (body.isSpacecraft) SpaceCompassCelestialCraftCanvas(body, geometry, viewport, Modifier.fillMaxSize())
+        if (body.isComet) SpaceCompassCometSymbol(body, Modifier.fillMaxSize().graphicsLayer {
+            scaleX = viewport.zoom.toFloat(); scaleY = viewport.zoom.toFloat()
+            translationX = (viewport.panX * size.width / 2).toFloat()
+            translationY = (-viewport.panY * size.height / 2).toFloat()
+        })
+        else if (body.isSpacecraft) SpaceCompassCelestialCraftCanvas(body, geometry, viewport, Modifier.fillMaxSize())
         else {
-            var failed by remember(body) { mutableStateOf(false) }
-            key(body, lifecycle) {
+            val textureReady = rememberSpaceCompassCelestialTexture(body)
+            var failed by remember(body, textureReady) { mutableStateOf(false) }
+            key(body, lifecycle, textureReady) {
                 AndroidView(factory = { viewContext ->
                     SpaceCompassCelestialGlSurfaceView(viewContext, lifecycle, body) {
                         SpaceCompassErrorLog.record(context, "celestial_viewer:renderer", it)

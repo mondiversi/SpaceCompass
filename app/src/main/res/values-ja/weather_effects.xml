@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="sky_weather_enable">天気表示をオン</string>
+    <string name="sky_weather_disable">天気表示をオフ</string>
+    <string name="sky_weather_disabled">天気表示オフ</string>
+</resources>

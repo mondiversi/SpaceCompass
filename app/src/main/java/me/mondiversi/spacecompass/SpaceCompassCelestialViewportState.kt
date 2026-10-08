@@ -2,12 +2,12 @@ package me.mondiversi.spacecompass
 
 import kotlin.math.min
 
-internal const val SPACE_COMPASS_CELESTIAL_MIN_ZOOM = 0.75
+internal const val SPACE_COMPASS_CELESTIAL_MIN_ZOOM = 1.0
 internal const val SPACE_COMPASS_CELESTIAL_MAX_ZOOM = 3.0
 
 /** Screen-normalized pan survives resizing; a pinch anchors the point under the fingers. */
 internal data class SpaceCompassCelestialViewportState(
-    val zoom: Double = 1.0, val panX: Double = 0.0, val panY: Double = 0.0
+    val zoom: Double = SPACE_COMPASS_CELESTIAL_MIN_ZOOM, val panX: Double = 0.0, val panY: Double = 0.0
 ) {
     fun transform(factor: Double, centerX: Double = 0.0, centerY: Double = 0.0,
         deltaX: Double = 0.0, deltaY: Double = 0.0): SpaceCompassCelestialViewportState {

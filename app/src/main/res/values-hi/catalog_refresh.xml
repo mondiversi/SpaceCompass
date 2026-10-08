@@ -2,4 +2,5 @@
 <resources>
     <string name="catalog_refresh">डेटा अपडेट करें</string>
     <string name="catalog_refreshing">डेटा अपडेट हो रहा है…</string>
+    <string name="catalog_refresh_finished">पिंडों का अपडेट पूरा हो गया।</string>
 </resources>

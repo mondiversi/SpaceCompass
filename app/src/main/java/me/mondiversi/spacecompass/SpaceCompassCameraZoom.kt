@@ -7,6 +7,9 @@ import kotlin.math.log10
 import kotlin.math.pow
 import kotlin.math.round
 
+internal const val SPACE_COMPASS_CAMERA_ZOOM_KEY = "camera_zoom_ratio"
+internal const val SPACE_COMPASS_CAMERA_ZOOM_DEFAULT = 1f
+
 /** Ratios use the ordinary rear lens as 1x, including separately exposed ultrawide lenses. */
 internal data class SpaceCompassCameraZoomOption(
     val id: String, val base: Float, val minimum: Float, val maximum: Float

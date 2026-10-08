@@ -2,4 +2,5 @@
 <resources>
     <string name="catalog_refresh">Gegevens vernieuwen</string>
     <string name="catalog_refreshing">Gegevens bijwerken…</string>
+    <string name="catalog_refresh_finished">Objectupdate voltooid.</string>
 </resources>

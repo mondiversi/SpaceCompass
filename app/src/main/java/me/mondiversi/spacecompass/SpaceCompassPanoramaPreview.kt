@@ -92,10 +92,10 @@ internal fun SpaceCompassPanoramaPreview(data: SpaceCompassPanoramaPreviewData, 
             } catch (error: Exception) {
                 preparationFailed = true
                 SpaceCompassErrorLog.record(context, "panorama:variant", error)
-                showSpaceCompassBottomMessage(context, resources.getString(R.string.panorama_error), longDuration = true)
+                showSpaceCompassBottomMessage(context, resources.getString(R.string.panorama_error))
             } catch (error: OutOfMemoryError) {
                 preparationFailed = true
-                showSpaceCompassBottomMessage(context, resources.getString(R.string.panorama_error), longDuration = true)
+                showSpaceCompassBottomMessage(context, resources.getString(R.string.panorama_error))
             }
         }
     }
@@ -117,7 +117,6 @@ internal fun SpaceCompassPanoramaPreview(data: SpaceCompassPanoramaPreviewData, 
         } finally { pending?.recycle() }
     }
     DisposableEffect(currentFile) { onDispose { decoded?.recycle(); decoded = null } }
-    val snackbar = remember(data.file) { SnackbarHostState() }
     var savedGalleryUris by rememberSaveable(data.file.absolutePath) { mutableStateOf<Map<String, String>>(emptyMap()) }
     var documentSource by rememberSaveable(data.file.absolutePath) { mutableStateOf<String?>(null) }
     var saving by remember { mutableStateOf(false) }
@@ -125,7 +124,7 @@ internal fun SpaceCompassPanoramaPreview(data: SpaceCompassPanoramaPreviewData, 
     var preparedExportSource by remember(data.file) { mutableStateOf<File?>(null) }
     var preparedExportKey by remember(data.file) { mutableStateOf<String?>(null) }
     var gallerySource by rememberSaveable(data.file.absolutePath) { mutableStateOf<String?>(null) }
-    fun notify(id: Int) = showSpaceCompassBottomMessage(context, resources.getString(id), longDuration = true)
+    fun notify(id: Int) = showSpaceCompassBottomMessage(context, resources.getString(id))
     fun saveGallery(file: File) {
         if (saving) return
         saving = true
@@ -140,16 +139,13 @@ internal fun SpaceCompassPanoramaPreview(data: SpaceCompassPanoramaPreviewData, 
                 SpaceCompassErrorLog.record(context, "panorama:gallery", error)
                 R.string.panorama_error
             } finally { saving = false }
-            snackbar.showSnackbar(resources.getString(status),
-                duration = if (status == R.string.panorama_saved) SnackbarDuration.Short else SnackbarDuration.Long)
+            notify(status)
         }
     }
     val permission = rememberLauncherForActivityResult(ActivityResultContracts.RequestPermission()) {
         val source = gallerySource?.let(::File)
         gallerySource = null
-        if (it && source != null) saveGallery(source) else if (!it) scope.launch {
-            snackbar.showSnackbar(resources.getString(R.string.panorama_permission), duration = SnackbarDuration.Long)
-        }
+        if (it && source != null) saveGallery(source) else if (!it) notify(R.string.panorama_permission)
     }
     val saveDocument = rememberLauncherForActivityResult(ActivityResultContracts.CreateDocument("image/jpeg")) { uri ->
         val source = documentSource?.let(::File)
@@ -239,10 +235,6 @@ internal fun SpaceCompassPanoramaPreview(data: SpaceCompassPanoramaPreviewData, 
                     enabled = ready, modifier = Modifier.testTag("panorama-export")) {
                     SpaceCompassPanoramaExportIcon()
                 }
-            }
-            SnackbarHost(snackbar, Modifier.align(Alignment.BottomCenter).padding(horizontal = 72.dp, vertical = 8.dp)
-                .widthIn(max = 360.dp).fillMaxWidth().testTag("panorama-save-status")) { message ->
-                SpaceCompassBottomSnackbar(message)
             }
         }
     if (chooseCenter && data.cameraPhoto == null) SpaceCompassPanoramaCenterDialog(requestedCenter, onSelect = { center ->

@@ -52,11 +52,12 @@ internal fun SpaceCompassCelestialThumbnail(body: SpaceCompassCelestialBody, mod
         val geometry = remember { SpaceCompassCelestialRotation(yaw = 25.0, pitch = 50.0).geometry() }
         SpaceCompassCelestialCraftCanvas(body, geometry, SpaceCompassCelestialViewportState(), modifier.clip(CircleShape), colorFilter, opacity)
     } else {
-        val thumbnail by produceState(celestialThumbnailCache[body], body) {
+        val textureReady = rememberSpaceCompassCelestialTexture(body)
+        val thumbnail by produceState(celestialThumbnailCache[body].takeIf { textureReady }, body, textureReady) {
             value = withContext(celestialThumbnailDispatcher) {
-                celestialThumbnailCache[body] ?: runCatching { createSpaceCompassCelestialThumbnail(context.applicationContext, body).asImageBitmap() }
+                celestialThumbnailCache[body].takeIf { textureReady } ?: runCatching { createSpaceCompassCelestialThumbnail(context.applicationContext, body).asImageBitmap() }
                     .onFailure { SpaceCompassErrorLog.record(context, "celestial:thumbnail", it) }.getOrNull()
-                    ?.also { celestialThumbnailCache[body] = it }
+                    ?.also { if (textureReady) celestialThumbnailCache[body] = it }
             }
         }
         Canvas(modifier.then(if (phaseDescription == null) Modifier else Modifier.semantics {
@@ -90,9 +91,9 @@ internal fun createSpaceCompassCelestialThumbnail(context: Context?, body: Space
     val asset = body.viewerTexture
     val map = if (asset == null || context == null) null else {
         val bounds = BitmapFactory.Options().apply { inJustDecodeBounds = true }
-        context.assets.open("celestial/$asset").use { BitmapFactory.decodeStream(it, null, bounds) }
+        SpaceCompassCelestialTextures.open(context, body)?.use { BitmapFactory.decodeStream(it, null, bounds) }
         val options = BitmapFactory.Options().apply { inSampleSize = spaceCompassCelestialTextureSampleSize(bounds.outWidth, 512) }
-        context.assets.open("celestial/$asset").use { requireNotNull(BitmapFactory.decodeStream(it, null, options)) }
+        SpaceCompassCelestialTextures.open(context, body)?.use { requireNotNull(BitmapFactory.decodeStream(it, null, options)) }
     }
     try {
         val pixels = IntArray(extent*extent)
@@ -110,7 +111,7 @@ internal fun createSpaceCompassCelestialThumbnail(context: Context?, body: Space
             val v = acos(ny.coerceIn(-1.0,1.0))/PI
             val sampled = map?.getPixel((u*map.width).toInt().coerceIn(0,map.width-1),
                 (v*map.height).toInt().coerceIn(0,map.height-1))
-                ?: if (body == SpaceCompassCelestialBody.POLARIS) 0xfffff3d6.toInt() else 0xff9c4f3a.toInt()
+                ?: spaceCompassCelestialPlaceholderColor(body)
             val rgb = if (body.textureHasUnmappedAreas && sampled and 0x00ffffff == 0) 0xff38332e.toInt() else sampled
             val brightness = if (body == SpaceCompassCelestialBody.SUN || body == SpaceCompassCelestialBody.POLARIS) 0.7+0.3*nz
                 else 0.25+0.75*((-0.4*nx+0.3*ny+nz)/sqrt(1.25)).coerceAtLeast(0.0)

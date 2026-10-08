@@ -98,7 +98,6 @@ private fun SpaceCompassSunFinderDataIsland(primaryText: Color, backgroundColor:
     val shape = RoundedCornerShape(20.dp)
     Column(Modifier.fillMaxWidth().testTag(tag).clip(shape)
         .background(backgroundColor.copy(alpha = 0.84f))
-        .border(1.dp, primaryText.copy(alpha = 0.12f), shape)
         .padding(horizontal = 12.dp, vertical = if (compact) 8.dp else 10.dp),
         verticalArrangement = Arrangement.spacedBy(if (compact) 3.dp else 5.dp), content = content)
 }

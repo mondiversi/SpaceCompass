@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="sky_weather_enable">Onyesha hali ya hewa</string>
+    <string name="sky_weather_disable">Ficha hali ya hewa</string>
+    <string name="sky_weather_disabled">Hali ya hewa imezimwa</string>
+</resources>

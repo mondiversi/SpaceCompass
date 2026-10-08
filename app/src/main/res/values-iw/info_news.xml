@@ -1,9 +1,9 @@
 <resources>
     <string name="info_news_title">החידושים האחרונים · %1$s</string>
-    <string name="info_news_camera_zoom">זום המצלמה מזווית רחבה במיוחד עד למקסימום, במחוות צביטה או בבחירה ישירה של הרמה.</string>
-    <string name="info_news_catalog_search">חיפוש עצמים לפי שם או מזהה קטלוג, בשילוב המסננים.</string>
-    <string name="info_news_capture_metadata">התמונות מציגות כיוון, הטיה ושדה ראייה; התצוגות המקדימות משתמשות ביחידות ובשפה שנבחרו.</string>
-    <string name="info_news_capture_controls">פקדים קומפקטיים יותר וכפתורי תצוגה מקדימה ממורכזים; ייצוא לפי ההגדרות שלך או בתבנית בינלאומית.</string>
-    <string name="info_news_viewer">מתג קומפקטי בין התצוגה הנוכחית לסיבוב, עם אזהרות מצפן ברורות יותר.</string>
-    <string name="info_news_performance">יישום קטן יותר, תצוגות מקדימות אמינות יותר ותרגומים שנבדקו.</string>
+    <string name="info_news_star_sky">שמיים זרועי כוכבים המותאמים למיקום ולשעה, חדים יותר בתמונות פנורמיות.</string>
+    <string name="info_news_texture_downloads">יישום קטן יותר: מפות כוכבי הלכת יורדות לפי הצורך וזמינות גם ללא חיבור; איו ואירופה בפורמט WebP ברזולוציית 2K.</string>
+    <string name="info_news_weather">מזג אוויר עקבי בתצוגה הראשית ובפנורמות, עם שמירת אפשרות התצוגה.</string>
+    <string name="info_news_viewer_zoom">כפתורי + ו־− קומפקטיים בפרטי העצם; הגודל ההתחלתי הוא רמת הזום המזערית.</string>
+    <string name="info_news_settings">הגדרות, יחידות ותרחישים משופרים, פקדים אחידים ודף מידע ותודות.</string>
+    <string name="info_news_catalog">שמירת זום המצלמה ואישור קצר בסיום עדכון נתוני העצמים.</string>
 </resources>

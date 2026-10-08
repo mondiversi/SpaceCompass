@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="sky_weather_enable">मौसम दिखाएँ</string>
+    <string name="sky_weather_disable">मौसम छिपाएँ</string>
+    <string name="sky_weather_disabled">मौसम बंद</string>
+</resources>

@@ -19,7 +19,8 @@ internal data class SpaceCompassCelestialRemoteData(val iss: SpaceCompassIssOrbi
     val loadingMotionFor: SpaceCompassCelestialBody? = null,
     val starlink: SpaceCompassStarlinkOrbit? = null,
     val timedOutBodies: Set<SpaceCompassCelestialBody> = emptySet(),
-    val refreshing: Boolean = false)
+    val refreshing: Boolean = false,
+    val completedCatalogRefreshRevision: Int = 0)
 
 internal suspend fun fetchSpaceCompassCelestialText(url: String, maximumBytes: Int = 65_536): String = withContext(Dispatchers.IO) {
     require(maximumBytes in 1..SPACE_COMPASS_SATCAT_MAX_BYTES)
@@ -133,9 +134,10 @@ internal fun rememberSpaceCompassCelestialRemote(bodies: Set<SpaceCompassCelesti
                     policy.retryRequested(selected)
                     appliedRetry = currentRetry
                 }
-                if (appliedCatalogRefresh != currentCatalogRefresh) {
+                val catalogRefreshForPass = currentCatalogRefresh
+                if (appliedCatalogRefresh != catalogRefreshForPass) {
                     policy.catalogRefreshRequested(remoteBodies.toSet())
-                    appliedCatalogRefresh = currentCatalogRefresh
+                    appliedCatalogRefresh = catalogRefreshForPass
                 }
                 val upcoming = mutableListOf<Long>()
                 for (body in remoteBodies) {
@@ -209,7 +211,8 @@ internal fun rememberSpaceCompassCelestialRemote(bodies: Set<SpaceCompassCelesti
                     }
                     upcoming += System.currentTimeMillis() + 1_000L
                 }
-                data = data.copy(refreshing = false)
+                // Only a completed pass acknowledges a manual refresh; cancellation leaves it pending.
+                data = data.copy(refreshing = false, completedCatalogRefreshRevision = appliedCatalogRefresh)
                 val now = System.currentTimeMillis()
                 val waitMs = ((upcoming.minOrNull() ?: (now + SPACE_COMPASS_CELESTIAL_REFRESH_MS)) - now)
                     .coerceIn(1L, if (prefetch) SPACE_COMPASS_CELESTIAL_CATALOG_REFRESH_MS else SPACE_COMPASS_CELESTIAL_REFRESH_MS)

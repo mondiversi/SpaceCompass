@@ -1,9 +1,9 @@
 <resources>
     <string name="info_news_title">Latest news · %1$s</string>
-    <string name="info_news_camera_zoom">Camera zoom from ultrawide to maximum, with pinch gestures and direct level selection.</string>
-    <string name="info_news_catalog_search">Search objects by name or catalog identifier, together with filters.</string>
-    <string name="info_news_capture_metadata">Photos show direction, inclination and field of view; previews use your chosen units and language.</string>
-    <string name="info_news_capture_controls">More compact controls and centered preview actions; export with your settings or international formatting.</string>
-    <string name="info_news_viewer">Compact switch for current view and rotation, with clearer compass warnings.</string>
-    <string name="info_news_performance">Lighter app, more reliable previews and checked translations.</string>
+    <string name="info_news_star_sky">Realistic starry sky aligned with your location and time, clearer in panoramas.</string>
+    <string name="info_news_texture_downloads">Smaller app: planetary maps download on demand and remain available offline; Io and Europa in 2K WebP.</string>
+    <string name="info_news_weather">Consistent weather in the main view and panoramas, with a saved visibility toggle.</string>
+    <string name="info_news_viewer_zoom">Compact + and − in object details; the initial size is the minimum zoom.</string>
+    <string name="info_news_settings">Refined settings, units and scenarios, consistent controls and the Info &amp; credits page.</string>
+    <string name="info_news_catalog">Saved camera zoom and brief confirmation when object data refresh finishes.</string>
 </resources>

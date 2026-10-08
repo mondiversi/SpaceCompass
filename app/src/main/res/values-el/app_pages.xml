@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="pc_info">Πληροφορίες και νέα</string>
+    <string name="pc_info">Πληροφορίες και συντελεστές</string>
     <string name="pc_display_automatic">Αυτόματη κλιμάκωση</string>
     <string name="pc_info_description">Μια αστρονομική πυξίδα για τον εντοπισμό ουράνιων αντικειμένων, την εξερεύνηση των τροχιών τους και την προβολή μοντέλων και σεληνιακών φάσεων.</string>
     <string name="pc_info_earth">Σχεδιασμένη για τη Γη: στο διάστημα καλύτερα να ρωτήσετε έναν αστροναύτη για οδηγίες 🙂</string>

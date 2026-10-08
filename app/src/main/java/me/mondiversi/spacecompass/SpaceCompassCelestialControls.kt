@@ -54,26 +54,21 @@ internal fun SpaceCompassCelestialSelector(body: SpaceCompassCelestialBody, colo
     val label = stringResource(R.string.celestial_select)
     val count = formatSpaceCompassNumber(selectedBodies.size.toDouble(), 0,
         LocalSpaceCompassNumericFormat.current, grouping = false)
-    SpaceCompassFloatingControlHitRegion {
-        Box(modifier.spaceCompassFloatingControlVisual()) {
-            Surface(onClick = { catalogOpen?.value = true }, modifier = Modifier.size(48.dp).testTag("celestial-select").semantics {
+    Box(modifier) {
+        SpaceCompassTitleActionButton(label, onClick = { catalogOpen?.value = true },
+            modifier = Modifier.width(48.dp).testTag("celestial-select").semantics {
                 stateDescription = count
-                contentDescription = label
-            }, shape = CircleShape, color = background.copy(alpha = .94f), contentColor = color,
-                border = androidx.compose.foundation.BorderStroke(1.dp, color.copy(alpha = .35f)), shadowElevation = 3.dp) {
-                Box(contentAlignment = Alignment.Center) {
-                    SpaceCompassCelestialCatalogIcon(Modifier.size(26.dp), color, crossed = selectedBodies.isEmpty())
-                }
-            }
-            // A fixed circular counter stays inside the selector's accessible touch target.
-            if (selectedBodies.isNotEmpty()) Box(
-                Modifier.align(Alignment.TopEnd).size(16.dp)
-                    .background(background, CircleShape).border(1.dp, color.copy(alpha = .5f), CircleShape)
-                    .testTag("celestial-selection-count").clearAndSetSemantics {},
-                contentAlignment = Alignment.Center
-            ) { Text(count, color = color, fontSize = 9.sp, lineHeight = 10.sp, maxLines = 1) }
-
+            }, iconColor = color) {
+            SpaceCompassCelestialCatalogIcon(Modifier.size(SpaceCompassTitleActionIconSize), color,
+                crossed = selectedBodies.isEmpty())
         }
+        // The compact badge stays inside the same 48 dp toolbar slot as the menu action.
+        if (selectedBodies.isNotEmpty()) Box(
+            Modifier.align(Alignment.TopEnd).size(16.dp)
+                .background(background, CircleShape).border(1.dp, color.copy(alpha = .5f), CircleShape)
+                .testTag("celestial-selection-count").clearAndSetSemantics {},
+            contentAlignment = Alignment.Center
+        ) { Text(count, color = color, fontSize = 9.sp, lineHeight = 10.sp, maxLines = 1) }
     }
 }
 
@@ -81,7 +76,7 @@ internal fun SpaceCompassCelestialSelector(body: SpaceCompassCelestialBody, colo
 @Composable
 private fun SpaceCompassCelestialCatalogIcon(modifier: Modifier, tint: Color, crossed: Boolean) {
     Canvas(modifier) {
-        val stroke = Stroke(1.8.dp.toPx(), cap = StrokeCap.Round)
+        val stroke = Stroke(SpaceCompassTitleActionIconStrokeWidth.toPx(), cap = StrokeCap.Round)
         drawCircle(tint, size.minDimension * 0.27f, style = stroke)
         rotate(-28f) {
             val topLeft = Offset(size.width * 0.04f, size.height * 0.33f)
@@ -94,7 +89,7 @@ private fun SpaceCompassCelestialCatalogIcon(modifier: Modifier, tint: Color, cr
         if (crossed) drawLine(tint,
             Offset(size.width * .125f, size.height * .125f),
             Offset(size.width * .875f, size.height * .875f),
-            strokeWidth = 2.dp.toPx(), cap = StrokeCap.Round)
+            strokeWidth = SpaceCompassTitleActionIconStrokeWidth.toPx(), cap = StrokeCap.Round)
     }
 }
 /** One kilometer unit only, plus AU. Extra Mkm precision keeps live probe distances visible. */

@@ -1,9 +1,9 @@
 <resources>
     <string name="info_news_title">Son yenilikler · %1$s</string>
-    <string name="info_news_camera_zoom">Ultra geniş açıdan en yüksek seviyeye kamera yakınlaştırması; kıstırma hareketi ve doğrudan seviye seçimi.</string>
-    <string name="info_news_catalog_search">Nesneleri ad veya katalog kimliğiyle, filtrelerle birlikte arayın.</string>
-    <string name="info_news_capture_metadata">Fotoğraflar yön, eğim ve görüş alanını gösterir; önizlemeler seçtiğiniz birimleri ve dili kullanır.</string>
-    <string name="info_news_capture_controls">Daha kompakt kontroller ve ortalanmış önizleme düğmeleri; kendi ayarlarınızla veya uluslararası biçimde dışa aktarın.</string>
-    <string name="info_news_viewer">Güncel görünüm ve dönüş arasında kompakt anahtar, daha anlaşılır pusula uyarıları.</string>
-    <string name="info_news_performance">Daha küçük uygulama, daha güvenilir önizlemeler ve denetlenmiş çeviriler.</string>
+    <string name="info_news_star_sky">Konumunuza ve saate göre hizalanan gerçekçi yıldızlı gökyüzü, panoramalarda daha net.</string>
+    <string name="info_news_texture_downloads">Daha küçük uygulama: gezegen haritaları gerektiğinde indirilir ve çevrimdışı kullanılabilir; Io ve Europa 2K WebP biçiminde.</string>
+    <string name="info_news_weather">Ana görünüm ve panoramalarda tutarlı hava durumu, kaydedilen görüntüleme tercihiyle.</string>
+    <string name="info_news_viewer_zoom">Nesne ayrıntılarında kompakt + ve −; başlangıç boyutu en düşük yakınlaştırma seviyesidir.</string>
+    <string name="info_news_settings">İyileştirilmiş ayarlar, birimler ve senaryolar, tutarlı kontroller ve Bilgi ve katkıda bulunanlar sayfası.</string>
+    <string name="info_news_catalog">Kaydedilen kamera yakınlaştırması ve nesne verileri güncellendiğinde kısa onay.</string>
 </resources>

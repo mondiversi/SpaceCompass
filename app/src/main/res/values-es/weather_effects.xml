@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="sky_weather_enable">Mostrar el tiempo</string>
+    <string name="sky_weather_disable">Ocultar el tiempo</string>
+    <string name="sky_weather_disabled">Tiempo oculto</string>
+</resources>

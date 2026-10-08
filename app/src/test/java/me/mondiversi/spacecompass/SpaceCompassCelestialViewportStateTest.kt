@@ -6,7 +6,7 @@ import org.junit.Test
 class SpaceCompassCelestialViewportStateTest {
     @Test fun pinchZoomIsBoundedInBothDirections() {
         assertEquals(3.0, SpaceCompassCelestialViewportState().transform(100.0).zoom, 0.0)
-        assertEquals(0.75, SpaceCompassCelestialViewportState().transform(0.001).zoom, 0.0)
+        assertEquals(SpaceCompassCelestialViewportState().zoom, SpaceCompassCelestialViewportState().transform(0.001).zoom, 0.0)
         assertEquals(1.5, SpaceCompassCelestialViewportState().transform(1.5).zoom, 0.0)
     }
     @Test fun invalidGestureValuesAreIgnored() {
@@ -25,7 +25,7 @@ class SpaceCompassCelestialViewportStateTest {
         val state = SpaceCompassCelestialViewportState(3.0).transform(1.0, deltaX = 100.0, deltaY = -100.0)
         assertEquals(1.6, state.panX, 1e-12); assertEquals(-1.6, state.panY, 1e-12)
         assertEquals(SpaceCompassCelestialViewportState(), state.transform(1.0/3.0))
-        assertEquals(SpaceCompassCelestialViewportState(0.75), state.transform(0.1))
+        assertEquals(SpaceCompassCelestialViewportState(), state.transform(0.1))
     }
     @Test fun hittingTheZoomLimitDoesNotKeepShiftingTheImage() {
         val state = SpaceCompassCelestialViewportState(3.0, 0.2, 0.1)

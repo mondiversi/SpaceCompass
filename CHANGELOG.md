@@ -1,5 +1,16 @@
 # Changelog
 
+## 1.1.3 — 2026-10-08
+
+- Add an observer/time-aligned bundled star atlas, with sharper panoramic sampling.
+- Download verified planet maps on demand and reuse them offline; upgrade Io and Europa to 2K WebP.
+- Match weather coverage between the main sky and panoramas; save the weather toggle and camera zoom.
+- Refine floating controls, toolbar icons, borderless islands, settings and scenario fields.
+- Add compact horizontal object-viewer zoom controls with the initial size as the lower limit.
+- Rename the information page to Info & credits and confirm completed object refreshes with a short notice.
+- Update release news in all 20 languages and distribute optional information/graphics archives.
+
+
 ## 1.1.0 — camera zoom, catalog search and lighter captures
 
 - Add consistent camera zoom steps, ultrawide lens selection where available,

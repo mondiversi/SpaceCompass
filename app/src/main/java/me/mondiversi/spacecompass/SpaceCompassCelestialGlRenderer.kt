@@ -47,10 +47,11 @@ internal class SpaceCompassCelestialGlRenderer(private val context: Context, pri
         catch (error: OutOfMemoryError) { failed = true; onFailure(error) }
     }
     private fun loadTexture(): Bitmap {
-        val asset = body.viewerTexture ?: return Bitmap.createBitmap(1, 1, Bitmap.Config.ARGB_8888)
-            .apply { eraseColor(if (body == SpaceCompassCelestialBody.POLARIS) 0xfffff3d6.toInt() else 0xff9c4f3a.toInt()) }
+        val source = SpaceCompassCelestialTextures.open(context, body)
+            ?: return Bitmap.createBitmap(1, 1, Bitmap.Config.ARGB_8888)
+                .apply { eraseColor(spaceCompassCelestialPlaceholderColor(body)) }
         val bounds = BitmapFactory.Options().apply { inJustDecodeBounds = true }
-        context.assets.open("celestial/$asset").use { BitmapFactory.decodeStream(it, null, bounds) }
+        source.use { BitmapFactory.decodeStream(it, null, bounds) }
         val graphicsLimit = IntArray(1)
         glGetIntegerv(GL_MAX_TEXTURE_SIZE, graphicsLimit, 0)
         val width = spaceCompassCelestialTextureWidth(bounds.outWidth, graphicsLimit[0])
@@ -59,8 +60,8 @@ internal class SpaceCompassCelestialGlRenderer(private val context: Context, pri
             inPreferredConfig = Bitmap.Config.ARGB_8888
             inSampleSize = spaceCompassCelestialTextureSampleSize(bounds.outWidth, width * 2)
         }
-        val decoded = context.assets.open("celestial/$asset").use {
-            requireNotNull(BitmapFactory.decodeStream(it, null, options)) { "Invalid celestial map: $asset" }
+        val decoded = requireNotNull(SpaceCompassCelestialTextures.open(context, body)).use {
+            requireNotNull(BitmapFactory.decodeStream(it, null, options)) { "Invalid celestial map: ${body.name}" }
         }
         // GLES2 repeat requires a power-of-two texture; cap memory even for the large NASA Pluto map.
         if (decoded.width == width && decoded.height == height) return decoded

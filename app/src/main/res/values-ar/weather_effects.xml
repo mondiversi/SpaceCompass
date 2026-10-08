@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="sky_weather_enable">تفعيل الطقس</string>
+    <string name="sky_weather_disable">إيقاف الطقس</string>
+    <string name="sky_weather_disabled">الطقس متوقف</string>
+</resources>

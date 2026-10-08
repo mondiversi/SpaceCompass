@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="sky_weather_enable">Ενεργοποίηση καιρού</string>
+    <string name="sky_weather_disable">Απενεργοποίηση καιρού</string>
+    <string name="sky_weather_disabled">Καιρός απενεργοποιημένος</string>
+</resources>

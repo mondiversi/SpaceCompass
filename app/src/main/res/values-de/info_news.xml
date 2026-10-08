@@ -1,9 +1,9 @@
 <resources>
     <string name="info_news_title">Neuigkeiten · %1$s</string>
-    <string name="info_news_camera_zoom">Kamera-Zoom vom Ultraweitwinkel bis zum Maximum, per Fingergeste oder direkter Stufenauswahl.</string>
-    <string name="info_news_catalog_search">Objekte nach Namen oder Katalogkennung suchen und mit Filtern kombinieren.</string>
-    <string name="info_news_capture_metadata">Fotos zeigen Richtung, Neigung und Sichtfeld; die Vorschau nutzt die gewählten Einheiten und die Sprache.</string>
-    <string name="info_news_capture_controls">Kompaktere Bedienelemente und zentrierte Vorschauaktionen; Export mit eigenen Einstellungen oder internationaler Formatierung.</string>
-    <string name="info_news_viewer">Kompakter Schalter zwischen aktueller Ansicht und Rotation sowie deutlichere Kompasswarnungen.</string>
-    <string name="info_news_performance">Kleinere App, zuverlässigere Vorschau und geprüfte Übersetzungen.</string>
+    <string name="info_news_star_sky">Realistischer Sternenhimmel passend zu Standort und Uhrzeit, in Panoramen schärfer dargestellt.</string>
+    <string name="info_news_texture_downloads">Kleinere App: Planetenkarten werden bei Bedarf geladen und bleiben offline verfügbar; Io und Europa als 2K-WebP.</string>
+    <string name="info_news_weather">Einheitliche Wetterdarstellung in Hauptansicht und Panoramen, mit gespeicherter Anzeigeoption.</string>
+    <string name="info_news_viewer_zoom">Kompakte + und − in den Objektdetails; die Anfangsgröße ist die kleinste Zoomstufe.</string>
+    <string name="info_news_settings">Überarbeitete Einstellungen, Einheiten und Szenarien, einheitliche Bedienelemente und die Seite Info und Mitwirkende.</string>
+    <string name="info_news_catalog">Gespeicherter Kamerazoom und kurze Bestätigung nach der Aktualisierung der Objektdaten.</string>
 </resources>

@@ -2,4 +2,5 @@
 <resources>
     <string name="catalog_refresh">Ανανέωση δεδομένων</string>
     <string name="catalog_refreshing">Ενημέρωση δεδομένων…</string>
+    <string name="catalog_refresh_finished">Η ενημέρωση των αντικειμένων ολοκληρώθηκε.</string>
 </resources>

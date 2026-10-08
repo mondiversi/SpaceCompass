@@ -37,10 +37,14 @@ class SpaceCompassIndependenceTest {
     }
 
     @Test fun originalMapsAndSatelliteImplementationHaveTheirCredits() {
-        for (name in listOf("moon", "sun", "mercury", "venus_atmosphere", "mars", "jupiter",
-            "io", "europa", "saturn", "uranus", "neptune", "pluto"))
-            assertTrue(name, File(root, "assets/celestial/$name.jpg").length() > 0)
         val project = File("..").takeIf { File(it,"ASSET_CREDITS.md").isFile } ?: File(".")
+        assertTrue(File(root, "assets/celestial/lv426.webp").length() > 0)
+        for (texture in SpaceCompassCelestialTexturePolicy.images) {
+            val file = File(project, "textures/${SpaceCompassCelestialTexturePolicy.PACK}/${texture.name}")
+            assertTrue(texture.name, file.isFile)
+            assertTrue(texture.name, SpaceCompassCelestialTexturePolicy.matches(texture, file.readBytes()))
+            assertFalse(File(root, "assets/celestial/${texture.name}").exists())
+        }
         assertTrue(File(project, "ASSET_CREDITS.md").isFile)
         assertTrue(File(project, "third_party/sgp4/LICENSE").isFile)
         assertTrue(File(root, "assets/licenses/celestial-textures.txt").isFile)

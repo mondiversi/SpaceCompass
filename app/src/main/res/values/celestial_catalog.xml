@@ -4,5 +4,5 @@
     <string name="celestial_europa">Europa</string>
     <string name="celestial_catalog_distance">Distance from the Sun</string>
     <string name="celestial_speed_orbit_jupiter">Orbital speed (Jupiter): %1$s km/s</string>
-    <string name="celestial_view_jovian_credits" translatable="false">Io · Europa: NASA/JPL/USGS</string>
+    <string name="celestial_view_jovian_credits" translatable="false">Io · Europa: NASA/VTAD · NASA/JPL/USGS</string>
 </resources>

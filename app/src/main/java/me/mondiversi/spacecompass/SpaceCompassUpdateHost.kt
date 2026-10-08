@@ -27,7 +27,7 @@ internal fun SpaceCompassUpdateHost() {
     val notice = state.notice?.let { stringResource(it) }
     LaunchedEffect(notice) {
         // Compose resources carry the app language while the Activity context stays intact.
-        notice?.let { showSpaceCompassBottomMessage(context, it, longDuration = true) }
+        notice?.let { showSpaceCompassBottomMessage(context, it) }
     }
     val installer = rememberLauncherForActivityResult(ActivityResultContracts.StartActivityForResult()) {
         SpaceCompassUpdates.installerReturned(it.resultCode)

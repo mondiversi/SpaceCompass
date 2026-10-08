@@ -1,0 +1,90 @@
+{
+  "schema": 1,
+  "tag": "celestial-textures-v1",
+  "images": [
+    {
+      "name": "europa.jpg",
+      "bytes": 17261,
+      "sha256": "3369ba56cbfa447347b5afc003b80b69fbf87dd90a724d59f09abad8691a9819",
+      "width": 512,
+      "height": 256
+    },
+    {
+      "name": "io.webp",
+      "bytes": 25834,
+      "sha256": "8046d28e584f2e9c7b384747be6bcffdf04e770ce3a264abd9ad99ba44be14d2",
+      "width": 512,
+      "height": 256
+    },
+    {
+      "name": "jupiter.webp",
+      "bytes": 209714,
+      "sha256": "d931cf6adcef7a6b6de141a096327f1dd626729ea8842c72cbe5e03f4cb2a0e4",
+      "width": 2048,
+      "height": 1024
+    },
+    {
+      "name": "mars.webp",
+      "bytes": 353206,
+      "sha256": "12a40a86ed8b5711632e177977dd3f0be0e62e349bb788ee48e46d6517a7d24d",
+      "width": 2048,
+      "height": 1024
+    },
+    {
+      "name": "mercury.webp",
+      "bytes": 625630,
+      "sha256": "36c730a082f062b4fde11f341304bb7d917288a97821a55514fcdd3c8bc7bc52",
+      "width": 2048,
+      "height": 1024
+    },
+    {
+      "name": "moon.webp",
+      "bytes": 426380,
+      "sha256": "387059f27f6a0bba9c09ba103380819a96ffb12e5d91f9f9936cd4769b2bf65e",
+      "width": 2048,
+      "height": 1024
+    },
+    {
+      "name": "neptune.webp",
+      "bytes": 27180,
+      "sha256": "2a1e452cdd803a8cf487363ae43ee58aef910d4713a772f86f0d3d7e45e6400a",
+      "width": 2048,
+      "height": 1024
+    },
+    {
+      "name": "pluto.webp",
+      "bytes": 282598,
+      "sha256": "10694489ab13df79c49a2d49e48246e22ae3aa6d99a07f111ac83ea07808d420",
+      "width": 2048,
+      "height": 1024
+    },
+    {
+      "name": "saturn.webp",
+      "bytes": 59112,
+      "sha256": "baedddf7db60bea91b8e1c98ca90e6742dd1c131d886fa2e94e305ee8aeb531b",
+      "width": 2048,
+      "height": 1024
+    },
+    {
+      "name": "sun.webp",
+      "bytes": 368406,
+      "sha256": "ddfdf9ca2f531dad52c163e012b7b522deb96700e876f87bb74aa0fc42af10a5",
+      "width": 2048,
+      "height": 1024
+    },
+    {
+      "name": "uranus.webp",
+      "bytes": 11406,
+      "sha256": "fa9608375c2c5805fdd23d879151e6ad187a142474c8298f28441df66740660c",
+      "width": 2048,
+      "height": 1024
+    },
+    {
+      "name": "venus_atmosphere.webp",
+      "bytes": 66736,
+      "sha256": "580dfe532a07f54cea30e608dc6f260de39474dff0cfdfc86643b4bfb51eb85d",
+      "width": 2048,
+      "height": 1024
+    }
+  ]
+}

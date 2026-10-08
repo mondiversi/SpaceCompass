@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="pc_info">정보 및 새 소식</string>
+    <string name="pc_info">정보 및 크레딧</string>
     <string name="pc_display_automatic">자동 크기 조정</string>
     <string name="pc_info_description">천체를 찾고 궤적을 탐색하며 모델과 달의 위상을 관찰하는 천문 나침반입니다.</string>
     <string name="pc_info_earth">지구에서 사용하도록 만들었습니다. 우주에서는 우주비행사에게 길을 물어보세요 🙂</string>

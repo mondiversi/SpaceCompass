@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="pc_info">信息与更新</string>
+    <string name="pc_info">信息与致谢</string>
     <string name="pc_display_automatic">自动缩放</string>
     <string name="pc_info_description">用于寻找天体、探索其轨迹并查看模型和月相的天文指南针。</string>
     <string name="pc_info_earth">专为地球设计：到了太空，还是向宇航员问路吧 🙂</string>

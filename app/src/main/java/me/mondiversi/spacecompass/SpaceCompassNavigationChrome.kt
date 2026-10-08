@@ -22,7 +22,7 @@ internal val SpaceCompassTitleActionButtonSize = 40.dp
 internal val SpaceCompassTitleActionPressedVisualSize = 38.dp
 internal const val SpaceCompassTitleActionVisualScale = 0.96f
 internal val SpaceCompassTitleActionIconSize = 24.dp
-internal val SpaceCompassTitleActionIconStrokeWidth = 2.21.dp
+internal val SpaceCompassTitleActionIconStrokeWidth = 2.dp
 // Only the back arrow keeps additional visual weight; other title actions use the base stroke.
 internal val SpaceCompassTitleBackButtonSize = 40.dp
 // Keep the back arrow independent: resizing the right-hand actions must not resize it.

@@ -1,9 +1,9 @@
 <resources>
     <string name="info_news_title">최근 변경 사항 · %1$s</string>
-    <string name="info_news_camera_zoom">초광각부터 최대 배율까지 카메라 줌을 지원하며, 핀치 제스처나 배율 직접 선택으로 조절합니다.</string>
-    <string name="info_news_catalog_search">필터와 함께 이름 또는 카탈로그 식별자로 천체를 검색합니다.</string>
-    <string name="info_news_capture_metadata">사진에 방향, 기울기와 화각을 표시하며, 미리보기에는 선택한 단위와 언어를 사용합니다.</string>
-    <string name="info_news_capture_controls">더 작은 조작부와 중앙에 배치된 미리보기 버튼; 선택한 설정이나 국제 형식으로 내보낼 수 있습니다.</string>
-    <string name="info_news_viewer">현재 보기와 회전을 전환하는 작은 스위치와 더 명확한 나침반 경고.</string>
-    <string name="info_news_performance">앱 용량 감소, 더 안정적인 미리보기와 번역 검토.</string>
+    <string name="info_news_star_sky">위치와 시간에 맞춘 사실적인 별빛 하늘을 파노라마에서도 더 선명하게 표시합니다.</string>
+    <string name="info_news_texture_downloads">앱 용량을 줄였습니다. 행성 지도는 필요할 때 다운로드하여 오프라인으로 사용할 수 있으며, 이오와 유로파는 2K WebP로 제공됩니다.</string>
+    <string name="info_news_weather">메인 화면과 파노라마의 날씨 표현을 통일하고 표시 설정을 저장합니다.</string>
+    <string name="info_news_viewer_zoom">천체 상세에 작은 +와 − 버튼을 추가했습니다. 처음 크기가 최소 확대 수준입니다.</string>
+    <string name="info_news_settings">설정, 단위, 시나리오와 조작 버튼을 정돈하고 정보 및 크레딧 페이지를 개선했습니다.</string>
+    <string name="info_news_catalog">카메라 줌을 저장하고 천체 데이터 업데이트가 끝나면 짧게 알립니다.</string>
 </resources>

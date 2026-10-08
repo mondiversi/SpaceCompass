@@ -2,4 +2,5 @@
 <resources>
     <string name="catalog_refresh">データを更新</string>
     <string name="catalog_refreshing">データを更新中…</string>
+    <string name="catalog_refresh_finished">天体の更新が完了しました。</string>
 </resources>

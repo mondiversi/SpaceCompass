@@ -2,4 +2,5 @@
 <resources>
     <string name="catalog_refresh">تحديث البيانات</string>
     <string name="catalog_refreshing">جارٍ تحديث البيانات…</string>
+    <string name="catalog_refresh_finished">اكتمل تحديث الأجرام.</string>
 </resources>

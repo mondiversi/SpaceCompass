@@ -1,9 +1,9 @@
 <resources>
     <string name="info_news_title">हाल के बदलाव · %1$s</string>
-    <string name="info_news_camera_zoom">अल्ट्रा-वाइड से अधिकतम तक कैमरा ज़ूम, पिंच जेस्चर और स्तर के सीधे चयन के साथ।</string>
-    <string name="info_news_catalog_search">फ़िल्टर के साथ नाम या कैटलॉग पहचानकर्ता से खगोलीय पिंड खोजें।</string>
-    <string name="info_news_capture_metadata">फ़ोटो में दिशा, झुकाव और दृश्य क्षेत्र दिखते हैं; पूर्वावलोकन चुनी हुई इकाइयों और भाषा का उपयोग करते हैं।</string>
-    <string name="info_news_capture_controls">अधिक सघन नियंत्रण और केंद्रित पूर्वावलोकन बटन; अपनी सेटिंग या अंतरराष्ट्रीय प्रारूप में निर्यात करें।</string>
-    <string name="info_news_viewer">वर्तमान दृश्य और घूर्णन के बीच सघन स्विच, और अधिक स्पष्ट कंपास चेतावनियाँ।</string>
-    <string name="info_news_performance">हल्का ऐप, अधिक भरोसेमंद पूर्वावलोकन और जाँचे गए अनुवाद।</string>
+    <string name="info_news_star_sky">आपके स्थान और समय के अनुसार वास्तविक तारों वाला आकाश, पैनोरामा में अधिक स्पष्ट।</string>
+    <string name="info_news_texture_downloads">छोटा ऐप: ग्रहों के मानचित्र ज़रूरत पर डाउनलोड होते हैं और ऑफ़लाइन उपलब्ध रहते हैं; आयो और यूरोपा 2K WebP में।</string>
+    <string name="info_news_weather">मुख्य दृश्य और पैनोरामा में एक जैसा मौसम, प्रदर्शन की पसंद सहेजी जाती है।</string>
+    <string name="info_news_viewer_zoom">पिंड के विवरण में छोटे + और − नियंत्रण; शुरुआती आकार ही न्यूनतम ज़ूम है।</string>
+    <string name="info_news_settings">बेहतर सेटिंग, इकाइयाँ और परिदृश्य, एक जैसे नियंत्रण तथा जानकारी और श्रेय पृष्ठ।</string>
+    <string name="info_news_catalog">कैमरे का ज़ूम सहेजा जाता है और पिंडों के डेटा का अपडेट पूरा होने पर संक्षिप्त पुष्टि मिलती है।</string>
 </resources>

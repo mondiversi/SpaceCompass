@@ -56,6 +56,7 @@ internal fun spaceCompassSunDisplayCloudCover(weather: SpaceCompassSunWeatherSna
     return when (weather?.kind) {
         SpaceCompassSunWeatherKind.CLEAR -> 0f
         SpaceCompassSunWeatherKind.MAINLY_CLEAR -> cover.coerceIn(0.05f, 0.18f)
+        SpaceCompassSunWeatherKind.CLOUDY -> cover.coerceAtLeast(.75f)
         else -> cover
     }
 }

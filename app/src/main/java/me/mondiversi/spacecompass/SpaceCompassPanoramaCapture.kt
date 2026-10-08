@@ -27,7 +27,8 @@ internal fun rememberSpaceCompassPanoramaAction(timeMs: Long, latitude: Double?,
     bodies: Set<SpaceCompassCelestialBody>, overlays: Map<SpaceCompassCelestialBody, SpaceCompassCelestialOverlay>,
     remote: SpaceCompassCelestialRemoteData, gpsAccuracyMeters: Double? = null,
     cameraEnabled: Boolean = false, cameraCapture: SpaceCompassCameraCapture? = null,
-    showSkyReferences: Boolean = SPACE_COMPASS_SKY_REFERENCES_DEFAULT): SpaceCompassPanoramaAction {
+    showSkyReferences: Boolean = SPACE_COMPASS_SKY_REFERENCES_DEFAULT,
+    showWeather: Boolean = SPACE_COMPASS_WEATHER_VISIBLE_DEFAULT): SpaceCompassPanoramaAction {
     val context = LocalContext.current
     val resources = LocalResources.current
     val application = context.applicationContext
@@ -51,7 +52,7 @@ internal fun rememberSpaceCompassPanoramaAction(timeMs: Long, latitude: Double?,
     val placeCache = remember { SpaceCompassPlaceCache() }
     var busy by remember { mutableStateOf(false) }
     var preview by remember { mutableStateOf<SpaceCompassPanoramaPreviewData?>(null) }
-    fun notify(resource: Int) = showSpaceCompassBottomMessage(application, resources.getString(resource), longDuration = true)
+    fun notify(resource: Int) = showSpaceCompassBottomMessage(application, resources.getString(resource))
     return SpaceCompassPanoramaAction(busy, capture = {
         if (!busy) {
             if (cameraEnabled && cameraCapture == null) notify(R.string.camera_unavailable)
@@ -66,15 +67,19 @@ internal fun rememberSpaceCompassPanoramaAction(timeMs: Long, latitude: Double?,
                 val objects = spaceCompassAllCelestialOrder.filter { it in bodies && latitude != null && longitude != null }.map {
                     SpaceCompassPanoramaObject(it, exportResources.getString(it.nameResource), overlays[it]?.path)
                 }
-                val credits = "NASA/GSFC/ASU; NASA/JPL/USGS; Solar System Scope / INOVE; solarsystemscope.com/textures/; " +
+                // Real photographs keep actual weather; the virtual sky can explicitly suppress effects.
+                val captureWeather = weather.takeIf { cameraEnabled || showWeather }
+                val credits = "NASA/GSFC/ASU; NASA/VTAD; NASA/JPL/USGS; Solar System Scope / INOVE; solarsystemscope.com/textures/; " +
                     "CC BY 4.0 (creativecommons.org/licenses/by/4.0/)" +
-                    (if (SpaceCompassCelestialBody.LV_426 in bodies) "; LV-426: fictional Alien moon; original AI illustration" else "") + if (weather != null) "; Open-Meteo (CC BY 4.0)" else ""
-                val snapshot = SpaceCompassPanoramaSnapshot(timeMs, latitude ?: 0.0, longitude ?: 0.0, altitude ?: 0.0, phase, weather,
+                    (if (!cameraEnabled) "; NASA/Goddard SVS, Deep Star Maps 2020; ESA/Gaia/DPAC; Ernie Wright (USRA)" else "") +
+                    (if (SpaceCompassCelestialBody.LV_426 in bodies) "; LV-426: fictional Alien moon; original AI illustration" else "") + if (captureWeather != null) "; Open-Meteo (CC BY 4.0)" else ""
+                val snapshot = SpaceCompassPanoramaSnapshot(timeMs, latitude ?: 0.0, longitude ?: 0.0, altitude ?: 0.0, phase, captureWeather,
                     objects, remote, "", emptyList(), emptyList(), showPointLabels = showPointLabels,
-                    observerPositionKnown = latitude != null && longitude != null, showSkyReferences = showSkyReferences, center = center)
+                    observerPositionKnown = latitude != null && longitude != null, showSkyReferences = showSkyReferences, center = center,
+                    weatherEffectsEnabled = cameraEnabled || showWeather)
                 busy = true
                 val preparingNotice = showSpaceCompassBottomMessage(application,
-                    resources.getString(R.string.panorama_preparing), longDuration = true)
+                    resources.getString(R.string.panorama_preparing))
                 scope.launch {
                     var file: File? = null
                     var cameraSource: File? = null
@@ -86,6 +91,8 @@ internal fun rememberSpaceCompassPanoramaAction(timeMs: Long, latitude: Double?,
                         val referenceTime = if (simulatedTime) timeMs else photoFrame?.capturedTimeMs ?: timeMs
                         val referenceSnapshot = snapshot.copy(timeMs = referenceTime)
                         val result = withContext(Dispatchers.IO) {
+                            // The shutter has already fired; prepare missing maps before asynchronous rendering.
+                            ensureSpaceCompassCelestialTextures(application, bodies)
                             val cameraFieldOfView = photoFrame?.let { frame ->
                                 // Read JPEG dimensions only; no bitmap allocation or second exposure.
                                 val dimensions = BitmapFactory.Options().apply { inJustDecodeBounds = true }

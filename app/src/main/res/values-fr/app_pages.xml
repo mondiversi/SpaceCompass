@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="pc_info">Infos et nouveautés</string>
+    <string name="pc_info">Infos et crédits</string>
     <string name="pc_display_automatic">Mise à l’échelle automatique</string>
     <string name="pc_info_description">Une boussole astronomique pour trouver les objets célestes, explorer leurs trajectoires et observer des modèles et les phases lunaires.</string>
     <string name="pc_info_earth">Conçue pour la Terre : dans l’espace, mieux vaut demander son chemin à un astronaute 🙂</string>

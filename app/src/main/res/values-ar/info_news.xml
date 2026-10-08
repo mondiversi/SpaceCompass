@@ -1,9 +1,9 @@
 <resources>
     <string name="info_news_title">آخر المستجدات · %1$s</string>
-    <string name="info_news_camera_zoom">تكبير الكاميرا من الزاوية فائقة الاتساع إلى الحد الأقصى، بإيماءات القرص أو اختيار المستوى مباشرة.</string>
-    <string name="info_news_catalog_search">ابحث عن الأجرام بالاسم أو معرّف الكتالوج، مع استخدام المرشحات.</string>
-    <string name="info_news_capture_metadata">تعرض الصور الاتجاه والميل ومجال الرؤية؛ وتستخدم المعاينات الوحدات واللغة المختارة.</string>
-    <string name="info_news_capture_controls">عناصر تحكم أصغر وأزرار معاينة في المنتصف؛ صدّر بإعداداتك أو بالتنسيق الدولي.</string>
-    <string name="info_news_viewer">مفتاح مدمج بين العرض الحالي والدوران، مع تحذيرات بوصلة أوضح.</string>
-    <string name="info_news_performance">تطبيق أخف ومعاينات أكثر موثوقية وترجمات تمت مراجعتها.</string>
+    <string name="info_news_star_sky">سماء مرصعة بالنجوم واقعية حسب موقعك والوقت، وأكثر وضوحًا في الصور البانورامية.</string>
+    <string name="info_news_texture_downloads">تطبيق أصغر: تُنزّل خرائط الكواكب عند الحاجة وتبقى متاحة دون اتصال؛ آيو وأوروبا بصيغة WebP بدقة 2K.</string>
+    <string name="info_news_weather">طقس متسق بين العرض الرئيسي والصور البانورامية، مع حفظ خيار العرض.</string>
+    <string name="info_news_viewer_zoom">زرّا + و− بحجم صغير في تفاصيل الجرم؛ الحجم الأولي هو الحد الأدنى للتكبير.</string>
+    <string name="info_news_settings">تحسين الإعدادات والوحدات والسيناريوهات، مع عناصر تحكم موحّدة وصفحة المعلومات والشكر.</string>
+    <string name="info_news_catalog">حفظ تكبير الكاميرا وتأكيد قصير عند اكتمال تحديث بيانات الأجرام.</string>
 </resources>

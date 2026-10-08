@@ -1,9 +1,9 @@
 <resources>
     <string name="info_news_title">Perubahan terbaru · %1$s</string>
-    <string name="info_news_camera_zoom">Zoom kamera dari ultralebar hingga maksimum, dengan gerakan cubit dan pemilihan tingkat langsung.</string>
-    <string name="info_news_catalog_search">Cari objek berdasarkan nama atau pengenal katalog, bersama dengan filter.</string>
-    <string name="info_news_capture_metadata">Foto menampilkan arah, kemiringan, dan bidang pandang; pratinjau menggunakan satuan dan bahasa pilihan Anda.</string>
-    <string name="info_news_capture_controls">Kontrol lebih ringkas dan tombol pratinjau terpusat; ekspor dengan pengaturan Anda atau format internasional.</string>
-    <string name="info_news_viewer">Sakelar ringkas antara tampilan saat ini dan rotasi, dengan peringatan kompas yang lebih jelas.</string>
-    <string name="info_news_performance">Aplikasi lebih ringan, pratinjau lebih andal, dan terjemahan yang diperiksa.</string>
+    <string name="info_news_star_sky">Langit berbintang realistis sesuai lokasi dan waktu Anda, lebih tajam dalam panorama.</string>
+    <string name="info_news_texture_downloads">Aplikasi lebih kecil: peta planet diunduh saat diperlukan dan tetap tersedia offline; Io dan Europa dalam WebP 2K.</string>
+    <string name="info_news_weather">Cuaca konsisten antara tampilan utama dan panorama, dengan pilihan tampilan tersimpan.</string>
+    <string name="info_news_viewer_zoom">Kontrol + dan − ringkas pada detail objek; ukuran awal adalah zoom minimum.</string>
+    <string name="info_news_settings">Pengaturan, satuan, dan skenario diperbaiki, kontrol seragam serta halaman Info dan kredit.</string>
+    <string name="info_news_catalog">Zoom kamera tersimpan dan konfirmasi singkat setelah pembaruan data objek selesai.</string>
 </resources>

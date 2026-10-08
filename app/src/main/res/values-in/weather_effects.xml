@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="sky_weather_enable">Aktifkan cuaca</string>
+    <string name="sky_weather_disable">Nonaktifkan cuaca</string>
+    <string name="sky_weather_disabled">Cuaca dinonaktifkan</string>
+</resources>

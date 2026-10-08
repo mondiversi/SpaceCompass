@@ -1,7 +1,6 @@
 package me.mondiversi.spacecompass
 
 import androidx.compose.foundation.background
-import androidx.compose.foundation.border
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.HorizontalDivider
@@ -37,7 +36,7 @@ internal fun SpaceCompassCelestialBodyDataIsland(bodyName: String?, primaryText:
     val rtl = LocalLayoutDirection.current == LayoutDirection.Rtl
     val shape = RoundedCornerShape(20.dp)
     Column(Modifier.fillMaxWidth().testTag("sun-finder-body-data").clip(shape)
-        .background(background.copy(alpha = 0.84f)).border(1.dp, primaryText.copy(alpha = 0.12f), shape)
+        .background(background.copy(alpha = 0.84f))
         .padding(horizontal = 12.dp)) {
         if (bodyName != null || navigation != null) {
             // Compact only the title bar; retain the normal insets around the data below it.

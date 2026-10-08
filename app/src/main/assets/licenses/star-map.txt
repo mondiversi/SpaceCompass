@@ -1,0 +1,17 @@
+Deep Star Maps 2020
+NASA/Goddard Space Flight Center Scientific Visualization Studio.
+Gaia DR2: ESA/Gaia/DPAC. Visualization: Ernie Wright (USRA).
+Source: https://svs.gsfc.nasa.gov/4851/
+Celestial ICRF/J2000 plate-carree map, centred on RA 0h; RA increases left.
+Original: starmap_2020_4k.exr (4096x2048).
+
+Space Compass display adaptation: luminosity ** 1.6 with RGB hue retained;
+original 4096x2048 detail retained without downscaling or sharpening;
+lossless 8-bit RGB WebP packaging. No random stars or constellation figures.
+The bundled atlas remains fixed; observer/date/view transformations are local.
+Rendered brightness is illustrative, not a limiting-magnitude, visibility,
+light-pollution or measured cloud-location model. Proper motion and parallax
+of individual stars are not animated in the static background atlas.
+
+NASA SVS reproduction guidance: https://svs.gsfc.nasa.gov/help/
+NASA credits do not imply endorsement.

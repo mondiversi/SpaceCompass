@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="sky_weather_enable">نمایش آب‌وهوا</string>
+    <string name="sky_weather_disable">پنهان کردن آب‌وهوا</string>
+    <string name="sky_weather_disabled">آب‌وهوا غیرفعال</string>
+</resources>

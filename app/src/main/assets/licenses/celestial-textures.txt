@@ -3,8 +3,8 @@ Source: https://www.solarsystemscope.com/textures/
 License: Creative Commons Attribution 4.0 International
 https://creativecommons.org/licenses/by/4.0/
 
-Assets: sun.jpg, mercury.jpg, venus_atmosphere.jpg, mars.jpg, jupiter.jpg,
-saturn.jpg, uranus.jpg, neptune.jpg.
+Assets: sun.webp, mercury.webp, venus_atmosphere.webp, mars.webp, jupiter.webp,
+saturn.webp, uranus.webp, neptune.webp.
 Maps based on NASA imagery with colour adjustments by the original publisher.
 Space Compass caps maps at 2048x1024 and applies calculated lighting at runtime.
 Public distribution copy: TanvirAhmedArnab/SolarSystem, SourceAssets/ThirdParty/
@@ -25,7 +25,7 @@ USGS public-domain products; original source credits retained. Native grayscale
 512x256 browse mosaics, not new telescope photographs or invented colour.
 Public byte-identical distribution copies:
 https://github.com/TanvirAhmedArnab/SolarSystem/tree/main/SourceAssets/ThirdParty/Textures/USGS
-io_global_mosaic_browse.jpg -> io.jpg, SHA-256:
+io_global_mosaic_browse.jpg -> io.webp (packaged WebP), original JPEG SHA-256:
 de69759452f5479b6f56ff5c72a90ed402ab8d7f11219524c26e5b60610b9597
 europa_global_mosaic_browse.jpg -> europa.jpg, SHA-256:
 3369ba56cbfa447347b5afc003b80b69fbf87dd90a724d59f09abad8691a9819
@@ -36,3 +36,18 @@ Sedna diameter: Pal et al. 2012, https://arxiv.org/abs/1204.0899;
 Sedna orbital/rotation reference snapshot: JPL SBDB, 2026-10-04.
 Spacecraft reference dimensions: NASA ISS and Voyager fact pages.
 Full qualifications and sources: docs/CELESTIAL_VIEWER.md in the Space Compass source.
+
+Io and Europa 2048x1024 colour display derivatives:
+NASA Visualization Technology Applications and Development (VTAD), original
+4096x2048 albedo maps embedded in the official NASA Io and Europa 3D models.
+https://science.nasa.gov/resource/io-3d-model/
+https://science.nasa.gov/resource/europa-3d-model/
+Io source: Io_1_3643.glb, embedded color_2016_04_28.jpg (PNG RGBA raster).
+Europa source: Europa_1_3138.glb, embedded color_2016_03_10.jpg (PNG RGBA raster).
+Derivatives: io_2048.webp and europa_2048.webp, WebP quality 90, 2048x1024.
+The NASA display maps contain processed colour and visually filled/blended
+coverage; they do not assert complete measured terrain or live surface imagery.
+They supersede the earlier 512x256 USGS browse derivatives for this app build.
+Old io.webp and europa.jpg distribution files remain unchanged for older apps.
+North-up orientation and longitude seam match the original reference mosaics.
+NASA/VTAD, NASA/JPL/USGS credits retained; no endorsement is implied.

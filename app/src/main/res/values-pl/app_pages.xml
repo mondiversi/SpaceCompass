@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="pc_info">Informacje i nowości</string>
+    <string name="pc_info">Informacje i autorzy</string>
     <string name="pc_display_automatic">Automatyczne skalowanie</string>
     <string name="pc_info_description">Kompas astronomiczny do znajdowania obiektów niebieskich, badania ich torów oraz oglądania modeli i faz Księżyca.</string>
     <string name="pc_info_earth">Zaprojektowany dla Ziemi: w kosmosie lepiej zapytać astronautę o drogę 🙂</string>

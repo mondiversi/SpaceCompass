@@ -79,7 +79,7 @@ class SpaceCompassCelestialCatalogTest {
         assertEquals(0.0,SpaceCompassCelestialBody.EUROPA.textureLongitudeOffset,0.0)
         assertEquals(0.0,SpaceCompassCelestialBody.PLUTO.textureLongitudeOffset,0.0)
         assertTrue(SpaceCompassCelestialBody.EUROPA.textureHasUnmappedAreas)
-        assertEquals("io.jpg",SpaceCompassCelestialBody.IO.viewerTexture)
-        assertEquals("europa.jpg",SpaceCompassCelestialBody.EUROPA.viewerTexture)
+        assertEquals("io_2048.webp",SpaceCompassCelestialBody.IO.viewerTexture)
+        assertEquals("europa_2048.webp",SpaceCompassCelestialBody.EUROPA.viewerTexture)
     }
 }

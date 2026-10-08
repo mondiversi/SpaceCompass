@@ -18,7 +18,8 @@ internal data class SpaceCompassPanoramaSnapshot(val timeMs: Long, val latitude:
     val referenceNames: Map<SpaceCompassSkyReference, String> = emptyMap(),
     val poleNames: Pair<String, String> = "North celestial pole" to "South celestial pole",
     val center: SpaceCompassPanoramaCenter = SpaceCompassPanoramaCenter.SOUTH,
-    val observerPointNames: Pair<String, String> = "Earth centre" to "Zenith")
+    val observerPointNames: Pair<String, String> = "Earth centre" to "Zenith",
+    val weatherEffectsEnabled: Boolean = true)
 
 internal fun renderSpaceCompassPanorama(snapshot: SpaceCompassPanoramaSnapshot, width: Int = 4096, context: android.content.Context? = null): Bitmap {
     require(width in 512..4096 && snapshot.objects.isNotEmpty())
@@ -53,40 +54,8 @@ internal fun renderSpaceCompassPanorama(snapshot: SpaceCompassPanoramaSnapshot, 
             ground.farArgb, ground.nearArgb, Shader.TileMode.CLAMP)
         canvas.drawRect(0f, sceneHeight / 2f, sceneWidth.toFloat(), sceneHeight.toFloat(), paint)
         paint.shader = null
-        val night = snapshot.phase == SpaceCompassSunSkyPhase.NIGHT || snapshot.phase == SpaceCompassSunSkyPhase.EVENING
-        val cover = spaceCompassSunDisplayCloudCover(snapshot.weather)
-        if (night && spaceCompassSunDisplayStars(snapshot.weather)) repeat(100) { i ->
-            paint.color = Color.argb(((1 - cover) * 130).toInt(), 255, 255, 255)
-            canvas.drawCircle(sceneWidth * ((i * .618034f) % 1), sceneHeight * (.04f + ((i * .414214f) % 1) * .40f),
-                (if (i % 4 == 0) 2.5f else 1.5f) * scale, paint)
-        }
-        repeat(spaceCompassSunDisplayCloudCount(snapshot.weather)) { i ->
-            paint.color = Color.argb((35 + cover * 65).toInt(), 215, 228, 238)
-            val x = sceneWidth * ((.13f + i * .38197f) % 1); val y = sceneHeight * (.06f + (i % 4) * .08f)
-            repeat(4) { part ->
-                val r = (35 + cover * 45) * scale
-                canvas.drawOval(x + (part - 2) * r, y - r * .65f, x + part * r, y + r * .65f, paint)
-            }
-        }
-        when (snapshot.weather?.kind) {
-            SpaceCompassSunWeatherKind.RAIN, SpaceCompassSunWeatherKind.DRIZZLE, SpaceCompassSunWeatherKind.STORM -> {
-                paint.color = 0x667ed2f0; paint.strokeWidth = 2 * scale
-                repeat(160) { i ->
-                    val x = sceneWidth * ((i * .618034f) % 1); val y = sceneHeight * (.03f + ((i * .414214f) % 1) * .43f)
-                    canvas.drawLine(x, y, x - 7 * scale, y + 18 * scale, paint)
-                }
-            }
-            SpaceCompassSunWeatherKind.SNOW -> {
-                paint.color = 0xaaffffff.toInt()
-                repeat(140) { i -> canvas.drawCircle(sceneWidth * ((i * .618034f) % 1),
-                    sceneHeight * (.03f + ((i * .414214f) % 1) * .43f), 3 * scale, paint) }
-            }
-            SpaceCompassSunWeatherKind.FOG -> {
-                paint.color = 0x509faeb7
-                canvas.drawRect(0f, 0f, sceneWidth.toFloat(), sceneHeight / 2f, paint)
-            }
-            else -> Unit
-        }
+        drawSpaceCompassPanoramaStars(canvas, snapshot, sceneWidth, sceneHeight, context)
+        SpaceCompassWeatherRenderer(sceneWidth.toFloat(), sceneHeight / 2f, snapshot.phase, snapshot.weather).draw(canvas)
         val text = spaceCompassOrbitTextPaint(34 * scale)
         fun textAt(value: String, x: Float, y: Float, size: Float = 34 * scale, tint: Int = Color.WHITE) {
             text.textSize = size

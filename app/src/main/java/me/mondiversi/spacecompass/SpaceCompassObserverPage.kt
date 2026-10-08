@@ -89,14 +89,14 @@ internal fun SpaceCompassObserverPage(modifier: Modifier = Modifier) {
         if (editRevision == 0) return
         if (busy || needsMetadata) {
             if (leaving) showSpaceCompassBottomMessage(context,
-                resources.getString(R.string.observer_not_saved), longDuration = true)
+                resources.getString(R.string.observer_not_saved))
             return
         }
         val resolved = currentDraft().resolve(observer.savedPlan, System.currentTimeMillis(), ZoneId.systemDefault().id)
         if (resolved.isFailure) {
             validationError = true
             if (leaving) showSpaceCompassBottomMessage(context,
-                resources.getString(R.string.observer_not_saved), longDuration = true)
+                resources.getString(R.string.observer_not_saved))
         } else {
             val changed = observer.apply(resolved.getOrNull())
             editRevision = 0
@@ -210,9 +210,9 @@ internal fun SpaceCompassObserverPage(modifier: Modifier = Modifier) {
                     edited(); saveEditedDraft()
                 }, modifier = Modifier.testTag("observer-enabled-position")) {
                 if (simulatePosition) {
-                    OutlinedTextField(search, { search = it.take(200) }, Modifier.fillMaxWidth().testTag("observer-search"),
-                        label = { Text(stringResource(R.string.observer_search)) }, singleLine = true, enabled = !busy)
-                    FlowRow(Modifier.fillMaxWidth(), horizontalArrangement = Arrangement.spacedBy(8.dp)) {
+                    SpaceCompassSettingsTextField(search, { search = it.take(200) }, Modifier.fillMaxWidth().testTag("observer-search"),
+                        label = stringResource(R.string.observer_search), enabled = !busy)
+                    FlowRow(Modifier.fillMaxWidth(), horizontalArrangement = Arrangement.spacedBy(SpaceCompassSettingsControlGap)) {
                         TextButton(onClick = {
                             lookup?.cancel(); val request = ++lookupRevision; metadataField = null
                             lookup = scope.launch {
@@ -236,10 +236,10 @@ internal fun SpaceCompassObserverPage(modifier: Modifier = Modifier) {
                             Text(stringResource(R.string.observer_map))
                         }
                     }
-                    OutlinedTextField(latitude, { if (latitude != it) { invalidateMetadata(); latitude = it; edited() } }, Modifier.fillMaxWidth().testTag("observer-latitude"),
-                        label = { Text(stringResource(R.string.observer_latitude) + " (°)") }, singleLine = true, enabled = !busy)
-                    OutlinedTextField(longitude, { if (longitude != it) { invalidateMetadata(); longitude = it; edited() } }, Modifier.fillMaxWidth().testTag("observer-longitude"),
-                        label = { Text(stringResource(R.string.observer_longitude) + " (°)") }, singleLine = true, enabled = !busy)
+                    SpaceCompassSettingsTextField(latitude, { if (latitude != it) { invalidateMetadata(); latitude = it; edited() } }, Modifier.fillMaxWidth().testTag("observer-latitude"),
+                        label = stringResource(R.string.observer_latitude) + " (°)", enabled = !busy)
+                    SpaceCompassSettingsTextField(longitude, { if (longitude != it) { invalidateMetadata(); longitude = it; edited() } }, Modifier.fillMaxWidth().testTag("observer-longitude"),
+                        label = stringResource(R.string.observer_longitude) + " (°)", enabled = !busy)
                     if (busy && metadataField == null) LinearProgressIndicator(Modifier.fillMaxWidth())
                     if (metadataField == null && notice != 0 && notice != R.string.observer_terrain_note)
                         Text(stringResource(notice), style = MaterialTheme.typography.bodySmall)
@@ -259,16 +259,16 @@ internal fun SpaceCompassObserverPage(modifier: Modifier = Modifier) {
                     edited(); saveEditedDraft()
                 }, modifier = Modifier.testTag("observer-enabled-altitude")) {
                 if (simulateAltitude) {
-                    OutlinedTextField(altitude, { if (altitude != it) { altitude = it; altitudeEdited = true; edited() } },
+                    SpaceCompassSettingsTextField(altitude, { if (altitude != it) { altitude = it; altitudeEdited = true; edited() } },
                         Modifier.fillMaxWidth().testTag("observer-altitude"),
-                        label = { Text(stringResource(R.string.observer_altitude) + if (feet) " (ft)" else " (m)") },
-                        singleLine = true, enabled = !busy)
+                        label = stringResource(R.string.observer_altitude) + if (feet) " (ft)" else " (m)",
+                        enabled = !busy)
                     SpaceCompassObserverMetadataActions("altitude", selectedCoordinatesValid && !busy,
                         deviceCoordinatesValid && !busy, busy && metadataField == SpaceCompassObserverMetadataField.ALTITUDE,
                         if (metadataField == SpaceCompassObserverMetadataField.ALTITUDE) notice else 0,
                         onSelected = { detectMetadata(SpaceCompassObserverMetadataField.ALTITUDE, false) },
                         onCurrent = { detectMetadata(SpaceCompassObserverMetadataField.ALTITUDE, true) })
-                    Text(stringResource(R.string.observer_terrain_note), style = MaterialTheme.typography.bodySmall)
+                    SpaceCompassSettingsDescription(stringResource(R.string.observer_terrain_note))
                 }
             }
         }
@@ -315,25 +315,25 @@ internal fun SpaceCompassObserverPage(modifier: Modifier = Modifier) {
                     Text(stringResource(R.string.observer_zone) + ": " +
                         effectiveZone().ifBlank { "—" },
                         style = MaterialTheme.typography.bodySmall)
-                    OutlinedTextField(date, { if (date != it) { pendingMoment = null; preservedMoment = null; date = it; edited() } }, Modifier.fillMaxWidth().testTag("observer-date"),
-                        label = { Text(stringResource(R.string.observer_date)) }, placeholder = { Text("yyyy-MM-dd") },
+                    SpaceCompassSettingsTextField(date, { if (date != it) { pendingMoment = null; preservedMoment = null; date = it; edited() } }, Modifier.fillMaxWidth().testTag("observer-date"),
+                        label = stringResource(R.string.observer_date), placeholder = "yyyy-MM-dd",
                         trailingIcon = { val label = stringResource(R.string.observer_date)
                             IconButton(onClick = { showDate = true }, modifier = Modifier.semantics { contentDescription = label }) {
                                 SpaceCompassSettingsGroupIcon("date_format", MaterialTheme.colorScheme.primary)
-                            } }, singleLine = true)
-                    OutlinedTextField(time, { if (time != it) { pendingMoment = null; preservedMoment = null; time = it; edited() } }, Modifier.fillMaxWidth().testTag("observer-time"),
-                        label = { Text(stringResource(R.string.observer_time)) }, placeholder = { Text("HH:mm") },
+                            } })
+                    SpaceCompassSettingsTextField(time, { if (time != it) { pendingMoment = null; preservedMoment = null; time = it; edited() } }, Modifier.fillMaxWidth().testTag("observer-time"),
+                        label = stringResource(R.string.observer_time), placeholder = "HH:mm",
                         trailingIcon = { val label = stringResource(R.string.observer_time)
                             IconButton(onClick = { showTime = true }, modifier = Modifier.semantics { contentDescription = label }) {
                                 SpaceCompassSettingsGroupIcon("time_format", MaterialTheme.colorScheme.primary)
-                            } }, singleLine = true)
-                    Text(stringResource(R.string.observer_limits), style = MaterialTheme.typography.bodySmall)
+                            } })
+                    SpaceCompassSettingsDescription(stringResource(R.string.observer_limits))
                 }
             }
         }
         if (validationError || simulatePosition || simulateTime || simulateAltitude || simulateZone) {
             item(key = "observer-notes", span = StaggeredGridItemSpan.FullLine) {
-                Column(Modifier.fillMaxWidth(), verticalArrangement = Arrangement.spacedBy(12.dp)) {
+                Column(Modifier.fillMaxWidth(), verticalArrangement = Arrangement.spacedBy(SpaceCompassSettingsGroupGap)) {
                     if (validationError) Text(stringResource(R.string.observer_invalid),
                         Modifier.padding(horizontal = 8.dp).testTag("observer-validation-error"),
                         color = MaterialTheme.colorScheme.error, style = MaterialTheme.typography.bodySmall)

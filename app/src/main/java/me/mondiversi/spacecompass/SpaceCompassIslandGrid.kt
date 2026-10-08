@@ -16,7 +16,7 @@ internal fun spaceCompassIslandColumnCount(landscape: Boolean, contentWidthDp: F
     if (!landscape || !contentWidthDp.isFinite()) return 1
     val readableFontScale = fontScale.takeIf { it.isFinite() && it > 0f } ?: 1f
     val minimumCardWidth = 280f * (readableFontScale / 1.3f).coerceAtLeast(1f)
-    return if (contentWidthDp >= minimumCardWidth * 2 + 12f) 2 else 1
+    return if (contentWidthDp >= minimumCardWidth * 2 + SpaceCompassSettingsIslandGap.value) 2 else 1
 }
 
 /** Pack natural-height islands into the shortest column; keyed content survives reflow. */
@@ -34,7 +34,7 @@ internal fun SpaceCompassIslandGrid(modifier: Modifier = Modifier, content: Lazy
         LazyVerticalStaggeredGrid(columns = StaggeredGridCells.Fixed(columns),
             modifier = Modifier.fillMaxSize().testTag("island-grid"),
             contentPadding = spaceCompassPageContentPadding,
-            horizontalArrangement = Arrangement.spacedBy(12.dp),
-            verticalItemSpacing = 12.dp, content = content)
+            horizontalArrangement = Arrangement.spacedBy(SpaceCompassSettingsIslandGap),
+            verticalItemSpacing = SpaceCompassSettingsIslandGap, content = content)
     }
 }

@@ -1,9 +1,9 @@
 <resources>
     <string name="info_news_title">Dernières nouveautés · %1$s</string>
-    <string name="info_news_camera_zoom">Zoom de l’ultra-grand-angle au maximum, par pincement ou sélection directe du niveau.</string>
-    <string name="info_news_catalog_search">Recherchez les objets par nom ou identifiant du catalogue, en combinaison avec les filtres.</string>
-    <string name="info_news_capture_metadata">Les photos indiquent la direction, l’inclinaison et le champ de vision ; les aperçus utilisent vos unités et votre langue.</string>
-    <string name="info_news_capture_controls">Commandes plus compactes et centrées dans les aperçus ; exportez avec vos réglages ou le format international.</string>
-    <string name="info_news_viewer">Sélecteur compact entre vue actuelle et rotation, avec des avertissements de boussole plus clairs.</string>
-    <string name="info_news_performance">Application plus légère, aperçus plus fiables et traductions vérifiées.</string>
+    <string name="info_news_star_sky">Ciel étoilé réaliste adapté à votre position et à l’heure, plus net dans les panoramas.</string>
+    <string name="info_news_texture_downloads">Application plus légère : les cartes planétaires se téléchargent au besoin et restent disponibles hors ligne ; Io et Europe en WebP 2K.</string>
+    <string name="info_news_weather">Météo cohérente entre la vue principale et les panoramas, avec un choix d’affichage mémorisé.</string>
+    <string name="info_news_viewer_zoom">Commandes + et − compactes dans les détails des objets ; la taille initiale est le zoom minimal.</string>
+    <string name="info_news_settings">Réglages, unités et scénarios améliorés, commandes uniformes et page Informations et crédits.</string>
+    <string name="info_news_catalog">Zoom de la caméra mémorisé et confirmation brève à la fin de l’actualisation des données des objets.</string>
 </resources>

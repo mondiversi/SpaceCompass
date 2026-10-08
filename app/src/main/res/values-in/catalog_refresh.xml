@@ -2,4 +2,5 @@
 <resources>
     <string name="catalog_refresh">Perbarui data</string>
     <string name="catalog_refreshing">Memperbarui data…</string>
+    <string name="catalog_refresh_finished">Pembaruan objek selesai.</string>
 </resources>

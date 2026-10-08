@@ -23,7 +23,7 @@ internal fun SpaceCompassRepositoryActions() {
     val text = MaterialTheme.colorScheme.onSurface
     Text("github.com/mondiversi/SpaceCompass", fontSize = 12.sp, color = text.copy(alpha = .65f))
     CompositionLocalProvider(LocalSpaceCompassSettingsActionButtons provides true) {
-        Column(Modifier.fillMaxWidth(), verticalArrangement = Arrangement.spacedBy(8.dp)) {
+        Column(Modifier.fillMaxWidth(), verticalArrangement = Arrangement.spacedBy(SpaceCompassSettingsActionGap)) {
             SpaceCompassSettingsActionButton(stringResource(R.string.open_github_repository),
                 onClick = { uri.openUri(SpaceCompassUpdatePolicy.REPOSITORY_URL) }, primary = false,
                 modifier = Modifier.testTag("open-github-repository")) {

@@ -1,9 +1,9 @@
 <resources>
     <string name="info_news_title">Mambo mapya · %1$s</string>
-    <string name="info_news_camera_zoom">Zoom ya kamera kutoka pembe pana sana hadi kiwango cha juu, kwa kubana vidole au kuchagua kiwango moja kwa moja.</string>
-    <string name="info_news_catalog_search">Tafuta vitu kwa jina au kitambulisho cha katalogi, pamoja na vichujio.</string>
-    <string name="info_news_capture_metadata">Picha zinaonyesha mwelekeo, mwinamo na eneo la mwonekano; hakikisho hutumia vipimo na lugha ulizochagua.</string>
-    <string name="info_news_capture_controls">Vidhibiti vidogo na vitufe vya hakikisho vilivyowekwa katikati; hamisha kwa mipangilio yako au muundo wa kimataifa.</string>
-    <string name="info_news_viewer">Swichi ndogo kati ya mwonekano wa sasa na mzunguko, pamoja na maonyo ya dira yaliyo wazi zaidi.</string>
-    <string name="info_news_performance">Programu nyepesi, hakikisho la kuaminika zaidi na tafsiri zilizokaguliwa.</string>
+    <string name="info_news_star_sky">Anga halisi lenye nyota kulingana na mahali na wakati wako, lenye uwazi zaidi katika panorama.</string>
+    <string name="info_news_texture_downloads">Programu ndogo zaidi: ramani za sayari hupakuliwa zinapohitajika na hubaki kutumika bila intaneti; Io na Europa katika WebP 2K.</string>
+    <string name="info_news_weather">Hali ya hewa inayolingana kwenye mwonekano mkuu na panorama, huku chaguo la kuonyesha likihifadhiwa.</string>
+    <string name="info_news_viewer_zoom">Vitufe vidogo vya + na − katika maelezo ya kitu; ukubwa wa mwanzo ndio kiwango cha chini cha kukuza.</string>
+    <string name="info_news_settings">Mipangilio, vipimo na hali zimeboreshwa, vidhibiti vinafanana na kuna ukurasa wa maelezo na shukrani.</string>
+    <string name="info_news_catalog">Kiwango cha kukuza cha kamera huhifadhiwa na uthibitisho mfupi huonekana data za vitu zinapomaliza kusasishwa.</string>
 </resources>

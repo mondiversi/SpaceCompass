@@ -7,15 +7,6 @@ import android.view.Gravity
 import android.view.View
 import android.widget.TextView
 import android.widget.Toast
-import androidx.compose.foundation.layout.padding
-import androidx.compose.foundation.shape.RoundedCornerShape
-import androidx.compose.material3.SnackbarData
-import androidx.compose.material3.Surface
-import androidx.compose.material3.Text
-import androidx.compose.runtime.Composable
-import androidx.compose.ui.Modifier
-import androidx.compose.ui.unit.dp
-import androidx.compose.ui.unit.sp
 import kotlin.math.roundToInt
 
 internal const val SPACE_COMPASS_BOTTOM_MESSAGE_BACKGROUND: Long = 0xEE2A2A2E
@@ -23,8 +14,7 @@ private var activeSpaceCompassBottomMessage: Toast? = null
 
 /** Uvir's always-dark, nonblocking message, including tablet scale and longer translations. */
 @Suppress("DEPRECATION")
-internal fun showSpaceCompassBottomMessage(context: Context, text: CharSequence,
-    longDuration: Boolean = false): Toast {
+internal fun showSpaceCompassBottomMessage(context: Context, text: CharSequence): Toast {
     activeSpaceCompassBottomMessage?.cancel()
     val application = context.applicationContext
     val configuration = application.resources.configuration
@@ -53,21 +43,10 @@ internal fun showSpaceCompassBottomMessage(context: Context, text: CharSequence,
         }
     }
     return Toast(application).apply {
-        duration = if (longDuration) Toast.LENGTH_LONG else Toast.LENGTH_SHORT
+        duration = Toast.LENGTH_SHORT
         setGravity(Gravity.BOTTOM or Gravity.CENTER_HORIZONTAL, 0, (88f * density).roundToInt())
         view = message
         activeSpaceCompassBottomMessage = this
         show()
-    }
-}
-
-/** Keep the gallery status inside its preview, with the same Uvir message colors and insets. */
-@Composable
-internal fun SpaceCompassBottomSnackbar(data: SnackbarData) {
-    Surface(shape = RoundedCornerShape(14.dp),
-        color = androidx.compose.ui.graphics.Color(SPACE_COMPASS_BOTTOM_MESSAGE_BACKGROUND),
-        contentColor = androidx.compose.ui.graphics.Color.White) {
-        Text(data.visuals.message, modifier = Modifier.padding(horizontal = 20.dp, vertical = 13.dp),
-            fontSize = 14.sp, lineHeight = 15.12.sp, maxLines = 6)
     }
 }

@@ -3,26 +3,21 @@ package me.mondiversi.spacecompass
 import android.icu.text.TimeZoneNames
 import androidx.compose.foundation.BorderStroke
 import androidx.compose.foundation.Canvas
-import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
 import androidx.compose.foundation.lazy.rememberLazyListState
-import androidx.compose.foundation.selection.selectable
 import androidx.compose.foundation.selection.selectableGroup
-import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.*
 import androidx.compose.runtime.*
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.draw.clip
 import androidx.compose.ui.geometry.Offset
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.StrokeCap
 import androidx.compose.ui.platform.LocalConfiguration
 import androidx.compose.ui.platform.testTag
 import androidx.compose.ui.res.stringResource
-import androidx.compose.ui.semantics.Role
 import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.text.style.TextDirection
 import androidx.compose.ui.text.style.TextOverflow
@@ -93,32 +88,27 @@ internal fun SpaceCompassObserverZonePicker(value: String, timeMs: Long, enabled
             modifier = Modifier.testTag("observer-zone-menu"), scrollContent = false,
             title = { Text(stringResource(R.string.observer_zone)) }, text = {
                 Column(Modifier.fillMaxWidth(), verticalArrangement = Arrangement.spacedBy(8.dp)) {
-                    OutlinedTextField(search, { search = it.take(100) }, Modifier.fillMaxWidth().testTag("observer-zone-search"),
-                        label = { Text(stringResource(R.string.observer_zone_search)) }, singleLine = true)
+                    SpaceCompassSettingsTextField(search, { search = it.take(100) }, Modifier.fillMaxWidth().testTag("observer-zone-search"),
+                        label = stringResource(R.string.observer_zone_search))
                     if (visible.isEmpty()) Text(stringResource(R.string.observer_zone_no_results),
                         style = MaterialTheme.typography.bodySmall)
                     LazyColumn(Modifier.fillMaxWidth().heightIn(max = listHeight)
                         .selectableGroup().lazyScrollbarOverlay(list, foreground.copy(alpha = .45f))
-                        .testTag("observer-zone-options"), state = list, contentPadding = PaddingValues(end = 8.dp)) {
+                        .testTag("observer-zone-options"), state = list, contentPadding = PaddingValues(end = 8.dp),
+                        verticalArrangement = Arrangement.spacedBy(SpaceCompassSettingsChoiceSpacing)) {
                         items(visible, key = { it.id }) { choice ->
                             val checked = choice.id == value
-                            Row(Modifier.fillMaxWidth().heightIn(min = 48.dp).clip(RoundedCornerShape(10.dp))
-                                .background(if (checked) foreground.copy(alpha = .07f) else Color.Transparent)
-                                .selectable(checked, role = Role.RadioButton, onClick = {
-                                    onSelect(choice.id); expanded = false
-                                }).padding(horizontal = 8.dp, vertical = 6.dp).testTag("observer-zone-${choice.id}"),
-                                verticalAlignment = Alignment.CenterVertically,
-                                horizontalArrangement = Arrangement.spacedBy(8.dp)) {
-                                CompositionLocalProvider(LocalMinimumInteractiveComponentSize provides 0.dp) {
-                                    RadioButton(checked, onClick = null, modifier = Modifier.size(24.dp))
-                                }
+                            SpaceCompassSettingsRadioRow(checked, modifier = Modifier.testTag("observer-zone-${choice.id}"),
+                                onClick = { onSelect(choice.id); expanded = false }) {
                                 Column(Modifier.weight(1f)) {
-                                    Text(label(choice.id), fontSize = 14.sp, lineHeight = 17.sp)
-                                    Text(choice.id, color = foreground.copy(alpha = .65f), fontSize = 10.sp,
+                                    Text(label(choice.id), fontSize = 14.sp, lineHeight = 20.sp,
+                                        fontWeight = androidx.compose.ui.text.font.FontWeight.Medium)
+                                    Text(choice.id, color = foreground.copy(alpha = .72f), fontSize = 10.sp,
                                         lineHeight = 13.sp, style = TextStyle(textDirection = TextDirection.Ltr))
                                 }
-                                Text(formatSpaceCompassObserverUtcOffset(choice.offset), fontSize = 11.sp,
-                                    color = foreground.copy(alpha = .65f), style = TextStyle(textDirection = TextDirection.Ltr))
+                                Text(formatSpaceCompassObserverUtcOffset(choice.offset), Modifier.padding(start = 8.dp), fontSize = 11.sp,
+                                    lineHeight = 14.sp, fontWeight = androidx.compose.ui.text.font.FontWeight.Medium,
+                                    color = foreground.copy(alpha = .72f), style = TextStyle(textDirection = TextDirection.Ltr))
                             }
                         }
                     }

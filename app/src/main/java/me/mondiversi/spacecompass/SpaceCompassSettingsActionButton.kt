@@ -30,7 +30,7 @@ internal fun SpaceCompassSettingsActionButton(label: String, onClick: () -> Unit
         val content by animateColorAsState(
             if (active) MaterialTheme.colorScheme.onPrimary else resting.contentColor,
             tween(if (active) 90 else 140), label = "settingsActionPressedContent")
-        OutlinedButton(onClick, modifier.fillMaxWidth().heightIn(min = 48.dp), enabled = enabled,
+        OutlinedButton(onClick, modifier.fillMaxWidth(), enabled = enabled,
             interactionSource = interaction,
             colors = ButtonDefaults.outlinedButtonColors(containerColor = container, contentColor = content,
                 disabledContainerColor = resting.disabledContainerColor,

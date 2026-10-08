@@ -15,7 +15,8 @@ internal fun spaceCompassPanoramaPresentation(snapshot: SpaceCompassPanoramaSnap
     val timestamp = formatSpaceCompassPanoramaExportTimestamp(snapshot.timeMs, zone, formatting).let {
         if (simulated) it.replaceFirst("Space Compass", "Space Compass · ${resources.getString(R.string.observer_title)}") else it
     }
-    val weather = resources.getString(when (snapshot.weather?.kind) {
+    val weather = if (!snapshot.weatherEffectsEnabled) resources.getString(R.string.sky_weather_disabled)
+        else resources.getString(when (snapshot.weather?.kind) {
         null -> R.string.sun_weather_unavailable
         SpaceCompassSunWeatherKind.CLEAR -> R.string.sun_weather_clear
         SpaceCompassSunWeatherKind.MAINLY_CLEAR -> R.string.celestial_weather_mainly_clear

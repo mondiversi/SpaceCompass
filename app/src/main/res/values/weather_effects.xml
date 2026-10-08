@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="sky_weather_enable">Enable weather</string>
+    <string name="sky_weather_disable">Disable weather</string>
+    <string name="sky_weather_disabled">Weather off</string>
+</resources>

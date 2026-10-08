@@ -2,4 +2,5 @@
 <resources>
     <string name="catalog_refresh">Atualizar dados</string>
     <string name="catalog_refreshing">Atualizando dados…</string>
+    <string name="catalog_refresh_finished">Atualização dos objetos concluída.</string>
 </resources>

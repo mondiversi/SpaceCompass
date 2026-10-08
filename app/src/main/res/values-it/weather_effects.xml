@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="sky_weather_enable">Attiva meteo</string>
+    <string name="sky_weather_disable">Disattiva meteo</string>
+    <string name="sky_weather_disabled">Meteo disattivato</string>
+</resources>

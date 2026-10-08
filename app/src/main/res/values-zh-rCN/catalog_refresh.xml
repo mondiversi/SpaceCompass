@@ -2,4 +2,5 @@
 <resources>
     <string name="catalog_refresh">刷新数据</string>
     <string name="catalog_refreshing">正在更新数据…</string>
+    <string name="catalog_refresh_finished">天体更新已完成。</string>
 </resources>

@@ -2,4 +2,5 @@
 <resources>
     <string name="catalog_refresh">רענון נתונים</string>
     <string name="catalog_refreshing">מעדכן נתונים…</string>
+    <string name="catalog_refresh_finished">עדכון העצמים הסתיים.</string>
 </resources>

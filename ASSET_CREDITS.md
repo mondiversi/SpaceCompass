@@ -33,3 +33,47 @@ limit and JPEG-encoded at quality 95 with 4:4:4 sampling. Attribution and longit
 orientation are unchanged. The original fictional LV-426 artwork is packaged as
 lossless `celestial/lv426.webp`; decoded RGB pixels and original dimensions are
 identical to its previous PNG. No third-party artwork or licence is replaced.
+
+## 1.1.1 asset packaging
+
+The existing maps are encoded as lossy WebP at quality 90, without resizing,
+reorienting or changing attribution. Europa retains its smaller original JPEG.
+This supersedes the 1.1.0 packaging formats above, including lossless LV-426.
+Original source maps remain credited; the Io source checksum in the bundled
+notice refers to the original JPEG, not the compressed packaged WebP.
+
+## 1.1.2 downloadable maps
+
+Only the original fictional LV-426 map remains bundled in the APK. The twelve
+credited maps above are distributed in the public `celestial-textures-v1` pack:
+https://github.com/mondiversi/SpaceCompass/releases/tag/celestial-textures-v1
+They retain their dimensions, orientation and source attribution. Reference
+pack copies and full credits are retained in `textures/celestial-textures-v1/`
+outside the Android asset tree. Verified downloads are stored in private
+no-backup app files and reused offline, without being redownloaded on restart.
+
+## Bundled celestial star background
+
+Deep Star Maps 2020: NASA/Goddard SVS, Ernie Wright (USRA), ESA/Gaia/DPAC.
+https://svs.gsfc.nasa.gov/4851/
+The ICRF/J2000 celestial atlas is display-adapted and bundled as
+`app/src/main/assets/sky/starmap.webp` (4096 x 2048, lossless WebP).
+Full transformation, brightness limits and source credits are in
+`app/src/main/assets/licenses/star-map.txt` and `docs/STAR_BACKGROUND.md`.
+The star atlas is distributed within the APK; the planet texture pack is unchanged.
+
+## Io and Europa 2K colour maps
+
+The official NASA VTAD Io and Europa 3D models provide 4096 x 2048 albedo maps.
+The original embedded PNGs are reduced to 2048 x 1024 and encoded as WebP at
+quality 90. The derivatives use new filenames (`io_2048.webp`,
+`europa_2048.webp`) so older pinned app downloads remain valid. Existing private
+maps for other bodies and all old release attachments remain unchanged.
+North-up orientation and longitude seams match the earlier reference mosaics.
+NASA's visualization maps use processed colour and filled/blended coverage;
+they are display reference maps, not complete measured surface datasets.
+Source models and credits:
+https://science.nasa.gov/resource/io-3d-model/
+https://science.nasa.gov/resource/europa-3d-model/
+NASA Visualization Technology Applications and Development (VTAD);
+NASA/JPL/USGS source imagery, no endorsement implied.

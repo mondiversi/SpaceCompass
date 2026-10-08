@@ -1,6 +1,6 @@
 package me.mondiversi.spacecompass
 
-import androidx.compose.foundation.*
+import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.selection.selectable
 import androidx.compose.foundation.selection.selectableGroup
@@ -13,10 +13,14 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.platform.LocalDensity
 import androidx.compose.ui.platform.testTag
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.semantics.Role
+import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.text.font.FontWeight
+import androidx.compose.ui.text.style.TextAlign
+import androidx.compose.ui.text.style.TextDirection
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 
@@ -25,25 +29,35 @@ internal fun SpaceCompassSettingsIsland(title: String? = null, iconKey: String? 
     headerContent: (@Composable () -> Unit)? = null, showHeaderDivider: Boolean = true,
     content: @Composable ColumnScope.() -> Unit) {
     val foreground = MaterialTheme.colorScheme.onSurface
-    Surface(Modifier.fillMaxWidth(), shape = RoundedCornerShape(18.dp), color = spaceCompassSettingsCardColor(), contentColor = foreground,
-        border = BorderStroke(1.dp, foreground.copy(alpha = .12f))) {
-        Column(Modifier.fillMaxWidth().padding(spaceCompassIslandContentPadding), verticalArrangement = Arrangement.spacedBy(8.dp)) {
+    Surface(Modifier.fillMaxWidth(), shape = RoundedCornerShape(16.dp),
+        color = spaceCompassSettingsCardColor(), contentColor = foreground) {
+        Column(Modifier.fillMaxWidth().padding(spaceCompassIslandContentPadding),
+            verticalArrangement = Arrangement.spacedBy(SpaceCompassSettingsGroupGap)) {
             if (headerContent != null) {
                 headerContent()
-                if (showHeaderDivider) HorizontalDivider(color = foreground.copy(alpha = .12f))
+                if (showHeaderDivider) HorizontalDivider(color = foreground.copy(alpha = .20f))
             } else if (title != null) {
-                Row(verticalAlignment = Alignment.CenterVertically, horizontalArrangement = Arrangement.spacedBy(10.dp)) {
-                    iconKey?.let { SpaceCompassSettingsGroupIcon(it, foreground) }
-                    Text(title, style = MaterialTheme.typography.titleMedium, fontWeight = FontWeight.SemiBold)
+                Row(verticalAlignment = Alignment.CenterVertically,
+                    horizontalArrangement = Arrangement.spacedBy(10.dp)) {
+                    iconKey?.let { SpaceCompassSettingsTitleIcon(it, foreground) }
+                    Text(title, fontSize = 15.sp, fontWeight = FontWeight.Bold)
                 }
-                if (showHeaderDivider) HorizontalDivider(color = foreground.copy(alpha = .12f))
+                if (showHeaderDivider) HorizontalDivider(color = foreground.copy(alpha = .20f))
             }
             content()
         }
     }
 }
 
-/** Compact UVIR-style heading: decorative icon, checkbox and section name in one row. */
+/** UVIR centers its 20 dp heading glyph in a neutral 28 dp alignment slot. */
+@Composable
+private fun SpaceCompassSettingsTitleIcon(key: String, tint: Color) {
+    Box(Modifier.size(28.dp), contentAlignment = Alignment.Center) {
+        SpaceCompassSettingsGroupIcon(key, tint)
+    }
+}
+
+/** The whole heading owns activation; the decorative checkbox never toggles twice. */
 @Composable
 internal fun SpaceCompassSettingsToggleIsland(title: String, iconKey: String, checked: Boolean,
     toggleDescription: String, onCheckedChange: (Boolean) -> Unit, modifier: Modifier = Modifier,
@@ -55,19 +69,42 @@ internal fun SpaceCompassSettingsToggleIsland(title: String, iconKey: String, ch
             .spaceCompassAccessibleAction(label = toggleDescription, role = Role.Checkbox,
                 checkedState = checked, onClick = { onCheckedChange(!checked) }),
             verticalAlignment = Alignment.CenterVertically) {
-            SpaceCompassSettingsGroupIcon(iconKey, foreground)
+            SpaceCompassSettingsTitleIcon(iconKey, foreground)
             Spacer(Modifier.width(8.dp))
-            // Keep the title's natural height; Compose expands the touch target into the card padding.
-            // The whole heading owns activation, so the decorative checkbox must not toggle twice.
+            // Match UVIR's natural heading height; the touch target expands into card padding.
             CompositionLocalProvider(LocalMinimumInteractiveComponentSize provides 0.dp) {
-                Checkbox(checked, onCheckedChange = null, modifier = Modifier.size(24.dp),
-                    colors = spaceCompassCheckboxColors(uncheckedColor = foreground.copy(alpha = .6f)))
+                Checkbox(checked, onCheckedChange = null, modifier = Modifier.size(SpaceCompassSettingsControlSize),
+                    colors = spaceCompassCheckboxColors(uncheckedColor = foreground.copy(alpha = .72f)))
             }
             Spacer(Modifier.width(6.dp))
-            Text(title, Modifier.weight(1f), style = MaterialTheme.typography.titleMedium,
-                fontWeight = FontWeight.SemiBold)
+            Text(title, Modifier.weight(1f), fontSize = 15.sp,
+                fontWeight = if (checked) FontWeight.Bold else FontWeight.Normal)
         }
     }, showHeaderDivider = checked, content = content)
+}
+
+/** Shared compact row for settings and the searchable time-zone list. */
+@Composable
+internal fun SpaceCompassSettingsRadioRow(checked: Boolean, onClick: () -> Unit,
+    modifier: Modifier = Modifier, enabled: Boolean = true,
+    content: @Composable RowScope.() -> Unit) {
+    val foreground = MaterialTheme.colorScheme.onSurface
+    Row(modifier.spaceCompassSettingsChoiceSurface(checked)
+        .selectable(checked, enabled = enabled, role = Role.RadioButton, onClick = onClick)
+        .padding(horizontal = SpaceCompassSettingsChoiceHorizontalPadding,
+            vertical = SpaceCompassSettingsChoiceVerticalPadding),
+        verticalAlignment = Alignment.CenterVertically) {
+        CompositionLocalProvider(LocalMinimumInteractiveComponentSize provides 0.dp) {
+            RadioButton(checked, onClick = null, enabled = enabled,
+                modifier = Modifier.size(SpaceCompassSettingsControlSize),
+                colors = RadioButtonDefaults.colors(selectedColor = MaterialTheme.colorScheme.primary,
+                    unselectedColor = foreground.copy(alpha = .72f),
+                    disabledSelectedColor = foreground.copy(alpha = .72f * .62f),
+                    disabledUnselectedColor = foreground.copy(alpha = .72f * .62f)))
+        }
+        Spacer(Modifier.width(10.dp))
+        content()
+    }
 }
 
 @Composable
@@ -77,34 +114,33 @@ internal fun SpaceCompassSettingsChoices(spec: SpaceCompassSettingSpec, language
     val foreground = MaterialTheme.colorScheme.onSurface
     SpaceCompassSettingsIsland(if (languageCodes) null else stringResource(spec.title),
         iconKey = if (languageCodes) null else spec.key) {
-        spec.description?.let { Text(it, color = foreground.copy(alpha = .65f), fontSize = 12.sp, lineHeight = 17.sp) }
-        Column(Modifier.fillMaxWidth().selectableGroup()) {
+        Column(Modifier.fillMaxWidth().selectableGroup(),
+            verticalArrangement = Arrangement.spacedBy(SpaceCompassSettingsChoiceSpacing)) {
+            spec.description?.let {
+                SpaceCompassSettingsDescription(it, pageDescription = languageCodes)
+                Spacer(Modifier.height(4.dp))
+            }
             spec.options.forEach { (value, label) ->
                 val checked = selected == value
-                Row(Modifier.spaceCompassSettingsChoiceSurface(checked)
-                    .selectable(checked, enabled = spec.enabled, role = Role.RadioButton, onClick = {
+                SpaceCompassSettingsRadioRow(checked, enabled = spec.enabled,
+                    modifier = Modifier.testTag("setting-${spec.key}-$value"), onClick = {
                         if (!checked) preferences.edit().putString(spec.key, value).apply()
-                    }).testTag("setting-${spec.key}-$value").padding(horizontal = 8.dp, vertical = 4.dp),
-                    verticalAlignment = Alignment.CenterVertically) {
-                    RadioButton(checked, onClick = null, enabled = spec.enabled,
-                        colors = RadioButtonDefaults.colors(selectedColor = MaterialTheme.colorScheme.primary,
-                            unselectedColor = foreground.copy(alpha = .6f)))
+                    }) {
                     SpaceCompassSettingsChoiceLabel(label, Modifier.weight(1f), enabled = spec.enabled)
                     spec.examples[value]?.let { example ->
-                        Text(example, Modifier.widthIn(max = 132.dp).padding(start = 8.dp).testTag("example-${spec.key}-$value"),
-                            style = androidx.compose.ui.text.TextStyle(textDirection = androidx.compose.ui.text.style.TextDirection.ContentOrLtr),
-                            fontSize = 11.sp, lineHeight = 14.sp,
-                            color = foreground.copy(alpha = .65f),
-                            textAlign = androidx.compose.ui.text.style.TextAlign.End)
+                        Text(example, Modifier.widthIn(max = 132.dp).padding(start = 8.dp)
+                            .testTag("example-${spec.key}-$value"),
+                            style = TextStyle(textDirection = TextDirection.ContentOrLtr),
+                            fontSize = 11.sp, lineHeight = 14.sp, fontWeight = FontWeight.Medium,
+                            color = foreground.copy(alpha = if (spec.enabled) .72f else .72f * .62f),
+                            textAlign = TextAlign.End)
                     }
-                    if (languageCodes && value != "system") Surface(shape = RoundedCornerShape(6.dp), color = foreground.copy(alpha = .09f)) {
-                        Box(Modifier.height(24.dp).widthIn(min = 32.dp).padding(horizontal = 6.dp),
-                            contentAlignment = Alignment.Center) {
-                            Text(value.substringBefore('-').uppercase(java.util.Locale.ROOT),
-                                fontSize = 10.sp, lineHeight = 12.sp,
-                                style = MaterialTheme.typography.labelSmall.copy(
-                                    platformStyle = androidx.compose.ui.text.PlatformTextStyle(includeFontPadding = false)))
-                        }
+                    if (languageCodes && value != "system") {
+                        Text(value.substringBefore('-').uppercase(java.util.Locale.ROOT),
+                            Modifier.width(with(LocalDensity.current) { 36.sp.toDp() }),
+                            fontSize = 14.sp, lineHeight = 20.sp, fontWeight = FontWeight.Medium,
+                            color = foreground.copy(alpha = .72f), textAlign = TextAlign.Center,
+                            maxLines = 1, style = TextStyle(textDirection = TextDirection.Ltr))
                     }
                 }
             }
@@ -112,27 +148,30 @@ internal fun SpaceCompassSettingsChoices(spec: SpaceCompassSettingSpec, language
     }
 }
 
-/** Checkbox settings use the same option row as appearance, language and units. */
 @Composable
 internal fun SpaceCompassSettingsCheckbox(label: String, checked: Boolean, onCheckedChange: (Boolean) -> Unit,
     modifier: Modifier = Modifier) {
     val foreground = MaterialTheme.colorScheme.onSurface
-    Row(modifier.spaceCompassSettingsChoiceSurface(checked)
-        .toggleable(checked, role = Role.Checkbox, onValueChange = onCheckedChange)
-        .padding(horizontal = 8.dp, vertical = 4.dp), verticalAlignment = Alignment.CenterVertically) {
-        Checkbox(checked, onCheckedChange = null,
-            colors = spaceCompassCheckboxColors(uncheckedColor = foreground.copy(alpha = .6f)))
-        SpaceCompassSettingsChoiceLabel(label, Modifier.weight(1f))
+    Row(modifier.fillMaxWidth().heightIn(min = 48.dp)
+        .toggleable(checked, role = Role.Checkbox, onValueChange = onCheckedChange),
+        verticalAlignment = Alignment.CenterVertically) {
+        CompositionLocalProvider(LocalMinimumInteractiveComponentSize provides 0.dp) {
+            Checkbox(checked, onCheckedChange = null, modifier = Modifier.size(SpaceCompassSettingsControlSize),
+                colors = spaceCompassCheckboxColors(uncheckedColor = foreground.copy(alpha = .72f)))
+        }
+        Spacer(Modifier.width(6.dp))
+        SpaceCompassSettingsChoiceLabel(label, Modifier.weight(1f), weight = FontWeight.Normal)
     }
 }
 
 @Composable
 private fun Modifier.spaceCompassSettingsChoiceSurface(checked: Boolean): Modifier =
-    fillMaxWidth().heightIn(min = 48.dp).clip(RoundedCornerShape(10.dp))
-        .background(if (checked) MaterialTheme.colorScheme.onSurface.copy(alpha = .07f) else Color.Transparent)
+    fillMaxWidth().clip(RoundedCornerShape(10.dp))
+        .background(if (checked) MaterialTheme.colorScheme.onSurface.copy(alpha = .08f) else Color.Transparent)
 
 @Composable
-private fun SpaceCompassSettingsChoiceLabel(label: String, modifier: Modifier, enabled: Boolean = true) {
-    Text(label, modifier.padding(horizontal = 8.dp), fontSize = 14.sp,
-        color = MaterialTheme.colorScheme.onSurface.copy(alpha = if (enabled) 1f else .4f))
+private fun SpaceCompassSettingsChoiceLabel(label: String, modifier: Modifier, enabled: Boolean = true,
+    weight: FontWeight = FontWeight.Medium) {
+    Text(label, modifier, fontSize = 14.sp, fontWeight = weight,
+        color = MaterialTheme.colorScheme.onSurface.copy(alpha = if (enabled) 1f else .72f * .62f))
 }

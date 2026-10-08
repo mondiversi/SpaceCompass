@@ -1,9 +1,9 @@
 <resources>
     <string name="info_news_title">Ultime novità · %1$s</string>
-    <string name="info_news_camera_zoom">Zoom della fotocamera dal grandangolo al massimo, con gesti e selezione diretta del livello.</string>
-    <string name="info_news_catalog_search">Cerca gli oggetti per nome o identificatore del catalogo, insieme ai filtri.</string>
-    <string name="info_news_capture_metadata">Le foto mostrano direzione, inclinazione e campo visivo; le anteprime usano le unità e la lingua scelte.</string>
-    <string name="info_news_capture_controls">Comandi più compatti e centrati nelle anteprime; esporta con le tue impostazioni o il formato internazionale.</string>
-    <string name="info_news_viewer">Switch compatto tra vista attuale e rotazione, con avvisi della bussola più chiari.</string>
-    <string name="info_news_performance">App più leggera, anteprime più affidabili e traduzioni verificate.</string>
+    <string name="info_news_star_sky">Cielo stellato realistico, orientato secondo posizione e orario e più nitido nelle panoramiche.</string>
+    <string name="info_news_texture_downloads">App più leggera: le mappe dei pianeti si scaricano quando servono e restano disponibili offline; Io ed Europa in WebP 2K.</string>
+    <string name="info_news_weather">Meteo coerente tra vista principale e panoramiche, con scelta di visualizzazione salvata.</string>
+    <string name="info_news_viewer_zoom">Comandi + e − compatti nei dettagli oggetto; la dimensione iniziale è lo zoom minimo.</string>
+    <string name="info_news_settings">Impostazioni, unità e scenari più curati, comandi uniformi e pagina Info e crediti.</string>
+    <string name="info_news_catalog">Zoom della fotocamera salvato e breve conferma al termine dell’aggiornamento dei dati degli oggetti.</string>
 </resources>

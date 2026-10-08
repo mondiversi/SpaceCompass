@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="pc_info">情報と新機能</string>
+    <string name="pc_info">情報とクレジット</string>
     <string name="pc_display_automatic">自動スケーリング</string>
     <string name="pc_info_description">天体を探し、その軌跡をたどり、モデルや月の満ち欠けを観察するための天文コンパス。</string>
     <string name="pc_info_earth">地球で使うためのアプリです。宇宙では宇宙飛行士に道を聞きましょう 🙂</string>

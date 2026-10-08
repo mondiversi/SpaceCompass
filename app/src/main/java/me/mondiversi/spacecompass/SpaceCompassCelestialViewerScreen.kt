@@ -14,6 +14,7 @@ import androidx.compose.ui.text.style.TextDirection
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.graphics.graphicsLayer
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.platform.testTag
 import androidx.compose.ui.res.stringResource
@@ -36,7 +37,7 @@ private val rotationSaver = Saver<SpaceCompassCelestialRotation, List<Any>>(
 
 private val viewportSaver = Saver<SpaceCompassCelestialViewportState, List<Double>>(
     save = { listOf(it.zoom, it.panX, it.panY) },
-    restore = { SpaceCompassCelestialViewportState(it[0], it[1], it[2]) })
+    restore = { SpaceCompassCelestialViewportState(it[0], it[1], it[2]).transform(1.0) })
 
 @Composable
 internal fun SpaceCompassCelestialViewerScreen(body: SpaceCompassCelestialBody, timeMs: Long,
@@ -203,12 +204,23 @@ internal fun SpaceCompassCelestialViewerScreen(body: SpaceCompassCelestialBody, 
                 contentAlignment = Alignment.Center) {
                 // Only this restartable region reads the animation angle: facts do not recompose at 30 Hz.
                 val viewGeometry = if (rotating || !body.hasPhysicalFace) rotationState.value.geometry() else geometry.takeIf { hasLocation }
-                if (body == SpaceCompassCelestialBody.EARTH_CENTER) SpaceCompassEarthCenterSymbol(Modifier.fillMaxSize())
-                else if (body.usesDeepSkySymbol) SpaceCompassDeepSkySymbol(body, Modifier.fillMaxSize())
+                val symbolPlacement = Modifier.fillMaxSize().graphicsLayer {
+                    val framing = viewportState.value
+                    scaleX = framing.zoom.toFloat(); scaleY = framing.zoom.toFloat()
+                    translationX = (framing.panX * size.width / 2).toFloat()
+                    translationY = (-framing.panY * size.height / 2).toFloat()
+                }
+                if (body == SpaceCompassCelestialBody.EARTH_CENTER) SpaceCompassEarthCenterSymbol(symbolPlacement)
+                else if (body.usesDeepSkySymbol) SpaceCompassDeepSkySymbol(body, symbolPlacement)
                 else if (viewGeometry != null) SpaceCompassCelestialModelViewport(body, viewGeometry, rotating, rotationState.value,
                     { rotationState.value = it }, viewportState.value, { viewportState.value = it },
                     stringResource(body.nameResource), resume, Modifier.fillMaxSize())
                 else Text(stringResource(R.string.celestial_view_location_needed), Modifier.padding(16.dp), color = Color.White, fontSize = 13.sp)
+                // Sibling overlays receive their own touches; zoom never starts a model drag or resets rotation.
+                SpaceCompassCelestialZoomControls(viewportState.value,
+                    onZoom = { factor -> viewportState.value = viewportState.value.transform(factor) },
+                    modifier = Modifier.align(Alignment.TopStart).padding(4.dp),
+                    enabled = viewGeometry != null || body.usesDeepSkySymbol || body == SpaceCompassCelestialBody.EARTH_CENTER)
                 // Sibling overlays receive their own touches; the model's drag/pinch never intercepts tabs.
                 if (!body.usesDeepSkySymbol && body != SpaceCompassCelestialBody.EARTH_CENTER)
                     SpaceCompassCelestialViewModeSwitch(rotating, actual, spin, { rotating = it },

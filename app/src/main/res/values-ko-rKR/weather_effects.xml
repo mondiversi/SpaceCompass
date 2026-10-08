@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="sky_weather_enable">날씨 표시 켜기</string>
+    <string name="sky_weather_disable">날씨 표시 끄기</string>
+    <string name="sky_weather_disabled">날씨 표시 꺼짐</string>
+</resources>

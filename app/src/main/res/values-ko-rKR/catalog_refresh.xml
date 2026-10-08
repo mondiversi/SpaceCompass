@@ -2,4 +2,5 @@
 <resources>
     <string name="catalog_refresh">데이터 새로고침</string>
     <string name="catalog_refreshing">데이터 업데이트 중…</string>
+    <string name="catalog_refresh_finished">천체 업데이트가 완료되었습니다.</string>
 </resources>

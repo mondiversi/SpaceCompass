@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="pc_info">Info en nieuws</string>
+    <string name="pc_info">Info en credits</string>
     <string name="pc_display_automatic">Automatische schaal</string>
     <string name="pc_info_description">Een astronomisch kompas om hemelobjecten te vinden, hun banen te verkennen en modellen en maanfasen te bekijken.</string>
     <string name="pc_info_earth">Gemaakt voor de aarde: vraag in de ruimte liever een astronaut de weg 🙂</string>
