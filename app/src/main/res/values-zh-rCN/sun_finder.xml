@@ -34,4 +34,6 @@
     <string name="sun_weather_loading">正在更新天气…</string>
     <string name="sun_weather_estimate">估计天气：%1$s</string>
     <string name="sun_weather_privacy">在线天气和地名使用大致位置。打开位置详情会将GPS坐标发送给OpenStreetMap。</string>
+    <string name="pointing_axis_camera">相机轴</string>
+    <string name="pointing_axis_top_edge">手机长轴</string>
 </resources>

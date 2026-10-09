@@ -34,4 +34,6 @@
     <string name="sun_weather_loading">Weer bijwerken…</string>
     <string name="sun_weather_estimate">Geschat weer: %1$s</string>
     <string name="sun_weather_privacy">Online weer en plaatsnamen gebruiken een geschatte locatie. Het openen van positiedetails stuurt GPS-coördinaten naar OpenStreetMap.</string>
+    <string name="pointing_axis_camera">Camera-as</string>
+    <string name="pointing_axis_top_edge">Lengteas van de telefoon</string>
 </resources>

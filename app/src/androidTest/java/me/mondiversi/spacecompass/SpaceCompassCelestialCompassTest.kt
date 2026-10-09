@@ -185,11 +185,16 @@ class SpaceCompassCelestialCompassTest {
         }
         val firstPoint = compose.onNodeWithTag("sun-path-point-0").fetchSemanticsNode().config[
             androidx.compose.ui.semantics.SemanticsProperties.Text]
+        val firstMoment = firstPoint[1].text.substringBefore(" · T")
         repeat(3) {
             compose.runOnIdle { time.longValue += 60_000L }
             compose.onNodeWithTag("sun-path-page").assertIsDisplayed()
-            assertEquals(firstPoint, compose.onNodeWithTag("sun-path-point-0").fetchSemanticsNode().config[
-                androidx.compose.ui.semantics.SemanticsProperties.Text])
+            val updated = compose.onNodeWithTag("sun-path-point-0").fetchSemanticsNode().config[
+                androidx.compose.ui.semantics.SemanticsProperties.Text]
+            // Keep the consulted point and absolute clock frozen; only T± follows the viewed time.
+            assertEquals(firstPoint[0], updated[0])
+            assertEquals(firstMoment, updated[1].text.substringBefore(" · T"))
+            assertNotEquals(firstPoint[1], updated[1])
         }
     }
     @Test fun voyagerWithValidDataHasALiveDistanceButNoPathControlsInPortraitOrWideLayout() {

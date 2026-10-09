@@ -19,7 +19,9 @@ internal data class SpaceCompassPanoramaSnapshot(val timeMs: Long, val latitude:
     val poleNames: Pair<String, String> = "North celestial pole" to "South celestial pole",
     val center: SpaceCompassPanoramaCenter = SpaceCompassPanoramaCenter.SOUTH,
     val observerPointNames: Pair<String, String> = "Earth centre" to "Zenith",
-    val weatherEffectsEnabled: Boolean = true)
+    val weatherEffectsEnabled: Boolean = true,
+    val currentPointName: String = "Current", val currentTime: String? = null,
+    val pointEventNames: Map<SpaceCompassSunPathEvent, String> = spaceCompassPanoramaDefaultEventNames)
 
 internal fun renderSpaceCompassPanorama(snapshot: SpaceCompassPanoramaSnapshot, width: Int = 4096, context: android.content.Context? = null): Bitmap {
     require(width in 512..4096 && snapshot.objects.isNotEmpty())
@@ -133,7 +135,7 @@ internal fun renderSpaceCompassPanorama(snapshot: SpaceCompassPanoramaSnapshot, 
                 observerAltitude = snapshot.altitude)
         else SpaceCompassSkyReferenceDrawing(emptyList(), emptyList())
         // Defer point labels until every orbit is drawn, so other paths cannot cross their text.
-        val pointLabels = mutableListOf<Triple<String, SpaceCompassSunScenePoint, Int>>()
+        val pointLabels = mutableListOf<SpaceCompassPanoramaTimeLabel>()
         val pointMarkers = mutableListOf<Triple<SpaceCompassSunPathPoint, SpaceCompassSunScenePoint, Int>>()
         // Draw every curve before live markers, keeping the selected set frozen throughout export.
         snapshot.objects.forEach { item ->
@@ -190,9 +192,9 @@ internal fun renderSpaceCompassPanorama(snapshot: SpaceCompassPanoramaSnapshot, 
                 val time = snapshot.markerTimes[marker.timeMs] ?: java.time.Instant.ofEpochMilli(marker.timeMs)
                     .atZone(path.zone).toLocalTime().let { "%02d:%02d".format(java.util.Locale.ROOT, it.hour, it.minute) }
                 // Read elevation from this object's marker, not the timestamp shared by other paths.
-                val elevation = formatSpaceCompassPanoramaElevation(marker.position.elevationDegrees, snapshot.formatting)
-                val label = "$time · ${if (marker.position.elevationDegrees > 0 && elevation != "0.0") "+" else ""}$elevation°"
-                pointLabels += Triple(label, p, markerTint)
+                val label = formatSpaceCompassPanoramaPathPointLabel(time, marker, snapshot.formatting, snapshot.pointEventNames)
+                pointLabels += SpaceCompassPanoramaTimeLabel(label, p, markerTint,
+                    marker.events.any { it != SpaceCompassSunPathEvent.HOUR })
             }
         }
         pointMarkers.forEach { (marker, point, tint) ->
@@ -205,9 +207,14 @@ internal fun renderSpaceCompassPanorama(snapshot: SpaceCompassPanoramaSnapshot, 
             }
             centers.forEach { drawSpaceCompassPanoramaEventMarker(canvas, marker.event, it, scale, tint) }
         }
-        pointLabels.forEach { (label, point, tint) ->
-            drawSpaceCompassPanoramaTimeLabel(canvas, label, point, sceneWidth, sceneHeight, scale, tint, occupied)
+        if (snapshot.showPointLabels) observations.forEach { (item, observation) ->
+            val position = observation?.position ?: return@forEach
+            val point = spaceCompassPanoramaPoint(position, sceneWidth.toDouble(), sceneHeight.toDouble(), centerAzimuth)
+                ?: return@forEach
+            pointLabels += spaceCompassPanoramaCurrentLabel(snapshot, position, point,
+                spaceCompassCelestialPathTint(item.body).toArgb(), 38f)
         }
+        drawSpaceCompassPanoramaTimeLabels(canvas, pointLabels, sceneWidth, sceneHeight, scale, occupied)
         drawSpaceCompassSkyReferenceLabels(canvas, referenceDrawing, scale)
         observations.forEach { (item, observation) ->
             val p = observation?.position?.let { spaceCompassPanoramaPoint(it, sceneWidth.toDouble(), sceneHeight.toDouble(), centerAzimuth) } ?: return@forEach

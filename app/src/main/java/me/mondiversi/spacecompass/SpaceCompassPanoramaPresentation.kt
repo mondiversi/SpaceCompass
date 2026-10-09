@@ -49,6 +49,12 @@ internal fun spaceCompassPanoramaPresentation(snapshot: SpaceCompassPanoramaSnap
         SpaceCompassSkyReference.ARCTIC to R.string.sky_reference_arctic,
         SpaceCompassSkyReference.ANTARCTIC to R.string.sky_reference_antarctic).mapValues { resources.getString(it.value) }
     return SpaceCompassPanoramaPresentation(snapshot.copy(objects = objects, formatting = formatting,
+        currentPointName = resources.getString(R.string.celestial_point_current),
+        pointEventNames = mapOf(SpaceCompassSunPathEvent.SUNRISE to R.string.celestial_rise,
+            SpaceCompassSunPathEvent.CULMINATION to R.string.sun_path_culmination,
+            SpaceCompassSunPathEvent.SUNSET to R.string.celestial_set,
+            SpaceCompassSunPathEvent.MINIMUM to R.string.sun_path_minimum).mapValues { resources.getString(it.value) },
+        currentTime = formatSpaceCompassPanoramaExportTime(snapshot.timeMs, zone, formatting),
         cardinalNames = listOf(R.string.panorama_north, R.string.panorama_northeast, R.string.panorama_east,
             R.string.panorama_southeast, R.string.panorama_south, R.string.panorama_southwest,
             R.string.panorama_west, R.string.panorama_northwest).map(resources::getString),

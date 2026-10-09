@@ -34,4 +34,6 @@
     <string name="sun_weather_loading">날씨 업데이트 중…</string>
     <string name="sun_weather_estimate">추정 날씨: %1$s</string>
     <string name="sun_weather_privacy">온라인 날씨와 지명에는 대략적인 위치를 사용합니다. 위치 세부 정보를 열면 GPS 좌표가 OpenStreetMap으로 전송됩니다.</string>
+    <string name="pointing_axis_camera">카메라 축</string>
+    <string name="pointing_axis_top_edge">휴대전화 세로축</string>
 </resources>

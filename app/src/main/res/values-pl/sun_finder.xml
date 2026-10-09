@@ -34,4 +34,6 @@
     <string name="sun_weather_loading">Aktualizowanie pogody…</string>
     <string name="sun_weather_estimate">Szacowana pogoda: %1$s</string>
     <string name="sun_weather_privacy">Pogoda i nazwy miejsc online używają przybliżonej lokalizacji. Otwarcie szczegółów położenia wysyła współrzędne GPS do OpenStreetMap.</string>
+    <string name="pointing_axis_camera">Oś aparatu</string>
+    <string name="pointing_axis_top_edge">Oś podłużna telefonu</string>
 </resources>

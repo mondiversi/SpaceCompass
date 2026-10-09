@@ -1,0 +1,14 @@
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="24dp" android:height="24dp"
+    android:viewportWidth="24" android:viewportHeight="24">
+    <!-- The handset lies flat; perspective and the turn cue distinguish it from landscape UI. -->
+    <path android:fillColor="#00000000" android:strokeColor="#000000"
+        android:strokeWidth="2" android:strokeLineCap="round" android:strokeLineJoin="round"
+        android:pathData="M3.5,13L15.5,6.5Q16.5,6 17.5,6.5L21,8.5Q22.5,9.5 21,10.5L9,17Q8,17.5 7,17L3.5,15Q2,14 3.5,13Z M6,13.5L9,15" />
+    <path android:fillColor="#00000000" android:strokeColor="#000000" android:strokeAlpha="0.65"
+        android:strokeWidth="2" android:strokeLineCap="round" android:strokeLineJoin="round"
+        android:pathData="M2.8,14.3V16.5Q2.8,17 3.5,17.5L7,19.5Q8,20 9,19.5L21,13Q22,12.5 22,11V9.5" />
+    <path android:fillColor="#00000000" android:strokeColor="#000000"
+        android:strokeWidth="2" android:strokeLineCap="round" android:strokeLineJoin="round"
+        android:pathData="M3,8V7.5Q3,3.5 7,3.5H10 M8,1.5L10,3.5L8,5.5" />
+</vector>

@@ -117,7 +117,7 @@ capture timestamps with explicit UTC offsets on all supported versions. Caption 
 and location-disclosure policy remain frozen independently of these EXIF timestamps.
 Composition-observed configuration/resources update preference examples and callbacks
 when locale/theme changes. The initial 1.0 release used display version 1.0 and protocol version 1.0.0.
-Current release 1.2.0 uses the same display/protocol version with code 21; signed
+Current release 1.2.1 uses the same display/protocol version with code 22; signed
 metadata, APK name and tag share that identity.
 
 
@@ -155,3 +155,21 @@ Pack 1.1 is pinned to an exact GitHub release; legacy caches are imported only
 when their byte count and SHA-256 match the current APK. Import uses the same
 atomic publication path as downloads and leaves previous files intact. Remote
 manifests never change the APK's trust policy or image pins.
+
+
+## Pointing reference and capture label layout
+
+`SpaceCompassPointingAxis` derives a virtual view along the phone's physical top
+edge from the display-remapped sensor basis. Camera mode always retains the
+optical axis. The reference choice persists in the existing private preferences;
+changing display rotation never substitutes the phone's short edge.
+`SpaceCompassPointingAxisButton` renders the two physical poses with neutral
+native vectors, and is disabled while the camera is active.
+
+`SpaceCompassDailyPathPointCaption` keeps the point name above its clock and
+relative time. Key events share a theme-aware gray row background. Both camera
+and panoramic captures use `SpaceCompassPanoramaPointLabel` for localized frozen
+current/event text and `SpaceCompassPanoramaLabelLayout` for measured collision
+avoidance. Current and key-event labels are placed before hourly labels; labels
+are omitted when no clear position exists. Leaders are drawn before backgrounds
+and text. Two scaled pixels of the original path color outline each label.

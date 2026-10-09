@@ -132,7 +132,7 @@ internal fun SpaceCompassSunPointingViewport(
                 val noticeTop = if (noticesAtBottom) {
                     // Match the centered notice's real position, including its four-dp outer insets.
                     val noticeInsets = with(density) { 4.dp.roundToPx() } * 2
-                    val rowHeight = maxOf(bottomStartActionsSize.height, bottomActionsSize.height,
+                    val rowHeight = maxOf(bottomActionsSize.height,
                         noticeSize.height + noticeInsets)
                     height - selectedPanelHeight - rowHeight + (rowHeight - noticeSize.height) / 2.0
                 } else padding
@@ -230,8 +230,11 @@ internal fun SpaceCompassSunPointingViewport(
                     Box(Modifier.align(Alignment.Bottom), contentAlignment = Alignment.CenterStart) {
                         bottomStartActions(Modifier.onSizeChanged { bottomStartActionsSize = it })
                     }
-                    Box(Modifier.weight(1f).padding(horizontal = 4.dp,
-                        vertical = if (noticesAtBottom) 4.dp else 0.dp), contentAlignment = Alignment.Center) {
+                    // The leading controls may stack; notices stay centered on the shutter/chevron row.
+                    Box(Modifier.weight(1f).align(Alignment.Bottom)
+                        .heightIn(min = if (noticesAtBottom) with(density) { bottomActionsSize.height.toDp() } else 0.dp)
+                        .padding(horizontal = 4.dp, vertical = if (noticesAtBottom) 4.dp else 0.dp),
+                        contentAlignment = Alignment.Center) {
                         if (noticesAtBottom) SpaceCompassSunStatusNotices(compassWarning, statusMessage, statusActionLabel, onStatusAction,
                             primaryText, secondaryText, backgroundColor,
                             Modifier.onSizeChanged { noticeSize = it }, simulationLabel, onSimulation,

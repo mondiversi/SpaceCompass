@@ -34,4 +34,6 @@
     <string name="sun_weather_loading">Inasasisha hali ya hewa…</string>
     <string name="sun_weather_estimate">Makadirio ya hali ya hewa: %1$s</string>
     <string name="sun_weather_privacy">Hali ya hewa na majina ya maeneo mtandaoni hutumia mahali pa kukadiria. Kufungua maelezo ya mahali hutuma viwianishi vya GPS kwa OpenStreetMap.</string>
+    <string name="pointing_axis_camera">Mhimili wa kamera</string>
+    <string name="pointing_axis_top_edge">Mhimili wa urefu wa simu</string>
 </resources>

@@ -34,4 +34,6 @@
     <string name="sun_weather_loading">עדכון מזג האוויר…</string>
     <string name="sun_weather_estimate">מזג אוויר משוער: %1$s</string>
     <string name="sun_weather_privacy">מזג האוויר ושמות המקומות המקוונים משתמשים במיקום משוער. פתיחת פרטי המיקום שולחת קואורדינטות GPS אל OpenStreetMap.</string>
+    <string name="pointing_axis_camera">ציר המצלמה</string>
+    <string name="pointing_axis_top_edge">ציר האורך של הטלפון</string>
 </resources>

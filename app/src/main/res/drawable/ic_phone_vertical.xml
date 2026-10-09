@@ -1,0 +1,14 @@
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="24dp" android:height="24dp"
+    android:viewportWidth="24" android:viewportHeight="24">
+    <!-- An upright handset in three-quarter view: this depicts pitch, not display rotation. -->
+    <path android:fillColor="#00000000" android:strokeColor="#000000"
+        android:strokeWidth="2" android:strokeLineCap="round" android:strokeLineJoin="round"
+        android:pathData="M4,5Q4,3 6,3H11Q13,3 13,5V19Q13,21 11,21H6Q4,21 4,19Z M7,18H10" />
+    <path android:fillColor="#00000000" android:strokeColor="#000000" android:strokeAlpha="0.65"
+        android:strokeWidth="2" android:strokeLineCap="round" android:strokeLineJoin="round"
+        android:pathData="M13,5L16,7V19L13,21" />
+    <path android:fillColor="#00000000" android:strokeColor="#000000"
+        android:strokeWidth="2" android:strokeLineCap="round" android:strokeLineJoin="round"
+        android:pathData="M17.5,3Q21,3 21,7V9 M19,7L21,9L23,7" />
+</vector>

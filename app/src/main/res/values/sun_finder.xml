@@ -34,4 +34,6 @@
     <string name="sun_weather_loading">Updating weather…</string>
     <string name="sun_weather_estimate">Estimated weather: %1$s</string>
     <string name="sun_weather_privacy">Online weather and estimated place names use an approximate location. Opening position details shares GPS coordinates with OpenStreetMap.</string>
+    <string name="pointing_axis_camera">Camera axis</string>
+    <string name="pointing_axis_top_edge">Phone length axis</string>
 </resources>

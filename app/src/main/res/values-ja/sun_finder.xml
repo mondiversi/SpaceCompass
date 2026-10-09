@@ -34,4 +34,6 @@
     <string name="sun_weather_loading">天気を更新中…</string>
     <string name="sun_weather_estimate">推定天気：%1$s</string>
     <string name="sun_weather_privacy">オンラインの天気と地名にはおおよその位置を使用します。位置の詳細を開くと、GPS座標がOpenStreetMapに送信されます。</string>
+    <string name="pointing_axis_camera">カメラの軸</string>
+    <string name="pointing_axis_top_edge">端末の長軸</string>
 </resources>

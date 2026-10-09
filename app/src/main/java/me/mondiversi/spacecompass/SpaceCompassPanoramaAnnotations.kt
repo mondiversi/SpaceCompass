@@ -36,34 +36,62 @@ internal fun drawSpaceCompassPanoramaCaption(canvas: Canvas, value: String, widt
 }
 
 
-/** Time pills stay near their own orbital point; leader lines make displaced labels unambiguous. */
-internal fun drawSpaceCompassPanoramaTimeLabel(canvas: Canvas, value: String, point: SpaceCompassSunScenePoint,
-    width: Int, height: Int, scale: Float, tint: Int, occupied: MutableList<RectF>): RectF {
+internal data class SpaceCompassPanoramaTimeLabel(val text: String, val point: SpaceCompassSunScenePoint,
+    val tint: Int, val principal: Boolean, val pointRadius: Float = if (principal) 17f else 6f,
+    val current: Boolean = false)
+
+/** Lay out the whole selected set together. Draw leaders first so later lines cannot cross earlier text. */
+internal fun drawSpaceCompassPanoramaTimeLabels(canvas: Canvas, labels: List<SpaceCompassPanoramaTimeLabel>,
+    width: Int, height: Int, scale: Float, occupied: MutableList<RectF>) {
     val text = spaceCompassOrbitTextPaint(23 * scale).apply { textAlign = Paint.Align.LEFT }
-    val labelWidth = text.measureText(value) + 18 * scale
-    val labelHeight = 34 * scale
-    val half = labelWidth / 2
-    val x = point.x.toFloat().coerceIn(half + 4 * scale, width - half - 4 * scale)
-    fun candidate(row: Int, shift: Float): RectF {
-        val cx = (x + shift * scale).coerceIn(half + 4 * scale, width - half - 4 * scale)
-        val top = (point.y.toFloat() + (16 + row * 38) * scale).coerceIn(76 * scale, height - labelHeight - 48 * scale)
-        return RectF(cx - half, top, cx + half, top + labelHeight)
+    val metrics = text.fontMetrics
+    val labelHeight = maxOf(34 * scale, metrics.descent - metrics.ascent + 10 * scale)
+    val obstacles = occupied.mapTo(mutableListOf()) {
+        SpaceCompassSunSceneFrame(it.left.toDouble(), it.top.toDouble(), it.width().toDouble(), it.height().toDouble())
     }
-    val candidates = (0..4).flatMap { row -> listOf(0f, -48f, 48f, -96f, 96f).map { candidate(row, it) } }
-    val bounds = candidates.firstOrNull { c -> occupied.none { RectF.intersects(it, c) } }
-        ?: candidates.minBy { c -> occupied.count { RectF.intersects(it, c) } }
-    occupied += bounds
-    val paint = Paint(Paint.ANTI_ALIAS_FLAG).apply { color = tint; strokeWidth = 1.5f * scale }
-    canvas.drawLine(point.x.toFloat(), point.y.toFloat() + 8 * scale, bounds.centerX(), bounds.top, paint)
-    paint.color = 0xd9101418.toInt() // Near-black with approximately 15% background transparency.
-    canvas.drawRoundRect(bounds, 8 * scale, 8 * scale, paint)
-    paint.color = tint; paint.style = Paint.Style.STROKE; paint.strokeWidth = scale
-    canvas.drawRoundRect(bounds, 8 * scale, 8 * scale, paint)
+    val placed = labels.sortedBy { if (it.current) 0 else if (it.principal) 1 else 2 }.mapNotNull { label ->
+        val labelWidth = text.measureText(label.text) + 18 * scale
+        val layout = spaceCompassPanoramaLabelBounds(label.point, labelWidth.toDouble(), labelHeight.toDouble(),
+            width.toDouble(), height.toDouble(), scale.toDouble(), obstacles, label.pointRadius.toDouble()) ?: return@mapNotNull null
+        obstacles += layout
+        val bounds = RectF(layout.left.toFloat(), layout.top.toFloat(),
+            (layout.left + layout.width).toFloat(), (layout.top + layout.height).toFloat())
+        occupied += bounds
+        label to bounds
+    }
+    val paint = Paint(Paint.ANTI_ALIAS_FLAG)
+    placed.forEach { (label, bounds) ->
+        paint.color = label.tint; paint.strokeWidth = 1.5f * scale
+        // Connect to the nearest edge, whether the pill moved above, below or to a side.
+        val x = label.point.x.toFloat(); val y = label.point.y.toFloat()
+        val targetX = x.coerceIn(bounds.left, bounds.right)
+        val targetY = y.coerceIn(bounds.top, bounds.bottom)
+        val dx = targetX - x; val dy = targetY - y
+        val length = kotlin.math.hypot(dx, dy).coerceAtLeast(1f)
+        val radius = (label.pointRadius + 3) * scale
+        canvas.drawLine(x + dx / length * radius, y + dy / length * radius, targetX, targetY, paint)
+    }
     text.color = Color.WHITE; text.style = Paint.Style.FILL
-    canvas.drawText(value, bounds.left + 9 * scale, bounds.top + 25 * scale, text)
-    return bounds
+    placed.forEach { (label, bounds) ->
+        paint.style = Paint.Style.FILL
+        paint.color = 0xd9101418.toInt() // Near-black with approximately 15% background transparency.
+        canvas.drawRoundRect(bounds, 8 * scale, 8 * scale, paint)
+        paint.color = label.tint; paint.style = Paint.Style.STROKE; paint.strokeWidth = 2f * scale
+        canvas.drawRoundRect(bounds, 8 * scale, 8 * scale, paint)
+        canvas.drawText(label.text, bounds.left + 9 * scale,
+            bounds.top + (labelHeight - metrics.descent - metrics.ascent) / 2, text)
+    }
 }
 
+/** Current markers have a pill even without a daily path, frozen to the capture instant. */
+internal fun spaceCompassPanoramaCurrentLabel(snapshot: SpaceCompassPanoramaSnapshot,
+    position: SpaceCompassSunPosition, point: SpaceCompassSunScenePoint, tint: Int, radius: Float): SpaceCompassPanoramaTimeLabel {
+    val time = snapshot.currentTime ?: formatSpaceCompassPanoramaExportTime(snapshot.timeMs,
+        java.util.TimeZone.getTimeZone("UTC"), snapshot.formatting)
+    val value = formatSpaceCompassPanoramaPointLabel(time, position.elevationDegrees, snapshot.formatting,
+        snapshot.currentPointName)
+    return SpaceCompassPanoramaTimeLabel(value, point, tint, principal = true, pointRadius = radius, current = true)
+}
 
 /** The live orbit's event vocabulary: up/down triangles, culmination diamond and minimum bar. */
 internal fun drawSpaceCompassPanoramaEventMarker(canvas: Canvas, event: SpaceCompassSunPathEvent,

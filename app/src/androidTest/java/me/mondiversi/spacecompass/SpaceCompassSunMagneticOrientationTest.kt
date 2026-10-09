@@ -50,6 +50,11 @@ class SpaceCompassSunMagneticOrientationTest {
                     assertVector(expected.right.trueNorth(declination), actual.right)
                     assertVector(expected.screenUp.trueNorth(declination), actual.screenUp)
                     assertVector(expected.forward.trueNorth(declination), actual.forward)
+                    val virtual = spaceCompassSunViewOrientation(actual, true, false, index)!!
+                    assertVector(physical.right.trueNorth(declination), virtual.right)
+                    assertVector(negative(physical.forward).trueNorth(declination), virtual.screenUp)
+                    assertVector(physical.screenUp.trueNorth(declination), virtual.forward)
+                    assertSame(actual, spaceCompassSunViewOrientation(actual, true, true, index))
                     if (abs(el) < 89.0) {
                         val centered = projectSpaceCompassSun(SpaceCompassSunPosition(wrapSpaceCompassSunDegrees(az + declination), el),
                             actual, 1000.0, 1800.0)

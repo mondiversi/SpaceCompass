@@ -34,4 +34,6 @@
     <string name="sun_weather_loading">Обновление погоды…</string>
     <string name="sun_weather_estimate">Оценка погоды: %1$s</string>
     <string name="sun_weather_privacy">Онлайн-погода и названия мест используют приблизительное положение. Открытие сведений о положении отправляет координаты GPS в OpenStreetMap.</string>
+    <string name="pointing_axis_camera">Ось камеры</string>
+    <string name="pointing_axis_top_edge">Продольная ось телефона</string>
 </resources>

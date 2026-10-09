@@ -34,4 +34,6 @@
     <string name="sun_weather_loading">Aggiornamento meteo…</string>
     <string name="sun_weather_estimate">Meteo stimato: %1$s</string>
     <string name="sun_weather_privacy">Meteo online e nomi dei luoghi usano una posizione approssimata. Aprendo Dettagli posizione, le coordinate GPS vengono inviate a OpenStreetMap.</string>
+    <string name="pointing_axis_camera">Asse fotocamera</string>
+    <string name="pointing_axis_top_edge">Asse lungo del telefono</string>
 </resources>

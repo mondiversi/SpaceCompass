@@ -25,7 +25,7 @@ internal fun renderSpaceCompassCameraPhoto(context: Context, photo: SpaceCompass
         val orientation=attitude?.orientation
         val paint=Paint(Paint.ANTI_ALIAS_FLAG).apply { strokeCap=Paint.Cap.ROUND; strokeJoin=Paint.Join.ROUND }
         val text=spaceCompassOrbitTextPaint(25*scale)
-        val occupied=mutableListOf<RectF>()
+        val occupied=mutableListOf(RectF(0f, 0f, width.toFloat(), SPACE_COMPASS_PANORAMA_HEADER_HEIGHT * scale))
         if (orientation!=null) {
             val horizon=projectSpaceCompassSunGround(orientation,SpaceCompassSunSceneFrame(0.0,0.0,width.toDouble(),height.toDouble()),
                 width.toDouble(),height.toDouble(),perspective)?.horizon
@@ -46,8 +46,16 @@ internal fun renderSpaceCompassCameraPhoto(context: Context, photo: SpaceCompass
             calculateSpaceCompassCelestialObservation(item.body,snapshot.timeMs,snapshot.latitude,snapshot.longitude,
                 snapshot.altitude,snapshot.remote)
         }.getOrNull()?.position }
-        observations.values.filterNotNull().forEach { position -> projection(position)?.let {
+        observations.forEach { (item,position) -> position?.let(::projection)?.let {
             occupied+=RectF(it.x.toFloat()-48*scale,it.y.toFloat()-(if(snapshot.showPointLabels) 70 else 48)*scale,it.x.toFloat()+48*scale,it.y.toFloat()+45*scale)
+            if (snapshot.showPointLabels) {
+                text.textSize=23*scale
+                val half=text.measureText(item.name)/2
+                val x=it.x.toFloat().coerceIn(half+5*scale,width-half-5*scale)
+                val y=(it.y.toFloat()-45*scale).coerceAtLeast(30*scale)
+                val metrics=text.fontMetrics
+                occupied+=RectF(x-half-6*scale,y+metrics.ascent-6*scale,x+half+6*scale,y+metrics.descent+6*scale)
+            }
         } }
         // Keep guide captions below the photograph's header and away from current object images.
         val referenceDrawing = if (snapshot.showSkyReferences && pointing != null && snapshot.observerPositionKnown)
@@ -87,12 +95,25 @@ internal fun renderSpaceCompassCameraPhoto(context: Context, photo: SpaceCompass
                 points+=Triple(marker,SpaceCompassSunScenePoint(it.x,it.y),spaceCompassCelestialPathVisibilityTint(tint,marker.position.elevationDegrees<0).toArgb())
             } }
         } }
-        points.forEach { (marker,point,tint) -> drawSpaceCompassPanoramaEventMarker(canvas,marker.event,point,scale*.7f,tint) }
-        if (snapshot.showPointLabels) points.forEach { (marker,point,tint) ->
-            val time=snapshot.markerTimes[marker.timeMs] ?: java.time.Instant.ofEpochMilli(marker.timeMs)
-                .atZone(java.time.ZoneOffset.UTC).toLocalTime().let { "%02d:%02d".format(java.util.Locale.ROOT,it.hour,it.minute) }
-            val elevation=formatSpaceCompassPanoramaElevation(marker.position.elevationDegrees,snapshot.formatting)
-            drawSpaceCompassPanoramaTimeLabel(canvas,"$time · $elevation°",point,width,height,scale,tint,occupied)
+        points.forEach { (marker,point,tint) ->
+            drawSpaceCompassPanoramaEventMarker(canvas,marker.event,point,scale*.7f,tint)
+            if (marker.events.any { it != SpaceCompassSunPathEvent.HOUR }) {
+                val radius = 17*scale
+                occupied += RectF(point.x.toFloat()-radius, point.y.toFloat()-radius,
+                    point.x.toFloat()+radius, point.y.toFloat()+radius)
+            }
+        }
+        if (snapshot.showPointLabels) {
+            val labels=points.map { (marker,point,tint) ->
+                val time=snapshot.markerTimes[marker.timeMs] ?: java.time.Instant.ofEpochMilli(marker.timeMs)
+                    .atZone(java.time.ZoneOffset.UTC).toLocalTime().let { "%02d:%02d".format(java.util.Locale.ROOT,it.hour,it.minute) }
+                SpaceCompassPanoramaTimeLabel(formatSpaceCompassPanoramaPathPointLabel(time,marker,snapshot.formatting,snapshot.pointEventNames),
+                    point,tint,marker.events.any { it != SpaceCompassSunPathEvent.HOUR })
+            } + observations.mapNotNull { (item,position) -> position?.let(::projection)?.let { p ->
+                spaceCompassPanoramaCurrentLabel(snapshot, position, SpaceCompassSunScenePoint(p.x,p.y),
+                    spaceCompassCelestialPathTint(item.body).toArgb(), 35f)
+            } }
+            drawSpaceCompassPanoramaTimeLabels(canvas,labels,width,height,scale,occupied)
         }
         paint.pathEffect=null
         drawSpaceCompassSkyReferenceLabels(canvas, referenceDrawing, scale)

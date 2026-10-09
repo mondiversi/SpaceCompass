@@ -34,4 +34,6 @@
     <string name="sun_weather_loading">به‌روزرسانی آب‌وهوا…</string>
     <string name="sun_weather_estimate">آب‌وهوای تخمینی: %1$s</string>
     <string name="sun_weather_privacy">آب‌وهوا و نام مکان‌ها در اینترنت از موقعیت تقریبی استفاده می‌کنند. باز کردن جزئیات موقعیت، مختصات GPS را به OpenStreetMap می‌فرستد.</string>
+    <string name="pointing_axis_camera">محور دوربین</string>
+    <string name="pointing_axis_top_edge">محور طولی تلفن</string>
 </resources>

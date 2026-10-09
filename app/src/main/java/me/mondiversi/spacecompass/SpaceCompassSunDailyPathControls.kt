@@ -114,10 +114,15 @@ internal fun rememberSpaceCompassSunPathLabels(path: SpaceCompassSunDailyPath): 
 /** Keep this host outside conditional viewport/layout branches and asynchronous path keys. */
 @Composable
 internal fun SpaceCompassSunDailyPathPage(
-    state: SpaceCompassSunDailyPathUiState, primaryText: Color, secondaryText: Color, backgroundColor: Color
+    state: SpaceCompassSunDailyPathUiState, primaryText: Color, secondaryText: Color, backgroundColor: Color,
+    nowMs: Long = System.currentTimeMillis()
 ) {
     val path = state.menuPath ?: return
     val labels = rememberSpaceCompassSunPathLabels(path)
+    val currentName = stringResource(R.string.celestial_current_position)
+    val eventBackground = spaceCompassSettingsCardColor()
+    val countdownLocale = if (LocalSpaceCompassNumericFormat.current == SpaceCompassNumericFormat.SYSTEM)
+        LocalSpaceCompassDeviceLocale.current else java.util.Locale.ROOT
     val entries = remember(path, state.menuCurrentPoint) { spaceCompassDailyPathListEntries(path, state.menuCurrentPoint) }
     val azimuthLabel = spaceCompassSunDataRow(stringResource(R.string.celestial_point_azimuth,
         SPACE_COMPASS_SUN_DATA_MARKER), "", "").label
@@ -170,9 +175,13 @@ internal fun SpaceCompassSunDailyPathPage(
                     angleHeading(true)
                     path.issPass.forEach { point ->
                         // Informational rows, not points on the current orbit (the pass may be tomorrow).
-                        Row(Modifier.fillMaxWidth().padding(horizontal = 8.dp, vertical = 6.dp).testTag("iss-pass-${point.event.name}"),
+                        Row(Modifier.fillMaxWidth().clip(RoundedCornerShape(16.dp))
+                            .background(if (point.events.any { it != SpaceCompassSunPathEvent.HOUR }) eventBackground else Color.Transparent)
+                            .padding(horizontal = 8.dp, vertical = 6.dp).testTag("iss-pass-${point.event.name}"),
                             verticalAlignment = Alignment.CenterVertically, horizontalArrangement = Arrangement.spacedBy(8.dp)) {
-                            Text(labels.point(point), Modifier.weight(1f), color = primaryText, fontSize = 12.sp)
+                            SpaceCompassDailyPathPointCaption(labels.name(point), labels.moment(point),
+                                formatSpaceCompassPointCountdown(point.timeMs, nowMs, countdownLocale),
+                                primaryText, secondaryText, true, Modifier.weight(1f))
                             angleValues(point)
                         }
                     }
@@ -185,6 +194,8 @@ internal fun SpaceCompassSunDailyPathPage(
                     val point = entry.point
                     val pointId = entry.markerIndex?.toString() ?: "current"
                     Row(Modifier.fillMaxWidth().heightIn(min = 48.dp).clip(RoundedCornerShape(16.dp))
+                        .background(if (entry.isCurrent || point.events.any { it != SpaceCompassSunPathEvent.HOUR })
+                            eventBackground else Color.Transparent)
                         .clickable {
                             if (entry.isCurrent) state.selectCurrent(path.body, point) else state.select(path, point)
                             state.closeMenu()
@@ -196,10 +207,10 @@ internal fun SpaceCompassSunDailyPathPage(
                         if (path.body == SpaceCompassCelestialBody.MOON) point.moonPhase?.let { phase ->
                             SpaceCompassMoonPhaseIcon(phase, primaryText, Modifier.testTag("moon-phase-$pointId"))
                         }
-                        Text(if (entry.isCurrent) labels.current(point) else labels.point(point),
-                            Modifier.weight(1f), color = primaryText, fontSize = 12.sp, lineHeight = 15.sp,
-                            fontWeight = if (!entry.isCurrent && point.event == SpaceCompassSunPathEvent.HOUR)
-                                FontWeight.Normal else FontWeight.Bold)
+                        SpaceCompassDailyPathPointCaption(if (entry.isCurrent) currentName else labels.name(point),
+                            labels.moment(point), formatSpaceCompassPointCountdown(point.timeMs, nowMs, countdownLocale),
+                            primaryText, secondaryText, entry.isCurrent || point.event != SpaceCompassSunPathEvent.HOUR,
+                            Modifier.weight(1f))
                         angleValues(point)
                     }
                 }

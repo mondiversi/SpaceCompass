@@ -21,6 +21,7 @@ import androidx.compose.ui.layout.layout
 import androidx.compose.ui.layout.onGloballyPositioned
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.platform.LocalDensity
+import androidx.compose.ui.platform.LocalView
 import androidx.compose.ui.platform.testTag
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
@@ -209,6 +210,10 @@ internal fun SpaceCompassSunFinderContent(
     var showWeather by remember(scenePreferences) {
         mutableStateOf(scenePreferences.getBoolean(SPACE_COMPASS_WEATHER_VISIBLE_KEY, SPACE_COMPASS_WEATHER_VISIBLE_DEFAULT))
     }
+    var pointingTopEdge by remember(scenePreferences) {
+        mutableStateOf(scenePreferences.getBoolean(SPACE_COMPASS_POINTING_TOP_EDGE_KEY, false))
+    }
+    val deviceView = LocalView.current
     var cameraPerspective by remember { mutableStateOf<SpaceCompassPerspective?>(null) }
     var cameraCapture by remember { mutableStateOf<SpaceCompassCameraCapture?>(null) }
     val savedCameraZoom = remember(scenePreferences) {
@@ -277,7 +282,7 @@ internal fun SpaceCompassSunFinderContent(
         return
     }
     if (dailyPathUiState.menuPath != null) {
-        SpaceCompassSunDailyPathPage(dailyPathUiState, primaryText, secondaryText, backgroundColor)
+        SpaceCompassSunDailyPathPage(dailyPathUiState, primaryText, secondaryText, backgroundColor, nowMs = timeMs)
         return
     }
     // Catalogue calculations are not visibility: unchecked live positions must not enter the scene.
@@ -317,7 +322,8 @@ internal fun SpaceCompassSunFinderContent(
             stringResource(R.string.celestial_satellite_old, bodyName)
         else -> null
     }
-    val orientation = readings.orientation
+    val orientation = spaceCompassSunViewOrientation(readings.orientation, pointingTopEdge, cameraEnabled,
+        deviceView.display?.rotation ?: 0)
     val pointingOrientation = spaceCompassSunTrustedPointingOrientation(orientation, readings.compassUsable)
     val height = formatSpaceCompassCelestialAltitude(altitude,
         fix?.takeIf { it.hasVerticalAccuracy() }?.verticalAccuracyMeters?.toDouble(), numeric, units.feet) ?: "—"
@@ -472,10 +478,17 @@ internal fun SpaceCompassSunFinderContent(
                 observerLatitude = fix?.latitude, showSkyReferences = showSkyReferences,
                 observerAltitude = fix?.takeIf { it.hasAltitude() }?.altitude ?: 0.0,
                 bottomStartActions = { modifier ->
-                    SpaceCompassMainDetailsToggleButton(detailsExpanded, {
-                        detailsExpanded = !detailsExpanded
-                        scenePreferences.edit().putBoolean(SPACE_COMPASS_MAIN_DETAILS_KEY, detailsExpanded).apply()
-                    }, primaryText, backgroundColor, modifier.padding(4.dp), landscape = landscape)
+                    Column(modifier.padding(4.dp), horizontalAlignment = Alignment.CenterHorizontally,
+                        verticalArrangement = Arrangement.spacedBy(6.dp)) {
+                        SpaceCompassPointingAxisButton(pointingTopEdge && !cameraEnabled, { topEdge ->
+                            pointingTopEdge = topEdge
+                            scenePreferences.edit().putBoolean(SPACE_COMPASS_POINTING_TOP_EDGE_KEY, topEdge).apply()
+                        }, primaryText, backgroundColor, enabled = !cameraEnabled)
+                        SpaceCompassMainDetailsToggleButton(detailsExpanded, {
+                            detailsExpanded = !detailsExpanded
+                            scenePreferences.edit().putBoolean(SPACE_COMPASS_MAIN_DETAILS_KEY, detailsExpanded).apply()
+                        }, primaryText, backgroundColor, landscape = landscape)
+                    }
                 },
                 bottomActions = { modifier ->
                     Row(modifier.padding(4.dp).testTag("celestial-capture-controls"),

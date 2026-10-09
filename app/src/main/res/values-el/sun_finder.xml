@@ -34,4 +34,6 @@
     <string name="sun_weather_loading">Ενημέρωση καιρού…</string>
     <string name="sun_weather_estimate">Εκτιμώμενος καιρός: %1$s</string>
     <string name="sun_weather_privacy">Ο διαδικτυακός καιρός και τα ονόματα τοποθεσιών χρησιμοποιούν κατά προσέγγιση θέση. Το άνοιγμα των λεπτομερειών θέσης στέλνει συντεταγμένες GPS στο OpenStreetMap.</string>
+    <string name="pointing_axis_camera">Άξονας κάμερας</string>
+    <string name="pointing_axis_top_edge">Διαμήκης άξονας τηλεφώνου</string>
 </resources>

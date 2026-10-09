@@ -1,5 +1,14 @@
 # Changelog
 
+## 1.2.1 — 2026-10-09
+
+Maintenance release. The in-app news summaries remain unchanged.
+
+- Compact two-line daily-path captions and theme-aware backgrounds for key events.
+- Frozen current/event labels in both capture modes, collision avoidance and clearer colored borders.
+- A saved choice between camera-axis and physical phone-length pointing, with camera mode retaining its optical alignment.
+
+
 ## 1.2.0 — 2026-10-08
 
 Space Compass 1.2.0 expands the catalog to 35 objects and improves the live sky, daily paths and capture controls.

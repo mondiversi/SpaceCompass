@@ -68,7 +68,7 @@ internal data class SpaceCompassSunVector(val east: Double, val north: Double, v
     }
 }
 
-/** Screen axes in east/north/up, looking through the BACK of the phone, not along its top edge. */
+/** View axes in east/north/up. Sensor poses use the rear camera; virtual views may use the top edge. */
 internal data class SpaceCompassSunOrientation(
     val right: SpaceCompassSunVector, val screenUp: SpaceCompassSunVector, val forward: SpaceCompassSunVector
 ) {

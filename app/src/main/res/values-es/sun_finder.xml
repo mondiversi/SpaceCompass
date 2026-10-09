@@ -34,4 +34,6 @@
     <string name="sun_weather_loading">Actualizando meteorología…</string>
     <string name="sun_weather_estimate">Tiempo estimado: %1$s</string>
     <string name="sun_weather_privacy">El tiempo y los nombres de lugares en línea usan una ubicación aproximada. Abrir los detalles de ubicación envía las coordenadas GPS a OpenStreetMap.</string>
+    <string name="pointing_axis_camera">Eje de la cámara</string>
+    <string name="pointing_axis_top_edge">Eje longitudinal del teléfono</string>
 </resources>

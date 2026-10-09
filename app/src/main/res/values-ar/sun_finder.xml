@@ -34,4 +34,6 @@
     <string name="sun_weather_loading">جارٍ تحديث الطقس…</string>
     <string name="sun_weather_estimate">الطقس التقديري: %1$s</string>
     <string name="sun_weather_privacy">يستخدم الطقس وأسماء الأماكن على الإنترنت موقعًا تقريبيًا. فتح تفاصيل الموقع يرسل إحداثيات GPS إلى OpenStreetMap.</string>
+    <string name="pointing_axis_camera">محور الكاميرا</string>
+    <string name="pointing_axis_top_edge">المحور الطولي للهاتف</string>
 </resources>
