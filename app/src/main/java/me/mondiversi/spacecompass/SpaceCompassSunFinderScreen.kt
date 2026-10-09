@@ -303,10 +303,20 @@ internal fun SpaceCompassSunFinderContent(
         sun == null -> R.string.sun_finder_location_searching
         !readings.compassAvailable -> R.string.sun_finder_compass_missing
         readings.orientation == null -> R.string.sun_finder_orientation_searching
-        !readings.compassReliable -> if (readings.compassUsable) R.string.pc_compass_approximate else R.string.sun_finder_compass_accuracy
+        !readings.compassReliable -> when (readings.compassIssue) {
+            SpaceCompassSunCompassIssue.MAGNETIC_INTERFERENCE -> R.string.sun_finder_compass_accuracy
+            SpaceCompassSunCompassIssue.CALIBRATION -> R.string.sun_finder_compass_calibrate
+            SpaceCompassSunCompassIssue.REDUCED_ACCURACY -> R.string.pc_compass_approximate
+            else -> R.string.sun_finder_orientation_searching
+        }
         hasActiveBody && target == null -> if (remote.loading) R.string.celestial_loading else R.string.celestial_unavailable
         body.isEarthSatellite && remote.satelliteOrbit(body)?.let { timeMs - it.epochMs > SPACE_COMPASS_ISS_WARNING_AGE_MS } == true -> R.string.celestial_satellite_old
         else -> null
+    }
+    val isCompassMessage = when (message) {
+        R.string.sun_finder_compass_accuracy, R.string.sun_finder_compass_calibrate,
+        R.string.pc_compass_approximate, R.string.sun_finder_orientation_searching -> true
+        else -> false
     }
     val messageText = message?.let {
         if (it == R.string.celestial_unavailable || it == R.string.celestial_satellite_old) stringResource(it, bodyName)
@@ -464,11 +474,9 @@ internal fun SpaceCompassSunFinderContent(
                 Modifier.fillMaxSize().then(pointingPlacement), skyDescription, dailyPathUiState, rising,
                 readings.compassUsable, dailyPath.takeIf { hasActiveBody }, primaryText, secondaryText, backgroundColor, body, timeMs,
                 showSelectedPanel = !landscape, selectedPanelExpanded = detailsExpanded, onVisualize = { showViewer = true },
-                compassWarning = messageText.takeIf { message == R.string.sun_finder_compass_accuracy || message == R.string.pc_compass_approximate },
-                compassCalibrationRequired = message == R.string.sun_finder_compass_accuracy,
+                compassWarning = messageText.takeIf { isCompassMessage },
                 compassAccurate = readings.compassReliable,
-                statusMessage = remoteMessage ?: messageText.takeUnless {
-                    message == R.string.sun_finder_compass_accuracy || message == R.string.pc_compass_approximate },
+                statusMessage = remoteMessage ?: messageText.takeUnless { isCompassMessage },
                 statusActionLabel = if (hasActiveBody && target == null && sun != null && !remote.loading)
                     stringResource(R.string.sun_finder_retry) else locationActionLabel,
                 onStatusAction = if (hasActiveBody && target == null && sun != null) onRemoteRetry else onLocationAction,
@@ -495,7 +503,7 @@ internal fun SpaceCompassSunFinderContent(
                         verticalAlignment = Alignment.CenterVertically,
                         horizontalArrangement = Arrangement.spacedBy(8.dp)) {
                         SpaceCompassCaptureButton(panorama.capture, !panorama.busy && (!cameraEnabled || cameraCapture != null),
-                            primaryText, backgroundColor)
+                            primaryText, backgroundColor, cameraEnabled = cameraEnabled)
                     }
                 },
                 topStartActions = { modifier ->

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="celestial_satellite_old">%1$sの軌道データは24時間以上前のものです。精度が低下する可能性があります。</string>
+    <string name="celestial_satellite_old">%1$sの軌道データは24時間以上前のものです。精度が低下する可能性があります</string>
     <string name="celestial_starlink_note">STARLINK-40083 · NORAD 100855 · 2026-225A。軌道情報はCelesTrakによるものです。模式モデルであり、衛星の実際の姿勢や寸法は不明です。\nCelesTrak / Satcat · Space-Track</string>
 </resources>

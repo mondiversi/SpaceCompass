@@ -97,7 +97,7 @@ class SpaceCompassStatusNoticesUiTest {
                             retries++
                             message.value = "Loading"
                             action.value = null
-                        }, Color.White, Color.LightGray, Color(0xFF101418))
+                        }, Color(0xFF101418))
                     }
                 }
             }

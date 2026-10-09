@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="panorama_export" formatted="false">ייצוא</string>
+    <string name="panorama_export_title" formatted="false">ייצוא תמונה</string>
     <string name="panorama_export_profile" formatted="false">פורמט נתונים</string>
     <string name="panorama_export_selected" formatted="false">השפה והתבניות שהוגדרו</string>
     <string name="panorama_export_international" formatted="false">מדעי בינלאומי</string>

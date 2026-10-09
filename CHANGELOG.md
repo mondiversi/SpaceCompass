@@ -1,5 +1,14 @@
 # Changelog
 
+## 1.2.3 — 2026-10-09
+
+- Distinguish compass calibration, magnetic interference, reduced precision and recovering readings.
+- Consistent theme-aware orange notices with no trailing full stops/ellipses across twenty languages.
+- Clearer localized 0°/90° pointing-reference glyphs with improved optical alignment.
+- Panorama/shutter capture glyph follows camera mode; export chooser says Export image.
+- Retain the existing in-app news summaries for this maintenance release.
+
+
 ## 1.2.2 — 2026-10-09
 
 - Original meditative space music available offline, enabled initially at 20% volume.

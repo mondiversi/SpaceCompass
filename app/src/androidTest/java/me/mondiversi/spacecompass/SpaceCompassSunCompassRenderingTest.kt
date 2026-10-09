@@ -79,7 +79,7 @@ class SpaceCompassSunCompassRenderingTest {
                 MaterialTheme {
                     val colors = MaterialTheme.colorScheme
                     SpaceCompassSunFinderContent(SpaceCompassSunFinderReadings(fix, SpaceCompassSunLocationStatus.READY,
-                        facing(224.7, if (verticalAxis.value) -89.5 else -4.4, 180.0), true, reliable.value),
+                        facing(224.7, if (verticalAxis.value) -89.5 else -4.4, 180.0), true, reliable.value, compassIssue = SpaceCompassSunCompassIssue.MAGNETIC_INTERFERENCE),
                         timestamp, colors.onSurface, colors.onSurfaceVariant, colors.background)
                 }
             }
@@ -88,7 +88,7 @@ class SpaceCompassSunCompassRenderingTest {
         compose.onNodeWithTag("sun-finder-compass").assertIsDisplayed()
         compose.onNodeWithContentDescription("Direzione: —").assertIsDisplayed()
         compose.onNodeWithTag("sun-finder-compass").assertContentDescriptionEquals(
-            resources.getString(R.string.sun_finder_compass_accuracy))
+            resources.getString(R.string.pc_compass_approximate))
         compose.runOnIdle { verticalAxis.value = true }
         compose.onNodeWithContentDescription("Direzione: —").assertIsDisplayed()
         compose.onNodeWithText(resources.getString(R.string.sun_finder_compass_accuracy)).assertIsDisplayed()

@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="panorama_export" formatted="false">导出</string>
+    <string name="panorama_export_title" formatted="false">导出图像</string>
     <string name="panorama_export_profile" formatted="false">数据格式</string>
     <string name="panorama_export_selected" formatted="false">已设置的语言和格式</string>
     <string name="panorama_export_international" formatted="false">国际科学格式</string>

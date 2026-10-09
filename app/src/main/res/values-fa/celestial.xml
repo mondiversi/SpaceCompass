@@ -22,8 +22,8 @@
     <string name="celestial_azimuth">سمت (%1$s): %2$s</string>
     <string name="celestial_elevation">ارتفاع (%1$s): %2$s</string>
     <string name="celestial_below">%1$s زیر افق است</string>
-    <string name="celestial_loading">به‌روزرسانی داده‌های مداری…</string>
-    <string name="celestial_unavailable">داده‌های %1$s موجود نیست. برای به‌روزرسانی به اینترنت نیاز است.</string>
+    <string name="celestial_loading">به‌روزرسانی داده‌های مداری</string>
+    <string name="celestial_unavailable">داده‌های %1$s موجود نیست. برای به‌روزرسانی به اینترنت نیاز است</string>
     <string name="celestial_iss_old">داده‌های مدار ISS بیش از ۲۴ ساعت قدمت دارد: دقت ممکن است کاهش یابد.</string>
     <string name="celestial_iss_note">یک گردش کامل پیرامون زمان کنونی، حتی زیر افق، با 24 نقطه منظم به‌علاوه طلوع، اوج و غروب. جزئیات گذر مربوط به گذر کنونی یا بعدی در 24 ساعت است؛ دیده‌شدن تضمین نمی‌شود.\nCelesTrak / Satcat · Space-Track</string>
     <string name="celestial_model_note">موقعیت‌ها و فاصله‌ها محاسبه شده‌اند؛ جهت‌یابی به دقت قطب‌نما وابسته است. ISS داده‌های مداری تازه نیاز دارد. سدنا و وویجر از مسیرهای پیش‌بینی‌شده NASA/JPL استفاده می‌کنند، نه داده‌های زنده تله‌متری.</string>

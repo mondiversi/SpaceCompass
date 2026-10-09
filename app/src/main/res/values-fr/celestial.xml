@@ -22,8 +22,8 @@
     <string name="celestial_azimuth">Azimut (%1$s) : %2$s</string>
     <string name="celestial_elevation">Hauteur (%1$s) : %2$s</string>
     <string name="celestial_below">%1$s sous l’horizon</string>
-    <string name="celestial_loading">Actualisation des données orbitales…</string>
-    <string name="celestial_unavailable">Données de %1$s indisponibles. Une connexion Internet est nécessaire pour les actualiser.</string>
+    <string name="celestial_loading">Actualisation des données orbitales</string>
+    <string name="celestial_unavailable">Données de %1$s indisponibles. Une connexion Internet est nécessaire pour les actualiser</string>
     <string name="celestial_iss_old">Données orbitales ISS de plus de 24 heures : précision possiblement réduite.</string>
     <string name="celestial_iss_note">Une révolution complète autour de l’heure actuelle, même sous l’horizon, avec 24 points réguliers plus le lever, la culmination et le coucher. Les détails concernent le passage actuel ou suivant dans les 24 heures ; la visibilité n’est pas garantie.\nCelesTrak / Satcat · Space-Track</string>
     <string name="celestial_model_note">Positions et distances calculées ; le pointage dépend de la précision de la boussole. ISS nécessite des données orbitales récentes. Sedna et Voyager utilisent les trajectoires prévues NASA/JPL, et non une télémétrie en direct.</string>

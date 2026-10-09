@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="panorama_export" formatted="false">تصدير</string>
+    <string name="panorama_export_title" formatted="false">تصدير الصورة</string>
     <string name="panorama_export_profile" formatted="false">تنسيق البيانات</string>
     <string name="panorama_export_selected" formatted="false">اللغة والتنسيقات المضبوطة</string>
     <string name="panorama_export_international" formatted="false">علمي دولي</string>

@@ -80,7 +80,7 @@ internal fun SpaceCompassSunPointingViewport(
     simulationLabel: String? = null, onSimulation: () -> Unit = {},
     perspective: SpaceCompassPerspective? = null, topActionsWidth: androidx.compose.ui.unit.Dp = 62.dp,
     observerLatitude: Double? = null, showSkyReferences: Boolean = SPACE_COMPASS_SKY_REFERENCES_DEFAULT,
-    observerAltitude: Double = 0.0, compassCalibrationRequired: Boolean = false,
+    observerAltitude: Double = 0.0,
     bottomStartActions: @Composable (Modifier) -> Unit = {},
     bottomActions: @Composable (Modifier) -> Unit = {},
     noticesAtBottom: Boolean = false,
@@ -236,9 +236,8 @@ internal fun SpaceCompassSunPointingViewport(
                         .padding(horizontal = 4.dp, vertical = if (noticesAtBottom) 4.dp else 0.dp),
                         contentAlignment = Alignment.Center) {
                         if (noticesAtBottom) SpaceCompassSunStatusNotices(compassWarning, statusMessage, statusActionLabel, onStatusAction,
-                            primaryText, secondaryText, backgroundColor,
-                            Modifier.onSizeChanged { noticeSize = it }, simulationLabel, onSimulation,
-                            compassCalibrationRequired = compassCalibrationRequired)
+                            backgroundColor,
+                            Modifier.onSizeChanged { noticeSize = it }, simulationLabel, onSimulation)
                     }
                     Box(Modifier.align(Alignment.Bottom)) {
                         bottomActions(Modifier.onSizeChanged { bottomActionsSize = it })
@@ -254,10 +253,9 @@ internal fun SpaceCompassSunPointingViewport(
                 }
             }
             if (!noticesAtBottom) SpaceCompassSunStatusNotices(compassWarning, statusMessage, statusActionLabel, onStatusAction,
-                primaryText, secondaryText, backgroundColor,
+                backgroundColor,
                 Modifier.align(Alignment.TopStart).padding(start = 4.dp, end = topActionsWidth, top = 4.dp)
-                    .onSizeChanged { noticeSize = it }, simulationLabel, onSimulation,
-                compassCalibrationRequired = compassCalibrationRequired)
+                    .onSizeChanged { noticeSize = it }, simulationLabel, onSimulation)
         }
     }
 }

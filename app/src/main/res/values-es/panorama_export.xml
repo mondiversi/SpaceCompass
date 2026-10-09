@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="panorama_export" formatted="false">Exportar</string>
+    <string name="panorama_export_title" formatted="false">Exportar imagen</string>
     <string name="panorama_export_profile" formatted="false">Formato de datos</string>
     <string name="panorama_export_selected" formatted="false">Idioma y formatos configurados</string>
     <string name="panorama_export_international" formatted="false">Científico internacional</string>

@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="panorama_export" formatted="false">エクスポート</string>
+    <string name="panorama_export_title" formatted="false">画像をエクスポート</string>
     <string name="panorama_export_profile" formatted="false">データ形式</string>
     <string name="panorama_export_selected" formatted="false">設定済みの言語と形式</string>
     <string name="panorama_export_international" formatted="false">国際科学形式</string>

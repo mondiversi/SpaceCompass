@@ -15,7 +15,7 @@ import androidx.compose.ui.unit.dp
 
 @Composable
 internal fun SpaceCompassCaptureButton(onCapture: () -> Unit, enabled: Boolean, color: Color, background: Color,
-    modifier: Modifier = Modifier) {
+    modifier: Modifier = Modifier, cameraEnabled: Boolean = false) {
     val label=stringResource(R.string.panorama_capture)
     val haptics = rememberSpaceCompassHapticController()
     // Share one activation path for touch, keyboard and accessibility without double feedback.
@@ -32,7 +32,7 @@ internal fun SpaceCompassCaptureButton(onCapture: () -> Unit, enabled: Boolean, 
             border=BorderStroke(1.dp,color.copy(alpha=.35f)),shadowElevation=3.dp) {
             Box(contentAlignment = Alignment.Center) {
                 SpaceCompassSettingsMenuIcon(
-                    "capture",
+                    if (cameraEnabled) "capture" else "panorama",
                     color.copy(alpha = if (enabled) 1f else .38f),
                     modifier = Modifier.size(26.dp)
                 )

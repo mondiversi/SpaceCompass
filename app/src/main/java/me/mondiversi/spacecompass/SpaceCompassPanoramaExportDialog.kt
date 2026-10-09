@@ -25,7 +25,7 @@ internal fun SpaceCompassPanoramaExportDialog(mode: SpaceCompassPanoramaExportMo
     onGallery: () -> Unit, onDocument: () -> Unit, onShare: () -> Unit, onDismiss: () -> Unit) {
     val foreground = spaceCompassDialogContentColor()
     SpaceCompassAlertDialog(onDismissRequest = onDismiss, confirmButton = null,
-        title = { Text(stringResource(R.string.panorama_export)) }, text = {
+        title = { Text(stringResource(R.string.panorama_export_title)) }, text = {
             Column(Modifier.fillMaxWidth(), verticalArrangement = Arrangement.spacedBy(6.dp)) {
                 Text(stringResource(R.string.panorama_export_profile), color = foreground,
                     fontSize = 15.sp, fontWeight = FontWeight.Bold)

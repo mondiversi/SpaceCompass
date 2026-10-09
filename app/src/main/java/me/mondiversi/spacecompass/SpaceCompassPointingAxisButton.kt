@@ -5,7 +5,7 @@ import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.shape.CircleShape
-import androidx.compose.material3.Icon
+import androidx.compose.material3.LocalContentColor
 import androidx.compose.material3.IconButtonDefaults
 import androidx.compose.material3.IconToggleButton
 import androidx.compose.material3.Surface
@@ -14,7 +14,6 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.platform.testTag
-import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
 
@@ -30,9 +29,9 @@ internal fun SpaceCompassPointingAxisButton(checked: Boolean, onCheckedChange: (
                 IconToggleButton(checked, onCheckedChange, enabled = enabled, modifier = Modifier.fillMaxSize().testTag("toggle-pointing-axis"),
                     colors = IconButtonDefaults.iconToggleButtonColors(contentColor = color, checkedContentColor = color,
                         disabledContentColor = color.copy(alpha = .38f))) {
-                    Icon(painterResource(if (checked) R.drawable.ic_phone_horizontal else R.drawable.ic_phone_vertical),
+                    SpaceCompassPointingAxisGlyph(checked,
                         stringResource(if (checked) R.string.pointing_axis_top_edge else R.string.pointing_axis_camera),
-                        Modifier.size(26.dp))
+                        LocalContentColor.current, Modifier.size(30.dp))
                 }
             }
         }

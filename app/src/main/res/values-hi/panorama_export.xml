@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="panorama_export" formatted="false">निर्यात करें</string>
+    <string name="panorama_export_title" formatted="false">छवि निर्यात करें</string>
     <string name="panorama_export_profile" formatted="false">डेटा प्रारूप</string>
     <string name="panorama_export_selected" formatted="false">सेट की गई भाषा और प्रारूप</string>
     <string name="panorama_export_international" formatted="false">अंतरराष्ट्रीय वैज्ञानिक</string>

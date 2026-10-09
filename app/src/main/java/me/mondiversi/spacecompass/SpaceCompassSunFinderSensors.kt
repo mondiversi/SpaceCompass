@@ -29,7 +29,12 @@ internal data class SpaceCompassSunFinderReadings(
     val compassAvailable: Boolean = true,
     val compassReliable: Boolean = false,
     val compassUsable: Boolean = compassReliable,
-    val cameraAttitude: SpaceCompassCameraAttitude? = null
+    val cameraAttitude: SpaceCompassCameraAttitude? = null,
+    val compassIssue: SpaceCompassSunCompassIssue = when {
+        compassReliable -> SpaceCompassSunCompassIssue.NONE
+        compassUsable -> SpaceCompassSunCompassIssue.REDUCED_ACCURACY
+        else -> SpaceCompassSunCompassIssue.WAITING
+    }
 )
 
 internal const val SPACE_COMPASS_SUN_LOCATION_MAX_AGE_MS = 15 * 60_000L
@@ -106,6 +111,10 @@ internal fun rememberSpaceCompassSunFinderReadings(permissionGranted: Boolean, p
             @Deprecated("Required by older Android versions")
             override fun onStatusChanged(provider: String?, status: Int, extras: Bundle?) = Unit
         }
+        fun sensorReadingsFresh(now: Long): Boolean {
+            fun fresh(timestamp: Long) = timestamp > 0 && now - timestamp in 0..500_000_000L
+            return fresh(gravityTime) && fresh(magneticTime) && abs(gravityTime - magneticTime) <= 200_000_000L
+        }
         val sensorListener = object : SensorEventListener {
             override fun onAccuracyChanged(sensor: Sensor, accuracy: Int) {
                 if (sensor.type == Sensor.TYPE_MAGNETIC_FIELD) {
@@ -113,7 +122,12 @@ internal fun rememberSpaceCompassSunFinderReadings(permissionGranted: Boolean, p
                     // A callback alone cannot establish fresh, plausible magnetic readings.
                     if (accuracy < SensorManager.SENSOR_STATUS_ACCURACY_LOW) {
                         recovery.reset()
-                        readings = readings.copy(compassReliable = false, compassUsable = false)
+                        val field = magnetic?.takeIf { it.size >= 3 }?.let { values ->
+                            sqrt(values.take(3).sumOf { it.toDouble().pow(2) })
+                        } ?: Double.NaN
+                        readings = readings.copy(compassReliable = false, compassUsable = false,
+                            compassIssue = spaceCompassSunCompassIssue(accuracy, field, expectedFieldMicrotesla,
+                                sensorReadingsFresh(SystemClock.elapsedRealtimeNanos()), recovered = false))
                     }
                 }
             }
@@ -145,7 +159,8 @@ internal fun rememberSpaceCompassSunFinderReadings(permissionGranted: Boolean, p
                     !SensorManager.getRotationMatrix(matrix, null, g, m)) {
                     recovery.reset()
                     smoothed = null
-                    readings = readings.copy(orientation = null, compassReliable = false, compassUsable = false, cameraAttitude = null)
+                    readings = readings.copy(orientation = null, compassReliable = false, compassUsable = false,
+                        cameraAttitude = null, compassIssue = SpaceCompassSunCompassIssue.WAITING)
                     return
                 }
                 val displayRotation = view.display?.rotation ?: Surface.ROTATION_0
@@ -159,9 +174,7 @@ internal fun rememberSpaceCompassSunFinderReadings(permissionGranted: Boolean, p
                 if (!SensorManager.remapCoordinateSystem(matrix, axes.first, axes.second, screen)) return
                 val current = spaceCompassSunOrientationFromScreenMatrix(screen, declination) ?: return
                 val now = SystemClock.elapsedRealtimeNanos()
-                fun fresh(timestamp: Long) = timestamp > 0 && now - timestamp in 0..500_000_000L
-                val recent = fresh(gravityTime) && fresh(magneticTime) &&
-                    abs(gravityTime - magneticTime) <= 200_000_000L
+                val recent = sensorReadingsFresh(now)
                 val fieldMicrotesla = sqrt(m.sumOf { value -> value.toDouble().pow(2) })
                 val usable = recovery.update(recent && spaceCompassSunMagneticReferenceUsable(
                     magneticAccuracy, fieldMicrotesla, expectedFieldMicrotesla), event.timestamp)
@@ -169,6 +182,7 @@ internal fun rememberSpaceCompassSunFinderReadings(permissionGranted: Boolean, p
                 smoothed = if (usable) smoothSpaceCompassSunOrientation(smoothed, current) else null
                 val reliable = usable && spaceCompassSunMagneticReferenceReliable(magneticAccuracy, fieldMicrotesla, expectedFieldMicrotesla)
                 readings = readings.copy(orientation = smoothed ?: current, compassReliable = reliable, compassUsable = usable,
+                    compassIssue = spaceCompassSunCompassIssue(magneticAccuracy, fieldMicrotesla, expectedFieldMicrotesla, recent, usable),
                     cameraAttitude = spaceCompassSunOrientationFromScreenMatrix(matrix, declination)?.let {
                         SpaceCompassCameraAttitude(event.timestamp, it, usable) })
             }
@@ -186,12 +200,14 @@ internal fun rememberSpaceCompassSunFinderReadings(permissionGranted: Boolean, p
             magneticAccuracy = SensorManager.SENSOR_STATUS_UNRELIABLE
             recovery.reset()
             lastEventTime = 0L
-            readings = readings.copy(orientation = null, compassReliable = false, compassUsable = false, cameraAttitude = null)
+            readings = readings.copy(orientation = null, compassReliable = false, compassUsable = false,
+                cameraAttitude = null, compassIssue = SpaceCompassSunCompassIssue.WAITING)
         }
         fun start() {
             if (started) return
             started = true
-            readings = readings.copy(compassAvailable = available, compassReliable = false, compassUsable = false)
+            readings = readings.copy(compassAvailable = available, compassReliable = false, compassUsable = false,
+                compassIssue = SpaceCompassSunCompassIssue.WAITING)
             try {
                 val registered = if (available) {
                     val g = sensors?.registerListener(sensorListener, gravitySensor, SensorManager.SENSOR_DELAY_UI) == true

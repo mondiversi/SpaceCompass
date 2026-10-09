@@ -20,7 +20,7 @@ internal fun SpaceCompassSunFinderCompass(
     orientation: SpaceCompassSunOrientation?, reliable: Boolean, tint: Color, modifier: Modifier
 ) {
     val description = if (reliable) SpaceCompassSunCompassLabels.joinToString(", ")
-        else stringResource(R.string.sun_finder_compass_accuracy)
+        else stringResource(R.string.pc_compass_approximate)
     Canvas(modifier.testTag("sun-finder-compass").semantics {
         contentDescription = description
     }) {

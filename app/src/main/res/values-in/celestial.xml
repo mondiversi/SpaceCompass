@@ -22,8 +22,8 @@
     <string name="celestial_azimuth">Azimut (%1$s): %2$s</string>
     <string name="celestial_elevation">Ketinggian (%1$s): %2$s</string>
     <string name="celestial_below">%1$s di bawah cakrawala</string>
-    <string name="celestial_loading">Memperbarui data orbit…</string>
-    <string name="celestial_unavailable">Data %1$s tidak tersedia. Koneksi internet diperlukan untuk memperbaruinya.</string>
+    <string name="celestial_loading">Memperbarui data orbit</string>
+    <string name="celestial_unavailable">Data %1$s tidak tersedia. Koneksi internet diperlukan untuk memperbaruinya</string>
     <string name="celestial_iss_old">Data orbit ISS lebih dari 24 jam: akurasi mungkin berkurang.</string>
     <string name="celestial_iss_note">Satu putaran penuh di sekitar waktu saat ini, termasuk di bawah cakrawala, dengan 24 titik teratur serta terbit, kulminasi, dan terbenam. Detail lintasan merujuk pada lintasan saat ini atau berikutnya dalam 24 jam; keterlihatan tidak dijamin.\nCelesTrak / Satcat · Space-Track</string>
     <string name="celestial_model_note">Posisi dan jarak dihitung; arah bergantung pada akurasi kompas. ISS membutuhkan data orbit baru. Sedna dan Voyager memakai prediksi lintasan NASA/JPL, bukan telemetri langsung.</string>

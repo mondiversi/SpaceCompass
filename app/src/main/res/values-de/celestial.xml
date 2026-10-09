@@ -22,8 +22,8 @@
     <string name="celestial_azimuth">Azimut (%1$s): %2$s</string>
     <string name="celestial_elevation">Höhe (%1$s): %2$s</string>
     <string name="celestial_below">%1$s ist unter dem Horizont</string>
-    <string name="celestial_loading">Bahndaten werden aktualisiert…</string>
-    <string name="celestial_unavailable">Daten für %1$s nicht verfügbar. Zur Aktualisierung ist eine Internetverbindung erforderlich.</string>
+    <string name="celestial_loading">Bahndaten werden aktualisiert</string>
+    <string name="celestial_unavailable">Daten für %1$s nicht verfügbar. Zur Aktualisierung ist eine Internetverbindung erforderlich</string>
     <string name="celestial_iss_old">ISS-Bahndaten sind über 24 Stunden alt: geringere Genauigkeit möglich.</string>
     <string name="celestial_iss_note">Ein vollständiger Umlauf um die aktuelle Zeit, auch unter dem Horizont, mit 24 gleichmäßigen Punkten sowie Aufgang, Kulmination und Untergang. Die Passdaten gelten für den aktuellen oder nächsten Überflug innerhalb von 24 Stunden; Sichtbarkeit ist nicht garantiert.\nCelesTrak / Satcat · Space-Track</string>
     <string name="celestial_model_note">Berechnete Positionen und Entfernungen; die Ausrichtung hängt von der Kompassgenauigkeit ab. Die ISS benötigt aktuelle Bahndaten. Sedna und Voyager nutzen vorausberechnete NASA/JPL-Bahnen, keine Live-Telemetrie.</string>

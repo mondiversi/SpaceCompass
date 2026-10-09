@@ -117,7 +117,7 @@ capture timestamps with explicit UTC offsets on all supported versions. Caption 
 and location-disclosure policy remain frozen independently of these EXIF timestamps.
 Composition-observed configuration/resources update preference examples and callbacks
 when locale/theme changes. The initial 1.0 release used display version 1.0 and protocol version 1.0.0.
-Current release 1.2.2 uses the same display/protocol version with code 23; signed
+Current release 1.2.3 uses the same display/protocol version with code 24; signed
 metadata, APK name and tag share that identity.
 
 
@@ -180,8 +180,10 @@ and text. Two scaled pixels of the original path color outline each label.
 The General section retains the existing appearance navigation/resource identity;
 all twenty visible section labels are updated together. Its compact cog glyph is
 distinct from the main toolbar menu. Theme, display and music use the existing
-settings geometry and colors. Native pointing glyphs use straight optical-axis
-and phone-length arrows; the actual orientation calculations are unchanged.
+settings geometry and colors. The pointing-reference glyph uses localized bold 90° beside a vertical line or
+0° above a horizontal line. Paint and digit strings are remembered; the visible
+zero is optically centered over the bar and both move together inside the circle.
+The actual orientation calculations are unchanged.
 
 `SpaceCompassAmbientMusic` observes only two saved audio preferences, avoiding
 invalidation of celestial data and the main scene. The single activity-owned
@@ -198,3 +200,23 @@ spacing/dividers belong to the animated area; heading padding stays stable. Clos
 controls are immediately inert and excluded from accessibility; uncommitted music
 volume previews are cleared when hidden. Scenario handlers and saved drafts remain
 owned by the page independently of body visibility.
+
+
+## Compass status and maintenance release 1.2.3
+
+`SpaceCompassSunCompassReliability` provides the pure issue classification shared
+with the lifecycle-scoped sensor listener. Fresh field anomalies, an uncalibrated
+sensor, low accuracy and stale/recovering readings have distinct states. The
+existing field tolerance, sample freshness, north reference and recovery period
+remain unchanged. Six JVM regressions cover the boundaries and precedence.
+
+`SpaceCompassSunStatusNotices` renders the existing exclusive data/retry priority
+and theme-aware orange for every notice/action. Status resource texts omit final
+full stops and ellipses in all twenty catalogs. Obsolete calibration/color flags
+are removed; celestial ephemerides and camera transforms do not depend on them.
+The shared capture button chooses a shutter or panorama glyph from camera mode;
+export keeps its separate translated image-dialog title and saved profile.
+
+Version 1.2.3 retains the twenty 1.2.2 in-app news summaries byte for byte. The
+information archive records current resources/docs while image pack 1.1 retains
+its immutable individual URLs, byte sizes, dimensions and SHA-256 pins.

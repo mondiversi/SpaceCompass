@@ -22,8 +22,8 @@
     <string name="celestial_azimuth">Αζιμούθιο (%1$s): %2$s</string>
     <string name="celestial_elevation">Ύψος (%1$s): %2$s</string>
     <string name="celestial_below">%1$s κάτω από τον ορίζοντα</string>
-    <string name="celestial_loading">Ενημέρωση τροχιακών δεδομένων…</string>
-    <string name="celestial_unavailable">Δεν υπάρχουν δεδομένα για %1$s. Απαιτείται Internet για την ενημέρωσή τους.</string>
+    <string name="celestial_loading">Ενημέρωση τροχιακών δεδομένων</string>
+    <string name="celestial_unavailable">Δεν υπάρχουν δεδομένα για %1$s. Απαιτείται Internet για την ενημέρωσή τους</string>
     <string name="celestial_iss_old">Τα δεδομένα ISS είναι άνω των 24 ωρών: πιθανή μειωμένη ακρίβεια.</string>
     <string name="celestial_iss_note">Μία πλήρης περιφορά γύρω από την τρέχουσα ώρα, και κάτω από τον ορίζοντα, με 24 ισαπέχοντα σημεία και ανατολή, μεσουράνηση και δύση. Τα στοιχεία διέλευσης αφορούν την τρέχουσα ή επόμενη διέλευση εντός 24 ωρών· η ορατότητα δεν είναι εγγυημένη.\nCelesTrak / Satcat · Space-Track</string>
     <string name="celestial_model_note">Υπολογισμένες θέσεις και αποστάσεις· η στόχευση εξαρτάται από την ακρίβεια της πυξίδας. Ο ISS χρειάζεται πρόσφατα τροχιακά δεδομένα. Σέντνα και Voyager χρησιμοποιούν προβλεπόμενες τροχιές NASA/JPL, όχι ζωντανή τηλεμετρία.</string>

@@ -512,3 +512,16 @@ cards share a 300 ms top-anchored expansion/fade with stable collapsed padding.
 The pointing-reference glyphs use straight arrows: out from the camera side for an
 upright phone, diagonally parallel to its length for a flat phone. These glyph
 changes do not alter the saved reference or sensor/optical geometry.
+
+
+## Maintenance refinements in 1.2.3
+
+The pointing-reference control now shows bold localized 90° beside a vertical
+bar or 0° above a horizontal bar. The zero is centered above the line; the entire
+horizontal glyph is shifted slightly down for optical centering. Circle size,
+accessible touch bounds, saved reference, RTL support and camera disabling remain.
+Capture shows a panorama glyph outside camera mode and the shutter in camera mode.
+The export chooser is titled Export image in all twenty supported languages.
+All sky status messages/actions use theme-aware orange and omit final full stops
+and ellipses. Calibration and plausible-field interference have separate notices;
+data/retry retains priority. In-app news summaries are unchanged from 1.2.2.
