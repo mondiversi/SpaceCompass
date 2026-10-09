@@ -17,7 +17,7 @@
     <string name="numeric_format_european">यूरोपीय</string>
     <string name="settings_section_language">भाषा</string>
     <string name="language_system">डिफ़ॉल्ट</string>
-    <string name="settings_section_appearance">दिखावट</string>
+    <string name="settings_section_appearance">सामान्य</string>
     <string name="settings_section_units">इकाइयाँ</string>
     <string name="pc_settings">सेटिंग</string>
     <string name="pc_loading">लोड हो रहा है…</string>

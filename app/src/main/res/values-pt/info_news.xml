@@ -1,9 +1,9 @@
 <resources>
     <string name="info_news_title">Últimas novidades · %1$s</string>
-    <string name="info_news_star_sky">35 objetos: Sirius, Betelgeuse, Titã, a Nebulosa de Órion e as Plêiades; novas imagens de Andrômeda.</string>
-    <string name="info_news_texture_downloads">Pacote de imagens 1.1: 18 imagens WebP baixadas quando necessárias, verificadas e disponíveis offline.</string>
-    <string name="info_news_weather">Painéis de informação recolhíveis, controles reorganizados e indicador mais claro de cenário personalizado.</string>
-    <string name="info_news_viewer_zoom">Posição atual nas trajetórias diárias, painéis dos pontos melhorados e uma única mensagem conforme a prioridade.</string>
-    <string name="info_news_settings">A iluminação dos efeitos climáticos acompanha o amanhecer, o dia, o pôr do sol e a noite na vista principal e nas panorâmicas.</string>
-    <string name="info_news_catalog">Controles panorâmicos melhorados, vibração ao capturar, margens de exportação e zoom de objetos compacto.</string>
+    <string name="info_news_star_sky">Música espacial meditativa com um ciclo suave, disponível offline.</string>
+    <string name="info_news_texture_downloads">Música ativa por padrão em volume baixo; ativação e volume ficam salvos.</string>
+    <string name="info_news_weather">Controle de volume com pontos e níveis regulares, do silêncio ao máximo.</string>
+    <string name="info_news_viewer_zoom">Aparência passa a se chamar Geral, com um ícone dedicado às configurações.</string>
+    <string name="info_news_settings">Os cartões de música e Cenário personalizado se abrem e fecham com animações suaves.</string>
+    <string name="info_news_catalog">Ícones de orientação mais claros, com setas retas ao longo dos eixos da câmera e do comprimento do telefone.</string>
 </resources>

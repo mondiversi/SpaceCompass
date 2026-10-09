@@ -500,3 +500,15 @@ removed from the menu. Camera mode captures a real still image with frozen orbit
 overlays across its full lens field; normal mode keeps the 360° panorama. Both
 previews follow device orientation, with portrait fill/drag and landscape fit/zoom.
 The main view's columns never truncate export pixels; saving remains manual.
+
+
+## General settings in 1.2.2
+
+The visible Appearance section is renamed General in all twenty languages and uses
+a cog glyph. Its music card follows Theme in both layouts; the original offline
+track is enabled initially at a quiet 20% and supports saved ten-percent volume
+steps. Disabling music leaves only the heading. Music and the four Custom scenario
+cards share a 300 ms top-anchored expansion/fade with stable collapsed padding.
+The pointing-reference glyphs use straight arrows: out from the camera side for an
+upright phone, diagonally parallel to its length for a flat phone. These glyph
+changes do not alter the saved reference or sensor/optical geometry.

@@ -88,3 +88,13 @@ in [the pack credits](textures/celestial-textures-v1.1/CREDITS.txt),
 [its manifest](textures/celestial-textures-v1.1/manifest.json) and
 [the catalog sources](docs/CATALOG_ADDITIONS.md). All eighteen runtime images
 are WebP, quality 90, method 6, 2048 x 1024. Legacy release assets remain intact.
+
+
+## Quiet Orbit background music
+
+Copyright © 2026 Mondiversi. Original procedural composition and synthesis, under
+the project GPL-3.0 licence. No third-party recordings or samples are used.
+The 96-second stereo loop is bundled as `res/raw/space_ambient.ogg` (Ogg Vorbis,
+44.1 kHz). Its reproducible synthesis source is `scripts/GenerateAmbientMusic.py`;
+the notice is `app/src/main/assets/licenses/ambient-music.txt`. FFmpeg is an
+encoding tool only and is not distributed within the APK.

@@ -1,9 +1,9 @@
 <resources>
     <string name="info_news_title">החידושים האחרונים · %1$s</string>
-    <string name="info_news_star_sky">35 עצמים: סיריוס, ביטלג’וז, טיטאן, ערפילית אוריון והפליאדות; תמונות חדשות של אנדרומדה.</string>
-    <string name="info_news_texture_downloads">חבילת תמונות 1.1: 18 תמונות WebP מורדות לפי הצורך, מאומתות וזמינות ללא חיבור.</string>
-    <string name="info_news_weather">לוחות מידע מתקפלים, פקדים מסודרים מחדש וחיווי ברור יותר לתרחיש מותאם אישית.</string>
-    <string name="info_news_viewer_zoom">מיקום נוכחי במסלולים היומיים, לוחות נקודות משופרים והודעת מצב אחת לפי עדיפות.</string>
-    <string name="info_news_settings">תאורת אפקטי מזג האוויר תואמת לשחר, ליום, לשקיעה וללילה בתצוגה הראשית ובפנורמות.</string>
-    <string name="info_news_catalog">פקדי פנורמה משופרים, רטט בצילום, מרווחי ייצוא וזום קומפקטי לעצמים.</string>
+    <string name="info_news_star_sky">מוזיקת חלל מדיטטיבית עם לולאה עדינה, זמינה ללא חיבור לאינטרנט.</string>
+    <string name="info_news_texture_downloads">המוזיקה מופעלת כברירת מחדל בעוצמה נמוכה; מצב ההפעלה והעוצמה נשמרים.</string>
+    <string name="info_news_weather">מחוון עוצמה עם נקודות ורמות אחידות, משקט עד לעוצמה מרבית.</string>
+    <string name="info_news_viewer_zoom">הסעיף מראה נקרא כעת כללי, עם סמל הגדרות ייעודי.</string>
+    <string name="info_news_settings">כרטיסי המוזיקה והתרחיש המותאם נפתחים ונסגרים בהנפשות חלקות.</string>
+    <string name="info_news_catalog">סמלי כיוון ברורים יותר, עם חצים ישרים לאורך ציר המצלמה וציר האורך של הטלפון.</string>
 </resources>

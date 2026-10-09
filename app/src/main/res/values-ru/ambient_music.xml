@@ -1,0 +1,6 @@
+<resources>
+    <string name="music_title">Фоновая музыка</string>
+    <string name="music_description">Медитативная космическая музыка, доступная без интернета. Останавливается при выходе из приложения.</string>
+    <string name="music_volume">Громкость</string>
+    <string name="music_volume_value">%1$s%%</string>
+</resources>

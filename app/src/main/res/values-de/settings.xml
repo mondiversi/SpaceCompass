@@ -17,7 +17,7 @@
     <string name="numeric_format_european">Europäisch</string>
     <string name="settings_section_language">Sprache</string>
     <string name="language_system">Standard</string>
-    <string name="settings_section_appearance">Darstellung</string>
+    <string name="settings_section_appearance">Allgemein</string>
     <string name="settings_section_units">Einheiten</string>
     <string name="pc_settings">Einstellungen</string>
     <string name="pc_loading">Wird geladen…</string>

@@ -1,9 +1,9 @@
 <resources>
     <string name="info_news_title">Ostatnie nowości · %1$s</string>
-    <string name="info_news_star_sky">35 obiektów: Syriusz, Betelgeza, Tytan, Mgławica Oriona i Plejady; nowe zdjęcia Andromedy.</string>
-    <string name="info_news_texture_downloads">Pakiet obrazów 1.1: 18 obrazów WebP pobieranych w razie potrzeby, weryfikowanych i dostępnych offline.</string>
-    <string name="info_news_weather">Zwijane panele informacji, przeorganizowane elementy sterujące i czytelniejszy wskaźnik własnego scenariusza.</string>
-    <string name="info_news_viewer_zoom">Aktualna pozycja na dziennych trajektoriach, ulepszone panele punktów i jeden komunikat według priorytetu.</string>
-    <string name="info_news_settings">Oświetlenie efektów pogodowych odpowiada świtowi, dniowi, zachodowi słońca i nocy w widoku głównym i panoramach.</string>
-    <string name="info_news_catalog">Ulepszone sterowanie panoramą, wibracja przy zdjęciu, odstępy eksportu i kompaktowe przybliżanie obiektów.</string>
+    <string name="info_news_star_sky">Medytacyjna muzyka kosmiczna z łagodną pętlą, dostępna offline.</string>
+    <string name="info_news_texture_downloads">Muzyka jest domyślnie włączona przy niskiej głośności; włączenie i głośność są zapamiętywane.</string>
+    <string name="info_news_weather">Suwak głośności z punktami i równymi poziomami, od ciszy do maksimum.</string>
+    <string name="info_news_viewer_zoom">Wygląd zmienia nazwę na Ogólne i otrzymuje ikonę ustawień.</string>
+    <string name="info_news_settings">Karty muzyki i scenariusza niestandardowego otwierają się i zamykają z płynnymi animacjami.</string>
+    <string name="info_news_catalog">Czytelniejsze ikony kierunku z prostymi strzałkami wzdłuż osi aparatu i osi długości telefonu.</string>
 </resources>

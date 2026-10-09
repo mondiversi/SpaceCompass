@@ -17,7 +17,7 @@
     <string name="numeric_format_european">Europees</string>
     <string name="settings_section_language">Taal</string>
     <string name="language_system">Standaard</string>
-    <string name="settings_section_appearance">Uiterlijk</string>
+    <string name="settings_section_appearance">Algemeen</string>
     <string name="settings_section_units">Eenheden</string>
     <string name="pc_settings">Instellingen</string>
     <string name="pc_loading">Laden…</string>

@@ -1,9 +1,9 @@
 <resources>
     <string name="info_news_title">Latest news · %1$s</string>
-    <string name="info_news_star_sky">35 objects: Sirius, Betelgeuse, Titan, the Orion Nebula and the Pleiades; new images of Andromeda.</string>
-    <string name="info_news_texture_downloads">Image pack 1.1: 18 WebP images downloaded on demand, verified and available offline.</string>
-    <string name="info_news_weather">Collapsible information panels, reorganized controls and a clearer Custom scenario indicator.</string>
-    <string name="info_news_viewer_zoom">Current position in daily paths, refined point panels and a single priority status message.</string>
-    <string name="info_news_settings">Weather lighting follows dawn, daytime, sunset and night in the main view and panoramas.</string>
-    <string name="info_news_catalog">Improved panorama controls, capture vibration, export spacing and compact object zoom.</string>
+    <string name="info_news_star_sky">Meditative space music with a gentle loop, available offline.</string>
+    <string name="info_news_texture_downloads">Music enabled by default at a low volume; activation and volume choices are saved.</string>
+    <string name="info_news_weather">Volume slider with regular steps from silence to maximum.</string>
+    <string name="info_news_viewer_zoom">Appearance is now General, with a dedicated settings icon.</string>
+    <string name="info_news_settings">Music and Custom scenario islands open and close with smooth animations.</string>
+    <string name="info_news_catalog">Clearer pointing icons, with straight arrows along the camera and phone-length axes.</string>
 </resources>

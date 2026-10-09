@@ -1,9 +1,9 @@
 <resources>
     <string name="info_news_title">Ultime novità · %1$s</string>
-    <string name="info_news_star_sky">35 oggetti: Sirio, Betelgeuse, Titano, Nebulosa di Orione e Pleiadi; nuove immagini di Andromeda.</string>
-    <string name="info_news_texture_downloads">Pacchetto immagini 1.1: 18 immagini WebP scaricate quando servono, verificate e disponibili offline.</string>
-    <string name="info_news_weather">Isole informative richiudibili, comandi riorganizzati e indicatore di Scenario personalizzato più chiaro.</string>
-    <string name="info_news_viewer_zoom">Posizione attuale nei percorsi giornalieri, isole dei punti migliorate e un solo avviso con priorità.</string>
-    <string name="info_news_settings">Luce degli effetti meteo coerente con alba, giorno, tramonto e notte nella vista principale e nelle panoramiche.</string>
-    <string name="info_news_catalog">Comandi panoramici migliorati, vibrazione allo scatto, margini di esportazione e zoom oggetto compatto.</string>
+    <string name="info_news_star_sky">Musica spaziale meditativa con un loop morbido, disponibile offline.</string>
+    <string name="info_news_texture_downloads">Musica attiva di default a volume basso; attivazione e volume restano salvati.</string>
+    <string name="info_news_weather">Barra del volume a punti, con livelli regolari dal silenzio al massimo.</string>
+    <string name="info_news_viewer_zoom">Aspetto diventa Generale, con una nuova icona dedicata alle impostazioni.</string>
+    <string name="info_news_settings">Le isole di musica e Scenario personalizzato si aprono e si chiudono con animazioni fluide.</string>
+    <string name="info_news_catalog">Icone di puntamento più chiare, con frecce diritte lungo gli assi della fotocamera e del telefono.</string>
 </resources>

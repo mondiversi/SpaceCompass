@@ -1,9 +1,9 @@
 <resources>
     <string name="info_news_title">Laatste nieuws · %1$s</string>
-    <string name="info_news_star_sky">35 objecten: Sirius, Betelgeuze, Titan, de Orionnevel en de Plejaden; nieuwe beelden van Andromeda.</string>
-    <string name="info_news_texture_downloads">Afbeeldingenpakket 1.1: 18 WebP-afbeeldingen worden zo nodig gedownload, gecontroleerd en blijven offline beschikbaar.</string>
-    <string name="info_news_weather">Inklapbare informatiepanelen, opnieuw ingedeelde bediening en een duidelijkere indicator voor het aangepaste scenario.</string>
-    <string name="info_news_viewer_zoom">Huidige positie in dagelijkse banen, verbeterde puntpanelen en één statusbericht op basis van prioriteit.</string>
-    <string name="info_news_settings">De belichting van weereffecten volgt dageraad, dag, zonsondergang en nacht in de hoofdweergave en panorama’s.</string>
-    <string name="info_news_catalog">Verbeterde panoramabediening, trilling bij opname, exportmarges en compacte objectzoom.</string>
+    <string name="info_news_star_sky">Meditatieve ruimtemuziek met een zachte herhaling, ook offline beschikbaar.</string>
+    <string name="info_news_texture_downloads">Muziek staat standaard aan op een laag volume; de aan-uitkeuze en het volume worden opgeslagen.</string>
+    <string name="info_news_weather">Volumeschuif met punten en regelmatige stappen, van stil tot maximaal.</string>
+    <string name="info_news_viewer_zoom">Uiterlijk heet nu Algemeen, met een eigen instellingenpictogram.</string>
+    <string name="info_news_settings">De kaarten voor muziek en Aangepast scenario openen en sluiten met vloeiende animaties.</string>
+    <string name="info_news_catalog">Duidelijkere richtingspictogrammen met rechte pijlen langs de camera-as en de lengteas van de telefoon.</string>
 </resources>

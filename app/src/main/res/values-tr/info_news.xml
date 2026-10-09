@@ -1,9 +1,9 @@
 <resources>
     <string name="info_news_title">Son yenilikler · %1$s</string>
-    <string name="info_news_star_sky">35 nesne: Sirius, Betelgeuse, Titan, Orion Bulutsusu ve Ülker; Andromeda’nın yeni görüntüleri.</string>
-    <string name="info_news_texture_downloads">Görüntü paketi 1.1: 18 WebP görüntüsü gerektiğinde indirilir, doğrulanır ve çevrimdışı kullanılabilir.</string>
-    <string name="info_news_weather">Daraltılabilir bilgi panelleri, yeniden düzenlenen kontroller ve daha belirgin özel senaryo göstergesi.</string>
-    <string name="info_news_viewer_zoom">Günlük yollarda mevcut konum, iyileştirilmiş nokta panelleri ve önceliğe göre tek durum mesajı.</string>
-    <string name="info_news_settings">Hava efektlerinin aydınlatması ana görünüm ve panoramalarda şafak, gündüz, gün batımı ve geceyi takip eder.</string>
-    <string name="info_news_catalog">İyileştirilmiş panorama kontrolleri, çekim titreşimi, dışa aktarma boşlukları ve kompakt nesne yakınlaştırması.</string>
+    <string name="info_news_star_sky">Yumuşak döngülü, çevrimdışı kullanılabilen meditatif uzay müziği.</string>
+    <string name="info_news_texture_downloads">Müzik varsayılan olarak düşük sesle açıktır; açma-kapama ve ses seviyesi seçimleri kaydedilir.</string>
+    <string name="info_news_weather">Sessizden en yükseğe düzenli kademeler sunan noktalı ses çubuğu.</string>
+    <string name="info_news_viewer_zoom">Görünüm artık Genel adını taşıyor ve özel bir ayarlar simgesine sahip.</string>
+    <string name="info_news_settings">Müzik ve Özel senaryo kartları akıcı animasyonlarla açılıp kapanır.</string>
+    <string name="info_news_catalog">Kamera ve telefonun uzunluk eksenleri boyunca düz oklarla daha anlaşılır yönlendirme simgeleri.</string>
 </resources>

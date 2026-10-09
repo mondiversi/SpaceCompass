@@ -17,7 +17,7 @@
     <string name="numeric_format_european">اروپایی</string>
     <string name="settings_section_language">زبان</string>
     <string name="language_system">پیش‌فرض</string>
-    <string name="settings_section_appearance">ظاهر</string>
+    <string name="settings_section_appearance">عمومی</string>
     <string name="settings_section_units">واحدها</string>
     <string name="pc_settings">تنظیمات</string>
     <string name="pc_loading">در حال بارگذاری…</string>

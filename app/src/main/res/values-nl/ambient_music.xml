@@ -1,0 +1,6 @@
+<resources>
+    <string name="music_title">Achtergrondmuziek</string>
+    <string name="music_description">Meditatieve ruimtemuziek, ook offline beschikbaar. Stopt wanneer je de app verlaat.</string>
+    <string name="music_volume">Volume</string>
+    <string name="music_volume_value">%1$s%%</string>
+</resources>

@@ -17,7 +17,7 @@
     <string name="numeric_format_european">Avrupa</string>
     <string name="settings_section_language">Dil</string>
     <string name="language_system">Varsayılan</string>
-    <string name="settings_section_appearance">Görünüm</string>
+    <string name="settings_section_appearance">Genel</string>
     <string name="settings_section_units">Birimler</string>
     <string name="pc_settings">Ayarlar</string>
     <string name="pc_loading">Yükleniyor…</string>

@@ -1,9 +1,9 @@
 <resources>
     <string name="info_news_title">آخر المستجدات · %1$s</string>
-    <string name="info_news_star_sky">35 جرمًا: الشعرى اليمانية ومنكب الجوزاء وتيتان وسديم الجبار والثريا؛ صور جديدة لأندروميدا.</string>
-    <string name="info_news_texture_downloads">حزمة الصور 1.1: 18 صورة WebP تُنزّل عند الحاجة، وتُتحقق سلامتها وتبقى متاحة دون اتصال.</string>
-    <string name="info_news_weather">لوحات معلومات قابلة للطي، وعناصر تحكم معاد ترتيبها، ومؤشر أوضح للسيناريو المخصص.</string>
-    <string name="info_news_viewer_zoom">الموقع الحالي في المسارات اليومية، ولوحات نقاط محسّنة، ورسالة حالة واحدة بحسب الأولوية.</string>
-    <string name="info_news_settings">إضاءة تأثيرات الطقس تتبع الفجر والنهار والغروب والليل في العرض الرئيسي والصور البانورامية.</string>
-    <string name="info_news_catalog">عناصر تحكم بانورامية محسّنة، واهتزاز عند الالتقاط، وهوامش للتصدير، وتكبير مدمج للأجرام.</string>
+    <string name="info_news_star_sky">موسيقى فضائية تأملية بتكرار سلس، متاحة دون اتصال.</string>
+    <string name="info_news_texture_downloads">الموسيقى مفعلة افتراضياً بصوت منخفض؛ يتم حفظ حالة التشغيل ومستوى الصوت.</string>
+    <string name="info_news_weather">شريط صوت بنقاط ومستويات منتظمة، من الصمت إلى الحد الأقصى.</string>
+    <string name="info_news_viewer_zoom">أصبح قسم المظهر باسم عام، مع أيقونة إعدادات مخصصة.</string>
+    <string name="info_news_settings">تفتح بطاقات الموسيقى والسيناريو المخصص وتغلق بحركات سلسة.</string>
+    <string name="info_news_catalog">أيقونات توجيه أوضح، بأسهم مستقيمة على امتداد محور الكاميرا ومحور طول الهاتف.</string>
 </resources>

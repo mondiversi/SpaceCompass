@@ -9,6 +9,7 @@ import androidx.compose.ui.geometry.Size
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.Path
 import androidx.compose.ui.graphics.StrokeCap
+import androidx.compose.ui.graphics.StrokeJoin
 import androidx.compose.ui.graphics.drawscope.Stroke
 import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
@@ -69,34 +70,21 @@ internal fun SpaceCompassSettingsMenuIcon(
                     strokeWidth, StrokeCap.Round)
             }
             "appearance" -> {
-                val palette = Path().apply {
-                    moveTo(size.width * 0.53f, size.height * 0.12f)
-                    cubicTo(size.width * 0.28f, size.height * 0.07f,
-                        size.width * 0.10f, size.height * 0.26f,
-                        size.width * 0.10f, size.height * 0.50f)
-                    cubicTo(size.width * 0.10f, size.height * 0.75f,
-                        size.width * 0.31f, size.height * 0.89f,
-                        size.width * 0.56f, size.height * 0.88f)
-                    cubicTo(size.width * 0.69f, size.height * 0.88f,
-                        size.width * 0.72f, size.height * 0.77f,
-                        size.width * 0.64f, size.height * 0.69f)
-                    cubicTo(size.width * 0.58f, size.height * 0.63f,
-                        size.width * 0.61f, size.height * 0.54f,
-                        size.width * 0.71f, size.height * 0.54f)
-                    cubicTo(size.width * 0.94f, size.height * 0.57f,
-                        size.width * 0.94f, size.height * 0.28f,
-                        size.width * 0.75f, size.height * 0.17f)
-                    cubicTo(size.width * 0.69f, size.height * 0.13f,
-                        size.width * 0.61f, size.height * 0.11f,
-                        size.width * 0.53f, size.height * 0.12f)
+                // A cog gives General a distinct silhouette from the main menu's horizontal bars.
+                val gear = Path().apply {
+                    repeat(8) { tooth ->
+                        listOf(-22.5 to .32f, -11.25 to .42f, 11.25 to .42f, 22.5 to .32f)
+                            .forEachIndexed { corner, (offset, radius) ->
+                                val angle = Math.toRadians(tooth * 45.0 + offset)
+                                val x = center.x + kotlin.math.cos(angle).toFloat() * size.minDimension * radius
+                                val y = center.y + kotlin.math.sin(angle).toFloat() * size.minDimension * radius
+                                if (tooth == 0 && corner == 0) moveTo(x, y) else lineTo(x, y)
+                            }
+                    }
                     close()
                 }
-                drawPath(palette, tint, style = Stroke(width = strokeWidth, cap = StrokeCap.Round))
-                for ((x, y) in listOf(0.32f to 0.33f, 0.53f to 0.27f,
-                    0.74f to 0.37f, 0.27f to 0.55f)) {
-                    drawCircle(tint, radius = size.minDimension * 0.055f,
-                        center = Offset(size.width * x, size.height * y))
-                }
+                drawPath(gear, tint, style = Stroke(strokeWidth, join = StrokeJoin.Round))
+                drawCircle(tint, size.minDimension * .14f, center, style = Stroke(strokeWidth))
             }
             "language" -> {
                 drawCircle(

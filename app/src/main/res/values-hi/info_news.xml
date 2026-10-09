@@ -1,9 +1,9 @@
 <resources>
     <string name="info_news_title">हाल के बदलाव · %1$s</string>
-    <string name="info_news_star_sky">35 पिंड: सीरियस, बेटेलजूस, टाइटन, ओरायन नीहारिका और कृत्तिका तारागुच्छ; एंड्रोमेडा की नई तस्वीरें।</string>
-    <string name="info_news_texture_downloads">चित्र पैक 1.1: 18 WebP चित्र ज़रूरत पर डाउनलोड और सत्यापित होते हैं तथा ऑफ़लाइन उपलब्ध रहते हैं।</string>
-    <string name="info_news_weather">समेटे जा सकने वाले सूचना पैनल, नए क्रम में नियंत्रण और अनुकूलित परिदृश्य का अधिक स्पष्ट संकेत।</string>
-    <string name="info_news_viewer_zoom">दैनिक पथों में वर्तमान स्थिति, बेहतर बिंदु पैनल और प्राथमिकता के अनुसार एक स्थिति संदेश।</string>
-    <string name="info_news_settings">मुख्य दृश्य और पैनोरामा में मौसम के प्रभावों की रोशनी भोर, दिन, सूर्यास्त और रात के अनुसार बदलती है।</string>
-    <string name="info_news_catalog">बेहतर पैनोरामा नियंत्रण, चित्र लेते समय कंपन, निर्यात का अंतर और पिंडों का संक्षिप्त ज़ूम नियंत्रण।</string>
+    <string name="info_news_star_sky">हल्के दोहराव वाला ध्यानपूर्ण अंतरिक्ष संगीत, ऑफलाइन उपलब्ध।</string>
+    <string name="info_news_texture_downloads">संगीत डिफ़ॉल्ट रूप से कम आवाज़ में चालू रहता है; चालू-बंद स्थिति और आवाज़ का स्तर सहेजे जाते हैं।</string>
+    <string name="info_news_weather">बिंदुओं वाला आवाज़ स्लाइडर, मौन से अधिकतम तक नियमित स्तरों के साथ।</string>
+    <string name="info_news_viewer_zoom">दिखावट का नाम अब सामान्य है, साथ में सेटिंग का नया आइकन।</string>
+    <string name="info_news_settings">संगीत और कस्टम परिदृश्य के कार्ड सहज ऐनिमेशन के साथ खुलते और बंद होते हैं।</string>
+    <string name="info_news_catalog">कैमरे और फ़ोन की लंबाई के अक्षों पर सीधे तीरों वाले अधिक स्पष्ट दिशा आइकन।</string>
 </resources>

@@ -17,7 +17,7 @@
     <string name="numeric_format_european">Eropa</string>
     <string name="settings_section_language">Bahasa</string>
     <string name="language_system">Bawaan</string>
-    <string name="settings_section_appearance">Tampilan</string>
+    <string name="settings_section_appearance">Umum</string>
     <string name="settings_section_units">Satuan</string>
     <string name="pc_settings">Pengaturan</string>
     <string name="pc_loading">Memuat…</string>

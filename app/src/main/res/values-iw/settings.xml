@@ -17,7 +17,7 @@
     <string name="numeric_format_european">אירופי</string>
     <string name="settings_section_language">שפה</string>
     <string name="language_system">ברירת מחדל</string>
-    <string name="settings_section_appearance">מראה</string>
+    <string name="settings_section_appearance">כללי</string>
     <string name="settings_section_units">יחידות</string>
     <string name="pc_settings">הגדרות</string>
     <string name="pc_loading">בטעינה…</string>

@@ -1,9 +1,9 @@
 <resources>
     <string name="info_news_title">تازه‌ترین تغییرات · %1$s</string>
-    <string name="info_news_star_sky">۳۵ جرم: شباهنگ، ابط‌الجوزا، تیتان، سحابی شکارچی و خوشهٔ پروین؛ تصاویر تازهٔ آندرومدا.</string>
-    <string name="info_news_texture_downloads">بستهٔ تصاویر 1.1: ۱۸ تصویر WebP هنگام نیاز دریافت و بررسی می‌شوند و آفلاین در دسترس می‌مانند.</string>
-    <string name="info_news_weather">پنل‌های اطلاعات جمع‌شونده، کنترل‌های بازچینش‌شده و نشانگر روشن‌تر سناریوی سفارشی.</string>
-    <string name="info_news_viewer_zoom">موقعیت فعلی در مسیرهای روزانه، پنل‌های نقطهٔ بهبودیافته و یک پیام وضعیت بر اساس اولویت.</string>
-    <string name="info_news_settings">نور جلوه‌های آب‌وهوا در نمای اصلی و پانوراماها با سپیده‌دم، روز، غروب و شب هماهنگ است.</string>
-    <string name="info_news_catalog">کنترل‌های بهتر پانوراما، لرزش هنگام ثبت، فاصله‌های خروجی و بزرگ‌نمایی فشردهٔ اجرام.</string>
+    <string name="info_news_star_sky">موسیقی فضایی مراقبه‌ای با تکرار ملایم، در دسترس به‌صورت آفلاین.</string>
+    <string name="info_news_texture_downloads">موسیقی به‌طور پیش‌فرض با صدای کم فعال است؛ وضعیت پخش و میزان صدا ذخیره می‌شوند.</string>
+    <string name="info_news_weather">نوار صدا با نقطه‌ها و سطح‌های منظم، از سکوت تا بیشترین صدا.</string>
+    <string name="info_news_viewer_zoom">بخش ظاهر اکنون عمومی نام دارد و نماد ویژه تنظیمات دارد.</string>
+    <string name="info_news_settings">کارت‌های موسیقی و سناریوی سفارشی با حرکت‌های روان باز و بسته می‌شوند.</string>
+    <string name="info_news_catalog">نمادهای جهت‌گیری روشن‌تر، با پیکان‌های مستقیم در امتداد محور دوربین و طول گوشی.</string>
 </resources>

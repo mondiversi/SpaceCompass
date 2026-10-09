@@ -107,7 +107,18 @@ internal fun SpaceCompassAppPage(route: String, onBack: () -> Unit) {
                 else -> {
                     val settings = if (route == "appearance") spaceCompassAppearanceSettings() else spaceCompassUnitSettings()
                     SpaceCompassIslandGrid(Modifier.fillMaxWidth().weight(1f)) {
-                        items(settings, key = { it.key }) { spec -> SpaceCompassSettingsChoices(spec) }
+                        if (route == "appearance") {
+                            // Keep the music island directly below Theme, including in two-column layouts.
+                            item(key = "appearance-theme-music") {
+                                Column(verticalArrangement = Arrangement.spacedBy(SpaceCompassSettingsIslandGap)) {
+                                    SpaceCompassSettingsChoices(settings.first())
+                                    SpaceCompassAmbientMusicIsland()
+                                }
+                            }
+                            items(settings.drop(1), key = { it.key }) { spec -> SpaceCompassSettingsChoices(spec) }
+                        } else {
+                            items(settings, key = { it.key }) { spec -> SpaceCompassSettingsChoices(spec) }
+                        }
                     }
                 }
             }

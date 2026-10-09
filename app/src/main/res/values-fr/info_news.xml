@@ -1,9 +1,9 @@
 <resources>
     <string name="info_news_title">Dernières nouveautés · %1$s</string>
-    <string name="info_news_star_sky">35 objets : Sirius, Bételgeuse, Titan, la nébuleuse d’Orion et les Pléiades ; nouvelles images d’Andromède.</string>
-    <string name="info_news_texture_downloads">Pack d’images 1.1 : 18 images WebP téléchargées au besoin, vérifiées et disponibles hors ligne.</string>
-    <string name="info_news_weather">Panneaux d’information repliables, commandes réorganisées et indicateur de scénario personnalisé plus clair.</string>
-    <string name="info_news_viewer_zoom">Position actuelle dans les trajectoires quotidiennes, panneaux des points améliorés et un seul message selon sa priorité.</string>
-    <string name="info_news_settings">La lumière des effets météo suit l’aube, le jour, le coucher du soleil et la nuit dans la vue principale et les panoramas.</string>
-    <string name="info_news_catalog">Commandes panoramiques améliorées, vibration à la capture, marges d’exportation et zoom des objets compact.</string>
+    <string name="info_news_star_sky">Musique spatiale méditative avec une boucle douce, disponible hors ligne.</string>
+    <string name="info_news_texture_downloads">Musique activée par défaut à faible volume ; activation et volume sont mémorisés.</string>
+    <string name="info_news_weather">Curseur de volume à points, avec des niveaux réguliers du silence au maximum.</string>
+    <string name="info_news_viewer_zoom">Apparence devient Général, avec une icône dédiée aux réglages.</string>
+    <string name="info_news_settings">Les cartes de musique et de Scénario personnalisé se déploient et se replient avec des animations fluides.</string>
+    <string name="info_news_catalog">Icônes de pointage plus claires, avec des flèches droites selon les axes de la caméra et de la longueur du téléphone.</string>
 </resources>

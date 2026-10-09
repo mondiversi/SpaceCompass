@@ -1,9 +1,9 @@
 <resources>
     <string name="info_news_title">Perubahan terbaru · %1$s</string>
-    <string name="info_news_star_sky">35 objek: Sirius, Betelgeuse, Titan, Nebula Orion, dan Pleiades; gambar baru Andromeda.</string>
-    <string name="info_news_texture_downloads">Paket gambar 1.1: 18 gambar WebP diunduh saat diperlukan, diverifikasi, dan tersedia offline.</string>
-    <string name="info_news_weather">Panel informasi yang dapat diciutkan, kontrol ditata ulang, dan indikator skenario khusus yang lebih jelas.</string>
-    <string name="info_news_viewer_zoom">Posisi saat ini pada lintasan harian, panel titik yang diperbaiki, dan satu pesan status sesuai prioritas.</string>
-    <string name="info_news_settings">Pencahayaan efek cuaca mengikuti fajar, siang, matahari terbenam, dan malam pada tampilan utama dan panorama.</string>
-    <string name="info_news_catalog">Kontrol panorama diperbaiki, getaran saat mengambil gambar, jarak ekspor, dan zoom objek yang ringkas.</string>
+    <string name="info_news_star_sky">Musik ruang angkasa meditatif dengan putaran lembut, tersedia secara offline.</string>
+    <string name="info_news_texture_downloads">Musik aktif secara bawaan pada volume rendah; pilihan aktif dan volume disimpan.</string>
+    <string name="info_news_weather">Penggeser volume bertitik dengan tingkat teratur, dari senyap hingga maksimum.</string>
+    <string name="info_news_viewer_zoom">Tampilan kini bernama Umum, dengan ikon pengaturan khusus.</string>
+    <string name="info_news_settings">Kartu musik dan Skenario khusus membuka dan menutup dengan animasi halus.</string>
+    <string name="info_news_catalog">Ikon arah lebih jelas, dengan panah lurus sepanjang sumbu kamera dan panjang ponsel.</string>
 </resources>

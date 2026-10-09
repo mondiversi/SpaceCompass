@@ -17,7 +17,7 @@
     <string name="time_format_12_hours">12 ساعة</string>
     <string name="settings_section_language">اللغة</string>
     <string name="language_system">افتراضي</string>
-    <string name="settings_section_appearance">المظهر</string>
+    <string name="settings_section_appearance">عام</string>
     <string name="settings_section_units">الوحدات</string>
     <string name="pc_settings">الإعدادات</string>
     <string name="pc_loading">جارٍ التحميل…</string>

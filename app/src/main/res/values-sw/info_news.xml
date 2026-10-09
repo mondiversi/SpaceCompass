@@ -1,9 +1,9 @@
 <resources>
     <string name="info_news_title">Mambo mapya · %1$s</string>
-    <string name="info_news_star_sky">Vitu 35: Sirius, Betelgeuse, Titan, Nebula ya Orion na Plejadi; picha mpya za Andromeda.</string>
-    <string name="info_news_texture_downloads">Kifurushi cha picha 1.1: picha 18 za WebP hupakuliwa zinapohitajika, huhakikiwa na hubaki kupatikana bila intaneti.</string>
-    <string name="info_news_weather">Paneli za taarifa zinazokunjika, vidhibiti vilivyopangwa upya na kiashirio wazi zaidi cha hali maalum.</string>
-    <string name="info_news_viewer_zoom">Nafasi ya sasa katika njia za kila siku, paneli za pointi zilizoboreshwa na ujumbe mmoja kulingana na kipaumbele.</string>
-    <string name="info_news_settings">Mwangaza wa athari za hali ya hewa hufuata alfajiri, mchana, machweo na usiku katika mwonekano mkuu na panorama.</string>
-    <string name="info_news_catalog">Vidhibiti bora vya panorama, mtetemo wakati wa kupiga picha, nafasi za kuhamisha na ukuzaji mdogo wa vitu.</string>
+    <string name="info_news_star_sky">Muziki wa anga wa kutafakari wenye mzunguko laini, unaopatikana bila intaneti.</string>
+    <string name="info_news_texture_downloads">Muziki huwashwa kwa chaguo-msingi kwa sauti ya chini; hali ya kuwasha na kiwango cha sauti huhifadhiwa.</string>
+    <string name="info_news_weather">Kitelezi cha sauti chenye nukta na viwango vya kawaida, kutoka kimya hadi kiwango cha juu.</string>
+    <string name="info_news_viewer_zoom">Mwonekano sasa unaitwa Jumla, ukiwa na ikoni maalumu ya mipangilio.</string>
+    <string name="info_news_settings">Kadi za muziki na hali maalumu hufunguka na kufungwa kwa uhuishaji laini.</string>
+    <string name="info_news_catalog">Ikoni za mwelekeo zilizo wazi zaidi, zenye mishale iliyonyooka katika mhimili wa kamera na urefu wa simu.</string>
 </resources>

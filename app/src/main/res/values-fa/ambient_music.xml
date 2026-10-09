@@ -1,0 +1,6 @@
+<resources>
+    <string name="music_title">موسیقی پس‌زمینه</string>
+    <string name="music_description">موسیقی فضایی مراقبه‌ای که آفلاین هم پخش می‌شود. هنگام خروج از برنامه متوقف می‌شود.</string>
+    <string name="music_volume">بلندی صدا</string>
+    <string name="music_volume_value">%1$s%%</string>
+</resources>

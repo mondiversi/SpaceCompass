@@ -19,6 +19,11 @@ import androidx.compose.ui.unit.dp
 /** Decorative section glyphs inherit the title color in both themes. */
 @Composable
 internal fun SpaceCompassSettingsGroupIcon(key: String, tint: Color) {
+    if (key == "ambient_music") {
+        Icon(painterResource(R.drawable.ic_music), contentDescription = null,
+            modifier = Modifier.size(20.dp), tint = tint)
+        return
+    }
     if (key == "repository") {
         Icon(painterResource(R.drawable.ic_repository), contentDescription = null,
             modifier = Modifier.size(20.dp), tint = tint)

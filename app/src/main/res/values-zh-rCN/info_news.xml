@@ -1,9 +1,9 @@
 <resources>
     <string name="info_news_title">最新变化 · %1$s</string>
-    <string name="info_news_star_sky">35个天体：新增天狼星、参宿四、土卫六、猎户座星云和昴星团，并加入仙女座的新图像。</string>
-    <string name="info_news_texture_downloads">图像包1.1：18幅WebP图像按需下载，经验证后可离线使用。</string>
-    <string name="info_news_weather">信息面板可折叠，重新安排操作按钮，并改进自定义场景的状态显示。</string>
-    <string name="info_news_viewer_zoom">每日轨迹加入当前位置，改进轨迹点面板，并按优先级显示一条状态消息。</string>
-    <string name="info_news_settings">主视图和全景中的天气效果亮度随黎明、白天、日落和夜晚变化。</string>
-    <string name="info_news_catalog">改进全景操作、拍摄振动、导出边距及紧凑的天体缩放按钮。</string>
+    <string name="info_news_star_sky">舒缓循环的冥想太空音乐，可离线播放。</string>
+    <string name="info_news_texture_downloads">音乐默认以较低音量开启，并保存开关状态和音量选择。</string>
+    <string name="info_news_weather">音量滑块带有刻度点，可从静音到最大音量逐级调节。</string>
+    <string name="info_news_viewer_zoom">外观更名为常规，并使用专属设置图标。</string>
+    <string name="info_news_settings">音乐和自定义场景卡片以平滑动画展开和收起。</string>
+    <string name="info_news_catalog">方向图标更加清晰，直线箭头分别沿相机轴和手机长轴指向。</string>
 </resources>

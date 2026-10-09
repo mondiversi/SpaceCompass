@@ -117,7 +117,7 @@ capture timestamps with explicit UTC offsets on all supported versions. Caption 
 and location-disclosure policy remain frozen independently of these EXIF timestamps.
 Composition-observed configuration/resources update preference examples and callbacks
 when locale/theme changes. The initial 1.0 release used display version 1.0 and protocol version 1.0.0.
-Current release 1.2.1 uses the same display/protocol version with code 22; signed
+Current release 1.2.2 uses the same display/protocol version with code 23; signed
 metadata, APK name and tag share that identity.
 
 
@@ -173,3 +173,28 @@ current/event text and `SpaceCompassPanoramaLabelLayout` for measured collision
 avoidance. Current and key-event labels are placed before hourly labels; labels
 are omitted when no clear position exists. Leaders are drawn before backgrounds
 and text. Two scaled pixels of the original path color outline each label.
+
+
+## General settings and ambient audio
+
+The General section retains the existing appearance navigation/resource identity;
+all twenty visible section labels are updated together. Its compact cog glyph is
+distinct from the main toolbar menu. Theme, display and music use the existing
+settings geometry and colors. Native pointing glyphs use straight optical-axis
+and phone-length arrows; the actual orientation calculations are unchanged.
+
+`SpaceCompassAmbientMusic` observes only two saved audio preferences, avoiding
+invalidation of celestial data and the main scene. The single activity-owned
+`SpaceCompassAmbientMusicPlayer` applies the saved settings before its first
+foreground callback, asynchronously prepares a local Ogg, smooths gain and follows
+Android audio focus and the foreground lifecycle. It requires no extra library,
+service, permission or network. Fresh settings enable the original meditative loop
+at 20%; an existing disabled choice remains respected. Volume gestures preview
+immediately and persist only when completed, in ten-percent steps.
+
+`SpaceCompassSettingsIslandReveal` shares UVIR's 300 ms top-anchored expansion,
+FastOutSlowIn easing and fade for music and the four scenario toggles. All body
+spacing/dividers belong to the animated area; heading padding stays stable. Closing
+controls are immediately inert and excluded from accessibility; uncommitted music
+volume previews are cleared when hidden. Scenario handlers and saved drafts remain
+owned by the page independently of body visibility.

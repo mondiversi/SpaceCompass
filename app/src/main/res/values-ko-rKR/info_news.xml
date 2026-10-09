@@ -1,9 +1,9 @@
 <resources>
     <string name="info_news_title">최근 변경 사항 · %1$s</string>
-    <string name="info_news_star_sky">35개 천체: 시리우스, 베텔게우스, 타이탄, 오리온 성운, 플레이아데스를 추가하고 안드로메다의 새 이미지를 제공합니다.</string>
-    <string name="info_news_texture_downloads">이미지 팩 1.1: WebP 이미지 18장을 필요할 때 다운로드하고 검증하여 오프라인으로 사용할 수 있습니다.</string>
-    <string name="info_news_weather">정보 패널을 접을 수 있으며, 조작 버튼을 재배치하고 사용자 지정 시나리오 표시를 개선했습니다.</string>
-    <string name="info_news_viewer_zoom">일일 경로의 현재 위치와 지점 패널을 개선하고 우선순위에 따라 상태 메시지 하나를 표시합니다.</string>
-    <string name="info_news_settings">메인 화면과 파노라마의 날씨 효과 조명이 새벽, 낮, 일몰, 밤에 맞춰 바뀝니다.</string>
-    <string name="info_news_catalog">파노라마 조작, 촬영 진동, 내보내기 여백과 작은 천체 확대 버튼을 개선했습니다.</string>
+    <string name="info_news_star_sky">부드럽게 반복되는 명상용 우주 음악을 오프라인에서 사용할 수 있습니다.</string>
+    <string name="info_news_texture_downloads">음악은 기본적으로 낮은 음량으로 켜집니다. 켜기·끄기와 음량 선택이 저장됩니다.</string>
+    <string name="info_news_weather">무음부터 최대 음량까지 일정한 단계로 조절하는 점 표시 음량 막대입니다.</string>
+    <string name="info_news_viewer_zoom">모양이 일반으로 바뀌고 전용 설정 아이콘이 추가되었습니다.</string>
+    <string name="info_news_settings">음악과 사용자 지정 시나리오 카드가 부드러운 애니메이션으로 펼쳐지고 접힙니다.</string>
+    <string name="info_news_catalog">카메라 축과 휴대전화의 길이 축을 따라가는 직선 화살표로 방향 아이콘이 더 명확해졌습니다.</string>
 </resources>

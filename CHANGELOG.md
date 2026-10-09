@@ -1,5 +1,15 @@
 # Changelog
 
+## 1.2.2 — 2026-10-09
+
+- Original meditative space music available offline, enabled initially at 20% volume.
+- Saved music activation and volume, with ten-percent slider steps and foreground/audio-focus handling.
+- Appearance renamed General in twenty languages, with a distinct cog icon.
+- Music and Custom scenario cards expand/collapse over 300 ms; disabled music hides its controls.
+- Clearer pointing-reference icons with straight camera-axis and phone-length arrows.
+- Saved audio settings are applied before the initial foreground resume.
+
+
 ## 1.2.1 — 2026-10-09
 
 Maintenance release. The in-app news summaries remain unchanged.

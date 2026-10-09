@@ -67,7 +67,7 @@ internal fun SpaceCompassPreferences(content: @Composable () -> Unit) {
         LocalSpaceCompassNumericFormat provides SpaceCompassNumericFormat.fromStoredValue(settings[SPACE_COMPASS_NUMERIC_FORMAT_KEY]),
         LocalSpaceCompassDateFormat provides SpaceCompassDateFormat.fromStoredValue(settings[SPACE_COMPASS_DATE_FORMAT_KEY]),
         LocalSpaceCompassTimeFormat provides resolveSpaceCompassTimeFormat(context, SpaceCompassTimeFormat.fromStoredValue(settings[SPACE_COMPASS_TIME_FORMAT_KEY]))
-    ) { content() }
+    ) { SpaceCompassAmbientMusic(content) }
 }
 
 internal val spaceCompassLanguages = listOf(

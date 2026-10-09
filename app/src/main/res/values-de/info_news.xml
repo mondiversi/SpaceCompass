@@ -1,9 +1,9 @@
 <resources>
     <string name="info_news_title">Neuigkeiten · %1$s</string>
-    <string name="info_news_star_sky">35 Objekte: Sirius, Beteigeuze, Titan, Orionnebel und Plejaden; neue Bilder von Andromeda.</string>
-    <string name="info_news_texture_downloads">Bildpaket 1.1: 18 WebP-Bilder werden bei Bedarf geladen, geprüft und bleiben offline verfügbar.</string>
-    <string name="info_news_weather">Einklappbare Informationsbereiche, neu angeordnete Bedienelemente und eine klarere Anzeige für das benutzerdefinierte Szenario.</string>
-    <string name="info_news_viewer_zoom">Aktuelle Position im Tagesverlauf, verbesserte Punktansichten und eine einzelne Statusmeldung nach Priorität.</string>
-    <string name="info_news_settings">Die Beleuchtung der Wettereffekte folgt Morgendämmerung, Tag, Sonnenuntergang und Nacht in Hauptansicht und Panoramen.</string>
-    <string name="info_news_catalog">Verbesserte Panorama-Steuerung, Vibration beim Aufnehmen, Exportabstände und kompakter Objektzoom.</string>
+    <string name="info_news_star_sky">Meditative Weltraummusik mit sanfter Wiederholung, auch offline verfügbar.</string>
+    <string name="info_news_texture_downloads">Musik ist standardmäßig bei niedriger Lautstärke aktiv; Aktivierung und Lautstärke werden gespeichert.</string>
+    <string name="info_news_weather">Lautstärkeregler mit gleichmäßigen Stufen von stumm bis maximal.</string>
+    <string name="info_news_viewer_zoom">Darstellung heißt jetzt Allgemein und hat ein eigenes Einstellungssymbol.</string>
+    <string name="info_news_settings">Die Karten für Musik und benutzerdefinierte Szenarien öffnen und schließen sich mit flüssigen Animationen.</string>
+    <string name="info_news_catalog">Klarere Ausrichtungssymbole mit geraden Pfeilen entlang der Kamera- und Telefonlängsachse.</string>
 </resources>

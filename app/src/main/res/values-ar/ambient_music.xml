@@ -1,0 +1,6 @@
+<resources>
+    <string name="music_title">موسيقى خلفية</string>
+    <string name="music_description">موسيقى فضائية تأملية متاحة دون اتصال. تتوقف عند مغادرة التطبيق.</string>
+    <string name="music_volume">مستوى الصوت</string>
+    <string name="music_volume_value">%1$s%%</string>
+</resources>

@@ -64,23 +64,29 @@ internal fun SpaceCompassSettingsToggleIsland(title: String, iconKey: String, ch
     content: @Composable ColumnScope.() -> Unit) {
     val foreground = MaterialTheme.colorScheme.onSurface
     SpaceCompassSettingsIsland(headerContent = {
-        Row(modifier.fillMaxWidth()
-            .toggleable(checked, role = Role.Checkbox, onValueChange = onCheckedChange)
-            .spaceCompassAccessibleAction(label = toggleDescription, role = Role.Checkbox,
-                checkedState = checked, onClick = { onCheckedChange(!checked) }),
-            verticalAlignment = Alignment.CenterVertically) {
-            SpaceCompassSettingsTitleIcon(iconKey, foreground)
-            Spacer(Modifier.width(8.dp))
-            // Match UVIR's natural heading height; the touch target expands into card padding.
-            CompositionLocalProvider(LocalMinimumInteractiveComponentSize provides 0.dp) {
-                Checkbox(checked, onCheckedChange = null, modifier = Modifier.size(SpaceCompassSettingsControlSize),
-                    colors = spaceCompassCheckboxColors(uncheckedColor = foreground.copy(alpha = .72f)))
+        Column(Modifier.fillMaxWidth()) {
+            Row(modifier.fillMaxWidth()
+                .toggleable(checked, role = Role.Checkbox, onValueChange = onCheckedChange)
+                .spaceCompassAccessibleAction(label = toggleDescription, role = Role.Checkbox,
+                    checkedState = checked, onClick = { onCheckedChange(!checked) }),
+                verticalAlignment = Alignment.CenterVertically) {
+                SpaceCompassSettingsTitleIcon(iconKey, foreground)
+                Spacer(Modifier.width(8.dp))
+                // Match UVIR's natural heading height; the touch target expands into card padding.
+                CompositionLocalProvider(LocalMinimumInteractiveComponentSize provides 0.dp) {
+                    Checkbox(checked, onCheckedChange = null, modifier = Modifier.size(SpaceCompassSettingsControlSize),
+                        colors = spaceCompassCheckboxColors(uncheckedColor = foreground.copy(alpha = .72f)))
+                }
+                Spacer(Modifier.width(6.dp))
+                Text(title, Modifier.weight(1f), fontSize = 15.sp,
+                    fontWeight = if (checked) FontWeight.Bold else FontWeight.Normal)
             }
-            Spacer(Modifier.width(6.dp))
-            Text(title, Modifier.weight(1f), fontSize = 15.sp,
-                fontWeight = if (checked) FontWeight.Bold else FontWeight.Normal)
+            SpaceCompassSettingsIslandReveal(checked) {
+                HorizontalDivider(color = foreground.copy(alpha = .20f))
+                content()
+            }
         }
-    }, showHeaderDivider = checked, content = content)
+    }, showHeaderDivider = false, content = {})
 }
 
 /** Shared compact row for settings and the searchable time-zone list. */

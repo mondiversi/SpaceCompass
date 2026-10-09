@@ -1,9 +1,9 @@
 <resources>
     <string name="info_news_title">最近の変更 · %1$s</string>
-    <string name="info_news_star_sky">35天体：シリウス、ベテルギウス、タイタン、オリオン大星雲、プレアデス星団を追加。アンドロメダの新しい画像も収録。</string>
-    <string name="info_news_texture_downloads">画像パック1.1：18枚のWebP画像を必要時にダウンロードし、検証してオフラインで利用できます。</string>
-    <string name="info_news_weather">情報パネルを折りたたみ可能にし、操作ボタンとカスタムシナリオの表示を改善。</string>
-    <string name="info_news_viewer_zoom">日周経路の現在位置、ポイントパネルを改善。状態メッセージは優先度に応じて1つ表示。</string>
-    <string name="info_news_settings">メイン画面とパノラマの天気エフェクトが、夜明け、昼、日没、夜の明るさに対応。</string>
-    <string name="info_news_catalog">パノラマ操作、撮影時の振動、エクスポートの余白とコンパクトな天体ズームを改善。</string>
+    <string name="info_news_star_sky">穏やかに繰り返す瞑想的な宇宙音楽をオフラインで楽しめます。</string>
+    <string name="info_news_texture_downloads">音楽は初期設定で小さな音量で有効です。有効・無効と音量の選択を保存します。</string>
+    <string name="info_news_weather">音量バーに目盛りを追加し、無音から最大まで一定の段階で調整できます。</string>
+    <string name="info_news_viewer_zoom">外観を一般に変更し、専用の設定アイコンを追加しました。</string>
+    <string name="info_news_settings">音楽とカスタムシナリオのカードが滑らかなアニメーションで開閉します。</string>
+    <string name="info_news_catalog">カメラ軸と端末の長軸に沿う直線の矢印で、向きのアイコンが分かりやすくなりました。</string>
 </resources>
