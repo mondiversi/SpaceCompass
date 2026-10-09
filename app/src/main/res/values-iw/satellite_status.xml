@@ -4,7 +4,7 @@
   <string name="celestial_satellite_timeout">CelesTrak / Satcat לא הגיב בזמן: לא ניתן להוריד נתונים עבור %1$s. נסה רשת אחרת.</string>
   <string name="celestial_starlink_unavailable">הנתונים של %1$s אינם זמינים. ייתכן שלא ניתן להגיע ל-CelesTrak / Satcat גם כשיש חיבור פעיל לאינטרנט.</string>
   <string name="celestial_starlink_timeout">CelesTrak / Satcat לא הגיב בזמן: לא ניתן להוריד נתונים עבור %1$s. נסה רשת אחרת.</string>
-  <string name="celestial_data_unavailable_compact">הנתונים אינם זמינים</string>
-  <string name="celestial_date_unavailable">אין נתונים לתאריך זה</string>
+  <string name="celestial_data_unavailable_compact">הנתונים אינם זמינים.</string>
+  <string name="celestial_date_unavailable">אין נתונים לתאריך זה.</string>
   <string name="catalog_date_unavailable">התאריך מחוץ לטווח</string>
 </resources>

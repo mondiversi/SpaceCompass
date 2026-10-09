@@ -186,12 +186,14 @@ zero is optically centered over the bar and both move together inside the circle
 The actual orientation calculations are unchanged.
 
 `SpaceCompassAmbientMusic` observes only two saved audio preferences, avoiding
-invalidation of celestial data and the main scene. The single activity-owned
-`SpaceCompassAmbientMusicPlayer` applies the saved settings before its first
-foreground callback, asynchronously prepares a local Ogg, smooths gain and follows
-Android audio focus and the foreground lifecycle. It requires no extra library,
-service, permission or network. Fresh settings enable the original meditative loop
-at 20%; an existing disabled choice remains respected. Volume gestures preview
+invalidation of celestial data and the main scene. The activity-owned player applies
+saved settings before its first foreground callback and retains the pure focus/
+lifecycle policy. `SpaceCompassAmbientMusicOutput` owns one serialized PCM worker
+and atomically cancelled native AudioTrack sessions. Pure, reusable oscillator,
+filter, compressor and FFT/convolver modules generate the original website space
+score continuously off the UI thread. The recorded Ogg is no longer bundled.
+No extra library, service, permission or network is required. Fresh settings enable
+music at 20%; saved disabled choices remain respected. Volume gestures preview
 immediately and persist only when completed, in ten-percent steps.
 
 `SpaceCompassSettingsIslandReveal` shares UVIR's 300 ms top-anchored expansion,
@@ -202,7 +204,7 @@ volume previews are cleared when hidden. Scenario handlers and saved drafts rema
 owned by the page independently of body visibility.
 
 
-## Compass status and maintenance release 1.2.3
+## Compass status and maintenance release 1.2.4
 
 `SpaceCompassSunCompassReliability` provides the pure issue classification shared
 with the lifecycle-scoped sensor listener. Fresh field anomalies, an uncalibrated
@@ -210,13 +212,17 @@ sensor, low accuracy and stale/recovering readings have distinct states. The
 existing field tolerance, sample freshness, north reference and recovery period
 remain unchanged. Six JVM regressions cover the boundaries and precedence.
 
-`SpaceCompassSunStatusNotices` renders the existing exclusive data/retry priority
-and theme-aware orange for every notice/action. Status resource texts omit final
-full stops and ellipses in all twenty catalogs. Obsolete calibration/color flags
-are removed; celestial ephemerides and camera transforms do not depend on them.
+`SpaceCompassSunStatusNotices` retains exclusive data/retry priority. A single
+annotated paragraph puts the native clickable link immediately after its sentence,
+without a separate right-hand action column. Links use the theme primary blue/cyan;
+routine text uses the regular foreground. Only magnetic interference, calibration
+and outdated orbital data use theme-aware orange. All twenty catalogs retain
+localized sentence endings, while state-action labels have no final punctuation.
+The outdated-data notice is generic; it no longer needs an object-name argument.
+Celestial ephemerides and camera transforms remain independent of presentation.
 The shared capture button chooses a shutter or panorama glyph from camera mode;
 export keeps its separate translated image-dialog title and saved profile.
 
-Version 1.2.3 retains the twenty 1.2.2 in-app news summaries byte for byte. The
+Version 1.2.4 retains the twenty existing in-app news summaries byte for byte. The
 information archive records current resources/docs while image pack 1.1 retains
 its immutable individual URLs, byte sizes, dimensions and SHA-256 pins.

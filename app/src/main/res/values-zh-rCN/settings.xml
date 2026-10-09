@@ -28,5 +28,5 @@
     <string name="pc_coordinates">坐标</string>
     <string name="pc_decimal_degrees">十进制度</string>
     <string name="pc_dms">度、分、秒</string>
-    <string name="pc_compass_approximate">精度较低</string>
+    <string name="pc_compass_approximate">精度较低。</string>
 </resources>

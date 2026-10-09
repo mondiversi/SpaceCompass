@@ -4,7 +4,7 @@
   <string name="celestial_satellite_timeout">CelesTrak / Satcatが時間内に応答しなかったため、%1$sのデータを取得できませんでした。別のネットワークをお試しください。</string>
   <string name="celestial_starlink_unavailable">%1$sのデータを取得できません。インターネットに接続していても、CelesTrak / Satcatにアクセスできない場合があります。</string>
   <string name="celestial_starlink_timeout">CelesTrak / Satcatが時間内に応答しなかったため、%1$sのデータを取得できませんでした。別のネットワークをお試しください。</string>
-  <string name="celestial_data_unavailable_compact">データを取得できません</string>
-  <string name="celestial_date_unavailable">この日付のデータは利用できません</string>
+  <string name="celestial_data_unavailable_compact">データを取得できません。</string>
+  <string name="celestial_date_unavailable">この日付のデータは利用できません。</string>
   <string name="catalog_date_unavailable">データの対象期間外</string>
 </resources>

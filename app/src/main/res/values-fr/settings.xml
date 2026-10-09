@@ -28,5 +28,5 @@
     <string name="pc_coordinates">Coordonnées</string>
     <string name="pc_decimal_degrees">Degrés décimaux</string>
     <string name="pc_dms">Degrés, minutes, secondes</string>
-    <string name="pc_compass_approximate">Précision réduite</string>
+    <string name="pc_compass_approximate">Précision réduite.</string>
 </resources>

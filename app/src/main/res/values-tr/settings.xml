@@ -28,5 +28,5 @@
     <string name="pc_coordinates">Koordinatlar</string>
     <string name="pc_decimal_degrees">Ondalık derece</string>
     <string name="pc_dms">Derece, dakika, saniye</string>
-    <string name="pc_compass_approximate">Düşük doğruluk</string>
+    <string name="pc_compass_approximate">Düşük doğruluk.</string>
 </resources>

@@ -22,8 +22,8 @@
     <string name="celestial_azimuth">Азимут (%1$s): %2$s</string>
     <string name="celestial_elevation">Высота (%1$s): %2$s</string>
     <string name="celestial_below">%1$s ниже горизонта</string>
-    <string name="celestial_loading">Обновление орбитальных данных</string>
-    <string name="celestial_unavailable">Данные для %1$s недоступны. Для обновления нужен Интернет</string>
+    <string name="celestial_loading">Обновление орбитальных данных.</string>
+    <string name="celestial_unavailable">Данные для %1$s недоступны. Для обновления нужен Интернет.</string>
     <string name="celestial_iss_old">Орбитальным данным МКС более 24 часов: точность может снизиться.</string>
     <string name="celestial_iss_note">Полный оборот вокруг текущего времени, включая участок под горизонтом, с 24 равномерными точками, восходом, кульминацией и заходом. Данные относятся к текущему или следующему пролёту в течение 24 часов; видимость не гарантирована.\nCelesTrak / Satcat · Space-Track</string>
     <string name="celestial_model_note">Положения и расстояния рассчитаны; наведение зависит от точности компаса. МКС нужны свежие орбитальные данные. Седна и «Вояджер» используют прогнозные траектории NASA/JPL, а не телеметрию в реальном времени.</string>

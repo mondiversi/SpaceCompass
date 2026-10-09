@@ -28,5 +28,5 @@
     <string name="pc_coordinates">निर्देशांक</string>
     <string name="pc_decimal_degrees">दशमलव डिग्री</string>
     <string name="pc_dms">डिग्री, मिनट, सेकंड</string>
-    <string name="pc_compass_approximate">कम सटीकता</string>
+    <string name="pc_compass_approximate">कम सटीकता।</string>
 </resources>

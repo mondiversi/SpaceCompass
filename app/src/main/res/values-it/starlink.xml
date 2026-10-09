@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="celestial_satellite_old">Dati orbitali di %1$s di oltre 24 ore fa: la precisione può essere ridotta</string>
+    <string name="celestial_satellite_old">Dati orbitali non aggiornati.</string>
     <string name="celestial_starlink_note">STARLINK-40083 · NORAD 100855 · 2026-225A. Orbita da CelesTrak. Modello illustrativo: orientamento reale e dimensioni del satellite non disponibili.\nCelesTrak / Satcat · Space-Track</string>
 </resources>

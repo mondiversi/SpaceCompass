@@ -28,5 +28,5 @@
     <string name="pc_coordinates">Координаты</string>
     <string name="pc_decimal_degrees">Десятичные градусы</string>
     <string name="pc_dms">Градусы, минуты, секунды</string>
-    <string name="pc_compass_approximate">Низкая точность</string>
+    <string name="pc_compass_approximate">Низкая точность.</string>
 </resources>

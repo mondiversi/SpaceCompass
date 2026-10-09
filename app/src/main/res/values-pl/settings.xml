@@ -28,5 +28,5 @@
     <string name="pc_coordinates">Współrzędne</string>
     <string name="pc_decimal_degrees">Stopnie dziesiętne</string>
     <string name="pc_dms">Stopnie, minuty, sekundy</string>
-    <string name="pc_compass_approximate">Obniżona dokładność</string>
+    <string name="pc_compass_approximate">Obniżona dokładność.</string>
 </resources>

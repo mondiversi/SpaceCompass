@@ -1,7 +1,10 @@
-Quiet Orbit — original background music for Space Compass
+Original Mondiversi generative space score for Space Compass
 Copyright (c) 2026 Mondiversi. Licensed under the project GPL-3.0 licence.
 
 Original procedural composition and synthesis, with no third-party music or samples.
-96-second stereo seamless loop; Ogg Vorbis, 44.1 kHz. Its reproducible source is
-scripts/GenerateAmbientMusic.py. FFmpeg encodes the audio during development and
-is not included in the Android app.
+The website chord/bell score is synthesized continuously using local oscillators,
+envelopes, stereo panning and partitioned convolution; no recording is bundled.
+Reproducible source: SpaceCompassAmbient* Kotlin files. No audio network or extra library.
+
+Historical Quiet Orbit recordings retain their original credit and GPL-3.0 licence;
+scripts/GenerateAmbientMusic.py preserves that earlier composition's development source.

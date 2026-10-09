@@ -4,7 +4,7 @@
   <string name="celestial_satellite_timeout">CelesTrak / Satcat tidak merespons tepat waktu: data %1$s tidak dapat diunduh. Coba jaringan lain.</string>
   <string name="celestial_starlink_unavailable">Data %1$s tidak tersedia. CelesTrak / Satcat mungkin tidak dapat dijangkau meskipun koneksi Internet aktif.</string>
   <string name="celestial_starlink_timeout">CelesTrak / Satcat tidak merespons tepat waktu: data %1$s tidak dapat diunduh. Coba jaringan lain.</string>
-  <string name="celestial_data_unavailable_compact">Data tidak tersedia</string>
-  <string name="celestial_date_unavailable">Data tidak tersedia untuk tanggal ini</string>
+  <string name="celestial_data_unavailable_compact">Data tidak tersedia.</string>
+  <string name="celestial_date_unavailable">Data tidak tersedia untuk tanggal ini.</string>
   <string name="catalog_date_unavailable">Tanggal di luar cakupan</string>
 </resources>

@@ -20,7 +20,9 @@ class SpaceCompassStarlinkTranslationTest {
                 elements.item(i).attributes.getNamedItem("name").nodeValue to elements.item(i).textContent
             }
             assertEquals(directory,2,values.size)
-            assertTrue(values.getValue("celestial_satellite_old").contains("%1\$s"))
+            val warning = values.getValue("celestial_satellite_old")
+            assertFalse("Generic warning must not require an object name: $directory", warning.contains("%"))
+            assertTrue("Warning has a localized sentence ending: $directory", warning.last() in ".。।۔")
             assertTrue(values.getValue("celestial_starlink_note").contains("STARLINK-40083 · NORAD 100855 · 2026-225A"))
             assertTrue(values.getValue("celestial_starlink_note").contains("CelesTrak"))
             if (directory == "values-iw") assertFalse(Regex("[\\u0591-\\u05BD\\u05BF-\\u05C7]").containsMatchIn(values.values.joinToString()))

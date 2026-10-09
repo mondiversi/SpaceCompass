@@ -4,7 +4,7 @@
   <string name="celestial_satellite_timeout">CelesTrak / Satcat reageerde niet op tijd: gegevens voor %1$s konden niet worden gedownload. Probeer een ander netwerk.</string>
   <string name="celestial_starlink_unavailable">Gegevens voor %1$s zijn niet beschikbaar. CelesTrak / Satcat kan ook met een actieve internetverbinding onbereikbaar zijn.</string>
   <string name="celestial_starlink_timeout">CelesTrak / Satcat reageerde niet op tijd: gegevens voor %1$s konden niet worden gedownload. Probeer een ander netwerk.</string>
-  <string name="celestial_data_unavailable_compact">Gegevens niet beschikbaar</string>
-  <string name="celestial_date_unavailable">Geen gegevens beschikbaar voor deze datum</string>
+  <string name="celestial_data_unavailable_compact">Gegevens niet beschikbaar.</string>
+  <string name="celestial_date_unavailable">Geen gegevens beschikbaar voor deze datum.</string>
   <string name="catalog_date_unavailable">Datum buiten bereik</string>
 </resources>

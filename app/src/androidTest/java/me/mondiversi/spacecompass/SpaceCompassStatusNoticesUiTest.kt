@@ -30,6 +30,9 @@ import java.util.Locale
 class SpaceCompassStatusNoticesUiTest {
     @get:Rule val compose = createAndroidComposeRule<MainActivity>()
 
+    private fun statusAction() = compose.onNode(hasClickAction() and
+        hasAnyAncestor(hasTestTag("sun-finder-status-island")), useUnmergedTree = true)
+
     @Test fun noticesFitTheSkyCornerAcrossLanguagesSizesAndFontsAndRetryRemainsClickable() {
         val width = mutableStateOf(360f)
         val height = mutableStateOf(500f)
@@ -65,7 +68,7 @@ class SpaceCompassStatusNoticesUiTest {
             compose.onNodeWithTag("celestial-compass-warning").assertDoesNotExist()
             compose.onNodeWithTag("observer-simulation-banner").assertDoesNotExist()
             val notice = compose.onNodeWithTag("sun-finder-status-island").assertIsDisplayed().fetchSemanticsNode().boundsInRoot
-            val action = compose.onNodeWithTag("sun-finder-status-action").assertIsDisplayed().fetchSemanticsNode().touchBoundsInRoot
+            val action = statusAction().assertIsDisplayed().fetchSemanticsNode().touchBoundsInRoot
             assertTrue("Notice stays within its sky in $code", notice.left >= sky.left && notice.right <= sky.right)
             assertTrue("Status width stays compact in $code", notice.width <= 280.5f)
             if (font == 1f) assertTrue("Regular-font status has one compact row in $code", notice.height <= 61f)
@@ -74,7 +77,7 @@ class SpaceCompassStatusNoticesUiTest {
             else assertEquals(sky.left + 4f, notice.left, 1f)
         }
         compose.runOnIdle { language.value = "it"; width.value = 360f; scale.value = 1f }
-        compose.onNodeWithTag("sun-finder-status-action").performClick()
+        statusAction().performClick()
         compose.runOnIdle { assertEquals(1, retries) }
         for ((name, w) in listOf("phone" to 360f, "tablet" to 800f)) {
             compose.runOnIdle { width.value = w }
@@ -104,10 +107,10 @@ class SpaceCompassStatusNoticesUiTest {
         } }
         compose.onNodeWithTag("sun-finder-status-island").assertIsDisplayed()
         compose.onNodeWithTag("celestial-compass-warning").assertDoesNotExist()
-        compose.onNodeWithTag("sun-finder-status-action").performClick()
+        statusAction().performClick()
         compose.runOnIdle { assertEquals(1, retries) }
-        compose.onNodeWithText("Loading").assertIsDisplayed()
-        compose.onNodeWithTag("sun-finder-status-action").assertDoesNotExist()
+        compose.onNodeWithText("Loading.").assertIsDisplayed()
+        statusAction().assertDoesNotExist()
         compose.onNodeWithTag("celestial-compass-warning").assertDoesNotExist()
 
         // A failed retry keeps priority even if the sensor state changes in the meantime.
@@ -116,12 +119,12 @@ class SpaceCompassStatusNoticesUiTest {
             message.value = "Offline"
             action.value = "Retry"
         }
-        compose.onNodeWithTag("sun-finder-status-action").assertIsDisplayed().performClick()
+        statusAction().assertIsDisplayed().performClick()
         compose.runOnIdle { assertEquals(2, retries); message.value = null }
         compose.onNodeWithTag("sun-finder-status-island").assertDoesNotExist()
         compose.onNodeWithTag("celestial-compass-warning").assertIsDisplayed()
-            .assertTextEquals("Move magnetic objects away")
+            .assertTextEquals("Move magnetic objects away.")
         compose.runOnIdle { warning.value = "Reduced precision" }
-        compose.onNodeWithTag("celestial-compass-warning").assertTextEquals("Reduced precision")
+        compose.onNodeWithTag("celestial-compass-warning").assertTextEquals("Reduced precision.")
     }
 }

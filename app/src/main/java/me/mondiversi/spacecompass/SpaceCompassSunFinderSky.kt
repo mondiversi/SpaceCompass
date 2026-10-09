@@ -77,6 +77,7 @@ internal fun SpaceCompassSunPointingViewport(
     overlays: Map<SpaceCompassCelestialBody, SpaceCompassCelestialOverlay> = emptyMap(),
     onActivateBody: ((SpaceCompassCelestialBody) -> Unit)? = null, compassAccurate: Boolean = true,
     statusMessage: String? = null, statusActionLabel: String? = null, onStatusAction: () -> Unit = {},
+    compassWarningAttention: Boolean = false, statusAttention: Boolean = false,
     simulationLabel: String? = null, onSimulation: () -> Unit = {},
     perspective: SpaceCompassPerspective? = null, topActionsWidth: androidx.compose.ui.unit.Dp = 62.dp,
     observerLatitude: Double? = null, showSkyReferences: Boolean = SPACE_COMPASS_SKY_REFERENCES_DEFAULT,
@@ -237,7 +238,8 @@ internal fun SpaceCompassSunPointingViewport(
                         contentAlignment = Alignment.Center) {
                         if (noticesAtBottom) SpaceCompassSunStatusNotices(compassWarning, statusMessage, statusActionLabel, onStatusAction,
                             backgroundColor,
-                            Modifier.onSizeChanged { noticeSize = it }, simulationLabel, onSimulation)
+                            Modifier.onSizeChanged { noticeSize = it }, simulationLabel, onSimulation,
+                            compassWarningAttention, statusAttention, primaryText)
                     }
                     Box(Modifier.align(Alignment.Bottom)) {
                         bottomActions(Modifier.onSizeChanged { bottomActionsSize = it })
@@ -255,7 +257,8 @@ internal fun SpaceCompassSunPointingViewport(
             if (!noticesAtBottom) SpaceCompassSunStatusNotices(compassWarning, statusMessage, statusActionLabel, onStatusAction,
                 backgroundColor,
                 Modifier.align(Alignment.TopStart).padding(start = 4.dp, end = topActionsWidth, top = 4.dp)
-                    .onSizeChanged { noticeSize = it }, simulationLabel, onSimulation)
+                    .onSizeChanged { noticeSize = it }, simulationLabel, onSimulation,
+                compassWarningAttention, statusAttention, primaryText)
         }
     }
 }

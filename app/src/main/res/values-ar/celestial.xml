@@ -22,8 +22,8 @@
     <string name="celestial_azimuth">السمت (%1$s): %2$s</string>
     <string name="celestial_elevation">الارتفاع (%1$s): %2$s</string>
     <string name="celestial_below">%1$s تحت الأفق</string>
-    <string name="celestial_loading">تحديث البيانات المدارية</string>
-    <string name="celestial_unavailable">بيانات %1$s غير متاحة. يلزم اتصال بالإنترنت لتحديثها</string>
+    <string name="celestial_loading">تحديث البيانات المدارية.</string>
+    <string name="celestial_unavailable">بيانات %1$s غير متاحة. يلزم اتصال بالإنترنت لتحديثها.</string>
     <string name="celestial_iss_old">بيانات مدار ISS أقدم من 24 ساعة: قد تنخفض الدقة.</string>
     <string name="celestial_iss_note">دورة كاملة حول الوقت الحالي، بما في ذلك أسفل الأفق، مع 24 نقطة منتظمة إضافة إلى الشروق والذروة والغروب. تفاصيل المرور تخص المرور الحالي أو التالي خلال 24 ساعة؛ الرؤية غير مضمونة.\nCelesTrak / Satcat · Space-Track</string>
     <string name="celestial_model_note">المواضع والمسافات محسوبة؛ يعتمد التوجيه على دقة البوصلة. تتطلب ISS بيانات مدارية حديثة. تستخدم سدنا وفوياجر مسارات متوقعة من NASA/JPL، وليست بيانات قياس مباشرة.</string>

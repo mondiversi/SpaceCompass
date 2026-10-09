@@ -514,7 +514,7 @@ upright phone, diagonally parallel to its length for a flat phone. These glyph
 changes do not alter the saved reference or sensor/optical geometry.
 
 
-## Maintenance refinements in 1.2.3
+## Maintenance refinements in 1.2.4
 
 The pointing-reference control now shows bold localized 90° beside a vertical
 bar or 0° above a horizontal bar. The zero is centered above the line; the entire

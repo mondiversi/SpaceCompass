@@ -319,19 +319,20 @@ internal fun SpaceCompassSunFinderContent(
         else -> false
     }
     val messageText = message?.let {
-        if (it == R.string.celestial_unavailable || it == R.string.celestial_satellite_old) stringResource(it, bodyName)
+        if (it == R.string.celestial_unavailable) stringResource(it, bodyName)
         else stringResource(it)
     }
     val dateOutsideRemoteData = hasActiveBody && spaceCompassCelestialDataOutsideDate(body, timeMs, remote)
-    val remoteMessage = when {
+    val remoteMessageId = when {
         hasActiveBody && target == null && sun != null && !remote.loading && dateOutsideRemoteData ->
-            stringResource(R.string.celestial_date_unavailable)
-        hasActiveBody && target == null && sun != null -> if (remote.loading) stringResource(R.string.celestial_loading)
-            else stringResource(R.string.celestial_data_unavailable_compact)
+            R.string.celestial_date_unavailable
+        hasActiveBody && target == null && sun != null -> if (remote.loading) R.string.celestial_loading
+            else R.string.celestial_data_unavailable_compact
         body.isEarthSatellite && remote.satelliteOrbit(body)?.let { timeMs - it.epochMs > SPACE_COMPASS_ISS_WARNING_AGE_MS } == true ->
-            stringResource(R.string.celestial_satellite_old, bodyName)
+            R.string.celestial_satellite_old
         else -> null
     }
+    val remoteMessage = remoteMessageId?.let { stringResource(it) }
     val orientation = spaceCompassSunViewOrientation(readings.orientation, pointingTopEdge, cameraEnabled,
         deviceView.display?.rotation ?: 0)
     val pointingOrientation = spaceCompassSunTrustedPointingOrientation(orientation, readings.compassUsable)
@@ -477,6 +478,9 @@ internal fun SpaceCompassSunFinderContent(
                 compassWarning = messageText.takeIf { isCompassMessage },
                 compassAccurate = readings.compassReliable,
                 statusMessage = remoteMessage ?: messageText.takeUnless { isCompassMessage },
+                compassWarningAttention = message == R.string.sun_finder_compass_accuracy ||
+                    message == R.string.sun_finder_compass_calibrate,
+                statusAttention = (remoteMessageId ?: message) == R.string.celestial_satellite_old,
                 statusActionLabel = if (hasActiveBody && target == null && sun != null && !remote.loading)
                     stringResource(R.string.sun_finder_retry) else locationActionLabel,
                 onStatusAction = if (hasActiveBody && target == null && sun != null) onRemoteRetry else onLocationAction,

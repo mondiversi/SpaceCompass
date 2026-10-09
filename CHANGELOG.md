@@ -1,5 +1,15 @@
 # Changelog
 
+## 1.2.4 — 2026-10-09
+
+- Generate the original website space score continuously on-device, replacing the bundled recording.
+- Retain saved activation/volume, seamless overlapping voices, foreground/audio-focus behavior and offline playback.
+- Place status actions immediately after their message, using theme-aware blue/cyan links.
+- Use normal text for routine statuses and orange only for magnetic interference, calibration and outdated orbital data.
+- Add localized sentence endings to notices, keep action labels unpunctuated and simplify the satellite warning.
+- Preserve the existing in-app news summaries and image pack 1.1.
+
+
 ## 1.2.3 — 2026-10-09
 
 - Distinguish compass calibration, magnetic interference, reduced precision and recovering readings.

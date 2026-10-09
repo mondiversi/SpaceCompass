@@ -28,5 +28,5 @@
     <string name="pc_coordinates">Συντεταγμένες</string>
     <string name="pc_decimal_degrees">Δεκαδικές μοίρες</string>
     <string name="pc_dms">Μοίρες, λεπτά, δευτερόλεπτα</string>
-    <string name="pc_compass_approximate">Μειωμένη ακρίβεια</string>
+    <string name="pc_compass_approximate">Μειωμένη ακρίβεια.</string>
 </resources>

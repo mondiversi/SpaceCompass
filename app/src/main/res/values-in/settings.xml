@@ -28,5 +28,5 @@
     <string name="pc_coordinates">Koordinat</string>
     <string name="pc_decimal_degrees">Derajat desimal</string>
     <string name="pc_dms">Derajat, menit, detik</string>
-    <string name="pc_compass_approximate">Akurasi rendah</string>
+    <string name="pc_compass_approximate">Akurasi rendah.</string>
 </resources>

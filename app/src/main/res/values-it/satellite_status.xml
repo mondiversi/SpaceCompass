@@ -4,7 +4,7 @@
   <string name="celestial_satellite_timeout">CelesTrak / Satcat non risponde in tempo: impossibile scaricare i dati di %1$s. Prova un’altra rete.</string>
   <string name="celestial_starlink_unavailable">Dati di %1$s non disponibili. CelesTrak / Satcat potrebbe non essere raggiungibile anche con Internet attivo.</string>
   <string name="celestial_starlink_timeout">CelesTrak / Satcat non risponde in tempo: impossibile scaricare i dati di %1$s. Prova un’altra rete.</string>
-  <string name="celestial_data_unavailable_compact">Dati non disponibili</string>
-  <string name="celestial_date_unavailable">Dati non disponibili per questa data</string>
+  <string name="celestial_data_unavailable_compact">Dati non disponibili.</string>
+  <string name="celestial_date_unavailable">Dati non disponibili per questa data.</string>
   <string name="catalog_date_unavailable">Data non coperta</string>
 </resources>

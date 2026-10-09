@@ -28,5 +28,5 @@
     <string name="pc_coordinates">Viwianishi</string>
     <string name="pc_decimal_degrees">Digrii za desimali</string>
     <string name="pc_dms">Digrii, dakika, sekunde</string>
-    <string name="pc_compass_approximate">Usahihi mdogo</string>
+    <string name="pc_compass_approximate">Usahihi mdogo.</string>
 </resources>

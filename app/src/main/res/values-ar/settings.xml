@@ -28,5 +28,5 @@
     <string name="pc_coordinates">الإحداثيات</string>
     <string name="pc_decimal_degrees">درجات عشرية</string>
     <string name="pc_dms">درجات، دقائق، ثوانٍ</string>
-    <string name="pc_compass_approximate">دقة منخفضة</string>
+    <string name="pc_compass_approximate">دقة منخفضة.</string>
 </resources>

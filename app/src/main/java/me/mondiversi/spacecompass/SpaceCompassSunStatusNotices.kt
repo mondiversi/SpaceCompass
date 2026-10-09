@@ -4,9 +4,9 @@ import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.shape.RoundedCornerShape
+import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
-import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.luminance
@@ -20,23 +20,28 @@ import androidx.compose.ui.semantics.liveRegion
 import androidx.compose.ui.semantics.semantics
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import androidx.compose.ui.text.LinkAnnotation
+import androidx.compose.ui.text.SpanStyle
+import androidx.compose.ui.text.TextLinkStyles
+import androidx.compose.ui.text.buildAnnotatedString
+import androidx.compose.ui.text.withLink
 import androidx.compose.ui.text.font.FontWeight
-import androidx.compose.ui.text.style.TextAlign
 
 /** Data/location status takes precedence over secondary notices until it clears. */
 @Composable
 internal fun SpaceCompassSunStatusNotices(
     compassWarning: String?, message: String?, actionLabel: String?, onAction: () -> Unit,
     backgroundColor: Color, modifier: Modifier = Modifier,
-    simulationLabel: String? = null, onSimulation: () -> Unit = {}
+    simulationLabel: String? = null, onSimulation: () -> Unit = {},
+    compassWarningAttention: Boolean = false, messageAttention: Boolean = false,
+    primaryText: Color = MaterialTheme.colorScheme.onSurface
 ) {
-    // Keep the retry/loading status exclusive without changing the underlying compass state.
     val hasStatus = message != null || actionLabel != null
     val shape = RoundedCornerShape(14.dp)
     val noticePadding = PaddingValues(horizontal = 12.dp, vertical = 6.dp)
     val noticeBackground = backgroundColor.copy(alpha = 0.90f)
-    // Every notice and its action share a readable, theme-aware orange.
     val warningOrange = if (backgroundColor.luminance() < .4f) Color(0xFFFF8F1F) else Color(0xFFAB3D00)
+    val linkColor = MaterialTheme.colorScheme.primary
     SpaceCompassNoticesByWidth(modifier.widthIn(max = 280.dp)) {
         if (!hasStatus && simulationLabel != null) {
             Text(simulationLabel, color = warningOrange, fontSize = 10.sp, lineHeight = 13.sp,
@@ -44,30 +49,41 @@ internal fun SpaceCompassSunStatusNotices(
                     .background(noticeBackground, shape).clickable(role = Role.Button, onClick = onSimulation)
                     .padding(noticePadding))
         }
-        if (!hasStatus && compassWarning != null) Text(compassWarning,
-            color = warningOrange, fontSize = 10.sp,
+        if (!hasStatus && compassWarning != null) Text(spaceCompassStatusSentence(compassWarning),
+            color = if (compassWarningAttention) warningOrange else primaryText, fontSize = 10.sp,
             lineHeight = 13.sp, modifier = Modifier.background(noticeBackground, shape)
                 .padding(noticePadding).testTag("celestial-compass-warning")
                 .semantics { liveRegion = LiveRegionMode.Polite })
-        if (hasStatus) Row(
-            Modifier.width(IntrinsicSize.Max).testTag("sun-finder-status-island")
-                .semantics { liveRegion = LiveRegionMode.Polite }.background(noticeBackground, shape)
-                .padding(noticePadding),
-            verticalAlignment = Alignment.CenterVertically,
-            horizontalArrangement = Arrangement.spacedBy(4.dp)
-        ) {
-            if (message != null) Text(message, Modifier.weight(1f, fill = false), color = warningOrange,
-                fontSize = 10.sp, lineHeight = 13.sp)
-            // The compact label adds no padding/layout height of its own. Foundation
-            // expands its clickable/touch bounds to 48 dp without enlarging the island.
-            if (actionLabel != null) Text(actionLabel,
-                Modifier.widthIn(min = 48.dp).clickable(role = Role.Button, onClick = onAction)
-                    .spaceCompassAccessibleAction(label = actionLabel, onClick = onAction)
-                    .testTag("sun-finder-status-action"),
-                color = warningOrange, fontSize = 10.sp, lineHeight = 13.sp,
-                fontWeight = FontWeight.Medium, textAlign = TextAlign.Center)
+        if (hasStatus) {
+            // One paragraph lets the action follow the sentence, including when text wraps or is RTL.
+            // LinkAnnotation gives the action its own native focus/click target without making the
+            // surrounding message clickable or allocating an empty right-hand column.
+            val text = buildAnnotatedString {
+                if (!message.isNullOrBlank()) {
+                    append(spaceCompassStatusSentence(message))
+                    if (!actionLabel.isNullOrBlank()) append(" ")
+                }
+                if (!actionLabel.isNullOrBlank()) withLink(LinkAnnotation.Clickable(
+                    tag = "status-action",
+                    styles = TextLinkStyles(style = SpanStyle(color = linkColor, fontWeight = FontWeight.Medium)),
+                    linkInteractionListener = { onAction() }
+                )) { append(actionLabel.trimEnd().trimEnd('.', '。', '।', '۔', '…')) }
+            }
+            Text(text, color = if (messageAttention) warningOrange else primaryText,
+                fontSize = 10.sp, lineHeight = 13.sp,
+                modifier = Modifier.testTag("sun-finder-status-island")
+                    .semantics { liveRegion = LiveRegionMode.Polite }
+                    .background(noticeBackground, shape).padding(noticePadding))
         }
     }
+}
+
+/** Keep one sentence terminator, respecting localized full stops; actions stay unpunctuated. */
+private fun spaceCompassStatusSentence(value: String): String {
+    val text = value.trimEnd()
+    val stop = text.lastOrNull()?.takeIf { it in "。।۔" } ?: '.'
+    val sentence = text.trimEnd('.', '。', '।', '۔', '…').trimEnd()
+    return if (sentence.isEmpty()) sentence else "$sentence$stop"
 }
 
 /** Measure once, then place wider islands first in this same pass; ties preserve source order. */

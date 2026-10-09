@@ -28,5 +28,5 @@
     <string name="pc_coordinates">مختصات</string>
     <string name="pc_decimal_degrees">درجه اعشاری</string>
     <string name="pc_dms">درجه، دقیقه، ثانیه</string>
-    <string name="pc_compass_approximate">دقت کم</string>
+    <string name="pc_compass_approximate">دقت کم.</string>
 </resources>
