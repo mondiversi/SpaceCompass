@@ -4,13 +4,13 @@ import org.junit.Assert.*
 import org.junit.Test
 
 class SpaceCompassAmbientMusicPolicyTest {
-    @Test fun freshInstallEnablesMusicAtRestrainedVolumeButStillRequiresFocus() {
+    @Test fun freshInstallEnablesMusicAtHalfVolumeButStillRequiresFocus() {
         val p = SpaceCompassAmbientMusicPolicy()
         assertTrue(p.settings.enabled)
         assertFalse(p.wantsAudio); assertFalse(p.canRequestFocus); assertFalse(p.canPlay)
         p.setForeground(true)
         assertTrue(p.wantsAudio); assertTrue(p.canRequestFocus); assertFalse(p.canPlay)
-        assertEquals(20, p.settings.volumePercent)
+        assertEquals(50, p.settings.volumePercent)
         p.onFocus(SpaceCompassMusicFocus.GRANTED)
         assertTrue(p.canPlay)
     }

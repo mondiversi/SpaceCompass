@@ -1,0 +1,8 @@
+<resources>
+    <string name="screensaver_title">Wygaszacz ekranu</string>
+    <string name="screensaver_description">Gdy nie dotykasz aplikacji, wyświetla animowane kosmiczne tło Mondiversi. Dotknij, aby wrócić.</string>
+    <string name="screensaver_delay">Uruchom po</string>
+    <string name="screensaver_dismiss">Dotknij, aby zamknąć wygaszacz ekranu</string>
+    <string name="screensaver_seconds">%1$s s</string>
+    <string name="screensaver_minutes">%1$s min</string>
+</resources>

@@ -3,7 +3,7 @@ package me.mondiversi.spacecompass
 internal const val SPACE_COMPASS_MUSIC_ENABLED_KEY = "ambient_music_enabled"
 internal const val SPACE_COMPASS_MUSIC_VOLUME_KEY = "ambient_music_volume"
 internal const val SPACE_COMPASS_MUSIC_DEFAULT_ENABLED = true
-internal const val SPACE_COMPASS_MUSIC_DEFAULT_VOLUME = 20
+internal const val SPACE_COMPASS_MUSIC_DEFAULT_VOLUME = 50
 
 internal data class SpaceCompassAmbientMusicSettings(val enabled: Boolean = SPACE_COMPASS_MUSIC_DEFAULT_ENABLED,
     val volumePercent: Int = SPACE_COMPASS_MUSIC_DEFAULT_VOLUME) {

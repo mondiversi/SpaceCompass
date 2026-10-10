@@ -56,7 +56,7 @@ internal fun SpaceCompassSettingsGroupIcon(key: String, tint: Color) {
                 }
                 drawPath(half, tint)
             }
-            "display" -> {
+            "display", "screensaver" -> {
                 drawRoundRect(
                     color = tint,
                     topLeft = Offset(size.width * 0.09f, size.height * 0.12f),
@@ -66,6 +66,11 @@ internal fun SpaceCompassSettingsGroupIcon(key: String, tint: Color) {
                 )
                 drawLine(tint, Offset(size.width * 0.50f, size.height * 0.69f),
                     Offset(size.width * 0.50f, size.height * 0.87f), strokeWidth, StrokeCap.Round)
+                if (key == "screensaver") {
+                    drawCircle(tint, size.minDimension * .09f, point(.5f, .40f), style = outline)
+                    drawLine(tint, point(.72f, .26f), point(.72f, .40f), strokeWidth, StrokeCap.Round)
+                    drawLine(tint, point(.65f, .33f), point(.79f, .33f), strokeWidth, StrokeCap.Round)
+                }
                 drawLine(tint, Offset(size.width * 0.32f, size.height * 0.87f),
                     Offset(size.width * 0.68f, size.height * 0.87f), strokeWidth, StrokeCap.Round)
             }

@@ -1,0 +1,8 @@
+<resources>
+    <string name="screensaver_title">محافظ صفحه</string>
+    <string name="screensaver_description">وقتی برنامه را لمس نمی‌کنید، پس‌زمینهٔ فضایی متحرک Mondiversi نمایش داده می‌شود. برای بازگشت صفحه را لمس کنید.</string>
+    <string name="screensaver_delay">شروع پس از</string>
+    <string name="screensaver_dismiss">برای بستن محافظ صفحه لمس کنید</string>
+    <string name="screensaver_seconds">%1$s ثانیه</string>
+    <string name="screensaver_minutes">%1$s دقیقه</string>
+</resources>

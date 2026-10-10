@@ -1,9 +1,9 @@
 <resources>
     <string name="info_news_title">Ultime novità · %1$s</string>
-    <string name="info_news_star_sky">Musica spaziale meditativa con un loop morbido, disponibile offline.</string>
-    <string name="info_news_texture_downloads">Musica attiva di default a volume basso; attivazione e volume restano salvati.</string>
-    <string name="info_news_weather">Barra del volume a punti, con livelli regolari dal silenzio al massimo.</string>
-    <string name="info_news_viewer_zoom">Aspetto diventa Generale, con una nuova icona dedicata alle impostazioni.</string>
-    <string name="info_news_settings">Le isole di musica e Scenario personalizzato si aprono e si chiudono con animazioni fluide.</string>
-    <string name="info_news_catalog">Icone di puntamento più chiare, con frecce diritte lungo gli assi della fotocamera e del telefono.</string>
+    <string name="info_news_star_sky" formatted="false">Salvaschermo terrestre ispirato a Mondiversi, disponibile offline con illuminazione diurna e notturna.</string>
+    <string name="info_news_texture_downloads" formatted="false">Salvaschermo attivo di default dopo 5 minuti; attivazione e intervallo restano salvati.</string>
+    <string name="info_news_weather" formatted="false">Luce graduale di alba e tramonto per cielo, terreno, meteo e scatti panoramici.</string>
+    <string name="info_news_viewer_zoom" formatted="false">Comandi principali raggruppati agli angoli; messaggi di stato centrati sotto il mirino.</string>
+    <string name="info_news_settings" formatted="false">Zoom della fotocamera più leggibile accanto allo scatto, con selezione diretta dei livelli.</string>
+    <string name="info_news_catalog" formatted="false">Più spazio per i nomi degli oggetti, colonne orizzontali 55/45 e volume iniziale della musica al 50%.</string>
 </resources>

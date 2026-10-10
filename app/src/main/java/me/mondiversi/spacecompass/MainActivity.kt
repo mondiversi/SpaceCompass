@@ -15,9 +15,12 @@ import androidx.compose.ui.graphics.Color
 
 /** Independent launcher: no hardware pairing, UVIR archive or hidden entry gesture. */
 class MainActivity : ComponentActivity() {
+    private lateinit var screensaver: SpaceCompassScreensaverState
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         SpaceCompassErrorLog.install(applicationContext)
+        screensaver = androidx.lifecycle.ViewModelProvider(this)[SpaceCompassScreensaverState::class.java]
+        screensaver.bind(getSharedPreferences(SPACE_COMPASS_PREFERENCES_NAME, MODE_PRIVATE))
         enableEdgeToEdge()
         SpaceCompassUpdates.start(applicationContext, freshLaunch = savedInstanceState == null)
         setContent {
@@ -41,10 +44,12 @@ class MainActivity : ComponentActivity() {
                     SpaceCompassSystemBarsContent(background) {
                         SpaceCompassAdaptiveDisplay {
                             SpaceCompassLaunchGate(showLaunchScreen = savedInstanceState == null) {
-                                SpaceCompassAppPages {
-                                    SpaceCompassSunFinderScreen(background, primary, secondary) { finish() }
+                                SpaceCompassScreensaverHost(screensaver) {
+                                    SpaceCompassAppPages {
+                                        SpaceCompassSunFinderScreen(background, primary, secondary) { finish() }
+                                    }
+                                    SpaceCompassUpdateHost()
                                 }
-                                SpaceCompassUpdateHost()
                             }
                         }
                     }
@@ -55,11 +60,42 @@ class MainActivity : ComponentActivity() {
 
     override fun onResume() {
         super.onResume()
+        screensaver.resumed(true)
         window.addFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON)
     }
 
     override fun onPause() {
+        screensaver.resumed(false)
         window.clearFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON)
         super.onPause()
+    }
+
+    override fun onStop() {
+        if (!isChangingConfigurations) screensaver.reset()
+        super.onStop()
+    }
+
+    override fun onWindowFocusChanged(hasFocus: Boolean) {
+        super.onWindowFocusChanged(hasFocus)
+        if (::screensaver.isInitialized) screensaver.focused(hasFocus)
+    }
+
+    override fun onUserInteraction() {
+        super.onUserInteraction()
+        if (::screensaver.isInitialized) screensaver.interaction()
+    }
+
+    override fun dispatchTouchEvent(event: android.view.MotionEvent): Boolean {
+        if (::screensaver.isInitialized) when (event.actionMasked) {
+            android.view.MotionEvent.ACTION_DOWN -> screensaver.touching(true)
+            android.view.MotionEvent.ACTION_UP, android.view.MotionEvent.ACTION_CANCEL -> screensaver.touching(false)
+            else -> screensaver.interaction()
+        }
+        return super.dispatchTouchEvent(event)
+    }
+
+    override fun dispatchGenericMotionEvent(event: android.view.MotionEvent): Boolean {
+        if (::screensaver.isInitialized && event.actionMasked == android.view.MotionEvent.ACTION_SCROLL) screensaver.interaction()
+        return super.dispatchGenericMotionEvent(event)
     }
 }

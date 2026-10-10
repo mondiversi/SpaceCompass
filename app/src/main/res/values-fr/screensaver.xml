@@ -1,0 +1,8 @@
+<resources>
+    <string name="screensaver_title">Écran de veille</string>
+    <string name="screensaver_description">Lorsque vous ne touchez pas l’application, affiche le fond spatial animé de Mondiversi. Touchez pour revenir.</string>
+    <string name="screensaver_delay">Démarrer après</string>
+    <string name="screensaver_dismiss">Touchez pour fermer l’écran de veille</string>
+    <string name="screensaver_seconds">%1$s s</string>
+    <string name="screensaver_minutes">%1$s min</string>
+</resources>

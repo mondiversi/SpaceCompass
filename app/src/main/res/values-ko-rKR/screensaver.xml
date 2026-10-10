@@ -1,0 +1,8 @@
+<resources>
+    <string name="screensaver_title">화면 보호기</string>
+    <string name="screensaver_description">앱을 터치하지 않으면 Mondiversi의 움직이는 우주 배경을 표시합니다. 터치하면 돌아갑니다.</string>
+    <string name="screensaver_delay">시작 대기 시간</string>
+    <string name="screensaver_dismiss">터치하여 화면 보호기 닫기</string>
+    <string name="screensaver_seconds">%1$s초</string>
+    <string name="screensaver_minutes">%1$s분</string>
+</resources>

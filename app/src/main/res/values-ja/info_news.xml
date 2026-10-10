@@ -1,9 +1,9 @@
 <resources>
     <string name="info_news_title">最近の変更 · %1$s</string>
-    <string name="info_news_star_sky">穏やかに繰り返す瞑想的な宇宙音楽をオフラインで楽しめます。</string>
-    <string name="info_news_texture_downloads">音楽は初期設定で小さな音量で有効です。有効・無効と音量の選択を保存します。</string>
-    <string name="info_news_weather">音量バーに目盛りを追加し、無音から最大まで一定の段階で調整できます。</string>
-    <string name="info_news_viewer_zoom">外観を一般に変更し、専用の設定アイコンを追加しました。</string>
-    <string name="info_news_settings">音楽とカスタムシナリオのカードが滑らかなアニメーションで開閉します。</string>
-    <string name="info_news_catalog">カメラ軸と端末の長軸に沿う直線の矢印で、向きのアイコンが分かりやすくなりました。</string>
+    <string name="info_news_star_sky" formatted="false">Mondiversiに着想を得た地球のスクリーンセーバー。昼夜の照明付きでオフラインでも利用できます。</string>
+    <string name="info_news_texture_downloads" formatted="false">スクリーンセーバーは標準で5分後に起動し、有効・無効と待ち時間が保存されます。</string>
+    <string name="info_news_weather" formatted="false">空、地面、天候、パノラマ撮影に、夜明けと夕暮れの滑らかな光の変化を適用。</string>
+    <string name="info_news_viewer_zoom" formatted="false">主な操作ボタンを四隅にまとめ、状態メッセージを照準の下の中央に表示。</string>
+    <string name="info_news_settings" formatted="false">撮影ボタン横のカメラズームを見やすくし、倍率を直接選択できます。</string>
+    <string name="info_news_catalog" formatted="false">天体名の表示領域を拡大し、横向き画面を55/45に配分。音楽の初期音量は50%。</string>
 </resources>

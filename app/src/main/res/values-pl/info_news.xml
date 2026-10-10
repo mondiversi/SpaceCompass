@@ -1,9 +1,9 @@
 <resources>
     <string name="info_news_title">Ostatnie nowości · %1$s</string>
-    <string name="info_news_star_sky">Medytacyjna muzyka kosmiczna z łagodną pętlą, dostępna offline.</string>
-    <string name="info_news_texture_downloads">Muzyka jest domyślnie włączona przy niskiej głośności; włączenie i głośność są zapamiętywane.</string>
-    <string name="info_news_weather">Suwak głośności z punktami i równymi poziomami, od ciszy do maksimum.</string>
-    <string name="info_news_viewer_zoom">Wygląd zmienia nazwę na Ogólne i otrzymuje ikonę ustawień.</string>
-    <string name="info_news_settings">Karty muzyki i scenariusza niestandardowego otwierają się i zamykają z płynnymi animacjami.</string>
-    <string name="info_news_catalog">Czytelniejsze ikony kierunku z prostymi strzałkami wzdłuż osi aparatu i osi długości telefonu.</string>
+    <string name="info_news_star_sky" formatted="false">Wygaszacz ekranu z Ziemią inspirowany Mondiversi, dostępny offline z oświetleniem dziennym i nocnym.</string>
+    <string name="info_news_texture_downloads" formatted="false">Wygaszacz domyślnie włącza się po 5 minutach; ustawienia aktywacji i czasu oczekiwania są zapisywane.</string>
+    <string name="info_news_weather" formatted="false">Stopniowe oświetlenie świtu i zmierzchu dla nieba, gruntu, pogody i zdjęć panoramicznych.</string>
+    <string name="info_news_viewer_zoom" formatted="false">Główne przyciski zgrupowane w rogach; komunikaty stanu wyśrodkowane pod celownikiem.</string>
+    <string name="info_news_settings" formatted="false">Czytelniejszy zoom aparatu obok przycisku zdjęcia, z bezpośrednim wyborem poziomów.</string>
+    <string name="info_news_catalog" formatted="false">Więcej miejsca na nazwy obiektów, poziomy układ 55/45 i początkowa głośność muzyki 50%.</string>
 </resources>

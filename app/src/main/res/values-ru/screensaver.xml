@@ -1,0 +1,8 @@
+<resources>
+    <string name="screensaver_title">Заставка</string>
+    <string name="screensaver_description">Если не касаться приложения, показывается анимированный космический фон Mondiversi. Коснитесь экрана, чтобы вернуться.</string>
+    <string name="screensaver_delay">Запуск через</string>
+    <string name="screensaver_dismiss">Коснитесь, чтобы закрыть заставку</string>
+    <string name="screensaver_seconds">%1$s с</string>
+    <string name="screensaver_minutes">%1$s мин</string>
+</resources>

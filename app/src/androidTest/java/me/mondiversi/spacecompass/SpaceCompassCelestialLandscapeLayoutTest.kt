@@ -45,7 +45,7 @@ class SpaceCompassCelestialLandscapeLayoutTest {
         }
     }
 
-    @Test fun phoneAndTabletLandscapeHeadersUseOnlyTheSkyHalfInBothThemesAndDirections() {
+    @Test fun phoneAndTabletLandscapeHeadersUseTheWiderSkyColumnInBothThemesAndDirections() {
         show()
         for (w in listOf(640f, 1200f)) for (dark in listOf(false, true))
             for (rtl in listOf(false, true)) {
@@ -58,12 +58,12 @@ class SpaceCompassCelestialLandscapeLayoutTest {
                 val details = compose.onNodeWithTag("celestial-details-column").fetchSemanticsNode().boundsInRoot
                 val island = compose.onNodeWithTag("sun-finder-body-data").fetchSemanticsNode().boundsInRoot
                 val sky = compose.onNodeWithTag("celestial-pointing-area").fetchSemanticsNode().boundsInRoot
-                assertEquals(root.width / 2f, toolbar.width, 1f)
+                assertEquals(root.width * .55f, toolbar.width, 1f)
                 assertEquals(root.top, toolbar.top, 1f)
                 assertEquals(root.top + 5f, details.top, 1f)
                 assertEquals(root.bottom - 5f, details.bottom, 1f)
                 assertTrue("Islands start above the bottom of the toolbar", island.top < toolbar.bottom)
-                assertTrue("Sky starts below its own toolbar", sky.top >= toolbar.bottom)
+                assertEquals("Sky continues beneath its translucent toolbar", toolbar.top, sky.top, 1f)
                 if (rtl) assertTrue(details.right <= toolbar.left + 1f)
                 else assertTrue(details.left >= toolbar.right - 1f)
                 val titleGap = if (rtl) toolbar.left - island.right else island.left - toolbar.right
@@ -80,13 +80,15 @@ class SpaceCompassCelestialLandscapeLayoutTest {
         val root = compose.onNodeWithTag("sun-finder-content").fetchSemanticsNode().boundsInRoot
         val toolbar = compose.onNodeWithTag("celestial-toolbar").fetchSemanticsNode().boundsInRoot
         assertEquals(root.width, toolbar.width, 1f)
+        val sky = compose.onNodeWithTag("celestial-pointing-area").fetchSemanticsNode().boundsInRoot
+        assertEquals("Portrait sky also continues beneath the toolbar", toolbar.top, sky.top, 1f)
         compose.runOnIdle { width.value = 640f; height.value = 360f }
         compose.onNodeWithTag("celestial-landscape-layout").assertExists()
         compose.onNodeWithTag("celestial-select").performClick()
         compose.onNodeWithTag("celestial-menu").assertIsDisplayed()
     }
 
-    @Test fun largeTextUsesTheSplitOnlyWhenTheDataHalfHasEnoughWidth() {
+    @Test fun largeTextUsesTheSplitOnlyWhenTheDataColumnHasEnoughWidth() {
         show()
         compose.runOnIdle { width.value = 560f; height.value = 360f; fontScale.value = 2f }
         compose.onNodeWithTag("celestial-landscape-layout").assertDoesNotExist()

@@ -13,7 +13,7 @@ import androidx.compose.material3.SliderDefaults
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.graphics.Color
 
-/** Navigation glyphs stay neutral, independently of the purple form controls. */
+/** Navigation glyphs stay neutral, independently of the theme-colored form controls. */
 internal fun spaceCompassNeutralContentColor(darkTheme: Boolean): Color =
     if (darkTheme) Color.White else Color(0xFF101418)
 
@@ -48,8 +48,16 @@ internal fun spaceCompassRadioButtonColors(
     disabledUnselectedColor = disabledUnselectedColor
 )
 
+/** The unused volume track shares the day/night accent with lower opacity. */
 @Composable
-internal fun spaceCompassSliderColors(): SliderColors = SliderDefaults.colors()
+internal fun spaceCompassSliderColors(): SliderColors {
+    val scheme = MaterialTheme.colorScheme
+    return SliderDefaults.colors(
+        inactiveTrackColor = scheme.primary.copy(alpha = .24f),
+        activeTickColor = scheme.onPrimary,
+        inactiveTickColor = scheme.primary
+    )
+}
 
 @Composable
 internal fun spaceCompassSelectionChipColors(labelColor: Color): SelectableChipColors =

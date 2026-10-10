@@ -1,0 +1,8 @@
+<resources>
+    <string name="screensaver_title">Ekran koruyucu</string>
+    <string name="screensaver_description">Uygulamaya dokunulmadığında Mondiversi’nin hareketli uzay arka planını gösterir. Dönmek için dokunun.</string>
+    <string name="screensaver_delay">Başlama süresi</string>
+    <string name="screensaver_dismiss">Ekran koruyucuyu kapatmak için dokunun</string>
+    <string name="screensaver_seconds">%1$s sn</string>
+    <string name="screensaver_minutes">%1$s dk</string>
+</resources>

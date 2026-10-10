@@ -1,9 +1,9 @@
 <resources>
     <string name="info_news_title">Dernières nouveautés · %1$s</string>
-    <string name="info_news_star_sky">Musique spatiale méditative avec une boucle douce, disponible hors ligne.</string>
-    <string name="info_news_texture_downloads">Musique activée par défaut à faible volume ; activation et volume sont mémorisés.</string>
-    <string name="info_news_weather">Curseur de volume à points, avec des niveaux réguliers du silence au maximum.</string>
-    <string name="info_news_viewer_zoom">Apparence devient Général, avec une icône dédiée aux réglages.</string>
-    <string name="info_news_settings">Les cartes de musique et de Scénario personnalisé se déploient et se replient avec des animations fluides.</string>
-    <string name="info_news_catalog">Icônes de pointage plus claires, avec des flèches droites selon les axes de la caméra et de la longueur du téléphone.</string>
+    <string name="info_news_star_sky" formatted="false">Écran de veille terrestre inspiré de Mondiversi, disponible hors ligne avec éclairage de jour et de nuit.</string>
+    <string name="info_news_texture_downloads" formatted="false">Écran de veille activé par défaut après 5 minutes ; activation et délai sont enregistrés.</string>
+    <string name="info_news_weather" formatted="false">Éclairage progressif à l’aube et au crépuscule pour le ciel, le sol, la météo et les captures panoramiques.</string>
+    <string name="info_news_viewer_zoom" formatted="false">Commandes principales regroupées dans les angles ; messages d’état centrés sous le réticule.</string>
+    <string name="info_news_settings" formatted="false">Zoom de l’appareil photo plus lisible près du déclencheur, avec sélection directe des niveaux.</string>
+    <string name="info_news_catalog" formatted="false">Plus de place pour les noms des objets, disposition horizontale 55/45 et volume initial de la musique à 50%.</string>
 </resources>

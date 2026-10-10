@@ -1,9 +1,9 @@
 <resources>
     <string name="info_news_title">Perubahan terbaru · %1$s</string>
-    <string name="info_news_star_sky">Musik ruang angkasa meditatif dengan putaran lembut, tersedia secara offline.</string>
-    <string name="info_news_texture_downloads">Musik aktif secara bawaan pada volume rendah; pilihan aktif dan volume disimpan.</string>
-    <string name="info_news_weather">Penggeser volume bertitik dengan tingkat teratur, dari senyap hingga maksimum.</string>
-    <string name="info_news_viewer_zoom">Tampilan kini bernama Umum, dengan ikon pengaturan khusus.</string>
-    <string name="info_news_settings">Kartu musik dan Skenario khusus membuka dan menutup dengan animasi halus.</string>
-    <string name="info_news_catalog">Ikon arah lebih jelas, dengan panah lurus sepanjang sumbu kamera dan panjang ponsel.</string>
+    <string name="info_news_star_sky" formatted="false">Screensaver Bumi terinspirasi Mondiversi, tersedia offline dengan pencahayaan siang dan malam.</string>
+    <string name="info_news_texture_downloads" formatted="false">Screensaver aktif secara default setelah 5 menit; aktivasi dan waktu tunggu disimpan.</string>
+    <string name="info_news_weather" formatted="false">Pencahayaan fajar dan senja bertahap untuk langit, tanah, cuaca, dan hasil panorama.</string>
+    <string name="info_news_viewer_zoom" formatted="false">Kontrol utama dikelompokkan di sudut; pesan status terpusat di bawah bidik.</string>
+    <string name="info_news_settings" formatted="false">Zoom kamera lebih jelas di samping tombol rana, dengan pilihan tingkat secara langsung.</string>
+    <string name="info_news_catalog" formatted="false">Lebih banyak ruang untuk nama objek, tata letak lanskap 55/45, dan volume awal musik 50%.</string>
 </resources>

@@ -1,9 +1,9 @@
 <resources>
     <string name="info_news_title">آخر المستجدات · %1$s</string>
-    <string name="info_news_star_sky">موسيقى فضائية تأملية بتكرار سلس، متاحة دون اتصال.</string>
-    <string name="info_news_texture_downloads">الموسيقى مفعلة افتراضياً بصوت منخفض؛ يتم حفظ حالة التشغيل ومستوى الصوت.</string>
-    <string name="info_news_weather">شريط صوت بنقاط ومستويات منتظمة، من الصمت إلى الحد الأقصى.</string>
-    <string name="info_news_viewer_zoom">أصبح قسم المظهر باسم عام، مع أيقونة إعدادات مخصصة.</string>
-    <string name="info_news_settings">تفتح بطاقات الموسيقى والسيناريو المخصص وتغلق بحركات سلسة.</string>
-    <string name="info_news_catalog">أيقونات توجيه أوضح، بأسهم مستقيمة على امتداد محور الكاميرا ومحور طول الهاتف.</string>
+    <string name="info_news_star_sky" formatted="false">شاشة توقف تعرض الأرض مستوحاة من Mondiversi، تعمل دون اتصال مع إضاءة نهارية وليلية.</string>
+    <string name="info_news_texture_downloads" formatted="false">شاشة التوقف مفعّلة افتراضيًا بعد 5 دقائق؛ يُحفظ التفعيل ومدة الانتظار.</string>
+    <string name="info_news_weather" formatted="false">إضاءة تدريجية للفجر والغروب في السماء والأرض والطقس واللقطات البانورامية.</string>
+    <string name="info_news_viewer_zoom" formatted="false">عناصر التحكم الرئيسية مجمّعة في الزوايا؛ رسائل الحالة متمركزة أسفل علامة التصويب.</string>
+    <string name="info_news_settings" formatted="false">تكبير الكاميرا أوضح بجانب زر الالتقاط، مع اختيار مباشر للمستويات.</string>
+    <string name="info_news_catalog" formatted="false">مساحة أكبر لأسماء الأجرام، وتخطيط أفقي بنسبة 55/45، ومستوى صوت أولي للموسيقى يبلغ 50%.</string>
 </resources>

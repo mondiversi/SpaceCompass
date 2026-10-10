@@ -1,0 +1,35 @@
+{
+  "source": "https://www.mondiversi.me/",
+  "source_sha256": "7a5149c0397cff93dac56499303a010ecacc8646a9335171e7b6b95578837bc4",
+  "earth_shader_and_orbit_geometry_preserved": true,
+  "local_assets": [
+    {
+      "asset": "earth-day.webp",
+      "dimensions": [
+        2048,
+        1024
+      ],
+      "quality": 90,
+      "method": 6,
+      "bytes": 232568,
+      "sha256": "ea29a04cc607dd507f32a96d00e0db9f376ae09f042cccafd7f2fc976a4cbb08",
+      "source_embedded_sha256": "2c080428210d32dcf64e0d601a0c5f59a0ad89085d2f399a48b37d7c2e7ccb0e"
+    },
+    {
+      "asset": "earth-night.webp",
+      "dimensions": [
+        2048,
+        1024
+      ],
+      "quality": 90,
+      "method": 6,
+      "bytes": 150814,
+      "sha256": "ffdf30718513bd7a3e986b85450ccb850751e9f264b15e257fdc075093d36eb3",
+      "source_embedded_sha256": "89b5f1d228fb90ccb7da5c99c55bb8aaf8e7bc8af481984e99dda88dfa6f13e7"
+    }
+  ],
+  "renderer_bytes": 11988,
+  "no_network_or_audio": true,
+  "renderer_sha256": "fca13c9dadc1d8361ae257e260ab565a41295903f2f8efbad3d34878e87d3ff3",
+  "lighting_uses_observer_solar_elevation": true
+}

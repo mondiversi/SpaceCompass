@@ -193,7 +193,7 @@ and atomically cancelled native AudioTrack sessions. Pure, reusable oscillator,
 filter, compressor and FFT/convolver modules generate the original website space
 score continuously off the UI thread. The recorded Ogg is no longer bundled.
 No extra library, service, permission or network is required. Fresh settings enable
-music at 20%; saved disabled choices remain respected. Volume gestures preview
+music at 50%; saved disabled choices remain respected. Volume gestures preview
 immediately and persist only when completed, in ten-percent steps.
 
 `SpaceCompassSettingsIslandReveal` shares UVIR's 300 ms top-anchored expansion,
@@ -217,7 +217,8 @@ annotated paragraph puts the native clickable link immediately after its sentenc
 without a separate right-hand action column. Links use the theme primary blue/cyan;
 routine text uses the regular foreground. Only magnetic interference, calibration
 and outdated orbital data use theme-aware orange. All twenty catalogs retain
-localized sentence endings, while state-action labels have no final punctuation.
+localized sentence endings and three-dot ellipses for orientation, orbital-data and
+location loading messages, while state-action labels have no final punctuation.
 The outdated-data notice is generic; it no longer needs an object-name argument.
 Celestial ephemerides and camera transforms remain independent of presentation.
 The shared capture button chooses a shutter or panorama glyph from camera mode;
@@ -226,3 +227,37 @@ export keeps its separate translated image-dialog title and saved profile.
 Version 1.2.4 retains the twenty existing in-app news summaries byte for byte. The
 information archive records current resources/docs while image pack 1.1 retains
 its immutable individual URLs, byte sizes, dimensions and SHA-256 pins.
+
+## Idle screensaver
+
+See [the screensaver architecture](docs/SCREENSAVER.md). Its retained activity
+policy and isolated settings do not invalidate astronomy or presentation state.
+An activity-scoped solar-height sink reuses the retained sky's GPS/scenario calculation;
+the visible cover samples it every 30 seconds without registering extra sensors.
+Earth lighting is independent of the interface theme and uses the shared solar bands.
+
+## Continuous solar lighting
+
+Sky, ground and atmospheric effects share a smooth solar-height lighting sample.
+Panorama capture freezes it; live weather reuses its geometry as lighting changes.
+See [the lighting model](docs/SOLAR_LIGHTING.md).
+
+
+## Main controls and release 1.2.5
+
+The pointing viewport keeps the optical frame stable beneath its translucent
+header. Measured corner controls and the selected-point panel still exclude
+captions and edge locators. Camera/axis/references form the start-side L;
+scenario/objects/weather form the mirrored end-side L. Layout direction mirrors
+the arrangement in RTL. A shared bottom row places camera zoom before capture.
+Its preset menu sizes itself for space above or below the anchor, retaining the
+adaptive scale and internal scroll indicator. The 14 sp semibold value uses the
+existing control size. Status notices sit eight dp below the reticle's outer arms;
+their measured exclusion follows that same centered placement. Existing data/retry
+precedence, colors and independent inline action semantics remain.
+
+The expanded main layout assigns 55% to the sky and 45% to details when the latter
+can retain its minimum readable width. Object navigation keeps symmetric visible
+chevrons and existing 48 dp targets, reserving more of the header for its name.
+Version 1.2.5 updates all twenty news summaries and preserves external texture pack
+1.1, cached images and scientific image/ephemeris trust policies.

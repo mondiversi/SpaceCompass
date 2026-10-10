@@ -1,0 +1,8 @@
+<resources>
+    <string name="screensaver_title">屏幕保护程序</string>
+    <string name="screensaver_description">未操作应用时，显示Mondiversi的动态太空背景。轻触即可返回。</string>
+    <string name="screensaver_delay">启动等待时间</string>
+    <string name="screensaver_dismiss">轻触以关闭屏幕保护程序</string>
+    <string name="screensaver_seconds">%1$s 秒</string>
+    <string name="screensaver_minutes">%1$s 分钟</string>
+</resources>

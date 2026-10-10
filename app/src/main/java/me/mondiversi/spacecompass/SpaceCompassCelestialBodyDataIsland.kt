@@ -28,7 +28,7 @@ import androidx.compose.ui.unit.sp
 internal data class SpaceCompassCelestialBodyNavigation(val previousLabel: String, val nextLabel: String,
     val onPrevious: () -> Unit, val onNext: () -> Unit)
 
-/** One compact header groups the inspected object, its navigation and its two actions. */
+/** The object selector fills the available header width; actions stay at its trailing edge. */
 @Composable
 internal fun SpaceCompassCelestialBodyDataIsland(bodyName: String?, primaryText: Color, background: Color,
     compact: Boolean, navigation: SpaceCompassCelestialBodyNavigation?,
@@ -42,17 +42,28 @@ internal fun SpaceCompassCelestialBodyDataIsland(bodyName: String?, primaryText:
             // Compact only the title bar; retain the normal insets around the data below it.
             Row(Modifier.fillMaxWidth().testTag("celestial-body-header")
                 .padding(vertical = 1.dp), verticalAlignment = Alignment.CenterVertically) {
-                if (navigation != null) IconButton(onClick = navigation.onPrevious,
-                    modifier = Modifier.size(48.dp).testTag("celestial-body-previous").semantics {
-                        contentDescription = navigation.previousLabel
-                    }) { SpaceCompassDisclosureChevron(Modifier.rotate(if (rtl) 0f else 180f), primaryText) }
-                Text(bodyName.orEmpty(), Modifier.weight(1f).testTag("celestial-body-island-title").semantics { heading() },
-                    color = primaryText, fontSize = if (compact) 12.sp else 14.sp, fontWeight = FontWeight.Medium,
-                    textAlign = TextAlign.Center, maxLines = 1, overflow = TextOverflow.Ellipsis)
-                if (navigation != null) IconButton(onClick = navigation.onNext,
-                    modifier = Modifier.size(48.dp).testTag("celestial-body-next").semantics {
-                        contentDescription = navigation.nextLabel
-                    }) { SpaceCompassDisclosureChevron(Modifier.rotate(if (rtl) 180f else 0f), primaryText) }
+                // Reserve only the visible chevrons around the name, retaining 48 dp action targets.
+                Box(Modifier.weight(1f).heightIn(min = 48.dp)) {
+                    Text(bodyName.orEmpty(), Modifier.fillMaxWidth()
+                        .padding(horizontal = if (navigation == null) 0.dp else 32.dp)
+                        .align(Alignment.Center).testTag("celestial-body-island-title").semantics { heading() },
+                        color = primaryText, fontSize = if (compact) 12.sp else 14.sp, fontWeight = FontWeight.Medium,
+                        textAlign = TextAlign.Center, maxLines = 1, overflow = TextOverflow.Ellipsis)
+                    if (navigation != null) IconButton(onClick = navigation.onPrevious,
+                        modifier = Modifier.size(48.dp).testTag("celestial-body-previous")
+                            .align(Alignment.CenterStart).semantics { contentDescription = navigation.previousLabel }) {
+                        Box(Modifier.fillMaxSize().padding(start = 10.dp), contentAlignment = Alignment.CenterStart) {
+                            SpaceCompassDisclosureChevron(Modifier.rotate(if (rtl) 0f else 180f), primaryText)
+                        }
+                    }
+                    if (navigation != null) IconButton(onClick = navigation.onNext,
+                        modifier = Modifier.size(48.dp).testTag("celestial-body-next")
+                            .align(Alignment.CenterEnd).semantics { contentDescription = navigation.nextLabel }) {
+                        Box(Modifier.fillMaxSize().padding(end = 10.dp), contentAlignment = Alignment.CenterEnd) {
+                            SpaceCompassDisclosureChevron(Modifier.rotate(if (rtl) 180f else 0f), primaryText)
+                        }
+                    }
+                }
                 actions()
             }
             HorizontalDivider(color = primaryText.copy(alpha = 0.12f))

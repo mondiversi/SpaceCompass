@@ -1,9 +1,9 @@
 <resources>
     <string name="info_news_title">最新变化 · %1$s</string>
-    <string name="info_news_star_sky">舒缓循环的冥想太空音乐，可离线播放。</string>
-    <string name="info_news_texture_downloads">音乐默认以较低音量开启，并保存开关状态和音量选择。</string>
-    <string name="info_news_weather">音量滑块带有刻度点，可从静音到最大音量逐级调节。</string>
-    <string name="info_news_viewer_zoom">外观更名为常规，并使用专属设置图标。</string>
-    <string name="info_news_settings">音乐和自定义场景卡片以平滑动画展开和收起。</string>
-    <string name="info_news_catalog">方向图标更加清晰，直线箭头分别沿相机轴和手机长轴指向。</string>
+    <string name="info_news_star_sky" formatted="false">受 Mondiversi 启发的地球屏保，可离线使用，并支持昼夜光照。</string>
+    <string name="info_news_texture_downloads" formatted="false">屏保默认在 5 分钟后启动；启用状态和等待时间均会保存。</string>
+    <string name="info_news_weather" formatted="false">天空、地面、天气和全景照片的黎明与黄昏光照更加平滑渐变。</string>
+    <string name="info_news_viewer_zoom" formatted="false">主要控件集中在角落；状态消息在准星下方居中显示。</string>
+    <string name="info_news_settings" formatted="false">相机变焦数值在拍摄按钮旁显示得更清晰，可直接选择倍率。</string>
+    <string name="info_news_catalog" formatted="false">为天体名称提供更多空间，横屏采用 55/45 布局，音乐初始音量为 50%。</string>
 </resources>

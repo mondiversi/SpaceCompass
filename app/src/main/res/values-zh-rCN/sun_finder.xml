@@ -14,9 +14,9 @@
     <string name="sun_finder_location_permission">请允许访问位置以计算天体位置。</string>
     <string name="sun_finder_location_disabled">位置信息已关闭。</string>
     <string name="sun_finder_location_error">无法获取位置。</string>
-    <string name="sun_finder_location_searching">正在定位。</string>
+    <string name="sun_finder_location_searching">正在定位...</string>
     <string name="sun_finder_compass_missing">此设备无法使用指南针。</string>
-    <string name="sun_finder_orientation_searching">正在读取朝向。</string>
+    <string name="sun_finder_orientation_searching">正在读取朝向...</string>
     <string name="sun_finder_compass_accuracy">移开磁性物体。</string>
     <string name="sun_finder_compass_calibrate">用手机在空中画8字来校准指南针。</string>
     <string name="sun_finder_allow_location">允许定位</string>

@@ -9,13 +9,13 @@ import android.graphics.RectF
 
 /** One cached native Canvas renderer for the live backdrop and frozen virtual panoramas. */
 internal class SpaceCompassWeatherRenderer(width: Float, height: Float,
-    phase: SpaceCompassSunSkyPhase, weather: SpaceCompassSunWeatherSnapshot?) {
+    phase: SpaceCompassSunSkyPhase, weather: SpaceCompassSunWeatherSnapshot?, solarLighting: SpaceCompassSolarLighting? = null) {
     private val scene = spaceCompassWeatherScene(width, height, weather)
     private val paint = Paint(Paint.ANTI_ALIAS_FLAG).apply { strokeCap = Paint.Cap.ROUND }
-    private val palette = spaceCompassWeatherPalette(phase, scene.kind == SpaceCompassSunWeatherKind.STORM)
-    private val cloudLighting = LinearGradient(0f, 0f, 0f, height,
+    private var palette = spaceCompassWeatherPalette(phase, scene.kind == SpaceCompassSunWeatherKind.STORM, solarLighting)
+    private var cloudLighting = LinearGradient(0f, 0f, 0f, height,
         palette.cloudTopArgb, palette.cloudBottomArgb, Shader.TileMode.CLAMP)
-    private val fogLighting = LinearGradient(0f, 0f, 0f, height,
+    private var fogLighting = LinearGradient(0f, 0f, 0f, height,
         palette.fogTopArgb, palette.fogBottomArgb, Shader.TileMode.CLAMP)
     private val clouds = scene.clouds.map { cloud -> Path().apply {
         for (part in 0..3) {
@@ -28,6 +28,17 @@ internal class SpaceCompassWeatherRenderer(width: Float, height: Float,
         val x = width * .78f; val y = height * .16f; val r = scene.unit * .055f
         moveTo(x, y); lineTo(x - r * .3f, y + r)
         lineTo(x + r * .1f, y + r * .8f); lineTo(x - r * .1f, y + r * 1.6f)
+    }
+
+    /** Solar updates reuse paths/precipitation; rebuild shaders only when an actual color changes. */
+    fun updateLighting(phase: SpaceCompassSunSkyPhase, lighting: SpaceCompassSolarLighting?) {
+        val next = spaceCompassWeatherPalette(phase, scene.kind == SpaceCompassSunWeatherKind.STORM, lighting)
+        if (next == palette) return
+        palette = next
+        cloudLighting = LinearGradient(0f, 0f, 0f, scene.height,
+            palette.cloudTopArgb, palette.cloudBottomArgb, Shader.TileMode.CLAMP)
+        fogLighting = LinearGradient(0f, 0f, 0f, scene.height,
+            palette.fogTopArgb, palette.fogBottomArgb, Shader.TileMode.CLAMP)
     }
 
     fun draw(canvas: Canvas) {

@@ -101,3 +101,15 @@ is used. Attribution is bundled in `assets/licenses/ambient-music.txt`.
 Quiet Orbit, the earlier original 96-second Ogg, remains credited in historical
 releases. Its development source `scripts/GenerateAmbientMusic.py` is preserved;
 its recorded audio is no longer included in current APK resources.
+
+## Offline Mondiversi screensaver
+
+The original Mondiversi.me rotating Earth, stars and decorative planetary orbits
+are reused in the optional screensaver. Earth day/night imagery: NASA Blue Marble
+(https://svs.gsfc.nasa.gov/57730/) and NASA/NOAA Black Marble
+(https://svs.gsfc.nasa.gov/79765/), as credited by the source website.
+Both 2048 x 1024 WebP derivatives retain orientation, quality 90/method 6 and
+source attribution. Source and derivative hashes: docs/SCREENSAVER_ASSETS.json.
+No endorsement implied. Scene code is original Mondiversi work (GPL-3.0);
+only the two decorative background maps are bundled. Downloadable celestial
+viewer textures and the existing image pack are unchanged.

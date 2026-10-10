@@ -22,7 +22,7 @@
     <string name="celestial_azimuth">Azimut (%1$s): %2$s</string>
     <string name="celestial_elevation">Hoogte (%1$s): %2$s</string>
     <string name="celestial_below">%1$s staat onder de horizon</string>
-    <string name="celestial_loading">Baangegevens bijwerken.</string>
+    <string name="celestial_loading">Baangegevens bijwerken...</string>
     <string name="celestial_unavailable">Gegevens voor %1$s zijn niet beschikbaar. Een internetverbinding is nodig om ze te vernieuwen.</string>
     <string name="celestial_iss_old">ISS-baangegevens zijn ouder dan 24 uur: nauwkeurigheid kan afnemen.</string>
     <string name="celestial_iss_note">Een volledige omloop rond de huidige tijd, ook onder de horizon, met 24 gelijkmatig verdeelde punten plus opkomst, culminatie en ondergang. De details gelden voor de huidige of volgende passage binnen 24 uur; zichtbaarheid is niet gegarandeerd.\nCelesTrak / Satcat · Space-Track</string>

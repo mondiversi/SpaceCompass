@@ -1,9 +1,9 @@
 <resources>
     <string name="info_news_title">Neuigkeiten · %1$s</string>
-    <string name="info_news_star_sky">Meditative Weltraummusik mit sanfter Wiederholung, auch offline verfügbar.</string>
-    <string name="info_news_texture_downloads">Musik ist standardmäßig bei niedriger Lautstärke aktiv; Aktivierung und Lautstärke werden gespeichert.</string>
-    <string name="info_news_weather">Lautstärkeregler mit gleichmäßigen Stufen von stumm bis maximal.</string>
-    <string name="info_news_viewer_zoom">Darstellung heißt jetzt Allgemein und hat ein eigenes Einstellungssymbol.</string>
-    <string name="info_news_settings">Die Karten für Musik und benutzerdefinierte Szenarien öffnen und schließen sich mit flüssigen Animationen.</string>
-    <string name="info_news_catalog">Klarere Ausrichtungssymbole mit geraden Pfeilen entlang der Kamera- und Telefonlängsachse.</string>
+    <string name="info_news_star_sky" formatted="false">Von Mondiversi inspirierter Erd-Bildschirmschoner, offline mit Tag- und Nachtbeleuchtung verfügbar.</string>
+    <string name="info_news_texture_downloads" formatted="false">Bildschirmschoner standardmäßig nach 5 Minuten aktiv; Aktivierung und Wartezeit werden gespeichert.</string>
+    <string name="info_news_weather" formatted="false">Sanfte Beleuchtung bei Morgen- und Abenddämmerung für Himmel, Boden, Wetter und Panoramaaufnahmen.</string>
+    <string name="info_news_viewer_zoom" formatted="false">Hauptbedienelemente in den Ecken gruppiert; Statusmeldungen mittig unter dem Fadenkreuz.</string>
+    <string name="info_news_settings" formatted="false">Besser lesbarer Kamerazoom neben dem Auslöser, mit direkter Auswahl der Zoomstufen.</string>
+    <string name="info_news_catalog" formatted="false">Mehr Platz für Objektnamen, eine horizontale 55/45-Aufteilung und Musik mit einer anfänglichen Lautstärke von 50%.</string>
 </resources>

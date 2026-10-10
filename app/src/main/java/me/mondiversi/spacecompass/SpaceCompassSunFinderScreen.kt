@@ -14,11 +14,14 @@ import androidx.compose.material3.*
 import androidx.compose.runtime.*
 import androidx.compose.runtime.saveable.rememberSaveable
 import androidx.compose.ui.Alignment
+import androidx.compose.ui.zIndex
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.draw.clipToBounds
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.layout.LayoutCoordinates
 import androidx.compose.ui.layout.layout
 import androidx.compose.ui.layout.onGloballyPositioned
+import androidx.compose.ui.layout.onSizeChanged
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.platform.LocalDensity
 import androidx.compose.ui.platform.LocalView
@@ -261,6 +264,9 @@ internal fun SpaceCompassSunFinderContent(
             fix.latitude, fix.longitude, altitude ?: 0.0).elevationDegrees >= sun.elevationDegrees
     }
     val phase = spaceCompassSunSkyPhase(sun?.elevationDegrees, rising)
+    val solarLighting = remember(sun?.elevationDegrees) { spaceCompassSolarLighting(sun?.elevationDegrees) }
+    val publishSolarHeight = LocalSpaceCompassScreensaverSunElevation.current
+    SideEffect { publishSolarHeight(sun?.elevationDegrees) }
     val zone = spaceCompassObservationZone()
     val date = Instant.ofEpochMilli(timeMs).atZone(zone).toLocalDate()
     // Approximately 11 m location cells keep GPS jitter from rebuilding a whole day's curve.
@@ -393,7 +399,7 @@ internal fun SpaceCompassSunFinderContent(
     val panorama = rememberSpaceCompassPanoramaAction(timeMs, fix?.latitude, fix?.longitude, altitude,
         phase, currentWeather, selectedBodies, selectedOverlays, remote,
         gpsAccuracyMeters = fix?.takeIf { it.hasAccuracy() && it.accuracy.isFinite() && it.accuracy >= 0f }
-            ?.accuracy?.toDouble(), cameraEnabled = cameraEnabled, cameraCapture = cameraCapture, showSkyReferences = showSkyReferences, showWeather = showWeather)
+            ?.accuracy?.toDouble(), cameraEnabled = cameraEnabled, cameraCapture = cameraCapture, showSkyReferences = showSkyReferences, showWeather = showWeather, solarLighting = solarLighting)
     panorama.preview?.let { preview ->
         SpaceCompassPanoramaPreview(preview, panorama.closePreview)
         return
@@ -449,9 +455,13 @@ internal fun SpaceCompassSunFinderContent(
         }
     }
     val navigate = LocalSpaceCompassNavigate.current
+    val density = LocalDensity.current
+    var toolbarHeightPx by remember { mutableIntStateOf(0) }
+    val topControlsInset = with(density) { toolbarHeightPx.toDp() } + 10.dp
     val toolbar: @Composable () -> Unit = {
         if (onDismissRequest != null) Row(
-            Modifier.fillMaxWidth().testTag("celestial-toolbar")
+            Modifier.fillMaxWidth().zIndex(1f).testTag("celestial-toolbar")
+                .onSizeChanged { toolbarHeightPx = it.height }
                 .background(backgroundColor.copy(alpha = 0.72f))
                 .padding(start = 16.dp, end = SpaceCompassTitleBarContentPadding.calculateEndPadding(
                     androidx.compose.ui.platform.LocalLayoutDirection.current)),
@@ -486,16 +496,13 @@ internal fun SpaceCompassSunFinderContent(
                 onStatusAction = if (hasActiveBody && target == null && sun != null) onRemoteRetry else onLocationAction,
                 showActions = false, offscreenBody = body.takeIf { hasActiveBody }, overlays = overlays, onActivateBody = {
                     if (it in selectedBodies) onBodyChange(it) },
-                perspective = cameraPerspective.takeIf { cameraEnabled }, noticesAtBottom = true,
+                perspective = cameraPerspective.takeIf { cameraEnabled }, noticesBelowReticle = true,
                 observerLatitude = fix?.latitude, showSkyReferences = showSkyReferences,
                 observerAltitude = fix?.takeIf { it.hasAltitude() }?.altitude ?: 0.0,
+                topContentInset = topControlsInset,
                 bottomStartActions = { modifier ->
                     Column(modifier.padding(4.dp), horizontalAlignment = Alignment.CenterHorizontally,
                         verticalArrangement = Arrangement.spacedBy(6.dp)) {
-                        SpaceCompassPointingAxisButton(pointingTopEdge && !cameraEnabled, { topEdge ->
-                            pointingTopEdge = topEdge
-                            scenePreferences.edit().putBoolean(SPACE_COMPASS_POINTING_TOP_EDGE_KEY, topEdge).apply()
-                        }, primaryText, backgroundColor, enabled = !cameraEnabled)
                         SpaceCompassMainDetailsToggleButton(detailsExpanded, {
                             detailsExpanded = !detailsExpanded
                             scenePreferences.edit().putBoolean(SPACE_COMPASS_MAIN_DETAILS_KEY, detailsExpanded).apply()
@@ -506,42 +513,51 @@ internal fun SpaceCompassSunFinderContent(
                     Row(modifier.padding(4.dp).testTag("celestial-capture-controls"),
                         verticalAlignment = Alignment.CenterVertically,
                         horizontalArrangement = Arrangement.spacedBy(8.dp)) {
+                        if (cameraEnabled) SpaceCompassCameraZoomControls(cameraZoomRange, cameraZoomRequest, cameraZoomActual,
+                            !panorama.busy && cameraCapture != null, ::updateCameraZoom, primaryText, backgroundColor)
                         SpaceCompassCaptureButton(panorama.capture, !panorama.busy && (!cameraEnabled || cameraCapture != null),
                             primaryText, backgroundColor, cameraEnabled = cameraEnabled)
                     }
                 },
                 topStartActions = { modifier ->
-                    Row(modifier.padding(4.dp), verticalAlignment = Alignment.Top,
-                        horizontalArrangement = Arrangement.spacedBy(8.dp)) {
-                        Column(horizontalAlignment = Alignment.CenterHorizontally,
-                            verticalArrangement = Arrangement.spacedBy(6.dp)) {
+                    Column(modifier.padding(4.dp).testTag("celestial-top-start-controls"),
+                        horizontalAlignment = Alignment.Start,
+                        verticalArrangement = Arrangement.spacedBy(8.dp)) {
+                        Row(verticalAlignment = Alignment.CenterVertically,
+                            horizontalArrangement = Arrangement.spacedBy(8.dp)) {
                             SpaceCompassCameraToggleButton(cameraEnabled, { enabled ->
                                 if (!enabled) cameraEnabled = false
                                 else if (hasSpaceCompassCameraPermission(cameraContext)) cameraEnabled = true
                                 else cameraPermission.launch(Manifest.permission.CAMERA)
                             }, primaryText, backgroundColor)
-                            if (cameraEnabled) SpaceCompassCameraZoomControls(cameraZoomRange, cameraZoomRequest, cameraZoomActual,
-                                !panorama.busy && cameraCapture != null, ::updateCameraZoom, primaryText, backgroundColor)
+                            SpaceCompassPointingAxisButton(pointingTopEdge && !cameraEnabled, { topEdge ->
+                                pointingTopEdge = topEdge
+                                scenePreferences.edit().putBoolean(SPACE_COMPASS_POINTING_TOP_EDGE_KEY, topEdge).apply()
+                            }, primaryText, backgroundColor, enabled = !cameraEnabled)
                         }
                         SpaceCompassSkyReferenceButton(showSkyReferences, { enabled ->
                             showSkyReferences = enabled
                             scenePreferences.edit().putBoolean(SPACE_COMPASS_SKY_REFERENCES_KEY, enabled).apply()
                         }, primaryText, backgroundColor)
+                    }
+                },
+                topEndActions = { modifier ->
+                    Column(modifier.padding(4.dp).testTag("celestial-top-end-controls"),
+                        horizontalAlignment = Alignment.End,
+                        verticalArrangement = Arrangement.spacedBy(8.dp)) {
+                        Row(verticalAlignment = Alignment.CenterVertically,
+                            horizontalArrangement = Arrangement.spacedBy(8.dp)) {
+                            SpaceCompassScenarioButton(simulated, primaryText, backgroundColor) { navigate("observer") }
+                            SpaceCompassCelestialSelector(body, primaryText, backgroundColor, Modifier, timeMs, remote,
+                                selectedBodies, onSelectionChange?.let { { dailyPathUiState.clearSelection(); it(selection.toggleAll()) } }) {
+                                dailyPathUiState.clearSelection()
+                                if (onSelectionChange != null) onSelectionChange(selection.toggle(it)) else onBodyChange(it)
+                            }
+                        }
                         SpaceCompassWeatherToggleButton(showWeather, { enabled ->
                             showWeather = enabled
                             scenePreferences.edit().putBoolean(SPACE_COMPASS_WEATHER_VISIBLE_KEY, enabled).apply()
                         }, primaryText, backgroundColor, enabled = !cameraEnabled)
-                    }
-                },
-                topEndActions = { modifier ->
-                    Row(modifier.padding(4.dp), verticalAlignment = Alignment.CenterVertically,
-                        horizontalArrangement = Arrangement.spacedBy(8.dp)) {
-                        SpaceCompassScenarioButton(simulated, primaryText, backgroundColor) { navigate("observer") }
-                        SpaceCompassCelestialSelector(body, primaryText, backgroundColor, Modifier, timeMs, remote,
-                            selectedBodies, onSelectionChange?.let { { dailyPathUiState.clearSelection(); it(selection.toggleAll()) } }) {
-                            dailyPathUiState.clearSelection()
-                            if (onSelectionChange != null) onSelectionChange(selection.toggle(it)) else onBodyChange(it)
-                        }
                     }
                 })
         }
@@ -567,32 +583,34 @@ internal fun SpaceCompassSunFinderContent(
             }
             SpaceCompassCameraHorizon(orientation, groundFrame, cameraPerspective, Modifier.fillMaxSize())
         } else {
-            SpaceCompassSunSkyBackdrop(phase, sceneWeather, Modifier.fillMaxSize()) {
+            SpaceCompassSunSkyBackdrop(phase, sceneWeather, Modifier.fillMaxSize(), solarLighting) {
                 SpaceCompassStarField(timeMs, fix?.latitude, fix?.longitude, altitude ?: 0.0, orientation, groundFrame,
                     sun?.elevationDegrees, sceneWeather, resumed && mainVisible, Modifier.fillMaxSize())
             }
-            SpaceCompassSunGroundBackdrop(orientation, groundFrame, phase, Modifier.fillMaxSize())
+            SpaceCompassSunGroundBackdrop(orientation, groundFrame, phase, Modifier.fillMaxSize(), solarLighting)
         }
         val minimumPanelWidth = if (largeText) 280.dp else 220.dp
+        val detailsWidth = viewportWidth * 0.45f
         val compactPanel = viewportHeight < 420.dp && !largeText
-        if (viewportWidth > viewportHeight && viewportWidth / 2 - 20.dp >= minimumPanelWidth) {
+        if (viewportWidth > viewportHeight && detailsWidth - 20.dp >= minimumPanelWidth) {
             // The toolbar belongs to the sky column, not above the full-height data column.
             Row(Modifier.fillMaxSize().testTag("celestial-landscape-layout")) {
-                Column(Modifier.weight(1f).fillMaxHeight()) {
-                    toolbar()
-                    Box(Modifier.weight(1f).fillMaxWidth().padding(10.dp).testTag("celestial-pointing-area")) {
+                Box(Modifier.weight(1f).fillMaxHeight().clipToBounds()) {
+                    // One optical frame for sky, paths and camera, including the translucent header.
+                    Box(Modifier.fillMaxSize().padding(start = 10.dp, end = 10.dp, bottom = 10.dp)
+                        .testTag("celestial-pointing-area")) {
                         pointing(true)
                     }
+                    toolbar()
                 }
                 // Equal insets towards the sky/toolbar and the outer edge, including in RTL.
                 SpaceCompassMainDetailsVisibility(detailsExpanded, landscape = true) {
-                    details(Modifier.width(viewportWidth / 2).fillMaxHeight().padding(10.dp), compactPanel, true)
+                    details(Modifier.width(detailsWidth).fillMaxHeight().padding(10.dp), compactPanel, true)
                 }
             }
-        } else Column(Modifier.fillMaxSize()) {
-            toolbar()
-            Column(Modifier.weight(1f).fillMaxWidth().padding(10.dp)) {
-                Box(Modifier.weight(1f).fillMaxWidth()) {
+        } else Box(Modifier.fillMaxSize().clipToBounds()) {
+            Column(Modifier.fillMaxSize().padding(start = 10.dp, end = 10.dp, bottom = 10.dp)) {
+                Box(Modifier.weight(1f).fillMaxWidth().testTag("celestial-pointing-area")) {
                     pointing(false)
                 }
                 SpaceCompassMainDetailsVisibility(detailsExpanded, landscape = false) {
@@ -602,6 +620,7 @@ internal fun SpaceCompassSunFinderContent(
                     }
                 }
             }
+            toolbar()
         }
     }
 }

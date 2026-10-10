@@ -15,9 +15,9 @@ import androidx.compose.ui.unit.dp
 /** Ground sits behind the translucent controls and the Sun marker, never masking the marker. */
 @Composable
 internal fun SpaceCompassSunGroundBackdrop(
-    orientation: SpaceCompassSunOrientation?, frame: SpaceCompassSunSceneFrame?, phase: SpaceCompassSunSkyPhase, modifier: Modifier
+    orientation: SpaceCompassSunOrientation?, frame: SpaceCompassSunSceneFrame?, phase: SpaceCompassSunSkyPhase, modifier: Modifier, solarLighting: SpaceCompassSolarLighting? = null
 ) {
-    val palette = spaceCompassSunGroundPalette(phase)
+    val palette = spaceCompassSunGroundPalette(phase, solarLighting)
     val far by animateColorAsState(Color(palette.farArgb), tween(2_000), label = "solar ground distance")
     val near by animateColorAsState(Color(palette.nearArgb), tween(2_000), label = "solar ground foreground")
     val haze by animateColorAsState(Color(palette.hazeArgb), tween(2_000), label = "solar ground horizon")

@@ -1,5 +1,18 @@
 # Changelog
 
+## 1.2.5 — 2026-10-10
+
+- Add an offline Mondiversi-inspired Earth screensaver, enabled after five minutes by default, with saved delay/activation and touch-to-dismiss behavior.
+- Keep the globe centered at the same physical size across rotation; its illumination follows observer/scenario solar height independently of the interface theme.
+- Blend dawn, sunrise/sunset and daylight continuously from solar altitude across the sky, ground, atmospheric effects and frozen panoramic captures.
+- Arrange main controls in mirrored corner groups: camera/pointing axis/references on the left, scenario/objects/weather on the right.
+- Center status notices immediately below the reticle; keep data/retry priority and inline theme-aware actions.
+- Place a larger, semibold camera zoom value beside capture, with a scrollable preset menu that can open above it.
+- Let trajectories continue beneath the translucent main header, use a 55/45 landscape split and give object names more room between symmetric navigation arrows.
+- Start background music at 50% on fresh settings, use a muted blue/cyan inactive volume track and refine loading ellipses in all twenty languages.
+- Refresh all twenty in-app news summaries. Retain saved preferences, the existing distribution certificate and celestial texture pack 1.1.
+
+
 ## 1.2.4 — 2026-10-09
 
 - Generate the original website space score continuously on-device, replacing the bundled recording.

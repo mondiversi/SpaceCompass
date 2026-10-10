@@ -1,9 +1,9 @@
 <resources>
     <string name="info_news_title">Mambo mapya · %1$s</string>
-    <string name="info_news_star_sky">Muziki wa anga wa kutafakari wenye mzunguko laini, unaopatikana bila intaneti.</string>
-    <string name="info_news_texture_downloads">Muziki huwashwa kwa chaguo-msingi kwa sauti ya chini; hali ya kuwasha na kiwango cha sauti huhifadhiwa.</string>
-    <string name="info_news_weather">Kitelezi cha sauti chenye nukta na viwango vya kawaida, kutoka kimya hadi kiwango cha juu.</string>
-    <string name="info_news_viewer_zoom">Mwonekano sasa unaitwa Jumla, ukiwa na ikoni maalumu ya mipangilio.</string>
-    <string name="info_news_settings">Kadi za muziki na hali maalumu hufunguka na kufungwa kwa uhuishaji laini.</string>
-    <string name="info_news_catalog">Ikoni za mwelekeo zilizo wazi zaidi, zenye mishale iliyonyooka katika mhimili wa kamera na urefu wa simu.</string>
+    <string name="info_news_star_sky" formatted="false">Kihifadhi skrini cha Dunia kilichoongozwa na Mondiversi, kinapatikana bila mtandao na mwangaza wa mchana na usiku.</string>
+    <string name="info_news_texture_downloads" formatted="false">Kihifadhi skrini huwashwa kwa chaguomsingi baada ya dakika 5; uanzishaji na muda wa kusubiri huhifadhiwa.</string>
+    <string name="info_news_weather" formatted="false">Mwangaza wa alfajiri na jioni hubadilika taratibu kwenye anga, ardhi, hali ya hewa na picha za panorama.</string>
+    <string name="info_news_viewer_zoom" formatted="false">Vidhibiti vikuu vimepangwa kwenye pembe; ujumbe wa hali uko katikati chini ya alama ya kulenga.</string>
+    <string name="info_news_settings" formatted="false">Ukuzaji wa kamera unasomeka zaidi karibu na kitufe cha kupiga picha, pamoja na uchaguzi wa moja kwa moja wa viwango.</string>
+    <string name="info_news_catalog" formatted="false">Nafasi zaidi ya majina ya vitu, mpangilio wa mlalo wa 55/45 na sauti ya awali ya muziki ya 50%.</string>
 </resources>

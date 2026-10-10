@@ -14,9 +14,9 @@
     <string name="sun_finder_location_permission">Gök konumlarını hesaplamak için konum erişimine izin verin.</string>
     <string name="sun_finder_location_disabled">Konum kapalı.</string>
     <string name="sun_finder_location_error">Konum kullanılamıyor.</string>
-    <string name="sun_finder_location_searching">Konum aranıyor.</string>
+    <string name="sun_finder_location_searching">Konum aranıyor...</string>
     <string name="sun_finder_compass_missing">Bu cihazda pusula kullanılamıyor.</string>
-    <string name="sun_finder_orientation_searching">Yönelim okunuyor.</string>
+    <string name="sun_finder_orientation_searching">Yönelim okunuyor...</string>
     <string name="sun_finder_compass_accuracy">Manyetik nesneleri uzaklaştır.</string>
     <string name="sun_finder_compass_calibrate">Telefonla havada bir 8 çizerek pusulayı kalibre et.</string>
     <string name="sun_finder_allow_location">Konuma izin ver</string>

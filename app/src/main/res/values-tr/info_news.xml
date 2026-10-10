@@ -1,9 +1,9 @@
 <resources>
     <string name="info_news_title">Son yenilikler · %1$s</string>
-    <string name="info_news_star_sky">Yumuşak döngülü, çevrimdışı kullanılabilen meditatif uzay müziği.</string>
-    <string name="info_news_texture_downloads">Müzik varsayılan olarak düşük sesle açıktır; açma-kapama ve ses seviyesi seçimleri kaydedilir.</string>
-    <string name="info_news_weather">Sessizden en yükseğe düzenli kademeler sunan noktalı ses çubuğu.</string>
-    <string name="info_news_viewer_zoom">Görünüm artık Genel adını taşıyor ve özel bir ayarlar simgesine sahip.</string>
-    <string name="info_news_settings">Müzik ve Özel senaryo kartları akıcı animasyonlarla açılıp kapanır.</string>
-    <string name="info_news_catalog">Kamera ve telefonun uzunluk eksenleri boyunca düz oklarla daha anlaşılır yönlendirme simgeleri.</string>
+    <string name="info_news_star_sky" formatted="false">Mondiversi’den ilham alan Dünya ekran koruyucusu, gündüz ve gece aydınlatmasıyla çevrimdışı kullanılabilir.</string>
+    <string name="info_news_texture_downloads" formatted="false">Ekran koruyucu varsayılan olarak 5 dakika sonra açılır; etkinleştirme ve bekleme süresi kaydedilir.</string>
+    <string name="info_news_weather" formatted="false">Gökyüzü, zemin, hava durumu ve panoramik çekimlerde şafak ve gün batımı ışığı kademeli değişir.</string>
+    <string name="info_news_viewer_zoom" formatted="false">Ana kontroller köşelerde gruplandırıldı; durum mesajları nişangâhın altında ortalandı.</string>
+    <string name="info_news_settings" formatted="false">Çekim düğmesinin yanında daha okunaklı kamera yakınlaştırması ve doğrudan seviye seçimi.</string>
+    <string name="info_news_catalog" formatted="false">Nesne adları için daha fazla alan, yatayda 55/45 düzeni ve başlangıç müzik ses düzeyi %50.</string>
 </resources>

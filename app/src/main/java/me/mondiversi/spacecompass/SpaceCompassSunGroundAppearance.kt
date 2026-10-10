@@ -17,3 +17,10 @@ internal fun spaceCompassSunGroundPalette(phase: SpaceCompassSunSkyPhase): Space
     SpaceCompassSunSkyPhase.EVENING -> SpaceCompassSunGroundPalette(
         0xFF42404B.toInt(), 0xFF1F2C2B.toInt(), 0xFF635C6C.toInt())
 }
+
+internal fun spaceCompassSunGroundPalette(phase: SpaceCompassSunSkyPhase,
+    solarLighting: SpaceCompassSolarLighting?): SpaceCompassSunGroundPalette =
+    spaceCompassSolarLightingPalette(phase, solarLighting, ::spaceCompassSunGroundPalette) { a, b, t ->
+        SpaceCompassSunGroundPalette(spaceCompassSolarArgb(a.farArgb, b.farArgb, t),
+            spaceCompassSolarArgb(a.nearArgb, b.nearArgb, t), spaceCompassSolarArgb(a.hazeArgb, b.hazeArgb, t))
+    }

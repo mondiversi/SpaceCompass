@@ -14,9 +14,9 @@
     <string name="sun_finder_location_permission">Sta locatietoegang toe om hemelposities te berekenen.</string>
     <string name="sun_finder_location_disabled">Locatie is uitgeschakeld.</string>
     <string name="sun_finder_location_error">Locatie niet beschikbaar.</string>
-    <string name="sun_finder_location_searching">Locatie zoeken.</string>
+    <string name="sun_finder_location_searching">Locatie zoeken...</string>
     <string name="sun_finder_compass_missing">Dit apparaat heeft geen beschikbaar kompas.</string>
-    <string name="sun_finder_orientation_searching">Oriëntatie uitlezen.</string>
+    <string name="sun_finder_orientation_searching">Oriëntatie uitlezen...</string>
     <string name="sun_finder_compass_accuracy">Haal magnetische voorwerpen weg.</string>
     <string name="sun_finder_compass_calibrate">Kalibreer het kompas door met je telefoon een acht in de lucht te tekenen.</string>
     <string name="sun_finder_allow_location">Locatie toestaan</string>

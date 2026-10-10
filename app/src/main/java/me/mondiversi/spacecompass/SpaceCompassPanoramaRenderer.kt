@@ -21,7 +21,8 @@ internal data class SpaceCompassPanoramaSnapshot(val timeMs: Long, val latitude:
     val observerPointNames: Pair<String, String> = "Earth centre" to "Zenith",
     val weatherEffectsEnabled: Boolean = true,
     val currentPointName: String = "Current", val currentTime: String? = null,
-    val pointEventNames: Map<SpaceCompassSunPathEvent, String> = spaceCompassPanoramaDefaultEventNames)
+    val pointEventNames: Map<SpaceCompassSunPathEvent, String> = spaceCompassPanoramaDefaultEventNames,
+    val solarLighting: SpaceCompassSolarLighting? = null)
 
 internal fun renderSpaceCompassPanorama(snapshot: SpaceCompassPanoramaSnapshot, width: Int = 4096, context: android.content.Context? = null): Bitmap {
     require(width in 512..4096 && snapshot.objects.isNotEmpty())
@@ -40,7 +41,7 @@ internal fun renderSpaceCompassPanorama(snapshot: SpaceCompassPanoramaSnapshot, 
     try {
         val canvas = Canvas(bitmap)
         val paint = Paint(Paint.ANTI_ALIAS_FLAG)
-        val sky = spaceCompassSunSkyColors(snapshot.phase, snapshot.weather)
+        val sky = spaceCompassSunSkyColors(snapshot.phase, snapshot.weather, snapshot.solarLighting)
         canvas.drawColor(sky.first.toArgb())
         val captionBounds = drawSpaceCompassPanoramaCaption(canvas, snapshot.caption, sceneWidth, scale)
         // All scene geometry uses the same local angular coordinates. The extra 44 pixels
@@ -51,13 +52,13 @@ internal fun renderSpaceCompassPanorama(snapshot: SpaceCompassPanoramaSnapshot, 
         paint.shader = LinearGradient(0f, 0f, 0f, sceneHeight / 2f,
             sky.first.toArgb(), sky.second.toArgb(), Shader.TileMode.CLAMP)
         canvas.drawRect(0f, 0f, sceneWidth.toFloat(), sceneHeight / 2f, paint)
-        val ground = spaceCompassSunGroundPalette(snapshot.phase)
+        val ground = spaceCompassSunGroundPalette(snapshot.phase, snapshot.solarLighting)
         paint.shader = LinearGradient(0f, sceneHeight / 2f, 0f, sceneHeight.toFloat(),
             ground.farArgb, ground.nearArgb, Shader.TileMode.CLAMP)
         canvas.drawRect(0f, sceneHeight / 2f, sceneWidth.toFloat(), sceneHeight.toFloat(), paint)
         paint.shader = null
         drawSpaceCompassPanoramaStars(canvas, snapshot, sceneWidth, sceneHeight, context)
-        SpaceCompassWeatherRenderer(sceneWidth.toFloat(), sceneHeight / 2f, snapshot.phase, snapshot.weather).draw(canvas)
+        SpaceCompassWeatherRenderer(sceneWidth.toFloat(), sceneHeight / 2f, snapshot.phase, snapshot.weather, snapshot.solarLighting).draw(canvas)
         val text = spaceCompassOrbitTextPaint(34 * scale)
         fun textAt(value: String, x: Float, y: Float, size: Float = 34 * scale, tint: Int = Color.WHITE) {
             text.textSize = size

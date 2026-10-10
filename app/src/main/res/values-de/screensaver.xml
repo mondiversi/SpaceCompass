@@ -1,0 +1,8 @@
+<resources>
+    <string name="screensaver_title">Bildschirmschoner</string>
+    <string name="screensaver_description">Zeigt bei Inaktivität den animierten Weltraumhintergrund von Mondiversi. Zum Zurückkehren antippen.</string>
+    <string name="screensaver_delay">Starten nach</string>
+    <string name="screensaver_dismiss">Tippen, um den Bildschirmschoner zu schließen</string>
+    <string name="screensaver_seconds">%1$s s</string>
+    <string name="screensaver_minutes">%1$s Min.</string>
+</resources>

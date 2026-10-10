@@ -1,9 +1,9 @@
 <resources>
     <string name="info_news_title">최근 변경 사항 · %1$s</string>
-    <string name="info_news_star_sky">부드럽게 반복되는 명상용 우주 음악을 오프라인에서 사용할 수 있습니다.</string>
-    <string name="info_news_texture_downloads">음악은 기본적으로 낮은 음량으로 켜집니다. 켜기·끄기와 음량 선택이 저장됩니다.</string>
-    <string name="info_news_weather">무음부터 최대 음량까지 일정한 단계로 조절하는 점 표시 음량 막대입니다.</string>
-    <string name="info_news_viewer_zoom">모양이 일반으로 바뀌고 전용 설정 아이콘이 추가되었습니다.</string>
-    <string name="info_news_settings">음악과 사용자 지정 시나리오 카드가 부드러운 애니메이션으로 펼쳐지고 접힙니다.</string>
-    <string name="info_news_catalog">카메라 축과 휴대전화의 길이 축을 따라가는 직선 화살표로 방향 아이콘이 더 명확해졌습니다.</string>
+    <string name="info_news_star_sky" formatted="false">Mondiversi에서 영감을 받은 지구 화면 보호기를 주야간 조명과 함께 오프라인으로 이용할 수 있습니다.</string>
+    <string name="info_news_texture_downloads" formatted="false">화면 보호기는 기본적으로 5분 후 켜지며, 활성화 여부와 대기 시간이 저장됩니다.</string>
+    <string name="info_news_weather" formatted="false">하늘, 지면, 날씨, 파노라마 사진에 새벽과 해질녘의 점진적인 조명을 적용했습니다.</string>
+    <string name="info_news_viewer_zoom" formatted="false">주요 조작 버튼을 모서리에 모으고 상태 메시지를 조준점 아래 중앙에 배치했습니다.</string>
+    <string name="info_news_settings" formatted="false">촬영 버튼 옆 카메라 줌을 더 읽기 쉽게 하고 배율을 직접 선택할 수 있게 했습니다.</string>
+    <string name="info_news_catalog" formatted="false">천체 이름 표시 공간 확대, 가로 화면 55/45 배치, 음악 초기 음량 50%.</string>
 </resources>

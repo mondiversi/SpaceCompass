@@ -1,0 +1,8 @@
+<resources>
+    <string name="screensaver_title">Προφύλαξη οθόνης</string>
+    <string name="screensaver_description">Όταν δεν αγγίζετε την εφαρμογή, εμφανίζεται το κινούμενο διαστημικό φόντο του Mondiversi. Αγγίξτε για επιστροφή.</string>
+    <string name="screensaver_delay">Έναρξη μετά από</string>
+    <string name="screensaver_dismiss">Αγγίξτε για να κλείσετε την προφύλαξη οθόνης</string>
+    <string name="screensaver_seconds">%1$s δευτ.</string>
+    <string name="screensaver_minutes">%1$s λεπ.</string>
+</resources>

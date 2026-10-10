@@ -1,0 +1,77 @@
+<!doctype html>
+<!-- Mondiversi space scene, reused with its owner's authorization in Space Compass (GPL-3.0).
+NASA Blue Marble: https://svs.gsfc.nasa.gov/57730/
+NASA/NOAA Black Marble: https://svs.gsfc.nasa.gov/79765/
+Decorative accelerated orbits and a rotating Earth; not a live astronomical model. -->
+<html><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'unsafe-inline'; style-src 'unsafe-inline'; img-src data:; connect-src 'none'">
+<style>
+html,body{margin:0;width:100%;height:100%;overflow:hidden;background:#02050c}
+canvas{position:absolute;inset:0;width:100%;height:100%;pointer-events:none}
+#earth-fallback{display:none;position:absolute;left:50%;top:50%;width:66vmin;aspect-ratio:1;transform:translate(-50%,-50%);overflow:hidden;border-radius:50%;box-shadow:0 0 28px #3166a960}
+#earth-fallback img{position:absolute;width:200%;height:100%;left:-50%;object-fit:fill}
+#earth-fallback .earth-day{filter:brightness(var(--earth-brightness,.075))}
+#earth-fallback .earth-night{opacity:var(--night-weight,1);mix-blend-mode:screen}
+</style></head><body><canvas id="world-canvas"></canvas><canvas id="earth-canvas"></canvas>
+<div id="earth-fallback"><img class="earth-day"><img class="earth-night"></div><script>
+'use strict';
+let nativeNight=__NATIVE_NIGHT__;
+let nativeLightHour=__NATIVE_LIGHT_HOUR__;
+const timelineOffset=__ELAPSED_SECONDS__;
+function sceneTime(ms){return timelineOffset+ms/1000}
+const sceneAssets={earthDay:'__EARTH_DAY__',earthNight:'__EARTH_NIGHT__'};
+const phaseNames=['dawn','morning','afternoon','sunset','evening','night'];
+const environment={scene:'space',hour:12,daylight:1,phase:'afternoon',day:1,twilight:0,night:0,date:new Date()};
+const worldCanvas=document.getElementById('world-canvas'),world=worldCanvas.getContext('2d'),motion=matchMedia('(prefers-reduced-motion: reduce)');
+const anchors=[[0,0,0,1],[5,0,.1,.9],[6.5,.05,.85,.1],[8,1,0,0],[15.5,1,0,0],[17.5,.45,.55,0],[18.5,0,1,0],[20,0,.3,.7],[21.5,0,0,1],[24,0,0,1]];
+function updateEnvironment(){
+ // Light comes from the same solar-height bands as the main sky, independently of the UI theme.
+ environment.hour=nativeLightHour;
+ const hour=environment.hour,a=anchors.findIndex((p,i)=>i<anchors.length-1&&hour>=p[0]&&hour<anchors[i+1][0]),left=anchors[Math.max(0,a)],right=anchors[Math.max(0,a)+1],mix=(hour-left[0])/(right[0]-left[0]);
+ environment.day=left[1]+(right[1]-left[1])*mix;environment.twilight=left[2]+(right[2]-left[2])*mix;environment.night=left[3]+(right[3]-left[3])*mix;
+ environment.daylight=Math.max(0,Math.sin((hour-6)*Math.PI/12));environment.phase=hour<5||hour>=22?'night':hour<8?'dawn':hour<12?'morning':hour<17.5?'afternoon':hour<19.5?'sunset':'evening';
+ document.documentElement.dataset.theme=nativeNight?'dark':'light';document.documentElement.dataset.phase=environment.phase;
+ document.documentElement.style.setProperty('--night-weight',environment.night);document.documentElement.style.setProperty('--earth-brightness',.075+.925*environment.daylight);
+ if(motion.matches)paintWorld(0);
+}
+function createEarthRenderer(){
+ const canvas=document.getElementById('earth-canvas'),gl=canvas.getContext('webgl',{alpha:true,antialias:true,premultipliedAlpha:false,preserveDrawingBuffer:true});
+ if(!gl){canvas.style.display='none';document.getElementById('earth-fallback').style.display='block';return null}
+ const vertex='attribute vec2 p;void main(){gl_Position=vec4(p,0.,1.);}';
+ const fragment=`precision mediump float;uniform vec2 resolution,center;uniform float radius,rotation,hour;uniform sampler2D dayMap,nightMap;const float PI=3.14159265;
+ float hash(vec3 p){return fract(sin(dot(p,vec3(127.1,311.7,74.7)))*43758.5453);}float noise(vec3 p){vec3 i=floor(p),f=fract(p);f=f*f*(3.-2.*f);return mix(mix(mix(hash(i),hash(i+vec3(1,0,0)),f.x),mix(hash(i+vec3(0,1,0)),hash(i+vec3(1,1,0)),f.x),f.y),mix(mix(hash(i+vec3(0,0,1)),hash(i+vec3(1,0,1)),f.x),mix(hash(i+vec3(0,1,1)),hash(i+vec3(1,1,1)),f.x),f.y),f.z);}
+ void main(){vec2 q=(gl_FragCoord.xy-center)/radius;float d=dot(q,q);float angle=(hour-6.)*PI/12.;vec3 sun=normalize(vec3(cos(angle),.18,sin(angle)));if(d>1.){float glow=exp(-(sqrt(d)-1.)*30.)*.35;if(d>1.26||glow<.002)discard;gl_FragColor=vec4(.12,.4,.8,glow);return;}vec3 n=vec3(q,sqrt(1.-d));float tilt=.16;vec3 v=vec3(n.x*cos(tilt)-n.y*sin(tilt),n.x*sin(tilt)+n.y*cos(tilt),n.z);float c=cos(rotation),s=sin(rotation);v=vec3(v.x*c+v.z*s,v.y,-v.x*s+v.z*c);vec2 uv=vec2(atan(v.z,v.x)/(2.*PI)+.5,asin(v.y)/PI+.5);vec3 land=texture2D(dayMap,uv).rgb;vec3 cities=texture2D(nightMap,uv).rgb;float lit=dot(n,sun),diffuse=max(lit,0.);float water=smoothstep(.015,.12,land.b-max(land.r,land.g));vec3 halfV=normalize(sun+vec3(0,0,1));float shine=pow(max(dot(n,halfV),0.),55.)*water*.55;vec3 color=land*(.075+diffuse*.98)+vec3(shine);float dark=1.-smoothstep(-.13,.13,lit);color+=pow(cities,vec3(1.5))*dark*1.7;float clouds=smoothstep(.65,.83,noise(v*12.+vec3(rotation*.4,0,0))*.65+noise(v*25.)*.35);color=mix(color,vec3(.76,.83,.88)*(.08+diffuse*.9),clouds*.63);float rim=pow(1.-n.z,3.2);color+=vec3(.10,.32,.61)*rim*(.22+diffuse*.7);gl_FragColor=vec4(color,1.);}`;
+ function shader(type,source){const s=gl.createShader(type);gl.shaderSource(s,source);gl.compileShader(s);if(!gl.getShaderParameter(s,gl.COMPILE_STATUS))throw Error(gl.getShaderInfoLog(s));return s}
+ let program;try{program=gl.createProgram();gl.attachShader(program,shader(gl.VERTEX_SHADER,vertex));gl.attachShader(program,shader(gl.FRAGMENT_SHADER,fragment));gl.linkProgram(program);if(!gl.getProgramParameter(program,gl.LINK_STATUS))throw Error(gl.getProgramInfoLog(program))}catch(error){canvas.style.display='none';document.getElementById('earth-fallback').style.display='block';console.warn('Earth renderer fallback',error);return null}
+ gl.useProgram(program);const buffer=gl.createBuffer();gl.bindBuffer(gl.ARRAY_BUFFER,buffer);gl.bufferData(gl.ARRAY_BUFFER,new Float32Array([-1,-1,1,-1,-1,1,-1,1,1,-1,1,1]),gl.STATIC_DRAW);const pos=gl.getAttribLocation(program,'p');gl.enableVertexAttribArray(pos);gl.vertexAttribPointer(pos,2,gl.FLOAT,false,0,0);
+ let ready=0;function texture(source,unit,name){const tex=gl.createTexture();gl.activeTexture(gl.TEXTURE0+unit);gl.bindTexture(gl.TEXTURE_2D,tex);gl.texImage2D(gl.TEXTURE_2D,0,gl.RGB,1,1,0,gl.RGB,gl.UNSIGNED_BYTE,new Uint8Array([12,36,68]));gl.texParameteri(gl.TEXTURE_2D,gl.TEXTURE_MIN_FILTER,gl.LINEAR);gl.texParameteri(gl.TEXTURE_2D,gl.TEXTURE_MAG_FILTER,gl.LINEAR);gl.texParameteri(gl.TEXTURE_2D,gl.TEXTURE_WRAP_S,gl.REPEAT);gl.texParameteri(gl.TEXTURE_2D,gl.TEXTURE_WRAP_T,gl.CLAMP_TO_EDGE);gl.uniform1i(gl.getUniformLocation(program,name),unit);const image=new Image();image.onload=()=>{gl.activeTexture(gl.TEXTURE0+unit);gl.bindTexture(gl.TEXTURE_2D,tex);gl.pixelStorei(gl.UNPACK_FLIP_Y_WEBGL,true);gl.texImage2D(gl.TEXTURE_2D,0,gl.RGB,gl.RGB,gl.UNSIGNED_BYTE,image);ready++;if(motion.matches)paintWorld(0)};image.src=source}
+ texture(sceneAssets.earthDay,0,'dayMap');texture(sceneAssets.earthNight,1,'nightMap');
+ const locations=Object.fromEntries(['resolution','center','radius','rotation','hour'].map(k=>[k,gl.getUniformLocation(program,k)]));
+ canvas.addEventListener('webglcontextlost',event=>{event.preventDefault();canvas.style.display='none';document.getElementById('earth-fallback').style.display='block'});
+ return {get ready(){return ready===2},render(time,width,height,dpr){gl.viewport(0,0,canvas.width,canvas.height);gl.clearColor(0,0,0,0);gl.clear(gl.COLOR_BUFFER_BIT);if(environment.scene!=='space')return;gl.useProgram(program);gl.uniform2f(locations.resolution,canvas.width,canvas.height);gl.uniform2f(locations.center,width*.5*dpr,height*.5*dpr);gl.uniform1f(locations.radius,earthDiameter(width,height)*.5*dpr);gl.uniform1f(locations.rotation,time*.013+1.3);gl.uniform1f(locations.hour,environment.hour);gl.drawArrays(gl.TRIANGLES,0,6)}};
+}
+let earthRenderer=null,viewWidth=0,viewHeight=0,pixelRatio=1;
+let seed=38;function random(){seed=(seed*1664525+1013904223)>>>0;return seed/4294967296}const stars=Array.from({length:210},()=>({x:random(),y:random(),r:.35+random()*1.25,phase:random()*6.28}));
+const planets=[{r:.08,size:3,color:'#a99f91',speed:.045},{r:.13,size:5,color:'#d5b994',speed:.034},{r:.19,size:5,color:'#60a7c6',speed:.026},{r:.25,size:4,color:'#b56d4d',speed:.021},{r:.33,size:18,color:'#c0a88c',speed:.014},{r:.41,size:14,color:'#b8ab95',speed:.011,rings:true},{r:.49,size:9,color:'#82b6c1',speed:.008},{r:.57,size:9,color:'#4b79c2',speed:.006}];
+// The display's short edge is stable across rotation; only clamp for small windows.
+function earthDiameter(width,height){return Math.min(Math.min(screen.width||width,screen.height||height)*.66,Math.min(width,height)*.94)}
+function resizeWorld(){viewWidth=innerWidth;viewHeight=innerHeight;document.getElementById('earth-fallback').style.width=earthDiameter(viewWidth,viewHeight)+'px';pixelRatio=Math.min(devicePixelRatio||1,1.5);for(const canvas of [worldCanvas,document.getElementById('earth-canvas')]){canvas.width=Math.round(viewWidth*pixelRatio);canvas.height=Math.round(viewHeight*pixelRatio)}paintWorld(motion.matches?0:sceneTime(performance.now()))}
+function paintWorld(time){
+ const w=viewWidth,h=viewHeight;if(!w||!h)return;world.setTransform(pixelRatio,0,0,pixelRatio,0,0);world.clearRect(0,0,w,h);
+ const space=true;if(space){const gradient=world.createRadialGradient(w*.7,h*.7,0,w*.5,h*.5,w);gradient.addColorStop(0,'#172037');gradient.addColorStop(.45,'#080e1c');gradient.addColorStop(1,'#02050c');world.fillStyle=gradient;world.fillRect(0,0,w,h)}
+ for(const star of stars){if(!space&&star.y>.40)continue;world.globalAlpha=(space?.35:environment.night*.8)*(.6+.4*Math.sin(time*.7+star.phase));world.fillStyle='#d6e3f4';world.beginPath();const offset=space?time*.15:0;world.arc((star.x*w+offset)%w,star.y*h,star.r,0,Math.PI*2);world.fill()}world.globalAlpha=1;
+ if(space){const cx=w*.14,cy=h*.54,tilt=-.16;world.save();world.translate(cx,cy);world.rotate(tilt);for(let i=0;i<planets.length;i++){const p=planets[i],radius=Math.max(w,h*.85)*p.r,angle=time*p.speed+i*1.31;world.strokeStyle='rgba(140,166,198,.13)';world.lineWidth=.7;world.beginPath();world.ellipse(0,0,radius,radius*.35,0,0,Math.PI*2);world.stroke();const x=Math.cos(angle)*radius,y=Math.sin(angle)*radius*.35;if(p.rings){world.strokeStyle='rgba(181,175,157,.45)';world.lineWidth=4;world.beginPath();world.ellipse(x,y,p.size*1.8,p.size*.47,-.3,0,Math.PI*2);world.stroke()}const surface=world.createRadialGradient(x-p.size*.35,y-p.size*.35,0,x,y,p.size);surface.addColorStop(0,p.color);surface.addColorStop(1,'#111a27');world.fillStyle=surface;world.beginPath();world.arc(x,y,p.size*(w<600?.7:1),0,Math.PI*2);world.fill()}const glow=world.createRadialGradient(0,0,0,0,0,w<600?48:90);glow.addColorStop(0,'rgba(255,224,162,.92)');glow.addColorStop(.2,'rgba(255,185,89,.62)');glow.addColorStop(1,'rgba(255,143,50,0)');world.fillStyle=glow;world.beginPath();world.arc(0,0,w<600?48:90,0,Math.PI*2);world.fill();world.restore();
+ }
+ if(earthRenderer)earthRenderer.render(time,w,h,pixelRatio);
+}
+
+let lastFrame=0;
+function animateWorld(ms){requestAnimationFrame(animateWorld);if(document.hidden||motion.matches||ms-lastFrame<33)return;lastFrame=ms;paintWorld(sceneTime(ms))}
+window.setNativeLighting=function(night,hour){nativeNight=!!night;if(Number.isFinite(hour))nativeLightHour=((hour%24)+24)%24;updateEnvironment();paintWorld(sceneTime(performance.now()))};
+document.querySelector('.earth-day').src=sceneAssets.earthDay;
+document.querySelector('.earth-night').src=sceneAssets.earthNight;
+updateEnvironment();earthRenderer=createEarthRenderer();resizeWorld();
+addEventListener('resize',resizeWorld);motion.addEventListener('change',()=>paintWorld(motion.matches?0:sceneTime(performance.now())));
+requestAnimationFrame(animateWorld);
+document.addEventListener('visibilitychange',()=>{if(!document.hidden)updateEnvironment()});
+</script></body></html>

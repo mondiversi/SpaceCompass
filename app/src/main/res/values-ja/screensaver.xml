@@ -1,0 +1,8 @@
+<resources>
+    <string name="screensaver_title">スクリーンセーバー</string>
+    <string name="screensaver_description">操作していないときにMondiversiの宇宙アニメーションを表示します。タッチすると元の画面に戻ります。</string>
+    <string name="screensaver_delay">開始までの時間</string>
+    <string name="screensaver_dismiss">タッチしてスクリーンセーバーを閉じる</string>
+    <string name="screensaver_seconds">%1$s秒</string>
+    <string name="screensaver_minutes">%1$s分</string>
+</resources>

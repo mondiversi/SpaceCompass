@@ -14,9 +14,9 @@
     <string name="sun_finder_location_permission">Consenti l’accesso alla posizione per calcolare le posizioni celesti.</string>
     <string name="sun_finder_location_disabled">La posizione è disattivata.</string>
     <string name="sun_finder_location_error">Posizione non disponibile.</string>
-    <string name="sun_finder_location_searching">Ricerca della posizione.</string>
+    <string name="sun_finder_location_searching">Ricerca della posizione...</string>
     <string name="sun_finder_compass_missing">Bussola non disponibile sul dispositivo.</string>
-    <string name="sun_finder_orientation_searching">Lettura dell’orientamento.</string>
+    <string name="sun_finder_orientation_searching">Lettura dell’orientamento...</string>
     <string name="sun_finder_compass_accuracy">Allontana gli oggetti magnetici.</string>
     <string name="sun_finder_compass_calibrate">Calibra la bussola disegnando un 8 in aria con il telefono.</string>
     <string name="sun_finder_allow_location">Autorizza posizione</string>

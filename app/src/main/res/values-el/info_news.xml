@@ -1,9 +1,9 @@
 <resources>
     <string name="info_news_title">Τελευταία νέα · %1$s</string>
-    <string name="info_news_star_sky">Διαλογιστική διαστημική μουσική με απαλή επανάληψη, διαθέσιμη εκτός σύνδεσης.</string>
-    <string name="info_news_texture_downloads">Η μουσική είναι ενεργή από προεπιλογή σε χαμηλή ένταση· η ενεργοποίηση και η ένταση αποθηκεύονται.</string>
-    <string name="info_news_weather">Ρυθμιστικό έντασης με σημεία και ομοιόμορφα επίπεδα, από σίγαση έως μέγιστη ένταση.</string>
-    <string name="info_news_viewer_zoom">Η Εμφάνιση μετονομάζεται σε Γενικά, με ειδικό εικονίδιο ρυθμίσεων.</string>
-    <string name="info_news_settings">Οι κάρτες μουσικής και προσαρμοσμένου σεναρίου ανοίγουν και κλείνουν με ομαλές κινήσεις.</string>
-    <string name="info_news_catalog">Σαφέστερα εικονίδια στόχευσης, με ευθεία βέλη στους άξονες της κάμερας και του μήκους του τηλεφώνου.</string>
+    <string name="info_news_star_sky" formatted="false">Προφύλαξη οθόνης με τη Γη, εμπνευσμένη από το Mondiversi, διαθέσιμη εκτός σύνδεσης με φωτισμό ημέρας και νύχτας.</string>
+    <string name="info_news_texture_downloads" formatted="false">Η προφύλαξη οθόνης ενεργοποιείται από προεπιλογή μετά από 5 λεπτά· αποθηκεύονται η ενεργοποίηση και η καθυστέρηση.</string>
+    <string name="info_news_weather" formatted="false">Σταδιακός φωτισμός αυγής και δύσης για τον ουρανό, το έδαφος, τον καιρό και τις πανοραμικές λήψεις.</string>
+    <string name="info_news_viewer_zoom" formatted="false">Τα κύρια χειριστήρια ομαδοποιούνται στις γωνίες· τα μηνύματα κατάστασης εμφανίζονται κεντραρισμένα κάτω από το στόχαστρο.</string>
+    <string name="info_news_settings" formatted="false">Πιο ευανάγνωστο ζουμ κάμερας δίπλα στο κουμπί λήψης, με άμεση επιλογή επιπέδων.</string>
+    <string name="info_news_catalog" formatted="false">Περισσότερος χώρος για ονόματα αντικειμένων, οριζόντια διάταξη 55/45 και αρχική ένταση μουσικής στο 50%.</string>
 </resources>

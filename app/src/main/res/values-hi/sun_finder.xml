@@ -14,9 +14,9 @@
     <string name="sun_finder_location_permission">खगोलीय स्थिति की गणना के लिए स्थान का उपयोग करने दें।</string>
     <string name="sun_finder_location_disabled">स्थान बंद है।</string>
     <string name="sun_finder_location_error">स्थान उपलब्ध नहीं है।</string>
-    <string name="sun_finder_location_searching">स्थान खोज रहे हैं।</string>
+    <string name="sun_finder_location_searching">स्थान खोज रहे हैं...</string>
     <string name="sun_finder_compass_missing">इस उपकरण पर कंपास उपलब्ध नहीं है।</string>
-    <string name="sun_finder_orientation_searching">फ़ोन का अभिविन्यास पढ़ रहे हैं।</string>
+    <string name="sun_finder_orientation_searching">फ़ोन का अभिविन्यास पढ़ रहे हैं...</string>
     <string name="sun_finder_compass_accuracy">चुंबकीय वस्तुओं को दूर रखें।</string>
     <string name="sun_finder_compass_calibrate">फ़ोन से हवा में 8 बनाकर कंपास को कैलिब्रेट करें।</string>
     <string name="sun_finder_allow_location">स्थान की अनुमति दें</string>

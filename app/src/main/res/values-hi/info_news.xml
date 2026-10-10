@@ -1,9 +1,9 @@
 <resources>
     <string name="info_news_title">हाल के बदलाव · %1$s</string>
-    <string name="info_news_star_sky">हल्के दोहराव वाला ध्यानपूर्ण अंतरिक्ष संगीत, ऑफलाइन उपलब्ध।</string>
-    <string name="info_news_texture_downloads">संगीत डिफ़ॉल्ट रूप से कम आवाज़ में चालू रहता है; चालू-बंद स्थिति और आवाज़ का स्तर सहेजे जाते हैं।</string>
-    <string name="info_news_weather">बिंदुओं वाला आवाज़ स्लाइडर, मौन से अधिकतम तक नियमित स्तरों के साथ।</string>
-    <string name="info_news_viewer_zoom">दिखावट का नाम अब सामान्य है, साथ में सेटिंग का नया आइकन।</string>
-    <string name="info_news_settings">संगीत और कस्टम परिदृश्य के कार्ड सहज ऐनिमेशन के साथ खुलते और बंद होते हैं।</string>
-    <string name="info_news_catalog">कैमरे और फ़ोन की लंबाई के अक्षों पर सीधे तीरों वाले अधिक स्पष्ट दिशा आइकन।</string>
+    <string name="info_news_star_sky" formatted="false">Mondiversi से प्रेरित पृथ्वी का स्क्रीनसेवर, दिन और रात की रोशनी के साथ ऑफ़लाइन उपलब्ध।</string>
+    <string name="info_news_texture_downloads" formatted="false">स्क्रीनसेवर डिफ़ॉल्ट रूप से 5 मिनट बाद सक्रिय होता है; सक्रियण और प्रतीक्षा अवधि सहेजी जाती हैं।</string>
+    <string name="info_news_weather" formatted="false">आकाश, धरातल, मौसम और पैनोरमा तस्वीरों में भोर और सूर्यास्त की रोशनी धीरे-धीरे बदलती है।</string>
+    <string name="info_news_viewer_zoom" formatted="false">मुख्य नियंत्रण कोनों में समूहित हैं; स्थिति संदेश निशाने के ठीक नीचे बीच में दिखाई देते हैं।</string>
+    <string name="info_news_settings" formatted="false">कैप्चर बटन के पास अधिक स्पष्ट कैमरा ज़ूम, स्तरों के सीधे चयन के साथ।</string>
+    <string name="info_news_catalog" formatted="false">पिंडों के नामों के लिए अधिक जगह, क्षैतिज लेआउट 55/45 और संगीत की शुरुआती आवाज़ 50%।</string>
 </resources>

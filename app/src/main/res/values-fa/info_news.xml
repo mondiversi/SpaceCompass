@@ -1,9 +1,9 @@
 <resources>
     <string name="info_news_title">تازه‌ترین تغییرات · %1$s</string>
-    <string name="info_news_star_sky">موسیقی فضایی مراقبه‌ای با تکرار ملایم، در دسترس به‌صورت آفلاین.</string>
-    <string name="info_news_texture_downloads">موسیقی به‌طور پیش‌فرض با صدای کم فعال است؛ وضعیت پخش و میزان صدا ذخیره می‌شوند.</string>
-    <string name="info_news_weather">نوار صدا با نقطه‌ها و سطح‌های منظم، از سکوت تا بیشترین صدا.</string>
-    <string name="info_news_viewer_zoom">بخش ظاهر اکنون عمومی نام دارد و نماد ویژه تنظیمات دارد.</string>
-    <string name="info_news_settings">کارت‌های موسیقی و سناریوی سفارشی با حرکت‌های روان باز و بسته می‌شوند.</string>
-    <string name="info_news_catalog">نمادهای جهت‌گیری روشن‌تر، با پیکان‌های مستقیم در امتداد محور دوربین و طول گوشی.</string>
+    <string name="info_news_star_sky" formatted="false">محافظ صفحه با نمایش زمین، با الهام از Mondiversi؛ آفلاین با روشنایی روز و شب.</string>
+    <string name="info_news_texture_downloads" formatted="false">محافظ صفحه به‌طور پیش‌فرض پس از 5 دقیقه فعال می‌شود؛ فعال‌سازی و زمان انتظار ذخیره می‌شوند.</string>
+    <string name="info_news_weather" formatted="false">روشنایی تدریجی سپیده‌دم و غروب برای آسمان، زمین، آب‌وهوا و عکس‌های پانوراما.</string>
+    <string name="info_news_viewer_zoom" formatted="false">کنترل‌های اصلی در گوشه‌ها گروه‌بندی شده‌اند؛ پیام‌های وضعیت زیر نشان هدف‌گیری و در مرکز قرار دارند.</string>
+    <string name="info_news_settings" formatted="false">بزرگ‌نمایی دوربین خواناتر در کنار دکمهٔ ثبت تصویر، با انتخاب مستقیم سطوح.</string>
+    <string name="info_news_catalog" formatted="false">فضای بیشتر برای نام اجرام، چیدمان افقی 55/45 و صدای اولیهٔ موسیقی روی 50%.</string>
 </resources>

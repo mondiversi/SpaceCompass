@@ -1,0 +1,8 @@
+<resources>
+    <string name="screensaver_title">Salvapantallas</string>
+    <string name="screensaver_description">Cuando no toques la aplicación, muestra el fondo espacial animado de Mondiversi. Toca para volver.</string>
+    <string name="screensaver_delay">Iniciar después de</string>
+    <string name="screensaver_dismiss">Toca para cerrar el salvapantallas</string>
+    <string name="screensaver_seconds">%1$s s</string>
+    <string name="screensaver_minutes">%1$s min</string>
+</resources>

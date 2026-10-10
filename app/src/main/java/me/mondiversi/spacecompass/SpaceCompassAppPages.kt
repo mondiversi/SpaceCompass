@@ -25,11 +25,12 @@ internal val LocalSpaceCompassNavigate = staticCompositionLocalOf<(String) -> Un
 /** Keep the live compass composition and its data owners through full-screen navigation. */
 @Composable
 internal fun SpaceCompassAppPages(content: @Composable () -> Unit) {
+    val screensaverActive = LocalSpaceCompassScreensaverActive.current
     var route by rememberSaveable { mutableStateOf<String?>(null) }
     val holder = rememberSaveableStateHolder()
     val observer = rememberSpaceCompassObserverState()
     CompositionLocalProvider(LocalSpaceCompassNavigate provides { route = it },
-        LocalSpaceCompassObserver provides observer, LocalSpaceCompassMainVisible provides (route == null)) {
+        LocalSpaceCompassObserver provides observer, LocalSpaceCompassMainVisible provides (route == null && !screensaverActive)) {
         Box(Modifier.fillMaxSize()) {
             // Keep remember/effects/caches alive. An unplaced layer has no drawing,
             // touch targets or accessibility nodes behind the foreground page.
@@ -108,11 +109,12 @@ internal fun SpaceCompassAppPage(route: String, onBack: () -> Unit) {
                     val settings = if (route == "appearance") spaceCompassAppearanceSettings() else spaceCompassUnitSettings()
                     SpaceCompassIslandGrid(Modifier.fillMaxWidth().weight(1f)) {
                         if (route == "appearance") {
-                            // Keep the music island directly below Theme, including in two-column layouts.
+                            // Keep music and its screensaver companion below Theme in both layouts.
                             item(key = "appearance-theme-music") {
                                 Column(verticalArrangement = Arrangement.spacedBy(SpaceCompassSettingsIslandGap)) {
                                     SpaceCompassSettingsChoices(settings.first())
                                     SpaceCompassAmbientMusicIsland()
+                                    SpaceCompassScreensaverIsland()
                                 }
                             }
                             items(settings.drop(1), key = { it.key }) { spec -> SpaceCompassSettingsChoices(spec) }

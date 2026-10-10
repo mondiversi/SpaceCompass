@@ -22,7 +22,7 @@
     <string name="celestial_azimuth">Azimuthi (%1$s): %2$s</string>
     <string name="celestial_elevation">Mwinuko (%1$s): %2$s</string>
     <string name="celestial_below">%1$s iko chini ya upeo wa macho</string>
-    <string name="celestial_loading">Inasasisha data ya obiti.</string>
+    <string name="celestial_loading">Inasasisha data ya obiti...</string>
     <string name="celestial_unavailable">Data ya %1$s haipatikani. Muunganisho wa intaneti unahitajika kuisasisha.</string>
     <string name="celestial_iss_old">Data ya obiti ya ISS ina zaidi ya saa 24: usahihi unaweza kupungua.</string>
     <string name="celestial_iss_note">Mzunguko kamili karibu na muda wa sasa, hata chini ya upeo, wenye nukta 24 zilizo sawa pamoja na kuchomoza, kilele na kuzama. Maelezo ni ya kupita kwa sasa au kunakofuata ndani ya saa 24; kuonekana hakuhakikishwi.\nCelesTrak / Satcat · Space-Track</string>

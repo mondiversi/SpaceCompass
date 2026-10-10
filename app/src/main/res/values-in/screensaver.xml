@@ -1,0 +1,8 @@
+<resources>
+    <string name="screensaver_title">Penghemat layar</string>
+    <string name="screensaver_description">Saat aplikasi tidak disentuh, tampilkan latar ruang angkasa animasi Mondiversi. Ketuk untuk kembali.</string>
+    <string name="screensaver_delay">Mulai setelah</string>
+    <string name="screensaver_dismiss">Ketuk untuk menutup penghemat layar</string>
+    <string name="screensaver_seconds">%1$s dtk</string>
+    <string name="screensaver_minutes">%1$s mnt</string>
+</resources>

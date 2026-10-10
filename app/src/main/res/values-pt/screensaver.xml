@@ -1,0 +1,8 @@
+<resources>
+    <string name="screensaver_title">Protetor de tela</string>
+    <string name="screensaver_description">Quando não tocar no aplicativo, mostra o fundo espacial animado do Mondiversi. Toque para voltar.</string>
+    <string name="screensaver_delay">Iniciar após</string>
+    <string name="screensaver_dismiss">Toque para fechar o protetor de tela</string>
+    <string name="screensaver_seconds">%1$s s</string>
+    <string name="screensaver_minutes">%1$s min</string>
+</resources>

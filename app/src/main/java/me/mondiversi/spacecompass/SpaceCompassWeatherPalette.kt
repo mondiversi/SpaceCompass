@@ -44,3 +44,13 @@ private fun shadeSpaceCompassWeatherArgb(argb: Int, light: Float): Int {
     fun channel(shift: Int) = (((argb ushr shift) and 255) * light).toInt() shl shift
     return (argb and 0xFF000000.toInt()) or channel(16) or channel(8) or channel(0)
 }
+
+internal fun spaceCompassWeatherPalette(phase: SpaceCompassSunSkyPhase, storm: Boolean,
+    solarLighting: SpaceCompassSolarLighting?): SpaceCompassWeatherPalette =
+    spaceCompassSolarLightingPalette(phase, solarLighting, { spaceCompassWeatherPalette(it, storm) }) { a, b, t ->
+        SpaceCompassWeatherPalette(spaceCompassSolarArgb(a.overcastTopArgb, b.overcastTopArgb, t),
+            spaceCompassSolarArgb(a.overcastBottomArgb, b.overcastBottomArgb, t),
+            spaceCompassSolarArgb(a.cloudTopArgb, b.cloudTopArgb, t), spaceCompassSolarArgb(a.cloudBottomArgb, b.cloudBottomArgb, t),
+            spaceCompassSolarArgb(a.fogTopArgb, b.fogTopArgb, t), spaceCompassSolarArgb(a.fogBottomArgb, b.fogBottomArgb, t),
+            spaceCompassSolarArgb(a.rainArgb, b.rainArgb, t), spaceCompassSolarArgb(a.snowArgb, b.snowArgb, t))
+    }

@@ -22,7 +22,7 @@
     <string name="celestial_azimuth">दिगंश (%1$s): %2$s</string>
     <string name="celestial_elevation">ऊँचाई (%1$s): %2$s</string>
     <string name="celestial_below">%1$s क्षितिज के नीचे है</string>
-    <string name="celestial_loading">कक्षीय डेटा अपडेट हो रहा है।</string>
+    <string name="celestial_loading">कक्षीय डेटा अपडेट हो रहा है...</string>
     <string name="celestial_unavailable">%1$s का डेटा उपलब्ध नहीं है। इसे अपडेट करने के लिए इंटरनेट चाहिए।</string>
     <string name="celestial_iss_old">ISS का कक्षीय डेटा 24 घंटे से पुराना है: सटीकता कम हो सकती है।</string>
     <string name="celestial_iss_note">वर्तमान समय के आसपास एक पूरा चक्कर, क्षितिज के नीचे भी, जिसमें 24 नियमित बिंदु और उदय, सर्वोच्च ऊँचाई तथा अस्त शामिल हैं। विवरण वर्तमान या अगले 24 घंटों के पारगमन का है; दृश्यता की गारंटी नहीं है।\nCelesTrak / Satcat · Space-Track</string>

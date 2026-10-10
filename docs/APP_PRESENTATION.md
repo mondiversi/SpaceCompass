@@ -514,7 +514,7 @@ upright phone, diagonally parallel to its length for a flat phone. These glyph
 changes do not alter the saved reference or sensor/optical geometry.
 
 
-## Maintenance refinements in 1.2.4
+## Maintenance refinements in 1.2.5
 
 The pointing-reference control now shows bold localized 90° beside a vertical
 bar or 0° above a horizontal bar. The zero is centered above the line; the entire
@@ -525,3 +525,6 @@ The export chooser is titled Export image in all twenty supported languages.
 All sky status messages/actions use theme-aware orange and omit final full stops
 and ellipses. Calibration and plausible-field interference have separate notices;
 data/retry retains priority. In-app news summaries are unchanged from 1.2.2.
+
+
+Version 1.2.5 adds an offline Earth screensaver, continuous solar lighting and clearer main-view controls.

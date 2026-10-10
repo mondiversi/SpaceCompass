@@ -14,9 +14,9 @@
     <string name="sun_finder_location_permission">Zezwól na lokalizację, aby obliczyć pozycje ciał niebieskich.</string>
     <string name="sun_finder_location_disabled">Lokalizacja jest wyłączona.</string>
     <string name="sun_finder_location_error">Lokalizacja niedostępna.</string>
-    <string name="sun_finder_location_searching">Wyszukiwanie lokalizacji.</string>
+    <string name="sun_finder_location_searching">Wyszukiwanie lokalizacji...</string>
     <string name="sun_finder_compass_missing">Kompas nie jest dostępny na tym urządzeniu.</string>
-    <string name="sun_finder_orientation_searching">Odczytywanie orientacji.</string>
+    <string name="sun_finder_orientation_searching">Odczytywanie orientacji...</string>
     <string name="sun_finder_compass_accuracy">Odsuń przedmioty magnetyczne.</string>
     <string name="sun_finder_compass_calibrate">Skalibruj kompas, kreśląc telefonem ósemkę w powietrzu.</string>
     <string name="sun_finder_allow_location">Zezwól na lokalizację</string>

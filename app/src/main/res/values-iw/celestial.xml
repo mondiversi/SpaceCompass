@@ -22,7 +22,7 @@
     <string name="celestial_azimuth">אזימוט (%1$s): %2$s</string>
     <string name="celestial_elevation">גובה (%1$s): %2$s</string>
     <string name="celestial_below">%1$s מתחת לאופק</string>
-    <string name="celestial_loading">עדכון נתוני מסלול.</string>
+    <string name="celestial_loading">עדכון נתוני מסלול...</string>
     <string name="celestial_unavailable">הנתונים של %1$s אינם זמינים. נדרש חיבור לאינטרנט כדי לעדכן אותם.</string>
     <string name="celestial_iss_old">נתוני מסלול ISS ישנים מ־24 שעות: הדיוק עלול לרדת.</string>
     <string name="celestial_iss_note">הקפה מלאה סביב השעה הנוכחית, גם מתחת לאופק, עם 24 נקודות סדירות וכן זריחה, שיא גובה ושקיעה. פרטי המעבר מתייחסים למעבר הנוכחי או הבא בתוך 24 שעות; הנראות אינה מובטחת.\nCelesTrak / Satcat · Space-Track</string>

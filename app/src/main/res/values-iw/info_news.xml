@@ -1,9 +1,9 @@
 <resources>
     <string name="info_news_title">החידושים האחרונים · %1$s</string>
-    <string name="info_news_star_sky">מוזיקת חלל מדיטטיבית עם לולאה עדינה, זמינה ללא חיבור לאינטרנט.</string>
-    <string name="info_news_texture_downloads">המוזיקה מופעלת כברירת מחדל בעוצמה נמוכה; מצב ההפעלה והעוצמה נשמרים.</string>
-    <string name="info_news_weather">מחוון עוצמה עם נקודות ורמות אחידות, משקט עד לעוצמה מרבית.</string>
-    <string name="info_news_viewer_zoom">הסעיף מראה נקרא כעת כללי, עם סמל הגדרות ייעודי.</string>
-    <string name="info_news_settings">כרטיסי המוזיקה והתרחיש המותאם נפתחים ונסגרים בהנפשות חלקות.</string>
-    <string name="info_news_catalog">סמלי כיוון ברורים יותר, עם חצים ישרים לאורך ציר המצלמה וציר האורך של הטלפון.</string>
+    <string name="info_news_star_sky" formatted="false">שומר מסך של כדור הארץ בהשראת Mondiversi, זמין ללא חיבור לרשת עם תאורת יום ולילה.</string>
+    <string name="info_news_texture_downloads" formatted="false">שומר המסך מופעל כברירת מחדל אחרי 5 דקות; ההפעלה וזמן ההמתנה נשמרים.</string>
+    <string name="info_news_weather" formatted="false">תאורה הדרגתית בשחר ובשקיעה עבור השמיים, הקרקע, מזג האוויר והתמונות הפנורמיות.</string>
+    <string name="info_news_viewer_zoom" formatted="false">הפקדים הראשיים מקובצים בפינות; הודעות המצב ממורכזות מתחת לכוונת.</string>
+    <string name="info_news_settings" formatted="false">זום המצלמה קריא יותר לצד כפתור הצילום, עם בחירה ישירה של רמות הזום.</string>
+    <string name="info_news_catalog" formatted="false">יותר מקום לשמות העצמים, פריסה אופקית של 55/45 ועוצמת מוזיקה התחלתית של 50%.</string>
 </resources>

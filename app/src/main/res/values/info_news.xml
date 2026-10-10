@@ -1,9 +1,9 @@
 <resources>
     <string name="info_news_title">Latest news · %1$s</string>
-    <string name="info_news_star_sky">Meditative space music with a gentle loop, available offline.</string>
-    <string name="info_news_texture_downloads">Music enabled by default at a low volume; activation and volume choices are saved.</string>
-    <string name="info_news_weather">Volume slider with regular steps from silence to maximum.</string>
-    <string name="info_news_viewer_zoom">Appearance is now General, with a dedicated settings icon.</string>
-    <string name="info_news_settings">Music and Custom scenario islands open and close with smooth animations.</string>
-    <string name="info_news_catalog">Clearer pointing icons, with straight arrows along the camera and phone-length axes.</string>
+    <string name="info_news_star_sky" formatted="false">Earth screensaver inspired by Mondiversi, available offline with day/night lighting.</string>
+    <string name="info_news_texture_downloads" formatted="false">Screensaver enabled by default after 5 minutes; activation and delay are saved.</string>
+    <string name="info_news_weather" formatted="false">Gradual dawn and dusk lighting across sky, ground, weather and panoramic captures.</string>
+    <string name="info_news_viewer_zoom" formatted="false">Main controls grouped at the corners; status messages centered below the reticle.</string>
+    <string name="info_news_settings" formatted="false">Clearer camera zoom beside the shutter, with direct preset selection.</string>
+    <string name="info_news_catalog" formatted="false">More room for object names, a 55/45 landscape layout and initial music volume at 50%.</string>
 </resources>

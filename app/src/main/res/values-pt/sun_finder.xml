@@ -14,9 +14,9 @@
     <string name="sun_finder_location_permission">Permite o acesso à localização para calcular posições celestes.</string>
     <string name="sun_finder_location_disabled">A localização está desativada.</string>
     <string name="sun_finder_location_error">Localização indisponível.</string>
-    <string name="sun_finder_location_searching">A procurar a localização.</string>
+    <string name="sun_finder_location_searching">A procurar a localização...</string>
     <string name="sun_finder_compass_missing">Este dispositivo não dispõe de bússola.</string>
-    <string name="sun_finder_orientation_searching">A ler a orientação.</string>
+    <string name="sun_finder_orientation_searching">A ler a orientação...</string>
     <string name="sun_finder_compass_accuracy">Afasta os objetos magnéticos.</string>
     <string name="sun_finder_compass_calibrate">Calibra a bússola desenhando um 8 no ar com o telemóvel.</string>
     <string name="sun_finder_allow_location">Permitir localização</string>

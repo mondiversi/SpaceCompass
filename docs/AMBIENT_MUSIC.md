@@ -10,7 +10,7 @@ volume controls reveal/collapse together over 300 ms with the same top-anchored
 easing/fade as UVIR. Scenario toggle islands use the shared transition too; exiting
 controls lose touch and accessibility actions immediately.
 
-Fresh installations have music enabled and volume at 20%. A saved disabled choice
+Fresh installations have music enabled and volume at 50%. A saved disabled choice
 remains disabled after updates. The volume slider uses ten-percent steps, matching
 the UVIR slider. Preferences store the
 enabled choice and completed volume gestures; dragging previews volume immediately

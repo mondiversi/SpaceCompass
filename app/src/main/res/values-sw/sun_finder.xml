@@ -14,9 +14,9 @@
     <string name="sun_finder_location_permission">Ruhusu ufikiaji wa eneo ili kukokotoa nafasi za vitu vya angani.</string>
     <string name="sun_finder_location_disabled">Eneo limezimwa.</string>
     <string name="sun_finder_location_error">Eneo halipatikani.</string>
-    <string name="sun_finder_location_searching">Inatafuta eneo.</string>
+    <string name="sun_finder_location_searching">Inatafuta eneo...</string>
     <string name="sun_finder_compass_missing">Dira haipatikani kwenye kifaa hiki.</string>
-    <string name="sun_finder_orientation_searching">Inasoma mwelekeo.</string>
+    <string name="sun_finder_orientation_searching">Inasoma mwelekeo...</string>
     <string name="sun_finder_compass_accuracy">Sogeza vitu vya sumaku mbali.</string>
     <string name="sun_finder_compass_calibrate">Rekebisha dira kwa kuchora umbo la 8 hewani kwa simu.</string>
     <string name="sun_finder_allow_location">Ruhusu eneo</string>

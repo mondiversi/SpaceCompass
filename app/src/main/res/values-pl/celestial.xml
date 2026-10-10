@@ -22,7 +22,7 @@
     <string name="celestial_azimuth">Azymut (%1$s): %2$s</string>
     <string name="celestial_elevation">Wysokość (%1$s): %2$s</string>
     <string name="celestial_below">%1$s poniżej horyzontu</string>
-    <string name="celestial_loading">Aktualizacja danych orbitalnych.</string>
+    <string name="celestial_loading">Aktualizacja danych orbitalnych...</string>
     <string name="celestial_unavailable">Dane dla %1$s są niedostępne. Do ich aktualizacji potrzebne jest połączenie z Internetem.</string>
     <string name="celestial_iss_old">Dane orbitalne ISS mają ponad 24 godziny: dokładność może być mniejsza.</string>
     <string name="celestial_iss_note">Pełny obieg wokół bieżącej godziny, także pod horyzontem, z 24 równomiernymi punktami oraz wschodem, kulminacją i zachodem. Szczegóły dotyczą bieżącego lub następnego przelotu w ciągu 24 godzin; widoczność nie jest gwarantowana.\nCelesTrak / Satcat · Space-Track</string>

@@ -14,9 +14,9 @@
     <string name="sun_finder_location_permission">Allow location access to calculate celestial positions.</string>
     <string name="sun_finder_location_disabled">Location is turned off.</string>
     <string name="sun_finder_location_error">Location unavailable.</string>
-    <string name="sun_finder_location_searching">Finding your location.</string>
+    <string name="sun_finder_location_searching">Finding your location...</string>
     <string name="sun_finder_compass_missing">A compass is not available on this device.</string>
-    <string name="sun_finder_orientation_searching">Reading the phone orientation.</string>
+    <string name="sun_finder_orientation_searching">Reading the phone orientation...</string>
     <string name="sun_finder_compass_accuracy">Move magnetic objects away.</string>
     <string name="sun_finder_compass_calibrate">Calibrate the compass by drawing a figure 8 in the air with your phone.</string>
     <string name="sun_finder_allow_location">Allow location</string>

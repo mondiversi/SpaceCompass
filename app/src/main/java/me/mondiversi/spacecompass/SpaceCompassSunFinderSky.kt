@@ -27,37 +27,34 @@ import java.time.ZoneId
 import kotlin.math.*
 
 internal fun spaceCompassSunSkyColors(phase: SpaceCompassSunSkyPhase,
-    weather: SpaceCompassSunWeatherSnapshot?): Pair<Color, Color> {
-    val palette = when (phase) {
-        SpaceCompassSunSkyPhase.NIGHT -> Color(0xFF071327) to Color(0xFF203B5C)
-        SpaceCompassSunSkyPhase.DAWN -> Color(0xFF5D71A2) to Color(0xFFF4C091)
-        SpaceCompassSunSkyPhase.MORNING -> Color(0xFF267EBD) to Color(0xFFBEE9F1)
-        SpaceCompassSunSkyPhase.AFTERNOON -> Color(0xFF176AAD) to Color(0xFF94D7ED)
-        SpaceCompassSunSkyPhase.SUNSET -> Color(0xFF5C477B) to Color(0xFFFFB074)
-        SpaceCompassSunSkyPhase.EVENING -> Color(0xFF182344) to Color(0xFF80607A)
-    }
+    weather: SpaceCompassSunWeatherSnapshot?, solarLighting: SpaceCompassSolarLighting? = null): Pair<Color, Color> {
+    val palette = spaceCompassSunSkyPalette(phase, solarLighting)
     val cover = spaceCompassSunDisplayCloudCover(weather)
     val storm = weather?.kind == SpaceCompassSunWeatherKind.STORM
     val cloudy = cover * if (storm) 0.88f else 0.65f
-    val atmosphere = spaceCompassWeatherPalette(phase, storm)
-    val greyTop = Color(atmosphere.overcastTopArgb)
-    val greyBottom = Color(atmosphere.overcastBottomArgb)
-    return lerp(palette.first, greyTop, cloudy) to lerp(palette.second, greyBottom, cloudy)
+    val atmosphere = spaceCompassWeatherPalette(phase, storm, solarLighting)
+    return lerp(Color(palette.topArgb), Color(atmosphere.overcastTopArgb), cloudy) to
+        lerp(Color(palette.horizonArgb), Color(atmosphere.overcastBottomArgb), cloudy)
 }
 
 /** Full-screen backdrop, separate from the pointing viewport so panels never get an opaque sky margin. */
 @Composable
-internal fun SpaceCompassSunSkyBackdrop(phase: SpaceCompassSunSkyPhase, weather: SpaceCompassSunWeatherSnapshot?, modifier: Modifier, stars: @Composable () -> Unit = {}) {
-    val palette = spaceCompassSunSkyColors(phase, weather)
+internal fun SpaceCompassSunSkyBackdrop(phase: SpaceCompassSunSkyPhase, weather: SpaceCompassSunWeatherSnapshot?, modifier: Modifier, solarLighting: SpaceCompassSolarLighting? = null, stars: @Composable () -> Unit = {}) {
+    val palette = spaceCompassSunSkyColors(phase, weather, solarLighting)
+    val currentPhase = rememberUpdatedState(phase)
+    val currentLighting = rememberUpdatedState(solarLighting)
     val top by animateColorAsState(palette.first, tween(2_000), label = "solar sky top")
     val bottom by animateColorAsState(palette.second, tween(2_000), label = "solar sky horizon")
     Box(modifier.testTag("sun-finder-backdrop")) {
         Canvas(Modifier.fillMaxSize()) { drawRect(Brush.verticalGradient(listOf(top, bottom))) }
         stars()
         Box(Modifier.fillMaxSize().drawWithCache {
-            val weatherDrawing = if (size.width > 0 && size.height > 0)
-                SpaceCompassWeatherRenderer(size.width, size.height, phase, weather) else null
-            onDrawBehind { drawIntoCanvas { weatherDrawing?.draw(it.nativeCanvas) } }
+            val weatherDrawing = if (weather != null && size.width > 0 && size.height > 0)
+                SpaceCompassWeatherRenderer(size.width, size.height, SpaceCompassSunSkyPhase.NIGHT, weather) else null
+            onDrawBehind { drawIntoCanvas {
+                weatherDrawing?.updateLighting(currentPhase.value, currentLighting.value)
+                weatherDrawing?.draw(it.nativeCanvas)
+            } }
         })
     }
 }
@@ -84,10 +81,11 @@ internal fun SpaceCompassSunPointingViewport(
     observerAltitude: Double = 0.0,
     bottomStartActions: @Composable (Modifier) -> Unit = {},
     bottomActions: @Composable (Modifier) -> Unit = {},
-    noticesAtBottom: Boolean = false,
+    noticesBelowReticle: Boolean = false,
     topStartActions: @Composable (Modifier) -> Unit = {},
     topEndActions: @Composable (Modifier) -> Unit = {},
-    selectedPanelExpanded: Boolean = true
+    selectedPanelExpanded: Boolean = true,
+    topContentInset: androidx.compose.ui.unit.Dp = 0.dp
 ) {
     BoxWithConstraints(modifier.testTag("sun-finder-sky").semantics { contentDescription = description }) {
         val density = LocalDensity.current
@@ -122,21 +120,20 @@ internal fun SpaceCompassSunPointingViewport(
         val focused = focusedSpaceCompassCelestialSceneTarget(targets, width, height,
             with(density) { SPACE_COMPASS_CELESTIAL_RETICLE_RADIUS_DP.dp.toPx().toDouble() })
         val padding = with(density) { 4.dp.toPx().toDouble() }
+        // The reticle's outer arms end at 32 dp; keep an eight-dp gap before notices.
+        val noticeTopInset = maxHeight / 2 + 40.dp
         val exclusions = buildList {
             addAll(timeBadgeExclusions)
+            // Paths can pass beneath the header, while captions and edge locators avoid it.
+            val topInsetPx = with(density) { topContentInset.toPx().toDouble() }.coerceIn(0.0, height)
+            if (topInsetPx > 0) add(SpaceCompassSunSceneFrame(0.0, 0.0, width, topInsetPx))
             val selectedPanelHeight = if (showSelectedPanel && dailyPathUiState.selectedBody != null) panelSize.height else 0
             if (noticeSize.width > 0) {
-                val noticeLeft = if (noticesAtBottom) {
-                    val leading = if (rtl) bottomActionsSize.width else bottomStartActionsSize.width
-                    leading + (width - bottomStartActionsSize.width - bottomActionsSize.width - noticeSize.width) / 2
-                } else if (rtl) width - noticeSize.width - padding else padding
-                val noticeTop = if (noticesAtBottom) {
-                    // Match the centered notice's real position, including its four-dp outer insets.
-                    val noticeInsets = with(density) { 4.dp.roundToPx() } * 2
-                    val rowHeight = maxOf(bottomActionsSize.height,
-                        noticeSize.height + noticeInsets)
-                    height - selectedPanelHeight - rowHeight + (rowHeight - noticeSize.height) / 2.0
-                } else padding
+                val noticeLeft = if (noticesBelowReticle) (width - noticeSize.width) / 2
+                    else if (rtl) width - noticeSize.width - padding else padding
+                val noticeTop = with(density) {
+                    (if (noticesBelowReticle) noticeTopInset else topContentInset + 4.dp).roundToPx().toDouble()
+                }
                 add(SpaceCompassSunSceneFrame(noticeLeft, noticeTop,
                     noticeSize.width.toDouble(), noticeSize.height.toDouble()))
             }
@@ -222,25 +219,17 @@ internal fun SpaceCompassSunPointingViewport(
                 stringResource(spaceCompassCelestialPathTitle(body)),
                 pathSelected = dailyPath != null,
                 modifier = Modifier.align(Alignment.TopEnd).padding(4.dp).onSizeChanged { menuSize = it })
-            topStartActions(Modifier.align(Alignment.TopStart).onSizeChanged { topStartActionsSize = it })
-            topEndActions(Modifier.align(Alignment.TopEnd).onSizeChanged { topEndActionsSize = it })
+            topStartActions(Modifier.align(Alignment.TopStart).onSizeChanged { topStartActionsSize = it }
+                .padding(top = topContentInset))
+            topEndActions(Modifier.align(Alignment.TopEnd).onSizeChanged { topEndActionsSize = it }
+                .padding(top = topContentInset))
             // Keep the optical viewport fixed: controls stack over the scene instead of resizing it.
             Column(Modifier.align(Alignment.BottomCenter).fillMaxWidth(), horizontalAlignment = Alignment.End) {
                 Row(Modifier.fillMaxWidth(), verticalAlignment = Alignment.CenterVertically) {
-                    // Short notices share the button centers; taller stacks expand only upwards.
                     Box(Modifier.align(Alignment.Bottom), contentAlignment = Alignment.CenterStart) {
                         bottomStartActions(Modifier.onSizeChanged { bottomStartActionsSize = it })
                     }
-                    // The leading controls may stack; notices stay centered on the shutter/chevron row.
-                    Box(Modifier.weight(1f).align(Alignment.Bottom)
-                        .heightIn(min = if (noticesAtBottom) with(density) { bottomActionsSize.height.toDp() } else 0.dp)
-                        .padding(horizontal = 4.dp, vertical = if (noticesAtBottom) 4.dp else 0.dp),
-                        contentAlignment = Alignment.Center) {
-                        if (noticesAtBottom) SpaceCompassSunStatusNotices(compassWarning, statusMessage, statusActionLabel, onStatusAction,
-                            backgroundColor,
-                            Modifier.onSizeChanged { noticeSize = it }, simulationLabel, onSimulation,
-                            compassWarningAttention, statusAttention, primaryText)
-                    }
+                    Spacer(Modifier.weight(1f))
                     Box(Modifier.align(Alignment.Bottom)) {
                         bottomActions(Modifier.onSizeChanged { bottomActionsSize = it })
                     }
@@ -254,9 +243,12 @@ internal fun SpaceCompassSunPointingViewport(
                     }
                 }
             }
-            if (!noticesAtBottom) SpaceCompassSunStatusNotices(compassWarning, statusMessage, statusActionLabel, onStatusAction,
+            SpaceCompassSunStatusNotices(compassWarning, statusMessage, statusActionLabel, onStatusAction,
                 backgroundColor,
-                Modifier.align(Alignment.TopStart).padding(start = 4.dp, end = topActionsWidth, top = 4.dp)
+                (if (noticesBelowReticle) Modifier.align(Alignment.TopCenter).offset(y = noticeTopInset)
+                    .padding(horizontal = 4.dp)
+                else Modifier.align(Alignment.TopStart)
+                    .padding(start = 4.dp, end = topActionsWidth, top = topContentInset + 4.dp))
                     .onSizeChanged { noticeSize = it }, simulationLabel, onSimulation,
                 compassWarningAttention, statusAttention, primaryText)
         }

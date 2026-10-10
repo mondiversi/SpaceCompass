@@ -14,9 +14,9 @@
     <string name="sun_finder_location_permission">天体の位置を計算するために位置情報へのアクセスを許可してください。</string>
     <string name="sun_finder_location_disabled">位置情報がオフです。</string>
     <string name="sun_finder_location_error">位置情報を取得できません。</string>
-    <string name="sun_finder_location_searching">位置情報を取得中。</string>
+    <string name="sun_finder_location_searching">位置情報を取得中...</string>
     <string name="sun_finder_compass_missing">この端末ではコンパスを利用できません。</string>
-    <string name="sun_finder_orientation_searching">端末の向きを取得中。</string>
+    <string name="sun_finder_orientation_searching">端末の向きを取得中...</string>
     <string name="sun_finder_compass_accuracy">磁気を帯びた物を遠ざけてください。</string>
     <string name="sun_finder_compass_calibrate">スマートフォンで空中に8の字を描いてコンパスを調整してください。</string>
     <string name="sun_finder_allow_location">位置情報を許可</string>

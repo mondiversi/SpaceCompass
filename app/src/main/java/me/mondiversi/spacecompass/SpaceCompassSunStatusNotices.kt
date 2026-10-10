@@ -78,9 +78,10 @@ internal fun SpaceCompassSunStatusNotices(
     }
 }
 
-/** Keep one sentence terminator, respecting localized full stops; actions stay unpunctuated. */
+/** Preserve waiting ellipses and localized sentence stops; actions stay unpunctuated. */
 private fun spaceCompassStatusSentence(value: String): String {
     val text = value.trimEnd()
+    if (text.endsWith("...")) return text
     val stop = text.lastOrNull()?.takeIf { it in "。।۔" } ?: '.'
     val sentence = text.trimEnd('.', '。', '।', '۔', '…').trimEnd()
     return if (sentence.isEmpty()) sentence else "$sentence$stop"

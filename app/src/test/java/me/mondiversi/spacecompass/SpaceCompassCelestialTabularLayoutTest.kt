@@ -10,15 +10,16 @@ class SpaceCompassCelestialTabularLayoutTest {
 
     @Test fun landscapePlacesTheToolbarInsideOnlyTheSkyColumnAndKeepsDetailsFullHeight() {
         val screen = source("SpaceCompassSunFinderScreen.kt")
+        assertTrue(screen.contains("val detailsWidth = viewportWidth * 0.45f"))
         val split = screen.substringAfter("testTag(\"celestial-landscape-layout\")")
-            .substringBefore("} else Column(Modifier.fillMaxSize())")
-        assertTrue(split.contains("Column(Modifier.weight(1f).fillMaxHeight())"))
+            .substringBefore("} else Box(Modifier.fillMaxSize().clipToBounds())")
+        assertTrue(split.contains("Box(Modifier.weight(1f).fillMaxHeight().clipToBounds())"))
         assertTrue(split.contains("toolbar()"))
         assertTrue(split.contains("pointing(true)"))
-        assertTrue(split.contains("details(Modifier.width(viewportWidth / 2).fillMaxHeight().padding(10.dp)"))
+        assertTrue(split.contains("details(Modifier.width(detailsWidth).fillMaxHeight().padding(10.dp)"))
         assertFalse(screen.contains("viewportWidth * 0.43f"))
-        assertTrue(screen.contains("viewportWidth / 2 - 20.dp >= minimumPanelWidth"))
-        assertTrue(screen.substringAfter("} else Column(Modifier.fillMaxSize())").contains("toolbar()"))
+        assertTrue(screen.contains("detailsWidth - 20.dp >= minimumPanelWidth"))
+        assertTrue(screen.substringAfter("} else Box(Modifier.fillMaxSize().clipToBounds())").contains("toolbar()"))
     }
 
     @Test fun viewerHasNoTopGapInEitherLayoutWithoutChangingSideBottomOrContentPadding() {

@@ -1,9 +1,9 @@
 <resources>
     <string name="info_news_title">Последние новости · %1$s</string>
-    <string name="info_news_star_sky">Медитативная космическая музыка с мягким повторением, доступная без интернета.</string>
-    <string name="info_news_texture_downloads">Музыка включена по умолчанию на небольшой громкости; состояние и громкость сохраняются.</string>
-    <string name="info_news_weather">Ползунок громкости с точками и равномерными уровнями, от тишины до максимума.</string>
-    <string name="info_news_viewer_zoom">Раздел Оформление теперь называется Общие и имеет отдельный значок настроек.</string>
-    <string name="info_news_settings">Карточки музыки и пользовательского сценария плавно раскрываются и сворачиваются.</string>
-    <string name="info_news_catalog">Более понятные значки направления с прямыми стрелками вдоль оси камеры и продольной оси телефона.</string>
+    <string name="info_news_star_sky" formatted="false">Заставка с Землёй в стиле Mondiversi, работающая офлайн с дневным и ночным освещением.</string>
+    <string name="info_news_texture_downloads" formatted="false">Заставка по умолчанию включается через 5 минут; включение и время ожидания сохраняются.</string>
+    <string name="info_news_weather" formatted="false">Плавное освещение на рассвете и закате для неба, земли, погоды и панорамных снимков.</string>
+    <string name="info_news_viewer_zoom" formatted="false">Основные кнопки сгруппированы по углам; сообщения состояния расположены по центру под прицелом.</string>
+    <string name="info_news_settings" formatted="false">Более читаемое увеличение камеры рядом с кнопкой съёмки, с прямым выбором уровней.</string>
+    <string name="info_news_catalog" formatted="false">Больше места для названий объектов, горизонтальная компоновка 55/45 и начальная громкость музыки 50%.</string>
 </resources>

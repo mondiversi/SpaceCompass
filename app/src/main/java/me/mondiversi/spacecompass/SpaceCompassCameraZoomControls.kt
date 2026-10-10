@@ -13,6 +13,7 @@ import androidx.compose.ui.layout.boundsInWindow
 import androidx.compose.ui.layout.onGloballyPositioned
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.semantics.*
+import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
@@ -31,9 +32,11 @@ internal fun SpaceCompassCameraZoomControls(range: SpaceCompassCameraZoomRange?,
     }
     val density = LocalDensity.current
     val configuration = LocalConfiguration.current
+    var anchorTop by remember { mutableFloatStateOf(0f) }
     var anchorBottom by remember { mutableFloatStateOf(0f) }
-    // Keep long preset lists below the selector instead of clamping them over the camera.
-    val menuHeight = (configuration.screenHeightDp.dp - with(density) { anchorBottom.toDp() } - 16.dp)
+    // A bottom-mounted selector must also leave room for a scrollable menu above it.
+    val menuHeight = maxOf(with(density) { anchorTop.toDp() } - 16.dp,
+        configuration.screenHeightDp.dp - with(density) { anchorBottom.toDp() } - 16.dp)
         .coerceAtLeast(48.dp)
     val value = label(actual)
     val accessibilityLabel = stringResource(R.string.camera_zoom_level, value)
@@ -42,9 +45,13 @@ internal fun SpaceCompassCameraZoomControls(range: SpaceCompassCameraZoomRange?,
     Box {
         SpaceCompassFloatingActionButton(accessibilityLabel, open, color, background,
             enabled = canChoose,
-            modifier = Modifier.onGloballyPositioned { anchorBottom = it.boundsInWindow().bottom }
+            modifier = Modifier.onGloballyPositioned {
+                val anchor = it.boundsInWindow()
+                anchorTop = anchor.top
+                anchorBottom = anchor.bottom
+            }
                 .testTag("camera-zoom-value")) {
-            Text(value, Modifier.padding(2.dp), fontSize = 12.sp,
+            Text(value, Modifier.padding(2.dp), fontSize = 14.sp, fontWeight = FontWeight.SemiBold,
                 textAlign = TextAlign.Center, maxLines = 1)
         }
         SpaceCompassAdaptiveDropdownMenu(expanded, onDismissRequest = { expanded = false },

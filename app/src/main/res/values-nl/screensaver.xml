@@ -1,0 +1,8 @@
+<resources>
+    <string name="screensaver_title">Schermbeveiliging</string>
+    <string name="screensaver_description">Toont bij inactiviteit de bewegende ruimteachtergrond van Mondiversi. Tik om terug te keren.</string>
+    <string name="screensaver_delay">Starten na</string>
+    <string name="screensaver_dismiss">Tik om de schermbeveiliging te sluiten</string>
+    <string name="screensaver_seconds">%1$s s</string>
+    <string name="screensaver_minutes">%1$s min</string>
+</resources>

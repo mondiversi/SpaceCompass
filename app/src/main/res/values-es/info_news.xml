@@ -1,9 +1,9 @@
 <resources>
     <string name="info_news_title">Últimas novedades · %1$s</string>
-    <string name="info_news_star_sky">Música espacial meditativa con un bucle suave, disponible sin conexión.</string>
-    <string name="info_news_texture_downloads">Música activada por defecto a volumen bajo; se guardan la activación y el volumen.</string>
-    <string name="info_news_weather">Control de volumen con puntos y niveles regulares, del silencio al máximo.</string>
-    <string name="info_news_viewer_zoom">Apariencia pasa a llamarse General, con un icono específico de ajustes.</string>
-    <string name="info_news_settings">Las tarjetas de música y Escenario personalizado se abren y cierran con animaciones fluidas.</string>
-    <string name="info_news_catalog">Iconos de orientación más claros, con flechas rectas en los ejes de la cámara y de la longitud del teléfono.</string>
+    <string name="info_news_star_sky" formatted="false">Salvapantallas terrestre inspirado en Mondiversi, disponible sin conexión con iluminación diurna y nocturna.</string>
+    <string name="info_news_texture_downloads" formatted="false">Salvapantallas activado por defecto tras 5 minutos; se guardan la activación y el intervalo.</string>
+    <string name="info_news_weather" formatted="false">Luz gradual al amanecer y al atardecer para cielo, suelo, tiempo y capturas panorámicas.</string>
+    <string name="info_news_viewer_zoom" formatted="false">Controles principales agrupados en las esquinas; mensajes de estado centrados bajo la retícula.</string>
+    <string name="info_news_settings" formatted="false">Zoom de cámara más legible junto al disparador, con selección directa de niveles.</string>
+    <string name="info_news_catalog" formatted="false">Más espacio para los nombres de objetos, distribución horizontal 55/45 y volumen inicial de música al 50%.</string>
 </resources>

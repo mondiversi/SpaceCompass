@@ -14,9 +14,9 @@
     <string name="sun_finder_location_permission">Разрешите доступ к местоположению для расчёта небесных положений.</string>
     <string name="sun_finder_location_disabled">Геопозиция отключена.</string>
     <string name="sun_finder_location_error">Геопозиция недоступна.</string>
-    <string name="sun_finder_location_searching">Поиск геопозиции.</string>
+    <string name="sun_finder_location_searching">Поиск геопозиции...</string>
     <string name="sun_finder_compass_missing">Компас недоступен на этом устройстве.</string>
-    <string name="sun_finder_orientation_searching">Определение ориентации.</string>
+    <string name="sun_finder_orientation_searching">Определение ориентации...</string>
     <string name="sun_finder_compass_accuracy">Уберите магнитные предметы.</string>
     <string name="sun_finder_compass_calibrate">Откалибруйте компас, описывая телефоном восьмёрку в воздухе.</string>
     <string name="sun_finder_allow_location">Разрешить геопозицию</string>

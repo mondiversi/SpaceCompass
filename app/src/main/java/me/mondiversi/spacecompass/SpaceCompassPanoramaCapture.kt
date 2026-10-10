@@ -28,7 +28,8 @@ internal fun rememberSpaceCompassPanoramaAction(timeMs: Long, latitude: Double?,
     remote: SpaceCompassCelestialRemoteData, gpsAccuracyMeters: Double? = null,
     cameraEnabled: Boolean = false, cameraCapture: SpaceCompassCameraCapture? = null,
     showSkyReferences: Boolean = SPACE_COMPASS_SKY_REFERENCES_DEFAULT,
-    showWeather: Boolean = SPACE_COMPASS_WEATHER_VISIBLE_DEFAULT): SpaceCompassPanoramaAction {
+    showWeather: Boolean = SPACE_COMPASS_WEATHER_VISIBLE_DEFAULT,
+    solarLighting: SpaceCompassSolarLighting? = null): SpaceCompassPanoramaAction {
     val context = LocalContext.current
     val resources = LocalResources.current
     val application = context.applicationContext
@@ -76,7 +77,7 @@ internal fun rememberSpaceCompassPanoramaAction(timeMs: Long, latitude: Double?,
                 val snapshot = SpaceCompassPanoramaSnapshot(timeMs, latitude ?: 0.0, longitude ?: 0.0, altitude ?: 0.0, phase, captureWeather,
                     objects, remote, "", emptyList(), emptyList(), showPointLabels = showPointLabels,
                     observerPositionKnown = latitude != null && longitude != null, showSkyReferences = showSkyReferences, center = center,
-                    weatherEffectsEnabled = cameraEnabled || showWeather)
+                    weatherEffectsEnabled = cameraEnabled || showWeather, solarLighting = solarLighting)
                 busy = true
                 val preparingNotice = showSpaceCompassBottomMessage(application,
                     resources.getString(R.string.panorama_preparing))

@@ -1,0 +1,8 @@
+<resources>
+    <string name="screensaver_title">شاشة التوقف</string>
+    <string name="screensaver_description">عندما لا تلمس التطبيق، تظهر الخلفية الفضائية المتحركة من Mondiversi. المس الشاشة للعودة.</string>
+    <string name="screensaver_delay">البدء بعد</string>
+    <string name="screensaver_dismiss">المس الشاشة لإغلاق شاشة التوقف</string>
+    <string name="screensaver_seconds">%1$s ث</string>
+    <string name="screensaver_minutes">%1$s د</string>
+</resources>
