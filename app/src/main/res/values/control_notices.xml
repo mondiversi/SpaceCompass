@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="scene_mode_camera">Camera mode</string>
+    <string name="scene_mode_sky">Virtual sky mode</string>
+    <string name="scene_weather_on">Weather effects enabled</string>
+    <string name="scene_weather_off">Weather effects disabled</string>
+    <string name="scene_references_on">Celestial references shown</string>
+    <string name="scene_references_off">Celestial references hidden</string>
+    <string name="panorama_labels_on">Labels shown</string>
+    <string name="panorama_labels_off">Labels hidden</string>
+    <string name="control_choice_message">%1$s: %2$s</string>
+
+    <string name="scene_scenario_on">Custom scenario enabled</string>
+    <string name="scene_scenario_off">Custom scenario disabled</string>
+    <string name="scene_objects_on">Objects enabled</string>
+    <string name="scene_objects_off">Objects disabled</string>
+</resources>

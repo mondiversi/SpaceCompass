@@ -22,8 +22,10 @@ internal fun projectSpaceCompassCelestialSceneTargets(paths: Map<SpaceCompassCel
 }
 
 internal fun focusedSpaceCompassCelestialSceneTarget(targets: List<SpaceCompassCelestialSceneTarget>, width: Double, height: Double,
-    radius: Double): SpaceCompassCelestialSceneTarget? = focusedSpaceCompassCelestialPathPoint(
-    targets.map { it to it.projection }, width, height, radius) { it.isCurrent || it.point.event != SpaceCompassSunPathEvent.HOUR }
+    radius: Double, perspective: SpaceCompassPerspective? = null): SpaceCompassCelestialSceneTarget? = focusedSpaceCompassCelestialPathPoint(
+    targets.map { it to SpaceCompassSunScenePoint(
+        it.projection.x + width * (.5 - (perspective?.principalX ?: .5)),
+        it.projection.y + height * (.5 - (perspective?.principalY ?: .5))) }, width, height, radius) { it.isCurrent || it.point.event != SpaceCompassSunPathEvent.HOUR }
 
 internal fun tappedSpaceCompassCelestialSceneTarget(targets: List<SpaceCompassCelestialSceneTarget>, tap: SpaceCompassSunScenePoint,
     radius: Double): SpaceCompassCelestialSceneTarget? {

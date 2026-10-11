@@ -1,9 +1,9 @@
 <resources>
     <string name="info_news_title">Latest news · %1$s</string>
-    <string name="info_news_star_sky" formatted="false">Earth screensaver inspired by Mondiversi, available offline with day/night lighting.</string>
-    <string name="info_news_texture_downloads" formatted="false">Screensaver enabled by default after 5 minutes; activation and delay are saved.</string>
-    <string name="info_news_weather" formatted="false">Gradual dawn and dusk lighting across sky, ground, weather and panoramic captures.</string>
-    <string name="info_news_viewer_zoom" formatted="false">Main controls grouped at the corners; status messages centered below the reticle.</string>
-    <string name="info_news_settings" formatted="false">Clearer camera zoom beside the shutter, with direct preset selection.</string>
-    <string name="info_news_catalog" formatted="false">More room for object names, a 55/45 landscape layout and initial music volume at 50%.</string>
+    <string name="info_news_star_sky" formatted="false">Full-screen Earth screensaver with local time, date and battery level. Touch to return.</string>
+    <string name="info_news_texture_downloads" formatted="false">The screensaver pauses sensors, GPS, camera and data refresh. Initial music volume: 20%.</string>
+    <string name="info_news_weather" formatted="false">Clearer compass calibration and interference notices, with location actions only when needed.</string>
+    <string name="info_news_viewer_zoom" formatted="false">Tap a trajectory point to open the daily path centered on it, with a temporary highlight.</string>
+    <string name="info_news_settings" formatted="false">Compact object, date and time-zone heading; points 0–23, current position and lunar phases retained.</string>
+    <string name="info_news_catalog" formatted="false">Capture labels include T+/T− countdowns. Refined main controls and object details.</string>
 </resources>

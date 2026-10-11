@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="celestial_details_title">천체 상세</string>
+    <string name="celestial_view_name">이름</string>
+</resources>

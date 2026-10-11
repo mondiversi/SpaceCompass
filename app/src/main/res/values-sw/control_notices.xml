@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="scene_mode_camera">Hali ya kamera</string>
+    <string name="scene_mode_sky">Hali ya anga pepe</string>
+    <string name="scene_weather_on">Athari za hali ya hewa zimewashwa</string>
+    <string name="scene_weather_off">Athari za hali ya hewa zimezimwa</string>
+    <string name="scene_references_on">Marejeo ya angani yanaonekana</string>
+    <string name="scene_references_off">Marejeo ya angani yamefichwa</string>
+    <string name="panorama_labels_on">Lebo zinaonekana</string>
+    <string name="panorama_labels_off">Lebo zimefichwa</string>
+    <string name="control_choice_message">%1$s: %2$s</string>
+
+    <string name="scene_scenario_on">Mandhari maalumu yamewashwa</string>
+    <string name="scene_scenario_off">Mandhari maalumu yamezimwa</string>
+    <string name="scene_objects_on">Vitu vimewashwa</string>
+    <string name="scene_objects_off">Vitu vimezimwa</string>
+</resources>

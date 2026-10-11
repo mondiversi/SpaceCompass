@@ -1,9 +1,9 @@
 <resources>
     <string name="info_news_title">最近の変更 · %1$s</string>
-    <string name="info_news_star_sky" formatted="false">Mondiversiに着想を得た地球のスクリーンセーバー。昼夜の照明付きでオフラインでも利用できます。</string>
-    <string name="info_news_texture_downloads" formatted="false">スクリーンセーバーは標準で5分後に起動し、有効・無効と待ち時間が保存されます。</string>
-    <string name="info_news_weather" formatted="false">空、地面、天候、パノラマ撮影に、夜明けと夕暮れの滑らかな光の変化を適用。</string>
-    <string name="info_news_viewer_zoom" formatted="false">主な操作ボタンを四隅にまとめ、状態メッセージを照準の下の中央に表示。</string>
-    <string name="info_news_settings" formatted="false">撮影ボタン横のカメラズームを見やすくし、倍率を直接選択できます。</string>
-    <string name="info_news_catalog" formatted="false">天体名の表示領域を拡大し、横向き画面を55/45に配分。音楽の初期音量は50%。</string>
+    <string name="info_news_star_sky" formatted="false">地球の全画面スクリーンセーバーに現地時刻、日付、バッテリーを表示。タッチすると戻ります。</string>
+    <string name="info_news_texture_downloads" formatted="false">スクリーンセーバー中はセンサー、GPS、カメラ、データ更新を一時停止。音楽の初期音量は20%です。</string>
+    <string name="info_news_weather" formatted="false">コンパスの校正と干渉の通知を明確化。位置情報の操作は必要な場合のみ表示します。</string>
+    <string name="info_news_viewer_zoom" formatted="false">軌道上の点をタップすると、その点を中心に一日の経路が開き、一時的に強調表示されます。</string>
+    <string name="info_news_settings" formatted="false">天体名、日付、タイムゾーンの見出しをコンパクトに。点0〜23、現在位置、月相は引き続き表示します。</string>
+    <string name="info_news_catalog" formatted="false">撮影ラベルにT+/T−の時間を追加。メイン画面の操作と天体の詳細を改善しました。</string>
 </resources>

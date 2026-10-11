@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="scene_mode_camera">カメラモード</string>
+    <string name="scene_mode_sky">仮想の空モード</string>
+    <string name="scene_weather_on">天気の効果を有効にしました</string>
+    <string name="scene_weather_off">天気の効果を無効にしました</string>
+    <string name="scene_references_on">天球の基準線・基準点を表示しました</string>
+    <string name="scene_references_off">天球の基準線・基準点を非表示にしました</string>
+    <string name="panorama_labels_on">ラベルを表示しました</string>
+    <string name="panorama_labels_off">ラベルを非表示にしました</string>
+    <string name="control_choice_message">%1$s：%2$s</string>
+
+    <string name="scene_scenario_on">カスタムシナリオを有効にしました</string>
+    <string name="scene_scenario_off">カスタムシナリオを無効にしました</string>
+    <string name="scene_objects_on">天体を有効にしました</string>
+    <string name="scene_objects_off">天体を無効にしました</string>
+</resources>

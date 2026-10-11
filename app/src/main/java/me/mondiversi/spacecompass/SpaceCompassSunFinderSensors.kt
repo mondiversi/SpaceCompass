@@ -20,6 +20,10 @@ import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.LifecycleEventObserver
 import androidx.lifecycle.compose.LocalLifecycleOwner
 import kotlin.math.*
+import kotlinx.coroutines.Job
+import kotlinx.coroutines.delay
+import kotlinx.coroutines.isActive
+import kotlinx.coroutines.launch
 
 internal enum class SpaceCompassSunLocationStatus { PERMISSION, SEARCHING, DISABLED, READY, ERROR }
 internal data class SpaceCompassSunFinderReadings(
@@ -58,6 +62,7 @@ internal fun rememberSpaceCompassSunFinderReadings(permissionGranted: Boolean, p
     val view = LocalView.current
     val lifecycleOwner = LocalLifecycleOwner.current
     val sensorPaused by rememberUpdatedState(paused)
+    val monitorScope = rememberCoroutineScope()
     var readings by remember { mutableStateOf(SpaceCompassSunFinderReadings()) }
     DisposableEffect(context, view, lifecycleOwner, permissionGranted) {
         val sensors = context.getSystemService(SensorManager::class.java)
@@ -77,6 +82,9 @@ internal fun rememberSpaceCompassSunFinderReadings(permissionGranted: Boolean, p
         var lastEventTime = 0L
         var magneticAccuracy = SensorManager.SENSOR_STATUS_UNRELIABLE
         val recovery = SpaceCompassSunCompassRecovery()
+        val issueStabilizer = SpaceCompassSunCompassIssueStabilizer()
+        val watchdog = SpaceCompassSunSensorWatchdog()
+        var watchdogJob: Job? = null
         val loggedErrors = mutableSetOf<String>()
         fun failure(source: String, error: Exception) {
             if (loggedErrors.add(source)) SpaceCompassErrorLog.record(context, "sun_finder:$source", error)
@@ -111,23 +119,41 @@ internal fun rememberSpaceCompassSunFinderReadings(permissionGranted: Boolean, p
             @Deprecated("Required by older Android versions")
             override fun onStatusChanged(provider: String?, status: Int, extras: Bundle?) = Unit
         }
-        fun sensorReadingsFresh(now: Long): Boolean {
-            fun fresh(timestamp: Long) = timestamp > 0 && now - timestamp in 0..500_000_000L
-            return fresh(gravityTime) && fresh(magneticTime) && abs(gravityTime - magneticTime) <= 200_000_000L
+        fun sensorReadingsFresh(now: Long) = spaceCompassSunSensorSamplesFresh(now, gravityTime, magneticTime)
+        fun invalidateOrientation() {
+            recovery.reset()
+            issueStabilizer.reset()
+            smoothed = null
+            readings = readings.copy(orientation = null, compassReliable = false, compassUsable = false,
+                cameraAttitude = null, compassIssue = SpaceCompassSunCompassIssue.WAITING)
+        }
+        fun resetSensorSamples() {
+            gravity = null
+            magnetic = null
+            gravityTime = 0L
+            magneticTime = 0L
+            magneticAccuracy = SensorManager.SENSOR_STATUS_UNRELIABLE
+            lastEventTime = 0L
+            invalidateOrientation()
         }
         val sensorListener = object : SensorEventListener {
             override fun onAccuracyChanged(sensor: Sensor, accuracy: Int) {
+                if (!started || sensorPaused) return
                 if (sensor.type == Sensor.TYPE_MAGNETIC_FIELD) {
                     magneticAccuracy = accuracy
                     // A callback alone cannot establish fresh, plausible magnetic readings.
-                    if (accuracy < SensorManager.SENSOR_STATUS_ACCURACY_LOW) {
-                        recovery.reset()
+                    if (accuracy < SensorManager.SENSOR_STATUS_ACCURACY_MEDIUM) {
                         val field = magnetic?.takeIf { it.size >= 3 }?.let { values ->
                             sqrt(values.take(3).sumOf { it.toDouble().pow(2) })
                         } ?: Double.NaN
-                        readings = readings.copy(compassReliable = false, compassUsable = false,
-                            compassIssue = spaceCompassSunCompassIssue(accuracy, field, expectedFieldMicrotesla,
-                                sensorReadingsFresh(SystemClock.elapsedRealtimeNanos()), recovered = false))
+                        val fresh = sensorReadingsFresh(SystemClock.elapsedRealtimeNanos())
+                        val usable = readings.compassUsable && fresh &&
+                            spaceCompassSunMagneticReferenceUsable(accuracy, field, expectedFieldMicrotesla)
+                        if (!usable) recovery.reset()
+                        readings = readings.copy(compassReliable = false, compassUsable = usable,
+                            cameraAttitude = readings.cameraAttitude?.takeIf { usable },
+                            compassIssue = issueStabilizer.update(spaceCompassSunCompassIssue(accuracy, field, expectedFieldMicrotesla,
+                                fresh, recovered = usable), magneticTime))
                     }
                 }
             }
@@ -157,10 +183,7 @@ internal fun rememberSpaceCompassSunFinderReadings(permissionGranted: Boolean, p
                 if (g == null || m == null || g.size < 3 || m.size < 3 ||
                     !g.all { it.isFinite() } || !m.all { it.isFinite() } ||
                     !SensorManager.getRotationMatrix(matrix, null, g, m)) {
-                    recovery.reset()
-                    smoothed = null
-                    readings = readings.copy(orientation = null, compassReliable = false, compassUsable = false,
-                        cameraAttitude = null, compassIssue = SpaceCompassSunCompassIssue.WAITING)
+                    invalidateOrientation()
                     return
                 }
                 val displayRotation = view.display?.rotation ?: Surface.ROTATION_0
@@ -171,8 +194,11 @@ internal fun rememberSpaceCompassSunFinderReadings(permissionGranted: Boolean, p
                     else -> SensorManager.AXIS_X to SensorManager.AXIS_Y
                 }
                 val screen = FloatArray(9)
-                if (!SensorManager.remapCoordinateSystem(matrix, axes.first, axes.second, screen)) return
-                val current = spaceCompassSunOrientationFromScreenMatrix(screen, declination) ?: return
+                if (!SensorManager.remapCoordinateSystem(matrix, axes.first, axes.second, screen)) {
+                    invalidateOrientation(); return
+                }
+                val current = spaceCompassSunOrientationFromScreenMatrix(screen, declination)
+                    ?: run { invalidateOrientation(); return }
                 val now = SystemClock.elapsedRealtimeNanos()
                 val recent = sensorReadingsFresh(now)
                 val fieldMicrotesla = sqrt(m.sumOf { value -> value.toDouble().pow(2) })
@@ -182,32 +208,16 @@ internal fun rememberSpaceCompassSunFinderReadings(permissionGranted: Boolean, p
                 smoothed = if (usable) smoothSpaceCompassSunOrientation(smoothed, current) else null
                 val reliable = usable && spaceCompassSunMagneticReferenceReliable(magneticAccuracy, fieldMicrotesla, expectedFieldMicrotesla)
                 readings = readings.copy(orientation = smoothed ?: current, compassReliable = reliable, compassUsable = usable,
-                    compassIssue = spaceCompassSunCompassIssue(magneticAccuracy, fieldMicrotesla, expectedFieldMicrotesla, recent, usable),
+                    compassIssue = issueStabilizer.update(
+                        spaceCompassSunCompassIssue(magneticAccuracy, fieldMicrotesla, expectedFieldMicrotesla, recent, usable),
+                        magneticTime),
                     cameraAttitude = spaceCompassSunOrientationFromScreenMatrix(matrix, declination)?.let {
                         SpaceCompassCameraAttitude(event.timestamp, it, usable) })
             }
         }
-        fun stop() {
-            if (!started) return
-            started = false
+        fun registerSensorListeners() {
             sensors?.unregisterListener(sensorListener)
-            runCatching { locations?.removeUpdates(locationListener) }
-            smoothed = null
-            gravity = null
-            magnetic = null
-            gravityTime = 0L
-            magneticTime = 0L
-            magneticAccuracy = SensorManager.SENSOR_STATUS_UNRELIABLE
-            recovery.reset()
-            lastEventTime = 0L
-            readings = readings.copy(orientation = null, compassReliable = false, compassUsable = false,
-                cameraAttitude = null, compassIssue = SpaceCompassSunCompassIssue.WAITING)
-        }
-        fun start() {
-            if (started) return
-            started = true
-            readings = readings.copy(compassAvailable = available, compassReliable = false, compassUsable = false,
-                compassIssue = SpaceCompassSunCompassIssue.WAITING)
+            resetSensorSamples()
             try {
                 val registered = if (available) {
                     val g = sensors?.registerListener(sensorListener, gravitySensor, SensorManager.SENSOR_DELAY_UI) == true
@@ -220,6 +230,32 @@ internal fun rememberSpaceCompassSunFinderReadings(permissionGranted: Boolean, p
                 sensors?.unregisterListener(sensorListener)
                 failure("orientation", error)
                 readings = readings.copy(compassAvailable = false)
+            }
+        }
+        fun stop() {
+            if (!started) return
+            started = false
+            watchdogJob?.cancel()
+            watchdogJob = null
+            watchdog.reset()
+            sensors?.unregisterListener(sensorListener)
+            runCatching { locations?.removeUpdates(locationListener) }
+            resetSensorSamples()
+        }
+        fun start() {
+            if (started) return
+            started = true
+            watchdog.reset()
+            registerSensorListeners()
+            if (available) watchdogJob = monitorScope.launch {
+                while (isActive && started) {
+                    delay(SPACE_COMPASS_SUN_SENSOR_POLL_MS)
+                    val health = watchdog.check(SystemClock.elapsedRealtimeNanos(), gravityTime, magneticTime,
+                        monitoring = !sensorPaused)
+                    if (health.stale) invalidateOrientation()
+                    // Retry only the sensors: preserve the GPS fix, selected objects and online data.
+                    if (health.restart) registerSensorListeners()
+                }
             }
             if (!permissionGranted || !hasSpaceCompassSunLocationPermission(context)) {
                 readings = readings.copy(location = null, locationStatus = SpaceCompassSunLocationStatus.PERMISSION)

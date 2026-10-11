@@ -184,13 +184,15 @@ internal fun SpaceCompassCelestialViewerScreen(body: SpaceCompassCelestialBody, 
                 " (±" + formatSpaceCompassPhysicalLength(2 * component.radiusError * 695700000, 0, numeric, units.feet, large = true) + ")")
         }
     }
-    val informationRows = if (body == SpaceCompassCelestialBody.EARTH_CENTER) listOf(
+    val informationRows = listOf(
+        stringResource(R.string.celestial_view_name) to stringResource(body.nameResource)
+    ) + (if (body == SpaceCompassCelestialBody.EARTH_CENTER) listOf(
         stringResource(R.string.celestial_view_observer_distance) to
             (formatSpaceCompassSelectedDistance(body, distance, numeric, units.distance, units.feet) ?: "—")
     ) else if (body.isExtendedSkyObject) listOf(
         stringResource(R.string.celestial_view_observer_distance) to
             (formatSpaceCompassSelectedDistance(body, distance, numeric, units.distance, units.feet) ?: "—")
-    ) + supplementalRows else rows + supplementalRows
+    ) + supplementalRows else rows + supplementalRows)
     val actual = stringResource(R.string.celestial_view_current)
     val spin = stringResource(R.string.celestial_view_rotation)
     val resume = stringResource(R.string.celestial_view_resume)
@@ -326,8 +328,9 @@ internal fun SpaceCompassCelestialViewerScreen(body: SpaceCompassCelestialBody, 
     }
 
     Column(Modifier.fillMaxSize().background(backgroundColor).testTag("celestial-viewer")) {
-        SpaceCompassPageToolbar(stringResource(body.nameResource), onBack,
-            modifier = Modifier.testTag("celestial-view-toolbar"), titleColor = primaryText)
+        SpaceCompassPageToolbar(stringResource(R.string.celestial_details_title), onBack,
+            modifier = Modifier.testTag("celestial-view-toolbar"),
+            titleModifier = Modifier.testTag("celestial-view-title"), titleColor = primaryText)
         BoxWithConstraints(Modifier.fillMaxSize().padding(start = 10.dp, end = 10.dp, bottom = 6.dp)) {
             // Both layouts start directly below the toolbar; only side/bottom insets remain.
             if (maxWidth > maxHeight && maxWidth >= 540.dp) Row(Modifier.fillMaxSize(), horizontalArrangement = Arrangement.spacedBy(12.dp)) {

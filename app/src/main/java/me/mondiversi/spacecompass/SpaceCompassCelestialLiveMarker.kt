@@ -34,26 +34,28 @@ internal const val SPACE_COMPASS_CELESTIAL_LIVE_PREVIEW_SIZE_DP = 32f
 @Composable
 internal fun SpaceCompassCelestialLiveMarker(body: SpaceCompassCelestialBody, projection: SpaceCompassSunProjection,
     belowHorizon: Boolean, point: SpaceCompassSunPathPoint?, state: SpaceCompassSunDailyPathUiState,
-    onActivate: (() -> Unit)? = null, moonPhase: SpaceCompassMoonPhase? = null) {
+    onActivate: (() -> Unit)? = null, moonPhase: SpaceCompassMoonPhase? = null,
+    path: SpaceCompassSunDailyPath? = null) {
     val name = stringResource(body.nameResource)
     val timeFormat = resolveSpaceCompassTimeFormat(LocalContext.current, LocalSpaceCompassTimeFormat.current)
     val locale = LocalConfiguration.current.locales[0]
     val moment = point?.let { formatSpaceCompassCelestialMoment(it.timeMs, it.timeMs, spaceCompassObservationZone(),
         timeFormat, LocalSpaceCompassDateFormat.current, locale, LocalSpaceCompassDeviceLocale.current,
         LocalSpaceCompassNumericFormat.current) }
+    val zone = spaceCompassObservationZone()
     val current = stringResource(R.string.celestial_current_position)
     val label = moment?.let { "$name, ${stringResource(R.string.celestial_point_time, current, it)}" } ?: name
     Layout(modifier = Modifier.fillMaxSize(), content = {
         Box(Modifier.size((SPACE_COMPASS_SUN_PATH_TOUCH_RADIUS_DP * 2).dp).testTag("celestial-current-point")
             .then(if (onActivate == null) Modifier else Modifier.clickable(
                 interactionSource = remember { MutableInteractionSource() }, indication = null) {
-                onActivate(); point?.let { state.selectCurrent(body, it) }
+                onActivate(); point?.let { state.openCurrent(body, it, path, zone) }
             })
             .semantics(mergeDescendants = true) {
                 contentDescription = label
                 if (point != null) {
                     role = Role.Button
-                    onClick { onActivate?.invoke(); state.selectCurrent(body, point); true }
+                    onClick { onActivate?.invoke(); state.openCurrent(body, point, path, zone); true }
                 }
             }, contentAlignment = Alignment.Center) {
             SpaceCompassCelestialThumbnail(body, Modifier.size(SPACE_COMPASS_CELESTIAL_LIVE_PREVIEW_SIZE_DP.dp)

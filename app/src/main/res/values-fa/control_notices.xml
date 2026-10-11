@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="scene_mode_camera">حالت دوربین</string>
+    <string name="scene_mode_sky">حالت آسمان مجازی</string>
+    <string name="scene_weather_on">جلوه‌های آب‌وهوا فعال شدند</string>
+    <string name="scene_weather_off">جلوه‌های آب‌وهوا غیرفعال شدند</string>
+    <string name="scene_references_on">مراجع آسمانی نمایش داده شدند</string>
+    <string name="scene_references_off">مراجع آسمانی پنهان شدند</string>
+    <string name="panorama_labels_on">برچسب‌ها نمایش داده شدند</string>
+    <string name="panorama_labels_off">برچسب‌ها پنهان شدند</string>
+    <string name="control_choice_message">%1$s: %2$s</string>
+
+    <string name="scene_scenario_on">سناریوی سفارشی فعال شد</string>
+    <string name="scene_scenario_off">سناریوی سفارشی غیرفعال شد</string>
+    <string name="scene_objects_on">اجرام فعال شدند</string>
+    <string name="scene_objects_off">اجرام غیرفعال شدند</string>
+</resources>

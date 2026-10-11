@@ -67,6 +67,10 @@ class SpaceCompassCelestialCompassTest {
             val row = compose.onNodeWithTag("sun-path-point-0").fetchSemanticsNode()
             assertTrue(icon.boundsInRoot.left >= row.boundsInRoot.left)
             assertTrue(icon.boundsInRoot.right < row.boundsInRoot.right)
+            compose.onNodeWithTag("sun-path-title").assertTextEquals(resources.getString(
+                R.string.celestial_daily_path))
+            compose.onNodeWithTag("sun-path-object-name").assertTextEquals(
+                resources.getString(SpaceCompassCelestialBody.MOON.nameResource)).assertIsDisplayed()
         }
     }
 
@@ -108,7 +112,8 @@ class SpaceCompassCelestialCompassTest {
             }
             compose.onNodeWithTag("sun-path-open").performClick()
             compose.onNodeWithTag("sun-path-title").assertTextEquals(resources.getString(
-                if (candidate == SpaceCompassCelestialBody.ISS) R.string.celestial_orbit else R.string.celestial_daily_path))
+                R.string.celestial_daily_path))
+            compose.onNodeWithTag("sun-path-object-name").assertTextEquals(resources.getString(candidate.nameResource))
             repeat(10) { compose.runOnIdle { time.longValue += 2_000 }; compose.onNodeWithTag("sun-path-page").assertIsDisplayed() }
             compose.onNodeWithContentDescription(resources.getString(R.string.close)).performClick()
         }
@@ -176,7 +181,9 @@ class SpaceCompassCelestialCompassTest {
         compose.waitUntil(10_000) { compose.onAllNodesWithTag("sun-path-open").fetchSemanticsNodes().isNotEmpty() }
         compose.onNodeWithTag("sun-path-open").assertContentDescriptionEquals(resources.getString(R.string.celestial_iss_path))
         compose.onNodeWithTag("sun-path-open").performClick()
-        compose.onNodeWithTag("sun-path-title").assertTextEquals(resources.getString(R.string.celestial_orbit))
+        compose.onNodeWithTag("sun-path-title").assertTextEquals(resources.getString(
+            R.string.celestial_daily_path))
+        compose.onNodeWithTag("sun-path-object-name").assertTextEquals(resources.getString(SpaceCompassCelestialBody.ISS.nameResource))
         compose.onNodeWithTag("iss-pass-heading").assertIsDisplayed()
         for (event in listOf(SpaceCompassSunPathEvent.SUNRISE, SpaceCompassSunPathEvent.CULMINATION, SpaceCompassSunPathEvent.SUNSET)) {
             val node = compose.onNodeWithTag("iss-pass-${event.name}")

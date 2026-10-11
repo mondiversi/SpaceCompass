@@ -1,9 +1,9 @@
 <resources>
     <string name="info_news_title">Neuigkeiten · %1$s</string>
-    <string name="info_news_star_sky" formatted="false">Von Mondiversi inspirierter Erd-Bildschirmschoner, offline mit Tag- und Nachtbeleuchtung verfügbar.</string>
-    <string name="info_news_texture_downloads" formatted="false">Bildschirmschoner standardmäßig nach 5 Minuten aktiv; Aktivierung und Wartezeit werden gespeichert.</string>
-    <string name="info_news_weather" formatted="false">Sanfte Beleuchtung bei Morgen- und Abenddämmerung für Himmel, Boden, Wetter und Panoramaaufnahmen.</string>
-    <string name="info_news_viewer_zoom" formatted="false">Hauptbedienelemente in den Ecken gruppiert; Statusmeldungen mittig unter dem Fadenkreuz.</string>
-    <string name="info_news_settings" formatted="false">Besser lesbarer Kamerazoom neben dem Auslöser, mit direkter Auswahl der Zoomstufen.</string>
-    <string name="info_news_catalog" formatted="false">Mehr Platz für Objektnamen, eine horizontale 55/45-Aufteilung und Musik mit einer anfänglichen Lautstärke von 50%.</string>
+    <string name="info_news_star_sky" formatted="false">Erd-Bildschirmschoner im Vollbild mit Ortszeit, Datum und Akkustand. Antippen, um zurückzukehren.</string>
+    <string name="info_news_texture_downloads" formatted="false">Der Bildschirmschoner pausiert Sensoren, GPS, Kamera und Datenaktualisierung. Anfangslautstärke der Musik: 20%.</string>
+    <string name="info_news_weather" formatted="false">Klarere Hinweise zur Kompasskalibrierung und zu Störungen; Standortaktionen nur bei Bedarf.</string>
+    <string name="info_news_viewer_zoom" formatted="false">Ein Bahnpunkt öffnet den darauf zentrierten Tagesverlauf mit vorübergehender Hervorhebung.</string>
+    <string name="info_news_settings" formatted="false">Kompakte Kopfzeile mit Objekt, Datum und Zeitzone; Punkte 0–23, aktuelle Position und Mondphasen bleiben erhalten.</string>
+    <string name="info_news_catalog" formatted="false">Aufnahmebeschriftungen enthalten T+/T−-Zeitabstände. Verbesserte Hauptsteuerung und Objektdetails.</string>
 </resources>

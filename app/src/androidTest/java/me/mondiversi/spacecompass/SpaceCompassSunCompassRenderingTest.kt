@@ -69,6 +69,7 @@ class SpaceCompassSunCompassRenderingTest {
     @Test fun unreliableCompassShowsTheExistingLocalizedWarningAndUndefinedBearingIsADash() {
         val verticalAxis = mutableStateOf(false)
         val reliable = mutableStateOf(false)
+        val issue = mutableStateOf(SpaceCompassSunCompassIssue.MAGNETIC_INTERFERENCE)
         val timestamp = Instant.parse("2003-10-17T19:30:30Z").toEpochMilli()
         val fix = Location("synthetic").apply {
             latitude = 39.742476; longitude = -105.1786; altitude = 1830.14
@@ -79,7 +80,7 @@ class SpaceCompassSunCompassRenderingTest {
                 MaterialTheme {
                     val colors = MaterialTheme.colorScheme
                     SpaceCompassSunFinderContent(SpaceCompassSunFinderReadings(fix, SpaceCompassSunLocationStatus.READY,
-                        facing(224.7, if (verticalAxis.value) -89.5 else -4.4, 180.0), true, reliable.value, compassIssue = SpaceCompassSunCompassIssue.MAGNETIC_INTERFERENCE),
+                        facing(224.7, if (verticalAxis.value) -89.5 else -4.4, 180.0), true, reliable.value, compassIssue = issue.value),
                         timestamp, colors.onSurface, colors.onSurfaceVariant, colors.background)
                 }
             }
@@ -92,7 +93,15 @@ class SpaceCompassSunCompassRenderingTest {
         compose.runOnIdle { verticalAxis.value = true }
         compose.onNodeWithContentDescription("Direzione: —").assertIsDisplayed()
         compose.onNodeWithText(resources.getString(R.string.sun_finder_compass_accuracy)).assertIsDisplayed()
+        for (calibrationIssue in listOf(SpaceCompassSunCompassIssue.REDUCED_ACCURACY,
+            SpaceCompassSunCompassIssue.CALIBRATION)) {
+            compose.runOnIdle { issue.value = calibrationIssue }
+            compose.onNodeWithText(resources.getString(R.string.sun_finder_compass_calibrate)).assertIsDisplayed()
+            compose.onNodeWithText(resources.getString(R.string.pc_compass_approximate)).assertDoesNotExist()
+            compose.onNodeWithText(resources.getString(R.string.sun_finder_compass_accuracy)).assertDoesNotExist()
+        }
         compose.runOnIdle { verticalAxis.value = false; reliable.value = true }
+        compose.onNodeWithText(resources.getString(R.string.sun_finder_compass_calibrate)).assertDoesNotExist()
         compose.onNodeWithContentDescription("Direzione: 224,7°").assertIsDisplayed()
         compose.onNodeWithText(resources.getString(R.string.sun_finder_compass_accuracy)).assertDoesNotExist()
     }

@@ -133,7 +133,7 @@ internal fun SpaceCompassPanoramaPreview(data: SpaceCompassPanoramaPreviewData, 
     var preparedExportSource by remember(data.file) { mutableStateOf<File?>(null) }
     var preparedExportKey by remember(data.file) { mutableStateOf<String?>(null) }
     var gallerySource by rememberSaveable(data.file.absolutePath) { mutableStateOf<String?>(null) }
-    fun notify(id: Int) = showSpaceCompassBottomMessage(context, resources.getString(id))
+    fun notify(id: Int, vararg arguments: Any) = showSpaceCompassBottomMessage(context, resources.getString(id, *arguments))
     fun saveGallery(file: File) {
         if (saving) return
         saving = true
@@ -225,6 +225,7 @@ internal fun SpaceCompassPanoramaPreview(data: SpaceCompassPanoramaPreviewData, 
                     stringResource(R.string.panorama_point_labels), {
                         requestedPointLabels = !requestedPointLabels
                         preferences?.edit()?.putBoolean(SPACE_COMPASS_PANORAMA_POINT_LABELS_KEY, requestedPointLabels)?.apply()
+                        notify(if (requestedPointLabels) R.string.panorama_labels_on else R.string.panorama_labels_off)
                         revision++
                     }, enabled = !saving, checked = requestedPointLabels,
                     modifier = Modifier.testTag("panorama-point-labels")) {
@@ -247,15 +248,23 @@ internal fun SpaceCompassPanoramaPreview(data: SpaceCompassPanoramaPreviewData, 
             }
         }
     if (chooseCenter && data.cameraPhoto == null) SpaceCompassPanoramaCenterDialog(requestedCenter, onSelect = { center ->
-        preferences?.edit()?.putString(SPACE_COMPASS_PANORAMA_CENTER_KEY, center.key)?.apply()
-        requestedCenter = center
-        revision++
+        if (center != requestedCenter) {
+            preferences?.edit()?.putString(SPACE_COMPASS_PANORAMA_CENTER_KEY, center.key)?.apply()
+            requestedCenter = center
+            notify(R.string.control_choice_message, resources.getString(R.string.panorama_center),
+                resources.getString(center.labelResource))
+            revision++
+        }
         chooseCenter = false
     }, onDismiss = { chooseCenter = false })
     if (choosePosition) SpaceCompassPanoramaPositionDialog(requestedPosition, false, onSelect = { position ->
-        preferences?.edit()?.putString(SPACE_COMPASS_PANORAMA_POSITION_KEY, position.key)?.apply()
-        requestedPosition = position
-        revision++
+        if (position != requestedPosition) {
+            preferences?.edit()?.putString(SPACE_COMPASS_PANORAMA_POSITION_KEY, position.key)?.apply()
+            requestedPosition = position
+            notify(R.string.control_choice_message, resources.getString(R.string.panorama_position),
+                resources.getString(position.labelResource))
+            revision++
+        }
         choosePosition = false
     }, onDismiss = { choosePosition = false })
     if (chooseExport) SpaceCompassPanoramaExportDialog(requestedExportMode, onModeChange = { mode ->

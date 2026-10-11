@@ -1,9 +1,9 @@
 <resources>
     <string name="info_news_title">최근 변경 사항 · %1$s</string>
-    <string name="info_news_star_sky" formatted="false">Mondiversi에서 영감을 받은 지구 화면 보호기를 주야간 조명과 함께 오프라인으로 이용할 수 있습니다.</string>
-    <string name="info_news_texture_downloads" formatted="false">화면 보호기는 기본적으로 5분 후 켜지며, 활성화 여부와 대기 시간이 저장됩니다.</string>
-    <string name="info_news_weather" formatted="false">하늘, 지면, 날씨, 파노라마 사진에 새벽과 해질녘의 점진적인 조명을 적용했습니다.</string>
-    <string name="info_news_viewer_zoom" formatted="false">주요 조작 버튼을 모서리에 모으고 상태 메시지를 조준점 아래 중앙에 배치했습니다.</string>
-    <string name="info_news_settings" formatted="false">촬영 버튼 옆 카메라 줌을 더 읽기 쉽게 하고 배율을 직접 선택할 수 있게 했습니다.</string>
-    <string name="info_news_catalog" formatted="false">천체 이름 표시 공간 확대, 가로 화면 55/45 배치, 음악 초기 음량 50%.</string>
+    <string name="info_news_star_sky" formatted="false">현지 시간, 날짜와 배터리가 표시되는 전체 화면 지구 화면 보호기. 터치하면 돌아갑니다.</string>
+    <string name="info_news_texture_downloads" formatted="false">화면 보호기는 센서, GPS, 카메라와 데이터 갱신을 일시 중지합니다. 음악의 초기 음량은 20%입니다.</string>
+    <string name="info_news_weather" formatted="false">나침반 보정과 간섭 알림을 더 명확하게 표시하며, 위치 작업은 필요할 때만 표시합니다.</string>
+    <string name="info_news_viewer_zoom" formatted="false">궤적의 지점을 누르면 해당 지점을 중심으로 일일 경로가 열리고 잠시 강조 표시됩니다.</string>
+    <string name="info_news_settings" formatted="false">천체, 날짜와 시간대가 담긴 간결한 머리글. 지점 0–23, 현재 위치와 달의 위상을 유지합니다.</string>
+    <string name="info_news_catalog" formatted="false">촬영 라벨에 T+/T− 시간을 추가했습니다. 기본 조작과 천체 세부 정보를 개선했습니다.</string>
 </resources>

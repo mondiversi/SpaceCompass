@@ -75,11 +75,11 @@ class SpaceCompassCelestialMarkerRenderingTest {
             }
         }
         for (visible in listOf(true, false)) {
-            compose.runOnIdle { state.clearSelection(); now.value = time; available.value = visible }
+            compose.runOnIdle { state.closeMenu(); now.value = time; available.value = visible }
             compose.onNodeWithTag("celestial-current-point").performTouchInput { click(center) }
-            compose.onNodeWithTag("sun-path-selected").assertIsDisplayed()
-            compose.runOnIdle { assertEquals(current, state.selectedCurrentFor(path.body)); now.value += 60_000 }
-            compose.runOnIdle { assertEquals(current, state.selectedCurrentFor(path.body)) }
+            compose.onNodeWithTag("sun-path-selected").assertDoesNotExist()
+            compose.runOnIdle { assertEquals(current, state.menuCurrentPoint); assertEquals("current", state.menuHighlightedPointId); now.value += 60_000 }
+            compose.runOnIdle { assertEquals(current, state.menuCurrentPoint) }
         }
     }
 
@@ -95,9 +95,10 @@ class SpaceCompassCelestialMarkerRenderingTest {
             }
         }
         compose.onNodeWithTag("celestial-current-point").assertHasClickAction().performClick()
-        compose.onNodeWithTag("sun-path-selected").assertIsDisplayed()
+        compose.onNodeWithTag("sun-path-selected").assertDoesNotExist()
         compose.onNodeWithTag("sun-daily-path").assertDoesNotExist()
-        compose.runOnIdle { assertEquals(current, state.selectedCurrentFor(SpaceCompassCelestialBody.VOYAGER_1)) }
+        compose.runOnIdle { assertEquals(current, state.menuCurrentPoint); assertEquals("current", state.menuHighlightedPointId)
+            assertEquals(SpaceCompassCelestialBody.VOYAGER_1, state.menuPath!!.body) }
     }
 
     @Test fun allTargetsReuseTheirOwnUprightOffscreenPreviewInBothThemes() {

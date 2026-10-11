@@ -26,7 +26,7 @@ internal fun showSpaceCompassBottomMessage(context: Context, text: CharSequence)
     val verticalPadding = (13f * density).roundToInt()
     val sideMargin = (24f * density).roundToInt()
     val message = TextView(application).apply {
-        this.text = text
+        this.text = spaceCompassBottomMessageText(text)
         setTextColor(Color.WHITE)
         textSize = 14f * scale
         gravity = Gravity.CENTER_VERTICAL

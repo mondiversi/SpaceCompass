@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="scene_mode_camera">Tryb aparatu</string>
+    <string name="scene_mode_sky">Tryb wirtualnego nieba</string>
+    <string name="scene_weather_on">Efekty pogodowe włączone</string>
+    <string name="scene_weather_off">Efekty pogodowe wyłączone</string>
+    <string name="scene_references_on">Odniesienia niebieskie widoczne</string>
+    <string name="scene_references_off">Odniesienia niebieskie ukryte</string>
+    <string name="panorama_labels_on">Etykiety widoczne</string>
+    <string name="panorama_labels_off">Etykiety ukryte</string>
+    <string name="control_choice_message">%1$s: %2$s</string>
+
+    <string name="scene_scenario_on">Scenariusz niestandardowy włączony</string>
+    <string name="scene_scenario_off">Scenariusz niestandardowy wyłączony</string>
+    <string name="scene_objects_on">Obiekty włączone</string>
+    <string name="scene_objects_off">Obiekty wyłączone</string>
+</resources>

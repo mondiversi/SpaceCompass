@@ -2,8 +2,8 @@
 
 Space Compass is distributed as a signed APK through
 [GitHub Releases](https://github.com/mondiversi/SpaceCompass/releases).
-The current stable release is **1.2.5**, tagged **v1.2.5**, application ID
-`me.mondiversi.spacecompass`, Android version name **1.2.5**, version code **26**,
+The current stable release is **1.2.6**, tagged **v1.2.6**, application ID
+`me.mondiversi.spacecompass`, Android version name **1.2.6**, version code **27**,
 minimum Android API 26. The three-part tag/version name retains compatibility with
 the signed update protocol used since preview 0.1.2.
 
@@ -33,9 +33,8 @@ enabled in the release configuration from stable 1.0 onward. GitHub Actions chec
 access to the distribution key. The unsigned APK is aligned and signed locally
 with Android SDK tools; the final published APK is not debuggable or test-only.
 
-At the owner's explicit request, Space Compass uses the same distribution
-certificate as UVIR. This is a shared signature only: the apps retain separate
-packages, preferences, caches and codebases. The private key and its passwords
+Space Compass retains its existing distribution certificate so updates preserve
+installed settings and cached data. The private key and its passwords
 are never committed, included in the APK or uploaded as release assets.
 
 The public distribution certificate SHA-256 fingerprint is:
@@ -101,3 +100,8 @@ Version 1.2.5 refreshes the in-app news in all twenty languages and adds the off
 Earth screensaver, solar-height lighting and refined main controls. The signed
 index uses code 26 and the exact 1.2.5 APK hash. Optional archives and audit metadata
 describe the same source commit; celestial texture pack 1.1 remains immutable.
+
+
+Version 1.2.6 uses Android version code 27 and a newly signed update index with
+the exact APK size and checksum. Its twenty news summaries describe the full-screen
+screensaver, orientation recovery, direct daily-path navigation and capture labels.

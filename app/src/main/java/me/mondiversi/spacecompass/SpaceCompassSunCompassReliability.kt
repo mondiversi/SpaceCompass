@@ -1,6 +1,8 @@
 package me.mondiversi.spacecompass
 
 internal const val SPACE_COMPASS_SUN_COMPASS_RECOVERY_NS = 500_000_000L
+internal const val SPACE_COMPASS_SUN_SENSOR_MAX_AGE_NS = 500_000_000L
+internal const val SPACE_COMPASS_SUN_MAGNETIC_ANOMALY_CONFIRM_NS = 2_000_000_000L
 internal enum class SpaceCompassSunCompassIssue {
     NONE, REDUCED_ACCURACY, CALIBRATION, MAGNETIC_INTERFERENCE, WAITING
 }
@@ -48,5 +50,32 @@ internal class SpaceCompassSunCompassRecovery {
         val previous = since
         if (previous == null || timestampNanos < previous) { since = timestampNanos; return false }
         return timestampNanos - previous >= SPACE_COMPASS_SUN_COMPASS_RECOVERY_NS
+    }
+}
+
+/** Debounce the warning only; an implausible field invalidates the bearing immediately. */
+internal class SpaceCompassSunCompassIssueStabilizer {
+    private var anomalySince: Long? = null
+    private var lastSample: Long? = null
+
+    fun reset() { anomalySince = null; lastSample = null }
+
+    fun update(issue: SpaceCompassSunCompassIssue, magneticTimestampNanos: Long): SpaceCompassSunCompassIssue {
+        if (issue != SpaceCompassSunCompassIssue.MAGNETIC_INTERFERENCE) {
+            reset()
+            return issue
+        }
+        if (magneticTimestampNanos <= 0) {
+            reset()
+            return SpaceCompassSunCompassIssue.WAITING
+        }
+        val previous = lastSample
+        if (previous == null || magneticTimestampNanos < previous ||
+            magneticTimestampNanos - previous > SPACE_COMPASS_SUN_SENSOR_MAX_AGE_NS)
+            anomalySince = magneticTimestampNanos
+        lastSample = magneticTimestampNanos
+        // Gravity events and accuracy callbacks cannot advance an unchanged magnetic sample.
+        return if (magneticTimestampNanos - requireNotNull(anomalySince) >= SPACE_COMPASS_SUN_MAGNETIC_ANOMALY_CONFIRM_NS)
+            SpaceCompassSunCompassIssue.MAGNETIC_INTERFERENCE else SpaceCompassSunCompassIssue.WAITING
     }
 }

@@ -89,7 +89,7 @@ internal fun spaceCompassPanoramaCurrentLabel(snapshot: SpaceCompassPanoramaSnap
     val time = snapshot.currentTime ?: formatSpaceCompassPanoramaExportTime(snapshot.timeMs,
         java.util.TimeZone.getTimeZone("UTC"), snapshot.formatting)
     val value = formatSpaceCompassPanoramaPointLabel(time, position.elevationDegrees, snapshot.formatting,
-        snapshot.currentPointName)
+        snapshot.currentPointName, formatSpaceCompassPanoramaPointCountdown(snapshot.timeMs, snapshot.timeMs, snapshot.formatting))
     return SpaceCompassPanoramaTimeLabel(value, point, tint, principal = true, pointRadius = radius, current = true)
 }
 

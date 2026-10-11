@@ -27,9 +27,12 @@ internal class SpaceCompassScreensaverState : ViewModel() {
     var settings by mutableStateOf(SpaceCompassScreensaverSettings()); private set
     var visible by mutableStateOf(false); private set
     var sceneStartedAt = 0L; private set
-    // Latest height from the retained sky; sampled only by the visible saver, without extra sensors.
-    var sunElevationDegrees: Double? = null; private set
-    fun sunElevation(value: Double?) { sunElevationDegrees = value?.takeIf { it.isFinite() } }
+    // Keep the last observer, not an aging solar height: the idle sky needs no live GPS or data queue.
+    var solarObserver: SpaceCompassScreensaverSolarObserver? = null; private set
+    fun solarObserver(value: SpaceCompassScreensaverSolarObserver?) {
+        // Rotation rebuilds the hidden page without a GPS fix: keep the idle observer until work resumes.
+        if (value != null || !visible) solarObserver = value
+    }
 
     private val listener = SharedPreferences.OnSharedPreferenceChangeListener { _, key ->
         if (key == null || key == SPACE_COMPASS_SCREENSAVER_ENABLED_KEY || key == SPACE_COMPASS_SCREENSAVER_DELAY_KEY) readSettings()

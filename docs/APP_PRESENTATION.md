@@ -78,7 +78,7 @@ overrides independently with the shared validation/persistence behavior. The cur
 shortcut is a plain text action inside custom fields. The orange Simulation active notice is text-only and matches
 the compass warning's visual padding/type size without moving the scene.
 
-Observer and repository actions follow UVIR: the icon stays in a leading slot,
+Observer and repository actions use the shared button layout: the icon stays in a leading slot,
 then the label is centered in the remaining width. Shared single-line text fitting
 preserves the full accessible caption. All shared icon/text captions are uppercase
 in the selected app locale. The native map button uses the equivalent
@@ -141,7 +141,7 @@ stored preferences and navigation state are unchanged.
 Every page title keeps one line and its complete accessible text. Titles wider
 than their viewport automatically travel back and forth with soft edge fades;
 fitting titles remain stationary. Settings, Info/news, Objects, object details
-and daily paths share the UVIR-style scroller. The native Position details title
+and daily paths share the shared scroller. The native Position details title
 uses the same timing and 14 dp edges instead of ellipsis. Its toolbar retains
 the ordinary 48 dp minimum while accommodating enlarged fonts vertically.
 
@@ -218,7 +218,7 @@ Scientific sources, unit definitions and excluded cases are in
 The app-title destination is now called Info and news in all twenty languages.
 A separate latest-news island immediately follows the description/Earth-use note,
 before GitHub and credits. It reuses the app island styling and the same two-sparkle
-glyph as UVIR, with the current version and three short localized summaries of
+shared sparkle glyph, with the current version and three short localized summaries of
 recent units/mass changes, clearer viewer controls and signed GitHub updates.
 It scales with the existing UI and preserves light/dark styling, scrolling and RTL.
 
@@ -379,7 +379,7 @@ Fahrenheit, physical diameters in mi, American dates and 12-hour times. All eigh
 format settings were returned to their original system-default choices. Each of
 the 20 language choices loaded its translated page heading on the phone, including
 Korean and RTL Arabic/Hebrew/Persian; the original system-language setting was
-restored. The final APK was verified against UVIR's certificate and installed.
+restored. The final APK was verified against the established distribution certificate and installed.
 
 
 ## Satellite connectivity and compact environment readouts
@@ -468,7 +468,7 @@ Regression coverage includes a disposable Compose navigation fixture checking re
 
 ## Settings confirmation and compact Retry notice — current local update
 
-Actual presentation preference changes show the shared short, dark Uvir-style
+Actual presentation preference changes show the shared short, dark rounded
 bottom confirmation after the new app language takes effect. Initial loading,
 unchanged radio selections, automatic system appearance/locale updates and
 unrelated preference writes do not announce changes. Simulation retains its
@@ -528,3 +528,13 @@ data/retry retains priority. In-app news summaries are unchanged from 1.2.2.
 
 
 Version 1.2.5 adds an offline Earth screensaver, continuous solar lighting and clearer main-view controls.
+
+
+## Release 1.2.6
+
+The daily-path table uses a single fixed header: object name above date/time zone
+on the left, azimuth and elevation above the corresponding right-aligned values.
+Long captions retain the shared accessible fade/scroller. Sky point taps open the
+centered daily row with a temporary highlight; the current row and Moon phases remain.
+Full-screen saver overlays show local time, weekday/date and battery; live page
+resources pause while foreground music remains available, initially at 20% volume.

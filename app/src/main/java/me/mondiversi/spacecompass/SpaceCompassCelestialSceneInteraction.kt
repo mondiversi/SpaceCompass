@@ -15,18 +15,20 @@ import java.time.ZoneId
 /** One touch detector and one caption for every visible path, independent of the inspected body. */
 @Composable
 internal fun SpaceCompassCelestialSceneInteraction(targets: List<SpaceCompassCelestialSceneTarget>,
+    currentPoints: Map<SpaceCompassCelestialBody, SpaceCompassSunPathPoint>,
     focused: SpaceCompassCelestialSceneTarget?, state: SpaceCompassSunDailyPathUiState, nowMs: Long?,
     orientation: SpaceCompassSunOrientation?, primaryText: Color, secondaryText: Color, backgroundColor: Color,
     excluded: List<SpaceCompassSunSceneFrame>, onActivateBody: ((SpaceCompassCelestialBody) -> Unit)?, perspective: SpaceCompassPerspective? = null) {
     val currentTargets by rememberUpdatedState(targets)
+    val livePoints by rememberUpdatedState(currentPoints)
+    val zone by rememberUpdatedState(spaceCompassObservationZone())
     val activate by rememberUpdatedState(onActivateBody)
     val radius = with(LocalDensity.current) { SPACE_COMPASS_SUN_PATH_TOUCH_RADIUS_DP.dp.toPx().toDouble() }
     Canvas(Modifier.fillMaxSize().pointerInput(radius) {
         detectTapGestures { tap ->
             tappedSpaceCompassCelestialSceneTarget(currentTargets, SpaceCompassSunScenePoint(tap.x.toDouble(), tap.y.toDouble()), radius)?.let {
                 activate?.invoke(it.body)
-                if (it.isCurrent) state.selectCurrent(it.body, it.point)
-                else it.path?.let { path -> state.select(path, it.point) }
+                state.openScenePoint(it, livePoints, zone)
             }
         }
     }) {}

@@ -1,9 +1,9 @@
 <resources>
     <string name="info_news_title">हाल के बदलाव · %1$s</string>
-    <string name="info_news_star_sky" formatted="false">Mondiversi से प्रेरित पृथ्वी का स्क्रीनसेवर, दिन और रात की रोशनी के साथ ऑफ़लाइन उपलब्ध।</string>
-    <string name="info_news_texture_downloads" formatted="false">स्क्रीनसेवर डिफ़ॉल्ट रूप से 5 मिनट बाद सक्रिय होता है; सक्रियण और प्रतीक्षा अवधि सहेजी जाती हैं।</string>
-    <string name="info_news_weather" formatted="false">आकाश, धरातल, मौसम और पैनोरमा तस्वीरों में भोर और सूर्यास्त की रोशनी धीरे-धीरे बदलती है।</string>
-    <string name="info_news_viewer_zoom" formatted="false">मुख्य नियंत्रण कोनों में समूहित हैं; स्थिति संदेश निशाने के ठीक नीचे बीच में दिखाई देते हैं।</string>
-    <string name="info_news_settings" formatted="false">कैप्चर बटन के पास अधिक स्पष्ट कैमरा ज़ूम, स्तरों के सीधे चयन के साथ।</string>
-    <string name="info_news_catalog" formatted="false">पिंडों के नामों के लिए अधिक जगह, क्षैतिज लेआउट 55/45 और संगीत की शुरुआती आवाज़ 50%।</string>
+    <string name="info_news_star_sky" formatted="false">स्थानीय समय, तारीख और बैटरी के साथ पूरी स्क्रीन पर पृथ्वी का स्क्रीनसेवर। लौटने के लिए छुएँ।</string>
+    <string name="info_news_texture_downloads" formatted="false">स्क्रीनसेवर सेंसर, GPS, कैमरा और डेटा अपडेट रोकता है। संगीत का शुरुआती वॉल्यूम 20% है।</string>
+    <string name="info_news_weather" formatted="false">कंपास कैलिब्रेशन और हस्तक्षेप के अधिक स्पष्ट संदेश; स्थान संबंधी क्रियाएँ केवल ज़रूरत पड़ने पर।</string>
+    <string name="info_news_viewer_zoom" formatted="false">पथ के किसी बिंदु को छूने पर दैनिक पथ उसी पर केंद्रित होकर खुलता है और बिंदु अस्थायी रूप से हाइलाइट होता है।</string>
+    <string name="info_news_settings" formatted="false">पिंड, तारीख और समय क्षेत्र का संक्षिप्त शीर्षक; बिंदु 0–23, वर्तमान स्थिति और चंद्र कलाएँ बनी रहती हैं।</string>
+    <string name="info_news_catalog" formatted="false">तस्वीरों के लेबल में T+/T− समय शामिल हैं। मुख्य नियंत्रण और पिंड विवरण बेहतर किए गए हैं।</string>
 </resources>

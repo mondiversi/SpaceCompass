@@ -1,9 +1,9 @@
 <resources>
     <string name="info_news_title">Últimas novedades · %1$s</string>
-    <string name="info_news_star_sky" formatted="false">Salvapantallas terrestre inspirado en Mondiversi, disponible sin conexión con iluminación diurna y nocturna.</string>
-    <string name="info_news_texture_downloads" formatted="false">Salvapantallas activado por defecto tras 5 minutos; se guardan la activación y el intervalo.</string>
-    <string name="info_news_weather" formatted="false">Luz gradual al amanecer y al atardecer para cielo, suelo, tiempo y capturas panorámicas.</string>
-    <string name="info_news_viewer_zoom" formatted="false">Controles principales agrupados en las esquinas; mensajes de estado centrados bajo la retícula.</string>
-    <string name="info_news_settings" formatted="false">Zoom de cámara más legible junto al disparador, con selección directa de niveles.</string>
-    <string name="info_news_catalog" formatted="false">Más espacio para los nombres de objetos, distribución horizontal 55/45 y volumen inicial de música al 50%.</string>
+    <string name="info_news_star_sky" formatted="false">Salvapantallas terrestre a pantalla completa con hora local, fecha y batería. Toca para volver.</string>
+    <string name="info_news_texture_downloads" formatted="false">El salvapantallas pausa sensores, GPS, cámara y actualización de datos. Volumen inicial de la música: 20%.</string>
+    <string name="info_news_weather" formatted="false">Avisos más claros de calibración e interferencias de la brújula; acciones de ubicación solo cuando hacen falta.</string>
+    <string name="info_news_viewer_zoom" formatted="false">Toca un punto de la trayectoria para abrir el recorrido diario centrado en él, con un resaltado temporal.</string>
+    <string name="info_news_settings" formatted="false">Cabecera compacta con objeto, fecha y zona horaria; se conservan los puntos 0–23, la posición actual y las fases lunares.</string>
+    <string name="info_news_catalog" formatted="false">Las etiquetas de captura incluyen tiempos T+/T−. Controles principales y detalles del objeto mejorados.</string>
 </resources>

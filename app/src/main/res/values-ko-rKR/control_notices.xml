@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="scene_mode_camera">카메라 모드입니다</string>
+    <string name="scene_mode_sky">가상 하늘 모드입니다</string>
+    <string name="scene_weather_on">날씨 효과가 켜졌습니다</string>
+    <string name="scene_weather_off">날씨 효과가 꺼졌습니다</string>
+    <string name="scene_references_on">천구 기준선과 기준점을 표시합니다</string>
+    <string name="scene_references_off">천구 기준선과 기준점을 숨깁니다</string>
+    <string name="panorama_labels_on">라벨을 표시합니다</string>
+    <string name="panorama_labels_off">라벨을 숨깁니다</string>
+    <string name="control_choice_message">%1$s: %2$s</string>
+
+    <string name="scene_scenario_on">사용자 지정 시나리오가 켜졌습니다</string>
+    <string name="scene_scenario_off">사용자 지정 시나리오가 꺼졌습니다</string>
+    <string name="scene_objects_on">천체가 켜졌습니다</string>
+    <string name="scene_objects_off">천체가 꺼졌습니다</string>
+</resources>

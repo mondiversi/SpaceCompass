@@ -66,33 +66,25 @@ class SpaceCompassSunDailyPathRenderingTest {
             }
         }
     }
-    @Test fun tappingTheLiveBodyShowsItsTimeAndAnglesAndArrowButtonsChangeTheSelectedPoint() {
+    @Test fun tappingTheLiveBodyOpensTheDailyPathAndItsHighlightCanBeCleared() {
         show()
         compose.onNodeWithTag("sun-daily-path").performTouchInput { click(center) }
-        compose.onNodeWithTag("sun-path-selected").assertIsDisplayed()
-        compose.onNode(hasText("09:00", substring = true) and hasAnyAncestor(hasTestTag("sun-path-selected"))).assertIsDisplayed()
-        compose.onNodeWithText(currentCaption("09:00")).assertIsDisplayed()
-        compose.onNodeWithContentDescription(resources.getString(R.string.sun_path_next)).performClick()
-        compose.onNodeWithText(pointCaption(11, "10:00")).assertIsDisplayed()
-        // Stepping the explicit selection does not move the phone: the reticle still points at 09:00.
-        compose.onNodeWithText(currentCaption("09:00")).assertIsDisplayed()
-        compose.onNodeWithContentDescription(resources.getString(R.string.sun_path_previous)).performClick()
-        compose.onNode(hasText("09:00", substring = true) and hasAnyAncestor(hasTestTag("sun-path-selected"))).assertIsDisplayed()
-        val bitmap = compose.onNodeWithTag("sun-finder-sky").captureToImage().asAndroidBitmap()
-        File(context.externalCacheDir, "daily-path-selected.png").outputStream().use {
-            bitmap.compress(android.graphics.Bitmap.CompressFormat.PNG, 100, it)
-        }
-        compose.onNodeWithContentDescription(resources.getString(R.string.close)).performClick()
+        compose.onNodeWithTag("sun-path-page").assertIsDisplayed()
+        compose.onNodeWithTag("sun-path-current").assertIsDisplayed().assertIsSelected().performClick()
+        compose.onNodeWithTag("sun-path-current").assertIsNotSelected()
         compose.onNodeWithTag("sun-path-selected").assertDoesNotExist()
-        compose.onNodeWithText(currentCaption("09:00")).assertIsDisplayed()
+        compose.onNodeWithContentDescription(resources.getString(R.string.close)).performClick()
+        compose.onNodeWithTag("sun-path-page").assertDoesNotExist()
+        compose.onNodeWithTag("sun-path-selected").assertDoesNotExist()
+        compose.onNodeWithTag("sun-path-open").performClick()
+        compose.onAllNodes(isSelected()).assertCountEquals(0)
     }
-    @Test fun tappingOutsideTheOldHitAreaStillSelectsTheNearestHourlyDot() {
+    @Test fun tappingNearTheVisibleDotOpensTheDailyListInsteadOfAnIsland() {
         show()
-        compose.onNodeWithTag("sun-daily-path").performTouchInput {
-            click(center + Offset(0f, 30.dp.toPx()))
-        }
-        compose.onNodeWithTag("sun-path-selected").assertIsDisplayed()
-        compose.onNode(hasText("09:00", substring = true) and hasAnyAncestor(hasTestTag("sun-path-selected"))).assertIsDisplayed()
+        compose.onNodeWithTag("sun-daily-path").performTouchInput { click(center + Offset(0f, 30.dp.toPx())) }
+        compose.onNodeWithTag("sun-path-page").assertIsDisplayed()
+        compose.onAllNodes(isSelected()).assertCountEquals(1)
+        compose.onNodeWithTag("sun-path-selected").assertDoesNotExist()
     }
 
     @Test fun orientationRefreshBetweenPressAndReleaseDoesNotCancelTheTap() {
@@ -101,10 +93,10 @@ class SpaceCompassSunDailyPathRenderingTest {
             CompositionLocalProvider(LocalResources provides resources, LocalSpaceCompassTimeFormat provides SpaceCompassTimeFormat.H24) {
                 MaterialTheme {
                     val state = rememberSpaceCompassSunDailyPathUiState()
-                    Box(Modifier.size(340.dp, 400.dp)) {
+                    if (state.menuPath == null) Box(Modifier.size(340.dp, 400.dp)) {
                         SpaceCompassSunDailyPathLayer(path, orientation.value, state,
                             Color.Black, Color.DarkGray, Color.White)
-                    }
+                    } else SpaceCompassSunDailyPathPage(state, Color.Black, Color.DarkGray, Color.White)
                 }
             }
         }
@@ -112,8 +104,9 @@ class SpaceCompassSunDailyPathRenderingTest {
         compose.runOnIdle { orientation.value = facing(hour.position.copy(
             azimuthDegrees = hour.position.azimuthDegrees + 0.2)) }
         compose.onNodeWithTag("sun-daily-path").performTouchInput { up() }
-        compose.onNodeWithTag("sun-path-selected").assertIsDisplayed()
-        compose.onNode(hasText("09:00", substring = true) and hasAnyAncestor(hasTestTag("sun-path-selected"))).assertIsDisplayed()
+        compose.onNodeWithTag("sun-path-page").assertIsDisplayed()
+        compose.onAllNodes(isSelected()).assertCountEquals(1)
+        compose.onNodeWithTag("sun-path-selected").assertDoesNotExist()
     }
 
     @Test fun dailyListMakesOffscreenHoursAccessibleAndPreservesTheLiveViewport() {
@@ -122,9 +115,11 @@ class SpaceCompassSunDailyPathRenderingTest {
         compose.onNodeWithTag("sun-path-page").assertIsDisplayed()
         val first = path.markers.indexOfFirst { it.event == SpaceCompassSunPathEvent.HOUR }
         compose.onNodeWithTag("sun-path-point-$first").performScrollTo().performClick()
-        compose.onNodeWithTag("sun-path-page").assertDoesNotExist()
-        compose.onNodeWithText(pointCaption(1, "00:00")).assertIsDisplayed()
+        compose.onNodeWithTag("sun-path-page").assertIsDisplayed()
+        compose.onNodeWithTag("sun-path-point-$first").assertIsSelected()
+        compose.onNodeWithContentDescription(resources.getString(R.string.close)).performClick()
         compose.onNodeWithTag("sun-finder-sky").assertIsDisplayed()
+        compose.onNodeWithTag("sun-path-selected").assertDoesNotExist()
     }
     @Test fun dailyListHasNoVisibilityToggleAndClosingItKeepsTheCurve() {
         show()
@@ -142,7 +137,7 @@ class SpaceCompassSunDailyPathRenderingTest {
         show(reliable = false)
         compose.onNodeWithTag("sun-daily-path").assertDoesNotExist()
         compose.onNodeWithTag("sun-path-open").performClick()
-        compose.onNodeWithText(resources.getString(R.string.sun_path_note)).assertIsDisplayed()
+        compose.onNodeWithText(resources.getString(R.string.sun_path_note)).assertDoesNotExist()
         val rise = path.markers.indexOfFirst { it.event == SpaceCompassSunPathEvent.SUNRISE }
         compose.onNodeWithTag("sun-path-point-$rise").performScrollTo().assertIsDisplayed()
     }
@@ -191,65 +186,34 @@ class SpaceCompassSunDailyPathRenderingTest {
         }
     }
 
-    @Test fun portraitSelectionStaysBelowCaptureAndLandscapeKeepsTheSelectionAboveData() {
+    @Test fun pointNavigationUsesAFullPageInPortraitAndLandscapeAndClearsOnBack() {
         val wide = mutableStateOf(false)
-        val dark = mutableStateOf(false)
-        val height = mutableStateOf(380.dp)
-        val fix = Location("synthetic-layout").apply {
-            latitude = 45.0; longitude = 9.0; altitude = 100.0; accuracy = 5f
-        }
+        val fix = Location("synthetic-layout").apply { latitude = 45.0; longitude = 9.0; altitude = 100.0; accuracy = 5f }
         val sun = calculateSpaceCompassSunPosition(hour.timeMs, fix.latitude, fix.longitude, fix.altitude)
         compose.setContent {
             val density = LocalDensity.current
             CompositionLocalProvider(LocalResources provides resources, LocalSpaceCompassTimeFormat provides SpaceCompassTimeFormat.H24,
-                LocalDensity provides if (wide.value) Density(density.density * 0.4f, 1f) else density) {
-                MaterialTheme(colorScheme = if (dark.value) darkColorScheme() else lightColorScheme()) {
-                    val colors = MaterialTheme.colorScheme
-                    Box(if (wide.value) Modifier.size(800.dp, height.value) else Modifier.fillMaxSize()) {
+                LocalDensity provides if (wide.value) Density(density.density * .4f, 1f) else density) {
+                MaterialTheme {
+                    Box(if (wide.value) Modifier.size(800.dp, 380.dp) else Modifier.fillMaxSize()) {
                         SpaceCompassSunFinderContent(SpaceCompassSunFinderReadings(fix, SpaceCompassSunLocationStatus.READY,
-                            facing(sun), true, true), hour.timeMs, colors.onSurface, colors.onSurfaceVariant,
-                            colors.background, onDismissRequest = {})
+                            facing(sun), true, true), hour.timeMs, Color.Black, Color.Gray, Color.White, onDismissRequest = {})
                     }
                 }
             }
         }
-        compose.waitUntil(5_000) { compose.onAllNodesWithTag("sun-path-open").fetchSemanticsNodes().isNotEmpty() }
+        compose.waitUntil(5_000) { compose.onAllNodesWithTag("celestial-current-point").fetchSemanticsNodes().isNotEmpty() }
+        compose.onNode(hasTestTag("celestial-current-point") and hasContentDescription("Sole", substring = true)).performClick()
+        compose.onNodeWithTag("sun-path-current").assertIsDisplayed().assertIsSelected()
+        compose.onNodeWithTag("sun-path-selected").assertDoesNotExist()
+        compose.runOnIdle { wide.value = true }
+        compose.onNodeWithTag("sun-path-page").assertIsDisplayed()
+        compose.onNodeWithTag("sun-path-current").assertIsDisplayed().assertIsSelected()
+        compose.onNodeWithTag("sun-path-selected").assertDoesNotExist()
+        compose.onNodeWithContentDescription(resources.getString(R.string.close)).performClick()
+        compose.onNodeWithTag("sun-finder-sky").assertIsDisplayed()
+        compose.onNodeWithTag("sun-path-selected").assertDoesNotExist()
         compose.onNodeWithTag("sun-path-open").performClick()
-        compose.onNodeWithTag("sun-path-point-0").performScrollTo().performClick()
-        val portraitSelection = compose.onNodeWithTag("sun-path-selected")
-            .assert(hasAnyAncestor(hasTestTag("sun-finder-sky"))).fetchSemanticsNode().boundsInRoot
-        val portraitCapture = compose.onNodeWithTag("capture-panorama").assertIsDisplayed()
-            .fetchSemanticsNode().boundsInRoot
-        assertTrue("Portrait capture stays above the point island", portraitCapture.bottom <= portraitSelection.top)
-        compose.onNodeWithText(pointCaption(1, "00:00")).assertIsDisplayed()
-
-        for (night in listOf(false, true)) for (panelHeight in listOf(380.dp, 700.dp)) {
-            compose.runOnIdle { wide.value = true; dark.value = night; height.value = panelHeight }
-            val selection = compose.onNodeWithTag("sun-path-selected")
-                .assertIsDisplayed().assert(hasAnyAncestor(hasTestTag("celestial-details-column")))
-                .assert(!hasAnyAncestor(hasTestTag("sun-finder-sky"))).fetchSemanticsNode().boundsInRoot
-            val data = compose.onNodeWithTag("sun-finder-details").fetchSemanticsNode().boundsInRoot
-            assertTrue("Selection must be above the azimuth/altitude data", selection.bottom <= data.top)
-            val capture = compose.onNodeWithTag("capture-panorama").assertIsDisplayed()
-                .assert(hasAnyAncestor(hasTestTag("sun-finder-sky"))).fetchSemanticsNode().boundsInRoot
-            val sky = compose.onNodeWithTag("sun-finder-sky").fetchSemanticsNode().boundsInRoot
-            assertTrue("Landscape capture stays in the first sky column", capture.left >= sky.left && capture.right <= sky.right)
-            assertTrue("Landscape capture stays near the bottom", sky.bottom - capture.bottom <= 24f)
-            for (tag in listOf("celestial-distance", "celestial-speed")) {
-                val bounds = compose.onNodeWithTag(tag).assertIsDisplayed()
-                    .assert(hasAnyAncestor(hasTestTag("sun-finder-body-data"))).fetchSemanticsNode().boundsInRoot
-                assertTrue(bounds.left >= data.left && bounds.right <= data.right)
-                assertTrue(bounds.top >= data.top && bounds.bottom <= data.bottom)
-            }
-            assertEquals(1, compose.onAllNodesWithTag("sun-path-selected").fetchSemanticsNodes().size)
-            assertEquals(1, compose.onAllNodesWithTag("celestial-distance").fetchSemanticsNodes().size)
-            compose.onNodeWithText(pointCaption(1, "00:00")).assertIsDisplayed()
-        }
-        compose.onNodeWithContentDescription(resources.getString(R.string.sun_path_next)).performClick()
-        compose.onNodeWithText(pointCaption(2, "01:00")).assertIsDisplayed()
-        compose.runOnIdle { wide.value = false }
-        compose.onNodeWithTag("sun-path-selected").assertIsDisplayed()
-            .assert(hasAnyAncestor(hasTestTag("sun-finder-sky")))
-        compose.onNodeWithText(pointCaption(2, "01:00")).assertIsDisplayed()
+        compose.onAllNodes(isSelected()).assertCountEquals(0)
     }
 }

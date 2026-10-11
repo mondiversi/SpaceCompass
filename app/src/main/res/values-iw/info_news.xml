@@ -1,9 +1,9 @@
 <resources>
     <string name="info_news_title">החידושים האחרונים · %1$s</string>
-    <string name="info_news_star_sky" formatted="false">שומר מסך של כדור הארץ בהשראת Mondiversi, זמין ללא חיבור לרשת עם תאורת יום ולילה.</string>
-    <string name="info_news_texture_downloads" formatted="false">שומר המסך מופעל כברירת מחדל אחרי 5 דקות; ההפעלה וזמן ההמתנה נשמרים.</string>
-    <string name="info_news_weather" formatted="false">תאורה הדרגתית בשחר ובשקיעה עבור השמיים, הקרקע, מזג האוויר והתמונות הפנורמיות.</string>
-    <string name="info_news_viewer_zoom" formatted="false">הפקדים הראשיים מקובצים בפינות; הודעות המצב ממורכזות מתחת לכוונת.</string>
-    <string name="info_news_settings" formatted="false">זום המצלמה קריא יותר לצד כפתור הצילום, עם בחירה ישירה של רמות הזום.</string>
-    <string name="info_news_catalog" formatted="false">יותר מקום לשמות העצמים, פריסה אופקית של 55/45 ועוצמת מוזיקה התחלתית של 50%.</string>
+    <string name="info_news_star_sky" formatted="false">שומר מסך של כדור הארץ במסך מלא, עם שעה מקומית, תאריך וסוללה. נגיעה מחזירה למסך הקודם.</string>
+    <string name="info_news_texture_downloads" formatted="false">שומר המסך משהה חיישנים, GPS, מצלמה ורענון נתונים. עוצמת המוזיקה הראשונית היא 20%.</string>
+    <string name="info_news_weather" formatted="false">הודעות ברורות יותר על כיול והפרעות למצפן; פעולות מיקום רק בעת הצורך.</string>
+    <string name="info_news_viewer_zoom" formatted="false">נגיעה בנקודה במסלול פותחת את המסלול היומי ממורכז עליה, עם הדגשה זמנית.</string>
+    <string name="info_news_settings" formatted="false">כותרת קומפקטית עם עצם, תאריך ואזור זמן; עם נקודות 0–23, המיקום הנוכחי ומופעי הירח.</string>
+    <string name="info_news_catalog" formatted="false">תוויות הצילום כוללות זמנים T+/T−. פקדים ראשיים ופרטי עצמים משופרים.</string>
 </resources>

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="panorama_preview" formatted="false">Panorama</string>
-    <string name="panorama_preparing" formatted="false">Panorama hazırlanıyor…</string>
+    <string name="panorama_preparing" formatted="false">Görsel hazırlanıyor…</string>
     <string name="panorama_save" formatted="false">Kaydet</string>
     <string name="panorama_share" formatted="false">Paylaş</string>
     <string name="panorama_gallery" formatted="false">Görsel galerisi</string>

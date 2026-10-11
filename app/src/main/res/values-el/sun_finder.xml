@@ -17,7 +17,7 @@
     <string name="sun_finder_location_searching">Αναζήτηση θέσης...</string>
     <string name="sun_finder_compass_missing">Δεν υπάρχει διαθέσιμη πυξίδα στη συσκευή.</string>
     <string name="sun_finder_orientation_searching">Ανάγνωση προσανατολισμού...</string>
-    <string name="sun_finder_compass_accuracy">Απομάκρυνε τα μαγνητικά αντικείμενα.</string>
+    <string name="sun_finder_compass_accuracy">Πιθανή μαγνητική παρεμβολή.</string>
     <string name="sun_finder_compass_calibrate">Βαθμονόμησε την πυξίδα σχηματίζοντας ένα 8 στον αέρα με το τηλέφωνο.</string>
     <string name="sun_finder_allow_location">Επίτρεψε την τοποθεσία</string>
     <string name="sun_finder_enable_location">Ενεργοποίησε την τοποθεσία</string>

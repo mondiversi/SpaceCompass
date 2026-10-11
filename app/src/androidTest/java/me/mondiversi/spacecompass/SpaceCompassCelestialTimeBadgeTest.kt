@@ -77,15 +77,15 @@ class SpaceCompassCelestialTimeBadgeTest {
         compose.onNodeWithText(currentCaption("09:01")).assertIsDisplayed()
         val next = path.markers.first { it.event == SpaceCompassSunPathEvent.HOUR && it.timeMs == initialTime + 3_600_000L }
         compose.runOnIdle { pointing.value = facing(next.position) }
-        compose.onNodeWithText(pointCaption(11, "10:00")).assertIsDisplayed()
+        compose.onNodeWithText(pointCaption(10, "10:00")).assertIsDisplayed()
         compose.onNodeWithTag("sun-path-selected").assertDoesNotExist()
     }
     @Test fun anExplicitSelectionDoesNotOverrideTheDotThePhoneIsPointingAt() {
         open()
         val next = path.markers.first { it.event == SpaceCompassSunPathEvent.HOUR && it.timeMs == initialTime + 3_600_000L }
         compose.runOnIdle { selected.value = true; pointing.value = facing(next.position) }
-        compose.onNodeWithText(pointCaption(10, "09:00")).assertIsDisplayed()
-        compose.onNodeWithText(pointCaption(11, "10:00")).assertIsDisplayed()
+        compose.onNodeWithText(pointCaption(9, "09:00")).assertIsDisplayed()
+        compose.onNodeWithText(pointCaption(10, "10:00")).assertIsDisplayed()
     }
     @Test fun lookingAwayHidesTheCaptionButHidingThePathDoesNotHideTheLiveCaption() {
         open()

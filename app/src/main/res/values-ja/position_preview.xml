@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="panorama_preview" formatted="false">パノラマ</string>
-    <string name="panorama_preparing" formatted="false">パノラマを準備中…</string>
+    <string name="panorama_preparing" formatted="false">画像を準備中…</string>
     <string name="panorama_save" formatted="false">保存</string>
     <string name="panorama_share" formatted="false">共有</string>
     <string name="panorama_gallery" formatted="false">画像ギャラリー</string>

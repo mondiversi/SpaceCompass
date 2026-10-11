@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="panorama_preview" formatted="false">Panorama</string>
-    <string name="panorama_preparing" formatted="false">Inaandaa panorama…</string>
+    <string name="panorama_preparing" formatted="false">Inaandaa picha…</string>
     <string name="panorama_save" formatted="false">Hifadhi</string>
     <string name="panorama_share" formatted="false">Shiriki</string>
     <string name="panorama_gallery" formatted="false">Matunzio ya picha</string>

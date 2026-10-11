@@ -65,13 +65,22 @@ function paintWorld(time){
  if(earthRenderer)earthRenderer.render(time,w,h,pixelRatio);
 }
 
-let lastFrame=0;
-function animateWorld(ms){requestAnimationFrame(animateWorld);if(document.hidden||motion.matches||ms-lastFrame<33)return;lastFrame=ms;paintWorld(sceneTime(ms))}
+// A 20 fps idle scene schedules no per-vsync callback between actual draws.
+const idleFrameInterval=50;
+let animationTimer=0,animationFrame=0;
+function stopWorldAnimation(){clearTimeout(animationTimer);cancelAnimationFrame(animationFrame);animationTimer=0;animationFrame=0}
+function scheduleWorldAnimation(){
+ if(document.hidden||motion.matches||animationTimer||animationFrame)return;
+ animationTimer=setTimeout(()=>{animationTimer=0;animationFrame=requestAnimationFrame(ms=>{
+  animationFrame=0;if(document.hidden||motion.matches)return;paintWorld(sceneTime(ms));scheduleWorldAnimation();
+ })},idleFrameInterval);
+}
 window.setNativeLighting=function(night,hour){nativeNight=!!night;if(Number.isFinite(hour))nativeLightHour=((hour%24)+24)%24;updateEnvironment();paintWorld(sceneTime(performance.now()))};
 document.querySelector('.earth-day').src=sceneAssets.earthDay;
 document.querySelector('.earth-night').src=sceneAssets.earthNight;
 updateEnvironment();earthRenderer=createEarthRenderer();resizeWorld();
-addEventListener('resize',resizeWorld);motion.addEventListener('change',()=>paintWorld(motion.matches?0:sceneTime(performance.now())));
-requestAnimationFrame(animateWorld);
-document.addEventListener('visibilitychange',()=>{if(!document.hidden)updateEnvironment()});
+addEventListener('resize',resizeWorld);
+motion.addEventListener('change',()=>{stopWorldAnimation();paintWorld(motion.matches?0:sceneTime(performance.now()));scheduleWorldAnimation()});
+scheduleWorldAnimation();
+document.addEventListener('visibilitychange',()=>{stopWorldAnimation();if(!document.hidden){updateEnvironment();scheduleWorldAnimation()}});
 </script></body></html>

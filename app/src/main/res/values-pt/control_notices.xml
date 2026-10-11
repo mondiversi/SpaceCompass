@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="scene_mode_camera">Modo câmara</string>
+    <string name="scene_mode_sky">Modo céu virtual</string>
+    <string name="scene_weather_on">Efeitos meteorológicos ativados</string>
+    <string name="scene_weather_off">Efeitos meteorológicos desativados</string>
+    <string name="scene_references_on">Referências celestes visíveis</string>
+    <string name="scene_references_off">Referências celestes ocultas</string>
+    <string name="panorama_labels_on">Etiquetas visíveis</string>
+    <string name="panorama_labels_off">Etiquetas ocultas</string>
+    <string name="control_choice_message">%1$s: %2$s</string>
+
+    <string name="scene_scenario_on">Cenário personalizado ativado</string>
+    <string name="scene_scenario_off">Cenário personalizado desativado</string>
+    <string name="scene_objects_on">Objetos ativados</string>
+    <string name="scene_objects_off">Objetos desativados</string>
+</resources>

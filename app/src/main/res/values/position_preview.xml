@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="panorama_preview" formatted="false">Panorama</string>
-    <string name="panorama_preparing" formatted="false">Preparing panorama…</string>
+    <string name="panorama_preparing" formatted="false">Preparing image…</string>
     <string name="panorama_save" formatted="false">Save</string>
     <string name="panorama_share" formatted="false">Share</string>
     <string name="panorama_gallery" formatted="false">Image gallery</string>

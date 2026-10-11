@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="panorama_preview" formatted="false">पैनोरमा</string>
-    <string name="panorama_preparing" formatted="false">पैनोरमा तैयार हो रहा है…</string>
+    <string name="panorama_preparing" formatted="false">चित्र तैयार हो रहा है…</string>
     <string name="panorama_save" formatted="false">सहेजें</string>
     <string name="panorama_share" formatted="false">साझा करें</string>
     <string name="panorama_gallery" formatted="false">चित्र गैलरी</string>

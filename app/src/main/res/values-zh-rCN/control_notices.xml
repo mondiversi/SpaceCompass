@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="scene_mode_camera">相机模式</string>
+    <string name="scene_mode_sky">虚拟天空模式</string>
+    <string name="scene_weather_on">已开启天气效果</string>
+    <string name="scene_weather_off">已关闭天气效果</string>
+    <string name="scene_references_on">已显示天球参考线和参考点</string>
+    <string name="scene_references_off">已隐藏天球参考线和参考点</string>
+    <string name="panorama_labels_on">已显示标签</string>
+    <string name="panorama_labels_off">已隐藏标签</string>
+    <string name="control_choice_message">%1$s：%2$s</string>
+
+    <string name="scene_scenario_on">已启用自定义场景</string>
+    <string name="scene_scenario_off">已停用自定义场景</string>
+    <string name="scene_objects_on">已启用天体</string>
+    <string name="scene_objects_off">已停用天体</string>
+</resources>

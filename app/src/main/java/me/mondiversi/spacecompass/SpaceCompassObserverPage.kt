@@ -98,10 +98,15 @@ internal fun SpaceCompassObserverPage(modifier: Modifier = Modifier) {
             if (leaving) showSpaceCompassBottomMessage(context,
                 resources.getString(R.string.observer_not_saved))
         } else {
-            val changed = observer.apply(resolved.getOrNull())
+            val nextPlan = resolved.getOrNull()
+            val activationNotice = spaceCompassActivationNotice(observer.plan != null, nextPlan != null)
+            val changed = observer.apply(nextPlan)
             editRevision = 0
             validationError = false
-            if (changed) showSpaceCompassBottomMessage(context, resources.getString(R.string.settings_saved))
+            if (changed) activationNotice?.let { active ->
+                showSpaceCompassBottomMessage(context, resources.getString(
+                    if (active) R.string.scene_scenario_on else R.string.scene_scenario_off))
+            }
         }
     }
     // A short pause batches typing; opening the editor alone never rewrites a stored plan.

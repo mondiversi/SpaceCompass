@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="scene_mode_camera">कैमरा मोड</string>
+    <string name="scene_mode_sky">आभासी आकाश मोड</string>
+    <string name="scene_weather_on">मौसम के प्रभाव चालू हैं</string>
+    <string name="scene_weather_off">मौसम के प्रभाव बंद हैं</string>
+    <string name="scene_references_on">खगोलीय संदर्भ दिखाए गए हैं</string>
+    <string name="scene_references_off">खगोलीय संदर्भ छिपाए गए हैं</string>
+    <string name="panorama_labels_on">लेबल दिखाए गए हैं</string>
+    <string name="panorama_labels_off">लेबल छिपाए गए हैं</string>
+    <string name="control_choice_message">%1$s: %2$s</string>
+
+    <string name="scene_scenario_on">कस्टम परिदृश्य चालू है</string>
+    <string name="scene_scenario_off">कस्टम परिदृश्य बंद है</string>
+    <string name="scene_objects_on">खगोलीय पिंड चालू हैं</string>
+    <string name="scene_objects_off">खगोलीय पिंड बंद हैं</string>
+</resources>

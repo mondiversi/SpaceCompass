@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="panorama_preview" formatted="false">פנורמה</string>
-    <string name="panorama_preparing" formatted="false">מכין פנורמה…</string>
+    <string name="panorama_preparing" formatted="false">מכין את התמונה…</string>
     <string name="panorama_save" formatted="false">שמירה</string>
     <string name="panorama_share" formatted="false">שיתוף</string>
     <string name="panorama_gallery" formatted="false">גלריית תמונות</string>

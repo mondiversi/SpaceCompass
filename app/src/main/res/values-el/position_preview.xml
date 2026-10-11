@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="panorama_preview" formatted="false">Πανόραμα</string>
-    <string name="panorama_preparing" formatted="false">Προετοιμασία πανοράματος…</string>
+    <string name="panorama_preparing" formatted="false">Προετοιμασία εικόνας…</string>
     <string name="panorama_save" formatted="false">Αποθήκευση</string>
     <string name="panorama_share" formatted="false">Κοινοποίηση</string>
     <string name="panorama_gallery" formatted="false">Συλλογή εικόνων</string>

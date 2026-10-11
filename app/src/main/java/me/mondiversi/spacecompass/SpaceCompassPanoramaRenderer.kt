@@ -193,7 +193,7 @@ internal fun renderSpaceCompassPanorama(snapshot: SpaceCompassPanoramaSnapshot, 
                 val time = snapshot.markerTimes[marker.timeMs] ?: java.time.Instant.ofEpochMilli(marker.timeMs)
                     .atZone(path.zone).toLocalTime().let { "%02d:%02d".format(java.util.Locale.ROOT, it.hour, it.minute) }
                 // Read elevation from this object's marker, not the timestamp shared by other paths.
-                val label = formatSpaceCompassPanoramaPathPointLabel(time, marker, snapshot.formatting, snapshot.pointEventNames)
+                val label = formatSpaceCompassPanoramaPathPointLabel(time, marker, snapshot.formatting, snapshot.pointEventNames, snapshot.timeMs)
                 pointLabels += SpaceCompassPanoramaTimeLabel(label, p, markerTint,
                     marker.events.any { it != SpaceCompassSunPathEvent.HOUR })
             }

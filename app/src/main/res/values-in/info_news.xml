@@ -1,9 +1,9 @@
 <resources>
     <string name="info_news_title">Perubahan terbaru · %1$s</string>
-    <string name="info_news_star_sky" formatted="false">Screensaver Bumi terinspirasi Mondiversi, tersedia offline dengan pencahayaan siang dan malam.</string>
-    <string name="info_news_texture_downloads" formatted="false">Screensaver aktif secara default setelah 5 menit; aktivasi dan waktu tunggu disimpan.</string>
-    <string name="info_news_weather" formatted="false">Pencahayaan fajar dan senja bertahap untuk langit, tanah, cuaca, dan hasil panorama.</string>
-    <string name="info_news_viewer_zoom" formatted="false">Kontrol utama dikelompokkan di sudut; pesan status terpusat di bawah bidik.</string>
-    <string name="info_news_settings" formatted="false">Zoom kamera lebih jelas di samping tombol rana, dengan pilihan tingkat secara langsung.</string>
-    <string name="info_news_catalog" formatted="false">Lebih banyak ruang untuk nama objek, tata letak lanskap 55/45, dan volume awal musik 50%.</string>
+    <string name="info_news_star_sky" formatted="false">Screensaver Bumi layar penuh dengan waktu lokal, tanggal dan baterai. Ketuk untuk kembali.</string>
+    <string name="info_news_texture_downloads" formatted="false">Screensaver menjeda sensor, GPS, kamera dan pembaruan data. Volume awal musik 20%.</string>
+    <string name="info_news_weather" formatted="false">Pesan kalibrasi dan gangguan kompas lebih jelas; tindakan lokasi hanya saat diperlukan.</string>
+    <string name="info_news_viewer_zoom" formatted="false">Ketuk titik lintasan untuk membuka jalur harian yang berpusat padanya, dengan sorotan sementara.</string>
+    <string name="info_news_settings" formatted="false">Judul ringkas dengan objek, tanggal dan zona waktu; titik 0–23, posisi saat ini dan fase Bulan tetap tersedia.</string>
+    <string name="info_news_catalog" formatted="false">Label tangkapan menyertakan waktu T+/T−. Kontrol utama dan detail objek ditingkatkan.</string>
 </resources>

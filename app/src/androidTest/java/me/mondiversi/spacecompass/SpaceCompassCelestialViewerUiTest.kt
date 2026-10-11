@@ -146,6 +146,14 @@ class SpaceCompassCelestialViewerUiTest {
                     direction.value = if (rtl) LayoutDirection.Rtl else LayoutDirection.Ltr
                 }
                 val root = compose.onNodeWithTag("celestial-viewer").fetchSemanticsNode().boundsInRoot
+                compose.onNodeWithTag("celestial-view-title").assertTextEquals(resources.getString(
+                    R.string.celestial_details_title))
+                val name = compose.onNodeWithText(resources.getString(R.string.celestial_view_name))
+                    .assertIsDisplayed().fetchSemanticsNode().boundsInRoot
+                compose.onNodeWithText(resources.getString(SpaceCompassCelestialBody.ISS.nameResource)).assertIsDisplayed()
+                val diameter = compose.onNodeWithText(resources.getString(R.string.celestial_view_diameter))
+                    .assertIsDisplayed().fetchSemanticsNode().boundsInRoot
+                assertTrue("Object name precedes diameter", name.bottom <= diameter.top)
                 val toolbar = compose.onNodeWithTag("celestial-view-toolbar").fetchSemanticsNode().boundsInRoot
                 val model = compose.onNodeWithTag("celestial-view-model").fetchSemanticsNode().boundsInRoot
                 val info = compose.onNodeWithTag("celestial-view-information").fetchSemanticsNode().boundsInRoot

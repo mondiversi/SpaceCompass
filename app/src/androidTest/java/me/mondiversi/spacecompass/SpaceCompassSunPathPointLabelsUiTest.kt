@@ -58,10 +58,10 @@ class SpaceCompassSunPathPointLabelsUiTest {
     @Test fun numberedRowsAndNamedEventsStayDistinctEvenAtTheSameInstant() {
         open()
         compose.onNodeWithTag("sun-path-open").performClick()
-        for (caption in listOf("Punto 13", "Sorge", "Culmine", "Tramonta", "Minimo")) {
-            compose.onNodeWithText("$caption · 12:00").performScrollTo().assertIsDisplayed()
+        for (caption in listOf("Punto 12", "Sorge", "Culmine", "Tramonta", "Minimo")) {
+            compose.onNodeWithText(caption).performScrollTo().assertIsDisplayed()
         }
-        compose.onNodeWithText("Punto 24 · 23:00").performScrollTo().assertIsDisplayed()
+        compose.onNodeWithText("Punto 23").performScrollTo().assertIsDisplayed()
     }
 
     @Test fun eventSelectionUsesItsNameNotTheOrdinalOfTheOverlappingRegularPoint() {
@@ -98,12 +98,12 @@ class SpaceCompassSunPathPointLabelsUiTest {
         }
     }
 
-    @Test fun livePositionRemainsExplicitlyCurrentEvenWhenItEqualsPointThirteen() {
+    @Test fun livePositionRemainsExplicitlyCurrentEvenWhenItEqualsPointTwelve() {
         open()
         compose.runOnIdle { state.selectCurrent(path.body, hour) }
         compose.onNodeWithText("Sole · Posizione attuale · 12:00").assertIsDisplayed()
         compose.runOnIdle { state.select(path, hour) }
-        compose.onNode(hasText("Sole · Punto 13 · 12:00") and hasAnyAncestor(hasTestTag("sun-path-selected")))
+        compose.onNode(hasText("Sole · Punto 12 · 12:00") and hasAnyAncestor(hasTestTag("sun-path-selected")))
             .assertIsDisplayed()
     }
 
@@ -112,7 +112,7 @@ class SpaceCompassSunPathPointLabelsUiTest {
         scene.value = moon
         open()
         compose.onNodeWithTag("celestial-badge-body").assertTextEquals("Luna")
-        for ((point, caption) in listOf(hour to "Punto 13",
+        for ((point, caption) in listOf(hour to "Punto 12",
                 hour.copy(event = SpaceCompassSunPathEvent.CULMINATION) to "Culmine")) {
             compose.runOnIdle { state.select(moon, point) }
             compose.onNodeWithTag("celestial-selected-caption").assertTextEquals("$caption · 12:00")

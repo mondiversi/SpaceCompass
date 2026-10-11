@@ -261,3 +261,20 @@ can retain its minimum readable width. Object navigation keeps symmetric visible
 chevrons and existing 48 dp targets, reserving more of the header for its name.
 Version 1.2.5 updates all twenty news summaries and preserves external texture pack
 1.1, cached images and scientific image/ephemeris trust policies.
+
+
+## Release 1.2.6: retained pages and direct point navigation
+
+SpaceCompassScreensaverContentLifecycle isolates page work from the activity-owned
+saver/audio lifecycle. SpaceCompassScreensaverWindow owns immersive bars and restores
+them on dismissal; Footer/Info handle time/date/battery without notification access.
+SpaceCompassSunSensorWatchdog performs monotonic sample-freshness checks and bounded
+registration recovery; reliability classification does not assert magnetic causation.
+SpaceCompassControlNotices limits feedback to meaningful state transitions.
+SpaceCompassSceneOptics keeps the reticle within the title/content viewport.
+
+Sky markers pass the complete current-point map, not only projected visible targets,
+into daily navigation. SpaceCompassDailyPathScroll clamps row centering to the real
+scroll extent. Fixed object/date/angle headings are layered above the clipped list;
+temporary selected-row state clears on return. Shared capture label formatting uses
+the frozen capture instant and the requested preview/export number profile.

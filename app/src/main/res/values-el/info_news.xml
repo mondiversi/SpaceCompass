@@ -1,9 +1,9 @@
 <resources>
     <string name="info_news_title">Τελευταία νέα · %1$s</string>
-    <string name="info_news_star_sky" formatted="false">Προφύλαξη οθόνης με τη Γη, εμπνευσμένη από το Mondiversi, διαθέσιμη εκτός σύνδεσης με φωτισμό ημέρας και νύχτας.</string>
-    <string name="info_news_texture_downloads" formatted="false">Η προφύλαξη οθόνης ενεργοποιείται από προεπιλογή μετά από 5 λεπτά· αποθηκεύονται η ενεργοποίηση και η καθυστέρηση.</string>
-    <string name="info_news_weather" formatted="false">Σταδιακός φωτισμός αυγής και δύσης για τον ουρανό, το έδαφος, τον καιρό και τις πανοραμικές λήψεις.</string>
-    <string name="info_news_viewer_zoom" formatted="false">Τα κύρια χειριστήρια ομαδοποιούνται στις γωνίες· τα μηνύματα κατάστασης εμφανίζονται κεντραρισμένα κάτω από το στόχαστρο.</string>
-    <string name="info_news_settings" formatted="false">Πιο ευανάγνωστο ζουμ κάμερας δίπλα στο κουμπί λήψης, με άμεση επιλογή επιπέδων.</string>
-    <string name="info_news_catalog" formatted="false">Περισσότερος χώρος για ονόματα αντικειμένων, οριζόντια διάταξη 55/45 και αρχική ένταση μουσικής στο 50%.</string>
+    <string name="info_news_star_sky" formatted="false">Προφύλαξη οθόνης με τη Γη σε πλήρη οθόνη, τοπική ώρα, ημερομηνία και μπαταρία. Αγγίξτε για επιστροφή.</string>
+    <string name="info_news_texture_downloads" formatted="false">Η προφύλαξη οθόνης διακόπτει αισθητήρες, GPS, κάμερα και ανανέωση δεδομένων. Αρχική ένταση μουσικής 20%.</string>
+    <string name="info_news_weather" formatted="false">Σαφέστερες ειδοποιήσεις για βαθμονόμηση και παρεμβολές πυξίδας· ενέργειες τοποθεσίας μόνο όταν χρειάζονται.</string>
+    <string name="info_news_viewer_zoom" formatted="false">Αγγίξτε ένα σημείο τροχιάς για να ανοίξετε την ημερήσια διαδρομή κεντραρισμένη σε αυτό, με προσωρινή επισήμανση.</string>
+    <string name="info_news_settings" formatted="false">Συμπαγής κεφαλίδα με αντικείμενο, ημερομηνία και ζώνη ώρας· διατηρούνται τα σημεία 0–23, η τρέχουσα θέση και οι φάσεις της Σελήνης.</string>
+    <string name="info_news_catalog" formatted="false">Οι ετικέτες λήψεων περιλαμβάνουν χρόνους T+/T−. Βελτιωμένα κύρια χειριστήρια και λεπτομέρειες αντικειμένων.</string>
 </resources>

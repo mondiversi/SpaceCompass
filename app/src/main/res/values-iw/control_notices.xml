@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="scene_mode_camera">מצב מצלמה</string>
+    <string name="scene_mode_sky">מצב שמיים וירטואליים</string>
+    <string name="scene_weather_on">אפקטי מזג האוויר הופעלו</string>
+    <string name="scene_weather_off">אפקטי מזג האוויר הושבתו</string>
+    <string name="scene_references_on">סימוני הייחוס השמימיים מוצגים</string>
+    <string name="scene_references_off">סימוני הייחוס השמימיים מוסתרים</string>
+    <string name="panorama_labels_on">התוויות מוצגות</string>
+    <string name="panorama_labels_off">התוויות מוסתרות</string>
+    <string name="control_choice_message">%1$s: %2$s</string>
+
+    <string name="scene_scenario_on">התרחיש המותאם הופעל</string>
+    <string name="scene_scenario_off">התרחיש המותאם הושבת</string>
+    <string name="scene_objects_on">העצמים הופעלו</string>
+    <string name="scene_objects_off">העצמים הושבתו</string>
+</resources>

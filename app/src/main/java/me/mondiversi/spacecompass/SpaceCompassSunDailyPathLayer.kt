@@ -86,8 +86,9 @@ internal fun SpaceCompassSunDailyPathLayer(
                 detectTapGestures { tap ->
                     tappedSpaceCompassSunPathPoint(currentPoints, SpaceCompassSunScenePoint(tap.x.toDouble(), tap.y.toDouble()),
                         radius.toDouble())?.let {
-                            if (it == currentLivePoint) state.selectCurrent(currentPath.body, it)
-                            else state.select(currentPath, it)
+                            if (it == currentLivePoint) state.openCurrent(currentPath.body, it, currentPath)
+                            else state.openPoint(currentPath, it, currentLivePoint?.let { live ->
+                                spaceCompassCurrentPathPoint(currentPath.body, live.timeMs, live.position) })
                         }
                 }
             })) {

@@ -1,9 +1,9 @@
 <resources>
     <string name="info_news_title">Последние новости · %1$s</string>
-    <string name="info_news_star_sky" formatted="false">Заставка с Землёй в стиле Mondiversi, работающая офлайн с дневным и ночным освещением.</string>
-    <string name="info_news_texture_downloads" formatted="false">Заставка по умолчанию включается через 5 минут; включение и время ожидания сохраняются.</string>
-    <string name="info_news_weather" formatted="false">Плавное освещение на рассвете и закате для неба, земли, погоды и панорамных снимков.</string>
-    <string name="info_news_viewer_zoom" formatted="false">Основные кнопки сгруппированы по углам; сообщения состояния расположены по центру под прицелом.</string>
-    <string name="info_news_settings" formatted="false">Более читаемое увеличение камеры рядом с кнопкой съёмки, с прямым выбором уровней.</string>
-    <string name="info_news_catalog" formatted="false">Больше места для названий объектов, горизонтальная компоновка 55/45 и начальная громкость музыки 50%.</string>
+    <string name="info_news_star_sky" formatted="false">Полноэкранная заставка с Землёй, местным временем, датой и зарядом батареи. Коснитесь для возврата.</string>
+    <string name="info_news_texture_downloads" formatted="false">Заставка приостанавливает датчики, GPS, камеру и обновление данных. Начальная громкость музыки — 20%.</string>
+    <string name="info_news_weather" formatted="false">Более понятные сообщения о калибровке и помехах компаса; действия с местоположением только при необходимости.</string>
+    <string name="info_news_viewer_zoom" formatted="false">Нажмите точку траектории, чтобы открыть суточный путь с центром на ней и временным выделением.</string>
+    <string name="info_news_settings" formatted="false">Компактный заголовок с объектом, датой и часовым поясом; точки 0–23, текущая позиция и фазы Луны сохранены.</string>
+    <string name="info_news_catalog" formatted="false">Подписи снимков включают интервалы T+/T−. Улучшены основные кнопки и сведения об объектах.</string>
 </resources>

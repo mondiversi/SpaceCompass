@@ -1,6 +1,9 @@
 package me.mondiversi.spacecompass
 
-/** Number only regular markers in time order; named events never consume an ordinal. */
+import java.time.Instant
+import java.time.ZoneId
+
+/** Daily hourly markers use their local hour; orbital samples count from zero. Named events stay named. */
 internal class SpaceCompassSunPathPointNames(
     markers: List<SpaceCompassSunPathPoint>,
     private val rise: String,
@@ -8,13 +11,16 @@ internal class SpaceCompassSunPathPointNames(
     private val set: String,
     private val minimum: String,
     val current: String,
+    hourlyZone: ZoneId? = null,
     private val numbered: (Int) -> String
 ) {
     private val numbers = markers.asSequence()
         .filter { it.event == SpaceCompassSunPathEvent.HOUR }
         .sortedBy { it.timeMs }
         .distinctBy { it.timeMs }
-        .mapIndexed { index, point -> point.timeMs to index + 1 }
+        .mapIndexed { index, point ->
+            point.timeMs to (hourlyZone?.let { Instant.ofEpochMilli(point.timeMs).atZone(it).hour } ?: index)
+        }
         .toMap()
 
     fun name(point: SpaceCompassSunPathPoint): String {

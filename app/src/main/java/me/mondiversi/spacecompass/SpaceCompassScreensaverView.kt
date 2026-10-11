@@ -5,6 +5,7 @@ import android.graphics.Color
 import android.util.Base64
 import android.view.MotionEvent
 import android.view.View
+import android.view.Gravity
 import android.webkit.WebResourceRequest
 import android.webkit.WebResourceResponse
 import android.webkit.WebSettings
@@ -12,6 +13,8 @@ import android.webkit.WebView
 import android.webkit.WebViewClient
 import android.widget.FrameLayout
 import java.io.ByteArrayInputStream
+import androidx.core.view.ViewCompat
+import androidx.core.view.WindowInsetsCompat
 
 /** Trusted, bundled animation only: no navigation, network, audio or JavaScript bridge. */
 internal class SpaceCompassScreensaverView(context: Context, dark: Boolean, lightHour: Double, elapsedSeconds: Double,
@@ -49,13 +52,27 @@ internal class SpaceCompassScreensaverView(context: Context, dark: Boolean, ligh
         }
     }
 
+    private val footer = SpaceCompassScreensaverFooter(context)
+    private var safeLeft = 0
+    private var safeRight = 0
+    private var safeBottom = 0
+
     init {
         setBackgroundColor(Color.rgb(2, 5, 12))
         isClickable = true
         isFocusable = true
         importantForAccessibility = View.IMPORTANT_FOR_ACCESSIBILITY_YES
+        // The scene has its own solar lighting; native white text must never be auto-inverted.
+        if (android.os.Build.VERSION.SDK_INT >= 29) isForceDarkAllowed = false
         setOnClickListener { onDismiss() }
         addView(web, LayoutParams(LayoutParams.MATCH_PARENT, LayoutParams.MATCH_PARENT))
+        addView(footer)
+        ViewCompat.setOnApplyWindowInsetsListener(this) { _, insets ->
+            val cutout = insets.getInsets(WindowInsetsCompat.Type.displayCutout())
+            safeLeft = cutout.left; safeRight = cutout.right; safeBottom = cutout.bottom
+            layoutFooter()
+            insets
+        }
         fun image(name: String) = "data:image/webp;base64," + Base64.encodeToString(
             context.assets.open("screensaver/$name.webp").use { it.readBytes() }, Base64.NO_WRAP)
         val html = context.assets.open("screensaver/mondiversi-space.html").bufferedReader().use { it.readText() }
@@ -66,6 +83,27 @@ internal class SpaceCompassScreensaverView(context: Context, dark: Boolean, ligh
             .replace("__ELAPSED_SECONDS__", elapsedSeconds.toString())
         web.loadDataWithBaseURL("https://spacecompass.invalid/screensaver/", html, "text/html", "UTF-8", null)
     }
+
+    override fun onSizeChanged(width: Int, height: Int, oldWidth: Int, oldHeight: Int) {
+        super.onSizeChanged(width, height, oldWidth, oldHeight)
+        footer.resize(width, height)
+        layoutFooter()
+        post { footer.refreshAfterResize() }
+    }
+
+    private fun layoutFooter() {
+        val margin = (16 * resources.displayMetrics.density).toInt()
+        // Symmetric safe margins keep the stacked clock centered even with a side cutout.
+        val sideMargin = maxOf(safeLeft, safeRight) + margin
+        footer.layoutParams = LayoutParams(LayoutParams.WRAP_CONTENT, LayoutParams.WRAP_CONTENT,
+            Gravity.BOTTOM or Gravity.CENTER_HORIZONTAL).apply {
+            leftMargin = sideMargin
+            rightMargin = sideMargin
+            bottomMargin = safeBottom + margin
+        }
+    }
+
+    fun updateInfo(info: SpaceCompassScreensaverInfo) { footer.update(info) }
 
     override fun onInterceptTouchEvent(event: MotionEvent?) = true
     override fun onTouchEvent(event: MotionEvent): Boolean {

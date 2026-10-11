@@ -42,10 +42,12 @@ internal fun SpaceCompassScrollingText(
 ) {
     val scrollState = rememberScrollState()
     val rtl = LocalLayoutDirection.current == LayoutDirection.Rtl
+    val paused = LocalSpaceCompassScreensaverActive.current
     val fadeLeft = if (rtl) scrollState.canScrollForward else scrollState.canScrollBackward
     val fadeRight = if (rtl) scrollState.canScrollBackward else scrollState.canScrollForward
 
-    LaunchedEffect(text, scrollState.maxValue, rtl) {
+    LaunchedEffect(text, scrollState.maxValue, rtl, paused) {
+        if (paused) return@LaunchedEffect
         val maximum = scrollState.maxValue
         scrollState.scrollTo(0)
         if (maximum <= 0) return@LaunchedEffect

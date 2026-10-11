@@ -7,12 +7,12 @@ are present in the twenty interface languages; the percentage follows the select
 number format. Activation and volume show the existing short settings notification.
 The disabled island shows only its activation heading. The divider, description and
 volume controls reveal/collapse together over 300 ms with the same top-anchored
-easing/fade as UVIR. Scenario toggle islands use the shared transition too; exiting
+easing/fade as the other settings cards. Scenario toggle islands use the shared transition too; exiting
 controls lose touch and accessibility actions immediately.
 
-Fresh installations have music enabled and volume at 50%. A saved disabled choice
+Fresh installations have music enabled and volume at 20%. A saved disabled choice
 remains disabled after updates. The volume slider uses ten-percent steps, matching
-the UVIR slider. Preferences store the
+the other stepped controls. Preferences store the
 enabled choice and completed volume gestures; dragging previews volume immediately
 without writing each animation frame to disk. Leaving the settings island clears
 uncommitted preview volume. The device media volume is never modified.
@@ -26,7 +26,7 @@ and abandons focus. Late preparation/failure callbacks cannot restart a stopped 
 superseded session. Synthesis phase and reverb state persist across ordinary pauses;
 resuming smoothly raises gain without changing device media volume.
 
-The original Mondiversi website space score is synthesized continuously: the same
+The original ambient space score is synthesized continuously: the same
 four MIDI-note chords begin every 19 seconds with 26-second pad envelopes (4.8-second
 attack and 7-second release), paired gently detuned sine voices, and eight sparse
 bell notes every 8.5 seconds. Chords overlap rather than restarting a recorded loop.

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="scene_mode_camera">Cameramodus</string>
+    <string name="scene_mode_sky">Virtuele hemel</string>
+    <string name="scene_weather_on">Weerseffecten ingeschakeld</string>
+    <string name="scene_weather_off">Weerseffecten uitgeschakeld</string>
+    <string name="scene_references_on">Hemelreferenties zichtbaar</string>
+    <string name="scene_references_off">Hemelreferenties verborgen</string>
+    <string name="panorama_labels_on">Labels zichtbaar</string>
+    <string name="panorama_labels_off">Labels verborgen</string>
+    <string name="control_choice_message">%1$s: %2$s</string>
+
+    <string name="scene_scenario_on">Aangepast scenario ingeschakeld</string>
+    <string name="scene_scenario_off">Aangepast scenario uitgeschakeld</string>
+    <string name="scene_objects_on">Objecten ingeschakeld</string>
+    <string name="scene_objects_off">Objecten uitgeschakeld</string>
+</resources>

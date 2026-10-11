@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="scene_mode_camera">Λειτουργία κάμερας</string>
+    <string name="scene_mode_sky">Λειτουργία εικονικού ουρανού</string>
+    <string name="scene_weather_on">Τα καιρικά εφέ ενεργοποιήθηκαν</string>
+    <string name="scene_weather_off">Τα καιρικά εφέ απενεργοποιήθηκαν</string>
+    <string name="scene_references_on">Οι ουράνιες αναφορές εμφανίζονται</string>
+    <string name="scene_references_off">Οι ουράνιες αναφορές αποκρύφτηκαν</string>
+    <string name="panorama_labels_on">Οι ετικέτες εμφανίζονται</string>
+    <string name="panorama_labels_off">Οι ετικέτες αποκρύφτηκαν</string>
+    <string name="control_choice_message">%1$s: %2$s</string>
+
+    <string name="scene_scenario_on">Το προσαρμοσμένο σενάριο ενεργοποιήθηκε</string>
+    <string name="scene_scenario_off">Το προσαρμοσμένο σενάριο απενεργοποιήθηκε</string>
+    <string name="scene_objects_on">Τα αντικείμενα ενεργοποιήθηκαν</string>
+    <string name="scene_objects_off">Τα αντικείμενα απενεργοποιήθηκαν</string>
+</resources>

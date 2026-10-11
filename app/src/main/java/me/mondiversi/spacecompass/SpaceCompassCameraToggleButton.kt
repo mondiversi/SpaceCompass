@@ -6,6 +6,7 @@ import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.material3.Icon
+import androidx.compose.material3.LocalContentColor
 import androidx.compose.material3.IconButtonDefaults
 import androidx.compose.material3.IconToggleButton
 import androidx.compose.material3.Surface
@@ -16,23 +17,28 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.platform.testTag
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
+import androidx.compose.ui.semantics.contentDescription
+import androidx.compose.ui.semantics.semantics
 import androidx.compose.ui.unit.dp
 
-/** Camera opt-in shares the active accent and circular shape of the other sky toggles. */
+/** Show the current scene mode; the shutter remains a separate capture action. */
 @Composable
 internal fun SpaceCompassCameraToggleButton(checked: Boolean, onCheckedChange: (Boolean) -> Unit,
     color: Color, background: Color) {
-    val tint = spaceCompassFloatingControlTint(color, checked)
+    val label = stringResource(if (checked) R.string.camera_disable else R.string.camera_enable)
     SpaceCompassFloatingControlHitRegion {
         Surface(Modifier.spaceCompassFloatingControlVisual().size(48.dp), shape = CircleShape, color = background.copy(alpha = .94f),
-            contentColor = tint, border = BorderStroke(1.dp, tint.copy(alpha = .35f)), shadowElevation = 3.dp) {
+            contentColor = color, border = BorderStroke(1.dp, color.copy(alpha = .35f)), shadowElevation = 3.dp) {
             Box(contentAlignment = Alignment.Center) {
                 IconToggleButton(checked = checked, onCheckedChange = onCheckedChange,
-                    modifier = Modifier.fillMaxSize().testTag("toggle-camera"),
-                    colors = IconButtonDefaults.iconToggleButtonColors(contentColor = color, checkedContentColor = tint)) {
-                    Icon(painterResource(if (checked) R.drawable.ic_camera else R.drawable.ic_camera_off),
-                        stringResource(if (checked) R.string.camera_disable else R.string.camera_enable),
-                        Modifier.size(26.dp))
+                    modifier = Modifier.fillMaxSize().testTag("toggle-camera")
+                        .semantics { contentDescription = label },
+                    colors = IconButtonDefaults.iconToggleButtonColors(contentColor = color, checkedContentColor = color)) {
+                    if (checked) {
+                        Icon(painterResource(R.drawable.ic_camera), null, Modifier.size(26.dp))
+                    } else {
+                        SpaceCompassSettingsMenuIcon("panorama", LocalContentColor.current, Modifier.size(26.dp))
+                    }
                 }
             }
         }

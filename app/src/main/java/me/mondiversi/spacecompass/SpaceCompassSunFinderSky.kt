@@ -85,13 +85,20 @@ internal fun SpaceCompassSunPointingViewport(
     topStartActions: @Composable (Modifier) -> Unit = {},
     topEndActions: @Composable (Modifier) -> Unit = {},
     selectedPanelExpanded: Boolean = true,
-    topContentInset: androidx.compose.ui.unit.Dp = 0.dp
+    topContentInset: androidx.compose.ui.unit.Dp = 0.dp,
+    projectionTopInset: androidx.compose.ui.unit.Dp = 0.dp
 ) {
     BoxWithConstraints(modifier.testTag("sun-finder-sky").semantics { contentDescription = description }) {
         val density = LocalDensity.current
         val rtl = LocalLayoutDirection.current == LayoutDirection.Rtl
         val width = with(density) { maxWidth.toPx().toDouble() }
         val height = with(density) { maxHeight.toPx().toDouble() }
+        val scenePerspective = remember(width, height, projectionTopInset, perspective) {
+            spaceCompassSceneDrawingPerspective(width, height,
+                with(density) { projectionTopInset.toPx().toDouble() }, perspective)
+        }
+        val reticleCenter = SpaceCompassSunScenePoint(width * (scenePerspective?.principalX ?: .5),
+            height * (scenePerspective?.principalY ?: .5))
         var menuSize by remember { mutableStateOf(IntSize.Zero) }
         var noticeSize by remember { mutableStateOf(IntSize.Zero) }
         var panelSize by remember { mutableStateOf(IntSize.Zero) }
@@ -103,9 +110,9 @@ internal fun SpaceCompassSunPointingViewport(
             (dailyPath?.let { mapOf(body to it) } ?: emptyMap())
         val positions = overlays.mapNotNull { (candidate, overlay) -> overlay.observation?.position?.let { candidate to it } }.toMap() +
             (sun?.let { mapOf(body to it) } ?: emptyMap())
-        val projections = remember(positions, orientation, maxWidth, maxHeight, perspective) {
+        val projections = remember(positions, orientation, maxWidth, maxHeight, scenePerspective) {
             if (orientation == null) emptyMap() else positions.mapValues { (_, position) ->
-                val projected = projectSpaceCompassSun(position, orientation, maxWidth.value.toDouble(), maxHeight.value.toDouble(), perspective)
+                val projected = projectSpaceCompassSun(position, orientation, maxWidth.value.toDouble(), maxHeight.value.toDouble(), scenePerspective)
                 val radius = SPACE_COMPASS_CELESTIAL_LIVE_PREVIEW_SIZE_DP / 2
                 // A partly clipped miniature becomes a full directional locator until it fits inside the sky.
                 projected.copy(visible = projected.visible && projected.x >= radius && projected.y >= radius &&
@@ -114,14 +121,14 @@ internal fun SpaceCompassSunPointingViewport(
         }
         val current = timeMs?.let { moment -> positions.mapValues { SpaceCompassSunPathPoint(moment, it.value) } }.orEmpty()
         val moonPhase = rememberSpaceCompassMoonMarkerPhase(timeMs.takeIf { SpaceCompassCelestialBody.MOON in positions })
-        val targets = remember(paths, current, orientation, compassReliable, width, height, perspective) {
-            projectSpaceCompassCelestialSceneTargets(paths, current, orientation.takeIf { compassReliable }, width, height, perspective)
+        val targets = remember(paths, current, orientation, compassReliable, width, height, scenePerspective) {
+            projectSpaceCompassCelestialSceneTargets(paths, current, orientation.takeIf { compassReliable }, width, height, scenePerspective)
         }
         val focused = focusedSpaceCompassCelestialSceneTarget(targets, width, height,
-            with(density) { SPACE_COMPASS_CELESTIAL_RETICLE_RADIUS_DP.dp.toPx().toDouble() })
+            with(density) { SPACE_COMPASS_CELESTIAL_RETICLE_RADIUS_DP.dp.toPx().toDouble() }, scenePerspective)
         val padding = with(density) { 4.dp.toPx().toDouble() }
         // The reticle's outer arms end at 32 dp; keep an eight-dp gap before notices.
-        val noticeTopInset = maxHeight / 2 + 40.dp
+        val noticeTopInset = with(density) { reticleCenter.y.toFloat().toDp() } + 40.dp
         val exclusions = buildList {
             addAll(timeBadgeExclusions)
             // Paths can pass beneath the header, while captions and edge locators avoid it.
@@ -174,39 +181,40 @@ internal fun SpaceCompassSunPointingViewport(
             SpaceCompassSunSceneFrame(it.projection.x - radius, it.projection.y - radius, radius * 2, radius * 2)
         } + with(density) {
             val radius = 34.dp.toPx().toDouble()
-            listOf(SpaceCompassSunSceneFrame(width / 2 - radius, height / 2 - radius, radius * 2, radius * 2))
+            listOf(SpaceCompassSunSceneFrame(reticleCenter.x - radius, reticleCenter.y - radius, radius * 2, radius * 2))
         }
-        SpaceCompassSkyReferenceLayer(observerLatitude, timeMs, orientation.takeIf { compassReliable }, perspective,
+        SpaceCompassSkyReferenceLayer(observerLatitude, timeMs, orientation.takeIf { compassReliable }, scenePerspective,
             guideExclusions, enabled = showSkyReferences, observerAltitude = observerAltitude) {
             paths.forEach { (candidate, path) -> key(candidate) {
                 SpaceCompassSunDailyPathLayer(path, orientation.takeIf { compassReliable }, dailyPathUiState,
                     primaryText, secondaryText, backgroundColor, showSelectedPanel = false, showActions = false,
                     interactive = false, pathTint = spaceCompassCelestialPathTint(candidate),
-                    highlightedPoint = focused?.takeIf { it.body == candidate && !it.isCurrent }?.point, perspective = perspective)
+                    highlightedPoint = focused?.takeIf { it.body == candidate && !it.isCurrent }?.point, perspective = scenePerspective)
             } }
             val projection = projections[body]
             val appearance = sun?.let { spaceCompassSunAppearance(it.elevationDegrees, rising) }
             val aligned = compassAccurate && compassReliable && projection?.visible == true && projection.separationDegrees <= 3.0
-            Canvas(Modifier.fillMaxSize()) {
+            Canvas(Modifier.fillMaxSize().testTag("sun-finder-reticle")) {
+                val aim = Offset(reticleCenter.x.toFloat(), reticleCenter.y.toFloat())
                 val sunTint = appearance?.let { Color(it.edgeArgb) } ?: Color(0xFFFFD84D)
                 val reticle = if (aligned) sunTint else Color.White
-                drawCircle(Color.Black.copy(alpha = 0.30f), SPACE_COMPASS_CELESTIAL_RETICLE_RADIUS_DP.dp.toPx(), center, style = Stroke(3.dp.toPx()))
-                drawCircle(reticle, SPACE_COMPASS_CELESTIAL_RETICLE_RADIUS_DP.dp.toPx(), center, style = Stroke(1.5.dp.toPx()))
+                drawCircle(Color.Black.copy(alpha = 0.30f), SPACE_COMPASS_CELESTIAL_RETICLE_RADIUS_DP.dp.toPx(), aim, style = Stroke(3.dp.toPx()))
+                drawCircle(reticle, SPACE_COMPASS_CELESTIAL_RETICLE_RADIUS_DP.dp.toPx(), aim, style = Stroke(1.5.dp.toPx()))
                 val inner = 24.dp.toPx(); val outer = 32.dp.toPx()
                 listOf(Offset(1f, 0f), Offset(-1f, 0f), Offset(0f, 1f), Offset(0f, -1f)).forEach {
-                    drawLine(Color.Black.copy(alpha = 0.30f), center + it * inner, center + it * outer, 3.dp.toPx(), StrokeCap.Round)
-                    drawLine(reticle, center + it * inner, center + it * outer, 1.5.dp.toPx(), StrokeCap.Round)
+                    drawLine(Color.Black.copy(alpha = 0.30f), aim + it * inner, aim + it * outer, 3.dp.toPx(), StrokeCap.Round)
+                    drawLine(reticle, aim + it * inner, aim + it * outer, 1.5.dp.toPx(), StrokeCap.Round)
                 }
             }
-            SpaceCompassCelestialSceneInteraction(targets, focused, dailyPathUiState, timeMs, orientation,
+            SpaceCompassCelestialSceneInteraction(targets, current, focused, dailyPathUiState, timeMs, orientation,
                 primaryText, secondaryText, backgroundColor, exclusions + offscreen.values.map {
                     SpaceCompassSunSceneFrame(it.center.x - markerDiameter / 2, it.center.y - markerDiameter / 2, markerDiameter, markerDiameter)
-                }, onActivateBody, perspective)
+                }, onActivateBody, scenePerspective)
             // Only thumbnails have small local targets; they never intercept another path's whole viewport.
             spaceCompassAllCelestialOrder.forEach { candidate -> key(candidate) { projections[candidate]?.let { projected ->
                 val below = positions.getValue(candidate).elevationDegrees < 0
                 if (projected.visible) SpaceCompassCelestialLiveMarker(candidate, projected, below, current[candidate], dailyPathUiState,
-                    onActivate = { onActivateBody?.invoke(candidate) }, moonPhase = moonPhase)
+                    onActivate = { onActivateBody?.invoke(candidate) }, moonPhase = moonPhase, path = paths[candidate])
                 else offscreen[candidate]?.let { placement ->
                     SpaceCompassCelestialOffscreenMarker(candidate, projected, below,
                         spaceCompassCelestialPathLineTint(spaceCompassCelestialPathTint(candidate), below),

@@ -1,9 +1,9 @@
 <resources>
     <string name="info_news_title">آخر المستجدات · %1$s</string>
-    <string name="info_news_star_sky" formatted="false">شاشة توقف تعرض الأرض مستوحاة من Mondiversi، تعمل دون اتصال مع إضاءة نهارية وليلية.</string>
-    <string name="info_news_texture_downloads" formatted="false">شاشة التوقف مفعّلة افتراضيًا بعد 5 دقائق؛ يُحفظ التفعيل ومدة الانتظار.</string>
-    <string name="info_news_weather" formatted="false">إضاءة تدريجية للفجر والغروب في السماء والأرض والطقس واللقطات البانورامية.</string>
-    <string name="info_news_viewer_zoom" formatted="false">عناصر التحكم الرئيسية مجمّعة في الزوايا؛ رسائل الحالة متمركزة أسفل علامة التصويب.</string>
-    <string name="info_news_settings" formatted="false">تكبير الكاميرا أوضح بجانب زر الالتقاط، مع اختيار مباشر للمستويات.</string>
-    <string name="info_news_catalog" formatted="false">مساحة أكبر لأسماء الأجرام، وتخطيط أفقي بنسبة 55/45، ومستوى صوت أولي للموسيقى يبلغ 50%.</string>
+    <string name="info_news_star_sky" formatted="false">شاشة توقف للأرض بملء الشاشة تعرض الوقت المحلي والتاريخ والبطارية. المس للعودة.</string>
+    <string name="info_news_texture_downloads" formatted="false">توقف شاشة التوقف المستشعرات وGPS والكاميرا وتحديث البيانات مؤقتًا. تبدأ الموسيقى بمستوى صوت 20%.</string>
+    <string name="info_news_weather" formatted="false">تنبيهات أوضح لمعايرة البوصلة والتداخل، مع إجراءات الموقع عند الحاجة فقط.</string>
+    <string name="info_news_viewer_zoom" formatted="false">المس نقطة في المسار لفتح المسار اليومي متمركزًا عليها، مع تمييز مؤقت.</string>
+    <string name="info_news_settings" formatted="false">عنوان موجز للجسم والتاريخ والمنطقة الزمنية؛ مع الاحتفاظ بالنقاط 0–23 والموقع الحالي وأطوار القمر.</string>
+    <string name="info_news_catalog" formatted="false">تتضمن تسميات اللقطات أوقات T+/T−. تحسين عناصر التحكم الرئيسية وتفاصيل الأجسام.</string>
 </resources>

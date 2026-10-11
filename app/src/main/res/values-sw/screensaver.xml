@@ -1,8 +1,10 @@
 <resources>
     <string name="screensaver_title">Kiokoa skrini</string>
-    <string name="screensaver_description">Usipogusa programu, huonyesha mandhari ya anga yenye mwendo ya Mondiversi. Gusa ili kurudi.</string>
+    <string name="screensaver_description">Programu isipoguswa, huonyesha Dunia na mandhari ya anga yenye mwendo. Gusa ili kurudi.</string>
     <string name="screensaver_delay">Anza baada ya</string>
     <string name="screensaver_dismiss">Gusa ili kufunga kiokoa skrini</string>
     <string name="screensaver_seconds">%1$s sek</string>
     <string name="screensaver_minutes">%1$s dak</string>
+    <string name="screensaver_battery">Betri: %1$s</string>
+    <string name="screensaver_battery_charging">Betri inachaji: %1$s</string>
 </resources>

@@ -1,9 +1,9 @@
 <resources>
     <string name="info_news_title">Ostatnie nowości · %1$s</string>
-    <string name="info_news_star_sky" formatted="false">Wygaszacz ekranu z Ziemią inspirowany Mondiversi, dostępny offline z oświetleniem dziennym i nocnym.</string>
-    <string name="info_news_texture_downloads" formatted="false">Wygaszacz domyślnie włącza się po 5 minutach; ustawienia aktywacji i czasu oczekiwania są zapisywane.</string>
-    <string name="info_news_weather" formatted="false">Stopniowe oświetlenie świtu i zmierzchu dla nieba, gruntu, pogody i zdjęć panoramicznych.</string>
-    <string name="info_news_viewer_zoom" formatted="false">Główne przyciski zgrupowane w rogach; komunikaty stanu wyśrodkowane pod celownikiem.</string>
-    <string name="info_news_settings" formatted="false">Czytelniejszy zoom aparatu obok przycisku zdjęcia, z bezpośrednim wyborem poziomów.</string>
-    <string name="info_news_catalog" formatted="false">Więcej miejsca na nazwy obiektów, poziomy układ 55/45 i początkowa głośność muzyki 50%.</string>
+    <string name="info_news_star_sky" formatted="false">Pełnoekranowy wygaszacz z Ziemią, czasem lokalnym, datą i baterią. Dotknij, aby wrócić.</string>
+    <string name="info_news_texture_downloads" formatted="false">Wygaszacz wstrzymuje czujniki, GPS, aparat i odświeżanie danych. Początkowa głośność muzyki wynosi 20%.</string>
+    <string name="info_news_weather" formatted="false">Czytelniejsze komunikaty o kalibracji i zakłóceniach kompasu; działania dotyczące lokalizacji tylko w razie potrzeby.</string>
+    <string name="info_news_viewer_zoom" formatted="false">Dotknij punktu trajektorii, aby otworzyć przebieg dzienny wyśrodkowany na nim, z tymczasowym wyróżnieniem.</string>
+    <string name="info_news_settings" formatted="false">Zwięzły nagłówek z obiektem, datą i strefą czasową; zachowane punkty 0–23, bieżąca pozycja i fazy Księżyca.</string>
+    <string name="info_news_catalog" formatted="false">Etykiety zdjęć zawierają czasy T+/T−. Ulepszone przyciski główne i szczegóły obiektów.</string>
 </resources>

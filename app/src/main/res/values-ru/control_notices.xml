@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="scene_mode_camera">Режим камеры</string>
+    <string name="scene_mode_sky">Режим виртуального неба</string>
+    <string name="scene_weather_on">Погодные эффекты включены</string>
+    <string name="scene_weather_off">Погодные эффекты выключены</string>
+    <string name="scene_references_on">Небесные ориентиры показаны</string>
+    <string name="scene_references_off">Небесные ориентиры скрыты</string>
+    <string name="panorama_labels_on">Подписи показаны</string>
+    <string name="panorama_labels_off">Подписи скрыты</string>
+    <string name="control_choice_message">%1$s: %2$s</string>
+
+    <string name="scene_scenario_on">Пользовательский сценарий включён</string>
+    <string name="scene_scenario_off">Пользовательский сценарий выключен</string>
+    <string name="scene_objects_on">Объекты включены</string>
+    <string name="scene_objects_off">Объекты выключены</string>
+</resources>

@@ -8,6 +8,10 @@ import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
 import androidx.compose.foundation.isSystemInDarkTheme
+import androidx.compose.foundation.layout.WindowInsets
+import androidx.compose.foundation.layout.safeDrawing
+import androidx.compose.foundation.layout.systemBarsIgnoringVisibility
+import androidx.compose.foundation.layout.union
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.darkColorScheme
 import androidx.compose.material3.lightColorScheme
@@ -16,6 +20,7 @@ import androidx.compose.ui.graphics.Color
 /** Independent launcher: no hardware pairing, UVIR archive or hidden entry gesture. */
 class MainActivity : ComponentActivity() {
     private lateinit var screensaver: SpaceCompassScreensaverState
+    @OptIn(androidx.compose.foundation.layout.ExperimentalLayoutApi::class)
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         SpaceCompassErrorLog.install(applicationContext)
@@ -26,22 +31,26 @@ class MainActivity : ComponentActivity() {
         setContent {
             SpaceCompassPreferences {
                 val dark = isSystemInDarkTheme()
+                val saverVisible = screensaver.visible
                 val background = if (dark) Color(0xFF101418) else Color(0xFFF5F7F8)
                 val primary = if (dark) Color.White else Color(0xFF101418)
                 val secondary = primary.copy(alpha = 0.72f)
                 SideEffect {
                     androidx.core.view.WindowCompat.getInsetsController(window, window.decorView).apply {
-                        isAppearanceLightStatusBars = !dark
-                        isAppearanceLightNavigationBars = !dark
+                        isAppearanceLightStatusBars = !saverVisible && !dark
+                        isAppearanceLightNavigationBars = !saverVisible && !dark
                     }
                     if (android.os.Build.VERSION.SDK_INT >= 29) window.isNavigationBarContrastEnforced = false
                     // Modern edge-to-edge windows draw the Compose background behind navigation.
                     if (android.os.Build.VERSION.SDK_INT < 35) {
-                        window.navigationBarColor = background.toArgb()
+                        window.navigationBarColor = if (saverVisible) android.graphics.Color.TRANSPARENT else background.toArgb()
                     }
                 }
                 MaterialTheme(colorScheme = if (dark) darkColorScheme(primary = Color(0xFF55C8DB)) else lightColorScheme(primary = Color(0xFF176B88))) {
-                    SpaceCompassSystemBarsContent(background) {
+                    // Keep the retained page's viewport stable while the native cover hides bars.
+                    val pageInsets = if (saverVisible) WindowInsets.safeDrawing.union(WindowInsets.systemBarsIgnoringVisibility)
+                        else WindowInsets.safeDrawing
+                    SpaceCompassSystemBarsContent(background, pageInsets) {
                         SpaceCompassAdaptiveDisplay {
                             SpaceCompassLaunchGate(showLaunchScreen = savedInstanceState == null) {
                                 SpaceCompassScreensaverHost(screensaver) {

@@ -107,7 +107,7 @@ internal fun renderSpaceCompassCameraPhoto(context: Context, photo: SpaceCompass
             val labels=points.map { (marker,point,tint) ->
                 val time=snapshot.markerTimes[marker.timeMs] ?: java.time.Instant.ofEpochMilli(marker.timeMs)
                     .atZone(java.time.ZoneOffset.UTC).toLocalTime().let { "%02d:%02d".format(java.util.Locale.ROOT,it.hour,it.minute) }
-                SpaceCompassPanoramaTimeLabel(formatSpaceCompassPanoramaPathPointLabel(time,marker,snapshot.formatting,snapshot.pointEventNames),
+                SpaceCompassPanoramaTimeLabel(formatSpaceCompassPanoramaPathPointLabel(time,marker,snapshot.formatting,snapshot.pointEventNames,snapshot.timeMs),
                     point,tint,marker.events.any { it != SpaceCompassSunPathEvent.HOUR })
             } + observations.mapNotNull { (item,position) -> position?.let(::projection)?.let { p ->
                 spaceCompassPanoramaCurrentLabel(snapshot, position, SpaceCompassSunScenePoint(p.x,p.y),

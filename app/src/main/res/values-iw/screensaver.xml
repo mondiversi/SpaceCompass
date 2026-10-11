@@ -1,8 +1,10 @@
 <resources>
     <string name="screensaver_title">שומר מסך</string>
-    <string name="screensaver_description">כשלא נוגעים באפליקציה, מוצג הרקע החללי המונפש של Mondiversi. נגיעה מחזירה למסך הקודם.</string>
+    <string name="screensaver_description">כשהאפליקציה אינה בשימוש, מציג את כדור הארץ ורקע חללי מונפש. נגיעה מחזירה למסך הקודם.</string>
     <string name="screensaver_delay">הפעלה אחרי</string>
     <string name="screensaver_dismiss">געו כדי לסגור את שומר המסך</string>
     <string name="screensaver_seconds">%1$s שנ׳</string>
     <string name="screensaver_minutes">%1$s דק׳</string>
+    <string name="screensaver_battery">סוללה: %1$s</string>
+    <string name="screensaver_battery_charging">סוללה בטעינה: %1$s</string>
 </resources>

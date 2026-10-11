@@ -1,8 +1,10 @@
 <resources>
     <string name="screensaver_title">Salvaschermo</string>
-    <string name="screensaver_description">Quando non tocchi l’app, mostra lo sfondo spaziale animato di Mondiversi. Tocca per tornare.</string>
+    <string name="screensaver_description">Quando non tocchi l’app, mostra la Terra e uno sfondo spaziale animato. Tocca per tornare.</string>
     <string name="screensaver_delay">Avvia dopo</string>
     <string name="screensaver_dismiss">Tocca per chiudere il salvaschermo</string>
     <string name="screensaver_seconds">%1$s s</string>
     <string name="screensaver_minutes">%1$s min</string>
+    <string name="screensaver_battery">Batteria: %1$s</string>
+    <string name="screensaver_battery_charging">Batteria in carica: %1$s</string>
 </resources>

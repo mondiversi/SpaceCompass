@@ -11,6 +11,7 @@ import androidx.compose.ui.test.*
 import androidx.compose.ui.test.junit4.createComposeRule
 import androidx.compose.ui.unit.dp
 import androidx.test.platform.app.InstrumentationRegistry
+import java.time.Instant
 import java.time.LocalDate
 import java.time.ZoneId
 import java.util.Locale
@@ -59,32 +60,40 @@ class SpaceCompassCelestialSceneInteractionTest {
 
     @Test fun pointingAndTappingAnotherBodiesPathShowsItsNumberAndBothRightAlignedAngleRows() {
         val position = SpaceCompassSunPosition(180.0, 25.0)
-        val markers = (0..7).map { index -> SpaceCompassSunPathPoint(1_791_112_320_000L + index * 3_600_000L,
+        val markers = (0..7).map { index -> SpaceCompassSunPathPoint(Instant.parse("2026-10-04T00:00:00Z").toEpochMilli() + index * 3_600_000L,
             if (index == 7) position else SpaceCompassSunPosition(0.0, 25.0)) }
         val path = SpaceCompassSunDailyPath(LocalDate.parse("2026-10-04"), ZoneId.of("UTC"), markers, markers, SpaceCompassCelestialBody.MOON)
         val state = SpaceCompassSunDailyPathUiState()
+        val offscreenCurrent = SpaceCompassSunPosition(0.0, -15.0)
         compose.setContent {
             CompositionLocalProvider(LocalResources provides resources, LocalSpaceCompassTimeFormat provides SpaceCompassTimeFormat.H24) {
                 MaterialTheme { Box(Modifier.size(340.dp, 400.dp)) {
                     SpaceCompassSunPointingViewport(SpaceCompassSunPosition(0.0, 25.0), facing(position), Modifier.fillMaxSize(), "fixture",
                         state, timeMs = markers.last().timeMs, body = SpaceCompassCelestialBody.SUN, showActions = false,
                         primaryText = Color.Black, secondaryText = Color.Gray, backgroundColor = Color.White,
-                        overlays = mapOf(path.body to SpaceCompassCelestialOverlay(path.body, null, null, null, path)))
-                } }
+                        overlays = mapOf(path.body to SpaceCompassCelestialOverlay(path.body,
+                            SpaceCompassCelestialObservation(offscreenCurrent, 1.0), null, null, path)))
+                }
+                SpaceCompassSunDailyPathPage(state, Color.Black, Color.Gray, Color.White)
+                }
             }
         }
-        val numbered = resources.getString(R.string.celestial_point_number, 8)
+        val numbered = resources.getString(R.string.celestial_point_number, 7)
         compose.onNodeWithText(numbered, substring = true).assertIsDisplayed()
         compose.onNodeWithTag("celestial-badge-body").assertTextEquals("Luna")
         val azimuth = compose.onNodeWithTag("celestial-badge-azimuth").fetchSemanticsNode().boundsInRoot
         val elevation = compose.onNodeWithTag("celestial-badge-elevation").fetchSemanticsNode().boundsInRoot
         assertEquals(azimuth.right, elevation.right, 0.5f)
         compose.onNodeWithTag("sun-finder-sky").performTouchInput { click(center) }
-        compose.onNodeWithTag("sun-path-selected").assertIsDisplayed()
-        compose.onNodeWithTag("celestial-selected-caption").assertTextContains(numbered)
-        compose.onNodeWithTag("celestial-selected-azimuth").assertIsDisplayed()
-        compose.onNodeWithTag("celestial-selected-elevation").assertIsDisplayed()
-        compose.runOnIdle { assertEquals(path.body, state.selectedBody); assertEquals(markers.last(), state.selectedIn(path)) }
+        compose.onNodeWithTag("sun-path-page").assertIsDisplayed()
+        compose.onNodeWithTag("sun-path-point-7").assertIsDisplayed().assertIsSelected()
+        compose.onNodeWithTag("sun-path-selected").assertDoesNotExist()
+        compose.onNodeWithTag("sun-path-current").assertIsDisplayed().assertIsNotSelected()
+        compose.runOnIdle {
+            assertEquals(path, state.menuPath); assertEquals("7", state.menuHighlightedPointId); assertNull(state.selectedBody)
+            assertEquals(offscreenCurrent, state.menuCurrentPoint!!.position)
+            assertEquals(markers.last().timeMs, state.menuCurrentPoint!!.timeMs)
+        }
     }
 
     @Test fun aPartlyClippedLiveMiniatureBecomesACompleteDirectionalLocator() {

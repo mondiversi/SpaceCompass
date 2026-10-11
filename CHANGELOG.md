@@ -1,8 +1,21 @@
 # Changelog
 
+## 1.2.6 — 2026-10-11
+
+- Make the Earth screensaver immersive, with local time, weekday/date and battery status; suspend live page sensors, GPS, camera and remote refresh while foreground music continues.
+- Set the initial background-music volume to 20%; retain explicitly saved activation, volume and screensaver delay.
+- Monitor stale orientation readings with bounded sensor recovery and distinguish calibration from possible magnetic interference.
+- Refine inline status actions and progress messages; location search no longer offers Retry while it is in progress.
+- Open the daily path directly from a trajectory point, center the selected row within the real scroll bounds and clear the temporary highlight on return.
+- Keep the current position even when outside the visible sky; preserve lunar phase symbols and number hourly points 0–23.
+- Combine the object name and date/time zone in a compact left-hand table heading, with azimuth/elevation aligned to their value columns.
+- Add frozen T+/T− minute offsets to panorama and photo labels; refine main controls, capture controls and object identification.
+- Refresh the in-app news in all twenty languages and describe Space Compass independently in current presentation text.
+
+
 ## 1.2.5 — 2026-10-10
 
-- Add an offline Mondiversi-inspired Earth screensaver, enabled after five minutes by default, with saved delay/activation and touch-to-dismiss behavior.
+- Add an offline animated Earth screensaver, enabled after five minutes by default, with saved delay/activation and touch-to-dismiss behavior.
 - Keep the globe centered at the same physical size across rotation; its illumination follows observer/scenario solar height independently of the interface theme.
 - Blend dawn, sunrise/sunset and daylight continuously from solar altitude across the sky, ground, atmospheric effects and frozen panoramic captures.
 - Arrange main controls in mirrored corner groups: camera/pointing axis/references on the left, scenario/objects/weather on the right.

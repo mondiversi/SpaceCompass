@@ -1,9 +1,9 @@
 <resources>
     <string name="info_news_title">Laatste nieuws · %1$s</string>
-    <string name="info_news_star_sky" formatted="false">Aardse screensaver geïnspireerd op Mondiversi, offline beschikbaar met dag- en nachtverlichting.</string>
-    <string name="info_news_texture_downloads" formatted="false">Screensaver standaard actief na 5 minuten; inschakeling en wachttijd worden opgeslagen.</string>
-    <string name="info_news_weather" formatted="false">Geleidelijke verlichting bij dageraad en schemering voor hemel, grond, weer en panorama-opnamen.</string>
-    <string name="info_news_viewer_zoom" formatted="false">Hoofdbediening gegroepeerd in de hoeken; statusmeldingen gecentreerd onder het richtkruis.</string>
-    <string name="info_news_settings" formatted="false">Beter leesbare camerazoom naast de opnameknop, met directe keuze van zoomniveaus.</string>
-    <string name="info_news_catalog" formatted="false">Meer ruimte voor objectnamen, een liggende 55/45-indeling en een beginvolume voor muziek van 50%.</string>
+    <string name="info_news_star_sky" formatted="false">Aardse schermbeveiliging op volledig scherm met lokale tijd, datum en batterij. Tik om terug te keren.</string>
+    <string name="info_news_texture_downloads" formatted="false">De schermbeveiliging pauzeert sensoren, GPS, camera en gegevensverversing. Beginvolume van de muziek: 20%.</string>
+    <string name="info_news_weather" formatted="false">Duidelijkere meldingen voor kompaskalibratie en storingen; locatieacties alleen wanneer nodig.</string>
+    <string name="info_news_viewer_zoom" formatted="false">Tik op een baanpunt om het dagverloop daarop te centreren, met een tijdelijke markering.</string>
+    <string name="info_news_settings" formatted="false">Compacte kop met object, datum en tijdzone; punten 0–23, huidige positie en maanfasen blijven behouden.</string>
+    <string name="info_news_catalog" formatted="false">Opnamelabels bevatten T+/T−-tijden. Verbeterde hoofdbediening en objectdetails.</string>
 </resources>

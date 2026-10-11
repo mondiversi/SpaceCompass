@@ -1,8 +1,10 @@
 <resources>
     <string name="screensaver_title">स्क्रीनसेवर</string>
-    <string name="screensaver_description">ऐप को न छूने पर Mondiversi की एनिमेटेड अंतरिक्ष पृष्ठभूमि दिखाता है। वापस आने के लिए छुएँ।</string>
+    <string name="screensaver_description">ऐप का उपयोग न होने पर पृथ्वी और एनिमेटेड अंतरिक्ष पृष्ठभूमि दिखाता है। लौटने के लिए छुएँ।</string>
     <string name="screensaver_delay">इसके बाद शुरू करें</string>
     <string name="screensaver_dismiss">स्क्रीनसेवर बंद करने के लिए छुएँ</string>
     <string name="screensaver_seconds">%1$s सेकंड</string>
     <string name="screensaver_minutes">%1$s मिनट</string>
+    <string name="screensaver_battery">बैटरी: %1$s</string>
+    <string name="screensaver_battery_charging">बैटरी चार्ज हो रही है: %1$s</string>
 </resources>

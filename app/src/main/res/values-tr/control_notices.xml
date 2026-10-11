@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="scene_mode_camera">Kamera modu</string>
+    <string name="scene_mode_sky">Sanal gökyüzü modu</string>
+    <string name="scene_weather_on">Hava durumu efektleri açıldı</string>
+    <string name="scene_weather_off">Hava durumu efektleri kapatıldı</string>
+    <string name="scene_references_on">Göksel referanslar gösterildi</string>
+    <string name="scene_references_off">Göksel referanslar gizlendi</string>
+    <string name="panorama_labels_on">Etiketler gösterildi</string>
+    <string name="panorama_labels_off">Etiketler gizlendi</string>
+    <string name="control_choice_message">%1$s: %2$s</string>
+
+    <string name="scene_scenario_on">Özel senaryo etkinleştirildi</string>
+    <string name="scene_scenario_off">Özel senaryo devre dışı bırakıldı</string>
+    <string name="scene_objects_on">Nesneler etkinleştirildi</string>
+    <string name="scene_objects_off">Nesneler devre dışı bırakıldı</string>
+</resources>

@@ -5,7 +5,7 @@ application ID `me.mondiversi.spacecompass`, minimum Android API 26.
 
 ## Changes
 
-The offline Earth screensaver is inspired by Mondiversi's website. Fresh settings
+The offline Earth screensaver shows an animated globe. Fresh settings
 enable it after five minutes; explicit saved choices remain unchanged. Touch or
 Back dismisses it without activating underlying controls. Its retained activity
 policy handles focus, lifecycle, keyboard, held gestures and rotation. The globe

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="scene_mode_camera">Mode kamera</string>
+    <string name="scene_mode_sky">Mode langit virtual</string>
+    <string name="scene_weather_on">Efek cuaca diaktifkan</string>
+    <string name="scene_weather_off">Efek cuaca dinonaktifkan</string>
+    <string name="scene_references_on">Acuan langit ditampilkan</string>
+    <string name="scene_references_off">Acuan langit disembunyikan</string>
+    <string name="panorama_labels_on">Label ditampilkan</string>
+    <string name="panorama_labels_off">Label disembunyikan</string>
+    <string name="control_choice_message">%1$s: %2$s</string>
+
+    <string name="scene_scenario_on">Skenario khusus diaktifkan</string>
+    <string name="scene_scenario_off">Skenario khusus dinonaktifkan</string>
+    <string name="scene_objects_on">Objek diaktifkan</string>
+    <string name="scene_objects_off">Objek dinonaktifkan</string>
+</resources>
