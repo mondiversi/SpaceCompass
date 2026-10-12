@@ -11,7 +11,6 @@ import androidx.compose.runtime.saveable.rememberSaveable
 import androidx.compose.runtime.saveable.rememberSaveableStateHolder
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.layout.layout
 import androidx.compose.ui.platform.testTag
 import androidx.compose.ui.res.painterResource
@@ -44,12 +43,6 @@ internal fun SpaceCompassAppPages(content: @Composable () -> Unit) {
         }
     }
 }
-
-@Composable
-internal fun spaceCompassPageBackground() = if (isSystemInDarkTheme()) Color(0xFF101418) else Color(0xFFF5F7F8)
-
-@Composable
-internal fun spaceCompassSettingsCardColor() = if (isSystemInDarkTheme()) Color(0xFF282D33) else Color(0xFFE6E9EB)
 
 @Composable
 internal fun SpaceCompassSettingsButton() {
@@ -99,11 +92,16 @@ internal fun SpaceCompassAppPage(route: String, onBack: () -> Unit) {
             when (route) {
                 "observer" -> SpaceCompassObserverPage(Modifier.weight(1f))
                 "info" -> SpaceCompassInfoPage(Modifier.weight(1f))
-                "language" -> Column(Modifier.fillMaxWidth().weight(1f).verticalScroll(rememberScrollState()).padding(spaceCompassPageContentPadding)) {
-                    SpaceCompassSettingsChoices(SpaceCompassSettingSpec(R.string.settings_section_language,
-                        "language", "system", listOf("system" to stringResource(R.string.language_system)) + spaceCompassLanguages,
-                        description = stringResource(R.string.language_description), examples = mapOf("system" to
-                            (spaceCompassLanguages.firstOrNull { it.first == resourceLanguageTag } ?: spaceCompassLanguages.first()).second)), languageCodes = true)
+                "language" -> {
+                    val scroll = rememberScrollState()
+                    Column(Modifier.fillMaxWidth().weight(1f)
+                        .scrollbarOverlay(scroll, MaterialTheme.colorScheme.onSurfaceVariant.copy(alpha = .46f))
+                        .verticalScroll(scroll).padding(spaceCompassPageContentPadding)) {
+                        SpaceCompassSettingsChoices(SpaceCompassSettingSpec(R.string.settings_section_language,
+                            "language", "system", listOf("system" to stringResource(R.string.language_system)) + spaceCompassLanguages,
+                            description = stringResource(R.string.language_description), examples = mapOf("system" to
+                                (spaceCompassLanguages.firstOrNull { it.first == resourceLanguageTag } ?: spaceCompassLanguages.first()).second)), languageCodes = true)
+                    }
                 }
                 else -> {
                     val settings = if (route == "appearance") spaceCompassAppearanceSettings() else spaceCompassUnitSettings()

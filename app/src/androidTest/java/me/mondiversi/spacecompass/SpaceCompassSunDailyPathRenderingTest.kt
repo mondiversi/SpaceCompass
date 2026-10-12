@@ -66,9 +66,12 @@ class SpaceCompassSunDailyPathRenderingTest {
             }
         }
     }
-    @Test fun tappingTheLiveBodyOpensTheDailyPathAndItsHighlightCanBeCleared() {
+    @Test fun tappingTheLiveBodyPinsItAndItsDailyHighlightCanBeCleared() {
         show()
         compose.onNodeWithTag("sun-daily-path").performTouchInput { click(center) }
+        compose.onNodeWithTag("sun-path-page").assertDoesNotExist()
+        compose.onNodeWithTag("celestial-pinned-badge").assertIsDisplayed()
+        compose.onNodeWithTag("sun-path-open").performClick()
         compose.onNodeWithTag("sun-path-page").assertIsDisplayed()
         compose.onNodeWithTag("sun-path-current").assertIsDisplayed().assertIsSelected().performClick()
         compose.onNodeWithTag("sun-path-current").assertIsNotSelected()
@@ -79,9 +82,12 @@ class SpaceCompassSunDailyPathRenderingTest {
         compose.onNodeWithTag("sun-path-open").performClick()
         compose.onAllNodes(isSelected()).assertCountEquals(0)
     }
-    @Test fun tappingNearTheVisibleDotOpensTheDailyListInsteadOfAnIsland() {
+    @Test fun tappingNearTheVisibleDotPinsItWithoutOpeningTheDailyList() {
         show()
         compose.onNodeWithTag("sun-daily-path").performTouchInput { click(center + Offset(0f, 30.dp.toPx())) }
+        compose.onNodeWithTag("sun-path-page").assertDoesNotExist()
+        compose.onNodeWithTag("celestial-pinned-badge").assertIsDisplayed()
+        compose.onNodeWithTag("sun-path-open").performClick()
         compose.onNodeWithTag("sun-path-page").assertIsDisplayed()
         compose.onAllNodes(isSelected()).assertCountEquals(1)
         compose.onNodeWithTag("sun-path-selected").assertDoesNotExist()
@@ -104,6 +110,8 @@ class SpaceCompassSunDailyPathRenderingTest {
         compose.runOnIdle { orientation.value = facing(hour.position.copy(
             azimuthDegrees = hour.position.azimuthDegrees + 0.2)) }
         compose.onNodeWithTag("sun-daily-path").performTouchInput { up() }
+        compose.onNodeWithTag("sun-path-page").assertDoesNotExist()
+        compose.onNodeWithTag("sun-path-open").performClick()
         compose.onNodeWithTag("sun-path-page").assertIsDisplayed()
         compose.onAllNodes(isSelected()).assertCountEquals(1)
         compose.onNodeWithTag("sun-path-selected").assertDoesNotExist()
@@ -186,7 +194,7 @@ class SpaceCompassSunDailyPathRenderingTest {
         }
     }
 
-    @Test fun pointNavigationUsesAFullPageInPortraitAndLandscapeAndClearsOnBack() {
+    @Test fun pointNavigationUsesAFullPageInPortraitAndLandscapeAndRetainsPinsOnBack() {
         val wide = mutableStateOf(false)
         val fix = Location("synthetic-layout").apply { latitude = 45.0; longitude = 9.0; altitude = 100.0; accuracy = 5f }
         val sun = calculateSpaceCompassSunPosition(hour.timeMs, fix.latitude, fix.longitude, fix.altitude)
@@ -204,6 +212,9 @@ class SpaceCompassSunDailyPathRenderingTest {
         }
         compose.waitUntil(5_000) { compose.onAllNodesWithTag("celestial-current-point").fetchSemanticsNodes().isNotEmpty() }
         compose.onNode(hasTestTag("celestial-current-point") and hasContentDescription("Sole", substring = true)).performClick()
+        compose.onNodeWithTag("sun-path-page").assertDoesNotExist()
+        compose.onNodeWithTag("celestial-pinned-badge").assertIsDisplayed()
+        compose.onNodeWithTag("sun-path-open").performClick()
         compose.onNodeWithTag("sun-path-current").assertIsDisplayed().assertIsSelected()
         compose.onNodeWithTag("sun-path-selected").assertDoesNotExist()
         compose.runOnIdle { wide.value = true }
@@ -214,6 +225,6 @@ class SpaceCompassSunDailyPathRenderingTest {
         compose.onNodeWithTag("sun-finder-sky").assertIsDisplayed()
         compose.onNodeWithTag("sun-path-selected").assertDoesNotExist()
         compose.onNodeWithTag("sun-path-open").performClick()
-        compose.onAllNodes(isSelected()).assertCountEquals(0)
+        compose.onNodeWithTag("sun-path-current").assertIsSelected()
     }
 }

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="data_export_current_image">Mevcut görüntü (JPG)</string>
+    <string name="data_export_rotation_image">Döndürülmüş görüntü (JPG)</string>
+    <string name="data_export_section">Bölüm</string>
+    <string name="data_export_field">Parametre</string>
+    <string name="data_export_value">Değer</string>
+    <string name="data_export_notes">Notlar</string>
+</resources>

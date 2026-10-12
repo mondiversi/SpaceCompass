@@ -1,9 +1,9 @@
 <resources>
     <string name="info_news_title">Laatste nieuws · %1$s</string>
-    <string name="info_news_star_sky" formatted="false">Aardse schermbeveiliging op volledig scherm met lokale tijd, datum en batterij. Tik om terug te keren.</string>
-    <string name="info_news_texture_downloads" formatted="false">De schermbeveiliging pauzeert sensoren, GPS, camera en gegevensverversing. Beginvolume van de muziek: 20%.</string>
-    <string name="info_news_weather" formatted="false">Duidelijkere meldingen voor kompaskalibratie en storingen; locatieacties alleen wanneer nodig.</string>
-    <string name="info_news_viewer_zoom" formatted="false">Tik op een baanpunt om het dagverloop daarop te centreren, met een tijdelijke markering.</string>
-    <string name="info_news_settings" formatted="false">Compacte kop met object, datum en tijdzone; punten 0–23, huidige positie en maanfasen blijven behouden.</string>
-    <string name="info_news_catalog" formatted="false">Opnamelabels bevatten T+/T−-tijden. Verbeterde hoofdbediening en objectdetails.</string>
+    <string name="info_news_star_sky" formatted="false">Selecteer meerdere baanpunten, houd hun labels open en wijzig dezelfde selectie in het dagelijkse pad.</string>
+    <string name="info_news_texture_downloads" formatted="false">Exporteer afbeeldingen, CSV of leesbare TXT vanuit opnamen, dagelijkse paden en het Observatorium; sla op of deel.</string>
+    <string name="info_news_weather" formatted="false">Locatieprivacy geldt ook voor tabellen: paden beginnen met Alleen regio; bij verborgen locaties zijn tijden in UTC.</string>
+    <string name="info_news_viewer_zoom" formatted="false">Het Observatorium groepeert identiteit, fysieke gegevens, temperaturen, baangegevens en ruimtelijke context.</string>
+    <string name="info_news_settings" formatted="false">Hoekschalen aan vier zijden, compacte opnamegegevens en duidelijkere tijd/T±-labels in foto’s en panorama’s.</string>
+    <string name="info_news_catalog" formatted="false">Verbeterde labelkeuzes en opnamebediening; ondoorzichtige informatiekaarten in lichte en donkere thema’s.</string>
 </resources>

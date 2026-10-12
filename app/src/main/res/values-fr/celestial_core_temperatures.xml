@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="celestial_temperature_core">Température du noyau (estimation)</string>
+    <string name="celestial_temperature_core_boundary">Température limite noyau-manteau</string>
+    <string name="celestial_temperature_core_adiabatic">Noyau (modèle adiabatique)</string>
+    <string name="celestial_temperature_core_note">Les températures du noyau sont estimées par des modèles internes, et non mesurées directement.</string>
+    <string name="celestial_temperature_core_boundary_note">La limite noyau-manteau désigne le bord externe du noyau, pas son centre.</string>
+    <string name="celestial_temperature_core_adiabatic_note">Un modèle adiabatique de référence est présenté pour cette planète. D’autres modèles internes peuvent prévoir des températures bien plus élevées.</string>
+</resources>

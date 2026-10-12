@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="capture_export_image">图像（JPG）</string>
+    <string name="capture_export_csv">表格（CSV）</string>
+    <string name="capture_export_txt">易读表格（TXT）</string>
+    <string name="capture_export_saved">已保存文件：%1$d</string>
+    <string name="capture_export_error">导出失败</string>
+    <string name="capture_table_azimuth">方位角</string>
+    <string name="capture_table_elevation">高度角</string>
+    <string name="capture_table_events">事件</string>
+    <string name="capture_table_selected">已选择</string>
+    <string name="capture_table_captured">拍摄时间</string>
+    <string name="capture_table_observed">观测时间</string>
+    <string name="capture_table_context">拍摄信息</string>
+    <string name="capture_table_legend">* = 已选择；! = 关键点；— = 无数据</string>
+    <string name="capture_export_preparing">正在准备数据…</string>
+</resources>

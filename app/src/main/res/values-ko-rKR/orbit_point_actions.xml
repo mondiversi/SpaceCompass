@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="scene_clear_points">모든 점 선택 해제</string>
+    <string name="scene_points_cleared">점 선택을 해제했습니다</string>
+</resources>

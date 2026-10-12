@@ -1,0 +1,18 @@
+<resources>
+    <string name="celestial_identity_planet">Planeta</string>
+    <string name="celestial_identity_dwarf">Planeta enano</string>
+    <string name="celestial_identity_candidate">Candidato a planeta enano</string>
+    <string name="celestial_identity_exoplanet">Exoplaneta</string>
+    <string name="celestial_identity_moon">Satélite natural</string>
+    <string name="celestial_identity_comet">Cometa</string>
+    <string name="celestial_identity_star">Estrella</string>
+    <string name="celestial_identity_black_hole">Agujero negro</string>
+    <string name="celestial_identity_neutron">Estrella de neutrones</string>
+    <string name="celestial_identity_pulsar">Púlsar</string>
+    <string name="celestial_identity_station">Estación espacial</string>
+    <string name="celestial_identity_satellite">Satélite artificial</string>
+    <string name="celestial_identity_probe">Sonda espacial</string>
+    <string name="celestial_identity_nebula">Nebulosa</string>
+    <string name="celestial_identity_cluster">Cúmulo estelar</string>
+    <string name="celestial_identity_fictional_moon">Satélite natural ficticio</string>
+</resources>

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="celestial_temperature_core">Temperatura jądra (szacunek)</string>
+    <string name="celestial_temperature_core_boundary">Temperatura granicy jądro-płaszcz</string>
+    <string name="celestial_temperature_core_adiabatic">Jądro (model adiabatyczny)</string>
+    <string name="celestial_temperature_core_note">Temperatury jądra są szacunkami z modeli wnętrza, a nie bezpośrednimi pomiarami.</string>
+    <string name="celestial_temperature_core_boundary_note">Granica jądro-płaszcz oznacza zewnętrzny brzeg jądra, nie jego środek.</string>
+    <string name="celestial_temperature_core_adiabatic_note">Dla tej planety pokazano referencyjny model adiabatyczny. Inne modele wnętrza mogą przewidywać znacznie wyższe temperatury.</string>
+</resources>

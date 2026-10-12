@@ -62,7 +62,7 @@ internal fun SpaceCompassMainDetailsToggleButton(expanded: Boolean, onClick: () 
     SpaceCompassFloatingControlHitRegion {
         Surface(onClick = onClick, modifier = modifier.spaceCompassFloatingControlVisual().size(48.dp)
             .testTag("toggle-main-details").spaceCompassAccessibleAction(label, onClick = onClick),
-            shape = CircleShape, color = background.copy(alpha = .94f), contentColor = color,
+            shape = CircleShape, color = background.copy(alpha = 1f), contentColor = color,
             border = BorderStroke(1.dp, color.copy(alpha = .35f)), shadowElevation = 3.dp) {
             Box(contentAlignment = Alignment.Center) {
                 Canvas(Modifier.size(26.dp)) {

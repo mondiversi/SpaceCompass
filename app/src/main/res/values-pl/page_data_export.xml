@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="data_export_current_image">Bieżący obraz (JPG)</string>
+    <string name="data_export_rotation_image">Obraz obrotu (JPG)</string>
+    <string name="data_export_section">Sekcja</string>
+    <string name="data_export_field">Parametr</string>
+    <string name="data_export_value">Wartość</string>
+    <string name="data_export_notes">Uwagi</string>
+</resources>

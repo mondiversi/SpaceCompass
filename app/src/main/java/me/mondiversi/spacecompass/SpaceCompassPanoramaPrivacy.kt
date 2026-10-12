@@ -1,7 +1,7 @@
 package me.mondiversi.spacecompass
 
 internal const val SPACE_COMPASS_PANORAMA_POSITION_KEY = "panorama_position"
-/** Compatibility key: the switch controls time/elevation, object and celestial-guide annotations. */
+/** Legacy Boolean preference, read only when migrating to the label policy. */
 internal const val SPACE_COMPASS_PANORAMA_POINT_LABELS_KEY = "panorama_point_labels"
 
 internal enum class SpaceCompassPanoramaPosition(val key: String) {
@@ -16,7 +16,8 @@ internal enum class SpaceCompassPanoramaPosition(val key: String) {
 /** Frozen at capture time; changing disclosure never consults live GPS, units or the clock. */
 internal data class SpaceCompassPanoramaCaptionData(val timestamp: String, val completePlace: String?,
     val areaPlace: String?, val rows: List<SpaceCompassSunDataRow>, val cloudPercent: String?,
-    val cameraPointing: String? = null, val cameraFieldOfView: String? = null)
+    val cameraPointing: String? = null, val cameraFieldOfView: String? = null,
+    val hiddenTimestamp: String = timestamp)
 
 internal fun spaceCompassPanoramaCaptionForPosition(data: SpaceCompassPanoramaCaptionData,
     position: SpaceCompassPanoramaPosition): String {
@@ -27,7 +28,8 @@ internal fun spaceCompassPanoramaCaptionForPosition(data: SpaceCompassPanoramaCa
     }
     val rows = if (position == SpaceCompassPanoramaPosition.COMPLETE) data.rows
         else data.rows.filter { it.tag == "celestial-environment-weather" }
-    val caption = formatSpaceCompassPanoramaCaption(data.timestamp, place, rows, data.cloudPercent)
+    val timestamp = if (position == SpaceCompassPanoramaPosition.HIDDEN) data.hiddenTimestamp else data.timestamp
+    val caption = formatSpaceCompassPanoramaCaption(timestamp, place, rows, data.cloudPercent)
     return listOfNotNull(caption, data.cameraPointing, data.cameraFieldOfView).filter { it.isNotBlank() }.joinToString(" · ")
 }
 

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="data_export_current_image">当前图像（JPG）</string>
+    <string name="data_export_rotation_image">旋转视图图像（JPG）</string>
+    <string name="data_export_section">分区</string>
+    <string name="data_export_field">参数</string>
+    <string name="data_export_value">数值</string>
+    <string name="data_export_notes">说明</string>
+</resources>

@@ -13,7 +13,10 @@ internal enum class SpaceCompassCelestialTemperatureKind(val labelResource: Int)
     SURFACE_ESTIMATE(R.string.celestial_temperature_surface_estimate),
     EQUILIBRIUM_MODEL(R.string.celestial_temperature_equilibrium_model),
     HISTORICAL_SURFACE_RANGE(R.string.celestial_temperature_historical_range),
-    THERMAL_MODEL(R.string.celestial_temperature_thermal_model)
+    THERMAL_MODEL(R.string.celestial_temperature_thermal_model),
+    CORE_ESTIMATE(R.string.celestial_temperature_core),
+    CORE_BOUNDARY_ESTIMATE(R.string.celestial_temperature_core_boundary),
+    CORE_ADIABATIC_REFERENCE(R.string.celestial_temperature_core_adiabatic)
 }
 
 internal data class SpaceCompassCelestialTemperature(
@@ -22,7 +25,8 @@ internal data class SpaceCompassCelestialTemperature(
     val maximumCelsius: Double? = null,
     val component: String? = null,
     val epochYear: Int? = null,
-    val uncertaintyCelsius: Double? = null
+    val uncertaintyCelsius: Double? = null,
+    val significantDigits: Int? = null
 )
 
 internal fun spaceCompassCelestialTemperatures(body: SpaceCompassCelestialBody): List<SpaceCompassCelestialTemperature> {
@@ -102,16 +106,20 @@ internal fun formatSpaceCompassCelestialTemperature(value: SpaceCompassCelestial
     val maximum = value.maximumCelsius
     if (!value.celsius.isFinite() || value.celsius < -273.15 ||
         (maximum != null && (!maximum.isFinite() || maximum < value.celsius)) ||
-        value.uncertaintyCelsius?.let { !it.isFinite() || it < 0 } == true) return "—"
-    fun number(celsius: Double) = formatSpaceCompassNumber(celsius, 0, numeric)
+        value.uncertaintyCelsius?.let { !it.isFinite() || it < 0 } == true ||
+        value.significantDigits?.let { it !in 1..6 } == true) return "—"
+    fun number(celsius: Double) = if (value.kind.isCore && value.significantDigits != null)
+        formatSpaceCompassCoreTemperatureNumber(celsius, value.significantDigits, numeric)
+        else formatSpaceCompassNumber(celsius, 0, numeric)
     fun temperature(celsius: Double) = number(if (fahrenheit) celsius * 1.8 + 32 else celsius)
     val unit = if (fahrenheit) "°F" else "°C"
-    val reference = if (value.kind == SpaceCompassCelestialTemperatureKind.STELLAR_EFFECTIVE)
-        " (${number(value.celsius + 273.15)} K)" else ""
+    val reference = if (value.kind == SpaceCompassCelestialTemperatureKind.STELLAR_EFFECTIVE || value.kind.isCore)
+        " (${number(value.celsius + 273.15)}" + (maximum?.takeIf { value.kind.isCore }?.let {
+            " … ${number(it + 273.15)}" } ?: "") + " K)" else ""
     val uncertainty = value.uncertaintyCelsius?.let {
         " ±${number(if (fahrenheit) it * 1.8 else it)}"
     } ?: ""
     val epoch = value.epochYear?.let { " (${formatSpaceCompassNumber(it.toDouble(), 0, numeric, grouping = false)})" } ?: ""
     return (if (maximum == null) "≈${temperature(value.celsius)}$uncertainty $unit$reference"
-        else "≈${temperature(value.celsius)} … ${temperature(maximum)} $unit") + epoch
+        else "≈${temperature(value.celsius)} … ${temperature(maximum)} $unit$reference") + epoch
 }

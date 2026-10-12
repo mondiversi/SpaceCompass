@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="celestial_temperature_core">핵 온도 (추정)</string>
+    <string name="celestial_temperature_core_boundary">핵-맨틀 경계 온도</string>
+    <string name="celestial_temperature_core_adiabatic">핵 (단열 모델)</string>
+    <string name="celestial_temperature_core_note">핵 온도는 내부 구조 모델의 추정치이며 직접 측정한 값이 아닙니다.</string>
+    <string name="celestial_temperature_core_boundary_note">핵-맨틀 경계는 핵의 바깥쪽 가장자리이며 중심이 아닙니다.</string>
+    <string name="celestial_temperature_core_adiabatic_note">이 행성에는 기준 단열 모델을 표시합니다. 다른 내부 모델은 훨씬 높은 온도를 예측할 수 있습니다.</string>
+</resources>

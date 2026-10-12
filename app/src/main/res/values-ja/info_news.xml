@@ -1,9 +1,9 @@
 <resources>
     <string name="info_news_title">最近の変更 · %1$s</string>
-    <string name="info_news_star_sky" formatted="false">地球の全画面スクリーンセーバーに現地時刻、日付、バッテリーを表示。タッチすると戻ります。</string>
-    <string name="info_news_texture_downloads" formatted="false">スクリーンセーバー中はセンサー、GPS、カメラ、データ更新を一時停止。音楽の初期音量は20%です。</string>
-    <string name="info_news_weather" formatted="false">コンパスの校正と干渉の通知を明確化。位置情報の操作は必要な場合のみ表示します。</string>
-    <string name="info_news_viewer_zoom" formatted="false">軌道上の点をタップすると、その点を中心に一日の経路が開き、一時的に強調表示されます。</string>
-    <string name="info_news_settings" formatted="false">天体名、日付、タイムゾーンの見出しをコンパクトに。点0〜23、現在位置、月相は引き続き表示します。</string>
-    <string name="info_news_catalog" formatted="false">撮影ラベルにT+/T−の時間を追加。メイン画面の操作と天体の詳細を改善しました。</string>
+    <string name="info_news_star_sky" formatted="false">複数の軌道上の点を選択してラベルを表示し、日ごとの経路でも同じ選択を切り替えられます。</string>
+    <string name="info_news_texture_downloads" formatted="false">撮影画像、日ごとの経路、観測所から画像・CSV・読みやすいTXTをエクスポートして保存・共有できます。</string>
+    <string name="info_news_weather" formatted="false">表にも位置のプライバシーを適用。経路は地域のみが初期値で、位置を非表示にすると時刻はUTCになります。</string>
+    <string name="info_news_viewer_zoom" formatted="false">観測所では識別情報、物理データ、温度、軌道データ、空間情報を分類して表示します。</string>
+    <string name="info_news_settings" formatted="false">写真とパノラマの四辺に角度目盛りを表示。撮影情報をコンパクトにし、時刻/T±ラベルを見やすくしました。</string>
+    <string name="info_news_catalog" formatted="false">ラベルの選択肢と撮影操作を改善。ライト・ダーク両テーマの情報カードを不透明にしました。</string>
 </resources>

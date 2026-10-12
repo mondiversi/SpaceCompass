@@ -80,12 +80,12 @@ class SpaceCompassDailyPathListEntriesTest {
         val state = SpaceCompassSunDailyPathUiState();val p = path();val current = point(start + 5_400_000)
         state.openMenu(p, current)
         assertSame(current, state.menuCurrentPoint)
-        state.selectCurrent(p.body, current);state.closeMenu()
+        state.selectCurrent(p.body, current, p);state.closeMenu()
         assertNull(state.menuCurrentPoint);assertNull(state.menuPath)
-        assertSame(current, state.selectedCurrentFor(p.body))
-        assertSame(current, state.selectedIn(p.copy(markers = emptyList())))
+        assertEquals(spaceCompassCurrentPathPoint(p.body, current.timeMs, current.position), state.selectedPoints.single { it.key.isCurrent }.point)
+        assertTrue(state.isSelected(p, current, true))
         state.openMenu(p, current.copy(timeMs = current.timeMs + 60_000))
-        assertSame(current, state.selectedCurrentFor(p.body))
+        assertEquals(spaceCompassCurrentPathPoint(p.body, current.timeMs, current.position), state.selectedPoints.single { it.key.isCurrent }.point)
         assertNotEquals(current.timeMs, state.menuCurrentPoint!!.timeMs)
     }
     @Test fun anEmptyCurveDoesNotCreateAnUnboundedCurrentRow() {

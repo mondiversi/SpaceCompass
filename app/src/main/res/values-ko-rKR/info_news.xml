@@ -1,9 +1,9 @@
 <resources>
     <string name="info_news_title">최근 변경 사항 · %1$s</string>
-    <string name="info_news_star_sky" formatted="false">현지 시간, 날짜와 배터리가 표시되는 전체 화면 지구 화면 보호기. 터치하면 돌아갑니다.</string>
-    <string name="info_news_texture_downloads" formatted="false">화면 보호기는 센서, GPS, 카메라와 데이터 갱신을 일시 중지합니다. 음악의 초기 음량은 20%입니다.</string>
-    <string name="info_news_weather" formatted="false">나침반 보정과 간섭 알림을 더 명확하게 표시하며, 위치 작업은 필요할 때만 표시합니다.</string>
-    <string name="info_news_viewer_zoom" formatted="false">궤적의 지점을 누르면 해당 지점을 중심으로 일일 경로가 열리고 잠시 강조 표시됩니다.</string>
-    <string name="info_news_settings" formatted="false">천체, 날짜와 시간대가 담긴 간결한 머리글. 지점 0–23, 현재 위치와 달의 위상을 유지합니다.</string>
-    <string name="info_news_catalog" formatted="false">촬영 라벨에 T+/T− 시간을 추가했습니다. 기본 조작과 천체 세부 정보를 개선했습니다.</string>
+    <string name="info_news_star_sky" formatted="false">여러 궤도 지점을 선택하고 라벨을 계속 표시하며 일일 경로에서도 같은 선택을 변경할 수 있습니다.</string>
+    <string name="info_news_texture_downloads" formatted="false">촬영 화면, 일일 경로, 관측소에서 이미지, CSV 또는 읽기 쉬운 TXT를 내보내 저장하거나 공유하세요.</string>
+    <string name="info_news_weather" formatted="false">표에도 위치 개인정보 설정 적용: 경로는 지역만 표시로 시작하며 위치를 숨기면 시각은 UTC로 표시됩니다.</string>
+    <string name="info_news_viewer_zoom" formatted="false">관측소가 식별 정보, 물리 데이터, 온도, 궤도 데이터와 공간 정보를 구분해 표시합니다.</string>
+    <string name="info_news_settings" formatted="false">사진과 파노라마의 네 면에 각도 눈금 표시, 간결한 촬영 정보와 더 명확한 시각/T± 라벨.</string>
+    <string name="info_news_catalog" formatted="false">라벨 선택과 촬영 조작 개선; 밝은 테마와 어두운 테마 모두 불투명한 정보 카드 사용.</string>
 </resources>

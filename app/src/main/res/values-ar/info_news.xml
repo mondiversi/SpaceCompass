@@ -1,9 +1,9 @@
 <resources>
     <string name="info_news_title">آخر المستجدات · %1$s</string>
-    <string name="info_news_star_sky" formatted="false">شاشة توقف للأرض بملء الشاشة تعرض الوقت المحلي والتاريخ والبطارية. المس للعودة.</string>
-    <string name="info_news_texture_downloads" formatted="false">توقف شاشة التوقف المستشعرات وGPS والكاميرا وتحديث البيانات مؤقتًا. تبدأ الموسيقى بمستوى صوت 20%.</string>
-    <string name="info_news_weather" formatted="false">تنبيهات أوضح لمعايرة البوصلة والتداخل، مع إجراءات الموقع عند الحاجة فقط.</string>
-    <string name="info_news_viewer_zoom" formatted="false">المس نقطة في المسار لفتح المسار اليومي متمركزًا عليها، مع تمييز مؤقت.</string>
-    <string name="info_news_settings" formatted="false">عنوان موجز للجسم والتاريخ والمنطقة الزمنية؛ مع الاحتفاظ بالنقاط 0–23 والموقع الحالي وأطوار القمر.</string>
-    <string name="info_news_catalog" formatted="false">تتضمن تسميات اللقطات أوقات T+/T−. تحسين عناصر التحكم الرئيسية وتفاصيل الأجسام.</string>
+    <string name="info_news_star_sky" formatted="false">حدّد عدة نقاط على المدارات وأبقِ تسمياتها مفتوحة وغيّر التحديد نفسه في المسار اليومي.</string>
+    <string name="info_news_texture_downloads" formatted="false">صدّر الصور أو CSV أو TXT المقروء من اللقطات والمسارات اليومية والمرصد؛ احفظ أو شارك.</string>
+    <string name="info_news_weather" formatted="false">خصوصية الموقع تشمل الجداول أيضًا: تبدأ المسارات بالمنطقة فقط؛ وعند الإخفاء تستخدم الأوقات UTC.</string>
+    <string name="info_news_viewer_zoom" formatted="false">يجمع المرصد الهوية والبيانات الفيزيائية ودرجات الحرارة والبيانات المدارية والسياق المكاني.</string>
+    <string name="info_news_settings" formatted="false">مقاييس زوايا على الجوانب الأربعة وتفاصيل موجزة وتسميات أوضح للوقت وT± في الصور والبانوراما.</string>
+    <string name="info_news_catalog" formatted="false">خيارات تسميات وأزرار التقاط محسّنة؛ بطاقات معلومات معتمة في المظهرين الفاتح والداكن.</string>
 </resources>

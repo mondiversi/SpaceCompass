@@ -34,7 +34,7 @@ internal fun SpaceCompassCameraZoomControls(range: SpaceCompassCameraZoomRange?,
     val configuration = LocalConfiguration.current
     var anchorTop by remember { mutableFloatStateOf(0f) }
     var anchorBottom by remember { mutableFloatStateOf(0f) }
-    // A bottom-mounted selector must also leave room for a scrollable menu above it.
+    // The camera-mounted selector leaves room for a scrollable menu on either side.
     val menuHeight = maxOf(with(density) { anchorTop.toDp() } - 16.dp,
         configuration.screenHeightDp.dp - with(density) { anchorBottom.toDp() } - 16.dp)
         .coerceAtLeast(48.dp)

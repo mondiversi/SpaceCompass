@@ -1,0 +1,18 @@
+<resources>
+    <string name="celestial_identity_planet">Planeet</string>
+    <string name="celestial_identity_dwarf">Dwergplaneet</string>
+    <string name="celestial_identity_candidate">Kandidaat-dwergplaneet</string>
+    <string name="celestial_identity_exoplanet">Exoplaneet</string>
+    <string name="celestial_identity_moon">Natuurlijke satelliet</string>
+    <string name="celestial_identity_comet">Komeet</string>
+    <string name="celestial_identity_star">Ster</string>
+    <string name="celestial_identity_black_hole">Zwart gat</string>
+    <string name="celestial_identity_neutron">Neutronenster</string>
+    <string name="celestial_identity_pulsar">Pulsar</string>
+    <string name="celestial_identity_station">Ruimtestation</string>
+    <string name="celestial_identity_satellite">Kunstmatige satelliet</string>
+    <string name="celestial_identity_probe">Ruimtesonde</string>
+    <string name="celestial_identity_nebula">Nevel</string>
+    <string name="celestial_identity_cluster">Sterrenhoop</string>
+    <string name="celestial_identity_fictional_moon">Fictieve natuurlijke satelliet</string>
+</resources>

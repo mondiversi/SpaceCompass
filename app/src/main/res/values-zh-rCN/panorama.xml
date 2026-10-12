@@ -19,6 +19,6 @@
     <string name="panorama_position_area">仅区域</string>
     <string name="panorama_position_area_detail">地区和国家</string>
     <string name="panorama_position_hidden">隐藏</string>
-    <string name="panorama_position_hidden_detail">不显示位置信息</string>
+    <string name="panorama_position_hidden_detail">不含位置信息；时间使用UTC</string>
     <string name="panorama_point_labels">标签</string>
 </resources>

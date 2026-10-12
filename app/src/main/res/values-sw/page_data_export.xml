@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="data_export_current_image">Picha ya sasa (JPG)</string>
+    <string name="data_export_rotation_image">Picha ya mzunguko (JPG)</string>
+    <string name="data_export_section">Sehemu</string>
+    <string name="data_export_field">Kigezo</string>
+    <string name="data_export_value">Thamani</string>
+    <string name="data_export_notes">Maelezo</string>
+</resources>

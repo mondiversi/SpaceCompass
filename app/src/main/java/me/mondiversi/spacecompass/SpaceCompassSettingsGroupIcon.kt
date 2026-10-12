@@ -13,6 +13,7 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.Path
 import androidx.compose.ui.graphics.StrokeCap
 import androidx.compose.ui.graphics.drawscope.Stroke
+import androidx.compose.ui.graphics.drawscope.withTransform
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.unit.dp
 
@@ -34,6 +35,14 @@ internal fun SpaceCompassSettingsGroupIcon(key: String, tint: Color) {
         val outline = Stroke(strokeWidth, cap = StrokeCap.Round)
         fun point(x: Float, y: Float) = Offset(size.width * x, size.height * y)
         when (key) {
+            "identity" -> {
+                drawCircle(tint, size.minDimension * .28f, center, style = outline)
+                val ringPlacement = point(.5f, .5f)
+                // A generic ringed planet; matching stroke and size, with no face/badge motif.
+                withTransform({ rotate(-25f, ringPlacement) }) {
+                    drawOval(tint, point(.04f, .34f), Size(size.width * .92f, size.height * .32f), style = outline)
+                }
+            }
             "credits" -> {
                 drawCircle(tint, size.minDimension * .37f, center, style = outline)
                 drawArc(tint, 55f, 250f, false, point(.32f, .32f),

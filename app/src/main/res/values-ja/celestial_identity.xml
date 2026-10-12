@@ -1,0 +1,18 @@
+<resources>
+    <string name="celestial_identity_planet">惑星</string>
+    <string name="celestial_identity_dwarf">準惑星</string>
+    <string name="celestial_identity_candidate">準惑星候補</string>
+    <string name="celestial_identity_exoplanet">太陽系外惑星</string>
+    <string name="celestial_identity_moon">天然衛星</string>
+    <string name="celestial_identity_comet">彗星</string>
+    <string name="celestial_identity_star">恒星</string>
+    <string name="celestial_identity_black_hole">ブラックホール</string>
+    <string name="celestial_identity_neutron">中性子星</string>
+    <string name="celestial_identity_pulsar">パルサー</string>
+    <string name="celestial_identity_station">宇宙ステーション</string>
+    <string name="celestial_identity_satellite">人工衛星</string>
+    <string name="celestial_identity_probe">宇宙探査機</string>
+    <string name="celestial_identity_nebula">星雲</string>
+    <string name="celestial_identity_cluster">星団</string>
+    <string name="celestial_identity_fictional_moon">架空の天然衛星</string>
+</resources>

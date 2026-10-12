@@ -6,6 +6,7 @@ import androidx.compose.foundation.gestures.awaitFirstDown
 import androidx.compose.foundation.gestures.drag
 import androidx.compose.foundation.isSystemInDarkTheme
 import androidx.compose.foundation.ScrollState
+import androidx.compose.foundation.MutatePriority
 import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.lazy.LazyListState
@@ -307,9 +308,9 @@ internal fun Modifier.scrollbarOverlay(
                         scrollJob?.cancel()
                         scrollJob =
                             launch {
-                                state.scrollTo(
-                                    targetValue
-                                )
+                                state.scroll(MutatePriority.PreventUserInput) {
+                                    scrollBy((targetValue - state.value).toFloat())
+                                }
                             }
                     }
 

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="capture_export_image">Immagine (JPG)</string>
+    <string name="capture_export_csv">Tabella (CSV)</string>
+    <string name="capture_export_txt">Tabella leggibile (TXT)</string>
+    <string name="capture_export_saved">File salvati: %1$d</string>
+    <string name="capture_export_error">Esportazione non riuscita</string>
+    <string name="capture_table_azimuth">Azimut</string>
+    <string name="capture_table_elevation">Altezza</string>
+    <string name="capture_table_events">Eventi</string>
+    <string name="capture_table_selected">Selezionato</string>
+    <string name="capture_table_captured">Ora dello scatto</string>
+    <string name="capture_table_observed">Ora dell’osservazione</string>
+    <string name="capture_table_context">Dati dello scatto</string>
+    <string name="capture_table_legend">* = selezionato; ! = punto principale; — = non disponibile</string>
+    <string name="capture_export_preparing">Preparazione dati…</string>
+</resources>

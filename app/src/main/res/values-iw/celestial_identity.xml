@@ -1,0 +1,18 @@
+<resources>
+    <string name="celestial_identity_planet">כוכב לכת</string>
+    <string name="celestial_identity_dwarf">כוכב לכת ננסי</string>
+    <string name="celestial_identity_candidate">מועמד לכוכב לכת ננסי</string>
+    <string name="celestial_identity_exoplanet">כוכב לכת חוץ־שמשי</string>
+    <string name="celestial_identity_moon">לוויין טבעי</string>
+    <string name="celestial_identity_comet">שביט</string>
+    <string name="celestial_identity_star">כוכב</string>
+    <string name="celestial_identity_black_hole">חור שחור</string>
+    <string name="celestial_identity_neutron">כוכב נייטרונים</string>
+    <string name="celestial_identity_pulsar">פולסר</string>
+    <string name="celestial_identity_station">תחנת חלל</string>
+    <string name="celestial_identity_satellite">לוויין מלאכותי</string>
+    <string name="celestial_identity_probe">גשושית חלל</string>
+    <string name="celestial_identity_nebula">ערפילית</string>
+    <string name="celestial_identity_cluster">צביר כוכבים</string>
+    <string name="celestial_identity_fictional_moon">לוויין טבעי בדיוני</string>
+</resources>

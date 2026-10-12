@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="panorama_labels_all">Все</string>
+    <string name="panorama_labels_objects_selected">Только объект и выбранные точки</string>
+    <string name="panorama_labels_selected">Только выбранные точки</string>
+    <string name="panorama_labels_none">Нет</string>
+</resources>

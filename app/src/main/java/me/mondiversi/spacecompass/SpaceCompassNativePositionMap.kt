@@ -117,8 +117,17 @@ internal class SpaceCompassNativePositionMap(
         } else {
             val readout = SpaceCompassNativePositionTable(context, density, fontScale, foregroundArgb, accentArgb, dark, scrollbarArgb)
             table = readout
+            // Both split slots retain the same scrollbar-safe card inset.
+            val mapViewport = FrameLayout(context).apply {
+                tag = "position-map-viewport"
+                addView(content, FrameLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT,
+                    ViewGroup.LayoutParams.MATCH_PARENT).apply {
+                    marginStart = dp(spaceCompassDetailScrollInset.value)
+                    marginEnd = dp(spaceCompassDetailScrollInset.value)
+                })
+            }
             val split = object : LinearLayout(context) {
-                private val splitChildren = arrayOf(content, readout)
+                private val splitChildren = arrayOf(mapViewport, readout)
                 private val verticalParams = arrayOf(
                     LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, 0, 1f),
                     LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, 0, 1f).apply { topMargin = dp(10f) })
@@ -142,10 +151,10 @@ internal class SpaceCompassNativePositionMap(
             }.apply {
                 orientation = LinearLayout.VERTICAL
                 layoutDirection = View.LAYOUT_DIRECTION_LTR
-                setPadding(dp(10f), 0, dp(10f), dp(6f))
+                setPadding(dp(10f), 0, dp(10f), 0)
             }
             readout.layoutDirection = if (rtl) View.LAYOUT_DIRECTION_RTL else View.LAYOUT_DIRECTION_LTR
-            split.addView(content, LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, 0, 1f))
+            split.addView(mapViewport, LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, 0, 1f))
             split.addView(readout, LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, 0, 1f))
             root.addView(split, LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, 0, 1f))
             readout.update(details!!)

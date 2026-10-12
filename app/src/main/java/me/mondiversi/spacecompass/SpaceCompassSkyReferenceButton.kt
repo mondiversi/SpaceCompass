@@ -27,7 +27,7 @@ internal fun SpaceCompassSkyReferenceButton(checked: Boolean, onCheckedChange: (
     color: Color, background: Color) {
     val tint = spaceCompassFloatingControlTint(color, checked)
     SpaceCompassFloatingControlHitRegion {
-        Surface(Modifier.spaceCompassFloatingControlVisual().size(48.dp), shape = CircleShape, color = background.copy(alpha = .94f),
+        Surface(Modifier.spaceCompassFloatingControlVisual().size(48.dp), shape = CircleShape, color = background.copy(alpha = 1f),
             contentColor = tint, border = BorderStroke(1.dp, tint.copy(alpha = .35f)), shadowElevation = 3.dp) {
             Box(contentAlignment = Alignment.Center) {
                 IconToggleButton(checked = checked, onCheckedChange = onCheckedChange,

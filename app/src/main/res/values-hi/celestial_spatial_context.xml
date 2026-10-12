@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="celestial_section_identity">पहचान</string>
+    <string name="celestial_section_physical">भौतिक गुण</string>
+    <string name="celestial_section_stellar">प्रकाश और घटक</string>
+    <string name="celestial_section_atmosphere">तापमान और वायुमंडल</string>
+    <string name="celestial_section_orbit">कक्षा और अवलोकन</string>
+    <string name="celestial_section_spatial">अंतरिक्ष में स्थिति</string>
+    <string name="celestial_spatial_system">तंत्र</string>
+    <string name="celestial_spatial_galaxy">आकाशगंगा</string>
+    <string name="celestial_spatial_ra">विषुवांश</string>
+    <string name="celestial_spatial_dec">क्रांति</string>
+    <string name="celestial_spatial_reference">संदर्भ तंत्र</string>
+    <string name="celestial_spatial_instant">गणना का समय</string>
+    <string name="celestial_spatial_solar_system">सौर मंडल</string>
+    <string name="celestial_spatial_milky_way">मंदाकिनी</string>
+    <string name="celestial_spatial_host_galaxy">%1$s की मेज़बान आकाशगंगा</string>
+    <string name="celestial_spatial_catalog_note">J2000.0 के कैटलॉग निर्देशांक; वर्तमान आभासी स्थिति नहीं।</string>
+    <string name="celestial_spatial_geocentric_note">दिए गए समय पर पृथ्वी के केंद्र से विषुवतीय दिशा।</string>
+    <string name="celestial_spatial_teme_note">उपग्रह की कक्षा से प्राप्त भूकेन्द्रीय TEME दिशा; यह ICRS से अलग संदर्भ है।</string>
+    <string name="celestial_spatial_host_note">निर्देशांक मेज़बान तारे के हैं; ग्रह अलग से दिखाई नहीं देता।</string>
+    <string name="celestial_spatial_fiction_note">काल्पनिक संबंध। निर्देशांक केवल मेज़बान तारे की दिशा दर्शाते हैं।</string>
+    <string name="celestial_view_volume">आयतन</string>
+    <string name="celestial_volume_note">संदर्भ व्यास से निकाला गया गोलाकार अनुमान।</string>
+</resources>

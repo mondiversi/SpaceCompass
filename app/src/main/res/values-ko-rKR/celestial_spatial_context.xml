@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="celestial_section_identity">기본 정보</string>
+    <string name="celestial_section_physical">물리적 특성</string>
+    <string name="celestial_section_stellar">빛과 구성 천체</string>
+    <string name="celestial_section_atmosphere">온도와 대기</string>
+    <string name="celestial_section_orbit">궤도와 관측</string>
+    <string name="celestial_section_spatial">우주에서의 위치</string>
+    <string name="celestial_spatial_system">항성계</string>
+    <string name="celestial_spatial_galaxy">은하</string>
+    <string name="celestial_spatial_ra">적경</string>
+    <string name="celestial_spatial_dec">적위</string>
+    <string name="celestial_spatial_reference">기준 좌표계</string>
+    <string name="celestial_spatial_instant">계산 시각</string>
+    <string name="celestial_spatial_solar_system">태양계</string>
+    <string name="celestial_spatial_milky_way">우리은하</string>
+    <string name="celestial_spatial_host_galaxy">%1$s의 모은하</string>
+    <string name="celestial_spatial_catalog_note">J2000.0 기준의 목록 좌표이며 현재 겉보기 위치가 아닙니다.</string>
+    <string name="celestial_spatial_geocentric_note">표시된 시각에 지구 중심에서 본 적도 좌표 방향입니다.</string>
+    <string name="celestial_spatial_teme_note">위성 궤도로 계산한 지구 중심 TEME 방향이며 ICRS와 다른 좌표계입니다.</string>
+    <string name="celestial_spatial_host_note">좌표는 모항성을 가리키며 행성은 개별적으로 분해되지 않습니다.</string>
+    <string name="celestial_spatial_fiction_note">가상의 연관 관계입니다. 좌표는 모항성의 방향만 나타냅니다.</string>
+    <string name="celestial_view_volume">부피</string>
+    <string name="celestial_volume_note">기준 지름을 이용해 구형으로 가정한 추정치입니다.</string>
+</resources>

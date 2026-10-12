@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="celestial_temperature_core">Температура ядра (оценка)</string>
+    <string name="celestial_temperature_core_boundary">Температура границы ядро–мантия</string>
+    <string name="celestial_temperature_core_adiabatic">Ядро (адиабатическая модель)</string>
+    <string name="celestial_temperature_core_note">Температуры ядра — оценки по моделям внутреннего строения, а не прямые измерения.</string>
+    <string name="celestial_temperature_core_boundary_note">Граница ядро–мантия обозначает внешний край ядра, а не его центр.</string>
+    <string name="celestial_temperature_core_adiabatic_note">Для этой планеты показана опорная адиабатическая модель. Другие модели внутреннего строения могут предсказывать гораздо более высокие температуры.</string>
+</resources>

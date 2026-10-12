@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="celestial_temperature_core">حرارة النواة (تقدير)</string>
+    <string name="celestial_temperature_core_boundary">حرارة الحد بين النواة والوشاح</string>
+    <string name="celestial_temperature_core_adiabatic">النواة (نموذج أديباتي)</string>
+    <string name="celestial_temperature_core_note">درجات حرارة النواة تقديرات من نماذج البنية الداخلية، وليست قياسات مباشرة.</string>
+    <string name="celestial_temperature_core_boundary_note">الحد بين النواة والوشاح هو الحافة الخارجية للنواة، وليس مركزها.</string>
+    <string name="celestial_temperature_core_adiabatic_note">يُعرض نموذج أديباتي مرجعي لهذا الكوكب. قد تتوقع نماذج داخلية أخرى درجات حرارة أعلى بكثير.</string>
+</resources>

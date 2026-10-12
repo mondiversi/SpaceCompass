@@ -56,10 +56,12 @@ class SpaceCompassPanoramaExportProfileTest {
     @Test fun allProfileDisclosureAndLabelCombinationsHaveDistinctCacheIdentities() {
         val keys = SpaceCompassPanoramaExportMode.entries.flatMap { mode ->
             SpaceCompassPanoramaPosition.entries.flatMap { position ->
-                listOf(true, false).map { spaceCompassPanoramaVariantKey(position, it, mode) }
+                SpaceCompassPanoramaLabelMode.entries.map { spaceCompassPanoramaVariantKey(position, it, mode) }
             }
         }
-        assertEquals(12, keys.toSet().size)
+        val expected = SpaceCompassPanoramaExportMode.entries.size * SpaceCompassPanoramaPosition.entries.size *
+            SpaceCompassPanoramaLabelMode.entries.size
+        assertEquals(expected, keys.toSet().size)
     }
 
     @Test fun neitherProfileCanBroadenLocationDisclosure() {

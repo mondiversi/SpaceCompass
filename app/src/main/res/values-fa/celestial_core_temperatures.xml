@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="celestial_temperature_core">دمای هسته (برآورد)</string>
+    <string name="celestial_temperature_core_boundary">دمای مرز هسته و گوشته</string>
+    <string name="celestial_temperature_core_adiabatic">هسته (مدل بی‌دررو)</string>
+    <string name="celestial_temperature_core_note">دمای هسته برآورد مدل‌های ساختار درونی است، نه اندازه‌گیری مستقیم.</string>
+    <string name="celestial_temperature_core_boundary_note">مرز هسته و گوشته لبهٔ بیرونی هسته است، نه مرکز آن.</string>
+    <string name="celestial_temperature_core_adiabatic_note">برای این سیاره یک مدل مرجع بی‌دررو نشان داده می‌شود. مدل‌های درونی دیگر ممکن است دماهای بسیار بالاتری پیش‌بینی کنند.</string>
+</resources>

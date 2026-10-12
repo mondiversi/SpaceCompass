@@ -1,0 +1,18 @@
+<resources>
+    <string name="celestial_identity_planet">행성</string>
+    <string name="celestial_identity_dwarf">왜행성</string>
+    <string name="celestial_identity_candidate">왜행성 후보</string>
+    <string name="celestial_identity_exoplanet">외계 행성</string>
+    <string name="celestial_identity_moon">자연 위성</string>
+    <string name="celestial_identity_comet">혜성</string>
+    <string name="celestial_identity_star">별</string>
+    <string name="celestial_identity_black_hole">블랙홀</string>
+    <string name="celestial_identity_neutron">중성자별</string>
+    <string name="celestial_identity_pulsar">펄서</string>
+    <string name="celestial_identity_station">우주 정거장</string>
+    <string name="celestial_identity_satellite">인공위성</string>
+    <string name="celestial_identity_probe">우주 탐사선</string>
+    <string name="celestial_identity_nebula">성운</string>
+    <string name="celestial_identity_cluster">성단</string>
+    <string name="celestial_identity_fictional_moon">가상의 자연 위성</string>
+</resources>

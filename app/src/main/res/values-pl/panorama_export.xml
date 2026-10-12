@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="panorama_export" formatted="false">Eksportuj</string>
-    <string name="panorama_export_title" formatted="false">Eksportuj obraz</string>
+    <string name="panorama_export_title" formatted="false">Eksport danych</string>
     <string name="panorama_export_profile" formatted="false">Format danych</string>
     <string name="panorama_export_selected" formatted="false">Ustawiony język i formaty</string>
     <string name="panorama_export_international" formatted="false">Międzynarodowy naukowy</string>
     <string name="panorama_save_gallery" formatted="false">Zapisz w galerii</string>
-    <string name="panorama_save_phone" formatted="false">Zapisz w telefonie</string>
+    <string name="panorama_save_phone" formatted="false">Zapisz</string>
+    <string name="panorama_export_description" formatted="false">Wybierz formaty i opcje używane do eksportowania danych.</string>
 </resources>

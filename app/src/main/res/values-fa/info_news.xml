@@ -1,9 +1,9 @@
 <resources>
     <string name="info_news_title">تازه‌ترین تغییرات · %1$s</string>
-    <string name="info_news_star_sky" formatted="false">محافظ صفحهٔ تمام‌صفحه با زمین، ساعت محلی، تاریخ و باتری. برای بازگشت لمس کنید.</string>
-    <string name="info_news_texture_downloads" formatted="false">محافظ صفحه حسگرها، GPS، دوربین و به‌روزرسانی داده‌ها را متوقف می‌کند. صدای اولیهٔ موسیقی 20% است.</string>
-    <string name="info_news_weather" formatted="false">پیام‌های روشن‌تر برای کالیبراسیون و تداخل قطب‌نما؛ اقدامات مکان فقط هنگام نیاز نمایش داده می‌شوند.</string>
-    <string name="info_news_viewer_zoom" formatted="false">نقطه‌ای از مسیر را لمس کنید تا مسیر روزانه روی آن متمرکز شود و موقتاً برجسته شود.</string>
-    <string name="info_news_settings" formatted="false">سرصفحهٔ فشرده با نام جسم، تاریخ و منطقهٔ زمانی؛ نقاط 0–23، موقعیت فعلی و فازهای ماه حفظ می‌شوند.</string>
-    <string name="info_news_catalog" formatted="false">برچسب‌های تصاویر شامل زمان‌های T+/T− هستند. کنترل‌های اصلی و جزئیات اجسام بهبود یافته‌اند.</string>
+    <string name="info_news_star_sky" formatted="false">چند نقطهٔ مدار را انتخاب کنید، برچسب‌هایشان را باز نگه دارید و همان انتخاب را در مسیر روزانه تغییر دهید.</string>
+    <string name="info_news_texture_downloads" formatted="false">تصویر، CSV یا TXT خوانا را از عکس‌ها، مسیرهای روزانه و رصدخانه صادر کنید؛ ذخیره یا اشتراک‌گذاری.</string>
+    <string name="info_news_weather" formatted="false">حریم خصوصی مکان شامل جدول‌ها هم می‌شود: مسیرها با فقط منطقه آغاز می‌شوند؛ در حالت پنهان زمان‌ها UTC هستند.</string>
+    <string name="info_news_viewer_zoom" formatted="false">رصدخانه هویت، داده‌های فیزیکی، دماها، داده‌های مداری و زمینهٔ فضایی را گروه‌بندی می‌کند.</string>
+    <string name="info_news_settings" formatted="false">مقیاس زاویه در چهار ضلع، اطلاعات فشردهٔ عکس و برچسب‌های واضح‌تر زمان/T± در عکس‌ها و پانوراماها.</string>
+    <string name="info_news_catalog" formatted="false">گزینه‌های برچسب و کنترل‌های عکاسی بهتر؛ کارت‌های اطلاعاتی مات در پوسته‌های روشن و تیره.</string>
 </resources>

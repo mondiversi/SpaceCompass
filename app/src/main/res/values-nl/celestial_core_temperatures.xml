@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="celestial_temperature_core">Kerntemperatuur (schatting)</string>
+    <string name="celestial_temperature_core_boundary">Temperatuur kern-mantelgrens</string>
+    <string name="celestial_temperature_core_adiabatic">Kern (adiabatisch model)</string>
+    <string name="celestial_temperature_core_note">Kerntemperaturen zijn schattingen uit modellen van het binnenste, geen directe metingen.</string>
+    <string name="celestial_temperature_core_boundary_note">De kern-mantelgrens is de buitenrand van de kern, niet het middelpunt.</string>
+    <string name="celestial_temperature_core_adiabatic_note">Voor deze planeet wordt een adiabatisch referentiemodel getoond. Andere modellen van het binnenste kunnen veel hogere temperaturen voorspellen.</string>
+</resources>

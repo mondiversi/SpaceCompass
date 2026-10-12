@@ -1,9 +1,9 @@
 <resources>
     <string name="info_news_title">Neuigkeiten · %1$s</string>
-    <string name="info_news_star_sky" formatted="false">Erd-Bildschirmschoner im Vollbild mit Ortszeit, Datum und Akkustand. Antippen, um zurückzukehren.</string>
-    <string name="info_news_texture_downloads" formatted="false">Der Bildschirmschoner pausiert Sensoren, GPS, Kamera und Datenaktualisierung. Anfangslautstärke der Musik: 20%.</string>
-    <string name="info_news_weather" formatted="false">Klarere Hinweise zur Kompasskalibrierung und zu Störungen; Standortaktionen nur bei Bedarf.</string>
-    <string name="info_news_viewer_zoom" formatted="false">Ein Bahnpunkt öffnet den darauf zentrierten Tagesverlauf mit vorübergehender Hervorhebung.</string>
-    <string name="info_news_settings" formatted="false">Kompakte Kopfzeile mit Objekt, Datum und Zeitzone; Punkte 0–23, aktuelle Position und Mondphasen bleiben erhalten.</string>
-    <string name="info_news_catalog" formatted="false">Aufnahmebeschriftungen enthalten T+/T−-Zeitabstände. Verbesserte Hauptsteuerung und Objektdetails.</string>
+    <string name="info_news_star_sky" formatted="false">Mehrere Bahnpunkte markieren, ihre Beschriftungen offen halten und dieselbe Auswahl im Tagesverlauf ändern.</string>
+    <string name="info_news_texture_downloads" formatted="false">Bilder, CSV oder lesbare TXT aus Aufnahmen, Tagesverläufen und dem Observatorium exportieren, speichern oder teilen.</string>
+    <string name="info_news_weather" formatted="false">Standortschutz auch für Tabellen: Tagesverläufe starten mit Nur Region; bei Verborgen gelten UTC-Zeiten.</string>
+    <string name="info_news_viewer_zoom" formatted="false">Das Observatorium gruppiert Identität, physikalische Daten, Temperaturen, Bahndaten und räumlichen Kontext.</string>
+    <string name="info_news_settings" formatted="false">Winkelskalen an vier Seiten, kompakte Aufnahmedetails und klarere Zeit-/T±-Beschriftungen in Fotos und Panoramen.</string>
+    <string name="info_news_catalog" formatted="false">Verbesserte Beschriftungsoptionen und Aufnahmebedienung; deckende Infokarten im hellen und dunklen Design.</string>
 </resources>

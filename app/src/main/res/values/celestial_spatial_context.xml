@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="celestial_section_identity">Identity</string>
+    <string name="celestial_section_physical">Physical properties</string>
+    <string name="celestial_section_stellar">Light and components</string>
+    <string name="celestial_section_atmosphere">Temperature and atmosphere</string>
+    <string name="celestial_section_orbit">Orbit and observation</string>
+    <string name="celestial_section_spatial">Spatial context</string>
+    <string name="celestial_spatial_system">System</string>
+    <string name="celestial_spatial_galaxy">Galaxy</string>
+    <string name="celestial_spatial_ra">Right ascension</string>
+    <string name="celestial_spatial_dec">Declination</string>
+    <string name="celestial_spatial_reference">Reference frame</string>
+    <string name="celestial_spatial_instant">Calculation time</string>
+    <string name="celestial_spatial_solar_system">Solar System</string>
+    <string name="celestial_spatial_milky_way">Milky Way</string>
+    <string name="celestial_spatial_host_galaxy">Host galaxy of %1$s</string>
+    <string name="celestial_spatial_catalog_note">Catalogue coordinates at J2000.0; not the current apparent position.</string>
+    <string name="celestial_spatial_geocentric_note">Equatorial direction from the centre of Earth at the indicated time.</string>
+    <string name="celestial_spatial_teme_note">Geocentric TEME direction from the satellite orbit; a different frame from ICRS.</string>
+    <string name="celestial_spatial_host_note">The coordinates refer to the host star; the planet is unresolved.</string>
+    <string name="celestial_spatial_fiction_note">Fictional association. The coordinates only identify the host-star direction.</string>
+    <string name="celestial_view_volume">Volume</string>
+    <string name="celestial_volume_note">Spherical estimate derived from the reference diameter.</string>
+</resources>

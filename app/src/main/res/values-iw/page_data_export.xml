@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="data_export_current_image">תמונה נוכחית (JPG)</string>
+    <string name="data_export_rotation_image">תמונת סיבוב (JPG)</string>
+    <string name="data_export_section">סעיף</string>
+    <string name="data_export_field">פרמטר</string>
+    <string name="data_export_value">ערך</string>
+    <string name="data_export_notes">הערות</string>
+</resources>

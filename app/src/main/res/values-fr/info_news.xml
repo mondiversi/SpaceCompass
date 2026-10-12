@@ -1,9 +1,9 @@
 <resources>
     <string name="info_news_title">Dernières nouveautés · %1$s</string>
-    <string name="info_news_star_sky" formatted="false">Écran de veille terrestre plein écran avec heure locale, date et batterie. Touchez pour revenir.</string>
-    <string name="info_news_texture_downloads" formatted="false">L’écran de veille suspend capteurs, GPS, caméra et actualisation des données. Volume initial de la musique à 20%.</string>
-    <string name="info_news_weather" formatted="false">Messages plus clairs pour l’étalonnage et les interférences de la boussole ; actions de localisation seulement si nécessaire.</string>
-    <string name="info_news_viewer_zoom" formatted="false">Touchez un point de la trajectoire pour ouvrir le parcours quotidien centré sur celui-ci, avec une surbrillance temporaire.</string>
-    <string name="info_news_settings" formatted="false">En-tête compact avec objet, date et fuseau ; points 0–23, position actuelle et phases lunaires conservés.</string>
-    <string name="info_news_catalog" formatted="false">Les étiquettes des captures incluent les temps T+/T−. Commandes principales et détails des objets améliorés.</string>
+    <string name="info_news_star_sky" formatted="false">Sélectionnez plusieurs points orbitaux, gardez leurs étiquettes ouvertes et modifiez la même sélection dans le parcours quotidien.</string>
+    <string name="info_news_texture_downloads" formatted="false">Exportez des images, CSV ou TXT lisibles depuis les captures, parcours quotidiens et l’Observatoire ; enregistrez ou partagez.</string>
+    <string name="info_news_weather" formatted="false">Confidentialité de la position aussi dans les tableaux : zone seule au départ ; avec la position masquée, les heures utilisent UTC.</string>
+    <string name="info_news_viewer_zoom" formatted="false">L’Observatoire regroupe identité, données physiques, températures, données orbitales et contexte spatial.</string>
+    <string name="info_news_settings" formatted="false">Échelles angulaires sur quatre côtés, détails compacts et étiquettes heure/T± plus claires dans les photos et panoramas.</string>
+    <string name="info_news_catalog" formatted="false">Choix des étiquettes et commandes de capture améliorés ; cartes opaques dans les thèmes clair et sombre.</string>
 </resources>

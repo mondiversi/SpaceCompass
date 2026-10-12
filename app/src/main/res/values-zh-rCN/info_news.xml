@@ -1,9 +1,9 @@
 <resources>
     <string name="info_news_title">最新变化 · %1$s</string>
-    <string name="info_news_star_sky" formatted="false">全屏地球屏保显示当地时间、日期和电量。轻触即可返回。</string>
-    <string name="info_news_texture_downloads" formatted="false">屏保暂停传感器、GPS、相机和数据更新。音乐默认音量为20%。</string>
-    <string name="info_news_weather" formatted="false">指南针校准和干扰提示更清晰，仅在需要时显示位置操作。</string>
-    <string name="info_news_viewer_zoom" formatted="false">点击轨迹上的点，即可打开以该点为中心的每日轨迹，并临时高亮显示。</string>
-    <string name="info_news_settings" formatted="false">紧凑的标题显示天体、日期和时区，保留0–23号点、当前位置和月相。</string>
-    <string name="info_news_catalog" formatted="false">拍摄标签新增T+/T−时间。改进主界面操作和天体详情。</string>
+    <string name="info_news_star_sky" formatted="false">选择多个轨道点并保持标签显示，在每日路径中也能切换同一组选择。</string>
+    <string name="info_news_texture_downloads" formatted="false">从拍摄画面、每日路径和观测站导出图片、CSV或易读TXT，保存或分享。</string>
+    <string name="info_news_weather" formatted="false">表格也支持位置隐私：路径默认仅显示地区；隐藏位置时，时间使用UTC。</string>
+    <string name="info_news_viewer_zoom" formatted="false">观测站按身份、物理数据、温度、轨道数据和空间背景分组展示。</string>
+    <string name="info_news_settings" formatted="false">照片和全景的四边均有角度刻度，拍摄信息更紧凑，时间/T±标签更清晰。</string>
+    <string name="info_news_catalog" formatted="false">改进标签选项与拍摄控件；浅色和深色主题均使用不透明信息卡片。</string>
 </resources>

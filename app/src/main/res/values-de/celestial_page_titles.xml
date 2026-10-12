@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="celestial_details_title">Objektdetails</string>
+    <string name="celestial_details_title">Sternwarte</string>
     <string name="celestial_view_name">Name</string>
 </resources>

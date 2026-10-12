@@ -22,6 +22,12 @@ internal val SpaceCompassPanoramaPosition.labelResource: Int get() = when (this)
     SpaceCompassPanoramaPosition.HIDDEN -> R.string.panorama_position_hidden
 }
 
+internal val SpaceCompassPanoramaPosition.detailResource: Int get() = when (this) {
+    SpaceCompassPanoramaPosition.COMPLETE -> R.string.panorama_position_complete_detail
+    SpaceCompassPanoramaPosition.AREA -> R.string.panorama_position_area_detail
+    SpaceCompassPanoramaPosition.HIDDEN -> R.string.panorama_position_hidden_detail
+}
+
 @Composable
 internal fun SpaceCompassPanoramaPositionDialog(selected: SpaceCompassPanoramaPosition, rotateContent: Boolean,
     onSelect: (SpaceCompassPanoramaPosition) -> Unit, onDismiss: () -> Unit) {
@@ -29,16 +35,9 @@ internal fun SpaceCompassPanoramaPositionDialog(selected: SpaceCompassPanoramaPo
     SpaceCompassAlertDialog(onDismissRequest = onDismiss, confirmButton = null, rotateContent = rotateContent,
         title = { Text(stringResource(R.string.panorama_position)) }, text = {
             Column(Modifier.fillMaxWidth(), verticalArrangement = Arrangement.spacedBy(8.dp)) {
-                Text(stringResource(R.string.panorama_position_description), color = foreground.copy(alpha = .72f),
-                    fontSize = 12.sp, lineHeight = 17.sp)
                 Column(Modifier.fillMaxWidth().selectableGroup()) {
                     SpaceCompassPanoramaPosition.entries.forEach { position ->
                         val checked = position == selected
-                        val detail = when (position) {
-                            SpaceCompassPanoramaPosition.COMPLETE -> R.string.panorama_position_complete_detail
-                            SpaceCompassPanoramaPosition.AREA -> R.string.panorama_position_area_detail
-                            SpaceCompassPanoramaPosition.HIDDEN -> R.string.panorama_position_hidden_detail
-                        }
                         Row(Modifier.fillMaxWidth().heightIn(min = 48.dp).clip(RoundedCornerShape(10.dp))
                             .background(if (checked) foreground.copy(alpha = .07f) else androidx.compose.ui.graphics.Color.Transparent)
                             .selectable(checked, role = Role.RadioButton, onClick = { onSelect(position) })
@@ -47,7 +46,7 @@ internal fun SpaceCompassPanoramaPositionDialog(selected: SpaceCompassPanoramaPo
                             RadioButton(checked, onClick = null)
                             Column(Modifier.weight(1f).padding(start = 8.dp)) {
                                 Text(stringResource(position.labelResource), fontSize = 14.sp, color = foreground)
-                                Text(stringResource(detail), fontSize = 11.sp, lineHeight = 15.sp,
+                                Text(stringResource(position.detailResource), fontSize = 11.sp, lineHeight = 15.sp,
                                     color = foreground.copy(alpha = .65f))
                             }
                         }

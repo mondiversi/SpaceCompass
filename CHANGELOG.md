@@ -1,5 +1,17 @@
 # Changelog
 
+## 1.3.0 — 2026-10-12
+
+Explore and export the sky with multiple pinned orbit points, richer reference data and consistent location privacy.
+
+- Select multiple points across orbits, keep their time/T± and azimuth/elevation labels open, manage the same selections in the daily path and clear them together.
+- Export captures, daily paths and Observatory data as images, CSV or readable TXT. Share or save files using either your language/units or the international scientific profile.
+- Interleave current, selected, rise/set and maximum/minimum points chronologically in exported tables. Capture exports retain the actual frozen observation and selections.
+- Apply complete, area-only or hidden location disclosure to images and tables. Daily-path exports begin with area only on every opening; capture exports inherit the preview. Hidden disclosure displays UTC without observer coordinates, altitude or accuracy.
+- Rename the object viewer Observatory and group identity, classification, physical properties, qualified core temperatures, orbital data and spatial context into readable sections.
+- Add four-sided angular scales to camera photos and panoramas, improve narrow-angle/rolled-camera ticks, compact capture headings and refine labels and controls.
+- Restore opaque main information islands in both themes and refine scrolling, spacing and compact position choices.
+
 ## 1.2.6 — 2026-10-11
 
 - Make the Earth screensaver immersive, with local time, weekday/date and battery status; suspend live page sensors, GPS, camera and remote refresh while foreground music continues.

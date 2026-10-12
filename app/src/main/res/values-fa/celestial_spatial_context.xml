@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="celestial_section_identity">هویت</string>
+    <string name="celestial_section_physical">ویژگی‌های فیزیکی</string>
+    <string name="celestial_section_stellar">نور و مؤلفه‌ها</string>
+    <string name="celestial_section_atmosphere">دما و جو</string>
+    <string name="celestial_section_orbit">مدار و رصد</string>
+    <string name="celestial_section_spatial">جایگاه در فضا</string>
+    <string name="celestial_spatial_system">سامانه</string>
+    <string name="celestial_spatial_galaxy">کهکشان</string>
+    <string name="celestial_spatial_ra">بعد</string>
+    <string name="celestial_spatial_dec">میل</string>
+    <string name="celestial_spatial_reference">چارچوب مرجع</string>
+    <string name="celestial_spatial_instant">زمان محاسبه</string>
+    <string name="celestial_spatial_solar_system">منظومهٔ شمسی</string>
+    <string name="celestial_spatial_milky_way">راه شیری</string>
+    <string name="celestial_spatial_host_galaxy">کهکشان میزبان %1$s</string>
+    <string name="celestial_spatial_catalog_note">مختصات فهرست در J2000.0؛ نه موقعیت ظاهری فعلی.</string>
+    <string name="celestial_spatial_geocentric_note">جهت استوایی از مرکز زمین در زمان مشخص‌شده.</string>
+    <string name="celestial_spatial_teme_note">جهت زمین‌مرکزی TEME از مدار ماهواره؛ چارچوبی متفاوت با ICRS.</string>
+    <string name="celestial_spatial_host_note">مختصات به ستارهٔ میزبان اشاره دارد؛ سیاره جداگانه تفکیک نمی‌شود.</string>
+    <string name="celestial_spatial_fiction_note">ارتباط تخیلی. مختصات فقط جهت ستارهٔ میزبان را نشان می‌دهد.</string>
+    <string name="celestial_view_volume">حجم</string>
+    <string name="celestial_volume_note">برآورد کروی بر اساس قطر مرجع.</string>
+</resources>

@@ -19,6 +19,6 @@
     <string name="panorama_position_area">Eneo pekee</string>
     <string name="panorama_position_area_detail">Mkoa na nchi</string>
     <string name="panorama_position_hidden">Limefichwa</string>
-    <string name="panorama_position_hidden_detail">Bila taarifa za mahali</string>
+    <string name="panorama_position_hidden_detail">Bila taarifa za eneo; saa katika UTC</string>
     <string name="panorama_point_labels">Lebo</string>
 </resources>

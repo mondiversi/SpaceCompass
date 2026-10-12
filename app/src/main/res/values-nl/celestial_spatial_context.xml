@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="celestial_section_identity">Identiteit</string>
+    <string name="celestial_section_physical">Fysieke eigenschappen</string>
+    <string name="celestial_section_stellar">Licht en componenten</string>
+    <string name="celestial_section_atmosphere">Temperatuur en atmosfeer</string>
+    <string name="celestial_section_orbit">Baan en waarneming</string>
+    <string name="celestial_section_spatial">Plaats in de ruimte</string>
+    <string name="celestial_spatial_system">Stelsel</string>
+    <string name="celestial_spatial_galaxy">Sterrenstelsel</string>
+    <string name="celestial_spatial_ra">Rechte klimming</string>
+    <string name="celestial_spatial_dec">Declinatie</string>
+    <string name="celestial_spatial_reference">Referentiestelsel</string>
+    <string name="celestial_spatial_instant">Berekeningstijdstip</string>
+    <string name="celestial_spatial_solar_system">Zonnestelsel</string>
+    <string name="celestial_spatial_milky_way">Melkweg</string>
+    <string name="celestial_spatial_host_galaxy">Moedersterrenstelsel van %1$s</string>
+    <string name="celestial_spatial_catalog_note">Cataloguscoördinaten voor J2000.0; niet de huidige schijnbare positie.</string>
+    <string name="celestial_spatial_geocentric_note">Equatoriale richting vanuit het middelpunt van de aarde op het aangegeven tijdstip.</string>
+    <string name="celestial_spatial_teme_note">Geocentrische TEME-richting uit de satellietbaan; een ander stelsel dan ICRS.</string>
+    <string name="celestial_spatial_host_note">De coördinaten verwijzen naar de moederster; de planeet is niet afzonderlijk zichtbaar.</string>
+    <string name="celestial_spatial_fiction_note">Fictieve relatie. De coördinaten geven alleen de richting naar de moederster aan.</string>
+    <string name="celestial_view_volume">Volume</string>
+    <string name="celestial_volume_note">Bolvormige schatting op basis van de referentiediameter.</string>
+</resources>

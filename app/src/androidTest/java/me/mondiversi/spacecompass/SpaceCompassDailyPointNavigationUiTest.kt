@@ -80,9 +80,9 @@ class SpaceCompassDailyPointNavigationUiTest {
         compose.onNodeWithTag("sun-path-point-12").assertIsNotSelected()
         compose.onNodeWithTag("sun-path-current").performClick().assertIsNotSelected()
         compose.onNodeWithTag("sun-path-page").assertIsDisplayed()
-        assertNull(state.menuHighlightedPointId)
+        assertFalse(state.isSelected(path, markers[12], true))
     }
-    @Test fun highlightedBackgroundUsesTheThemeAccentAndBackErasesTheSelection() {
+    @Test fun highlightedBackgroundUsesTheThemeAccentAndBackPreservesTheSelection() {
         val state = SpaceCompassSunDailyPathUiState(); val dark = mutableStateOf(false)
         state.openPoint(path, markers[12]); show(state, dark)
         for (night in listOf(false, true)) {
@@ -90,13 +90,14 @@ class SpaceCompassDailyPointNavigationUiTest {
             centered("sun-path-point-12")
             val bitmap = compose.onNodeWithTag("sun-path-point-12").captureToImage().asAndroidBitmap()
             val scheme = if (night) darkColorScheme(primary = Color(0xFF55C8DB)) else lightColorScheme(primary = Color(0xFF176B88))
-            val expected = scheme.primary.copy(alpha = .16f).compositeOver(scheme.background).toArgb()
+            val pageBackground = if (night) scheme.background else Color.White
+            val expected = scheme.primary.copy(alpha = .16f).compositeOver(pageBackground).toArgb()
             val actual = bitmap.getPixel(3, bitmap.height / 2)
             for (shift in listOf(0, 8, 16)) assertTrue(kotlin.math.abs(((expected shr shift) and 255) - ((actual shr shift) and 255)) <= 2)
         }
         compose.runOnIdle { state.closeMenu() }
         compose.onNodeWithTag("sun-path-page").assertDoesNotExist()
         compose.runOnIdle { state.openMenu(path) }
-        compose.onAllNodes(isSelected()).assertCountEquals(0)
+        compose.onNodeWithTag("sun-path-point-12").assertIsSelected()
     }
 }

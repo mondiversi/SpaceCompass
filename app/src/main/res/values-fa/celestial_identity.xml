@@ -1,0 +1,18 @@
+<resources>
+    <string name="celestial_identity_planet">سیاره</string>
+    <string name="celestial_identity_dwarf">سیارهٔ کوتوله</string>
+    <string name="celestial_identity_candidate">نامزد سیارهٔ کوتوله</string>
+    <string name="celestial_identity_exoplanet">سیارهٔ فراخورشیدی</string>
+    <string name="celestial_identity_moon">قمر طبیعی</string>
+    <string name="celestial_identity_comet">دنباله‌دار</string>
+    <string name="celestial_identity_star">ستاره</string>
+    <string name="celestial_identity_black_hole">سیاه‌چاله</string>
+    <string name="celestial_identity_neutron">ستارهٔ نوترونی</string>
+    <string name="celestial_identity_pulsar">تپ‌اختر</string>
+    <string name="celestial_identity_station">ایستگاه فضایی</string>
+    <string name="celestial_identity_satellite">ماهوارهٔ مصنوعی</string>
+    <string name="celestial_identity_probe">کاوشگر فضایی</string>
+    <string name="celestial_identity_nebula">سحابی</string>
+    <string name="celestial_identity_cluster">خوشهٔ ستاره‌ای</string>
+    <string name="celestial_identity_fictional_moon">قمر طبیعی خیالی</string>
+</resources>

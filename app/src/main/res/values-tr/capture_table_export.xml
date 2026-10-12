@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="capture_export_image">Görüntü (JPG)</string>
+    <string name="capture_export_csv">Tablo (CSV)</string>
+    <string name="capture_export_txt">Okunabilir tablo (TXT)</string>
+    <string name="capture_export_saved">Kaydedilen dosyalar: %1$d</string>
+    <string name="capture_export_error">Dışa aktarma başarısız</string>
+    <string name="capture_table_azimuth">Azimut</string>
+    <string name="capture_table_elevation">Yükseklik</string>
+    <string name="capture_table_events">Olaylar</string>
+    <string name="capture_table_selected">Seçili</string>
+    <string name="capture_table_captured">Çekim zamanı</string>
+    <string name="capture_table_observed">Gözlem zamanı</string>
+    <string name="capture_table_context">Çekim bilgileri</string>
+    <string name="capture_table_legend">* = seçili; ! = önemli nokta; — = mevcut değil</string>
+    <string name="capture_export_preparing">Veriler hazırlanıyor…</string>
+</resources>

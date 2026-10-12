@@ -19,6 +19,7 @@ import androidx.compose.ui.zIndex
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.draw.clipToBounds
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.graphics.luminance
 import androidx.compose.ui.platform.LocalConfiguration
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.semantics.clearAndSetSemantics
@@ -34,83 +35,12 @@ import androidx.compose.ui.geometry.Rect
 import androidx.compose.ui.layout.boundsInRoot
 import androidx.compose.ui.layout.positionInRoot
 import androidx.compose.ui.layout.onGloballyPositioned
+import androidx.compose.ui.layout.layout
 import androidx.compose.ui.semantics.selected
 import androidx.compose.ui.semantics.heading
 import androidx.compose.ui.semantics.semantics
 import androidx.compose.material3.MaterialTheme
 import kotlin.math.roundToInt
-
-/** User interaction belongs to the screen, not to a replaceable GPS-derived curve. */
-@Stable
-internal class SpaceCompassSunDailyPathUiState {
-    var menuPath by mutableStateOf<SpaceCompassSunDailyPath?>(null)
-        private set
-    var menuCurrentPoint by mutableStateOf<SpaceCompassSunPathPoint?>(null)
-        private set
-    var menuHighlightedPointId by mutableStateOf<String?>(null)
-        private set
-    private var selection by mutableStateOf<Pair<SpaceCompassSunDailyPath, SpaceCompassSunPathPoint>?>(null)
-    private var currentSelection by mutableStateOf<Pair<SpaceCompassCelestialBody, SpaceCompassSunPathPoint>?>(null)
-    val selectedBody: SpaceCompassCelestialBody? get() = currentSelection?.first ?: selection?.first?.body
-
-    // Freeze the list being consulted: live refreshes must neither dismiss nor move it.
-    fun openMenu(path: SpaceCompassSunDailyPath, currentPoint: SpaceCompassSunPathPoint? = null) {
-        menuPath = path
-        menuCurrentPoint = currentPoint
-        menuHighlightedPointId = null
-    }
-    fun closeMenu() { menuPath = null; menuCurrentPoint = null; menuHighlightedPointId = null }
-
-    /** A scene tap opens a frozen daily list; no point island or selection is kept in the sky. */
-    fun openPoint(path: SpaceCompassSunDailyPath, point: SpaceCompassSunPathPoint,
-        currentPoint: SpaceCompassSunPathPoint? = null) {
-        openMenu(path, currentPoint)
-        val index = path.markers.indexOfFirst { it.timeMs == point.timeMs && it.event == point.event }
-        menuHighlightedPointId = index.takeIf { it >= 0 }?.toString()
-    }
-    /** A visible historical dot still needs its body's live observation when that body is offscreen. */
-    fun openScenePoint(target: SpaceCompassCelestialSceneTarget,
-        currentPoints: Map<SpaceCompassCelestialBody, SpaceCompassSunPathPoint>, zone: java.time.ZoneId) {
-        if (target.isCurrent) openCurrent(target.body, target.point, target.path, zone)
-        else target.path?.let { path -> openPoint(path, target.point, currentPoints[target.body]?.let { live ->
-            spaceCompassCurrentPathPoint(target.body, live.timeMs, live.position) }) }
-    }
-    fun openCurrent(body: SpaceCompassCelestialBody, point: SpaceCompassSunPathPoint,
-        path: SpaceCompassSunDailyPath? = null, zone: java.time.ZoneId = path?.zone ?: java.time.ZoneId.systemDefault()) {
-        val snapshot = spaceCompassCurrentPathPoint(body, point.timeMs, point.position) ?: return
-        // A curve that is not ready cannot invent events, but its live observation is still readable.
-        val usablePath = path?.takeIf { it.body == body && spaceCompassDailyPathListEntries(it, snapshot).any { row -> row.isCurrent } }
-            ?: SpaceCompassSunDailyPath(Instant.ofEpochMilli(snapshot.timeMs).atZone(zone).toLocalDate(),
-                zone, listOf(snapshot), emptyList(), body)
-        openMenu(usablePath, snapshot)
-        menuHighlightedPointId = "current"
-    }
-    fun toggleMenuPoint(pointId: String) {
-        if (menuPath == null) return
-        menuHighlightedPointId = if (menuHighlightedPointId == pointId) null else pointId
-    }
-    fun select(path: SpaceCompassSunDailyPath, point: SpaceCompassSunPathPoint) {
-        currentSelection = null
-        selection = path to point
-    }
-    // Snapshot the tapped instant: later live updates must not silently change its time/angles.
-    fun selectCurrent(body: SpaceCompassCelestialBody, point: SpaceCompassSunPathPoint) {
-        selection = null
-        currentSelection = body to point
-    }
-    fun selectedCurrentFor(body: SpaceCompassCelestialBody): SpaceCompassSunPathPoint? =
-        currentSelection?.takeIf { it.first == body }?.second
-    fun clearSelection() { selection = null; currentSelection = null }
-    fun selectedIn(path: SpaceCompassSunDailyPath): SpaceCompassSunPathPoint? {
-        selectedCurrentFor(path.body)?.let { return it }
-        val (previousPath, point) = selection ?: return null
-        if (previousPath.date != path.date || previousPath.zone != path.zone || previousPath.body != path.body) return null
-        return path.markers.firstOrNull { it.timeMs == point.timeMs && it.event == point.event }
-    }
-}
-
-@Composable
-internal fun rememberSpaceCompassSunDailyPathUiState(): SpaceCompassSunDailyPathUiState = remember { SpaceCompassSunDailyPathUiState() }
 
 internal data class SpaceCompassSunPathLabels(
     val date: String,
@@ -160,14 +90,15 @@ internal fun rememberSpaceCompassSunPathLabels(path: SpaceCompassSunDailyPath): 
 @Composable
 internal fun SpaceCompassSunDailyPathPage(
     state: SpaceCompassSunDailyPathUiState, primaryText: Color, secondaryText: Color, backgroundColor: Color,
-    nowMs: Long = System.currentTimeMillis()
+    nowMs: Long = System.currentTimeMillis(), location: SpaceCompassExportLocation? = null
 ) {
     val path = state.menuPath ?: return
     val labels = rememberSpaceCompassSunPathLabels(path)
     val currentName = stringResource(R.string.celestial_current_position)
-    val eventBackground = spaceCompassSettingsCardColor()
+    val pageBackground = if (backgroundColor.luminance() < .4f) backgroundColor else Color.White
+    val eventBackground = primaryText.copy(alpha = .06f)
     val highlightColor = MaterialTheme.colorScheme.primary
-    val openingPointId = remember(path) { state.menuHighlightedPointId }
+    val openingPointId = remember(path) { state.menuFocusPointId }
     val scroll = rememberScrollState()
     var viewport by remember { mutableStateOf<Rect?>(null) }
     var pointCenter by remember(path) { mutableStateOf<Int?>(null) }
@@ -179,7 +110,12 @@ internal fun SpaceCompassSunDailyPathPage(
     }
     val countdownLocale = if (LocalSpaceCompassNumericFormat.current == SpaceCompassNumericFormat.SYSTEM)
         LocalSpaceCompassDeviceLocale.current else java.util.Locale.ROOT
-    val entries = remember(path, state.menuCurrentPoint) { spaceCompassDailyPathListEntries(path, state.menuCurrentPoint) }
+    val selectedPoints = state.selectedPoints
+    val frozenLocation = remember(path) { location }
+    val export = rememberSpaceCompassDailyPathExport(path,state.menuCurrentPoint,selectedPoints,nowMs,frozenLocation)
+    val entries = remember(path, state.menuCurrentPoint, selectedPoints) {
+        spaceCompassSelectedDailyPathEntries(path, state.menuCurrentPoint, selectedPoints)
+    }
     val azimuthLabel = spaceCompassSunDataRow(stringResource(R.string.celestial_point_azimuth,
         SPACE_COMPASS_SUN_DATA_MARKER), "", "").label
     val elevationLabel = spaceCompassSunDataRow(stringResource(R.string.celestial_point_elevation,
@@ -197,13 +133,21 @@ internal fun SpaceCompassSunDailyPathPage(
                 textAlign = androidx.compose.ui.text.style.TextAlign.End)
         }
     }
-    BackHandler(onBack = state::closeMenu)
-    Surface(color = backgroundColor, contentColor = primaryText,
-        modifier = Modifier.fillMaxSize().testTag("sun-path-page")) {
+    BackHandler { if (export.visible) export.close() else if (!export.saving) state.closeMenu() }
+    Box(Modifier.fillMaxSize()) {
+    Surface(color = pageBackground, contentColor = primaryText,
+        modifier = Modifier.fillMaxSize().layout { measurable,constraints ->
+            val placeable=measurable.measure(constraints)
+            layout(placeable.width,placeable.height) { if (!export.visible) placeable.placeRelative(0,0) }
+        }.testTag("sun-path-page")) {
         Column(Modifier.fillMaxSize()) {
-            SpaceCompassPageToolbar(stringResource(R.string.celestial_daily_path), state::closeMenu,
-                titleModifier = Modifier.testTag("sun-path-title"), titleColor = primaryText)
-            Row(Modifier.fillMaxWidth().padding(horizontal = 18.dp, vertical = 4.dp).zIndex(1f),
+            SpaceCompassPageToolbar(stringResource(R.string.celestial_daily_path),
+                { if (!export.saving) state.closeMenu() },
+                titleModifier = Modifier.testTag("sun-path-title"), titleColor = primaryText) {
+                SpaceCompassTitleActionButton(stringResource(R.string.panorama_export),export.open,
+                    Modifier.testTag("daily-path-export"),enabled=!export.saving) { SpaceCompassPanoramaExportIcon(2.dp) }
+            }
+            Row(Modifier.fillMaxWidth().padding(horizontal = 18.dp, vertical = 8.dp).zIndex(1f),
                 verticalAlignment = Alignment.CenterVertically,
                 horizontalArrangement = Arrangement.spacedBy(8.dp)) {
                 Column(Modifier.weight(1f)) {
@@ -227,9 +171,12 @@ internal fun SpaceCompassSunDailyPathPage(
                         textAlign = androidx.compose.ui.text.style.TextAlign.End)
                 }
             }
+            HorizontalDivider(Modifier.padding(horizontal = 10.dp).testTag("sun-path-header-divider"),
+                thickness = 0.5.dp, color = secondaryText.copy(alpha = 0.25f))
             Box(Modifier.weight(1f).fillMaxWidth().clipToBounds().onGloballyPositioned { viewport = it.boundsInRoot() }
                 .testTag("sun-path-list-viewport")) {
-            Column(Modifier.fillMaxSize().verticalScroll(scroll).padding(spaceCompassPageContentPadding)) {
+            Column(Modifier.fillMaxSize().scrollbarOverlay(scroll, secondaryText.copy(alpha = .46f))
+                .verticalScroll(scroll).padding(spaceCompassPageContentPadding)) {
                 if (path.body.isEarthSatellite) {
                     Text(stringResource(R.string.celestial_iss_note), color = secondaryText, fontSize = 12.sp,
                         modifier = Modifier.padding(bottom = 8.dp))
@@ -257,15 +204,18 @@ internal fun SpaceCompassSunDailyPathPage(
                 }
                 entries.forEach { entry ->
                     val point = entry.point
-                    val pointId = entry.markerIndex?.toString() ?: "current"
-                    val highlighted = state.menuHighlightedPointId == pointId
+                    val pointId = entry.pointId
+                    val highlighted = state.isSelected(path, point, entry.isCurrent)
                     val nameColor = if (highlighted) highlightColor else primaryText
                     val valueColor = if (highlighted) highlightColor else secondaryText
                     Row(Modifier.fillMaxWidth().heightIn(min = 48.dp).clip(RoundedCornerShape(16.dp))
                         .background(if (highlighted) highlightColor.copy(alpha = .16f)
                             else if (entry.isCurrent || point.events.any { it != SpaceCompassSunPathEvent.HOUR })
                                 eventBackground else Color.Transparent)
-                        .clickable { state.toggleMenuPoint(pointId) }
+                        .clickable {
+                            if (entry.isCurrent) state.toggleCurrent(path.body, point, path)
+                            else state.togglePoint(entry.sourcePath ?: path, point)
+                        }
                         .then(if (pointId != openingPointId) Modifier else Modifier.onGloballyPositioned { coordinates ->
                             viewport?.let { frame -> pointCenter =
                                 (coordinates.positionInRoot().y + coordinates.size.height / 2f - frame.top + scroll.value).roundToInt() }
@@ -278,7 +228,8 @@ internal fun SpaceCompassSunDailyPathPage(
                         if (path.body == SpaceCompassCelestialBody.MOON) point.moonPhase?.let { phase ->
                             SpaceCompassMoonPhaseIcon(phase, primaryText, Modifier.testTag("moon-phase-$pointId"))
                         }
-                        SpaceCompassDailyPathPointCaption(if (entry.isCurrent) currentName else labels.name(point),
+                        val pointLabels = entry.sourcePath?.let { rememberSpaceCompassSunPathLabels(it) } ?: labels
+                        SpaceCompassDailyPathPointCaption(if (entry.isCurrent) currentName else pointLabels.name(point),
                             labels.moment(point), formatSpaceCompassPointCountdown(point.timeMs, nowMs, countdownLocale),
                             nameColor, valueColor, entry.isCurrent || point.event != SpaceCompassSunPathEvent.HOUR,
                             Modifier.weight(1f))
@@ -288,5 +239,7 @@ internal fun SpaceCompassSunDailyPathPage(
             }
             }
         }
+    }
+    if (export.visible) SpaceCompassPanoramaExportPage(export)
     }
 }

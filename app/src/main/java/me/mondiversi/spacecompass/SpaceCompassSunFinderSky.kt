@@ -68,7 +68,7 @@ internal fun SpaceCompassSunPointingViewport(
     primaryText: Color = Color.White, secondaryText: Color = Color.LightGray, backgroundColor: Color = Color.Black,
     body: SpaceCompassCelestialBody = SpaceCompassCelestialBody.SUN, timeMs: Long? = null,
     timeBadgeExclusions: List<SpaceCompassSunSceneFrame> = emptyList(),
-    showSelectedPanel: Boolean = true, onVisualize: (() -> Unit)? = null,
+    onVisualize: (() -> Unit)? = null,
     compassWarning: String? = null, showActions: Boolean = true,
     offscreenBody: SpaceCompassCelestialBody? = body,
     overlays: Map<SpaceCompassCelestialBody, SpaceCompassCelestialOverlay> = emptyMap(),
@@ -84,7 +84,6 @@ internal fun SpaceCompassSunPointingViewport(
     noticesBelowReticle: Boolean = false,
     topStartActions: @Composable (Modifier) -> Unit = {},
     topEndActions: @Composable (Modifier) -> Unit = {},
-    selectedPanelExpanded: Boolean = true,
     topContentInset: androidx.compose.ui.unit.Dp = 0.dp,
     projectionTopInset: androidx.compose.ui.unit.Dp = 0.dp
 ) {
@@ -101,7 +100,6 @@ internal fun SpaceCompassSunPointingViewport(
             height * (scenePerspective?.principalY ?: .5))
         var menuSize by remember { mutableStateOf(IntSize.Zero) }
         var noticeSize by remember { mutableStateOf(IntSize.Zero) }
-        var panelSize by remember { mutableStateOf(IntSize.Zero) }
         var bottomActionsSize by remember { mutableStateOf(IntSize.Zero) }
         var bottomStartActionsSize by remember { mutableStateOf(IntSize.Zero) }
         var topStartActionsSize by remember { mutableStateOf(IntSize.Zero) }
@@ -134,7 +132,6 @@ internal fun SpaceCompassSunPointingViewport(
             // Paths can pass beneath the header, while captions and edge locators avoid it.
             val topInsetPx = with(density) { topContentInset.toPx().toDouble() }.coerceIn(0.0, height)
             if (topInsetPx > 0) add(SpaceCompassSunSceneFrame(0.0, 0.0, width, topInsetPx))
-            val selectedPanelHeight = if (showSelectedPanel && dailyPathUiState.selectedBody != null) panelSize.height else 0
             if (noticeSize.width > 0) {
                 val noticeLeft = if (noticesBelowReticle) (width - noticeSize.width) / 2
                     else if (rtl) width - noticeSize.width - padding else padding
@@ -153,16 +150,14 @@ internal fun SpaceCompassSunPointingViewport(
             if (menuSize.width > 0) add(SpaceCompassSunSceneFrame(
                 if (rtl) 0.0 else width - menuSize.width - padding, 0.0,
                 menuSize.width + padding, menuSize.height + padding))
-            if (selectedPanelHeight > 0)
-                add(SpaceCompassSunSceneFrame(0.0, height - selectedPanelHeight - padding, width, selectedPanelHeight + padding))
-            // Include the measured shutter and leading control above the point panel.
+            // Keep pinned captions clear of the measured shutter and leading controls.
             if (bottomActionsSize.width > 0 && bottomActionsSize.height > 0)
                 add(SpaceCompassSunSceneFrame(if (rtl) 0.0 else width - bottomActionsSize.width,
-                    height - selectedPanelHeight - bottomActionsSize.height,
+                    height - bottomActionsSize.height,
                     bottomActionsSize.width.toDouble(), bottomActionsSize.height.toDouble()))
             if (bottomStartActionsSize.width > 0 && bottomStartActionsSize.height > 0)
                 add(SpaceCompassSunSceneFrame(if (rtl) width - bottomStartActionsSize.width else 0.0,
-                    height - selectedPanelHeight - bottomStartActionsSize.height,
+                    height - bottomStartActionsSize.height,
                     bottomStartActionsSize.width.toDouble(), bottomStartActionsSize.height.toDouble()))
         }
         val pixelProjections = projections.mapValues { it.value.copy(x = it.value.x * density.density, y = it.value.y * density.density) }
@@ -187,7 +182,7 @@ internal fun SpaceCompassSunPointingViewport(
             guideExclusions, enabled = showSkyReferences, observerAltitude = observerAltitude) {
             paths.forEach { (candidate, path) -> key(candidate) {
                 SpaceCompassSunDailyPathLayer(path, orientation.takeIf { compassReliable }, dailyPathUiState,
-                    primaryText, secondaryText, backgroundColor, showSelectedPanel = false, showActions = false,
+                    primaryText, secondaryText, backgroundColor, showActions = false,
                     interactive = false, pathTint = spaceCompassCelestialPathTint(candidate),
                     highlightedPoint = focused?.takeIf { it.body == candidate && !it.isCurrent }?.point, perspective = scenePerspective)
             } }
@@ -206,10 +201,10 @@ internal fun SpaceCompassSunPointingViewport(
                     drawLine(reticle, aim + it * inner, aim + it * outer, 1.5.dp.toPx(), StrokeCap.Round)
                 }
             }
-            SpaceCompassCelestialSceneInteraction(targets, current, focused, dailyPathUiState, timeMs, orientation,
+            SpaceCompassCelestialSceneInteraction(targets, current, focused, dailyPathUiState, timeMs, orientation.takeIf { compassReliable },
                 primaryText, secondaryText, backgroundColor, exclusions + offscreen.values.map {
                     SpaceCompassSunSceneFrame(it.center.x - markerDiameter / 2, it.center.y - markerDiameter / 2, markerDiameter, markerDiameter)
-                }, onActivateBody, scenePerspective)
+                }, onActivateBody, scenePerspective, paths)
             // Only thumbnails have small local targets; they never intercept another path's whole viewport.
             spaceCompassAllCelestialOrder.forEach { candidate -> key(candidate) { projections[candidate]?.let { projected ->
                 val below = positions.getValue(candidate).elevationDegrees < 0
@@ -240,14 +235,6 @@ internal fun SpaceCompassSunPointingViewport(
                     Spacer(Modifier.weight(1f))
                     Box(Modifier.align(Alignment.Bottom)) {
                         bottomActions(Modifier.onSizeChanged { bottomActionsSize = it })
-                    }
-                }
-                if (showSelectedPanel) dailyPathUiState.selectedBody?.let { selected ->
-                    // Keep selection alive while the island collapses; exclusions track its animated height.
-                    SpaceCompassMainDetailsVisibility(selectedPanelExpanded, landscape = false,
-                        modifier = Modifier.onSizeChanged { panelSize = it }) {
-                        SpaceCompassSunPathSelectedPanel(paths[selected], dailyPathUiState, primaryText, secondaryText, backgroundColor,
-                            body = selected, nowMs = timeMs)
                     }
                 }
             }

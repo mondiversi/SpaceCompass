@@ -1,0 +1,18 @@
+<resources>
+    <string name="celestial_identity_planet">Sayari</string>
+    <string name="celestial_identity_dwarf">Sayari kibete</string>
+    <string name="celestial_identity_candidate">Mgombea wa sayari kibete</string>
+    <string name="celestial_identity_exoplanet">Sayari nje ya mfumo wa Jua</string>
+    <string name="celestial_identity_moon">Satelaiti ya asili</string>
+    <string name="celestial_identity_comet">Kometi</string>
+    <string name="celestial_identity_star">Nyota</string>
+    <string name="celestial_identity_black_hole">Shimo jeusi</string>
+    <string name="celestial_identity_neutron">Nyota ya nyutroni</string>
+    <string name="celestial_identity_pulsar">Pulsari</string>
+    <string name="celestial_identity_station">Kituo cha anga</string>
+    <string name="celestial_identity_satellite">Satelaiti bandia</string>
+    <string name="celestial_identity_probe">Chombo cha uchunguzi wa anga</string>
+    <string name="celestial_identity_nebula">Nebula</string>
+    <string name="celestial_identity_cluster">Kundi la nyota</string>
+    <string name="celestial_identity_fictional_moon">Satelaiti ya asili ya kubuni</string>
+</resources>

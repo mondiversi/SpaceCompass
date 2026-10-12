@@ -305,7 +305,9 @@ internal fun SpaceCompassSunFinderContent(
         return
     }
     if (dailyPathUiState.menuPath != null) {
-        SpaceCompassSunDailyPathPage(dailyPathUiState, primaryText, secondaryText, backgroundColor, nowMs = timeMs)
+        SpaceCompassSunDailyPathPage(dailyPathUiState, primaryText, secondaryText, backgroundColor, nowMs = timeMs,
+            location = fix?.let { SpaceCompassExportLocation(it.latitude,it.longitude,altitude,
+                it.accuracy.toDouble().takeIf { _ -> it.hasAccuracy() }) })
         return
     }
     // Catalogue calculations are not visibility: unchecked live positions must not enter the scene.
@@ -417,7 +419,8 @@ internal fun SpaceCompassSunFinderContent(
     val panorama = rememberSpaceCompassPanoramaAction(timeMs, fix?.latitude, fix?.longitude, altitude,
         phase, currentWeather, selectedBodies, selectedOverlays, remote,
         gpsAccuracyMeters = fix?.takeIf { it.hasAccuracy() && it.accuracy.isFinite() && it.accuracy >= 0f }
-            ?.accuracy?.toDouble(), cameraEnabled = cameraEnabled, cameraCapture = cameraCapture, showSkyReferences = showSkyReferences, showWeather = showWeather, solarLighting = solarLighting)
+            ?.accuracy?.toDouble(), cameraEnabled = cameraEnabled, cameraCapture = cameraCapture, showSkyReferences = showSkyReferences, showWeather = showWeather, solarLighting = solarLighting,
+        selectedPoints = dailyPathUiState.selectedPoints)
     panorama.preview?.let { preview ->
         SpaceCompassPanoramaPreview(preview, panorama.closePreview)
         return
@@ -456,16 +459,12 @@ internal fun SpaceCompassSunFinderContent(
     val navigation = if (selection.selected.size > 1) SpaceCompassCelestialBodyNavigation(
         previousLabel = stringResource(selection.step(-1).active!!.nameResource),
         nextLabel = stringResource(selection.step(1).active!!.nameResource),
-        onPrevious = { dailyPathUiState.clearSelection(); onBodyChange(selection.step(-1).active!!) },
-        onNext = { dailyPathUiState.clearSelection(); onBodyChange(selection.step(1).active!!) }) else null
+        onPrevious = { onBodyChange(selection.step(-1).active!!) },
+        onNext = { onBodyChange(selection.step(1).active!!) }) else null
     val pathActionTitle = stringResource(spaceCompassCelestialPathTitle(body))
     val details: @Composable (Modifier, Boolean, Boolean) -> Unit = { modifier, compact, landscape ->
         Column(modifier.testTag("celestial-details-column"), horizontalAlignment = Alignment.CenterHorizontally,
             verticalArrangement = Arrangement.spacedBy(8.dp)) {
-            if (landscape) dailyPathUiState.selectedBody?.let { selected ->
-                SpaceCompassSunPathSelectedPanel(selectedOverlays[selected]?.path, dailyPathUiState, primaryText, secondaryText,
-                    backgroundColor, compact = compact, body = selected, nowMs = timeMs)
-            }
             SpaceCompassSunFinderDataPanel(rows, locationRows, orientation, readings.compassUsable,
                 weatherText,
                 currentWeather != null, primaryText, secondaryText, backgroundColor, Modifier.fillMaxWidth().weight(1f, fill = false), compact,
@@ -504,7 +503,7 @@ internal fun SpaceCompassSunFinderContent(
             SpaceCompassSunPointingViewport(target, pointingOrientation.takeIf { !cameraEnabled || cameraPerspective != null },
                 Modifier.fillMaxSize().then(pointingPlacement), skyDescription, dailyPathUiState, rising,
                 readings.compassUsable, dailyPath.takeIf { hasActiveBody }, primaryText, secondaryText, backgroundColor, body, timeMs,
-                showSelectedPanel = !landscape, selectedPanelExpanded = detailsExpanded, onVisualize = { showViewer = true },
+                onVisualize = { showViewer = true },
                 compassWarning = messageText.takeIf { isCompassMessage },
                 compassAccurate = readings.compassReliable,
                 statusMessage = remoteMessage ?: messageText.takeUnless { isCompassMessage },
@@ -535,16 +534,18 @@ internal fun SpaceCompassSunFinderContent(
                                 formatSpaceCompassNumber(if (topEdge) 0.0 else 90.0, 0, numeric,
                                     grouping = false, systemLocale = controlLocale) + "°")
                         }, primaryText, backgroundColor, enabled = !cameraEnabled)
+                        if (dailyPathUiState.selectedPoints.isNotEmpty()) SpaceCompassClearOrbitPointsButton({
+                            dailyPathUiState.clearSelection()
+                            notifyControl(R.string.scene_points_cleared)
+                        }, MaterialTheme.colorScheme.primary, backgroundColor)
                     }
                 },
                 bottomActions = { modifier ->
                     Row(modifier.padding(4.dp).testTag("celestial-capture-controls"),
                         verticalAlignment = Alignment.CenterVertically,
                         horizontalArrangement = Arrangement.spacedBy(8.dp)) {
-                        if (cameraEnabled) SpaceCompassCameraZoomControls(cameraZoomRange, cameraZoomRequest, cameraZoomActual,
-                            !panorama.busy && cameraCapture != null, ::updateCameraZoom, primaryText, backgroundColor)
                         SpaceCompassCaptureButton(panorama.capture, !panorama.busy && (!cameraEnabled || cameraCapture != null),
-                            primaryText, backgroundColor)
+                            cameraEnabled = cameraEnabled)
                     }
                 },
                 topStartActions = { modifier ->
@@ -560,11 +561,13 @@ internal fun SpaceCompassSunFinderContent(
                                 notifyControl(R.string.scene_mode_camera)
                             } else cameraPermission.launch(Manifest.permission.CAMERA)
                         }, primaryText, backgroundColor)
-                        SpaceCompassWeatherToggleButton(showWeather, { enabled ->
+                        if (cameraEnabled) SpaceCompassCameraZoomControls(cameraZoomRange, cameraZoomRequest, cameraZoomActual,
+                            !panorama.busy && cameraCapture != null, ::updateCameraZoom, primaryText, backgroundColor)
+                        else SpaceCompassWeatherToggleButton(showWeather, { enabled ->
                             showWeather = enabled
                             scenePreferences.edit().putBoolean(SPACE_COMPASS_WEATHER_VISIBLE_KEY, enabled).apply()
                             notifyControl(if (enabled) R.string.scene_weather_on else R.string.scene_weather_off)
-                        }, primaryText, backgroundColor, enabled = !cameraEnabled)
+                        }, primaryText, backgroundColor)
                     }
                 },
                 topEndActions = { modifier ->
@@ -580,8 +583,7 @@ internal fun SpaceCompassSunFinderContent(
                             navigate("observer")
                         }
                         SpaceCompassCelestialSelector(body, primaryText, backgroundColor, Modifier, timeMs, remote,
-                            selectedBodies, onSelectionChange?.let { { dailyPathUiState.clearSelection(); it(selection.toggleAll()) } }) {
-                            dailyPathUiState.clearSelection()
+                            selectedBodies, onSelectionChange?.let { { it(selection.toggleAll()) } }) {
                             if (onSelectionChange != null) onSelectionChange(selection.toggle(it)) else onBodyChange(it)
                         }
                     }

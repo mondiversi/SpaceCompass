@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="data_export_current_image">Huidige afbeelding (JPG)</string>
+    <string name="data_export_rotation_image">Rotatieafbeelding (JPG)</string>
+    <string name="data_export_section">Onderdeel</string>
+    <string name="data_export_field">Parameter</string>
+    <string name="data_export_value">Waarde</string>
+    <string name="data_export_notes">Opmerkingen</string>
+</resources>

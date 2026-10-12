@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="celestial_temperature_core">Temperatura do núcleo (estimativa)</string>
+    <string name="celestial_temperature_core_boundary">Temperatura limite núcleo-manto</string>
+    <string name="celestial_temperature_core_adiabatic">Núcleo (modelo adiabático)</string>
+    <string name="celestial_temperature_core_note">As temperaturas do núcleo são estimativas de modelos internos, não medições diretas.</string>
+    <string name="celestial_temperature_core_boundary_note">O limite núcleo-manto indica a borda externa do núcleo, não seu centro.</string>
+    <string name="celestial_temperature_core_adiabatic_note">É apresentado um modelo adiabático de referência para este planeta. Outros modelos internos podem prever temperaturas muito mais altas.</string>
+</resources>

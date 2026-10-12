@@ -7,6 +7,8 @@ import android.content.res.Configuration
 import android.graphics.Bitmap
 import android.graphics.BitmapFactory
 import androidx.compose.runtime.*
+import androidx.compose.material3.MaterialTheme
+import androidx.compose.ui.graphics.toArgb
 import androidx.compose.ui.platform.LocalConfiguration
 import androidx.compose.ui.platform.LocalResources
 import androidx.compose.ui.platform.LocalContext
@@ -29,7 +31,9 @@ internal fun rememberSpaceCompassPanoramaAction(timeMs: Long, latitude: Double?,
     cameraEnabled: Boolean = false, cameraCapture: SpaceCompassCameraCapture? = null,
     showSkyReferences: Boolean = SPACE_COMPASS_SKY_REFERENCES_DEFAULT,
     showWeather: Boolean = SPACE_COMPASS_WEATHER_VISIBLE_DEFAULT,
-    solarLighting: SpaceCompassSolarLighting? = null): SpaceCompassPanoramaAction {
+    solarLighting: SpaceCompassSolarLighting? = null,
+    selectedPoints: List<SpaceCompassSelectedOrbitPoint> = emptyList()): SpaceCompassPanoramaAction {
+    val selectionTint = MaterialTheme.colorScheme.primary.toArgb()
     val context = LocalContext.current
     val resources = LocalResources.current
     val application = context.applicationContext
@@ -60,7 +64,9 @@ internal fun rememberSpaceCompassPanoramaAction(timeMs: Long, latitude: Double?,
             else if (!cameraEnabled && (latitude == null || longitude == null || bodies.isEmpty())) notify(R.string.panorama_not_ready)
             else {
                 val position = SpaceCompassPanoramaPosition.fromStored(preferences?.getString(SPACE_COMPASS_PANORAMA_POSITION_KEY, null))
-                val showPointLabels = preferences?.getBoolean(SPACE_COMPASS_PANORAMA_POINT_LABELS_KEY, true) ?: true
+                val labelMode = SpaceCompassPanoramaLabelMode.fromStored(
+                    preferences?.getString(SPACE_COMPASS_PANORAMA_LABEL_MODE_KEY, null),
+                    preferences?.getBoolean(SPACE_COMPASS_PANORAMA_POINT_LABELS_KEY, true) ?: true)
                 val center = SpaceCompassPanoramaCenter.fromStored(
                     preferences?.getString(SPACE_COMPASS_PANORAMA_CENTER_KEY, null), latitude)
                 val zone = if (simulated) TimeZone.getTimeZone(observationZone) else TimeZone.getDefault()
@@ -75,9 +81,10 @@ internal fun rememberSpaceCompassPanoramaAction(timeMs: Long, latitude: Double?,
                     (if (!cameraEnabled) "; NASA/Goddard SVS, Deep Star Maps 2020; ESA/Gaia/DPAC; Ernie Wright (USRA)" else "") +
                     (if (SpaceCompassCelestialBody.LV_426 in bodies) "; LV-426: fictional Alien moon; original AI illustration" else "") + if (captureWeather != null) "; Open-Meteo (CC BY 4.0)" else ""
                 val snapshot = SpaceCompassPanoramaSnapshot(timeMs, latitude ?: 0.0, longitude ?: 0.0, altitude ?: 0.0, phase, captureWeather,
-                    objects, remote, "", emptyList(), emptyList(), showPointLabels = showPointLabels,
+                    objects, remote, "", emptyList(), emptyList(), labelMode = labelMode,
                     observerPositionKnown = latitude != null && longitude != null, showSkyReferences = showSkyReferences, center = center,
-                    weatherEffectsEnabled = cameraEnabled || showWeather, solarLighting = solarLighting)
+                    weatherEffectsEnabled = cameraEnabled || showWeather, solarLighting = solarLighting,
+                    selectedPoints = selectedPoints.toList(), selectionTint = selectionTint, zoneId = observationZone.id)
                 busy = true
                 val preparingNotice = showSpaceCompassBottomMessage(application,
                     resources.getString(R.string.panorama_preparing))
@@ -112,6 +119,8 @@ internal fun rememberSpaceCompassPanoramaAction(timeMs: Long, latitude: Double?,
                                         SystemClock.elapsedRealtime(), parts)
                                 }).parts
                             }
+                            // Freeze table cells before later refreshes can replace paths or selections.
+                            val orbitTable = captureSpaceCompassOrbitTable(referenceSnapshot)
                             val place = placeFor(spaceCompassPanoramaExportLocale)
                             val selectedPlace = if (selectedFormatting.locale.language == spaceCompassPanoramaExportLocale.language)
                                 place else placeFor(selectedFormatting.locale)
@@ -120,7 +129,8 @@ internal fun rememberSpaceCompassPanoramaAction(timeMs: Long, latitude: Double?,
                             val selected = spaceCompassPanoramaPresentation(referenceSnapshot, resources,
                                 selectedFormatting, zone, selectedPlace, altitude, gpsAccuracyMeters, simulated, simulatedAltitude, cameraPointing, cameraFieldOfView)
                             val resolvedSnapshot = international.snapshot.copy(caption = spaceCompassPanoramaCaptionForPosition(international.caption, position))
-                            val previewSnapshot = selected.snapshot.copy(caption = spaceCompassPanoramaCaptionForPosition(selected.caption, position))
+                            val previewSnapshot = spaceCompassSnapshotForDisclosure(selected.snapshot,position)
+                                .copy(caption = spaceCompassPanoramaCaptionForPosition(selected.caption, position))
                             val cache = File(application.cacheDir, "panoramas")
                             cache.listFiles()?.filter { it.isDirectory && System.currentTimeMillis() - it.lastModified() > 86_400_000L }
                                 ?.forEach { it.deleteRecursively() }
@@ -142,7 +152,7 @@ internal fun rememberSpaceCompassPanoramaAction(timeMs: Long, latitude: Double?,
                             finally { bitmap.recycle() }
                             stampSpaceCompassPanoramaFile(target, captureTime, credits)
                             SpaceCompassPanoramaPreviewData(target, captureTime, position, resolvedSnapshot, international.caption, credits,
-                                cameraPhoto, selected, fileExportMode = SpaceCompassPanoramaExportMode.SELECTED)
+                                cameraPhoto, selected, fileExportMode = SpaceCompassPanoramaExportMode.SELECTED, orbitTable = orbitTable)
                         }
                         preview = result
                     } catch (cancelled: CancellationException) { file?.delete(); cameraSource?.delete(); throw cancelled

@@ -60,10 +60,12 @@ class SpaceCompassPanoramaCenterTest {
     @Test fun everyCenterDisclosureLanguageAndLabelProfileHasASeparateExportIdentity() {
         val keys = SpaceCompassPanoramaCenter.entries.flatMap { center ->
             SpaceCompassPanoramaExportMode.entries.flatMap { mode -> SpaceCompassPanoramaPosition.entries.flatMap { position ->
-                listOf(false,true).map { labels -> spaceCompassPanoramaVariantKey(position,labels,mode,center) }
+                SpaceCompassPanoramaLabelMode.entries.map { labels -> spaceCompassPanoramaVariantKey(position,labels,mode,center) }
             } }
         }
-        assertEquals(48, keys.size)
-        assertEquals(48, keys.toSet().size)
+        val expected = SpaceCompassPanoramaCenter.entries.size * SpaceCompassPanoramaExportMode.entries.size *
+            SpaceCompassPanoramaPosition.entries.size * SpaceCompassPanoramaLabelMode.entries.size
+        assertEquals(expected, keys.size)
+        assertEquals(expected, keys.toSet().size)
     }
 }

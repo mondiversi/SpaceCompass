@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="scene_clear_points">Alle punten deselecteren</string>
+    <string name="scene_points_cleared">Punten gedeselecteerd</string>
+</resources>

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="celestial_temperature_core">Çekirdek sıcaklığı (tahmin)</string>
+    <string name="celestial_temperature_core_boundary">Çekirdek-manto sınırı sıcaklığı</string>
+    <string name="celestial_temperature_core_adiabatic">Çekirdek (adyabatik model)</string>
+    <string name="celestial_temperature_core_note">Çekirdek sıcaklıkları doğrudan ölçüm değil, iç yapı modellerinden elde edilen tahminlerdir.</string>
+    <string name="celestial_temperature_core_boundary_note">Çekirdek-manto sınırı, çekirdeğin merkezini değil dış kenarını belirtir.</string>
+    <string name="celestial_temperature_core_adiabatic_note">Bu gezegen için adyabatik bir referans model gösterilir. Diğer iç yapı modelleri çok daha yüksek sıcaklıklar öngörebilir.</string>
+</resources>

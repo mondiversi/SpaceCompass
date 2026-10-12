@@ -1,0 +1,18 @@
+<resources>
+    <string name="celestial_identity_planet">Planeta</string>
+    <string name="celestial_identity_dwarf">Planeta karłowata</string>
+    <string name="celestial_identity_candidate">Kandydat na planetę karłowatą</string>
+    <string name="celestial_identity_exoplanet">Egzoplaneta</string>
+    <string name="celestial_identity_moon">Naturalny satelita</string>
+    <string name="celestial_identity_comet">Kometa</string>
+    <string name="celestial_identity_star">Gwiazda</string>
+    <string name="celestial_identity_black_hole">Czarna dziura</string>
+    <string name="celestial_identity_neutron">Gwiazda neutronowa</string>
+    <string name="celestial_identity_pulsar">Pulsar</string>
+    <string name="celestial_identity_station">Stacja kosmiczna</string>
+    <string name="celestial_identity_satellite">Sztuczny satelita</string>
+    <string name="celestial_identity_probe">Sonda kosmiczna</string>
+    <string name="celestial_identity_nebula">Mgławica</string>
+    <string name="celestial_identity_cluster">Gromada gwiazd</string>
+    <string name="celestial_identity_fictional_moon">Fikcyjny naturalny satelita</string>
+</resources>

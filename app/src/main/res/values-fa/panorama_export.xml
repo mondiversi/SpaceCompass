@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="panorama_export" formatted="false">خروجی گرفتن</string>
-    <string name="panorama_export_title" formatted="false">خروجی گرفتن از تصویر</string>
+    <string name="panorama_export_title" formatted="false">خروجی داده‌ها</string>
     <string name="panorama_export_profile" formatted="false">قالب داده‌ها</string>
     <string name="panorama_export_selected" formatted="false">زبان و قالب‌های تنظیم‌شده</string>
     <string name="panorama_export_international" formatted="false">علمی بین‌المللی</string>
     <string name="panorama_save_gallery" formatted="false">ذخیره در گالری</string>
-    <string name="panorama_save_phone" formatted="false">ذخیره در تلفن</string>
+    <string name="panorama_save_phone" formatted="false">ذخیره</string>
+    <string name="panorama_export_description" formatted="false">قالب‌ها و گزینه‌های مورد استفاده برای خروجی گرفتن از داده‌ها را انتخاب کنید.</string>
 </resources>

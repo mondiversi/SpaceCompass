@@ -11,6 +11,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.LinearLayout
 import android.widget.TextView
+import androidx.compose.ui.graphics.toArgb
 import kotlin.math.roundToInt
 
 /** Fixed label/value columns, natural value wrapping and a subordinate GPS accuracy row. */
@@ -54,7 +55,7 @@ internal class SpaceCompassNativePositionTable(context: Context, private val den
             setPadding(dp(12f), dp(4f), dp(12f), dp(4f))
             background = GradientDrawable().apply {
                 cornerRadius = dp(20f).toFloat()
-                setColor(if (dark) 0xff282d33.toInt() else 0xffe6e9eb.toInt())
+                setColor(spaceCompassSurfacePalette(dark).island.toArgb())
             }
         }
         val accuracy = data.rows.firstOrNull { it.tag == "sun-info-accuracy" }

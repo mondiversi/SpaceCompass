@@ -4,41 +4,10 @@ import android.graphics.Canvas
 import android.graphics.Color
 import android.graphics.Paint
 import android.graphics.RectF
-import android.graphics.Typeface
-import android.text.TextDirectionHeuristics
-import android.text.Layout
-import android.text.StaticLayout
-import android.text.TextPaint
-
-/** Enough room for a centered full-size line and the reserved +90 degree marker. */
-internal const val SPACE_COMPASS_PANORAMA_HEADER_HEIGHT = 144f
-
-/** Both capture modes share a translucent black band and one centered, shaped caption line. */
-internal fun drawSpaceCompassPanoramaCaption(canvas: Canvas, value: String, width: Int, scale: Float): RectF {
-    val background = Paint().apply { color = 0x99000000.toInt() }
-    canvas.drawRect(0f, 0f, width.toFloat(), SPACE_COMPASS_PANORAMA_HEADER_HEIGHT * scale, background)
-    val inset = 32 * scale
-    val available = (width - inset * 2).toInt().coerceAtLeast(1)
-    val paint = TextPaint(Paint.ANTI_ALIAS_FLAG).apply {
-        color = Color.WHITE; textSize = 34 * scale
-        typeface = Typeface.create(Typeface.DEFAULT, Typeface.BOLD)
-        setShadowLayer(3 * scale, 0f, scale, Color.BLACK)
-    }
-    val desired = Layout.getDesiredWidth(value, paint)
-    if (desired > available) paint.textSize *= available / desired
-    val block = StaticLayout.Builder.obtain(value, 0, value.length, paint, available)
-        .setAlignment(Layout.Alignment.ALIGN_CENTER).setTextDirection(TextDirectionHeuristics.FIRSTSTRONG_LTR)
-        .setIncludePad(false).setMaxLines(1).build()
-    val top = (SPACE_COMPASS_PANORAMA_HEADER_HEIGHT * scale - block.height) / 2f
-    canvas.save(); canvas.translate(inset, top); block.draw(canvas); canvas.restore()
-    val ink = Layout.getDesiredWidth(value, paint).coerceAtMost(available.toFloat())
-    return RectF((width - ink) / 2, top, (width + ink) / 2, top + block.height)
-}
-
 
 internal data class SpaceCompassPanoramaTimeLabel(val text: String, val point: SpaceCompassSunScenePoint,
     val tint: Int, val principal: Boolean, val pointRadius: Float = if (principal) 17f else 6f,
-    val current: Boolean = false)
+    val current: Boolean = false, val selected: Boolean = false)
 
 /** Lay out the whole selected set together. Draw leaders first so later lines cannot cross earlier text. */
 internal fun drawSpaceCompassPanoramaTimeLabels(canvas: Canvas, labels: List<SpaceCompassPanoramaTimeLabel>,
@@ -49,10 +18,17 @@ internal fun drawSpaceCompassPanoramaTimeLabels(canvas: Canvas, labels: List<Spa
     val obstacles = occupied.mapTo(mutableListOf()) {
         SpaceCompassSunSceneFrame(it.left.toDouble(), it.top.toDouble(), it.width().toDouble(), it.height().toDouble())
     }
-    val placed = labels.sortedBy { if (it.current) 0 else if (it.principal) 1 else 2 }.mapNotNull { label ->
+    val placed = labels.sortedBy { if (it.selected) 0 else if (it.current) 1 else if (it.principal) 2 else 3 }.mapNotNull { label ->
         val labelWidth = text.measureText(label.text) + 18 * scale
-        val layout = spaceCompassPanoramaLabelBounds(label.point, labelWidth.toDouble(), labelHeight.toDouble(),
-            width.toDouble(), height.toDouble(), scale.toDouble(), obstacles, label.pointRadius.toDouble()) ?: return@mapNotNull null
+        val heightForLabel = labelHeight
+        val nearby = spaceCompassPanoramaLabelBounds(label.point, labelWidth.toDouble(), heightForLabel.toDouble(),
+            width.toDouble(), height.toDouble(), scale.toDouble(), obstacles, label.pointRadius.toDouble())
+        val layout = nearby ?: if (label.selected) placeSpaceCompassOrbitBadge(width.toDouble(), height.toDouble(),
+            labelWidth.toDouble(), heightForLabel.toDouble(), label.point, 4.0 * scale, 8.0 * scale,
+            excluded = listOf(SpaceCompassSunSceneFrame(0.0, 0.0, width.toDouble(), 76.0 * scale)),
+            occupied = obstacles, pinned = true)?.let { SpaceCompassSunSceneFrame(it.x, it.y,
+                labelWidth.toDouble(), heightForLabel.toDouble()) } else null
+        layout ?: return@mapNotNull null
         obstacles += layout
         val bounds = RectF(layout.left.toFloat(), layout.top.toFloat(),
             (layout.left + layout.width).toFloat(), (layout.top + layout.height).toFloat())
@@ -76,7 +52,7 @@ internal fun drawSpaceCompassPanoramaTimeLabels(canvas: Canvas, labels: List<Spa
         paint.style = Paint.Style.FILL
         paint.color = 0xd9101418.toInt() // Near-black with approximately 15% background transparency.
         canvas.drawRoundRect(bounds, 8 * scale, 8 * scale, paint)
-        paint.color = label.tint; paint.style = Paint.Style.STROKE; paint.strokeWidth = 2f * scale
+        paint.color = label.tint; paint.style = Paint.Style.STROKE; paint.strokeWidth = (if (label.selected) 3f else 2f) * scale
         canvas.drawRoundRect(bounds, 8 * scale, 8 * scale, paint)
         canvas.drawText(label.text, bounds.left + 9 * scale,
             bounds.top + (labelHeight - metrics.descent - metrics.ascent) / 2, text)
@@ -88,7 +64,7 @@ internal fun spaceCompassPanoramaCurrentLabel(snapshot: SpaceCompassPanoramaSnap
     position: SpaceCompassSunPosition, point: SpaceCompassSunScenePoint, tint: Int, radius: Float): SpaceCompassPanoramaTimeLabel {
     val time = snapshot.currentTime ?: formatSpaceCompassPanoramaExportTime(snapshot.timeMs,
         java.util.TimeZone.getTimeZone("UTC"), snapshot.formatting)
-    val value = formatSpaceCompassPanoramaPointLabel(time, position.elevationDegrees, snapshot.formatting,
+    val value = formatSpaceCompassPanoramaPointLabel(time, position, snapshot.formatting,
         snapshot.currentPointName, formatSpaceCompassPanoramaPointCountdown(snapshot.timeMs, snapshot.timeMs, snapshot.formatting))
     return SpaceCompassPanoramaTimeLabel(value, point, tint, principal = true, pointRadius = radius, current = true)
 }

@@ -156,17 +156,17 @@ internal fun SpaceCompassSettingsChoices(spec: SpaceCompassSettingSpec, language
 
 @Composable
 internal fun SpaceCompassSettingsCheckbox(label: String, checked: Boolean, onCheckedChange: (Boolean) -> Unit,
-    modifier: Modifier = Modifier) {
+    modifier: Modifier = Modifier, enabled: Boolean = true) {
     val foreground = MaterialTheme.colorScheme.onSurface
     Row(modifier.fillMaxWidth().heightIn(min = 48.dp)
-        .toggleable(checked, role = Role.Checkbox, onValueChange = onCheckedChange),
+        .toggleable(checked, enabled = enabled, role = Role.Checkbox, onValueChange = onCheckedChange),
         verticalAlignment = Alignment.CenterVertically) {
         CompositionLocalProvider(LocalMinimumInteractiveComponentSize provides 0.dp) {
-            Checkbox(checked, onCheckedChange = null, modifier = Modifier.size(SpaceCompassSettingsControlSize),
+            Checkbox(checked, onCheckedChange = null, enabled = enabled, modifier = Modifier.size(SpaceCompassSettingsControlSize),
                 colors = spaceCompassCheckboxColors(uncheckedColor = foreground.copy(alpha = .72f)))
         }
         Spacer(Modifier.width(6.dp))
-        SpaceCompassSettingsChoiceLabel(label, Modifier.weight(1f), weight = FontWeight.Normal)
+        SpaceCompassSettingsChoiceLabel(label, Modifier.weight(1f), enabled = enabled, weight = FontWeight.Normal)
     }
 }
 

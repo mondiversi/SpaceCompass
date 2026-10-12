@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="celestial_section_identity">Identité</string>
+    <string name="celestial_section_physical">Propriétés physiques</string>
+    <string name="celestial_section_stellar">Lumière et composantes</string>
+    <string name="celestial_section_atmosphere">Température et atmosphère</string>
+    <string name="celestial_section_orbit">Orbite et observation</string>
+    <string name="celestial_section_spatial">Situation spatiale</string>
+    <string name="celestial_spatial_system">Système</string>
+    <string name="celestial_spatial_galaxy">Galaxie</string>
+    <string name="celestial_spatial_ra">Ascension droite</string>
+    <string name="celestial_spatial_dec">Déclinaison</string>
+    <string name="celestial_spatial_reference">Référentiel</string>
+    <string name="celestial_spatial_instant">Instant du calcul</string>
+    <string name="celestial_spatial_solar_system">Système solaire</string>
+    <string name="celestial_spatial_milky_way">Voie lactée</string>
+    <string name="celestial_spatial_host_galaxy">Galaxie hôte de %1$s</string>
+    <string name="celestial_spatial_catalog_note">Coordonnées du catalogue à J2000.0 ; pas la position apparente actuelle.</string>
+    <string name="celestial_spatial_geocentric_note">Direction équatoriale depuis le centre de la Terre à l’instant indiqué.</string>
+    <string name="celestial_spatial_teme_note">Direction géocentrique TEME issue de l’orbite du satellite ; référentiel distinct de l’ICRS.</string>
+    <string name="celestial_spatial_host_note">Les coordonnées désignent l’étoile hôte ; la planète n’est pas résolue.</string>
+    <string name="celestial_spatial_fiction_note">Association fictive. Les coordonnées indiquent uniquement la direction de l’étoile hôte.</string>
+    <string name="celestial_view_volume">Volume</string>
+    <string name="celestial_volume_note">Estimation sphérique déduite du diamètre de référence.</string>
+</resources>

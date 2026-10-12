@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="panorama_export" formatted="false">Hamisha</string>
-    <string name="panorama_export_title" formatted="false">Hamisha picha</string>
+    <string name="panorama_export_title" formatted="false">Uhamishaji wa data</string>
     <string name="panorama_export_profile" formatted="false">Muundo wa data</string>
     <string name="panorama_export_selected" formatted="false">Lugha na miundo iliyowekwa</string>
     <string name="panorama_export_international" formatted="false">Kisayansi cha kimataifa</string>
     <string name="panorama_save_gallery" formatted="false">Hifadhi kwenye matunzio</string>
-    <string name="panorama_save_phone" formatted="false">Hifadhi kwenye simu</string>
+    <string name="panorama_save_phone" formatted="false">Hifadhi</string>
+    <string name="panorama_export_description" formatted="false">Chagua fomati na chaguo za kutumia kuhamisha data.</string>
 </resources>

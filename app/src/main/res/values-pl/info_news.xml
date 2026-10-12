@@ -1,9 +1,9 @@
 <resources>
     <string name="info_news_title">Ostatnie nowości · %1$s</string>
-    <string name="info_news_star_sky" formatted="false">Pełnoekranowy wygaszacz z Ziemią, czasem lokalnym, datą i baterią. Dotknij, aby wrócić.</string>
-    <string name="info_news_texture_downloads" formatted="false">Wygaszacz wstrzymuje czujniki, GPS, aparat i odświeżanie danych. Początkowa głośność muzyki wynosi 20%.</string>
-    <string name="info_news_weather" formatted="false">Czytelniejsze komunikaty o kalibracji i zakłóceniach kompasu; działania dotyczące lokalizacji tylko w razie potrzeby.</string>
-    <string name="info_news_viewer_zoom" formatted="false">Dotknij punktu trajektorii, aby otworzyć przebieg dzienny wyśrodkowany na nim, z tymczasowym wyróżnieniem.</string>
-    <string name="info_news_settings" formatted="false">Zwięzły nagłówek z obiektem, datą i strefą czasową; zachowane punkty 0–23, bieżąca pozycja i fazy Księżyca.</string>
-    <string name="info_news_catalog" formatted="false">Etykiety zdjęć zawierają czasy T+/T−. Ulepszone przyciski główne i szczegóły obiektów.</string>
+    <string name="info_news_star_sky" formatted="false">Zaznaczaj wiele punktów orbit, pozostawiaj ich etykiety otwarte i zmieniaj ten sam wybór w dziennej trasie.</string>
+    <string name="info_news_texture_downloads" formatted="false">Eksportuj obrazy, CSV lub czytelny TXT ze zdjęć, dziennych tras i Obserwatorium; zapisuj lub udostępniaj.</string>
+    <string name="info_news_weather" formatted="false">Prywatność lokalizacji także w tabelach: trasy zaczynają od samego regionu; po ukryciu lokalizacji czas jest w UTC.</string>
+    <string name="info_news_viewer_zoom" formatted="false">Obserwatorium grupuje tożsamość, dane fizyczne, temperatury, dane orbitalne i kontekst przestrzenny.</string>
+    <string name="info_news_settings" formatted="false">Skale kątowe z czterech stron, zwięzłe dane zdjęć i wyraźniejsze etykiety czasu/T± na zdjęciach i panoramach.</string>
+    <string name="info_news_catalog" formatted="false">Ulepszone opcje etykiet i przyciski zdjęć; nieprzezroczyste karty informacji w jasnym i ciemnym motywie.</string>
 </resources>

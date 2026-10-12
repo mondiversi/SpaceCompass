@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="panorama_labels_all">Zote</string>
+    <string name="panorama_labels_objects_selected">Kitu na pointi zilizochaguliwa pekee</string>
+    <string name="panorama_labels_selected">Pointi zilizochaguliwa pekee</string>
+    <string name="panorama_labels_none">Hakuna</string>
+</resources>

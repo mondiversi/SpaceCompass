@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="celestial_temperature_core">क्रोड का तापमान (अनुमान)</string>
+    <string name="celestial_temperature_core_boundary">क्रोड-मैन्टल सीमा का तापमान</string>
+    <string name="celestial_temperature_core_adiabatic">क्रोड (रुद्धोष्म मॉडल)</string>
+    <string name="celestial_temperature_core_note">क्रोड के तापमान आंतरिक संरचना के मॉडलों से निकले अनुमान हैं, प्रत्यक्ष माप नहीं।</string>
+    <string name="celestial_temperature_core_boundary_note">क्रोड-मैन्टल सीमा क्रोड का बाहरी किनारा है, उसका केंद्र नहीं।</string>
+    <string name="celestial_temperature_core_adiabatic_note">इस ग्रह के लिए एक संदर्भ रुद्धोष्म मॉडल दिखाया गया है। अन्य आंतरिक मॉडल कहीं अधिक तापमान का अनुमान लगा सकते हैं।</string>
+</resources>

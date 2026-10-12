@@ -7,7 +7,7 @@ internal enum class SpaceCompassCameraGridEdge { TOP, BOTTOM, LEFT, RIGHT }
 internal data class SpaceCompassCameraGridLine(val axis: SpaceCompassCameraGridAxis, val degrees: Double,
     val segments: List<SpaceCompassSunPathSegment>)
 internal data class SpaceCompassCameraGridTick(val axis: SpaceCompassCameraGridAxis, val degrees: Double,
-    val edge: SpaceCompassCameraGridEdge, val point: SpaceCompassSunScenePoint)
+    val edge: SpaceCompassCameraGridEdge, val point: SpaceCompassSunScenePoint, val decimals: Int = 0)
 internal data class SpaceCompassCameraAngularGrid(val lines: List<SpaceCompassCameraGridLine>,
     val ticks: List<SpaceCompassCameraGridTick>)
 
@@ -49,7 +49,6 @@ internal fun spaceCompassCameraAngularGrid(orientation: SpaceCompassSunOrientati
     frame: SpaceCompassSunSceneFrame, step: Int = 10): SpaceCompassCameraAngularGrid {
     require(width > 0 && height > 0 && frame.width > 0 && frame.height > 0 && step in listOf(5, 10, 15, 30))
     val lines = mutableListOf<SpaceCompassCameraGridLine>()
-    val ticks = mutableListOf<SpaceCompassCameraGridTick>()
     fun direction(az: Double, el: Double): SpaceCompassSunVector {
         val a = Math.toRadians(az); val e = Math.toRadians(el)
         return SpaceCompassSunVector(cos(e) * sin(a), cos(e) * cos(a), sin(e))
@@ -61,23 +60,11 @@ internal fun spaceCompassCameraAngularGrid(orientation: SpaceCompassSunOrientati
         }
         if (segments.isEmpty()) return
         lines += SpaceCompassCameraGridLine(axis, degrees, segments)
-        for (p in segments.flatMap { listOf(it.start, it.end) }) {
-            val edge = when {
-                abs(p.y - frame.top) < 1e-5 -> SpaceCompassCameraGridEdge.TOP
-                abs(p.y - frame.top - frame.height) < 1e-5 -> SpaceCompassCameraGridEdge.BOTTOM
-                abs(p.x - frame.left) < 1e-5 -> SpaceCompassCameraGridEdge.LEFT
-                abs(p.x - frame.left - frame.width) < 1e-5 -> SpaceCompassCameraGridEdge.RIGHT
-                else -> null
-            } ?: continue
-            if ((axis == SpaceCompassCameraGridAxis.AZIMUTH && edge !in setOf(SpaceCompassCameraGridEdge.TOP, SpaceCompassCameraGridEdge.BOTTOM)) ||
-                (axis == SpaceCompassCameraGridAxis.ELEVATION && edge != SpaceCompassCameraGridEdge.LEFT)) continue
-            if (ticks.none { it.axis == axis && it.degrees == degrees && it.edge == edge && hypot(it.point.x - p.x, it.point.y - p.y) < .1 })
-                ticks += SpaceCompassCameraGridTick(axis, degrees, edge, p)
-        }
+
     }
     for (az in 0 until 360 step step) line(SpaceCompassCameraGridAxis.AZIMUTH, az.toDouble(),
         (-90..90 step 2).map { direction(az.toDouble(), it.toDouble()) })
     for (el in -90..90 step step) if (abs(el) < 90) line(SpaceCompassCameraGridAxis.ELEVATION, el.toDouble(),
         (0..360 step 2).map { direction(it.toDouble(), el.toDouble()) })
-    return SpaceCompassCameraAngularGrid(lines, ticks)
+    return SpaceCompassCameraAngularGrid(lines, spaceCompassCameraBorderTicks(orientation, perspective, width, height, frame))
 }

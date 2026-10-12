@@ -1,0 +1,18 @@
+<resources>
+    <string name="celestial_identity_planet">Gezegen</string>
+    <string name="celestial_identity_dwarf">Cüce gezegen</string>
+    <string name="celestial_identity_candidate">Cüce gezegen adayı</string>
+    <string name="celestial_identity_exoplanet">Ötegezegen</string>
+    <string name="celestial_identity_moon">Doğal uydu</string>
+    <string name="celestial_identity_comet">Kuyruklu yıldız</string>
+    <string name="celestial_identity_star">Yıldız</string>
+    <string name="celestial_identity_black_hole">Kara delik</string>
+    <string name="celestial_identity_neutron">Nötron yıldızı</string>
+    <string name="celestial_identity_pulsar">Pulsar</string>
+    <string name="celestial_identity_station">Uzay istasyonu</string>
+    <string name="celestial_identity_satellite">Yapay uydu</string>
+    <string name="celestial_identity_probe">Uzay sondası</string>
+    <string name="celestial_identity_nebula">Bulutsu</string>
+    <string name="celestial_identity_cluster">Yıldız kümesi</string>
+    <string name="celestial_identity_fictional_moon">Kurgusal doğal uydu</string>
+</resources>

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="celestial_details_title">פרטי העצם</string>
+    <string name="celestial_details_title">מצפה כוכבים</string>
     <string name="celestial_view_name">שם</string>
 </resources>

@@ -32,7 +32,7 @@ class SpaceCompassPanoramaAndroidTest {
             assertTrue(bitmap.height < bitmap.width)
             val position = calculateSpaceCompassSunPosition(time,input.latitude,input.longitude,input.altitude)
             val angularPoint = spaceCompassPanoramaPoint(position,bitmap.width.toDouble(),(bitmap.width / 2).toDouble())!!
-            val point = angularPoint.copy(y = angularPoint.y + SPACE_COMPASS_PANORAMA_HEADER_HEIGHT * .25)
+            val point = angularPoint.copy(y = angularPoint.y + spaceCompassPanoramaSceneTop(prepareSpaceCompassCaptureCaption(input.caption,1024),1024))
             val marker = renderSpaceCompassPanoramaMarker(InstrumentationRegistry.getInstrumentation().targetContext,
                 SpaceCompassCelestialBody.SUN, time)
             try {
@@ -216,16 +216,18 @@ class SpaceCompassPanoramaAndroidTest {
         for (value in listOf("Space Compass", caption, caption.repeat(2), "Space Compass · المدينة، البلد · غائم جزئياً (53%)")) {
             val bitmap = renderSpaceCompassPanorama(snapshot().copy(caption = value), 1024)
             try {
-                val headerHeight = SPACE_COMPASS_PANORAMA_HEADER_HEIGHT * .25f
-                assertEquals(512 + headerHeight.toInt(), bitmap.height)
-                val bounds = drawSpaceCompassPanoramaCaption(Canvas(bitmap), value, 1024, .25f)
+                val heading = prepareSpaceCompassCaptureCaption(value,1024)
+                val sceneTop = spaceCompassPanoramaSceneTop(heading,1024)
+                assertEquals(512 + sceneTop.toInt(),bitmap.height)
+                val bounds = heading.draw(Canvas(bitmap))
                 assertTrue(bounds.left >= 0 && bounds.right <= 1024)
                 assertTrue(bounds.top > 0)
-                assertEquals("The fitted line stays vertically centered above the grid",
-                    headerHeight / 2, bounds.centerY(), .001f)
-                // Reserve the unchanged 44 px marker extent, scaled with the angular scene.
-                assertTrue("Even the +90° marker must stay below the caption",
-                    bounds.bottom + 2 * .25f <= headerHeight - 44 * .25f)
+                assertEquals("Visible glyphs are centered inside the compact band",
+                    heading.height / 2f,bounds.centerY(),.001f)
+                assertTrue("Only small padding is reserved around the fitted line",heading.height-bounds.height() <= 17 * (1024/1080f))
+                assertTrue("Top azimuth ticks and zenith markers are outside the caption",
+                    bounds.bottom + 2 * .25f <= sceneTop - SPACE_COMPASS_PANORAMA_TOP_AXIS_HEIGHT * .25f)
+
             } finally { bitmap.recycle() }
         }
     }

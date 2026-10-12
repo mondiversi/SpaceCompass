@@ -1,5 +1,6 @@
 package me.mondiversi.spacecompass
 
+import java.time.Instant
 import java.time.LocalDate
 import java.time.ZoneId
 import org.junit.Assert.*
@@ -12,110 +13,116 @@ class SpaceCompassDailyPointNavigationTest {
     private fun point(hour: Int) = SpaceCompassSunPathPoint(start + hour * 3_600_000L, SpaceCompassSunPosition(170.0, 20.0))
     private fun path(body: SpaceCompassCelestialBody = SpaceCompassCelestialBody.MOON) = SpaceCompassSunDailyPath(
         date, zone, listOf(point(0), point(24)), listOf(point(0), point(12), point(23)), body)
+    private fun target(p: SpaceCompassSunDailyPath, index: Int) = SpaceCompassCelestialSceneTarget(p.body,
+        p.markers[index], SpaceCompassSunScenePoint(170.0, 200.0), p)
 
-    @Test fun tappingAnHourlyPointOpensItsOwnFrozenListInsteadOfASkyIsland() {
-        val p = path(); val state = SpaceCompassSunDailyPathUiState(); val current = point(13)
-        state.openPoint(p, p.markers[1], current)
-        assertSame(p, state.menuPath); assertSame(current, state.menuCurrentPoint)
-        assertEquals("1", state.menuHighlightedPointId)
-        assertNull(state.selectedBody); assertNull(state.selectedIn(p))
-    }
-    @Test fun currentAndACoincidentHourKeepDifferentHighlightedIdentities() {
-        val p = path(SpaceCompassCelestialBody.MARS); val state = SpaceCompassSunDailyPathUiState()
-        state.openCurrent(p.body, p.markers[1], p)
-        assertEquals("current", state.menuHighlightedPointId)
-        val rows = spaceCompassDailyPathListEntries(state.menuPath!!, state.menuCurrentPoint)
-        assertEquals(2, rows.count { it.point.timeMs == p.markers[1].timeMs })
-        state.toggleMenuPoint("1")
-        assertEquals("1", state.menuHighlightedPointId)
-        assertSame(p, state.menuPath)
-    }
-    @Test fun tappingTheHighlightedRowAgainClearsOnlyTheHighlight() {
+    @Test fun tappingSeveralSkyPointsNeverOpensAPageAndKeepsEverySelection() {
         val p = path(); val state = SpaceCompassSunDailyPathUiState()
-        state.openPoint(p, p.markers[2])
-        state.toggleMenuPoint("2")
-        assertNull(state.menuHighlightedPointId); assertSame(p, state.menuPath)
-        state.toggleMenuPoint("0")
-        assertEquals("0", state.menuHighlightedPointId)
+        state.toggleScenePoint(target(p, 0), zone); state.toggleScenePoint(target(p, 2), zone)
+        assertNull(state.menuPath); assertEquals(2, state.selectedPoints.size)
+        assertTrue(state.isSelected(p, p.markers[0])); assertTrue(state.isSelected(p, p.markers[2]))
     }
-    @Test fun backAndOpeningTheNormalPathActionNeverRetainTheClickedPoint() {
+    @Test fun selectionsFromDifferentOrbitsDoNotReplaceEachOther() {
+        val moon = path(); val mars = path(SpaceCompassCelestialBody.MARS); val state = SpaceCompassSunDailyPathUiState()
+        state.toggleScenePoint(target(moon, 1), zone); state.toggleScenePoint(target(mars, 1), zone)
+        assertEquals(setOf(moon.body, mars.body), state.selectedPoints.map { it.key.body }.toSet())
+        state.toggleScenePoint(target(moon, 1), zone)
+        assertFalse(state.isSelected(moon, moon.markers[1])); assertTrue(state.isSelected(mars, mars.markers[1]))
+    }
+    @Test fun pageOpeningAndClosingRetainsPinsAndCentersTheMostRecentSelection() {
         val p = path(); val state = SpaceCompassSunDailyPathUiState()
-        state.openPoint(p, p.markers[2], point(13)); state.closeMenu()
-        assertNull(state.menuPath); assertNull(state.menuCurrentPoint); assertNull(state.menuHighlightedPointId)
-        assertNull(state.selectedBody)
-        state.openMenu(p, point(14))
-        assertNull(state.menuHighlightedPointId)
-        assertEquals(point(14), state.menuCurrentPoint)
+        state.togglePoint(p, p.markers[0]); state.togglePoint(p, p.markers[1]); state.openMenu(p, point(13))
+        assertEquals("1", state.menuFocusPointId); state.closeMenu()
+        assertNull(state.menuPath); assertNull(state.menuCurrentPoint); assertEquals(2, state.selectedPoints.size)
+        state.openMenu(p, point(14)); assertEquals("1", state.menuFocusPointId)
     }
-    @Test fun aMissingOrStaleCurveShowsOnlyTheRealTappedCurrentObservation() {
+    @Test fun deselectingOneDailyRowDoesNotClearOtherPointsOrOtherOrbits() {
+        val p = path(); val mars = path(SpaceCompassCelestialBody.MARS); val state = SpaceCompassSunDailyPathUiState()
+        state.select(p, p.markers[0]); state.select(p, p.markers[1]); state.select(mars, mars.markers[2])
+        state.openMenu(p); state.toggleMenuPoint("1")
+        assertFalse(state.isSelected(p, p.markers[1])); assertTrue(state.isSelected(p, p.markers[0]))
+        assertTrue(state.isSelected(mars, mars.markers[2])); assertSame(p, state.menuPath)
+    }
+    @Test fun selectingDailyRowsAddsPinsThatRemainAfterReturningToTheSky() {
+        val p = path(); val state = SpaceCompassSunDailyPathUiState(); state.openMenu(p)
+        state.toggleMenuPoint("0"); state.toggleMenuPoint("2"); state.closeMenu()
+        assertTrue(state.isSelected(p, p.markers[0])); assertTrue(state.isSelected(p, p.markers[2]))
+    }
+    @Test fun currentAndCoincidentHourAndNamedEventHaveDifferentSelectionIdentities() {
+        val p = path().copy(markers = listOf(point(12), point(12).copy(event = SpaceCompassSunPathEvent.CULMINATION)))
+        val state = SpaceCompassSunDailyPathUiState(); state.openMenu(p, point(12))
+        state.toggleMenuPoint("current"); state.toggleMenuPoint("0"); state.toggleMenuPoint("1")
+        assertEquals(3, state.selectedPoints.size); state.toggleMenuPoint("current")
+        assertFalse(state.isSelected(p, point(12), true)); assertTrue(state.isSelected(p, p.markers[0]))
+        assertTrue(state.isSelected(p, p.markers[1]))
+    }
+    @Test fun liveSelectionStillTogglesOffAfterItsTimestampAndPositionAdvance() {
+        val p = path(); val state = SpaceCompassSunDailyPathUiState()
+        state.toggleCurrent(p.body, point(13), p)
+        assertTrue(state.isCurrentSelected(p.body, point(14), zone))
+        state.toggleCurrent(p.body, point(14), p)
+        assertTrue(state.selectedPoints.isEmpty())
+    }
+    @Test fun refreshedMarkerCoordinatesAndMoonPhaseDoNotLoseTheirSelection() {
+        val p = path(); val state = SpaceCompassSunDailyPathUiState(); state.select(p, p.markers[1])
+        val updated = p.markers[1].copy(position = SpaceCompassSunPosition(165.0, 18.0),
+            moonPhase = calculateSpaceCompassMoonPhase(p.markers[1].timeMs))
+        assertTrue(state.isSelected(p.copy(markers = listOf(updated)), updated))
+    }
+    @Test fun namedEventsSurviveSubMinuteRefinementButTheNextDayDoesNotMatch() {
+        val p = path().copy(markers = listOf(point(12).copy(event = SpaceCompassSunPathEvent.CULMINATION)))
+        val state = SpaceCompassSunDailyPathUiState(); state.select(p, p.markers[0])
+        assertTrue(state.isSelected(p, p.markers[0].copy(timeMs = p.markers[0].timeMs + 5_000)))
+        assertFalse(state.isSelected(p.copy(date = date.plusDays(1)), p.markers[0]))
+    }
+    @Test fun aRefinedNamedEventCanStillBeDeselectedFromTheDailyList() {
+        val original = point(12).copy(event = SpaceCompassSunPathEvent.CULMINATION)
+        val p = path().copy(markers = listOf(original)); val state = SpaceCompassSunDailyPathUiState()
+        state.select(p, original)
+        val refreshed = original.copy(timeMs = original.timeMs + 65_000)
+        val updated = p.copy(markers = listOf(refreshed))
+        assertTrue(state.isSelected(updated, refreshed))
+        state.openMenu(updated); state.toggleMenuPoint("0")
+        assertTrue(state.selectedPoints.isEmpty())
+    }
+    @Test fun repeatedDaylightSavingHoursHaveDistinctAbsoluteKeys() {
+        val early = SpaceCompassSunPathPoint(Instant.parse("2026-10-25T00:30:00Z").toEpochMilli(), point(0).position)
+        val late = early.copy(timeMs = early.timeMs + 3_600_000)
+        assertEquals(Instant.ofEpochMilli(early.timeMs).atZone(zone).hour, Instant.ofEpochMilli(late.timeMs).atZone(zone).hour)
+        assertNotEquals(spaceCompassOrbitPointKey(path().body, early, zone), spaceCompassOrbitPointKey(path().body, late, zone))
+    }
+    @Test fun aLiveProbeWithoutACurveCanBePinnedWithoutInventingAnOrbit() {
         val state = SpaceCompassSunDailyPathUiState(); val current = point(13)
-        state.openCurrent(SpaceCompassCelestialBody.VOYAGER_1, current, zone = zone)
-        assertEquals(SpaceCompassCelestialBody.VOYAGER_1, state.menuPath!!.body)
-        assertTrue(state.menuPath!!.markers.isEmpty())
-        assertEquals(listOf(current), spaceCompassDailyPathListEntries(state.menuPath!!, state.menuCurrentPoint).map { it.point })
-        state.openCurrent(SpaceCompassCelestialBody.MARS, point(25), path(SpaceCompassCelestialBody.MARS))
-        assertTrue(state.menuPath!!.markers.isEmpty())
-        assertEquals(point(25), state.menuCurrentPoint)
+        state.toggleScenePoint(SpaceCompassCelestialSceneTarget(SpaceCompassCelestialBody.VOYAGER_1,
+            current, SpaceCompassSunScenePoint(170.0, 200.0), isCurrent = true), zone)
+        assertNull(state.menuPath); assertNull(state.selectedPoints.single().path)
+        assertTrue(state.selectedPoints.single().key.isCurrent)
     }
-    @Test fun aLunarTapIncludesItsPhaseAndDoesNotFollowLaterLivePositions() {
-        val p = path(); val state = SpaceCompassSunDailyPathUiState(); val tapped = point(13)
-        state.openCurrent(p.body, tapped, p)
-        val snapshot = state.menuCurrentPoint!!
-        assertEquals(calculateSpaceCompassMoonPhase(tapped.timeMs), snapshot.moonPhase)
-        val refreshed = p.copy(markers = p.markers + point(15))
-        assertNotEquals(refreshed, state.menuPath); assertSame(snapshot, state.menuCurrentPoint)
-        assertEquals(tapped.timeMs, snapshot.timeMs)
+    @Test fun currentLunarSelectionPreservesTheActualPhase() {
+        val state = SpaceCompassSunDailyPathUiState(); val p = path(); state.selectCurrent(p.body, point(13), p)
+        assertEquals(calculateSpaceCompassMoonPhase(point(13).timeMs), state.selectedPoints.single().point.moonPhase)
     }
-    @Test fun mergedNamedEventsNavigateToTheOriginalMarkerIndex() {
-        val event = point(12).copy(event = SpaceCompassSunPathEvent.CULMINATION,
-            coincidentEvents = setOf(SpaceCompassSunPathEvent.SUNRISE))
-        val p = path().copy(markers = listOf(point(0), event)); val state = SpaceCompassSunDailyPathUiState()
-        state.openPoint(p, event.copy(moonPhase = calculateSpaceCompassMoonPhase(event.timeMs)))
-        assertEquals("1", state.menuHighlightedPointId)
-        assertEquals(event, state.menuPath!!.markers[1])
+    @Test fun invalidPositionsAndInvalidRowIdsCannotCreatePins() {
+        val state = SpaceCompassSunDailyPathUiState(); val p = path()
+        state.toggleCurrent(p.body, point(13).copy(position = SpaceCompassSunPosition(0.0, Double.NaN)), p)
+        state.openMenu(p); state.toggleMenuPoint("-1"); state.toggleMenuPoint("999"); state.toggleMenuPoint("unknown")
+        assertTrue(state.selectedPoints.isEmpty())
     }
-    @Test fun invalidCurrentPositionsCannotOpenAFictionalRoute() {
-        val state = SpaceCompassSunDailyPathUiState()
-        state.openCurrent(SpaceCompassCelestialBody.SUN, point(13).copy(position = SpaceCompassSunPosition(0.0, Double.NaN)))
-        assertNull(state.menuPath); assertNull(state.menuHighlightedPointId)
+    @Test fun clearingAnInvalidatedScenarioRemovesPinsFromAllObjects() {
+        val state = SpaceCompassSunDailyPathUiState(); val p = path(); val mars = path(SpaceCompassCelestialBody.MARS)
+        state.select(p, p.markers[0]); state.select(mars, mars.markers[1]); state.clearSelection()
+        assertTrue(state.selectedPoints.isEmpty())
     }
-    @Test fun aVisibleSceneDotKeepsCurrentForItsBodyEvenWhenTheLiveObjectIsBehindTheViewer() {
-        val orientation = SpaceCompassSunOrientation(SpaceCompassSunVector(1.0, 0.0, 0.0),
-            SpaceCompassSunVector(0.0, 0.0, 1.0), SpaceCompassSunVector(0.0, 1.0, 0.0))
-        for (body in listOf(SpaceCompassCelestialBody.SUN, SpaceCompassCelestialBody.MOON,
-                SpaceCompassCelestialBody.MARS, SpaceCompassCelestialBody.ISS, SpaceCompassCelestialBody.STARLINK_V3)) {
-            val marker = point(12).copy(position = SpaceCompassSunPosition(0.0, 0.0))
-            val p = path(body).copy(markers = listOf(marker))
-            val current = point(13).copy(position = SpaceCompassSunPosition(180.0, -20.0))
-            val observations = mapOf(body to current)
-            val targets = projectSpaceCompassCelestialSceneTargets(mapOf(body to p), observations,
-                orientation, 340.0, 400.0)
-            assertFalse(targets.any { it.isCurrent })
-            val target = tappedSpaceCompassCelestialSceneTarget(targets, SpaceCompassSunScenePoint(170.0, 200.0), 32.0)!!
-            val state = SpaceCompassSunDailyPathUiState()
-            state.openScenePoint(target, observations, zone)
-            val row = spaceCompassDailyPathListEntries(state.menuPath!!, state.menuCurrentPoint).single { it.isCurrent }
-            assertEquals(current.timeMs, row.point.timeMs); assertEquals(current.position, row.point.position)
-            assertEquals("0", state.menuHighlightedPointId)
-            if (body == SpaceCompassCelestialBody.MOON) assertEquals(calculateSpaceCompassMoonPhase(current.timeMs), row.point.moonPhase)
-            state.toggleMenuPoint("0")
-            assertEquals(row, spaceCompassDailyPathListEntries(state.menuPath!!, state.menuCurrentPoint).single { it.isCurrent })
-        }
+    @Test fun aSelectedDotCanKeepTheCurrentRowEvenWhenTheLiveObjectIsOffscreen() {
+        val p = path(); val state = SpaceCompassSunDailyPathUiState(); state.toggleScenePoint(target(p, 1), zone)
+        val current = point(13).copy(position = SpaceCompassSunPosition(180.0, -20.0))
+        state.openMenu(p, current)
+        assertEquals(current, spaceCompassDailyPathListEntries(p, state.menuCurrentPoint).single { it.isCurrent }.point)
+        assertTrue(state.isSelected(p, p.markers[1]))
     }
-    @Test fun anotherObjectsObservationCannotBeUsedAsCurrentForTheTappedOrbit() {
-        val p = path(); val state = SpaceCompassSunDailyPathUiState()
-        val target = SpaceCompassCelestialSceneTarget(p.body, p.markers[1], SpaceCompassSunScenePoint(170.0, 200.0), p)
-        state.openScenePoint(target, mapOf(SpaceCompassCelestialBody.SUN to point(13)), zone)
-        assertSame(p, state.menuPath); assertEquals("1", state.menuHighlightedPointId)
-        assertNull(state.menuCurrentPoint)
-        assertFalse(spaceCompassDailyPathListEntries(p, state.menuCurrentPoint).any { it.isCurrent })
-    }
-    @Test fun centeringUsesTheListViewportRatherThanTheFullScreenOrRowTop() {
+    @Test fun centeringUsesTheViewportAndClampsToTheActualScrollExtent() {
         assertEquals(700, spaceCompassDailyPathCenterScroll(1_000, 600, 2_000))
         assertEquals(500, spaceCompassDailyPathCenterScroll(1_000, 1_000, 2_000))
-        assertEquals(700, spaceCompassDailyPathCenterScroll(1_000, 601, 2_000))
-    }
-    @Test fun centeringStaysInsideTheAvailableScrollExtentIncludingAnEmptyList() {
         assertEquals(0, spaceCompassDailyPathCenterScroll(100, 600, 2_000))
         assertEquals(2_000, spaceCompassDailyPathCenterScroll(3_000, 600, 2_000))
         assertEquals(0, spaceCompassDailyPathCenterScroll(1_000, 600, 0))

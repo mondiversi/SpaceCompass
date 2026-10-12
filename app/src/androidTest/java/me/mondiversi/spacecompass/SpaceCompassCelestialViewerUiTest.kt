@@ -53,6 +53,8 @@ class SpaceCompassCelestialViewerUiTest {
             compose.onNodeWithTag("celestial-view-current").assertIsSelected().assertIsDisplayed()
             compose.onNodeWithTag("celestial-view-rotation").assertIsNotSelected()
             compose.onNodeWithTag("celestial-view-information").assertIsDisplayed()
+            compose.onNodeWithTag("celestial-view-classification").assertIsDisplayed().assertTextEquals(
+                resources.getString(R.string.celestial_identity_station))
             compose.onNodeWithTag("celestial-view-rotation").performClick().assertIsSelected()
             compose.onNodeWithTag("celestial-view-current").assertIsNotSelected()
             compose.onNodeWithTag("celestial-model-viewport").performTouchInput { swipeLeft() }
@@ -66,6 +68,17 @@ class SpaceCompassCelestialViewerUiTest {
         show()
         compose.onNodeWithText(resources.getString(R.string.celestial_view_location_needed)).assertExists()
         compose.onNodeWithTag("celestial-model-viewport").assertDoesNotExist()
+        val name = compose.onNodeWithText(resources.getString(SpaceCompassCelestialBody.MOON.nameResource))
+            .fetchSemanticsNode().boundsInRoot
+        val designation = compose.onNodeWithTag("celestial-view-designation").assertIsDisplayed().assertTextEquals("Earth I")
+            .fetchSemanticsNode().boundsInRoot
+        val classification = compose.onNodeWithTag("celestial-view-classification").assertIsDisplayed().assertTextEquals(
+            resources.getString(R.string.celestial_identity_moon)).fetchSemanticsNode().boundsInRoot
+        assertTrue(name.bottom <= designation.top && designation.bottom <= classification.top)
+        val classificationLabel = compose.onNodeWithText(resources.getString(R.string.celestial_view_classification))
+            .assertIsDisplayed().fetchSemanticsNode().boundsInRoot
+        assertEquals("Classification occupies its own labelled table row", classification.center.y, classificationLabel.center.y, 1f)
+        assertEquals("Designation and classification share the table value column", designation.left, classification.left, 1f)
         compose.onNodeWithTag("celestial-view-rotation").performClick()
         compose.onNodeWithTag("celestial-model-viewport").assertExists()
     }
@@ -74,13 +87,13 @@ class SpaceCompassCelestialViewerUiTest {
         show()
         for (night in listOf(false, true)) {
             compose.runOnIdle { dark.value = night }
-            compose.onNodeWithText(resources.getString(R.string.celestial_view_gravity)).assertIsDisplayed()
+            compose.onNodeWithText(resources.getString(R.string.celestial_view_gravity)).performScrollTo().assertIsDisplayed()
             compose.onNodeWithText(formatSpaceCompassCelestialGravity(spaceCompassCelestialFacts(body.value).gravity,
                 SpaceCompassNumericFormat.SYSTEM, 2)).assertIsDisplayed()
         }
         compose.runOnIdle { body.value = SpaceCompassCelestialBody.ISS }
-        compose.onNodeWithText(resources.getString(R.string.celestial_view_gravity)).assertIsDisplayed()
-        compose.onAllNodesWithText("—").assertCountEquals(12)
+        compose.onNodeWithText(resources.getString(R.string.celestial_view_gravity)).performScrollTo().assertIsDisplayed()
+        compose.onNodeWithTag("celestial-view-gravity").assertTextEquals("—")
     }
     @Test fun thermalRowsUseTheCorrectLayerAndFollowBodyChangesInBothThemes() {
         body.value = SpaceCompassCelestialBody.MOON
@@ -160,8 +173,16 @@ class SpaceCompassCelestialViewerUiTest {
                 assertEquals("No added gap above the image", toolbar.bottom, model.top, 1f)
                 if (w > h) assertEquals("Landscape facts start at the same height", model.top, info.top, 1f)
                 else assertEquals("Portrait image/facts spacing is unchanged", 5f, info.top - model.bottom, 1f)
-                val sideGap = if (rtl) root.right - model.right else root.right - info.right
-                assertEquals("Side inset is unchanged", 5f, sideGap, 1f)
+                val card = compose.onNodeWithTag("celestial-view-information-island")
+                    .fetchSemanticsNode().boundsInRoot
+                assertEquals("Model and facts islands must have identical widths", model.width, card.width, 1f)
+                if (w <= h) {
+                    assertEquals("Portrait cards have identical left edges", model.left, card.left, 1f)
+                    assertEquals("Portrait cards have identical right edges", model.right, card.right, 1f)
+                }
+                val modelSideGap = if (rtl) root.right - model.right else model.left - root.left
+                assertEquals("The shared outer and scrollbar insets apply to the model", 9f, modelSideGap, 1f)
+                assertEquals("Facts keep their scrollbar gutter", 4f, info.right - card.right, 1f)
                 assertEquals("Bottom inset is unchanged", 3f, root.bottom - info.bottom, 1f)
             }
     }

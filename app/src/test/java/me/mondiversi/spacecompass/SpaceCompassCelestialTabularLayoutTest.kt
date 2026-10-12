@@ -22,9 +22,11 @@ class SpaceCompassCelestialTabularLayoutTest {
         assertTrue(screen.substringAfter("} else Box(Modifier.fillMaxSize().clipToBounds())").contains("toolbar()"))
     }
 
-    @Test fun viewerHasNoTopGapInEitherLayoutWithoutChangingSideBottomOrContentPadding() {
+    @Test fun viewerHasNoExtraTopOrBottomGapAndKeepsSideAndCardPadding() {
         val viewer = source("SpaceCompassCelestialViewerScreen.kt")
-        assertTrue(viewer.contains(".padding(start = 10.dp, end = 10.dp, bottom = 6.dp)"))
+        assertTrue(viewer.contains(".padding(horizontal = 10.dp)"))
+        assertFalse(viewer.contains("bottom = 6.dp"))
+        assertTrue(source("SpaceCompassNativePositionMap.kt").contains("setPadding(dp(10f), 0, dp(10f), 0)"))
         assertTrue(viewer.contains("Row(Modifier.fillMaxSize(), horizontalArrangement = Arrangement.spacedBy(12.dp))"))
         val placement = viewer.substringAfter("BoxWithConstraints(Modifier.fillMaxSize()")
         assertFalse(placement.contains(".padding(top"))
@@ -32,7 +34,8 @@ class SpaceCompassCelestialTabularLayoutTest {
         val portrait = viewer.substringAfter("} else Column(Modifier.fillMaxSize(),")
             .substringBefore("model(Modifier.weight")
         assertFalse(portrait.contains(".padding(top"))
-        assertTrue(viewer.contains(".background(primaryText.copy(alpha = 0.05f)).padding(12.dp)"))
+        assertTrue(source("SpaceCompassCelestialDetailTable.kt").contains(
+            ".background(spaceCompassSettingsCardColor()).padding(12.dp)"))
     }
 
     @Test fun everyBodyUsesTwoObserverDistanceUnitsOnOneLineWithoutRepeatingItsName() {

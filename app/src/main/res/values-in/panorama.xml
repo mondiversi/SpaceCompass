@@ -19,6 +19,6 @@
     <string name="panorama_position_area">Hanya wilayah</string>
     <string name="panorama_position_area_detail">Wilayah dan negara</string>
     <string name="panorama_position_hidden">Tersembunyi</string>
-    <string name="panorama_position_hidden_detail">Tanpa informasi lokasi</string>
+    <string name="panorama_position_hidden_detail">Tanpa data lokasi; waktu dalam UTC</string>
     <string name="panorama_point_labels">Label</string>
 </resources>

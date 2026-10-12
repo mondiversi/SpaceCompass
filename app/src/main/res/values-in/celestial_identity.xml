@@ -1,0 +1,18 @@
+<resources>
+    <string name="celestial_identity_planet">Planet</string>
+    <string name="celestial_identity_dwarf">Planet katai</string>
+    <string name="celestial_identity_candidate">Kandidat planet katai</string>
+    <string name="celestial_identity_exoplanet">Eksoplanet</string>
+    <string name="celestial_identity_moon">Satelit alami</string>
+    <string name="celestial_identity_comet">Komet</string>
+    <string name="celestial_identity_star">Bintang</string>
+    <string name="celestial_identity_black_hole">Lubang hitam</string>
+    <string name="celestial_identity_neutron">Bintang neutron</string>
+    <string name="celestial_identity_pulsar">Pulsar</string>
+    <string name="celestial_identity_station">Stasiun luar angkasa</string>
+    <string name="celestial_identity_satellite">Satelit buatan</string>
+    <string name="celestial_identity_probe">Wahana antariksa</string>
+    <string name="celestial_identity_nebula">Nebula</string>
+    <string name="celestial_identity_cluster">Gugus bintang</string>
+    <string name="celestial_identity_fictional_moon">Satelit alami fiktif</string>
+</resources>

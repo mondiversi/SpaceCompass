@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="celestial_temperature_core">Temperatura nucleo (stima)</string>
+    <string name="celestial_temperature_core_boundary">Temperatura confine nucleo-mantello</string>
+    <string name="celestial_temperature_core_adiabatic">Nucleo (modello adiabatico)</string>
+    <string name="celestial_temperature_core_note">Le temperature del nucleo sono stime di modelli interni, non misure dirette.</string>
+    <string name="celestial_temperature_core_boundary_note">Il confine nucleo-mantello indica il bordo esterno del nucleo, non il suo centro.</string>
+    <string name="celestial_temperature_core_adiabatic_note">Per questo pianeta è riportato un modello adiabatico di riferimento. Altri modelli interni possono prevedere temperature molto più elevate.</string>
+</resources>

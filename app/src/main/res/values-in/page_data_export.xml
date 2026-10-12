@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="data_export_current_image">Gambar saat ini (JPG)</string>
+    <string name="data_export_rotation_image">Gambar rotasi (JPG)</string>
+    <string name="data_export_section">Bagian</string>
+    <string name="data_export_field">Parameter</string>
+    <string name="data_export_value">Nilai</string>
+    <string name="data_export_notes">Catatan</string>
+</resources>

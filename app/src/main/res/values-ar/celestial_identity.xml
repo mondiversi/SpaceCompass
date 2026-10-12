@@ -1,0 +1,18 @@
+<resources>
+    <string name="celestial_identity_planet">كوكب</string>
+    <string name="celestial_identity_dwarf">كوكب قزم</string>
+    <string name="celestial_identity_candidate">مرشح ليكون كوكبًا قزمًا</string>
+    <string name="celestial_identity_exoplanet">كوكب خارج المجموعة الشمسية</string>
+    <string name="celestial_identity_moon">قمر طبيعي</string>
+    <string name="celestial_identity_comet">مذنب</string>
+    <string name="celestial_identity_star">نجم</string>
+    <string name="celestial_identity_black_hole">ثقب أسود</string>
+    <string name="celestial_identity_neutron">نجم نيوتروني</string>
+    <string name="celestial_identity_pulsar">نجم نابض</string>
+    <string name="celestial_identity_station">محطة فضائية</string>
+    <string name="celestial_identity_satellite">قمر صناعي</string>
+    <string name="celestial_identity_probe">مسبار فضائي</string>
+    <string name="celestial_identity_nebula">سديم</string>
+    <string name="celestial_identity_cluster">عنقود نجمي</string>
+    <string name="celestial_identity_fictional_moon">قمر طبيعي خيالي</string>
+</resources>

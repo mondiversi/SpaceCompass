@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="panorama_labels_all">Όλες</string>
+    <string name="panorama_labels_objects_selected">Μόνο αντικείμενο και επιλεγμένα σημεία</string>
+    <string name="panorama_labels_selected">Μόνο επιλεγμένα σημεία</string>
+    <string name="panorama_labels_none">Καμία</string>
+</resources>

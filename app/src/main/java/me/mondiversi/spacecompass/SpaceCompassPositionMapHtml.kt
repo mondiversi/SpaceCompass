@@ -30,6 +30,8 @@ internal fun spaceCompassPositionMapHtml(context: Context, url: String, dark: Bo
       .space-pin svg{width:32px;height:44px;filter:drop-shadow(0 2px 2px #0008);}
       </style></head><body><div id="map"></div><script>$js</script><script>
       var map=L.map('map',{zoomControl:false,attributionControl:true}).setView([$latitude,$longitude],${if (pickable) 5 else 15});
+      // Keep text-only library attribution and the tile provider's separate credit.
+      map.attributionControl.setPrefix('<a href="https://leafletjs.com">Leaflet</a>');
       L.control.zoom({zoomInTitle:$inLabel,zoomOutTitle:$outLabel}).addTo(map);
       var loaded=0;var tiles=L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png',{maxZoom:19,
         attribution:'<a href="https://www.openstreetmap.org/copyright">© OpenStreetMap contributors</a>'}).addTo(map);

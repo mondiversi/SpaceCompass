@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="celestial_temperature_core">Core temperature (estimate)</string>
+    <string name="celestial_temperature_core_boundary">Core-mantle boundary temperature</string>
+    <string name="celestial_temperature_core_adiabatic">Core (adiabatic model)</string>
+    <string name="celestial_temperature_core_note">Core temperatures are interior-model estimates, not direct measurements.</string>
+    <string name="celestial_temperature_core_boundary_note">The core-mantle boundary is the outer edge of the core, not its centre.</string>
+    <string name="celestial_temperature_core_adiabatic_note">An adiabatic reference model is shown for this planet. Other interior models can predict much higher temperatures.</string>
+</resources>

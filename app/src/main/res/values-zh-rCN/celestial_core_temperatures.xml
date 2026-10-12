@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="celestial_temperature_core">核心温度（估算）</string>
+    <string name="celestial_temperature_core_boundary">核幔边界温度</string>
+    <string name="celestial_temperature_core_adiabatic">核心（绝热模型）</string>
+    <string name="celestial_temperature_core_note">核心温度是内部结构模型的估算值，并非直接测量结果。</string>
+    <string name="celestial_temperature_core_boundary_note">核幔边界指核心的外缘，而非核心中心。</string>
+    <string name="celestial_temperature_core_adiabatic_note">此行星显示的是参考绝热模型。其他内部模型可能预测出高得多的温度。</string>
+</resources>

@@ -19,6 +19,6 @@
     <string name="panorama_position_area">Area only</string>
     <string name="panorama_position_area_detail">Region and country</string>
     <string name="panorama_position_hidden">Hidden</string>
-    <string name="panorama_position_hidden_detail">No location details</string>
+    <string name="panorama_position_hidden_detail">No location details; times in UTC</string>
     <string name="panorama_point_labels">Labels</string>
 </resources>

@@ -6,10 +6,10 @@ import kotlin.math.hypot
 /** A quiet angular frame over the full JPEG; no image crop, rotation or invented 360-degree axis. */
 internal fun drawSpaceCompassCameraAngularGrid(canvas: Canvas, width: Int, height: Int,
     orientation: SpaceCompassSunOrientation, perspective: SpaceCompassPerspective,
-    snapshot: SpaceCompassPanoramaSnapshot, scale: Float, occupied: MutableList<RectF>) {
+    snapshot: SpaceCompassPanoramaSnapshot, scale: Float, captionHeight: Float, occupied: MutableList<RectF>) {
     // Reserve the complete top-axis glyph (ascent, padding and shadow) below the caption.
-    val left = 72f * scale; val top = (SPACE_COMPASS_PANORAMA_HEADER_HEIGHT + 42f) * scale
-    val right = width - 24f * scale; val bottom = height - 42f * scale
+    val left = 96f * scale; val top = captionHeight + 42f * scale
+    val right = width - 96f * scale; val bottom = height - 42f * scale
     if (right - left < 80f * scale || bottom - top < 80f * scale) return
     val frame = SpaceCompassSunSceneFrame(left.toDouble(), top.toDouble(), (right-left).toDouble(), (bottom-top).toDouble())
     val grid = spaceCompassCameraAngularGrid(orientation, perspective, width.toDouble(), height.toDouble(), frame)
@@ -28,15 +28,15 @@ internal fun drawSpaceCompassCameraAngularGrid(canvas: Canvas, width: Int, heigh
     canvas.drawRect(left, top, right, bottom, paint)
     val text = spaceCompassOrbitTextPaint(21 * scale).apply { color = Color.WHITE; textAlign = Paint.Align.CENTER }
     val axisBounds = mutableListOf<RectF>()
-    fun value(degrees: Double, elevation: Boolean): String =
-        (if (elevation && degrees > 0) "+" else "") + formatSpaceCompassNumber(degrees, 0,
+    fun value(degrees: Double, elevation: Boolean, decimals: Int): String =
+        (if (elevation && degrees > 0) "+" else "") + formatSpaceCompassNumber(degrees, decimals,
             snapshot.formatting.numeric, grouping = false, systemLocale = snapshot.formatting.deviceLocale) + "°"
     fun label(value: String, x: Float, baseline: Float, size: Float = 21 * scale, fill: Boolean = false): RectF? {
         text.textSize = size
         val half = text.measureText(value) / 2
         val bounds = RectF(x-half-5*scale, baseline+text.fontMetrics.ascent-3*scale,
             x+half+5*scale, baseline+text.fontMetrics.descent+3*scale)
-        if (bounds.left < 2*scale || bounds.right > width-2*scale || bounds.top < SPACE_COMPASS_PANORAMA_HEADER_HEIGHT*scale ||
+        if (bounds.left < 2*scale || bounds.right > width-2*scale || bounds.top < captionHeight ||
             bounds.bottom > height-2*scale || axisBounds.any { RectF.intersects(it, bounds) }) return null
         if (fill) {
             val pill = Paint(Paint.ANTI_ALIAS_FLAG).apply { color = 0xc9101418.toInt() }
@@ -47,24 +47,27 @@ internal fun drawSpaceCompassCameraAngularGrid(canvas: Canvas, width: Int, heigh
         axisBounds += bounds
         return bounds
     }
-    for (edge in listOf(SpaceCompassCameraGridEdge.TOP, SpaceCompassCameraGridEdge.BOTTOM, SpaceCompassCameraGridEdge.LEFT)) {
-        val ticks = grid.ticks.filter { it.edge == edge }.sortedBy { if (edge == SpaceCompassCameraGridEdge.LEFT) it.point.y else it.point.x }
+    for (edge in SpaceCompassCameraGridEdge.entries) {
+        val ticks = grid.ticks.filter { it.edge == edge }.sortedBy { if (edge == SpaceCompassCameraGridEdge.LEFT || edge == SpaceCompassCameraGridEdge.RIGHT) it.point.y else it.point.x }
         for (tick in ticks) {
             val x = tick.point.x.toFloat(); val y = tick.point.y.toFloat()
             when (edge) {
                 SpaceCompassCameraGridEdge.TOP -> {
                     canvas.drawLine(x, top, x, top+6*scale, paint)
-                    label(value(tick.degrees, false), x, top-8*scale)
+                    label(value(tick.degrees, false, tick.decimals), x, top-8*scale)
                 }
                 SpaceCompassCameraGridEdge.BOTTOM -> {
                     canvas.drawLine(x, bottom-6*scale, x, bottom, paint)
-                    label(value(tick.degrees, false), x, bottom+28*scale)
+                    label(value(tick.degrees, false, tick.decimals), x, bottom+28*scale)
                 }
                 SpaceCompassCameraGridEdge.LEFT -> {
                     canvas.drawLine(left, y, left+6*scale, y, paint)
-                    label(value(tick.degrees, true), left-34*scale, y-text.fontMetrics.ascent/2)
+                    label(value(tick.degrees, true, tick.decimals), left-48*scale, y-text.fontMetrics.ascent/2)
                 }
-                else -> Unit
+                SpaceCompassCameraGridEdge.RIGHT -> {
+                    canvas.drawLine(right-6*scale, y, right, y, paint)
+                    label(value(tick.degrees, true, tick.decimals), right+48*scale, y-text.fontMetrics.ascent/2)
+                }
             }
         }
     }
@@ -86,4 +89,5 @@ internal fun drawSpaceCompassCameraAngularGrid(canvas: Canvas, width: Int, heigh
     occupied += RectF(0f, 0f, width.toFloat(), top)
     occupied += RectF(0f, bottom, width.toFloat(), height.toFloat())
     occupied += RectF(0f, top, left, bottom)
+    occupied += RectF(right, top, width.toFloat(), bottom)
 }

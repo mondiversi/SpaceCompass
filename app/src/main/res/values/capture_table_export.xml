@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="capture_export_image">Image (JPG)</string>
+    <string name="capture_export_csv">Table (CSV)</string>
+    <string name="capture_export_txt">Readable table (TXT)</string>
+    <string name="capture_export_saved">Files saved: %1$d</string>
+    <string name="capture_export_error">Export failed</string>
+    <string name="capture_table_azimuth">Azimuth</string>
+    <string name="capture_table_elevation">Elevation</string>
+    <string name="capture_table_events">Events</string>
+    <string name="capture_table_selected">Selected</string>
+    <string name="capture_table_captured">Capture time</string>
+    <string name="capture_table_observed">Observation time</string>
+    <string name="capture_table_context">Capture details</string>
+    <string name="capture_table_legend">* = selected; ! = key point; — = unavailable</string>
+    <string name="capture_export_preparing">Preparing data…</string>
+</resources>

@@ -18,7 +18,7 @@ internal fun spaceCompassCatalogTemperatureReference(body: SpaceCompassCelestial
         SpaceCompassCatalogSortField.NIGHT_TEMPERATURE -> SpaceCompassCelestialTemperatureKind.NIGHT_MINIMUM
         else -> return null
     }
-    val temperatures = spaceCompassCelestialTemperatures(body)
+    val temperatures = spaceCompassCelestialTemperatures(body).filterNot { it.kind.isCore }
     val exact = temperatures.firstOrNull { it.kind == wanted }
     val reference = exact ?: temperatures.firstOrNull {
         it.kind != SpaceCompassCelestialTemperatureKind.DAY_MAXIMUM &&
@@ -39,5 +39,8 @@ internal val SpaceCompassCelestialTemperatureKind.catalogLabelResource: Int
         SpaceCompassCelestialTemperatureKind.EQUILIBRIUM_MODEL -> R.string.catalog_temperature_equilibrium
         SpaceCompassCelestialTemperatureKind.HISTORICAL_SURFACE_RANGE -> R.string.catalog_temperature_historical
         SpaceCompassCelestialTemperatureKind.THERMAL_MODEL -> R.string.catalog_temperature_thermal
+        SpaceCompassCelestialTemperatureKind.CORE_ESTIMATE,
+        SpaceCompassCelestialTemperatureKind.CORE_BOUNDARY_ESTIMATE,
+        SpaceCompassCelestialTemperatureKind.CORE_ADIABATIC_REFERENCE -> labelResource
         SpaceCompassCelestialTemperatureKind.DAY_MAXIMUM, SpaceCompassCelestialTemperatureKind.NIGHT_MINIMUM -> labelResource
     }

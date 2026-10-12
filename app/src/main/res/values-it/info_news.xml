@@ -1,9 +1,9 @@
 <resources>
     <string name="info_news_title">Ultime novità · %1$s</string>
-    <string name="info_news_star_sky" formatted="false">Salvaschermo terrestre a tutto schermo con ora locale, data e batteria. Tocca per tornare.</string>
-    <string name="info_news_texture_downloads" formatted="false">Il salvaschermo sospende sensori, GPS, fotocamera e aggiornamenti dati. Musica iniziale al 20%.</string>
-    <string name="info_news_weather" formatted="false">Avvisi più chiari per calibrazione e interferenze della bussola, con azioni per la posizione solo quando servono.</string>
-    <string name="info_news_viewer_zoom" formatted="false">Tocca un punto della traiettoria per aprire il percorso giornaliero centrato su di esso, con evidenziazione temporanea.</string>
-    <string name="info_news_settings" formatted="false">Intestazione compatta con oggetto, data e fuso; punti 0–23, posizione attuale e fasi lunari sempre presenti.</string>
-    <string name="info_news_catalog" formatted="false">Etichette degli scatti con conto alla rovescia T+/T−. Comandi principali e dettagli oggetto migliorati.</string>
+    <string name="info_news_star_sky" formatted="false">Seleziona più punti delle orbite, mantieni aperte le etichette e gestisci la stessa selezione nel percorso giornaliero.</string>
+    <string name="info_news_texture_downloads" formatted="false">Esporta immagini, CSV o TXT leggibili da scatti, percorsi giornalieri e Osservatorio; salva o condividi.</string>
+    <string name="info_news_weather" formatted="false">Privacy della posizione anche nelle tabelle: i percorsi partono da Solo zona; con Nascosta gli orari sono in UTC.</string>
+    <string name="info_news_viewer_zoom" formatted="false">L’Osservatorio raggruppa identità, dati fisici, temperature, dati orbitali e contesto spaziale.</string>
+    <string name="info_news_settings" formatted="false">Scale angolari sui quattro lati, informazioni compatte e indicazioni di ora/T± più chiare nelle foto e nei panorami.</string>
+    <string name="info_news_catalog" formatted="false">Scelte delle etichette e comandi di scatto migliorati; isole informative opache nei temi chiaro e scuro.</string>
 </resources>

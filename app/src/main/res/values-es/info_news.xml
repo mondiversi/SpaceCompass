@@ -1,9 +1,9 @@
 <resources>
     <string name="info_news_title">Últimas novedades · %1$s</string>
-    <string name="info_news_star_sky" formatted="false">Salvapantallas terrestre a pantalla completa con hora local, fecha y batería. Toca para volver.</string>
-    <string name="info_news_texture_downloads" formatted="false">El salvapantallas pausa sensores, GPS, cámara y actualización de datos. Volumen inicial de la música: 20%.</string>
-    <string name="info_news_weather" formatted="false">Avisos más claros de calibración e interferencias de la brújula; acciones de ubicación solo cuando hacen falta.</string>
-    <string name="info_news_viewer_zoom" formatted="false">Toca un punto de la trayectoria para abrir el recorrido diario centrado en él, con un resaltado temporal.</string>
-    <string name="info_news_settings" formatted="false">Cabecera compacta con objeto, fecha y zona horaria; se conservan los puntos 0–23, la posición actual y las fases lunares.</string>
-    <string name="info_news_catalog" formatted="false">Las etiquetas de captura incluyen tiempos T+/T−. Controles principales y detalles del objeto mejorados.</string>
+    <string name="info_news_star_sky" formatted="false">Selecciona varios puntos orbitales, mantén abiertas sus etiquetas y cambia la misma selección en el recorrido diario.</string>
+    <string name="info_news_texture_downloads" formatted="false">Exporta imágenes, CSV o TXT legible desde capturas, recorridos diarios y el Observatorio; guarda o comparte.</string>
+    <string name="info_news_weather" formatted="false">Privacidad de ubicación también en tablas: los recorridos empiezan con Solo zona; al ocultarla, las horas usan UTC.</string>
+    <string name="info_news_viewer_zoom" formatted="false">El Observatorio agrupa identidad, datos físicos, temperaturas, datos orbitales y contexto espacial.</string>
+    <string name="info_news_settings" formatted="false">Escalas angulares en los cuatro lados, detalles compactos y etiquetas de hora/T± más claras en fotos y panoramas.</string>
+    <string name="info_news_catalog" formatted="false">Opciones de etiquetas y controles de captura mejorados; tarjetas informativas opacas en los temas claro y oscuro.</string>
 </resources>

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="celestial_section_identity">Ταυτότητα</string>
+    <string name="celestial_section_physical">Φυσικές ιδιότητες</string>
+    <string name="celestial_section_stellar">Φως και συνιστώσες</string>
+    <string name="celestial_section_atmosphere">Θερμοκρασία και ατμόσφαιρα</string>
+    <string name="celestial_section_orbit">Τροχιά και παρατήρηση</string>
+    <string name="celestial_section_spatial">Θέση στο διάστημα</string>
+    <string name="celestial_spatial_system">Σύστημα</string>
+    <string name="celestial_spatial_galaxy">Γαλαξίας</string>
+    <string name="celestial_spatial_ra">Ορθή αναφορά</string>
+    <string name="celestial_spatial_dec">Απόκλιση</string>
+    <string name="celestial_spatial_reference">Σύστημα αναφοράς</string>
+    <string name="celestial_spatial_instant">Χρόνος υπολογισμού</string>
+    <string name="celestial_spatial_solar_system">Ηλιακό Σύστημα</string>
+    <string name="celestial_spatial_milky_way">Γαλαξίας μας</string>
+    <string name="celestial_spatial_host_galaxy">Γαλαξίας που φιλοξενεί το %1$s</string>
+    <string name="celestial_spatial_catalog_note">Συντεταγμένες καταλόγου για J2000.0· όχι η τρέχουσα φαινόμενη θέση.</string>
+    <string name="celestial_spatial_geocentric_note">Ισημερινή διεύθυνση από το κέντρο της Γης τη στιγμή που αναφέρεται.</string>
+    <string name="celestial_spatial_teme_note">Γεωκεντρική διεύθυνση TEME από την τροχιά του δορυφόρου· διαφορετικό σύστημα από το ICRS.</string>
+    <string name="celestial_spatial_host_note">Οι συντεταγμένες αφορούν το μητρικό άστρο· ο πλανήτης δεν διακρίνεται χωριστά.</string>
+    <string name="celestial_spatial_fiction_note">Φανταστική συσχέτιση. Οι συντεταγμένες δείχνουν μόνο τη διεύθυνση του μητρικού άστρου.</string>
+    <string name="celestial_view_volume">Όγκος</string>
+    <string name="celestial_volume_note">Σφαιρική εκτίμηση από τη διάμετρο αναφοράς.</string>
+</resources>

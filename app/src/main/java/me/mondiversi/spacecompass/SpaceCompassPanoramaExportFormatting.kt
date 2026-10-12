@@ -71,6 +71,6 @@ internal fun formatSpaceCompassPanoramaElevation(degrees: Double, formatting: Sp
         grouping = false, systemLocale = formatting.deviceLocale)
 
 /** Each option tuple has a separate file and gallery identity, even when text happens to match. */
-internal fun spaceCompassPanoramaVariantKey(position: SpaceCompassPanoramaPosition, showLabels: Boolean,
+internal fun spaceCompassPanoramaVariantKey(position: SpaceCompassPanoramaPosition, labels: SpaceCompassPanoramaLabelMode,
     mode: SpaceCompassPanoramaExportMode, center: SpaceCompassPanoramaCenter = SpaceCompassPanoramaCenter.SOUTH): String =
-    "${mode.key}-${position.key}-${if (showLabels) "labels" else "no-labels"}-${center.key}"
+    "privacy-v2-${mode.key}-${position.key}-${labels.key}-${center.key}"

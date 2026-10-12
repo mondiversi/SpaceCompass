@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="data_export_current_image">現在の画像（JPG）</string>
+    <string name="data_export_rotation_image">回転表示の画像（JPG）</string>
+    <string name="data_export_section">セクション</string>
+    <string name="data_export_field">項目</string>
+    <string name="data_export_value">値</string>
+    <string name="data_export_notes">注記</string>
+</resources>

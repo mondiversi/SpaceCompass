@@ -19,6 +19,7 @@ import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.text.style.TextDirection
 import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.TextUnit
+import androidx.compose.ui.unit.dp
 import java.util.Locale
 
 /** Both surfaces share the same two-second interval and reserve only one text row. */
@@ -31,8 +32,9 @@ internal fun SpaceCompassPointTimeCaption(pointName: String, moment: String, tim
     val showCountdown = nowMs / 2000L % 2L == 1L
     val progress by animateFloatAsState(if (showCountdown) 1f else 0f,
         tween(if (android.animation.ValueAnimator.areAnimatorsEnabled()) 300 else 0), label = "point-time-scroll")
-    Row(modifier.semantics(mergeDescendants = true) {}, verticalAlignment = Alignment.CenterVertically) {
-        Text("$pointName · ", color = color, fontSize = fontSize, fontWeight = FontWeight.Normal, lineHeight = lineHeight,
+    Row(modifier.semantics(mergeDescendants = true) {}, verticalAlignment = Alignment.CenterVertically,
+        horizontalArrangement = Arrangement.spacedBy(8.dp)) {
+        Text(pointName, color = color, fontSize = fontSize, fontWeight = FontWeight.Normal, lineHeight = lineHeight,
             maxLines = 1, overflow = TextOverflow.Ellipsis)
         // Measuring both alternatives stabilizes width and keeps the angles aligned at the right.
         Box(Modifier.weight(1f).clipToBounds()) {

@@ -1,9 +1,9 @@
 <resources>
     <string name="info_news_title">החידושים האחרונים · %1$s</string>
-    <string name="info_news_star_sky" formatted="false">שומר מסך של כדור הארץ במסך מלא, עם שעה מקומית, תאריך וסוללה. נגיעה מחזירה למסך הקודם.</string>
-    <string name="info_news_texture_downloads" formatted="false">שומר המסך משהה חיישנים, GPS, מצלמה ורענון נתונים. עוצמת המוזיקה הראשונית היא 20%.</string>
-    <string name="info_news_weather" formatted="false">הודעות ברורות יותר על כיול והפרעות למצפן; פעולות מיקום רק בעת הצורך.</string>
-    <string name="info_news_viewer_zoom" formatted="false">נגיעה בנקודה במסלול פותחת את המסלול היומי ממורכז עליה, עם הדגשה זמנית.</string>
-    <string name="info_news_settings" formatted="false">כותרת קומפקטית עם עצם, תאריך ואזור זמן; עם נקודות 0–23, המיקום הנוכחי ומופעי הירח.</string>
-    <string name="info_news_catalog" formatted="false">תוויות הצילום כוללות זמנים T+/T−. פקדים ראשיים ופרטי עצמים משופרים.</string>
+    <string name="info_news_star_sky" formatted="false">בחרו כמה נקודות במסלולים, השאירו את התוויות שלהן פתוחות ושנו את אותה בחירה במסלול היומי.</string>
+    <string name="info_news_texture_downloads" formatted="false">ייצוא תמונות, CSV או TXT קריא מצילומים, מסלולים יומיים ומצפה הכוכבים; שמירה או שיתוף.</string>
+    <string name="info_news_weather" formatted="false">פרטיות המיקום חלה גם בטבלאות: המסלולים מתחילים עם אזור בלבד; כשמסתירים מיקום, השעות מוצגות ב־UTC.</string>
+    <string name="info_news_viewer_zoom" formatted="false">מצפה הכוכבים מקבץ זהות, נתונים פיזיקליים, טמפרטורות, נתוני מסלול והקשר מרחבי.</string>
+    <string name="info_news_settings" formatted="false">סולמות זווית בארבעת הצדדים, פרטי צילום קומפקטיים ותוויות שעה/T± ברורות יותר בתמונות ובפנורמות.</string>
+    <string name="info_news_catalog" formatted="false">אפשרויות תוויות ובקרי צילום משופרים; כרטיסי מידע אטומים בערכות נושא בהירה וכהה.</string>
 </resources>

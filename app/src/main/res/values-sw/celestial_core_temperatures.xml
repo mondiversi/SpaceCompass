@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="celestial_temperature_core">Halijoto ya kiini (makadirio)</string>
+    <string name="celestial_temperature_core_boundary">Halijoto ya mpaka wa kiini na manteli</string>
+    <string name="celestial_temperature_core_adiabatic">Kiini (modeli adiabati)</string>
+    <string name="celestial_temperature_core_note">Halijoto za kiini ni makadirio ya modeli za muundo wa ndani, si vipimo vya moja kwa moja.</string>
+    <string name="celestial_temperature_core_boundary_note">Mpaka wa kiini na manteli ni ukingo wa nje wa kiini, si kitovu chake.</string>
+    <string name="celestial_temperature_core_adiabatic_note">Modeli adiabati ya marejeo inaonyeshwa kwa sayari hii. Modeli nyingine za ndani zinaweza kutabiri halijoto za juu zaidi.</string>
+</resources>

@@ -1,0 +1,18 @@
+<resources>
+    <string name="celestial_identity_planet">行星</string>
+    <string name="celestial_identity_dwarf">矮行星</string>
+    <string name="celestial_identity_candidate">矮行星候选体</string>
+    <string name="celestial_identity_exoplanet">系外行星</string>
+    <string name="celestial_identity_moon">天然卫星</string>
+    <string name="celestial_identity_comet">彗星</string>
+    <string name="celestial_identity_star">恒星</string>
+    <string name="celestial_identity_black_hole">黑洞</string>
+    <string name="celestial_identity_neutron">中子星</string>
+    <string name="celestial_identity_pulsar">脉冲星</string>
+    <string name="celestial_identity_station">空间站</string>
+    <string name="celestial_identity_satellite">人造卫星</string>
+    <string name="celestial_identity_probe">空间探测器</string>
+    <string name="celestial_identity_nebula">星云</string>
+    <string name="celestial_identity_cluster">星团</string>
+    <string name="celestial_identity_fictional_moon">虚构的天然卫星</string>
+</resources>

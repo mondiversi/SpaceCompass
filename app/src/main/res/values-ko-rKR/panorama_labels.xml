@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="panorama_labels_all">모두</string>
+    <string name="panorama_labels_objects_selected">천체와 선택한 지점만</string>
+    <string name="panorama_labels_selected">선택한 지점만</string>
+    <string name="panorama_labels_none">없음</string>
+</resources>

@@ -49,10 +49,10 @@ internal fun SpaceCompassPanoramaActionIcon(share: Boolean) {
 
 /** Uvir's upward export arrow and tray, including its optical vertical correction. */
 @Composable
-internal fun SpaceCompassPanoramaExportIcon() {
+internal fun SpaceCompassPanoramaExportIcon(strokeWidth: androidx.compose.ui.unit.Dp = 2.21.dp) {
     val tint = LocalContentColor.current
     Canvas(Modifier.size(24.dp).offset(y = (-1.5).dp)) {
-        val stroke = 2.21.dp.toPx()
+        val stroke = strokeWidth.toPx()
         fun line(ax: Float, ay: Float, bx: Float, by: Float) = drawLine(tint,
             Offset(size.width * ax, size.height * ay), Offset(size.width * bx, size.height * by),
             stroke, StrokeCap.Round)
@@ -127,9 +127,9 @@ internal fun SpaceCompassPanoramaPositionIcon(hidden: Boolean) {
 }
 
 
-/** Label tag; the diagonal slash alone indicates hidden point labels. */
+/** Label tag, crossed only when all annotations are hidden. */
 @Composable
-internal fun SpaceCompassPanoramaLabelsIcon(shown: Boolean) {
+internal fun SpaceCompassPanoramaLabelsIcon(hidden: Boolean = false) {
     val tint = LocalContentColor.current
     Canvas(Modifier.size(24.dp)) {
         val tag = Path().apply {
@@ -143,7 +143,7 @@ internal fun SpaceCompassPanoramaLabelsIcon(shown: Boolean) {
         drawPath(tag, tint, style = Stroke(2.dp.toPx(), cap = StrokeCap.Round, join = StrokeJoin.Round))
         drawCircle(tint, size.minDimension * .065f, Offset(size.width * .30f, size.height * .30f),
             style = Stroke(1.6.dp.toPx()))
-        if (!shown) drawLine(tint, Offset(size.width * .10f, size.height * .12f),
+        if (hidden) drawLine(tint, Offset(size.width * .10f, size.height * .12f),
             Offset(size.width * .90f, size.height * .88f), 2.dp.toPx(), StrokeCap.Round)
     }
 }

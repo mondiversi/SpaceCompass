@@ -1,0 +1,18 @@
+<resources>
+    <string name="celestial_identity_planet">Планета</string>
+    <string name="celestial_identity_dwarf">Карликовая планета</string>
+    <string name="celestial_identity_candidate">Кандидат в карликовые планеты</string>
+    <string name="celestial_identity_exoplanet">Экзопланета</string>
+    <string name="celestial_identity_moon">Естественный спутник</string>
+    <string name="celestial_identity_comet">Комета</string>
+    <string name="celestial_identity_star">Звезда</string>
+    <string name="celestial_identity_black_hole">Чёрная дыра</string>
+    <string name="celestial_identity_neutron">Нейтронная звезда</string>
+    <string name="celestial_identity_pulsar">Пульсар</string>
+    <string name="celestial_identity_station">Космическая станция</string>
+    <string name="celestial_identity_satellite">Искусственный спутник</string>
+    <string name="celestial_identity_probe">Космический зонд</string>
+    <string name="celestial_identity_nebula">Туманность</string>
+    <string name="celestial_identity_cluster">Звёздное скопление</string>
+    <string name="celestial_identity_fictional_moon">Вымышленный естественный спутник</string>
+</resources>

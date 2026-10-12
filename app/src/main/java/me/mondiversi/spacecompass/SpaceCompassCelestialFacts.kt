@@ -65,7 +65,7 @@ internal fun spaceCompassCelestialFacts(body: SpaceCompassCelestialBody): SpaceC
         diameterKm = 2 * 78.9 * 695700, diameterErrorKm = 2 * 7.4 * 695700,
         diameterEstimated = true, massSolar = 21.0, massSolarError = 3.0, massEstimated = true,
         gravity = Math.pow(10.0, 1.75) / 100, spectralType = "B8 Ia", luminositySolar = Math.pow(10.0, 5.08))
-    SpaceCompassCelestialBody.SUN -> SpaceCompassCelestialFacts(1_391_400.0, 1.9884e30, 274.0, 1408.0, 609.12)
+    SpaceCompassCelestialBody.SUN -> SpaceCompassCelestialFacts(1_391_400.0, 1.9884e30, 274.0, 1408.0, 609.12, spectralType = "G2 V")
     SpaceCompassCelestialBody.MOON -> SpaceCompassCelestialFacts(3475.0, 7.3e22, 1.6, 3340.0, 655.7, 27.3,
         parentIsEarth = true, minimumParentKm = 363_000.0, maximumParentKm = 406_000.0)
     // Polaris Aa's measured mean radius/mass, not the sum of the triple system.

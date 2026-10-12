@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="data_export_current_image">Τρέχουσα εικόνα (JPG)</string>
+    <string name="data_export_rotation_image">Εικόνα περιστροφής (JPG)</string>
+    <string name="data_export_section">Ενότητα</string>
+    <string name="data_export_field">Παράμετρος</string>
+    <string name="data_export_value">Τιμή</string>
+    <string name="data_export_notes">Σημειώσεις</string>
+</resources>

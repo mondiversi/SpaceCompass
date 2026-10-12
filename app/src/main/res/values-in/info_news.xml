@@ -1,9 +1,9 @@
 <resources>
     <string name="info_news_title">Perubahan terbaru · %1$s</string>
-    <string name="info_news_star_sky" formatted="false">Screensaver Bumi layar penuh dengan waktu lokal, tanggal dan baterai. Ketuk untuk kembali.</string>
-    <string name="info_news_texture_downloads" formatted="false">Screensaver menjeda sensor, GPS, kamera dan pembaruan data. Volume awal musik 20%.</string>
-    <string name="info_news_weather" formatted="false">Pesan kalibrasi dan gangguan kompas lebih jelas; tindakan lokasi hanya saat diperlukan.</string>
-    <string name="info_news_viewer_zoom" formatted="false">Ketuk titik lintasan untuk membuka jalur harian yang berpusat padanya, dengan sorotan sementara.</string>
-    <string name="info_news_settings" formatted="false">Judul ringkas dengan objek, tanggal dan zona waktu; titik 0–23, posisi saat ini dan fase Bulan tetap tersedia.</string>
-    <string name="info_news_catalog" formatted="false">Label tangkapan menyertakan waktu T+/T−. Kontrol utama dan detail objek ditingkatkan.</string>
+    <string name="info_news_star_sky" formatted="false">Pilih beberapa titik orbit, biarkan labelnya terbuka, dan ubah pilihan yang sama di lintasan harian.</string>
+    <string name="info_news_texture_downloads" formatted="false">Ekspor gambar, CSV, atau TXT yang mudah dibaca dari tangkapan, lintasan harian, dan Observatorium; simpan atau bagikan.</string>
+    <string name="info_news_weather" formatted="false">Privasi lokasi juga berlaku untuk tabel: lintasan dimulai dengan Area saja; waktu memakai UTC saat lokasi disembunyikan.</string>
+    <string name="info_news_viewer_zoom" formatted="false">Observatorium mengelompokkan identitas, data fisik, suhu, data orbit, dan konteks ruang.</string>
+    <string name="info_news_settings" formatted="false">Skala sudut di empat sisi, detail tangkapan ringkas, dan label waktu/T± lebih jelas pada foto dan panorama.</string>
+    <string name="info_news_catalog" formatted="false">Pilihan label dan kontrol tangkapan disempurnakan; kartu informasi buram pada tema terang dan gelap.</string>
 </resources>

@@ -1,9 +1,9 @@
 <resources>
     <string name="info_news_title">Últimas novidades · %1$s</string>
-    <string name="info_news_star_sky" formatted="false">Protetor de tela terrestre em tela cheia com hora local, data e bateria. Toque para voltar.</string>
-    <string name="info_news_texture_downloads" formatted="false">O protetor de tela pausa sensores, GPS, câmera e atualização dos dados. Volume inicial da música: 20%.</string>
-    <string name="info_news_weather" formatted="false">Avisos mais claros sobre calibração e interferências da bússola; ações de localização apenas quando necessárias.</string>
-    <string name="info_news_viewer_zoom" formatted="false">Toque em um ponto da trajetória para abrir o percurso diário centrado nele, com destaque temporário.</string>
-    <string name="info_news_settings" formatted="false">Cabeçalho compacto com objeto, data e fuso; pontos 0–23, posição atual e fases lunares preservados.</string>
-    <string name="info_news_catalog" formatted="false">As etiquetas das capturas incluem tempos T+/T−. Controles principais e detalhes dos objetos aprimorados.</string>
+    <string name="info_news_star_sky" formatted="false">Selecione vários pontos orbitais, mantenha as etiquetas abertas e altere a mesma seleção no percurso diário.</string>
+    <string name="info_news_texture_downloads" formatted="false">Exporte imagens, CSV ou TXT legível de capturas, percursos diários e do Observatório; guarde ou partilhe.</string>
+    <string name="info_news_weather" formatted="false">Privacidade da posição também nas tabelas: os percursos começam só com a região; ao ocultar, as horas usam UTC.</string>
+    <string name="info_news_viewer_zoom" formatted="false">O Observatório agrupa identidade, dados físicos, temperaturas, dados orbitais e contexto espacial.</string>
+    <string name="info_news_settings" formatted="false">Escalas angulares nos quatro lados, dados de captura compactos e etiquetas de hora/T± mais claras em fotos e panoramas.</string>
+    <string name="info_news_catalog" formatted="false">Opções de etiquetas e comandos de captura melhorados; cartões opacos nos temas claro e escuro.</string>
 </resources>

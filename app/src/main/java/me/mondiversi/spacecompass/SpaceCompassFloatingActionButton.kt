@@ -39,7 +39,7 @@ internal fun SpaceCompassFloatingActionButton(
                 modifier = Modifier.fillMaxSize().then(modifier).spaceCompassAccessibleAction(
                     label, enabled = enabled, selectedState = selectedState,
                     stateText = stateText, onClick = onClick),
-                shape = CircleShape, color = background.copy(alpha = .94f),
+                shape = CircleShape, color = background.copy(alpha = 1f),
                 contentColor = color.copy(alpha = if (enabled) 1f else .38f),
                 border = BorderStroke(1.dp, color.copy(alpha = .35f)), shadowElevation = 3.dp) {
                 Box(Modifier.fillMaxSize(), contentAlignment = Alignment.Center) { content() }

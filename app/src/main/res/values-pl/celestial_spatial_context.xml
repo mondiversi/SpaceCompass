@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="celestial_section_identity">Tożsamość</string>
+    <string name="celestial_section_physical">Właściwości fizyczne</string>
+    <string name="celestial_section_stellar">Światło i składniki</string>
+    <string name="celestial_section_atmosphere">Temperatura i atmosfera</string>
+    <string name="celestial_section_orbit">Orbita i obserwacja</string>
+    <string name="celestial_section_spatial">Położenie w kosmosie</string>
+    <string name="celestial_spatial_system">Układ</string>
+    <string name="celestial_spatial_galaxy">Galaktyka</string>
+    <string name="celestial_spatial_ra">Rektascensja</string>
+    <string name="celestial_spatial_dec">Deklinacja</string>
+    <string name="celestial_spatial_reference">Układ odniesienia</string>
+    <string name="celestial_spatial_instant">Chwila obliczenia</string>
+    <string name="celestial_spatial_solar_system">Układ Słoneczny</string>
+    <string name="celestial_spatial_milky_way">Droga Mleczna</string>
+    <string name="celestial_spatial_host_galaxy">Galaktyka macierzysta %1$s</string>
+    <string name="celestial_spatial_catalog_note">Współrzędne katalogowe dla J2000.0; nie aktualne położenie pozorne.</string>
+    <string name="celestial_spatial_geocentric_note">Kierunek równikowy od środka Ziemi w podanej chwili.</string>
+    <string name="celestial_spatial_teme_note">Geocentryczny kierunek TEME z orbity satelity; układ inny niż ICRS.</string>
+    <string name="celestial_spatial_host_note">Współrzędne dotyczą gwiazdy macierzystej; planeta nie jest rozdzielona obserwacyjnie.</string>
+    <string name="celestial_spatial_fiction_note">Fikcyjne powiązanie. Współrzędne wskazują tylko kierunek gwiazdy macierzystej.</string>
+    <string name="celestial_view_volume">Objętość</string>
+    <string name="celestial_volume_note">Przybliżenie kuliste wyznaczone ze średnicy referencyjnej.</string>
+</resources>

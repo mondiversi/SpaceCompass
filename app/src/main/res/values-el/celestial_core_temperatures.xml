@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="celestial_temperature_core">Θερμοκρασία πυρήνα (εκτίμηση)</string>
+    <string name="celestial_temperature_core_boundary">Θερμοκρασία ορίου πυρήνα–μανδύα</string>
+    <string name="celestial_temperature_core_adiabatic">Πυρήνας (αδιαβατικό μοντέλο)</string>
+    <string name="celestial_temperature_core_note">Οι θερμοκρασίες του πυρήνα είναι εκτιμήσεις από μοντέλα του εσωτερικού, όχι άμεσες μετρήσεις.</string>
+    <string name="celestial_temperature_core_boundary_note">Το όριο πυρήνα–μανδύα είναι η εξωτερική άκρη του πυρήνα, όχι το κέντρο του.</string>
+    <string name="celestial_temperature_core_adiabatic_note">Για αυτόν τον πλανήτη παρουσιάζεται ένα αδιαβατικό μοντέλο αναφοράς. Άλλα μοντέλα του εσωτερικού μπορούν να προβλέπουν πολύ υψηλότερες θερμοκρασίες.</string>
+</resources>

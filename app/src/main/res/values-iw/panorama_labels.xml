@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="panorama_labels_all">הכול</string>
+    <string name="panorama_labels_objects_selected">עצם ונקודות שנבחרו בלבד</string>
+    <string name="panorama_labels_selected">נקודות שנבחרו בלבד</string>
+    <string name="panorama_labels_none">ללא</string>
+</resources>

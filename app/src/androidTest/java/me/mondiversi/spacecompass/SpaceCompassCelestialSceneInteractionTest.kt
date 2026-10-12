@@ -85,12 +85,19 @@ class SpaceCompassCelestialSceneInteractionTest {
         val elevation = compose.onNodeWithTag("celestial-badge-elevation").fetchSemanticsNode().boundsInRoot
         assertEquals(azimuth.right, elevation.right, 0.5f)
         compose.onNodeWithTag("sun-finder-sky").performTouchInput { click(center) }
+        compose.onNodeWithTag("sun-path-page").assertDoesNotExist()
+        compose.onNodeWithTag("celestial-pinned-badge").assertIsDisplayed()
+        compose.runOnIdle {
+            assertTrue(state.isSelected(path, markers[7]))
+            assertNull(state.menuPath)
+            state.openMenu(path, spaceCompassCurrentPathPoint(path.body, markers.last().timeMs, offscreenCurrent))
+        }
         compose.onNodeWithTag("sun-path-page").assertIsDisplayed()
         compose.onNodeWithTag("sun-path-point-7").assertIsDisplayed().assertIsSelected()
         compose.onNodeWithTag("sun-path-selected").assertDoesNotExist()
         compose.onNodeWithTag("sun-path-current").assertIsDisplayed().assertIsNotSelected()
         compose.runOnIdle {
-            assertEquals(path, state.menuPath); assertEquals("7", state.menuHighlightedPointId); assertNull(state.selectedBody)
+            assertEquals(path, state.menuPath); assertEquals("7", state.menuFocusPointId); assertEquals(1, state.selectedPoints.size)
             assertEquals(offscreenCurrent, state.menuCurrentPoint!!.position)
             assertEquals(markers.last().timeMs, state.menuCurrentPoint!!.timeMs)
         }

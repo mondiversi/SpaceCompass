@@ -3,6 +3,7 @@ package me.mondiversi.spacecompass
 import android.content.res.Configuration
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.lazy.staggeredgrid.*
+import androidx.compose.material3.MaterialTheme
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.LocalConfiguration
@@ -25,6 +26,8 @@ internal fun SpaceCompassIslandGrid(modifier: Modifier = Modifier, content: Lazy
     val configuration = LocalConfiguration.current
     val density = LocalDensity.current
     val direction = LocalLayoutDirection.current
+    val scroll = rememberLazyStaggeredGridState()
+    val scrollbarColor = MaterialTheme.colorScheme.onSurfaceVariant.copy(alpha = .46f)
     BoxWithConstraints(modifier.fillMaxSize()) {
         val contentWidth = maxWidth - spaceCompassPageContentPadding.calculateLeftPadding(direction) -
             spaceCompassPageContentPadding.calculateRightPadding(direction)
@@ -32,7 +35,9 @@ internal fun SpaceCompassIslandGrid(modifier: Modifier = Modifier, content: Lazy
             configuration.orientation == Configuration.ORIENTATION_LANDSCAPE,
             contentWidth.value, density.fontScale)
         LazyVerticalStaggeredGrid(columns = StaggeredGridCells.Fixed(columns),
-            modifier = Modifier.fillMaxSize().testTag("island-grid"),
+            state = scroll,
+            modifier = Modifier.fillMaxSize().staggeredScrollbarOverlay(scroll, scrollbarColor)
+                .testTag("island-grid"),
             contentPadding = spaceCompassPageContentPadding,
             horizontalArrangement = Arrangement.spacedBy(SpaceCompassSettingsIslandGap),
             verticalItemSpacing = SpaceCompassSettingsIslandGap, content = content)

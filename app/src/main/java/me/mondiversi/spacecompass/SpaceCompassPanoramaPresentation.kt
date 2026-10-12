@@ -39,7 +39,10 @@ internal fun spaceCompassPanoramaPresentation(snapshot: SpaceCompassPanoramaSnap
             resources.getString(R.string.sun_finder_heading, SPACE_COMPASS_SUN_DATA_MARKER),
             resources.getString(R.string.sun_finder_tilt, SPACE_COMPASS_SUN_DATA_MARKER), formatting) },
         cameraFieldOfView?.let { formatSpaceCompassCameraPhotoFieldOfView(it,
-            resources.getString(R.string.camera_photo_field_of_view), formatting) })
+            resources.getString(R.string.camera_photo_field_of_view), formatting) },
+        hiddenTimestamp = formatSpaceCompassPanoramaExportTimestamp(snapshot.timeMs,TimeZone.getTimeZone("UTC"),formatting).let {
+            if (simulated) it.replaceFirst("Space Compass", "Space Compass · ${resources.getString(R.string.observer_title)}") else it
+        })
     fun angle(value: Double) = formatSpaceCompassNumber(value, 0, formatting.numeric,
         grouping = false, systemLocale = formatting.deviceLocale) + "°"
     val objects = snapshot.objects.map { it.copy(name = resources.getString(it.body.nameResource)) }
@@ -65,5 +68,12 @@ internal fun spaceCompassPanoramaPresentation(snapshot: SpaceCompassPanoramaSnap
         referenceNames = names, poleNames = resources.getString(R.string.sky_reference_north_pole) to
             resources.getString(R.string.sky_reference_south_pole),
         observerPointNames = resources.getString(R.string.celestial_earth_center) to
-            resources.getString(R.string.sky_reference_zenith)), caption, resources.getString(R.string.pc_compass_approximate))
+            resources.getString(R.string.sky_reference_zenith),
+        orbitExportVocabulary = SpaceCompassOrbitExportVocabulary(
+            point = resources.getString(R.string.celestial_point_number), time = resources.getString(R.string.format_time_heading),
+            azimuth = resources.getString(R.string.capture_table_azimuth), elevation = resources.getString(R.string.capture_table_elevation),
+            events = resources.getString(R.string.capture_table_events), selected = resources.getString(R.string.capture_table_selected),
+            capturedAt = resources.getString(R.string.capture_table_captured), observedAt = resources.getString(R.string.capture_table_observed),
+            context = resources.getString(R.string.capture_table_context), legend = resources.getString(R.string.capture_table_legend),
+            illuminated = resources.getString(R.string.celestial_view_illuminated))), caption, resources.getString(R.string.pc_compass_approximate))
 }

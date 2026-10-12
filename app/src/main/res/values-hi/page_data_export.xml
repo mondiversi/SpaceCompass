@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="data_export_current_image">वर्तमान चित्र (JPG)</string>
+    <string name="data_export_rotation_image">घूर्णन का चित्र (JPG)</string>
+    <string name="data_export_section">अनुभाग</string>
+    <string name="data_export_field">पैरामीटर</string>
+    <string name="data_export_value">मान</string>
+    <string name="data_export_notes">टिप्पणियाँ</string>
+</resources>

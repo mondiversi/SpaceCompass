@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="data_export_current_image">الصورة الحالية (JPG)</string>
+    <string name="data_export_rotation_image">صورة الدوران (JPG)</string>
+    <string name="data_export_section">القسم</string>
+    <string name="data_export_field">المعامل</string>
+    <string name="data_export_value">القيمة</string>
+    <string name="data_export_notes">ملاحظات</string>
+</resources>

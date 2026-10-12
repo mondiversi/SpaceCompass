@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="celestial_section_identity">Идентификация</string>
+    <string name="celestial_section_physical">Физические свойства</string>
+    <string name="celestial_section_stellar">Свет и компоненты</string>
+    <string name="celestial_section_atmosphere">Температура и атмосфера</string>
+    <string name="celestial_section_orbit">Орбита и наблюдение</string>
+    <string name="celestial_section_spatial">Положение в космосе</string>
+    <string name="celestial_spatial_system">Система</string>
+    <string name="celestial_spatial_galaxy">Галактика</string>
+    <string name="celestial_spatial_ra">Прямое восхождение</string>
+    <string name="celestial_spatial_dec">Склонение</string>
+    <string name="celestial_spatial_reference">Система отсчёта</string>
+    <string name="celestial_spatial_instant">Момент расчёта</string>
+    <string name="celestial_spatial_solar_system">Солнечная система</string>
+    <string name="celestial_spatial_milky_way">Млечный Путь</string>
+    <string name="celestial_spatial_host_galaxy">Галактика, содержащая %1$s</string>
+    <string name="celestial_spatial_catalog_note">Каталожные координаты на J2000.0; не текущее видимое положение.</string>
+    <string name="celestial_spatial_geocentric_note">Экваториальное направление из центра Земли в указанный момент.</string>
+    <string name="celestial_spatial_teme_note">Геоцентрическое направление TEME по орбите спутника; система отличается от ICRS.</string>
+    <string name="celestial_spatial_host_note">Координаты относятся к родительской звезде; планета не разрешается отдельно.</string>
+    <string name="celestial_spatial_fiction_note">Вымышленная связь. Координаты указывают только направление родительской звезды.</string>
+    <string name="celestial_view_volume">Объём</string>
+    <string name="celestial_volume_note">Сферическая оценка по справочному диаметру.</string>
+</resources>

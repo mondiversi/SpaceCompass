@@ -19,6 +19,6 @@
     <string name="panorama_position_area">지역만</string>
     <string name="panorama_position_area_detail">지역 및 국가</string>
     <string name="panorama_position_hidden">숨김</string>
-    <string name="panorama_position_hidden_detail">위치 정보 없음</string>
+    <string name="panorama_position_hidden_detail">위치 정보 없음; 시간은 UTC</string>
     <string name="panorama_point_labels">라벨</string>
 </resources>

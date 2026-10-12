@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="celestial_section_identity">基本信息</string>
+    <string name="celestial_section_physical">物理特性</string>
+    <string name="celestial_section_stellar">光度与组成天体</string>
+    <string name="celestial_section_atmosphere">温度与大气</string>
+    <string name="celestial_section_orbit">轨道与观测</string>
+    <string name="celestial_section_spatial">空间归属</string>
+    <string name="celestial_spatial_system">天体系统</string>
+    <string name="celestial_spatial_galaxy">星系</string>
+    <string name="celestial_spatial_ra">赤经</string>
+    <string name="celestial_spatial_dec">赤纬</string>
+    <string name="celestial_spatial_reference">参考坐标系</string>
+    <string name="celestial_spatial_instant">计算时刻</string>
+    <string name="celestial_spatial_solar_system">太阳系</string>
+    <string name="celestial_spatial_milky_way">银河系</string>
+    <string name="celestial_spatial_host_galaxy">%1$s所在的宿主星系</string>
+    <string name="celestial_spatial_catalog_note">J2000.0历元的星表坐标，并非当前视位置。</string>
+    <string name="celestial_spatial_geocentric_note">所示时刻从地心出发的赤道坐标方向。</string>
+    <string name="celestial_spatial_teme_note">由卫星轨道计算的地心TEME方向，其坐标系不同于ICRS。</string>
+    <string name="celestial_spatial_host_note">坐标指向宿主恒星；行星尚未被单独分辨。</string>
+    <string name="celestial_spatial_fiction_note">虚构的关联。坐标仅表示宿主恒星的方向。</string>
+    <string name="celestial_view_volume">体积</string>
+    <string name="celestial_volume_note">根据参考直径按球形估算。</string>
+</resources>

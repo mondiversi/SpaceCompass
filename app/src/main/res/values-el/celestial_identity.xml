@@ -1,0 +1,18 @@
+<resources>
+    <string name="celestial_identity_planet">Πλανήτης</string>
+    <string name="celestial_identity_dwarf">Νάνος πλανήτης</string>
+    <string name="celestial_identity_candidate">Υποψήφιος νάνος πλανήτης</string>
+    <string name="celestial_identity_exoplanet">Εξωπλανήτης</string>
+    <string name="celestial_identity_moon">Φυσικός δορυφόρος</string>
+    <string name="celestial_identity_comet">Κομήτης</string>
+    <string name="celestial_identity_star">Αστέρας</string>
+    <string name="celestial_identity_black_hole">Μαύρη τρύπα</string>
+    <string name="celestial_identity_neutron">Αστέρας νετρονίων</string>
+    <string name="celestial_identity_pulsar">Πάλσαρ</string>
+    <string name="celestial_identity_station">Διαστημικός σταθμός</string>
+    <string name="celestial_identity_satellite">Τεχνητός δορυφόρος</string>
+    <string name="celestial_identity_probe">Διαστημικός ανιχνευτής</string>
+    <string name="celestial_identity_nebula">Νεφέλωμα</string>
+    <string name="celestial_identity_cluster">Αστρικό σμήνος</string>
+    <string name="celestial_identity_fictional_moon">Φανταστικός φυσικός δορυφόρος</string>
+</resources>

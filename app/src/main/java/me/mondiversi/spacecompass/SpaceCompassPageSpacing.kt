@@ -4,7 +4,7 @@ import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.ui.unit.dp
 
 /** Shared defaults for current and future pages containing islands. */
-internal val spaceCompassPageContentPadding = PaddingValues(start = 10.dp, top = 0.dp, end = 10.dp, bottom = 16.dp)
+internal val spaceCompassPageContentPadding = PaddingValues(start = 10.dp, top = 0.dp, end = 10.dp, bottom = 0.dp)
 internal val spaceCompassIslandContentPadding = PaddingValues(12.dp)
 
 /** Keep detail cards and external notes clear of the viewport scrollbar. */

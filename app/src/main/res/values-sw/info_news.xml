@@ -1,9 +1,9 @@
 <resources>
     <string name="info_news_title">Mambo mapya · %1$s</string>
-    <string name="info_news_star_sky" formatted="false">Kihifadhi skrini cha Dunia kwenye skrini nzima, chenye saa ya eneo, tarehe na betri. Gusa ili kurudi.</string>
-    <string name="info_news_texture_downloads" formatted="false">Kihifadhi skrini husitisha vitambuzi, GPS, kamera na usasishaji wa data. Sauti ya muziki huanza kwa 20%.</string>
-    <string name="info_news_weather" formatted="false">Ujumbe wazi zaidi kuhusu urekebishaji na mwingiliano wa dira; vitendo vya eneo huonekana vinapohitajika tu.</string>
-    <string name="info_news_viewer_zoom" formatted="false">Gusa nukta ya njia ili kufungua njia ya kila siku ikiwa katikati yake, huku nukta ikiangaziwa kwa muda.</string>
-    <string name="info_news_settings" formatted="false">Kichwa kifupi chenye kitu, tarehe na ukanda wa saa; nukta 0–23, nafasi ya sasa na awamu za Mwezi zinabaki.</string>
-    <string name="info_news_catalog" formatted="false">Lebo za picha zinajumuisha muda wa T+/T−. Vidhibiti vikuu na maelezo ya vitu yameboreshwa.</string>
+    <string name="info_news_star_sky" formatted="false">Chagua nukta nyingi za mizunguko, acha lebo zao wazi na ubadilishe uteuzi huo katika njia ya kila siku.</string>
+    <string name="info_news_texture_downloads" formatted="false">Hamisha picha, CSV au TXT inayosomeka kutoka picha, njia za kila siku na Kituo cha Uchunguzi; hifadhi au shiriki.</string>
+    <string name="info_news_weather" formatted="false">Faragha ya eneo pia kwenye jedwali: njia huanza na eneo la jumla tu; eneo likifichwa, saa hutumia UTC.</string>
+    <string name="info_news_viewer_zoom" formatted="false">Kituo cha Uchunguzi kinapanga utambulisho, data za kimwili, halijoto, data za mizunguko na muktadha wa anga.</string>
+    <string name="info_news_settings" formatted="false">Vipimo vya pembe katika pande nne, taarifa fupi za picha na lebo wazi zaidi za saa/T± kwenye picha na panorama.</string>
+    <string name="info_news_catalog" formatted="false">Chaguo za lebo na vidhibiti vya picha zimeboreshwa; visanduku visivyo na uwazi katika mandhari angavu na nyeusi.</string>
 </resources>

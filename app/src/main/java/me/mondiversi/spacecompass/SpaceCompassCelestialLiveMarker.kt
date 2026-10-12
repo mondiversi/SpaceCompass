@@ -21,6 +21,7 @@ import androidx.compose.ui.semantics.Role
 import androidx.compose.ui.semantics.contentDescription
 import androidx.compose.ui.semantics.onClick
 import androidx.compose.ui.semantics.role
+import androidx.compose.ui.semantics.selected
 import androidx.compose.ui.semantics.semantics
 import androidx.compose.ui.unit.dp
 import java.time.ZoneId
@@ -42,24 +43,27 @@ internal fun SpaceCompassCelestialLiveMarker(body: SpaceCompassCelestialBody, pr
     val moment = point?.let { formatSpaceCompassCelestialMoment(it.timeMs, it.timeMs, spaceCompassObservationZone(),
         timeFormat, LocalSpaceCompassDateFormat.current, locale, LocalSpaceCompassDeviceLocale.current,
         LocalSpaceCompassNumericFormat.current) }
-    val zone = spaceCompassObservationZone()
+    val zone = path?.zone ?: spaceCompassObservationZone()
+    val selected = point?.let { state.isCurrentSelected(body, it, zone) } == true
+    val accent = androidx.compose.material3.MaterialTheme.colorScheme.primary
     val current = stringResource(R.string.celestial_current_position)
     val label = moment?.let { "$name, ${stringResource(R.string.celestial_point_time, current, it)}" } ?: name
     Layout(modifier = Modifier.fillMaxSize(), content = {
         Box(Modifier.size((SPACE_COMPASS_SUN_PATH_TOUCH_RADIUS_DP * 2).dp).testTag("celestial-current-point")
             .then(if (onActivate == null) Modifier else Modifier.clickable(
                 interactionSource = remember { MutableInteractionSource() }, indication = null) {
-                onActivate(); point?.let { state.openCurrent(body, it, path, zone) }
+                onActivate(); point?.let { state.toggleCurrent(body, it, path, zone) }
             })
             .semantics(mergeDescendants = true) {
                 contentDescription = label
+                this.selected = selected
                 if (point != null) {
                     role = Role.Button
-                    onClick { onActivate?.invoke(); state.openCurrent(body, point, path, zone); true }
+                    onClick { onActivate?.invoke(); state.toggleCurrent(body, point, path, zone); true }
                 }
             }, contentAlignment = Alignment.Center) {
             SpaceCompassCelestialThumbnail(body, Modifier.size(SPACE_COMPASS_CELESTIAL_LIVE_PREVIEW_SIZE_DP.dp)
-                .border(0.8.dp, (if (belowHorizon) Color.LightGray else Color.White).copy(alpha = 0.65f), CircleShape)
+                .border(if (selected) 1.8.dp else 0.8.dp, if (selected) accent else (if (belowHorizon) Color.LightGray else Color.White).copy(alpha = 0.65f), CircleShape)
                 .testTag("celestial-live-preview-${body.name}"), muted = belowHorizon, moonPhase = moonPhase)
         }
     }) { measurables, constraints ->

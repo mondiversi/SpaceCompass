@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="celestial_temperature_core">核の温度（推定）</string>
+    <string name="celestial_temperature_core_boundary">核・マントル境界の温度</string>
+    <string name="celestial_temperature_core_adiabatic">核（断熱モデル）</string>
+    <string name="celestial_temperature_core_note">核の温度は内部構造モデルによる推定値であり、直接測定した値ではありません。</string>
+    <string name="celestial_temperature_core_boundary_note">核・マントル境界は核の外縁を示し、中心ではありません。</string>
+    <string name="celestial_temperature_core_adiabatic_note">この惑星には基準となる断熱モデルを示しています。他の内部モデルでは、はるかに高い温度が予測される場合があります。</string>
+</resources>

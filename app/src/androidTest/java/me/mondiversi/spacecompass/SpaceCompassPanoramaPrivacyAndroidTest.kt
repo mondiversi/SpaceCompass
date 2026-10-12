@@ -80,8 +80,8 @@ class SpaceCompassPanoramaPrivacyAndroidTest {
         try {
             val data = fixture(root, withPath = true)
             val original = data.file.readBytes()
-            val files = mutableMapOf<Pair<SpaceCompassPanoramaPosition, Boolean>, File>()
-            for (position in SpaceCompassPanoramaPosition.entries) for (labels in listOf(true, false)) {
+            val files = mutableMapOf<Pair<SpaceCompassPanoramaPosition, SpaceCompassPanoramaLabelMode>, File>()
+            for (position in SpaceCompassPanoramaPosition.entries) for (labels in SpaceCompassPanoramaLabelMode.entries) {
                 val file = prepareSpaceCompassPanoramaVariant(context, data, position, labels)
                 files[position to labels] = file
                 val before = file.readBytes()
@@ -95,10 +95,10 @@ class SpaceCompassPanoramaPrivacyAndroidTest {
                     assertEquals("Fixture credit", exif.getAttribute(ExifInterface.TAG_COPYRIGHT))
                 }
             }
-            assertEquals(6, files.values.toSet().size)
+            assertEquals(SpaceCompassPanoramaPosition.entries.size * SpaceCompassPanoramaLabelMode.entries.size, files.values.toSet().size)
             assertArrayEquals(original, data.file.readBytes())
-            val shown = android.graphics.BitmapFactory.decodeFile(files.getValue(SpaceCompassPanoramaPosition.HIDDEN to true).absolutePath)!!
-            val hidden = android.graphics.BitmapFactory.decodeFile(files.getValue(SpaceCompassPanoramaPosition.HIDDEN to false).absolutePath)!!
+            val shown = android.graphics.BitmapFactory.decodeFile(files.getValue(SpaceCompassPanoramaPosition.HIDDEN to SpaceCompassPanoramaLabelMode.ALL).absolutePath)!!
+            val hidden = android.graphics.BitmapFactory.decodeFile(files.getValue(SpaceCompassPanoramaPosition.HIDDEN to SpaceCompassPanoramaLabelMode.NONE).absolutePath)!!
             try {
                 assertEquals(shown.width, hidden.width)
                 assertEquals(shown.height, hidden.height)
@@ -132,7 +132,7 @@ class SpaceCompassPanoramaPrivacyAndroidTest {
             assertTrue(selected.caption.rows.first { it.tag == "sun-info-altitude" }.value.endsWith("ft"))
             val files = mutableSetOf<File>()
             for (mode in SpaceCompassPanoramaExportMode.entries) for (position in SpaceCompassPanoramaPosition.entries)
-                for (labels in listOf(true, false)) {
+                for (labels in SpaceCompassPanoramaLabelMode.entries) {
                     val file = prepareSpaceCompassPanoramaVariant(context, data, position, labels, mode)
                     files += file
                     if (file != original.file) {
@@ -142,10 +142,11 @@ class SpaceCompassPanoramaPrivacyAndroidTest {
                         assertEquals("2026:10:06 03:43:00", exif.getAttribute(ExifInterface.TAG_DATETIME_ORIGINAL))
                     }
                 }
-            assertEquals(12, files.size)
-            val selectedFile = prepareSpaceCompassPanoramaVariant(context, data, SpaceCompassPanoramaPosition.HIDDEN, true,
+            assertEquals(SpaceCompassPanoramaExportMode.entries.size * SpaceCompassPanoramaPosition.entries.size *
+                SpaceCompassPanoramaLabelMode.entries.size, files.size)
+            val selectedFile = prepareSpaceCompassPanoramaVariant(context, data, SpaceCompassPanoramaPosition.HIDDEN, SpaceCompassPanoramaLabelMode.ALL,
                 SpaceCompassPanoramaExportMode.SELECTED)
-            val internationalFile = prepareSpaceCompassPanoramaVariant(context, data, SpaceCompassPanoramaPosition.HIDDEN, true)
+            val internationalFile = prepareSpaceCompassPanoramaVariant(context, data, SpaceCompassPanoramaPosition.HIDDEN, SpaceCompassPanoramaLabelMode.ALL)
             assertFalse(selectedFile.readBytes().contentEquals(internationalFile.readBytes()))
         } finally { root.deleteRecursively() }
     }

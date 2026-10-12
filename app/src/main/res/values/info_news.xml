@@ -1,9 +1,9 @@
 <resources>
     <string name="info_news_title">Latest news · %1$s</string>
-    <string name="info_news_star_sky" formatted="false">Full-screen Earth screensaver with local time, date and battery level. Touch to return.</string>
-    <string name="info_news_texture_downloads" formatted="false">The screensaver pauses sensors, GPS, camera and data refresh. Initial music volume: 20%.</string>
-    <string name="info_news_weather" formatted="false">Clearer compass calibration and interference notices, with location actions only when needed.</string>
-    <string name="info_news_viewer_zoom" formatted="false">Tap a trajectory point to open the daily path centered on it, with a temporary highlight.</string>
-    <string name="info_news_settings" formatted="false">Compact object, date and time-zone heading; points 0–23, current position and lunar phases retained.</string>
-    <string name="info_news_catalog" formatted="false">Capture labels include T+/T− countdowns. Refined main controls and object details.</string>
+    <string name="info_news_star_sky" formatted="false">Pin multiple orbit points, keep their labels open and toggle the same selection in the daily path.</string>
+    <string name="info_news_texture_downloads" formatted="false">Export images, CSV or readable TXT from captures, daily paths and the Observatory; save or share.</string>
+    <string name="info_news_weather" formatted="false">Location privacy also covers tables: daily paths start with area only; hidden timestamps use UTC.</string>
+    <string name="info_news_viewer_zoom" formatted="false">The Observatory groups identity, physical data, temperatures, orbital data and spatial context.</string>
+    <string name="info_news_settings" formatted="false">Four-sided angular scales, compact capture details and clearer time/T± labels in photos and panoramas.</string>
+    <string name="info_news_catalog" formatted="false">Refined label choices and capture controls; opaque information islands in both light and dark themes.</string>
 </resources>

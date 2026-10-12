@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="celestial_section_identity">Identitas</string>
+    <string name="celestial_section_physical">Sifat fisik</string>
+    <string name="celestial_section_stellar">Cahaya dan komponen</string>
+    <string name="celestial_section_atmosphere">Suhu dan atmosfer</string>
+    <string name="celestial_section_orbit">Orbit dan pengamatan</string>
+    <string name="celestial_section_spatial">Letak di ruang angkasa</string>
+    <string name="celestial_spatial_system">Sistem</string>
+    <string name="celestial_spatial_galaxy">Galaksi</string>
+    <string name="celestial_spatial_ra">Asensio rekta</string>
+    <string name="celestial_spatial_dec">Deklinasi</string>
+    <string name="celestial_spatial_reference">Kerangka acuan</string>
+    <string name="celestial_spatial_instant">Waktu perhitungan</string>
+    <string name="celestial_spatial_solar_system">Tata Surya</string>
+    <string name="celestial_spatial_milky_way">Bima Sakti</string>
+    <string name="celestial_spatial_host_galaxy">Galaksi induk %1$s</string>
+    <string name="celestial_spatial_catalog_note">Koordinat katalog pada J2000.0; bukan posisi tampak saat ini.</string>
+    <string name="celestial_spatial_geocentric_note">Arah ekuatorial dari pusat Bumi pada waktu yang ditunjukkan.</string>
+    <string name="celestial_spatial_teme_note">Arah geosentris TEME dari orbit satelit; kerangka yang berbeda dari ICRS.</string>
+    <string name="celestial_spatial_host_note">Koordinat merujuk pada bintang induk; planet tidak terurai secara terpisah.</string>
+    <string name="celestial_spatial_fiction_note">Hubungan fiktif. Koordinat hanya menunjukkan arah bintang induk.</string>
+    <string name="celestial_view_volume">Volume</string>
+    <string name="celestial_volume_note">Perkiraan berbentuk bola dari diameter acuan.</string>
+</resources>

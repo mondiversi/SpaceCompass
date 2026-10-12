@@ -1,9 +1,9 @@
 <resources>
     <string name="info_news_title">Son yenilikler · %1$s</string>
-    <string name="info_news_star_sky" formatted="false">Yerel saat, tarih ve pil düzeyiyle tam ekran Dünya ekran koruyucusu. Geri dönmek için dokunun.</string>
-    <string name="info_news_texture_downloads" formatted="false">Ekran koruyucu sensörleri, GPS’i, kamerayı ve veri yenilemeyi duraklatır. Başlangıç müzik ses düzeyi: %20.</string>
-    <string name="info_news_weather" formatted="false">Pusula kalibrasyonu ve parazit için daha net uyarılar; konum işlemleri yalnızca gerektiğinde gösterilir.</string>
-    <string name="info_news_viewer_zoom" formatted="false">Bir yörünge noktasına dokununca günlük yol o noktaya ortalanır ve nokta geçici olarak vurgulanır.</string>
-    <string name="info_news_settings" formatted="false">Cisim, tarih ve saat dilimi için kompakt başlık; 0–23 noktaları, güncel konum ve Ay evreleri korunur.</string>
-    <string name="info_news_catalog" formatted="false">Çekim etiketleri T+/T− sürelerini içerir. Ana kontroller ve cisim ayrıntıları iyileştirildi.</string>
+    <string name="info_news_star_sky" formatted="false">Birden fazla yörünge noktası seçin, etiketlerini açık tutun ve günlük yolda aynı seçimi değiştirin.</string>
+    <string name="info_news_texture_downloads" formatted="false">Çekimlerden, günlük yollardan ve Gözlemevinden görüntü, CSV veya okunabilir TXT dışa aktarın; kaydedin ya da paylaşın.</string>
+    <string name="info_news_weather" formatted="false">Konum gizliliği tablolarda da geçerli: yollar yalnızca bölgeyle başlar; konum gizlendiğinde saatler UTC kullanır.</string>
+    <string name="info_news_viewer_zoom" formatted="false">Gözlemevi kimlik, fiziksel veriler, sıcaklıklar, yörünge verileri ve uzamsal bağlamı gruplar.</string>
+    <string name="info_news_settings" formatted="false">Fotoğraf ve panoramalarda dört kenarda açı ölçekleri, kısa çekim bilgileri ve daha net saat/T± etiketleri.</string>
+    <string name="info_news_catalog" formatted="false">İyileştirilmiş etiket seçenekleri ve çekim kontrolleri; açık ve koyu temalarda opak bilgi kartları.</string>
 </resources>

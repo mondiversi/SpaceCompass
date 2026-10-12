@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="data_export_current_image">Текущее изображение (JPG)</string>
+    <string name="data_export_rotation_image">Изображение вращения (JPG)</string>
+    <string name="data_export_section">Раздел</string>
+    <string name="data_export_field">Параметр</string>
+    <string name="data_export_value">Значение</string>
+    <string name="data_export_notes">Примечания</string>
+</resources>

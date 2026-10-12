@@ -19,6 +19,6 @@
     <string name="panorama_position_area">केवल क्षेत्र</string>
     <string name="panorama_position_area_detail">क्षेत्र और देश</string>
     <string name="panorama_position_hidden">छिपा हुआ</string>
-    <string name="panorama_position_hidden_detail">स्थान की जानकारी नहीं</string>
+    <string name="panorama_position_hidden_detail">स्थान का कोई विवरण नहीं; समय UTC में</string>
     <string name="panorama_point_labels">लेबल</string>
 </resources>

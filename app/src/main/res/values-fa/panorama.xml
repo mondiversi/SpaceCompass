@@ -19,6 +19,6 @@
     <string name="panorama_position_area">فقط منطقه</string>
     <string name="panorama_position_area_detail">منطقه و کشور</string>
     <string name="panorama_position_hidden">پنهان</string>
-    <string name="panorama_position_hidden_detail">بدون اطلاعات موقعیت</string>
+    <string name="panorama_position_hidden_detail">بدون اطلاعات مکان؛ زمان‌ها به UTC</string>
     <string name="panorama_point_labels">برچسب‌ها</string>
 </resources>

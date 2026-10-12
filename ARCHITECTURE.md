@@ -117,7 +117,7 @@ capture timestamps with explicit UTC offsets on all supported versions. Caption 
 and location-disclosure policy remain frozen independently of these EXIF timestamps.
 Composition-observed configuration/resources update preference examples and callbacks
 when locale/theme changes. The initial 1.0 release used display version 1.0 and protocol version 1.0.0.
-Current release 1.2.3 uses the same display/protocol version with code 24; signed
+Current release 1.3.0 uses the same display/protocol version with code 28; signed
 metadata, APK name and tag share that identity.
 
 
@@ -193,7 +193,7 @@ and atomically cancelled native AudioTrack sessions. Pure, reusable oscillator,
 filter, compressor and FFT/convolver modules generate the original website space
 score continuously off the UI thread. The recorded Ogg is no longer bundled.
 No extra library, service, permission or network is required. Fresh settings enable
-music at 50%; saved disabled choices remain respected. Volume gestures preview
+music at 20%; saved disabled choices remain respected. Volume gestures preview
 immediately and persist only when completed, in ten-percent steps.
 
 `SpaceCompassSettingsIslandReveal` shares UVIR's 300 ms top-anchored expansion,
@@ -278,3 +278,42 @@ into daily navigation. SpaceCompassDailyPathScroll clamps row centering to the r
 scroll extent. Fixed object/date/angle headings are layered above the clipped list;
 temporary selected-row state clears on return. Shared capture label formatting uses
 the frozen capture instant and the requested preview/export number profile.
+
+
+## Release 1.3.0: shared selections, observations and exports
+
+`SpaceCompassSunDailyPathUiState` owns session point selections independently of
+the currently displayed object. Orbit markers and daily rows toggle the same
+stable keys; retained captions alternate clock/T± without regenerating ephemerides.
+The former automatically opened daily page and selected-point island are replaced
+by multiple pinned captions. A frozen capture copies selection keys and observation
+time, so later live changes cannot alter its exported rows or rings.
+
+`SpaceCompassDataExportSource` describes the immutable source and permitted file
+types. `SpaceCompassDataExportController` manages explicit preparation and delivery;
+`SpaceCompassPanoramaExportPage` renders the shared capture/daily/Observatory choices.
+`SpaceCompassOrbitExportTable` and `SpaceCompassOrbitExportText` keep hourly, current,
+selected and key-event entries chronological by their absolute instant.
+`SpaceCompassObservatoryExport` reuses typed detail sections and separates current
+and rotated images. Fresh openings have no checked file types; only the formatting
+profile is persisted. Completing delivery returns to the retained source page.
+
+`SpaceCompassExportLocation` and `SpaceCompassExportPositionChoices` share the
+complete/area/hidden disclosure policy. Captures initialize it from their preview;
+daily exports initialize it to area on every opening. Hidden presentation uses UTC
+without changing the observation zone, astronomy geometry or relative durations.
+`SpaceCompassPageExportCache` keys and the panorama variant key separate disclosure
+and formatting. JPEG re-encoding excludes GPS EXIF; coarse geocoding does not
+fallback to the precise locality. Sky angles are not a guarantee of anonymity.
+
+`SpaceCompassCelestialDetailData` and `SpaceCompassCelestialDetailSections` group
+identity, physical/stellar, atmosphere/temperature, orbit and spatial context.
+Pure identity, core-temperature and spatial reference modules retain source and
+uncertainty qualifiers, separately from table rendering and observer-dependent data.
+The largest application source module remains below 700 lines. Release R8/resource
+shrinking stays enabled; no new service, permission or native dependency is added.
+
+`SpaceCompassCaptureCaption` shares compact translucent heading metrics across
+photos and panoramas. Four border scales use the frozen projection and exposure
+geometry. Main information cards share the full opaque settings-island surface;
+floating control fills are also opaque. The title overlay remains translucent.

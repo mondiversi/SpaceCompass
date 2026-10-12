@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="data_export_current_image">현재 이미지 (JPG)</string>
+    <string name="data_export_rotation_image">회전 이미지 (JPG)</string>
+    <string name="data_export_section">섹션</string>
+    <string name="data_export_field">항목</string>
+    <string name="data_export_value">값</string>
+    <string name="data_export_notes">참고</string>
+</resources>

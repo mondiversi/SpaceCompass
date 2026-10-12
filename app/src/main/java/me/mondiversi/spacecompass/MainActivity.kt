@@ -32,7 +32,8 @@ class MainActivity : ComponentActivity() {
             SpaceCompassPreferences {
                 val dark = isSystemInDarkTheme()
                 val saverVisible = screensaver.visible
-                val background = if (dark) Color(0xFF101418) else Color(0xFFF5F7F8)
+                val surfaces = spaceCompassSurfacePalette(dark)
+                val background = surfaces.background
                 val primary = if (dark) Color.White else Color(0xFF101418)
                 val secondary = primary.copy(alpha = 0.72f)
                 SideEffect {
@@ -46,7 +47,10 @@ class MainActivity : ComponentActivity() {
                         window.navigationBarColor = if (saverVisible) android.graphics.Color.TRANSPARENT else background.toArgb()
                     }
                 }
-                MaterialTheme(colorScheme = if (dark) darkColorScheme(primary = Color(0xFF55C8DB)) else lightColorScheme(primary = Color(0xFF176B88))) {
+                MaterialTheme(colorScheme = if (dark) darkColorScheme(primary = Color(0xFF55C8DB),
+                    background = background, surface = surfaces.island, onSurface = primary, onBackground = primary)
+                else lightColorScheme(primary = Color(0xFF176B88), background = background,
+                    surface = surfaces.island, onSurface = primary, onBackground = primary)) {
                     // Keep the retained page's viewport stable while the native cover hides bars.
                     val pageInsets = if (saverVisible) WindowInsets.safeDrawing.union(WindowInsets.systemBarsIgnoringVisibility)
                         else WindowInsets.safeDrawing

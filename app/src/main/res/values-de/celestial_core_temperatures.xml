@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="celestial_temperature_core">Kerntemperatur (Schätzung)</string>
+    <string name="celestial_temperature_core_boundary">Temperatur an der Kern-Mantel-Grenze</string>
+    <string name="celestial_temperature_core_adiabatic">Kern (adiabatisches Modell)</string>
+    <string name="celestial_temperature_core_note">Kerntemperaturen sind Schätzungen aus Modellen des Inneren, keine direkten Messungen.</string>
+    <string name="celestial_temperature_core_boundary_note">Die Kern-Mantel-Grenze bezeichnet den äußeren Rand des Kerns, nicht sein Zentrum.</string>
+    <string name="celestial_temperature_core_adiabatic_note">Für diesen Planeten wird ein adiabatisches Referenzmodell angegeben. Andere Modelle des Inneren können wesentlich höhere Temperaturen vorhersagen.</string>
+</resources>

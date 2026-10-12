@@ -1,0 +1,18 @@
+<resources>
+    <string name="celestial_identity_planet">ग्रह</string>
+    <string name="celestial_identity_dwarf">बौना ग्रह</string>
+    <string name="celestial_identity_candidate">संभावित बौना ग्रह</string>
+    <string name="celestial_identity_exoplanet">बहिर्ग्रह</string>
+    <string name="celestial_identity_moon">प्राकृतिक उपग्रह</string>
+    <string name="celestial_identity_comet">धूमकेतु</string>
+    <string name="celestial_identity_star">तारा</string>
+    <string name="celestial_identity_black_hole">ब्लैक होल</string>
+    <string name="celestial_identity_neutron">न्यूट्रॉन तारा</string>
+    <string name="celestial_identity_pulsar">पल्सर</string>
+    <string name="celestial_identity_station">अंतरिक्ष स्टेशन</string>
+    <string name="celestial_identity_satellite">कृत्रिम उपग्रह</string>
+    <string name="celestial_identity_probe">अंतरिक्ष अन्वेषण यान</string>
+    <string name="celestial_identity_nebula">नीहारिका</string>
+    <string name="celestial_identity_cluster">तारा समूह</string>
+    <string name="celestial_identity_fictional_moon">काल्पनिक प्राकृतिक उपग्रह</string>
+</resources>

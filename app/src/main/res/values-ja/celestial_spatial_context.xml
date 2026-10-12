@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="celestial_section_identity">基本情報</string>
+    <string name="celestial_section_physical">物理的特性</string>
+    <string name="celestial_section_stellar">光と構成天体</string>
+    <string name="celestial_section_atmosphere">温度と大気</string>
+    <string name="celestial_section_orbit">軌道と観測</string>
+    <string name="celestial_section_spatial">宇宙での位置</string>
+    <string name="celestial_spatial_system">星系</string>
+    <string name="celestial_spatial_galaxy">銀河</string>
+    <string name="celestial_spatial_ra">赤経</string>
+    <string name="celestial_spatial_dec">赤緯</string>
+    <string name="celestial_spatial_reference">基準座標系</string>
+    <string name="celestial_spatial_instant">計算時刻</string>
+    <string name="celestial_spatial_solar_system">太陽系</string>
+    <string name="celestial_spatial_milky_way">天の川銀河</string>
+    <string name="celestial_spatial_host_galaxy">%1$sの母銀河</string>
+    <string name="celestial_spatial_catalog_note">J2000.0のカタログ座標です。現在の見かけの位置ではありません。</string>
+    <string name="celestial_spatial_geocentric_note">表示時刻における地球中心からの赤道座標方向です。</string>
+    <string name="celestial_spatial_teme_note">衛星軌道から求めた地心TEME方向です。ICRSとは異なる座標系です。</string>
+    <string name="celestial_spatial_host_note">座標は主星を示します。惑星は個別に分解されていません。</string>
+    <string name="celestial_spatial_fiction_note">架空の関連付けです。座標は主星の方向のみを示します。</string>
+    <string name="celestial_view_volume">体積</string>
+    <string name="celestial_volume_note">基準直径から球形と仮定して求めた推定値です。</string>
+</resources>

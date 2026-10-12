@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="celestial_temperature_core">טמפרטורת הליבה (הערכה)</string>
+    <string name="celestial_temperature_core_boundary">טמפרטורת גבול הליבה–מעטפת</string>
+    <string name="celestial_temperature_core_adiabatic">ליבה (מודל אדיאבטי)</string>
+    <string name="celestial_temperature_core_note">טמפרטורות הליבה הן הערכות ממודלים של המבנה הפנימי, ולא מדידות ישירות.</string>
+    <string name="celestial_temperature_core_boundary_note">גבול הליבה–מעטפת הוא השפה החיצונית של הליבה, ולא מרכזה.</string>
+    <string name="celestial_temperature_core_adiabatic_note">עבור כוכב לכת זה מוצג מודל ייחוס אדיאבטי. מודלים פנימיים אחרים עשויים לחזות טמפרטורות גבוהות בהרבה.</string>
+</resources>

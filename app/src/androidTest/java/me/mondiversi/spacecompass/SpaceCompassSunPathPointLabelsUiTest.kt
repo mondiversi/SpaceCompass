@@ -47,7 +47,8 @@ class SpaceCompassSunPathPointLabelsUiTest {
             CompositionLocalProvider(LocalResources provides resources, LocalSpaceCompassTimeFormat provides SpaceCompassTimeFormat.H24) {
                 MaterialTheme {
                     Box(Modifier.size(340.dp, 400.dp)) {
-                        SpaceCompassSunDailyPathLayer(scene.value, orientation, state, Color.Black, Color.Gray, Color.White, timeMs = noon)
+                        SpaceCompassSunDailyPathLayer(scene.value, orientation, state, Color.Black, Color.Gray, Color.White, timeMs = noon,
+                            currentPoint = state.selectedPoints.firstOrNull { it.key.isCurrent && it.key.body == scene.value.body }?.point)
                     }
                     SpaceCompassSunDailyPathPage(state, Color.Black, Color.Gray, Color.White)
                 }
@@ -70,7 +71,7 @@ class SpaceCompassSunPathPointLabelsUiTest {
                 SpaceCompassSunPathEvent.CULMINATION to "Culmine", SpaceCompassSunPathEvent.SUNSET to "Tramonta",
                 SpaceCompassSunPathEvent.MINIMUM to "Minimo")) {
             compose.runOnIdle { state.select(path, markers.single { it.event == event }) }
-            compose.onNode(hasText("Sole · $caption · 12:00") and hasAnyAncestor(hasTestTag("sun-path-selected")))
+            compose.onNode(hasText(caption, substring = true) and hasAnyAncestor(hasTestTag("celestial-pinned-badge")))
                 .assertIsDisplayed()
         }
     }
@@ -81,7 +82,7 @@ class SpaceCompassSunPathPointLabelsUiTest {
                 SpaceCompassSunPathEvent.CULMINATION to "Culmine", SpaceCompassSunPathEvent.SUNSET to "Tramonta",
                 SpaceCompassSunPathEvent.MINIMUM to "Minimo")) {
             compose.runOnIdle { scene.value = path.copy(markers = listOf(hour.copy(event = event))) }
-            compose.onNode(hasText("$caption · 12:00") and hasAnyAncestor(hasTestTag("celestial-time-badge")))
+            compose.onNodeWithTag("celestial-badge-caption").assertTextContains(caption).assertTextContains("12:00")
                 .assertIsDisplayed()
             compose.onNodeWithTag("celestial-badge-body").assertTextEquals("Sole")
         }
@@ -93,17 +94,17 @@ class SpaceCompassSunPathPointLabelsUiTest {
                 SpaceCompassSunPathEvent.CULMINATION to "Culmine", SpaceCompassSunPathEvent.SUNSET to "Tramonta",
                 SpaceCompassSunPathEvent.MINIMUM to "Minimo")) {
             compose.runOnIdle { scene.value = path.copy(markers = listOf(hour, hour.copy(event = event))) }
-            compose.onNode(hasText("$caption · 12:00") and hasAnyAncestor(hasTestTag("celestial-time-badge")))
+            compose.onNodeWithTag("celestial-badge-caption").assertTextContains(caption).assertTextContains("12:00")
                 .assertIsDisplayed()
         }
     }
 
     @Test fun livePositionRemainsExplicitlyCurrentEvenWhenItEqualsPointTwelve() {
         open()
-        compose.runOnIdle { state.selectCurrent(path.body, hour) }
-        compose.onNodeWithText("Sole · Posizione attuale · 12:00").assertIsDisplayed()
+        compose.runOnIdle { state.selectCurrent(path.body, hour, path) }
+        compose.onNode(hasText(resources.getString(R.string.celestial_point_current), substring = true) and hasAnyAncestor(hasTestTag("celestial-pinned-badge"))).assertIsDisplayed()
         compose.runOnIdle { state.select(path, hour) }
-        compose.onNode(hasText("Sole · Punto 12 · 12:00") and hasAnyAncestor(hasTestTag("sun-path-selected")))
+        compose.onNode(hasText("Punto 12", substring = true) and hasAnyAncestor(hasTestTag("celestial-pinned-badge")))
             .assertIsDisplayed()
     }
 
@@ -115,10 +116,10 @@ class SpaceCompassSunPathPointLabelsUiTest {
         for ((point, caption) in listOf(hour to "Punto 12",
                 hour.copy(event = SpaceCompassSunPathEvent.CULMINATION) to "Culmine")) {
             compose.runOnIdle { state.select(moon, point) }
-            compose.onNodeWithTag("celestial-selected-caption").assertTextEquals("$caption · 12:00")
+            compose.onNode(hasText(caption, substring = true) and hasAnyAncestor(hasTestTag("celestial-pinned-badge"))).assertIsDisplayed()
         }
-        compose.runOnIdle { state.selectCurrent(moon.body, hour) }
-        compose.onNodeWithTag("celestial-selected-caption").assertTextEquals("Posizione attuale · 12:00")
+        compose.runOnIdle { state.selectCurrent(moon.body, hour, moon) }
+        compose.onNode(hasText(resources.getString(R.string.celestial_point_current), substring = true) and hasAnyAncestor(hasTestTag("celestial-pinned-badge"))).assertIsDisplayed()
     }
 
     @Test fun aGenuinelyCoincidentMinimumAndRiseShareOneCaption() {
@@ -126,7 +127,7 @@ class SpaceCompassSunPathPointLabelsUiTest {
         val merged = mergeCoincidentSpaceCompassPathEvents(listOf(hour,
             hour.copy(event = SpaceCompassSunPathEvent.SUNRISE), hour.copy(event = SpaceCompassSunPathEvent.MINIMUM)))
         compose.runOnIdle { scene.value = path.copy(markers = merged) }
-        compose.onNode(hasText("Minimo · Sorge · 12:00") and hasAnyAncestor(hasTestTag("celestial-time-badge")))
+        compose.onNodeWithTag("celestial-badge-caption").assertTextContains("Minimo · Sorge").assertTextContains("12:00")
             .assertIsDisplayed()
         compose.onNodeWithTag("sun-path-open").performClick()
         compose.onNodeWithText("Minimo · Sorge · 12:00").performScrollTo().assertIsDisplayed()

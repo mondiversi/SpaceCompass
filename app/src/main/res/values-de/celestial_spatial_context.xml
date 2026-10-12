@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="celestial_section_identity">Identität</string>
+    <string name="celestial_section_physical">Physikalische Eigenschaften</string>
+    <string name="celestial_section_stellar">Licht und Komponenten</string>
+    <string name="celestial_section_atmosphere">Temperatur und Atmosphäre</string>
+    <string name="celestial_section_orbit">Umlaufbahn und Beobachtung</string>
+    <string name="celestial_section_spatial">Räumliche Einordnung</string>
+    <string name="celestial_spatial_system">System</string>
+    <string name="celestial_spatial_galaxy">Galaxie</string>
+    <string name="celestial_spatial_ra">Rektaszension</string>
+    <string name="celestial_spatial_dec">Deklination</string>
+    <string name="celestial_spatial_reference">Bezugssystem</string>
+    <string name="celestial_spatial_instant">Berechnungszeitpunkt</string>
+    <string name="celestial_spatial_solar_system">Sonnensystem</string>
+    <string name="celestial_spatial_milky_way">Milchstraße</string>
+    <string name="celestial_spatial_host_galaxy">Wirtsgalaxie von %1$s</string>
+    <string name="celestial_spatial_catalog_note">Katalogkoordinaten für J2000.0; nicht die aktuelle scheinbare Position.</string>
+    <string name="celestial_spatial_geocentric_note">Äquatoriale Richtung vom Erdmittelpunkt zum angegebenen Zeitpunkt.</string>
+    <string name="celestial_spatial_teme_note">Geozentrische TEME-Richtung aus der Satellitenbahn; ein anderes Bezugssystem als ICRS.</string>
+    <string name="celestial_spatial_host_note">Die Koordinaten beziehen sich auf den Zentralstern; der Planet ist nicht aufgelöst.</string>
+    <string name="celestial_spatial_fiction_note">Fiktive Zuordnung. Die Koordinaten zeigen nur die Richtung zum Zentralstern.</string>
+    <string name="celestial_view_volume">Volumen</string>
+    <string name="celestial_volume_note">Kugelförmige Schätzung aus dem Referenzdurchmesser.</string>
+</resources>

@@ -8,8 +8,8 @@ paths, inspect reference facts and view textured models. Space Compass is a stan
 
 ## Download and install
 
-Download **space-compass-1.2.6.apk** from the
-[Space Compass 1.2.6 release](https://github.com/mondiversi/SpaceCompass/releases/tag/v1.2.6).
+Download **space-compass-1.3.0.apk** from the
+[Space Compass 1.3.0 release](https://github.com/mondiversi/SpaceCompass/releases/tag/v1.3.0).
 Android 8.0 or newer is required. Open the APK and follow Android's installation
 prompts; allow installation for your browser or file manager if requested.
 
@@ -22,11 +22,11 @@ one manual APK update to acquire this feature.
 The release includes `SHA256SUMS.txt` and a signed update index. GitHub's source
 ZIP/TAR archives and Actions debug artifacts are separate from the signed APK.
 See [distribution and signing](docs/GITHUB_RELEASES.md) and
-[the 1.2.6 release audit](docs/RELEASE_1_2_6.md).
+[the 1.3.0 release audit](docs/RELEASE_1_3_0.md).
 
 ## Features
 
-- Live azimuth/altitude, compass guidance, named daily paths and satellite passes. Tap a path point to open its centered row; current positions and lunar phases remain available.
+- Live azimuth/altitude, compass guidance, named daily paths and satellite passes. Pin multiple path points and keep their labels open; manage the same selections in the daily path. Current positions and lunar phases remain available.
 - Thirty-five ordinary catalog objects: Sun, Moon, planets, natural/artificial satellites,
   comets, Voyager spacecraft, nearby stars, nebulae, star clusters, compact objects and an exoplanet.
 - Live search by localized name or catalog identifier, combined with type/visibility filters.
@@ -39,13 +39,15 @@ See [distribution and signing](docs/GITHUB_RELEASES.md) and
   follow selected language/units independently of the export profile.
 - Optional celestial reference curves and pole/zenith/geocentre crosses. Guide and
   camera modes start disabled; Sun and Moon are the initial checked objects.
-- Manual export to the gallery, a document or sharing; selected-language/unit and
-  international profiles, optional time/altitude/T± labels and position disclosure. Only the general
-  place is shown by default, without precise GPS coordinates. No automatic gallery save.
+- Save or share images, CSV and readable TXT from captures, daily paths and the Observatory,
+  using selected-language/unit or international profiles. Special/selected points are chronological.
+  Location disclosure applies to every output: captures inherit the preview; daily paths start
+  with area only. Hidden location uses UTC. No automatic gallery save.
 - Day/night OpenStreetMap position details with GPS, altitude, estimated place and weather.
 - Scenarios with independently enabled position, date/time, altitude and time zone,
   including past/future skies and weather estimates when available.
-- Textured interactive object models, lunar phases, qualified reference data and credits.
+- Observatory with textured interactive models, lunar phases, classified reference tables,
+  qualified core temperatures, spatial context and credits. Export data and current/rotation images.
 - General settings combine light/dark themes, display options and original ambient music synthesized continuously offline.
   Music starts enabled at 20% volume, with saved on/off and ten-percent volume steps.
 - Music and scenario cards reveal their controls with 300 ms animations; disabled cards retain only their headings.
@@ -57,7 +59,7 @@ See [distribution and signing](docs/GITHUB_RELEASES.md) and
 - Signed startup/manual GitHub updates with package, certificate, size and checksum verification.
 
 The application ID is `me.mondiversi.spacecompass`. The current stable version is
-**1.2.6**, with Android/update identity `1.2.6` and version code **27**.
+**1.3.0**, with Android/update identity `1.3.0` and version code **28**.
 This preserves the three-part update protocol used by existing preview installations.
 The app stores its preferences and caches privately.
 
@@ -119,7 +121,7 @@ Launcher/loading artwork and the fictional Easter-egg texture are original asset
 
 ## Data and graphics packages
 
-Release 1.2.6 also provides a reference-information ZIP and the current 18-image
+Release 1.3.0 also provides a reference-information ZIP and the current 18-image
 2K WebP graphics ZIP, both with file manifests and credits. They are optional
 archives: scientific reference data, all 20 languages, the star atlas and LV-426
 are already included in the APK. Planet maps and archival photographs are downloaded individually from

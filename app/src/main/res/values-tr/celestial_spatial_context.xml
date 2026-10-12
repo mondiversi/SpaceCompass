@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="celestial_section_identity">Kimlik</string>
+    <string name="celestial_section_physical">Fiziksel özellikler</string>
+    <string name="celestial_section_stellar">Işık ve bileşenler</string>
+    <string name="celestial_section_atmosphere">Sıcaklık ve atmosfer</string>
+    <string name="celestial_section_orbit">Yörünge ve gözlem</string>
+    <string name="celestial_section_spatial">Uzaydaki konum</string>
+    <string name="celestial_spatial_system">Sistem</string>
+    <string name="celestial_spatial_galaxy">Galaksi</string>
+    <string name="celestial_spatial_ra">Sağ açıklık</string>
+    <string name="celestial_spatial_dec">Dik açıklık</string>
+    <string name="celestial_spatial_reference">Referans sistemi</string>
+    <string name="celestial_spatial_instant">Hesaplama anı</string>
+    <string name="celestial_spatial_solar_system">Güneş Sistemi</string>
+    <string name="celestial_spatial_milky_way">Samanyolu</string>
+    <string name="celestial_spatial_host_galaxy">%1$s ev sahibi galaksisi</string>
+    <string name="celestial_spatial_catalog_note">J2000.0 katalog koordinatları; güncel görünür konum değildir.</string>
+    <string name="celestial_spatial_geocentric_note">Belirtilen anda Dünya merkezinden bakılan ekvatoral yön.</string>
+    <string name="celestial_spatial_teme_note">Uydu yörüngesinden elde edilen yer merkezli TEME yönü; ICRS’den farklı bir sistemdir.</string>
+    <string name="celestial_spatial_host_note">Koordinatlar ev sahibi yıldızı gösterir; gezegen ayrı olarak çözümlenemez.</string>
+    <string name="celestial_spatial_fiction_note">Kurgusal ilişki. Koordinatlar yalnızca ev sahibi yıldızın yönünü gösterir.</string>
+    <string name="celestial_view_volume">Hacim</string>
+    <string name="celestial_volume_note">Referans çapından elde edilen küresel tahmin.</string>
+</resources>

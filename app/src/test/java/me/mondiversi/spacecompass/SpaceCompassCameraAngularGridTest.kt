@@ -59,8 +59,48 @@ class SpaceCompassCameraAngularGridTest {
                     assertTrue(tick.edge in setOf(SpaceCompassCameraGridEdge.TOP,SpaceCompassCameraGridEdge.BOTTOM))
                 } else {
                     assertEquals(tick.degrees,position.elevationDegrees,.05)
-                    assertEquals(SpaceCompassCameraGridEdge.LEFT,tick.edge)
+                    assertTrue(tick.edge in setOf(SpaceCompassCameraGridEdge.LEFT,SpaceCompassCameraGridEdge.RIGHT))
                 }
+            }
+        }
+    }
+
+    @Test fun everyBorderHasTruthfulTicksAtBothAspectRatiosAndExtremeZoomOrRoll() {
+        for ((w,h) in listOf(1080.0 to 1920.0,1920.0 to 1080.0)) {
+            val border = SpaceCompassSunSceneFrame(72.0,186.0,w-144,h-228)
+            for (zoom in listOf(.6,1.0,3.0,10.0,50.0)) for (roll in listOf(0.0,32.0,90.0,180.0,270.0)) {
+                val camera = orientation(355.0,20.0,roll)
+                val optics = SpaceCompassPerspective(zoom,1.2*zoom,.47,.54)
+                val ticks = spaceCompassCameraAngularGrid(camera,optics,w,h,border).ticks
+                assertEquals(SpaceCompassCameraGridEdge.entries.toSet(),ticks.map { it.edge }.toSet())
+                for (tick in ticks) {
+                    val ray = spaceCompassCameraPixelPosition(tick.point.x,tick.point.y,w,h,camera,optics)
+                    val error = if (tick.axis == SpaceCompassCameraGridAxis.AZIMUTH)
+                        wrapSpaceCompassSunDegrees(ray.azimuthDegrees-tick.degrees+180)-180
+                        else ray.elevationDegrees-tick.degrees
+                    assertEquals(0.0,error,1e-5)
+                }
+            }
+        }
+    }
+
+    @Test fun highZoomAddsFractionalTicksWithoutExpandingTheActualFieldOfView() {
+        val camera = orientation(123.0,21.0,0.0)
+        val optics = SpaceCompassPerspective(50.0,60.0,.47,.54)
+        val ticks = spaceCompassCameraAngularGrid(camera,optics,width,height,frame).ticks
+        assertTrue(ticks.any { it.decimals > 0 })
+        assertTrue(ticks.filter { it.axis == SpaceCompassCameraGridAxis.AZIMUTH }.all { it.degrees in 122.0..124.0 })
+        assertTrue(ticks.filter { it.axis == SpaceCompassCameraGridAxis.ELEVATION }.all { it.degrees in 20.0..22.0 })
+    }
+
+    @Test fun zenithAndNadirBordersNeverIntroduceOppositeOrUndefinedInterpolatedBearings() {
+        for (tilt in listOf(-90.0,-89.9,89.9,90.0)) {
+            val camera = orientation(45.0,tilt,32.0)
+            val ticks = spaceCompassCameraAngularGrid(camera,lens,width,height,frame).ticks
+            assertEquals(4,ticks.map { it.edge }.toSet().size)
+            for (tick in ticks.filter { it.axis == SpaceCompassCameraGridAxis.AZIMUTH }) {
+                val ray = spaceCompassCameraPixelPosition(tick.point.x,tick.point.y,width,height,camera,lens)
+                assertEquals(0.0,wrapSpaceCompassSunDegrees(ray.azimuthDegrees-tick.degrees+180)-180,1e-5)
             }
         }
     }

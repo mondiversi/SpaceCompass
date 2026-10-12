@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="celestial_section_identity">الهوية</string>
+    <string name="celestial_section_physical">الخصائص الفيزيائية</string>
+    <string name="celestial_section_stellar">الضوء والمكوّنات</string>
+    <string name="celestial_section_atmosphere">الحرارة والغلاف الجوي</string>
+    <string name="celestial_section_orbit">المدار والرصد</string>
+    <string name="celestial_section_spatial">الموقع في الفضاء</string>
+    <string name="celestial_spatial_system">النظام</string>
+    <string name="celestial_spatial_galaxy">المجرة</string>
+    <string name="celestial_spatial_ra">المطلع المستقيم</string>
+    <string name="celestial_spatial_dec">الميل</string>
+    <string name="celestial_spatial_reference">الإطار المرجعي</string>
+    <string name="celestial_spatial_instant">وقت الحساب</string>
+    <string name="celestial_spatial_solar_system">النظام الشمسي</string>
+    <string name="celestial_spatial_milky_way">درب التبانة</string>
+    <string name="celestial_spatial_host_galaxy">المجرة المضيفة لـ %1$s</string>
+    <string name="celestial_spatial_catalog_note">إحداثيات الفهرس عند J2000.0؛ وليست الموقع الظاهري الحالي.</string>
+    <string name="celestial_spatial_geocentric_note">الاتجاه الاستوائي من مركز الأرض في الوقت المحدد.</string>
+    <string name="celestial_spatial_teme_note">اتجاه TEME من مركز الأرض محسوب من مدار القمر الصناعي؛ إطار مختلف عن ICRS.</string>
+    <string name="celestial_spatial_host_note">تشير الإحداثيات إلى النجم المضيف؛ لا يمكن تمييز الكوكب منفردًا.</string>
+    <string name="celestial_spatial_fiction_note">ارتباط خيالي. تشير الإحداثيات فقط إلى اتجاه النجم المضيف.</string>
+    <string name="celestial_view_volume">الحجم</string>
+    <string name="celestial_volume_note">تقدير كروي مشتق من القطر المرجعي.</string>
+</resources>

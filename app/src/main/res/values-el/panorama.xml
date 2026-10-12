@@ -19,6 +19,6 @@
     <string name="panorama_position_area">Μόνο περιοχή</string>
     <string name="panorama_position_area_detail">Περιοχή και χώρα</string>
     <string name="panorama_position_hidden">Κρυφή</string>
-    <string name="panorama_position_hidden_detail">Χωρίς στοιχεία τοποθεσίας</string>
+    <string name="panorama_position_hidden_detail">Χωρίς στοιχεία τοποθεσίας· ώρες σε UTC</string>
     <string name="panorama_point_labels">Ετικέτες</string>
 </resources>

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="celestial_section_identity">Utambulisho</string>
+    <string name="celestial_section_physical">Sifa za kifizikia</string>
+    <string name="celestial_section_stellar">Mwanga na vipengele</string>
+    <string name="celestial_section_atmosphere">Halijoto na angahewa</string>
+    <string name="celestial_section_orbit">Obiti na uchunguzi</string>
+    <string name="celestial_section_spatial">Mahali angani</string>
+    <string name="celestial_spatial_system">Mfumo</string>
+    <string name="celestial_spatial_galaxy">Galaksi</string>
+    <string name="celestial_spatial_ra">Ascensio rekta</string>
+    <string name="celestial_spatial_dec">Deklinasheni</string>
+    <string name="celestial_spatial_reference">Mfumo wa marejeo</string>
+    <string name="celestial_spatial_instant">Wakati wa hesabu</string>
+    <string name="celestial_spatial_solar_system">Mfumo wa Jua</string>
+    <string name="celestial_spatial_milky_way">Njia ya Maziwa</string>
+    <string name="celestial_spatial_host_galaxy">Galaksi inayohifadhi %1$s</string>
+    <string name="celestial_spatial_catalog_note">Viwianishi vya katalogi vya J2000.0; si nafasi inayoonekana sasa.</string>
+    <string name="celestial_spatial_geocentric_note">Mwelekeo wa ikweta kutoka katikati ya Dunia kwa wakati ulioonyeshwa.</string>
+    <string name="celestial_spatial_teme_note">Mwelekeo wa TEME kutoka katikati ya Dunia unaotokana na obiti ya satelaiti; tofauti na ICRS.</string>
+    <string name="celestial_spatial_host_note">Viwianishi vinahusu nyota mwenyeji; sayari haitambuliki kando yake.</string>
+    <string name="celestial_spatial_fiction_note">Uhusiano wa kubuni. Viwianishi huonyesha tu mwelekeo wa nyota mwenyeji.</string>
+    <string name="celestial_view_volume">Ujazo</string>
+    <string name="celestial_volume_note">Makadirio ya tufe kutokana na kipenyo cha marejeo.</string>
+</resources>

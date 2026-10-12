@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="panorama_labels_all">सभी</string>
+    <string name="panorama_labels_objects_selected">केवल पिंड और चयनित बिंदु</string>
+    <string name="panorama_labels_selected">केवल चयनित बिंदु</string>
+    <string name="panorama_labels_none">कोई नहीं</string>
+</resources>

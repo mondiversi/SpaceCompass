@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="celestial_section_identity">זהות</string>
+    <string name="celestial_section_physical">תכונות פיזיקליות</string>
+    <string name="celestial_section_stellar">אור ורכיבים</string>
+    <string name="celestial_section_atmosphere">טמפרטורה ואטמוספרה</string>
+    <string name="celestial_section_orbit">מסלול ותצפית</string>
+    <string name="celestial_section_spatial">מיקום בחלל</string>
+    <string name="celestial_spatial_system">מערכת</string>
+    <string name="celestial_spatial_galaxy">גלקסיה</string>
+    <string name="celestial_spatial_ra">עלייה ישרה</string>
+    <string name="celestial_spatial_dec">נטייה</string>
+    <string name="celestial_spatial_reference">מערכת ייחוס</string>
+    <string name="celestial_spatial_instant">זמן החישוב</string>
+    <string name="celestial_spatial_solar_system">מערכת השמש</string>
+    <string name="celestial_spatial_milky_way">שביל החלב</string>
+    <string name="celestial_spatial_host_galaxy">הגלקסיה המארחת של %1$s</string>
+    <string name="celestial_spatial_catalog_note">קואורדינטות קטלוג עבור J2000.0; לא המיקום הנראה הנוכחי.</string>
+    <string name="celestial_spatial_geocentric_note">כיוון משווני ממרכז כדור הארץ בזמן המצוין.</string>
+    <string name="celestial_spatial_teme_note">כיוון גאוצנטרי TEME המחושב ממסלול הלוויין; מערכת שונה מ־ICRS.</string>
+    <string name="celestial_spatial_host_note">הקואורדינטות מתייחסות לכוכב המארח; כוכב הלכת אינו ניתן להפרדה בתצפית.</string>
+    <string name="celestial_spatial_fiction_note">שיוך בדיוני. הקואורדינטות מציינות רק את כיוון הכוכב המארח.</string>
+    <string name="celestial_view_volume">נפח</string>
+    <string name="celestial_volume_note">הערכה כדורית הנגזרת מהקוטר המשמש לייחוס.</string>
+</resources>

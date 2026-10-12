@@ -28,7 +28,7 @@ internal fun SpaceCompassWeatherToggleButton(checked: Boolean, onCheckedChange: 
     val tint = spaceCompassFloatingControlTint(color, checked, enabled)
     SpaceCompassFloatingControlHitRegion {
         Surface(Modifier.spaceCompassFloatingControlVisual().size(48.dp), shape = CircleShape,
-            color = background.copy(alpha = .94f), contentColor = tint.copy(alpha = if (enabled) 1f else .38f),
+            color = background.copy(alpha = 1f), contentColor = tint.copy(alpha = if (enabled) 1f else .38f),
             border = BorderStroke(1.dp, tint.copy(alpha = if (enabled) .35f else .13f)), shadowElevation = 3.dp) {
             Box(contentAlignment = Alignment.Center) {
                 IconToggleButton(checked, onCheckedChange, enabled = enabled, modifier = Modifier.fillMaxSize().testTag("toggle-weather"),

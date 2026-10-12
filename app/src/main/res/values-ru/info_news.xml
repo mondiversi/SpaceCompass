@@ -1,9 +1,9 @@
 <resources>
     <string name="info_news_title">Последние новости · %1$s</string>
-    <string name="info_news_star_sky" formatted="false">Полноэкранная заставка с Землёй, местным временем, датой и зарядом батареи. Коснитесь для возврата.</string>
-    <string name="info_news_texture_downloads" formatted="false">Заставка приостанавливает датчики, GPS, камеру и обновление данных. Начальная громкость музыки — 20%.</string>
-    <string name="info_news_weather" formatted="false">Более понятные сообщения о калибровке и помехах компаса; действия с местоположением только при необходимости.</string>
-    <string name="info_news_viewer_zoom" formatted="false">Нажмите точку траектории, чтобы открыть суточный путь с центром на ней и временным выделением.</string>
-    <string name="info_news_settings" formatted="false">Компактный заголовок с объектом, датой и часовым поясом; точки 0–23, текущая позиция и фазы Луны сохранены.</string>
-    <string name="info_news_catalog" formatted="false">Подписи снимков включают интервалы T+/T−. Улучшены основные кнопки и сведения об объектах.</string>
+    <string name="info_news_star_sky" formatted="false">Выбирайте несколько точек орбит, оставляйте их подписи открытыми и меняйте тот же выбор в дневном пути.</string>
+    <string name="info_news_texture_downloads" formatted="false">Экспортируйте изображения, CSV или читаемый TXT из снимков, дневных путей и Обсерватории; сохраняйте или делитесь.</string>
+    <string name="info_news_weather" formatted="false">Приватность позиции и в таблицах: пути начинают с региона; при скрытой позиции время отображается в UTC.</string>
+    <string name="info_news_viewer_zoom" formatted="false">Обсерватория группирует идентификацию, физические данные, температуры, орбитальные данные и пространственный контекст.</string>
+    <string name="info_news_settings" formatted="false">Угловые шкалы с четырёх сторон, компактные данные снимка и более ясные подписи времени/T± на фото и панорамах.</string>
+    <string name="info_news_catalog" formatted="false">Улучшенные варианты подписей и управление съёмкой; непрозрачные карточки в светлой и тёмной темах.</string>
 </resources>

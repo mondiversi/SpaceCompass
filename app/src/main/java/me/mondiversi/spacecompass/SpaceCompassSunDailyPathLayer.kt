@@ -32,16 +32,14 @@ internal fun SpaceCompassSunDailyPathLayer(
     primaryText: Color, secondaryText: Color, backgroundColor: Color,
     liveMarker: @Composable () -> Unit = {}, timeMs: Long? = null,
     timeBadgeExclusions: List<SpaceCompassSunSceneFrame> = emptyList(),
-    showSelectedPanel: Boolean = true,
     onVisualize: (() -> Unit)? = null, currentPoint: SpaceCompassSunPathPoint? = null,
     showActions: Boolean = true, interactive: Boolean = true, pathTint: Color? = null,
     highlightedPoint: SpaceCompassSunPathPoint? = null, perspective: SpaceCompassPerspective? = null
 ) {
-    val selected = state.selectedIn(path)
+    val accent = MaterialTheme.colorScheme.primary
     val labels = rememberSpaceCompassSunPathLabels(path)
     var viewport by remember { mutableStateOf(IntSize.Zero) }
     var menuSize by remember { mutableStateOf(IntSize.Zero) }
-    var selectedPanelSize by remember { mutableStateOf(IntSize.Zero) }
     val density = LocalDensity.current
     val layoutDirection = LocalLayoutDirection.current
     val radius = with(density) { SPACE_COMPASS_SUN_PATH_TOUCH_RADIUS_DP.dp.toPx() }
@@ -86,9 +84,8 @@ internal fun SpaceCompassSunDailyPathLayer(
                 detectTapGestures { tap ->
                     tappedSpaceCompassSunPathPoint(currentPoints, SpaceCompassSunScenePoint(tap.x.toDouble(), tap.y.toDouble()),
                         radius.toDouble())?.let {
-                            if (it == currentLivePoint) state.openCurrent(currentPath.body, it, currentPath)
-                            else state.openPoint(currentPath, it, currentLivePoint?.let { live ->
-                                spaceCompassCurrentPathPoint(currentPath.body, live.timeMs, live.position) })
+                            if (it == currentLivePoint) state.toggleCurrent(currentPath.body, it, currentPath)
+                            else state.togglePoint(currentPath, it)
                         }
                 }
             })) {
@@ -128,7 +125,8 @@ internal fun SpaceCompassSunDailyPathLayer(
             }
             points.forEach { (marker, projected) ->
                 val point = Offset(projected.x.toFloat(), projected.y.toFloat())
-                val tint = if (marker.position.elevationDegrees < 0) below else above
+                val isSelected = state.isSelected(path, marker)
+                val tint = if (isSelected) accent else if (marker.position.elevationDegrees < 0) below else above
                 val r = (if (marker.event == SpaceCompassSunPathEvent.HOUR) 4.dp else 6.dp).toPx()
                 drawCircle(Color.Black.copy(alpha = 0.45f), r + 1.5.dp.toPx(), point)
                 drawCircle(tint, r, point)
@@ -152,31 +150,33 @@ internal fun SpaceCompassSunDailyPathLayer(
                         drawPath(symbol, Color.Black.copy(alpha = 0.65f))
                     }
                 }
-                if (marker == selected || marker == highlightedPoint || (focused?.isCurrent == false && marker == focused.point))
+                if (isSelected) drawCircle(accent, r + 3.dp.toPx(), point, style = Stroke(1.8.dp.toPx()))
+                else if (marker == highlightedPoint || (focused?.isCurrent == false && marker == focused.point))
                     drawCircle(Color.White, r + 5.dp.toPx(), point, style = Stroke(1.8.dp.toPx()))
             }
         }
         liveMarker()
-        if (focused != null && timeMs != null) {
+        if (interactive && timeMs != null) {
             val padding = with(density) { 4.dp.toPx().toDouble() }
             val excluded = buildList {
                 addAll(timeBadgeExclusions)
                 if (menuSize.width > 0) add(SpaceCompassSunSceneFrame(
                     if (layoutDirection == LayoutDirection.Rtl) 0.0 else viewport.width - menuSize.width - padding, 0.0,
                     menuSize.width + padding, menuSize.height + padding))
-                if (showSelectedPanel && selected != null && selectedPanelSize.height > 0) add(SpaceCompassSunSceneFrame(
-                    0.0, viewport.height - selectedPanelSize.height - padding,
-                    viewport.width.toDouble(), selectedPanelSize.height + padding))
             }
-            SpaceCompassCelestialTimeBadge(focused.point.timeMs, timeMs, path.zone, focused.point.position, orientation,
-                primaryText, secondaryText, backgroundColor,
-                if (focused.isCurrent) stringResource(R.string.celestial_point_current) else labels.name(focused.point),
-                path.body, excluded, perspective)
+            val pinned = projectSpaceCompassSelectedOrbitTargets(state.selectedPoints, mapOf(path.body to path),
+                currentPoint?.let { mapOf(path.body to it) }.orEmpty(), orientation,
+                viewport.width.toDouble(), viewport.height.toDouble(), perspective)
+            val focusTarget = focused?.let { focus ->
+                val projection = projectSpaceCompassSun(focus.point.position, orientation!!,
+                    viewport.width.toDouble(), viewport.height.toDouble(), perspective)
+                SpaceCompassCelestialSceneTarget(path.body, focus.point,
+                    SpaceCompassSunScenePoint(projection.x, projection.y), path, focus.isCurrent)
+            }
+            SpaceCompassCelestialSceneBadges(pinned, focusTarget, timeMs, primaryText, secondaryText, backgroundColor, excluded)
         }
         if (showActions) SpaceCompassCelestialSkyActions(path.body, onVisualize, { state.openMenu(path, currentPoint?.let { spaceCompassCurrentPathPoint(path.body, it.timeMs, it.position) }) }, title, true,
             Modifier.align(Alignment.TopEnd).padding(4.dp).onSizeChanged { menuSize = it })
-        if (showSelectedPanel) SpaceCompassSunPathSelectedPanel(path, state, primaryText, secondaryText, backgroundColor,
-            Modifier.align(Alignment.BottomCenter).onSizeChanged { selectedPanelSize = it }, nowMs = timeMs)
     }
 }
 

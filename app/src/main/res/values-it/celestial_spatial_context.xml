@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="celestial_section_identity">Identità</string>
+    <string name="celestial_section_physical">Caratteristiche fisiche</string>
+    <string name="celestial_section_stellar">Luce e componenti</string>
+    <string name="celestial_section_atmosphere">Temperature e atmosfera</string>
+    <string name="celestial_section_orbit">Orbita e osservazione</string>
+    <string name="celestial_section_spatial">Collocazione spaziale</string>
+    <string name="celestial_spatial_system">Sistema</string>
+    <string name="celestial_spatial_galaxy">Galassia</string>
+    <string name="celestial_spatial_ra">Ascensione retta</string>
+    <string name="celestial_spatial_dec">Declinazione</string>
+    <string name="celestial_spatial_reference">Sistema di riferimento</string>
+    <string name="celestial_spatial_instant">Istante del calcolo</string>
+    <string name="celestial_spatial_solar_system">Sistema solare</string>
+    <string name="celestial_spatial_milky_way">Via Lattea</string>
+    <string name="celestial_spatial_host_galaxy">Galassia ospite di %1$s</string>
+    <string name="celestial_spatial_catalog_note">Coordinate di catalogo a J2000.0; non la posizione apparente attuale.</string>
+    <string name="celestial_spatial_geocentric_note">Direzione equatoriale dal centro della Terra all’istante indicato.</string>
+    <string name="celestial_spatial_teme_note">Direzione geocentrica TEME ricavata dall’orbita del satellite; un riferimento diverso da ICRS.</string>
+    <string name="celestial_spatial_host_note">Le coordinate si riferiscono alla stella ospite; il pianeta non è risolto.</string>
+    <string name="celestial_spatial_fiction_note">Associazione immaginaria. Le coordinate indicano solo la direzione della stella ospite.</string>
+    <string name="celestial_view_volume">Volume</string>
+    <string name="celestial_volume_note">Stima sferica ricavata dal diametro di riferimento.</string>
+</resources>

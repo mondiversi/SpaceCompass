@@ -1,9 +1,9 @@
 <resources>
     <string name="info_news_title">Τελευταία νέα · %1$s</string>
-    <string name="info_news_star_sky" formatted="false">Προφύλαξη οθόνης με τη Γη σε πλήρη οθόνη, τοπική ώρα, ημερομηνία και μπαταρία. Αγγίξτε για επιστροφή.</string>
-    <string name="info_news_texture_downloads" formatted="false">Η προφύλαξη οθόνης διακόπτει αισθητήρες, GPS, κάμερα και ανανέωση δεδομένων. Αρχική ένταση μουσικής 20%.</string>
-    <string name="info_news_weather" formatted="false">Σαφέστερες ειδοποιήσεις για βαθμονόμηση και παρεμβολές πυξίδας· ενέργειες τοποθεσίας μόνο όταν χρειάζονται.</string>
-    <string name="info_news_viewer_zoom" formatted="false">Αγγίξτε ένα σημείο τροχιάς για να ανοίξετε την ημερήσια διαδρομή κεντραρισμένη σε αυτό, με προσωρινή επισήμανση.</string>
-    <string name="info_news_settings" formatted="false">Συμπαγής κεφαλίδα με αντικείμενο, ημερομηνία και ζώνη ώρας· διατηρούνται τα σημεία 0–23, η τρέχουσα θέση και οι φάσεις της Σελήνης.</string>
-    <string name="info_news_catalog" formatted="false">Οι ετικέτες λήψεων περιλαμβάνουν χρόνους T+/T−. Βελτιωμένα κύρια χειριστήρια και λεπτομέρειες αντικειμένων.</string>
+    <string name="info_news_star_sky" formatted="false">Επιλέξτε πολλά σημεία τροχιάς, κρατήστε τις ετικέτες τους ανοιχτές και αλλάξτε την ίδια επιλογή στην ημερήσια διαδρομή.</string>
+    <string name="info_news_texture_downloads" formatted="false">Εξαγωγή εικόνων, CSV ή ευανάγνωστου TXT από λήψεις, ημερήσιες διαδρομές και το Παρατηρητήριο· αποθήκευση ή κοινοποίηση.</string>
+    <string name="info_news_weather" formatted="false">Ιδιωτικότητα τοποθεσίας και στους πίνακες: οι διαδρομές ξεκινούν μόνο με περιοχή· οι κρυφές τοποθεσίες χρησιμοποιούν UTC.</string>
+    <string name="info_news_viewer_zoom" formatted="false">Το Παρατηρητήριο ομαδοποιεί ταυτότητα, φυσικά δεδομένα, θερμοκρασίες, τροχιακά δεδομένα και χωρικό πλαίσιο.</string>
+    <string name="info_news_settings" formatted="false">Κλίμακες γωνιών στις τέσσερις πλευρές, συμπαγή στοιχεία λήψης και σαφέστερες ετικέτες ώρας/T± σε φωτογραφίες και πανοράματα.</string>
+    <string name="info_news_catalog" formatted="false">Βελτιωμένες επιλογές ετικετών και χειριστήρια λήψης· αδιαφανείς κάρτες πληροφοριών σε φωτεινό και σκοτεινό θέμα.</string>
 </resources>

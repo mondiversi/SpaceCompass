@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="celestial_temperature_core">Suhu inti (perkiraan)</string>
+    <string name="celestial_temperature_core_boundary">Suhu batas inti-mantel</string>
+    <string name="celestial_temperature_core_adiabatic">Inti (model adiabatik)</string>
+    <string name="celestial_temperature_core_note">Suhu inti merupakan perkiraan model struktur bagian dalam, bukan pengukuran langsung.</string>
+    <string name="celestial_temperature_core_boundary_note">Batas inti-mantel adalah tepi luar inti, bukan pusatnya.</string>
+    <string name="celestial_temperature_core_adiabatic_note">Model adiabatik acuan ditampilkan untuk planet ini. Model bagian dalam lainnya dapat memperkirakan suhu yang jauh lebih tinggi.</string>
+</resources>
