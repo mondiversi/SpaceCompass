@@ -25,7 +25,7 @@ class SpaceCompassSelectedPointCaptureAndroidTest {
         return SpaceCompassPanoramaSnapshot(time, 45.0, 9.0, 100.0, SpaceCompassSunSkyPhase.AFTERNOON, null,
             listOf(SpaceCompassPanoramaObject(path.body, "Moon", path)), SpaceCompassCelestialRemoteData(),
             "Space Compass · fixture", listOf("N", "E", "S", "W"), listOf("60°", "30°", "0°", "−30°", "−60°"),
-            selectedPoints = state.selectedPoints.toList(), selectionTint = accent, zoneId = zone.id)
+            selectedPoints = state.selectedPoints.toList(), selectionTint = accent, zoneId = zone.id, activeBody = path.body)
     }
     private fun nearAccent(pixel: Int): Boolean = kotlin.math.abs(Color.red(pixel) - Color.red(accent)) < 35 &&
         kotlin.math.abs(Color.green(pixel) - Color.green(accent)) < 35 && kotlin.math.abs(Color.blue(pixel) - Color.blue(accent)) < 35
@@ -61,13 +61,25 @@ class SpaceCompassSelectedPointCaptureAndroidTest {
             assertFalse("The explicitly selected point still has its caption", selected.sameAs(none))
             assertFalse("Object names and other annotations are omitted", selected.sameAs(all))
             assertFalse("Object names are added to the selected captions", objects.sameAs(selected))
-            assertFalse("Unselected point labels remain omitted", objects.sameAs(all))
+            assertTrue("The sole active object includes its unselected and current captions", objects.sameAs(all))
             val pin = captured.selectedPoints.single().point.position
             val point = spaceCompassPanoramaPoint(pin, 2048.0, 1024.0, captured.center.azimuth)!!
             for (bitmap in listOf(all, selected, none, objects)) {
                 assertPin(bitmap, point.x, point.y + spaceCompassPanoramaSceneTop(prepareSpaceCompassCaptureCaption(captured.caption,2048),2048), 5.0)
             }
         } finally { all.recycle(); selected.recycle(); none.recycle(); objects.recycle() }
+    }
+
+    @Test fun activeObjectLabelsRemainVisibleEvenWithNoIndividuallySelectedPoints() {
+        val captured = fixture(60.0).copy(selectedPoints = emptyList(),
+            labelMode = SpaceCompassPanoramaLabelMode.OBJECTS_SELECTED)
+        val active = renderSpaceCompassPanorama(captured, 2048)
+        val inactive = renderSpaceCompassPanorama(captured.copy(activeBody = SpaceCompassCelestialBody.SUN), 2048)
+        val none = renderSpaceCompassPanorama(captured.copy(labelMode = SpaceCompassPanoramaLabelMode.NONE), 2048)
+        try {
+            assertFalse("The active orbit has captions without pins", active.sameAs(none))
+            assertTrue("A different checked target cannot leak captions into this orbit", inactive.sameAs(none))
+        } finally { active.recycle(); inactive.recycle(); none.recycle() }
     }
 
     @Test fun photographReprojectsPinsIntoTheRealLensFieldAndDoesNotInventOffscreenPins() {

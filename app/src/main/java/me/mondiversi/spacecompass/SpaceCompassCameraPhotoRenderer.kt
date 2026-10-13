@@ -51,8 +51,8 @@ internal fun renderSpaceCompassCameraPhoto(context: Context, photo: SpaceCompass
         val selections = resolveSpaceCompassPanoramaSelections(snapshot,
             observations.mapNotNull { (item, position) -> position?.let { item.body to it } }.toMap())
         observations.forEach { (item,position) -> position?.let(::projection)?.let {
-            occupied+=RectF(it.x.toFloat()-48*scale,it.y.toFloat()-(if(snapshot.labelMode.showsObjects) 70 else 48)*scale,it.x.toFloat()+48*scale,it.y.toFloat()+45*scale)
-            if (snapshot.labelMode.showsObjects) {
+            occupied+=RectF(it.x.toFloat()-48*scale,it.y.toFloat()-(if(snapshot.labelMode.showsObject(item.body == snapshot.activeBody)) 70 else 48)*scale,it.x.toFloat()+48*scale,it.y.toFloat()+45*scale)
+            if (snapshot.labelMode.showsObject(item.body == snapshot.activeBody)) {
                 text.textSize=23*scale
                 val half=text.measureText(item.name)/2
                 val x=it.x.toFloat().coerceIn(half+5*scale,width-half-5*scale)
@@ -94,13 +94,14 @@ internal fun renderSpaceCompassCameraPhoto(context: Context, photo: SpaceCompass
                 paint.style=Paint.Style.STROKE; paint.strokeWidth=2*scale
                 paint.color=spaceCompassCelestialPathVisibilityTint(tint,arrow.belowHorizon).toArgb(); canvas.drawPath(chevron,paint)
                 text.textSize=22*scale
-                if (snapshot.labelMode.showsObjects) drawSpaceCompassOrbitName(canvas,item.name,segments,arrow,text,paint.color,12*scale,occupied)
+                if (snapshot.labelMode.showsObject(item.body == snapshot.activeBody)) drawSpaceCompassOrbitName(canvas,item.name,segments,arrow,text,paint.color,12*scale,occupied)
             }
             path.markers.forEach { marker -> projection(marker.position)?.let {
                 val point = SpaceCompassSunScenePoint(it.x,it.y)
                 val markerTint = spaceCompassCelestialPathVisibilityTint(tint,marker.position.elevationDegrees<0).toArgb()
                 points+=Triple(marker,point,markerTint)
-                if (snapshot.labelMode.showsAll && !spaceCompassPanoramaPointSelected(selections, item.body, marker)) {
+                if (snapshot.labelMode.showsPoint(false, item.body == snapshot.activeBody) &&
+                    !spaceCompassPanoramaPointSelected(selections, item.body, marker)) {
                     val time=snapshot.markerTimes[marker.timeMs] ?: formatSpaceCompassPanoramaExportTime(marker.timeMs,
                         snapshot.displayTimeZone,snapshot.formatting)
                     labels += SpaceCompassPanoramaTimeLabel(formatSpaceCompassPanoramaPathPointLabel(time,marker,
@@ -117,13 +118,12 @@ internal fun renderSpaceCompassCameraPhoto(context: Context, photo: SpaceCompass
                     point.x.toFloat()+radius, point.y.toFloat()+radius)
             }
         }
-        if (snapshot.labelMode.showsAll) {
-            labels += observations.mapNotNull { (item,position) ->
-                if (selections.any { it.body == item.body && it.isCurrent }) null
-                else position?.let(::projection)?.let { p ->
-                    spaceCompassPanoramaCurrentLabel(snapshot, position, SpaceCompassSunScenePoint(p.x,p.y),
-                        spaceCompassCelestialPathTint(item.body).toArgb(), 35f)
-                }
+        labels += observations.mapNotNull { (item,position) ->
+            if (!snapshot.labelMode.showsPoint(false, item.body == snapshot.activeBody) ||
+                selections.any { it.body == item.body && it.isCurrent }) null
+            else position?.let(::projection)?.let { p ->
+                spaceCompassPanoramaCurrentLabel(snapshot, position, SpaceCompassSunScenePoint(p.x,p.y),
+                    spaceCompassCelestialPathTint(item.body).toArgb(), 35f)
             }
         }
         if (snapshot.labelMode.showsSelected) labels += spaceCompassPanoramaSelectionLabels(snapshot,selections,scale,35f,
@@ -139,7 +139,7 @@ internal fun renderSpaceCompassCameraPhoto(context: Context, photo: SpaceCompass
             val marker=renderSpaceCompassPanoramaMarker(context,item.body,snapshot.timeMs)
             try { canvas.drawBitmap(marker,null,RectF(x-radius+2*scale,y-radius+2*scale,x+radius-2*scale,y+radius-2*scale),
                 Paint(Paint.ANTI_ALIAS_FLAG or Paint.FILTER_BITMAP_FLAG)) } finally { marker.recycle() }
-            if (snapshot.labelMode.showsObjects) {
+            if (snapshot.labelMode.showsObject(item.body == snapshot.activeBody)) {
                 text.textSize=23*scale; text.style=Paint.Style.FILL; text.color=paint.color
                 text.setShadowLayer(3*scale,0f,scale,Color.BLACK)
                 val half=text.measureText(item.name)/2

@@ -18,7 +18,7 @@ import androidx.compose.ui.input.pointer.PointerEventPass
 import androidx.compose.ui.input.pointer.pointerInput
 import androidx.compose.ui.platform.LocalContext
 
-/** Short feedback for the fixed capture, record and stop controls only. */
+/** Shared brief touch feedback for capture, explicit point toggles and the clear-points command. */
 internal enum class SpaceCompassHapticCue { CHOICE, TOGGLE_ON, TOGGLE_OFF, COMMAND, HOLD_COMPLETE }
 
 internal data class SpaceCompassHapticPulse(val durationMs: Long, val amplitude: Int)

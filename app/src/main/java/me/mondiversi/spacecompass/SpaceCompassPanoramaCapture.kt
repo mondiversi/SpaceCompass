@@ -32,7 +32,8 @@ internal fun rememberSpaceCompassPanoramaAction(timeMs: Long, latitude: Double?,
     showSkyReferences: Boolean = SPACE_COMPASS_SKY_REFERENCES_DEFAULT,
     showWeather: Boolean = SPACE_COMPASS_WEATHER_VISIBLE_DEFAULT,
     solarLighting: SpaceCompassSolarLighting? = null,
-    selectedPoints: List<SpaceCompassSelectedOrbitPoint> = emptyList()): SpaceCompassPanoramaAction {
+    selectedPoints: List<SpaceCompassSelectedOrbitPoint> = emptyList(),
+    activeBody: SpaceCompassCelestialBody? = null): SpaceCompassPanoramaAction {
     val selectionTint = MaterialTheme.colorScheme.primary.toArgb()
     val context = LocalContext.current
     val resources = LocalResources.current
@@ -84,7 +85,8 @@ internal fun rememberSpaceCompassPanoramaAction(timeMs: Long, latitude: Double?,
                     objects, remote, "", emptyList(), emptyList(), labelMode = labelMode,
                     observerPositionKnown = latitude != null && longitude != null, showSkyReferences = showSkyReferences, center = center,
                     weatherEffectsEnabled = cameraEnabled || showWeather, solarLighting = solarLighting,
-                    selectedPoints = selectedPoints.toList(), selectionTint = selectionTint, zoneId = observationZone.id)
+                    selectedPoints = selectedPoints.toList(), selectionTint = selectionTint, zoneId = observationZone.id,
+                    activeBody = activeBody?.takeIf { it in bodies })
                 busy = true
                 val preparingNotice = showSpaceCompassBottomMessage(application,
                     resources.getString(R.string.panorama_preparing))

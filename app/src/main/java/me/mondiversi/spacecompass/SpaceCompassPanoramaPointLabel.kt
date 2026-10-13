@@ -3,14 +3,15 @@ package me.mondiversi.spacecompass
 import kotlin.math.abs
 import java.util.Locale
 
-/** Both capture modes use the same compact row: optional event, clock, T, azimuth, elevation. */
+/** Capture labels put optional event titles above clock/T and azimuth/elevation rows. */
 internal fun formatSpaceCompassPanoramaPointLabel(moment: String, position: SpaceCompassSunPosition,
     formatting: SpaceCompassPanoramaFormatting, pointName: String? = null, countdown: String? = null): String {
     val azimuth = formatSpaceCompassPanoramaElevation(position.azimuthDegrees, formatting)
     val elevation = formatSpaceCompassPanoramaElevation(position.elevationDegrees, formatting)
     val sign = if (position.elevationDegrees > 0 && abs(position.elevationDegrees) >= .05) "+" else ""
-    return listOfNotNull(pointName?.takeIf(String::isNotBlank), moment,
-        countdown?.takeIf(String::isNotBlank), "$azimuth°", "$sign$elevation°").joinToString(" · ")
+    val momentLine = listOfNotNull(moment, countdown?.takeIf(String::isNotBlank)).joinToString(" · ")
+    return listOfNotNull(pointName?.takeIf(String::isNotBlank), momentLine,
+        "$azimuth° · $sign$elevation°").joinToString("\n")
 }
 
 /** Freeze elapsed/remaining whole minutes to the captured observation, never the export clock. */

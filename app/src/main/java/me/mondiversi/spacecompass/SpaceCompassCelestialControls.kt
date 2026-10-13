@@ -58,12 +58,8 @@ internal fun SpaceCompassCelestialSelector(body: SpaceCompassCelestialBody, colo
     SpaceCompassFloatingActionButton(label, { catalogOpen?.value = true }, tint, background,
         modifier.testTag("celestial-select"), stateText = count,
         overlay = {
-            if (selectedBodies.isNotEmpty()) Box(
-                Modifier.align(Alignment.TopEnd).size(16.dp)
-                    .background(background, CircleShape).border(1.dp, tint.copy(alpha = .5f), CircleShape)
-                    .testTag("celestial-selection-count").clearAndSetSemantics {},
-                contentAlignment = Alignment.Center
-            ) { Text(count, color = tint, fontSize = 9.sp, lineHeight = 10.sp, maxLines = 1) }
+            if (selectedBodies.isNotEmpty()) SpaceCompassFloatingCountBadge(count, tint, background,
+                Modifier.align(Alignment.TopEnd).testTag("celestial-selection-count"))
         }) {
         SpaceCompassCelestialCatalogIcon(Modifier.size(26.dp), tint,
             crossed = selectedBodies.isEmpty())

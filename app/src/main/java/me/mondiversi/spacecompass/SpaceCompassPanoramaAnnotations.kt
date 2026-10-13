@@ -14,13 +14,14 @@ internal fun drawSpaceCompassPanoramaTimeLabels(canvas: Canvas, labels: List<Spa
     width: Int, height: Int, scale: Float, occupied: MutableList<RectF>) {
     val text = spaceCompassOrbitTextPaint(23 * scale).apply { textAlign = Paint.Align.LEFT }
     val metrics = text.fontMetrics
-    val labelHeight = maxOf(34 * scale, metrics.descent - metrics.ascent + 10 * scale)
+    val lineHeight = maxOf(26 * scale, metrics.descent - metrics.ascent + 3 * scale)
     val obstacles = occupied.mapTo(mutableListOf()) {
         SpaceCompassSunSceneFrame(it.left.toDouble(), it.top.toDouble(), it.width().toDouble(), it.height().toDouble())
     }
     val placed = labels.sortedBy { if (it.selected) 0 else if (it.current) 1 else if (it.principal) 2 else 3 }.mapNotNull { label ->
-        val labelWidth = text.measureText(label.text) + 18 * scale
-        val heightForLabel = labelHeight
+        val lines = label.text.lines()
+        val labelWidth = lines.maxOf(text::measureText) + 18 * scale
+        val heightForLabel = maxOf(34 * scale, lineHeight * lines.size + 10 * scale)
         val nearby = spaceCompassPanoramaLabelBounds(label.point, labelWidth.toDouble(), heightForLabel.toDouble(),
             width.toDouble(), height.toDouble(), scale.toDouble(), obstacles, label.pointRadius.toDouble())
         val layout = nearby ?: if (label.selected) placeSpaceCompassOrbitBadge(width.toDouble(), height.toDouble(),
@@ -33,10 +34,10 @@ internal fun drawSpaceCompassPanoramaTimeLabels(canvas: Canvas, labels: List<Spa
         val bounds = RectF(layout.left.toFloat(), layout.top.toFloat(),
             (layout.left + layout.width).toFloat(), (layout.top + layout.height).toFloat())
         occupied += bounds
-        label to bounds
+        Triple(label, bounds, lines)
     }
     val paint = Paint(Paint.ANTI_ALIAS_FLAG)
-    placed.forEach { (label, bounds) ->
+    placed.forEach { (label, bounds, _) ->
         paint.color = label.tint; paint.strokeWidth = 1.5f * scale
         // Connect to the nearest edge, whether the pill moved above, below or to a side.
         val x = label.point.x.toFloat(); val y = label.point.y.toFloat()
@@ -48,14 +49,17 @@ internal fun drawSpaceCompassPanoramaTimeLabels(canvas: Canvas, labels: List<Spa
         canvas.drawLine(x + dx / length * radius, y + dy / length * radius, targetX, targetY, paint)
     }
     text.color = Color.WHITE; text.style = Paint.Style.FILL
-    placed.forEach { (label, bounds) ->
+    placed.forEach { (label, bounds, lines) ->
         paint.style = Paint.Style.FILL
         paint.color = 0xd9101418.toInt() // Near-black with approximately 15% background transparency.
         canvas.drawRoundRect(bounds, 8 * scale, 8 * scale, paint)
         paint.color = label.tint; paint.style = Paint.Style.STROKE; paint.strokeWidth = (if (label.selected) 3f else 2f) * scale
         canvas.drawRoundRect(bounds, 8 * scale, 8 * scale, paint)
-        canvas.drawText(label.text, bounds.left + 9 * scale,
-            bounds.top + (labelHeight - metrics.descent - metrics.ascent) / 2, text)
+        val firstBaseline = bounds.top +
+            (bounds.height() - lineHeight * (lines.size - 1) - metrics.descent - metrics.ascent) / 2
+        lines.forEachIndexed { index, line ->
+            canvas.drawText(line, bounds.left + 9 * scale, firstBaseline + index * lineHeight, text)
+        }
     }
 }
 

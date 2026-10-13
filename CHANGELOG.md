@@ -1,5 +1,13 @@
 # Changelog
 
+## 1.3.1 — 2026-10-13
+
+- Preserve the active target when orbit points are selected or deselected.
+- Include the active target's labels in the object-and-selected-points capture mode.
+- Add point selection/deselection/clear haptics and a selected-point counter.
+- Place named point titles above clock/T±, with azimuth/elevation on a separate row in both capture types.
+- Preserve in-app news summaries, credits, saved preferences and texture pack 1.1.
+
 ## 1.3.0 — 2026-10-12
 
 Explore and export the sky with multiple pinned orbit points, richer reference data and consistent location privacy.

@@ -37,7 +37,8 @@ class SpaceCompassClearOrbitPointsUiTest {
                 else lightColorScheme(primary = Color.Blue)) {
                 Box(Modifier.size(120.dp)) {
                     if (state.selectedPoints.isNotEmpty()) SpaceCompassClearOrbitPointsButton(state::clearSelection,
-                        MaterialTheme.colorScheme.primary, if (dark.value) Color.Black else Color.White)
+                        MaterialTheme.colorScheme.primary, if (dark.value) Color.Black else Color.White,
+                        selectedCount = state.selectedPoints.size)
                 }
             }
         }
@@ -47,8 +48,12 @@ class SpaceCompassClearOrbitPointsUiTest {
         compose.runOnIdle {
             state.select(moon, markers[0]); state.select(sun, markers[1]); state.selectCurrent(sun.body, markers[0], sun)
         }
-        compose.onNodeWithTag("clear-orbit-points").assertIsDisplayed().performClick()
+        compose.onNodeWithTag("clear-orbit-points-count", useUnmergedTree = true).assertExists()
+        compose.onNodeWithTag("clear-orbit-points").assertIsDisplayed()
+            .assert(SemanticsMatcher.expectValue(androidx.compose.ui.semantics.SemanticsProperties.StateDescription, "3"))
+            .performClick()
         compose.onNodeWithTag("clear-orbit-points").assertDoesNotExist()
+        compose.onNodeWithTag("clear-orbit-points-count", useUnmergedTree = true).assertDoesNotExist()
         compose.runOnIdle { assertTrue(state.selectedPoints.isEmpty()); assertFalse(state.isSelected(moon, markers[0])) }
     }
     @Test fun theClearPointIconUsesTheBlueOrCyanThemeAccent() {

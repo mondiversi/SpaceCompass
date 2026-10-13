@@ -19,7 +19,7 @@ internal fun SpaceCompassCelestialSceneInteraction(targets: List<SpaceCompassCel
     currentPoints: Map<SpaceCompassCelestialBody, SpaceCompassSunPathPoint>,
     focused: SpaceCompassCelestialSceneTarget?, state: SpaceCompassSunDailyPathUiState, nowMs: Long?,
     orientation: SpaceCompassSunOrientation?, primaryText: Color, secondaryText: Color, backgroundColor: Color,
-    excluded: List<SpaceCompassSunSceneFrame>, onActivateBody: ((SpaceCompassCelestialBody) -> Unit)?,
+    excluded: List<SpaceCompassSunSceneFrame>,
     perspective: SpaceCompassPerspective? = null,
     paths: Map<SpaceCompassCelestialBody, SpaceCompassSunDailyPath> = targets.mapNotNull { it.path?.let { p -> it.body to p } }.toMap()) {
     androidx.compose.foundation.layout.BoxWithConstraints(Modifier.fillMaxSize()) {
@@ -34,14 +34,12 @@ internal fun SpaceCompassCelestialSceneInteraction(targets: List<SpaceCompassCel
         } }
         val currentTargets by rememberUpdatedState(targets + historical)
         val zone by rememberUpdatedState(spaceCompassObservationZone())
-        val activate by rememberUpdatedState(onActivateBody)
         val radius = with(LocalDensity.current) { SPACE_COMPASS_SUN_PATH_TOUCH_RADIUS_DP.dp.toPx().toDouble() }
         val accent = MaterialTheme.colorScheme.primary
         Canvas(Modifier.fillMaxSize().pointerInput(radius) {
             detectTapGestures { tap ->
                 tappedSpaceCompassCelestialSceneTarget(currentTargets,
                     SpaceCompassSunScenePoint(tap.x.toDouble(), tap.y.toDouble()), radius)?.let {
-                    activate?.invoke(it.body)
                     state.toggleScenePoint(it, zone)
                 }
             }

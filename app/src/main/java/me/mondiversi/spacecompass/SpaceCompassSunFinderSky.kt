@@ -72,7 +72,7 @@ internal fun SpaceCompassSunPointingViewport(
     compassWarning: String? = null, showActions: Boolean = true,
     offscreenBody: SpaceCompassCelestialBody? = body,
     overlays: Map<SpaceCompassCelestialBody, SpaceCompassCelestialOverlay> = emptyMap(),
-    onActivateBody: ((SpaceCompassCelestialBody) -> Unit)? = null, compassAccurate: Boolean = true,
+    compassAccurate: Boolean = true,
     statusMessage: String? = null, statusActionLabel: String? = null, onStatusAction: () -> Unit = {},
     compassWarningAttention: Boolean = false, statusAttention: Boolean = false,
     simulationLabel: String? = null, onSimulation: () -> Unit = {},
@@ -204,12 +204,12 @@ internal fun SpaceCompassSunPointingViewport(
             SpaceCompassCelestialSceneInteraction(targets, current, focused, dailyPathUiState, timeMs, orientation.takeIf { compassReliable },
                 primaryText, secondaryText, backgroundColor, exclusions + offscreen.values.map {
                     SpaceCompassSunSceneFrame(it.center.x - markerDiameter / 2, it.center.y - markerDiameter / 2, markerDiameter, markerDiameter)
-                }, onActivateBody, scenePerspective, paths)
+                }, scenePerspective, paths)
             // Only thumbnails have small local targets; they never intercept another path's whole viewport.
             spaceCompassAllCelestialOrder.forEach { candidate -> key(candidate) { projections[candidate]?.let { projected ->
                 val below = positions.getValue(candidate).elevationDegrees < 0
                 if (projected.visible) SpaceCompassCelestialLiveMarker(candidate, projected, below, current[candidate], dailyPathUiState,
-                    onActivate = { onActivateBody?.invoke(candidate) }, moonPhase = moonPhase, path = paths[candidate])
+                    moonPhase = moonPhase, path = paths[candidate])
                 else offscreen[candidate]?.let { placement ->
                     SpaceCompassCelestialOffscreenMarker(candidate, projected, below,
                         spaceCompassCelestialPathLineTint(spaceCompassCelestialPathTint(candidate), below),

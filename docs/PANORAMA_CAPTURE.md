@@ -301,3 +301,16 @@ Equator, tropic and polar-circle names/degrees now follow the projected referenc
 curves in live views and both capture modes. Point/cross captions remain horizontal.
 See CURVED_REFERENCE_LABELS.md for shared orbit-text shaping, reserved-space rules,
 annotation/export preferences and validation.
+
+
+## Active-object label subset
+
+Object and selected points means the single target active in the main information
+island at the shutter. The snapshot freezes its body ID independently of the checked
+catalog set and pinned points. This mode includes that object's name, orbit captions
+(hourly and named events) and current-position caption, plus individually pinned
+points on any other included orbit. A missing active target does not silently pick
+another checked object. The All, Selected points and None modes retain their scopes.
+Photo projection still omits anything outside the captured field, and common label
+placement retains collision avoidance and prioritizes pinned/current captions.
+Language, disclosure and scientific export variants retain this frozen target.

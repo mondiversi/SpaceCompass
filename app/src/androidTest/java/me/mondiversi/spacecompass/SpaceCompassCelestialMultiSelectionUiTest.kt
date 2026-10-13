@@ -16,13 +16,13 @@ import java.time.Instant
 class SpaceCompassCelestialMultiSelectionUiTest {
     @get:Rule val compose = createComposeRule()
     private val selection = mutableStateOf(SpaceCompassCelestialSelection())
-    private fun show() {
+    private fun show(orientation: SpaceCompassSunOrientation? = null) {
         val location = Location("fixture").apply {
             latitude = 45.0; longitude = 9.0; accuracy = 5f
             altitude = 112.0; verticalAccuracyMeters = 8f
         }
         val reading = SpaceCompassSunFinderReadings(location, SpaceCompassSunLocationStatus.READY,
-            SpaceCompassSunOrientation(SpaceCompassSunVector(1.0, 0.0, 0.0), SpaceCompassSunVector(0.0, 0.0, 1.0),
+            orientation ?: SpaceCompassSunOrientation(SpaceCompassSunVector(1.0, 0.0, 0.0), SpaceCompassSunVector(0.0, 0.0, 1.0),
                 SpaceCompassSunVector(0.0, 1.0, 0.0)), true, true)
         compose.setContent { MaterialTheme {
             val colors = MaterialTheme.colorScheme
@@ -33,6 +33,37 @@ class SpaceCompassCelestialMultiSelectionUiTest {
                 onBodyChange = { selection.value = selection.value.copy(active = it) }, onDismissRequest = {})
         } }
     }
+    @Test fun tappingAndUnpinningAnotherObjectsCurrentPointDoesNotChangeTheInspectedBody() {
+        val time = Instant.parse("2026-10-04T12:00:00Z").toEpochMilli()
+        val position = calculateSpaceCompassCelestialObservation(SpaceCompassCelestialBody.MOON,
+            time, 45.0, 9.0, 112.0, SpaceCompassCelestialRemoteData())!!.position
+        val a = Math.toRadians(position.azimuthDegrees); val e = Math.toRadians(position.elevationDegrees)
+        val orientation = SpaceCompassSunOrientation(
+            SpaceCompassSunVector(kotlin.math.cos(a), -kotlin.math.sin(a), 0.0),
+            SpaceCompassSunVector(-kotlin.math.sin(e) * kotlin.math.sin(a),
+                -kotlin.math.sin(e) * kotlin.math.cos(a), kotlin.math.cos(e)),
+            SpaceCompassSunVector(kotlin.math.cos(e) * kotlin.math.sin(a),
+                kotlin.math.cos(e) * kotlin.math.cos(a), kotlin.math.sin(e)))
+        selection.value = SpaceCompassCelestialSelection(setOf(SpaceCompassCelestialBody.SUN,
+            SpaceCompassCelestialBody.MOON), SpaceCompassCelestialBody.SUN)
+        show(orientation)
+        compose.waitUntil(15_000) {
+            compose.onAllNodesWithTag("celestial-live-preview-MOON", useUnmergedTree = true)
+                .fetchSemanticsNodes().isNotEmpty()
+        }
+        val live = compose.onNode(hasTestTag("celestial-current-point") and
+            hasAnyDescendant(hasTestTag("celestial-live-preview-MOON")), useUnmergedTree = true)
+        live.assertIsNotSelected().performClick().assertIsSelected()
+        compose.onNodeWithTag("celestial-pinned-badge").assertIsDisplayed()
+        compose.runOnIdle { assertEquals(SpaceCompassCelestialBody.SUN, selection.value.active) }
+        compose.onNodeWithTag("sun-path-page").assertDoesNotExist()
+        live.performTouchInput { click(center) }.assertIsNotSelected()
+        compose.onNodeWithTag("celestial-pinned-badge").assertDoesNotExist()
+        compose.runOnIdle { assertEquals(SpaceCompassCelestialBody.SUN, selection.value.active) }
+        compose.onNodeWithTag("celestial-body-next").performClick()
+        compose.runOnIdle { assertEquals(SpaceCompassCelestialBody.MOON, selection.value.active) }
+    }
+
     @Test fun checkboxesKeepMenuOpenAndMasterCanSelectAllOrNone() {
         show()
         compose.onNodeWithTag("celestial-selection-count", useUnmergedTree = true).assertExists()

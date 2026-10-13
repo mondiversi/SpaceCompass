@@ -264,10 +264,11 @@ class SpaceCompassCelestialTabularLayoutTest {
 
     @Test fun selectionCountIsCompactCircularAndIndependentOfInspectedObject() {
         val controls = source("SpaceCompassCelestialControls.kt")
-        val badge = controls.substringAfter("if (selectedBodies.isNotEmpty()) Box(")
-            .substringBefore("SpaceCompassAdaptiveDropdownMenu")
+        assertTrue(controls.contains("if (selectedBodies.isNotEmpty()) SpaceCompassFloatingCountBadge(count"))
+        assertTrue(controls.contains("Modifier.align(Alignment.TopEnd).testTag(\"celestial-selection-count\")"))
+        val badge = source("SpaceCompassFloatingActionButton.kt").substringAfter("internal fun SpaceCompassFloatingCountBadge")
         assertTrue(badge.contains("Text(count"))
-        assertTrue(badge.contains("size(16.dp)"))
+        assertTrue(badge.contains("height(16.dp).widthIn(min = 16.dp)"))
         assertTrue(badge.contains("CircleShape"))
         assertFalse(badge.contains("remote.") || badge.contains("body.name"))
         assertTrue(controls.contains("stateText = count"))

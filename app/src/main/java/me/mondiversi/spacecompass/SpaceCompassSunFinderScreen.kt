@@ -420,7 +420,7 @@ internal fun SpaceCompassSunFinderContent(
         phase, currentWeather, selectedBodies, selectedOverlays, remote,
         gpsAccuracyMeters = fix?.takeIf { it.hasAccuracy() && it.accuracy.isFinite() && it.accuracy >= 0f }
             ?.accuracy?.toDouble(), cameraEnabled = cameraEnabled, cameraCapture = cameraCapture, showSkyReferences = showSkyReferences, showWeather = showWeather, solarLighting = solarLighting,
-        selectedPoints = dailyPathUiState.selectedPoints)
+        selectedPoints = dailyPathUiState.selectedPoints, activeBody = body.takeIf { it in selectedBodies })
     panorama.preview?.let { preview ->
         SpaceCompassPanoramaPreview(preview, panorama.closePreview)
         return
@@ -513,8 +513,7 @@ internal fun SpaceCompassSunFinderContent(
                 statusActionLabel = if (hasActiveBody && target == null && sun != null && !remote.loading)
                     stringResource(R.string.sun_finder_retry) else locationActionLabel,
                 onStatusAction = if (hasActiveBody && target == null && sun != null) onRemoteRetry else onLocationAction,
-                showActions = false, offscreenBody = body.takeIf { hasActiveBody }, overlays = overlays, onActivateBody = {
-                    if (it in selectedBodies) onBodyChange(it) },
+                showActions = false, offscreenBody = body.takeIf { hasActiveBody }, overlays = overlays,
                 perspective = cameraPerspective.takeIf { cameraEnabled }, noticesBelowReticle = true,
                 observerLatitude = fix?.latitude, showSkyReferences = showSkyReferences,
                 observerAltitude = fix?.takeIf { it.hasAltitude() }?.altitude ?: 0.0,
@@ -534,10 +533,11 @@ internal fun SpaceCompassSunFinderContent(
                                 formatSpaceCompassNumber(if (topEdge) 0.0 else 90.0, 0, numeric,
                                     grouping = false, systemLocale = controlLocale) + "°")
                         }, primaryText, backgroundColor, enabled = !cameraEnabled)
-                        if (dailyPathUiState.selectedPoints.isNotEmpty()) SpaceCompassClearOrbitPointsButton({
+                        val selectedPointCount = dailyPathUiState.selectedPoints.size
+                        if (selectedPointCount > 0) SpaceCompassClearOrbitPointsButton({
                             dailyPathUiState.clearSelection()
                             notifyControl(R.string.scene_points_cleared)
-                        }, MaterialTheme.colorScheme.primary, backgroundColor)
+                        }, MaterialTheme.colorScheme.primary, backgroundColor, selectedCount = selectedPointCount)
                     }
                 },
                 bottomActions = { modifier ->

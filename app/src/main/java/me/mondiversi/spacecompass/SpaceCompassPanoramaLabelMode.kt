@@ -10,10 +10,13 @@ internal enum class SpaceCompassPanoramaLabelMode(val key: String, val labelReso
     NONE("none", R.string.panorama_labels_none);
 
     val showsAll: Boolean get() = this == ALL
-    val showsObjects: Boolean get() = this == ALL || this == OBJECTS_SELECTED
     val showsSelected: Boolean get() = this != NONE
 
-    fun showsPoint(selected: Boolean): Boolean = showsAll || (showsSelected && selected)
+    /** Object means the active target at the shutter, not every checked catalog body. */
+    fun showsObject(activeObject: Boolean): Boolean = showsAll || (this == OBJECTS_SELECTED && activeObject)
+
+    fun showsPoint(selected: Boolean, activeObject: Boolean = false): Boolean =
+        showsObject(activeObject) || (showsSelected && selected)
 
     companion object {
         /** Preserve the previous switch on upgrade; a saved label choice takes precedence. */

@@ -27,7 +27,9 @@ internal fun spaceCompassOrbitPointKeysMatch(a: SpaceCompassOrbitPointKey, b: Sp
 
 /** One selection owner for every orbit; opening/closing a page never clears pinned points. */
 @Stable
-internal class SpaceCompassSunDailyPathUiState {
+internal class SpaceCompassSunDailyPathUiState(
+    private val onPointToggled: (selected: Boolean) -> Unit = {}
+) {
     var menuPath by mutableStateOf<SpaceCompassSunDailyPath?>(null)
         private set
     var menuCurrentPoint by mutableStateOf<SpaceCompassSunPathPoint?>(null)
@@ -74,6 +76,8 @@ internal class SpaceCompassSunDailyPathUiState {
             selection.remove(existing)
             if (lastSelectedKey == existing) lastSelectedKey = selection.keys.lastOrNull()
         }
+        // Only explicit point toggles produce feedback; refresh/navigation/reset remain silent.
+        onPointToggled(existing == null)
     }
     fun select(path: SpaceCompassSunDailyPath, point: SpaceCompassSunPathPoint) {
         if (valid(point)) add(SpaceCompassSelectedOrbitPoint(
@@ -122,7 +126,14 @@ internal class SpaceCompassSunDailyPathUiState {
 }
 
 @Composable
-internal fun rememberSpaceCompassSunDailyPathUiState(): SpaceCompassSunDailyPathUiState = remember { SpaceCompassSunDailyPathUiState() }
+internal fun rememberSpaceCompassSunDailyPathUiState(): SpaceCompassSunDailyPathUiState {
+    val haptics = rememberSpaceCompassHapticController()
+    return remember(haptics) {
+        SpaceCompassSunDailyPathUiState { selected ->
+            haptics.spaceCompassHaptic(if (selected) SpaceCompassHapticCue.TOGGLE_ON else SpaceCompassHapticCue.TOGGLE_OFF)
+        }
+    }
+}
 
 /** Resolve refreshed data without changing selection identity or retaining a stale live location. */
 internal fun projectSpaceCompassSelectedOrbitTargets(selected: List<SpaceCompassSelectedOrbitPoint>,

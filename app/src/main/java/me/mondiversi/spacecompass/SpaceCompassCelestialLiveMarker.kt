@@ -24,18 +24,17 @@ import androidx.compose.ui.semantics.role
 import androidx.compose.ui.semantics.selected
 import androidx.compose.ui.semantics.semantics
 import androidx.compose.ui.unit.dp
-import java.time.ZoneId
 import kotlin.math.roundToInt
 
 internal const val SPACE_COMPASS_CELESTIAL_LIVE_PREVIEW_SIZE_DP = 32f
 
 /** Same cached catalogue preview, with the live lunar phase; not a live photograph or spacecraft attitude solution.
- * Pointer hits are resolved with the path dots; this node also supplies a TalkBack action.
+ * Pointer and TalkBack actions only toggle the live point; the inspected object stays unchanged.
  */
 @Composable
 internal fun SpaceCompassCelestialLiveMarker(body: SpaceCompassCelestialBody, projection: SpaceCompassSunProjection,
     belowHorizon: Boolean, point: SpaceCompassSunPathPoint?, state: SpaceCompassSunDailyPathUiState,
-    onActivate: (() -> Unit)? = null, moonPhase: SpaceCompassMoonPhase? = null,
+    moonPhase: SpaceCompassMoonPhase? = null,
     path: SpaceCompassSunDailyPath? = null) {
     val name = stringResource(body.nameResource)
     val timeFormat = resolveSpaceCompassTimeFormat(LocalContext.current, LocalSpaceCompassTimeFormat.current)
@@ -50,16 +49,16 @@ internal fun SpaceCompassCelestialLiveMarker(body: SpaceCompassCelestialBody, pr
     val label = moment?.let { "$name, ${stringResource(R.string.celestial_point_time, current, it)}" } ?: name
     Layout(modifier = Modifier.fillMaxSize(), content = {
         Box(Modifier.size((SPACE_COMPASS_SUN_PATH_TOUCH_RADIUS_DP * 2).dp).testTag("celestial-current-point")
-            .then(if (onActivate == null) Modifier else Modifier.clickable(
+            .then(if (point == null) Modifier else Modifier.clickable(
                 interactionSource = remember { MutableInteractionSource() }, indication = null) {
-                onActivate(); point?.let { state.toggleCurrent(body, it, path, zone) }
+                state.toggleCurrent(body, point, path, zone)
             })
             .semantics(mergeDescendants = true) {
                 contentDescription = label
                 this.selected = selected
                 if (point != null) {
                     role = Role.Button
-                    onClick { onActivate?.invoke(); state.toggleCurrent(body, point, path, zone); true }
+                    onClick { state.toggleCurrent(body, point, path, zone); true }
                 }
             }, contentAlignment = Alignment.Center) {
             SpaceCompassCelestialThumbnail(body, Modifier.size(SPACE_COMPASS_CELESTIAL_LIVE_PREVIEW_SIZE_DP.dp)

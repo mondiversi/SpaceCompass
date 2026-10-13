@@ -26,7 +26,7 @@ internal data class SpaceCompassPanoramaSnapshot(val timeMs: Long, val latitude:
     val selectedPoints: List<SpaceCompassSelectedOrbitPoint> = emptyList(),
     val selectionTint: Int = 0xff1987d4.toInt(), val zoneId: String = "UTC",
     val orbitExportVocabulary: SpaceCompassOrbitExportVocabulary = SpaceCompassOrbitExportVocabulary(),
-    val displayZoneId: String? = null)
+    val displayZoneId: String? = null, val activeBody: SpaceCompassCelestialBody? = null)
 
 internal fun renderSpaceCompassPanorama(snapshot: SpaceCompassPanoramaSnapshot, width: Int = 4096, context: android.content.Context? = null): Bitmap {
     require(width in 512..4096 && snapshot.objects.isNotEmpty())
@@ -135,7 +135,7 @@ internal fun renderSpaceCompassPanorama(snapshot: SpaceCompassPanoramaSnapshot, 
                 ?: return@forEach
             val x = p.x.toFloat(); val y = p.y.toFloat()
             occupied += RectF(x - 44 * scale, y - 44 * scale, x + 44 * scale, y + 44 * scale)
-            if (snapshot.labelMode.showsObjects) {
+            if (snapshot.labelMode.showsObject(item.body == snapshot.activeBody)) {
                 val half = text.measureText(item.name) / 2
                 val labelX = x.coerceIn(half + 12 * scale, sceneWidth - half - 12 * scale)
                 val labelY = (y - 48 * scale).coerceIn(105 * scale, sceneHeight - 20 * scale)
@@ -191,7 +191,7 @@ internal fun renderSpaceCompassPanorama(snapshot: SpaceCompassPanoramaSnapshot, 
                 paint.color = spaceCompassCelestialPathVisibilityTint(tint, arrow.belowHorizon).toArgb()
                 canvas.drawPath(chevron, paint)
                 text.textSize = 32 * scale
-                if (snapshot.labelMode.showsObjects) drawSpaceCompassOrbitName(canvas, item.name, segments, arrow, text, paint.color, 18 * scale, occupied)
+                if (snapshot.labelMode.showsObject(item.body == snapshot.activeBody)) drawSpaceCompassOrbitName(canvas, item.name, segments, arrow, text, paint.color, 18 * scale, occupied)
             }
             paint.style = Paint.Style.FILL
             path.markers.forEach { marker ->
@@ -204,7 +204,8 @@ internal fun renderSpaceCompassPanorama(snapshot: SpaceCompassPanoramaSnapshot, 
                     for (x in listOf(p.x.toFloat(), p.x.toFloat() - sceneWidth, p.x.toFloat() + sceneWidth))
                         occupied += RectF(x - radius, p.y.toFloat() - radius, x + radius, p.y.toFloat() + radius)
                 }
-                if (!snapshot.labelMode.showsAll || spaceCompassPanoramaPointSelected(selections, item.body, marker)) return@forEach
+                if (!snapshot.labelMode.showsPoint(false, item.body == snapshot.activeBody) ||
+                    spaceCompassPanoramaPointSelected(selections, item.body, marker)) return@forEach
                 val time = snapshot.markerTimes[marker.timeMs] ?: formatSpaceCompassPanoramaExportTime(marker.timeMs,
                     snapshot.displayTimeZone,snapshot.formatting)
                 // Read elevation from this object's marker, not the timestamp shared by other paths.
@@ -223,7 +224,8 @@ internal fun renderSpaceCompassPanorama(snapshot: SpaceCompassPanoramaSnapshot, 
             }
             centers.forEach { drawSpaceCompassPanoramaEventMarker(canvas, marker.event, it, scale, tint) }
         }
-        if (snapshot.labelMode.showsAll) observations.forEach { (item, observation) ->
+        observations.forEach { (item, observation) ->
+            if (!snapshot.labelMode.showsPoint(false, item.body == snapshot.activeBody)) return@forEach
             val position = observation?.position ?: return@forEach
             if (selections.any { it.body == item.body && it.isCurrent }) return@forEach
             val point = spaceCompassPanoramaPoint(position, sceneWidth.toDouble(), sceneHeight.toDouble(), centerAzimuth)
@@ -247,7 +249,7 @@ internal fun renderSpaceCompassPanorama(snapshot: SpaceCompassPanoramaSnapshot, 
             val image = renderSpaceCompassPanoramaMarker(context, item.body, snapshot.timeMs)
             try { canvas.drawBitmap(image, null, RectF(x - 36 * scale, y - 36 * scale, x + 36 * scale, y + 36 * scale),
                 Paint(Paint.ANTI_ALIAS_FLAG or Paint.FILTER_BITMAP_FLAG)) } finally { image.recycle() }
-            if (snapshot.labelMode.showsObjects) {
+            if (snapshot.labelMode.showsObject(item.body == snapshot.activeBody)) {
                 text.textSize = 32 * scale
                 val half = text.measureText(item.name) / 2
                 val labelX = x.coerceIn(half + 12 * scale, sceneWidth - half - 12 * scale)

@@ -76,7 +76,7 @@ class SpaceCompassPanoramaSelectionTest {
         val captured = snapshot(listOf(refreshed), state)
         val resolved = resolveSpaceCompassPanoramaSelections(captured, emptyMap()).single()
         assertEquals(point(1), resolved.point); assertEquals(initial, resolved.path)
-        assertEquals("01:00 · T+11:00 · 123.5° · +20.8°", formatSpaceCompassPanoramaSelection(captured, resolved))
+        assertEquals("01:00 · T+11:00\n123.5° · +20.8°", formatSpaceCompassPanoramaSelection(captured, resolved))
     }
 
     @Test fun scientificAndUserPresentationsKeepPinsWhileFormattingTheirOwnCaptions() {
@@ -86,10 +86,27 @@ class SpaceCompassPanoramaSelectionTest {
         val italian = captured.copy(objects = captured.objects.map { it.copy(name = "Luna") },
             formatting = SpaceCompassPanoramaFormatting(locale = Locale.ITALIAN, numeric = SpaceCompassNumericFormat.SYSTEM,
                 deviceLocale = Locale.ITALIAN))
-        assertEquals("23:00 · T−11:00 · 123,5° · +20,8°", formatSpaceCompassPanoramaSelection(italian, resolved))
-        assertEquals("23:00 · T−11:00 · 123.5° · +20.8°", formatSpaceCompassPanoramaSelection(captured, resolved))
+        assertEquals("23:00 · T−11:00\n123,5° · +20,8°", formatSpaceCompassPanoramaSelection(italian, resolved))
+        assertEquals("23:00 · T−11:00\n123.5° · +20.8°", formatSpaceCompassPanoramaSelection(captured, resolved))
         assertEquals(captured.selectedPoints, italian.selectedPoints)
         assertEquals(captured.selectionTint, italian.selectionTint)
+    }
+
+    @Test fun restrictedAndScientificVariantsRetainTheCapturedActiveBodyAndAllPins() {
+        val moon = path(); val mars = path(SpaceCompassCelestialBody.MARS)
+        val state = SpaceCompassSunDailyPathUiState(); state.select(mars, point(1))
+        val captured = snapshot(listOf(moon, mars), state).copy(activeBody = moon.body,
+            labelMode = SpaceCompassPanoramaLabelMode.OBJECTS_SELECTED)
+        state.clearSelection()
+        for (disclosure in SpaceCompassPanoramaPosition.entries) {
+            val variant = spaceCompassSnapshotForDisclosure(captured, disclosure)
+                .copy(formatting = spaceCompassPanoramaInternationalFormatting,
+                    center = SpaceCompassPanoramaCenter.NORTH)
+            assertEquals(moon.body, variant.activeBody)
+            assertEquals(captured.selectedPoints, variant.selectedPoints)
+            assertTrue(variant.labelMode.showsPoint(false, moon.body == variant.activeBody))
+            assertFalse(variant.labelMode.showsPoint(false, mars.body == variant.activeBody))
+        }
     }
 
     @Test fun labelVisibilityAndPanoramaCenterChangesDoNotEraseSelection() {
@@ -100,7 +117,7 @@ class SpaceCompassPanoramaSelectionTest {
             resolveSpaceCompassPanoramaSelections(modified, emptyMap()))
     }
 
-    @Test fun selectedAndOrdinaryHourlyPointsShareTheSameSingleRowWithBothAngles() {
+    @Test fun selectedAndOrdinaryHourlyPointsShareTheSameTwoLinesWithBothAngles() {
         val moon = path(); val state = SpaceCompassSunDailyPathUiState(); state.select(moon, point(1))
         val captured = snapshot(listOf(moon), state)
         val resolved = resolveSpaceCompassPanoramaSelections(captured, emptyMap()).single()
@@ -108,7 +125,7 @@ class SpaceCompassPanoramaSelectionTest {
             captured.pointEventNames, captured.timeMs), formatSpaceCompassPanoramaSelection(captured, resolved))
     }
 
-    @Test fun selectedCurrentAndNamedEventsKeepOnlyTheirSpecialNameOnTheSameRow() {
+    @Test fun selectedCurrentAndNamedEventsKeepTheirSpecialNameOnItsOwnTitleLine() {
         val moon = path().copy(markers = listOf(point(12, SpaceCompassSunPathEvent.CULMINATION)))
         val state = SpaceCompassSunDailyPathUiState()
         state.select(moon, moon.markers.single()); state.selectCurrent(moon.body, point(1), moon)
@@ -116,9 +133,9 @@ class SpaceCompassPanoramaSelectionTest {
             pointEventNames = mapOf(SpaceCompassSunPathEvent.CULMINATION to "Culmine"))
         val selected = resolveSpaceCompassPanoramaSelections(captured,
             mapOf(moon.body to SpaceCompassSunPosition(180.0, -10.0)))
-        assertEquals("Culmine · 12:00 · T+00:00 · 123.5° · +20.8°",
+        assertEquals("Culmine\n12:00 · T+00:00\n123.5° · +20.8°",
             formatSpaceCompassPanoramaSelection(captured, selected.single { !it.isCurrent }))
-        assertEquals("Attuale · 12:00 · T+00:00 · 180.0° · -10.0°",
+        assertEquals("Attuale\n12:00 · T+00:00\n180.0° · -10.0°",
             formatSpaceCompassPanoramaSelection(captured, selected.single { it.isCurrent }))
     }
 }
