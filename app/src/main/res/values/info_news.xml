@@ -1,9 +1,9 @@
 <resources>
     <string name="info_news_title">Latest news · %1$s</string>
-    <string name="info_news_star_sky" formatted="false">The reticle stays white; objects near its centre highlight their existing outline without growing.</string>
-    <string name="info_news_texture_downloads" formatted="false">In landscape, capture stays at the bottom right; with panels collapsed, the title sits between the controls.</string>
-    <string name="info_news_weather" formatted="false">Photo and panorama preview controls have matching margins in portrait and landscape.</string>
-    <string name="info_news_viewer_zoom" formatted="false">More room for object names, with Observatory and daily-path controls closer together.</string>
-    <string name="info_news_settings" formatted="false">A slightly lighter daytime blue is shared by buttons, links, selections and volume controls.</string>
-    <string name="info_news_catalog" formatted="false">Selected objects use one highlighted outline, including exported photos and panoramas.</string>
+    <string name="info_news_star_sky" formatted="false">Returning from background keeps the ground visible, without a brief sky-only flash.</string>
+    <string name="info_news_texture_downloads" formatted="false">Orbits and object markers remain visible while the compass reacquires fresh readings.</string>
+    <string name="info_news_weather" formatted="false">The star background retains its last frame while paused, without background calculations.</string>
+    <string name="info_news_viewer_zoom" formatted="false">Orientation-loading notices appear only when the main view is active in the foreground.</string>
+    <string name="info_news_settings" formatted="false">Object-selection arrows are optically centred, with smaller and properly aligned press feedback.</string>
+    <string name="info_news_catalog" formatted="false">The screensaver now shows “Tap to return to the app” at the top.</string>
 </resources>

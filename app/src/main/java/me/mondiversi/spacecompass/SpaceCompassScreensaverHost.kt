@@ -90,6 +90,7 @@ private fun SpaceCompassScreensaverLayer(dark: Boolean, lightHour: Double, label
     }
     SideEffect {
         view.contentDescription = label
+        view.updateHint(label)
         view.updateLighting(dark, lightHour)
         view.updateInfo(info)
     }

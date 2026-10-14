@@ -1,9 +1,9 @@
 <resources>
     <string name="info_news_title">Ultime novità · %1$s</string>
-    <string name="info_news_star_sky" formatted="false">Il mirino resta sempre bianco; gli oggetti vicini al centro evidenziano il bordo esistente senza ingrandirsi.</string>
-    <string name="info_news_texture_downloads" formatted="false">In orizzontale, lo scatto resta fisso in basso a destra; con i riquadri chiusi il titolo è centrato tra i comandi.</string>
-    <string name="info_news_weather" formatted="false">Margini uniformi per i comandi delle anteprime di foto e panoramiche, in verticale e in orizzontale.</string>
-    <string name="info_news_viewer_zoom" formatted="false">Più spazio per il nome dell’oggetto, con i comandi Osservatorio e percorso giornaliero più vicini.</string>
-    <string name="info_news_settings" formatted="false">Blu diurno leggermente più chiaro e coerente per pulsanti, link, selezioni e volume.</string>
-    <string name="info_news_catalog" formatted="false">Gli oggetti selezionati hanno un unico bordo evidenziato, anche nelle foto e nelle panoramiche esportate.</string>
+    <string name="info_news_star_sky" formatted="false">Il ritorno dal background mantiene visibile il terreno, senza un breve lampo di solo cielo.</string>
+    <string name="info_news_texture_downloads" formatted="false">Orbite e immagini degli oggetti restano visibili mentre la bussola acquisisce nuove letture.</string>
+    <string name="info_news_weather" formatted="false">Lo sfondo stellato conserva l’ultimo fotogramma durante la pausa, senza calcoli in background.</string>
+    <string name="info_news_viewer_zoom" formatted="false">L’avviso di lettura dell’orientamento appare soltanto con la schermata principale attiva in primo piano.</string>
+    <string name="info_news_settings" formatted="false">Frecce di selezione degli oggetti centrate otticamente, con uno sfondo di pressione più piccolo e allineato.</string>
+    <string name="info_news_catalog" formatted="false">Il salvaschermo mostra in alto «Tocca per tornare all’app».</string>
 </resources>

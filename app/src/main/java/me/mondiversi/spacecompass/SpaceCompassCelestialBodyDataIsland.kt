@@ -1,12 +1,17 @@
 package me.mondiversi.spacecompass
 
 import androidx.compose.foundation.background
+import androidx.compose.foundation.clickable
+import androidx.compose.foundation.indication
+import androidx.compose.foundation.interaction.MutableInteractionSource
 import androidx.compose.foundation.layout.*
+import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.HorizontalDivider
-import androidx.compose.material3.IconButton
+import androidx.compose.material3.ripple
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.remember
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
@@ -14,7 +19,6 @@ import androidx.compose.ui.draw.rotate
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.platform.LocalLayoutDirection
 import androidx.compose.ui.platform.testTag
-import androidx.compose.ui.semantics.contentDescription
 import androidx.compose.ui.semantics.heading
 import androidx.compose.ui.semantics.semantics
 import androidx.compose.ui.text.font.FontWeight
@@ -33,7 +37,6 @@ internal data class SpaceCompassCelestialBodyNavigation(val previousLabel: Strin
 internal fun SpaceCompassCelestialBodyDataIsland(bodyName: String?, primaryText: Color, background: Color,
     compact: Boolean, navigation: SpaceCompassCelestialBodyNavigation?,
     actions: @Composable () -> Unit = {}, content: @Composable ColumnScope.() -> Unit) {
-    val rtl = LocalLayoutDirection.current == LayoutDirection.Rtl
     val shape = RoundedCornerShape(20.dp)
     Column(Modifier.fillMaxWidth().testTag("sun-finder-body-data").clip(shape)
         .background(spaceCompassSettingsCardColor().copy(alpha = SPACE_COMPASS_MAIN_OVERLAY_ALPHA))
@@ -49,20 +52,12 @@ internal fun SpaceCompassCelestialBodyDataIsland(bodyName: String?, primaryText:
                         .align(Alignment.Center).testTag("celestial-body-island-title").semantics { heading() },
                         color = primaryText, fontSize = if (compact) 12.sp else 14.sp, fontWeight = FontWeight.Medium,
                         textAlign = TextAlign.Center, maxLines = 1, overflow = TextOverflow.Ellipsis)
-                    if (navigation != null) IconButton(onClick = navigation.onPrevious,
-                        modifier = Modifier.size(48.dp).testTag("celestial-body-previous")
-                            .align(Alignment.CenterStart).semantics { contentDescription = navigation.previousLabel }) {
-                        Box(Modifier.fillMaxSize().padding(start = 10.dp), contentAlignment = Alignment.CenterStart) {
-                            SpaceCompassDisclosureChevron(Modifier.rotate(if (rtl) 0f else 180f), primaryText)
-                        }
-                    }
-                    if (navigation != null) IconButton(onClick = navigation.onNext,
-                        modifier = Modifier.size(48.dp).testTag("celestial-body-next")
-                            .align(Alignment.CenterEnd).semantics { contentDescription = navigation.nextLabel }) {
-                        Box(Modifier.fillMaxSize().padding(end = 10.dp), contentAlignment = Alignment.CenterEnd) {
-                            SpaceCompassDisclosureChevron(Modifier.rotate(if (rtl) 180f else 0f), primaryText)
-                        }
-                    }
+                    if (navigation != null) SpaceCompassCelestialBodyNavigationArrow(
+                        navigation.previousLabel, navigation.onPrevious, primaryText, previous = true,
+                        modifier = Modifier.size(48.dp).testTag("celestial-body-previous").align(Alignment.CenterStart))
+                    if (navigation != null) SpaceCompassCelestialBodyNavigationArrow(
+                        navigation.nextLabel, navigation.onNext, primaryText, previous = false,
+                        modifier = Modifier.size(48.dp).testTag("celestial-body-next").align(Alignment.CenterEnd))
                 }
                 actions()
             }
@@ -71,5 +66,24 @@ internal fun SpaceCompassCelestialBodyDataIsland(bodyName: String?, primaryText:
         Column(Modifier.fillMaxWidth().testTag("celestial-body-content")
             .padding(vertical = if (compact) 8.dp else 10.dp),
             verticalArrangement = Arrangement.spacedBy(if (compact) 3.dp else 4.dp), content = content)
+    }
+}
+
+/** Retain the 48 dp target and chevron layout; only its 28 dp feedback is painted. */
+@Composable
+private fun SpaceCompassCelestialBodyNavigationArrow(label: String, onClick: () -> Unit, tint: Color,
+    previous: Boolean, modifier: Modifier) {
+    val rtl = LocalLayoutDirection.current == LayoutDirection.Rtl
+    val interaction = remember { MutableInteractionSource() }
+    Box(modifier.clickable(interactionSource = interaction, indication = null, onClick = onClick)
+        .spaceCompassAccessibleAction(label, onClick = onClick)) {
+        // A 28 dp circle at the one-dp inset keeps its 10 dp glyph at the existing 10 dp inset.
+        Box(Modifier.fillMaxSize().padding(horizontal = 1.dp),
+            contentAlignment = if (previous) Alignment.CenterStart else Alignment.CenterEnd) {
+            Box(Modifier.size(28.dp).clip(CircleShape)
+                .indication(interaction, ripple(bounded = true, color = tint)), contentAlignment = Alignment.Center) {
+                SpaceCompassDisclosureChevron(Modifier.rotate(if (previous != rtl) 180f else 0f), tint)
+            }
+        }
     }
 }

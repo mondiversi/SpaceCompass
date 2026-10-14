@@ -2,7 +2,7 @@
     <string name="screensaver_title">Protetor de tela</string>
     <string name="screensaver_description">Quando o aplicativo permanece aberto sem ser usado, mostra a Terra e um fundo espacial animado. Suspende os sensores, o GPS, a câmera e as atualizações de dados para economizar energia.</string>
     <string name="screensaver_delay">Iniciar após</string>
-    <string name="screensaver_dismiss">Toque para fechar o protetor de tela</string>
+    <string name="screensaver_dismiss">Toque para voltar ao aplicativo</string>
     <string name="screensaver_seconds">%1$s s</string>
     <string name="screensaver_minutes">%1$s min</string>
     <string name="screensaver_battery">Bateria: %1$s</string>

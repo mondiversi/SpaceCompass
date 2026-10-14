@@ -1,9 +1,9 @@
 <resources>
     <string name="info_news_title">تازه‌ترین تغییرات · %1$s</string>
-    <string name="info_news_star_sky" formatted="false">نشانه همیشه سفید می‌ماند؛ اجرام نزدیک مرکز، حاشیهٔ موجود خود را برجسته می‌کنند و بزرگ‌تر نمی‌شوند.</string>
-    <string name="info_news_texture_downloads" formatted="false">در حالت افقی، دکمهٔ ثبت پایین سمت راست ثابت می‌ماند؛ با بستن پنل‌ها، عنوان میان کنترل‌ها قرار می‌گیرد.</string>
-    <string name="info_news_weather" formatted="false">کنترل‌های پیش‌نمایش عکس و پانوراما در حالت عمودی و افقی حاشیه‌های یکسان دارند.</string>
-    <string name="info_news_viewer_zoom" formatted="false">با نزدیک‌تر شدن کنترل‌های رصدخانه و مسیر روزانه، فضای بیشتری برای نام اجرام فراهم شده است.</string>
-    <string name="info_news_settings" formatted="false">آبی روز کمی روشن‌تر برای دکمه‌ها، پیوندها، انتخاب‌ها و کنترل صدا به کار می‌رود.</string>
-    <string name="info_news_catalog" formatted="false">اجرام انتخاب‌شده تنها یک حاشیهٔ برجسته دارند، حتی در عکس‌ها و پانوراماهای خروجی.</string>
+    <string name="info_news_star_sky" formatted="false">هنگام بازگشت از پس‌زمینه، زمین دیده می‌شود و نمایش کوتاهِ فقط آسمان رخ نمی‌دهد.</string>
+    <string name="info_news_texture_downloads" formatted="false">مدارها و تصاویر اجرام هنگام دریافت خوانش‌های تازهٔ قطب‌نما همچنان دیده می‌شوند.</string>
+    <string name="info_news_weather" formatted="false">پس‌زمینهٔ ستاره‌ای در حالت توقف، آخرین فریم را نگه می‌دارد و محاسبه‌ای در پس‌زمینه انجام نمی‌دهد.</string>
+    <string name="info_news_viewer_zoom" formatted="false">پیام خواندن جهت فقط هنگامی نمایش داده می‌شود که نمای اصلی در پیش‌زمینه فعال باشد.</string>
+    <string name="info_news_settings" formatted="false">پیکان‌های انتخاب اجرام از نظر بصری در مرکز قرار دارند و جلوهٔ فشردن کوچک‌تر و درست تراز شده است.</string>
+    <string name="info_news_catalog" formatted="false">محافظ صفحه اکنون در بالا «برای بازگشت به برنامه لمس کنید» را نشان می‌دهد.</string>
 </resources>

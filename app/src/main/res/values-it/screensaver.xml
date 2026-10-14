@@ -2,7 +2,7 @@
     <string name="screensaver_title">Salvaschermo</string>
     <string name="screensaver_description">Quando l’app rimane aperta e inutilizzata, mostra la Terra e uno sfondo spaziale animato. Sospende sensori, GPS, fotocamera e aggiornamenti dati per risparmiare energia.</string>
     <string name="screensaver_delay">Avvia dopo</string>
-    <string name="screensaver_dismiss">Tocca per chiudere il salvaschermo</string>
+    <string name="screensaver_dismiss">Tocca per tornare all’app</string>
     <string name="screensaver_seconds">%1$s s</string>
     <string name="screensaver_minutes">%1$s min</string>
     <string name="screensaver_battery">Batteria: %1$s</string>

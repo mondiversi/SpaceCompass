@@ -1,9 +1,9 @@
 <resources>
     <string name="info_news_title">Τελευταία νέα · %1$s</string>
-    <string name="info_news_star_sky" formatted="false">Το στόχαστρο παραμένει λευκό· τα αντικείμενα κοντά στο κέντρο τονίζουν το υπάρχον περίγραμμά τους χωρίς να μεγαλώνουν.</string>
-    <string name="info_news_texture_downloads" formatted="false">Σε οριζόντια προβολή, η λήψη παραμένει κάτω δεξιά· με κλειστά πλαίσια, ο τίτλος βρίσκεται ανάμεσα στα κουμπιά.</string>
-    <string name="info_news_weather" formatted="false">Τα κουμπιά προεπισκόπησης φωτογραφιών και πανοραμάτων έχουν ίσα περιθώρια και στους δύο προσανατολισμούς.</string>
-    <string name="info_news_viewer_zoom" formatted="false">Περισσότερος χώρος για τα ονόματα, με τα κουμπιά Παρατηρητηρίου και ημερήσιας διαδρομής πιο κοντά.</string>
-    <string name="info_news_settings" formatted="false">Ένα ελαφρώς φωτεινότερο μπλε ημέρας χρησιμοποιείται στα κουμπιά, στους συνδέσμους, στις επιλογές και στην ένταση.</string>
-    <string name="info_news_catalog" formatted="false">Τα επιλεγμένα αντικείμενα έχουν ένα τονισμένο περίγραμμα, ακόμη και στις εξαγόμενες φωτογραφίες και πανοράματα.</string>
+    <string name="info_news_star_sky" formatted="false">Κατά την επιστροφή από το παρασκήνιο, το έδαφος παραμένει ορατό χωρίς σύντομη εμφάνιση μόνο του ουρανού.</string>
+    <string name="info_news_texture_downloads" formatted="false">Οι τροχιές και οι εικόνες των αντικειμένων παραμένουν ορατές ενώ η πυξίδα λαμβάνει νέες μετρήσεις.</string>
+    <string name="info_news_weather" formatted="false">Το έναστρο φόντο διατηρεί το τελευταίο καρέ στην παύση, χωρίς υπολογισμούς στο παρασκήνιο.</string>
+    <string name="info_news_viewer_zoom" formatted="false">Η ένδειξη ανάγνωσης προσανατολισμού εμφανίζεται μόνο όταν η κύρια προβολή είναι ενεργή στο προσκήνιο.</string>
+    <string name="info_news_settings" formatted="false">Τα βέλη επιλογής αντικειμένων είναι οπτικά κεντραρισμένα, με μικρότερη και σωστά ευθυγραμμισμένη ένδειξη πατήματος.</string>
+    <string name="info_news_catalog" formatted="false">Η προφύλαξη οθόνης εμφανίζει επάνω «Αγγίξτε για να επιστρέψετε στην εφαρμογή».</string>
 </resources>

@@ -221,7 +221,7 @@ internal fun SpaceCompassSunPointingViewport(
             spaceCompassAllCelestialOrder.forEach { candidate -> key(candidate) { projections[candidate]?.let { projected ->
                 val below = positions.getValue(candidate).elevationDegrees < 0
                 if (projected.visible) SpaceCompassCelestialLiveMarker(candidate, projected, below, current[candidate], dailyPathUiState,
-                    moonPhase = moonPhase, path = paths[candidate],
+                    moonPhase = moonPhase, path = paths[candidate], interactive = compassReliable,
                     focused = focused?.let { it.isCurrent && it.body == candidate } == true)
                 else offscreen[candidate]?.let { placement ->
                     SpaceCompassCelestialOffscreenMarker(candidate, projected, below,

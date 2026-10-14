@@ -1,9 +1,9 @@
 <resources>
     <string name="info_news_title">最新变化 · %1$s</string>
-    <string name="info_news_star_sky" formatted="false">准星始终保持白色；靠近中心的天体会突出显示现有边框，而不会变大。</string>
-    <string name="info_news_texture_downloads" formatted="false">横屏时，拍摄按钮固定在右下方；收起面板后，标题位于操作按钮之间。</string>
-    <string name="info_news_weather" formatted="false">照片和全景预览的操作按钮在竖屏与横屏下采用统一边距。</string>
-    <string name="info_news_viewer_zoom" formatted="false">观测台和每日轨迹按钮间距更紧凑，为天体名称留出更多空间。</string>
-    <string name="info_news_settings" formatted="false">按钮、链接、选择状态和音量控制统一使用略微变亮的日间蓝色。</string>
-    <string name="info_news_catalog" formatted="false">选中的天体仅突出显示一个边框，导出的照片和全景也保持一致。</string>
+    <string name="info_news_star_sky" formatted="false">从后台返回时地面保持可见，不再短暂闪现只有天空的画面。</string>
+    <string name="info_news_texture_downloads" formatted="false">指南针重新获取测量数据时，轨道和天体图像仍然可见。</string>
+    <string name="info_news_weather" formatted="false">暂停时星空背景保留最后一帧，不在后台进行计算。</string>
+    <string name="info_news_viewer_zoom" formatted="false">读取朝向的提示仅在主界面于前台运行时显示。</string>
+    <string name="info_news_settings" formatted="false">天体选择箭头按视觉中心对齐，按压反馈更小且位置正确。</string>
+    <string name="info_news_catalog" formatted="false">屏幕保护程序顶部现在显示“轻触返回应用”。</string>
 </resources>

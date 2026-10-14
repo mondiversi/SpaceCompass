@@ -89,8 +89,11 @@ internal fun SpaceCompassDisclosureChevron(
     ) {
         val tint = tint.copy(alpha = 1f)
         val centerY = size.height / 2f
-        val startX = size.width * 0.22f
-        val tipX = size.width * 0.76f
+        // The open wings look heavier than the tip: centre the perceived shape, not just its bounds.
+        // Draw-space correction follows the glyph's rotation, including mirrored navigation in RTL.
+        val opticalOffset = size.width * 0.10f
+        val startX = size.width * 0.22f + opticalOffset
+        val tipX = size.width * 0.76f + opticalOffset
         val halfHeight = size.height * 0.32f
         val strokeWidth =
             maxOf(

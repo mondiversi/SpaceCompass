@@ -1,9 +1,9 @@
 <resources>
     <string name="info_news_title">Neuigkeiten · %1$s</string>
-    <string name="info_news_star_sky" formatted="false">Das Fadenkreuz bleibt weiß; Objekte nahe seiner Mitte heben ihren vorhandenen Rand hervor, ohne größer zu werden.</string>
-    <string name="info_news_texture_downloads" formatted="false">Im Querformat bleibt die Aufnahme unten rechts; bei eingeklappten Bereichen steht der Titel zwischen den Bedienelementen.</string>
-    <string name="info_news_weather" formatted="false">Die Bedienelemente der Foto- und Panoramavorschau haben im Hoch- und Querformat einheitliche Abstände.</string>
-    <string name="info_news_viewer_zoom" formatted="false">Mehr Platz für Objektnamen, mit enger angeordneten Schaltflächen für Observatorium und Tagesverlauf.</string>
-    <string name="info_news_settings" formatted="false">Ein etwas helleres Tagesblau gilt einheitlich für Schaltflächen, Links, Auswahl und Lautstärke.</string>
-    <string name="info_news_catalog" formatted="false">Ausgewählte Objekte haben nur einen hervorgehobenen Rand, auch in exportierten Fotos und Panoramen.</string>
+    <string name="info_news_star_sky" formatted="false">Beim Zurückkehren aus dem Hintergrund bleibt der Boden sichtbar, ohne kurz nur den Himmel zu zeigen.</string>
+    <string name="info_news_texture_downloads" formatted="false">Bahnen und Objektbilder bleiben sichtbar, während der Kompass neue Messwerte erfasst.</string>
+    <string name="info_news_weather" formatted="false">Der Sternenhintergrund behält in der Pause sein letztes Bild, ohne Berechnungen im Hintergrund.</string>
+    <string name="info_news_viewer_zoom" formatted="false">Der Hinweis zum Einlesen der Ausrichtung erscheint nur bei aktiver Hauptansicht im Vordergrund.</string>
+    <string name="info_news_settings" formatted="false">Die Pfeile zur Objektauswahl sind optisch zentriert, mit kleinerer und passend ausgerichteter Druckrückmeldung.</string>
+    <string name="info_news_catalog" formatted="false">Der Bildschirmschoner zeigt oben „Tippen, um zur App zurückzukehren“.</string>
 </resources>

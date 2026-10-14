@@ -2,7 +2,7 @@
     <string name="screensaver_title">スクリーンセーバー</string>
     <string name="screensaver_description">アプリを開いたまま操作しないと、地球と動く宇宙背景を表示します。省電力のため、センサー、GPS、カメラ、データ更新を一時停止します。</string>
     <string name="screensaver_delay">開始までの時間</string>
-    <string name="screensaver_dismiss">タッチしてスクリーンセーバーを閉じる</string>
+    <string name="screensaver_dismiss">タップしてアプリに戻る</string>
     <string name="screensaver_seconds">%1$s秒</string>
     <string name="screensaver_minutes">%1$s分</string>
     <string name="screensaver_battery">バッテリー：%1$s</string>

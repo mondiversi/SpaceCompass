@@ -1,9 +1,9 @@
 <resources>
     <string name="info_news_title">Mambo mapya · %1$s</string>
-    <string name="info_news_star_sky" formatted="false">Kilengwa hubaki cheupe; vitu karibu na katikati huangazia mpaka uliopo bila kuongezeka ukubwa.</string>
-    <string name="info_news_texture_downloads" formatted="false">Katika hali ya mlalo, kitufe cha picha hubaki chini kulia; paneli zikifungwa, kichwa huwa kati ya vitufe.</string>
-    <string name="info_news_weather" formatted="false">Vitufe vya hakiki za picha na panorama vina nafasi sawa pembezoni katika hali ya wima na mlalo.</string>
-    <string name="info_news_viewer_zoom" formatted="false">Nafasi zaidi kwa majina ya vitu, huku vitufe vya uchunguzi na njia ya kila siku vikiwa karibu zaidi.</string>
-    <string name="info_news_settings" formatted="false">Bluu ya mchana iliyo angavu kidogo hutumika kwa vitufe, viungo, chaguo na vidhibiti vya sauti.</string>
-    <string name="info_news_catalog" formatted="false">Vitu vilivyochaguliwa vina mpaka mmoja ulioangaziwa, hata kwenye picha na panorama zinazohamishwa.</string>
+    <string name="info_news_star_sky" formatted="false">Ukirudi kutoka chinichini, ardhi hubaki kuonekana bila mwako mfupi wa anga pekee.</string>
+    <string name="info_news_texture_downloads" formatted="false">Mizunguko na picha za vitu hubaki kuonekana wakati dira inapopata vipimo vipya.</string>
+    <string name="info_news_weather" formatted="false">Mandharinyuma ya nyota huhifadhi fremu yake ya mwisho wakati wa kusitisha, bila hesabu za chinichini.</string>
+    <string name="info_news_viewer_zoom" formatted="false">Ujumbe wa kusoma mwelekeo huonekana tu wakati mwonekano mkuu unatumika mbele.</string>
+    <string name="info_news_settings" formatted="false">Mishale ya kuchagua vitu imewekwa katikati kwa mwonekano, na athari ndogo ya kubonyeza iliyopangiliwa vizuri.</string>
+    <string name="info_news_catalog" formatted="false">Kiokoa skrini sasa huonyesha juu “Gusa ili kurudi kwenye programu”.</string>
 </resources>

@@ -2,6 +2,7 @@ package me.mondiversi.spacecompass
 
 import android.content.Context
 import android.graphics.Color
+import android.graphics.Typeface
 import android.util.Base64
 import android.view.MotionEvent
 import android.view.View
@@ -12,6 +13,7 @@ import android.webkit.WebSettings
 import android.webkit.WebView
 import android.webkit.WebViewClient
 import android.widget.FrameLayout
+import android.widget.TextView
 import java.io.ByteArrayInputStream
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
@@ -53,6 +55,17 @@ internal class SpaceCompassScreensaverView(context: Context, dark: Boolean, ligh
     }
 
     private val footer = SpaceCompassScreensaverFooter(context)
+    private val returnHint = TextView(context).apply {
+        setTextColor(Color.WHITE)
+        typeface = Typeface.create("sans-serif-medium", Typeface.NORMAL)
+        gravity = Gravity.CENTER
+        maxLines = 2
+        ellipsize = android.text.TextUtils.TruncateAt.END
+        setShadowLayer(2 * resources.displayMetrics.density, 0f, resources.displayMetrics.density, Color.BLACK)
+        // The full cover already supplies this label and owns the dismiss action.
+        importantForAccessibility = View.IMPORTANT_FOR_ACCESSIBILITY_NO
+    }
+    private var safeTop = 0
     private var safeLeft = 0
     private var safeRight = 0
     private var safeBottom = 0
@@ -67,10 +80,13 @@ internal class SpaceCompassScreensaverView(context: Context, dark: Boolean, ligh
         setOnClickListener { onDismiss() }
         addView(web, LayoutParams(LayoutParams.MATCH_PARENT, LayoutParams.MATCH_PARENT))
         addView(footer)
+        addView(returnHint)
+        layoutHint()
         ViewCompat.setOnApplyWindowInsetsListener(this) { _, insets ->
             val cutout = insets.getInsets(WindowInsetsCompat.Type.displayCutout())
-            safeLeft = cutout.left; safeRight = cutout.right; safeBottom = cutout.bottom
+            safeTop = cutout.top; safeLeft = cutout.left; safeRight = cutout.right; safeBottom = cutout.bottom
             layoutFooter()
+            layoutHint()
             insets
         }
         fun image(name: String) = "data:image/webp;base64," + Base64.encodeToString(
@@ -87,7 +103,10 @@ internal class SpaceCompassScreensaverView(context: Context, dark: Boolean, ligh
     override fun onSizeChanged(width: Int, height: Int, oldWidth: Int, oldHeight: Int) {
         super.onSizeChanged(width, height, oldWidth, oldHeight)
         footer.resize(width, height)
+        val density = resources.displayMetrics.density
+        returnHint.textSize = 14f * spaceCompassAutomaticScreenScale((minOf(width, height) / density).toInt())
         layoutFooter()
+        layoutHint()
         post { footer.refreshAfterResize() }
     }
 
@@ -102,6 +121,18 @@ internal class SpaceCompassScreensaverView(context: Context, dark: Boolean, ligh
             bottomMargin = safeBottom + margin
         }
     }
+
+    private fun layoutHint() {
+        val margin = (16 * resources.displayMetrics.density).toInt()
+        returnHint.layoutParams = LayoutParams(LayoutParams.MATCH_PARENT, LayoutParams.WRAP_CONTENT,
+            Gravity.TOP or Gravity.CENTER_HORIZONTAL).apply {
+            leftMargin = maxOf(safeLeft, safeRight) + margin
+            rightMargin = leftMargin
+            topMargin = safeTop + margin
+        }
+    }
+
+    fun updateHint(label: String) { if (returnHint.text != label) returnHint.text = label }
 
     fun updateInfo(info: SpaceCompassScreensaverInfo) { footer.update(info) }
 

@@ -1,5 +1,15 @@
 # Changelog
 
+## 1.3.4 — 2026-10-14
+
+- Retain the visual scene during pause and sensor recovery so ground, orbits and object markers do not disappear when returning from background.
+- Keep the last star frame while paused and avoid resubmitting unchanged GPU drawings.
+- Separate display-only pose memory from current sensor trust, hit testing, live measurements and camera capture attitudes; remap held poses across all display rotations.
+- Show compass notices only when the main view is active in the foreground, avoiding orientation-loading notices during exit.
+- Use compact 28 dp, correctly positioned press feedback for object-navigation arrows while retaining 48 dp touch targets; apply a mirrored 1 dp optical correction to disclosure chevrons.
+- Add a centred, cutout-safe screensaver return hint in all twenty languages.
+- Refresh the in-app news in twenty languages. Preserve preferences, selected points, scientific calculations, signing identity and texture pack 1.1.
+
 ## 1.3.3 — 2026-10-14
 
 - Keep the reticle white; highlight the existing object outline near the aim point without adding another circle.

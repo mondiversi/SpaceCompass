@@ -1,9 +1,9 @@
 <resources>
     <string name="info_news_title">Últimas novedades · %1$s</string>
-    <string name="info_news_star_sky" formatted="false">La retícula permanece blanca; los objetos cercanos al centro resaltan su borde existente sin aumentar de tamaño.</string>
-    <string name="info_news_texture_downloads" formatted="false">En horizontal, la captura permanece abajo a la derecha; con los paneles contraídos, el título queda entre los controles.</string>
-    <string name="info_news_weather" formatted="false">Los controles de las vistas previas de fotos y panorámicas tienen márgenes uniformes en ambas orientaciones.</string>
-    <string name="info_news_viewer_zoom" formatted="false">Más espacio para los nombres de los objetos, con los controles de Observatorio y recorrido diario más próximos.</string>
-    <string name="info_news_settings" formatted="false">Un azul diurno algo más claro se usa en botones, enlaces, selecciones y controles de volumen.</string>
-    <string name="info_news_catalog" formatted="false">Los objetos seleccionados tienen un único borde resaltado, también en las fotos y panorámicas exportadas.</string>
+    <string name="info_news_star_sky" formatted="false">Al volver del segundo plano, el terreno sigue visible, sin un breve destello de cielo solamente.</string>
+    <string name="info_news_texture_downloads" formatted="false">Las órbitas e imágenes de los objetos siguen visibles mientras la brújula obtiene nuevas lecturas.</string>
+    <string name="info_news_weather" formatted="false">El fondo estrellado conserva su último fotograma durante la pausa, sin cálculos en segundo plano.</string>
+    <string name="info_news_viewer_zoom" formatted="false">El aviso de lectura de orientación aparece solo cuando la vista principal está activa en primer plano.</string>
+    <string name="info_news_settings" formatted="false">Las flechas para seleccionar objetos están centradas visualmente, con un efecto de pulsación más pequeño y alineado.</string>
+    <string name="info_news_catalog" formatted="false">El salvapantallas muestra arriba «Toca para volver a la aplicación».</string>
 </resources>

@@ -20,12 +20,14 @@ internal fun SpaceCompassStarField(timeMs: Long, latitude: Double?, longitude: D
     val opacity by animateFloatAsState(visibility, tween(1_500), label = "stellar twilight")
     val timeBucket = Math.floorDiv(timeMs, 10_000L)
     val basis by produceState<SpaceCompassStarBasis?>(null, timeBucket, latitude, longitude, altitude, active) {
-        value = if (!active || latitude == null || longitude == null) null else withContext(Dispatchers.Default) {
+        // Pause calculations without replacing the last star frame with an empty sky.
+        if (!active) return@produceState
+        value = if (latitude == null || longitude == null) null else withContext(Dispatchers.Default) {
             spaceCompassStarBasis(timeBucket * 10_000L, latitude, longitude, altitude)
         }
     }
     val matrix = basis
-    if (active && matrix != null && orientation != null && frame != null && frame.width > 0 && frame.height > 0 && opacity > .001f) {
+    if (matrix != null && orientation != null && frame != null && frame.width > 0 && frame.height > 0 && opacity > .001f) {
         val drawing = remember(matrix, orientation, frame, opacity) { spaceCompassStarDrawing(matrix, orientation, frame, opacity) }
         AndroidView(factory = { SpaceCompassStarTextureView(it) }, modifier = modifier.testTag("celestial-star-background"),
             onRelease = { it.release() }, update = { it.update(drawing) })

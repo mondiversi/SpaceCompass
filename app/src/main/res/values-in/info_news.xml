@@ -1,9 +1,9 @@
 <resources>
     <string name="info_news_title">Perubahan terbaru · %1$s</string>
-    <string name="info_news_star_sky" formatted="false">Bidik tetap putih; objek dekat pusat menyorot bingkai yang sudah ada tanpa membesar.</string>
-    <string name="info_news_texture_downloads" formatted="false">Dalam mode lanskap, tombol ambil tetap di kanan bawah; saat panel ditutup, judul berada di antara kontrol.</string>
-    <string name="info_news_weather" formatted="false">Kontrol pratinjau foto dan panorama memiliki margin seragam dalam mode potret dan lanskap.</string>
-    <string name="info_news_viewer_zoom" formatted="false">Lebih banyak ruang untuk nama objek, dengan kontrol Observatorium dan lintasan harian lebih berdekatan.</string>
-    <string name="info_news_settings" formatted="false">Biru siang yang sedikit lebih cerah digunakan untuk tombol, tautan, pilihan, dan kontrol volume.</string>
-    <string name="info_news_catalog" formatted="false">Objek terpilih memiliki satu bingkai yang disorot, termasuk dalam foto dan panorama yang diekspor.</string>
+    <string name="info_news_star_sky" formatted="false">Saat kembali dari latar belakang, tanah tetap terlihat tanpa kilatan singkat yang hanya menampilkan langit.</string>
+    <string name="info_news_texture_downloads" formatted="false">Orbit dan gambar objek tetap terlihat saat kompas memperoleh pembacaan baru.</string>
+    <string name="info_news_weather" formatted="false">Latar bintang mempertahankan bingkai terakhir saat dijeda, tanpa perhitungan di latar belakang.</string>
+    <string name="info_news_viewer_zoom" formatted="false">Pemberitahuan pembacaan orientasi hanya muncul saat tampilan utama aktif di latar depan.</string>
+    <string name="info_news_settings" formatted="false">Panah pemilihan objek dipusatkan secara visual, dengan efek tekan yang lebih kecil dan selaras.</string>
+    <string name="info_news_catalog" formatted="false">Penghemat layar kini menampilkan “Ketuk untuk kembali ke aplikasi” di bagian atas.</string>
 </resources>

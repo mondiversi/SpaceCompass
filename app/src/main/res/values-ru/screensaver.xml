@@ -2,7 +2,7 @@
     <string name="screensaver_title">Заставка</string>
     <string name="screensaver_description">Когда приложение остаётся открытым и не используется, показывает Землю и анимированный космический фон. Приостанавливает датчики, GPS, камеру и обновления данных для экономии энергии.</string>
     <string name="screensaver_delay">Запуск через</string>
-    <string name="screensaver_dismiss">Коснитесь, чтобы закрыть заставку</string>
+    <string name="screensaver_dismiss">Коснитесь, чтобы вернуться в приложение</string>
     <string name="screensaver_seconds">%1$s с</string>
     <string name="screensaver_minutes">%1$s мин</string>
     <string name="screensaver_battery">Заряд батареи: %1$s</string>

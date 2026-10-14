@@ -2,8 +2,8 @@
 
 Space Compass is distributed as a signed APK through
 [GitHub Releases](https://github.com/mondiversi/SpaceCompass/releases).
-The current stable release is **1.3.3**, tagged **v1.3.3**, application ID
-`me.mondiversi.spacecompass`, Android version name **1.3.3**, version code **31**,
+The current stable release is **1.3.4**, tagged **v1.3.4**, application ID
+`me.mondiversi.spacecompass`, Android version name **1.3.4**, version code **32**,
 minimum Android API 26. The three-part tag/version name retains compatibility with
 the signed update protocol used since preview 0.1.2.
 
@@ -142,3 +142,12 @@ margins, white-reticle guidance, single-outline object focus/selection and the
 lighter daytime accent. All twenty in-app news summaries are refreshed.
 Texture pack 1.1 and every earlier release asset remain available.
 See [the release audit](RELEASE_1_3_3.md).
+
+
+## 1.3.4 release
+
+Version 1.3.4 uses version code 32 and its own signed update index and APK checksum.
+It retains the visual scene during pause/recovery, refines object-arrow feedback,
+limits compass notices to the active main view and adds a screensaver return hint.
+All twenty in-app news summaries are refreshed. Texture pack 1.1 and every earlier
+release asset remain available. See [the release audit](RELEASE_1_3_4.md).

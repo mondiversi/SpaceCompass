@@ -2,7 +2,7 @@
     <string name="screensaver_title">Salvapantallas</string>
     <string name="screensaver_description">Cuando la app permanece abierta sin usarse, muestra la Tierra y un fondo espacial animado. Pausa los sensores, el GPS, la cámara y las actualizaciones de datos para ahorrar energía.</string>
     <string name="screensaver_delay">Iniciar después de</string>
-    <string name="screensaver_dismiss">Toca para cerrar el salvapantallas</string>
+    <string name="screensaver_dismiss">Toca para volver a la aplicación</string>
     <string name="screensaver_seconds">%1$s s</string>
     <string name="screensaver_minutes">%1$s min</string>
     <string name="screensaver_battery">Batería: %1$s</string>

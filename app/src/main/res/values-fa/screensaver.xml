@@ -2,7 +2,7 @@
     <string name="screensaver_title">محافظ صفحه</string>
     <string name="screensaver_description">وقتی برنامه باز است اما استفاده نمی‌شود، زمین و پس‌زمینهٔ فضایی متحرک را نمایش می‌دهد. حسگرها، GPS، دوربین و به‌روزرسانی داده‌ها را برای صرفه‌جویی در انرژی موقتاً متوقف می‌کند.</string>
     <string name="screensaver_delay">شروع پس از</string>
-    <string name="screensaver_dismiss">برای بستن محافظ صفحه لمس کنید</string>
+    <string name="screensaver_dismiss">برای بازگشت به برنامه لمس کنید</string>
     <string name="screensaver_seconds">%1$s ثانیه</string>
     <string name="screensaver_minutes">%1$s دقیقه</string>
     <string name="screensaver_battery">باتری: %1$s</string>

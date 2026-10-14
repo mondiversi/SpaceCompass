@@ -2,7 +2,7 @@
     <string name="screensaver_title">Schermbeveiliging</string>
     <string name="screensaver_description">Toont de aarde en een bewegende ruimteachtergrond wanneer de app open blijft zonder te worden gebruikt. Pauzeert sensoren, GPS, camera en gegevensupdates om energie te besparen.</string>
     <string name="screensaver_delay">Starten na</string>
-    <string name="screensaver_dismiss">Tik om de schermbeveiliging te sluiten</string>
+    <string name="screensaver_dismiss">Tik om terug te keren naar de app</string>
     <string name="screensaver_seconds">%1$s s</string>
     <string name="screensaver_minutes">%1$s min</string>
     <string name="screensaver_battery">Batterij: %1$s</string>

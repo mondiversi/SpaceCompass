@@ -2,7 +2,7 @@
     <string name="screensaver_title">Screensaver</string>
     <string name="screensaver_description">When the app is left open and idle, shows the Earth and an animated space background. Pauses sensors, GPS, camera and data updates to save energy.</string>
     <string name="screensaver_delay">Start after</string>
-    <string name="screensaver_dismiss">Touch to close the screensaver</string>
+    <string name="screensaver_dismiss">Tap to return to the app</string>
     <string name="screensaver_seconds">%1$s s</string>
     <string name="screensaver_minutes">%1$s min</string>
     <string name="screensaver_battery">Battery: %1$s</string>

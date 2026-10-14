@@ -257,6 +257,9 @@ internal fun SpaceCompassSunFinderContent(
         else showSpaceCompassBottomMessage(cameraContext, cameraPermissionMessage)
     }
     val mainVisible = LocalSpaceCompassMainVisible.current
+    val displayRotation = deviceView.display?.rotation ?: 0
+    val visualPose = rememberSpaceCompassSceneResumePose(readings.orientation, readings.compassUsable,
+        displayRotation, resumed && mainVisible)
     LaunchedEffect(resumed) {
         if (resumed && cameraEnabled && !hasSpaceCompassCameraPermission(cameraContext)) cameraEnabled = false
     }
@@ -361,8 +364,13 @@ internal fun SpaceCompassSunFinderContent(
     }
     val remoteMessage = remoteMessageId?.let { stringResource(it) }
     val orientation = spaceCompassSunViewOrientation(readings.orientation, pointingTopEdge, cameraEnabled,
-        deviceView.display?.rotation ?: 0)
+        displayRotation)
     val pointingOrientation = spaceCompassSunTrustedPointingOrientation(orientation, readings.compassUsable)
+    // Keep the task snapshot and resume frames intact; live readouts and hit targets still use sensor trust.
+    val sceneOrientation = if (cameraEnabled) orientation else
+        spaceCompassSunViewOrientation(visualPose.orientation, pointingTopEdge, false, displayRotation)
+    val scenePointingOrientation = if (cameraEnabled) pointingOrientation else
+        spaceCompassSunViewOrientation(visualPose.pointing, pointingTopEdge, false, displayRotation)
     val height = formatSpaceCompassCelestialAltitude(altitude,
         fix?.takeIf { it.hasVerticalAccuracy() }?.verticalAccuracyMeters?.toDouble(), numeric, units.feet) ?: "—"
     val orientationRows = listOf(
@@ -519,11 +527,11 @@ internal fun SpaceCompassSunFinderContent(
             } else null
         Box(Modifier.fillMaxSize().spaceCompassCameraPinchZoom(cameraZoomRange, cameraZoomRequest,
             cameraEnabled && !panorama.busy, cameraCapture != null, ::updateCameraZoom)) {
-            SpaceCompassSunPointingViewport(target, pointingOrientation.takeIf { !cameraEnabled || cameraPerspective != null },
+            SpaceCompassSunPointingViewport(target, scenePointingOrientation.takeIf { !cameraEnabled || cameraPerspective != null },
                 Modifier.fillMaxSize().then(pointingPlacement), skyDescription, dailyPathUiState, rising,
                 readings.compassUsable, dailyPath.takeIf { hasActiveBody }, primaryText, secondaryText, backgroundColor, body, timeMs,
                 onVisualize = { showViewer = true },
-                compassWarning = messageText.takeIf { isCompassMessage },
+                compassWarning = messageText.takeIf { isCompassMessage && resumed && mainVisible },
                 compassAccurate = readings.compassReliable,
                 statusMessage = remoteMessage ?: messageText.takeUnless { isCompassMessage },
                 compassWarningAttention = message == R.string.sun_finder_compass_accuracy ||
@@ -634,13 +642,13 @@ internal fun SpaceCompassSunFinderContent(
             SpaceCompassCameraHorizon(orientation, groundFrame, cameraPerspective, Modifier.fillMaxSize())
         } else {
             SpaceCompassSunSkyBackdrop(phase, sceneWeather, Modifier.fillMaxSize(), solarLighting) {
-                SpaceCompassStarField(timeMs, fix?.latitude, fix?.longitude, altitude ?: 0.0, orientation, groundFrame,
+                SpaceCompassStarField(timeMs, fix?.latitude, fix?.longitude, altitude ?: 0.0, sceneOrientation, groundFrame,
                     sun?.elevationDegrees, sceneWeather, resumed && mainVisible, Modifier.fillMaxSize())
             }
-            SpaceCompassSunGroundBackdrop(orientation, groundFrame, phase, Modifier.fillMaxSize(), solarLighting)
+            SpaceCompassSunGroundBackdrop(sceneOrientation, groundFrame, phase, Modifier.fillMaxSize(), solarLighting)
         }
         SpaceCompassCelestialSceneBackdrop(groundFrame, cameraPerspective.takeIf { cameraEnabled },
-            pointingOrientation.takeIf { readings.compassUsable && (!cameraEnabled || cameraPerspective != null) },
+            scenePointingOrientation.takeIf { !cameraEnabled || cameraPerspective != null },
             overlays, body.takeIf { hasActiveBody }, dailyPath.takeIf { hasActiveBody }, target, timeMs,
             dailyPathUiState, primaryText, secondaryText, backgroundColor,
             fix?.latitude, fix?.takeIf { it.hasAltitude() }?.altitude ?: 0.0, showSkyReferences,

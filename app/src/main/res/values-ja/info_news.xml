@@ -1,9 +1,9 @@
 <resources>
     <string name="info_news_title">最近の変更 · %1$s</string>
-    <string name="info_news_star_sky" formatted="false">照準は常に白色です。中央付近の天体は大きくならず、既存の縁が強調されます。</string>
-    <string name="info_news_texture_downloads" formatted="false">横向きでは撮影ボタンが右下に固定され、パネルを閉じるとタイトルが操作ボタンの間に表示されます。</string>
-    <string name="info_news_weather" formatted="false">写真とパノラマのプレビュー操作ボタンの余白を、縦向きと横向きで統一しました。</string>
-    <string name="info_news_viewer_zoom" formatted="false">観測画面と一日の軌跡のボタンを近づけ、天体名の表示領域を広げました。</string>
-    <string name="info_news_settings" formatted="false">ボタン、リンク、選択表示、音量調整に、少し明るい昼用の青色を使用します。</string>
-    <string name="info_news_catalog" formatted="false">選択した天体は一つの縁で強調され、書き出した写真とパノラマでも同じ表示になります。</string>
+    <string name="info_news_star_sky" formatted="false">バックグラウンドから戻る際も地面が表示され、空だけが一瞬表示される現象を解消しました。</string>
+    <string name="info_news_texture_downloads" formatted="false">コンパスが新しい測定値を取得する間も、軌道と天体の画像は表示されたままです。</string>
+    <string name="info_news_weather" formatted="false">一時停止中は星空の最後のフレームを保持し、バックグラウンドで計算しません。</string>
+    <string name="info_news_viewer_zoom" formatted="false">向きを読み取る通知は、メイン画面が前面で動作しているときだけ表示されます。</string>
+    <string name="info_news_settings" formatted="false">天体選択の矢印を見た目の中心に調整し、押したときの表示を小さくして位置を合わせました。</string>
+    <string name="info_news_catalog" formatted="false">スクリーンセーバーの上部に「タップしてアプリに戻る」と表示します。</string>
 </resources>

@@ -1,9 +1,9 @@
 <resources>
     <string name="info_news_title">Son yenilikler · %1$s</string>
-    <string name="info_news_star_sky" formatted="false">Nişangâh beyaz kalır; merkeze yakın nesneler büyümeden mevcut kenarlıklarıyla vurgulanır.</string>
-    <string name="info_news_texture_downloads" formatted="false">Yatayda çekim düğmesi sağ altta sabit kalır; paneller kapalıyken başlık düğmelerin arasında yer alır.</string>
-    <string name="info_news_weather" formatted="false">Fotoğraf ve panorama önizleme düğmeleri dikey ve yatay konumda eşit kenar boşluklarına sahiptir.</string>
-    <string name="info_news_viewer_zoom" formatted="false">Gözlemevi ve günlük yol düğmeleri yakınlaştırılarak nesne adlarına daha fazla yer ayrıldı.</string>
-    <string name="info_news_settings" formatted="false">Düğmeler, bağlantılar, seçimler ve ses denetimleri için biraz daha açık bir gündüz mavisi kullanılır.</string>
-    <string name="info_news_catalog" formatted="false">Seçili nesnelerde, dışa aktarılan fotoğraf ve panoramalar dâhil, tek bir vurgulu kenarlık bulunur.</string>
+    <string name="info_news_star_sky" formatted="false">Arka plandan dönüldüğünde zemin görünür kalır; kısa süreli yalnızca gökyüzü parlaması oluşmaz.</string>
+    <string name="info_news_texture_downloads" formatted="false">Pusula yeni ölçümler alırken yörüngeler ve nesne görüntüleri görünür kalır.</string>
+    <string name="info_news_weather" formatted="false">Yıldızlı arka plan duraklatıldığında son karesini korur; arka planda hesaplama yapılmaz.</string>
+    <string name="info_news_viewer_zoom" formatted="false">Yönelim okuma bildirimi yalnızca ana görünüm ön planda etkin olduğunda görünür.</string>
+    <string name="info_news_settings" formatted="false">Nesne seçimi okları görsel olarak ortalandı; basma efekti daha küçük ve düzgün hizalıdır.</string>
+    <string name="info_news_catalog" formatted="false">Ekran koruyucunun üstünde “Uygulamaya dönmek için dokunun” yazısı görünür.</string>
 </resources>

@@ -1,9 +1,9 @@
 <resources>
     <string name="info_news_title">Ostatnie nowości · %1$s</string>
-    <string name="info_news_star_sky" formatted="false">Celownik pozostaje biały; obiekty blisko jego środka podświetlają istniejące obramowanie bez powiększania.</string>
-    <string name="info_news_texture_downloads" formatted="false">W poziomie przycisk zdjęcia pozostaje w prawym dolnym rogu; po zwinięciu paneli tytuł jest między przyciskami.</string>
-    <string name="info_news_weather" formatted="false">Przyciski podglądu zdjęć i panoram mają jednakowe marginesy w pionie i poziomie.</string>
-    <string name="info_news_viewer_zoom" formatted="false">Więcej miejsca na nazwy obiektów dzięki bliższemu ustawieniu przycisków Obserwatorium i trasy dziennej.</string>
-    <string name="info_news_settings" formatted="false">Nieco jaśniejszy dzienny niebieski jest wspólny dla przycisków, odnośników, zaznaczeń i głośności.</string>
-    <string name="info_news_catalog" formatted="false">Zaznaczone obiekty mają jedno podświetlone obramowanie, także na eksportowanych zdjęciach i panoramach.</string>
+    <string name="info_news_star_sky" formatted="false">Po powrocie z tła teren pozostaje widoczny, bez krótkiego błysku pokazującego samo niebo.</string>
+    <string name="info_news_texture_downloads" formatted="false">Orbity i obrazy obiektów pozostają widoczne, gdy kompas pobiera nowe odczyty.</string>
+    <string name="info_news_weather" formatted="false">Gwiaździste tło zachowuje ostatnią klatkę podczas pauzy, bez obliczeń w tle.</string>
+    <string name="info_news_viewer_zoom" formatted="false">Komunikat o odczytywaniu orientacji pojawia się tylko przy aktywnym widoku głównym na pierwszym planie.</string>
+    <string name="info_news_settings" formatted="false">Strzałki wyboru obiektów są wyśrodkowane optycznie, z mniejszym i poprawnie wyrównanym efektem naciśnięcia.</string>
+    <string name="info_news_catalog" formatted="false">Wygaszacz ekranu pokazuje u góry „Dotknij, aby wrócić do aplikacji”.</string>
 </resources>

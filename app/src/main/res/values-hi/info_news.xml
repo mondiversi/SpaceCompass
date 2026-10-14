@@ -1,9 +1,9 @@
 <resources>
     <string name="info_news_title">हाल के बदलाव · %1$s</string>
-    <string name="info_news_star_sky" formatted="false">निशाना सफेद रहता है; केंद्र के पास की वस्तुओं का मौजूदा किनारा उभरता है, आकार नहीं बढ़ता।</string>
-    <string name="info_news_texture_downloads" formatted="false">लैंडस्केप में कैप्चर बटन नीचे दाईं ओर स्थिर रहता है; पैनल बंद होने पर शीर्षक नियंत्रणों के बीच रहता है।</string>
-    <string name="info_news_weather" formatted="false">फोटो और पैनोरमा पूर्वावलोकन के नियंत्रणों के मार्जिन पोर्ट्रेट और लैंडस्केप में समान हैं।</string>
-    <string name="info_news_viewer_zoom" formatted="false">वेधशाला और दैनिक पथ के नियंत्रण पास होने से वस्तुओं के नामों के लिए अधिक जगह मिलती है।</string>
-    <string name="info_news_settings" formatted="false">बटन, लिंक, चयन और वॉल्यूम नियंत्रण दिन में थोड़ा हल्का नीला रंग इस्तेमाल करते हैं।</string>
-    <string name="info_news_catalog" formatted="false">चुनी हुई वस्तुओं का केवल एक किनारा उभरता है, निर्यात की गई फोटो और पैनोरमा में भी।</string>
+    <string name="info_news_star_sky" formatted="false">ऐप को पृष्ठभूमि से वापस लाने पर ज़मीन दिखाई देती रहती है; केवल आकाश की क्षणिक झलक नहीं आती।</string>
+    <string name="info_news_texture_downloads" formatted="false">कम्पास की नई रीडिंग आने तक कक्षाएँ और वस्तुओं के चित्र दिखाई देते रहते हैं।</string>
+    <string name="info_news_weather" formatted="false">विराम के दौरान तारों वाला पृष्ठभूमि दृश्य अपना अंतिम फ़्रेम रखता है, बिना पृष्ठभूमि में गणना किए।</string>
+    <string name="info_news_viewer_zoom" formatted="false">दिशा पढ़ने का संदेश केवल तभी दिखता है जब मुख्य दृश्य अग्रभूमि में सक्रिय हो।</string>
+    <string name="info_news_settings" formatted="false">वस्तु चयन के तीर देखने में बीच में हैं; दबाने का प्रभाव छोटा और सही जगह पर है।</string>
+    <string name="info_news_catalog" formatted="false">स्क्रीनसेवर के ऊपर अब “ऐप पर लौटने के लिए टैप करें” दिखता है।</string>
 </resources>

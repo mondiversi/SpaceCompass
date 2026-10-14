@@ -1,9 +1,9 @@
 <resources>
     <string name="info_news_title">Laatste nieuws · %1$s</string>
-    <string name="info_news_star_sky" formatted="false">Het richtkruis blijft wit; objecten nabij het midden benadrukken hun bestaande rand zonder groter te worden.</string>
-    <string name="info_news_texture_downloads" formatted="false">In liggende stand blijft opname rechtsonder; bij ingeklapte panelen staat de titel tussen de knoppen.</string>
-    <string name="info_news_weather" formatted="false">De knoppen van foto- en panoramavoorbeelden hebben gelijke marges in staande en liggende stand.</string>
-    <string name="info_news_viewer_zoom" formatted="false">Meer ruimte voor objectnamen, met de knoppen voor Observatorium en dagtraject dichter bij elkaar.</string>
-    <string name="info_news_settings" formatted="false">Een iets lichter dagblauw wordt gebruikt voor knoppen, links, selecties en volumeregeling.</string>
-    <string name="info_news_catalog" formatted="false">Geselecteerde objecten hebben één gemarkeerde rand, ook in geëxporteerde foto’s en panorama’s.</string>
+    <string name="info_news_star_sky" formatted="false">Bij terugkeer uit de achtergrond blijft de grond zichtbaar, zonder kort alleen de hemel te tonen.</string>
+    <string name="info_news_texture_downloads" formatted="false">Banen en objectafbeeldingen blijven zichtbaar terwijl het kompas nieuwe metingen ontvangt.</string>
+    <string name="info_news_weather" formatted="false">De sterrenachtergrond bewaart tijdens de pauze het laatste beeld, zonder berekeningen op de achtergrond.</string>
+    <string name="info_news_viewer_zoom" formatted="false">De melding over het inlezen van de oriëntatie verschijnt alleen bij een actieve hoofdweergave op de voorgrond.</string>
+    <string name="info_news_settings" formatted="false">De pijlen voor objectselectie zijn optisch gecentreerd, met een kleinere en goed uitgelijnde drukmarkering.</string>
+    <string name="info_news_catalog" formatted="false">De schermbeveiliging toont bovenaan “Tik om terug te keren naar de app”.</string>
 </resources>

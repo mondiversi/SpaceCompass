@@ -2,7 +2,7 @@
     <string name="screensaver_title">Ekran koruyucu</string>
     <string name="screensaver_description">Uygulama açık bırakılıp kullanılmadığında Dünya’yı ve hareketli uzay arka planını gösterir. Enerji tasarrufu için sensörleri, GPS’i, kamerayı ve veri güncellemelerini duraklatır.</string>
     <string name="screensaver_delay">Başlama süresi</string>
-    <string name="screensaver_dismiss">Ekran koruyucuyu kapatmak için dokunun</string>
+    <string name="screensaver_dismiss">Uygulamaya dönmek için dokunun</string>
     <string name="screensaver_seconds">%1$s sn</string>
     <string name="screensaver_minutes">%1$s dk</string>
     <string name="screensaver_battery">Pil: %1$s</string>

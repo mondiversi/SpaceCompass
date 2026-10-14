@@ -317,3 +317,14 @@ shrinking stays enabled; no new service, permission or native dependency is adde
 photos and panoramas. Four border scales use the frozen projection and exposure
 geometry. Main information cards share the full opaque settings-island surface;
 floating control fills are also opaque. The title overlay remains translucent.
+
+
+## Release 1.3.4: display-only resume memory
+
+SpaceCompassSceneResumePose retains an accepted pose for decorative scene continuity
+across pause/resume and remaps the two screen axes when rotation changes. It never
+restores measurement validity or camera capture attitudes. Current sensor usability
+continues to gate live point hit targets and readouts. Background registration and
+watchdog behavior are unchanged. StarField retains its last basis while inactive;
+StarTextureView skips unchanged drawings. ScreensaverView overlays a native return
+hint with display-cutout margins without resizing the globe or changing its timing.

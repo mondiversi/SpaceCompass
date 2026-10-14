@@ -40,6 +40,7 @@ internal class SpaceCompassStarTextureView(context: Context) : TextureView(conte
     }
 
     fun update(next: SpaceCompassStarDrawing) {
+        if (drawing == next) return // A paused scene retains its buffer without submitting more GPU work.
         drawing = next
         if (!closed.get()) { worker.removeCallbacks(render); worker.post(render) }
     }
