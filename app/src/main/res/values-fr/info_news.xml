@@ -1,9 +1,9 @@
 <resources>
     <string name="info_news_title">Dernières nouveautés · %1$s</string>
-    <string name="info_news_star_sky" formatted="false">Les points dans le réticule affichent heure et T± côte à côte, sans bulles permanentes sur les autres points sélectionnés.</string>
-    <string name="info_news_texture_downloads" formatted="false">Les aperçus photo et panorama ont une barre de titre avec Retour et Exporter et des commandes placées en haut.</string>
-    <string name="info_news_weather" formatted="false">Les images incluent une légende colorée des objets ; les photos affichent des données plus grandes sur plusieurs lignes dans une bande noire séparée.</string>
-    <string name="info_news_viewer_zoom" formatted="false">Les commandes des étiquettes et de la position indiquent mieux leur état actif ; la direction du panorama reste un choix distinct.</string>
-    <string name="info_news_settings" formatted="false">Les cartes principales laissent voir les trajectoires et les objets, avec le réticule centré dans la zone libre du ciel.</string>
-    <string name="info_news_catalog" formatted="false">La première section de l’Observatoire se nomme Nom et type. Les réglages et la confidentialité de position sont conservés.</string>
+    <string name="info_news_star_sky" formatted="false">Le réticule reste blanc ; les objets proches du centre mettent en évidence leur contour existant sans grandir.</string>
+    <string name="info_news_texture_downloads" formatted="false">En paysage, la capture reste en bas à droite ; lorsque les panneaux sont repliés, le titre se place entre les commandes.</string>
+    <string name="info_news_weather" formatted="false">Les commandes des aperçus photo et panorama ont des marges uniformes en portrait et en paysage.</string>
+    <string name="info_news_viewer_zoom" formatted="false">Plus de place pour les noms des objets, avec les commandes Observatoire et parcours quotidien rapprochées.</string>
+    <string name="info_news_settings" formatted="false">Un bleu de jour légèrement plus clair est partagé par les boutons, liens, sélections et réglages du volume.</string>
+    <string name="info_news_catalog" formatted="false">Les objets sélectionnés ont un seul contour mis en évidence, y compris dans les photos et panoramas exportés.</string>
 </resources>

@@ -1,9 +1,9 @@
 <resources>
     <string name="info_news_title">Últimas novidades · %1$s</string>
-    <string name="info_news_star_sky" formatted="false">Os pontos na mira mostram hora e T± lado a lado, sem balões permanentes nos outros pontos selecionados.</string>
-    <string name="info_news_texture_downloads" formatted="false">As prévias de fotos e panoramas têm uma barra de título com Voltar e Exportar e controles alinhados no topo.</string>
-    <string name="info_news_weather" formatted="false">As imagens incluem uma legenda de cores dos objetos; as fotos mostram dados maiores em várias linhas numa faixa preta separada.</string>
-    <string name="info_news_viewer_zoom" formatted="false">Os controles de rótulos e posição mostram melhor o estado ativo; a direção do panorama continua uma escolha separada.</string>
-    <string name="info_news_settings" formatted="false">Os cartões principais deixam ver trajetórias e objetos, mantendo a mira centralizada na área livre do céu.</string>
-    <string name="info_news_catalog" formatted="false">A primeira seção do Observatório chama-se Nome e tipo. As configurações salvas e a privacidade da posição são mantidas.</string>
+    <string name="info_news_star_sky" formatted="false">A mira permanece branca; os objetos próximos do centro realçam o contorno existente sem aumentar de tamanho.</string>
+    <string name="info_news_texture_downloads" formatted="false">Na horizontal, a captura permanece em baixo à direita; com os painéis recolhidos, o título fica entre os controlos.</string>
+    <string name="info_news_weather" formatted="false">Os controlos das pré-visualizações de fotos e panoramas têm margens uniformes nas duas orientações.</string>
+    <string name="info_news_viewer_zoom" formatted="false">Mais espaço para os nomes dos objetos, com os controlos de Observatório e percurso diário mais próximos.</string>
+    <string name="info_news_settings" formatted="false">Um azul diurno ligeiramente mais claro é usado nos botões, ligações, seleções e controlos de volume.</string>
+    <string name="info_news_catalog" formatted="false">Os objetos selecionados têm um único contorno realçado, também nas fotos e panoramas exportados.</string>
 </resources>

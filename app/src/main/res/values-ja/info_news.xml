@@ -1,9 +1,9 @@
 <resources>
     <string name="info_news_title">最近の変更 · %1$s</string>
-    <string name="info_news_star_sky" formatted="false">照準内の点は時刻とT±を横並びで表示し、ほかの選択済みの点には吹き出しを常時表示しません。</string>
-    <string name="info_news_texture_downloads" formatted="false">写真とパノラマのプレビューに戻る・エクスポート付きのタイトルバーを追加し、操作ボタンを上部に配置しました。</string>
-    <string name="info_news_weather" formatted="false">画像に天体の色分け凡例を追加し、写真の情報は独立した黒い帯に大きな文字で折り返して表示します。</string>
-    <string name="info_news_viewer_zoom" formatted="false">ラベルと位置情報の操作は有効状態が分かりやすくなり、パノラマの方角は個別に選択できます。</string>
-    <string name="info_news_settings" formatted="false">メイン画面のカード越しに軌道や天体が見え、照準は空の空いている領域の中央に保たれます。</string>
-    <string name="info_news_catalog" formatted="false">観測所の最初の項目を「名前と種類」に変更しました。保存済み設定と位置情報のプライバシーは維持されます。</string>
+    <string name="info_news_star_sky" formatted="false">照準は常に白色です。中央付近の天体は大きくならず、既存の縁が強調されます。</string>
+    <string name="info_news_texture_downloads" formatted="false">横向きでは撮影ボタンが右下に固定され、パネルを閉じるとタイトルが操作ボタンの間に表示されます。</string>
+    <string name="info_news_weather" formatted="false">写真とパノラマのプレビュー操作ボタンの余白を、縦向きと横向きで統一しました。</string>
+    <string name="info_news_viewer_zoom" formatted="false">観測画面と一日の軌跡のボタンを近づけ、天体名の表示領域を広げました。</string>
+    <string name="info_news_settings" formatted="false">ボタン、リンク、選択表示、音量調整に、少し明るい昼用の青色を使用します。</string>
+    <string name="info_news_catalog" formatted="false">選択した天体は一つの縁で強調され、書き出した写真とパノラマでも同じ表示になります。</string>
 </resources>

@@ -1,5 +1,16 @@
 # Changelog
 
+## 1.3.3 — 2026-10-14
+
+- Keep the reticle white; highlight the existing object outline near the aim point without adding another circle.
+- Use a single accented object outline for persistent selections, including exported photos and panoramas.
+- Keep landscape capture fixed at the global bottom right throughout panel transitions, below the compass when panels are expanded.
+- Center a floating translucent title/menu between the corner controls when landscape panels are collapsed.
+- Match photo/panorama control top and side margins at 14 dp, retain 8 dp floating-control gaps and reduce the visible Observatory/daily-path gap to 13 dp for more title space.
+- Use a slightly lighter daytime blue (#1B7E9F), retaining the night cyan (#55C8DB); share the accent across controls, links, selections and volume.
+- Reuse selected-point projections in the shared scene interaction layer and refresh the in-app news in all twenty languages.
+- Preserve saved settings, selected points, scientific calculations, privacy choices, signing identity and texture pack 1.1.
+
 ## 1.3.2 — 2026-10-14
 
 - Replace permanent selected-point callouts with the reticle-focused callout, with clock and T± in separate columns and a heading only for named events. Point pins and exported selections remain intact.

@@ -1,9 +1,9 @@
 <resources>
     <string name="info_news_title">Последние новости · %1$s</string>
-    <string name="info_news_star_sky" formatted="false">Точки под прицелом показывают время и T± рядом, без постоянных подсказок у других выбранных точек.</string>
-    <string name="info_news_texture_downloads" formatted="false">В предпросмотре фото и панорам есть строка заголовка с кнопками Назад и Экспорт, а элементы управления расположены сверху.</string>
-    <string name="info_news_weather" formatted="false">Изображения содержат цветовую легенду объектов; данные фото показаны крупнее в несколько строк на отдельной чёрной полосе.</string>
-    <string name="info_news_viewer_zoom" formatted="false">Кнопки подписей и положения яснее показывают активное состояние; направление панорамы выбирается отдельно.</string>
-    <string name="info_news_settings" formatted="false">Через карточки главного экрана видны траектории и объекты, а прицел остаётся в центре свободной области неба.</string>
-    <string name="info_news_catalog" formatted="false">Первый раздел Обсерватории теперь называется Название и тип. Сохранённые настройки и приватность положения не меняются.</string>
+    <string name="info_news_star_sky" formatted="false">Прицел всегда белый; у объектов рядом с его центром выделяется существующая рамка без увеличения размера.</string>
+    <string name="info_news_texture_downloads" formatted="false">В альбомной ориентации кнопка снимка остаётся справа внизу; при свёрнутых панелях заголовок расположен между кнопками.</string>
+    <string name="info_news_weather" formatted="false">Кнопки предпросмотра фото и панорам имеют одинаковые отступы в обеих ориентациях.</string>
+    <string name="info_news_viewer_zoom" formatted="false">Больше места для названий объектов благодаря сближению кнопок обсерватории и суточного пути.</string>
+    <string name="info_news_settings" formatted="false">Чуть более светлый дневной синий используется для кнопок, ссылок, выделений и громкости.</string>
+    <string name="info_news_catalog" formatted="false">Выбранные объекты имеют одну выделенную рамку, в том числе на экспортированных фото и панорамах.</string>
 </resources>

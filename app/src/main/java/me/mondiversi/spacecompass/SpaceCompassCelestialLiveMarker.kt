@@ -35,7 +35,7 @@ internal const val SPACE_COMPASS_CELESTIAL_LIVE_PREVIEW_SIZE_DP = 32f
 internal fun SpaceCompassCelestialLiveMarker(body: SpaceCompassCelestialBody, projection: SpaceCompassSunProjection,
     belowHorizon: Boolean, point: SpaceCompassSunPathPoint?, state: SpaceCompassSunDailyPathUiState,
     moonPhase: SpaceCompassMoonPhase? = null,
-    path: SpaceCompassSunDailyPath? = null, interactive: Boolean = true) {
+    path: SpaceCompassSunDailyPath? = null, interactive: Boolean = true, focused: Boolean = false) {
     val name = stringResource(body.nameResource)
     val timeFormat = resolveSpaceCompassTimeFormat(LocalContext.current, LocalSpaceCompassTimeFormat.current)
     val locale = LocalConfiguration.current.locales[0]
@@ -62,7 +62,12 @@ internal fun SpaceCompassCelestialLiveMarker(body: SpaceCompassCelestialBody, pr
                 }
             }, contentAlignment = Alignment.Center) {
             SpaceCompassCelestialThumbnail(body, Modifier.size(SPACE_COMPASS_CELESTIAL_LIVE_PREVIEW_SIZE_DP.dp)
-                .border(if (selected) 1.8.dp else 0.8.dp, if (selected) accent else (if (belowHorizon) Color.LightGray else Color.White).copy(alpha = 0.65f), CircleShape)
+                .border(if (selected || focused) 1.8.dp else 0.8.dp,
+                    when {
+                        selected -> accent
+                        focused -> Color.White
+                        else -> (if (belowHorizon) Color.LightGray else Color.White).copy(alpha = 0.65f)
+                    }, CircleShape)
                 .testTag(if (interactive) "celestial-live-preview-${body.name}" else "celestial-background-preview-${body.name}"),
                 muted = belowHorizon, moonPhase = moonPhase)
         }

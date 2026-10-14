@@ -185,7 +185,9 @@ internal fun SpaceCompassCelestialSkyActions(body: SpaceCompassCelestialBody, on
     onPath: (() -> Unit)? = null, pathTitle: String = "", pathSelected: Boolean = false,
     modifier: Modifier = Modifier) {
     val viewTitle = stringResource(R.string.celestial_view_open)
-    Row(modifier, verticalAlignment = Alignment.CenterVertically) {
+    // Share 5 dp of empty touch-target padding: 30 dp circles keep a 13 dp visible gap.
+    Row(modifier, verticalAlignment = Alignment.CenterVertically,
+        horizontalArrangement = Arrangement.spacedBy((-5).dp)) {
         if (onVisualize != null) SpaceCompassCelestialIconControl(false, viewTitle, onVisualize,
             Modifier.testTag("celestial-visualize"), Role.Button) {
             SpaceCompassCelestialTelescopeIcon(Modifier.size(22.dp))

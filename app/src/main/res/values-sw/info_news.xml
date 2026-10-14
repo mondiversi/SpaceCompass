@@ -1,9 +1,9 @@
 <resources>
     <string name="info_news_title">Mambo mapya · %1$s</string>
-    <string name="info_news_star_sky" formatted="false">Nukta zilizo kwenye kilengio huonyesha saa na T± pamoja, bila madokezo ya kudumu kwenye nukta nyingine zilizochaguliwa.</string>
-    <string name="info_news_texture_downloads" formatted="false">Muhtasari wa picha na panorama una upau wa kichwa wenye Rudi na Hamisha, na vidhibiti viko juu.</string>
-    <string name="info_news_weather" formatted="false">Picha zina ufafanuzi wa rangi za vitu; maelezo ya picha yana maandishi makubwa ya mistari kadhaa kwenye ukanda mweusi tofauti.</string>
-    <string name="info_news_viewer_zoom" formatted="false">Vidhibiti vya lebo na mahali vinaonyesha hali inayotumika wazi zaidi; mwelekeo wa panorama unabaki chaguo tofauti.</string>
-    <string name="info_news_settings" formatted="false">Kadi kuu huonyesha njia na vitu vilivyo nyuma yake, huku kilengio kikibaki katikati ya eneo huru la anga.</string>
-    <string name="info_news_catalog" formatted="false">Sehemu ya kwanza ya Kituo cha uchunguzi sasa inaitwa Jina na aina. Mipangilio iliyohifadhiwa na faragha ya mahali vinabaki.</string>
+    <string name="info_news_star_sky" formatted="false">Kilengwa hubaki cheupe; vitu karibu na katikati huangazia mpaka uliopo bila kuongezeka ukubwa.</string>
+    <string name="info_news_texture_downloads" formatted="false">Katika hali ya mlalo, kitufe cha picha hubaki chini kulia; paneli zikifungwa, kichwa huwa kati ya vitufe.</string>
+    <string name="info_news_weather" formatted="false">Vitufe vya hakiki za picha na panorama vina nafasi sawa pembezoni katika hali ya wima na mlalo.</string>
+    <string name="info_news_viewer_zoom" formatted="false">Nafasi zaidi kwa majina ya vitu, huku vitufe vya uchunguzi na njia ya kila siku vikiwa karibu zaidi.</string>
+    <string name="info_news_settings" formatted="false">Bluu ya mchana iliyo angavu kidogo hutumika kwa vitufe, viungo, chaguo na vidhibiti vya sauti.</string>
+    <string name="info_news_catalog" formatted="false">Vitu vilivyochaguliwa vina mpaka mmoja ulioangaziwa, hata kwenye picha na panorama zinazohamishwa.</string>
 </resources>

@@ -1,9 +1,9 @@
 <resources>
     <string name="info_news_title">החידושים האחרונים · %1$s</string>
-    <string name="info_news_star_sky" formatted="false">נקודות בכוונת מציגות שעה ו־T± זו לצד זו, ללא בועות קבועות בנקודות נבחרות אחרות.</string>
-    <string name="info_news_texture_downloads" formatted="false">בתצוגות המקדימות של צילום ופנורמה יש סרגל כותרת עם חזרה וייצוא, והפקדים ממוקמים למעלה.</string>
-    <string name="info_news_weather" formatted="false">התמונות כוללות מקרא צבעים לעצמים; פרטי הצילום גדולים יותר ונפרסים לכמה שורות ברצועה שחורה נפרדת.</string>
-    <string name="info_news_viewer_zoom" formatted="false">פקדי התוויות והמיקום מציגים בבירור מצב פעיל; כיוון הפנורמה נשאר בחירה נפרדת.</string>
-    <string name="info_news_settings" formatted="false">כרטיסי התצוגה הראשית מאפשרים לראות מסלולים ועצמים מאחוריהם, והכוונת ממורכזת באזור השמיים הפנוי.</string>
-    <string name="info_news_catalog" formatted="false">החלק הראשון במצפה נקרא כעת שם וסוג. ההגדרות השמורות ופרטיות המיקום נשמרות.</string>
+    <string name="info_news_star_sky" formatted="false">הכוונת נשארת לבנה; עצמים ליד המרכז מדגישים את המסגרת הקיימת בלי לגדול.</string>
+    <string name="info_news_texture_downloads" formatted="false">בתצוגה לרוחב, כפתור הצילום נשאר בפינה הימנית התחתונה; כשהלוחות מקופלים, הכותרת נמצאת בין הכפתורים.</string>
+    <string name="info_news_weather" formatted="false">לכפתורי התצוגה המקדימה של תמונות ופנורמות יש שוליים אחידים לאורך ולרוחב.</string>
+    <string name="info_news_viewer_zoom" formatted="false">יותר מקום לשמות עצמים, עם כפתורי מצפה הכוכבים והמסלול היומי קרובים יותר.</string>
+    <string name="info_news_settings" formatted="false">כחול יום בהיר מעט יותר משמש לכפתורים, קישורים, בחירות ועוצמת הקול.</string>
+    <string name="info_news_catalog" formatted="false">לעצמים שנבחרו יש מסגרת מודגשת אחת, גם בתמונות ובפנורמות המיוצאות.</string>
 </resources>

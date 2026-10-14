@@ -1,9 +1,9 @@
 <resources>
     <string name="info_news_title">Latest news · %1$s</string>
-    <string name="info_news_star_sky" formatted="false">Focused orbit points show the clock and T± side by side, without permanent callouts on other selected points.</string>
-    <string name="info_news_texture_downloads" formatted="false">Photo and panorama previews have a title bar with Back and Export, and controls aligned at the top.</string>
-    <string name="info_news_weather" formatted="false">Images include an object-colour legend; photos have larger wrapping details in a separate black band.</string>
-    <string name="info_news_viewer_zoom" formatted="false">Label and position controls show their enabled state clearly; panorama direction remains a separate choice.</string>
-    <string name="info_news_settings" formatted="false">Main islands let paths and objects show through while the reticle stays centred in the free sky area.</string>
-    <string name="info_news_catalog" formatted="false">The first Observatory section is now Name and type. Saved settings and location privacy are preserved.</string>
+    <string name="info_news_star_sky" formatted="false">The reticle stays white; objects near its centre highlight their existing outline without growing.</string>
+    <string name="info_news_texture_downloads" formatted="false">In landscape, capture stays at the bottom right; with panels collapsed, the title sits between the controls.</string>
+    <string name="info_news_weather" formatted="false">Photo and panorama preview controls have matching margins in portrait and landscape.</string>
+    <string name="info_news_viewer_zoom" formatted="false">More room for object names, with Observatory and daily-path controls closer together.</string>
+    <string name="info_news_settings" formatted="false">A slightly lighter daytime blue is shared by buttons, links, selections and volume controls.</string>
+    <string name="info_news_catalog" formatted="false">Selected objects use one highlighted outline, including exported photos and panoramas.</string>
 </resources>

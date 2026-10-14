@@ -1,9 +1,9 @@
 <resources>
     <string name="info_news_title">Son yenilikler · %1$s</string>
-    <string name="info_news_star_sky" formatted="false">Nişangahtaki noktalar saati ve T± değerini yan yana gösterir; diğer seçili noktalarda kalıcı baloncuklar görünmez.</string>
-    <string name="info_news_texture_downloads" formatted="false">Fotoğraf ve panorama önizlemelerinde Geri ve Dışa aktar düğmeli başlık çubuğu vardır; kontroller üstte hizalanır.</string>
-    <string name="info_news_weather" formatted="false">Görüntülerde nesne renk açıklaması bulunur; fotoğraf bilgileri ayrı siyah şeritte daha büyük ve çok satırlı gösterilir.</string>
-    <string name="info_news_viewer_zoom" formatted="false">Etiket ve konum kontrolleri etkin durumu daha açık gösterir; panorama yönü ayrı bir seçim olarak kalır.</string>
-    <string name="info_news_settings" formatted="false">Ana kartların arkasındaki yollar ve nesneler görünür; nişangah gökyüzünün boş alanının ortasında kalır.</string>
-    <string name="info_news_catalog" formatted="false">Gözlemevinin ilk bölümü artık Ad ve tür olarak adlandırılır. Kayıtlı ayarlar ve konum gizliliği korunur.</string>
+    <string name="info_news_star_sky" formatted="false">Nişangâh beyaz kalır; merkeze yakın nesneler büyümeden mevcut kenarlıklarıyla vurgulanır.</string>
+    <string name="info_news_texture_downloads" formatted="false">Yatayda çekim düğmesi sağ altta sabit kalır; paneller kapalıyken başlık düğmelerin arasında yer alır.</string>
+    <string name="info_news_weather" formatted="false">Fotoğraf ve panorama önizleme düğmeleri dikey ve yatay konumda eşit kenar boşluklarına sahiptir.</string>
+    <string name="info_news_viewer_zoom" formatted="false">Gözlemevi ve günlük yol düğmeleri yakınlaştırılarak nesne adlarına daha fazla yer ayrıldı.</string>
+    <string name="info_news_settings" formatted="false">Düğmeler, bağlantılar, seçimler ve ses denetimleri için biraz daha açık bir gündüz mavisi kullanılır.</string>
+    <string name="info_news_catalog" formatted="false">Seçili nesnelerde, dışa aktarılan fotoğraf ve panoramalar dâhil, tek bir vurgulu kenarlık bulunur.</string>
 </resources>

@@ -1,9 +1,9 @@
 <resources>
     <string name="info_news_title">Últimas novedades · %1$s</string>
-    <string name="info_news_star_sky" formatted="false">Los puntos bajo la retícula muestran la hora y T± lado a lado, sin etiquetas permanentes en otros puntos seleccionados.</string>
-    <string name="info_news_texture_downloads" formatted="false">Las vistas previas de fotos y panorámicas tienen una barra con Atrás y Exportar y los controles en la parte superior.</string>
-    <string name="info_news_weather" formatted="false">Las imágenes incluyen una leyenda de colores de los objetos; las fotos muestran datos más grandes en varias líneas sobre una franja negra independiente.</string>
-    <string name="info_news_viewer_zoom" formatted="false">Los controles de etiquetas y posición indican mejor su estado activo; la dirección panorámica sigue siendo una elección aparte.</string>
-    <string name="info_news_settings" formatted="false">Las tarjetas principales dejan ver trayectorias y objetos, con la retícula centrada en el área libre del cielo.</string>
-    <string name="info_news_catalog" formatted="false">La primera sección del Observatorio se llama Nombre y tipo. Se conservan los ajustes y la privacidad de la posición.</string>
+    <string name="info_news_star_sky" formatted="false">La retícula permanece blanca; los objetos cercanos al centro resaltan su borde existente sin aumentar de tamaño.</string>
+    <string name="info_news_texture_downloads" formatted="false">En horizontal, la captura permanece abajo a la derecha; con los paneles contraídos, el título queda entre los controles.</string>
+    <string name="info_news_weather" formatted="false">Los controles de las vistas previas de fotos y panorámicas tienen márgenes uniformes en ambas orientaciones.</string>
+    <string name="info_news_viewer_zoom" formatted="false">Más espacio para los nombres de los objetos, con los controles de Observatorio y recorrido diario más próximos.</string>
+    <string name="info_news_settings" formatted="false">Un azul diurno algo más claro se usa en botones, enlaces, selecciones y controles de volumen.</string>
+    <string name="info_news_catalog" formatted="false">Los objetos seleccionados tienen un único borde resaltado, también en las fotos y panorámicas exportadas.</string>
 </resources>

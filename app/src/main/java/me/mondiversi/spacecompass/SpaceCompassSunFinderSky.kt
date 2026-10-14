@@ -84,6 +84,7 @@ internal fun SpaceCompassSunPointingViewport(
     noticesBelowReticle: Boolean = false,
     topStartActions: @Composable (Modifier) -> Unit = {},
     topEndActions: @Composable (Modifier) -> Unit = {},
+    topCenterActions: (@Composable (Modifier) -> Unit)? = null,
     topContentInset: androidx.compose.ui.unit.Dp = 0.dp,
     projectionTopInset: androidx.compose.ui.unit.Dp = 0.dp,
     drawScene: Boolean = true
@@ -105,6 +106,12 @@ internal fun SpaceCompassSunPointingViewport(
         var bottomStartActionsSize by remember { mutableStateOf(IntSize.Zero) }
         var topStartActionsSize by remember { mutableStateOf(IntSize.Zero) }
         var topEndActionsSize by remember { mutableStateOf(IntSize.Zero) }
+        var topCenterActionsSize by remember { mutableStateOf(IntSize.Zero) }
+        val centerActionsSize = if (topCenterActions == null) IntSize.Zero else topCenterActionsSize
+        val centerActionsTop = topContentInset + 4.dp +
+            (spaceCompassFloatingControlSize - with(density) { centerActionsSize.height.toDp() }) / 2
+        val centerActionsLeft = (if (rtl) topEndActionsSize.width else topStartActionsSize.width) +
+            (width - topStartActionsSize.width - topEndActionsSize.width - centerActionsSize.width) / 2
         val paths = overlays.mapNotNull { (candidate, overlay) -> overlay.path?.let { candidate to it } }.toMap() +
             (dailyPath?.let { mapOf(body to it) } ?: emptyMap())
         val positions = overlays.mapNotNull { (candidate, overlay) -> overlay.observation?.position?.let { candidate to it } }.toMap() +
@@ -125,6 +132,11 @@ internal fun SpaceCompassSunPointingViewport(
         }
         val focused = focusedSpaceCompassCelestialSceneTarget(targets, width, height,
             with(density) { SPACE_COMPASS_CELESTIAL_RETICLE_RADIUS_DP.dp.toPx().toDouble() }, scenePerspective)
+        val selectedPoints = dailyPathUiState.selectedPoints
+        val pinned = remember(selectedPoints, paths, current, orientation, compassReliable, width, height, scenePerspective) {
+            projectSpaceCompassSelectedOrbitTargets(selectedPoints, paths, current,
+                orientation.takeIf { compassReliable }, width, height, scenePerspective)
+        }
         val padding = with(density) { 4.dp.toPx().toDouble() }
         // The reticle's outer arms end at 32 dp; keep an eight-dp gap before notices.
         val noticeTopInset = with(density) { reticleCenter.y.toFloat().toDp() } + 40.dp
@@ -148,6 +160,9 @@ internal fun SpaceCompassSunPointingViewport(
             if (topEndActionsSize.width > 0) add(SpaceCompassSunSceneFrame(
                 if (rtl) 0.0 else width - topEndActionsSize.width, 0.0,
                 topEndActionsSize.width.toDouble(), topEndActionsSize.height.toDouble()))
+            if (centerActionsSize.width > 0 && centerActionsSize.height > 0) add(SpaceCompassSunSceneFrame(
+                centerActionsLeft, with(density) { centerActionsTop.coerceAtLeast(0.dp).toPx().toDouble() },
+                centerActionsSize.width.toDouble(), centerActionsSize.height.toDouble()))
             if (menuSize.width > 0) add(SpaceCompassSunSceneFrame(
                 if (rtl) 0.0 else width - menuSize.width - padding, 0.0,
                 menuSize.width + padding, menuSize.height + padding))
@@ -187,13 +202,9 @@ internal fun SpaceCompassSunPointingViewport(
                     interactive = false, pathTint = spaceCompassCelestialPathTint(candidate),
                     highlightedPoint = focused?.takeIf { it.body == candidate && !it.isCurrent }?.point, perspective = scenePerspective)
             } }
-            val projection = projections[body]
-            val appearance = sun?.let { spaceCompassSunAppearance(it.elevationDegrees, rising) }
-            val aligned = compassAccurate && compassReliable && projection?.visible == true && projection.separationDegrees <= 3.0
             Canvas(Modifier.fillMaxSize().testTag("sun-finder-reticle")) {
                 val aim = Offset(reticleCenter.x.toFloat(), reticleCenter.y.toFloat())
-                val sunTint = appearance?.let { Color(it.edgeArgb) } ?: Color(0xFFFFD84D)
-                val reticle = if (aligned) sunTint else Color.White
+                val reticle = Color.White
                 drawCircle(Color.Black.copy(alpha = 0.30f), SPACE_COMPASS_CELESTIAL_RETICLE_RADIUS_DP.dp.toPx(), aim, style = Stroke(3.dp.toPx()))
                 drawCircle(reticle, SPACE_COMPASS_CELESTIAL_RETICLE_RADIUS_DP.dp.toPx(), aim, style = Stroke(1.5.dp.toPx()))
                 val inner = 24.dp.toPx(); val outer = 32.dp.toPx()
@@ -205,12 +216,13 @@ internal fun SpaceCompassSunPointingViewport(
             SpaceCompassCelestialSceneInteraction(targets, current, focused, dailyPathUiState, timeMs, orientation.takeIf { compassReliable },
                 primaryText, secondaryText, backgroundColor, exclusions + offscreen.values.map {
                     SpaceCompassSunSceneFrame(it.center.x - markerDiameter / 2, it.center.y - markerDiameter / 2, markerDiameter, markerDiameter)
-                }, scenePerspective, paths)
+                }, scenePerspective, paths, pinnedTargets = pinned)
             // Only thumbnails have small local targets; they never intercept another path's whole viewport.
             spaceCompassAllCelestialOrder.forEach { candidate -> key(candidate) { projections[candidate]?.let { projected ->
                 val below = positions.getValue(candidate).elevationDegrees < 0
                 if (projected.visible) SpaceCompassCelestialLiveMarker(candidate, projected, below, current[candidate], dailyPathUiState,
-                    moonPhase = moonPhase, path = paths[candidate])
+                    moonPhase = moonPhase, path = paths[candidate],
+                    focused = focused?.let { it.isCurrent && it.body == candidate } == true)
                 else offscreen[candidate]?.let { placement ->
                     SpaceCompassCelestialOffscreenMarker(candidate, projected, below,
                         spaceCompassCelestialPathLineTint(spaceCompassCelestialPathTint(candidate), below),
@@ -227,6 +239,16 @@ internal fun SpaceCompassSunPointingViewport(
                 .padding(top = topContentInset))
             topEndActions(Modifier.align(Alignment.TopEnd).onSizeChanged { topEndActionsSize = it }
                 .padding(top = topContentInset))
+            if (topCenterActions != null) {
+                // Keep the floating title and menu between the measured corner clusters, also in RTL.
+                Box(Modifier.align(Alignment.TopCenter).fillMaxWidth()
+                    .padding(start = with(density) { topStartActionsSize.width.toDp() } + 8.dp,
+                        end = with(density) { topEndActionsSize.width.toDp() } + 8.dp,
+                        top = centerActionsTop.coerceAtLeast(0.dp)), contentAlignment = Alignment.TopCenter) {
+                    topCenterActions(Modifier.widthIn(max = 360.dp)
+                        .onSizeChanged { topCenterActionsSize = it })
+                }
+            }
             // Keep the optical viewport fixed: controls stack over the scene instead of resizing it.
             Column(Modifier.align(Alignment.BottomCenter).fillMaxWidth(), horizontalAlignment = Alignment.End) {
                 Row(Modifier.fillMaxWidth(), verticalAlignment = Alignment.CenterVertically) {

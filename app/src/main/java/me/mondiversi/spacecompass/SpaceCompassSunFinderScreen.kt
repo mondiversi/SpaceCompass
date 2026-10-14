@@ -28,6 +28,7 @@ import androidx.compose.ui.platform.LocalDensity
 import androidx.compose.ui.platform.LocalView
 import androidx.compose.ui.platform.testTag
 import androidx.compose.ui.res.stringResource
+import androidx.compose.ui.unit.IntSize
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.lifecycle.Lifecycle
@@ -477,10 +478,14 @@ internal fun SpaceCompassSunFinderContent(
     }
     val navigate = LocalSpaceCompassNavigate.current
     val topControlsInset = with(density) { toolbarHeightPx.toDp() } + 10.dp
-    val toolbar: @Composable () -> Unit = {
+    val titleBar: @Composable (Modifier, Boolean) -> Unit = { modifier, floating ->
         if (onDismissRequest != null) Row(
-            Modifier.fillMaxWidth().zIndex(1f).testTag("celestial-toolbar")
-                .onSizeChanged { toolbarHeightPx = it.height; refreshGroundFrame() }
+            modifier.fillMaxWidth().zIndex(1f).testTag("celestial-toolbar")
+                .onSizeChanged {
+                    // Only a full-width header removes height from the optical viewport.
+                    toolbarHeightPx = if (floating) 0 else it.height
+                    refreshGroundFrame()
+                }
                 .background(backgroundColor.copy(alpha = SPACE_COMPASS_MAIN_OVERLAY_ALPHA))
                 .padding(start = 16.dp, end = SpaceCompassTitleBarContentPadding.calculateEndPadding(
                     androidx.compose.ui.platform.LocalLayoutDirection.current)),
@@ -497,7 +502,21 @@ internal fun SpaceCompassSunFinderContent(
         }
 
     }
+    val toolbar: @Composable () -> Unit = { titleBar(Modifier, false) }
+    val captureControls: @Composable (Modifier) -> Unit = { modifier ->
+        Row(modifier.padding(4.dp).testTag("celestial-capture-controls"),
+            verticalAlignment = Alignment.CenterVertically,
+            horizontalArrangement = Arrangement.spacedBy(8.dp)) {
+            SpaceCompassCaptureButton(panorama.capture, !panorama.busy && (!cameraEnabled || cameraCapture != null),
+                cameraEnabled = cameraEnabled)
+        }
+    }
+    var landscapeCaptureSize by remember { mutableStateOf(IntSize.Zero) }
     val pointing: @Composable (Boolean) -> Unit = { landscape ->
+        val floatingToolbar: (@Composable (Modifier) -> Unit)? =
+            if (landscape && !detailsExpanded && onDismissRequest != null) {
+                { modifier -> titleBar(modifier, true) }
+            } else null
         Box(Modifier.fillMaxSize().spaceCompassCameraPinchZoom(cameraZoomRange, cameraZoomRequest,
             cameraEnabled && !panorama.busy, cameraCapture != null, ::updateCameraZoom)) {
             SpaceCompassSunPointingViewport(target, pointingOrientation.takeIf { !cameraEnabled || cameraPerspective != null },
@@ -517,7 +536,9 @@ internal fun SpaceCompassSunFinderContent(
                 perspective = cameraPerspective.takeIf { cameraEnabled }, noticesBelowReticle = true,
                 observerLatitude = fix?.latitude, showSkyReferences = showSkyReferences,
                 observerAltitude = fix?.takeIf { it.hasAltitude() }?.altitude ?: 0.0,
-                topContentInset = topControlsInset, projectionTopInset = with(density) { toolbarHeightPx.toDp() },
+                topContentInset = if (floatingToolbar != null) 10.dp else topControlsInset,
+                projectionTopInset = if (floatingToolbar != null) 0.dp else with(density) { toolbarHeightPx.toDp() },
+                topCenterActions = floatingToolbar,
                 drawScene = false,
                 bottomStartActions = { modifier ->
                     Row(modifier.padding(4.dp), verticalAlignment = Alignment.CenterVertically,
@@ -542,11 +563,11 @@ internal fun SpaceCompassSunFinderContent(
                     }
                 },
                 bottomActions = { modifier ->
-                    Row(modifier.padding(4.dp).testTag("celestial-capture-controls"),
-                        verticalAlignment = Alignment.CenterVertically,
-                        horizontalArrangement = Arrangement.spacedBy(8.dp)) {
-                        SpaceCompassCaptureButton(panorama.capture, !panorama.busy && (!cameraEnabled || cameraCapture != null),
-                            cameraEnabled = cameraEnabled)
+                    if (!landscape) captureControls(modifier)
+                    else if (!detailsExpanded) {
+                        // Keep labels and edge locators clear of the capture overlay after expansion.
+                        Spacer(modifier.size(with(density) { landscapeCaptureSize.width.toDp() },
+                            with(density) { landscapeCaptureSize.height.toDp() }))
                     }
                 },
                 topStartActions = { modifier ->
@@ -629,19 +650,27 @@ internal fun SpaceCompassSunFinderContent(
         val compactPanel = viewportHeight < 420.dp && !largeText
         if (viewportWidth > viewportHeight && detailsWidth - 20.dp >= minimumPanelWidth) {
             // The toolbar belongs to the sky column, not above the full-height data column.
-            Row(Modifier.fillMaxSize().testTag("celestial-landscape-layout")) {
+            Box(Modifier.fillMaxSize().testTag("celestial-landscape-layout")) {
+            Row(Modifier.fillMaxSize()) {
                 Box(Modifier.weight(1f).fillMaxHeight().clipToBounds()) {
                     // One optical frame for sky, paths and camera, including the translucent header.
                     Box(Modifier.fillMaxSize().padding(start = 10.dp, end = 10.dp, bottom = 10.dp)
                         .testTag("celestial-pointing-area")) {
                         pointing(true)
                     }
-                    toolbar()
+                    if (detailsExpanded) toolbar()
                 }
                 // Equal insets towards the sky/toolbar and the outer edge, including in RTL.
                 SpaceCompassMainDetailsVisibility(detailsExpanded, landscape = true) {
-                    details(Modifier.width(detailsWidth).fillMaxHeight().padding(10.dp), compactPanel, true)
+                    Column(Modifier.width(detailsWidth).fillMaxHeight().padding(10.dp)) {
+                        details(Modifier.fillMaxWidth().weight(1f), compactPanel, true)
+                        Spacer(Modifier.height(with(density) { landscapeCaptureSize.height.toDp() }))
+                    }
                 }
+            }
+            // One stable overlay stays outside the information panels' transition and changing sky width.
+            captureControls(Modifier.align(Alignment.BottomEnd).padding(10.dp)
+                .onSizeChanged { landscapeCaptureSize = it })
             }
         } else Box(Modifier.fillMaxSize().clipToBounds()) {
             Column(Modifier.fillMaxSize().padding(start = 10.dp, end = 10.dp, bottom = 10.dp)) {
@@ -650,7 +679,7 @@ internal fun SpaceCompassSunFinderContent(
                 }
                 SpaceCompassMainDetailsVisibility(detailsExpanded, landscape = false) {
                     Column {
-                        Spacer(Modifier.height(8.dp))
+                        Spacer(Modifier.height(10.dp))
                         details(Modifier.fillMaxWidth().heightIn(max = viewportHeight * 0.56f), compactPanel, false)
                     }
                 }

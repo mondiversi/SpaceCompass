@@ -9,7 +9,7 @@ internal fun spaceCompassPanoramaSelectionLabels(snapshot: SpaceCompassPanoramaS
     projection: (SpaceCompassSunPosition) -> SpaceCompassSunScenePoint?, occupied: MutableList<RectF>
 ): List<SpaceCompassPanoramaTimeLabel> = selected.mapNotNull { pin ->
     val point = projection(pin.point.position) ?: return@mapNotNull null
-    val radius = if (pin.isCurrent) currentRadius + 5f else if (pin.point.event == SpaceCompassSunPathEvent.HOUR) 10f else 20f
+    val radius = if (pin.isCurrent) currentRadius else if (pin.point.event == SpaceCompassSunPathEvent.HOUR) 10f else 20f
     occupied += RectF(point.x.toFloat() - radius * scale, point.y.toFloat() - radius * scale,
         point.x.toFloat() + radius * scale, point.y.toFloat() + radius * scale)
     val caption = formatSpaceCompassPanoramaSelection(snapshot, pin)
@@ -24,7 +24,7 @@ internal fun drawSpaceCompassPanoramaSelections(canvas: Canvas, snapshot: SpaceC
     val paint = Paint(Paint.ANTI_ALIAS_FLAG).apply { color = snapshot.selectionTint; strokeWidth = 2.5f * scale }
     selected.forEach { pin ->
         val point = projection(pin.point.position) ?: return@forEach
-        val radius = if (pin.isCurrent) currentRadius + 5f else if (pin.point.event == SpaceCompassSunPathEvent.HOUR) 10f else 20f
+        val radius = if (pin.isCurrent) currentRadius else if (pin.point.event == SpaceCompassSunPathEvent.HOUR) 10f else 20f
         val centers = buildList {
             add(point)
             if (wrapWidth != null) {

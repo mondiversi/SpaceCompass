@@ -1,9 +1,9 @@
 <resources>
     <string name="info_news_title">تازه‌ترین تغییرات · %1$s</string>
-    <string name="info_news_star_sky" formatted="false">نقاط زیر نشانه‌گیر، ساعت و T± را کنار هم نشان می‌دهند و نقاط انتخاب‌شدهٔ دیگر برچسب دائمی ندارند.</string>
-    <string name="info_news_texture_downloads" formatted="false">پیش‌نمایش عکس و پانوراما نوار عنوان با بازگشت و صادر کردن دارد و کنترل‌ها در بالا قرار دارند.</string>
-    <string name="info_news_weather" formatted="false">تصاویر راهنمای رنگ اجرام دارند؛ اطلاعات عکس با متن بزرگ‌تر و چندخطی در نواری سیاه و جدا نمایش داده می‌شود.</string>
-    <string name="info_news_viewer_zoom" formatted="false">کنترل‌های برچسب و موقعیت، حالت فعال را روشن‌تر نشان می‌دهند؛ جهت پانوراما همچنان انتخابی جداست.</string>
-    <string name="info_news_settings" formatted="false">کارت‌های نمای اصلی مسیرها و اجرام پشت خود را نشان می‌دهند و نشانه‌گیر در مرکز بخش آزاد آسمان می‌ماند.</string>
-    <string name="info_news_catalog" formatted="false">نام بخش نخست رصدخانه اکنون نام و نوع است. تنظیمات ذخیره‌شده و حریم خصوصی موقعیت حفظ می‌شوند.</string>
+    <string name="info_news_star_sky" formatted="false">نشانه همیشه سفید می‌ماند؛ اجرام نزدیک مرکز، حاشیهٔ موجود خود را برجسته می‌کنند و بزرگ‌تر نمی‌شوند.</string>
+    <string name="info_news_texture_downloads" formatted="false">در حالت افقی، دکمهٔ ثبت پایین سمت راست ثابت می‌ماند؛ با بستن پنل‌ها، عنوان میان کنترل‌ها قرار می‌گیرد.</string>
+    <string name="info_news_weather" formatted="false">کنترل‌های پیش‌نمایش عکس و پانوراما در حالت عمودی و افقی حاشیه‌های یکسان دارند.</string>
+    <string name="info_news_viewer_zoom" formatted="false">با نزدیک‌تر شدن کنترل‌های رصدخانه و مسیر روزانه، فضای بیشتری برای نام اجرام فراهم شده است.</string>
+    <string name="info_news_settings" formatted="false">آبی روز کمی روشن‌تر برای دکمه‌ها، پیوندها، انتخاب‌ها و کنترل صدا به کار می‌رود.</string>
+    <string name="info_news_catalog" formatted="false">اجرام انتخاب‌شده تنها یک حاشیهٔ برجسته دارند، حتی در عکس‌ها و پانوراماهای خروجی.</string>
 </resources>

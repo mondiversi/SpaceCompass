@@ -1,9 +1,9 @@
 <resources>
     <string name="info_news_title">Laatste nieuws · %1$s</string>
-    <string name="info_news_star_sky" formatted="false">Punten in het vizier tonen tijd en T± naast elkaar, zonder blijvende tekstballonnen bij andere geselecteerde punten.</string>
-    <string name="info_news_texture_downloads" formatted="false">Foto- en panoramavoorbeelden hebben een titelbalk met Terug en Exporteren en bediening bovenaan.</string>
-    <string name="info_news_weather" formatted="false">Afbeeldingen bevatten een kleurenlegenda van objecten; fotogegevens staan groter en over meerdere regels op een aparte zwarte strook.</string>
-    <string name="info_news_viewer_zoom" formatted="false">Label- en locatieknoppen tonen hun actieve toestand duidelijker; de panoramarichting blijft een aparte keuze.</string>
-    <string name="info_news_settings" formatted="false">De hoofdkaarten laten banen en objecten erachter zien, terwijl het vizier midden in de vrije hemelruimte blijft.</string>
-    <string name="info_news_catalog" formatted="false">De eerste sectie van het Observatorium heet nu Naam en type. Opgeslagen instellingen en locatieprivacy blijven behouden.</string>
+    <string name="info_news_star_sky" formatted="false">Het richtkruis blijft wit; objecten nabij het midden benadrukken hun bestaande rand zonder groter te worden.</string>
+    <string name="info_news_texture_downloads" formatted="false">In liggende stand blijft opname rechtsonder; bij ingeklapte panelen staat de titel tussen de knoppen.</string>
+    <string name="info_news_weather" formatted="false">De knoppen van foto- en panoramavoorbeelden hebben gelijke marges in staande en liggende stand.</string>
+    <string name="info_news_viewer_zoom" formatted="false">Meer ruimte voor objectnamen, met de knoppen voor Observatorium en dagtraject dichter bij elkaar.</string>
+    <string name="info_news_settings" formatted="false">Een iets lichter dagblauw wordt gebruikt voor knoppen, links, selecties en volumeregeling.</string>
+    <string name="info_news_catalog" formatted="false">Geselecteerde objecten hebben één gemarkeerde rand, ook in geëxporteerde foto’s en panorama’s.</string>
 </resources>

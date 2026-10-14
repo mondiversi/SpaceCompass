@@ -1,9 +1,9 @@
 <resources>
     <string name="info_news_title">हाल के बदलाव · %1$s</string>
-    <string name="info_news_star_sky" formatted="false">निशाने पर मौजूद बिंदु समय और T± को साथ दिखाते हैं; अन्य चुने हुए बिंदुओं पर स्थायी विवरण नहीं दिखता।</string>
-    <string name="info_news_texture_downloads" formatted="false">फ़ोटो और पैनोरमा पूर्वावलोकन में वापस और निर्यात वाली शीर्षक पट्टी तथा ऊपर नियंत्रण हैं।</string>
-    <string name="info_news_weather" formatted="false">चित्रों में पिंडों की रंग-सूची है; फ़ोटो के विवरण अलग काली पट्टी में बड़े अक्षरों और कई पंक्तियों में दिखते हैं।</string>
-    <string name="info_news_viewer_zoom" formatted="false">लेबल और स्थिति के नियंत्रण सक्रिय अवस्था साफ़ दिखाते हैं; पैनोरमा की दिशा अलग विकल्प बनी रहती है।</string>
-    <string name="info_news_settings" formatted="false">मुख्य दृश्य के कार्डों के पीछे कक्षाएँ और पिंड दिखते हैं; निशाना आकाश के खाली क्षेत्र में केंद्रित रहता है।</string>
-    <string name="info_news_catalog" formatted="false">वेधशाला के पहले भाग का नाम अब नाम और प्रकार है। सहेजी सेटिंग और स्थान की गोपनीयता बनी रहती हैं।</string>
+    <string name="info_news_star_sky" formatted="false">निशाना सफेद रहता है; केंद्र के पास की वस्तुओं का मौजूदा किनारा उभरता है, आकार नहीं बढ़ता।</string>
+    <string name="info_news_texture_downloads" formatted="false">लैंडस्केप में कैप्चर बटन नीचे दाईं ओर स्थिर रहता है; पैनल बंद होने पर शीर्षक नियंत्रणों के बीच रहता है।</string>
+    <string name="info_news_weather" formatted="false">फोटो और पैनोरमा पूर्वावलोकन के नियंत्रणों के मार्जिन पोर्ट्रेट और लैंडस्केप में समान हैं।</string>
+    <string name="info_news_viewer_zoom" formatted="false">वेधशाला और दैनिक पथ के नियंत्रण पास होने से वस्तुओं के नामों के लिए अधिक जगह मिलती है।</string>
+    <string name="info_news_settings" formatted="false">बटन, लिंक, चयन और वॉल्यूम नियंत्रण दिन में थोड़ा हल्का नीला रंग इस्तेमाल करते हैं।</string>
+    <string name="info_news_catalog" formatted="false">चुनी हुई वस्तुओं का केवल एक किनारा उभरता है, निर्यात की गई फोटो और पैनोरमा में भी।</string>
 </resources>

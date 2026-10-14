@@ -1,9 +1,9 @@
 <resources>
     <string name="info_news_title">آخر المستجدات · %1$s</string>
-    <string name="info_news_star_sky" formatted="false">تعرض تلميحات النقاط عند علامة التصويب الوقت وT± جنبًا إلى جنب، دون تلميحات دائمة للنقاط المحددة الأخرى.</string>
-    <string name="info_news_texture_downloads" formatted="false">تتضمن معاينات الصور والبانوراما شريط عنوان للرجوع والتصدير، مع أدوات تحكم في الأعلى.</string>
-    <string name="info_news_weather" formatted="false">تتضمن الصور مفتاح ألوان للأجرام؛ وتظهر بيانات الصور بخط أكبر وعلى عدة أسطر في شريط أسود مستقل.</string>
-    <string name="info_news_viewer_zoom" formatted="false">توضح أدوات التسميات والموقع حالتها النشطة؛ ويبقى اتجاه البانوراما خيارًا منفصلًا.</string>
-    <string name="info_news_settings" formatted="false">تتيح لوحات الشاشة الرئيسية رؤية المسارات والأجرام من خلفها، مع بقاء علامة التصويب في وسط مساحة السماء الحرة.</string>
-    <string name="info_news_catalog" formatted="false">أصبح اسم القسم الأول في المرصد الاسم والنوع. تُحفظ الإعدادات وخصوصية الموقع.</string>
+    <string name="info_news_star_sky" formatted="false">يبقى مؤشر التصويب أبيض؛ تبرز الأجسام القريبة من مركزه حدودها الحالية دون أن تكبر.</string>
+    <string name="info_news_texture_downloads" formatted="false">في الوضع الأفقي، يبقى زر الالتقاط أسفل اليمين؛ وعند طي اللوحات، يتوسط العنوان عناصر التحكم.</string>
+    <string name="info_news_weather" formatted="false">تتمتع عناصر معاينة الصور والبانوراما بهوامش موحدة في الوضعين الرأسي والأفقي.</string>
+    <string name="info_news_viewer_zoom" formatted="false">مساحة أكبر لأسماء الأجسام مع تقارب زري المرصد والمسار اليومي.</string>
+    <string name="info_news_settings" formatted="false">يُستخدم أزرق نهاري أفتح قليلاً للأزرار والروابط والتحديدات ومستوى الصوت.</string>
+    <string name="info_news_catalog" formatted="false">للأجسام المحددة حد واحد بارز، بما في ذلك الصور والبانوراما المصدّرة.</string>
 </resources>

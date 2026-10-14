@@ -50,10 +50,11 @@ class SpaceCompassCelestialMarkerContractTest {
         assertTrue(source("SpaceCompassCelestialCraftModel.kt").contains("colorFilter = colorFilter, alpha = opacity"))
     }
 
-    @Test fun offscreenArrowKeepsItsBearingAndAlignedReticleKeepsItsTargetColour() {
+    @Test fun offscreenArrowKeepsItsBearingAndReticleRemainsWhite() {
         val sky = source("SpaceCompassSunFinderSky.kt")
-        assertTrue(sky.contains("val sunTint = appearance?.let { Color(it.edgeArgb) }"))
-        assertTrue(sky.contains("val reticle = if (aligned) sunTint else Color.White"))
+        assertTrue(sky.contains("val reticle = Color.White"))
+        assertFalse(sky.contains("spaceCompassReticleAligned("))
+        assertFalse(sky.contains("val reticle = if ("))
         assertTrue(sky.contains("SpaceCompassCelestialOffscreenMarker(candidate, projected, below"))
         val locator = source("SpaceCompassCelestialOffscreenMarker.kt")
         assertTrue(locator.contains("SpaceCompassCelestialThumbnail(body"))

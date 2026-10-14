@@ -48,9 +48,10 @@ internal data class SpaceCompassPanoramaPreviewData(val file: File, val timeMs: 
 private fun Modifier.spaceCompassPanoramaControlSideInsets(): Modifier =
     padding(start = 10.dp, end = 10.dp).padding(start = 4.dp, end = 4.dp)
 
-/** Start side clusters directly below the shared toolbar, without extra top clearance. */
+/** Match the side inset below the shared toolbar, including pixel rounding. */
 private fun Modifier.spaceCompassPanoramaTopControlInsets(topInset: Dp): Modifier =
     spaceCompassPanoramaControlSideInsets().padding(top = topInset)
+        .padding(top = 10.dp).padding(top = 4.dp)
 
 /** Preview follows the device orientation; portrait starts filled and pannable. */
 @Composable

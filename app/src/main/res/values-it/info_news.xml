@@ -1,9 +1,9 @@
 <resources>
     <string name="info_news_title">Ultime novità · %1$s</string>
-    <string name="info_news_star_sky" formatted="false">I fumetti dei punti nel mirino mostrano ora e T± affiancati, senza fumetti permanenti sugli altri punti selezionati.</string>
-    <string name="info_news_texture_downloads" formatted="false">Le anteprime di foto e panoramiche hanno una barra con Indietro ed Esporta e i comandi allineati in alto.</string>
-    <string name="info_news_weather" formatted="false">Le immagini includono una legenda degli oggetti; le foto hanno dati più grandi su più righe in una fascia nera separata.</string>
-    <string name="info_news_viewer_zoom" formatted="false">I comandi di etichette e posizione indicano meglio lo stato attivo; la direzione della panoramica resta una scelta separata.</string>
-    <string name="info_news_settings" formatted="false">Le isole della schermata principale lasciano vedere orbite e oggetti, mantenendo il mirino centrato nella zona libera del cielo.</string>
-    <string name="info_news_catalog" formatted="false">La prima sezione dell’Osservatorio si chiama Nome e tipo. Impostazioni salvate e privacy della posizione sono mantenute.</string>
+    <string name="info_news_star_sky" formatted="false">Il mirino resta sempre bianco; gli oggetti vicini al centro evidenziano il bordo esistente senza ingrandirsi.</string>
+    <string name="info_news_texture_downloads" formatted="false">In orizzontale, lo scatto resta fisso in basso a destra; con i riquadri chiusi il titolo è centrato tra i comandi.</string>
+    <string name="info_news_weather" formatted="false">Margini uniformi per i comandi delle anteprime di foto e panoramiche, in verticale e in orizzontale.</string>
+    <string name="info_news_viewer_zoom" formatted="false">Più spazio per il nome dell’oggetto, con i comandi Osservatorio e percorso giornaliero più vicini.</string>
+    <string name="info_news_settings" formatted="false">Blu diurno leggermente più chiaro e coerente per pulsanti, link, selezioni e volume.</string>
+    <string name="info_news_catalog" formatted="false">Gli oggetti selezionati hanno un unico bordo evidenziato, anche nelle foto e nelle panoramiche esportate.</string>
 </resources>

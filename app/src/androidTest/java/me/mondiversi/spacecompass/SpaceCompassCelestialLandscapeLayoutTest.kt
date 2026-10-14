@@ -61,7 +61,11 @@ class SpaceCompassCelestialLandscapeLayoutTest {
                 assertEquals(root.width * .55f, toolbar.width, 1f)
                 assertEquals(root.top, toolbar.top, 1f)
                 assertEquals(root.top + 5f, details.top, 1f)
-                assertEquals(root.bottom - 5f, details.bottom, 1f)
+                val capture = compose.onNodeWithTag("celestial-capture-controls").fetchSemanticsNode().boundsInRoot
+                assertTrue("Capture stays below the compass column", capture.top >= details.bottom)
+                assertTrue("Capture keeps the outer bottom inset", capture.bottom <= root.bottom - 5f)
+                if (rtl) assertTrue(capture.right <= toolbar.left + 1f)
+                else assertTrue(capture.left >= toolbar.right - 1f)
                 assertTrue("Islands start above the bottom of the toolbar", island.top < toolbar.bottom)
                 assertEquals("Sky continues beneath its translucent toolbar", toolbar.top, sky.top, 1f)
                 if (rtl) assertTrue(details.right <= toolbar.left + 1f)

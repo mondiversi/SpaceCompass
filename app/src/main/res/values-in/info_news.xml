@@ -1,9 +1,9 @@
 <resources>
     <string name="info_news_title">Perubahan terbaru · %1$s</string>
-    <string name="info_news_star_sky" formatted="false">Titik di bidikan menampilkan waktu dan T± berdampingan, tanpa balon permanen pada titik terpilih lainnya.</string>
-    <string name="info_news_texture_downloads" formatted="false">Pratinjau foto dan panorama memiliki bilah judul dengan Kembali dan Ekspor serta kontrol di bagian atas.</string>
-    <string name="info_news_weather" formatted="false">Gambar menyertakan legenda warna objek; foto menampilkan rincian lebih besar dalam beberapa baris pada pita hitam terpisah.</string>
-    <string name="info_news_viewer_zoom" formatted="false">Kontrol label dan posisi menunjukkan status aktif dengan lebih jelas; arah panorama tetap menjadi pilihan terpisah.</string>
-    <string name="info_news_settings" formatted="false">Kartu tampilan utama memperlihatkan lintasan dan objek di belakangnya, dengan bidikan tetap di tengah area langit yang bebas.</string>
-    <string name="info_news_catalog" formatted="false">Bagian pertama Observatorium kini bernama Nama dan jenis. Pengaturan tersimpan dan privasi lokasi dipertahankan.</string>
+    <string name="info_news_star_sky" formatted="false">Bidik tetap putih; objek dekat pusat menyorot bingkai yang sudah ada tanpa membesar.</string>
+    <string name="info_news_texture_downloads" formatted="false">Dalam mode lanskap, tombol ambil tetap di kanan bawah; saat panel ditutup, judul berada di antara kontrol.</string>
+    <string name="info_news_weather" formatted="false">Kontrol pratinjau foto dan panorama memiliki margin seragam dalam mode potret dan lanskap.</string>
+    <string name="info_news_viewer_zoom" formatted="false">Lebih banyak ruang untuk nama objek, dengan kontrol Observatorium dan lintasan harian lebih berdekatan.</string>
+    <string name="info_news_settings" formatted="false">Biru siang yang sedikit lebih cerah digunakan untuk tombol, tautan, pilihan, dan kontrol volume.</string>
+    <string name="info_news_catalog" formatted="false">Objek terpilih memiliki satu bingkai yang disorot, termasuk dalam foto dan panorama yang diekspor.</string>
 </resources>

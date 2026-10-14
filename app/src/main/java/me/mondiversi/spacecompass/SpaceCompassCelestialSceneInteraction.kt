@@ -21,10 +21,11 @@ internal fun SpaceCompassCelestialSceneInteraction(targets: List<SpaceCompassCel
     orientation: SpaceCompassSunOrientation?, primaryText: Color, secondaryText: Color, backgroundColor: Color,
     excluded: List<SpaceCompassSunSceneFrame>,
     perspective: SpaceCompassPerspective? = null,
-    paths: Map<SpaceCompassCelestialBody, SpaceCompassSunDailyPath> = targets.mapNotNull { it.path?.let { p -> it.body to p } }.toMap()) {
+    paths: Map<SpaceCompassCelestialBody, SpaceCompassSunDailyPath> = targets.mapNotNull { it.path?.let { p -> it.body to p } }.toMap(),
+    pinnedTargets: List<SpaceCompassCelestialSceneTarget>? = null) {
     androidx.compose.foundation.layout.BoxWithConstraints(Modifier.fillMaxSize()) {
         val density = LocalDensity.current
-        val pinned = projectSpaceCompassSelectedOrbitTargets(state.selectedPoints, paths, currentPoints,
+        val pinned = pinnedTargets ?: projectSpaceCompassSelectedOrbitTargets(state.selectedPoints, paths, currentPoints,
             orientation, with(density) { maxWidth.toPx().toDouble() }, with(density) { maxHeight.toPx().toDouble() }, perspective)
         val historical = pinned.filter { saved -> !saved.isCurrent && targets.none { target ->
             !target.isCurrent && target.body == saved.body && target.path != null && saved.path != null &&
@@ -44,10 +45,6 @@ internal fun SpaceCompassCelestialSceneInteraction(targets: List<SpaceCompassCel
                 }
             }
         }) {
-            pinned.filter { it.isCurrent }.forEach {
-                drawCircle(accent, 20.dp.toPx(), Offset(it.projection.x.toFloat(), it.projection.y.toFloat()),
-                    style = Stroke(1.8.dp.toPx()))
-            }
             historical.forEach {
                 val r = (if (it.point.event == SpaceCompassSunPathEvent.HOUR) 4.dp else 6.dp).toPx()
                 val center = Offset(it.projection.x.toFloat(), it.projection.y.toFloat())

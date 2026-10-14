@@ -8,7 +8,7 @@ import org.junit.Test
 class SpaceCompassCelestialTabularLayoutTest {
     private fun source(name: String) = File("src/main/java/me/mondiversi/spacecompass/$name").readText()
 
-    @Test fun landscapePlacesTheToolbarInsideOnlyTheSkyColumnAndKeepsDetailsFullHeight() {
+    @Test fun landscapePlacesTheToolbarInsideOnlyTheSkyColumnAndKeepsTheDetailColumnFullHeight() {
         val screen = source("SpaceCompassSunFinderScreen.kt")
         assertTrue(screen.contains("val detailsWidth = viewportWidth * 0.45f"))
         val split = screen.substringAfter("testTag(\"celestial-landscape-layout\")")
@@ -16,7 +16,8 @@ class SpaceCompassCelestialTabularLayoutTest {
         assertTrue(split.contains("Box(Modifier.weight(1f).fillMaxHeight().clipToBounds())"))
         assertTrue(split.contains("toolbar()"))
         assertTrue(split.contains("pointing(true)"))
-        assertTrue(split.contains("details(Modifier.width(detailsWidth).fillMaxHeight().padding(10.dp)"))
+        assertTrue(split.contains("Column(Modifier.width(detailsWidth).fillMaxHeight().padding(10.dp)"))
+        assertTrue(split.contains("details(Modifier.fillMaxWidth().weight(1f)"))
         assertFalse(screen.contains("viewportWidth * 0.43f"))
         assertTrue(screen.contains("detailsWidth - 20.dp >= minimumPanelWidth"))
         assertTrue(screen.substringAfter("} else Box(Modifier.fillMaxSize().clipToBounds())").contains("toolbar()"))
