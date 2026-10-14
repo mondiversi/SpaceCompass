@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <string name="panorama_labels_key_selected">Tylko punkty kluczowe i wybrane</string>
     <string name="panorama_labels_all">Wszystkie</string>
     <string name="panorama_labels_objects_selected">Tylko obiekt i wybrane punkty</string>
     <string name="panorama_labels_selected">Tylko wybrane punkty</string>

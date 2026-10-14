@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <string name="panorama_labels_key_selected">فقط نقاط کلیدی و انتخاب‌شده</string>
     <string name="panorama_labels_all">همه</string>
     <string name="panorama_labels_objects_selected">فقط جرم و نقاط انتخاب‌شده</string>
     <string name="panorama_labels_selected">فقط نقاط انتخاب‌شده</string>

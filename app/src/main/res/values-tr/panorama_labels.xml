@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <string name="panorama_labels_key_selected">Yalnızca önemli ve seçili noktalar</string>
     <string name="panorama_labels_all">Tümü</string>
     <string name="panorama_labels_objects_selected">Yalnızca gök cismi ve seçilen noktalar</string>
     <string name="panorama_labels_selected">Yalnızca seçilen noktalar</string>

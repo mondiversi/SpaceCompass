@@ -67,7 +67,8 @@ internal fun rememberSpaceCompassPanoramaAction(timeMs: Long, latitude: Double?,
                 val position = SpaceCompassPanoramaPosition.fromStored(preferences?.getString(SPACE_COMPASS_PANORAMA_POSITION_KEY, null))
                 val labelMode = SpaceCompassPanoramaLabelMode.fromStored(
                     preferences?.getString(SPACE_COMPASS_PANORAMA_LABEL_MODE_KEY, null),
-                    preferences?.getBoolean(SPACE_COMPASS_PANORAMA_POINT_LABELS_KEY, true) ?: true)
+                    preferences?.takeIf { it.contains(SPACE_COMPASS_PANORAMA_POINT_LABELS_KEY) }
+                        ?.getBoolean(SPACE_COMPASS_PANORAMA_POINT_LABELS_KEY, true))
                 val center = SpaceCompassPanoramaCenter.fromStored(
                     preferences?.getString(SPACE_COMPASS_PANORAMA_CENTER_KEY, null), latitude)
                 val zone = if (simulated) TimeZone.getTimeZone(observationZone) else TimeZone.getDefault()

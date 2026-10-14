@@ -4,10 +4,55 @@ import org.junit.Assert.*
 import org.junit.Test
 
 class SpaceCompassPanoramaLabelModeTest {
+    @Test fun freshAndUnknownSettingsUseKeyPointsWhileExistingChoicesArePreserved() {
+        val mode = SpaceCompassPanoramaLabelMode.KEY_SELECTED
+        assertEquals(mode, SpaceCompassPanoramaLabelMode.DEFAULT)
+        assertEquals(mode, SpaceCompassPanoramaLabelMode.fromStored(null))
+        assertEquals(mode, SpaceCompassPanoramaLabelMode.fromStored("unknown"))
+        assertEquals(SpaceCompassPanoramaLabelMode.ALL, SpaceCompassPanoramaLabelMode.fromStored("all"))
+        assertEquals(SpaceCompassPanoramaLabelMode.NONE, SpaceCompassPanoramaLabelMode.fromStored(null, false))
+    }
+
+    @Test fun keyModeIncludesEveryObjectsEventsAndCurrentPointButOmitsUnselectedHours() {
+        val mode = SpaceCompassPanoramaLabelMode.KEY_SELECTED
+        for (active in SpaceCompassCelestialBody.entries) for (body in SpaceCompassCelestialBody.entries) {
+            val activeObject = active == body
+            for (event in SpaceCompassSunPathEvent.entries) {
+                val point = SpaceCompassSunPathPoint(1_000L, SpaceCompassSunPosition(15.0, -25.0), event)
+                assertEquals(event != SpaceCompassSunPathEvent.HOUR, mode.showsPathPoint(point, activeObject))
+            }
+            assertTrue(mode.showsCurrentPoint(activeObject))
+            assertTrue(mode.showsPoint(selected = true, activeObject = activeObject))
+            assertFalse(mode.showsPoint(selected = false, activeObject = activeObject))
+        }
+        assertFalse(mode.showsAll)
+        assertTrue(mode.showsSelected)
+    }
+
+    @Test fun anHourlyPointCoincidentWithAKeyEventKeepsItsLabel() {
+        val mode = SpaceCompassPanoramaLabelMode.KEY_SELECTED
+        for (event in SpaceCompassSunPathEvent.entries.filter { it != SpaceCompassSunPathEvent.HOUR }) {
+            val merged = SpaceCompassSunPathPoint(1_000L, SpaceCompassSunPosition(15.0, 0.0),
+                coincidentEvents = setOf(event))
+            assertTrue(mode.showsPathPoint(merged))
+        }
+    }
+
+    @Test fun existingModesRetainTheirEventAndCurrentRules() {
+        val hour = SpaceCompassSunPathPoint(1_000L, SpaceCompassSunPosition(15.0, 25.0))
+        val key = hour.copy(event = SpaceCompassSunPathEvent.CULMINATION)
+        for (active in listOf(false, true)) {
+            for (mode in SpaceCompassPanoramaLabelMode.entries.filter { it != SpaceCompassPanoramaLabelMode.KEY_SELECTED }) {
+                assertEquals(mode.showsPoint(false, active), mode.showsPathPoint(hour, active))
+                assertEquals(mode.showsPoint(false, active), mode.showsPathPoint(key, active))
+                assertEquals(mode.showsPoint(false, active), mode.showsCurrentPoint(active))
+            }
+        }
+    }
     @Test fun anUpgradeRetainsThePreviousSwitchChoice() {
         assertEquals(SpaceCompassPanoramaLabelMode.ALL, SpaceCompassPanoramaLabelMode.fromStored(null, true))
         assertEquals(SpaceCompassPanoramaLabelMode.NONE, SpaceCompassPanoramaLabelMode.fromStored(null, false))
-        assertEquals(SpaceCompassPanoramaLabelMode.ALL, SpaceCompassPanoramaLabelMode.fromStored(null))
+        assertEquals(SpaceCompassPanoramaLabelMode.KEY_SELECTED, SpaceCompassPanoramaLabelMode.fromStored(null))
     }
 
     @Test fun aSavedChoiceOverridesTheLegacySwitchInBothDirections() {

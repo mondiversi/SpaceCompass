@@ -8,11 +8,11 @@ import java.util.UUID
 
 /** Cache by profile, disclosure and labels so Save/Share cannot reuse a different label or disclosure variant. */
 internal fun prepareSpaceCompassPanoramaVariant(context: Context, data: SpaceCompassPanoramaPreviewData,
-    position: SpaceCompassPanoramaPosition, labelMode: SpaceCompassPanoramaLabelMode = data.snapshot?.labelMode ?: SpaceCompassPanoramaLabelMode.ALL,
+    position: SpaceCompassPanoramaPosition, labelMode: SpaceCompassPanoramaLabelMode = data.snapshot?.labelMode ?: SpaceCompassPanoramaLabelMode.DEFAULT,
     exportMode: SpaceCompassPanoramaExportMode = SpaceCompassPanoramaExportMode.INTERNATIONAL,
     center: SpaceCompassPanoramaCenter = data.snapshot?.center ?: SpaceCompassPanoramaCenter.SOUTH): File {
     if (exportMode == data.fileExportMode && position == data.position &&
-        labelMode == (data.snapshot?.labelMode ?: SpaceCompassPanoramaLabelMode.ALL) && center == (data.snapshot?.center ?: SpaceCompassPanoramaCenter.SOUTH)) return data.file
+        labelMode == (data.snapshot?.labelMode ?: SpaceCompassPanoramaLabelMode.DEFAULT) && center == (data.snapshot?.center ?: SpaceCompassPanoramaCenter.SOUTH)) return data.file
     val selected = if (exportMode == SpaceCompassPanoramaExportMode.SELECTED) requireNotNull(data.selectedPresentation) else null
     val snapshot = selected?.snapshot ?: requireNotNull(data.snapshot)
     val caption = selected?.caption ?: requireNotNull(data.captionData)

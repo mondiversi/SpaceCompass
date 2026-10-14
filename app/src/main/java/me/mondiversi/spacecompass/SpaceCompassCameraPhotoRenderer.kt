@@ -109,7 +109,7 @@ internal fun renderSpaceCompassCameraPhoto(context: Context, photo: SpaceCompass
                 val point = SpaceCompassSunScenePoint(it.x,it.y)
                 val markerTint = spaceCompassCelestialPathVisibilityTint(tint,marker.position.elevationDegrees<0).toArgb()
                 points+=Triple(marker,point,markerTint)
-                if (snapshot.labelMode.showsPoint(false, item.body == snapshot.activeBody) &&
+                if (snapshot.labelMode.showsPathPoint(marker, item.body == snapshot.activeBody) &&
                     !spaceCompassPanoramaPointSelected(selections, item.body, marker)) {
                     val time=snapshot.markerTimes[marker.timeMs] ?: formatSpaceCompassPanoramaExportTime(marker.timeMs,
                         snapshot.displayTimeZone,snapshot.formatting)
@@ -128,7 +128,7 @@ internal fun renderSpaceCompassCameraPhoto(context: Context, photo: SpaceCompass
             }
         }
         labels += observations.mapNotNull { (item,position) ->
-            if (!snapshot.labelMode.showsPoint(false, item.body == snapshot.activeBody) ||
+            if (!snapshot.labelMode.showsCurrentPoint(item.body == snapshot.activeBody) ||
                 selections.any { it.body == item.body && it.isCurrent }) null
             else position?.let(::projection)?.let { p ->
                 spaceCompassPanoramaCurrentLabel(snapshot, position, SpaceCompassSunScenePoint(p.x,p.y),

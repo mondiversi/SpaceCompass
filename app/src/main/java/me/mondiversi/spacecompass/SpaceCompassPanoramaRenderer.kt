@@ -13,7 +13,7 @@ internal data class SpaceCompassPanoramaSnapshot(val timeMs: Long, val latitude:
     val objects: List<SpaceCompassPanoramaObject>, val remote: SpaceCompassCelestialRemoteData,
     val caption: String, val cardinalNames: List<String>, val elevationNames: List<String>,
     val azimuthNames: List<String> = emptyList(), val markerTimes: Map<Long, String> = emptyMap(),
-    val labelMode: SpaceCompassPanoramaLabelMode = SpaceCompassPanoramaLabelMode.ALL, val observerPositionKnown: Boolean = true, val showSkyReferences: Boolean = SPACE_COMPASS_SKY_REFERENCES_DEFAULT,
+    val labelMode: SpaceCompassPanoramaLabelMode = SpaceCompassPanoramaLabelMode.DEFAULT, val observerPositionKnown: Boolean = true, val showSkyReferences: Boolean = SPACE_COMPASS_SKY_REFERENCES_DEFAULT,
     val formatting: SpaceCompassPanoramaFormatting = spaceCompassPanoramaInternationalFormatting,
     val referenceNames: Map<SpaceCompassSkyReference, String> = emptyMap(),
     val poleNames: Pair<String, String> = "North celestial pole" to "South celestial pole",
@@ -207,7 +207,7 @@ internal fun renderSpaceCompassPanorama(snapshot: SpaceCompassPanoramaSnapshot, 
                     for (x in listOf(p.x.toFloat(), p.x.toFloat() - sceneWidth, p.x.toFloat() + sceneWidth))
                         occupied += RectF(x - radius, p.y.toFloat() - radius, x + radius, p.y.toFloat() + radius)
                 }
-                if (!snapshot.labelMode.showsPoint(false, item.body == snapshot.activeBody) ||
+                if (!snapshot.labelMode.showsPathPoint(marker, item.body == snapshot.activeBody) ||
                     spaceCompassPanoramaPointSelected(selections, item.body, marker)) return@forEach
                 val time = snapshot.markerTimes[marker.timeMs] ?: formatSpaceCompassPanoramaExportTime(marker.timeMs,
                     snapshot.displayTimeZone,snapshot.formatting)
@@ -228,7 +228,7 @@ internal fun renderSpaceCompassPanorama(snapshot: SpaceCompassPanoramaSnapshot, 
             centers.forEach { drawSpaceCompassPanoramaEventMarker(canvas, marker.event, it, scale, tint) }
         }
         observations.forEach { (item, observation) ->
-            if (!snapshot.labelMode.showsPoint(false, item.body == snapshot.activeBody)) return@forEach
+            if (!snapshot.labelMode.showsCurrentPoint(item.body == snapshot.activeBody)) return@forEach
             val position = observation?.position ?: return@forEach
             if (selections.any { it.body == item.body && it.isCurrent }) return@forEach
             val point = spaceCompassPanoramaPoint(position, sceneWidth.toDouble(), sceneHeight.toDouble(), centerAzimuth)

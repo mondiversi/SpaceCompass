@@ -8,8 +8,8 @@ paths, inspect reference facts and view textured models. Space Compass is a stan
 
 ## Download and install
 
-Download **space-compass-1.3.5.apk** from the
-[Space Compass 1.3.5 release](https://github.com/mondiversi/SpaceCompass/releases/tag/v1.3.5).
+Download **space-compass-1.3.6.apk** from the
+[Space Compass 1.3.6 release](https://github.com/mondiversi/SpaceCompass/releases/tag/v1.3.6).
 Android 8.0 or newer is required. Open the APK and follow Android's installation
 prompts; allow installation for your browser or file manager if requested.
 
@@ -22,7 +22,7 @@ one manual APK update to acquire this feature.
 The release includes `SHA256SUMS.txt` and a signed update index. GitHub's source
 ZIP/TAR archives and Actions debug artifacts are separate from the signed APK.
 See [distribution and signing](docs/GITHUB_RELEASES.md) and
-[the 1.3.5 release audit](docs/RELEASE_1_3_5.md).
+[the 1.3.6 release audit](docs/RELEASE_1_3_6.md).
 
 ## Features
 
@@ -58,12 +58,13 @@ See [distribution and signing](docs/GITHUB_RELEASES.md) and
 - White reticle, existing-outline object focus/selection, a lighter daytime blue and stable bottom-right landscape capture. Collapsed landscape panels use a floating central title bar.
 - Stable ground, orbits and star background when returning from background; optically centred object arrows and a clear screensaver return hint.
 - Compact T+/T− hour/minute offsets shared by views and exports; orbit points behind translucent title/information overlays remain visible without being selectable.
+- Capture labels can show only key events and selected points across all objects; this is the default for fresh settings. Existing saved label choices remain intact.
 - Animated introduction, phone/tablet and portrait/landscape layouts.
 - Twenty interface languages, system-language fallback and regional/unit defaults.
 - Signed startup/manual GitHub updates with package, certificate, size and checksum verification.
 
 The application ID is `me.mondiversi.spacecompass`. The current stable version is
-**1.3.5**, with Android/update identity `1.3.5` and version code **33**.
+**1.3.6**, with Android/update identity `1.3.6` and version code **34**.
 This preserves the three-part update protocol used by existing preview installations.
 The app stores its preferences and caches privately.
 
@@ -125,7 +126,7 @@ Launcher/loading artwork and the fictional Easter-egg texture are original asset
 
 ## Data and graphics packages
 
-Release 1.3.5 also provides a reference-information ZIP and the current 18-image
+Release 1.3.6 also provides a reference-information ZIP and the current 18-image
 2K WebP graphics ZIP, both with file manifests and credits. They are optional
 archives: scientific reference data, all 20 languages, the star atlas and LV-426
 are already included in the APK. Planet maps and archival photographs are downloaded individually from

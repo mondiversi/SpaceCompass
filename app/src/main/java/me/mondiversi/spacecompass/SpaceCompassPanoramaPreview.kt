@@ -63,8 +63,8 @@ internal fun SpaceCompassPanoramaPreview(data: SpaceCompassPanoramaPreviewData, 
     var currentFile by remember(data.file) { mutableStateOf(data.file) }
     var currentPosition by remember(data.file) { mutableStateOf(data.position) }
     var requestedPosition by remember(data.file) { mutableStateOf(data.position) }
-    var currentLabelMode by remember(data.file) { mutableStateOf(data.snapshot?.labelMode ?: SpaceCompassPanoramaLabelMode.ALL) }
-    var requestedLabelMode by remember(data.file) { mutableStateOf(data.snapshot?.labelMode ?: SpaceCompassPanoramaLabelMode.ALL) }
+    var currentLabelMode by remember(data.file) { mutableStateOf(data.snapshot?.labelMode ?: SpaceCompassPanoramaLabelMode.DEFAULT) }
+    var requestedLabelMode by remember(data.file) { mutableStateOf(data.snapshot?.labelMode ?: SpaceCompassPanoramaLabelMode.DEFAULT) }
     var revision by remember(data.file) { mutableIntStateOf(0) }
     var preparationFailed by remember(data.file) { mutableStateOf(false) }
     var choosePosition by remember { mutableStateOf(false) }

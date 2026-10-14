@@ -338,3 +338,13 @@ and target coordinates; SceneInteraction reads the latest exclusions without
 restarting its pointer coroutine. Main title and information-island input shields
 absorb passive-surface taps while preserving child actions and drag scrolling.
 The full-scene decorative backdrop and free viewport projection stay separate.
+
+
+## Release 1.3.6: key-event capture labels
+
+PanoramaLabelMode owns shared path-event/current eligibility, including coincident
+events. KEY_SELECTED shows key events for all captured bodies and retains selected
+captions through the existing selection pipeline. Camera and panorama renderers
+use the same methods; variant keys keep each policy's generated image distinct.
+DEFAULT is independent of display order. Nullable legacy input distinguishes an
+absent preference from an explicitly saved on/off switch during upgrade.

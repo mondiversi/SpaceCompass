@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <string name="panorama_labels_key_selected">主要な点と選択した点のみ</string>
     <string name="panorama_labels_all">すべて</string>
     <string name="panorama_labels_objects_selected">天体と選択した点のみ</string>
     <string name="panorama_labels_selected">選択した点のみ</string>

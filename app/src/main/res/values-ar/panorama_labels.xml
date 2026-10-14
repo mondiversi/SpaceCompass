@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <string name="panorama_labels_key_selected">النقاط الرئيسية والمحددة فقط</string>
     <string name="panorama_labels_all">الكل</string>
     <string name="panorama_labels_objects_selected">الجسم والنقاط المحددة فقط</string>
     <string name="panorama_labels_selected">النقاط المحددة فقط</string>

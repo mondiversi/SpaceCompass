@@ -1,5 +1,13 @@
 # Changelog
 
+## 1.3.6 — 2026-10-14
+
+- Add Key and selected points only below All in the capture label picker. Show rise, culmination, minimum, set and current labels across all captured objects, plus explicitly selected points; omit unselected hourly labels.
+- Apply the same event/current policy to panoramas, camera photographs and exported image variants, including coincident hourly/key events.
+- Make key-point labels the default for fresh settings while preserving existing saved modes and legacy switch choices.
+- Translate the new option in all twenty languages and refine its Italian wording.
+- Preserve the existing in-app news text, image pack 1.1, credits, saved preferences and distribution identity.
+
 ## 1.3.5 — 2026-10-14
 
 - Display relative T+/T− offsets as compact hours and minutes (for example, T−3h27m) throughout the main view, daily paths, frozen photo/panorama labels and CSV/TXT exports. Clock times and time-zone offsets are unchanged.

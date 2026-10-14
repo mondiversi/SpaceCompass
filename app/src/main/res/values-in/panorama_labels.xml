@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <string name="panorama_labels_key_selected">Hanya titik utama dan yang dipilih</string>
     <string name="panorama_labels_all">Semua</string>
     <string name="panorama_labels_objects_selected">Hanya objek dan titik yang dipilih</string>
     <string name="panorama_labels_selected">Hanya titik yang dipilih</string>
