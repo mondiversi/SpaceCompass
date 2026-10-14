@@ -31,7 +31,7 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.compose.ui.unit.Constraints
 
-/** Compact object and compass/GPS islands use the same opaque surface as settings. */
+/** Main object and compass/GPS islands share the title overlay opacity and retain their layout space. */
 @Composable
 internal fun SpaceCompassSunFinderDataPanel(
     rows: List<SpaceCompassSunDataRow>, locationRows: List<SpaceCompassSunDataRow>,
@@ -97,7 +97,7 @@ private fun SpaceCompassSunFinderDataIsland(primaryText: Color, backgroundColor:
     tag: String, content: @Composable ColumnScope.() -> Unit) {
     val shape = RoundedCornerShape(20.dp)
     Column(Modifier.fillMaxWidth().testTag(tag).clip(shape)
-        .background(spaceCompassSettingsCardColor())
+        .background(spaceCompassSettingsCardColor().copy(alpha = SPACE_COMPASS_MAIN_OVERLAY_ALPHA))
         .padding(horizontal = 12.dp, vertical = if (compact) 8.dp else 10.dp),
         verticalArrangement = Arrangement.spacedBy(if (compact) 3.dp else 5.dp), content = content)
 }

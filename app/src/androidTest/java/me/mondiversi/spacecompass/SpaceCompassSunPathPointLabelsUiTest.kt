@@ -21,7 +21,7 @@ import kotlin.math.*
 import org.junit.Rule
 import org.junit.Test
 
-/** Synthetic positions only: event/ordinal labels must agree in the list, badge and selected panel. */
+/** Daily rows keep ordinal names; live bubbles show only named events above clock and countdown. */
 class SpaceCompassSunPathPointLabelsUiTest {
     @get:Rule val compose = createComposeRule()
     private val context = InstrumentationRegistry.getInstrumentation().targetContext
@@ -70,7 +70,10 @@ class SpaceCompassSunPathPointLabelsUiTest {
         for ((event, caption) in listOf(SpaceCompassSunPathEvent.SUNRISE to "Sorge",
                 SpaceCompassSunPathEvent.CULMINATION to "Culmine", SpaceCompassSunPathEvent.SUNSET to "Tramonta",
                 SpaceCompassSunPathEvent.MINIMUM to "Minimo")) {
-            compose.runOnIdle { state.select(path, markers.single { it.event == event }) }
+            compose.runOnIdle {
+                scene.value = path.copy(markers = listOf(markers.single { it.event == event }))
+                state.select(path, markers.single { it.event == event })
+            }
             compose.onNode(hasText(caption, substring = true) and hasAnyAncestor(hasTestTag("celestial-pinned-badge")))
                 .assertIsDisplayed()
         }
@@ -82,9 +85,9 @@ class SpaceCompassSunPathPointLabelsUiTest {
                 SpaceCompassSunPathEvent.CULMINATION to "Culmine", SpaceCompassSunPathEvent.SUNSET to "Tramonta",
                 SpaceCompassSunPathEvent.MINIMUM to "Minimo")) {
             compose.runOnIdle { scene.value = path.copy(markers = listOf(hour.copy(event = event))) }
-            compose.onNodeWithTag("celestial-badge-caption").assertTextContains(caption).assertTextContains("12:00")
-                .assertIsDisplayed()
-            compose.onNodeWithTag("celestial-badge-body").assertTextEquals("Sole")
+            compose.onNodeWithTag("celestial-badge-event").assertTextEquals(caption).assertIsDisplayed()
+            compose.onNodeWithTag("celestial-badge-caption").assertTextContains("12:00").assertTextContains("T+00:00")
+            compose.onNodeWithTag("celestial-badge-body").assertDoesNotExist()
         }
     }
 
@@ -94,8 +97,8 @@ class SpaceCompassSunPathPointLabelsUiTest {
                 SpaceCompassSunPathEvent.CULMINATION to "Culmine", SpaceCompassSunPathEvent.SUNSET to "Tramonta",
                 SpaceCompassSunPathEvent.MINIMUM to "Minimo")) {
             compose.runOnIdle { scene.value = path.copy(markers = listOf(hour, hour.copy(event = event))) }
-            compose.onNodeWithTag("celestial-badge-caption").assertTextContains(caption).assertTextContains("12:00")
-                .assertIsDisplayed()
+            compose.onNodeWithTag("celestial-badge-event").assertTextEquals(caption).assertIsDisplayed()
+            compose.onNodeWithTag("celestial-badge-caption").assertTextContains("12:00").assertTextContains("T+00:00")
         }
     }
 
@@ -104,18 +107,24 @@ class SpaceCompassSunPathPointLabelsUiTest {
         compose.runOnIdle { state.selectCurrent(path.body, hour, path) }
         compose.onNode(hasText(resources.getString(R.string.celestial_point_current), substring = true) and hasAnyAncestor(hasTestTag("celestial-pinned-badge"))).assertIsDisplayed()
         compose.runOnIdle { state.select(path, hour) }
-        compose.onNode(hasText("Punto 12", substring = true) and hasAnyAncestor(hasTestTag("celestial-pinned-badge")))
-            .assertIsDisplayed()
+        compose.onAllNodesWithTag("celestial-pinned-badge").assertCountEquals(1)
+        compose.onNodeWithTag("celestial-badge-event").assertTextEquals(resources.getString(R.string.celestial_point_current))
+        compose.onAllNodesWithTag("celestial-pinned-caption").assertCountEquals(1)
+        compose.runOnIdle { org.junit.Assert.assertEquals(2, state.selectedPoints.size) }
+        compose.onNodeWithText("Punto 12", substring = true).assertDoesNotExist()
     }
 
-    @Test fun anotherBodyKeepsItsOwnNameInBadgeAndSelectedRegularEventAndCurrentCaptions() {
+    @Test fun anotherBodyUsesClockOnlyForRegularPointsAndKeepsEventAndCurrentHeadings() {
         val moon = path.copy(body = SpaceCompassCelestialBody.MOON)
-        scene.value = moon
+        scene.value = moon.copy(markers = listOf(hour))
         open()
-        compose.onNodeWithTag("celestial-badge-body").assertTextEquals("Luna")
-        for ((point, caption) in listOf(hour to "Punto 12",
-                hour.copy(event = SpaceCompassSunPathEvent.CULMINATION) to "Culmine")) {
-            compose.runOnIdle { state.select(moon, point) }
+        compose.onNodeWithTag("celestial-badge-body").assertDoesNotExist()
+        compose.onNodeWithTag("celestial-badge-event").assertDoesNotExist()
+        compose.runOnIdle { state.select(moon, hour) }
+        compose.onNodeWithTag("celestial-pinned-caption").assertTextContains("12:00").assertTextContains("T+00:00")
+        compose.runOnIdle { state.clearSelection() }
+        for ((point, caption) in listOf(hour.copy(event = SpaceCompassSunPathEvent.CULMINATION) to "Culmine")) {
+            compose.runOnIdle { scene.value = moon.copy(markers = listOf(point)); state.select(moon, point) }
             compose.onNode(hasText(caption, substring = true) and hasAnyAncestor(hasTestTag("celestial-pinned-badge"))).assertIsDisplayed()
         }
         compose.runOnIdle { state.selectCurrent(moon.body, hour, moon) }
@@ -127,8 +136,8 @@ class SpaceCompassSunPathPointLabelsUiTest {
         val merged = mergeCoincidentSpaceCompassPathEvents(listOf(hour,
             hour.copy(event = SpaceCompassSunPathEvent.SUNRISE), hour.copy(event = SpaceCompassSunPathEvent.MINIMUM)))
         compose.runOnIdle { scene.value = path.copy(markers = merged) }
-        compose.onNodeWithTag("celestial-badge-caption").assertTextContains("Minimo · Sorge").assertTextContains("12:00")
-            .assertIsDisplayed()
+        compose.onNodeWithTag("celestial-badge-event").assertTextEquals("Minimo · Sorge").assertIsDisplayed()
+        compose.onNodeWithTag("celestial-badge-caption").assertTextContains("12:00").assertTextContains("T+00:00")
         compose.onNodeWithTag("sun-path-open").performClick()
         compose.onNodeWithText("Minimo · Sorge · 12:00").performScrollTo().assertIsDisplayed()
     }

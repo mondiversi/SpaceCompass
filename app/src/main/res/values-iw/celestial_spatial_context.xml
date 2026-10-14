@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="celestial_section_identity">זהות</string>
+    <string name="celestial_section_identity">שם וסוג</string>
     <string name="celestial_section_physical">תכונות פיזיקליות</string>
     <string name="celestial_section_stellar">אור ורכיבים</string>
     <string name="celestial_section_atmosphere">טמפרטורה ואטמוספרה</string>

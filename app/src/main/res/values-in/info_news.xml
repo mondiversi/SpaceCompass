@@ -1,9 +1,9 @@
 <resources>
     <string name="info_news_title">Perubahan terbaru · %1$s</string>
-    <string name="info_news_star_sky" formatted="false">Pilih beberapa titik orbit, biarkan labelnya terbuka, dan ubah pilihan yang sama di lintasan harian.</string>
-    <string name="info_news_texture_downloads" formatted="false">Ekspor gambar, CSV, atau TXT yang mudah dibaca dari tangkapan, lintasan harian, dan Observatorium; simpan atau bagikan.</string>
-    <string name="info_news_weather" formatted="false">Privasi lokasi juga berlaku untuk tabel: lintasan dimulai dengan Area saja; waktu memakai UTC saat lokasi disembunyikan.</string>
-    <string name="info_news_viewer_zoom" formatted="false">Observatorium mengelompokkan identitas, data fisik, suhu, data orbit, dan konteks ruang.</string>
-    <string name="info_news_settings" formatted="false">Skala sudut di empat sisi, detail tangkapan ringkas, dan label waktu/T± lebih jelas pada foto dan panorama.</string>
-    <string name="info_news_catalog" formatted="false">Pilihan label dan kontrol tangkapan disempurnakan; kartu informasi buram pada tema terang dan gelap.</string>
+    <string name="info_news_star_sky" formatted="false">Titik di bidikan menampilkan waktu dan T± berdampingan, tanpa balon permanen pada titik terpilih lainnya.</string>
+    <string name="info_news_texture_downloads" formatted="false">Pratinjau foto dan panorama memiliki bilah judul dengan Kembali dan Ekspor serta kontrol di bagian atas.</string>
+    <string name="info_news_weather" formatted="false">Gambar menyertakan legenda warna objek; foto menampilkan rincian lebih besar dalam beberapa baris pada pita hitam terpisah.</string>
+    <string name="info_news_viewer_zoom" formatted="false">Kontrol label dan posisi menunjukkan status aktif dengan lebih jelas; arah panorama tetap menjadi pilihan terpisah.</string>
+    <string name="info_news_settings" formatted="false">Kartu tampilan utama memperlihatkan lintasan dan objek di belakangnya, dengan bidikan tetap di tengah area langit yang bebas.</string>
+    <string name="info_news_catalog" formatted="false">Bagian pertama Observatorium kini bernama Nama dan jenis. Pengaturan tersimpan dan privasi lokasi dipertahankan.</string>
 </resources>

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="celestial_section_identity">Utambulisho</string>
+    <string name="celestial_section_identity">Jina na aina</string>
     <string name="celestial_section_physical">Sifa za kifizikia</string>
     <string name="celestial_section_stellar">Mwanga na vipengele</string>
     <string name="celestial_section_atmosphere">Halijoto na angahewa</string>

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="celestial_section_identity">الهوية</string>
+    <string name="celestial_section_identity">الاسم والنوع</string>
     <string name="celestial_section_physical">الخصائص الفيزيائية</string>
     <string name="celestial_section_stellar">الضوء والمكوّنات</string>
     <string name="celestial_section_atmosphere">الحرارة والغلاف الجوي</string>

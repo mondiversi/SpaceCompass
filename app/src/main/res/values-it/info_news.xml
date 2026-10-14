@@ -1,9 +1,9 @@
 <resources>
     <string name="info_news_title">Ultime novità · %1$s</string>
-    <string name="info_news_star_sky" formatted="false">Seleziona più punti delle orbite, mantieni aperte le etichette e gestisci la stessa selezione nel percorso giornaliero.</string>
-    <string name="info_news_texture_downloads" formatted="false">Esporta immagini, CSV o TXT leggibili da scatti, percorsi giornalieri e Osservatorio; salva o condividi.</string>
-    <string name="info_news_weather" formatted="false">Privacy della posizione anche nelle tabelle: i percorsi partono da Solo zona; con Nascosta gli orari sono in UTC.</string>
-    <string name="info_news_viewer_zoom" formatted="false">L’Osservatorio raggruppa identità, dati fisici, temperature, dati orbitali e contesto spaziale.</string>
-    <string name="info_news_settings" formatted="false">Scale angolari sui quattro lati, informazioni compatte e indicazioni di ora/T± più chiare nelle foto e nei panorami.</string>
-    <string name="info_news_catalog" formatted="false">Scelte delle etichette e comandi di scatto migliorati; isole informative opache nei temi chiaro e scuro.</string>
+    <string name="info_news_star_sky" formatted="false">I fumetti dei punti nel mirino mostrano ora e T± affiancati, senza fumetti permanenti sugli altri punti selezionati.</string>
+    <string name="info_news_texture_downloads" formatted="false">Le anteprime di foto e panoramiche hanno una barra con Indietro ed Esporta e i comandi allineati in alto.</string>
+    <string name="info_news_weather" formatted="false">Le immagini includono una legenda degli oggetti; le foto hanno dati più grandi su più righe in una fascia nera separata.</string>
+    <string name="info_news_viewer_zoom" formatted="false">I comandi di etichette e posizione indicano meglio lo stato attivo; la direzione della panoramica resta una scelta separata.</string>
+    <string name="info_news_settings" formatted="false">Le isole della schermata principale lasciano vedere orbite e oggetti, mantenendo il mirino centrato nella zona libera del cielo.</string>
+    <string name="info_news_catalog" formatted="false">La prima sezione dell’Osservatorio si chiama Nome e tipo. Impostazioni salvate e privacy della posizione sono mantenute.</string>
 </resources>

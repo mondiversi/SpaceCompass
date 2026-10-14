@@ -1,9 +1,9 @@
 <resources>
     <string name="info_news_title">最近の変更 · %1$s</string>
-    <string name="info_news_star_sky" formatted="false">複数の軌道上の点を選択してラベルを表示し、日ごとの経路でも同じ選択を切り替えられます。</string>
-    <string name="info_news_texture_downloads" formatted="false">撮影画像、日ごとの経路、観測所から画像・CSV・読みやすいTXTをエクスポートして保存・共有できます。</string>
-    <string name="info_news_weather" formatted="false">表にも位置のプライバシーを適用。経路は地域のみが初期値で、位置を非表示にすると時刻はUTCになります。</string>
-    <string name="info_news_viewer_zoom" formatted="false">観測所では識別情報、物理データ、温度、軌道データ、空間情報を分類して表示します。</string>
-    <string name="info_news_settings" formatted="false">写真とパノラマの四辺に角度目盛りを表示。撮影情報をコンパクトにし、時刻/T±ラベルを見やすくしました。</string>
-    <string name="info_news_catalog" formatted="false">ラベルの選択肢と撮影操作を改善。ライト・ダーク両テーマの情報カードを不透明にしました。</string>
+    <string name="info_news_star_sky" formatted="false">照準内の点は時刻とT±を横並びで表示し、ほかの選択済みの点には吹き出しを常時表示しません。</string>
+    <string name="info_news_texture_downloads" formatted="false">写真とパノラマのプレビューに戻る・エクスポート付きのタイトルバーを追加し、操作ボタンを上部に配置しました。</string>
+    <string name="info_news_weather" formatted="false">画像に天体の色分け凡例を追加し、写真の情報は独立した黒い帯に大きな文字で折り返して表示します。</string>
+    <string name="info_news_viewer_zoom" formatted="false">ラベルと位置情報の操作は有効状態が分かりやすくなり、パノラマの方角は個別に選択できます。</string>
+    <string name="info_news_settings" formatted="false">メイン画面のカード越しに軌道や天体が見え、照準は空の空いている領域の中央に保たれます。</string>
+    <string name="info_news_catalog" formatted="false">観測所の最初の項目を「名前と種類」に変更しました。保存済み設定と位置情報のプライバシーは維持されます。</string>
 </resources>

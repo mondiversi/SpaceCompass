@@ -13,4 +13,6 @@
     <string name="panorama_southeast" formatted="false">남동</string>
     <string name="panorama_southwest" formatted="false">남서</string>
     <string name="panorama_northwest" formatted="false">북서</string>
+    <string name="panorama_preview_title" formatted="false">파노라마</string>
+    <string name="camera_capture_preview_title" formatted="false">사진</string>
 </resources>

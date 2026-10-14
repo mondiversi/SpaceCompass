@@ -1,9 +1,9 @@
 <resources>
     <string name="info_news_title">Mambo mapya · %1$s</string>
-    <string name="info_news_star_sky" formatted="false">Chagua nukta nyingi za mizunguko, acha lebo zao wazi na ubadilishe uteuzi huo katika njia ya kila siku.</string>
-    <string name="info_news_texture_downloads" formatted="false">Hamisha picha, CSV au TXT inayosomeka kutoka picha, njia za kila siku na Kituo cha Uchunguzi; hifadhi au shiriki.</string>
-    <string name="info_news_weather" formatted="false">Faragha ya eneo pia kwenye jedwali: njia huanza na eneo la jumla tu; eneo likifichwa, saa hutumia UTC.</string>
-    <string name="info_news_viewer_zoom" formatted="false">Kituo cha Uchunguzi kinapanga utambulisho, data za kimwili, halijoto, data za mizunguko na muktadha wa anga.</string>
-    <string name="info_news_settings" formatted="false">Vipimo vya pembe katika pande nne, taarifa fupi za picha na lebo wazi zaidi za saa/T± kwenye picha na panorama.</string>
-    <string name="info_news_catalog" formatted="false">Chaguo za lebo na vidhibiti vya picha zimeboreshwa; visanduku visivyo na uwazi katika mandhari angavu na nyeusi.</string>
+    <string name="info_news_star_sky" formatted="false">Nukta zilizo kwenye kilengio huonyesha saa na T± pamoja, bila madokezo ya kudumu kwenye nukta nyingine zilizochaguliwa.</string>
+    <string name="info_news_texture_downloads" formatted="false">Muhtasari wa picha na panorama una upau wa kichwa wenye Rudi na Hamisha, na vidhibiti viko juu.</string>
+    <string name="info_news_weather" formatted="false">Picha zina ufafanuzi wa rangi za vitu; maelezo ya picha yana maandishi makubwa ya mistari kadhaa kwenye ukanda mweusi tofauti.</string>
+    <string name="info_news_viewer_zoom" formatted="false">Vidhibiti vya lebo na mahali vinaonyesha hali inayotumika wazi zaidi; mwelekeo wa panorama unabaki chaguo tofauti.</string>
+    <string name="info_news_settings" formatted="false">Kadi kuu huonyesha njia na vitu vilivyo nyuma yake, huku kilengio kikibaki katikati ya eneo huru la anga.</string>
+    <string name="info_news_catalog" formatted="false">Sehemu ya kwanza ya Kituo cha uchunguzi sasa inaitwa Jina na aina. Mipangilio iliyohifadhiwa na faragha ya mahali vinabaki.</string>
 </resources>

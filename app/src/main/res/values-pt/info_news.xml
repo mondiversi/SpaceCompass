@@ -1,9 +1,9 @@
 <resources>
     <string name="info_news_title">Últimas novidades · %1$s</string>
-    <string name="info_news_star_sky" formatted="false">Selecione vários pontos orbitais, mantenha as etiquetas abertas e altere a mesma seleção no percurso diário.</string>
-    <string name="info_news_texture_downloads" formatted="false">Exporte imagens, CSV ou TXT legível de capturas, percursos diários e do Observatório; guarde ou partilhe.</string>
-    <string name="info_news_weather" formatted="false">Privacidade da posição também nas tabelas: os percursos começam só com a região; ao ocultar, as horas usam UTC.</string>
-    <string name="info_news_viewer_zoom" formatted="false">O Observatório agrupa identidade, dados físicos, temperaturas, dados orbitais e contexto espacial.</string>
-    <string name="info_news_settings" formatted="false">Escalas angulares nos quatro lados, dados de captura compactos e etiquetas de hora/T± mais claras em fotos e panoramas.</string>
-    <string name="info_news_catalog" formatted="false">Opções de etiquetas e comandos de captura melhorados; cartões opacos nos temas claro e escuro.</string>
+    <string name="info_news_star_sky" formatted="false">Os pontos na mira mostram hora e T± lado a lado, sem balões permanentes nos outros pontos selecionados.</string>
+    <string name="info_news_texture_downloads" formatted="false">As prévias de fotos e panoramas têm uma barra de título com Voltar e Exportar e controles alinhados no topo.</string>
+    <string name="info_news_weather" formatted="false">As imagens incluem uma legenda de cores dos objetos; as fotos mostram dados maiores em várias linhas numa faixa preta separada.</string>
+    <string name="info_news_viewer_zoom" formatted="false">Os controles de rótulos e posição mostram melhor o estado ativo; a direção do panorama continua uma escolha separada.</string>
+    <string name="info_news_settings" formatted="false">Os cartões principais deixam ver trajetórias e objetos, mantendo a mira centralizada na área livre do céu.</string>
+    <string name="info_news_catalog" formatted="false">A primeira seção do Observatório chama-se Nome e tipo. As configurações salvas e a privacidade da posição são mantidas.</string>
 </resources>

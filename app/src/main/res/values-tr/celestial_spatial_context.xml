@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="celestial_section_identity">Kimlik</string>
+    <string name="celestial_section_identity">Ad ve tür</string>
     <string name="celestial_section_physical">Fiziksel özellikler</string>
     <string name="celestial_section_stellar">Işık ve bileşenler</string>
     <string name="celestial_section_atmosphere">Sıcaklık ve atmosfer</string>

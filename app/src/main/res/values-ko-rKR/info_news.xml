@@ -1,9 +1,9 @@
 <resources>
     <string name="info_news_title">최근 변경 사항 · %1$s</string>
-    <string name="info_news_star_sky" formatted="false">여러 궤도 지점을 선택하고 라벨을 계속 표시하며 일일 경로에서도 같은 선택을 변경할 수 있습니다.</string>
-    <string name="info_news_texture_downloads" formatted="false">촬영 화면, 일일 경로, 관측소에서 이미지, CSV 또는 읽기 쉬운 TXT를 내보내 저장하거나 공유하세요.</string>
-    <string name="info_news_weather" formatted="false">표에도 위치 개인정보 설정 적용: 경로는 지역만 표시로 시작하며 위치를 숨기면 시각은 UTC로 표시됩니다.</string>
-    <string name="info_news_viewer_zoom" formatted="false">관측소가 식별 정보, 물리 데이터, 온도, 궤도 데이터와 공간 정보를 구분해 표시합니다.</string>
-    <string name="info_news_settings" formatted="false">사진과 파노라마의 네 면에 각도 눈금 표시, 간결한 촬영 정보와 더 명확한 시각/T± 라벨.</string>
-    <string name="info_news_catalog" formatted="false">라벨 선택과 촬영 조작 개선; 밝은 테마와 어두운 테마 모두 불투명한 정보 카드 사용.</string>
+    <string name="info_news_star_sky" formatted="false">조준점에 있는 지점은 시간과 T±를 나란히 표시하며, 다른 선택 지점에는 말풍선을 계속 표시하지 않습니다.</string>
+    <string name="info_news_texture_downloads" formatted="false">사진과 파노라마 미리보기에 뒤로 및 내보내기가 있는 제목 표시줄을 추가하고 조작 버튼을 위쪽에 배치했습니다.</string>
+    <string name="info_news_weather" formatted="false">이미지에 천체 색상 범례를 추가했으며, 사진 정보는 별도의 검은 띠에 더 큰 글씨로 줄바꿈하여 표시합니다.</string>
+    <string name="info_news_viewer_zoom" formatted="false">라벨과 위치 조작 버튼의 활성 상태가 더 명확해졌으며, 파노라마 방향은 별도로 선택합니다.</string>
+    <string name="info_news_settings" formatted="false">메인 화면 카드 뒤로 경로와 천체가 보이고 조준점은 하늘의 빈 영역 중앙에 유지됩니다.</string>
+    <string name="info_news_catalog" formatted="false">관측소의 첫 번째 구역 이름은 이제 이름 및 유형입니다. 저장된 설정과 위치 개인정보 보호는 유지됩니다.</string>
 </resources>

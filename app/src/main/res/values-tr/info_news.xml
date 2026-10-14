@@ -1,9 +1,9 @@
 <resources>
     <string name="info_news_title">Son yenilikler · %1$s</string>
-    <string name="info_news_star_sky" formatted="false">Birden fazla yörünge noktası seçin, etiketlerini açık tutun ve günlük yolda aynı seçimi değiştirin.</string>
-    <string name="info_news_texture_downloads" formatted="false">Çekimlerden, günlük yollardan ve Gözlemevinden görüntü, CSV veya okunabilir TXT dışa aktarın; kaydedin ya da paylaşın.</string>
-    <string name="info_news_weather" formatted="false">Konum gizliliği tablolarda da geçerli: yollar yalnızca bölgeyle başlar; konum gizlendiğinde saatler UTC kullanır.</string>
-    <string name="info_news_viewer_zoom" formatted="false">Gözlemevi kimlik, fiziksel veriler, sıcaklıklar, yörünge verileri ve uzamsal bağlamı gruplar.</string>
-    <string name="info_news_settings" formatted="false">Fotoğraf ve panoramalarda dört kenarda açı ölçekleri, kısa çekim bilgileri ve daha net saat/T± etiketleri.</string>
-    <string name="info_news_catalog" formatted="false">İyileştirilmiş etiket seçenekleri ve çekim kontrolleri; açık ve koyu temalarda opak bilgi kartları.</string>
+    <string name="info_news_star_sky" formatted="false">Nişangahtaki noktalar saati ve T± değerini yan yana gösterir; diğer seçili noktalarda kalıcı baloncuklar görünmez.</string>
+    <string name="info_news_texture_downloads" formatted="false">Fotoğraf ve panorama önizlemelerinde Geri ve Dışa aktar düğmeli başlık çubuğu vardır; kontroller üstte hizalanır.</string>
+    <string name="info_news_weather" formatted="false">Görüntülerde nesne renk açıklaması bulunur; fotoğraf bilgileri ayrı siyah şeritte daha büyük ve çok satırlı gösterilir.</string>
+    <string name="info_news_viewer_zoom" formatted="false">Etiket ve konum kontrolleri etkin durumu daha açık gösterir; panorama yönü ayrı bir seçim olarak kalır.</string>
+    <string name="info_news_settings" formatted="false">Ana kartların arkasındaki yollar ve nesneler görünür; nişangah gökyüzünün boş alanının ortasında kalır.</string>
+    <string name="info_news_catalog" formatted="false">Gözlemevinin ilk bölümü artık Ad ve tür olarak adlandırılır. Kayıtlı ayarlar ve konum gizliliği korunur.</string>
 </resources>

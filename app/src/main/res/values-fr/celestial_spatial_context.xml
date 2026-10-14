@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="celestial_section_identity">Identité</string>
+    <string name="celestial_section_identity">Nom et type</string>
     <string name="celestial_section_physical">Propriétés physiques</string>
     <string name="celestial_section_stellar">Lumière et composantes</string>
     <string name="celestial_section_atmosphere">Température et atmosphère</string>

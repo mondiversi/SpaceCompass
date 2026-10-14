@@ -85,7 +85,8 @@ internal fun SpaceCompassSunPointingViewport(
     topStartActions: @Composable (Modifier) -> Unit = {},
     topEndActions: @Composable (Modifier) -> Unit = {},
     topContentInset: androidx.compose.ui.unit.Dp = 0.dp,
-    projectionTopInset: androidx.compose.ui.unit.Dp = 0.dp
+    projectionTopInset: androidx.compose.ui.unit.Dp = 0.dp,
+    drawScene: Boolean = true
 ) {
     BoxWithConstraints(modifier.testTag("sun-finder-sky").semantics { contentDescription = description }) {
         val density = LocalDensity.current
@@ -179,8 +180,8 @@ internal fun SpaceCompassSunPointingViewport(
             listOf(SpaceCompassSunSceneFrame(reticleCenter.x - radius, reticleCenter.y - radius, radius * 2, radius * 2))
         }
         SpaceCompassSkyReferenceLayer(observerLatitude, timeMs, orientation.takeIf { compassReliable }, scenePerspective,
-            guideExclusions, enabled = showSkyReferences, observerAltitude = observerAltitude) {
-            paths.forEach { (candidate, path) -> key(candidate) {
+            guideExclusions, enabled = showSkyReferences && drawScene, observerAltitude = observerAltitude) {
+            if (drawScene) paths.forEach { (candidate, path) -> key(candidate) {
                 SpaceCompassSunDailyPathLayer(path, orientation.takeIf { compassReliable }, dailyPathUiState,
                     primaryText, secondaryText, backgroundColor, showActions = false,
                     interactive = false, pathTint = spaceCompassCelestialPathTint(candidate),

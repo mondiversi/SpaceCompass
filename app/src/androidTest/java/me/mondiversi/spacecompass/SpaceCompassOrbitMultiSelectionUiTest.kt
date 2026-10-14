@@ -60,24 +60,24 @@ class SpaceCompassOrbitMultiSelectionUiTest {
     @Test fun tapsPinMultiplePointsFromMultipleOrbitsAndNeverOpenTheDailyPage() {
         show(); tap(sun.markers[0]); tap(sun.markers[1]); tap(moon.markers[0])
         compose.onNodeWithTag("sun-path-page").assertDoesNotExist()
-        compose.onAllNodesWithTag("celestial-pinned-badge").assertCountEquals(3)
+        compose.onAllNodesWithTag("celestial-pinned-badge").assertCountEquals(0)
         compose.runOnIdle { assertEquals(3, state.selectedPoints.size) }
         tap(sun.markers[0])
-        compose.onAllNodesWithTag("celestial-pinned-badge").assertCountEquals(2)
+        compose.onAllNodesWithTag("celestial-pinned-badge").assertCountEquals(0)
         compose.runOnIdle { assertTrue(state.isSelected(sun, sun.markers[1])); assertTrue(state.isSelected(moon, moon.markers[0])) }
     }
-    @Test fun removingOneDailyRowRemovesOnlyItsPinnedCaptionWhenReturningToTheSky() {
+    @Test fun removingOneDailyRowPreservesOtherSelectionsWithoutPermanentSkyCaptions() {
         show(); tap(sun.markers[0]); tap(sun.markers[1]); tap(moon.markers[0])
         compose.runOnIdle { state.openMenu(sun) }
         compose.onNodeWithTag("sun-path-point-0").assertIsSelected().performClick().assertIsNotSelected()
         compose.onNodeWithTag("sun-path-point-1").assertIsSelected()
         compose.runOnIdle { state.closeMenu() }
-        compose.onAllNodesWithTag("celestial-pinned-badge").assertCountEquals(2)
+        compose.onAllNodesWithTag("celestial-pinned-badge").assertCountEquals(0)
         compose.runOnIdle { assertTrue(state.isSelected(moon, moon.markers[0])); state.openMenu(sun) }
         compose.onNodeWithTag("sun-path-point-0").assertIsNotSelected()
         compose.onNodeWithTag("sun-path-point-1").assertIsSelected()
     }
-    @Test fun markerCentersUseTheDayAndNightAccentWhilePinnedCaptionsAvoidEachOther() {
+    @Test fun selectedMarkersKeepTheDayAndNightAccentWithoutPermanentCaptions() {
         show(); tap(sun.markers[0]); tap(sun.markers[1]); tap(moon.markers[0])
         for (night in listOf(false, true)) {
             compose.runOnIdle { dark.value = night }
@@ -86,9 +86,9 @@ class SpaceCompassOrbitMultiSelectionUiTest {
             val bitmap = compose.onNodeWithTag("sun-finder-sky").captureToImage().asAndroidBitmap()
             val actual = bitmap.getPixel(projected.x.roundToInt(), projected.y.roundToInt())
             assertEquals((if (night) Color(0xFF55C8DB) else Color(0xFF176B88)).toArgb(), actual)
-            val boxes = compose.onAllNodesWithTag("celestial-pinned-badge").fetchSemanticsNodes().map { it.boundsInRoot }
-            assertEquals(3, boxes.size)
-            boxes.forEachIndexed { i, a -> boxes.drop(i + 1).forEach { b -> assertFalse(a.overlaps(b)) } }
+            compose.onAllNodesWithTag("celestial-pinned-badge").assertCountEquals(0)
+            compose.onAllNodesWithTag("celestial-time-badge").assertCountEquals(0)
+            compose.runOnIdle { assertEquals(3, state.selectedPoints.size) }
         }
     }
 }

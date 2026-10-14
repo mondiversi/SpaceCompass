@@ -210,7 +210,7 @@ class SpaceCompassPanoramaAndroidTest {
         } finally { uri?.let { context.contentResolver.delete(it, null, null) }; file.delete() }
     }
 
-    @Test fun compactCaptionKeepsOneLineAndTheAngularSceneHasNoFooter() {
+    @Test fun compactCaptionKeepsOneLineAndTheLegendStaysBelowTheAngularScene() {
         val caption = "Space Compass · 05/10/26 · 20:32 CEST · Zinasco, Lombardia, Italia · " +
             "45.106887° N · 8.999557° E (±20 m) · GPS altitude 118 m · Partly cloudy (53%)"
         for (value in listOf("Space Compass", caption, caption.repeat(2), "Space Compass · المدينة، البلد · غائم جزئياً (53%)")) {
@@ -218,7 +218,7 @@ class SpaceCompassPanoramaAndroidTest {
             try {
                 val heading = prepareSpaceCompassCaptureCaption(value,1024)
                 val sceneTop = spaceCompassPanoramaSceneTop(heading,1024)
-                assertEquals(512 + sceneTop.toInt(),bitmap.height)
+                assertTrue("The legend sits below the unchanged 180 degree scene", bitmap.height > 512 + sceneTop.toInt())
                 val bounds = heading.draw(Canvas(bitmap))
                 assertTrue(bounds.left >= 0 && bounds.right <= 1024)
                 assertTrue(bounds.top > 0)
@@ -232,5 +232,25 @@ class SpaceCompassPanoramaAndroidTest {
         }
     }
 
+
+    @Test fun photographMetadataWrapsWithoutCoveringOrBlendingWithTheImage() {
+        val short = prepareSpaceCompassCameraCaptureCaption("Space Compass",1080,1920)
+        val long = prepareSpaceCompassCameraCaptureCaption(
+            "Space Compass · 14/10/26 · 20:32 UTC+02:00 · Zinasco, Lombardia, Italia · " +
+                "45.106887° N · 8.999557° E (±20 m) · GPS altitude 118 m · Partly cloudy (53%) · " +
+                "Direction 180° · Inclination 25° · Field of view 75° × 50°",1080,1920)
+        assertTrue("Extra metadata wraps into a taller band instead of reducing text size",long.height > short.height)
+        val bitmap = Bitmap.createBitmap(1080,long.height+10,Bitmap.Config.ARGB_8888)
+        try {
+            val canvas = Canvas(bitmap)
+            canvas.drawColor(Color.MAGENTA)
+            val bounds = long.draw(canvas)
+            assertEquals(Color.BLACK,bitmap.getPixel(0,0))
+            assertEquals(Color.BLACK,bitmap.getPixel(1079,long.height-1))
+            assertEquals("Drawing the band leaves the photo below it intact",Color.MAGENTA,bitmap.getPixel(0,long.height+1))
+            assertTrue(bounds.left>=0 && bounds.right<=1080)
+            assertEquals(long.height/2f,bounds.centerY(),.001f)
+        } finally { bitmap.recycle() }
+    }
 
 }

@@ -1,9 +1,9 @@
 <resources>
     <string name="info_news_title">最新变化 · %1$s</string>
-    <string name="info_news_star_sky" formatted="false">选择多个轨道点并保持标签显示，在每日路径中也能切换同一组选择。</string>
-    <string name="info_news_texture_downloads" formatted="false">从拍摄画面、每日路径和观测站导出图片、CSV或易读TXT，保存或分享。</string>
-    <string name="info_news_weather" formatted="false">表格也支持位置隐私：路径默认仅显示地区；隐藏位置时，时间使用UTC。</string>
-    <string name="info_news_viewer_zoom" formatted="false">观测站按身份、物理数据、温度、轨道数据和空间背景分组展示。</string>
-    <string name="info_news_settings" formatted="false">照片和全景的四边均有角度刻度，拍摄信息更紧凑，时间/T±标签更清晰。</string>
-    <string name="info_news_catalog" formatted="false">改进标签选项与拍摄控件；浅色和深色主题均使用不透明信息卡片。</string>
+    <string name="info_news_star_sky" formatted="false">准星中的轨道点并排显示时间和T±，其他已选点不再常驻显示气泡。</string>
+    <string name="info_news_texture_downloads" formatted="false">照片和全景预览新增带返回及导出按钮的标题栏，控制按钮排列在顶部。</string>
+    <string name="info_news_weather" formatted="false">图像包含天体颜色图例；照片信息以更大字号在独立黑色条带中自动换行显示。</string>
+    <string name="info_news_viewer_zoom" formatted="false">标签和位置信息按钮更清晰地表示启用状态，全景方向仍可单独选择。</string>
+    <string name="info_news_settings" formatted="false">主界面卡片可透出背后的轨迹和天体，准星仍居中于天空的空闲区域。</string>
+    <string name="info_news_catalog" formatted="false">观测台首个分区现称为名称与类型。保留已保存设置及位置隐私。</string>
 </resources>

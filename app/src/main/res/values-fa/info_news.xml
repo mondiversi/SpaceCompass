@@ -1,9 +1,9 @@
 <resources>
     <string name="info_news_title">تازه‌ترین تغییرات · %1$s</string>
-    <string name="info_news_star_sky" formatted="false">چند نقطهٔ مدار را انتخاب کنید، برچسب‌هایشان را باز نگه دارید و همان انتخاب را در مسیر روزانه تغییر دهید.</string>
-    <string name="info_news_texture_downloads" formatted="false">تصویر، CSV یا TXT خوانا را از عکس‌ها، مسیرهای روزانه و رصدخانه صادر کنید؛ ذخیره یا اشتراک‌گذاری.</string>
-    <string name="info_news_weather" formatted="false">حریم خصوصی مکان شامل جدول‌ها هم می‌شود: مسیرها با فقط منطقه آغاز می‌شوند؛ در حالت پنهان زمان‌ها UTC هستند.</string>
-    <string name="info_news_viewer_zoom" formatted="false">رصدخانه هویت، داده‌های فیزیکی، دماها، داده‌های مداری و زمینهٔ فضایی را گروه‌بندی می‌کند.</string>
-    <string name="info_news_settings" formatted="false">مقیاس زاویه در چهار ضلع، اطلاعات فشردهٔ عکس و برچسب‌های واضح‌تر زمان/T± در عکس‌ها و پانوراماها.</string>
-    <string name="info_news_catalog" formatted="false">گزینه‌های برچسب و کنترل‌های عکاسی بهتر؛ کارت‌های اطلاعاتی مات در پوسته‌های روشن و تیره.</string>
+    <string name="info_news_star_sky" formatted="false">نقاط زیر نشانه‌گیر، ساعت و T± را کنار هم نشان می‌دهند و نقاط انتخاب‌شدهٔ دیگر برچسب دائمی ندارند.</string>
+    <string name="info_news_texture_downloads" formatted="false">پیش‌نمایش عکس و پانوراما نوار عنوان با بازگشت و صادر کردن دارد و کنترل‌ها در بالا قرار دارند.</string>
+    <string name="info_news_weather" formatted="false">تصاویر راهنمای رنگ اجرام دارند؛ اطلاعات عکس با متن بزرگ‌تر و چندخطی در نواری سیاه و جدا نمایش داده می‌شود.</string>
+    <string name="info_news_viewer_zoom" formatted="false">کنترل‌های برچسب و موقعیت، حالت فعال را روشن‌تر نشان می‌دهند؛ جهت پانوراما همچنان انتخابی جداست.</string>
+    <string name="info_news_settings" formatted="false">کارت‌های نمای اصلی مسیرها و اجرام پشت خود را نشان می‌دهند و نشانه‌گیر در مرکز بخش آزاد آسمان می‌ماند.</string>
+    <string name="info_news_catalog" formatted="false">نام بخش نخست رصدخانه اکنون نام و نوع است. تنظیمات ذخیره‌شده و حریم خصوصی موقعیت حفظ می‌شوند.</string>
 </resources>

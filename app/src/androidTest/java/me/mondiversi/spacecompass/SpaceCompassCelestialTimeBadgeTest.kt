@@ -37,14 +37,14 @@ class SpaceCompassCelestialTimeBadgeTest {
     private val showPath = mutableStateOf(true)
     private val reliable = mutableStateOf(true)
     private val hasTime = mutableStateOf(true)
-    private fun currentCaption(time: String): SemanticsNodeInteraction =
-        compose.onNodeWithTag("celestial-badge-caption")
-            .assertTextContains(resources.getString(R.string.celestial_point_current))
-            .assertTextContains(time)
-    private fun pointCaption(number: Int, time: String): SemanticsNodeInteraction =
-        compose.onNodeWithTag("celestial-badge-caption")
-            .assertTextContains(resources.getString(R.string.celestial_point_number, number))
-            .assertTextContains(time)
+    private fun currentCaption(time: String): SemanticsNodeInteraction {
+        compose.onNodeWithTag("celestial-badge-event").assertTextEquals(resources.getString(R.string.celestial_point_current))
+        return compose.onNodeWithTag("celestial-badge-caption").assertTextContains(time).assertTextContains("T+00:00")
+    }
+    private fun pointCaption(time: String): SemanticsNodeInteraction {
+        compose.onNodeWithTag("celestial-badge-event").assertDoesNotExist()
+        return compose.onNodeWithTag("celestial-badge-caption").assertTextContains(time)
+    }
 
     private fun facing(position: SpaceCompassSunPosition): SpaceCompassSunOrientation {
         val a = Math.toRadians(position.azimuthDegrees); val e = Math.toRadians(position.elevationDegrees)
@@ -80,15 +80,17 @@ class SpaceCompassCelestialTimeBadgeTest {
         currentCaption("09:01").assertIsDisplayed()
         val next = path.markers.first { it.event == SpaceCompassSunPathEvent.HOUR && it.timeMs == initialTime + 3_600_000L }
         compose.runOnIdle { pointing.value = facing(next.position) }
-        pointCaption(10, "10:00").assertIsDisplayed()
+        pointCaption("10:00").assertTextContains("T−00:59").assertIsDisplayed()
+        compose.runOnIdle { now.longValue += 2_000L }
+        pointCaption("10:00").assertTextContains("T−00:58").assertIsDisplayed()
         compose.onNodeWithTag("sun-path-selected").assertDoesNotExist()
     }
     @Test fun anExplicitSelectionDoesNotOverrideTheDotThePhoneIsPointingAt() {
         open()
         val next = path.markers.first { it.event == SpaceCompassSunPathEvent.HOUR && it.timeMs == initialTime + 3_600_000L }
         compose.runOnIdle { selected.value = true; pointing.value = facing(next.position) }
-        compose.onNode(hasText("Punto 9", substring = true) and hasAnyAncestor(hasTestTag("celestial-pinned-badge"))).assertIsDisplayed()
-        pointCaption(10, "10:00").assertIsDisplayed()
+        compose.onNodeWithTag("celestial-pinned-caption").assertDoesNotExist()
+        pointCaption("10:00").assertIsDisplayed()
     }
     @Test fun lookingAwayHidesTheCaptionButHidingThePathDoesNotHideTheLiveCaption() {
         open()
@@ -98,7 +100,7 @@ class SpaceCompassCelestialTimeBadgeTest {
         compose.runOnIdle { pointing.value = facing(point.position); showPath.value = false }
         currentCaption("09:00").assertIsDisplayed()
     }
-    @Test fun captionStaysInsideTheSkyAndOutsideTheMenuAndSelectionPanelInBothThemes() {
+    @Test fun captionStaysInsideTheSkyAndOutsideTheMenuWithoutAPermanentSelectionPanelInBothThemes() {
         open()
         for (night in listOf(false, true)) {
             compose.runOnIdle { dark.value = night; selected.value = true }
@@ -106,11 +108,10 @@ class SpaceCompassCelestialTimeBadgeTest {
             val caption = compose.onNodeWithTag("celestial-time-badge").fetchSemanticsNode().boundsInRoot
             val sky = compose.onNodeWithTag("sun-finder-sky").fetchSemanticsNode().boundsInRoot
             val menu = compose.onNodeWithTag("sun-path-open").fetchSemanticsNode().boundsInRoot
-            val panel = compose.onNodeWithTag("celestial-pinned-badge").fetchSemanticsNode().boundsInRoot
+            compose.onNodeWithTag("celestial-pinned-badge").assertDoesNotExist()
             assertTrue(caption.left >= sky.left && caption.right <= sky.right)
             assertTrue(caption.top >= sky.top && caption.bottom <= sky.bottom)
             assertFalse(caption.overlaps(menu))
-            assertFalse(caption.overlaps(panel))
         }
     }
     @Test fun aProbeWithoutATrajectoryShowsOnlyItsActualLivePointWhenInTheReticle() {

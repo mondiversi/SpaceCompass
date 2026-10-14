@@ -12,22 +12,35 @@ internal fun renderSpaceCompassCameraPhoto(context: Context, photo: SpaceCompass
     val geometry = spaceCompassCameraPhotoGeometry(photo.lens, raw.width, raw.height, photo.displayRotation)
     var image: Bitmap? = null
     try {
+        val width=geometry.width; val height=geometry.height
+        val scale=(minOf(width,height)/1080f).coerceAtLeast(.45f)
+        val caption=prepareSpaceCompassCameraCaptureCaption(snapshot.caption,width,height)
+        val observations = snapshot.objects.associateWith { item -> runCatching {
+            calculateSpaceCompassCelestialObservation(item.body,snapshot.timeMs,snapshot.latitude,snapshot.longitude,
+                snapshot.altitude,snapshot.remote)
+        }.getOrNull()?.position }
+        val legend=prepareSpaceCompassPanoramaLegend(snapshot.objects.filter {
+            it.path != null || observations[it] != null
+        },width,scale)
         val rotated = if (geometry.rotation==0) raw else Bitmap.createBitmap(raw,0,0,raw.width,raw.height,
             Matrix().apply { postRotate(geometry.rotation.toFloat()) },true)
-        image=rotated.copy(Bitmap.Config.ARGB_8888,true)
-        if (rotated !== raw) rotated.recycle()
+        try {
+            image=Bitmap.createBitmap(width,caption.height+height+legend.height,Bitmap.Config.ARGB_8888).apply {
+                density=rotated.density
+            }
+            Canvas(requireNotNull(image)).drawBitmap(rotated,null,Rect(0,caption.height,width,caption.height+height),null)
+        } finally { if (rotated !== raw) rotated.recycle() }
         val result=requireNotNull(image)
         val canvas=Canvas(result)
-        val width=result.width; val height=result.height
-        val scale=(minOf(width,height)/1080f).coerceAtLeast(.45f)
-        val caption=prepareSpaceCompassCaptureCaption(snapshot.caption,width)
-        val header=caption.height.toFloat()
+        // Metadata and legend have their own space; every lens ray stays inside the unchanged photo frame.
+        canvas.save(); canvas.translate(0f,caption.height.toFloat()); canvas.clipRect(0,0,width,height)
+        val header=0f
         val perspective=geometry.perspective
         val attitude=photo.attitude
         val orientation=attitude?.orientation
         val paint=Paint(Paint.ANTI_ALIAS_FLAG).apply { strokeCap=Paint.Cap.ROUND; strokeJoin=Paint.Join.ROUND }
         val text=spaceCompassOrbitTextPaint(25*scale)
-        val occupied=mutableListOf(RectF(0f, 0f, width.toFloat(), header))
+        val occupied=mutableListOf<RectF>()
         if (orientation!=null) {
             val horizon=projectSpaceCompassSunGround(orientation,SpaceCompassSunSceneFrame(0.0,0.0,width.toDouble(),height.toDouble()),
                 width.toDouble(),height.toDouble(),perspective)?.horizon
@@ -44,10 +57,6 @@ internal fun renderSpaceCompassCameraPhoto(context: Context, photo: SpaceCompass
         fun projection(position: SpaceCompassSunPosition) = pointing?.let {
             projectSpaceCompassSun(position,it,width.toDouble(),height.toDouble(),perspective).takeIf { p->p.visible }
         }
-        val observations = snapshot.objects.associateWith { item -> runCatching {
-            calculateSpaceCompassCelestialObservation(item.body,snapshot.timeMs,snapshot.latitude,snapshot.longitude,
-                snapshot.altitude,snapshot.remote)
-        }.getOrNull()?.position }
         val selections = resolveSpaceCompassPanoramaSelections(snapshot,
             observations.mapNotNull { (item, position) -> position?.let { item.body to it } }.toMap())
         observations.forEach { (item,position) -> position?.let(::projection)?.let {
@@ -61,7 +70,7 @@ internal fun renderSpaceCompassCameraPhoto(context: Context, photo: SpaceCompass
                 occupied+=RectF(x-half-6*scale,y+metrics.ascent-6*scale,x+half+6*scale,y+metrics.descent+6*scale)
             }
         } }
-        // Keep guide captions below the photograph's header and away from current object images.
+        // Keep guide captions inside the lens frame and away from current object images.
         val referenceDrawing = if (snapshot.showSkyReferences && pointing != null && snapshot.observerPositionKnown)
             drawSpaceCompassSkyReferences(canvas, snapshot.latitude, snapshot.timeMs, width, height, scale, occupied,
                 pointing, perspective, header, showLabels = snapshot.labelMode.showsAll,
@@ -149,12 +158,13 @@ internal fun renderSpaceCompassCameraPhoto(context: Context, photo: SpaceCompass
         } }
         drawSpaceCompassPanoramaSelections(canvas,snapshot,selections,scale,35f,
             { position -> projection(position)?.let { SpaceCompassSunScenePoint(it.x,it.y) } })
-        // The shared translucent header overlays the photograph instead of cropping camera pixels.
-        caption.draw(canvas)
         if (pointing==null && photo.warning!=null) {
             text.textSize=20*scale; text.color=Color.WHITE; text.textAlign=Paint.Align.CENTER
             canvas.drawText(photo.warning,width/2f,header+28*scale,text)
         }
+        canvas.restore()
+        caption.draw(canvas)
+        legend.draw(canvas,(caption.height+height).toFloat(),0xff101418.toInt())
         image=null
         return result
     } finally { raw.recycle(); image?.recycle() }

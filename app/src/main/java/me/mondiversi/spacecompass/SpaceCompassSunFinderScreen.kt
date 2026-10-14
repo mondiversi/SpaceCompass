@@ -481,7 +481,7 @@ internal fun SpaceCompassSunFinderContent(
         if (onDismissRequest != null) Row(
             Modifier.fillMaxWidth().zIndex(1f).testTag("celestial-toolbar")
                 .onSizeChanged { toolbarHeightPx = it.height; refreshGroundFrame() }
-                .background(backgroundColor.copy(alpha = 0.72f))
+                .background(backgroundColor.copy(alpha = SPACE_COMPASS_MAIN_OVERLAY_ALPHA))
                 .padding(start = 16.dp, end = SpaceCompassTitleBarContentPadding.calculateEndPadding(
                     androidx.compose.ui.platform.LocalLayoutDirection.current)),
             verticalAlignment = Alignment.CenterVertically
@@ -518,6 +518,7 @@ internal fun SpaceCompassSunFinderContent(
                 observerLatitude = fix?.latitude, showSkyReferences = showSkyReferences,
                 observerAltitude = fix?.takeIf { it.hasAltitude() }?.altitude ?: 0.0,
                 topContentInset = topControlsInset, projectionTopInset = with(density) { toolbarHeightPx.toDp() },
+                drawScene = false,
                 bottomStartActions = { modifier ->
                     Row(modifier.padding(4.dp), verticalAlignment = Alignment.CenterVertically,
                         horizontalArrangement = Arrangement.spacedBy(8.dp)) {
@@ -617,6 +618,12 @@ internal fun SpaceCompassSunFinderContent(
             }
             SpaceCompassSunGroundBackdrop(orientation, groundFrame, phase, Modifier.fillMaxSize(), solarLighting)
         }
+        SpaceCompassCelestialSceneBackdrop(groundFrame, cameraPerspective.takeIf { cameraEnabled },
+            pointingOrientation.takeIf { readings.compassUsable && (!cameraEnabled || cameraPerspective != null) },
+            overlays, body.takeIf { hasActiveBody }, dailyPath.takeIf { hasActiveBody }, target, timeMs,
+            dailyPathUiState, primaryText, secondaryText, backgroundColor,
+            fix?.latitude, fix?.takeIf { it.hasAltitude() }?.altitude ?: 0.0, showSkyReferences,
+            toolbarHeightPx.toDouble(), Modifier.fillMaxSize())
         val minimumPanelWidth = if (largeText) 280.dp else 220.dp
         val detailsWidth = viewportWidth * 0.45f
         val compactPanel = viewportHeight < 420.dp && !largeText

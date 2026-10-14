@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="celestial_section_identity">Ταυτότητα</string>
+    <string name="celestial_section_identity">Όνομα και τύπος</string>
     <string name="celestial_section_physical">Φυσικές ιδιότητες</string>
     <string name="celestial_section_stellar">Φως και συνιστώσες</string>
     <string name="celestial_section_atmosphere">Θερμοκρασία και ατμόσφαιρα</string>

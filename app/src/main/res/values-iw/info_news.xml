@@ -1,9 +1,9 @@
 <resources>
     <string name="info_news_title">החידושים האחרונים · %1$s</string>
-    <string name="info_news_star_sky" formatted="false">בחרו כמה נקודות במסלולים, השאירו את התוויות שלהן פתוחות ושנו את אותה בחירה במסלול היומי.</string>
-    <string name="info_news_texture_downloads" formatted="false">ייצוא תמונות, CSV או TXT קריא מצילומים, מסלולים יומיים ומצפה הכוכבים; שמירה או שיתוף.</string>
-    <string name="info_news_weather" formatted="false">פרטיות המיקום חלה גם בטבלאות: המסלולים מתחילים עם אזור בלבד; כשמסתירים מיקום, השעות מוצגות ב־UTC.</string>
-    <string name="info_news_viewer_zoom" formatted="false">מצפה הכוכבים מקבץ זהות, נתונים פיזיקליים, טמפרטורות, נתוני מסלול והקשר מרחבי.</string>
-    <string name="info_news_settings" formatted="false">סולמות זווית בארבעת הצדדים, פרטי צילום קומפקטיים ותוויות שעה/T± ברורות יותר בתמונות ובפנורמות.</string>
-    <string name="info_news_catalog" formatted="false">אפשרויות תוויות ובקרי צילום משופרים; כרטיסי מידע אטומים בערכות נושא בהירה וכהה.</string>
+    <string name="info_news_star_sky" formatted="false">נקודות בכוונת מציגות שעה ו־T± זו לצד זו, ללא בועות קבועות בנקודות נבחרות אחרות.</string>
+    <string name="info_news_texture_downloads" formatted="false">בתצוגות המקדימות של צילום ופנורמה יש סרגל כותרת עם חזרה וייצוא, והפקדים ממוקמים למעלה.</string>
+    <string name="info_news_weather" formatted="false">התמונות כוללות מקרא צבעים לעצמים; פרטי הצילום גדולים יותר ונפרסים לכמה שורות ברצועה שחורה נפרדת.</string>
+    <string name="info_news_viewer_zoom" formatted="false">פקדי התוויות והמיקום מציגים בבירור מצב פעיל; כיוון הפנורמה נשאר בחירה נפרדת.</string>
+    <string name="info_news_settings" formatted="false">כרטיסי התצוגה הראשית מאפשרים לראות מסלולים ועצמים מאחוריהם, והכוונת ממורכזת באזור השמיים הפנוי.</string>
+    <string name="info_news_catalog" formatted="false">החלק הראשון במצפה נקרא כעת שם וסוג. ההגדרות השמורות ופרטיות המיקום נשמרות.</string>
 </resources>

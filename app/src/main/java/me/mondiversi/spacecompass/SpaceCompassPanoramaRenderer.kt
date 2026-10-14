@@ -46,7 +46,10 @@ internal fun renderSpaceCompassPanorama(snapshot: SpaceCompassPanoramaSnapshot, 
     // Angular projection remains 360° × 180° at its original 2:1 scale.
     val caption = prepareSpaceCompassCaptureCaption(snapshot.caption, width)
     val sceneTop = spaceCompassPanoramaSceneTop(caption, width)
-    val bitmap = Bitmap.createBitmap(width, sceneHeight + sceneTop.toInt(), Bitmap.Config.ARGB_8888)
+    val legend = prepareSpaceCompassPanoramaLegend(snapshot.objects.filter {
+        it.path != null || observations[it] != null
+    }, width)
+    val bitmap = Bitmap.createBitmap(width, sceneHeight + sceneTop.toInt() + legend.height, Bitmap.Config.ARGB_8888)
     try {
         val canvas = Canvas(bitmap)
         val paint = Paint(Paint.ANTI_ALIAS_FLAG)
@@ -261,6 +264,7 @@ internal fun renderSpaceCompassPanorama(snapshot: SpaceCompassPanoramaSnapshot, 
             wrapWidth = sceneWidth.toFloat())
         drawAngularScales()
         canvas.restore()
+        legend.draw(canvas, (sceneTop.toInt() + sceneHeight).toFloat(), ground.nearArgb)
         return bitmap
     } catch (error: Throwable) {
         bitmap.recycle()

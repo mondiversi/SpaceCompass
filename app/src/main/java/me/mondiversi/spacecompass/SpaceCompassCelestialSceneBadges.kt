@@ -11,14 +11,14 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
 import kotlin.math.roundToInt
 
-/** Measure all captions together so pinned labels do not compete with each other or the controls. */
+/** Only the reticle target has a caption; selected points retain their marker highlights. */
 @Composable
 internal fun SpaceCompassCelestialSceneBadges(pinned: List<SpaceCompassCelestialSceneTarget>,
     focused: SpaceCompassCelestialSceneTarget?, nowMs: Long, primaryText: Color, secondaryText: Color,
     backgroundColor: Color, excluded: List<SpaceCompassSunSceneFrame>) {
-    val duplicate = focused != null && pinned.any { it.body == focused.body && it.isCurrent == focused.isCurrent &&
+    val selected = focused != null && pinned.any { it.body == focused.body && it.isCurrent == focused.isCurrent &&
         (it.isCurrent || it.point.timeMs == focused.point.timeMs && it.point.event == focused.point.event) }
-    val items = pinned + listOfNotNull(focused.takeUnless { duplicate })
+    val items = listOfNotNull(focused)
     if (items.isEmpty()) return
     val accent = MaterialTheme.colorScheme.primary
     // Plain measured geometry avoids a second composition/measure cycle for connector positions.
@@ -29,16 +29,17 @@ internal fun SpaceCompassCelestialSceneBadges(pinned: List<SpaceCompassCelestial
         items.forEachIndexed { index, target -> key(target.body, target.point.timeMs, target.point.event, target.isCurrent) {
             val zone = target.path?.zone ?: spaceCompassObservationZone()
             val name = if (target.isCurrent) stringResource(R.string.celestial_point_current)
+                else if (target.point.event == SpaceCompassSunPathEvent.HOUR) ""
                 else target.path?.let { rememberSpaceCompassSunPathLabels(it).name(target.point) }.orEmpty()
             SpaceCompassCelestialBadgeContent(target.point.timeMs, nowMs, zone, target.point.position,
-                primaryText, secondaryText, backgroundColor, name, target.body, pinned = index < pinned.size)
+                primaryText, secondaryText, backgroundColor, name, pinned = selected)
         } }
     }) { measurables, constraints ->
         val margin = 4.dp.toPx().toDouble()
         val gap = 24.dp.toPx().toDouble()
         val children = measurables.map { it.measure(constraints.copy(minWidth = 0, minHeight = 0,
             maxWidth = minOf(220.dp.roundToPx(), (constraints.maxWidth - margin * 2).toInt().coerceAtLeast(0)))) }
-        val obstacles = excluded + items.map { target ->
+        val obstacles = excluded + (pinned + items).distinct().map { target ->
             val radius = (if (target.isCurrent) 20.dp else 10.dp).toPx().toDouble()
             SpaceCompassSunSceneFrame(target.projection.x - radius, target.projection.y - radius, radius * 2, radius * 2)
         }
@@ -46,13 +47,13 @@ internal fun SpaceCompassCelestialSceneBadges(pinned: List<SpaceCompassCelestial
         val placements = children.mapIndexed { index, label ->
             placeSpaceCompassOrbitBadge(constraints.maxWidth.toDouble(), constraints.maxHeight.toDouble(),
                 label.width.toDouble(), label.height.toDouble(), items[index].projection, margin, gap,
-                obstacles, occupied, index < pinned.size)?.also { point ->
+                obstacles, occupied, selected)?.also { point ->
                 occupied += SpaceCompassSunSceneFrame(point.x - margin, point.y - margin,
                     label.width + margin * 2, label.height + margin * 2)
             }
         }
         connectors.clear()
-        placements.forEachIndexed { index, point -> if (index < pinned.size && point != null) {
+        placements.forEachIndexed { index, point -> if (selected && point != null) {
             val anchor = items[index].projection
             val label = children[index]
             connectors += Offset(anchor.x.toFloat(), anchor.y.toFloat()) to Offset(

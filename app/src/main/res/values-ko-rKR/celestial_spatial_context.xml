@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="celestial_section_identity">기본 정보</string>
+    <string name="celestial_section_identity">이름 및 유형</string>
     <string name="celestial_section_physical">물리적 특성</string>
     <string name="celestial_section_stellar">빛과 구성 천체</string>
     <string name="celestial_section_atmosphere">온도와 대기</string>

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="celestial_section_identity">Identitas</string>
+    <string name="celestial_section_identity">Nama dan jenis</string>
     <string name="celestial_section_physical">Sifat fisik</string>
     <string name="celestial_section_stellar">Cahaya dan komponen</string>
     <string name="celestial_section_atmosphere">Suhu dan atmosfer</string>

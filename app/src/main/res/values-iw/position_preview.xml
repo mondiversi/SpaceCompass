@@ -13,4 +13,6 @@
     <string name="panorama_southeast" formatted="false">דרום־מזרח</string>
     <string name="panorama_southwest" formatted="false">דרום־מערב</string>
     <string name="panorama_northwest" formatted="false">צפון־מערב</string>
+    <string name="panorama_preview_title" formatted="false">פנורמה</string>
+    <string name="camera_capture_preview_title" formatted="false">צילום</string>
 </resources>

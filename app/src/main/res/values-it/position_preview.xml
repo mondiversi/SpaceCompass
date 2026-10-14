@@ -13,4 +13,6 @@
     <string name="panorama_southeast" formatted="false">Sud-Est</string>
     <string name="panorama_southwest" formatted="false">Sud-Ovest</string>
     <string name="panorama_northwest" formatted="false">Nord-Ovest</string>
+    <string name="panorama_preview_title" formatted="false">Panoramica</string>
+    <string name="camera_capture_preview_title" formatted="false">Scatto</string>
 </resources>

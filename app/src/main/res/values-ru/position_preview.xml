@@ -13,4 +13,6 @@
     <string name="panorama_southeast" formatted="false">Юго-восток</string>
     <string name="panorama_southwest" formatted="false">Юго-запад</string>
     <string name="panorama_northwest" formatted="false">Северо-запад</string>
+    <string name="panorama_preview_title" formatted="false">Панорама</string>
+    <string name="camera_capture_preview_title" formatted="false">Фото</string>
 </resources>

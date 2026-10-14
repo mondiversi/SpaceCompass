@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="celestial_section_identity">पहचान</string>
+    <string name="celestial_section_identity">नाम और प्रकार</string>
     <string name="celestial_section_physical">भौतिक गुण</string>
     <string name="celestial_section_stellar">प्रकाश और घटक</string>
     <string name="celestial_section_atmosphere">तापमान और वायुमंडल</string>

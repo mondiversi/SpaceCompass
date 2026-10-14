@@ -13,4 +13,6 @@
     <string name="panorama_southeast" formatted="false">Kusini-mashariki</string>
     <string name="panorama_southwest" formatted="false">Kusini-magharibi</string>
     <string name="panorama_northwest" formatted="false">Kaskazini-magharibi</string>
+    <string name="panorama_preview_title" formatted="false">Panorama</string>
+    <string name="camera_capture_preview_title" formatted="false">Picha</string>
 </resources>

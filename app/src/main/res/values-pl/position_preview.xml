@@ -13,4 +13,6 @@
     <string name="panorama_southeast" formatted="false">Południowy wschód</string>
     <string name="panorama_southwest" formatted="false">Południowy zachód</string>
     <string name="panorama_northwest" formatted="false">Północny zachód</string>
+    <string name="panorama_preview_title" formatted="false">Panorama</string>
+    <string name="camera_capture_preview_title" formatted="false">Zdjęcie</string>
 </resources>

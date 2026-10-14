@@ -13,4 +13,6 @@
     <string name="panorama_southeast" formatted="false">दक्षिण-पूर्व</string>
     <string name="panorama_southwest" formatted="false">दक्षिण-पश्चिम</string>
     <string name="panorama_northwest" formatted="false">उत्तर-पश्चिम</string>
+    <string name="panorama_preview_title" formatted="false">पैनोरमा</string>
+    <string name="camera_capture_preview_title" formatted="false">फ़ोटो</string>
 </resources>

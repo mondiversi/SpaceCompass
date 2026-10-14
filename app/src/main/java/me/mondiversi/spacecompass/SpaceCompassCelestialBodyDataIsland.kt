@@ -36,7 +36,7 @@ internal fun SpaceCompassCelestialBodyDataIsland(bodyName: String?, primaryText:
     val rtl = LocalLayoutDirection.current == LayoutDirection.Rtl
     val shape = RoundedCornerShape(20.dp)
     Column(Modifier.fillMaxWidth().testTag("sun-finder-body-data").clip(shape)
-        .background(spaceCompassSettingsCardColor())
+        .background(spaceCompassSettingsCardColor().copy(alpha = SPACE_COMPASS_MAIN_OVERLAY_ALPHA))
         .padding(horizontal = 12.dp)) {
         if (bodyName != null || navigation != null) {
             // Compact only the title bar; retain the normal insets around the data below it.

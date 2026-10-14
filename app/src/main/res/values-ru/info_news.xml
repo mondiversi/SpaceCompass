@@ -1,9 +1,9 @@
 <resources>
     <string name="info_news_title">Последние новости · %1$s</string>
-    <string name="info_news_star_sky" formatted="false">Выбирайте несколько точек орбит, оставляйте их подписи открытыми и меняйте тот же выбор в дневном пути.</string>
-    <string name="info_news_texture_downloads" formatted="false">Экспортируйте изображения, CSV или читаемый TXT из снимков, дневных путей и Обсерватории; сохраняйте или делитесь.</string>
-    <string name="info_news_weather" formatted="false">Приватность позиции и в таблицах: пути начинают с региона; при скрытой позиции время отображается в UTC.</string>
-    <string name="info_news_viewer_zoom" formatted="false">Обсерватория группирует идентификацию, физические данные, температуры, орбитальные данные и пространственный контекст.</string>
-    <string name="info_news_settings" formatted="false">Угловые шкалы с четырёх сторон, компактные данные снимка и более ясные подписи времени/T± на фото и панорамах.</string>
-    <string name="info_news_catalog" formatted="false">Улучшенные варианты подписей и управление съёмкой; непрозрачные карточки в светлой и тёмной темах.</string>
+    <string name="info_news_star_sky" formatted="false">Точки под прицелом показывают время и T± рядом, без постоянных подсказок у других выбранных точек.</string>
+    <string name="info_news_texture_downloads" formatted="false">В предпросмотре фото и панорам есть строка заголовка с кнопками Назад и Экспорт, а элементы управления расположены сверху.</string>
+    <string name="info_news_weather" formatted="false">Изображения содержат цветовую легенду объектов; данные фото показаны крупнее в несколько строк на отдельной чёрной полосе.</string>
+    <string name="info_news_viewer_zoom" formatted="false">Кнопки подписей и положения яснее показывают активное состояние; направление панорамы выбирается отдельно.</string>
+    <string name="info_news_settings" formatted="false">Через карточки главного экрана видны траектории и объекты, а прицел остаётся в центре свободной области неба.</string>
+    <string name="info_news_catalog" formatted="false">Первый раздел Обсерватории теперь называется Название и тип. Сохранённые настройки и приватность положения не меняются.</string>
 </resources>

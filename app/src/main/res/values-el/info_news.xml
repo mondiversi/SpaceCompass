@@ -1,9 +1,9 @@
 <resources>
     <string name="info_news_title">Τελευταία νέα · %1$s</string>
-    <string name="info_news_star_sky" formatted="false">Επιλέξτε πολλά σημεία τροχιάς, κρατήστε τις ετικέτες τους ανοιχτές και αλλάξτε την ίδια επιλογή στην ημερήσια διαδρομή.</string>
-    <string name="info_news_texture_downloads" formatted="false">Εξαγωγή εικόνων, CSV ή ευανάγνωστου TXT από λήψεις, ημερήσιες διαδρομές και το Παρατηρητήριο· αποθήκευση ή κοινοποίηση.</string>
-    <string name="info_news_weather" formatted="false">Ιδιωτικότητα τοποθεσίας και στους πίνακες: οι διαδρομές ξεκινούν μόνο με περιοχή· οι κρυφές τοποθεσίες χρησιμοποιούν UTC.</string>
-    <string name="info_news_viewer_zoom" formatted="false">Το Παρατηρητήριο ομαδοποιεί ταυτότητα, φυσικά δεδομένα, θερμοκρασίες, τροχιακά δεδομένα και χωρικό πλαίσιο.</string>
-    <string name="info_news_settings" formatted="false">Κλίμακες γωνιών στις τέσσερις πλευρές, συμπαγή στοιχεία λήψης και σαφέστερες ετικέτες ώρας/T± σε φωτογραφίες και πανοράματα.</string>
-    <string name="info_news_catalog" formatted="false">Βελτιωμένες επιλογές ετικετών και χειριστήρια λήψης· αδιαφανείς κάρτες πληροφοριών σε φωτεινό και σκοτεινό θέμα.</string>
+    <string name="info_news_star_sky" formatted="false">Τα σημεία στο στόχαστρο δείχνουν ώρα και T± δίπλα δίπλα, χωρίς μόνιμες ετικέτες στα άλλα επιλεγμένα σημεία.</string>
+    <string name="info_news_texture_downloads" formatted="false">Οι προεπισκοπήσεις φωτογραφιών και πανοραμάτων έχουν γραμμή τίτλου με Πίσω και Εξαγωγή και χειριστήρια επάνω.</string>
+    <string name="info_news_weather" formatted="false">Οι εικόνες περιλαμβάνουν χρωματικό υπόμνημα αντικειμένων· οι φωτογραφίες έχουν μεγαλύτερα στοιχεία σε πολλές γραμμές, σε ξεχωριστή μαύρη λωρίδα.</string>
+    <string name="info_news_viewer_zoom" formatted="false">Τα χειριστήρια ετικετών και θέσης δείχνουν καθαρότερα την ενεργή κατάσταση· η κατεύθυνση πανοράματος παραμένει ξεχωριστή επιλογή.</string>
+    <string name="info_news_settings" formatted="false">Οι κάρτες της κύριας προβολής αφήνουν ορατές τροχιές και αντικείμενα, με το στόχαστρο στο κέντρο του ελεύθερου ουρανού.</string>
+    <string name="info_news_catalog" formatted="false">Η πρώτη ενότητα του Παρατηρητηρίου λέγεται Όνομα και τύπος. Διατηρούνται οι ρυθμίσεις και το απόρρητο θέσης.</string>
 </resources>

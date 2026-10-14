@@ -1,5 +1,16 @@
 # Changelog
 
+## 1.3.2 — 2026-10-14
+
+- Replace permanent selected-point callouts with the reticle-focused callout, with clock and T± in separate columns and a heading only for named events. Point pins and exported selections remain intact.
+- Add a shared translucent title bar to photo and panorama previews, with Back and Export actions and top-aligned side controls.
+- Show active label/location controls in blue or cyan, with panorama direction selected independently below the location control.
+- Include an object-colour legend in both generated panoramas and camera photos.
+- Add larger wrapping photo metadata on an opaque black band above the complete lens frame; preserve field of view and projection.
+- Draw paths, points and object images behind translucent main islands while retaining the reticle and interaction geometry in the free sky area.
+- Rename the first Observatory section Name and type in all twenty languages and refresh the in-app news.
+- Preserve selected objects/points, saved settings, location privacy, distribution signing and texture pack 1.1.
+
 ## 1.3.1 — 2026-10-13
 
 - Preserve the active target when orbit points are selected or deselected.

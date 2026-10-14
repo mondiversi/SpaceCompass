@@ -1,9 +1,9 @@
 <resources>
     <string name="info_news_title">Últimas novedades · %1$s</string>
-    <string name="info_news_star_sky" formatted="false">Selecciona varios puntos orbitales, mantén abiertas sus etiquetas y cambia la misma selección en el recorrido diario.</string>
-    <string name="info_news_texture_downloads" formatted="false">Exporta imágenes, CSV o TXT legible desde capturas, recorridos diarios y el Observatorio; guarda o comparte.</string>
-    <string name="info_news_weather" formatted="false">Privacidad de ubicación también en tablas: los recorridos empiezan con Solo zona; al ocultarla, las horas usan UTC.</string>
-    <string name="info_news_viewer_zoom" formatted="false">El Observatorio agrupa identidad, datos físicos, temperaturas, datos orbitales y contexto espacial.</string>
-    <string name="info_news_settings" formatted="false">Escalas angulares en los cuatro lados, detalles compactos y etiquetas de hora/T± más claras en fotos y panoramas.</string>
-    <string name="info_news_catalog" formatted="false">Opciones de etiquetas y controles de captura mejorados; tarjetas informativas opacas en los temas claro y oscuro.</string>
+    <string name="info_news_star_sky" formatted="false">Los puntos bajo la retícula muestran la hora y T± lado a lado, sin etiquetas permanentes en otros puntos seleccionados.</string>
+    <string name="info_news_texture_downloads" formatted="false">Las vistas previas de fotos y panorámicas tienen una barra con Atrás y Exportar y los controles en la parte superior.</string>
+    <string name="info_news_weather" formatted="false">Las imágenes incluyen una leyenda de colores de los objetos; las fotos muestran datos más grandes en varias líneas sobre una franja negra independiente.</string>
+    <string name="info_news_viewer_zoom" formatted="false">Los controles de etiquetas y posición indican mejor su estado activo; la dirección panorámica sigue siendo una elección aparte.</string>
+    <string name="info_news_settings" formatted="false">Las tarjetas principales dejan ver trayectorias y objetos, con la retícula centrada en el área libre del cielo.</string>
+    <string name="info_news_catalog" formatted="false">La primera sección del Observatorio se llama Nombre y tipo. Se conservan los ajustes y la privacidad de la posición.</string>
 </resources>

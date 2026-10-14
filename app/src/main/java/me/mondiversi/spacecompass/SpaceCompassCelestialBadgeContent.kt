@@ -13,16 +13,15 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.platform.LocalConfiguration
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.platform.testTag
-import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import java.time.ZoneId
 
-/** Pinned points and reticle previews share one animated time/T row, keeping their angles aligned. */
+/** Pinned and focused points share a clock/countdown row and an optional event heading. */
 @Composable
 internal fun SpaceCompassCelestialBadgeContent(timeMs: Long, nowMs: Long, zone: ZoneId,
     position: SpaceCompassSunPosition, primaryText: Color, secondaryText: Color, backgroundColor: Color,
-    pointName: String, body: SpaceCompassCelestialBody, pinned: Boolean = false, modifier: Modifier = Modifier) {
+    pointName: String, pinned: Boolean = false, modifier: Modifier = Modifier) {
     val locale = LocalConfiguration.current.locales[0]
     val numeric = LocalSpaceCompassNumericFormat.current
     val deviceLocale = LocalSpaceCompassDeviceLocale.current
@@ -35,9 +34,11 @@ internal fun SpaceCompassCelestialBadgeContent(timeMs: Long, nowMs: Long, zone: 
         .border(if (pinned) 1.dp else 0.5.dp,
             if (pinned) MaterialTheme.colorScheme.primary else secondaryText.copy(alpha = 0.3f), shape)
         .padding(horizontal = 8.dp, vertical = 4.dp)) {
-        Text(stringResource(body.nameResource), Modifier.testTag("celestial-badge-body"),
-            color = primaryText, fontSize = 11.sp, lineHeight = 14.sp)
-        SpaceCompassPointTimeCaption(pointName, moment, timeMs, nowMs, primaryText,
+        if (pointName.isNotBlank()) {
+            Text(pointName, Modifier.testTag("celestial-badge-event"),
+                color = primaryText, fontSize = 11.sp, lineHeight = 14.sp)
+        }
+        SpaceCompassPointTimeCaption(moment, timeMs, nowMs, primaryText,
             if (pinned) 10.sp else 11.sp, if (pinned) 12.sp else 14.sp,
             Modifier.fillMaxWidth().testTag(if (pinned) "celestial-pinned-caption" else "celestial-badge-caption"))
         SpaceCompassCelestialPointAngles(position, primaryText, secondaryText,

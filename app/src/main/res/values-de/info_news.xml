@@ -1,9 +1,9 @@
 <resources>
     <string name="info_news_title">Neuigkeiten · %1$s</string>
-    <string name="info_news_star_sky" formatted="false">Mehrere Bahnpunkte markieren, ihre Beschriftungen offen halten und dieselbe Auswahl im Tagesverlauf ändern.</string>
-    <string name="info_news_texture_downloads" formatted="false">Bilder, CSV oder lesbare TXT aus Aufnahmen, Tagesverläufen und dem Observatorium exportieren, speichern oder teilen.</string>
-    <string name="info_news_weather" formatted="false">Standortschutz auch für Tabellen: Tagesverläufe starten mit Nur Region; bei Verborgen gelten UTC-Zeiten.</string>
-    <string name="info_news_viewer_zoom" formatted="false">Das Observatorium gruppiert Identität, physikalische Daten, Temperaturen, Bahndaten und räumlichen Kontext.</string>
-    <string name="info_news_settings" formatted="false">Winkelskalen an vier Seiten, kompakte Aufnahmedetails und klarere Zeit-/T±-Beschriftungen in Fotos und Panoramen.</string>
-    <string name="info_news_catalog" formatted="false">Verbesserte Beschriftungsoptionen und Aufnahmebedienung; deckende Infokarten im hellen und dunklen Design.</string>
+    <string name="info_news_star_sky" formatted="false">Punkte im Fadenkreuz zeigen Uhrzeit und T± nebeneinander, ohne dauerhafte Sprechblasen an anderen ausgewählten Punkten.</string>
+    <string name="info_news_texture_downloads" formatted="false">Foto- und Panoramavorschauen haben eine Titelleiste mit Zurück und Exportieren sowie oben angeordnete Bedienelemente.</string>
+    <string name="info_news_weather" formatted="false">Bilder enthalten eine Farblegende der Objekte; Fotos zeigen größere, mehrzeilige Angaben in einem eigenen schwarzen Streifen.</string>
+    <string name="info_news_viewer_zoom" formatted="false">Beschriftungs- und Standortschalter zeigen ihren aktiven Zustand klarer; die Panoramarichtung bleibt eine eigene Auswahl.</string>
+    <string name="info_news_settings" formatted="false">Durch die Hauptansichtskarten bleiben Bahnen und Objekte sichtbar; das Fadenkreuz bleibt in der freien Himmelsfläche zentriert.</string>
+    <string name="info_news_catalog" formatted="false">Der erste Abschnitt im Observatorium heißt jetzt Name und Typ. Gespeicherte Einstellungen und Standortschutz bleiben erhalten.</string>
 </resources>

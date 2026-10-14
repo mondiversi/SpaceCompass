@@ -58,7 +58,7 @@ class SpaceCompassCelestialSceneInteractionTest {
         compose.onNodeWithTag("sun-daily-path").assertDoesNotExist()
     }
 
-    @Test fun pointingAndTappingAnotherBodiesPathShowsItsNumberAndBothRightAlignedAngleRows() {
+    @Test fun pointingAndTappingAnotherBodiesPathShowsClockCountdownAndBothRightAlignedAngleRows() {
         val position = SpaceCompassSunPosition(180.0, 25.0)
         val markers = (0..7).map { index -> SpaceCompassSunPathPoint(Instant.parse("2026-10-04T00:00:00Z").toEpochMilli() + index * 3_600_000L,
             if (index == 7) position else SpaceCompassSunPosition(0.0, 25.0)) }
@@ -79,8 +79,14 @@ class SpaceCompassCelestialSceneInteractionTest {
             }
         }
         val numbered = resources.getString(R.string.celestial_point_number, 7)
-        compose.onNodeWithText(numbered, substring = true).assertIsDisplayed()
-        compose.onNodeWithTag("celestial-badge-body").assertTextEquals("Luna")
+        compose.onNodeWithText(numbered, substring = true).assertDoesNotExist()
+        compose.onNodeWithTag("celestial-badge-body").assertDoesNotExist()
+        compose.onNodeWithTag("celestial-badge-event").assertDoesNotExist()
+        compose.onNodeWithTag("celestial-badge-caption").assertTextContains("07:00").assertTextContains("T+00:00")
+        val clock = compose.onNodeWithTag("celestial-point-clock", useUnmergedTree = true).fetchSemanticsNode().boundsInRoot
+        val countdown = compose.onNodeWithTag("celestial-point-countdown", useUnmergedTree = true).fetchSemanticsNode().boundsInRoot
+        assertTrue(clock.right < countdown.left)
+        assertEquals(clock.center.y, countdown.center.y, .5f)
         val azimuth = compose.onNodeWithTag("celestial-badge-azimuth").fetchSemanticsNode().boundsInRoot
         val elevation = compose.onNodeWithTag("celestial-badge-elevation").fetchSemanticsNode().boundsInRoot
         assertEquals(azimuth.right, elevation.right, 0.5f)

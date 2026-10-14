@@ -1,9 +1,9 @@
 <resources>
     <string name="info_news_title">Laatste nieuws · %1$s</string>
-    <string name="info_news_star_sky" formatted="false">Selecteer meerdere baanpunten, houd hun labels open en wijzig dezelfde selectie in het dagelijkse pad.</string>
-    <string name="info_news_texture_downloads" formatted="false">Exporteer afbeeldingen, CSV of leesbare TXT vanuit opnamen, dagelijkse paden en het Observatorium; sla op of deel.</string>
-    <string name="info_news_weather" formatted="false">Locatieprivacy geldt ook voor tabellen: paden beginnen met Alleen regio; bij verborgen locaties zijn tijden in UTC.</string>
-    <string name="info_news_viewer_zoom" formatted="false">Het Observatorium groepeert identiteit, fysieke gegevens, temperaturen, baangegevens en ruimtelijke context.</string>
-    <string name="info_news_settings" formatted="false">Hoekschalen aan vier zijden, compacte opnamegegevens en duidelijkere tijd/T±-labels in foto’s en panorama’s.</string>
-    <string name="info_news_catalog" formatted="false">Verbeterde labelkeuzes en opnamebediening; ondoorzichtige informatiekaarten in lichte en donkere thema’s.</string>
+    <string name="info_news_star_sky" formatted="false">Punten in het vizier tonen tijd en T± naast elkaar, zonder blijvende tekstballonnen bij andere geselecteerde punten.</string>
+    <string name="info_news_texture_downloads" formatted="false">Foto- en panoramavoorbeelden hebben een titelbalk met Terug en Exporteren en bediening bovenaan.</string>
+    <string name="info_news_weather" formatted="false">Afbeeldingen bevatten een kleurenlegenda van objecten; fotogegevens staan groter en over meerdere regels op een aparte zwarte strook.</string>
+    <string name="info_news_viewer_zoom" formatted="false">Label- en locatieknoppen tonen hun actieve toestand duidelijker; de panoramarichting blijft een aparte keuze.</string>
+    <string name="info_news_settings" formatted="false">De hoofdkaarten laten banen en objecten erachter zien, terwijl het vizier midden in de vrije hemelruimte blijft.</string>
+    <string name="info_news_catalog" formatted="false">De eerste sectie van het Observatorium heet nu Naam en type. Opgeslagen instellingen en locatieprivacy blijven behouden.</string>
 </resources>

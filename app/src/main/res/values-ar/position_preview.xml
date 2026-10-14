@@ -13,4 +13,6 @@
     <string name="panorama_southeast" formatted="false">الجنوب الشرقي</string>
     <string name="panorama_southwest" formatted="false">الجنوب الغربي</string>
     <string name="panorama_northwest" formatted="false">الشمال الغربي</string>
+    <string name="panorama_preview_title" formatted="false">صورة بانورامية</string>
+    <string name="camera_capture_preview_title" formatted="false">صورة</string>
 </resources>

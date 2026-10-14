@@ -1,9 +1,9 @@
 <resources>
     <string name="info_news_title">Ostatnie nowości · %1$s</string>
-    <string name="info_news_star_sky" formatted="false">Zaznaczaj wiele punktów orbit, pozostawiaj ich etykiety otwarte i zmieniaj ten sam wybór w dziennej trasie.</string>
-    <string name="info_news_texture_downloads" formatted="false">Eksportuj obrazy, CSV lub czytelny TXT ze zdjęć, dziennych tras i Obserwatorium; zapisuj lub udostępniaj.</string>
-    <string name="info_news_weather" formatted="false">Prywatność lokalizacji także w tabelach: trasy zaczynają od samego regionu; po ukryciu lokalizacji czas jest w UTC.</string>
-    <string name="info_news_viewer_zoom" formatted="false">Obserwatorium grupuje tożsamość, dane fizyczne, temperatury, dane orbitalne i kontekst przestrzenny.</string>
-    <string name="info_news_settings" formatted="false">Skale kątowe z czterech stron, zwięzłe dane zdjęć i wyraźniejsze etykiety czasu/T± na zdjęciach i panoramach.</string>
-    <string name="info_news_catalog" formatted="false">Ulepszone opcje etykiet i przyciski zdjęć; nieprzezroczyste karty informacji w jasnym i ciemnym motywie.</string>
+    <string name="info_news_star_sky" formatted="false">Punkty pod celownikiem pokazują godzinę i T± obok siebie, bez stałych dymków przy pozostałych wybranych punktach.</string>
+    <string name="info_news_texture_downloads" formatted="false">Podglądy zdjęć i panoram mają pasek tytułu z przyciskami Wstecz i Eksportuj oraz sterowanie u góry.</string>
+    <string name="info_news_weather" formatted="false">Obrazy zawierają legendę kolorów obiektów; dane zdjęć mają większy tekst w kilku wierszach na osobnym czarnym pasku.</string>
+    <string name="info_news_viewer_zoom" formatted="false">Przyciski etykiet i pozycji wyraźniej pokazują stan aktywny; kierunek panoramy pozostaje osobnym wyborem.</string>
+    <string name="info_news_settings" formatted="false">Karty widoku głównego pokazują tory i obiekty w tle, a celownik pozostaje na środku wolnego obszaru nieba.</string>
+    <string name="info_news_catalog" formatted="false">Pierwsza sekcja Obserwatorium nazywa się teraz Nazwa i typ. Zapisane ustawienia i prywatność lokalizacji pozostają zachowane.</string>
 </resources>

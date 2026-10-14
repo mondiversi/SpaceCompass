@@ -13,4 +13,6 @@
     <string name="panorama_southeast" formatted="false">南東</string>
     <string name="panorama_southwest" formatted="false">南西</string>
     <string name="panorama_northwest" formatted="false">北西</string>
+    <string name="panorama_preview_title" formatted="false">パノラマ</string>
+    <string name="camera_capture_preview_title" formatted="false">写真</string>
 </resources>

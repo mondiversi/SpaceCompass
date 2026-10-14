@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="celestial_section_identity">هویت</string>
+    <string name="celestial_section_identity">نام و نوع</string>
     <string name="celestial_section_physical">ویژگی‌های فیزیکی</string>
     <string name="celestial_section_stellar">نور و مؤلفه‌ها</string>
     <string name="celestial_section_atmosphere">دما و جو</string>

@@ -4,6 +4,9 @@ import androidx.compose.foundation.isSystemInDarkTheme
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.graphics.Color
 
+// Main sky overlays share translucency while their text and layout remain unchanged.
+internal const val SPACE_COMPASS_MAIN_OVERLAY_ALPHA = .72f
+
 /** Shared page/card neutrals for Compose and native screens; the app keeps its blue/cyan accent. */
 internal data class SpaceCompassSurfacePalette(val background: Color, val island: Color)
 

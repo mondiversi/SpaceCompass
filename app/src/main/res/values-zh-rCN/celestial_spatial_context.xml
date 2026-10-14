@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="celestial_section_identity">基本信息</string>
+    <string name="celestial_section_identity">名称与类型</string>
     <string name="celestial_section_physical">物理特性</string>
     <string name="celestial_section_stellar">光度与组成天体</string>
     <string name="celestial_section_atmosphere">温度与大气</string>

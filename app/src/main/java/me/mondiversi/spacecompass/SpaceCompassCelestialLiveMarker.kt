@@ -35,7 +35,7 @@ internal const val SPACE_COMPASS_CELESTIAL_LIVE_PREVIEW_SIZE_DP = 32f
 internal fun SpaceCompassCelestialLiveMarker(body: SpaceCompassCelestialBody, projection: SpaceCompassSunProjection,
     belowHorizon: Boolean, point: SpaceCompassSunPathPoint?, state: SpaceCompassSunDailyPathUiState,
     moonPhase: SpaceCompassMoonPhase? = null,
-    path: SpaceCompassSunDailyPath? = null) {
+    path: SpaceCompassSunDailyPath? = null, interactive: Boolean = true) {
     val name = stringResource(body.nameResource)
     val timeFormat = resolveSpaceCompassTimeFormat(LocalContext.current, LocalSpaceCompassTimeFormat.current)
     val locale = LocalConfiguration.current.locales[0]
@@ -48,22 +48,23 @@ internal fun SpaceCompassCelestialLiveMarker(body: SpaceCompassCelestialBody, pr
     val current = stringResource(R.string.celestial_current_position)
     val label = moment?.let { "$name, ${stringResource(R.string.celestial_point_time, current, it)}" } ?: name
     Layout(modifier = Modifier.fillMaxSize(), content = {
-        Box(Modifier.size((SPACE_COMPASS_SUN_PATH_TOUCH_RADIUS_DP * 2).dp).testTag("celestial-current-point")
-            .then(if (point == null) Modifier else Modifier.clickable(
+        Box(Modifier.size((SPACE_COMPASS_SUN_PATH_TOUCH_RADIUS_DP * 2).dp)
+            .then(if (interactive) Modifier.testTag("celestial-current-point") else Modifier)
+            .then(if (point == null || !interactive) Modifier else Modifier.clickable(
                 interactionSource = remember { MutableInteractionSource() }, indication = null) {
                 state.toggleCurrent(body, point, path, zone)
             })
             .semantics(mergeDescendants = true) {
-                contentDescription = label
-                this.selected = selected
-                if (point != null) {
+                if (interactive) { contentDescription = label; this.selected = selected }
+                if (point != null && interactive) {
                     role = Role.Button
                     onClick { state.toggleCurrent(body, point, path, zone); true }
                 }
             }, contentAlignment = Alignment.Center) {
             SpaceCompassCelestialThumbnail(body, Modifier.size(SPACE_COMPASS_CELESTIAL_LIVE_PREVIEW_SIZE_DP.dp)
                 .border(if (selected) 1.8.dp else 0.8.dp, if (selected) accent else (if (belowHorizon) Color.LightGray else Color.White).copy(alpha = 0.65f), CircleShape)
-                .testTag("celestial-live-preview-${body.name}"), muted = belowHorizon, moonPhase = moonPhase)
+                .testTag(if (interactive) "celestial-live-preview-${body.name}" else "celestial-background-preview-${body.name}"),
+                muted = belowHorizon, moonPhase = moonPhase)
         }
     }) { measurables, constraints ->
         val targetSize = (SPACE_COMPASS_SUN_PATH_TOUCH_RADIUS_DP * 2).dp.roundToPx()

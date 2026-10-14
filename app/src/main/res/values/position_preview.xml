@@ -13,4 +13,6 @@
     <string name="panorama_southeast" formatted="false">Southeast</string>
     <string name="panorama_southwest" formatted="false">Southwest</string>
     <string name="panorama_northwest" formatted="false">Northwest</string>
+    <string name="panorama_preview_title" formatted="false">Panorama</string>
+    <string name="camera_capture_preview_title" formatted="false">Photo</string>
 </resources>
