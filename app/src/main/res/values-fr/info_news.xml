@@ -1,9 +1,9 @@
 <resources>
     <string name="info_news_title">Dernières nouveautés · %1$s</string>
-    <string name="info_news_star_sky" formatted="false">Au retour depuis l’arrière-plan, le sol reste visible, sans bref affichage du ciel seul.</string>
-    <string name="info_news_texture_downloads" formatted="false">Les orbites et images des objets restent visibles pendant que la boussole reçoit de nouvelles mesures.</string>
-    <string name="info_news_weather" formatted="false">Le fond étoilé conserve sa dernière image pendant la pause, sans calculs en arrière-plan.</string>
-    <string name="info_news_viewer_zoom" formatted="false">L’avis de lecture de l’orientation apparaît uniquement lorsque la vue principale est active au premier plan.</string>
-    <string name="info_news_settings" formatted="false">Les flèches de sélection des objets sont centrées visuellement, avec un effet de pression plus petit et bien aligné.</string>
-    <string name="info_news_catalog" formatted="false">L’écran de veille affiche en haut « Touchez pour revenir à l’application ».</string>
+    <string name="info_news_star_sky" formatted="false">Les écarts T+/T− utilisent désormais un format compact, comme 3h27m.</string>
+    <string name="info_news_texture_downloads" formatted="false">Le même format est utilisé dans la vue principale, le parcours quotidien, les photos et les panoramas.</string>
+    <string name="info_news_weather" formatted="false">Les exports CSV et TXT utilisent aussi des écarts exprimés en heures et minutes.</string>
+    <string name="info_news_viewer_zoom" formatted="false">Les points des orbites sous la barre de titre restent visibles, mais ne peuvent pas être sélectionnés.</string>
+    <string name="info_news_settings" formatted="false">Les points des orbites sous les cartes d’information restent visibles, mais ne peuvent pas être sélectionnés.</string>
+    <string name="info_news_catalog" formatted="false">La navigation, les liens vers les détails et le défilement des cartes fonctionnent comme auparavant.</string>
 </resources>

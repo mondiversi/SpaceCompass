@@ -1,9 +1,9 @@
 <resources>
     <string name="info_news_title">החידושים האחרונים · %1$s</string>
-    <string name="info_news_star_sky" formatted="false">בחזרה מהרקע, הקרקע נשארת גלויה בלי הבזק קצר של שמיים בלבד.</string>
-    <string name="info_news_texture_downloads" formatted="false">המסלולים ותמונות העצמים נשארים גלויים בזמן שהמצפן מקבל קריאות חדשות.</string>
-    <string name="info_news_weather" formatted="false">רקע הכוכבים שומר את התמונה האחרונה בזמן השהיה, ללא חישובים ברקע.</string>
-    <string name="info_news_viewer_zoom" formatted="false">הודעת קריאת הכיוון מופיעה רק כשהתצוגה הראשית פעילה בחזית.</string>
-    <string name="info_news_settings" formatted="false">חיצי בחירת העצמים ממורכזים חזותית, עם אפקט לחיצה קטן יותר ומיושר כראוי.</string>
-    <string name="info_news_catalog" formatted="false">שומר המסך מציג כעת למעלה ״געו כדי לחזור לאפליקציה״.</string>
+    <string name="info_news_star_sky" formatted="false">מרווחי הזמן T+/T− מוצגים כעת בפורמט קצר, כגון 3h27m.</string>
+    <string name="info_news_texture_downloads" formatted="false">אותו פורמט משמש בתצוגה הראשית, במסלול היומי, בתמונות ובפנורמות.</string>
+    <string name="info_news_weather" formatted="false">גם קובצי CSV ו-TXT מיוצאים עם מרווחי זמן בשעות ובדקות.</string>
+    <string name="info_news_viewer_zoom" formatted="false">נקודות המסלול שמתחת לשורת הכותרת נשארות גלויות, אך אי אפשר לבחור בהן.</string>
+    <string name="info_news_settings" formatted="false">נקודות המסלול שמתחת לכרטיסי המידע נשארות גלויות, אך אי אפשר לבחור בהן.</string>
+    <string name="info_news_catalog" formatted="false">הניווט, הקישורים לפרטים וגלילת הכרטיסים פועלים כרגיל.</string>
 </resources>

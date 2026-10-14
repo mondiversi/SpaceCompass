@@ -1,9 +1,9 @@
 <resources>
     <string name="info_news_title">最新变化 · %1$s</string>
-    <string name="info_news_star_sky" formatted="false">从后台返回时地面保持可见，不再短暂闪现只有天空的画面。</string>
-    <string name="info_news_texture_downloads" formatted="false">指南针重新获取测量数据时，轨道和天体图像仍然可见。</string>
-    <string name="info_news_weather" formatted="false">暂停时星空背景保留最后一帧，不在后台进行计算。</string>
-    <string name="info_news_viewer_zoom" formatted="false">读取朝向的提示仅在主界面于前台运行时显示。</string>
-    <string name="info_news_settings" formatted="false">天体选择箭头按视觉中心对齐，按压反馈更小且位置正确。</string>
-    <string name="info_news_catalog" formatted="false">屏幕保护程序顶部现在显示“轻触返回应用”。</string>
+    <string name="info_news_star_sky" formatted="false">T+/T−时间差现在采用3h27m这样的紧凑格式。</string>
+    <string name="info_news_texture_downloads" formatted="false">主界面、每日轨迹、照片和全景图均使用同一格式。</string>
+    <string name="info_news_weather" formatted="false">CSV和TXT导出也以小时和分钟表示时间差。</string>
+    <string name="info_news_viewer_zoom" formatted="false">标题栏下的轨道点仍然可见，但无法选择。</string>
+    <string name="info_news_settings" formatted="false">信息卡片下的轨道点仍然可见，但无法选择。</string>
+    <string name="info_news_catalog" formatted="false">卡片中的导航、详情链接和滚动仍按原有方式工作。</string>
 </resources>

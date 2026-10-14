@@ -328,3 +328,13 @@ continues to gate live point hit targets and readouts. Background registration a
 watchdog behavior are unchanged. StarField retains its last basis while inactive;
 StarTextureView skips unchanged drawings. ScreensaverView overlays a native return
 hint with display-cutout margins without resizing the globe or changing its timing.
+
+
+## Release 1.3.5: shared time labels and overlay input
+
+PointCountdown remains the single formatter for relative time in views, frozen
+captures and tabular exports. SceneTargets applies chrome exclusion to both tap
+and target coordinates; SceneInteraction reads the latest exclusions without
+restarting its pointer coroutine. Main title and information-island input shields
+absorb passive-surface taps while preserving child actions and drag scrolling.
+The full-scene decorative backdrop and free viewport projection stay separate.

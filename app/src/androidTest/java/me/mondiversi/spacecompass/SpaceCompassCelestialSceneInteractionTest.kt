@@ -82,7 +82,7 @@ class SpaceCompassCelestialSceneInteractionTest {
         compose.onNodeWithText(numbered, substring = true).assertDoesNotExist()
         compose.onNodeWithTag("celestial-badge-body").assertDoesNotExist()
         compose.onNodeWithTag("celestial-badge-event").assertDoesNotExist()
-        compose.onNodeWithTag("celestial-badge-caption").assertTextContains("07:00").assertTextContains("T+00:00")
+        compose.onNodeWithTag("celestial-badge-caption").assertTextContains("07:00").assertTextContains("T+0h0m")
         val clock = compose.onNodeWithTag("celestial-point-clock", useUnmergedTree = true).fetchSemanticsNode().boundsInRoot
         val countdown = compose.onNodeWithTag("celestial-point-countdown", useUnmergedTree = true).fetchSemanticsNode().boundsInRoot
         assertTrue(clock.right < countdown.left)

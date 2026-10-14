@@ -59,7 +59,7 @@ class SpaceCompassOrbitTableExportTest {
         assertEquals(calculateSpaceCompassSunPosition(future,capture.latitude,capture.longitude,capture.altitude),current.point.position)
         val grid = spaceCompassOrbitExportGrid(table,capture,time,"Area")
         assertTrue(grid[1][1].contains("2026-10-12")); assertTrue(grid[2][1].contains("2027-08-15"))
-        assertEquals("T+00:00",grid.single { it[0]=="! Current" }[2])
+        assertEquals("T+0h0m",grid.single { it[0]=="! Current" }[2])
     }
 
     @Test fun satellitePointsKeepTheirTwentyFourOrbitalSamplesInsteadOfCivilHours() {

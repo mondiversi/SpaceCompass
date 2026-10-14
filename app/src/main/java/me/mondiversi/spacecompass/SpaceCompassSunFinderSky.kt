@@ -140,6 +140,13 @@ internal fun SpaceCompassSunPointingViewport(
         val padding = with(density) { 4.dp.toPx().toDouble() }
         // The reticle's outer arms end at 32 dp; keep an eight-dp gap before notices.
         val noticeTopInset = with(density) { reticleCenter.y.toFloat().toDp() } + 40.dp
+        val titleTouchExclusions = buildList {
+            val headerHeight = with(density) { projectionTopInset.toPx().toDouble() }.coerceIn(0.0, height)
+            if (headerHeight > 0) add(SpaceCompassSunSceneFrame(0.0, 0.0, width, headerHeight))
+            if (centerActionsSize.width > 0 && centerActionsSize.height > 0) add(SpaceCompassSunSceneFrame(
+                centerActionsLeft, with(density) { centerActionsTop.coerceAtLeast(0.dp).toPx().toDouble() },
+                centerActionsSize.width.toDouble(), centerActionsSize.height.toDouble()))
+        }
         val exclusions = buildList {
             addAll(timeBadgeExclusions)
             // Paths can pass beneath the header, while captions and edge locators avoid it.
@@ -216,12 +223,14 @@ internal fun SpaceCompassSunPointingViewport(
             SpaceCompassCelestialSceneInteraction(targets, current, focused, dailyPathUiState, timeMs, orientation.takeIf { compassReliable },
                 primaryText, secondaryText, backgroundColor, exclusions + offscreen.values.map {
                     SpaceCompassSunSceneFrame(it.center.x - markerDiameter / 2, it.center.y - markerDiameter / 2, markerDiameter, markerDiameter)
-                }, scenePerspective, paths, pinnedTargets = pinned)
+                }, scenePerspective, paths, pinnedTargets = pinned, hitExclusions = titleTouchExclusions)
             // Only thumbnails have small local targets; they never intercept another path's whole viewport.
             spaceCompassAllCelestialOrder.forEach { candidate -> key(candidate) { projections[candidate]?.let { projected ->
                 val below = positions.getValue(candidate).elevationDegrees < 0
                 if (projected.visible) SpaceCompassCelestialLiveMarker(candidate, projected, below, current[candidate], dailyPathUiState,
-                    moonPhase = moonPhase, path = paths[candidate], interactive = compassReliable,
+                    moonPhase = moonPhase, path = paths[candidate],
+                    interactive = compassReliable && !spaceCompassScenePointIsCovered(SpaceCompassSunScenePoint(
+                        pixelProjections.getValue(candidate).x, pixelProjections.getValue(candidate).y), titleTouchExclusions),
                     focused = focused?.let { it.isCurrent && it.body == candidate } == true)
                 else offscreen[candidate]?.let { placement ->
                     SpaceCompassCelestialOffscreenMarker(candidate, projected, below,

@@ -11,7 +11,7 @@ class SpaceCompassPanoramaPointLabelTest {
         numeric = SpaceCompassNumericFormat.SYSTEM, deviceLocale = Locale.ITALIAN)
 
     @Test fun currentPointKeepsTheFrozenMomentAndBothAngles() {
-        assertEquals("Current\n23:59 · T+00:00\n150.0° · +5.2°",
+        assertEquals("Current\n23:59 · T+0h0m\n150.0° · +5.2°",
             formatSpaceCompassPanoramaPointLabel("23:59", SpaceCompassSunPosition(150.0, 5.24), scientific, "Current",
                 formatSpaceCompassPanoramaPointCountdown(1_000L, 1_000L, scientific)))
     }
@@ -34,11 +34,11 @@ class SpaceCompassPanoramaPointLabelTest {
         SpaceCompassSunPathPoint(1_000L, SpaceCompassSunPosition(150.0, 20.75), event, coincidentEvents = coincident)
 
     @Test fun allPrincipalEventsHaveNamesWhileHourlyPointsKeepClockCountdownAndBothAngles() {
-        val expected = mapOf(SpaceCompassSunPathEvent.HOUR to "12:00 · T+00:00\n150.0° · +20.8°",
-            SpaceCompassSunPathEvent.SUNRISE to "Rise\n12:00 · T+00:00\n150.0° · +20.8°",
-            SpaceCompassSunPathEvent.CULMINATION to "Culmination\n12:00 · T+00:00\n150.0° · +20.8°",
-            SpaceCompassSunPathEvent.SUNSET to "Set\n12:00 · T+00:00\n150.0° · +20.8°",
-            SpaceCompassSunPathEvent.MINIMUM to "Minimum\n12:00 · T+00:00\n150.0° · +20.8°")
+        val expected = mapOf(SpaceCompassSunPathEvent.HOUR to "12:00 · T+0h0m\n150.0° · +20.8°",
+            SpaceCompassSunPathEvent.SUNRISE to "Rise\n12:00 · T+0h0m\n150.0° · +20.8°",
+            SpaceCompassSunPathEvent.CULMINATION to "Culmination\n12:00 · T+0h0m\n150.0° · +20.8°",
+            SpaceCompassSunPathEvent.SUNSET to "Set\n12:00 · T+0h0m\n150.0° · +20.8°",
+            SpaceCompassSunPathEvent.MINIMUM to "Minimum\n12:00 · T+0h0m\n150.0° · +20.8°")
         for ((event, label) in expected) assertEquals(label,
             formatSpaceCompassPanoramaPathPointLabel("12:00", point(event), scientific, spaceCompassPanoramaDefaultEventNames, 1_000L))
     }
@@ -46,7 +46,7 @@ class SpaceCompassPanoramaPointLabelTest {
     @Test fun coincidentEventsKeepAllDistinctNamesWithoutAnHourlyName() {
         val merged = point(SpaceCompassSunPathEvent.MINIMUM, setOf(SpaceCompassSunPathEvent.SUNSET,
             SpaceCompassSunPathEvent.HOUR, SpaceCompassSunPathEvent.MINIMUM, SpaceCompassSunPathEvent.SUNRISE))
-        assertEquals("Minimum · Rise · Set\n12:00 · T+00:00\n150.0° · +20.8°",
+        assertEquals("Minimum · Rise · Set\n12:00 · T+0h0m\n150.0° · +20.8°",
             formatSpaceCompassPanoramaPathPointLabel("12:00", merged, scientific, spaceCompassPanoramaDefaultEventNames, 1_000L))
     }
 
@@ -54,18 +54,18 @@ class SpaceCompassPanoramaPointLabelTest {
         val first = point(SpaceCompassSunPathEvent.SUNRISE)
         val second = point(SpaceCompassSunPathEvent.MINIMUM)
         assertEquals(first.timeMs, second.timeMs)
-        assertEquals("Rise\n12:00 · T+00:00\n150.0° · +20.8°",
+        assertEquals("Rise\n12:00 · T+0h0m\n150.0° · +20.8°",
             formatSpaceCompassPanoramaPathPointLabel("12:00", first, scientific, spaceCompassPanoramaDefaultEventNames, 1_000L))
-        assertEquals("Minimum\n12:00 · T+00:00\n150.0° · +20.8°",
+        assertEquals("Minimum\n12:00 · T+0h0m\n150.0° · +20.8°",
             formatSpaceCompassPanoramaPathPointLabel("12:00", second, scientific, spaceCompassPanoramaDefaultEventNames, 1_000L))
     }
 
     @Test fun eventNamesAndElevationUseTheFrozenLanguageAndFormattingForEachPresentation() {
         val translated = mapOf(SpaceCompassSunPathEvent.CULMINATION to "Culmine")
         val marker = point(SpaceCompassSunPathEvent.CULMINATION)
-        assertEquals("Culmine\n17:42 · T+00:00\n150,0° · +20,8°",
+        assertEquals("Culmine\n17:42 · T+0h0m\n150,0° · +20,8°",
             formatSpaceCompassPanoramaPathPointLabel("17:42", marker, italian, translated, 1_000L))
-        assertEquals("Culmination\n17:42 · T+00:00\n150.0° · +20.8°",
+        assertEquals("Culmination\n17:42 · T+0h0m\n150.0° · +20.8°",
             formatSpaceCompassPanoramaPathPointLabel("17:42", marker, scientific, spaceCompassPanoramaDefaultEventNames, 1_000L))
     }
 
@@ -81,17 +81,17 @@ class SpaceCompassPanoramaPointLabelTest {
         fun label(time: Long, captured: Long) = formatSpaceCompassPanoramaPathPointLabel("02:30",
             SpaceCompassSunPathPoint(time, SpaceCompassSunPosition(150.0, 20.75), SpaceCompassSunPathEvent.CULMINATION),
             italian, mapOf(SpaceCompassSunPathEvent.CULMINATION to "Culmine"), captured)
-        assertEquals("Culmine\n02:30 · T−01:00\n150,0° · +20,8°", label(after, before))
-        assertEquals("Culmine\n02:30 · T+01:00\n150,0° · +20,8°", label(before, after))
-        assertEquals("Culmine\n02:30 · T+00:00\n150,0° · +20,8°", label(after, after))
+        assertEquals("Culmine\n02:30 · T−1h0m\n150,0° · +20,8°", label(after, before))
+        assertEquals("Culmine\n02:30 · T+1h0m\n150,0° · +20,8°", label(before, after))
+        assertEquals("Culmine\n02:30 · T+0h0m\n150,0° · +20,8°", label(after, after))
     }
 
     @Test fun countdownDigitsFollowSelectedAndInternationalProfilesWithoutSeconds() {
         val arabic = scientific.copy(numeric = SpaceCompassNumericFormat.SYSTEM,
             deviceLocale = Locale.forLanguageTag("ar-u-nu-arab"))
-        assertEquals("T−٠١:٠١", formatSpaceCompassPanoramaPointCountdown(3_661_000L, 0L, arabic))
-        assertEquals("T−01:01", formatSpaceCompassPanoramaPointCountdown(3_661_000L, 0L,
+        assertEquals("T−١h١m", formatSpaceCompassPanoramaPointCountdown(3_661_000L, 0L, arabic))
+        assertEquals("T−1h1m", formatSpaceCompassPanoramaPointCountdown(3_661_000L, 0L,
             arabic.copy(numeric = SpaceCompassNumericFormat.INTERNATIONAL)))
-        assertEquals("T+01:01", formatSpaceCompassPanoramaPointCountdown(0L, 3_661_000L, scientific))
+        assertEquals("T+1h1m", formatSpaceCompassPanoramaPointCountdown(0L, 3_661_000L, scientific))
     }
 }

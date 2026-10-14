@@ -96,8 +96,9 @@ internal fun SpaceCompassSunFinderDataPanel(
 private fun SpaceCompassSunFinderDataIsland(primaryText: Color, backgroundColor: Color, compact: Boolean,
     tag: String, content: @Composable ColumnScope.() -> Unit) {
     val shape = RoundedCornerShape(20.dp)
+    // The translucent surface is not an input window into the scene beneath it.
     Column(Modifier.fillMaxWidth().testTag(tag).clip(shape)
-        .background(spaceCompassSettingsCardColor().copy(alpha = SPACE_COMPASS_MAIN_OVERLAY_ALPHA))
+        .spaceCompassSceneInputShield().background(spaceCompassSettingsCardColor().copy(alpha = SPACE_COMPASS_MAIN_OVERLAY_ALPHA))
         .padding(horizontal = 12.dp, vertical = if (compact) 8.dp else 10.dp),
         verticalArrangement = Arrangement.spacedBy(if (compact) 3.dp else 5.dp), content = content)
 }

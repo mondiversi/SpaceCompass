@@ -1,9 +1,9 @@
 <resources>
     <string name="info_news_title">تازه‌ترین تغییرات · %1$s</string>
-    <string name="info_news_star_sky" formatted="false">هنگام بازگشت از پس‌زمینه، زمین دیده می‌شود و نمایش کوتاهِ فقط آسمان رخ نمی‌دهد.</string>
-    <string name="info_news_texture_downloads" formatted="false">مدارها و تصاویر اجرام هنگام دریافت خوانش‌های تازهٔ قطب‌نما همچنان دیده می‌شوند.</string>
-    <string name="info_news_weather" formatted="false">پس‌زمینهٔ ستاره‌ای در حالت توقف، آخرین فریم را نگه می‌دارد و محاسبه‌ای در پس‌زمینه انجام نمی‌دهد.</string>
-    <string name="info_news_viewer_zoom" formatted="false">پیام خواندن جهت فقط هنگامی نمایش داده می‌شود که نمای اصلی در پیش‌زمینه فعال باشد.</string>
-    <string name="info_news_settings" formatted="false">پیکان‌های انتخاب اجرام از نظر بصری در مرکز قرار دارند و جلوهٔ فشردن کوچک‌تر و درست تراز شده است.</string>
-    <string name="info_news_catalog" formatted="false">محافظ صفحه اکنون در بالا «برای بازگشت به برنامه لمس کنید» را نشان می‌دهد.</string>
+    <string name="info_news_star_sky" formatted="false">فاصله‌های زمانی T+/T− اکنون به شکل فشرده، مانند 3h27m، نمایش داده می‌شوند.</string>
+    <string name="info_news_texture_downloads" formatted="false">همین قالب در نمای اصلی، مسیر روزانه، عکس‌ها و پانوراماها استفاده می‌شود.</string>
+    <string name="info_news_weather" formatted="false">خروجی‌های CSV و TXT نیز فاصله‌های زمانی را به ساعت و دقیقه نمایش می‌دهند.</string>
+    <string name="info_news_viewer_zoom" formatted="false">نقاط مدار زیر نوار عنوان همچنان دیده می‌شوند، اما قابل انتخاب نیستند.</string>
+    <string name="info_news_settings" formatted="false">نقاط مدار زیر کارت‌های اطلاعات همچنان دیده می‌شوند، اما قابل انتخاب نیستند.</string>
+    <string name="info_news_catalog" formatted="false">پیمایش، پیوندهای جزئیات و اسکرول کارت‌ها مانند قبل کار می‌کنند.</string>
 </resources>

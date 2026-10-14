@@ -1,9 +1,9 @@
 <resources>
     <string name="info_news_title">Perubahan terbaru · %1$s</string>
-    <string name="info_news_star_sky" formatted="false">Saat kembali dari latar belakang, tanah tetap terlihat tanpa kilatan singkat yang hanya menampilkan langit.</string>
-    <string name="info_news_texture_downloads" formatted="false">Orbit dan gambar objek tetap terlihat saat kompas memperoleh pembacaan baru.</string>
-    <string name="info_news_weather" formatted="false">Latar bintang mempertahankan bingkai terakhir saat dijeda, tanpa perhitungan di latar belakang.</string>
-    <string name="info_news_viewer_zoom" formatted="false">Pemberitahuan pembacaan orientasi hanya muncul saat tampilan utama aktif di latar depan.</string>
-    <string name="info_news_settings" formatted="false">Panah pemilihan objek dipusatkan secara visual, dengan efek tekan yang lebih kecil dan selaras.</string>
-    <string name="info_news_catalog" formatted="false">Penghemat layar kini menampilkan “Ketuk untuk kembali ke aplikasi” di bagian atas.</string>
+    <string name="info_news_star_sky" formatted="false">Selisih waktu T+/T− kini memakai format ringkas, seperti 3h27m.</string>
+    <string name="info_news_texture_downloads" formatted="false">Format yang sama dipakai pada tampilan utama, lintasan harian, foto, dan panorama.</string>
+    <string name="info_news_weather" formatted="false">Ekspor CSV dan TXT juga memakai selisih waktu dalam jam dan menit.</string>
+    <string name="info_news_viewer_zoom" formatted="false">Titik orbit di bawah bilah judul tetap terlihat, tetapi tidak dapat dipilih.</string>
+    <string name="info_news_settings" formatted="false">Titik orbit di bawah kartu informasi tetap terlihat, tetapi tidak dapat dipilih.</string>
+    <string name="info_news_catalog" formatted="false">Navigasi, tautan detail, dan pengguliran kartu tetap berfungsi seperti biasa.</string>
 </resources>

@@ -1,9 +1,9 @@
 <resources>
     <string name="info_news_title">Neuigkeiten · %1$s</string>
-    <string name="info_news_star_sky" formatted="false">Beim Zurückkehren aus dem Hintergrund bleibt der Boden sichtbar, ohne kurz nur den Himmel zu zeigen.</string>
-    <string name="info_news_texture_downloads" formatted="false">Bahnen und Objektbilder bleiben sichtbar, während der Kompass neue Messwerte erfasst.</string>
-    <string name="info_news_weather" formatted="false">Der Sternenhintergrund behält in der Pause sein letztes Bild, ohne Berechnungen im Hintergrund.</string>
-    <string name="info_news_viewer_zoom" formatted="false">Der Hinweis zum Einlesen der Ausrichtung erscheint nur bei aktiver Hauptansicht im Vordergrund.</string>
-    <string name="info_news_settings" formatted="false">Die Pfeile zur Objektauswahl sind optisch zentriert, mit kleinerer und passend ausgerichteter Druckrückmeldung.</string>
-    <string name="info_news_catalog" formatted="false">Der Bildschirmschoner zeigt oben „Tippen, um zur App zurückzukehren“.</string>
+    <string name="info_news_star_sky" formatted="false">T+/T−-Zeitabstände werden jetzt kompakt dargestellt, etwa als 3h27m.</string>
+    <string name="info_news_texture_downloads" formatted="false">Dasselbe Countdown-Format gilt in der Hauptansicht, im Tagesverlauf, in Fotos und Panoramen.</string>
+    <string name="info_news_weather" formatted="false">Auch CSV- und TXT-Exporte verwenden Zeitabstände in Stunden und Minuten.</string>
+    <string name="info_news_viewer_zoom" formatted="false">Bahnpunkte unter der Titelleiste bleiben sichtbar, können aber nicht ausgewählt werden.</string>
+    <string name="info_news_settings" formatted="false">Bahnpunkte unter den Informationskarten bleiben sichtbar, können aber nicht ausgewählt werden.</string>
+    <string name="info_news_catalog" formatted="false">Navigation, Detailverknüpfungen und Scrollen in den Karten funktionieren wie gewohnt.</string>
 </resources>

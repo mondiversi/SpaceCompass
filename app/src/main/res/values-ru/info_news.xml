@@ -1,9 +1,9 @@
 <resources>
     <string name="info_news_title">Последние новости · %1$s</string>
-    <string name="info_news_star_sky" formatted="false">При возвращении из фона поверхность земли остаётся видимой, без краткой вспышки одного неба.</string>
-    <string name="info_news_texture_downloads" formatted="false">Орбиты и изображения объектов остаются видимыми, пока компас получает новые показания.</string>
-    <string name="info_news_weather" formatted="false">Звёздный фон сохраняет последний кадр во время паузы, без фоновых вычислений.</string>
-    <string name="info_news_viewer_zoom" formatted="false">Сообщение о считывании ориентации появляется только при активном главном экране на переднем плане.</string>
-    <string name="info_news_settings" formatted="false">Стрелки выбора объектов визуально центрированы; эффект нажатия стал меньше и правильно выровнен.</string>
-    <string name="info_news_catalog" formatted="false">Вверху заставки теперь написано «Коснитесь, чтобы вернуться в приложение».</string>
+    <string name="info_news_star_sky" formatted="false">Интервалы T+/T− теперь отображаются в компактном формате, например 3h27m.</string>
+    <string name="info_news_texture_downloads" formatted="false">Один и тот же формат используется на главном экране, в дневном пути, на фотографиях и панорамах.</string>
+    <string name="info_news_weather" formatted="false">В экспорте CSV и TXT также используются интервалы в часах и минутах.</string>
+    <string name="info_news_viewer_zoom" formatted="false">Точки орбит под строкой заголовка остаются видимыми, но их нельзя выбрать.</string>
+    <string name="info_news_settings" formatted="false">Точки орбит под информационными карточками остаются видимыми, но их нельзя выбрать.</string>
+    <string name="info_news_catalog" formatted="false">Навигация, ссылки на подробности и прокрутка карточек работают как прежде.</string>
 </resources>

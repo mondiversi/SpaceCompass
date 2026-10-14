@@ -1,9 +1,9 @@
 <resources>
     <string name="info_news_title">Últimas novidades · %1$s</string>
-    <string name="info_news_star_sky" formatted="false">Ao voltar do segundo plano, o terreno continua visível, sem um breve clarão mostrando apenas o céu.</string>
-    <string name="info_news_texture_downloads" formatted="false">Órbitas e imagens dos objetos permanecem visíveis enquanto a bússola obtém novas leituras.</string>
-    <string name="info_news_weather" formatted="false">O fundo estrelado mantém seu último quadro durante a pausa, sem cálculos em segundo plano.</string>
-    <string name="info_news_viewer_zoom" formatted="false">O aviso de leitura da orientação aparece apenas quando a tela principal está ativa em primeiro plano.</string>
-    <string name="info_news_settings" formatted="false">As setas de seleção dos objetos estão visualmente centralizadas, com um efeito de toque menor e alinhado.</string>
-    <string name="info_news_catalog" formatted="false">O protetor de tela mostra no alto “Toque para voltar ao aplicativo”.</string>
+    <string name="info_news_star_sky" formatted="false">Os intervalos T+/T− usam agora um formato compacto, como 3h27m.</string>
+    <string name="info_news_texture_downloads" formatted="false">O mesmo formato é usado na vista principal, no percurso diário, nas fotos e nos panoramas.</string>
+    <string name="info_news_weather" formatted="false">As exportações CSV e TXT também usam intervalos expressos em horas e minutos.</string>
+    <string name="info_news_viewer_zoom" formatted="false">Os pontos das órbitas sob a barra de título continuam visíveis, mas não podem ser selecionados.</string>
+    <string name="info_news_settings" formatted="false">Os pontos das órbitas sob os cartões informativos continuam visíveis, mas não podem ser selecionados.</string>
+    <string name="info_news_catalog" formatted="false">A navegação, as ligações aos detalhes e a rolagem dos cartões funcionam como antes.</string>
 </resources>

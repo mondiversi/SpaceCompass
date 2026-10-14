@@ -1,9 +1,9 @@
 <resources>
     <string name="info_news_title">最近の変更 · %1$s</string>
-    <string name="info_news_star_sky" formatted="false">バックグラウンドから戻る際も地面が表示され、空だけが一瞬表示される現象を解消しました。</string>
-    <string name="info_news_texture_downloads" formatted="false">コンパスが新しい測定値を取得する間も、軌道と天体の画像は表示されたままです。</string>
-    <string name="info_news_weather" formatted="false">一時停止中は星空の最後のフレームを保持し、バックグラウンドで計算しません。</string>
-    <string name="info_news_viewer_zoom" formatted="false">向きを読み取る通知は、メイン画面が前面で動作しているときだけ表示されます。</string>
-    <string name="info_news_settings" formatted="false">天体選択の矢印を見た目の中心に調整し、押したときの表示を小さくして位置を合わせました。</string>
-    <string name="info_news_catalog" formatted="false">スクリーンセーバーの上部に「タップしてアプリに戻る」と表示します。</string>
+    <string name="info_news_star_sky" formatted="false">T+/T−の時間差を3h27mのような簡潔な形式で表示するようになりました。</string>
+    <string name="info_news_texture_downloads" formatted="false">メイン画面、日ごとの経路、写真、パノラマで同じ形式を使用します。</string>
+    <string name="info_news_weather" formatted="false">CSVとTXTの書き出しでも時間差を時間と分で表示します。</string>
+    <string name="info_news_viewer_zoom" formatted="false">タイトルバーの下にある軌道上の点は表示されたままですが、選択できません。</string>
+    <string name="info_news_settings" formatted="false">情報カードの下にある軌道上の点は表示されたままですが、選択できません。</string>
+    <string name="info_news_catalog" formatted="false">カード内の移動、詳細リンク、スクロールは従来どおり機能します。</string>
 </resources>

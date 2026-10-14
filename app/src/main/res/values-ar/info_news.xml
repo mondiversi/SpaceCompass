@@ -1,9 +1,9 @@
 <resources>
     <string name="info_news_title">آخر المستجدات · %1$s</string>
-    <string name="info_news_star_sky" formatted="false">عند العودة من الخلفية تبقى الأرض ظاهرة، دون ومضة قصيرة تعرض السماء وحدها.</string>
-    <string name="info_news_texture_downloads" formatted="false">تبقى المدارات وصور الأجسام ظاهرة أثناء حصول البوصلة على قراءات جديدة.</string>
-    <string name="info_news_weather" formatted="false">تحتفظ خلفية النجوم بآخر إطار أثناء الإيقاف المؤقت، دون حسابات في الخلفية.</string>
-    <string name="info_news_viewer_zoom" formatted="false">يظهر إشعار قراءة الاتجاه فقط عندما تكون الشاشة الرئيسية نشطة في المقدمة.</string>
-    <string name="info_news_settings" formatted="false">أسهم اختيار الأجسام متمركزة بصريًا، مع تأثير ضغط أصغر ومحاذاة صحيحة.</string>
-    <string name="info_news_catalog" formatted="false">تعرض شاشة التوقف في الأعلى «المس للعودة إلى التطبيق».</string>
+    <string name="info_news_star_sky" formatted="false">تستخدم الفواصل الزمنية T+/T− الآن تنسيقًا مختصرًا مثل 3h27m.</string>
+    <string name="info_news_texture_downloads" formatted="false">يُستخدم التنسيق نفسه في العرض الرئيسي والمسار اليومي والصور والصور البانورامية.</string>
+    <string name="info_news_weather" formatted="false">تستخدم صادرات CSV وTXT أيضًا فواصل زمنية بالساعات والدقائق.</string>
+    <string name="info_news_viewer_zoom" formatted="false">تبقى نقاط المدارات أسفل شريط العنوان مرئية، لكن لا يمكن تحديدها.</string>
+    <string name="info_news_settings" formatted="false">تبقى نقاط المدارات أسفل بطاقات المعلومات مرئية، لكن لا يمكن تحديدها.</string>
+    <string name="info_news_catalog" formatted="false">يظل التنقل وروابط التفاصيل والتمرير داخل البطاقات يعمل كالمعتاد.</string>
 </resources>

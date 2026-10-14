@@ -38,8 +38,9 @@ internal fun SpaceCompassCelestialBodyDataIsland(bodyName: String?, primaryText:
     compact: Boolean, navigation: SpaceCompassCelestialBodyNavigation?,
     actions: @Composable () -> Unit = {}, content: @Composable ColumnScope.() -> Unit) {
     val shape = RoundedCornerShape(20.dp)
+    // Absorb blank-surface taps; child navigation and details actions keep priority.
     Column(Modifier.fillMaxWidth().testTag("sun-finder-body-data").clip(shape)
-        .background(spaceCompassSettingsCardColor().copy(alpha = SPACE_COMPASS_MAIN_OVERLAY_ALPHA))
+        .spaceCompassSceneInputShield().background(spaceCompassSettingsCardColor().copy(alpha = SPACE_COMPASS_MAIN_OVERLAY_ALPHA))
         .padding(horizontal = 12.dp)) {
         if (bodyName != null || navigation != null) {
             // Compact only the title bar; retain the normal insets around the data below it.

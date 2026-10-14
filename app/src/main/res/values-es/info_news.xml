@@ -1,9 +1,9 @@
 <resources>
     <string name="info_news_title">Últimas novedades · %1$s</string>
-    <string name="info_news_star_sky" formatted="false">Al volver del segundo plano, el terreno sigue visible, sin un breve destello de cielo solamente.</string>
-    <string name="info_news_texture_downloads" formatted="false">Las órbitas e imágenes de los objetos siguen visibles mientras la brújula obtiene nuevas lecturas.</string>
-    <string name="info_news_weather" formatted="false">El fondo estrellado conserva su último fotograma durante la pausa, sin cálculos en segundo plano.</string>
-    <string name="info_news_viewer_zoom" formatted="false">El aviso de lectura de orientación aparece solo cuando la vista principal está activa en primer plano.</string>
-    <string name="info_news_settings" formatted="false">Las flechas para seleccionar objetos están centradas visualmente, con un efecto de pulsación más pequeño y alineado.</string>
-    <string name="info_news_catalog" formatted="false">El salvapantallas muestra arriba «Toca para volver a la aplicación».</string>
+    <string name="info_news_star_sky" formatted="false">Los intervalos T+/T− usan ahora un formato compacto, como 3h27m.</string>
+    <string name="info_news_texture_downloads" formatted="false">El mismo formato se usa en la vista principal, el recorrido diario, las fotos y las panorámicas.</string>
+    <string name="info_news_weather" formatted="false">Las exportaciones CSV y TXT también usan intervalos expresados en horas y minutos.</string>
+    <string name="info_news_viewer_zoom" formatted="false">Los puntos de las órbitas bajo la barra de título siguen visibles, pero no se pueden seleccionar.</string>
+    <string name="info_news_settings" formatted="false">Los puntos de las órbitas bajo las tarjetas informativas siguen visibles, pero no se pueden seleccionar.</string>
+    <string name="info_news_catalog" formatted="false">La navegación, los enlaces a los detalles y el desplazamiento de las tarjetas funcionan como siempre.</string>
 </resources>

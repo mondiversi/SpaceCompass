@@ -88,6 +88,37 @@ class SpaceCompassCelestialSceneTargetsTest {
         assertEquals(live, tappedSpaceCompassCelestialSceneTarget(listOf(regular, event, live), regular.projection, 32.0))
     }
 
+    @Test fun headerTouchesDoNotSelectVisiblePointsWithinTheirTouchRadius() {
+        val header = listOf(SpaceCompassSunSceneFrame(0.0, 0.0, 340.0, 50.0))
+        val visible = SpaceCompassCelestialSceneTarget(SpaceCompassCelestialBody.MOON, point,
+            SpaceCompassSunScenePoint(170.0, 55.0))
+        assertNull(tappedSpaceCompassCelestialSceneTarget(listOf(visible), SpaceCompassSunScenePoint(170.0, 45.0), 32.0, header))
+        assertEquals(visible, tappedSpaceCompassCelestialSceneTarget(listOf(visible), visible.projection, 32.0, header))
+    }
+
+    @Test fun coveredHourlySpecialAndCurrentPointsCannotBeSelectedFromBelowTheHeader() {
+        val header = listOf(SpaceCompassSunSceneFrame(0.0, 0.0, 340.0, 50.0))
+        for (event in SpaceCompassSunPathEvent.entries) for (live in listOf(false, true)) {
+            val covered = SpaceCompassCelestialSceneTarget(SpaceCompassCelestialBody.MOON,
+                point.copy(event = event), SpaceCompassSunScenePoint(170.0, 40.0), isCurrent = live)
+            assertNull(tappedSpaceCompassCelestialSceneTarget(listOf(covered), covered.projection, 32.0, header))
+            assertNull(tappedSpaceCompassCelestialSceneTarget(listOf(covered), SpaceCompassSunScenePoint(170.0, 55.0), 32.0, header))
+        }
+    }
+
+    @Test fun aFloatingTitleOnlyBlocksItsOwnRectangleInEitherScreenOrientation() {
+        for (width in listOf(340.0, 700.0)) {
+            val title = listOf(SpaceCompassSunSceneFrame(width/2-70.0, 16.0, 140.0, 48.0))
+            val covered = SpaceCompassCelestialSceneTarget(SpaceCompassCelestialBody.SUN, point,
+                SpaceCompassSunScenePoint(width/2, 40.0))
+            assertNull(tappedSpaceCompassCelestialSceneTarget(listOf(covered), covered.projection, 32.0, title))
+            for (x in listOf(20.0, width-20.0)) {
+                val visible = covered.copy(projection = SpaceCompassSunScenePoint(x, 40.0))
+                assertEquals(visible, tappedSpaceCompassCelestialSceneTarget(listOf(visible), visible.projection, 32.0, title))
+            }
+        }
+    }
+
     @Test fun missingOrientationOffscreenOrInvalidWindowsDoNotInventTargets() {
         val paths = mapOf(SpaceCompassCelestialBody.SUN to path(SpaceCompassCelestialBody.SUN, listOf(point)))
         assertTrue(targets(paths, pose = null).isEmpty())

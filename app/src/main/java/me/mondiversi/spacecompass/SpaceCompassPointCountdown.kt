@@ -10,5 +10,5 @@ internal fun formatSpaceCompassPointCountdown(timeMs: Long, nowMs: Long, locale:
     val duration = Duration.between(Instant.ofEpochMilli(nowMs), Instant.ofEpochMilli(timeMs)).abs()
     val minutes = duration.toMinutes()
     val sign = if (future) "T−" else "T+"
-    return sign + String.format(locale, "%02d:%02d", minutes / 60, minutes % 60)
+    return sign + String.format(locale, "%dh%dm", minutes / 60, minutes % 60)
 }

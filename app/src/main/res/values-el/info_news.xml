@@ -1,9 +1,9 @@
 <resources>
     <string name="info_news_title">Τελευταία νέα · %1$s</string>
-    <string name="info_news_star_sky" formatted="false">Κατά την επιστροφή από το παρασκήνιο, το έδαφος παραμένει ορατό χωρίς σύντομη εμφάνιση μόνο του ουρανού.</string>
-    <string name="info_news_texture_downloads" formatted="false">Οι τροχιές και οι εικόνες των αντικειμένων παραμένουν ορατές ενώ η πυξίδα λαμβάνει νέες μετρήσεις.</string>
-    <string name="info_news_weather" formatted="false">Το έναστρο φόντο διατηρεί το τελευταίο καρέ στην παύση, χωρίς υπολογισμούς στο παρασκήνιο.</string>
-    <string name="info_news_viewer_zoom" formatted="false">Η ένδειξη ανάγνωσης προσανατολισμού εμφανίζεται μόνο όταν η κύρια προβολή είναι ενεργή στο προσκήνιο.</string>
-    <string name="info_news_settings" formatted="false">Τα βέλη επιλογής αντικειμένων είναι οπτικά κεντραρισμένα, με μικρότερη και σωστά ευθυγραμμισμένη ένδειξη πατήματος.</string>
-    <string name="info_news_catalog" formatted="false">Η προφύλαξη οθόνης εμφανίζει επάνω «Αγγίξτε για να επιστρέψετε στην εφαρμογή».</string>
+    <string name="info_news_star_sky" formatted="false">Τα διαστήματα T+/T− εμφανίζονται πλέον σε σύντομη μορφή, όπως 3h27m.</string>
+    <string name="info_news_texture_downloads" formatted="false">Η ίδια μορφή χρησιμοποιείται στην κύρια προβολή, στην ημερήσια διαδρομή, στις φωτογραφίες και στα πανοράματα.</string>
+    <string name="info_news_weather" formatted="false">Οι εξαγωγές CSV και TXT χρησιμοποιούν επίσης διαστήματα σε ώρες και λεπτά.</string>
+    <string name="info_news_viewer_zoom" formatted="false">Τα σημεία των τροχιών κάτω από τη γραμμή τίτλου παραμένουν ορατά, αλλά δεν μπορούν να επιλεγούν.</string>
+    <string name="info_news_settings" formatted="false">Τα σημεία των τροχιών κάτω από τις κάρτες πληροφοριών παραμένουν ορατά, αλλά δεν μπορούν να επιλεγούν.</string>
+    <string name="info_news_catalog" formatted="false">Η πλοήγηση, οι σύνδεσμοι λεπτομερειών και η κύλιση των καρτών λειτουργούν όπως πριν.</string>
 </resources>

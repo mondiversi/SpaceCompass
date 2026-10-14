@@ -1,5 +1,13 @@
 # Changelog
 
+## 1.3.5 — 2026-10-14
+
+- Display relative T+/T− offsets as compact hours and minutes (for example, T−3h27m) throughout the main view, daily paths, frozen photo/panorama labels and CSV/TXT exports. Clock times and time-zone offsets are unchanged.
+- Keep orbital points and live markers behind the main title bar visible but prevent selection through it, including covered targets reached from below by their touch radius.
+- Absorb blank-surface taps on the translucent object and compass/position islands while retaining child navigation, details actions and scrolling.
+- Add numerical regression coverage for covered target/tap exclusion and compile Android gesture tests for island shields, child actions and scroll priority.
+- Refresh all twenty in-app news summaries. Preserve preferences, selected points, scientific calculations, signing identity, image pack 1.1 and previous release assets.
+
 ## 1.3.4 — 2026-10-14
 
 - Retain the visual scene during pause and sensor recovery so ground, orbits and object markers do not disappear when returning from background.

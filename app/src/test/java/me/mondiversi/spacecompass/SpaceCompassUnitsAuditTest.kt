@@ -167,7 +167,7 @@ class SpaceCompassUnitsAuditTest {
             SpaceCompassTimeFormat.H24, SpaceCompassDateFormat.INTERNATIONAL, arabic, Locale.US, american))
         assertEquals("02:30 (UTC+01:00)", formatSpaceCompassCelestialMoment(second, first, ZoneId.of("Europe/Rome"),
             SpaceCompassTimeFormat.H24, SpaceCompassDateFormat.INTERNATIONAL, arabic, Locale.US, american))
-        assertEquals("T−01:00", formatSpaceCompassPointCountdown(second, first, Locale.US))
+        assertEquals("T−1h0m", formatSpaceCompassPointCountdown(second, first, Locale.US))
     }
 
     @Test fun integerCountsAndMeasurementsShareDeviceDigitsAndExplicitFormats() {

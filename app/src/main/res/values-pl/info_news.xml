@@ -1,9 +1,9 @@
 <resources>
     <string name="info_news_title">Ostatnie nowości · %1$s</string>
-    <string name="info_news_star_sky" formatted="false">Po powrocie z tła teren pozostaje widoczny, bez krótkiego błysku pokazującego samo niebo.</string>
-    <string name="info_news_texture_downloads" formatted="false">Orbity i obrazy obiektów pozostają widoczne, gdy kompas pobiera nowe odczyty.</string>
-    <string name="info_news_weather" formatted="false">Gwiaździste tło zachowuje ostatnią klatkę podczas pauzy, bez obliczeń w tle.</string>
-    <string name="info_news_viewer_zoom" formatted="false">Komunikat o odczytywaniu orientacji pojawia się tylko przy aktywnym widoku głównym na pierwszym planie.</string>
-    <string name="info_news_settings" formatted="false">Strzałki wyboru obiektów są wyśrodkowane optycznie, z mniejszym i poprawnie wyrównanym efektem naciśnięcia.</string>
-    <string name="info_news_catalog" formatted="false">Wygaszacz ekranu pokazuje u góry „Dotknij, aby wrócić do aplikacji”.</string>
+    <string name="info_news_star_sky" formatted="false">Odstępy czasu T+/T− mają teraz zwięzły format, na przykład 3h27m.</string>
+    <string name="info_news_texture_downloads" formatted="false">Ten sam format jest używany w widoku głównym, trasie dziennej, zdjęciach i panoramach.</string>
+    <string name="info_news_weather" formatted="false">Eksporty CSV i TXT również używają odstępów wyrażonych w godzinach i minutach.</string>
+    <string name="info_news_viewer_zoom" formatted="false">Punkty orbit pod paskiem tytułu pozostają widoczne, ale nie można ich wybrać.</string>
+    <string name="info_news_settings" formatted="false">Punkty orbit pod kartami informacyjnymi pozostają widoczne, ale nie można ich wybrać.</string>
+    <string name="info_news_catalog" formatted="false">Nawigacja, odnośniki do szczegółów i przewijanie kart działają jak wcześniej.</string>
 </resources>

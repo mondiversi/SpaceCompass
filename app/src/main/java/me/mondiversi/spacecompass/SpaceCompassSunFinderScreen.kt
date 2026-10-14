@@ -488,7 +488,7 @@ internal fun SpaceCompassSunFinderContent(
     val topControlsInset = with(density) { toolbarHeightPx.toDp() } + 10.dp
     val titleBar: @Composable (Modifier, Boolean) -> Unit = { modifier, floating ->
         if (onDismissRequest != null) Row(
-            modifier.fillMaxWidth().zIndex(1f).testTag("celestial-toolbar")
+            modifier.fillMaxWidth().zIndex(1f).spaceCompassSceneInputShield().testTag("celestial-toolbar")
                 .onSizeChanged {
                     // Only a full-width header removes height from the optical viewport.
                     toolbarHeightPx = if (floating) 0 else it.height

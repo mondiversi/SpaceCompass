@@ -1,9 +1,9 @@
 <resources>
     <string name="info_news_title">Son yenilikler · %1$s</string>
-    <string name="info_news_star_sky" formatted="false">Arka plandan dönüldüğünde zemin görünür kalır; kısa süreli yalnızca gökyüzü parlaması oluşmaz.</string>
-    <string name="info_news_texture_downloads" formatted="false">Pusula yeni ölçümler alırken yörüngeler ve nesne görüntüleri görünür kalır.</string>
-    <string name="info_news_weather" formatted="false">Yıldızlı arka plan duraklatıldığında son karesini korur; arka planda hesaplama yapılmaz.</string>
-    <string name="info_news_viewer_zoom" formatted="false">Yönelim okuma bildirimi yalnızca ana görünüm ön planda etkin olduğunda görünür.</string>
-    <string name="info_news_settings" formatted="false">Nesne seçimi okları görsel olarak ortalandı; basma efekti daha küçük ve düzgün hizalıdır.</string>
-    <string name="info_news_catalog" formatted="false">Ekran koruyucunun üstünde “Uygulamaya dönmek için dokunun” yazısı görünür.</string>
+    <string name="info_news_star_sky" formatted="false">T+/T− süreleri artık 3h27m gibi kısa bir biçimde gösteriliyor.</string>
+    <string name="info_news_texture_downloads" formatted="false">Aynı biçim ana görünümde, günlük rotada, fotoğraflarda ve panoramalarda kullanılıyor.</string>
+    <string name="info_news_weather" formatted="false">CSV ve TXT dışa aktarımlarında da saat ve dakika cinsinden süreler kullanılıyor.</string>
+    <string name="info_news_viewer_zoom" formatted="false">Başlık çubuğunun altındaki yörünge noktaları görünür kalıyor ancak seçilemiyor.</string>
+    <string name="info_news_settings" formatted="false">Bilgi kartlarının altındaki yörünge noktaları görünür kalıyor ancak seçilemiyor.</string>
+    <string name="info_news_catalog" formatted="false">Kartlardaki gezinme, ayrıntı bağlantıları ve kaydırma her zamanki gibi çalışıyor.</string>
 </resources>

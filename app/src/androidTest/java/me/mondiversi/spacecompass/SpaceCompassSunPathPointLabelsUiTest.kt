@@ -86,7 +86,7 @@ class SpaceCompassSunPathPointLabelsUiTest {
                 SpaceCompassSunPathEvent.MINIMUM to "Minimo")) {
             compose.runOnIdle { scene.value = path.copy(markers = listOf(hour.copy(event = event))) }
             compose.onNodeWithTag("celestial-badge-event").assertTextEquals(caption).assertIsDisplayed()
-            compose.onNodeWithTag("celestial-badge-caption").assertTextContains("12:00").assertTextContains("T+00:00")
+            compose.onNodeWithTag("celestial-badge-caption").assertTextContains("12:00").assertTextContains("T+0h0m")
             compose.onNodeWithTag("celestial-badge-body").assertDoesNotExist()
         }
     }
@@ -98,7 +98,7 @@ class SpaceCompassSunPathPointLabelsUiTest {
                 SpaceCompassSunPathEvent.MINIMUM to "Minimo")) {
             compose.runOnIdle { scene.value = path.copy(markers = listOf(hour, hour.copy(event = event))) }
             compose.onNodeWithTag("celestial-badge-event").assertTextEquals(caption).assertIsDisplayed()
-            compose.onNodeWithTag("celestial-badge-caption").assertTextContains("12:00").assertTextContains("T+00:00")
+            compose.onNodeWithTag("celestial-badge-caption").assertTextContains("12:00").assertTextContains("T+0h0m")
         }
     }
 
@@ -121,7 +121,7 @@ class SpaceCompassSunPathPointLabelsUiTest {
         compose.onNodeWithTag("celestial-badge-body").assertDoesNotExist()
         compose.onNodeWithTag("celestial-badge-event").assertDoesNotExist()
         compose.runOnIdle { state.select(moon, hour) }
-        compose.onNodeWithTag("celestial-pinned-caption").assertTextContains("12:00").assertTextContains("T+00:00")
+        compose.onNodeWithTag("celestial-pinned-caption").assertTextContains("12:00").assertTextContains("T+0h0m")
         compose.runOnIdle { state.clearSelection() }
         for ((point, caption) in listOf(hour.copy(event = SpaceCompassSunPathEvent.CULMINATION) to "Culmine")) {
             compose.runOnIdle { scene.value = moon.copy(markers = listOf(point)); state.select(moon, point) }
@@ -137,7 +137,7 @@ class SpaceCompassSunPathPointLabelsUiTest {
             hour.copy(event = SpaceCompassSunPathEvent.SUNRISE), hour.copy(event = SpaceCompassSunPathEvent.MINIMUM)))
         compose.runOnIdle { scene.value = path.copy(markers = merged) }
         compose.onNodeWithTag("celestial-badge-event").assertTextEquals("Minimo · Sorge").assertIsDisplayed()
-        compose.onNodeWithTag("celestial-badge-caption").assertTextContains("12:00").assertTextContains("T+00:00")
+        compose.onNodeWithTag("celestial-badge-caption").assertTextContains("12:00").assertTextContains("T+0h0m")
         compose.onNodeWithTag("sun-path-open").performClick()
         compose.onNodeWithText("Minimo · Sorge · 12:00").performScrollTo().assertIsDisplayed()
     }

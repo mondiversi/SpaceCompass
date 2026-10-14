@@ -1,9 +1,9 @@
 <resources>
     <string name="info_news_title">Ultime novità · %1$s</string>
-    <string name="info_news_star_sky" formatted="false">Il ritorno dal background mantiene visibile il terreno, senza un breve lampo di solo cielo.</string>
-    <string name="info_news_texture_downloads" formatted="false">Orbite e immagini degli oggetti restano visibili mentre la bussola acquisisce nuove letture.</string>
-    <string name="info_news_weather" formatted="false">Lo sfondo stellato conserva l’ultimo fotogramma durante la pausa, senza calcoli in background.</string>
-    <string name="info_news_viewer_zoom" formatted="false">L’avviso di lettura dell’orientamento appare soltanto con la schermata principale attiva in primo piano.</string>
-    <string name="info_news_settings" formatted="false">Frecce di selezione degli oggetti centrate otticamente, con uno sfondo di pressione più piccolo e allineato.</string>
-    <string name="info_news_catalog" formatted="false">Il salvaschermo mostra in alto «Tocca per tornare all’app».</string>
+    <string name="info_news_star_sky" formatted="false">Gli intervalli T+/T− usano ora un formato compatto, come 3h27m.</string>
+    <string name="info_news_texture_downloads" formatted="false">Lo stesso formato è usato nella vista principale, nel percorso giornaliero, nelle foto e nelle panoramiche.</string>
+    <string name="info_news_weather" formatted="false">Anche le esportazioni CSV e TXT usano gli intervalli espressi in ore e minuti.</string>
+    <string name="info_news_viewer_zoom" formatted="false">I punti delle orbite sotto la barra del titolo restano visibili, ma non sono selezionabili.</string>
+    <string name="info_news_settings" formatted="false">I punti delle orbite sotto le isole informative restano visibili, ma non sono selezionabili.</string>
+    <string name="info_news_catalog" formatted="false">Navigazione, collegamenti ai dettagli e scorrimento delle isole mantengono il consueto funzionamento.</string>
 </resources>

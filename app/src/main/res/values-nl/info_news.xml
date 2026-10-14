@@ -1,9 +1,9 @@
 <resources>
     <string name="info_news_title">Laatste nieuws · %1$s</string>
-    <string name="info_news_star_sky" formatted="false">Bij terugkeer uit de achtergrond blijft de grond zichtbaar, zonder kort alleen de hemel te tonen.</string>
-    <string name="info_news_texture_downloads" formatted="false">Banen en objectafbeeldingen blijven zichtbaar terwijl het kompas nieuwe metingen ontvangt.</string>
-    <string name="info_news_weather" formatted="false">De sterrenachtergrond bewaart tijdens de pauze het laatste beeld, zonder berekeningen op de achtergrond.</string>
-    <string name="info_news_viewer_zoom" formatted="false">De melding over het inlezen van de oriëntatie verschijnt alleen bij een actieve hoofdweergave op de voorgrond.</string>
-    <string name="info_news_settings" formatted="false">De pijlen voor objectselectie zijn optisch gecentreerd, met een kleinere en goed uitgelijnde drukmarkering.</string>
-    <string name="info_news_catalog" formatted="false">De schermbeveiliging toont bovenaan “Tik om terug te keren naar de app”.</string>
+    <string name="info_news_star_sky" formatted="false">T+/T−-tijdsverschillen hebben nu een compacte vorm, zoals 3h27m.</string>
+    <string name="info_news_texture_downloads" formatted="false">Dezelfde vorm wordt gebruikt in de hoofdweergave, het dagelijkse pad, foto’s en panorama’s.</string>
+    <string name="info_news_weather" formatted="false">Ook CSV- en TXT-exports gebruiken tijdsverschillen in uren en minuten.</string>
+    <string name="info_news_viewer_zoom" formatted="false">Baanpunten onder de titelbalk blijven zichtbaar, maar kunnen niet worden geselecteerd.</string>
+    <string name="info_news_settings" formatted="false">Baanpunten onder de informatiekaarten blijven zichtbaar, maar kunnen niet worden geselecteerd.</string>
+    <string name="info_news_catalog" formatted="false">Navigatie, detailkoppelingen en scrollen in de kaarten werken zoals voorheen.</string>
 </resources>

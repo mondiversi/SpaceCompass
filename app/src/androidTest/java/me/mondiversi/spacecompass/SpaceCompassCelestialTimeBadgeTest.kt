@@ -39,7 +39,7 @@ class SpaceCompassCelestialTimeBadgeTest {
     private val hasTime = mutableStateOf(true)
     private fun currentCaption(time: String): SemanticsNodeInteraction {
         compose.onNodeWithTag("celestial-badge-event").assertTextEquals(resources.getString(R.string.celestial_point_current))
-        return compose.onNodeWithTag("celestial-badge-caption").assertTextContains(time).assertTextContains("T+00:00")
+        return compose.onNodeWithTag("celestial-badge-caption").assertTextContains(time).assertTextContains("T+0h0m")
     }
     private fun pointCaption(time: String): SemanticsNodeInteraction {
         compose.onNodeWithTag("celestial-badge-event").assertDoesNotExist()
@@ -80,9 +80,9 @@ class SpaceCompassCelestialTimeBadgeTest {
         currentCaption("09:01").assertIsDisplayed()
         val next = path.markers.first { it.event == SpaceCompassSunPathEvent.HOUR && it.timeMs == initialTime + 3_600_000L }
         compose.runOnIdle { pointing.value = facing(next.position) }
-        pointCaption("10:00").assertTextContains("T−00:59").assertIsDisplayed()
+        pointCaption("10:00").assertTextContains("T−0h59m").assertIsDisplayed()
         compose.runOnIdle { now.longValue += 2_000L }
-        pointCaption("10:00").assertTextContains("T−00:58").assertIsDisplayed()
+        pointCaption("10:00").assertTextContains("T−0h58m").assertIsDisplayed()
         compose.onNodeWithTag("sun-path-selected").assertDoesNotExist()
     }
     @Test fun anExplicitSelectionDoesNotOverrideTheDotThePhoneIsPointingAt() {

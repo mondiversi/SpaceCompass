@@ -27,10 +27,19 @@ internal fun focusedSpaceCompassCelestialSceneTarget(targets: List<SpaceCompassC
         it.projection.x + width * (.5 - (perspective?.principalX ?: .5)),
         it.projection.y + height * (.5 - (perspective?.principalY ?: .5))) }, width, height, radius) { it.isCurrent || it.point.event != SpaceCompassSunPathEvent.HOUR }
 
+/** Covered points remain decorative, including when their touch radius extends outside the chrome. */
+internal fun spaceCompassScenePointIsCovered(point: SpaceCompassSunScenePoint,
+    regions: List<SpaceCompassSunSceneFrame>): Boolean = regions.any {
+    point.x >= it.left && point.x < it.left + it.width &&
+        point.y >= it.top && point.y < it.top + it.height
+}
+
 internal fun tappedSpaceCompassCelestialSceneTarget(targets: List<SpaceCompassCelestialSceneTarget>, tap: SpaceCompassSunScenePoint,
-    radius: Double): SpaceCompassCelestialSceneTarget? {
-    if (!tap.x.isFinite() || !tap.y.isFinite() || !radius.isFinite() || radius < 0) return null
-    return targets.filter { hypot(it.projection.x - tap.x, it.projection.y - tap.y) <= radius }
+    radius: Double, excluded: List<SpaceCompassSunSceneFrame> = emptyList()): SpaceCompassCelestialSceneTarget? {
+    if (!tap.x.isFinite() || !tap.y.isFinite() || !radius.isFinite() || radius < 0 ||
+        spaceCompassScenePointIsCovered(tap, excluded)) return null
+    return targets.filter { !spaceCompassScenePointIsCovered(it.projection, excluded) &&
+        hypot(it.projection.x - tap.x, it.projection.y - tap.y) <= radius }
         .minWithOrNull(compareBy<SpaceCompassCelestialSceneTarget> { hypot(it.projection.x - tap.x, it.projection.y - tap.y) }
             .thenBy { if (it.isCurrent) 0 else if (it.point.event != SpaceCompassSunPathEvent.HOUR) 1 else 2 })
 }
