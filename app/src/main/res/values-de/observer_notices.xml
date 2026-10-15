@@ -1,0 +1,18 @@
+<resources>
+    <string name="observer_current_date">Aktuelles Datum verwenden</string>
+    <string name="observer_position_activated">Benutzerdefinierte Position aktiviert</string>
+    <string name="observer_position_modified">Benutzerdefinierte Position geändert</string>
+    <string name="observer_position_deactivated">Benutzerdefinierte Position deaktiviert</string>
+    <string name="observer_altitude_activated">Benutzerdefinierte Höhe aktiviert</string>
+    <string name="observer_altitude_modified">Benutzerdefinierte Höhe geändert</string>
+    <string name="observer_altitude_deactivated">Benutzerdefinierte Höhe deaktiviert</string>
+    <string name="observer_zone_activated">Benutzerdefinierte Zeitzone aktiviert</string>
+    <string name="observer_zone_modified">Benutzerdefinierte Zeitzone geändert</string>
+    <string name="observer_zone_deactivated">Benutzerdefinierte Zeitzone deaktiviert</string>
+    <string name="observer_date_activated">Benutzerdefiniertes Datum aktiviert</string>
+    <string name="observer_date_modified">Benutzerdefiniertes Datum geändert</string>
+    <string name="observer_date_deactivated">Benutzerdefiniertes Datum deaktiviert</string>
+    <string name="observer_time_activated">Benutzerdefinierte Uhrzeit aktiviert</string>
+    <string name="observer_time_modified">Benutzerdefinierte Uhrzeit geändert</string>
+    <string name="observer_time_deactivated">Benutzerdefinierte Uhrzeit deaktiviert</string>
+</resources>

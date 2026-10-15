@@ -22,9 +22,9 @@ class SpaceCompassObserverMetadataOverridesTest {
     }
 
     @Test fun allIndependentModesAndBothManualAutomaticValuesSurviveEncoding() {
-        for (mask in 1..15) {
+        for (mask in 1..31) {
             val input = plan.copy(simulatePosition = (mask and 1) != 0, simulateTime = (mask and 2) != 0,
-                simulateAltitude = (mask and 4) != 0, simulateZone = (mask and 8) != 0)
+                simulateAltitude = (mask and 4) != 0, simulateZone = (mask and 8) != 0, simulateDate = (mask and 16) != 0)
             assertEquals(input, decodeSpaceCompassObserverPlan(input.encode()))
         }
     }
@@ -40,7 +40,7 @@ class SpaceCompassObserverMetadataOverridesTest {
     }
 
     @Test fun altitudeOnlyKeepsRealCoordinatesAndRequiresARealFix() {
-        val heightOnly = plan.copy(simulatePosition = false, simulateTime = false, simulateZone = false)
+        val heightOnly = plan.copy(simulatePosition = false, simulateTime = false, simulateDate = false, simulateZone = false)
         assertEquals(device.copy(altitude = 900.0), heightOnly.resolvePlace(device))
         assertNull(heightOnly.resolvePlace(null))
         assertNull(heightOnly.timeOverrideMs)
@@ -48,13 +48,13 @@ class SpaceCompassObserverMetadataOverridesTest {
     }
 
     @Test fun zoneOnlyChangesTheClockPresentationAndKeepsGpsAndTheLiveInstant() {
-        val zoneOnly = plan.copy(simulatePosition = false, simulateTime = false, simulateAltitude = false)
+        val zoneOnly = plan.copy(simulatePosition = false, simulateTime = false, simulateDate = false, simulateAltitude = false)
         assertSame(device, zoneOnly.resolvePlace(device))
         val instant = zoneOnly.timeOverrideMs ?: now
         val clock = Instant.ofEpochMilli(instant).atZone(zoneOnly.observationZone(ZoneId.of("Europe/Rome")))
         assertEquals(4, clock.hour)
         assertEquals(now, clock.toInstant().toEpochMilli())
-        val customTime = zoneOnly.copy(simulateTime = true)
+        val customTime = zoneOnly.copy(simulateTime = true, simulateDate = true)
         assertEquals(selected, customTime.timeOverrideMs)
     }
 

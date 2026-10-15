@@ -1,0 +1,4 @@
+<resources>
+    <string name="observer_current_scenario">Escenario actual</string>
+    <string name="observer_use_position_metadata">Usar altitud y zona horaria de esta posición</string>
+</resources>

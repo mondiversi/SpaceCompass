@@ -47,7 +47,7 @@ internal fun rememberSpaceCompassPanoramaAction(timeMs: Long, latitude: Double?,
     }
     val observationZone = spaceCompassObservationZone()
     val simulated = LocalSpaceCompassObserver.current?.plan != null
-    val simulatedTime = LocalSpaceCompassObserver.current?.plan?.simulateTime == true
+    val observerPlan = LocalSpaceCompassObserver.current?.plan
     val simulatedAltitude = LocalSpaceCompassObserver.current?.plan?.let { it.simulatePosition || it.simulateAltitude } == true
     val preferences = LocalSpaceCompassPreferences.current
     val units = LocalSpaceCompassUnits.current
@@ -99,7 +99,7 @@ internal fun rememberSpaceCompassPanoramaAction(timeMs: Long, latitude: Double?,
                         val photoFrame = if (cameraEnabled) requireNotNull(cameraCapture).capturePhoto() else null
                         val cameraPointing = photoFrame?.let { spaceCompassCameraPhotoPointing(it.attitude) }
                         val captureTime = photoFrame?.capturedTimeMs ?: capturedTime
-                        val referenceTime = if (simulatedTime) timeMs else photoFrame?.capturedTimeMs ?: timeMs
+                        val referenceTime = observerPlan?.observationTimeMs(captureTime) ?: photoFrame?.capturedTimeMs ?: timeMs
                         val referenceSnapshot = snapshot.copy(timeMs = referenceTime)
                         val result = withContext(Dispatchers.IO) {
                             // The shutter has already fired; prepare missing maps before asynchronous rendering.

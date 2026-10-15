@@ -1,0 +1,18 @@
+<resources>
+    <string name="observer_current_date">Χρήση τρέχουσας ημερομηνίας</string>
+    <string name="observer_position_activated">Η προσαρμοσμένη θέση ενεργοποιήθηκε</string>
+    <string name="observer_position_modified">Η προσαρμοσμένη θέση τροποποιήθηκε</string>
+    <string name="observer_position_deactivated">Η προσαρμοσμένη θέση απενεργοποιήθηκε</string>
+    <string name="observer_altitude_activated">Το προσαρμοσμένο υψόμετρο ενεργοποιήθηκε</string>
+    <string name="observer_altitude_modified">Το προσαρμοσμένο υψόμετρο τροποποιήθηκε</string>
+    <string name="observer_altitude_deactivated">Το προσαρμοσμένο υψόμετρο απενεργοποιήθηκε</string>
+    <string name="observer_zone_activated">Η προσαρμοσμένη ζώνη ώρας ενεργοποιήθηκε</string>
+    <string name="observer_zone_modified">Η προσαρμοσμένη ζώνη ώρας τροποποιήθηκε</string>
+    <string name="observer_zone_deactivated">Η προσαρμοσμένη ζώνη ώρας απενεργοποιήθηκε</string>
+    <string name="observer_date_activated">Η προσαρμοσμένη ημερομηνία ενεργοποιήθηκε</string>
+    <string name="observer_date_modified">Η προσαρμοσμένη ημερομηνία τροποποιήθηκε</string>
+    <string name="observer_date_deactivated">Η προσαρμοσμένη ημερομηνία απενεργοποιήθηκε</string>
+    <string name="observer_time_activated">Η προσαρμοσμένη ώρα ενεργοποιήθηκε</string>
+    <string name="observer_time_modified">Η προσαρμοσμένη ώρα τροποποιήθηκε</string>
+    <string name="observer_time_deactivated">Η προσαρμοσμένη ώρα απενεργοποιήθηκε</string>
+</resources>

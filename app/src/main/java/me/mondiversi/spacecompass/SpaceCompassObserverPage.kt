@@ -3,6 +3,7 @@ package me.mondiversi.spacecompass
 import androidx.compose.foundation.*
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.lazy.staggeredgrid.StaggeredGridItemSpan
+import androidx.compose.foundation.lazy.staggeredgrid.rememberLazyStaggeredGridState
 import androidx.compose.material3.*
 import androidx.compose.runtime.*
 import androidx.compose.runtime.saveable.rememberSaveable
@@ -22,7 +23,7 @@ import java.util.Locale
 
 @OptIn(ExperimentalMaterial3Api::class, ExperimentalLayoutApi::class)
 @Composable
-internal fun SpaceCompassObserverPage(modifier: Modifier = Modifier) {
+internal fun SpaceCompassObserverPage(modifier: Modifier = Modifier, onBack: () -> Unit = {}) {
     val observer = LocalSpaceCompassObserver.current ?: return
     val context = LocalContext.current
     val resources = LocalResources.current
@@ -30,11 +31,16 @@ internal fun SpaceCompassObserverPage(modifier: Modifier = Modifier) {
     val numeric = LocalSpaceCompassNumericFormat.current
     fun displayHeight(meters: Double) = formatSpaceCompassNumber(if (feet) meters / .3048 else meters, 2, numeric, grouping = false)
     val scope = rememberCoroutineScope()
+    val islandScroll = rememberLazyStaggeredGridState()
+    val islandReveal = rememberSpaceCompassObserverIslandReveal(islandScroll)
     val initial = remember { observer.savedPlan }
     val device = observer.devicePlace
-    val initialMoment = remember { Instant.ofEpochMilli(initial?.timeMs ?: System.currentTimeMillis())
-        .atZone(observer.plan?.observationZone(ZoneId.systemDefault()) ?: ZoneId.systemDefault()) }
+    val initialMoment = remember { initial?.editorMoment(System.currentTimeMillis(), ZoneId.systemDefault())
+        ?: Instant.ofEpochMilli(System.currentTimeMillis()).atZone(ZoneId.systemDefault()) }
+    var advanceTime by rememberSaveable { mutableStateOf(initial?.advanceTime == true) }
+    var clockOffset by rememberSaveable { mutableStateOf(initial?.clockOffsetMs) }
     var simulatePosition by rememberSaveable { mutableStateOf(observer.plan?.simulatePosition == true) }
+    var simulateDate by rememberSaveable { mutableStateOf(observer.plan?.simulateDate == true) }
     var simulateTime by rememberSaveable { mutableStateOf(observer.plan?.simulateTime == true) }
     var simulateAltitude by rememberSaveable { mutableStateOf(observer.plan?.simulateAltitude == true) }
     var simulateZone by rememberSaveable { mutableStateOf(observer.plan?.simulateZone == true) }
@@ -47,7 +53,7 @@ internal fun SpaceCompassObserverPage(modifier: Modifier = Modifier) {
     var altitudeEdited by rememberSaveable { mutableStateOf(initial != null) }
     var zoneEdited by rememberSaveable { mutableStateOf(initial != null) }
     var pendingMoment by rememberSaveable { mutableStateOf<Long?>(null) }
-    var preservedMoment by rememberSaveable { mutableStateOf(initial?.timeOverrideMs) }
+    var preservedMoment by rememberSaveable { mutableStateOf(if (initial?.advancesClock == true) initialMoment.toInstant().toEpochMilli() else initial?.timeOverrideMs) }
     var date by rememberSaveable { mutableStateOf(initialMoment.toLocalDate().toString()) }
     var time by rememberSaveable { mutableStateOf(initialMoment.toLocalTime().format(DateTimeFormatter.ofPattern("HH:mm"))) }
     var search by rememberSaveable { mutableStateOf("") }
@@ -70,9 +76,12 @@ internal fun SpaceCompassObserverPage(modifier: Modifier = Modifier) {
         else -> ZoneId.systemDefault().id
     }
     fun preserveMoment(moment: Long?) {
-        moment?.let { ms -> runCatching { Instant.ofEpochMilli(ms).atZone(ZoneId.of(effectiveZone())) }
+        val advancing = simulateTime && advanceTime && clockOffset != null
+        if ((!simulateDate || !simulateTime) && !advancing) { pendingMoment = null; preservedMoment = null; return }
+        val selected = if (advancing) System.currentTimeMillis() + requireNotNull(clockOffset) else moment
+        selected?.let { ms -> runCatching { Instant.ofEpochMilli(ms).atZone(ZoneId.of(effectiveZone())) }
             .getOrNull()?.let {
-                date = it.toLocalDate().toString()
+                if (simulateDate) date = it.toLocalDate().toString()
                 time = it.toLocalTime().format(DateTimeFormatter.ofPattern("HH:mm"))
                 preservedMoment = ms
                 pendingMoment = null
@@ -84,7 +93,8 @@ internal fun SpaceCompassObserverPage(modifier: Modifier = Modifier) {
     }
     fun currentDraft() = SpaceCompassObserverDraft(simulatePosition, simulateTime,
         latitude, longitude, altitude, zone, date, time, feet, simulateAltitude, simulateZone,
-        automaticAltitude, automaticZone, preservedMoment)
+        automaticAltitude, automaticZone, preservedMoment, simulateDate, advanceTime, clockOffset)
+    val savedDraft = remember { mutableStateOf(currentDraft()) }
     fun saveEditedDraft(leaving: Boolean = false) {
         if (editRevision == 0) return
         if (busy || needsMetadata) {
@@ -92,22 +102,30 @@ internal fun SpaceCompassObserverPage(modifier: Modifier = Modifier) {
                 resources.getString(R.string.observer_not_saved))
             return
         }
-        val resolved = currentDraft().resolve(observer.savedPlan, System.currentTimeMillis(), ZoneId.systemDefault().id)
+        val editing = currentDraft()
+        val resolved = editing.resolve(observer.savedPlan, System.currentTimeMillis(), ZoneId.systemDefault().id)
         if (resolved.isFailure) {
             validationError = true
             if (leaving) showSpaceCompassBottomMessage(context,
                 resources.getString(R.string.observer_not_saved))
         } else {
             val nextPlan = resolved.getOrNull()
-            val activationNotice = spaceCompassActivationNotice(observer.plan != null, nextPlan != null)
+            clockOffset = nextPlan?.clockOffsetMs ?: clockOffset
+            val changes = spaceCompassObserverSectionChanges(savedDraft.value, editing)
             val changed = observer.apply(nextPlan)
+            savedDraft.value = editing
             editRevision = 0
             validationError = false
-            if (changed) activationNotice?.let { active ->
-                showSpaceCompassBottomMessage(context, resources.getString(
-                    if (active) R.string.scene_scenario_on else R.string.scene_scenario_off))
+            if (changed && changes.isNotEmpty()) {
+                // One short message preserves every changed section, including bulk toggles.
+                showSpaceCompassBottomMessage(context, changes.joinToString("\n") { resources.getString(it.messageId) })
             }
         }
+    }
+    fun applyClockEdit(value: SpaceCompassObserverDraft) {
+        date = value.date; time = value.time; advanceTime = value.advanceTime
+        preservedMoment = value.preservedMomentMs; clockOffset = value.clockOffsetMs; pendingMoment = null
+        edited(); saveEditedDraft()
     }
     // A short pause batches typing; opening the editor alone never rewrites a stored plan.
     val draft = currentDraft()
@@ -178,13 +196,37 @@ internal fun SpaceCompassObserverPage(modifier: Modifier = Modifier) {
             } finally { if (request == lookupRevision) busy = false }
         }
     }
+    fun applyPositionMetadata() {
+        if (!simulatePosition) return
+        val a = number(latitude) ?: return
+        val b = number(longitude) ?: return
+        if (a !in -90.0..90.0 || b !in -180.0..180.0) return
+        lookup?.cancel()
+        val request = ++lookupRevision
+        metadataField = null; busy = true; notice = 0
+        lookup = scope.launch {
+            try {
+                val result = lookupSpaceCompassObserverMetadata(a, b)
+                currentCoroutineContext().ensureActive()
+                if (request != lookupRevision || !simulatePosition || number(latitude) != a || number(longitude) != b) return@launch
+                val selected = currentDraft().withPositionMetadata(result, numeric, ZoneId.systemDefault().id)
+                altitude = selected.altitude; zone = selected.zone
+                automaticAltitude = selected.automaticAltitudeMeters; automaticZone = selected.automaticZoneId
+                date = selected.date; time = selected.time; preservedMoment = selected.preservedMomentMs
+                simulateAltitude = true; simulateZone = true; altitudeEdited = true; zoneEdited = true
+                pendingMoment = null; needsMetadata = false; edited()
+            } catch (cancelled: CancellationException) { throw cancelled
+            } catch (_: Exception) { notice = R.string.observer_metadata_failed
+            } finally { if (request == lookupRevision) busy = false }
+        }
+    }
     val selectedCoordinatesValid = simulatePosition && number(latitude)?.let { it in -90.0..90.0 } == true &&
         number(longitude)?.let { it in -180.0..180.0 } == true
     val deviceCoordinatesValid = device?.let { it.latitude.isFinite() && it.longitude.isFinite() &&
         it.latitude in -90.0..90.0 && it.longitude in -180.0..180.0 } == true
-    val zonePreviewMoment = if (simulateTime) preservedMoment ?:
-        spaceCompassObserverMoment(date.trim(), time.trim(), effectiveZone()) ?: System.currentTimeMillis()
-        else System.currentTimeMillis()
+    val zonePreviewNow = System.currentTimeMillis()
+    val zonePreviewMoment = currentDraft().resolve(observer.savedPlan, zonePreviewNow, ZoneId.systemDefault().id)
+        .getOrNull()?.observationTimeMs(zonePreviewNow) ?: zonePreviewNow
     // A completed coordinate edit invalidates terrain/zone until the matching lookup succeeds.
     LaunchedEffect(latitude, longitude, simulatePosition, needsMetadata) {
         if (simulatePosition && needsMetadata) {
@@ -196,153 +238,183 @@ internal fun SpaceCompassObserverPage(modifier: Modifier = Modifier) {
             } else needsMetadata = false
         }
     }
-    SpaceCompassIslandGrid(modifier.testTag("observer-page")) {
-        item(key = "position") {
-            SpaceCompassSettingsToggleIsland(stringResource(R.string.observer_place), iconKey = "coordinates",
-                checked = simulatePosition, toggleDescription = stringResource(R.string.observer_enable_position),
-                onCheckedChange = { checked ->
-                    val selected = preservedMoment ?: spaceCompassObserverMoment(date.trim(), time.trim(),
-                        effectiveZone())
-                    simulatePosition = checked
-                    // Switching the location source changes the displayed zone, not a chosen instant.
-                    preserveMoment(selected)
-                    if (checked && (initial == null || automaticAltitude == null || automaticZone == null)) {
-                        pendingMoment = selected; needsMetadata = true
-                    }
-                    if (!checked) {
-                        lookup?.cancel(); lookupRevision++; busy = false; metadataField = null; notice = 0; showMap = false; needsMetadata = false; pendingMoment = null
-                    }
-                    edited(); saveEditedDraft()
-                }, modifier = Modifier.testTag("observer-enabled-position")) {
-                SpaceCompassSettingsTextField(search, { search = it.take(200) }, Modifier.fillMaxWidth().testTag("observer-search"),
-                    label = stringResource(R.string.observer_search), enabled = !busy)
-                FlowRow(Modifier.fillMaxWidth(), horizontalArrangement = Arrangement.spacedBy(SpaceCompassSettingsControlGap)) {
-                    TextButton(onClick = {
-                        lookup?.cancel(); val request = ++lookupRevision; metadataField = null
-                        lookup = scope.launch {
-                            busy = true; notice = 0
-                            try {
-                                val found = searchSpaceCompassObserverPlace(context.applicationContext, search)
-                                if (found == null) notice = R.string.observer_lookup_failed else {
-                                    needsMetadata = false
-                                    latitude = found.latitude.toString(); longitude = found.longitude.toString(); edited()
-                                    metadata(found.latitude, found.longitude)
-                                }
-                            } catch (cancelled: CancellationException) { throw cancelled
-                            } catch (_: Exception) { notice = R.string.observer_lookup_failed
-                            } finally { if (request == lookupRevision) busy = false }
+    Column(modifier.fillMaxSize().testTag("observer-page")) {
+        SpaceCompassPageToolbar(stringResource(R.string.observer_title), onBack)
+        SpaceCompassIslandGrid(Modifier.weight(1f), scroll = islandScroll) {
+            item(key = "summary", span = StaggeredGridItemSpan.FullLine) {
+                SpaceCompassObserverSummaryIsland(observer.plan)
+            }
+            item(key = "position") {
+                SpaceCompassSettingsToggleIsland(stringResource(R.string.observer_place), iconKey = "coordinates",
+                    checked = simulatePosition, toggleDescription = stringResource(R.string.observer_enable_position),
+                    onCheckedChange = { checked ->
+                        val selected = preservedMoment ?: spaceCompassObserverMoment(date.trim(), time.trim(),
+                            effectiveZone())
+                        simulatePosition = checked
+                        islandReveal.changed(SpaceCompassObserverSection.POSITION, checked)
+                        // Switching the location source changes the displayed zone, not a chosen instant.
+                        preserveMoment(selected)
+                        if (checked && (initial == null || automaticAltitude == null || automaticZone == null)) {
+                            pendingMoment = selected; needsMetadata = true
                         }
-                    }, enabled = !busy && search.isNotBlank()) {
-                        Text(stringResource(R.string.observer_search_action))
+                        if (!checked) {
+                            lookup?.cancel(); lookupRevision++; busy = false; metadataField = null; notice = 0; showMap = false; needsMetadata = false; pendingMoment = null
+                        }
+                        edited(); saveEditedDraft()
+                    }, modifier = Modifier.testTag("observer-enabled-position")) {
+                    SpaceCompassSettingsTextField(search, { search = it.take(200) }, Modifier.fillMaxWidth().testTag("observer-search"),
+                        label = stringResource(R.string.observer_search), enabled = !busy)
+                    FlowRow(Modifier.fillMaxWidth(), horizontalArrangement = Arrangement.spacedBy(SpaceCompassSettingsControlGap)) {
+                        TextButton(onClick = {
+                            lookup?.cancel(); val request = ++lookupRevision; metadataField = null
+                            lookup = scope.launch {
+                                busy = true; notice = 0
+                                try {
+                                    val found = searchSpaceCompassObserverPlace(context.applicationContext, search)
+                                    if (found == null) notice = R.string.observer_lookup_failed else {
+                                        needsMetadata = false
+                                        latitude = found.latitude.toString(); longitude = found.longitude.toString(); edited()
+                                        metadata(found.latitude, found.longitude)
+                                    }
+                                } catch (cancelled: CancellationException) { throw cancelled
+                                } catch (_: Exception) { notice = R.string.observer_lookup_failed
+                                } finally { if (request == lookupRevision) busy = false }
+                            }
+                        }, enabled = !busy && search.isNotBlank()) {
+                            Text(stringResource(R.string.observer_search_action))
+                        }
+                        TextButton(onClick = { showMap = true }, enabled = !busy,
+                            modifier = Modifier.testTag("observer-open-map")) {
+                            Text(stringResource(R.string.observer_map))
+                        }
                     }
-                    TextButton(onClick = { showMap = true }, enabled = !busy,
-                        modifier = Modifier.testTag("observer-open-map")) {
-                        Text(stringResource(R.string.observer_map))
-                    }
+                    SpaceCompassSettingsTextField(latitude, { if (latitude != it) { invalidateMetadata(); latitude = it; edited() } }, Modifier.fillMaxWidth().testTag("observer-latitude"),
+                        label = stringResource(R.string.observer_latitude) + " (°)", enabled = !busy)
+                    SpaceCompassSettingsTextField(longitude, { if (longitude != it) { invalidateMetadata(); longitude = it; edited() } }, Modifier.fillMaxWidth().testTag("observer-longitude"),
+                        label = stringResource(R.string.observer_longitude) + " (°)", enabled = !busy)
+                    if (busy && metadataField == null) LinearProgressIndicator(Modifier.fillMaxWidth())
+                    if (metadataField == null && notice != 0 && notice != R.string.observer_terrain_note)
+                        Text(stringResource(notice), style = MaterialTheme.typography.bodySmall)
+                    SpaceCompassSettingsDescription(stringResource(R.string.observer_privacy))
+                    SpaceCompassObserverAction(stringResource(R.string.observer_use_position_metadata),
+                        onClick = ::applyPositionMetadata, enabled = selectedCoordinatesValid && !busy,
+                        modifier = Modifier.fillMaxWidth().testTag("observer-use-position-metadata"))
                 }
-                SpaceCompassSettingsTextField(latitude, { if (latitude != it) { invalidateMetadata(); latitude = it; edited() } }, Modifier.fillMaxWidth().testTag("observer-latitude"),
-                    label = stringResource(R.string.observer_latitude) + " (°)", enabled = !busy)
-                SpaceCompassSettingsTextField(longitude, { if (longitude != it) { invalidateMetadata(); longitude = it; edited() } }, Modifier.fillMaxWidth().testTag("observer-longitude"),
-                    label = stringResource(R.string.observer_longitude) + " (°)", enabled = !busy)
-                if (busy && metadataField == null) LinearProgressIndicator(Modifier.fillMaxWidth())
-                if (metadataField == null && notice != 0 && notice != R.string.observer_terrain_note)
-                    Text(stringResource(notice), style = MaterialTheme.typography.bodySmall)
             }
-        }
-        item(key = "altitude") {
-            SpaceCompassSettingsToggleIsland(stringResource(R.string.observer_altitude), iconKey = "altitude",
-                checked = simulateAltitude, toggleDescription = stringResource(R.string.observer_enable_altitude),
-                onCheckedChange = { checked ->
-                    simulateAltitude = checked
-                    if (!checked && metadataField == SpaceCompassObserverMetadataField.ALTITUDE) {
-                        lookup?.cancel(); lookupRevision++; busy = false; notice = 0
-                    }
-                    if (checked) altitudeEdited = true
-                    if (!checked && simulatePosition && automaticAltitude == null) needsMetadata = true
-                    edited(); saveEditedDraft()
-                }, modifier = Modifier.testTag("observer-enabled-altitude")) {
-                SpaceCompassSettingsTextField(altitude, { if (altitude != it) { altitude = it; altitudeEdited = true; edited() } },
-                    Modifier.fillMaxWidth().testTag("observer-altitude"),
-                    label = stringResource(R.string.observer_altitude) + if (feet) " (ft)" else " (m)",
-                    enabled = !busy)
-                SpaceCompassObserverMetadataActions("altitude", selectedCoordinatesValid && !busy,
-                    deviceCoordinatesValid && !busy, busy && metadataField == SpaceCompassObserverMetadataField.ALTITUDE,
-                    if (metadataField == SpaceCompassObserverMetadataField.ALTITUDE) notice else 0,
-                    onSelected = { detectMetadata(SpaceCompassObserverMetadataField.ALTITUDE, false) },
-                    onCurrent = { detectMetadata(SpaceCompassObserverMetadataField.ALTITUDE, true) })
-                SpaceCompassSettingsDescription(stringResource(R.string.observer_terrain_note))
-            }
-        }
-        item(key = "zone") {
-            SpaceCompassSettingsToggleIsland(stringResource(R.string.observer_zone), iconKey = "time_format",
-                checked = simulateZone, toggleDescription = stringResource(R.string.observer_enable_zone),
-                onCheckedChange = { checked ->
-                    val selected = preservedMoment ?: spaceCompassObserverMoment(date.trim(), time.trim(), effectiveZone())
-                    simulateZone = checked
-                    if (!checked && metadataField == SpaceCompassObserverMetadataField.ZONE) {
-                        lookup?.cancel(); lookupRevision++; busy = false; notice = 0
-                    }
-                    if (checked) zoneEdited = true
-                    if (!checked && simulatePosition && automaticZone == null) {
-                        pendingMoment = selected; needsMetadata = true
-                    } else preserveMoment(selected)
-                    edited(); saveEditedDraft()
-                }, modifier = Modifier.testTag("observer-enabled-zone")) {
-                SpaceCompassObserverZonePicker(zone, zonePreviewMoment, enabled = !busy) { selectedZone ->
-                    if (zone != selectedZone) {
-                        val instant = pendingMoment ?: preservedMoment ?:
-                            spaceCompassObserverMoment(date.trim(), time.trim(), effectiveZone())
-                        zone = selectedZone; zoneEdited = true; preserveMoment(instant); edited()
-                    }
+            item(key = "altitude") {
+                SpaceCompassSettingsToggleIsland(stringResource(R.string.observer_altitude), iconKey = "altitude",
+                    checked = simulateAltitude, toggleDescription = stringResource(R.string.observer_enable_altitude),
+                    onCheckedChange = { checked ->
+                        simulateAltitude = checked
+                        islandReveal.changed(SpaceCompassObserverSection.ALTITUDE, checked)
+                        if (!checked && metadataField == SpaceCompassObserverMetadataField.ALTITUDE) {
+                            lookup?.cancel(); lookupRevision++; busy = false; notice = 0
+                        }
+                        if (checked) altitudeEdited = true
+                        if (!checked && simulatePosition && automaticAltitude == null) needsMetadata = true
+                        edited(); saveEditedDraft()
+                    }, modifier = Modifier.testTag("observer-enabled-altitude")) {
+                    SpaceCompassSettingsTextField(altitude, { if (altitude != it) { altitude = it; altitudeEdited = true; edited() } },
+                        Modifier.fillMaxWidth().testTag("observer-altitude"),
+                        label = stringResource(R.string.observer_altitude) + if (feet) " (ft)" else " (m)",
+                        enabled = !busy)
+                    SpaceCompassObserverMetadataActions("altitude", selectedCoordinatesValid && !busy,
+                        deviceCoordinatesValid && !busy, busy && metadataField == SpaceCompassObserverMetadataField.ALTITUDE,
+                        if (metadataField == SpaceCompassObserverMetadataField.ALTITUDE) notice else 0,
+                        onSelected = { detectMetadata(SpaceCompassObserverMetadataField.ALTITUDE, false) },
+                        onCurrent = { detectMetadata(SpaceCompassObserverMetadataField.ALTITUDE, true) })
+                    SpaceCompassSettingsDescription(stringResource(R.string.observer_terrain_note))
                 }
-                SpaceCompassObserverMetadataActions("zone", selectedCoordinatesValid && !busy,
-                    deviceCoordinatesValid && !busy, busy && metadataField == SpaceCompassObserverMetadataField.ZONE,
-                    if (metadataField == SpaceCompassObserverMetadataField.ZONE) notice else 0,
-                    onSelected = { detectMetadata(SpaceCompassObserverMetadataField.ZONE, false) },
-                    onCurrent = { detectMetadata(SpaceCompassObserverMetadataField.ZONE, true) })
             }
-        }
-        item(key = "moment") {
-            SpaceCompassSettingsToggleIsland(stringResource(R.string.observer_moment), iconKey = "date_format",
-                checked = simulateTime, toggleDescription = stringResource(R.string.observer_enable_time),
-                onCheckedChange = { checked ->
-                    simulateTime = checked
-                    if (!checked) { showDate = false; showTime = false }
-                    edited(); saveEditedDraft()
-                }, modifier = Modifier.testTag("observer-enabled-time")) {
-                Text(stringResource(R.string.observer_zone) + ": " +
-                    effectiveZone().ifBlank { "—" },
-                    style = MaterialTheme.typography.bodySmall)
-                SpaceCompassSettingsTextField(date, { if (date != it) { pendingMoment = null; preservedMoment = null; date = it; edited() } }, Modifier.fillMaxWidth().testTag("observer-date"),
-                    label = stringResource(R.string.observer_date), placeholder = "yyyy-MM-dd",
-                    trailingIcon = { val label = stringResource(R.string.observer_date)
-                        IconButton(onClick = { showDate = true }, modifier = Modifier.semantics { contentDescription = label }) {
-                            SpaceCompassSettingsGroupIcon("date_format", MaterialTheme.colorScheme.primary)
-                        } })
-                SpaceCompassSettingsTextField(time, { if (time != it) { pendingMoment = null; preservedMoment = null; time = it; edited() } }, Modifier.fillMaxWidth().testTag("observer-time"),
-                    label = stringResource(R.string.observer_time), placeholder = "HH:mm",
-                    trailingIcon = { val label = stringResource(R.string.observer_time)
-                        IconButton(onClick = { showTime = true }, modifier = Modifier.semantics { contentDescription = label }) {
-                            SpaceCompassSettingsGroupIcon("time_format", MaterialTheme.colorScheme.primary)
-                        } })
-                SpaceCompassSettingsDescription(stringResource(R.string.observer_limits))
-            }
-        }
-        if (validationError || simulatePosition || simulateTime || simulateAltitude || simulateZone) {
-            item(key = "observer-notes", span = StaggeredGridItemSpan.FullLine) {
-                Column(Modifier.fillMaxWidth(), verticalArrangement = Arrangement.spacedBy(SpaceCompassSettingsGroupGap)) {
-                    if (validationError) Text(stringResource(R.string.observer_invalid),
-                        Modifier.padding(horizontal = 8.dp).testTag("observer-validation-error"),
-                        color = MaterialTheme.colorScheme.error, style = MaterialTheme.typography.bodySmall)
-                    if (simulatePosition || simulateTime || simulateAltitude || simulateZone) {
-                        Text("Open-Meteo · CC BY 4.0", Modifier.padding(horizontal = 8.dp).clickable {
-                            runCatching { context.startActivity(android.content.Intent(android.content.Intent.ACTION_VIEW,
-                                android.net.Uri.parse("https://open-meteo.com/en/licence"))) }
-                        }, color = MaterialTheme.colorScheme.primary, style = MaterialTheme.typography.bodySmall)
-                        Text(stringResource(R.string.observer_privacy), Modifier.padding(horizontal = 8.dp),
-                            style = MaterialTheme.typography.bodySmall)
+            item(key = "zone") {
+                SpaceCompassSettingsToggleIsland(stringResource(R.string.observer_zone), iconKey = "time_zone",
+                    checked = simulateZone, toggleDescription = stringResource(R.string.observer_enable_zone),
+                    onCheckedChange = { checked ->
+                        val selected = preservedMoment ?: spaceCompassObserverMoment(date.trim(), time.trim(), effectiveZone())
+                        simulateZone = checked
+                        islandReveal.changed(SpaceCompassObserverSection.ZONE, checked)
+                        if (!checked && metadataField == SpaceCompassObserverMetadataField.ZONE) {
+                            lookup?.cancel(); lookupRevision++; busy = false; notice = 0
+                        }
+                        if (checked) zoneEdited = true
+                        if (!checked && simulatePosition && automaticZone == null) {
+                            pendingMoment = selected; needsMetadata = true
+                        } else preserveMoment(selected)
+                        edited(); saveEditedDraft()
+                    }, modifier = Modifier.testTag("observer-enabled-zone")) {
+                    SpaceCompassObserverZonePicker(zone, zonePreviewMoment, enabled = !busy) { selectedZone ->
+                        if (zone != selectedZone) {
+                            val instant = pendingMoment ?: preservedMoment ?:
+                                spaceCompassObserverMoment(date.trim(), time.trim(), effectiveZone())
+                            zone = selectedZone; zoneEdited = true; preserveMoment(instant); edited()
+                        }
                     }
+                    SpaceCompassObserverMetadataActions("zone", selectedCoordinatesValid && !busy,
+                        deviceCoordinatesValid && !busy, busy && metadataField == SpaceCompassObserverMetadataField.ZONE,
+                        if (metadataField == SpaceCompassObserverMetadataField.ZONE) notice else 0,
+                        onSelected = { detectMetadata(SpaceCompassObserverMetadataField.ZONE, false) },
+                        onCurrent = { detectMetadata(SpaceCompassObserverMetadataField.ZONE, true) })
                 }
+            }
+            item(key = "date") {
+                SpaceCompassSettingsToggleIsland(stringResource(R.string.observer_date), iconKey = "date_format",
+                    checked = simulateDate, toggleDescription = stringResource(R.string.observer_enable_date),
+                    onCheckedChange = { checked ->
+                        simulateDate = checked
+                        islandReveal.changed(SpaceCompassObserverSection.DATE, checked)
+                        if (!checked) showDate = false
+                        pendingMoment = null; preservedMoment = null; clockOffset = null
+                        edited(); saveEditedDraft()
+                    }, modifier = Modifier.testTag("observer-enabled-date")) {
+                    SpaceCompassSettingsTextField(date, { if (date != it) { pendingMoment = null; preservedMoment = null; clockOffset = null; date = it; edited() } }, Modifier.fillMaxWidth().testTag("observer-date"),
+                        label = stringResource(R.string.observer_date), placeholder = "yyyy-MM-dd",
+                        trailingIcon = { val label = stringResource(R.string.observer_date)
+                            IconButton(onClick = { showDate = true }, modifier = Modifier.semantics { contentDescription = label }) {
+                                SpaceCompassSettingsGroupIcon("date_format", MaterialTheme.colorScheme.primary)
+                            } })
+                    TextButton(onClick = {
+                        currentDraft().withCurrentDate(System.currentTimeMillis(), ZoneId.systemDefault().id)
+                            .onSuccess(::applyClockEdit).onFailure { validationError = true }
+                    }, enabled = !busy, modifier = Modifier.testTag("observer-current-date")) {
+                        Text(stringResource(R.string.observer_current_date))
+                    }
+                    SpaceCompassSettingsDescription(stringResource(R.string.observer_limits))
+                }
+            }
+            item(key = "time") {
+                SpaceCompassSettingsToggleIsland(stringResource(R.string.observer_time), iconKey = "time_format",
+                    checked = simulateTime, toggleDescription = stringResource(R.string.observer_enable_time),
+                    onCheckedChange = { checked ->
+                        simulateTime = checked
+                        islandReveal.changed(SpaceCompassObserverSection.TIME, checked)
+                        if (!checked) showTime = false
+                        pendingMoment = null; preservedMoment = null
+                        edited(); saveEditedDraft()
+                    }, modifier = Modifier.testTag("observer-enabled-time")) {
+                    Text(stringResource(R.string.observer_zone) + ": " + effectiveZone().ifBlank { "—" },
+                        style = MaterialTheme.typography.bodySmall)
+                    SpaceCompassSettingsTextField(time, { if (time != it) { pendingMoment = null; preservedMoment = null; clockOffset = null; time = it; edited() } }, Modifier.fillMaxWidth().testTag("observer-time"),
+                        label = stringResource(R.string.observer_time), placeholder = "HH:mm",
+                        trailingIcon = { val label = stringResource(R.string.observer_time)
+                            IconButton(onClick = { showTime = true }, modifier = Modifier.semantics { contentDescription = label }) {
+                                SpaceCompassSettingsGroupIcon("time_format", MaterialTheme.colorScheme.primary)
+                            } })
+                    TextButton(onClick = {
+                        currentDraft().withCurrentTime(System.currentTimeMillis(), ZoneId.systemDefault().id)
+                            .onSuccess(::applyClockEdit).onFailure { validationError = true }
+                    }, enabled = !busy, modifier = Modifier.testTag("observer-current-time")) {
+                        Text(stringResource(R.string.observer_current_time))
+                    }
+                    SpaceCompassSettingsCheckbox(stringResource(R.string.observer_advance_time), advanceTime,
+                        onCheckedChange = { checked -> applyClockEdit(currentDraft().withClockAdvance(checked,
+                            observer.savedPlan, System.currentTimeMillis(), ZoneId.systemDefault().id)) },
+                        modifier = Modifier.testTag("observer-advance-time"))
+                }
+            }
+            if (validationError) item(key = "observer-validation", span = StaggeredGridItemSpan.FullLine) {
+                Text(stringResource(R.string.observer_invalid),
+                    Modifier.padding(horizontal = 8.dp).testTag("observer-validation-error"),
+                    color = MaterialTheme.colorScheme.error, style = MaterialTheme.typography.bodySmall)
             }
         }
     }
@@ -354,7 +426,7 @@ internal fun SpaceCompassObserverPage(modifier: Modifier = Modifier) {
                 DatePicker(state, Modifier.fillMaxWidth(), showModeToggle = false,
                     colors = DatePickerDefaults.colors(containerColor = spaceCompassSettingsCardColor()))
             } }, confirmButton = {
-                SpaceCompassObserverAction(onClick = { state.selectedDateMillis?.let { pendingMoment = null; preservedMoment = null; date = Instant.ofEpochMilli(it).atZone(ZoneOffset.UTC).toLocalDate().toString(); edited() }; showDate = false; saveEditedDraft() },
+                SpaceCompassObserverAction(onClick = { state.selectedDateMillis?.let { pendingMoment = null; preservedMoment = null; clockOffset = null; date = Instant.ofEpochMilli(it).atZone(ZoneOffset.UTC).toLocalDate().toString(); edited() }; showDate = false; saveEditedDraft() },
                     label = stringResource(R.string.observer_apply))
             })
     }
@@ -363,7 +435,7 @@ internal fun SpaceCompassObserverPage(modifier: Modifier = Modifier) {
         val state = rememberTimePickerState(parsed.hour, parsed.minute, is24Hour = true)
         SpaceCompassAlertDialog(onDismissRequest = { showTime = false }, title = { Text(stringResource(R.string.observer_time)) },
             text = { SpaceCompassObserverPickerScale(320f) { TimePicker(state) } }, confirmButton = {
-                SpaceCompassObserverAction(onClick = { pendingMoment = null; preservedMoment = null; time = "%02d:%02d".format(Locale.ROOT, state.hour, state.minute); edited(); showTime = false; saveEditedDraft() },
+                SpaceCompassObserverAction(onClick = { pendingMoment = null; preservedMoment = null; clockOffset = null; time = "%02d:%02d".format(Locale.ROOT, state.hour, state.minute); edited(); showTime = false; saveEditedDraft() },
                     label = stringResource(R.string.observer_apply))
             })
     }

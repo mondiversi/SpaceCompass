@@ -21,11 +21,16 @@ import java.time.LocalTime
 
 internal val LocalSpaceCompassScreensaverActive = staticCompositionLocalOf { false }
 internal val LocalSpaceCompassScreensaverSettings = staticCompositionLocalOf { SpaceCompassScreensaverSettings() }
-internal val LocalSpaceCompassScreensaverSolarObserver = staticCompositionLocalOf<(SpaceCompassScreensaverSolarObserver?) -> Unit> { {} }
+internal val LocalSpaceCompassScreensaverSolarObserver = staticCompositionLocalOf<(SpaceCompassScreensaverSolarObserver?, SpaceCompassObserverPlan?) -> Unit> { { _, _ -> } }
 
-private fun currentScreensaverLightHour(state: SpaceCompassScreensaverState): Double =
-    spaceCompassScreensaverLightHour(state.solarObserver?.elevation(System.currentTimeMillis()),
-        LocalTime.now().toSecondOfDay() / 3600.0)
+private data class SpaceCompassScreensaverScene(val lightHour: Double, val season: SpaceCompassScreensaverSeason)
+
+private fun currentScreensaverScene(state: SpaceCompassScreensaverState): SpaceCompassScreensaverScene {
+    val now = System.currentTimeMillis()
+    return SpaceCompassScreensaverScene(
+        spaceCompassScreensaverLightHour(state.solarObserver?.elevation(now), LocalTime.now().toSecondOfDay() / 3600.0),
+        spaceCompassScreensaverSeason(now, state.observerPlan))
+}
 
 /** Retain the current page and scroll state beneath a non-click-through cover. */
 @Composable
@@ -38,10 +43,12 @@ internal fun SpaceCompassScreensaverHost(state: SpaceCompassScreensaverState, co
         onDispose { pageOwner.release() }
     }
     SideEffect { pageOwner.setPaused(visible) }
-    val lightHour by produceState(currentScreensaverLightHour(state), state, visible) {
+    val initialScene = remember(state) { currentScreensaverScene(state) }
+    val scene by produceState(initialScene, state, visible, state.observerPlan) {
+        value = currentScreensaverScene(state)
         if (visible) while (true) {
-            value = currentScreensaverLightHour(state)
             delay(60_000L)
+            value = currentScreensaverScene(state)
         }
     }
     val keyboardVisible = WindowInsets.ime.getBottom(LocalDensity.current) > 0
@@ -62,8 +69,8 @@ internal fun SpaceCompassScreensaverHost(state: SpaceCompassScreensaverState, co
             }
             if (visible) {
                 BackHandler { state.dismiss() }
-                SpaceCompassScreensaverLayer(isSystemInDarkTheme(), lightHour,
-                    stringResource(R.string.screensaver_dismiss), state.sceneStartedAt, state::dismiss)
+                SpaceCompassScreensaverLayer(isSystemInDarkTheme(), scene.lightHour, scene.season,
+                    stringResource(R.string.screensaver_dismiss), state.sceneStartedAt, state.location, state::dismiss)
             }
         }
     }
@@ -71,15 +78,15 @@ internal fun SpaceCompassScreensaverHost(state: SpaceCompassScreensaverState, co
 
 /** Mount outside Compose's canvas, like the native position map, for legacy WebView compatibility. */
 @Composable
-private fun SpaceCompassScreensaverLayer(dark: Boolean, lightHour: Double, label: String,
-    startedAt: Long, onDismiss: () -> Unit) {
+private fun SpaceCompassScreensaverLayer(dark: Boolean, lightHour: Double, season: SpaceCompassScreensaverSeason, label: String,
+    startedAt: Long, location: SpaceCompassScreensaverLocation?, onDismiss: () -> Unit) {
     val activity = LocalActivity.current ?: return
     val root = remember(activity) { activity.findViewById<ViewGroup>(android.R.id.content) }
     val callback = rememberUpdatedState(onDismiss)
     val info = rememberSpaceCompassScreensaverInfo()
     val view = remember(activity) {
         SpaceCompassScreensaverView(activity, dark, lightHour,
-            (SystemClock.elapsedRealtime() - startedAt).coerceAtLeast(0L) / 1000.0) { callback.value() }
+            (SystemClock.elapsedRealtime() - startedAt).coerceAtLeast(0L) / 1000.0, location, season) { callback.value() }
     }
     DisposableEffect(view, root) {
         val immersive = SpaceCompassScreensaverWindow(activity.window)
@@ -92,6 +99,8 @@ private fun SpaceCompassScreensaverLayer(dark: Boolean, lightHour: Double, label
         view.contentDescription = label
         view.updateHint(label)
         view.updateLighting(dark, lightHour)
+        view.updateLocation(location)
+        view.updateSeason(season)
         view.updateInfo(info)
     }
 }

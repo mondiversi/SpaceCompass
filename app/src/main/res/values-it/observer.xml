@@ -24,8 +24,11 @@
     <string name="observer_altitude_value">Quota: %1$s</string>
     <string name="observer_simulation_active">Scenario attivo</string>
     <string name="observer_enable_position">Simula posizione</string>
-    <string name="observer_enable_time">Simula data e ora</string>
+    <string name="observer_enable_date">Simula data</string>
+    <string name="observer_enable_time">Simula ora</string>
     <string name="observer_current_metadata">Rileva quota e fuso dalla posizione attuale</string>
     <string name="observer_enable_altitude">Simula quota</string>
     <string name="observer_enable_zone">Simula fuso orario</string>
+    <string name="observer_current_time">Usa ora corrente</string>
+    <string name="observer_advance_time">Avanza con l’ora corrente</string>
 </resources>

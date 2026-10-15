@@ -24,8 +24,11 @@
     <string name="observer_altitude_value">Υψόμετρο: %1$s</string>
     <string name="observer_simulation_active">Ενεργό σενάριο</string>
     <string name="observer_enable_position">Προσομοίωση θέσης</string>
-    <string name="observer_enable_time">Προσομοίωση ημερομηνίας και ώρας</string>
+    <string name="observer_enable_date">Προσομοίωση ημερομηνίας</string>
+    <string name="observer_enable_time">Προσομοίωση ώρας</string>
     <string name="observer_current_metadata">Εύρεση υψομέτρου και ζώνης ώρας από την τρέχουσα θέση</string>
     <string name="observer_enable_altitude">Προσομοίωση υψομέτρου</string>
     <string name="observer_enable_zone">Προσομοίωση ζώνης ώρας</string>
+    <string name="observer_current_time">Χρήση τρέχουσας ώρας</string>
+    <string name="observer_advance_time">Πρόοδος με την τρέχουσα ώρα</string>
 </resources>

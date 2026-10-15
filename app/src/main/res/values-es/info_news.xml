@@ -1,9 +1,9 @@
 <resources>
     <string name="info_news_title">Últimas novedades · %1$s</string>
-    <string name="info_news_star_sky" formatted="false">Los intervalos T+/T− usan ahora un formato compacto, como 3h27m.</string>
-    <string name="info_news_texture_downloads" formatted="false">El mismo formato se usa en la vista principal, el recorrido diario, las fotos y las panorámicas.</string>
-    <string name="info_news_weather" formatted="false">Las exportaciones CSV y TXT también usan intervalos expresados en horas y minutos.</string>
-    <string name="info_news_viewer_zoom" formatted="false">Los puntos de las órbitas bajo la barra de título siguen visibles, pero no se pueden seleccionar.</string>
-    <string name="info_news_settings" formatted="false">Los puntos de las órbitas bajo las tarjetas informativas siguen visibles, pero no se pueden seleccionar.</string>
-    <string name="info_news_catalog" formatted="false">La navegación, los enlaces a los detalles y el desplazamiento de las tarjetas funcionan como siempre.</string>
+    <string name="info_news_star_sky" formatted="false">La posición, altitud, zona horaria, fecha y hora se controlan por separado en el escenario personalizado.</string>
+    <string name="info_news_texture_downloads" formatted="false">El reloj personalizado puede seguir avanzando tras cerrar la aplicación; también puedes usar la fecha o la hora actual.</string>
+    <string name="info_news_weather" formatted="false">El escenario actual resume los ajustes activos y el lugar aproximado; el icono principal muestra su cantidad.</string>
+    <string name="info_news_viewer_zoom" formatted="false">Aplica juntos la altitud y la zona horaria de una posición, con guardado automático y avisos por sección.</string>
+    <string name="info_news_settings" formatted="false">Los nombres de las referencias terrestres activadas siguen visibles en la vista principal y las capturas, independientemente de las etiquetas de los objetos.</string>
+    <string name="info_news_catalog" formatted="false">El salvapantallas muestra la última posición conocida, con el mapa bien orientado, rotación hacia el este y una perspectiva estacional acorde con la fecha del escenario.</string>
 </resources>

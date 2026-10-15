@@ -1,9 +1,9 @@
 <resources>
     <string name="info_news_title">Ultime novità · %1$s</string>
-    <string name="info_news_star_sky" formatted="false">Gli intervalli T+/T− usano ora un formato compatto, come 3h27m.</string>
-    <string name="info_news_texture_downloads" formatted="false">Lo stesso formato è usato nella vista principale, nel percorso giornaliero, nelle foto e nelle panoramiche.</string>
-    <string name="info_news_weather" formatted="false">Anche le esportazioni CSV e TXT usano gli intervalli espressi in ore e minuti.</string>
-    <string name="info_news_viewer_zoom" formatted="false">I punti delle orbite sotto la barra del titolo restano visibili, ma non sono selezionabili.</string>
-    <string name="info_news_settings" formatted="false">I punti delle orbite sotto le isole informative restano visibili, ma non sono selezionabili.</string>
-    <string name="info_news_catalog" formatted="false">Navigazione, collegamenti ai dettagli e scorrimento delle isole mantengono il consueto funzionamento.</string>
+    <string name="info_news_star_sky" formatted="false">Posizione, quota, fuso orario, data e ora sono indipendenti nello scenario personalizzato.</string>
+    <string name="info_news_texture_downloads" formatted="false">Puoi far avanzare l’orario personalizzato anche dopo la chiusura dell’app, oppure usare la data o l’ora corrente.</string>
+    <string name="info_news_weather" formatted="false">Scenario attuale riepiloga le impostazioni attive e la località approssimativa; l’icona principale ne mostra il numero.</string>
+    <string name="info_news_viewer_zoom" formatted="false">Applica insieme quota e fuso della posizione, con salvataggio automatico e notifiche per ogni sezione.</string>
+    <string name="info_news_settings" formatted="false">I nomi dei riferimenti terrestri attivati restano visibili nella vista principale e negli scatti, indipendentemente dalle etichette degli oggetti.</string>
+    <string name="info_news_catalog" formatted="false">Il salvaschermo mostra l’ultima posizione nota, con mappa orientata correttamente, rotazione verso est e prospettiva stagionale coerente con la data dello scenario.</string>
 </resources>

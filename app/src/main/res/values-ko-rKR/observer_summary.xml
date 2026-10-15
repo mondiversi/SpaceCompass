@@ -1,0 +1,4 @@
+<resources>
+    <string name="observer_current_scenario">현재 시나리오</string>
+    <string name="observer_use_position_metadata">이 위치의 고도 및 시간대 사용</string>
+</resources>

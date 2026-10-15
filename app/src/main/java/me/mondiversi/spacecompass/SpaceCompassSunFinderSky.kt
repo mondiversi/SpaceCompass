@@ -197,9 +197,6 @@ internal fun SpaceCompassSunPointingViewport(
         } + targets.filterNot { it.isCurrent }.map {
             val radius = with(density) { 9.dp.toPx().toDouble() }
             SpaceCompassSunSceneFrame(it.projection.x - radius, it.projection.y - radius, radius * 2, radius * 2)
-        } + with(density) {
-            val radius = 34.dp.toPx().toDouble()
-            listOf(SpaceCompassSunSceneFrame(reticleCenter.x - radius, reticleCenter.y - radius, radius * 2, radius * 2))
         }
         SpaceCompassSkyReferenceLayer(observerLatitude, timeMs, orientation.takeIf { compassReliable }, scenePerspective,
             guideExclusions, enabled = showSkyReferences && drawScene, observerAltitude = observerAltitude) {

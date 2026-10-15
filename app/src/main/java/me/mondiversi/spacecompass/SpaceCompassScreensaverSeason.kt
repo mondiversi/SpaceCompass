@@ -1,0 +1,28 @@
+package me.mondiversi.spacecompass
+
+import io.github.cosinekitty.astronomy.sunPosition
+import kotlin.math.*
+
+/** Sun-facing seasonal view, with ecliptic north up. The geographic axis keeps its obliquity;
+ * its apparent roll and its lean toward the viewer change continuously around the orbit.
+ * Lighting and accelerated spin remain the screensaver's illustrative local day/night scene.
+ * https://science.nasa.gov/earth/earth-observatory/an-epic-view-of-the-seasons/
+ */
+internal data class SpaceCompassScreensaverSeason(val rollRadians: Double, val pitchRadians: Double,
+    val obliquityDegrees: Double) {
+    init { require(rollRadians.isFinite() && pitchRadians.isFinite() && obliquityDegrees.isFinite()) }
+    val javascript: String get() = "[$rollRadians,$pitchRadians]"
+}
+
+/** Independent of GPS, locale and hemisphere; a custom/advancing scenario uses its effective instant. */
+internal fun spaceCompassScreensaverSeason(nowMs: Long,
+    plan: SpaceCompassObserverPlan? = null): SpaceCompassScreensaverSeason {
+    val timeMs = plan?.observationTimeMs(nowMs) ?: nowMs
+    val obliquity = spaceCompassSkyReferenceObliquity(timeMs)
+    val epsilon = Math.toRadians(obliquity)
+    val longitude = Math.toRadians(sunPosition(spaceCompassAstronomyTime(timeMs)).elon)
+    val axisX = sin(epsilon) * cos(longitude)
+    val axisY = cos(epsilon)
+    val axisZ = sin(epsilon) * sin(longitude)
+    return SpaceCompassScreensaverSeason(atan2(axisX, axisY), asin(axisZ.coerceIn(-1.0, 1.0)), obliquity)
+}

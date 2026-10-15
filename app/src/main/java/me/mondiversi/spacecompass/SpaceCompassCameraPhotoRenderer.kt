@@ -73,7 +73,7 @@ internal fun renderSpaceCompassCameraPhoto(context: Context, photo: SpaceCompass
         // Keep guide captions inside the lens frame and away from current object images.
         val referenceDrawing = if (snapshot.showSkyReferences && pointing != null && snapshot.observerPositionKnown)
             drawSpaceCompassSkyReferences(canvas, snapshot.latitude, snapshot.timeMs, width, height, scale, occupied,
-                pointing, perspective, header, showLabels = snapshot.labelMode.showsAll,
+                pointing, perspective, header, showLabels = true,
                 referenceNames = snapshot.referenceNames, poleNames = snapshot.poleNames,
                 numericFormat = snapshot.formatting.numeric, systemLocale = snapshot.formatting.deviceLocale,
                 observerPointNames = snapshot.observerPointNames, observerAltitude = snapshot.altitude)

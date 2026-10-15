@@ -148,7 +148,7 @@ internal fun renderSpaceCompassPanorama(snapshot: SpaceCompassPanoramaSnapshot, 
         }
         val referenceDrawing = if (snapshot.showSkyReferences && snapshot.observerPositionKnown)
             drawSpaceCompassSkyReferences(canvas, snapshot.latitude, snapshot.timeMs, sceneWidth, sceneHeight, scale, occupied,
-                showLabels = snapshot.labelMode.showsAll, referenceNames = snapshot.referenceNames, poleNames = snapshot.poleNames,
+                showLabels = true, referenceNames = snapshot.referenceNames, poleNames = snapshot.poleNames,
                 numericFormat = snapshot.formatting.numeric, systemLocale = snapshot.formatting.deviceLocale,
                 centerAzimuthDegrees = centerAzimuth, observerPointNames = snapshot.observerPointNames,
                 observerAltitude = snapshot.altitude)

@@ -24,8 +24,11 @@
     <string name="observer_altitude_value">Altitude : %1$s</string>
     <string name="observer_simulation_active">Scénario actif</string>
     <string name="observer_enable_position">Simuler la position</string>
-    <string name="observer_enable_time">Simuler la date et l’heure</string>
+    <string name="observer_enable_date">Simuler la date</string>
+    <string name="observer_enable_time">Simuler l’heure</string>
     <string name="observer_current_metadata">Déterminer altitude et fuseau depuis la position actuelle</string>
     <string name="observer_enable_altitude">Simuler une altitude</string>
     <string name="observer_enable_zone">Simuler un fuseau horaire</string>
+    <string name="observer_current_time">Utiliser l’heure actuelle</string>
+    <string name="observer_advance_time">Avancer avec l’heure actuelle</string>
 </resources>

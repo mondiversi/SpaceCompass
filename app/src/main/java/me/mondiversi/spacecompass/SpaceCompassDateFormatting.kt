@@ -170,9 +170,10 @@ internal fun formatSpaceCompassDateOnly(
     locale: Locale = Locale.getDefault(),
     timeZone: TimeZone = TimeZone.getDefault(),
     numeric: SpaceCompassNumericFormat = SpaceCompassNumericFormat.SYSTEM,
-    deviceLocale: Locale = locale
+    deviceLocale: Locale = locale,
+    allowHistorical: Boolean = false
 ): String =
-    if (timestamp <= 0L) {
+    if (timestamp <= 0L && !allowHistorical) {
         "—"
     } else {
         spaceCompassDateFormatter(
@@ -191,9 +192,10 @@ internal fun formatSpaceCompassTimeOnly(
     timeZone: TimeZone = TimeZone.getDefault(),
     numeric: SpaceCompassNumericFormat = SpaceCompassNumericFormat.SYSTEM,
     deviceLocale: Locale = locale,
-    includeSeconds: Boolean = true
+    includeSeconds: Boolean = true,
+    allowHistorical: Boolean = false
 ): String =
-    if (timestamp <= 0L) {
+    if (timestamp <= 0L && !allowHistorical) {
         "—"
     } else when (format) {
         SpaceCompassTimeFormat.SYSTEM ->

@@ -1,0 +1,18 @@
+<resources>
+    <string name="observer_current_date">Geçerli tarihi kullan</string>
+    <string name="observer_position_activated">Özel konum etkinleştirildi</string>
+    <string name="observer_position_modified">Özel konum değiştirildi</string>
+    <string name="observer_position_deactivated">Özel konum devre dışı bırakıldı</string>
+    <string name="observer_altitude_activated">Özel rakım etkinleştirildi</string>
+    <string name="observer_altitude_modified">Özel rakım değiştirildi</string>
+    <string name="observer_altitude_deactivated">Özel rakım devre dışı bırakıldı</string>
+    <string name="observer_zone_activated">Özel saat dilimi etkinleştirildi</string>
+    <string name="observer_zone_modified">Özel saat dilimi değiştirildi</string>
+    <string name="observer_zone_deactivated">Özel saat dilimi devre dışı bırakıldı</string>
+    <string name="observer_date_activated">Özel tarih etkinleştirildi</string>
+    <string name="observer_date_modified">Özel tarih değiştirildi</string>
+    <string name="observer_date_deactivated">Özel tarih devre dışı bırakıldı</string>
+    <string name="observer_time_activated">Özel saat etkinleştirildi</string>
+    <string name="observer_time_modified">Özel saat değiştirildi</string>
+    <string name="observer_time_deactivated">Özel saat devre dışı bırakıldı</string>
+</resources>

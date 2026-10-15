@@ -1,9 +1,9 @@
 <resources>
     <string name="info_news_title">最新变化 · %1$s</string>
-    <string name="info_news_star_sky" formatted="false">T+/T−时间差现在采用3h27m这样的紧凑格式。</string>
-    <string name="info_news_texture_downloads" formatted="false">主界面、每日轨迹、照片和全景图均使用同一格式。</string>
-    <string name="info_news_weather" formatted="false">CSV和TXT导出也以小时和分钟表示时间差。</string>
-    <string name="info_news_viewer_zoom" formatted="false">标题栏下的轨道点仍然可见，但无法选择。</string>
-    <string name="info_news_settings" formatted="false">信息卡片下的轨道点仍然可见，但无法选择。</string>
-    <string name="info_news_catalog" formatted="false">卡片中的导航、详情链接和滚动仍按原有方式工作。</string>
+    <string name="info_news_star_sky" formatted="false">自定义场景中的位置、海拔、时区、日期和时间可以分别设置。</string>
+    <string name="info_news_texture_downloads" formatted="false">自定义时钟可在关闭应用后继续推进，也可以使用当前日期或时间。</string>
+    <string name="info_news_weather" formatted="false">当前场景汇总已启用的设置和大致地点，主界面图标显示启用数量。</string>
+    <string name="info_news_viewer_zoom" formatted="false">可一起应用某个位置的海拔和时区，自动保存并按项目显示通知。</string>
+    <string name="info_news_settings" formatted="false">已启用的地球参考线名称始终显示在主界面和拍摄图像中，不受天体标签设置影响。</string>
+    <string name="info_news_catalog" formatted="false">屏幕保护显示最后已知位置，修正地图朝向和向东自转，并根据场景日期呈现相应季节的视角。</string>
 </resources>

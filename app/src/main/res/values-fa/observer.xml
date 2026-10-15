@@ -24,8 +24,11 @@
     <string name="observer_altitude_value">ارتفاع: %1$s</string>
     <string name="observer_simulation_active">سناریو فعال است</string>
     <string name="observer_enable_position">شبیه‌سازی موقعیت</string>
-    <string name="observer_enable_time">شبیه‌سازی تاریخ و زمان</string>
+    <string name="observer_enable_date">شبیه‌سازی تاریخ</string>
+    <string name="observer_enable_time">شبیه‌سازی زمان</string>
     <string name="observer_current_metadata">یافتن ارتفاع و منطقه زمانی از موقعیت فعلی</string>
     <string name="observer_enable_altitude">شبیه‌سازی ارتفاع</string>
     <string name="observer_enable_zone">شبیه‌سازی منطقه زمانی</string>
+    <string name="observer_current_time">استفاده از زمان فعلی</string>
+    <string name="observer_advance_time">پیشروی همراه با زمان فعلی</string>
 </resources>

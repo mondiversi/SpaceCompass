@@ -1,0 +1,18 @@
+<resources>
+    <string name="observer_current_date">استخدام التاريخ الحالي</string>
+    <string name="observer_position_activated">تم تفعيل الموقع المخصص</string>
+    <string name="observer_position_modified">تم تعديل الموقع المخصص</string>
+    <string name="observer_position_deactivated">تم تعطيل الموقع المخصص</string>
+    <string name="observer_altitude_activated">تم تفعيل الارتفاع المخصص</string>
+    <string name="observer_altitude_modified">تم تعديل الارتفاع المخصص</string>
+    <string name="observer_altitude_deactivated">تم تعطيل الارتفاع المخصص</string>
+    <string name="observer_zone_activated">تم تفعيل المنطقة الزمنية المخصصة</string>
+    <string name="observer_zone_modified">تم تعديل المنطقة الزمنية المخصصة</string>
+    <string name="observer_zone_deactivated">تم تعطيل المنطقة الزمنية المخصصة</string>
+    <string name="observer_date_activated">تم تفعيل التاريخ المخصص</string>
+    <string name="observer_date_modified">تم تعديل التاريخ المخصص</string>
+    <string name="observer_date_deactivated">تم تعطيل التاريخ المخصص</string>
+    <string name="observer_time_activated">تم تفعيل الوقت المخصص</string>
+    <string name="observer_time_modified">تم تعديل الوقت المخصص</string>
+    <string name="observer_time_deactivated">تم تعطيل الوقت المخصص</string>
+</resources>

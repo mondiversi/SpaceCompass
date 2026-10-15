@@ -24,8 +24,11 @@
     <string name="observer_altitude_value">Hoogte: %1$s</string>
     <string name="observer_simulation_active">Scenario actief</string>
     <string name="observer_enable_position">Positie simuleren</string>
-    <string name="observer_enable_time">Datum en tijd simuleren</string>
+    <string name="observer_enable_date">Datum simuleren</string>
+    <string name="observer_enable_time">Tijd simuleren</string>
     <string name="observer_current_metadata">Hoogte en tijdzone op de huidige locatie bepalen</string>
     <string name="observer_enable_altitude">Hoogte simuleren</string>
     <string name="observer_enable_zone">Tijdzone simuleren</string>
+    <string name="observer_current_time">Huidige tijd gebruiken</string>
+    <string name="observer_advance_time">Met de huidige tijd meegaan</string>
 </resources>

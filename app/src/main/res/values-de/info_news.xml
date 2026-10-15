@@ -1,9 +1,9 @@
 <resources>
     <string name="info_news_title">Neuigkeiten · %1$s</string>
-    <string name="info_news_star_sky" formatted="false">T+/T−-Zeitabstände werden jetzt kompakt dargestellt, etwa als 3h27m.</string>
-    <string name="info_news_texture_downloads" formatted="false">Dasselbe Countdown-Format gilt in der Hauptansicht, im Tagesverlauf, in Fotos und Panoramen.</string>
-    <string name="info_news_weather" formatted="false">Auch CSV- und TXT-Exporte verwenden Zeitabstände in Stunden und Minuten.</string>
-    <string name="info_news_viewer_zoom" formatted="false">Bahnpunkte unter der Titelleiste bleiben sichtbar, können aber nicht ausgewählt werden.</string>
-    <string name="info_news_settings" formatted="false">Bahnpunkte unter den Informationskarten bleiben sichtbar, können aber nicht ausgewählt werden.</string>
-    <string name="info_news_catalog" formatted="false">Navigation, Detailverknüpfungen und Scrollen in den Karten funktionieren wie gewohnt.</string>
+    <string name="info_news_star_sky" formatted="false">Position, Höhe, Zeitzone, Datum und Uhrzeit lassen sich im benutzerdefinierten Szenario unabhängig einstellen.</string>
+    <string name="info_news_texture_downloads" formatted="false">Die benutzerdefinierte Uhr kann auch nach einem App-Neustart weiterlaufen; alternativ lassen sich das aktuelle Datum oder die aktuelle Uhrzeit übernehmen.</string>
+    <string name="info_news_weather" formatted="false">Das aktuelle Szenario zeigt aktive Einstellungen und den ungefähren Ort; das Symbol in der Hauptansicht zeigt ihre Anzahl.</string>
+    <string name="info_news_viewer_zoom" formatted="false">Höhe und Zeitzone einer Position gemeinsam übernehmen, mit automatischem Speichern und Meldungen für jeden Abschnitt.</string>
+    <string name="info_news_settings" formatted="false">Aktivierte Beschriftungen der Erdbezugslinien bleiben in der Hauptansicht und in Aufnahmen unabhängig von den Objektbeschriftungen sichtbar.</string>
+    <string name="info_news_catalog" formatted="false">Der Erd-Bildschirmschoner zeigt den zuletzt bekannten Standort mit korrekter Kartenausrichtung, ostwärtiger Rotation und einer zum Szenariodatum passenden jahreszeitlichen Perspektive.</string>
 </resources>

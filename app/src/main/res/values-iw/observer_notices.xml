@@ -1,0 +1,18 @@
+<resources>
+    <string name="observer_current_date">שימוש בתאריך הנוכחי</string>
+    <string name="observer_position_activated">המיקום המותאם הופעל</string>
+    <string name="observer_position_modified">המיקום המותאם שונה</string>
+    <string name="observer_position_deactivated">המיקום המותאם הושבת</string>
+    <string name="observer_altitude_activated">הגובה המותאם הופעל</string>
+    <string name="observer_altitude_modified">הגובה המותאם שונה</string>
+    <string name="observer_altitude_deactivated">הגובה המותאם הושבת</string>
+    <string name="observer_zone_activated">אזור הזמן המותאם הופעל</string>
+    <string name="observer_zone_modified">אזור הזמן המותאם שונה</string>
+    <string name="observer_zone_deactivated">אזור הזמן המותאם הושבת</string>
+    <string name="observer_date_activated">התאריך המותאם הופעל</string>
+    <string name="observer_date_modified">התאריך המותאם שונה</string>
+    <string name="observer_date_deactivated">התאריך המותאם הושבת</string>
+    <string name="observer_time_activated">השעה המותאמת הופעלה</string>
+    <string name="observer_time_modified">השעה המותאמת שונתה</string>
+    <string name="observer_time_deactivated">השעה המותאמת הושבתה</string>
+</resources>

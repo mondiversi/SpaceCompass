@@ -1,5 +1,15 @@
 # Changelog
 
+## 1.3.7 — 2026-10-15
+
+- Separate the custom date and time into independently enabled sections, alongside position, altitude and time zone. Add current-date/current-time shortcuts and an optional advancing clock whose offset survives app/device restarts.
+- Add a Current scenario summary with localized values and an approximate place beneath coordinates, plus an orange active-section counter on the main scenario icon.
+- Apply matching altitude and time zone from the selected position together, with validated metadata, section-specific activation/change/deactivation notices, automatic saving and consistent expanding-card feedback.
+- Keep enabled Earth-reference names visible across reticle crossings and in both camera/panorama captures, regardless of object-label policy.
+- Add a last-known-position marker to the screensaver globe; correct map handedness and eastward rotation, and vary the Sun-facing seasonal perspective continuously with the effective date, including advancing scenarios.
+- Keep screensaver coordinates in session memory, pause lookup/sensor/GPS work, share globe/marker transforms across WebGL and the software fallback, and preserve the established illustrative lighting and accelerated spin.
+- Refresh in-app news in all twenty languages. Preserve credits, saved preferences and selections, signing identity, immutable image pack 1.1 and previous release assets.
+
 ## 1.3.6 — 2026-10-14
 
 - Add Key and selected points only below All in the capture label picker. Show rise, culmination, minimum, set and current labels across all captured objects, plus explicitly selected points; omit unselected hourly labels.

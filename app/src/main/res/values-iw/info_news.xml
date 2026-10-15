@@ -1,9 +1,9 @@
 <resources>
     <string name="info_news_title">החידושים האחרונים · %1$s</string>
-    <string name="info_news_star_sky" formatted="false">מרווחי הזמן T+/T− מוצגים כעת בפורמט קצר, כגון 3h27m.</string>
-    <string name="info_news_texture_downloads" formatted="false">אותו פורמט משמש בתצוגה הראשית, במסלול היומי, בתמונות ובפנורמות.</string>
-    <string name="info_news_weather" formatted="false">גם קובצי CSV ו-TXT מיוצאים עם מרווחי זמן בשעות ובדקות.</string>
-    <string name="info_news_viewer_zoom" formatted="false">נקודות המסלול שמתחת לשורת הכותרת נשארות גלויות, אך אי אפשר לבחור בהן.</string>
-    <string name="info_news_settings" formatted="false">נקודות המסלול שמתחת לכרטיסי המידע נשארות גלויות, אך אי אפשר לבחור בהן.</string>
-    <string name="info_news_catalog" formatted="false">הניווט, הקישורים לפרטים וגלילת הכרטיסים פועלים כרגיל.</string>
+    <string name="info_news_star_sky" formatted="false">בתרחיש המותאם אישית אפשר להגדיר בנפרד מיקום, גובה, אזור זמן, תאריך ושעה.</string>
+    <string name="info_news_texture_downloads" formatted="false">השעון המותאם יכול להמשיך להתקדם גם לאחר סגירת האפליקציה; אפשר גם להשתמש בתאריך או בשעה הנוכחיים.</string>
+    <string name="info_news_weather" formatted="false">התרחיש הנוכחי מסכם את ההגדרות הפעילות ואת המקום המשוער; הסמל הראשי מציג את מספרן.</string>
+    <string name="info_news_viewer_zoom" formatted="false">אפשר להחיל יחד גובה ואזור זמן של מיקום, עם שמירה אוטומטית והתראות לכל סעיף.</string>
+    <string name="info_news_settings" formatted="false">שמות קווי הייחוס הארציים שהופעלו נשארים גלויים בתצוגה הראשית ובתמונות, ללא תלות בהגדרות תוויות העצמים.</string>
+    <string name="info_news_catalog" formatted="false">שומר המסך מציג את המיקום הידוע האחרון עם כיוון מפה תקין, סיבוב מזרחה וזווית עונתית התואמת לתאריך התרחיש.</string>
 </resources>

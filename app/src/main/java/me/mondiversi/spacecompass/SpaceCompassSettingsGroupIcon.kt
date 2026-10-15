@@ -20,6 +20,10 @@ import androidx.compose.ui.unit.dp
 /** Decorative section glyphs inherit the title color in both themes. */
 @Composable
 internal fun SpaceCompassSettingsGroupIcon(key: String, tint: Color) {
+    if (key == "observer") {
+        SpaceCompassSettingsMenuIcon("observer", tint, Modifier.size(20.dp))
+        return
+    }
     if (key == "ambient_music") {
         Icon(painterResource(R.drawable.ic_music), contentDescription = null,
             modifier = Modifier.size(20.dp), tint = tint)
@@ -107,6 +111,12 @@ internal fun SpaceCompassSettingsGroupIcon(key: String, tint: Color) {
                         StrokeCap.Round
                     )
                 }
+            }
+            "time_zone" -> {
+                // Meridians distinguish the observer's zone from a custom clock time.
+                drawCircle(tint, size.minDimension * .37f, center, style = outline)
+                drawOval(tint, point(.34f, .13f), Size(size.width * .32f, size.height * .74f), style = outline)
+                drawLine(tint, point(.13f, .5f), point(.87f, .5f), strokeWidth, StrokeCap.Round)
             }
             "time_format" -> {
                 drawCircle(

@@ -24,8 +24,11 @@
     <string name="observer_altitude_value">고도: %1$s</string>
     <string name="observer_simulation_active">시나리오 활성</string>
     <string name="observer_enable_position">위치 시뮬레이션</string>
-    <string name="observer_enable_time">날짜 및 시간 시뮬레이션</string>
+    <string name="observer_enable_date">날짜 시뮬레이션</string>
+    <string name="observer_enable_time">시간 시뮬레이션</string>
     <string name="observer_current_metadata">현재 위치의 고도와 시간대 찾기</string>
     <string name="observer_enable_altitude">고도 시뮬레이션</string>
     <string name="observer_enable_zone">시간대 시뮬레이션</string>
+    <string name="observer_current_time">현재 시간 사용</string>
+    <string name="observer_advance_time">현재 시간에 맞춰 진행</string>
 </resources>

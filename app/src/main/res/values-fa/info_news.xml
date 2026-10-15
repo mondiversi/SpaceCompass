@@ -1,9 +1,9 @@
 <resources>
     <string name="info_news_title">تازه‌ترین تغییرات · %1$s</string>
-    <string name="info_news_star_sky" formatted="false">فاصله‌های زمانی T+/T− اکنون به شکل فشرده، مانند 3h27m، نمایش داده می‌شوند.</string>
-    <string name="info_news_texture_downloads" formatted="false">همین قالب در نمای اصلی، مسیر روزانه، عکس‌ها و پانوراماها استفاده می‌شود.</string>
-    <string name="info_news_weather" formatted="false">خروجی‌های CSV و TXT نیز فاصله‌های زمانی را به ساعت و دقیقه نمایش می‌دهند.</string>
-    <string name="info_news_viewer_zoom" formatted="false">نقاط مدار زیر نوار عنوان همچنان دیده می‌شوند، اما قابل انتخاب نیستند.</string>
-    <string name="info_news_settings" formatted="false">نقاط مدار زیر کارت‌های اطلاعات همچنان دیده می‌شوند، اما قابل انتخاب نیستند.</string>
-    <string name="info_news_catalog" formatted="false">پیمایش، پیوندهای جزئیات و اسکرول کارت‌ها مانند قبل کار می‌کنند.</string>
+    <string name="info_news_star_sky" formatted="false">موقعیت، ارتفاع، منطقهٔ زمانی، تاریخ و ساعت در سناریوی سفارشی به‌طور مستقل تنظیم می‌شوند.</string>
+    <string name="info_news_texture_downloads" formatted="false">ساعت سفارشی می‌تواند پس از بستن برنامه هم پیش برود؛ استفاده از تاریخ یا ساعت فعلی نیز ممکن است.</string>
+    <string name="info_news_weather" formatted="false">سناریوی فعلی خلاصهٔ تنظیمات فعال و مکان تقریبی را نشان می‌دهد؛ نماد اصلی تعداد آن‌ها را نمایش می‌دهد.</string>
+    <string name="info_news_viewer_zoom" formatted="false">ارتفاع و منطقهٔ زمانی یک موقعیت را با هم اعمال کنید؛ تغییرات خودکار ذخیره می‌شوند و هر بخش اعلان جداگانه دارد.</string>
+    <string name="info_news_settings" formatted="false">نام مرجع‌های زمینی فعال در نمای اصلی و تصاویر، مستقل از تنظیمات برچسب اجرام، همواره دیده می‌شود.</string>
+    <string name="info_news_catalog" formatted="false">محافظ صفحه آخرین موقعیت شناخته‌شده را با جهت درست نقشه، چرخش به شرق و نمای فصلی متناسب با تاریخ سناریو نشان می‌دهد.</string>
 </resources>

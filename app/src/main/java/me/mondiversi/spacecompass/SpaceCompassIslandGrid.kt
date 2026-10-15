@@ -22,11 +22,11 @@ internal fun spaceCompassIslandColumnCount(landscape: Boolean, contentWidthDp: F
 
 /** Pack natural-height islands into the shortest column; keyed content survives reflow. */
 @Composable
-internal fun SpaceCompassIslandGrid(modifier: Modifier = Modifier, content: LazyStaggeredGridScope.() -> Unit) {
+internal fun SpaceCompassIslandGrid(modifier: Modifier = Modifier,
+    scroll: LazyStaggeredGridState = rememberLazyStaggeredGridState(), content: LazyStaggeredGridScope.() -> Unit) {
     val configuration = LocalConfiguration.current
     val density = LocalDensity.current
     val direction = LocalLayoutDirection.current
-    val scroll = rememberLazyStaggeredGridState()
     val scrollbarColor = MaterialTheme.colorScheme.onSurfaceVariant.copy(alpha = .46f)
     BoxWithConstraints(modifier.fillMaxSize()) {
         val contentWidth = maxWidth - spaceCompassPageContentPadding.calculateLeftPadding(direction) -

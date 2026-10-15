@@ -32,7 +32,7 @@ class SpaceCompassObserverOverridesTest {
     }
 
     @Test fun positionOnlyUsesTheCurrentAbsoluteInstantAndKeepsAdvancing() {
-        val plan = previous.copy(simulateTime = false)
+        val plan = previous.copy(simulateTime = false, simulateDate = false)
         assertEquals(SpaceCompassDevicePlace(28.35, -14.1, 102.5), plan.position)
         assertNull(plan.timeOverrideMs)
         assertEquals(now, plan.timeOverrideMs ?: now)

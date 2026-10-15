@@ -24,8 +24,11 @@
     <string name="observer_altitude_value">גובה: %1$s</string>
     <string name="observer_simulation_active">תרחיש פעיל</string>
     <string name="observer_enable_position">הדמיית מיקום</string>
-    <string name="observer_enable_time">הדמיית תאריך ושעה</string>
+    <string name="observer_enable_date">הדמיית תאריך</string>
+    <string name="observer_enable_time">הדמיית שעה</string>
     <string name="observer_current_metadata">איתור גובה ואזור זמן מהמיקום הנוכחי</string>
     <string name="observer_enable_altitude">הדמיית גובה</string>
     <string name="observer_enable_zone">הדמיית אזור זמן</string>
+    <string name="observer_current_time">שימוש בשעה הנוכחית</string>
+    <string name="observer_advance_time">התקדמות עם הזמן הנוכחי</string>
 </resources>

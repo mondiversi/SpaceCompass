@@ -1,9 +1,9 @@
 <resources>
     <string name="info_news_title">Últimas novidades · %1$s</string>
-    <string name="info_news_star_sky" formatted="false">Os intervalos T+/T− usam agora um formato compacto, como 3h27m.</string>
-    <string name="info_news_texture_downloads" formatted="false">O mesmo formato é usado na vista principal, no percurso diário, nas fotos e nos panoramas.</string>
-    <string name="info_news_weather" formatted="false">As exportações CSV e TXT também usam intervalos expressos em horas e minutos.</string>
-    <string name="info_news_viewer_zoom" formatted="false">Os pontos das órbitas sob a barra de título continuam visíveis, mas não podem ser selecionados.</string>
-    <string name="info_news_settings" formatted="false">Os pontos das órbitas sob os cartões informativos continuam visíveis, mas não podem ser selecionados.</string>
-    <string name="info_news_catalog" formatted="false">A navegação, as ligações aos detalhes e a rolagem dos cartões funcionam como antes.</string>
+    <string name="info_news_star_sky" formatted="false">Posição, altitude, fuso horário, data e hora podem ser controlados separadamente no cenário personalizado.</string>
+    <string name="info_news_texture_downloads" formatted="false">O relógio personalizado pode continuar a avançar após fechar a aplicação; também pode usar a data ou a hora atual.</string>
+    <string name="info_news_weather" formatted="false">O cenário atual resume os ajustes ativos e o local aproximado; o ícone principal mostra a sua quantidade.</string>
+    <string name="info_news_viewer_zoom" formatted="false">Aplique em conjunto a altitude e o fuso de uma posição, com gravação automática e avisos por secção.</string>
+    <string name="info_news_settings" formatted="false">Os nomes das referências terrestres ativadas continuam visíveis na vista principal e nas capturas, independentemente das etiquetas dos objetos.</string>
+    <string name="info_news_catalog" formatted="false">O protetor de ecrã mostra a última posição conhecida, com o mapa corretamente orientado, rotação para leste e perspetiva sazonal de acordo com a data do cenário.</string>
 </resources>

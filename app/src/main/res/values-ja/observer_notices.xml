@@ -1,0 +1,18 @@
+<resources>
+    <string name="observer_current_date">現在の日付を使用</string>
+    <string name="observer_position_activated">カスタム位置を有効にしました</string>
+    <string name="observer_position_modified">カスタム位置を変更しました</string>
+    <string name="observer_position_deactivated">カスタム位置を無効にしました</string>
+    <string name="observer_altitude_activated">カスタム標高を有効にしました</string>
+    <string name="observer_altitude_modified">カスタム標高を変更しました</string>
+    <string name="observer_altitude_deactivated">カスタム標高を無効にしました</string>
+    <string name="observer_zone_activated">カスタムタイムゾーンを有効にしました</string>
+    <string name="observer_zone_modified">カスタムタイムゾーンを変更しました</string>
+    <string name="observer_zone_deactivated">カスタムタイムゾーンを無効にしました</string>
+    <string name="observer_date_activated">カスタム日付を有効にしました</string>
+    <string name="observer_date_modified">カスタム日付を変更しました</string>
+    <string name="observer_date_deactivated">カスタム日付を無効にしました</string>
+    <string name="observer_time_activated">カスタム時刻を有効にしました</string>
+    <string name="observer_time_modified">カスタム時刻を変更しました</string>
+    <string name="observer_time_deactivated">カスタム時刻を無効にしました</string>
+</resources>

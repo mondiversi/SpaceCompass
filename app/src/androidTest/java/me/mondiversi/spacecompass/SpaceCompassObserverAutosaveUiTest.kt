@@ -32,27 +32,29 @@ class SpaceCompassObserverAutosaveUiTest {
     @Test fun openingDoesNotRewriteTheSavedMomentAndCheckboxesSaveWithoutLeaving() {
         show()
         compose.runOnIdle { assertEquals(initial, observer.plan) }
-        compose.onNodeWithTag("observer-enabled-time").performClick()
-        compose.runOnIdle { assertNull(observer.plan); assertEquals(initial, observer.savedPlan) }
-        compose.onNodeWithTag("observer-enabled-time").performClick()
-        compose.runOnIdle { assertTrue(observer.plan!!.simulateTime) }
+        compose.onNodeWithTag("observer-enabled-time").performScrollTo().performClick()
+        compose.runOnIdle { assertTrue(observer.plan!!.simulateDate); assertFalse(observer.plan!!.simulateTime) }
+        compose.onNodeWithTag("observer-enabled-date").performScrollTo().performClick()
+        compose.runOnIdle { assertNull(observer.plan); assertNotNull(observer.savedPlan) }
+        compose.onNodeWithTag("observer-enabled-time").performScrollTo().performClick()
+        compose.runOnIdle { assertTrue(observer.plan!!.simulateTime); assertFalse(observer.plan!!.simulateDate) }
         compose.onNodeWithTag("observer-page").assertExists()
     }
 
     @Test fun completeTextChangeAutosavesAndIncompleteDateRetainsTheLastValidPlan() {
         show()
-        compose.onNodeWithTag("observer-date").performTextReplacement("2027-04-07")
+        compose.onNodeWithTag("observer-date").performScrollTo().performTextReplacement("2027-04-07")
         val expected = spaceCompassObserverMoment("2027-04-07", Instant.ofEpochMilli(initial.timeMs)
             .atZone(ZoneId.systemDefault()).toLocalTime().toString().take(5), ZoneId.systemDefault().id)!!
         compose.waitUntil(10_000) { observer.plan?.timeMs == expected }
-        compose.onNodeWithTag("observer-date").performTextReplacement("2027-02-30")
+        compose.onNodeWithTag("observer-date").performScrollTo().performTextReplacement("2027-02-30")
         compose.waitUntil(10_000) { compose.onAllNodesWithTag("observer-validation-error").fetchSemanticsNodes().isNotEmpty() }
         compose.runOnIdle { assertEquals(expected, observer.plan!!.timeMs) }
     }
 
     @Test fun leavingBeforeTheTypingPauseFlushesCompleteValues() {
         show()
-        compose.onNodeWithTag("observer-time").performTextReplacement("21:05")
+        compose.onNodeWithTag("observer-time").performScrollTo().performTextReplacement("21:05")
         compose.runOnIdle { visible.value = false }
         compose.runOnIdle {
             val date = Instant.ofEpochMilli(initial.timeMs).atZone(ZoneId.systemDefault()).toLocalDate().toString()

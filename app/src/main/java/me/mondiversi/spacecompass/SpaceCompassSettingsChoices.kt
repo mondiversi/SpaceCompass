@@ -63,16 +63,19 @@ internal fun SpaceCompassSettingsToggleIsland(title: String, iconKey: String, ch
     toggleDescription: String, onCheckedChange: (Boolean) -> Unit, modifier: Modifier = Modifier,
     content: @Composable ColumnScope.() -> Unit) {
     val foreground = MaterialTheme.colorScheme.onSurface
-    SpaceCompassSettingsIsland(headerContent = {
+    Surface(Modifier.fillMaxWidth(), shape = RoundedCornerShape(16.dp),
+        color = spaceCompassSettingsCardColor(), contentColor = foreground) {
         Column(Modifier.fillMaxWidth()) {
+            // Activation and press feedback cover the padding too; Surface clips the outer corners.
             Row(modifier.fillMaxWidth()
                 .toggleable(checked, role = Role.Checkbox, onValueChange = onCheckedChange)
                 .spaceCompassAccessibleAction(label = toggleDescription, role = Role.Checkbox,
-                    checkedState = checked, onClick = { onCheckedChange(!checked) }),
+                    checkedState = checked, onClick = { onCheckedChange(!checked) })
+                .padding(spaceCompassIslandContentPadding),
                 verticalAlignment = Alignment.CenterVertically) {
                 SpaceCompassSettingsTitleIcon(iconKey, foreground)
                 Spacer(Modifier.width(8.dp))
-                // Match UVIR's natural heading height; the touch target expands into card padding.
+                // Keep the existing glyph and text geometry inside the full-width header.
                 CompositionLocalProvider(LocalMinimumInteractiveComponentSize provides 0.dp) {
                     Checkbox(checked, onCheckedChange = null, modifier = Modifier.size(SpaceCompassSettingsControlSize),
                         colors = spaceCompassCheckboxColors(uncheckedColor = foreground.copy(alpha = .72f)))
@@ -86,7 +89,7 @@ internal fun SpaceCompassSettingsToggleIsland(title: String, iconKey: String, ch
                 content()
             }
         }
-    }, showHeaderDivider = false, content = {})
+    }
 }
 
 /** Shared compact row for settings and the searchable time-zone list. */

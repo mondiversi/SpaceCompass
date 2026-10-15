@@ -24,8 +24,11 @@
     <string name="observer_altitude_value">الارتفاع: %1$s</string>
     <string name="observer_simulation_active">السيناريو نشط</string>
     <string name="observer_enable_position">محاكاة الموقع</string>
-    <string name="observer_enable_time">محاكاة التاريخ والوقت</string>
+    <string name="observer_enable_date">محاكاة التاريخ</string>
+    <string name="observer_enable_time">محاكاة الوقت</string>
     <string name="observer_current_metadata">تحديد الارتفاع والمنطقة الزمنية حسب الموقع الحالي</string>
     <string name="observer_enable_altitude">محاكاة الارتفاع</string>
     <string name="observer_enable_zone">محاكاة المنطقة الزمنية</string>
+    <string name="observer_current_time">استخدام الوقت الحالي</string>
+    <string name="observer_advance_time">التقدّم مع الوقت الحالي</string>
 </resources>

@@ -348,3 +348,21 @@ captions through the existing selection pipeline. Camera and panorama renderers
 use the same methods; variant keys keep each policy's generated image distinct.
 DEFAULT is independent of display order. Nullable legacy input distinguishes an
 absent preference from an explicitly saved on/off switch during upgrade.
+
+
+## Release 1.3.7: scenario clock and seasonal screensaver
+
+ObserverClock resolves independent calendar/clock components and persisted real-time
+offsets; ClockEditing preserves editor values through timezone/DST changes. Draft
+validation, Summary and ChangeNotices separate stored plans from incomplete typing.
+The summary and orange badge count the same five independently enabled sections.
+ObserverIslandReveal scrolls newly expanded cards into the available viewport.
+
+ScreensaverState owns session-only last-valid coordinates and the effective observer
+plan. ScreensaverSeason derives apparent roll/pitch from solar longitude and mean
+obliquity. Host refreshes scene data once per minute while visible; View sends only
+finite numeric updates to the bundled, network-disabled WebView. Shader, software
+fallback and marker share east-positive coordinates and seasonal transforms. The
+fallback caches source maps/normals and caps sphere rasterization at one frame per
+second; reduced-motion startup still renders a complete frame. Existing pause,
+music, native clock/battery, touch-to-dismiss and lifecycle contracts remain.

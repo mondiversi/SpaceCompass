@@ -24,8 +24,11 @@
     <string name="observer_altitude_value">海拔：%1$s</string>
     <string name="observer_simulation_active">场景已启用</string>
     <string name="observer_enable_position">模拟位置</string>
-    <string name="observer_enable_time">模拟日期和时间</string>
+    <string name="observer_enable_date">模拟日期</string>
+    <string name="observer_enable_time">模拟时间</string>
     <string name="observer_current_metadata">获取当前位置的海拔和时区</string>
     <string name="observer_enable_altitude">模拟海拔</string>
     <string name="observer_enable_zone">模拟时区</string>
+    <string name="observer_current_time">使用当前时间</string>
+    <string name="observer_advance_time">随当前时间推进</string>
 </resources>

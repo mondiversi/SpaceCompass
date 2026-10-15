@@ -1,0 +1,18 @@
+<resources>
+    <string name="observer_current_date">Huidige datum gebruiken</string>
+    <string name="observer_position_activated">Aangepaste positie ingeschakeld</string>
+    <string name="observer_position_modified">Aangepaste positie gewijzigd</string>
+    <string name="observer_position_deactivated">Aangepaste positie uitgeschakeld</string>
+    <string name="observer_altitude_activated">Aangepaste hoogte ingeschakeld</string>
+    <string name="observer_altitude_modified">Aangepaste hoogte gewijzigd</string>
+    <string name="observer_altitude_deactivated">Aangepaste hoogte uitgeschakeld</string>
+    <string name="observer_zone_activated">Aangepaste tijdzone ingeschakeld</string>
+    <string name="observer_zone_modified">Aangepaste tijdzone gewijzigd</string>
+    <string name="observer_zone_deactivated">Aangepaste tijdzone uitgeschakeld</string>
+    <string name="observer_date_activated">Aangepaste datum ingeschakeld</string>
+    <string name="observer_date_modified">Aangepaste datum gewijzigd</string>
+    <string name="observer_date_deactivated">Aangepaste datum uitgeschakeld</string>
+    <string name="observer_time_activated">Aangepaste tijd ingeschakeld</string>
+    <string name="observer_time_modified">Aangepaste tijd gewijzigd</string>
+    <string name="observer_time_deactivated">Aangepaste tijd uitgeschakeld</string>
+</resources>

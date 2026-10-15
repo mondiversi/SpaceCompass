@@ -24,8 +24,11 @@
     <string name="observer_altitude_value">Rakım: %1$s</string>
     <string name="observer_simulation_active">Senaryo etkin</string>
     <string name="observer_enable_position">Konumu simüle et</string>
-    <string name="observer_enable_time">Tarih ve saati simüle et</string>
+    <string name="observer_enable_date">Tarihi simüle et</string>
+    <string name="observer_enable_time">Saati simüle et</string>
     <string name="observer_current_metadata">Geçerli konumun rakımını ve saat dilimini bul</string>
     <string name="observer_enable_altitude">Rakımı simüle et</string>
     <string name="observer_enable_zone">Saat dilimini simüle et</string>
+    <string name="observer_current_time">Geçerli saati kullan</string>
+    <string name="observer_advance_time">Geçerli saatle birlikte ilerlet</string>
 </resources>

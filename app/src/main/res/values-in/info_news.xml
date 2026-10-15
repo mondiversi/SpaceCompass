@@ -1,9 +1,9 @@
 <resources>
     <string name="info_news_title">Perubahan terbaru · %1$s</string>
-    <string name="info_news_star_sky" formatted="false">Selisih waktu T+/T− kini memakai format ringkas, seperti 3h27m.</string>
-    <string name="info_news_texture_downloads" formatted="false">Format yang sama dipakai pada tampilan utama, lintasan harian, foto, dan panorama.</string>
-    <string name="info_news_weather" formatted="false">Ekspor CSV dan TXT juga memakai selisih waktu dalam jam dan menit.</string>
-    <string name="info_news_viewer_zoom" formatted="false">Titik orbit di bawah bilah judul tetap terlihat, tetapi tidak dapat dipilih.</string>
-    <string name="info_news_settings" formatted="false">Titik orbit di bawah kartu informasi tetap terlihat, tetapi tidak dapat dipilih.</string>
-    <string name="info_news_catalog" formatted="false">Navigasi, tautan detail, dan pengguliran kartu tetap berfungsi seperti biasa.</string>
+    <string name="info_news_star_sky" formatted="false">Posisi, ketinggian, zona waktu, tanggal, dan jam dapat diatur secara terpisah dalam skenario khusus.</string>
+    <string name="info_news_texture_downloads" formatted="false">Jam khusus dapat terus berjalan setelah aplikasi ditutup; tanggal atau jam saat ini juga dapat digunakan.</string>
+    <string name="info_news_weather" formatted="false">Skenario saat ini merangkum pengaturan aktif dan perkiraan tempat; ikon utama menunjukkan jumlahnya.</string>
+    <string name="info_news_viewer_zoom" formatted="false">Terapkan ketinggian dan zona waktu suatu posisi sekaligus, dengan penyimpanan otomatis dan pemberitahuan untuk tiap bagian.</string>
+    <string name="info_news_settings" formatted="false">Nama referensi Bumi yang diaktifkan tetap terlihat pada tampilan utama dan hasil tangkapan, terlepas dari pilihan label objek.</string>
+    <string name="info_news_catalog" formatted="false">Penghemat layar menampilkan posisi terakhir yang diketahui dengan orientasi peta yang benar, rotasi ke timur, dan perspektif musiman sesuai tanggal skenario.</string>
 </resources>

@@ -31,7 +31,7 @@ class SpaceCompassObserverAutosaveTest {
 
     @Test fun disabledIncompleteInputsCannotBlockTurningSimulationOffOrUsingOnlyDate() {
         val invalidPlace = draft.copy(latitude = "-", longitude = "", altitude = "", zone = "invalid")
-        assertNull(invalidPlace.copy(simulatePosition = false, simulateTime = false, simulateAltitude = false, simulateZone = false)
+        assertNull(invalidPlace.copy(simulatePosition = false, simulateTime = false, simulateDate = false, simulateAltitude = false, simulateZone = false)
             .resolve(original, now, "Europe/Rome").getOrThrow())
         val dateOnly = invalidPlace.copy(simulatePosition = false, simulateAltitude = false, simulateZone = false)
             .resolve(original, now, "Europe/Rome").getOrThrow()!!
@@ -42,7 +42,7 @@ class SpaceCompassObserverAutosaveTest {
     }
 
     @Test fun locationOnlyUsesTheRealClockAndRetainsThePreviousFixedInstantForReuse() {
-        val plan = draft.copy(simulateTime = false, date = "", time = "")
+        val plan = draft.copy(simulateTime = false, simulateDate = false, date = "", time = "")
             .resolve(original, now, "Europe/Rome").getOrThrow()!!
         assertTrue(plan.simulatePosition)
         assertFalse(plan.simulateTime)
@@ -68,7 +68,7 @@ class SpaceCompassObserverAutosaveTest {
 
     @Test fun liveObserverWithNoPreviousPlanDoesNotInventAnOverrideForInvalidInput() {
         assertTrue(draft.copy(date = "invalid").resolve(null, now, "UTC").isFailure)
-        val positionOnly = draft.copy(simulateTime = false).resolve(null, now, "UTC").getOrThrow()!!
+        val positionOnly = draft.copy(simulateTime = false, simulateDate = false).resolve(null, now, "UTC").getOrThrow()!!
         assertEquals(now, positionOnly.timeMs)
         assertNull(positionOnly.timeOverrideMs)
     }
@@ -96,17 +96,17 @@ class SpaceCompassObserverAutosaveTest {
         } as SharedPreferences
     }
 
-    @Test fun actualObserverStatePersistsAllFourIndependentModesAcrossNewInstances() {
+    @Test fun actualObserverStatePersistsAllFiveIndependentModesAcrossNewInstances() {
         val store = Store()
         val state = SpaceCompassObserverState(store.preferences)
-        for (mask in 1..15) {
+        for (mask in 1..31) {
             val plan = original.copy(simulatePosition = (mask and 1) != 0, simulateTime = (mask and 2) != 0,
-                simulateAltitude = (mask and 4) != 0, simulateZone = (mask and 8) != 0)
+                simulateAltitude = (mask and 4) != 0, simulateZone = (mask and 8) != 0, simulateDate = (mask and 16) != 0)
             assertTrue(state.apply(plan))
             assertEquals(plan, SpaceCompassObserverState(store.preferences).plan)
             assertEquals(plan, SpaceCompassObserverState(store.preferences).savedPlan)
         }
-        assertEquals(15, store.writes)
+        assertEquals(31, store.writes)
     }
 
     @Test fun reapplyingTheSamePlanDoesNotWritePreferencesOrRequestAnotherSavedNotice() {

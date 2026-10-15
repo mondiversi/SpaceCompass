@@ -24,8 +24,11 @@
     <string name="observer_altitude_value">Mwinuko: %1$s</string>
     <string name="observer_simulation_active">Hali imewashwa</string>
     <string name="observer_enable_position">Iga mahali</string>
-    <string name="observer_enable_time">Iga tarehe na saa</string>
+    <string name="observer_enable_date">Iga tarehe</string>
+    <string name="observer_enable_time">Iga saa</string>
     <string name="observer_current_metadata">Pata mwinuko na ukanda wa saa wa mahali pa sasa</string>
     <string name="observer_enable_altitude">Iga mwinuko</string>
     <string name="observer_enable_zone">Iga ukanda wa saa</string>
+    <string name="observer_current_time">Tumia saa ya sasa</string>
+    <string name="observer_advance_time">Songa pamoja na muda wa sasa</string>
 </resources>

@@ -1,5 +1,31 @@
 # Custom observer and observation time
 
+## Current five-section scenario — 1.3.7
+
+Position, Altitude, Time zone, Date and Time have independent compact checkable
+island headings. No master checkbox or page-wide Apply button is present. Headers
+use full-width press feedback; newly expanded sections scroll into view. Current
+date/time shortcuts are inside their corresponding islands. Provider/validity
+notes remain at the bottom of the relevant Position/Date section.
+
+The optional Time advancement checkbox persists the selected instant's offset
+from the real clock. It continues across app/device restarts; disabling advancement
+freezes the current custom clock. Independent fixed Date/Time choices retain their
+separate component rules. The 15-field codec accepts all former plan formats and
+preserves their enabled overrides. Automatic saving validates enabled fields only,
+never changes Android GPS/clock, and reports each section's activation/change/off.
+
+Current scenario summarizes committed overrides using selected units and formats.
+It shows the approximate localized place beneath coordinates through the existing
+foreground Android geocoder. An orange main-icon badge counts active sections;
+Date and Time count separately. Position's combined altitude/time-zone shortcut
+validates the matching provider results before enabling either override and leaves
+Date/Time independent. Existing per-field detection links remain available.
+
+The historical implementation notes below are retained for migration context;
+this section describes the current editor and supersedes older four-/two-section
+wording.
+
 ## Four independent Scenario overrides — 2026-10-06
 
 Position, Altitude, Time zone and Date and time each have the existing compact

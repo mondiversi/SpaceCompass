@@ -1,0 +1,18 @@
+<resources>
+    <string name="observer_current_date">Использовать текущую дату</string>
+    <string name="observer_position_activated">Пользовательское положение включено</string>
+    <string name="observer_position_modified">Пользовательское положение изменено</string>
+    <string name="observer_position_deactivated">Пользовательское положение отключено</string>
+    <string name="observer_altitude_activated">Пользовательская высота включена</string>
+    <string name="observer_altitude_modified">Пользовательская высота изменена</string>
+    <string name="observer_altitude_deactivated">Пользовательская высота отключена</string>
+    <string name="observer_zone_activated">Пользовательский часовой пояс включён</string>
+    <string name="observer_zone_modified">Пользовательский часовой пояс изменён</string>
+    <string name="observer_zone_deactivated">Пользовательский часовой пояс отключён</string>
+    <string name="observer_date_activated">Пользовательская дата включена</string>
+    <string name="observer_date_modified">Пользовательская дата изменена</string>
+    <string name="observer_date_deactivated">Пользовательская дата отключена</string>
+    <string name="observer_time_activated">Пользовательское время включено</string>
+    <string name="observer_time_modified">Пользовательское время изменено</string>
+    <string name="observer_time_deactivated">Пользовательское время отключено</string>
+</resources>

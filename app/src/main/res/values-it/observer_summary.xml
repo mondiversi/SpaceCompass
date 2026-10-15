@@ -1,0 +1,4 @@
+<resources>
+    <string name="observer_current_scenario">Scenario attuale</string>
+    <string name="observer_use_position_metadata">Usa quota e fuso della posizione</string>
+</resources>

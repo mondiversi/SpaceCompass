@@ -1,0 +1,18 @@
+<resources>
+    <string name="observer_current_date">Tumia tarehe ya sasa</string>
+    <string name="observer_position_activated">Eneo maalumu limewashwa</string>
+    <string name="observer_position_modified">Eneo maalumu limebadilishwa</string>
+    <string name="observer_position_deactivated">Eneo maalumu limezimwa</string>
+    <string name="observer_altitude_activated">Mwinuko maalumu umewashwa</string>
+    <string name="observer_altitude_modified">Mwinuko maalumu umebadilishwa</string>
+    <string name="observer_altitude_deactivated">Mwinuko maalumu umezimwa</string>
+    <string name="observer_zone_activated">Ukanda maalumu wa saa umewashwa</string>
+    <string name="observer_zone_modified">Ukanda maalumu wa saa umebadilishwa</string>
+    <string name="observer_zone_deactivated">Ukanda maalumu wa saa umezimwa</string>
+    <string name="observer_date_activated">Tarehe maalumu imewashwa</string>
+    <string name="observer_date_modified">Tarehe maalumu imebadilishwa</string>
+    <string name="observer_date_deactivated">Tarehe maalumu imezimwa</string>
+    <string name="observer_time_activated">Saa maalumu imewashwa</string>
+    <string name="observer_time_modified">Saa maalumu imebadilishwa</string>
+    <string name="observer_time_deactivated">Saa maalumu imezimwa</string>
+</resources>

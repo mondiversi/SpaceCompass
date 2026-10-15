@@ -24,8 +24,11 @@
     <string name="observer_altitude_value">標高：%1$s</string>
     <string name="observer_simulation_active">シナリオ有効</string>
     <string name="observer_enable_position">位置をシミュレート</string>
-    <string name="observer_enable_time">日付と時刻をシミュレート</string>
+    <string name="observer_enable_date">日付をシミュレート</string>
+    <string name="observer_enable_time">時刻をシミュレート</string>
     <string name="observer_current_metadata">現在地の標高とタイムゾーンを取得</string>
     <string name="observer_enable_altitude">高度をシミュレート</string>
     <string name="observer_enable_zone">タイムゾーンをシミュレート</string>
+    <string name="observer_current_time">現在の時刻を使用</string>
+    <string name="observer_advance_time">現在の時刻とともに進める</string>
 </resources>

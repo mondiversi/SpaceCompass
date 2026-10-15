@@ -1,9 +1,9 @@
 <resources>
     <string name="info_news_title">Dernières nouveautés · %1$s</string>
-    <string name="info_news_star_sky" formatted="false">Les écarts T+/T− utilisent désormais un format compact, comme 3h27m.</string>
-    <string name="info_news_texture_downloads" formatted="false">Le même format est utilisé dans la vue principale, le parcours quotidien, les photos et les panoramas.</string>
-    <string name="info_news_weather" formatted="false">Les exports CSV et TXT utilisent aussi des écarts exprimés en heures et minutes.</string>
-    <string name="info_news_viewer_zoom" formatted="false">Les points des orbites sous la barre de titre restent visibles, mais ne peuvent pas être sélectionnés.</string>
-    <string name="info_news_settings" formatted="false">Les points des orbites sous les cartes d’information restent visibles, mais ne peuvent pas être sélectionnés.</string>
-    <string name="info_news_catalog" formatted="false">La navigation, les liens vers les détails et le défilement des cartes fonctionnent comme auparavant.</string>
+    <string name="info_news_star_sky" formatted="false">La position, l’altitude, le fuseau horaire, la date et l’heure se règlent indépendamment dans le scénario personnalisé.</string>
+    <string name="info_news_texture_downloads" formatted="false">L’horloge personnalisée peut continuer à avancer après la fermeture de l’application ; la date ou l’heure actuelle peut aussi être reprise.</string>
+    <string name="info_news_weather" formatted="false">Le scénario actuel résume les réglages actifs et le lieu approximatif ; l’icône principale indique leur nombre.</string>
+    <string name="info_news_viewer_zoom" formatted="false">Appliquez ensemble l’altitude et le fuseau d’une position, avec enregistrement automatique et notifications par section.</string>
+    <string name="info_news_settings" formatted="false">Les noms des repères terrestres activés restent visibles dans la vue principale et les captures, indépendamment des étiquettes des objets.</string>
+    <string name="info_news_catalog" formatted="false">L’économiseur d’écran affiche la dernière position connue, avec une carte correctement orientée, une rotation vers l’est et une perspective saisonnière liée à la date du scénario.</string>
 </resources>

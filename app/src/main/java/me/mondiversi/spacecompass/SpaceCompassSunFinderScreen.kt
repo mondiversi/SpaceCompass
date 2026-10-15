@@ -142,13 +142,14 @@ internal fun SpaceCompassSunFinderScreen(
     }
     val visibleReadings = deviceReadings.copy(location = resolvedFix,
         locationStatus = if (plan?.simulatePosition == true) SpaceCompassSunLocationStatus.READY else deviceReadings.locationStatus)
-    val observationTime = plan?.timeOverrideMs ?: time
+    val observationTime = plan?.observationTimeMs(time) ?: time
+    val requestTime = plan?.dataRequestTimeMs(time)
     val tile = visibleReadings.location?.let { spaceCompassSunWeatherTile(it.latitude, it.longitude) }
-    val weather = rememberSpaceCompassSunWeather(tile, resumed, selectedTimeMs = plan?.timeOverrideMs)
+    val weather = rememberSpaceCompassSunWeather(tile, resumed, selectedTimeMs = requestTime)
     // Warm the whole online catalog in the foreground; unchecked objects never become scene selections.
     val remote = rememberSpaceCompassCelestialRemote(selectedBodies, resumed, motionBodies = selectedBodies,
         retryRevision = remoteRetry, prefetchCatalog = true, catalogRefreshRevision = catalogRefresh,
-        observationTimeOverrideMs = plan?.timeOverrideMs)
+        observationTimeOverrideMs = requestTime)
     BackHandler(onBack = onDismissRequest)
     CompositionLocalProvider(LocalSpaceCompassCatalogOpen provides catalogOpen) {
     Box(Modifier.fillMaxSize()) {
@@ -283,11 +284,11 @@ internal fun SpaceCompassSunFinderContent(
     val phase = spaceCompassSunSkyPhase(sun?.elevationDegrees, rising)
     val solarLighting = remember(sun?.elevationDegrees) { spaceCompassSolarLighting(sun?.elevationDegrees) }
     val publishSolarObserver = LocalSpaceCompassScreensaverSolarObserver.current
-    val solarObserver = remember(fix?.latitude, fix?.longitude, altitude, observerPlan?.timeOverrideMs) {
+    val solarObserver = remember(fix?.latitude, fix?.longitude, altitude, observerPlan) {
         fix?.let { SpaceCompassScreensaverSolarObserver(it.latitude, it.longitude, altitude ?: 0.0,
-            observerPlan?.timeOverrideMs) }
+            observerPlan = observerPlan) }
     }
-    SideEffect { publishSolarObserver(solarObserver) }
+    SideEffect { publishSolarObserver(solarObserver, observerPlan) }
     val zone = spaceCompassObservationZone()
     val date = Instant.ofEpochMilli(timeMs).atZone(zone).toLocalDate()
     // Approximately 11 m location cells keep GPS jitter from rebuilding a whole day's curve.
@@ -609,7 +610,7 @@ internal fun SpaceCompassSunFinderContent(
                             scenePreferences.edit().putBoolean(SPACE_COMPASS_SKY_REFERENCES_KEY, enabled).apply()
                             notifyControl(if (enabled) R.string.scene_references_on else R.string.scene_references_off)
                         }, primaryText, backgroundColor)
-                        SpaceCompassScenarioButton(simulated, primaryText, backgroundColor) {
+                        SpaceCompassScenarioButton(LocalSpaceCompassObserver.current?.plan.activeSectionCount, primaryText, backgroundColor) {
                             navigate("observer")
                         }
                         SpaceCompassCelestialSelector(body, primaryText, backgroundColor, Modifier, timeMs, remote,

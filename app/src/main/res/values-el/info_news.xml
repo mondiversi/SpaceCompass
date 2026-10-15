@@ -1,9 +1,9 @@
 <resources>
     <string name="info_news_title">Τελευταία νέα · %1$s</string>
-    <string name="info_news_star_sky" formatted="false">Τα διαστήματα T+/T− εμφανίζονται πλέον σε σύντομη μορφή, όπως 3h27m.</string>
-    <string name="info_news_texture_downloads" formatted="false">Η ίδια μορφή χρησιμοποιείται στην κύρια προβολή, στην ημερήσια διαδρομή, στις φωτογραφίες και στα πανοράματα.</string>
-    <string name="info_news_weather" formatted="false">Οι εξαγωγές CSV και TXT χρησιμοποιούν επίσης διαστήματα σε ώρες και λεπτά.</string>
-    <string name="info_news_viewer_zoom" formatted="false">Τα σημεία των τροχιών κάτω από τη γραμμή τίτλου παραμένουν ορατά, αλλά δεν μπορούν να επιλεγούν.</string>
-    <string name="info_news_settings" formatted="false">Τα σημεία των τροχιών κάτω από τις κάρτες πληροφοριών παραμένουν ορατά, αλλά δεν μπορούν να επιλεγούν.</string>
-    <string name="info_news_catalog" formatted="false">Η πλοήγηση, οι σύνδεσμοι λεπτομερειών και η κύλιση των καρτών λειτουργούν όπως πριν.</string>
+    <string name="info_news_star_sky" formatted="false">Η θέση, το υψόμετρο, η ζώνη ώρας, η ημερομηνία και η ώρα ρυθμίζονται ανεξάρτητα στο προσαρμοσμένο σενάριο.</string>
+    <string name="info_news_texture_downloads" formatted="false">Το προσαρμοσμένο ρολόι μπορεί να συνεχίζει μετά το κλείσιμο της εφαρμογής· μπορείτε επίσης να χρησιμοποιήσετε την τρέχουσα ημερομηνία ή ώρα.</string>
+    <string name="info_news_weather" formatted="false">Το τρέχον σενάριο συνοψίζει τις ενεργές ρυθμίσεις και την κατά προσέγγιση τοποθεσία· το κύριο εικονίδιο δείχνει το πλήθος τους.</string>
+    <string name="info_news_viewer_zoom" formatted="false">Εφαρμόστε μαζί το υψόμετρο και τη ζώνη ώρας μιας θέσης, με αυτόματη αποθήκευση και ειδοποιήσεις ανά ενότητα.</string>
+    <string name="info_news_settings" formatted="false">Οι ονομασίες των ενεργών γήινων σημείων αναφοράς παραμένουν ορατές στην κύρια προβολή και στις λήψεις, ανεξάρτητα από τις ετικέτες αντικειμένων.</string>
+    <string name="info_news_catalog" formatted="false">Η προφύλαξη οθόνης δείχνει την τελευταία γνωστή θέση με σωστό προσανατολισμό χάρτη, ανατολική περιστροφή και εποχική οπτική σύμφωνα με την ημερομηνία του σεναρίου.</string>
 </resources>

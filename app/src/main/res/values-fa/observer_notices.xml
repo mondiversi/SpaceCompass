@@ -1,0 +1,18 @@
+<resources>
+    <string name="observer_current_date">استفاده از تاریخ فعلی</string>
+    <string name="observer_position_activated">موقعیت سفارشی فعال شد</string>
+    <string name="observer_position_modified">موقعیت سفارشی تغییر کرد</string>
+    <string name="observer_position_deactivated">موقعیت سفارشی غیرفعال شد</string>
+    <string name="observer_altitude_activated">ارتفاع سفارشی فعال شد</string>
+    <string name="observer_altitude_modified">ارتفاع سفارشی تغییر کرد</string>
+    <string name="observer_altitude_deactivated">ارتفاع سفارشی غیرفعال شد</string>
+    <string name="observer_zone_activated">منطقهٔ زمانی سفارشی فعال شد</string>
+    <string name="observer_zone_modified">منطقهٔ زمانی سفارشی تغییر کرد</string>
+    <string name="observer_zone_deactivated">منطقهٔ زمانی سفارشی غیرفعال شد</string>
+    <string name="observer_date_activated">تاریخ سفارشی فعال شد</string>
+    <string name="observer_date_modified">تاریخ سفارشی تغییر کرد</string>
+    <string name="observer_date_deactivated">تاریخ سفارشی غیرفعال شد</string>
+    <string name="observer_time_activated">زمان سفارشی فعال شد</string>
+    <string name="observer_time_modified">زمان سفارشی تغییر کرد</string>
+    <string name="observer_time_deactivated">زمان سفارشی غیرفعال شد</string>
+</resources>

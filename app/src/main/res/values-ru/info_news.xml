@@ -1,9 +1,9 @@
 <resources>
     <string name="info_news_title">Последние новости · %1$s</string>
-    <string name="info_news_star_sky" formatted="false">Интервалы T+/T− теперь отображаются в компактном формате, например 3h27m.</string>
-    <string name="info_news_texture_downloads" formatted="false">Один и тот же формат используется на главном экране, в дневном пути, на фотографиях и панорамах.</string>
-    <string name="info_news_weather" formatted="false">В экспорте CSV и TXT также используются интервалы в часах и минутах.</string>
-    <string name="info_news_viewer_zoom" formatted="false">Точки орбит под строкой заголовка остаются видимыми, но их нельзя выбрать.</string>
-    <string name="info_news_settings" formatted="false">Точки орбит под информационными карточками остаются видимыми, но их нельзя выбрать.</string>
-    <string name="info_news_catalog" formatted="false">Навигация, ссылки на подробности и прокрутка карточек работают как прежде.</string>
+    <string name="info_news_star_sky" formatted="false">В пользовательском сценарии можно независимо задать положение, высоту, часовой пояс, дату и время.</string>
+    <string name="info_news_texture_downloads" formatted="false">Пользовательские часы могут продолжать идти после закрытия приложения; также можно использовать текущую дату или время.</string>
+    <string name="info_news_weather" formatted="false">Текущий сценарий показывает активные настройки и примерное место; значок на главном экране показывает их количество.</string>
+    <string name="info_news_viewer_zoom" formatted="false">Применяйте высоту и часовой пояс выбранного места вместе, с автосохранением и уведомлениями для каждого раздела.</string>
+    <string name="info_news_settings" formatted="false">Подписи включённых земных ориентиров остаются видимыми на главном экране и снимках независимо от подписей объектов.</string>
+    <string name="info_news_catalog" formatted="false">Заставка показывает последнее известное местоположение с правильной ориентацией карты, вращением на восток и сезонным ракурсом, соответствующим дате сценария.</string>
 </resources>

@@ -1,6 +1,7 @@
 package me.mondiversi.spacecompass
 
 import androidx.compose.foundation.Image
+import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.material3.*
@@ -8,6 +9,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.platform.LocalUriHandler
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
@@ -16,6 +18,7 @@ import androidx.compose.ui.unit.sp
 
 @Composable
 internal fun SpaceCompassInfoPage(modifier: Modifier) {
+    val uriHandler = LocalUriHandler.current
     SpaceCompassIslandGrid(modifier) {
         item(key = "introduction") {
             SpaceCompassSettingsIsland {
@@ -52,6 +55,9 @@ internal fun SpaceCompassInfoPage(modifier: Modifier) {
                 Text("GPL-3.0 · Astronomy Engine (MIT) · SGP4 · Leaflet (BSD-2-Clause)", fontSize = 11.sp, lineHeight = 14.sp)
                 Text("NASA · ESA · Hubble · ALMA (ESO/NAOJ/NRAO) · VTAD · JPL · USGS · Solar System Scope / INOVE", fontSize = 11.sp, lineHeight = 14.sp)
                 Text("Deep Star Maps 2020 · NASA/Goddard SVS · ESA/Gaia/DPAC · Ernie Wright (USRA)", fontSize = 11.sp, lineHeight = 14.sp)
+                Text("Open-Meteo · CC BY 4.0", Modifier.clickable {
+                    runCatching { uriHandler.openUri("https://open-meteo.com/en/licence") }
+                }, color = MaterialTheme.colorScheme.primary, fontSize = 11.sp, lineHeight = 14.sp)
                 Text(stringResource(R.string.pc_info_credits_detail), fontSize = 11.sp, lineHeight = 14.sp)
             }
         }

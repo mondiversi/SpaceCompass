@@ -1,0 +1,4 @@
+<resources>
+    <string name="observer_current_scenario">السيناريو الحالي</string>
+    <string name="observer_use_position_metadata">استخدام ارتفاع هذه النقطة ومنطقتها الزمنية</string>
+</resources>

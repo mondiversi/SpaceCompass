@@ -24,8 +24,11 @@
     <string name="observer_altitude_value">Wysokość: %1$s</string>
     <string name="observer_simulation_active">Aktywny scenariusz</string>
     <string name="observer_enable_position">Symuluj pozycję</string>
-    <string name="observer_enable_time">Symuluj datę i godzinę</string>
+    <string name="observer_enable_date">Symuluj datę</string>
+    <string name="observer_enable_time">Symuluj godzinę</string>
     <string name="observer_current_metadata">Ustal wysokość i strefę czasową dla bieżącej pozycji</string>
     <string name="observer_enable_altitude">Symuluj wysokość</string>
     <string name="observer_enable_zone">Symuluj strefę czasową</string>
+    <string name="observer_current_time">Użyj bieżącej godziny</string>
+    <string name="observer_advance_time">Przesuwaj zgodnie z bieżącym czasem</string>
 </resources>

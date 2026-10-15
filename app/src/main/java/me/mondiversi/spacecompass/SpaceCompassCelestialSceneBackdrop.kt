@@ -49,11 +49,6 @@ internal fun SpaceCompassCelestialSceneBackdrop(opticalFrame: SpaceCompassSunSce
             val pointRadius = with(density) { 9.dp.toPx().toDouble() }
             SpaceCompassSunSceneFrame(it.projection.x - pointRadius, it.projection.y - pointRadius,
                 pointRadius * 2, pointRadius * 2)
-        } + with(density) {
-            val aimRadius = 34.dp.toPx().toDouble()
-            val aimX = opticalFrame.left + opticalFrame.width * (cameraPerspective?.principalX ?: .5)
-            val aimY = opticalFrame.top + opticalFrame.height * (cameraPerspective?.principalY ?: .5)
-            listOf(SpaceCompassSunSceneFrame(aimX - aimRadius, aimY - aimRadius, aimRadius * 2, aimRadius * 2))
         }
         SpaceCompassSkyReferenceLayer(latitude, timeMs, orientation, perspective, excluded,
             enabled = showReferences, observerAltitude = altitude) {

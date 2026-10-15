@@ -24,8 +24,11 @@
     <string name="observer_altitude_value">Ketinggian: %1$s</string>
     <string name="observer_simulation_active">Skenario aktif</string>
     <string name="observer_enable_position">Simulasikan posisi</string>
-    <string name="observer_enable_time">Simulasikan tanggal dan waktu</string>
+    <string name="observer_enable_date">Simulasikan tanggal</string>
+    <string name="observer_enable_time">Simulasikan waktu</string>
     <string name="observer_current_metadata">Cari ketinggian dan zona waktu di lokasi saat ini</string>
     <string name="observer_enable_altitude">Simulasikan ketinggian</string>
     <string name="observer_enable_zone">Simulasikan zona waktu</string>
+    <string name="observer_current_time">Gunakan waktu saat ini</string>
+    <string name="observer_advance_time">Berjalan mengikuti waktu saat ini</string>
 </resources>

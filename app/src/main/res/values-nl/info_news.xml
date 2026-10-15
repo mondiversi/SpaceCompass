@@ -1,9 +1,9 @@
 <resources>
     <string name="info_news_title">Laatste nieuws · %1$s</string>
-    <string name="info_news_star_sky" formatted="false">T+/T−-tijdsverschillen hebben nu een compacte vorm, zoals 3h27m.</string>
-    <string name="info_news_texture_downloads" formatted="false">Dezelfde vorm wordt gebruikt in de hoofdweergave, het dagelijkse pad, foto’s en panorama’s.</string>
-    <string name="info_news_weather" formatted="false">Ook CSV- en TXT-exports gebruiken tijdsverschillen in uren en minuten.</string>
-    <string name="info_news_viewer_zoom" formatted="false">Baanpunten onder de titelbalk blijven zichtbaar, maar kunnen niet worden geselecteerd.</string>
-    <string name="info_news_settings" formatted="false">Baanpunten onder de informatiekaarten blijven zichtbaar, maar kunnen niet worden geselecteerd.</string>
-    <string name="info_news_catalog" formatted="false">Navigatie, detailkoppelingen en scrollen in de kaarten werken zoals voorheen.</string>
+    <string name="info_news_star_sky" formatted="false">Positie, hoogte, tijdzone, datum en tijd zijn afzonderlijk instelbaar in het aangepaste scenario.</string>
+    <string name="info_news_texture_downloads" formatted="false">De aangepaste klok kan na het sluiten van de app blijven doorlopen; je kunt ook de huidige datum of tijd overnemen.</string>
+    <string name="info_news_weather" formatted="false">Het huidige scenario toont de actieve instellingen en de globale plaats; het hoofdpictogram geeft hun aantal aan.</string>
+    <string name="info_news_viewer_zoom" formatted="false">Pas de hoogte en tijdzone van een positie samen toe, met automatisch opslaan en meldingen per onderdeel.</string>
+    <string name="info_news_settings" formatted="false">De namen van ingeschakelde aardreferenties blijven zichtbaar in de hoofdweergave en op opnamen, onafhankelijk van objectlabels.</string>
+    <string name="info_news_catalog" formatted="false">De schermbeveiliging toont de laatst bekende positie met een correct georiënteerde kaart, oostwaartse rotatie en een seizoensperspectief volgens de scenariodatum.</string>
 </resources>

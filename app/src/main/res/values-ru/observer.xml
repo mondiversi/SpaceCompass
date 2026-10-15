@@ -24,8 +24,11 @@
     <string name="observer_altitude_value">Высота: %1$s</string>
     <string name="observer_simulation_active">Сценарий активен</string>
     <string name="observer_enable_position">Имитировать положение</string>
-    <string name="observer_enable_time">Имитировать дату и время</string>
+    <string name="observer_enable_date">Имитировать дату</string>
+    <string name="observer_enable_time">Имитировать время</string>
     <string name="observer_current_metadata">Определить высоту и часовой пояс текущего местоположения</string>
     <string name="observer_enable_altitude">Задать высоту</string>
     <string name="observer_enable_zone">Задать часовой пояс</string>
+    <string name="observer_current_time">Использовать текущее время</string>
+    <string name="observer_advance_time">Продвигать вместе с текущим временем</string>
 </resources>

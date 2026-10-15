@@ -63,7 +63,7 @@ internal suspend fun lookupSpaceCompassEstimatedPlaceParts(context: Context, key
         address.subAdminArea, address.adminArea, country)
 }
 
-/** Requests only while environment details are visible and the activity is resumed. */
+/** Requests only while the requesting page is enabled and the activity is resumed. */
 @Composable
 internal fun rememberSpaceCompassEstimatedPlace(latitude: Double?, longitude: Double?, enabled: Boolean): SpaceCompassEstimatedPlaceReading {
     val context = LocalContext.current.applicationContext

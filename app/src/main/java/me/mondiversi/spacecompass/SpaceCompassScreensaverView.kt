@@ -20,9 +20,11 @@ import androidx.core.view.WindowInsetsCompat
 
 /** Trusted, bundled animation only: no navigation, network, audio or JavaScript bridge. */
 internal class SpaceCompassScreensaverView(context: Context, dark: Boolean, lightHour: Double, elapsedSeconds: Double,
-    onDismiss: () -> Unit) : FrameLayout(context) {
+    location: SpaceCompassScreensaverLocation?, season: SpaceCompassScreensaverSeason, onDismiss: () -> Unit) : FrameLayout(context) {
     private var night = dark
     private var solarHour = lightHour
+    private var markerLocation = location
+    private var globeSeason = season
     private var loaded = false
     private val web = WebView(context).apply {
         setBackgroundColor(Color.rgb(2, 5, 12))
@@ -50,6 +52,8 @@ internal class SpaceCompassScreensaverView(context: Context, dark: Boolean, ligh
             override fun onPageFinished(view: WebView?, url: String?) {
                 loaded = true
                 applyLighting()
+                applyLocation()
+                applySeason()
             }
         }
     }
@@ -97,6 +101,8 @@ internal class SpaceCompassScreensaverView(context: Context, dark: Boolean, ligh
             .replace("__NATIVE_NIGHT__", dark.toString())
             .replace("__NATIVE_LIGHT_HOUR__", lightHour.toString())
             .replace("__ELAPSED_SECONDS__", elapsedSeconds.toString())
+            .replace("__NATIVE_LOCATION__", markerLocation?.javascript ?: "null")
+            .replace("__NATIVE_EARTH_ORIENTATION__", globeSeason.javascript)
         web.loadDataWithBaseURL("https://spacecompass.invalid/screensaver/", html, "text/html", "UTF-8", null)
     }
 
@@ -150,6 +156,20 @@ internal class SpaceCompassScreensaverView(context: Context, dark: Boolean, ligh
     }
     private fun applyLighting() {
         if (loaded) web.evaluateJavascript("window.setNativeLighting($night,$solarHour)", null)
+    }
+
+    fun updateLocation(value: SpaceCompassScreensaverLocation?) {
+        if (markerLocation != value) { markerLocation = value; applyLocation() }
+    }
+    private fun applyLocation() {
+        if (loaded) web.evaluateJavascript("window.setNativeLocation(${markerLocation?.javascript ?: "null"})", null)
+    }
+
+    fun updateSeason(value: SpaceCompassScreensaverSeason) {
+        if (globeSeason != value) { globeSeason = value; applySeason() }
+    }
+    private fun applySeason() {
+        if (loaded) web.evaluateJavascript("window.setNativeEarthOrientation(${globeSeason.javascript})", null)
     }
 
     fun release() {

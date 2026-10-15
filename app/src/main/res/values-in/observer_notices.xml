@@ -1,0 +1,18 @@
+<resources>
+    <string name="observer_current_date">Gunakan tanggal saat ini</string>
+    <string name="observer_position_activated">Posisi khusus diaktifkan</string>
+    <string name="observer_position_modified">Posisi khusus diubah</string>
+    <string name="observer_position_deactivated">Posisi khusus dinonaktifkan</string>
+    <string name="observer_altitude_activated">Ketinggian khusus diaktifkan</string>
+    <string name="observer_altitude_modified">Ketinggian khusus diubah</string>
+    <string name="observer_altitude_deactivated">Ketinggian khusus dinonaktifkan</string>
+    <string name="observer_zone_activated">Zona waktu khusus diaktifkan</string>
+    <string name="observer_zone_modified">Zona waktu khusus diubah</string>
+    <string name="observer_zone_deactivated">Zona waktu khusus dinonaktifkan</string>
+    <string name="observer_date_activated">Tanggal khusus diaktifkan</string>
+    <string name="observer_date_modified">Tanggal khusus diubah</string>
+    <string name="observer_date_deactivated">Tanggal khusus dinonaktifkan</string>
+    <string name="observer_time_activated">Waktu khusus diaktifkan</string>
+    <string name="observer_time_modified">Waktu khusus diubah</string>
+    <string name="observer_time_deactivated">Waktu khusus dinonaktifkan</string>
+</resources>

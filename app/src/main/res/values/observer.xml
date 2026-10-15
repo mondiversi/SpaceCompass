@@ -24,8 +24,11 @@
     <string name="observer_altitude_value">Altitude: %1$s</string>
     <string name="observer_simulation_active">Scenario active</string>
     <string name="observer_enable_position">Simulate position</string>
-    <string name="observer_enable_time">Simulate date and time</string>
+    <string name="observer_enable_date">Simulate date</string>
+    <string name="observer_enable_time">Simulate time</string>
     <string name="observer_current_metadata">Find altitude and time zone at current location</string>
     <string name="observer_enable_altitude">Simulate altitude</string>
     <string name="observer_enable_zone">Simulate time zone</string>
+    <string name="observer_current_time">Use current time</string>
+    <string name="observer_advance_time">Advance with the current time</string>
 </resources>

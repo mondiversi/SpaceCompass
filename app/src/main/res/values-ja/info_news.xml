@@ -1,9 +1,9 @@
 <resources>
     <string name="info_news_title">最近の変更 · %1$s</string>
-    <string name="info_news_star_sky" formatted="false">T+/T−の時間差を3h27mのような簡潔な形式で表示するようになりました。</string>
-    <string name="info_news_texture_downloads" formatted="false">メイン画面、日ごとの経路、写真、パノラマで同じ形式を使用します。</string>
-    <string name="info_news_weather" formatted="false">CSVとTXTの書き出しでも時間差を時間と分で表示します。</string>
-    <string name="info_news_viewer_zoom" formatted="false">タイトルバーの下にある軌道上の点は表示されたままですが、選択できません。</string>
-    <string name="info_news_settings" formatted="false">情報カードの下にある軌道上の点は表示されたままですが、選択できません。</string>
-    <string name="info_news_catalog" formatted="false">カード内の移動、詳細リンク、スクロールは従来どおり機能します。</string>
+    <string name="info_news_star_sky" formatted="false">カスタムシナリオで位置、高度、タイムゾーン、日付、時刻を個別に設定できます。</string>
+    <string name="info_news_texture_downloads" formatted="false">カスタム時計はアプリを閉じた後も進められます。現在の日付や時刻を使うこともできます。</string>
+    <string name="info_news_weather" formatted="false">現在のシナリオに有効な設定とおおよその場所を表示し、メインアイコンに設定数を示します。</string>
+    <string name="info_news_viewer_zoom" formatted="false">位置に応じた高度とタイムゾーンをまとめて適用できます。自動保存と項目別の通知にも対応します。</string>
+    <string name="info_news_settings" formatted="false">有効な地球基準線の名前は、天体ラベルの設定にかかわらず、メイン画面と撮影画像に表示されます。</string>
+    <string name="info_news_catalog" formatted="false">スクリーンセーバーに最後に確認された位置を表示します。地図の向きと東向きの自転を修正し、シナリオの日付に応じた季節の視点を反映します。</string>
 </resources>

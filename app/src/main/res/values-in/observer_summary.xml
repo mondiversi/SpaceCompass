@@ -1,0 +1,4 @@
+<resources>
+    <string name="observer_current_scenario">Skenario saat ini</string>
+    <string name="observer_use_position_metadata">Gunakan ketinggian dan zona waktu posisi ini</string>
+</resources>

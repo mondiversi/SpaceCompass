@@ -24,8 +24,11 @@
     <string name="observer_altitude_value">ऊँचाई: %1$s</string>
     <string name="observer_simulation_active">परिदृश्य सक्रिय है</string>
     <string name="observer_enable_position">स्थान का अनुकरण करें</string>
-    <string name="observer_enable_time">तारीख और समय का अनुकरण करें</string>
+    <string name="observer_enable_date">तारीख का अनुकरण करें</string>
+    <string name="observer_enable_time">समय का अनुकरण करें</string>
     <string name="observer_current_metadata">वर्तमान स्थान से ऊँचाई और समय क्षेत्र खोजें</string>
     <string name="observer_enable_altitude">ऊँचाई का अनुकरण करें</string>
     <string name="observer_enable_zone">समय क्षेत्र का अनुकरण करें</string>
+    <string name="observer_current_time">वर्तमान समय इस्तेमाल करें</string>
+    <string name="observer_advance_time">वर्तमान समय के साथ आगे बढ़ें</string>
 </resources>

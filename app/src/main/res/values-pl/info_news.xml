@@ -1,9 +1,9 @@
 <resources>
     <string name="info_news_title">Ostatnie nowości · %1$s</string>
-    <string name="info_news_star_sky" formatted="false">Odstępy czasu T+/T− mają teraz zwięzły format, na przykład 3h27m.</string>
-    <string name="info_news_texture_downloads" formatted="false">Ten sam format jest używany w widoku głównym, trasie dziennej, zdjęciach i panoramach.</string>
-    <string name="info_news_weather" formatted="false">Eksporty CSV i TXT również używają odstępów wyrażonych w godzinach i minutach.</string>
-    <string name="info_news_viewer_zoom" formatted="false">Punkty orbit pod paskiem tytułu pozostają widoczne, ale nie można ich wybrać.</string>
-    <string name="info_news_settings" formatted="false">Punkty orbit pod kartami informacyjnymi pozostają widoczne, ale nie można ich wybrać.</string>
-    <string name="info_news_catalog" formatted="false">Nawigacja, odnośniki do szczegółów i przewijanie kart działają jak wcześniej.</string>
+    <string name="info_news_star_sky" formatted="false">W scenariuszu niestandardowym można niezależnie ustawić pozycję, wysokość, strefę czasową, datę i godzinę.</string>
+    <string name="info_news_texture_downloads" formatted="false">Zegar niestandardowy może działać dalej po zamknięciu aplikacji; można też użyć bieżącej daty lub godziny.</string>
+    <string name="info_news_weather" formatted="false">Bieżący scenariusz podsumowuje aktywne ustawienia i przybliżoną lokalizację; ikona główna pokazuje ich liczbę.</string>
+    <string name="info_news_viewer_zoom" formatted="false">Zastosuj razem wysokość i strefę czasową wybranej pozycji, z automatycznym zapisem i powiadomieniami dla każdej sekcji.</string>
+    <string name="info_news_settings" formatted="false">Nazwy włączonych ziemskich linii odniesienia pozostają widoczne w widoku głównym i na ujęciach niezależnie od etykiet obiektów.</string>
+    <string name="info_news_catalog" formatted="false">Wygaszacz pokazuje ostatnią znaną pozycję z poprawną orientacją mapy, obrotem na wschód i sezonową perspektywą zgodną z datą scenariusza.</string>
 </resources>

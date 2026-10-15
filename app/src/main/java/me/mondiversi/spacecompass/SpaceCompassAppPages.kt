@@ -87,10 +87,10 @@ internal fun SpaceCompassAppPage(route: String, onBack: () -> Unit) {
     }
     Surface(color = spaceCompassPageBackground(), contentColor = MaterialTheme.colorScheme.onSurface, modifier = Modifier.fillMaxSize().testTag("page-$route")) {
         Column(Modifier.fillMaxSize()) {
-            SpaceCompassPageToolbar(stringResource(title), onBack)
+            if (route != "observer") SpaceCompassPageToolbar(stringResource(title), onBack)
             val resourceLanguageTag = stringResource(R.string.settings_resource_language_tag)
             when (route) {
-                "observer" -> SpaceCompassObserverPage(Modifier.weight(1f))
+                "observer" -> SpaceCompassObserverPage(Modifier.weight(1f), onBack)
                 "info" -> SpaceCompassInfoPage(Modifier.weight(1f))
                 "language" -> {
                     val scroll = rememberScrollState()

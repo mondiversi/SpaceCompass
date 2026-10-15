@@ -1,0 +1,18 @@
+<resources>
+    <string name="observer_current_date">使用当前日期</string>
+    <string name="observer_position_activated">已启用自定义位置</string>
+    <string name="observer_position_modified">已修改自定义位置</string>
+    <string name="observer_position_deactivated">已停用自定义位置</string>
+    <string name="observer_altitude_activated">已启用自定义海拔</string>
+    <string name="observer_altitude_modified">已修改自定义海拔</string>
+    <string name="observer_altitude_deactivated">已停用自定义海拔</string>
+    <string name="observer_zone_activated">已启用自定义时区</string>
+    <string name="observer_zone_modified">已修改自定义时区</string>
+    <string name="observer_zone_deactivated">已停用自定义时区</string>
+    <string name="observer_date_activated">已启用自定义日期</string>
+    <string name="observer_date_modified">已修改自定义日期</string>
+    <string name="observer_date_deactivated">已停用自定义日期</string>
+    <string name="observer_time_activated">已启用自定义时间</string>
+    <string name="observer_time_modified">已修改自定义时间</string>
+    <string name="observer_time_deactivated">已停用自定义时间</string>
+</resources>

@@ -1,9 +1,9 @@
 <resources>
     <string name="info_news_title">Latest news · %1$s</string>
-    <string name="info_news_star_sky" formatted="false">T+/T− offsets now use a compact form such as 3h27m.</string>
-    <string name="info_news_texture_downloads" formatted="false">The same countdown format is used in the main view, daily paths, photos and panoramas.</string>
-    <string name="info_news_weather" formatted="false">CSV and TXT exports use the same hour-and-minute offsets.</string>
-    <string name="info_news_viewer_zoom" formatted="false">Orbit points beneath the title bar remain visible but cannot be selected.</string>
-    <string name="info_news_settings" formatted="false">Orbit points beneath the information islands remain visible but cannot be selected.</string>
-    <string name="info_news_catalog" formatted="false">Island navigation, details links and scrolling retain their usual behaviour.</string>
+    <string name="info_news_star_sky" formatted="false">Control position, altitude, time zone, date and time independently in Custom scenario.</string>
+    <string name="info_news_texture_downloads" formatted="false">Keep a custom clock advancing across app restarts, or use the current date or time.</string>
+    <string name="info_news_weather" formatted="false">Review active overrides and the approximate place in Current scenario; the main icon shows their count.</string>
+    <string name="info_news_viewer_zoom" formatted="false">Apply a position’s altitude and time zone together, with automatic saving and notices for each section.</string>
+    <string name="info_news_settings" formatted="false">Enabled Earth-reference labels stay visible in the main view and captures, independently of object-label choices.</string>
+    <string name="info_news_catalog" formatted="false">The Earth screensaver now shows your last known position with corrected map orientation, eastward rotation and a seasonal perspective that follows the scenario date.</string>
 </resources>

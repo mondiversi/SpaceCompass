@@ -16,7 +16,8 @@ internal fun SpaceCompassObserverDraft.withDetectedMetadata(field: SpaceCompassO
             simulatePosition -> automaticZoneId.orEmpty()
             else -> deviceZoneId
         }
-        val instant = preservedMomentMs ?: spaceCompassObserverMoment(date.trim(), time.trim(), sourceZone)
+        val instant = if (simulateDate && simulateTime)
+            preservedMomentMs ?: spaceCompassObserverMoment(date.trim(), time.trim(), sourceZone) else null
         val target = ZoneId.of(metadata.zoneId)
         val local = instant?.let { Instant.ofEpochMilli(it).atZone(target) }
         copy(zone = target.id, date = local?.toLocalDate()?.toString() ?: date,

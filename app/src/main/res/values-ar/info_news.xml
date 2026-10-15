@@ -1,9 +1,9 @@
 <resources>
     <string name="info_news_title">آخر المستجدات · %1$s</string>
-    <string name="info_news_star_sky" formatted="false">تستخدم الفواصل الزمنية T+/T− الآن تنسيقًا مختصرًا مثل 3h27m.</string>
-    <string name="info_news_texture_downloads" formatted="false">يُستخدم التنسيق نفسه في العرض الرئيسي والمسار اليومي والصور والصور البانورامية.</string>
-    <string name="info_news_weather" formatted="false">تستخدم صادرات CSV وTXT أيضًا فواصل زمنية بالساعات والدقائق.</string>
-    <string name="info_news_viewer_zoom" formatted="false">تبقى نقاط المدارات أسفل شريط العنوان مرئية، لكن لا يمكن تحديدها.</string>
-    <string name="info_news_settings" formatted="false">تبقى نقاط المدارات أسفل بطاقات المعلومات مرئية، لكن لا يمكن تحديدها.</string>
-    <string name="info_news_catalog" formatted="false">يظل التنقل وروابط التفاصيل والتمرير داخل البطاقات يعمل كالمعتاد.</string>
+    <string name="info_news_star_sky" formatted="false">يمكن ضبط الموقع والارتفاع والمنطقة الزمنية والتاريخ والوقت بشكل مستقل في السيناريو المخصص.</string>
+    <string name="info_news_texture_downloads" formatted="false">يمكن للساعة المخصصة مواصلة التقدم بعد إغلاق التطبيق، أو يمكنك استخدام التاريخ أو الوقت الحالي.</string>
+    <string name="info_news_weather" formatted="false">يلخص السيناريو الحالي الإعدادات النشطة والمكان التقريبي، وتعرض الأيقونة الرئيسية عددها.</string>
+    <string name="info_news_viewer_zoom" formatted="false">طبّق ارتفاع الموقع ومنطقته الزمنية معًا، مع الحفظ التلقائي وإشعارات لكل قسم.</string>
+    <string name="info_news_settings" formatted="false">تظل أسماء المراجع الأرضية المفعّلة مرئية في العرض الرئيسي واللقطات، بغض النظر عن إعدادات تسميات الأجرام.</string>
+    <string name="info_news_catalog" formatted="false">تعرض شاشة التوقف آخر موقع معروف مع اتجاه صحيح للخريطة ودوران نحو الشرق ومنظور موسمي يتبع تاريخ السيناريو.</string>
 </resources>

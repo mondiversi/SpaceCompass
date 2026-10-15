@@ -1,9 +1,9 @@
 <resources>
     <string name="info_news_title">Mambo mapya · %1$s</string>
-    <string name="info_news_star_sky" formatted="false">Vipindi vya T+/T− sasa hutumia muundo mfupi, kama 3h27m.</string>
-    <string name="info_news_texture_downloads" formatted="false">Muundo huo hutumika katika mwonekano mkuu, njia ya kila siku, picha na panorama.</string>
-    <string name="info_news_weather" formatted="false">Uhamishaji wa CSV na TXT pia hutumia vipindi vya saa na dakika.</string>
-    <string name="info_news_viewer_zoom" formatted="false">Nukta za mizunguko chini ya upau wa kichwa hubaki kuonekana, lakini haziwezi kuchaguliwa.</string>
-    <string name="info_news_settings" formatted="false">Nukta za mizunguko chini ya kadi za taarifa hubaki kuonekana, lakini haziwezi kuchaguliwa.</string>
-    <string name="info_news_catalog" formatted="false">Urambazaji, viungo vya maelezo na usogezaji wa kadi vinafanya kazi kama kawaida.</string>
+    <string name="info_news_star_sky" formatted="false">Mahali, mwinuko, ukanda wa saa, tarehe na saa vinaweza kuwekwa kila kimoja kivyake katika mandhari maalumu.</string>
+    <string name="info_news_texture_downloads" formatted="false">Saa maalumu inaweza kuendelea hata baada ya kufunga programu; unaweza pia kutumia tarehe au saa ya sasa.</string>
+    <string name="info_news_weather" formatted="false">Muhtasari wa mandhari ya sasa unaonyesha mipangilio hai na eneo la karibu; ikoni kuu inaonyesha idadi yake.</string>
+    <string name="info_news_viewer_zoom" formatted="false">Tumia mwinuko na ukanda wa saa wa eneo pamoja, kwa uhifadhi otomatiki na arifa kwa kila sehemu.</string>
+    <string name="info_news_settings" formatted="false">Majina ya marejeo ya Dunia yaliyowashwa huendelea kuonekana katika mwonekano mkuu na picha, bila kutegemea lebo za vitu.</string>
+    <string name="info_news_catalog" formatted="false">Kihifadhi skrini kinaonyesha mahali pa mwisho palipojulikana, kwa mwelekeo sahihi wa ramani, mzunguko kuelekea mashariki na mwonekano wa msimu unaofuata tarehe ya mandhari.</string>
 </resources>

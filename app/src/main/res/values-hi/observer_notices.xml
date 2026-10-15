@@ -1,0 +1,18 @@
+<resources>
+    <string name="observer_current_date">वर्तमान तारीख का उपयोग करें</string>
+    <string name="observer_position_activated">कस्टम स्थान चालू किया गया</string>
+    <string name="observer_position_modified">कस्टम स्थान बदला गया</string>
+    <string name="observer_position_deactivated">कस्टम स्थान बंद किया गया</string>
+    <string name="observer_altitude_activated">कस्टम ऊँचाई चालू की गई</string>
+    <string name="observer_altitude_modified">कस्टम ऊँचाई बदली गई</string>
+    <string name="observer_altitude_deactivated">कस्टम ऊँचाई बंद की गई</string>
+    <string name="observer_zone_activated">कस्टम समय क्षेत्र चालू किया गया</string>
+    <string name="observer_zone_modified">कस्टम समय क्षेत्र बदला गया</string>
+    <string name="observer_zone_deactivated">कस्टम समय क्षेत्र बंद किया गया</string>
+    <string name="observer_date_activated">कस्टम तारीख चालू की गई</string>
+    <string name="observer_date_modified">कस्टम तारीख बदली गई</string>
+    <string name="observer_date_deactivated">कस्टम तारीख बंद की गई</string>
+    <string name="observer_time_activated">कस्टम समय चालू किया गया</string>
+    <string name="observer_time_modified">कस्टम समय बदला गया</string>
+    <string name="observer_time_deactivated">कस्टम समय बंद किया गया</string>
+</resources>

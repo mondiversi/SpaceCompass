@@ -1,0 +1,18 @@
+<resources>
+    <string name="observer_current_date">Użyj bieżącej daty</string>
+    <string name="observer_position_activated">Niestandardowa pozycja włączona</string>
+    <string name="observer_position_modified">Niestandardowa pozycja zmieniona</string>
+    <string name="observer_position_deactivated">Niestandardowa pozycja wyłączona</string>
+    <string name="observer_altitude_activated">Niestandardowa wysokość włączona</string>
+    <string name="observer_altitude_modified">Niestandardowa wysokość zmieniona</string>
+    <string name="observer_altitude_deactivated">Niestandardowa wysokość wyłączona</string>
+    <string name="observer_zone_activated">Niestandardowa strefa czasowa włączona</string>
+    <string name="observer_zone_modified">Niestandardowa strefa czasowa zmieniona</string>
+    <string name="observer_zone_deactivated">Niestandardowa strefa czasowa wyłączona</string>
+    <string name="observer_date_activated">Niestandardowa data włączona</string>
+    <string name="observer_date_modified">Niestandardowa data zmieniona</string>
+    <string name="observer_date_deactivated">Niestandardowa data wyłączona</string>
+    <string name="observer_time_activated">Niestandardowa godzina włączona</string>
+    <string name="observer_time_modified">Niestandardowa godzina zmieniona</string>
+    <string name="observer_time_deactivated">Niestandardowa godzina wyłączona</string>
+</resources>

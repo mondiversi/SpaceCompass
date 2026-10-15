@@ -1,0 +1,4 @@
+<resources>
+    <string name="observer_current_scenario">Τρέχον σενάριο</string>
+    <string name="observer_use_position_metadata">Χρήση υψομέτρου και ζώνης ώρας αυτής της θέσης</string>
+</resources>

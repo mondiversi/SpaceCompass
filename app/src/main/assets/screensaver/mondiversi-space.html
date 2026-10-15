@@ -9,14 +9,18 @@ Decorative accelerated orbits and a rotating Earth; not a live astronomical mode
 html,body{margin:0;width:100%;height:100%;overflow:hidden;background:#02050c}
 canvas{position:absolute;inset:0;width:100%;height:100%;pointer-events:none}
 #earth-fallback{display:none;position:absolute;left:50%;top:50%;width:66vmin;aspect-ratio:1;transform:translate(-50%,-50%);overflow:hidden;border-radius:50%;box-shadow:0 0 28px #3166a960}
-#earth-fallback img{position:absolute;width:200%;height:100%;left:-50%;object-fit:fill}
+#earth-fallback img{display:none}
 #earth-fallback .earth-day{filter:brightness(var(--earth-brightness,.075))}
 #earth-fallback .earth-night{opacity:var(--night-weight,1);mix-blend-mode:screen}
+#earth-location{display:none;position:absolute;left:0;top:0;pointer-events:none;will-change:transform;filter:drop-shadow(0 1px 2px #000b)}
+#earth-location svg{display:block;width:100%;height:auto}
 </style></head><body><canvas id="world-canvas"></canvas><canvas id="earth-canvas"></canvas>
-<div id="earth-fallback"><img class="earth-day"><img class="earth-night"></div><script>
+<div id="earth-fallback"><img class="earth-day"><img class="earth-night"><canvas id="earth-software"></canvas></div><div id="earth-location" aria-hidden="true"><svg viewBox="0 0 24 32" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M12 31C10 26 2 19 2 12a10 10 0 1 1 20 0c0 7-8 14-10 19Z" fill="#55c8db" stroke="white" stroke-width="1.5"/><circle cx="12" cy="12" r="3.5" fill="#10242d"/></svg></div><script>
 'use strict';
 let nativeNight=__NATIVE_NIGHT__;
 let nativeLightHour=__NATIVE_LIGHT_HOUR__;
+let nativeLocation=__NATIVE_LOCATION__;
+let nativeEarthOrientation=__NATIVE_EARTH_ORIENTATION__;
 const timelineOffset=__ELAPSED_SECONDS__;
 function sceneTime(ms){return timelineOffset+ms/1000}
 const sceneAssets={earthDay:'__EARTH_DAY__',earthNight:'__EARTH_NIGHT__'};
@@ -34,23 +38,92 @@ function updateEnvironment(){
  document.documentElement.style.setProperty('--night-weight',environment.night);document.documentElement.style.setProperty('--earth-brightness',.075+.925*environment.daylight);
  if(motion.matches)paintWorld(0);
 }
+// East-positive longitude: Greenwich faces +Z and 90 degrees east faces +X.
+// The shader and pin share this orientation; a negative view rotation turns the surface eastward.
+function earthRotation(time){return Math.PI/2-1.3-time*.013}
+// Inverse of the globe shader's texture transform. Positive depth is the visible hemisphere.
+function earthSurfacePoint(location,rotation){
+ if(!Array.isArray(location)||location.length!==2||!location.every(Number.isFinite)||Math.abs(location[0])>90||Math.abs(location[1])>180)return null;
+ const lat=location[0]*Math.PI/180,lon=location[1]*Math.PI/180;
+ const mx=Math.cos(lat)*Math.sin(lon),my=Math.sin(lat),mz=Math.cos(lat)*Math.cos(lon);
+ const c=Math.cos(rotation),s=Math.sin(rotation),ax=mx*c-mz*s,az=mx*s+mz*c;
+ const [roll,pitch]=nativeEarthOrientation,by=my*Math.cos(pitch)-az*Math.sin(pitch),depth=my*Math.sin(pitch)+az*Math.cos(pitch);
+ const x=ax*Math.cos(roll)+by*Math.sin(roll),y=-ax*Math.sin(roll)+by*Math.cos(roll);
+ return depth>=-1e-8?{x,y,depth:Math.max(0,depth)}:null;
+}
+function drawEarthLocation(time,width,height){
+ const marker=document.getElementById('earth-location');
+ if((earthRenderer&&earthRenderer.available&&!earthRenderer.ready)||((!earthRenderer||!earthRenderer.available)&&!earthSoftwareRenderer?.ready)){marker.style.display='none';return}
+ const point=earthSurfacePoint(nativeLocation,earthRotation(time));
+ if(!point){marker.style.display='none';return}
+ const diameter=earthDiameter(width,height),x=width*.5+point.x*diameter*.5,y=height*.5-point.y*diameter*.5;
+ marker.style.display='block';marker.style.opacity=String(Math.min(1,.25+point.depth*8));
+ marker.style.width=Math.min(22,Math.max(16,diameter*.06))+'px';
+ marker.style.transform=`translate(${x.toFixed(2)}px,${y.toFixed(2)}px) translate(-50%,-100%)`;
+}
+
+// Low-rate software sphere for WebViews without WebGL. No extra timer, network or full-size image cache.
+function createEarthSoftwareRenderer(){
+ const canvas=document.getElementById('earth-software'),ctx=canvas.getContext('2d'),size=256,mapWidth=512,mapHeight=256;
+ canvas.width=canvas.height=size;
+ const output=ctx.createImageData(size,size),normals=new Float32Array(size*size*3),rimColor=[.1,.32,.61];
+ for(const selector of ['.earth-day','.earth-night'])document.querySelector(selector).addEventListener('load',()=>paintWorld(motion.matches?0:sceneTime(performance.now())));
+ for(let y=0;y<size;y++)for(let x=0;x<size;x++){
+  const i=(y*size+x)*3,nx=(x+.5)*2/size-1,ny=1-(y+.5)*2/size,d=nx*nx+ny*ny;
+  normals[i]=nx;normals[i+1]=ny;normals[i+2]=d<1?Math.sqrt(1-d):-1;
+ }
+ let day=null,night=null,lastTime=NaN,lastKey='';
+ function load(image){
+  if(!image.complete||!image.naturalWidth)return null;
+  const c=document.createElement('canvas');c.width=mapWidth;c.height=mapHeight;
+  const p=c.getContext('2d',{willReadFrequently:true});p.drawImage(image,0,0,mapWidth,mapHeight);
+  return p.getImageData(0,0,mapWidth,mapHeight).data;
+ }
+ return {get ready(){return day!==null&&night!==null},get time(){return lastTime},render(time){
+  if(!day)day=load(document.querySelector('.earth-day'));
+  if(!night)night=load(document.querySelector('.earth-night'));
+  if(!day||!night)return;
+  const key=nativeEarthOrientation.join(',')+','+environment.hour;
+  if(key===lastKey&&Math.abs(time-lastTime)<1)return;
+  lastTime=time;lastKey=key;
+  const [roll,pitch]=nativeEarthOrientation,cr=Math.cos(roll),sr=Math.sin(roll),cp=Math.cos(pitch),sp=Math.sin(pitch);
+  const angle=earthRotation(time),c=Math.cos(angle),s=Math.sin(angle),light=(environment.hour-6)*Math.PI/12,sunLength=Math.hypot(1,.18);
+  const sx=Math.cos(light)/sunLength,sy=.18/sunLength,sz=Math.sin(light)/sunLength;
+  for(let i=0;i<size*size;i++){
+   const pixel=i*4,k=i*3,nx=normals[k],ny=normals[k+1],nz=normals[k+2];
+   if(nz<0){output.data[pixel+3]=0;continue}
+   const ax=nx*cr-ny*sr,by=nx*sr+ny*cr,ay=by*cp+nz*sp,az=-by*sp+nz*cp;
+   const vx=ax*c+az*s,vz=-ax*s+az*c;
+   const u=((Math.atan2(vx,vz)/(2*Math.PI)+.5)%1+1)%1,v=.5-Math.asin(Math.max(-1,Math.min(1,ay)))/Math.PI;
+   const sample=(Math.min(mapHeight-1,Math.floor(v*mapHeight))*mapWidth+Math.min(mapWidth-1,Math.floor(u*mapWidth)))*4;
+   const lit=nx*sx+ny*sy+nz*sz,diffuse=Math.max(0,lit),t=Math.max(0,Math.min(1,(lit+.13)/.26)),dark=1-t*t*(3-2*t);
+   const rim=Math.pow(1-nz,3.2)*(.22+diffuse*.7);
+   for(let channel=0;channel<3;channel++)output.data[pixel+channel]=Math.min(255,
+    day[sample+channel]*(.075+diffuse*.98)+Math.pow(night[sample+channel]/255,1.5)*dark*1.7*255+rimColor[channel]*rim*255);
+   output.data[pixel+3]=255;
+  }
+  ctx.putImageData(output,0,0);
+ }};
+}
+
 function createEarthRenderer(){
  const canvas=document.getElementById('earth-canvas'),gl=canvas.getContext('webgl',{alpha:true,antialias:true,premultipliedAlpha:false,preserveDrawingBuffer:true});
- if(!gl){canvas.style.display='none';document.getElementById('earth-fallback').style.display='block';return null}
+ if(!gl){canvas.style.display='none';document.getElementById('earth-fallback').style.display='block';earthSoftwareRenderer=createEarthSoftwareRenderer();return null}
  const vertex='attribute vec2 p;void main(){gl_Position=vec4(p,0.,1.);}';
- const fragment=`precision mediump float;uniform vec2 resolution,center;uniform float radius,rotation,hour;uniform sampler2D dayMap,nightMap;const float PI=3.14159265;
+ const fragment=`precision mediump float;uniform vec2 resolution,center,axisOrientation;uniform float radius,rotation,hour;uniform sampler2D dayMap,nightMap;const float PI=3.14159265;
  float hash(vec3 p){return fract(sin(dot(p,vec3(127.1,311.7,74.7)))*43758.5453);}float noise(vec3 p){vec3 i=floor(p),f=fract(p);f=f*f*(3.-2.*f);return mix(mix(mix(hash(i),hash(i+vec3(1,0,0)),f.x),mix(hash(i+vec3(0,1,0)),hash(i+vec3(1,1,0)),f.x),f.y),mix(mix(hash(i+vec3(0,0,1)),hash(i+vec3(1,0,1)),f.x),mix(hash(i+vec3(0,1,1)),hash(i+vec3(1,1,1)),f.x),f.y),f.z);}
- void main(){vec2 q=(gl_FragCoord.xy-center)/radius;float d=dot(q,q);float angle=(hour-6.)*PI/12.;vec3 sun=normalize(vec3(cos(angle),.18,sin(angle)));if(d>1.){float glow=exp(-(sqrt(d)-1.)*30.)*.35;if(d>1.26||glow<.002)discard;gl_FragColor=vec4(.12,.4,.8,glow);return;}vec3 n=vec3(q,sqrt(1.-d));float tilt=.16;vec3 v=vec3(n.x*cos(tilt)-n.y*sin(tilt),n.x*sin(tilt)+n.y*cos(tilt),n.z);float c=cos(rotation),s=sin(rotation);v=vec3(v.x*c+v.z*s,v.y,-v.x*s+v.z*c);vec2 uv=vec2(atan(v.z,v.x)/(2.*PI)+.5,asin(v.y)/PI+.5);vec3 land=texture2D(dayMap,uv).rgb;vec3 cities=texture2D(nightMap,uv).rgb;float lit=dot(n,sun),diffuse=max(lit,0.);float water=smoothstep(.015,.12,land.b-max(land.r,land.g));vec3 halfV=normalize(sun+vec3(0,0,1));float shine=pow(max(dot(n,halfV),0.),55.)*water*.55;vec3 color=land*(.075+diffuse*.98)+vec3(shine);float dark=1.-smoothstep(-.13,.13,lit);color+=pow(cities,vec3(1.5))*dark*1.7;float clouds=smoothstep(.65,.83,noise(v*12.+vec3(rotation*.4,0,0))*.65+noise(v*25.)*.35);color=mix(color,vec3(.76,.83,.88)*(.08+diffuse*.9),clouds*.63);float rim=pow(1.-n.z,3.2);color+=vec3(.10,.32,.61)*rim*(.22+diffuse*.7);gl_FragColor=vec4(color,1.);}`;
+ void main(){vec2 q=(gl_FragCoord.xy-center)/radius;float d=dot(q,q);float angle=(hour-6.)*PI/12.;vec3 sun=normalize(vec3(cos(angle),.18,sin(angle)));if(d>1.){float glow=exp(-(sqrt(d)-1.)*30.)*.35;if(d>1.26||glow<.002)discard;gl_FragColor=vec4(.12,.4,.8,glow);return;}vec3 n=vec3(q,sqrt(1.-d));float roll=axisOrientation.x,pitch=axisOrientation.y;vec3 v=vec3(n.x*cos(roll)-n.y*sin(roll),n.x*sin(roll)+n.y*cos(roll),n.z);v=vec3(v.x,v.y*cos(pitch)+v.z*sin(pitch),-v.y*sin(pitch)+v.z*cos(pitch));float c=cos(rotation),s=sin(rotation);v=vec3(v.x*c+v.z*s,v.y,-v.x*s+v.z*c);vec2 uv=vec2(atan(v.x,v.z)/(2.*PI)+.5,asin(v.y)/PI+.5);vec3 land=texture2D(dayMap,uv).rgb;vec3 cities=texture2D(nightMap,uv).rgb;float lit=dot(n,sun),diffuse=max(lit,0.);float water=smoothstep(.015,.12,land.b-max(land.r,land.g));vec3 halfV=normalize(sun+vec3(0,0,1));float shine=pow(max(dot(n,halfV),0.),55.)*water*.55;vec3 color=land*(.075+diffuse*.98)+vec3(shine);float dark=1.-smoothstep(-.13,.13,lit);color+=pow(cities,vec3(1.5))*dark*1.7;float clouds=smoothstep(.65,.83,noise(v*12.+vec3(rotation*.4,0,0))*.65+noise(v*25.)*.35);color=mix(color,vec3(.76,.83,.88)*(.08+diffuse*.9),clouds*.63);float rim=pow(1.-n.z,3.2);color+=vec3(.10,.32,.61)*rim*(.22+diffuse*.7);gl_FragColor=vec4(color,1.);}`;
  function shader(type,source){const s=gl.createShader(type);gl.shaderSource(s,source);gl.compileShader(s);if(!gl.getShaderParameter(s,gl.COMPILE_STATUS))throw Error(gl.getShaderInfoLog(s));return s}
- let program;try{program=gl.createProgram();gl.attachShader(program,shader(gl.VERTEX_SHADER,vertex));gl.attachShader(program,shader(gl.FRAGMENT_SHADER,fragment));gl.linkProgram(program);if(!gl.getProgramParameter(program,gl.LINK_STATUS))throw Error(gl.getProgramInfoLog(program))}catch(error){canvas.style.display='none';document.getElementById('earth-fallback').style.display='block';console.warn('Earth renderer fallback',error);return null}
+ let program;try{program=gl.createProgram();gl.attachShader(program,shader(gl.VERTEX_SHADER,vertex));gl.attachShader(program,shader(gl.FRAGMENT_SHADER,fragment));gl.linkProgram(program);if(!gl.getProgramParameter(program,gl.LINK_STATUS))throw Error(gl.getProgramInfoLog(program))}catch(error){canvas.style.display='none';document.getElementById('earth-fallback').style.display='block';earthSoftwareRenderer=createEarthSoftwareRenderer();console.warn('Earth renderer fallback',error);return null}
  gl.useProgram(program);const buffer=gl.createBuffer();gl.bindBuffer(gl.ARRAY_BUFFER,buffer);gl.bufferData(gl.ARRAY_BUFFER,new Float32Array([-1,-1,1,-1,-1,1,-1,1,1,-1,1,1]),gl.STATIC_DRAW);const pos=gl.getAttribLocation(program,'p');gl.enableVertexAttribArray(pos);gl.vertexAttribPointer(pos,2,gl.FLOAT,false,0,0);
  let ready=0;function texture(source,unit,name){const tex=gl.createTexture();gl.activeTexture(gl.TEXTURE0+unit);gl.bindTexture(gl.TEXTURE_2D,tex);gl.texImage2D(gl.TEXTURE_2D,0,gl.RGB,1,1,0,gl.RGB,gl.UNSIGNED_BYTE,new Uint8Array([12,36,68]));gl.texParameteri(gl.TEXTURE_2D,gl.TEXTURE_MIN_FILTER,gl.LINEAR);gl.texParameteri(gl.TEXTURE_2D,gl.TEXTURE_MAG_FILTER,gl.LINEAR);gl.texParameteri(gl.TEXTURE_2D,gl.TEXTURE_WRAP_S,gl.REPEAT);gl.texParameteri(gl.TEXTURE_2D,gl.TEXTURE_WRAP_T,gl.CLAMP_TO_EDGE);gl.uniform1i(gl.getUniformLocation(program,name),unit);const image=new Image();image.onload=()=>{gl.activeTexture(gl.TEXTURE0+unit);gl.bindTexture(gl.TEXTURE_2D,tex);gl.pixelStorei(gl.UNPACK_FLIP_Y_WEBGL,true);gl.texImage2D(gl.TEXTURE_2D,0,gl.RGB,gl.RGB,gl.UNSIGNED_BYTE,image);ready++;if(motion.matches)paintWorld(0)};image.src=source}
  texture(sceneAssets.earthDay,0,'dayMap');texture(sceneAssets.earthNight,1,'nightMap');
- const locations=Object.fromEntries(['resolution','center','radius','rotation','hour'].map(k=>[k,gl.getUniformLocation(program,k)]));
- canvas.addEventListener('webglcontextlost',event=>{event.preventDefault();canvas.style.display='none';document.getElementById('earth-fallback').style.display='block'});
- return {get ready(){return ready===2},render(time,width,height,dpr){gl.viewport(0,0,canvas.width,canvas.height);gl.clearColor(0,0,0,0);gl.clear(gl.COLOR_BUFFER_BIT);if(environment.scene!=='space')return;gl.useProgram(program);gl.uniform2f(locations.resolution,canvas.width,canvas.height);gl.uniform2f(locations.center,width*.5*dpr,height*.5*dpr);gl.uniform1f(locations.radius,earthDiameter(width,height)*.5*dpr);gl.uniform1f(locations.rotation,time*.013+1.3);gl.uniform1f(locations.hour,environment.hour);gl.drawArrays(gl.TRIANGLES,0,6)}};
+ const locations=Object.fromEntries(['resolution','center','radius','rotation','hour','axisOrientation'].map(k=>[k,gl.getUniformLocation(program,k)]));
+ let available=true;
+ canvas.addEventListener('webglcontextlost',event=>{event.preventDefault();available=false;canvas.style.display='none';document.getElementById('earth-fallback').style.display='block';earthSoftwareRenderer=createEarthSoftwareRenderer()});
+ return {get ready(){return ready===2},get available(){return available},render(time,width,height,dpr){gl.viewport(0,0,canvas.width,canvas.height);gl.clearColor(0,0,0,0);gl.clear(gl.COLOR_BUFFER_BIT);if(environment.scene!=='space')return;gl.useProgram(program);gl.uniform2f(locations.resolution,canvas.width,canvas.height);gl.uniform2f(locations.center,width*.5*dpr,height*.5*dpr);gl.uniform1f(locations.radius,earthDiameter(width,height)*.5*dpr);gl.uniform1f(locations.rotation,earthRotation(time));gl.uniform2f(locations.axisOrientation,nativeEarthOrientation[0],nativeEarthOrientation[1]);gl.uniform1f(locations.hour,environment.hour);gl.drawArrays(gl.TRIANGLES,0,6)}};
 }
-let earthRenderer=null,viewWidth=0,viewHeight=0,pixelRatio=1;
+let earthRenderer=null,earthSoftwareRenderer=null,viewWidth=0,viewHeight=0,pixelRatio=1;
 let seed=38;function random(){seed=(seed*1664525+1013904223)>>>0;return seed/4294967296}const stars=Array.from({length:210},()=>({x:random(),y:random(),r:.35+random()*1.25,phase:random()*6.28}));
 const planets=[{r:.08,size:3,color:'#a99f91',speed:.045},{r:.13,size:5,color:'#d5b994',speed:.034},{r:.19,size:5,color:'#60a7c6',speed:.026},{r:.25,size:4,color:'#b56d4d',speed:.021},{r:.33,size:18,color:'#c0a88c',speed:.014},{r:.41,size:14,color:'#b8ab95',speed:.011,rings:true},{r:.49,size:9,color:'#82b6c1',speed:.008},{r:.57,size:9,color:'#4b79c2',speed:.006}];
 // The display's short edge is stable across rotation; only clamp for small windows.
@@ -62,7 +135,9 @@ function paintWorld(time){
  for(const star of stars){if(!space&&star.y>.40)continue;world.globalAlpha=(space?.35:environment.night*.8)*(.6+.4*Math.sin(time*.7+star.phase));world.fillStyle='#d6e3f4';world.beginPath();const offset=space?time*.15:0;world.arc((star.x*w+offset)%w,star.y*h,star.r,0,Math.PI*2);world.fill()}world.globalAlpha=1;
  if(space){const cx=w*.14,cy=h*.54,tilt=-.16;world.save();world.translate(cx,cy);world.rotate(tilt);for(let i=0;i<planets.length;i++){const p=planets[i],radius=Math.max(w,h*.85)*p.r,angle=time*p.speed+i*1.31;world.strokeStyle='rgba(140,166,198,.13)';world.lineWidth=.7;world.beginPath();world.ellipse(0,0,radius,radius*.35,0,0,Math.PI*2);world.stroke();const x=Math.cos(angle)*radius,y=Math.sin(angle)*radius*.35;if(p.rings){world.strokeStyle='rgba(181,175,157,.45)';world.lineWidth=4;world.beginPath();world.ellipse(x,y,p.size*1.8,p.size*.47,-.3,0,Math.PI*2);world.stroke()}const surface=world.createRadialGradient(x-p.size*.35,y-p.size*.35,0,x,y,p.size);surface.addColorStop(0,p.color);surface.addColorStop(1,'#111a27');world.fillStyle=surface;world.beginPath();world.arc(x,y,p.size*(w<600?.7:1),0,Math.PI*2);world.fill()}const glow=world.createRadialGradient(0,0,0,0,0,w<600?48:90);glow.addColorStop(0,'rgba(255,224,162,.92)');glow.addColorStop(.2,'rgba(255,185,89,.62)');glow.addColorStop(1,'rgba(255,143,50,0)');world.fillStyle=glow;world.beginPath();world.arc(0,0,w<600?48:90,0,Math.PI*2);world.fill();world.restore();
  }
- if(earthRenderer)earthRenderer.render(time,w,h,pixelRatio);
+ if(earthRenderer&&earthRenderer.available)earthRenderer.render(time,w,h,pixelRatio);
+ if(earthSoftwareRenderer&&(!earthRenderer||!earthRenderer.available))earthSoftwareRenderer.render(time);
+ drawEarthLocation(earthSoftwareRenderer&&(!earthRenderer||!earthRenderer.available)&&earthSoftwareRenderer.ready?earthSoftwareRenderer.time:time,w,h);
 }
 
 // A 20 fps idle scene schedules no per-vsync callback between actual draws.
@@ -76,6 +151,8 @@ function scheduleWorldAnimation(){
  })},idleFrameInterval);
 }
 window.setNativeLighting=function(night,hour){nativeNight=!!night;if(Number.isFinite(hour))nativeLightHour=((hour%24)+24)%24;updateEnvironment();paintWorld(sceneTime(performance.now()))};
+window.setNativeLocation=function(location){nativeLocation=location;paintWorld(motion.matches?0:sceneTime(performance.now()))};
+window.setNativeEarthOrientation=function(value){if(!Array.isArray(value)||value.length!==2||!value.every(v=>Number.isFinite(v)&&Math.abs(v)<=Math.PI/2))return;nativeEarthOrientation=value.slice();paintWorld(motion.matches?0:sceneTime(performance.now()))};
 document.querySelector('.earth-day').src=sceneAssets.earthDay;
 document.querySelector('.earth-night').src=sceneAssets.earthNight;
 updateEnvironment();earthRenderer=createEarthRenderer();resizeWorld();

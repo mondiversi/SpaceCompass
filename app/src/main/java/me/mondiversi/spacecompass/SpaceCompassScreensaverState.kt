@@ -29,7 +29,11 @@ internal class SpaceCompassScreensaverState : ViewModel() {
     var sceneStartedAt = 0L; private set
     // Keep the last observer, not an aging solar height: the idle sky needs no live GPS or data queue.
     var solarObserver: SpaceCompassScreensaverSolarObserver? = null; private set
-    fun solarObserver(value: SpaceCompassScreensaverSolarObserver?) {
+    var location by mutableStateOf<SpaceCompassScreensaverLocation?>(null); private set
+    var observerPlan by mutableStateOf<SpaceCompassObserverPlan?>(null); private set
+    fun solarObserver(value: SpaceCompassScreensaverSolarObserver?, plan: SpaceCompassObserverPlan?) {
+        observerPlan = plan
+        location = spaceCompassScreensaverLocation(value, location)
         // Rotation rebuilds the hidden page without a GPS fix: keep the idle observer until work resumes.
         if (value != null || !visible) solarObserver = value
     }

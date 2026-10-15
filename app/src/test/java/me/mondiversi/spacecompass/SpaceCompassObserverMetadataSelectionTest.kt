@@ -46,7 +46,7 @@ class SpaceCompassObserverMetadataSelectionTest {
     }
 
     @Test fun detectingHeightInFeetStoresMetersAndNeverFreezesALiveClock() {
-        val changed = draft.copy(feet = true, simulateTime = false).withDetectedMetadata(
+        val changed = draft.copy(feet = true, simulateTime = false, simulateDate = false).withDetectedMetadata(
             SpaceCompassObserverMetadataField.ALTITUDE, metadata, SpaceCompassNumericFormat.EUROPEAN, "Europe/Rome")
         val result = changed.resolve(null, now, "Europe/Rome").getOrThrow()!!
         assertEquals(68.0, result.altitudeMeters, .002)
