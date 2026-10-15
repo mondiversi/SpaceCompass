@@ -132,18 +132,20 @@ internal fun SpaceCompassSunDailyPathLayer(
                 drawCircle(tint, r, point)
                 if (marker.event != SpaceCompassSunPathEvent.HOUR) {
                     val d = 2.5.dp.toPx()
-                    if (marker.event == SpaceCompassSunPathEvent.MINIMUM) {
+                    if (marker.event == SpaceCompassSunPathEvent.MINIMUM || marker.event == SpaceCompassSunPathEvent.CULMINATION) {
                         drawLine(Color.Black.copy(alpha = 0.8f), point - Offset(d, 0f), point + Offset(d, 0f),
                             1.8.dp.toPx(), StrokeCap.Round)
+                        if (marker.event == SpaceCompassSunPathEvent.CULMINATION)
+                            drawLine(Color.Black.copy(alpha = 0.8f), point - Offset(0f, d), point + Offset(0f, d),
+                                1.8.dp.toPx(), StrokeCap.Round)
                     } else {
                         val symbol = Path().apply {
-                            when (marker.event) {
-                                SpaceCompassSunPathEvent.SUNRISE -> { moveTo(point.x, point.y - d)
-                                    lineTo(point.x + d, point.y + d); lineTo(point.x - d, point.y + d) }
-                                SpaceCompassSunPathEvent.SUNSET -> { moveTo(point.x, point.y + d)
-                                    lineTo(point.x + d, point.y - d); lineTo(point.x - d, point.y - d) }
-                                else -> { moveTo(point.x, point.y - d); lineTo(point.x + d, point.y)
-                                    lineTo(point.x, point.y + d); lineTo(point.x - d, point.y) }
+                            if (marker.event == SpaceCompassSunPathEvent.SUNRISE) {
+                                moveTo(point.x, point.y - d)
+                                lineTo(point.x + d, point.y + d); lineTo(point.x - d, point.y + d)
+                            } else {
+                                moveTo(point.x, point.y + d)
+                                lineTo(point.x + d, point.y - d); lineTo(point.x - d, point.y - d)
                             }
                             close()
                         }

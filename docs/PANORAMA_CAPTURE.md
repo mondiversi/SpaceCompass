@@ -211,7 +211,7 @@ in [VERIFICATION.md](VERIFICATION.md). These changes remain local and unpublishe
 ## Event symbols and translucent point labels — October 6 local follow-up
 
 Orbital event markers use the same vocabulary as the live orbit: upward triangle
-for rise, downward triangle for set, diamond for culmination/maximum and horizontal
+for rise, downward triangle for set, plus sign for culmination/maximum and horizontal
 bar for minimum. Hourly points remain plain dots. Special markers are slightly
 larger with a dark halo so the inset glyph remains readable at export resolution.
 For a coincident event, the merged point's representative event is drawn just as

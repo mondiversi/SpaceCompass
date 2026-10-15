@@ -366,3 +366,18 @@ fallback and marker share east-positive coordinates and seasonal transforms. The
 fallback caches source maps/normals and caps sphere rasterization at one frame per
 second; reduced-motion startup still renders a complete frame. Existing pause,
 music, native clock/battery, touch-to-dismiss and lifecycle contracts remain.
+
+
+## Release 1.3.8: daily-path emphasis and capture chrome
+
+DailyPathPointCaption combines optional decorative event vectors with stable
+two-line text. The row's key/current condition controls both caption lines and
+both angle columns, including satellite-pass and coincident-event rows. Event
+symbols do not change point identity, selection or time data. Live Compose and
+native capture renderers both use plus/minus for culmination/minimum; exported
+camera/panorama variants reuse the native marker helper.
+
+The shared capture toolbar and daily-path toolbar use the standard page palette
+at full opacity. Android status backgrounds already use that same palette. The
+daily light-mode table remains white, and the main scene's translucent overlays
+retain their separate policy.

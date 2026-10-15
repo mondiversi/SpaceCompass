@@ -120,16 +120,17 @@ internal fun SpaceCompassSunDailyPathPage(
         SPACE_COMPASS_SUN_DATA_MARKER), "", "").label
     val elevationLabel = spaceCompassSunDataRow(stringResource(R.string.celestial_point_elevation,
         SPACE_COMPASS_SUN_DATA_MARKER), "", "").label
-    val angleValues: @Composable (SpaceCompassSunPathPoint, Color) -> Unit = { point, valueColor ->
+    val angleValues: @Composable (SpaceCompassSunPathPoint, Color, Boolean) -> Unit = { point, valueColor, emphasized ->
+        val weight = if (emphasized) FontWeight.Bold else FontWeight.Normal
         Row(Modifier.clearAndSetSemantics {
             contentDescription = "$azimuthLabel: ${labels.angle(point.position.azimuthDegrees)}, $elevationLabel: ${labels.angle(point.position.elevationDegrees)}"
         }, verticalAlignment = Alignment.CenterVertically) {
             Text(labels.angle(point.position.azimuthDegrees), Modifier.width(64.dp),
-                color = valueColor, fontSize = 12.sp, style = TextStyle(textDirection = TextDirection.Ltr),
+                color = valueColor, fontSize = 12.sp, fontWeight = weight, style = TextStyle(textDirection = TextDirection.Ltr),
                 textAlign = androidx.compose.ui.text.style.TextAlign.End)
             Spacer(Modifier.width(12.dp))
             Text(labels.angle(point.position.elevationDegrees), Modifier.width(64.dp),
-                color = valueColor, fontSize = 12.sp, style = TextStyle(textDirection = TextDirection.Ltr),
+                color = valueColor, fontSize = 12.sp, fontWeight = weight, style = TextStyle(textDirection = TextDirection.Ltr),
                 textAlign = androidx.compose.ui.text.style.TextAlign.End)
         }
     }
@@ -143,6 +144,7 @@ internal fun SpaceCompassSunDailyPathPage(
         Column(Modifier.fillMaxSize()) {
             SpaceCompassPageToolbar(stringResource(R.string.celestial_daily_path),
                 { if (!export.saving) state.closeMenu() },
+                modifier = Modifier.background(spaceCompassPageBackground()),
                 titleModifier = Modifier.testTag("sun-path-title"), titleColor = primaryText) {
                 SpaceCompassTitleActionButton(stringResource(R.string.panorama_export),export.open,
                     Modifier.testTag("daily-path-export"),enabled=!export.saving) { SpaceCompassPanoramaExportIcon(2.dp) }
@@ -187,15 +189,16 @@ internal fun SpaceCompassSunDailyPathPage(
                     if (path.issPass.isEmpty()) Text(stringResource(R.string.celestial_iss_no_pass),
                         color = secondaryText, fontSize = 12.sp, modifier = Modifier.testTag("iss-no-pass"))
                     path.issPass.forEach { point ->
+                        val emphasized = point.events.any { it != SpaceCompassSunPathEvent.HOUR }
                         // Informational rows, not points on the current orbit (the pass may be tomorrow).
                         Row(Modifier.fillMaxWidth().clip(RoundedCornerShape(16.dp))
-                            .background(if (point.events.any { it != SpaceCompassSunPathEvent.HOUR }) eventBackground else Color.Transparent)
+                            .background(if (emphasized) eventBackground else Color.Transparent)
                             .padding(horizontal = 8.dp, vertical = 6.dp).testTag("iss-pass-${point.event.name}"),
                             verticalAlignment = Alignment.CenterVertically, horizontalArrangement = Arrangement.spacedBy(8.dp)) {
                             SpaceCompassDailyPathPointCaption(labels.name(point), labels.moment(point),
                                 formatSpaceCompassPointCountdown(point.timeMs, nowMs, countdownLocale),
-                                primaryText, secondaryText, true, Modifier.weight(1f))
-                            angleValues(point, secondaryText)
+                                primaryText, secondaryText, emphasized, Modifier.weight(1f), point = point)
+                            angleValues(point, secondaryText, emphasized)
                         }
                     }
                     HorizontalDivider(Modifier.padding(vertical = 8.dp), color = secondaryText.copy(alpha = 0.25f))
@@ -205,12 +208,13 @@ internal fun SpaceCompassSunDailyPathPage(
                 entries.forEach { entry ->
                     val point = entry.point
                     val pointId = entry.pointId
+                    val emphasized = entry.isCurrent || point.events.any { it != SpaceCompassSunPathEvent.HOUR }
                     val highlighted = state.isSelected(path, point, entry.isCurrent)
                     val nameColor = if (highlighted) highlightColor else primaryText
                     val valueColor = if (highlighted) highlightColor else secondaryText
                     Row(Modifier.fillMaxWidth().heightIn(min = 48.dp).clip(RoundedCornerShape(16.dp))
                         .background(if (highlighted) highlightColor.copy(alpha = .16f)
-                            else if (entry.isCurrent || point.events.any { it != SpaceCompassSunPathEvent.HOUR })
+                            else if (emphasized)
                                 eventBackground else Color.Transparent)
                         .clickable {
                             if (entry.isCurrent) state.toggleCurrent(path.body, point, path)
@@ -231,9 +235,9 @@ internal fun SpaceCompassSunDailyPathPage(
                         val pointLabels = entry.sourcePath?.let { rememberSpaceCompassSunPathLabels(it) } ?: labels
                         SpaceCompassDailyPathPointCaption(if (entry.isCurrent) currentName else pointLabels.name(point),
                             labels.moment(point), formatSpaceCompassPointCountdown(point.timeMs, nowMs, countdownLocale),
-                            nameColor, valueColor, entry.isCurrent || point.event != SpaceCompassSunPathEvent.HOUR,
-                            Modifier.weight(1f))
-                        angleValues(point, valueColor)
+                            nameColor, valueColor, emphasized,
+                            Modifier.weight(1f), point = point, isCurrent = entry.isCurrent)
+                        angleValues(point, valueColor, emphasized)
                     }
                 }
             }

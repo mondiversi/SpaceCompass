@@ -9,9 +9,9 @@ android {
         applicationId = "me.mondiversi.spacecompass"
         minSdk = 26
         targetSdk = 37
-        versionCode = 35
-        versionName = "1.3.7"
-        buildConfigField("String", "DISPLAY_VERSION", "\"1.3.7\"")
+        versionCode = 36
+        versionName = "1.3.8"
+        buildConfigField("String", "DISPLAY_VERSION", "\"1.3.8\"")
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
     }
     buildTypes { release { optimization { enable = true } } }

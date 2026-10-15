@@ -73,7 +73,7 @@ internal fun spaceCompassPanoramaCurrentLabel(snapshot: SpaceCompassPanoramaSnap
     return SpaceCompassPanoramaTimeLabel(value, point, tint, principal = true, pointRadius = radius, current = true)
 }
 
-/** The live orbit's event vocabulary: up/down triangles, culmination diamond and minimum bar. */
+/** The live orbit's event vocabulary: up/down triangles, culmination plus and minimum bar. */
 internal fun drawSpaceCompassPanoramaEventMarker(canvas: Canvas, event: SpaceCompassSunPathEvent,
     point: SpaceCompassSunScenePoint, scale: Float, tint: Int) {
     val x = point.x.toFloat(); val y = point.y.toFloat()
@@ -88,18 +88,17 @@ internal fun drawSpaceCompassPanoramaEventMarker(canvas: Canvas, event: SpaceCom
     canvas.drawCircle(x, y, 14 * scale, paint)
     paint.color = 0xdd000000.toInt()
     val d = 6 * scale
-    if (event == SpaceCompassSunPathEvent.MINIMUM) {
+    if (event == SpaceCompassSunPathEvent.MINIMUM || event == SpaceCompassSunPathEvent.CULMINATION) {
         paint.strokeWidth = 2.4f * scale; paint.strokeCap = Paint.Cap.ROUND
         canvas.drawLine(x - d, y, x + d, y, paint)
+        if (event == SpaceCompassSunPathEvent.CULMINATION)
+            canvas.drawLine(x, y - d, x, y + d, paint)
     } else {
         val glyph = android.graphics.Path().apply {
-            when (event) {
-                SpaceCompassSunPathEvent.SUNRISE -> { moveTo(x, y - d)
-                    lineTo(x + d, y + d); lineTo(x - d, y + d) }
-                SpaceCompassSunPathEvent.SUNSET -> { moveTo(x, y + d)
-                    lineTo(x + d, y - d); lineTo(x - d, y - d) }
-                else -> { moveTo(x, y - d); lineTo(x + d, y)
-                    lineTo(x, y + d); lineTo(x - d, y) }
+            if (event == SpaceCompassSunPathEvent.SUNRISE) {
+                moveTo(x, y - d); lineTo(x + d, y + d); lineTo(x - d, y + d)
+            } else {
+                moveTo(x, y + d); lineTo(x + d, y - d); lineTo(x - d, y - d)
             }
             close()
         }

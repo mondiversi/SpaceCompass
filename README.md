@@ -8,8 +8,8 @@ paths, inspect reference facts and view textured models. Space Compass is a stan
 
 ## Download and install
 
-Download **space-compass-1.3.7.apk** from the
-[Space Compass 1.3.7 release](https://github.com/mondiversi/SpaceCompass/releases/tag/v1.3.7).
+Download **space-compass-1.3.8.apk** from the
+[Space Compass 1.3.8 release](https://github.com/mondiversi/SpaceCompass/releases/tag/v1.3.8).
 Android 8.0 or newer is required. Open the APK and follow Android's installation
 prompts; allow installation for your browser or file manager if requested.
 
@@ -22,7 +22,7 @@ one manual APK update to acquire this feature.
 The release includes `SHA256SUMS.txt` and a signed update index. GitHub's source
 ZIP/TAR archives and Actions debug artifacts are separate from the signed APK.
 See [distribution and signing](docs/GITHUB_RELEASES.md) and
-[the 1.3.7 release audit](docs/RELEASE_1_3_7.md).
+[the 1.3.8 release audit](docs/RELEASE_1_3_8.md).
 
 ## Features
 
@@ -55,18 +55,19 @@ See [distribution and signing](docs/GITHUB_RELEASES.md) and
 - Full-screen animated Earth screensaver with local time, date and battery, enabled after five minutes by default. It shows the last known observer position on a correctly oriented globe with eastward spin and a Sun-facing seasonal perspective based on the effective scenario date. It pauses live sensors, GPS, camera and data refresh until dismissed.
 - Solar-height-driven dawn/dusk lighting shared by sky, ground, weather and panoramic captures.
 - Translucent main islands with paths and objects drawn behind them, a reticle centred in the free sky area and a 55/45 landscape split.
-- Titled photo/panorama previews with top-aligned controls, object-colour legends and larger wrapping photo metadata on a separate opaque black band.
+- Titled photo/panorama previews with opaque theme-matched toolbars and top-aligned controls, object-colour legends and larger wrapping photo metadata on a separate opaque black band.
 - White reticle, existing-outline object focus/selection, a lighter daytime blue and stable bottom-right landscape capture. Collapsed landscape panels use a floating central title bar.
 - Stable ground, orbits and star background when returning from background; optically centred object arrows and a clear screensaver return hint.
 - Compact T+/T− hour/minute offsets shared by views and exports; orbit points behind translucent title/information overlays remain visible without being selectable.
 - Capture labels can show only key events and selected points across all objects; this is the default for fresh settings. Existing saved label choices remain intact.
 - Enabled Earth-reference names remain visible through reticle crossings and all capture-label policies.
+- Daily paths pair key-event names with compact symbols and bold their complete rows, including clock/T± and angles. Culmination uses + consistently in the live sky, captures and image exports.
 - Animated introduction, phone/tablet and portrait/landscape layouts.
 - Twenty interface languages, system-language fallback and regional/unit defaults.
 - Signed startup/manual GitHub updates with package, certificate, size and checksum verification.
 
 The application ID is `me.mondiversi.spacecompass`. The current stable version is
-**1.3.7**, with Android/update identity `1.3.7` and version code **35**.
+**1.3.8**, with Android/update identity `1.3.8` and version code **36**.
 This preserves the three-part update protocol used by existing preview installations.
 The app stores its preferences and caches privately.
 
@@ -128,7 +129,7 @@ Launcher/loading artwork and the fictional Easter-egg texture are original asset
 
 ## Data and graphics packages
 
-Release 1.3.7 also provides a reference-information ZIP and the current 18-image
+Release 1.3.8 also provides a reference-information ZIP and the current 18-image
 2K WebP graphics ZIP, both with file manifests and credits. They are optional
 archives: scientific reference data, all 20 languages, the star atlas and LV-426
 are already included in the APK. Planet maps and archival photographs are downloaded individually from

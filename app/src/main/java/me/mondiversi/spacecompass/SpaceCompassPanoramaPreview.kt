@@ -162,7 +162,7 @@ internal fun SpaceCompassPanoramaPreview(data: SpaceCompassPanoramaPreviewData, 
             SpaceCompassPageToolbar(previewTitle, { if (!export.saving) onBack() },
                 Modifier.align(Alignment.TopStart).testTag("panorama-toolbar")
                     .onSizeChanged { toolbarHeightPx = it.height }
-                    .background(background.copy(alpha = SPACE_COMPASS_MAIN_OVERLAY_ALPHA)),
+                    .background(background),
                 titleModifier = Modifier.testTag("panorama-title"), titleColor = MaterialTheme.colorScheme.onSurface) {
                 SpaceCompassTitleActionButton(stringResource(R.string.panorama_export), export.open,
                     Modifier.testTag("panorama-export"), enabled = ready && !export.saving) {
@@ -236,7 +236,7 @@ private fun SpaceCompassPanoramaZoomImage(bitmap: android.graphics.Bitmap, modif
         }) }) {
         Image(image, stringResource(R.string.panorama_preview), Modifier.fillMaxSize()
             .graphicsLayer {
-                // Fit below the toolbar, but let a zoomed image continue behind its translucent surface.
+                // Fit below the toolbar; its opaque surface covers any zoomed image overflow.
                 val fullFit = min(size.width.toFloat() / bitmap.width, size.height.toFloat() / bitmap.height)
                 val base = if (fullFit > 0f) baseFit() / fullFit else 1f
                 scaleX = zoom * base; scaleY = zoom * base

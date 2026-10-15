@@ -1,5 +1,13 @@
 # Changelog
 
+## 1.3.8 — 2026-10-15
+
+- Add compact symbols before rise, culmination, set, minimum and current-position names in daily paths, including satellite-pass events and coincident events. Preserve hourly rows and lunar-phase icons.
+- Emphasize the complete key/current row: name, clock/T±, azimuth and elevation use bold text. Ordinary hourly rows retain their normal weight, and selections retain their existing colours.
+- Use a plus sign for culmination and a minus bar for minimum consistently in the daily list, live orbit markers, photos, panoramas and selected/exported image variants.
+- Make the shared photo/panorama title bar fully opaque using the standard page palette. Match the daily-path title bar to the Android status background in both themes, retaining the white light-mode table.
+- Preserve all twenty in-app news files byte for byte from 1.3.7, together with translations, credits, preferences, selections, signing identity and immutable image pack 1.1.
+
 ## 1.3.7 — 2026-10-15
 
 - Separate the custom date and time into independently enabled sections, alongside position, altitude and time zone. Add current-date/current-time shortcuts and an optional advancing clock whose offset survives app/device restarts.
