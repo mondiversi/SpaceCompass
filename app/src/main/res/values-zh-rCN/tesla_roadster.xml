@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="celestial_tesla_roadster" formatted="false">Tesla Roadster (2018)</string>
+    <string name="celestial_roadster_type" formatted="false">日心轨道载荷</string>
+    <string name="celestial_roadster_note" formatted="false">绕太阳而非地球运行，于2018年发射。采用NASA/JPL预测轨迹，并非实时遥测。估计质量仅指含电池的汽车，不包括火箭级和支架。这是发射时的历史照片，当前外观和姿态未知。</string>
+</resources>

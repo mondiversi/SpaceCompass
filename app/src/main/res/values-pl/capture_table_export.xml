@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <string name="capture_export_files_heading">Pliki</string>
     <string name="capture_export_image">Obraz (JPG)</string>
     <string name="capture_export_csv">Tabela (CSV)</string>
     <string name="capture_export_txt">Czytelna tabela (TXT)</string>

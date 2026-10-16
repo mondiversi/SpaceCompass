@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="celestial_tesla_roadster" formatted="false">Tesla Roadster (2018)</string>
+    <string name="celestial_roadster_type" formatted="false">Heliocentric payload</string>
+    <string name="celestial_roadster_note" formatted="false">Orbits the Sun, not Earth. Launched in 2018. NASA/JPL predicted trajectory, not live telemetry. The approximate mass refers to the car with batteries, excluding the rocket stage and mount. Archived launch photograph; current appearance and attitude are unknown.</string>
+</resources>

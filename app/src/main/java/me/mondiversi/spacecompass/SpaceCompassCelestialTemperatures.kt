@@ -97,7 +97,7 @@ internal fun spaceCompassCelestialTemperatures(body: SpaceCompassCelestialBody):
         // A black-hole horizon has no planetary surface; spacecraft hulls have no single reference T.
         SpaceCompassCelestialBody.SAGITTARIUS_A, SpaceCompassCelestialBody.TON_618,
         SpaceCompassCelestialBody.ANDROMEDA_CORE, SpaceCompassCelestialBody.ISS, SpaceCompassCelestialBody.STARLINK_V3,
-        SpaceCompassCelestialBody.VOYAGER_1, SpaceCompassCelestialBody.VOYAGER_2 -> emptyList()
+        SpaceCompassCelestialBody.VOYAGER_1, SpaceCompassCelestialBody.VOYAGER_2, SpaceCompassCelestialBody.TESLA_ROADSTER -> emptyList()
     }
 }
 

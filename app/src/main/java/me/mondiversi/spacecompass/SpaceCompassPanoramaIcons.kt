@@ -1,6 +1,5 @@
 package me.mondiversi.spacecompass
 
-import androidx.compose.foundation.Canvas
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.offset
 import androidx.compose.material3.LocalContentColor
@@ -19,7 +18,7 @@ import androidx.compose.ui.unit.dp
 @Composable
 internal fun SpaceCompassPanoramaActionIcon(share: Boolean) {
     val tint = LocalContentColor.current
-    Canvas(Modifier.size(24.dp)) {
+    SpaceCompassIconCanvas(tint, Modifier.size(24.dp)) { tint ->
         val stroke = 2.21.dp.toPx()
         fun line(ax: Float, ay: Float, bx: Float, by: Float) = drawLine(tint,
             Offset(size.width * ax, size.height * ay), Offset(size.width * bx, size.height * by),
@@ -51,7 +50,7 @@ internal fun SpaceCompassPanoramaActionIcon(share: Boolean) {
 @Composable
 internal fun SpaceCompassPanoramaExportIcon(strokeWidth: androidx.compose.ui.unit.Dp = 2.21.dp) {
     val tint = LocalContentColor.current
-    Canvas(Modifier.size(24.dp).offset(y = (-1.5).dp)) {
+    SpaceCompassIconCanvas(tint, Modifier.size(24.dp).offset(y = (-1.5).dp)) { tint ->
         val stroke = strokeWidth.toPx()
         fun line(ax: Float, ay: Float, bx: Float, by: Float) = drawLine(tint,
             Offset(size.width * ax, size.height * ay), Offset(size.width * bx, size.height * by),
@@ -64,7 +63,7 @@ internal fun SpaceCompassPanoramaExportIcon(strokeWidth: androidx.compose.ui.uni
 @Composable
 internal fun SpaceCompassPanoramaGalleryIcon() {
     val tint = LocalContentColor.current
-    Canvas(Modifier.size(24.dp)) {
+    SpaceCompassIconCanvas(tint, Modifier.size(24.dp)) { tint ->
         val stroke = 2.dp.toPx()
         drawRoundRect(tint, Offset(size.width * .13f, size.height * .17f),
             androidx.compose.ui.geometry.Size(size.width * .74f, size.height * .66f),
@@ -85,7 +84,7 @@ internal enum class SpaceCompassPanoramaControl { BACK, ZOOM_OUT, ZOOM_IN }
 internal fun SpaceCompassPanoramaControlIcon(control: SpaceCompassPanoramaControl) {
     val tint = LocalContentColor.current
     val rtl = LocalLayoutDirection.current == LayoutDirection.Rtl
-    Canvas(Modifier.size(24.dp)) {
+    SpaceCompassIconCanvas(tint, Modifier.size(24.dp)) { tint ->
         val stroke = 2.21.dp.toPx()
         fun line(ax: Float, ay: Float, bx: Float, by: Float) = drawLine(tint,
             Offset(size.width * ax, size.height * ay), Offset(size.width * bx, size.height * by),
@@ -107,7 +106,7 @@ internal fun SpaceCompassPanoramaControlIcon(control: SpaceCompassPanoramaContro
 @Composable
 internal fun SpaceCompassPanoramaPositionIcon(hidden: Boolean) {
     val tint = LocalContentColor.current
-    Canvas(Modifier.size(24.dp)) {
+    SpaceCompassIconCanvas(tint, Modifier.size(24.dp)) { tint ->
         val pin = Path().apply {
             moveTo(size.width * .5f, size.height * .91f)
             cubicTo(size.width * .30f, size.height * .68f, size.width * .19f, size.height * .51f,
@@ -131,7 +130,7 @@ internal fun SpaceCompassPanoramaPositionIcon(hidden: Boolean) {
 @Composable
 internal fun SpaceCompassPanoramaLabelsIcon(hidden: Boolean = false) {
     val tint = LocalContentColor.current
-    Canvas(Modifier.size(24.dp)) {
+    SpaceCompassIconCanvas(tint, Modifier.size(24.dp)) { tint ->
         val tag = Path().apply {
             moveTo(size.width * .16f, size.height * .16f)
             lineTo(size.width * .50f, size.height * .16f)
@@ -152,7 +151,7 @@ internal fun SpaceCompassPanoramaLabelsIcon(hidden: Boolean = false) {
 @Composable
 internal fun SpaceCompassPanoramaCompassIcon() {
     val tint = LocalContentColor.current
-    Canvas(Modifier.size(24.dp)) {
+    SpaceCompassIconCanvas(tint, Modifier.size(24.dp)) { tint ->
         drawCircle(tint, size.minDimension * .40f, style = Stroke(1.8.dp.toPx()))
         val needle = Path().apply {
             moveTo(size.width * .68f, size.height * .20f)

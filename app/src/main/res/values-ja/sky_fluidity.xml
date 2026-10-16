@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="settings_sky_fluidity_title">滑らかさ</string>
+    <string name="settings_sky_fluidity_description">空の動きの滑らかさを調整します。高い設定ではバッテリー消費が増える場合があります。</string>
+    <string name="settings_sky_fluidity_low">低</string>
+    <string name="settings_sky_fluidity_balanced">バランス</string>
+    <string name="settings_sky_fluidity_high">高</string>
+</resources>

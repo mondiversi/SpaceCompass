@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="celestial_tesla_roadster" formatted="false">Tesla Roadster (2018)</string>
+    <string name="celestial_roadster_type" formatted="false">Heliozentrische Nutzlast</string>
+    <string name="celestial_roadster_note" formatted="false">Umläuft die Sonne, nicht die Erde. 2018 gestartet. Vorhergesagte NASA/JPL-Bahn, keine Live-Telemetrie. Die ungefähre Masse gilt für das Auto mit Batterien, ohne Raketenstufe und Halterung. Archivfoto vom Start; aktuelles Aussehen und aktuelle Lage sind unbekannt.</string>
+</resources>

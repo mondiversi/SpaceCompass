@@ -1,9 +1,9 @@
 <resources>
     <string name="info_news_title">تازه‌ترین تغییرات · %1$s</string>
-    <string name="info_news_star_sky" formatted="false">موقعیت، ارتفاع، منطقهٔ زمانی، تاریخ و ساعت در سناریوی سفارشی به‌طور مستقل تنظیم می‌شوند.</string>
-    <string name="info_news_texture_downloads" formatted="false">ساعت سفارشی می‌تواند پس از بستن برنامه هم پیش برود؛ استفاده از تاریخ یا ساعت فعلی نیز ممکن است.</string>
-    <string name="info_news_weather" formatted="false">سناریوی فعلی خلاصهٔ تنظیمات فعال و مکان تقریبی را نشان می‌دهد؛ نماد اصلی تعداد آن‌ها را نمایش می‌دهد.</string>
-    <string name="info_news_viewer_zoom" formatted="false">ارتفاع و منطقهٔ زمانی یک موقعیت را با هم اعمال کنید؛ تغییرات خودکار ذخیره می‌شوند و هر بخش اعلان جداگانه دارد.</string>
-    <string name="info_news_settings" formatted="false">نام مرجع‌های زمینی فعال در نمای اصلی و تصاویر، مستقل از تنظیمات برچسب اجرام، همواره دیده می‌شود.</string>
-    <string name="info_news_catalog" formatted="false">محافظ صفحه آخرین موقعیت شناخته‌شده را با جهت درست نقشه، چرخش به شرق و نمای فصلی متناسب با تاریخ سناریو نشان می‌دهد.</string>
+    <string name="info_news_star_sky" formatted="false">آسمانی پایدارتر را با روانی قابل تنظیم کاوش کنید؛ حالت متعادل گزینهٔ پیش‌فرض است.</string>
+    <string name="info_news_texture_downloads" formatted="false">از نمای آسمان یا مسیر روزانه، برای نقاط مداری آینده زنگ Android یا رویداد تقویم ایجاد کنید.</string>
+    <string name="info_news_weather" formatted="false">Tesla Roadster (2018) را با داده‌های نجومی خورشیدمرکزی، اطلاعات مرجع و تصویر قابل دریافت کاوش کنید.</string>
+    <string name="info_news_viewer_zoom" formatted="false">رویدادهای کنونی و مهم مسیر روزانه را آسان‌تر تشخیص دهید؛ ردیف کنونی برجسته و مقادیر مهم پررنگ هستند.</string>
+    <string name="info_news_settings" formatted="false">پس از تأیید، جرم را مستقیماً از کارت اصلی آن حذف کنید و نامش را با رنگ مدار تشخیص دهید.</string>
+    <string name="info_news_catalog" formatted="false">کادرهای نقاط بدون پرش بالای نمادهای آسمانی می‌مانند؛ نام‌ها و راهنمای رنگ عکس‌ها و پانوراماها رنگ کامل جرم را حفظ می‌کنند.</string>
 </resources>

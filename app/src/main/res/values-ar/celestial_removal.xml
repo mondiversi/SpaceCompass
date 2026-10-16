@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="celestial_remove_title">إزالة جسم</string>
+    <string name="celestial_remove_message">هل تريد إزالة %1$s من الأجسام المحددة؟</string>
+    <string name="celestial_remove_action">إزالة</string>
+    <string name="celestial_remove_cancel">إلغاء</string>
+    <string name="celestial_remove_description">إزالة %1$s من التحديد</string>
+</resources>

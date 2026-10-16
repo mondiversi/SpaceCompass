@@ -8,7 +8,6 @@ import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.material3.LinearProgressIndicator
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
-import androidx.compose.material3.TextButton
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
@@ -78,12 +77,12 @@ internal fun SpaceCompassUpdateDialog(state: SpaceCompassUpdateState, onDismiss:
             }
         },
         confirmButton = {
-            TextButton(onClick = onUpdate, enabled = !state.busy && !state.checking, modifier = Modifier.testTag("install-app-update")) {
-                Text(stringResource(R.string.update_app))
-            }
+            SpaceCompassDialogActionButton(stringResource(R.string.update_app), onClick = onUpdate,
+                enabled = !state.busy && !state.checking, modifier = Modifier.testTag("install-app-update"))
         },
         dismissButton = {
-            TextButton(onClick = onDismiss, enabled = !state.busy) { Text(stringResource(R.string.update_later)) }
+            SpaceCompassDialogActionButton(stringResource(R.string.update_later),
+                onClick = onDismiss, enabled = !state.busy)
         }
     )
 }

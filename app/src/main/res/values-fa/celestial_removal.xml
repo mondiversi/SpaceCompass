@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="celestial_remove_title">حذف جرم از انتخاب</string>
+    <string name="celestial_remove_message">آیا %1$s از اجرام انتخاب‌شده حذف شود؟</string>
+    <string name="celestial_remove_action">حذف از انتخاب</string>
+    <string name="celestial_remove_cancel">لغو</string>
+    <string name="celestial_remove_description">حذف %1$s از انتخاب</string>
+</resources>

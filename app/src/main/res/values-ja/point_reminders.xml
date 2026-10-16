@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="point_reminder_alarm">アラームを設定</string>
+    <string name="point_reminder_calendar">カレンダーに追加</string>
+    <string name="point_reminder_unavailable">このポイントにはリマインダーを設定できません</string>
+    <string name="point_reminder_no_clock">利用可能なアラームアプリがありません</string>
+    <string name="point_reminder_no_calendar">利用可能なカレンダーアプリがありません</string>
+    <string name="settings_events_title">イベント</string>
+    <string name="settings_events_show_alarm">メイン画面に通知ボタンを表示</string>
+    <string name="settings_events_description">天体イベントに関する設定を管理します。</string>
+</resources>

@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="celestial_remove_title">천체 제외</string>
+    <string name="celestial_remove_message">선택한 천체에서 %1$s을(를) 제외할까요?</string>
+    <string name="celestial_remove_action">제외</string>
+    <string name="celestial_remove_cancel">취소</string>
+    <string name="celestial_remove_description">%1$s 선택 해제</string>
+</resources>

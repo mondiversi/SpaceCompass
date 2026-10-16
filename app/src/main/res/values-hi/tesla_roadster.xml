@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="celestial_tesla_roadster" formatted="false">Tesla Roadster (2018)</string>
+    <string name="celestial_roadster_type" formatted="false">सूर्यकेंद्रीय कक्षा में पेलोड</string>
+    <string name="celestial_roadster_note" formatted="false">पृथ्वी नहीं, सूर्य की परिक्रमा करता है। 2018 में प्रक्षेपित। NASA/JPL का अनुमानित प्रक्षेपपथ, लाइव टेलीमेट्री नहीं। अनुमानित द्रव्यमान बैटरियों सहित कार का है, रॉकेट चरण और माउंट का नहीं। प्रक्षेपण की ऐतिहासिक तस्वीर; वर्तमान रूप और अभिविन्यास अज्ञात हैं।</string>
+</resources>

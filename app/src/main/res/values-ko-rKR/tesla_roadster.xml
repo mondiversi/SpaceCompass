@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="celestial_tesla_roadster" formatted="false">Tesla Roadster (2018)</string>
+    <string name="celestial_roadster_type" formatted="false">태양 중심 궤도의 탑재체</string>
+    <string name="celestial_roadster_note" formatted="false">지구가 아닌 태양을 공전합니다. 2018년 발사되었습니다. 실시간 원격 측정이 아닌 NASA/JPL 예측 궤적입니다. 대략적인 질량은 배터리를 포함한 자동차만을 뜻하며 로켓 단과 지지대는 제외됩니다. 발사 당시 기록 사진으로, 현재 모습과 자세는 알려져 있지 않습니다.</string>
+</resources>

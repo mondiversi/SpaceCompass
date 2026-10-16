@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="celestial_remove_title">Nesneyi kaldır</string>
+    <string name="celestial_remove_message">%1$s seçili nesnelerden kaldırılsın mı?</string>
+    <string name="celestial_remove_action">Kaldır</string>
+    <string name="celestial_remove_cancel">İptal</string>
+    <string name="celestial_remove_description">%1$s nesnesini seçimden kaldır</string>
+</resources>

@@ -9,7 +9,7 @@ import kotlin.math.sqrt
 class SpaceCompassCelestialCatalogTest {
     private val now = Instant.parse("2026-10-04T12:00:00Z").toEpochMilli()
     @Test fun requestedPresentationOrderContainsEveryBodyExactlyOnce() {
-        assertEquals(listOf("SUN","MERCURY","VENUS","ISS","STARLINK_V3","MOON","MARS","JUPITER","IO","EUROPA",
+        assertEquals(listOf("SUN","MERCURY","VENUS","ISS","STARLINK_V3","MOON","TESLA_ROADSTER","MARS","JUPITER","IO","EUROPA",
             "SATURN","TITAN","URANUS","NEPTUNE","PLUTO","SEDNA","HALLEY","COMET_67P","VOYAGER_1","VOYAGER_2","PROXIMA_CENTAURI","ALPHA_CENTAURI","SIRIUS","TRAPPIST_1_E","RX_J1856","PLEIADES","POLARIS","PSR_J0437","BETELGEUSE","RIGEL","ORION_NEBULA","STEPHENSON_2_18","SAGITTARIUS_A","ANDROMEDA_CORE","TON_618"),
             spaceCompassCelestialCatalogOrder.map { it.name })
         assertEquals(SpaceCompassCelestialBody.entries.filterNot { it.isFictional || it == SpaceCompassCelestialBody.EARTH_CENTER }.toSet(), spaceCompassCelestialCatalogOrder.toSet())

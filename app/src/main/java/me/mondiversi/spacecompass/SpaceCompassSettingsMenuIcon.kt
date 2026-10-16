@@ -1,6 +1,5 @@
 package me.mondiversi.spacecompass
 
-import androidx.compose.foundation.Canvas
 import androidx.compose.foundation.layout.size
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
@@ -23,7 +22,7 @@ internal fun SpaceCompassSettingsMenuIcon(
     iconStrokeWidth: Dp? = null,
     crossed: Boolean = false
 ) {
-    Canvas(modifier) {
+    SpaceCompassIconCanvas(tint, modifier) { tint ->
         val strokeWidth = iconStrokeWidth?.toPx() ?: maxOf(1.6.dp.toPx(), size.minDimension * 0.08f)
         when (route) {
             "capture" -> {

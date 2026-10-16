@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="celestial_tesla_roadster" formatted="false">Tesla Roadster (2018)</string>
+    <string name="celestial_roadster_type" formatted="false">Ładunek na orbicie heliocentrycznej</string>
+    <string name="celestial_roadster_note" formatted="false">Krąży wokół Słońca, nie Ziemi. Wystrzelony w 2018 r. Przewidywana trajektoria NASA/JPL, bez telemetrii na żywo. Przybliżona masa dotyczy auta z akumulatorami, bez stopnia rakiety i mocowania. Archiwalne zdjęcie ze startu; obecny wygląd i orientacja są nieznane.</string>
+</resources>

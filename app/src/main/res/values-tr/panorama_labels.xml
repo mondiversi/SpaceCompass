@@ -2,7 +2,7 @@
 <resources>
     <string name="panorama_labels_key_selected">Yalnızca önemli ve seçili noktalar</string>
     <string name="panorama_labels_all">Tümü</string>
-    <string name="panorama_labels_objects_selected">Yalnızca gök cismi ve seçilen noktalar</string>
+    <string name="panorama_labels_objects_selected">Yalnızca seçilen gök cismi ve seçilen noktalar</string>
     <string name="panorama_labels_selected">Yalnızca seçilen noktalar</string>
     <string name="panorama_labels_none">Hiçbiri</string>
 </resources>

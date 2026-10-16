@@ -1,6 +1,5 @@
 package me.mondiversi.spacecompass
 
-import androidx.compose.foundation.Canvas
 import androidx.compose.foundation.layout.size
 import androidx.compose.material3.Icon
 import androidx.compose.runtime.Composable
@@ -34,11 +33,32 @@ internal fun SpaceCompassSettingsGroupIcon(key: String, tint: Color) {
             modifier = Modifier.size(20.dp), tint = tint)
         return
     }
-    Canvas(Modifier.size(20.dp)) {
+    SpaceCompassIconCanvas(tint, Modifier.size(20.dp)) { tint ->
         val strokeWidth = maxOf(1.6.dp.toPx(), size.minDimension * 0.08f)
         val outline = Stroke(strokeWidth, cap = StrokeCap.Round)
         fun point(x: Float, y: Float) = Offset(size.width * x, size.height * y)
         when (key) {
+            "events" -> {
+                drawRoundRect(tint, point(.12f, .20f), Size(size.width * .76f, size.height * .68f),
+                    CornerRadius(size.minDimension * .08f), style = outline)
+                drawLine(tint, point(.12f, .40f), point(.88f, .40f), strokeWidth, StrokeCap.Round)
+                for (x in listOf(.34f, .66f)) {
+                    drawLine(tint, point(x, .10f), point(x, .29f), strokeWidth, StrokeCap.Round)
+                }
+                // A marked celestial event distinguishes this section from date formatting.
+                val event = Path().apply {
+                    moveTo(size.width * .50f, size.height * .49f)
+                    lineTo(size.width * .55f, size.height * .59f)
+                    lineTo(size.width * .66f, size.height * .64f)
+                    lineTo(size.width * .55f, size.height * .69f)
+                    lineTo(size.width * .50f, size.height * .79f)
+                    lineTo(size.width * .45f, size.height * .69f)
+                    lineTo(size.width * .34f, size.height * .64f)
+                    lineTo(size.width * .45f, size.height * .59f)
+                    close()
+                }
+                drawPath(event, tint)
+            }
             "identity" -> {
                 drawCircle(tint, size.minDimension * .28f, center, style = outline)
                 val ringPlacement = point(.5f, .5f)
@@ -189,6 +209,14 @@ internal fun SpaceCompassSettingsGroupIcon(key: String, tint: Color) {
                 )
             }
 
+            SPACE_COMPASS_SKY_FLUIDITY_KEY -> {
+                // Motion trails and a small gauge distinguish fluidity from Theme and Music.
+                drawArc(tint, 150f, 240f, false, point(.25f, .18f), Size(size.width * .66f, size.height * .66f), style = outline)
+                drawLine(tint, point(.58f, .54f), point(.76f, .34f), strokeWidth, StrokeCap.Round)
+                drawLine(tint, point(.06f, .35f), point(.24f, .35f), strokeWidth, StrokeCap.Round)
+                drawLine(tint, point(.04f, .52f), point(.19f, .52f), strokeWidth, StrokeCap.Round)
+                drawLine(tint, point(.08f, .69f), point(.25f, .69f), strokeWidth, StrokeCap.Round)
+            }
             "speed" -> {
                 drawArc(tint, 150f, 240f, false, point(.12f, .14f), Size(size.width * .76f, size.height * .76f), style = outline)
                 drawLine(tint, point(.5f, .55f), point(.74f, .31f), strokeWidth, StrokeCap.Round)

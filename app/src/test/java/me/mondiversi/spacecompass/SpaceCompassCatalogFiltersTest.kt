@@ -8,7 +8,7 @@ class SpaceCompassCatalogFiltersTest {
         val groups = spaceCompassCelestialCatalogOrder.groupBy { it.catalogType }
         assertEquals(SpaceCompassCatalogType.entries.toSet(), groups.keys)
         assertEquals(listOf(SpaceCompassCelestialBody.ISS), groups[SpaceCompassCatalogType.SPACE_STATION])
-        assertEquals(listOf(SpaceCompassCelestialBody.STARLINK_V3), groups[SpaceCompassCatalogType.ARTIFICIAL_SATELLITE])
+        assertEquals(listOf(SpaceCompassCelestialBody.STARLINK_V3, SpaceCompassCelestialBody.TESLA_ROADSTER), groups[SpaceCompassCatalogType.ARTIFICIAL_SATELLITE])
         assertEquals(listOf(SpaceCompassCelestialBody.RX_J1856, SpaceCompassCelestialBody.PSR_J0437), groups[SpaceCompassCatalogType.NEUTRON_STAR])
         val types = setOf(SpaceCompassCatalogType.STAR, SpaceCompassCatalogType.BLACK_HOLE)
         assertEquals(spaceCompassCelestialCatalogOrder.filter { it.catalogType in types },

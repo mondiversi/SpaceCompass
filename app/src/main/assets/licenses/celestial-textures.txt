@@ -94,3 +94,13 @@ NASA, ESA, Benjamin F. Williams (UWashington), Zhuo Chen (UWashington), L. Clift
 https://science.nasa.gov/mission/hubble/science/explore-the-night-sky/hubble-messier-catalog/messier-31/
 NASA/ESA Hubble imagery: retain attribution; no endorsement.
 Aspect-preserving fit with black framing; no spherical projection
+
+Space Compass: Tesla Roadster image addition
+
+tesla_roadster.webp — SpaceX, Falcon Heavy Demo Mission, 6 February 2018
+https://commons.wikimedia.org/wiki/File:Elon_Musk%27s_Tesla_Roadster_(40143096241).jpg
+https://www.flickr.com/photos/spacex/40143096241/
+CC0 1.0: https://creativecommons.org/publicdomain/zero/1.0/
+Commons Flickr review on 2018-02-08 confirmed CC0; VRT ticket 2015032410033985.
+2048 x 1024 WebP, quality 90, method 6. Aspect-preserving fit with black framing.
+An archived launch photograph, not a current view or attitude measurement.

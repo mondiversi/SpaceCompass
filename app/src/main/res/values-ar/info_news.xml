@@ -1,9 +1,9 @@
 <resources>
     <string name="info_news_title">آخر المستجدات · %1$s</string>
-    <string name="info_news_star_sky" formatted="false">يمكن ضبط الموقع والارتفاع والمنطقة الزمنية والتاريخ والوقت بشكل مستقل في السيناريو المخصص.</string>
-    <string name="info_news_texture_downloads" formatted="false">يمكن للساعة المخصصة مواصلة التقدم بعد إغلاق التطبيق، أو يمكنك استخدام التاريخ أو الوقت الحالي.</string>
-    <string name="info_news_weather" formatted="false">يلخص السيناريو الحالي الإعدادات النشطة والمكان التقريبي، وتعرض الأيقونة الرئيسية عددها.</string>
-    <string name="info_news_viewer_zoom" formatted="false">طبّق ارتفاع الموقع ومنطقته الزمنية معًا، مع الحفظ التلقائي وإشعارات لكل قسم.</string>
-    <string name="info_news_settings" formatted="false">تظل أسماء المراجع الأرضية المفعّلة مرئية في العرض الرئيسي واللقطات، بغض النظر عن إعدادات تسميات الأجرام.</string>
-    <string name="info_news_catalog" formatted="false">تعرض شاشة التوقف آخر موقع معروف مع اتجاه صحيح للخريطة ودوران نحو الشرق ومنظور موسمي يتبع تاريخ السيناريو.</string>
+    <string name="info_news_star_sky" formatted="false">استكشف سماء أكثر ثباتًا بسلاسة قابلة للتعديل؛ الوضع المتوازن هو الخيار الافتراضي.</string>
+    <string name="info_news_texture_downloads" formatted="false">أنشئ منبهات Android أو أحداث تقويم للنقاط المدارية المستقبلية من السماء أو المسار اليومي.</string>
+    <string name="info_news_weather" formatted="false">استكشف Tesla Roadster (2018)، مع جداول فلكية شمسية المركز وبيانات مرجعية وصورة قابلة للتنزيل.</string>
+    <string name="info_news_viewer_zoom" formatted="false">تعرّف بسهولة على الأحداث الحالية والرئيسية في المسار اليومي، مع تمييز الصف الحالي وعرض القيم المهمة بخط عريض.</string>
+    <string name="info_news_settings" formatted="false">أزل جسمًا مباشرة من بطاقته الرئيسية بعد التأكيد، وتعرّف على اسمه من لون مداره.</string>
+    <string name="info_news_catalog" formatted="false">تبقى فقاعات النقاط فوق أيقونات الأجرام دون قفز؛ وتحافظ الأسماء ومفاتيح ألوان الصور والبانوراما على لون الجسم الكامل.</string>
 </resources>

@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="celestial_tesla_roadster" formatted="false">Tesla Roadster (2018)</string>
+    <string name="celestial_roadster_type" formatted="false">Muatan di orbit heliosentris</string>
+    <string name="celestial_roadster_note" formatted="false">Mengorbit Matahari, bukan Bumi. Diluncurkan pada 2018. Prediksi lintasan NASA/JPL, bukan telemetri langsung. Perkiraan massa untuk mobil dengan baterai, tanpa tingkat roket dan dudukan. Foto arsip peluncuran; tampilan dan orientasi saat ini tidak diketahui.</string>
+</resources>

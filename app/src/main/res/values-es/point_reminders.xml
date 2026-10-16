@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="point_reminder_alarm">Configurar alarma</string>
+    <string name="point_reminder_calendar">Añadir al Calendario</string>
+    <string name="point_reminder_unavailable">Recordatorio no disponible para este punto</string>
+    <string name="point_reminder_no_clock">No hay una app de alarmas disponible</string>
+    <string name="point_reminder_no_calendar">No hay una app de calendario disponible</string>
+    <string name="settings_events_title">Eventos</string>
+    <string name="settings_events_show_alarm">Mostrar el botón de alerta en la vista principal</string>
+    <string name="settings_events_description">Gestiona las opciones de los eventos celestes.</string>
+</resources>

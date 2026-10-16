@@ -2,7 +2,7 @@
 <resources>
     <string name="panorama_labels_key_selected">Nukta muhimu na zilizochaguliwa tu</string>
     <string name="panorama_labels_all">Zote</string>
-    <string name="panorama_labels_objects_selected">Kitu na pointi zilizochaguliwa pekee</string>
+    <string name="panorama_labels_objects_selected">Kitu kilichochaguliwa na pointi zilizochaguliwa pekee</string>
     <string name="panorama_labels_selected">Pointi zilizochaguliwa pekee</string>
     <string name="panorama_labels_none">Hakuna</string>
 </resources>

@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="celestial_tesla_roadster" formatted="false">Tesla Roadster (2018)</string>
+    <string name="celestial_roadster_type" formatted="false">حمولة في مدار حول الشمس</string>
+    <string name="celestial_roadster_note" formatted="false">يدور حول الشمس وليس الأرض. أُطلق عام 2018. مسار متوقع من NASA/JPL، وليس بيانات قياس مباشرة. تخص الكتلة التقريبية السيارة مع البطاريات، دون مرحلة الصاروخ والحامل. صورة أرشيفية من الإطلاق؛ المظهر والاتجاه الحاليان غير معروفين.</string>
+</resources>

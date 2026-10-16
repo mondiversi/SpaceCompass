@@ -25,6 +25,14 @@ internal fun spaceCompassAppearanceSettings(): List<SpaceCompassSettingSpec> {
 }
 
 @Composable
+internal fun spaceCompassSkyFluiditySettings() = SpaceCompassSettingSpec(
+    R.string.settings_sky_fluidity_title, SPACE_COMPASS_SKY_FLUIDITY_KEY, SpaceCompassSkyFluidity.BALANCED.stored,
+    listOf(SpaceCompassSkyFluidity.LOW.stored to stringResource(R.string.settings_sky_fluidity_low),
+        SpaceCompassSkyFluidity.BALANCED.stored to stringResource(R.string.settings_sky_fluidity_balanced),
+        SpaceCompassSkyFluidity.HIGH.stored to stringResource(R.string.settings_sky_fluidity_high)),
+    description = stringResource(R.string.settings_sky_fluidity_description))
+
+@Composable
 internal fun spaceCompassUnitSettings(): List<SpaceCompassSettingSpec> {
     val examples = spaceCompassUnitSettingExamples()
     val regional = listOf("system" to stringResource(R.string.numeric_format_system),

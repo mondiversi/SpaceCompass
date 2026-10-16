@@ -13,6 +13,7 @@ internal fun spaceCompassObservatoryExportNotes(body: SpaceCompassCelestialBody,
             profile.formatting.numeric,profile.units.pressure)!!)
         note(R.string.celestial_view_credits)
     }
+    if (body==SpaceCompassCelestialBody.TESLA_ROADSTER) note(R.string.celestial_roadster_note)
     if (body.isComet) note(R.string.celestial_comet_note)
     if (body.isSpacecraft) note(R.string.celestial_view_craft_note)
     if (body==SpaceCompassCelestialBody.STARLINK_V3) note(R.string.celestial_starlink_note)

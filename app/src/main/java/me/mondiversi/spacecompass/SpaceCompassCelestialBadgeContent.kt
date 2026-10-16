@@ -30,7 +30,7 @@ internal fun SpaceCompassCelestialBadgeContent(timeMs: Long, nowMs: Long, zone: 
         LocalSpaceCompassDateFormat.current, locale, deviceLocale, numeric)
     val shape = RoundedCornerShape(10.dp)
     Column(modifier.width(IntrinsicSize.Max).testTag(if (pinned) "celestial-pinned-badge" else "celestial-time-badge")
-        .clip(shape).background(backgroundColor.copy(alpha = 0.86f))
+        .clip(shape).background(backgroundColor.copy(alpha = 1f))
         .border(if (pinned) 1.dp else 0.5.dp,
             if (pinned) MaterialTheme.colorScheme.primary else secondaryText.copy(alpha = 0.3f), shape)
         .padding(horizontal = 8.dp, vertical = 4.dp)) {

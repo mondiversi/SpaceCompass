@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="point_reminder_alarm">अलार्म सेट करें</string>
+    <string name="point_reminder_calendar">कैलेंडर में जोड़ें</string>
+    <string name="point_reminder_unavailable">इस बिंदु के लिए रिमाइंडर उपलब्ध नहीं है</string>
+    <string name="point_reminder_no_clock">कोई अलार्म ऐप उपलब्ध नहीं है</string>
+    <string name="point_reminder_no_calendar">कोई कैलेंडर ऐप उपलब्ध नहीं है</string>
+    <string name="settings_events_title">घटनाएँ</string>
+    <string name="settings_events_show_alarm">मुख्य स्क्रीन पर अलर्ट बटन दिखाएँ</string>
+    <string name="settings_events_description">खगोलीय घटनाओं के विकल्प प्रबंधित करें।</string>
+</resources>

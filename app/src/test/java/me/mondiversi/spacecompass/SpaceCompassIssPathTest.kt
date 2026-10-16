@@ -132,7 +132,10 @@ class SpaceCompassIssPathTest {
             (0..72).map { SpaceCompassHorizonsSample(begin + it * 3_600_000L, 38.0, 72.0, 12.0) })
         val titan = SpaceCompassHorizonsEphemeris(SpaceCompassCelestialBody.TITAN,
             (0..72).map { SpaceCompassHorizonsSample(begin + it * 3_600_000L, 9.0, 1.0, 1.0) })
-        val data = remote.copy(ephemerides = mapOf(SpaceCompassCelestialBody.SEDNA to sedna, SpaceCompassCelestialBody.TITAN to titan))
+        val roadster = SpaceCompassHorizonsEphemeris(SpaceCompassCelestialBody.TESLA_ROADSTER,
+            (0..72).map { SpaceCompassHorizonsSample(begin + it * 3_600_000L, 2.0, 1.0, 0.1) })
+        val data = remote.copy(ephemerides = mapOf(SpaceCompassCelestialBody.SEDNA to sedna,
+            SpaceCompassCelestialBody.TITAN to titan, SpaceCompassCelestialBody.TESLA_ROADSTER to roadster))
         for (body in SpaceCompassCelestialBody.entries.filter { !it.isEarthSatellite }) {
             val p = calculateSpaceCompassCelestialPath(body, date, zone, now, 45.0, 9.0, 0.0, data)
             if (body.isVoyager || body.isComet || !body.supportsDailyPath) { assertNull(p); continue }

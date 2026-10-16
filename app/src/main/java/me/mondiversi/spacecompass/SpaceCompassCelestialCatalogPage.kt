@@ -27,7 +27,6 @@ import androidx.compose.foundation.border
 import androidx.compose.foundation.gestures.detectTapGestures
 import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.ui.input.pointer.pointerInput
-import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.semantics.contentDescription
 import androidx.compose.ui.semantics.Role
 import androidx.compose.ui.semantics.clearAndSetSemantics
@@ -231,11 +230,7 @@ internal fun SpaceCompassCelestialCatalogPage(timeMs: Long, remote: SpaceCompass
             items(visibleBodies, key = { it.name }) { candidate ->
                 DropdownMenuItem(text = { Text(stringResource(if (candidate == SpaceCompassCelestialBody.ANDROMEDA_CORE)
                     R.string.celestial_andromeda_short else candidate.nameResource), color = color, fontSize = 14.sp,
-                    maxLines = if (valueField == SpaceCompassCatalogSortField.DAY_TEMPERATURE ||
-                        valueField == SpaceCompassCatalogSortField.NIGHT_TEMPERATURE ||
-                        candidate == SpaceCompassCelestialBody.EARTH_CENTER || candidate == SpaceCompassCelestialBody.ANDROMEDA_CORE || candidate == SpaceCompassCelestialBody.TON_618 ||
-                        candidate == SpaceCompassCelestialBody.STEPHENSON_2_18 || candidate == SpaceCompassCelestialBody.RX_J1856 ||
-                        candidate == SpaceCompassCelestialBody.PSR_J0437 || candidate == SpaceCompassCelestialBody.PROXIMA_CENTAURI) 2 else 1, lineHeight = 16.sp, overflow = TextOverflow.Ellipsis,
+                    softWrap = true, lineHeight = 16.sp,
                     fontWeight = if (candidate in selectedBodies) FontWeight.Bold else FontWeight.Normal) },
                     onClick = { onSelect(candidate) },
                     leadingIcon = { Row(verticalAlignment = Alignment.CenterVertically,

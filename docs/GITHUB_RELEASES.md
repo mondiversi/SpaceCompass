@@ -2,8 +2,8 @@
 
 Space Compass is distributed as a signed APK through
 [GitHub Releases](https://github.com/mondiversi/SpaceCompass/releases).
-The current stable release is **1.3.8**, tagged **v1.3.8**, application ID
-`me.mondiversi.spacecompass`, Android version name **1.3.8**, version code **36**,
+The current stable release is **1.4.0**, tagged **v1.4.0**, application ID
+`me.mondiversi.spacecompass`, Android version name **1.4.0**, version code **37**,
 minimum Android API 26. The three-part tag/version name retains compatibility with
 the signed update protocol used since preview 0.1.2.
 
@@ -30,8 +30,20 @@ See [the update protocol](UPDATES.md) for signed metadata and verification detai
 
 The release build uses `:app:assembleRelease`, with R8 code and resource optimization
 enabled in the release configuration from stable 1.0 onward. GitHub Actions checks the release build without
-access to the distribution key. The unsigned APK is aligned and signed locally
-with Android SDK tools; the final published APK is not debuggable or test-only.
+access to the distribution key. On an authorized local computer, Gradle reads
+the private Dropbox configuration and produces an aligned, signed release APK;
+without that private configuration CI continues to build an unsigned release.
+The final published APK is not debuggable or test-only.
+
+The key now resolves from the owner's private Dropbox folder:
+`<user home>/Dropbox/Mondiversi/UvirSigning/uvir-release.jks`. Use
+`java scripts/SignUpdateIndex.java --keystore-path` to obtain the path for local
+APK signing. `MONDIVERSI_SIGNING_DIR` supports a different Dropbox location;
+`SPACE_COMPASS_KEYSTORE` is the explicit per-project override. The alias and
+passwords are read automatically from the private `signing.properties` beside
+the key, with optional local/environment overrides. A new trusted computer only
+needs the development tools, updated sources and synced private folder; no
+passwords need to be entered again. No signing material is added to Git.
 
 Space Compass retains its existing distribution certificate so updates preserve
 installed settings and cached data. The private key and its passwords
@@ -190,3 +202,14 @@ unifies culmination markers and uses opaque, theme-matched capture/daily title
 bars. In-app news remains byte-for-byte unchanged from 1.3.7; its version display
 advances through BuildConfig. Texture pack 1.1 and all older release assets remain.
 See [the maintenance audit](RELEASE_1_3_8.md).
+
+
+## 1.4.0 release
+
+Version 1.4.0 uses code 37, refreshed news in twenty languages and its own signed
+update index. It adds adjustable default-Balanced fluidity, gyro-assisted motion,
+external Android reminders, Tesla Roadster (2018) and focused-callout/navigation
+refinements. The optional graphics ZIP contains all nineteen pinned WebP files,
+including the additive Roadster photograph; the original texture release assets
+and individual URLs are preserved. No credential or private device state is published.
+See [the release audit](RELEASE_1_4_0.md).

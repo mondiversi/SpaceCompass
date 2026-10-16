@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <string name="capture_export_files_heading">ファイル</string>
     <string name="capture_export_image">画像（JPG）</string>
     <string name="capture_export_csv">表（CSV）</string>
     <string name="capture_export_txt">読みやすい表（TXT）</string>

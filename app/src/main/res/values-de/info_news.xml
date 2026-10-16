@@ -1,9 +1,9 @@
 <resources>
     <string name="info_news_title">Neuigkeiten · %1$s</string>
-    <string name="info_news_star_sky" formatted="false">Position, Höhe, Zeitzone, Datum und Uhrzeit lassen sich im benutzerdefinierten Szenario unabhängig einstellen.</string>
-    <string name="info_news_texture_downloads" formatted="false">Die benutzerdefinierte Uhr kann auch nach einem App-Neustart weiterlaufen; alternativ lassen sich das aktuelle Datum oder die aktuelle Uhrzeit übernehmen.</string>
-    <string name="info_news_weather" formatted="false">Das aktuelle Szenario zeigt aktive Einstellungen und den ungefähren Ort; das Symbol in der Hauptansicht zeigt ihre Anzahl.</string>
-    <string name="info_news_viewer_zoom" formatted="false">Höhe und Zeitzone einer Position gemeinsam übernehmen, mit automatischem Speichern und Meldungen für jeden Abschnitt.</string>
-    <string name="info_news_settings" formatted="false">Aktivierte Beschriftungen der Erdbezugslinien bleiben in der Hauptansicht und in Aufnahmen unabhängig von den Objektbeschriftungen sichtbar.</string>
-    <string name="info_news_catalog" formatted="false">Der Erd-Bildschirmschoner zeigt den zuletzt bekannten Standort mit korrekter Kartenausrichtung, ostwärtiger Rotation und einer zum Szenariodatum passenden jahreszeitlichen Perspektive.</string>
+    <string name="info_news_star_sky" formatted="false">Erkunde einen ruhigeren Himmel mit einstellbarer flüssiger Darstellung; Ausgewogen ist die Standardeinstellung.</string>
+    <string name="info_news_texture_downloads" formatted="false">Erstelle Android-Wecker oder Kalendereinträge für zukünftige Bahnpunkte, direkt am Himmel oder im Tagesverlauf.</string>
+    <string name="info_news_weather" formatted="false">Entdecke Tesla Roadster (2018) mit heliozentrischen Ephemeriden, Referenzdaten und einem herunterladbaren Bild.</string>
+    <string name="info_news_viewer_zoom" formatted="false">Erkenne aktuelle und wichtige Ereignisse im Tagesverlauf leichter: Die aktuelle Zeile ist hervorgehoben, wichtige Werte sind fett gedruckt.</string>
+    <string name="info_news_settings" formatted="false">Entferne ein Objekt nach Bestätigung direkt aus seiner Hauptkarte und erkenne seinen Namen an der Bahnfarbe.</string>
+    <string name="info_news_catalog" formatted="false">Punktbeschriftungen bleiben ohne Springen über den Himmelskörper-Symbolen; Objektnamen und Foto-/Panoramalegenden behalten die volle Objektfarbe.</string>
 </resources>

@@ -2,7 +2,7 @@
 <resources>
     <string name="panorama_labels_key_selected">주요 지점 및 선택한 지점만</string>
     <string name="panorama_labels_all">모두</string>
-    <string name="panorama_labels_objects_selected">천체와 선택한 지점만</string>
+    <string name="panorama_labels_objects_selected">선택한 천체와 선택한 지점만</string>
     <string name="panorama_labels_selected">선택한 지점만</string>
     <string name="panorama_labels_none">없음</string>
 </resources>

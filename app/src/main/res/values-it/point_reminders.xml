@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="point_reminder_alarm">Imposta sveglia</string>
+    <string name="point_reminder_calendar">Aggiungi al Calendario</string>
+    <string name="point_reminder_unavailable">Promemoria non disponibile per questo punto</string>
+    <string name="point_reminder_no_clock">Nessuna app per le sveglie disponibile</string>
+    <string name="point_reminder_no_calendar">Nessuna app calendario disponibile</string>
+    <string name="settings_events_title">Eventi</string>
+    <string name="settings_events_show_alarm">Mostra il pulsante allerta nella vista principale</string>
+    <string name="settings_events_description">Gestisci le opzioni relative agli eventi celesti.</string>
+</resources>

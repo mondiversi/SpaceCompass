@@ -1,9 +1,9 @@
 <resources>
     <string name="info_news_title">Последние новости · %1$s</string>
-    <string name="info_news_star_sky" formatted="false">В пользовательском сценарии можно независимо задать положение, высоту, часовой пояс, дату и время.</string>
-    <string name="info_news_texture_downloads" formatted="false">Пользовательские часы могут продолжать идти после закрытия приложения; также можно использовать текущую дату или время.</string>
-    <string name="info_news_weather" formatted="false">Текущий сценарий показывает активные настройки и примерное место; значок на главном экране показывает их количество.</string>
-    <string name="info_news_viewer_zoom" formatted="false">Применяйте высоту и часовой пояс выбранного места вместе, с автосохранением и уведомлениями для каждого раздела.</string>
-    <string name="info_news_settings" formatted="false">Подписи включённых земных ориентиров остаются видимыми на главном экране и снимках независимо от подписей объектов.</string>
-    <string name="info_news_catalog" formatted="false">Заставка показывает последнее известное местоположение с правильной ориентацией карты, вращением на восток и сезонным ракурсом, соответствующим дате сценария.</string>
+    <string name="info_news_star_sky" formatted="false">Наблюдайте более стабильное небо с регулируемой плавностью; по умолчанию выбран сбалансированный режим.</string>
+    <string name="info_news_texture_downloads" formatted="false">Создавайте будильники Android или события календаря для будущих точек орбиты на карте неба или в суточной траектории.</string>
+    <string name="info_news_weather" formatted="false">Исследуйте Tesla Roadster (2018): гелиоцентрические эфемериды, справочные данные и загружаемое изображение.</string>
+    <string name="info_news_viewer_zoom" formatted="false">Текущие и ключевые события суточной траектории легче различать: текущая строка выделена фоном, важные значения — жирным шрифтом.</string>
+    <string name="info_news_settings" formatted="false">Удаляйте объект прямо из его основной карточки с подтверждением и узнавайте его название по цвету орбиты.</string>
+    <string name="info_news_catalog" formatted="false">Подсказки точек остаются над значками небесных объектов без скачков; названия и легенды фото и панорам сохраняют исходный цвет объекта.</string>
 </resources>

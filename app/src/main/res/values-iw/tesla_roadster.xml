@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="celestial_tesla_roadster" formatted="false">Tesla Roadster (2018)</string>
+    <string name="celestial_roadster_type" formatted="false">מטען במסלול סביב השמש</string>
+    <string name="celestial_roadster_note" formatted="false">מקיף את השמש ולא את כדור הארץ. שוגר ב־2018. מסלול חזוי של NASA/JPL, לא טלמטריה חיה. המסה המשוערת מתייחסת לרכב עם סוללות, ללא שלב הרקטה והתושבת. תצלום ארכיוני מהשיגור; המראה והכיוון הנוכחיים אינם ידועים.</string>
+</resources>

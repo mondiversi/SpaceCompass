@@ -1,5 +1,16 @@
 # Changelog
 
+## 1.4.0 — 2026-10-16
+
+- Navigate a steadier sky with adjustable Low, Balanced and High fluidity. Balanced is now the default; saved choices are retained. Gyroscope-assisted stabilization reduces stationary and handheld jitter without freezing real motion or changing geographic north.
+- Send future orbital points to Android Clock or Calendar from the focused sky callout and daily path. The Events setting can hide the main-screen alert button; Android owns reminder confirmation and scheduling.
+- Add Tesla Roadster (2018), with guarded JPL heliocentric ephemerides, reference facts, aliases and a downloadable 2K WebP archival photograph. It is a heliocentric payload, not an Earth satellite.
+- Highlight the current daily-path row consistently, retain lunar-phase icons and key-event emphasis, and keep unavailable properties explicit.
+- Remove an object directly from the main card after confirmation. Improve object-name space, optical arrow alignment and matching full palette colors in names and photo/panorama legends.
+- Keep focused point callouts above celestial icons without the repeated above/below jump; center the alert button vertically beside the callout.
+- Refine shared icons, confirmation buttons, export file headings and the selected-object label option. Hide the unavailable Display section while retaining its implementation.
+- Refresh all twenty in-app news summaries. Preserve settings, selected objects/points, scenarios, scientific calculations and the existing distribution certificate.
+
 ## 1.3.8 — 2026-10-15
 
 - Add compact symbols before rise, culmination, set, minimum and current-position names in daily paths, including satellite-pass events and coincident events. Preserve hourly rows and lunar-phase icons.

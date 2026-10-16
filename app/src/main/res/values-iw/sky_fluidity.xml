@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="settings_sky_fluidity_title">חלקות התנועה</string>
+    <string name="settings_sky_fluidity_description">התאמת חלקות תנועת השמיים. רמות גבוהות עשויות לצרוך יותר סוללה.</string>
+    <string name="settings_sky_fluidity_low">נמוכה</string>
+    <string name="settings_sky_fluidity_balanced">מאוזנת</string>
+    <string name="settings_sky_fluidity_high">גבוהה</string>
+</resources>

@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="celestial_tesla_roadster" formatted="false">Tesla Roadster (2018)</string>
+    <string name="celestial_roadster_type" formatted="false">Φορτίο σε ηλιοκεντρική τροχιά</string>
+    <string name="celestial_roadster_note" formatted="false">Περιφέρεται γύρω από τον Ήλιο, όχι τη Γη. Εκτοξεύτηκε το 2018. Πρόβλεψη τροχιάς NASA/JPL, όχι ζωντανή τηλεμετρία. Η κατά προσέγγιση μάζα αφορά το αυτοκίνητο με μπαταρίες, χωρίς την πυραυλική βαθμίδα και τη βάση. Αρχειακή φωτογραφία της εκτόξευσης· η σημερινή εμφάνιση και ο προσανατολισμός είναι άγνωστα.</string>
+</resources>

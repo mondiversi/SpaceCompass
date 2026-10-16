@@ -51,14 +51,60 @@ remote certificate nor an unsigned index can replace that identity. The index mu
 match the repository, package, release tag, download filename, size and minimum SDK.
 Debug builds signed with another key cannot consume the official distribution index.
 
-To sign, set `SPACE_COMPASS_KEYSTORE`, `SPACE_COMPASS_KEY_ALIAS`,
-`SPACE_COMPASS_STORE_PASSWORD` and `SPACE_COMPASS_KEY_PASSWORD` privately in the local
-environment. Run the following with a JDK; never place those values in the repository,
-release metadata, logs or public CI:
+The existing distribution key is kept outside the repository at
+`<user home>/Dropbox/Mondiversi/UvirSigning/uvir-release.jks`, shared with the
+owner's UVIR signing setup. The current account's home directory is resolved at
+runtime, without embedding a computer's username. If Dropbox is installed
+elsewhere, set `MONDIVERSI_SIGNING_DIR` to the private `UvirSigning` directory.
+An explicit `SPACE_COMPASS_KEYSTORE` still overrides both defaults.
+Both override paths must be absolute.
+
+The private `signing.properties` beside the key contains `storePassword`,
+`keyAlias`, `keyPassword` and an optional absolute `storeFile`. A blank `storeFile`
+uses `uvir-release.jks` in the same directory. Both Gradle release APK signing and
+the update-index signer read this configuration automatically. An ignored
+project-local `signing.properties` can override shared values. Optional
+`SPACE_COMPASS_KEY_ALIAS`, `SPACE_COMPASS_STORE_PASSWORD`,
+`SPACE_COMPASS_KEY_PASSWORD` and `SPACE_COMPASS_KEYSTORE` environment overrides
+remain available, but are not required on a new computer.
+
+For a new trusted computer, install the Android/JDK tools, use the updated project
+sources and sync the whole private folder, keeping its files available offline.
+No manual password setup is necessary. Run `gradlew.bat :app:assembleRelease`
+to generate the automatically signed `app/build/outputs/apk/release/app-release.apk`.
+Debug APKs retain their development-only signing behavior. The public CI has no
+access to the private folder and continues to build an unsigned release.
+
+Restrict Dropbox access and retain a separate protected backup: this folder now
+contains everything needed to sign both applications. Never include it in the
+repository, source archives, release metadata, logs or public CI. To sign an
+update index locally:
 
 ```text
 java scripts/SignUpdateIndex.java payload.json space-compass-update.json
 ```
+
+To print only the resolved key path, without displaying credentials or signing
+anything:
+
+```text
+java scripts/SignUpdateIndex.java --keystore-path
+```
+
+APK and update-index signing must retain the existing certificate. Manual
+Android SDK `apksigner` usage remains optional; never embed a password directly
+in a command line.
+
+Standalone resolver checks, requiring no credentials or signing operations:
+
+```text
+javac -d build/signing-path-test scripts/SignUpdateIndex.java scripts/SpaceCompassSigningPathTest.java
+java -cp build/signing-path-test SpaceCompassSigningPathTest
+```
+
+Add `--live` to check that the real Dropbox-only configuration opens the existing
+key with the expected public certificate. This reads the private configuration
+without printing it and does not sign or publish an asset.
 
 ## Download and Android installation
 

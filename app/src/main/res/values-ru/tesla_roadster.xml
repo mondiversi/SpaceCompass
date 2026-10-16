@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="celestial_tesla_roadster" formatted="false">Tesla Roadster (2018)</string>
+    <string name="celestial_roadster_type" formatted="false">Груз на гелиоцентрической орбите</string>
+    <string name="celestial_roadster_note" formatted="false">Обращается вокруг Солнца, а не Земли. Запущен в 2018 году. Прогнозируемая траектория NASA/JPL, не прямая телеметрия. Приблизительная масса указана для автомобиля с батареями, без ступени ракеты и крепления. Архивное фото запуска; нынешний вид и ориентация неизвестны.</string>
+</resources>

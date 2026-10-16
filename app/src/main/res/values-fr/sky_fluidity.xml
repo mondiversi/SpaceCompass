@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="settings_sky_fluidity_title">Fluidité</string>
+    <string name="settings_sky_fluidity_description">Réglez la fluidité du ciel. Les niveaux élevés peuvent consommer plus de batterie.</string>
+    <string name="settings_sky_fluidity_low">Faible</string>
+    <string name="settings_sky_fluidity_balanced">Équilibrée</string>
+    <string name="settings_sky_fluidity_high">Élevée</string>
+</resources>

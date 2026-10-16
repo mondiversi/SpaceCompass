@@ -1,9 +1,9 @@
 <resources>
     <string name="info_news_title">Ultime novità · %1$s</string>
-    <string name="info_news_star_sky" formatted="false">Posizione, quota, fuso orario, data e ora sono indipendenti nello scenario personalizzato.</string>
-    <string name="info_news_texture_downloads" formatted="false">Puoi far avanzare l’orario personalizzato anche dopo la chiusura dell’app, oppure usare la data o l’ora corrente.</string>
-    <string name="info_news_weather" formatted="false">Scenario attuale riepiloga le impostazioni attive e la località approssimativa; l’icona principale ne mostra il numero.</string>
-    <string name="info_news_viewer_zoom" formatted="false">Applica insieme quota e fuso della posizione, con salvataggio automatico e notifiche per ogni sezione.</string>
-    <string name="info_news_settings" formatted="false">I nomi dei riferimenti terrestri attivati restano visibili nella vista principale e negli scatti, indipendentemente dalle etichette degli oggetti.</string>
-    <string name="info_news_catalog" formatted="false">Il salvaschermo mostra l’ultima posizione nota, con mappa orientata correttamente, rotazione verso est e prospettiva stagionale coerente con la data dello scenario.</string>
+    <string name="info_news_star_sky" formatted="false">Naviga in un cielo più stabile con fluidità regolabile; Bilanciata è il valore predefinito.</string>
+    <string name="info_news_texture_downloads" formatted="false">Imposta sveglie Android o eventi del calendario per i punti orbitali futuri, dal cielo o dal percorso giornaliero.</string>
+    <string name="info_news_weather" formatted="false">Esplora Tesla Roadster (2018), con effemeridi eliocentriche, dati di riferimento e un’immagine scaricabile.</string>
+    <string name="info_news_viewer_zoom" formatted="false">Riconosci meglio i momenti principali nel percorso giornaliero, con Attuale evidenziato e i valori dei punti chiave in grassetto.</string>
+    <string name="info_news_settings" formatted="false">Rimuovi un oggetto direttamente dall’isola principale con conferma e riconosci il suo nome dal colore dell’orbita.</string>
+    <string name="info_news_catalog" formatted="false">I fumetti restano sopra le icone celesti senza saltare; nomi e legende di foto e panoramiche mantengono il colore pieno dell’oggetto.</string>
 </resources>

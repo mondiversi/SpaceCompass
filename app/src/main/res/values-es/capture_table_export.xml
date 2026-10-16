@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <string name="capture_export_files_heading">Archivos</string>
     <string name="capture_export_image">Imagen (JPG)</string>
     <string name="capture_export_csv">Tabla (CSV)</string>
     <string name="capture_export_txt">Tabla legible (TXT)</string>

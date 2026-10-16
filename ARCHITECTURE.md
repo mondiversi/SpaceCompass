@@ -381,3 +381,30 @@ The shared capture toolbar and daily-path toolbar use the standard page palette
 at full opacity. Android status backgrounds already use that same palette. The
 daily light-mode table remains white, and the main scene's translucent overlays
 retain their separate policy.
+
+
+## Release 1.4.0: fluidity, stabilized motion and Android handoffs
+
+SkyFluidity owns stable saved level identifiers and sensor/coalescing periods,
+with Balanced as the missing/invalid-preference fallback. Settings and listeners
+share this policy. SunOrientationSmoothing uses monotonic elapsed time; the bounded
+SunMotionStabilizer predicts short physical rotations from gyro increments and
+corrects toward accepted magnetic/gravity axes. Re-registration, invalid references,
+display changes and lifecycle stops reset prediction. A stale/missing gyro falls
+back to the existing absolute filter. Screensaver/background stop sensor listeners.
+
+PointReminder is the pure eligibility/Clock-versus-Calendar policy; the separate
+PointReminderIntent is the Android handoff boundary. EventSettings controls only
+the focused main-screen bell. A shared foreground ticker expires reminders without
+per-row timers. Calendar/Clock own scheduling and confirmation; no local alarms,
+background service, calendar database or observer-coordinate handoff is introduced.
+
+Tesla Roadster reuses the guarded Horizons/cache pipeline, catalogue models and
+frozen exports. Its separately pinned archival photograph follows the existing
+download/cache layer. Missing data remain explicit; enum identifiers and saved
+selections retain their meaning. Additive texture assets preserve legacy URLs.
+
+Main object names and shared photo/panorama legend swatches use full identity colors,
+independent of elevation. Below-horizon scene paths keep their separate dimmed style.
+Only application chrome excludes focused callouts: celestial markers are drawn
+beneath them and cannot cause placement feedback. The bell aligns to the callout center.

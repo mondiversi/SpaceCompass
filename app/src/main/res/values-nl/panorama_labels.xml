@@ -2,7 +2,7 @@
 <resources>
     <string name="panorama_labels_key_selected">Alleen belangrijke en geselecteerde punten</string>
     <string name="panorama_labels_all">Alle</string>
-    <string name="panorama_labels_objects_selected">Alleen object en geselecteerde punten</string>
+    <string name="panorama_labels_objects_selected">Alleen het geselecteerde object en de geselecteerde punten</string>
     <string name="panorama_labels_selected">Alleen geselecteerde punten</string>
     <string name="panorama_labels_none">Geen</string>
 </resources>

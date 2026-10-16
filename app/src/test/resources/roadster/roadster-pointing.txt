@@ -1,0 +1,318 @@
+API VERSION: 1.2
+API SOURCE: NASA/JPL Horizons API
+
+*******************************************************************************
+ Revised: Jan 03, 2025          Tesla Roadster (spacecraft)             -143205
+          (solution #11)
+ 
+ Tesla Roadster (AKA: Starman, 2018-017A)
+
+ NOTES:
+  Visibility: 
+   20th magnitude until Feb 20, 2018.
+   22nd magnitude through mid-April (2018)
+   Brighter than 26th magnitude into mid-June (2018)
+
+  2018-Mar-01: Radial non-gravitational acceleration A1 estimated from data
+                (nominally solar radiation pressure)
+  2018-Mar-27: Two reporting sites (J04 & K93) extend data arc one month.
+                A1 estimate of JPL s10 is reduced 1.2-sigma compared to s9. 
+  2025-Jan-03: Additional data from 2018 were recognized (in 2025) as being 
+                this object and included in a trajectory update to JPL s11. 
+                See MPEC 2025-A38 and MPEC 2025-A49.
+
+ LAUNCHED: 
+  2018-Feb-06 20:45 UTC by Falcon Heavy (FH-1) from Kennedy Space Center, USA 
+  (launchpad 39A)
+
+ BACKGROUND:
+  Dummy payload from the first launch of SpaceX Falcon Heavy launch vehicle. 
+  Consists of a standard Tesla Roadster automobile and a spacesuit-wearing 
+  mannequin nicknamed "Starman". 
+ 
+  Also includes a Hot Wheels toy model Roadster on the car's dash with a 
+  mini-Starman inside. A data storage device placed inside the car contains 
+  a copy of Isaac Asimov's "Foundation" novels. A plaque on the attachment 
+  fitting between the Falcon Heavy upper stage and the Tesla is etched with 
+  the names of more than 6,000 SpaceX employees.
+ 
+  After orbiting the Earth for 5 hours, a third burn by the second stage was 
+  completed at approximately 02:30 UTC Feb 7, placing the dummy payload in a 
+  heliocentric orbit having a perihelion of 0.99 au and aphelion ~1.67 au.
+
+  The object stack consists of a Merlin 1D Vacuum second stage with Extended 
+  Nozzle, Payload Attachment Fitting, and Tesla Roadster on mount.
+
+  Roadster mass: ~1250 kg (with batteries), ~800 kg (without ESS/batteries)
+
+ TRAJECTORY:
+  This trajectory is based on JPL solution #11, a fit to 374 ground-based 
+  optical astrometric measurements spanning 2018 Feb 8.2 to March 19.1
+
+  Trajectory name                       Start (TDB)          Stop (TDB)
+  --------------------------------   -----------------   -----------------
+  tesla_s11                          2018-Feb-07 03:00   2090-Jan-01 00:00
+
+  Encounter predictions for s11 (w/radial 1/r^2 non-gravitational acceleration)
+
+   Date (TDB)       Body  CA Dist  MinDist  MaxDist  Vrel  TCA3Sg  Nsigs P_i/p
+  ----------------- ----- -------  -------  ------- ------ ------ ------ -----
+  2018 Feb 08.09689 Moon  .000936  .000936  .000936  3.961   0.40 49339. 0.000
+  2020 Oct 07.26842 Mars  .049505  .048930  .050173  8.148  25.85 6.86E5 0.000
+  2035 Apr 22.35485 Mars  .015980  .005058  .027812  8.227 157.91 32114. 0.000
+  2047 Jan 11.89009 Earth .031891  .030690  .033084  4.493 222.92 1.40E5 0.000
+  2050 Mar 19.50992 Earth .118880  .112344  .125297  7.390 665.21 2.60E5 0.000
+  2052 Sep 05.22339 Mars  .176165  .170208  .182263  5.738 3348.9 9.58E5 0.000
+  2067 Apr 15.94365 Mars  .044180  .017110  .072901  7.177 1878.4 41072. 0.000
+  2084 Sep 17.89391 Mars  .118225  .080043  .158473  9.778 1228.7 6.72E5 0.000
+  2085 Jan 01.75959 Earth .084679  .025767  .130881  6.278 8151.1 1.00E5 0.000
+  2088 Mar 09.78797 Earth .048364  .021233  .071302  5.080 7677.4 1.61E5 0.000
+
+     Date    = Nominal encounter time (Barycentric Dynamical Time)
+     CA_Dist = Highest probability close approach distance to body, au
+     MinDist = 3-sigma minimum encounter distance, au
+     MaxDist = 3-sigma maximum encounter distance, au
+     Vrel    = Relative velocity at nominal encounter time, km/s
+     TCA3Sg  = 3-sigma uncertainty in close encounter time, minutes
+     Nsigs   = Number of sigmas to encounter body at nominal encounter time 
+     P_i/p   = Linearized probability of impact
+
+  NOTE: 
+  How to obtain optional statistical uncertainty output & generate an SPK file:
+
+  Since this is a spacecraft and not part of the asteroid and comet database 
+  which normally holds orbit covariance data, some functions like statistical 
+  output and SPK file generation aren't automatically available for this object.
+
+  However, such optional extended output is possible with some extra steps. 
+
+  To propagate statistical uncertainties for this object, the full statistical
+  orbit solution (given below) can be manually input back into Horizons as a 
+  "user-defined object" using the telnet or e-mail interfaces (not possible
+  with the browser interface).
+ 
+  To do this and activate statistical or SPK file output ...
+
+  Using the telnet interface (command-line "telnet ssd.jpl.nasa.gov 6775"),
+  enter ";" to drop into user-input mode then cut-and-paste each line shown 
+  below, one at a time. The lines of numbers after SRC must be in the order 
+  shown.
+
+  For SPK file generation, only the first four lines need be input: the
+  EPOCH, orbital element lines starting with "EC" and "OM", and  the
+  non-gravitational acceleration model (line starting with "A1").
+
+  SRC lines are needed only for (optional) statistical output and the 
+  H & G values only for (optional) visual magnitude output. 
+
+   EPOCH=  2458164.5 != 2018-Feb-15.0000000 (TDB)                               
+    EC= .2585498518579815  QR= .9860596261746192  TP= 2458153.620509125        
+    OM=  317.3549172886181 W= 177.3203193988167   IN= 1.088462199267202        
+    EST= A1  
+    A1= 2.969858760763E-9  ALN= 1.  NK= 0.  NM= 2.  NN= 5.093   R0= 1.  
+    SRC= -1.955409317157004E-7    9.104488138428854E-9  -1.67323353121069E-9
+         -4.475931903020887E-7    2.159362665672524E-9  -1.18978744790786E-6
+         -2.387343737884606E-7   -3.299794641009024E-9  -1.704283275997863E-5
+         -2.940172139669599E-7   -4.530422681194046E-7  -4.160541909271693E-9
+          2.670698115150779E-5    1.719405542489103E-6  -1.349341670124289E-6
+         -2.348030169232153E-5   -2.191270982039325E-8  -.0002230963863908305
+         -1.789961004798429E-6   -1.946683612807248E-6  -1.585432559643199E-6
+         -3.82698230056176E-6    -2.735923398749713E-9  -2.828976278364116E-5
+          1.682781991584703E-7   -6.630980954968635E-7  -2.526100041034717E-7
+         -1.283103857557316E-10
+     H= 25.281 G= 0.15
+
+  When done, press a blank return to exit input mode. 
+
+  Enter "J" at the prompt to indicate heliocentric J2000 ecliptic data has 
+  been supplied. Then at the next prompt, input an arbitrary name 
+  (i.e., Roadster).
+ 
+  Horizons will then proceed as usual, but with statistical output and SPK 
+  file generation now available as options.
+
+  A basic and identical tracking ephemeris can be produced without doing any 
+  of this, but statistical uncertainty quantities requested will be marked
+  "n.a.", meaning not available, and SPK generation won't be an option.
+
+  NOTE: long-term predictions
+  Over time, trajectory prediction errors could increase more rapidly than 
+  the formal statistics indicate due to unmodeled thermal re-radiation or 
+  outgassing accelerations that are not currently characterized but may exist.
+*******************************************************************************
+
+
+*******************************************************************************
+Ephemeris / API_USER Thu Oct 15 21:57:07 2026 Pasadena, USA      / Horizons
+*******************************************************************************
+Target body name: SpaceX Roadster (spacecraft) (-143205) {source: tesla_s11}
+Center body name: Earth (399)                     {source: DE441}
+Center-site name: BODY CENTER
+*******************************************************************************
+Start time      : A.D. 2026-Oct-15 00:00:00.0000 UT 
+Stop  time      : A.D. 2026-Oct-18 00:00:00.0000 UT 
+Step-size       : 60 minutes
+*******************************************************************************
+Center geodetic : 0.0, 0.0, 0.0                   {E-lon(deg),Lat(deg),Alt(km)}
+Center cylindric: 0.0, 0.0, 0.0                   {E-lon(deg),Dxy(km),Dz(km)}
+Center radii    : 6378.137, 6378.137, 6356.752 km {Equator_a, b, pole_c}
+Output units    : AU-D
+Calendar mode   : Mixed Julian/Gregorian
+Output type     : LT+S CORRECTED cartesian states
+Output format   : 1 (position only)
+EOP file        : eop.261015.p270111
+EOP coverage    : DATA-BASED 1962-JAN-20 TO 2026-OCT-15. PREDICTS-> 2027-JAN-10
+Reference frame : ICRF
+*******************************************************************************
+            JDUT ,            Calendar Date (UT ),                      X,                      Y,                      Z,
+**************************************************************************************************************************
+$$SOE
+2461328.500000000, A.D. 2026-Oct-15 00:00:00.0000,  5.709544876983075E-01, -3.026581469205492E-01, -1.096097423969730E-01,
+2461328.541666667, A.D. 2026-Oct-15 01:00:00.0000,  5.710918905870694E-01, -3.027864028526220E-01, -1.096593061112456E-01,
+2461328.583333333, A.D. 2026-Oct-15 02:00:00.0000,  5.712295474186531E-01, -3.029144888165569E-01, -1.097087991828032E-01,
+2461328.625000000, A.D. 2026-Oct-15 03:00:00.0000,  5.713674580128212E-01, -3.030424045587262E-01, -1.097582215040552E-01,
+2461328.666666667, A.D. 2026-Oct-15 04:00:00.0000,  5.715056221890655E-01, -3.031701498257621E-01, -1.098075729675404E-01,
+2461328.708333333, A.D. 2026-Oct-15 05:00:00.0000,  5.716440397666083E-01, -3.032977243645374E-01, -1.098568534659170E-01,
+2461328.750000000, A.D. 2026-Oct-15 06:00:00.0000,  5.717827105643976E-01, -3.034251279222035E-01, -1.099060628919818E-01,
+2461328.791666667, A.D. 2026-Oct-15 07:00:00.0000,  5.719216344011105E-01, -3.035523602461713E-01, -1.099552011386604E-01,
+2461328.833333333, A.D. 2026-Oct-15 08:00:00.0000,  5.720608110951656E-01, -3.036794210841073E-01, -1.100042680990043E-01,
+2461328.875000000, A.D. 2026-Oct-15 09:00:00.0000,  5.722002404647026E-01, -3.038063101839409E-01, -1.100532636661963E-01,
+2461328.916666667, A.D. 2026-Oct-15 10:00:00.0000,  5.723399223275925E-01, -3.039330272938441E-01, -1.101021877335400E-01,
+2461328.958333333, A.D. 2026-Oct-15 11:00:00.0000,  5.724798565014568E-01, -3.040595721622765E-01, -1.101510401944795E-01,
+2461329.000000000, A.D. 2026-Oct-15 12:00:00.0000,  5.726200428036357E-01, -3.041859445379275E-01, -1.101998209425745E-01,
+2461329.041666667, A.D. 2026-Oct-15 13:00:00.0000,  5.727604810512046E-01, -3.043121441697458E-01, -1.102485298715130E-01,
+2461329.083333333, A.D. 2026-Oct-15 14:00:00.0000,  5.729011710609996E-01, -3.044381708069823E-01, -1.102971668751297E-01,
+2461329.125000000, A.D. 2026-Oct-15 15:00:00.0000,  5.730421126495683E-01, -3.045640241990862E-01, -1.103457318473606E-01,
+2461329.166666667, A.D. 2026-Oct-15 16:00:00.0000,  5.731833056332112E-01, -3.046897040958008E-01, -1.103942246822852E-01,
+2461329.208333333, A.D. 2026-Oct-15 17:00:00.0000,  5.733247498279641E-01, -3.048152102471233E-01, -1.104426452741086E-01,
+2461329.250000000, A.D. 2026-Oct-15 18:00:00.0000,  5.734664450496094E-01, -3.049405424032897E-01, -1.104909935171538E-01,
+2461329.291666667, A.D. 2026-Oct-15 19:00:00.0000,  5.736083911136763E-01, -3.050657003148447E-01, -1.105392693058942E-01,
+2461329.333333333, A.D. 2026-Oct-15 20:00:00.0000,  5.737505878354183E-01, -3.051906837325157E-01, -1.105874725348967E-01,
+2461329.375000000, A.D. 2026-Oct-15 21:00:00.0000,  5.738930350298521E-01, -3.053154924073629E-01, -1.106356030988886E-01,
+2461329.416666667, A.D. 2026-Oct-15 22:00:00.0000,  5.740357325117292E-01, -3.054401260906368E-01, -1.106836608926932E-01,
+2461329.458333333, A.D. 2026-Oct-15 23:00:00.0000,  5.741786800955538E-01, -3.055645845338968E-01, -1.107316458112841E-01,
+2461329.500000000, A.D. 2026-Oct-16 00:00:00.0000,  5.743218775955704E-01, -3.056888674889318E-01, -1.107795577497487E-01,
+2461329.541666667, A.D. 2026-Oct-16 01:00:00.0000,  5.744653248257713E-01, -3.058129747077880E-01, -1.108273966033006E-01,
+2461329.583333333, A.D. 2026-Oct-16 02:00:00.0000,  5.746090215999028E-01, -3.059369059427963E-01, -1.108751622672926E-01,
+2461329.625000000, A.D. 2026-Oct-16 03:00:00.0000,  5.747529677314601E-01, -3.060606609465098E-01, -1.109228546371869E-01,
+2461329.666666667, A.D. 2026-Oct-16 04:00:00.0000,  5.748971630336898E-01, -3.061842394717733E-01, -1.109704736085880E-01,
+2461329.708333333, A.D. 2026-Oct-16 05:00:00.0000,  5.750416073195783E-01, -3.063076412716453E-01, -1.110180190772071E-01,
+2461329.750000000, A.D. 2026-Oct-16 06:00:00.0000,  5.751863004018752E-01, -3.064308660994732E-01, -1.110654909388951E-01,
+2461329.791666667, A.D. 2026-Oct-16 07:00:00.0000,  5.753312420930763E-01, -3.065539137088565E-01, -1.111128890896270E-01,
+2461329.833333333, A.D. 2026-Oct-16 08:00:00.0000,  5.754764322054421E-01, -3.066767838536487E-01, -1.111602134255015E-01,
+2461329.875000000, A.D. 2026-Oct-16 09:00:00.0000,  5.756218705509767E-01, -3.067994762879628E-01, -1.112074638427447E-01,
+2461329.916666667, A.D. 2026-Oct-16 10:00:00.0000,  5.757675569414411E-01, -3.069219907661572E-01, -1.112546402377030E-01,
+2461329.958333333, A.D. 2026-Oct-16 11:00:00.0000,  5.759134911883546E-01, -3.070443270428627E-01, -1.113017425068551E-01,
+2461330.000000000, A.D. 2026-Oct-16 12:00:00.0000,  5.760596731029896E-01, -3.071664848729510E-01, -1.113487705467982E-01,
+2461330.041666667, A.D. 2026-Oct-16 13:00:00.0000,  5.762061024963860E-01, -3.072884640115821E-01, -1.113957242542686E-01,
+2461330.083333333, A.D. 2026-Oct-16 14:00:00.0000,  5.763527791793168E-01, -3.074102642141049E-01, -1.114426035260981E-01,
+2461330.125000000, A.D. 2026-Oct-16 15:00:00.0000,  5.764997029623488E-01, -3.075318852362006E-01, -1.114894082592767E-01,
+2461330.166666667, A.D. 2026-Oct-16 16:00:00.0000,  5.766468736557879E-01, -3.076533268337794E-01, -1.115361383509074E-01,
+2461330.208333333, A.D. 2026-Oct-16 17:00:00.0000,  5.767942910696970E-01, -3.077745887629798E-01, -1.115827936982059E-01,
+2461330.250000000, A.D. 2026-Oct-16 18:00:00.0000,  5.769419550139135E-01, -3.078956707802452E-01, -1.116293741985340E-01,
+2461330.291666667, A.D. 2026-Oct-16 19:00:00.0000,  5.770898652980276E-01, -3.080165726422434E-01, -1.116758797493644E-01,
+2461330.333333333, A.D. 2026-Oct-16 20:00:00.0000,  5.772380217313968E-01, -3.081372941059152E-01, -1.117223102483016E-01,
+2461330.375000000, A.D. 2026-Oct-16 21:00:00.0000,  5.773864241231322E-01, -3.082578349284259E-01, -1.117686655930607E-01,
+2461330.416666667, A.D. 2026-Oct-16 22:00:00.0000,  5.775350722821285E-01, -3.083781948672619E-01, -1.118149456815103E-01,
+2461330.458333333, A.D. 2026-Oct-16 23:00:00.0000,  5.776839660170153E-01, -3.084983736800823E-01, -1.118611504116065E-01,
+2461330.500000000, A.D. 2026-Oct-17 00:00:00.0000,  5.778331051362231E-01, -3.086183711248793E-01, -1.119072796814634E-01,
+2461330.541666667, A.D. 2026-Oct-17 01:00:00.0000,  5.779824894479229E-01, -3.087381869598578E-01, -1.119533333893008E-01,
+2461330.583333333, A.D. 2026-Oct-17 02:00:00.0000,  5.781321187600624E-01, -3.088578209435001E-01, -1.119993114334720E-01,
+2461330.625000000, A.D. 2026-Oct-17 03:00:00.0000,  5.782819928803526E-01, -3.089772728345298E-01, -1.120452137124480E-01,
+2461330.666666667, A.D. 2026-Oct-17 04:00:00.0000,  5.784321116162769E-01, -3.090965423919435E-01, -1.120910401248317E-01,
+2461330.708333333, A.D. 2026-Oct-17 05:00:00.0000,  5.785824747750886E-01, -3.092156293749952E-01, -1.121367905693504E-01,
+2461330.750000000, A.D. 2026-Oct-17 06:00:00.0000,  5.787330821637994E-01, -3.093345335431649E-01, -1.121824649448423E-01,
+2461330.791666667, A.D. 2026-Oct-17 07:00:00.0000,  5.788839335892071E-01, -3.094532546562378E-01, -1.122280631502914E-01,
+2461330.833333333, A.D. 2026-Oct-17 08:00:00.0000,  5.790350288578702E-01, -3.095717924742252E-01, -1.122735850847926E-01,
+2461330.875000000, A.D. 2026-Oct-17 09:00:00.0000,  5.791863677761233E-01, -3.096901467574121E-01, -1.123190306475723E-01,
+2461330.916666667, A.D. 2026-Oct-17 10:00:00.0000,  5.793379501500697E-01, -3.098083172663261E-01, -1.123643997379748E-01,
+2461330.958333333, A.D. 2026-Oct-17 11:00:00.0000,  5.794897757855845E-01, -3.099263037617525E-01, -1.124096922554693E-01,
+2461331.000000000, A.D. 2026-Oct-17 12:00:00.0000,  5.796418444883265E-01, -3.100441060047675E-01, -1.124549080996641E-01,
+2461331.041666667, A.D. 2026-Oct-17 13:00:00.0000,  5.797941560637145E-01, -3.101617237566576E-01, -1.125000471702710E-01,
+2461331.083333333, A.D. 2026-Oct-17 14:00:00.0000,  5.799467103169569E-01, -3.102791567790166E-01, -1.125451093671481E-01,
+2461331.125000000, A.D. 2026-Oct-17 15:00:00.0000,  5.800995070530282E-01, -3.103964048336648E-01, -1.125900945902643E-01,
+2461331.166666667, A.D. 2026-Oct-17 16:00:00.0000,  5.802525460766834E-01, -3.105134676826983E-01, -1.126350027397208E-01,
+2461331.208333333, A.D. 2026-Oct-17 17:00:00.0000,  5.804058271924465E-01, -3.106303450884403E-01, -1.126798337157297E-01,
+2461331.250000000, A.D. 2026-Oct-17 18:00:00.0000,  5.805593502046320E-01, -3.107470368135218E-01, -1.127245874186496E-01,
+2461331.291666667, A.D. 2026-Oct-17 19:00:00.0000,  5.807131149173290E-01, -3.108635426208178E-01, -1.127692637489570E-01,
+2461331.333333333, A.D. 2026-Oct-17 20:00:00.0000,  5.808671211343966E-01, -3.109798622734316E-01, -1.128138626072400E-01,
+2461331.375000000, A.D. 2026-Oct-17 21:00:00.0000,  5.810213686594825E-01, -3.110959955347586E-01, -1.128583838942259E-01,
+2461331.416666667, A.D. 2026-Oct-17 22:00:00.0000,  5.811758572960202E-01, -3.112119421684715E-01, -1.129028275107750E-01,
+2461331.458333333, A.D. 2026-Oct-17 23:00:00.0000,  5.813305868472100E-01, -3.113277019384555E-01, -1.129471933578514E-01,
+2461331.500000000, A.D. 2026-Oct-18 00:00:00.0000,  5.814855571160492E-01, -3.114432746088930E-01, -1.129914813365610E-01,
+$$EOE
+**************************************************************************************************************************
+ 
+TIME
+
+ Times PRIOR to 1962 are UT1, a mean-solar time closely related to the
+prior but now-deprecated GMT. Times AFTER 1962 are in UTC, the current
+civil or "wall-clock" atomic time-scale. UTC is kept within 0.9 seconds
+of UT1 using integer leap-seconds for 1972 and later years.
+
+  Conversion from the internal Barycentric Dynamical Time (TDB) of solar
+system dynamics to the discontinuous civil UT time-scale has not been
+determined for UTC times after the next July or January 1st. Therefore,
+the last known leap-second is used as a constant over future intervals,
+a condition noted here as "UT~".
+
+  Future but as yet undetermined leap-seconds can be expected to change
+time-tags in the "UT~" interval and, in general, the UT scale may not be
+suitable for purposes that assume time-tag continuity in the ephemeris.
+Output in continuous TDB and TT timescales may instead be requested,
+though these are not linked to Earth's rotation.
+
+  Time-tags refer to the UT time-scale conversion from TDB on Earth
+regardless of observer location within the solar system, although clock
+rates may differ due to the local gravity field and no analog to "UT"
+may be defined for that location.
+ 
+CALENDAR SYSTEM
+
+  Mixed calendar mode was active such that calendar dates after AD 1582-Oct-15
+(if any) are in the modern Gregorian system. Dates prior to 1582-Oct-5 (if any)
+are in the Julian calendar system, which is automatically extended for dates
+prior to its adoption on 45-Jan-1 BC.  The Julian calendar is useful for
+matching historical dates. The Gregorian calendar more accurately corresponds
+to the Earth's orbital motion and seasons. A "Gregorian-only" calendar mode is
+available if such physical events are the primary interest.
+
+REFERENCE FRAME AND COORDINATES
+
+  International Celestial Reference Frame (ICRF)
+
+    The ICRF is an adopted reference frame whose axes are defined relative to 
+    fixed extragalactic radio sources distributed across the sky.
+
+    The ICRF was aligned with the prior FK5/J2000 dynamical system at the ~0.02 
+    arcsecond level but is not identical and has no associated standard epoch.
+
+  Symbol meaning [1 au= 149597870.700 km, 1 day= 86400.0 s]:
+
+    JDUT     Julian Day Number, Universal Time
+      X      X-component of position vector (au)
+      Y      Y-component of position vector (au)
+      Z      Z-component of position vector (au)
+
+ABERRATIONS AND CORRECTIONS
+
+ States have been corrected for Newtonian down-leg  (receive) light-time
+ displacement and relativistic stellar aberration.
+
+Computations by ...
+
+    Solar System Dynamics Group, Horizons On-Line Ephemeris System
+    4800 Oak Grove Drive, Jet Propulsion Laboratory
+    Pasadena, CA  91109   USA
+
+    General site: https://ssd.jpl.nasa.gov/
+    Mailing list: https://ssd.jpl.nasa.gov/email_list.html
+    System news : https://ssd.jpl.nasa.gov/horizons/news.html
+    User Guide  : https://ssd.jpl.nasa.gov/horizons/manual.html
+    Connect     : browser        https://ssd.jpl.nasa.gov/horizons/app.html#/x
+                  API            https://ssd-api.jpl.nasa.gov/doc/horizons.html
+                  command-line   telnet ssd.jpl.nasa.gov 6775
+                  e-mail/batch   https://ssd.jpl.nasa.gov/ftp/ssd/horizons_batch.txt
+                  scripts        https://ssd.jpl.nasa.gov/ftp/ssd/SCRIPTS
+    Inquiries   : Jon.D.Giorgini@jpl.nasa.gov
+*******************************************************************************

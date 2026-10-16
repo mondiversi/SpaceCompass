@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="celestial_remove_title">天体を選択解除</string>
+    <string name="celestial_remove_message">選択中の天体から%1$sを外しますか？</string>
+    <string name="celestial_remove_action">解除</string>
+    <string name="celestial_remove_cancel">キャンセル</string>
+    <string name="celestial_remove_description">%1$sの選択を解除</string>
+</resources>

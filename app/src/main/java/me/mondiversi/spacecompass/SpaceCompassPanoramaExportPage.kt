@@ -28,6 +28,7 @@ internal fun SpaceCompassPanoramaExportPage(state: SpaceCompassCaptureExportStat
                 SpaceCompassSettingsIsland {
                     Column(Modifier.fillMaxWidth(), verticalArrangement = Arrangement.spacedBy(6.dp)) {
                         SpaceCompassSettingsDescription(stringResource(R.string.panorama_export_description),pageDescription=true)
+                        Text(stringResource(R.string.capture_export_files_heading),fontSize=15.sp,fontWeight=FontWeight.Bold)
                         Column(Modifier.fillMaxWidth().testTag("capture-export-types"),
                             verticalArrangement=Arrangement.spacedBy(6.dp)) {
                             state.options.forEach { type ->

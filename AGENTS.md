@@ -6,8 +6,14 @@
   code comments and future GitHub metadata in English.
 - Preserve current celestial calculations, phase rendering, trajectories,
   selection, accessible touch targets, RTL and phone/tablet/landscape layouts.
-- Keep app data/package/signing distinct from UVIR. Never import sensor credentials,
-  pairing services or measurement databases as dependencies.
+- Keep app data, package and release workflow independent from UVIR. The owner
+  intentionally retains the same distribution key for both apps, outside Git in
+  `~/Dropbox/Mondiversi/UvirSigning`. Resolve it with
+  `java scripts/SignUpdateIndex.java --keystore-path`; see `docs/UPDATES.md` for
+  the shared private `signing.properties` and optional overrides. Release APKs
+  and update indices use that configuration automatically on a new trusted PC.
+  Never generate a replacement key for an update
+  or import UVIR sensor credentials, pairing services or measurement databases.
 - Use `gradlew.bat :app:assembleDebug :app:testDebugUnitTest
   :app:compileDebugAndroidTestKotlin` on Windows. Connected instrumentation needs
   explicit device authorization; never uninstall or clear app data to fix an install.
@@ -26,3 +32,6 @@
   merely by routine local development.
 - Upload code or releases to GitHub only when the user explicitly requests that
   publication. Keep routine fixes, builds and device installations local.
+- Keep future settings descriptions on the shared `SpaceCompassSettingsDescription`
+  style. Match the reviewed UVIR typography, margins and indentation; do not
+  introduce one-off font sizes or spacing.

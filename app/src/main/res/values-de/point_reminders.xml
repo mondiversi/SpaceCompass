@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="point_reminder_alarm">Wecker stellen</string>
+    <string name="point_reminder_calendar">Zum Kalender hinzufügen</string>
+    <string name="point_reminder_unavailable">Erinnerung für diesen Punkt nicht verfügbar</string>
+    <string name="point_reminder_no_clock">Keine Wecker-App verfügbar</string>
+    <string name="point_reminder_no_calendar">Keine Kalender-App verfügbar</string>
+    <string name="settings_events_title">Ereignisse</string>
+    <string name="settings_events_show_alarm">Alarmtaste in der Hauptansicht anzeigen</string>
+    <string name="settings_events_description">Verwalte Optionen für Himmelsereignisse.</string>
+</resources>

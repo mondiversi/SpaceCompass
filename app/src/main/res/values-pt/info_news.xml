@@ -1,9 +1,9 @@
 <resources>
     <string name="info_news_title">Últimas novidades · %1$s</string>
-    <string name="info_news_star_sky" formatted="false">Posição, altitude, fuso horário, data e hora podem ser controlados separadamente no cenário personalizado.</string>
-    <string name="info_news_texture_downloads" formatted="false">O relógio personalizado pode continuar a avançar após fechar a aplicação; também pode usar a data ou a hora atual.</string>
-    <string name="info_news_weather" formatted="false">O cenário atual resume os ajustes ativos e o local aproximado; o ícone principal mostra a sua quantidade.</string>
-    <string name="info_news_viewer_zoom" formatted="false">Aplique em conjunto a altitude e o fuso de uma posição, com gravação automática e avisos por secção.</string>
-    <string name="info_news_settings" formatted="false">Os nomes das referências terrestres ativadas continuam visíveis na vista principal e nas capturas, independentemente das etiquetas dos objetos.</string>
-    <string name="info_news_catalog" formatted="false">O protetor de ecrã mostra a última posição conhecida, com o mapa corretamente orientado, rotação para leste e perspetiva sazonal de acordo com a data do cenário.</string>
+    <string name="info_news_star_sky" formatted="false">Explore um céu mais estável com fluidez ajustável; Equilibrada é a opção predefinida.</string>
+    <string name="info_news_texture_downloads" formatted="false">Crie alarmes Android ou eventos de calendário para pontos orbitais futuros a partir do céu ou do percurso diário.</string>
+    <string name="info_news_weather" formatted="false">Explore Tesla Roadster (2018), com efemérides heliocêntricas, dados de referência e uma imagem para descarregar.</string>
+    <string name="info_news_viewer_zoom" formatted="false">Reconheça melhor os eventos atuais e principais no percurso diário, com a linha atual realçada e os valores importantes a negrito.</string>
+    <string name="info_news_settings" formatted="false">Remova um objeto diretamente do cartão principal com confirmação e reconheça o seu nome pela cor da órbita.</string>
+    <string name="info_news_catalog" formatted="false">Os balões permanecem sobre os ícones celestes sem saltar; os nomes e as legendas de fotos e panoramas mantêm a cor plena do objeto.</string>
 </resources>

@@ -1,9 +1,9 @@
 <resources>
     <string name="info_news_title">Dernières nouveautés · %1$s</string>
-    <string name="info_news_star_sky" formatted="false">La position, l’altitude, le fuseau horaire, la date et l’heure se règlent indépendamment dans le scénario personnalisé.</string>
-    <string name="info_news_texture_downloads" formatted="false">L’horloge personnalisée peut continuer à avancer après la fermeture de l’application ; la date ou l’heure actuelle peut aussi être reprise.</string>
-    <string name="info_news_weather" formatted="false">Le scénario actuel résume les réglages actifs et le lieu approximatif ; l’icône principale indique leur nombre.</string>
-    <string name="info_news_viewer_zoom" formatted="false">Appliquez ensemble l’altitude et le fuseau d’une position, avec enregistrement automatique et notifications par section.</string>
-    <string name="info_news_settings" formatted="false">Les noms des repères terrestres activés restent visibles dans la vue principale et les captures, indépendamment des étiquettes des objets.</string>
-    <string name="info_news_catalog" formatted="false">L’économiseur d’écran affiche la dernière position connue, avec une carte correctement orientée, une rotation vers l’est et une perspective saisonnière liée à la date du scénario.</string>
+    <string name="info_news_star_sky" formatted="false">Explorez un ciel plus stable avec une fluidité réglable ; Équilibrée est le réglage par défaut.</string>
+    <string name="info_news_texture_downloads" formatted="false">Créez des alarmes Android ou des événements de calendrier pour les futurs points orbitaux, depuis le ciel ou le parcours quotidien.</string>
+    <string name="info_news_weather" formatted="false">Découvrez Tesla Roadster (2018), avec des éphémérides héliocentriques, des données de référence et une image téléchargeable.</string>
+    <string name="info_news_viewer_zoom" formatted="false">Repérez mieux les événements actuels et principaux du parcours quotidien, avec la ligne actuelle surlignée et les valeurs clés en gras.</string>
+    <string name="info_news_settings" formatted="false">Retirez un objet directement de sa carte principale après confirmation et reconnaissez son nom grâce à la couleur de son orbite.</string>
+    <string name="info_news_catalog" formatted="false">Les bulles restent au-dessus des icônes célestes sans sauter ; les noms et les légendes des photos et panoramas conservent la couleur pleine de l’objet.</string>
 </resources>

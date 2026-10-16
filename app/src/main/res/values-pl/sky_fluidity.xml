@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="settings_sky_fluidity_title">Płynność</string>
+    <string name="settings_sky_fluidity_description">Dostosuj płynność ruchu nieba. Wyższy poziom może zwiększyć zużycie baterii.</string>
+    <string name="settings_sky_fluidity_low">Niska</string>
+    <string name="settings_sky_fluidity_balanced">Zrównoważona</string>
+    <string name="settings_sky_fluidity_high">Wysoka</string>
+</resources>

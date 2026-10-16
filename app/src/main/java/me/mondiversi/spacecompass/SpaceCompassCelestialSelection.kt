@@ -20,6 +20,10 @@ internal data class SpaceCompassCelestialSelection(
             ?: spaceCompassAllCelestialOrder.firstOrNull { it in updated })
     }
 
+    /** A stale confirmation must never add an object that was already unchecked. */
+    fun deselect(body: SpaceCompassCelestialBody): SpaceCompassCelestialSelection =
+        if (body in selected) toggle(body) else this
+
     fun toggleAll(): SpaceCompassCelestialSelection {
         val available = spaceCompassAvailableCelestialCatalog(selected)
         return if (selected.containsAll(available)) SpaceCompassCelestialSelection(emptySet(), null)

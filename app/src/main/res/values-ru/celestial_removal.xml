@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="celestial_remove_title">Убрать объект</string>
+    <string name="celestial_remove_message">Убрать %1$s из выбранных объектов?</string>
+    <string name="celestial_remove_action">Убрать</string>
+    <string name="celestial_remove_cancel">Отмена</string>
+    <string name="celestial_remove_description">Убрать %1$s из выбранного</string>
+</resources>

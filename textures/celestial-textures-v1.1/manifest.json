@@ -199,6 +199,29 @@
       "quality": 90,
       "method": 6,
       "processing": "Aspect-preserving fit with black framing; no spherical projection"
+    },
+    {
+      "name": "tesla_roadster.webp",
+      "bytes": 157614,
+      "sha256": "54c1a76dcb92b1512d9dcb1cd273af4771f7f347ff3abdd124383df934de19fe",
+      "width": 2048,
+      "height": 1024,
+      "quality": 90,
+      "method": 6,
+      "source": "https://upload.wikimedia.org/wikipedia/commons/8/87/Elon_Musk%27s_Tesla_Roadster_%2840143096241%29.jpg",
+      "source_page": "https://commons.wikimedia.org/wiki/File:Elon_Musk%27s_Tesla_Roadster_(40143096241).jpg",
+      "original_author_page": "https://www.flickr.com/photos/spacex/40143096241/",
+      "credit": "SpaceX",
+      "license": "CC0 1.0",
+      "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "license_evidence": "Commons Flickr review on 2018-02-08 confirmed CC0; VRT ticket 2015032410033985.",
+      "image_date": "2018-02-06",
+      "kind": "archival-photograph",
+      "source_dimensions": [
+        1920,
+        1080
+      ],
+      "processing": "Aspect-preserving Lanczos fit with black framing; no spherical projection or invented current attitude."
     }
   ],
   "version": "1.1",

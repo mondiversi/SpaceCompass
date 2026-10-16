@@ -1,9 +1,9 @@
 <resources>
     <string name="info_news_title">हाल के बदलाव · %1$s</string>
-    <string name="info_news_star_sky" formatted="false">कस्टम परिदृश्य में स्थान, ऊँचाई, समय क्षेत्र, तारीख और समय अलग-अलग सेट किए जा सकते हैं।</string>
-    <string name="info_news_texture_downloads" formatted="false">कस्टम घड़ी ऐप बंद करने के बाद भी आगे चल सकती है; वर्तमान तारीख या समय भी इस्तेमाल किया जा सकता है।</string>
-    <string name="info_news_weather" formatted="false">वर्तमान परिदृश्य में सक्रिय सेटिंग और अनुमानित स्थान का सार दिखता है; मुख्य आइकन उनकी संख्या दिखाता है।</string>
-    <string name="info_news_viewer_zoom" formatted="false">किसी स्थान की ऊँचाई और समय क्षेत्र एक साथ लागू करें; बदलाव अपने-आप सहेजे जाते हैं और हर अनुभाग की सूचना मिलती है।</string>
-    <string name="info_news_settings" formatted="false">चालू किए गए पृथ्वी संदर्भों के नाम मुख्य दृश्य और तस्वीरों में दिखते रहते हैं, चाहे वस्तुओं के लेबल की सेटिंग कुछ भी हो।</string>
-    <string name="info_news_catalog" formatted="false">स्क्रीनसेवर अब अंतिम ज्ञात स्थान को सही मानचित्र दिशा, पूर्व की ओर घूर्णन और परिदृश्य की तारीख के अनुसार मौसमी दृष्टिकोण के साथ दिखाता है।</string>
+    <string name="info_news_star_sky" formatted="false">समायोजित की जा सकने वाली सुचारु गति के साथ अधिक स्थिर आकाश देखें; संतुलित अब डिफ़ॉल्ट विकल्प है।</string>
+    <string name="info_news_texture_downloads" formatted="false">आकाश या दैनिक पथ से भविष्य के कक्षीय बिंदुओं के लिए Android अलार्म या कैलेंडर ईवेंट बनाएँ।</string>
+    <string name="info_news_weather" formatted="false">Tesla Roadster (2018) को सूर्य-केंद्रित पंचांग, संदर्भ डेटा और डाउनलोड की जा सकने वाली छवि के साथ देखें।</string>
+    <string name="info_news_viewer_zoom" formatted="false">दैनिक पथ में वर्तमान पंक्ति के हाइलाइट और मुख्य मानों के मोटे अक्षरों से वर्तमान और प्रमुख घटनाएँ आसानी से पहचानें।</string>
+    <string name="info_news_settings" formatted="false">पुष्टि करके मुख्य कार्ड से सीधे वस्तु हटाएँ और उसकी कक्षा के रंग से उसका नाम पहचानें।</string>
+    <string name="info_news_catalog" formatted="false">बिंदुओं के सूचना बॉक्स बिना उछले खगोलीय आइकन के ऊपर रहते हैं; नाम और फ़ोटो तथा पैनोरमा की रंग-सूचियाँ वस्तु का पूरा रंग बनाए रखती हैं।</string>
 </resources>

@@ -1,9 +1,9 @@
 <resources>
     <string name="info_news_title">Mambo mapya · %1$s</string>
-    <string name="info_news_star_sky" formatted="false">Mahali, mwinuko, ukanda wa saa, tarehe na saa vinaweza kuwekwa kila kimoja kivyake katika mandhari maalumu.</string>
-    <string name="info_news_texture_downloads" formatted="false">Saa maalumu inaweza kuendelea hata baada ya kufunga programu; unaweza pia kutumia tarehe au saa ya sasa.</string>
-    <string name="info_news_weather" formatted="false">Muhtasari wa mandhari ya sasa unaonyesha mipangilio hai na eneo la karibu; ikoni kuu inaonyesha idadi yake.</string>
-    <string name="info_news_viewer_zoom" formatted="false">Tumia mwinuko na ukanda wa saa wa eneo pamoja, kwa uhifadhi otomatiki na arifa kwa kila sehemu.</string>
-    <string name="info_news_settings" formatted="false">Majina ya marejeo ya Dunia yaliyowashwa huendelea kuonekana katika mwonekano mkuu na picha, bila kutegemea lebo za vitu.</string>
-    <string name="info_news_catalog" formatted="false">Kihifadhi skrini kinaonyesha mahali pa mwisho palipojulikana, kwa mwelekeo sahihi wa ramani, mzunguko kuelekea mashariki na mwonekano wa msimu unaofuata tarehe ya mandhari.</string>
+    <string name="info_news_star_sky" formatted="false">Tazama anga tulivu zaidi kwa kuchagua ulaini wa mwendo; Chaguo la kawaida ni Wastani.</string>
+    <string name="info_news_texture_downloads" formatted="false">Weka kengele za Android au matukio ya kalenda kwa nukta za obiti za baadaye, kutoka angani au kwenye njia ya kila siku.</string>
+    <string name="info_news_weather" formatted="false">Gundua Tesla Roadster (2018), yenye efemerisi zinazohusiana na Jua, data za marejeleo na picha inayopakuliwa.</string>
+    <string name="info_news_viewer_zoom" formatted="false">Tambua kwa urahisi matukio ya sasa na muhimu katika njia ya kila siku, kwa kuangazia safu ya sasa na kuweka thamani muhimu kwa herufi nzito.</string>
+    <string name="info_news_settings" formatted="false">Ondoa kitu moja kwa moja kwenye kadi yake kuu baada ya kuthibitisha, na utambue jina lake kwa rangi ya obiti.</string>
+    <string name="info_news_catalog" formatted="false">Visanduku vya nukta hubaki juu ya aikoni za angani bila kurukaruka; majina na maelezo ya rangi kwenye picha na panorama huhifadhi rangi kamili ya kitu.</string>
 </resources>

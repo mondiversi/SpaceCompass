@@ -17,6 +17,7 @@ internal fun spaceCompassSearchCatalog(available: List<SpaceCompassCelestialBody
 }
 
 private val SpaceCompassCelestialBody.catalogAliases: List<String> get() = when (this) {
+    SpaceCompassCelestialBody.TESLA_ROADSTER -> listOf("Starman", "SpaceX Roadster", "2018-017A", "43205")
     SpaceCompassCelestialBody.SIRIUS -> listOf("Sirius", "Sirio", "Alpha Canis Majoris", "HD 48915")
     SpaceCompassCelestialBody.BETELGEUSE -> listOf("Betelgeuse", "Betelgeux", "Alpha Orionis", "HD 39801")
     SpaceCompassCelestialBody.ORION_NEBULA -> listOf("M42", "NGC 1976", "Orion Nebula", "Nebulosa di Orione")

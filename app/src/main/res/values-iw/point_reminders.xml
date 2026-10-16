@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="point_reminder_alarm">הגדרת שעון מעורר</string>
+    <string name="point_reminder_calendar">הוספה ליומן</string>
+    <string name="point_reminder_unavailable">תזכורת אינה זמינה לנקודה זו</string>
+    <string name="point_reminder_no_clock">אין אפליקציית שעון מעורר זמינה</string>
+    <string name="point_reminder_no_calendar">אין אפליקציית יומן זמינה</string>
+    <string name="settings_events_title">אירועים</string>
+    <string name="settings_events_show_alarm">הצגת לחצן התראה במסך הראשי</string>
+    <string name="settings_events_description">ניהול אפשרויות לאירועים שמימיים.</string>
+</resources>

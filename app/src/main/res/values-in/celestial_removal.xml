@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="celestial_remove_title">Keluarkan objek</string>
+    <string name="celestial_remove_message">Keluarkan %1$s dari objek yang dipilih?</string>
+    <string name="celestial_remove_action">Keluarkan</string>
+    <string name="celestial_remove_cancel">Batal</string>
+    <string name="celestial_remove_description">Keluarkan %1$s dari pilihan</string>
+</resources>

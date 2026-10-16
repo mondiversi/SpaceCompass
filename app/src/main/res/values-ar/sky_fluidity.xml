@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="settings_sky_fluidity_title">السلاسة</string>
+    <string name="settings_sky_fluidity_description">اضبط سلاسة حركة السماء. قد تستهلك المستويات الأعلى طاقة بطارية أكثر.</string>
+    <string name="settings_sky_fluidity_low">منخفضة</string>
+    <string name="settings_sky_fluidity_balanced">متوازنة</string>
+    <string name="settings_sky_fluidity_high">عالية</string>
+</resources>

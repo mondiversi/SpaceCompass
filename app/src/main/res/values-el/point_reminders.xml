@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="point_reminder_alarm">Ρύθμιση ξυπνητηριού</string>
+    <string name="point_reminder_calendar">Προσθήκη στο Ημερολόγιο</string>
+    <string name="point_reminder_unavailable">Μη διαθέσιμη υπενθύμιση για αυτό το σημείο</string>
+    <string name="point_reminder_no_clock">Δεν υπάρχει διαθέσιμη εφαρμογή ξυπνητηριού</string>
+    <string name="point_reminder_no_calendar">Δεν υπάρχει διαθέσιμη εφαρμογή ημερολογίου</string>
+    <string name="settings_events_title">Συμβάντα</string>
+    <string name="settings_events_show_alarm">Εμφάνιση κουμπιού ειδοποίησης στην κύρια οθόνη</string>
+    <string name="settings_events_description">Διαχειριστείτε τις επιλογές για ουράνια φαινόμενα.</string>
+</resources>

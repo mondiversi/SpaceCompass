@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="settings_sky_fluidity_title">Ομαλότητα</string>
+    <string name="settings_sky_fluidity_description">Ρυθμίστε πόσο ομαλά κινείται ο ουρανός. Τα υψηλότερα επίπεδα μπορεί να καταναλώνουν περισσότερη μπαταρία.</string>
+    <string name="settings_sky_fluidity_low">Χαμηλή</string>
+    <string name="settings_sky_fluidity_balanced">Ισορροπημένη</string>
+    <string name="settings_sky_fluidity_high">Υψηλή</string>
+</resources>

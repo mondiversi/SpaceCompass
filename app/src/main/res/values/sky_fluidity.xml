@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="settings_sky_fluidity_title">Fluidity</string>
+    <string name="settings_sky_fluidity_description">Adjust how smoothly the sky moves. Higher levels may use more battery.</string>
+    <string name="settings_sky_fluidity_low">Low</string>
+    <string name="settings_sky_fluidity_balanced">Balanced</string>
+    <string name="settings_sky_fluidity_high">High</string>
+</resources>

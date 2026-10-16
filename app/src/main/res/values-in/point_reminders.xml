@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="point_reminder_alarm">Setel alarm</string>
+    <string name="point_reminder_calendar">Tambahkan ke Kalender</string>
+    <string name="point_reminder_unavailable">Pengingat tidak tersedia untuk titik ini</string>
+    <string name="point_reminder_no_clock">Tidak ada aplikasi alarm yang tersedia</string>
+    <string name="point_reminder_no_calendar">Tidak ada aplikasi kalender yang tersedia</string>
+    <string name="settings_events_title">Peristiwa</string>
+    <string name="settings_events_show_alarm">Tampilkan tombol peringatan di layar utama</string>
+    <string name="settings_events_description">Kelola opsi terkait peristiwa langit.</string>
+</resources>

@@ -2,7 +2,7 @@
 <resources>
     <string name="panorama_labels_key_selected">Apenas pontos principais e selecionados</string>
     <string name="panorama_labels_all">Todas</string>
-    <string name="panorama_labels_objects_selected">Apenas objeto e pontos selecionados</string>
+    <string name="panorama_labels_objects_selected">Apenas objeto selecionado e pontos selecionados</string>
     <string name="panorama_labels_selected">Apenas pontos selecionados</string>
     <string name="panorama_labels_none">Nenhuma</string>
 </resources>

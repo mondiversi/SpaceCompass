@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="point_reminder_alarm">ضبط منبّه</string>
+    <string name="point_reminder_calendar">إضافة إلى التقويم</string>
+    <string name="point_reminder_unavailable">التذكير غير متاح لهذه النقطة</string>
+    <string name="point_reminder_no_clock">لا يوجد تطبيق منبّه متاح</string>
+    <string name="point_reminder_no_calendar">لا يوجد تطبيق تقويم متاح</string>
+    <string name="settings_events_title">الأحداث</string>
+    <string name="settings_events_show_alarm">إظهار زر التنبيه في الشاشة الرئيسية</string>
+    <string name="settings_events_description">إدارة خيارات الأحداث السماوية.</string>
+</resources>

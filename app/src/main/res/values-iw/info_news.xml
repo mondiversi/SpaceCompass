@@ -1,9 +1,9 @@
 <resources>
     <string name="info_news_title">החידושים האחרונים · %1$s</string>
-    <string name="info_news_star_sky" formatted="false">בתרחיש המותאם אישית אפשר להגדיר בנפרד מיקום, גובה, אזור זמן, תאריך ושעה.</string>
-    <string name="info_news_texture_downloads" formatted="false">השעון המותאם יכול להמשיך להתקדם גם לאחר סגירת האפליקציה; אפשר גם להשתמש בתאריך או בשעה הנוכחיים.</string>
-    <string name="info_news_weather" formatted="false">התרחיש הנוכחי מסכם את ההגדרות הפעילות ואת המקום המשוער; הסמל הראשי מציג את מספרן.</string>
-    <string name="info_news_viewer_zoom" formatted="false">אפשר להחיל יחד גובה ואזור זמן של מיקום, עם שמירה אוטומטית והתראות לכל סעיף.</string>
-    <string name="info_news_settings" formatted="false">שמות קווי הייחוס הארציים שהופעלו נשארים גלויים בתצוגה הראשית ובתמונות, ללא תלות בהגדרות תוויות העצמים.</string>
-    <string name="info_news_catalog" formatted="false">שומר המסך מציג את המיקום הידוע האחרון עם כיוון מפה תקין, סיבוב מזרחה וזווית עונתית התואמת לתאריך התרחיש.</string>
+    <string name="info_news_star_sky" formatted="false">סיירו בשמיים יציבים יותר עם חלקות תנועה ניתנת לכוונון; מצב מאוזן הוא ברירת המחדל.</string>
+    <string name="info_news_texture_downloads" formatted="false">צרו שעונים מעוררים של Android או אירועי יומן לנקודות מסלול עתידיות, מתצוגת השמיים או מהמסלול היומי.</string>
+    <string name="info_news_weather" formatted="false">גלו את Tesla Roadster (2018), עם אפמרידות הליוצנטריות, נתוני ייחוס ותמונה להורדה.</string>
+    <string name="info_news_viewer_zoom" formatted="false">זהו בקלות אירועים נוכחיים ועיקריים במסלול היומי, עם שורה נוכחית מודגשת וערכים חשובים בגופן מודגש.</string>
+    <string name="info_news_settings" formatted="false">הסירו גרם ישירות מהכרטיס הראשי שלו לאחר אישור, וזהו את שמו לפי צבע המסלול.</string>
+    <string name="info_news_catalog" formatted="false">בועות הנקודות נשארות מעל סמלי הגרמים בלי לקפוץ; השמות ומקראי התמונות והפנורמות שומרים על הצבע המלא של הגרם.</string>
 </resources>

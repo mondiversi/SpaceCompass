@@ -24,6 +24,9 @@ internal data class SpaceCompassCelestialFacts(
 )
 
 internal fun spaceCompassCelestialFacts(body: SpaceCompassCelestialBody): SpaceCompassCelestialFacts = when (body) {
+    // JPL spacecraft record: approximate mass of the car with batteries, not the upper-stage stack.
+    SpaceCompassCelestialBody.TESLA_ROADSTER -> SpaceCompassCelestialFacts(
+        massKg = 1250.0, massEstimated = true, parent = SpaceCompassCelestialBody.SUN)
     SpaceCompassCelestialBody.SIRIUS -> siriusFacts()
     // Joyce et al. 2020: a present-day model mass range, not an invented symmetric measurement error.
     SpaceCompassCelestialBody.BETELGEUSE -> SpaceCompassCelestialFacts(
@@ -154,6 +157,7 @@ internal fun formatSpaceCompassCelestialGravity(value: Double?, numeric: SpaceCo
 
 internal val SpaceCompassCelestialBody.viewerTexture: String?
     get() = when (this) {
+        SpaceCompassCelestialBody.TESLA_ROADSTER -> "tesla_roadster.webp"
         SpaceCompassCelestialBody.HALLEY, SpaceCompassCelestialBody.COMET_67P, SpaceCompassCelestialBody.EARTH_CENTER, SpaceCompassCelestialBody.TRAPPIST_1_E -> null
         SpaceCompassCelestialBody.PROXIMA_CENTAURI, SpaceCompassCelestialBody.RIGEL,
         SpaceCompassCelestialBody.ALPHA_CENTAURI, SpaceCompassCelestialBody.SAGITTARIUS_A,
@@ -165,7 +169,7 @@ internal val SpaceCompassCelestialBody.viewerTexture: String?
         SpaceCompassCelestialBody.VENUS -> "venus_atmosphere.webp"
         else -> "${name.lowercase(java.util.Locale.ROOT)}.webp"
     }
-internal val SpaceCompassCelestialBody.isSpacecraft: Boolean get() = isEarthSatellite || isVoyager
+internal val SpaceCompassCelestialBody.isSpacecraft: Boolean get() = isEarthSatellite || isVoyager || this == SpaceCompassCelestialBody.TESLA_ROADSTER
 
 /** Raster X increases eastward even for ISIS PositiveWest coordinate labels.
  * Europa/Pluto/Titan span 0..360; the other reference maps are centred on longitude zero. */
@@ -235,6 +239,7 @@ private fun siriusFacts(): SpaceCompassCelestialFacts {
 }
 
 internal val SpaceCompassCelestialBody.hasCatalogPhotograph: Boolean get() = when (this) {
+    SpaceCompassCelestialBody.TESLA_ROADSTER -> true
     SpaceCompassCelestialBody.SIRIUS, SpaceCompassCelestialBody.BETELGEUSE,
     SpaceCompassCelestialBody.ORION_NEBULA, SpaceCompassCelestialBody.PLEIADES -> true
     else -> false

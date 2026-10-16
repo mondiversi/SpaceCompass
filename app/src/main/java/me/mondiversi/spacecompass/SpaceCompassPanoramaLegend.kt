@@ -45,7 +45,7 @@ internal class SpaceCompassPanoramaLegend(val width: Int, val height: Int,
     }
 }
 
-/** Use the frozen, already localized names and the same palette as the orbit strokes. */
+/** Use frozen localized names and full above-horizon identity colors, regardless of elevation. */
 internal fun prepareSpaceCompassPanoramaLegend(objects: List<SpaceCompassPanoramaObject>, width: Int,
     scale: Float = width / 4096f): SpaceCompassPanoramaLegend {
     require(width > 0 && scale.isFinite() && scale > 0)
@@ -65,7 +65,7 @@ internal fun prepareSpaceCompassPanoramaLegend(objects: List<SpaceCompassPanoram
             .setTextDirection(TextDirectionHeuristics.FIRSTSTRONG_LTR).setAlignment(Layout.Alignment.ALIGN_NORMAL)
             .setIncludePad(false).setMaxLines(1).setEllipsize(TextUtils.TruncateAt.END).build()
         val entry = SpaceCompassPanoramaLegendEntry(label,
-            spaceCompassCelestialPathLineTint(spaceCompassCelestialPathTint(item.body), false).toArgb(),
+            spaceCompassCelestialPathTint(item.body).toArgb(),
             80 * scale + labelWidth)
         val gap = if (entries.isEmpty()) 0f else 48 * scale
         if (entries.isNotEmpty() && rowWidth + gap + entry.width > available) {

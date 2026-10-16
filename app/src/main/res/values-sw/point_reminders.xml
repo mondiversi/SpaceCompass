@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="point_reminder_alarm">Weka kengele</string>
+    <string name="point_reminder_calendar">Ongeza kwenye Kalenda</string>
+    <string name="point_reminder_unavailable">Kikumbusho hakipatikani kwa sehemu hii</string>
+    <string name="point_reminder_no_clock">Hakuna programu ya kengele inayopatikana</string>
+    <string name="point_reminder_no_calendar">Hakuna programu ya kalenda inayopatikana</string>
+    <string name="settings_events_title">Matukio</string>
+    <string name="settings_events_show_alarm">Onyesha kitufe cha arifa kwenye skrini kuu</string>
+    <string name="settings_events_description">Dhibiti chaguo za matukio ya angani.</string>
+</resources>

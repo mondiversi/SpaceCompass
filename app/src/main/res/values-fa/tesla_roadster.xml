@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="celestial_tesla_roadster" formatted="false">Tesla Roadster (2018)</string>
+    <string name="celestial_roadster_type" formatted="false">محموله در مدار خورشیدمرکزی</string>
+    <string name="celestial_roadster_note" formatted="false">به دور خورشید می‌گردد، نه زمین. در سال ۲۰۱۸ پرتاب شد. مسیر پیش‌بینی‌شدهٔ NASA/JPL است، نه دورسنجی زنده. جرم تقریبی مربوط به خودرو با باتری‌هاست، بدون مرحلهٔ موشک و پایه. عکس آرشیوی پرتاب؛ ظاهر و جهت‌گیری کنونی نامعلوم است.</string>
+</resources>

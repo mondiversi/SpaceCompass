@@ -8,8 +8,8 @@ paths, inspect reference facts and view textured models. Space Compass is a stan
 
 ## Download and install
 
-Download **space-compass-1.3.8.apk** from the
-[Space Compass 1.3.8 release](https://github.com/mondiversi/SpaceCompass/releases/tag/v1.3.8).
+Download **space-compass-1.4.0.apk** from the
+[Space Compass 1.4.0 release](https://github.com/mondiversi/SpaceCompass/releases/tag/v1.4.0).
 Android 8.0 or newer is required. Open the APK and follow Android's installation
 prompts; allow installation for your browser or file manager if requested.
 
@@ -22,17 +22,20 @@ one manual APK update to acquire this feature.
 The release includes `SHA256SUMS.txt` and a signed update index. GitHub's source
 ZIP/TAR archives and Actions debug artifacts are separate from the signed APK.
 See [distribution and signing](docs/GITHUB_RELEASES.md) and
-[the 1.3.8 release audit](docs/RELEASE_1_3_8.md).
+[the 1.4.0 release audit](docs/RELEASE_1_4_0.md).
 
 ## Features
 
 - Live azimuth/altitude, compass guidance, named daily paths and satellite passes. Pin multiple path points and manage the same selections in the daily path. Reticle-focused callouts show clock and T± side by side. Current positions and lunar phases remain available.
-- Thirty-five ordinary catalog objects: Sun, Moon, planets, natural/artificial satellites,
+- Thirty-six ordinary catalog objects: Sun, Moon, planets, natural/artificial satellites,
   comets, Voyager spacecraft, nearby stars, nebulae, star clusters, compact objects and an exoplanet.
 - Live search by localized name or catalog identifier, combined with type/visibility filters.
 - Type/visibility filters and numeric sorting by distance, mass, diameter, pressure,
   gravity and temperature. Missing properties remain unavailable and sort last.
 - Selections, active target, filters, sorting, units and interface settings persist.
+- Send future path points to Android Clock or Calendar with a visible handoff; control the main-view alert button under General → Events.
+- Follow Tesla Roadster (2018) using JPL heliocentric ephemerides and a verified archival photograph.
+- Steadier sensor-driven motion combines short gyroscope increments with the measured magnetic/gravity reference, and pauses with the screensaver/background lifecycle.
 - Rear-camera overlays with celestial markers and paths, consistent ultrawide/zoom
   steps, pinch and direct level selection; full 360° sky panoramas.
 - Exposure-time direction, inclination and field of view in camera photos; previews
@@ -49,7 +52,7 @@ See [distribution and signing](docs/GITHUB_RELEASES.md) and
   summary shows saved overrides and an approximate place, with an active-section badge.
 - Observatory with textured interactive models, lunar phases, classified reference tables,
   qualified core temperatures, spatial context and credits. Export data and current/rotation images.
-- General settings combine light/dark themes, display options and original ambient music synthesized continuously offline.
+- General settings combine light/dark themes, adjustable sky fluidity, event controls and original ambient music synthesized continuously offline. Balanced fluidity is the default; previously saved levels are retained.
   Music starts enabled at 20% volume, with saved on/off and ten-percent volume steps.
 - Music and scenario cards reveal their controls with 300 ms animations; disabled cards retain only their headings.
 - Full-screen animated Earth screensaver with local time, date and battery, enabled after five minutes by default. It shows the last known observer position on a correctly oriented globe with eastward spin and a Sun-facing seasonal perspective based on the effective scenario date. It pauses live sensors, GPS, camera and data refresh until dismissed.
@@ -57,7 +60,7 @@ See [distribution and signing](docs/GITHUB_RELEASES.md) and
 - Translucent main islands with paths and objects drawn behind them, a reticle centred in the free sky area and a 55/45 landscape split.
 - Titled photo/panorama previews with opaque theme-matched toolbars and top-aligned controls, object-colour legends and larger wrapping photo metadata on a separate opaque black band.
 - White reticle, existing-outline object focus/selection, a lighter daytime blue and stable bottom-right landscape capture. Collapsed landscape panels use a floating central title bar.
-- Stable ground, orbits and star background when returning from background; optically centred object arrows and a clear screensaver return hint.
+- Stable ground, orbits and star background when returning from background; optically centred object arrows and a clear screensaver return hint. Focused callouts cover celestial icons without jumping; object names and capture legends use the full identity color. Remove a checked object directly from its main card after confirmation.
 - Compact T+/T− hour/minute offsets shared by views and exports; orbit points behind translucent title/information overlays remain visible without being selectable.
 - Capture labels can show only key events and selected points across all objects; this is the default for fresh settings. Existing saved label choices remain intact.
 - Enabled Earth-reference names remain visible through reticle crossings and all capture-label policies.
@@ -67,7 +70,7 @@ See [distribution and signing](docs/GITHUB_RELEASES.md) and
 - Signed startup/manual GitHub updates with package, certificate, size and checksum verification.
 
 The application ID is `me.mondiversi.spacecompass`. The current stable version is
-**1.3.8**, with Android/update identity `1.3.8` and version code **36**.
+**1.4.0**, with Android/update identity `1.4.0` and version code **37**.
 This preserves the three-part update protocol used by existing preview installations.
 The app stores its preferences and caches privately.
 
@@ -129,7 +132,7 @@ Launcher/loading artwork and the fictional Easter-egg texture are original asset
 
 ## Data and graphics packages
 
-Release 1.3.8 also provides a reference-information ZIP and the current 18-image
+Release 1.4.0 also provides a reference-information ZIP and the current 19-image
 2K WebP graphics ZIP, both with file manifests and credits. They are optional
 archives: scientific reference data, all 20 languages, the star atlas and LV-426
 are already included in the APK. Planet maps and archival photographs are downloaded individually from

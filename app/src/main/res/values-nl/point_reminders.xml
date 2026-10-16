@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="point_reminder_alarm">Wekker instellen</string>
+    <string name="point_reminder_calendar">Toevoegen aan agenda</string>
+    <string name="point_reminder_unavailable">Herinnering niet beschikbaar voor dit punt</string>
+    <string name="point_reminder_no_clock">Geen wekkerapp beschikbaar</string>
+    <string name="point_reminder_no_calendar">Geen agenda-app beschikbaar</string>
+    <string name="settings_events_title">Gebeurtenissen</string>
+    <string name="settings_events_show_alarm">Waarschuwingsknop tonen in de hoofdweergave</string>
+    <string name="settings_events_description">Beheer opties voor gebeurtenissen aan de hemel.</string>
+</resources>

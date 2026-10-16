@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="celestial_remove_title">Remover objeto</string>
+    <string name="celestial_remove_message">Remover %1$s dos objetos selecionados?</string>
+    <string name="celestial_remove_action">Remover</string>
+    <string name="celestial_remove_cancel">Cancelar</string>
+    <string name="celestial_remove_description">Remover %1$s da seleção</string>
+</resources>

@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="settings_sky_fluidity_title">Akıcılık</string>
+    <string name="settings_sky_fluidity_description">Gökyüzünün hareket akıcılığını ayarlayın. Yüksek düzeyler daha fazla pil tüketebilir.</string>
+    <string name="settings_sky_fluidity_low">Düşük</string>
+    <string name="settings_sky_fluidity_balanced">Dengeli</string>
+    <string name="settings_sky_fluidity_high">Yüksek</string>
+</resources>

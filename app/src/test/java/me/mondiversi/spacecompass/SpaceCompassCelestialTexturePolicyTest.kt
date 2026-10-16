@@ -27,12 +27,12 @@ class SpaceCompassCelestialTexturePolicyTest {
 
     @Test fun packCoversEveryRemoteMapWithoutFictionalTextureOrDuplicateNames() {
         val images = SpaceCompassCelestialTexturePolicy.images
-        assertEquals(18, images.size)
-        assertEquals(18, images.map { it.name }.distinct().size)
+        assertEquals(19, images.size)
+        assertEquals(19, images.map { it.name }.distinct().size)
         assertFalse(images.any { it.name == "lv426.webp" })
         for (body in SpaceCompassCelestialBody.entries.filter { it.viewerTexture != null && it != SpaceCompassCelestialBody.LV_426 })
             assertNotNull(body.name, SpaceCompassCelestialTexturePolicy.texture(body.viewerTexture))
-        assertEquals(3_969_738, images.sumOf { it.bytes })
+        assertEquals(4_127_352, images.sumOf { it.bytes })
     }
 
     @Test fun byteLengthAndDigestAreBothRequired() {

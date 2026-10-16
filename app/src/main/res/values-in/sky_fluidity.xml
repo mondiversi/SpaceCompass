@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="settings_sky_fluidity_title">Kelancaran</string>
+    <string name="settings_sky_fluidity_description">Atur kelancaran gerakan langit. Tingkat lebih tinggi dapat memakai lebih banyak baterai.</string>
+    <string name="settings_sky_fluidity_low">Rendah</string>
+    <string name="settings_sky_fluidity_balanced">Seimbang</string>
+    <string name="settings_sky_fluidity_high">Tinggi</string>
+</resources>

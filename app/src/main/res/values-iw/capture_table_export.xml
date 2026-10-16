@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <string name="capture_export_files_heading">קבצים</string>
     <string name="capture_export_image">תמונה (JPG)</string>
     <string name="capture_export_csv">טבלה (CSV)</string>
     <string name="capture_export_txt">טבלה קריאה (TXT)</string>

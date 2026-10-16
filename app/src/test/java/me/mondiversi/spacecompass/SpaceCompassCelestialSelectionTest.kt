@@ -4,6 +4,23 @@ import org.junit.Assert.*
 import org.junit.Test
 
 class SpaceCompassCelestialSelectionTest {
+    @Test fun staleRemovalNeverRechecksAnObjectAndLeavesOtherSelectionsAlone() {
+        val before = SpaceCompassCelestialSelection().toggle(SpaceCompassCelestialBody.MARS)
+        val after = before.deselect(SpaceCompassCelestialBody.MOON)
+        assertEquals(before.selected - SpaceCompassCelestialBody.MOON, after.selected)
+        assertEquals(before.active, after.active)
+        assertSame(after, after.deselect(SpaceCompassCelestialBody.MOON))
+        assertSame(after, after.deselect(SpaceCompassCelestialBody.ISS))
+    }
+
+    @Test fun removingTheLastObjectRestoresAsAnExplicitlyEmptySelection() {
+        val last = SpaceCompassCelestialSelection(setOf(SpaceCompassCelestialBody.MOON), SpaceCompassCelestialBody.MOON)
+        val empty = last.deselect(SpaceCompassCelestialBody.MOON)
+        assertTrue(empty.selected.isEmpty())
+        assertNull(empty.active)
+        assertEquals(empty, restoreSpaceCompassCelestialSelection(empty.ordered.map { it.name }.toSet(), empty.active?.name))
+    }
+
     @Test fun sunOnlyImmediatelyExcludesOtherCachedPositionsAndPaths() {
         val catalogue = SpaceCompassCelestialBody.entries.associateWith { it.name }
         val visible = spaceCompassSelectedCelestialEntries(catalogue, setOf(SpaceCompassCelestialBody.SUN))
@@ -51,7 +68,7 @@ class SpaceCompassCelestialSelectionTest {
         assertEquals(state.selected, state.step(1).selected)
     }
     @Test fun removingTheActiveObjectChoosesAnotherCheckedObject() {
-        val state = SpaceCompassCelestialSelection().toggle(SpaceCompassCelestialBody.SUN)
+        val state = SpaceCompassCelestialSelection().deselect(SpaceCompassCelestialBody.SUN)
         assertEquals(SpaceCompassCelestialBody.MOON, state.active)
         assertEquals(setOf(SpaceCompassCelestialBody.MOON), state.selected)
     }

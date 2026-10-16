@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="point_reminder_alarm">Alarm kur</string>
+    <string name="point_reminder_calendar">Takvime ekle</string>
+    <string name="point_reminder_unavailable">Bu nokta için hatırlatıcı kullanılamıyor</string>
+    <string name="point_reminder_no_clock">Kullanılabilir alarm uygulaması yok</string>
+    <string name="point_reminder_no_calendar">Kullanılabilir takvim uygulaması yok</string>
+    <string name="settings_events_title">Olaylar</string>
+    <string name="settings_events_show_alarm">Ana ekranda uyarı düğmesini göster</string>
+    <string name="settings_events_description">Gök olaylarına ilişkin seçenekleri yönetin.</string>
+</resources>

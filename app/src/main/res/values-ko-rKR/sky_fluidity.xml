@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="settings_sky_fluidity_title">부드러움</string>
+    <string name="settings_sky_fluidity_description">하늘 움직임의 부드러움을 조절합니다. 높은 단계에서는 배터리 소모가 늘어날 수 있습니다.</string>
+    <string name="settings_sky_fluidity_low">낮음</string>
+    <string name="settings_sky_fluidity_balanced">균형</string>
+    <string name="settings_sky_fluidity_high">높음</string>
+</resources>

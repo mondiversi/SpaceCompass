@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="settings_sky_fluidity_title">Fluidez</string>
+    <string name="settings_sky_fluidity_description">Ajusta la fluidez del cielo. Los niveles más altos pueden consumir más batería.</string>
+    <string name="settings_sky_fluidity_low">Baja</string>
+    <string name="settings_sky_fluidity_balanced">Equilibrada</string>
+    <string name="settings_sky_fluidity_high">Alta</string>
+</resources>

@@ -1,7 +1,47 @@
+import java.util.Properties
+
 plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.kotlin.compose)
 }
+
+// Private Dropbox configuration is never part of the repository or APK.
+val releaseSigningDirectory =
+    providers.environmentVariable("MONDIVERSI_SIGNING_DIR").orNull
+        ?.takeIf { it.isNotBlank() }
+        ?.let {
+            File(it).also { path ->
+                require(path.isAbsolute) { "MONDIVERSI_SIGNING_DIR must be an absolute path" }
+            }
+        }
+        ?: File(System.getProperty("user.home"), "Dropbox/Mondiversi/UvirSigning")
+val releaseSigningSources = listOf(
+    File(releaseSigningDirectory, "signing.properties"),
+    rootProject.file("signing.properties")
+).filter { it.isFile }
+val releaseSigningProperties = Properties().apply {
+    releaseSigningSources.forEach { source -> source.inputStream().use(::load) }
+}
+fun signingCredential(environmentName: String, propertyName: String): String? =
+    providers.environmentVariable(environmentName).orNull?.takeIf { it.isNotEmpty() }
+        ?: releaseSigningProperties.getProperty(propertyName)
+val releaseStorePassword = signingCredential("SPACE_COMPASS_STORE_PASSWORD", "storePassword")
+val releaseKeyAlias = signingCredential("SPACE_COMPASS_KEY_ALIAS", "keyAlias")
+val releaseKeyPassword = signingCredential("SPACE_COMPASS_KEY_PASSWORD", "keyPassword")
+val releaseStoreOverride = providers.environmentVariable("SPACE_COMPASS_KEYSTORE").orNull
+    ?.takeIf { it.isNotBlank() }
+    ?: releaseSigningProperties.getProperty("storeFile")?.trim()?.takeIf { it.isNotEmpty() }
+val releaseKeystoreFile = releaseStoreOverride?.let {
+    File(it).also { path -> require(path.isAbsolute) { "Signing key override must be an absolute path" } }
+} ?: File(releaseSigningDirectory, "uvir-release.jks")
+val releaseSigningConfigured = releaseSigningSources.isNotEmpty() ||
+    listOf(releaseStorePassword, releaseKeyAlias, releaseKeyPassword, releaseStoreOverride).any { it != null }
+if (releaseSigningConfigured) {
+    require(listOf(releaseStorePassword, releaseKeyAlias, releaseKeyPassword).all { !it.isNullOrEmpty() }) {
+        "Private signing configuration requires storePassword, keyAlias and keyPassword"
+    }
+}
+
 android {
     namespace = "me.mondiversi.spacecompass"
     compileSdk { version = release(37) }
@@ -9,12 +49,27 @@ android {
         applicationId = "me.mondiversi.spacecompass"
         minSdk = 26
         targetSdk = 37
-        versionCode = 36
-        versionName = "1.3.8"
-        buildConfigField("String", "DISPLAY_VERSION", "\"1.3.8\"")
+        versionCode = 37
+        versionName = "1.4.0"
+        buildConfigField("String", "DISPLAY_VERSION", "\"1.4.0\"")
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
     }
-    buildTypes { release { optimization { enable = true } } }
+    signingConfigs {
+        if (releaseSigningConfigured) {
+            create("distribution") {
+                storeFile = releaseKeystoreFile
+                storePassword = releaseStorePassword
+                keyAlias = releaseKeyAlias
+                keyPassword = releaseKeyPassword
+            }
+        }
+    }
+    buildTypes {
+        release {
+            if (releaseSigningConfigured) signingConfig = signingConfigs.getByName("distribution")
+            optimization { enable = true }
+        }
+    }
     compileOptions {
         sourceCompatibility = JavaVersion.VERSION_11
         targetCompatibility = JavaVersion.VERSION_11

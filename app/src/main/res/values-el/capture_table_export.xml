@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <string name="capture_export_files_heading">Αρχεία</string>
     <string name="capture_export_image">Εικόνα (JPG)</string>
     <string name="capture_export_csv">Πίνακας (CSV)</string>
     <string name="capture_export_txt">Αναγνώσιμος πίνακας (TXT)</string>

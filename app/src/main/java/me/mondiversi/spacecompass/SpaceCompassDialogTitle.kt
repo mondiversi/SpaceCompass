@@ -67,7 +67,8 @@ internal fun SpaceCompassAlertDialog(
     properties: DialogProperties = DialogProperties(),
     fixedBottomContent: @Composable (() -> Unit)? = null,
     scrollContent: Boolean = true,
-    rotateContent: Boolean = false
+    rotateContent: Boolean = false,
+    confirmButtonFirst: Boolean = false
 ) {
     // A Dialog owns another Android Compose view. Restore the host's density
     // AND logical configuration inside that window, before measuring anything.
@@ -180,8 +181,9 @@ internal fun SpaceCompassAlertDialog(
                                 LocalTextStyle provides MaterialTheme.typography.labelLarge
                             ) {
                                 SpaceCompassDialogActionFlow(Modifier.align(Alignment.End)) {
+                                    if (confirmButtonFirst) confirmButton?.invoke()
                                     dismissButton?.invoke()
-                                    confirmButton?.invoke()
+                                    if (!confirmButtonFirst) confirmButton?.invoke()
                                 }
                             }
                         }

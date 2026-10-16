@@ -218,24 +218,25 @@ internal fun SpaceCompassSunPointingViewport(
                 }
             }
             SpaceCompassCelestialSceneInteraction(targets, current, focused, dailyPathUiState, timeMs, orientation.takeIf { compassReliable },
-                primaryText, secondaryText, backgroundColor, exclusions + offscreen.values.map {
-                    SpaceCompassSunSceneFrame(it.center.x - markerDiameter / 2, it.center.y - markerDiameter / 2, markerDiameter, markerDiameter)
-                }, scenePerspective, paths, pinnedTargets = pinned, hitExclusions = titleTouchExclusions)
-            // Only thumbnails have small local targets; they never intercept another path's whole viewport.
-            spaceCompassAllCelestialOrder.forEach { candidate -> key(candidate) { projections[candidate]?.let { projected ->
-                val below = positions.getValue(candidate).elevationDegrees < 0
-                if (projected.visible) SpaceCompassCelestialLiveMarker(candidate, projected, below, current[candidate], dailyPathUiState,
-                    moonPhase = moonPhase, path = paths[candidate],
-                    interactive = compassReliable && !spaceCompassScenePointIsCovered(SpaceCompassSunScenePoint(
-                        pixelProjections.getValue(candidate).x, pixelProjections.getValue(candidate).y), titleTouchExclusions),
-                    focused = focused?.let { it.isCurrent && it.body == candidate } == true)
-                else offscreen[candidate]?.let { placement ->
-                    SpaceCompassCelestialOffscreenMarker(candidate, projected, below,
-                        spaceCompassCelestialPathLineTint(spaceCompassCelestialPathTint(candidate), below),
-                        menuItems = 0, forcedPlacement = placement, diameter = (markerDiameter / density.density).toFloat().dp,
-                        moonPhase = moonPhase)
-                }
-            } } }
+                // Captions paint above celestial locators; moving them must not flip a caption's side.
+                primaryText, secondaryText, backgroundColor, exclusions,
+                scenePerspective, paths, pinnedTargets = pinned, hitExclusions = titleTouchExclusions) {
+                // Only thumbnails have small local targets; they never intercept another path's whole viewport.
+                spaceCompassAllCelestialOrder.forEach { candidate -> key(candidate) { projections[candidate]?.let { projected ->
+                    val below = positions.getValue(candidate).elevationDegrees < 0
+                    if (projected.visible) SpaceCompassCelestialLiveMarker(candidate, projected, below, current[candidate], dailyPathUiState,
+                        moonPhase = moonPhase, path = paths[candidate],
+                        interactive = compassReliable && !spaceCompassScenePointIsCovered(SpaceCompassSunScenePoint(
+                            pixelProjections.getValue(candidate).x, pixelProjections.getValue(candidate).y), titleTouchExclusions),
+                        focused = focused?.let { it.isCurrent && it.body == candidate } == true)
+                    else offscreen[candidate]?.let { placement ->
+                        SpaceCompassCelestialOffscreenMarker(candidate, projected, below,
+                            spaceCompassCelestialPathLineTint(spaceCompassCelestialPathTint(candidate), below),
+                            menuItems = 0, forcedPlacement = placement, diameter = (markerDiameter / density.density).toFloat().dp,
+                            moonPhase = moonPhase)
+                    }
+                } } }
+            }
             if (showActions) SpaceCompassCelestialSkyActions(body, onVisualize,
                 dailyPath?.let { { dailyPathUiState.openMenu(it, current[body]?.let { point -> spaceCompassCurrentPathPoint(body, point.timeMs, point.position) }) } },
                 stringResource(spaceCompassCelestialPathTitle(body)),

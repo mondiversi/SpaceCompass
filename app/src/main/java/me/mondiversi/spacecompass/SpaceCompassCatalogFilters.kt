@@ -28,7 +28,7 @@ internal val SpaceCompassCelestialBody.catalogType: SpaceCompassCatalogType get(
     SpaceCompassCelestialBody.SAGITTARIUS_A, SpaceCompassCelestialBody.ANDROMEDA_CORE, SpaceCompassCelestialBody.TON_618 -> SpaceCompassCatalogType.BLACK_HOLE
     SpaceCompassCelestialBody.RX_J1856, SpaceCompassCelestialBody.PSR_J0437 -> SpaceCompassCatalogType.NEUTRON_STAR
     SpaceCompassCelestialBody.ISS -> SpaceCompassCatalogType.SPACE_STATION
-    SpaceCompassCelestialBody.STARLINK_V3 -> SpaceCompassCatalogType.ARTIFICIAL_SATELLITE
+    SpaceCompassCelestialBody.STARLINK_V3, SpaceCompassCelestialBody.TESLA_ROADSTER -> SpaceCompassCatalogType.ARTIFICIAL_SATELLITE
     SpaceCompassCelestialBody.VOYAGER_1, SpaceCompassCelestialBody.VOYAGER_2 -> SpaceCompassCatalogType.SPACE_PROBE
 }
 

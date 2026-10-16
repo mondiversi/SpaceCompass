@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="settings_sky_fluidity_title">Плавность</string>
+    <string name="settings_sky_fluidity_description">Настройте плавность движения неба. Высокий уровень может увеличить расход батареи.</string>
+    <string name="settings_sky_fluidity_low">Низкая</string>
+    <string name="settings_sky_fluidity_balanced">Сбалансированная</string>
+    <string name="settings_sky_fluidity_high">Высокая</string>
+</resources>

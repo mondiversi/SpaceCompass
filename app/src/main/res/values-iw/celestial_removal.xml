@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="celestial_remove_title">הסרת עצם</string>
+    <string name="celestial_remove_message">להסיר את %1$s מהעצמים שנבחרו?</string>
+    <string name="celestial_remove_action">הסרה</string>
+    <string name="celestial_remove_cancel">ביטול</string>
+    <string name="celestial_remove_description">הסרת %1$s מהבחירה</string>
+</resources>

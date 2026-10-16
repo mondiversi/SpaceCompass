@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="celestial_tesla_roadster" formatted="false">Tesla Roadster (2018)</string>
+    <string name="celestial_roadster_type" formatted="false">太陽周回軌道のペイロード</string>
+    <string name="celestial_roadster_note" formatted="false">地球ではなく太陽を周回します。2018年に打ち上げ。NASA/JPLの予測軌道であり、リアルタイムのテレメトリではありません。概算質量はバッテリーを含む車両のみで、ロケット段と取付台を除きます。打ち上げ時の記録写真で、現在の外観と姿勢は不明です。</string>
+</resources>

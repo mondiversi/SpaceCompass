@@ -20,6 +20,7 @@ import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.LifecycleEventObserver
 import androidx.lifecycle.compose.LocalLifecycleOwner
 import kotlin.math.*
+import kotlinx.coroutines.flow.collect
 import kotlinx.coroutines.Job
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.isActive
@@ -62,6 +63,8 @@ internal fun rememberSpaceCompassSunFinderReadings(permissionGranted: Boolean, p
     val view = LocalView.current
     val lifecycleOwner = LocalLifecycleOwner.current
     val sensorPaused by rememberUpdatedState(paused)
+    val fluidity by rememberUpdatedState(SpaceCompassSkyFluidity.fromStored(
+        LocalSpaceCompassPresentationSettings.current[SPACE_COMPASS_SKY_FLUIDITY_KEY]))
     val monitorScope = rememberCoroutineScope()
     var readings by remember { mutableStateOf(SpaceCompassSunFinderReadings()) }
     DisposableEffect(context, view, lifecycleOwner, permissionGranted) {
@@ -70,6 +73,7 @@ internal fun rememberSpaceCompassSunFinderReadings(permissionGranted: Boolean, p
         val gravitySensor = sensors?.getDefaultSensor(Sensor.TYPE_GRAVITY)
             ?: sensors?.getDefaultSensor(Sensor.TYPE_ACCELEROMETER)
         val magnetometer = sensors?.getDefaultSensor(Sensor.TYPE_MAGNETIC_FIELD)
+        val gyroscope = sensors?.getDefaultSensor(Sensor.TYPE_GYROSCOPE)
         val available = gravitySensor != null && magnetometer != null
         var started = false
         var declination = 0.0
@@ -79,12 +83,16 @@ internal fun rememberSpaceCompassSunFinderReadings(permissionGranted: Boolean, p
         var gravityTime = 0L
         var magneticTime = 0L
         var smoothed: SpaceCompassSunOrientation? = null
+        var smoothedRotation: Int? = null
         var lastEventTime = 0L
         var magneticAccuracy = SensorManager.SENSOR_STATUS_UNRELIABLE
+        val motionStabilizer = SpaceCompassSunMotionStabilizer()
         val recovery = SpaceCompassSunCompassRecovery()
         val issueStabilizer = SpaceCompassSunCompassIssueStabilizer()
         val watchdog = SpaceCompassSunSensorWatchdog()
         var watchdogJob: Job? = null
+        var fluidityJob: Job? = null
+        var registeredFluidity = fluidity
         val loggedErrors = mutableSetOf<String>()
         fun failure(source: String, error: Exception) {
             if (loggedErrors.add(source)) SpaceCompassErrorLog.record(context, "sun_finder:$source", error)
@@ -100,9 +108,11 @@ internal fun rememberSpaceCompassSunFinderReadings(permissionGranted: Boolean, p
                 ?.altitude?.toFloat() ?: 0f
             val field = GeomagneticField(copy.latitude.toFloat(), copy.longitude.toFloat(),
                 height, System.currentTimeMillis())
-            declination = field.declination.toDouble()
+            val nextDeclination = field.declination.toDouble()
+            // A normal GPS refresh must not snap the display back to an unfiltered pose.
+            smoothed = smoothed?.let { rebaseSpaceCompassSunOrientation(it, nextDeclination - declination) }
+            declination = nextDeclination
             expectedFieldMicrotesla = field.fieldStrength / 1_000.0 // Android reports nanotesla.
-            smoothed = null
             readings = readings.copy(location = copy, locationStatus = SpaceCompassSunLocationStatus.READY)
         }
         val locationListener = object : LocationListener {
@@ -121,6 +131,7 @@ internal fun rememberSpaceCompassSunFinderReadings(permissionGranted: Boolean, p
         }
         fun sensorReadingsFresh(now: Long) = spaceCompassSunSensorSamplesFresh(now, gravityTime, magneticTime)
         fun invalidateOrientation() {
+            motionStabilizer.reset()
             recovery.reset()
             issueStabilizer.reset()
             smoothed = null
@@ -139,6 +150,8 @@ internal fun rememberSpaceCompassSunFinderReadings(permissionGranted: Boolean, p
         val sensorListener = object : SensorEventListener {
             override fun onAccuracyChanged(sensor: Sensor, accuracy: Int) {
                 if (!started || sensorPaused) return
+                if (sensor.type == Sensor.TYPE_GYROSCOPE && accuracy <= SensorManager.SENSOR_STATUS_UNRELIABLE)
+                    motionStabilizer.reset()
                 if (sensor.type == Sensor.TYPE_MAGNETIC_FIELD) {
                     magneticAccuracy = accuracy
                     // A callback alone cannot establish fresh, plausible magnetic readings.
@@ -149,7 +162,7 @@ internal fun rememberSpaceCompassSunFinderReadings(permissionGranted: Boolean, p
                         val fresh = sensorReadingsFresh(SystemClock.elapsedRealtimeNanos())
                         val usable = readings.compassUsable && fresh &&
                             spaceCompassSunMagneticReferenceUsable(accuracy, field, expectedFieldMicrotesla)
-                        if (!usable) recovery.reset()
+                        if (!usable) { recovery.reset(); motionStabilizer.reset() }
                         readings = readings.copy(compassReliable = false, compassUsable = usable,
                             cameraAttitude = readings.cameraAttitude?.takeIf { usable },
                             compassIssue = issueStabilizer.update(spaceCompassSunCompassIssue(accuracy, field, expectedFieldMicrotesla,
@@ -160,6 +173,14 @@ internal fun rememberSpaceCompassSunFinderReadings(permissionGranted: Boolean, p
             override fun onSensorChanged(event: SensorEvent) {
                 if (!started || sensorPaused) return
                 when (event.sensor.type) {
+                    Sensor.TYPE_GYROSCOPE -> {
+                        if (event.values.size >= 3) motionStabilizer.recordGyroscope(event.timestamp,
+                            event.values[0].toDouble(), event.values[1].toDouble(), event.values[2].toDouble(),
+                            event.accuracy > SensorManager.SENSOR_STATUS_UNRELIABLE)
+                        else motionStabilizer.reset()
+                        // A gyro event must never refresh the absolute pose or magnetic sample age.
+                        return
+                    }
                     Sensor.TYPE_MAGNETIC_FIELD -> {
                         magnetic = event.values.copyOf()
                         magneticTime = event.timestamp
@@ -167,13 +188,18 @@ internal fun rememberSpaceCompassSunFinderReadings(permissionGranted: Boolean, p
                     }
                     Sensor.TYPE_GRAVITY, Sensor.TYPE_ACCELEROMETER -> {
                         val previous = gravity
-                        gravity = if (event.sensor.type == Sensor.TYPE_ACCELEROMETER && previous != null)
-                            FloatArray(3) { previous[it] * 0.8f + event.values[it] * 0.2f }
-                        else event.values.copyOf()
+                        gravity = if (event.sensor.type == Sensor.TYPE_ACCELEROMETER && previous != null) {
+                            // Preserve the fallback filter response when sampling faster or irregularly.
+                            val blend = spaceCompassSunSmoothingWeight(event.timestamp - gravityTime,
+                                SPACE_COMPASS_SUN_GRAVITY_SMOOTHING_NS).toFloat()
+                            FloatArray(3) { previous[it] + (event.values[it] - previous[it]) * blend }
+                        } else event.values.copyOf()
                         gravityTime = event.timestamp
                     }
+                    else -> return
                 }
-                if (event.timestamp - lastEventTime < 40_000_000L) return
+                val elapsed = event.timestamp - lastEventTime
+                if (elapsed < registeredFluidity.minimumUpdateIntervalNs) return
                 lastEventTime = event.timestamp
                 val g = gravity
                 val m = magnetic
@@ -205,26 +231,39 @@ internal fun rememberSpaceCompassSunFinderReadings(permissionGranted: Boolean, p
                 val usable = recovery.update(recent && spaceCompassSunMagneticReferenceUsable(
                     magneticAccuracy, fieldMicrotesla, expectedFieldMicrotesla), event.timestamp)
                 // Recalibration must not blend a previously invalid bearing into a valid one.
-                smoothed = if (usable) smoothSpaceCompassSunOrientation(smoothed, current) else null
+                if (smoothedRotation != displayRotation || !usable) {
+                    smoothed = null
+                    motionStabilizer.reset()
+                }
+                smoothedRotation = displayRotation
+                smoothed = if (usable) motionStabilizer.smooth(smoothed, current,
+                    event.timestamp - elapsed, event.timestamp, now, displayRotation) else null
+                val measuredPose = smoothed ?: current
                 val reliable = usable && spaceCompassSunMagneticReferenceReliable(magneticAccuracy, fieldMicrotesla, expectedFieldMicrotesla)
-                readings = readings.copy(orientation = smoothed ?: current, compassReliable = reliable, compassUsable = usable,
+                readings = readings.copy(orientation = measuredPose, compassReliable = reliable, compassUsable = usable,
                     compassIssue = issueStabilizer.update(
                         spaceCompassSunCompassIssue(magneticAccuracy, fieldMicrotesla, expectedFieldMicrotesla, recent, usable),
                         magneticTime),
-                    cameraAttitude = spaceCompassSunOrientationFromScreenMatrix(matrix, declination)?.let {
-                        SpaceCompassCameraAttitude(event.timestamp, it, usable) })
+                    cameraAttitude = SpaceCompassCameraAttitude(event.timestamp,
+                        spaceCompassSceneRemapOrientation(measuredPose, displayRotation, Surface.ROTATION_0), usable))
             }
         }
         fun registerSensorListeners() {
+            registeredFluidity = fluidity
             sensors?.unregisterListener(sensorListener)
             resetSensorSamples()
             try {
                 val registered = if (available) {
-                    val g = sensors?.registerListener(sensorListener, gravitySensor, SensorManager.SENSOR_DELAY_UI) == true
-                    val m = sensors?.registerListener(sensorListener, magnetometer, SensorManager.SENSOR_DELAY_UI) == true
+                    val g = sensors?.registerListener(sensorListener, gravitySensor, registeredFluidity.sensorPeriodUs) == true
+                    val m = sensors?.registerListener(sensorListener, magnetometer, registeredFluidity.sensorPeriodUs) == true
                     g && m
                 } else false
                 if (!registered) sensors?.unregisterListener(sensorListener)
+                else if (gyroscope != null) {
+                    // Optional: a missing/rejected gyro leaves the previous fast filter intact.
+                    try { sensors?.registerListener(sensorListener, gyroscope, registeredFluidity.sensorPeriodUs) }
+                    catch (error: Exception) { failure("motion_stabilization", error) }
+                }
                 readings = readings.copy(compassAvailable = registered)
             } catch (error: Exception) {
                 sensors?.unregisterListener(sensorListener)
@@ -237,6 +276,8 @@ internal fun rememberSpaceCompassSunFinderReadings(permissionGranted: Boolean, p
             started = false
             watchdogJob?.cancel()
             watchdogJob = null
+            fluidityJob?.cancel()
+            fluidityJob = null
             watchdog.reset()
             sensors?.unregisterListener(sensorListener)
             runCatching { locations?.removeUpdates(locationListener) }
@@ -247,6 +288,12 @@ internal fun rememberSpaceCompassSunFinderReadings(permissionGranted: Boolean, p
             started = true
             watchdog.reset()
             registerSensorListeners()
+            if (available) fluidityJob = monitorScope.launch {
+                snapshotFlow { fluidity }.collect { next ->
+                    // Reconfigure only sensors: GPS, ephemerides and selections stay alive.
+                    if (started && next != registeredFluidity) registerSensorListeners()
+                }
+            }
             if (available) watchdogJob = monitorScope.launch {
                 while (isActive && started) {
                     delay(SPACE_COMPASS_SUN_SENSOR_POLL_MS)
@@ -309,19 +356,3 @@ internal fun rememberSpaceCompassSunFinderReadings(permissionGranted: Boolean, p
 private fun isSpaceCompassSunLocationEnabled(manager: LocationManager): Boolean =
     if (Build.VERSION.SDK_INT >= 28) manager.isLocationEnabled
     else manager.isProviderEnabled(LocationManager.GPS_PROVIDER) || manager.isProviderEnabled(LocationManager.NETWORK_PROVIDER)
-
-/** Smooth vectors across 0/360 degrees, then restore orthonormal axes for correct projection. */
-internal fun smoothSpaceCompassSunOrientation(previous: SpaceCompassSunOrientation?, current: SpaceCompassSunOrientation): SpaceCompassSunOrientation {
-    if (previous == null || previous.forward.dot(current.forward) < -0.8) return current
-    fun mix(a: SpaceCompassSunVector, b: SpaceCompassSunVector) = SpaceCompassSunVector(
-        a.east * 0.65 + b.east * 0.35, a.north * 0.65 + b.north * 0.35, a.up * 0.65 + b.up * 0.35
-    ).normalized()
-    val forward = mix(previous.forward, current.forward)
-    val rawRight = mix(previous.right, current.right)
-    val parallel = rawRight.dot(forward)
-    val right = SpaceCompassSunVector(rawRight.east - parallel * forward.east,
-        rawRight.north - parallel * forward.north, rawRight.up - parallel * forward.up).normalized()
-    val up = SpaceCompassSunVector(right.north * forward.up - right.up * forward.north,
-        right.up * forward.east - right.east * forward.up, right.east * forward.north - right.north * forward.east)
-    return SpaceCompassSunOrientation(right, up, forward)
-}

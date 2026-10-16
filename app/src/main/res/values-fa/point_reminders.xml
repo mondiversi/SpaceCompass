@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="point_reminder_alarm">تنظیم زنگ هشدار</string>
+    <string name="point_reminder_calendar">افزودن به تقویم</string>
+    <string name="point_reminder_unavailable">یادآوری برای این نقطه در دسترس نیست</string>
+    <string name="point_reminder_no_clock">برنامهٔ زنگ هشدار در دسترس نیست</string>
+    <string name="point_reminder_no_calendar">برنامهٔ تقویم در دسترس نیست</string>
+    <string name="settings_events_title">رویدادها</string>
+    <string name="settings_events_show_alarm">نمایش دکمه هشدار در صفحه اصلی</string>
+    <string name="settings_events_description">گزینه‌های مربوط به رویدادهای آسمانی را مدیریت کنید.</string>
+</resources>

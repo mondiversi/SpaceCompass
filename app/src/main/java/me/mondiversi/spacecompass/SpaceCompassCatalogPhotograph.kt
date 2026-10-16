@@ -56,6 +56,7 @@ internal fun createSpaceCompassPhotographicThumbnail(map: Bitmap, extent: Int): 
 
 /** Author names are retained exactly; full sources and licences accompany the external pack. */
 internal fun spaceCompassCatalogImageCredit(name: String?): String? = when (name) {
+    "tesla_roadster.webp" -> "SpaceX · CC0 1.0"
     "titan.webp" -> "NASA/JPL-Caltech/Space Science Institute"
     "sirius.webp" -> "NASA, ESA, H. Bond (STScI), and M. Barstow (University of Leicester)"
     "betelgeuse.webp" -> "ALMA (ESO/NAOJ/NRAO)/E. O’Gorman/P. Kervella"

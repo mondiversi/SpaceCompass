@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <string name="capture_export_files_heading">文件</string>
     <string name="capture_export_image">图像（JPG）</string>
     <string name="capture_export_csv">表格（CSV）</string>
     <string name="capture_export_txt">易读表格（TXT）</string>

@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="celestial_tesla_roadster" formatted="false">Tesla Roadster (2018)</string>
+    <string name="celestial_roadster_type" formatted="false">Güneş merkezli yörüngedeki yük</string>
+    <string name="celestial_roadster_note" formatted="false">Dünya’nın değil, Güneş’in etrafında döner. 2018’de fırlatıldı. NASA/JPL yörünge tahmini; canlı telemetri değildir. Yaklaşık kütle, roket kademesi ve bağlantı düzeneği hariç bataryalı otomobile aittir. Fırlatma arşiv fotoğrafı; güncel görünüm ve yönelim bilinmiyor.</string>
+</resources>

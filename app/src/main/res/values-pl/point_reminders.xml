@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="point_reminder_alarm">Ustaw budzik</string>
+    <string name="point_reminder_calendar">Dodaj do kalendarza</string>
+    <string name="point_reminder_unavailable">Przypomnienie niedostępne dla tego punktu</string>
+    <string name="point_reminder_no_clock">Brak dostępnej aplikacji budzika</string>
+    <string name="point_reminder_no_calendar">Brak dostępnej aplikacji kalendarza</string>
+    <string name="settings_events_title">Zdarzenia</string>
+    <string name="settings_events_show_alarm">Pokaż przycisk powiadomienia na ekranie głównym</string>
+    <string name="settings_events_description">Zarządzaj opcjami wydarzeń astronomicznych.</string>
+</resources>

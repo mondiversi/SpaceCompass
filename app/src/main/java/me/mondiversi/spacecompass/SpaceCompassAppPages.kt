@@ -3,6 +3,7 @@ package me.mondiversi.spacecompass
 import androidx.activity.compose.BackHandler
 import androidx.compose.foundation.*
 import androidx.compose.foundation.layout.*
+import androidx.compose.foundation.lazy.staggeredgrid.StaggeredGridItemSpan
 import androidx.compose.foundation.lazy.staggeredgrid.items
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.*
@@ -104,13 +105,18 @@ internal fun SpaceCompassAppPage(route: String, onBack: () -> Unit) {
                     }
                 }
                 else -> {
-                    val settings = if (route == "appearance") spaceCompassAppearanceSettings() else spaceCompassUnitSettings()
+                    // Keep the Display definition and saved preference, but hide the unfinished island.
+                    val settings = if (route == "appearance") spaceCompassAppearanceSettings().filterNot { it.key == "display" }
+                        else spaceCompassUnitSettings()
                     SpaceCompassIslandGrid(Modifier.fillMaxWidth().weight(1f)) {
                         if (route == "appearance") {
                             // Keep music and its screensaver companion below Theme in both layouts.
-                            item(key = "appearance-theme-music") {
+                            item(key = "appearance-theme-music",
+                                span = if (settings.size == 1) StaggeredGridItemSpan.FullLine else null) {
                                 Column(verticalArrangement = Arrangement.spacedBy(SpaceCompassSettingsIslandGap)) {
                                     SpaceCompassSettingsChoices(settings.first())
+                                    SpaceCompassSettingsChoices(spaceCompassSkyFluiditySettings())
+                                    SpaceCompassEventsIsland()
                                     SpaceCompassAmbientMusicIsland()
                                     SpaceCompassScreensaverIsland()
                                 }

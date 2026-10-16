@@ -1,9 +1,9 @@
 <resources>
     <string name="info_news_title">最近の変更 · %1$s</string>
-    <string name="info_news_star_sky" formatted="false">カスタムシナリオで位置、高度、タイムゾーン、日付、時刻を個別に設定できます。</string>
-    <string name="info_news_texture_downloads" formatted="false">カスタム時計はアプリを閉じた後も進められます。現在の日付や時刻を使うこともできます。</string>
-    <string name="info_news_weather" formatted="false">現在のシナリオに有効な設定とおおよその場所を表示し、メインアイコンに設定数を示します。</string>
-    <string name="info_news_viewer_zoom" formatted="false">位置に応じた高度とタイムゾーンをまとめて適用できます。自動保存と項目別の通知にも対応します。</string>
-    <string name="info_news_settings" formatted="false">有効な地球基準線の名前は、天体ラベルの設定にかかわらず、メイン画面と撮影画像に表示されます。</string>
-    <string name="info_news_catalog" formatted="false">スクリーンセーバーに最後に確認された位置を表示します。地図の向きと東向きの自転を修正し、シナリオの日付に応じた季節の視点を反映します。</string>
+    <string name="info_news_star_sky" formatted="false">滑らかさを調整して、より安定した空を探索できます。初期設定はバランスです。</string>
+    <string name="info_news_texture_downloads" formatted="false">空の表示や一日の軌道から、未来の軌道上の点にAndroidのアラームやカレンダーの予定を設定できます。</string>
+    <string name="info_news_weather" formatted="false">太陽中心の天体暦、参考データ、ダウンロード画像でTesla Roadster (2018)を探索できます。</string>
+    <string name="info_news_viewer_zoom" formatted="false">一日の軌道で現在の行を強調表示し、主要なイベントの値を太字にして、現在位置や重要な時点を見分けやすくしました。</string>
+    <string name="info_news_settings" formatted="false">メインカードから確認後に天体を直接選択解除でき、軌道の色で名前を識別できます。</string>
+    <string name="info_news_catalog" formatted="false">点の吹き出しが上下に跳ねず天体アイコンの前面に表示され、名前と写真・パノラマの凡例は天体本来の色を保ちます。</string>
 </resources>

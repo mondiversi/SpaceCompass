@@ -19,6 +19,7 @@ import androidx.compose.ui.platform.LocalLayoutDirection
 import androidx.compose.ui.platform.testTag
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.semantics.Role
+import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.IntSize
 import androidx.compose.ui.unit.LayoutDirection
 import androidx.compose.ui.unit.dp
@@ -185,11 +186,11 @@ internal fun SpaceCompassSunDailyPathLayer(
 @Composable
 internal fun SpaceCompassCelestialSkyActions(body: SpaceCompassCelestialBody, onVisualize: (() -> Unit)?,
     onPath: (() -> Unit)? = null, pathTitle: String = "", pathSelected: Boolean = false,
-    modifier: Modifier = Modifier) {
+    modifier: Modifier = Modifier, targetSpacing: Dp = (-5).dp) {
     val viewTitle = stringResource(R.string.celestial_view_open)
-    // Share 5 dp of empty touch-target padding: 30 dp circles keep a 13 dp visible gap.
+    // The main object's header can compact the shared controls without changing overlays.
     Row(modifier, verticalAlignment = Alignment.CenterVertically,
-        horizontalArrangement = Arrangement.spacedBy((-5).dp)) {
+        horizontalArrangement = Arrangement.spacedBy(targetSpacing)) {
         if (onVisualize != null) SpaceCompassCelestialIconControl(false, viewTitle, onVisualize,
             Modifier.testTag("celestial-visualize"), Role.Button) {
             SpaceCompassCelestialTelescopeIcon(Modifier.size(22.dp))

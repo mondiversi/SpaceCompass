@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="settings_sky_fluidity_title">Flüssige Darstellung</string>
+    <string name="settings_sky_fluidity_description">Bestimmt, wie flüssig sich der Himmel bewegt. Höhere Stufen können mehr Akku verbrauchen.</string>
+    <string name="settings_sky_fluidity_low">Niedrig</string>
+    <string name="settings_sky_fluidity_balanced">Ausgewogen</string>
+    <string name="settings_sky_fluidity_high">Hoch</string>
+</resources>

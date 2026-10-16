@@ -4,6 +4,7 @@ package me.mondiversi.spacecompass
  * Sources: USGS/IAU nomenclature, NASA/JPL and the existing SIMBAD references.
  * A constellation designation is not a resolved component or a new pointing target. */
 internal val SpaceCompassCelestialBody.scientificDesignation: String? get() = when (this) {
+    SpaceCompassCelestialBody.TESLA_ROADSTER -> "2018-017A · Starman"
     SpaceCompassCelestialBody.MOON -> "Earth I"
     SpaceCompassCelestialBody.IO -> "Jupiter I"
     SpaceCompassCelestialBody.EUROPA -> "Jupiter II"
@@ -27,6 +28,7 @@ internal val SpaceCompassCelestialBody.scientificDesignation: String? get() = wh
 }
 
 internal val SpaceCompassCelestialBody.scientificTypeResource: Int? get() = when (this) {
+    SpaceCompassCelestialBody.TESLA_ROADSTER -> R.string.celestial_roadster_type
     SpaceCompassCelestialBody.EARTH_CENTER -> null
     SpaceCompassCelestialBody.SUN -> R.string.celestial_identity_solar_star
     SpaceCompassCelestialBody.SEDNA -> R.string.celestial_identity_candidate

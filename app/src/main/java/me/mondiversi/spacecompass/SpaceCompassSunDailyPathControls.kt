@@ -95,7 +95,7 @@ internal fun SpaceCompassSunDailyPathPage(
     val path = state.menuPath ?: return
     val labels = rememberSpaceCompassSunPathLabels(path)
     val currentName = stringResource(R.string.celestial_current_position)
-    val pageBackground = if (backgroundColor.luminance() < .4f) backgroundColor else Color.White
+    val pageBackground = spaceCompassSurfacePalette(backgroundColor.luminance() < .4f).island
     val eventBackground = primaryText.copy(alpha = .06f)
     val highlightColor = MaterialTheme.colorScheme.primary
     val openingPointId = remember(path) { state.menuFocusPointId }
@@ -113,6 +113,7 @@ internal fun SpaceCompassSunDailyPathPage(
     val selectedPoints = state.selectedPoints
     val frozenLocation = remember(path) { location }
     val export = rememberSpaceCompassDailyPathExport(path,state.menuCurrentPoint,selectedPoints,nowMs,frozenLocation)
+    val realNowMs = rememberSpaceCompassPointReminderNow(active = !export.visible)
     val entries = remember(path, state.menuCurrentPoint, selectedPoints) {
         spaceCompassSelectedDailyPathEntries(path, state.menuCurrentPoint, selectedPoints)
     }
@@ -125,11 +126,11 @@ internal fun SpaceCompassSunDailyPathPage(
         Row(Modifier.clearAndSetSemantics {
             contentDescription = "$azimuthLabel: ${labels.angle(point.position.azimuthDegrees)}, $elevationLabel: ${labels.angle(point.position.elevationDegrees)}"
         }, verticalAlignment = Alignment.CenterVertically) {
-            Text(labels.angle(point.position.azimuthDegrees), Modifier.width(64.dp),
+            Text(labels.angle(point.position.azimuthDegrees), Modifier.width(50.dp),
                 color = valueColor, fontSize = 12.sp, fontWeight = weight, style = TextStyle(textDirection = TextDirection.Ltr),
                 textAlign = androidx.compose.ui.text.style.TextAlign.End)
-            Spacer(Modifier.width(12.dp))
-            Text(labels.angle(point.position.elevationDegrees), Modifier.width(64.dp),
+            Spacer(Modifier.width(8.dp))
+            Text(labels.angle(point.position.elevationDegrees), Modifier.width(50.dp),
                 color = valueColor, fontSize = 12.sp, fontWeight = weight, style = TextStyle(textDirection = TextDirection.Ltr),
                 textAlign = androidx.compose.ui.text.style.TextAlign.End)
         }
@@ -164,13 +165,14 @@ internal fun SpaceCompassSunDailyPathPage(
                             textDirection = TextDirection.ContentOrLtr))
                 }
                 Row(verticalAlignment = Alignment.CenterVertically) {
-                    Text(azimuthLabel, Modifier.width(64.dp).testTag("sun-path-angle-azimuth"),
+                    Text(azimuthLabel, Modifier.width(50.dp).testTag("sun-path-angle-azimuth"),
                         color = secondaryText, fontSize = 12.sp,
                         textAlign = androidx.compose.ui.text.style.TextAlign.End)
-                    Spacer(Modifier.width(12.dp))
-                    Text(elevationLabel, Modifier.width(64.dp).testTag("sun-path-angle-elevation"),
+                    Spacer(Modifier.width(8.dp))
+                    Text(elevationLabel, Modifier.width(50.dp).testTag("sun-path-angle-elevation"),
                         color = secondaryText, fontSize = 12.sp,
                         textAlign = androidx.compose.ui.text.style.TextAlign.End)
+                    Spacer(Modifier.width(56.dp))
                 }
             }
             HorizontalDivider(Modifier.padding(horizontal = 10.dp).testTag("sun-path-header-divider"),
@@ -199,6 +201,8 @@ internal fun SpaceCompassSunDailyPathPage(
                                 formatSpaceCompassPointCountdown(point.timeMs, nowMs, countdownLocale),
                                 primaryText, secondaryText, emphasized, Modifier.weight(1f), point = point)
                             angleValues(point, secondaryText, emphasized)
+                            SpaceCompassPointReminderButton(path.body, point, nowMs, realNowMs, false,
+                                labels.name(point), primaryText, tag = "iss-pass-reminder-${point.event.name}")
                         }
                     }
                     HorizontalDivider(Modifier.padding(vertical = 8.dp), color = secondaryText.copy(alpha = 0.25f))
@@ -213,7 +217,8 @@ internal fun SpaceCompassSunDailyPathPage(
                     val nameColor = if (highlighted) highlightColor else primaryText
                     val valueColor = if (highlighted) highlightColor else secondaryText
                     Row(Modifier.fillMaxWidth().heightIn(min = 48.dp).clip(RoundedCornerShape(16.dp))
-                        .background(if (highlighted) highlightColor.copy(alpha = .16f)
+                        // Current is always visually highlighted; point selection remains explicit.
+                        .background(if (highlighted || entry.isCurrent) highlightColor.copy(alpha = .16f)
                             else if (emphasized)
                                 eventBackground else Color.Transparent)
                         .clickable {
@@ -238,6 +243,9 @@ internal fun SpaceCompassSunDailyPathPage(
                             nameColor, valueColor, emphasized,
                             Modifier.weight(1f), point = point, isCurrent = entry.isCurrent)
                         angleValues(point, valueColor, emphasized)
+                        SpaceCompassPointReminderButton(path.body, point, nowMs, realNowMs, entry.isCurrent,
+                            if (entry.isCurrent) currentName else pointLabels.name(point), primaryText,
+                            tag = if (entry.isCurrent) "sun-path-reminder-current" else "sun-path-reminder-$pointId")
                     }
                 }
             }

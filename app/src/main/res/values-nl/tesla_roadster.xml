@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="celestial_tesla_roadster" formatted="false">Tesla Roadster (2018)</string>
+    <string name="celestial_roadster_type" formatted="false">Heliocentrische lading</string>
+    <string name="celestial_roadster_note" formatted="false">Draait om de zon, niet om de aarde. Gelanceerd in 2018. Voorspelde NASA/JPL-baan, geen live telemetrie. De geschatte massa betreft de auto met accu’s, zonder rakettrap en bevestiging. Archieffoto van de lancering; het huidige uiterlijk en de stand zijn onbekend.</string>
+</resources>

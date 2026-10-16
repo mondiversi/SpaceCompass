@@ -21,8 +21,11 @@ import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.text.style.TextDirection
+import androidx.compose.ui.unit.TextUnit
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+
+internal val SpaceCompassSettingsCheckboxLineHeight = 18.sp
 
 @Composable
 internal fun SpaceCompassSettingsIsland(title: String? = null, iconKey: String? = null,
@@ -81,7 +84,7 @@ internal fun SpaceCompassSettingsToggleIsland(title: String, iconKey: String, ch
                         colors = spaceCompassCheckboxColors(uncheckedColor = foreground.copy(alpha = .72f)))
                 }
                 Spacer(Modifier.width(6.dp))
-                Text(title, Modifier.weight(1f), fontSize = 15.sp,
+                Text(title, Modifier.weight(1f), fontSize = 15.sp, lineHeight = SpaceCompassSettingsCheckboxLineHeight,
                     fontWeight = if (checked) FontWeight.Bold else FontWeight.Normal)
             }
             SpaceCompassSettingsIslandReveal(checked) {
@@ -119,7 +122,8 @@ internal fun SpaceCompassSettingsRadioRow(checked: Boolean, onClick: () -> Unit,
 @Composable
 internal fun SpaceCompassSettingsChoices(spec: SpaceCompassSettingSpec, languageCodes: Boolean = false) {
     val preferences = LocalSpaceCompassPreferences.current ?: return
-    val selected = LocalSpaceCompassPresentationSettings.current[spec.key] ?: spec.default
+    val selected = LocalSpaceCompassPresentationSettings.current[spec.key]
+        ?.takeIf { stored -> spec.options.any { it.first == stored } } ?: spec.default
     val foreground = MaterialTheme.colorScheme.onSurface
     SpaceCompassSettingsIsland(if (languageCodes) null else stringResource(spec.title),
         iconKey = if (languageCodes) null else spec.key) {
@@ -169,7 +173,8 @@ internal fun SpaceCompassSettingsCheckbox(label: String, checked: Boolean, onChe
                 colors = spaceCompassCheckboxColors(uncheckedColor = foreground.copy(alpha = .72f)))
         }
         Spacer(Modifier.width(6.dp))
-        SpaceCompassSettingsChoiceLabel(label, Modifier.weight(1f), enabled = enabled, weight = FontWeight.Normal)
+        SpaceCompassSettingsChoiceLabel(label, Modifier.weight(1f), enabled = enabled, weight = FontWeight.Normal,
+            lineHeight = SpaceCompassSettingsCheckboxLineHeight)
     }
 }
 
@@ -180,7 +185,7 @@ private fun Modifier.spaceCompassSettingsChoiceSurface(checked: Boolean): Modifi
 
 @Composable
 private fun SpaceCompassSettingsChoiceLabel(label: String, modifier: Modifier, enabled: Boolean = true,
-    weight: FontWeight = FontWeight.Medium) {
-    Text(label, modifier, fontSize = 14.sp, fontWeight = weight,
+    weight: FontWeight = FontWeight.Medium, lineHeight: TextUnit = TextUnit.Unspecified) {
+    Text(label, modifier, fontSize = 14.sp, fontWeight = weight, lineHeight = lineHeight,
         color = MaterialTheme.colorScheme.onSurface.copy(alpha = if (enabled) 1f else .72f * .62f))
 }

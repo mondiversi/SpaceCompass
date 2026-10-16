@@ -48,7 +48,7 @@ internal fun SpaceCompassCelestialThumbnail(body: SpaceCompassCelestialBody, mod
         SpaceCompassEarthCenterSymbol(modifier, opacity)
     } else if (body.usesDeepSkySymbol) {
         SpaceCompassDeepSkySymbol(body, modifier, opacity)
-    } else if (body.isSpacecraft) {
+    } else if (body.isSpacecraft && !body.hasCatalogPhotograph) {
         val geometry = remember { SpaceCompassCelestialRotation(yaw = 25.0, pitch = 50.0).geometry() }
         SpaceCompassCelestialCraftCanvas(body, geometry, SpaceCompassCelestialViewportState(), modifier.clip(CircleShape), colorFilter, opacity)
     } else {

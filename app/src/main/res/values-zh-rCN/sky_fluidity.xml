@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="settings_sky_fluidity_title">流畅度</string>
+    <string name="settings_sky_fluidity_description">调整天空移动的流畅程度。较高等级可能消耗更多电量。</string>
+    <string name="settings_sky_fluidity_low">低</string>
+    <string name="settings_sky_fluidity_balanced">均衡</string>
+    <string name="settings_sky_fluidity_high">高</string>
+</resources>

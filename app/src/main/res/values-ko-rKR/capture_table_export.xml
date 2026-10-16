@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <string name="capture_export_files_heading">파일</string>
     <string name="capture_export_image">이미지 (JPG)</string>
     <string name="capture_export_csv">표 (CSV)</string>
     <string name="capture_export_txt">읽기 쉬운 표 (TXT)</string>

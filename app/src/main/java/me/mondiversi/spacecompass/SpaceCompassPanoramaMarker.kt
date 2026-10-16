@@ -17,14 +17,14 @@ internal fun renderSpaceCompassPanoramaMarker(context: Context?, body: SpaceComp
     val output = Bitmap.createBitmap(extent, extent, Bitmap.Config.ARGB_8888)
     var texture: Bitmap? = null
     try {
-        if (!body.isSpacecraft && !body.isComet && body != SpaceCompassCelestialBody.EARTH_CENTER && !body.usesDeepSkySymbol)
+        if ((!body.isSpacecraft || body.hasCatalogPhotograph) && !body.isComet && body != SpaceCompassCelestialBody.EARTH_CENTER && !body.usesDeepSkySymbol)
             texture = createSpaceCompassCelestialThumbnail(context, body, extent)
         CanvasDrawScope().draw(Density(1f), LayoutDirection.Ltr, Canvas(output.asImageBitmap()), Size(extent.toFloat(), extent.toFloat())) {
             when {
                 body.isComet -> drawSpaceCompassCometSymbol(body)
                 body == SpaceCompassCelestialBody.EARTH_CENTER -> drawSpaceCompassEarthCenterSymbol()
                 body.usesDeepSkySymbol -> drawSpaceCompassDeepSkySymbol(body)
-                body.isSpacecraft -> clipPath(Path().apply { addOval(androidx.compose.ui.geometry.Rect(0f, 0f, size.width, size.height)) }) {
+                body.isSpacecraft && !body.hasCatalogPhotograph -> clipPath(Path().apply { addOval(androidx.compose.ui.geometry.Rect(0f, 0f, size.width, size.height)) }) {
                     drawSpaceCompassCelestialCraft(spaceCompassCelestialCraftMesh(body),
                         SpaceCompassCelestialRotation(yaw = 25.0, pitch = 50.0).geometry(), SpaceCompassCelestialViewportState())
                 }

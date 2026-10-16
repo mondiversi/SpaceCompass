@@ -1,9 +1,9 @@
 <resources>
     <string name="info_news_title">Ostatnie nowości · %1$s</string>
-    <string name="info_news_star_sky" formatted="false">W scenariuszu niestandardowym można niezależnie ustawić pozycję, wysokość, strefę czasową, datę i godzinę.</string>
-    <string name="info_news_texture_downloads" formatted="false">Zegar niestandardowy może działać dalej po zamknięciu aplikacji; można też użyć bieżącej daty lub godziny.</string>
-    <string name="info_news_weather" formatted="false">Bieżący scenariusz podsumowuje aktywne ustawienia i przybliżoną lokalizację; ikona główna pokazuje ich liczbę.</string>
-    <string name="info_news_viewer_zoom" formatted="false">Zastosuj razem wysokość i strefę czasową wybranej pozycji, z automatycznym zapisem i powiadomieniami dla każdej sekcji.</string>
-    <string name="info_news_settings" formatted="false">Nazwy włączonych ziemskich linii odniesienia pozostają widoczne w widoku głównym i na ujęciach niezależnie od etykiet obiektów.</string>
-    <string name="info_news_catalog" formatted="false">Wygaszacz pokazuje ostatnią znaną pozycję z poprawną orientacją mapy, obrotem na wschód i sezonową perspektywą zgodną z datą scenariusza.</string>
+    <string name="info_news_star_sky" formatted="false">Odkrywaj stabilniejsze niebo z regulowaną płynnością; domyślny jest tryb zrównoważony.</string>
+    <string name="info_news_texture_downloads" formatted="false">Ustawiaj alarmy Androida lub wydarzenia kalendarza dla przyszłych punktów orbity z widoku nieba lub dziennej trasy.</string>
+    <string name="info_news_weather" formatted="false">Poznaj Tesla Roadster (2018): efemerydy heliocentryczne, dane referencyjne i obraz do pobrania.</string>
+    <string name="info_news_viewer_zoom" formatted="false">Łatwiej rozpoznawaj bieżące i kluczowe zdarzenia na dziennej trasie dzięki wyróżnieniu bieżącego wiersza i pogrubieniu ważnych wartości.</string>
+    <string name="info_news_settings" formatted="false">Usuwaj obiekt bezpośrednio z jego głównej karty po potwierdzeniu i rozpoznawaj jego nazwę po kolorze orbity.</string>
+    <string name="info_news_catalog" formatted="false">Dymki punktów pozostają nad ikonami ciał niebieskich bez przeskakiwania; nazwy i legendy zdjęć oraz panoram zachowują pełny kolor obiektu.</string>
 </resources>

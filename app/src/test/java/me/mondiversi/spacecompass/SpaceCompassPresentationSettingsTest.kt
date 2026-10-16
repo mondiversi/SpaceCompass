@@ -4,6 +4,19 @@ import org.junit.Assert.*
 import org.junit.Test
 
 class SpaceCompassPresentationSettingsTest {
+    @Test fun mainReminderButtonIsVisibleByDefaultAndRestoresItsSavedChoice() {
+        val saved = mutableMapOf<String, String>()
+        assertTrue(spaceCompassMainReminderButtonVisible(spaceCompassReadPresentationSettings(saved::get)))
+        saved[SPACE_COMPASS_MAIN_REMINDER_BUTTON_KEY] = "false"
+        val afterReload = spaceCompassReadPresentationSettings(saved.toMap()::get)
+        assertEquals("false", afterReload[SPACE_COMPASS_MAIN_REMINDER_BUTTON_KEY])
+        assertFalse(spaceCompassMainReminderButtonVisible(afterReload))
+        saved[SPACE_COMPASS_MAIN_REMINDER_BUTTON_KEY] = "true"
+        assertTrue(spaceCompassMainReminderButtonVisible(spaceCompassReadPresentationSettings(saved::get)))
+        saved.clear()
+        assertTrue(spaceCompassMainReminderButtonVisible(spaceCompassReadPresentationSettings(saved::get)))
+    }
+
     @Test fun selectionAndCacheWritesDoNotChangePresentationSettings() {
         val preferences = mutableMapOf("language" to "system", "theme" to "dark", SPACE_COMPASS_DISTANCE_SPEED_UNIT_KEY to "imperial")
         val before = spaceCompassReadPresentationSettings(preferences::get)

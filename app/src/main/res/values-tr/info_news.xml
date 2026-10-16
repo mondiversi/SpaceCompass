@@ -1,9 +1,9 @@
 <resources>
     <string name="info_news_title">Son yenilikler · %1$s</string>
-    <string name="info_news_star_sky" formatted="false">Özel senaryoda konum, yükseklik, saat dilimi, tarih ve saat birbirinden bağımsız ayarlanabilir.</string>
-    <string name="info_news_texture_downloads" formatted="false">Özel saat, uygulama kapatıldıktan sonra da ilerleyebilir; güncel tarih veya saat de kullanılabilir.</string>
-    <string name="info_news_weather" formatted="false">Geçerli senaryo etkin ayarları ve yaklaşık yeri özetler; ana simge bunların sayısını gösterir.</string>
-    <string name="info_news_viewer_zoom" formatted="false">Bir konumun yüksekliğini ve saat dilimini birlikte uygulayın; değişiklikler otomatik kaydedilir ve her bölüm için bildirim gösterilir.</string>
-    <string name="info_news_settings" formatted="false">Etkin Dünya referanslarının adları, nesne etiketi seçimlerinden bağımsız olarak ana görünümde ve çekimlerde görünür kalır.</string>
-    <string name="info_news_catalog" formatted="false">Ekran koruyucu, son bilinen konumu doğru harita yönü, doğuya dönüş ve senaryo tarihine uygun mevsimsel bakış açısıyla gösterir.</string>
+    <string name="info_news_star_sky" formatted="false">Ayarlanabilir akıcılıkla daha kararlı bir gökyüzünde gezinin; varsayılan ayar Dengeli.</string>
+    <string name="info_news_texture_downloads" formatted="false">Gökyüzünden veya günlük yoldan gelecekteki yörünge noktaları için Android alarmı ya da takvim etkinliği oluşturun.</string>
+    <string name="info_news_weather" formatted="false">Güneş merkezli efemerisler, referans verileri ve indirilebilir bir görselle Tesla Roadster (2018) aracını keşfedin.</string>
+    <string name="info_news_viewer_zoom" formatted="false">Günlük yoldaki mevcut ve önemli olayları daha kolay ayırt edin; mevcut satır vurgulanır, önemli değerler kalın gösterilir.</string>
+    <string name="info_news_settings" formatted="false">Bir nesneyi ana kartından onay vererek kaldırın ve adını yörünge renginden tanıyın.</string>
+    <string name="info_news_catalog" formatted="false">Nokta balonları sıçramadan gök cismi simgelerinin üzerinde kalır; adlar ve fotoğraf/panorama açıklamaları nesnenin tam rengini korur.</string>
 </resources>

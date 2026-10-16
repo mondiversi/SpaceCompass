@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="celestial_tesla_roadster" formatted="false">Tesla Roadster (2018)</string>
+    <string name="celestial_roadster_type" formatted="false">Carico in orbita eliocentrica</string>
+    <string name="celestial_roadster_note" formatted="false">Orbita attorno al Sole, non alla Terra. Lanciata nel 2018. Traiettoria prevista NASA/JPL, non telemetria in diretta. La massa approssimativa si riferisce alla sola auto con batterie, esclusi stadio del razzo e supporto. Foto storica del lancio; aspetto e assetto attuali sconosciuti.</string>
+</resources>

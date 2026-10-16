@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="celestial_tesla_roadster" formatted="false">Tesla Roadster (2018)</string>
+    <string name="celestial_roadster_type" formatted="false">Charge en orbite héliocentrique</string>
+    <string name="celestial_roadster_note" formatted="false">Tourne autour du Soleil, pas de la Terre. Lancée en 2018. Trajectoire prévue par NASA/JPL, sans télémétrie en direct. La masse approximative concerne la voiture avec batteries, sans étage de fusée ni support. Photo du lancement ; aspect et orientation actuels inconnus.</string>
+</resources>
