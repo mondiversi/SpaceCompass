@@ -447,6 +447,9 @@ internal fun SpaceCompassSunFinderContent(
         SpaceCompassSunLocationStatus.ERROR -> R.string.sun_finder_retry
         SpaceCompassSunLocationStatus.SEARCHING, SpaceCompassSunLocationStatus.READY -> null
     })?.let { stringResource(it) }
+    val showWeatherFailure = spaceCompassWeatherFailureVisible(weather, showWeather, cameraEnabled,
+        remoteMessage != null || messageText != null && !isCompassMessage)
+    val weatherFailureMessage = if (showWeatherFailure) stringResource(R.string.sun_finder_weather_unavailable) else null
     var sceneCoordinates by remember { mutableStateOf<LayoutCoordinates?>(null) }
     var pointingCoordinates by remember { mutableStateOf<LayoutCoordinates?>(null) }
     var groundFrame by remember { mutableStateOf<SpaceCompassSunSceneFrame?>(null) }
@@ -549,13 +552,15 @@ internal fun SpaceCompassSunFinderContent(
                 onVisualize = { showViewer = true },
                 compassWarning = messageText.takeIf { isCompassMessage && resumed && mainVisible },
                 compassAccurate = readings.compassReliable,
-                statusMessage = remoteMessage ?: messageText.takeUnless { isCompassMessage },
+                statusMessage = remoteMessage ?: messageText.takeUnless { isCompassMessage } ?: weatherFailureMessage,
                 compassWarningAttention = message == R.string.sun_finder_compass_accuracy ||
                     message == R.string.sun_finder_compass_calibrate,
                 statusAttention = (remoteMessageId ?: message) == R.string.celestial_satellite_old,
-                statusActionLabel = if (hasActiveBody && target == null && sun != null && !remote.loading)
+                statusActionLabel = if (showWeatherFailure) stringResource(R.string.sun_finder_retry)
+                    else if (hasActiveBody && target == null && sun != null && !remote.loading)
                     stringResource(R.string.sun_finder_retry) else locationActionLabel,
-                onStatusAction = if (hasActiveBody && target == null && sun != null) onRemoteRetry else onLocationAction,
+                onStatusAction = if (showWeatherFailure) weather.onRetry
+                    else if (hasActiveBody && target == null && sun != null) onRemoteRetry else onLocationAction,
                 showActions = false, offscreenBody = body.takeIf { hasActiveBody }, overlays = overlays,
                 perspective = cameraPerspective.takeIf { cameraEnabled }, noticesBelowReticle = true,
                 observerLatitude = fix?.latitude, showSkyReferences = showSkyReferences,

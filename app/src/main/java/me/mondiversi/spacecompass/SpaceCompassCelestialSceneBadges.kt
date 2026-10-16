@@ -41,7 +41,8 @@ internal fun SpaceCompassCelestialSceneBadges(pinned: List<SpaceCompassCelestial
             Row(Modifier.width(IntrinsicSize.Max).spaceCompassSceneInputShield(),
                 verticalAlignment = Alignment.CenterVertically, horizontalArrangement = Arrangement.spacedBy(reminderGap)) {
                 SpaceCompassCelestialBadgeContent(target.point.timeMs, nowMs, zone, target.point.position,
-                    primaryText, secondaryText, backgroundColor, name, pinned = selected, modifier = Modifier.weight(1f))
+                    primaryText, secondaryText, backgroundColor, name, stringResource(target.body.nameResource),
+                    pinned = selected, modifier = Modifier.weight(1f))
                 if (showReminder) Box(Modifier.align(Alignment.CenterVertically), contentAlignment = Alignment.Center) {
                     SpaceCompassPointReminderButton(target.body, target.point, nowMs, realNowMs, target.isCurrent,
                         labels?.name?.invoke(target.point) ?: name, primaryText,

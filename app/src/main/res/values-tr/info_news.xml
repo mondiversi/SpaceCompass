@@ -1,9 +1,9 @@
 <resources>
     <string name="info_news_title">Son yenilikler · %1$s</string>
-    <string name="info_news_star_sky" formatted="false">Ayarlanabilir akıcılıkla daha kararlı bir gökyüzünde gezinin; varsayılan ayar Dengeli.</string>
-    <string name="info_news_texture_downloads" formatted="false">Gökyüzünden veya günlük yoldan gelecekteki yörünge noktaları için Android alarmı ya da takvim etkinliği oluşturun.</string>
-    <string name="info_news_weather" formatted="false">Güneş merkezli efemerisler, referans verileri ve indirilebilir bir görselle Tesla Roadster (2018) aracını keşfedin.</string>
-    <string name="info_news_viewer_zoom" formatted="false">Günlük yoldaki mevcut ve önemli olayları daha kolay ayırt edin; mevcut satır vurgulanır, önemli değerler kalın gösterilir.</string>
-    <string name="info_news_settings" formatted="false">Bir nesneyi ana kartından onay vererek kaldırın ve adını yörünge renginden tanıyın.</string>
-    <string name="info_news_catalog" formatted="false">Nokta balonları sıçramadan gök cismi simgelerinin üzerinde kalır; adlar ve fotoğraf/panorama açıklamaları nesnenin tam rengini korur.</string>
+    <string name="info_news_star_sky" formatted="false">Nokta bilgi balonları kalın nesne adları, satırlara bölünen başlıklar ve hafif saydam bir arka plan gösterir.</string>
+    <string name="info_news_texture_downloads" formatted="false">Daha büyük kenarlıksız sayaçlar, daha belirgin senaryo renkleri ve daha açık gündüz mavisi.</string>
+    <string name="info_news_weather" formatted="false">Gezinme oklarının yanındaki sade X, onaylandıktan sonra nesneyi kaldırır.</string>
+    <string name="info_news_viewer_zoom" formatted="false">Hava durumu istekleri zaman aşımıyla sınırlandırılır; veri yoksa yeniden denenebilir.</string>
+    <string name="info_news_settings" formatted="false">LV-426 dahil 20 gök cismi görüntüsünün tümü, 90 kaliteli WebP dosyaları olarak tek tek indirilir.</string>
+    <string name="info_news_catalog" formatted="false">Güncellenmiş 1.2.1 doku paketi, tutarlı arşivler ve kayıtlı görüntülerin doğrulanmış yeniden kullanımı.</string>
 </resources>

@@ -1,9 +1,9 @@
 <resources>
     <string name="info_news_title">Neuigkeiten · %1$s</string>
-    <string name="info_news_star_sky" formatted="false">Erkunde einen ruhigeren Himmel mit einstellbarer flüssiger Darstellung; Ausgewogen ist die Standardeinstellung.</string>
-    <string name="info_news_texture_downloads" formatted="false">Erstelle Android-Wecker oder Kalendereinträge für zukünftige Bahnpunkte, direkt am Himmel oder im Tagesverlauf.</string>
-    <string name="info_news_weather" formatted="false">Entdecke Tesla Roadster (2018) mit heliozentrischen Ephemeriden, Referenzdaten und einem herunterladbaren Bild.</string>
-    <string name="info_news_viewer_zoom" formatted="false">Erkenne aktuelle und wichtige Ereignisse im Tagesverlauf leichter: Die aktuelle Zeile ist hervorgehoben, wichtige Werte sind fett gedruckt.</string>
-    <string name="info_news_settings" formatted="false">Entferne ein Objekt nach Bestätigung direkt aus seiner Hauptkarte und erkenne seinen Namen an der Bahnfarbe.</string>
-    <string name="info_news_catalog" formatted="false">Punktbeschriftungen bleiben ohne Springen über den Himmelskörper-Symbolen; Objektnamen und Foto-/Panoramalegenden behalten die volle Objektfarbe.</string>
+    <string name="info_news_star_sky" formatted="false">Punkthinweise zeigen Objektnamen fett, umbrechende Titel und einen leicht transparenten Hintergrund.</string>
+    <string name="info_news_texture_downloads" formatted="false">Größere Zähler ohne Rand, klarere Szenariofarben und ein helleres Blau am Tag.</string>
+    <string name="info_news_weather" formatted="false">Ein schlichtes X neben den Navigationspfeilen entfernt ein Objekt nach Bestätigung.</string>
+    <string name="info_news_viewer_zoom" formatted="false">Wetteranfragen haben ein Zeitlimit und bieten bei fehlenden Daten einen erneuten Versuch an.</string>
+    <string name="info_news_settings" formatted="false">Alle 20 Himmelsbilder, einschließlich LV-426, werden einzeln als WebP mit Qualität 90 heruntergeladen.</string>
+    <string name="info_news_catalog" formatted="false">Aktualisiertes Texturpaket 1.2.1, übereinstimmende Archive und geprüfte Wiederverwendung gespeicherter Bilder.</string>
 </resources>

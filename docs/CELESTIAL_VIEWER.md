@@ -547,3 +547,18 @@ The original pack remains available for older APKs. Matching cached files are
 verified against the new APK and copied atomically, avoiding duplicate downloads.
 Archival deep-sky photographs are displayed flat with their observational
 qualifications and credits; they are not fictional spherical surface maps.
+
+## Image pack 1.2
+
+The current local build requests individual WebP files from `celestial-textures-v1.2`.
+The complete set now has twenty images, including Roadster and the original
+LV-426 illustration. LV-426 retains its original 1774 x 887 dimensions and pixels;
+the nineteen other maps retain their reviewed 2048 x 1024 derivatives. The ZIP,
+manifest, credits and checksums cover this same set. The app never downloads the
+ZIP. Verified cached files from packs 1.1 and 1 are reused unchanged. Legacy
+release URLs remain available to already-published APKs.
+
+
+## Current texture pack 1.2.1
+
+Application 1.4.1 targets `celestial-textures-v1.2.1`, with twenty individually downloaded WebP files including LV-426. Image bytes and quality-90/method-6 encodings are preserved from pack 1.2. Metadata, credits and archive headers now describe the current set consistently. Previous packs remain immutable and matching cached images are reused after hash verification. LV-426 is external and retains its original 1774 x 887 pixels; the other nineteen images are 2048 x 1024.

@@ -38,7 +38,8 @@ class SpaceCompassIndependenceTest {
 
     @Test fun originalMapsAndSatelliteImplementationHaveTheirCredits() {
         val project = File("..").takeIf { File(it,"ASSET_CREDITS.md").isFile } ?: File(".")
-        assertTrue(File(root, "assets/celestial/lv426.webp").length() > 0)
+        assertFalse(File(root, "assets/celestial/lv426.webp").exists())
+        assertNotNull(SpaceCompassCelestialTexturePolicy.texture("lv426.webp"))
         for (texture in SpaceCompassCelestialTexturePolicy.images) {
             val file = File(project, "textures/${SpaceCompassCelestialTexturePolicy.PACK}/${texture.name}")
             assertTrue(texture.name, file.isFile)

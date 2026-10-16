@@ -26,7 +26,7 @@ internal fun SpaceCompassClearOrbitPointsButton(onClear: () -> Unit, color: Colo
     SpaceCompassFloatingActionButton(label, clear, color, background,
         modifier.testTag("clear-orbit-points"), stateText = count,
         overlay = {
-            SpaceCompassFloatingCountBadge(count, color, background,
+            SpaceCompassFloatingCountBadge(count,
                 Modifier.align(Alignment.TopEnd).testTag("clear-orbit-points-count"))
         }) {
         Canvas(Modifier.size(26.dp)) {

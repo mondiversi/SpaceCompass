@@ -1,9 +1,9 @@
 <resources>
     <string name="info_news_title">Mambo mapya · %1$s</string>
-    <string name="info_news_star_sky" formatted="false">Tazama anga tulivu zaidi kwa kuchagua ulaini wa mwendo; Chaguo la kawaida ni Wastani.</string>
-    <string name="info_news_texture_downloads" formatted="false">Weka kengele za Android au matukio ya kalenda kwa nukta za obiti za baadaye, kutoka angani au kwenye njia ya kila siku.</string>
-    <string name="info_news_weather" formatted="false">Gundua Tesla Roadster (2018), yenye efemerisi zinazohusiana na Jua, data za marejeleo na picha inayopakuliwa.</string>
-    <string name="info_news_viewer_zoom" formatted="false">Tambua kwa urahisi matukio ya sasa na muhimu katika njia ya kila siku, kwa kuangazia safu ya sasa na kuweka thamani muhimu kwa herufi nzito.</string>
-    <string name="info_news_settings" formatted="false">Ondoa kitu moja kwa moja kwenye kadi yake kuu baada ya kuthibitisha, na utambue jina lake kwa rangi ya obiti.</string>
-    <string name="info_news_catalog" formatted="false">Visanduku vya nukta hubaki juu ya aikoni za angani bila kurukaruka; majina na maelezo ya rangi kwenye picha na panorama huhifadhi rangi kamili ya kitu.</string>
+    <string name="info_news_star_sky" formatted="false">Vidirisha vya nukta vinaonyesha majina ya vitu kwa herufi nzito, vichwa vya mistari kadhaa na mandharinyuma yenye uwazi kidogo.</string>
+    <string name="info_news_texture_downloads" formatted="false">Vihesabu vikubwa bila mipaka, rangi wazi za hali maalum na bluu angavu zaidi mchana.</string>
+    <string name="info_news_weather" formatted="false">Alama rahisi ya X karibu na mishale ya urambazaji huondoa kitu baada ya kuthibitisha.</string>
+    <string name="info_news_viewer_zoom" formatted="false">Maombi ya hali ya hewa yana kikomo cha muda; unaweza kujaribu tena data zisipopatikana.</string>
+    <string name="info_news_settings" formatted="false">Picha zote 20 za vitu vya angani, ikiwemo LV-426, hupakuliwa moja moja kama WebP yenye ubora wa 90.</string>
+    <string name="info_news_catalog" formatted="false">Kifurushi cha maumbo 1.2.1 kilichosasishwa, kumbukumbu zinazolingana na utumiaji tena wa picha zilizohifadhiwa baada ya kuthibitishwa.</string>
 </resources>

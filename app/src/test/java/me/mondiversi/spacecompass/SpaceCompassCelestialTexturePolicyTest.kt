@@ -25,14 +25,14 @@ class SpaceCompassCelestialTexturePolicyTest {
         assertFalse(policy.allowedUrl("https://release-assets.githubusercontent.com:444/file", true))
     }
 
-    @Test fun packCoversEveryRemoteMapWithoutFictionalTextureOrDuplicateNames() {
+    @Test fun packCoversEveryMapIncludingFictionalTextureWithoutDuplicateNames() {
         val images = SpaceCompassCelestialTexturePolicy.images
-        assertEquals(19, images.size)
-        assertEquals(19, images.map { it.name }.distinct().size)
-        assertFalse(images.any { it.name == "lv426.webp" })
-        for (body in SpaceCompassCelestialBody.entries.filter { it.viewerTexture != null && it != SpaceCompassCelestialBody.LV_426 })
+        assertEquals(20, images.size)
+        assertEquals(20, images.map { it.name }.distinct().size)
+        assertTrue(images.any { it.name == "lv426.webp" })
+        for (body in SpaceCompassCelestialBody.entries.filter { it.viewerTexture != null })
             assertNotNull(body.name, SpaceCompassCelestialTexturePolicy.texture(body.viewerTexture))
-        assertEquals(4_127_352, images.sumOf { it.bytes })
+        assertEquals(4_499_826, images.sumOf { it.bytes })
     }
 
     @Test fun byteLengthAndDigestAreBothRequired() {
@@ -134,14 +134,14 @@ class SpaceCompassCelestialTexturePolicyTest {
 
     @Test fun allImagesUseTheExactNewPackAndOldReleaseUrlsAreNotDownloaded() {
         val policy = SpaceCompassCelestialTexturePolicy
-        assertEquals("celestial-textures-v1.1", policy.PACK)
+        assertEquals("celestial-textures-v1.2.1", policy.PACK)
         for (image in policy.images) {
             assertTrue(image.name.endsWith(".webp"))
-            assertEquals(2048, image.width)
-            assertEquals(1024, image.height)
-            assertEquals("https://github.com/mondiversi/SpaceCompass/releases/download/celestial-textures-v1.1/${image.name}", image.url)
-            assertFalse(policy.allowedUrl(image.url.replace("celestial-textures-v1.1/", "celestial-textures-v1/")))
+            assertEquals(if (image.name == "lv426.webp") 1774 else 2048, image.width)
+            assertEquals(if (image.name == "lv426.webp") 887 else 1024, image.height)
+            assertEquals("https://github.com/mondiversi/SpaceCompass/releases/download/celestial-textures-v1.2.1/${image.name}", image.url)
+            assertFalse(policy.allowedUrl(image.url.replace("celestial-textures-v1.2.1/", "celestial-textures-v1/")))
         }
-        assertEquals(listOf("celestial-textures-v1"), policy.legacyPacks)
+        assertEquals(listOf("celestial-textures-v1.2", "celestial-textures-v1.1", "celestial-textures-v1"), policy.legacyPacks)
     }
 }

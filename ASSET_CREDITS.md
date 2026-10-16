@@ -113,3 +113,18 @@ source attribution. Source and derivative hashes: docs/SCREENSAVER_ASSETS.json.
 No endorsement implied. Scene code is original Mondiversi work (GPL-3.0);
 only the two decorative background maps are bundled. Downloadable celestial
 viewer textures and the existing image pack are unchanged.
+
+
+## External texture pack 1.2
+
+Twenty WebP images, including the unchanged original LV-426 illustration and
+the SpaceX Roadster photograph, are distributed in `celestial-textures-v1.2`.
+No celestial object image is now bundled in the APK. The star atlas and the
+separate Earth screensaver maps remain bundled. Earlier image releases and
+URLs remain intact for older APKs; verified matching cached maps are reused.
+The complete ZIP, image manifest, credits and checksums describe the same set.
+
+
+## External texture pack 1.2.1
+
+Application 1.4.1 downloads all twenty celestial images from the versioned 1.2.1 release. Image hashes, pixels, quality-90 WebP encodings, credits and licences are unchanged from pack 1.2; consolidated manifest and credit headers now describe the complete set. Older release URLs remain intact. The fictional LV-426 image is external; the star atlas and separate screensaver assets remain bundled.

@@ -40,7 +40,7 @@ internal fun SpaceCompassSunStatusNotices(
     val shape = RoundedCornerShape(14.dp)
     val noticePadding = PaddingValues(horizontal = 12.dp, vertical = 6.dp)
     val noticeBackground = backgroundColor.copy(alpha = 0.90f)
-    val warningOrange = if (backgroundColor.luminance() < .4f) Color(0xFFFF8F1F) else Color(0xFFAB3D00)
+    val warningOrange = spaceCompassAttentionColor(backgroundColor.luminance() < .4f)
     val linkColor = MaterialTheme.colorScheme.primary
     SpaceCompassNoticesByWidth(modifier.widthIn(max = 280.dp)) {
         if (!hasStatus && simulationLabel != null) {

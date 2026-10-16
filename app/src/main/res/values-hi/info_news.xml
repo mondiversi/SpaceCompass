@@ -1,9 +1,9 @@
 <resources>
     <string name="info_news_title">हाल के बदलाव · %1$s</string>
-    <string name="info_news_star_sky" formatted="false">समायोजित की जा सकने वाली सुचारु गति के साथ अधिक स्थिर आकाश देखें; संतुलित अब डिफ़ॉल्ट विकल्प है।</string>
-    <string name="info_news_texture_downloads" formatted="false">आकाश या दैनिक पथ से भविष्य के कक्षीय बिंदुओं के लिए Android अलार्म या कैलेंडर ईवेंट बनाएँ।</string>
-    <string name="info_news_weather" formatted="false">Tesla Roadster (2018) को सूर्य-केंद्रित पंचांग, संदर्भ डेटा और डाउनलोड की जा सकने वाली छवि के साथ देखें।</string>
-    <string name="info_news_viewer_zoom" formatted="false">दैनिक पथ में वर्तमान पंक्ति के हाइलाइट और मुख्य मानों के मोटे अक्षरों से वर्तमान और प्रमुख घटनाएँ आसानी से पहचानें।</string>
-    <string name="info_news_settings" formatted="false">पुष्टि करके मुख्य कार्ड से सीधे वस्तु हटाएँ और उसकी कक्षा के रंग से उसका नाम पहचानें।</string>
-    <string name="info_news_catalog" formatted="false">बिंदुओं के सूचना बॉक्स बिना उछले खगोलीय आइकन के ऊपर रहते हैं; नाम और फ़ोटो तथा पैनोरमा की रंग-सूचियाँ वस्तु का पूरा रंग बनाए रखती हैं।</string>
+    <string name="info_news_star_sky" formatted="false">बिंदुओं के विवरण में वस्तु का नाम मोटे अक्षरों में, कई पंक्तियों वाले शीर्षक और हल्की पारदर्शी पृष्ठभूमि दिखती है।</string>
+    <string name="info_news_texture_downloads" formatted="false">बड़े और बिना किनारे वाले काउंटर, परिदृश्य के स्पष्ट रंग और दिन में हल्का नीला रंग।</string>
+    <string name="info_news_weather" formatted="false">नेविगेशन तीरों के पास साधारण X से पुष्टि के बाद वस्तु हटाई जा सकती है।</string>
+    <string name="info_news_viewer_zoom" formatted="false">मौसम अनुरोधों की समय सीमा है और डेटा उपलब्ध न होने पर फिर कोशिश की जा सकती है।</string>
+    <string name="info_news_settings" formatted="false">LV-426 सहित सभी 20 आकाशीय चित्र 90 गुणवत्ता की WebP फ़ाइलों के रूप में अलग-अलग डाउनलोड होते हैं।</string>
+    <string name="info_news_catalog" formatted="false">अपडेट किया गया टेक्सचर पैक 1.2.1, मेल खाते संग्रह और सहेजे चित्रों का सत्यापित पुनः उपयोग।</string>
 </resources>

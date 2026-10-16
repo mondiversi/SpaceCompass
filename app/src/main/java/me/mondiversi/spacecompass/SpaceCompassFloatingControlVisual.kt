@@ -30,7 +30,7 @@ internal fun Modifier.spaceCompassFloatingControlVisual(): Modifier = layout { m
     }
 }
 
-/** Disable automatic hit expansion only for the floating actions whose targets the user reduced. */
+/** Disable automatic hit expansion only for controls whose targets the user explicitly reduced. */
 @Composable
 internal fun SpaceCompassFloatingControlHitRegion(content: @Composable () -> Unit) {
     val configuration = LocalViewConfiguration.current

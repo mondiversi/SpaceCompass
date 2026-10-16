@@ -1,9 +1,9 @@
 <resources>
     <string name="info_news_title">آخر المستجدات · %1$s</string>
-    <string name="info_news_star_sky" formatted="false">استكشف سماء أكثر ثباتًا بسلاسة قابلة للتعديل؛ الوضع المتوازن هو الخيار الافتراضي.</string>
-    <string name="info_news_texture_downloads" formatted="false">أنشئ منبهات Android أو أحداث تقويم للنقاط المدارية المستقبلية من السماء أو المسار اليومي.</string>
-    <string name="info_news_weather" formatted="false">استكشف Tesla Roadster (2018)، مع جداول فلكية شمسية المركز وبيانات مرجعية وصورة قابلة للتنزيل.</string>
-    <string name="info_news_viewer_zoom" formatted="false">تعرّف بسهولة على الأحداث الحالية والرئيسية في المسار اليومي، مع تمييز الصف الحالي وعرض القيم المهمة بخط عريض.</string>
-    <string name="info_news_settings" formatted="false">أزل جسمًا مباشرة من بطاقته الرئيسية بعد التأكيد، وتعرّف على اسمه من لون مداره.</string>
-    <string name="info_news_catalog" formatted="false">تبقى فقاعات النقاط فوق أيقونات الأجرام دون قفز؛ وتحافظ الأسماء ومفاتيح ألوان الصور والبانوراما على لون الجسم الكامل.</string>
+    <string name="info_news_star_sky" formatted="false">تعرض فقاعات النقاط أسماء الأجرام بخط عريض، وعناوين تلتف على عدة أسطر وخلفية شفافة قليلًا.</string>
+    <string name="info_news_texture_downloads" formatted="false">عدادات أكبر بلا حدود، وألوان أوضح للسيناريو وأزرق نهاري أفتح.</string>
+    <string name="info_news_weather" formatted="false">تزيل علامة X البسيطة بجوار أسهم التنقل الجرم بعد التأكيد.</string>
+    <string name="info_news_viewer_zoom" formatted="false">لطلبات الطقس مهلة زمنية، ويمكن إعادة المحاولة عند عدم توفر البيانات.</string>
+    <string name="info_news_settings" formatted="false">تُنزل صور الأجرام العشرون، ومنها LV-426، كل واحدة على حدة بتنسيق WebP وجودة 90.</string>
+    <string name="info_news_catalog" formatted="false">حزمة خامات محدثة 1.2.1، وأرشيفات متطابقة وإعادة استخدام الصور المحفوظة بعد التحقق منها.</string>
 </resources>

@@ -17,10 +17,11 @@ internal data class SpaceCompassCelestialTexture(val name: String, val bytes: In
 
 /** Versioned public maps. Digests and dimensions belong to this APK, not a remote manifest. */
 internal object SpaceCompassCelestialTexturePolicy {
-    const val PACK = "celestial-textures-v1.1"
-    val legacyPacks = listOf("celestial-textures-v1")
+    const val PACK = "celestial-textures-v1.2.1"
+    val legacyPacks = listOf("celestial-textures-v1.2", "celestial-textures-v1.1", "celestial-textures-v1")
     const val BASE_URL = "https://github.com/mondiversi/SpaceCompass/releases/download/$PACK"
     val images = listOf(
+        SpaceCompassCelestialTexture("lv426.webp", 372474, "31ab7d2e87cb27a51e80b00f5dd3b2e21581c617bec900841a97f7b3309ca7fd", 1774, 887),
         SpaceCompassCelestialTexture("tesla_roadster.webp", 157614, "54c1a76dcb92b1512d9dcb1cd273af4771f7f347ff3abdd124383df934de19fe", 2048, 1024),
         SpaceCompassCelestialTexture("titan.webp", 159238, "fbad4d29d878a5d9b9652ab63924eca29b438fbafdfe1c4b43cd7f68d0371aa0", 2048, 1024),
         SpaceCompassCelestialTexture("sirius.webp", 69180, "fafdbd730eb1123152eca8740d312a2eb29f8e6ba9edc6ec259aa585b5e2e91a", 2048, 1024),

@@ -6,6 +6,8 @@ import kotlinx.coroutines.CancellationException
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.ensureActive
+import kotlinx.coroutines.coroutineScope
+import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
 import org.json.JSONObject
 import java.net.HttpURLConnection
@@ -13,7 +15,8 @@ import java.net.URI
 import kotlin.coroutines.coroutineContext
 
 internal data class SpaceCompassSunWeatherReading(
-    val snapshot: SpaceCompassSunWeatherSnapshot? = null, val loading: Boolean = false
+    val snapshot: SpaceCompassSunWeatherSnapshot? = null, val loading: Boolean = false,
+    val failed: Boolean = false, val onRetry: () -> Unit = {}
 )
 
 internal fun parseSpaceCompassSunWeather(json: String, nowMs: Long): SpaceCompassSunWeatherSnapshot {
@@ -46,8 +49,14 @@ internal fun parseSpaceCompassObserverWeather(json: String, request: SpaceCompas
 }
 
 /** Bounded HTTPS request, no redirects, no location in error logs, no camera or device commands. */
-internal suspend fun fetchSpaceCompassSunWeather(tile: SpaceCompassSunWeatherTile, request: SpaceCompassObserverWeatherRequest? = null): SpaceCompassSunWeatherSnapshot = withContext(Dispatchers.IO) {
+internal suspend fun fetchSpaceCompassSunWeather(tile: SpaceCompassSunWeatherTile, request: SpaceCompassObserverWeatherRequest? = null): SpaceCompassSunWeatherSnapshot = withContext(Dispatchers.IO) { coroutineScope {
     val connection = URI(request?.url() ?: tile.url()).toURL().openConnection() as HttpURLConnection
+    // A total deadline also stops slow-drip responses that never hit the per-read timeout.
+    val deadline = System.nanoTime() + 18_000_000_000L
+    val watchdog = launch {
+        delay(18_000L)
+        connection.disconnect()
+    }
     try {
         connection.connectTimeout = 8_000
         connection.readTimeout = 8_000
@@ -61,6 +70,9 @@ internal suspend fun fetchSpaceCompassSunWeather(tile: SpaceCompassSunWeatherTil
             val buffer = ByteArray(4096)
             while (true) {
                 coroutineContext.ensureActive()
+                val remaining = (deadline - System.nanoTime()) / 1_000_000L
+                if (remaining <= 0) throw java.net.SocketTimeoutException("Weather request timed out")
+                connection.readTimeout = remaining.coerceIn(1L, 8_000L).toInt()
                 val count = input.read(buffer)
                 if (count < 0) break
                 require(output.size() + count <= 32_768) { "Weather response too large" }
@@ -70,8 +82,8 @@ internal suspend fun fetchSpaceCompassSunWeather(tile: SpaceCompassSunWeatherTil
         }
         if (request == null) parseSpaceCompassSunWeather(body, System.currentTimeMillis())
         else parseSpaceCompassObserverWeather(body, request)
-    } finally { connection.disconnect() }
-}
+    } finally { watchdog.cancel(); connection.disconnect() }
+} }
 
 /** Foreground-only, memory-only caching. Changing location never shows the old area's weather. */
 @Composable
@@ -88,17 +100,27 @@ internal fun rememberSpaceCompassSunWeather(tile: SpaceCompassSunWeatherTile?, r
     var nextRequestElapsed by remember(tile, selectedTimeMs, request) { mutableLongStateOf(0L) }
     var lastRequestElapsed by remember { mutableLongStateOf(-60_000L) }
     var reportedFailure by remember(tile, selectedTimeMs, request) { mutableStateOf(false) }
-    LaunchedEffect(tile, selectedTimeMs, request, resumed) {
+    var retryRevision by remember { mutableIntStateOf(0) }
+    val onRetry: () -> Unit = {
+        nextRequestElapsed = 0L
+        lastRequestElapsed = android.os.SystemClock.elapsedRealtime() - 60_000L
+        retryRevision++
+    }
+    LaunchedEffect(tile, selectedTimeMs, request, resumed, retryRevision) {
         if (tile == null || !resumed || (selectedTimeMs != null && request == null)) return@LaunchedEffect
         while (true) {
             val cached = snapshot?.takeIf { spaceCompassSunWeatherSnapshotUsable(it, selectedTimeMs ?: System.currentTimeMillis()) }
-            reading = SpaceCompassSunWeatherReading(cached, loading = cached == null)
             val wait = maxOf(nextRequestElapsed, lastRequestElapsed + 60_000L) - android.os.SystemClock.elapsedRealtime()
-            if (wait > 0) delay(wait)
+            if (wait > 0) {
+                reading = SpaceCompassSunWeatherReading(cached, failed = reportedFailure && cached == null)
+                delay(wait)
+            }
+            reading = SpaceCompassSunWeatherReading(cached, loading = cached == null)
             // Throttle even while rapidly switching nearby cells or cancelling the screen.
             lastRequestElapsed = android.os.SystemClock.elapsedRealtime()
             try {
                 val result = fetchSpaceCompassSunWeather(tile, request)
+                coroutineContext.ensureActive()
                 snapshot = result
                 reading = SpaceCompassSunWeatherReading(result)
                 reportedFailure = false
@@ -107,7 +129,7 @@ internal fun rememberSpaceCompassSunWeather(tile: SpaceCompassSunWeatherTile?, r
             } catch (cancelled: CancellationException) {
                 throw cancelled
             } catch (error: Exception) {
-                reading = SpaceCompassSunWeatherReading(cached)
+                reading = SpaceCompassSunWeatherReading(cached, failed = cached == null)
                 if (!reportedFailure) {
                     // Exceptions from HTTP libraries may contain a URL with coordinates. Do not persist them.
                     SpaceCompassErrorLog.record(context, "sun_finder:weather",
@@ -119,5 +141,5 @@ internal fun rememberSpaceCompassSunWeather(tile: SpaceCompassSunWeatherTile?, r
             delay((nextRequestElapsed - android.os.SystemClock.elapsedRealtime()).coerceAtLeast(1L))
         }
     }
-    return reading
+    return reading.copy(onRetry = onRetry)
 }

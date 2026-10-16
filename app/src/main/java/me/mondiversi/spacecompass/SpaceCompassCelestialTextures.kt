@@ -36,7 +36,6 @@ internal object SpaceCompassCelestialTextures {
 
     fun open(context: Context, body: SpaceCompassCelestialBody): InputStream? {
         val name = body.viewerTexture ?: return null
-        if (body == SpaceCompassCelestialBody.LV_426) return context.assets.open("celestial/$name")
         return openImage(context, name)
     }
 

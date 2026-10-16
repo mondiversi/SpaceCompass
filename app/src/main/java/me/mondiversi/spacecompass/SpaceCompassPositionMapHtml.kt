@@ -25,7 +25,7 @@ internal fun spaceCompassPositionMapHtml(context: Context, url: String, dark: Bo
       .leaflet-tile-pane{$tileStyle}
       .leaflet-control-zoom a,.leaflet-control-attribution{background:$surface!important;color:$text!important;}
       .leaflet-control-zoom a{width:48px!important;height:48px!important;line-height:48px!important;font-size:26px!important;}
-      .leaflet-control-attribution a{color:${if (dark) "#55c8db" else "#1b7e9f"}!important;}
+      .leaflet-control-attribution a{color:${if (dark) "#55c8db" else "#2486a6"}!important;}
       .space-pin{background:transparent;border:0;}
       .space-pin svg{width:32px;height:44px;filter:drop-shadow(0 2px 2px #0008);}
       </style></head><body><div id="map"></div><script>$js</script><script>

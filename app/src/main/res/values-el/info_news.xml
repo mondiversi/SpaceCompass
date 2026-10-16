@@ -1,9 +1,9 @@
 <resources>
     <string name="info_news_title">Τελευταία νέα · %1$s</string>
-    <string name="info_news_star_sky" formatted="false">Περιηγηθείτε σε πιο σταθερό ουρανό με ρυθμιζόμενη ομαλότητα· η ισορροπημένη λειτουργία είναι η προεπιλογή.</string>
-    <string name="info_news_texture_downloads" formatted="false">Δημιουργήστε ξυπνητήρια Android ή συμβάντα ημερολογίου για μελλοντικά τροχιακά σημεία από τον ουρανό ή την ημερήσια διαδρομή.</string>
-    <string name="info_news_weather" formatted="false">Εξερευνήστε το Tesla Roadster (2018), με ηλιοκεντρικές εφημερίδες, δεδομένα αναφοράς και εικόνα για λήψη.</string>
-    <string name="info_news_viewer_zoom" formatted="false">Αναγνωρίστε ευκολότερα τα τρέχοντα και κύρια συμβάντα στην ημερήσια διαδρομή, με τονισμένη την τρέχουσα γραμμή και έντονες τις βασικές τιμές.</string>
-    <string name="info_news_settings" formatted="false">Αφαιρέστε ένα αντικείμενο απευθείας από την κύρια κάρτα του μετά από επιβεβαίωση και αναγνωρίστε το όνομά του από το χρώμα της τροχιάς.</string>
-    <string name="info_news_catalog" formatted="false">Τα συννεφάκια των σημείων παραμένουν πάνω από τα ουράνια εικονίδια χωρίς αναπηδήσεις· ονόματα και υπομνήματα φωτογραφιών και πανοραμάτων διατηρούν το πλήρες χρώμα του αντικειμένου.</string>
+    <string name="info_news_star_sky" formatted="false">Οι ετικέτες σημείων εμφανίζουν έντονα ονόματα αντικειμένων, τίτλους πολλών γραμμών και ελαφρώς διαφανές φόντο.</string>
+    <string name="info_news_texture_downloads" formatted="false">Μεγαλύτεροι μετρητές χωρίς περίγραμμα, πιο ευδιάκριτα χρώματα σεναρίου και φωτεινότερο μπλε την ημέρα.</string>
+    <string name="info_news_weather" formatted="false">Ένα απλό Χ δίπλα στα βέλη πλοήγησης αφαιρεί ένα αντικείμενο μετά από επιβεβαίωση.</string>
+    <string name="info_news_viewer_zoom" formatted="false">Τα αιτήματα καιρού έχουν χρονικό όριο και επιτρέπουν νέα προσπάθεια όταν λείπουν δεδομένα.</string>
+    <string name="info_news_settings" formatted="false">Και οι 20 εικόνες ουράνιων αντικειμένων, μαζί με την LV-426, λαμβάνονται χωριστά σε WebP ποιότητας 90.</string>
+    <string name="info_news_catalog" formatted="false">Ενημερωμένο πακέτο υφών 1.2.1, συνεπή αρχεία και επαληθευμένη επαναχρησιμοποίηση αποθηκευμένων εικόνων.</string>
 </resources>

@@ -1,0 +1,130 @@
+Space Compass celestial texture pack 1.2.1
+20 WebP images; quality 90/100, encoding method 6.
+19 images are 2048 x 1024; LV-426 retains its original 1774 x 887 pixels.
+All image bytes match pack 1.2; no additional lossy recompression or upscaling.
+The app downloads individual verified files, not the ZIP. Earlier release URLs are preserved.
+
+europa_2048.webp
+Credit: NASA/JPL/USGS
+License: USGS public-domain product; retain source attribution.
+Source page: https://astrogeology.usgs.gov/search/map/europa_voyager_galileo_ssi_global_mosaic_500m
+Processing: Derivative of the original 512 x 256 grayscale browse mosaic; no invented detail or colour.
+
+io_2048.webp
+Credit: NASA/JPL/USGS
+License: USGS public-domain product; retain source attribution.
+Source page: https://astrogeology.usgs.gov/search/map/io_voyager_galileo_ssi_global_mosaic_1km
+Processing: Derivative of the original 512 x 256 grayscale browse mosaic; no invented detail or colour.
+
+jupiter.webp
+Credit: Solar System Scope textures by INOVE
+License: CC BY 4.0
+Source page: https://www.solarsystemscope.com/textures/
+License url: https://creativecommons.org/licenses/by/4.0/
+
+mars.webp
+Credit: Solar System Scope textures by INOVE
+License: CC BY 4.0
+Source page: https://www.solarsystemscope.com/textures/
+License url: https://creativecommons.org/licenses/by/4.0/
+
+mercury.webp
+Credit: Solar System Scope textures by INOVE
+License: CC BY 4.0
+Source page: https://www.solarsystemscope.com/textures/
+License url: https://creativecommons.org/licenses/by/4.0/
+
+moon.webp
+Credit: NASA/GSFC/Arizona State University
+License: NASA imagery; retain attribution; no endorsement.
+Source page: https://svs.gsfc.nasa.gov/4720/
+
+neptune.webp
+Credit: Solar System Scope textures by INOVE
+License: CC BY 4.0
+Source page: https://www.solarsystemscope.com/textures/
+License url: https://creativecommons.org/licenses/by/4.0/
+
+pluto.webp
+Credit: NASA/JHUAPL/SwRI
+License: NASA imagery; retain attribution; no endorsement.
+Source page: https://science.nasa.gov/resource/pluto-global-color-map/
+
+saturn.webp
+Credit: Solar System Scope textures by INOVE
+License: CC BY 4.0
+Source page: https://www.solarsystemscope.com/textures/
+License url: https://creativecommons.org/licenses/by/4.0/
+
+sun.webp
+Credit: Solar System Scope textures by INOVE
+License: CC BY 4.0
+Source page: https://www.solarsystemscope.com/textures/
+License url: https://creativecommons.org/licenses/by/4.0/
+
+uranus.webp
+Credit: Solar System Scope textures by INOVE
+License: CC BY 4.0
+Source page: https://www.solarsystemscope.com/textures/
+License url: https://creativecommons.org/licenses/by/4.0/
+
+venus_atmosphere.webp
+Credit: Solar System Scope textures by INOVE
+License: CC BY 4.0
+Source page: https://www.solarsystemscope.com/textures/
+License url: https://creativecommons.org/licenses/by/4.0/
+
+titan.webp
+Credit: NASA/JPL-Caltech/Space Science Institute
+License: NASA imagery: retain attribution; no endorsement.
+Source page: https://science.nasa.gov/resource/titan-mosaic-the-surface-under-the-haze/
+Source: https://assets.science.nasa.gov/content/dam/science/psd/solar/2023/09/p/i/a/PIA22770-1.jpg
+Processing: Lanczos resample, no invented detail
+
+sirius.webp
+Credit: NASA, ESA, H. Bond (STScI), and M. Barstow (University of Leicester)
+License: NASA/ESA Hubble imagery: retain attribution; no endorsement.
+Source page: https://science.nasa.gov/asset/hubble/the-dog-star-sirius-and-its-tiny-companion/
+Source: https://assets.science.nasa.gov/content/dam/science/missions/hubble/releases/2005/12/STScI-01EVT7ZJ6D77V1MAV8F65NSFE7.tif/jcr:content/renditions/733x800.jpg
+Processing: Aspect-preserving fit with black framing; no spherical projection
+
+betelgeuse.webp
+Credit: ALMA (ESO/NAOJ/NRAO)/E. O’Gorman/P. Kervella
+License: CC BY 4.0; https://www.eso.org/public/copyright/
+Source page: https://www.eso.org/public/images/potw1726a/
+Source: https://cdn.eso.org/images/large/potw1726a.jpg
+Processing: Aspect-preserving fit with black framing; no spherical projection
+
+orion_nebula.webp
+Credit: NASA, ESA, M. Robberto (STScI/ESA), and the Hubble Space Telescope Orion Treasury Project Team
+License: NASA/ESA Hubble imagery: retain attribution; no endorsement.
+Source page: https://science.nasa.gov/asset/hubble/hubbles-sharpest-view-of-the-orion-nebula/
+Source: https://assets.science.nasa.gov/content/dam/science/missions/hubble/releases/2006/01/STScI-01EVT7X0BR54ZWDP1AG2DA54RA.tif/jcr:content/renditions/6000x6000.jpg
+Processing: Aspect-preserving fit with black framing; no spherical projection
+
+pleiades.webp
+Credit: NASA/JPL-Caltech/UCLA
+License: NASA imagery: retain attribution; no endorsement.
+Source page: https://science.nasa.gov/photojournal/seven-sisters-get-wise/
+Source: https://assets.science.nasa.gov/content/dam/science/psd/photojournal/pia/pia13/pia13121/PIA13121.jpg
+Processing: Aspect-preserving fit with black framing; no spherical projection
+
+andromeda_galaxy.webp
+Credit: NASA, ESA, Benjamin F. Williams (UWashington), Zhuo Chen (UWashington), L. Clifton Johnson (Northwestern); Image Processing: Joseph DePasquale (STScI)
+License: NASA/ESA Hubble imagery: retain attribution; no endorsement.
+Source page: https://science.nasa.gov/mission/hubble/science/explore-the-night-sky/hubble-messier-catalog/messier-31/
+Source: https://assets.science.nasa.gov/content/dam/science/missions/hubble/galaxies/andromeda/Hubble_M31Mosaic_2025_10552x2468_STScI-01JGY92V0Z2HJTVH605N4WH9XQ.jpg
+Processing: Aspect-preserving fit with black framing; no spherical projection
+
+tesla_roadster.webp
+Credit: SpaceX
+License: CC0 1.0
+Source page: https://commons.wikimedia.org/wiki/File:Elon_Musk%27s_Tesla_Roadster_(40143096241).jpg
+Source: https://upload.wikimedia.org/wikipedia/commons/8/87/Elon_Musk%27s_Tesla_Roadster_%2840143096241%29.jpg
+License url: https://creativecommons.org/publicdomain/zero/1.0/
+Processing: Aspect-preserving Lanczos fit with black framing; no spherical projection or invented current attitude.
+
+lv426.webp
+Credit: Original Space Compass illustration
+License: Original project artwork; see repository LICENSE
+Note: Fictional Alien moon; illustrative surface, not scientific imagery.

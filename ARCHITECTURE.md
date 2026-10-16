@@ -408,3 +408,8 @@ Main object names and shared photo/panorama legend swatches use full identity co
 independent of elevation. Below-horizon scene paths keep their separate dimmed style.
 Only application chrome excludes focused callouts: celestial markers are drawn
 beneath them and cannot cause placement feedback. The bell aligns to the callout center.
+
+
+## Release 1.4.1
+
+The foreground weather owner distinguishes loading, usable cached data and failure. Bounded requests retain TLS checks and expose a manual retry without losing status priority. Point callouts and their reminder share a translucency constant; count badges and scenario accents share their component palette. Object removal keeps its confirmation and a narrower horizontal hit region without changing navigation targets. Texture policy pins twenty external files in pack 1.2.1 and checks legacy caches before downloading. Neither runtime ZIP extraction nor a remote executable manifest is introduced.

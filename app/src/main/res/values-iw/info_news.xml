@@ -1,9 +1,9 @@
 <resources>
     <string name="info_news_title">החידושים האחרונים · %1$s</string>
-    <string name="info_news_star_sky" formatted="false">סיירו בשמיים יציבים יותר עם חלקות תנועה ניתנת לכוונון; מצב מאוזן הוא ברירת המחדל.</string>
-    <string name="info_news_texture_downloads" formatted="false">צרו שעונים מעוררים של Android או אירועי יומן לנקודות מסלול עתידיות, מתצוגת השמיים או מהמסלול היומי.</string>
-    <string name="info_news_weather" formatted="false">גלו את Tesla Roadster (2018), עם אפמרידות הליוצנטריות, נתוני ייחוס ותמונה להורדה.</string>
-    <string name="info_news_viewer_zoom" formatted="false">זהו בקלות אירועים נוכחיים ועיקריים במסלול היומי, עם שורה נוכחית מודגשת וערכים חשובים בגופן מודגש.</string>
-    <string name="info_news_settings" formatted="false">הסירו גרם ישירות מהכרטיס הראשי שלו לאחר אישור, וזהו את שמו לפי צבע המסלול.</string>
-    <string name="info_news_catalog" formatted="false">בועות הנקודות נשארות מעל סמלי הגרמים בלי לקפוץ; השמות ומקראי התמונות והפנורמות שומרים על הצבע המלא של הגרם.</string>
+    <string name="info_news_star_sky" formatted="false">בועות הנקודות מציגות שמות עצמים מודגשים, כותרות הנפרסות על כמה שורות ורקע שקוף מעט.</string>
+    <string name="info_news_texture_downloads" formatted="false">מונים גדולים יותר ללא מסגרת, צבעי תרחיש ברורים יותר וכחול בהיר יותר ביום.</string>
+    <string name="info_news_weather" formatted="false">סימן X פשוט לצד חיצי הניווט מסיר עצם לאחר אישור.</string>
+    <string name="info_news_viewer_zoom" formatted="false">בקשות מזג האוויר מוגבלות בזמן וניתן לנסות שוב כשהנתונים אינם זמינים.</string>
+    <string name="info_news_settings" formatted="false">כל 20 תמונות גרמי השמים, כולל LV-426, יורדות בנפרד כקובצי WebP באיכות 90.</string>
+    <string name="info_news_catalog" formatted="false">חבילת מרקמים מעודכנת 1.2.1, ארכיונים תואמים ושימוש חוזר מאומת בתמונות שנשמרו.</string>
 </resources>

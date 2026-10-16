@@ -1,9 +1,9 @@
 <resources>
     <string name="info_news_title">Dernières nouveautés · %1$s</string>
-    <string name="info_news_star_sky" formatted="false">Explorez un ciel plus stable avec une fluidité réglable ; Équilibrée est le réglage par défaut.</string>
-    <string name="info_news_texture_downloads" formatted="false">Créez des alarmes Android ou des événements de calendrier pour les futurs points orbitaux, depuis le ciel ou le parcours quotidien.</string>
-    <string name="info_news_weather" formatted="false">Découvrez Tesla Roadster (2018), avec des éphémérides héliocentriques, des données de référence et une image téléchargeable.</string>
-    <string name="info_news_viewer_zoom" formatted="false">Repérez mieux les événements actuels et principaux du parcours quotidien, avec la ligne actuelle surlignée et les valeurs clés en gras.</string>
-    <string name="info_news_settings" formatted="false">Retirez un objet directement de sa carte principale après confirmation et reconnaissez son nom grâce à la couleur de son orbite.</string>
-    <string name="info_news_catalog" formatted="false">Les bulles restent au-dessus des icônes célestes sans sauter ; les noms et les légendes des photos et panoramas conservent la couleur pleine de l’objet.</string>
+    <string name="info_news_star_sky" formatted="false">Les bulles des points affichent les noms en gras, des titres sur plusieurs lignes et un fond légèrement transparent.</string>
+    <string name="info_news_texture_downloads" formatted="false">Compteurs plus grands sans bordure, couleurs de scénario plus claires et bleu diurne plus lumineux.</string>
+    <string name="info_news_weather" formatted="false">Une simple croix à côté des flèches de navigation retire un objet après confirmation.</string>
+    <string name="info_news_viewer_zoom" formatted="false">Les requêtes météo ont un délai maximal et proposent de réessayer si les données manquent.</string>
+    <string name="info_news_settings" formatted="false">Les 20 images célestes, dont LV-426, sont téléchargées individuellement en WebP de qualité 90.</string>
+    <string name="info_news_catalog" formatted="false">Pack de textures 1.2.1 mis à jour, archives cohérentes et réutilisation vérifiée des images enregistrées.</string>
 </resources>

@@ -1,9 +1,9 @@
 <resources>
     <string name="info_news_title">Laatste nieuws · %1$s</string>
-    <string name="info_news_star_sky" formatted="false">Verken een stabielere hemel met instelbare vloeiendheid; Gebalanceerd is de standaard.</string>
-    <string name="info_news_texture_downloads" formatted="false">Maak Android-wekkers of agenda-afspraken voor toekomstige baanpunten vanuit de hemel of de dagelijkse baan.</string>
-    <string name="info_news_weather" formatted="false">Ontdek Tesla Roadster (2018), met heliocentrische efemeriden, referentiegegevens en een downloadbare afbeelding.</string>
-    <string name="info_news_viewer_zoom" formatted="false">Herken huidige en belangrijke gebeurtenissen in de dagelijkse baan beter, met een gemarkeerde huidige rij en vetgedrukte kernwaarden.</string>
-    <string name="info_news_settings" formatted="false">Verwijder een object na bevestiging rechtstreeks uit de hoofdkaart en herken de naam aan de kleur van de baan.</string>
-    <string name="info_news_catalog" formatted="false">Puntballonnen blijven zonder verspringen boven de hemeliconen; namen en legenda’s van foto’s en panorama’s behouden de volle objectkleur.</string>
+    <string name="info_news_star_sky" formatted="false">Puntballonnen tonen vetgedrukte objectnamen, titels over meerdere regels en een licht transparante achtergrond.</string>
+    <string name="info_news_texture_downloads" formatted="false">Grotere tellers zonder rand, duidelijkere scenariokleuren en een lichtere blauwe dagkleur.</string>
+    <string name="info_news_weather" formatted="false">Een eenvoudig kruisje naast de navigatiepijlen verwijdert een object na bevestiging.</string>
+    <string name="info_news_viewer_zoom" formatted="false">Weeraanvragen hebben een tijdslimiet en bieden opnieuw proberen aan als gegevens ontbreken.</string>
+    <string name="info_news_settings" formatted="false">Alle 20 hemelafbeeldingen, inclusief LV-426, worden afzonderlijk als WebP met kwaliteit 90 gedownload.</string>
+    <string name="info_news_catalog" formatted="false">Bijgewerkt textuurpakket 1.2.1, overeenkomende archieven en gecontroleerd hergebruik van opgeslagen afbeeldingen.</string>
 </resources>

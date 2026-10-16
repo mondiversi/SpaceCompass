@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="sun_finder_weather_unavailable">天气数据不可用。</string>
+</resources>

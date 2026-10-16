@@ -1,9 +1,9 @@
 <resources>
     <string name="info_news_title">Últimas novedades · %1$s</string>
-    <string name="info_news_star_sky" formatted="false">Explora un cielo más estable con fluidez ajustable; Equilibrada es la opción predeterminada.</string>
-    <string name="info_news_texture_downloads" formatted="false">Crea alarmas de Android o eventos del calendario para puntos orbitales futuros desde el cielo o el recorrido diario.</string>
-    <string name="info_news_weather" formatted="false">Explora Tesla Roadster (2018), con efemérides heliocéntricas, datos de referencia y una imagen descargable.</string>
-    <string name="info_news_viewer_zoom" formatted="false">Identifica mejor los eventos actuales y principales del recorrido diario, con la fila actual resaltada y los valores clave en negrita.</string>
-    <string name="info_news_settings" formatted="false">Elimina un objeto directamente desde su tarjeta principal con confirmación y reconoce su nombre por el color de la órbita.</string>
-    <string name="info_news_catalog" formatted="false">Los bocadillos permanecen sobre los iconos celestes sin saltar; los nombres y las leyendas de fotos y panorámicas conservan el color pleno del objeto.</string>
+    <string name="info_news_star_sky" formatted="false">Los avisos de los puntos muestran nombres en negrita, títulos en varias líneas y un fondo ligeramente transparente.</string>
+    <string name="info_news_texture_downloads" formatted="false">Contadores más grandes sin borde, colores de escenario más claros y un azul diurno más luminoso.</string>
+    <string name="info_news_weather" formatted="false">Una X sencilla junto a las flechas de navegación elimina un objeto tras confirmarlo.</string>
+    <string name="info_news_viewer_zoom" formatted="false">Las solicitudes meteorológicas tienen un tiempo límite y permiten reintentar si faltan datos.</string>
+    <string name="info_news_settings" formatted="false">Las 20 imágenes celestes, incluida LV-426, se descargan individualmente en WebP con calidad 90.</string>
+    <string name="info_news_catalog" formatted="false">Paquete de texturas 1.2.1 actualizado, archivos coherentes y reutilización verificada de imágenes guardadas.</string>
 </resources>

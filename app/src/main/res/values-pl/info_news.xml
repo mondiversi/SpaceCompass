@@ -1,9 +1,9 @@
 <resources>
     <string name="info_news_title">Ostatnie nowości · %1$s</string>
-    <string name="info_news_star_sky" formatted="false">Odkrywaj stabilniejsze niebo z regulowaną płynnością; domyślny jest tryb zrównoważony.</string>
-    <string name="info_news_texture_downloads" formatted="false">Ustawiaj alarmy Androida lub wydarzenia kalendarza dla przyszłych punktów orbity z widoku nieba lub dziennej trasy.</string>
-    <string name="info_news_weather" formatted="false">Poznaj Tesla Roadster (2018): efemerydy heliocentryczne, dane referencyjne i obraz do pobrania.</string>
-    <string name="info_news_viewer_zoom" formatted="false">Łatwiej rozpoznawaj bieżące i kluczowe zdarzenia na dziennej trasie dzięki wyróżnieniu bieżącego wiersza i pogrubieniu ważnych wartości.</string>
-    <string name="info_news_settings" formatted="false">Usuwaj obiekt bezpośrednio z jego głównej karty po potwierdzeniu i rozpoznawaj jego nazwę po kolorze orbity.</string>
-    <string name="info_news_catalog" formatted="false">Dymki punktów pozostają nad ikonami ciał niebieskich bez przeskakiwania; nazwy i legendy zdjęć oraz panoram zachowują pełny kolor obiektu.</string>
+    <string name="info_news_star_sky" formatted="false">Dymki punktów pokazują pogrubione nazwy obiektów, zawijane tytuły i lekko przezroczyste tło.</string>
+    <string name="info_news_texture_downloads" formatted="false">Większe liczniki bez obramowania, wyraźniejsze kolory scenariusza i jaśniejszy niebieski w dzień.</string>
+    <string name="info_news_weather" formatted="false">Prosty znak X obok strzałek nawigacji usuwa obiekt po potwierdzeniu.</string>
+    <string name="info_news_viewer_zoom" formatted="false">Zapytania pogodowe mają limit czasu i umożliwiają ponowienie, gdy brakuje danych.</string>
+    <string name="info_news_settings" formatted="false">Wszystkie 20 obrazów nieba, w tym LV-426, jest pobieranych pojedynczo w formacie WebP z jakością 90.</string>
+    <string name="info_news_catalog" formatted="false">Zaktualizowany pakiet tekstur 1.2.1, zgodne archiwa i sprawdzone ponowne użycie zapisanych obrazów.</string>
 </resources>

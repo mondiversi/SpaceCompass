@@ -1,9 +1,9 @@
 <resources>
     <string name="info_news_title">Последние новости · %1$s</string>
-    <string name="info_news_star_sky" formatted="false">Наблюдайте более стабильное небо с регулируемой плавностью; по умолчанию выбран сбалансированный режим.</string>
-    <string name="info_news_texture_downloads" formatted="false">Создавайте будильники Android или события календаря для будущих точек орбиты на карте неба или в суточной траектории.</string>
-    <string name="info_news_weather" formatted="false">Исследуйте Tesla Roadster (2018): гелиоцентрические эфемериды, справочные данные и загружаемое изображение.</string>
-    <string name="info_news_viewer_zoom" formatted="false">Текущие и ключевые события суточной траектории легче различать: текущая строка выделена фоном, важные значения — жирным шрифтом.</string>
-    <string name="info_news_settings" formatted="false">Удаляйте объект прямо из его основной карточки с подтверждением и узнавайте его название по цвету орбиты.</string>
-    <string name="info_news_catalog" formatted="false">Подсказки точек остаются над значками небесных объектов без скачков; названия и легенды фото и панорам сохраняют исходный цвет объекта.</string>
+    <string name="info_news_star_sky" formatted="false">Подсказки точек показывают названия объектов полужирным шрифтом, переносимые заголовки и слегка прозрачный фон.</string>
+    <string name="info_news_texture_downloads" formatted="false">Увеличенные счётчики без рамок, более чёткие цвета сценария и более светлый синий цвет днём.</string>
+    <string name="info_news_weather" formatted="false">Простой крестик рядом со стрелками навигации удаляет объект после подтверждения.</string>
+    <string name="info_news_viewer_zoom" formatted="false">Запросы погоды ограничены по времени и позволяют повторить попытку при отсутствии данных.</string>
+    <string name="info_news_settings" formatted="false">Все 20 изображений небесных объектов, включая LV-426, загружаются отдельно в формате WebP с качеством 90.</string>
+    <string name="info_news_catalog" formatted="false">Обновлённый пакет текстур 1.2.1, согласованные архивы и проверенное повторное использование сохранённых изображений.</string>
 </resources>

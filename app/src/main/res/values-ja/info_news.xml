@@ -1,9 +1,9 @@
 <resources>
     <string name="info_news_title">最近の変更 · %1$s</string>
-    <string name="info_news_star_sky" formatted="false">滑らかさを調整して、より安定した空を探索できます。初期設定はバランスです。</string>
-    <string name="info_news_texture_downloads" formatted="false">空の表示や一日の軌道から、未来の軌道上の点にAndroidのアラームやカレンダーの予定を設定できます。</string>
-    <string name="info_news_weather" formatted="false">太陽中心の天体暦、参考データ、ダウンロード画像でTesla Roadster (2018)を探索できます。</string>
-    <string name="info_news_viewer_zoom" formatted="false">一日の軌道で現在の行を強調表示し、主要なイベントの値を太字にして、現在位置や重要な時点を見分けやすくしました。</string>
-    <string name="info_news_settings" formatted="false">メインカードから確認後に天体を直接選択解除でき、軌道の色で名前を識別できます。</string>
-    <string name="info_news_catalog" formatted="false">点の吹き出しが上下に跳ねず天体アイコンの前面に表示され、名前と写真・パノラマの凡例は天体本来の色を保ちます。</string>
+    <string name="info_news_star_sky" formatted="false">ポイントの吹き出しに天体名を太字で表示し、長い見出しは折り返します。背景は少し透過します。</string>
+    <string name="info_news_texture_downloads" formatted="false">枠なしの大きなカウンター、見やすいシナリオ色、昼間の明るい青に更新しました。</string>
+    <string name="info_news_weather" formatted="false">移動矢印の横にあるシンプルなXから、確認後に天体を選択解除できます。</string>
+    <string name="info_news_viewer_zoom" formatted="false">天気の取得に制限時間を設け、データを取得できない場合は再試行できます。</string>
+    <string name="info_news_settings" formatted="false">LV-426を含む全20枚の天体画像を、品質90のWebPとして個別にダウンロードします。</string>
+    <string name="info_news_catalog" formatted="false">テクスチャパック1.2.1と整合したアーカイブに更新し、保存済み画像は検証して再利用します。</string>
 </resources>

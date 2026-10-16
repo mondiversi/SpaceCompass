@@ -1,9 +1,9 @@
 <resources>
     <string name="info_news_title">Perubahan terbaru · %1$s</string>
-    <string name="info_news_star_sky" formatted="false">Jelajahi langit yang lebih stabil dengan kelancaran yang dapat diatur; Seimbang menjadi pilihan bawaan.</string>
-    <string name="info_news_texture_downloads" formatted="false">Buat alarm Android atau acara kalender untuk titik orbit mendatang dari langit atau lintasan harian.</string>
-    <string name="info_news_weather" formatted="false">Jelajahi Tesla Roadster (2018), dengan efemeris heliosentris, data referensi, dan gambar yang dapat diunduh.</string>
-    <string name="info_news_viewer_zoom" formatted="false">Kenali peristiwa saat ini dan peristiwa utama pada lintasan harian dengan baris saat ini yang disorot dan nilai penting yang dicetak tebal.</string>
-    <string name="info_news_settings" formatted="false">Hapus objek langsung dari kartu utamanya dengan konfirmasi dan kenali namanya melalui warna orbit.</string>
-    <string name="info_news_catalog" formatted="false">Balon titik tetap berada di atas ikon benda langit tanpa meloncat; nama serta legenda foto dan panorama mempertahankan warna penuh objek.</string>
+    <string name="info_news_star_sky" formatted="false">Balon titik menampilkan nama objek tebal, judul beberapa baris, dan latar yang sedikit transparan.</string>
+    <string name="info_news_texture_downloads" formatted="false">Penghitung lebih besar tanpa bingkai, warna skenario lebih jelas, dan biru siang yang lebih terang.</string>
+    <string name="info_news_weather" formatted="false">Tanda X sederhana di samping panah navigasi menghapus objek setelah dikonfirmasi.</string>
+    <string name="info_news_viewer_zoom" formatted="false">Permintaan cuaca memiliki batas waktu dan dapat dicoba kembali jika data tidak tersedia.</string>
+    <string name="info_news_settings" formatted="false">Semua 20 gambar benda langit, termasuk LV-426, diunduh satu per satu sebagai WebP berkualitas 90.</string>
+    <string name="info_news_catalog" formatted="false">Paket tekstur 1.2.1 diperbarui, arsip yang sesuai, dan penggunaan ulang gambar tersimpan yang terverifikasi.</string>
 </resources>

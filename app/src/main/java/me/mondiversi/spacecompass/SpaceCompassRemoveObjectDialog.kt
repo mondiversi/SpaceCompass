@@ -1,28 +1,41 @@
 package me.mondiversi.spacecompass
 
+import androidx.compose.foundation.clickable
+import androidx.compose.foundation.interaction.MutableInteractionSource
+import androidx.compose.foundation.layout.Box
+import androidx.compose.foundation.layout.offset
 import androidx.compose.foundation.layout.size
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.remember
+import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.geometry.Offset
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.StrokeCap
 import androidx.compose.ui.platform.testTag
 import androidx.compose.ui.res.stringResource
-import androidx.compose.ui.semantics.Role
 import androidx.compose.ui.unit.dp
 
-/** Match the adjacent observer/path actions, including their neutral fill and press feedback. */
+/** A narrower hit region keeps removal separate from the adjacent navigation arrow. */
 @Composable
-internal fun SpaceCompassRemoveObjectButton(name: String, onClick: () -> Unit) {
+internal fun SpaceCompassRemoveObjectButton(name: String, onClick: () -> Unit, tint: Color) {
     val label = stringResource(R.string.celestial_remove_description, name)
-    SpaceCompassCelestialIconControl(false, label, onClick,
-        Modifier.testTag("celestial-body-remove"), Role.Button) {
-        SpaceCompassIconCanvas(Color.White, Modifier.size(18.dp)) { color ->
-            drawLine(color, Offset(size.width*.22f, size.height*.22f),
-                Offset(size.width*.78f, size.height*.78f), 1.8.dp.toPx(), StrokeCap.Round)
-            drawLine(color, Offset(size.width*.78f, size.height*.22f),
-                Offset(size.width*.22f, size.height*.78f), 1.8.dp.toPx(), StrokeCap.Round)
+    val interaction = remember { MutableInteractionSource() }
+    SpaceCompassFloatingControlHitRegion {
+        // Retain the layout slot and vertical reach; only the horizontal hit bounds shrink.
+        Box(Modifier.size(48.dp), contentAlignment = Alignment.Center) {
+            Box(Modifier.size(width = 36.dp, height = 48.dp).testTag("celestial-body-remove")
+                .clickable(interactionSource = interaction, indication = null, onClick = onClick)
+                .spaceCompassAccessibleAction(label, onClick = onClick), contentAlignment = Alignment.Center) {
+                // Balance the visible gaps beside the chevron and the Observatory circle, also in RTL.
+                SpaceCompassIconCanvas(tint, Modifier.size(18.dp).offset(x = (-3.5).dp)) { color ->
+                    drawLine(color, Offset(size.width*.22f, size.height*.22f),
+                        Offset(size.width*.78f, size.height*.78f), 1.8.dp.toPx(), StrokeCap.Round)
+                    drawLine(color, Offset(size.width*.78f, size.height*.22f),
+                        Offset(size.width*.22f, size.height*.78f), 1.8.dp.toPx(), StrokeCap.Round)
+                }
+            }
         }
     }
 }

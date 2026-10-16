@@ -1,9 +1,9 @@
 <resources>
     <string name="info_news_title">تازه‌ترین تغییرات · %1$s</string>
-    <string name="info_news_star_sky" formatted="false">آسمانی پایدارتر را با روانی قابل تنظیم کاوش کنید؛ حالت متعادل گزینهٔ پیش‌فرض است.</string>
-    <string name="info_news_texture_downloads" formatted="false">از نمای آسمان یا مسیر روزانه، برای نقاط مداری آینده زنگ Android یا رویداد تقویم ایجاد کنید.</string>
-    <string name="info_news_weather" formatted="false">Tesla Roadster (2018) را با داده‌های نجومی خورشیدمرکزی، اطلاعات مرجع و تصویر قابل دریافت کاوش کنید.</string>
-    <string name="info_news_viewer_zoom" formatted="false">رویدادهای کنونی و مهم مسیر روزانه را آسان‌تر تشخیص دهید؛ ردیف کنونی برجسته و مقادیر مهم پررنگ هستند.</string>
-    <string name="info_news_settings" formatted="false">پس از تأیید، جرم را مستقیماً از کارت اصلی آن حذف کنید و نامش را با رنگ مدار تشخیص دهید.</string>
-    <string name="info_news_catalog" formatted="false">کادرهای نقاط بدون پرش بالای نمادهای آسمانی می‌مانند؛ نام‌ها و راهنمای رنگ عکس‌ها و پانوراماها رنگ کامل جرم را حفظ می‌کنند.</string>
+    <string name="info_news_star_sky" formatted="false">کادرهای نقاط، نام اجرام را پررنگ و عنوان‌ها را در چند سطر، روی پس‌زمینه‌ای کمی شفاف نشان می‌دهند.</string>
+    <string name="info_news_texture_downloads" formatted="false">شمارنده‌های بزرگ‌تر و بدون حاشیه، رنگ‌های واضح‌تر سناریو و آبی روشن‌تر در روز.</string>
+    <string name="info_news_weather" formatted="false">علامت سادهٔ X کنار پیکان‌های پیمایش، پس از تأیید جرم را حذف می‌کند.</string>
+    <string name="info_news_viewer_zoom" formatted="false">درخواست‌های هواشناسی محدودیت زمانی دارند و در صورت نبود داده می‌توان دوباره تلاش کرد.</string>
+    <string name="info_news_settings" formatted="false">هر ۲۰ تصویر اجرام آسمانی، از جمله LV-426، جداگانه با قالب WebP و کیفیت ۹۰ بارگیری می‌شوند.</string>
+    <string name="info_news_catalog" formatted="false">بستهٔ بافت به‌روز 1.2.1، بایگانی‌های هماهنگ و استفادهٔ دوباره از تصاویر ذخیره‌شده پس از بررسی.</string>
 </resources>

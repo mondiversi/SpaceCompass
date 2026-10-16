@@ -1,5 +1,14 @@
 # Changelog
 
+## 1.4.1 — 2026-10-16
+
+- Show bold object headings and optional event names in focused point callouts, with wrapping titles, balanced clock/countdown and angle rows, and matching light translucency on the caption and reminder button.
+- Improve borderless count badges with bold white numbers, exact day/night scenario accents and a subtly lighter daytime blue.
+- Place a plain remove-object X between navigation and Observatory, with balanced visual gaps, a narrower horizontal hit region and the existing confirmation.
+- Bound weather requests and show a localized Retry action when relevant data are unavailable; preserve location/orbital status priority.
+- Move LV-426 out of the APK. All 20 celestial images use external quality-90 WebP files from texture pack 1.2.1, including the Roadster photograph. Verify individual downloads and reuse matching legacy caches.
+- Refresh news in all twenty languages and publish consistent graphics/reference archives. Preserve scientific calculations, saved settings, selections and distribution identity.
+
 ## 1.4.0 — 2026-10-16
 
 - Navigate a steadier sky with adjustable Low, Balanced and High fluidity. Balanced is now the default; saved choices are retained. Gyroscope-assisted stabilization reduces stationary and handheld jitter without freezing real motion or changing geographic north.

@@ -57,8 +57,8 @@ internal fun SpaceCompassCelestialBodyDataIsland(bodyName: String?, primaryText:
         .padding(horizontal = 12.dp)) {
         if (bodyName != null || navigation != null) {
             // Compact only the title bar; retain the normal insets around the data below it.
-            // Reclaim 6 dp from the first action's empty inset for the name and trailing chevron.
-            // Its visible circle and the remaining actions stay at their existing positions.
+            // Reclaim 6 dp from the first action's touch inset for the name and trailing chevron.
+            // Keep the trailing actions anchored at the island's content edge.
             Row(Modifier.fillMaxWidth().testTag("celestial-body-header")
                 .padding(vertical = 1.dp), verticalAlignment = Alignment.CenterVertically,
                 horizontalArrangement = Arrangement.spacedBy(if (navigation == null) 0.dp else (-6).dp)) {
@@ -100,9 +100,9 @@ internal fun SpaceCompassCelestialBodyDataIsland(bodyName: String?, primaryText:
                     }
                 }, verticalAlignment = Alignment.CenterVertically,
                     horizontalArrangement = Arrangement.spacedBy(SpaceCompassObjectActionTargetSpacing)) {
-                    actions()
                     if (onRemove != null && bodyName != null)
-                        SpaceCompassRemoveObjectButton(bodyName, onRemove)
+                        SpaceCompassRemoveObjectButton(bodyName, onRemove, primaryText)
+                    actions()
                 }
             }
             HorizontalDivider(color = primaryText.copy(alpha = 0.12f))
@@ -121,7 +121,7 @@ private fun SpaceCompassCelestialBodyNavigationArrow(label: String, onClick: () 
     val interaction = remember { MutableInteractionSource() }
     Box(modifier.clickable(interactionSource = interaction, indication = null, onClick = onClick)
         .spaceCompassAccessibleAction(label, onClick = onClick)) {
-        // Keep the next arrow fixed beside Observatory. Moving only the previous glyph to
+        // Keep the next arrow fixed beside the trailing actions. Moving only the previous glyph to
         // the content edge and reducing the label insets reclaims 20 dp for the name, also in RTL.
         Box(Modifier.fillMaxSize().padding(end = if (previous) 0.dp else 10.dp),
             contentAlignment = if (previous) Alignment.CenterStart else Alignment.CenterEnd) {

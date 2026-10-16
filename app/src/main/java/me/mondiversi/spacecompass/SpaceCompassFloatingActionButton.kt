@@ -2,7 +2,6 @@ package me.mondiversi.spacecompass
 
 import androidx.compose.foundation.BorderStroke
 import androidx.compose.foundation.background
-import androidx.compose.foundation.border
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.BoxScope
 import androidx.compose.foundation.layout.fillMaxSize
@@ -20,6 +19,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.semantics.clearAndSetSemantics
 
 /** Accent only a persistent active state; disabled controls retain their neutral disabled tint. */
@@ -38,6 +38,7 @@ internal fun SpaceCompassFloatingActionButton(
     enabled: Boolean = true,
     selectedState: Boolean? = null,
     stateText: String? = null,
+    backgroundAlpha: Float = 1f,
     overlay: @Composable BoxScope.() -> Unit = {},
     content: @Composable () -> Unit
 ) {
@@ -47,7 +48,7 @@ internal fun SpaceCompassFloatingActionButton(
                 modifier = Modifier.fillMaxSize().then(modifier).spaceCompassAccessibleAction(
                     label, enabled = enabled, selectedState = selectedState,
                     stateText = stateText, onClick = onClick),
-                shape = CircleShape, color = background.copy(alpha = 1f),
+                shape = CircleShape, color = background.copy(alpha = backgroundAlpha),
                 contentColor = color.copy(alpha = if (enabled) 1f else .38f),
                 border = BorderStroke(1.dp, color.copy(alpha = .35f)), shadowElevation = 3.dp) {
                 Box(Modifier.fillMaxSize(), contentAlignment = Alignment.Center) { content() }
@@ -59,12 +60,12 @@ internal fun SpaceCompassFloatingActionButton(
 
 /** Shared compact badge; longer counts widen while retaining the same height and corner anchor. */
 @Composable
-internal fun SpaceCompassFloatingCountBadge(count: String, color: Color, background: Color,
-    modifier: Modifier = Modifier) {
-    Box(modifier.height(16.dp).widthIn(min = 16.dp)
-        .background(background, CircleShape).border(1.dp, color.copy(alpha = .5f), CircleShape)
+internal fun SpaceCompassFloatingCountBadge(count: String, modifier: Modifier = Modifier,
+    background: Color = MaterialTheme.colorScheme.primary) {
+    Box(modifier.height(20.dp).widthIn(min = 20.dp)
+        .background(background, CircleShape)
         .clearAndSetSemantics {}, contentAlignment = Alignment.Center) {
-        Text(count, modifier = Modifier.padding(horizontal = 3.dp), color = color,
-            fontSize = 9.sp, lineHeight = 10.sp, maxLines = 1)
+        Text(count, modifier = Modifier.padding(horizontal = 3.dp), color = Color.White,
+            fontSize = 11.sp, lineHeight = 13.sp, fontWeight = FontWeight.Bold, maxLines = 1)
     }
 }

@@ -58,7 +58,7 @@ internal fun SpaceCompassCelestialSelector(body: SpaceCompassCelestialBody, colo
     SpaceCompassFloatingActionButton(label, { catalogOpen?.value = true }, tint, background,
         modifier.testTag("celestial-select"), stateText = count,
         overlay = {
-            if (selectedBodies.isNotEmpty()) SpaceCompassFloatingCountBadge(count, tint, background,
+            if (selectedBodies.isNotEmpty()) SpaceCompassFloatingCountBadge(count,
                 Modifier.align(Alignment.TopEnd).testTag("celestial-selection-count"))
         }) {
         SpaceCompassCelestialCatalogIcon(Modifier.size(26.dp), tint,

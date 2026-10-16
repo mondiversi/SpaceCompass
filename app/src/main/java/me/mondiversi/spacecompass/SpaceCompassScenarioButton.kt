@@ -5,6 +5,7 @@ import androidx.compose.ui.Alignment
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.graphics.luminance
 import androidx.compose.ui.platform.testTag
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
@@ -14,8 +15,7 @@ import androidx.compose.ui.unit.dp
 internal fun SpaceCompassScenarioButton(activeCount: Int, color: Color, background: Color,
     onClick: () -> Unit) {
     val active = activeCount > 0
-    // Match Uvir's attention orange in both light and dark themes.
-    val tint = if (active) Color(0xFFF57C00) else color
+    val tint = if (active) spaceCompassScenarioAccentColor(background.luminance() < .4f) else color
     val label = stringResource(R.string.observer_title)
     val activeLabel = stringResource(R.string.observer_simulation_active)
     val count = formatSpaceCompassNumber(activeCount.toDouble(), 0,
@@ -24,8 +24,8 @@ internal fun SpaceCompassScenarioButton(activeCount: Int, color: Color, backgrou
         Modifier.testTag("open-scenario"), selectedState = active,
         stateText = if (active) "$activeLabel · $count" else null,
         overlay = {
-            if (active) SpaceCompassFloatingCountBadge(count, tint, background,
-                Modifier.align(Alignment.TopEnd).testTag("scenario-active-count"))
+            if (active) SpaceCompassFloatingCountBadge(count,
+                Modifier.align(Alignment.TopEnd).testTag("scenario-active-count"), background = tint)
         }) {
         SpaceCompassSettingsMenuIcon("observer", tint, Modifier.size(26.dp),
             iconStrokeWidth = SpaceCompassTitleActionIconStrokeWidth, crossed = !active)

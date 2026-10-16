@@ -1,9 +1,9 @@
 <resources>
     <string name="info_news_title">Latest news · %1$s</string>
-    <string name="info_news_star_sky" formatted="false">Navigate a steadier sky with adjustable fluidity; Balanced is the default.</string>
-    <string name="info_news_texture_downloads" formatted="false">Create Android alarms or calendar events for future orbital points from the sky or daily path.</string>
-    <string name="info_news_weather" formatted="false">Explore Tesla Roadster (2018), with heliocentric ephemerides, reference data and a downloadable image.</string>
-    <string name="info_news_viewer_zoom" formatted="false">Recognize current and key events more easily in the daily path, with a highlighted current row and bold key-event values.</string>
-    <string name="info_news_settings" formatted="false">Remove an object directly from its main card with confirmation, and recognize its name by the orbit color.</string>
-    <string name="info_news_catalog" formatted="false">Point callouts stay above celestial icons without jumping; object names and photo/panorama legends keep the full object color.</string>
+    <string name="info_news_star_sky" formatted="false">Point callouts show bold object names, wrapping titles and a lightly translucent background.</string>
+    <string name="info_news_texture_downloads" formatted="false">Bigger borderless counters, clearer scenario colors and a lighter daytime blue.</string>
+    <string name="info_news_weather" formatted="false">A plain X beside the navigation arrows removes an object after confirmation.</string>
+    <string name="info_news_viewer_zoom" formatted="false">Weather requests time out safely and offer Retry when data are unavailable.</string>
+    <string name="info_news_settings" formatted="false">All 20 celestial images, including LV-426, are downloaded individually as quality-90 WebP files.</string>
+    <string name="info_news_catalog" formatted="false">Updated texture pack 1.2.1, matching archives and verified image-cache reuse.</string>
 </resources>
