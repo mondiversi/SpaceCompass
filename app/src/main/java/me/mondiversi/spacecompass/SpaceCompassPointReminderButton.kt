@@ -56,12 +56,13 @@ internal fun SpaceCompassPointReminderButton(body: SpaceCompassCelestialBody, po
         SpaceCompassPointReminderKind.CALENDAR -> R.string.point_reminder_calendar
         null -> R.string.point_reminder_unavailable
     })
+    val unavailableMessage = stringResource(R.string.point_reminder_unavailable)
     val bodyName = stringResource(body.nameResource)
     val title = listOf(bodyName, pointName).filter { it.isNotBlank() }.joinToString(" · ")
     val onClick: () -> Unit = {
         // Revalidate after a pause, an external time-zone change or an expired point.
         val fresh = spaceCompassPointReminder(point.timeMs, viewedNowMs, System.currentTimeMillis(), isCurrent)
-        if (fresh == null) showSpaceCompassBottomMessage(context, context.getString(R.string.point_reminder_unavailable))
+        if (fresh == null) showSpaceCompassBottomMessage(context, unavailableMessage)
         else openSpaceCompassPointReminder(context, fresh, title)
     }
     val buttonModifier = modifier
