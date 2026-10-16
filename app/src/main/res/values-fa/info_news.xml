@@ -1,9 +1,9 @@
 <resources>
     <string name="info_news_title">تازه‌ترین تغییرات · %1$s</string>
-    <string name="info_news_star_sky" formatted="false">یازده جرم تازه برای ردیابی: کاوشگرها، تلسکوپ‌های فضایی، Tiangong، Apophis، 3I/ATLAS، M87* و پروکسیما b.</string>
-    <string name="info_news_texture_downloads" formatted="false">جدول‌های NASA/JPL موقعیت، فاصله و مسیر روزانهٔ کاوشگرها و اجرام کوچک را فراهم می‌کنند.</string>
-    <string name="info_news_weather" formatted="false">Hubble وTiangong از عناصر مداری تازه وSGP4 همراه منبع دادهٔ جایگزین استفاده می‌کنند.</string>
-    <string name="info_news_viewer_zoom" formatted="false">جهت‌های مرجع و داده‌های ناموجود بدون ساختن اندازه‌گیری توضیح داده می‌شوند.</string>
-    <string name="info_news_settings" formatted="false">تصاویر تازهٔ WebP خارجی با دریافت جداگانه، بررسی یکپارچگی و ذخیرهٔ آفلاین.</string>
-    <string name="info_news_catalog" formatted="false">منابع و ترجمه‌ها به‌روز شدند؛ فایل‌های گرافیکی جداگانه بدون ZIP تکراری بافت‌ها.</string>
+    <string name="info_news_star_sky" formatted="false">۵۳ جرم: سرس، انسلادوس، نسر واقع، دنب، نسر طائر و صلیب جنوبی به فهرست اضافه شدند.</string>
+    <string name="info_news_texture_downloads" formatted="false">سرعت زمان تا 3600×؛ شروع دوباره، پیشروی فقط هنگام فعال بودن برنامه یا پیشروی همیشگی.</string>
+    <string name="info_news_weather" formatted="false">نزدیکی‌های کمتر از 1.5° در یک لحظه در مسیرها، تصاویر و خروجی‌ها نمایش داده می‌شوند.</string>
+    <string name="info_news_viewer_zoom" formatted="false">مرتب‌سازی بر اساس فاصله از زمین و باز کردن رصدخانهٔ هر جرم مستقیماً از فهرست.</string>
+    <string name="info_news_settings" formatted="false">تنظیمات هماهنگ‌تر، کارت‌های افقی، نمادهای مسیر و گزینهٔ محافظ صفحه پس از ۱۵ دقیقه.</string>
+    <string name="info_news_catalog" formatted="false">بستهٔ گرافیکی 1.4: ‏۲۹ تصویر WebP خارجی با دانلود تکی، بررسی یکپارچگی و حافظهٔ نهان آفلاین.</string>
 </resources>

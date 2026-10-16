@@ -15,12 +15,15 @@ internal data class SpaceCompassObserverPlan(val latitude: Double, val longitude
     val automaticAltitudeMeters: Double? = altitudeMeters, val automaticZoneId: String? = zoneId,
     val simulateDate: Boolean = simulateTime, val momentZoneId: String = zoneId,
     val advanceTime: Boolean = false, val clockOffsetMs: Long? = null) {
+    // Runtime ownership is not part of the configured value, equality or encoded preferences.
+    var scenarioClock: SpaceCompassScenarioClock? = null
+        internal set
     val zone: ZoneId get() = ZoneId.of(zoneId)
     val position: SpaceCompassDevicePlace? get() = if (simulatePosition)
         SpaceCompassDevicePlace(latitude, longitude, if (simulateAltitude) altitudeMeters else automaticAltitudeMeters) else null
     fun resolvePlace(devicePlace: SpaceCompassDevicePlace?): SpaceCompassDevicePlace? =
         position ?: devicePlace?.let { if (simulateAltitude) it.copy(altitude = altitudeMeters) else it }
-    val hasCustomMoment: Boolean get() = simulateDate || simulateTime
+    val hasCustomMoment: Boolean get() = simulateDate || simulateTime || scenarioClock?.settings?.enabled == true
     val advancesClock: Boolean get() = simulateTime && advanceTime && clockOffsetMs != null
     val timeOverrideMs: Long? get() = timeMs.takeIf { simulateDate && simulateTime && !advancesClock }
     fun observationZone(deviceZone: ZoneId): ZoneId = when {

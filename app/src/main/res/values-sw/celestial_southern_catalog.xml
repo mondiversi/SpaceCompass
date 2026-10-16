@@ -1,0 +1,12 @@
+<resources>
+    <string name="celestial_ceres">Ceres</string>
+    <string name="celestial_enceladus">Enceladus</string>
+    <string name="celestial_vega">Vega</string>
+    <string name="celestial_deneb">Deneb</string>
+    <string name="celestial_altair">Altair</string>
+    <string name="celestial_southern_cross">Msalaba wa Kusini</string>
+    <string name="catalog_type_constellation">Kundinyota</string>
+    <string name="celestial_bright_star_note">Mwelekeo wa katalogi wenye mwendo binafsi na paralaksi. Vega na Altair huzunguka haraka: umbo na joto la uso hutegemea latitudo. Alama ni kielelezo.</string>
+    <string name="celestial_deneb_note">Deneb ni nyota kubwa mno ya samawati-nyeupe. Umbali uliokubaliwa ni takriban parseki 802; sifa zake za kimwili ni makadirio ya rejea yenye kutokuwa na uhakika.</string>
+    <string name="celestial_southern_cross_note">Nyota nne kuu za Crux zenye umbali tofauti. Refusha mhimili wa Gacrux–Acrux kupita Acrux kukadiria ncha ya kusini ya anga. Njia hufuata katikati ya umbo, si ncha.</string>
+</resources>

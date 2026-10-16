@@ -38,6 +38,12 @@ internal fun spaceCompassCelestialTemperatures(body: SpaceCompassCelestialBody):
         value(SpaceCompassCelestialTemperatureKind.DAY_MAXIMUM, day),
         value(SpaceCompassCelestialTemperatureKind.NIGHT_MINIMUM, night))
     return when (body) {
+        SpaceCompassCelestialBody.CERES -> mean(-105.0)
+        SpaceCompassCelestialBody.ENCELADUS -> mean(-201.0)
+        SpaceCompassCelestialBody.DENEB -> listOf(SpaceCompassCelestialTemperature(
+            SpaceCompassCelestialTemperatureKind.STELLAR_EFFECTIVE, 8525.0 - 273.15, uncertaintyCelsius = 75.0))
+        SpaceCompassCelestialBody.VEGA, SpaceCompassCelestialBody.ALTAIR,
+        SpaceCompassCelestialBody.SOUTHERN_CROSS -> emptyList()
         SpaceCompassCelestialBody.NEW_HORIZONS, SpaceCompassCelestialBody.JWST,
         SpaceCompassCelestialBody.PARKER_SOLAR_PROBE, SpaceCompassCelestialBody.APOPHIS,
         SpaceCompassCelestialBody.ATLAS_3I, SpaceCompassCelestialBody.EUROPA_CLIPPER,

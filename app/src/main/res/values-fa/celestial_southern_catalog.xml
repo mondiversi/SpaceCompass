@@ -1,0 +1,12 @@
+<resources>
+    <string name="celestial_ceres">سرس</string>
+    <string name="celestial_enceladus">انسلادوس</string>
+    <string name="celestial_vega">نسر واقع</string>
+    <string name="celestial_deneb">دنب</string>
+    <string name="celestial_altair">نسر طایر</string>
+    <string name="celestial_southern_cross">صلیب جنوبی</string>
+    <string name="catalog_type_constellation">صورت فلکی</string>
+    <string name="celestial_bright_star_note">جهت فهرستی با حرکت خاص و اختلاف منظر. نسر واقع و نسر طایر سریع می‌چرخند؛ شکل و دمای سطح به عرض جغرافیایی بستگی دارند. نماد نمایشی است.</string>
+    <string name="celestial_deneb_note">دنب یک ابرغول سفیدآبی است. فاصلهٔ پذیرفته‌شده حدود 802 پارسک است؛ ویژگی‌های فیزیکی آن برآوردهای مرجع نامطمئن هستند.</string>
+    <string name="celestial_southern_cross_note">چهار ستارهٔ اصلی Crux با فاصله‌های متفاوت. محور Gacrux–Acrux را به آن سوی Acrux ادامه دهید تا قطب جنوب سماوی را تخمین بزنید. مسیر مرکز شکل را دنبال می‌کند، نه قطب را.</string>
+</resources>

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="scenario_speed">سرعة الزمن</string>
+    <string name="scenario_speed_description">سرّع الساعة المحاكاة من 1× إلى 3600×. ينتقل التاريخ تلقائيًا إلى اليوم التالي عند منتصف الليل.</string>
+    <string name="scenario_resume">استئناف السيناريو</string>
+    <string name="scenario_resume_description">اختر كيفية استئناف الزمن المحاكى عند إعادة فتح التطبيق. تُطبَّق السرعة المحددة في جميع الأوضاع.</string>
+    <string name="scenario_restart">البدء من البداية</string>
+    <string name="scenario_active">فقط عندما يكون التطبيق نشطًا</string>
+    <string name="scenario_always">دائمًا</string>
+    <string name="celestial_approach">تقارب ظاهري</string>
+    <string name="scenario_speed_value">%1$s×</string>
+    <string name="celestial_elevation_rising">الارتفاع في ازدياد</string>
+    <string name="celestial_elevation_falling">الارتفاع في تناقص</string>
+    <string name="scenario_restart_help">عند كل تشغيل جديد للتطبيق، يبدأ وقت السيناريو من الإعدادات الأولية. وأثناء استخدام التطبيق، يتقدم بالسرعة المحددة.</string>
+    <string name="scenario_active_help">يتقدم وقت السيناريو بالسرعة المحددة فقط أثناء استخدام التطبيق. ويتوقف مؤقتًا في الخلفية وأثناء تشغيل شاشة التوقف، ثم يُستأنف من حيث توقف.</string>
+    <string name="scenario_always_help">يستمر وقت السيناريو في التقدم بالسرعة المحددة حتى عند إغلاق التطبيق وبعد إعادة تشغيل الهاتف.</string>
+</resources>

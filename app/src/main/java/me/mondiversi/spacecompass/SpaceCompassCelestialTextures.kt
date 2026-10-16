@@ -56,15 +56,21 @@ internal object SpaceCompassCelestialTextures {
                 return@withLock true
             }
             val imported = runCatching {
-                files.importVerified(texture, SpaceCompassCelestialTexturePolicy.legacyPacks.map {
+                val previousPacks = SpaceCompassCelestialTexturePolicy.legacyPacks.map {
                     File(context.noBackupFilesDir, it)
-                })
+                }
+                val offline = context.getExternalFilesDir("celestial-textures")?.let {
+                    File(it, SpaceCompassCelestialTexturePolicy.PACK)
+                }
+                files.importVerified(texture, listOfNotNull(offline) + previousPacks)
             }.getOrNull()
             if (imported != null) {
                 ready.update { it + texture.name }
-                android.util.Log.i("SpaceCompassTextures", "${texture.name}: reused verified previous pack")
+                android.util.Log.i("SpaceCompassTextures", "${texture.name}: imported verified offline pack")
                 return@withLock true
             }
+            // Unpublished resources are local-only; never request a nonexistent public release.
+            if (texture.downloadPack == null) return@withLock false
             val now = android.os.SystemClock.elapsedRealtime()
             if (now < (retryAfter[texture.name] ?: 0)) return@withLock false
             try {
@@ -90,7 +96,7 @@ internal object SpaceCompassCelestialTextures {
     }
 
     private suspend fun fetch(texture: SpaceCompassCelestialTexture): ByteArray {
-        var url = texture.url
+        var url = requireNotNull(texture.url)
         repeat(4) { redirect ->
             coroutineContext.ensureActive()
             require(SpaceCompassCelestialTexturePolicy.allowedUrl(url, redirect > 0))

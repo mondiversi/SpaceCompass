@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="scenario_speed">Prędkość czasu</string>
+    <string name="scenario_speed_description">Przyspiesz symulowany zegar od 1× do 3600×. O północy data automatycznie przechodzi na następny dzień.</string>
+    <string name="scenario_resume">Wznawianie scenariusza</string>
+    <string name="scenario_resume_description">Wybierz sposób wznawiania symulowanego czasu po ponownym otwarciu aplikacji. Wybrana prędkość obowiązuje w każdym trybie.</string>
+    <string name="scenario_restart">Zacznij od początku</string>
+    <string name="scenario_active">Tylko gdy aplikacja jest aktywna</string>
+    <string name="scenario_always">Zawsze</string>
+    <string name="celestial_approach">Zbliżenie</string>
+    <string name="scenario_speed_value">%1$s×</string>
+    <string name="celestial_elevation_rising">Wysokość rośnie</string>
+    <string name="celestial_elevation_falling">Wysokość maleje</string>
+    <string name="scenario_restart_help">Przy każdym nowym uruchomieniu aplikacji czas scenariusza zaczyna się od ustawień początkowych. Podczas korzystania z aplikacji płynie z wybraną prędkością.</string>
+    <string name="scenario_active_help">Czas scenariusza płynie z wybraną prędkością tylko podczas korzystania z aplikacji. W tle i podczas wygaszacza ekranu zatrzymuje się, a potem jest wznawiany od miejsca zatrzymania.</string>
+    <string name="scenario_always_help">Czas scenariusza nadal płynie z wybraną prędkością, nawet gdy aplikacja jest zamknięta i po ponownym uruchomieniu telefonu.</string>
+</resources>

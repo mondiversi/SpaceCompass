@@ -538,3 +538,8 @@ Long captions retain the shared accessible fade/scroller. Sky point taps open th
 centered daily row with a temporary highlight; the current row and Moon phases remain.
 Full-screen saver overlays show local time, weekday/date and battery; live page
 resources pause while foreground music remains available, initially at 20% volume.
+
+
+## Settings consistency in 1.4.3
+
+All General islands now participate independently in the natural-height landscape grid used by Units and Custom scenario. The System theme example retains the device configuration even when an app-only theme override is active. Scenario-speed values use the compact 14 sp / 18 sp setting style. Shared 10 dp page insets, 12 dp card padding, 9 dp card gaps and 18 sp checkbox line height are unchanged.

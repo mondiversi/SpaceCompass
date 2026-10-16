@@ -4,4 +4,5 @@
     <string name="catalog_sort_ascending">Kupanda</string>
     <string name="catalog_sort_descending">Kushuka</string>
     <string name="catalog_sort_original">Chaguo-msingi</string>
+    <string name="catalog_distance_from_earth">Umbali kutoka Dunia</string>
 </resources>

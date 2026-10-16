@@ -36,7 +36,10 @@ private fun spaceCompassOrbitExportCellValues(cell: SpaceCompassOrbitExportCell?
     val zone = snapshot.displayTimeZone
     val moment = formatSpaceCompassPanoramaExportTimestamp(point.timeMs,zone,formatting).removePrefix("Space Compass · ")
     val events = point.events.filter { it != SpaceCompassSunPathEvent.HOUR }.sortedBy { it.ordinal }
-        .mapNotNull(snapshot.pointEventNames::get).joinToString(" · ")
+        .mapNotNull { event -> snapshot.pointEventNames[event]?.let {
+            if (event == SpaceCompassSunPathEvent.APPROACH)
+                spaceCompassApproachLabel(point,it,formatting,snapshot.bodyNames) else it
+        } }.joinToString(" · ")
     val illumination = point.moonPhase?.illuminatedFraction?.let {
         formatSpaceCompassNumber(it*100,1,formatting.numeric,grouping=false,systemLocale=formatting.deviceLocale)
     } ?: "—"

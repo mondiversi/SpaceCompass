@@ -3,7 +3,6 @@ package me.mondiversi.spacecompass
 import androidx.activity.compose.BackHandler
 import androidx.compose.foundation.*
 import androidx.compose.foundation.layout.*
-import androidx.compose.foundation.lazy.staggeredgrid.StaggeredGridItemSpan
 import androidx.compose.foundation.lazy.staggeredgrid.items
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.*
@@ -110,17 +109,12 @@ internal fun SpaceCompassAppPage(route: String, onBack: () -> Unit) {
                         else spaceCompassUnitSettings()
                     SpaceCompassIslandGrid(Modifier.fillMaxWidth().weight(1f)) {
                         if (route == "appearance") {
-                            // Keep music and its screensaver companion below Theme in both layouts.
-                            item(key = "appearance-theme-music",
-                                span = if (settings.size == 1) StaggeredGridItemSpan.FullLine else null) {
-                                Column(verticalArrangement = Arrangement.spacedBy(SpaceCompassSettingsIslandGap)) {
-                                    SpaceCompassSettingsChoices(settings.first())
-                                    SpaceCompassSettingsChoices(spaceCompassSkyFluiditySettings())
-                                    SpaceCompassEventsIsland()
-                                    SpaceCompassAmbientMusicIsland()
-                                    SpaceCompassScreensaverIsland()
-                                }
-                            }
+                            // Each island keeps its natural height and participates in landscape packing.
+                            item(key = "appearance-theme") { SpaceCompassSettingsChoices(settings.first()) }
+                            item(key = "appearance-fluidity") { SpaceCompassSettingsChoices(spaceCompassSkyFluiditySettings()) }
+                            item(key = "appearance-events") { SpaceCompassEventsIsland() }
+                            item(key = "appearance-music") { SpaceCompassAmbientMusicIsland() }
+                            item(key = "appearance-screensaver") { SpaceCompassScreensaverIsland() }
                             items(settings.drop(1), key = { it.key }) { spec -> SpaceCompassSettingsChoices(spec) }
                         } else {
                             items(settings, key = { it.key }) { spec -> SpaceCompassSettingsChoices(spec) }

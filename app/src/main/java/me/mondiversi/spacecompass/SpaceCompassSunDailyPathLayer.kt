@@ -35,7 +35,8 @@ internal fun SpaceCompassSunDailyPathLayer(
     timeBadgeExclusions: List<SpaceCompassSunSceneFrame> = emptyList(),
     onVisualize: (() -> Unit)? = null, currentPoint: SpaceCompassSunPathPoint? = null,
     showActions: Boolean = true, interactive: Boolean = true, pathTint: Color? = null,
-    highlightedPoint: SpaceCompassSunPathPoint? = null, perspective: SpaceCompassPerspective? = null
+    highlightedPoint: SpaceCompassSunPathPoint? = null, perspective: SpaceCompassPerspective? = null,
+    drawApproaches: Boolean = true
 ) {
     val accent = MaterialTheme.colorScheme.primary
     val labels = rememberSpaceCompassSunPathLabels(path)
@@ -125,15 +126,22 @@ internal fun SpaceCompassSunDailyPathLayer(
                     (if (arrow.belowHorizon) below else above).toArgb(), 9.dp.toPx(), occupiedLabels, size.width, size.height)
             }
             points.forEach { (marker, projected) ->
+                if (!drawApproaches && SpaceCompassSunPathEvent.APPROACH in marker.events) return@forEach
                 val point = Offset(projected.x.toFloat(), projected.y.toFloat())
                 val isSelected = state.isSelected(path, marker)
                 val tint = if (isSelected) accent else if (marker.position.elevationDegrees < 0) below else above
                 val r = (if (marker.event == SpaceCompassSunPathEvent.HOUR) 4.dp else 6.dp).toPx()
-                drawCircle(Color.Black.copy(alpha = 0.45f), r + 1.5.dp.toPx(), point)
-                drawCircle(tint, r, point)
+                if (SpaceCompassSunPathEvent.APPROACH in marker.events) {
+                    drawSpaceCompassApproachMarker(point, tint)
+                } else {
+                    drawCircle(Color.Black.copy(alpha = 0.45f), r + 1.5.dp.toPx(), point)
+                    drawCircle(tint, r, point)
+                }
                 if (marker.event != SpaceCompassSunPathEvent.HOUR) {
                     val d = 2.5.dp.toPx()
-                    if (marker.event == SpaceCompassSunPathEvent.MINIMUM || marker.event == SpaceCompassSunPathEvent.CULMINATION) {
+                    if (marker.event == SpaceCompassSunPathEvent.APPROACH) {
+                        // The separate double-circle marker above supplies the complete glyph.
+                    } else if (marker.event == SpaceCompassSunPathEvent.MINIMUM || marker.event == SpaceCompassSunPathEvent.CULMINATION) {
                         drawLine(Color.Black.copy(alpha = 0.8f), point - Offset(d, 0f), point + Offset(d, 0f),
                             1.8.dp.toPx(), StrokeCap.Round)
                         if (marker.event == SpaceCompassSunPathEvent.CULMINATION)

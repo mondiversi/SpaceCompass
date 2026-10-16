@@ -79,10 +79,21 @@ Earth centre is a guide cross, not a selectable object. Legacy selection identif
 are migrated without resetting other preferences; zenith and pole crosses share the
 reference-guide renderer and the capture visibility rules.
 
+Each catalog row keeps its selection action and adds a separate compact info button
+after the current sort value. That button opens the existing Observatory for any
+object, including unchecked objects, without changing checked objects or the active
+compass target. The retained, unplaced catalog keeps its search, filters and scroll
+position while the viewer is open; it exposes no hidden touch or accessibility nodes.
+Both toolbar Back and Android Back return to that catalog before leaving it.
 
-Catalog sorting uses localized collation for names and a separate heliocentric-AU
-snapshot for numeric distances. Nearby Earth-centred/GPS display ranges never
-serve as solar-distance sort keys. Missing distances stay last in both directions;
+
+Catalog sorting uses localized collation for names, a heliocentric-AU snapshot for
+Sun-distance order and a separate geocentric-km snapshot for Earth-distance order.
+Earth-distance rows show the exact range used to sort, in the selected units; the
+reference is Earth's centre, not the GPS observer or satellite altitude. Validated
+SGP4/Horizons windows and the local planetary/stellar models supply the ranges.
+Neither distance mode substitutes the other's values when a model is unavailable.
+Missing distances stay last in both directions;
 ties retain catalog order. `SpaceCompassCatalogPreferences` restores and immediately
 persists `catalog_sort`, `catalog_types` and `catalog_visibility` together in the
 app-private SharedPreferences file. Both app/process restarts and device restarts
@@ -117,7 +128,7 @@ capture timestamps with explicit UTC offsets on all supported versions. Caption 
 and location-disclosure policy remain frozen independently of these EXIF timestamps.
 Composition-observed configuration/resources update preference examples and callbacks
 when locale/theme changes. The initial 1.0 release used display version 1.0 and protocol version 1.0.0.
-Current release 1.3.0 uses the same display/protocol version with code 28; signed
+Current release 1.4.3 uses the same display/protocol version with code 40; signed
 metadata, APK name and tag share that identity.
 
 
@@ -418,3 +429,8 @@ The foreground weather owner distinguishes loading, usable cached data and failu
 ## Catalogue 1.4.2
 
 The expanded target registry separates stable remote IDs from names and catalogue order. A checked generic SGP4 adapter adds Hubble/Tianhe without changing ISS/Starlink identities. The remote owner restores and merges new satellite caches by body; independent Horizons pointing/motion requests retain their refresh and cancellation policy. Apparent states support velocity-aware Hermite interpolation with a position-only legacy fallback. See [catalogue sources and limits](docs/CATALOG_1_4_2.md). Pack 1.3 pins 27 individual external WebP files, importing matching prior caches and showing symbolic placeholders without blocking astronomy. No new celestial raster enters the APK and no new texture ZIP is distributed.
+
+
+## Settings and distribution 1.4.3
+
+Device theme metadata is captured before the application appearance override, keeping the System example independent of a forced light/dark selection. General uses keyed, independent staggered-grid items with the existing shared spacing and natural heights. Scenario speed uses an explicit compact value style. The 53-object catalogue, scenario clock and time-coincident close approaches are documented in their dedicated modules. All 29 celestial images pin graphics pack 1.4; legacy cache import and public URLs remain compatible. No complete texture ZIP is added.

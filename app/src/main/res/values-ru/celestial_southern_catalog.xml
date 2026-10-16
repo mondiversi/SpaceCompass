@@ -1,0 +1,12 @@
+<resources>
+    <string name="celestial_ceres">Церера</string>
+    <string name="celestial_enceladus">Энцелад</string>
+    <string name="celestial_vega">Вега</string>
+    <string name="celestial_deneb">Денеб</string>
+    <string name="celestial_altair">Альтаир</string>
+    <string name="celestial_southern_cross">Южный Крест</string>
+    <string name="catalog_type_constellation">Созвездие</string>
+    <string name="celestial_bright_star_note">Каталожное направление с собственным движением и параллаксом. Вега и Альтаир быстро вращаются: форма и температура поверхности зависят от широты. Символ условный.</string>
+    <string name="celestial_deneb_note">Денеб — бело-голубой сверхгигант. Принято расстояние около 802 парсеков; физические свойства являются неопределёнными справочными оценками.</string>
+    <string name="celestial_southern_cross_note">Четыре главные звезды Crux на разных расстояниях. Продлите ось Гакрукс–Акрукс за Акрукс для оценки южного полюса мира. Траектория следует центру фигуры, а не полюсу.</string>
+</resources>

@@ -1,9 +1,9 @@
 <resources>
     <string name="info_news_title">Latest news · %1$s</string>
-    <string name="info_news_star_sky" formatted="false">Eleven new trackable objects: probes, space telescopes, Tiangong, Apophis, 3I/ATLAS, M87* and Proxima b.</string>
-    <string name="info_news_texture_downloads" formatted="false">NASA/JPL ephemerides drive moving probes and small bodies, including distance and daily sky paths.</string>
-    <string name="info_news_weather" formatted="false">Hubble and Tiangong use recent orbital elements and SGP4, with an alternative data source.</string>
-    <string name="info_news_viewer_zoom" formatted="false">Distant-object directions and missing data are explained explicitly, without invented measurements.</string>
-    <string name="info_news_settings" formatted="false">New external WebP images retain individual downloads, integrity checks and offline caching.</string>
-    <string name="info_news_catalog" formatted="false">Updated credits and translations; graphics releases now provide individual files without duplicate texture ZIPs.</string>
+    <string name="info_news_star_sky" formatted="false">53 objects: Ceres, Enceladus, Vega, Deneb, Altair and the Southern Cross join the catalogue.</string>
+    <string name="info_news_texture_downloads" formatted="false">Scenario time speed up to 3600×, with restart, active-only or continuous resumption.</string>
+    <string name="info_news_weather" formatted="false">Close approaches within 1.5° at the same instant appear in paths, captures and exports.</string>
+    <string name="info_news_viewer_zoom" formatted="false">Sort by distance from Earth and open an object’s Observatory directly from the catalogue.</string>
+    <string name="info_news_settings" formatted="false">More consistent settings, landscape cards, daily-path symbols and a 15-minute screensaver option.</string>
+    <string name="info_news_catalog" formatted="false">Graphics pack 1.4: 29 external WebP images with individual downloads, integrity checks and offline cache.</string>
 </resources>

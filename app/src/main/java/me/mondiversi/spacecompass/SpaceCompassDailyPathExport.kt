@@ -14,11 +14,13 @@ internal fun spaceCompassSingleOrbitPresentation(snapshot: SpaceCompassPanoramaS
     profile: SpaceCompassDataExportProfile): SpaceCompassPanoramaSnapshot {
     val strings=profile.strings
     return snapshot.copy(objects=snapshot.objects.map { it.copy(name=strings.getString(it.body.nameResource)) },
+        bodyNames=SpaceCompassCelestialBody.entries.associateWith { strings.getString(it.nameResource) },
         formatting=profile.formatting,currentPointName=strings.getString(R.string.celestial_point_current),
         pointEventNames=mapOf(SpaceCompassSunPathEvent.SUNRISE to R.string.celestial_rise,
             SpaceCompassSunPathEvent.CULMINATION to R.string.sun_path_culmination,
             SpaceCompassSunPathEvent.SUNSET to R.string.celestial_set,
-            SpaceCompassSunPathEvent.MINIMUM to R.string.sun_path_minimum).mapValues { strings.getString(it.value) },
+            SpaceCompassSunPathEvent.MINIMUM to R.string.sun_path_minimum,
+            SpaceCompassSunPathEvent.APPROACH to R.string.celestial_approach).mapValues { strings.getString(it.value) },
         orbitExportVocabulary=spaceCompassOrbitExportVocabulary(strings))
 }
 

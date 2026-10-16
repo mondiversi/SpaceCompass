@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="scenario_speed">Zaman hızı</string>
+    <string name="scenario_speed_description">Simüle edilen saati 1× ile 3600× arasında hızlandırın. Gece yarısında tarih otomatik olarak sonraki güne geçer.</string>
+    <string name="scenario_resume">Senaryoya devam</string>
+    <string name="scenario_resume_description">Uygulama yeniden açıldığında simüle edilen zamanın nasıl devam edeceğini seçin. Seçilen hız tüm modlarda geçerlidir.</string>
+    <string name="scenario_restart">Baştan başlat</string>
+    <string name="scenario_active">Yalnızca uygulama etkinken</string>
+    <string name="scenario_always">Her zaman</string>
+    <string name="celestial_approach">Yakın geçiş</string>
+    <string name="scenario_speed_value">%1$s×</string>
+    <string name="celestial_elevation_rising">Yükseklik artıyor</string>
+    <string name="celestial_elevation_falling">Yükseklik azalıyor</string>
+    <string name="scenario_restart_help">Uygulama her yeniden başlatıldığında senaryo zamanı ilk ayarlardan başlar. Uygulamayı kullanırken seçilen hızda ilerler.</string>
+    <string name="scenario_active_help">Senaryo zamanı yalnızca uygulamayı kullanırken seçilen hızda ilerler. Arka planda ve ekran koruyucu sırasında duraklar, ardından kaldığı yerden devam eder.</string>
+    <string name="scenario_always_help">Senaryo zamanı uygulama kapalıyken ve telefon yeniden başlatıldıktan sonra da seçilen hızda ilerlemeye devam eder.</string>
+</resources>

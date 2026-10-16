@@ -1,9 +1,9 @@
 <resources>
     <string name="info_news_title">हाल के बदलाव · %1$s</string>
-    <string name="info_news_star_sky" formatted="false">ग्यारह नए ट्रैक करने योग्य पिंड: यान, अंतरिक्ष दूरबीनें, Tiangong, Apophis, 3I/ATLAS, M87* और Proxima b।</string>
-    <string name="info_news_texture_downloads" formatted="false">NASA/JPL पंचांग यानों और छोटे पिंडों की स्थिति, दूरी और दैनिक आकाश पथ देते हैं।</string>
-    <string name="info_news_weather" formatted="false">Hubble और Tiangong हाल के कक्षीय तत्व और SGP4 उपयोग करते हैं, वैकल्पिक डेटा स्रोत के साथ।</string>
-    <string name="info_news_viewer_zoom" formatted="false">संदर्भ दिशाएँ और अनुपलब्ध डेटा स्पष्ट हैं; काल्पनिक माप नहीं दिए जाते।</string>
-    <string name="info_news_settings" formatted="false">नई बाहरी WebP छवियाँ अलग-अलग डाउनलोड, अखंडता जाँच और ऑफलाइन कैश बनाए रखती हैं।</string>
-    <string name="info_news_catalog" formatted="false">स्रोत और अनुवाद अपडेट किए गए; ग्राफिक्स में डुप्लिकेट टेक्सचर ZIP के बिना अलग फाइलें हैं।</string>
+    <string name="info_news_star_sky" formatted="false">53 पिंड: सीरीस, एन्सेलाडस, वेगा, डेनेब, अल्टेयर और दक्षिणी क्रॉस सूची में शामिल हैं।</string>
+    <string name="info_news_texture_downloads" formatted="false">समय की गति 3600× तक: शुरुआत से, केवल ऐप सक्रिय होने पर या लगातार आगे बढ़ाएँ।</string>
+    <string name="info_news_weather" formatted="false">एक ही समय पर 1.5° के भीतर आने वाले निकट संयोग पथ, तस्वीरों और निर्यात में दिखते हैं।</string>
+    <string name="info_news_viewer_zoom" formatted="false">पृथ्वी से दूरी के अनुसार क्रम लगाएँ और सूची से सीधे पिंड की वेधशाला खोलें।</string>
+    <string name="info_news_settings" formatted="false">एकसमान सेटिंग, लैंडस्केप कार्ड, पथ चिह्न और 15 मिनट बाद स्क्रीनसेवर का विकल्प।</string>
+    <string name="info_news_catalog" formatted="false">ग्राफ़िक्स पैक 1.4: अलग डाउनलोड, अखंडता जाँच और ऑफ़लाइन कैश वाली 29 बाहरी WebP तस्वीरें।</string>
 </resources>

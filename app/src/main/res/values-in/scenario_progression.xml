@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="scenario_speed">Kecepatan waktu</string>
+    <string name="scenario_speed_description">Percepat jam simulasi dari 1× hingga 3600×. Pada tengah malam, tanggal otomatis berganti ke hari berikutnya.</string>
+    <string name="scenario_resume">Melanjutkan skenario</string>
+    <string name="scenario_resume_description">Pilih cara waktu simulasi dilanjutkan saat aplikasi dibuka kembali. Kecepatan yang dipilih berlaku di setiap mode.</string>
+    <string name="scenario_restart">Mulai dari awal</string>
+    <string name="scenario_active">Hanya saat aplikasi aktif</string>
+    <string name="scenario_always">Selalu</string>
+    <string name="celestial_approach">Pendekatan dekat</string>
+    <string name="scenario_speed_value">%1$s×</string>
+    <string name="celestial_elevation_rising">Ketinggian meningkat</string>
+    <string name="celestial_elevation_falling">Ketinggian menurun</string>
+    <string name="scenario_restart_help">Setiap kali aplikasi dimulai kembali, waktu skenario dimulai dari pengaturan awal. Selama aplikasi digunakan, waktu berjalan dengan kecepatan yang dipilih.</string>
+    <string name="scenario_active_help">Waktu skenario berjalan dengan kecepatan yang dipilih hanya saat aplikasi digunakan. Waktu dijeda di latar belakang dan selama screensaver, lalu dilanjutkan dari titik terakhir.</string>
+    <string name="scenario_always_help">Waktu skenario terus berjalan dengan kecepatan yang dipilih meskipun aplikasi ditutup dan setelah ponsel dimulai ulang.</string>
+</resources>

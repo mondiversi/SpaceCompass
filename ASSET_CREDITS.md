@@ -133,3 +133,8 @@ Application 1.4.1 downloads all twenty celestial images from the versioned 1.2.1
 ## External graphics pack 1.3
 
 Application 1.4.2 pins 27 individual quality-90/method-6 WebP files. Seven new archival images of New Horizons, JWST, Parker Solar Probe, Apophis, Europa Clipper, Hubble and M87* retain their source credits, licence links and aspect ratio in the [manifest](textures/celestial-textures-v1.3/manifest.json) and [full credits](textures/celestial-textures-v1.3/CREDITS.txt). NASA images are historical photographs/radar observations; M87* is an EHT radio reconstruction under CC BY 4.0. JUICE, Tiangong, 3I/ATLAS and Proxima b retain code-rendered symbolic placeholders. Earlier images and URLs remain unchanged.
+
+
+## External graphics pack 1.4
+
+Application 1.4.3 pins 29 individual WebP files at quality 90/method 6. The previous 27 image files remain byte-identical to pack 1.3. New Dawn Ceres (PIA19562, flat archival photograph) and Cassini Enceladus (PIA18435, cylindrical composite) derivatives retain their exact NASA/JPL credits and source links in the [manifest](textures/celestial-textures-v1.4/manifest.json) and [full credits](textures/celestial-textures-v1.4/CREDITS.txt). Twenty-eight files are 2048 x 1024; the existing LV-426 stays 1774 x 887. All images remain outside the APK, individually downloaded and verified; no complete graphics ZIP is distributed.

@@ -1,0 +1,12 @@
+<resources>
+    <string name="celestial_ceres">Cerere</string>
+    <string name="celestial_enceladus">Encelado</string>
+    <string name="celestial_vega">Vega</string>
+    <string name="celestial_deneb">Deneb</string>
+    <string name="celestial_altair">Altair</string>
+    <string name="celestial_southern_cross">Croce del Sud</string>
+    <string name="catalog_type_constellation">Costellazione</string>
+    <string name="celestial_bright_star_note">Direzione di catalogo con moto proprio e parallasse. Vega e Altair ruotano rapidamente: forma e temperatura superficiale dipendono dalla latitudine. Il simbolo è illustrativo.</string>
+    <string name="celestial_deneb_note">Deneb è una supergigante bianco-azzurra. La distanza adottata è circa 802 parsec; le proprietà fisiche sono stime di riferimento incerte.</string>
+    <string name="celestial_southern_cross_note">Quattro stelle principali di Crux, a distanze diverse. Prolunga l’asse Gacrux–Acrux oltre Acrux per stimare il polo sud celeste. Il percorso segue il centro della figura, non il polo.</string>
+</resources>

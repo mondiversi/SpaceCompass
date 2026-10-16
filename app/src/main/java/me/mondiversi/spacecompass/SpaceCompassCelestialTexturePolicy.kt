@@ -6,21 +6,26 @@ import java.net.URI
 import java.security.MessageDigest
 
 internal data class SpaceCompassCelestialTexture(val name: String, val bytes: Int,
-    val sha256: String, val width: Int, val height: Int) {
+    val sha256: String, val width: Int, val height: Int,
+    val downloadPack: String? = SpaceCompassCelestialTexturePolicy.PUBLISHED_PACK) {
     init {
         require(Regex("[a-z0-9_]+\\.(webp|jpg)").matches(name))
         require(bytes in 1..1_048_576 && Regex("[a-f0-9]{64}").matches(sha256))
         require(width in 1..2048 && height in 1..1024)
+        require(downloadPack == null || Regex("celestial-textures-v[0-9]+(?:\\.[0-9]+)*").matches(downloadPack))
     }
-    val url: String get() = "${SpaceCompassCelestialTexturePolicy.BASE_URL}/$name"
+    val url: String? get() = downloadPack?.let { "https://github.com/mondiversi/SpaceCompass/releases/download/$it/$name" }
 }
 
 /** Versioned public maps. Digests and dimensions belong to this APK, not a remote manifest. */
 internal object SpaceCompassCelestialTexturePolicy {
-    const val PACK = "celestial-textures-v1.3"
-    val legacyPacks = listOf("celestial-textures-v1.2.1", "celestial-textures-v1.2", "celestial-textures-v1.1", "celestial-textures-v1")
-    const val BASE_URL = "https://github.com/mondiversi/SpaceCompass/releases/download/$PACK"
+    const val PACK = "celestial-textures-v1.4"
+    const val PUBLISHED_PACK = PACK
+    val legacyPacks = listOf("celestial-textures-v1.3", "celestial-textures-v1.2.1", "celestial-textures-v1.2", "celestial-textures-v1.1", "celestial-textures-v1")
+    const val BASE_URL = "https://github.com/mondiversi/SpaceCompass/releases/download/$PUBLISHED_PACK"
     val images = listOf(
+        SpaceCompassCelestialTexture("ceres.webp", 35136, "b0d85dd18be3431f30bb4e4d6b319204fa8c6f539353e9fca53fa9af9795bcbd", 2048, 1024),
+        SpaceCompassCelestialTexture("enceladus.webp", 952862, "d3686e9b972e7d60a08397798b009a4d1f0907832e6ffb416e100a05b3dfb0d7", 2048, 1024),
         SpaceCompassCelestialTexture("new_horizons.webp", 188446, "a091840a32cf3bf82e5cfe7b4e1a3c1d12835272fc4f8f63af08f54fd42dc332", 2048, 1024),
         SpaceCompassCelestialTexture("jwst.webp", 257716, "cdf8ec0a9125b7c922a5aaeaaa54c752d898dbd616e953145a501016bf05e6d0", 2048, 1024),
         SpaceCompassCelestialTexture("parker_solar_probe.webp", 112934, "5860724c8fe54da3ada7058c4f9d9ba71d3bc01362886ecaf9c236585c01995b", 2048, 1024),

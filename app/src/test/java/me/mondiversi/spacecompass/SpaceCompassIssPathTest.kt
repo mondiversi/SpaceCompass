@@ -142,7 +142,7 @@ class SpaceCompassIssPathTest {
             assertNotNull(body.name, p)
             assertEquals(86_400_000L, p!!.samples.last().timeMs - p.samples.first().timeMs)
             assertTrue(p.issPass.isEmpty())
-            if (body == SpaceCompassCelestialBody.POLARIS) {
+            if (body == SpaceCompassCelestialBody.POLARIS || body == SpaceCompassCelestialBody.DENEB) {
                 // Circumpolar at 45N: the star must never falsely cross below the horizon.
                 assertTrue(p.samples.all { it.position.elevationDegrees > 0 })
                 assertFalse(projectSpaceCompassSunDailyPath(p, facing(p.samples.first().position),400.0,600.0).any { it.belowHorizon })

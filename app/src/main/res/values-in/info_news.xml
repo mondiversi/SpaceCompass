@@ -1,9 +1,9 @@
 <resources>
     <string name="info_news_title">Perubahan terbaru · %1$s</string>
-    <string name="info_news_star_sky" formatted="false">Sebelas objek baru yang dapat dilacak: wahana, teleskop antariksa, Tiangong, Apophis, 3I/ATLAS, M87* dan Proxima b.</string>
-    <string name="info_news_texture_downloads" formatted="false">Efemeris NASA/JPL menyediakan posisi, jarak dan lintasan harian wahana serta benda kecil.</string>
-    <string name="info_news_weather" formatted="false">Hubble dan Tiangong memakai elemen orbit terbaru dan SGP4, dengan sumber data alternatif.</string>
-    <string name="info_news_viewer_zoom" formatted="false">Arah referensi dan data yang tidak tersedia dijelaskan tanpa pengukuran rekaan.</string>
-    <string name="info_news_settings" formatted="false">Gambar WebP eksternal baru tetap diunduh satu per satu, diperiksa integritasnya dan disimpan untuk luring.</string>
-    <string name="info_news_catalog" formatted="false">Kredit dan terjemahan diperbarui; paket grafis memakai berkas tunggal tanpa ZIP tekstur ganda.</string>
+    <string name="info_news_star_sky" formatted="false">53 objek: Ceres, Enceladus, Vega, Deneb, Altair dan Salib Selatan ditambahkan ke katalog.</string>
+    <string name="info_news_texture_downloads" formatted="false">Kecepatan waktu hingga 3600×: mulai ulang, maju hanya saat aplikasi aktif atau terus berjalan.</string>
+    <string name="info_news_weather" formatted="false">Pendekatan dalam 1,5° pada saat yang sama muncul di lintasan, tangkapan dan ekspor.</string>
+    <string name="info_news_viewer_zoom" formatted="false">Urutkan berdasarkan jarak dari Bumi dan buka Observatorium objek langsung dari katalog.</string>
+    <string name="info_news_settings" formatted="false">Pengaturan seragam, kartu lanskap, simbol lintasan dan opsi screensaver setelah 15 menit.</string>
+    <string name="info_news_catalog" formatted="false">Paket grafis 1.4: 29 gambar WebP eksternal dengan unduhan satu per satu, pemeriksaan integritas dan cache offline.</string>
 </resources>

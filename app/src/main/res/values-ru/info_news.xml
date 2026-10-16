@@ -1,9 +1,9 @@
 <resources>
     <string name="info_news_title">Последние новости · %1$s</string>
-    <string name="info_news_star_sky" formatted="false">Одиннадцать новых отслеживаемых объектов: зонды, космические телескопы, Tiangong, Apophis, 3I/ATLAS, M87* и Proxima b.</string>
-    <string name="info_news_texture_downloads" formatted="false">Эфемериды NASA/JPL дают позиции, расстояния и суточные пути зондов и малых тел по небу.</string>
-    <string name="info_news_weather" formatted="false">Hubble и Tiangong используют свежие орбитальные элементы и SGP4 с альтернативным источником данных.</string>
-    <string name="info_news_viewer_zoom" formatted="false">Опорные направления и отсутствие данных объясняются без вымышленных измерений.</string>
-    <string name="info_news_settings" formatted="false">Новые внешние изображения WebP скачиваются отдельно, проверяются и сохраняются для работы без сети.</string>
-    <string name="info_news_catalog" formatted="false">Источники и переводы обновлены; графические пакеты содержат отдельные файлы без дублирующих ZIP текстур.</string>
+    <string name="info_news_star_sky" formatted="false">53 объекта: в каталог добавлены Церера, Энцелад, Вега, Денеб, Альтаир и Южный Крест.</string>
+    <string name="info_news_texture_downloads" formatted="false">Скорость времени до 3600×: сначала, только при активном приложении или непрерывно.</string>
+    <string name="info_news_weather" formatted="false">Сближения до 1,5° в один момент времени видны на траекториях, снимках и в экспорте.</string>
+    <string name="info_news_viewer_zoom" formatted="false">Сортировка по расстоянию от Земли и переход в Обсерваторию объекта прямо из каталога.</string>
+    <string name="info_news_settings" formatted="false">Единый стиль настроек, карточки в альбомном режиме, символы траектории и заставка через 15 минут.</string>
+    <string name="info_news_catalog" formatted="false">Графический пакет 1.4: 29 внешних WebP-изображений, отдельные загрузки, проверка целостности и офлайн-кэш.</string>
 </resources>

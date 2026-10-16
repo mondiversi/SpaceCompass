@@ -11,8 +11,8 @@ private val observerClockFormat = DateTimeFormatter.ofPattern("HH:mm", java.util
 
 /** Reopening a running scenario displays its progressed moment without changing the saved offset. */
 internal fun SpaceCompassObserverPlan.editorMoment(nowMs: Long, deviceZone: ZoneId): ZonedDateTime {
-    val zone = if (advancesClock || timeOverrideMs != null) observationZone(deviceZone) else ZoneId.of(momentZoneId)
-    return Instant.ofEpochMilli(if (advancesClock) observationTimeMs(nowMs, deviceZone) else timeMs).atZone(zone)
+    val zone = if (scenarioClock != null || advancesClock || timeOverrideMs != null) observationZone(deviceZone) else ZoneId.of(momentZoneId)
+    return Instant.ofEpochMilli(if (scenarioClock != null || advancesClock) observationTimeMs(nowMs, deviceZone) else timeMs).atZone(zone)
 }
 
 private fun SpaceCompassObserverDraft.effectiveClockZone(deviceZoneId: String): ZoneId = ZoneId.of(when {

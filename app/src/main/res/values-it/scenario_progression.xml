@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="scenario_speed">Velocità del tempo</string>
+    <string name="scenario_speed_description">Accelera l’orologio simulato da 1× a 3600×. A mezzanotte la data passa automaticamente al giorno successivo.</string>
+    <string name="scenario_resume">Ripresa dello scenario</string>
+    <string name="scenario_resume_description">Scegli come riprende il tempo simulato alla riapertura dell’app. La velocità selezionata si applica in ogni modalità.</string>
+    <string name="scenario_restart">Riparti dall’inizio</string>
+    <string name="scenario_active">Solo con app attiva</string>
+    <string name="scenario_always">Sempre</string>
+    <string name="celestial_approach">Avvicinamento</string>
+    <string name="scenario_speed_value">%1$s×</string>
+    <string name="celestial_elevation_rising">Altezza in aumento</string>
+    <string name="celestial_elevation_falling">Altezza in diminuzione</string>
+    <string name="scenario_restart_help">A ogni nuovo avvio dell’app, il tempo dello scenario riparte dalle impostazioni iniziali. Durante l’uso avanza alla velocità scelta.</string>
+    <string name="scenario_active_help">Il tempo dello scenario avanza alla velocità scelta solo mentre usi l’app. Si ferma in background e nel salvaschermo, poi riprende da dove era rimasto.</string>
+    <string name="scenario_always_help">Il tempo dello scenario continua ad avanzare alla velocità scelta anche con l’app chiusa e dopo il riavvio del telefono.</string>
+</resources>

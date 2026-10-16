@@ -75,21 +75,27 @@ class SpaceCompassObserverAutosaveTest {
 
     /** Interface-only preferences spy: no Android storage/mock framework or network. */
     private class Store {
-        val values = mutableMapOf<String, String>()
+        val values = mutableMapOf<String, Any?>()
         var writes = 0
-        private val pending = mutableMapOf<String, String>()
+        private val pending = mutableMapOf<String, Any?>()
         private val editor: SharedPreferences.Editor = Proxy.newProxyInstance(
             SharedPreferences.Editor::class.java.classLoader, arrayOf(SharedPreferences.Editor::class.java)) { proxy, method, args ->
             when (method.name) {
-                "putString" -> { pending[args!![0] as String] = args[1] as String; proxy }
-                "apply" -> { values.putAll(pending); pending.clear(); writes++; null }
+                "putString", "putBoolean", "putInt" -> { pending[args!![0] as String] = args[1]; proxy }
+                "remove" -> { pending[args!![0] as String] = null; proxy }
+                "apply", "commit" -> {
+                    // Clock checkpoints are operational state, not another settings edit/notification.
+                    if (pending.keys.any { it != "scenario_clock_checkpoint" }) writes++
+                    values.putAll(pending); pending.clear()
+                    if (method.name == "commit") true else null
+                }
                 else -> throw AssertionError("Unexpected edit: ${method.name}")
             }
         } as SharedPreferences.Editor
         val preferences: SharedPreferences = Proxy.newProxyInstance(
             SharedPreferences::class.java.classLoader, arrayOf(SharedPreferences::class.java)) { _, method, args ->
             when (method.name) {
-                "getString" -> values[args!![0] as String] ?: args[1]
+                "getString", "getBoolean", "getInt" -> values[args!![0] as String] ?: args[1]
                 "edit" -> editor
                 else -> throw AssertionError("Unexpected access: ${method.name}")
             }
@@ -98,20 +104,20 @@ class SpaceCompassObserverAutosaveTest {
 
     @Test fun actualObserverStatePersistsAllFiveIndependentModesAcrossNewInstances() {
         val store = Store()
-        val state = SpaceCompassObserverState(store.preferences)
+        val state = SpaceCompassObserverState(store.preferences, elapsedClock = { 0L })
         for (mask in 1..31) {
             val plan = original.copy(simulatePosition = (mask and 1) != 0, simulateTime = (mask and 2) != 0,
                 simulateAltitude = (mask and 4) != 0, simulateZone = (mask and 8) != 0, simulateDate = (mask and 16) != 0)
             assertTrue(state.apply(plan))
-            assertEquals(plan, SpaceCompassObserverState(store.preferences).plan)
-            assertEquals(plan, SpaceCompassObserverState(store.preferences).savedPlan)
+            assertEquals(plan, SpaceCompassObserverState(store.preferences, elapsedClock = { 0L }).plan)
+            assertEquals(plan, SpaceCompassObserverState(store.preferences, elapsedClock = { 0L }).savedPlan)
         }
         assertEquals(31, store.writes)
     }
 
     @Test fun reapplyingTheSamePlanDoesNotWritePreferencesOrRequestAnotherSavedNotice() {
         val store = Store()
-        val state = SpaceCompassObserverState(store.preferences)
+        val state = SpaceCompassObserverState(store.preferences, elapsedClock = { 0L })
         assertFalse(state.apply(null))
         assertTrue(state.apply(original))
         assertFalse(state.apply(original))
@@ -121,13 +127,95 @@ class SpaceCompassObserverAutosaveTest {
 
     @Test fun disablingBothModesReturnsToLiveButRetainsSavedPlaceAndMoment() {
         val store = Store()
-        val state = SpaceCompassObserverState(store.preferences)
+        val state = SpaceCompassObserverState(store.preferences, elapsedClock = { 0L })
         state.apply(original)
         assertTrue(state.apply(null))
-        val reopened = SpaceCompassObserverState(store.preferences)
+        val reopened = SpaceCompassObserverState(store.preferences, elapsedClock = { 0L })
         assertNull(reopened.plan)
         assertEquals(original, reopened.savedPlan)
         assertFalse(state.apply(null))
         assertEquals(2, store.writes)
+    }
+    @Test fun accelerationAndResumptionPersistIndependentlyEvenWithoutDateOrTimeOverrides() {
+        val store = Store()
+        val state = SpaceCompassObserverState(store.preferences, elapsedClock = { 0L })
+        assertNull(state.plan)
+        state.configureTime(SpaceCompassScenarioTimeSettings(true,3600,SpaceCompassScenarioResume.ALWAYS))
+        assertNotNull(state.plan?.scenarioClock)
+        assertEquals(1,state.plan.activeSectionCount)
+        val reopened=SpaceCompassObserverState(store.preferences, elapsedClock = { 0L })
+        assertEquals(state.timeSettings,reopened.timeSettings)
+        reopened.configureTime(reopened.timeSettings.copy(enabled=false))
+        assertNull(reopened.plan)
+        assertNull(store.values["scenario_clock_checkpoint"])
+        val disabled=SpaceCompassObserverState(store.preferences, elapsedClock = { 0L })
+        assertEquals(3600,disabled.timeSettings.rate)
+        assertEquals(SpaceCompassScenarioResume.ALWAYS,disabled.timeSettings.resume)
+        assertFalse(disabled.timeSettings.enabled)
+    }
+    @Test fun observerWithoutAndroidStorageStillSupportsPreviewAndUiTestEdits() {
+        val state=SpaceCompassObserverState(null,elapsedClock={ 0L })
+        assertTrue(state.apply(original))
+        assertEquals(original,state.plan)
+        assertFalse(state.apply(original))
+        assertTrue(state.apply(null))
+        assertNull(state.plan)
+        assertEquals(original,state.savedPlan)
+        state.configureTime(SpaceCompassScenarioTimeSettings(true,60))
+        assertEquals(60,state.timeSettings.multiplier)
+        assertNotNull(state.plan?.scenarioClock)
+    }
+    @Test fun activeOnlyLifecycleCheckpointRestoresTheReachedInstantWithoutClosedTime() {
+        val store=Store()
+        var elapsed=0L
+        val state=SpaceCompassObserverState(store.preferences,elapsedClock={ elapsed })
+        state.configureTime(state.timeSettings.copy(resume=SpaceCompassScenarioResume.ACTIVE))
+        state.active(true)
+        state.apply(original)
+        val start=state.plan!!.observationTimeMs(System.currentTimeMillis())
+        elapsed+=1000
+        state.active(false)
+        elapsed+=100_000
+        assertEquals(start+1000,state.plan!!.observationTimeMs(System.currentTimeMillis()))
+        elapsed=0
+        val reopened=SpaceCompassObserverState(store.preferences,elapsedClock={ elapsed })
+        reopened.active(true); elapsed+=500
+        assertEquals(start+1500,reopened.plan!!.observationTimeMs(System.currentTimeMillis()))
+    }
+
+    @Test fun newScenarioRestartsAtItsConfiguredMomentAfterProcessRecreationByDefault() {
+        val store = Store()
+        var elapsed = 0L
+        val state = SpaceCompassObserverState(store.preferences, elapsedClock = { elapsed })
+        assertEquals(SpaceCompassScenarioResume.RESTART, state.timeSettings.resume)
+        assertEquals(SpaceCompassScenarioResume.RESTART, SpaceCompassObserverState(null).timeSettings.resume)
+        state.active(true)
+        state.apply(original)
+        val start = state.plan!!.observationTimeMs(System.currentTimeMillis())
+        elapsed += 1000
+        state.active(false)
+        assertEquals(start + 1000, state.plan!!.observationTimeMs(System.currentTimeMillis()))
+        assertNull(store.values["scenario_clock_checkpoint"])
+        val reopened = SpaceCompassObserverState(store.preferences, elapsedClock = { 0L })
+        assertEquals(start, reopened.plan!!.observationTimeMs(System.currentTimeMillis()))
+    }
+
+    @Test fun anExplicitResumptionChoiceSurvivesReloadForAllThreeModes() {
+        val store = Store()
+        for (mode in listOf(SpaceCompassScenarioResume.ACTIVE, SpaceCompassScenarioResume.ALWAYS,
+            SpaceCompassScenarioResume.RESTART)) {
+            val state = SpaceCompassObserverState(store.preferences, elapsedClock = { 0L })
+            state.configureTime(state.timeSettings.copy(resume = mode))
+            assertEquals(mode, SpaceCompassObserverState(store.preferences, elapsedClock = { 0L }).timeSettings.resume)
+        }
+    }
+
+    @Test fun aPreviouslyChosenLegacyClockOffsetRetainsItsAlwaysPolicy() {
+        val store = Store()
+        store.values[SPACE_COMPASS_OBSERVER_PLAN] = original.copy(advanceTime = true, clockOffsetMs = 6 * 3600_000L).encode()
+        store.values[SPACE_COMPASS_OBSERVER_MODE] = "custom"
+        val state = SpaceCompassObserverState(store.preferences, elapsedClock = { 0L })
+        assertEquals(SpaceCompassScenarioResume.ALWAYS, state.timeSettings.resume)
+        assertNotNull(state.plan?.scenarioClock)
     }
 }

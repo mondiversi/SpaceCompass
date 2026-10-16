@@ -10,6 +10,13 @@ internal data class SpaceCompassDeepSkyReference(val raHours: Double, val decDeg
     val distanceLy: Double, val pmRaMasYear: Double = 0.0, val pmDecMasYear: Double = 0.0)
 internal val SpaceCompassCelestialBody.deepSkyReference: SpaceCompassDeepSkyReference?
     get() = when (this) {
+        SpaceCompassCelestialBody.VEGA -> SpaceCompassDeepSkyReference(18 + 36.0/60 + 56.33635/3600,
+            38 + 47.0/60 + 1.2802/3600, 1000 / 130.23 * 3.261563777, 200.94, 286.23)
+        // Schiller & Przybilla (2008): adopted spectroscopic distance, not inverted noisy Hipparcos parallax.
+        SpaceCompassCelestialBody.DENEB -> SpaceCompassDeepSkyReference(20 + 41.0/60 + 25.91514/3600,
+            45 + 16.0/60 + 49.2197/3600, 802.0 * 3.261563777, 2.01, 1.85)
+        SpaceCompassCelestialBody.ALTAIR -> SpaceCompassDeepSkyReference(19 + 50.0/60 + 46.99855/3600,
+            8 + 52.0/60 + 5.9563/3600, 1000 / 194.95 * 3.261563777, 536.23, 385.29)
         // EHT/ESO nuclear direction. Distance is an approximate published scale, not 3-D telemetry.
         SpaceCompassCelestialBody.M87 -> SpaceCompassDeepSkyReference(
             12 + 30.0/60 + 49.42/3600, 12 + 23.0/60 + 28.04/3600, 55_000_000.0)
@@ -64,12 +71,11 @@ internal val SpaceCompassCelestialBody.deepSkyReference: SpaceCompassDeepSkyRefe
         else -> null
     }
 internal val SpaceCompassCelestialBody.isExtrasolar: Boolean
-    get() = this == SpaceCompassCelestialBody.POLARIS || deepSkyReference != null
+    get() = this == SpaceCompassCelestialBody.POLARIS || this == SpaceCompassCelestialBody.SOUTHERN_CROSS || deepSkyReference != null
 
-internal fun calculateSpaceCompassDeepSkyObservation(body: SpaceCompassCelestialBody, timeMs: Long,
-    observer: Observer): SpaceCompassCelestialObservation {
-    val reference = requireNotNull(body.deepSkyReference)
-    val time = spaceCompassAstronomyTime(timeMs)
+/** Shared reference position before the Earth's position and observer parallax are subtracted. */
+internal fun spaceCompassStellarReferenceVector(reference: SpaceCompassDeepSkyReference,
+    timeMs: Long): SpaceCompassViewVector {
     val ra = Math.toRadians(reference.raHours * 15)
     val dec = Math.toRadians(reference.decDegrees)
     val direction = SpaceCompassViewVector(cos(dec)*cos(ra), cos(dec)*sin(ra), sin(dec))
@@ -78,8 +84,18 @@ internal fun calculateSpaceCompassDeepSkyObservation(body: SpaceCompassCelestial
     val years = (timeMs - 946_728_000_000L) / (365.25 * 86_400_000)
     val masToRadians = PI / (180 * 3_600_000)
     // pmRA is already multiplied by cos(dec): use the tangent basis, not raw RA addition.
-    val stellar = (direction + east*(reference.pmRaMasYear*masToRadians*years) + north*(reference.pmDecMasYear*masToRadians*years)).unit() *
+    return (direction + east*(reference.pmRaMasYear*masToRadians*years) + north*(reference.pmDecMasYear*masToRadians*years)).unit() *
         (reference.distanceLy * SPACE_COMPASS_LIGHT_YEAR_KM / SPACE_COMPASS_AU_KM)
+}
+
+internal fun calculateSpaceCompassDeepSkyObservation(body: SpaceCompassCelestialBody, timeMs: Long,
+    observer: Observer): SpaceCompassCelestialObservation =
+    calculateSpaceCompassDeepSkyObservation(requireNotNull(body.deepSkyReference), timeMs, observer)
+
+internal fun calculateSpaceCompassDeepSkyObservation(reference: SpaceCompassDeepSkyReference, timeMs: Long,
+    observer: Observer): SpaceCompassCelestialObservation {
+    val stellar = spaceCompassStellarReferenceVector(reference, timeMs)
+    val time = spaceCompassAstronomyTime(timeMs)
     val earth = helioState(Body.Earth, time)
     val site = observer.toVector(time, EquatorEpoch.J2000)
     val ray = stellar - SpaceCompassViewVector(earth.x + site.x, earth.y + site.y, earth.z + site.z)
@@ -97,6 +113,8 @@ internal fun calculateSpaceCompassDeepSkyObservation(body: SpaceCompassCelestial
 
 internal val SpaceCompassCelestialBody.deepSkyNoteResource: Int
     get() = when (this) {
+        SpaceCompassCelestialBody.VEGA, SpaceCompassCelestialBody.ALTAIR -> R.string.celestial_bright_star_note
+        SpaceCompassCelestialBody.DENEB -> R.string.celestial_deneb_note
         SpaceCompassCelestialBody.M87 -> R.string.celestial_m87_note
         SpaceCompassCelestialBody.PROXIMA_B -> R.string.celestial_proxima_b_note
         SpaceCompassCelestialBody.SIRIUS -> R.string.celestial_sirius_note

@@ -12,6 +12,7 @@ internal class SpaceCompassSunPathPointNames(
     private val minimum: String,
     val current: String,
     hourlyZone: ZoneId? = null,
+    private val approach: (SpaceCompassSunPathPoint) -> String = { "Approach" },
     private val numbered: (Int) -> String
 ) {
     private val numbers = markers.asSequence()
@@ -32,6 +33,7 @@ internal class SpaceCompassSunPathPointNames(
                     SpaceCompassSunPathEvent.CULMINATION -> culmination
                     SpaceCompassSunPathEvent.SUNSET -> set
                     SpaceCompassSunPathEvent.MINIMUM -> minimum
+                    SpaceCompassSunPathEvent.APPROACH -> approach(point)
                     SpaceCompassSunPathEvent.HOUR -> error("Hourly dots are numbered separately")
                 }
             }

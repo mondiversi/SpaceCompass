@@ -11,6 +11,8 @@ import androidx.compose.ui.platform.LocalResources
 import java.util.Locale
 
 internal val LocalSpaceCompassDeviceLocale = staticCompositionLocalOf { Locale.getDefault() }
+/** Capture the device theme before applying an app-specific appearance override. */
+internal val LocalSpaceCompassDeviceDarkTheme = staticCompositionLocalOf { false }
 
 internal val LocalSpaceCompassUnits = staticCompositionLocalOf { SpaceCompassUnits() }
 internal val LocalSpaceCompassPreferences = staticCompositionLocalOf<SharedPreferences?> { null }
@@ -64,6 +66,8 @@ internal fun SpaceCompassPreferences(content: @Composable () -> Unit) {
         LocalSpaceCompassPreferences provides preferences, LocalSpaceCompassPresentationSettings provides settings,
         LocalSpaceCompassUnits provides units,
         LocalSpaceCompassDeviceLocale provides system.locales[0],
+        LocalSpaceCompassDeviceDarkTheme provides
+            (system.uiMode and Configuration.UI_MODE_NIGHT_MASK == Configuration.UI_MODE_NIGHT_YES),
         LocalSpaceCompassNumericFormat provides SpaceCompassNumericFormat.fromStoredValue(settings[SPACE_COMPASS_NUMERIC_FORMAT_KEY]),
         LocalSpaceCompassDateFormat provides SpaceCompassDateFormat.fromStoredValue(settings[SPACE_COMPASS_DATE_FORMAT_KEY]),
         LocalSpaceCompassTimeFormat provides resolveSpaceCompassTimeFormat(context, SpaceCompassTimeFormat.fromStoredValue(settings[SPACE_COMPASS_TIME_FORMAT_KEY]))

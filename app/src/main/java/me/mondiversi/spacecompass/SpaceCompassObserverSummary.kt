@@ -11,7 +11,7 @@ internal val SpaceCompassObserverPlan.activeSections: List<SpaceCompassObserverS
     }
 
 internal val SpaceCompassObserverPlan?.activeSectionCount: Int
-    get() = this?.activeSections?.size ?: 0
+    get() = (this?.activeSections?.size ?: 0) + if (this?.scenarioClock?.settings?.enabled == true) 1 else 0
 
 /** Validate both provider values before enabling either override; the date/time switches stay independent. */
 internal fun SpaceCompassObserverDraft.withPositionMetadata(metadata: SpaceCompassObserverMetadata,

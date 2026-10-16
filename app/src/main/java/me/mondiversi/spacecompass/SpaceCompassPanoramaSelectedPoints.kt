@@ -44,5 +44,5 @@ internal fun formatSpaceCompassPanoramaSelection(snapshot: SpaceCompassPanoramaS
         snapshot.formatting, snapshot.currentPointName,
         formatSpaceCompassPanoramaPointCountdown(selected.point.timeMs, snapshot.timeMs, snapshot.formatting))
     else formatSpaceCompassPanoramaPathPointLabel(time, selected.point, snapshot.formatting,
-        snapshot.pointEventNames, snapshot.timeMs)
+        snapshot.pointEventNames, snapshot.timeMs, snapshot.bodyNames)
 }

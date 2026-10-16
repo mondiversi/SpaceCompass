@@ -39,6 +39,9 @@ import androidx.compose.ui.unit.sp
 /** Keep a 6.5 dp visible gap between 30 dp circles in their 48 dp target slots. */
 internal val SpaceCompassObjectActionTargetSpacing = (-11.5).dp
 
+/** Observatory and Daily Path use a 9.75 dp visible gap, 50% wider than the other controls. */
+internal val SpaceCompassObjectDetailsActionTargetSpacing = (-8.25).dp
+
 /** Navigation visits only the checked objects. No arrows for a single or empty selection. */
 internal data class SpaceCompassCelestialBodyNavigation(val previousLabel: String, val nextLabel: String,
     val onPrevious: () -> Unit, val onNext: () -> Unit)

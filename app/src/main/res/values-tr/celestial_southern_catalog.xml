@@ -1,0 +1,12 @@
+<resources>
+    <string name="celestial_ceres">Ceres</string>
+    <string name="celestial_enceladus">Enceladus</string>
+    <string name="celestial_vega">Vega</string>
+    <string name="celestial_deneb">Deneb</string>
+    <string name="celestial_altair">Altair</string>
+    <string name="celestial_southern_cross">Güneyhaçı</string>
+    <string name="catalog_type_constellation">Takımyıldız</string>
+    <string name="celestial_bright_star_note">Özdevinim ve paralaks içeren katalog doğrultusu. Vega ve Altair hızlı döner: şekil ve yüzey sıcaklığı enleme bağlıdır. Sembol temsilidir.</string>
+    <string name="celestial_deneb_note">Deneb mavi-beyaz bir üstdevdir. Yaklaşık 802 parseklik uzaklık benimsenmiştir; fiziksel özellikler belirsiz referans tahminleridir.</string>
+    <string name="celestial_southern_cross_note">Crux’un farklı uzaklıklardaki dört ana yıldızı. Güney gök kutbunu tahmin etmek için Gacrux–Acrux eksenini Acrux’un ötesine uzatın. İz, kutbu değil şeklin merkezini takip eder.</string>
+</resources>

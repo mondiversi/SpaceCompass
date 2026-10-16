@@ -8,36 +8,36 @@ paths, inspect reference facts and view textured models. Space Compass is a stan
 
 ## Download and install
 
-Download **space-compass-1.4.2.apk** from the
-[Space Compass 1.4.2 release](https://github.com/mondiversi/SpaceCompass/releases/tag/v1.4.2).
+Download **space-compass-1.4.3.apk** from the
+[Space Compass 1.4.3 release](https://github.com/mondiversi/SpaceCompass/releases/tag/v1.4.3).
 Android 8.0 or newer is required. Open the APK and follow Android's installation
 prompts; allow installation for your browser or file manager if requested.
 
 Install over the existing app to retain settings and selections. **Do not uninstall
 or clear app data when updating.** Releases since 0.1.2 check for signed GitHub
-updates at startup; you can also use **Info & credits â†’ GitHub repository â†’ Check for
+updates at startup; you can also use **Info & credits → GitHub repository → Check for
 updates**. Download and installation require confirmation. Version 0.1.0 needs
 one manual APK update to acquire this feature.
 
 The release includes `SHA256SUMS.txt` and a signed update index. GitHub's source
 ZIP/TAR archives and Actions debug artifacts are separate from the signed APK.
 See [distribution and signing](docs/GITHUB_RELEASES.md) and
-[the 1.4.2 release audit](docs/RELEASE_1_4_2.md).
+[the 1.4.3 release audit](docs/RELEASE_1_4_3.md).
 
 ## Features
 
-- Live azimuth/altitude, compass guidance, named daily paths and satellite passes. Pin multiple path points and manage the same selections in the daily path. Reticle-focused callouts show clock and TÂ± side by side. Current positions and lunar phases remain available.
-- Thirty-six ordinary catalog objects: Sun, Moon, planets, natural/artificial satellites,
+- Live azimuth/altitude, compass guidance, named daily paths and satellite passes. Pin multiple path points and manage the same selections in the daily path. Reticle-focused callouts show clock and T± side by side. Current positions and lunar phases remain available.
+- Fifty-three ordinary catalog objects: Sun, Moon, planets, natural/artificial satellites,
   comets, Voyager spacecraft, nearby stars, nebulae, star clusters, compact objects and an exoplanet.
 - Live search by localized name or catalog identifier, combined with type/visibility filters.
-- Type/visibility filters and numeric sorting by distance, mass, diameter, pressure,
+- Type/visibility filters and numeric sorting by Sun-centred or Earth-centred distance, mass, diameter, pressure,
   gravity and temperature. Missing properties remain unavailable and sort last.
 - Selections, active target, filters, sorting, units and interface settings persist.
-- Send future path points to Android Clock or Calendar with a visible handoff; control the main-view alert button under General â†’ Events.
+- Send future path points to Android Clock or Calendar with a visible handoff; control the main-view alert button under General → Events.
 - Follow Tesla Roadster (2018) using JPL heliocentric ephemerides and a verified archival photograph.
 - Steadier sensor-driven motion combines short gyroscope increments with the measured magnetic/gravity reference, and pauses with the screensaver/background lifecycle.
 - Rear-camera overlays with celestial markers and paths, consistent ultrawide/zoom
-  steps, pinch and direct level selection; full 360Â° sky panoramas.
+  steps, pinch and direct level selection; full 360° sky panoramas.
 - Exposure-time direction, inclination and field of view in camera photos; previews
   follow selected language/units independently of the export profile.
 - Optional celestial reference curves and pole/zenith/geocentre crosses. Guide and
@@ -48,7 +48,7 @@ See [distribution and signing](docs/GITHUB_RELEASES.md) and
   with area only. Hidden location uses UTC. No automatic gallery save.
 - Day/night OpenStreetMap position details with GPS, altitude, estimated place and weather.
 - Custom scenarios with independently enabled position, altitude, time zone, date and time;
-  an optional advancing clock preserves its real-time offset across restarts. The current-scenario
+  optional 1x–3600x time speed and restart/active-only/always resumption. The current-scenario
   summary shows saved overrides and an approximate place, with an active-section badge.
 - Observatory with textured interactive models, lunar phases, classified reference tables,
   qualified core temperatures, spatial context and credits. Export data and current/rotation images.
@@ -61,16 +61,18 @@ See [distribution and signing](docs/GITHUB_RELEASES.md) and
 - Titled photo/panorama previews with opaque theme-matched toolbars and top-aligned controls, object-colour legends and larger wrapping photo metadata on a separate opaque black band.
 - White reticle, existing-outline object focus/selection, a lighter daytime blue and stable bottom-right landscape capture. Collapsed landscape panels use a floating central title bar.
 - Stable ground, orbits and star background when returning from background; optically centred object arrows and a clear screensaver return hint. Focused callouts cover celestial icons without jumping; object names and capture legends use the full identity color. Remove a checked object directly from its main card after confirmation.
-- Compact T+/Tâˆ’ hour/minute offsets shared by views and exports; orbit points behind translucent title/information overlays remain visible without being selectable.
+- Compact T+/T− hour/minute offsets shared by views and exports; orbit points behind translucent title/information overlays remain visible without being selectable.
 - Capture labels can show only key events and selected points across all objects; this is the default for fresh settings. Existing saved label choices remain intact.
 - Enabled Earth-reference names remain visible through reticle crossings and all capture-label policies.
-- Daily paths pair key-event names with compact symbols and bold their complete rows, including clock/TÂ± and angles. Culmination uses + consistently in the live sky, captures and image exports.
+- Daily paths pair key-event names with compact symbols and bold their complete rows, including clock/T± and angles. Culmination uses + consistently in the live sky, captures and image exports.
+- Time-coincident close-approach key events in paths, captures and exports; these are angular alignments, not eclipse predictions.
+- Compact Observatory shortcuts in the catalogue, 15-minute screensaver delay and independently packed General cards in landscape.
 - Animated introduction, phone/tablet and portrait/landscape layouts.
 - Twenty interface languages, system-language fallback and regional/unit defaults.
 - Signed startup/manual GitHub updates with package, certificate, size and checksum verification.
 
 The application ID is `me.mondiversi.spacecompass`. The current stable version is
-**1.4.2**, with Android/update identity `1.4.2` and version code **39**.
+**1.4.3**, with Android/update identity `1.4.3` and version code **40**.
 This preserves the three-part update protocol used by existing preview installations.
 The app stores its preferences and caches privately.
 
@@ -125,17 +127,17 @@ before commercial distribution, including the free Open-Meteo endpoint.
 - [Panorama/export](docs/PANORAMA_CAPTURE.md), [camera](docs/CAMERA_VIEW.md), [catalog search](docs/CATALOG_SEARCH.md) and [curved reference labels](docs/CURVED_REFERENCE_LABELS.md).
 - [Assets and third-party credits](ASSET_CREDITS.md).
 
-Copyright Â© 2026 Mondiversi. Application code is licensed under [GPL-3.0](LICENSE).
+Copyright © 2026 Mondiversi. Application code is licensed under [GPL-3.0](LICENSE).
 Third-party SGP4 code and image maps retain their respective licenses/credits;
 Astronomy Engine uses MIT, AndroidX uses Apache-2.0 and Leaflet uses BSD-2-Clause.
 Launcher/loading artwork and the fictional Easter-egg texture are original assets.
 
 ## Data and graphics packages
 
-Release 1.4.2 includes a reference-information archive and 47 regular catalogue objects.
+Release 1.4.3 includes a reference-information archive and 53 regular catalogue objects.
 Celestial graphics are distributed as individual files, without a complete texture ZIP. The app downloads individual maps, archival photographs and LV-426
-from [Celestial texture pack 1.3](https://github.com/mondiversi/SpaceCompass/releases/tag/celestial-textures-v1.3).
-All 27 celestial images are WebP at quality 90/method 6; twenty-six are 2048 x 1024,
+from [Celestial texture pack 1.4](https://github.com/mondiversi/SpaceCompass/releases/tag/celestial-textures-v1.4).
+All 29 celestial images are WebP at quality 90/method 6; twenty-eight are 2048 x 1024,
 and LV-426 retains its original 1774 x 887 pixels. The APK includes scientific data,
 all twenty languages, the star atlas and the separate Earth screensaver maps.
 Complete graphics ZIPs are no longer attached to new releases. Verified

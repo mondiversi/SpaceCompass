@@ -3,7 +3,7 @@ package me.mondiversi.spacecompass
 internal const val SPACE_COMPASS_SCREENSAVER_ENABLED_KEY = "screensaver_enabled"
 internal const val SPACE_COMPASS_SCREENSAVER_DELAY_KEY = "screensaver_delay_seconds"
 internal const val SPACE_COMPASS_SCREENSAVER_DEFAULT_DELAY = 300
-internal val spaceCompassScreensaverDelays = listOf(30, 60, 120, 300, 600)
+internal val spaceCompassScreensaverDelays = listOf(30, 60, 120, 300, 600, 900)
 
 internal data class SpaceCompassScreensaverSettings(val enabled: Boolean = true,
     val delaySeconds: Int = SPACE_COMPASS_SCREENSAVER_DEFAULT_DELAY) {

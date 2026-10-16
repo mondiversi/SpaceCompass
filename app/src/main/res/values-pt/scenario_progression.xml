@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="scenario_speed">Velocidade do tempo</string>
+    <string name="scenario_speed_description">Acelere o relógio simulado de 1× a 3600×. À meia-noite, a data passa automaticamente para o dia seguinte.</string>
+    <string name="scenario_resume">Retoma do cenário</string>
+    <string name="scenario_resume_description">Escolha como o tempo simulado é retomado ao reabrir a aplicação. A velocidade escolhida aplica-se a todos os modos.</string>
+    <string name="scenario_restart">Recomeçar do início</string>
+    <string name="scenario_active">Apenas com a aplicação ativa</string>
+    <string name="scenario_always">Sempre</string>
+    <string name="celestial_approach">Aproximação</string>
+    <string name="scenario_speed_value">%1$s×</string>
+    <string name="celestial_elevation_rising">Altura a aumentar</string>
+    <string name="celestial_elevation_falling">Altura a diminuir</string>
+    <string name="scenario_restart_help">A cada nova abertura da app, o tempo do cenário recomeça a partir das definições iniciais. Durante a utilização, avança à velocidade escolhida.</string>
+    <string name="scenario_active_help">O tempo do cenário avança à velocidade escolhida apenas enquanto usas a app. Fica em pausa em segundo plano e durante a proteção de ecrã, retomando depois de onde parou.</string>
+    <string name="scenario_always_help">O tempo do cenário continua a avançar à velocidade escolhida mesmo com a app fechada e após reiniciar o telemóvel.</string>
+</resources>

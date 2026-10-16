@@ -2,6 +2,7 @@ package me.mondiversi.spacecompass
 
 import androidx.compose.foundation.BorderStroke
 import androidx.compose.foundation.background
+import androidx.compose.foundation.isSystemInDarkTheme
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.BoxScope
 import androidx.compose.foundation.layout.fillMaxSize
@@ -65,7 +66,7 @@ internal fun SpaceCompassFloatingCountBadge(count: String, modifier: Modifier = 
     Box(modifier.height(20.dp).widthIn(min = 20.dp)
         .background(background, CircleShape)
         .clearAndSetSemantics {}, contentAlignment = Alignment.Center) {
-        Text(count, modifier = Modifier.padding(horizontal = 3.dp), color = Color.White,
+        Text(count, modifier = Modifier.padding(horizontal = 3.dp), color = spaceCompassCounterTextColor(isSystemInDarkTheme()),
             fontSize = 11.sp, lineHeight = 13.sp, fontWeight = FontWeight.Bold, maxLines = 1)
     }
 }

@@ -18,6 +18,10 @@ internal fun spaceCompassAttentionColor(dark: Boolean): Color =
 internal fun spaceCompassScenarioAccentColor(dark: Boolean): Color =
     if (dark) Color(0xFFF2AA45) else Color(0xFFFF9630)
 
+/** Night badges use dark digits on the brighter cyan/orange fills; daytime keeps white digits. */
+internal fun spaceCompassCounterTextColor(dark: Boolean): Color =
+    if (dark) Color(0xFF101418) else Color.White
+
 /** Shared page/card neutrals for Compose and native screens; the app keeps its blue/cyan accent. */
 internal data class SpaceCompassSurfacePalette(val background: Color, val island: Color)
 

@@ -1,0 +1,12 @@
+<resources>
+    <string name="celestial_ceres">Ceres</string>
+    <string name="celestial_enceladus">Enceladus</string>
+    <string name="celestial_vega">Vega</string>
+    <string name="celestial_deneb">Deneb</string>
+    <string name="celestial_altair">Altair</string>
+    <string name="celestial_southern_cross">Salib Selatan</string>
+    <string name="catalog_type_constellation">Rasi bintang</string>
+    <string name="celestial_bright_star_note">Arah katalog dengan gerak diri dan paralaks. Vega dan Altair berputar cepat: bentuk dan suhu permukaan bergantung pada lintang. Simbol bersifat ilustratif.</string>
+    <string name="celestial_deneb_note">Deneb adalah maharaksasa biru-putih. Jarak acuan sekitar 802 parsec; sifat fisiknya merupakan perkiraan acuan yang tidak pasti.</string>
+    <string name="celestial_southern_cross_note">Empat bintang utama Crux pada jarak berbeda. Perpanjang sumbu Gacrux–Acrux melewati Acrux untuk memperkirakan kutub langit selatan. Lintasan mengikuti pusat pola, bukan kutub.</string>
+</resources>

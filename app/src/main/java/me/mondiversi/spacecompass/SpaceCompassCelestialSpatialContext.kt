@@ -57,6 +57,7 @@ internal fun spaceCompassCelestialCoordinatesFromVector(x: Double, y: Double, z:
  * existing geocentric ephemerides, never the user's GPS or a stale remote extrapolation. */
 internal fun calculateSpaceCompassCelestialCoordinates(body: SpaceCompassCelestialBody, timeMs: Long,
     remote: SpaceCompassCelestialRemoteData): SpaceCompassCelestialCoordinates? {
+    if (body == SpaceCompassCelestialBody.SOUTHERN_CROSS) return spaceCompassSouthernCrossCoordinates
     body.deepSkyReference?.let { return SpaceCompassCelestialCoordinates(it.raHours, it.decDegrees,
         SpaceCompassCelestialCoordinateFrame.CATALOG_ICRS) }
     if (body == SpaceCompassCelestialBody.POLARIS) return SpaceCompassCelestialCoordinates(

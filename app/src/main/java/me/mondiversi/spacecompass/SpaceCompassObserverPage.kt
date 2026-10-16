@@ -35,7 +35,7 @@ internal fun SpaceCompassObserverPage(modifier: Modifier = Modifier, onBack: () 
     val islandReveal = rememberSpaceCompassObserverIslandReveal(islandScroll)
     val initial = remember { observer.savedPlan }
     val device = observer.devicePlace
-    val initialMoment = remember { initial?.editorMoment(System.currentTimeMillis(), ZoneId.systemDefault())
+    val initialMoment = remember { (observer.plan ?: initial)?.editorMoment(System.currentTimeMillis(), ZoneId.systemDefault())
         ?: Instant.ofEpochMilli(System.currentTimeMillis()).atZone(ZoneId.systemDefault()) }
     var advanceTime by rememberSaveable { mutableStateOf(initial?.advanceTime == true) }
     var clockOffset by rememberSaveable { mutableStateOf(initial?.clockOffsetMs) }
@@ -53,7 +53,8 @@ internal fun SpaceCompassObserverPage(modifier: Modifier = Modifier, onBack: () 
     var altitudeEdited by rememberSaveable { mutableStateOf(initial != null) }
     var zoneEdited by rememberSaveable { mutableStateOf(initial != null) }
     var pendingMoment by rememberSaveable { mutableStateOf<Long?>(null) }
-    var preservedMoment by rememberSaveable { mutableStateOf(if (initial?.advancesClock == true) initialMoment.toInstant().toEpochMilli() else initial?.timeOverrideMs) }
+    var preservedMoment by rememberSaveable { mutableStateOf(if (observer.plan?.scenarioClock != null || initial?.advancesClock == true)
+        initialMoment.toInstant().toEpochMilli() else initial?.timeOverrideMs) }
     var date by rememberSaveable { mutableStateOf(initialMoment.toLocalDate().toString()) }
     var time by rememberSaveable { mutableStateOf(initialMoment.toLocalTime().format(DateTimeFormatter.ofPattern("HH:mm"))) }
     var search by rememberSaveable { mutableStateOf("") }
@@ -76,9 +77,11 @@ internal fun SpaceCompassObserverPage(modifier: Modifier = Modifier, onBack: () 
         else -> ZoneId.systemDefault().id
     }
     fun preserveMoment(moment: Long?) {
-        val advancing = simulateTime && advanceTime && clockOffset != null
+        val liveClock = observer.plan?.scenarioClock
+        val advancing = liveClock != null || simulateTime && advanceTime && clockOffset != null
         if ((!simulateDate || !simulateTime) && !advancing) { pendingMoment = null; preservedMoment = null; return }
-        val selected = if (advancing) System.currentTimeMillis() + requireNotNull(clockOffset) else moment
+        val selected = liveClock?.at(System.currentTimeMillis()) ?:
+            if (advancing) System.currentTimeMillis() + requireNotNull(clockOffset) else moment
         selected?.let { ms -> runCatching { Instant.ofEpochMilli(ms).atZone(ZoneId.of(effectiveZone())) }
             .getOrNull()?.let {
                 if (simulateDate) date = it.toLocalDate().toString()
@@ -109,7 +112,15 @@ internal fun SpaceCompassObserverPage(modifier: Modifier = Modifier, onBack: () 
             if (leaving) showSpaceCompassBottomMessage(context,
                 resources.getString(R.string.observer_not_saved))
         } else {
-            val nextPlan = resolved.getOrNull()
+            val previousDraft = savedDraft.value
+            val unchangedMoment = editing.date == previousDraft.date && editing.time == previousDraft.time &&
+                editing.simulateDate == previousDraft.simulateDate && editing.simulateTime == previousDraft.simulateTime &&
+                editing.advanceTime == previousDraft.advanceTime && editing.zone == previousDraft.zone &&
+                editing.simulateZone == previousDraft.simulateZone
+            val nextPlan = resolved.getOrNull()?.let { value -> observer.savedPlan?.takeIf { unchangedMoment }?.let { old ->
+                value.copy(timeMs = old.timeMs, momentZoneId = old.momentZoneId,
+                    advanceTime = old.advanceTime, clockOffsetMs = old.clockOffsetMs)
+            } ?: value }
             clockOffset = nextPlan?.clockOffsetMs ?: clockOffset
             val changes = spaceCompassObserverSectionChanges(savedDraft.value, editing)
             val changed = observer.apply(nextPlan)
@@ -405,12 +416,9 @@ internal fun SpaceCompassObserverPage(modifier: Modifier = Modifier, onBack: () 
                     }, enabled = !busy, modifier = Modifier.testTag("observer-current-time")) {
                         Text(stringResource(R.string.observer_current_time))
                     }
-                    SpaceCompassSettingsCheckbox(stringResource(R.string.observer_advance_time), advanceTime,
-                        onCheckedChange = { checked -> applyClockEdit(currentDraft().withClockAdvance(checked,
-                            observer.savedPlan, System.currentTimeMillis(), ZoneId.systemDefault().id)) },
-                        modifier = Modifier.testTag("observer-advance-time"))
                 }
             }
+            item(key = "scenario-speed") { SpaceCompassScenarioSpeedIsland(observer) { islandReveal.changed(6, it) } }
             if (validationError) item(key = "observer-validation", span = StaggeredGridItemSpan.FullLine) {
                 Text(stringResource(R.string.observer_invalid),
                     Modifier.padding(horizontal = 8.dp).testTag("observer-validation-error"),

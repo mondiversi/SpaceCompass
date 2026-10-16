@@ -13,8 +13,14 @@ internal fun spaceCompassTitanAxis(time: Time): AxisInfo {
 
 /** Subtract Saturn's heliocentric velocity: Titan's orbital speed is relative to its parent. */
 internal fun spaceCompassTitanOrbitalSpeed(timeMs: Long, remote: SpaceCompassCelestialRemoteData): Double? {
-    val samples = remote.motions[SpaceCompassCelestialBody.TITAN]?.takeIf {
-        it.body == SpaceCompassCelestialBody.TITAN
+    return spaceCompassSaturnMoonOrbitalSpeed(SpaceCompassCelestialBody.TITAN, timeMs, remote)
+}
+
+internal fun spaceCompassSaturnMoonOrbitalSpeed(body: SpaceCompassCelestialBody, timeMs: Long,
+    remote: SpaceCompassCelestialRemoteData): Double? {
+    require(body == SpaceCompassCelestialBody.TITAN || body == SpaceCompassCelestialBody.ENCELADUS)
+    val samples = remote.motions[body]?.takeIf {
+        it.body == body
     }?.samples ?: return null
     if (timeMs !in samples.first().timeMs..samples.last().timeMs) return null
     val index = samples.indexOfFirst { it.timeMs >= timeMs }.coerceAtLeast(1)

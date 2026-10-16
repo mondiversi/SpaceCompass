@@ -66,6 +66,8 @@ internal fun createSpaceCompassPhotographicThumbnail(map: Bitmap, extent: Int): 
 
 /** Author names are retained exactly; full sources and licences accompany the external pack. */
 internal fun spaceCompassCatalogImageCredit(name: String?): String? = when (name) {
+    "ceres.webp" -> "NASA/JPL-Caltech/UCLA/MPS/DLR/IDA"
+    "enceladus.webp" -> "NASA/JPL-Caltech/Space Science Institute/Lunar and Planetary Institute"
     "new_horizons.webp" -> "NASA/KSC"
     "jwst.webp" -> "NASA/GSFC"
     "parker_solar_probe.webp" -> "NASA/Kim Shiflett"

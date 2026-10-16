@@ -1,0 +1,12 @@
+<resources>
+    <string name="celestial_ceres">קרס</string>
+    <string name="celestial_enceladus">אנקלדוס</string>
+    <string name="celestial_vega">וגה</string>
+    <string name="celestial_deneb">דנב</string>
+    <string name="celestial_altair">אלטאיר</string>
+    <string name="celestial_southern_cross">הצלב הדרומי</string>
+    <string name="catalog_type_constellation">קבוצת כוכבים</string>
+    <string name="celestial_bright_star_note">כיוון קטלוגי עם תנועה עצמית ופרלקסה. וגה ואלטאיר מסתובבים במהירות: הצורה וטמפרטורת פני השטח תלויות בקו הרוחב. הסמל להמחשה.</string>
+    <string name="celestial_deneb_note">דנב הוא על־ענק לבן־כחול. המרחק שאומץ הוא כ־802 פארסק; התכונות הפיזיקליות הן הערכות ייחוס עם אי־ודאות.</string>
+    <string name="celestial_southern_cross_note">ארבעת הכוכבים העיקריים של Crux נמצאים במרחקים שונים. המשיכו את ציר Gacrux–Acrux מעבר ל־Acrux כדי להעריך את הקוטב השמימי הדרומי. המסלול עוקב אחר מרכז הצורה, לא אחר הקוטב.</string>
+</resources>

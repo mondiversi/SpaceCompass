@@ -22,6 +22,7 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.luminance
 import androidx.compose.ui.platform.LocalConfiguration
 import androidx.compose.ui.platform.LocalContext
+import androidx.compose.ui.platform.LocalResources
 import androidx.compose.ui.semantics.clearAndSetSemantics
 import androidx.compose.ui.semantics.contentDescription
 import androidx.compose.ui.platform.testTag
@@ -54,6 +55,7 @@ internal data class SpaceCompassSunPathLabels(
 @Composable
 internal fun rememberSpaceCompassSunPathLabels(path: SpaceCompassSunDailyPath): SpaceCompassSunPathLabels {
     val context = LocalContext.current
+    val resources = LocalResources.current
     val locale = LocalConfiguration.current.locales[0]
     val timeFormat = resolveSpaceCompassTimeFormat(context, LocalSpaceCompassTimeFormat.current)
     val dateFormat = LocalSpaceCompassDateFormat.current
@@ -67,9 +69,13 @@ internal fun rememberSpaceCompassSunPathLabels(path: SpaceCompassSunDailyPath): 
     val current = stringResource(R.string.celestial_current_position)
     val numbered = stringResource(R.string.celestial_point_number)
     val pointTime = stringResource(R.string.celestial_point_time)
-    return remember(path, locale, deviceLocale, dateLocale, timeFormat, dateFormat, numeric, rise, culmination, set, minimum, current, numbered, pointTime) {
+    val approach = stringResource(R.string.celestial_approach)
+    return remember(path, locale, deviceLocale, dateLocale, timeFormat, dateFormat, numeric, rise, culmination, set, minimum, current, numbered, pointTime, approach, resources) {
         val names = SpaceCompassSunPathPointNames(path.markers, rise, culmination, set, minimum, current,
-            hourlyZone = path.zone.takeUnless { path.body.isEarthSatellite }) {
+            hourlyZone = path.zone.takeUnless { path.body.isEarthSatellite }, approach = { point ->
+                point.approach?.let { "$approach · ${resources.getString(it.other.nameResource)} · " +
+                    formatSpaceCompassNumber(it.separationDegrees, 2, numeric, grouping = false, systemLocale = deviceLocale) + "°" } ?: approach
+            }) {
             String.format(locale, numbered,
                 formatSpaceCompassNumber(it.toDouble(), 0, numeric, grouping = false))
         }
@@ -199,7 +205,8 @@ internal fun SpaceCompassSunDailyPathPage(
                             verticalAlignment = Alignment.CenterVertically, horizontalArrangement = Arrangement.spacedBy(8.dp)) {
                             SpaceCompassDailyPathPointCaption(labels.name(point), labels.moment(point),
                                 formatSpaceCompassPointCountdown(point.timeMs, nowMs, countdownLocale),
-                                primaryText, secondaryText, emphasized, Modifier.weight(1f), point = point)
+                                primaryText, secondaryText, emphasized, Modifier.weight(1f), point = point,
+                                trend = spaceCompassElevationTrend(point, path.issPass))
                             angleValues(point, secondaryText, emphasized)
                             SpaceCompassPointReminderButton(path.body, point, nowMs, realNowMs, false,
                                 labels.name(point), primaryText, tag = "iss-pass-reminder-${point.event.name}")
@@ -241,7 +248,9 @@ internal fun SpaceCompassSunDailyPathPage(
                         SpaceCompassDailyPathPointCaption(if (entry.isCurrent) currentName else pointLabels.name(point),
                             labels.moment(point), formatSpaceCompassPointCountdown(point.timeMs, nowMs, countdownLocale),
                             nameColor, valueColor, emphasized,
-                            Modifier.weight(1f), point = point, isCurrent = entry.isCurrent)
+                            Modifier.weight(1f), point = point, isCurrent = entry.isCurrent,
+                            trend = spaceCompassElevationTrend(point, (entry.sourcePath ?: path).samples,
+                                (entry.sourcePath ?: path).markers))
                         angleValues(point, valueColor, emphasized)
                         SpaceCompassPointReminderButton(path.body, point, nowMs, realNowMs, entry.isCurrent,
                             if (entry.isCurrent) currentName else pointLabels.name(point), primaryText,

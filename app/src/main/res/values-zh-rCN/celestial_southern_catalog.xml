@@ -1,0 +1,12 @@
+<resources>
+    <string name="celestial_ceres">谷神星</string>
+    <string name="celestial_enceladus">土卫二</string>
+    <string name="celestial_vega">织女星</string>
+    <string name="celestial_deneb">天津四</string>
+    <string name="celestial_altair">牛郎星</string>
+    <string name="celestial_southern_cross">南十字星</string>
+    <string name="catalog_type_constellation">星座</string>
+    <string name="celestial_bright_star_note">采用包含自行和视差的星表方向。织女星和牛郎星自转很快，形状和表面温度随纬度变化。符号仅为示意。</string>
+    <string name="celestial_deneb_note">天津四是一颗蓝白色超巨星。采用距离约802秒差距，物理性质为带有不确定性的参考估计值。</string>
+    <string name="celestial_southern_cross_note">南十字座的四颗主要恒星距离各不相同。将Gacrux–Acrux轴沿Acrux方向延长，可估计南天极。轨迹跟踪的是图形中心，而不是天极。</string>
+</resources>

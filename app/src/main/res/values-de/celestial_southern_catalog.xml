@@ -1,0 +1,12 @@
+<resources>
+    <string name="celestial_ceres">Ceres</string>
+    <string name="celestial_enceladus">Enceladus</string>
+    <string name="celestial_vega">Wega</string>
+    <string name="celestial_deneb">Deneb</string>
+    <string name="celestial_altair">Altair</string>
+    <string name="celestial_southern_cross">Kreuz des Südens</string>
+    <string name="catalog_type_constellation">Sternbild</string>
+    <string name="celestial_bright_star_note">Katalogrichtung mit Eigenbewegung und Parallaxe. Wega und Altair rotieren schnell: Form und Oberflächentemperatur hängen von der Breite ab. Das Symbol ist schematisch.</string>
+    <string name="celestial_deneb_note">Deneb ist ein blauweißer Überriese. Die angenommene Entfernung beträgt etwa 802 Parsec; die physikalischen Eigenschaften sind unsichere Referenzschätzungen.</string>
+    <string name="celestial_southern_cross_note">Vier Hauptsterne von Crux in verschiedenen Entfernungen. Verlängere die Achse Gacrux–Acrux über Acrux hinaus, um den südlichen Himmelspol zu schätzen. Die Bahn folgt der Mitte der Figur, nicht dem Pol.</string>
+</resources>

@@ -1,9 +1,9 @@
 <resources>
     <string name="info_news_title">Ultime novità · %1$s</string>
-    <string name="info_news_star_sky" formatted="false">Undici nuovi oggetti tracciabili: sonde, telescopi spaziali, Tiangong, Apophis, 3I/ATLAS, M87* e Proxima b.</string>
-    <string name="info_news_texture_downloads" formatted="false">Le effemeridi NASA/JPL guidano sonde e piccoli corpi, con distanza e percorso giornaliero nel cielo.</string>
-    <string name="info_news_weather" formatted="false">Hubble e Tiangong usano elementi orbitali recenti e SGP4, con una fonte dati alternativa.</string>
-    <string name="info_news_viewer_zoom" formatted="false">Direzioni degli oggetti lontani e dati mancanti sono spiegati senza inventare misurazioni.</string>
-    <string name="info_news_settings" formatted="false">Nuove immagini WebP esterne con download individuale, controlli di integrità e cache offline.</string>
-    <string name="info_news_catalog" formatted="false">Crediti e traduzioni aggiornati; i pacchetti grafici offrono file singoli senza ZIP texture duplicati.</string>
+    <string name="info_news_star_sky" formatted="false">53 oggetti: arrivano Cerere, Encelado, Vega, Deneb, Altair e la Croce del Sud.</string>
+    <string name="info_news_texture_downloads" formatted="false">Velocità del tempo fino a 3600×, con ripresa dall’inizio, solo ad app attiva o continua.</string>
+    <string name="info_news_weather" formatted="false">Gli avvicinamenti entro 1,5° nello stesso istante compaiono in percorsi, scatti ed esportazioni.</string>
+    <string name="info_news_viewer_zoom" formatted="false">Ordina per distanza dalla Terra e apri l’Osservatorio dell’oggetto direttamente dall’elenco.</string>
+    <string name="info_news_settings" formatted="false">Impostazioni più coerenti, isole in orizzontale, simboli del percorso e salvaschermo a 15 minuti.</string>
+    <string name="info_news_catalog" formatted="false">Pacchetto grafico 1.4: 29 immagini WebP esterne con download singoli, controlli di integrità e cache offline.</string>
 </resources>

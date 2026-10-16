@@ -8,6 +8,7 @@ import java.time.ZonedDateTime
 /** Fixed components or a persisted real-clock offset; no ticking state is written to preferences. */
 internal fun SpaceCompassObserverPlan.observationTimeMs(nowMs: Long,
     deviceZone: ZoneId = ZoneId.systemDefault()): Long {
+    scenarioClock?.let { return it.atWallTime(nowMs) }
     if (advancesClock) return Math.addExact(nowMs, requireNotNull(clockOffsetMs))
     timeOverrideMs?.let { return it }
     if (!hasCustomMoment) return nowMs

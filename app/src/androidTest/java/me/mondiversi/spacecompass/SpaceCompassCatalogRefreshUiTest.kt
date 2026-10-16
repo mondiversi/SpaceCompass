@@ -19,6 +19,7 @@ class SpaceCompassCatalogRefreshUiTest {
     private val remote = mutableStateOf(SpaceCompassCelestialRemoteData())
     private var selectionActions = 0
     private var refreshActions = 0
+    private var observedBody: SpaceCompassCelestialBody? = null
     private val checked = setOf(SpaceCompassCelestialBody.SUN, SpaceCompassCelestialBody.MOON)
     private val tag = "celestial-body-HALLEY"
 
@@ -37,7 +38,7 @@ class SpaceCompassCatalogRefreshUiTest {
                 SpaceCompassCelestialCatalogPage(time.longValue, remote.value, checked,
                     MaterialTheme.colorScheme.onSurface, MaterialTheme.colorScheme.background,
                     onBack = {}, onToggleAll = { selectionActions++ }, onSelect = { selectionActions++ },
-                    onRefresh = { refreshActions++ })
+                    onRefresh = { refreshActions++ }, onObserve = { observedBody = it })
             }
         } }
         compose.onNodeWithTag("celestial-catalog-scroll").performScrollToNode(hasTestTag(tag))
@@ -47,6 +48,24 @@ class SpaceCompassCatalogRefreshUiTest {
         hasText("Mkm", substring = true) and hasAnyAncestor(hasTestTag(tag)), useUnmergedTree = true)
         .fetchSemanticsNodes().singleOrNull()?.config?.getOrNull(SemanticsProperties.Text)
         ?.joinToString { it.text }
+
+    @Test fun observingAnUncheckedObjectDoesNotToggleOrMoveItsRow() {
+        show()
+        val before = compose.onNodeWithTag(tag).fetchSemanticsNode().boundsInRoot
+        compose.onNodeWithTag("catalog-observe-HALLEY").performClick()
+        compose.onNodeWithTag(tag).assertIsOff().assertIsDisplayed()
+        assertEquals(before.top, compose.onNodeWithTag(tag).fetchSemanticsNode().boundsInRoot.top, 1f)
+        compose.runOnIdle {
+            assertEquals(SpaceCompassCelestialBody.HALLEY, observedBody)
+            assertEquals(0, selectionActions)
+        }
+    }
+
+    @Test fun tappingTheRestOfTheRowStillSelectsWithoutOpeningTheObservatory() {
+        show()
+        compose.onNodeWithTag(tag).performClick()
+        compose.runOnIdle { assertEquals(1, selectionActions); assertNull(observedBody) }
+    }
 
     @Test fun arrivingDataUpdatesAnUncheckedCometWithoutOpeningItOrMovingTheList() {
         show()

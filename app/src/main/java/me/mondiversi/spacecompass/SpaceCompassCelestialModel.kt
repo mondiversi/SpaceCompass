@@ -26,22 +26,25 @@ internal enum class SpaceCompassCelestialBody(val nameResource: Int, val engine:
     SIRIUS(R.string.celestial_sirius), BETELGEUSE(R.string.celestial_betelgeuse), TITAN(R.string.celestial_titan),
     ORION_NEBULA(R.string.celestial_orion_nebula), PLEIADES(R.string.celestial_pleiades),
     TESLA_ROADSTER(R.string.celestial_tesla_roadster),
-    NEW_HORIZONS(R.string.celestial_new_horizons), JWST(R.string.celestial_jwst), PARKER_SOLAR_PROBE(R.string.celestial_parker_solar_probe), APOPHIS(R.string.celestial_apophis), ATLAS_3I(R.string.celestial_atlas_3i), EUROPA_CLIPPER(R.string.celestial_europa_clipper), JUICE(R.string.celestial_juice), HUBBLE(R.string.celestial_hubble), TIANGONG(R.string.celestial_tiangong), M87(R.string.celestial_m87), PROXIMA_B(R.string.celestial_proxima_b)
+    NEW_HORIZONS(R.string.celestial_new_horizons), JWST(R.string.celestial_jwst), PARKER_SOLAR_PROBE(R.string.celestial_parker_solar_probe), APOPHIS(R.string.celestial_apophis), ATLAS_3I(R.string.celestial_atlas_3i), EUROPA_CLIPPER(R.string.celestial_europa_clipper), JUICE(R.string.celestial_juice), HUBBLE(R.string.celestial_hubble), TIANGONG(R.string.celestial_tiangong), M87(R.string.celestial_m87), PROXIMA_B(R.string.celestial_proxima_b),
+    CERES(R.string.celestial_ceres), ENCELADUS(R.string.celestial_enceladus), VEGA(R.string.celestial_vega),
+    DENEB(R.string.celestial_deneb), ALTAIR(R.string.celestial_altair), SOUTHERN_CROSS(R.string.celestial_southern_cross)
 }
 internal val SpaceCompassCelestialBody.isComet: Boolean get() = this == SpaceCompassCelestialBody.HALLEY || this == SpaceCompassCelestialBody.COMET_67P || this == SpaceCompassCelestialBody.ATLAS_3I
 internal val SpaceCompassCelestialBody.isEarthSatellite: Boolean get() = this == SpaceCompassCelestialBody.ISS || this == SpaceCompassCelestialBody.STARLINK_V3 || catalogSatellite != null
 internal val SpaceCompassCelestialBody.isJovianMoon: Boolean get() = this == SpaceCompassCelestialBody.IO || this == SpaceCompassCelestialBody.EUROPA
-internal val SpaceCompassCelestialBody.hasPhysicalFace: Boolean get() = engine != null || isJovianMoon || this == SpaceCompassCelestialBody.TITAN
+internal val SpaceCompassCelestialBody.hasPhysicalFace: Boolean get() = engine != null || isJovianMoon || this in
+    setOf(SpaceCompassCelestialBody.TITAN, SpaceCompassCelestialBody.ENCELADUS)
 // EARTH_CENTER is a retired legacy identifier, excluded from selectable catalogs and restored checks.
 // Its old calculation remains for backward compatibility and reference-geometry regression checks.
 // Presentation order is stable: spacecraft stay in the explicitly requested order, not a daily re-sort.
 internal val spaceCompassCelestialCatalogOrder = listOf(SpaceCompassCelestialBody.SUN, SpaceCompassCelestialBody.MERCURY,
-    SpaceCompassCelestialBody.VENUS, SpaceCompassCelestialBody.ISS, SpaceCompassCelestialBody.STARLINK_V3, SpaceCompassCelestialBody.TIANGONG, SpaceCompassCelestialBody.HUBBLE, SpaceCompassCelestialBody.MOON, SpaceCompassCelestialBody.JWST, SpaceCompassCelestialBody.TESLA_ROADSTER, SpaceCompassCelestialBody.APOPHIS, SpaceCompassCelestialBody.PARKER_SOLAR_PROBE, SpaceCompassCelestialBody.EUROPA_CLIPPER, SpaceCompassCelestialBody.JUICE, SpaceCompassCelestialBody.MARS,
-    SpaceCompassCelestialBody.JUPITER, SpaceCompassCelestialBody.IO, SpaceCompassCelestialBody.EUROPA, SpaceCompassCelestialBody.SATURN, SpaceCompassCelestialBody.TITAN,
+    SpaceCompassCelestialBody.VENUS, SpaceCompassCelestialBody.ISS, SpaceCompassCelestialBody.STARLINK_V3, SpaceCompassCelestialBody.TIANGONG, SpaceCompassCelestialBody.HUBBLE, SpaceCompassCelestialBody.MOON, SpaceCompassCelestialBody.JWST, SpaceCompassCelestialBody.TESLA_ROADSTER, SpaceCompassCelestialBody.APOPHIS, SpaceCompassCelestialBody.PARKER_SOLAR_PROBE, SpaceCompassCelestialBody.EUROPA_CLIPPER, SpaceCompassCelestialBody.JUICE, SpaceCompassCelestialBody.MARS, SpaceCompassCelestialBody.CERES,
+    SpaceCompassCelestialBody.JUPITER, SpaceCompassCelestialBody.IO, SpaceCompassCelestialBody.EUROPA, SpaceCompassCelestialBody.SATURN, SpaceCompassCelestialBody.TITAN, SpaceCompassCelestialBody.ENCELADUS,
     SpaceCompassCelestialBody.URANUS, SpaceCompassCelestialBody.NEPTUNE, SpaceCompassCelestialBody.PLUTO, SpaceCompassCelestialBody.SEDNA, SpaceCompassCelestialBody.HALLEY, SpaceCompassCelestialBody.COMET_67P,
-    SpaceCompassCelestialBody.ATLAS_3I, SpaceCompassCelestialBody.NEW_HORIZONS, SpaceCompassCelestialBody.VOYAGER_1, SpaceCompassCelestialBody.VOYAGER_2, SpaceCompassCelestialBody.PROXIMA_CENTAURI, SpaceCompassCelestialBody.PROXIMA_B, SpaceCompassCelestialBody.ALPHA_CENTAURI, SpaceCompassCelestialBody.SIRIUS,
+    SpaceCompassCelestialBody.ATLAS_3I, SpaceCompassCelestialBody.NEW_HORIZONS, SpaceCompassCelestialBody.VOYAGER_1, SpaceCompassCelestialBody.VOYAGER_2, SpaceCompassCelestialBody.PROXIMA_CENTAURI, SpaceCompassCelestialBody.PROXIMA_B, SpaceCompassCelestialBody.ALPHA_CENTAURI, SpaceCompassCelestialBody.SIRIUS, SpaceCompassCelestialBody.ALTAIR, SpaceCompassCelestialBody.VEGA,
     SpaceCompassCelestialBody.TRAPPIST_1_E, SpaceCompassCelestialBody.RX_J1856, SpaceCompassCelestialBody.PLEIADES, SpaceCompassCelestialBody.POLARIS, SpaceCompassCelestialBody.PSR_J0437,
-    SpaceCompassCelestialBody.BETELGEUSE, SpaceCompassCelestialBody.RIGEL, SpaceCompassCelestialBody.ORION_NEBULA, SpaceCompassCelestialBody.STEPHENSON_2_18, SpaceCompassCelestialBody.SAGITTARIUS_A, SpaceCompassCelestialBody.ANDROMEDA_CORE, SpaceCompassCelestialBody.M87, SpaceCompassCelestialBody.TON_618)
+    SpaceCompassCelestialBody.BETELGEUSE, SpaceCompassCelestialBody.RIGEL, SpaceCompassCelestialBody.DENEB, SpaceCompassCelestialBody.SOUTHERN_CROSS, SpaceCompassCelestialBody.ORION_NEBULA, SpaceCompassCelestialBody.STEPHENSON_2_18, SpaceCompassCelestialBody.SAGITTARIUS_A, SpaceCompassCelestialBody.ANDROMEDA_CORE, SpaceCompassCelestialBody.M87, SpaceCompassCelestialBody.TON_618)
 internal val SpaceCompassCelestialBody.usesHorizons: Boolean
     get() = expandedHorizonsTarget != null || this == SpaceCompassCelestialBody.SEDNA || this == SpaceCompassCelestialBody.TITAN || isVoyager || isComet || this == SpaceCompassCelestialBody.TESLA_ROADSTER
 internal val SpaceCompassCelestialBody.isVoyager: Boolean
@@ -66,6 +69,8 @@ internal fun calculateSpaceCompassCelestialObservation(body: SpaceCompassCelesti
     require(latitude.isFinite() && latitude in -90.0..90.0 && longitude.isFinite() && longitude in -180.0..180.0)
     val observer = Observer(latitude, longitude, altitude)
     val time = spaceCompassAstronomyTime(timeMs)
+    if (body == SpaceCompassCelestialBody.SOUTHERN_CROSS) return SpaceCompassCelestialObservation(
+        spaceCompassSouthernCrossCentre(calculateSpaceCompassSouthernCross(timeMs, latitude, longitude, altitude)), Double.NaN)
     if (body == SpaceCompassCelestialBody.EARTH_CENTER) {
         val site = observer.toVector(time, EquatorEpoch.J2000)
         val horizontal = rotationEqjHor(time, observer).rotate(Vector(-site.x, -site.y, -site.z, time))

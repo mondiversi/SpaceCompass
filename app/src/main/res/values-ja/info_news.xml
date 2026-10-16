@@ -1,9 +1,9 @@
 <resources>
     <string name="info_news_title">最近の変更 · %1$s</string>
-    <string name="info_news_star_sky" formatted="false">探査機、宇宙望遠鏡、天宮、アポフィス、3I/ATLAS、M87*、プロキシマbなど、追跡可能な11天体を追加。</string>
-    <string name="info_news_texture_downloads" formatted="false">NASA/JPLの暦を使い、探査機と小天体の位置、距離、一日の空の軌跡を計算。</string>
-    <string name="info_news_weather" formatted="false">ハッブルと天宮は最新の軌道要素とSGP4を使用し、代替データ源にも対応。</string>
-    <string name="info_news_viewer_zoom" formatted="false">参考方向と欠測を明示し、架空の測定値は表示しません。</string>
-    <string name="info_news_settings" formatted="false">新しい外部WebP画像も個別ダウンロード、整合性検証、オフラインキャッシュに対応。</string>
-    <string name="info_news_catalog" formatted="false">出典と翻訳を更新。画像パッケージは重複ZIPを含まず個別ファイルを提供。</string>
+    <string name="info_news_star_sky" formatted="false">53天体に拡充。ケレス、エンケラドゥス、ベガ、デネブ、アルタイル、南十字座を追加。</string>
+    <string name="info_news_texture_downloads" formatted="false">時間速度は最大3600倍。最初から再開、アプリ使用中のみ進行、常に進行から選択できます。</string>
+    <string name="info_news_weather" formatted="false">同じ時刻に1.5°以内となる接近を軌跡、画像、書き出しデータに表示します。</string>
+    <string name="info_news_viewer_zoom" formatted="false">地心距離で並べ替え、一覧から各天体の観測画面を直接開けます。</string>
+    <string name="info_news_settings" formatted="false">設定の表示、横画面のカード、軌跡記号を統一し、15分のスクリーンセーバー設定を追加。</string>
+    <string name="info_news_catalog" formatted="false">画像パック1.4：外部WebP画像29枚。個別ダウンロード、整合性確認、オフラインキャッシュに対応。</string>
 </resources>

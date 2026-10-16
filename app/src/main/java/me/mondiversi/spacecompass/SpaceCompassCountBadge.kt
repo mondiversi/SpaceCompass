@@ -256,7 +256,7 @@ internal fun SpaceCompassAnimatedCountBadge(
                         horizontal = horizontalPadding
                     ),
                 text = text,
-                color = contentColor,
+                color = if (isSystemInDarkTheme()) spaceCompassCounterTextColor(true) else contentColor,
                 fontSize = fontSize,
                 fontWeight = FontWeight.Bold,
                 maxLines = 1

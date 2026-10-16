@@ -43,8 +43,9 @@ internal fun SpaceCompassSunSkyBackdrop(phase: SpaceCompassSunSkyPhase, weather:
     val palette = spaceCompassSunSkyColors(phase, weather, solarLighting)
     val currentPhase = rememberUpdatedState(phase)
     val currentLighting = rememberUpdatedState(solarLighting)
-    val top by animateColorAsState(palette.first, tween(2_000), label = "solar sky top")
-    val bottom by animateColorAsState(palette.second, tween(2_000), label = "solar sky horizon")
+    val transition = if ((LocalSpaceCompassObserver.current?.timeSettings?.multiplier ?: 1) > 1) 100 else 2_000
+    val top by animateColorAsState(palette.first, tween(transition), label = "solar sky top")
+    val bottom by animateColorAsState(palette.second, tween(transition), label = "solar sky horizon")
     Box(modifier.testTag("sun-finder-backdrop")) {
         Canvas(Modifier.fillMaxSize()) { drawRect(Brush.verticalGradient(listOf(top, bottom))) }
         stars()
@@ -87,7 +88,8 @@ internal fun SpaceCompassSunPointingViewport(
     topCenterActions: (@Composable (Modifier) -> Unit)? = null,
     topContentInset: androidx.compose.ui.unit.Dp = 0.dp,
     projectionTopInset: androidx.compose.ui.unit.Dp = 0.dp,
-    drawScene: Boolean = true
+    drawScene: Boolean = true,
+    approachOverlays: Map<SpaceCompassCelestialBody,SpaceCompassCelestialOverlay> = overlays
 ) {
     BoxWithConstraints(modifier.testTag("sun-finder-sky").semantics { contentDescription = description }) {
         val density = LocalDensity.current
@@ -204,7 +206,8 @@ internal fun SpaceCompassSunPointingViewport(
                 SpaceCompassSunDailyPathLayer(path, orientation.takeIf { compassReliable }, dailyPathUiState,
                     primaryText, secondaryText, backgroundColor, showActions = false,
                     interactive = false, pathTint = spaceCompassCelestialPathTint(candidate),
-                    highlightedPoint = focused?.takeIf { it.body == candidate && !it.isCurrent }?.point, perspective = scenePerspective)
+                    highlightedPoint = focused?.takeIf { it.body == candidate && !it.isCurrent }?.point, perspective = scenePerspective,
+                    drawApproaches = false)
             } }
             Canvas(Modifier.fillMaxSize().testTag("sun-finder-reticle")) {
                 val aim = Offset(reticleCenter.x.toFloat(), reticleCenter.y.toFloat())
@@ -224,11 +227,13 @@ internal fun SpaceCompassSunPointingViewport(
                 // Only thumbnails have small local targets; they never intercept another path's whole viewport.
                 spaceCompassAllCelestialOrder.forEach { candidate -> key(candidate) { projections[candidate]?.let { projected ->
                     val below = positions.getValue(candidate).elevationDegrees < 0
-                    if (projected.visible) SpaceCompassCelestialLiveMarker(candidate, projected, below, current[candidate], dailyPathUiState,
+                    if (projected.visible) {
+                        if (candidate != SpaceCompassCelestialBody.SOUTHERN_CROSS) SpaceCompassCelestialLiveMarker(candidate, projected, below, current[candidate], dailyPathUiState,
                         moonPhase = moonPhase, path = paths[candidate],
                         interactive = compassReliable && !spaceCompassScenePointIsCovered(SpaceCompassSunScenePoint(
                             pixelProjections.getValue(candidate).x, pixelProjections.getValue(candidate).y), titleTouchExclusions),
                         focused = focused?.let { it.isCurrent && it.body == candidate } == true)
+                    }
                     else offscreen[candidate]?.let { placement ->
                         SpaceCompassCelestialOffscreenMarker(candidate, projected, below,
                             spaceCompassCelestialPathLineTint(spaceCompassCelestialPathTint(candidate), below),
@@ -236,6 +241,9 @@ internal fun SpaceCompassSunPointingViewport(
                             moonPhase = moonPhase)
                     }
                 } } }
+                if (drawScene) SpaceCompassApproachPathLayer(paths, orientation.takeIf { compassReliable },
+                    scenePerspective, dailyPathUiState, focused)
+                SpaceCompassCurrentApproachLayer(approachOverlays, orientation.takeIf { compassReliable }, scenePerspective, width, height)
             }
             if (showActions) SpaceCompassCelestialSkyActions(body, onVisualize,
                 dailyPath?.let { { dailyPathUiState.openMenu(it, current[body]?.let { point -> spaceCompassCurrentPathPoint(body, point.timeMs, point.position) }) } },

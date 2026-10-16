@@ -4,6 +4,7 @@ import androidx.compose.animation.animateColorAsState
 import androidx.compose.animation.core.tween
 import androidx.compose.foundation.BorderStroke
 import androidx.compose.foundation.clickable
+import androidx.compose.foundation.isSystemInDarkTheme
 import androidx.compose.foundation.interaction.MutableInteractionSource
 import androidx.compose.foundation.interaction.collectIsPressedAsState
 import androidx.compose.foundation.layout.Box
@@ -35,6 +36,7 @@ internal fun SpaceCompassCaptureButton(
     val haptics = rememberSpaceCompassHapticController()
     val background = MaterialTheme.colorScheme.primary
     val foreground = Color.White
+    val iconColor = if (isSystemInDarkTheme()) MaterialTheme.colorScheme.background else foreground
     val interaction = remember { MutableInteractionSource() }
     val pressed by interaction.collectIsPressedAsState()
     val restingBackground = background.copy(alpha = 1f)
@@ -68,7 +70,7 @@ internal fun SpaceCompassCaptureButton(
             Box(contentAlignment = Alignment.Center) {
                 SpaceCompassSettingsMenuIcon(
                     if (cameraEnabled) "capture" else "panorama",
-                    foreground.copy(alpha = if (enabled) 1f else .38f),
+                    iconColor.copy(alpha = if (enabled) 1f else .38f),
                     modifier = Modifier.size(26.dp * CaptureControlSizeMultiplier)
                 )
             }

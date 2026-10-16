@@ -17,7 +17,14 @@ internal fun SpaceCompassDeepSkySymbol(body: SpaceCompassCelestialBody, modifier
 internal fun androidx.compose.ui.graphics.drawscope.DrawScope.drawSpaceCompassDeepSkySymbol(body: SpaceCompassCelestialBody, opacity: Float = 1f) {
     val r = size.minDimension * 0.32f
     val tint = spaceCompassCelestialPathTint(body)
-    if (body == SpaceCompassCelestialBody.TRAPPIST_1_E || body == SpaceCompassCelestialBody.PROXIMA_B) {
+    if (body == SpaceCompassCelestialBody.SOUTHERN_CROSS) {
+        val points = listOf(center + Offset(-r*.15f, r), center + Offset(r*.7f, -r*.05f),
+            center + Offset(r*.05f, -r), center + Offset(-r*.7f, -r*.2f))
+        spaceCompassSouthernCrossEdges.forEach { (a, b) ->
+            drawLine(tint.copy(alpha = opacity * .65f), points[a], points[b], r*.06f)
+        }
+        points.forEach { drawCircle(Color.White.copy(alpha = opacity), r*.12f, it) }
+    } else if (body == SpaceCompassCelestialBody.TRAPPIST_1_E || body == SpaceCompassCelestialBody.PROXIMA_B) {
         // A neutral rocky-world symbol, not an observed map or an ocean claim.
         drawCircle(Color(0xff8b8177).copy(alpha = opacity), r * .9f)
         drawCircle(Color(0xffc4b4a0).copy(alpha = opacity * .65f), r * .23f, center - Offset(r * .28f, r * .24f))
@@ -26,7 +33,8 @@ internal fun androidx.compose.ui.graphics.drawscope.DrawScope.drawSpaceCompassDe
         drawCircle(tint.copy(alpha = opacity * 0.14f), r * 1.45f)
         drawCircle(Color(0xffffedc1).copy(alpha = opacity), r * 0.56f, center - Offset(r*0.48f, 0f))
         drawCircle(Color(0xffffc17b).copy(alpha = opacity), r * 0.40f, center + Offset(r*0.68f, r*0.18f))
-    } else if (body == SpaceCompassCelestialBody.PROXIMA_CENTAURI || body == SpaceCompassCelestialBody.RIGEL) {
+    } else if (body == SpaceCompassCelestialBody.PROXIMA_CENTAURI || body == SpaceCompassCelestialBody.RIGEL ||
+        body == SpaceCompassCelestialBody.VEGA || body == SpaceCompassCelestialBody.ALTAIR || body == SpaceCompassCelestialBody.DENEB) {
         drawCircle(tint.copy(alpha = opacity * 0.10f), r * 1.4f)
         drawCircle(tint.copy(alpha = opacity * 0.22f), r * 1.05f)
         drawCircle(tint.copy(alpha = opacity), r * if (body == SpaceCompassCelestialBody.RIGEL) 0.85f else 0.55f)

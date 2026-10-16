@@ -24,6 +24,26 @@ internal data class SpaceCompassCelestialFacts(
 )
 
 internal fun spaceCompassCelestialFacts(body: SpaceCompassCelestialBody): SpaceCompassCelestialFacts = when (body) {
+    SpaceCompassCelestialBody.CERES -> SpaceCompassCelestialFacts(diameterKm = 939.4, diameterEstimated = true,
+        massKg = 62.6284 / 6.67430e-20, gravity = 62.6284 / (469.7 * 469.7) * 1000,
+        density = 2162.0, rotationHours = 9.07417, revolutionDays = 4.60851 * 365.25,
+        parent = SpaceCompassCelestialBody.SUN,
+        minimumParentKm = 2.556401146697176 * SPACE_COMPASS_AU_KM,
+        maximumParentKm = 2.982177437589792 * SPACE_COMPASS_AU_KM)
+    SpaceCompassCelestialBody.ENCELADUS -> SpaceCompassCelestialFacts(diameterKm = 504.20, diameterErrorKm = .40,
+        massKg = 7.21037 / 6.67430e-20, gravity = 7.21037 / (252.10 * 252.10) * 1000,
+        density = 1609.7, rotationHours = 1.370218 * 24, revolutionDays = 1.370218,
+        parent = SpaceCompassCelestialBody.SATURN,
+        minimumParentKm = 238040.0 * (1 - .0047), maximumParentKm = 238040.0 * (1 + .0047))
+    // Oblate fast rotators: no fabricated single spherical radius or uniform surface temperature.
+    SpaceCompassCelestialBody.VEGA -> SpaceCompassCelestialFacts(massSolar = 2.135, massSolarError = .075,
+        massEstimated = true, spectralType = "A0 V", apparentMagnitude = .03)
+    SpaceCompassCelestialBody.ALTAIR -> SpaceCompassCelestialFacts(massSolar = 1.86, massSolarError = .03,
+        massEstimated = true, spectralType = "A7 Vn", apparentMagnitude = .76)
+    SpaceCompassCelestialBody.DENEB -> SpaceCompassCelestialFacts(massSolar = 19.0, massSolarError = 3.0,
+        massEstimated = true, diameterKm = 2 * 203.0 * 695700, diameterErrorKm = 2 * 17.0 * 695700,
+        diameterEstimated = true, spectralType = "A2 Ia", luminositySolar = 196000.0, apparentMagnitude = 1.25)
+    SpaceCompassCelestialBody.SOUTHERN_CROSS -> SpaceCompassCelestialFacts()
     SpaceCompassCelestialBody.NEW_HORIZONS, SpaceCompassCelestialBody.JWST,
     SpaceCompassCelestialBody.PARKER_SOLAR_PROBE, SpaceCompassCelestialBody.EUROPA_CLIPPER,
     SpaceCompassCelestialBody.JUICE -> SpaceCompassCelestialFacts(parent = SpaceCompassCelestialBody.SUN)
@@ -167,6 +187,8 @@ internal fun formatSpaceCompassCelestialGravity(value: Double?, numeric: SpaceCo
 
 internal val SpaceCompassCelestialBody.viewerTexture: String?
     get() = when (this) {
+        SpaceCompassCelestialBody.VEGA, SpaceCompassCelestialBody.DENEB, SpaceCompassCelestialBody.ALTAIR,
+        SpaceCompassCelestialBody.SOUTHERN_CROSS -> null
         SpaceCompassCelestialBody.NEW_HORIZONS -> "new_horizons.webp"
         SpaceCompassCelestialBody.JWST -> "jwst.webp"
         SpaceCompassCelestialBody.PARKER_SOLAR_PROBE -> "parker_solar_probe.webp"
@@ -192,7 +214,8 @@ internal val SpaceCompassCelestialBody.isSpacecraft: Boolean get() = isInterplan
 /** Raster X increases eastward even for ISIS PositiveWest coordinate labels.
  * Europa/Pluto/Titan span 0..360; the other reference maps are centred on longitude zero. */
 internal val SpaceCompassCelestialBody.textureLongitudeOffset: Double
-    get() = if (this == SpaceCompassCelestialBody.PLUTO || this == SpaceCompassCelestialBody.EUROPA || this == SpaceCompassCelestialBody.TITAN) 0.0 else 0.5
+    get() = if (this == SpaceCompassCelestialBody.PLUTO || this == SpaceCompassCelestialBody.EUROPA ||
+        this == SpaceCompassCelestialBody.TITAN || this == SpaceCompassCelestialBody.ENCELADUS) 0.0 else 0.5
 internal val SpaceCompassCelestialBody.textureHasUnmappedAreas: Boolean
     get() = this == SpaceCompassCelestialBody.PLUTO || this == SpaceCompassCelestialBody.EUROPA
 
@@ -257,6 +280,7 @@ private fun siriusFacts(): SpaceCompassCelestialFacts {
 }
 
 internal val SpaceCompassCelestialBody.hasCatalogPhotograph: Boolean get() = when (this) {
+    SpaceCompassCelestialBody.CERES -> true
     SpaceCompassCelestialBody.NEW_HORIZONS, SpaceCompassCelestialBody.JWST, SpaceCompassCelestialBody.PARKER_SOLAR_PROBE,
     SpaceCompassCelestialBody.APOPHIS, SpaceCompassCelestialBody.EUROPA_CLIPPER, SpaceCompassCelestialBody.HUBBLE, SpaceCompassCelestialBody.M87,
     SpaceCompassCelestialBody.TESLA_ROADSTER -> true
@@ -265,4 +289,4 @@ internal val SpaceCompassCelestialBody.hasCatalogPhotograph: Boolean get() = whe
     else -> false
 }
 internal val SpaceCompassCelestialBody.isExtendedSkyObject: Boolean get() =
-    this == SpaceCompassCelestialBody.ORION_NEBULA || this == SpaceCompassCelestialBody.PLEIADES
+    this == SpaceCompassCelestialBody.ORION_NEBULA || this == SpaceCompassCelestialBody.PLEIADES || this == SpaceCompassCelestialBody.SOUTHERN_CROSS

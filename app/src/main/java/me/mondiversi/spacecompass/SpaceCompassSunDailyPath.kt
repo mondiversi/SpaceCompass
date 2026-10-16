@@ -4,14 +4,15 @@ import java.time.LocalDate
 import java.time.ZoneId
 import kotlin.math.*
 
-internal enum class SpaceCompassSunPathEvent { HOUR, SUNRISE, CULMINATION, SUNSET, MINIMUM }
+internal enum class SpaceCompassSunPathEvent { HOUR, SUNRISE, CULMINATION, SUNSET, MINIMUM, APPROACH }
 
 internal const val SPACE_COMPASS_SUN_PATH_TOUCH_RADIUS_DP = 32f
 
 internal data class SpaceCompassSunPathPoint(
     val timeMs: Long, val position: SpaceCompassSunPosition, val event: SpaceCompassSunPathEvent = SpaceCompassSunPathEvent.HOUR,
     val moonPhase: SpaceCompassMoonPhase? = null,
-    val coincidentEvents: Set<SpaceCompassSunPathEvent> = emptySet()
+    val coincidentEvents: Set<SpaceCompassSunPathEvent> = emptySet(),
+    val approach: SpaceCompassApproach? = null
 ) {
     val events: Set<SpaceCompassSunPathEvent> get() = coincidentEvents + event
     // Calculate once per day/location, not trigonometry on every orientation frame.

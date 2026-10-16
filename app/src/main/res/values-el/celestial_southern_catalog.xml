@@ -1,0 +1,12 @@
+<resources>
+    <string name="celestial_ceres">Δήμητρα</string>
+    <string name="celestial_enceladus">Εγκέλαδος</string>
+    <string name="celestial_vega">Βέγας</string>
+    <string name="celestial_deneb">Ντένεμπ</string>
+    <string name="celestial_altair">Αλτάιρ</string>
+    <string name="celestial_southern_cross">Νότιος Σταυρός</string>
+    <string name="catalog_type_constellation">Αστερισμός</string>
+    <string name="celestial_bright_star_note">Κατεύθυνση καταλόγου με ιδία κίνηση και παράλλαξη. Ο Βέγας και ο Αλτάιρ περιστρέφονται γρήγορα: σχήμα και επιφανειακή θερμοκρασία εξαρτώνται από το πλάτος. Το σύμβολο είναι ενδεικτικό.</string>
+    <string name="celestial_deneb_note">Ο Ντένεμπ είναι κυανόλευκος υπεργίγαντας. Η υιοθετημένη απόσταση είναι περίπου 802 παρσέκ· οι φυσικές ιδιότητες είναι αβέβαιες εκτιμήσεις αναφοράς.</string>
+    <string name="celestial_southern_cross_note">Τέσσερα κύρια άστρα του Crux σε διαφορετικές αποστάσεις. Επέκτεινε τον άξονα Gacrux–Acrux πέρα από τον Acrux για εκτίμηση του νότιου ουράνιου πόλου. Η τροχιά ακολουθεί το κέντρο του σχήματος, όχι τον πόλο.</string>
+</resources>

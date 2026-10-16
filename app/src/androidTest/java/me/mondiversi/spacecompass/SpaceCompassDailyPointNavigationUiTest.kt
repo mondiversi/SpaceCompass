@@ -77,6 +77,12 @@ class SpaceCompassDailyPointNavigationUiTest {
     @Test fun currentHasItsOwnCenteredRowEvenAtAnHourlyCoincidence() {
         val state = SpaceCompassSunDailyPathUiState(); state.openCurrent(path.body, markers[12], path); show(state)
         centered("sun-path-current")
+        compose.onNode(hasTestTag("daily-path-event-current") and hasAnyAncestor(hasTestTag("sun-path-current")),
+            useUnmergedTree = true).assertIsDisplayed()
+        SpaceCompassElevationTrend.entries.forEach { trend ->
+            compose.onNode(hasTestTag("daily-path-trend-${trend.name}") and hasAnyAncestor(hasTestTag("sun-path-current")),
+                useUnmergedTree = true).assertDoesNotExist()
+        }
         compose.onNodeWithTag("sun-path-point-12").assertIsNotSelected()
         compose.onNodeWithTag("sun-path-current").performClick().assertIsNotSelected()
         compose.onNodeWithTag("sun-path-page").assertIsDisplayed()

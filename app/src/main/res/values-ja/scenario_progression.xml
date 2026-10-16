@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="scenario_speed">時間の速度</string>
+    <string name="scenario_speed_description">シミュレーションの時計を1倍から3600倍に加速します。午前0時になると日付は自動的に翌日に進みます。</string>
+    <string name="scenario_resume">シナリオの再開</string>
+    <string name="scenario_resume_description">アプリを開き直したときのシミュレーション時間の再開方法を選びます。選択した速度はすべてのモードに適用されます。</string>
+    <string name="scenario_restart">最初から開始</string>
+    <string name="scenario_active">アプリの使用中のみ</string>
+    <string name="scenario_always">常に進める</string>
+    <string name="celestial_approach">接近</string>
+    <string name="scenario_speed_value">%1$s×</string>
+    <string name="celestial_elevation_rising">高度が上昇中</string>
+    <string name="celestial_elevation_falling">高度が下降中</string>
+    <string name="scenario_restart_help">アプリを新たに起動するたびに、シナリオの時刻が初期設定から始まります。アプリの使用中は選択した速度で進みます。</string>
+    <string name="scenario_active_help">シナリオの時刻は、アプリの使用中のみ選択した速度で進みます。バックグラウンドやスクリーンセーバー中は一時停止し、その後は停止した時刻から再開します。</string>
+    <string name="scenario_always_help">アプリを閉じている間やスマートフォンの再起動後も、シナリオの時刻は選択した速度で進み続けます。</string>
+</resources>

@@ -17,6 +17,12 @@ internal fun spaceCompassSearchCatalog(available: List<SpaceCompassCelestialBody
 }
 
 private val SpaceCompassCelestialBody.catalogAliases: List<String> get() = when (this) {
+    SpaceCompassCelestialBody.CERES -> listOf("1 Ceres", "Cerere", "Cérès", "A801 AA")
+    SpaceCompassCelestialBody.ENCELADUS -> listOf("Enceladus", "Encelado", "Encelade", "Saturn II", "602")
+    SpaceCompassCelestialBody.VEGA -> listOf("Vega", "Wega", "Alpha Lyrae", "HD 172167")
+    SpaceCompassCelestialBody.DENEB -> listOf("Deneb", "Alpha Cygni", "HD 197345")
+    SpaceCompassCelestialBody.ALTAIR -> listOf("Altair", "Altaïr", "Alpha Aquilae", "HD 187642")
+    SpaceCompassCelestialBody.SOUTHERN_CROSS -> listOf("Crux", "Cru", "Southern Cross", "Croce del Sud", "Acrux", "Gacrux", "Mimosa", "Imai")
     SpaceCompassCelestialBody.NEW_HORIZONS -> listOf("New Horizons","NH","2006-001A")
     SpaceCompassCelestialBody.JWST -> listOf("James Webb Space Telescope","Webb","JWST","2021-130A")
     SpaceCompassCelestialBody.PARKER_SOLAR_PROBE -> listOf("Parker Solar Probe","PSP","Solar Probe Plus")

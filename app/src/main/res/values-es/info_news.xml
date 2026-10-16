@@ -1,9 +1,9 @@
 <resources>
     <string name="info_news_title">Últimas novedades · %1$s</string>
-    <string name="info_news_star_sky" formatted="false">Once nuevos objetos rastreables: sondas, telescopios espaciales, Tiangong, Apophis, 3I/ATLAS, M87* y Proxima b.</string>
-    <string name="info_news_texture_downloads" formatted="false">Las efemérides NASA/JPL proporcionan posiciones, distancias y recorridos diarios de sondas y cuerpos menores.</string>
-    <string name="info_news_weather" formatted="false">Hubble y Tiangong usan elementos orbitales recientes y SGP4, con una fuente alternativa.</string>
-    <string name="info_news_viewer_zoom" formatted="false">Las direcciones de referencia y los datos ausentes se explican sin inventar mediciones.</string>
-    <string name="info_news_settings" formatted="false">Nuevas imágenes WebP externas con descarga individual, comprobaciones de integridad y caché sin conexión.</string>
-    <string name="info_news_catalog" formatted="false">Créditos y traducciones actualizados; archivos gráficos individuales sin ZIP de texturas duplicados.</string>
+    <string name="info_news_star_sky" formatted="false">53 objetos: Ceres, Encélado, Vega, Deneb, Altair y la Cruz del Sur se unen al catálogo.</string>
+    <string name="info_news_texture_downloads" formatted="false">Velocidad del tiempo hasta 3600×, con reinicio, avance solo con la app activa o continuo.</string>
+    <string name="info_news_weather" formatted="false">Los acercamientos a menos de 1,5° en el mismo instante aparecen en rutas, capturas y exportaciones.</string>
+    <string name="info_news_viewer_zoom" formatted="false">Ordena por distancia a la Tierra y abre el Observatorio de cada objeto desde el catálogo.</string>
+    <string name="info_news_settings" formatted="false">Ajustes más coherentes, tarjetas en horizontal, símbolos de ruta y salvapantallas a los 15 minutos.</string>
+    <string name="info_news_catalog" formatted="false">Paquete gráfico 1.4: 29 imágenes WebP externas con descargas individuales, integridad verificada y caché sin conexión.</string>
 </resources>

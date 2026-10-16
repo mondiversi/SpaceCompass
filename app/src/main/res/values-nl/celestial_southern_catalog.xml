@@ -1,0 +1,12 @@
+<resources>
+    <string name="celestial_ceres">Ceres</string>
+    <string name="celestial_enceladus">Enceladus</string>
+    <string name="celestial_vega">Wega</string>
+    <string name="celestial_deneb">Deneb</string>
+    <string name="celestial_altair">Altair</string>
+    <string name="celestial_southern_cross">Zuiderkruis</string>
+    <string name="catalog_type_constellation">Sterrenbeeld</string>
+    <string name="celestial_bright_star_note">Catalogusrichting met eigenbeweging en parallax. Wega en Altair draaien snel: vorm en oppervlaktetemperatuur hangen af van de breedtegraad. Het symbool is illustratief.</string>
+    <string name="celestial_deneb_note">Deneb is een blauwwitte superreus. De aangenomen afstand is ongeveer 802 parsec; de fysieke eigenschappen zijn onzekere referentieschattingen.</string>
+    <string name="celestial_southern_cross_note">Vier hoofdsterren van Crux op verschillende afstanden. Verleng de as Gacrux–Acrux voorbij Acrux om de zuidelijke hemelpool te schatten. De baan volgt het midden van de figuur, niet de pool.</string>
+</resources>

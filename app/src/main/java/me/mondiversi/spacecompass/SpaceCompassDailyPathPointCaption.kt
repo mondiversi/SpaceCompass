@@ -17,12 +17,13 @@ import androidx.compose.ui.unit.sp
 @Composable
 internal fun SpaceCompassDailyPathPointCaption(name: String, moment: String, countdown: String,
     primary: Color, secondary: Color, emphasized: Boolean, modifier: Modifier = Modifier,
-    point: SpaceCompassSunPathPoint? = null, isCurrent: Boolean = false) {
+    point: SpaceCompassSunPathPoint? = null, isCurrent: Boolean = false,
+    trend: SpaceCompassElevationTrend? = null) {
     val weight = if (emphasized) FontWeight.Bold else FontWeight.Normal
     Column(modifier) {
         Row(Modifier.fillMaxWidth(), verticalAlignment = Alignment.CenterVertically,
-            horizontalArrangement = Arrangement.spacedBy(4.dp)) {
-            point?.let { SpaceCompassDailyPathEventIcons(it, isCurrent, primary) }
+            horizontalArrangement = Arrangement.spacedBy(6.dp)) {
+            point?.let { SpaceCompassDailyPathEventIcons(it, isCurrent, primary, trend) }
             Text(name, color = primary, fontSize = 12.sp, lineHeight = 15.sp,
                 fontWeight = weight,
                 modifier = Modifier.weight(1f).testTag("daily-path-point-name"))

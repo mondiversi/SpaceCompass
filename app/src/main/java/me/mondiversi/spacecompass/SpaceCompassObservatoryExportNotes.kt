@@ -24,6 +24,7 @@ internal fun spaceCompassObservatoryExportNotes(body: SpaceCompassCelestialBody,
     if (body==SpaceCompassCelestialBody.SEDNA) { note(R.string.celestial_view_sedna_note);note(R.string.celestial_view_sedna_facts) }
     if (body==SpaceCompassCelestialBody.POLARIS) { note(R.string.celestial_polaris_derived);note(R.string.celestial_polaris_facts) }
     if (body.deepSkyReference!=null) note(body.deepSkyNoteResource)
+    if (body==SpaceCompassCelestialBody.SOUTHERN_CROSS) note(R.string.celestial_southern_cross_note)
     if (body.hasCatalogPhotograph) note(R.string.celestial_archival_image)
     spaceCompassCatalogImageCredit(body.viewerTexture)?.let(::add)
     if (body==SpaceCompassCelestialBody.ANDROMEDA_CORE) {

@@ -184,7 +184,7 @@ private fun Modifier.spaceCompassSettingsChoiceSurface(checked: Boolean): Modifi
         .background(if (checked) MaterialTheme.colorScheme.onSurface.copy(alpha = .08f) else Color.Transparent)
 
 @Composable
-private fun SpaceCompassSettingsChoiceLabel(label: String, modifier: Modifier, enabled: Boolean = true,
+internal fun SpaceCompassSettingsChoiceLabel(label: String, modifier: Modifier, enabled: Boolean = true,
     weight: FontWeight = FontWeight.Medium, lineHeight: TextUnit = TextUnit.Unspecified) {
     Text(label, modifier, fontSize = 14.sp, fontWeight = weight, lineHeight = lineHeight,
         color = MaterialTheme.colorScheme.onSurface.copy(alpha = if (enabled) 1f else .72f * .62f))

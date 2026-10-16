@@ -17,16 +17,19 @@ internal enum class SpaceCompassObserverSection { POSITION, ALTITUDE, ZONE, DATE
 internal class SpaceCompassObserverIslandReveal(private val scope: CoroutineScope,
     private val scroll: LazyStaggeredGridState) {
     private var job: Job? = null
-    private var target: SpaceCompassObserverSection? = null
+    private var target: Int? = null
     fun cancel() { job?.cancel(); job = null; target = null }
     fun changed(section: SpaceCompassObserverSection, expanded: Boolean) {
-        if (!expanded) { if (target == section) cancel(); return }
+        changed(section.gridIndex, expanded)
+    }
+    fun changed(index: Int, expanded: Boolean) {
+        if (!expanded) { if (target == index) cancel(); return }
         cancel()
-        target = section
+        target = index
         job = scope.launch {
             // Align against the final expanded height; preserve the existing zero bottom padding.
             delay(SPACE_COMPASS_ISLAND_REVEAL_DURATION_MS.toLong())
-            if (!scroll.isScrollInProgress) scroll.animateScrollToItem(section.gridIndex)
+            if (!scroll.isScrollInProgress) scroll.animateScrollToItem(index)
         }
     }
 }

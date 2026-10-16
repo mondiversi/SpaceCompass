@@ -1,6 +1,6 @@
 <resources>
     <string name="screensaver_title">Προφύλαξη οθόνης</string>
-    <string name="screensaver_description">Όταν η εφαρμογή παραμένει ανοιχτή χωρίς να χρησιμοποιείται, εμφανίζει τη Γη και ένα κινούμενο διαστημικό φόντο. Αναστέλλει τους αισθητήρες, το GPS, την κάμερα και τις ενημερώσεις δεδομένων για εξοικονόμηση ενέργειας.</string>
+    <string name="screensaver_description">Όταν η εφαρμογή είναι ανενεργή, δείχνει τη Γη σε κίνηση και διακόπτει την παρακολούθηση για εξοικονόμηση ενέργειας.</string>
     <string name="screensaver_delay">Έναρξη μετά από</string>
     <string name="screensaver_dismiss">Αγγίξτε για να επιστρέψετε στην εφαρμογή</string>
     <string name="screensaver_seconds">%1$s δευτ.</string>

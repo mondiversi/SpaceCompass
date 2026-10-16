@@ -19,6 +19,7 @@ internal fun spaceCompassCatalogDistancesWithReferences(calculated: Map<SpaceCom
 /** Actual heliocentric radius, not the observer range shown by the compass. */
 internal fun spaceCompassCelestialCatalogDistanceAu(body: SpaceCompassCelestialBody, timeMs: Long,
     remote: SpaceCompassCelestialRemoteData = SpaceCompassCelestialRemoteData()): Double? {
+    if (body == SpaceCompassCelestialBody.SOUTHERN_CROSS) return null
     if (body == SpaceCompassCelestialBody.SUN) return 0.0
     if (body == SpaceCompassCelestialBody.EARTH_CENTER) return helioVector(Body.Earth, spaceCompassAstronomyTime(timeMs)).length()
     val time = spaceCompassAstronomyTime(timeMs)
@@ -42,6 +43,36 @@ internal fun spaceCompassCelestialCatalogDistanceAu(body: SpaceCompassCelestialB
 }
 
 internal const val SPACE_COMPASS_CELESTIAL_CATALOG_LY_THRESHOLD_AU = 10_000.0
+
+/** Earth-centred range in km, independent of GPS; never substitute a heliocentric range. */
+internal fun spaceCompassCelestialCatalogEarthDistanceKm(body: SpaceCompassCelestialBody, timeMs: Long,
+    remote: SpaceCompassCelestialRemoteData = SpaceCompassCelestialRemoteData()): Double? {
+    if (body == SpaceCompassCelestialBody.SOUTHERN_CROSS) return null
+    if (body == SpaceCompassCelestialBody.EARTH_CENTER) return 0.0
+    if (body.isEarthSatellite || body == SpaceCompassCelestialBody.MOON)
+        return spaceCompassNearbyCatalogDistanceKm(body, timeMs, remote)?.takeIf { it.isFinite() && it >= 0 }
+    val time = spaceCompassAstronomyTime(timeMs)
+    val reference = body.deepSkyReference ?: if (body == SpaceCompassCelestialBody.POLARIS)
+        SpaceCompassDeepSkyReference(SPACE_COMPASS_POLARIS_RA_HOURS, SPACE_COMPASS_POLARIS_DEC_DEGREES,
+            SPACE_COMPASS_POLARIS_DISTANCE_KM / SPACE_COMPASS_LIGHT_YEAR_KM, 44.48, -11.85) else null
+    val distanceAu = when {
+        reference != null -> {
+            val stellar = spaceCompassStellarReferenceVector(reference, timeMs)
+            val earth = helioVector(Body.Earth, time)
+            val ray = stellar - SpaceCompassViewVector(earth.x, earth.y, earth.z)
+            sqrt(ray.dot(ray))
+        }
+        body.usesHorizons -> remote.ephemerides[body]?.takeIf { it.body == body }?.at(timeMs)?.length()
+        body.isJovianMoon -> spaceCompassJovianMoonGeoVector(body, time, Aberration.Corrected).length()
+        else -> body.engine?.let { geoVector(it, time, Aberration.Corrected).length() }
+    }
+    return distanceAu?.times(SPACE_COMPASS_AU_KM)?.takeIf { it.isFinite() && it >= 0 }
+}
+
+/** Use the same geocentric km value for sorting and display, with the user's distance units. */
+internal fun formatSpaceCompassCelestialCatalogEarthDistance(body: SpaceCompassCelestialBody, km: Double?,
+    numeric: SpaceCompassNumericFormat, unit: String, normalFeet: Boolean = false): String =
+    formatSpaceCompassSelectedDistance(body, km, numeric, unit, normalFeet)?.replace(" · ", "\n") ?: "—"
 
 /** Catalogue presentation only: keep the underlying heliocentric distance in AU. */
 internal fun formatSpaceCompassCelestialCatalogDistance(distance: Double?, numeric: SpaceCompassNumericFormat,

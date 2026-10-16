@@ -1,9 +1,9 @@
 <resources>
     <string name="info_news_title">آخر المستجدات · %1$s</string>
-    <string name="info_news_star_sky" formatted="false">أحد عشر جرماً جديداً قابلاً للتتبع: مسابير وتلسكوبات فضائية وTiangong وApophis و3I/ATLAS وM87* وبروكسيما b.</string>
-    <string name="info_news_texture_downloads" formatted="false">توفر جداول NASA/JPL مواقع المسابير والأجسام الصغيرة ومسافاتها ومساراتها اليومية في السماء.</string>
-    <string name="info_news_weather" formatted="false">يستخدم Hubble وTiangong عناصر مدارية حديثة وSGP4 مع مصدر بيانات بديل.</string>
-    <string name="info_news_viewer_zoom" formatted="false">تُوضَّح الاتجاهات المرجعية والبيانات المفقودة دون اختلاق قياسات.</string>
-    <string name="info_news_settings" formatted="false">صور WebP خارجية جديدة مع تنزيل فردي وفحص سلامة وتخزين للاستخدام دون اتصال.</string>
-    <string name="info_news_catalog" formatted="false">تحديث المصادر والترجمات؛ ملفات رسومية فردية دون أرشيفات ZIP مكررة للأنسجة.</string>
+    <string name="info_news_star_sky" formatted="false">53 جرمًا: انضم سيريس وإنسيلادوس والنسر الواقع ودنب والنسر الطائر والصليب الجنوبي إلى الفهرس.</string>
+    <string name="info_news_texture_downloads" formatted="false">سرعة زمن حتى 3600×، مع البدء من البداية أو التقدم أثناء نشاط التطبيق فقط أو باستمرار.</string>
+    <string name="info_news_weather" formatted="false">تظهر التقاربات ضمن 1.5° في اللحظة نفسها في المسارات واللقطات والملفات المصدرة.</string>
+    <string name="info_news_viewer_zoom" formatted="false">رتّب حسب المسافة من الأرض وافتح مرصد الجرم مباشرة من الفهرس.</string>
+    <string name="info_news_settings" formatted="false">إعدادات أكثر اتساقًا وبطاقات أفقية ورموز للمسار وخيار شاشة توقف بعد 15 دقيقة.</string>
+    <string name="info_news_catalog" formatted="false">حزمة الرسومات 1.4: ‏29 صورة WebP خارجية بتنزيل فردي وفحص سلامة وتخزين مؤقت دون اتصال.</string>
 </resources>

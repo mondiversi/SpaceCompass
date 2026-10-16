@@ -7,7 +7,8 @@ import java.time.ZoneId
 
 /** Absolute minutes distinguish repeated DST hours; live observations have a separate identity. */
 internal data class SpaceCompassOrbitPointKey(val body: SpaceCompassCelestialBody, val date: LocalDate,
-    val zoneId: String, val minute: Long?, val event: SpaceCompassSunPathEvent?) {
+    val zoneId: String, val minute: Long?, val event: SpaceCompassSunPathEvent?,
+    val approachBody: SpaceCompassCelestialBody? = null) {
     val isCurrent: Boolean get() = minute == null
 }
 
@@ -17,11 +18,11 @@ internal data class SpaceCompassSelectedOrbitPoint(val key: SpaceCompassOrbitPoi
 internal fun spaceCompassOrbitPointKey(body: SpaceCompassCelestialBody, point: SpaceCompassSunPathPoint,
     zone: ZoneId, date: LocalDate? = null, current: Boolean = false) = SpaceCompassOrbitPointKey(body,
     date ?: Instant.ofEpochMilli(point.timeMs).atZone(zone).toLocalDate(), zone.id,
-    if (current) null else Math.floorDiv(point.timeMs, 60_000L), if (current) null else point.event)
+    if (current) null else Math.floorDiv(point.timeMs, 60_000L), if (current) null else point.event, point.approach?.other)
 
 /** Small refinements of a named event must not erase its pin; repeated satellite events remain distinct. */
 internal fun spaceCompassOrbitPointKeysMatch(a: SpaceCompassOrbitPointKey, b: SpaceCompassOrbitPointKey): Boolean =
-    a == b || a.body == b.body && a.date == b.date && a.zoneId == b.zoneId && a.event == b.event &&
+    a == b || a.body == b.body && a.date == b.date && a.zoneId == b.zoneId && a.event == b.event && a.approachBody == b.approachBody &&
         a.event != null && a.event != SpaceCompassSunPathEvent.HOUR && a.minute != null && b.minute != null &&
         kotlin.math.abs(a.minute - b.minute) <= 2
 
@@ -51,6 +52,9 @@ internal class SpaceCompassSunDailyPathUiState(
         }
     }
     fun closeMenu() { menuPath = null; menuCurrentPoint = null; menuFocusPointId = null }
+    fun refreshMenu(path: SpaceCompassSunDailyPath?, current: SpaceCompassSunPathPoint?) {
+        if (menuPath != null && path?.body == menuPath?.body) { menuPath = path; menuCurrentPoint = current }
+    }
 
     fun isSelected(path: SpaceCompassSunDailyPath, point: SpaceCompassSunPathPoint, current: Boolean = false): Boolean =
         matchingKey(spaceCompassOrbitPointKey(path.body, point, path.zone, path.date.takeUnless { current }, current)) != null

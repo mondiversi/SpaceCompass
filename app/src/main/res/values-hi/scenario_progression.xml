@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="scenario_speed">समय की गति</string>
+    <string name="scenario_speed_description">सिम्युलेटेड घड़ी को 1× से 3600× तक तेज़ करें। आधी रात को तारीख अपने आप अगले दिन पर चली जाती है।</string>
+    <string name="scenario_resume">परिदृश्य फिर शुरू करना</string>
+    <string name="scenario_resume_description">चुनें कि ऐप फिर खोलने पर सिम्युलेटेड समय कैसे आगे बढ़े। चुनी हुई गति सभी मोड में लागू होती है।</string>
+    <string name="scenario_restart">शुरुआत से फिर चलाएँ</string>
+    <string name="scenario_active">केवल ऐप सक्रिय होने पर</string>
+    <string name="scenario_always">हमेशा</string>
+    <string name="celestial_approach">निकट आगमन</string>
+    <string name="scenario_speed_value">%1$s×</string>
+    <string name="celestial_elevation_rising">ऊँचाई बढ़ रही है</string>
+    <string name="celestial_elevation_falling">ऊँचाई घट रही है</string>
+    <string name="scenario_restart_help">ऐप को नए सिरे से शुरू करने पर परिदृश्य का समय शुरुआती सेटिंग से शुरू होता है। ऐप का उपयोग करते समय यह चुनी गई गति से आगे बढ़ता है।</string>
+    <string name="scenario_active_help">परिदृश्य का समय केवल ऐप का उपयोग करते समय चुनी गई गति से आगे बढ़ता है। पृष्ठभूमि में और स्क्रीनसेवर के दौरान रुक जाता है, फिर वहीं से आगे बढ़ता है।</string>
+    <string name="scenario_always_help">ऐप बंद होने पर और फ़ोन दोबारा शुरू होने के बाद भी परिदृश्य का समय चुनी गई गति से आगे बढ़ता रहता है।</string>
+</resources>

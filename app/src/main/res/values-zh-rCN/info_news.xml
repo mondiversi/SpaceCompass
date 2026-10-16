@@ -1,9 +1,9 @@
 <resources>
     <string name="info_news_title">最新变化 · %1$s</string>
-    <string name="info_news_star_sky" formatted="false">新增11个可追踪对象：探测器、空间望远镜、天宫、阿波菲斯、3I/ATLAS、M87*和比邻星b。</string>
-    <string name="info_news_texture_downloads" formatted="false">使用NASA/JPL星历计算探测器和小天体的位置、距离及每日天空轨迹。</string>
-    <string name="info_news_weather" formatted="false">哈勃和天宫使用近期轨道要素与SGP4，并支持备用数据源。</string>
-    <string name="info_news_viewer_zoom" formatted="false">明确说明参考方向和缺失数据，不编造测量值。</string>
-    <string name="info_news_settings" formatted="false">新增外部WebP图像，保留单独下载、完整性校验与离线缓存。</string>
-    <string name="info_news_catalog" formatted="false">更新来源与翻译；图像包提供独立文件，不再重复附加纹理ZIP。</string>
+    <string name="info_news_star_sky" formatted="false">目录增至53个对象：新增谷神星、土卫二、织女星、天津四、牛郎星和南十字座。</string>
+    <string name="info_news_texture_downloads" formatted="false">时间速度最高3600×，可选择从头开始、仅在应用活跃时推进或持续推进。</string>
+    <string name="info_news_weather" formatted="false">同一时刻角距小于1.5°的接近事件会显示在轨迹、图像和导出文件中。</string>
+    <string name="info_news_viewer_zoom" formatted="false">支持按地心距离排序，并可从目录直接打开对象的观测页面。</string>
+    <string name="info_news_settings" formatted="false">统一设置样式、横屏卡片和轨迹符号，新增15分钟屏保选项。</string>
+    <string name="info_news_catalog" formatted="false">图像包1.4：29张外置WebP图像，支持逐张下载、完整性校验和离线缓存。</string>
 </resources>

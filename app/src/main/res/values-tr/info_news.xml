@@ -1,9 +1,9 @@
 <resources>
     <string name="info_news_title">Son yenilikler · %1$s</string>
-    <string name="info_news_star_sky" formatted="false">İzlenebilen on bir yeni nesne: sondalar, uzay teleskopları, Tiangong, Apophis, 3I/ATLAS, M87* ve Proxima b.</string>
-    <string name="info_news_texture_downloads" formatted="false">NASA/JPL efemerisleri sondalar ve küçük cisimler için konum, uzaklık ve günlük gökyüzü yolu sağlar.</string>
-    <string name="info_news_weather" formatted="false">Hubble ve Tiangong güncel yörünge elemanları ile SGP4 kullanır; alternatif veri kaynağı vardır.</string>
-    <string name="info_news_viewer_zoom" formatted="false">Referans yönleri ve eksik veriler uydurma ölçümler olmadan açıklanır.</string>
-    <string name="info_news_settings" formatted="false">Yeni harici WebP görüntüleri tek tek indirilir, bütünlüğü doğrulanır ve çevrimdışı önbelleğe alınır.</string>
-    <string name="info_news_catalog" formatted="false">Kaynaklar ve çeviriler güncellendi; grafik paketlerinde yinelenen doku ZIP dosyaları bulunmaz.</string>
+    <string name="info_news_star_sky" formatted="false">53 nesne: Ceres, Enceladus, Vega, Deneb, Altair ve Güney Haçı kataloğa eklendi.</string>
+    <string name="info_news_texture_downloads" formatted="false">3600× zaman hızı; baştan başlatma, yalnızca uygulama etkinken veya sürekli ilerleme.</string>
+    <string name="info_news_weather" formatted="false">Aynı anda 1,5° içine giren yakınlaşmalar yollarda, çekimlerde ve dışa aktarımlarda görünür.</string>
+    <string name="info_news_viewer_zoom" formatted="false">Dünya’ya uzaklığa göre sıralayın ve nesnenin Gözlemevi’ni doğrudan katalogdan açın.</string>
+    <string name="info_news_settings" formatted="false">Tutarlı ayarlar, yatay kartlar, yol simgeleri ve 15 dakikalık ekran koruyucu seçeneği.</string>
+    <string name="info_news_catalog" formatted="false">Grafik paketi 1.4: tek tek indirilen, bütünlüğü doğrulanan ve çevrimdışı saklanan 29 harici WebP görüntüsü.</string>
 </resources>

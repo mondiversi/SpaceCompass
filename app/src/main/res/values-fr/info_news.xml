@@ -1,9 +1,9 @@
 <resources>
     <string name="info_news_title">Dernières nouveautés · %1$s</string>
-    <string name="info_news_star_sky" formatted="false">Onze nouveaux objets suivis : sondes, télescopes spatiaux, Tiangong, Apophis, 3I/ATLAS, M87* et Proxima b.</string>
-    <string name="info_news_texture_downloads" formatted="false">Les éphémérides NASA/JPL calculent les positions, distances et parcours quotidiens des sondes et petits corps.</string>
-    <string name="info_news_weather" formatted="false">Hubble et Tiangong utilisent des éléments orbitaux récents et SGP4, avec une source alternative.</string>
-    <string name="info_news_viewer_zoom" formatted="false">Les directions de référence et données manquantes sont expliquées sans mesures inventées.</string>
-    <string name="info_news_settings" formatted="false">Nouvelles images WebP externes avec téléchargement individuel, contrôle d’intégrité et cache hors ligne.</string>
-    <string name="info_news_catalog" formatted="false">Crédits et traductions actualisés ; fichiers graphiques individuels sans ZIP de textures en double.</string>
+    <string name="info_news_star_sky" formatted="false">53 objets : Cérès, Encelade, Véga, Deneb, Altaïr et la Croix du Sud rejoignent le catalogue.</string>
+    <string name="info_news_texture_downloads" formatted="false">Vitesse du temps jusqu’à 3600×, avec reprise au début, seulement dans l’app active ou en continu.</string>
+    <string name="info_news_weather" formatted="false">Les rapprochements à moins de 1,5° au même instant apparaissent dans les parcours, captures et exports.</string>
+    <string name="info_news_viewer_zoom" formatted="false">Triez par distance à la Terre et ouvrez l’Observatoire de chaque objet depuis le catalogue.</string>
+    <string name="info_news_settings" formatted="false">Réglages harmonisés, cartes en paysage, symboles du parcours et veille après 15 minutes.</string>
+    <string name="info_news_catalog" formatted="false">Pack graphique 1.4 : 29 images WebP externes, téléchargements individuels, intégrité vérifiée et cache hors ligne.</string>
 </resources>

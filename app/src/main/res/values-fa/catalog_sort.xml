@@ -4,4 +4,5 @@
     <string name="catalog_sort_ascending">صعودی</string>
     <string name="catalog_sort_descending">نزولی</string>
     <string name="catalog_sort_original">پیش‌فرض</string>
+    <string name="catalog_distance_from_earth">فاصله از زمین</string>
 </resources>

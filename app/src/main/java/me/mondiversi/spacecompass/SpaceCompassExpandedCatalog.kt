@@ -5,6 +5,8 @@ package me.mondiversi.spacecompass
  */
 internal val SpaceCompassCelestialBody.expandedHorizonsTarget: SpaceCompassHorizonsTarget?
     get() = when (this) {
+        SpaceCompassCelestialBody.CERES -> SpaceCompassHorizonsTarget("1;", "1 Ceres (A801 AA)", 0.0..10.0)
+        SpaceCompassCelestialBody.ENCELADUS -> SpaceCompassHorizonsTarget("602", "Enceladus (602)", 0.0..20.0)
         SpaceCompassCelestialBody.NEW_HORIZONS -> SpaceCompassHorizonsTarget("-98", "New Horizons (spacecraft) (-98)", 0.0..500.0)
         SpaceCompassCelestialBody.JWST -> SpaceCompassHorizonsTarget("-170", "James Webb Space Telescope (spacecraft) (-170)", 0.0..5.0)
         SpaceCompassCelestialBody.PARKER_SOLAR_PROBE -> SpaceCompassHorizonsTarget("-96", "Parker Solar Probe (spacecraft) (-96)", 0.0..5.0)

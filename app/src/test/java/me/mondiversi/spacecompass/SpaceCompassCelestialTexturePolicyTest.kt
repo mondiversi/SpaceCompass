@@ -14,10 +14,10 @@ class SpaceCompassCelestialTexturePolicyTest {
 
     @Test fun onlyNamedPublicMapsAndHttpsGitHubDownloadRedirectsAreAccepted() {
         val policy = SpaceCompassCelestialTexturePolicy
-        for (image in policy.images) assertTrue(policy.allowedUrl(image.url))
+        for (image in policy.images) image.url?.let { assertTrue(policy.allowedUrl(it)) }
         assertFalse(policy.allowedUrl("https://github.com/other/repo/releases/download/v1/moon.webp"))
         assertFalse(policy.allowedUrl("http://github.com/mondiversi/SpaceCompass/releases/download/celestial-textures-v1/moon.webp"))
-        assertFalse(policy.allowedUrl(policy.images.first().url + "?extra=1"))
+        assertFalse(policy.allowedUrl(policy.images.first { it.url != null }.url + "?extra=1"))
         assertFalse(policy.allowedUrl("https://release-assets.githubusercontent.com/file", false))
         assertTrue(policy.allowedUrl("https://release-assets.githubusercontent.com/file?download=public", true))
         assertFalse(policy.allowedUrl("https://release-assets.githubusercontent.com.attacker.example/file", true))
@@ -27,12 +27,12 @@ class SpaceCompassCelestialTexturePolicyTest {
 
     @Test fun packCoversEveryMapIncludingFictionalTextureWithoutDuplicateNames() {
         val images = SpaceCompassCelestialTexturePolicy.images
-        assertEquals(27, images.size)
-        assertEquals(27, images.map { it.name }.distinct().size)
+        assertEquals(29, images.size)
+        assertEquals(29, images.map { it.name }.distinct().size)
         assertTrue(images.any { it.name == "lv426.webp" })
         for (body in SpaceCompassCelestialBody.entries.filter { it.viewerTexture != null })
             assertNotNull(body.name, SpaceCompassCelestialTexturePolicy.texture(body.viewerTexture))
-        assertEquals(5783738, images.sumOf { it.bytes })
+        assertEquals(6771736, images.sumOf { it.bytes })
     }
 
     @Test fun byteLengthAndDigestAreBothRequired() {
@@ -132,16 +132,17 @@ class SpaceCompassCelestialTexturePolicyTest {
         } finally { root.walkBottomUp().forEach(File::delete) }
     }
 
-    @Test fun allImagesUseTheExactNewPackAndOldReleaseUrlsAreNotDownloaded() {
+    @Test fun everyImageUsesTheReleasedPackWhileVerifiedLegacyCachesRemainReusable() {
         val policy = SpaceCompassCelestialTexturePolicy
-        assertEquals("celestial-textures-v1.3", policy.PACK)
+        assertEquals("celestial-textures-v1.4", policy.PACK)
         for (image in policy.images) {
             assertTrue(image.name.endsWith(".webp"))
             assertEquals(if (image.name == "lv426.webp") 1774 else 2048, image.width)
             assertEquals(if (image.name == "lv426.webp") 887 else 1024, image.height)
-            assertEquals("https://github.com/mondiversi/SpaceCompass/releases/download/celestial-textures-v1.3/${image.name}", image.url)
-            assertFalse(policy.allowedUrl(image.url.replace("celestial-textures-v1.3/", "celestial-textures-v1/")))
+            assertEquals(policy.PACK, image.downloadPack)
+            assertEquals("https://github.com/mondiversi/SpaceCompass/releases/download/celestial-textures-v1.4/${image.name}", image.url)
+            assertFalse(policy.allowedUrl(image.url!!.replace("celestial-textures-v1.4/", "celestial-textures-v1/")))
         }
-        assertEquals(listOf("celestial-textures-v1.2.1", "celestial-textures-v1.2", "celestial-textures-v1.1", "celestial-textures-v1"), policy.legacyPacks)
+        assertEquals(listOf("celestial-textures-v1.3", "celestial-textures-v1.2.1", "celestial-textures-v1.2", "celestial-textures-v1.1", "celestial-textures-v1"), policy.legacyPacks)
     }
 }

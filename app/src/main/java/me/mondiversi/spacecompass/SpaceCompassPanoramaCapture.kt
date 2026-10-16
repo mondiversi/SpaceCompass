@@ -14,6 +14,7 @@ import androidx.compose.ui.platform.LocalResources
 import androidx.compose.ui.platform.LocalContext
 import kotlinx.coroutines.CancellationException
 import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.ensureActive
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
 import java.io.File
@@ -102,6 +103,8 @@ internal fun rememberSpaceCompassPanoramaAction(timeMs: Long, latitude: Double?,
                         val referenceTime = observerPlan?.observationTimeMs(captureTime) ?: photoFrame?.capturedTimeMs ?: timeMs
                         val referenceSnapshot = snapshot.copy(timeMs = referenceTime)
                         val result = withContext(Dispatchers.IO) {
+                            val captureJob = kotlin.coroutines.coroutineContext
+                            val frozenSnapshot = freezeSpaceCompassApproachSnapshot(referenceSnapshot) { captureJob.ensureActive() }
                             // The shutter has already fired; prepare missing maps before asynchronous rendering.
                             ensureSpaceCompassCelestialTextures(application, bodies)
                             val cameraFieldOfView = photoFrame?.let { frame ->
@@ -123,13 +126,13 @@ internal fun rememberSpaceCompassPanoramaAction(timeMs: Long, latitude: Double?,
                                 }).parts
                             }
                             // Freeze table cells before later refreshes can replace paths or selections.
-                            val orbitTable = captureSpaceCompassOrbitTable(referenceSnapshot)
+                            val orbitTable = captureSpaceCompassOrbitTable(frozenSnapshot)
                             val place = placeFor(spaceCompassPanoramaExportLocale)
                             val selectedPlace = if (selectedFormatting.locale.language == spaceCompassPanoramaExportLocale.language)
                                 place else placeFor(selectedFormatting.locale)
-                            val international = spaceCompassPanoramaPresentation(referenceSnapshot, exportResources,
+                            val international = spaceCompassPanoramaPresentation(frozenSnapshot, exportResources,
                                 spaceCompassPanoramaInternationalFormatting, zone, place, altitude, gpsAccuracyMeters, simulated, simulatedAltitude, cameraPointing, cameraFieldOfView)
-                            val selected = spaceCompassPanoramaPresentation(referenceSnapshot, resources,
+                            val selected = spaceCompassPanoramaPresentation(frozenSnapshot, resources,
                                 selectedFormatting, zone, selectedPlace, altitude, gpsAccuracyMeters, simulated, simulatedAltitude, cameraPointing, cameraFieldOfView)
                             val resolvedSnapshot = international.snapshot.copy(caption = spaceCompassPanoramaCaptionForPosition(international.caption, position))
                             val previewSnapshot = spaceCompassSnapshotForDisclosure(selected.snapshot,position)

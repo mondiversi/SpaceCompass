@@ -60,7 +60,7 @@ internal fun SpaceCompassCelestialViewerScreen(body: SpaceCompassCelestialBody, 
     val geometry = key(body) {
         // A fresh fix must not dispose/recreate the GL surface while the replacement is calculated.
         produceState<SpaceCompassCelestialViewGeometry?>(null, timeMs, latitude, longitude, altitude,
-            remote.ephemerides[body].takeIf { body == SpaceCompassCelestialBody.TITAN }) {
+            remote.ephemerides[body].takeIf { body == SpaceCompassCelestialBody.TITAN || body == SpaceCompassCelestialBody.ENCELADUS }) {
             value = if (latitude == null || longitude == null) null else withContext(Dispatchers.Default) {
                 runCatching { calculateSpaceCompassCelestialViewGeometry(body, timeMs, latitude, longitude, altitude, remote) }
                     .onFailure { SpaceCompassErrorLog.record(context, "celestial_viewer:geometry", it) }.getOrNull()
@@ -142,6 +142,7 @@ internal fun SpaceCompassCelestialViewerScreen(body: SpaceCompassCelestialBody, 
     val note = stringResource(when {
         body.isFictional -> R.string.celestial_lv426_model_note
         body == SpaceCompassCelestialBody.EARTH_CENTER -> R.string.celestial_earth_center_note
+        body == SpaceCompassCelestialBody.SOUTHERN_CROSS -> R.string.celestial_southern_cross_note
         body == SpaceCompassCelestialBody.TITAN -> R.string.celestial_view_map_note
         body.deepSkyReference != null -> body.deepSkyNoteResource
         body == SpaceCompassCelestialBody.POLARIS -> R.string.celestial_polaris_model
@@ -258,6 +259,8 @@ internal fun SpaceCompassCelestialViewerScreen(body: SpaceCompassCelestialBody, 
                 if (body.hasCatalogPhotograph) Text(stringResource(R.string.celestial_archival_image),
                     color = secondaryText, fontSize = 11.sp, lineHeight = 14.sp)
                 if (body.deepSkyReference != null) Text(stringResource(body.deepSkyNoteResource),
+                    color = secondaryText, fontSize = 11.sp, lineHeight = 14.sp)
+                if (body == SpaceCompassCelestialBody.SOUTHERN_CROSS) Text(stringResource(R.string.celestial_southern_cross_note),
                     color = secondaryText, fontSize = 11.sp, lineHeight = 14.sp)
                 if (body == SpaceCompassCelestialBody.POLARIS) Text(stringResource(R.string.celestial_polaris_derived),
                     color = secondaryText, fontSize = 11.sp, lineHeight = 14.sp)

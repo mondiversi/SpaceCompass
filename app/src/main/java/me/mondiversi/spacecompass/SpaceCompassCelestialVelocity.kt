@@ -14,6 +14,7 @@ internal fun calculateSpaceCompassCelestialSpeed(body: SpaceCompassCelestialBody
     if (body.isEarthSatellite)
         return remote.satelliteOrbit(body)?.takeIf { it.usable(timeMs) }?.speedKmPerSecond(timeMs)
     if (body == SpaceCompassCelestialBody.TITAN) return spaceCompassTitanOrbitalSpeed(timeMs, remote)
+    if (body == SpaceCompassCelestialBody.ENCELADUS) return spaceCompassSaturnMoonOrbitalSpeed(body, timeMs, remote)
     if (body.usesHorizons)
         return remote.motions[body]?.takeIf { it.body == body }?.speedAt(timeMs)
     val time = spaceCompassAstronomyTime(timeMs)
@@ -70,7 +71,7 @@ internal fun spaceCompassCelestialSpeedLabel(body: SpaceCompassCelestialBody): I
     body == SpaceCompassCelestialBody.SUN -> R.string.celestial_speed_earth_orbit
     body == SpaceCompassCelestialBody.MOON || body.isEarthSatellite -> R.string.celestial_speed_orbit_earth
     body.isJovianMoon -> R.string.celestial_speed_orbit_jupiter
-    body == SpaceCompassCelestialBody.TITAN -> R.string.celestial_speed_orbit_saturn
+    body == SpaceCompassCelestialBody.TITAN || body == SpaceCompassCelestialBody.ENCELADUS -> R.string.celestial_speed_orbit_saturn
     body.isVoyager -> R.string.celestial_speed_outward_sun
     body.isExtrasolar || body == SpaceCompassCelestialBody.EARTH_CENTER -> R.string.celestial_speed_unavailable
     else -> R.string.celestial_speed_orbit_sun

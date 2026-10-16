@@ -38,6 +38,15 @@ internal fun SpaceCompassSettingsGroupIcon(key: String, tint: Color) {
         val outline = Stroke(strokeWidth, cap = StrokeCap.Round)
         fun point(x: Float, y: Float) = Offset(size.width * x, size.height * y)
         when (key) {
+            "scenario_speed", "scenario_resume" -> {
+                drawCircle(tint, size.minDimension * .35f, center, style = outline)
+                drawLine(tint, center, point(.5f, .27f), strokeWidth, StrokeCap.Round)
+                drawLine(tint, center, point(.68f, .57f), strokeWidth, StrokeCap.Round)
+                if (key == "scenario_speed") {
+                    drawLine(tint, point(.72f, .12f), point(.89f, .12f), strokeWidth, StrokeCap.Round)
+                    drawLine(tint, point(.80f, .04f), point(.89f, .12f), strokeWidth, StrokeCap.Round)
+                } else drawCircle(tint, size.minDimension * .08f, point(.82f, .78f))
+            }
             "events" -> {
                 drawRoundRect(tint, point(.12f, .20f), Size(size.width * .76f, size.height * .68f),
                     CornerRadius(size.minDimension * .08f), style = outline)

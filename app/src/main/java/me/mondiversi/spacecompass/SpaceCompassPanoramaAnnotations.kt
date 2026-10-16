@@ -82,6 +82,12 @@ internal fun drawSpaceCompassPanoramaEventMarker(canvas: Canvas, event: SpaceCom
         canvas.drawCircle(x, y, 6 * scale, paint)
         return
     }
+    if (event == SpaceCompassSunPathEvent.APPROACH) {
+        paint.color = 0xcc07101b.toInt()
+        canvas.drawCircle(x, y, 18 * scale, paint)
+        drawSpaceCompassApproachGlyph(canvas, x, y, 12 * scale, tint, 2.6f * scale)
+        return
+    }
     paint.color = 0x73000000
     canvas.drawCircle(x, y, 15.5f * scale, paint)
     paint.color = tint
@@ -103,5 +109,23 @@ internal fun drawSpaceCompassPanoramaEventMarker(canvas: Canvas, event: SpaceCom
             close()
         }
         canvas.drawPath(glyph, paint)
+    }
+}
+
+/** Approaches are visible even with labels off, and must survive later thumbnails/hourly dots. */
+internal fun drawSpaceCompassCaptureApproachMarkers(canvas: Canvas,
+    markers: List<Triple<SpaceCompassSunPathPoint, SpaceCompassSunScenePoint, Int>>, scale: Float,
+    wrapWidth: Int? = null) {
+    val occupied = mutableListOf<Pair<Long, SpaceCompassSunScenePoint>>()
+    markers.filter { SpaceCompassSunPathEvent.APPROACH in it.first.events }.forEach { (marker, point, tint) ->
+        if (spaceCompassApproachMarkerIsDuplicate(marker.timeMs, point, occupied, 36.0 * scale, wrapWidth?.toDouble())) return@forEach
+        occupied += marker.timeMs to point
+        drawSpaceCompassPanoramaEventMarker(canvas, SpaceCompassSunPathEvent.APPROACH, point, scale, tint)
+        wrapWidth?.let { width ->
+            if (point.x < 20 * scale) drawSpaceCompassPanoramaEventMarker(canvas, SpaceCompassSunPathEvent.APPROACH,
+                point.copy(x = point.x + width), scale, tint)
+            if (point.x > width - 20 * scale) drawSpaceCompassPanoramaEventMarker(canvas, SpaceCompassSunPathEvent.APPROACH,
+                point.copy(x = point.x - width), scale, tint)
+        }
     }
 }

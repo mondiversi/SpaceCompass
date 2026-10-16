@@ -1,0 +1,12 @@
+<resources>
+    <string name="celestial_ceres">Ceres</string>
+    <string name="celestial_enceladus">Enceladus</string>
+    <string name="celestial_vega">Vega</string>
+    <string name="celestial_deneb">Deneb</string>
+    <string name="celestial_altair">Altair</string>
+    <string name="celestial_southern_cross">Southern Cross</string>
+    <string name="catalog_type_constellation">Constellation</string>
+    <string name="celestial_bright_star_note">Catalogue direction with proper motion and parallax. Vega and Altair rotate rapidly: shape and surface temperature depend on latitude. The symbol is illustrative.</string>
+    <string name="celestial_deneb_note">Deneb is a blue-white supergiant. The adopted distance is about 802 parsecs; its physical properties are uncertain reference estimates.</string>
+    <string name="celestial_southern_cross_note">Four principal stars of Crux, at different distances. Extend the Gacrux–Acrux axis beyond Acrux to estimate the south celestial pole. The track follows the pattern’s centre, not the pole.</string>
+</resources>

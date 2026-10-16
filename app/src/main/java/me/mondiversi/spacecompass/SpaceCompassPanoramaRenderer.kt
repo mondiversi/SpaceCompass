@@ -26,7 +26,8 @@ internal data class SpaceCompassPanoramaSnapshot(val timeMs: Long, val latitude:
     val selectedPoints: List<SpaceCompassSelectedOrbitPoint> = emptyList(),
     val selectionTint: Int = 0xff1987d4.toInt(), val zoneId: String = "UTC",
     val orbitExportVocabulary: SpaceCompassOrbitExportVocabulary = SpaceCompassOrbitExportVocabulary(),
-    val displayZoneId: String? = null, val activeBody: SpaceCompassCelestialBody? = null)
+    val displayZoneId: String? = null, val activeBody: SpaceCompassCelestialBody? = null,
+    val bodyNames: Map<SpaceCompassCelestialBody,String> = emptyMap())
 
 internal fun renderSpaceCompassPanorama(snapshot: SpaceCompassPanoramaSnapshot, width: Int = 4096, context: android.content.Context? = null): Bitmap {
     require(width in 512..4096 && snapshot.objects.isNotEmpty())
@@ -154,6 +155,10 @@ internal fun renderSpaceCompassPanorama(snapshot: SpaceCompassPanoramaSnapshot, 
                 observerAltitude = snapshot.altitude)
         else SpaceCompassSkyReferenceDrawing(emptyList(), emptyList())
         // Defer point labels until every orbit is drawn, so other paths cannot cross their text.
+        if (snapshot.objects.any { it.body == SpaceCompassCelestialBody.SOUTHERN_CROSS } && snapshot.observerPositionKnown)
+            drawSpaceCompassSouthernCross(canvas, calculateSpaceCompassSouthernCross(snapshot.timeMs, snapshot.latitude,
+                snapshot.longitude, snapshot.altitude), sceneWidth, sceneHeight, scale * 2f, centreAzimuth = centerAzimuth,
+                showNames = snapshot.labelMode.showsObject(snapshot.activeBody == SpaceCompassCelestialBody.SOUTHERN_CROSS))
         val pointLabels = mutableListOf<SpaceCompassPanoramaTimeLabel>()
         val pointMarkers = mutableListOf<Triple<SpaceCompassSunPathPoint, SpaceCompassSunScenePoint, Int>>()
         // Draw every curve before live markers, keeping the selected set frozen throughout export.
@@ -212,12 +217,13 @@ internal fun renderSpaceCompassPanorama(snapshot: SpaceCompassPanoramaSnapshot, 
                 val time = snapshot.markerTimes[marker.timeMs] ?: formatSpaceCompassPanoramaExportTime(marker.timeMs,
                     snapshot.displayTimeZone,snapshot.formatting)
                 // Read elevation from this object's marker, not the timestamp shared by other paths.
-                val label = formatSpaceCompassPanoramaPathPointLabel(time, marker, snapshot.formatting, snapshot.pointEventNames, snapshot.timeMs)
+                val label = formatSpaceCompassPanoramaPathPointLabel(time, marker, snapshot.formatting, snapshot.pointEventNames, snapshot.timeMs, snapshot.bodyNames)
                 pointLabels += SpaceCompassPanoramaTimeLabel(label, p, markerTint,
                     marker.events.any { it != SpaceCompassSunPathEvent.HOUR })
             }
         }
         pointMarkers.forEach { (marker, point, tint) ->
+            if (SpaceCompassSunPathEvent.APPROACH in marker.events) return@forEach
             // Repeat the edge fragment at the 0/360 degree seam so event symbols remain continuous.
             val radius = 17 * scale
             val centers = buildList {
@@ -244,6 +250,7 @@ internal fun renderSpaceCompassPanorama(snapshot: SpaceCompassPanoramaSnapshot, 
             val p = observation?.position?.let { spaceCompassPanoramaPoint(it, sceneWidth.toDouble(), sceneHeight.toDouble(), centerAzimuth) } ?: return@forEach
             val tint = spaceCompassCelestialPathTint(item.body).toArgb()
             val x = p.x.toFloat(); val y = p.y.toFloat()
+            if (item.body != SpaceCompassCelestialBody.SOUTHERN_CROSS) {
             paint.style = Paint.Style.FILL; paint.color = 0xcc07101b.toInt()
             canvas.drawCircle(x, y, 38 * scale, paint)
             paint.style = Paint.Style.STROKE; paint.color = tint; paint.strokeWidth = 2 * scale
@@ -252,6 +259,7 @@ internal fun renderSpaceCompassPanorama(snapshot: SpaceCompassPanoramaSnapshot, 
             val image = renderSpaceCompassPanoramaMarker(context, item.body, snapshot.timeMs)
             try { canvas.drawBitmap(image, null, RectF(x - 36 * scale, y - 36 * scale, x + 36 * scale, y + 36 * scale),
                 Paint(Paint.ANTI_ALIAS_FLAG or Paint.FILTER_BITMAP_FLAG)) } finally { image.recycle() }
+            }
             if (snapshot.labelMode.showsObject(item.body == snapshot.activeBody)) {
                 text.textSize = 32 * scale
                 val half = text.measureText(item.name) / 2
@@ -260,6 +268,9 @@ internal fun renderSpaceCompassPanorama(snapshot: SpaceCompassPanoramaSnapshot, 
                 textAt(item.name, labelX, labelY, 32 * scale, tint)
             }
         }
+        drawSpaceCompassCaptureApproachMarkers(canvas, pointMarkers, scale, wrapWidth = sceneWidth)
+        drawSpaceCompassCurrentApproaches(canvas,snapshot, observations.mapNotNull { (item,obs) ->
+            obs?.position?.let { item.body to it } }.toMap(),scale,::projection)
         drawSpaceCompassPanoramaSelections(canvas, snapshot, selections, scale, 38f, ::projection,
             wrapWidth = sceneWidth.toFloat())
         drawAngularScales()

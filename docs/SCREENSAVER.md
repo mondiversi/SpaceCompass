@@ -1,7 +1,7 @@
 # Earth screensaver
 
 General contains a screensaver below background music. Its activation and delay
-(30 s, 1, 2, 5 or 10 min; default 5 min) are saved. New installations enable it;
+(30 s, 1, 2, 5, 10 or 15 min; default 5 min) are saved. New installations enable it;
 updates retain saved choices. One activity-owned monotonic inactivity deadline
 handles touch, scroll, keys, held gestures, keyboard, focus and rotation. Sensor
 and data updates never count as user interaction. Touch or Back dismisses the

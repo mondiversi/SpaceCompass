@@ -1,9 +1,9 @@
 <resources>
     <string name="info_news_title">Mambo mapya · %1$s</string>
-    <string name="info_news_star_sky" formatted="false">Vitu vipya kumi na kimoja vya kufuatilia: sondi, darubini za angani, Tiangong, Apophis, 3I/ATLAS, M87* na Proxima b.</string>
-    <string name="info_news_texture_downloads" formatted="false">Efemeridi za NASA/JPL hutoa nafasi, umbali na njia za kila siku za sondi na miili midogo.</string>
-    <string name="info_news_weather" formatted="false">Hubble na Tiangong hutumia elementi mpya za obiti na SGP4, pamoja na chanzo mbadala cha data.</string>
-    <string name="info_news_viewer_zoom" formatted="false">Mielekeo ya marejeo na data zisizopatikana zinaelezwa bila kubuni vipimo.</string>
-    <string name="info_news_settings" formatted="false">Picha mpya za nje za WebP hupakuliwa moja moja, hukaguliwa na kuhifadhiwa kwa matumizi bila mtandao.</string>
-    <string name="info_news_catalog" formatted="false">Vyanzo na tafsiri zimesasishwa; faili za picha ni za moja moja bila ZIP za nakala za maumbo.</string>
+    <string name="info_news_star_sky" formatted="false">Vitu 53: Ceres, Enceladus, Vega, Deneb, Altair na Msalaba wa Kusini vimeongezwa kwenye orodha.</string>
+    <string name="info_news_texture_downloads" formatted="false">Kasi ya muda hadi 3600×: anza upya, endelea programu ikiwa hai tu au endelea daima.</string>
+    <string name="info_news_weather" formatted="false">Mikaribiano ya ndani ya 1.5° wakati uleule inaonekana kwenye njia, picha na faili zinazohamishwa.</string>
+    <string name="info_news_viewer_zoom" formatted="false">Panga kwa umbali kutoka katikati ya Dunia na ufungue kichunguzi cha kitu moja kwa moja kwenye orodha.</string>
+    <string name="info_news_settings" formatted="false">Mipangilio thabiti, visanduku vya mlalo, alama za njia na kihifadhi skrini baada ya dakika 15.</string>
+    <string name="info_news_catalog" formatted="false">Kifurushi cha picha 1.4: picha 29 za WebP za nje, upakuaji mmoja mmoja, ukaguzi wa uadilifu na akiba nje ya mtandao.</string>
 </resources>

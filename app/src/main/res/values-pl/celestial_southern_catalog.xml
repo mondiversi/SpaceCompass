@@ -1,0 +1,12 @@
+<resources>
+    <string name="celestial_ceres">Ceres</string>
+    <string name="celestial_enceladus">Enceladus</string>
+    <string name="celestial_vega">Wega</string>
+    <string name="celestial_deneb">Deneb</string>
+    <string name="celestial_altair">Altair</string>
+    <string name="celestial_southern_cross">Krzyż Południa</string>
+    <string name="catalog_type_constellation">Gwiazdozbiór</string>
+    <string name="celestial_bright_star_note">Kierunek katalogowy z ruchem własnym i paralaksą. Wega i Altair szybko wirują: kształt i temperatura powierzchni zależą od szerokości. Symbol jest poglądowy.</string>
+    <string name="celestial_deneb_note">Deneb to biało-niebieski nadolbrzym. Przyjęta odległość wynosi około 802 parseków; właściwości fizyczne są niepewnymi oszacowaniami referencyjnymi.</string>
+    <string name="celestial_southern_cross_note">Cztery główne gwiazdy Crux w różnych odległościach. Przedłuż oś Gacrux–Acrux za Acrux, aby oszacować południowy biegun niebieski. Tor śledzi środek figury, nie biegun.</string>
+</resources>

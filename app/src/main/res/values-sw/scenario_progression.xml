@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="scenario_speed">Kasi ya muda</string>
+    <string name="scenario_speed_description">Harakisha saa iliyoigwa kutoka 1× hadi 3600×. Usiku wa manane, tarehe hubadilika moja kwa moja hadi siku inayofuata.</string>
+    <string name="scenario_resume">Kuendeleza hali</string>
+    <string name="scenario_resume_description">Chagua jinsi muda ulioigwa unavyoendelea unapofungua programu tena. Kasi iliyochaguliwa hutumika katika kila hali.</string>
+    <string name="scenario_restart">Anza tena mwanzo</string>
+    <string name="scenario_active">Wakati programu inatumika tu</string>
+    <string name="scenario_always">Daima</string>
+    <string name="celestial_approach">Kukaribiana</string>
+    <string name="scenario_speed_value">%1$s×</string>
+    <string name="celestial_elevation_rising">Mwinuko unaongezeka</string>
+    <string name="celestial_elevation_falling">Mwinuko unapungua</string>
+    <string name="scenario_restart_help">Kila programu inapoanzishwa upya, muda wa hali huanza kutoka mipangilio ya awali. Wakati wa kutumia programu, muda husonga kwa kasi iliyochaguliwa.</string>
+    <string name="scenario_active_help">Muda wa hali husonga kwa kasi iliyochaguliwa tu unapotumia programu. Husimama programu ikiwa chinichini na wakati wa kihifadhi skrini, kisha huendelea kutoka uliposimama.</string>
+    <string name="scenario_always_help">Muda wa hali huendelea kusonga kwa kasi iliyochaguliwa hata programu ikiwa imefungwa na baada ya simu kuwashwa upya.</string>
+</resources>

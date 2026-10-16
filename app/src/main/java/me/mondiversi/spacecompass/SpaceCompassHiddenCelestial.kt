@@ -18,4 +18,4 @@ internal fun SpaceCompassCelestialSelection.revealHiddenObject(): SpaceCompassCe
 
 /** A direction reference does not prevent an explicitly supplied illustrative surface texture. */
 internal val SpaceCompassCelestialBody.usesDeepSkySymbol: Boolean
-    get() = deepSkyReference != null && viewerTexture == null
+    get() = (deepSkyReference != null || this == SpaceCompassCelestialBody.SOUTHERN_CROSS) && viewerTexture == null

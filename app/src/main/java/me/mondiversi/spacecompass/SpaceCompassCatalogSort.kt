@@ -5,6 +5,7 @@ import java.util.Locale
 
 internal enum class SpaceCompassCatalogSortField(val label: Int) {
     NAME(R.string.catalog_sort_alphabetical), DISTANCE(R.string.catalog_distance_from_sun),
+    EARTH_DISTANCE(R.string.catalog_distance_from_earth),
     MASS(R.string.celestial_view_mass), DIAMETER(R.string.celestial_view_diameter),
     PRESSURE(R.string.celestial_pressure_surface), GRAVITY(R.string.celestial_view_gravity),
     DAY_TEMPERATURE(R.string.catalog_sort_day_temperature), NIGHT_TEMPERATURE(R.string.catalog_sort_night_temperature)
@@ -15,6 +16,7 @@ internal enum class SpaceCompassCatalogSort(val field: SpaceCompassCatalogSortFi
     CATALOG,
     NAME_ASC(SpaceCompassCatalogSortField.NAME), NAME_DESC(SpaceCompassCatalogSortField.NAME, true),
     DISTANCE_ASC(SpaceCompassCatalogSortField.DISTANCE), DISTANCE_DESC(SpaceCompassCatalogSortField.DISTANCE, true),
+    EARTH_DISTANCE_ASC(SpaceCompassCatalogSortField.EARTH_DISTANCE), EARTH_DISTANCE_DESC(SpaceCompassCatalogSortField.EARTH_DISTANCE, true),
     MASS_ASC(SpaceCompassCatalogSortField.MASS), MASS_DESC(SpaceCompassCatalogSortField.MASS, true),
     DIAMETER_ASC(SpaceCompassCatalogSortField.DIAMETER), DIAMETER_DESC(SpaceCompassCatalogSortField.DIAMETER, true),
     PRESSURE_ASC(SpaceCompassCatalogSortField.PRESSURE), PRESSURE_DESC(SpaceCompassCatalogSortField.PRESSURE, true),
@@ -44,14 +46,17 @@ internal fun spaceCompassCatalogPhysicalSortValue(body: SpaceCompassCelestialBod
 /** Missing values stay last in both directions; equal values retain catalogue order. */
 internal fun spaceCompassSortCatalog(bodies: List<SpaceCompassCelestialBody>, sort: SpaceCompassCatalogSort,
     names: Map<SpaceCompassCelestialBody, String>, solarDistancesAu: Map<SpaceCompassCelestialBody, Double?>,
-    locale: Locale): List<SpaceCompassCelestialBody> {
+    locale: Locale, earthDistancesKm: Map<SpaceCompassCelestialBody, Double?> = emptyMap()): List<SpaceCompassCelestialBody> {
     if (sort == SpaceCompassCatalogSort.CATALOG) return bodies
     val field = requireNotNull(sort.field)
     val collator = Collator.getInstance(locale)
     val original = spaceCompassAllCelestialOrder.withIndex().associate { it.value to it.index }
     val values = if (field == SpaceCompassCatalogSortField.NAME) emptyMap() else bodies.associateWith { body ->
-        if (field == SpaceCompassCatalogSortField.DISTANCE) solarDistancesAu[body]?.takeIf { it.isFinite() && it >= 0 }
-        else spaceCompassCatalogPhysicalSortValue(body, field)
+        when (field) {
+            SpaceCompassCatalogSortField.DISTANCE -> solarDistancesAu[body]?.takeIf { it.isFinite() && it >= 0 }
+            SpaceCompassCatalogSortField.EARTH_DISTANCE -> earthDistancesKm[body]?.takeIf { it.isFinite() && it >= 0 }
+            else -> spaceCompassCatalogPhysicalSortValue(body, field)
+        }
     }
     return bodies.sortedWith(Comparator { a, b ->
         val comparison = if (field == SpaceCompassCatalogSortField.NAME) {

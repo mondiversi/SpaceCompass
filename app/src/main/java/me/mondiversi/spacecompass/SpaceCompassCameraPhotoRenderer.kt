@@ -57,6 +57,10 @@ internal fun renderSpaceCompassCameraPhoto(context: Context, photo: SpaceCompass
         fun projection(position: SpaceCompassSunPosition) = pointing?.let {
             projectSpaceCompassSun(position,it,width.toDouble(),height.toDouble(),perspective).takeIf { p->p.visible }
         }
+        if (pointing != null && snapshot.observerPositionKnown && snapshot.objects.any { it.body == SpaceCompassCelestialBody.SOUTHERN_CROSS })
+            drawSpaceCompassSouthernCross(canvas, calculateSpaceCompassSouthernCross(snapshot.timeMs, snapshot.latitude,
+                snapshot.longitude, snapshot.altitude), width, height, scale, pointing, perspective,
+                showNames = snapshot.labelMode.showsObject(snapshot.activeBody == SpaceCompassCelestialBody.SOUTHERN_CROSS))
         val selections = resolveSpaceCompassPanoramaSelections(snapshot,
             observations.mapNotNull { (item, position) -> position?.let { item.body to it } }.toMap())
         observations.forEach { (item,position) -> position?.let(::projection)?.let {
@@ -114,13 +118,14 @@ internal fun renderSpaceCompassCameraPhoto(context: Context, photo: SpaceCompass
                     val time=snapshot.markerTimes[marker.timeMs] ?: formatSpaceCompassPanoramaExportTime(marker.timeMs,
                         snapshot.displayTimeZone,snapshot.formatting)
                     labels += SpaceCompassPanoramaTimeLabel(formatSpaceCompassPanoramaPathPointLabel(time,marker,
-                        snapshot.formatting,snapshot.pointEventNames,snapshot.timeMs),point,markerTint,
+                        snapshot.formatting,snapshot.pointEventNames,snapshot.timeMs,snapshot.bodyNames),point,markerTint,
                         marker.events.any { it != SpaceCompassSunPathEvent.HOUR })
                 }
             } }
         } }
         points.forEach { (marker,point,tint) ->
-            drawSpaceCompassPanoramaEventMarker(canvas,marker.event,point,scale*.7f,tint)
+            if (SpaceCompassSunPathEvent.APPROACH !in marker.events)
+                drawSpaceCompassPanoramaEventMarker(canvas,marker.event,point,scale*.7f,tint)
             if (marker.events.any { it != SpaceCompassSunPathEvent.HOUR }) {
                 val radius = 17*scale
                 occupied += RectF(point.x.toFloat()-radius, point.y.toFloat()-radius,
@@ -142,20 +147,26 @@ internal fun renderSpaceCompassCameraPhoto(context: Context, photo: SpaceCompass
         drawSpaceCompassSkyReferenceLabels(canvas, referenceDrawing, scale)
         observations.forEach { (item,position) -> position?.let(::projection)?.let { p ->
             val x=p.x.toFloat(); val y=p.y.toFloat(); val radius=35*scale
+            if (item.body != SpaceCompassCelestialBody.SOUTHERN_CROSS) {
             paint.style=Paint.Style.FILL; paint.color=0xcc07101b.toInt(); canvas.drawCircle(x,y,radius,paint)
             paint.style=Paint.Style.STROKE; paint.strokeWidth=2*scale; paint.color=spaceCompassCelestialPathTint(item.body).toArgb()
             canvas.drawCircle(x,y,radius,paint)
             val marker=renderSpaceCompassPanoramaMarker(context,item.body,snapshot.timeMs)
             try { canvas.drawBitmap(marker,null,RectF(x-radius+2*scale,y-radius+2*scale,x+radius-2*scale,y+radius-2*scale),
                 Paint(Paint.ANTI_ALIAS_FLAG or Paint.FILTER_BITMAP_FLAG)) } finally { marker.recycle() }
+            }
             if (snapshot.labelMode.showsObject(item.body == snapshot.activeBody)) {
-                text.textSize=23*scale; text.style=Paint.Style.FILL; text.color=paint.color
+                text.textSize=23*scale; text.style=Paint.Style.FILL; text.color=spaceCompassCelestialPathTint(item.body).toArgb()
                 text.setShadowLayer(3*scale,0f,scale,Color.BLACK)
                 val half=text.measureText(item.name)/2
                 canvas.drawText(item.name,x.coerceIn(half+5*scale,width-half-5*scale),(y-radius-10*scale).coerceAtLeast(30*scale),text)
                 text.clearShadowLayer()
             }
         } }
+        drawSpaceCompassCaptureApproachMarkers(canvas, points, scale * .7f)
+        drawSpaceCompassCurrentApproaches(canvas,snapshot, observations.mapNotNull { (item,position) ->
+            position?.let { item.body to it } }.toMap(),scale) { position -> projection(position)?.let {
+                SpaceCompassSunScenePoint(it.x,it.y) } }
         drawSpaceCompassPanoramaSelections(canvas,snapshot,selections,scale,35f,
             { position -> projection(position)?.let { SpaceCompassSunScenePoint(it.x,it.y) } })
         if (pointing==null && photo.warning!=null) {

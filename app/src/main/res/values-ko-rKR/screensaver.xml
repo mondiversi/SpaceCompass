@@ -1,6 +1,6 @@
 <resources>
     <string name="screensaver_title">화면 보호기</string>
-    <string name="screensaver_description">앱을 열어 둔 채 사용하지 않으면 지구와 움직이는 우주 배경을 표시합니다. 에너지를 절약하기 위해 센서, GPS, 카메라, 데이터 업데이트를 일시 중지합니다.</string>
+    <string name="screensaver_description">앱을 사용하지 않을 때 지구 애니메이션을 표시하고 추적을 일시 중지해 전력을 절약합니다.</string>
     <string name="screensaver_delay">시작 대기 시간</string>
     <string name="screensaver_dismiss">탭하여 앱으로 돌아가기</string>
     <string name="screensaver_seconds">%1$s초</string>

@@ -43,6 +43,7 @@ internal fun formatSpaceCompassCatalogPhysicalValue(body: SpaceCompassCelestialB
                     (temperature.component?.let { " ($it)" } ?: "")
             } ?: "—"
         }
-        SpaceCompassCatalogSortField.NAME, SpaceCompassCatalogSortField.DISTANCE -> "—"
+        SpaceCompassCatalogSortField.NAME, SpaceCompassCatalogSortField.DISTANCE,
+        SpaceCompassCatalogSortField.EARTH_DISTANCE -> "—"
     }
 }

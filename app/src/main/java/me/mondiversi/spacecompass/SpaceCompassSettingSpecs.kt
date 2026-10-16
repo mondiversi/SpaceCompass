@@ -2,8 +2,6 @@ package me.mondiversi.spacecompass
 
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.res.stringResource
-import androidx.compose.ui.platform.LocalConfiguration
-import android.content.res.Configuration
 
 internal data class SpaceCompassSettingSpec(val title: Int, val key: String, val default: String,
     val options: List<Pair<String, String>>, val enabled: Boolean = true, val description: String? = null,
@@ -11,7 +9,7 @@ internal data class SpaceCompassSettingSpec(val title: Int, val key: String, val
 
 @Composable
 internal fun spaceCompassAppearanceSettings(): List<SpaceCompassSettingSpec> {
-    val deviceDark = LocalConfiguration.current.uiMode and Configuration.UI_MODE_NIGHT_MASK == Configuration.UI_MODE_NIGHT_YES
+    val deviceDark = LocalSpaceCompassDeviceDarkTheme.current
     return listOf(
     SpaceCompassSettingSpec(R.string.settings_theme_title, "theme", "system", listOf(
         "system" to stringResource(R.string.settings_theme_default), "light" to stringResource(R.string.settings_theme_light),

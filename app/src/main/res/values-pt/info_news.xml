@@ -1,9 +1,9 @@
 <resources>
     <string name="info_news_title">Últimas novidades · %1$s</string>
-    <string name="info_news_star_sky" formatted="false">Onze novos objetos rastreáveis: sondas, telescópios espaciais, Tiangong, Apophis, 3I/ATLAS, M87* e Proxima b.</string>
-    <string name="info_news_texture_downloads" formatted="false">Efemérides NASA/JPL fornecem posições, distâncias e trajetórias diárias de sondas e pequenos corpos.</string>
-    <string name="info_news_weather" formatted="false">Hubble e Tiangong usam elementos orbitais recentes e SGP4, com uma fonte alternativa.</string>
-    <string name="info_news_viewer_zoom" formatted="false">As direções de referência e os dados em falta são explicados sem medições inventadas.</string>
-    <string name="info_news_settings" formatted="false">Novas imagens WebP externas com transferência individual, verificação de integridade e cache offline.</string>
-    <string name="info_news_catalog" formatted="false">Créditos e traduções atualizados; ficheiros gráficos individuais sem ZIP de texturas duplicados.</string>
+    <string name="info_news_star_sky" formatted="false">53 objetos: Ceres, Encélado, Vega, Deneb, Altair e o Cruzeiro do Sul chegam ao catálogo.</string>
+    <string name="info_news_texture_downloads" formatted="false">Velocidade do tempo até 3600×, com reinício, avanço só com a app ativa ou contínuo.</string>
+    <string name="info_news_weather" formatted="false">Aproximações a menos de 1,5° no mesmo instante aparecem nas trajetórias, capturas e exportações.</string>
+    <string name="info_news_viewer_zoom" formatted="false">Ordene pela distância à Terra e abra o Observatório de cada objeto diretamente no catálogo.</string>
+    <string name="info_news_settings" formatted="false">Definições mais coerentes, cartões na horizontal, símbolos de trajetória e proteção de ecrã aos 15 minutos.</string>
+    <string name="info_news_catalog" formatted="false">Pacote gráfico 1.4: 29 imagens WebP externas, transferências individuais, integridade verificada e cache offline.</string>
 </resources>

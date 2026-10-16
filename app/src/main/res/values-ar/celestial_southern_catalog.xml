@@ -1,0 +1,12 @@
+<resources>
+    <string name="celestial_ceres">سيريس</string>
+    <string name="celestial_enceladus">إنسيلادوس</string>
+    <string name="celestial_vega">النسر الواقع</string>
+    <string name="celestial_deneb">ذنب الدجاجة</string>
+    <string name="celestial_altair">النسر الطائر</string>
+    <string name="celestial_southern_cross">الصليب الجنوبي</string>
+    <string name="catalog_type_constellation">كوكبة</string>
+    <string name="celestial_bright_star_note">اتجاه فهرسي مع الحركة الذاتية واختلاف المنظر. يدور النسر الواقع والنسر الطائر بسرعة؛ يعتمد الشكل وحرارة السطح على خط العرض. الرمز توضيحي.</string>
+    <string name="celestial_deneb_note">ذنب الدجاجة عملاق فائق أبيض مزرق. المسافة المعتمدة نحو 802 فرسخ فلكي؛ خصائصه الفيزيائية تقديرات مرجعية غير يقينية.</string>
+    <string name="celestial_southern_cross_note">أربعة نجوم رئيسية في كوكبة الصليب الجنوبي على مسافات مختلفة. مدد محور Gacrux–Acrux بعد Acrux لتقدير القطب السماوي الجنوبي. يتتبع المسار مركز الشكل وليس القطب.</string>
+</resources>

@@ -1,5 +1,17 @@
 # Changelog
 
+## 1.4.3 — 2026-10-16
+
+- Expand the catalogue to 53 regular entries with Ceres, Enceladus, Vega, Deneb, Altair and the Southern Cross. Retain the existing Sun/Moon defaults and saved selections.
+- Add Earth-centred distance sorting and a compact per-object Observatory shortcut. Inspect unchecked objects without changing the current target or checked selection; returning preserves the catalogue scroll and search.
+- Add optional scenario time acceleration from 1x to 3600x, automatic day rollover and independent restart/active-only/always resumption choices under General > Events. Restart from the configured instant is the new-install default; existing choices are retained.
+- Detect close approaches within 1.5 degrees only when both objects are close at the same absolute instant. Show the shared key event in live paths, daily paths, captures and exports. A crossing at different times is not an approach, and an approach is not an eclipse prediction.
+- Refine daily-path symbols and spacing: ordinary hourly points indicate rising/falling elevation, key events retain their own symbols and Current retains its target marker and highlighted background.
+- Add the 15-minute screensaver delay, shorten its explanation and use the compact delay dropdown. Balance the main object-action spacing and remove excess catalogue info-button margin.
+- Make General's natural-height cards pack independently into two landscape columns; correct the system-theme preview and standardize the scenario-speed caption typography.
+- Publish graphics pack 1.4 with 29 individual quality-90/method-6 WebP files, including Ceres and Enceladus. The APK pins the exact release, byte lengths, hashes and dimensions. Keep individual downloads, offline cache reuse, placeholders and previous release URLs; do not distribute a duplicate texture ZIP.
+- Update in-app news in all twenty languages, documentation, information archive and the signed update index.
+
 ## 1.4.2 — 2026-10-16
 
 - Add eleven trackable catalogue objects: New Horizons, James Webb Space Telescope, Parker Solar Probe, 99942 Apophis, 3I/ATLAS, Europa Clipper, JUICE, Hubble Space Telescope, Tiangong, M87* and Proxima Centauri b.

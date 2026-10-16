@@ -11,9 +11,9 @@ class SpaceCompassThermalReferenceAuditTest {
     private val day = SpaceCompassCatalogSortField.DAY_TEMPERATURE
     private val night = SpaceCompassCatalogSortField.NIGHT_TEMPERATURE
 
-    @Test fun allTwentySixPhysicalObjectsWithSupportedTemperaturesAreAvailableWithoutNetwork() {
+    @Test fun allCuratedPhysicalObjectsWithSupportedTemperaturesAreAvailableWithoutNetwork() {
         val known = spaceCompassCelestialCatalogOrder.filter { spaceCompassCelestialTemperatures(it).isNotEmpty() }
-        assertEquals(26, known.size)
+        assertEquals(29, known.size)
         for (body in known) for (field in listOf(day, night)) {
             assertNotNull("$body / $field", spaceCompassCatalogPhysicalSortValue(body, field))
             assertNotEquals("—", formatSpaceCompassCatalogPhysicalValue(body, field, numeric, SpaceCompassUnits()) { "reference" })

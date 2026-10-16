@@ -1,0 +1,12 @@
+<resources>
+    <string name="celestial_ceres">सीरीस</string>
+    <string name="celestial_enceladus">एन्सेलाडस</string>
+    <string name="celestial_vega">वेगा</string>
+    <string name="celestial_deneb">डेनेब</string>
+    <string name="celestial_altair">अल्टेयर</string>
+    <string name="celestial_southern_cross">दक्षिणी क्रॉस</string>
+    <string name="catalog_type_constellation">तारामंडल</string>
+    <string name="celestial_bright_star_note">निज गति और लंबन सहित सूचीबद्ध दिशा। वेगा और अल्टेयर तेज़ी से घूमते हैं: आकार और सतह का तापमान अक्षांश पर निर्भर हैं। चिह्न केवल चित्रण है।</string>
+    <string name="celestial_deneb_note">डेनेब एक नीला-सफेद महादानव तारा है। स्वीकृत दूरी लगभग 802 पारसेक है; भौतिक गुण अनिश्चित संदर्भ अनुमान हैं।</string>
+    <string name="celestial_southern_cross_note">Crux के चार प्रमुख तारे अलग-अलग दूरियों पर हैं। दक्षिणी खगोलीय ध्रुव का अनुमान लगाने के लिए Gacrux–Acrux अक्ष को Acrux से आगे बढ़ाएँ। पथ आकृति के केंद्र का है, ध्रुव का नहीं।</string>
+</resources>

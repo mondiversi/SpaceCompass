@@ -1,6 +1,6 @@
 <resources>
     <string name="screensaver_title">شاشة التوقف</string>
-    <string name="screensaver_description">عندما يظل التطبيق مفتوحًا دون استخدام، يعرض الأرض وخلفية فضائية متحركة. يوقف مؤقتًا المستشعرات ونظام GPS والكاميرا وتحديثات البيانات لتوفير الطاقة.</string>
+    <string name="screensaver_description">عند خمول التطبيق، يعرض الأرض المتحركة ويوقف التتبع مؤقتًا لتوفير الطاقة.</string>
     <string name="screensaver_delay">البدء بعد</string>
     <string name="screensaver_dismiss">المس للعودة إلى التطبيق</string>
     <string name="screensaver_seconds">%1$s ث</string>

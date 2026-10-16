@@ -1,0 +1,12 @@
+<resources>
+    <string name="celestial_ceres">ケレス</string>
+    <string name="celestial_enceladus">エンケラドゥス</string>
+    <string name="celestial_vega">ベガ</string>
+    <string name="celestial_deneb">デネブ</string>
+    <string name="celestial_altair">アルタイル</string>
+    <string name="celestial_southern_cross">南十字星</string>
+    <string name="catalog_type_constellation">星座</string>
+    <string name="celestial_bright_star_note">固有運動と年周視差を含むカタログ方向です。ベガとアルタイルは高速自転し、形状と表面温度は緯度で変わります。記号は模式図です。</string>
+    <string name="celestial_deneb_note">デネブは青白い超巨星です。採用距離は約802パーセクで、物理量は不確実性のある参考推定値です。</string>
+    <string name="celestial_southern_cross_note">みなみじゅうじ座の主要な4星は、それぞれ距離が異なります。Gacrux–Acruxの軸をAcruxの先へ延長すると天の南極を推定できます。軌跡は極ではなく星の配置の中心を追います。</string>
+</resources>

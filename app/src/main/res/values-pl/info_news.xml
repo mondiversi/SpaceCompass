@@ -1,9 +1,9 @@
 <resources>
     <string name="info_news_title">Ostatnie nowości · %1$s</string>
-    <string name="info_news_star_sky" formatted="false">Jedenaście nowych śledzonych obiektów: sondy, teleskopy kosmiczne, Tiangong, Apophis, 3I/ATLAS, M87* i Proxima b.</string>
-    <string name="info_news_texture_downloads" formatted="false">Efemerydy NASA/JPL wyznaczają pozycje, odległości i dzienne tory sond oraz małych ciał.</string>
-    <string name="info_news_weather" formatted="false">Hubble i Tiangong używają aktualnych elementów orbitalnych i SGP4 z alternatywnym źródłem danych.</string>
-    <string name="info_news_viewer_zoom" formatted="false">Kierunki odniesienia i brakujące dane są objaśnione bez wymyślania pomiarów.</string>
-    <string name="info_news_settings" formatted="false">Nowe zewnętrzne obrazy WebP z pobieraniem pojedynczych plików, kontrolą integralności i pamięcią offline.</string>
-    <string name="info_news_catalog" formatted="false">Zaktualizowane źródła i tłumaczenia; pojedyncze pliki graficzne bez powielonych ZIP-ów tekstur.</string>
+    <string name="info_news_star_sky" formatted="false">53 obiekty: do katalogu dołączają Ceres, Enceladus, Wega, Deneb, Altair i Krzyż Południa.</string>
+    <string name="info_news_texture_downloads" formatted="false">Prędkość czasu do 3600×: od początku, postęp tylko przy aktywnej aplikacji lub ciągły.</string>
+    <string name="info_news_weather" formatted="false">Zbliżenia do 1,5° w tej samej chwili są widoczne na trasach, zdjęciach i w eksporcie.</string>
+    <string name="info_news_viewer_zoom" formatted="false">Sortuj według odległości od środka Ziemi i otwieraj Obserwatorium obiektu prosto z katalogu.</string>
+    <string name="info_news_settings" formatted="false">Spójniejsze ustawienia, karty w poziomie, symbole trasy i wygaszacz po 15 minutach.</string>
+    <string name="info_news_catalog" formatted="false">Pakiet graficzny 1.4: 29 zewnętrznych obrazów WebP, osobne pobieranie, kontrola integralności i pamięć offline.</string>
 </resources>

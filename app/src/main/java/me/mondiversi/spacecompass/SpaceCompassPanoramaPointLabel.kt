@@ -23,14 +23,23 @@ internal val spaceCompassPanoramaDefaultEventNames = mapOf(
     SpaceCompassSunPathEvent.SUNRISE to "Rise",
     SpaceCompassSunPathEvent.CULMINATION to "Culmination",
     SpaceCompassSunPathEvent.SUNSET to "Set",
-    SpaceCompassSunPathEvent.MINIMUM to "Minimum")
+    SpaceCompassSunPathEvent.MINIMUM to "Minimum", SpaceCompassSunPathEvent.APPROACH to "Close approach")
+
+internal fun spaceCompassApproachLabel(point: SpaceCompassSunPathPoint, label: String,
+    formatting: SpaceCompassPanoramaFormatting, bodyNames: Map<SpaceCompassCelestialBody,String>): String =
+    point.approach?.let { approach ->
+        "$label · ${bodyNames[approach.other] ?: approach.other.name.replace('_',' ')} · " +
+            formatSpaceCompassPanoramaElevation(approach.separationDegrees,formatting) + "°"
+    } ?: label
 
 /** Hourly dots have no point number; named and coincident events retain their own vocabulary. */
 internal fun formatSpaceCompassPanoramaPathPointLabel(moment: String, point: SpaceCompassSunPathPoint,
     formatting: SpaceCompassPanoramaFormatting, eventNames: Map<SpaceCompassSunPathEvent, String>,
-    captureTimeMs: Long): String {
+    captureTimeMs: Long, bodyNames: Map<SpaceCompassCelestialBody,String> = emptyMap()): String {
     val name = (listOf(point.event) + point.coincidentEvents.sortedBy { it.ordinal }).distinct()
-        .filter { it != SpaceCompassSunPathEvent.HOUR }.mapNotNull(eventNames::get).joinToString(" · ")
+        .filter { it != SpaceCompassSunPathEvent.HOUR }.mapNotNull { event -> eventNames[event]?.let {
+            if (event == SpaceCompassSunPathEvent.APPROACH) spaceCompassApproachLabel(point,it,formatting,bodyNames) else it
+        } }.joinToString(" · ")
     return formatSpaceCompassPanoramaPointLabel(moment, point.position, formatting, name,
         formatSpaceCompassPanoramaPointCountdown(point.timeMs, captureTimeMs, formatting))
 }

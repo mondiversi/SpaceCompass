@@ -42,7 +42,7 @@ internal fun SpaceCompassObserverSummaryIsland(plan: SpaceCompassObserverPlan?) 
         lifecycle.repeatOnLifecycle(Lifecycle.State.RESUMED) {
             value = System.currentTimeMillis()
             if (!screensaver && plan != null) while (true) {
-                delay(60_000L - System.currentTimeMillis() % 60_000L)
+                delay(if (plan.scenarioClock != null) 1_000L else 60_000L - System.currentTimeMillis() % 60_000L)
                 value = System.currentTimeMillis()
             }
         }
@@ -57,7 +57,14 @@ internal fun SpaceCompassObserverSummaryIsland(plan: SpaceCompassObserverPlan?) 
             val names = remember(locale) { TimeZoneNames.getInstance(locale) }
             Column(Modifier.fillMaxWidth().testTag("observer-summary"),
                 verticalArrangement = Arrangement.spacedBy(8.dp)) {
-                plan.activeSections.forEach { section ->
+                val sections = plan.activeSections.toMutableList().apply {
+                    // Acceleration of today's real clock still needs a visible reached date/time.
+                    if (plan.scenarioClock?.settings?.enabled == true) {
+                        if (SpaceCompassObserverSection.DATE !in this) add(SpaceCompassObserverSection.DATE)
+                        if (SpaceCompassObserverSection.TIME !in this) add(SpaceCompassObserverSection.TIME)
+                    }
+                }
+                sections.forEach { section ->
                     val label = when (section) {
                         SpaceCompassObserverSection.POSITION -> R.string.observer_place
                         SpaceCompassObserverSection.ALTITUDE -> R.string.observer_altitude
@@ -77,8 +84,7 @@ internal fun SpaceCompassObserverSummaryIsland(plan: SpaceCompassObserverPlan?) 
                         SpaceCompassObserverSection.DATE -> formatSpaceCompassDateOnly(instant, dateFormat,
                             locale, timezone, numeric, deviceLocale, allowHistorical = true)
                         SpaceCompassObserverSection.TIME -> formatSpaceCompassTimeOnly(instant, timeFormat,
-                            locale, timezone, numeric, deviceLocale, includeSeconds = false, allowHistorical = true) +
-                            if (plan.advanceTime) "\n" + stringResource(R.string.observer_advance_time) else ""
+                            locale, timezone, numeric, deviceLocale, includeSeconds = false, allowHistorical = true)
                     }
                     Row(Modifier.fillMaxWidth().testTag("observer-summary-${section.name.lowercase(java.util.Locale.ROOT)}"),
                         verticalAlignment = Alignment.Top, horizontalArrangement = Arrangement.spacedBy(12.dp)) {
@@ -97,6 +103,11 @@ internal fun SpaceCompassObserverSummaryIsland(plan: SpaceCompassObserverPlan?) 
                             }
                         }
                     }
+                }
+                plan.scenarioClock?.takeIf { it.settings.enabled }?.let { clock ->
+                    Text(stringResource(R.string.scenario_speed) + ": " + stringResource(R.string.scenario_speed_value,
+                        formatSpaceCompassNumber(clock.settings.multiplier.toDouble(), 0, numeric, grouping = false,
+                            systemLocale = deviceLocale)), fontSize = 13.sp)
                 }
             }
         }

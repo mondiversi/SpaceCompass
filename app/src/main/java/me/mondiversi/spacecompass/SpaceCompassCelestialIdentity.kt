@@ -4,6 +4,12 @@ package me.mondiversi.spacecompass
  * Sources: USGS/IAU nomenclature, NASA/JPL and the existing SIMBAD references.
  * A constellation designation is not a resolved component or a new pointing target. */
 internal val SpaceCompassCelestialBody.scientificDesignation: String? get() = when (this) {
+    SpaceCompassCelestialBody.CERES -> "(1) Ceres"
+    SpaceCompassCelestialBody.ENCELADUS -> "Saturn II · 602"
+    SpaceCompassCelestialBody.VEGA -> "α Lyrae · HD 172167"
+    SpaceCompassCelestialBody.DENEB -> "α Cygni · HD 197345"
+    SpaceCompassCelestialBody.ALTAIR -> "α Aquilae · HD 187642"
+    SpaceCompassCelestialBody.SOUTHERN_CROSS -> "Crux · Cru"
     SpaceCompassCelestialBody.NEW_HORIZONS -> "2006-001A · JPL −98"
     SpaceCompassCelestialBody.JWST -> "2021-130A · JPL −170"
     SpaceCompassCelestialBody.PARKER_SOLAR_PROBE -> "2018-065A · JPL −96"
@@ -61,5 +67,6 @@ internal val SpaceCompassCelestialBody.scientificTypeResource: Int? get() = when
         SpaceCompassCatalogType.SPACE_PROBE -> R.string.celestial_identity_probe
         SpaceCompassCatalogType.NEBULA -> R.string.celestial_identity_nebula
         SpaceCompassCatalogType.STAR_CLUSTER -> R.string.celestial_identity_cluster
+        SpaceCompassCatalogType.CONSTELLATION -> R.string.catalog_type_constellation
     }
 }

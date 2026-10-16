@@ -4,4 +4,5 @@
     <string name="catalog_sort_ascending">Oplopend</string>
     <string name="catalog_sort_descending">Aflopend</string>
     <string name="catalog_sort_original">Standaard</string>
+    <string name="catalog_distance_from_earth">Afstand tot de aarde</string>
 </resources>
