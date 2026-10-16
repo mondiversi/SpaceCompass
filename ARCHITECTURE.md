@@ -413,3 +413,8 @@ beneath them and cannot cause placement feedback. The bell aligns to the callout
 ## Release 1.4.1
 
 The foreground weather owner distinguishes loading, usable cached data and failure. Bounded requests retain TLS checks and expose a manual retry without losing status priority. Point callouts and their reminder share a translucency constant; count badges and scenario accents share their component palette. Object removal keeps its confirmation and a narrower horizontal hit region without changing navigation targets. Texture policy pins twenty external files in pack 1.2.1 and checks legacy caches before downloading. Neither runtime ZIP extraction nor a remote executable manifest is introduced.
+
+
+## Catalogue 1.4.2
+
+The expanded target registry separates stable remote IDs from names and catalogue order. A checked generic SGP4 adapter adds Hubble/Tianhe without changing ISS/Starlink identities. The remote owner restores and merges new satellite caches by body; independent Horizons pointing/motion requests retain their refresh and cancellation policy. Apparent states support velocity-aware Hermite interpolation with a position-only legacy fallback. See [catalogue sources and limits](docs/CATALOG_1_4_2.md). Pack 1.3 pins 27 individual external WebP files, importing matching prior caches and showing symbolic placeholders without blocking astronomy. No new celestial raster enters the APK and no new texture ZIP is distributed.

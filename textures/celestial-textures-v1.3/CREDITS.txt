@@ -1,0 +1,199 @@
+Space Compass celestial graphics pack 1.3
+27 individual WebP files, quality 90/100, method 6.
+Existing 20 images are byte-identical to pack 1.2.1. Seven newly verified archival images.
+Photographs and radio reconstructions stay flat; they are not globe textures or live views.
+JUICE, Tiangong, 3I/ATLAS and Proxima b use symbolic placeholders in app 1.4.2.
+No complete texture ZIP is distributed. Download only the required individual files.
+
+europa_2048.webp
+Credit: NASA/JPL/USGS
+License: USGS public-domain product; retain source attribution.
+Source page: https://astrogeology.usgs.gov/search/map/europa_voyager_galileo_ssi_global_mosaic_500m
+Processing: Derivative of the original 512 x 256 grayscale browse mosaic; no invented detail or colour.
+
+io_2048.webp
+Credit: NASA/JPL/USGS
+License: USGS public-domain product; retain source attribution.
+Source page: https://astrogeology.usgs.gov/search/map/io_voyager_galileo_ssi_global_mosaic_1km
+Processing: Derivative of the original 512 x 256 grayscale browse mosaic; no invented detail or colour.
+
+jupiter.webp
+Credit: Solar System Scope textures by INOVE
+License: CC BY 4.0
+Source page: https://www.solarsystemscope.com/textures/
+License url: https://creativecommons.org/licenses/by/4.0/
+
+mars.webp
+Credit: Solar System Scope textures by INOVE
+License: CC BY 4.0
+Source page: https://www.solarsystemscope.com/textures/
+License url: https://creativecommons.org/licenses/by/4.0/
+
+mercury.webp
+Credit: Solar System Scope textures by INOVE
+License: CC BY 4.0
+Source page: https://www.solarsystemscope.com/textures/
+License url: https://creativecommons.org/licenses/by/4.0/
+
+moon.webp
+Credit: NASA/GSFC/Arizona State University
+License: NASA imagery; retain attribution; no endorsement.
+Source page: https://svs.gsfc.nasa.gov/4720/
+
+neptune.webp
+Credit: Solar System Scope textures by INOVE
+License: CC BY 4.0
+Source page: https://www.solarsystemscope.com/textures/
+License url: https://creativecommons.org/licenses/by/4.0/
+
+pluto.webp
+Credit: NASA/JHUAPL/SwRI
+License: NASA imagery; retain attribution; no endorsement.
+Source page: https://science.nasa.gov/resource/pluto-global-color-map/
+
+saturn.webp
+Credit: Solar System Scope textures by INOVE
+License: CC BY 4.0
+Source page: https://www.solarsystemscope.com/textures/
+License url: https://creativecommons.org/licenses/by/4.0/
+
+sun.webp
+Credit: Solar System Scope textures by INOVE
+License: CC BY 4.0
+Source page: https://www.solarsystemscope.com/textures/
+License url: https://creativecommons.org/licenses/by/4.0/
+
+uranus.webp
+Credit: Solar System Scope textures by INOVE
+License: CC BY 4.0
+Source page: https://www.solarsystemscope.com/textures/
+License url: https://creativecommons.org/licenses/by/4.0/
+
+venus_atmosphere.webp
+Credit: Solar System Scope textures by INOVE
+License: CC BY 4.0
+Source page: https://www.solarsystemscope.com/textures/
+License url: https://creativecommons.org/licenses/by/4.0/
+
+titan.webp
+Credit: NASA/JPL-Caltech/Space Science Institute
+License: NASA imagery: retain attribution; no endorsement.
+Source page: https://science.nasa.gov/resource/titan-mosaic-the-surface-under-the-haze/
+Source: https://assets.science.nasa.gov/content/dam/science/psd/solar/2023/09/p/i/a/PIA22770-1.jpg
+Processing: Lanczos resample, no invented detail
+
+sirius.webp
+Credit: NASA, ESA, H. Bond (STScI), and M. Barstow (University of Leicester)
+License: NASA/ESA Hubble imagery: retain attribution; no endorsement.
+Source page: https://science.nasa.gov/asset/hubble/the-dog-star-sirius-and-its-tiny-companion/
+Source: https://assets.science.nasa.gov/content/dam/science/missions/hubble/releases/2005/12/STScI-01EVT7ZJ6D77V1MAV8F65NSFE7.tif/jcr:content/renditions/733x800.jpg
+Processing: Aspect-preserving fit with black framing; no spherical projection
+
+betelgeuse.webp
+Credit: ALMA (ESO/NAOJ/NRAO)/E. O’Gorman/P. Kervella
+License: CC BY 4.0; https://www.eso.org/public/copyright/
+Source page: https://www.eso.org/public/images/potw1726a/
+Source: https://cdn.eso.org/images/large/potw1726a.jpg
+Processing: Aspect-preserving fit with black framing; no spherical projection
+
+orion_nebula.webp
+Credit: NASA, ESA, M. Robberto (STScI/ESA), and the Hubble Space Telescope Orion Treasury Project Team
+License: NASA/ESA Hubble imagery: retain attribution; no endorsement.
+Source page: https://science.nasa.gov/asset/hubble/hubbles-sharpest-view-of-the-orion-nebula/
+Source: https://assets.science.nasa.gov/content/dam/science/missions/hubble/releases/2006/01/STScI-01EVT7X0BR54ZWDP1AG2DA54RA.tif/jcr:content/renditions/6000x6000.jpg
+Processing: Aspect-preserving fit with black framing; no spherical projection
+
+pleiades.webp
+Credit: NASA/JPL-Caltech/UCLA
+License: NASA imagery: retain attribution; no endorsement.
+Source page: https://science.nasa.gov/photojournal/seven-sisters-get-wise/
+Source: https://assets.science.nasa.gov/content/dam/science/psd/photojournal/pia/pia13/pia13121/PIA13121.jpg
+Processing: Aspect-preserving fit with black framing; no spherical projection
+
+andromeda_galaxy.webp
+Credit: NASA, ESA, Benjamin F. Williams (UWashington), Zhuo Chen (UWashington), L. Clifton Johnson (Northwestern); Image Processing: Joseph DePasquale (STScI)
+License: NASA/ESA Hubble imagery: retain attribution; no endorsement.
+Source page: https://science.nasa.gov/mission/hubble/science/explore-the-night-sky/hubble-messier-catalog/messier-31/
+Source: https://assets.science.nasa.gov/content/dam/science/missions/hubble/galaxies/andromeda/Hubble_M31Mosaic_2025_10552x2468_STScI-01JGY92V0Z2HJTVH605N4WH9XQ.jpg
+Processing: Aspect-preserving fit with black framing; no spherical projection
+
+tesla_roadster.webp
+Credit: SpaceX
+License: CC0 1.0
+Source page: https://commons.wikimedia.org/wiki/File:Elon_Musk%27s_Tesla_Roadster_(40143096241).jpg
+Source: https://upload.wikimedia.org/wikipedia/commons/8/87/Elon_Musk%27s_Tesla_Roadster_%2840143096241%29.jpg
+License url: https://creativecommons.org/publicdomain/zero/1.0/
+Processing: Aspect-preserving Lanczos fit with black framing; no spherical projection or invented current attitude.
+
+lv426.webp
+Credit: Original Space Compass illustration
+License: Original project artwork; see repository LICENSE
+Note: Fictional Alien moon; illustrative surface, not scientific imagery.
+
+new_horizons.webp
+Credit: NASA/KSC
+License: NASA media usage guidelines; third-party credits retained; no endorsement.
+Source page: https://images.nasa.gov/details/KSC-05pd2494
+Source: http://images-assets.nasa.gov/image/KSC-05pd2494/KSC-05pd2494~large.jpg
+License url: https://www.nasa.gov/nasa-brand-center/images-and-media/
+Title: KSC-05pd2494
+Description: KENNEDY SPACE CENTER, FLA. - In NASA Kennedy Space Center’s Payload Hazardous Servicing Facility, the New Horizons spacecraft sits on a work stand prior to being moved to a spin table.  The spacecraft will undergo a spin test as part of prelaunch processing.  New Horizons is expected to be launched in January 2006 on a journey to Pluto and its moon, Charon.  It is expected to reach Pluto in July 2015.
+Processing: Aspect-preserving fit with dark padding; WebP quality 90, method 6. Flat archival image, not a surface texture or live attitude.
+
+jwst.webp
+Credit: NASA/GSFC
+License: NASA media usage guidelines; third-party credits retained; no endorsement.
+Source page: https://images.nasa.gov/details/GSFC_20171208_Archive_e000119
+Source: http://images-assets.nasa.gov/image/GSFC_20171208_Archive_e000119/GSFC_20171208_Archive_e000119~large.jpg
+License url: https://www.nasa.gov/nasa-brand-center/images-and-media/
+Title: Lights Out on the James Webb Space Telescope
+Description: What happens when the lights are turned out in the enormous clean room that currently houses NASA's James Webb Space Telescope?   The technicians who are inspecting the telescope and its expansive golden mirrors look like ghostly wraiths in this image as they conduct a &quot;lights out inspection&quot; in the Spacecraft Systems Development and Integration Facility (SSDIF) at NASA's Goddard Space Flight Center in Greenbelt, Maryland.  The clean room lights were turned off to inspect the telescope after it experienced vibration and acoustic testing. The contamination control engineer used a bright flashlight and special ultraviolet flashlights to inspect for contamination because it's easier to find in the dark.  NASA photographer Chris Gunn said &quot;The people have a ghostly appearance because it's a long exposure.&quot; He left the camera's shutter open for a longer than normal time so the movement of the technicians appear as a blur. He also used a special light &quot;painting&quot; technique to light up the primary mirror.  The James Webb Space Telescope is the scientific successor to NASA's Hubble Space Telescope. It will be the most powerful space telescope ever built. Webb is an international project led by NASA with its partners, ESA (European Space Agency) and the Canadian Space Agency.  For more information about the Webb telescope visit: <a href="http://www.jwst.nasa.gov" rel="nofollow">www.jwst.nasa.gov</a> or <a href="http://www.nasa.gov/webb" rel="nofollow">www.nasa.gov/webb</a>  Image Credit: NASA/Chris Gunn
+Processing: Aspect-preserving fit with dark padding; WebP quality 90, method 6. Flat archival image, not a surface texture or live attitude.
+
+parker_solar_probe.webp
+Credit: NASA/Kim Shiflett
+License: NASA media usage guidelines; third-party credits retained; no endorsement.
+Source page: https://images.nasa.gov/details/KSC-20180603-PH_KLS01_0049
+Source: http://images-assets.nasa.gov/image/KSC-20180603-PH_KLS01_0049/KSC-20180603-PH_KLS01_0049~large.jpg
+License url: https://www.nasa.gov/nasa-brand-center/images-and-media/
+Title: Parker Solar Probe Solar Array Deployment
+Description: NASA's Parker Solar Probe solar arrays are deployed for testing at the Astrotech processing facility in Titusville, Florida, near NASA's Kennedy Space Center on Sunday, June 3, 2018. The Parker Solar Probe will launch on a United Launch Alliance Delta IV Heavy rocket from Space Launch Complex 37 at Cape Canaveral Air Force Station in Florida no earlier than Aug. 4, 2018. The mission will perform the closest-ever observations of a star when it travels through the Sun's atmosphere, called the corona. The probe will rely on measurements and imaging to revolutionize our understanding of the corona and the Sun-Earth connection.
+Processing: Aspect-preserving fit with dark padding; WebP quality 90, method 6. Flat archival image, not a surface texture or live attitude.
+
+apophis.webp
+Credit: NASA/JPL-Caltech and NSF/AUI/GBO
+License: NASA media usage guidelines; third-party credits retained; no endorsement.
+Source page: https://images.nasa.gov/details/PIA24168
+Source: http://images-assets.nasa.gov/image/PIA24168/PIA24168~orig.jpg
+License url: https://www.nasa.gov/nasa-brand-center/images-and-media/
+Title: Radar Observations of Asteroid 99942 Apophis
+Description: These images represent radar observations of asteroid 99942 Apophis on March 8, 9, and 10, 2021, as it made its last close approach before its 2029 Earth encounter that will see the object pass our planet by less than 20,000 miles (32,000 kilometers). The 70-meter radio antenna at the Deep Space Network's Goldstone Deep Space Communications Complex near Barstow, California, and the 100-meter Green Bank Telescope in West Virginia used radar to precisely track Apophis' motion. At the time of these observations, Apophis was about 10.6 million miles (17 million kilometers) from Earth, and each pixel has a resolution of 127 feet (38.75 meters).  These observations helped scientists of the Center for Near Earth Object Studies (CNEOS), managed by NASA's Jet Propulsion Laboratory, precisely determine the 1,100-feet-wide (340-meter-wide) asteroid's orbit around the Sun, ruling out any Earth impact threat for the next hundred years or more. As a result of these observations, Apophis was removed from the Sentry Impact Risk Table. The radar team will continue to analyze these observations to determine more information about Apophis' size, shape, and rate of spin.  Relying on optical telescopes and ground-based radar to help characterize every near-Earth object's orbit to improve long-term hazard assessments, CNEOS computes high-precision orbits in support of NASA's Planetary Defense Coordination Office.  https://photojournal.jpl.nasa.gov/catalog/PIA24168
+Processing: Aspect-preserving fit with dark padding; WebP quality 90, method 6. Flat archival image, not a surface texture or live attitude.
+
+europa_clipper.webp
+Credit: NASA/Kim Shiflett
+License: NASA media usage guidelines; third-party credits retained; no endorsement.
+Source page: https://images.nasa.gov/details/KSC-20240528-PH-KLS01_0036
+Source: http://images-assets.nasa.gov/image/KSC-20240528-PH-KLS01_0036/KSC-20240528-PH-KLS01_0036~large.jpg
+License url: https://www.nasa.gov/nasa-brand-center/images-and-media/
+Title: Europa Clipper Spacecraft Unboxing
+Description: As part of prelaunch processing, crews inside the Payload Hazardous Servicing Facility at NASA’s Kennedy Space Center in Florida uncrate the agency’s largest planetary mission spacecraft, Europa Clipper, on Tuesday, May 28, 2024. Slated to launch aboard a SpaceX Falcon Heavy rocket later this year from Launch Complex 39A at Kennedy, Europa Clipper will help determine if conditions exist below the surface Jupiter’s fourth largest moon, Europa, that could support life.
+Processing: Aspect-preserving fit with dark padding; WebP quality 90, method 6. Flat archival image, not a surface texture or live attitude.
+
+hubble.webp
+Credit: NASA/JSC
+License: NASA media usage guidelines; third-party credits retained; no endorsement.
+Source page: https://images.nasa.gov/details/s31-151-008
+Source: http://images-assets.nasa.gov/image/s31-151-008/s31-151-008~large.jpg
+License url: https://www.nasa.gov/nasa-brand-center/images-and-media/
+Title: Hubble Space Telescope Deploy, Eastern Cuba, Haiti
+Description: A close up deploy view of the Hubble Space Telescope on the end of the space shuttle remote manipulator system (RMS) with Eastern Cuba, (20.0N, 74.0W) seen on the left side of the telescope and northern Haiti seen on the right side of the telescope. The light colored blue feature in the water north of Haiti is the shallow waters of the Caicos Bank.
+Processing: Aspect-preserving fit with dark padding; WebP quality 90, method 6. Flat archival image, not a surface texture or live attitude.
+
+m87.webp
+Credit: EHT Collaboration
+License: CC BY 4.0
+Source page: https://www.eso.org/public/images/eso1907a/
+Source: https://www.eso.org/public/archives/images/large/eso1907a.jpg
+License url: https://creativecommons.org/licenses/by/4.0/
+Processing: Aspect-preserving fit and padding; WebP quality 90/method 6. Reconstructed radio image from 2017 observations, not optical or live imagery.

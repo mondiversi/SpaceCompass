@@ -1,0 +1,18 @@
+<resources>
+    <string name="celestial_new_horizons">New Horizons</string>
+    <string name="celestial_jwst">James Webb Space Telescope (JWST)</string>
+    <string name="celestial_parker_solar_probe">Parker Solar Probe</string>
+    <string name="celestial_apophis">99942 Apophis</string>
+    <string name="celestial_atlas_3i">3I/ATLAS</string>
+    <string name="celestial_europa_clipper">Europa Clipper</string>
+    <string name="celestial_juice">JUICE</string>
+    <string name="celestial_hubble">Hubble Space Telescope</string>
+    <string name="celestial_tiangong">Tiangong</string>
+    <string name="celestial_m87">M87*</string>
+    <string name="celestial_proxima_b">Proxima Centauri b</string>
+    <string name="catalog_type_asteroid">Asteroidi</string>
+    <string name="celestial_horizons_tracking_note">Utabiri wa NASA/JPL unahusu kipindi maalumu; si telemetria ya moja kwa moja.</string>
+    <string name="celestial_proxima_b_note">Proxima b hutumia mwelekeo wa nyota yake mwenyeji isiyotenganishwa. Umbali ni wa mfumo wa nyota; uso, anga na nafasi ya obiti ya pande tatu havijapimwa.</string>
+    <string name="celestial_m87_note">M87* hutumia mwelekeo wa kiini cha M87. Umbali na masi ni makadirio ya marejeo; picha imeundwa kutokana na mawimbi ya redio.</string>
+    <string name="celestial_satellite_tracking_note">Vitu vinavyozunguka Dunia vinahitaji elementi mpya za obiti. Nafasi nje ya muda wa uhalali hazipatikani.</string>
+</resources>

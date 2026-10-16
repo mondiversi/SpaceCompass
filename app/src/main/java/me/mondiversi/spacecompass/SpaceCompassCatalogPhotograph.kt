@@ -35,7 +35,17 @@ internal fun SpaceCompassCatalogPhotograph(name: String, modifier: Modifier) {
     }
     Box(modifier, contentAlignment = Alignment.Center) {
         val current = image
-        if (current == null) Text(stringResource(R.string.celestial_image_loading), color = Color.LightGray)
+        if (current == null) {
+            // Astronomy remains usable without imagery. A symbolic fallback is not an observed surface.
+            val body = SpaceCompassCelestialBody.entries.firstOrNull { it.viewerTexture == name }
+            if (body?.isSpacecraft == true) SpaceCompassCelestialCraftCanvas(body,
+                SpaceCompassCelestialRotation(yaw = 25.0, pitch = 50.0).geometry(),
+                SpaceCompassCelestialViewportState(), Modifier.matchParentSize())
+            else if (body?.deepSkyReference != null) SpaceCompassDeepSkySymbol(body, Modifier.matchParentSize())
+            else androidx.compose.foundation.Canvas(Modifier.matchParentSize()) {
+                drawCircle(Color(0xffa4a9b3), size.minDimension * .28f)
+            }
+        }
         else Image(current, contentDescription = null, contentScale = ContentScale.Fit)
     }
 }
@@ -56,6 +66,13 @@ internal fun createSpaceCompassPhotographicThumbnail(map: Bitmap, extent: Int): 
 
 /** Author names are retained exactly; full sources and licences accompany the external pack. */
 internal fun spaceCompassCatalogImageCredit(name: String?): String? = when (name) {
+    "new_horizons.webp" -> "NASA/KSC"
+    "jwst.webp" -> "NASA/GSFC"
+    "parker_solar_probe.webp" -> "NASA/Kim Shiflett"
+    "apophis.webp" -> "NASA/JPL-Caltech and NSF/AUI/GBO"
+    "europa_clipper.webp" -> "NASA/Kim Shiflett"
+    "hubble.webp" -> "NASA/JSC"
+    "m87.webp" -> "EHT Collaboration"
     "tesla_roadster.webp" -> "SpaceX · CC0 1.0"
     "titan.webp" -> "NASA/JPL-Caltech/Space Science Institute"
     "sirius.webp" -> "NASA, ESA, H. Bond (STScI), and M. Barstow (University of Leicester)"

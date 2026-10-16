@@ -1,9 +1,9 @@
 <resources>
     <string name="info_news_title">تازه‌ترین تغییرات · %1$s</string>
-    <string name="info_news_star_sky" formatted="false">کادرهای نقاط، نام اجرام را پررنگ و عنوان‌ها را در چند سطر، روی پس‌زمینه‌ای کمی شفاف نشان می‌دهند.</string>
-    <string name="info_news_texture_downloads" formatted="false">شمارنده‌های بزرگ‌تر و بدون حاشیه، رنگ‌های واضح‌تر سناریو و آبی روشن‌تر در روز.</string>
-    <string name="info_news_weather" formatted="false">علامت سادهٔ X کنار پیکان‌های پیمایش، پس از تأیید جرم را حذف می‌کند.</string>
-    <string name="info_news_viewer_zoom" formatted="false">درخواست‌های هواشناسی محدودیت زمانی دارند و در صورت نبود داده می‌توان دوباره تلاش کرد.</string>
-    <string name="info_news_settings" formatted="false">هر ۲۰ تصویر اجرام آسمانی، از جمله LV-426، جداگانه با قالب WebP و کیفیت ۹۰ بارگیری می‌شوند.</string>
-    <string name="info_news_catalog" formatted="false">بستهٔ بافت به‌روز 1.2.1، بایگانی‌های هماهنگ و استفادهٔ دوباره از تصاویر ذخیره‌شده پس از بررسی.</string>
+    <string name="info_news_star_sky" formatted="false">یازده جرم تازه برای ردیابی: کاوشگرها، تلسکوپ‌های فضایی، Tiangong، Apophis، 3I/ATLAS، M87* و پروکسیما b.</string>
+    <string name="info_news_texture_downloads" formatted="false">جدول‌های NASA/JPL موقعیت، فاصله و مسیر روزانهٔ کاوشگرها و اجرام کوچک را فراهم می‌کنند.</string>
+    <string name="info_news_weather" formatted="false">Hubble وTiangong از عناصر مداری تازه وSGP4 همراه منبع دادهٔ جایگزین استفاده می‌کنند.</string>
+    <string name="info_news_viewer_zoom" formatted="false">جهت‌های مرجع و داده‌های ناموجود بدون ساختن اندازه‌گیری توضیح داده می‌شوند.</string>
+    <string name="info_news_settings" formatted="false">تصاویر تازهٔ WebP خارجی با دریافت جداگانه، بررسی یکپارچگی و ذخیرهٔ آفلاین.</string>
+    <string name="info_news_catalog" formatted="false">منابع و ترجمه‌ها به‌روز شدند؛ فایل‌های گرافیکی جداگانه بدون ZIP تکراری بافت‌ها.</string>
 </resources>

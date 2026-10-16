@@ -32,7 +32,7 @@ class SpaceCompassCometsTest {
             val decoded = URLDecoder.decode(spaceCompassHorizonsUrl(body, now), "UTF-8")
             assertTrue(decoded.contains("NOFRAG;CAP;"))
         }
-        assertEquals(listOf(SpaceCompassCelestialBody.HALLEY, SpaceCompassCelestialBody.COMET_67P),
+        assertEquals(listOf(SpaceCompassCelestialBody.HALLEY, SpaceCompassCelestialBody.COMET_67P, SpaceCompassCelestialBody.ATLAS_3I),
             spaceCompassFilterCatalog(setOf(SpaceCompassCatalogType.COMET), SpaceCompassCatalogVisibility.ALL, emptyMap()))
     }
 

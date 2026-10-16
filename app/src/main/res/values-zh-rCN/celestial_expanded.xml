@@ -1,0 +1,18 @@
+<resources>
+    <string name="celestial_new_horizons">New Horizons</string>
+    <string name="celestial_jwst">James Webb Space Telescope (JWST)</string>
+    <string name="celestial_parker_solar_probe">Parker Solar Probe</string>
+    <string name="celestial_apophis">99942 Apophis</string>
+    <string name="celestial_atlas_3i">3I/ATLAS</string>
+    <string name="celestial_europa_clipper">Europa Clipper</string>
+    <string name="celestial_juice">JUICE</string>
+    <string name="celestial_hubble">Hubble Space Telescope</string>
+    <string name="celestial_tiangong">Tiangong</string>
+    <string name="celestial_m87">M87*</string>
+    <string name="celestial_proxima_b">Proxima Centauri b</string>
+    <string name="catalog_type_asteroid">小行星</string>
+    <string name="celestial_horizons_tracking_note">NASA/JPL预测仅覆盖有限日期范围，并非实时遥测。</string>
+    <string name="celestial_proxima_b_note">比邻星b使用无法与行星分辨开的主星方向。距离指恒星系统的距离；其表面、大气和三维轨道位置尚未测定。</string>
+    <string name="celestial_m87_note">M87*使用M87星系核的方向。距离和质量为近似参考值；图像由射电观测重建。</string>
+    <string name="celestial_satellite_tracking_note">地球轨道物体需要近期轨道要素。超出有效期的位置不可用。</string>
+</resources>

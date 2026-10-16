@@ -1,9 +1,9 @@
 <resources>
     <string name="info_news_title">Últimas novidades · %1$s</string>
-    <string name="info_news_star_sky" formatted="false">Os balões dos pontos mostram nomes em negrito, títulos em várias linhas e um fundo ligeiramente transparente.</string>
-    <string name="info_news_texture_downloads" formatted="false">Contadores maiores sem borda, cores de cenário mais claras e azul diurno mais luminoso.</string>
-    <string name="info_news_weather" formatted="false">Um X simples junto às setas de navegação remove um objeto após confirmação.</string>
-    <string name="info_news_viewer_zoom" formatted="false">Os pedidos de meteorologia têm um tempo limite e permitem tentar novamente se faltarem dados.</string>
-    <string name="info_news_settings" formatted="false">As 20 imagens celestes, incluindo LV-426, são descarregadas individualmente em WebP com qualidade 90.</string>
-    <string name="info_news_catalog" formatted="false">Pacote de texturas 1.2.1 atualizado, arquivos coerentes e reutilização verificada das imagens guardadas.</string>
+    <string name="info_news_star_sky" formatted="false">Onze novos objetos rastreáveis: sondas, telescópios espaciais, Tiangong, Apophis, 3I/ATLAS, M87* e Proxima b.</string>
+    <string name="info_news_texture_downloads" formatted="false">Efemérides NASA/JPL fornecem posições, distâncias e trajetórias diárias de sondas e pequenos corpos.</string>
+    <string name="info_news_weather" formatted="false">Hubble e Tiangong usam elementos orbitais recentes e SGP4, com uma fonte alternativa.</string>
+    <string name="info_news_viewer_zoom" formatted="false">As direções de referência e os dados em falta são explicados sem medições inventadas.</string>
+    <string name="info_news_settings" formatted="false">Novas imagens WebP externas com transferência individual, verificação de integridade e cache offline.</string>
+    <string name="info_news_catalog" formatted="false">Créditos e traduções atualizados; ficheiros gráficos individuais sem ZIP de texturas duplicados.</string>
 </resources>

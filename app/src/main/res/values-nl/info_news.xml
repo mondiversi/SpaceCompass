@@ -1,9 +1,9 @@
 <resources>
     <string name="info_news_title">Laatste nieuws · %1$s</string>
-    <string name="info_news_star_sky" formatted="false">Puntballonnen tonen vetgedrukte objectnamen, titels over meerdere regels en een licht transparante achtergrond.</string>
-    <string name="info_news_texture_downloads" formatted="false">Grotere tellers zonder rand, duidelijkere scenariokleuren en een lichtere blauwe dagkleur.</string>
-    <string name="info_news_weather" formatted="false">Een eenvoudig kruisje naast de navigatiepijlen verwijdert een object na bevestiging.</string>
-    <string name="info_news_viewer_zoom" formatted="false">Weeraanvragen hebben een tijdslimiet en bieden opnieuw proberen aan als gegevens ontbreken.</string>
-    <string name="info_news_settings" formatted="false">Alle 20 hemelafbeeldingen, inclusief LV-426, worden afzonderlijk als WebP met kwaliteit 90 gedownload.</string>
-    <string name="info_news_catalog" formatted="false">Bijgewerkt textuurpakket 1.2.1, overeenkomende archieven en gecontroleerd hergebruik van opgeslagen afbeeldingen.</string>
+    <string name="info_news_star_sky" formatted="false">Elf nieuwe volgbare objecten: sondes, ruimtetelescopen, Tiangong, Apophis, 3I/ATLAS, M87* en Proxima b.</string>
+    <string name="info_news_texture_downloads" formatted="false">NASA/JPL-efemeriden leveren posities, afstanden en dagelijkse hemelbanen van sondes en kleine hemellichamen.</string>
+    <string name="info_news_weather" formatted="false">Hubble en Tiangong gebruiken recente baanelementen en SGP4, met een alternatieve gegevensbron.</string>
+    <string name="info_news_viewer_zoom" formatted="false">Referentierichtingen en ontbrekende gegevens worden uitgelegd zonder verzonnen metingen.</string>
+    <string name="info_news_settings" formatted="false">Nieuwe externe WebP-afbeeldingen met afzonderlijke downloads, integriteitscontrole en offline cache.</string>
+    <string name="info_news_catalog" formatted="false">Bronnen en vertalingen bijgewerkt; losse grafische bestanden zonder dubbele textuur-ZIPs.</string>
 </resources>

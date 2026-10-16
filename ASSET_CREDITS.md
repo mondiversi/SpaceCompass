@@ -128,3 +128,8 @@ The complete ZIP, image manifest, credits and checksums describe the same set.
 ## External texture pack 1.2.1
 
 Application 1.4.1 downloads all twenty celestial images from the versioned 1.2.1 release. Image hashes, pixels, quality-90 WebP encodings, credits and licences are unchanged from pack 1.2; consolidated manifest and credit headers now describe the complete set. Older release URLs remain intact. The fictional LV-426 image is external; the star atlas and separate screensaver assets remain bundled.
+
+
+## External graphics pack 1.3
+
+Application 1.4.2 pins 27 individual quality-90/method-6 WebP files. Seven new archival images of New Horizons, JWST, Parker Solar Probe, Apophis, Europa Clipper, Hubble and M87* retain their source credits, licence links and aspect ratio in the [manifest](textures/celestial-textures-v1.3/manifest.json) and [full credits](textures/celestial-textures-v1.3/CREDITS.txt). NASA images are historical photographs/radar observations; M87* is an EHT radio reconstruction under CC BY 4.0. JUICE, Tiangong, 3I/ATLAS and Proxima b retain code-rendered symbolic placeholders. Earlier images and URLs remain unchanged.

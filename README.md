@@ -8,8 +8,8 @@ paths, inspect reference facts and view textured models. Space Compass is a stan
 
 ## Download and install
 
-Download **space-compass-1.4.1.apk** from the
-[Space Compass 1.4.1 release](https://github.com/mondiversi/SpaceCompass/releases/tag/v1.4.1).
+Download **space-compass-1.4.2.apk** from the
+[Space Compass 1.4.2 release](https://github.com/mondiversi/SpaceCompass/releases/tag/v1.4.2).
 Android 8.0 or newer is required. Open the APK and follow Android's installation
 prompts; allow installation for your browser or file manager if requested.
 
@@ -22,7 +22,7 @@ one manual APK update to acquire this feature.
 The release includes `SHA256SUMS.txt` and a signed update index. GitHub's source
 ZIP/TAR archives and Actions debug artifacts are separate from the signed APK.
 See [distribution and signing](docs/GITHUB_RELEASES.md) and
-[the 1.4.1 release audit](docs/RELEASE_1_4_1.md).
+[the 1.4.2 release audit](docs/RELEASE_1_4_2.md).
 
 ## Features
 
@@ -70,7 +70,7 @@ See [distribution and signing](docs/GITHUB_RELEASES.md) and
 - Signed startup/manual GitHub updates with package, certificate, size and checksum verification.
 
 The application ID is `me.mondiversi.spacecompass`. The current stable version is
-**1.4.1**, with Android/update identity `1.4.1` and version code **38**.
+**1.4.2**, with Android/update identity `1.4.2` and version code **39**.
 This preserves the three-part update protocol used by existing preview installations.
 The app stores its preferences and caches privately.
 
@@ -132,12 +132,12 @@ Launcher/loading artwork and the fictional Easter-egg texture are original asset
 
 ## Data and graphics packages
 
-Release 1.4.1 includes a reference-information archive and the complete 20-image
-graphics archive. The app downloads individual maps, archival photographs and LV-426
-from [Celestial texture pack 1.2.1](https://github.com/mondiversi/SpaceCompass/releases/tag/celestial-textures-v1.2.1).
-Every celestial image is WebP at quality 90/method 6; nineteen are 2048 x 1024,
+Release 1.4.2 includes a reference-information archive and 47 regular catalogue objects.
+Celestial graphics are distributed as individual files, without a complete texture ZIP. The app downloads individual maps, archival photographs and LV-426
+from [Celestial texture pack 1.3](https://github.com/mondiversi/SpaceCompass/releases/tag/celestial-textures-v1.3).
+All 27 celestial images are WebP at quality 90/method 6; twenty-six are 2048 x 1024,
 and LV-426 retains its original 1774 x 887 pixels. The APK includes scientific data,
 all twenty languages, the star atlas and the separate Earth screensaver maps.
-Complete graphics ZIPs are optional; they are never downloaded by the app. Verified
+Complete graphics ZIPs are no longer attached to new releases. Verified
 images are cached for offline use and matching legacy caches are reused. Older
 graphics releases and individual URLs remain available for previous APKs.

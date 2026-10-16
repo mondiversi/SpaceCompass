@@ -7,6 +7,8 @@ internal fun spaceCompassObservatoryExportNotes(body: SpaceCompassCelestialBody,
     val facts=spaceCompassCelestialFacts(body)
     val temperatures=spaceCompassCelestialTemperatures(body)
     fun note(id: Int,vararg args: Any) { add(strings.getString(id,*args)) }
+    if (body.expandedHorizonsTarget!=null) note(R.string.celestial_horizons_tracking_note)
+    if (body.catalogSatellite!=null) note(R.string.celestial_satellite_tracking_note)
     if (body.isFictional) { note(R.string.celestial_lv426_model_note);note(R.string.celestial_lv426_credits) }
     else {
         note(R.string.celestial_view_facts_note,formatSpaceCompassPressure(SpaceCompassPressureUnit.BAR.pascals,

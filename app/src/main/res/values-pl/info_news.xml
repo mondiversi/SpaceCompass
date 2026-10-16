@@ -1,9 +1,9 @@
 <resources>
     <string name="info_news_title">Ostatnie nowości · %1$s</string>
-    <string name="info_news_star_sky" formatted="false">Dymki punktów pokazują pogrubione nazwy obiektów, zawijane tytuły i lekko przezroczyste tło.</string>
-    <string name="info_news_texture_downloads" formatted="false">Większe liczniki bez obramowania, wyraźniejsze kolory scenariusza i jaśniejszy niebieski w dzień.</string>
-    <string name="info_news_weather" formatted="false">Prosty znak X obok strzałek nawigacji usuwa obiekt po potwierdzeniu.</string>
-    <string name="info_news_viewer_zoom" formatted="false">Zapytania pogodowe mają limit czasu i umożliwiają ponowienie, gdy brakuje danych.</string>
-    <string name="info_news_settings" formatted="false">Wszystkie 20 obrazów nieba, w tym LV-426, jest pobieranych pojedynczo w formacie WebP z jakością 90.</string>
-    <string name="info_news_catalog" formatted="false">Zaktualizowany pakiet tekstur 1.2.1, zgodne archiwa i sprawdzone ponowne użycie zapisanych obrazów.</string>
+    <string name="info_news_star_sky" formatted="false">Jedenaście nowych śledzonych obiektów: sondy, teleskopy kosmiczne, Tiangong, Apophis, 3I/ATLAS, M87* i Proxima b.</string>
+    <string name="info_news_texture_downloads" formatted="false">Efemerydy NASA/JPL wyznaczają pozycje, odległości i dzienne tory sond oraz małych ciał.</string>
+    <string name="info_news_weather" formatted="false">Hubble i Tiangong używają aktualnych elementów orbitalnych i SGP4 z alternatywnym źródłem danych.</string>
+    <string name="info_news_viewer_zoom" formatted="false">Kierunki odniesienia i brakujące dane są objaśnione bez wymyślania pomiarów.</string>
+    <string name="info_news_settings" formatted="false">Nowe zewnętrzne obrazy WebP z pobieraniem pojedynczych plików, kontrolą integralności i pamięcią offline.</string>
+    <string name="info_news_catalog" formatted="false">Zaktualizowane źródła i tłumaczenia; pojedyncze pliki graficzne bez powielonych ZIP-ów tekstur.</string>
 </resources>

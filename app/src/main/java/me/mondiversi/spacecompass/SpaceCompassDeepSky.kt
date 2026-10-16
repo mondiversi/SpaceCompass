@@ -10,6 +10,11 @@ internal data class SpaceCompassDeepSkyReference(val raHours: Double, val decDeg
     val distanceLy: Double, val pmRaMasYear: Double = 0.0, val pmDecMasYear: Double = 0.0)
 internal val SpaceCompassCelestialBody.deepSkyReference: SpaceCompassDeepSkyReference?
     get() = when (this) {
+        // EHT/ESO nuclear direction. Distance is an approximate published scale, not 3-D telemetry.
+        SpaceCompassCelestialBody.M87 -> SpaceCompassDeepSkyReference(
+            12 + 30.0/60 + 49.42/3600, 12 + 23.0/60 + 28.04/3600, 55_000_000.0)
+        // The planet is unresolved: trace its host star, with the same parallax/proper motion.
+        SpaceCompassCelestialBody.PROXIMA_B -> SpaceCompassCelestialBody.PROXIMA_CENTAURI.deepSkyReference
         SpaceCompassCelestialBody.SIRIUS -> SpaceCompassDeepSkyReference(
             6 + 45.0/60 + 8.91728/3600, -(16 + 42.0/60 + 58.0171/3600),
             1000 / 379.21 * 3.261563777, -546.01, -1223.07)
@@ -92,6 +97,8 @@ internal fun calculateSpaceCompassDeepSkyObservation(body: SpaceCompassCelestial
 
 internal val SpaceCompassCelestialBody.deepSkyNoteResource: Int
     get() = when (this) {
+        SpaceCompassCelestialBody.M87 -> R.string.celestial_m87_note
+        SpaceCompassCelestialBody.PROXIMA_B -> R.string.celestial_proxima_b_note
         SpaceCompassCelestialBody.SIRIUS -> R.string.celestial_sirius_note
         SpaceCompassCelestialBody.BETELGEUSE -> R.string.celestial_betelgeuse_note
         SpaceCompassCelestialBody.ORION_NEBULA -> R.string.celestial_orion_note

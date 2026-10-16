@@ -1,5 +1,14 @@
 # Changelog
 
+## 1.4.2 — 2026-10-16
+
+- Add eleven trackable catalogue objects: New Horizons, James Webb Space Telescope, Parker Solar Probe, 99942 Apophis, 3I/ATLAS, Europa Clipper, JUICE, Hubble Space Telescope, Tiangong, M87* and Proxima Centauri b.
+- Use verified NASA/JPL Horizons identities for seven moving targets, with apparent geocentric pointing, independent heliocentric motion and velocity-aware interpolation. Preserve position-only legacy caches.
+- Track Hubble and the Tianhe core of Tiangong with validated current NORAD elements, provider fallback and SGP4/TEME propagation. Do not extrapolate beyond the existing element-validity window.
+- Add an asteroid filter, scientific designations and explicit catalogue-direction notes for M87* and unresolved Proxima b. Unmeasured physical quantities remain unavailable.
+- Pin external graphics pack 1.3: 27 individual quality-90 WebP files, including seven new verified archival images. Keep all celestial imagery outside the APK, preserve matching offline caches and retain earlier pack URLs.
+- Refresh news and explanatory strings in twenty languages. Stop attaching duplicate complete texture ZIPs; safely reuse release drafts instead of creating duplicates.
+
 ## 1.4.1 — 2026-10-16
 
 - Show bold object headings and optional event names in focused point callouts, with wrapping titles, balanced clock/countdown and angle rows, and matching light translucency on the caption and reminder button.

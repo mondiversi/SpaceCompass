@@ -1,0 +1,18 @@
+<resources>
+    <string name="celestial_new_horizons">New Horizons</string>
+    <string name="celestial_jwst">James Webb Space Telescope (JWST)</string>
+    <string name="celestial_parker_solar_probe">Parker Solar Probe</string>
+    <string name="celestial_apophis">99942 Apophis</string>
+    <string name="celestial_atlas_3i">3I/ATLAS</string>
+    <string name="celestial_europa_clipper">Europa Clipper</string>
+    <string name="celestial_juice">JUICE</string>
+    <string name="celestial_hubble">Hubble Space Telescope</string>
+    <string name="celestial_tiangong">Tiangong</string>
+    <string name="celestial_m87">M87*</string>
+    <string name="celestial_proxima_b">Proxima Centauri b</string>
+    <string name="catalog_type_asteroid">소행성</string>
+    <string name="celestial_horizons_tracking_note">NASA/JPL 예측에는 제한된 날짜 범위가 있으며 실시간 원격 측정이 아닙니다.</string>
+    <string name="celestial_proxima_b_note">프록시마 b는 분리 관측되지 않는 모항성의 방향을 사용합니다. 거리는 항성계까지의 값이며 표면, 대기와 3차원 궤도 위치는 측정되지 않았습니다.</string>
+    <string name="celestial_m87_note">M87*는 M87 중심핵의 방향을 사용합니다. 거리와 질량은 근사 참고값이며 이미지는 전파 관측의 재구성입니다.</string>
+    <string name="celestial_satellite_tracking_note">지구 궤도 물체에는 최신 궤도 요소가 필요합니다. 유효 기간 밖의 위치는 제공되지 않습니다.</string>
+</resources>

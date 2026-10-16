@@ -32,6 +32,14 @@
   merely by routine local development.
 - Upload code or releases to GitHub only when the user explicitly requests that
   publication. Keep routine fixes, builds and device installations local.
+- For distributions after 1.4.1, do not create or upload complete celestial texture
+  ZIPs to either the application or graphics release. Publish individual WebP files,
+  their manifest, credits and checksums in the versioned graphics release. Preserve
+  existing published archives and URLs. This does not remove information archives.
+- Reuse a release draft by its persisted numeric ID or by searching the authenticated
+  releases list, including drafts. A tag-only lookup can omit drafts. Check for
+  duplicate drafts before creating a release and after publishing it; never create
+  a second release when the intended draft already exists.
 - Keep future settings descriptions on the shared `SpaceCompassSettingsDescription`
   style. Match the reviewed UVIR typography, margins and indentation; do not
   introduce one-off font sizes or spacing.

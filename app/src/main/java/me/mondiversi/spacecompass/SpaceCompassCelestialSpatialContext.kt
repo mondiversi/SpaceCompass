@@ -18,7 +18,7 @@ internal data class SpaceCompassCelestialCoordinates(
     val timeMs: Long? = null
 )
 
-internal enum class SpaceCompassCelestialGalaxy { MILKY_WAY, ANDROMEDA, TON_618_HOST }
+internal enum class SpaceCompassCelestialGalaxy { MILKY_WAY, ANDROMEDA, TON_618_HOST, M87 }
 
 internal data class SpaceCompassCelestialMembership(
     val systemResource: Int? = null,
@@ -28,6 +28,8 @@ internal data class SpaceCompassCelestialMembership(
 
 /** Names describe confirmed systems, not a conjectural parent for isolated objects. */
 internal fun spaceCompassCelestialMembership(body: SpaceCompassCelestialBody): SpaceCompassCelestialMembership = when (body) {
+    SpaceCompassCelestialBody.M87 -> SpaceCompassCelestialMembership(galaxy = SpaceCompassCelestialGalaxy.M87)
+    SpaceCompassCelestialBody.PROXIMA_B -> SpaceCompassCelestialMembership(systemDesignation = "Proxima Centauri · α Centauri")
     SpaceCompassCelestialBody.ANDROMEDA_CORE -> SpaceCompassCelestialMembership(galaxy = SpaceCompassCelestialGalaxy.ANDROMEDA)
     SpaceCompassCelestialBody.TON_618 -> SpaceCompassCelestialMembership(galaxy = SpaceCompassCelestialGalaxy.TON_618_HOST)
     SpaceCompassCelestialBody.ALPHA_CENTAURI, SpaceCompassCelestialBody.PROXIMA_CENTAURI ->

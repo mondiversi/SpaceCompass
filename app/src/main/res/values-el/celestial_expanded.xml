@@ -1,0 +1,18 @@
+<resources>
+    <string name="celestial_new_horizons">New Horizons</string>
+    <string name="celestial_jwst">James Webb Space Telescope (JWST)</string>
+    <string name="celestial_parker_solar_probe">Parker Solar Probe</string>
+    <string name="celestial_apophis">99942 Apophis</string>
+    <string name="celestial_atlas_3i">3I/ATLAS</string>
+    <string name="celestial_europa_clipper">Europa Clipper</string>
+    <string name="celestial_juice">JUICE</string>
+    <string name="celestial_hubble">Hubble Space Telescope</string>
+    <string name="celestial_tiangong">Tiangong</string>
+    <string name="celestial_m87">M87*</string>
+    <string name="celestial_proxima_b">Proxima Centauri b</string>
+    <string name="catalog_type_asteroid">Αστεροειδής</string>
+    <string name="celestial_horizons_tracking_note">Οι προβλέψεις NASA/JPL καλύπτουν περιορισμένο διάστημα και δεν είναι ζωντανή τηλεμετρία.</string>
+    <string name="celestial_proxima_b_note">Ο Proxima b χρησιμοποιεί τη διεύθυνση του μη διακριτού μητρικού άστρου. Η απόσταση αφορά το αστρικό σύστημα· επιφάνεια, ατμόσφαιρα και τρισδιάστατη τροχιακή θέση δεν έχουν μετρηθεί.</string>
+    <string name="celestial_m87_note">Ο M87* χρησιμοποιεί τη διεύθυνση του πυρήνα M87. Απόσταση και μάζα είναι προσεγγιστικές τιμές αναφοράς· η εικόνα είναι ραδιοανακατασκευή.</string>
+    <string name="celestial_satellite_tracking_note">Τα αντικείμενα σε γήινη τροχιά χρειάζονται πρόσφατα τροχιακά στοιχεία. Εκτός ισχύος τους δεν διατίθενται θέσεις.</string>
+</resources>

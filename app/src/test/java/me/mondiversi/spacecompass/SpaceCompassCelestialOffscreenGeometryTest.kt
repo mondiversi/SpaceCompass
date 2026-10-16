@@ -35,7 +35,7 @@ class SpaceCompassCelestialOffscreenGeometryTest {
             val excluded = if (panel == 0.0) emptyList() else listOf(SpaceCompassSunSceneFrame(0.0, height - panel, width, panel))
             val projections = spaceCompassCelestialCatalogOrder.associateWith { SpaceCompassSunProjection(false, width, height / 2, 90.0) }
             val diameter = fitSpaceCompassCelestialOffscreenDiameter(projections, width, height, 56.0, excluded)
-            assertTrue(diameter in 56.0 * 0.30..56.0)
+            assertTrue(diameter in 56.0 * 0.20..56.0)
             val placements = placeSpaceCompassCelestialOffscreenMarkers(projections, width, height, diameter, excluded)
             val centers = placements.values.map { it.center }
             centers.forEachIndexed { index, center ->
@@ -53,7 +53,7 @@ class SpaceCompassCelestialOffscreenGeometryTest {
                 val projections = spaceCompassCelestialCatalogOrder.associateWith {
                     SpaceCompassSunProjection(false, width * density * 2, height * density / 2, 90.0)
                 }
-                val diameter = 56.0 * density
+                val diameter = fitSpaceCompassCelestialOffscreenDiameter(projections, width*density, height*density, 56.0*density, emptyList())
                 val placements = placeSpaceCompassCelestialOffscreenMarkers(projections, width * density, height * density, diameter)
                 assertEquals(projections.size, placements.size)
                 val centers = placements.values.map { it.center }

@@ -1,0 +1,263 @@
+API VERSION: 1.2
+API SOURCE: NASA/JPL Horizons API
+
+*******************************************************************************
+ Revised: Sep 27, 2026     JUICE Spacecraft / Sun-Jupiter-Ganymede          -28
+                              https://sci.esa.int/web/juice
+
+ The Jupiter Icy moons Explorer ("JUICE") is an ESA mission launched April 14,
+ 2023 @ 12:14 UTC from French Guiana (ELA-3) on an Ariane 5. Its period and
+ area of operations will overlap with NASA's Europa Clipper mission launching
+ in 2024.
+
+ PURPOSE
+  The JUICE orbiter will investigate Ganymede and evaluate its potential to
+  support life. Investigations of Europa and Callisto will compare these
+  Galilean moons.  The three moons are thought to have internal liquid water
+  oceans, and are thought key to understanding the habitability of icy worlds.
+
+  Main science objectives for Ganymede (and Callisto to lesser extent):
+
+  * Characterize ocean layers & detect detect any subsurface water reservoirs
+  * Topographical, geological and compositional mapping of surface
+  * Study the physical properties of the icy crusts
+  * Characterisation of internal mass distribution and dynamics
+  * Investigate Ganymede's tenuous atmosphere
+  * Study Ganymede's magnetic field and interactions with Jovian magnetosphere
+
+  For Europa, the focus is on the chemistry essential to life. JUICE will also
+  provide the first subsurface sounding of the moon, and determination of icy
+  crust thickness over the most recently active regions.
+
+ TRAJECTORY OVERVIEW:
+  JUICE will have four gravity assist flybys of Venus and Earth and pass
+  through the asteroid Main-Belt twice before arriving at Jupiter in July, 2031.
+  There will be a Ganymede flyby 7.5 hours prior to Jupiter orbit insertion.
+
+  The first Europa flyby will be in July 2032. The spacecraft will be placed
+  in a high inclination orbit to allow exploration of Jupiter's polar regions
+  and to study Jupiter's magnetosphere.
+
+  In December 2034, the spacecraft will enter orbit around Ganymede, becoming
+  the first spacecraft to orbit a moon other than Earth's.
+
+ FLYBYS:
+  2024-Aug-20: Earth-Moon system (gravity-assist, 21:56:13.5 UTC @ 13209.3 km)
+  2025-Aug-31: Venus (gravity assist, 05:28:51 UTC @ 11141.1 km)
+  2026-Sep-28: Earth #2 (gravity assist, 11:45:11.5 UTC @ 15018.3 km)
+  2029 Jan   : Earth #3 (gravity assist)
+  2029 Oct   : Asteroid 223 Rosa [PROPOSED]
+  2031+      : more then 25 gravity assists, two Europa flybys
+
+ PHYSICAL CHARACTERISTICS:
+  * 3-axis stabilized
+  * Power: solar panels, 85 m^2, 820W (EOM)
+  * High-gain antenna: 2.5 m, body fixed
+  * X- and Ka bands, downlink > 1.4 Gbit/day
+  * Propulsion: bi-propellant main engine plus 10 thrusters
+     Delta-V capability (2700 m/s, ~3000 kg of chemical propellant)
+  * Radiation level: 240 krad /10 mm Al solid sphere
+  * Dry mass at launch: ~1800 kg
+  * Deployable appendages:
+     10.6 meter boom for JMAG and RPWI
+     16-meter antenna for radar
+     Steerable medium gain antenna for comm and radio science
+
+ SCIENCE INSTRUMENTS (11):
+  * Jovis, Amorum ac Natorum Undique Scrutator (JANUS, camera system)
+  * Moons and Jupiter Imaging Spectrometer (MAJIS, VIS/IR imaging spectrograph)
+  * UV Imaging Spectrograph (UVS, UV imaging spectrograph)
+  * Sub-millimeter Wave Instrument (SWI, spectrometer)
+  * Ganymede Laser Altimeter (GALA)
+  * Radar for Icy Moons Exploration (RIME, ice-penetrating 9 GHz, w/16m antenna)
+  * JUICE-Magnetometer (J-MAG)
+  * Particle Environment Package (PEP, suite of six sensors)
+  * Radio and Plasma Wave Investigation (RPWI)
+  * Gravity and Geophysics of Jupiter and Galilean Moons (3GM, Ka transponder)
+  * Planetary Radio Interferometer and Doppler Experiment (PRIDE)
+
+ TRAJECTORY: Post-launch trajectory from ESA based on tracking data through
+  September 22, prediction after that.
+
+ Name                                                Start (TDB)   Stop (TDB)
+ --------------------------------------------------  -----------   -----------
+ juice_orbc_000114_230414_310721_v01                 2023-Apr-14   2031-Jul-21
+*******************************************************************************
+
+
+*******************************************************************************
+Ephemeris / API_USER Fri Oct 16 06:14:43 2026 Pasadena, USA      / Horizons
+*******************************************************************************
+Target body name: JUICE (spacecraft) (-28)        {source: JUICE_merged}
+Center body name: Sun (10)                        {source: DE441}
+Center-site name: BODY CENTER
+*******************************************************************************
+Start time      : A.D. 2026-Oct-15 00:00:00.0000 UT
+Stop  time      : A.D. 2026-Oct-18 00:00:00.0000 UT
+Step-size       : 60 minutes
+*******************************************************************************
+Center geodetic : 0.0, 0.0, 0.0                   {E-lon(deg),Lat(deg),Alt(km)}
+Center cylindric: 0.0, 0.0, 0.0                   {E-lon(deg),Dxy(km),Dz(km)}
+Center radii    : 695700.0, 695700.0, 695700.0 km {Equator_a, b, pole_c}
+Output units    : AU-D
+Calendar mode   : Mixed Julian/Gregorian
+Output type     : GEOMETRIC cartesian states
+Output format   : 2 (position and velocity)
+EOP file        : eop.261015.p270111
+EOP coverage    : DATA-BASED 1962-JAN-20 TO 2026-OCT-15. PREDICTS-> 2027-JAN-10
+Reference frame : ICRF
+*******************************************************************************
+            JDUT ,            Calendar Date (UT ),                      X,                      Y,                      Z,                     VX,                     VY,                     VZ,
+**************************************************************************************************************************************************************************************************
+$$SOE
+2461328.500000000, A.D. 2026-Oct-15 00:00:00.0000,  8.259504863900935E-01,  3.544658722224414E-01,  1.536457803354233E-01, -1.304745345683053E-02,  1.582244892211178E-02,  6.858629177944528E-03,
+2461328.541666667, A.D. 2026-Oct-15 01:00:00.0000,  8.254065627185743E-01,  3.551250207075998E-01,  1.539315044389840E-01, -1.306088268654174E-02,  1.581667598803526E-02,  6.856126762369539E-03,
+2461328.583333333, A.D. 2026-Oct-15 02:00:00.0000,  8.248620795069526E-01,  3.557839283561016E-01,  1.542171241461638E-01, -1.307431137573184E-02,  1.581088876005666E-02,  6.853618150557969E-03,
+2461328.625000000, A.D. 2026-Oct-15 03:00:00.0000,  8.243170367782088E-01,  3.564425945722526E-01,  1.545026391987363E-01, -1.308773950467188E-02,  1.580508723508828E-02,  6.851103341176655E-03,
+2461328.666666667, A.D. 2026-Oct-15 04:00:00.0000,  8.237714345563066E-01,  3.571010187600408E-01,  1.547880493383377E-01, -1.310116704400631E-02,  1.579927139858035E-02,  6.848582327920801E-03,
+2461328.708333333, A.D. 2026-Oct-15 05:00:00.0000,  8.232252728661528E-01,  3.577592003231865E-01,  1.550733543064881E-01, -1.311459397567791E-02,  1.579344124954482E-02,  6.846055110349230E-03,
+2461328.750000000, A.D. 2026-Oct-15 06:00:00.0000,  8.226785517336933E-01,  3.584171386650291E-01,  1.553585538445418E-01, -1.312802027171086E-02,  1.578759677529967E-02,  6.843521682972968E-03,
+2461328.791666667, A.D. 2026-Oct-15 07:00:00.0000,  8.221312711859131E-01,  3.590748331885336E-01,  1.556436476936918E-01, -1.314144590810781E-02,  1.578173796803553E-02,  6.840982042412164E-03,
+2461328.833333333, A.D. 2026-Oct-15 08:00:00.0000,  8.215834312506717E-01,  3.597322832964881E-01,  1.559286355950538E-01, -1.315487086424168E-02,  1.577586482399555E-02,  6.838436187024221E-03,
+2461328.875000000, A.D. 2026-Oct-15 09:00:00.0000,  8.210350319568819E-01,  3.603894883912968E-01,  1.562135172895772E-01, -1.316829511512498E-02,  1.576997733444243E-02,  6.835884113030787E-03,
+2461328.916666667, A.D. 2026-Oct-15 10:00:00.0000,  8.204860733345533E-01,  3.610464478749300E-01,  1.564982925180233E-01, -1.318171863332867E-02,  1.576407548773331E-02,  6.833325815383656E-03,
+2461328.958333333, A.D. 2026-Oct-15 11:00:00.0000,  8.199365554145187E-01,  3.617031611492543E-01,  1.567829610211085E-01, -1.319514139915427E-02,  1.575815928161421E-02,  6.830761293103504E-03,
+2461329.000000000, A.D. 2026-Oct-15 12:00:00.0000,  8.193864782287259E-01,  3.623596276156886E-01,  1.570675225393549E-01, -1.320856338656519E-02,  1.575222870627575E-02,  6.828190541938586E-03,
+2461329.041666667, A.D. 2026-Oct-15 13:00:00.0000,  8.188358418101002E-01,  3.630158466753713E-01,  1.573519768131633E-01, -1.322198457195205E-02,  1.574628375500103E-02,  6.825613558976909E-03,
+2461329.083333333, A.D. 2026-Oct-15 14:00:00.0000,  8.182846461925685E-01,  3.636718177291346E-01,  1.576363235828016E-01, -1.323540493056778E-02,  1.574032441968602E-02,  6.823030340704668E-03,
+2461329.125000000, A.D. 2026-Oct-15 15:00:00.0000,  8.177328914110653E-01,  3.643275401775016E-01,  1.579205625884035E-01, -1.324882443871640E-02,  1.573435069366400E-02,  6.820440884234892E-03,
+2461329.166666667, A.D. 2026-Oct-15 16:00:00.0000,  8.171805775015352E-01,  3.649830134206911E-01,  1.582046935699712E-01, -1.326224307174951E-02,  1.572836257038345E-02,  6.817845186723792E-03,
+2461329.208333333, A.D. 2026-Oct-15 17:00:00.0000,  8.166277045009468E-01,  3.656382368585960E-01,  1.584887162673655E-01, -1.327566080595408E-02,  1.572236004156522E-02,  6.815243244583871E-03,
+2461329.250000000, A.D. 2026-Oct-15 18:00:00.0000,  8.160742724472080E-01,  3.662932098908911E-01,  1.587726304203524E-01, -1.328907761653269E-02,  1.571634309926076E-02,  6.812635054364620E-03,
+2461329.291666667, A.D. 2026-Oct-15 19:00:00.0000,  8.155202813793482E-01,  3.669479319168230E-01,  1.590564357685123E-01, -1.330249347986268E-02,  1.571031173697076E-02,  6.810020613259615E-03,
+2461329.333333333, A.D. 2026-Oct-15 20:00:00.0000,  8.149657313373387E-01,  3.676024023354216E-01,  1.593401320513321E-01, -1.331590837095121E-02,  1.570426594679379E-02,  6.807399917829723E-03,
+2461329.375000000, A.D. 2026-Oct-15 21:00:00.0000,  8.144106223622137E-01,  3.682566205453672E-01,  1.596237190081467E-01, -1.332932226716303E-02,  1.569820572359348E-02,  6.804772965860166E-03,
+2461329.416666667, A.D. 2026-Oct-15 22:00:00.0000,  8.138549544959156E-01,  3.689105859451708E-01,  1.599071963782177E-01, -1.334273514154616E-02,  1.569213105733630E-02,  6.802139752992653E-03,
+2461329.458333333, A.D. 2026-Oct-15 23:00:00.0000,  8.132987277815403E-01,  3.695642979328922E-01,  1.601905639006109E-01, -1.335614696980452E-02,  1.568604194122663E-02,  6.799500276284045E-03,
+2461329.500000000, A.D. 2026-Oct-16 00:00:00.0000,  8.127419422631590E-01,  3.702177559063514E-01,  1.604738213142886E-01, -1.336955773089011E-02,  1.567993837245703E-02,  6.796854534519443E-03,
+2461329.541666667, A.D. 2026-Oct-16 01:00:00.0000,  8.121845979858155E-01,  3.708709592631382E-01,  1.607569683581131E-01, -1.338296739629415E-02,  1.567382033941673E-02,  6.794202522663582E-03,
+2461329.583333333, A.D. 2026-Oct-16 02:00:00.0000,  8.116266949956704E-01,  3.715239074004438E-01,  1.610400047707739E-01, -1.339637594150019E-02,  1.566768783546485E-02,  6.791544237835692E-03,
+2461329.625000000, A.D. 2026-Oct-16 03:00:00.0000,  8.110682333398102E-01,  3.721765997152897E-01,  1.613229302908868E-01, -1.340978334608537E-02,  1.566154085873629E-02,  6.788879679234274E-03,
+2461329.666666667, A.D. 2026-Oct-16 04:00:00.0000,  8.105092130664105E-01,  3.728290356043406E-01,  1.616057446569131E-01, -1.342318957959257E-02,  1.565537939576630E-02,  6.786208841012987E-03,
+2461329.708333333, A.D. 2026-Oct-16 05:00:00.0000,  8.099496342246482E-01,  3.734812144640089E-01,  1.618884476072045E-01, -1.343659462304873E-02,  1.564920344653531E-02,  6.783531723161552E-03,
+2461329.750000000, A.D. 2026-Oct-16 06:00:00.0000,  8.093894968647490E-01,  3.741331356904055E-01,  1.621710388799823E-01, -1.344999844681085E-02,  1.564301299871581E-02,  6.780848320350654E-03,
+2461329.791666667, A.D. 2026-Oct-16 07:00:00.0000,  8.088288010379842E-01,  3.747847986793452E-01,  1.624535182133391E-01, -1.346340102871538E-02,  1.563680804865424E-02,  6.778158630986356E-03,
+2461329.833333333, A.D. 2026-Oct-16 08:00:00.0000,  8.082675467965940E-01,  3.754362028264397E-01,  1.627358853452799E-01, -1.347680234337997E-02,  1.563058858903265E-02,  6.775462651893814E-03,
+2461329.875000000, A.D. 2026-Oct-16 09:00:00.0000,  8.077057341938979E-01,  3.760873475269736E-01,  1.630181400136674E-01, -1.349020236653757E-02,  1.562435461389776E-02,  6.772760380495351E-03,
+2461329.916666667, A.D. 2026-Oct-16 10:00:00.0000,  8.071433632842784E-01,  3.767382321759266E-01,  1.633002819562324E-01, -1.350360107178570E-02,  1.561810611485825E-02,  6.770051813157755E-03,
+2461329.958333333, A.D. 2026-Oct-16 11:00:00.0000,  8.065804341231118E-01,  3.773888561680553E-01,  1.635823109106090E-01, -1.351699843560985E-02,  1.561184308682773E-02,  6.767336947665775E-03,
+2461330.000000000, A.D. 2026-Oct-16 12:00:00.0000,  8.060169467668274E-01,  3.780392188978328E-01,  1.638642266143083E-01, -1.353039443274899E-02,  1.560556552288628E-02,  6.764615781027882E-03,
+2461330.041666667, A.D. 2026-Oct-16 13:00:00.0000,  8.054529012729127E-01,  3.786893197594416E-01,  1.641460288047154E-01, -1.354378903792519E-02,  1.559927341607735E-02,  6.761888310226422E-03,
+2461330.083333333, A.D. 2026-Oct-16 14:00:00.0000,  8.048882976998251E-01,  3.793391581468817E-01,  1.644277172191363E-01, -1.355718222681466E-02,  1.559296676071044E-02,  6.759154532794093E-03,
+2461330.125000000, A.D. 2026-Oct-16 15:00:00.0000,  8.043231361071754E-01,  3.799887334537606E-01,  1.647092915947070E-01, -1.357057397389239E-02,  1.558664554875292E-02,  6.756414445245529E-03,
+2461330.166666667, A.D. 2026-Oct-16 16:00:00.0000,  8.037574165555648E-01,  3.806380450734871E-01,  1.649907516684772E-01, -1.358396425437328E-02,  1.558030977572779E-02,  6.753668045643547E-03,
+2461330.208333333, A.D. 2026-Oct-16 17:00:00.0000,  8.031911391065869E-01,  3.812870923992746E-01,  1.652720971774118E-01, -1.359735304224831E-02,  1.557395943482353E-02,  6.750915331033469E-03,
+2461330.250000000, A.D. 2026-Oct-16 18:00:00.0000,  8.026243038229806E-01,  3.819358748239584E-01,  1.655533278583120E-01, -1.361074031140342E-02,  1.556759451615356E-02,  6.748156297133274E-03,
+2461330.291666667, A.D. 2026-Oct-16 19:00:00.0000,  8.020569107686816E-01,  3.825843917396505E-01,  1.658344434476655E-01, -1.362412603936730E-02,  1.556121501763045E-02,  6.745390943032955E-03,
+2461330.333333333, A.D. 2026-Oct-16 20:00:00.0000,  8.014889600084139E-01,  3.832326425388322E-01,  1.661154436821198E-01, -1.363751018497703E-02,  1.555482090037091E-02,  6.742619251879902E-03,
+2461330.375000000, A.D. 2026-Oct-16 21:00:00.0000,  8.009204516079075E-01,  3.838806266139026E-01,  1.663963282982870E-01, -1.365089275482900E-02,  1.554841223256720E-02,  6.739841253234364E-03,
+2461330.416666667, A.D. 2026-Oct-16 22:00:00.0000,  8.003513856344984E-01,  3.845283433557004E-01,  1.666770970321024E-01, -1.366427371504638E-02,  1.554198898548937E-02,  6.737056934637734E-03,
+2461330.458333333, A.D. 2026-Oct-16 23:00:00.0000,  7.997817621556917E-01,  3.851757921569391E-01,  1.669577496203147E-01, -1.367765299517550E-02,  1.553555104845609E-02,  6.734266248117534E-03,
+2461330.500000000, A.D. 2026-Oct-17 00:00:00.0000,  7.992115812402802E-01,  3.858229724094307E-01,  1.672382857992811E-01, -1.369103063254623E-02,  1.552909856356777E-02,  6.731469255265826E-03,
+2461330.541666667, A.D. 2026-Oct-17 01:00:00.0000,  7.986408429589652E-01,  3.864698835028375E-01,  1.675187053044273E-01, -1.370440660385985E-02,  1.552263152760621E-02,  6.728665954692221E-03,
+2461330.583333333, A.D. 2026-Oct-17 02:00:00.0000,  7.980695473826108E-01,  3.871165248287253E-01,  1.677990078720039E-01, -1.371778079708410E-02,  1.551614973525967E-02,  6.725856257396741E-03,
+2461330.625000000, A.D. 2026-Oct-17 03:00:00.0000,  7.974976945828509E-01,  3.877628957789537E-01,  1.680791932383894E-01, -1.373115326288185E-02,  1.550965335923275E-02,  6.723040238238234E-03,
+2461330.666666667, A.D. 2026-Oct-17 04:00:00.0000,  7.969252846335984E-01,  3.884089957424092E-01,  1.683592611386725E-01, -1.374452399939997E-02,  1.550314243993337E-02,  6.720217914739680E-03,
+2461330.708333333, A.D. 2026-Oct-17 05:00:00.0000,  7.963523176092654E-01,  3.890548241090677E-01,  1.686392113084151E-01, -1.375789289902738E-02,  1.549661679103596E-02,  6.717389206129547E-03,
+2461330.750000000, A.D. 2026-Oct-17 06:00:00.0000,  7.957787935844216E-01,  3.897003802706454E-01,  1.689190434839332E-01, -1.377125996473067E-02,  1.549007647481637E-02,  6.714554139402053E-03,
+2461330.791666667, A.D. 2026-Oct-17 07:00:00.0000,  7.952047126359858E-01,  3.903456636157461E-01,  1.691987574001933E-01, -1.378462522514953E-02,  1.548352159882933E-02,  6.711712761180513E-03,
+2461330.833333333, A.D. 2026-Oct-17 08:00:00.0000,  7.946300748419587E-01,  3.909906735328935E-01,  1.694783527921274E-01, -1.379798860408876E-02,  1.547695204482060E-02,  6.708865020203353E-03,
+2461330.875000000, A.D. 2026-Oct-17 09:00:00.0000,  7.940548802801334E-01,  3.916354094129564E-01,  1.697578293956842E-01, -1.381135004334347E-02,  1.547036775077486E-02,  6.706010889588157E-03,
+2461330.916666667, A.D. 2026-Oct-17 10:00:00.0000,  7.934791290302693E-01,  3.922798706446156E-01,  1.700371869458635E-01, -1.382470959448255E-02,  1.546376886366034E-02,  6.703150433046580E-03,
+2461330.958333333, A.D. 2026-Oct-17 11:00:00.0000,  7.929028211736869E-01,  3.929240566155371E-01,  1.703164251772259E-01, -1.383806721297304E-02,  1.545715533192897E-02,  6.700283628226740E-03,
+2461331.000000000, A.D. 2026-Oct-17 12:00:00.0000,  7.923259567918365E-01,  3.935679667150515E-01,  1.705955438250528E-01, -1.385142280305480E-02,  1.545052702957495E-02,  6.697410420509834E-03,
+2461331.041666667, A.D. 2026-Oct-17 13:00:00.0000,  7.917485359672495E-01,  3.942116003319380E-01,  1.708745426243871E-01, -1.386477641305957E-02,  1.544388408774798E-02,  6.694530866750435E-03,
+2461331.083333333, A.D. 2026-Oct-17 14:00:00.0000,  7.911705587844441E-01,  3.948549568533345E-01,  1.711534213095601E-01, -1.387812801980160E-02,  1.543722649182318E-02,  6.691644960600734E-03,
+2461331.125000000, A.D. 2026-Oct-17 15:00:00.0000,  7.905920253284264E-01,  3.954980356673198E-01,  1.714321796153105E-01, -1.389147754315163E-02,  1.543055415490308E-02,  6.688752664400068E-03,
+2461331.166666667, A.D. 2026-Oct-17 16:00:00.0000,  7.900129356848614E-01,  3.961408361621103E-01,  1.717108172764375E-01, -1.390482498393355E-02,  1.542386712405038E-02,  6.685853998546355E-03,
+2461331.208333333, A.D. 2026-Oct-17 17:00:00.0000,  7.894332899413021E-01,  3.967833577245594E-01,  1.719893340271487E-01, -1.391817034109350E-02,  1.541716541297497E-02,  6.682948968980693E-03,
+2461331.250000000, A.D. 2026-Oct-17 18:00:00.0000,  7.888530881862275E-01,  3.974255997418637E-01,  1.722677296018009E-01, -1.393151355868047E-02,  1.541044897559389E-02,  6.680037555729297E-03,
+2461331.291666667, A.D. 2026-Oct-17 19:00:00.0000,  7.882723305086289E-01,  3.980675616013613E-01,  1.725460037348121E-01, -1.394485460129230E-02,  1.540371782055883E-02,  6.677119762540642E-03,
+2461331.333333333, A.D. 2026-Oct-17 20:00:00.0000,  7.876910169990697E-01,  3.987092426895462E-01,  1.728241561602343E-01, -1.395819347789402E-02,  1.539697195841237E-02,  6.674195593982486E-03,
+2461331.375000000, A.D. 2026-Oct-17 21:00:00.0000,  7.871091477493035E-01,  3.993506423930889E-01,  1.731021866121960E-01, -1.397153014620636E-02,  1.539021135422520E-02,  6.671265034921647E-03,
+2461331.416666667, A.D. 2026-Oct-17 22:00:00.0000,  7.865267228518178E-01,  3.999917600984716E-01,  1.733800948247445E-01, -1.398486456169647E-02,  1.538343603562434E-02,  6.668328097325113E-03,
+2461331.458333333, A.D. 2026-Oct-17 23:00:00.0000,  7.859437424002917E-01,  4.006325951915110E-01,  1.736578805316377E-01, -1.399819672337244E-02,  1.537664598590235E-02,  6.665384773949348E-03,
+2461331.500000000, A.D. 2026-Oct-18 00:00:00.0000,  7.853602064896908E-01,  4.012731470584081E-01,  1.739355434668011E-01, -1.401152660024747E-02,  1.536984117062167E-02,  6.662435049876624E-03,
+$$EOE
+**************************************************************************************************************************************************************************************************
+
+TIME
+
+ Times PRIOR to 1962 are UT1, a mean-solar time closely related to the
+prior but now-deprecated GMT. Times AFTER 1962 are in UTC, the current
+civil or "wall-clock" atomic time-scale. UTC is kept within 0.9 seconds
+of UT1 using integer leap-seconds for 1972 and later years.
+
+  Conversion from the internal Barycentric Dynamical Time (TDB) of solar
+system dynamics to the discontinuous civil UT time-scale has not been
+determined for UTC times after the next July or January 1st. Therefore,
+the last known leap-second is used as a constant over future intervals,
+a condition noted here as "UT~".
+
+  Future but as yet undetermined leap-seconds can be expected to change
+time-tags in the "UT~" interval and, in general, the UT scale may not be
+suitable for purposes that assume time-tag continuity in the ephemeris.
+Output in continuous TDB and TT timescales may instead be requested,
+though these are not linked to Earth's rotation.
+
+  Time-tags refer to the UT time-scale conversion from TDB on Earth
+regardless of observer location within the solar system, although clock
+rates may differ due to the local gravity field and no analog to "UT"
+may be defined for that location.
+
+CALENDAR SYSTEM
+
+  Mixed calendar mode was active such that calendar dates after AD 1582-Oct-15
+(if any) are in the modern Gregorian system. Dates prior to 1582-Oct-5 (if any)
+are in the Julian calendar system, which is automatically extended for dates
+prior to its adoption on 45-Jan-1 BC.  The Julian calendar is useful for
+matching historical dates. The Gregorian calendar more accurately corresponds
+to the Earth's orbital motion and seasons. A "Gregorian-only" calendar mode is
+available if such physical events are the primary interest.
+
+REFERENCE FRAME AND COORDINATES
+
+  International Celestial Reference Frame (ICRF)
+
+    The ICRF is an adopted reference frame whose axes are defined relative to
+    fixed extragalactic radio sources distributed across the sky.
+
+    The ICRF was aligned with the prior FK5/J2000 dynamical system at the ~0.02
+    arcsecond level but is not identical and has no associated standard epoch.
+
+  Symbol meaning [1 au= 149597870.700 km, 1 day= 86400.0 s]:
+
+    JDUT     Julian Day Number, Universal Time
+      X      X-component of position vector (au)
+      Y      Y-component of position vector (au)
+      Z      Z-component of position vector (au)
+      VX     X-component of velocity vector (au/day)
+      VY     Y-component of velocity vector (au/day)
+      VZ     Z-component of velocity vector (au/day)
+
+ABERRATIONS AND CORRECTIONS
+
+ Geometric state vectors have NO corrections or aberrations applied.
+
+Computations by ...
+
+    Solar System Dynamics Group, Horizons On-Line Ephemeris System
+    4800 Oak Grove Drive, Jet Propulsion Laboratory
+    Pasadena, CA  91109   USA
+
+    General site: https://ssd.jpl.nasa.gov/
+    Mailing list: https://ssd.jpl.nasa.gov/email_list.html
+    System news : https://ssd.jpl.nasa.gov/horizons/news.html
+    User Guide  : https://ssd.jpl.nasa.gov/horizons/manual.html
+    Connect     : browser        https://ssd.jpl.nasa.gov/horizons/app.html#/x
+                  API            https://ssd-api.jpl.nasa.gov/doc/horizons.html
+                  command-line   telnet ssd.jpl.nasa.gov 6775
+                  e-mail/batch   https://ssd.jpl.nasa.gov/ftp/ssd/horizons_batch.txt
+                  scripts        https://ssd.jpl.nasa.gov/ftp/ssd/SCRIPTS
+    Inquiries   : Jon.D.Giorgini@jpl.nasa.gov
+*******************************************************************************

@@ -138,7 +138,7 @@ class SpaceCompassIssPathTest {
             SpaceCompassCelestialBody.TITAN to titan, SpaceCompassCelestialBody.TESLA_ROADSTER to roadster))
         for (body in SpaceCompassCelestialBody.entries.filter { !it.isEarthSatellite }) {
             val p = calculateSpaceCompassCelestialPath(body, date, zone, now, 45.0, 9.0, 0.0, data)
-            if (body.isVoyager || body.isComet || !body.supportsDailyPath) { assertNull(p); continue }
+            if (body.isVoyager || body.isComet || body.expandedHorizonsTarget != null || !body.supportsDailyPath) { assertNull(p); continue }
             assertNotNull(body.name, p)
             assertEquals(86_400_000L, p!!.samples.last().timeMs - p.samples.first().timeMs)
             assertTrue(p.issPass.isEmpty())

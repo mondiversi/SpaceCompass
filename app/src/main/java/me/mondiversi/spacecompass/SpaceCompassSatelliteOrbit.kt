@@ -38,5 +38,5 @@ internal interface SpaceCompassSatelliteOrbit {
 internal fun SpaceCompassCelestialRemoteData.satelliteOrbit(body: SpaceCompassCelestialBody): SpaceCompassSatelliteOrbit? = when (body) {
     SpaceCompassCelestialBody.ISS -> iss
     SpaceCompassCelestialBody.STARLINK_V3 -> starlink
-    else -> null
+    else -> satellites[body]
 }

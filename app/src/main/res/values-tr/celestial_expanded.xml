@@ -1,0 +1,18 @@
+<resources>
+    <string name="celestial_new_horizons">New Horizons</string>
+    <string name="celestial_jwst">James Webb Space Telescope (JWST)</string>
+    <string name="celestial_parker_solar_probe">Parker Solar Probe</string>
+    <string name="celestial_apophis">99942 Apophis</string>
+    <string name="celestial_atlas_3i">3I/ATLAS</string>
+    <string name="celestial_europa_clipper">Europa Clipper</string>
+    <string name="celestial_juice">JUICE</string>
+    <string name="celestial_hubble">Hubble Space Telescope</string>
+    <string name="celestial_tiangong">Tiangong</string>
+    <string name="celestial_m87">M87*</string>
+    <string name="celestial_proxima_b">Proxima Centauri b</string>
+    <string name="catalog_type_asteroid">Asteroit</string>
+    <string name="celestial_horizons_tracking_note">NASA/JPL tahminleri sınırlı bir tarih aralığını kapsar; canlı telemetri değildir.</string>
+    <string name="celestial_proxima_b_note">Proxima b için ayrı çözülemeyen ana yıldızının yönü kullanılır. Uzaklık yıldız sistemine aittir; yüzey, atmosfer ve üç boyutlu yörünge konumu ölçülmemiştir.</string>
+    <string name="celestial_m87_note">M87* için M87 çekirdeğinin yönü kullanılır. Uzaklık ve kütle yaklaşık referans değerleridir; görüntü bir radyo yeniden yapılandırmasıdır.</string>
+    <string name="celestial_satellite_tracking_note">Dünya yörüngesindeki nesneler güncel yörünge elemanları gerektirir. Geçerlilik dönemi dışında konum verilemez.</string>
+</resources>

@@ -1,9 +1,9 @@
 <resources>
     <string name="info_news_title">Últimas novedades · %1$s</string>
-    <string name="info_news_star_sky" formatted="false">Los avisos de los puntos muestran nombres en negrita, títulos en varias líneas y un fondo ligeramente transparente.</string>
-    <string name="info_news_texture_downloads" formatted="false">Contadores más grandes sin borde, colores de escenario más claros y un azul diurno más luminoso.</string>
-    <string name="info_news_weather" formatted="false">Una X sencilla junto a las flechas de navegación elimina un objeto tras confirmarlo.</string>
-    <string name="info_news_viewer_zoom" formatted="false">Las solicitudes meteorológicas tienen un tiempo límite y permiten reintentar si faltan datos.</string>
-    <string name="info_news_settings" formatted="false">Las 20 imágenes celestes, incluida LV-426, se descargan individualmente en WebP con calidad 90.</string>
-    <string name="info_news_catalog" formatted="false">Paquete de texturas 1.2.1 actualizado, archivos coherentes y reutilización verificada de imágenes guardadas.</string>
+    <string name="info_news_star_sky" formatted="false">Once nuevos objetos rastreables: sondas, telescopios espaciales, Tiangong, Apophis, 3I/ATLAS, M87* y Proxima b.</string>
+    <string name="info_news_texture_downloads" formatted="false">Las efemérides NASA/JPL proporcionan posiciones, distancias y recorridos diarios de sondas y cuerpos menores.</string>
+    <string name="info_news_weather" formatted="false">Hubble y Tiangong usan elementos orbitales recientes y SGP4, con una fuente alternativa.</string>
+    <string name="info_news_viewer_zoom" formatted="false">Las direcciones de referencia y los datos ausentes se explican sin inventar mediciones.</string>
+    <string name="info_news_settings" formatted="false">Nuevas imágenes WebP externas con descarga individual, comprobaciones de integridad y caché sin conexión.</string>
+    <string name="info_news_catalog" formatted="false">Créditos y traducciones actualizados; archivos gráficos individuales sin ZIP de texturas duplicados.</string>
 </resources>

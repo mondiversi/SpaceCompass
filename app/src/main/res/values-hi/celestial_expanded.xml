@@ -1,0 +1,18 @@
+<resources>
+    <string name="celestial_new_horizons">New Horizons</string>
+    <string name="celestial_jwst">James Webb Space Telescope (JWST)</string>
+    <string name="celestial_parker_solar_probe">Parker Solar Probe</string>
+    <string name="celestial_apophis">99942 Apophis</string>
+    <string name="celestial_atlas_3i">3I/ATLAS</string>
+    <string name="celestial_europa_clipper">Europa Clipper</string>
+    <string name="celestial_juice">JUICE</string>
+    <string name="celestial_hubble">Hubble Space Telescope</string>
+    <string name="celestial_tiangong">Tiangong</string>
+    <string name="celestial_m87">M87*</string>
+    <string name="celestial_proxima_b">Proxima Centauri b</string>
+    <string name="catalog_type_asteroid">क्षुद्रग्रह</string>
+    <string name="celestial_horizons_tracking_note">NASA/JPL के पूर्वानुमान सीमित तारीखों तक मान्य हैं; ये लाइव टेलीमेट्री नहीं हैं।</string>
+    <string name="celestial_proxima_b_note">प्रॉक्सिमा b के लिए अलग न दिखने वाले मेज़बान तारे की दिशा उपयोग होती है। दूरी तारकीय प्रणाली की है; सतह, वायुमंडल और त्रि-आयामी कक्षीय स्थिति मापी नहीं गई हैं।</string>
+    <string name="celestial_m87_note">M87* के लिए M87 के केंद्र की दिशा उपयोग होती है। दूरी और द्रव्यमान अनुमानित संदर्भ मान हैं; चित्र रेडियो प्रेक्षण का पुनर्निर्माण है।</string>
+    <string name="celestial_satellite_tracking_note">पृथ्वी की कक्षा के पिंडों के लिए हाल के कक्षीय तत्व चाहिए। उनकी वैध अवधि के बाहर स्थिति उपलब्ध नहीं है।</string>
+</resources>

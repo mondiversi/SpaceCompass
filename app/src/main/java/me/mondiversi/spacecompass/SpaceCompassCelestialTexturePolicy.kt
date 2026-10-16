@@ -17,10 +17,17 @@ internal data class SpaceCompassCelestialTexture(val name: String, val bytes: In
 
 /** Versioned public maps. Digests and dimensions belong to this APK, not a remote manifest. */
 internal object SpaceCompassCelestialTexturePolicy {
-    const val PACK = "celestial-textures-v1.2.1"
-    val legacyPacks = listOf("celestial-textures-v1.2", "celestial-textures-v1.1", "celestial-textures-v1")
+    const val PACK = "celestial-textures-v1.3"
+    val legacyPacks = listOf("celestial-textures-v1.2.1", "celestial-textures-v1.2", "celestial-textures-v1.1", "celestial-textures-v1")
     const val BASE_URL = "https://github.com/mondiversi/SpaceCompass/releases/download/$PACK"
     val images = listOf(
+        SpaceCompassCelestialTexture("new_horizons.webp", 188446, "a091840a32cf3bf82e5cfe7b4e1a3c1d12835272fc4f8f63af08f54fd42dc332", 2048, 1024),
+        SpaceCompassCelestialTexture("jwst.webp", 257716, "cdf8ec0a9125b7c922a5aaeaaa54c752d898dbd616e953145a501016bf05e6d0", 2048, 1024),
+        SpaceCompassCelestialTexture("parker_solar_probe.webp", 112934, "5860724c8fe54da3ada7058c4f9d9ba71d3bc01362886ecaf9c236585c01995b", 2048, 1024),
+        SpaceCompassCelestialTexture("apophis.webp", 183724, "224e6e89cbe2c13c43d68feff6923dfd3b9a4d44060571139c51b4bd700d0933", 2048, 1024),
+        SpaceCompassCelestialTexture("europa_clipper.webp", 255362, "40ed6980917388248647466d2ee45d131c401a23467c0ec9a88e3170b2db04ea", 2048, 1024),
+        SpaceCompassCelestialTexture("hubble.webp", 270612, "0384b18e3daa731c024070757ca39368b45dae456227aa0057b7d90c08ddba13", 2048, 1024),
+        SpaceCompassCelestialTexture("m87.webp", 15118, "a285aa6ec25bdc3791164aebf00515b841adc331c33a856f0305a18527a7e1bb", 2048, 1024),
         SpaceCompassCelestialTexture("lv426.webp", 372474, "31ab7d2e87cb27a51e80b00f5dd3b2e21581c617bec900841a97f7b3309ca7fd", 1774, 887),
         SpaceCompassCelestialTexture("tesla_roadster.webp", 157614, "54c1a76dcb92b1512d9dcb1cd273af4771f7f347ff3abdd124383df934de19fe", 2048, 1024),
         SpaceCompassCelestialTexture("titan.webp", 159238, "fbad4d29d878a5d9b9652ab63924eca29b438fbafdfe1c4b43cd7f68d0371aa0", 2048, 1024),

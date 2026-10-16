@@ -1,9 +1,9 @@
 <resources>
     <string name="info_news_title">Neuigkeiten · %1$s</string>
-    <string name="info_news_star_sky" formatted="false">Punkthinweise zeigen Objektnamen fett, umbrechende Titel und einen leicht transparenten Hintergrund.</string>
-    <string name="info_news_texture_downloads" formatted="false">Größere Zähler ohne Rand, klarere Szenariofarben und ein helleres Blau am Tag.</string>
-    <string name="info_news_weather" formatted="false">Ein schlichtes X neben den Navigationspfeilen entfernt ein Objekt nach Bestätigung.</string>
-    <string name="info_news_viewer_zoom" formatted="false">Wetteranfragen haben ein Zeitlimit und bieten bei fehlenden Daten einen erneuten Versuch an.</string>
-    <string name="info_news_settings" formatted="false">Alle 20 Himmelsbilder, einschließlich LV-426, werden einzeln als WebP mit Qualität 90 heruntergeladen.</string>
-    <string name="info_news_catalog" formatted="false">Aktualisiertes Texturpaket 1.2.1, übereinstimmende Archive und geprüfte Wiederverwendung gespeicherter Bilder.</string>
+    <string name="info_news_star_sky" formatted="false">Elf neue verfolgbare Objekte: Sonden, Weltraumteleskope, Tiangong, Apophis, 3I/ATLAS, M87* und Proxima b.</string>
+    <string name="info_news_texture_downloads" formatted="false">NASA/JPL-Ephemeriden liefern Positionen, Entfernungen und tägliche Himmelsbahnen für Sonden und Kleinkörper.</string>
+    <string name="info_news_weather" formatted="false">Hubble und Tiangong nutzen aktuelle Bahnelemente und SGP4 mit einer alternativen Datenquelle.</string>
+    <string name="info_news_viewer_zoom" formatted="false">Richtungsreferenzen und fehlende Daten werden ohne erfundene Messwerte erklärt.</string>
+    <string name="info_news_settings" formatted="false">Neue externe WebP-Bilder mit Einzelabruf, Integritätsprüfung und Offline-Cache.</string>
+    <string name="info_news_catalog" formatted="false">Aktualisierte Quellen und Übersetzungen; Grafikpakete liefern Einzeldateien ohne doppelte Textur-ZIPs.</string>
 </resources>

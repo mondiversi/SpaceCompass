@@ -1,9 +1,9 @@
 <resources>
     <string name="info_news_title">最近の変更 · %1$s</string>
-    <string name="info_news_star_sky" formatted="false">ポイントの吹き出しに天体名を太字で表示し、長い見出しは折り返します。背景は少し透過します。</string>
-    <string name="info_news_texture_downloads" formatted="false">枠なしの大きなカウンター、見やすいシナリオ色、昼間の明るい青に更新しました。</string>
-    <string name="info_news_weather" formatted="false">移動矢印の横にあるシンプルなXから、確認後に天体を選択解除できます。</string>
-    <string name="info_news_viewer_zoom" formatted="false">天気の取得に制限時間を設け、データを取得できない場合は再試行できます。</string>
-    <string name="info_news_settings" formatted="false">LV-426を含む全20枚の天体画像を、品質90のWebPとして個別にダウンロードします。</string>
-    <string name="info_news_catalog" formatted="false">テクスチャパック1.2.1と整合したアーカイブに更新し、保存済み画像は検証して再利用します。</string>
+    <string name="info_news_star_sky" formatted="false">探査機、宇宙望遠鏡、天宮、アポフィス、3I/ATLAS、M87*、プロキシマbなど、追跡可能な11天体を追加。</string>
+    <string name="info_news_texture_downloads" formatted="false">NASA/JPLの暦を使い、探査機と小天体の位置、距離、一日の空の軌跡を計算。</string>
+    <string name="info_news_weather" formatted="false">ハッブルと天宮は最新の軌道要素とSGP4を使用し、代替データ源にも対応。</string>
+    <string name="info_news_viewer_zoom" formatted="false">参考方向と欠測を明示し、架空の測定値は表示しません。</string>
+    <string name="info_news_settings" formatted="false">新しい外部WebP画像も個別ダウンロード、整合性検証、オフラインキャッシュに対応。</string>
+    <string name="info_news_catalog" formatted="false">出典と翻訳を更新。画像パッケージは重複ZIPを含まず個別ファイルを提供。</string>
 </resources>

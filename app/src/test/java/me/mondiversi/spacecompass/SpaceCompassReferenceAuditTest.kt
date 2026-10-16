@@ -30,7 +30,7 @@ class SpaceCompassReferenceAuditTest {
         assertEquals(6.6e10 / 4.297e6, large / small, 1e-8)
         for (body in SpaceCompassCelestialBody.entries) {
             if (body != SpaceCompassCelestialBody.ALPHA_CENTAURI) assertTrue(spaceCompassStellarComponents(body).isEmpty())
-            if (body !in setOf(SpaceCompassCelestialBody.SAGITTARIUS_A, SpaceCompassCelestialBody.TON_618, SpaceCompassCelestialBody.ANDROMEDA_CORE))
+            if (body !in setOf(SpaceCompassCelestialBody.SAGITTARIUS_A, SpaceCompassCelestialBody.TON_618, SpaceCompassCelestialBody.ANDROMEDA_CORE, SpaceCompassCelestialBody.M87))
                 assertNull(spaceCompassHorizonDiameterKm(body))
             val facts = spaceCompassCelestialFacts(body)
             for (value in listOf(facts.massSolar, facts.rotationSeconds, facts.binaryPeriodDays, facts.diameterKm))

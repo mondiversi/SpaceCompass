@@ -1,7 +1,7 @@
 package me.mondiversi.spacecompass
 
 internal enum class SpaceCompassCatalogType(val label: Int) {
-    PLANET(R.string.catalog_type_planet), DWARF_PLANET(R.string.catalog_type_dwarf), EXOPLANET(R.string.catalog_type_exoplanet),
+    ASTEROID(R.string.catalog_type_asteroid), PLANET(R.string.catalog_type_planet), DWARF_PLANET(R.string.catalog_type_dwarf), EXOPLANET(R.string.catalog_type_exoplanet),
     NATURAL_SATELLITE(R.string.catalog_type_moon), COMET(R.string.catalog_type_comet), STAR(R.string.catalog_type_star),
     BLACK_HOLE(R.string.catalog_type_black_hole), NEUTRON_STAR(R.string.catalog_type_neutron),
     SPACE_STATION(R.string.catalog_type_station), ARTIFICIAL_SATELLITE(R.string.catalog_type_satellite),
@@ -11,6 +11,14 @@ internal enum class SpaceCompassCatalogVisibility(val label: Int) {
     ALL(R.string.catalog_all), ABOVE(R.string.catalog_above_horizon), BELOW(R.string.catalog_below_horizon)
 }
 internal val SpaceCompassCelestialBody.catalogType: SpaceCompassCatalogType get() = when (this) {
+    SpaceCompassCelestialBody.APOPHIS -> SpaceCompassCatalogType.ASTEROID
+    SpaceCompassCelestialBody.ATLAS_3I -> SpaceCompassCatalogType.COMET
+    SpaceCompassCelestialBody.PROXIMA_B -> SpaceCompassCatalogType.EXOPLANET
+    SpaceCompassCelestialBody.M87 -> SpaceCompassCatalogType.BLACK_HOLE
+    SpaceCompassCelestialBody.TIANGONG -> SpaceCompassCatalogType.SPACE_STATION
+    SpaceCompassCelestialBody.HUBBLE, SpaceCompassCelestialBody.JWST -> SpaceCompassCatalogType.ARTIFICIAL_SATELLITE
+    SpaceCompassCelestialBody.NEW_HORIZONS, SpaceCompassCelestialBody.PARKER_SOLAR_PROBE,
+    SpaceCompassCelestialBody.EUROPA_CLIPPER, SpaceCompassCelestialBody.JUICE -> SpaceCompassCatalogType.SPACE_PROBE
     SpaceCompassCelestialBody.ORION_NEBULA -> SpaceCompassCatalogType.NEBULA
     SpaceCompassCelestialBody.PLEIADES -> SpaceCompassCatalogType.STAR_CLUSTER
     SpaceCompassCelestialBody.SIRIUS, SpaceCompassCelestialBody.BETELGEUSE -> SpaceCompassCatalogType.STAR

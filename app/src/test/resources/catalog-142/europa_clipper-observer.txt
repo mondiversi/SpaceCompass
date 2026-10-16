@@ -1,0 +1,216 @@
+API VERSION: 1.2
+API SOURCE: NASA/JPL Horizons API
+
+*******************************************************************************
+ Revised: Sep 30, 2026    Europa Clipper (Spacecraft) / (Sun, Jupiter)     -159
+                       https://science.nasa.gov/mission/europa-clipper/
+                               https://europa.nasa.gov/
+
+ BACKGROUND:
+  NASA's Europa Clipper spacecraft carries a suite of science instruments to
+  assess habitability of Jupiter's ice-covered moon Europa (502) while
+  confirming the existence and nature of an expected sub-surface ocean.
+
+  Launched            : 2024-Oct-14 16:06 UTC (SpaceX Falcon Heavy, KSC LC-39A)
+  Mars gravity assist : 2025-Mar-01
+  Earth gravity assist: 2026-Dec-03
+         Arrival      : 2030-Apr-11 (5.50 year time-of-flight)
+  Mission length      : 4.12 years (prime mission, JOI to E49)
+  End-of-mission      : 2034-Sep   (directed to Ganymede impact ~30d after E49)
+
+  The spacecraft is expected to orbit Jupiter 75 times and conduct 49 flybys
+  of Europa at altitudes as low as 25 km. This will reduce exposure to the high
+  levels of radiation Europa moves within.
+
+  Gravity-assists from Europa (49), Ganymede (7), and Callisto (9) will be used
+  to target different Europa close approach points on each flyby.
+
+ SPACECRAFT:
+  Considering solar arrays and radar antennas, Europa Clipper will be the
+  largest spacecraft NASA has developed to-date for an interplanetary mission.
+  When arrays are deployed, the spacecraft will span 30.5 meters.
+
+  Main body (bus): 3 x 4.7 x 4 meters
+  Dry mass (no propellant): 3241 kg
+  Propellant: 2750 kg
+  Solar power arrays: 2 x 14.2 x 4.1 meters
+
+ SCIENCE INSTRUMENTS
+  Europa Imaging System (EIS)
+  Europa Thermal Emission Imaging System (E-THEMIS)
+  Europa Ultraviolet Spectrograph (Europa-UVS)
+  Mapping Imaging Spectrometer for Europa (MISE)
+  Europa Clipper Magnetometer (ECM)
+  Plasma Instrument for Magnetic Sounding (PIMS)
+  Gravity/Radio Science
+  Radar for Europa Assessment and Sounding: Ocean to Near-surface (REASON)
+  MAss Spectrometer for Planetary EXploration/Europa (MASPEX)
+  SUrface Dust Analyzer (SUDA)
+
+ SPACECRAFT TRAJECTORY (from JPL navigation):
+  Segments marked by '*' below are pre-launch predictions. Then based on
+  tracking data through 2026-Sep-22. Trajectory thereafter is predicted:
+
+ Trajectory files (JPL mission design/nav)                Start         End
+ ----------------------------------------------------  -----------  -----------
+*21F31_MEGA_L241014_A300411_LP05_V7  (16:13 - 17:08)   2024-Oct-14  2024-Oct-14
+ trj_241014-241103-dco2410142047-postLaunch-OD001-v1   2024-Oct-14  2024-Oct-18
+ trj_241018-250130-dco2411082133-cru002-fin-OD018-v14  2024-Oct-18  2024-Nov-23
+ trj_241123-250315-dco2412031638-cru003-fin-OD020-v1   2024-Nov-23  2024-Dec-04
+ trj_241204-250311-dco2501221611-MGATRGa-OD034-v1      2024-Dec-04  2025-Jan-04
+ trj_250104-250614-dco2502250958-cru005-fin-OD042-v1   2025-Jan-04  2025-Feb-15
+ trj_250215-250726-dco2504160749-cruise006-final-OD055 2025-Feb-15  2025-Mar-18
+ trj_250318-260101-dco2507142059-EGATRG1-PRELIM-OD068  2025-Mar-18  2025-May-15
+ trj_250515-250626-dco2507090443-cruise006-reco-OD067  2025-May-15  2025-Jun-26
+ trj_250626-250807-dco2508190634-cruise007-reco-OD071  2025-Jun-26  2025-Aug-07
+ trj_250807-250918-dco2509300424-cruise008-reco-OD073  2025-Aug-07  2026-Sep-18
+ trj_250918-251030-dco2511110259-cruise009-reco-OD075  2025-Sep-18  2025-Oct-30
+ trj_251030-251211-dco2512180748-cruise010-reco-OD077  2025-Oct-30  2025-Dec-11
+ trj_251211-260122-dco2602031544-cruise011-reco-OD079  2025-Dec-11  2026-Jan-22
+ trj_260122-260305-dco2603192035-cruise012-reco-OD081  2026-Jan-22  2026-Mar-05
+ trj_260305-260416-dco2604280459-cruise013-reco-OD083  2026-Mar-05  2026-Apr-16
+ trj_260416-260528-dco2606090943-cruise014-reco-OD085  2026-Apr-16  2026-May-28
+ trj_260528-260709-dco2607211149-cruise015-reco-OD087  2026-May-28  2026-Aug-08
+ trj_260808-270123-dco2609230549-cruise019-pred-OD092  2026-Aug-08  2027-Jan-23
+ ref_241014_340903_21F31_MEGA_L241014_A300411_LP05_V7  2027-Jan-23  2034-Sep-03
+*******************************************************************************
+
+
+*******************************************************************************
+Ephemeris / API_USER Fri Oct 16 06:14:43 2026 Pasadena, USA      / Horizons
+*******************************************************************************
+Target body name: Europa Clipper (spacecraft) (-159) {source: Europa_Clipper_merged}
+Center body name: Earth (399)                     {source: Europa_Clipper_merged}
+Center-site name: (user defined site below)
+*******************************************************************************
+Start time      : A.D. 2026-Oct-16 12:30:00.0000 UT
+Stop  time      : A.D. 2026-Oct-16 12:30:00.5000 UT
+Step-size       : 0 steps
+*******************************************************************************
+Target pole/equ : undefined
+Target radii    : undefined
+Center geodetic : 9.0, 45.0, .100                 {E-lon(deg),Lat(deg),Alt(km)}
+Center cylindric: 9.0, 4517.66159, 4487.41912     {E-lon(deg),Dxy(km),Dz(km)}
+Center pole/equ : ITRF93                          {East-longitude positive}
+Center radii    : 6378.137, 6378.137, 6356.752 km {Equator_a, b, pole_c}
+Target primary  : Earth
+Vis. interferer : MOON (R_eq= 1737.400) km        {source: Europa_Clipper_merge
+Rel. light bend : Sun                             {source: Europa_Clipper_merge
+Rel. lght bnd GM: 1.3271E+11 km^3/s^2
+Atmos refraction: NO (AIRLESS)
+RA format       : HMS
+Time format     : CAL
+Calendar mode   : Mixed Julian/Gregorian
+RTS-only print  : NO
+EOP file        : eop.261015.p270111
+EOP coverage    : DATA-BASED 1962-JAN-20 TO 2026-OCT-15. PREDICTS-> 2027-JAN-10
+Units conversion: 1 au= 149597870.700 km, c= 299792.458 km/s, 1 day= 86400.0 s
+Table cut-offs 1: Elevation (-90.0deg=NO ),Airmass (>38.000=NO), Daylight (NO )
+Table cut-offs 2: Solar elongation (  0.0,180.0=NO ),Local Hour Angle( 0.0=NO )
+Table cut-offs 3: RA/DEC angular rate (     0.0=NO )
+Table format    : Comma Separated Values (spreadsheet)
+***************************************************************************************
+ Date__(UT)__HR:MN:SC.fff, , ,Azi_(a-app), Elev_(a-app),             delta,     deldot,
+***************************************************************************************
+$$SOE
+ 2026-Oct-16 12:30:00.000,*,m, 149.010918,    10.977166,  0.35328093523867,-13.3035101,
+$$EOE
+***************************************************************************************
+Column meaning:
+
+TIME
+
+  Times PRIOR to 1962 are UT1, a mean-solar time closely related to the
+prior but now-deprecated GMT. Times AFTER 1962 are in UTC, the current
+civil or "wall-clock" time-scale. UTC is kept within 0.9 seconds of UT1
+using integer leap-seconds for 1972 and later years.
+
+  Conversion from the internal Barycentric Dynamical Time (TDB) of solar
+system dynamics to the non-uniform civil UT time-scale requested for output
+has not been determined for UTC times after the next July or January 1st.
+Therefore, the last known leap-second is used as a constant over future
+intervals.
+
+  Time tags refer to the UT time-scale conversion from TDB on Earth
+regardless of observer location within the solar system, although clock
+rates may differ due to the local gravity field and no analog to "UT"
+may be defined for that location.
+
+  Any 'b' symbol in the 1st-column denotes a B.C. date. First-column blank
+(" ") denotes an A.D. date.
+
+CALENDAR SYSTEM
+
+  Mixed calendar mode was active such that calendar dates after AD 1582-Oct-15
+(if any) are in the modern Gregorian system. Dates prior to 1582-Oct-5 (if any)
+are in the Julian calendar system, which is automatically extended for dates
+prior to its adoption on 45-Jan-1 BC.  The Julian calendar is useful for
+matching historical dates. The Gregorian calendar more accurately corresponds
+to the Earth's orbital motion and seasons. A "Gregorian-only" calendar mode is
+available if such physical events are the primary interest.
+
+  NOTE: "n.a." in output means quantity "not available" at the print-time.
+
+SOLAR PRESENCE (OBSERVING SITE)
+  Time tag is followed by a blank, then a solar-presence condition code:
+
+       '*'  Daylight (refracted solar upper-limb on or above apparent horizon)
+       'C'  Civil twilight/dawn
+       'N'  Nautical twilight/dawn
+       'A'  Astronomical twilight/dawn
+       ' '  Night OR geocentric ephemeris
+
+LUNAR PRESENCE WITH TARGET RISE/TRANSIT/SET EVENT MARKER (OBSERVING SITE)
+  The solar-presence code column is immediately followed by another marker:
+
+       'm'  Refracted upper-limb of Moon on or above apparent horizon
+       ' '  Refracted upper-limb of Moon below apparent horizon OR geocentric
+
+  The lunar presence marker (an ongoing state) can be over-ridden by a target
+  event marker if an event has occurred since the last output step:
+
+       'r'  Rise          (target body on or went above cut-off RTS elevation)
+       'e'  Elevation max (target body maximum elevation angle has occurred)
+       't'  Transit       (target body at or passed through observer meridian)
+       's'  Set           (target body on or went below cut-off RTS elevation)
+
+RTS MARKERS (TVH)
+  Rise and set are with respect to the reference ellipsoid true visual horizon
+defined by the elevation cut-off angle. Horizon dip and yellow-light refraction
+(Earth only) are considered. Accuracy is < or = to twice the requested search
+step-size.
+
+ 'Azi_(a-app), Elev_(a-app),' =
+  Airless apparent azimuth and elevation of target center. Compensated
+for light-time, the gravitational deflection of light, stellar aberration,
+precession and nutation. Azimuth is measured clockwise from north:
+
+  North(0) -> East(90) -> South(180) -> West(270) -> North (360)
+
+Elevation angle is with respect to a plane perpendicular to the reference
+surface local zenith direction. TOPOCENTRIC ONLY.  Units: DEGREES
+
+ 'delta,     deldot,' =
+   Apparent range ("delta", light-time aberrated) and range-rate ("delta-dot")
+of the target center relative to the observer. A positive "deldot" means the
+target center is moving away from the observer, negative indicates movement
+toward the observer.  Units: AU and KM/S
+
+Computations by ...
+
+    Solar System Dynamics Group, Horizons On-Line Ephemeris System
+    4800 Oak Grove Drive, Jet Propulsion Laboratory
+    Pasadena, CA  91109   USA
+
+    General site: https://ssd.jpl.nasa.gov/
+    Mailing list: https://ssd.jpl.nasa.gov/email_list.html
+    System news : https://ssd.jpl.nasa.gov/horizons/news.html
+    User Guide  : https://ssd.jpl.nasa.gov/horizons/manual.html
+    Connect     : browser        https://ssd.jpl.nasa.gov/horizons/app.html#/x
+                  API            https://ssd-api.jpl.nasa.gov/doc/horizons.html
+                  command-line   telnet ssd.jpl.nasa.gov 6775
+                  e-mail/batch   https://ssd.jpl.nasa.gov/ftp/ssd/horizons_batch.txt
+                  scripts        https://ssd.jpl.nasa.gov/ftp/ssd/SCRIPTS
+    Inquiries   : Jon.D.Giorgini@jpl.nasa.gov
+
+***************************************************************************************

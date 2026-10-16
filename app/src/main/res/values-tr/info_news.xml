@@ -1,9 +1,9 @@
 <resources>
     <string name="info_news_title">Son yenilikler · %1$s</string>
-    <string name="info_news_star_sky" formatted="false">Nokta bilgi balonları kalın nesne adları, satırlara bölünen başlıklar ve hafif saydam bir arka plan gösterir.</string>
-    <string name="info_news_texture_downloads" formatted="false">Daha büyük kenarlıksız sayaçlar, daha belirgin senaryo renkleri ve daha açık gündüz mavisi.</string>
-    <string name="info_news_weather" formatted="false">Gezinme oklarının yanındaki sade X, onaylandıktan sonra nesneyi kaldırır.</string>
-    <string name="info_news_viewer_zoom" formatted="false">Hava durumu istekleri zaman aşımıyla sınırlandırılır; veri yoksa yeniden denenebilir.</string>
-    <string name="info_news_settings" formatted="false">LV-426 dahil 20 gök cismi görüntüsünün tümü, 90 kaliteli WebP dosyaları olarak tek tek indirilir.</string>
-    <string name="info_news_catalog" formatted="false">Güncellenmiş 1.2.1 doku paketi, tutarlı arşivler ve kayıtlı görüntülerin doğrulanmış yeniden kullanımı.</string>
+    <string name="info_news_star_sky" formatted="false">İzlenebilen on bir yeni nesne: sondalar, uzay teleskopları, Tiangong, Apophis, 3I/ATLAS, M87* ve Proxima b.</string>
+    <string name="info_news_texture_downloads" formatted="false">NASA/JPL efemerisleri sondalar ve küçük cisimler için konum, uzaklık ve günlük gökyüzü yolu sağlar.</string>
+    <string name="info_news_weather" formatted="false">Hubble ve Tiangong güncel yörünge elemanları ile SGP4 kullanır; alternatif veri kaynağı vardır.</string>
+    <string name="info_news_viewer_zoom" formatted="false">Referans yönleri ve eksik veriler uydurma ölçümler olmadan açıklanır.</string>
+    <string name="info_news_settings" formatted="false">Yeni harici WebP görüntüleri tek tek indirilir, bütünlüğü doğrulanır ve çevrimdışı önbelleğe alınır.</string>
+    <string name="info_news_catalog" formatted="false">Kaynaklar ve çeviriler güncellendi; grafik paketlerinde yinelenen doku ZIP dosyaları bulunmaz.</string>
 </resources>

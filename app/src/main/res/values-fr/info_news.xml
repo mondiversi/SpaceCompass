@@ -1,9 +1,9 @@
 <resources>
     <string name="info_news_title">Dernières nouveautés · %1$s</string>
-    <string name="info_news_star_sky" formatted="false">Les bulles des points affichent les noms en gras, des titres sur plusieurs lignes et un fond légèrement transparent.</string>
-    <string name="info_news_texture_downloads" formatted="false">Compteurs plus grands sans bordure, couleurs de scénario plus claires et bleu diurne plus lumineux.</string>
-    <string name="info_news_weather" formatted="false">Une simple croix à côté des flèches de navigation retire un objet après confirmation.</string>
-    <string name="info_news_viewer_zoom" formatted="false">Les requêtes météo ont un délai maximal et proposent de réessayer si les données manquent.</string>
-    <string name="info_news_settings" formatted="false">Les 20 images célestes, dont LV-426, sont téléchargées individuellement en WebP de qualité 90.</string>
-    <string name="info_news_catalog" formatted="false">Pack de textures 1.2.1 mis à jour, archives cohérentes et réutilisation vérifiée des images enregistrées.</string>
+    <string name="info_news_star_sky" formatted="false">Onze nouveaux objets suivis : sondes, télescopes spatiaux, Tiangong, Apophis, 3I/ATLAS, M87* et Proxima b.</string>
+    <string name="info_news_texture_downloads" formatted="false">Les éphémérides NASA/JPL calculent les positions, distances et parcours quotidiens des sondes et petits corps.</string>
+    <string name="info_news_weather" formatted="false">Hubble et Tiangong utilisent des éléments orbitaux récents et SGP4, avec une source alternative.</string>
+    <string name="info_news_viewer_zoom" formatted="false">Les directions de référence et données manquantes sont expliquées sans mesures inventées.</string>
+    <string name="info_news_settings" formatted="false">Nouvelles images WebP externes avec téléchargement individuel, contrôle d’intégrité et cache hors ligne.</string>
+    <string name="info_news_catalog" formatted="false">Crédits et traductions actualisés ; fichiers graphiques individuels sans ZIP de textures en double.</string>
 </resources>

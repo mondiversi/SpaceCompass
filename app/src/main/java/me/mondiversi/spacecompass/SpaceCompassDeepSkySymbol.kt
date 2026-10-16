@@ -17,7 +17,7 @@ internal fun SpaceCompassDeepSkySymbol(body: SpaceCompassCelestialBody, modifier
 internal fun androidx.compose.ui.graphics.drawscope.DrawScope.drawSpaceCompassDeepSkySymbol(body: SpaceCompassCelestialBody, opacity: Float = 1f) {
     val r = size.minDimension * 0.32f
     val tint = spaceCompassCelestialPathTint(body)
-    if (body == SpaceCompassCelestialBody.TRAPPIST_1_E) {
+    if (body == SpaceCompassCelestialBody.TRAPPIST_1_E || body == SpaceCompassCelestialBody.PROXIMA_B) {
         // A neutral rocky-world symbol, not an observed map or an ocean claim.
         drawCircle(Color(0xff8b8177).copy(alpha = opacity), r * .9f)
         drawCircle(Color(0xffc4b4a0).copy(alpha = opacity * .65f), r * .23f, center - Offset(r * .28f, r * .24f))

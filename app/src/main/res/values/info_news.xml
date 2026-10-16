@@ -1,9 +1,9 @@
 <resources>
     <string name="info_news_title">Latest news · %1$s</string>
-    <string name="info_news_star_sky" formatted="false">Point callouts show bold object names, wrapping titles and a lightly translucent background.</string>
-    <string name="info_news_texture_downloads" formatted="false">Bigger borderless counters, clearer scenario colors and a lighter daytime blue.</string>
-    <string name="info_news_weather" formatted="false">A plain X beside the navigation arrows removes an object after confirmation.</string>
-    <string name="info_news_viewer_zoom" formatted="false">Weather requests time out safely and offer Retry when data are unavailable.</string>
-    <string name="info_news_settings" formatted="false">All 20 celestial images, including LV-426, are downloaded individually as quality-90 WebP files.</string>
-    <string name="info_news_catalog" formatted="false">Updated texture pack 1.2.1, matching archives and verified image-cache reuse.</string>
+    <string name="info_news_star_sky" formatted="false">Eleven new trackable objects: probes, space telescopes, Tiangong, Apophis, 3I/ATLAS, M87* and Proxima b.</string>
+    <string name="info_news_texture_downloads" formatted="false">NASA/JPL ephemerides drive moving probes and small bodies, including distance and daily sky paths.</string>
+    <string name="info_news_weather" formatted="false">Hubble and Tiangong use recent orbital elements and SGP4, with an alternative data source.</string>
+    <string name="info_news_viewer_zoom" formatted="false">Distant-object directions and missing data are explained explicitly, without invented measurements.</string>
+    <string name="info_news_settings" formatted="false">New external WebP images retain individual downloads, integrity checks and offline caching.</string>
+    <string name="info_news_catalog" formatted="false">Updated credits and translations; graphics releases now provide individual files without duplicate texture ZIPs.</string>
 </resources>

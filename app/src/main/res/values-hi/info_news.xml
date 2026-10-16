@@ -1,9 +1,9 @@
 <resources>
     <string name="info_news_title">हाल के बदलाव · %1$s</string>
-    <string name="info_news_star_sky" formatted="false">बिंदुओं के विवरण में वस्तु का नाम मोटे अक्षरों में, कई पंक्तियों वाले शीर्षक और हल्की पारदर्शी पृष्ठभूमि दिखती है।</string>
-    <string name="info_news_texture_downloads" formatted="false">बड़े और बिना किनारे वाले काउंटर, परिदृश्य के स्पष्ट रंग और दिन में हल्का नीला रंग।</string>
-    <string name="info_news_weather" formatted="false">नेविगेशन तीरों के पास साधारण X से पुष्टि के बाद वस्तु हटाई जा सकती है।</string>
-    <string name="info_news_viewer_zoom" formatted="false">मौसम अनुरोधों की समय सीमा है और डेटा उपलब्ध न होने पर फिर कोशिश की जा सकती है।</string>
-    <string name="info_news_settings" formatted="false">LV-426 सहित सभी 20 आकाशीय चित्र 90 गुणवत्ता की WebP फ़ाइलों के रूप में अलग-अलग डाउनलोड होते हैं।</string>
-    <string name="info_news_catalog" formatted="false">अपडेट किया गया टेक्सचर पैक 1.2.1, मेल खाते संग्रह और सहेजे चित्रों का सत्यापित पुनः उपयोग।</string>
+    <string name="info_news_star_sky" formatted="false">ग्यारह नए ट्रैक करने योग्य पिंड: यान, अंतरिक्ष दूरबीनें, Tiangong, Apophis, 3I/ATLAS, M87* और Proxima b।</string>
+    <string name="info_news_texture_downloads" formatted="false">NASA/JPL पंचांग यानों और छोटे पिंडों की स्थिति, दूरी और दैनिक आकाश पथ देते हैं।</string>
+    <string name="info_news_weather" formatted="false">Hubble और Tiangong हाल के कक्षीय तत्व और SGP4 उपयोग करते हैं, वैकल्पिक डेटा स्रोत के साथ।</string>
+    <string name="info_news_viewer_zoom" formatted="false">संदर्भ दिशाएँ और अनुपलब्ध डेटा स्पष्ट हैं; काल्पनिक माप नहीं दिए जाते।</string>
+    <string name="info_news_settings" formatted="false">नई बाहरी WebP छवियाँ अलग-अलग डाउनलोड, अखंडता जाँच और ऑफलाइन कैश बनाए रखती हैं।</string>
+    <string name="info_news_catalog" formatted="false">स्रोत और अनुवाद अपडेट किए गए; ग्राफिक्स में डुप्लिकेट टेक्सचर ZIP के बिना अलग फाइलें हैं।</string>
 </resources>

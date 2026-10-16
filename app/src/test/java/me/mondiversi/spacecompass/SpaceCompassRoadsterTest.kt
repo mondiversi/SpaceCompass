@@ -19,13 +19,13 @@ class SpaceCompassRoadsterTest {
     @Test fun cataloguePreservesDefaultsAndRestoresTheNewStableIdentifier() {
         val defaults = SpaceCompassCelestialSelection()
         assertEquals(setOf(SpaceCompassCelestialBody.SUN, SpaceCompassCelestialBody.MOON), defaults.selected)
-        assertEquals(body, SpaceCompassCelestialBody.entries.last())
+        assertEquals(body, SpaceCompassCelestialBody.valueOf("TESLA_ROADSTER"))
         val restored = restoreSpaceCompassCelestialSelection(setOf("SUN", "TESLA_ROADSTER"), "TESLA_ROADSTER")
         assertEquals(body, restored.active)
         assertEquals(1, spaceCompassCelestialCatalogOrder.count { it == body })
-        assertEquals(spaceCompassCelestialCatalogOrder.indexOf(SpaceCompassCelestialBody.MOON) + 1,
+        assertTrue(spaceCompassCelestialCatalogOrder.indexOf(SpaceCompassCelestialBody.MOON) <
             spaceCompassCelestialCatalogOrder.indexOf(body))
-        assertEquals(spaceCompassCelestialCatalogOrder.indexOf(body) + 1,
+        assertTrue(spaceCompassCelestialCatalogOrder.indexOf(body) <
             spaceCompassCelestialCatalogOrder.indexOf(SpaceCompassCelestialBody.MARS))
     }
 

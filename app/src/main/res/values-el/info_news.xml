@@ -1,9 +1,9 @@
 <resources>
     <string name="info_news_title">Τελευταία νέα · %1$s</string>
-    <string name="info_news_star_sky" formatted="false">Οι ετικέτες σημείων εμφανίζουν έντονα ονόματα αντικειμένων, τίτλους πολλών γραμμών και ελαφρώς διαφανές φόντο.</string>
-    <string name="info_news_texture_downloads" formatted="false">Μεγαλύτεροι μετρητές χωρίς περίγραμμα, πιο ευδιάκριτα χρώματα σεναρίου και φωτεινότερο μπλε την ημέρα.</string>
-    <string name="info_news_weather" formatted="false">Ένα απλό Χ δίπλα στα βέλη πλοήγησης αφαιρεί ένα αντικείμενο μετά από επιβεβαίωση.</string>
-    <string name="info_news_viewer_zoom" formatted="false">Τα αιτήματα καιρού έχουν χρονικό όριο και επιτρέπουν νέα προσπάθεια όταν λείπουν δεδομένα.</string>
-    <string name="info_news_settings" formatted="false">Και οι 20 εικόνες ουράνιων αντικειμένων, μαζί με την LV-426, λαμβάνονται χωριστά σε WebP ποιότητας 90.</string>
-    <string name="info_news_catalog" formatted="false">Ενημερωμένο πακέτο υφών 1.2.1, συνεπή αρχεία και επαληθευμένη επαναχρησιμοποίηση αποθηκευμένων εικόνων.</string>
+    <string name="info_news_star_sky" formatted="false">Έντεκα νέα ανιχνεύσιμα αντικείμενα: ανιχνευτές, διαστημικά τηλεσκόπια, Tiangong, Apophis, 3I/ATLAS, M87* και Proxima b.</string>
+    <string name="info_news_texture_downloads" formatted="false">Οι εφημερίδες NASA/JPL δίνουν θέσεις, αποστάσεις και ημερήσιες διαδρομές για ανιχνευτές και μικρά σώματα.</string>
+    <string name="info_news_weather" formatted="false">Hubble και Tiangong χρησιμοποιούν πρόσφατα τροχιακά στοιχεία και SGP4, με εναλλακτική πηγή δεδομένων.</string>
+    <string name="info_news_viewer_zoom" formatted="false">Οι διευθύνσεις αναφοράς και τα ελλείποντα δεδομένα εξηγούνται χωρίς επινοημένες μετρήσεις.</string>
+    <string name="info_news_settings" formatted="false">Νέες εξωτερικές εικόνες WebP με ατομική λήψη, έλεγχο ακεραιότητας και προσωρινή μνήμη εκτός σύνδεσης.</string>
+    <string name="info_news_catalog" formatted="false">Ενημερωμένες πηγές και μεταφράσεις· μεμονωμένα αρχεία γραφικών χωρίς διπλά ZIP υφών.</string>
 </resources>

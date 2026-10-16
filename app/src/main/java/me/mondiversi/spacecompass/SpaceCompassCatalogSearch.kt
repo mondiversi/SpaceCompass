@@ -17,6 +17,18 @@ internal fun spaceCompassSearchCatalog(available: List<SpaceCompassCelestialBody
 }
 
 private val SpaceCompassCelestialBody.catalogAliases: List<String> get() = when (this) {
+    SpaceCompassCelestialBody.NEW_HORIZONS -> listOf("New Horizons","NH","2006-001A")
+    SpaceCompassCelestialBody.JWST -> listOf("James Webb Space Telescope","Webb","JWST","2021-130A")
+    SpaceCompassCelestialBody.PARKER_SOLAR_PROBE -> listOf("Parker Solar Probe","PSP","Solar Probe Plus")
+    SpaceCompassCelestialBody.APOPHIS -> listOf("99942","2004 MN4","Apophis")
+    SpaceCompassCelestialBody.ATLAS_3I -> listOf("3I/ATLAS","C/2025 N1","interstellar")
+    SpaceCompassCelestialBody.EUROPA_CLIPPER -> listOf("Europa Clipper","Clipper")
+    SpaceCompassCelestialBody.JUICE -> listOf("Jupiter Icy Moons Explorer","JUICE")
+    SpaceCompassCelestialBody.HUBBLE -> listOf("Hubble Space Telescope","HST","20580")
+    SpaceCompassCelestialBody.TIANGONG -> listOf("Tiangong","CSS","Tianhe","48274")
+    SpaceCompassCelestialBody.M87 -> listOf("M87*","NGC 4486","Virgo A")
+    SpaceCompassCelestialBody.PROXIMA_B -> listOf("Proxima Centauri b","Proxima b","Alpha Centauri C b")
+
     SpaceCompassCelestialBody.TESLA_ROADSTER -> listOf("Starman", "SpaceX Roadster", "2018-017A", "43205")
     SpaceCompassCelestialBody.SIRIUS -> listOf("Sirius", "Sirio", "Alpha Canis Majoris", "HD 48915")
     SpaceCompassCelestialBody.BETELGEUSE -> listOf("Betelgeuse", "Betelgeux", "Alpha Orionis", "HD 39801")

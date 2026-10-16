@@ -1,9 +1,9 @@
 <resources>
     <string name="info_news_title">آخر المستجدات · %1$s</string>
-    <string name="info_news_star_sky" formatted="false">تعرض فقاعات النقاط أسماء الأجرام بخط عريض، وعناوين تلتف على عدة أسطر وخلفية شفافة قليلًا.</string>
-    <string name="info_news_texture_downloads" formatted="false">عدادات أكبر بلا حدود، وألوان أوضح للسيناريو وأزرق نهاري أفتح.</string>
-    <string name="info_news_weather" formatted="false">تزيل علامة X البسيطة بجوار أسهم التنقل الجرم بعد التأكيد.</string>
-    <string name="info_news_viewer_zoom" formatted="false">لطلبات الطقس مهلة زمنية، ويمكن إعادة المحاولة عند عدم توفر البيانات.</string>
-    <string name="info_news_settings" formatted="false">تُنزل صور الأجرام العشرون، ومنها LV-426، كل واحدة على حدة بتنسيق WebP وجودة 90.</string>
-    <string name="info_news_catalog" formatted="false">حزمة خامات محدثة 1.2.1، وأرشيفات متطابقة وإعادة استخدام الصور المحفوظة بعد التحقق منها.</string>
+    <string name="info_news_star_sky" formatted="false">أحد عشر جرماً جديداً قابلاً للتتبع: مسابير وتلسكوبات فضائية وTiangong وApophis و3I/ATLAS وM87* وبروكسيما b.</string>
+    <string name="info_news_texture_downloads" formatted="false">توفر جداول NASA/JPL مواقع المسابير والأجسام الصغيرة ومسافاتها ومساراتها اليومية في السماء.</string>
+    <string name="info_news_weather" formatted="false">يستخدم Hubble وTiangong عناصر مدارية حديثة وSGP4 مع مصدر بيانات بديل.</string>
+    <string name="info_news_viewer_zoom" formatted="false">تُوضَّح الاتجاهات المرجعية والبيانات المفقودة دون اختلاق قياسات.</string>
+    <string name="info_news_settings" formatted="false">صور WebP خارجية جديدة مع تنزيل فردي وفحص سلامة وتخزين للاستخدام دون اتصال.</string>
+    <string name="info_news_catalog" formatted="false">تحديث المصادر والترجمات؛ ملفات رسومية فردية دون أرشيفات ZIP مكررة للأنسجة.</string>
 </resources>

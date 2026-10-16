@@ -1,0 +1,18 @@
+<resources>
+    <string name="celestial_new_horizons">New Horizons</string>
+    <string name="celestial_jwst">James Webb Space Telescope (JWST)</string>
+    <string name="celestial_parker_solar_probe">Parker Solar Probe</string>
+    <string name="celestial_apophis">99942 Apophis</string>
+    <string name="celestial_atlas_3i">3I/ATLAS</string>
+    <string name="celestial_europa_clipper">Europa Clipper</string>
+    <string name="celestial_juice">JUICE</string>
+    <string name="celestial_hubble">Hubble Space Telescope</string>
+    <string name="celestial_tiangong">Tiangong</string>
+    <string name="celestial_m87">M87*</string>
+    <string name="celestial_proxima_b">Proxima Centauri b</string>
+    <string name="catalog_type_asteroid">Asteroïde</string>
+    <string name="celestial_horizons_tracking_note">NASA/JPL-voorspellingen gelden voor een beperkte periode en zijn geen live telemetrie.</string>
+    <string name="celestial_proxima_b_note">Proxima b gebruikt de richting van zijn niet afzonderlijk opgeloste moederster. De afstand geldt voor het sterrenstelsel; oppervlak, atmosfeer en driedimensionale baanpositie zijn niet gemeten.</string>
+    <string name="celestial_m87_note">M87* gebruikt de richting van de kern van M87. Afstand en massa zijn benaderde referentiewaarden; de afbeelding is een radioreconstructie.</string>
+    <string name="celestial_satellite_tracking_note">Objecten in een aardbaan vereisen recente baanelementen. Buiten hun geldigheidsperiode zijn geen posities beschikbaar.</string>
+</resources>

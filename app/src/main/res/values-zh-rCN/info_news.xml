@@ -1,9 +1,9 @@
 <resources>
     <string name="info_news_title">最新变化 · %1$s</string>
-    <string name="info_news_star_sky" formatted="false">点位气泡以粗体显示天体名称，长标题自动换行，背景略微透明。</string>
-    <string name="info_news_texture_downloads" formatted="false">更大的无边框计数器、更清晰的场景配色和更明亮的日间蓝色。</string>
-    <string name="info_news_weather" formatted="false">导航箭头旁的简洁X可在确认后取消选择天体。</string>
-    <string name="info_news_viewer_zoom" formatted="false">天气请求设有超时限制，数据不可用时可重试。</string>
-    <string name="info_news_settings" formatted="false">包括LV-426在内的全部20张天体图像均以质量90的WebP格式逐张下载。</string>
-    <string name="info_news_catalog" formatted="false">更新至纹理包1.2.1，压缩包内容保持一致，并验证后复用已保存的图像。</string>
+    <string name="info_news_star_sky" formatted="false">新增11个可追踪对象：探测器、空间望远镜、天宫、阿波菲斯、3I/ATLAS、M87*和比邻星b。</string>
+    <string name="info_news_texture_downloads" formatted="false">使用NASA/JPL星历计算探测器和小天体的位置、距离及每日天空轨迹。</string>
+    <string name="info_news_weather" formatted="false">哈勃和天宫使用近期轨道要素与SGP4，并支持备用数据源。</string>
+    <string name="info_news_viewer_zoom" formatted="false">明确说明参考方向和缺失数据，不编造测量值。</string>
+    <string name="info_news_settings" formatted="false">新增外部WebP图像，保留单独下载、完整性校验与离线缓存。</string>
+    <string name="info_news_catalog" formatted="false">更新来源与翻译；图像包提供独立文件，不再重复附加纹理ZIP。</string>
 </resources>

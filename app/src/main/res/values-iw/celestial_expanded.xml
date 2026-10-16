@@ -1,0 +1,18 @@
+<resources>
+    <string name="celestial_new_horizons">New Horizons</string>
+    <string name="celestial_jwst">James Webb Space Telescope (JWST)</string>
+    <string name="celestial_parker_solar_probe">Parker Solar Probe</string>
+    <string name="celestial_apophis">99942 Apophis</string>
+    <string name="celestial_atlas_3i">3I/ATLAS</string>
+    <string name="celestial_europa_clipper">Europa Clipper</string>
+    <string name="celestial_juice">JUICE</string>
+    <string name="celestial_hubble">Hubble Space Telescope</string>
+    <string name="celestial_tiangong">Tiangong</string>
+    <string name="celestial_m87">M87*</string>
+    <string name="celestial_proxima_b">Proxima Centauri b</string>
+    <string name="catalog_type_asteroid">אסטרואיד</string>
+    <string name="celestial_horizons_tracking_note">תחזיות NASA/JPL תקפות לטווח תאריכים מוגבל ואינן טלמטריה חיה.</string>
+    <string name="celestial_proxima_b_note">פרוקסימה b משתמש בכיוון הכוכב המארח שאינו מופרד ממנו בתצפית. המרחק מתייחס למערכת הכוכב; פני השטח, האטמוספרה והמיקום התלת-ממדי במסלול לא נמדדו.</string>
+    <string name="celestial_m87_note">M87* משתמש בכיוון הגרעין של M87. המרחק והמסה הם ערכי ייחוס מקורבים; התמונה היא שחזור רדיו.</string>
+    <string name="celestial_satellite_tracking_note">עצמים במסלול סביב כדור הארץ דורשים נתוני מסלול עדכניים. מיקומים מחוץ לתקופת התוקף אינם זמינים.</string>
+</resources>

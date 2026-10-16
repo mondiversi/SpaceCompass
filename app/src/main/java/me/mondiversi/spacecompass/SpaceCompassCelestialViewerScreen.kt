@@ -197,6 +197,10 @@ internal fun SpaceCompassCelestialViewerScreen(body: SpaceCompassCelestialBody, 
             Column(Modifier.fillMaxWidth().padding(start = spaceCompassDetailScrollInset, top = 4.dp,
                 end = spaceCompassDetailScrollInset)
                 .testTag("celestial-view-notes"), verticalArrangement = Arrangement.spacedBy(8.dp)) {
+                if (body.expandedHorizonsTarget != null) Text(stringResource(R.string.celestial_horizons_tracking_note),
+                    color = secondaryText, fontSize = 11.sp, lineHeight = 14.sp)
+                if (body.catalogSatellite != null) Text(stringResource(R.string.celestial_satellite_tracking_note),
+                    color = secondaryText, fontSize = 11.sp, lineHeight = 14.sp)
                 if (body.isComet) Text(stringResource(R.string.celestial_comet_note), color = secondaryText, fontSize = 11.sp, lineHeight = 14.sp)
                 if (body == SpaceCompassCelestialBody.STEPHENSON_2_18)
                     Text(stringResource(R.string.celestial_mass_unavailable_note), color = secondaryText, fontSize = 11.sp, lineHeight = 14.sp)

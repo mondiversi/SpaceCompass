@@ -5,6 +5,17 @@ import androidx.compose.ui.graphics.lerp
 
 /** Object-specific, sky-readable colours stay identical for one or many selected objects. */
 internal fun spaceCompassCelestialPathTint(body: SpaceCompassCelestialBody): Color = when (body) {
+    SpaceCompassCelestialBody.NEW_HORIZONS -> Color(0xFFB7F0A1)
+    SpaceCompassCelestialBody.JWST -> Color(0xFFF4D76A)
+    SpaceCompassCelestialBody.PARKER_SOLAR_PROBE -> Color(0xFFFF9C59)
+    SpaceCompassCelestialBody.APOPHIS -> Color(0xFFC0C1DA)
+    SpaceCompassCelestialBody.ATLAS_3I -> Color(0xFF83E0BC)
+    SpaceCompassCelestialBody.EUROPA_CLIPPER -> Color(0xFF9DB7FF)
+    SpaceCompassCelestialBody.JUICE -> Color(0xFFCE9DEC)
+    SpaceCompassCelestialBody.HUBBLE -> Color(0xFF69DADF)
+    SpaceCompassCelestialBody.TIANGONG -> Color(0xFFFFA5B3)
+    SpaceCompassCelestialBody.M87 -> Color(0xFFFFB56C)
+    SpaceCompassCelestialBody.PROXIMA_B -> Color(0xFF93DAC0)
     SpaceCompassCelestialBody.TESLA_ROADSTER -> Color(0xFFFF6F86)
     SpaceCompassCelestialBody.SIRIUS -> Color(0xFFB9DEFF)
     SpaceCompassCelestialBody.BETELGEUSE -> Color(0xFFFFB08C)

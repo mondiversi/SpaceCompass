@@ -1,0 +1,18 @@
+<resources>
+    <string name="celestial_new_horizons">New Horizons</string>
+    <string name="celestial_jwst">James Webb Space Telescope (JWST)</string>
+    <string name="celestial_parker_solar_probe">Parker Solar Probe</string>
+    <string name="celestial_apophis">99942 Apophis</string>
+    <string name="celestial_atlas_3i">3I/ATLAS</string>
+    <string name="celestial_europa_clipper">Europa Clipper</string>
+    <string name="celestial_juice">JUICE</string>
+    <string name="celestial_hubble">Hubble Space Telescope</string>
+    <string name="celestial_tiangong">Tiangong</string>
+    <string name="celestial_m87">M87*</string>
+    <string name="celestial_proxima_b">Proxima Centauri b</string>
+    <string name="catalog_type_asteroid">Planetoida</string>
+    <string name="celestial_horizons_tracking_note">Prognozy NASA/JPL obejmują ograniczony okres; nie są telemetrią na żywo.</string>
+    <string name="celestial_proxima_b_note">Proxima b używa kierunku swojej nierozdzielonej gwiazdy macierzystej. Odległość dotyczy układu; powierzchnia, atmosfera i trójwymiarowa pozycja orbitalna nie są zmierzone.</string>
+    <string name="celestial_m87_note">M87* używa kierunku jądra M87. Odległość i masa to przybliżone wartości odniesienia; obraz jest rekonstrukcją radiową.</string>
+    <string name="celestial_satellite_tracking_note">Obiekty na orbicie Ziemi wymagają aktualnych elementów orbitalnych. Pozycje poza okresem ważności są niedostępne.</string>
+</resources>

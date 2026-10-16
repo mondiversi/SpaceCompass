@@ -1,9 +1,9 @@
 <resources>
     <string name="info_news_title">Ultime novità · %1$s</string>
-    <string name="info_news_star_sky" formatted="false">I fumetti mostrano il nome dell’oggetto in grassetto, titoli a capo e uno sfondo leggermente trasparente.</string>
-    <string name="info_news_texture_downloads" formatted="false">Contatori più grandi e senza bordo, colori dello scenario più chiari e blu diurno più luminoso.</string>
-    <string name="info_news_weather" formatted="false">Una semplice X accanto alle frecce di navigazione rimuove l’oggetto dopo conferma.</string>
-    <string name="info_news_viewer_zoom" formatted="false">Le richieste meteo hanno un tempo limite e offrono Riprova quando i dati non sono disponibili.</string>
-    <string name="info_news_settings" formatted="false">Tutte le 20 immagini celesti, inclusa LV-426, vengono scaricate singolarmente in WebP con qualità 90.</string>
-    <string name="info_news_catalog" formatted="false">Pacchetto texture 1.2.1 aggiornato, archivi coerenti e riutilizzo verificato delle immagini già scaricate.</string>
+    <string name="info_news_star_sky" formatted="false">Undici nuovi oggetti tracciabili: sonde, telescopi spaziali, Tiangong, Apophis, 3I/ATLAS, M87* e Proxima b.</string>
+    <string name="info_news_texture_downloads" formatted="false">Le effemeridi NASA/JPL guidano sonde e piccoli corpi, con distanza e percorso giornaliero nel cielo.</string>
+    <string name="info_news_weather" formatted="false">Hubble e Tiangong usano elementi orbitali recenti e SGP4, con una fonte dati alternativa.</string>
+    <string name="info_news_viewer_zoom" formatted="false">Direzioni degli oggetti lontani e dati mancanti sono spiegati senza inventare misurazioni.</string>
+    <string name="info_news_settings" formatted="false">Nuove immagini WebP esterne con download individuale, controlli di integrità e cache offline.</string>
+    <string name="info_news_catalog" formatted="false">Crediti e traduzioni aggiornati; i pacchetti grafici offrono file singoli senza ZIP texture duplicati.</string>
 </resources>

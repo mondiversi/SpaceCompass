@@ -1,0 +1,18 @@
+<resources>
+    <string name="celestial_new_horizons">New Horizons</string>
+    <string name="celestial_jwst">James Webb Space Telescope (JWST)</string>
+    <string name="celestial_parker_solar_probe">Parker Solar Probe</string>
+    <string name="celestial_apophis">99942 Apophis</string>
+    <string name="celestial_atlas_3i">3I/ATLAS</string>
+    <string name="celestial_europa_clipper">Europa Clipper</string>
+    <string name="celestial_juice">JUICE</string>
+    <string name="celestial_hubble">Hubble Space Telescope</string>
+    <string name="celestial_tiangong">Tiangong</string>
+    <string name="celestial_m87">M87*</string>
+    <string name="celestial_proxima_b">Proxima Centauri b</string>
+    <string name="catalog_type_asteroid">Asteroid</string>
+    <string name="celestial_horizons_tracking_note">NASA/JPL predictions cover a limited date range; they are not live telemetry.</string>
+    <string name="celestial_proxima_b_note">Proxima b uses its unresolved host-star direction. Distance refers to the stellar system; no measured surface, atmosphere or three-dimensional orbital position is available.</string>
+    <string name="celestial_m87_note">M87* uses the direction of the M87 nucleus. Distance and mass are approximate reference values; the image is a radio reconstruction.</string>
+    <string name="celestial_satellite_tracking_note">Earth-orbiting objects require recent orbital elements. Positions outside their validity period are unavailable.</string>
+</resources>

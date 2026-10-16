@@ -38,6 +38,11 @@ internal fun spaceCompassCelestialTemperatures(body: SpaceCompassCelestialBody):
         value(SpaceCompassCelestialTemperatureKind.DAY_MAXIMUM, day),
         value(SpaceCompassCelestialTemperatureKind.NIGHT_MINIMUM, night))
     return when (body) {
+        SpaceCompassCelestialBody.NEW_HORIZONS, SpaceCompassCelestialBody.JWST,
+        SpaceCompassCelestialBody.PARKER_SOLAR_PROBE, SpaceCompassCelestialBody.APOPHIS,
+        SpaceCompassCelestialBody.ATLAS_3I, SpaceCompassCelestialBody.EUROPA_CLIPPER,
+        SpaceCompassCelestialBody.JUICE, SpaceCompassCelestialBody.HUBBLE, SpaceCompassCelestialBody.TIANGONG,
+        SpaceCompassCelestialBody.M87, SpaceCompassCelestialBody.PROXIMA_B -> emptyList()
         SpaceCompassCelestialBody.SIRIUS -> listOf(value(SpaceCompassCelestialTemperatureKind.STELLAR_EFFECTIVE, 9850.0 - 273.15))
         SpaceCompassCelestialBody.BETELGEUSE -> listOf(value(SpaceCompassCelestialTemperatureKind.STELLAR_EFFECTIVE, 3600.0 - 273.15))
         // Huygens landing-site measurement; retain its epoch rather than presenting live weather.

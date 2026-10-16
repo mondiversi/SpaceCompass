@@ -37,6 +37,23 @@ internal fun spaceCompassCelestialCraftMesh(body: SpaceCompassCelestialBody): Li
             box(x,y,0.014,0.004,0.56,0.003,0x74809b)
         }
         box(0.18,-0.36,0.2,0.5,0.028,0.028,0xdccfba)
+    } else if (body == SpaceCompassCelestialBody.TIANGONG) {
+        // Symbolic modular station placeholder, not a scale model or live attitude.
+        box(0.0,0.0,0.0,0.15,0.85,0.15,0xe0e4ec)
+        box(-0.6,0.35,0.0,0.55,0.14,0.14,0xc9d0dc)
+        box(0.6,0.35,0.0,0.55,0.14,0.14,0xc9d0dc)
+        for (x in listOf(-0.75,0.75)) for (y in listOf(-0.65,1.05)) {
+            box(x,y,0.0,0.28,0.4,0.01,0x355d9b)
+            for (cell in -3..3) box(x,y+cell*.1,.015,.27,.004,.003,0x8da2bd)
+        }
+    } else if (body == SpaceCompassCelestialBody.JUICE) {
+        // Neutral solar-powered probe symbol; no unverified photographic asset is implied.
+        box(0.0,0.0,0.0,0.30,0.40,0.25,0xb89b53)
+        for (x in listOf(-1.15,1.15)) {
+            box(x,0.0,0.0,.85,.50,.01,0x2c4d85)
+            for (cell in -3..3) box(x+cell*.22,0.0,.015,.004,.49,.004,0x8da2bd)
+        }
+        box(0.0,0.55,0.0,.25,.08,.25,0xe7e7db)
     } else if (body == SpaceCompassCelestialBody.STARLINK_V3) {
         // Illustrative flat bus/solar arrays, not telemetry or asserted V3 engineering dimensions.
         box(0.0,0.0,0.0,0.52,0.34,0.055,0xe0e5eb)

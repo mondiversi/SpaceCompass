@@ -1,9 +1,9 @@
 <resources>
     <string name="info_news_title">Mambo mapya · %1$s</string>
-    <string name="info_news_star_sky" formatted="false">Vidirisha vya nukta vinaonyesha majina ya vitu kwa herufi nzito, vichwa vya mistari kadhaa na mandharinyuma yenye uwazi kidogo.</string>
-    <string name="info_news_texture_downloads" formatted="false">Vihesabu vikubwa bila mipaka, rangi wazi za hali maalum na bluu angavu zaidi mchana.</string>
-    <string name="info_news_weather" formatted="false">Alama rahisi ya X karibu na mishale ya urambazaji huondoa kitu baada ya kuthibitisha.</string>
-    <string name="info_news_viewer_zoom" formatted="false">Maombi ya hali ya hewa yana kikomo cha muda; unaweza kujaribu tena data zisipopatikana.</string>
-    <string name="info_news_settings" formatted="false">Picha zote 20 za vitu vya angani, ikiwemo LV-426, hupakuliwa moja moja kama WebP yenye ubora wa 90.</string>
-    <string name="info_news_catalog" formatted="false">Kifurushi cha maumbo 1.2.1 kilichosasishwa, kumbukumbu zinazolingana na utumiaji tena wa picha zilizohifadhiwa baada ya kuthibitishwa.</string>
+    <string name="info_news_star_sky" formatted="false">Vitu vipya kumi na kimoja vya kufuatilia: sondi, darubini za angani, Tiangong, Apophis, 3I/ATLAS, M87* na Proxima b.</string>
+    <string name="info_news_texture_downloads" formatted="false">Efemeridi za NASA/JPL hutoa nafasi, umbali na njia za kila siku za sondi na miili midogo.</string>
+    <string name="info_news_weather" formatted="false">Hubble na Tiangong hutumia elementi mpya za obiti na SGP4, pamoja na chanzo mbadala cha data.</string>
+    <string name="info_news_viewer_zoom" formatted="false">Mielekeo ya marejeo na data zisizopatikana zinaelezwa bila kubuni vipimo.</string>
+    <string name="info_news_settings" formatted="false">Picha mpya za nje za WebP hupakuliwa moja moja, hukaguliwa na kuhifadhiwa kwa matumizi bila mtandao.</string>
+    <string name="info_news_catalog" formatted="false">Vyanzo na tafsiri zimesasishwa; faili za picha ni za moja moja bila ZIP za nakala za maumbo.</string>
 </resources>

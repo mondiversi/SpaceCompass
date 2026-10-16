@@ -28,7 +28,7 @@ class SpaceCompassExoplanetTest {
         assertEquals(SpaceCompassCelestialTemperatureKind.EQUILIBRIUM_MODEL,
             spaceCompassCelestialTemperatures(body).single().kind)
         assertNull(spaceCompassAtmosphericPressure(body))
-        assertEquals(listOf(body), spaceCompassFilterCatalog(setOf(SpaceCompassCatalogType.EXOPLANET), SpaceCompassCatalogVisibility.ALL, emptyMap()))
+        assertEquals(listOf(SpaceCompassCelestialBody.PROXIMA_B, body), spaceCompassFilterCatalog(setOf(SpaceCompassCatalogType.EXOPLANET), SpaceCompassCatalogVisibility.ALL, emptyMap()))
     }
     @Test fun planetaryMassIsNotPresentedInSolarUnitsAndUnmeasuredRotationRemainsAbsent() {
         val facts = spaceCompassCelestialFacts(body)

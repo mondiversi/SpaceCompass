@@ -20,7 +20,8 @@ internal data class SpaceCompassCelestialRemoteData(val iss: SpaceCompassIssOrbi
     val starlink: SpaceCompassStarlinkOrbit? = null,
     val timedOutBodies: Set<SpaceCompassCelestialBody> = emptySet(),
     val refreshing: Boolean = false,
-    val completedCatalogRefreshRevision: Int = 0)
+    val completedCatalogRefreshRevision: Int = 0,
+    val satellites: Map<SpaceCompassCelestialBody, SpaceCompassCatalogSatelliteOrbit> = emptyMap())
 
 internal suspend fun fetchSpaceCompassCelestialText(url: String, maximumBytes: Int = 65_536): String = withContext(Dispatchers.IO) {
     require(maximumBytes in 1..SPACE_COMPASS_SATCAT_MAX_BYTES)
@@ -56,7 +57,11 @@ private fun orbitalCache(context: Context, body: SpaceCompassCelestialBody, moti
         SpaceCompassCelestialBody.SEDNA -> "celestial-sedna-v1.txt"
         SpaceCompassCelestialBody.VOYAGER_1 -> "celestial-voyager-1-v1.txt"
         SpaceCompassCelestialBody.VOYAGER_2 -> "celestial-voyager-2-v1.txt"
-        else -> throw IllegalArgumentException("No public ephemeris cache for $body")
+        else -> when {
+            body.catalogSatellite != null -> "celestial-${body.name.lowercase(java.util.Locale.ROOT)}-v1.tle"
+            body.usesHorizons -> "celestial-${body.name.lowercase(java.util.Locale.ROOT)}-v1.txt"
+            else -> throw IllegalArgumentException("No public ephemeris cache for $body")
+        }
     }
     return AtomicFile(File(context.cacheDir, name))
 }
@@ -93,6 +98,8 @@ internal fun rememberSpaceCompassCelestialRemote(bodies: Set<SpaceCompassCelesti
     val wake = remember { Channel<Unit>(Channel.CONFLATED) }
     val issSources = remember { SpaceCompassIssSources() }
     val starlinkSources = remember { SpaceCompassStarlinkSources() }
+    val catalogSatelliteSources = remember { SpaceCompassCelestialBody.entries.filter { it.catalogSatellite != null }
+        .associateWith { SpaceCompassCatalogSatelliteSources(it) } }
     val networkRevision = rememberSpaceCompassNetworkRevision(resumed) {
         policy.networkChanged()
     }
@@ -101,6 +108,9 @@ internal fun rememberSpaceCompassCelestialRemote(bodies: Set<SpaceCompassCelesti
         val cached = withContext(Dispatchers.IO) {
             val bodies = SpaceCompassCelestialBody.entries.filter { it.usesHorizons }
             SpaceCompassCelestialRemoteData(
+                satellites = SpaceCompassCelestialBody.entries.filter { it.catalogSatellite != null }.mapNotNull { body ->
+                    readOrbitalCache(context, body)?.let { text -> runCatching {
+                        body to SpaceCompassCatalogSatelliteOrbit.parse(body, text) }.getOrNull() } }.toMap(),
                 iss = readOrbitalCache(context, SpaceCompassCelestialBody.ISS)?.let { runCatching { SpaceCompassIssOrbit.parse(it) }.getOrNull() },
                 starlink = readOrbitalCache(context, SpaceCompassCelestialBody.STARLINK_V3)?.let { runCatching { SpaceCompassStarlinkOrbit.parse(it) }.getOrNull() },
                 ephemerides = bodies.mapNotNull { candidate -> readOrbitalCache(context,candidate)?.let { text ->
@@ -111,7 +121,7 @@ internal fun rememberSpaceCompassCelestialRemote(bodies: Set<SpaceCompassCelesti
                 } }.toMap())
         }
         // Merge without replacing an already restored model.
-        data = data.copy(iss = data.iss ?: cached.iss, starlink = data.starlink ?: cached.starlink,
+        data = data.copy(satellites = cached.satellites + data.satellites, iss = data.iss ?: cached.iss, starlink = data.starlink ?: cached.starlink,
             ephemerides = cached.ephemerides + data.ephemerides, motions = cached.motions + data.motions)
         cachesReady = true
     }
@@ -171,9 +181,16 @@ internal fun rememberSpaceCompassCelestialRemote(bodies: Set<SpaceCompassCelesti
                                 val text = if (body == SpaceCompassCelestialBody.STARLINK_V3)
                                     starlinkSources.load(System.currentTimeMillis(), ::fetchSpaceCompassCelestialText)
                                 else if (iss) issSources.load(System.currentTimeMillis(), ::fetchSpaceCompassCelestialText)
+                                else if (body.catalogSatellite != null) catalogSatelliteSources.getValue(body)
+                                    .load(System.currentTimeMillis(), ::fetchSpaceCompassCelestialText)
                                 else fetchSpaceCompassCelestialText(spaceCompassHorizonsUrl(body,
                                     requestTime, geometricMotion = request.motion))
                                 val updated = when {
+                                    body.catalogSatellite != null -> {
+                                        val orbit = SpaceCompassCatalogSatelliteOrbit.parse(body, text)
+                                        require(orbit.usable(System.currentTimeMillis())) { "Satellite elements are too old" }
+                                        data.copy(satellites = data.satellites + (body to orbit))
+                                    }
                                     iss -> {
                                         val orbit = SpaceCompassIssOrbit.parse(text)
                                         require(orbit.usable(System.currentTimeMillis())) { "ISS elements are too old" }
