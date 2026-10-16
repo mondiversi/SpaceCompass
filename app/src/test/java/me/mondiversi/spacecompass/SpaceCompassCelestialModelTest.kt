@@ -98,7 +98,7 @@ class SpaceCompassCelestialModelTest {
         assertTrue(path.issPass.any { it.event == SpaceCompassSunPathEvent.SUNSET })
     }
     @Test fun sednaParserInterpolatesOnlyValidatedJplUtcVectors() {
-        val header = "Target body name: 90377 Sedna\nCenter body name: Earth (399)\nOutput units    : AU-D\nReference frame : ICRF\nLT+S CORRECTED\n2026-Oct-03 00:00 UT "
+        val header = "Target body name: 90377 Sedna\nCenter body name: Earth (399)\nOutput units    : AU-D\nReference frame : ICRF\nLT+S CORRECTED\nStart time      : 2026-Oct-03 00:00 UT\nStop  time      : 2026-Oct-04 00:00 UT"
         val start = 2461316.5
         val lines = (0..24).joinToString("\n") { "${start + it / 24.0}, date, 37.7, ${72.0 + it * 0.001}, 12.6," }
         val text = "$header\n\$\$SOE\n$lines\n\$\$EOE"
@@ -108,6 +108,9 @@ class SpaceCompassCelestialModelTest {
         assertNull(ephemeris.at(midnight - 1))
         assertThrows(IllegalArgumentException::class.java) {
             parseSpaceCompassHorizonsEphemeris(SpaceCompassCelestialBody.SEDNA, text.replace("AU-D", "KM-S"))
+        }
+        assertThrows(IllegalArgumentException::class.java) {
+            parseSpaceCompassHorizonsEphemeris(SpaceCompassCelestialBody.SEDNA, text.replace(" UT", " TDB"))
         }
         val sedna = calculateSpaceCompassCelestialObservation(SpaceCompassCelestialBody.SEDNA, now, 45.0, 9.0,
             remote = SpaceCompassCelestialRemoteData(ephemerides = mapOf(SpaceCompassCelestialBody.SEDNA to ephemeris)))!!
