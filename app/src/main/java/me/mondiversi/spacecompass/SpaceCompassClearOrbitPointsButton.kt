@@ -33,10 +33,10 @@ internal fun SpaceCompassClearOrbitPointsButton(onClear: () -> Unit, color: Colo
             fun point(x: Float, y: Float) = Offset(x * size.width / 24, y * size.height / 24)
             val center = point(12f, 12f)
             drawCircle(color, radius = size.width * 9f / 24f, center = center,
-                style = Stroke(2.dp.toPx()))
+                style = Stroke(SpaceCompassFloatingIconStrokeWidth.toPx()))
             drawCircle(color, radius = size.width * 2f / 24f, center = center)
-            drawLine(color, point(8f, 8f), point(16f, 16f), 2.dp.toPx(), cap = StrokeCap.Round)
-            drawLine(color, point(16f, 8f), point(8f, 16f), 2.dp.toPx(), cap = StrokeCap.Round)
+            drawLine(color, point(8f, 8f), point(16f, 16f), SpaceCompassFloatingIconStrokeWidth.toPx(), cap = StrokeCap.Round)
+            drawLine(color, point(16f, 8f), point(8f, 16f), SpaceCompassFloatingIconStrokeWidth.toPx(), cap = StrokeCap.Round)
         }
     }
 }

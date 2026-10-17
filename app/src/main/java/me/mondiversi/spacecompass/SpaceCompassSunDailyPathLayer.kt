@@ -197,12 +197,14 @@ internal fun SpaceCompassCelestialSkyActions(body: SpaceCompassCelestialBody, on
     Row(modifier, verticalAlignment = Alignment.CenterVertically,
         horizontalArrangement = Arrangement.spacedBy(targetSpacing)) {
         if (onVisualize != null) SpaceCompassCelestialIconControl(false, viewTitle, onVisualize,
-            Modifier.testTag("celestial-visualize"), Role.Button, plainTint) {
+            Modifier.testTag("celestial-visualize"), Role.Button, plainTint,
+            circularBackground = plainTint != null, showCircleBorder = plainTint == null) {
             if (plainTint != null) SpaceCompassObjectHeaderIcon(SpaceCompassObjectHeaderGlyph.OBSERVATORY)
             else SpaceCompassCelestialTelescopeIcon(Modifier.size(22.dp))
         }
         if (onPath != null) SpaceCompassCelestialIconControl(pathSelected, pathTitle, onPath,
-            Modifier.testTag("sun-path-open"), Role.Button, plainTint) {
+            Modifier.testTag("sun-path-open"), Role.Button, plainTint,
+            circularBackground = plainTint != null, showCircleBorder = plainTint == null) {
             if (plainTint != null) SpaceCompassObjectHeaderIcon(SpaceCompassObjectHeaderGlyph.DAILY_PATH)
             else {
                 val tint = LocalContentColor.current

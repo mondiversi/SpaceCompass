@@ -1,5 +1,13 @@
 # Changelog
 
+## 1.4.7 — 2026-10-17
+
+- Refine the object island with smaller navigation/removal glyphs, compact spacing, optically centred observatory artwork and neutral dark circular observatory/daily-path controls without perimeter borders.
+- Unify floating icon stroke weights in the main sky and capture preview, improve the daily-path glyph, and align catalogue toolbar actions with the shared title-bar spacing.
+- Refine the daytime blue accent while preserving the night palette, celestial calculations and saved preferences.
+- Keep all twenty in-app news summaries and credits unchanged. Reuse immutable graphics pack 1.5, its individual downloads and offline cache; no new texture package or texture ZIP is added.
+- Increase Android/update identity to version 1.4.7, code 44, with a signed update index and matching optional reference-information archive.
+
 ## 1.4.6 — 2026-10-17
 
 - Lighten the morning and afternoon ground greens in the shared palette used by the main sky and panoramic captures. Keep solar-height-driven transitions, horizon haze, dawn, sunset, evening and night colours unchanged.

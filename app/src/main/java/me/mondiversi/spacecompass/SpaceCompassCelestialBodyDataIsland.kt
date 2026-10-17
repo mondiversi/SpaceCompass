@@ -40,8 +40,11 @@ import androidx.compose.ui.unit.sp
 internal val SpaceCompassObjectActionTargetSpacing = spaceCompassObjectHeaderTargetSpacing(
     SpaceCompassObjectHeaderGlyph.REMOVE, SpaceCompassObjectHeaderGlyph.OBSERVATORY)
 
+// Keep removal compact and leave a moderate gap between the two circular actions.
+internal val SpaceCompassObjectNavigationRemoveGap = 12.dp
+
 internal val SpaceCompassObjectDetailsActionTargetSpacing = spaceCompassObjectHeaderTargetSpacing(
-    SpaceCompassObjectHeaderGlyph.OBSERVATORY, SpaceCompassObjectHeaderGlyph.DAILY_PATH)
+    SpaceCompassObjectHeaderGlyph.OBSERVATORY, SpaceCompassObjectHeaderGlyph.DAILY_PATH) + 3.dp
 
 /** Navigation visits only the checked objects. No arrows for a single or empty selection. */
 internal data class SpaceCompassCelestialBodyNavigation(val previousLabel: String, val nextLabel: String,
@@ -62,12 +65,12 @@ internal fun SpaceCompassCelestialBodyDataIsland(bodyName: String?, primaryText:
         if (bodyName != null || navigation != null) {
             // Compact only the title bar; retain the normal insets around the data below it.
             // The next chevron ends 10 dp before its slot edge. Include the first action's
-            // blank inset so this boundary has the same visible gap as the other icons.
+            // blank inset so the navigation/removal gap is measured between visible glyphs.
             // Keep the trailing actions anchored at the island's content edge.
             Row(Modifier.fillMaxWidth().testTag("celestial-body-header")
                 .padding(vertical = 1.dp), verticalAlignment = Alignment.CenterVertically,
                 horizontalArrangement = Arrangement.spacedBy(if (navigation == null) 0.dp
-                    else SpaceCompassObjectHeaderGlyphGap - 10.dp -
+                    else SpaceCompassObjectNavigationRemoveGap - 10.dp -
                         (48.dp - SpaceCompassObjectHeaderGlyph.REMOVE.width) / 2)) {
                 // Fit the name between the unfilled glyphs, retaining 48 dp navigation targets.
                 Box(Modifier.weight(1f).heightIn(min = 48.dp)) {

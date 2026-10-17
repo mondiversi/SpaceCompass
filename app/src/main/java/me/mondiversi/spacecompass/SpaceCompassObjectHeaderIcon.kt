@@ -1,10 +1,12 @@
 package me.mondiversi.spacecompass
 
+import androidx.compose.foundation.layout.absoluteOffset
 import androidx.compose.foundation.layout.size
 import androidx.compose.material3.LocalContentColor
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.geometry.Offset
+import androidx.compose.ui.geometry.Size
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.Path
 import androidx.compose.ui.graphics.StrokeCap
@@ -14,29 +16,33 @@ import androidx.compose.ui.platform.testTag
 import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
 
-/** Actions share a 16 dp width; narrow navigation chevrons leave more room for the name. */
+/** Smaller navigation/remove glyphs leave more room for the name. */
 internal enum class SpaceCompassObjectHeaderGlyph {
     CHEVRON, REMOVE, OBSERVATORY, DAILY_PATH;
 
-    val width: Dp get() = if (this == CHEVRON) 9.dp else 16.dp
+    val visualScale: Float get() = if (this == CHEVRON || this == REMOVE) .75f else 1f
+    val width: Dp get() = (if (this == CHEVRON) 9.dp else 16.dp) * visualScale
 }
 
 internal val SpaceCompassObjectHeaderGlyphHeight = 16.dp
-internal val SpaceCompassObjectHeaderGlyphGap = 24.dp
+internal val SpaceCompassObjectHeaderGlyphGap = 18.dp
 
 /** Keep the same visible gap when adjacent glyphs have different widths. */
 internal fun spaceCompassObjectHeaderTargetSpacing(first: SpaceCompassObjectHeaderGlyph,
     second: SpaceCompassObjectHeaderGlyph): Dp =
     SpaceCompassObjectHeaderGlyphGap - 48.dp + (first.width + second.width) / 2
 
-/** Header-only geometry: all glyphs occupy 16 dp vertically, with 1.8 dp strokes.
+/** Header-only geometry: navigation/remove scale to 75%; other actions retain their 16 dp size.
  * Floating sky controls retain their original drawings and dimensions. */
 @Composable
 internal fun SpaceCompassObjectHeaderIcon(glyph: SpaceCompassObjectHeaderGlyph,
     modifier: Modifier = Modifier, tint: Color = LocalContentColor.current) {
-    SpaceCompassIconCanvas(tint, modifier.size(glyph.width, SpaceCompassObjectHeaderGlyphHeight)
+    SpaceCompassIconCanvas(tint, modifier.size(glyph.width, SpaceCompassObjectHeaderGlyphHeight * glyph.visualScale)
+        // Balance the telescope's asymmetric ink inside its fixed circle, including in RTL.
+        .then(if (glyph == SpaceCompassObjectHeaderGlyph.OBSERVATORY)
+            Modifier.absoluteOffset(x = (-.75).dp) else Modifier)
         .testTag("object-header-icon-${glyph.name}")) { color ->
-        val stroke = 1.8.dp.toPx()
+        val stroke = 1.8.dp.toPx() * glyph.visualScale
         val inset = stroke / 2
         val left = inset
         val right = size.width - inset
@@ -71,14 +77,11 @@ internal fun SpaceCompassObjectHeaderIcon(glyph: SpaceCompassObjectHeaderGlyph,
                     drawLine(color, point(.52f, .70f), point(x, .91f), stroke, StrokeCap.Round)
             }
             SpaceCompassObjectHeaderGlyph.DAILY_PATH -> {
-                // For a symmetric cubic the apex is 1/4 endpoint + 3/4 control height.
-                val controlY = (top - bottom * .25f) / .75f
-                val curve = Path().apply {
-                    moveTo(left, bottom)
-                    cubicTo(left + (right - left) * .25f, controlY,
-                        left + (right - left) * .75f, controlY, right, bottom)
-                }
-                drawPath(curve, color, style = Stroke(stroke, cap = StrokeCap.Round))
+                // A rounded half-ellipse shares the Observatory's full height and vertical centre.
+                val height = bottom - top
+                drawArc(color, startAngle = 180f, sweepAngle = 180f, useCenter = false,
+                    topLeft = Offset(left, center.y - height / 2), size = Size(right - left, height * 2),
+                    style = Stroke(stroke, cap = StrokeCap.Round))
             }
         }
     }

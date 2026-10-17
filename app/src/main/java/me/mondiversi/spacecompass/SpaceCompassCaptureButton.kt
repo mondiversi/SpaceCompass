@@ -71,7 +71,8 @@ internal fun SpaceCompassCaptureButton(
                 SpaceCompassSettingsMenuIcon(
                     if (cameraEnabled) "capture" else "panorama",
                     iconColor.copy(alpha = if (enabled) 1f else .38f),
-                    modifier = Modifier.size(26.dp * CaptureControlSizeMultiplier)
+                    modifier = Modifier.size(26.dp * CaptureControlSizeMultiplier),
+                    iconStrokeWidth = SpaceCompassFloatingIconStrokeWidth
                 )
             }
         }

@@ -186,7 +186,7 @@ internal fun SpaceCompassCelestialCatalogPage(timeMs: Long, remote: SpaceCompass
                     updateCatalogPreferences(catalogPreferences.copy(sort = it))
                 }
                 SpaceCompassTitleActionButton(stringResource(R.string.catalog_filters),
-                    onClick = { filtersOpen = !filtersOpen }, modifier = Modifier.width(48.dp).testTag("catalog-filter-toggle"),
+                    onClick = { filtersOpen = !filtersOpen }, modifier = Modifier.testTag("catalog-filter-toggle"),
                     iconColor = if (types.isNotEmpty() || visibility != SpaceCompassCatalogVisibility.ALL || query.isNotBlank())
                         MaterialTheme.colorScheme.primary else color) {
                     Icon(painterResource(R.drawable.ic_filter), contentDescription = null)
@@ -194,7 +194,7 @@ internal fun SpaceCompassCelestialCatalogPage(timeMs: Long, remote: SpaceCompass
                 val refreshing = remote.refreshing || calculating
                 SpaceCompassTitleActionButton(stringResource(if (refreshing) R.string.catalog_refreshing else R.string.catalog_refresh),
                     onClick = { refreshNotice.requested(remote.completedCatalogRefreshRevision); refreshRevision++; onRefresh() }, enabled = !refreshing,
-                    modifier = Modifier.width(48.dp).testTag("catalog-refresh"), iconColor = color) {
+                    modifier = Modifier.testTag("catalog-refresh"), iconColor = color) {
                     if (refreshing) CircularProgressIndicator(Modifier.size(20.dp), strokeWidth = 2.dp,
                         color = color.copy(alpha = .65f))
                     else Icon(painterResource(R.drawable.ic_refresh), contentDescription = null)

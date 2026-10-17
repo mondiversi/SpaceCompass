@@ -49,7 +49,7 @@ class MainActivity : ComponentActivity() {
                 }
                 MaterialTheme(colorScheme = if (dark) darkColorScheme(primary = Color(0xFF55C8DB),
                     background = background, surface = surfaces.island, onSurface = primary, onBackground = primary)
-                else lightColorScheme(primary = Color(0xFF2486A6), background = background,
+                else lightColorScheme(primary = Color(0xFF217E9F), background = background,
                     surface = surfaces.island, onSurface = primary, onBackground = primary)) {
                     // Keep the retained page's viewport stable while the native cover hides bars.
                     val pageInsets = if (saverVisible) WindowInsets.safeDrawing.union(WindowInsets.systemBarsIgnoringVisibility)

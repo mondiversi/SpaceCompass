@@ -33,12 +33,12 @@ internal fun spaceCompassCelestialControlStyle(selected: Boolean, pressed: Boole
         if (active) Color(0xFF123743) else Color.White)
 }
 
-/** Image overlays use a 30 dp circle; island actions can be unfilled with the same 48 dp touch target. */
+/** Optional island circles reuse the 30 dp overlay style and preserve the 48 dp touch target. */
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 internal fun SpaceCompassCelestialIconControl(selected: Boolean, label: String, onClick: () -> Unit,
     modifier: Modifier = Modifier, role: Role = Role.Tab, plainTint: Color? = null,
-    icon: @Composable () -> Unit) {
+    circularBackground: Boolean = false, showCircleBorder: Boolean = true, icon: @Composable () -> Unit) {
     TooltipBox(positionProvider = TooltipDefaults.rememberPlainTooltipPositionProvider(),
         tooltip = { PlainTooltip { Text(label) } }, state = rememberTooltipState()) {
         val pressSource = remember { MutableInteractionSource() }
@@ -49,14 +49,14 @@ internal fun SpaceCompassCelestialIconControl(selected: Boolean, label: String, 
         Box(modifier.size(48.dp).clip(CircleShape).then(action)
             .spaceCompassAccessibleAction(label = label, role = role, selectedState = if (role == Role.Tab) selected else null,
                 onClick = onClick), contentAlignment = Alignment.Center) {
-            if (plainTint != null) {
+            if (plainTint != null && !circularBackground) {
                 // Island actions stay unfilled in every interaction state, including press.
                 CompositionLocalProvider(LocalContentColor provides plainTint) { icon() }
             } else {
                 val pressed by pressSource.collectIsPressedAsState()
                 val style = spaceCompassCelestialControlStyle(selected, pressed, role)
                 Box(Modifier.size(30.dp).clip(CircleShape).background(style.background)
-                    .border(1.dp, style.border, CircleShape),
+                    .then(if (showCircleBorder) Modifier.border(1.dp, style.border, CircleShape) else Modifier),
                     contentAlignment = Alignment.Center) {
                     CompositionLocalProvider(LocalContentColor provides style.content) { icon() }
                 }

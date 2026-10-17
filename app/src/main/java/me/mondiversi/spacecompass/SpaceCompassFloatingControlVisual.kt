@@ -16,6 +16,10 @@ import kotlin.math.roundToInt
 private const val SPACE_COMPASS_FLOATING_CONTROL_SCALE = .792f
 internal val spaceCompassFloatingControlSize = 48.dp * SPACE_COMPASS_FLOATING_CONTROL_SCALE
 
+// Match the zoom glyph before the shared control transform. Vector icons use
+// 2.04 viewport units at 26 dp (24-unit viewport) for this same visible width.
+internal val SpaceCompassFloatingIconStrokeWidth = 2.21.dp
+
 /** Scale the complete control, including measured bounds, semantics and pointer coordinates. */
 internal fun Modifier.spaceCompassFloatingControlVisual(): Modifier = layout { measurable, constraints ->
     val placeable = measurable.measure(constraints)

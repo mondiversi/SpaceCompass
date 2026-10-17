@@ -29,7 +29,7 @@ internal fun SpaceCompassCatalogSortButton(sort: SpaceCompassCatalogSort, color:
     val fields = remember(fieldLabels, locale) { spaceCompassCatalogSortFields(fieldLabels, locale) }
     Box {
         SpaceCompassTitleActionButton(stringResource(R.string.catalog_sort),
-            onClick = { expanded = true }, modifier = Modifier.width(48.dp).testTag("catalog-sort-toggle"),
+            onClick = { expanded = true }, modifier = Modifier.testTag("catalog-sort-toggle"),
             iconColor = if (sort == SpaceCompassCatalogSort.CATALOG) color else MaterialTheme.colorScheme.primary) {
             Icon(painterResource(R.drawable.ic_sort), contentDescription = null)
         }

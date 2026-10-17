@@ -17,6 +17,7 @@ import androidx.compose.ui.platform.testTag
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.semantics.contentDescription
 import androidx.compose.ui.semantics.semantics
+import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
 import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.LifecycleEventObserver
@@ -70,7 +71,8 @@ internal fun SpaceCompassPointReminderButton(body: SpaceCompassCelestialBody, po
     if (badgeBackground != null) {
         SpaceCompassFloatingActionButton(description, onClick, tint, badgeBackground,
             buttonModifier, enabled = request != null, backgroundAlpha = SPACE_COMPASS_POINT_CAPTION_ALPHA) {
-            SpaceCompassPointReminderGlyph(tint, request != null, Modifier.size(28.dp))
+            SpaceCompassPointReminderGlyph(tint, request != null, Modifier.size(28.dp),
+                iconStrokeWidth = SpaceCompassFloatingIconStrokeWidth)
         }
     } else {
         // Table reminders keep their original uniform stroke and transparent touch targets.
@@ -84,10 +86,11 @@ internal fun SpaceCompassPointReminderButton(body: SpaceCompassCelestialBody, po
 }
 
 @Composable
-internal fun SpaceCompassPointReminderGlyph(tint: Color, enabled: Boolean, modifier: Modifier) {
+internal fun SpaceCompassPointReminderGlyph(tint: Color, enabled: Boolean, modifier: Modifier,
+    iconStrokeWidth: Dp = 2.dp) {
     val tint = if (enabled) tint else tint.copy(alpha = .35f)
     SpaceCompassIconCanvas(tint, modifier) { color ->
-        val stroke = Stroke(2.dp.toPx(), cap = StrokeCap.Round)
+        val stroke = Stroke(iconStrokeWidth.toPx(), cap = StrokeCap.Round)
         val bell = Path().apply {
             moveTo(size.width*.18f, size.height*.73f)
             cubicTo(size.width*.30f, size.height*.60f, size.width*.27f, size.height*.48f, size.width*.28f, size.height*.39f)
@@ -96,7 +99,7 @@ internal fun SpaceCompassPointReminderGlyph(tint: Color, enabled: Boolean, modif
             close()
         }
         drawPath(bell, color, style = stroke)
-        drawLine(color, Offset(size.width*.5f, size.height*.10f), Offset(size.width*.5f, size.height*.18f), 2.dp.toPx(), StrokeCap.Round)
+        drawLine(color, Offset(size.width*.5f, size.height*.10f), Offset(size.width*.5f, size.height*.18f), iconStrokeWidth.toPx(), StrokeCap.Round)
         drawArc(color, 0f, 180f, false, topLeft = Offset(size.width*.4f, size.height*.72f),
             size = androidx.compose.ui.geometry.Size(size.width*.2f, size.height*.17f), style = stroke)
     }

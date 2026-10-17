@@ -36,7 +36,7 @@ internal fun SpaceCompassPointingAxisGlyph(horizontal: Boolean, label: String, t
     val numberBounds = remember { Rect() }
     Canvas(modifier.semantics { contentDescription = label }) {
         val scale = size.minDimension
-        val stroke = scale * .065f
+        val stroke = SpaceCompassFloatingIconStrokeWidth.toPx()
         val lineHalf = scale * .33f
         paint.color = tint.toArgb()
         paint.textSize = scale * .56f

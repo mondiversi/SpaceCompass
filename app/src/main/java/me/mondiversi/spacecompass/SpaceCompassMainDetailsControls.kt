@@ -81,7 +81,7 @@ internal fun SpaceCompassMainDetailsToggleButton(expanded: Boolean, onClick: () 
                     translate(left = -opticalCorrection * sin(radians).toFloat(),
                         top = opticalCorrection * (1f + cos(radians).toFloat())) {
                         rotate(angle, pivot) {
-                            drawPath(chevron, color, style = Stroke(2.dp.toPx(), cap = StrokeCap.Round, join = StrokeJoin.Round))
+                            drawPath(chevron, color, style = Stroke(SpaceCompassFloatingIconStrokeWidth.toPx(), cap = StrokeCap.Round, join = StrokeJoin.Round))
                         }
                     }
                 }

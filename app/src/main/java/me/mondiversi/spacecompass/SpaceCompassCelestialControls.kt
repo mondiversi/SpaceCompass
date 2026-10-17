@@ -70,7 +70,7 @@ internal fun SpaceCompassCelestialSelector(body: SpaceCompassCelestialBody, colo
 @Composable
 private fun SpaceCompassCelestialCatalogIcon(modifier: Modifier, tint: Color, crossed: Boolean) {
     Canvas(modifier) {
-        val stroke = Stroke(SpaceCompassTitleActionIconStrokeWidth.toPx(), cap = StrokeCap.Round)
+        val stroke = Stroke(SpaceCompassFloatingIconStrokeWidth.toPx(), cap = StrokeCap.Round)
         drawCircle(tint, size.minDimension * 0.27f, style = stroke)
         rotate(-28f) {
             val topLeft = Offset(size.width * 0.04f, size.height * 0.33f)
@@ -83,7 +83,7 @@ private fun SpaceCompassCelestialCatalogIcon(modifier: Modifier, tint: Color, cr
         if (crossed) drawLine(tint,
             Offset(size.width * .125f, size.height * .125f),
             Offset(size.width * .875f, size.height * .875f),
-            strokeWidth = SpaceCompassTitleActionIconStrokeWidth.toPx(), cap = StrokeCap.Round)
+            strokeWidth = SpaceCompassFloatingIconStrokeWidth.toPx(), cap = StrokeCap.Round)
     }
 }
 /** One kilometer unit only, plus AU. Extra Mkm precision keeps live probe distances visible. */

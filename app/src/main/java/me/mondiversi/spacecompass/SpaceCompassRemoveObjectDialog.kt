@@ -20,9 +20,9 @@ internal fun SpaceCompassRemoveObjectButton(name: String, onClick: () -> Unit, t
     val label = stringResource(R.string.celestial_remove_description, name)
     val interaction = remember { MutableInteractionSource() }
     SpaceCompassFloatingControlHitRegion {
-        // Retain the layout slot and vertical reach; only the horizontal hit bounds shrink.
+        // Keep the glyph centered in its layout slot while shrinking only its hit bounds.
         Box(Modifier.size(48.dp), contentAlignment = Alignment.Center) {
-            Box(Modifier.size(width = 36.dp, height = 48.dp).testTag("celestial-body-remove")
+            Box(Modifier.size(width = 24.dp, height = 32.dp).testTag("celestial-body-remove")
                 .clickable(interactionSource = interaction, indication = null, onClick = onClick)
                 .spaceCompassAccessibleAction(label, onClick = onClick), contentAlignment = Alignment.Center) {
                 SpaceCompassObjectHeaderIcon(SpaceCompassObjectHeaderGlyph.REMOVE, tint = tint)

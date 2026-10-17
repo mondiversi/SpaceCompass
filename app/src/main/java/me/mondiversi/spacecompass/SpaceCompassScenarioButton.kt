@@ -28,6 +28,6 @@ internal fun SpaceCompassScenarioButton(activeCount: Int, color: Color, backgrou
                 Modifier.align(Alignment.TopEnd).testTag("scenario-active-count"), background = tint)
         }) {
         SpaceCompassSettingsMenuIcon("observer", tint, Modifier.size(26.dp),
-            iconStrokeWidth = SpaceCompassTitleActionIconStrokeWidth, crossed = !active)
+            iconStrokeWidth = SpaceCompassFloatingIconStrokeWidth, crossed = !active)
     }
 }
