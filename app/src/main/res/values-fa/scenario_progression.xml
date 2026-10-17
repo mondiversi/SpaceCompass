@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="scenario_speed">زمان</string>
-    <string name="scenario_speed_description">ساعت سناریو را از 0× (متوقف) تا 3600× تنظیم کنید.</string>
+    <string name="scenario_speed_description">زمان سناریو را تا 3600× به عقب یا جلو ببرید. صفر در مرکز زمان را متوقف می‌کند.</string>
     <string name="scenario_resume">ادامهٔ سناریوی سفارشی</string>
     <string name="scenario_resume_description">انتخاب کنید زمان شبیه‌سازی‌شده با باز کردن دوبارهٔ برنامه چگونه ادامه یابد. سرعت انتخاب‌شده در همهٔ حالت‌ها اعمال می‌شود.</string>
     <string name="scenario_restart">شروع از ابتدا</string>
@@ -15,5 +15,8 @@
     <string name="scenario_active_help">زمان سناریو فقط هنگام استفاده از برنامه با سرعت انتخاب‌شده پیش می‌رود. در پس‌زمینه و هنگام نمایش محافظ صفحه متوقف می‌شود و سپس از همان‌جا ادامه می‌یابد.</string>
     <string name="scenario_always_help">زمان سناریو حتی وقتی برنامه بسته است و پس از راه‌اندازی مجدد گوشی، با سرعت انتخاب‌شده به پیشروی ادامه می‌دهد.</string>
     <string name="scenario_time_paused">زمان متوقف است</string>
-    <string name="scenario_midnight_note">وقتی زمان پیش می‌رود، تاریخ در نیمه‌شب به‌طور خودکار به روز بعد تغییر می‌کند.</string>
+    <string name="scenario_midnight_note">تاریخ با عبور از نیمه‌شب خودکار تغییر می‌کند، حتی هنگام حرکت به عقب.</string>
+    <string name="scenario_time_backward">به عقب</string>
+    <string name="scenario_time_forward">به جلو</string>
+    <string name="scenario_real_second">به‌ازای هر ثانیهٔ واقعی</string>
 </resources>

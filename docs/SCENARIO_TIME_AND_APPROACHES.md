@@ -1,8 +1,8 @@
-# Scenario time and close approaches (1.4.3)
+# Scenario time and close approaches
 
-The Time speed island and General → Events → Scenario resumption choices follow the
+The Time island and Custom scenario title-bar resumption action follow the
 existing settings controls, typography, theme, automatic saving and short notifications.
-No Android time or GPS value is changed. This feature is included in application 1.4.3.
+No Android time or GPS value is changed. Initial acceleration and approach support shipped in 1.4.3.
 
 ## Time ownership
 
@@ -11,10 +11,16 @@ The observer ViewModel retains it across rotation; its runtime reference is
 excluded from configured observer equality, copies and legacy serialization.
 All existing observation, capture, weather and screen-saver consumers resolve
 time through `observationTimeMs`, so acceleration also crosses civil midnights,
-month/year boundaries and daylight-saving transitions.
+month/year boundaries and daylight-saving transitions in either direction.
 
-The discrete slider uses 1, 2, 3, 6, 10, 30, 60, 120, 300, 600, 1800 and 3600.
-Acceleration is off by default (effective 1×). Settings remain saved independently
+The discrete slider is symmetric: -3600× through -1× on the left, a paused 0× at
+the exact centre, and +1× through +3600× on the right. Both directions use the
+reviewed magnitudes 1, 2, 3, 6, 10, 30, 60, 120, 300, 600, 1800 and 3600. Physical
+left/right direction is retained in RTL locales. A centre-origin track and compact
+direction/rate/real-second equivalence rows distinguish rewind, pause and forward.
+Clock input remains the standard accessible stepped Slider. Re-enabling Time resets
+to +1×; changing direction or passing through pause retains the reached instant.
+Acceleration is off by default (effective +1×). Settings remain saved independently
 of the date/time switches. Changing rate/resumption retains the reached instant;
 editing a configured temporal component establishes a new origin. Position-only
 edits do not rewind the clock.

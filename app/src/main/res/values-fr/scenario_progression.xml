@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="scenario_speed">Temps</string>
-    <string name="scenario_speed_description">Réglez l’horloge du scénario de 0× (en pause) à 3600×.</string>
+    <string name="scenario_speed_description">Reculez ou avancez dans le temps jusqu’à 3600×. Le zéro au centre met le temps en pause.</string>
     <string name="scenario_resume">Reprise du scénario personnalisé</string>
     <string name="scenario_resume_description">Choisissez comment le temps simulé reprend à la réouverture de l’application. La vitesse choisie s’applique à chaque mode.</string>
     <string name="scenario_restart">Repartir du début</string>
@@ -15,5 +15,8 @@
     <string name="scenario_active_help">Le temps du scénario avance à la vitesse choisie uniquement pendant l’utilisation de l’app. Il se met en pause en arrière-plan et pendant l’économiseur d’écran, puis reprend là où il s’est arrêté.</string>
     <string name="scenario_always_help">Le temps du scénario continue d’avancer à la vitesse choisie même lorsque l’app est fermée et après le redémarrage du téléphone.</string>
     <string name="scenario_time_paused">Temps en pause</string>
-    <string name="scenario_midnight_note">Lorsque le temps avance, la date passe automatiquement au jour suivant à minuit.</string>
+    <string name="scenario_midnight_note">La date change automatiquement au passage de minuit, même en reculant.</string>
+    <string name="scenario_time_backward">En arrière</string>
+    <string name="scenario_time_forward">En avant</string>
+    <string name="scenario_real_second">Pour chaque seconde réelle</string>
 </resources>

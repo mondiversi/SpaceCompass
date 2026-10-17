@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="scenario_speed">Waktu</string>
-    <string name="scenario_speed_description">Atur jam skenario dari 0× (dijeda) hingga 3600×.</string>
+    <string name="scenario_speed_description">Gerakkan waktu skenario mundur atau maju hingga 3600×. Nol di tengah menjeda waktu.</string>
     <string name="scenario_resume">Melanjutkan skenario khusus</string>
     <string name="scenario_resume_description">Pilih cara waktu simulasi dilanjutkan saat aplikasi dibuka kembali. Kecepatan yang dipilih berlaku di setiap mode.</string>
     <string name="scenario_restart">Mulai dari awal</string>
@@ -15,5 +15,8 @@
     <string name="scenario_active_help">Waktu skenario berjalan dengan kecepatan yang dipilih hanya saat aplikasi digunakan. Waktu dijeda di latar belakang dan selama screensaver, lalu dilanjutkan dari titik terakhir.</string>
     <string name="scenario_always_help">Waktu skenario terus berjalan dengan kecepatan yang dipilih meskipun aplikasi ditutup dan setelah ponsel dimulai ulang.</string>
     <string name="scenario_time_paused">Waktu dijeda</string>
-    <string name="scenario_midnight_note">Saat waktu berjalan, tanggal otomatis berganti ke hari berikutnya pada tengah malam.</string>
+    <string name="scenario_midnight_note">Tanggal berubah otomatis saat melewati tengah malam, termasuk ketika mundur.</string>
+    <string name="scenario_time_backward">Mundur</string>
+    <string name="scenario_time_forward">Maju</string>
+    <string name="scenario_real_second">Untuk setiap detik nyata</string>
 </resources>

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="scenario_speed">Χρόνος</string>
-    <string name="scenario_speed_description">Ρυθμίστε το ρολόι του σεναρίου από 0× (παύση) έως 3600×.</string>
+    <string name="scenario_speed_description">Μετακινήστε τον χρόνο πίσω ή μπροστά έως 3600×. Το μηδέν στο κέντρο παγώνει τον χρόνο.</string>
     <string name="scenario_resume">Συνέχιση προσαρμοσμένου σεναρίου</string>
     <string name="scenario_resume_description">Επιλέξτε πώς συνεχίζεται ο προσομοιωμένος χρόνος όταν ανοίγετε ξανά την εφαρμογή. Η επιλεγμένη ταχύτητα ισχύει σε κάθε λειτουργία.</string>
     <string name="scenario_restart">Επανεκκίνηση από την αρχή</string>
@@ -15,5 +15,8 @@
     <string name="scenario_active_help">Ο χρόνος του σεναρίου προχωρά με την επιλεγμένη ταχύτητα μόνο όσο χρησιμοποιείς την εφαρμογή. Στο παρασκήνιο και στην προφύλαξη οθόνης σταματά προσωρινά και μετά συνεχίζει από εκεί που σταμάτησε.</string>
     <string name="scenario_always_help">Ο χρόνος του σεναρίου συνεχίζει να προχωρά με την επιλεγμένη ταχύτητα ακόμη και με κλειστή την εφαρμογή και μετά την επανεκκίνηση του τηλεφώνου.</string>
     <string name="scenario_time_paused">Ο χρόνος σε παύση</string>
-    <string name="scenario_midnight_note">Όταν ο χρόνος προχωρά, τα μεσάνυχτα η ημερομηνία αλλάζει αυτόματα στην επόμενη ημέρα.</string>
+    <string name="scenario_midnight_note">Η ημερομηνία αλλάζει αυτόματα όταν περνάτε τα μεσάνυχτα, ακόμη και προς τα πίσω.</string>
+    <string name="scenario_time_backward">Πίσω</string>
+    <string name="scenario_time_forward">Μπροστά</string>
+    <string name="scenario_real_second">Για κάθε πραγματικό δευτερόλεπτο</string>
 </resources>

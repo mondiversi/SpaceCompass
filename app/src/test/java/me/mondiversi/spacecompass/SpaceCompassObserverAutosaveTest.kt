@@ -270,6 +270,29 @@ class SpaceCompassObserverAutosaveTest {
         assertNotNull(state.plan?.scenarioClock)
     }
 
+    @Test fun reverseSpeedAndReachedInstantSurviveActiveOnlyReopening() {
+        val store = Store()
+        var elapsed = 0L
+        val state = SpaceCompassObserverState(store.preferences, elapsedClock = { elapsed })
+        state.configureTime(state.timeSettings.copy(enabled = true, resume = SpaceCompassScenarioResume.ACTIVE))
+        state.apply(original)
+        state.active(true)
+        state.configureTime(state.timeSettings.copy(rate = -3600))
+        val start = state.plan!!.observationTimeMs(System.currentTimeMillis())
+        elapsed += 1000
+        assertEquals(start - 3_600_000, state.plan!!.observationTimeMs(System.currentTimeMillis()))
+        state.active(false)
+        elapsed = 0L
+        val reopened = SpaceCompassObserverState(store.preferences, elapsedClock = { elapsed })
+        assertEquals(-3600, reopened.timeSettings.rate)
+        assertTrue(reopened.timeSettings.accelerated)
+        assertEquals(start - 3_600_000, reopened.plan!!.observationTimeMs(System.currentTimeMillis()))
+        reopened.active(true)
+        elapsed += 1000
+        assertEquals(start - 7_200_000, reopened.plan!!.observationTimeMs(System.currentTimeMillis()))
+        assertEquals(original, reopened.savedPlan)
+    }
+
     @Test fun anEnabledZeroRateSurvivesReloadAndReopeningButReactivationStillStartsAtOne() {
         val store = Store()
         var elapsed = 0L

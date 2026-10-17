@@ -5,10 +5,13 @@ internal enum class SpaceCompassScenarioResume {
     RESTART, ACTIVE, ALWAYS;
     companion object { val DEFAULT = RESTART }
 }
-internal val spaceCompassScenarioRates = listOf(0, 1, 2, 3, 6, 10, 30, 60, 120, 300, 600, 1800, 3600)
+private val spaceCompassScenarioRateMagnitudes = listOf(1, 2, 3, 6, 10, 30, 60, 120, 300, 600, 1800, 3600)
+internal val spaceCompassScenarioRates = spaceCompassScenarioRateMagnitudes.asReversed().map { -it } +
+    listOf(0) + spaceCompassScenarioRateMagnitudes
 internal data class SpaceCompassScenarioTimeSettings(val enabled: Boolean = false, val rate: Int = 1,
     val resume: SpaceCompassScenarioResume = SpaceCompassScenarioResume.DEFAULT) {
     val multiplier: Int get() = if (enabled) rate else 1
+    val accelerated: Boolean get() = multiplier !in -1..1
     fun normalized() = copy(rate = rate.takeIf { it in spaceCompassScenarioRates } ?: 1)
 }
 

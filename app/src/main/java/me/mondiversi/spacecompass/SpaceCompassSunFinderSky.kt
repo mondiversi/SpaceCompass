@@ -43,7 +43,7 @@ internal fun SpaceCompassSunSkyBackdrop(phase: SpaceCompassSunSkyPhase, weather:
     val palette = spaceCompassSunSkyColors(phase, weather, solarLighting)
     val currentPhase = rememberUpdatedState(phase)
     val currentLighting = rememberUpdatedState(solarLighting)
-    val transition = if ((LocalSpaceCompassObserver.current?.timeSettings?.multiplier ?: 1) > 1) 100 else 2_000
+    val transition = if (LocalSpaceCompassObserver.current?.timeSettings?.accelerated == true) 100 else 2_000
     val top by animateColorAsState(palette.first, tween(transition), label = "solar sky top")
     val bottom by animateColorAsState(palette.second, tween(transition), label = "solar sky horizon")
     Box(modifier.testTag("sun-finder-backdrop")) {

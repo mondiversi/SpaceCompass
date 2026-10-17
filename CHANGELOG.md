@@ -1,5 +1,13 @@
 # Changelog
 
+## 1.4.5 — 2026-10-17
+
+- Rewind or advance custom scenario time using the symmetric −3600× to +3600× stepped slider, with 0× pause at its centre. Preserve the reached instant when changing direction and reset to +1× when re-enabling Time.
+- Show a compact direction, signed rate and simulated-duration-per-real-second readout, with a centre-origin track and consistent physical slider direction in RTL languages.
+- Cross midnight, month/year boundaries and daylight-saving transitions in either direction. Keep existing restart, active-only and always resume policies, provider validity limits and frozen capture moments.
+- Refresh accelerated data consumers when the scenario clock changes direction. Add reverse-time persistence and integration regression coverage; maintain translation parity across twenty languages.
+- Preserve the twenty in-app news summaries byte for byte from 1.4.4, all credits, saved preferences and distribution identity. Continue individual downloads from immutable graphics pack 1.5; no new texture package or complete texture ZIP is needed.
+
 ## 1.4.4 — 2026-10-17
 
 - Expand the ordinary catalogue from 53 to 104 objects: additional moons, dwarf planets, asteroids, comets, stars, nebulae, clusters, galaxies, probes, compact objects and exoplanets. Hidden LV-426 stays separate from the ordinary count.

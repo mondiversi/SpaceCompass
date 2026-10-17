@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="scenario_speed">Zaman</string>
-    <string name="scenario_speed_description">Senaryo saatini 0× (duraklatılmış) ile 3600× arasında ayarlayın.</string>
+    <string name="scenario_speed_description">Senaryo zamanını 3600× hızla geri veya ileri alın. Ortadaki sıfır zamanı duraklatır.</string>
     <string name="scenario_resume">Özel senaryoya devam</string>
     <string name="scenario_resume_description">Uygulama yeniden açıldığında simüle edilen zamanın nasıl devam edeceğini seçin. Seçilen hız tüm modlarda geçerlidir.</string>
     <string name="scenario_restart">Baştan başlat</string>
@@ -15,5 +15,8 @@
     <string name="scenario_active_help">Senaryo zamanı yalnızca uygulamayı kullanırken seçilen hızda ilerler. Arka planda ve ekran koruyucu sırasında duraklar, ardından kaldığı yerden devam eder.</string>
     <string name="scenario_always_help">Senaryo zamanı uygulama kapalıyken ve telefon yeniden başlatıldıktan sonra da seçilen hızda ilerlemeye devam eder.</string>
     <string name="scenario_time_paused">Zaman duraklatıldı</string>
-    <string name="scenario_midnight_note">Zaman ilerlerken tarih gece yarısında otomatik olarak bir sonraki güne geçer.</string>
+    <string name="scenario_midnight_note">Gece yarısı geçildiğinde tarih, geriye giderken de otomatik değişir.</string>
+    <string name="scenario_time_backward">Geri</string>
+    <string name="scenario_time_forward">İleri</string>
+    <string name="scenario_real_second">Her gerçek saniye için</string>
 </resources>

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="scenario_speed">时间</string>
-    <string name="scenario_speed_description">将场景时钟设为0×（暂停）至3600×。</string>
+    <string name="scenario_speed_description">以最高3600×的速度倒退或推进场景时间。中间的零可暂停时间。</string>
     <string name="scenario_resume">自定义场景恢复方式</string>
     <string name="scenario_resume_description">选择重新打开应用时模拟时间的恢复方式。所选速度适用于所有模式。</string>
     <string name="scenario_restart">从头开始</string>
@@ -15,5 +15,8 @@
     <string name="scenario_active_help">场景时间仅在使用应用时按所选速度推进。应用处于后台或显示屏幕保护时会暂停，之后从暂停时刻继续。</string>
     <string name="scenario_always_help">即使关闭应用或重启手机，场景时间仍会按所选速度继续推进。</string>
     <string name="scenario_time_paused">时间已暂停</string>
-    <string name="scenario_midnight_note">时间推进时，日期会在午夜自动进入下一天。</string>
+    <string name="scenario_midnight_note">跨越午夜时日期自动变化，倒退时也会切换到前一天。</string>
+    <string name="scenario_time_backward">倒退</string>
+    <string name="scenario_time_forward">前进</string>
+    <string name="scenario_real_second">每经过现实中的1秒</string>
 </resources>

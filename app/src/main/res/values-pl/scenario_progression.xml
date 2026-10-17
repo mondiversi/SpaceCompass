@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="scenario_speed">Czas</string>
-    <string name="scenario_speed_description">Ustaw zegar scenariusza od 0× (wstrzymany) do 3600×.</string>
+    <string name="scenario_speed_description">Cofaj czas scenariusza lub przesuwaj go naprzód do 3600×. Zero pośrodku zatrzymuje czas.</string>
     <string name="scenario_resume">Wznawianie niestandardowego scenariusza</string>
     <string name="scenario_resume_description">Wybierz sposób wznawiania symulowanego czasu po ponownym otwarciu aplikacji. Wybrana prędkość obowiązuje w każdym trybie.</string>
     <string name="scenario_restart">Zacznij od początku</string>
@@ -15,5 +15,8 @@
     <string name="scenario_active_help">Czas scenariusza płynie z wybraną prędkością tylko podczas korzystania z aplikacji. W tle i podczas wygaszacza ekranu zatrzymuje się, a potem jest wznawiany od miejsca zatrzymania.</string>
     <string name="scenario_always_help">Czas scenariusza nadal płynie z wybraną prędkością, nawet gdy aplikacja jest zamknięta i po ponownym uruchomieniu telefonu.</string>
     <string name="scenario_time_paused">Czas wstrzymany</string>
-    <string name="scenario_midnight_note">Gdy czas płynie, o północy data automatycznie przechodzi na następny dzień.</string>
+    <string name="scenario_midnight_note">Data zmienia się automatycznie po przekroczeniu północy, również podczas cofania czasu.</string>
+    <string name="scenario_time_backward">Wstecz</string>
+    <string name="scenario_time_forward">Naprzód</string>
+    <string name="scenario_real_second">Na każdą rzeczywistą sekundę</string>
 </resources>

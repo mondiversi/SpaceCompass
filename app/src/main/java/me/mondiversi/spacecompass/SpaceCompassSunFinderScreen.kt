@@ -114,7 +114,7 @@ internal fun SpaceCompassSunFinderScreen(
         // ISS's directional marker remains live even when its trajectory is unchecked.
         if (resumed) while (true) {
             time = System.currentTimeMillis()
-            delay(if ((observer?.timeSettings?.multiplier ?: 1) > 1) 50L else 500L)
+            delay(if (observer?.timeSettings?.accelerated == true) 50L else 500L)
         }
     }
     val pauseOrientation = catalogOpen.value || !LocalSpaceCompassMainVisible.current

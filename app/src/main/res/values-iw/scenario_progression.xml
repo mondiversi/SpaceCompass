@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="scenario_speed">זמן</string>
-    <string name="scenario_speed_description">הגדר את שעון התרחיש מ־0× (מושהה) עד 3600×.</string>
+    <string name="scenario_speed_description">הזיזו את זמן התרחיש אחורה או קדימה עד 3600×. האפס במרכז עוצר את הזמן.</string>
     <string name="scenario_resume">חידוש התרחיש המותאם אישית</string>
     <string name="scenario_resume_description">בחרו כיצד הזמן המדומה יתחדש בפתיחת היישום מחדש. המהירות שנבחרה חלה בכל המצבים.</string>
     <string name="scenario_restart">התחלה מחדש</string>
@@ -15,5 +15,8 @@
     <string name="scenario_active_help">זמן התרחיש מתקדם במהירות שנבחרה רק בזמן השימוש באפליקציה. ברקע ובזמן שומר המסך הוא מושהה, ולאחר מכן ממשיך מהמקום שבו נעצר.</string>
     <string name="scenario_always_help">זמן התרחיש ממשיך להתקדם במהירות שנבחרה גם כשהאפליקציה סגורה ולאחר הפעלה מחדש של הטלפון.</string>
     <string name="scenario_time_paused">הזמן מושהה</string>
-    <string name="scenario_midnight_note">כשהזמן מתקדם, בחצות התאריך עובר אוטומטית ליום הבא.</string>
+    <string name="scenario_midnight_note">התאריך משתנה אוטומטית בחציית חצות, גם בתנועה אחורה.</string>
+    <string name="scenario_time_backward">אחורה</string>
+    <string name="scenario_time_forward">קדימה</string>
+    <string name="scenario_real_second">לכל שנייה אמיתית</string>
 </resources>

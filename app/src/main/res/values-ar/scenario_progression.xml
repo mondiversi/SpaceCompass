@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="scenario_speed">الزمن</string>
-    <string name="scenario_speed_description">اضبط ساعة السيناريو من 0× (متوقفة مؤقتًا) إلى 3600×.</string>
+    <string name="scenario_speed_description">حرّك زمن السيناريو إلى الخلف أو الأمام حتى 3600×. الصفر في المنتصف يوقف الزمن.</string>
     <string name="scenario_resume">استئناف السيناريو المخصص</string>
     <string name="scenario_resume_description">اختر كيفية استئناف الزمن المحاكى عند إعادة فتح التطبيق. تُطبَّق السرعة المحددة في جميع الأوضاع.</string>
     <string name="scenario_restart">البدء من البداية</string>
@@ -15,5 +15,8 @@
     <string name="scenario_active_help">يتقدم وقت السيناريو بالسرعة المحددة فقط أثناء استخدام التطبيق. ويتوقف مؤقتًا في الخلفية وأثناء تشغيل شاشة التوقف، ثم يُستأنف من حيث توقف.</string>
     <string name="scenario_always_help">يستمر وقت السيناريو في التقدم بالسرعة المحددة حتى عند إغلاق التطبيق وبعد إعادة تشغيل الهاتف.</string>
     <string name="scenario_time_paused">الوقت متوقف مؤقتًا</string>
-    <string name="scenario_midnight_note">عندما يتقدم الوقت، ينتقل التاريخ تلقائيًا إلى اليوم التالي عند منتصف الليل.</string>
+    <string name="scenario_midnight_note">يتغير التاريخ تلقائيًا عند عبور منتصف الليل، حتى عند الرجوع إلى الخلف.</string>
+    <string name="scenario_time_backward">إلى الخلف</string>
+    <string name="scenario_time_forward">إلى الأمام</string>
+    <string name="scenario_real_second">لكل ثانية حقيقية</string>
 </resources>

@@ -128,7 +128,7 @@ capture timestamps with explicit UTC offsets on all supported versions. Caption 
 and location-disclosure policy remain frozen independently of these EXIF timestamps.
 Composition-observed configuration/resources update preference examples and callbacks
 when locale/theme changes. The initial 1.0 release used display version 1.0 and protocol version 1.0.0.
-Current release 1.4.4 uses the same display/protocol version with code 41; signed
+Current release 1.4.5 uses the same display/protocol version with code 42; signed
 metadata, APK name and tag share that identity.
 
 

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="scenario_speed">시간</string>
-    <string name="scenario_speed_description">시나리오 시계를 0×(일시 정지)에서 3600×까지 설정하세요.</string>
+    <string name="scenario_speed_description">시나리오 시간을 최대 3600×로 거꾸로 또는 앞으로 돌립니다. 가운데 0에서 시간이 멈춥니다.</string>
     <string name="scenario_resume">사용자 지정 시나리오 재개</string>
     <string name="scenario_resume_description">앱을 다시 열 때 시뮬레이션 시간이 재개되는 방식을 선택합니다. 선택한 속도는 모든 모드에 적용됩니다.</string>
     <string name="scenario_restart">처음부터 다시 시작</string>
@@ -15,5 +15,8 @@
     <string name="scenario_active_help">시나리오 시간은 앱을 사용하는 동안에만 선택한 속도로 흐릅니다. 백그라운드와 화면 보호기에서는 일시 정지하고, 이후 멈춘 시점부터 다시 흐릅니다.</string>
     <string name="scenario_always_help">앱이 닫혀 있을 때나 휴대전화를 다시 시작한 후에도 시나리오 시간은 선택한 속도로 계속 흐릅니다.</string>
     <string name="scenario_time_paused">시간 일시 정지</string>
-    <string name="scenario_midnight_note">시간이 흐르면 자정에 날짜가 자동으로 다음 날로 바뀝니다.</string>
+    <string name="scenario_midnight_note">자정을 지날 때 날짜가 자동으로 바뀌며, 거꾸로 돌릴 때도 적용됩니다.</string>
+    <string name="scenario_time_backward">뒤로</string>
+    <string name="scenario_time_forward">앞으로</string>
+    <string name="scenario_real_second">실제 1초마다</string>
 </resources>
