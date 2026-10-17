@@ -22,13 +22,15 @@ import androidx.compose.ui.semantics.semantics
 import androidx.compose.ui.unit.IntSize
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
-import java.util.concurrent.ConcurrentHashMap
+import android.util.LruCache
 import kotlin.math.*
 
 private val celestialThumbnailDispatcher = Dispatchers.Default.limitedParallelism(2)
-private val celestialThumbnailCache = ConcurrentHashMap<SpaceCompassCelestialBody, ImageBitmap>()
+private val celestialThumbnailCache = object : LruCache<SpaceCompassCelestialBody, ImageBitmap>(4 * 1024 * 1024) {
+    override fun sizeOf(key: SpaceCompassCelestialBody, value: ImageBitmap) = value.width * value.height * 4
+}
 
-/** Same maps/structural models as the viewer; cached reference miniatures, not live photographs. */
+/** Independently downloaded reference previews; phases and structural symbols remain dynamic. */
 @Composable
 internal fun SpaceCompassCelestialThumbnail(body: SpaceCompassCelestialBody, modifier: Modifier, muted: Boolean = false,
     moonPhase: SpaceCompassMoonPhase? = null) {
@@ -52,12 +54,13 @@ internal fun SpaceCompassCelestialThumbnail(body: SpaceCompassCelestialBody, mod
         val geometry = remember { SpaceCompassCelestialRotation(yaw = 25.0, pitch = 50.0).geometry() }
         SpaceCompassCelestialCraftCanvas(body, geometry, SpaceCompassCelestialViewportState(), modifier.clip(CircleShape), colorFilter, opacity)
     } else {
-        val textureReady = rememberSpaceCompassCelestialTexture(body)
+        val previewName = SpaceCompassCelestialThumbnailPolicy.forImage(body.viewerTexture)?.name
+        val textureReady = rememberSpaceCompassCelestialImage(previewName)
         val thumbnail by produceState(celestialThumbnailCache[body].takeIf { textureReady }, body, textureReady) {
             value = withContext(celestialThumbnailDispatcher) {
                 celestialThumbnailCache[body].takeIf { textureReady } ?: runCatching { createSpaceCompassCelestialThumbnail(context.applicationContext, body).asImageBitmap() }
                     .onFailure { SpaceCompassErrorLog.record(context, "celestial:thumbnail", it) }.getOrNull()
-                    ?.also { if (textureReady) celestialThumbnailCache[body] = it }
+                    ?.also { if (textureReady) celestialThumbnailCache.put(body, it) }
             }
         }
         Canvas(modifier.then(if (phaseDescription == null) Modifier else Modifier.semantics {
@@ -87,8 +90,19 @@ internal fun androidx.compose.ui.graphics.drawscope.DrawScope.drawSpaceCompassCe
     }
 }
 
-internal fun createSpaceCompassCelestialThumbnail(context: Context?, body: SpaceCompassCelestialBody, extent: Int = 64): Bitmap {
+internal fun createSpaceCompassCelestialThumbnail(context: Context?, body: SpaceCompassCelestialBody, extent: Int = 128): Bitmap {
+    require(extent > 0)
     val asset = body.viewerTexture
+    // Prefer the ready-to-draw preview. A legacy full map already on disk remains a fallback;
+    // this decoder never downloads that full map merely to display a catalogue row.
+    val preview = SpaceCompassCelestialThumbnailPolicy.forImage(asset)
+    if (context != null && preview != null) {
+        val prepared = SpaceCompassCelestialTextures.openImage(context, preview.name)?.use { BitmapFactory.decodeStream(it) }
+        if (prepared != null) {
+            if (prepared.width == extent && prepared.height == extent) return prepared
+            return Bitmap.createScaledBitmap(prepared, extent, extent, true).also { if (it !== prepared) prepared.recycle() }
+        }
+    }
     val map = if (asset == null || context == null) null else {
         val bounds = BitmapFactory.Options().apply { inJustDecodeBounds = true }
         SpaceCompassCelestialTextures.open(context, body)?.use { BitmapFactory.decodeStream(it, null, bounds) }

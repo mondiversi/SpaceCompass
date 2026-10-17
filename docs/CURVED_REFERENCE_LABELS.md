@@ -2,7 +2,7 @@
 
 Equator, tropic and polar-circle names now follow their actual projected lines,
 as do their declination values and sparse numeric repeats. Pole, zenith and
-Earth-centre point captions retain their horizontal boxes beside the crosses.
+Nadir point captions retain their horizontal boxes beside the crosses.
 The same renderer is used by virtual/camera live views and panorama/photo captures.
 No reference vectors, celestial calculations, coordinates, defaults or catalog
 selection behavior changed.
@@ -45,3 +45,20 @@ Earth-centre label in a real-camera photograph. The main view was restored with
 camera disabled and previous checked objects, active body and guide/label choices.
 No gallery save, document write, sharing, data clearing or GitHub publication.
 Full evidence/scope are in the local curved-guides-validation.json artifact.
+
+## Stable live placement — 2026-10-17
+
+Live reference names retain a bounded placement history for the current viewport.
+Each previous anchor is projected continuously onto its current visible curve,
+keeping its font size while the text still fits. Moving bodies, offscreen arrows,
+orbit dots and transient point captions no longer evict an established guide name.
+Fixed controls remain excluded; replacement anchors use extra edge clearance to
+avoid repeatedly switching when a label approaches a screen boundary. Repeated
+degree labels retain anchors with spacing hysteresis. Nadir, zenith and pole
+captions use a consistent above-cross position clamped to the visible viewport.
+
+Placement history resets on viewport or typography changes. It has at most one
+name and three degree anchors per reference. Captured photos and panoramas retain
+their independent one-shot collision layout. Seven JVM regressions cover moving
+obstacles, changing candidate order, fixed controls, viewport changes, disconnected
+curves, repeat spacing and actual Capricorn projections under small repeated rolls.

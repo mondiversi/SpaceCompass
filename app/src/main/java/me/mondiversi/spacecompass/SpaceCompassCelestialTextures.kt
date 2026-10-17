@@ -46,6 +46,10 @@ internal object SpaceCompassCelestialTextures {
 
     suspend fun ensure(context: Context, body: SpaceCompassCelestialBody): Boolean = ensureImage(context, body.viewerTexture)
 
+    /** Browsing and sky markers request only a small preview, never a full viewer image. */
+    suspend fun ensureThumbnail(context: Context, body: SpaceCompassCelestialBody): Boolean =
+        ensureImage(context, SpaceCompassCelestialThumbnailPolicy.forImage(body.viewerTexture)?.name)
+
     suspend fun ensureImage(context: Context, name: String?): Boolean = withContext(Dispatchers.IO) {
         val texture = SpaceCompassCelestialTexturePolicy.texture(name) ?: return@withContext true
         locks.computeIfAbsent(texture.name) { Mutex() }.withLock {
@@ -155,6 +159,10 @@ internal fun rememberSpaceCompassCelestialImage(name: String?): Boolean {
 
 internal suspend fun ensureSpaceCompassCelestialTextures(context: Context, bodies: Set<SpaceCompassCelestialBody>) = coroutineScope {
     bodies.map { body -> async { SpaceCompassCelestialTextures.ensure(context, body) } }.awaitAll()
+}
+
+internal suspend fun ensureSpaceCompassCelestialThumbnails(context: Context, bodies: Set<SpaceCompassCelestialBody>) = coroutineScope {
+    bodies.map { body -> async { SpaceCompassCelestialTextures.ensureThumbnail(context, body) } }.awaitAll()
 }
 
 internal fun spaceCompassCelestialPlaceholderColor(body: SpaceCompassCelestialBody): Int = when (body) {

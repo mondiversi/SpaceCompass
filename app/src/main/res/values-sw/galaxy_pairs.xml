@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="celestial_m87_galaxy">Galaksi M87</string>
+    <string name="celestial_milky_way_center">Njia ya Maziwa (kitovu)</string>
+    <string name="celestial_m51_core">Shimo jeusi la kitovu cha M51</string>
+    <string name="celestial_m31_galaxy_tracking_note">Galaksi yenye mikono inayozunguka kiini, iliyo takriban miaka ya mwanga milioni 2.5 kutoka hapa. Alama na njia ya kila siku hufuata kiini chake. M31* ni kitu tofauti; masi yake si masi ya galaksi.</string>
+    <string name="celestial_m31_core_tracking_note">Shimo jeusi la kitovu cha Andromeda (M31), kitu tofauti kwenye katalogi. Masi na ukubwa wa upeo wa matukio wa kielelezo vinahusu shimo jeusi, si galaksi.</string>
+    <string name="celestial_m87_galaxy_tracking_note">Galaksi kubwa ya duaradufu iliyo takriban miaka ya mwanga milioni 55 kutoka hapa. Alama hufuata kiini chake. M87* ni kitu tofauti; picha hii inaonyesha galaksi, si upeo wa matukio wa shimo jeusi.</string>
+    <string name="celestial_milky_way_tracking_note">Dunia iko ndani ya Njia ya Maziwa. Alama na njia huelekea kitovu cha galaksi, kilicho takriban miaka ya mwanga 26,400 kutoka hapa, si galaksi nzima. Panorama ni picha ya kumbukumbu.</string>
+    <string name="celestial_m51_core_tracking_note">Shimo jeusi la kitovu cha NGC 5194 katika M51, takriban miaka ya mwanga milioni 31 kutoka hapa. Alama hufuata kiini hai. Masi ya takriban masi za Jua milioni 4 ni makadirio yasiyo ya moja kwa moja ya M–σ yenye kutokuwa na uhakika kukubwa. Upeo wa matukio huonyeshwa kwa ishara.</string>
+</resources>

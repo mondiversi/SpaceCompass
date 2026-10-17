@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="celestial_m87_galaxy">Galaxie M87</string>
+    <string name="celestial_milky_way_center">Voie lactée (centre)</string>
+    <string name="celestial_m51_core">Trou noir central de M51</string>
+    <string name="celestial_m31_galaxy_tracking_note">Galaxie spirale à environ 2,5 millions d’années-lumière. Le repère et le parcours journalier suivent son noyau. M31* est un objet distinct ; sa masse n’est pas celle de la galaxie.</string>
+    <string name="celestial_m31_core_tracking_note">Trou noir central d’Andromède (M31), objet distinct du catalogue. La masse et la taille théorique de l’horizon concernent le trou noir, pas la galaxie.</string>
+    <string name="celestial_m87_galaxy_tracking_note">Galaxie elliptique géante à environ 55 millions d’années-lumière. Le repère suit son noyau. M87* est un objet distinct ; cette photographie montre la galaxie, pas l’horizon du trou noir.</string>
+    <string name="celestial_milky_way_tracking_note">La Terre se trouve dans la Voie lactée. Le repère et le parcours indiquent le centre galactique, à environ 26 400 années-lumière, pas la galaxie entière. Le panorama est une photographie d’archive.</string>
+    <string name="celestial_m51_core_tracking_note">Trou noir central de NGC 5194 dans M51, à environ 31 millions d’années-lumière. Le repère suit le noyau actif. La masse d’environ 4 millions de masses solaires est une estimation indirecte M–σ très incertaine. L’horizon est représenté symboliquement.</string>
+</resources>

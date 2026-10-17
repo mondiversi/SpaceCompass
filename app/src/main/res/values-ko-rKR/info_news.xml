@@ -1,9 +1,9 @@
 <resources>
     <string name="info_news_title">최근 변경 사항 · %1$s</string>
-    <string name="info_news_star_sky" formatted="false">53개 천체: 세레스, 엔셀라두스, 베가, 데네브, 알타이르와 남십자자리를 추가했습니다.</string>
-    <string name="info_news_texture_downloads" formatted="false">시간 속도 최대 3600배. 처음부터, 앱 활성 중에만 또는 계속 진행하도록 선택할 수 있습니다.</string>
-    <string name="info_news_weather" formatted="false">같은 시각에 1.5° 이내로 접근하는 사건을 경로, 촬영 이미지와 내보내기에 표시합니다.</string>
-    <string name="info_news_viewer_zoom" formatted="false">지구 중심 거리로 정렬하고 목록에서 천체의 관측소를 바로 열 수 있습니다.</string>
-    <string name="info_news_settings" formatted="false">설정, 가로 화면 카드, 경로 기호를 통일하고 15분 화면 보호기 옵션을 추가했습니다.</string>
-    <string name="info_news_catalog" formatted="false">그래픽 팩 1.4: 외부 WebP 이미지 29개, 개별 다운로드, 무결성 검사와 오프라인 캐시를 지원합니다.</string>
+    <string name="info_news_star_sky" formatted="false">104개 천체: 위성, 탐사선, 별, 은하와 중심 블랙홀을 추가했습니다.</string>
+    <string name="info_news_texture_downloads" formatted="false">그래픽 팩 1.5: 외부 이미지 56개와 가벼운 미리보기 56개를 개별 다운로드하고 오프라인으로 보관합니다.</string>
+    <string name="info_news_weather" formatted="false">0×에서 시간을 멈춥니다. 가속을 다시 켜면 1×부터 시작하며 재개 옵션은 사용자 시나리오에 있습니다.</string>
+    <string name="info_news_viewer_zoom" formatted="false">천체 수에 따른 유형 순서, 이름순 정렬 옵션과 더 명확한 천체 조작.</string>
+    <string name="info_news_settings" formatted="false">기준 라벨을 안정화하고 천정의 반대편 −90°에 천저를 표시합니다.</string>
+    <string name="info_news_catalog" formatted="false">위성 운동, 선택한 천체의 근접과 날씨 로딩 상태를 개선했습니다.</string>
 </resources>

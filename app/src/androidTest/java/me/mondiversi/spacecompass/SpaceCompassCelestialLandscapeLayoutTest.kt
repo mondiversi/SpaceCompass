@@ -45,7 +45,7 @@ class SpaceCompassCelestialLandscapeLayoutTest {
         }
     }
 
-    @Test fun phoneAndTabletLandscapeHeadersUseTheWiderSkyColumnInBothThemesAndDirections() {
+    @Test fun phoneAndTabletLandscapeHeadersUseEqualColumnsInBothThemesAndDirections() {
         show()
         for (w in listOf(640f, 1200f)) for (dark in listOf(false, true))
             for (rtl in listOf(false, true)) {
@@ -58,7 +58,7 @@ class SpaceCompassCelestialLandscapeLayoutTest {
                 val details = compose.onNodeWithTag("celestial-details-column").fetchSemanticsNode().boundsInRoot
                 val island = compose.onNodeWithTag("sun-finder-body-data").fetchSemanticsNode().boundsInRoot
                 val sky = compose.onNodeWithTag("celestial-pointing-area").fetchSemanticsNode().boundsInRoot
-                assertEquals(root.width * .55f, toolbar.width, 1f)
+                assertEquals(root.width * .5f, toolbar.width, 1f)
                 assertEquals(root.top, toolbar.top, 1f)
                 assertEquals(root.top + 5f, details.top, 1f)
                 val capture = compose.onNodeWithTag("celestial-capture-controls").fetchSemanticsNode().boundsInRoot

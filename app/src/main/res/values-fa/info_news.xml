@@ -1,9 +1,9 @@
 <resources>
     <string name="info_news_title">تازه‌ترین تغییرات · %1$s</string>
-    <string name="info_news_star_sky" formatted="false">۵۳ جرم: سرس، انسلادوس، نسر واقع، دنب، نسر طائر و صلیب جنوبی به فهرست اضافه شدند.</string>
-    <string name="info_news_texture_downloads" formatted="false">سرعت زمان تا 3600×؛ شروع دوباره، پیشروی فقط هنگام فعال بودن برنامه یا پیشروی همیشگی.</string>
-    <string name="info_news_weather" formatted="false">نزدیکی‌های کمتر از 1.5° در یک لحظه در مسیرها، تصاویر و خروجی‌ها نمایش داده می‌شوند.</string>
-    <string name="info_news_viewer_zoom" formatted="false">مرتب‌سازی بر اساس فاصله از زمین و باز کردن رصدخانهٔ هر جرم مستقیماً از فهرست.</string>
-    <string name="info_news_settings" formatted="false">تنظیمات هماهنگ‌تر، کارت‌های افقی، نمادهای مسیر و گزینهٔ محافظ صفحه پس از ۱۵ دقیقه.</string>
-    <string name="info_news_catalog" formatted="false">بستهٔ گرافیکی 1.4: ‏۲۹ تصویر WebP خارجی با دانلود تکی، بررسی یکپارچگی و حافظهٔ نهان آفلاین.</string>
+    <string name="info_news_star_sky" formatted="false">۱۰۴ جرم: قمرها، کاوشگرها، ستاره‌ها، کهکشان‌ها و سیاه‌چاله‌های مرکزی بیشتر.</string>
+    <string name="info_news_texture_downloads" formatted="false">بستهٔ گرافیکی 1.5: ۵۶ تصویر خارجی و ۵۶ پیش‌نمایش سبک با دریافت جداگانه و ذخیرهٔ آفلاین.</string>
+    <string name="info_news_weather" formatted="false">زمان را در 0× متوقف کنید؛ فعال‌سازی دوبارهٔ شتاب از 1× آغاز می‌شود. گزینه‌های ادامه در سناریوی سفارشی است.</string>
+    <string name="info_news_viewer_zoom" formatted="false">نوع‌ها بر پایهٔ تعداد اجرام، گزینه‌های مرتب‌سازی الفبایی و کنترل‌های روشن‌تر.</string>
+    <string name="info_news_settings" formatted="false">برچسب‌های مرجع پایدارتر و سمت‌القدم در −90°، مقابل سمت‌الرأس.</string>
+    <string name="info_news_catalog" formatted="false">بهبود حرکت قمرها، نزدیکی اجرام انتخاب‌شده و وضعیت بارگذاری هواشناسی.</string>
 </resources>

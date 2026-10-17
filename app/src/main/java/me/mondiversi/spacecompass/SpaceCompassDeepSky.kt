@@ -68,7 +68,7 @@ internal val SpaceCompassCelestialBody.deepSkyReference: SpaceCompassDeepSkyRefe
         SpaceCompassCelestialBody.PSR_J0437 -> SpaceCompassDeepSkyReference(
             4 + 37.0/60 + 15.7994581776/3600, -(47 + 15.0/60 + 8.544351636/3600),
             156.96 * 3.261563777, 121.646, -70.697)
-        else -> null
+        else -> additionalCatalogEntry?.reference
     }
 internal val SpaceCompassCelestialBody.isExtrasolar: Boolean
     get() = this == SpaceCompassCelestialBody.POLARIS || this == SpaceCompassCelestialBody.SOUTHERN_CROSS || deepSkyReference != null
@@ -117,6 +117,8 @@ internal val SpaceCompassCelestialBody.deepSkyNoteResource: Int
         SpaceCompassCelestialBody.DENEB -> R.string.celestial_deneb_note
         SpaceCompassCelestialBody.M87 -> R.string.celestial_m87_note
         SpaceCompassCelestialBody.PROXIMA_B -> R.string.celestial_proxima_b_note
+        SpaceCompassCelestialBody.TOI_700_D, SpaceCompassCelestialBody.KEPLER_186_F -> R.string.celestial_unresolved_exoplanet_note
+        SpaceCompassCelestialBody.SIGMA_OCTANTIS -> R.string.celestial_sigma_octantis_note
         SpaceCompassCelestialBody.SIRIUS -> R.string.celestial_sirius_note
         SpaceCompassCelestialBody.BETELGEUSE -> R.string.celestial_betelgeuse_note
         SpaceCompassCelestialBody.ORION_NEBULA -> R.string.celestial_orion_note
@@ -129,5 +131,10 @@ internal val SpaceCompassCelestialBody.deepSkyNoteResource: Int
         SpaceCompassCelestialBody.STEPHENSON_2_18 -> R.string.celestial_stephenson_note
         SpaceCompassCelestialBody.RX_J1856 -> R.string.celestial_rx_note
         SpaceCompassCelestialBody.PSR_J0437 -> R.string.celestial_psr_note
+        SpaceCompassCelestialBody.ANDROMEDA_GALAXY -> R.string.celestial_m31_galaxy_tracking_note
+        SpaceCompassCelestialBody.ANDROMEDA_CORE -> R.string.celestial_m31_core_tracking_note
+        SpaceCompassCelestialBody.M87_GALAXY -> R.string.celestial_m87_galaxy_tracking_note
+        SpaceCompassCelestialBody.MILKY_WAY_CENTER -> R.string.celestial_milky_way_tracking_note
+        SpaceCompassCelestialBody.M51_CORE -> R.string.celestial_m51_core_tracking_note
         else -> R.string.celestial_deep_sky_note
     }

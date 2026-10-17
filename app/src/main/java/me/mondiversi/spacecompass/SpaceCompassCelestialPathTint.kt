@@ -60,6 +60,8 @@ internal fun spaceCompassCelestialPathTint(body: SpaceCompassCelestialBody): Col
     SpaceCompassCelestialBody.RIGEL -> Color(0xFF91CFFF)
     SpaceCompassCelestialBody.TON_618 -> Color(0xFFFF70BF)
     SpaceCompassCelestialBody.ANDROMEDA_CORE -> Color(0xFFA9ACFF)
+    // Stable high-contrast hue spacing for the additional catalogue; old colours never change.
+    else -> Color.hsv(((body.ordinal - SpaceCompassCelestialBody.GANYMEDE.ordinal) * 137.508f) % 360f, .38f, 1f)
 }
 
 /** The orbit and off-screen pointer share the same treatment below the horizon. */

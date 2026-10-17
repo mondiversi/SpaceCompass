@@ -1,9 +1,9 @@
 <resources>
     <string name="info_news_title">Neuigkeiten · %1$s</string>
-    <string name="info_news_star_sky" formatted="false">53 Objekte: Ceres, Enceladus, Wega, Deneb, Altair und das Kreuz des Südens ergänzen den Katalog.</string>
-    <string name="info_news_texture_downloads" formatted="false">Zeitgeschwindigkeit bis 3600×: Neustart, Fortschritt nur bei aktiver App oder durchgehend.</string>
-    <string name="info_news_weather" formatted="false">Annäherungen unter 1,5° zum selben Zeitpunkt erscheinen in Bahnen, Aufnahmen und Exporten.</string>
-    <string name="info_news_viewer_zoom" formatted="false">Nach Erdentfernung sortieren und die Sternwarte eines Objekts direkt im Katalog öffnen.</string>
-    <string name="info_news_settings" formatted="false">Einheitlichere Einstellungen, Karten im Querformat, Bahnsymbole und 15 Minuten bis zum Bildschirmschoner.</string>
-    <string name="info_news_catalog" formatted="false">Grafikpaket 1.4: 29 externe WebP-Bilder mit Einzelabruf, Integritätsprüfung und Offline-Cache.</string>
+    <string name="info_news_star_sky" formatted="false">104 Objekte: weitere Monde, Sonden, Sterne, Galaxien und ihre zentralen Schwarzen Löcher.</string>
+    <string name="info_news_texture_downloads" formatted="false">Grafikpaket 1.5: 56 externe Bilder und 56 kleine Vorschaubilder mit Einzeldownload und Offline-Cache.</string>
+    <string name="info_news_weather" formatted="false">Zeit bei 0× anhalten; erneutes Aktivieren startet bei 1×. Fortsetzungsoptionen stehen im eigenen Szenario.</string>
+    <string name="info_news_viewer_zoom" formatted="false">Typen nach Objektanzahl, alphabetische Sortieroptionen und übersichtlichere Objektsteuerung.</string>
+    <string name="info_news_settings" formatted="false">Stabilere Referenzbeschriftungen und Nadir bei −90°, gegenüber dem Zenit.</string>
+    <string name="info_news_catalog" formatted="false">Verbesserte Mondbewegung, Annäherungen ausgewählter Objekte und eindeutiger Wetter-Ladestatus.</string>
 </resources>

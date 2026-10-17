@@ -1,9 +1,9 @@
 <resources>
     <string name="info_news_title">最近の変更 · %1$s</string>
-    <string name="info_news_star_sky" formatted="false">53天体に拡充。ケレス、エンケラドゥス、ベガ、デネブ、アルタイル、南十字座を追加。</string>
-    <string name="info_news_texture_downloads" formatted="false">時間速度は最大3600倍。最初から再開、アプリ使用中のみ進行、常に進行から選択できます。</string>
-    <string name="info_news_weather" formatted="false">同じ時刻に1.5°以内となる接近を軌跡、画像、書き出しデータに表示します。</string>
-    <string name="info_news_viewer_zoom" formatted="false">地心距離で並べ替え、一覧から各天体の観測画面を直接開けます。</string>
-    <string name="info_news_settings" formatted="false">設定の表示、横画面のカード、軌跡記号を統一し、15分のスクリーンセーバー設定を追加。</string>
-    <string name="info_news_catalog" formatted="false">画像パック1.4：外部WebP画像29枚。個別ダウンロード、整合性確認、オフラインキャッシュに対応。</string>
+    <string name="info_news_star_sky" formatted="false">104天体：衛星、探査機、恒星、銀河とその中心ブラックホールを追加。</string>
+    <string name="info_news_texture_downloads" formatted="false">画像パック1.5：56枚の外部画像と56枚の軽量プレビューを個別にダウンロードし、オフラインで保存。</string>
+    <string name="info_news_weather" formatted="false">0×で時間を停止。加速を再び有効にすると1×から開始。再開方法はカスタムシナリオで設定できます。</string>
+    <string name="info_news_viewer_zoom" formatted="false">種類を天体数順に、並べ替え項目を名前順に表示。天体の操作も改善。</string>
+    <string name="info_news_settings" formatted="false">基準ラベルの表示を安定化。天頂の反対側、−90°に天底を表示。</string>
+    <string name="info_news_catalog" formatted="false">衛星の運動、選択した天体の接近、天気データの読み込み状態を改善。</string>
 </resources>

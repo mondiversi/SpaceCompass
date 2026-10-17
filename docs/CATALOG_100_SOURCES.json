@@ -1,0 +1,299 @@
+{
+  "references": {
+    "ARCTURUS": [
+      14.261020019444445,
+      19.18240916666667,
+      36.716917449060006,
+      -1093.39,
+      -2000.06
+    ],
+    "CANOPUS": [
+      6.399197188888889,
+      -52.69566138888889,
+      309.15296464454974,
+      19.93,
+      23.24
+    ],
+    "CAPELLA": [
+      5.2781551972222225,
+      45.997991472222225,
+      42.80267423884515,
+      75.25,
+      -426.89
+    ],
+    "ANTARES": [
+      16.490127694444446,
+      -26.432002611111113,
+      553.7459723259764,
+      -12.11,
+      -23.3
+    ],
+    "ALDEBARAN": [
+      4.598677519444444,
+      16.50930236111111,
+      66.64413111973846,
+      63.45,
+      -188.94
+    ],
+    "SPICA": [
+      13.419883158333333,
+      -11.161319472222223,
+      249.73688950995407,
+      -42.35,
+      -30.67
+    ],
+    "FOMALHAUT": [
+      22.960846180555556,
+      -29.62223702777778,
+      25.12567427008705,
+      328.95,
+      -164.67
+    ],
+    "ACHERNAR": [
+      1.628568188888889,
+      -57.236752805555554,
+      139.44265827276615,
+      87,
+      -38.24
+    ],
+    "HADAR": [
+      14.063723708333335,
+      -60.37303516666667,
+      392.0148770432692,
+      -33.27,
+      -23.16
+    ],
+    "SIGMA_OCTANTIS": [
+      21.146350991722,
+      -88.95649953627,
+      293.8213393090401,
+      26.323,
+      4.721
+    ],
+    "M13": [
+      16.694898333333335,
+      36.46131944444445,
+      25000.0,
+      -3.18,
+      -2.56
+    ],
+    "OMEGA_CENTAURI": [
+      13.446466666666668,
+      -47.47947222222223,
+      17000.0,
+      0.0,
+      0.0
+    ],
+    "M57": [
+      18.893082434975334,
+      33.029134246539996,
+      2000.0,
+      0.0,
+      0.0
+    ],
+    "M27": [
+      19.993434218058002,
+      22.72119779432,
+      1360.0,
+      0.0,
+      0.0
+    ],
+    "M1": [
+      5.5755,
+      22.0175,
+      6500.0,
+      0.0,
+      0.0
+    ],
+    "CARINA_NEBULA": [
+      10.750619444444444,
+      -59.69994444444444,
+      7500.0,
+      0.0,
+      0.0
+    ],
+    "HORSEHEAD_NEBULA": [
+      5.683055555555556,
+      -2.4583333333333335,
+      1300.0,
+      0.0,
+      0.0
+    ],
+    "LARGE_MAGELLANIC_CLOUD": [
+      5.392944444444445,
+      -69.75611111111111,
+      160000.0,
+      1.91,
+      0.229
+    ],
+    "SMALL_MAGELLANIC_CLOUD": [
+      0.8772222222222222,
+      -72.80027777777778,
+      200000.0,
+      0.772,
+      -1.117
+    ],
+    "M51": [
+      13.497971666666666,
+      47.19525833333333,
+      31000000.0,
+      0.0,
+      0.0
+    ],
+    "CYGNUS_X1": [
+      19.972687704332,
+      35.201606809080005,
+      7240.671584940001,
+      -3.812,
+      -6.31
+    ],
+    "V404_CYGNI": [
+      20.4010624177065,
+      33.86721143190584,
+      7795.13742703,
+      -5.177,
+      -7.778
+    ],
+    "VELA_PULSAR": [
+      8.589083333333335,
+      -45.17658333333333,
+      1000.0,
+      0.0,
+      0.0
+    ],
+    "TOI_700_D": [
+      6.473047766666666,
+      -65.5786149,
+      101.5210649047905,
+      0.0,
+      0.0
+    ],
+    "KEPLER_186_F": [
+      19.9101824,
+      43.9549884,
+      579.234157412538,
+      0.0,
+      0.0
+    ]
+  },
+  "types": {
+    "GANYMEDE": "NATURAL_SATELLITE",
+    "CALLISTO": "NATURAL_SATELLITE",
+    "PHOBOS": "NATURAL_SATELLITE",
+    "DEIMOS": "NATURAL_SATELLITE",
+    "RHEA": "NATURAL_SATELLITE",
+    "IAPETUS": "NATURAL_SATELLITE",
+    "TITANIA": "NATURAL_SATELLITE",
+    "MIRANDA": "NATURAL_SATELLITE",
+    "TRITON": "NATURAL_SATELLITE",
+    "CHARON": "NATURAL_SATELLITE",
+    "ERIS": "DWARF_PLANET",
+    "HAUMEA": "DWARF_PLANET",
+    "MAKEMAKE": "DWARF_PLANET",
+    "VESTA": "ASTEROID",
+    "BENNU": "ASTEROID",
+    "RYUGU": "ASTEROID",
+    "HALE_BOPP": "COMET",
+    "ENCKE": "COMET",
+    "ARCTURUS": "STAR",
+    "CANOPUS": "STAR",
+    "CAPELLA": "STAR",
+    "ANTARES": "STAR",
+    "ALDEBARAN": "STAR",
+    "SPICA": "STAR",
+    "FOMALHAUT": "STAR",
+    "ACHERNAR": "STAR",
+    "HADAR": "STAR",
+    "SIGMA_OCTANTIS": "STAR",
+    "M13": "STAR_CLUSTER",
+    "OMEGA_CENTAURI": "STAR_CLUSTER",
+    "M57": "NEBULA",
+    "M27": "NEBULA",
+    "M1": "NEBULA",
+    "CARINA_NEBULA": "NEBULA",
+    "HORSEHEAD_NEBULA": "NEBULA",
+    "LARGE_MAGELLANIC_CLOUD": "GALAXY",
+    "SMALL_MAGELLANIC_CLOUD": "GALAXY",
+    "M51": "GALAXY",
+    "BEPICOLOMBO": "SPACE_PROBE",
+    "SOLAR_ORBITER": "SPACE_PROBE",
+    "LUCY": "SPACE_PROBE",
+    "PSYCHE": "SPACE_PROBE",
+    "CYGNUS_X1": "BLACK_HOLE",
+    "V404_CYGNI": "BLACK_HOLE",
+    "VELA_PULSAR": "NEUTRON_STAR",
+    "TOI_700_D": "EXOPLANET",
+    "KEPLER_186_F": "EXOPLANET"
+  },
+  "designations": {
+    "GANYMEDE": "Ganymede (503)",
+    "CALLISTO": "Callisto (504)",
+    "PHOBOS": "Phobos (401)",
+    "DEIMOS": "Deimos (402)",
+    "RHEA": "Rhea (605)",
+    "IAPETUS": "Iapetus (608)",
+    "TITANIA": "Titania (703)",
+    "MIRANDA": "Miranda (705)",
+    "TRITON": "Triton (801)",
+    "CHARON": "Charon (901)",
+    "ERIS": "136199 Eris (2003 UB313)",
+    "HAUMEA": "136108 Haumea (2003 EL61)",
+    "MAKEMAKE": "136472 Makemake (2005 FY9)",
+    "VESTA": "4 Vesta (A807 FA)",
+    "BENNU": "101955 Bennu (1999 RQ36) (2101955)",
+    "RYUGU": "162173 Ryugu (1999 JU3)",
+    "HALE_BOPP": "Hale-Bopp (C/1995 O1)",
+    "ENCKE": "2P/Encke",
+    "ARCTURUS": "α Bootis · HD 124897",
+    "CANOPUS": "α Carinae · HD 45348",
+    "CAPELLA": "α Aurigae · HD 34029",
+    "ANTARES": "α Scorpii · HD 148478",
+    "ALDEBARAN": "α Tauri · HD 29139",
+    "SPICA": "α Virginis · HD 116658",
+    "FOMALHAUT": "α Piscis Austrini · HD 216956",
+    "ACHERNAR": "α Eridani · HD 10144",
+    "HADAR": "β Centauri · HD 122451",
+    "SIGMA_OCTANTIS": "σ Octantis · Polaris Australis",
+    "M13": "M13 · NGC 6205",
+    "OMEGA_CENTAURI": "ω Centauri · NGC 5139",
+    "M57": "M57 · NGC 6720",
+    "M27": "M27 · NGC 6853",
+    "M1": "M1 · NGC 1952",
+    "CARINA_NEBULA": "NGC 3372",
+    "HORSEHEAD_NEBULA": "Barnard 33 · B33",
+    "LARGE_MAGELLANIC_CLOUD": "LMC",
+    "SMALL_MAGELLANIC_CLOUD": "SMC",
+    "M51": "M51 · NGC 5194",
+    "BEPICOLOMBO": "BepiColombo (Spacecraft) (-121)",
+    "SOLAR_ORBITER": "Solar Orbiter (spacecraft) (-144)",
+    "LUCY": "Lucy (spacecraft) (-49)",
+    "PSYCHE": "Psyche (spacecraft) (-255)",
+    "CYGNUS_X1": "Cyg X-1 · HDE 226868",
+    "V404_CYGNI": "V404 Cygni · GS 2023+338",
+    "VELA_PULSAR": "PSR B0833−45 · PSR J0835−4510",
+    "TOI_700_D": "TOI-700 d",
+    "KEPLER_186_F": "Kepler-186 f"
+  },
+  "retrieved": "2026-10-17",
+  "sources": {
+    "moving_positions_and_velocities": "https://ssd.jpl.nasa.gov/horizons/",
+    "satellite_physical_parameters": "https://ssd.jpl.nasa.gov/sats/phys_par/",
+    "stellar_astrometry": "https://simbad.cds.unistra.fr/simbad/",
+    "exoplanets": "https://exoplanetarchive.ipac.caltech.edu/TAP/sync",
+    "cygnus_x1_mass_distance": "https://arxiv.org/abs/2102.09091",
+    "v404_mass": "https://www.sc.eso.org/~jcorral/BlackCAT/",
+    "v404_distance": "https://www.nasa.gov/universe/listen-to-the-light-echoes-from-a-black-hole/",
+    "vela_direction_distance": "https://chandra.harvard.edu/photo/2001/velawv/",
+    "extended_catalogue": "https://science.nasa.gov/mission/hubble/science/explore-the-night-sky/hubble-messier-catalog/",
+    "horsehead": "https://science.nasa.gov/missions/webb/webb-captures-top-of-iconic-horsehead-nebula-in-unprecedented-detail/"
+  },
+  "qualifications": {
+    "stars": "ICRS/J2000 directions with SIMBAD proper motions and parallax distances. Unresolved multiple stars remain catalogue-system targets; no invented component trajectories.",
+    "extended": "Approximate literature distances; pointing uses catalogue centres. M57/M27 coordinates are aligned with their central stars; no stellar spectral type/magnitude is assigned to the surrounding nebula.",
+    "compact": "Black-hole binary directions follow unresolved optical systems. Vela uses rounded Chandra coordinates and ~1000 ly distance; no unverified proper motion or neutron-star mass is adopted.",
+    "exoplanets": "NASA Archive default solutions and host directions, not measured planet-resolved orbital positions. Radii/periods are adopted; null mass and atmospheric parameters remain null.",
+    "moon_speeds": "Derivative of cubic Hermite geometric states requested directly relative to the parent planet. Origin is explicit and validated; separate cache routes. Checked against independent direct JPL parent-centred samples at a half-hour midpoint.",
+    "unknowns": "Unadopted or unavailable physical references remain absent. This does not imply that the scientific literature contains no estimates. Old disputed Eris rotation was not copied.",
+    "images": "25 new archived photographs, not additional invented global surface maps. Individual WebP Q90/method6, 2048x1024 with proportional letterboxing; unphotographed targets retain symbolic placeholders."
+  }
+}

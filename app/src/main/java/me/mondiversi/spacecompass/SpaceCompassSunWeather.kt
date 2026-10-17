@@ -95,7 +95,10 @@ internal fun rememberSpaceCompassSunWeather(tile: SpaceCompassSunWeatherTile?, r
         if (tile == null || selectedTimeMs == null) null
         else spaceCompassObserverWeatherRequest(tile, selectedTimeMs, System.currentTimeMillis())
     }
-    var reading by remember(tile, selectedTimeMs, request) { mutableStateOf(SpaceCompassSunWeatherReading()) }
+    val canRequest = tile != null && resumed && (selectedTimeMs == null || request != null)
+    var reading by remember(tile, selectedTimeMs, request) {
+        mutableStateOf(SpaceCompassSunWeatherReading(loading = canRequest))
+    }
     var snapshot by remember(tile, selectedTimeMs, request) { mutableStateOf<SpaceCompassSunWeatherSnapshot?>(null) }
     var nextRequestElapsed by remember(tile, selectedTimeMs, request) { mutableLongStateOf(0L) }
     var lastRequestElapsed by remember { mutableLongStateOf(-60_000L) }
@@ -112,7 +115,9 @@ internal fun rememberSpaceCompassSunWeather(tile: SpaceCompassSunWeatherTile?, r
             val cached = snapshot?.takeIf { spaceCompassSunWeatherSnapshotUsable(it, selectedTimeMs ?: System.currentTimeMillis()) }
             val wait = maxOf(nextRequestElapsed, lastRequestElapsed + 60_000L) - android.os.SystemClock.elapsedRealtime()
             if (wait > 0) {
-                reading = SpaceCompassSunWeatherReading(cached, failed = reportedFailure && cached == null)
+                // A queued first request is still loading; a failed request waiting for retry is not.
+                reading = SpaceCompassSunWeatherReading(cached, loading = cached == null && !reportedFailure,
+                    failed = reportedFailure && cached == null)
                 delay(wait)
             }
             reading = SpaceCompassSunWeatherReading(cached, loading = cached == null)
@@ -141,5 +146,5 @@ internal fun rememberSpaceCompassSunWeather(tile: SpaceCompassSunWeatherTile?, r
             delay((nextRequestElapsed - android.os.SystemClock.elapsedRealtime()).coerceAtLeast(1L))
         }
     }
-    return reading.copy(onRetry = onRetry)
+    return reading.copy(loading = canRequest && reading.loading, onRetry = onRetry)
 }

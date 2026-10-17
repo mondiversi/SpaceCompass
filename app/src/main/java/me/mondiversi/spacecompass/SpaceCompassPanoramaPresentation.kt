@@ -69,7 +69,7 @@ internal fun spaceCompassPanoramaPresentation(snapshot: SpaceCompassPanoramaSnap
             point.timeMs to formatSpaceCompassPanoramaExportTime(point.timeMs, zone, formatting) },
         referenceNames = names, poleNames = resources.getString(R.string.sky_reference_north_pole) to
             resources.getString(R.string.sky_reference_south_pole),
-        observerPointNames = resources.getString(R.string.celestial_earth_center) to
+        observerPointNames = resources.getString(R.string.sky_reference_nadir) to
             resources.getString(R.string.sky_reference_zenith),
         orbitExportVocabulary = SpaceCompassOrbitExportVocabulary(
             point = resources.getString(R.string.celestial_point_number), time = resources.getString(R.string.format_time_heading),

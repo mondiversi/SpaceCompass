@@ -1,9 +1,9 @@
 <resources>
     <string name="info_news_title">Últimas novidades · %1$s</string>
-    <string name="info_news_star_sky" formatted="false">53 objetos: Ceres, Encélado, Vega, Deneb, Altair e o Cruzeiro do Sul chegam ao catálogo.</string>
-    <string name="info_news_texture_downloads" formatted="false">Velocidade do tempo até 3600×, com reinício, avanço só com a app ativa ou contínuo.</string>
-    <string name="info_news_weather" formatted="false">Aproximações a menos de 1,5° no mesmo instante aparecem nas trajetórias, capturas e exportações.</string>
-    <string name="info_news_viewer_zoom" formatted="false">Ordene pela distância à Terra e abra o Observatório de cada objeto diretamente no catálogo.</string>
-    <string name="info_news_settings" formatted="false">Definições mais coerentes, cartões na horizontal, símbolos de trajetória e proteção de ecrã aos 15 minutos.</string>
-    <string name="info_news_catalog" formatted="false">Pacote gráfico 1.4: 29 imagens WebP externas, transferências individuais, integridade verificada e cache offline.</string>
+    <string name="info_news_star_sky" formatted="false">104 objetos: mais luas, sondas, estrelas, galáxias e os seus buracos negros centrais.</string>
+    <string name="info_news_texture_downloads" formatted="false">Pacote gráfico 1.5: 56 imagens externas e 56 miniaturas leves, transferidas individualmente e disponíveis offline.</string>
+    <string name="info_news_weather" formatted="false">Pare o tempo em 0×; reativar a aceleração começa em 1×. A retoma configura-se no Cenário personalizado.</string>
+    <string name="info_news_viewer_zoom" formatted="false">Tipos por número de objetos, opções de ordenação alfabéticas e controlos mais claros.</string>
+    <string name="info_news_settings" formatted="false">Legendas de referência mais estáveis e Nadir a −90°, oposto ao Zénite.</string>
+    <string name="info_news_catalog" formatted="false">Melhorias no movimento das luas, aproximações de objetos selecionados e estado de carregamento meteorológico.</string>
 </resources>

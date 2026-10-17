@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="scenario_speed">מהירות הזמן</string>
-    <string name="scenario_speed_description">האצת השעון המדומה מ־1× עד 3600×. בחצות התאריך עובר אוטומטית ליום הבא.</string>
-    <string name="scenario_resume">חידוש התרחיש</string>
+    <string name="scenario_speed">זמן</string>
+    <string name="scenario_speed_description">הגדר את שעון התרחיש מ־0× (מושהה) עד 3600×.</string>
+    <string name="scenario_resume">חידוש התרחיש המותאם אישית</string>
     <string name="scenario_resume_description">בחרו כיצד הזמן המדומה יתחדש בפתיחת היישום מחדש. המהירות שנבחרה חלה בכל המצבים.</string>
     <string name="scenario_restart">התחלה מחדש</string>
     <string name="scenario_active">רק כשהיישום פעיל</string>
@@ -14,4 +14,6 @@
     <string name="scenario_restart_help">בכל הפעלה חדשה של האפליקציה, זמן התרחיש מתחיל מחדש מההגדרות הראשוניות. בזמן השימוש הוא מתקדם במהירות שנבחרה.</string>
     <string name="scenario_active_help">זמן התרחיש מתקדם במהירות שנבחרה רק בזמן השימוש באפליקציה. ברקע ובזמן שומר המסך הוא מושהה, ולאחר מכן ממשיך מהמקום שבו נעצר.</string>
     <string name="scenario_always_help">זמן התרחיש ממשיך להתקדם במהירות שנבחרה גם כשהאפליקציה סגורה ולאחר הפעלה מחדש של הטלפון.</string>
+    <string name="scenario_time_paused">הזמן מושהה</string>
+    <string name="scenario_midnight_note">כשהזמן מתקדם, בחצות התאריך עובר אוטומטית ליום הבא.</string>
 </resources>

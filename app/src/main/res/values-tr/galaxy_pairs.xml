@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="celestial_m87_galaxy">M87 Gökadası</string>
+    <string name="celestial_milky_way_center">Samanyolu (merkez)</string>
+    <string name="celestial_m51_core">M51 merkezî kara deliği</string>
+    <string name="celestial_m31_galaxy_tracking_note">Yaklaşık 2,5 milyon ışık yılı uzaklıktaki sarmal gökada. İşaret ve günlük yol çekirdeğini izler. M31* ayrı bir nesnedir; kütlesi gökadanın kütlesi değildir.</string>
+    <string name="celestial_m31_core_tracking_note">Andromeda’nın (M31) merkezî kara deliği, ayrı bir katalog nesnesidir. Kütle ve model ufuk boyutu gökadaya değil, kara deliğe aittir.</string>
+    <string name="celestial_m87_galaxy_tracking_note">Yaklaşık 55 milyon ışık yılı uzaklıktaki dev eliptik gökada. İşaret çekirdeğini izler. M87* ayrı bir nesnedir; bu fotoğraf kara deliğin ufkunu değil, gökadayı gösterir.</string>
+    <string name="celestial_milky_way_tracking_note">Dünya, Samanyolu’nun içindedir. İşaret ve yol tüm gökadayı değil, yaklaşık 26.400 ışık yılı uzaklıktaki gökada merkezini gösterir. Panorama bir arşiv fotoğrafıdır.</string>
+    <string name="celestial_m51_core_tracking_note">M51’deki NGC 5194’ün merkezî kara deliği, yaklaşık 31 milyon ışık yılı uzaktadır. İşaret etkin çekirdeği izler. Yaklaşık 4 milyon Güneş kütlesi, büyük belirsizlik taşıyan dolaylı bir M–σ tahminidir. Ufuk simgesel olarak gösterilir.</string>
+</resources>

@@ -54,7 +54,10 @@ private fun spaceCompassHorizonsTarget(body: SpaceCompassCelestialBody) = when (
 private fun validateSpaceCompassHorizonsHeader(body: SpaceCompassCelestialBody, text: String, geometric: Boolean) {
     val target = spaceCompassHorizonsTarget(body)
     require(Regex("(?m)^Target body name:\\s*${Regex.escape(target.header)}(?:\\s|\\(|$)").containsMatchIn(text))
-    require(text.contains(if (geometric) "Center body name: Sun (10)" else "Center body name: Earth (399)") && text.contains("Output units    : AU-D") &&
+    val primary = if (geometric) body.horizonsMotionPrimary else null
+    val centre = if (primary != null) "${primary.name.lowercase(java.util.Locale.ROOT).replaceFirstChar { it.uppercase() }} (${primary.horizonsCentreCode})"
+        else if (geometric) "Sun (10)" else "Earth (399)"
+    require(text.contains("Center body name: $centre") && text.contains("Output units    : AU-D") &&
         text.contains("Reference frame : ICRF") &&
         Regex("(?m)^Start time\\s*:.*\\bUT\\s*$").containsMatchIn(text) &&
         Regex("(?m)^Stop  time\\s*:.*\\bUT\\s*$").containsMatchIn(text))
@@ -94,7 +97,7 @@ internal fun parseSpaceCompassHorizonsEphemeris(body: SpaceCompassCelestialBody,
     return SpaceCompassHorizonsEphemeris(body, samples)
 }
 
-/** Never reuse apparent or Earth-centered states as heliocentric orbital/outward speed. */
+/** Geometric motion uses its validated primary; apparent/Earth-centred states cannot masquerade as it. */
 internal fun parseSpaceCompassHorizonsMotion(body: SpaceCompassCelestialBody, text: String): SpaceCompassHorizonsMotion {
     validateSpaceCompassHorizonsHeader(body, text, geometric = true)
     val target = spaceCompassHorizonsTarget(body)
@@ -113,7 +116,7 @@ internal fun parseSpaceCompassHorizonsMotion(body: SpaceCompassCelestialBody, te
 internal fun spaceCompassHorizonsUrl(body: SpaceCompassCelestialBody, now: Long, geometricMotion: Boolean = false): String {
     val day = Instant.ofEpochMilli(now).atZone(ZoneOffset.UTC).toLocalDate().minusDays(1)
     val values = linkedMapOf("format" to "text", "COMMAND" to "'${spaceCompassHorizonsTarget(body).command}'",
-        "CENTER" to if (geometricMotion) "'500@10'" else "'500@399'", "MAKE_EPHEM" to "'YES'", "EPHEM_TYPE" to "'VECTORS'",
+        "CENTER" to if (geometricMotion) "'500@${body.horizonsMotionPrimary?.horizonsCentreCode ?: 10}'" else "'500@399'", "MAKE_EPHEM" to "'YES'", "EPHEM_TYPE" to "'VECTORS'",
         "START_TIME" to "'$day'", "STOP_TIME" to "'${day.plusDays(3)}'", "STEP_SIZE" to "'1 h'",
         "REF_PLANE" to "'FRAME'", "REF_SYSTEM" to "'ICRF'", "VEC_CORR" to if (geometricMotion) "'NONE'" else "'LT+S'",
         "VEC_TABLE" to "'2'", "OUT_UNITS" to "'AU-D'", "CSV_FORMAT" to "'YES'", "TIME_TYPE" to "'UT'")

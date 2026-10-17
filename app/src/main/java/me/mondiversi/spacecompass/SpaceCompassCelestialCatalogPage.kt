@@ -202,6 +202,7 @@ internal fun SpaceCompassCelestialCatalogPage(timeMs: Long, remote: SpaceCompass
             }
             AnimatedVisibility(filtersOpen, enter = expandVertically() + fadeIn(), exit = shrinkVertically() + fadeOut()) {
                 SpaceCompassCatalogFilterBar(types, visibility, visibleCount = visibleBodies.size, searchActive = query.isNotBlank(),
+                    availableBodies = availableBodies,
                     onType = { type -> updateCatalogPreferences(catalogPreferences.copy(
                         types = if (type in types) types - type else types + type)) },
                     onAllTypes = { updateCatalogPreferences(catalogPreferences.copy(types = emptySet())) },

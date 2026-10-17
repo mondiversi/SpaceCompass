@@ -1,0 +1,227 @@
+API VERSION: 1.2
+API SOURCE: NASA/JPL Horizons API
+
+*******************************************************************************
+ Revised: Sep 30, 2026              BepiColombo / (Sun)                    -121
+                            http://sci.esa.int/bepicolombo/
+
+ LAUNCH DATE:                                            MERCURY ARRIVAL DATE:
+  2018-Oct-20 01:45 UTC                                      2026-Nov
+
+  Earth flyby: 2020-Apr-10, 04:24:58 UTC @ 19066 km, 352.85 deg E,-19.70 deg S
+
+ LAUNCH VEHICLE:                                         LAUNCH SITE:
+  Ariane 5                                                Kourou, French Guiana
+
+ Note (2024-Sep-02): Due to unexpected electric currents between MTM's solar
+  arrays and the power extraction and distribution unit, electric propulsion
+  is reduced, requiring a one-year delay in Mercury arrival, to November 2026.
+
+ BACKGROUND:
+  ESA's BepiColombo mission to orbit Mercury for one Earth year (four Mercury
+  years) is composed of two spacecraft: the ESA Mercury Planetary Orbiter (MPO)
+  and the ISAS/JAXA Mercury Magnetospheric Orbiter (MMO).
+
+  MMO will be released once the MMO orbit is reached. MPO will be inserted
+  using chemical propulsion.
+
+   1) MPO will study the surface and internal composition of Mercury
+   2) MMO will study the region around the planet influenced by its
+      magnetic field
+
+  For the 8.2 year launch & cruise phases, MPO and MMO will be carried as part
+  of the Mercury Composite Spacecraft and released on arrival at Mercury.
+
+  There will be nine gravity assists during the cruise phase:
+
+   2020-Apr-10: Earth flyby
+   2020-Oct-15: Venus flyby
+   2021-Aug-11: Venus Flyby
+   2021-Oct-01: First Mercury flyby
+   2022-Jun-23: 2nd Mercury flyby
+   2023-Jun-20: 3rd Mercury flyby
+   2024-Sep-04: 4th Mercury flyby
+   2024-Dec-01: 5th Mercury flyby
+   2025-Jan-08: 6th Mercury flyby
+   ....
+   2026-Nov   : Mercury orbit insertion
+   2028-Apr   : End of nominal mission
+   2029-Apr   : End of extended mission
+
+ OBJECTIVES:
+  Study and understand the composition, geophysics, atmosphere, magnetosphere
+  and history of Mercury with following science objectives:
+
+   * Investigate origin and evolution of a planet close to the parent star
+   * Study Mercury form, interior structure, geology, composition and craters
+   * Examine composition and dynamics of Mercury's vestigial atmosphere
+   * Probe Mercury's magnetized envelope; structure and dynamics
+   * Determine the origin of Mercury's magnetic field
+   * Investigate polar deposits: their composition and origin
+   * Perform a test of Einstein's theory of general relativity
+
+ SPACECRAFT PHYSICAL PROPERTIES:
+  Total launch mass  = 4100 kg
+
+                         MPO                 MMO
+  In Mercury orbit     1150 kg             275 kg
+  Payload mass           80 kg              45 kg
+  Payload power        100-150 W            90 W
+  Data volume          1550 Gbits/year     160 Gbits/year
+  Average data rate    50 kbits/s            5 kbits/s
+  Antenna              1-m X/Ka-band       0.8 m X-band
+  Orientation          Nadir pointing      Spin axis at 90 deg. to Sun
+  Stabilisation        3-axis stabilized   15-rpm spin-stabilised
+
+ BASIC ORBIT PARAMETERS AT MERCURY:
+                       MPO (polar)        MMO (polar)
+  peri/apo apses      480 x 1500 km      590 x 11640 km
+  period                 2.3 hr            9.3 hr
+
+ SPACECRAFT TRAJECTORY:
+  Trajectory from ESA. Data fit through 2026-Sep-28, prediction thereafter.
+
+   Name                                    Start (TDB)          Stop (TDB)
+   --------------------------------------  -----------------  -----------------
+   bc_mpo_fcp_00236_20181020_20270411_v01  2018-Oct-20 02:14  2027-Apr-10 23:59
+*******************************************************************************
+
+
+*******************************************************************************
+Ephemeris / API_USER Fri Oct 16 20:30:58 2026 Pasadena, USA      / Horizons
+*******************************************************************************
+Target body name: BepiColombo (Spacecraft) (-121) {source: BepiColombo_ESA}
+Center body name: Earth (399)                     {source: DE441}
+Center-site name: (user defined site below)
+*******************************************************************************
+Start time      : A.D. 2026-Oct-17 12:30:00.0000 UT
+Stop  time      : A.D. 2026-Oct-17 12:30:00.5000 UT
+Step-size       : 0 steps
+*******************************************************************************
+Target pole/equ : undefined
+Target radii    : undefined
+Center geodetic : 9.0, 45.0, .100                 {E-lon(deg),Lat(deg),Alt(km)}
+Center cylindric: 9.0, 4517.66159, 4487.41912     {E-lon(deg),Dxy(km),Dz(km)}
+Center pole/equ : ITRF93                          {East-longitude positive}
+Center radii    : 6378.137, 6378.137, 6356.752 km {Equator_a, b, pole_c}
+Target primary  : Earth
+Vis. interferer : MOON (R_eq= 1737.400) km        {source: DE441}
+Rel. light bend : Sun                             {source: DE441}
+Rel. lght bnd GM: 1.3271E+11 km^3/s^2
+Atmos refraction: NO (AIRLESS)
+RA format       : HMS
+Time format     : CAL
+Calendar mode   : Mixed Julian/Gregorian
+RTS-only print  : NO
+EOP file        : eop.261016.p270112
+EOP coverage    : DATA-BASED 1962-JAN-20 TO 2026-OCT-16. PREDICTS-> 2027-JAN-11
+Units conversion: 1 au= 149597870.700 km, c= 299792.458 km/s, 1 day= 86400.0 s
+Table cut-offs 1: Elevation (-90.0deg=NO ),Airmass (>38.000=NO), Daylight (NO )
+Table cut-offs 2: Solar elongation (  0.0,180.0=NO ),Local Hour Angle( 0.0=NO )
+Table cut-offs 3: RA/DEC angular rate (     0.0=NO )
+Table format    : Comma Separated Values (spreadsheet)
+***************************************************************************************
+ Date__(UT)__HR:MN:SC.fff, , ,Azi_(a-app), Elev_(a-app),             delta,     deldot,
+***************************************************************************************
+$$SOE
+ 2026-Oct-17 12:30:00.000,*, , 177.376573,    24.588927,  0.90986102693603,-32.2202631,
+$$EOE
+***************************************************************************************
+Column meaning:
+
+TIME
+
+  Times PRIOR to 1962 are UT1, a mean-solar time closely related to the
+prior but now-deprecated GMT. Times AFTER 1962 are in UTC, the current
+civil or "wall-clock" time-scale. UTC is kept within 0.9 seconds of UT1
+using integer leap-seconds for 1972 and later years.
+
+  Conversion from the internal Barycentric Dynamical Time (TDB) of solar
+system dynamics to the non-uniform civil UT time-scale requested for output
+has not been determined for UTC times after the next July or January 1st.
+Therefore, the last known leap-second is used as a constant over future
+intervals.
+
+  Time tags refer to the UT time-scale conversion from TDB on Earth
+regardless of observer location within the solar system, although clock
+rates may differ due to the local gravity field and no analog to "UT"
+may be defined for that location.
+
+  Any 'b' symbol in the 1st-column denotes a B.C. date. First-column blank
+(" ") denotes an A.D. date.
+
+CALENDAR SYSTEM
+
+  Mixed calendar mode was active such that calendar dates after AD 1582-Oct-15
+(if any) are in the modern Gregorian system. Dates prior to 1582-Oct-5 (if any)
+are in the Julian calendar system, which is automatically extended for dates
+prior to its adoption on 45-Jan-1 BC.  The Julian calendar is useful for
+matching historical dates. The Gregorian calendar more accurately corresponds
+to the Earth's orbital motion and seasons. A "Gregorian-only" calendar mode is
+available if such physical events are the primary interest.
+
+  NOTE: "n.a." in output means quantity "not available" at the print-time.
+
+SOLAR PRESENCE (OBSERVING SITE)
+  Time tag is followed by a blank, then a solar-presence condition code:
+
+       '*'  Daylight (refracted solar upper-limb on or above apparent horizon)
+       'C'  Civil twilight/dawn
+       'N'  Nautical twilight/dawn
+       'A'  Astronomical twilight/dawn
+       ' '  Night OR geocentric ephemeris
+
+LUNAR PRESENCE WITH TARGET RISE/TRANSIT/SET EVENT MARKER (OBSERVING SITE)
+  The solar-presence code column is immediately followed by another marker:
+
+       'm'  Refracted upper-limb of Moon on or above apparent horizon
+       ' '  Refracted upper-limb of Moon below apparent horizon OR geocentric
+
+  The lunar presence marker (an ongoing state) can be over-ridden by a target
+  event marker if an event has occurred since the last output step:
+
+       'r'  Rise          (target body on or went above cut-off RTS elevation)
+       'e'  Elevation max (target body maximum elevation angle has occurred)
+       't'  Transit       (target body at or passed through observer meridian)
+       's'  Set           (target body on or went below cut-off RTS elevation)
+
+RTS MARKERS (TVH)
+  Rise and set are with respect to the reference ellipsoid true visual horizon
+defined by the elevation cut-off angle. Horizon dip and yellow-light refraction
+(Earth only) are considered. Accuracy is < or = to twice the requested search
+step-size.
+
+ 'Azi_(a-app), Elev_(a-app),' =
+  Airless apparent azimuth and elevation of target center. Compensated
+for light-time, the gravitational deflection of light, stellar aberration,
+precession and nutation. Azimuth is measured clockwise from north:
+
+  North(0) -> East(90) -> South(180) -> West(270) -> North (360)
+
+Elevation angle is with respect to a plane perpendicular to the reference
+surface local zenith direction. TOPOCENTRIC ONLY.  Units: DEGREES
+
+ 'delta,     deldot,' =
+   Apparent range ("delta", light-time aberrated) and range-rate ("delta-dot")
+of the target center relative to the observer. A positive "deldot" means the
+target center is moving away from the observer, negative indicates movement
+toward the observer.  Units: AU and KM/S
+
+Computations by ...
+
+    Solar System Dynamics Group, Horizons On-Line Ephemeris System
+    4800 Oak Grove Drive, Jet Propulsion Laboratory
+    Pasadena, CA  91109   USA
+
+    General site: https://ssd.jpl.nasa.gov/
+    Mailing list: https://ssd.jpl.nasa.gov/email_list.html
+    System news : https://ssd.jpl.nasa.gov/horizons/news.html
+    User Guide  : https://ssd.jpl.nasa.gov/horizons/manual.html
+    Connect     : browser        https://ssd.jpl.nasa.gov/horizons/app.html#/x
+                  API            https://ssd-api.jpl.nasa.gov/doc/horizons.html
+                  command-line   telnet ssd.jpl.nasa.gov 6775
+                  e-mail/batch   https://ssd.jpl.nasa.gov/ftp/ssd/horizons_batch.txt
+                  scripts        https://ssd.jpl.nasa.gov/ftp/ssd/SCRIPTS
+    Inquiries   : Jon.D.Giorgini@jpl.nasa.gov
+
+***************************************************************************************

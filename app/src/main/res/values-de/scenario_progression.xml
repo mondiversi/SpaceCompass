@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="scenario_speed">Zeitgeschwindigkeit</string>
-    <string name="scenario_speed_description">Beschleunige die simulierte Uhr von 1× bis 3600×. Um Mitternacht wechselt das Datum automatisch zum nächsten Tag.</string>
-    <string name="scenario_resume">Szenario fortsetzen</string>
+    <string name="scenario_speed">Zeit</string>
+    <string name="scenario_speed_description">Stelle die Szenariouhr von 0× (angehalten) bis 3600× ein.</string>
+    <string name="scenario_resume">Benutzerdefiniertes Szenario fortsetzen</string>
     <string name="scenario_resume_description">Wähle, wie die simulierte Zeit beim erneuten Öffnen der App fortgesetzt wird. Die gewählte Geschwindigkeit gilt in jedem Modus.</string>
     <string name="scenario_restart">Von vorne beginnen</string>
     <string name="scenario_active">Nur bei aktiver App</string>
@@ -14,4 +14,6 @@
     <string name="scenario_restart_help">Bei jedem neuen App-Start beginnt die Szenariozeit wieder mit den ursprünglichen Einstellungen. Während der Nutzung läuft sie mit der gewählten Geschwindigkeit weiter.</string>
     <string name="scenario_active_help">Die Szenariozeit läuft nur während der App-Nutzung mit der gewählten Geschwindigkeit. Im Hintergrund und im Bildschirmschoner pausiert sie und wird danach an derselben Stelle fortgesetzt.</string>
     <string name="scenario_always_help">Die Szenariozeit läuft mit der gewählten Geschwindigkeit weiter, auch wenn die App geschlossen ist und nach einem Neustart des Telefons.</string>
+    <string name="scenario_time_paused">Zeit angehalten</string>
+    <string name="scenario_midnight_note">Wenn die Zeit voranschreitet, wechselt das Datum um Mitternacht automatisch zum nächsten Tag.</string>
 </resources>

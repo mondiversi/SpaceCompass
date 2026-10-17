@@ -82,5 +82,5 @@ internal fun spaceCompassCatalogImageCredit(name: String?): String? = when (name
     "orion_nebula.webp" -> "NASA, ESA, M. Robberto (STScI/ESA), and the Hubble Space Telescope Orion Treasury Project Team"
     "pleiades.webp" -> "NASA/JPL-Caltech/UCLA"
     "andromeda_galaxy.webp" -> "NASA, ESA, Benjamin F. Williams (UWashington), Zhuo Chen (UWashington), L. Clifton Johnson (Northwestern); Image Processing: Joseph DePasquale (STScI)"
-    else -> null
+    else -> spaceCompassAdditionalCatalogImageCredit(name)
 }

@@ -1,3 +1,4 @@
 <resources>
     <string name="sky_reference_zenith">זנית</string>
+    <string name="sky_reference_nadir">נדיר</string>
 </resources>

@@ -47,7 +47,8 @@ internal suspend fun fetchSpaceCompassCelestialText(url: String, maximumBytes: I
 }
 private fun orbitalCache(context: Context, body: SpaceCompassCelestialBody, motion: Boolean = false): AtomicFile {
     require(!motion || body.usesHorizons)
-    val name = if (motion) "celestial-${body.name.lowercase(java.util.Locale.ROOT)}-heliocentric-motion-v2.txt" else when (body) {
+    val name = if (motion) "celestial-${body.name.lowercase(java.util.Locale.ROOT)}-" +
+        (if (body.horizonsMotionPrimary != null) "parent-motion-v1.txt" else "heliocentric-motion-v2.txt") else when (body) {
         SpaceCompassCelestialBody.ISS -> "celestial-iss-v1.tle"
         SpaceCompassCelestialBody.STARLINK_V3 -> "celestial-starlink-40083-v1.csv"
         SpaceCompassCelestialBody.TESLA_ROADSTER -> "celestial-tesla-roadster-v1.txt"

@@ -250,7 +250,9 @@ internal fun SpaceCompassObserverPage(modifier: Modifier = Modifier, onBack: () 
         }
     }
     Column(modifier.fillMaxSize().testTag("observer-page")) {
-        SpaceCompassPageToolbar(stringResource(R.string.observer_title), onBack)
+        SpaceCompassPageToolbar(stringResource(R.string.observer_title), onBack) {
+            SpaceCompassScenarioResumeButton(observer)
+        }
         SpaceCompassIslandGrid(Modifier.weight(1f), scroll = islandScroll) {
             item(key = "summary", span = StaggeredGridItemSpan.FullLine) {
                 SpaceCompassObserverSummaryIsland(observer.plan)
@@ -390,6 +392,7 @@ internal fun SpaceCompassObserverPage(modifier: Modifier = Modifier, onBack: () 
                         Text(stringResource(R.string.observer_current_date))
                     }
                     SpaceCompassSettingsDescription(stringResource(R.string.observer_limits))
+                    SpaceCompassScenarioMidnightNote()
                 }
             }
             item(key = "time") {
@@ -416,6 +419,7 @@ internal fun SpaceCompassObserverPage(modifier: Modifier = Modifier, onBack: () 
                     }, enabled = !busy, modifier = Modifier.testTag("observer-current-time")) {
                         Text(stringResource(R.string.observer_current_time))
                     }
+                    SpaceCompassScenarioMidnightNote()
                 }
             }
             item(key = "scenario-speed") { SpaceCompassScenarioSpeedIsland(observer) { islandReveal.changed(6, it) } }

@@ -104,3 +104,7 @@ CC0 1.0: https://creativecommons.org/publicdomain/zero/1.0/
 Commons Flickr review on 2018-02-08 confirmed CC0; VRT ticket 2015032410033985.
 2048 x 1024 WebP, quality 90, method 6. Aspect-preserving fit with black framing.
 An archived launch photograph, not a current view or attitude measurement.
+
+External thumb_*.webp reference previews inherit the source credits and licences
+of their parent images. They use 128 x 128 WebP, quality 90, method 6. The external
+manifest/CREDITS.md retain per-file authors, source, parent and integrity details.

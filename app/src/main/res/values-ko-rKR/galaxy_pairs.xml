@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="celestial_m87_galaxy">M87 은하</string>
+    <string name="celestial_milky_way_center">우리은하 (중심)</string>
+    <string name="celestial_m51_core">M51 중심 블랙홀</string>
+    <string name="celestial_m31_galaxy_tracking_note">약 250만 광년 떨어진 나선은하입니다. 표식과 일일 경로는 은하핵을 추적합니다. M31*은 별도 천체이며, 그 질량은 은하 전체의 질량이 아닙니다.</string>
+    <string name="celestial_m31_core_tracking_note">안드로메다은하(M31)의 중심 블랙홀로, 목록에서 별도 천체로 표시됩니다. 질량과 모형에 따른 지평선 크기는 은하가 아닌 블랙홀의 값입니다.</string>
+    <string name="celestial_m87_galaxy_tracking_note">약 5,500만 광년 떨어진 거대 타원은하입니다. 표식은 은하핵을 추적합니다. M87*은 별도 천체이며, 이 사진은 블랙홀의 지평선이 아닌 은하를 보여 줍니다.</string>
+    <string name="celestial_milky_way_tracking_note">지구는 우리은하 내부에 있습니다. 표식과 경로는 은하 전체가 아닌 약 26,400광년 떨어진 은하 중심을 가리킵니다. 파노라마는 과거에 촬영된 사진입니다.</string>
+    <string name="celestial_m51_core_tracking_note">M51의 NGC 5194에 있는 중심 블랙홀로, 약 3,100만 광년 떨어져 있습니다. 표식은 활동은하핵을 추적합니다. 약 400만 태양질량은 불확실성이 큰 M–σ 관계에 따른 간접 추정값입니다. 지평선은 기호로 표시합니다.</string>
+</resources>

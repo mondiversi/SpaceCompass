@@ -32,9 +32,12 @@ internal fun SpaceCompassSkyReferenceLayer(latitude: Double?, timeMs: Long?,
         SpaceCompassSkyReference.ARCTIC to stringResource(R.string.sky_reference_arctic),
         SpaceCompassSkyReference.ANTARCTIC to stringResource(R.string.sky_reference_antarctic))
     val poles = stringResource(R.string.sky_reference_north_pole) to stringResource(R.string.sky_reference_south_pole)
-    val observerPoints = stringResource(R.string.celestial_earth_center) to stringResource(R.string.sky_reference_zenith)
+    val observerPoints = stringResource(R.string.sky_reference_nadir) to stringResource(R.string.sky_reference_zenith)
     val scale = with(LocalDensity.current) { 12.sp.toPx() / 24f }
     val numericFormat = LocalSpaceCompassNumericFormat.current
+    val placement = remember(names, poles, observerPoints, numericFormat, scale) {
+        SpaceCompassSkyReferencePlacementState()
+    }
     val guides = if (!ready) Modifier else Modifier.drawWithContent {
         if (size.width <= 0f || size.height <= 0f) { drawContent(); return@drawWithContent }
         val occupied = exclusions.map { frame -> RectF(frame.left.toFloat(), frame.top.toFloat(),
@@ -44,7 +47,8 @@ internal fun SpaceCompassSkyReferenceLayer(latitude: Double?, timeMs: Long?,
         val drawing = drawSpaceCompassSkyReferences(canvas, requireNotNull(latitude), requireNotNull(timeMs),
             size.width.toInt(), size.height.toInt(), scale, occupied, orientation, perspective,
             circles = circles, referenceNames = names, poleNames = poles, allowLabelOverlap = false,
-            numericFormat = numericFormat, observerPointNames = observerPoints, observerAltitude = observerAltitude)
+            numericFormat = numericFormat, observerPointNames = observerPoints, observerAltitude = observerAltitude,
+            placementState = placement)
         // Curves/crosses stay behind bodies; all shaped names and point captions are drawn once in front.
         drawSpaceCompassSkyReferenceLabels(canvas, drawing.copy(labels = emptyList(), curveLabels = emptyList()), scale)
         canvas.restore()

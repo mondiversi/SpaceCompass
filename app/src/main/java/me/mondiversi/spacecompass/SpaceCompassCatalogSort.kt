@@ -11,6 +11,15 @@ internal enum class SpaceCompassCatalogSortField(val label: Int) {
     DAY_TEMPERATURE(R.string.catalog_sort_day_temperature), NIGHT_TEMPERATURE(R.string.catalog_sort_night_temperature)
 }
 
+/** Menu labels follow the app language; stored sorting identifiers keep their original names. */
+internal fun spaceCompassCatalogSortFields(labels: Map<SpaceCompassCatalogSortField, String>,
+    locale: Locale): List<SpaceCompassCatalogSortField> {
+    val collator = Collator.getInstance(locale)
+    return SpaceCompassCatalogSortField.entries.sortedWith { a, b ->
+        collator.compare(labels[a] ?: a.name, labels[b] ?: b.name)
+    }
+}
+
 /** Existing stored names remain stable across updates; new pairs use the same preference. */
 internal enum class SpaceCompassCatalogSort(val field: SpaceCompassCatalogSortField? = null, val descending: Boolean = false) {
     CATALOG,

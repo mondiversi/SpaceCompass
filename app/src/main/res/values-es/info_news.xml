@@ -1,9 +1,9 @@
 <resources>
     <string name="info_news_title">Últimas novedades · %1$s</string>
-    <string name="info_news_star_sky" formatted="false">53 objetos: Ceres, Encélado, Vega, Deneb, Altair y la Cruz del Sur se unen al catálogo.</string>
-    <string name="info_news_texture_downloads" formatted="false">Velocidad del tiempo hasta 3600×, con reinicio, avance solo con la app activa o continuo.</string>
-    <string name="info_news_weather" formatted="false">Los acercamientos a menos de 1,5° en el mismo instante aparecen en rutas, capturas y exportaciones.</string>
-    <string name="info_news_viewer_zoom" formatted="false">Ordena por distancia a la Tierra y abre el Observatorio de cada objeto desde el catálogo.</string>
-    <string name="info_news_settings" formatted="false">Ajustes más coherentes, tarjetas en horizontal, símbolos de ruta y salvapantallas a los 15 minutos.</string>
-    <string name="info_news_catalog" formatted="false">Paquete gráfico 1.4: 29 imágenes WebP externas con descargas individuales, integridad verificada y caché sin conexión.</string>
+    <string name="info_news_star_sky" formatted="false">104 objetos: más lunas, sondas, estrellas, galaxias y sus agujeros negros centrales.</string>
+    <string name="info_news_texture_downloads" formatted="false">Paquete gráfico 1.5: 56 imágenes externas y 56 miniaturas ligeras con descargas individuales y caché sin conexión.</string>
+    <string name="info_news_weather" formatted="false">Detén el tiempo a 0×; al reactivar la aceleración empieza en 1×. La reanudación se configura en Escenario personalizado.</string>
+    <string name="info_news_viewer_zoom" formatted="false">Tipos ordenados por número de objetos, opciones de ordenación alfabéticas y controles más claros.</string>
+    <string name="info_news_settings" formatted="false">Etiquetas de referencia más estables y Nadir a −90°, opuesto al Cenit.</string>
+    <string name="info_news_catalog" formatted="false">Mejoras en el movimiento de las lunas, acercamientos entre objetos seleccionados y estado de carga del tiempo.</string>
 </resources>

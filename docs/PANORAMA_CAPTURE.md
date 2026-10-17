@@ -210,8 +210,8 @@ in [VERIFICATION.md](VERIFICATION.md). These changes remain local and unpublishe
 
 ## Event symbols and translucent point labels — October 6 local follow-up
 
-Orbital event markers use the same vocabulary as the live orbit: upward triangle
-for rise, downward triangle for set, plus sign for culmination/maximum and horizontal
+Orbital event markers use the same vocabulary as the live orbit: upper semicircle
+for rise, lower semicircle for set, plus sign for culmination/maximum and horizontal
 bar for minimum. Hourly points remain plain dots. Special markers are slightly
 larger with a dark halo so the inset glyph remains readable at export resolution.
 For a coincident event, the merged point's representative event is drawn just as
@@ -287,12 +287,12 @@ remain independent of the live UI language. Arabic/Hebrew/Persian guide captions
 are shaped with the Android text layout engine.
 
 
-### Earth centre and zenith references — 2026-10-07
+### Nadir and zenith references
 
-The reference-guide layer also contains geometric Earth-centre and exact zenith
+The reference-guide layer also contains exact nadir (-90 degrees) and zenith (+90 degrees)
 crosses. Captured guide/annotation preferences and language profiles govern these
 in both panorama and camera photos. Celestial circle/pole projection remains
-unchanged. See EARTH_REFERENCE_POINTS.md for geocentre/vertical handling.
+unchanged. See EARTH_REFERENCE_POINTS.md for local vertical handling.
 
 
 ## Curved circle captions — 2026-10-07

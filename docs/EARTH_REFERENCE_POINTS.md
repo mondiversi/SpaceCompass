@@ -1,7 +1,7 @@
-# Earth-centre and zenith guide crosses
+# Nadir and zenith guide crosses
 
 The Earth centre is a reference point, removed from the selectable object catalog
-on 2026-10-07. The ordinary catalog now contains 30 objects; the independently
+on 2026-10-07. The ordinary catalog now contains 104 objects; the independently
 hidden fictional object is unchanged. Counts, filtered master selection, ordering
 and refresh all derive from this catalog, so the retired reference cannot appear.
 Stored Earth-centre checks are discarded while restoring all remaining checks and
@@ -11,22 +11,19 @@ reset. Restored instance-state names are filtered through the same catalog.
 The legacy enum ID/calculation remain internal for compatibility and numerical
 regressions, with no selectable catalog entry.
 
-The enabled celestial-guide layer now adds two crosses in the same white outlined
-style as its north/south pole crosses: the Earth centre and the local zenith.
-The centre uses a WGS84 geocentric direction from observer latitude and altitude.
-It is slightly displaced from the ellipsoid-normal nadir at intermediate latitudes,
-so it is not falsely labelled as exactly -90 degrees. The zenith is exactly local
-ENU +Up, at +90 degrees. Neither point has object facts, thumbnails or a daily orbit.
+The enabled celestial-guide layer adds nadir and zenith crosses in the same
+white outlined style as the north/south celestial-pole crosses. Nadir is exactly
+local ENU -Up (-90 degrees), opposite zenith at +90 degrees. It replaces the
+former WGS84 Earth-centre guide rather than merely renaming its slightly offset
+geocentric vector. Neither vertical reference has object facts, a thumbnail or
+a daily orbit. The retired Earth-centre catalogue ID/calculation stays internal.
 
-Live virtual/camera views and panorama/photo rendering share the same point model
-and cross renderer. Points in photographs follow the actual camera lens/attitude
-and appear only in its field. A vertical has no meaningful azimuth; in a full
-panorama it is anchored at mid-width on the top/bottom angular edge, independent
-of the selected center. Captures freeze the names in the chosen/international
-presentation. Zenith is translated in all twenty languages; Earth centre reuses
-its existing translated name. The existing guide switch controls the crosses;
-the existing capture-label toggle hides their captions while retaining geometric
-marks, exactly as it does for pole/reference guides. Defaults are unchanged.
+Live virtual/camera views and panorama/photo rendering share this point model
+and renderer. Exact verticals have no meaningful azimuth: panoramas anchor them
+at mid-width on the top/bottom angular edge, independent of their chosen centre.
+Camera frames show them only inside the actual field of view. Both names are
+translated in all twenty languages and captured export profiles resolve the
+same strings. The reference-guide switch and caption rules remain unchanged.
 
 ## Projection meaning
 

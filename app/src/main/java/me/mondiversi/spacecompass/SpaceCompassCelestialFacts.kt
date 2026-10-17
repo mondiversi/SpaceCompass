@@ -23,7 +23,7 @@ internal data class SpaceCompassCelestialFacts(
     val maximumMassSolar: Double? = null, val apparentMagnitude: Double? = null
 )
 
-internal fun spaceCompassCelestialFacts(body: SpaceCompassCelestialBody): SpaceCompassCelestialFacts = when (body) {
+internal fun spaceCompassCelestialFacts(body: SpaceCompassCelestialBody): SpaceCompassCelestialFacts = spaceCompassAdditionalCatalogFacts(body) ?: when (body) {
     SpaceCompassCelestialBody.CERES -> SpaceCompassCelestialFacts(diameterKm = 939.4, diameterEstimated = true,
         massKg = 62.6284 / 6.67430e-20, gravity = 62.6284 / (469.7 * 469.7) * 1000,
         density = 2162.0, rotationHours = 9.07417, revolutionDays = 4.60851 * 365.25,
@@ -137,6 +137,7 @@ internal fun spaceCompassCelestialFacts(body: SpaceCompassCelestialBody): SpaceC
     // Do not present launch mass as the current mass after decades of propellant use.
     SpaceCompassCelestialBody.VOYAGER_1 -> SpaceCompassCelestialFacts(dimensionMeters = 3.7, massKg = 733.0, massEstimated = true)
     SpaceCompassCelestialBody.VOYAGER_2 -> SpaceCompassCelestialFacts(dimensionMeters = 3.7, massKg = 735.0, massEstimated = true)
+    else -> error("Missing celestial facts definition: $body")
 }
 
 private fun stephensonFacts(): SpaceCompassCelestialFacts {
@@ -186,7 +187,7 @@ internal fun formatSpaceCompassCelestialGravity(value: Double?, numeric: SpaceCo
 }
 
 internal val SpaceCompassCelestialBody.viewerTexture: String?
-    get() = when (this) {
+    get() = if (additionalCatalogEntry != null) spaceCompassAdditionalCatalogImage(this) else when (this) {
         SpaceCompassCelestialBody.VEGA, SpaceCompassCelestialBody.DENEB, SpaceCompassCelestialBody.ALTAIR,
         SpaceCompassCelestialBody.SOUTHERN_CROSS -> null
         SpaceCompassCelestialBody.NEW_HORIZONS -> "new_horizons.webp"
@@ -250,7 +251,7 @@ internal fun spaceCompassStellarComponents(body: SpaceCompassCelestialBody): Lis
 /** Schwarzschild-equivalent horizon scale: a nonrotating model, never a measured luminous diameter. */
 internal fun spaceCompassHorizonDiameterKm(body: SpaceCompassCelestialBody): Double? =
     if (body in setOf(SpaceCompassCelestialBody.SAGITTARIUS_A, SpaceCompassCelestialBody.ANDROMEDA_CORE,
-        SpaceCompassCelestialBody.TON_618, SpaceCompassCelestialBody.M87)) spaceCompassCelestialFacts(body).massSolar?.let {
+        SpaceCompassCelestialBody.TON_618, SpaceCompassCelestialBody.M87, SpaceCompassCelestialBody.M51_CORE)) spaceCompassCelestialFacts(body).massSolar?.let {
         4 * 6.67430e-11 * it * SPACE_COMPASS_SOLAR_MASS_KG / (299792458.0 * 299792458.0) / 1000
     } else null
 
@@ -279,7 +280,7 @@ private fun siriusFacts(): SpaceCompassCelestialFacts {
         spectralType = "A1 V", binaryPeriodDays = 50.1284 * 365.25, apparentMagnitude = -1.46)
 }
 
-internal val SpaceCompassCelestialBody.hasCatalogPhotograph: Boolean get() = when (this) {
+internal val SpaceCompassCelestialBody.hasCatalogPhotograph: Boolean get() = if (additionalCatalogEntry != null) spaceCompassAdditionalCatalogImage(this) != null else when (this) {
     SpaceCompassCelestialBody.CERES -> true
     SpaceCompassCelestialBody.NEW_HORIZONS, SpaceCompassCelestialBody.JWST, SpaceCompassCelestialBody.PARKER_SOLAR_PROBE,
     SpaceCompassCelestialBody.APOPHIS, SpaceCompassCelestialBody.EUROPA_CLIPPER, SpaceCompassCelestialBody.HUBBLE, SpaceCompassCelestialBody.M87,
@@ -289,4 +290,4 @@ internal val SpaceCompassCelestialBody.hasCatalogPhotograph: Boolean get() = whe
     else -> false
 }
 internal val SpaceCompassCelestialBody.isExtendedSkyObject: Boolean get() =
-    this == SpaceCompassCelestialBody.ORION_NEBULA || this == SpaceCompassCelestialBody.PLEIADES || this == SpaceCompassCelestialBody.SOUTHERN_CROSS
+    catalogType in setOf(SpaceCompassCatalogType.NEBULA, SpaceCompassCatalogType.STAR_CLUSTER, SpaceCompassCatalogType.GALAXY, SpaceCompassCatalogType.CONSTELLATION)

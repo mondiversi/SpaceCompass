@@ -15,14 +15,14 @@ internal val SpaceCompassCelestialBody.expandedHorizonsTarget: SpaceCompassHoriz
         SpaceCompassCelestialBody.ATLAS_3I -> SpaceCompassHorizonsTarget("DES=3I;NOFRAG;CAP;", "ATLAS (C/2025 N1)", 0.0..10_000.0)
         SpaceCompassCelestialBody.EUROPA_CLIPPER -> SpaceCompassHorizonsTarget("-159", "Europa Clipper (spacecraft) (-159)", 0.0..20.0)
         SpaceCompassCelestialBody.JUICE -> SpaceCompassHorizonsTarget("-28", "JUICE (spacecraft) (-28)", 0.0..20.0)
-        else -> null
+        else -> additionalCatalogEntry?.target
     }
 
 internal val SpaceCompassCelestialBody.isInterplanetaryCraft: Boolean
     get() = when (this) {
         SpaceCompassCelestialBody.NEW_HORIZONS, SpaceCompassCelestialBody.JWST,
         SpaceCompassCelestialBody.PARKER_SOLAR_PROBE, SpaceCompassCelestialBody.EUROPA_CLIPPER,
-        SpaceCompassCelestialBody.JUICE -> true
+        SpaceCompassCelestialBody.JUICE, SpaceCompassCelestialBody.BEPICOLOMBO, SpaceCompassCelestialBody.SOLAR_ORBITER, SpaceCompassCelestialBody.LUCY, SpaceCompassCelestialBody.PSYCHE -> true
         else -> false
     }
 

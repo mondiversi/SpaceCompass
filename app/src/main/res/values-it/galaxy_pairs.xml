@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="celestial_m87_galaxy">Galassia M87</string>
+    <string name="celestial_milky_way_center">Via Lattea (centro)</string>
+    <string name="celestial_m51_core">Buco nero centrale di M51</string>
+    <string name="celestial_m31_galaxy_tracking_note">Galassia a spirale a circa 2,5 milioni di anni luce. Il simbolo e il percorso giornaliero seguono il suo nucleo. M31* è un oggetto separato: la sua massa non è quella della galassia.</string>
+    <string name="celestial_m31_core_tracking_note">Buco nero centrale di Andromeda (M31), oggetto distinto nel catalogo. La massa e la dimensione teorica dell’orizzonte riguardano il buco nero, non la galassia.</string>
+    <string name="celestial_m87_galaxy_tracking_note">Galassia ellittica gigante a circa 55 milioni di anni luce. Il simbolo segue il suo nucleo. M87* è un oggetto separato: questa fotografia mostra la galassia, non l’orizzonte del buco nero.</string>
+    <string name="celestial_milky_way_tracking_note">La Terra si trova nella Via Lattea. Il simbolo e il percorso indicano il centro galattico, a circa 26.400 anni luce, non l’intera galassia. La panoramica è una fotografia d’archivio.</string>
+    <string name="celestial_m51_core_tracking_note">Buco nero centrale di NGC 5194 in M51, a circa 31 milioni di anni luce. Il simbolo segue il nucleo attivo. La massa di circa 4 milioni di masse solari è una stima indiretta M–σ con ampia incertezza. L’orizzonte è rappresentato simbolicamente.</string>
+</resources>

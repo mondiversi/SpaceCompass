@@ -1,9 +1,9 @@
 <resources>
     <string name="info_news_title">החידושים האחרונים · %1$s</string>
-    <string name="info_news_star_sky" formatted="false">53 עצמים: קרס, אנקלדוס, וגה, דנב, אלטאיר והצלב הדרומי נוספו לקטלוג.</string>
-    <string name="info_news_texture_downloads" formatted="false">מהירות זמן עד 3600×, עם התחלה מחדש, התקדמות רק כשהיישום פעיל או התקדמות רציפה.</string>
-    <string name="info_news_weather" formatted="false">התקרבויות בטווח 1.5° באותו רגע מוצגות במסלולים, בצילומים ובייצוא.</string>
-    <string name="info_news_viewer_zoom" formatted="false">מיון לפי המרחק מכדור הארץ ופתיחת מצפה העצם ישירות מהקטלוג.</string>
-    <string name="info_news_settings" formatted="false">הגדרות עקביות יותר, כרטיסים לרוחב, סמלי מסלול ושומר מסך לאחר 15 דקות.</string>
-    <string name="info_news_catalog" formatted="false">חבילת גרפיקה 1.4: ‏29 תמונות WebP חיצוניות, הורדות נפרדות, בדיקות תקינות ומטמון לא מקוון.</string>
+    <string name="info_news_star_sky" formatted="false">104 עצמים: ירחים, גשושיות, כוכבים, גלקסיות והחורים השחורים המרכזיים שלהן.</string>
+    <string name="info_news_texture_downloads" formatted="false">חבילת גרפיקה 1.5: 56 תמונות חיצוניות ו־56 תצוגות מקדימות קלות, בהורדה נפרדת ובמטמון לא מקוון.</string>
+    <string name="info_news_weather" formatted="false">עצרו את הזמן ב־0×; הפעלה מחדש של ההאצה מתחילה ב־1×. אפשרויות החידוש בתרחיש מותאם אישית.</string>
+    <string name="info_news_viewer_zoom" formatted="false">סוגים לפי מספר עצמים, אפשרויות מיון אלפביתיות ובקרי עצמים ברורים יותר.</string>
+    <string name="info_news_settings" formatted="false">תוויות ייחוס יציבות יותר ונדיר ב־−90°, מול הזניט.</string>
+    <string name="info_news_catalog" formatted="false">שיפור תנועת ירחים, התקרבויות עצמים נבחרים ומצב טעינת מזג האוויר.</string>
 </resources>

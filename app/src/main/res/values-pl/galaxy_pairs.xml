@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="celestial_m87_galaxy">Galaktyka M87</string>
+    <string name="celestial_milky_way_center">Droga Mleczna (centrum)</string>
+    <string name="celestial_m51_core">Centralna czarna dziura M51</string>
+    <string name="celestial_m31_galaxy_tracking_note">Galaktyka spiralna oddalona o około 2,5 miliona lat świetlnych. Znacznik i dzienna trasa śledzą jej jądro. M31* jest osobnym obiektem; jego masa nie jest masą galaktyki.</string>
+    <string name="celestial_m31_core_tracking_note">Centralna czarna dziura Andromedy (M31), osobny obiekt katalogu. Masa i modelowany rozmiar horyzontu dotyczą czarnej dziury, nie galaktyki.</string>
+    <string name="celestial_m87_galaxy_tracking_note">Olbrzymia galaktyka eliptyczna oddalona o około 55 milionów lat świetlnych. Znacznik śledzi jej jądro. M87* jest osobnym obiektem; zdjęcie przedstawia galaktykę, nie horyzont czarnej dziury.</string>
+    <string name="celestial_milky_way_tracking_note">Ziemia znajduje się wewnątrz Drogi Mlecznej. Znacznik i trasa wskazują centrum Galaktyki, oddalone o około 26 400 lat świetlnych, nie całą galaktykę. Panorama jest zdjęciem archiwalnym.</string>
+    <string name="celestial_m51_core_tracking_note">Centralna czarna dziura NGC 5194 w M51, oddalona o około 31 milionów lat świetlnych. Znacznik śledzi aktywne jądro. Masa około 4 milionów mas Słońca to pośrednie oszacowanie M–σ o dużej niepewności. Horyzont przedstawiono symbolicznie.</string>
+</resources>

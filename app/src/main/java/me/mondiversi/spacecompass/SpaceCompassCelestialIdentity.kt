@@ -42,7 +42,7 @@ internal val SpaceCompassCelestialBody.scientificDesignation: String? get() = wh
     SpaceCompassCelestialBody.ANDROMEDA_CORE -> "M31*"
     // Do not invent a fixed identifier for the dynamically chosen Starlink object,
     // an extra formal solar name, or an astronomical catalogue ID for fiction.
-    else -> null
+    else -> additionalCatalogEntry?.designation
 }
 
 internal val SpaceCompassCelestialBody.scientificTypeResource: Int? get() = when (this) {
@@ -50,7 +50,7 @@ internal val SpaceCompassCelestialBody.scientificTypeResource: Int? get() = when
     SpaceCompassCelestialBody.EARTH_CENTER -> null
     SpaceCompassCelestialBody.SUN -> R.string.celestial_identity_solar_star
     SpaceCompassCelestialBody.SEDNA -> R.string.celestial_identity_candidate
-    SpaceCompassCelestialBody.PSR_J0437 -> R.string.celestial_identity_pulsar
+    SpaceCompassCelestialBody.PSR_J0437, SpaceCompassCelestialBody.VELA_PULSAR -> R.string.celestial_identity_pulsar
     SpaceCompassCelestialBody.LV_426 -> R.string.celestial_identity_fictional_moon
     else -> when (catalogType) {
         SpaceCompassCatalogType.ASTEROID -> R.string.catalog_type_asteroid
@@ -68,5 +68,6 @@ internal val SpaceCompassCelestialBody.scientificTypeResource: Int? get() = when
         SpaceCompassCatalogType.NEBULA -> R.string.celestial_identity_nebula
         SpaceCompassCatalogType.STAR_CLUSTER -> R.string.celestial_identity_cluster
         SpaceCompassCatalogType.CONSTELLATION -> R.string.catalog_type_constellation
+        SpaceCompassCatalogType.GALAXY -> R.string.catalog_type_galaxy
     }
 }

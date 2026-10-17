@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="scenario_speed">Time speed</string>
-    <string name="scenario_speed_description">Accelerate the simulated clock from 1× to 3600×. The date advances automatically at midnight.</string>
-    <string name="scenario_resume">Scenario resumption</string>
+    <string name="scenario_speed">Time</string>
+    <string name="scenario_speed_description">Set the scenario clock from 0× (paused) to 3600×.</string>
+    <string name="scenario_resume">Custom scenario resumption</string>
     <string name="scenario_resume_description">Choose how simulated time resumes when the app reopens. The selected speed applies in every mode.</string>
     <string name="scenario_restart">Restart from the beginning</string>
     <string name="scenario_active">Only while the app is active</string>
@@ -14,4 +14,6 @@
     <string name="scenario_restart_help">Each fresh app launch restarts scenario time from its initial settings. While you use the app, it advances at the selected speed.</string>
     <string name="scenario_active_help">Scenario time advances at the selected speed only while you use the app. It pauses in the background and during the screensaver, then resumes where it stopped.</string>
     <string name="scenario_always_help">Scenario time keeps advancing at the selected speed even while the app is closed and after the phone restarts.</string>
+    <string name="scenario_time_paused">Time paused</string>
+    <string name="scenario_midnight_note">When time advances, the date automatically moves to the next day at midnight.</string>
 </resources>

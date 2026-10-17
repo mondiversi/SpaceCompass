@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="celestial_m87_galaxy">Galaksi M87</string>
+    <string name="celestial_milky_way_center">Bima Sakti (pusat)</string>
+    <string name="celestial_m51_core">Lubang hitam pusat M51</string>
+    <string name="celestial_m31_galaxy_tracking_note">Galaksi spiral berjarak sekitar 2,5 juta tahun cahaya. Penanda dan lintasan harian mengikuti intinya. M31* adalah objek terpisah; massanya bukan massa galaksi.</string>
+    <string name="celestial_m31_core_tracking_note">Lubang hitam pusat Andromeda (M31), objek katalog terpisah. Massa dan ukuran horizon model mengacu pada lubang hitam, bukan galaksi.</string>
+    <string name="celestial_m87_galaxy_tracking_note">Galaksi elips raksasa berjarak sekitar 55 juta tahun cahaya. Penanda mengikuti intinya. M87* adalah objek terpisah; foto ini menunjukkan galaksi, bukan horizon lubang hitam.</string>
+    <string name="celestial_milky_way_tracking_note">Bumi berada di dalam Bima Sakti. Penanda dan lintasan mengarah ke pusat galaksi, sekitar 26.400 tahun cahaya, bukan seluruh galaksi. Panorama ini adalah foto arsip.</string>
+    <string name="celestial_m51_core_tracking_note">Lubang hitam pusat NGC 5194 di M51, sekitar 31 juta tahun cahaya. Penanda mengikuti inti aktif. Massa sekitar 4 juta massa Matahari merupakan perkiraan tidak langsung M–σ dengan ketidakpastian besar. Horizon ditampilkan secara simbolis.</string>
+</resources>

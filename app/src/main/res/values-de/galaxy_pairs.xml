@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="celestial_m87_galaxy">Galaxie M87</string>
+    <string name="celestial_milky_way_center">Milchstraße (Zentrum)</string>
+    <string name="celestial_m51_core">Zentrales Schwarzes Loch von M51</string>
+    <string name="celestial_m31_galaxy_tracking_note">Spiralgalaxie in etwa 2,5 Millionen Lichtjahren Entfernung. Markierung und Tagesbahn folgen ihrem Kern. M31* ist ein eigenes Objekt; seine Masse ist nicht die Masse der Galaxie.</string>
+    <string name="celestial_m31_core_tracking_note">Zentrales Schwarzes Loch von Andromeda (M31), ein eigener Katalogeintrag. Masse und modellierte Horizontgröße beziehen sich auf das Schwarze Loch, nicht auf die Galaxie.</string>
+    <string name="celestial_m87_galaxy_tracking_note">Riesige elliptische Galaxie in etwa 55 Millionen Lichtjahren Entfernung. Die Markierung folgt ihrem Kern. M87* ist ein eigenes Objekt; dieses Foto zeigt die Galaxie, nicht den Horizont des Schwarzen Lochs.</string>
+    <string name="celestial_milky_way_tracking_note">Die Erde liegt innerhalb der Milchstraße. Markierung und Bahn zeigen zum etwa 26.400 Lichtjahre entfernten galaktischen Zentrum, nicht zur gesamten Galaxie. Das Panorama ist ein Archivfoto.</string>
+    <string name="celestial_m51_core_tracking_note">Zentrales Schwarzes Loch von NGC 5194 in M51, etwa 31 Millionen Lichtjahre entfernt. Die Markierung folgt dem aktiven Kern. Die Masse von rund 4 Millionen Sonnenmassen ist eine indirekte M–σ-Schätzung mit großer Unsicherheit. Der Horizont wird symbolisch dargestellt.</string>
+</resources>

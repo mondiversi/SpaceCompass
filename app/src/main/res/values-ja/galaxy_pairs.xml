@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="celestial_m87_galaxy">M87銀河</string>
+    <string name="celestial_milky_way_center">天の川銀河（中心）</string>
+    <string name="celestial_m51_core">M51の中心ブラックホール</string>
+    <string name="celestial_m31_galaxy_tracking_note">約250万光年離れた渦巻銀河です。マーカーと一日の軌道はその核を追跡します。M31*は別の天体で、その質量は銀河全体の質量ではありません。</string>
+    <string name="celestial_m31_core_tracking_note">アンドロメダ銀河（M31）の中心ブラックホールで、カタログでは別の天体です。質量とモデルによる地平面の大きさは、銀河ではなくブラックホールの値です。</string>
+    <string name="celestial_m87_galaxy_tracking_note">約5500万光年離れた巨大楕円銀河です。マーカーはその核を追跡します。M87*は別の天体です。この写真は銀河を示しており、ブラックホールの地平面ではありません。</string>
+    <string name="celestial_milky_way_tracking_note">地球は天の川銀河の内部にあります。マーカーと軌道は銀河全体ではなく、約26,400光年離れた銀河中心を指します。パノラマは過去に撮影された写真です。</string>
+    <string name="celestial_m51_core_tracking_note">M51のNGC 5194にある中心ブラックホールで、約3100万光年離れています。マーカーは活動銀河核を追跡します。約400万太陽質量という値は、不確かさの大きいM–σ関係による間接推定です。地平面は記号で表示します。</string>
+</resources>

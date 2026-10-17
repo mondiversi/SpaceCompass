@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="celestial_m87_galaxy">M87星系</string>
+    <string name="celestial_milky_way_center">银河系（中心）</string>
+    <string name="celestial_m51_core">M51中央黑洞</string>
+    <string name="celestial_m31_galaxy_tracking_note">距离约250万光年的旋涡星系。标记和每日轨迹跟踪其核心。M31*是独立天体，其质量并非整个星系的质量。</string>
+    <string name="celestial_m31_core_tracking_note">仙女座星系（M31）的中央黑洞，在目录中单独列出。质量和模型计算的视界尺寸指黑洞，而非整个星系。</string>
+    <string name="celestial_m87_galaxy_tracking_note">距离约5500万光年的巨椭圆星系。标记跟踪其核心。M87*是独立天体；这张照片展示星系，而非黑洞视界。</string>
+    <string name="celestial_milky_way_tracking_note">地球位于银河系内部。标记和轨迹指向约26,400光年外的银河系中心，而非整个银河系。全景图为历史照片。</string>
+    <string name="celestial_m51_core_tracking_note">M51中NGC 5194的中央黑洞，距离约3100万光年。标记跟踪其活动星系核。约400万太阳质量是基于M–σ关系的间接估计，不确定性较大。视界以符号表示。</string>
+</resources>

@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="scenario_speed">Скорость времени</string>
-    <string name="scenario_speed_description">Ускорьте моделируемые часы от 1× до 3600×. В полночь дата автоматически меняется на следующий день.</string>
-    <string name="scenario_resume">Возобновление сценария</string>
+    <string name="scenario_speed">Время</string>
+    <string name="scenario_speed_description">Настройте часы сценария от 0× (пауза) до 3600×.</string>
+    <string name="scenario_resume">Возобновление пользовательского сценария</string>
     <string name="scenario_resume_description">Выберите, как возобновляется моделируемое время при повторном открытии приложения. Выбранная скорость действует во всех режимах.</string>
     <string name="scenario_restart">Начинать сначала</string>
     <string name="scenario_active">Только при активном приложении</string>
@@ -14,4 +14,6 @@
     <string name="scenario_restart_help">При каждом новом запуске приложения время сценария начинается с исходных настроек. Во время использования оно идёт с выбранной скоростью.</string>
     <string name="scenario_active_help">Время сценария идёт с выбранной скоростью только при использовании приложения. В фоне и во время заставки оно приостанавливается, а затем продолжается с момента остановки.</string>
     <string name="scenario_always_help">Время сценария продолжает идти с выбранной скоростью, даже когда приложение закрыто и после перезагрузки телефона.</string>
+    <string name="scenario_time_paused">Время на паузе</string>
+    <string name="scenario_midnight_note">Когда время идёт, в полночь дата автоматически меняется на следующий день.</string>
 </resources>

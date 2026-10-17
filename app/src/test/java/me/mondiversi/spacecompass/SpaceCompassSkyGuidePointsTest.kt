@@ -2,13 +2,12 @@ package me.mondiversi.spacecompass
 
 import org.junit.Assert.*
 import org.junit.Test
-import java.time.Instant
 import kotlin.math.*
 
 class SpaceCompassSkyGuidePointsTest {
     private val retired = SpaceCompassCelestialBody.EARTH_CENTER
     @Test fun retiredCentreCannotReturnThroughCatalogFiltersOrLegacyPreferences() {
-        assertEquals(53, spaceCompassCelestialCatalogOrder.size)
+        assertEquals(104, spaceCompassCelestialCatalogOrder.size)
         assertFalse(retired in spaceCompassAllCelestialOrder)
         assertFalse(retired in spaceCompassAvailableCelestialCatalog(SpaceCompassCelestialSelection().revealHiddenObject().selected))
         for (visibility in SpaceCompassCatalogVisibility.entries)
@@ -39,26 +38,21 @@ class SpaceCompassSkyGuidePointsTest {
             assertEquals(-1.0, n.dot(s), 1e-12)
         }
     }
-    @Test fun geocentreAgreesWithFormerAstronomicalCalculationAcrossHemispheresAndAltitude() {
-        val time = Instant.parse("2026-10-07T12:00:00Z").toEpochMilli()
-        for (latitude in listOf(-90.0, -60.0, -45.0, 0.0, 45.0, 60.0, 90.0)) for (altitude in listOf(-400.0, 0.0, 3000.0)) {
-            val vector = spaceCompassSkyGuidePoints(latitude, altitude).single { it.kind == SpaceCompassSkyGuidePointKind.EARTH_CENTER }.direction
-            val legacy = calculateSpaceCompassCelestialObservation(retired, time, latitude, 23.0, altitude)!!.position
-            assertEquals(1.0, vector.dot(vector), 1e-12)
-            assertEquals(0.0, vector.east, 0.0)
-            val elevation = Math.toDegrees(atan2(vector.up, hypot(vector.east, vector.north)))
-            assertTrue(elevation < -89.7)
-            assertEquals(legacy.elevationDegrees, elevation, 1e-6)
-            if (abs(latitude) in 1.0..89.0) {
-                val azimuth = wrapSpaceCompassSunDegrees(Math.toDegrees(atan2(vector.east, vector.north)))
-                assertEquals(0.0, wrapSpaceCompassSunDegrees(legacy.azimuthDegrees - azimuth + 180.0) - 180.0, 1e-6)
+    @Test fun nadirIsExactlyMinusNinetyAndOppositeZenithAcrossHemispheresAndAltitude() {
+        for (latitude in listOf(-90.0, -60.0, -45.0, 0.0, 45.0, 60.0, 90.0))
+            for (altitude in listOf(-400.0, 0.0, 3000.0)) {
+                val points = spaceCompassSkyGuidePoints(latitude, altitude)
+                val nadir = points.single { it.kind == SpaceCompassSkyGuidePointKind.NADIR }
+                val zenith = points.single { it.kind == SpaceCompassSkyGuidePointKind.ZENITH }
+                assertEquals(SpaceCompassSunVector(0.0, 0.0, -1.0), nadir.direction)
+                assertEquals(-90.0, nadir.labelDegrees!!, 0.0)
+                assertEquals(-1.0, nadir.direction.dot(zenith.direction), 0.0)
             }
-        }
     }
     @Test fun verticalPanoramaAnchorsHaveNoInventedAzimuthOrCenterDependentHorizontalJump() {
         val points = spaceCompassSkyGuidePoints(0.0)
         val zenith = points.single { it.kind == SpaceCompassSkyGuidePointKind.ZENITH }
-        val centre = points.single { it.kind == SpaceCompassSkyGuidePointKind.EARTH_CENTER }
+        val centre = points.single { it.kind == SpaceCompassSkyGuidePointKind.NADIR }
         for (direction in SpaceCompassPanoramaCenter.entries) {
             val top = spaceCompassSkyGuidePointProjection(zenith, null, 4096.0, 2048.0, centerAzimuthDegrees = direction.azimuth)!!
             val bottom = spaceCompassSkyGuidePointProjection(centre, null, 4096.0, 2048.0, centerAzimuthDegrees = direction.azimuth)!!

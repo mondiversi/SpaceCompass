@@ -1,5 +1,16 @@
 # Changelog
 
+## 1.4.4 — 2026-10-17
+
+- Expand the ordinary catalogue from 53 to 104 objects: additional moons, dwarf planets, asteroids, comets, stars, nebulae, clusters, galaxies, probes, compact objects and exoplanets. Hidden LV-426 stays separate from the ordinary count.
+- Use identity-pinned JPL Horizons ephemerides for the added moving targets and catalogue directions for distant objects. Preserve explicit origin/validity checks, observer-dependent pointing, qualified reference facts and unavailable values. Correct parent-relative moon velocities with independent JPL fixtures.
+- Add separate galaxy/nucleus entries for Andromeda, M87, the Milky Way centre and M51. Shared galaxy/nuclear directions do not create artificial close-approach events; approach calculations are limited to checked objects.
+- Publish graphics pack 1.5 with 56 full external WebP images and 56 independent 128 x 128 previews, all quality 90/method 6. Catalogue and sky glyphs fetch previews without downloading full images; Observatory views request full images when needed. Preserve dynamic lunar phases, per-file integrity checks, offline caches and earlier release URLs. No texture ZIP or celestial photographs are bundled in the APK.
+- Replace the retired Earth-centre guide with exact Nadir at −90°, opposite Zenith. Keep live reference names anchored continuously to their curves, avoiding jumps caused by moving markers and point callouts; give crosses consistent captions.
+- Add 0× time pause and reset acceleration to 1× when re-enabled. Move scenario resumption to the Custom scenario title-bar action, preserve independent time controls and clarify midnight rollover.
+- Order object types by total category count and sorting options alphabetically. Refine rise/set semicircles, daily trend chevrons, matching object controls and the 50/50 landscape split. Keep missing properties last.
+- Show an explicit loading state while weather is being fetched. Refresh all twenty localized news summaries, scientific/image credits, reference-information archive and signed update metadata.
+
 ## 1.4.3 — 2026-10-16
 
 - Expand the catalogue to 53 regular entries with Ceres, Enceladus, Vega, Deneb, Altair and the Southern Cross. Retain the existing Sun/Moon defaults and saved selections.

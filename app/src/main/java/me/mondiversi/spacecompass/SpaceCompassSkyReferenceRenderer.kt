@@ -22,8 +22,15 @@ internal fun drawSpaceCompassSkyReferences(canvas: Canvas, latitude: Double, tim
     numericFormat: SpaceCompassNumericFormat = SpaceCompassNumericFormat.INTERNATIONAL,
     systemLocale: java.util.Locale = java.util.Locale.getDefault(),
     centerAzimuthDegrees: Double = 180.0,
-    observerPointNames: Pair<String, String> = "Earth centre" to "Zenith",
-    observerAltitude: Double = 0.0): SpaceCompassSkyReferenceDrawing {
+    observerPointNames: Pair<String, String> = "Nadir" to "Zenith",
+    observerAltitude: Double = 0.0,
+    placementState: SpaceCompassSkyReferencePlacementState? = null): SpaceCompassSkyReferenceDrawing {
+    placementState?.viewport(width, height, scale)
+    val fixedReserved = occupied.map { SpaceCompassSunSceneFrame(it.left.toDouble(), it.top.toDouble(),
+        it.width().toDouble(), it.height().toDouble()) }
+    val liveMinimumY = maxOf(minimumLabelY.toDouble(), fixedReserved.filter {
+        it.left <= 0 && it.top <= 0 && it.left + it.width >= width
+    }.maxOfOrNull { it.top + it.height } ?: 0.0)
     val paint = Paint(Paint.ANTI_ALIAS_FLAG).apply {
         style = Paint.Style.STROKE; strokeJoin = Paint.Join.ROUND
         pathEffect = DashPathEffect(floatArrayOf(11 * scale, 8 * scale), 0f)
@@ -47,7 +54,13 @@ internal fun drawSpaceCompassSkyReferences(canvas: Canvas, latitude: Double, tim
             val y = (point.y.toFloat() + if (side < 0) -labelHeight - 12 * scale else 12 * scale).coerceIn(low, high)
             SpaceCompassSkyReferenceLabel(value, RectF(x - labelWidth / 2, y, x + labelWidth / 2, y + labelHeight), point, tint)
         } }
-        val chosen = options.firstOrNull { c -> occupied.none { RectF.intersects(it, c.bounds) } }
+        val chosen = if (placementState != null) candidates.firstOrNull()?.let { anchor ->
+            spaceCompassSkyGuideCaptionBounds(anchor, labelWidth.toDouble(), labelHeight.toDouble(),
+                width.toDouble(), height.toDouble(), liveMinimumY, inset.toDouble(), 12.0 * scale)?.let { b ->
+                SpaceCompassSkyReferenceLabel(value, RectF(b.left.toFloat(), b.top.toFloat(),
+                    (b.left + b.width).toFloat(), (b.top + b.height).toFloat()), anchor, tint)
+            }
+        } else options.firstOrNull { c -> occupied.none { RectF.intersects(it, c.bounds) } }
             ?: if (allowOverlap) options.minByOrNull { c -> occupied.count { RectF.intersects(it, c.bounds) } } else null
         if (chosen == null) return null
         occupied += chosen.bounds
@@ -56,20 +69,30 @@ internal fun drawSpaceCompassSkyReferences(canvas: Canvas, latitude: Double, tim
     }
     val curveLabels = mutableListOf<SpaceCompassSkyReferenceCurveLabel>()
     val curveRuns = mutableListOf<Triple<SpaceCompassSkyReferenceCircle, List<SpaceCompassSunPathSegment>, List<SpaceCompassSunScenePoint>>>()
-    fun curveLabel(value: String, candidates: List<SpaceCompassSunScenePoint>,
-        segments: List<SpaceCompassSunPathSegment>, tint: Int): SpaceCompassSkyReferenceCurveLabel? {
+    fun curveLabel(key: String, value: String, candidates: List<SpaceCompassSunScenePoint>,
+        segments: List<SpaceCompassSunPathSegment>, tint: Int, retainAnchor: Boolean = true): SpaceCompassSkyReferenceCurveLabel? {
         if (!showLabels || candidates.isEmpty()) return null
         val reserved = occupied.map { SpaceCompassSunSceneFrame(it.left.toDouble(), it.top.toDouble(),
             it.width().toDouble(), it.height().toDouble()) }
+        fun record(layout: SpaceCompassCurveTextLayout, textSize: Float): SpaceCompassSkyReferenceCurveLabel {
+            val b = layout.bounds
+            occupied += RectF(b.left.toFloat(), b.top.toFloat(), (b.left+b.width).toFloat(), (b.top+b.height).toFloat())
+            return SpaceCompassSkyReferenceCurveLabel(value, layout, tint, textSize).also { curveLabels += it }
+        }
+        if (placementState != null && retainAnchor) {
+            val retained = placementState.caption(key, segments, candidates, scale, width.toDouble(),
+                height.toDouble(), liveMinimumY, fixedReserved, reserved) { size ->
+                text.textSize = size; text.measureText(value).toDouble()
+            } ?: return null
+            return record(retained.layout, retained.textSize)
+        }
         // A modest reduction accommodates longer translations without crowding a tight bend.
         for (size in listOf(24f, 22f, 20f)) {
             text.textSize = size * scale
             val layout = spaceCompassChooseCurveTextLayout(segments, candidates, text.measureText(value).toDouble(),
                 text.textSize.toDouble(), (12f * scale).toDouble(), width.toDouble(), height.toDouble(),
-                minimumLabelY.toDouble(), reserved) ?: continue
-            val b = layout.bounds
-            occupied += RectF(b.left.toFloat(), b.top.toFloat(), (b.left+b.width).toFloat(), (b.top+b.height).toFloat())
-            return SpaceCompassSkyReferenceCurveLabel(value, layout, tint, text.textSize).also { curveLabels += it }
+                minimumLabelY.toDouble(), if (placementState != null) fixedReserved else reserved) ?: continue
+            return record(layout, text.textSize)
         }
         return null
     }
@@ -96,7 +119,7 @@ internal fun drawSpaceCompassSkyReferences(canvas: Canvas, latitude: Double, tim
         val name = when (guide.kind) {
             SpaceCompassSkyGuidePointKind.NORTH_POLE -> poleNames.first
             SpaceCompassSkyGuidePointKind.SOUTH_POLE -> poleNames.second
-            SpaceCompassSkyGuidePointKind.EARTH_CENTER -> observerPointNames.first
+            SpaceCompassSkyGuidePointKind.NADIR -> observerPointNames.first
             SpaceCompassSkyGuidePointKind.ZENITH -> observerPointNames.second
         }
         val point = spaceCompassSkyGuidePointProjection(guide, orientation, width.toDouble(), height.toDouble(),
@@ -119,13 +142,16 @@ internal fun drawSpaceCompassSkyReferences(canvas: Canvas, latitude: Double, tim
             .filterIndexed { index, _ -> index % (if (allowLabelOverlap) 12 else 3) == 0 }.take(32)
         val value = formatSpaceCompassSkyReferenceDegrees(circle.declinationDegrees, numericFormat, systemLocale)
         val name = referenceNames[circle.reference] ?: circle.reference.label
-        val caption = curveLabel("$name  $value", candidates, segments, circle.reference.tint)
+        val caption = curveLabel(circle.reference.name, "$name  $value", candidates, segments, circle.reference.tint)
         val repeatCandidates = visible.filter { it.x > 48 * scale && it.x < width - 48 * scale &&
             it.y > minimumLabelY + 48 * scale && it.y < height - 48 * scale }
-        val anchors = spaceCompassSkyReferenceDegreeAnchors(repeatCandidates, 640.0 * scale,
+        val anchors = placementState?.degreeAnchors(circle.reference, segments, repeatCandidates, 640.0 * scale,
+            listOfNotNull(caption?.layout?.anchor), width.toDouble(), height.toDouble(), liveMinimumY, 48.0 * scale)
+            ?: spaceCompassSkyReferenceDegreeAnchors(repeatCandidates, 640.0 * scale,
             reserved = listOfNotNull(caption?.layout?.anchor), wrapWidth = if (orientation == null) width.toDouble() else null,
             maximumLabels = if (orientation == null) 8 else 3)
-        anchors.forEach { curveLabel(value, listOf(it), segments, circle.reference.tint) }
+        anchors.forEachIndexed { index, anchor -> curveLabel("${circle.reference.name}:degree:$index", value,
+            listOf(anchor), segments, circle.reference.tint, retainAnchor = false) }
     }
     return SpaceCompassSkyReferenceDrawing(labels, poles, curveLabels)
 }

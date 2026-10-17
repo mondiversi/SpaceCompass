@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="celestial_m87_galaxy">M87 galaxy</string>
+    <string name="celestial_milky_way_center">Milky Way (centre)</string>
+    <string name="celestial_m51_core">M51 central black hole</string>
+    <string name="celestial_m31_galaxy_tracking_note">Spiral galaxy about 2.5 million light-years away. The marker and daily path follow its nucleus. M31* is a separate object; its mass is not the mass of the galaxy.</string>
+    <string name="celestial_m31_core_tracking_note">Central black hole of Andromeda (M31), a separate catalogue object. The mass and model horizon size refer to the black hole, not the galaxy.</string>
+    <string name="celestial_m87_galaxy_tracking_note">Giant elliptical galaxy about 55 million light-years away. The marker follows its nucleus. M87* is a separate object; this photograph shows the galaxy, not the black hole horizon.</string>
+    <string name="celestial_milky_way_tracking_note">Earth is inside the Milky Way. The marker and path point towards the Galactic Centre, about 26,400 light-years away, not the entire galaxy. The panorama is an archival photograph.</string>
+    <string name="celestial_m51_core_tracking_note">Central black hole of NGC 5194 in M51, about 31 million light-years away. The marker follows the active nucleus. The mass of roughly 4 million solar masses is an indirect M–σ estimate with large uncertainty. The horizon is shown symbolically.</string>
+</resources>

@@ -8,8 +8,8 @@ paths, inspect reference facts and view textured models. Space Compass is a stan
 
 ## Download and install
 
-Download **space-compass-1.4.3.apk** from the
-[Space Compass 1.4.3 release](https://github.com/mondiversi/SpaceCompass/releases/tag/v1.4.3).
+Download **space-compass-1.4.4.apk** from the
+[Space Compass 1.4.4 release](https://github.com/mondiversi/SpaceCompass/releases/tag/v1.4.4).
 Android 8.0 or newer is required. Open the APK and follow Android's installation
 prompts; allow installation for your browser or file manager if requested.
 
@@ -22,12 +22,12 @@ one manual APK update to acquire this feature.
 The release includes `SHA256SUMS.txt` and a signed update index. GitHub's source
 ZIP/TAR archives and Actions debug artifacts are separate from the signed APK.
 See [distribution and signing](docs/GITHUB_RELEASES.md) and
-[the 1.4.3 release audit](docs/RELEASE_1_4_3.md).
+[the 1.4.4 release audit](docs/RELEASE_1_4_3.md).
 
 ## Features
 
 - Live azimuth/altitude, compass guidance, named daily paths and satellite passes. Pin multiple path points and manage the same selections in the daily path. Reticle-focused callouts show clock and T± side by side. Current positions and lunar phases remain available.
-- Fifty-three ordinary catalog objects: Sun, Moon, planets, natural/artificial satellites,
+- 104 ordinary catalog objects: Sun, Moon, planets, natural/artificial satellites,
   comets, Voyager spacecraft, nearby stars, nebulae, star clusters, compact objects and an exoplanet.
 - Live search by localized name or catalog identifier, combined with type/visibility filters.
 - Type/visibility filters and numeric sorting by Sun-centred or Earth-centred distance, mass, diameter, pressure,
@@ -40,7 +40,7 @@ See [distribution and signing](docs/GITHUB_RELEASES.md) and
   steps, pinch and direct level selection; full 360° sky panoramas.
 - Exposure-time direction, inclination and field of view in camera photos; previews
   follow selected language/units independently of the export profile.
-- Optional celestial reference curves and pole/zenith/geocentre crosses. Guide and
+- Optional celestial reference curves and celestial-pole, zenith and nadir crosses. Guide and
   camera modes start disabled; Sun and Moon are the initial checked objects.
 - Save or share images, CSV and readable TXT from captures, daily paths and the Observatory,
   using selected-language/unit or international profiles. Special/selected points are chronological.
@@ -48,7 +48,7 @@ See [distribution and signing](docs/GITHUB_RELEASES.md) and
   with area only. Hidden location uses UTC. No automatic gallery save.
 - Day/night OpenStreetMap position details with GPS, altitude, estimated place and weather.
 - Custom scenarios with independently enabled position, altitude, time zone, date and time;
-  optional 1x–3600x time speed and restart/active-only/always resumption. The current-scenario
+  optional 0x–3600x time speed and restart/active-only/always resumption. The current-scenario
   summary shows saved overrides and an approximate place, with an active-section badge.
 - Observatory with textured interactive models, lunar phases, classified reference tables,
   qualified core temperatures, spatial context and credits. Export data and current/rotation images.
@@ -57,7 +57,7 @@ See [distribution and signing](docs/GITHUB_RELEASES.md) and
 - Music and scenario cards reveal their controls with 300 ms animations; disabled cards retain only their headings.
 - Full-screen animated Earth screensaver with local time, date and battery, enabled after five minutes by default. It shows the last known observer position on a correctly oriented globe with eastward spin and a Sun-facing seasonal perspective based on the effective scenario date. It pauses live sensors, GPS, camera and data refresh until dismissed.
 - Solar-height-driven dawn/dusk lighting shared by sky, ground, weather and panoramic captures.
-- Translucent main islands with paths and objects drawn behind them, a reticle centred in the free sky area and a 55/45 landscape split.
+- Translucent main islands with paths and objects drawn behind them, a reticle centred in the free sky area and a 50/50 landscape split.
 - Titled photo/panorama previews with opaque theme-matched toolbars and top-aligned controls, object-colour legends and larger wrapping photo metadata on a separate opaque black band.
 - White reticle, existing-outline object focus/selection, a lighter daytime blue and stable bottom-right landscape capture. Collapsed landscape panels use a floating central title bar.
 - Stable ground, orbits and star background when returning from background; optically centred object arrows and a clear screensaver return hint. Focused callouts cover celestial icons without jumping; object names and capture legends use the full identity color. Remove a checked object directly from its main card after confirmation.
@@ -72,7 +72,7 @@ See [distribution and signing](docs/GITHUB_RELEASES.md) and
 - Signed startup/manual GitHub updates with package, certificate, size and checksum verification.
 
 The application ID is `me.mondiversi.spacecompass`. The current stable version is
-**1.4.3**, with Android/update identity `1.4.3` and version code **40**.
+**1.4.4**, with Android/update identity `1.4.4` and version code **41**.
 This preserves the three-part update protocol used by existing preview installations.
 The app stores its preferences and caches privately.
 
@@ -134,12 +134,16 @@ Launcher/loading artwork and the fictional Easter-egg texture are original asset
 
 ## Data and graphics packages
 
-Release 1.4.3 includes a reference-information archive and 53 regular catalogue objects.
-Celestial graphics are distributed as individual files, without a complete texture ZIP. The app downloads individual maps, archival photographs and LV-426
-from [Celestial texture pack 1.4](https://github.com/mondiversi/SpaceCompass/releases/tag/celestial-textures-v1.4).
-All 29 celestial images are WebP at quality 90/method 6; twenty-eight are 2048 x 1024,
-and LV-426 retains its original 1774 x 887 pixels. The APK includes scientific data,
-all twenty languages, the star atlas and the separate Earth screensaver maps.
-Complete graphics ZIPs are no longer attached to new releases. Verified
-images are cached for offline use and matching legacy caches are reused. Older
-graphics releases and individual URLs remain available for previous APKs.
+Release 1.4.4 includes a reference-information archive and 104 regular catalogue objects.
+Celestial graphics are separate individual files in
+[graphics pack 1.5](https://github.com/mondiversi/SpaceCompass/releases/tag/celestial-textures-v1.5):
+56 full images and 56 independent 128 x 128 previews, all WebP quality 90/method 6.
+Fifty-five full images are 2048 x 1024; LV-426 retains its original 1774 x 887.
+Catalogue/live/captured glyphs request only lightweight previews. The Observatory
+and its image exports fetch full images when needed; lunar phase stays dynamic.
+Images and previews total 12,364,294 bytes before metadata. Each file has independent
+size, SHA-256 and dimension pins and an offline cache. Matching earlier full-image
+caches are reused. Unavailable images keep appropriate code-rendered placeholders.
+The APK contains scientific data, all twenty languages, the star atlas and the
+separate Earth screensaver maps, without celestial photographs or texture ZIPs.
+Previous graphics releases and URLs remain available for older APKs.

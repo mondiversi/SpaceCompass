@@ -10,6 +10,7 @@ import androidx.compose.ui.geometry.Offset
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.Path
 import androidx.compose.ui.graphics.StrokeCap
+import androidx.compose.ui.graphics.StrokeJoin
 import androidx.compose.ui.graphics.drawscope.Stroke
 import androidx.compose.ui.platform.testTag
 import androidx.compose.ui.semantics.clearAndSetSemantics
@@ -21,7 +22,7 @@ import androidx.compose.ui.unit.dp
 @Composable
 internal fun SpaceCompassDailyPathEventIcons(point: SpaceCompassSunPathPoint, isCurrent: Boolean, color: Color,
     trend: SpaceCompassElevationTrend? = null) = Column(Modifier.width(12.dp)) {
-    // Current has its original position marker; direction arrows belong to ordinary points.
+    // Current keeps its position marker; elevation chevrons belong to ordinary points.
     val keyPoint = point.events.any { it != SpaceCompassSunPathEvent.HOUR }
     if (isCurrent) {
         Canvas(Modifier.size(12.dp).testTag("daily-path-event-current").clearAndSetSemantics { }) {
@@ -33,15 +34,12 @@ internal fun SpaceCompassDailyPathEventIcons(point: SpaceCompassSunPathPoint, is
             R.string.celestial_elevation_rising else R.string.celestial_elevation_falling)
         Canvas(Modifier.size(12.dp).testTag("daily-path-trend-${it.name}")
             .clearAndSetSemantics { contentDescription = description }) {
-            val top = size.height * .18f; val bottom = size.height * .82f
-            val tip = if (it == SpaceCompassElevationTrend.RISING) top else bottom
-            val tail = if (it == SpaceCompassElevationTrend.RISING) bottom else top
-            val wing = tip + (tail - tip) * .38f
-            drawLine(color, Offset(center.x, tail), Offset(center.x, tip), 1.6.dp.toPx(), StrokeCap.Round)
-            val arrow = Path().apply {
-                moveTo(size.width * .25f, wing); lineTo(center.x, tip); lineTo(size.width * .75f, wing)
+            val tip = size.height * if (it == SpaceCompassElevationTrend.RISING) .30f else .70f
+            val wing = size.height - tip
+            val chevron = Path().apply {
+                moveTo(size.width * .20f, wing); lineTo(center.x, tip); lineTo(size.width * .80f, wing)
             }
-            drawPath(arrow, color, style = Stroke(1.6.dp.toPx(), cap = StrokeCap.Round))
+            drawPath(chevron, color, style = Stroke(1.6.dp.toPx(), cap = StrokeCap.Round, join = StrokeJoin.Round))
         }
     }
     if (!isCurrent) {
@@ -59,10 +57,8 @@ internal fun SpaceCompassDailyPathEventIcons(point: SpaceCompassSunPathPoint, is
                             drawLine(color, Offset(x, y - d), Offset(x, y + d), 1.8.dp.toPx(), StrokeCap.Round)
                     } else {
                         val glyph = Path().apply {
-                            if (event == SpaceCompassSunPathEvent.SUNRISE) {
-                                moveTo(x, y - d); lineTo(x + d, y + d); lineTo(x - d, y + d)
-                            } else {
-                                moveTo(x, y + d); lineTo(x + d, y - d); lineTo(x - d, y - d)
+                            spaceCompassHorizonEventGlyph(event, x, y, d).forEachIndexed { index, (px, py) ->
+                                if (index == 0) moveTo(px, py) else lineTo(px, py)
                             }
                             close()
                         }

@@ -69,11 +69,13 @@ internal class SpaceCompassObserverState(private val preferences: SharedPreferen
         if (timeSettings.resume == SpaceCompassScenarioResume.ALWAYS) checkpoint()
     }
     fun configureTime(value: SpaceCompassScenarioTimeSettings) {
-        if (timeSettings == value.normalized()) return
+        // Re-enabling acceleration always requires a fresh, deliberate speed choice.
+        val next = (if (!timeSettings.enabled && value.enabled) value.copy(rate = 1) else value).normalized()
+        if (timeSettings == next) return
         checkpoint()
-        preferences?.edit()?.putBoolean(scenarioEnabledKey, value.enabled)?.putInt(scenarioRateKey, value.rate)
-            ?.putString(scenarioResumeKey, value.resume.name)?.apply()
-        if (preferences == null) timeSettings = value.normalized()
+        preferences?.edit()?.putBoolean(scenarioEnabledKey, next.enabled)?.putInt(scenarioRateKey, next.rate)
+            ?.putString(scenarioResumeKey, next.resume.name)?.apply()
+        if (preferences == null) timeSettings = next
         reload()
     }
     fun active(value: Boolean) {

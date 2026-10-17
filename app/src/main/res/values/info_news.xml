@@ -1,9 +1,9 @@
 <resources>
     <string name="info_news_title">Latest news · %1$s</string>
-    <string name="info_news_star_sky" formatted="false">53 objects: Ceres, Enceladus, Vega, Deneb, Altair and the Southern Cross join the catalogue.</string>
-    <string name="info_news_texture_downloads" formatted="false">Scenario time speed up to 3600×, with restart, active-only or continuous resumption.</string>
-    <string name="info_news_weather" formatted="false">Close approaches within 1.5° at the same instant appear in paths, captures and exports.</string>
-    <string name="info_news_viewer_zoom" formatted="false">Sort by distance from Earth and open an object’s Observatory directly from the catalogue.</string>
-    <string name="info_news_settings" formatted="false">More consistent settings, landscape cards, daily-path symbols and a 15-minute screensaver option.</string>
-    <string name="info_news_catalog" formatted="false">Graphics pack 1.4: 29 external WebP images with individual downloads, integrity checks and offline cache.</string>
+    <string name="info_news_star_sky" formatted="false">104 objects: more moons, probes, stars, galaxies and their central black holes.</string>
+    <string name="info_news_texture_downloads" formatted="false">Graphics pack 1.5: 56 external images and 56 lightweight previews, downloaded individually and cached offline.</string>
+    <string name="info_news_weather" formatted="false">Pause time at 0×; re-enabling acceleration starts at 1×. Resume options are in Custom scenario.</string>
+    <string name="info_news_viewer_zoom" formatted="false">Types ordered by object count, alphabetical sorting options and clearer object controls.</string>
+    <string name="info_news_settings" formatted="false">Steadier reference labels and Nadir at −90°, opposite Zenith.</string>
+    <string name="info_news_catalog" formatted="false">Improved moon motion, selected-object close approaches and explicit weather-loading status.</string>
 </resources>

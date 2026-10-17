@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="celestial_m87_galaxy">גלקסיית M87</string>
+    <string name="celestial_milky_way_center">שביל החלב (מרכז)</string>
+    <string name="celestial_m51_core">החור השחור המרכזי של M51</string>
+    <string name="celestial_m31_galaxy_tracking_note">גלקסיה ספירלית במרחק של כ־2.5 מיליון שנות אור. הסמן והמסלול היומי עוקבים אחר הגרעין שלה. ‏M31* הוא עצם נפרד; מסתו אינה מסת הגלקסיה.</string>
+    <string name="celestial_m31_core_tracking_note">החור השחור המרכזי של אנדרומדה (M31), עצם נפרד בקטלוג. המסה וגודל האופק לפי המודל מתייחסים לחור השחור, לא לגלקסיה.</string>
+    <string name="celestial_m87_galaxy_tracking_note">גלקסיה אליפטית ענקית במרחק של כ־55 מיליון שנות אור. הסמן עוקב אחר הגרעין שלה. ‏M87* הוא עצם נפרד; התצלום מציג את הגלקסיה, לא את אופק החור השחור.</string>
+    <string name="celestial_milky_way_tracking_note">כדור הארץ נמצא בתוך שביל החלב. הסמן והמסלול מצביעים לעבר מרכז הגלקסיה, במרחק של כ־26,400 שנות אור, ולא לעבר הגלקסיה כולה. הפנורמה היא תצלום ארכיוני.</string>
+    <string name="celestial_m51_core_tracking_note">החור השחור המרכזי של NGC 5194 ב־M51, במרחק של כ־31 מיליון שנות אור. הסמן עוקב אחר הגרעין הפעיל. המסה של כ־4 מיליון מסות שמש היא אומדן עקיף לפי M–σ עם אי־ודאות גדולה. האופק מוצג באופן סמלי.</string>
+</resources>

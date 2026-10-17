@@ -86,4 +86,66 @@ class SpaceCompassScenarioClockTest {
         val c=clock(SpaceCompassScenarioResume.ALWAYS,3600)
         assertEquals(2100,Instant.ofEpochMilli(c.at(Long.MAX_VALUE/2)).atZone(ZoneId.of("UTC")).year)
     }
+
+    @Test fun zeroRateFreezesTimeAndExposureInstantsForEveryResumptionPolicy() {
+        for (mode in SpaceCompassScenarioResume.entries) {
+            elapsed = 100L
+            val c = clock(mode, rate = 0)
+            c.setActive(true, wall)
+            elapsed += 2 * 86_400_000L
+            assertEquals(initial, c.at(wall + 2 * 86_400_000L))
+            assertEquals(initial, c.atWallTime(wall + 1000, wall + 2 * 86_400_000L, elapsed))
+            c.setActive(false, wall + 2 * 86_400_000L)
+            elapsed += 86_400_000L
+            assertEquals(initial, c.at(wall + 3 * 86_400_000L))
+            val checkpoint = SpaceCompassScenarioCheckpoint.decode(c.checkpoint(wall + 3 * 86_400_000L).encode())!!
+            val restored = SpaceCompassScenarioClock(c.settings, "test", initial,
+                wall + 10 * 86_400_000L, 0L, checkpoint) { 0L }
+            assertEquals(initial, restored.at(wall + 20 * 86_400_000L))
+        }
+    }
+
+    @Test fun pausingAndResumingRetainTheReachedInstantWithoutJumping() {
+        val running = clock(rate = 60)
+        running.setActive(true, wall)
+        elapsed += 1000
+        val reached = running.at(wall + 1000)
+        val paused = SpaceCompassScenarioClock(SpaceCompassScenarioTimeSettings(true, 0,
+            SpaceCompassScenarioResume.ACTIVE), "paused", reached, wall + 1000, elapsed) { elapsed }
+        paused.setActive(true, wall + 1000)
+        elapsed += 5000
+        assertEquals(reached, paused.at(wall + 6000))
+        val resumed = SpaceCompassScenarioClock(SpaceCompassScenarioTimeSettings(true, 2,
+            SpaceCompassScenarioResume.ACTIVE), "resumed", paused.at(wall + 6000), wall + 6000, elapsed) { elapsed }
+        resumed.setActive(true, wall + 6000)
+        assertEquals(reached, resumed.at(wall + 6000))
+        elapsed += 1000
+        assertEquals(reached + 2000, resumed.at(wall + 7000))
+    }
+
+    @Test fun aPausedClockKeepsCelestialPositionsAndWeatherRequestsAtTheFrozenMoment() {
+        val plan = spaceCompassObserverPlan(45.0, 9.0, 100.0, initial, "UTC")!!
+            .also { it.scenarioClock = clock(rate = 0) }
+        plan.scenarioClock!!.setActive(true, wall)
+        val before = plan.observationTimeMs(wall)
+        elapsed += 86_400_000L
+        val after = plan.observationTimeMs(wall + 86_400_000L)
+        assertEquals(before, after)
+        assertEquals(plan.dataRequestTimeMs(wall), plan.dataRequestTimeMs(wall + 86_400_000L))
+        assertEquals(calculateSpaceCompassCelestialObservation(SpaceCompassCelestialBody.MOON, before, 45.0, 9.0),
+            calculateSpaceCompassCelestialObservation(SpaceCompassCelestialBody.MOON, after, 45.0, 9.0))
+        assertEquals(0, SpaceCompassScenarioTimeSettings(true, 0).normalized().multiplier)
+        assertEquals(1, SpaceCompassScenarioTimeSettings(false, 0).normalized().multiplier)
+    }
+
+    @Test fun ordinarySpeedAlsoRollsTheDateAtLocalMidnight() {
+        val zone = ZoneId.of("America/New_York")
+        val start = Instant.parse("2026-10-17T03:59:30Z").toEpochMilli()
+        val c = SpaceCompassScenarioClock(SpaceCompassScenarioTimeSettings(false), "midnight", start, wall, elapsed) { elapsed }
+        c.setActive(true, wall)
+        elapsed += 60_000
+        val reached = Instant.ofEpochMilli(c.at(wall + 60_000)).atZone(zone)
+        assertEquals(java.time.LocalDate.parse("2026-10-17"), reached.toLocalDate())
+        assertEquals(java.time.LocalTime.of(0, 0, 30), reached.toLocalTime())
+    }
 }

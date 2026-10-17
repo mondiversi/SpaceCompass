@@ -149,13 +149,10 @@ internal fun SpaceCompassSunDailyPathLayer(
                                 1.8.dp.toPx(), StrokeCap.Round)
                     } else {
                         val symbol = Path().apply {
-                            if (marker.event == SpaceCompassSunPathEvent.SUNRISE) {
-                                moveTo(point.x, point.y - d)
-                                lineTo(point.x + d, point.y + d); lineTo(point.x - d, point.y + d)
-                            } else {
-                                moveTo(point.x, point.y + d)
-                                lineTo(point.x + d, point.y - d); lineTo(point.x - d, point.y - d)
-                            }
+                            spaceCompassHorizonEventGlyph(marker.event, point.x, point.y, d)
+                                .forEachIndexed { index, (px, py) ->
+                                    if (index == 0) moveTo(px, py) else lineTo(px, py)
+                                }
                             close()
                         }
                         drawPath(symbol, Color.Black.copy(alpha = 0.65f))
@@ -194,21 +191,26 @@ internal fun SpaceCompassSunDailyPathLayer(
 @Composable
 internal fun SpaceCompassCelestialSkyActions(body: SpaceCompassCelestialBody, onVisualize: (() -> Unit)?,
     onPath: (() -> Unit)? = null, pathTitle: String = "", pathSelected: Boolean = false,
-    modifier: Modifier = Modifier, targetSpacing: Dp = (-5).dp) {
+    modifier: Modifier = Modifier, targetSpacing: Dp = (-5).dp, plainTint: Color? = null) {
     val viewTitle = stringResource(R.string.celestial_view_open)
     // The main object's header can compact the shared controls without changing overlays.
     Row(modifier, verticalAlignment = Alignment.CenterVertically,
         horizontalArrangement = Arrangement.spacedBy(targetSpacing)) {
         if (onVisualize != null) SpaceCompassCelestialIconControl(false, viewTitle, onVisualize,
-            Modifier.testTag("celestial-visualize"), Role.Button) {
-            SpaceCompassCelestialTelescopeIcon(Modifier.size(22.dp))
+            Modifier.testTag("celestial-visualize"), Role.Button, plainTint) {
+            if (plainTint != null) SpaceCompassObjectHeaderIcon(SpaceCompassObjectHeaderGlyph.OBSERVATORY)
+            else SpaceCompassCelestialTelescopeIcon(Modifier.size(22.dp))
         }
         if (onPath != null) SpaceCompassCelestialIconControl(pathSelected, pathTitle, onPath,
-            Modifier.testTag("sun-path-open"), Role.Button) {
-            Canvas(Modifier.size(18.dp)) {
-                val curve = Path().apply { moveTo(0f, size.height * 0.8f)
-                    cubicTo(size.width * 0.25f, 0f, size.width * 0.75f, 0f, size.width, size.height * 0.8f) }
-                drawPath(curve, Color.White, style = Stroke(1.5.dp.toPx(), cap = StrokeCap.Round))
+            Modifier.testTag("sun-path-open"), Role.Button, plainTint) {
+            if (plainTint != null) SpaceCompassObjectHeaderIcon(SpaceCompassObjectHeaderGlyph.DAILY_PATH)
+            else {
+                val tint = LocalContentColor.current
+                Canvas(Modifier.size(18.dp)) {
+                    val curve = Path().apply { moveTo(0f, size.height * 0.8f)
+                        cubicTo(size.width * 0.25f, 0f, size.width * 0.75f, 0f, size.width, size.height * 0.8f) }
+                    drawPath(curve, tint, style = Stroke(1.5.dp.toPx(), cap = StrokeCap.Round))
+                }
             }
         }
     }

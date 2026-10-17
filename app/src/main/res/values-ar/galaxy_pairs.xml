@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="celestial_m87_galaxy">مجرة M87</string>
+    <string name="celestial_milky_way_center">درب التبانة (المركز)</string>
+    <string name="celestial_m51_core">الثقب الأسود المركزي لـ M51</string>
+    <string name="celestial_m31_galaxy_tracking_note">مجرة حلزونية تبعد نحو 2.5 مليون سنة ضوئية. تتبع العلامة والمسار اليومي نواتها. ‏M31* جرم مستقل؛ كتلته ليست كتلة المجرة.</string>
+    <string name="celestial_m31_core_tracking_note">الثقب الأسود المركزي لأندروميدا (M31)، وهو جرم مستقل في الفهرس. تشير الكتلة وحجم الأفق النظري إلى الثقب الأسود، لا المجرة.</string>
+    <string name="celestial_m87_galaxy_tracking_note">مجرة إهليلجية عملاقة تبعد نحو 55 مليون سنة ضوئية. تتبع العلامة نواتها. ‏M87* جرم مستقل؛ تعرض هذه الصورة المجرة، لا أفق الثقب الأسود.</string>
+    <string name="celestial_milky_way_tracking_note">تقع الأرض داخل درب التبانة. تشير العلامة والمسار إلى مركز المجرة على بعد نحو 26,400 سنة ضوئية، وليس إلى المجرة بأكملها. البانوراما صورة أرشيفية.</string>
+    <string name="celestial_m51_core_tracking_note">الثقب الأسود المركزي لـ NGC 5194 في M51، على بعد نحو 31 مليون سنة ضوئية. تتبع العلامة النواة النشطة. الكتلة البالغة نحو 4 ملايين كتلة شمسية تقدير غير مباشر بعلاقة M–σ مع عدم يقين كبير. يُمثّل الأفق برمز.</string>
+</resources>

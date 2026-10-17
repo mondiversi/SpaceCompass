@@ -1,3 +1,4 @@
 <resources>
     <string name="sky_reference_zenith">Ζενίθ</string>
+    <string name="sky_reference_nadir">Ναδίρ</string>
 </resources>

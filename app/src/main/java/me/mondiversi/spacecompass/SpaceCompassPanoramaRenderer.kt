@@ -18,7 +18,7 @@ internal data class SpaceCompassPanoramaSnapshot(val timeMs: Long, val latitude:
     val referenceNames: Map<SpaceCompassSkyReference, String> = emptyMap(),
     val poleNames: Pair<String, String> = "North celestial pole" to "South celestial pole",
     val center: SpaceCompassPanoramaCenter = SpaceCompassPanoramaCenter.SOUTH,
-    val observerPointNames: Pair<String, String> = "Earth centre" to "Zenith",
+    val observerPointNames: Pair<String, String> = "Nadir" to "Zenith",
     val weatherEffectsEnabled: Boolean = true,
     val currentPointName: String = "Current", val currentTime: String? = null,
     val pointEventNames: Map<SpaceCompassSunPathEvent, String> = spaceCompassPanoramaDefaultEventNames,

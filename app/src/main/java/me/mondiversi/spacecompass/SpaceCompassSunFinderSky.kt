@@ -194,12 +194,9 @@ internal fun SpaceCompassSunPointingViewport(
         val markerDiameter = fitSpaceCompassCelestialOffscreenDiameter(directionalProjections, width, height,
             with(density) { SPACE_COMPASS_CELESTIAL_OFFSCREEN_DIAMETER_DP.dp.toPx().toDouble() }, markerExclusions)
         val offscreen = placeSpaceCompassCelestialOffscreenMarkers(directionalProjections, width, height, markerDiameter, markerExclusions)
-        val guideExclusions = markerExclusions + offscreen.values.map {
-            SpaceCompassSunSceneFrame(it.center.x - markerDiameter / 2, it.center.y - markerDiameter / 2, markerDiameter, markerDiameter)
-        } + targets.filterNot { it.isCurrent }.map {
-            val radius = with(density) { 9.dp.toPx().toDouble() }
-            SpaceCompassSunSceneFrame(it.projection.x - radius, it.projection.y - radius, radius * 2, radius * 2)
-        }
+        // Guide names stay continuous across moving objects, orbit dots and transient captions.
+        // Keep the measured fixed controls/header as exclusions.
+        val guideExclusions = exclusions.filterNot { it in timeBadgeExclusions }
         SpaceCompassSkyReferenceLayer(observerLatitude, timeMs, orientation.takeIf { compassReliable }, scenePerspective,
             guideExclusions, enabled = showSkyReferences && drawScene, observerAltitude = observerAltitude) {
             if (drawScene) paths.forEach { (candidate, path) -> key(candidate) {

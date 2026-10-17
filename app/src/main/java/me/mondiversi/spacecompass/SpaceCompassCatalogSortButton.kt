@@ -12,6 +12,7 @@ import androidx.compose.ui.geometry.Offset
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.StrokeCap
 import androidx.compose.ui.platform.testTag
+import androidx.compose.ui.platform.LocalConfiguration
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.semantics.*
@@ -23,6 +24,9 @@ internal fun SpaceCompassCatalogSortButton(sort: SpaceCompassCatalogSort, color:
     onSort: (SpaceCompassCatalogSort) -> Unit) {
     var expanded by remember { mutableStateOf(false) }
     val choose: (SpaceCompassCatalogSort) -> Unit = { onSort(it); expanded = false }
+    val locale = LocalConfiguration.current.locales[0]
+    val fieldLabels = SpaceCompassCatalogSortField.entries.associateWith { stringResource(it.label) }
+    val fields = remember(fieldLabels, locale) { spaceCompassCatalogSortFields(fieldLabels, locale) }
     Box {
         SpaceCompassTitleActionButton(stringResource(R.string.catalog_sort),
             onClick = { expanded = true }, modifier = Modifier.width(48.dp).testTag("catalog-sort-toggle"),
@@ -39,9 +43,9 @@ internal fun SpaceCompassCatalogSortButton(sort: SpaceCompassCatalogSort, color:
                 modifier = Modifier.testTag("catalog-sort-CATALOG").semantics {
                     role = Role.RadioButton; selected = sort == SpaceCompassCatalogSort.CATALOG
                 })
-            SpaceCompassCatalogSortField.entries.forEach { field ->
+            fields.forEach { field ->
                 HorizontalDivider(color = MaterialTheme.colorScheme.onSurface.copy(alpha = .12f))
-                val title = stringResource(field.label)
+                val title = fieldLabels.getValue(field)
                 Row(Modifier.fillMaxWidth().heightIn(min = 48.dp).padding(start = 12.dp, end = 4.dp),
                     verticalAlignment = Alignment.CenterVertically) {
                     Text(title, Modifier.weight(1f).padding(end = 4.dp), fontSize = 12.sp, lineHeight = 15.sp)

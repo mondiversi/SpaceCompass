@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="celestial_m87_galaxy">Galaxia M87</string>
+    <string name="celestial_milky_way_center">Vía Láctea (centro)</string>
+    <string name="celestial_m51_core">Agujero negro central de M51</string>
+    <string name="celestial_m31_galaxy_tracking_note">Galaxia espiral a unos 2,5 millones de años luz. El marcador y la trayectoria diaria siguen su núcleo. M31* es un objeto independiente; su masa no es la de la galaxia.</string>
+    <string name="celestial_m31_core_tracking_note">Agujero negro central de Andrómeda (M31), un objeto independiente del catálogo. La masa y el tamaño teórico del horizonte corresponden al agujero negro, no a la galaxia.</string>
+    <string name="celestial_m87_galaxy_tracking_note">Galaxia elíptica gigante a unos 55 millones de años luz. El marcador sigue su núcleo. M87* es un objeto independiente; esta fotografía muestra la galaxia, no el horizonte del agujero negro.</string>
+    <string name="celestial_milky_way_tracking_note">La Tierra está dentro de la Vía Láctea. El marcador y la trayectoria apuntan al centro galáctico, a unos 26.400 años luz, no a toda la galaxia. La panorámica es una fotografía de archivo.</string>
+    <string name="celestial_m51_core_tracking_note">Agujero negro central de NGC 5194 en M51, a unos 31 millones de años luz. El marcador sigue el núcleo activo. La masa de unos 4 millones de masas solares es una estimación indirecta M–σ con gran incertidumbre. El horizonte se representa simbólicamente.</string>
+</resources>

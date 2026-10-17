@@ -141,6 +141,9 @@ private fun spaceCompassCelestialSpatialSection(body: SpaceCompassCelestialBody,
             add(detailRow(R.string.celestial_spatial_system, it))
         }
         add(detailRow(R.string.celestial_spatial_galaxy, when (membership.galaxy) {
+            SpaceCompassCelestialGalaxy.LMC -> resources.getString(R.string.celestial_large_magellanic_cloud)
+            SpaceCompassCelestialGalaxy.SMC -> resources.getString(R.string.celestial_small_magellanic_cloud)
+            SpaceCompassCelestialGalaxy.M51 -> resources.getString(R.string.celestial_m51)
             SpaceCompassCelestialGalaxy.M87 -> "Messier 87 · NGC 4486"
             SpaceCompassCelestialGalaxy.MILKY_WAY -> resources.getString(R.string.celestial_spatial_milky_way)
             SpaceCompassCelestialGalaxy.ANDROMEDA -> resources.getString(R.string.celestial_andromeda_galaxy_title) + " · M31"

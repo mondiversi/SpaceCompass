@@ -128,7 +128,7 @@ capture timestamps with explicit UTC offsets on all supported versions. Caption 
 and location-disclosure policy remain frozen independently of these EXIF timestamps.
 Composition-observed configuration/resources update preference examples and callbacks
 when locale/theme changes. The initial 1.0 release used display version 1.0 and protocol version 1.0.0.
-Current release 1.4.3 uses the same display/protocol version with code 40; signed
+Current release 1.4.4 uses the same display/protocol version with code 41; signed
 metadata, APK name and tag share that identity.
 
 
@@ -434,3 +434,26 @@ The expanded target registry separates stable remote IDs from names and catalogu
 ## Settings and distribution 1.4.3
 
 Device theme metadata is captured before the application appearance override, keeping the System example independent of a forced light/dark selection. General uses keyed, independent staggered-grid items with the existing shared spacing and natural heights. Scenario speed uses an explicit compact value style. The 53-object catalogue, scenario clock and time-coincident close approaches are documented in their dedicated modules. All 29 celestial images pin graphics pack 1.4; legacy cache import and public URLs remain compatible. No complete texture ZIP is added.
+
+
+## Additional catalogue registry
+
+`SpaceCompassAdditionalCatalog` registers the 47 additional stable enum identifiers,
+categories, scientific names and identity-pinned Horizons targets. Its reference,
+facts, image and search-alias modules keep data separate from Compose screens.
+Existing observation, refresh/cache, daily-path, selection and export pipelines are
+reused; no parallel catalogue/calculation engine is introduced. See
+`docs/CATALOG_100.md` for sources and versioned graphics-pack policy.
+
+## Distribution 1.4.4 and independent previews
+
+The catalogue has 104 ordinary objects, with hidden LV-426 outside that count.
+All 56 full images and 56 independent previews pin graphics pack 1.5. Previews
+are 128 x 128 WebP Q90/method 6; each has its own length, dimensions, SHA-256 and
+parent-image credit. Catalogue/live/captured glyphs request only previews. Full
+images are requested by the Observatory and image exports as needed. Previously
+cached full maps remain a local fallback without triggering a catalogue download.
+The in-memory preview LRU is capped at 4 MiB; verified persistent resources retain
+offline availability. Publication keeps older releases and individual URLs intact.
+Nadir uses exact local -Up. Live reference placement retains continuous curve
+anchors and stable cross captions; frozen captures use independent collision layout.

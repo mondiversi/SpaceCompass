@@ -1,9 +1,9 @@
 <resources>
     <string name="info_news_title">آخر المستجدات · %1$s</string>
-    <string name="info_news_star_sky" formatted="false">53 جرمًا: انضم سيريس وإنسيلادوس والنسر الواقع ودنب والنسر الطائر والصليب الجنوبي إلى الفهرس.</string>
-    <string name="info_news_texture_downloads" formatted="false">سرعة زمن حتى 3600×، مع البدء من البداية أو التقدم أثناء نشاط التطبيق فقط أو باستمرار.</string>
-    <string name="info_news_weather" formatted="false">تظهر التقاربات ضمن 1.5° في اللحظة نفسها في المسارات واللقطات والملفات المصدرة.</string>
-    <string name="info_news_viewer_zoom" formatted="false">رتّب حسب المسافة من الأرض وافتح مرصد الجرم مباشرة من الفهرس.</string>
-    <string name="info_news_settings" formatted="false">إعدادات أكثر اتساقًا وبطاقات أفقية ورموز للمسار وخيار شاشة توقف بعد 15 دقيقة.</string>
-    <string name="info_news_catalog" formatted="false">حزمة الرسومات 1.4: ‏29 صورة WebP خارجية بتنزيل فردي وفحص سلامة وتخزين مؤقت دون اتصال.</string>
+    <string name="info_news_star_sky" formatted="false">104 أجرام: أقمار ومسابير ونجوم ومجرات إضافية وثقوبها السوداء المركزية.</string>
+    <string name="info_news_texture_downloads" formatted="false">حزمة الرسومات 1.5: 56 صورة خارجية و56 معاينة خفيفة، بتنزيل منفرد وتخزين دون اتصال.</string>
+    <string name="info_news_weather" formatted="false">أوقف الزمن عند 0×؛ تبدأ إعادة تفعيل التسريع من 1×. خيارات الاستئناف في السيناريو المخصص.</string>
+    <string name="info_news_viewer_zoom" formatted="false">الأنواع مرتبة حسب عدد الأجرام، وخيارات فرز أبجدية، وعناصر تحكم أوضح.</string>
+    <string name="info_news_settings" formatted="false">تسميات مرجعية أكثر ثباتًا وسمت القدم عند −90°، مقابل سمت الرأس.</string>
+    <string name="info_news_catalog" formatted="false">تحسين حركة الأقمار وتقاربات الأجرام المحددة وحالة تحميل الطقس.</string>
 </resources>

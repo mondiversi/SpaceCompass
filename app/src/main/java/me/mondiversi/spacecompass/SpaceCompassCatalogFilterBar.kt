@@ -13,6 +13,7 @@ import androidx.compose.ui.geometry.Offset
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.StrokeCap
 import androidx.compose.ui.platform.LocalDensity
+import androidx.compose.ui.platform.LocalConfiguration
 import androidx.compose.ui.platform.testTag
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.semantics.*
@@ -25,12 +26,24 @@ import androidx.compose.ui.unit.sp
 @Composable
 internal fun SpaceCompassCatalogFilterBar(types: Set<SpaceCompassCatalogType>, visibility: SpaceCompassCatalogVisibility, visibleCount: Int,
     onType: (SpaceCompassCatalogType) -> Unit, onAllTypes: () -> Unit,
-    onVisibility: (SpaceCompassCatalogVisibility) -> Unit, onReset: () -> Unit, searchActive: Boolean = false) {
+    onVisibility: (SpaceCompassCatalogVisibility) -> Unit, onReset: () -> Unit, searchActive: Boolean = false,
+    availableBodies: List<SpaceCompassCelestialBody> = spaceCompassCelestialCatalogOrder) {
     val all = stringResource(R.string.catalog_all)
+    val numeric = LocalSpaceCompassNumericFormat.current
     val resultCount = formatSpaceCompassNumber(visibleCount.toDouble(), 0,
-        LocalSpaceCompassNumericFormat.current, grouping = false)
-    val typeChoices = listOf("" to all) + SpaceCompassCatalogType.entries.map { it.name to stringResource(it.label) }
-    val selectedTypeLabels = typeChoices.filter { it.first in types.map { type -> type.name } }.map { it.second }
+        numeric, grouping = false)
+    val locale = LocalConfiguration.current.locales[0]
+    val typeLabels = SpaceCompassCatalogType.entries.associateWith { stringResource(it.label) }
+    val typeCounts = remember(availableBodies, typeLabels, locale) {
+        spaceCompassCatalogTypeCounts(availableBodies, typeLabels, locale)
+    }
+    fun countLabel(count: Int) = formatSpaceCompassNumber(count.toDouble(), 0, numeric, grouping = false)
+    val typeChoices = listOf("" to "$all (${countLabel(availableBodies.size)})") + typeCounts.map {
+        it.type.name to "${typeLabels.getValue(it.type)} (${countLabel(it.count)})"
+    }
+    val selectedTypes = typeCounts.filter { it.type in types }
+    val selectedTypeLabels = selectedTypes.map { typeLabels.getValue(it.type) }
+    val selectedTypeCount = countLabel(if (types.isEmpty()) availableBodies.size else selectedTypes.sumOf { it.count })
     // AnimatedVisibility overlays sibling layouts; keep the separator below the whole panel.
     Column(Modifier.fillMaxWidth()) {
         Column(Modifier.fillMaxWidth().padding(horizontal = 10.dp, vertical = 8.dp).testTag("catalog-filter-bar"),
@@ -38,7 +51,7 @@ internal fun SpaceCompassCatalogFilterBar(types: Set<SpaceCompassCatalogType>, v
             Row(Modifier.fillMaxWidth(), horizontalArrangement = Arrangement.spacedBy(8.dp)) {
                 CatalogFilterChoice(stringResource(R.string.catalog_filter_type),
                     if (types.isEmpty()) all else selectedTypeLabels.joinToString(", "), typeChoices,
-                    Modifier.weight(1f).testTag("catalog-type-menu"), types.map { it.name }.toSet(), true, resultCount) { key ->
+                    Modifier.weight(1f).testTag("catalog-type-menu"), types.map { it.name }.toSet(), true, selectedTypeCount) { key ->
                     if (key.isEmpty()) onAllTypes() else onType(SpaceCompassCatalogType.valueOf(key))
                 }
                 CatalogFilterChoice(stringResource(R.string.catalog_visibility), stringResource(visibility.label),

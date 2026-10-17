@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="scenario_speed">Velocidad del tiempo</string>
-    <string name="scenario_speed_description">Acelera el reloj simulado de 1× a 3600×. A medianoche, la fecha pasa automáticamente al día siguiente.</string>
-    <string name="scenario_resume">Reanudación del escenario</string>
+    <string name="scenario_speed">Tiempo</string>
+    <string name="scenario_speed_description">Ajusta el reloj del escenario de 0× (en pausa) a 3600×.</string>
+    <string name="scenario_resume">Reanudación del escenario personalizado</string>
     <string name="scenario_resume_description">Elige cómo se reanuda el tiempo simulado al volver a abrir la aplicación. La velocidad elegida se aplica en todos los modos.</string>
     <string name="scenario_restart">Reiniciar desde el principio</string>
     <string name="scenario_active">Solo con la aplicación activa</string>
@@ -14,4 +14,6 @@
     <string name="scenario_restart_help">Cada nuevo inicio de la app reinicia el tiempo del escenario desde los ajustes iniciales. Mientras usas la app, avanza a la velocidad elegida.</string>
     <string name="scenario_active_help">El tiempo del escenario avanza a la velocidad elegida solo mientras usas la app. Se pausa en segundo plano y durante el salvapantallas, y luego continúa donde se detuvo.</string>
     <string name="scenario_always_help">El tiempo del escenario sigue avanzando a la velocidad elegida incluso con la app cerrada y después de reiniciar el teléfono.</string>
+    <string name="scenario_time_paused">Tiempo en pausa</string>
+    <string name="scenario_midnight_note">Cuando el tiempo avanza, la fecha pasa automáticamente al día siguiente a medianoche.</string>
 </resources>

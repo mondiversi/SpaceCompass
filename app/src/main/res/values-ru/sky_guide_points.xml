@@ -1,3 +1,4 @@
 <resources>
     <string name="sky_reference_zenith">Зенит</string>
+    <string name="sky_reference_nadir">Надир</string>
 </resources>

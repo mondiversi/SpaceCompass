@@ -143,13 +143,14 @@ internal fun SpaceCompassCelestialViewerScreen(body: SpaceCompassCelestialBody, 
         body.isFictional -> R.string.celestial_lv426_model_note
         body == SpaceCompassCelestialBody.EARTH_CENTER -> R.string.celestial_earth_center_note
         body == SpaceCompassCelestialBody.SOUTHERN_CROSS -> R.string.celestial_southern_cross_note
+        body.hasCatalogPhotograph -> R.string.celestial_archival_image
         body == SpaceCompassCelestialBody.TITAN -> R.string.celestial_view_map_note
         body.deepSkyReference != null -> body.deepSkyNoteResource
         body == SpaceCompassCelestialBody.POLARIS -> R.string.celestial_polaris_model
         rotating -> R.string.celestial_free_rotation_hint
         body.isComet -> R.string.celestial_comet_note
         body.isSpacecraft -> R.string.celestial_view_craft_note
-        body == SpaceCompassCelestialBody.SEDNA -> R.string.celestial_view_sedna_note
+        body == SpaceCompassCelestialBody.SEDNA || (body.additionalCatalogEntry != null && !body.hasPhysicalFace) -> R.string.celestial_view_sedna_note
         else -> R.string.celestial_view_map_note
     })
     val model: @Composable (Modifier) -> Unit = { placement ->
@@ -243,16 +244,6 @@ internal fun SpaceCompassCelestialViewerScreen(body: SpaceCompassCelestialBody, 
                     color = secondaryText, fontSize = 11.sp, lineHeight = 14.sp)
                 if (body == SpaceCompassCelestialBody.TITAN) Text(stringResource(R.string.celestial_titan_note),
                     color = secondaryText, fontSize = 11.sp, lineHeight = 14.sp)
-                if (body == SpaceCompassCelestialBody.ANDROMEDA_CORE) {
-                    Text(stringResource(R.string.celestial_andromeda_galaxy_title), color = primaryText,
-                        fontWeight = FontWeight.SemiBold, fontSize = 12.sp)
-                    SpaceCompassCatalogPhotograph("andromeda_galaxy.webp", Modifier.fillMaxWidth().height(150.dp))
-                    spaceCompassCatalogImageCredit("andromeda_galaxy.webp")?.let { credit ->
-                        Text(credit, color = secondaryText, fontSize = 10.sp, lineHeight = 13.sp)
-                    }
-                    Text(stringResource(R.string.celestial_andromeda_galaxy_note), color = secondaryText,
-                        fontSize = 11.sp, lineHeight = 14.sp)
-                }
                 spaceCompassCatalogImageCredit(body.viewerTexture)?.let { credit ->
                     Text(credit, color = secondaryText, fontSize = 10.sp, lineHeight = 13.sp)
                 }

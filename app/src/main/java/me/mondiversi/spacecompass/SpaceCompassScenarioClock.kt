@@ -5,7 +5,7 @@ internal enum class SpaceCompassScenarioResume {
     RESTART, ACTIVE, ALWAYS;
     companion object { val DEFAULT = RESTART }
 }
-internal val spaceCompassScenarioRates = listOf(1, 2, 3, 6, 10, 30, 60, 120, 300, 600, 1800, 3600)
+internal val spaceCompassScenarioRates = listOf(0, 1, 2, 3, 6, 10, 30, 60, 120, 300, 600, 1800, 3600)
 internal data class SpaceCompassScenarioTimeSettings(val enabled: Boolean = false, val rate: Int = 1,
     val resume: SpaceCompassScenarioResume = SpaceCompassScenarioResume.DEFAULT) {
     val multiplier: Int get() = if (enabled) rate else 1

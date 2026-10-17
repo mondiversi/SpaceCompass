@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="celestial_m87_galaxy">Galáxia M87</string>
+    <string name="celestial_milky_way_center">Via Láctea (centro)</string>
+    <string name="celestial_m51_core">Buraco negro central de M51</string>
+    <string name="celestial_m31_galaxy_tracking_note">Galáxia espiral a cerca de 2,5 milhões de anos-luz. O marcador e o percurso diário seguem o seu núcleo. M31* é um objeto separado; a sua massa não é a massa da galáxia.</string>
+    <string name="celestial_m31_core_tracking_note">Buraco negro central de Andrómeda (M31), um objeto separado no catálogo. A massa e a dimensão teórica do horizonte referem-se ao buraco negro, não à galáxia.</string>
+    <string name="celestial_m87_galaxy_tracking_note">Galáxia elíptica gigante a cerca de 55 milhões de anos-luz. O marcador segue o seu núcleo. M87* é um objeto separado; esta fotografia mostra a galáxia, não o horizonte do buraco negro.</string>
+    <string name="celestial_milky_way_tracking_note">A Terra está dentro da Via Láctea. O marcador e o percurso apontam para o centro galáctico, a cerca de 26.400 anos-luz, não para toda a galáxia. A panorâmica é uma fotografia de arquivo.</string>
+    <string name="celestial_m51_core_tracking_note">Buraco negro central de NGC 5194 em M51, a cerca de 31 milhões de anos-luz. O marcador segue o núcleo ativo. A massa de cerca de 4 milhões de massas solares é uma estimativa indireta M–σ com grande incerteza. O horizonte é representado simbolicamente.</string>
+</resources>

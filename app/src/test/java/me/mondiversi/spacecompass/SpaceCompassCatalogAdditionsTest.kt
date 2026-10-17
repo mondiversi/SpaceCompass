@@ -104,7 +104,7 @@ class SpaceCompassCatalogAdditionsTest {
     @Test fun extendedObjectsAreFilterableWithoutInventedPlanetarySurfaceData() {
         for ((body, type) in listOf(SpaceCompassCelestialBody.ORION_NEBULA to SpaceCompassCatalogType.NEBULA,
             SpaceCompassCelestialBody.PLEIADES to SpaceCompassCatalogType.STAR_CLUSTER)) {
-            assertEquals(listOf(body), spaceCompassFilterCatalog(setOf(type), SpaceCompassCatalogVisibility.ALL, emptyMap()))
+            assertEquals(listOf(body), spaceCompassFilterCatalog(setOf(type), SpaceCompassCatalogVisibility.ALL, emptyMap(), listOf(body)))
             val facts = spaceCompassCelestialFacts(body)
             assertNotNull(facts.apparentMagnitude)
             assertNull(facts.massKg); assertNull(facts.massSolar); assertNull(facts.diameterKm)
@@ -144,7 +144,7 @@ class SpaceCompassCatalogAdditionsTest {
             "NGC1976" to SpaceCompassCelestialBody.ORION_NEBULA, "M45" to SpaceCompassCelestialBody.PLEIADES,
             "Sirio" to SpaceCompassCelestialBody.SIRIUS, "Saturn VI" to titan))
             assertEquals(listOf(body), spaceCompassSearchCatalog(spaceCompassCelestialCatalogOrder, emptyMap(), query))
-        assertEquals(53, spaceCompassCelestialCatalogOrder.size)
+        assertEquals(104, spaceCompassCelestialCatalogOrder.size)
         assertEquals(1, spaceCompassCelestialCatalogOrder.count { it == SpaceCompassCelestialBody.ANDROMEDA_CORE })
     }
 

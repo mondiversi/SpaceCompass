@@ -36,11 +36,12 @@ import androidx.compose.ui.unit.LayoutDirection
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 
-/** Keep a 6.5 dp visible gap between 30 dp circles in their 48 dp target slots. */
-internal val SpaceCompassObjectActionTargetSpacing = (-11.5).dp
+/** Different slot overlaps preserve an equal gap between the visible glyph edges. */
+internal val SpaceCompassObjectActionTargetSpacing = spaceCompassObjectHeaderTargetSpacing(
+    SpaceCompassObjectHeaderGlyph.REMOVE, SpaceCompassObjectHeaderGlyph.OBSERVATORY)
 
-/** Observatory and Daily Path use a 9.75 dp visible gap, 50% wider than the other controls. */
-internal val SpaceCompassObjectDetailsActionTargetSpacing = (-8.25).dp
+internal val SpaceCompassObjectDetailsActionTargetSpacing = spaceCompassObjectHeaderTargetSpacing(
+    SpaceCompassObjectHeaderGlyph.OBSERVATORY, SpaceCompassObjectHeaderGlyph.DAILY_PATH)
 
 /** Navigation visits only the checked objects. No arrows for a single or empty selection. */
 internal data class SpaceCompassCelestialBodyNavigation(val previousLabel: String, val nextLabel: String,
@@ -60,18 +61,21 @@ internal fun SpaceCompassCelestialBodyDataIsland(bodyName: String?, primaryText:
         .padding(horizontal = 12.dp)) {
         if (bodyName != null || navigation != null) {
             // Compact only the title bar; retain the normal insets around the data below it.
-            // Reclaim 6 dp from the first action's touch inset for the name and trailing chevron.
+            // The next chevron ends 10 dp before its slot edge. Include the first action's
+            // blank inset so this boundary has the same visible gap as the other icons.
             // Keep the trailing actions anchored at the island's content edge.
             Row(Modifier.fillMaxWidth().testTag("celestial-body-header")
                 .padding(vertical = 1.dp), verticalAlignment = Alignment.CenterVertically,
-                horizontalArrangement = Arrangement.spacedBy(if (navigation == null) 0.dp else (-6).dp)) {
+                horizontalArrangement = Arrangement.spacedBy(if (navigation == null) 0.dp
+                    else SpaceCompassObjectHeaderGlyphGap - 10.dp -
+                        (48.dp - SpaceCompassObjectHeaderGlyph.REMOVE.width) / 2)) {
                 // Fit the name between the unfilled glyphs, retaining 48 dp navigation targets.
                 Box(Modifier.weight(1f).heightIn(min = 48.dp)) {
                     var nameLayout by remember(bodyName) { mutableStateOf<TextLayoutResult?>(null) }
                     Text(bodyName.orEmpty(), Modifier.fillMaxWidth().align(Alignment.Center)
-                        // Center between the visible arrow strokes, retaining the same text width.
-                        .padding(start = if (navigation == null) 0.dp else 13.dp,
-                            end = if (navigation == null) 0.dp else 23.dp)
+                        // Leave the same 4 dp between the text and either visible arrow edge.
+                        .padding(start = if (navigation == null) 0.dp else SpaceCompassObjectHeaderGlyph.CHEVRON.width + 4.dp,
+                            end = if (navigation == null) 0.dp else SpaceCompassObjectHeaderGlyph.CHEVRON.width + 14.dp)
                         .testTag("celestial-body-island-title").semantics { heading() }
                         .drawWithContent {
                             // Reuse the exact paragraph, including ellipsis and RTL. Paint the
@@ -94,11 +98,12 @@ internal fun SpaceCompassCelestialBodyDataIsland(bodyName: String?, primaryText:
                         navigation.nextLabel, navigation.onNext, primaryText, previous = false,
                         modifier = Modifier.size(48.dp).testTag("celestial-body-next").align(Alignment.CenterEnd))
                 }
-                // Let the final circle reach the island's normal content edge; its empty
-                // 9 dp target inset extends into the existing 12 dp island padding, also in RTL.
+                // Keep the final glyph 3 dp inside the content edge regardless of its width.
+                // Only the target's empty inset extends into the island padding, also in RTL.
                 Row(Modifier.layout { measurable, constraints ->
                     val controls = measurable.measure(constraints)
-                    layout((controls.width - 9.dp.roundToPx()).coerceAtLeast(0), controls.height) {
+                    val trailingInset = (48.dp - SpaceCompassObjectHeaderGlyph.DAILY_PATH.width) / 2 - 3.dp
+                    layout((controls.width - trailingInset.roundToPx()).coerceAtLeast(0), controls.height) {
                         controls.placeRelative(0, 0)
                     }
                 }, verticalAlignment = Alignment.CenterVertically,
@@ -128,7 +133,8 @@ private fun SpaceCompassCelestialBodyNavigationArrow(label: String, onClick: () 
         // the content edge and reducing the label insets reclaims 20 dp for the name, also in RTL.
         Box(Modifier.fillMaxSize().padding(end = if (previous) 0.dp else 10.dp),
             contentAlignment = if (previous) Alignment.CenterStart else Alignment.CenterEnd) {
-            SpaceCompassDisclosureChevron(Modifier.rotate(if (previous != rtl) 180f else 0f), tint)
+            SpaceCompassObjectHeaderIcon(SpaceCompassObjectHeaderGlyph.CHEVRON,
+                Modifier.rotate(if (previous != rtl) 180f else 0f), tint)
         }
     }
 }

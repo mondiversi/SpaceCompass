@@ -13,6 +13,8 @@ internal fun calculateSpaceCompassCelestialSpeed(body: SpaceCompassCelestialBody
     if (body.isExtrasolar || body == SpaceCompassCelestialBody.EARTH_CENTER) return null // No fictitious solar orbital speed for a star.
     if (body.isEarthSatellite)
         return remote.satelliteOrbit(body)?.takeIf { it.usable(timeMs) }?.speedKmPerSecond(timeMs)
+    if (body.additionalCatalogEntry?.type == SpaceCompassCatalogType.NATURAL_SATELLITE)
+        return spaceCompassAdditionalMoonSpeed(body, timeMs, remote)
     if (body == SpaceCompassCelestialBody.TITAN) return spaceCompassTitanOrbitalSpeed(timeMs, remote)
     if (body == SpaceCompassCelestialBody.ENCELADUS) return spaceCompassSaturnMoonOrbitalSpeed(body, timeMs, remote)
     if (body.usesHorizons)
@@ -35,12 +37,14 @@ internal fun spaceCompassCelestialVelocityMagnitude(x: Double, y: Double, z: Dou
     return (sqrt(x * x + y * y + z * z) * scale).also { require(it.isFinite() && it in 0.0..1_000.0) }
 }
 
-/** Sun-centered geometric position (AU) and velocity (AU/day), independent of apparent pointing. */
+/** Geometric position (AU) and velocity (AU/day), with an explicit origin independent of apparent pointing. */
 internal data class SpaceCompassHorizonsStateSample(val timeMs: Long, val x: Double, val y: Double, val z: Double,
     val vx: Double, val vy: Double, val vz: Double)
-internal data class SpaceCompassHorizonsMotion(val body: SpaceCompassCelestialBody, val samples: List<SpaceCompassHorizonsStateSample>) {
+internal data class SpaceCompassHorizonsMotion(val body: SpaceCompassCelestialBody, val samples: List<SpaceCompassHorizonsStateSample>,
+    val primary: SpaceCompassCelestialBody? = body.horizonsMotionPrimary) {
     init {
         require(body.usesHorizons && samples.size >= 2)
+        require(primary == body.horizonsMotionPrimary)
         require(samples.zipWithNext().all { (a, b) -> a.timeMs < b.timeMs })
         samples.forEach {
             val distance = sqrt(it.x * it.x + it.y * it.y + it.z * it.z)
@@ -70,7 +74,12 @@ internal data class SpaceCompassHorizonsMotion(val body: SpaceCompassCelestialBo
 internal fun spaceCompassCelestialSpeedLabel(body: SpaceCompassCelestialBody): Int = when {
     body == SpaceCompassCelestialBody.SUN -> R.string.celestial_speed_earth_orbit
     body == SpaceCompassCelestialBody.MOON || body.isEarthSatellite -> R.string.celestial_speed_orbit_earth
-    body.isJovianMoon -> R.string.celestial_speed_orbit_jupiter
+    body.isJovianMoon || spaceCompassAdditionalCatalogFacts(body)?.parent == SpaceCompassCelestialBody.JUPITER -> R.string.celestial_speed_orbit_jupiter
+    spaceCompassAdditionalCatalogFacts(body)?.parent == SpaceCompassCelestialBody.MARS -> R.string.celestial_speed_orbit_mars
+    spaceCompassAdditionalCatalogFacts(body)?.parent == SpaceCompassCelestialBody.SATURN -> R.string.celestial_speed_orbit_saturn
+    spaceCompassAdditionalCatalogFacts(body)?.parent == SpaceCompassCelestialBody.URANUS -> R.string.celestial_speed_orbit_uranus
+    spaceCompassAdditionalCatalogFacts(body)?.parent == SpaceCompassCelestialBody.NEPTUNE -> R.string.celestial_speed_orbit_neptune
+    spaceCompassAdditionalCatalogFacts(body)?.parent == SpaceCompassCelestialBody.PLUTO -> R.string.celestial_speed_orbit_pluto
     body == SpaceCompassCelestialBody.TITAN || body == SpaceCompassCelestialBody.ENCELADUS -> R.string.celestial_speed_orbit_saturn
     body.isVoyager -> R.string.celestial_speed_outward_sun
     body.isExtrasolar || body == SpaceCompassCelestialBody.EARTH_CENTER -> R.string.celestial_speed_unavailable

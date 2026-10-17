@@ -1,9 +1,9 @@
 <resources>
     <string name="info_news_title">Perubahan terbaru · %1$s</string>
-    <string name="info_news_star_sky" formatted="false">53 objek: Ceres, Enceladus, Vega, Deneb, Altair dan Salib Selatan ditambahkan ke katalog.</string>
-    <string name="info_news_texture_downloads" formatted="false">Kecepatan waktu hingga 3600×: mulai ulang, maju hanya saat aplikasi aktif atau terus berjalan.</string>
-    <string name="info_news_weather" formatted="false">Pendekatan dalam 1,5° pada saat yang sama muncul di lintasan, tangkapan dan ekspor.</string>
-    <string name="info_news_viewer_zoom" formatted="false">Urutkan berdasarkan jarak dari Bumi dan buka Observatorium objek langsung dari katalog.</string>
-    <string name="info_news_settings" formatted="false">Pengaturan seragam, kartu lanskap, simbol lintasan dan opsi screensaver setelah 15 menit.</string>
-    <string name="info_news_catalog" formatted="false">Paket grafis 1.4: 29 gambar WebP eksternal dengan unduhan satu per satu, pemeriksaan integritas dan cache offline.</string>
+    <string name="info_news_star_sky" formatted="false">104 objek: lebih banyak bulan, wahana, bintang, galaksi dan lubang hitam pusatnya.</string>
+    <string name="info_news_texture_downloads" formatted="false">Paket grafis 1.5: 56 gambar eksternal dan 56 pratinjau ringan, diunduh satu per satu dan disimpan luring.</string>
+    <string name="info_news_weather" formatted="false">Jeda waktu pada 0×; mengaktifkan kembali percepatan dimulai dari 1×. Opsi melanjutkan ada di Skenario khusus.</string>
+    <string name="info_news_viewer_zoom" formatted="false">Jenis menurut jumlah objek, opsi pengurutan alfabetis dan kontrol objek yang lebih jelas.</string>
+    <string name="info_news_settings" formatted="false">Label referensi lebih stabil dan Nadir pada −90°, berlawanan dengan Zenit.</string>
+    <string name="info_news_catalog" formatted="false">Peningkatan gerak bulan, pendekatan objek terpilih dan status pemuatan cuaca.</string>
 </resources>

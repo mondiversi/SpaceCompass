@@ -1,9 +1,9 @@
 <resources>
     <string name="info_news_title">Mambo mapya · %1$s</string>
-    <string name="info_news_star_sky" formatted="false">Vitu 53: Ceres, Enceladus, Vega, Deneb, Altair na Msalaba wa Kusini vimeongezwa kwenye orodha.</string>
-    <string name="info_news_texture_downloads" formatted="false">Kasi ya muda hadi 3600×: anza upya, endelea programu ikiwa hai tu au endelea daima.</string>
-    <string name="info_news_weather" formatted="false">Mikaribiano ya ndani ya 1.5° wakati uleule inaonekana kwenye njia, picha na faili zinazohamishwa.</string>
-    <string name="info_news_viewer_zoom" formatted="false">Panga kwa umbali kutoka katikati ya Dunia na ufungue kichunguzi cha kitu moja kwa moja kwenye orodha.</string>
-    <string name="info_news_settings" formatted="false">Mipangilio thabiti, visanduku vya mlalo, alama za njia na kihifadhi skrini baada ya dakika 15.</string>
-    <string name="info_news_catalog" formatted="false">Kifurushi cha picha 1.4: picha 29 za WebP za nje, upakuaji mmoja mmoja, ukaguzi wa uadilifu na akiba nje ya mtandao.</string>
+    <string name="info_news_star_sky" formatted="false">Vitu 104: miezi, vyombo vya anga, nyota, galaksi na mashimo meusi ya kati zaidi.</string>
+    <string name="info_news_texture_downloads" formatted="false">Kifurushi cha picha 1.5: picha 56 za nje na hakiki ndogo 56, hupakuliwa moja moja na kuhifadhiwa bila intaneti.</string>
+    <string name="info_news_weather" formatted="false">Simamisha muda kwa 0×; kuwasha tena kuongeza kasi huanza kwa 1×. Chaguo za kuendelea ziko kwenye hali maalumu.</string>
+    <string name="info_news_viewer_zoom" formatted="false">Aina kwa idadi ya vitu, chaguo za kupanga kwa alfabeti na vidhibiti vilivyo wazi zaidi.</string>
+    <string name="info_news_settings" formatted="false">Lebo za marejeo zimetulia zaidi na Nadir katika −90°, mkabala na Zenithi.</string>
+    <string name="info_news_catalog" formatted="false">Mwendo wa miezi, mikaribiano ya vitu vilivyochaguliwa na hali ya upakiaji wa hali ya hewa vimeboreshwa.</string>
 </resources>

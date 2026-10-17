@@ -437,19 +437,7 @@ internal fun SpaceCompassSunFinderContent(
             estimatedPlace.text ?: stringResource(if (estimatedPlace.loading)
                 R.string.environment_place_loading else R.string.environment_place_unavailable), "sun-info-estimated-place")
     )
-    val weatherValue = if (currentWeather == null) stringResource(
-        if (weather.loading && sun != null) R.string.sun_weather_loading else R.string.sun_weather_unavailable
-    ) else stringResource(when (currentWeather.kind) {
-        SpaceCompassSunWeatherKind.CLEAR -> R.string.sun_weather_clear
-        SpaceCompassSunWeatherKind.MAINLY_CLEAR -> R.string.celestial_weather_mainly_clear
-        SpaceCompassSunWeatherKind.PARTLY_CLOUDY -> R.string.sun_weather_partial
-        SpaceCompassSunWeatherKind.CLOUDY -> R.string.sun_weather_cloudy
-        SpaceCompassSunWeatherKind.FOG -> R.string.sun_weather_fog
-        SpaceCompassSunWeatherKind.DRIZZLE -> R.string.sun_weather_drizzle
-        SpaceCompassSunWeatherKind.RAIN -> R.string.sun_weather_rain
-        SpaceCompassSunWeatherKind.SNOW -> R.string.sun_weather_snow
-        SpaceCompassSunWeatherKind.STORM -> R.string.sun_weather_storm
-    })
+    val weatherValue = stringResource(spaceCompassWeatherValueResource(currentWeather, weather.loading))
     val weatherRow = spaceCompassSunDataRow(stringResource(R.string.sun_weather_estimate,
         SPACE_COMPASS_SUN_DATA_MARKER), weatherValue, "celestial-environment-weather")
     val weatherText = if (currentWeather == null) weatherValue else weatherRow.announcement
@@ -525,7 +513,7 @@ internal fun SpaceCompassSunFinderContent(
                 bodyNavigation = navigation, locationInfoRows = locationInfoRows, onInfo = { showEnvironment = true }, bodyActions = {
                     if (hasActiveBody) SpaceCompassCelestialSkyActions(body, { showViewer = true },
                         dailyPath?.let { path -> { dailyPathUiState.openMenu(path, spaceCompassCurrentPathPoint(body, timeMs, target)) } }, pathActionTitle, dailyPath != null,
-                        targetSpacing = SpaceCompassObjectDetailsActionTargetSpacing)
+                        targetSpacing = SpaceCompassObjectDetailsActionTargetSpacing, plainTint = primaryText)
                 })
         }
     }
@@ -702,7 +690,7 @@ internal fun SpaceCompassSunFinderContent(
             fix?.latitude, fix?.takeIf { it.hasAltitude() }?.altitude ?: 0.0, showSkyReferences,
             toolbarHeightPx.toDouble(), Modifier.fillMaxSize(), longitude = fix?.longitude)
         val minimumPanelWidth = if (largeText) 280.dp else 220.dp
-        val detailsWidth = viewportWidth * 0.45f
+        val detailsWidth = viewportWidth * 0.5f
         val compactPanel = viewportHeight < 420.dp && !largeText
         if (viewportWidth > viewportHeight && detailsWidth - 20.dp >= minimumPanelWidth) {
             // The toolbar belongs to the sky column, not above the full-height data column.

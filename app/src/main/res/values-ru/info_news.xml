@@ -1,9 +1,9 @@
 <resources>
     <string name="info_news_title">Последние новости · %1$s</string>
-    <string name="info_news_star_sky" formatted="false">53 объекта: в каталог добавлены Церера, Энцелад, Вега, Денеб, Альтаир и Южный Крест.</string>
-    <string name="info_news_texture_downloads" formatted="false">Скорость времени до 3600×: сначала, только при активном приложении или непрерывно.</string>
-    <string name="info_news_weather" formatted="false">Сближения до 1,5° в один момент времени видны на траекториях, снимках и в экспорте.</string>
-    <string name="info_news_viewer_zoom" formatted="false">Сортировка по расстоянию от Земли и переход в Обсерваторию объекта прямо из каталога.</string>
-    <string name="info_news_settings" formatted="false">Единый стиль настроек, карточки в альбомном режиме, символы траектории и заставка через 15 минут.</string>
-    <string name="info_news_catalog" formatted="false">Графический пакет 1.4: 29 внешних WebP-изображений, отдельные загрузки, проверка целостности и офлайн-кэш.</string>
+    <string name="info_news_star_sky" formatted="false">104 объекта: новые луны, зонды, звёзды, галактики и их центральные чёрные дыры.</string>
+    <string name="info_news_texture_downloads" formatted="false">Графический пакет 1.5: 56 внешних изображений и 56 небольших миниатюр с отдельной загрузкой и офлайн-кэшем.</string>
+    <string name="info_news_weather" formatted="false">Остановите время на 0×; повторное включение ускорения начинает с 1×. Возобновление задаётся в пользовательском сценарии.</string>
+    <string name="info_news_viewer_zoom" formatted="false">Типы по числу объектов, параметры сортировки по алфавиту и более понятное управление объектами.</string>
+    <string name="info_news_settings" formatted="false">Более стабильные подписи ориентиров и Надир на −90°, напротив Зенита.</string>
+    <string name="info_news_catalog" formatted="false">Улучшены движение лун, сближения выбранных объектов и отображение загрузки погоды.</string>
 </resources>

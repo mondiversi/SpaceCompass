@@ -26,7 +26,7 @@ internal fun spaceCompassCelestialCatalogDistanceAu(body: SpaceCompassCelestialB
     spaceCompassCelestialCatalogReferenceDistanceAu(body)?.let { return it }
     if (body.usesHorizons) {
         val motion = remote.motions[body]?.takeIf { it.body == body }
-        if (motion != null && timeMs in motion.samples.first().timeMs..motion.samples.last().timeMs) {
+        if (motion != null && motion.primary == null && timeMs in motion.samples.first().timeMs..motion.samples.last().timeMs) {
             val index = motion.samples.indexOfFirst { it.timeMs >= timeMs }.coerceAtLeast(1)
             val a = motion.samples[index-1]; val b = motion.samples[index]
             val f = (timeMs-a.timeMs).toDouble()/(b.timeMs-a.timeMs)

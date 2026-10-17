@@ -1,9 +1,9 @@
 <resources>
     <string name="info_news_title">Τελευταία νέα · %1$s</string>
-    <string name="info_news_star_sky" formatted="false">53 αντικείμενα: προστέθηκαν η Δήμητρα, ο Εγκέλαδος, ο Βέγας, ο Ντενέμπ, ο Αλτάιρ και ο Νότιος Σταυρός.</string>
-    <string name="info_news_texture_downloads" formatted="false">Ταχύτητα χρόνου έως 3600×: επανεκκίνηση, πρόοδος μόνο με ενεργή εφαρμογή ή συνεχώς.</string>
-    <string name="info_news_weather" formatted="false">Προσεγγίσεις εντός 1,5° την ίδια στιγμή εμφανίζονται σε τροχιές, λήψεις και εξαγωγές.</string>
-    <string name="info_news_viewer_zoom" formatted="false">Ταξινόμηση κατά απόσταση από τη Γη και άνοιγμα του Παρατηρητηρίου κάθε αντικειμένου από τον κατάλογο.</string>
-    <string name="info_news_settings" formatted="false">Συνεπείς ρυθμίσεις, οριζόντιες κάρτες, σύμβολα τροχιάς και προφύλαξη οθόνης στα 15 λεπτά.</string>
-    <string name="info_news_catalog" formatted="false">Πακέτο γραφικών 1.4: 29 εξωτερικές εικόνες WebP με μεμονωμένες λήψεις, έλεγχο ακεραιότητας και προσωρινή μνήμη εκτός σύνδεσης.</string>
+    <string name="info_news_star_sky" formatted="false">104 αντικείμενα: περισσότεροι δορυφόροι, διαστημοσυσκευές, αστέρες, γαλαξίες και οι κεντρικές μαύρες τρύπες τους.</string>
+    <string name="info_news_texture_downloads" formatted="false">Πακέτο γραφικών 1.5: 56 εξωτερικές εικόνες και 56 μικρές προεπισκοπήσεις, μεμονωμένη λήψη και αποθήκευση εκτός σύνδεσης.</string>
+    <string name="info_news_weather" formatted="false">Παύση χρόνου στο 0×· η επανενεργοποίηση ξεκινά από 1×. Η συνέχιση ρυθμίζεται στο προσαρμοσμένο σενάριο.</string>
+    <string name="info_news_viewer_zoom" formatted="false">Τύποι κατά πλήθος αντικειμένων, αλφαβητικές επιλογές ταξινόμησης και σαφέστερα χειριστήρια.</string>
+    <string name="info_news_settings" formatted="false">Σταθερότερες ετικέτες αναφοράς και Ναδίρ στις −90°, απέναντι από το Ζενίθ.</string>
+    <string name="info_news_catalog" formatted="false">Βελτιωμένη κίνηση δορυφόρων, προσεγγίσεις επιλεγμένων αντικειμένων και ένδειξη φόρτωσης καιρού.</string>
 </resources>

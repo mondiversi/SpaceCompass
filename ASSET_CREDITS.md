@@ -138,3 +138,17 @@ Application 1.4.2 pins 27 individual quality-90/method-6 WebP files. Seven new a
 ## External graphics pack 1.4
 
 Application 1.4.3 pins 29 individual WebP files at quality 90/method 6. The previous 27 image files remain byte-identical to pack 1.3. New Dawn Ceres (PIA19562, flat archival photograph) and Cassini Enceladus (PIA18435, cylindrical composite) derivatives retain their exact NASA/JPL credits and source links in the [manifest](textures/celestial-textures-v1.4/manifest.json) and [full credits](textures/celestial-textures-v1.4/CREDITS.txt). Twenty-eight files are 2048 x 1024; the existing LV-426 stays 1774 x 887. All images remain outside the APK, individually downloaded and verified; no complete graphics ZIP is distributed.
+
+
+## External graphics pack 1.5
+
+Twenty-seven additional telescope, spacecraft, galaxy and natural-satellite archive
+photographs are external-only WebP derivatives (quality 90, method 6, 2048 x 1024).
+Full per-image source pages, contributors, processing and integrity pins are in
+`textures/celestial-textures-v1.5/manifest.json` and `CREDITS.md`. M13 uses the
+ESA/Hubble and NASA credit attached to its actual image. Old image files and
+published pack URLs are preserved. No AI-generated image is presented as observed.
+
+Reference `thumb_*.webp` previews (128 x 128, WebP Q90/method 6) are external
+derivatives of these same credited images. Their parent/source, inherited licence
+and independent integrity pins are recorded in the external manifest and credits.

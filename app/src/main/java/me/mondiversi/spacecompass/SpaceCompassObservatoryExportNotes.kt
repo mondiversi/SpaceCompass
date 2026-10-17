@@ -27,10 +27,6 @@ internal fun spaceCompassObservatoryExportNotes(body: SpaceCompassCelestialBody,
     if (body==SpaceCompassCelestialBody.SOUTHERN_CROSS) note(R.string.celestial_southern_cross_note)
     if (body.hasCatalogPhotograph) note(R.string.celestial_archival_image)
     spaceCompassCatalogImageCredit(body.viewerTexture)?.let(::add)
-    if (body==SpaceCompassCelestialBody.ANDROMEDA_CORE) {
-        note(R.string.celestial_andromeda_galaxy_note)
-        spaceCompassCatalogImageCredit("andromeda_galaxy.webp")?.let(::add)
-    }
     if (body==SpaceCompassCelestialBody.TITAN) note(R.string.celestial_titan_note)
     if (body.isJovianMoon) note(R.string.celestial_view_jovian_credits)
     if (spaceCompassAtmosphericPressure(body)!=null) {

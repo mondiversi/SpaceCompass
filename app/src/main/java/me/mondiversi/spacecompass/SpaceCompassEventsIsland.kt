@@ -16,6 +16,5 @@ internal fun SpaceCompassEventsIsland() {
                 if (checked != visible) preferences.edit()
                     .putString(SPACE_COMPASS_MAIN_REMINDER_BUTTON_KEY, checked.toString()).apply()
             }, modifier = Modifier.testTag("main-reminder-button-visible"))
-        LocalSpaceCompassObserver.current?.let { SpaceCompassScenarioResumeChoices(it) }
     }
 }

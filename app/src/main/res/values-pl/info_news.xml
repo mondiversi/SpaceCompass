@@ -1,9 +1,9 @@
 <resources>
     <string name="info_news_title">Ostatnie nowości · %1$s</string>
-    <string name="info_news_star_sky" formatted="false">53 obiekty: do katalogu dołączają Ceres, Enceladus, Wega, Deneb, Altair i Krzyż Południa.</string>
-    <string name="info_news_texture_downloads" formatted="false">Prędkość czasu do 3600×: od początku, postęp tylko przy aktywnej aplikacji lub ciągły.</string>
-    <string name="info_news_weather" formatted="false">Zbliżenia do 1,5° w tej samej chwili są widoczne na trasach, zdjęciach i w eksporcie.</string>
-    <string name="info_news_viewer_zoom" formatted="false">Sortuj według odległości od środka Ziemi i otwieraj Obserwatorium obiektu prosto z katalogu.</string>
-    <string name="info_news_settings" formatted="false">Spójniejsze ustawienia, karty w poziomie, symbole trasy i wygaszacz po 15 minutach.</string>
-    <string name="info_news_catalog" formatted="false">Pakiet graficzny 1.4: 29 zewnętrznych obrazów WebP, osobne pobieranie, kontrola integralności i pamięć offline.</string>
+    <string name="info_news_star_sky" formatted="false">104 obiekty: kolejne księżyce, sondy, gwiazdy, galaktyki i ich centralne czarne dziury.</string>
+    <string name="info_news_texture_downloads" formatted="false">Pakiet graficzny 1.5: 56 zewnętrznych obrazów i 56 małych miniatur, pobieranych osobno i dostępnych offline.</string>
+    <string name="info_news_weather" formatted="false">Zatrzymaj czas przy 0×; ponowne włączenie przyspieszenia zaczyna od 1×. Wznawianie ustawisz we własnym scenariuszu.</string>
+    <string name="info_news_viewer_zoom" formatted="false">Typy według liczby obiektów, alfabetyczne opcje sortowania i czytelniejsze sterowanie obiektami.</string>
+    <string name="info_news_settings" formatted="false">Stabilniejsze etykiety odniesienia i Nadir przy −90°, naprzeciw Zenitu.</string>
+    <string name="info_news_catalog" formatted="false">Poprawiony ruch księżyców, zbliżenia wybranych obiektów i wyraźny stan ładowania pogody.</string>
 </resources>

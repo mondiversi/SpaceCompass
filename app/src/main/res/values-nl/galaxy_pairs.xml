@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="celestial_m87_galaxy">M87-stelsel</string>
+    <string name="celestial_milky_way_center">Melkweg (centrum)</string>
+    <string name="celestial_m51_core">Centraal zwart gat van M51</string>
+    <string name="celestial_m31_galaxy_tracking_note">Spiraalstelsel op ongeveer 2,5 miljoen lichtjaar. De markering en het dagelijkse pad volgen de kern. M31* is een apart object; zijn massa is niet de massa van het sterrenstelsel.</string>
+    <string name="celestial_m31_core_tracking_note">Centraal zwart gat van Andromeda (M31), een apart catalogusobject. De massa en de theoretische horizongrootte betreffen het zwarte gat, niet het sterrenstelsel.</string>
+    <string name="celestial_m87_galaxy_tracking_note">Reusachtig elliptisch stelsel op ongeveer 55 miljoen lichtjaar. De markering volgt de kern. M87* is een apart object; deze foto toont het sterrenstelsel, niet de horizon van het zwarte gat.</string>
+    <string name="celestial_milky_way_tracking_note">De aarde bevindt zich in de Melkweg. De markering en het pad wijzen naar het galactische centrum, op ongeveer 26.400 lichtjaar, niet naar het hele sterrenstelsel. Het panorama is een archieffoto.</string>
+    <string name="celestial_m51_core_tracking_note">Centraal zwart gat van NGC 5194 in M51, op ongeveer 31 miljoen lichtjaar. De markering volgt de actieve kern. De massa van ongeveer 4 miljoen zonsmassa’s is een indirecte M–σ-schatting met grote onzekerheid. De horizon wordt symbolisch weergegeven.</string>
+</resources>

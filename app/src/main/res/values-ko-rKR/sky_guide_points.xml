@@ -1,3 +1,4 @@
 <resources>
     <string name="sky_reference_zenith">천정</string>
+    <string name="sky_reference_nadir">천저</string>
 </resources>

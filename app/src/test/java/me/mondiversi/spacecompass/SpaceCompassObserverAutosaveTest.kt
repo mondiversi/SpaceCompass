@@ -140,7 +140,8 @@ class SpaceCompassObserverAutosaveTest {
         val store = Store()
         val state = SpaceCompassObserverState(store.preferences, elapsedClock = { 0L })
         assertNull(state.plan)
-        state.configureTime(SpaceCompassScenarioTimeSettings(true,3600,SpaceCompassScenarioResume.ALWAYS))
+        state.configureTime(SpaceCompassScenarioTimeSettings(true,resume=SpaceCompassScenarioResume.ALWAYS))
+        state.configureTime(state.timeSettings.copy(rate=3600))
         assertNotNull(state.plan?.scenarioClock)
         assertEquals(1,state.plan.activeSectionCount)
         val reopened=SpaceCompassObserverState(store.preferences, elapsedClock = { 0L })
@@ -161,10 +162,60 @@ class SpaceCompassObserverAutosaveTest {
         assertTrue(state.apply(null))
         assertNull(state.plan)
         assertEquals(original,state.savedPlan)
-        state.configureTime(SpaceCompassScenarioTimeSettings(true,60))
+        state.configureTime(SpaceCompassScenarioTimeSettings(true))
+        state.configureTime(state.timeSettings.copy(rate=60))
         assertEquals(60,state.timeSettings.multiplier)
         assertNotNull(state.plan?.scenarioClock)
     }
+    @Test fun reEnablingAccelerationResetsEverySavedSpeedAndPersistsOneTimesAcrossAllResumeModes() {
+        for (mode in SpaceCompassScenarioResume.entries) {
+            for (rate in spaceCompassScenarioRates) {
+                val store = Store()
+                store.values["scenario_speed_enabled"] = false
+                store.values["scenario_speed_rate"] = rate
+                store.values["scenario_resume"] = mode.name
+                val state = SpaceCompassObserverState(store.preferences, elapsedClock = { 0L })
+                state.configureTime(state.timeSettings.copy(enabled = true))
+                val reopened = SpaceCompassObserverState(store.preferences, elapsedClock = { 0L })
+                assertTrue(reopened.timeSettings.enabled)
+                assertEquals(1, reopened.timeSettings.rate)
+                assertEquals(1, reopened.timeSettings.multiplier)
+                assertEquals(mode, reopened.timeSettings.resume)
+            }
+        }
+    }
+
+    @Test fun speedToggleKeepsTheReachedScenarioInstantAndThenAdvancesAtNormalSpeed() {
+        for (persistent in listOf(false, true)) {
+            val store = Store()
+            var elapsed = 0L
+            val state = SpaceCompassObserverState(if (persistent) store.preferences else null,
+                elapsedClock = { elapsed })
+            state.configureTime(state.timeSettings.copy(enabled = true, resume = SpaceCompassScenarioResume.ACTIVE))
+            state.configureTime(state.timeSettings.copy(rate = 3600))
+            state.apply(original)
+            state.active(true)
+            val start = state.plan!!.observationTimeMs(System.currentTimeMillis())
+            elapsed += 1000
+            assertEquals(start + 3600_000, state.plan!!.observationTimeMs(System.currentTimeMillis()))
+            state.configureTime(state.timeSettings.copy(enabled = false))
+            elapsed += 2000
+            val reached = state.plan!!.observationTimeMs(System.currentTimeMillis())
+            assertEquals(start + 3602_000, reached)
+            state.configureTime(state.timeSettings.copy(enabled = true))
+            assertEquals(1, state.timeSettings.multiplier)
+            assertEquals(reached, state.plan!!.observationTimeMs(System.currentTimeMillis()))
+            assertEquals(original, state.savedPlan)
+            elapsed += 1000
+            assertEquals(reached + 1000, state.plan!!.observationTimeMs(System.currentTimeMillis()))
+            state.reload()
+            assertEquals(1, state.timeSettings.multiplier)
+            state.configureTime(state.timeSettings.copy(rate = 60))
+            state.reload()
+            assertEquals(60, state.timeSettings.multiplier)
+        }
+    }
+
     @Test fun activeOnlyLifecycleCheckpointRestoresTheReachedInstantWithoutClosedTime() {
         val store=Store()
         var elapsed=0L
@@ -217,5 +268,29 @@ class SpaceCompassObserverAutosaveTest {
         val state = SpaceCompassObserverState(store.preferences, elapsedClock = { 0L })
         assertEquals(SpaceCompassScenarioResume.ALWAYS, state.timeSettings.resume)
         assertNotNull(state.plan?.scenarioClock)
+    }
+
+    @Test fun anEnabledZeroRateSurvivesReloadAndReopeningButReactivationStillStartsAtOne() {
+        val store = Store()
+        var elapsed = 0L
+        val state = SpaceCompassObserverState(store.preferences, elapsedClock = { elapsed })
+        state.configureTime(state.timeSettings.copy(enabled = true, resume = SpaceCompassScenarioResume.ACTIVE))
+        state.apply(original)
+        state.active(true)
+        state.configureTime(state.timeSettings.copy(rate = 0))
+        val frozen = state.plan!!.observationTimeMs(System.currentTimeMillis())
+        elapsed += 10_000
+        state.reload()
+        assertEquals(frozen, state.plan!!.observationTimeMs(System.currentTimeMillis()))
+        state.active(false)
+        val reopened = SpaceCompassObserverState(store.preferences, elapsedClock = { 0L })
+        assertTrue(reopened.timeSettings.enabled)
+        assertEquals(0, reopened.timeSettings.rate)
+        assertEquals(frozen, reopened.plan!!.observationTimeMs(System.currentTimeMillis()))
+        reopened.configureTime(reopened.timeSettings.copy(enabled = false))
+        assertEquals(1, reopened.timeSettings.multiplier)
+        reopened.configureTime(reopened.timeSettings.copy(enabled = true))
+        assertEquals(1, reopened.timeSettings.rate)
+        assertEquals(original, reopened.savedPlan)
     }
 }

@@ -24,7 +24,7 @@ internal fun androidx.compose.ui.graphics.drawscope.DrawScope.drawSpaceCompassDe
             drawLine(tint.copy(alpha = opacity * .65f), points[a], points[b], r*.06f)
         }
         points.forEach { drawCircle(Color.White.copy(alpha = opacity), r*.12f, it) }
-    } else if (body == SpaceCompassCelestialBody.TRAPPIST_1_E || body == SpaceCompassCelestialBody.PROXIMA_B) {
+    } else if (body.catalogType == SpaceCompassCatalogType.EXOPLANET) {
         // A neutral rocky-world symbol, not an observed map or an ocean claim.
         drawCircle(Color(0xff8b8177).copy(alpha = opacity), r * .9f)
         drawCircle(Color(0xffc4b4a0).copy(alpha = opacity * .65f), r * .23f, center - Offset(r * .28f, r * .24f))
@@ -34,7 +34,7 @@ internal fun androidx.compose.ui.graphics.drawscope.DrawScope.drawSpaceCompassDe
         drawCircle(Color(0xffffedc1).copy(alpha = opacity), r * 0.56f, center - Offset(r*0.48f, 0f))
         drawCircle(Color(0xffffc17b).copy(alpha = opacity), r * 0.40f, center + Offset(r*0.68f, r*0.18f))
     } else if (body == SpaceCompassCelestialBody.PROXIMA_CENTAURI || body == SpaceCompassCelestialBody.RIGEL ||
-        body == SpaceCompassCelestialBody.VEGA || body == SpaceCompassCelestialBody.ALTAIR || body == SpaceCompassCelestialBody.DENEB) {
+        body.catalogType == SpaceCompassCatalogType.STAR) {
         drawCircle(tint.copy(alpha = opacity * 0.10f), r * 1.4f)
         drawCircle(tint.copy(alpha = opacity * 0.22f), r * 1.05f)
         drawCircle(tint.copy(alpha = opacity), r * if (body == SpaceCompassCelestialBody.RIGEL) 0.85f else 0.55f)
@@ -45,17 +45,21 @@ internal fun androidx.compose.ui.graphics.drawscope.DrawScope.drawSpaceCompassDe
         drawCircle(tint.copy(alpha = opacity), r * 0.95f)
         drawCircle(Color(0xffffbc83).copy(alpha = opacity * 0.55f), r * 0.24f,
             center - Offset(r * 0.32f, r * 0.28f))
-    } else if (body == SpaceCompassCelestialBody.RX_J1856 || body == SpaceCompassCelestialBody.PSR_J0437) {
+    } else if (body.catalogType == SpaceCompassCatalogType.NEUTRON_STAR) {
         drawCircle(tint.copy(alpha = opacity * 0.12f), r * 1.3f)
         drawOval(tint.copy(alpha = opacity * 0.75f), center - Offset(r, r * 0.35f),
             Size(r * 2f, r * 0.7f), style = Stroke(r * 0.07f))
-        if (body == SpaceCompassCelestialBody.PSR_J0437) {
+        if (body == SpaceCompassCelestialBody.PSR_J0437 || body == SpaceCompassCelestialBody.VELA_PULSAR) {
             val beam = Offset(r * 0.60f, -r * 1.28f)
             drawLine(tint.copy(alpha = opacity * 0.25f), center - beam, center + beam, r * 0.30f)
             drawLine(tint.copy(alpha = opacity), center - beam, center + beam, r * 0.08f)
         }
         drawCircle(tint.copy(alpha = opacity), r * 0.44f)
         drawCircle(Color.White.copy(alpha = opacity), r * 0.25f)
+    } else if (body.isExtendedSkyObject) {
+        // Diffuse catalogue target placeholder, not a resolved black-hole/surface illustration.
+        repeat(5) { ring -> drawCircle(tint.copy(alpha = opacity * .06f), r * (1.3f - ring * .2f)) }
+        drawCircle(tint.copy(alpha = opacity), r * .65f, style = Stroke(r * .04f))
     } else {
         drawCircle(tint.copy(alpha = opacity * 0.13f), r * 1.4f)
         drawOval(tint.copy(alpha = opacity), center - Offset(r*1.32f, r*0.40f), Size(r*2.64f, r*0.8f),

@@ -37,6 +37,9 @@ internal fun spaceCompassCelestialTemperatures(body: SpaceCompassCelestialBody):
     fun dayNight(day: Double, night: Double) = listOf(
         value(SpaceCompassCelestialTemperatureKind.DAY_MAXIMUM, day),
         value(SpaceCompassCelestialTemperatureKind.NIGHT_MINIMUM, night))
+    // New catalogue objects have no adopted surface/atmosphere measurements in this data set.
+    // An unknown temperature must never be replaced by zero or a generic planetary value.
+    if (body.additionalCatalogEntry != null) return emptyList()
     return when (body) {
         SpaceCompassCelestialBody.CERES -> mean(-105.0)
         SpaceCompassCelestialBody.ENCELADUS -> mean(-201.0)
@@ -109,6 +112,7 @@ internal fun spaceCompassCelestialTemperatures(body: SpaceCompassCelestialBody):
         SpaceCompassCelestialBody.SAGITTARIUS_A, SpaceCompassCelestialBody.TON_618,
         SpaceCompassCelestialBody.ANDROMEDA_CORE, SpaceCompassCelestialBody.ISS, SpaceCompassCelestialBody.STARLINK_V3,
         SpaceCompassCelestialBody.VOYAGER_1, SpaceCompassCelestialBody.VOYAGER_2, SpaceCompassCelestialBody.TESLA_ROADSTER -> emptyList()
+        else -> emptyList()
     }
 }
 

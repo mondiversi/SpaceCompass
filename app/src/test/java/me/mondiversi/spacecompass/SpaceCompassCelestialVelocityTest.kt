@@ -160,7 +160,7 @@ class SpaceCompassCelestialVelocityTest {
             assertEquals(R.string.celestial_speed_outward_sun, spaceCompassCelestialSpeedLabel(it))
         }
         SpaceCompassCelestialBody.entries.filter { it != SpaceCompassCelestialBody.EARTH_CENTER && it != SpaceCompassCelestialBody.SUN && it != SpaceCompassCelestialBody.MOON &&
-            !it.isEarthSatellite && !it.isExtrasolar && !it.isVoyager && !it.isJovianMoon && it != SpaceCompassCelestialBody.TITAN && it != SpaceCompassCelestialBody.ENCELADUS }.forEach {
+            it.additionalCatalogEntry?.type != SpaceCompassCatalogType.NATURAL_SATELLITE && !it.isEarthSatellite && !it.isExtrasolar && !it.isVoyager && !it.isJovianMoon && it != SpaceCompassCelestialBody.TITAN && it != SpaceCompassCelestialBody.ENCELADUS }.forEach {
             assertEquals(R.string.celestial_speed_orbit_sun, spaceCompassCelestialSpeedLabel(it))
         }
         SpaceCompassCelestialBody.entries.filter { it.isJovianMoon }.forEach {

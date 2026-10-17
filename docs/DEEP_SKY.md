@@ -102,4 +102,6 @@ SpaceCompassMassUnits.kt; scientific reference facts remain separately stored.
 ## Additional catalogue targets
 
 See [catalogue additions](CATALOG_ADDITIONS.md) for the reviewed Sirius, Betelgeuse,
-Titan, M42/M45 references and Andromeda galaxy supplement, with external WebP credits.
+Titan, M42/M45 references and the original Andromeda photograph, with external WebP credits.
+
+See [galaxies and nuclei](GALAXY_PAIRS.md) for separate M31, M87, Milky Way-centre and M51 nuclear targets.

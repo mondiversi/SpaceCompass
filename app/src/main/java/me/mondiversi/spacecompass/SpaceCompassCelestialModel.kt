@@ -28,9 +28,60 @@ internal enum class SpaceCompassCelestialBody(val nameResource: Int, val engine:
     TESLA_ROADSTER(R.string.celestial_tesla_roadster),
     NEW_HORIZONS(R.string.celestial_new_horizons), JWST(R.string.celestial_jwst), PARKER_SOLAR_PROBE(R.string.celestial_parker_solar_probe), APOPHIS(R.string.celestial_apophis), ATLAS_3I(R.string.celestial_atlas_3i), EUROPA_CLIPPER(R.string.celestial_europa_clipper), JUICE(R.string.celestial_juice), HUBBLE(R.string.celestial_hubble), TIANGONG(R.string.celestial_tiangong), M87(R.string.celestial_m87), PROXIMA_B(R.string.celestial_proxima_b),
     CERES(R.string.celestial_ceres), ENCELADUS(R.string.celestial_enceladus), VEGA(R.string.celestial_vega),
-    DENEB(R.string.celestial_deneb), ALTAIR(R.string.celestial_altair), SOUTHERN_CROSS(R.string.celestial_southern_cross)
+    DENEB(R.string.celestial_deneb), ALTAIR(R.string.celestial_altair), SOUTHERN_CROSS(R.string.celestial_southern_cross),
+    GANYMEDE(R.string.celestial_ganymede),
+    CALLISTO(R.string.celestial_callisto),
+    PHOBOS(R.string.celestial_phobos),
+    DEIMOS(R.string.celestial_deimos),
+    RHEA(R.string.celestial_rhea),
+    IAPETUS(R.string.celestial_iapetus),
+    TITANIA(R.string.celestial_titania),
+    MIRANDA(R.string.celestial_miranda),
+    TRITON(R.string.celestial_triton),
+    CHARON(R.string.celestial_charon),
+    ERIS(R.string.celestial_eris),
+    HAUMEA(R.string.celestial_haumea),
+    MAKEMAKE(R.string.celestial_makemake),
+    VESTA(R.string.celestial_vesta),
+    BENNU(R.string.celestial_bennu),
+    RYUGU(R.string.celestial_ryugu),
+    HALE_BOPP(R.string.celestial_hale_bopp),
+    ENCKE(R.string.celestial_encke),
+    ARCTURUS(R.string.celestial_arcturus),
+    CANOPUS(R.string.celestial_canopus),
+    CAPELLA(R.string.celestial_capella),
+    ANTARES(R.string.celestial_antares),
+    ALDEBARAN(R.string.celestial_aldebaran),
+    SPICA(R.string.celestial_spica),
+    FOMALHAUT(R.string.celestial_fomalhaut),
+    ACHERNAR(R.string.celestial_achernar),
+    HADAR(R.string.celestial_hadar),
+    SIGMA_OCTANTIS(R.string.celestial_sigma_octantis),
+    M13(R.string.celestial_m13),
+    OMEGA_CENTAURI(R.string.celestial_omega_centauri),
+    M57(R.string.celestial_m57),
+    M27(R.string.celestial_m27),
+    M1(R.string.celestial_m1),
+    CARINA_NEBULA(R.string.celestial_carina_nebula),
+    HORSEHEAD_NEBULA(R.string.celestial_horsehead_nebula),
+    LARGE_MAGELLANIC_CLOUD(R.string.celestial_large_magellanic_cloud),
+    SMALL_MAGELLANIC_CLOUD(R.string.celestial_small_magellanic_cloud),
+    M51(R.string.celestial_m51),
+    BEPICOLOMBO(R.string.celestial_bepicolombo),
+    SOLAR_ORBITER(R.string.celestial_solar_orbiter),
+    LUCY(R.string.celestial_lucy),
+    PSYCHE(R.string.celestial_psyche),
+    CYGNUS_X1(R.string.celestial_cygnus_x1),
+    V404_CYGNI(R.string.celestial_v404_cygni),
+    VELA_PULSAR(R.string.celestial_vela_pulsar),
+    TOI_700_D(R.string.celestial_toi_700_d),
+    KEPLER_186_F(R.string.celestial_kepler_186_f),
+    ANDROMEDA_GALAXY(R.string.celestial_andromeda_galaxy_title),
+    M87_GALAXY(R.string.celestial_m87_galaxy),
+    MILKY_WAY_CENTER(R.string.celestial_milky_way_center),
+    M51_CORE(R.string.celestial_m51_core)
 }
-internal val SpaceCompassCelestialBody.isComet: Boolean get() = this == SpaceCompassCelestialBody.HALLEY || this == SpaceCompassCelestialBody.COMET_67P || this == SpaceCompassCelestialBody.ATLAS_3I
+internal val SpaceCompassCelestialBody.isComet: Boolean get() = this == SpaceCompassCelestialBody.HALLEY || this == SpaceCompassCelestialBody.COMET_67P || this == SpaceCompassCelestialBody.ATLAS_3I || this == SpaceCompassCelestialBody.HALE_BOPP || this == SpaceCompassCelestialBody.ENCKE
 internal val SpaceCompassCelestialBody.isEarthSatellite: Boolean get() = this == SpaceCompassCelestialBody.ISS || this == SpaceCompassCelestialBody.STARLINK_V3 || catalogSatellite != null
 internal val SpaceCompassCelestialBody.isJovianMoon: Boolean get() = this == SpaceCompassCelestialBody.IO || this == SpaceCompassCelestialBody.EUROPA
 internal val SpaceCompassCelestialBody.hasPhysicalFace: Boolean get() = engine != null || isJovianMoon || this in
@@ -38,13 +89,13 @@ internal val SpaceCompassCelestialBody.hasPhysicalFace: Boolean get() = engine !
 // EARTH_CENTER is a retired legacy identifier, excluded from selectable catalogs and restored checks.
 // Its old calculation remains for backward compatibility and reference-geometry regression checks.
 // Presentation order is stable: spacecraft stay in the explicitly requested order, not a daily re-sort.
-internal val spaceCompassCelestialCatalogOrder = listOf(SpaceCompassCelestialBody.SUN, SpaceCompassCelestialBody.MERCURY,
+internal val spaceCompassCelestialCatalogOrder = spaceCompassIncludeAdditionalCatalog(listOf(SpaceCompassCelestialBody.SUN, SpaceCompassCelestialBody.MERCURY,
     SpaceCompassCelestialBody.VENUS, SpaceCompassCelestialBody.ISS, SpaceCompassCelestialBody.STARLINK_V3, SpaceCompassCelestialBody.TIANGONG, SpaceCompassCelestialBody.HUBBLE, SpaceCompassCelestialBody.MOON, SpaceCompassCelestialBody.JWST, SpaceCompassCelestialBody.TESLA_ROADSTER, SpaceCompassCelestialBody.APOPHIS, SpaceCompassCelestialBody.PARKER_SOLAR_PROBE, SpaceCompassCelestialBody.EUROPA_CLIPPER, SpaceCompassCelestialBody.JUICE, SpaceCompassCelestialBody.MARS, SpaceCompassCelestialBody.CERES,
     SpaceCompassCelestialBody.JUPITER, SpaceCompassCelestialBody.IO, SpaceCompassCelestialBody.EUROPA, SpaceCompassCelestialBody.SATURN, SpaceCompassCelestialBody.TITAN, SpaceCompassCelestialBody.ENCELADUS,
     SpaceCompassCelestialBody.URANUS, SpaceCompassCelestialBody.NEPTUNE, SpaceCompassCelestialBody.PLUTO, SpaceCompassCelestialBody.SEDNA, SpaceCompassCelestialBody.HALLEY, SpaceCompassCelestialBody.COMET_67P,
     SpaceCompassCelestialBody.ATLAS_3I, SpaceCompassCelestialBody.NEW_HORIZONS, SpaceCompassCelestialBody.VOYAGER_1, SpaceCompassCelestialBody.VOYAGER_2, SpaceCompassCelestialBody.PROXIMA_CENTAURI, SpaceCompassCelestialBody.PROXIMA_B, SpaceCompassCelestialBody.ALPHA_CENTAURI, SpaceCompassCelestialBody.SIRIUS, SpaceCompassCelestialBody.ALTAIR, SpaceCompassCelestialBody.VEGA,
     SpaceCompassCelestialBody.TRAPPIST_1_E, SpaceCompassCelestialBody.RX_J1856, SpaceCompassCelestialBody.PLEIADES, SpaceCompassCelestialBody.POLARIS, SpaceCompassCelestialBody.PSR_J0437,
-    SpaceCompassCelestialBody.BETELGEUSE, SpaceCompassCelestialBody.RIGEL, SpaceCompassCelestialBody.DENEB, SpaceCompassCelestialBody.SOUTHERN_CROSS, SpaceCompassCelestialBody.ORION_NEBULA, SpaceCompassCelestialBody.STEPHENSON_2_18, SpaceCompassCelestialBody.SAGITTARIUS_A, SpaceCompassCelestialBody.ANDROMEDA_CORE, SpaceCompassCelestialBody.M87, SpaceCompassCelestialBody.TON_618)
+    SpaceCompassCelestialBody.BETELGEUSE, SpaceCompassCelestialBody.RIGEL, SpaceCompassCelestialBody.DENEB, SpaceCompassCelestialBody.SOUTHERN_CROSS, SpaceCompassCelestialBody.ORION_NEBULA, SpaceCompassCelestialBody.STEPHENSON_2_18, SpaceCompassCelestialBody.SAGITTARIUS_A, SpaceCompassCelestialBody.ANDROMEDA_CORE, SpaceCompassCelestialBody.M87, SpaceCompassCelestialBody.TON_618))
 internal val SpaceCompassCelestialBody.usesHorizons: Boolean
     get() = expandedHorizonsTarget != null || this == SpaceCompassCelestialBody.SEDNA || this == SpaceCompassCelestialBody.TITAN || isVoyager || isComet || this == SpaceCompassCelestialBody.TESLA_ROADSTER
 internal val SpaceCompassCelestialBody.isVoyager: Boolean

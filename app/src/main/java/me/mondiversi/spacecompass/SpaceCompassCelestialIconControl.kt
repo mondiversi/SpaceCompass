@@ -33,16 +33,15 @@ internal fun spaceCompassCelestialControlStyle(selected: Boolean, pressed: Boole
         if (active) Color(0xFF123743) else Color.White)
 }
 
-/** Shared sky/viewer geometry: 30 dp visible circle, independent 48 dp touch target. */
+/** Image overlays use a 30 dp circle; island actions can be unfilled with the same 48 dp touch target. */
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 internal fun SpaceCompassCelestialIconControl(selected: Boolean, label: String, onClick: () -> Unit,
-    modifier: Modifier = Modifier, role: Role = Role.Tab, icon: @Composable () -> Unit) {
+    modifier: Modifier = Modifier, role: Role = Role.Tab, plainTint: Color? = null,
+    icon: @Composable () -> Unit) {
     TooltipBox(positionProvider = TooltipDefaults.rememberPlainTooltipPositionProvider(),
         tooltip = { PlainTooltip { Text(label) } }, state = rememberTooltipState()) {
         val pressSource = remember { MutableInteractionSource() }
-        val pressed by pressSource.collectIsPressedAsState()
-        val style = spaceCompassCelestialControlStyle(selected, pressed, role)
         val action = if (role == Role.Tab) Modifier.selectable(selected, interactionSource = pressSource,
             indication = null, role = role, onClick = onClick)
             else Modifier.clickable(interactionSource = pressSource, indication = null,
@@ -50,10 +49,17 @@ internal fun SpaceCompassCelestialIconControl(selected: Boolean, label: String, 
         Box(modifier.size(48.dp).clip(CircleShape).then(action)
             .spaceCompassAccessibleAction(label = label, role = role, selectedState = if (role == Role.Tab) selected else null,
                 onClick = onClick), contentAlignment = Alignment.Center) {
-            Box(Modifier.size(30.dp).clip(CircleShape).background(style.background)
-                .border(1.dp, style.border, CircleShape),
-                contentAlignment = Alignment.Center) {
-                CompositionLocalProvider(LocalContentColor provides style.content) { icon() }
+            if (plainTint != null) {
+                // Island actions stay unfilled in every interaction state, including press.
+                CompositionLocalProvider(LocalContentColor provides plainTint) { icon() }
+            } else {
+                val pressed by pressSource.collectIsPressedAsState()
+                val style = spaceCompassCelestialControlStyle(selected, pressed, role)
+                Box(Modifier.size(30.dp).clip(CircleShape).background(style.background)
+                    .border(1.dp, style.border, CircleShape),
+                    contentAlignment = Alignment.Center) {
+                    CompositionLocalProvider(LocalContentColor provides style.content) { icon() }
+                }
             }
         }
     }

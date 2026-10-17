@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="celestial_m87_galaxy">کهکشان M87</string>
+    <string name="celestial_milky_way_center">راه شیری (مرکز)</string>
+    <string name="celestial_m51_core">سیاه‌چالهٔ مرکزی M51</string>
+    <string name="celestial_m31_galaxy_tracking_note">کهکشان مارپیچی در فاصلهٔ حدود ۲٫۵ میلیون سال نوری. نشانگر و مسیر روزانه هستهٔ آن را دنبال می‌کنند. ‏M31* جرمی جداگانه است؛ جرم آن، جرم کل کهکشان نیست.</string>
+    <string name="celestial_m31_core_tracking_note">سیاه‌چالهٔ مرکزی آندرومدا (M31)، جرمی جداگانه در فهرست. جرم و اندازهٔ مدل‌شدهٔ افق به سیاه‌چاله مربوط‌اند، نه کهکشان.</string>
+    <string name="celestial_m87_galaxy_tracking_note">کهکشان بیضوی غول‌پیکر در فاصلهٔ حدود ۵۵ میلیون سال نوری. نشانگر هستهٔ آن را دنبال می‌کند. ‏M87* جرمی جداگانه است؛ این عکس کهکشان را نشان می‌دهد، نه افق سیاه‌چاله را.</string>
+    <string name="celestial_milky_way_tracking_note">زمین درون راه شیری است. نشانگر و مسیر به مرکز کهکشان در فاصلهٔ حدود ۲۶٬۴۰۰ سال نوری اشاره می‌کنند، نه کل کهکشان. پانوراما یک عکس آرشیوی است.</string>
+    <string name="celestial_m51_core_tracking_note">سیاه‌چالهٔ مرکزی NGC 5194 در M51، در فاصلهٔ حدود ۳۱ میلیون سال نوری. نشانگر هستهٔ فعال را دنبال می‌کند. جرم حدود ۴ میلیون جرم خورشیدی، برآورد غیرمستقیم M–σ با عدم قطعیت زیاد است. افق به‌صورت نمادین نمایش داده می‌شود.</string>
+</resources>

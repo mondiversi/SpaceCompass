@@ -105,8 +105,8 @@ internal fun rememberSpaceCompassPanoramaAction(timeMs: Long, latitude: Double?,
                         val result = withContext(Dispatchers.IO) {
                             val captureJob = kotlin.coroutines.coroutineContext
                             val frozenSnapshot = freezeSpaceCompassApproachSnapshot(referenceSnapshot) { captureJob.ensureActive() }
-                            // The shutter has already fired; prepare missing maps before asynchronous rendering.
-                            ensureSpaceCompassCelestialTextures(application, bodies)
+                            // Captured object glyphs use reference previews; full viewer maps stay independent.
+                            ensureSpaceCompassCelestialThumbnails(application, bodies)
                             val cameraFieldOfView = photoFrame?.let { frame ->
                                 // Read JPEG dimensions only; no bitmap allocation or second exposure.
                                 val dimensions = BitmapFactory.Options().apply { inJustDecodeBounds = true }
