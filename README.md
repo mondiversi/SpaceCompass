@@ -22,7 +22,7 @@ one manual APK update to acquire this feature.
 The release includes `SHA256SUMS.txt` and a signed update index. GitHub's source
 ZIP/TAR archives and Actions debug artifacts are separate from the signed APK.
 See [distribution and signing](docs/GITHUB_RELEASES.md) and
-[the 1.4.4 release audit](docs/RELEASE_1_4_3.md).
+[the 1.4.4 release audit](docs/RELEASE_1_4_4.md).
 
 ## Features
 
