@@ -101,11 +101,11 @@ internal fun SpaceCompassCelestialBodyDataIsland(bodyName: String?, primaryText:
                         navigation.nextLabel, navigation.onNext, primaryText, previous = false,
                         modifier = Modifier.size(48.dp).testTag("celestial-body-next").align(Alignment.CenterEnd))
                 }
-                // Keep the final glyph 3 dp inside the content edge regardless of its width.
+                // Align the 30 dp circle with the divider's trailing edge.
                 // Only the target's empty inset extends into the island padding, also in RTL.
                 Row(Modifier.layout { measurable, constraints ->
                     val controls = measurable.measure(constraints)
-                    val trailingInset = (48.dp - SpaceCompassObjectHeaderGlyph.DAILY_PATH.width) / 2 - 3.dp
+                    val trailingInset = (48.dp - 30.dp) / 2
                     layout((controls.width - trailingInset.roundToPx()).coerceAtLeast(0), controls.height) {
                         controls.placeRelative(0, 0)
                     }
