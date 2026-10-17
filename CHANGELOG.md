@@ -1,5 +1,11 @@
 # Changelog
 
+## 1.4.6 — 2026-10-17
+
+- Lighten the morning and afternoon ground greens in the shared palette used by the main sky and panoramic captures. Keep solar-height-driven transitions, horizon haze, dawn, sunset, evening and night colours unchanged.
+- Preserve all twenty in-app news summaries and credits, existing preferences, scientific calculations and the distribution certificate. Reuse immutable graphics pack 1.5 without a new image package or texture ZIP.
+- Increase Android/update identity to version 1.4.6, code 43, with a newly signed update index and matching reference-information archive.
+
 ## 1.4.5 — 2026-10-17
 
 - Rewind or advance custom scenario time using the symmetric −3600× to +3600× stepped slider, with 0× pause at its centre. Preserve the reached instant when changing direction and reset to +1× when re-enabling Time.

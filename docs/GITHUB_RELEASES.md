@@ -2,8 +2,8 @@
 
 Space Compass is distributed as a signed APK through
 [GitHub Releases](https://github.com/mondiversi/SpaceCompass/releases).
-The current stable release is **1.4.5**, tagged **v1.4.5**, application ID
-`me.mondiversi.spacecompass`, Android version name **1.4.5**, version code **42**,
+The current stable release is **1.4.6**, tagged **v1.4.6**, application ID
+`me.mondiversi.spacecompass`, Android version name **1.4.6**, version code **43**,
 minimum Android API 26. The three-part tag/version name retains compatibility with
 the signed update protocol used since preview 0.1.2.
 
@@ -247,3 +247,12 @@ and a centred pause with a clearer rate readout. In-app news remains byte-identi
 to 1.4.4 in all twenty languages. Immutable graphics pack 1.5, its individual URLs,
 cache integrity pins and all previous release assets remain unchanged.
 See [the maintenance audit](RELEASE_1_4_5.md).
+
+## 1.4.6 maintenance release
+
+Version 1.4.6 uses code 43 and an update index signed with the existing
+distribution key, tied to the exact APK size and SHA-256. It lightens daytime
+ground colours in the main scene and panoramic captures. The twenty in-app
+news files and credits remain unchanged. Graphics pack 1.5 and all previously
+published files retain their original URLs and content.
+See [the maintenance audit](RELEASE_1_4_6.md).

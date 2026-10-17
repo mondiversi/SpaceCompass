@@ -9,9 +9,9 @@ internal fun spaceCompassSunGroundPalette(phase: SpaceCompassSunSkyPhase): Space
     SpaceCompassSunSkyPhase.DAWN -> SpaceCompassSunGroundPalette(
         0xFF9A8573.toInt(), 0xFF435541.toInt(), 0xFFC1A28D.toInt())
     SpaceCompassSunSkyPhase.MORNING -> SpaceCompassSunGroundPalette(
-        0xFF9BA17B.toInt(), 0xFF536D43.toInt(), 0xFFC7D1C8.toInt())
+        0xFFADB98A.toInt(), 0xFF719251.toInt(), 0xFFC7D1C8.toInt())
     SpaceCompassSunSkyPhase.AFTERNOON -> SpaceCompassSunGroundPalette(
-        0xFF8C9870.toInt(), 0xFF4A623B.toInt(), 0xFFBACBC7.toInt())
+        0xFF9EAE7E.toInt(), 0xFF668549.toInt(), 0xFFBACBC7.toInt())
     SpaceCompassSunSkyPhase.SUNSET -> SpaceCompassSunGroundPalette(
         0xFF98755E.toInt(), 0xFF3F4E37.toInt(), 0xFFC2997B.toInt())
     SpaceCompassSunSkyPhase.EVENING -> SpaceCompassSunGroundPalette(

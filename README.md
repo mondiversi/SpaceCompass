@@ -8,8 +8,8 @@ paths, inspect reference facts and view textured models. Space Compass is a stan
 
 ## Download and install
 
-Download **space-compass-1.4.5.apk** from the
-[Space Compass 1.4.5 release](https://github.com/mondiversi/SpaceCompass/releases/tag/v1.4.5).
+Download **space-compass-1.4.6.apk** from the
+[Space Compass 1.4.6 release](https://github.com/mondiversi/SpaceCompass/releases/tag/v1.4.6).
 Android 8.0 or newer is required. Open the APK and follow Android's installation
 prompts; allow installation for your browser or file manager if requested.
 
@@ -22,7 +22,7 @@ one manual APK update to acquire this feature.
 The release includes `SHA256SUMS.txt` and a signed update index. GitHub's source
 ZIP/TAR archives and Actions debug artifacts are separate from the signed APK.
 See [distribution and signing](docs/GITHUB_RELEASES.md) and
-[the 1.4.5 release audit](docs/RELEASE_1_4_5.md).
+[the 1.4.6 release audit](docs/RELEASE_1_4_6.md).
 
 ## Features
 
@@ -72,7 +72,7 @@ See [distribution and signing](docs/GITHUB_RELEASES.md) and
 - Signed startup/manual GitHub updates with package, certificate, size and checksum verification.
 
 The application ID is `me.mondiversi.spacecompass`. The current stable version is
-**1.4.5**, with Android/update identity `1.4.5` and version code **42**.
+**1.4.6**, with Android/update identity `1.4.6` and version code **43**.
 This preserves the three-part update protocol used by existing preview installations.
 The app stores its preferences and caches privately.
 
@@ -134,7 +134,7 @@ Launcher/loading artwork and the fictional Easter-egg texture are original asset
 
 ## Data and graphics packages
 
-Release 1.4.5 includes a reference-information archive and 104 regular catalogue objects.
+Release 1.4.6 includes a reference-information archive and 104 regular catalogue objects.
 Celestial graphics are separate individual files in
 [graphics pack 1.5](https://github.com/mondiversi/SpaceCompass/releases/tag/celestial-textures-v1.5):
 56 full images and 56 independent 128 x 128 previews, all WebP quality 90/method 6.
