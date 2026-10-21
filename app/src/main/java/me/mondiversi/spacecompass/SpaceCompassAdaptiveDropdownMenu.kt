@@ -1,6 +1,11 @@
 package me.mondiversi.spacecompass
 
+import androidx.compose.animation.core.animateFloatAsState
+import androidx.compose.animation.core.tween
 import androidx.compose.foundation.ScrollState
+import androidx.compose.foundation.layout.Box
+import androidx.compose.foundation.layout.BoxScope
+import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.ColumnScope
 import androidx.compose.foundation.layout.IntrinsicSize
@@ -14,8 +19,14 @@ import androidx.compose.material3.MenuDefaults
 import androidx.compose.material3.Surface
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.CompositionLocalProvider
+import androidx.compose.runtime.DisposableEffect
+import androidx.compose.runtime.getValue
+import androidx.compose.runtime.mutableIntStateOf
+import androidx.compose.runtime.setValue
+import androidx.compose.runtime.staticCompositionLocalOf
 import androidx.compose.runtime.remember
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.draw.drawBehind
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.Shape
 import androidx.compose.ui.platform.LocalConfiguration
@@ -45,6 +56,11 @@ internal fun SpaceCompassAdaptiveDropdownMenu(
     content: @Composable ColumnScope.() -> Unit
 ) {
     if (!expanded) return
+    val dimming = LocalSpaceCompassDropdownDimming.current
+    DisposableEffect(dimming) {
+        dimming?.acquire()
+        onDispose { dimming?.release() }
+    }
     val density = LocalDensity.current
     val configuration = LocalConfiguration.current
     val direction = LocalLayoutDirection.current
@@ -83,5 +99,33 @@ internal class SpaceCompassDropdownPositionProvider(private val margin: Int) : P
         val y = listOf(anchorBounds.bottom, anchorBounds.top - popupContentSize.height)
             .firstOrNull { it in margin..maxY } ?: anchorBounds.bottom.coerceIn(margin, maxY)
         return IntOffset(x, y)
+    }
+}
+
+/** Count open dropdowns so a dismissed/nested window cannot leave the app dimmed. */
+private class SpaceCompassDropdownDimmingState {
+    var windows by mutableIntStateOf(0)
+        private set
+    fun acquire() { windows++ }
+    fun release() { windows = (windows - 1).coerceAtLeast(0) }
+}
+
+private val LocalSpaceCompassDropdownDimming =
+    staticCompositionLocalOf<SpaceCompassDropdownDimmingState?> { null }
+
+/** Popup windows stay above this draw-only scrim; outside taps and Back retain native dismissal. */
+@Composable
+internal fun SpaceCompassDropdownDimmingHost(content: @Composable BoxScope.() -> Unit) {
+    val dimming = remember { SpaceCompassDropdownDimmingState() }
+    val alpha = animateFloatAsState(if (dimming.windows > 0) .18f else 0f,
+        animationSpec = tween(150), label = "dropdownBackgroundDim")
+    CompositionLocalProvider(LocalSpaceCompassDropdownDimming provides dimming) {
+        Box(Modifier.fillMaxSize()) {
+            content()
+            // Read animation state while drawing, without recomposing the live sky each frame.
+            Box(Modifier.matchParentSize().drawBehind {
+                if (alpha.value > 0f) drawRect(Color.Black.copy(alpha = alpha.value))
+            })
+        }
     }
 }
