@@ -19,6 +19,7 @@ import androidx.compose.ui.unit.dp
 internal val SpaceCompassDestructiveActionBaseColor = Color(0xFFD32F2F)
 internal val SpaceCompassDestructiveOutlinedBorderWidth = 1.5.dp
 internal const val SpaceCompassDestructiveOutlinedIconStrokeScale = 1.25f
+internal const val SpaceCompassSettingsActionIconStrokeScale = 1.25f
 /** Scoped to Settings/About bodies and data-export bottom buttons, never to dialog text actions or toolbars. */
 internal val LocalSpaceCompassSettingsActionButtons = staticCompositionLocalOf { false }
 internal val LocalSpaceCompassActionGlyphStrokeScale = staticCompositionLocalOf { 1f }

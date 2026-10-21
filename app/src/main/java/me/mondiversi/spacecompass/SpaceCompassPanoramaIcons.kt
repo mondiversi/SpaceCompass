@@ -18,8 +18,9 @@ import androidx.compose.ui.unit.dp
 @Composable
 internal fun SpaceCompassPanoramaActionIcon(share: Boolean) {
     val tint = LocalContentColor.current
+    val strokeScale = LocalSpaceCompassActionGlyphStrokeScale.current
     SpaceCompassIconCanvas(tint, Modifier.size(24.dp)) { tint ->
-        val stroke = 2.21.dp.toPx()
+        val stroke = 2.21.dp.toPx() * strokeScale
         fun line(ax: Float, ay: Float, bx: Float, by: Float) = drawLine(tint,
             Offset(size.width * ax, size.height * ay), Offset(size.width * bx, size.height * by),
             stroke, StrokeCap.Round)

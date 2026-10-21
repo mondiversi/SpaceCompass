@@ -265,3 +265,12 @@ icons, compact object actions, catalogue toolbar spacing and the daytime accent.
 The twenty in-app news files and credits remain unchanged. Graphics pack 1.5
 and all previously published files retain their original URLs and content.
 See [the maintenance audit](RELEASE_1_4_7.md).
+
+The owner-authorized 2026-10-21 rebuild retains 1.4.7/code 44 while refining
+same-family button press feedback and action-icon strokes. It replaces the
+existing release's APK, signed index, reference-information snapshot, metadata
+and checksums. The same tag follows the exact rebuilt source with an
+exact-reference lease; no new release or graphics pack is created. Because code
+44 is unchanged, devices already on 1.4.7 must download and install the APK
+manually to obtain this revision. See the maintenance audit for the distinction
+between executed local checks, compiled UI tests and pre-commit phone checks.

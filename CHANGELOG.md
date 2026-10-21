@@ -2,6 +2,8 @@
 
 ## 1.4.7 — 2026-10-17
 
+- Refine outlined settings, repository and export actions with soft, same-family press feedback in both themes; keep label/icon colors and disabled styling stable.
+- Strengthen thin action glyphs without changing their size, toolbar icons or solid repository-logo cutouts. Republish this maintenance revision as 1.4.7/code 44 at the owner's request, without a new version.
 - Refine the object island with smaller navigation/removal glyphs, compact spacing, optically centred observatory artwork and neutral dark circular observatory/daily-path controls without perimeter borders.
 - Unify floating icon stroke weights in the main sky and capture preview, improve the daily-path glyph, and align catalogue toolbar actions with the shared title-bar spacing.
 - Refine the daytime blue accent while preserving the night palette, celestial calculations and saved preferences.

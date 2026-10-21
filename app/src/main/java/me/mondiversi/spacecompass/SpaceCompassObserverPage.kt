@@ -503,6 +503,6 @@ private fun SpaceCompassObserverPickerScale(preferredWidthDp: Float, content: @C
 private fun SpaceCompassObserverAction(label: String, onClick: () -> Unit, enabled: Boolean = true,
     modifier: Modifier = Modifier, icon: Int = R.drawable.ic_check) {
     SpaceCompassSettingsActionButton(label, onClick, modifier, enabled) {
-        Icon(painterResource(icon), null, Modifier.size(20.dp))
+        SpaceCompassActionIcon(icon)
     }
 }

@@ -10,7 +10,6 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.platform.LocalUriHandler
 import androidx.compose.ui.platform.testTag
-import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
@@ -27,7 +26,7 @@ internal fun SpaceCompassRepositoryActions() {
             SpaceCompassSettingsActionButton(stringResource(R.string.open_github_repository),
                 onClick = { uri.openUri(SpaceCompassUpdatePolicy.REPOSITORY_URL) }, primary = false,
                 modifier = Modifier.testTag("open-github-repository")) {
-                Icon(painterResource(R.drawable.ic_repository), null, Modifier.size(20.dp))
+                SpaceCompassActionIcon(R.drawable.ic_repository)
             }
             val enabled = !state.checking && !state.busy
             SpaceCompassSettingsActionButton(
@@ -35,7 +34,7 @@ internal fun SpaceCompassRepositoryActions() {
                 onClick = { SpaceCompassUpdates.check(context, manual = true) }, enabled = enabled,
                 modifier = Modifier.testTag("check-app-updates")) {
                 if (state.checking) CircularProgressIndicator(Modifier.size(20.dp), strokeWidth = 2.dp)
-                else Icon(painterResource(R.drawable.ic_update), null, Modifier.size(20.dp))
+                else SpaceCompassActionIcon(R.drawable.ic_update)
             }
         }
     }
