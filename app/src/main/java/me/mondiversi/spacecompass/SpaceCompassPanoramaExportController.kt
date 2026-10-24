@@ -8,7 +8,7 @@ internal fun rememberSpaceCompassCaptureExport(data: SpaceCompassPanoramaPreview
     position: SpaceCompassPanoramaPosition, labels: SpaceCompassPanoramaLabelMode,
     center: SpaceCompassPanoramaCenter, previewReady: Boolean): SpaceCompassCaptureExportState =
     rememberSpaceCompassDataExport(data.file.absolutePath,
-        listOf(SpaceCompassCaptureExportType.IMAGE,SpaceCompassCaptureExportType.CSV,SpaceCompassCaptureExportType.TXT),
+        listOf(SpaceCompassCaptureExportType.IMAGE,SpaceCompassCaptureExportType.TXT,SpaceCompassCaptureExportType.CSV),
         previewReady,
         data.selectedPresentation != null) {
         SpaceCompassDataExportSource(data.file.absolutePath+spaceCompassPanoramaVariantKey(position,labels,

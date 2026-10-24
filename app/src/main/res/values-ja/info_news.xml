@@ -1,8 +1,8 @@
 <resources>
     <string name="info_news_title">最近の変更 · %1$s</string>
-    <string name="info_news_star_sky" formatted="false">104天体：衛星、探査機、恒星、銀河とその中心ブラックホールを追加。</string>
-    <string name="info_news_texture_downloads" formatted="false">画像パック1.5：56枚の外部画像と56枚の軽量プレビューを個別にダウンロードし、オフラインで保存。</string>
-    <string name="info_news_weather" formatted="false">0×で時間を停止。加速を再び有効にすると1×から開始。再開方法はカスタムシナリオで設定できます。</string>
+    <string name="info_news_star_sky" formatted="false">書き出し項目を「画像」「読みやすい表」「スプレッドシート」の順に統一しました。</string>
+    <string name="info_news_texture_downloads" formatted="false">CSVファイルの項目名を「スプレッドシート」にしました。</string>
+    <string name="info_news_weather" formatted="false">写真、パノラマ、日周経路、観測所でファイルの選択項目を統一しました。</string>
     <string name="info_news_viewer_zoom" formatted="false">種類を天体数順に、並べ替え項目を名前順に表示。天体の操作も改善。</string>
     <string name="info_news_settings" formatted="false">基準ラベルの表示を安定化。天頂の反対側、−90°に天底を表示。</string>
     <string name="info_news_catalog" formatted="false">衛星の運動、選択した天体の接近、天気データの読み込み状態を改善。</string>

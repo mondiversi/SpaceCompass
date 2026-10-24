@@ -46,7 +46,7 @@ internal fun rememberSpaceCompassObservatoryExport(body: SpaceCompassCelestialBo
     val profiles=rememberSpaceCompassDataExportProfiles()
     val zone=TimeZone.getTimeZone(spaceCompassObservationZone())
     val options=listOf(SpaceCompassCaptureExportType.CURRENT_IMAGE,SpaceCompassCaptureExportType.ROTATION_IMAGE,
-        SpaceCompassCaptureExportType.CSV,SpaceCompassCaptureExportType.TXT)
+        SpaceCompassCaptureExportType.TXT,SpaceCompassCaptureExportType.CSV)
     return rememberSpaceCompassDataExport("observatory-${body.name}",options) {
         val capturedAt=System.currentTimeMillis()
         val rotationGeometry=rotation().geometry()

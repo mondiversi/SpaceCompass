@@ -2,7 +2,7 @@
 <resources>
     <string name="capture_export_files_heading">फ़ाइलें</string>
     <string name="capture_export_image">चित्र (JPG)</string>
-    <string name="capture_export_csv">तालिका (CSV)</string>
+    <string name="capture_export_csv">स्प्रेडशीट (CSV)</string>
     <string name="capture_export_txt">पढ़ने योग्य तालिका (TXT)</string>
     <string name="capture_export_saved">सहेजी गई फ़ाइलें: %1$d</string>
     <string name="capture_export_error">निर्यात विफल हुआ</string>

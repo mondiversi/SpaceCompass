@@ -1,8 +1,8 @@
 <resources>
     <string name="info_news_title">החידושים האחרונים · %1$s</string>
-    <string name="info_news_star_sky" formatted="false">104 עצמים: ירחים, גשושיות, כוכבים, גלקסיות והחורים השחורים המרכזיים שלהן.</string>
-    <string name="info_news_texture_downloads" formatted="false">חבילת גרפיקה 1.5: 56 תמונות חיצוניות ו־56 תצוגות מקדימות קלות, בהורדה נפרדת ובמטמון לא מקוון.</string>
-    <string name="info_news_weather" formatted="false">עצרו את הזמן ב־0×; הפעלה מחדש של ההאצה מתחילה ב־1×. אפשרויות החידוש בתרחיש מותאם אישית.</string>
+    <string name="info_news_star_sky" formatted="false">אפשרויות הייצוא מסודרות כעת כך: תמונה, טבלה קריאה וגיליון אלקטרוני.</string>
+    <string name="info_news_texture_downloads" formatted="false">קובצי CSV מסומנים בבירור כגיליון אלקטרוני.</string>
+    <string name="info_news_weather" formatted="false">אפשרויות קבצים אחידות לתמונות, פנורמות, מסלולים יומיים ומצפה הכוכבים.</string>
     <string name="info_news_viewer_zoom" formatted="false">סוגים לפי מספר עצמים, אפשרויות מיון אלפביתיות ובקרי עצמים ברורים יותר.</string>
     <string name="info_news_settings" formatted="false">תוויות ייחוס יציבות יותר ונדיר ב־−90°, מול הזניט.</string>
     <string name="info_news_catalog" formatted="false">שיפור תנועת ירחים, התקרבויות עצמים נבחרים ומצב טעינת מזג האוויר.</string>

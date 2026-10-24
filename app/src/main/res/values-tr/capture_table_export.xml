@@ -2,7 +2,7 @@
 <resources>
     <string name="capture_export_files_heading">Dosyalar</string>
     <string name="capture_export_image">Görüntü (JPG)</string>
-    <string name="capture_export_csv">Tablo (CSV)</string>
+    <string name="capture_export_csv">Elektronik tablo (CSV)</string>
     <string name="capture_export_txt">Okunabilir tablo (TXT)</string>
     <string name="capture_export_saved">Kaydedilen dosyalar: %1$d</string>
     <string name="capture_export_error">Dışa aktarma başarısız</string>

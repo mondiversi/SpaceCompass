@@ -1,8 +1,8 @@
 <resources>
     <string name="info_news_title">Ultime novità · %1$s</string>
-    <string name="info_news_star_sky" formatted="false">104 oggetti: nuove lune, sonde, stelle, galassie e relativi buchi neri centrali.</string>
-    <string name="info_news_texture_downloads" formatted="false">Pacchetto grafico 1.5: 56 immagini esterne e 56 miniature leggere, scaricate singolarmente e disponibili offline.</string>
-    <string name="info_news_weather" formatted="false">Ferma il tempo a 0×; riattivando l’accelerazione si riparte da 1×. La ripresa si configura in Scenario personalizzato.</string>
+    <string name="info_news_star_sky" formatted="false">Esportazioni nell’ordine Immagine, Tabella leggibile e Foglio di calcolo.</string>
+    <string name="info_news_texture_downloads" formatted="false">I file CSV sono indicati come Foglio di calcolo.</string>
+    <string name="info_news_weather" formatted="false">Scelte dei file uniformi per scatti, panoramiche, percorso giornaliero e osservatorio.</string>
     <string name="info_news_viewer_zoom" formatted="false">Tipi ordinati per numero di oggetti, opzioni di ordinamento alfabetiche e comandi dell’oggetto più chiari.</string>
     <string name="info_news_settings" formatted="false">Scritte dei riferimenti più stabili e Nadir a −90°, opposto allo Zenit.</string>
     <string name="info_news_catalog" formatted="false">Migliorati moto delle lune, avvicinamenti tra oggetti selezionati e stato di caricamento del meteo.</string>

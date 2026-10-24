@@ -39,7 +39,7 @@ internal fun rememberSpaceCompassDailyPathExport(path: SpaceCompassSunDailyPath,
     selections: List<SpaceCompassSelectedOrbitPoint>, nowMs: Long,
     location: SpaceCompassExportLocation? = null): SpaceCompassCaptureExportState {
     val profiles=rememberSpaceCompassDataExportProfiles()
-    val options=listOf(SpaceCompassCaptureExportType.CSV,SpaceCompassCaptureExportType.TXT)
+    val options=listOf(SpaceCompassCaptureExportType.TXT,SpaceCompassCaptureExportType.CSV)
     return rememberSpaceCompassDataExport("orbit-${path.body.name}",options) {
         val capturedAt=System.currentTimeMillis()
         val snapshot=spaceCompassSingleOrbitExportSnapshot(path,current,selections,nowMs)

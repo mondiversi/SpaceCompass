@@ -1,8 +1,8 @@
 <resources>
     <string name="info_news_title">Laatste nieuws · %1$s</string>
-    <string name="info_news_star_sky" formatted="false">104 objecten: meer manen, sondes, sterren, sterrenstelsels en hun centrale zwarte gaten.</string>
-    <string name="info_news_texture_downloads" formatted="false">Grafisch pakket 1.5: 56 externe afbeeldingen en 56 lichte miniaturen, afzonderlijk gedownload en offline bewaard.</string>
-    <string name="info_news_weather" formatted="false">Pauzeer de tijd op 0×; opnieuw inschakelen begint op 1×. Hervatten stel je in bij Aangepast scenario.</string>
+    <string name="info_news_star_sky" formatted="false">Exportopties in de volgorde Afbeelding, Leesbare tabel en Spreadsheet.</string>
+    <string name="info_news_texture_downloads" formatted="false">CSV-bestanden worden duidelijk aangeduid als Spreadsheet.</string>
+    <string name="info_news_weather" formatted="false">Dezelfde bestandskeuzes voor foto’s, panorama’s, dagelijkse banen en het observatorium.</string>
     <string name="info_news_viewer_zoom" formatted="false">Typen op aantal objecten, alfabetische sorteeropties en duidelijkere objectbediening.</string>
     <string name="info_news_settings" formatted="false">Stabielere referentielabels en Nadir op −90°, tegenover het Zenit.</string>
     <string name="info_news_catalog" formatted="false">Verbeterde maanbewegingen, naderingen van geselecteerde objecten en duidelijke laadstatus voor het weer.</string>

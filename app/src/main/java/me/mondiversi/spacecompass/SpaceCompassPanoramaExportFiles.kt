@@ -12,8 +12,8 @@ import java.util.UUID
 internal enum class SpaceCompassCaptureExportType(val key: String, val extension: String, val mimeType: String,
     val labelResource: Int) {
     IMAGE("image","jpg","image/jpeg",R.string.capture_export_image),
-    CSV("csv","csv","text/csv",R.string.capture_export_csv),
     TXT("txt","txt","text/plain",R.string.capture_export_txt),
+    CSV("csv","csv","text/csv",R.string.capture_export_csv),
     CURRENT_IMAGE("current-image","jpg","image/jpeg",R.string.data_export_current_image),
     ROTATION_IMAGE("rotation-image","jpg","image/jpeg",R.string.data_export_rotation_image);
 

@@ -1,8 +1,8 @@
 <resources>
     <string name="info_news_title">हाल के बदलाव · %1$s</string>
-    <string name="info_news_star_sky" formatted="false">104 पिंड: नए उपग्रह, अंतरिक्ष यान, तारे, आकाशगंगाएँ और उनके केंद्रीय ब्लैक होल।</string>
-    <string name="info_news_texture_downloads" formatted="false">ग्राफ़िक्स पैक 1.5: 56 बाहरी चित्र और 56 हल्के पूर्वावलोकन, अलग डाउनलोड और ऑफ़लाइन कैश।</string>
-    <string name="info_news_weather" formatted="false">0× पर समय रोकें; त्वरण दोबारा चालू करने पर 1× से शुरू होता है। पुनः आरंभ विकल्प कस्टम परिदृश्य में हैं।</string>
+    <string name="info_news_star_sky" formatted="false">निर्यात विकल्प अब चित्र, पढ़ने योग्य तालिका और स्प्रेडशीट के क्रम में हैं।</string>
+    <string name="info_news_texture_downloads" formatted="false">CSV फ़ाइलों को स्पष्ट रूप से स्प्रेडशीट नाम दिया गया है।</string>
+    <string name="info_news_weather" formatted="false">फ़ोटो, पैनोरामा, दैनिक पथ और वेधशाला में एक जैसे फ़ाइल विकल्प।</string>
     <string name="info_news_viewer_zoom" formatted="false">पिंडों की संख्या के अनुसार प्रकार, वर्णानुक्रम में क्रमबद्ध विकल्प और स्पष्ट नियंत्रण।</string>
     <string name="info_news_settings" formatted="false">अधिक स्थिर संदर्भ लेबल और शिरोबिंदु के विपरीत −90° पर अधोबिंदु।</string>
     <string name="info_news_catalog" formatted="false">उपग्रहों की गति, चुने हुए पिंडों के निकट आगमन और मौसम लोड होने की स्थिति में सुधार।</string>

@@ -1,8 +1,8 @@
 <resources>
     <string name="info_news_title">Últimas novidades · %1$s</string>
-    <string name="info_news_star_sky" formatted="false">104 objetos: mais luas, sondas, estrelas, galáxias e os seus buracos negros centrais.</string>
-    <string name="info_news_texture_downloads" formatted="false">Pacote gráfico 1.5: 56 imagens externas e 56 miniaturas leves, transferidas individualmente e disponíveis offline.</string>
-    <string name="info_news_weather" formatted="false">Pare o tempo em 0×; reativar a aceleração começa em 1×. A retoma configura-se no Cenário personalizado.</string>
+    <string name="info_news_star_sky" formatted="false">Exportações pela ordem Imagem, Tabela legível e Folha de cálculo.</string>
+    <string name="info_news_texture_downloads" formatted="false">Os ficheiros CSV são identificados como Folha de cálculo.</string>
+    <string name="info_news_weather" formatted="false">Escolha de ficheiros uniforme em fotografias, panorâmicas, percursos diários e no observatório.</string>
     <string name="info_news_viewer_zoom" formatted="false">Tipos por número de objetos, opções de ordenação alfabéticas e controlos mais claros.</string>
     <string name="info_news_settings" formatted="false">Legendas de referência mais estáveis e Nadir a −90°, oposto ao Zénite.</string>
     <string name="info_news_catalog" formatted="false">Melhorias no movimento das luas, aproximações de objetos selecionados e estado de carregamento meteorológico.</string>

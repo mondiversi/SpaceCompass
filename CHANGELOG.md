@@ -1,5 +1,12 @@
 # Changelog
 
+## 1.4.8 — 2026-10-24
+
+- Present export choices as Image (JPG), Readable table (TXT), then Spreadsheet (CSV). Daily paths show the two table choices in the same order; the Observatory keeps both image choices first.
+- Rename the CSV option to Spreadsheet in all twenty interface languages. Keep the CSV format, MIME type, schemas and scientific values unchanged.
+- Refresh the in-app news with three concise, localized export notes. Preserve formatting profiles, location-disclosure choices, initial unchecked file selections and return-to-preview behavior.
+- Increase the Android/update identity to 1.4.8/code 45 using the existing distribution certificate, a signed update index and matching optional reference-information archive. Reuse graphics pack 1.5 without new images or a texture ZIP.
+
 ## 1.4.7 — 2026-10-17
 
 - Refine outlined settings, repository and export actions with soft, same-family press feedback in both themes; keep label/icon colors and disabled styling stable.

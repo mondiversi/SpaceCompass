@@ -1,8 +1,8 @@
 <resources>
     <string name="info_news_title">Perubahan terbaru · %1$s</string>
-    <string name="info_news_star_sky" formatted="false">104 objek: lebih banyak bulan, wahana, bintang, galaksi dan lubang hitam pusatnya.</string>
-    <string name="info_news_texture_downloads" formatted="false">Paket grafis 1.5: 56 gambar eksternal dan 56 pratinjau ringan, diunduh satu per satu dan disimpan luring.</string>
-    <string name="info_news_weather" formatted="false">Jeda waktu pada 0×; mengaktifkan kembali percepatan dimulai dari 1×. Opsi melanjutkan ada di Skenario khusus.</string>
+    <string name="info_news_star_sky" formatted="false">Pilihan ekspor diurutkan menjadi Gambar, Tabel terbaca, dan Lembar kerja.</string>
+    <string name="info_news_texture_downloads" formatted="false">File CSV diberi nama Lembar kerja agar lebih jelas.</string>
+    <string name="info_news_weather" formatted="false">Pilihan file yang konsisten untuk foto, panorama, lintasan harian, dan observatorium.</string>
     <string name="info_news_viewer_zoom" formatted="false">Jenis menurut jumlah objek, opsi pengurutan alfabetis dan kontrol objek yang lebih jelas.</string>
     <string name="info_news_settings" formatted="false">Label referensi lebih stabil dan Nadir pada −90°, berlawanan dengan Zenit.</string>
     <string name="info_news_catalog" formatted="false">Peningkatan gerak bulan, pendekatan objek terpilih dan status pemuatan cuaca.</string>

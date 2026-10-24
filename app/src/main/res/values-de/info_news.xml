@@ -1,8 +1,8 @@
 <resources>
     <string name="info_news_title">Neuigkeiten · %1$s</string>
-    <string name="info_news_star_sky" formatted="false">104 Objekte: weitere Monde, Sonden, Sterne, Galaxien und ihre zentralen Schwarzen Löcher.</string>
-    <string name="info_news_texture_downloads" formatted="false">Grafikpaket 1.5: 56 externe Bilder und 56 kleine Vorschaubilder mit Einzeldownload und Offline-Cache.</string>
-    <string name="info_news_weather" formatted="false">Zeit bei 0× anhalten; erneutes Aktivieren startet bei 1×. Fortsetzungsoptionen stehen im eigenen Szenario.</string>
+    <string name="info_news_star_sky" formatted="false">Exportoptionen in der Reihenfolge Bild, lesbare Tabelle und Tabellenblatt.</string>
+    <string name="info_news_texture_downloads" formatted="false">CSV-Dateien sind klar als Tabellenblatt bezeichnet.</string>
+    <string name="info_news_weather" formatted="false">Einheitliche Dateiauswahl für Fotos, Panoramen, Tagesbahnen und das Observatorium.</string>
     <string name="info_news_viewer_zoom" formatted="false">Typen nach Objektanzahl, alphabetische Sortieroptionen und übersichtlichere Objektsteuerung.</string>
     <string name="info_news_settings" formatted="false">Stabilere Referenzbeschriftungen und Nadir bei −90°, gegenüber dem Zenit.</string>
     <string name="info_news_catalog" formatted="false">Verbesserte Mondbewegung, Annäherungen ausgewählter Objekte und eindeutiger Wetter-Ladestatus.</string>
