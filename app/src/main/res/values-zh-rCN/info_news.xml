@@ -1,8 +1,8 @@
 <resources>
     <string name="info_news_title">最新变化 · %1$s</string>
-    <string name="info_news_star_sky" formatted="false">导出选项依次为图像、易读表格和电子表格。</string>
-    <string name="info_news_texture_downloads" formatted="false">CSV 文件明确标为电子表格。</string>
-    <string name="info_news_weather" formatted="false">统一照片、全景、每日轨迹和天文台中的文件选项。</string>
+    <string name="info_news_star_sky" formatted="false">点按天体名称即可打开“天文台”。</string>
+    <string name="info_news_texture_downloads" formatted="false">使用“导出”旁边的按钮，在“天文台”和“每日轨迹”之间切换。</string>
+    <string name="info_news_weather" formatted="false">统一了标题栏图标的可见尺寸、对齐方式和线条粗细。</string>
     <string name="info_news_viewer_zoom" formatted="false">类型按天体数量排序，排序选项按名称排列，天体控件更清晰。</string>
     <string name="info_news_settings" formatted="false">参考标签更加稳定，天底位于−90°，与天顶相对。</string>
     <string name="info_news_catalog" formatted="false">改进卫星运动、已选天体的接近事件及天气加载状态。</string>

@@ -1,8 +1,8 @@
 <resources>
     <string name="info_news_title">Latest news · %1$s</string>
-    <string name="info_news_star_sky" formatted="false">Exports now show Image, Readable table and Spreadsheet, in this order.</string>
-    <string name="info_news_texture_downloads" formatted="false">CSV files are clearly labelled Spreadsheet.</string>
-    <string name="info_news_weather" formatted="false">Consistent file choices in photos, panoramas, daily paths and the Observatory.</string>
+    <string name="info_news_star_sky" formatted="false">Open Observatory by tapping the object\'s name.</string>
+    <string name="info_news_texture_downloads" formatted="false">Move between Observatory and Daily path using the shortcut beside Export.</string>
+    <string name="info_news_weather" formatted="false">Title-bar icons have matching visible size, alignment and stroke.</string>
     <string name="info_news_viewer_zoom" formatted="false">Types ordered by object count, alphabetical sorting options and clearer object controls.</string>
     <string name="info_news_settings" formatted="false">Steadier reference labels and Nadir at −90°, opposite Zenith.</string>
     <string name="info_news_catalog" formatted="false">Improved moon motion, selected-object close approaches and explicit weather-loading status.</string>

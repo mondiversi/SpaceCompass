@@ -94,7 +94,8 @@ class SpaceCompassCelestialMultiSelectionUiTest {
         compose.waitUntil(15_000) { compose.onAllNodesWithTag("sun-daily-path").fetchSemanticsNodes().size == 3 }
         compose.onAllNodesWithTag("celestial-visualize").assertCountEquals(1)
         compose.onAllNodesWithTag("sun-path-open").assertCountEquals(1)
-        compose.onNodeWithTag("celestial-visualize").assert(hasAnyAncestor(hasTestTag("celestial-body-header")))
+        compose.onNodeWithTag("celestial-body-island-title").assertHasClickAction()
+            .assert(hasAnyAncestor(hasTestTag("celestial-body-header")))
         compose.onNodeWithTag("celestial-body-next").performClick()
         compose.runOnIdle { assertEquals(SpaceCompassCelestialBody.MOON, selection.value.active); assertEquals(3, selection.value.selected.size) }
         compose.onNodeWithTag("celestial-select").assert(SemanticsMatcher.expectValue(SemanticsProperties.StateDescription, "3"))

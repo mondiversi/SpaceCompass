@@ -36,13 +36,13 @@ internal fun spaceCompassObjectHeaderTargetSpacing(first: SpaceCompassObjectHead
  * Floating sky controls retain their original drawings and dimensions. */
 @Composable
 internal fun SpaceCompassObjectHeaderIcon(glyph: SpaceCompassObjectHeaderGlyph,
-    modifier: Modifier = Modifier, tint: Color = LocalContentColor.current) {
+    modifier: Modifier = Modifier, tint: Color = LocalContentColor.current, strokeWidth: Dp = 1.8.dp) {
     SpaceCompassIconCanvas(tint, modifier.size(glyph.width, SpaceCompassObjectHeaderGlyphHeight * glyph.visualScale)
         // Balance the telescope's asymmetric ink inside its fixed circle, including in RTL.
         .then(if (glyph == SpaceCompassObjectHeaderGlyph.OBSERVATORY)
             Modifier.absoluteOffset(x = (-.75).dp) else Modifier)
         .testTag("object-header-icon-${glyph.name}")) { color ->
-        val stroke = 1.8.dp.toPx() * glyph.visualScale
+        val stroke = strokeWidth.toPx() * glyph.visualScale
         val inset = stroke / 2
         val left = inset
         val right = size.width - inset

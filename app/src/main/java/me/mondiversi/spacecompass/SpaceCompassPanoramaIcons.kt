@@ -47,11 +47,18 @@ internal fun SpaceCompassPanoramaActionIcon(share: Boolean) {
     }
 }
 
-/** Uvir's upward export arrow and tray, including its optical vertical correction. */
+internal val SpaceCompassExportIconViewport = 24.dp
+
+/** Painted bounds include the round stroke caps: the tray spans 20–80%, the arrow 25–88%. */
+internal fun spaceCompassExportIconInkSize(strokeWidth: androidx.compose.ui.unit.Dp) =
+    androidx.compose.ui.unit.DpSize(SpaceCompassExportIconViewport * .60f + strokeWidth,
+        SpaceCompassExportIconViewport * .63f + strokeWidth)
+
+/** Upward export arrow and tray, including its optical vertical correction. */
 @Composable
 internal fun SpaceCompassPanoramaExportIcon(strokeWidth: androidx.compose.ui.unit.Dp = 2.21.dp) {
     val tint = LocalContentColor.current
-    SpaceCompassIconCanvas(tint, Modifier.size(24.dp).offset(y = (-1.5).dp)) { tint ->
+    SpaceCompassIconCanvas(tint, Modifier.size(SpaceCompassExportIconViewport).offset(y = (-1.5).dp)) { tint ->
         val stroke = strokeWidth.toPx()
         fun line(ax: Float, ay: Float, bx: Float, by: Float) = drawLine(tint,
             Offset(size.width * ax, size.height * ay), Offset(size.width * bx, size.height * by),

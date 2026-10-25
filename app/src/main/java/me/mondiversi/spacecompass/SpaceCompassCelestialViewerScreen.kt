@@ -40,9 +40,10 @@ private val viewportSaver = Saver<SpaceCompassCelestialViewportState, List<Doubl
     restore = { SpaceCompassCelestialViewportState(it[0], it[1], it[2]).transform(1.0) })
 
 @Composable
-internal fun SpaceCompassCelestialViewerScreen(body: SpaceCompassCelestialBody, timeMs: Long,
+internal fun SpaceCompassCelestialObservatoryPage(body: SpaceCompassCelestialBody, timeMs: Long,
     latitude: Double?, longitude: Double?, altitude: Double, remote: SpaceCompassCelestialRemoteData,
-    primaryText: Color, secondaryText: Color, backgroundColor: Color, onBack: () -> Unit) {
+    primaryText: Color, secondaryText: Color, backgroundColor: Color,
+    pageAction: @Composable (Boolean) -> Unit = {}, onBack: () -> Unit) {
     val context = LocalContext.current
     var rotating by rememberSaveable(body) { mutableStateOf(false) }
     val rotationState = rememberSaveable(body, stateSaver = rotationSaver) {
@@ -282,6 +283,7 @@ internal fun SpaceCompassCelestialViewerScreen(body: SpaceCompassCelestialBody, 
             titleModifier = Modifier.testTag("celestial-view-title"), titleColor = primaryText) {
             SpaceCompassTitleActionButton(stringResource(R.string.panorama_export),export.open,
                 Modifier.testTag("observatory-export"),enabled=!export.saving) { SpaceCompassPanoramaExportIcon(2.dp) }
+            pageAction(!export.saving)
         }
         BoxWithConstraints(Modifier.fillMaxSize().padding(horizontal = 10.dp)) {
             // Start below the toolbar with side insets; system bars already own the bottom safe area.

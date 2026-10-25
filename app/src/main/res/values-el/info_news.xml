@@ -1,8 +1,8 @@
 <resources>
     <string name="info_news_title">Τελευταία νέα · %1$s</string>
-    <string name="info_news_star_sky" formatted="false">Οι επιλογές εξαγωγής εμφανίζονται με τη σειρά Εικόνα, Ευανάγνωστος πίνακας και Υπολογιστικό φύλλο.</string>
-    <string name="info_news_texture_downloads" formatted="false">Τα αρχεία CSV ονομάζονται σαφώς Υπολογιστικό φύλλο.</string>
-    <string name="info_news_weather" formatted="false">Ενιαίες επιλογές αρχείων για φωτογραφίες, πανοράματα, ημερήσιες διαδρομές και το παρατηρητήριο.</string>
+    <string name="info_news_star_sky" formatted="false">Πατήστε το όνομα του αντικειμένου για να ανοίξετε το «Αστεροσκοπείο».</string>
+    <string name="info_news_texture_downloads" formatted="false">Μεταβείτε μεταξύ «Αστεροσκοπείο» και «Ημερήσια τροχιά» με το κουμπί δίπλα στο «Εξαγωγή».</string>
+    <string name="info_news_weather" formatted="false">Τα εικονίδια στις γραμμές τίτλου έχουν ομοιόμορφες ορατές διαστάσεις, στοίχιση και πάχος γραμμής.</string>
     <string name="info_news_viewer_zoom" formatted="false">Τύποι κατά πλήθος αντικειμένων, αλφαβητικές επιλογές ταξινόμησης και σαφέστερα χειριστήρια.</string>
     <string name="info_news_settings" formatted="false">Σταθερότερες ετικέτες αναφοράς και Ναδίρ στις −90°, απέναντι από το Ζενίθ.</string>
     <string name="info_news_catalog" formatted="false">Βελτιωμένη κίνηση δορυφόρων, προσεγγίσεις επιλεγμένων αντικειμένων και ένδειξη φόρτωσης καιρού.</string>

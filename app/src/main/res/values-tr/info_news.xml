@@ -1,8 +1,8 @@
 <resources>
     <string name="info_news_title">Son yenilikler · %1$s</string>
-    <string name="info_news_star_sky" formatted="false">Dışa aktarma seçenekleri Görüntü, Okunabilir tablo ve Elektronik tablo sırasındadır.</string>
-    <string name="info_news_texture_downloads" formatted="false">CSV dosyaları açıkça Elektronik tablo olarak adlandırılır.</string>
-    <string name="info_news_weather" formatted="false">Fotoğraflar, panoramalar, günlük yollar ve gözlemevinde tutarlı dosya seçenekleri.</string>
+    <string name="info_news_star_sky" formatted="false">Nesnenin adına dokunarak «Gözlemevi» görünümünü açın.</string>
+    <string name="info_news_texture_downloads" formatted="false">«Dışa aktar» yanındaki düğmeyle «Gözlemevi» ve «Günlük yol» arasında geçiş yapın.</string>
+    <string name="info_news_weather" formatted="false">Başlık çubuğu simgelerinin görünür boyutları, hizalaması ve çizgi kalınlığı eşitlendi.</string>
     <string name="info_news_viewer_zoom" formatted="false">Nesne sayısına göre türler, alfabetik sıralama seçenekleri ve daha anlaşılır nesne kontrolleri.</string>
     <string name="info_news_settings" formatted="false">Daha kararlı referans etiketleri ve Zenit’in karşısında −90° Nadir.</string>
     <string name="info_news_catalog" formatted="false">İyileştirilmiş uydu hareketleri, seçili nesnelerin yakınlaşmaları ve açık hava durumu yükleme bilgisi.</string>

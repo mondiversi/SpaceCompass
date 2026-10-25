@@ -1,5 +1,13 @@
 # Changelog
 
+## 1.4.9 — 2026-10-25
+
+- Open the Observatory from the object name as well as its existing island button. Keep the Observatory and Daily path island shortcuts available without an underline on the name.
+- Add one standard title-bar action after Export to move between the Observatory and the same object's Daily path. Return directly to the originating screen; retain model zoom/rotation and selected points across page changes.
+- Match both destination glyphs to Export's painted bounds, alignment and shared 2 dp stroke, while preserving the standard title-button hit targets and margins.
+- Reuse the model-mode capsule through a shared accessible two-icon control. Keep that image/model control's existing appearance separate from the single object-page shortcut.
+- Refresh the three in-app news items in all twenty languages. Publish 1.4.9/code 46 with the existing distribution certificate, a signed update index and an optional reference-information archive. Graphics pack 1.5 remains unchanged.
+
 ## 1.4.8 — 2026-10-24
 
 - Present export choices as Image (JPG), Readable table (TXT), then Spreadsheet (CSV). Daily paths show the two table choices in the same order; the Observatory keeps both image choices first.

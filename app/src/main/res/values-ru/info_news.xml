@@ -1,8 +1,8 @@
 <resources>
     <string name="info_news_title">Последние новости · %1$s</string>
-    <string name="info_news_star_sky" formatted="false">Параметры экспорта расположены в порядке: изображение, читаемая таблица и электронная таблица.</string>
-    <string name="info_news_texture_downloads" formatted="false">Файлы CSV явно обозначены как электронная таблица.</string>
-    <string name="info_news_weather" formatted="false">Единый выбор файлов для фотографий, панорам, суточных траекторий и обсерватории.</string>
+    <string name="info_news_star_sky" formatted="false">Нажмите на название объекта, чтобы открыть раздел «Обсерватория».</string>
+    <string name="info_news_texture_downloads" formatted="false">Переходите между разделами «Обсерватория» и «Суточная траектория» кнопкой рядом с «Экспорт».</string>
+    <string name="info_news_weather" formatted="false">Значки в строках заголовков приведены к одинаковым видимым размерам, выравниванию и толщине линий.</string>
     <string name="info_news_viewer_zoom" formatted="false">Типы по числу объектов, параметры сортировки по алфавиту и более понятное управление объектами.</string>
     <string name="info_news_settings" formatted="false">Более стабильные подписи ориентиров и Надир на −90°, напротив Зенита.</string>
     <string name="info_news_catalog" formatted="false">Улучшены движение лун, сближения выбранных объектов и отображение загрузки погоды.</string>

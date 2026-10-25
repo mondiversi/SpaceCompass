@@ -40,7 +40,7 @@ class SpaceCompassMainIslandInputTest {
                         Modifier.fillMaxWidth().align(Alignment.BottomCenter), compact.value,
                         bodyName = "Sun", bodyNavigation = SpaceCompassCelestialBodyNavigation("Previous", "Next",
                             { previous++ }, { next++ }), onInfo = { info++ },
-                        bodyActions = { Text("Details", Modifier.testTag("fixture-details").clickable { details++ }) })
+                        onBodyNameClick = { details++ })
                 }
             }
         }
@@ -59,7 +59,8 @@ class SpaceCompassMainIslandInputTest {
             compose.runOnIdle { assertEquals(before, sceneTaps) }
             compose.onNodeWithTag("celestial-body-previous", useUnmergedTree = true).performTouchInput { click(center) }
             compose.onNodeWithTag("celestial-body-next", useUnmergedTree = true).performTouchInput { click(center) }
-            compose.onNodeWithTag("fixture-details", useUnmergedTree = true).performTouchInput { click(center) }
+            compose.onNodeWithTag("celestial-body-island-title", useUnmergedTree = true)
+                .assertHasClickAction().performTouchInput { click(center) }
             compose.onNode(hasClickAction() and hasAnyDescendant(hasTestTag("sun-finder-info")), useUnmergedTree = true)
                 .performTouchInput { click(center) }
             compose.runOnIdle {

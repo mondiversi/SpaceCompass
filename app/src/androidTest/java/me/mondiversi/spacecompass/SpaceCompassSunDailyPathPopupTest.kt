@@ -59,9 +59,18 @@ class SpaceCompassSunDailyPathPopupTest {
                 }
             }
         }
-        compose.waitUntil(5_000) { compose.onAllNodesWithTag("sun-path-open").fetchSemanticsNodes().isNotEmpty() }
-        compose.onNodeWithTag("sun-path-open").performClick()
+        compose.waitUntil(5_000) { compose.onAllNodesWithTag("celestial-body-island-title").fetchSemanticsNodes().isNotEmpty() }
+        openDailyPath()
         compose.onNodeWithTag("sun-path-page").assertIsDisplayed()
+    }
+
+    private fun openDailyPath() {
+        if (compose.onAllNodesWithTag("celestial-body-island-title").fetchSemanticsNodes().isNotEmpty())
+            compose.onNodeWithTag("celestial-body-island-title").performClick()
+        compose.waitUntil(10_000) {
+            compose.onAllNodes(hasTestTag("sun-path-open") and isEnabled()).fetchSemanticsNodes().isNotEmpty()
+        }
+        compose.onNodeWithTag("sun-path-open").performClick()
     }
 
     @Test fun popupStaysOpenDuringTemporaryLocationLossAndRecovery() {
@@ -113,8 +122,8 @@ class SpaceCompassSunDailyPathPopupTest {
         compose.onNodeWithTag("sun-path-page").assertIsDisplayed()
         assertEquals(originalDate, dateRow.fetchSemanticsNode().config[SemanticsProperties.Text])
         compose.onNodeWithContentDescription(resources.getString(R.string.close)).performClick()
-        compose.waitUntil(5_000) { compose.onAllNodesWithTag("sun-path-open").fetchSemanticsNodes().isNotEmpty() }
-        compose.onNodeWithTag("sun-path-open").performClick()
+        compose.waitUntil(5_000) { compose.onAllNodesWithTag("celestial-body-island-title").fetchSemanticsNodes().isNotEmpty() }
+        openDailyPath()
         org.junit.Assert.assertNotEquals(originalDate, dateRow.fetchSemanticsNode().config[SemanticsProperties.Text])
     }
 
@@ -127,7 +136,7 @@ class SpaceCompassSunDailyPathPopupTest {
             compose.onNode(isToggleable()).assertIsOff()
         }
         compose.onNodeWithContentDescription(resources.getString(R.string.close)).performClick()
-        compose.onNodeWithTag("sun-path-open").performClick()
+        openDailyPath()
         compose.onNode(isToggleable()).assertIsOff()
     }
 
@@ -137,7 +146,7 @@ class SpaceCompassSunDailyPathPopupTest {
         compose.runOnIdle { location.value = null; time.value += 2_000 }
         compose.onNodeWithTag("sun-path-page").assertDoesNotExist()
         compose.runOnIdle { location.value = fix(45.01, 150.0) }
-        compose.waitUntil(5_000) { compose.onAllNodesWithTag("sun-path-open").fetchSemanticsNodes().isNotEmpty() }
+        compose.waitUntil(5_000) { compose.onAllNodesWithTag("celestial-body-island-title").fetchSemanticsNodes().isNotEmpty() }
         compose.onNodeWithTag("sun-path-page").assertDoesNotExist()
     }
 }

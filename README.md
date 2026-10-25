@@ -8,8 +8,8 @@ paths, inspect reference facts and view textured models. Space Compass is a stan
 
 ## Download and install
 
-Download **space-compass-1.4.8.apk** from the
-[Space Compass 1.4.8 release](https://github.com/mondiversi/SpaceCompass/releases/tag/v1.4.8).
+Download **space-compass-1.4.9.apk** from the
+[Space Compass 1.4.9 release](https://github.com/mondiversi/SpaceCompass/releases/tag/v1.4.9).
 Android 8.0 or newer is required. Open the APK and follow Android's installation
 prompts; allow installation for your browser or file manager if requested.
 
@@ -22,7 +22,7 @@ one manual APK update to acquire this feature.
 The release includes `SHA256SUMS.txt` and a signed update index. GitHub's source
 ZIP/TAR archives and Actions debug artifacts are separate from the signed APK.
 See [distribution and signing](docs/GITHUB_RELEASES.md) and
-[the 1.4.8 release audit](docs/RELEASE_1_4_8.md).
+[the 1.4.9 release audit](docs/RELEASE_1_4_9.md).
 
 ## Features
 
@@ -50,6 +50,7 @@ See [distribution and signing](docs/GITHUB_RELEASES.md) and
 - Custom scenarios with independently enabled position, altitude, time zone, date and time;
   optional −3600× to +3600× time speed with a central 0× pause and restart/active-only/always resumption. The current-scenario
   summary shows saved overrides and an approximate place, with an active-section badge.
+- Open the Observatory from the object name or island action, then move to its Daily path using the compact toolbar shortcut beside Export.
 - Observatory with textured interactive models, lunar phases, classified reference tables,
   qualified core temperatures, spatial context and credits. Export data and current/rotation images.
 - General settings combine light/dark themes, adjustable sky fluidity, event controls and original ambient music synthesized continuously offline. Balanced fluidity is the default; previously saved levels are retained.
@@ -72,7 +73,7 @@ See [distribution and signing](docs/GITHUB_RELEASES.md) and
 - Signed startup/manual GitHub updates with package, certificate, size and checksum verification.
 
 The application ID is `me.mondiversi.spacecompass`. The current stable version is
-**1.4.8**, with Android/update identity `1.4.8` and version code **45**.
+**1.4.9**, with Android/update identity `1.4.9` and version code **46**.
 This preserves the three-part update protocol used by existing preview installations.
 The app stores its preferences and caches privately.
 
@@ -134,7 +135,7 @@ Launcher/loading artwork and the fictional Easter-egg texture are original asset
 
 ## Data and graphics packages
 
-Release 1.4.8 includes a reference-information archive and 104 regular catalogue objects.
+Release 1.4.9 includes a reference-information archive and 104 regular catalogue objects.
 Celestial graphics are separate individual files in
 [graphics pack 1.5](https://github.com/mondiversi/SpaceCompass/releases/tag/celestial-textures-v1.5):
 56 full images and 56 independent 128 x 128 previews, all WebP quality 90/method 6.

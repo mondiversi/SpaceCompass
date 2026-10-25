@@ -1,8 +1,8 @@
 <resources>
     <string name="info_news_title">Laatste nieuws · %1$s</string>
-    <string name="info_news_star_sky" formatted="false">Exportopties in de volgorde Afbeelding, Leesbare tabel en Spreadsheet.</string>
-    <string name="info_news_texture_downloads" formatted="false">CSV-bestanden worden duidelijk aangeduid als Spreadsheet.</string>
-    <string name="info_news_weather" formatted="false">Dezelfde bestandskeuzes voor foto’s, panorama’s, dagelijkse banen en het observatorium.</string>
+    <string name="info_news_star_sky" formatted="false">Tik op de objectnaam om ‘Observatorium’ te openen.</string>
+    <string name="info_news_texture_downloads" formatted="false">Wissel tussen ‘Observatorium’ en ‘Dagelijkse baan’ met de knop naast ‘Exporteren’.</string>
+    <string name="info_news_weather" formatted="false">De pictogrammen in de titelbalk hebben dezelfde zichtbare afmetingen, uitlijning en lijndikte.</string>
     <string name="info_news_viewer_zoom" formatted="false">Typen op aantal objecten, alfabetische sorteeropties en duidelijkere objectbediening.</string>
     <string name="info_news_settings" formatted="false">Stabielere referentielabels en Nadir op −90°, tegenover het Zenit.</string>
     <string name="info_news_catalog" formatted="false">Verbeterde maanbewegingen, naderingen van geselecteerde objecten en duidelijke laadstatus voor het weer.</string>

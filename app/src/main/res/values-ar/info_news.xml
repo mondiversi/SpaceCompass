@@ -1,8 +1,8 @@
 <resources>
     <string name="info_news_title">آخر المستجدات · %1$s</string>
-    <string name="info_news_star_sky" formatted="false">خيارات التصدير بالترتيب: صورة، جدول مقروء، جدول بيانات.</string>
-    <string name="info_news_texture_downloads" formatted="false">تُسمّى ملفات CSV بوضوح جدول بيانات.</string>
-    <string name="info_news_weather" formatted="false">خيارات ملفات موحّدة للصور والبانوراما والمسارات اليومية والمرصد.</string>
+    <string name="info_news_star_sky" formatted="false">اضغط على اسم الجرم لفتح «مرصد».</string>
+    <string name="info_news_texture_downloads" formatted="false">انتقل بين «مرصد» و«المسار اليومي» باستخدام الزر بجوار «تصدير».</string>
+    <string name="info_news_weather" formatted="false">أصبحت أيقونات أشرطة العناوين متناسقة في الأبعاد المرئية والمحاذاة وسُمك الخطوط.</string>
     <string name="info_news_viewer_zoom" formatted="false">الأنواع مرتبة حسب عدد الأجرام، وخيارات فرز أبجدية، وعناصر تحكم أوضح.</string>
     <string name="info_news_settings" formatted="false">تسميات مرجعية أكثر ثباتًا وسمت القدم عند −90°، مقابل سمت الرأس.</string>
     <string name="info_news_catalog" formatted="false">تحسين حركة الأقمار وتقاربات الأجرام المحددة وحالة تحميل الطقس.</string>

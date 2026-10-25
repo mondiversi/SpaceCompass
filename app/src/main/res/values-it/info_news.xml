@@ -1,8 +1,8 @@
 <resources>
     <string name="info_news_title">Ultime novità · %1$s</string>
-    <string name="info_news_star_sky" formatted="false">Esportazioni nell’ordine Immagine, Tabella leggibile e Foglio di calcolo.</string>
-    <string name="info_news_texture_downloads" formatted="false">I file CSV sono indicati come Foglio di calcolo.</string>
-    <string name="info_news_weather" formatted="false">Scelte dei file uniformi per scatti, panoramiche, percorso giornaliero e osservatorio.</string>
+    <string name="info_news_star_sky" formatted="false">Apri Osservatorio toccando il nome dell’oggetto.</string>
+    <string name="info_news_texture_downloads" formatted="false">Passa tra Osservatorio e Percorso giornaliero dal pulsante accanto a Esporta.</string>
+    <string name="info_news_weather" formatted="false">Icone delle barre uniformate per dimensioni visibili, allineamento e spessore.</string>
     <string name="info_news_viewer_zoom" formatted="false">Tipi ordinati per numero di oggetti, opzioni di ordinamento alfabetiche e comandi dell’oggetto più chiari.</string>
     <string name="info_news_settings" formatted="false">Scritte dei riferimenti più stabili e Nadir a −90°, opposto allo Zenit.</string>
     <string name="info_news_catalog" formatted="false">Migliorati moto delle lune, avvicinamenti tra oggetti selezionati e stato di caricamento del meteo.</string>

@@ -25,6 +25,8 @@ import androidx.compose.ui.graphics.drawscope.Stroke
 import androidx.compose.ui.layout.layout
 import androidx.compose.ui.platform.LocalLayoutDirection
 import androidx.compose.ui.platform.testTag
+import androidx.compose.ui.res.stringResource
+import androidx.compose.ui.semantics.Role
 import androidx.compose.ui.semantics.heading
 import androidx.compose.ui.semantics.semantics
 import androidx.compose.ui.text.TextLayoutResult
@@ -40,7 +42,7 @@ import androidx.compose.ui.unit.sp
 internal val SpaceCompassObjectActionTargetSpacing = spaceCompassObjectHeaderTargetSpacing(
     SpaceCompassObjectHeaderGlyph.REMOVE, SpaceCompassObjectHeaderGlyph.OBSERVATORY)
 
-// Keep removal compact and leave a moderate gap between the two circular actions.
+// Keep removal compact beside the two object actions.
 internal val SpaceCompassObjectNavigationRemoveGap = 12.dp
 
 internal val SpaceCompassObjectDetailsActionTargetSpacing = spaceCompassObjectHeaderTargetSpacing(
@@ -55,7 +57,7 @@ internal data class SpaceCompassCelestialBodyNavigation(val previousLabel: Strin
 internal fun SpaceCompassCelestialBodyDataIsland(bodyName: String?, primaryText: Color, background: Color,
     compact: Boolean, navigation: SpaceCompassCelestialBodyNavigation?,
     actions: @Composable () -> Unit = {}, onRemove: (() -> Unit)? = null,
-    bodyNameColor: Color = primaryText,
+    bodyNameColor: Color = primaryText, onBodyNameClick: (() -> Unit)? = null,
     content: @Composable ColumnScope.() -> Unit) {
     val shape = RoundedCornerShape(20.dp)
     // Absorb blank-surface taps; child navigation and details actions keep priority.
@@ -75,10 +77,15 @@ internal fun SpaceCompassCelestialBodyDataIsland(bodyName: String?, primaryText:
                 // Fit the name between the unfilled glyphs, retaining 48 dp navigation targets.
                 Box(Modifier.weight(1f).heightIn(min = 48.dp)) {
                     var nameLayout by remember(bodyName) { mutableStateOf<TextLayoutResult?>(null) }
+                    val nameInteraction = remember { MutableInteractionSource() }
                     Text(bodyName.orEmpty(), Modifier.fillMaxWidth().align(Alignment.Center)
                         // Leave the same 4 dp between the text and either visible arrow edge.
                         .padding(start = if (navigation == null) 0.dp else SpaceCompassObjectHeaderGlyph.CHEVRON.width + 4.dp,
                             end = if (navigation == null) 0.dp else SpaceCompassObjectHeaderGlyph.CHEVRON.width + 14.dp)
+                        .then(if (onBodyNameClick != null) Modifier.heightIn(min = 48.dp)
+                            .clickable(interactionSource = nameInteraction, indication = null,
+                                role = Role.Button, onClickLabel = stringResource(R.string.celestial_details_title),
+                                onClick = onBodyNameClick).wrapContentHeight() else Modifier)
                         .testTag("celestial-body-island-title").semantics { heading() }
                         .drawWithContent {
                             // Reuse the exact paragraph, including ellipsis and RTL. Paint the
@@ -101,7 +108,7 @@ internal fun SpaceCompassCelestialBodyDataIsland(bodyName: String?, primaryText:
                         navigation.nextLabel, navigation.onNext, primaryText, previous = false,
                         modifier = Modifier.size(48.dp).testTag("celestial-body-next").align(Alignment.CenterEnd))
                 }
-                // Align the 30 dp circle with the divider's trailing edge.
+                // Align the trailing action with the divider's edge.
                 // Only the target's empty inset extends into the island padding, also in RTL.
                 Row(Modifier.layout { measurable, constraints ->
                     val controls = measurable.measure(constraints)

@@ -1,8 +1,8 @@
 <resources>
     <string name="info_news_title">Últimas novidades · %1$s</string>
-    <string name="info_news_star_sky" formatted="false">Exportações pela ordem Imagem, Tabela legível e Folha de cálculo.</string>
-    <string name="info_news_texture_downloads" formatted="false">Os ficheiros CSV são identificados como Folha de cálculo.</string>
-    <string name="info_news_weather" formatted="false">Escolha de ficheiros uniforme em fotografias, panorâmicas, percursos diários e no observatório.</string>
+    <string name="info_news_star_sky" formatted="false">Toque no nome do objeto para abrir «Observatório».</string>
+    <string name="info_news_texture_downloads" formatted="false">Alterne entre «Observatório» e «Trajetória diária» com o botão junto a «Exportar».</string>
+    <string name="info_news_weather" formatted="false">Os ícones das barras de título têm dimensões visíveis, alinhamento e espessura uniformes.</string>
     <string name="info_news_viewer_zoom" formatted="false">Tipos por número de objetos, opções de ordenação alfabéticas e controlos mais claros.</string>
     <string name="info_news_settings" formatted="false">Legendas de referência mais estáveis e Nadir a −90°, oposto ao Zénite.</string>
     <string name="info_news_catalog" formatted="false">Melhorias no movimento das luas, aproximações de objetos selecionados e estado de carregamento meteorológico.</string>

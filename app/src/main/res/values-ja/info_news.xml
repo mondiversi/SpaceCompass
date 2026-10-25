@@ -1,8 +1,8 @@
 <resources>
     <string name="info_news_title">最近の変更 · %1$s</string>
-    <string name="info_news_star_sky" formatted="false">書き出し項目を「画像」「読みやすい表」「スプレッドシート」の順に統一しました。</string>
-    <string name="info_news_texture_downloads" formatted="false">CSVファイルの項目名を「スプレッドシート」にしました。</string>
-    <string name="info_news_weather" formatted="false">写真、パノラマ、日周経路、観測所でファイルの選択項目を統一しました。</string>
+    <string name="info_news_star_sky" formatted="false">天体名をタップすると「天文台」を開けます。</string>
+    <string name="info_news_texture_downloads" formatted="false">「エクスポート」の隣のボタンで「天文台」と「一日の軌跡」を切り替えられます。</string>
+    <string name="info_news_weather" formatted="false">タイトルバーのアイコンの見た目の大きさ、位置、線の太さを統一しました。</string>
     <string name="info_news_viewer_zoom" formatted="false">種類を天体数順に、並べ替え項目を名前順に表示。天体の操作も改善。</string>
     <string name="info_news_settings" formatted="false">基準ラベルの表示を安定化。天頂の反対側、−90°に天底を表示。</string>
     <string name="info_news_catalog" formatted="false">衛星の運動、選択した天体の接近、天気データの読み込み状態を改善。</string>

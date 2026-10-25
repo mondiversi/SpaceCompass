@@ -1,8 +1,8 @@
 <resources>
     <string name="info_news_title">Ostatnie nowości · %1$s</string>
-    <string name="info_news_star_sky" formatted="false">Opcje eksportu w kolejności: Obraz, Czytelna tabela i Arkusz kalkulacyjny.</string>
-    <string name="info_news_texture_downloads" formatted="false">Pliki CSV są wyraźnie oznaczone jako Arkusz kalkulacyjny.</string>
-    <string name="info_news_weather" formatted="false">Spójny wybór plików dla zdjęć, panoram, tras dziennych i obserwatorium.</string>
+    <string name="info_news_star_sky" formatted="false">Dotknij nazwy obiektu, aby otworzyć „Obserwatorium”.</string>
+    <string name="info_news_texture_downloads" formatted="false">Przełączaj się między widokami „Obserwatorium” i „Tor dzienny” przyciskiem obok „Eksportuj”.</string>
+    <string name="info_news_weather" formatted="false">Ikony pasków tytułu mają spójne widoczne wymiary, wyrównanie i grubość linii.</string>
     <string name="info_news_viewer_zoom" formatted="false">Typy według liczby obiektów, alfabetyczne opcje sortowania i czytelniejsze sterowanie obiektami.</string>
     <string name="info_news_settings" formatted="false">Stabilniejsze etykiety odniesienia i Nadir przy −90°, naprzeciw Zenitu.</string>
     <string name="info_news_catalog" formatted="false">Poprawiony ruch księżyców, zbliżenia wybranych obiektów i wyraźny stan ładowania pogody.</string>

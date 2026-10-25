@@ -325,21 +325,17 @@ internal fun SpaceCompassSunFinderContent(
     val currentWeather = weather.snapshot?.takeIf { sun != null && spaceCompassSunWeatherSnapshotUsable(it, timeMs) }
     val sceneWeather = currentWeather.takeIf { showWeather }
     // Data producers stay composed while a child page is visible: returning reuses their caches.
-    if (showViewer && hasActiveBody) {
-        val location = readings.location
-        val height = location?.takeIf { it.hasAltitude() && it.altitude.isFinite() && it.altitude in -500.0..20_000.0 }?.altitude ?: 0.0
-        SpaceCompassCelestialViewerScreen(body, timeMs, location?.latitude, location?.longitude, height, remote,
-            primaryText, secondaryText, backgroundColor) { showViewer = false }
-        return
-    }
-    if (dailyPathUiState.menuPath != null) {
-        val displayedBody = dailyPathUiState.menuPath!!.body
-        val displayed = selectedOverlays[displayedBody]
-        SideEffect { dailyPathUiState.refreshMenu(displayed?.path,
-            spaceCompassCurrentPathPoint(displayedBody, timeMs, displayed?.observation?.position)) }
-        SpaceCompassSunDailyPathPage(dailyPathUiState, primaryText, secondaryText, backgroundColor, nowMs = timeMs,
-            location = fix?.let { SpaceCompassExportLocation(it.latitude,it.longitude,altitude,
-                it.accuracy.toDouble().takeIf { _ -> it.hasAccuracy() }) })
+    if ((showViewer && hasActiveBody) || dailyPathUiState.menuPath != null) {
+        val displayedBody = dailyPathUiState.menuPath?.body ?: body
+        SpaceCompassCelestialViewerScreen(displayedBody, timeMs, fix?.latitude, fix?.longitude,
+            altitude ?: 0.0, remote, primaryText, secondaryText, backgroundColor,
+            sharedPathState = dailyPathUiState, overlay = selectedOverlays[displayedBody],
+            startWithPath = !showViewer,
+            exportLocation = fix?.let { SpaceCompassExportLocation(it.latitude, it.longitude, altitude,
+                it.accuracy.toDouble().takeIf { _ -> it.hasAccuracy() }) }) {
+            showViewer = false
+            dailyPathUiState.closeMenu()
+        }
         return
     }
     // Catalogue calculations are not visibility: unchecked live positions must not enter the scene.
@@ -507,12 +503,16 @@ internal fun SpaceCompassSunFinderContent(
                 weatherText,
                 currentWeather != null, primaryText, secondaryText, backgroundColor, Modifier.fillMaxWidth().weight(1f, fill = false), compact,
                 bodyName = bodyName, orientationRows = orientationRows,
+                onBodyNameClick = if (hasActiveBody) ({ showViewer = true }) else null,
                 // Keep the object identity at its full above-horizon palette color.
                 bodyNameColor = if (hasActiveBody) spaceCompassCelestialPathTint(body) else primaryText,
                 onRemoveBody = if (hasActiveBody && onSelectionChange != null) ({ removeTargetName = body.name }) else null,
                 bodyNavigation = navigation, locationInfoRows = locationInfoRows, onInfo = { showEnvironment = true }, bodyActions = {
                     if (hasActiveBody) SpaceCompassCelestialSkyActions(body, { showViewer = true },
-                        dailyPath?.let { path -> { dailyPathUiState.openMenu(path, spaceCompassCurrentPathPoint(body, timeMs, target)) } }, pathActionTitle, dailyPath != null,
+                        dailyPath?.let { path -> {
+                            showViewer = false
+                            dailyPathUiState.openMenu(path, spaceCompassCurrentPathPoint(body, timeMs, target))
+                        } }, pathActionTitle, dailyPath != null,
                         targetSpacing = SpaceCompassObjectDetailsActionTargetSpacing, plainTint = primaryText)
                 })
         }
