@@ -1,8 +1,8 @@
 <resources>
     <string name="info_news_title">Mambo mapya · %1$s</string>
-    <string name="info_news_star_sky" formatted="false">Gusa jina la kitu ili kufungua «Kituo cha uchunguzi wa anga».</string>
-    <string name="info_news_texture_downloads" formatted="false">Badilisha kati ya «Kituo cha uchunguzi wa anga» na «Njia ya kila siku» kwa kitufe kilicho karibu na «Hamisha».</string>
-    <string name="info_news_weather" formatted="false">Aikoni za pau za vichwa sasa zina ukubwa unaoonekana, mpangilio na unene wa mistari unaolingana.</string>
+    <string name="info_news_star_sky" formatted="false">Vitu vilivyochaguliwa vinaonekana kwanza kwa mpangilio uliochaguliwa na vinabaki kuonekana licha ya vichujio na utafutaji.</string>
+    <string name="info_news_texture_downloads" formatted="false">Gusa jina la kitu ili kufungua orodha. Kitufe cha kuondoa kimeondolewa kwenye kadi.</string>
+    <string name="info_news_weather" formatted="false">Fungua Kituo cha uchunguzi wa anga na Njia ya kila siku kutoka kwenye kadi. Kwenye pau za vichwa kunabaki Hamisha pekee.</string>
     <string name="info_news_viewer_zoom" formatted="false">Aina kwa idadi ya vitu, chaguo za kupanga kwa alfabeti na vidhibiti vilivyo wazi zaidi.</string>
     <string name="info_news_settings" formatted="false">Lebo za marejeo zimetulia zaidi na Nadir katika −90°, mkabala na Zenithi.</string>
     <string name="info_news_catalog" formatted="false">Mwendo wa miezi, mikaribiano ya vitu vilivyochaguliwa na hali ya upakiaji wa hali ya hewa vimeboreshwa.</string>

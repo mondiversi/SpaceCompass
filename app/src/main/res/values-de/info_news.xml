@@ -1,8 +1,8 @@
 <resources>
     <string name="info_news_title">Neuigkeiten · %1$s</string>
-    <string name="info_news_star_sky" formatted="false">Tippe auf den Objektnamen, um „Sternwarte“ zu öffnen.</string>
-    <string name="info_news_texture_downloads" formatted="false">Wechsle über die Schaltfläche neben „Exportieren“ zwischen „Sternwarte“ und „Tagesbahn“.</string>
-    <string name="info_news_weather" formatted="false">Die Symbole der Titelleisten haben einheitliche sichtbare Größen, Ausrichtung und Strichstärke.</string>
+    <string name="info_news_star_sky" formatted="false">Ausgewählte Objekte stehen zuerst, folgen der gewählten Sortierung und bleiben trotz Filtern und Suche sichtbar.</string>
+    <string name="info_news_texture_downloads" formatted="false">Tippe auf den Objektnamen, um die Objektliste zu öffnen. Die Entfernen-Schaltfläche wurde aus der Karte entfernt.</string>
+    <string name="info_news_weather" formatted="false">Öffne Sternwarte und Tagesbahn über die Karte. Ihre Titelleisten enthalten nur noch Exportieren.</string>
     <string name="info_news_viewer_zoom" formatted="false">Typen nach Objektanzahl, alphabetische Sortieroptionen und übersichtlichere Objektsteuerung.</string>
     <string name="info_news_settings" formatted="false">Stabilere Referenzbeschriftungen und Nadir bei −90°, gegenüber dem Zenit.</string>
     <string name="info_news_catalog" formatted="false">Verbesserte Mondbewegung, Annäherungen ausgewählter Objekte und eindeutiger Wetter-Ladestatus.</string>

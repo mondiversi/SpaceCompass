@@ -1,8 +1,8 @@
 <resources>
     <string name="info_news_title">تازه‌ترین تغییرات · %1$s</string>
-    <string name="info_news_star_sky" formatted="false">برای باز کردن «رصدخانه» روی نام جرم بزنید.</string>
-    <string name="info_news_texture_downloads" formatted="false">با دکمهٔ کنار «خروجی گرفتن» بین «رصدخانه» و «مسیر روزانه» جابه‌جا شوید.</string>
-    <string name="info_news_weather" formatted="false">اندازهٔ نمایان، تراز و ضخامت خطوط نمادهای نوار عنوان یکسان شده‌اند.</string>
+    <string name="info_news_star_sky" formatted="false">اجرام انتخاب‌شده ابتدا و با ترتیب انتخابی نمایش داده می‌شوند و با فیلتر یا جستجو نیز قابل مشاهده می‌مانند.</string>
+    <string name="info_news_texture_downloads" formatted="false">برای باز کردن فهرست، روی نام جرم بزنید. دکمه حذف از کارت برداشته شد.</string>
+    <string name="info_news_weather" formatted="false">«رصدخانه» و «مسیر روزانه» را از کارت باز کنید. در نوار عنوان آن‌ها فقط «خروجی گرفتن» باقی می‌ماند.</string>
     <string name="info_news_viewer_zoom" formatted="false">نوع‌ها بر پایهٔ تعداد اجرام، گزینه‌های مرتب‌سازی الفبایی و کنترل‌های روشن‌تر.</string>
     <string name="info_news_settings" formatted="false">برچسب‌های مرجع پایدارتر و سمت‌القدم در −90°، مقابل سمت‌الرأس.</string>
     <string name="info_news_catalog" formatted="false">بهبود حرکت قمرها، نزدیکی اجرام انتخاب‌شده و وضعیت بارگذاری هواشناسی.</string>

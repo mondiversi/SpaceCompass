@@ -97,7 +97,7 @@ internal fun rememberSpaceCompassSunPathLabels(path: SpaceCompassSunDailyPath): 
 internal fun SpaceCompassSunDailyPathPage(
     state: SpaceCompassSunDailyPathUiState, primaryText: Color, secondaryText: Color, backgroundColor: Color,
     nowMs: Long = System.currentTimeMillis(), location: SpaceCompassExportLocation? = null,
-    onBack: () -> Unit = { state.closeMenu() }, pageAction: @Composable (Boolean) -> Unit = {}
+    onBack: () -> Unit = { state.closeMenu() }
 ) {
     val path = state.menuPath ?: return
     val labels = rememberSpaceCompassSunPathLabels(path)
@@ -156,7 +156,6 @@ internal fun SpaceCompassSunDailyPathPage(
                 titleModifier = Modifier.testTag("sun-path-title"), titleColor = primaryText) {
                 SpaceCompassTitleActionButton(stringResource(R.string.panorama_export),export.open,
                     Modifier.testTag("daily-path-export"),enabled=!export.saving) { SpaceCompassPanoramaExportIcon(2.dp) }
-                pageAction(!export.saving)
             }
             Row(Modifier.fillMaxWidth().padding(horizontal = 18.dp, vertical = 8.dp).zIndex(1f),
                 verticalAlignment = Alignment.CenterVertically,

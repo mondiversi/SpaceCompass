@@ -49,7 +49,7 @@ android {
         applicationId = "me.mondiversi.spacecompass"
         minSdk = 26
         targetSdk = 37
-        versionCode = 46
+        versionCode = 47
         versionName = "1.4.9"
         buildConfigField("String", "DISPLAY_VERSION", "\"1.4.9\"")
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"

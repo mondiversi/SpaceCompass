@@ -2,11 +2,11 @@
 
 ## 1.4.9 — 2026-10-25
 
-- Open the Observatory from the object name as well as its existing island button. Keep the Observatory and Daily path island shortcuts available without an underline on the name.
-- Add one standard title-bar action after Export to move between the Observatory and the same object's Daily path. Return directly to the originating screen; retain model zoom/rotation and selected points across page changes.
-- Match both destination glyphs to Export's painted bounds, alignment and shared 2 dp stroke, while preserving the standard title-button hit targets and margins.
-- Reuse the model-mode capsule through a shared accessible two-icon control. Keep that image/model control's existing appearance separate from the single object-page shortcut.
-- Refresh the three in-app news items in all twenty languages. Publish 1.4.9/code 46 with the existing distribution certificate, a signed update index and an optional reference-information archive. Graphics pack 1.5 remains unchanged.
+- Put checked objects first in the catalogue while retaining the chosen sort within checked and unchecked groups. Checked objects remain visible despite type/horizon filters or name searches; unchecking an excluded object hides it again. Preserve filter, sorting and selection preferences, hidden-object availability and Select all behavior.
+- Open the object catalogue by tapping the main island's object name. Remove the island's X/removal action and its confirmation flow, giving more room to the name. Keep the existing Observatory and Daily path island buttons.
+- Remove reciprocal destination actions from the Observatory and Daily path title bars; retain Export and direct Back navigation to the entry screen. Catalogue inspection does not add an unchecked body to the scene.
+- Preserve the shared current-view/rotation capsule, model controls, celestial calculations, point selections, exports, privacy choices and graphics pack 1.5.
+- Update the three in-app news items in all twenty languages and replace the files of the existing v1.4.9 release. Keep the visible version 1.4.9; increase the internal Android code from 46 to 47 so installations of the original 1.4.9 can detect this refresh. Rebuild the signed APK/index and optional information archive without creating another release.
 
 ## 1.4.8 — 2026-10-24
 

@@ -38,12 +38,8 @@ import androidx.compose.ui.unit.LayoutDirection
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 
-/** Different slot overlaps preserve an equal gap between the visible glyph edges. */
-internal val SpaceCompassObjectActionTargetSpacing = spaceCompassObjectHeaderTargetSpacing(
-    SpaceCompassObjectHeaderGlyph.REMOVE, SpaceCompassObjectHeaderGlyph.OBSERVATORY)
-
-// Keep removal compact beside the two object actions.
-internal val SpaceCompassObjectNavigationRemoveGap = 12.dp
+// Measure from the next chevron's visible edge to the first action circle.
+internal val SpaceCompassObjectNavigationActionGap = 12.dp
 
 internal val SpaceCompassObjectDetailsActionTargetSpacing = spaceCompassObjectHeaderTargetSpacing(
     SpaceCompassObjectHeaderGlyph.OBSERVATORY, SpaceCompassObjectHeaderGlyph.DAILY_PATH) + 3.dp
@@ -56,7 +52,7 @@ internal data class SpaceCompassCelestialBodyNavigation(val previousLabel: Strin
 @Composable
 internal fun SpaceCompassCelestialBodyDataIsland(bodyName: String?, primaryText: Color, background: Color,
     compact: Boolean, navigation: SpaceCompassCelestialBodyNavigation?,
-    actions: @Composable () -> Unit = {}, onRemove: (() -> Unit)? = null,
+    actions: @Composable () -> Unit = {},
     bodyNameColor: Color = primaryText, onBodyNameClick: (() -> Unit)? = null,
     content: @Composable ColumnScope.() -> Unit) {
     val shape = RoundedCornerShape(20.dp)
@@ -67,13 +63,12 @@ internal fun SpaceCompassCelestialBodyDataIsland(bodyName: String?, primaryText:
         if (bodyName != null || navigation != null) {
             // Compact only the title bar; retain the normal insets around the data below it.
             // The next chevron ends 10 dp before its slot edge. Include the first action's
-            // blank inset so the navigation/removal gap is measured between visible glyphs.
+            // blank inset so the navigation/action gap is measured between visible glyphs.
             // Keep the trailing actions anchored at the island's content edge.
             Row(Modifier.fillMaxWidth().testTag("celestial-body-header")
                 .padding(vertical = 1.dp), verticalAlignment = Alignment.CenterVertically,
                 horizontalArrangement = Arrangement.spacedBy(if (navigation == null) 0.dp
-                    else SpaceCompassObjectNavigationRemoveGap - 10.dp -
-                        (48.dp - SpaceCompassObjectHeaderGlyph.REMOVE.width) / 2)) {
+                    else SpaceCompassObjectNavigationActionGap - 10.dp - (48.dp - 30.dp) / 2)) {
                 // Fit the name between the unfilled glyphs, retaining 48 dp navigation targets.
                 Box(Modifier.weight(1f).heightIn(min = 48.dp)) {
                     var nameLayout by remember(bodyName) { mutableStateOf<TextLayoutResult?>(null) }
@@ -84,7 +79,7 @@ internal fun SpaceCompassCelestialBodyDataIsland(bodyName: String?, primaryText:
                             end = if (navigation == null) 0.dp else SpaceCompassObjectHeaderGlyph.CHEVRON.width + 14.dp)
                         .then(if (onBodyNameClick != null) Modifier.heightIn(min = 48.dp)
                             .clickable(interactionSource = nameInteraction, indication = null,
-                                role = Role.Button, onClickLabel = stringResource(R.string.celestial_details_title),
+                                role = Role.Button, onClickLabel = stringResource(R.string.celestial_select),
                                 onClick = onBodyNameClick).wrapContentHeight() else Modifier)
                         .testTag("celestial-body-island-title").semantics { heading() }
                         .drawWithContent {
@@ -116,10 +111,7 @@ internal fun SpaceCompassCelestialBodyDataIsland(bodyName: String?, primaryText:
                     layout((controls.width - trailingInset.roundToPx()).coerceAtLeast(0), controls.height) {
                         controls.placeRelative(0, 0)
                     }
-                }, verticalAlignment = Alignment.CenterVertically,
-                    horizontalArrangement = Arrangement.spacedBy(SpaceCompassObjectActionTargetSpacing)) {
-                    if (onRemove != null && bodyName != null)
-                        SpaceCompassRemoveObjectButton(bodyName, onRemove, primaryText)
+                }, verticalAlignment = Alignment.CenterVertically) {
                     actions()
                 }
             }

@@ -16,11 +16,11 @@ import androidx.compose.ui.platform.testTag
 import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
 
-/** Smaller navigation/remove glyphs leave more room for the name. */
+/** Smaller navigation glyphs leave more room for the name. */
 internal enum class SpaceCompassObjectHeaderGlyph {
-    CHEVRON, REMOVE, OBSERVATORY, DAILY_PATH;
+    CHEVRON, OBSERVATORY, DAILY_PATH;
 
-    val visualScale: Float get() = if (this == CHEVRON || this == REMOVE) .75f else 1f
+    val visualScale: Float get() = if (this == CHEVRON) .75f else 1f
     val width: Dp get() = (if (this == CHEVRON) 9.dp else 16.dp) * visualScale
 }
 
@@ -32,7 +32,7 @@ internal fun spaceCompassObjectHeaderTargetSpacing(first: SpaceCompassObjectHead
     second: SpaceCompassObjectHeaderGlyph): Dp =
     SpaceCompassObjectHeaderGlyphGap - 48.dp + (first.width + second.width) / 2
 
-/** Header-only geometry: navigation/remove scale to 75%; other actions retain their 16 dp size.
+/** Header-only geometry: navigation scales to 75%; other actions retain their 16 dp size.
  * Floating sky controls retain their original drawings and dimensions. */
 @Composable
 internal fun SpaceCompassObjectHeaderIcon(glyph: SpaceCompassObjectHeaderGlyph,
@@ -54,10 +54,6 @@ internal fun SpaceCompassObjectHeaderIcon(glyph: SpaceCompassObjectHeaderGlyph,
                     moveTo(left, top); lineTo(right, size.height / 2); lineTo(left, bottom)
                 }
                 drawPath(chevron, color, style = Stroke(stroke, cap = StrokeCap.Round, join = StrokeJoin.Round))
-            }
-            SpaceCompassObjectHeaderGlyph.REMOVE -> {
-                drawLine(color, Offset(left, top), Offset(right, bottom), stroke, StrokeCap.Round)
-                drawLine(color, Offset(right, top), Offset(left, bottom), stroke, StrokeCap.Round)
             }
             SpaceCompassObjectHeaderGlyph.OBSERVATORY -> {
                 // Preserve the tube and tripod proportions within their actual occupied bounds.

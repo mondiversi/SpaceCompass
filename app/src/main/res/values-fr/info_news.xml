@@ -1,8 +1,8 @@
 <resources>
     <string name="info_news_title">Dernières nouveautés · %1$s</string>
-    <string name="info_news_star_sky" formatted="false">Touchez le nom de l’objet pour ouvrir « Observatoire ».</string>
-    <string name="info_news_texture_downloads" formatted="false">Passez de « Observatoire » à « Trajectoire quotidienne » avec le bouton à côté de « Exporter ».</string>
-    <string name="info_news_weather" formatted="false">Les icônes des barres de titre ont une taille visible, un alignement et une épaisseur uniformes.</string>
+    <string name="info_news_star_sky" formatted="false">Les objets sélectionnés apparaissent en premier, suivent le tri choisi et restent visibles malgré les filtres et la recherche.</string>
+    <string name="info_news_texture_downloads" formatted="false">Touchez le nom de l’objet pour ouvrir la liste. Le bouton de retrait a été supprimé du panneau.</string>
+    <string name="info_news_weather" formatted="false">Ouvrez Observatoire et Trajectoire quotidienne depuis le panneau. Leurs barres de titre ne conservent que Exporter.</string>
     <string name="info_news_viewer_zoom" formatted="false">Types classés par nombre d’objets, options de tri alphabétiques et commandes plus claires.</string>
     <string name="info_news_settings" formatted="false">Libellés des repères plus stables et Nadir à −90°, opposé au Zénith.</string>
     <string name="info_news_catalog" formatted="false">Mouvement des lunes, rapprochements des objets sélectionnés et état de chargement météo améliorés.</string>

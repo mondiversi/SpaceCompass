@@ -154,11 +154,12 @@ internal fun SpaceCompassCelestialCatalogPage(timeMs: Long, remote: SpaceCompass
     // Newly revealed distant objects enter the correct sort position in the same frame.
     val readySolarDistances = spaceCompassCatalogDistancesWithReferences(solarDistances, availableBodies)
     val readyDistances = spaceCompassCatalogDistancesWithReferences(distances, availableBodies)
-    val visibleBodies = spaceCompassSortCatalog(
-        spaceCompassSearchCatalog(
-            spaceCompassFilterCatalog(types, visibility, observations.mapValues { it.value?.position?.elevationDegrees }, availableBodies),
-            localizedNames, query),
-        sort, localizedNames, readySolarDistances, locale, earthDistances)
+    val matchingBodies = spaceCompassSearchCatalog(
+        spaceCompassFilterCatalog(types, visibility, observations.mapValues { it.value?.position?.elevationDegrees }, availableBodies),
+        localizedNames, query)
+    val visibleBodies = spaceCompassCatalogDisplayOrder(
+        spaceCompassSortCatalog(availableBodies, sort, localizedNames, readySolarDistances, locale, earthDistances),
+        matchingBodies.toSet(), selectedBodies)
     LaunchedEffect(pendingHiddenReveal, visibleBodies) {
         if (pendingHiddenReveal) {
             val index = visibleBodies.indexOf(SpaceCompassCelestialBody.LV_426)

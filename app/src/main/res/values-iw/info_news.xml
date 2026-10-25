@@ -1,8 +1,8 @@
 <resources>
     <string name="info_news_title">החידושים האחרונים · %1$s</string>
-    <string name="info_news_star_sky" formatted="false">יש להקיש על שם העצם כדי לפתוח את ״מצפה כוכבים״.</string>
-    <string name="info_news_texture_downloads" formatted="false">ניתן לעבור בין ״מצפה כוכבים״ ל״מסלול יומי״ באמצעות הכפתור שליד ״ייצוא״.</string>
-    <string name="info_news_weather" formatted="false">סמלי סרגלי הכותרת אחידים כעת במידות הנראות, ביישור ובעובי הקווים.</string>
+    <string name="info_news_star_sky" formatted="false">העצמים שנבחרו מופיעים ראשונים לפי המיון שנבחר, ונשארים גלויים גם בסינון ובחיפוש.</string>
+    <string name="info_news_texture_downloads" formatted="false">הקישו על שם העצם לפתיחת הרשימה. כפתור ההסרה הוסר מהכרטיס.</string>
+    <string name="info_news_weather" formatted="false">פתחו את «מצפה כוכבים» ואת «מסלול יומי» מהכרטיס. בשורות הכותרת נשאר רק «ייצוא».</string>
     <string name="info_news_viewer_zoom" formatted="false">סוגים לפי מספר עצמים, אפשרויות מיון אלפביתיות ובקרי עצמים ברורים יותר.</string>
     <string name="info_news_settings" formatted="false">תוויות ייחוס יציבות יותר ונדיר ב־−90°, מול הזניט.</string>
     <string name="info_news_catalog" formatted="false">שיפור תנועת ירחים, התקרבויות עצמים נבחרים ומצב טעינת מזג האוויר.</string>

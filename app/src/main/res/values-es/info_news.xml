@@ -1,8 +1,8 @@
 <resources>
     <string name="info_news_title">Últimas novedades · %1$s</string>
-    <string name="info_news_star_sky" formatted="false">Toca el nombre del objeto para abrir «Observatorio».</string>
-    <string name="info_news_texture_downloads" formatted="false">Pasa de «Observatorio» a «Trayectoria diaria» y viceversa con el botón junto a «Exportar».</string>
-    <string name="info_news_weather" formatted="false">Iconos de las barras de título con tamaño visible, alineación y grosor uniformes.</string>
+    <string name="info_news_star_sky" formatted="false">Los objetos seleccionados aparecen primero, mantienen el orden elegido y siguen visibles con filtros y búsquedas.</string>
+    <string name="info_news_texture_downloads" formatted="false">Toca el nombre del objeto para abrir la lista. Se ha quitado el botón de eliminación del panel.</string>
+    <string name="info_news_weather" formatted="false">Abre Observatorio y Trayectoria diaria desde el panel. Sus barras de título conservan solo Exportar.</string>
     <string name="info_news_viewer_zoom" formatted="false">Tipos ordenados por número de objetos, opciones de ordenación alfabéticas y controles más claros.</string>
     <string name="info_news_settings" formatted="false">Etiquetas de referencia más estables y Nadir a −90°, opuesto al Cenit.</string>
     <string name="info_news_catalog" formatted="false">Mejoras en el movimiento de las lunas, acercamientos entre objetos seleccionados y estado de carga del tiempo.</string>

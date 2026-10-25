@@ -1,8 +1,8 @@
 <resources>
     <string name="info_news_title">最近の変更 · %1$s</string>
-    <string name="info_news_star_sky" formatted="false">天体名をタップすると「天文台」を開けます。</string>
-    <string name="info_news_texture_downloads" formatted="false">「エクスポート」の隣のボタンで「天文台」と「一日の軌跡」を切り替えられます。</string>
-    <string name="info_news_weather" formatted="false">タイトルバーのアイコンの見た目の大きさ、位置、線の太さを統一しました。</string>
+    <string name="info_news_star_sky" formatted="false">選択した天体を先頭に表示し、指定した並び順を維持します。フィルターや検索で除外されても表示されます。</string>
+    <string name="info_news_texture_downloads" formatted="false">天体名をタップすると一覧が開きます。カードから削除ボタンを取り除きました。</string>
+    <string name="info_news_weather" formatted="false">カードから「天文台」と「一日の軌跡」を開けます。各タイトルバーには「エクスポート」だけが残ります。</string>
     <string name="info_news_viewer_zoom" formatted="false">種類を天体数順に、並べ替え項目を名前順に表示。天体の操作も改善。</string>
     <string name="info_news_settings" formatted="false">基準ラベルの表示を安定化。天頂の反対側、−90°に天底を表示。</string>
     <string name="info_news_catalog" formatted="false">衛星の運動、選択した天体の接近、天気データの読み込み状態を改善。</string>

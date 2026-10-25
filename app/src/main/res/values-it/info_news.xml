@@ -1,8 +1,8 @@
 <resources>
     <string name="info_news_title">Ultime novità · %1$s</string>
-    <string name="info_news_star_sky" formatted="false">Apri Osservatorio toccando il nome dell’oggetto.</string>
-    <string name="info_news_texture_downloads" formatted="false">Passa tra Osservatorio e Percorso giornaliero dal pulsante accanto a Esporta.</string>
-    <string name="info_news_weather" formatted="false">Icone delle barre uniformate per dimensioni visibili, allineamento e spessore.</string>
+    <string name="info_news_star_sky" formatted="false">Gli oggetti selezionati compaiono per primi, rispettano l’ordine scelto e restano visibili con filtri e ricerca.</string>
+    <string name="info_news_texture_downloads" formatted="false">Tocca il nome dell’oggetto per aprire l’elenco. Rimosso il pulsante di eliminazione dall’isola.</string>
+    <string name="info_news_weather" formatted="false">Apri Osservatorio e Percorso giornaliero dall’isola. Nelle loro barre in alto resta soltanto Esporta.</string>
     <string name="info_news_viewer_zoom" formatted="false">Tipi ordinati per numero di oggetti, opzioni di ordinamento alfabetiche e comandi dell’oggetto più chiari.</string>
     <string name="info_news_settings" formatted="false">Scritte dei riferimenti più stabili e Nadir a −90°, opposto allo Zenit.</string>
     <string name="info_news_catalog" formatted="false">Migliorati moto delle lune, avvicinamenti tra oggetti selezionati e stato di caricamento del meteo.</string>

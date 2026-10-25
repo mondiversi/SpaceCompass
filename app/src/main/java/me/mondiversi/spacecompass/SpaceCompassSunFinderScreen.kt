@@ -289,7 +289,7 @@ internal fun SpaceCompassSunFinderContent(
     LaunchedEffect(observerPlan) { dailyPathUiState.clearSelection() }
     var showEnvironment by rememberSaveable { mutableStateOf(false) }
     var showViewer by rememberSaveable { mutableStateOf(false) }
-    var removeTargetName by rememberSaveable { mutableStateOf<String?>(null) }
+    val catalogOpen = LocalSpaceCompassCatalogOpen.current
     val hasActiveBody = body in selectedBodies
     val bodyName = if (hasActiveBody) stringResource(body.nameResource) else "—"
     val fix = readings.location
@@ -485,16 +485,6 @@ internal fun SpaceCompassSunFinderContent(
         nextLabel = stringResource(selection.step(1).active!!.nameResource),
         onPrevious = { onBodyChange(selection.step(-1).active!!) },
         onNext = { onBodyChange(selection.step(1).active!!) }) else null
-    val removalTarget = removeTargetName?.let { name -> SpaceCompassCelestialBody.entries.firstOrNull { it.name == name } }
-    LaunchedEffect(removalTarget, selectedBodies) {
-        if (removeTargetName != null && removalTarget !in selectedBodies) removeTargetName = null
-    }
-    if (removalTarget != null && removalTarget in selectedBodies && onSelectionChange != null) {
-        SpaceCompassRemoveObjectDialog(removalTarget, onDismiss = { removeTargetName = null }, onConfirm = {
-            removeTargetName = null
-            onSelectionChange(selection.deselect(removalTarget))
-        })
-    }
     val pathActionTitle = stringResource(spaceCompassCelestialPathTitle(body))
     val details: @Composable (Modifier, Boolean, Boolean) -> Unit = { modifier, compact, landscape ->
         Column(modifier.testTag("celestial-details-column"), horizontalAlignment = Alignment.CenterHorizontally,
@@ -503,10 +493,9 @@ internal fun SpaceCompassSunFinderContent(
                 weatherText,
                 currentWeather != null, primaryText, secondaryText, backgroundColor, Modifier.fillMaxWidth().weight(1f, fill = false), compact,
                 bodyName = bodyName, orientationRows = orientationRows,
-                onBodyNameClick = if (hasActiveBody) ({ showViewer = true }) else null,
+                onBodyNameClick = if (hasActiveBody) ({ catalogOpen?.value = true }) else null,
                 // Keep the object identity at its full above-horizon palette color.
                 bodyNameColor = if (hasActiveBody) spaceCompassCelestialPathTint(body) else primaryText,
-                onRemoveBody = if (hasActiveBody && onSelectionChange != null) ({ removeTargetName = body.name }) else null,
                 bodyNavigation = navigation, locationInfoRows = locationInfoRows, onInfo = { showEnvironment = true }, bodyActions = {
                     if (hasActiveBody) SpaceCompassCelestialSkyActions(body, { showViewer = true },
                         dailyPath?.let { path -> {

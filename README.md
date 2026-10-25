@@ -50,7 +50,7 @@ See [distribution and signing](docs/GITHUB_RELEASES.md) and
 - Custom scenarios with independently enabled position, altitude, time zone, date and time;
   optional −3600× to +3600× time speed with a central 0× pause and restart/active-only/always resumption. The current-scenario
   summary shows saved overrides and an approximate place, with an active-section badge.
-- Open the Observatory from the object name or island action, then move to its Daily path using the compact toolbar shortcut beside Export.
+- Tap the object name to open the catalogue. Checked objects remain first in the chosen order and visible despite filters/search. The island keeps Observatory and Daily path shortcuts; both page headers retain only Export.
 - Observatory with textured interactive models, lunar phases, classified reference tables,
   qualified core temperatures, spatial context and credits. Export data and current/rotation images.
 - General settings combine light/dark themes, adjustable sky fluidity, event controls and original ambient music synthesized continuously offline. Balanced fluidity is the default; previously saved levels are retained.
@@ -61,7 +61,7 @@ See [distribution and signing](docs/GITHUB_RELEASES.md) and
 - Translucent main islands with paths and objects drawn behind them, a reticle centred in the free sky area and a 50/50 landscape split.
 - Titled photo/panorama previews with opaque theme-matched toolbars and top-aligned controls, object-colour legends and larger wrapping photo metadata on a separate opaque black band.
 - White reticle, existing-outline object focus/selection, a lighter daytime blue and stable bottom-right landscape capture. Collapsed landscape panels use a floating central title bar.
-- Stable ground, orbits and star background when returning from background; optically centred object arrows and a clear screensaver return hint. Focused callouts cover celestial icons without jumping; object names and capture legends use the full identity color. Remove a checked object directly from its main card after confirmation.
+- Stable ground, orbits and star background when returning from background; optically centred object arrows and a clear screensaver return hint. Focused callouts cover celestial icons without jumping; object names and capture legends use the full identity color.
 - Compact T+/T− hour/minute offsets shared by views and exports; orbit points behind translucent title/information overlays remain visible without being selectable.
 - Capture labels can show only key events and selected points across all objects; this is the default for fresh settings. Existing saved label choices remain intact.
 - Enabled Earth-reference names remain visible through reticle crossings and all capture-label policies.
@@ -73,7 +73,7 @@ See [distribution and signing](docs/GITHUB_RELEASES.md) and
 - Signed startup/manual GitHub updates with package, certificate, size and checksum verification.
 
 The application ID is `me.mondiversi.spacecompass`. The current stable version is
-**1.4.9**, with Android/update identity `1.4.9` and version code **46**.
+**1.4.9**, with Android/update identity `1.4.9` and version code **47**.
 This preserves the three-part update protocol used by existing preview installations.
 The app stores its preferences and caches privately.
 
