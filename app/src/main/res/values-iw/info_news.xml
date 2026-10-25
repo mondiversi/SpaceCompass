@@ -1,8 +1,8 @@
 <resources>
     <string name="info_news_title">החידושים האחרונים · %1$s</string>
-    <string name="info_news_star_sky" formatted="false">העצמים שנבחרו מופיעים ראשונים לפי המיון שנבחר, ונשארים גלויים גם בסינון ובחיפוש.</string>
-    <string name="info_news_texture_downloads" formatted="false">הקישו על שם העצם לפתיחת הרשימה. כפתור ההסרה הוסר מהכרטיס.</string>
-    <string name="info_news_weather" formatted="false">פתחו את «מצפה כוכבים» ואת «מסלול יומי» מהכרטיס. בשורות הכותרת נשאר רק «ייצוא».</string>
+    <string name="info_news_star_sky" formatted="false">שמות עצמים קריאים יותר, עם נקודה בעלת מסגרת בצבע המסלול ויותר מרווח לצד החצים.</string>
+    <string name="info_news_texture_downloads" formatted="false">מונים גדולים יותר לעצמים, לנקודות ולתרחישים, עם רקע בצבע אחיד וספרות המותאמות לערכת הנושא.</string>
+    <string name="info_news_weather" formatted="false">יותר מקום ב־מסלול יומי: לחצני תזכורת קומפקטיים וסמלי פעמון בקו דק ואחיד.</string>
     <string name="info_news_viewer_zoom" formatted="false">סוגים לפי מספר עצמים, אפשרויות מיון אלפביתיות ובקרי עצמים ברורים יותר.</string>
     <string name="info_news_settings" formatted="false">תוויות ייחוס יציבות יותר ונדיר ב־−90°, מול הזניט.</string>
     <string name="info_news_catalog" formatted="false">שיפור תנועת ירחים, התקרבויות עצמים נבחרים ומצב טעינת מזג האוויר.</string>

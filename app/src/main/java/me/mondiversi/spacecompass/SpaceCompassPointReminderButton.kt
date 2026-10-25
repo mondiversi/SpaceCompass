@@ -46,6 +46,9 @@ internal fun rememberSpaceCompassPointReminderNow(active: Boolean = true): Long 
     }.value
 }
 
+// Reserve only the glyph and 6 dp on either side in tables; floating reminders keep their own size.
+internal val SpaceCompassTableReminderWidth = 32.dp
+
 @Composable
 internal fun SpaceCompassPointReminderButton(body: SpaceCompassCelestialBody, point: SpaceCompassSunPathPoint,
     viewedNowMs: Long, realNowMs: Long, isCurrent: Boolean, pointName: String,
@@ -75,11 +78,13 @@ internal fun SpaceCompassPointReminderButton(body: SpaceCompassCelestialBody, po
                 iconStrokeWidth = SpaceCompassFloatingIconStrokeWidth)
         }
     } else {
-        // Table reminders keep their original uniform stroke and transparent touch targets.
+        // Compact only the table slot width; retain the uniform glyph, 48 dp height and standard touch expansion.
         IconButton(onClick = onClick, enabled = request != null,
-            modifier = buttonModifier.size(48.dp).semantics { contentDescription = description }) {
+            modifier = buttonModifier.size(width = SpaceCompassTableReminderWidth, height = 48.dp)
+                .semantics { contentDescription = description }) {
             Box(Modifier.fillMaxSize(), contentAlignment = Alignment.Center) {
-                SpaceCompassPointReminderGlyph(tint, request != null, Modifier.size(20.dp))
+                SpaceCompassPointReminderGlyph(tint, request != null, Modifier.size(20.dp),
+                    iconStrokeWidth = 1.4.dp)
             }
         }
     }

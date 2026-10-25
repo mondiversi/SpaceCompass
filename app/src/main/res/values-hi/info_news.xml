@@ -1,8 +1,8 @@
 <resources>
     <string name="info_news_title">हाल के बदलाव · %1$s</string>
-    <string name="info_news_star_sky" formatted="false">चुने हुए पिंड पहले दिखते हैं, चुने गए क्रम में रहते हैं और फ़िल्टर व खोज के बावजूद दिखाई देते हैं।</string>
-    <string name="info_news_texture_downloads" formatted="false">सूची खोलने के लिए पिंड के नाम पर टैप करें। कार्ड से हटाने वाला बटन हटा दिया गया है।</string>
-    <string name="info_news_weather" formatted="false">कार्ड से वेधशाला और दैनिक पथ खोलें। इनके शीर्षक बार में अब केवल निर्यात करें है।</string>
+    <string name="info_news_star_sky" formatted="false">वस्तुओं के नाम अधिक स्पष्ट हैं: कक्षा के रंग का किनारे वाला बिंदु और तीरों के पास अधिक जगह।</string>
+    <string name="info_news_texture_downloads" formatted="false">वस्तुओं, बिंदुओं और परिदृश्यों के बड़े काउंटर, एकसमान रंग की पृष्ठभूमि और थीम के अनुरूप अंकों के साथ।</string>
+    <string name="info_news_weather" formatted="false">दैनिक पथ में अधिक जगह: छोटे रिमाइंडर बटन और एकसमान पतली रेखा वाले घंटी के चिह्न।</string>
     <string name="info_news_viewer_zoom" formatted="false">पिंडों की संख्या के अनुसार प्रकार, वर्णानुक्रम में क्रमबद्ध विकल्प और स्पष्ट नियंत्रण।</string>
     <string name="info_news_settings" formatted="false">अधिक स्थिर संदर्भ लेबल और शिरोबिंदु के विपरीत −90° पर अधोबिंदु।</string>
     <string name="info_news_catalog" formatted="false">उपग्रहों की गति, चुने हुए पिंडों के निकट आगमन और मौसम लोड होने की स्थिति में सुधार।</string>

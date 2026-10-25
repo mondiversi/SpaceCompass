@@ -1,8 +1,8 @@
 <resources>
     <string name="info_news_title">Latest news · %1$s</string>
-    <string name="info_news_star_sky" formatted="false">Selected objects appear first, keep the chosen order and remain visible through filters and searches.</string>
-    <string name="info_news_texture_downloads" formatted="false">Tap the object name to open the object list. The island no longer has a removal button.</string>
-    <string name="info_news_weather" formatted="false">Open Observatory and Daily path from the island. Their title bars now keep only Export.</string>
+    <string name="info_news_star_sky" formatted="false">Clearer object names with an outlined orbit-color dot and more space beside the arrows.</string>
+    <string name="info_news_texture_downloads" formatted="false">Larger solid-color counters for objects, points and scenarios, with digits that adapt to the theme.</string>
+    <string name="info_news_weather" formatted="false">More room in Daily path: compact reminder buttons and uniformly thin bells.</string>
     <string name="info_news_viewer_zoom" formatted="false">Types ordered by object count, alphabetical sorting options and clearer object controls.</string>
     <string name="info_news_settings" formatted="false">Steadier reference labels and Nadir at −90°, opposite Zenith.</string>
     <string name="info_news_catalog" formatted="false">Improved moon motion, selected-object close approaches and explicit weather-loading status.</string>

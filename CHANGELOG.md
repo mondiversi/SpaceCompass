@@ -1,5 +1,13 @@
 # Changelog
 
+## 1.4.10 — 2026-10-25
+
+- Make the main island's object name use the normal theme text color. A leading dot preserves the above-horizon trajectory identity color and adds a thin theme-text outline for contrast. Keep the dot visible when a long name is shortened on its trailing edge. Balance the visible caption-to-chevron gaps with a 12 dp minimum while preserving RTL and font scaling.
+- Use shared solid-color button counters for objects, selected points and scenario sections. Increase the original counter baseline by 10%, remove the perimeter border, and use day-blue/night-cyan fills with white/dark bold digits. Keep the scenario icon's separate orange attention accent.
+- Give Daily path data more room with 32 dp-wide reminder slots and a matching header allowance. Keep their existing height, action semantics and touch-target support. Use the same thin base bell stroke for every row; preserve bold/highlighted key-event rows.
+- Refresh three in-app news summaries in all twenty languages. Verify translation key and format-placeholder parity, builds, JVM tests, release lint, signing, source identity and downloads. Record physical-device checks separately from compiled Android test sources; no connected instrumentation is executed.
+- Publish 1.4.10/code 48 with the existing distribution key, signed update index and matching optional reference-information archive. Retain settings, selections, caches, astronomy and export behavior. Reuse immutable graphics pack 1.5; no new image package or complete texture ZIP is added.
+
 ## 1.4.9 — 2026-10-25
 
 - Put checked objects first in the catalogue while retaining the chosen sort within checked and unchecked groups. Checked objects remain visible despite type/horizon filters or name searches; unchecking an excluded object hides it again. Preserve filter, sorting and selection preferences, hidden-object availability and Select all behavior.

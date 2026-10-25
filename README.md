@@ -8,8 +8,8 @@ paths, inspect reference facts and view textured models. Space Compass is a stan
 
 ## Download and install
 
-Download **space-compass-1.4.9.apk** from the
-[Space Compass 1.4.9 release](https://github.com/mondiversi/SpaceCompass/releases/tag/v1.4.9).
+Download **space-compass-1.4.10.apk** from the
+[Space Compass 1.4.10 release](https://github.com/mondiversi/SpaceCompass/releases/tag/v1.4.10).
 Android 8.0 or newer is required. Open the APK and follow Android's installation
 prompts; allow installation for your browser or file manager if requested.
 
@@ -22,7 +22,7 @@ one manual APK update to acquire this feature.
 The release includes `SHA256SUMS.txt` and a signed update index. GitHub's source
 ZIP/TAR archives and Actions debug artifacts are separate from the signed APK.
 See [distribution and signing](docs/GITHUB_RELEASES.md) and
-[the 1.4.9 release audit](docs/RELEASE_1_4_9.md).
+[the 1.4.10 release audit](docs/RELEASE_1_4_10.md).
 
 ## Features
 
@@ -50,6 +50,7 @@ See [distribution and signing](docs/GITHUB_RELEASES.md) and
 - Custom scenarios with independently enabled position, altitude, time zone, date and time;
   optional −3600× to +3600× time speed with a central 0× pause and restart/active-only/always resumption. The current-scenario
   summary shows saved overrides and an approximate place, with an active-section badge.
+- Read object names in the theme text color, with an outlined orbit-color dot that remains visible beside shortened long names. Button counters use larger solid theme-accent badges with light/dark bold digits.
 - Tap the object name to open the catalogue. Checked objects remain first in the chosen order and visible despite filters/search. The island keeps Observatory and Daily path shortcuts; both page headers retain only Export.
 - Observatory with textured interactive models, lunar phases, classified reference tables,
   qualified core temperatures, spatial context and credits. Export data and current/rotation images.
@@ -65,7 +66,7 @@ See [distribution and signing](docs/GITHUB_RELEASES.md) and
 - Compact T+/T− hour/minute offsets shared by views and exports; orbit points behind translucent title/information overlays remain visible without being selectable.
 - Capture labels can show only key events and selected points across all objects; this is the default for fresh settings. Existing saved label choices remain intact.
 - Enabled Earth-reference names remain visible through reticle crossings and all capture-label policies.
-- Daily paths pair key-event names with compact symbols and bold their complete rows, including clock/T± and angles. Culmination uses + consistently in the live sky, captures and image exports.
+- Daily paths use compact, uniformly thin reminder bells with more room for data. Daily paths pair key-event names with compact symbols and bold their complete rows, including clock/T± and angles. Culmination uses + consistently in the live sky, captures and image exports.
 - Time-coincident close-approach key events in paths, captures and exports; these are angular alignments, not eclipse predictions.
 - Compact Observatory shortcuts in the catalogue, 15-minute screensaver delay and independently packed General cards in landscape.
 - Animated introduction, phone/tablet and portrait/landscape layouts.
@@ -73,7 +74,7 @@ See [distribution and signing](docs/GITHUB_RELEASES.md) and
 - Signed startup/manual GitHub updates with package, certificate, size and checksum verification.
 
 The application ID is `me.mondiversi.spacecompass`. The current stable version is
-**1.4.9**, with Android/update identity `1.4.9` and version code **47**.
+**1.4.10**, with Android/update identity `1.4.10` and version code **48**.
 This preserves the three-part update protocol used by existing preview installations.
 The app stores its preferences and caches privately.
 
@@ -135,7 +136,7 @@ Launcher/loading artwork and the fictional Easter-egg texture are original asset
 
 ## Data and graphics packages
 
-Release 1.4.9 includes a reference-information archive and 104 regular catalogue objects.
+Release 1.4.10 includes a reference-information archive and 104 regular catalogue objects.
 Celestial graphics are separate individual files in
 [graphics pack 1.5](https://github.com/mondiversi/SpaceCompass/releases/tag/celestial-textures-v1.5):
 56 full images and 56 independent 128 x 128 previews, all WebP quality 90/method 6.

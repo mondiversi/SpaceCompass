@@ -1,8 +1,8 @@
 <resources>
     <string name="info_news_title">آخر المستجدات · %1$s</string>
-    <string name="info_news_star_sky" formatted="false">تظهر العناصر المحددة أولاً وفق ترتيب الفرز المختار، وتبقى ظاهرة حتى مع التصفية والبحث.</string>
-    <string name="info_news_texture_downloads" formatted="false">اضغط على اسم العنصر لفتح القائمة. أُزيل زر الإزالة من البطاقة.</string>
-    <string name="info_news_weather" formatted="false">افتح «مرصد» و«المسار اليومي» من البطاقة. لم يبقَ في شريطي العنوان سوى «تصدير».</string>
+    <string name="info_news_star_sky" formatted="false">أسماء أجسام أوضح مع نقطة ذات إطار بلون المدار ومساحة أكبر بجوار الأسهم.</string>
+    <string name="info_news_texture_downloads" formatted="false">عدادات أكبر للأجسام والنقاط والسيناريوهات بخلفية موحدة اللون وأرقام تتكيف مع المظهر.</string>
+    <string name="info_news_weather" formatted="false">مساحة أكبر في «المسار اليومي»: أزرار تذكير مدمجة وأيقونات جرس بخط رفيع موحد.</string>
     <string name="info_news_viewer_zoom" formatted="false">الأنواع مرتبة حسب عدد الأجرام، وخيارات فرز أبجدية، وعناصر تحكم أوضح.</string>
     <string name="info_news_settings" formatted="false">تسميات مرجعية أكثر ثباتًا وسمت القدم عند −90°، مقابل سمت الرأس.</string>
     <string name="info_news_catalog" formatted="false">تحسين حركة الأقمار وتقاربات الأجرام المحددة وحالة تحميل الطقس.</string>

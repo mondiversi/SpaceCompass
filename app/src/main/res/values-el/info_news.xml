@@ -1,8 +1,8 @@
 <resources>
     <string name="info_news_title">Τελευταία νέα · %1$s</string>
-    <string name="info_news_star_sky" formatted="false">Τα επιλεγμένα αντικείμενα εμφανίζονται πρώτα, ακολουθούν την επιλεγμένη ταξινόμηση και παραμένουν ορατά παρά τα φίλτρα και την αναζήτηση.</string>
-    <string name="info_news_texture_downloads" formatted="false">Πατήστε το όνομα του αντικειμένου για να ανοίξετε τη λίστα. Το κουμπί αφαίρεσης καταργήθηκε από την κάρτα.</string>
-    <string name="info_news_weather" formatted="false">Ανοίξτε τις προβολές Αστεροσκοπείο και Ημερήσια τροχιά από την κάρτα. Στις γραμμές τίτλου παραμένει μόνο το Εξαγωγή.</string>
+    <string name="info_news_star_sky" formatted="false">Πιο ευανάγνωστα ονόματα αντικειμένων, με κουκκίδα με περίγραμμα στο χρώμα της τροχιάς και περισσότερο χώρο δίπλα στα βέλη.</string>
+    <string name="info_news_texture_downloads" formatted="false">Μεγαλύτεροι μετρητές αντικειμένων, σημείων και σεναρίων, με μονόχρωμο φόντο και ψηφία που ταιριάζουν στο θέμα.</string>
+    <string name="info_news_weather" formatted="false">Περισσότερος χώρος στο Ημερήσια τροχιά: συμπαγή κουμπιά υπενθύμισης και καμπανάκια με ομοιόμορφα λεπτή γραμμή.</string>
     <string name="info_news_viewer_zoom" formatted="false">Τύποι κατά πλήθος αντικειμένων, αλφαβητικές επιλογές ταξινόμησης και σαφέστερα χειριστήρια.</string>
     <string name="info_news_settings" formatted="false">Σταθερότερες ετικέτες αναφοράς και Ναδίρ στις −90°, απέναντι από το Ζενίθ.</string>
     <string name="info_news_catalog" formatted="false">Βελτιωμένη κίνηση δορυφόρων, προσεγγίσεις επιλεγμένων αντικειμένων και ένδειξη φόρτωσης καιρού.</string>

@@ -1,36 +1,31 @@
 package me.mondiversi.spacecompass
 
 import androidx.compose.foundation.background
+import androidx.compose.foundation.border
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.interaction.MutableInteractionSource
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.shape.RoundedCornerShape
+import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.material3.HorizontalDivider
 import androidx.compose.material3.LocalTextStyle
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
-import androidx.compose.runtime.getValue
-import androidx.compose.runtime.mutableStateOf
-import androidx.compose.runtime.setValue
 import androidx.compose.runtime.remember
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
-import androidx.compose.ui.draw.drawWithContent
 import androidx.compose.ui.draw.rotate
 import androidx.compose.ui.graphics.Color
-import androidx.compose.ui.graphics.Shadow
-import androidx.compose.ui.graphics.StrokeJoin
-import androidx.compose.ui.graphics.drawscope.Stroke
 import androidx.compose.ui.layout.layout
 import androidx.compose.ui.platform.LocalLayoutDirection
+import androidx.compose.ui.platform.LocalDensity
 import androidx.compose.ui.platform.testTag
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.semantics.Role
+import androidx.compose.ui.semantics.clearAndSetSemantics
 import androidx.compose.ui.semantics.heading
 import androidx.compose.ui.semantics.semantics
-import androidx.compose.ui.text.TextLayoutResult
-import androidx.compose.ui.text.drawText
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.text.style.TextOverflow
@@ -71,31 +66,34 @@ internal fun SpaceCompassCelestialBodyDataIsland(bodyName: String?, primaryText:
                     else SpaceCompassObjectNavigationActionGap - 10.dp - (48.dp - 30.dp) / 2)) {
                 // Fit the name between the unfilled glyphs, retaining 48 dp navigation targets.
                 Box(Modifier.weight(1f).heightIn(min = 48.dp)) {
-                    var nameLayout by remember(bodyName) { mutableStateOf<TextLayoutResult?>(null) }
                     val nameInteraction = remember { MutableInteractionSource() }
-                    Text(bodyName.orEmpty(), Modifier.fillMaxWidth().align(Alignment.Center)
-                        // Leave the same 4 dp between the text and either visible arrow edge.
-                        .padding(start = if (navigation == null) 0.dp else SpaceCompassObjectHeaderGlyph.CHEVRON.width + 4.dp,
-                            end = if (navigation == null) 0.dp else SpaceCompassObjectHeaderGlyph.CHEVRON.width + 14.dp)
+                    val nameFontSize = if (compact) 12.sp else 14.sp
+                    // Match visible letter height rather than the full line box, including font scaling.
+                    val markerSize = with(LocalDensity.current) { (nameFontSize * .75f).toDp() }
+                    Row(Modifier.fillMaxWidth().align(Alignment.Center)
+                        // Match the visible chevron-to-action gap on both sides of the caption.
+                        // The next glyph ends 10 dp before its slot edge, including in RTL.
+                        .padding(start = if (navigation == null) 0.dp else
+                            SpaceCompassObjectHeaderGlyph.CHEVRON.width + SpaceCompassObjectNavigationActionGap,
+                            end = if (navigation == null) 0.dp else
+                                SpaceCompassObjectHeaderGlyph.CHEVRON.width + 10.dp + SpaceCompassObjectNavigationActionGap)
                         .then(if (onBodyNameClick != null) Modifier.heightIn(min = 48.dp)
                             .clickable(interactionSource = nameInteraction, indication = null,
                                 role = Role.Button, onClickLabel = stringResource(R.string.celestial_select),
                                 onClick = onBodyNameClick).wrapContentHeight() else Modifier)
-                        .testTag("celestial-body-island-title").semantics { heading() }
-                        .drawWithContent {
-                            // Reuse the exact paragraph, including ellipsis and RTL. Paint the
-                            // centered stroke first, then the original colored fill over its inner
-                            // half: the visible contour grows only outward, from 0.6 to 1.2 dp.
-                            if (bodyNameColor != primaryText) nameLayout?.let { layout ->
-                                drawText(layout, color = Color(0xFF14191F), shadow = Shadow.None,
-                                    drawStyle = Stroke(width = 2.4.dp.toPx(), join = StrokeJoin.Round))
-                            }
-                            drawContent()
-                        },
-                        color = bodyNameColor, style = LocalTextStyle.current.copy(shadow = null),
-                        onTextLayout = { nameLayout = it },
-                        fontSize = if (compact) 12.sp else 14.sp, fontWeight = FontWeight.Medium,
-                        textAlign = TextAlign.Center, maxLines = 1, overflow = TextOverflow.Ellipsis)
+                        .testTag("celestial-body-island-title").semantics(mergeDescendants = true) { heading() },
+                        horizontalArrangement = Arrangement.spacedBy(6.dp, Alignment.CenterHorizontally),
+                        verticalAlignment = Alignment.CenterVertically) {
+                        if (!bodyName.isNullOrEmpty()) Box(Modifier.size(markerSize)
+                            .background(bodyNameColor, CircleShape).border(.75.dp, primaryText, CircleShape)
+                            .testTag("celestial-body-color-dot")
+                            .clearAndSetSemantics {})
+                        // The non-weighted dot is measured first; only the trailing name can truncate.
+                        Text(bodyName.orEmpty(), Modifier.weight(1f, fill = false).testTag("celestial-body-name"),
+                            color = primaryText, style = LocalTextStyle.current.copy(shadow = null),
+                            fontSize = nameFontSize, fontWeight = FontWeight.Medium,
+                            textAlign = TextAlign.Start, maxLines = 1, overflow = TextOverflow.Ellipsis)
+                    }
                     if (navigation != null) SpaceCompassCelestialBodyNavigationArrow(
                         navigation.previousLabel, navigation.onPrevious, primaryText, previous = true,
                         modifier = Modifier.size(48.dp).testTag("celestial-body-previous").align(Alignment.CenterStart))

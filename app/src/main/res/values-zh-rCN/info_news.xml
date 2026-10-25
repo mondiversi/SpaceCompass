@@ -1,8 +1,8 @@
 <resources>
     <string name="info_news_title">最新变化 · %1$s</string>
-    <string name="info_news_star_sky" formatted="false">已选天体置顶显示，保留所选排序方式，即使不符合筛选或搜索条件也仍然可见。</string>
-    <string name="info_news_texture_downloads" formatted="false">点击天体名称即可打开列表。已移除卡片中的移除按钮。</string>
-    <string name="info_news_weather" formatted="false">从卡片打开“天文台”和“每日轨迹”。这两个页面的标题栏现在只保留“导出”。</string>
+    <string name="info_news_star_sky" formatted="false">天体名称更清晰，带描边的圆点采用轨道颜色，箭头旁也留有更多间距。</string>
+    <string name="info_news_texture_downloads" formatted="false">天体、点位和场景计数器更大，采用纯色背景，数字颜色随主题调整。</string>
+    <string name="info_news_weather" formatted="false">每日轨迹显示空间更充裕：提醒按钮更紧凑，铃铛图标统一采用细线条。</string>
     <string name="info_news_viewer_zoom" formatted="false">类型按天体数量排序，排序选项按名称排列，天体控件更清晰。</string>
     <string name="info_news_settings" formatted="false">参考标签更加稳定，天底位于−90°，与天顶相对。</string>
     <string name="info_news_catalog" formatted="false">改进卫星运动、已选天体的接近事件及天气加载状态。</string>

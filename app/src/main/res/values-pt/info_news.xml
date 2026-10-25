@@ -1,8 +1,8 @@
 <resources>
     <string name="info_news_title">Últimas novidades · %1$s</string>
-    <string name="info_news_star_sky" formatted="false">Os objetos selecionados aparecem primeiro, respeitam a ordenação escolhida e continuam visíveis com filtros e pesquisa.</string>
-    <string name="info_news_texture_downloads" formatted="false">Toque no nome do objeto para abrir a lista. O botão de remoção foi retirado do painel.</string>
-    <string name="info_news_weather" formatted="false">Abra Observatório e Trajetória diária pelo painel. As barras de título mantêm apenas Exportar.</string>
+    <string name="info_news_star_sky" formatted="false">Nomes dos objetos mais legíveis, com um ponto contornado da cor da órbita e mais espaço junto às setas.</string>
+    <string name="info_news_texture_downloads" formatted="false">Contadores de objetos, pontos e cenários maiores, com fundo de cor sólida e algarismos adaptados ao tema.</string>
+    <string name="info_news_weather" formatted="false">Mais espaço em Trajetória diária: botões de lembrete compactos e sinos com traço fino uniforme.</string>
     <string name="info_news_viewer_zoom" formatted="false">Tipos por número de objetos, opções de ordenação alfabéticas e controlos mais claros.</string>
     <string name="info_news_settings" formatted="false">Legendas de referência mais estáveis e Nadir a −90°, oposto ao Zénite.</string>
     <string name="info_news_catalog" formatted="false">Melhorias no movimento das luas, aproximações de objetos selecionados e estado de carregamento meteorológico.</string>

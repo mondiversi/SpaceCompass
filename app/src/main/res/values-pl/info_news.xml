@@ -1,8 +1,8 @@
 <resources>
     <string name="info_news_title">Ostatnie nowości · %1$s</string>
-    <string name="info_news_star_sky" formatted="false">Wybrane obiekty są na początku, zachowują ustawiony porządek i pozostają widoczne mimo filtrów i wyszukiwania.</string>
-    <string name="info_news_texture_downloads" formatted="false">Dotknij nazwy obiektu, aby otworzyć listę. Przycisk usuwania został usunięty z karty.</string>
-    <string name="info_news_weather" formatted="false">Otwórz widoki Obserwatorium i Tor dzienny z karty. Na ich paskach tytułu pozostaje tylko Eksportuj.</string>
+    <string name="info_news_star_sky" formatted="false">Czytelniejsze nazwy obiektów z obwiedzioną kropką w kolorze orbity i większym odstępem od strzałek.</string>
+    <string name="info_news_texture_downloads" formatted="false">Większe liczniki obiektów, punktów i scenariuszy z jednolitym tłem oraz cyframi dopasowanymi do motywu.</string>
+    <string name="info_news_weather" formatted="false">Więcej miejsca w Tor dzienny: kompaktowe przyciski przypomnień i dzwonki o jednolicie cienkiej kresce.</string>
     <string name="info_news_viewer_zoom" formatted="false">Typy według liczby obiektów, alfabetyczne opcje sortowania i czytelniejsze sterowanie obiektami.</string>
     <string name="info_news_settings" formatted="false">Stabilniejsze etykiety odniesienia i Nadir przy −90°, naprzeciw Zenitu.</string>
     <string name="info_news_catalog" formatted="false">Poprawiony ruch księżyców, zbliżenia wybranych obiektów i wyraźny stan ładowania pogody.</string>

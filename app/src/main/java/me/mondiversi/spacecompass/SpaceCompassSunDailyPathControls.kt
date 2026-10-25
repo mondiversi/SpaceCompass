@@ -179,7 +179,7 @@ internal fun SpaceCompassSunDailyPathPage(
                     Text(elevationLabel, Modifier.width(50.dp).testTag("sun-path-angle-elevation"),
                         color = secondaryText, fontSize = 12.sp,
                         textAlign = androidx.compose.ui.text.style.TextAlign.End)
-                    Spacer(Modifier.width(56.dp))
+                    Spacer(Modifier.width(SpaceCompassTableReminderWidth + 8.dp))
                 }
             }
             HorizontalDivider(Modifier.padding(horizontal = 10.dp).testTag("sun-path-header-divider"),

@@ -7,8 +7,7 @@ import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.BoxScope
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.size
-import androidx.compose.foundation.layout.height
-import androidx.compose.foundation.layout.widthIn
+import androidx.compose.foundation.layout.defaultMinSize
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.material3.MaterialTheme
@@ -59,14 +58,16 @@ internal fun SpaceCompassFloatingActionButton(
     }
 }
 
-/** Shared compact badge; longer counts widen while retaining the same height and corner anchor. */
+/** Filled accent counter, enlarged by 10% from the original 20 dp badge.
+ * Minimum sizing lets accessibility text grow and longer counts widen without clipping. */
 @Composable
-internal fun SpaceCompassFloatingCountBadge(count: String, modifier: Modifier = Modifier,
-    background: Color = MaterialTheme.colorScheme.primary) {
-    Box(modifier.height(20.dp).widthIn(min = 20.dp)
-        .background(background, CircleShape)
+internal fun SpaceCompassFloatingCountBadge(count: String, modifier: Modifier = Modifier) {
+    val accent = MaterialTheme.colorScheme.primary
+    Box(modifier.defaultMinSize(minWidth = 22.dp, minHeight = 22.dp)
+        .background(accent, CircleShape)
         .clearAndSetSemantics {}, contentAlignment = Alignment.Center) {
-        Text(count, modifier = Modifier.padding(horizontal = 3.dp), color = spaceCompassCounterTextColor(isSystemInDarkTheme()),
-            fontSize = 11.sp, lineHeight = 13.sp, fontWeight = FontWeight.Bold, maxLines = 1)
+        Text(count, modifier = Modifier.padding(horizontal = 3.3.dp, vertical = 2.dp),
+            color = spaceCompassCounterTextColor(isSystemInDarkTheme()),
+            fontSize = 12.1.sp, lineHeight = 14.3.sp, fontWeight = FontWeight.Bold, maxLines = 1)
     }
 }

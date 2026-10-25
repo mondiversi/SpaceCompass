@@ -1,8 +1,8 @@
 <resources>
     <string name="info_news_title">Последние новости · %1$s</string>
-    <string name="info_news_star_sky" formatted="false">Выбранные объекты показаны первыми, сохраняют заданный порядок и остаются видимыми при фильтрации и поиске.</string>
-    <string name="info_news_texture_downloads" formatted="false">Нажмите название объекта, чтобы открыть список. Кнопка удаления убрана с карточки.</string>
-    <string name="info_news_weather" formatted="false">Открывайте разделы «Обсерватория» и «Суточная траектория» из карточки. В их заголовках остаётся только «Экспорт».</string>
+    <string name="info_news_star_sky" formatted="false">Более читаемые названия объектов: точка с обводкой в цвете орбиты и больше места рядом со стрелками.</string>
+    <string name="info_news_texture_downloads" formatted="false">Увеличенные счётчики объектов, точек и сценариев с однотонной заливкой и цифрами, соответствующими теме.</string>
+    <string name="info_news_weather" formatted="false">Больше места в разделе «Суточная траектория»: компактные кнопки напоминаний и колокольчики с одинаково тонким контуром.</string>
     <string name="info_news_viewer_zoom" formatted="false">Типы по числу объектов, параметры сортировки по алфавиту и более понятное управление объектами.</string>
     <string name="info_news_settings" formatted="false">Более стабильные подписи ориентиров и Надир на −90°, напротив Зенита.</string>
     <string name="info_news_catalog" formatted="false">Улучшены движение лун, сближения выбранных объектов и отображение загрузки погоды.</string>

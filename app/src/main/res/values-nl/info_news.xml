@@ -1,8 +1,8 @@
 <resources>
     <string name="info_news_title">Laatste nieuws · %1$s</string>
-    <string name="info_news_star_sky" formatted="false">Geselecteerde objecten staan bovenaan, volgen de gekozen sortering en blijven zichtbaar bij filters en zoekopdrachten.</string>
-    <string name="info_news_texture_downloads" formatted="false">Tik op de objectnaam om de lijst te openen. De verwijderknop is uit de kaart verwijderd.</string>
-    <string name="info_news_weather" formatted="false">Open Observatorium en Dagelijkse baan vanuit de kaart. Hun titelbalken bevatten alleen nog Exporteren.</string>
+    <string name="info_news_star_sky" formatted="false">Beter leesbare objectnamen met een omlijnde stip in de baankleur en meer ruimte naast de pijlen.</string>
+    <string name="info_news_texture_downloads" formatted="false">Grotere tellers voor objecten, punten en scenario’s, met een effen achtergrond en cijfers die bij het thema passen.</string>
+    <string name="info_news_weather" formatted="false">Meer ruimte in Dagelijkse baan: compacte herinneringsknoppen en belletjes met een overal even dunne lijn.</string>
     <string name="info_news_viewer_zoom" formatted="false">Typen op aantal objecten, alfabetische sorteeropties en duidelijkere objectbediening.</string>
     <string name="info_news_settings" formatted="false">Stabielere referentielabels en Nadir op −90°, tegenover het Zenit.</string>
     <string name="info_news_catalog" formatted="false">Verbeterde maanbewegingen, naderingen van geselecteerde objecten en duidelijke laadstatus voor het weer.</string>
