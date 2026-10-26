@@ -1,8 +1,8 @@
 <resources>
     <string name="info_news_title">हाल के बदलाव · %1$s</string>
-    <string name="info_news_star_sky" formatted="false">वस्तु के नाम के पास का बिंदु कक्षा के दोनों रंग दिखाता है: क्षितिज के ऊपर और नीचे।</string>
-    <string name="info_news_texture_downloads" formatted="false">फ़ोटो और पैनोरमा की संकेत-सूची में अब रेखाओं की जगह दो रंगों वाले बिंदु हैं।</string>
-    <string name="info_news_weather" formatted="false">बिंदुओं का आकार पाठ के अनुरूप है और उनके किनारे अक्षरों के रंग से मेल खाते हैं, निर्यात की गई छवियों में भी।</string>
+    <string name="info_news_star_sky" formatted="false">बेहतर ट्रैकिंग और वैज्ञानिक संदर्भों के साथ 999 पिंड, सभी 88 तारामंडल और सभी के लिए उपलब्ध LV-426 खोजें।</string>
+    <string name="info_news_texture_downloads" formatted="false">नया ग्राफ़िक्स पैक 1.6: 174 चित्र और 174 अलग थंबनेल, जो अलग-अलग डाउनलोड होते हैं और ऑफ़लाइन सहेजे जाते हैं।</string>
+    <string name="info_news_weather" formatted="false">अधिक स्पष्ट जानकारी, बेहतर फ़ोटो और पैनोरमा चिह्न तथा रात में वेधशाला और दैनिक पथ बटनों का बेहतर कंट्रास्ट।</string>
     <string name="info_news_viewer_zoom" formatted="false">पिंडों की संख्या के अनुसार प्रकार, वर्णानुक्रम में क्रमबद्ध विकल्प और स्पष्ट नियंत्रण।</string>
     <string name="info_news_settings" formatted="false">अधिक स्थिर संदर्भ लेबल और शिरोबिंदु के विपरीत −90° पर अधोबिंदु।</string>
     <string name="info_news_catalog" formatted="false">उपग्रहों की गति, चुने हुए पिंडों के निकट आगमन और मौसम लोड होने की स्थिति में सुधार।</string>

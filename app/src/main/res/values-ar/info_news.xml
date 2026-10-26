@@ -1,8 +1,8 @@
 <resources>
     <string name="info_news_title">آخر المستجدات · %1$s</string>
-    <string name="info_news_star_sky" formatted="false">تُظهر النقطة بجوار اسم الجسم لوني المدار: فوق الأفق وتحته.</string>
-    <string name="info_news_texture_downloads" formatted="false">تستخدم مفاتيح الصور والبانوراما الآن نقاطًا ثنائية اللون بدلًا من الخطوط.</string>
-    <string name="info_news_weather" formatted="false">يتناسب حجم النقاط مع النص ويتطابق إطارها مع لون الحروف، بما في ذلك الصور المُصدَّرة.</string>
+    <string name="info_news_star_sky" formatted="false">استكشف 999 جرماً وجميع الكوكبات الـ88 وLV-426 المتاح للجميع، مع تحسين التتبع والمراجع العلمية.</string>
+    <string name="info_news_texture_downloads" formatted="false">حزمة الرسومات الجديدة 1.6: تضم 174 صورة و174 صورة مصغرة منفصلة، تُنزّل كل منها على حدة وتُحفظ للاستخدام دون اتصال.</string>
+    <string name="info_news_weather" formatted="false">معلومات أوضح وأيقونات محسّنة للتصوير والبانوراما وتباين أكبر لأزرار المرصد والمسار اليومي في الوضع الليلي.</string>
     <string name="info_news_viewer_zoom" formatted="false">الأنواع مرتبة حسب عدد الأجرام، وخيارات فرز أبجدية، وعناصر تحكم أوضح.</string>
     <string name="info_news_settings" formatted="false">تسميات مرجعية أكثر ثباتًا وسمت القدم عند −90°، مقابل سمت الرأس.</string>
     <string name="info_news_catalog" formatted="false">تحسين حركة الأقمار وتقاربات الأجرام المحددة وحالة تحميل الطقس.</string>

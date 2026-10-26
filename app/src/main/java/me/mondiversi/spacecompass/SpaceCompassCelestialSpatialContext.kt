@@ -18,12 +18,13 @@ internal data class SpaceCompassCelestialCoordinates(
     val timeMs: Long? = null
 )
 
-internal enum class SpaceCompassCelestialGalaxy { MILKY_WAY, ANDROMEDA, TON_618_HOST, M87, LMC, SMC, M51 }
+internal enum class SpaceCompassCelestialGalaxy { MILKY_WAY, ANDROMEDA, TON_618_HOST, M87, LMC, SMC, M51, UNKNOWN, NONE }
 
 internal data class SpaceCompassCelestialMembership(
     val systemResource: Int? = null,
     val systemDesignation: String? = null,
-    val galaxy: SpaceCompassCelestialGalaxy = SpaceCompassCelestialGalaxy.MILKY_WAY
+    val galaxy: SpaceCompassCelestialGalaxy = SpaceCompassCelestialGalaxy.MILKY_WAY,
+    val galaxyDesignation: String? = null
 )
 
 /** Names describe confirmed systems, not a conjectural parent for isolated objects. */
@@ -47,7 +48,20 @@ internal fun spaceCompassCelestialMembership(body: SpaceCompassCelestialBody): S
     SpaceCompassCelestialBody.PSR_J0437 -> SpaceCompassCelestialMembership(systemDesignation = "PSR J0437−4715")
     SpaceCompassCelestialBody.RIGEL -> SpaceCompassCelestialMembership(systemDesignation = "β Orionis")
     SpaceCompassCelestialBody.LV_426 -> SpaceCompassCelestialMembership(systemDesignation = "ζ² Reticuli")
-    else -> if (!body.isExtrasolar) SpaceCompassCelestialMembership(systemResource = R.string.celestial_spatial_solar_system)
+    else -> if (body.largeCatalogEntry != null) {
+        val data = requireNotNull(body.largeCatalogEntry)
+        SpaceCompassCelestialMembership(systemDesignation = data.facts.parentName,
+            galaxy = when (data.galaxy) {
+                "MILKY_WAY" -> SpaceCompassCelestialGalaxy.MILKY_WAY
+                "NONE" -> SpaceCompassCelestialGalaxy.NONE
+                "LMC" -> SpaceCompassCelestialGalaxy.LMC
+                else -> SpaceCompassCelestialGalaxy.UNKNOWN
+            }, galaxyDesignation = when {
+                data.galaxy == "SELF" -> data.entry.designation
+                data.galaxy.startsWith("NGC ") -> data.galaxy
+                else -> null
+            })
+    } else if (!body.isExtrasolar) SpaceCompassCelestialMembership(systemResource = R.string.celestial_spatial_solar_system)
         else SpaceCompassCelestialMembership()
 }
 

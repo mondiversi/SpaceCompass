@@ -21,7 +21,7 @@ class SpaceCompassSouthernCatalogTest {
     @Test fun additionsAreUniqueAndRetainTheCorrectCategoriesAndDefaults() {
         val bodies = listOf(SpaceCompassCelestialBody.CERES, SpaceCompassCelestialBody.ENCELADUS,
             SpaceCompassCelestialBody.VEGA, SpaceCompassCelestialBody.DENEB, SpaceCompassCelestialBody.ALTAIR, cross)
-        assertEquals(104, spaceCompassCelestialCatalogOrder.size)
+        assertEquals(999, spaceCompassCelestialCatalogOrder.size)
         for (body in bodies) {
             assertEquals(1, spaceCompassCelestialCatalogOrder.count { it == body })
             assertNotNull(body.scientificDesignation)
@@ -116,7 +116,7 @@ class SpaceCompassSouthernCatalogTest {
 
     @Test fun constellationFilterAndDailyTrackUseThePatternCentreAndKeepMissingSortKeysLast() {
         assertEquals(listOf(cross), spaceCompassFilterCatalog(setOf(SpaceCompassCatalogType.CONSTELLATION),
-            SpaceCompassCatalogVisibility.ALL, emptyMap()))
+            SpaceCompassCatalogVisibility.ALL, emptyMap()).filter { it.largeCatalogEntry == null })
         val path = calculateSpaceCompassCelestialPath(cross, LocalDate.parse("2026-10-16"), ZoneId.of("UTC"),
             now, -35.0, 151.0, 0.0, SpaceCompassCelestialRemoteData())!!
         assertEquals(24, path.markers.count { it.event == SpaceCompassSunPathEvent.HOUR })

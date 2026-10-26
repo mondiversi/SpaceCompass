@@ -10,53 +10,22 @@ import java.util.Locale
 class SpaceCompassHiddenCelestialTest {
     private val hidden = SpaceCompassCelestialBody.LV_426
 
-    @Test fun defaultCatalogAndMasterSelectionDoNotExposeHiddenObjects() {
+    @Test fun publicCatalogAndMasterSelectionIncludeLv426WithoutChangingDefaults() {
         val initial = SpaceCompassCelestialSelection()
-        assertEquals(spaceCompassCelestialCatalogOrder.size, spaceCompassAvailableCelestialCatalog(initial.selected).size)
-        assertFalse(hidden in spaceCompassCelestialCatalogOrder)
-        assertFalse(hidden in initial.toggleAll().selected)
-        assertEquals(spaceCompassCelestialCatalogOrder.toSet() + hidden, SpaceCompassCelestialBody.entries.filterNot { it == SpaceCompassCelestialBody.EARTH_CENTER }.toSet())
+        assertEquals(setOf(SpaceCompassCelestialBody.SUN, SpaceCompassCelestialBody.MOON), initial.selected)
+        assertEquals(999, spaceCompassAvailableCelestialCatalog(initial.selected).size)
+        assertTrue(hidden in spaceCompassCelestialCatalogOrder)
+        assertTrue(hidden in initial.toggleAll().selected)
+        assertEquals(spaceCompassCelestialCatalogOrder.toSet(),
+            SpaceCompassCelestialBody.entries.filterNot { it == SpaceCompassCelestialBody.EARTH_CENTER }.toSet())
     }
-
-    @Test fun revealChecksTheObjectOnceAndKeepsTheInspectedObject() {
-        val original = SpaceCompassCelestialSelection(setOf(SpaceCompassCelestialBody.MOON), SpaceCompassCelestialBody.MOON)
-        val revealed = original.revealHiddenObject()
-        assertEquals(original.selected + hidden, revealed.selected)
-        assertEquals(original.active, revealed.active)
-        assertEquals(revealed, revealed.revealHiddenObject())
-        assertEquals(spaceCompassCelestialCatalogOrder.size + 1, spaceCompassAvailableCelestialCatalog(revealed.selected).size)
-        assertEquals(hidden, SpaceCompassCelestialSelection(emptySet(), null).revealHiddenObject().active)
-    }
-
-    @Test fun deselectionRemovesTheCatalogEntryAndKeepsNavigationValid() {
-        val revealed = SpaceCompassCelestialSelection().revealHiddenObject()
-        val selected = revealed.copy(active = hidden)
-        assertEquals(hidden, selected.ordered.last())
-        assertEquals(SpaceCompassCelestialBody.SUN, selected.step(1).active)
-        val removed = selected.toggle(hidden)
-        assertFalse(hidden in removed.selected)
-        assertFalse(hidden in spaceCompassAvailableCelestialCatalog(removed.selected))
-        assertEquals(SpaceCompassCelestialBody.SUN, removed.active)
-        assertTrue(hidden in removed.revealHiddenObject().selected)
-    }
-
-    @Test fun savedSelectionRetainsTheRevealOnlyUntilDeselected() {
-        val selected = SpaceCompassCelestialSelection().revealHiddenObject().copy(active = hidden)
+    @Test fun deselectionNeverHidesThePublicCatalogEntryAndSelectionSurvivesRestore() {
+        val selected = SpaceCompassCelestialSelection().toggle(hidden).copy(active = hidden)
         assertEquals(selected, restoreSpaceCompassCelestialSelection(selected.ordered.map { it.name }.toSet(), hidden.name))
         val removed = selected.toggle(hidden)
-        assertEquals(removed, restoreSpaceCompassCelestialSelection(removed.ordered.map { it.name }.toSet(), removed.active?.name))
-        assertFalse(hidden in restoreSpaceCompassCelestialSelection(null, hidden.name).selected)
-    }
-
-    @Test fun selectingAllAfterRevealIncludesItButClearingAllHidesItAgain() {
-        val revealed = SpaceCompassCelestialSelection().revealHiddenObject()
-        val all = revealed.toggleAll()
-        assertEquals(spaceCompassAllCelestialOrder.toSet(), all.selected)
-        assertEquals(SpaceCompassCelestialBody.SUN, all.active)
-        val cleared = all.toggleVisible(all.selected)
-        assertTrue(cleared.selected.isEmpty())
-        assertFalse(hidden in spaceCompassAvailableCelestialCatalog(cleared.selected))
-        assertFalse(hidden in cleared.toggleAll().selected)
+        assertFalse(hidden in removed.selected)
+        assertTrue(hidden in spaceCompassAvailableCelestialCatalog(removed.selected))
+        assertEquals(999, removed.toggleAll().selected.size)
     }
 
     @Test fun revealedObjectParticipatesInFiltersAndStableNumericSorting() {

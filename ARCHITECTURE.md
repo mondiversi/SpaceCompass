@@ -457,3 +457,20 @@ The in-memory preview LRU is capped at 4 MiB; verified persistent resources reta
 offline availability. Publication keeps older releases and individual URLs intact.
 Nadir uses exact local -Up. Live reference placement retains continuous curve
 anchors and stable cross captions; frozen captures use independent collision layout.
+
+
+## Catalogue and graphics 1.5.0
+
+The append-only identity catalogue has 999 selectable entries and a chunked O(1) registry.
+Scientific/reference text and twenty-language resources are bundled; graphics alone are external.
+All 88 constellation patterns use linked astrometric stars. Direction-only targets do not invent parallax
+or distance. Horizons and TLE adapters retain identity, coverage and freshness checks; unknown fields stay absent.
+Only selected objects enter angular close-approach work, with conservative spatial screening.
+The canonical source and deterministic generators are documented in `catalogue/README.md`.
+
+Graphics pack 1.6 provides 174 full WebP resources and 174 independently pinned previews.
+The app requests canonical individual URLs, validates bytes/dimensions/SHA-256 and imports matching legacy caches.
+No remote catalogue text or executable manifest is loaded. No complete graphics ZIP is generated.
+Main object actions preserve 48 dp touch targets and their independent name insets; only their two trailing
+gaps expand slightly. Night island action circles invert to a light neutral fill with dark glyphs;
+daytime actions, viewer tabs and floating controls keep their existing styling.

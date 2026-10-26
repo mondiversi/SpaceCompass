@@ -1,0 +1,203 @@
+*******************************************************************************
+ Revised: Sep 30, 2026              Mars Express / (Sun)                    -41 
+                            http://sci.esa.int/marsexpress/
+                  http://space.about.com/od/spacemissions/p/beagle2.htm
+ 
+ LAUNCH DATE:                                             MARS ARRIVAL DATE:
+  June 02, 2003                                            December, 2003 
+
+ LAUNCH VEHICLE:
+  This European Space Agency (ESA) mission was launched on a Soyuz-Fregat 
+  launch vehicle from Baikonur, Kazakhstan.
+
+ BACKGROUND:
+  Mars Express will remain in orbit around Mars for at least one martian 
+  year (687 Earth days). During this time, the pericenter will move to give 
+  the scientific instruments coverage of the entire martian surface from
+  different viewing angles.
+
+  After a 5 day descent, Beagle 2 will land on Isidis Planitia, a large, flat 
+  sedimentary basin straddling the relatively young northern plains and ancient 
+  southern highlands, where traces of life could have been preserved. The 
+  landing site (10.6N, 270W) is at low latitude to minimise the amount of 
+  insulation (and thus mass) needed to protect the lander from the cold martian
+  night. The nominal lander life-time is 180 days. 
+
+  UPDATE: The Beagle 2 lander was lost. No signals were received after 
+    separation from Mars Express 2003-Dec-19. It would have entered the 
+    Martian atmosphere at 20,000 km/hr on 2003-Dec-25, but it is not 
+    known if any part of the landing sequence executed.
+
+ SPACECRAFT PHYSICAL PROPERTIES:
+  Orbiter mass       = 113  kg           Lander mass       =   60 kg
+  Total launch mass  = 1223 kg
+
+ BASIC ORBIT PARAMETERS:
+  Inclination: 86.3 deg                   pericentre       =    258 km
+  Period     : 6h 43m                     apocentre        = 11 560 km
+
+ SPACECRAFT TRAJECTORY (from ESA):
+  Reconstructed trajectory based on tracking data through 2026-Sep-23.
+  The trajectory thereafter is a prediction.
+
+   Name                                 Start (TDB)          Stop (TDB)
+   ----------------------------      -----------------    -----------------
+   ORHM_______________00030          2003-Jun-02 19:13    2003-Dec-22 18:09
+   ORMM_031222180906-261001          2003-Dec-22 18:09    2026-Oct-20 12:19
+   ORMF_______________01965          2026-Oct-20 12:19    2032-Dec-31 23:59
+*******************************************************************************
+
+
+*******************************************************************************
+Ephemeris / API_USER Mon Oct 26 10:21:13 2026 Pasadena, USA      / Horizons
+*******************************************************************************
+Target body name: Mars Express (spacecraft) (-41) {source: MEX_merged}
+Center body name: Earth (399)                     {source: DE441}
+Center-site name: BODY CENTER
+*******************************************************************************
+Start time      : A.D. 2026-Oct-26 00:00:00.0000 UT 
+Stop  time      : A.D. 2026-Oct-28 00:00:00.0000 UT 
+Step-size       : 60 minutes
+*******************************************************************************
+Center geodetic : 0.0, 0.0, 0.0                   {E-lon(deg),Lat(deg),Alt(km)}
+Center cylindric: 0.0, 0.0, 0.0                   {E-lon(deg),Dxy(km),Dz(km)}
+Center radii    : 6378.137, 6378.137, 6356.752 km {Equator_a, b, pole_c}
+Output units    : AU-D
+Calendar mode   : Mixed Julian/Gregorian
+Output type     : LT+S CORRECTED cartesian states
+Output format   : 2 (position and velocity)
+EOP file        : eop.261023.p270119
+EOP coverage    : DATA-BASED 1962-JAN-20 TO 2026-OCT-23. PREDICTS-> 2027-JAN-18
+Reference frame : ICRF
+*******************************************************************************
+            JDUT ,            Calendar Date (UT ),                      X,                      Y,                      Z,                     VX,                     VY,                     VZ,
+**************************************************************************************************************************************************************************************************
+$$SOE
+2461339.500000000, A.D. 2026-Oct-26 00:00:00.0000, -1.049618868073575E+00,  9.422816145233902E-01,  4.500320889347612E-01, -3.413117124922961E-03, -1.412161404655694E-02, -4.629086021004163E-03,
+2461339.541666667, A.D. 2026-Oct-26 01:00:00.0000, -1.049756036764373E+00,  9.416609425228953E-01,  4.498405865052914E-01, -3.347346581215103E-03, -1.610556562112735E-02, -5.123866476530783E-03,
+2461339.583333333, A.D. 2026-Oct-26 02:00:00.0000, -1.049928505130667E+00,  9.410178594286434E-01,  4.495577260740127E-01, -4.449520953409249E-03, -1.417319192245670E-02, -7.141362610563472E-03,
+2461339.625000000, A.D. 2026-Oct-26 03:00:00.0000, -1.050109512628818E+00,  9.404459985488767E-01,  4.492759965372048E-01, -4.226869090265976E-03, -1.346542706538532E-02, -6.420821949841448E-03,
+2461339.666666667, A.D. 2026-Oct-26 04:00:00.0000, -1.050281197246691E+00,  9.398885769317696E-01,  4.490196763010757E-01, -4.014827861438182E-03, -1.333085637842548E-02, -5.905021313424328E-03,
+2461339.708333333, A.D. 2026-Oct-26 05:00:00.0000, -1.050444400816802E+00,  9.393326453862383E-01,  4.487827223839949E-01, -3.815370332849000E-03, -1.337587700768692E-02, -5.475173167211943E-03,
+2461339.750000000, A.D. 2026-Oct-26 06:00:00.0000, -1.050599075560300E+00,  9.387717437455114E-01,  4.485632229447183E-01, -3.600191695945975E-03, -1.357829529289065E-02, -5.057603682266076E-03,
+2461339.791666667, A.D. 2026-Oct-26 07:00:00.0000, -1.050743802019310E+00,  9.381966294238172E-01,  4.483616272831301E-01, -3.330022864613679E-03, -1.412124003247727E-02, -4.617146199657190E-03,
+2461339.833333333, A.D. 2026-Oct-26 08:00:00.0000, -1.050877662336114E+00,  9.375751821614654E-01,  4.481700431750147E-01, -3.289807659666992E-03, -1.614009452629268E-02, -5.180028511272671E-03,
+2461339.875000000, A.D. 2026-Oct-26 09:00:00.0000, -1.051047618366270E+00,  9.369338730410299E-01,  4.478860924484442E-01, -4.368414620757615E-03, -1.413975487889483E-02, -7.123383181940751E-03,
+2461339.916666667, A.D. 2026-Oct-26 10:00:00.0000, -1.051225213907766E+00,  9.363628728388074E-01,  4.476050076246462E-01, -4.145338400163808E-03, -1.345095075403058E-02, -6.408191525074861E-03,
+2461339.958333333, A.D. 2026-Oct-26 11:00:00.0000, -1.051393522800995E+00,  9.358059829703520E-01,  4.473491450951518E-01, -3.934228750182358E-03, -1.331912013244299E-02, -5.895179189877060E-03,
+2461340.000000000, A.D. 2026-Oct-26 12:00:00.0000, -1.051553376897297E+00,  9.352505195118637E-01,  4.471125822814618E-01, -3.735110891292215E-03, -1.336508809150629E-02, -5.465978797435049E-03,
+2461340.041666667, A.D. 2026-Oct-26 13:00:00.0000, -1.051704704270563E+00,  9.346900384426414E-01,  4.468934766359934E-01, -3.519667640374830E-03, -1.356921457402220E-02, -5.047671599169934E-03,
+2461340.083333333, A.D. 2026-Oct-26 14:00:00.0000, -1.051846054648961E+00,  9.341151864230800E-01,  4.466923275023443E-01, -3.248354079732711E-03, -1.411983118815502E-02, -4.605837743774086E-03,
+2461340.125000000, A.D. 2026-Oct-26 15:00:00.0000, -1.051976666408365E+00,  9.334931139019309E-01,  4.465006684449858E-01, -3.231349307608572E-03, -1.616595850742407E-02, -5.231111029168792E-03,
+2461340.166666667, A.D. 2026-Oct-26 16:00:00.0000, -1.052144002805341E+00,  9.328534529714929E-01,  4.462158542681069E-01, -4.288558092913467E-03, -1.410973288335024E-02, -7.106738766586163E-03,
+2461340.208333333, A.D. 2026-Oct-26 17:00:00.0000, -1.052318245096457E+00,  9.322832663606679E-01,  4.459353708817225E-01, -4.065051964887560E-03, -1.343647951830015E-02, -6.396155307007255E-03,
+2461340.250000000, A.D. 2026-Oct-26 18:00:00.0000, -1.052483218993580E+00,  9.317269214702993E-01,  4.456799538978586E-01, -3.854343444494177E-03, -1.330687637149140E-02, -5.885390247717754E-03,
+2461340.291666667, A.D. 2026-Oct-26 19:00:00.0000, -1.052639742496887E+00,  9.311719492818920E-01,  4.454437867818569E-01, -3.655039248782290E-03, -1.335373928127158E-02, -5.456530395114634E-03,
+2461340.333333333, A.D. 2026-Oct-26 20:00:00.0000, -1.052787718095950E+00,  9.306119082066450E-01,  4.452250907516319E-01, -3.438718201416596E-03, -1.355983160853825E-02, -5.037235980727001E-03,
+2461340.375000000, A.D. 2026-Oct-26 21:00:00.0000, -1.052925657885007E+00,  9.300373111041407E-01,  4.450244131366598E-01, -3.165407264485658E-03, -1.411945043843440E-02, -4.593921334554914E-03,
+2461340.416666667, A.D. 2026-Oct-26 22:00:00.0000, -1.053052997574876E+00,  9.294144659330416E-01,  4.448325842164945E-01, -3.177012592819938E-03, -1.619414186585307E-02, -5.293558022787810E-03,
+2461340.458333333, A.D. 2026-Oct-26 23:00:00.0000, -1.053217782714106E+00,  9.287766507781712E-01,  4.445468258676177E-01, -4.207718428953787E-03, -1.407806045620756E-02, -7.088551663801106E-03,
+2461340.500000000, A.D. 2026-Oct-27 00:00:00.0000, -1.053388634294442E+00,  9.282073044196788E-01,  4.442669830425253E-01, -3.984064686723496E-03, -1.342184434753530E-02, -6.383637663257637E-03,
+2461340.541666667, A.D. 2026-Oct-27 01:00:00.0000, -1.053550253186258E+00,  9.276515079061645E-01,  4.440120213136445E-01, -3.774189436109823E-03, -1.329456221159024E-02, -5.875554939463696E-03,
+2461340.583333333, A.D. 2026-Oct-27 02:00:00.0000, -1.053703443217427E+00,  9.270970327684132E-01,  4.437762473538123E-01, -3.575096649070768E-03, -1.334215630394320E-02, -5.447223720246430E-03,
+2461340.625000000, A.D. 2026-Oct-27 03:00:00.0000, -1.053848081017031E+00,  9.265374478075963E-01,  4.435579534998607E-01, -3.358320421415897E-03, -1.354987086926987E-02, -5.026993522476386E-03,
+2461340.666666667, A.D. 2026-Oct-27 04:00:00.0000, -1.053982643485571E+00,  9.259631432610296E-01,  4.433577417722784E-01, -3.083520375313910E-03, -1.411771830919606E-02, -4.582008478952002E-03,
+2461340.708333333, A.D. 2026-Oct-27 05:00:00.0000, -1.054106758180736E+00,  9.253396330386614E-01,  4.431657656124141E-01, -3.122812343508882E-03, -1.621653121118811E-02, -5.353400453465899E-03,
+2461340.750000000, A.D. 2026-Oct-27 06:00:00.0000, -1.054268937752074E+00,  9.247036219841439E-01,  4.428791932040075E-01, -4.127887355150432E-03, -1.404716720126195E-02, -7.071256575687036E-03,
+2461340.791666667, A.D. 2026-Oct-27 07:00:00.0000, -1.054436438189817E+00,  9.241351340432388E-01,  4.425999777635608E-01, -3.903808326007512E-03, -1.340632729152835E-02, -6.370925596615807E-03,
+2461340.833333333, A.D. 2026-Oct-27 08:00:00.0000, -1.054594722893148E+00,  9.235799208980566E-01,  4.423454908822298E-01, -3.694319834039651E-03, -1.328152202358898E-02, -5.865048262099862E-03,
+2461340.875000000, A.D. 2026-Oct-27 09:00:00.0000, -1.054744583210172E+00,  9.230259650348430E-01,  4.421101425135419E-01, -3.495054178214608E-03, -1.333026347022345E-02, -5.437062584802641E-03,
+2461340.916666667, A.D. 2026-Oct-27 10:00:00.0000, -1.054885870986994E+00,  9.224668362642215E-01,  4.418922873681659E-01, -3.277428197324799E-03, -1.354028505813511E-02, -5.015882196494584E-03,
+2461340.958333333, A.D. 2026-Oct-27 11:00:00.0000, -1.055017026568405E+00,  9.218927802683037E-01,  4.416925716058880E-01, -3.000728953476036E-03, -1.411806320897690E-02, -4.569721936442502E-03,
+2461341.000000000, A.D. 2026-Oct-27 12:00:00.0000, -1.055137931053326E+00,  9.212684541611929E-01,  4.415003167271627E-01, -3.073375569036896E-03, -1.623773034353722E-02, -5.423825463153774E-03,
+2461341.041666667, A.D. 2026-Oct-27 13:00:00.0000, -1.055297526695715E+00,  9.206343974197843E-01,  4.412129154201942E-01, -4.047131908723670E-03, -1.401640676867055E-02, -7.052704943876891E-03,
+2461341.083333333, A.D. 2026-Oct-27 14:00:00.0000, -1.055461653651328E+00,  9.200667502392434E-01,  4.409343480486750E-01, -3.823335527993767E-03, -1.339121579654621E-02, -6.358195656387594E-03,
+2461341.125000000, A.D. 2026-Oct-27 15:00:00.0000, -1.055616604024399E+00,  9.195121119728986E-01,  4.406803286480626E-01, -3.614624627465659E-03, -1.326846205508737E-02, -5.854838601028202E-03,
+2461341.166666667, A.D. 2026-Oct-27 16:00:00.0000, -1.055763147248050E+00,  9.189586862234499E-01,  4.404453926987612E-01, -3.415424593617356E-03, -1.331786590176606E-02, -5.427197638634379E-03,
+2461341.208333333, A.D. 2026-Oct-27 17:00:00.0000, -1.055901105363371E+00,  9.184000451959234E-01,  4.402279680422875E-01, -3.197081034872798E-03, -1.352968701438467E-02, -5.004822022630590E-03,
+2461341.250000000, A.D. 2026-Oct-27 18:00:00.0000, -1.056028876457473E+00,  9.178262890329452E-01,  4.400287579872658E-01, -2.918409809286074E-03, -1.411705122003697E-02, -4.556820604631025E-03,
+2461341.291666667, A.D. 2026-Oct-27 19:00:00.0000, -1.056146595068527E+00,  9.172011894132495E-01,  4.398362274559628E-01, -3.025447424285984E-03, -1.625522407835751E-02, -5.496402610490479E-03,
+2461341.333333333, A.D. 2026-Oct-27 20:00:00.0000, -1.056303604148260E+00,  9.165691501873285E-01,  4.395480379794453E-01, -3.966739737783971E-03, -1.398440439028291E-02, -7.034405570088944E-03,
+2461341.375000000, A.D. 2026-Oct-27 21:00:00.0000, -1.056464362506106E+00,  9.160024016401069E-01,  4.392701287391831E-01, -3.742781538022469E-03, -1.337488883757301E-02, -6.344885451246043E-03,
+2461341.416666667, A.D. 2026-Oct-27 22:00:00.0000, -1.056615971187236E+00,  9.154483763622042E-01,  4.390166059558760E-01, -3.534690945731799E-03, -1.325478561523552E-02, -5.843870945137476E-03,
+2461341.458333333, A.D. 2026-Oct-27 23:00:00.0000, -1.056759186856773E+00,  9.148954945838542E-01,  4.387821130405941E-01, -3.335551736219774E-03, -1.330541418954707E-02, -5.416653668751779E-03,
+2461341.500000000, A.D. 2026-Oct-28 00:00:00.0000, -1.056893807365181E+00,  9.143373320960367E-01,  4.385651418960431E-01, -3.116624485690874E-03, -1.351958611526032E-02, -4.993381433496764E-03,
+$$EOE
+**************************************************************************************************************************************************************************************************
+ 
+TIME
+
+ Times PRIOR to 1962 are UT1, a mean-solar time closely related to the
+prior but now-deprecated GMT. Times AFTER 1962 are in UTC, the current
+civil or "wall-clock" atomic time-scale. UTC is kept within 0.9 seconds
+of UT1 using integer leap-seconds for 1972 and later years.
+
+  Conversion from the internal Barycentric Dynamical Time (TDB) of solar
+system dynamics to the discontinuous civil UT time-scale has not been
+determined for UTC times after the next July or January 1st. Therefore,
+the last known leap-second is used as a constant over future intervals,
+a condition noted here as "UT~".
+
+  Future but as yet undetermined leap-seconds can be expected to change
+time-tags in the "UT~" interval and, in general, the UT scale may not be
+suitable for purposes that assume time-tag continuity in the ephemeris.
+Output in continuous TDB and TT timescales may instead be requested,
+though these are not linked to Earth's rotation.
+
+  Time-tags refer to the UT time-scale conversion from TDB on Earth
+regardless of observer location within the solar system, although clock
+rates may differ due to the local gravity field and no analog to "UT"
+may be defined for that location.
+ 
+CALENDAR SYSTEM
+
+  Mixed calendar mode was active such that calendar dates after AD 1582-Oct-15
+(if any) are in the modern Gregorian system. Dates prior to 1582-Oct-5 (if any)
+are in the Julian calendar system, which is automatically extended for dates
+prior to its adoption on 45-Jan-1 BC.  The Julian calendar is useful for
+matching historical dates. The Gregorian calendar more accurately corresponds
+to the Earth's orbital motion and seasons. A "Gregorian-only" calendar mode is
+available if such physical events are the primary interest.
+
+REFERENCE FRAME AND COORDINATES
+
+  International Celestial Reference Frame (ICRF)
+
+    The ICRF is an adopted reference frame whose axes are defined relative to 
+    fixed extragalactic radio sources distributed across the sky.
+
+    The ICRF was aligned with the prior FK5/J2000 dynamical system at the ~0.02 
+    arcsecond level but is not identical and has no associated standard epoch.
+
+  Symbol meaning [1 au= 149597870.700 km, 1 day= 86400.0 s]:
+
+    JDUT     Julian Day Number, Universal Time
+      X      X-component of position vector (au)
+      Y      Y-component of position vector (au)
+      Z      Z-component of position vector (au)
+      VX     X-component of velocity vector (au/day)                           
+      VY     Y-component of velocity vector (au/day)                           
+      VZ     Z-component of velocity vector (au/day)                           
+
+ABERRATIONS AND CORRECTIONS
+
+ States have been corrected for Newtonian down-leg  (receive) light-time
+ displacement and relativistic stellar aberration.
+
+Computations by ...
+
+    Solar System Dynamics Group, Horizons On-Line Ephemeris System
+    4800 Oak Grove Drive, Jet Propulsion Laboratory
+    Pasadena, CA  91109   USA
+
+    General site: https://ssd.jpl.nasa.gov/
+    Mailing list: https://ssd.jpl.nasa.gov/email_list.html
+    System news : https://ssd.jpl.nasa.gov/horizons/news.html
+    User Guide  : https://ssd.jpl.nasa.gov/horizons/manual.html
+    Connect     : browser        https://ssd.jpl.nasa.gov/horizons/app.html#/x
+                  API            https://ssd-api.jpl.nasa.gov/doc/horizons.html
+                  command-line   telnet ssd.jpl.nasa.gov 6775
+                  e-mail/batch   https://ssd.jpl.nasa.gov/ftp/ssd/horizons_batch.txt
+                  scripts        https://ssd.jpl.nasa.gov/ftp/ssd/SCRIPTS
+    Inquiries   : Jon.D.Giorgini@jpl.nasa.gov
+*******************************************************************************

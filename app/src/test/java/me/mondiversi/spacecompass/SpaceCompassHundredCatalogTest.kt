@@ -9,7 +9,7 @@ import org.junit.Test
 
 class SpaceCompassHundredCatalogTest {
     private val now = Instant.parse("2026-10-17T12:30:00Z").toEpochMilli()
-    private val additions = SpaceCompassCelestialBody.entries.filter { it.additionalCatalogEntry != null }
+    private val additions = SpaceCompassCelestialBody.entries.filter { it.additionalCatalogEntry != null && it.largeCatalogEntry == null }
     private fun fixture(name: String) = javaClass.classLoader!!.getResource("catalog-100/$name")!!.readText()
     private fun remote(body: SpaceCompassCelestialBody): SpaceCompassCelestialRemoteData {
         val name = body.name.lowercase(Locale.ROOT)
@@ -20,9 +20,9 @@ class SpaceCompassHundredCatalogTest {
 
     @Test fun catalogueExtensionsKeepUniqueOrdinaryObjectsAndStableSelectionIdentifiers() {
         assertEquals(51, additions.size)
-        assertEquals(104, spaceCompassCelestialCatalogOrder.size)
-        assertEquals(104, spaceCompassCelestialCatalogOrder.distinct().size)
-        assertFalse(SpaceCompassCelestialBody.LV_426 in spaceCompassCelestialCatalogOrder)
+        assertEquals(999, spaceCompassCelestialCatalogOrder.size)
+        assertEquals(999, spaceCompassCelestialCatalogOrder.distinct().size)
+        assertTrue(SpaceCompassCelestialBody.LV_426 in spaceCompassCelestialCatalogOrder)
         assertFalse(SpaceCompassCelestialBody.EARTH_CENTER in spaceCompassCelestialCatalogOrder)
         for (body in additions) {
             assertEquals(1, spaceCompassCelestialCatalogOrder.count { it == body })
@@ -122,7 +122,7 @@ class SpaceCompassHundredCatalogTest {
     }
 
     @Test fun extendedObjectsAndExoplanetsDoNotInventPhysicalOrResolvedOrbitalData() {
-        assertEquals(6,spaceCompassFilterCatalog(setOf(SpaceCompassCatalogType.GALAXY),SpaceCompassCatalogVisibility.ALL,emptyMap()).size)
+        assertEquals(100,spaceCompassFilterCatalog(setOf(SpaceCompassCatalogType.GALAXY),SpaceCompassCatalogVisibility.ALL,emptyMap()).size)
         assertEquals(SpaceCompassCelestialGalaxy.LMC,spaceCompassCelestialMembership(SpaceCompassCelestialBody.LARGE_MAGELLANIC_CLOUD).galaxy)
         assertEquals(SpaceCompassCelestialGalaxy.SMC,spaceCompassCelestialMembership(SpaceCompassCelestialBody.SMALL_MAGELLANIC_CLOUD).galaxy)
         assertEquals(SpaceCompassCelestialGalaxy.M51,spaceCompassCelestialMembership(SpaceCompassCelestialBody.M51).galaxy)

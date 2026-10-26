@@ -53,5 +53,5 @@ internal fun spaceCompassAdditionalCatalogAliases(body: SpaceCompassCelestialBod
     SpaceCompassCelestialBody.M87_GALAXY -> listOf("M87 Galaxy", "NGC 4486", "Virgo A", "Galassia M87", "Galaxie M87", "M87-Galaxie", "Galaxia M87", "Galáxia M87", "M87-stelsel", "Galaktyka M87", "Галактика M87", "Γαλαξίας M87", "M87 Gökadası", "Galaksi M87", "Galaksi ya M87", "مجرة M87", "کهکشان M87", "גלקסיית M87", "M87 आकाशगंगा", "M87星系", "M87銀河", "M87 은하")
     SpaceCompassCelestialBody.MILKY_WAY_CENTER -> listOf("Milky Way", "Galactic Centre", "Galactic Center", "Via Lattea", "Voie lactée", "Milchstraße", "Vía Láctea", "Via Láctea", "Melkweg", "Droga Mleczna", "Млечный Путь", "Γαλαξίας", "Samanyolu", "Bima Sakti", "Njia ya Maziwa", "درب التبانة", "راه شیری", "שביל החלב", "आकाशगंगा", "银河系", "天の川銀河", "우리은하")
     SpaceCompassCelestialBody.M51_CORE -> listOf("M51 black hole", "NGC 5194 nucleus", "M51 buco nero", "M51 trou noir", "M51 Schwarzes Loch", "M51 agujero negro", "M51 buraco negro", "M51 zwart gat", "M51 czarna dziura", "M51 чёрная дыра", "M51 μαύρη τρύπα", "M51 kara delik", "M51 lubang hitam", "M51 shimo jeusi", "ثقب M51 الأسود", "سیاه‌چاله M51", "חור שחור M51", "M51 कृष्ण विवर", "M51黑洞", "M51ブラックホール", "M51 블랙홀")
-    else -> emptyList()
+    else -> body.largeCatalogEntry?.aliases.orEmpty()
 }

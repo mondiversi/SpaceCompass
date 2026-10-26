@@ -17,13 +17,14 @@ internal fun SpaceCompassDeepSkySymbol(body: SpaceCompassCelestialBody, modifier
 internal fun androidx.compose.ui.graphics.drawscope.DrawScope.drawSpaceCompassDeepSkySymbol(body: SpaceCompassCelestialBody, opacity: Float = 1f) {
     val r = size.minDimension * 0.32f
     val tint = spaceCompassCelestialPathTint(body)
-    if (body == SpaceCompassCelestialBody.SOUTHERN_CROSS) {
-        val points = listOf(center + Offset(-r*.15f, r), center + Offset(r*.7f, -r*.05f),
-            center + Offset(r*.05f, -r), center + Offset(-r*.7f, -r*.2f))
-        spaceCompassSouthernCrossEdges.forEach { (a, b) ->
-            drawLine(tint.copy(alpha = opacity * .65f), points[a], points[b], r*.06f)
+    if (body.catalogType == SpaceCompassCatalogType.CONSTELLATION) {
+        val points = spaceCompassConstellationSymbolPoints(body).map { centre ->
+            center + Offset((centre.x*r).toFloat(),(centre.y*r).toFloat())
         }
-        points.forEach { drawCircle(Color.White.copy(alpha = opacity), r*.12f, it) }
+        requireNotNull(body.constellationPattern).edges.forEach { (a,b) ->
+            drawLine(tint.copy(alpha=opacity*.65f),points[a],points[b],r*.06f)
+        }
+        points.forEach { drawCircle(Color.White.copy(alpha=opacity),r*.10f,it) }
     } else if (body.catalogType == SpaceCompassCatalogType.EXOPLANET) {
         // A neutral rocky-world symbol, not an observed map or an ocean claim.
         drawCircle(Color(0xff8b8177).copy(alpha = opacity), r * .9f)

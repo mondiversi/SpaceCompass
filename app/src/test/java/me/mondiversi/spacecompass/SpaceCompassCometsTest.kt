@@ -33,7 +33,7 @@ class SpaceCompassCometsTest {
             assertTrue(decoded.contains("NOFRAG;CAP;"))
         }
         assertEquals(listOf(SpaceCompassCelestialBody.HALLEY, SpaceCompassCelestialBody.COMET_67P, SpaceCompassCelestialBody.HALE_BOPP, SpaceCompassCelestialBody.ENCKE, SpaceCompassCelestialBody.ATLAS_3I),
-            spaceCompassFilterCatalog(setOf(SpaceCompassCatalogType.COMET), SpaceCompassCatalogVisibility.ALL, emptyMap()))
+            spaceCompassFilterCatalog(setOf(SpaceCompassCatalogType.COMET), SpaceCompassCatalogVisibility.ALL, emptyMap()).filter { it.largeCatalogEntry == null })
     }
 
     @Test fun apparentAndGeometricStatesAndCometIdentitiesCannotBeMixed() {

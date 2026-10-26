@@ -63,10 +63,11 @@ class SpaceCompassCelestialThumbnailPolicyTest {
 
     @Test fun publishedPreviewsUseIndependentVersionedUrlsAndRejectCorruption() {
         for (preview in previews.images) {
-            assertEquals(policy.PACK, preview.downloadPack)
-            assertEquals("https://github.com/mondiversi/SpaceCompass/releases/download/${policy.PACK}/${preview.name}", preview.url)
-            assertTrue(policy.allowedUrl(requireNotNull(preview.url)))
-            assertFalse(policy.allowedUrl(preview.url + "?extra=1"))
+                assertEquals(policy.PACK, preview.downloadPack)
+                assertEquals(preview.name, preview.downloadName)
+                assertEquals("https://github.com/mondiversi/SpaceCompass/releases/download/${preview.downloadPack}/${preview.downloadName}", preview.url)
+                assertTrue(policy.allowedUrl(requireNotNull(preview.url)))
+                assertFalse(policy.allowedUrl(preview.url + "?extra=1"))
         }
         val preview = requireNotNull(previews.forImage("moon.webp"))
         assertThrows(IllegalArgumentException::class.java) {

@@ -26,35 +26,48 @@ internal fun SpaceCompassSettingsMenuIcon(
         val strokeWidth = iconStrokeWidth?.toPx() ?: maxOf(1.6.dp.toPx(), size.minDimension * 0.08f)
         when (route) {
             "capture" -> {
-                drawCircle(tint, size.minDimension * .39f, style = Stroke(strokeWidth))
-                repeat(6) { index ->
-                    val angle = Math.toRadians(index * 60.0)
-                    val next = angle + Math.toRadians(60.0)
-                    drawLine(tint, Offset(center.x + kotlin.math.cos(angle).toFloat() * size.width * .38f,
-                        center.y + kotlin.math.sin(angle).toFloat() * size.height * .38f),
-                        Offset(center.x + kotlin.math.cos(next).toFloat() * size.width * .16f,
-                            center.y + kotlin.math.sin(next).toFloat() * size.height * .16f), strokeWidth)
+                val outerRadius = size.minDimension * .39f
+                val apertureRadius = size.minDimension * .17f
+                val vertices = List(6) { index ->
+                    val angle = Math.toRadians(index * 60.0 - 30.0)
+                    Offset(center.x + kotlin.math.cos(angle).toFloat() * apertureRadius,
+                        center.y + kotlin.math.sin(angle).toFloat() * apertureRadius)
                 }
-            }
-            "panorama" -> {
-                // A curved landscape frame distinguishes the all-sky capture from the camera shutter.
-                val frame = Path().apply {
-                    moveTo(size.width * .10f, size.height * .25f)
-                    quadraticTo(center.x, size.height * .10f, size.width * .90f, size.height * .25f)
-                    lineTo(size.width * .90f, size.height * .75f)
-                    quadraticTo(center.x, size.height * .90f, size.width * .10f, size.height * .75f)
+                // Extend each aperture edge to the outer ring; shared vertices leave no loose blade ends.
+                val extension = kotlin.math.sqrt(outerRadius * outerRadius - .75f * apertureRadius * apertureRadius) -
+                    .5f * apertureRadius
+                vertices.forEachIndexed { index, vertex ->
+                    val previous = vertices[(index + vertices.lastIndex) % vertices.size]
+                    val direction = (vertex - previous) / apertureRadius
+                    drawLine(tint, vertex, vertex + direction * extension, strokeWidth, StrokeCap.Round)
+                }
+                val aperture = Path().apply {
+                    moveTo(vertices.first().x, vertices.first().y)
+                    vertices.drop(1).forEach { lineTo(it.x, it.y) }
                     close()
                 }
-                drawPath(frame, tint, style = Stroke(strokeWidth, join = StrokeJoin.Round))
-                val hills = Path().apply {
-                    moveTo(size.width * .10f, size.height * .65f)
-                    lineTo(size.width * .30f, size.height * .40f)
-                    lineTo(size.width * .55f, size.height * .65f)
-                    lineTo(size.width * .70f, size.height * .50f)
-                    lineTo(size.width * .90f, size.height * .70f)
+                drawPath(aperture, tint, style = Stroke(strokeWidth, join = StrokeJoin.Round))
+                drawCircle(tint, outerRadius, style = Stroke(strokeWidth))
+            }
+            "panorama" -> {
+                // A central crest and low endpoints suggest an unrolled orbital arc.
+                // A lighter dashed horizon separates the above/below portions of the track.
+                repeat(5) { index ->
+                    val dashStart = size.width * (.06f + index * .196f)
+                    drawLine(tint, Offset(dashStart, center.y),
+                        Offset(dashStart + size.width * .096f, center.y), strokeWidth * .55f, StrokeCap.Round)
                 }
-                drawPath(hills, tint, style = Stroke(strokeWidth, cap = StrokeCap.Round, join = StrokeJoin.Round))
-                drawCircle(tint, size.minDimension * .055f, Offset(size.width * .65f, size.height * .33f))
+                val orbit = Path().apply {
+                    moveTo(size.width * .12f, size.height * .76f)
+                    cubicTo(size.width * .29f, size.height * .76f, size.width * .30f, size.height * .22f,
+                        center.x, size.height * .22f)
+                    cubicTo(size.width * .70f, size.height * .22f, size.width * .71f, size.height * .76f,
+                        size.width * .88f, size.height * .76f)
+                }
+                drawPath(orbit, tint, style = Stroke(strokeWidth, cap = StrokeCap.Round, join = StrokeJoin.Round))
+                listOf(Offset(.12f, .76f), Offset(.50f, .22f), Offset(.88f, .76f)).forEach { point ->
+                    drawCircle(tint, strokeWidth * 1.25f, Offset(size.width * point.x, size.height * point.y))
+                }
             }
             "observer" -> {
                 // A place pin and clock distinguish location/time scenarios from live GPS.

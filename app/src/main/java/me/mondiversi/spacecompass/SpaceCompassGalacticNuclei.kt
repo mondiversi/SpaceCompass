@@ -11,4 +11,11 @@ private val SpaceCompassCelestialBody.galacticNucleus: SpaceCompassCelestialBody
 }
 
 internal fun spaceCompassSharesGalacticNucleus(a: SpaceCompassCelestialBody, b: SpaceCompassCelestialBody): Boolean =
-    a.galacticNucleus?.let { it == b.galacticNucleus } == true
+    a.galacticNucleus?.let { it == b.galacticNucleus } == true ||
+        spaceCompassLargeNuclearPair(a, b) || spaceCompassLargeNuclearPair(b, a)
+
+private fun spaceCompassLargeNuclearPair(galaxy: SpaceCompassCelestialBody, nucleus: SpaceCompassCelestialBody): Boolean {
+    if (galaxy.catalogType != SpaceCompassCatalogType.GALAXY || nucleus.catalogType != SpaceCompassCatalogType.BLACK_HOLE) return false
+    val host = nucleus.largeCatalogEntry?.galaxy?.takeIf { it.startsWith("NGC ") } ?: return false
+    return galaxy.additionalCatalogEntry?.designation == host
+}

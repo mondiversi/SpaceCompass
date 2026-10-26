@@ -3,7 +3,7 @@
     <string name="pc_info">Bilgi ve katkılar</string>
     <string name="pc_display_automatic">Otomatik ölçekleme</string>
     <string name="pc_info_description">Gök cisimlerini bulmak, yörüngelerini keşfetmek, modelleri ve Ay evrelerini görmek için astronomik pusula.</string>
-    <string name="pc_info_earth">Dünya için tasarlandı: uzayda yol tarifini bir astronota sormak daha iyi 🙂</string>
+    <string name="pc_info_earth">Dünya’da kullanım için tasarlandı: uygulama yönelim için yerçekimini ve Dünya’nın manyetik alanını kullanır; GPS konumu sağlar. Bu referanslar sıradan bir akıllı telefonla uzayda güvenilir yönelim sağlamaz. Daha gelişmiş uzay teknolojileri ve sensörlerle belki bir gün oralarda da yolumuzu bulabiliriz 🙂</string>
     <string name="pc_info_compass">Pusula doğruluğu</string>
     <string name="pc_info_accuracy">Düşük doğruluk, telefonun düşük manyetik kalibrasyon bildirdiği anlamına gelir. Sensör doğruluğu iyileşene kadar yönlendirme yaklaşık kalır.</string>
     <string name="pc_info_credits">Katkılar ve lisanslar</string>

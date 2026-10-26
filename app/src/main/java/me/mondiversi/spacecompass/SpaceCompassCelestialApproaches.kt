@@ -117,6 +117,11 @@ internal fun spaceCompassApproachPaths(paths: Map<SpaceCompassCelestialBody, Spa
         val start = maxOf(pa.samples.first().timeMs, pb.samples.first().timeMs)
         val end = minOf(pa.samples.last().timeMs, pb.samples.last().timeMs)
         if (end <= start) continue
+        if (a.deepSkyReference != null && b.deepSkyReference != null) {
+            val first = exact(a, start); val second = exact(b, start)
+            if (first != null && second != null &&
+                spaceCompassAngularSeparation(first, second) > SPACE_COMPASS_APPROACH_LIMIT_DEGREES + .1) continue
+        }
         fun pair(t: Long, precise: Boolean): Pair<SpaceCompassSunPosition,SpaceCompassSunPosition>? {
             // Do not bracket a fast pass from the much coarser display-orbit polyline.
             val actual = precise || a.isEarthSatellite || b.isEarthSatellite
@@ -138,10 +143,8 @@ internal fun spaceCompassApproachPaths(paths: Map<SpaceCompassCelestialBody, Spa
 }
 
 internal fun spaceCompassCurrentApproaches(timeMs: Long, positions: Map<SpaceCompassCelestialBody,SpaceCompassSunPosition>): List<SpaceCompassApproachPair> {
-    val bodies = positions.keys.sortedBy { it.ordinal }
     return buildList {
-        for (i in bodies.indices) for (j in i+1 until bodies.size) {
-            val a = bodies[i]; val b = bodies[j]
+        for ((a, b) in spaceCompassApproachCandidates(positions)) {
             if (spaceCompassSharesGalacticNucleus(a,b)) continue
             val first = positions.getValue(a); val second = positions.getValue(b)
             val distance = spaceCompassAngularSeparation(first,second)

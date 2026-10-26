@@ -37,6 +37,7 @@ internal fun spaceCompassCelestialTemperatures(body: SpaceCompassCelestialBody):
     fun dayNight(day: Double, night: Double) = listOf(
         value(SpaceCompassCelestialTemperatureKind.DAY_MAXIMUM, day),
         value(SpaceCompassCelestialTemperatureKind.NIGHT_MINIMUM, night))
+    body.largeCatalogEntry?.let { return it.temperatures }
     // New catalogue objects have no adopted surface/atmosphere measurements in this data set.
     // An unknown temperature must never be replaced by zero or a generic planetary value.
     if (body.additionalCatalogEntry != null) return emptyList()

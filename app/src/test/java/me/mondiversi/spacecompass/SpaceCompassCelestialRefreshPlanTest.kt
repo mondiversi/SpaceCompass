@@ -10,7 +10,7 @@ class SpaceCompassCelestialRefreshPlanTest {
         SpaceCompassCelestialBody.NEW_HORIZONS, SpaceCompassCelestialBody.JWST, SpaceCompassCelestialBody.PARKER_SOLAR_PROBE,
         SpaceCompassCelestialBody.APOPHIS, SpaceCompassCelestialBody.ATLAS_3I, SpaceCompassCelestialBody.EUROPA_CLIPPER,
         SpaceCompassCelestialBody.JUICE, SpaceCompassCelestialBody.HUBBLE, SpaceCompassCelestialBody.TIANGONG, SpaceCompassCelestialBody.CERES, SpaceCompassCelestialBody.ENCELADUS) +
-        SpaceCompassCelestialBody.entries.filter { it.additionalCatalogEntry?.target != null }.toSet()
+        SpaceCompassCelestialBody.entries.filter { it.additionalCatalogEntry?.target != null || it.catalogSatellite != null }.toSet()
 
     @Test fun uncheckedCometsProbesAndSatellitesAreWarmedEvenWithEmptySelection() {
         val plan = spaceCompassCelestialRefreshBodies(emptySet(), emptySet(), true)

@@ -54,7 +54,16 @@ internal fun SpaceCompassCelestialIconControl(selected: Boolean, label: String, 
                 CompositionLocalProvider(LocalContentColor provides plainTint) { icon() }
             } else {
                 val pressed by pressSource.collectIsPressedAsState()
-                val style = spaceCompassCelestialControlStyle(selected, pressed, role)
+                val style = spaceCompassCelestialControlStyle(selected, pressed, role).let { regular ->
+                    if (circularBackground && role == Role.Button && isSystemInDarkTheme()) {
+                        // Main island actions invert their contrast at night without changing viewer tabs.
+                        val fill = Color(0xFFD2D7DC)
+                        val glyph = Color(0xFF1C242B)
+                        regular.copy(
+                            background = if (pressed) glyph.copy(alpha = .12f).compositeOver(fill) else fill,
+                            content = glyph)
+                    } else regular
+                }
                 Box(Modifier.size(30.dp).clip(CircleShape).background(style.background)
                     .then(if (showCircleBorder) Modifier.border(1.dp, style.border, CircleShape) else Modifier),
                     contentAlignment = Alignment.Center) {

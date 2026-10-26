@@ -1,5 +1,13 @@
 # Changelog
 
+## 1.5.0 — 2026-10-26
+
+- Expand the selectable catalogue to 999 entries, including publicly available fictional LV-426 and all 88 IAU constellations. Keep descriptions and twenty-language resources in the APK. Reuse observer/date-dependent pointing, daily paths, scenarios, search, filters, reminders and exports; unavailable facts stay explicit.
+- Add identity-checked JPL Horizons, catalogue astrometry and NORAD/SatNOGS adapters with offline caches, validity limits, qualified distances and source provenance. Constellation patterns follow their actual linked stars. Selected objects alone participate in angular close approaches; alignments are not eclipse predictions.
+- Publish graphics pack 1.6 with 174 full WebP resources and 174 independently pinned 128×128 previews, quality 90/method 6. Use coherent canonical filenames, exact individual URLs and integrity checks. Preserve legacy aliases, verified caches and every older release URL. No complete texture ZIP or new celestial photograph is bundled in the APK.
+- Refine the panorama glyph with a central crest, visible points and dashed horizon, and join shutter blades into a closed aperture. Increase the object-island action gaps slightly and invert Observatory/Daily path circles at night for contrast; daytime styling and touch targets stay intact. Clarify Earth-only orientation references in all twenty Info translations.
+- Refresh in-app news in twenty languages. Release version 1.5.0/code 50 with the existing signing certificate, a signed update index, optional reference-information archive, validation metadata and checksums. Install over earlier versions to preserve settings and selections.
+
 ## 1.4.11 — 2026-10-26
 
 - Split the main object island's color dot horizontally: the upper half uses the full above-horizon orbit identity color and the lower half uses the existing below-horizon treatment. Keep the complete outline in the object's name text color, independent of the object's current elevation.

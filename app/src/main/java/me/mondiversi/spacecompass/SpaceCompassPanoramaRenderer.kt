@@ -155,10 +155,11 @@ internal fun renderSpaceCompassPanorama(snapshot: SpaceCompassPanoramaSnapshot, 
                 observerAltitude = snapshot.altitude)
         else SpaceCompassSkyReferenceDrawing(emptyList(), emptyList())
         // Defer point labels until every orbit is drawn, so other paths cannot cross their text.
-        if (snapshot.objects.any { it.body == SpaceCompassCelestialBody.SOUTHERN_CROSS } && snapshot.observerPositionKnown)
-            drawSpaceCompassSouthernCross(canvas, calculateSpaceCompassSouthernCross(snapshot.timeMs, snapshot.latitude,
-                snapshot.longitude, snapshot.altitude), sceneWidth, sceneHeight, scale * 2f, centreAzimuth = centerAzimuth,
-                showNames = snapshot.labelMode.showsObject(snapshot.activeBody == SpaceCompassCelestialBody.SOUTHERN_CROSS))
+        if (snapshot.observerPositionKnown) snapshot.objects.filter { it.body.constellationPattern != null }.forEach { item ->
+            drawSpaceCompassSouthernCross(canvas, calculateSpaceCompassConstellation(item.body, snapshot.timeMs,
+                snapshot.latitude, snapshot.longitude, snapshot.altitude), width, sceneHeight, scale, centreAzimuth = centerAzimuth,
+                showNames = snapshot.labelMode.showsObject(snapshot.activeBody == item.body), body = item.body)
+        }
         val pointLabels = mutableListOf<SpaceCompassPanoramaTimeLabel>()
         val pointMarkers = mutableListOf<Triple<SpaceCompassSunPathPoint, SpaceCompassSunScenePoint, Int>>()
         // Draw every curve before live markers, keeping the selected set frozen throughout export.
@@ -250,7 +251,7 @@ internal fun renderSpaceCompassPanorama(snapshot: SpaceCompassPanoramaSnapshot, 
             val p = observation?.position?.let { spaceCompassPanoramaPoint(it, sceneWidth.toDouble(), sceneHeight.toDouble(), centerAzimuth) } ?: return@forEach
             val tint = spaceCompassCelestialPathTint(item.body).toArgb()
             val x = p.x.toFloat(); val y = p.y.toFloat()
-            if (item.body != SpaceCompassCelestialBody.SOUTHERN_CROSS) {
+            if (item.body.constellationPattern == null) {
             paint.style = Paint.Style.FILL; paint.color = 0xcc07101b.toInt()
             canvas.drawCircle(x, y, 38 * scale, paint)
             paint.style = Paint.Style.STROKE; paint.color = tint; paint.strokeWidth = 2 * scale

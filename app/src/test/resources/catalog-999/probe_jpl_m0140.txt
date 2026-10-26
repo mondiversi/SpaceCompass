@@ -1,0 +1,277 @@
+*******************************************************************************
+ Revised: Oct 11, 2012     Deep Impact Flyby/EPOXI Spacecraft (DI)         -140
+                             http://deepimpact.jpl.nasa.gov/
+                                http://www.nasa.gov/epoxi
+
+ UPDATE: Contact was lost Aug 11-14, 2013. The mission was declared lost by 
+  NASA on Sep 19, 2013 after it was determined there were no plausible 
+  scenarios in which control of the spacecraft could be recovered. 
+
+  A software problem with date encodings extended beyond a supported range 
+  (due to the multiple mission extensions) resulted in a reboot loop when 
+  a fault was encountered. This would have eventually resulted in loss of 
+  power and subsequent freezing after a few days.
+
+  The spacecraft was on target for a flyby of 2002 GT Jan 4, 2020 at the
+  time and this will still occur ballistically, though without record.
+
+ NOTE #1: The final post-Hartley 2 encounter reconstructed solution is used
+           here.
+      #2: The spacecraft trajectory (w/data to 2012-Jan-24) includes 
+           targeting maneuver #1 (to encounter 2002 GT in 2019)
+      #3: Updated 2012-Sep-24 to include final planned 1.8 m/s maneuver on 
+           2012-Oct-4 to target flyby of 2002 GT on Jan 4, 2020.
+
+ After encountering 9P/Tempel 1 in 2005, the Deep Impact flyby spacecraft was 
+ retasked as the EPOXI mission to comet 103P/Hartley 2 (2007-2010). The two 
+ missions individual data-sheets are combined here.
+
+ DEEP IMPACT (mission to 9P/Tempel 1):
+ -------------------------------------
+ Initial post-encounter navigation trajectory solution "od189", 
+ produced 2005-Jul-07 16:55, is used here for the encounter. 
+
+  Launched             : 2005-Jan-12 18:47:08 UTC (Delta II 7925)
+  Encounter 9P/Tempel 1: 2005-Jul-04 05:44    UTC
+  "End-of-mission"     : 2005-Aug    (end of data return)
+
+    * Two component spacecraft: fly-by and impactor
+    * 370 kg (~820 lb) impactor released from fly-by S/C approximately 
+       24 hours before impact. Approach solar phase angle was 63 degrees.
+    * Flyby spacecraft observed impact, crater development, ejecta and final 
+       crater with visible and IR multi-spectral instruments.
+
+ Deep Impact flyby trajectory provided by OpNav (JPL) Sep 28, 2005.
+
+ SPACECRAFT RETASKED:
+ --------------------
+ Two proposals for the 2006 Discovery Program Announcement of Opportunity 
+ were merged so as to use the Deep Impact instruments for the study of a 
+ comet in our solar system and to investigate planets around other stars.  
+
+ EPOCh, the extrasolar planet investigation, observes three stars with known 
+ transiting giant planets to characterize those planets and to search for 
+ other planets in those systems.  
+
+ DIXI, the comet investigation, will observe 103P/Hartley 2 during a 
+ high-speed flyby to better understand the similarities and differences 
+ between cometary bodies and the implications on the formation and 
+ evolution of our solar system. 
+
+ Combined, the two proposals became ...
+
+ EPOXI 
+ -----
+  TCM-9            : 2007-Nov-01
+  Earth flyby      : 2007-Dec-31
+  EPOCh Science    : 2008 Jan-May 
+  Earth flyby      : 2008-Dec-30
+  Earth flyby      : 2009-Dec-29
+  Earth flyby      : 2010-Jun-27
+
+  Hartley 2 flyby  : 2010-Nov-04 13:59:31 UTC 
+                       B*R = 690.261 km
+                       B*T = -72.570 km
+                       Phase angle: 79.660 deg
+                     The formal uncertainty of the B-plane coordinates 
+                     above is an ellipse with 1-sigma dimension of 117x98 m, 
+                     with an orientation of the major axis of 95.7 deg 
+                     clockwise from the T-axis. The formal uncertainty on 
+                     the encounter time is 0.078 sec.
+
+ EPOXI trajectories provided by navigation team (JPL) Oct 12, 2012.
+
+ All final trajectory data has been merged in Horizons to provide 
+ time-continuous trajectory data from launch onward:
+
+ USAGE NOTES:
+  To access the 9P/Tempel 1 encounter trajectory estimated by the navigation 
+  team, available over 2005-2015, request pre-computed major body (MB) 
+  "1000093".  To use it as a coordinate center, specify "@1000093"
+
+  To access the 103P/Hartley 2 encounter trajectory estimated by the 
+  navigation team, available over 2010-2012, request pre-computed major body
+  (MB) "1000041".  To use it as a coordinate center, specify "@1000041"
+
+  These precomputed trajectories are based on spacecraft tracking data and
+  should be used when exact reconstruction or data-reduction is needed. 
+
+  By contrast, the standard solutions in the Horizons small-body (SB) database
+  (accessed by including a semi-colon after the number or selecting the SB 
+  version and numerically integrating) include only ground-based optical data 
+  so are slightly different, but extend over longer time-spans and can include
+  statistical uncertainties.
+
+ Trajectory Name               Start (TDB)           Stop (TDB)
+ ----------------------------- --------------------  --------------------
+ dif_preenc174_nav_v1          2005 JAN 12 19:23:32  2005 JUL 03 06:16:05
+ di_finalenc_nav_v3_to06048    2005 JUL 03 06:16:04  2005 JUL 05 05:45:34
+  (9P/Tempel 1 soln.: K051/17)
+ di_flyby-od189                2005 JUL 05 05:45:34  2005 JUL 07 00:00:00
+ DI_050707_090115_050805       2005 JUL 07 00:00:00  2006 FEB 10 00:00:01
+  (undelivered)
+ dif_epoch_nav_v1              2006 FEB 10 00:00:00  2009 FEB 20 00:00:00
+ spk_drm225-full.bsp           2009 FEB 20 00:00:00  2009 DEC 08 00:00:00
+ spk_drm226_WithBurn-full      2009 DEC 08 00:00:00  2010 MAR 29 00:00:00
+ 140_drm228_WithBurn.bsp_V0.1  2010 MAR 29 00:00:00  2010 MAY 29 00:00:01
+ 140_od229.bsp_V0.1            2010 MAY 29 00:00:00  2010 JUL 10 00:00:00
+ 140_drm230_WithBurn-full      2010 JUL 10 00:00:00  2010 SEP 29 19:01:07
+ spk_drm237_WithBurn-full      2010 SEP 29 19:01:07  2011 AUG 02 00:00:00
+ di3_epoxi_extended_od120124   2011 AUG 02 00:00:00  2020 JAN 30 00:00:00
+ 140_od240_WithBurn.bsp        2012 AUG 14 00:00:01  2020 JAN 10 00:00:00
+*******************************************************************************
+
+
+*******************************************************************************
+Ephemeris / API_USER Mon Oct 26 10:21:12 2026 Pasadena, USA      / Horizons
+*******************************************************************************
+Target body name: Deep Impact Flyby - EPOXI (spacecraft) (-140) {source: epoxi_merged}
+Center body name: Earth (399)                     {source: epoxi_merged}
+Center-site name: BODY CENTER
+*******************************************************************************
+Start time      : A.D. 2010-Jan-01 00:00:00.0000 UT 
+Stop  time      : A.D. 2010-Jan-03 00:00:00.0000 UT 
+Step-size       : 60 minutes
+*******************************************************************************
+Center geodetic : 0.0, 0.0, 0.0                   {E-lon(deg),Lat(deg),Alt(km)}
+Center cylindric: 0.0, 0.0, 0.0                   {E-lon(deg),Dxy(km),Dz(km)}
+Center radii    : 6378.137, 6378.137, 6356.752 km {Equator_a, b, pole_c}
+Output units    : AU-D
+Calendar mode   : Mixed Julian/Gregorian
+Output type     : LT+S CORRECTED cartesian states
+Output format   : 2 (position and velocity)
+EOP file        : eop.261023.p270119
+EOP coverage    : DATA-BASED 1962-JAN-20 TO 2026-OCT-23. PREDICTS-> 2027-JAN-18
+Reference frame : ICRF
+*******************************************************************************
+            JDUT ,            Calendar Date (UT ),                      X,                      Y,                      Z,                     VX,                     VY,                     VZ,
+**************************************************************************************************************************************************************************************************
+$$SOE
+2455197.500000000, A.D. 2010-Jan-01 00:00:00.0000, -2.260969380654813E-03, -1.076623379940788E-02,  3.250515384288623E-03, -9.503406840447469E-06, -8.101600643011218E-04,  1.869978159079113E-03,
+2455197.541666667, A.D. 2010-Jan-01 01:00:00.0000, -2.261362075042520E-03, -1.079998983735942E-02,  3.328422161746741E-03, -9.342899227568610E-06, -8.101071340269207E-04,  1.869698656630194E-03,
+2455197.583333333, A.D. 2010-Jan-01 02:00:00.0000, -2.261748075117657E-03, -1.083374372506115E-02,  3.406317271536704E-03, -9.182106405675108E-06, -8.100563444812398E-04,  1.869417574125793E-03,
+2455197.625000000, A.D. 2010-Jan-01 03:00:00.0000, -2.262127368789789E-03, -1.086749555081613E-02,  3.484200648741648E-03, -9.021021521313969E-06, -8.100076637130388E-04,  1.869134955871776E-03,
+2455197.666666667, A.D. 2010-Jan-01 04:00:00.0000, -2.262499943670590E-03, -1.090124540158675E-02,  3.562072230262360E-03, -8.859637859011840E-06, -8.099610592694315E-04,  1.868850845145215E-03,
+2455197.708333333, A.D. 2010-Jan-01 05:00:00.0000, -2.262865787114644E-03, -1.093499336298227E-02,  3.639931954776909E-03, -8.697948849310095E-06, -8.099164982378296E-04,  1.868565284203285E-03,
+2455197.750000000, A.D. 2010-Jan-01 06:00:00.0000, -2.263224886190920E-03, -1.096873951923338E-02,  3.717779762696434E-03, -8.535948076561935E-06, -8.098739472855997E-04,  1.868278314293457E-03,
+2455197.791666667, A.D. 2010-Jan-01 07:00:00.0000, -2.263577227724085E-03, -1.100248395318219E-02,  3.795615596125619E-03, -8.373629285980524E-06, -8.098333726995150E-04,  1.867989975663864E-03,
+2455197.833333333, A.D. 2010-Jan-01 08:00:00.0000, -2.263922798254419E-03, -1.103622674625785E-02,  3.873439398819455E-03, -8.210986390580453E-06, -8.097947404225639E-04,  1.867700307574926E-03,
+2455197.875000000, A.D. 2010-Jan-01 09:00:00.0000, -2.264261584127666E-03, -1.106996797848119E-02,  3.951251116146835E-03, -8.048013477156870E-06, -8.097580160915196E-04,  1.867409348310591E-03,
+2455197.916666667, A.D. 2010-Jan-01 10:00:00.0000, -2.264593571383798E-03, -1.110370772842431E-02,  4.029050695041081E-03, -7.884704812558025E-06, -8.097231650700178E-04,  1.867117135191594E-03,
+2455197.958333333, A.D. 2010-Jan-01 11:00:00.0000, -2.264918745871437E-03, -1.113744607322642E-02,  4.106838083972038E-03, -7.721054848708240E-06, -8.096901524839397E-04,  1.866823704587494E-03,
+2455198.000000000, A.D. 2010-Jan-01 12:00:00.0000, -2.265237093196046E-03, -1.117118308857037E-02,  4.184613232899072E-03, -7.557058227844252E-06, -8.096589432529148E-04,  1.866529091930374E-03,
+2455198.041666667, A.D. 2010-Jan-01 13:00:00.0000, -2.265548598751921E-03, -1.120491884867918E-02,  4.262376093235288E-03, -7.392709786978031E-06, -8.096295021219289E-04,  1.866233331728262E-03,
+2455198.083333333, A.D. 2010-Jan-01 14:00:00.0000, -2.265853247730093E-03, -1.123865342631016E-02,  4.340126617809224E-03, -7.228004562115405E-06, -8.096017936913773E-04,  1.865936457579024E-03,
+2455198.125000000, A.D. 2010-Jan-01 15:00:00.0000, -2.266151025112724E-03, -1.127238689274596E-02,  4.417864760827113E-03, -7.062937792029439E-06, -8.095757824457579E-04,  1.865638502184599E-03,
+2455198.166666667, A.D. 2010-Jan-01 16:00:00.0000, -2.266441915690399E-03, -1.130611931779216E-02,  4.495590477835907E-03, -6.897504921748603E-06, -8.095514327813362E-04,  1.865339497365481E-03,
+2455198.208333333, A.D. 2010-Jan-01 17:00:00.0000, -2.266725904057263E-03, -1.133985076977165E-02,  4.573303725687364E-03, -6.731701605634568E-06, -8.095287090325377E-04,  1.865039474075420E-03,
+2455198.250000000, A.D. 2010-Jan-01 18:00:00.0000, -2.267002974652488E-03, -1.137358131552870E-02,  4.651004462502613E-03, -6.565523709996281E-06, -8.095075754978869E-04,  1.864738462415986E-03,
+2455198.291666667, A.D. 2010-Jan-01 19:00:00.0000, -2.267273111754927E-03, -1.140731102042641E-02,  4.728692647637508E-03, -6.398967315521422E-06, -8.094879964641388E-04,  1.864436491651570E-03,
+2455198.333333333, A.D. 2010-Jan-01 20:00:00.0000, -2.267536299444491E-03, -1.144103994833487E-02,  4.806368241647489E-03, -6.232028719457538E-06, -8.094699362288352E-04,  1.864133590224716E-03,
+2455198.375000000, A.D. 2010-Jan-01 21:00:00.0000, -2.267792521708120E-03, -1.147476816165243E-02,  4.884031206251722E-03, -6.064704437056553E-06, -8.094533591241223E-04,  1.863829785770528E-03,
+2455198.416666667, A.D. 2010-Jan-01 22:00:00.0000, -2.268041762349029E-03, -1.150849572128833E-02,  4.961681504304924E-03, -5.896991203283973E-06, -8.094382295364525E-04,  1.863525105132440E-03,
+2455198.458333333, A.D. 2010-Jan-01 23:00:00.0000, -2.268284005054999E-03, -1.154222268667631E-02,  5.039319099761089E-03, -5.728885973772998E-06, -8.094245119278337E-04,  1.863219574376913E-03,
+2455198.500000000, A.D. 2010-Jan-02 00:00:00.0000, -2.268519233396922E-03, -1.157594911577593E-02,  5.116943957642856E-03, -5.560385925686310E-06, -8.094121708550418E-04,  1.862913218808594E-03,
+2455198.541666667, A.D. 2010-Jan-02 01:00:00.0000, -2.268747430838419E-03, -1.160967506507784E-02,  5.194556044009964E-03, -5.391488458280333E-06, -8.094011709880662E-04,  1.862606062985373E-03,
+2455198.583333333, A.D. 2010-Jan-02 02:00:00.0000, -2.268968580720909E-03, -1.164340058960250E-02,  5.272155325928109E-03, -5.222191193311501E-06, -8.093914771273086E-04,  1.862298130733513E-03,
+2455198.625000000, A.D. 2010-Jan-02 03:00:00.0000, -2.269182666318399E-03, -1.167712574291614E-02,  5.349741771440166E-03, -5.052491974902889E-06, -8.093830542209920E-04,  1.861989445162231E-03,
+2455198.666666667, A.D. 2010-Jan-02 04:00:00.0000, -2.269389670802732E-03, -1.171085057712828E-02,  5.427315349535291E-03, -4.882388869527800E-06, -8.093758673803360E-04,  1.861680028678831E-03,
+2455198.708333333, A.D. 2010-Jan-02 05:00:00.0000, -2.269589577276358E-03, -1.174457514290277E-02,  5.504876030122431E-03, -4.711880165484480E-06, -8.093698818949954E-04,  1.861369903003231E-03,
+2455198.750000000, A.D. 2010-Jan-02 06:00:00.0000, -2.269782368769731E-03, -1.177829948946258E-02,  5.582423783996165E-03, -4.540964372288776E-06, -8.093650632471469E-04,  1.861059089182644E-03,
+2455198.791666667, A.D. 2010-Jan-02 07:00:00.0000, -2.269968028262029E-03, -1.181202366460274E-02,  5.659958582817483E-03, -4.369640219765154E-06, -8.093613771251936E-04,  1.860747607605900E-03,
+2455198.833333333, A.D. 2010-Jan-02 08:00:00.0000, -2.270146538695979E-03, -1.184574771469853E-02,  5.737480399081807E-03, -4.197906656953057E-06, -8.093587894366436E-04,  1.860435478017716E-03,
+2455198.875000000, A.D. 2010-Jan-02 09:00:00.0000, -2.270317882965008E-03, -1.187947168471070E-02,  5.814989206092734E-03, -4.025762850888098E-06, -8.093572663198417E-04,  1.860122719532984E-03,
+2455198.916666667, A.D. 2010-Jan-02 10:00:00.0000, -2.270482043907406E-03, -1.191319561819097E-02,  5.892484977936435E-03, -3.853208185272454E-06, -8.093567741551258E-04,  1.859809350650822E-03,
+2455198.958333333, A.D. 2010-Jan-02 11:00:00.0000, -2.270639004399850E-03, -1.194691955731249E-02,  5.969967689458163E-03, -3.680242258461985E-06, -8.093572795769186E-04,  1.859495389267742E-03,
+2455199.000000000, A.D. 2010-Jan-02 12:00:00.0000, -2.270788747265610E-03, -1.198064354285729E-02,  6.047437316235055E-03, -3.506864882079177E-06, -8.093587494822117E-04,  1.859180852691976E-03,
+2455199.041666667, A.D. 2010-Jan-02 13:00:00.0000, -2.270931255318272E-03, -1.201436761423505E-02,  6.124893834552939E-03, -3.333076078916130E-06, -8.093611510406110E-04,  1.858865757656617E-03,
+2455199.083333333, A.D. 2010-Jan-02 14:00:00.0000, -2.271066511418327E-03, -1.204809180950592E-02,  6.202337221384894E-03, -3.158876080624171E-06, -8.093644517039934E-04,  1.858550120332461E-03,
+2455199.125000000, A.D. 2010-Jan-02 15:00:00.0000, -2.271194498398175E-03, -1.208181616537197E-02,  6.279767454361579E-03, -2.984265325811767E-06, -8.093686192134966E-04,  1.858233956341635E-03,
+2455199.166666667, A.D. 2010-Jan-02 16:00:00.0000, -2.271315199142211E-03, -1.211554071720802E-02,  6.357184511757407E-03, -2.809244457329910E-06, -8.093736216084299E-04,  1.857917280769832E-03,
+2455199.208333333, A.D. 2010-Jan-02 17:00:00.0000, -2.271428596547667E-03, -1.214926549906175E-02,  6.434588372462908E-03, -2.633814319994552E-06, -8.093794272327512E-04,  1.857600108179250E-03,
+2455199.250000000, A.D. 2010-Jan-02 18:00:00.0000, -2.271534673580153E-03, -1.218299054367752E-02,  6.511979015965114E-03, -2.457975957705788E-06, -8.093860047425623E-04,  1.857282452620607E-03,
+2455199.291666667, A.D. 2010-Jan-02 19:00:00.0000, -2.271633413210784E-03, -1.221671588249264E-02,  6.589356422325257E-03, -2.281730611022547E-06, -8.093933231112171E-04,  1.856964327645806E-03,
+2455199.333333333, A.D. 2010-Jan-02 20:00:00.0000, -2.271724798495483E-03, -1.225044154566805E-02,  6.666720572159680E-03, -2.105079713976056E-06, -8.094013516362153E-04,  1.856645746319342E-03,
+2455199.375000000, A.D. 2010-Jan-02 21:00:00.0000, -2.271808812570631E-03, -1.228416756209844E-02,  6.744071446619977E-03, -1.928024891211585E-06, -8.094100599443440E-04,  1.856326721230099E-03,
+2455199.416666667, A.D. 2010-Jan-02 22:00:00.0000, -2.271885438590353E-03, -1.231789395940996E-02,  6.821409027372562E-03, -1.750567955158934E-06, -8.094194179954163E-04,  1.856007264503354E-03,
+2455199.458333333, A.D. 2010-Jan-02 23:00:00.0000, -2.271954659852058E-03, -1.235162076399988E-02,  6.898733296577487E-03, -1.572710902480653E-06, -8.094293960886219E-04,  1.855687387811203E-03,
+2455199.500000000, A.D. 2010-Jan-03 00:00:00.0000, -2.272016459686042E-03, -1.238534800102604E-02,  6.976044236875045E-03, -1.394455911287664E-06, -8.094399648647069E-04,  1.855367102384448E-03,
+$$EOE
+**************************************************************************************************************************************************************************************************
+ 
+TIME
+
+ Times PRIOR to 1962 are UT1, a mean-solar time closely related to the
+prior but now-deprecated GMT. Times AFTER 1962 are in UTC, the current
+civil or "wall-clock" atomic time-scale. UTC is kept within 0.9 seconds
+of UT1 using integer leap-seconds for 1972 and later years.
+
+  Conversion from the internal Barycentric Dynamical Time (TDB) of solar
+system dynamics to the discontinuous civil UT time-scale has not been
+determined for UTC times after the next July or January 1st. Therefore,
+the last known leap-second is used as a constant over future intervals,
+a condition noted here as "UT~".
+
+  Future but as yet undetermined leap-seconds can be expected to change
+time-tags in the "UT~" interval and, in general, the UT scale may not be
+suitable for purposes that assume time-tag continuity in the ephemeris.
+Output in continuous TDB and TT timescales may instead be requested,
+though these are not linked to Earth's rotation.
+
+  Time-tags refer to the UT time-scale conversion from TDB on Earth
+regardless of observer location within the solar system, although clock
+rates may differ due to the local gravity field and no analog to "UT"
+may be defined for that location.
+ 
+CALENDAR SYSTEM
+
+  Mixed calendar mode was active such that calendar dates after AD 1582-Oct-15
+(if any) are in the modern Gregorian system. Dates prior to 1582-Oct-5 (if any)
+are in the Julian calendar system, which is automatically extended for dates
+prior to its adoption on 45-Jan-1 BC.  The Julian calendar is useful for
+matching historical dates. The Gregorian calendar more accurately corresponds
+to the Earth's orbital motion and seasons. A "Gregorian-only" calendar mode is
+available if such physical events are the primary interest.
+
+REFERENCE FRAME AND COORDINATES
+
+  International Celestial Reference Frame (ICRF)
+
+    The ICRF is an adopted reference frame whose axes are defined relative to 
+    fixed extragalactic radio sources distributed across the sky.
+
+    The ICRF was aligned with the prior FK5/J2000 dynamical system at the ~0.02 
+    arcsecond level but is not identical and has no associated standard epoch.
+
+  Symbol meaning [1 au= 149597870.700 km, 1 day= 86400.0 s]:
+
+    JDUT     Julian Day Number, Universal Time
+      X      X-component of position vector (au)
+      Y      Y-component of position vector (au)
+      Z      Z-component of position vector (au)
+      VX     X-component of velocity vector (au/day)                           
+      VY     Y-component of velocity vector (au/day)                           
+      VZ     Z-component of velocity vector (au/day)                           
+
+ABERRATIONS AND CORRECTIONS
+
+ States have been corrected for Newtonian down-leg  (receive) light-time
+ displacement and relativistic stellar aberration.
+
+Computations by ...
+
+    Solar System Dynamics Group, Horizons On-Line Ephemeris System
+    4800 Oak Grove Drive, Jet Propulsion Laboratory
+    Pasadena, CA  91109   USA
+
+    General site: https://ssd.jpl.nasa.gov/
+    Mailing list: https://ssd.jpl.nasa.gov/email_list.html
+    System news : https://ssd.jpl.nasa.gov/horizons/news.html
+    User Guide  : https://ssd.jpl.nasa.gov/horizons/manual.html
+    Connect     : browser        https://ssd.jpl.nasa.gov/horizons/app.html#/x
+                  API            https://ssd-api.jpl.nasa.gov/doc/horizons.html
+                  command-line   telnet ssd.jpl.nasa.gov 6775
+                  e-mail/batch   https://ssd.jpl.nasa.gov/ftp/ssd/horizons_batch.txt
+                  scripts        https://ssd.jpl.nasa.gov/ftp/ssd/SCRIPTS
+    Inquiries   : Jon.D.Giorgini@jpl.nasa.gov
+*******************************************************************************

@@ -1,8 +1,8 @@
 <resources>
     <string name="info_news_title">Laatste nieuws · %1$s</string>
-    <string name="info_news_star_sky" formatted="false">De stip naast de objectnaam toont beide baankleuren: boven en onder de horizon.</string>
-    <string name="info_news_texture_downloads" formatted="false">Legenda’s van foto’s en panorama’s gebruiken nu tweekleurige stippen in plaats van lijnen.</string>
-    <string name="info_news_weather" formatted="false">De stippen passen qua grootte bij de tekst en hun rand heeft dezelfde kleur als de letters, ook in geëxporteerde afbeeldingen.</string>
+    <string name="info_news_star_sky" formatted="false">Ontdek 999 objecten, alle 88 sterrenbeelden en het vrij beschikbare LV-426, met verbeterde tracking en wetenschappelijke bronnen.</string>
+    <string name="info_news_texture_downloads" formatted="false">Nieuw grafisch pakket 1.6: 174 afbeeldingen en 174 aparte miniaturen, afzonderlijk gedownload en offline bewaard.</string>
+    <string name="info_news_weather" formatted="false">Duidelijkere info, vernieuwde opname- en panorama-iconen en meer contrast voor de knoppen Observatorium en Dagbaan in de nachtmodus.</string>
     <string name="info_news_viewer_zoom" formatted="false">Typen op aantal objecten, alfabetische sorteeropties en duidelijkere objectbediening.</string>
     <string name="info_news_settings" formatted="false">Stabielere referentielabels en Nadir op −90°, tegenover het Zenit.</string>
     <string name="info_news_catalog" formatted="false">Verbeterde maanbewegingen, naderingen van geselecteerde objecten en duidelijke laadstatus voor het weer.</string>

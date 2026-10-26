@@ -3,7 +3,7 @@
     <string name="pc_info">Informacje i autorzy</string>
     <string name="pc_display_automatic">Automatyczne skalowanie</string>
     <string name="pc_info_description">Kompas astronomiczny do znajdowania obiektów niebieskich, badania ich torów oraz oglądania modeli i faz Księżyca.</string>
-    <string name="pc_info_earth">Zaprojektowany dla Ziemi: w kosmosie lepiej zapytać astronautę o drogę 🙂</string>
+    <string name="pc_info_earth">Do użytku na Ziemi: aplikacja wykorzystuje grawitację i ziemskie pole magnetyczne do określania orientacji, a GPS podaje położenie. Te punkty odniesienia nie gwarantują niezawodnej orientacji w kosmosie przy użyciu zwykłego smartfona. Dzięki bardziej zaawansowanym technologiom kosmicznym i czujnikom może kiedyś odnajdziemy drogę także tam 🙂</string>
     <string name="pc_info_compass">Dokładność kompasu</string>
     <string name="pc_info_accuracy">Obniżona dokładność oznacza, że telefon zgłasza niski poziom kalibracji magnetycznej. Kierunek pozostaje przybliżony, dopóki dokładność czujnika się nie poprawi.</string>
     <string name="pc_info_credits">Autorzy i licencje</string>

@@ -22,8 +22,8 @@ internal class SpaceCompassCatalogSatelliteOrbit private constructor(
         val state = tle.getRV((timeMs - epochMs) / 60_000.0)
         require(tle.sgp4Error == 0 && state.size == 2 && state.all {
             it.size == 3 && it.all(Double::isFinite) })
-        require(sqrt(state[0].sumOf { it * it }) in 6400.0..9000.0)
-        require(spaceCompassCelestialVelocityMagnitude(state[1][0], state[1][1], state[1][2]) in 6.0..9.0)
+        require(sqrt(state[0].sumOf { it * it }) in requireNotNull(body.catalogSatellite).radiusKm)
+        require(spaceCompassCelestialVelocityMagnitude(state[1][0], state[1][1], state[1][2]) in requireNotNull(body.catalogSatellite).speedKmSecond)
         return state
     }
     override fun teme(timeMs: Long) = state(timeMs)[0]
@@ -50,7 +50,7 @@ internal class SpaceCompassCatalogSatelliteOrbit private constructor(
             val epoch = LocalDate.of(year, 1, 1).atStartOfDay(ZoneOffset.UTC).toInstant().toEpochMilli() +
                 ((day - 1) * 86_400_000).roundToLong()
             val orbit = SpaceCompassCatalogSatelliteOrbit(body, lines[0], lines[1], epoch)
-            require(orbit.tle.parseErrors.isNullOrEmpty() && orbit.tle.n in 14.0..17.0 &&
+            require(orbit.tle.parseErrors.isNullOrEmpty() && orbit.tle.n in identity.meanMotion &&
                 orbit.tle.ecc in 0.0..0.02 && orbit.tle.incDeg in identity.inclination)
             orbit.teme(epoch)
             return orbit
@@ -58,7 +58,7 @@ internal class SpaceCompassCatalogSatelliteOrbit private constructor(
     }
 }
 
-internal class SpaceCompassCatalogSatelliteSources(body: SpaceCompassCelestialBody) {
+internal class SpaceCompassCatalogSatelliteSources(private val body: SpaceCompassCelestialBody) {
     private val identity = requireNotNull(body.catalogSatellite)
     private val sources = SpaceCompassSatelliteSources(
         "https://celestrak.org/NORAD/elements/gp.php?CATNR=${identity.norad}&FORMAT=TLE",
@@ -67,5 +67,31 @@ internal class SpaceCompassCatalogSatelliteSources(body: SpaceCompassCelestialBo
     ) { text, now -> require(SpaceCompassCatalogSatelliteOrbit.parse(body, text).usable(now)) {
         "Satellite elements are too old" } }
 
-    suspend fun load(now: Long, fetch: suspend (String, Int) -> String) = sources.load(now, fetch)
+    private var preferSatnogs = false
+    private var satnogsStopped = false
+    private suspend fun satnogs(now: Long, fetch: suspend (String, Int) -> String): String {
+        check(!satnogsStopped) { "Satellite JSON provider stopped for this session" }
+        try {
+            val raw = fetch("https://db.satnogs.org/api/tle/?norad_cat_id=${identity.norad}", 65_536)
+            val text = spaceCompassSatnogsTle(raw)
+            require(SpaceCompassCatalogSatelliteOrbit.parse(body, text).usable(now)) { "Satellite elements are too old" }
+            return text
+        } catch (error: SpaceCompassCelestialHttpException) {
+            satnogsStopped = true
+            throw error
+        }
+    }
+    suspend fun load(now: Long, fetch: suspend (String, Int) -> String): String {
+        if (preferSatnogs) {
+            try { return satnogs(now, fetch) }
+            catch (cancelled: kotlinx.coroutines.CancellationException) { throw cancelled }
+            catch (_: Exception) { /* Independently validated original providers remain available. */ }
+        }
+        try { return sources.load(now, fetch) }
+        catch (cancelled: kotlinx.coroutines.CancellationException) { throw cancelled }
+        catch (original: Exception) {
+            if (satnogsStopped) throw original
+            return satnogs(now, fetch).also { preferSatnogs = true }
+        }
+    }
 }

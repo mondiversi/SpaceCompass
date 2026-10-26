@@ -152,7 +152,7 @@ class SpaceCompassCelestialViewerTest {
             val f=spaceCompassCelestialFacts(body)
             listOf(f.diameterKm,f.massKg,f.gravity,f.density,f.revolutionDays,f.minimumParentKm,f.maximumParentKm)
                 .filterNotNull().forEach { assertTrue(it.isFinite() && it>0) }
-            if(f.minimumParentKm!=null) assertTrue(f.maximumParentKm!!>f.minimumParentKm)
+            if(f.minimumParentKm!=null && f.maximumParentKm!=null) assertTrue(f.maximumParentKm>f.minimumParentKm)
             if(body.isSpacecraft) { assertNull(f.rotationHours); assertNull(f.gravity); assertNull(f.revolutionDays) }
         }
         assertNull(spaceCompassCelestialFacts(SpaceCompassCelestialBody.SEDNA).massKg)

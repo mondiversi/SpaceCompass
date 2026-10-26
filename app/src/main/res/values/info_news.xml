@@ -1,8 +1,8 @@
 <resources>
     <string name="info_news_title">Latest news · %1$s</string>
-    <string name="info_news_star_sky" formatted="false">The dot beside the object name shows both orbit colors: above and below the horizon.</string>
-    <string name="info_news_texture_downloads" formatted="false">Photo and panorama legends now use split-color dots instead of lines.</string>
-    <string name="info_news_weather" formatted="false">Dots scale with the text and their outlines match the lettering, including in exported images.</string>
+    <string name="info_news_star_sky" formatted="false">Explore 999 objects, all 88 constellations and public LV-426, with refined tracking and scientific references.</string>
+    <string name="info_news_texture_downloads" formatted="false">New graphics pack 1.6: 174 images and 174 separate previews, downloaded individually and cached offline.</string>
+    <string name="info_news_weather" formatted="false">Clearer Info, refined capture and panorama icons, and higher-contrast Observatory and Daily path shortcuts at night.</string>
     <string name="info_news_viewer_zoom" formatted="false">Types ordered by object count, alphabetical sorting options and clearer object controls.</string>
     <string name="info_news_settings" formatted="false">Steadier reference labels and Nadir at −90°, opposite Zenith.</string>
     <string name="info_news_catalog" formatted="false">Improved moon motion, selected-object close approaches and explicit weather-loading status.</string>

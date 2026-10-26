@@ -1,0 +1,245 @@
+*******************************************************************************
+ Revised: Sep 28, 2018   Cassini Spacecraft (interplanetary) / (Sun)        -82
+                               http://saturn.jpl.nasa.gov/
+ 
+ UPDATED with "final" post-mission reconstruction, 2004 to end-of-mission.
+
+ UPDATED with final trajectory prediction prior to atmospheric entry and
+  end of mission. Schedule of events for final day:
+
+  2017-Sep-15
+    Event time at Saturn                          Signal receipt time at Earth
+     5:08 UTC (10:08 pm PDT - Sept. 14) 
+      High above Saturn, Cassini crosses the orbital distance of Enceladus 
+      for the last time 	 
+
+     7:14 UTC (12:14 am PDT)                         8:37 UTC (1:37 am PDT)
+      Spacecraft begins a 5-minute roll to point instrument (INMS) that will 
+      sample Saturn's atmosphere and reconfigures systems for real-time data 
+      transmission at 27 kilobits per second (3.4 kilobytes per second). 
+      Final, real-time relay of data begins  	
+
+     7:22 UTC (12:22 am PDT) 
+      High above Saturn, Cassini crosses the orbital distance of the F ring 
+      (outermost of the main rings) for the last time 	 
+
+    10:31 UTC (3:31 am PDT)                        11:54 UTC (4:54 am PDT)
+      Atmospheric entry begins; thrusters firing at 10% of capacity  	
+
+    10:32 UTC (3:32 am PDT)                        11:55 UTC (4:55 am PDT)
+      Thrusters at 100% of capacity; high-gain antenna begins to point away 
+      from Earth, leading to loss of signal.
+
+ BACKGROUND:
+  Cassini completed its initial four-year mission to explore the Saturn System 
+  in June 2008 and the first extended mission, called the Cassini Equinox 
+  Mission, in September 2010. Now, the healthy spacecraft is seeking to make 
+  new discoveries in a second extended mission called the Cassini Solstice 
+  Mission.
+
+  The mission's extension, which goes through September 2017, is named for the 
+  Saturnian summer solstice occurring in May 2017. The northern summer solstice
+  marks the beginning of summer in the northern hemisphere and winter in the 
+  southern hemisphere. Since Cassini arrived at Saturn just after the planet's
+  northern winter solstice, the extension will allow for the first study of a 
+  complete seasonal period.
+
+  Cassini launched in October 1997 with the European Space Agency's Huygens 
+  probe.  The probe was equipped with six instruments to study Titan, Saturn's 
+  largest moon. It landed on Titan's surface on Jan. 14, 2005.
+
+  Meanwhile, Cassini's 12 instruments have returned a daily stream of data from 
+  Saturn's system since arriving at Saturn in 2004.
+
+  Among the most important targets of the mission are the moons Titan and 
+  Enceladus, as well as some of Saturn's other icy moons. Towards the end of 
+  the mission, Cassini will make closer studies of the planet and its rings.
+
+ SPACECRAFT PHYSICAL CHARACTERISTICS:
+  Power at Saturn        = ~660 Watts      Data storage           = 4 Gbits
+  Star catalog           = 3700 stars      Engineering Subsys     = 12
+  Height                 = 6.8 m           Engineering computers  = 26
+  Primary s/w language   = Ada             Parts count            > 100000
+  Transmitter power      = 19 Watts (RF)   Main engine thrust     = 445 Newtons
+  Data Rate at Saturn    = 140000 bits/s   # of telemetry measurs = 11000
+  Orbiter Instruments    = 12              Huygens Instruments    = 6
+  Total sensors          = 66              Radar power            = 108 Watts
+  Fuel mass              = 3132 kg
+
+ ATTITUDE CONTROL:
+  Attitude control     = 3-axis stabil.    Pointing accuracy      = 2.0 mrad
+  Pointing Stability   = 0.036 mrad/5-sec
+
+ SPACECRAFT TRAJECTORY:
+  Trajectories provided by the Navigation Team (concatenated here). 
+
+  Last update is the navigation post-mission reconstruction segment
+  released 2018-June-29.
+
+   Trajectory segment name    Start date (TDB)     End date (TDB)
+   -------------------------- -----------------    -----------------
+   000331R_SK_LP0_V1P32       1997-Oct-15 09:28 to 1998-May-28 21:23
+   000331B_SK_V1P32_V2P12     1998-May-28 21:23 to 1999-Jul-06 16:01
+   000331R_SK_V2P12_EP15      1999-Jul-06 16:01 to 1999-Aug-19 02:00
+   010420R_SCPSE_EP1_JP83     1999-Aug-19 02:00 to 2001-Mar-07 12:00
+   010423_SK_JP67_SP0         2001-Mar-07 12:00 to 2002-Apr-11 00:00
+   020425B_SK_SM812_T45       2002-Apr-11 00:00 to 2003-Jan-01 12:00
+   030201AP_OPK_SM546_T45     2003-Jan-01 12:00 to 2004-May-01 12:00
+   040622AP_OPK_04122_08222   2004-May-01 12:00 to 2004-Jul-01 14:00
+   180628RU_SCPSE_04183_17258 2004-Jul-01 14:00 to 2017-Sep-15 11:58
+*******************************************************************************
+
+
+*******************************************************************************
+Ephemeris / API_USER Mon Oct 26 10:21:08 2026 Pasadena, USA      / Horizons
+*******************************************************************************
+Target body name: Cassini (spacecraft) (-82)      {source: cassini_merge}
+Center body name: Earth (399)                     {source: cassini_merge}
+Center-site name: BODY CENTER
+*******************************************************************************
+Start time      : A.D. 2015-Jan-01 00:00:00.0000 UT 
+Stop  time      : A.D. 2015-Jan-03 00:00:00.0000 UT 
+Step-size       : 60 minutes
+*******************************************************************************
+Center geodetic : 0.0, 0.0, 0.0                   {E-lon(deg),Lat(deg),Alt(km)}
+Center cylindric: 0.0, 0.0, 0.0                   {E-lon(deg),Dxy(km),Dz(km)}
+Center radii    : 6378.137, 6378.137, 6356.752 km {Equator_a, b, pole_c}
+Output units    : AU-D
+Calendar mode   : Mixed Julian/Gregorian
+Output type     : LT+S CORRECTED cartesian states
+Output format   : 2 (position and velocity)
+EOP file        : eop.261023.p270119
+EOP coverage    : DATA-BASED 1962-JAN-20 TO 2026-OCT-23. PREDICTS-> 2027-JAN-18
+Reference frame : ICRF
+*******************************************************************************
+            JDUT ,            Calendar Date (UT ),                      X,                      Y,                      Z,                     VX,                     VY,                     VZ,
+**************************************************************************************************************************************************************************************************
+$$SOE
+2457023.500000000, A.D. 2015-Jan-01 00:00:00.0000, -5.225714393477478E+00, -8.703410080353327E+00, -3.366209582653224E+00,  2.180773355326304E-02,  1.428930523981614E-03, -6.421342186984915E-04,
+2457023.541666667, A.D. 2015-Jan-01 01:00:00.0000, -5.224805498740841E+00, -8.703350445337460E+00, -3.366236462233172E+00,  2.179957275629406E-02,  1.446269937821577E-03, -6.415609051080784E-04,
+2457023.583333333, A.D. 2015-Jan-01 02:00:00.0000, -5.223896944722089E+00, -8.703290087783632E+00, -3.366263318307880E+00,  2.179136168011698E-02,  1.463615493883060E-03, -6.410050533944619E-04,
+2457023.625000000, A.D. 2015-Jan-01 03:00:00.0000, -5.222988733526792E+00, -8.703229007434066E+00, -3.366290151608831E+00,  2.178309982668540E-02,  1.480967270536062E-03, -6.404668582216521E-04,
+2457023.666666667, A.D. 2015-Jan-01 04:00:00.0000, -5.222080867281445E+00, -8.703167204027748E+00, -3.366316962875682E+00,  2.177478668862036E-02,  1.498325345875010E-03, -6.399465162991677E-04,
+2457023.708333333, A.D. 2015-Jan-01 05:00:00.0000, -5.221173348133873E+00, -8.703104677300406E+00, -3.366343752856334E+00,  2.176642175009605E-02,  1.515689798096987E-03, -6.394442283387245E-04,
+2457023.750000000, A.D. 2015-Jan-01 06:00:00.0000, -5.220266178253563E+00, -8.703041426984470E+00, -3.366370522307205E+00,  2.175800448536401E-02,  1.533060707004755E-03, -6.389602012111878E-04,
+2457023.791666667, A.D. 2015-Jan-01 07:00:00.0000, -5.219359359832101E+00, -8.702977452809076E+00, -3.366397271993374E+00,  2.174953436148259E-02,  1.550438149489195E-03, -6.384946415314169E-04,
+2457023.833333333, A.D. 2015-Jan-01 08:00:00.0000, -5.218452895083523E+00, -8.702912754500183E+00, -3.366424002688510E+00,  2.174101083251160E-02,  1.567822203855397E-03, -6.380477579590668E-04,
+2457023.875000000, A.D. 2015-Jan-01 09:00:00.0000, -5.217546786244735E+00, -8.702847331780495E+00, -3.366450715175076E+00,  2.173243334690981E-02,  1.585212945985559E-03, -6.376197631966749E-04,
+2457023.916666667, A.D. 2015-Jan-01 10:00:00.0000, -5.216641035575910E+00, -8.702781184369540E+00, -3.366477410244440E+00,  2.172380133925986E-02,  1.602610453126698E-03, -6.372108714346429E-04,
+2457023.958333333, A.D. 2015-Jan-01 11:00:00.0000, -5.215735645360936E+00, -8.702714311983664E+00, -3.366504088696975E+00,  2.171511423597241E-02,  1.620014801893169E-03, -6.368213025049111E-04,
+2457024.000000000, A.D. 2015-Jan-01 12:00:00.0000, -5.214830617907834E+00, -8.702646714335994E+00, -3.366530751342332E+00,  2.170637145198064E-02,  1.637426069022622E-03, -6.364512787994807E-04,
+2457024.041666667, A.D. 2015-Jan-01 13:00:00.0000, -5.213925955549195E+00, -8.702578391136509E+00, -3.366557398999434E+00,  2.169757239385753E-02,  1.654844329045280E-03, -6.361010254927032E-04,
+2457024.083333333, A.D. 2015-Jan-01 14:00:00.0000, -5.213021660642624E+00, -8.702509342092064E+00, -3.366584032496628E+00,  2.168871645411465E-02,  1.672269656896612E-03, -6.357707688316533E-04,
+2457024.125000000, A.D. 2015-Jan-01 15:00:00.0000, -5.212117735571203E+00, -8.702439566906451E+00, -3.366610652671771E+00,  2.167980301593589E-02,  1.689702126485069E-03, -6.354607396375645E-04,
+2457024.166666667, A.D. 2015-Jan-01 16:00:00.0000, -5.211214182744000E+00, -8.702369065280333E+00, -3.366637260372479E+00,  2.167083145045989E-02,  1.707141812564364E-03, -6.351711748698077E-04,
+2457024.208333333, A.D. 2015-Jan-01 17:00:00.0000, -5.210311004596479E+00, -8.702297836911299E+00, -3.366663856456265E+00,  2.166180111728255E-02,  1.724588788368834E-03, -6.349023128848633E-04,
+2457024.250000000, A.D. 2015-Jan-01 18:00:00.0000, -5.209408203591072E+00, -8.702225881493906E+00, -3.366690441790644E+00,  2.165271136406662E-02,  1.742043126656761E-03, -6.346543959980304E-04,
+2457024.291666667, A.D. 2015-Jan-01 19:00:00.0000, -5.208505782217619E+00, -8.702153198719650E+00, -3.366717017253408E+00,  2.164356152674277E-02,  1.759504900520010E-03, -6.344276737195129E-04,
+2457024.333333333, A.D. 2015-Jan-01 20:00:00.0000, -5.207603742993912E+00, -8.702079788277079E+00, -3.366743583732605E+00,  2.163435092736917E-02,  1.776974179715205E-03, -6.342223902153733E-04,
+2457024.375000000, A.D. 2015-Jan-01 21:00:00.0000, -5.206702088466256E+00, -8.702005649851806E+00, -3.366770142126651E+00,  2.162507887580182E-02,  1.794451034583670E-03, -6.340387985369747E-04,
+2457024.416666667, A.D. 2015-Jan-01 22:00:00.0000, -5.205800821209958E+00, -8.701930783126546E+00, -3.366796693344577E+00,  2.161574466928583E-02,  1.811935534017699E-03, -6.338771551658121E-04,
+2457024.458333333, A.D. 2015-Jan-01 23:00:00.0000, -5.204899943829898E+00, -8.701855187781165E+00, -3.366823238306178E+00,  2.160634759122073E-02,  1.829427746360707E-03, -6.337377204622310E-04,
+2457024.500000000, A.D. 2015-Jan-02 00:00:00.0000, -5.203999458961093E+00, -8.701778863492692E+00, -3.366849777942186E+00,  2.159688691120503E-02,  1.846927738956963E-03, -6.336207587249069E-04,
+2457024.541666667, A.D. 2015-Jan-02 01:00:00.0000, -5.203099369269297E+00, -8.701701809935372E+00, -3.366876313194423E+00,  2.158736188455885E-02,  1.864435578185223E-03, -6.335265382686902E-04,
+2457024.583333333, A.D. 2015-Jan-02 02:00:00.0000, -5.202199677451595E+00, -8.701624026780724E+00, -3.366902845015973E+00,  2.157777175238982E-02,  1.881951329095414E-03, -6.334553313495936E-04,
+2457024.625000000, A.D. 2015-Jan-02 03:00:00.0000, -5.201300386236960E+00, -8.701545513697555E+00, -3.366929374371361E+00,  2.156811574076911E-02,  1.899475055760285E-03, -6.334074148000825E-04,
+2457024.666666667, A.D. 2015-Jan-02 04:00:00.0000, -5.200401498386971E+00, -8.701466270352052E+00, -3.366955902236728E+00,  2.155839306076966E-02,  1.917006820958920E-03, -6.333830694309060E-04,
+2457024.708333333, A.D. 2015-Jan-02 05:00:00.0000, -5.199503016696377E+00, -8.701386296407804E+00, -3.366982429600006E+00,  2.154860290782378E-02,  1.934546686006629E-03, -6.333825804364950E-04,
+2457024.750000000, A.D. 2015-Jan-02 06:00:00.0000, -5.198604943993788E+00, -8.701305591525882E+00, -3.367008957461106E+00,  2.153874446136905E-02,  1.952094710722087E-03, -6.334062374708195E-04,
+2457024.791666667, A.D. 2015-Jan-02 07:00:00.0000, -5.197707283142345E+00, -8.701224155364887E+00, -3.367035486832095E+00,  2.152881688456635E-02,  1.969650953511547E-03, -6.334543346908991E-04,
+2457024.833333333, A.D. 2015-Jan-02 08:00:00.0000, -5.196810037040390E+00, -8.701141987581030E+00, -3.367062018737398E+00,  2.151881932383354E-02,  1.987215471189779E-03, -6.335271708662271E-04,
+2457024.875000000, A.D. 2015-Jan-02 09:00:00.0000, -5.195913208622199E+00, -8.701059087828185E+00, -3.367088554213983E+00,  2.150875090841877E-02,  2.004788318897740E-03, -6.336250494860301E-04,
+2457024.916666667, A.D. 2015-Jan-02 10:00:00.0000, -5.195016800858693E+00, -8.700975455757963E+00, -3.367115094311563E+00,  2.149861074995233E-02,  2.022369550021645E-03, -6.337482788713593E-04,
+2457024.958333333, A.D. 2015-Jan-02 11:00:00.0000, -5.194120816758186E+00, -8.700891091019805E+00, -3.367141640092777E+00,  2.148839794185755E-02,  2.039959215034445E-03, -6.338971698016572E-04,
+2457025.000000000, A.D. 2015-Jan-02 12:00:00.0000, -5.193225259367117E+00, -8.700805993261092E+00, -3.367168192633298E+00,  2.147811155929698E-02,  2.057557363570557E-03, -6.340720408754002E-04,
+2457025.041666667, A.D. 2015-Jan-02 13:00:00.0000, -5.192330131770892E+00, -8.700720162127137E+00, -3.367194753022290E+00,  2.146775065812641E-02,  2.075164044207900E-03, -6.342732175858278E-04,
+2457025.083333333, A.D. 2015-Jan-02 14:00:00.0000, -5.191435437094640E+00, -8.700633597261273E+00, -3.367221322362591E+00,  2.145731427571494E-02,  2.092779302906789E-03, -6.345010312714763E-04,
+2457025.125000000, A.D. 2015-Jan-02 15:00:00.0000, -5.190541178504028E+00, -8.700546298305026E+00, -3.367247901770793E+00,  2.144680142795090E-02,  2.110403181897639E-03, -6.347558127977533E-04,
+2457025.166666667, A.D. 2015-Jan-02 16:00:00.0000, -5.189647359206116E+00, -8.700458264898195E+00, -3.367274492377485E+00,  2.143621111132957E-02,  2.128035721257829E-03, -6.350379009181145E-04,
+2457025.208333333, A.D. 2015-Jan-02 17:00:00.0000, -5.188753982450240E+00, -8.700369496678940E+00, -3.367301095327494E+00,  2.142554230154050E-02,  2.145676958717010E-03, -6.353476408833317E-04,
+2457025.250000000, A.D. 2015-Jan-02 18:00:00.0000, -5.187861051528866E+00, -8.700279993283919E+00, -3.367327711780116E+00,  2.141479395210502E-02,  2.163326929061325E-03, -6.356853821422622E-04,
+2457025.291666667, A.D. 2015-Jan-02 19:00:00.0000, -5.186968569778561E+00, -8.700189754348388E+00, -3.367354342909338E+00,  2.140396499283897E-02,  2.180985666290511E-03, -6.360514829259728E-04,
+2457025.333333333, A.D. 2015-Jan-02 20:00:00.0000, -5.186076540580841E+00, -8.700098779506266E+00, -3.367380989904237E+00,  2.139305433390427E-02,  2.198653198084260E-03, -6.364463048791535E-04,
+2457025.375000000, A.D. 2015-Jan-02 21:00:00.0000, -5.185184967363234E+00, -8.700007068390374E+00, -3.367407653969033E+00,  2.138206085987678E-02,  2.216329551087267E-03, -6.368702163855106E-04,
+2457025.416666667, A.D. 2015-Jan-02 22:00:00.0000, -5.184293853600175E+00, -8.699914620632500E+00, -3.367434336323408E+00,  2.137098343209616E-02,  2.234014748391950E-03, -6.373235916286140E-04,
+2457025.458333333, A.D. 2015-Jan-02 23:00:00.0000, -5.183403202814077E+00, -8.699821435863507E+00, -3.367461038202869E+00,  2.135982088709783E-02,  2.251708809640918E-03, -6.378068124713195E-04,
+2457025.500000000, A.D. 2015-Jan-03 00:00:00.0000, -5.182513018576355E+00, -8.699727513713565E+00, -3.367487760858833E+00,  2.134857203593373E-02,  2.269411749796352E-03, -6.383202641521876E-04,
+$$EOE
+**************************************************************************************************************************************************************************************************
+ 
+TIME
+
+ Times PRIOR to 1962 are UT1, a mean-solar time closely related to the
+prior but now-deprecated GMT. Times AFTER 1962 are in UTC, the current
+civil or "wall-clock" atomic time-scale. UTC is kept within 0.9 seconds
+of UT1 using integer leap-seconds for 1972 and later years.
+
+  Conversion from the internal Barycentric Dynamical Time (TDB) of solar
+system dynamics to the discontinuous civil UT time-scale has not been
+determined for UTC times after the next July or January 1st. Therefore,
+the last known leap-second is used as a constant over future intervals,
+a condition noted here as "UT~".
+
+  Future but as yet undetermined leap-seconds can be expected to change
+time-tags in the "UT~" interval and, in general, the UT scale may not be
+suitable for purposes that assume time-tag continuity in the ephemeris.
+Output in continuous TDB and TT timescales may instead be requested,
+though these are not linked to Earth's rotation.
+
+  Time-tags refer to the UT time-scale conversion from TDB on Earth
+regardless of observer location within the solar system, although clock
+rates may differ due to the local gravity field and no analog to "UT"
+may be defined for that location.
+ 
+CALENDAR SYSTEM
+
+  Mixed calendar mode was active such that calendar dates after AD 1582-Oct-15
+(if any) are in the modern Gregorian system. Dates prior to 1582-Oct-5 (if any)
+are in the Julian calendar system, which is automatically extended for dates
+prior to its adoption on 45-Jan-1 BC.  The Julian calendar is useful for
+matching historical dates. The Gregorian calendar more accurately corresponds
+to the Earth's orbital motion and seasons. A "Gregorian-only" calendar mode is
+available if such physical events are the primary interest.
+
+REFERENCE FRAME AND COORDINATES
+
+  International Celestial Reference Frame (ICRF)
+
+    The ICRF is an adopted reference frame whose axes are defined relative to 
+    fixed extragalactic radio sources distributed across the sky.
+
+    The ICRF was aligned with the prior FK5/J2000 dynamical system at the ~0.02 
+    arcsecond level but is not identical and has no associated standard epoch.
+
+  Symbol meaning [1 au= 149597870.700 km, 1 day= 86400.0 s]:
+
+    JDUT     Julian Day Number, Universal Time
+      X      X-component of position vector (au)
+      Y      Y-component of position vector (au)
+      Z      Z-component of position vector (au)
+      VX     X-component of velocity vector (au/day)                           
+      VY     Y-component of velocity vector (au/day)                           
+      VZ     Z-component of velocity vector (au/day)                           
+
+ABERRATIONS AND CORRECTIONS
+
+ States have been corrected for Newtonian down-leg  (receive) light-time
+ displacement and relativistic stellar aberration.
+
+Computations by ...
+
+    Solar System Dynamics Group, Horizons On-Line Ephemeris System
+    4800 Oak Grove Drive, Jet Propulsion Laboratory
+    Pasadena, CA  91109   USA
+
+    General site: https://ssd.jpl.nasa.gov/
+    Mailing list: https://ssd.jpl.nasa.gov/email_list.html
+    System news : https://ssd.jpl.nasa.gov/horizons/news.html
+    User Guide  : https://ssd.jpl.nasa.gov/horizons/manual.html
+    Connect     : browser        https://ssd.jpl.nasa.gov/horizons/app.html#/x
+                  API            https://ssd-api.jpl.nasa.gov/doc/horizons.html
+                  command-line   telnet ssd.jpl.nasa.gov 6775
+                  e-mail/batch   https://ssd.jpl.nasa.gov/ftp/ssd/horizons_batch.txt
+                  scripts        https://ssd.jpl.nasa.gov/ftp/ssd/SCRIPTS
+    Inquiries   : Jon.D.Giorgini@jpl.nasa.gov
+*******************************************************************************

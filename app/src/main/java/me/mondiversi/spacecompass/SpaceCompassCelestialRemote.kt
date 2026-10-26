@@ -153,7 +153,12 @@ internal fun rememberSpaceCompassCelestialRemote(bodies: Set<SpaceCompassCelesti
                     appliedCatalogRefresh = catalogRefreshForPass
                 }
                 val upcoming = mutableListOf<Long>()
+                var interruptedPass = false
                 for (body in remoteBodies) {
+                    if (currentBodies != selected || currentMotionBodies != motions || currentPrefetch != prefetch) {
+                        interruptedPass = true
+                        break
+                    }
                     val iss = body == SpaceCompassCelestialBody.ISS
                     val satellite = body.isEarthSatellite
                     val now = System.currentTimeMillis()
@@ -231,6 +236,7 @@ internal fun rememberSpaceCompassCelestialRemote(bodies: Set<SpaceCompassCelesti
                     }
                     upcoming += System.currentTimeMillis() + 1_000L
                 }
+                if (interruptedPass) continue
                 // Only a completed pass acknowledges a manual refresh; cancellation leaves it pending.
                 data = data.copy(refreshing = false, completedCatalogRefreshRevision = appliedCatalogRefresh)
                 val now = System.currentTimeMillis()

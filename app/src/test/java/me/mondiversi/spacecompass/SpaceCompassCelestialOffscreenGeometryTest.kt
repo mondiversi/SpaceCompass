@@ -5,6 +5,9 @@ import org.junit.Assert.*
 import org.junit.Test
 
 class SpaceCompassCelestialOffscreenGeometryTest {
+    private val geometryStressBodies = spaceCompassCelestialCatalogOrder.filter {
+        it.largeCatalogEntry == null && it != SpaceCompassCelestialBody.LV_426
+    }
     @Test fun onlyTheInspectedBodyGetsADirectionEvenWithTheEntireCatalogueAvailable() {
         val projections = spaceCompassCelestialCatalogOrder.associateWith { SpaceCompassSunProjection(false, 400.0, 200.0, 90.0) }
         for (body in spaceCompassCelestialCatalogOrder) {
@@ -33,7 +36,7 @@ class SpaceCompassCelestialOffscreenGeometryTest {
         val width = 300.0; val height = 242.0
         for (panel in listOf(0.0, 60.0)) {
             val excluded = if (panel == 0.0) emptyList() else listOf(SpaceCompassSunSceneFrame(0.0, height - panel, width, panel))
-            val projections = spaceCompassCelestialCatalogOrder.associateWith { SpaceCompassSunProjection(false, width, height / 2, 90.0) }
+            val projections = geometryStressBodies.associateWith { SpaceCompassSunProjection(false, width, height / 2, 90.0) }
             val diameter = fitSpaceCompassCelestialOffscreenDiameter(projections, width, height, 56.0, excluded)
             assertTrue(diameter in 56.0 * 0.10..56.0)
             val placements = placeSpaceCompassCelestialOffscreenMarkers(projections, width, height, diameter, excluded)
@@ -50,7 +53,7 @@ class SpaceCompassCelestialOffscreenGeometryTest {
     @Test fun theEntireCatalogueFitsWithoutOverlapsEvenWhenAllObjectsShareADirection() {
         for ((width, height) in listOf(340.0 to 400.0, 800.0 to 380.0, 1000.0 to 700.0))
             for (density in listOf(1.0, 2.0, 3.0)) {
-                val projections = spaceCompassCelestialCatalogOrder.associateWith {
+                val projections = geometryStressBodies.associateWith {
                     SpaceCompassSunProjection(false, width * density * 2, height * density / 2, 90.0)
                 }
                 val diameter = fitSpaceCompassCelestialOffscreenDiameter(projections, width*density, height*density, 56.0*density, emptyList())

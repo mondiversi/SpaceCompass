@@ -65,7 +65,7 @@ internal fun createSpaceCompassPhotographicThumbnail(map: Bitmap, extent: Int): 
 }
 
 /** Author names are retained exactly; full sources and licences accompany the external pack. */
-internal fun spaceCompassCatalogImageCredit(name: String?): String? = when (name) {
+internal fun spaceCompassCatalogImageCredit(name: String?): String? = when (SpaceCompassTextureAliases.creditName(name)) {
     "ceres.webp" -> "NASA/JPL-Caltech/UCLA/MPS/DLR/IDA"
     "enceladus.webp" -> "NASA/JPL-Caltech/Space Science Institute/Lunar and Planetary Institute"
     "new_horizons.webp" -> "NASA/KSC"
@@ -82,5 +82,5 @@ internal fun spaceCompassCatalogImageCredit(name: String?): String? = when (name
     "orion_nebula.webp" -> "NASA, ESA, M. Robberto (STScI/ESA), and the Hubble Space Telescope Orion Treasury Project Team"
     "pleiades.webp" -> "NASA/JPL-Caltech/UCLA"
     "andromeda_galaxy.webp" -> "NASA, ESA, Benjamin F. Williams (UWashington), Zhuo Chen (UWashington), L. Clifton Johnson (Northwestern); Image Processing: Joseph DePasquale (STScI)"
-    else -> spaceCompassAdditionalCatalogImageCredit(name)
+    else -> spaceCompassLargeCatalogCredit(name) ?: spaceCompassAdditionalCatalogImageCredit(name)
 }

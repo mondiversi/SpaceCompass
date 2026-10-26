@@ -1,8 +1,8 @@
 <resources>
     <string name="info_news_title">Ultime novità · %1$s</string>
-    <string name="info_news_star_sky" formatted="false">Il pallino accanto al nome mostra i due colori dell’orbita: sopra e sotto l’orizzonte.</string>
-    <string name="info_news_texture_downloads" formatted="false">Legende di foto e panoramiche con pallini bicolore al posto delle linee.</string>
-    <string name="info_news_weather" formatted="false">Pallini proporzionati al testo e bordi del colore della scritta, anche nelle immagini esportate.</string>
+    <string name="info_news_star_sky" formatted="false">Esplora 999 oggetti, tutte le 88 costellazioni e LV-426 disponibile per tutti, con tracciamento e riferimenti scientifici migliorati.</string>
+    <string name="info_news_texture_downloads" formatted="false">Nuovo pacchetto grafico 1.6: 174 immagini e 174 miniature separate, scaricate singolarmente e conservate offline.</string>
+    <string name="info_news_weather" formatted="false">Info più chiare, icone di scatto e panoramica riviste e pulsanti Osservatorio e Percorso giornaliero più contrastati di notte.</string>
     <string name="info_news_viewer_zoom" formatted="false">Tipi ordinati per numero di oggetti, opzioni di ordinamento alfabetiche e comandi dell’oggetto più chiari.</string>
     <string name="info_news_settings" formatted="false">Scritte dei riferimenti più stabili e Nadir a −90°, opposto allo Zenit.</string>
     <string name="info_news_catalog" formatted="false">Migliorati moto delle lune, avvicinamenti tra oggetti selezionati e stato di caricamento del meteo.</string>

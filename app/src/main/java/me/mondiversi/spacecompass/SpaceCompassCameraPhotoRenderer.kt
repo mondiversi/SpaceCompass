@@ -57,10 +57,13 @@ internal fun renderSpaceCompassCameraPhoto(context: Context, photo: SpaceCompass
         fun projection(position: SpaceCompassSunPosition) = pointing?.let {
             projectSpaceCompassSun(position,it,width.toDouble(),height.toDouble(),perspective).takeIf { p->p.visible }
         }
-        if (pointing != null && snapshot.observerPositionKnown && snapshot.objects.any { it.body == SpaceCompassCelestialBody.SOUTHERN_CROSS })
-            drawSpaceCompassSouthernCross(canvas, calculateSpaceCompassSouthernCross(snapshot.timeMs, snapshot.latitude,
-                snapshot.longitude, snapshot.altitude), width, height, scale, pointing, perspective,
-                showNames = snapshot.labelMode.showsObject(snapshot.activeBody == SpaceCompassCelestialBody.SOUTHERN_CROSS))
+        if (pointing != null && snapshot.observerPositionKnown) snapshot.objects.filter {
+            it.body.constellationPattern != null
+        }.forEach { item ->
+            drawSpaceCompassSouthernCross(canvas, calculateSpaceCompassConstellation(item.body, snapshot.timeMs,
+                snapshot.latitude, snapshot.longitude, snapshot.altitude), width, height, scale, pointing, perspective,
+                showNames = snapshot.labelMode.showsObject(snapshot.activeBody == item.body), body = item.body)
+        }
         val selections = resolveSpaceCompassPanoramaSelections(snapshot,
             observations.mapNotNull { (item, position) -> position?.let { item.body to it } }.toMap())
         observations.forEach { (item,position) -> position?.let(::projection)?.let {
@@ -147,7 +150,7 @@ internal fun renderSpaceCompassCameraPhoto(context: Context, photo: SpaceCompass
         drawSpaceCompassSkyReferenceLabels(canvas, referenceDrawing, scale)
         observations.forEach { (item,position) -> position?.let(::projection)?.let { p ->
             val x=p.x.toFloat(); val y=p.y.toFloat(); val radius=35*scale
-            if (item.body != SpaceCompassCelestialBody.SOUTHERN_CROSS) {
+            if (item.body.constellationPattern == null) {
             paint.style=Paint.Style.FILL; paint.color=0xcc07101b.toInt(); canvas.drawCircle(x,y,radius,paint)
             paint.style=Paint.Style.STROKE; paint.strokeWidth=2*scale; paint.color=spaceCompassCelestialPathTint(item.body).toArgb()
             canvas.drawCircle(x,y,radius,paint)

@@ -3,7 +3,7 @@
     <string name="pc_info">信息与致谢</string>
     <string name="pc_display_automatic">自动缩放</string>
     <string name="pc_info_description">用于寻找天体、探索其轨迹并查看模型和月相的天文指南针。</string>
-    <string name="pc_info_earth">专为地球设计：到了太空，还是向宇航员问路吧 🙂</string>
+    <string name="pc_info_earth">专为地球使用而设计：应用依靠重力和地球磁场确定朝向，GPS提供位置。这些参考无法保证普通智能手机在太空中可靠地确定朝向。随着航天技术和传感器进一步发展，也许有一天我们也能在太空中找到方向 🙂</string>
     <string name="pc_info_compass">指南针精度</string>
     <string name="pc_info_accuracy">精度较低表示手机报告的磁校准精度较低。在传感器精度改善之前，指向仍为近似值。</string>
     <string name="pc_info_credits">来源与许可</string>

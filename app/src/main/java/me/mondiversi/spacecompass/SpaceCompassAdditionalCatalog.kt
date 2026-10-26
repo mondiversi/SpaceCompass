@@ -5,7 +5,7 @@ internal data class SpaceCompassAdditionalCatalogEntry(val type: SpaceCompassCat
     val reference: SpaceCompassDeepSkyReference?, val target: SpaceCompassHorizonsTarget?)
 
 internal val SpaceCompassCelestialBody.additionalCatalogEntry: SpaceCompassAdditionalCatalogEntry?
-    get() = additionalCatalog[this]
+    get() = additionalCatalog[this] ?: largeCatalogEntry?.entry
 
 private val additionalCatalog: Map<SpaceCompassCelestialBody, SpaceCompassAdditionalCatalogEntry> by lazy {
     val types = mapOf(
@@ -163,5 +163,5 @@ internal fun spaceCompassIncludeAdditionalCatalog(previous: List<SpaceCompassCel
         SpaceCompassCelestialBody.ANDROMEDA_CORE to listOf(SpaceCompassCelestialBody.ANDROMEDA_GALAXY),
         SpaceCompassCelestialBody.M87 to listOf(SpaceCompassCelestialBody.M87_GALAXY),
         SpaceCompassCelestialBody.TRAPPIST_1_E to listOf(SpaceCompassCelestialBody.TOI_700_D, SpaceCompassCelestialBody.KEPLER_186_F))
-    return previous.flatMap { listOf(it) + after[it].orEmpty() }
+    return spaceCompassIncludeLargeCatalog(previous.flatMap { listOf(it) + after[it].orEmpty() })
 }

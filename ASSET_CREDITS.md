@@ -152,3 +152,14 @@ published pack URLs are preserved. No AI-generated image is presented as observe
 Reference `thumb_*.webp` previews (128 x 128, WebP Q90/method 6) are external
 derivatives of these same credited images. Their parent/source, inherited licence
 and independent integrity pins are recorded in the external manifest and credits.
+
+## Local catalogue expansion
+
+Data provenance and retained dataset licences: [catalogue/README.md](catalogue/README.md).
+External graphics pack 1.6: [full image credits and transformations](textures/celestial-textures-v1.6/CREDITS.md).
+No new celestial photograph or thumbnail is bundled in the APK.
+
+The stable 1.6 release contains 174 full resources and 174 separate previews, all WebP quality 90/method 6.
+Per-image provenance, licences and transformations remain in the versioned manifest and credits.
+All celestial photographs and fictional LV-426 remain external; scientific catalogue text/data and
+their dataset notices are bundled and documented in [catalogue provenance](catalogue/README.md).

@@ -53,7 +53,7 @@ internal fun SpaceCompassCelestialSceneBackdrop(opticalFrame: SpaceCompassSunSce
         }
         SpaceCompassSkyReferenceLayer(latitude, timeMs, orientation, perspective, excluded,
             enabled = showReferences, observerAltitude = altitude) {
-            SpaceCompassSouthernCrossLayer(SpaceCompassCelestialBody.SOUTHERN_CROSS in positions, timeMs,
+            SpaceCompassConstellationsLayer(positions.keys, timeMs,
                 latitude, longitude, altitude, orientation, perspective)
             paths.forEach { (candidate, path) -> key(candidate) {
                 SpaceCompassSunDailyPathLayer(path, orientation, state, primaryText, secondaryText, background,
@@ -67,7 +67,7 @@ internal fun SpaceCompassCelestialSceneBackdrop(opticalFrame: SpaceCompassSunSce
                     projected.x + radius <= opticalFrame.left + opticalFrame.width &&
                     projected.y - radius >= opticalFrame.top - toolbarHeight &&
                     projected.y + radius <= opticalFrame.top + opticalFrame.height
-                if (candidate != SpaceCompassCelestialBody.SOUTHERN_CROSS && projected.visible && !onFreeViewport) SpaceCompassCelestialLiveMarker(candidate,
+                if (candidate.constellationPattern == null && projected.visible && !onFreeViewport) SpaceCompassCelestialLiveMarker(candidate,
                     projected.copy(x = projected.x / density.density, y = projected.y / density.density),
                     positions.getValue(candidate).elevationDegrees < 0, current[candidate], state,
                     moonPhase = moonPhase, path = paths[candidate], interactive = false)

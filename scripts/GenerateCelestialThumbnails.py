@@ -22,10 +22,11 @@ ZERO_OFFSET = {"pluto.webp", "europa_2048.webp", "titan.webp", "enceladus.webp"}
 UNMAPPED = {"pluto.webp", "europa_2048.webp"}
 
 
-def preview(source: Path) -> Image.Image:
+def preview(source: Path, logical_name: str | None = None) -> Image.Image:
+    name = logical_name or source.name
     with Image.open(source) as original:
         image = original.convert("RGB")
-    if source.name not in GLOBES:
+    if name not in GLOBES:
         side = min(image.size)
         left, top = (image.width - side) // 2, (image.height - side) // 2
         diameter = EXTENT * 7 // 8
@@ -42,14 +43,14 @@ def preview(source: Path) -> Image.Image:
     image = image.resize((512, 256), Image.Resampling.LANCZOS)
     output = Image.new("RGBA", (EXTENT, EXTENT))
     pixels = output.load()
-    radius = EXTENT * (17 if source.name == "saturn.webp" else 28) / 64
-    offset = 0 if source.name in ZERO_OFFSET else .5
+    radius = EXTENT * (17 if name == "saturn.webp" else 28) / 64
+    offset = 0 if name in ZERO_OFFSET else .5
     for y in range(EXTENT):
         for x in range(EXTENT):
             nx, ny = (x + .5 - EXTENT / 2) / radius, (EXTENT / 2 - y - .5) / radius
             squared = nx * nx + ny * ny
             if squared > 1:
-                if source.name == "saturn.webp" and 1.20 <= nx * nx + (ny / .28) ** 2 <= 3.10:
+                if name == "saturn.webp" and 1.20 <= nx * nx + (ny / .28) ** 2 <= 3.10:
                     pixels[x, y] = (184, 167, 139, 255)
                 continue
             nz = math.sqrt(1 - squared)
@@ -57,22 +58,45 @@ def preview(source: Path) -> Image.Image:
             v = math.acos(max(-1, min(1, ny))) / math.pi
             rgb = image.getpixel((min(image.width - 1, int(u * image.width)),
                 min(image.height - 1, int(v * image.height))))
-            if source.name in UNMAPPED and rgb == (0, 0, 0):
+            if name in UNMAPPED and rgb == (0, 0, 0):
                 rgb = (56, 51, 46)
-            light = .7 + .3 * nz if source.name == "sun.webp" else \
+            light = .7 + .3 * nz if name == "sun.webp" else \
                 .25 + .75 * max(0, (-.4 * nx + .3 * ny + nz) / math.sqrt(1.25))
             pixels[x, y] = tuple(int(value * light) for value in rgb) + (255,)
     return output
 
 
+def check_canonical_pack(pack: Path, manifest: dict):
+    """Validate existing independent previews without invalidating published pin/URL metadata."""
+    import io
+    by_parent = {item["parent_image"]: item for item in manifest["thumbnails"]}
+    for parent in manifest["images"]:
+        source = pack / parent["name"]
+        assert hashlib.sha256(source.read_bytes()).hexdigest() == parent["sha256"], source.name
+        record = by_parent[parent["name"]]
+        assert record["name"] == "thumb_" + parent["name"]
+        output = io.BytesIO()
+        preview(source, parent.get("legacy_name")).save(output, "WEBP", quality=90, method=6)
+        actual = (pack / record["name"]).read_bytes()
+        assert actual == output.getvalue(), record["name"]
+        assert len(actual) == record["bytes"]
+        assert hashlib.sha256(actual).hexdigest() == record["sha256"]
+        assert parent["quality"] == record["quality"] == 90
+        assert parent["method"] == record["method"] == 6
+    print("Verified reproducible canonical WebP Q90/method6 previews:", len(by_parent))
+
+
 def main():
     import io
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument("--pack", type=Path, default=Path("textures/celestial-textures-v1.5"))
+    parser.add_argument("--pack", type=Path, default=Path("textures/celestial-textures-v1.6"))
     parser.add_argument("--check", action="store_true")
     args = parser.parse_args()
     manifest_path = args.pack / "manifest.json"
     manifest = json.loads(manifest_path.read_text(encoding="utf-8"))
+    if manifest.get("schema", 1) >= 2:
+        check_canonical_pack(args.pack, manifest)
+        return
     previous = {t["name"]: t for t in manifest.get("thumbnails", [])}
     thumbnails = []
     for parent in manifest["images"]:
@@ -120,7 +144,10 @@ internal object SpaceCompassCelestialThumbnailPolicy {
     policy_path = Path(__file__).resolve().parents[1] / "app/src/main/java/me/mondiversi/spacecompass/SpaceCompassCelestialThumbnailPolicy.kt"
     if args.check:
         assert manifest.get("thumbnails") == thumbnails
-        assert policy_path.read_text(encoding="utf-8") == policy
+        # A historical pack can be reproduced without replacing the current APK's newer index.
+        current_pack_policy = policy_path.with_name("SpaceCompassCelestialTexturePolicy.kt").read_text(encoding="utf-8")
+        if f'const val PACK = "{args.pack.name}"' in current_pack_policy:
+            assert policy_path.read_text(encoding="utf-8") == policy
     else:
         policy_path.write_text(policy, encoding="utf-8")
         manifest["thumbnails"] = thumbnails

@@ -56,7 +56,7 @@ internal fun spaceCompassAdditionalCatalogFacts(body: SpaceCompassCelestialBody)
     // Izumi et al. (2016), Table 1: log10(M/Msun)=6.60 +/-0.49, M-sigma estimate.
     // Rounded value; the large logarithmic uncertainty is explained in the object note.
     SpaceCompassCelestialBody.M51_CORE -> SpaceCompassCelestialFacts(massSolar = 4e6, massEstimated = true)
-    else -> null
+    else -> body.largeCatalogEntry?.facts
 }
 
 private fun moonFacts(gm: Double, radius: Double, radiusError: Double, densityKgM3: Double,

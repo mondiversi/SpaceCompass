@@ -1,8 +1,8 @@
 <resources>
     <string name="info_news_title">Τελευταία νέα · %1$s</string>
-    <string name="info_news_star_sky" formatted="false">Η κουκκίδα δίπλα στο όνομα του αντικειμένου δείχνει και τα δύο χρώματα της τροχιάς: πάνω και κάτω από τον ορίζοντα.</string>
-    <string name="info_news_texture_downloads" formatted="false">Τα υπομνήματα φωτογραφιών και πανοραμάτων χρησιμοποιούν πλέον δίχρωμες κουκκίδες αντί για γραμμές.</string>
-    <string name="info_news_weather" formatted="false">Το μέγεθος των κουκκίδων ταιριάζει στο κείμενο και το περίγραμμά τους στο χρώμα των γραμμάτων, ακόμη και στις εξαγόμενες εικόνες.</string>
+    <string name="info_news_star_sky" formatted="false">Εξερευνήστε 999 αντικείμενα, και τους 88 αστερισμούς και το διαθέσιμο σε όλους LV-426, με βελτιωμένη παρακολούθηση και επιστημονικές πηγές.</string>
+    <string name="info_news_texture_downloads" formatted="false">Νέο πακέτο γραφικών 1.6: 174 εικόνες και 174 ξεχωριστές μικρογραφίες, με μεμονωμένη λήψη και αποθήκευση εκτός σύνδεσης.</string>
+    <string name="info_news_weather" formatted="false">Σαφέστερες πληροφορίες, ανανεωμένα εικονίδια λήψης και πανοράματος και μεγαλύτερη αντίθεση στα κουμπιά Παρατηρητηρίου και Ημερήσιας διαδρομής τη νύχτα.</string>
     <string name="info_news_viewer_zoom" formatted="false">Τύποι κατά πλήθος αντικειμένων, αλφαβητικές επιλογές ταξινόμησης και σαφέστερα χειριστήρια.</string>
     <string name="info_news_settings" formatted="false">Σταθερότερες ετικέτες αναφοράς και Ναδίρ στις −90°, απέναντι από το Ζενίθ.</string>
     <string name="info_news_catalog" formatted="false">Βελτιωμένη κίνηση δορυφόρων, προσεγγίσεις επιλεγμένων αντικειμένων και ένδειξη φόρτωσης καιρού.</string>

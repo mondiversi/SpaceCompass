@@ -1,0 +1,230 @@
+*******************************************************************************
+ Revised: Feb 13, 2026         MAVEN Spacecraft Mission                    -202
+                         http://lasp.colorado.edu/home/maven/
+             http://mars.jpl.nasa.gov/programmissions/missions/future/maven/
+         http://www.ulalaunch.com/site/docs/missionbooklets/AV/av_maven_mob.pdf
+                                 
+ NOTE: 
+  There has been no contact with the MAVEN spacecraft since December 6, 2025 
+  with some evidence it experienced an unplanned delta-V Dec. 4 and is spinning
+  in an altered trajectory. Therefore predicts after December 4, 2025 may be 
+  inaccurate.
+
+ LAUNCH DATE:                                    MARS ARRIVAL DATE:
+ Nov 18, 2013 @ 18:28 UTC                        September 22, 2014 @ 02:24 UTC
+ Trajectory here begins after stage separation.
+
+ LAUNCH VEHICLE:
+  Atlas V-401
+   ("4" means 4-meter enclosure fairing, "0" means 0 strap-on boosters, 
+    "1" means the Centaur stage has one engine) 
+  Cape Canaveral Air Force Station, Florida, USA
+  Space Launch Complex 41 (SLC-41)
+
+  Centaur separation at 52m 42.2s after launch, over the western coast
+  of Australia.
+
+ BACKGROUND:
+  The Mars Atmosphere and Volatile Evolution (MAVEN) spacecraft orbits Mars
+  to explore the upper atmosphere of the planet, study its nature and the
+  role solar activity plays in atmospheric loss over time, providing insight   
+  into the history of Mars' atmosphere and climate, liquid water, and planetary 
+  habitability.  
+
+  After capture into Martian orbit, it took 5 weeks for the spacecraft to reach 
+  its final science-mapping orbit, test the instruments, and test science 
+  mapping sequences. After the commissioning phase, MAVEN had a 1-Earth-year 
+  primary mission during which it made its key measurements.
+
+  The science orbit is an ellipse 150 x 6200 km having a 75 degree inclination 
+  with respect to the Martian equator. At its lowest point, it passed through 
+  the atmosphere and directly sample gas composition. At its highest point, 
+  it can carry out ultraviolet imaging of the entire planet. Five "deep dips" 
+  made measurements down to 125 km.
+
+ SCIENCE INSTRUMENTS:
+  Particles and Fields Package (PFP)
+   Solar Energetic Particle (SEP)
+   Solar Wind Ion Analyzer (SWIA)
+   Solar Wind Electron Analyzer (SWEA)
+   SupraThermal and Thermal Ion Composition (STATIC)
+   Langmuir Probe and Waves (LPW)
+   Magnetometer (MAG)
+  Imaging Ultraviolet Spectrometer
+  Neutral Gas and Ion Mass Spectrometer (NGIMS)
+
+ SPACECRAFT PHYSICAL PROPERTIES:
+  Solar-powered, with a high-gain antenna that can be pointed to Earth for
+  twice-weekly communications sessions.
+
+  Length: 37.5 feet (11.4 meters)
+  Spacecraft dry mass: 1991 pounds max (903 kilograms)
+  Wet (Fueled) mass at launch: 5622 pounds max (2550 kilograms)
+  Power: 1135 watts (when Mars is furthest from the Sun)
+
+ SPACECRAFT TRAJECTORY (JPL navigation):
+   Trajectory begins after Centaur booster stage separation. 
+   Fit to data through 2025-Dec-04, prediction thereafter.
+
+   Name                                        Start (TDB)        Stop (TDB)
+   ---------------------------------------- -----------------  -----------------
+   trj_c_131118-140923_rec_v1               2013-Nov-18 19:22  2014-Sep-23 12:00
+   maven_orb_rec_******-******_v*           2014-Sep-23 12:00  2025-Oct-01 00:00
+   maven_orb_rec (current reconstruction)   2025-Oct-01 00:01  2025-Dec-06 01:40
+   maven_orb (includes prediction > Dec-04) 2025-Dec-06 01:40  2026-Mar-01 00:58
+********************************************************************************
+
+
+*******************************************************************************
+Ephemeris / API_USER Mon Oct 26 10:23:21 2026 Pasadena, USA      / Horizons
+*******************************************************************************
+Target body name: MAVEN (spacecraft) (-202)       {source: MAVEN_merged}
+Center body name: Earth (399)                     {source: DE441}
+Center-site name: BODY CENTER
+*******************************************************************************
+Start time      : A.D. 2025-Jan-01 00:00:00.0000 UT 
+Stop  time      : A.D. 2025-Jan-03 00:00:00.0000 UT 
+Step-size       : 60 minutes
+*******************************************************************************
+Center geodetic : 0.0, 0.0, 0.0                   {E-lon(deg),Lat(deg),Alt(km)}
+Center cylindric: 0.0, 0.0, 0.0                   {E-lon(deg),Dxy(km),Dz(km)}
+Center radii    : 6378.137, 6378.137, 6356.752 km {Equator_a, b, pole_c}
+Output units    : AU-D
+Calendar mode   : Mixed Julian/Gregorian
+Output type     : LT+S CORRECTED cartesian states
+Output format   : 2 (position and velocity)
+EOP file        : eop.261023.p270119
+EOP coverage    : DATA-BASED 1962-JAN-20 TO 2026-OCT-23. PREDICTS-> 2027-JAN-18
+Reference frame : ICRF
+*******************************************************************************
+            JDUT ,            Calendar Date (UT ),                      X,                      Y,                      Z,                     VX,                     VY,                     VZ,
+**************************************************************************************************************************************************************************************************
+$$SOE
+2460676.500000000, A.D. 2025-Jan-01 00:00:00.0000, -3.430034923406072E-01,  4.943503989228312E-01,  2.631119807077030E-01,  5.665542949006728E-03, -3.542662151927272E-04, -2.166109251803398E-04,
+2460676.541666667, A.D. 2025-Jan-01 01:00:00.0000, -3.427766962368413E-01,  4.943340624442817E-01,  2.631333813959556E-01,  5.038482634870386E-03, -3.915863173983924E-04,  1.113716248480832E-03,
+2460676.583333333, A.D. 2025-Jan-01 02:00:00.0000, -3.426015443946505E-01,  4.943216403746261E-01,  2.631909777403444E-01,  3.053347907902266E-03, -1.195849838683006E-04,  1.240170712864834E-03,
+2460676.625000000, A.D. 2025-Jan-01 03:00:00.0000, -3.424688017510610E-01,  4.943240975573705E-01,  2.631616240208679E-01,  4.951489663894769E-03, -9.887612810164894E-05, -1.575463066528393E-03,
+2460676.666666667, A.D. 2025-Jan-01 04:00:00.0000, -3.422389109187214E-01,  4.943125667823183E-01,  2.631389525569574E-01,  5.573842971018661E-03, -3.678724807425868E-04,  3.376460138638394E-04,
+2460676.708333333, A.D. 2025-Jan-01 05:00:00.0000, -3.420238753204874E-01,  4.942973829338836E-01,  2.631778457461875E-01,  4.564096310709614E-03, -3.225811481334528E-04,  1.403501459152202E-03,
+2460676.750000000, A.D. 2025-Jan-01 06:00:00.0000, -3.418803872341802E-01,  4.942915449295104E-01,  2.632278242074952E-01,  2.292000700640779E-03,  1.553611544970859E-04, -1.019204791275800E-04,
+2460676.791666667, A.D. 2025-Jan-01 07:00:00.0000, -3.417092369954239E-01,  4.942924639802543E-01,  2.631720286250405E-01,  5.538350351447101E-03, -2.296028288046875E-04, -8.115683112029478E-04,
+2460676.833333333, A.D. 2025-Jan-01 08:00:00.0000, -3.414771694691772E-01,  4.942792966974773E-01,  2.631749518520751E-01,  5.347270016630635E-03, -3.508450362948724E-04,  7.943692772747783E-04,
+2460676.875000000, A.D. 2025-Jan-01 09:00:00.0000, -3.412796006643248E-01,  4.942665748401810E-01,  2.632273141514588E-01,  3.894765119376378E-03, -2.069934171103693E-04,  1.531481764575402E-03,
+2460676.916666667, A.D. 2025-Jan-01 10:00:00.0000, -3.411579816893476E-01,  4.942687755506104E-01,  2.632412954262522E-01,  3.518302748873831E-03,  1.754216767989175E-04, -1.781172602693799E-03,
+2460676.958333333, A.D. 2025-Jan-01 11:00:00.0000, -3.409458303468136E-01,  4.942641075274249E-01,  2.631947085140509E-01,  5.651060860657317E-03, -2.825853870763669E-04, -1.446413566830142E-04,
+2460677.000000000, A.D. 2025-Jan-01 12:00:00.0000, -3.407200556170729E-01,  4.942510182739604E-01,  2.632186989848060E-01,  5.005103812734862E-03, -3.074073349534727E-04,  1.169827278610766E-03,
+2460677.041666667, A.D. 2025-Jan-01 13:00:00.0000, -3.405471582942812E-01,  4.942425230519592E-01,  2.632779825915946E-01,  2.970889450120827E-03, -1.080650449215459E-05,  1.232198145234164E-03,
+2460677.083333333, A.D. 2025-Jan-01 14:00:00.0000, -3.404128592895031E-01,  4.942485667596041E-01,  2.632473320447153E-01,  5.002389644261665E-03, -3.910509317610403E-05, -1.487498765456907E-03,
+2460677.125000000, A.D. 2025-Jan-01 15:00:00.0000, -3.401830381830971E-01,  4.942399013176290E-01,  2.632278441865493E-01,  5.551582938606190E-03, -2.921457779618530E-04,  4.001541985833816E-04,
+2460677.166666667, A.D. 2025-Jan-01 16:00:00.0000, -3.399692794044024E-01,  4.942281286251605E-01,  2.632691123577452E-01,  4.520917105983850E-03, -2.333607191278702E-04,  1.455253289954268E-03,
+2460677.208333333, A.D. 2025-Jan-01 17:00:00.0000, -3.398283987402564E-01,  4.942265712736708E-01,  2.633191340383342E-01,  2.282926495865117E-03,  2.641374168835951E-04, -2.212005140061977E-04,
+2460677.250000000, A.D. 2025-Jan-01 18:00:00.0000, -3.396544692583629E-01,  4.942303836535816E-01,  2.632641833561857E-01,  5.540001514201746E-03, -1.629596559886110E-04, -7.291205500610042E-04,
+2460677.291666667, A.D. 2025-Jan-01 19:00:00.0000, -3.394231362446861E-01,  4.942202847706765E-01,  2.632699369617534E-01,  5.319488145823541E-03, -2.711775476649612E-04,  8.532804615442775E-04,
+2460677.333333333, A.D. 2025-Jan-01 20:00:00.0000, -3.392272783885075E-01,  4.942111977856365E-01,  2.633244945118024E-01,  3.831315041794440E-03, -1.092770703175950E-04,  1.569461012446718E-03,
+2460677.375000000, A.D. 2025-Jan-01 21:00:00.0000, -3.391063310590934E-01,  4.942175706429820E-01,  2.633366016246060E-01,  3.651786010227218E-03,  2.380256281220306E-04, -1.777711692802815E-03,
+2460677.416666667, A.D. 2025-Jan-01 22:00:00.0000, -3.388927480017456E-01,  4.942155616366947E-01,  2.632931436857242E-01,  5.634836475002878E-03, -2.107908325864231E-04, -7.402449543584744E-05,
+2460677.458333333, A.D. 2025-Jan-01 23:00:00.0000, -3.386680471464265E-01,  4.942057157803102E-01,  2.633196945630810E-01,  4.970434665978190E-03, -2.233265484433225E-04,  1.225684456325928E-03,
+2460677.500000000, A.D. 2025-Jan-02 00:00:00.0000, -3.384974965508243E-01,  4.942011685950825E-01,  2.633806053938827E-01,  2.886293674489921E-03,  9.945305940465612E-05,  1.217813280289083E-03,
+2460677.541666667, A.D. 2025-Jan-02 01:00:00.0000, -3.383615222602910E-01,  4.942107248284051E-01,  2.633487218886317E-01,  5.048327388508041E-03,  2.025547951609898E-05, -1.398710105740784E-03,
+2460677.583333333, A.D. 2025-Jan-02 02:00:00.0000, -3.381318538898162E-01,  4.942049265923555E-01,  2.633324275969473E-01,  5.527800846290235E-03, -2.161141519237918E-04,  4.632536054047053E-04,
+2460677.625000000, A.D. 2025-Jan-02 03:00:00.0000, -3.379194613426625E-01,  4.941965900414608E-01,  2.633760826090819E-01,  4.474800383394015E-03, -1.431647801907561E-04,  1.506502837794927E-03,
+2460677.666666667, A.D. 2025-Jan-02 04:00:00.0000, -3.377812088987953E-01,  4.941993475903564E-01,  2.634259326871779E-01,  2.288676299731238E-03,  3.696813384433898E-04, -3.460426794474981E-04,
+2460677.708333333, A.D. 2025-Jan-02 05:00:00.0000, -3.376045567458502E-01,  4.942059907947966E-01,  2.633720284778439E-01,  5.538456647957615E-03, -9.601937542187218E-05, -6.480489304349640E-04,
+2460677.750000000, A.D. 2025-Jan-02 06:00:00.0000, -3.373740330620801E-01,  4.941989632782945E-01,  2.633805724245246E-01,  5.290467446642313E-03, -1.915024655830715E-04,  9.116342147753103E-04,
+2460677.791666667, A.D. 2025-Jan-02 07:00:00.0000, -3.371799525114647E-01,  4.941935247147629E-01,  2.634373047734545E-01,  3.765256022041286E-03, -1.057621677207467E-05,  1.606026636623986E-03,
+2460677.833333333, A.D. 2025-Jan-02 08:00:00.0000, -3.370595144388995E-01,  4.942040219604900E-01,  2.634475011105493E-01,  3.781124124894060E-03,  2.977735516574382E-04, -1.761094710969642E-03,
+2460677.875000000, A.D. 2025-Jan-02 09:00:00.0000, -3.368446537003256E-01,  4.942046656778830E-01,  2.634072479980354E-01,  5.617431376461403E-03, -1.388221300893490E-04, -3.032786939700141E-06,
+2460677.916666667, A.D. 2025-Jan-02 10:00:00.0000, -3.366210965059926E-01,  4.941980745041906E-01,  2.634363873300601E-01,  4.933248963745194E-03, -1.387745350095513E-04,  1.282061220168511E-03,
+2460677.958333333, A.D. 2025-Jan-02 11:00:00.0000, -3.364530475845742E-01,  4.941975163897347E-01,  2.634988366060422E-01,  2.799050574632817E-03,  2.110268624256762E-04,  1.194021364622846E-03,
+2460678.000000000, A.D. 2025-Jan-02 12:00:00.0000, -3.363153026129261E-01,  4.942105021897216E-01,  2.634657935193108E-01,  5.087266251247208E-03,  8.025966257722928E-05, -1.309567619258007E-03,
+2460678.041666667, A.D. 2025-Jan-02 13:00:00.0000, -3.360859022960588E-01,  4.942075981576380E-01,  2.634526487104956E-01,  5.502970221453552E-03, -1.395627108026213E-04,  5.256540225222353E-04,
+2460678.083333333, A.D. 2025-Jan-02 14:00:00.0000, -3.358749192324719E-01,  4.942027189406692E-01,  2.634986797497376E-01,  4.427132052181394E-03, -5.236173838582915E-05,  1.557630776954341E-03,
+2460678.125000000, A.D. 2025-Jan-02 15:00:00.0000, -3.357392713481341E-01,  4.942097935495485E-01,  2.635481845610784E-01,  2.310524105994072E-03,  4.704294177052934E-04, -4.723677066434380E-04,
+2460678.166666667, A.D. 2025-Jan-02 16:00:00.0000, -3.355599893736396E-01,  4.942192021145313E-01,  2.634955407147502E-01,  5.534101128706377E-03, -2.848744082667664E-05, -5.688127165280870E-04,
+2460678.208333333, A.D. 2025-Jan-02 17:00:00.0000, -3.353303265320233E-01,  4.942152632864331E-01,  2.635068332403774E-01,  5.260638930472438E-03, -1.115148851861695E-04,  9.696889134758052E-04,
+2460678.250000000, A.D. 2025-Jan-02 18:00:00.0000, -3.351380834209780E-01,  4.942134900283232E-01,  2.635657234296253E-01,  3.696659464562710E-03,  8.878996767839972E-05,  1.640791967562069E-03,
+2460678.291666667, A.D. 2025-Jan-02 19:00:00.0000, -3.350179988095204E-01,  4.942280436820088E-01,  2.635740257484128E-01,  3.901546645737938E-03,  3.554125050232766E-04, -1.731218479123692E-03,
+2460678.333333333, A.D. 2025-Jan-02 20:00:00.0000, -3.348021032986896E-01,  4.942313533097903E-01,  2.635369824812445E-01,  5.598453492381108E-03, -6.629068732579348E-05,  6.606200168330701E-05,
+2460678.375000000, A.D. 2025-Jan-02 21:00:00.0000, -3.345797216499414E-01,  4.942280372231024E-01,  2.635686610628648E-01,  4.895568606313849E-03, -5.374371428969777E-05,  1.337835269264965E-03,
+2460678.416666667, A.D. 2025-Jan-02 22:00:00.0000, -3.344142150881395E-01,  4.942314959618310E-01,  2.636325787081213E-01,  2.712293280223149E-03,  3.231196951760640E-04,  1.163720523000004E-03,
+2460678.458333333, A.D. 2025-Jan-02 23:00:00.0000, -3.342746451755066E-01,  4.942478326473823E-01,  2.635985218014121E-01,  5.120394710723781E-03,  1.407609950015582E-04, -1.221321174778504E-03,
+2460678.500000000, A.D. 2025-Jan-03 00:00:00.0000, -3.340456047562538E-01,  4.942478276632878E-01,  2.635884882193555E-01,  5.476839746337461E-03, -6.310400699810050E-05,  5.878150146252372E-04,
+$$EOE
+**************************************************************************************************************************************************************************************************
+ 
+TIME
+
+ Times PRIOR to 1962 are UT1, a mean-solar time closely related to the
+prior but now-deprecated GMT. Times AFTER 1962 are in UTC, the current
+civil or "wall-clock" atomic time-scale. UTC is kept within 0.9 seconds
+of UT1 using integer leap-seconds for 1972 and later years.
+
+  Conversion from the internal Barycentric Dynamical Time (TDB) of solar
+system dynamics to the discontinuous civil UT time-scale has not been
+determined for UTC times after the next July or January 1st. Therefore,
+the last known leap-second is used as a constant over future intervals,
+a condition noted here as "UT~".
+
+  Future but as yet undetermined leap-seconds can be expected to change
+time-tags in the "UT~" interval and, in general, the UT scale may not be
+suitable for purposes that assume time-tag continuity in the ephemeris.
+Output in continuous TDB and TT timescales may instead be requested,
+though these are not linked to Earth's rotation.
+
+  Time-tags refer to the UT time-scale conversion from TDB on Earth
+regardless of observer location within the solar system, although clock
+rates may differ due to the local gravity field and no analog to "UT"
+may be defined for that location.
+ 
+CALENDAR SYSTEM
+
+  Mixed calendar mode was active such that calendar dates after AD 1582-Oct-15
+(if any) are in the modern Gregorian system. Dates prior to 1582-Oct-5 (if any)
+are in the Julian calendar system, which is automatically extended for dates
+prior to its adoption on 45-Jan-1 BC.  The Julian calendar is useful for
+matching historical dates. The Gregorian calendar more accurately corresponds
+to the Earth's orbital motion and seasons. A "Gregorian-only" calendar mode is
+available if such physical events are the primary interest.
+
+REFERENCE FRAME AND COORDINATES
+
+  International Celestial Reference Frame (ICRF)
+
+    The ICRF is an adopted reference frame whose axes are defined relative to 
+    fixed extragalactic radio sources distributed across the sky.
+
+    The ICRF was aligned with the prior FK5/J2000 dynamical system at the ~0.02 
+    arcsecond level but is not identical and has no associated standard epoch.
+
+  Symbol meaning [1 au= 149597870.700 km, 1 day= 86400.0 s]:
+
+    JDUT     Julian Day Number, Universal Time
+      X      X-component of position vector (au)
+      Y      Y-component of position vector (au)
+      Z      Z-component of position vector (au)
+      VX     X-component of velocity vector (au/day)                           
+      VY     Y-component of velocity vector (au/day)                           
+      VZ     Z-component of velocity vector (au/day)                           
+
+ABERRATIONS AND CORRECTIONS
+
+ States have been corrected for Newtonian down-leg  (receive) light-time
+ displacement and relativistic stellar aberration.
+
+Computations by ...
+
+    Solar System Dynamics Group, Horizons On-Line Ephemeris System
+    4800 Oak Grove Drive, Jet Propulsion Laboratory
+    Pasadena, CA  91109   USA
+
+    General site: https://ssd.jpl.nasa.gov/
+    Mailing list: https://ssd.jpl.nasa.gov/email_list.html
+    System news : https://ssd.jpl.nasa.gov/horizons/news.html
+    User Guide  : https://ssd.jpl.nasa.gov/horizons/manual.html
+    Connect     : browser        https://ssd.jpl.nasa.gov/horizons/app.html#/x
+                  API            https://ssd-api.jpl.nasa.gov/doc/horizons.html
+                  command-line   telnet ssd.jpl.nasa.gov 6775
+                  e-mail/batch   https://ssd.jpl.nasa.gov/ftp/ssd/horizons_batch.txt
+                  scripts        https://ssd.jpl.nasa.gov/ftp/ssd/SCRIPTS
+    Inquiries   : Jon.D.Giorgini@jpl.nasa.gov
+*******************************************************************************

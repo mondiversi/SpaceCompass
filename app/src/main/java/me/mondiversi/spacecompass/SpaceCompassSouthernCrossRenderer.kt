@@ -17,13 +17,15 @@ import kotlin.math.hypot
 /** A measured angular pattern, rendered with the same projection as every orbital ray. */
 internal fun drawSpaceCompassSouthernCross(canvas: Canvas, positions: List<SpaceCompassSunPosition>,
     width: Int, height: Int, scale: Float, orientation: SpaceCompassSunOrientation? = null,
-    perspective: SpaceCompassPerspective? = null, centreAzimuth: Double = 180.0, showNames: Boolean = true) {
-    require(positions.size == 4)
-    val tint = spaceCompassCelestialPathTint(SpaceCompassCelestialBody.SOUTHERN_CROSS).toArgb()
+    perspective: SpaceCompassPerspective? = null, centreAzimuth: Double = 180.0, showNames: Boolean = true,
+    body: SpaceCompassCelestialBody = SpaceCompassCelestialBody.SOUTHERN_CROSS) {
+    val pattern = requireNotNull(body.constellationPattern)
+    require(positions.size == pattern.stars.size)
+    val tint = spaceCompassCelestialPathTint(body).toArgb()
     val paint = Paint(Paint.ANTI_ALIAS_FLAG).apply { color = tint; strokeWidth = 2f * scale; strokeCap = Paint.Cap.ROUND }
     val vectors = positions.map { spaceCompassSunCompassDirection(it.azimuthDegrees, it.elevationDegrees) }
     canvas.save(); canvas.clipRect(0, 0, width, height)
-    spaceCompassSouthernCrossEdges.forEach { (a, b) ->
+    pattern.edges.forEach { (a, b) ->
         val from = vectors[a]; val to = vectors[b]
         for (step in 0 until 16) {
             fun ray(f: Double) = SpaceCompassSunVector(from.east + (to.east - from.east) * f,
@@ -61,7 +63,7 @@ internal fun drawSpaceCompassSouthernCross(canvas: Canvas, positions: List<Space
             paint.color = tint
             if (showNames && separated) {
                 text.color = Color.WHITE; text.setShadowLayer(2f * scale, 0f, 0f, Color.BLACK)
-                canvas.drawText(spaceCompassSouthernCrossStars[index].name, it.x.toFloat() + 7f * scale,
+                canvas.drawText(pattern.stars[index].name, it.x.toFloat() + 7f * scale,
                     it.y.toFloat() - 5f * scale, text)
             }
         }
@@ -79,5 +81,23 @@ internal fun SpaceCompassSouthernCrossLayer(enabled: Boolean, timeMs: Long, lati
     ComposeCanvas(Modifier.fillMaxSize()) {
         drawIntoCanvas { drawSpaceCompassSouthernCross(it.nativeCanvas, positions, size.width.toInt(), size.height.toInt(),
             density, orientation, perspective) }
+    }
+}
+
+/** Only checked constellations are projected; unused catalogue patterns do no frame work. */
+@Composable
+internal fun SpaceCompassConstellationsLayer(bodies: Collection<SpaceCompassCelestialBody>, timeMs: Long,
+    latitude: Double?, longitude: Double?, altitude: Double, orientation: SpaceCompassSunOrientation,
+    perspective: SpaceCompassPerspective?) {
+    if (latitude == null || longitude == null) return
+    val constellations = remember(bodies) { bodies.filter { it.constellationPattern != null } }
+    val positions = remember(constellations, timeMs / 1000, latitude, longitude, altitude) {
+        constellations.associateWith { calculateSpaceCompassConstellation(it, timeMs, latitude, longitude, altitude) }
+    }
+    ComposeCanvas(Modifier.fillMaxSize()) {
+        drawIntoCanvas { canvas -> positions.forEach { (body, stars) ->
+            drawSpaceCompassSouthernCross(canvas.nativeCanvas, stars, size.width.toInt(), size.height.toInt(),
+                density, orientation, perspective, body = body)
+        } }
     }
 }

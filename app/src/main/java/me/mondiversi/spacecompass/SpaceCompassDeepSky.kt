@@ -7,7 +7,8 @@ import kotlin.math.*
  * Alpha Centauri represents the unresolved AB pair; M31 uses its nuclear position.
  * References, limitations and physical identifications: docs/DEEP_SKY.md. */
 internal data class SpaceCompassDeepSkyReference(val raHours: Double, val decDegrees: Double,
-    val distanceLy: Double, val pmRaMasYear: Double = 0.0, val pmDecMasYear: Double = 0.0)
+    val distanceLy: Double, val pmRaMasYear: Double = 0.0, val pmDecMasYear: Double = 0.0,
+    val hasMeasuredDistance: Boolean = true)
 internal val SpaceCompassCelestialBody.deepSkyReference: SpaceCompassDeepSkyReference?
     get() = when (this) {
         SpaceCompassCelestialBody.VEGA -> SpaceCompassDeepSkyReference(18 + 36.0/60 + 56.33635/3600,
@@ -85,7 +86,7 @@ internal fun spaceCompassStellarReferenceVector(reference: SpaceCompassDeepSkyRe
     val masToRadians = PI / (180 * 3_600_000)
     // pmRA is already multiplied by cos(dec): use the tangent basis, not raw RA addition.
     return (direction + east*(reference.pmRaMasYear*masToRadians*years) + north*(reference.pmDecMasYear*masToRadians*years)).unit() *
-        (reference.distanceLy * SPACE_COMPASS_LIGHT_YEAR_KM / SPACE_COMPASS_AU_KM)
+        (if (reference.hasMeasuredDistance) reference.distanceLy * SPACE_COMPASS_LIGHT_YEAR_KM / SPACE_COMPASS_AU_KM else 1.0)
 }
 
 internal fun calculateSpaceCompassDeepSkyObservation(body: SpaceCompassCelestialBody, timeMs: Long,
@@ -98,7 +99,9 @@ internal fun calculateSpaceCompassDeepSkyObservation(reference: SpaceCompassDeep
     val time = spaceCompassAstronomyTime(timeMs)
     val earth = helioState(Body.Earth, time)
     val site = observer.toVector(time, EquatorEpoch.J2000)
-    val ray = stellar - SpaceCompassViewVector(earth.x + site.x, earth.y + site.y, earth.z + site.z)
+    // A direction-only catalogue reference has no fabricated distance or parallax.
+    val ray = if (reference.hasMeasuredDistance)
+        stellar - SpaceCompassViewVector(earth.x + site.x, earth.y + site.y, earth.z + site.z) else stellar
     val distanceAu = sqrt(ray.dot(ray))
     // First-order annual aberration; residual is far below a phone compass's accuracy.
     val sight = ray.unit()
@@ -108,7 +111,8 @@ internal fun calculateSpaceCompassDeepSkyObservation(reference: SpaceCompassDeep
     val horizontal = rotationEqjHor(time, observer).rotate(Vector(apparent.x, apparent.y, apparent.z, time))
     val azimuth = (Math.toDegrees(atan2(-horizontal.y, horizontal.x)) + 360) % 360
     val elevation = Math.toDegrees(atan2(horizontal.z, hypot(horizontal.x, horizontal.y)))
-    return SpaceCompassCelestialObservation(SpaceCompassSunPosition(azimuth, elevation), distanceAu * SPACE_COMPASS_AU_KM)
+    return SpaceCompassCelestialObservation(SpaceCompassSunPosition(azimuth, elevation),
+        if (reference.hasMeasuredDistance) distanceAu * SPACE_COMPASS_AU_KM else Double.NaN)
 }
 
 internal val SpaceCompassCelestialBody.deepSkyNoteResource: Int
@@ -136,5 +140,5 @@ internal val SpaceCompassCelestialBody.deepSkyNoteResource: Int
         SpaceCompassCelestialBody.M87_GALAXY -> R.string.celestial_m87_galaxy_tracking_note
         SpaceCompassCelestialBody.MILKY_WAY_CENTER -> R.string.celestial_milky_way_tracking_note
         SpaceCompassCelestialBody.M51_CORE -> R.string.celestial_m51_core_tracking_note
-        else -> R.string.celestial_deep_sky_note
+        else -> largeCatalogEntry?.note ?: R.string.celestial_deep_sky_note
     }

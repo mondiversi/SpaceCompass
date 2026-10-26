@@ -1,8 +1,8 @@
 <resources>
     <string name="info_news_title">Ostatnie nowości · %1$s</string>
-    <string name="info_news_star_sky" formatted="false">Kropka obok nazwy obiektu pokazuje oba kolory orbity: nad i pod horyzontem.</string>
-    <string name="info_news_texture_downloads" formatted="false">Legendy zdjęć i panoram używają teraz dwukolorowych kropek zamiast linii.</string>
-    <string name="info_news_weather" formatted="false">Rozmiar kropek jest dopasowany do tekstu, a obwódka ma kolor liter, także na eksportowanych obrazach.</string>
+    <string name="info_news_star_sky" formatted="false">Odkryj 999 obiektów, wszystkie 88 gwiazdozbiorów i dostępne dla wszystkich LV-426, z ulepszonym śledzeniem i źródłami naukowymi.</string>
+    <string name="info_news_texture_downloads" formatted="false">Nowy pakiet graficzny 1.6: 174 obrazy i 174 oddzielne miniatury, pobierane pojedynczo i zapisywane offline.</string>
+    <string name="info_news_weather" formatted="false">Czytelniejsze informacje, poprawione ikony zdjęcia i panoramy oraz bardziej kontrastowe przyciski Obserwatorium i Trasy dziennej w trybie nocnym.</string>
     <string name="info_news_viewer_zoom" formatted="false">Typy według liczby obiektów, alfabetyczne opcje sortowania i czytelniejsze sterowanie obiektami.</string>
     <string name="info_news_settings" formatted="false">Stabilniejsze etykiety odniesienia i Nadir przy −90°, naprzeciw Zenitu.</string>
     <string name="info_news_catalog" formatted="false">Poprawiony ruch księżyców, zbliżenia wybranych obiektów i wyraźny stan ładowania pogody.</string>

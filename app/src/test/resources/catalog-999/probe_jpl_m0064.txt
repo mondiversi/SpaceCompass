@@ -1,0 +1,283 @@
+*******************************************************************************
+ Revised: Sep 18, 2025     OSIRIS-REx/APEX Spacecraft / (Sun)               -64
+                             http://www.asteroidmission.org
+   https://directory.eoportal.org/web/eoportal/satellite-missions/o/osiris-rex
+ http://www.nasa.gov/sites/default/files/atoms/files/osiris-rex_press_kit_0.pdf
+ 
+ NOTE:
+  2025-Sep-18 An updated cruise and proximity ops at Apophis has been added.
+  2024-May-17 An updated cruise and "proximity ops" at Apophis trajectory has
+               been added.
+  2024-Apr-19 A preliminary extension from 2026 through Apophis encounter
+               has been added. There is large jump at the 2026 merge right now.
+  2023-Sep-18 The OSIRIS-REx project indicates the June 1 trajectory remains
+               accurate, no update prior to flyby is expected.
+  2022-Apr-25 Mission was approved for 18-month Apophis rendevous, to be
+               renamed "OSIRIS-APEX"
+  2017-Sep-22 Earth gravity-assist flyby:
+   Closest-approach is nominally at 16:51:46 UTC, 23592 km from Earth center,
+   over 271.89346 deg. E, -74.80121 deg. (South). This is over Antarctica,
+   south of the tip of South America, about 420 km north of Vinson Massif, 
+   the highest point in Antarctica. 
+  
+ BACKGROUND
+  OSIRIS-REx ("Origins, Spectral Interpretation, Resource Identification, 
+  and Security-Regolith Explorer") explored 101955 Bennu (1999 RQ36), a 
+  carbonaceous B-type asteroid whose regolith may provide insights on the 
+  early history of the solar system. After the sample was returned to Earth,
+  in 2023, the mission was retargeted to encounter asteroid Apophis in 
+  2029 and renamed OSIRIS-APEX ("APophis EXplorer").
+
+ MISSION EVENT SUMMARY (UTC)
+  2016  Sep 08 23:05 Launch from Cape Canaveral; daily 120 minutes windows from
+                     Sep 8 - Oct 12. Atlas V w/Centaur upper stage.
+  2017  Sep 22 16:52 Earth flyby and gravity assist 23,592 km from geocenter
+                      over {-74.80121 deg. S, 271.89346 deg. E}  
+  2018  Aug          Bennu approach phase
+        Oct          Rendevous with asteroid
+        Nov          Estimate mass, shape, and spin state models
+        Dec 3        Proximity ops began
+  2019  Jan          Begin detailed mapping; identify candidate sample sites
+        May          Sorties to examine 4 candidate sample sites
+        Oct          Fly over candidate sample sites
+  2020  Apr          First sample-collection rehearsal
+        Aug          Second sample-collection rehearsal
+        Oct 20       Collect sample > 60 grams
+  2021  May 10       Start return cruise and transport sample back to Earth
+  2023  Sep 24       Sample Return Capsule (SRC) recovery on Earth 
+  2023  Oct 24       Retargeting maneuver for Apophis (OSIRIS-APEX)
+
+ MISSION OBJECTIVES
+  * Map the asteroid
+  * Return and analyze a sample of Bennu's surface
+  * Document the sample site
+  * Measure the orbit deviation caused by small non-gravitational forces 
+  * Compare observations made at the asteroid to ground-based observations
+
+ SPACECRAFT PHYSICAL DATA:
+  Length             : 20.25 ft (6.2 m) with solar panels deployed
+   Width             : 8 ft (2.4 m) x 8 ft (2.4 m)
+  Height             : 10.33 ft (3.2 m)
+  TAGSAM Length      : 11 ft (3.4 m) ("Touch-and-Go Camera System")
+  Dry mass (unfueled): 1,940 lbs (880 kg)
+  Wet mass (fueled)  : 4,650 lbs (2,110 kg)
+  Power              : Two solar panels 91 ft^2 (8.5 m^2) generate 1226 to 
+                        3000 watts, depending on distance from the Sun
+
+ SPACECRAFT TRAJECTORY
+  Updated as the mission progresses. 
+
+  NOTE: To generate ephemerides OF destination asteroid Bennu as a target 
+  using the final reconstructed solution (Farnocchia et al, 2021), look-up 
+  with integer code "2101955" (NO semi-colon). 
+
+  To instead use asteroid Bennu as an observing point (produce ephemerides 
+  relative TO Bennu), set the coordinate center to "@ 2101955".
+
+  Similarly, the Sample Return Capsule can be accessed as object '-64090',
+  Apophis mission trajectory as object '2099942'
+
+  Trajectory name                                   Start (TDB)    Stop (TDB)
+  ----------------------------------------------    -----------   -----------
+  orx_160908_231024_pgaa3_day06m60_v1               2016-Sep-08   2016-Sep-09
+  orx_160909_171201_170830_od023_v1                 2016-Sep-09   2017-May-01
+  orx_170501_180710_171005_od027_v1                 2017-May-01   2017-Sep-23
+  orx_170923_180710_180125_od030_v1                 2017-Sep-23   2018-Mar-01
+  orx_180801_190302_181218_od077-N-M1A-L-M0D_v1     2018-Aug-01   2018-Dec-03
+  orx_181203_190302_190104_od085-N-M0D-P_v1         2018-Dec-03   2019-Dec-31
+  orx_181231_190305_190215_od099-N-M0D-P-M1D_v1     2019-Dec-31   2019-Feb-01
+  orx_190201_190327_190315_od110-N-M5D-L-M7D_v1     2019-Feb-01   2019-Feb-22
+  orx_190222_190403_190318_od111-N-M6D-L-M9D_v1     2019-Feb-22   2019-Mar-01
+  orx_190301_190410_190329_od117-N-M9D-L-M11D_v1    2019-Mar-01   2019-Apr-01 
+  orx_190401_190522_190508_od137-N-M21D-P-M23D_v1   2019-Apr-01   2019-Apr-26
+  orx_190426_190605_190522_od143-N-M25D-P-M27D_v1   2019-Apr-26   2019-May-11
+  orx_190511_190619_190603_od148-N-M28D-L-M3B_v1    2019-May-11   2019-May-21
+  orx_190521_190625_190613_od153-N_v1               2019-May-21   2019-Jun-01
+  orx_190601_191001_190614_od154-R-M4B-P-M2C_v1     2019-Jun-01   2019-Jun-12 
+  orx_190612_190917_190730_od170-N-M1C-P-M2C_v1     2019-Jun-12   2019-Jul-12
+  orx_190712_190917_190814_od175-N_v1               2019-Jul-12   2019-Aug-09 
+  orx_190809_191015_191004_od187-N-M2R-L-M5R_v1     2019-Aug-09   2019-Sep-03 
+  orx_190903_191022_191009_od189-N-M4R-L-M8R_v1     2019-Sep-03   2019-Sep-15
+  orx_191001_191105_191021_od194-N-M9R-L-M13R_v1    2019-Oct-01   2019-Oct-15
+  orx_191015_191112_191030_od198-N-M13R-L_v1        2019-Oct-15   2019-Oct-27
+  orx_191027_200101_191104_od200-N_v1               2019-Oct-27   2019-Nov-01
+  orx_191101_200225_200214_od223-N_v1               2019-Nov-01   2020-Jan-27
+  orx_200127_200324_200311_od232-N-TR1T2-L_v1       2020-Jan-27   2020-Feb-26
+  orx_200226_200324_200313_od233-N_v1               2020-Feb-26   2020-Mar-05
+  orx_200305_200421_200410_od239-N-TR1P2-L_v1       2020-Mar-05   2020-Apr-01
+  orx_200401_200418_200418_od242-N_cprecon_v1       2020-Apr-01   2020-Apr-14
+  orx_200414_200519_200504_od248-N_v1               2020-Apr-14   2020-Apr-30
+  orx_200430_200714_200701_od263-N-K2SO-P-BB8_v1    2020-Apr-30   2020-Jun-16
+  orx_200616_200811_200727_od269-N_v1               2020-Jun-16   2020-Jul-13
+  orx_200713_200825_200810_od273-N-TR2D-L-TR2R2_v1  2020-Jul-13   2020-Aug-11
+  orx_200811_200908_200828_od280-N_v1               2020-Aug-11   2020-Aug-27
+  orx_200827_201020_201020_od294-N_tag_v1           2020-Aug-27   2020-Oct-20
+  orx_200827_201103_201019_od292-N-T1D-L-T1R1_v1    2020-Oct-20   2020-Oct-20
+  orx_201020_210601_201109_od295-R_v1               2020-Oct-20   2021-Jan-01
+  orx_210101_210330_210310_od302-N-PTO3-P-PTO4_v1   2021-Jan-01   2021-Jan-15
+  orx_210115_210701_210426_od310-N-ADM-P_v1         2021-Jan-15   2021-Apr-08
+  orx_210408_210701_210517_od313-N-ADMA-F_v1        2021-Apr-08   2021-Apr-24
+  64_pred_20210424_20231001_od317_v0.1              2021-Apr-24   2021-Nov-01
+  orx_211101_231025_220519_od326-N-C22L1-F-TCM9_v1  2021-Nov-01   2023-Oct-25
+  orx_220401_240801_220825_od333-R-TCM9-P-DB1_v1    2022-Apr-01   2022-Sep-22
+  orx_220922_260101_230216_od348-R-TCM10-P-DSM3_v2  2022-Sep-22   2023-Oct-23
+  orx_231023_260401_231016_od385-R-TCM14-F-DSM3_v1  2023-Oct-23   2024-Feb-09
+  orx_240210_290101_240410_od389-R-DSM3-P-DSM5_v1   2024-Feb-09   2024-Oct-09 
+  orx_241010_290101_250127_od398-R-TCM17-P-DSM5_v1  2024-Oct-09   2028-Dec-31
+  orx_290101_300322_250127_od398-R-AAA1-P-VPO3_v2   2028-Dec-31   2030-Mar-22
+*******************************************************************************
+
+
+*******************************************************************************
+Ephemeris / API_USER Mon Oct 26 10:21:10 2026 Pasadena, USA      / Horizons
+*******************************************************************************
+Target body name: OSIRIS-REx (spacecraft) (-64)   {source: ORX_merged}
+Center body name: Earth (399)                     {source: ORX_merged}
+Center-site name: BODY CENTER
+*******************************************************************************
+Start time      : A.D. 2026-Oct-26 00:00:00.0000 UT 
+Stop  time      : A.D. 2026-Oct-28 00:00:00.0000 UT 
+Step-size       : 60 minutes
+*******************************************************************************
+Center geodetic : 0.0, 0.0, 0.0                   {E-lon(deg),Lat(deg),Alt(km)}
+Center cylindric: 0.0, 0.0, 0.0                   {E-lon(deg),Dxy(km),Dz(km)}
+Center radii    : 6378.137, 6378.137, 6356.752 km {Equator_a, b, pole_c}
+Output units    : AU-D
+Calendar mode   : Mixed Julian/Gregorian
+Output type     : LT+S CORRECTED cartesian states
+Output format   : 2 (position and velocity)
+EOP file        : eop.261023.p270119
+EOP coverage    : DATA-BASED 1962-JAN-20 TO 2026-OCT-23. PREDICTS-> 2027-JAN-18
+Reference frame : ICRF
+*******************************************************************************
+            JDUT ,            Calendar Date (UT ),                      X,                      Y,                      Z,                     VX,                     VY,                     VZ,
+**************************************************************************************************************************************************************************************************
+$$SOE
+2461339.500000000, A.D. 2026-Oct-26 00:00:00.0000,  1.747273504489793E-01, -5.362907652365951E-01, -2.324620528283832E-01,  6.480652545255674E-03,  2.464929746134008E-03,  1.071251660487929E-03,
+2461339.541666667, A.D. 2026-Oct-26 01:00:00.0000,  1.749973373013583E-01, -5.361879292320468E-01, -2.324173608308869E-01,  6.479241503923416E-03,  2.471583674943501E-03,  1.074129555264147E-03,
+2461339.583333333, A.D. 2026-Oct-26 02:00:00.0000,  1.752672651981437E-01, -5.360848159922366E-01, -2.323725489269386E-01,  6.477822000000736E-03,  2.478236713322834E-03,  1.077007023947485E-03,
+2461339.625000000, A.D. 2026-Oct-26 03:00:00.0000,  1.755371337867989E-01, -5.359814255544213E-01, -2.323276171343482E-01,  6.476394039519576E-03,  2.484888853449545E-03,  1.079884063838588E-03,
+2461339.666666667, A.D. 2026-Oct-26 04:00:00.0000,  1.758069427150639E-01, -5.358777579561675E-01, -2.322825654710304E-01,  6.474957628506378E-03,  2.491540087603979E-03,  1.082760672291804E-03,
+2461339.708333333, A.D. 2026-Oct-26 05:00:00.0000,  1.760766916309260E-01, -5.357738132353936E-01, -2.322373939550231E-01,  6.473512772980660E-03,  2.498190408168548E-03,  1.085636846714761E-03,
+2461339.750000000, A.D. 2026-Oct-26 06:00:00.0000,  1.763463801826286E-01, -5.356695914303071E-01, -2.321921026044601E-01,  6.472059478951791E-03,  2.504839807628321E-03,  1.088512584568509E-03,
+2461339.791666667, A.D. 2026-Oct-26 07:00:00.0000,  1.766160080186288E-01, -5.355650925793930E-01, -2.321466914375652E-01,  6.470597752416565E-03,  2.511488278570225E-03,  1.091387883367051E-03,
+2461339.833333333, A.D. 2026-Oct-26 08:00:00.0000,  1.768855747876784E-01, -5.354603167215213E-01, -2.321011604726984E-01,  6.469127599359073E-03,  2.518135813684286E-03,  1.094262740677753E-03,
+2461339.875000000, A.D. 2026-Oct-26 09:00:00.0000,  1.771550801387642E-01, -5.353552638957974E-01, -2.320555097282914E-01,  6.467649025745830E-03,  2.524782405763067E-03,  1.097137154120977E-03,
+2461339.916666667, A.D. 2026-Oct-26 10:00:00.0000,  1.774245237211071E-01, -5.352499341416991E-01, -2.320097392229058E-01,  6.466162037526013E-03,  2.531428047700842E-03,  1.100011121369601E-03,
+2461339.958333333, A.D. 2026-Oct-26 11:00:00.0000,  1.776939051841809E-01, -5.351443274988762E-01, -2.319638489751463E-01,  6.464666640625760E-03,  2.538072732495014E-03,  1.102884640149471E-03,
+2461340.000000000, A.D. 2026-Oct-26 12:00:00.0000,  1.779632241777265E-01, -5.350384440073775E-01, -2.319178390037588E-01,  6.463162840950079E-03,  2.544716453245026E-03,  1.105757708238809E-03,
+2461340.041666667, A.D. 2026-Oct-26 13:00:00.0000,  1.782324803516986E-01, -5.349322837075206E-01, -2.318717093275732E-01,  6.461650644378282E-03,  2.551359203151586E-03,  1.108630323467730E-03,
+2461340.083333333, A.D. 2026-Oct-26 14:00:00.0000,  1.785016733563215E-01, -5.348258466398855E-01, -2.318254599655011E-01,  6.460130056761780E-03,  2.558000975517769E-03,  1.111502483718556E-03,
+2461340.125000000, A.D. 2026-Oct-26 15:00:00.0000,  1.787708028420522E-01, -5.347191328452743E-01, -2.317790909365172E-01,  6.458601083921132E-03,  2.564641763748103E-03,  1.114374186925279E-03,
+2461340.166666667, A.D. 2026-Oct-26 16:00:00.0000,  1.790398684595859E-01, -5.346121423648933E-01, -2.317326022597382E-01,  6.457063731647137E-03,  2.571281561347440E-03,  1.117245431072909E-03,
+2461340.208333333, A.D. 2026-Oct-26 17:00:00.0000,  1.793088698598595E-01, -5.345048752400713E-01, -2.316859939543008E-01,  6.455518005693684E-03,  2.577920361922065E-03,  1.120116214197796E-03,
+2461340.250000000, A.D. 2026-Oct-26 18:00:00.0000,  1.795778066940693E-01, -5.343973315125109E-01, -2.316392660394693E-01,  6.453963911780067E-03,  2.584558159178457E-03,  1.122986534386919E-03,
+2461340.291666667, A.D. 2026-Oct-26 19:00:00.0000,  1.798466786136146E-01, -5.342895112241421E-01, -2.315924185345729E-01,  6.452401455586180E-03,  2.591194946922217E-03,  1.125856389777261E-03,
+2461340.333333333, A.D. 2026-Oct-26 20:00:00.0000,  1.801154852701520E-01, -5.341814144171119E-01, -2.315454514590007E-01,  6.450830642750249E-03,  2.597830719058895E-03,  1.128725778556000E-03,
+2461340.375000000, A.D. 2026-Oct-26 21:00:00.0000,  1.803842263155852E-01, -5.340730411338889E-01, -2.314983648322460E-01,  6.449251478868556E-03,  2.604465469592764E-03,  1.131594698959767E-03,
+2461340.416666667, A.D. 2026-Oct-26 22:00:00.0000,  1.806529014020067E-01, -5.339643914171158E-01, -2.314511586738432E-01,  6.447663969490626E-03,  2.611099192625504E-03,  1.134463149273947E-03,
+2461340.458333333, A.D. 2026-Oct-26 23:00:00.0000,  1.809215101817858E-01, -5.338554653097154E-01, -2.314038330034122E-01,  6.446068120119115E-03,  2.617731882357030E-03,  1.137331127832810E-03,
+2461340.500000000, A.D. 2026-Oct-27 00:00:00.0000,  1.811900523074916E-01, -5.337462628548999E-01, -2.313563878406636E-01,  6.444463936207817E-03,  2.624363533083056E-03,  1.140198633018288E-03,
+2461340.541666667, A.D. 2026-Oct-27 01:00:00.0000,  1.814585274319323E-01, -5.336367840959946E-01, -2.313088232053209E-01,  6.442851423156494E-03,  2.630994139196118E-03,  1.143065663260222E-03,
+2461340.583333333, A.D. 2026-Oct-27 02:00:00.0000,  1.817269352081253E-01, -5.335270290766709E-01, -2.312611391172219E-01,  6.441230586312935E-03,  2.637623695183113E-03,  1.145932217035113E-03,
+2461340.625000000, A.D. 2026-Oct-27 03:00:00.0000,  1.819952752893333E-01, -5.334169978407989E-01, -2.312133355962541E-01,  6.439601430968289E-03,  2.644252195625837E-03,  1.148798292866141E-03,
+2461340.666666667, A.D. 2026-Oct-27 04:00:00.0000,  1.822635473290325E-01, -5.333066904324476E-01, -2.311654126623549E-01,  6.437963962355025E-03,  2.650879635199541E-03,  1.151663889322349E-03,
+2461340.708333333, A.D. 2026-Oct-27 05:00:00.0000,  1.825317509808870E-01, -5.331961068959030E-01, -2.311173703355192E-01,  6.436318185645265E-03,  2.657506008671341E-03,  1.154529005017750E-03,
+2461340.750000000, A.D. 2026-Oct-27 06:00:00.0000,  1.827998858988145E-01, -5.330852472756745E-01, -2.310692086358020E-01,  6.434664105948978E-03,  2.664131310900753E-03,  1.157393638611354E-03,
+2461340.791666667, A.D. 2026-Oct-27 07:00:00.0000,  1.830679517369156E-01, -5.329741116165274E-01, -2.310209275833315E-01,  6.433001728312528E-03,  2.670755536836943E-03,  1.160257788805768E-03,
+2461340.833333333, A.D. 2026-Oct-27 08:00:00.0000,  1.833359481495255E-01, -5.328626999633717E-01, -2.309725271982622E-01,  6.431331057714813E-03,  2.677378681519532E-03,  1.163121454347332E-03,
+2461340.875000000, A.D. 2026-Oct-27 09:00:00.0000,  1.836038747911528E-01, -5.327510123613561E-01, -2.309240075008143E-01,  6.429652099066986E-03,  2.684000740075587E-03,  1.165984634024609E-03,
+2461340.916666667, A.D. 2026-Oct-27 10:00:00.0000,  1.838717313165500E-01, -5.326390488558321E-01, -2.308753685112582E-01,  6.427964857210000E-03,  2.690621707720248E-03,  1.168847326668436E-03,
+2461340.958333333, A.D. 2026-Oct-27 11:00:00.0000,  1.841395173806300E-01, -5.325268094923503E-01, -2.308266102499129E-01,  6.426269336912636E-03,  2.697241579753833E-03,  1.171709531150458E-03,
+2461341.000000000, A.D. 2026-Oct-27 12:00:00.0000,  1.844072326385342E-01, -5.324142943166128E-01, -2.307777327371251E-01,  6.424565542868875E-03,  2.703860351562424E-03,  1.174571246383149E-03,
+2461341.041666667, A.D. 2026-Oct-27 13:00:00.0000,  1.846748767455718E-01, -5.323015033745766E-01, -2.307287359933141E-01,  6.422853479697906E-03,  2.710478018614770E-03,  1.177432471318270E-03,
+2461341.083333333, A.D. 2026-Oct-27 14:00:00.0000,  1.849424493572751E-01, -5.321884367123474E-01, -2.306796200389252E-01,  6.421133151940549E-03,  2.717094576462824E-03,  1.180293204946861E-03,
+2461341.125000000, A.D. 2026-Oct-27 15:00:00.0000,  1.852099501293222E-01, -5.320750943762077E-01, -2.306303848944421E-01,  6.419404564057908E-03,  2.723710020738632E-03,  1.183153446297680E-03,
+2461341.166666667, A.D. 2026-Oct-27 16:00:00.0000,  1.854773787176217E-01, -5.319614764126485E-01, -2.305810305804003E-01,  6.417667720430403E-03,  2.730324347154704E-03,  1.186013194437129E-03,
+2461341.208333333, A.D. 2026-Oct-27 17:00:00.0000,  1.857447347782228E-01, -5.318475828683309E-01, -2.305315571173708E-01,  6.415922625355297E-03,  2.736937551500881E-03,  1.188872448467682E-03,
+2461341.250000000, A.D. 2026-Oct-27 18:00:00.0000,  1.860120179673815E-01, -5.317334137900475E-01, -2.304819645259423E-01,  6.414169283044435E-03,  2.743549629644666E-03,  1.191731207527786E-03,
+2461341.291666667, A.D. 2026-Oct-27 19:00:00.0000,  1.862792279415059E-01, -5.316189692248433E-01, -2.304322528267745E-01,  6.412407697624845E-03,  2.750160577528016E-03,  1.194589470790254E-03,
+2461341.333333333, A.D. 2026-Oct-27 20:00:00.0000,  1.865463643571993E-01, -5.315042492198606E-01, -2.303824220405306E-01,  6.410637873134385E-03,  2.756770391167549E-03,  1.197447237462118E-03,
+2461341.375000000, A.D. 2026-Oct-27 21:00:00.0000,  1.868134268711954E-01, -5.313892538224205E-01, -2.303324721879118E-01,  6.408859813521680E-03,  2.763379066651211E-03,  1.200304506782954E-03,
+2461341.416666667, A.D. 2026-Oct-27 22:00:00.0000,  1.870804151404395E-01, -5.312739830800502E-01, -2.302824032896704E-01,  6.407073522645248E-03,  2.769986600138484E-03,  1.203161278024749E-03,
+2461341.458333333, A.D. 2026-Oct-27 23:00:00.0000,  1.873473288219853E-01, -5.311584370403390E-01, -2.302322153665457E-01,  6.405279004269317E-03,  2.776592987857329E-03,  1.206017550490325E-03,
+2461341.500000000, A.D. 2026-Oct-28 00:00:00.0000,  1.876141675730725E-01, -5.310426157511706E-01, -2.301819084393664E-01,  6.403476262066781E-03,  2.783198226103117E-03,  1.208873323512670E-03,
+$$EOE
+**************************************************************************************************************************************************************************************************
+ 
+TIME
+
+ Times PRIOR to 1962 are UT1, a mean-solar time closely related to the
+prior but now-deprecated GMT. Times AFTER 1962 are in UTC, the current
+civil or "wall-clock" atomic time-scale. UTC is kept within 0.9 seconds
+of UT1 using integer leap-seconds for 1972 and later years.
+
+  Conversion from the internal Barycentric Dynamical Time (TDB) of solar
+system dynamics to the discontinuous civil UT time-scale has not been
+determined for UTC times after the next July or January 1st. Therefore,
+the last known leap-second is used as a constant over future intervals,
+a condition noted here as "UT~".
+
+  Future but as yet undetermined leap-seconds can be expected to change
+time-tags in the "UT~" interval and, in general, the UT scale may not be
+suitable for purposes that assume time-tag continuity in the ephemeris.
+Output in continuous TDB and TT timescales may instead be requested,
+though these are not linked to Earth's rotation.
+
+  Time-tags refer to the UT time-scale conversion from TDB on Earth
+regardless of observer location within the solar system, although clock
+rates may differ due to the local gravity field and no analog to "UT"
+may be defined for that location.
+ 
+CALENDAR SYSTEM
+
+  Mixed calendar mode was active such that calendar dates after AD 1582-Oct-15
+(if any) are in the modern Gregorian system. Dates prior to 1582-Oct-5 (if any)
+are in the Julian calendar system, which is automatically extended for dates
+prior to its adoption on 45-Jan-1 BC.  The Julian calendar is useful for
+matching historical dates. The Gregorian calendar more accurately corresponds
+to the Earth's orbital motion and seasons. A "Gregorian-only" calendar mode is
+available if such physical events are the primary interest.
+
+REFERENCE FRAME AND COORDINATES
+
+  International Celestial Reference Frame (ICRF)
+
+    The ICRF is an adopted reference frame whose axes are defined relative to 
+    fixed extragalactic radio sources distributed across the sky.
+
+    The ICRF was aligned with the prior FK5/J2000 dynamical system at the ~0.02 
+    arcsecond level but is not identical and has no associated standard epoch.
+
+  Symbol meaning [1 au= 149597870.700 km, 1 day= 86400.0 s]:
+
+    JDUT     Julian Day Number, Universal Time
+      X      X-component of position vector (au)
+      Y      Y-component of position vector (au)
+      Z      Z-component of position vector (au)
+      VX     X-component of velocity vector (au/day)                           
+      VY     Y-component of velocity vector (au/day)                           
+      VZ     Z-component of velocity vector (au/day)                           
+
+ABERRATIONS AND CORRECTIONS
+
+ States have been corrected for Newtonian down-leg  (receive) light-time
+ displacement and relativistic stellar aberration.
+
+Computations by ...
+
+    Solar System Dynamics Group, Horizons On-Line Ephemeris System
+    4800 Oak Grove Drive, Jet Propulsion Laboratory
+    Pasadena, CA  91109   USA
+
+    General site: https://ssd.jpl.nasa.gov/
+    Mailing list: https://ssd.jpl.nasa.gov/email_list.html
+    System news : https://ssd.jpl.nasa.gov/horizons/news.html
+    User Guide  : https://ssd.jpl.nasa.gov/horizons/manual.html
+    Connect     : browser        https://ssd.jpl.nasa.gov/horizons/app.html#/x
+                  API            https://ssd-api.jpl.nasa.gov/doc/horizons.html
+                  command-line   telnet ssd.jpl.nasa.gov 6775
+                  e-mail/batch   https://ssd.jpl.nasa.gov/ftp/ssd/horizons_batch.txt
+                  scripts        https://ssd.jpl.nasa.gov/ftp/ssd/SCRIPTS
+    Inquiries   : Jon.D.Giorgini@jpl.nasa.gov
+*******************************************************************************

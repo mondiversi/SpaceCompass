@@ -23,16 +23,19 @@ internal val SpaceCompassCelestialBody.isInterplanetaryCraft: Boolean
         SpaceCompassCelestialBody.NEW_HORIZONS, SpaceCompassCelestialBody.JWST,
         SpaceCompassCelestialBody.PARKER_SOLAR_PROBE, SpaceCompassCelestialBody.EUROPA_CLIPPER,
         SpaceCompassCelestialBody.JUICE, SpaceCompassCelestialBody.BEPICOLOMBO, SpaceCompassCelestialBody.SOLAR_ORBITER, SpaceCompassCelestialBody.LUCY, SpaceCompassCelestialBody.PSYCHE -> true
-        else -> false
+        else -> largeCatalogEntry?.entry?.type == SpaceCompassCatalogType.SPACE_PROBE
     }
 
 internal data class SpaceCompassCatalogSatellite(val norad: String, val international: String,
-    val publicName: String, val inclination: ClosedFloatingPointRange<Double>)
+    val publicName: String, val inclination: ClosedFloatingPointRange<Double>,
+    val meanMotion: ClosedFloatingPointRange<Double> = 14.0..17.0,
+    val radiusKm: ClosedFloatingPointRange<Double> = 6400.0..9000.0,
+    val speedKmSecond: ClosedFloatingPointRange<Double> = 6.0..9.0)
 
 /** Tiangong tracks the Tianhe core, not a visiting vehicle with a similar name. */
 internal val SpaceCompassCelestialBody.catalogSatellite: SpaceCompassCatalogSatellite?
     get() = when (this) {
         SpaceCompassCelestialBody.HUBBLE -> SpaceCompassCatalogSatellite("20580", "90037B", "HST", 27.0..30.0)
         SpaceCompassCelestialBody.TIANGONG -> SpaceCompassCatalogSatellite("48274", "21035A", "CSS (TIANHE-1)", 40.0..43.0)
-        else -> null
+        else -> largeCatalogEntry?.satellite
     }

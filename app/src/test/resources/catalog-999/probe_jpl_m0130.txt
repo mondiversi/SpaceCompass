@@ -1,0 +1,217 @@
+*******************************************************************************
+ Revised: Jun 12, 2010            Hayabusa Spacecraft                      -130
+             http://www.isas.jaxa.jp/e/enterp/missions/muses-c/index.shtml
+                 http://www.muses-c.isas.ac.jp/English/index.html
+ ------
+ NOTE: 
+  The LAST predicted reference trajectory for June 13 is now available. It is 
+  based on post TCM-4 tracking through June 12 and is intended to support 
+  observations of final Earth approach. 
+ ------
+
+ BACKGROUND:
+  Hayabusa (formerly "MUSES-C") is a sample return mission. The primary goal 
+  was to acquire and verify the technology to retrieve samples from a small 
+  body in the solar system and to bring them back to the earth. 
+
+  The spacecraft was launched May 9th, 2003 on an M-V launch vehicle and 
+  arrived at asteroid 25143 Itokawa (1998 SF36) in September of 2005.
+
+  Over the next two-and-a-half months, the spacecraft made close range 
+  observations of the asteroid's shape, terrain, mineral composition, gravity,
+  and the way it reflected solar radiation.  On Nov. 25 of that year, Hayabusa 
+  briefly touched down on the surface of Itokawa and attempted to capture 
+  samples for return to Earth.
+
+  The spacecraft departed Itokawa in January 2007 and is scheduled to return
+  to Earth June 13, 2010, parachuting the sample return capsule to a region
+  near Woomera, Australia. The main spacecraft bus will burn up in Earth's 
+  atmosphere.
+
+ HAYABUSA SPACECRAFT:
+  510 kg (wet mass)
+  3-axis stabilized, 1.5m x 1.5m x 1.2m dimensions.
+
+  The spacecraft is equipped with solar power electrical propulsion and 
+  autonomous navigation and guidance systems.
+
+ SPACECRAFT TRAJECTORY: (from JAXA/ISAS)
+        Solution Name                    Start        Stop 
+  --------------------------------------------------------------
+  090126-100613-ISAS-SPK.V0.1         2009-JAN-27  2009-DEC-04
+  reftraj_091204-100613-ISAS          2009-DEC-04  2010-JUN-09
+  100609-100613-ISAS-SPK              2010-JUN-09  2010-JUN-13
+  100613-100613-ISAS-SPK              2010-JUN-13  2010-JUN-13
+
+  Off-line trajectories (available on request)
+        Solution Name                    Start        Stop 
+  --------------------------------------------------------------
+   p_130_040401-040615                2004-APR-01  2004-JUN-15
+    Released May 14, 2004: pre-flyby update for May 19, 2004 Earth encounter
+    based on tracking data. 
+
+   9jan04-jun07                       2004-JAN-09  2004-APR-01
+     These reference trajectory predicts are based on the January 28, 2004 
+     mission design. 
+
+   Muses-C-8aug04-10jun07-Des16aug04  2004-AUG-07  2007-JUN-10
+
+   hayabusa_recon_pfile_040401_040601 2004-APR-02  2004-JUN-01
+    This trajectory is the 2004 Earth-encounter trajectory reconstructed
+    from tracking data after the May 19 encounter.
+*******************************************************************************
+
+
+*******************************************************************************
+Ephemeris / API_USER Mon Oct 26 10:24:58 2026 Pasadena, USA      / Horizons
+*******************************************************************************
+Target body name: Hayabusa (spacecraft) (-130)    {source: Hayabusa_return}
+Center body name: Earth (399)                     {source: Hayabusa_return}
+Center-site name: BODY CENTER
+*******************************************************************************
+Start time      : A.D. 2010-Jan-01 00:00:00.0000 UT 
+Stop  time      : A.D. 2010-Jan-03 00:00:00.0000 UT 
+Step-size       : 60 minutes
+*******************************************************************************
+Center geodetic : 0.0, 0.0, 0.0                   {E-lon(deg),Lat(deg),Alt(km)}
+Center cylindric: 0.0, 0.0, 0.0                   {E-lon(deg),Dxy(km),Dz(km)}
+Center radii    : 6378.137, 6378.137, 6356.752 km {Equator_a, b, pole_c}
+Output units    : AU-D
+Calendar mode   : Mixed Julian/Gregorian
+Output type     : LT+S CORRECTED cartesian states
+Output format   : 2 (position and velocity)
+EOP file        : eop.261023.p270119
+EOP coverage    : DATA-BASED 1962-JAN-20 TO 2026-OCT-23. PREDICTS-> 2027-JAN-18
+Reference frame : ICRF
+*******************************************************************************
+            JDUT ,            Calendar Date (UT ),                      X,                      Y,                      Z,                     VX,                     VY,                     VZ,
+**************************************************************************************************************************************************************************************************
+$$SOE
+2455197.500000000, A.D. 2010-Jan-01 00:00:00.0000, -3.917308401958631E-01,  2.634504720675030E-01,  1.382954310551136E-01,  6.108297342346595E-03, -5.328777456093352E-03, -2.020328453915876E-03,
+2455197.541666667, A.D. 2010-Jan-01 01:00:00.0000, -3.914763383715497E-01,  2.632285515728903E-01,  1.382112980094178E-01,  6.108642666022914E-03, -5.322678492098005E-03, -2.017786865392907E-03,
+2455197.583333333, A.D. 2010-Jan-01 02:00:00.0000, -3.912218222651285E-01,  2.630068851834910E-01,  1.381272708630767E-01,  6.108982058168663E-03, -5.316581324625856E-03, -2.015245781945122E-03,
+2455197.625000000, A.D. 2010-Jan-01 03:00:00.0000, -3.909672921237085E-01,  2.627854728245618E-01,  1.380433495950720E-01,  6.109315521832699E-03, -5.310485948125596E-03, -2.012705202417849E-03,
+2455197.666666667, A.D. 2010-Jan-01 04:00:00.0000, -3.907127481942684E-01,  2.625643144215959E-01,  1.379595341844304E-01,  6.109643060230472E-03, -5.304392356861444E-03, -2.010165125786915E-03,
+2455197.708333333, A.D. 2010-Jan-01 05:00:00.0000, -3.904581907236410E-01,  2.623434099003312E-01,  1.378758246102213E-01,  6.109964676742530E-03, -5.298300544916110E-03, -2.007625551159119E-03,
+2455197.750000000, A.D. 2010-Jan-01 06:00:00.0000, -3.902036199585300E-01,  2.621227591867497E-01,  1.377922208515446E-01,  6.110280374912824E-03, -5.292210506195976E-03, -2.005086477773157E-03,
+2455197.791666667, A.D. 2010-Jan-01 07:00:00.0000, -3.899490361454889E-01,  2.619023622070873E-01,  1.377087228875283E-01,  6.110590158446583E-03, -5.286122234435553E-03, -2.002547905000566E-03,
+2455197.833333333, A.D. 2010-Jan-01 08:00:00.0000, -3.896944395308882E-01,  2.616822188878635E-01,  1.376253306973318E-01,  6.110894031208606E-03, -5.280035723200994E-03, -2.000009832345552E-03,
+2455197.875000000, A.D. 2010-Jan-01 09:00:00.0000, -3.894398303609620E-01,  2.614623291558425E-01,  1.375420442601216E-01,  6.111191997221209E-03, -5.273950965895241E-03, -1.997472259446381E-03,
+2455197.916666667, A.D. 2010-Jan-01 10:00:00.0000, -3.891852088817629E-01,  2.612426929380965E-01,  1.374588635550880E-01,  6.111484060661776E-03, -5.267867955762691E-03, -1.994935186075178E-03,
+2455197.958333333, A.D. 2010-Jan-01 11:00:00.0000, -3.889305753391600E-01,  2.610233101619633E-01,  1.373757885614210E-01,  6.111770225860912E-03, -5.261786685893705E-03, -1.992398612138613E-03,
+2455198.000000000, A.D. 2010-Jan-01 12:00:00.0000, -3.886759299788511E-01,  2.608041807550719E-01,  1.372928192583120E-01,  6.112050497299916E-03, -5.255707149229507E-03, -1.989862537678075E-03,
+2455198.041666667, A.D. 2010-Jan-01 13:00:00.0000, -3.884212730463286E-01,  2.605853046453599E-01,  1.372099556249515E-01,  6.112324879608167E-03, -5.249629338567001E-03, -1.987326962870029E-03,
+2455198.083333333, A.D. 2010-Jan-01 14:00:00.0000, -3.881666047869042E-01,  2.603666817610564E-01,  1.371271976405163E-01,  6.112593377561113E-03, -5.243553246563641E-03, -1.984791888025995E-03,
+2455198.125000000, A.D. 2010-Jan-01 15:00:00.0000, -3.879119254456713E-01,  2.601483120307108E-01,  1.370445452841719E-01,  6.112855996076918E-03, -5.237478865743359E-03, -1.982257313592747E-03,
+2455198.166666667, A.D. 2010-Jan-01 16:00:00.0000, -3.876572352675317E-01,  2.599301953831757E-01,  1.369619985350579E-01,  6.113112740214455E-03, -5.231406188500199E-03, -1.979723240152163E-03,
+2455198.208333333, A.D. 2010-Jan-01 17:00:00.0000, -3.874025344971569E-01,  2.597123317476358E-01,  1.368795573722915E-01,  6.113363615169873E-03, -5.225335207105128E-03, -1.977189668421319E-03,
+2455198.250000000, A.D. 2010-Jan-01 18:00:00.0000, -3.871478233790224E-01,  2.594947210535817E-01,  1.367972217749510E-01,  6.113608626274148E-03, -5.219265913710276E-03, -1.974656599252093E-03,
+2455198.291666667, A.D. 2010-Jan-01 19:00:00.0000, -3.868931021573477E-01,  2.592773632308575E-01,  1.367149917220854E-01,  6.113847778989653E-03, -5.213198300354886E-03, -1.972124033631069E-03,
+2455198.333333333, A.D. 2010-Jan-01 20:00:00.0000, -3.866383710761406E-01,  2.590602582096209E-01,  1.366328671926915E-01,  6.114081078907365E-03, -5.207132358970775E-03, -1.969591972679052E-03,
+2455198.375000000, A.D. 2010-Jan-01 21:00:00.0000, -3.863836303791856E-01,  2.588434059203787E-01,  1.365508481657211E-01,  6.114308531743335E-03, -5.201068081387930E-03, -1.967060417651136E-03,
+2455198.416666667, A.D. 2010-Jan-01 22:00:00.0000, -3.861288803099907E-01,  2.586268062939875E-01,  1.364689346200744E-01,  6.114530143335384E-03, -5.195005459339360E-03, -1.964529369935206E-03,
+2455198.458333333, A.D. 2010-Jan-01 23:00:00.0000, -3.858741211118450E-01,  2.584104592616356E-01,  1.363871265345847E-01,  6.114745919639929E-03, -5.188944484467966E-03, -1.961998831052416E-03,
+2455198.500000000, A.D. 2010-Jan-02 00:00:00.0000, -3.856193530277794E-01,  2.581943647548687E-01,  1.363054238880229E-01,  6.114955866728078E-03, -5.182885148331568E-03, -1.959468802655759E-03,
+2455198.541666667, A.D. 2010-Jan-02 01:00:00.0000, -3.853645763005687E-01,  2.579785227055854E-01,  1.362238266590871E-01,  6.115159990782180E-03, -5.176827442409266E-03, -1.956939286529703E-03,
+2455198.583333333, A.D. 2010-Jan-02 02:00:00.0000, -3.851097911727356E-01,  2.577629330460356E-01,  1.361423348263973E-01,  6.115358298091905E-03, -5.170771358106630E-03, -1.954410284589416E-03,
+2455198.625000000, A.D. 2010-Jan-02 03:00:00.0000, -3.848549978865236E-01,  2.575475957088400E-01,  1.360609483684953E-01,  6.115550795050316E-03, -5.164716886762263E-03, -1.951881798879133E-03,
+2455198.666666667, A.D. 2010-Jan-02 04:00:00.0000, -3.846001966839135E-01,  2.573325106269771E-01,  1.359796672638328E-01,  6.115737488150030E-03, -5.158664019653622E-03, -1.949353831572102E-03,
+2455198.708333333, A.D. 2010-Jan-02 05:00:00.0000, -3.843453878066103E-01,  2.571176777337864E-01,  1.358984914907679E-01,  6.115918383978959E-03, -5.152612748003082E-03, -1.946826384968569E-03,
+2455198.750000000, A.D. 2010-Jan-02 06:00:00.0000, -3.840905714960624E-01,  2.569030969629790E-01,  1.358174210275610E-01,  6.116093489216258E-03, -5.146563062984213E-03, -1.944299461495521E-03,
+2455198.791666667, A.D. 2010-Jan-02 07:00:00.0000, -3.838357479934100E-01,  2.566887682486361E-01,  1.357364558523704E-01,  6.116262810627450E-03, -5.140514955727769E-03, -1.941773063704410E-03,
+2455198.833333333, A.D. 2010-Jan-02 08:00:00.0000, -3.835809175395211E-01,  2.564746915252070E-01,  1.356555959432445E-01,  6.116426355060583E-03, -5.134468417328204E-03, -1.939247194270396E-03,
+2455198.875000000, A.D. 2010-Jan-02 09:00:00.0000, -3.833260803749835E-01,  2.562608667275075E-01,  1.355748412781155E-01,  6.116584129441220E-03, -5.128423438849643E-03, -1.936721855990572E-03,
+2455198.916666667, A.D. 2010-Jan-02 10:00:00.0000, -3.830712367400882E-01,  2.560472937907330E-01,  1.354941918347991E-01,  6.116736140767732E-03, -5.122380011332894E-03, -1.934197051782652E-03,
+2455198.958333333, A.D. 2010-Jan-02 11:00:00.0000, -3.828163868748170E-01,  2.558339726504625E-01,  1.354136475909919E-01,  6.116882396106487E-03, -5.116338125800701E-03, -1.931672784683001E-03,
+2455199.000000000, A.D. 2010-Jan-02 12:00:00.0000, -3.825615310188933E-01,  2.556209032426230E-01,  1.353332085242500E-01,  6.117022902587012E-03, -5.110297773265914E-03, -1.929149057845201E-03,
+2455199.041666667, A.D. 2010-Jan-02 13:00:00.0000, -3.823066694117046E-01,  2.554080855035438E-01,  1.352528746120070E-01,  6.117157667396561E-03, -5.104258944735821E-03, -1.926625874537929E-03,
+2455199.083333333, A.D. 2010-Jan-02 14:00:00.0000, -3.820518022923483E-01,  2.551955193699151E-01,  1.351726458315533E-01,  6.117286697774968E-03, -5.098221631220901E-03, -1.924103238143025E-03,
+2455199.125000000, A.D. 2010-Jan-02 15:00:00.0000, -3.817969298996391E-01,  2.549832047788050E-01,  1.350925221600369E-01,  6.117410001009406E-03, -5.092185823740220E-03, -1.921581152153817E-03,
+2455199.166666667, A.D. 2010-Jan-02 16:00:00.0000, -3.815420523747654E-01,  2.547711417271133E-01,  1.350125035416769E-01,  6.117532603421076E-03, -5.086148446607821E-03, -1.919061311216735E-03,
+2455199.208333333, A.D. 2010-Jan-02 17:00:00.0000, -3.812871698275659E-01,  2.545593302310637E-01,  1.349325899100673E-01,  6.117649956345890E-03, -5.080112275611389E-03, -1.916542184310485E-03,
+2455199.250000000, A.D. 2010-Jan-02 18:00:00.0000, -3.810322824910282E-01,  2.543477702317949E-01,  1.348527812402379E-01,  6.117761705365946E-03, -5.074077522958735E-03, -1.914023653360408E-03,
+2455199.291666667, A.D. 2010-Jan-02 19:00:00.0000, -3.807773905986938E-01,  2.541364616702907E-01,  1.347730775073520E-01,  6.117867848610836E-03, -5.068044185460827E-03, -1.911505719157491E-03,
+2455199.333333333, A.D. 2010-Jan-02 20:00:00.0000, -3.805224943842008E-01,  2.539254044876506E-01,  1.346934786865360E-01,  6.117968384027161E-03, -5.062012260091226E-03, -1.908988382523589E-03,
+2455199.375000000, A.D. 2010-Jan-02 21:00:00.0000, -3.802675940812685E-01,  2.537145986251054E-01,  1.346139847528821E-01,  6.118063309383415E-03, -5.055981743986084E-03, -1.906471644312322E-03,
+2455199.416666667, A.D. 2010-Jan-02 22:00:00.0000, -3.800126899237092E-01,  2.535040440239971E-01,  1.345345956814472E-01,  6.118152622273549E-03, -5.049952634444981E-03, -1.903955505410157E-03,
+2455199.458333333, A.D. 2010-Jan-02 23:00:00.0000, -3.797577821454500E-01,  2.532937406257887E-01,  1.344553114472530E-01,  6.118236320121501E-03, -5.043924928930966E-03, -1.901439966737158E-03,
+2455199.500000000, A.D. 2010-Jan-03 00:00:00.0000, -3.795028709805094E-01,  2.530836883720404E-01,  1.343761320252815E-01,  6.118314400185614E-03, -5.037898625070914E-03, -1.898925029247756E-03,
+$$EOE
+**************************************************************************************************************************************************************************************************
+ 
+TIME
+
+ Times PRIOR to 1962 are UT1, a mean-solar time closely related to the
+prior but now-deprecated GMT. Times AFTER 1962 are in UTC, the current
+civil or "wall-clock" atomic time-scale. UTC is kept within 0.9 seconds
+of UT1 using integer leap-seconds for 1972 and later years.
+
+  Conversion from the internal Barycentric Dynamical Time (TDB) of solar
+system dynamics to the discontinuous civil UT time-scale has not been
+determined for UTC times after the next July or January 1st. Therefore,
+the last known leap-second is used as a constant over future intervals,
+a condition noted here as "UT~".
+
+  Future but as yet undetermined leap-seconds can be expected to change
+time-tags in the "UT~" interval and, in general, the UT scale may not be
+suitable for purposes that assume time-tag continuity in the ephemeris.
+Output in continuous TDB and TT timescales may instead be requested,
+though these are not linked to Earth's rotation.
+
+  Time-tags refer to the UT time-scale conversion from TDB on Earth
+regardless of observer location within the solar system, although clock
+rates may differ due to the local gravity field and no analog to "UT"
+may be defined for that location.
+ 
+CALENDAR SYSTEM
+
+  Mixed calendar mode was active such that calendar dates after AD 1582-Oct-15
+(if any) are in the modern Gregorian system. Dates prior to 1582-Oct-5 (if any)
+are in the Julian calendar system, which is automatically extended for dates
+prior to its adoption on 45-Jan-1 BC.  The Julian calendar is useful for
+matching historical dates. The Gregorian calendar more accurately corresponds
+to the Earth's orbital motion and seasons. A "Gregorian-only" calendar mode is
+available if such physical events are the primary interest.
+
+REFERENCE FRAME AND COORDINATES
+
+  International Celestial Reference Frame (ICRF)
+
+    The ICRF is an adopted reference frame whose axes are defined relative to 
+    fixed extragalactic radio sources distributed across the sky.
+
+    The ICRF was aligned with the prior FK5/J2000 dynamical system at the ~0.02 
+    arcsecond level but is not identical and has no associated standard epoch.
+
+  Symbol meaning [1 au= 149597870.700 km, 1 day= 86400.0 s]:
+
+    JDUT     Julian Day Number, Universal Time
+      X      X-component of position vector (au)
+      Y      Y-component of position vector (au)
+      Z      Z-component of position vector (au)
+      VX     X-component of velocity vector (au/day)                           
+      VY     Y-component of velocity vector (au/day)                           
+      VZ     Z-component of velocity vector (au/day)                           
+
+ABERRATIONS AND CORRECTIONS
+
+ States have been corrected for Newtonian down-leg  (receive) light-time
+ displacement and relativistic stellar aberration.
+
+Computations by ...
+
+    Solar System Dynamics Group, Horizons On-Line Ephemeris System
+    4800 Oak Grove Drive, Jet Propulsion Laboratory
+    Pasadena, CA  91109   USA
+
+    General site: https://ssd.jpl.nasa.gov/
+    Mailing list: https://ssd.jpl.nasa.gov/email_list.html
+    System news : https://ssd.jpl.nasa.gov/horizons/news.html
+    User Guide  : https://ssd.jpl.nasa.gov/horizons/manual.html
+    Connect     : browser        https://ssd.jpl.nasa.gov/horizons/app.html#/x
+                  API            https://ssd-api.jpl.nasa.gov/doc/horizons.html
+                  command-line   telnet ssd.jpl.nasa.gov 6775
+                  e-mail/batch   https://ssd.jpl.nasa.gov/ftp/ssd/horizons_batch.txt
+                  scripts        https://ssd.jpl.nasa.gov/ftp/ssd/SCRIPTS
+    Inquiries   : Jon.D.Giorgini@jpl.nasa.gov
+*******************************************************************************

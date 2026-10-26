@@ -32,10 +32,11 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 
 // Measure from the next chevron's visible edge to the first action circle.
-internal val SpaceCompassObjectNavigationActionGap = 12.dp
+internal val SpaceCompassObjectNavigationActionGap = 15.dp
+private val SpaceCompassObjectNameChevronGap = 12.dp
 
 internal val SpaceCompassObjectDetailsActionTargetSpacing = spaceCompassObjectHeaderTargetSpacing(
-    SpaceCompassObjectHeaderGlyph.OBSERVATORY, SpaceCompassObjectHeaderGlyph.DAILY_PATH) + 3.dp
+    SpaceCompassObjectHeaderGlyph.OBSERVATORY, SpaceCompassObjectHeaderGlyph.DAILY_PATH) + 6.dp
 
 /** Navigation visits only the checked objects. No arrows for a single or empty selection. */
 internal data class SpaceCompassCelestialBodyNavigation(val previousLabel: String, val nextLabel: String,
@@ -69,12 +70,12 @@ internal fun SpaceCompassCelestialBodyDataIsland(bodyName: String?, primaryText:
                     // Match visible letter height rather than the full line box, including font scaling.
                     val markerSize = with(LocalDensity.current) { (nameFontSize * .75f).toDp() }
                     Row(Modifier.fillMaxWidth().align(Alignment.Center)
-                        // Match the visible chevron-to-action gap on both sides of the caption.
+                        // Keep equal caption insets independently of the trailing action spacing.
                         // The next glyph ends 10 dp before its slot edge, including in RTL.
                         .padding(start = if (navigation == null) 0.dp else
-                            SpaceCompassObjectHeaderGlyph.CHEVRON.width + SpaceCompassObjectNavigationActionGap,
+                            SpaceCompassObjectHeaderGlyph.CHEVRON.width + SpaceCompassObjectNameChevronGap,
                             end = if (navigation == null) 0.dp else
-                                SpaceCompassObjectHeaderGlyph.CHEVRON.width + 10.dp + SpaceCompassObjectNavigationActionGap)
+                                SpaceCompassObjectHeaderGlyph.CHEVRON.width + 10.dp + SpaceCompassObjectNameChevronGap)
                         .then(if (onBodyNameClick != null) Modifier.heightIn(min = 48.dp)
                             .clickable(interactionSource = nameInteraction, indication = null,
                                 role = Role.Button, onClickLabel = stringResource(R.string.celestial_select),

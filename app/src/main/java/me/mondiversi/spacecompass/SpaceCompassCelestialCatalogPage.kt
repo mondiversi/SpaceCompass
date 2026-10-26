@@ -50,7 +50,7 @@ internal fun SpaceCompassCelestialCatalogPage(timeMs: Long, remote: SpaceCompass
     selectedBodies: Set<SpaceCompassCelestialBody>, color: Color, background: Color,
     onBack: () -> Unit, onToggleAll: (Set<SpaceCompassCelestialBody>) -> Unit, onSelect: (SpaceCompassCelestialBody) -> Unit,
     latitude: Double? = null, longitude: Double? = null, altitude: Double = 0.0,
-    onRefresh: () -> Unit = {}, onRevealHiddenObject: () -> Unit = {},
+    onRefresh: () -> Unit = {},
     onObserve: (SpaceCompassCelestialBody) -> Unit = {}) {
     val preferences = LocalSpaceCompassPreferences.current
     val availableBodies = remember(selectedBodies) { spaceCompassAvailableCelestialCatalog(selectedBodies) }
@@ -75,7 +75,6 @@ internal fun SpaceCompassCelestialCatalogPage(timeMs: Long, remote: SpaceCompass
     var earthDistances by remember { mutableStateOf<Map<SpaceCompassCelestialBody, Double?>>(emptyMap()) }
     var filtersOpen by rememberSaveable { mutableStateOf(false) }
     var query by rememberSaveable { mutableStateOf("") }
-    var pendingHiddenReveal by remember { mutableStateOf(false) }
     val catalogScroll = rememberLazyListState()
     LaunchedEffect(sort, types, visibility, query) { catalogScroll.scrollToItem(0) }
     val handleBack = { if (filtersOpen) filtersOpen = false else onBack() }
@@ -151,24 +150,20 @@ internal fun SpaceCompassCelestialCatalogPage(timeMs: Long, remote: SpaceCompass
             calculatedRefreshRevision = remote.completedCatalogRefreshRevision
         } finally { calculating = false }
     }
-    // Newly revealed distant objects enter the correct sort position in the same frame.
+    // Static distant references enter the correct sort position before network refresh.
     val readySolarDistances = spaceCompassCatalogDistancesWithReferences(solarDistances, availableBodies)
     val readyDistances = spaceCompassCatalogDistancesWithReferences(distances, availableBodies)
-    val matchingBodies = spaceCompassSearchCatalog(
-        spaceCompassFilterCatalog(types, visibility, observations.mapValues { it.value?.position?.elevationDegrees }, availableBodies),
-        localizedNames, query)
-    val visibleBodies = spaceCompassCatalogDisplayOrder(
-        spaceCompassSortCatalog(availableBodies, sort, localizedNames, readySolarDistances, locale, earthDistances),
-        matchingBodies.toSet(), selectedBodies)
-    LaunchedEffect(pendingHiddenReveal, visibleBodies) {
-        if (pendingHiddenReveal) {
-            val index = visibleBodies.indexOf(SpaceCompassCelestialBody.LV_426)
-            if (index >= 0) {
-                // Include the table header in the item offset; preserve existing filter/sort preferences.
-                catalogScroll.scrollToItem(index + 1)
-                pendingHiddenReveal = false
-            }
-        }
+    val filteredBodies = remember(types, visibility, observations, availableBodies) {
+        spaceCompassFilterCatalog(types, visibility, observations.mapValues { it.value?.position?.elevationDegrees }, availableBodies)
+    }
+    val matchingBodies = remember(filteredBodies, localizedNames, query) {
+        spaceCompassSearchCatalog(filteredBodies, localizedNames, query)
+    }
+    val sortedBodies = remember(availableBodies, sort, localizedNames, readySolarDistances, locale, earthDistances) {
+        spaceCompassSortCatalog(availableBodies, sort, localizedNames, readySolarDistances, locale, earthDistances)
+    }
+    val visibleBodies = remember(sortedBodies, matchingBodies, selectedBodies) {
+        spaceCompassCatalogDisplayOrder(sortedBodies, matchingBodies.toSet(), selectedBodies)
     }
     val checkedCount = visibleBodies.count { it in selectedBodies }
     val checkedState = when {
@@ -179,10 +174,7 @@ internal fun SpaceCompassCelestialCatalogPage(timeMs: Long, remote: SpaceCompass
     Surface(Modifier.fillMaxSize().testTag("celestial-menu"), color = background, contentColor = color) {
         Column(Modifier.fillMaxSize()) {
             SpaceCompassPageToolbar(stringResource(R.string.pc_celestial_object, catalogCount), handleBack,
-                titleColor = color, titleModifier = spaceCompassHiddenObjectHold {
-                    pendingHiddenReveal = true
-                    onRevealHiddenObject()
-                }.testTag("catalog-title")) {
+                titleColor = color, titleModifier = Modifier.testTag("catalog-title")) {
                 SpaceCompassCatalogSortButton(sort, color) {
                     updateCatalogPreferences(catalogPreferences.copy(sort = it))
                 }

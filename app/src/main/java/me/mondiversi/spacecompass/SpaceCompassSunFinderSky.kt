@@ -225,7 +225,7 @@ internal fun SpaceCompassSunPointingViewport(
                 spaceCompassAllCelestialOrder.forEach { candidate -> key(candidate) { projections[candidate]?.let { projected ->
                     val below = positions.getValue(candidate).elevationDegrees < 0
                     if (projected.visible) {
-                        if (candidate != SpaceCompassCelestialBody.SOUTHERN_CROSS) SpaceCompassCelestialLiveMarker(candidate, projected, below, current[candidate], dailyPathUiState,
+                        if (candidate.constellationPattern == null) SpaceCompassCelestialLiveMarker(candidate, projected, below, current[candidate], dailyPathUiState,
                         moonPhase = moonPhase, path = paths[candidate],
                         interactive = compassReliable && !spaceCompassScenePointIsCovered(SpaceCompassSunScenePoint(
                             pixelProjections.getValue(candidate).x, pixelProjections.getValue(candidate).y), titleTouchExclusions),

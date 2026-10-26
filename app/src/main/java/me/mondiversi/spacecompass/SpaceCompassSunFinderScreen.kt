@@ -48,7 +48,7 @@ internal fun SpaceCompassSunFinderScreen(
     val catalogOpen = rememberSaveable { mutableStateOf(false) }
     var catalogViewerBody by rememberSaveable { mutableStateOf<SpaceCompassCelestialBody?>(null) }
     val context = LocalContext.current
-    val unlockedMessage = stringResource(R.string.celestial_lv426_unlocked)
+
     val lifecycleOwner = LocalLifecycleOwner.current
     var permission by remember { mutableStateOf(hasSpaceCompassSunLocationPermission(context)) }
     var requested by rememberSaveable { mutableStateOf(false) }
@@ -195,14 +195,7 @@ internal fun SpaceCompassSunFinderScreen(
                 onSelect = { applySelection(selection.toggle(it)) },
                 latitude = visibleReadings.location?.latitude, longitude = visibleReadings.location?.longitude,
                 altitude = visibleReadings.location?.takeIf { it.hasAltitude() }?.altitude ?: 0.0,
-                onRefresh = { catalogRefresh++ }, onObserve = { catalogViewerBody = it }, onRevealHiddenObject = {
-                    val revealed = selection.revealHiddenObject()
-                    if (revealed != selection) {
-                        applySelection(revealed)
-                        showSpaceCompassBottomMessage(context,
-                            unlockedMessage)
-                    }
-                })
+                onRefresh = { catalogRefresh++ }, onObserve = { catalogViewerBody = it })
         }
         catalogViewerBody?.let { observedBody ->
             key(observedBody) {

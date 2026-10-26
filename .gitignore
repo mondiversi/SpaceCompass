@@ -23,3 +23,7 @@ signing.properties
 *.key
 .cxx/
 hs_err_pid*.log
+
+# Local Python generator caches
+__pycache__/
+*.py[cod]

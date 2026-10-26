@@ -12,7 +12,7 @@ import org.junit.Test
 class SpaceCompassHiddenCelestialUiTest {
     @get:Rule val compose = createComposeRule()
 
-    @Test fun aThreeSecondTitleHoldRevealsACheckedRowAndUncheckingItRemovesTheRow() {
+    @Test fun lv426IsPublicAndUncheckingItKeepsTheCatalogEntry() {
         val selection = mutableStateOf(SpaceCompassCelestialSelection())
         compose.setContent {
             MaterialTheme {
@@ -20,21 +20,14 @@ class SpaceCompassHiddenCelestialUiTest {
                     SpaceCompassCelestialCatalogPage(1_791_288_000_000L, SpaceCompassCelestialRemoteData(),
                         selection.value.selected, Color.White, Color.Black, {}, {},
                         onSelect = { selection.value = selection.value.toggle(it) },
-                        latitude = -33.0, longitude = 151.0,
-                        onRevealHiddenObject = { selection.value = selection.value.revealHiddenObject() })
+                        latitude = -33.0, longitude = 151.0)
                 }
             }
         }
-        compose.onNodeWithTag("catalog-title").performTouchInput { down(center) }
-        Thread.sleep(400)
-        compose.onNodeWithTag("catalog-title").performTouchInput { up() }
-        compose.runOnIdle { assertFalse(SpaceCompassCelestialBody.LV_426 in selection.value.selected) }
-        compose.onNodeWithTag("catalog-title").performTouchInput { down(center) }
-        compose.waitUntil(5_000) { SpaceCompassCelestialBody.LV_426 in selection.value.selected }
-        compose.onNodeWithTag("catalog-title").performTouchInput { up() }
         compose.onNodeWithTag("celestial-catalog-scroll").performScrollToNode(hasTestTag("celestial-body-LV_426"))
+        compose.onNodeWithTag("celestial-body-LV_426").assertIsOff().performClick()
         compose.onNodeWithTag("celestial-body-LV_426").assertIsOn().performClick()
-        compose.onNodeWithTag("celestial-body-LV_426").assertDoesNotExist()
+        compose.onNodeWithTag("celestial-body-LV_426").assertIsOff()
         compose.runOnIdle { assertFalse(SpaceCompassCelestialBody.LV_426 in selection.value.selected) }
     }
 }

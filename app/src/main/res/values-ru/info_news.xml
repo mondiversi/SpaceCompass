@@ -1,8 +1,8 @@
 <resources>
     <string name="info_news_title">Последние новости · %1$s</string>
-    <string name="info_news_star_sky" formatted="false">Точка рядом с названием объекта показывает оба цвета орбиты: над и под горизонтом.</string>
-    <string name="info_news_texture_downloads" formatted="false">В легендах фотографий и панорам линии заменены двухцветными точками.</string>
-    <string name="info_news_weather" formatted="false">Размер точек соответствует тексту, а обводка — цвету букв, в том числе на экспортированных изображениях.</string>
+    <string name="info_news_star_sky" formatted="false">Исследуйте 999 объектов, все 88 созвездий и доступную всем LV-426 с улучшенным отслеживанием и научными источниками.</string>
+    <string name="info_news_texture_downloads" formatted="false">Новый графический пакет 1.6: 174 изображения и 174 отдельные миниатюры, загружаемые по одной и сохраняемые офлайн.</string>
+    <string name="info_news_weather" formatted="false">Более понятная информация, обновлённые значки снимка и панорамы и более контрастные кнопки обсерватории и суточного пути в ночном режиме.</string>
     <string name="info_news_viewer_zoom" formatted="false">Типы по числу объектов, параметры сортировки по алфавиту и более понятное управление объектами.</string>
     <string name="info_news_settings" formatted="false">Более стабильные подписи ориентиров и Надир на −90°, напротив Зенита.</string>
     <string name="info_news_catalog" formatted="false">Улучшены движение лун, сближения выбранных объектов и отображение загрузки погоды.</string>

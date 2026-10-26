@@ -3,6 +3,7 @@ package me.mondiversi.spacecompass
 /** Keep reference caveats and image credits alongside the observatory's exported measurements. */
 internal fun spaceCompassObservatoryExportNotes(body: SpaceCompassCelestialBody,
     profile: SpaceCompassDataExportProfile): List<String> = buildList {
+    body.largeCatalogEntry?.let { add(it.source + " · " + it.sourceUrl) }
     val strings=profile.strings
     val facts=spaceCompassCelestialFacts(body)
     val temperatures=spaceCompassCelestialTemperatures(body)

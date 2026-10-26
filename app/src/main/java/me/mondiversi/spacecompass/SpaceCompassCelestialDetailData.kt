@@ -24,7 +24,8 @@ internal fun spaceCompassCelestialDetailSections(body: SpaceCompassCelestialBody
         SpaceCompassCelestialDetailRow(resources.getString(R.string.celestial_view_classification),
             listOfNotNull(resources.getString(it), facts.spectralType).joinToString(" · "), tag = "celestial-view-classification")
     })
-    sections += SpaceCompassCelestialDetailSection(resources.getString(R.string.celestial_section_identity), "identity", identity,
+    val sourceRows = body.largeCatalogEntry?.let { listOf(detailRow(R.string.catalogue_source, it.sourceLabel)) }.orEmpty()
+    sections += SpaceCompassCelestialDetailSection(resources.getString(R.string.celestial_section_identity), "identity", identity + sourceRows,
         "celestial-view-information-island")
 
     val physicalBody = !body.isExtendedSkyObject && body != SpaceCompassCelestialBody.EARTH_CENTER
@@ -140,7 +141,8 @@ private fun spaceCompassCelestialSpatialSection(body: SpaceCompassCelestialBody,
         (membership.systemResource?.let { resources.getString(it) } ?: membership.systemDesignation)?.let {
             add(detailRow(R.string.celestial_spatial_system, it))
         }
-        add(detailRow(R.string.celestial_spatial_galaxy, when (membership.galaxy) {
+        add(detailRow(R.string.celestial_spatial_galaxy, membership.galaxyDesignation ?: when (membership.galaxy) {
+            SpaceCompassCelestialGalaxy.UNKNOWN, SpaceCompassCelestialGalaxy.NONE -> "—"
             SpaceCompassCelestialGalaxy.LMC -> resources.getString(R.string.celestial_large_magellanic_cloud)
             SpaceCompassCelestialGalaxy.SMC -> resources.getString(R.string.celestial_small_magellanic_cloud)
             SpaceCompassCelestialGalaxy.M51 -> resources.getString(R.string.celestial_m51)

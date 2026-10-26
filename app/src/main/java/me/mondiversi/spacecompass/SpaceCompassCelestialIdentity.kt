@@ -52,7 +52,7 @@ internal val SpaceCompassCelestialBody.scientificTypeResource: Int? get() = when
     SpaceCompassCelestialBody.SEDNA -> R.string.celestial_identity_candidate
     SpaceCompassCelestialBody.PSR_J0437, SpaceCompassCelestialBody.VELA_PULSAR -> R.string.celestial_identity_pulsar
     SpaceCompassCelestialBody.LV_426 -> R.string.celestial_identity_fictional_moon
-    else -> when (catalogType) {
+    else -> largeCatalogEntry?.classification ?: when (catalogType) {
         SpaceCompassCatalogType.ASTEROID -> R.string.catalog_type_asteroid
         SpaceCompassCatalogType.PLANET -> R.string.celestial_identity_planet
         SpaceCompassCatalogType.DWARF_PLANET -> R.string.celestial_identity_dwarf

@@ -1,0 +1,240 @@
+*******************************************************************************
+ Revised: Mar 01, 2024           DART Spacecraft / Sun                     -135
+                                https://dart.jhuapl.edu/
+                      https://www.nasa.gov/planetarydefense/dart
+
+ The Double Asteroid Redirect Test ("DART") is a NASA mission designed to 
+ demonstrate asteroid deflection by kinetic impact. 
+
+ The spacecraft launched on a SpaceX Falcon 9 rocket out of Vandenberg Space 
+ Force Base in California on 2021-Nov-24 @ 06:21:02 UTC. 
+ 
+ SEC01 was 10 minutes after launch. SECO2 was ~20 minutes after that.
+ Spacecraft/booster separation at 07:17:20 UTC.
+
+ BACKGROUND:
+  DART's target is the binary asteroid system 65803 Didymos. Not on a path 
+  able to collide with Earth and presenting no hazard, the system is 
+  composed of two asteroids: the primary Didymos, and its smaller moonlet 
+  satellite asteroid, Dimorphos, which orbits Didymos at a distance of 
+  about 1.18 km every 11.92 hours.
+
+  DART will autonomously navigate the last 4 hours to impact the moonlet 
+  Dimorphos nearly head-on in the fall of 2022, when ~11 million kilometers 
+  from Earth, shortening the time it takes to orbit the primary body Didymos 
+  by several minutes.
+
+  Since the Didymos system is an eclipsing binary as viewed from Earth, 
+  Dimorphos passes in front of and behind Didymos, changing its brightness. 
+  Ground-based telescopes on Earth will be able to use this to assess the 
+  before/after effect caused by DART's impact at 6.6 km/s, producing data 
+  useful to "planetary defense" modeling.
+
+  The LICIACube camera system will be deployed prior to impact and travel 
+  past the asteroid roughly three minutes after DART impacts to confirm the 
+  impact, document the spread of the resulting dust plume, attempt to capture 
+  an image of the newly formed crater and the opposite side of Dimorphos.
+ 
+ KEY EVENT TIMES
+  Launch: 24-Nov-2021 06:21:02      UTC
+  Impact: 26-Sep-2022 23:14:24.183  UTC (actual)
+
+ PHYSICAL CHARACTERISTICS:
+  Main bus 
+   - box, dimensions ~ 1.2 x 1.3 x 1.3 meters, from which other structures 
+     extend to result in measurements of ~1.8 meters width, 1.9 meters length, 
+     2.6 meters in height. 
+   - Two large solar panel arrays on each side, each 8.5 m long when deployed
+
+ SCIENCE INSTRUMENTS:
+  - DRACO: "Didymos Reconnaissance and Asteroid Camera for Optical navigation" 
+     A high-resolution imager derived from the New Horizons LORRI camera to 
+     support navigation and targeting, measure size and shape of the target, 
+     determine the impact site and geologic context.
+  - LICIACube: "Light Italian Cubesat for Imaging of Asteroids"
+     Deployed Sep. 12 UTC prior to the DART impact, LICIACube (6U) will capture 
+     images of the DART impact, resulting ejecta cloud, and potentially the 
+     impact crater on the surface of Dimorphos.
+
+ TRAJECTORY: 
+  NOTE: Final reconstructed trajectory 
+
+  The mission-reconstructed DART trajectory can be used as an observing center
+  (use '@' prefix ) OR as a target (drop the '@').
+
+  Related objects:
+
+     @  -210       (LICIACube spacecraft)
+     @  20065803   (65803 Didymos system barycenter, pre-computed JPL s205) 
+     @ 920065803   (Didymos primary center, reconstructed JPL s547)
+     @ 120065803   (Dimorphos, satellite of Didymos, reconstructed JPL s547)
+ 
+  To instead numerically integrate the latest JPL ground-based solution for the 
+  Didymos system barycenter, request "65803;" (or select from menu list). The
+  integrated database version can only be used as a target, not an observing 
+  center.
+
+ Name                                Start (TDB)         Stop (TDB)
+ ------------------------------   ---------------------- ----------------------
+ dart_2021_328_2022_091_rec_v01   2021-Nov-24 07:17:53.0 2022-Apr-01 00:00:00.0
+ dart_2022_091_2022_231_rec_v01   2022-Apr-01 00:00:00.0 2022-Aug-19 00:01:09.2
+ dart_2022_231_2022_269_rec_v03   2022-Aug-19 00:01:09.2 2022-Sep-26 22:00:00.0
+ dart_2022_269_2022_269_rec_v03   2022-Sep-26 22:00:00.0 2022-Sep-26 23:14:45.3
+ dart_2022_269_2022_269_spc_v04   2022-Sep-26 23:14:45.3 2022 SEP 26 23:15:33.4
+ dart_2022_269_2099_001_imp_v03   2022-Sep-26 23:15:33.4 2099-Jan-01 00:00:99.0
+*******************************************************************************
+
+
+*******************************************************************************
+Ephemeris / API_USER Mon Oct 26 10:23:18 2026 Pasadena, USA      / Horizons
+*******************************************************************************
+Target body name: DART (spacecraft) (-135)        {source: dart_v04_hrzn}
+Center body name: Earth (399)                     {source: dart_v04_hrzn}
+Center-site name: BODY CENTER
+*******************************************************************************
+Start time      : A.D. 2022-Jan-01 00:00:00.0000 UT 
+Stop  time      : A.D. 2022-Jan-03 00:00:00.0000 UT 
+Step-size       : 60 minutes
+*******************************************************************************
+Center geodetic : 0.0, 0.0, 0.0                   {E-lon(deg),Lat(deg),Alt(km)}
+Center cylindric: 0.0, 0.0, 0.0                   {E-lon(deg),Dxy(km),Dz(km)}
+Center radii    : 6378.137, 6378.137, 6356.752 km {Equator_a, b, pole_c}
+Output units    : AU-D
+Calendar mode   : Mixed Julian/Gregorian
+Output type     : LT+S CORRECTED cartesian states
+Output format   : 2 (position and velocity)
+EOP file        : eop.261023.p270119
+EOP coverage    : DATA-BASED 1962-JAN-20 TO 2026-OCT-23. PREDICTS-> 2027-JAN-18
+Reference frame : ICRF
+*******************************************************************************
+            JDUT ,            Calendar Date (UT ),                      X,                      Y,                      Z,                     VX,                     VY,                     VZ,
+**************************************************************************************************************************************************************************************************
+$$SOE
+2459580.500000000, A.D. 2022-Jan-01 00:00:00.0000, -1.576252651587937E-02, -5.051997387599914E-02,  2.310531104864375E-02, -3.244190140201867E-04, -1.478841750645674E-03,  3.233980148538533E-04,
+2459580.541666667, A.D. 2022-Jan-01 01:00:00.0000, -1.577603172228494E-02, -5.058159995304055E-02,  2.311876531371094E-02, -3.239281909179393E-04, -1.479262946998749E-03,  3.225625612007184E-04,
+2459580.583333333, A.D. 2022-Jan-01 02:00:00.0000, -1.578951646121839E-02, -5.064324357586760E-02,  2.313218475750568E-02, -3.234367748698700E-04, -1.479684015454303E-03,  3.217266297449183E-04,
+2459580.625000000, A.D. 2022-Jan-01 03:00:00.0000, -1.580298070816051E-02, -5.070490473900795E-02,  2.314556935973356E-02, -3.229447725805627E-04, -1.480104957742998E-03,  3.208902097692696E-04,
+2459580.666666667, A.D. 2022-Jan-01 04:00:00.0000, -1.581642443853129E-02, -5.076658343765688E-02,  2.315891910039890E-02, -3.224521792565148E-04, -1.480525787962783E-03,  3.200533086612071E-04,
+2459580.708333333, A.D. 2022-Jan-01 05:00:00.0000, -1.582984762759229E-02, -5.082827966731396E-02,  2.317223395942029E-02, -3.219589830470881E-04, -1.480946504884160E-03,  3.192159129036154E-04,
+2459580.750000000, A.D. 2022-Jan-01 06:00:00.0000, -1.584325025065907E-02, -5.088999342316641E-02,  2.318551391582984E-02, -3.214652320450288E-04, -1.481367148601288E-03,  3.183780617309066E-04,
+2459580.791666667, A.D. 2022-Jan-01 07:00:00.0000, -1.585663228396665E-02, -5.095172470168416E-02,  2.319875894972633E-02, -3.209708588720711E-04, -1.481787649933759E-03,  3.175396504608986E-04,
+2459580.833333333, A.D. 2022-Jan-01 08:00:00.0000, -1.586999370249850E-02, -5.101347349881211E-02,  2.321196904000045E-02, -3.204759283429846E-04, -1.482208108874457E-03,  3.167007940487561E-04,
+2459580.875000000, A.D. 2022-Jan-01 09:00:00.0000, -1.588333448269444E-02, -5.107523981171399E-02,  2.322514416645790E-02, -3.199804067677554E-04, -1.482628474267117E-03,  3.158614180638801E-04,
+2459580.916666667, A.D. 2022-Jan-01 10:00:00.0000, -1.589665459989126E-02, -5.113702363689089E-02,  2.323828430770109E-02, -3.194843178932703E-04, -1.483048784269197E-03,  3.150215550089518E-04,
+2459580.958333333, A.D. 2022-Jan-01 11:00:00.0000, -1.590995403037578E-02, -5.119882497221977E-02,  2.325138944342059E-02, -3.189876398577554E-04, -1.483469026235940E-03,  3.141811761837435E-04,
+2459581.000000000, A.D. 2022-Jan-01 12:00:00.0000, -1.592323274976019E-02, -5.126064381498858E-02,  2.326445955199389E-02, -3.184903846960363E-04, -1.483889212753578E-03,  3.133402835506559E-04,
+2459581.041666667, A.D. 2022-Jan-01 13:00:00.0000, -1.593649073441774E-02, -5.132248016371264E-02,  2.327749461279519E-02, -3.179925691128865E-04, -1.484309378204339E-03,  3.124989083187705E-04,
+2459581.083333333, A.D. 2022-Jan-01 14:00:00.0000, -1.594972796032611E-02, -5.138433401636753E-02,  2.329049460405784E-02, -3.174941668495559E-04, -1.484729489289403E-03,  3.116569982117828E-04,
+2459581.125000000, A.D. 2022-Jan-01 15:00:00.0000, -1.596294440312615E-02, -5.144620537157254E-02,  2.330345950439989E-02, -3.169951836941963E-04, -1.485149570178485E-03,  3.108145705088790E-04,
+2459581.166666667, A.D. 2022-Jan-01 16:00:00.0000, -1.597614003890332E-02, -5.150809422799115E-02,  2.331638929171789E-02, -3.164956293372685E-04, -1.485569623986470E-03,  3.099716084347953E-04,
+2459581.208333333, A.D. 2022-Jan-01 17:00:00.0000, -1.598931484374977E-02, -5.157000058488603E-02,  2.332928394419244E-02, -3.159955009116557E-04, -1.485989670098810E-03,  3.091281331795182E-04,
+2459581.250000000, A.D. 2022-Jan-01 18:00:00.0000, -1.600246879366456E-02, -5.163192444219929E-02,  2.334214344040583E-02, -3.154947919038763E-04, -1.486409716280655E-03,  3.082841364580848E-04,
+2459581.291666667, A.D. 2022-Jan-01 19:00:00.0000, -1.601560186457898E-02, -5.169386579969954E-02,  2.335496775807673E-02, -3.149935128880361E-04, -1.486829754929631E-03,  3.074395929446458E-04,
+2459581.333333333, A.D. 2022-Jan-01 20:00:00.0000, -1.602871403257210E-02, -5.175582465757601E-02,  2.336775687482140E-02, -3.144916501106560E-04, -1.487249810946575E-03,  3.065945258536826E-04,
+2459581.375000000, A.D. 2022-Jan-01 21:00:00.0000, -1.604180527339857E-02, -5.181780101650862E-02,  2.338051076852488E-02, -3.139892126750228E-04, -1.487669881354173E-03,  3.057489163051470E-04,
+2459581.416666667, A.D. 2022-Jan-01 22:00:00.0000, -1.605487556311600E-02, -5.187979487728420E-02,  2.339322941652243E-02, -3.134861983410367E-04, -1.488089976534256E-03,  3.049027628913473E-04,
+2459581.458333333, A.D. 2022-Jan-01 23:00:00.0000, -1.606792487765949E-02, -5.194180624118964E-02,  2.340591279618625E-02, -3.129826046886207E-04, -1.488510109011878E-03,  3.040560667103924E-04,
+2459581.500000000, A.D. 2022-Jan-02 00:00:00.0000, -1.608095319289641E-02, -5.200383510994509E-02,  2.341856088481932E-02, -3.124784346961907E-04, -1.488930282534155E-03,  3.032088189330219E-04,
+2459581.541666667, A.D. 2022-Jan-02 01:00:00.0000, -1.609396048490893E-02, -5.206588148514675E-02,  2.343117365903489E-02, -3.119736894480602E-04, -1.489350501583136E-03,  3.023610105627555E-04,
+2459581.583333333, A.D. 2022-Jan-02 02:00:00.0000, -1.610694672939135E-02, -5.212794536917688E-02,  2.344375109594832E-02, -3.114683588463589E-04, -1.489770779207959E-03,  3.015126499431028E-04,
+2459581.625000000, A.D. 2022-Jan-02 03:00:00.0000, -1.611991190220172E-02, -5.219002676432484E-02,  2.345629317195823E-02, -3.109624480051809E-04, -1.490191114214203E-03,  3.006637163319962E-04,
+2459581.666666667, A.D. 2022-Jan-02 04:00:00.0000, -1.613285597894555E-02, -5.225212567326516E-02,  2.346879986332778E-02, -3.104559510116148E-04, -1.490611520787238E-03,  2.998142168088685E-04,
+2459581.708333333, A.D. 2022-Jan-02 05:00:00.0000, -1.614577893499893E-02, -5.231424209908304E-02,  2.348127114643409E-02, -3.099488552426374E-04, -1.491032001135361E-03,  2.989641440451743E-04,
+2459581.750000000, A.D. 2022-Jan-02 06:00:00.0000, -1.615868074551109E-02, -5.237637604500752E-02,  2.349370699724342E-02, -3.094411584277403E-04, -1.491452549082093E-03,  2.981134726720694E-04,
+2459581.791666667, A.D. 2022-Jan-02 07:00:00.0000, -1.617156138537508E-02, -5.243852751396110E-02,  2.350610739070483E-02, -3.089328804229144E-04, -1.491873205498236E-03,  2.972622420472060E-04,
+2459581.833333333, A.D. 2022-Jan-02 08:00:00.0000, -1.618442083090120E-02, -5.250069651155245E-02,  2.351847230455363E-02, -3.084240263149621E-04, -1.492293996644889E-03,  2.964104694421077E-04,
+2459581.875000000, A.D. 2022-Jan-02 09:00:00.0000, -1.619725905721888E-02, -5.256288304235213E-02,  2.353080171470364E-02, -3.079145633413076E-04, -1.492714884170466E-03,  2.955580954897290E-04,
+2459581.916666667, A.D. 2022-Jan-02 10:00:00.0000, -1.621007603912212E-02, -5.262508711094693E-02,  2.354309559654167E-02, -3.074044982154382E-04, -1.493135890841335E-03,  2.947051346108620E-04,
+2459581.958333333, A.D. 2022-Jan-02 11:00:00.0000, -1.622287175157396E-02, -5.268730872235600E-02,  2.355535392543674E-02, -3.068938342510421E-04, -1.493557017210444E-03,  2.938515754036593E-04,
+2459582.000000000, A.D. 2022-Jan-02 12:00:00.0000, -1.623564616967445E-02, -5.274954788167428E-02,  2.356757667624189E-02, -3.063825678874543E-04, -1.493978275451278E-03,  2.929974172864630E-04,
+2459582.041666667, A.D. 2022-Jan-02 13:00:00.0000, -1.624839926813672E-02, -5.281180459461873E-02,  2.357976382410782E-02, -3.058706951450624E-04, -1.494399671413277E-03,  2.921426559230040E-04,
+2459582.083333333, A.D. 2022-Jan-02 14:00:00.0000, -1.626113102142986E-02, -5.287407886726888E-02,  2.359191534417727E-02, -3.053582065726654E-04, -1.494821220750022E-03,  2.912873012029972E-04,
+2459582.125000000, A.D. 2022-Jan-02 15:00:00.0000, -1.627384140412172E-02, -5.293637070592020E-02,  2.360403121115751E-02, -3.048451034519232E-04, -1.495242925825719E-03,  2.904313381955274E-04,
+2459582.166666667, A.D. 2022-Jan-02 16:00:00.0000, -1.628653039024133E-02, -5.299868011732308E-02,  2.361611139997092E-02, -3.043313789397324E-04, -1.495664790092344E-03,  2.895747622800571E-04,
+2459582.208333333, A.D. 2022-Jan-02 17:00:00.0000, -1.629919795402554E-02, -5.306100710810413E-02,  2.362815588462808E-02, -3.038170305683061E-04, -1.496086821504129E-03,  2.887175676773551E-04,
+2459582.250000000, A.D. 2022-Jan-02 18:00:00.0000, -1.631184406911909E-02, -5.312335168565260E-02,  2.364016463986059E-02, -3.033020489519267E-04, -1.496509035560108E-03,  2.878597659222985E-04,
+2459582.291666667, A.D. 2022-Jan-02 19:00:00.0000, -1.632446870952779E-02, -5.318571385744126E-02,  2.365213763968861E-02, -3.027864470849903E-04, -1.496931430118336E-03,  2.870013321242588E-04,
+2459582.333333333, A.D. 2022-Jan-02 20:00:00.0000, -1.633707184898729E-02, -5.324809363139839E-02,  2.366407485830313E-02, -3.022702045996748E-04, -1.497354024572702E-03,  2.861422891300463E-04,
+2459582.375000000, A.D. 2022-Jan-02 21:00:00.0000, -1.634965346074984E-02, -5.331049101576324E-02,  2.367597626979931E-02, -3.017533223211226E-04, -1.497776810732480E-03,  2.852826066925824E-04,
+2459582.416666667, A.D. 2022-Jan-02 22:00:00.0000, -1.636221351788852E-02, -5.337290601882756E-02,  2.368784184780725E-02, -3.012357860946477E-04, -1.498199806531394E-03,  2.844223016400448E-04,
+2459582.458333333, A.D. 2022-Jan-02 23:00:00.0000, -1.637475199335675E-02, -5.343533864924744E-02,  2.369967156587648E-02, -3.007176054517586E-04, -1.498623010468754E-03,  2.835613516485625E-04,
+2459582.500000000, A.D. 2022-Jan-03 00:00:00.0000, -1.638726886009726E-02, -5.349778891608943E-02,  2.371146539749334E-02, -3.001987709376393E-04, -1.499046437867303E-03,  2.826997678923914E-04,
+$$EOE
+**************************************************************************************************************************************************************************************************
+ 
+TIME
+
+ Times PRIOR to 1962 are UT1, a mean-solar time closely related to the
+prior but now-deprecated GMT. Times AFTER 1962 are in UTC, the current
+civil or "wall-clock" atomic time-scale. UTC is kept within 0.9 seconds
+of UT1 using integer leap-seconds for 1972 and later years.
+
+  Conversion from the internal Barycentric Dynamical Time (TDB) of solar
+system dynamics to the discontinuous civil UT time-scale has not been
+determined for UTC times after the next July or January 1st. Therefore,
+the last known leap-second is used as a constant over future intervals,
+a condition noted here as "UT~".
+
+  Future but as yet undetermined leap-seconds can be expected to change
+time-tags in the "UT~" interval and, in general, the UT scale may not be
+suitable for purposes that assume time-tag continuity in the ephemeris.
+Output in continuous TDB and TT timescales may instead be requested,
+though these are not linked to Earth's rotation.
+
+  Time-tags refer to the UT time-scale conversion from TDB on Earth
+regardless of observer location within the solar system, although clock
+rates may differ due to the local gravity field and no analog to "UT"
+may be defined for that location.
+ 
+CALENDAR SYSTEM
+
+  Mixed calendar mode was active such that calendar dates after AD 1582-Oct-15
+(if any) are in the modern Gregorian system. Dates prior to 1582-Oct-5 (if any)
+are in the Julian calendar system, which is automatically extended for dates
+prior to its adoption on 45-Jan-1 BC.  The Julian calendar is useful for
+matching historical dates. The Gregorian calendar more accurately corresponds
+to the Earth's orbital motion and seasons. A "Gregorian-only" calendar mode is
+available if such physical events are the primary interest.
+
+REFERENCE FRAME AND COORDINATES
+
+  International Celestial Reference Frame (ICRF)
+
+    The ICRF is an adopted reference frame whose axes are defined relative to 
+    fixed extragalactic radio sources distributed across the sky.
+
+    The ICRF was aligned with the prior FK5/J2000 dynamical system at the ~0.02 
+    arcsecond level but is not identical and has no associated standard epoch.
+
+  Symbol meaning [1 au= 149597870.700 km, 1 day= 86400.0 s]:
+
+    JDUT     Julian Day Number, Universal Time
+      X      X-component of position vector (au)
+      Y      Y-component of position vector (au)
+      Z      Z-component of position vector (au)
+      VX     X-component of velocity vector (au/day)                           
+      VY     Y-component of velocity vector (au/day)                           
+      VZ     Z-component of velocity vector (au/day)                           
+
+ABERRATIONS AND CORRECTIONS
+
+ States have been corrected for Newtonian down-leg  (receive) light-time
+ displacement and relativistic stellar aberration.
+
+Computations by ...
+
+    Solar System Dynamics Group, Horizons On-Line Ephemeris System
+    4800 Oak Grove Drive, Jet Propulsion Laboratory
+    Pasadena, CA  91109   USA
+
+    General site: https://ssd.jpl.nasa.gov/
+    Mailing list: https://ssd.jpl.nasa.gov/email_list.html
+    System news : https://ssd.jpl.nasa.gov/horizons/news.html
+    User Guide  : https://ssd.jpl.nasa.gov/horizons/manual.html
+    Connect     : browser        https://ssd.jpl.nasa.gov/horizons/app.html#/x
+                  API            https://ssd-api.jpl.nasa.gov/doc/horizons.html
+                  command-line   telnet ssd.jpl.nasa.gov 6775
+                  e-mail/batch   https://ssd.jpl.nasa.gov/ftp/ssd/horizons_batch.txt
+                  scripts        https://ssd.jpl.nasa.gov/ftp/ssd/SCRIPTS
+    Inquiries   : Jon.D.Giorgini@jpl.nasa.gov
+*******************************************************************************

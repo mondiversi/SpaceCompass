@@ -1,8 +1,8 @@
 <resources>
     <string name="info_news_title">Neuigkeiten · %1$s</string>
-    <string name="info_news_star_sky" formatted="false">Der Punkt neben dem Objektnamen zeigt beide Bahnfarben: oberhalb und unterhalb des Horizonts.</string>
-    <string name="info_news_texture_downloads" formatted="false">Legenden von Fotos und Panoramen verwenden jetzt zweifarbige Punkte statt Linien.</string>
-    <string name="info_news_weather" formatted="false">Die Punktgröße passt zum Text und die Umrandung zur Schriftfarbe, auch in exportierten Bildern.</string>
+    <string name="info_news_star_sky" formatted="false">Entdecke 999 Objekte, alle 88 Sternbilder und das frei verfügbare LV-426 mit verbesserter Verfolgung und wissenschaftlichen Quellen.</string>
+    <string name="info_news_texture_downloads" formatted="false">Neues Grafikpaket 1.6: 174 Bilder und 174 separate Vorschaubilder, einzeln heruntergeladen und offline gespeichert.</string>
+    <string name="info_news_weather" formatted="false">Klarere Infos, überarbeitete Aufnahme- und Panoramasymbole sowie kontrastreichere Schaltflächen für Observatorium und Tagesbahn im Nachtmodus.</string>
     <string name="info_news_viewer_zoom" formatted="false">Typen nach Objektanzahl, alphabetische Sortieroptionen und übersichtlichere Objektsteuerung.</string>
     <string name="info_news_settings" formatted="false">Stabilere Referenzbeschriftungen und Nadir bei −90°, gegenüber dem Zenit.</string>
     <string name="info_news_catalog" formatted="false">Verbesserte Mondbewegung, Annäherungen ausgewählter Objekte und eindeutiger Wetter-Ladestatus.</string>

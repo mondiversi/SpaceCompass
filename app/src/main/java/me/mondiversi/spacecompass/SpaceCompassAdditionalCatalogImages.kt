@@ -30,7 +30,7 @@ internal fun spaceCompassAdditionalCatalogImage(body: SpaceCompassCelestialBody)
     SpaceCompassCelestialBody.ANDROMEDA_GALAXY -> "andromeda_galaxy.webp"
     SpaceCompassCelestialBody.M87_GALAXY -> "m87_galaxy.webp"
     SpaceCompassCelestialBody.MILKY_WAY_CENTER -> "milky_way.webp"
-    else -> null
+    else -> spaceCompassLargeCatalogImage(body)
 }
 
 internal fun spaceCompassAdditionalCatalogImageCredit(name: String?): String? = when (name) {

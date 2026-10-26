@@ -1,8 +1,8 @@
 <resources>
     <string name="info_news_title">Perubahan terbaru · %1$s</string>
-    <string name="info_news_star_sky" formatted="false">Titik di samping nama objek menampilkan kedua warna orbit: di atas dan di bawah horizon.</string>
-    <string name="info_news_texture_downloads" formatted="false">Legenda foto dan panorama kini menggunakan titik dua warna, bukan garis.</string>
-    <string name="info_news_weather" formatted="false">Ukuran titik menyesuaikan teks dan bingkainya mengikuti warna huruf, termasuk pada gambar yang diekspor.</string>
+    <string name="info_news_star_sky" formatted="false">Jelajahi 999 objek, seluruh 88 rasi bintang dan LV-426 yang tersedia untuk semua, dengan pelacakan dan referensi ilmiah yang ditingkatkan.</string>
+    <string name="info_news_texture_downloads" formatted="false">Paket grafis baru 1.6: 174 gambar dan 174 pratinjau terpisah, diunduh satu per satu dan disimpan secara offline.</string>
+    <string name="info_news_weather" formatted="false">Info lebih jelas, ikon foto dan panorama diperbarui, serta tombol Observatorium dan Lintasan harian lebih kontras pada malam hari.</string>
     <string name="info_news_viewer_zoom" formatted="false">Jenis menurut jumlah objek, opsi pengurutan alfabetis dan kontrol objek yang lebih jelas.</string>
     <string name="info_news_settings" formatted="false">Label referensi lebih stabil dan Nadir pada −90°, berlawanan dengan Zenit.</string>
     <string name="info_news_catalog" formatted="false">Peningkatan gerak bulan, pendekatan objek terpilih dan status pemuatan cuaca.</string>

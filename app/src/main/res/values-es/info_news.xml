@@ -1,8 +1,8 @@
 <resources>
     <string name="info_news_title">Últimas novedades · %1$s</string>
-    <string name="info_news_star_sky" formatted="false">El punto junto al nombre del objeto muestra los dos colores de la órbita: por encima y por debajo del horizonte.</string>
-    <string name="info_news_texture_downloads" formatted="false">Las leyendas de fotos y panorámicas usan puntos bicolores en lugar de líneas.</string>
-    <string name="info_news_weather" formatted="false">El tamaño de los puntos se adapta al texto y su borde coincide con el color de las letras, también en las imágenes exportadas.</string>
+    <string name="info_news_star_sky" formatted="false">Explora 999 objetos, las 88 constelaciones y LV-426 disponible para todos, con seguimiento y referencias científicas mejorados.</string>
+    <string name="info_news_texture_downloads" formatted="false">Nuevo paquete gráfico 1.6: 174 imágenes y 174 miniaturas independientes, descargadas individualmente y guardadas sin conexión.</string>
+    <string name="info_news_weather" formatted="false">Información más clara, iconos de captura y panorámica renovados y accesos al Observatorio y al Recorrido diario con más contraste por la noche.</string>
     <string name="info_news_viewer_zoom" formatted="false">Tipos ordenados por número de objetos, opciones de ordenación alfabéticas y controles más claros.</string>
     <string name="info_news_settings" formatted="false">Etiquetas de referencia más estables y Nadir a −90°, opuesto al Cenit.</string>
     <string name="info_news_catalog" formatted="false">Mejoras en el movimiento de las lunas, acercamientos entre objetos seleccionados y estado de carga del tiempo.</string>

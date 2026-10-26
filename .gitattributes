@@ -9,3 +9,4 @@
 app/src/test/resources/catalog-refresh/*.txt whitespace=-blank-at-eol
 app/src/test/resources/scenario-refresh/*.txt whitespace=-blank-at-eol
 app/src/test/resources/comets/*.txt whitespace=-blank-at-eol
+app/src/test/resources/catalog-999/*.txt whitespace=-blank-at-eol

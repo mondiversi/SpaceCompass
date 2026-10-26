@@ -1,8 +1,8 @@
 <resources>
     <string name="info_news_title">最近の変更 · %1$s</string>
-    <string name="info_news_star_sky" formatted="false">天体名の横のドットに、地平線の上と下で使う軌道の2色を表示します。</string>
-    <string name="info_news_texture_downloads" formatted="false">写真とパノラマの凡例を、線から上下2色のドットに変更しました。</string>
-    <string name="info_news_weather" formatted="false">ドットは文字に合わせた大きさで、縁取りも文字と同じ色になります。書き出した画像にも反映されます。</string>
+    <string name="info_news_star_sky" formatted="false">999天体、全88星座、誰でも利用できるLV-426を探索。追跡と科学的な参照情報も改善しました。</string>
+    <string name="info_news_texture_downloads" formatted="false">新しい画像パック1.6：174枚の画像と174枚の独立したサムネイルを個別にダウンロードし、オフラインで保存します。</string>
+    <string name="info_news_weather" formatted="false">情報を分かりやすくし、撮影・パノラマのアイコンを改良。夜間は天文台と一日の軌道のボタンを見やすくしました。</string>
     <string name="info_news_viewer_zoom" formatted="false">種類を天体数順に、並べ替え項目を名前順に表示。天体の操作も改善。</string>
     <string name="info_news_settings" formatted="false">基準ラベルの表示を安定化。天頂の反対側、−90°に天底を表示。</string>
     <string name="info_news_catalog" formatted="false">衛星の運動、選択した天体の接近、天気データの読み込み状態を改善。</string>

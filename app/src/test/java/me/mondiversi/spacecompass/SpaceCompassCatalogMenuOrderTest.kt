@@ -17,13 +17,13 @@ class SpaceCompassCatalogMenuOrderTest {
             spaceCompassAvailableCelestialCatalog(emptySet()), emptyMap(), Locale.ROOT))
     }
 
-    @Test fun hiddenMoonCountsOnlyAfterItIsRevealedAndDisappearsWhenUnchecked() {
+    @Test fun publicFictionalMoonCountsIndependentlyOfItsCheckedState() {
         val ordinary = spaceCompassCatalogTypeCounts(spaceCompassAvailableCelestialCatalog(emptySet()),
             emptyMap(), Locale.ROOT).associate { it.type to it.count }
         val revealed = spaceCompassCatalogTypeCounts(spaceCompassAvailableCelestialCatalog(
             setOf(SpaceCompassCelestialBody.LV_426)), emptyMap(), Locale.ROOT).associate { it.type to it.count }
         for (type in SpaceCompassCatalogType.entries) {
-            assertEquals(ordinary.getValue(type) + if (type == SpaceCompassCatalogType.NATURAL_SATELLITE) 1 else 0,
+            assertEquals(ordinary.getValue(type),
                 revealed.getValue(type))
         }
     }

@@ -13,15 +13,15 @@ class SpaceCompassHiddenObjectOrderTest {
     @Test fun defaultCatalogPlacesTheScenicReferenceBetweenItsDistanceNeighbors() {
         val public = spaceCompassAvailableCelestialCatalog(emptySet())
         val revealed = spaceCompassAvailableCelestialCatalog(setOf(hidden))
-        assertEquals(public, revealed.filterNot { it == hidden })
+        assertEquals(public, revealed)
         val index = revealed.indexOf(hidden)
         assertEquals(SpaceCompassCelestialBody.VEGA, revealed.take(index).last { it.additionalCatalogEntry == null })
-        assertEquals(trappist, revealed[index + 1])
+        assertEquals(trappist, revealed.drop(index + 1).first { it.largeCatalogEntry == null })
         assertEquals(1, revealed.count { it == hidden })
     }
 
     @Test fun savedNavigationUsesTheSameOrderWithoutChangingActiveOrCheckedObjects() {
-        val selection = SpaceCompassCelestialSelection(setOf(alpha, trappist), trappist).revealHiddenObject()
+        val selection = SpaceCompassCelestialSelection(setOf(alpha, hidden, trappist), trappist)
         assertEquals(listOf(alpha, hidden, trappist), selection.ordered)
         val restored = restoreSpaceCompassCelestialSelection(selection.ordered.map { it.name }.toSet(), trappist.name)
         assertEquals(selection, restored)
@@ -61,6 +61,6 @@ class SpaceCompassHiddenObjectOrderTest {
         val values = spaceCompassCatalogDistancesWithReferences(mapOf(alpha to current, hidden to Double.NaN), listOf(alpha, hidden))
         assertEquals(current, values[alpha]!!, 0.0)
         assertEquals(spaceCompassCelestialCatalogReferenceDistanceAu(hidden)!!, values[hidden]!!, 0.0)
-        assertEquals(SpaceCompassCelestialSelection().revealHiddenObject(), SpaceCompassCelestialSelection().revealHiddenObject().revealHiddenObject())
+        assertEquals(999, spaceCompassAvailableCelestialCatalog(emptySet()).size)
     }
 }

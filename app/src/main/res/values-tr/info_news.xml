@@ -1,8 +1,8 @@
 <resources>
     <string name="info_news_title">Son yenilikler · %1$s</string>
-    <string name="info_news_star_sky" formatted="false">Nesne adının yanındaki nokta, yörüngenin ufkun üstündeki ve altındaki iki rengini gösterir.</string>
-    <string name="info_news_texture_downloads" formatted="false">Fotoğraf ve panorama açıklamalarında çizgiler yerine iki renkli noktalar kullanılır.</string>
-    <string name="info_news_weather" formatted="false">Noktaların boyutu metne, kenarlıkları yazı rengine uyarlanır; dışa aktarılan görüntülerde de aynı görünüm korunur.</string>
+    <string name="info_news_star_sky" formatted="false">İyileştirilmiş takip ve bilimsel kaynaklarla 999 nesneyi, 88 takımyıldızın tamamını ve herkese açık LV-426’yı keşfedin.</string>
+    <string name="info_news_texture_downloads" formatted="false">Yeni grafik paketi 1.6: tek tek indirilen ve çevrimdışı saklanan 174 görüntü ve 174 ayrı küçük resim.</string>
+    <string name="info_news_weather" formatted="false">Daha açık bilgiler, yenilenen çekim ve panorama simgeleri, gece modunda daha belirgin Gözlemevi ve Günlük yol düğmeleri.</string>
     <string name="info_news_viewer_zoom" formatted="false">Nesne sayısına göre türler, alfabetik sıralama seçenekleri ve daha anlaşılır nesne kontrolleri.</string>
     <string name="info_news_settings" formatted="false">Daha kararlı referans etiketleri ve Zenit’in karşısında −90° Nadir.</string>
     <string name="info_news_catalog" formatted="false">İyileştirilmiş uydu hareketleri, seçili nesnelerin yakınlaşmaları ve açık hava durumu yükleme bilgisi.</string>

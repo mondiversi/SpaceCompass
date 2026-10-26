@@ -1,8 +1,8 @@
 <resources>
     <string name="info_news_title">최근 변경 사항 · %1$s</string>
-    <string name="info_news_star_sky" formatted="false">천체 이름 옆의 점이 지평선 위와 아래에서 사용하는 두 가지 궤도 색상을 보여 줍니다.</string>
-    <string name="info_news_texture_downloads" formatted="false">사진과 파노라마의 범례는 이제 선 대신 두 가지 색으로 나뉜 점을 사용합니다.</string>
-    <string name="info_news_weather" formatted="false">점의 크기는 글자에 맞춰지고 테두리는 글자와 같은 색으로 표시되며, 내보낸 이미지에도 적용됩니다.</string>
+    <string name="info_news_star_sky" formatted="false">999개 천체, 모든 88개 별자리와 누구나 볼 수 있는 LV-426을 탐색하세요. 추적 기능과 과학적 참고 정보도 개선했습니다.</string>
+    <string name="info_news_texture_downloads" formatted="false">새 그래픽 팩 1.6: 이미지 174개와 별도 미리보기 174개를 개별 다운로드하고 오프라인으로 저장합니다.</string>
+    <string name="info_news_weather" formatted="false">더 명확한 정보, 개선된 촬영·파노라마 아이콘, 야간에 대비가 높아진 관측소와 일일 경로 버튼을 제공합니다.</string>
     <string name="info_news_viewer_zoom" formatted="false">천체 수에 따른 유형 순서, 이름순 정렬 옵션과 더 명확한 천체 조작.</string>
     <string name="info_news_settings" formatted="false">기준 라벨을 안정화하고 천정의 반대편 −90°에 천저를 표시합니다.</string>
     <string name="info_news_catalog" formatted="false">위성 운동, 선택한 천체의 근접과 날씨 로딩 상태를 개선했습니다.</string>

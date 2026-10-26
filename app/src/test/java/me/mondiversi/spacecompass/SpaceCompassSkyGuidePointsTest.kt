@@ -7,9 +7,9 @@ import kotlin.math.*
 class SpaceCompassSkyGuidePointsTest {
     private val retired = SpaceCompassCelestialBody.EARTH_CENTER
     @Test fun retiredCentreCannotReturnThroughCatalogFiltersOrLegacyPreferences() {
-        assertEquals(104, spaceCompassCelestialCatalogOrder.size)
+        assertEquals(999, spaceCompassCelestialCatalogOrder.size)
         assertFalse(retired in spaceCompassAllCelestialOrder)
-        assertFalse(retired in spaceCompassAvailableCelestialCatalog(SpaceCompassCelestialSelection().revealHiddenObject().selected))
+        assertFalse(retired in spaceCompassAvailableCelestialCatalog(SpaceCompassCelestialSelection().selected))
         for (visibility in SpaceCompassCatalogVisibility.entries)
             assertFalse(retired in spaceCompassFilterCatalog(emptySet(), visibility, mapOf(retired to -89.8)))
         val restored = restoreSpaceCompassCelestialSelection(setOf("EARTH_CENTER", "MOON", "SUN", "LV_426"), "EARTH_CENTER")

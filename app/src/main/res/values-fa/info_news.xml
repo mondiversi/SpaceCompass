@@ -1,8 +1,8 @@
 <resources>
     <string name="info_news_title">تازه‌ترین تغییرات · %1$s</string>
-    <string name="info_news_star_sky" formatted="false">نقطهٔ کنار نام جرم هر دو رنگ مدار را نشان می‌دهد: بالای افق و زیر افق.</string>
-    <string name="info_news_texture_downloads" formatted="false">در راهنمای عکس‌ها و پانوراماها، نقطه‌های دورنگ جایگزین خط‌ها شده‌اند.</string>
-    <string name="info_news_weather" formatted="false">اندازهٔ نقطه‌ها با متن و رنگ حاشیهٔ آن‌ها با نوشته هماهنگ است، حتی در تصاویر خروجی.</string>
+    <string name="info_news_star_sky" formatted="false">۹۹۹ جرم، هر ۸۸ صورت فلکی و LV-426 در دسترس همه را با ردیابی و منابع علمی بهبودیافته کاوش کنید.</string>
+    <string name="info_news_texture_downloads" formatted="false">بستهٔ گرافیکی جدید 1.6: شامل ۱۷۴ تصویر و ۱۷۴ پیش‌نمایش جداگانه که تکی دانلود و آفلاین ذخیره می‌شوند.</string>
+    <string name="info_news_weather" formatted="false">اطلاعات روشن‌تر، نمادهای بازطراحی‌شدهٔ عکس و پانوراما و دکمه‌های رصدخانه و مسیر روزانه با کنتراست بیشتر در حالت شب.</string>
     <string name="info_news_viewer_zoom" formatted="false">نوع‌ها بر پایهٔ تعداد اجرام، گزینه‌های مرتب‌سازی الفبایی و کنترل‌های روشن‌تر.</string>
     <string name="info_news_settings" formatted="false">برچسب‌های مرجع پایدارتر و سمت‌القدم در −90°، مقابل سمت‌الرأس.</string>
     <string name="info_news_catalog" formatted="false">بهبود حرکت قمرها، نزدیکی اجرام انتخاب‌شده و وضعیت بارگذاری هواشناسی.</string>

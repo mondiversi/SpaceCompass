@@ -8,8 +8,8 @@ paths, inspect reference facts and view textured models. Space Compass is a stan
 
 ## Download and install
 
-Download **space-compass-1.4.11.apk** from the
-[Space Compass 1.4.11 release](https://github.com/mondiversi/SpaceCompass/releases/tag/v1.4.11).
+Download **space-compass-1.5.0.apk** from the
+[Space Compass 1.5.0 release](https://github.com/mondiversi/SpaceCompass/releases/tag/v1.5.0).
 Android 8.0 or newer is required. Open the APK and follow Android's installation
 prompts; allow installation for your browser or file manager if requested.
 
@@ -22,13 +22,13 @@ one manual APK update to acquire this feature.
 The release includes `SHA256SUMS.txt` and a signed update index. GitHub's source
 ZIP/TAR archives and Actions debug artifacts are separate from the signed APK.
 See [distribution and signing](docs/GITHUB_RELEASES.md) and
-[the 1.4.11 release audit](docs/RELEASE_1_4_11.md).
+[the 1.5.0 release audit](docs/RELEASE_1_5_0.md).
 
 ## Features
 
 - Live azimuth/altitude, compass guidance, named daily paths and satellite passes. Pin multiple path points and manage the same selections in the daily path. Reticle-focused callouts show clock and T± side by side. Current positions and lunar phases remain available.
-- 104 ordinary catalog objects: Sun, Moon, planets, natural/artificial satellites,
-  comets, Voyager spacecraft, nearby stars, nebulae, star clusters, compact objects and an exoplanet.
+- 999 catalogue objects (including public LV-426): Sun, Moon, planets, natural/artificial satellites,
+  comets, Voyager spacecraft, nearby stars, nebulae, star clusters, compact objects and exoplanets.
 - Live search by localized name or catalog identifier, combined with type/visibility filters.
 - Type/visibility filters and numeric sorting by Sun-centred or Earth-centred distance, mass, diameter, pressure,
   gravity and temperature. Missing properties remain unavailable and sort last.
@@ -74,7 +74,7 @@ See [distribution and signing](docs/GITHUB_RELEASES.md) and
 - Signed startup/manual GitHub updates with package, certificate, size and checksum verification.
 
 The application ID is `me.mondiversi.spacecompass`. The current stable version is
-**1.4.11**, with Android/update identity `1.4.11` and version code **49**.
+**1.5.0**, with Android/update identity `1.5.0` and version code **50**.
 This preserves the three-part update protocol used by existing preview installations.
 The app stores its preferences and caches privately.
 
@@ -132,20 +132,22 @@ before commercial distribution, including the free Open-Meteo endpoint.
 Copyright © 2026 Mondiversi. Application code is licensed under [GPL-3.0](LICENSE).
 Third-party SGP4 code and image maps retain their respective licenses/credits;
 Astronomy Engine uses MIT, AndroidX uses Apache-2.0 and Leaflet uses BSD-2-Clause.
-Launcher/loading artwork and the fictional Easter-egg texture are original assets.
+Launcher/loading artwork and the fictional LV-426 texture are original assets.
 
 ## Data and graphics packages
 
-Release 1.4.11 includes a reference-information archive and 104 regular catalogue objects.
+Release 1.5.0 includes **999 selectable objects, including public LV-426**, and an optional reference-information archive.
+All descriptive data and translations remain inside the APK. Scientific limits and provenance are in the
+[999-object catalogue](docs/CATALOG_999.md) and [canonical source catalogue](catalogue/README.md).
+
 Celestial graphics are separate individual files in
-[graphics pack 1.5](https://github.com/mondiversi/SpaceCompass/releases/tag/celestial-textures-v1.5):
-56 full images and 56 independent 128 x 128 previews, all WebP quality 90/method 6.
-Fifty-five full images are 2048 x 1024; LV-426 retains its original 1774 x 887.
-Catalogue/live/captured glyphs request only lightweight previews. The Observatory
-and its image exports fetch full images when needed; lunar phase stays dynamic.
-Images and previews total 12,364,294 bytes before metadata. Each file has independent
-size, SHA-256 and dimension pins and an offline cache. Matching earlier full-image
-caches are reused. Unavailable images keep appropriate code-rendered placeholders.
-The APK contains scientific data, all twenty languages, the star atlas and the
-separate Earth screensaver maps, without celestial photographs or texture ZIPs.
-Previous graphics releases and URLs remain available for older APKs.
+[graphics pack 1.6](https://github.com/mondiversi/SpaceCompass/releases/tag/celestial-textures-v1.6):
+174 full images and 174 independent 128×128 previews, all WebP quality 90/method 6.
+Most full images are 2048×1024; LV-426 retains its original 1774×887.
+Catalogue/live/captured glyphs request lightweight previews. The Observatory and image exports
+fetch full resources when needed; lunar phase stays dynamic. Images and previews total
+38,751,246 bytes before metadata. Downloads are individual, with independent size, SHA-256
+and dimension pins and persistent offline caches. Verified legacy filenames remain reusable.
+Missing photographs keep appropriate rendered symbols without disabling pointing.
+The APK contains scientific data, all twenty languages, the star atlas and separate Earth screensaver maps,
+without celestial photographs or complete texture ZIPs. Older releases and their resource URLs remain available.
