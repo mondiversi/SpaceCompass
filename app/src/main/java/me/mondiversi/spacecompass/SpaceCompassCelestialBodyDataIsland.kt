@@ -1,12 +1,10 @@
 package me.mondiversi.spacecompass
 
 import androidx.compose.foundation.background
-import androidx.compose.foundation.border
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.interaction.MutableInteractionSource
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.shape.RoundedCornerShape
-import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.material3.HorizontalDivider
 import androidx.compose.material3.LocalTextStyle
 import androidx.compose.material3.Text
@@ -84,10 +82,9 @@ internal fun SpaceCompassCelestialBodyDataIsland(bodyName: String?, primaryText:
                         .testTag("celestial-body-island-title").semantics(mergeDescendants = true) { heading() },
                         horizontalArrangement = Arrangement.spacedBy(6.dp, Alignment.CenterHorizontally),
                         verticalAlignment = Alignment.CenterVertically) {
-                        if (!bodyName.isNullOrEmpty()) Box(Modifier.size(markerSize)
-                            .background(bodyNameColor, CircleShape).border(.75.dp, primaryText, CircleShape)
-                            .testTag("celestial-body-color-dot")
-                            .clearAndSetSemantics {})
+                        if (!bodyName.isNullOrEmpty()) SpaceCompassCelestialColorDot(
+                            bodyNameColor, primaryText, Modifier.size(markerSize)
+                                .testTag("celestial-body-color-dot").clearAndSetSemantics {})
                         // The non-weighted dot is measured first; only the trailing name can truncate.
                         Text(bodyName.orEmpty(), Modifier.weight(1f, fill = false).testTag("celestial-body-name"),
                             color = primaryText, style = LocalTextStyle.current.copy(shadow = null),

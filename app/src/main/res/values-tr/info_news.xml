@@ -1,8 +1,8 @@
 <resources>
     <string name="info_news_title">Son yenilikler · %1$s</string>
-    <string name="info_news_star_sky" formatted="false">Yörünge renginde kenarlıklı bir nokta ve okların yanında daha fazla boşluk ile daha okunaklı nesne adları.</string>
-    <string name="info_news_texture_downloads" formatted="false">Nesneler, noktalar ve senaryolar için temaya uygun rakamlar içeren, düz renk dolgulu daha büyük sayaçlar.</string>
-    <string name="info_news_weather" formatted="false">Günlük yol bölümünde daha fazla alan: kompakt hatırlatıcı düğmeleri ve eşit incelikte çizilmiş zil simgeleri.</string>
+    <string name="info_news_star_sky" formatted="false">Nesne adının yanındaki nokta, yörüngenin ufkun üstündeki ve altındaki iki rengini gösterir.</string>
+    <string name="info_news_texture_downloads" formatted="false">Fotoğraf ve panorama açıklamalarında çizgiler yerine iki renkli noktalar kullanılır.</string>
+    <string name="info_news_weather" formatted="false">Noktaların boyutu metne, kenarlıkları yazı rengine uyarlanır; dışa aktarılan görüntülerde de aynı görünüm korunur.</string>
     <string name="info_news_viewer_zoom" formatted="false">Nesne sayısına göre türler, alfabetik sıralama seçenekleri ve daha anlaşılır nesne kontrolleri.</string>
     <string name="info_news_settings" formatted="false">Daha kararlı referans etiketleri ve Zenit’in karşısında −90° Nadir.</string>
     <string name="info_news_catalog" formatted="false">İyileştirilmiş uydu hareketleri, seçili nesnelerin yakınlaşmaları ve açık hava durumu yükleme bilgisi.</string>

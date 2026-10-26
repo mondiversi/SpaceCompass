@@ -1,8 +1,8 @@
 <resources>
     <string name="info_news_title">Perubahan terbaru · %1$s</string>
-    <string name="info_news_star_sky" formatted="false">Nama objek lebih mudah dibaca, dengan titik berbingkai berwarna orbit dan lebih banyak ruang di dekat panah.</string>
-    <string name="info_news_texture_downloads" formatted="false">Penghitung objek, titik, dan skenario lebih besar, dengan latar warna solid serta angka yang menyesuaikan tema.</string>
-    <string name="info_news_weather" formatted="false">Lebih banyak ruang di Lintasan harian: tombol pengingat ringkas dan ikon lonceng dengan garis tipis yang seragam.</string>
+    <string name="info_news_star_sky" formatted="false">Titik di samping nama objek menampilkan kedua warna orbit: di atas dan di bawah horizon.</string>
+    <string name="info_news_texture_downloads" formatted="false">Legenda foto dan panorama kini menggunakan titik dua warna, bukan garis.</string>
+    <string name="info_news_weather" formatted="false">Ukuran titik menyesuaikan teks dan bingkainya mengikuti warna huruf, termasuk pada gambar yang diekspor.</string>
     <string name="info_news_viewer_zoom" formatted="false">Jenis menurut jumlah objek, opsi pengurutan alfabetis dan kontrol objek yang lebih jelas.</string>
     <string name="info_news_settings" formatted="false">Label referensi lebih stabil dan Nadir pada −90°, berlawanan dengan Zenit.</string>
     <string name="info_news_catalog" formatted="false">Peningkatan gerak bulan, pendekatan objek terpilih dan status pemuatan cuaca.</string>

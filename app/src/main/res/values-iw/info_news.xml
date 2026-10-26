@@ -1,8 +1,8 @@
 <resources>
     <string name="info_news_title">החידושים האחרונים · %1$s</string>
-    <string name="info_news_star_sky" formatted="false">שמות עצמים קריאים יותר, עם נקודה בעלת מסגרת בצבע המסלול ויותר מרווח לצד החצים.</string>
-    <string name="info_news_texture_downloads" formatted="false">מונים גדולים יותר לעצמים, לנקודות ולתרחישים, עם רקע בצבע אחיד וספרות המותאמות לערכת הנושא.</string>
-    <string name="info_news_weather" formatted="false">יותר מקום ב־מסלול יומי: לחצני תזכורת קומפקטיים וסמלי פעמון בקו דק ואחיד.</string>
+    <string name="info_news_star_sky" formatted="false">הנקודה לצד שם העצם מציגה את שני צבעי המסלול: מעל האופק ומתחתיו.</string>
+    <string name="info_news_texture_downloads" formatted="false">מקרא התמונות והפנורמות משתמש כעת בנקודות בשני צבעים במקום בקווים.</string>
+    <string name="info_news_weather" formatted="false">גודל הנקודות מותאם לטקסט והמסגרת שלהן תואמת לצבע האותיות, גם בתמונות מיוצאות.</string>
     <string name="info_news_viewer_zoom" formatted="false">סוגים לפי מספר עצמים, אפשרויות מיון אלפביתיות ובקרי עצמים ברורים יותר.</string>
     <string name="info_news_settings" formatted="false">תוויות ייחוס יציבות יותר ונדיר ב־−90°, מול הזניט.</string>
     <string name="info_news_catalog" formatted="false">שיפור תנועת ירחים, התקרבויות עצמים נבחרים ומצב טעינת מזג האוויר.</string>

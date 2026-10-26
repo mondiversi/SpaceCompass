@@ -1,8 +1,8 @@
 <resources>
     <string name="info_news_title">Últimas novidades · %1$s</string>
-    <string name="info_news_star_sky" formatted="false">Nomes dos objetos mais legíveis, com um ponto contornado da cor da órbita e mais espaço junto às setas.</string>
-    <string name="info_news_texture_downloads" formatted="false">Contadores de objetos, pontos e cenários maiores, com fundo de cor sólida e algarismos adaptados ao tema.</string>
-    <string name="info_news_weather" formatted="false">Mais espaço em Trajetória diária: botões de lembrete compactos e sinos com traço fino uniforme.</string>
+    <string name="info_news_star_sky" formatted="false">O ponto junto ao nome do objeto mostra as duas cores da órbita: acima e abaixo do horizonte.</string>
+    <string name="info_news_texture_downloads" formatted="false">As legendas de fotos e panoramas usam pontos bicolores em vez de linhas.</string>
+    <string name="info_news_weather" formatted="false">O tamanho dos pontos acompanha o texto e o contorno tem a cor das letras, também nas imagens exportadas.</string>
     <string name="info_news_viewer_zoom" formatted="false">Tipos por número de objetos, opções de ordenação alfabéticas e controlos mais claros.</string>
     <string name="info_news_settings" formatted="false">Legendas de referência mais estáveis e Nadir a −90°, oposto ao Zénite.</string>
     <string name="info_news_catalog" formatted="false">Melhorias no movimento das luas, aproximações de objetos selecionados e estado de carregamento meteorológico.</string>

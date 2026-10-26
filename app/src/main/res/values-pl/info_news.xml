@@ -1,8 +1,8 @@
 <resources>
     <string name="info_news_title">Ostatnie nowości · %1$s</string>
-    <string name="info_news_star_sky" formatted="false">Czytelniejsze nazwy obiektów z obwiedzioną kropką w kolorze orbity i większym odstępem od strzałek.</string>
-    <string name="info_news_texture_downloads" formatted="false">Większe liczniki obiektów, punktów i scenariuszy z jednolitym tłem oraz cyframi dopasowanymi do motywu.</string>
-    <string name="info_news_weather" formatted="false">Więcej miejsca w Tor dzienny: kompaktowe przyciski przypomnień i dzwonki o jednolicie cienkiej kresce.</string>
+    <string name="info_news_star_sky" formatted="false">Kropka obok nazwy obiektu pokazuje oba kolory orbity: nad i pod horyzontem.</string>
+    <string name="info_news_texture_downloads" formatted="false">Legendy zdjęć i panoram używają teraz dwukolorowych kropek zamiast linii.</string>
+    <string name="info_news_weather" formatted="false">Rozmiar kropek jest dopasowany do tekstu, a obwódka ma kolor liter, także na eksportowanych obrazach.</string>
     <string name="info_news_viewer_zoom" formatted="false">Typy według liczby obiektów, alfabetyczne opcje sortowania i czytelniejsze sterowanie obiektami.</string>
     <string name="info_news_settings" formatted="false">Stabilniejsze etykiety odniesienia i Nadir przy −90°, naprzeciw Zenitu.</string>
     <string name="info_news_catalog" formatted="false">Poprawiony ruch księżyców, zbliżenia wybranych obiektów i wyraźny stan ładowania pogody.</string>

@@ -17,7 +17,8 @@ internal data class SpaceCompassPanoramaLegendRow(val entries: List<SpaceCompass
 
 /** A separate footer preserves the panoramic grid and the photograph's full optical frame. */
 internal class SpaceCompassPanoramaLegend(val width: Int, val height: Int,
-    private val rows: List<SpaceCompassPanoramaLegendRow>, private val scale: Float, private val rowHeight: Float) {
+    private val rows: List<SpaceCompassPanoramaLegendRow>, private val scale: Float, private val rowHeight: Float,
+    private val markerDiameter: Float) {
     fun draw(canvas: Canvas, top: Float, groundColor: Int) {
         if (rows.isEmpty()) return
         canvas.save()
@@ -26,16 +27,16 @@ internal class SpaceCompassPanoramaLegend(val width: Int, val height: Int,
         canvas.drawRect(0f, 0f, width.toFloat(), height.toFloat(), paint)
         paint.color = 0x99000000.toInt()
         canvas.drawRect(0f, 0f, width.toFloat(), height.toFloat(), paint)
-        paint.strokeWidth = 5 * scale
-        paint.strokeCap = Paint.Cap.ROUND
+        val markerAdvance = markerDiameter + 16 * scale
         rows.forEachIndexed { index, row ->
             var x = (width - row.width) / 2f
             val y = 12 * scale + index * (rowHeight + 12 * scale)
             row.entries.forEach { entry ->
-                paint.color = entry.tint
-                canvas.drawLine(x, y + rowHeight / 2, x + 64 * scale, y + rowHeight / 2, paint)
+                drawSpaceCompassCelestialColorDot(canvas, x + markerDiameter / 2,
+                    y + rowHeight / 2, markerDiameter, entry.tint, entry.label.paint.color,
+                    markerDiameter / 14f, paint)
                 canvas.save()
-                canvas.translate(x + 80 * scale, y + (rowHeight - entry.label.height) / 2)
+                canvas.translate(x + markerAdvance, y + (rowHeight - entry.label.height) / 2)
                 entry.label.draw(canvas)
                 canvas.restore()
                 x += entry.width + 48 * scale
@@ -45,7 +46,7 @@ internal class SpaceCompassPanoramaLegend(val width: Int, val height: Int,
     }
 }
 
-/** Use frozen localized names and full above-horizon identity colors, regardless of elevation. */
+/** Frozen localized names and split above/below-horizon identity colors, independent of current elevation. */
 internal fun prepareSpaceCompassPanoramaLegend(objects: List<SpaceCompassPanoramaObject>, width: Int,
     scale: Float = width / 4096f): SpaceCompassPanoramaLegend {
     require(width > 0 && scale.isFinite() && scale > 0)
@@ -55,18 +56,21 @@ internal fun prepareSpaceCompassPanoramaLegend(objects: List<SpaceCompassPanoram
         textSize = 42 * scale
         typeface = Typeface.create("sans-serif-medium", Typeface.NORMAL)
     }
+    // Match visible letter height, as in the main island, rather than the full line box.
+    val markerDiameter = paint.textSize * .75f
+    val markerAdvance = markerDiameter + 16 * scale
     val rows = mutableListOf<SpaceCompassPanoramaLegendRow>()
     var entries = mutableListOf<SpaceCompassPanoramaLegendEntry>()
     var rowWidth = 0f
     objects.distinctBy { it.body }.forEach { item ->
         val labelWidth = ceil(Layout.getDesiredWidth(item.name, paint)).toInt()
-            .coerceIn(1, (available - 80 * scale).toInt().coerceAtLeast(1))
+            .coerceIn(1, (available - markerAdvance).toInt().coerceAtLeast(1))
         val label = StaticLayout.Builder.obtain(item.name, 0, item.name.length, paint, labelWidth)
             .setTextDirection(TextDirectionHeuristics.FIRSTSTRONG_LTR).setAlignment(Layout.Alignment.ALIGN_NORMAL)
             .setIncludePad(false).setMaxLines(1).setEllipsize(TextUtils.TruncateAt.END).build()
         val entry = SpaceCompassPanoramaLegendEntry(label,
             spaceCompassCelestialPathTint(item.body).toArgb(),
-            80 * scale + labelWidth)
+            markerAdvance + labelWidth)
         val gap = if (entries.isEmpty()) 0f else 48 * scale
         if (entries.isNotEmpty() && rowWidth + gap + entry.width > available) {
             rows += SpaceCompassPanoramaLegendRow(entries, rowWidth)
@@ -81,5 +85,5 @@ internal fun prepareSpaceCompassPanoramaLegend(objects: List<SpaceCompassPanoram
     val rowHeight = rows.flatMap { it.entries }.maxOfOrNull { it.label.height }?.toFloat() ?: 0f
     val height = if (rows.isEmpty()) 0 else ceil(24 * scale + rows.size * rowHeight +
         (rows.size - 1) * 12 * scale).toInt()
-    return SpaceCompassPanoramaLegend(width, height, rows, scale, rowHeight)
+    return SpaceCompassPanoramaLegend(width, height, rows, scale, rowHeight, markerDiameter)
 }

@@ -1,8 +1,8 @@
 <resources>
     <string name="info_news_title">Dernières nouveautés · %1$s</string>
-    <string name="info_news_star_sky" formatted="false">Des noms d’objets plus lisibles, avec un point bordé de la couleur de l’orbite et plus d’espace près des flèches.</string>
-    <string name="info_news_texture_downloads" formatted="false">Des compteurs d’objets, de points et de scénarios plus grands, à fond uni, avec des chiffres adaptés au thème.</string>
-    <string name="info_news_weather" formatted="false">Plus de place dans Trajectoire quotidienne : boutons de rappel compacts et cloches au trait fin uniforme.</string>
+    <string name="info_news_star_sky" formatted="false">Le point à côté du nom de l’objet montre les deux couleurs de l’orbite : au-dessus et au-dessous de l’horizon.</string>
+    <string name="info_news_texture_downloads" formatted="false">Les légendes des photos et panoramas utilisent des points bicolores au lieu de lignes.</string>
+    <string name="info_news_weather" formatted="false">La taille des points suit le texte et leur bordure reprend la couleur des lettres, y compris dans les images exportées.</string>
     <string name="info_news_viewer_zoom" formatted="false">Types classés par nombre d’objets, options de tri alphabétiques et commandes plus claires.</string>
     <string name="info_news_settings" formatted="false">Libellés des repères plus stables et Nadir à −90°, opposé au Zénith.</string>
     <string name="info_news_catalog" formatted="false">Mouvement des lunes, rapprochements des objets sélectionnés et état de chargement météo améliorés.</string>

@@ -1,8 +1,8 @@
 <resources>
     <string name="info_news_title">Последние новости · %1$s</string>
-    <string name="info_news_star_sky" formatted="false">Более читаемые названия объектов: точка с обводкой в цвете орбиты и больше места рядом со стрелками.</string>
-    <string name="info_news_texture_downloads" formatted="false">Увеличенные счётчики объектов, точек и сценариев с однотонной заливкой и цифрами, соответствующими теме.</string>
-    <string name="info_news_weather" formatted="false">Больше места в разделе «Суточная траектория»: компактные кнопки напоминаний и колокольчики с одинаково тонким контуром.</string>
+    <string name="info_news_star_sky" formatted="false">Точка рядом с названием объекта показывает оба цвета орбиты: над и под горизонтом.</string>
+    <string name="info_news_texture_downloads" formatted="false">В легендах фотографий и панорам линии заменены двухцветными точками.</string>
+    <string name="info_news_weather" formatted="false">Размер точек соответствует тексту, а обводка — цвету букв, в том числе на экспортированных изображениях.</string>
     <string name="info_news_viewer_zoom" formatted="false">Типы по числу объектов, параметры сортировки по алфавиту и более понятное управление объектами.</string>
     <string name="info_news_settings" formatted="false">Более стабильные подписи ориентиров и Надир на −90°, напротив Зенита.</string>
     <string name="info_news_catalog" formatted="false">Улучшены движение лун, сближения выбранных объектов и отображение загрузки погоды.</string>

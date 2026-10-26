@@ -1,5 +1,12 @@
 # Changelog
 
+## 1.4.11 — 2026-10-26
+
+- Split the main object island's color dot horizontally: the upper half uses the full above-horizon orbit identity color and the lower half uses the existing below-horizon treatment. Keep the complete outline in the object's name text color, independent of the object's current elevation.
+- Replace line swatches in photo and panorama legends with the same split-color circles. Size them to visible letter height and draw their outlines in the legend text color. Retain centered, wrapping legend rows and trailing truncation for long object names.
+- Share the circle renderer between the live island, capture previews and image exports, preventing visual differences between photographic and panoramic output. Preserve astronomy, trajectories, horizon colors, point selections, privacy, saved preferences and graphics pack 1.5.
+- Refresh three in-app news summaries in all twenty languages and verify translation key/placeholder parity. Publish 1.4.11/code 49 with the existing signing certificate, signed update index, matching optional reference-information archive, metadata and checksums. No complete texture ZIP or new bundled celestial image is added.
+
 ## 1.4.10 — 2026-10-25
 
 - Make the main island's object name use the normal theme text color. A leading dot preserves the above-horizon trajectory identity color and adds a thin theme-text outline for contrast. Keep the dot visible when a long name is shortened on its trailing edge. Balance the visible caption-to-chevron gaps with a 12 dp minimum while preserving RTL and font scaling.
