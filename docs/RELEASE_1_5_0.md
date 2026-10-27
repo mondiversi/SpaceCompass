@@ -5,7 +5,7 @@ Install over the existing app using the same distribution certificate; no data r
 
 ## Catalogue and graphics
 
-999 selectable entries include all 88 constellations and explicitly fictional public LV-426.
+999 selectable entries include all 88 constellations.
 Descriptions, names, source metadata and twenty-language resources stay in the APK.
 See [sources and scientific limits](CATALOG_999.md) and [canonical provenance](../catalogue/README.md).
 Unmeasured distances, uncertain masses and expired/unsupported ephemerides are not fabricated.
@@ -13,7 +13,7 @@ Historical missions retain real coverage windows; exoplanets trace the unresolve
 Constellations render linked stars rather than an arbitrarily rotated generic cross.
 
 Stable graphics pack 1.6 contains 174 full WebP files and 174 128×128 previews, quality 90/method 6.
-Full maps total 38,001,332 bytes; previews 749,914 bytes. Most maps are 2048×1024; original LV-426 is 1774×887.
+Full maps total 38,001,332 bytes; previews 749,914 bytes. Most maps are 2048×1024; existing illustrations retain their original source dimensions.
 The APK pins every individual resource to that release, preserving old bytes, aliases, caches and URLs.
 No complete graphics ZIP is distributed. The optional information ZIP is a reference snapshot, not a runtime package.
 

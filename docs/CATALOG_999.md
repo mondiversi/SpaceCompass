@@ -1,6 +1,6 @@
 # 999-object catalogue
 
-999 selectable entries, including public LV-426: 894 additions and all 105 previous identities.
+999 selectable entries: 894 additions and all 105 previous identities.
 The retired Earth-centre identifier remains readable for compatibility but is not selectable.
 Default selection remains Sun and Moon. No hidden title hold or reveal state is required.
 

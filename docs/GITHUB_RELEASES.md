@@ -340,8 +340,8 @@ added. See the [release review](RELEASE_1_4_11.md).
 
 ## 1.5.0 catalogue and graphics release
 
-Version 1.5.0/code 50 publishes the 999-object catalogue, all 88 constellation patterns,
-public LV-426 and stable graphics pack 1.6. The APK pins all 174 full images and 174
+Version 1.5.0/code 50 publishes the 999-object catalogue, all 88 constellation patterns
+and stable graphics pack 1.6. The APK pins all 174 full images and 174
 previews to verified individual assets in that release. Publish and anonymously verify
 the graphics before publishing the matching APK. Graphics never become the latest app release.
 Old releases, URLs and cache aliases remain available. No complete texture ZIP is added.

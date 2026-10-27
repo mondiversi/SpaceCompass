@@ -2,7 +2,7 @@
 
 ## 1.5.0 — 2026-10-26
 
-- Expand the selectable catalogue to 999 entries, including publicly available fictional LV-426 and all 88 IAU constellations. Keep descriptions and twenty-language resources in the APK. Reuse observer/date-dependent pointing, daily paths, scenarios, search, filters, reminders and exports; unavailable facts stay explicit.
+- Expand the selectable catalogue to 999 entries, including all 88 IAU constellations. Keep descriptions and twenty-language resources in the APK. Reuse observer/date-dependent pointing, daily paths, scenarios, search, filters, reminders and exports; unavailable facts stay explicit.
 - Add identity-checked JPL Horizons, catalogue astrometry and NORAD/SatNOGS adapters with offline caches, validity limits, qualified distances and source provenance. Constellation patterns follow their actual linked stars. Selected objects alone participate in angular close approaches; alignments are not eclipse predictions.
 - Publish graphics pack 1.6 with 174 full WebP resources and 174 independently pinned 128×128 previews, quality 90/method 6. Use coherent canonical filenames, exact individual URLs and integrity checks. Preserve legacy aliases, verified caches and every older release URL. No complete texture ZIP or new celestial photograph is bundled in the APK.
 - Refine the panorama glyph with a central crest, visible points and dashed horizon, and join shutter blades into a closed aperture. Increase the object-island action gaps slightly and invert Observatory/Daily path circles at night for contrast; daytime styling and touch targets stay intact. Clarify Earth-only orientation references in all twenty Info translations.

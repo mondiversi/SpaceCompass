@@ -27,7 +27,7 @@ See [distribution and signing](docs/GITHUB_RELEASES.md) and
 ## Features
 
 - Live azimuth/altitude, compass guidance, named daily paths and satellite passes. Pin multiple path points and manage the same selections in the daily path. Reticle-focused callouts show clock and T± side by side. Current positions and lunar phases remain available.
-- 999 catalogue objects (including public LV-426): Sun, Moon, planets, natural/artificial satellites,
+- 999 catalogue objects: Sun, Moon, planets, natural/artificial satellites,
   comets, Voyager spacecraft, nearby stars, nebulae, star clusters, compact objects and exoplanets.
 - Live search by localized name or catalog identifier, combined with type/visibility filters.
 - Type/visibility filters and numeric sorting by Sun-centred or Earth-centred distance, mass, diameter, pressure,
@@ -132,18 +132,18 @@ before commercial distribution, including the free Open-Meteo endpoint.
 Copyright © 2026 Mondiversi. Application code is licensed under [GPL-3.0](LICENSE).
 Third-party SGP4 code and image maps retain their respective licenses/credits;
 Astronomy Engine uses MIT, AndroidX uses Apache-2.0 and Leaflet uses BSD-2-Clause.
-Launcher/loading artwork and the fictional LV-426 texture are original assets.
+Launcher/loading artwork and original illustrations are project assets.
 
 ## Data and graphics packages
 
-Release 1.5.0 includes **999 selectable objects, including public LV-426**, and an optional reference-information archive.
+Release 1.5.0 includes **999 selectable objects**, and an optional reference-information archive.
 All descriptive data and translations remain inside the APK. Scientific limits and provenance are in the
 [999-object catalogue](docs/CATALOG_999.md) and [canonical source catalogue](catalogue/README.md).
 
 Celestial graphics are separate individual files in
 [graphics pack 1.6](https://github.com/mondiversi/SpaceCompass/releases/tag/celestial-textures-v1.6):
 174 full images and 174 independent 128×128 previews, all WebP quality 90/method 6.
-Most full images are 2048×1024; LV-426 retains its original 1774×887.
+Most full images are 2048×1024; existing illustrations retain their original source dimensions.
 Catalogue/live/captured glyphs request lightweight previews. The Observatory and image exports
 fetch full resources when needed; lunar phase stays dynamic. Images and previews total
 38,751,246 bytes before metadata. Downloads are individual, with independent size, SHA-256
