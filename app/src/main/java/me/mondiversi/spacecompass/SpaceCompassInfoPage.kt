@@ -38,7 +38,8 @@ internal fun SpaceCompassInfoPage(modifier: Modifier) {
             SpaceCompassSettingsIsland(stringResource(R.string.info_news_title, BuildConfig.DISPLAY_VERSION),
                 iconKey = "whats_new") {
                 listOf(R.string.info_news_star_sky, R.string.info_news_texture_downloads,
-                    R.string.info_news_weather).forEach { change ->
+                    R.string.info_news_weather, R.string.info_news_viewer_zoom,
+                    R.string.info_news_settings, R.string.info_news_catalog).forEach { change ->
                     Text("• ${stringResource(change)}", fontSize = 13.sp, lineHeight = 18.sp,
                         color = MaterialTheme.colorScheme.onSurface.copy(alpha = .72f))
                 }
