@@ -84,7 +84,7 @@ internal fun SpaceCompassScenarioSummaryDialog(plan: SpaceCompassObserverPlan?, 
             SpaceCompassDialogActionButton(stringResource(R.string.observer_customize), onCustomize,
                 Modifier.testTag("scenario-summary-customize"))
         },
-        confirmButtonFirst = false,
+        confirmButtonFirst = true,
         text = {
             Column(Modifier.fillMaxWidth().testTag("observer-summary"), verticalArrangement = Arrangement.spacedBy(12.dp)) {
                 SpaceCompassScenarioSummaryRow(stringResource(R.string.observer_place), coordinates, "position",

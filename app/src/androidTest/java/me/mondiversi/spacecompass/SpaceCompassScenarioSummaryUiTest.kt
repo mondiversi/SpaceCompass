@@ -72,7 +72,7 @@ class SpaceCompassScenarioSummaryUiTest {
             context.getString(R.string.scenario_time_forward) + " · 1×")
         val close = compose.onNodeWithTag("scenario-summary-close").fetchSemanticsNode().boundsInRoot
         val customize = compose.onNodeWithTag("scenario-summary-customize").fetchSemanticsNode().boundsInRoot
-        assertTrue("Close precedes Customize in the right-aligned action row", close.right <= customize.left)
+        assertTrue("Customize precedes Close in the right-aligned action row", customize.right <= close.left)
         compose.onNodeWithTag("scenario-summary-close").performClick()
         compose.runOnIdle { assertTrue(dismissed); assertFalse(customized) }
         compose.onNodeWithTag("scenario-summary-customize").performClick()
