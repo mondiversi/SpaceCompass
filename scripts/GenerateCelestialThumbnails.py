@@ -10,7 +10,7 @@ import json
 import math
 from pathlib import Path
 
-from PIL import Image, ImageDraw
+from PIL import Image, ImageDraw, ImageOps
 
 EXTENT = 128
 GLOBES = {
@@ -18,6 +18,7 @@ GLOBES = {
     "jupiter.webp", "saturn.webp", "uranus.webp", "neptune.webp", "pluto.webp",
     "io_2048.webp", "europa_2048.webp", "titan.webp", "enceladus.webp", "lv426.webp",
 }
+GLOBES.update({'fictional_arrakis.webp', 'fictional_caladan.webp', 'fictional_giedi_prime.webp', 'fictional_lv_223.webp', 'fictional_calpamos.webp', 'fictional_pandora.webp', 'fictional_polyphemus.webp', 'fictional_vulcan.webp'})
 ZERO_OFFSET = {"pluto.webp", "europa_2048.webp", "titan.webp", "enceladus.webp"}
 UNMAPPED = {"pluto.webp", "europa_2048.webp"}
 
@@ -26,6 +27,12 @@ def preview(source: Path, logical_name: str | None = None) -> Image.Image:
     name = logical_name or source.name
     with Image.open(source) as original:
         image = original.convert("RGB")
+    if name in {"fictional_nostromo.webp", "fictional_discovery_one.webp"}:
+        # Keep long spacecraft entirely visible instead of cropping away bow and engines.
+        output = Image.new("RGBA", (EXTENT, EXTENT))
+        photo = ImageOps.contain(image, (EXTENT * 7 // 8, EXTENT * 7 // 8), Image.Resampling.LANCZOS)
+        output.paste(photo, ((EXTENT-photo.width)//2, (EXTENT-photo.height)//2))
+        return output
     if name not in GLOBES:
         side = min(image.size)
         left, top = (image.width - side) // 2, (image.height - side) // 2
@@ -43,14 +50,14 @@ def preview(source: Path, logical_name: str | None = None) -> Image.Image:
     image = image.resize((512, 256), Image.Resampling.LANCZOS)
     output = Image.new("RGBA", (EXTENT, EXTENT))
     pixels = output.load()
-    radius = EXTENT * (17 if name == "saturn.webp" else 28) / 64
+    radius = EXTENT * (17 if name in {"saturn.webp", "fictional_calpamos.webp"} else 28) / 64
     offset = 0 if name in ZERO_OFFSET else .5
     for y in range(EXTENT):
         for x in range(EXTENT):
             nx, ny = (x + .5 - EXTENT / 2) / radius, (EXTENT / 2 - y - .5) / radius
             squared = nx * nx + ny * ny
             if squared > 1:
-                if name == "saturn.webp" and 1.20 <= nx * nx + (ny / .28) ** 2 <= 3.10:
+                if name in {"saturn.webp", "fictional_calpamos.webp"} and 1.20 <= nx * nx + (ny / .28) ** 2 <= 3.10:
                     pixels[x, y] = (184, 167, 139, 255)
                 continue
             nz = math.sqrt(1 - squared)

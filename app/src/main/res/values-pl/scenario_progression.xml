@@ -2,7 +2,7 @@
 <resources>
     <string name="scenario_speed">Czas</string>
     <string name="scenario_speed_description">Cofaj czas scenariusza lub przesuwaj go naprzód do 3600×. Zero pośrodku zatrzymuje czas.</string>
-    <string name="scenario_resume">Wznawianie niestandardowego scenariusza</string>
+    <string name="scenario_resume">Wznawianie scenariusza</string>
     <string name="scenario_resume_description">Wybierz sposób wznawiania symulowanego czasu po ponownym otwarciu aplikacji. Wybrana prędkość obowiązuje w każdym trybie.</string>
     <string name="scenario_restart">Zacznij od początku</string>
     <string name="scenario_active">Tylko gdy aplikacja jest aktywna</string>

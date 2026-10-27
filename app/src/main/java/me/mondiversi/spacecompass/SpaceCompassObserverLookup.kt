@@ -23,11 +23,11 @@ internal suspend fun lookupSpaceCompassObserverMetadata(latitude: Double, longit
     }
 
 @Suppress("DEPRECATION")
-internal suspend fun searchSpaceCompassObserverPlace(context: Context, query: String): SpaceCompassDevicePlace? =
+internal suspend fun searchSpaceCompassObserverPlace(context: Context, query: String, locale: Locale = Locale.getDefault()): SpaceCompassDevicePlace? =
     withTimeoutOrNull(10_000L) {
         require(query.isNotBlank() && query.length <= 200)
         if (!Geocoder.isPresent()) return@withTimeoutOrNull null
-        val geocoder = Geocoder(context, Locale.getDefault())
+        val geocoder = Geocoder(context, locale)
         val addresses = if (Build.VERSION.SDK_INT >= 33) suspendCancellableCoroutine { continuation ->
             geocoder.getFromLocationName(query, 1, object : Geocoder.GeocodeListener {
                 override fun onGeocode(addresses: MutableList<android.location.Address>) {
@@ -39,6 +39,9 @@ internal suspend fun searchSpaceCompassObserverPlace(context: Context, query: St
             })
         } else runInterruptible(Dispatchers.IO) { geocoder.getFromLocationName(query, 1).orEmpty() }
         addresses.firstOrNull()?.takeIf { it.hasLatitude() && it.hasLongitude() }?.let {
+            val label = formatSpaceCompassEstimatedPlace(spaceCompassEstimatedPlaceParts(it, locale))
+            val key = spaceCompassPlaceKey(it.latitude, it.longitude, locale.toLanguageTag())
+            if (label != null && key != null) spaceCompassPlaceRepository(context).seed(key, label)
             SpaceCompassDevicePlace(it.latitude, it.longitude, null)
         }
     }

@@ -56,6 +56,10 @@ internal suspend fun lookupSpaceCompassEstimatedPlaceParts(context: Context, key
         if (Build.VERSION.SDK_INT >= 33) asynchronousPlaceLookup(geocoder, key)
         else legacyPlaceLookup(geocoder, key)
     }?.firstOrNull() ?: return null
+    return spaceCompassEstimatedPlaceParts(address, locale)
+}
+
+internal fun spaceCompassEstimatedPlaceParts(address: Address, locale: Locale): SpaceCompassPlaceParts {
     val country = address.countryName?.takeIf { it.isNotBlank() }
         ?: address.countryCode?.takeIf { it.matches(Regex("[A-Za-z]{2}")) }
             ?.let { Locale.Builder().setRegion(it).build().getDisplayCountry(locale) }
@@ -63,42 +67,36 @@ internal suspend fun lookupSpaceCompassEstimatedPlaceParts(context: Context, key
         address.subAdminArea, address.adminArea, country)
 }
 
-/** Requests only while the requesting page is enabled and the activity is resumed. */
+/** Shared/persisted labels are read synchronously; only missing or old labels need a foreground request. */
 @Composable
 internal fun rememberSpaceCompassEstimatedPlace(latitude: Double?, longitude: Double?, enabled: Boolean): SpaceCompassEstimatedPlaceReading {
     val context = LocalContext.current.applicationContext
     val languageTag = LocalConfiguration.current.locales[0].toLanguageTag()
     val lifecycle = LocalLifecycleOwner.current.lifecycle
     val key = remember(latitude, longitude, languageTag) { spaceCompassPlaceKey(latitude, longitude, languageTag) }
-    val cache = remember { SpaceCompassPlaceCache() }
-    var reading by remember(key) {
-        mutableStateOf(SpaceCompassEstimatedPlaceReading(key?.let { cache.get(it, SystemClock.elapsedRealtime())?.text }))
+    val repository = remember(context) { spaceCompassPlaceRepository(context) }
+    var reading by remember(key, repository) {
+        val known = key?.let(repository::cached)
+        mutableStateOf(SpaceCompassEstimatedPlaceReading(known,
+            loading = enabled && key != null && known == null && repository.needsLookup(key)))
     }
     var lastRequestElapsed by remember { mutableLongStateOf(-10_000L) }
-    LaunchedEffect(key, enabled, lifecycle) {
+    LaunchedEffect(key, enabled, lifecycle, repository) {
         if (key == null || !enabled) {
             reading = reading.copy(loading = false)
             return@LaunchedEffect
         }
         lifecycle.repeatOnLifecycle(Lifecycle.State.RESUMED) {
             while (true) {
-                val cached = cache.get(key, SystemClock.elapsedRealtime())
-                val entry = cached ?: run {
-                    reading = SpaceCompassEstimatedPlaceReading(loading = true)
-                    // Also throttle requests across rapidly changing location cells/languages.
+                if (repository.needsLookup(key)) {
+                    val known = repository.cached(key)
+                    reading = SpaceCompassEstimatedPlaceReading(known, loading = known == null)
                     val wait = lastRequestElapsed + 10_000L - SystemClock.elapsedRealtime()
                     if (wait > 0) delay(wait)
                     delay(250L)
                     lastRequestElapsed = SystemClock.elapsedRealtime()
-                    val result = try {
-                        lookupSpaceCompassEstimatedPlace(context, key)
-                    } catch (cancelled: CancellationException) {
-                        throw cancelled
-                    } catch (_: Exception) {
-                        null
-                    }
-                    cache.put(key, result, SystemClock.elapsedRealtime())
                 }
+                val entry = repository.resolve(key)
                 reading = SpaceCompassEstimatedPlaceReading(entry.text)
                 delay((entry.expiresElapsed - SystemClock.elapsedRealtime()).coerceAtLeast(1L))
             }

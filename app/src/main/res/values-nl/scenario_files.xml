@@ -1,0 +1,9 @@
+<resources>
+    <string name="scenario_export">Scenario exporteren</string>
+    <string name="scenario_import">Scenario importeren</string>
+    <string name="scenario_file_name">Scenarionaam</string>
+    <string name="scenario_file_saved">Scenario opgeslagen</string>
+    <string name="scenario_file_imported">Scenario geïmporteerd</string>
+    <string name="scenario_file_invalid">Ongeldig of niet-ondersteund scenariobestand</string>
+    <string name="scenario_file_error">Scenario kon niet worden opgeslagen of gedeeld</string>
+</resources>

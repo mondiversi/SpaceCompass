@@ -2,7 +2,7 @@
 <resources>
     <string name="scenario_speed">Temps</string>
     <string name="scenario_speed_description">Reculez ou avancez dans le temps jusqu’à 3600×. Le zéro au centre met le temps en pause.</string>
-    <string name="scenario_resume">Reprise du scénario personnalisé</string>
+    <string name="scenario_resume">Reprise du scénario</string>
     <string name="scenario_resume_description">Choisissez comment le temps simulé reprend à la réouverture de l’application. La vitesse choisie s’applique à chaque mode.</string>
     <string name="scenario_restart">Repartir du début</string>
     <string name="scenario_active">Seulement quand l’application est active</string>

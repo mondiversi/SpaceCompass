@@ -28,7 +28,7 @@ internal data class SpaceCompassCelestialMembership(
 )
 
 /** Names describe confirmed systems, not a conjectural parent for isolated objects. */
-internal fun spaceCompassCelestialMembership(body: SpaceCompassCelestialBody): SpaceCompassCelestialMembership = when (body) {
+internal fun spaceCompassCelestialMembership(body: SpaceCompassCelestialBody): SpaceCompassCelestialMembership = body.fictionalReference?.let { SpaceCompassCelestialMembership(systemDesignation = it.referenceName) } ?: when (body) {
     SpaceCompassCelestialBody.LARGE_MAGELLANIC_CLOUD -> SpaceCompassCelestialMembership(galaxy = SpaceCompassCelestialGalaxy.LMC)
     SpaceCompassCelestialBody.SMALL_MAGELLANIC_CLOUD -> SpaceCompassCelestialMembership(galaxy = SpaceCompassCelestialGalaxy.SMC)
     SpaceCompassCelestialBody.M51, SpaceCompassCelestialBody.M51_CORE -> SpaceCompassCelestialMembership(galaxy = SpaceCompassCelestialGalaxy.M51)
@@ -78,6 +78,7 @@ internal fun spaceCompassCelestialCoordinatesFromVector(x: Double, y: Double, z:
  * existing geocentric ephemerides, never the user's GPS or a stale remote extrapolation. */
 internal fun calculateSpaceCompassCelestialCoordinates(body: SpaceCompassCelestialBody, timeMs: Long,
     remote: SpaceCompassCelestialRemoteData): SpaceCompassCelestialCoordinates? {
+    body.fictionalReference?.hostBody?.let { return calculateSpaceCompassCelestialCoordinates(it, timeMs, remote) }
     if (body == SpaceCompassCelestialBody.SOUTHERN_CROSS) return spaceCompassSouthernCrossCoordinates
     body.deepSkyReference?.let { return SpaceCompassCelestialCoordinates(it.raHours, it.decDegrees,
         SpaceCompassCelestialCoordinateFrame.CATALOG_ICRS) }

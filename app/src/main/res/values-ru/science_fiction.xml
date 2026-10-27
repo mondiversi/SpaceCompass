@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="catalog_type_scifi">Научная фантастика</string>
+    <string name="scifi_type_planet">Вымышленная планета</string>
+    <string name="scifi_type_moon">Вымышленная луна</string>
+    <string name="scifi_type_giant">Вымышленный газовый гигант</string>
+    <string name="scifi_type_spacecraft">Вымышленный космический корабль</string>
+    <string name="scifi_universe">Вселенная</string>
+    <string name="scifi_reference">Ориентир направления</string>
+    <string name="scifi_model_note">Вымышленное изображение. Направление следует реальному ориентиру, а не измеренной орбите.</string>
+    <string name="scifi_credits">Оригинальные иллюстрации созданы с помощью ИИ. Названия и вымышленные миры принадлежат их авторам.</string>
+    <string name="scifi_name_arrakis">Арракис</string>
+    <string name="scifi_description_arrakis">Пустынный мир Дюны</string>
+    <string name="scifi_name_caladan">Каладан</string>
+    <string name="scifi_description_caladan">Океаническая родина дома Атрейдес</string>
+    <string name="scifi_name_giedi_prime">Гьеди Прайм</string>
+    <string name="scifi_description_giedi_prime">Промышленная родина дома Харконнен</string>
+    <string name="scifi_name_lv_223">LV-223</string>
+    <string name="scifi_description_lv_223">Каменистая луна и форпост Инженеров в Прометее</string>
+    <string name="scifi_name_calpamos">Калпамос</string>
+    <string name="scifi_description_calpamos">Газовый гигант своей вымышленной вселенной</string>
+    <string name="scifi_name_pandora">Пандора</string>
+    <string name="scifi_description_pandora">Лесная луна из Аватара</string>
+    <string name="scifi_name_polyphemus">Полифем</string>
+    <string name="scifi_description_polyphemus">Газовый гигант своей вымышленной вселенной</string>
+    <string name="scifi_name_vulcan">Вулкан</string>
+    <string name="scifi_description_vulcan">Засушливая родина вулканцев</string>
+    <string name="scifi_name_nostromo">Ностромо</string>
+    <string name="scifi_description_nostromo">Коммерческий буксир из Чужого; ориентир у луны из сюжета</string>
+    <string name="scifi_name_discovery_one">Дискавери</string>
+    <string name="scifi_description_discovery_one">Исследовательский корабль из фильма 2001; Юпитер — его сюжетная цель</string>
+    <string name="scifi_reference_note">Вымышленный объект. Направление и примерное расстояние следуют указанному реальному ориентиру, а не измеренной орбите. Физические свойства не выводятся; изображение является иллюстрацией.</string>
+    <string name="catalog_type_spacecraft">Космические корабли</string>
+    <string name="scifi_estimated_distance">Оценка расстояния до ориентира</string>
+    <string name="scifi_distance_reference_note">Оценка по %1$s, а не измеренное расстояние до этого объекта.</string>
+</resources>

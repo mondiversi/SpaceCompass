@@ -13,27 +13,26 @@ import androidx.compose.ui.res.painterResource
 import kotlin.math.round
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.graphics.luminance
 import androidx.compose.ui.platform.testTag
 import androidx.compose.ui.res.stringResource
-import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.compose.ui.Alignment
 import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.verticalScroll
 import androidx.compose.foundation.background
+import androidx.compose.foundation.clickable
+import androidx.compose.foundation.interaction.MutableInteractionSource
 import androidx.compose.foundation.Canvas
-import androidx.compose.foundation.border
 import androidx.compose.foundation.gestures.detectTapGestures
-import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.ui.input.pointer.pointerInput
+import androidx.compose.ui.input.nestedscroll.nestedScroll
+import androidx.compose.ui.focus.onFocusChanged
 import androidx.compose.ui.semantics.contentDescription
-import androidx.compose.ui.semantics.Role
 import androidx.compose.ui.semantics.clearAndSetSemantics
-import androidx.compose.ui.semantics.role
 import androidx.compose.ui.semantics.semantics
 import androidx.compose.ui.semantics.stateDescription
-import androidx.compose.ui.semantics.toggleableState
 import androidx.compose.ui.state.ToggleableState
 import androidx.compose.ui.platform.LocalDensity
 import androidx.compose.ui.platform.LocalWindowInfo
@@ -43,6 +42,7 @@ import androidx.compose.ui.graphics.StrokeCap
 import androidx.compose.ui.graphics.drawscope.Stroke
 import androidx.compose.ui.graphics.drawscope.rotate
 import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
 
 @Composable
@@ -57,9 +57,6 @@ internal fun SpaceCompassCelestialCatalogPage(timeMs: Long, remote: SpaceCompass
     var catalogPreferences by remember(preferences) { mutableStateOf(readSpaceCompassCatalogPreferences(preferences)) }
     val sort = catalogPreferences.sort
     val valueField = sort.valueField
-    val infoButtonWidth = 32.dp
-    val infoGap = 2.dp
-    val infoColumnWidth = infoButtonWidth + infoGap
     val types = catalogPreferences.types
     val visibility = catalogPreferences.visibility
     fun updateCatalogPreferences(updated: SpaceCompassCatalogPreferences) {
@@ -76,7 +73,14 @@ internal fun SpaceCompassCelestialCatalogPage(timeMs: Long, remote: SpaceCompass
     var filtersOpen by rememberSaveable { mutableStateOf(false) }
     var query by rememberSaveable { mutableStateOf("") }
     val catalogScroll = rememberLazyListState()
-    LaunchedEffect(sort, types, visibility, query) { catalogScroll.scrollToItem(0) }
+    var searchFocused by remember { mutableStateOf(false) }
+    val quickHeader = rememberSpaceCompassQuickReturnHeader(pinned = searchFocused)
+    val catalogScope = rememberCoroutineScope()
+    val titleAction = Modifier.testTag("catalog-title").clickable(
+        interactionSource = remember { MutableInteractionSource() }, indication = null,
+        onClickLabel = stringResource(R.string.catalog_scroll_to_top)
+    ) { quickHeader.show(); catalogScope.launch { catalogScroll.animateScrollToItem(0) } }
+    LaunchedEffect(sort, types, visibility, query) { quickHeader.show(); catalogScroll.scrollToItem(0) }
     val handleBack = { if (filtersOpen) filtersOpen = false else onBack() }
     androidx.activity.compose.BackHandler(onBack = handleBack)
     val stringResourceForSelection = stringResource(R.string.select_all)
@@ -96,6 +100,8 @@ internal fun SpaceCompassCelestialCatalogPage(timeMs: Long, remote: SpaceCompass
     var calculating by remember { mutableStateOf(true) }
     var calculatedRefreshRevision by remember { mutableIntStateOf(-1) }
     val context = androidx.compose.ui.platform.LocalContext.current
+    val keyboard = androidx.compose.ui.platform.LocalSoftwareKeyboardController.current
+    val focusManager = androidx.compose.ui.platform.LocalFocusManager.current
     val refreshNotice = remember { SpaceCompassCatalogRefreshNotice() }
     LaunchedEffect(refreshRevision, remote.completedCatalogRefreshRevision, remote.refreshing, calculating, calculatedRefreshRevision) {
         if (refreshNotice.consumeIfReady(remote.completedCatalogRefreshRevision, remote.refreshing,
@@ -133,14 +139,14 @@ internal fun SpaceCompassCelestialCatalogPage(timeMs: Long, remote: SpaceCompass
                             if (catalogLatitude == null || catalogLongitude == null) null else
                                 calculateSpaceCompassCelestialObservation(body, catalogTime, catalogLatitude, catalogLongitude, catalogAltitude, catalogRemote)?.distanceKm
                         body.isEarthSatellite || body == SpaceCompassCelestialBody.MOON -> spaceCompassNearbyCatalogDistanceKm(body, catalogTime, catalogRemote)
-                        else -> spaceCompassCelestialCatalogDistanceAu(body, catalogTime, catalogRemote)
+                        else -> spaceCompassCatalogDisplaySolarDistanceAu(body, catalogTime, catalogRemote)
                     }
                 }.getOrNull() }
                 val solar = availableBodies.associateWith { body ->
-                    runCatching { spaceCompassCelestialCatalogDistanceAu(body, catalogTime, catalogRemote) }.getOrNull()
+                    runCatching { spaceCompassCatalogDisplaySolarDistanceAu(body, catalogTime, catalogRemote) }.getOrNull()
                 }
                 val earth = availableBodies.associateWith { body ->
-                    runCatching { spaceCompassCelestialCatalogEarthDistanceKm(body, catalogTime, catalogRemote) }.getOrNull()
+                    runCatching { spaceCompassCatalogDisplayEarthDistanceKm(body, catalogTime, catalogRemote) }.getOrNull()
                 }
                 Triple(ranges, solar, earth)
             }
@@ -171,15 +177,18 @@ internal fun SpaceCompassCelestialCatalogPage(timeMs: Long, remote: SpaceCompass
         checkedCount == visibleBodies.size -> ToggleableState.On
         else -> ToggleableState.Indeterminate
     }
-    Surface(Modifier.fillMaxSize().testTag("celestial-menu"), color = background, contentColor = color) {
+    val listBackground = spaceCompassSurfacePalette(background.luminance() < .4f).island
+    Surface(Modifier.fillMaxSize().testTag("celestial-menu"), color = listBackground, contentColor = color) {
         Column(Modifier.fillMaxSize()) {
             SpaceCompassPageToolbar(stringResource(R.string.pc_celestial_object, catalogCount), handleBack,
-                titleColor = color, titleModifier = Modifier.testTag("catalog-title")) {
+                modifier = Modifier.background(spaceCompassPageBackground()),
+                titleColor = color, titleModifier = titleAction) {
                 SpaceCompassCatalogSortButton(sort, color) {
                     updateCatalogPreferences(catalogPreferences.copy(sort = it))
                 }
                 SpaceCompassTitleActionButton(stringResource(R.string.catalog_filters),
-                    onClick = { filtersOpen = !filtersOpen }, modifier = Modifier.testTag("catalog-filter-toggle"),
+                    onClick = { filtersOpen = !filtersOpen || !quickHeader.visible; quickHeader.show() },
+                    modifier = Modifier.testTag("catalog-filter-toggle"),
                     iconColor = if (types.isNotEmpty() || visibility != SpaceCompassCatalogVisibility.ALL || query.isNotBlank())
                         MaterialTheme.colorScheme.primary else color) {
                     Icon(painterResource(R.drawable.ic_filter), contentDescription = null)
@@ -193,6 +202,7 @@ internal fun SpaceCompassCelestialCatalogPage(timeMs: Long, remote: SpaceCompass
                     else Icon(painterResource(R.drawable.ic_refresh), contentDescription = null)
                 }
             }
+            SpaceCompassQuickReturnHeader(quickHeader, Modifier.testTag("catalog-quick-return-header")) {
             AnimatedVisibility(filtersOpen, enter = expandVertically() + fadeIn(), exit = shrinkVertically() + fadeOut()) {
                 SpaceCompassCatalogFilterBar(types, visibility, visibleCount = visibleBodies.size, searchActive = query.isNotBlank(),
                     availableBodies = availableBodies,
@@ -203,79 +213,52 @@ internal fun SpaceCompassCelestialCatalogPage(timeMs: Long, remote: SpaceCompass
                     onReset = { query = ""; updateCatalogPreferences(catalogPreferences.copy(
                         types = emptySet(), visibility = SpaceCompassCatalogVisibility.ALL)) })
             }
-            LazyColumn(Modifier.fillMaxWidth().weight(1f)
-                .clipToBounds().lazyScrollbarOverlay(catalogScroll, color.copy(alpha = .58f))
-                .padding(end = 8.dp).testTag("celestial-catalog-scroll"), state = catalogScroll) {
-            item(key = "catalog-header") {
-                BoxWithConstraints(Modifier.fillMaxWidth().padding(start = 12.dp, top = 4.dp, bottom = 4.dp)) {
-                    // Enlarge the previous equal-column field itself, excluding its unchanged outer spacing.
-                    val previousSearchWidth = ((maxWidth - 24.dp) / 2 - 20.dp).coerceAtLeast(0.dp)
-                    // Leave a readable value heading beside the new info column on narrow phones.
-                    val searchWidth = (previousSearchWidth * 1.30f + 20.dp)
-                        .coerceAtMost((maxWidth - 24.dp - infoColumnWidth - 64.dp).coerceAtLeast(100.dp))
-                    Row(Modifier.fillMaxWidth(), verticalAlignment = Alignment.CenterVertically) {
-                        Box(Modifier.width(24.dp).height(48.dp), contentAlignment = Alignment.Center) {
-                            TriStateCheckbox(checkedState, onClick = { onToggleAll(visibleBodies.toSet()) },
-                                enabled = visibleBodies.isNotEmpty(), colors = spaceCompassCheckboxColors(),
-                                modifier = Modifier.requiredSize(48.dp).testTag("celestial-select-all").semantics {
-                                    contentDescription = stringResourceForSelection
-                                })
-                        }
-                        SpaceCompassCatalogSearchField(query, { query = it },
-                            Modifier.width(searchWidth).padding(start = 12.dp, end = 8.dp))
-                        Text(stringResource(valueField.label), Modifier.weight(1f).testTag("catalog-value-header"),
-                            color = color.copy(alpha = 0.65f), fontSize = 11.sp, lineHeight = 14.sp,
-                            textAlign = androidx.compose.ui.text.style.TextAlign.End)
-                        Spacer(Modifier.width(infoColumnWidth))
+            BoxWithConstraints(Modifier.fillMaxWidth().padding(end = 16.dp).testTag("catalog-fixed-header").padding(start = 12.dp, top = 4.dp, bottom = 4.dp)) {
+                // Enlarge the previous equal-column field itself, excluding its unchanged outer spacing.
+                val previousSearchWidth = ((maxWidth - 24.dp) / 2 - 20.dp).coerceAtLeast(0.dp)
+                // Leave a readable value heading beside the search field on narrow phones.
+                val searchWidth = (previousSearchWidth * 1.30f + 20.dp)
+                    .coerceAtMost((maxWidth - 24.dp - 64.dp).coerceAtLeast(100.dp))
+                Row(Modifier.fillMaxWidth(), verticalAlignment = Alignment.CenterVertically) {
+                    Box(Modifier.width(24.dp).height(48.dp), contentAlignment = Alignment.Center) {
+                        TriStateCheckbox(checkedState, onClick = { onToggleAll(visibleBodies.toSet()) },
+                            enabled = visibleBodies.isNotEmpty(), colors = spaceCompassCheckboxColors(),
+                            modifier = Modifier.requiredSize(48.dp).testTag("celestial-select-all").semantics {
+                                contentDescription = stringResourceForSelection
+                            })
                     }
+                    SpaceCompassCatalogSearchField(query, { query = it },
+                        Modifier.width(searchWidth).padding(start = 12.dp, end = 8.dp)
+                            .onFocusChanged { searchFocused = it.hasFocus })
+                    Text(stringResource(valueField.label), Modifier.weight(1f).testTag("catalog-value-header"),
+                        color = color.copy(alpha = 0.65f), fontSize = 11.sp, lineHeight = 14.sp,
+                        textAlign = androidx.compose.ui.text.style.TextAlign.End)
                 }
             }
+            }
+            LazyColumn(Modifier.fillMaxWidth().weight(1f).nestedScroll(quickHeader.connection)
+                .clipToBounds().lazyScrollbarOverlay(catalogScroll, color.copy(alpha = .58f))
+                .testTag("celestial-catalog-scroll"), state = catalogScroll) {
             if (visibleBodies.isEmpty()) item(key = "catalog-empty") {
                 Text(stringResource(R.string.catalog_no_results), Modifier.fillMaxWidth().padding(16.dp),
                     color = color.copy(alpha = .65f), fontSize = 14.sp)
             }
             items(visibleBodies, key = { it.name }) { candidate ->
-                DropdownMenuItem(text = { Text(stringResource(if (candidate == SpaceCompassCelestialBody.ANDROMEDA_CORE)
-                    R.string.celestial_andromeda_short else candidate.nameResource), color = color, fontSize = 14.sp,
-                    softWrap = true, lineHeight = 16.sp,
-                    fontWeight = if (candidate in selectedBodies) FontWeight.Bold else FontWeight.Normal) },
-                    onClick = { onSelect(candidate) },
-                    // The list already reserves its scrollbar inset at the trailing edge.
-                    contentPadding = PaddingValues(start = 12.dp),
-                    leadingIcon = { Row(verticalAlignment = Alignment.CenterVertically,
-                        horizontalArrangement = Arrangement.spacedBy(8.dp)) {
-                        Checkbox(candidate in selectedBodies, onCheckedChange = null, colors = spaceCompassCheckboxColors())
-                        SpaceCompassCelestialThumbnail(candidate, Modifier.size(24.dp).then(
-                        if (candidate in selectedBodies)
-                            Modifier.border(2.dp, spaceCompassCelestialPathTint(candidate), CircleShape) else Modifier))
-                    } },
-                    modifier = Modifier.testTag("celestial-body-${candidate.name}").semantics(mergeDescendants = true) {
-                        role = Role.Checkbox
-                        toggleableState = if (candidate in selectedBodies) ToggleableState.On else ToggleableState.Off
-                    },
-                    trailingIcon = { Row(verticalAlignment = Alignment.CenterVertically,
-                        horizontalArrangement = Arrangement.spacedBy(infoGap)) {
-                        Text(if (valueField == SpaceCompassCatalogSortField.EARTH_DISTANCE)
-                            formatSpaceCompassCelestialCatalogEarthDistance(candidate, earthDistances[candidate], numeric, distanceUnit, units.feet)
-                            else if (valueField != SpaceCompassCatalogSortField.DISTANCE)
-                            formatSpaceCompassCatalogPhysicalValue(candidate, valueField, numeric, units, referenceLabel)
-                            else if (sort.field == SpaceCompassCatalogSortField.DISTANCE)
-                            formatSpaceCompassCelestialCatalogDistance(readySolarDistances[candidate], numeric, distanceUnit)
-                            else if (readyDistances[candidate] == null && spaceCompassCelestialDataOutsideDate(candidate, catalogTime, catalogRemote))
-                            stringResource(R.string.catalog_date_unavailable)
-                            else if (candidate.isEarthSatellite || candidate == SpaceCompassCelestialBody.MOON || candidate == SpaceCompassCelestialBody.EARTH_CENTER)
-                            (formatSpaceCompassSelectedDistance(candidate, readyDistances[candidate], numeric, distanceUnit, units.feet) ?: "—") + "\n" + (if (candidate == SpaceCompassCelestialBody.EARTH_CENTER) "GPS" else stringResource(R.string.celestial_view_earth))
-                            else formatSpaceCompassCelestialCatalogDistance(readyDistances[candidate], numeric, distanceUnit),
-                            modifier = Modifier.widthIn(max = 144.dp).testTag("catalog-value-${candidate.name}"), textAlign = androidx.compose.ui.text.style.TextAlign.End,
-                            color = color.copy(alpha = 0.60f), fontSize = 11.sp, lineHeight = 14.sp)
-                        SpaceCompassAccessibleIconButton(
-                            contentDescription = stringResource(R.string.celestial_details_title) + " · " +
-                                stringResource(candidate.nameResource),
-                            onClick = { onObserve(candidate) }, pressedColor = color, pressedVisualSize = 28.dp,
-                            modifier = Modifier.width(infoButtonWidth).height(48.dp).testTag("catalog-observe-${candidate.name}")) {
-                            SpaceCompassSettingsMenuIcon("info", color, Modifier.size(18.dp))
-                        }
-                    } })
+                val value = if (valueField == SpaceCompassCatalogSortField.EARTH_DISTANCE)
+                    formatSpaceCompassCelestialCatalogEarthDistance(candidate, earthDistances[candidate], numeric, distanceUnit, units.feet)
+                    else if (valueField != SpaceCompassCatalogSortField.DISTANCE)
+                    formatSpaceCompassCatalogPhysicalValue(candidate, valueField, numeric, units, referenceLabel)
+                    else if (sort.field == SpaceCompassCatalogSortField.DISTANCE)
+                    formatSpaceCompassCatalogDisplayDistance(candidate, readySolarDistances[candidate], numeric, distanceUnit)
+                    else if (readyDistances[candidate] == null && spaceCompassCelestialDataOutsideDate(candidate, catalogTime, catalogRemote))
+                    stringResource(R.string.catalog_date_unavailable)
+                    else if (candidate.isEarthSatellite || candidate == SpaceCompassCelestialBody.MOON || candidate == SpaceCompassCelestialBody.EARTH_CENTER)
+                    (formatSpaceCompassSelectedDistance(candidate, readyDistances[candidate], numeric, distanceUnit, units.feet) ?: "—") + "\n" + (if (candidate == SpaceCompassCelestialBody.EARTH_CENTER) "GPS" else stringResource(R.string.celestial_view_earth))
+                    else formatSpaceCompassCatalogDisplayDistance(candidate, readyDistances[candidate], numeric, distanceUnit)
+                SpaceCompassCatalogObjectRow(candidate, localizedNames.getValue(candidate),
+                    checked = candidate in selectedBodies, value = value, color = color,
+                    onToggle = { onSelect(candidate) },
+                    onObserve = { focusManager.clearFocus(force = true); keyboard?.hide(); onObserve(candidate) })
             }
             }
         }

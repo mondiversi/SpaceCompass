@@ -200,7 +200,8 @@ internal fun Modifier.scrollbarOverlay(
     state: ScrollState,
     color: Color,
     trackTopInset: Dp = 0.dp,
-    trackBottomInset: Dp = 0.dp
+    trackBottomInset: Dp = 0.dp,
+    touchTargetWidth: Dp = 16.dp
 ): Modifier =
     drawWithContent {
         drawContent()
@@ -256,9 +257,9 @@ internal fun Modifier.scrollbarOverlay(
                 )
         )
     }
-        .pointerInput(state, trackTopInset, trackBottomInset) {
+        .pointerInput(state, trackTopInset, trackBottomInset, touchTargetWidth) {
             val touchWidth =
-                16.dp.toPx()
+                touchTargetWidth.toPx().coerceAtLeast(5.dp.toPx())
 
             coroutineScope {
                 var scrollJob: Job? =

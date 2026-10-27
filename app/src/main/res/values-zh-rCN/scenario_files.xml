@@ -1,0 +1,9 @@
+<resources>
+    <string name="scenario_export">导出场景</string>
+    <string name="scenario_import">导入场景</string>
+    <string name="scenario_file_name">场景名称</string>
+    <string name="scenario_file_saved">场景已保存</string>
+    <string name="scenario_file_imported">场景已导入</string>
+    <string name="scenario_file_invalid">场景文件无效或不受支持</string>
+    <string name="scenario_file_error">无法保存或分享场景</string>
+</resources>

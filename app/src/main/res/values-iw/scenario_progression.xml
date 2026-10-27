@@ -2,7 +2,7 @@
 <resources>
     <string name="scenario_speed">זמן</string>
     <string name="scenario_speed_description">הזיזו את זמן התרחיש אחורה או קדימה עד 3600×. האפס במרכז עוצר את הזמן.</string>
-    <string name="scenario_resume">חידוש התרחיש המותאם אישית</string>
+    <string name="scenario_resume">חידוש התרחיש</string>
     <string name="scenario_resume_description">בחרו כיצד הזמן המדומה יתחדש בפתיחת היישום מחדש. המהירות שנבחרה חלה בכל המצבים.</string>
     <string name="scenario_restart">התחלה מחדש</string>
     <string name="scenario_active">רק כשהיישום פעיל</string>

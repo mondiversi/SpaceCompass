@@ -2,7 +2,7 @@
 <resources>
     <string name="scenario_speed">الزمن</string>
     <string name="scenario_speed_description">حرّك زمن السيناريو إلى الخلف أو الأمام حتى 3600×. الصفر في المنتصف يوقف الزمن.</string>
-    <string name="scenario_resume">استئناف السيناريو المخصص</string>
+    <string name="scenario_resume">استئناف السيناريو</string>
     <string name="scenario_resume_description">اختر كيفية استئناف الزمن المحاكى عند إعادة فتح التطبيق. تُطبَّق السرعة المحددة في جميع الأوضاع.</string>
     <string name="scenario_restart">البدء من البداية</string>
     <string name="scenario_active">فقط عندما يكون التطبيق نشطًا</string>

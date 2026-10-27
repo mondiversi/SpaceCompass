@@ -28,7 +28,9 @@ internal fun SpaceCompassAppPages(content: @Composable () -> Unit) {
     var route by rememberSaveable { mutableStateOf<String?>(null) }
     val holder = rememberSaveableStateHolder()
     val observer = rememberSpaceCompassObserverState()
+    val settingsConfirmation = rememberSpaceCompassSettingsExitNotice(route)
     CompositionLocalProvider(LocalSpaceCompassNavigate provides { route = it },
+        LocalSpaceCompassSettingsExitFailure provides settingsConfirmation::rejectExit,
         LocalSpaceCompassObserver provides observer, LocalSpaceCompassMainVisible provides (route == null && !screensaverActive)) {
         SpaceCompassDropdownDimmingHost {
             // Keep remember/effects/caches alive. An unplaced layer has no drawing,

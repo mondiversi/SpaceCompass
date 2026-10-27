@@ -9,7 +9,8 @@ class SpaceCompassCatalogMenuOrderTest {
         val available = spaceCompassAvailableCelestialCatalog(setOf(SpaceCompassCelestialBody.MOON))
         val choices = spaceCompassCatalogTypeCounts(available, emptyMap(), Locale.ROOT)
         assertEquals(SpaceCompassCatalogType.entries.toSet(), choices.map { it.type }.toSet())
-        assertEquals(available.size, choices.sumOf { it.count })
+        assertEquals(available.sumOf { it.catalogFilterTypes.size }, choices.sumOf { it.count })
+        assertEquals(available.size, spaceCompassCatalogTypeMatchCount(available, emptySet()))
         assertTrue(choices.zipWithNext().all { (a, b) -> a.count >= b.count })
         val stars = choices.single { it.type == SpaceCompassCatalogType.STAR }
         assertEquals(available.count { it.catalogType == SpaceCompassCatalogType.STAR }, stars.count)

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="travel_title">Czas podróży</string>
+    <string name="travel_description">Szacunek przy stałej prędkości i obecnej odległości, w układzie odniesienia obserwatora.</string>
+    <string name="travel_speed">Prędkość</string>
+    <string name="travel_duration">Szacowany czas</string>
+    <string name="travel_distance_unavailable">Odległość niedostępna: nie można obliczyć czasu podróży.</string>
+    <string name="travel_walking">Pieszo</string>
+    <string name="travel_bicycle">Rower</string>
+    <string name="travel_car">Samochód</string>
+    <string name="travel_aircraft">Samolot</string>
+    <string name="travel_rocket">Rakieta</string>
+    <string name="travel_probe">Szybka sonda</string>
+    <string name="travel_light">Prędkość światła</string>
+    <string name="travel_warp">Warp %1$s</string>
+    <string name="travel_warp_note">Warp to fikcyjna skala porównawcza, a nie fizycznie osiągalna prędkość.</string>
+</resources>

@@ -33,8 +33,8 @@ internal fun SpaceCompassPositionDetails(hasWeather: Boolean, weatherRow: SpaceC
     val zoomOut = stringResource(R.string.celestial_view_zoom_out)
     val data = SpaceCompassPositionDetailsData(rows + weatherRow, listOf(
         stringResource(R.string.celestial_environment_orientation_note),
-        stringResource(if (LocalSpaceCompassObserver.current?.plan != null) R.string.observer_limits else R.string.sun_finder_terrain_note),
-        stringResource(if (LocalSpaceCompassObserver.current?.plan != null) R.string.observer_privacy else R.string.sun_weather_privacy)), hasWeather)
+        stringResource(R.string.sun_finder_terrain_note),
+        stringResource(R.string.sun_weather_privacy)), hasWeather)
     val close by rememberUpdatedState(onBack)
     val currentUrl = spaceCompassPositionMapUrl(latitude, longitude)
     var dialog by remember { mutableStateOf<SpaceCompassNativePositionMap?>(null) }

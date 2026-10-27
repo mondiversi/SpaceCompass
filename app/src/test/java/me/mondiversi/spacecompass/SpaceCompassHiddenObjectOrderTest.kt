@@ -28,21 +28,21 @@ class SpaceCompassHiddenObjectOrderTest {
         assertEquals(hidden, restored.step(-1).active)
     }
 
-    @Test fun revealedDistanceExistsBeforeRefreshAndMatchesTheOfflineCatalogReference() {
+    @Test fun fictionalDirectionDoesNotBecomeAnUnqualifiedMeasuredDistance() {
         val now = Instant.parse("2026-10-06T12:00:00Z").toEpochMilli()
-        val reference = spaceCompassCelestialCatalogReferenceDistanceAu(hidden)!!
-        assertEquals(39.3, reference * SPACE_COMPASS_AU_KM / SPACE_COMPASS_LIGHT_YEAR_KM, 1e-9)
-        assertEquals(reference, spaceCompassCelestialCatalogDistanceAu(hidden, now)!!, 0.0)
-        assertEquals(reference, spaceCompassCatalogDistancesWithReferences(emptyMap(), listOf(hidden))[hidden]!!, 0.0)
-        assertEquals(reference, spaceCompassCatalogDistancesWithReferences(mapOf(hidden to null), listOf(hidden))[hidden]!!, 0.0)
+        assertFalse(hidden.deepSkyReference!!.hasMeasuredDistance)
+        assertNull(spaceCompassCelestialCatalogReferenceDistanceAu(hidden))
+        assertNull(spaceCompassCelestialCatalogDistanceAu(hidden, now))
+        assertNull(spaceCompassCatalogDistancesWithReferences(emptyMap(), listOf(hidden))[hidden])
+        assertNull(spaceCompassCatalogDistancesWithReferences(mapOf(hidden to null), listOf(hidden))[hidden])
     }
 
     @Test fun explicitDistanceOrdersIntegrateTheRevealImmediatelyInBothDirections() {
         val bodies = listOf(trappist, hidden, alpha)
         val ready = spaceCompassCatalogDistancesWithReferences(emptyMap(), bodies)
-        assertEquals(listOf(alpha, hidden, trappist),
+        assertEquals(listOf(alpha, trappist, hidden),
             spaceCompassSortCatalog(bodies, SpaceCompassCatalogSort.DISTANCE_ASC, emptyMap(), ready, Locale.ROOT))
-        assertEquals(listOf(trappist, hidden, alpha),
+        assertEquals(listOf(trappist, alpha, hidden),
             spaceCompassSortCatalog(bodies, SpaceCompassCatalogSort.DISTANCE_DESC, emptyMap(), ready, Locale.ROOT))
     }
 
@@ -52,15 +52,17 @@ class SpaceCompassHiddenObjectOrderTest {
         val values = spaceCompassCatalogDistancesWithReferences(mapOf(moon to 375000.0), listOf(moon, voyager, hidden))
         assertEquals(375000.0, values[moon]!!, 0.0)
         assertNull(values[voyager])
-        assertNotNull(values[hidden])
+        assertNull(values[hidden])
         assertNull(spaceCompassCelestialCatalogReferenceDistanceAu(moon))
     }
 
     @Test fun completedValuesArePreservedAndInvalidDistantReferencesCanRecoverOffline() {
         val current = spaceCompassCelestialCatalogReferenceDistanceAu(alpha)!!
-        val values = spaceCompassCatalogDistancesWithReferences(mapOf(alpha to current, hidden to Double.NaN), listOf(alpha, hidden))
+        val sirius = SpaceCompassCelestialBody.SIRIUS
+        val values = spaceCompassCatalogDistancesWithReferences(mapOf(alpha to current, hidden to Double.NaN, sirius to Double.NaN), listOf(alpha, hidden, sirius))
         assertEquals(current, values[alpha]!!, 0.0)
-        assertEquals(spaceCompassCelestialCatalogReferenceDistanceAu(hidden)!!, values[hidden]!!, 0.0)
-        assertEquals(999, spaceCompassAvailableCelestialCatalog(emptySet()).size)
+        assertNull(values[hidden])
+        assertEquals(spaceCompassCelestialCatalogReferenceDistanceAu(sirius)!!, values[sirius]!!, 0.0)
+        assertEquals(1009, spaceCompassAvailableCelestialCatalog(emptySet()).size)
     }
 }

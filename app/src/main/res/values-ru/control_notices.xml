@@ -10,8 +10,8 @@
     <string name="panorama_labels_off">Подписи скрыты</string>
     <string name="control_choice_message">%1$s: %2$s</string>
 
-    <string name="scene_scenario_on">Пользовательский сценарий включён</string>
-    <string name="scene_scenario_off">Пользовательский сценарий выключен</string>
+    <string name="scene_scenario_on">Сценарий включён</string>
+    <string name="scene_scenario_off">Сценарий выключен</string>
     <string name="scene_objects_on">Объекты включены</string>
     <string name="scene_objects_off">Объекты выключены</string>
 </resources>

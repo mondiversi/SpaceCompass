@@ -1,9 +1,9 @@
 <resources>
     <string name="info_news_title">Neuigkeiten · %1$s</string>
-    <string name="info_news_star_sky" formatted="false">Entdecke 999 Objekte, alle 88 Sternbilder und das frei verfügbare LV-426 mit verbesserter Verfolgung und wissenschaftlichen Quellen.</string>
-    <string name="info_news_texture_downloads" formatted="false">Neues Grafikpaket 1.6: 174 Bilder und 174 separate Vorschaubilder, einzeln heruntergeladen und offline gespeichert.</string>
-    <string name="info_news_weather" formatted="false">Klarere Infos, überarbeitete Aufnahme- und Panoramasymbole sowie kontrastreichere Schaltflächen für Observatorium und Tagesbahn im Nachtmodus.</string>
-    <string name="info_news_viewer_zoom" formatted="false">Typen nach Objektanzahl, alphabetische Sortieroptionen und übersichtlichere Objektsteuerung.</string>
-    <string name="info_news_settings" formatted="false">Stabilere Referenzbeschriftungen und Nadir bei −90°, gegenüber dem Zenit.</string>
-    <string name="info_news_catalog" formatted="false">Verbesserte Mondbewegung, Annäherungen ausgewählter Objekte und eindeutiger Wetter-Ladestatus.</string>
+    <string name="info_news_star_sky" formatted="false">Entdecke 1009 Objekte mit einem Science-Fiction-Filter und klar gekennzeichneten illustrativen Himmelsreferenzen.</string>
+    <string name="info_news_texture_downloads" formatted="false">Grafikpaket 1.7 ergänzt zehn Bilder und zehn unabhängige Vorschaubilder, einzeln heruntergeladen, geprüft und offline gespeichert.</string>
+    <string name="info_news_weather" formatted="false">Vergleiche geschätzte Reisezeiten von alltäglichen Geschwindigkeiten bis zu Lichtgeschwindigkeit und fiktivem Warp mit kompakten Zeiteinheiten.</string>
+    <string name="info_news_viewer_zoom" formatted="false">Speichere, teile und importiere benannte Szenarien einschließlich der gewählten Zeitfortsetzung.</string>
+    <string name="info_news_settings" formatted="false">Übersichtlichere Szenariozusammenfassung mit automatischer Höhe, Zeitzone und Wetter, gespeicherten Ortsnamen und überarbeiteten Symbolen.</string>
+    <string name="info_news_catalog" formatted="false">Die Einstellungsbestätigung erscheint beim Verlassen einer geänderten Einstellungsseite. Verbesserte Objektsteuerung, Zähler, Farben und Hinweisfelder.</string>
 </resources>

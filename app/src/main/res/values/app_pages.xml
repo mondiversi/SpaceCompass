@@ -3,7 +3,7 @@
     <string name="pc_info">Info and credits</string>
     <string name="pc_display_automatic">Automatic scaling</string>
     <string name="pc_info_description">An astronomical compass to find celestial objects, explore their paths and view models and lunar phases.</string>
-    <string name="pc_info_earth">Designed for use on Earth: the app uses gravity and Earth’s magnetic field for orientation; GPS provides location. These references do not guarantee reliable orientation in space with an ordinary smartphone. With more advanced space technology and sensors, perhaps one day we will find our way up there too 🙂</string>
+    <string name="pc_info_earth">For now, we’re staying on Earth: space calls for more advanced smartphone sensors. Maybe one day 🙂</string>
     <string name="pc_info_compass">Compass accuracy</string>
     <string name="pc_info_accuracy">Reduced accuracy means the phone reports low magnetic calibration. Pointing remains approximate until sensor accuracy improves.</string>
     <string name="pc_info_credits">Credits and licenses</string>

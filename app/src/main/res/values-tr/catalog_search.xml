@@ -2,4 +2,5 @@
 <resources>
     <string name="catalog_search">Ara</string>
     <string name="catalog_search_clear">Aramayı temizle</string>
+    <string name="catalog_scroll_to_top">Listenin başına dön</string>
 </resources>

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="travel_title">Reistijd</string>
+    <string name="travel_description">Schatting bij constante snelheid en de huidige afstand, in het referentiestelsel van de waarnemer.</string>
+    <string name="travel_speed">Snelheid</string>
+    <string name="travel_duration">Geschatte tijd</string>
+    <string name="travel_distance_unavailable">Afstand niet beschikbaar: de reistijd kan niet worden berekend.</string>
+    <string name="travel_walking">Lopend</string>
+    <string name="travel_bicycle">Fiets</string>
+    <string name="travel_car">Auto</string>
+    <string name="travel_aircraft">Vliegtuig</string>
+    <string name="travel_rocket">Raket</string>
+    <string name="travel_probe">Snelle sonde</string>
+    <string name="travel_light">Lichtsnelheid</string>
+    <string name="travel_warp">Warp %1$s</string>
+    <string name="travel_warp_note">Warp is een fictieve vergelijkingsschaal, geen fysiek haalbare snelheid.</string>
+</resources>

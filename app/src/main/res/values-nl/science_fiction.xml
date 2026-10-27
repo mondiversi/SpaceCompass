@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="catalog_type_scifi">Sciencefiction</string>
+    <string name="scifi_type_planet">Fictieve planeet</string>
+    <string name="scifi_type_moon">Fictieve maan</string>
+    <string name="scifi_type_giant">Fictieve gasreus</string>
+    <string name="scifi_type_spacecraft">Fictief ruimteschip</string>
+    <string name="scifi_universe">Verhaalwereld</string>
+    <string name="scifi_reference">Richtingsreferentie</string>
+    <string name="scifi_model_note">Fictieve weergave. De richting volgt de echte referentie, niet een gemeten baan.</string>
+    <string name="scifi_credits">Originele illustraties gemaakt met AI-ondersteuning. Namen en fictieve werelden behoren toe aan hun respectieve makers.</string>
+    <string name="scifi_name_arrakis">Arrakis</string>
+    <string name="scifi_description_arrakis">Woestijnwereld uit Dune</string>
+    <string name="scifi_name_caladan">Caladan</string>
+    <string name="scifi_description_caladan">Oceanische thuiswereld van Huis Atreides</string>
+    <string name="scifi_name_giedi_prime">Giedi Prime</string>
+    <string name="scifi_description_giedi_prime">Industriële thuiswereld van Huis Harkonnen</string>
+    <string name="scifi_name_lv_223">LV-223</string>
+    <string name="scifi_description_lv_223">Rotsmaan en buitenpost van de Ingenieurs in Prometheus</string>
+    <string name="scifi_name_calpamos">Calpamos</string>
+    <string name="scifi_description_calpamos">Gasreus uit zijn fictieve wereld</string>
+    <string name="scifi_name_pandora">Pandora</string>
+    <string name="scifi_description_pandora">Bosrijke maan uit Avatar</string>
+    <string name="scifi_name_polyphemus">Polyphemus</string>
+    <string name="scifi_description_polyphemus">Gasreus uit zijn fictieve wereld</string>
+    <string name="scifi_name_vulcan">Vulcan</string>
+    <string name="scifi_description_vulcan">Dorre thuiswereld van de Vulcans</string>
+    <string name="scifi_name_nostromo">Nostromo</string>
+    <string name="scifi_description_nostromo">Handelssleepboot uit Alien; referentie bij de maan uit het verhaal</string>
+    <string name="scifi_name_discovery_one">Discovery One</string>
+    <string name="scifi_description_discovery_one">Onderzoeksschip uit de film 2001; Jupiter is de bestemming in het verhaal</string>
+    <string name="scifi_reference_note">Fictief object. Richting en geschatte afstand volgen de genoemde echte referentie, geen gemeten baan. Fysieke eigenschappen worden niet afgeleid; de afbeelding is een illustratie.</string>
+    <string name="catalog_type_spacecraft">Ruimteschepen</string>
+    <string name="scifi_estimated_distance">Geschatte referentieafstand</string>
+    <string name="scifi_distance_reference_note">Schatting op basis van %1$s, geen gemeten afstand van dit object.</string>
+</resources>

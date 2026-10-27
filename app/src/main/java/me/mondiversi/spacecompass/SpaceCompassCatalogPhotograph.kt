@@ -51,11 +51,18 @@ internal fun SpaceCompassCatalogPhotograph(name: String, modifier: Modifier) {
 }
 
 /** A circular, centre-cropped miniature preserves image geometry rather than sampling longitude. */
-internal fun createSpaceCompassPhotographicThumbnail(map: Bitmap, extent: Int): Bitmap {
+internal fun createSpaceCompassPhotographicThumbnail(map: Bitmap, extent: Int, preserveFrame: Boolean = false): Bitmap {
     val bitmap = createBitmap(extent, extent, Bitmap.Config.ARGB_8888)
     val canvas = Canvas(bitmap)
     val radius = extent * 28f / 64
     canvas.clipPath(Path().apply { addCircle(extent/2f, extent/2f, radius, Path.Direction.CW) })
+    if (preserveFrame) {
+        val factor = radius * 2 / maxOf(map.width, map.height)
+        val width = map.width * factor; val height = map.height * factor
+        canvas.drawBitmap(map, null, RectF((extent-width)/2, (extent-height)/2, (extent+width)/2, (extent+height)/2),
+            Paint(Paint.ANTI_ALIAS_FLAG or Paint.FILTER_BITMAP_FLAG))
+        return bitmap
+    }
     val side = minOf(map.width, map.height)
     val left = (map.width - side)/2; val top = (map.height - side)/2
     canvas.drawBitmap(map, android.graphics.Rect(left, top, left+side, top+side),

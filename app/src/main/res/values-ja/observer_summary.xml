@@ -1,4 +1,5 @@
 <resources>
     <string name="observer_current_scenario">現在のシナリオ</string>
-    <string name="observer_use_position_metadata">この位置の標高とタイムゾーンを使用</string>
+    <string name="observer_customize">編集</string>
+    <string name="scenario_summary_automatic">自動</string>
 </resources>

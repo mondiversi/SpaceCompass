@@ -42,8 +42,8 @@ internal fun spaceCompassObserverPlan(latitude: Double, longitude: Double, altit
     simulateZone: Boolean = simulatePosition, automaticAltitudeMeters: Double? = altitude,
     automaticZoneId: String? = zoneId, simulateDate: Boolean = simulateTime,
     momentZoneId: String = zoneId, advanceTime: Boolean = false,
-    clockOffsetMs: Long? = null): SpaceCompassObserverPlan? = runCatching {
-    require(simulatePosition || simulateDate || simulateTime || simulateAltitude || simulateZone)
+    clockOffsetMs: Long? = null, allowInactive: Boolean = false): SpaceCompassObserverPlan? = runCatching {
+    require(allowInactive || simulatePosition || simulateDate || simulateTime || simulateAltitude || simulateZone)
     val momentZone = ZoneId.of(momentZoneId)
     clockOffsetMs?.let { require(it in -SPACE_COMPASS_MAX_CLOCK_OFFSET_MS..SPACE_COMPASS_MAX_CLOCK_OFFSET_MS) }
     if (advanceTime && simulateTime) requireNotNull(clockOffsetMs)
@@ -60,7 +60,7 @@ internal fun spaceCompassObserverPlan(latitude: Double, longitude: Double, altit
         simulateAltitude, simulateZone, automaticAltitudeMeters, automaticZone?.id, simulateDate, momentZone.id, advanceTime, clockOffsetMs)
 }.getOrNull()
 
-internal fun decodeSpaceCompassObserverPlan(value: String?): SpaceCompassObserverPlan? = runCatching {
+internal fun decodeSpaceCompassObserverPlan(value: String?, allowInactive: Boolean = false): SpaceCompassObserverPlan? = runCatching {
     val fields = requireNotNull(value).split('|')
     require(fields.size in setOf(5, 7, 11, 13, 15))
     // Five-field plans predate independent switches: preserve both original overrides.
@@ -77,7 +77,7 @@ internal fun decodeSpaceCompassObserverPlan(value: String?): SpaceCompassObserve
         if (fields.size >= 13) fields[11].toBooleanStrict() else time,
         if (fields.size >= 13) fields[12] else fields[4],
         if (fields.size == 15) fields[13].toBooleanStrict() else false,
-        if (fields.size == 15) fields[14].takeIf(String::isNotBlank)?.toLong() else null)
+        if (fields.size == 15) fields[14].takeIf(String::isNotBlank)?.toLong() else null, allowInactive = allowInactive && fields.size == 15)
 }.getOrNull()
 
 /** Reject nonexistent DST times; an ambiguous time uses its first valid occurrence. */

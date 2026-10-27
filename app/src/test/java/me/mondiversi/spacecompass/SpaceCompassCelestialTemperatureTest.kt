@@ -10,7 +10,7 @@ class SpaceCompassCelestialTemperatureTest {
         SpaceCompassCelestialBody.entries.forEach { body ->
             val values = spaceCompassCelestialTemperatures(body)
             if (body.largeCatalogEntry != null) assertEquals(body.largeCatalogEntry!!.temperatures, values)
-            else if (body.additionalCatalogEntry != null || body.isSpacecraft || body.isExtendedSkyObject || body == SpaceCompassCelestialBody.EARTH_CENTER || body in setOf(
+            else if ((body.isFictional && body != SpaceCompassCelestialBody.LV_426) || body.additionalCatalogEntry != null || body.isSpacecraft || body.isExtendedSkyObject || body == SpaceCompassCelestialBody.EARTH_CENTER || body in setOf(
                 SpaceCompassCelestialBody.VEGA, SpaceCompassCelestialBody.ALTAIR, SpaceCompassCelestialBody.APOPHIS, SpaceCompassCelestialBody.ATLAS_3I, SpaceCompassCelestialBody.PROXIMA_B, SpaceCompassCelestialBody.M87,
                 SpaceCompassCelestialBody.SAGITTARIUS_A, SpaceCompassCelestialBody.ANDROMEDA_CORE, SpaceCompassCelestialBody.TON_618)) assertTrue(values.isEmpty())
             else assertTrue("Missing reference temperature: $body", values.isNotEmpty())

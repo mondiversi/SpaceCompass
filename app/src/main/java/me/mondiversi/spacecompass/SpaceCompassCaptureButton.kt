@@ -63,7 +63,7 @@ internal fun SpaceCompassCaptureButton(
             shape = CircleShape,
             color = containerColor,
             contentColor = foreground,
-            border = BorderStroke(1.dp, foreground.copy(alpha = if (enabled) .35f else .12f)),
+            border = BorderStroke(2.dp, foreground.copy(alpha = if (enabled) .35f else .12f)),
             // Native elevation shadows show a polygon through the translucent disabled fill.
             shadowElevation = 0.dp
         ) {

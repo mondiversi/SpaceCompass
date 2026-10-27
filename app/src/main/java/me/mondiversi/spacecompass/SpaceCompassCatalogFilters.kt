@@ -9,7 +9,8 @@ internal enum class SpaceCompassCatalogType(val label: Int) {
     BLACK_HOLE(R.string.catalog_type_black_hole), NEUTRON_STAR(R.string.catalog_type_neutron),
     SPACE_STATION(R.string.catalog_type_station), ARTIFICIAL_SATELLITE(R.string.catalog_type_satellite),
     SPACE_PROBE(R.string.catalog_type_probe), NEBULA(R.string.catalog_type_nebula), STAR_CLUSTER(R.string.catalog_type_cluster),
-    CONSTELLATION(R.string.catalog_type_constellation), GALAXY(R.string.catalog_type_galaxy)
+    CONSTELLATION(R.string.catalog_type_constellation), GALAXY(R.string.catalog_type_galaxy), SCIENCE_FICTION(R.string.catalog_type_scifi),
+    SPACECRAFT(R.string.catalog_type_spacecraft)
 }
 internal enum class SpaceCompassCatalogVisibility(val label: Int) {
     ALL(R.string.catalog_all), ABOVE(R.string.catalog_above_horizon), BELOW(R.string.catalog_below_horizon)
@@ -20,7 +21,10 @@ internal data class SpaceCompassCatalogTypeCount(val type: SpaceCompassCatalogTy
 /** Counts describe the available catalogue, independently of the active search or horizon filter. */
 internal fun spaceCompassCatalogTypeCounts(available: List<SpaceCompassCelestialBody>,
     labels: Map<SpaceCompassCatalogType, String>, locale: Locale): List<SpaceCompassCatalogTypeCount> {
-    val counts = available.groupingBy { it.catalogType }.eachCount()
+    val counts = mutableMapOf<SpaceCompassCatalogType, Int>()
+    for (body in available) for (type in body.catalogFilterTypes) {
+        counts[type] = (counts[type] ?: 0) + 1
+    }
     val collator = Collator.getInstance(locale)
     return SpaceCompassCatalogType.entries.map { SpaceCompassCatalogTypeCount(it, counts[it] ?: 0) }
         .sortedWith(compareByDescending<SpaceCompassCatalogTypeCount> { it.count }.thenComparator { a, b ->
@@ -28,7 +32,7 @@ internal fun spaceCompassCatalogTypeCounts(available: List<SpaceCompassCelestial
         })
 }
 
-internal val SpaceCompassCelestialBody.catalogType: SpaceCompassCatalogType get() = additionalCatalogEntry?.type ?: when (this) {
+internal val SpaceCompassCelestialBody.catalogType: SpaceCompassCatalogType get() = if (isFictional) SpaceCompassCatalogType.SCIENCE_FICTION else additionalCatalogEntry?.type ?: when (this) {
     SpaceCompassCelestialBody.CERES -> SpaceCompassCatalogType.DWARF_PLANET
     SpaceCompassCelestialBody.ENCELADUS -> SpaceCompassCatalogType.NATURAL_SATELLITE
     SpaceCompassCelestialBody.VEGA, SpaceCompassCelestialBody.DENEB, SpaceCompassCelestialBody.ALTAIR -> SpaceCompassCatalogType.STAR
@@ -51,7 +55,7 @@ internal val SpaceCompassCelestialBody.catalogType: SpaceCompassCatalogType get(
     SpaceCompassCelestialBody.MARS, SpaceCompassCelestialBody.JUPITER, SpaceCompassCelestialBody.SATURN,
     SpaceCompassCelestialBody.URANUS, SpaceCompassCelestialBody.NEPTUNE -> SpaceCompassCatalogType.PLANET
     SpaceCompassCelestialBody.PLUTO, SpaceCompassCelestialBody.SEDNA -> SpaceCompassCatalogType.DWARF_PLANET
-    SpaceCompassCelestialBody.LV_426, SpaceCompassCelestialBody.MOON, SpaceCompassCelestialBody.IO, SpaceCompassCelestialBody.EUROPA -> SpaceCompassCatalogType.NATURAL_SATELLITE
+    SpaceCompassCelestialBody.MOON, SpaceCompassCelestialBody.IO, SpaceCompassCelestialBody.EUROPA -> SpaceCompassCatalogType.NATURAL_SATELLITE
     SpaceCompassCelestialBody.SUN, SpaceCompassCelestialBody.POLARIS, SpaceCompassCelestialBody.ALPHA_CENTAURI,
     SpaceCompassCelestialBody.PROXIMA_CENTAURI, SpaceCompassCelestialBody.RIGEL,
     SpaceCompassCelestialBody.STEPHENSON_2_18 -> SpaceCompassCatalogType.STAR
@@ -63,12 +67,27 @@ internal val SpaceCompassCelestialBody.catalogType: SpaceCompassCatalogType get(
     else -> error("Missing catalogue category: $this")
 }
 
+private val singleCatalogFilterTypes by lazy {
+    SpaceCompassCatalogType.entries.associateWith { setOf(it) }
+}
+
+/** Filter membership may overlap; the primary category still governs scientific behaviour. */
+internal val SpaceCompassCelestialBody.catalogFilterTypes: Set<SpaceCompassCatalogType> get() =
+    fictionalReference?.filterTypes ?: singleCatalogFilterTypes.getValue(catalogType)
+
+private fun SpaceCompassCelestialBody.matchesCatalogTypes(types: Set<SpaceCompassCatalogType>): Boolean =
+    types.isEmpty() || catalogFilterTypes.any { it in types }
+
+/** Count the union, never the sum of overlapping category counts. */
+internal fun spaceCompassCatalogTypeMatchCount(available: List<SpaceCompassCelestialBody>,
+    types: Set<SpaceCompassCatalogType>): Int = available.count { it.matchesCatalogTypes(types) }
+
 /** Unknown positions stay in All; filtering never changes the underlying checked set. */
 internal fun spaceCompassFilterCatalog(types: Set<SpaceCompassCatalogType>, visibility: SpaceCompassCatalogVisibility,
     elevations: Map<SpaceCompassCelestialBody, Double?>,
     available: List<SpaceCompassCelestialBody> = spaceCompassCelestialCatalogOrder): List<SpaceCompassCelestialBody> =
     available.filter { body ->
-        (types.isEmpty() || body.catalogType in types) && when (visibility) {
+        body.matchesCatalogTypes(types) && when (visibility) {
             SpaceCompassCatalogVisibility.ALL -> true
             SpaceCompassCatalogVisibility.ABOVE -> elevations[body]?.let { it.isFinite() && it >= 0.0 } == true
             SpaceCompassCatalogVisibility.BELOW -> elevations[body]?.let { it.isFinite() && it < 0.0 } == true

@@ -1,4 +1,5 @@
 <resources>
     <string name="observer_current_scenario">سناریوی فعلی</string>
-    <string name="observer_use_position_metadata">استفاده از ارتفاع و منطقهٔ زمانی این موقعیت</string>
+    <string name="observer_customize">ویرایش</string>
+    <string name="scenario_summary_automatic">خودکار</string>
 </resources>

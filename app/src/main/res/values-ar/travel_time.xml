@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="travel_title">مدة الرحلة</string>
+    <string name="travel_description">تقدير بسرعة ثابتة وبالمسافة الحالية، في الإطار المرجعي للراصد.</string>
+    <string name="travel_speed">السرعة</string>
+    <string name="travel_duration">المدة المقدرة</string>
+    <string name="travel_distance_unavailable">المسافة غير متاحة: لا يمكن حساب مدة الرحلة.</string>
+    <string name="travel_walking">المشي</string>
+    <string name="travel_bicycle">دراجة</string>
+    <string name="travel_car">سيارة</string>
+    <string name="travel_aircraft">طائرة</string>
+    <string name="travel_rocket">صاروخ</string>
+    <string name="travel_probe">مسبار سريع</string>
+    <string name="travel_light">سرعة الضوء</string>
+    <string name="travel_warp">وارب %1$s</string>
+    <string name="travel_warp_note">وارب مقياس خيالي للمقارنة، وليس سرعة يمكن بلوغها فيزيائياً.</string>
+</resources>

@@ -50,6 +50,17 @@ private fun spaceCompassOrbitExportCellValues(cell: SpaceCompassOrbitExportCell?
         if (cell.selected) "* ${snapshot.orbitExportVocabulary.selected}" else "",illumination)
 }
 
+
+/** The same explicit reference caveat accompanies daily and multi-object CSV/TXT exports. */
+private fun spaceCompassFictionalOrbitNotes(snapshot: SpaceCompassPanoramaSnapshot): String? {
+    val notes = snapshot.objects.mapNotNull { item -> item.body.fictionalReference?.let {
+        "${item.name} — ${it.universe} · ${snapshot.orbitExportVocabulary.referenceLabel}: ${it.referenceName}"
+    } }
+    return notes.takeIf { it.isNotEmpty() }?.let {
+        (listOf(snapshot.orbitExportVocabulary.fictionNote) + it).joinToString("\n")
+    }
+}
+
 internal fun spaceCompassOrbitExportGrid(table: SpaceCompassCapturedOrbitTable, snapshot: SpaceCompassPanoramaSnapshot,
     captureTimeMs: Long, caption: String): List<List<String>> {
     require(table.observationTimeMs == snapshot.timeMs && table.zoneId == snapshot.zoneId)
@@ -64,7 +75,8 @@ internal fun spaceCompassOrbitExportGrid(table: SpaceCompassCapturedOrbitTable, 
     return listOf(headers,
         metadata(vocabulary.capturedAt,formatSpaceCompassPanoramaExportTimestamp(captureTimeMs,zone,snapshot.formatting)),
         metadata(vocabulary.observedAt,formatSpaceCompassPanoramaExportTimestamp(table.observationTimeMs,zone,snapshot.formatting)),
-        metadata(vocabulary.context,caption),metadata(vocabulary.events,vocabulary.legend)) + table.rows.map { row ->
+        metadata(vocabulary.context,caption),metadata(vocabulary.events,vocabulary.legend)) +
+        listOfNotNull(spaceCompassFictionalOrbitNotes(snapshot)?.let { metadata(vocabulary.context,it) }) + table.rows.map { row ->
         val special = row.kind == SpaceCompassOrbitExportRowKind.CURRENT || row.kind == SpaceCompassOrbitExportRowKind.EVENT ||
             row.cells.values.any { cell -> cell.point.events.any { it != SpaceCompassSunPathEvent.HOUR } }
         val prefix = (if (row.cells.values.any { it.selected }) "* " else "") + (if (special) "! " else "")
@@ -92,7 +104,8 @@ internal fun renderSpaceCompassOrbitTxt(table: SpaceCompassCapturedOrbitTable, s
     val zone = snapshot.displayTimeZone
     val header = listOf("Space Compass", "${vocabulary.capturedAt}: ${formatSpaceCompassPanoramaExportTimestamp(captureTimeMs,zone,snapshot.formatting)}",
         "${vocabulary.observedAt}: ${formatSpaceCompassPanoramaExportTimestamp(snapshot.timeMs,zone,snapshot.formatting)}",
-        caption,vocabulary.legend).joinToString("\n")
+        caption,vocabulary.legend) + listOfNotNull(spaceCompassFictionalOrbitNotes(snapshot))
+    val headerText = header.joinToString("\n")
     val names = listOf(vocabulary.point.replace("%s", "").replace("%1\$s", "").trim()) + snapshot.objects.map { it.name }
     val rows = table.rows.map { row ->
         val special = row.kind == SpaceCompassOrbitExportRowKind.CURRENT || row.kind == SpaceCompassOrbitExportRowKind.EVENT ||
@@ -113,7 +126,7 @@ internal fun renderSpaceCompassOrbitTxt(table: SpaceCompassCapturedOrbitTable, s
     fun line(values: List<String>) = values.mapIndexed { column,value -> value.padEnd(widths[column]) }.joinToString(" | ").trimEnd()
     val divider = widths.joinToString("-+-") { "-".repeat(it) }
     return buildString {
-        append(header).append("\n\n").append(line(names)).append('\n').append(divider).append('\n')
+        append(headerText).append("\n\n").append(line(names)).append('\n').append(divider).append('\n')
         rows.forEach { row ->
             repeat(row.maxOf { it.size }) { index -> append(line(row.map { it.getOrElse(index) { "" } })).append('\n') }
             append(divider).append('\n')

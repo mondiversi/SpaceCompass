@@ -42,7 +42,7 @@ class SpaceCompassCatalogRefreshUiTest {
             }
         } }
         compose.onNodeWithTag("celestial-catalog-scroll").performScrollToNode(hasTestTag(tag))
-        compose.onNodeWithTag(tag).assertIsOff()
+        compose.onNodeWithTag("catalog-check-HALLEY").assertIsOff()
     }
     private fun distance(): String? = compose.onAllNodes(
         hasText("Mkm", substring = true) and hasAnyAncestor(hasTestTag(tag)), useUnmergedTree = true)
@@ -53,7 +53,7 @@ class SpaceCompassCatalogRefreshUiTest {
         show()
         val before = compose.onNodeWithTag(tag).fetchSemanticsNode().boundsInRoot
         compose.onNodeWithTag("catalog-observe-HALLEY").performClick()
-        compose.onNodeWithTag(tag).assertIsOff().assertIsDisplayed()
+        compose.onNodeWithTag("catalog-check-HALLEY").assertIsOff().assertIsDisplayed()
         assertEquals(before.top, compose.onNodeWithTag(tag).fetchSemanticsNode().boundsInRoot.top, 1f)
         compose.runOnIdle {
             assertEquals(SpaceCompassCelestialBody.HALLEY, observedBody)
@@ -61,9 +61,9 @@ class SpaceCompassCatalogRefreshUiTest {
         }
     }
 
-    @Test fun tappingTheRestOfTheRowStillSelectsWithoutOpeningTheObservatory() {
+    @Test fun tappingOnlyTheCheckboxSelectsWithoutOpeningTheObservatory() {
         show()
-        compose.onNodeWithTag(tag).performClick()
+        compose.onNodeWithTag("catalog-check-HALLEY").performClick()
         compose.runOnIdle { assertEquals(1, selectionActions); assertNull(observedBody) }
     }
 
@@ -74,7 +74,8 @@ class SpaceCompassCatalogRefreshUiTest {
         compose.runOnIdle { remote.value = SpaceCompassCelestialRemoteData(
             motions = mapOf(SpaceCompassCelestialBody.HALLEY to motion())) }
         compose.waitUntil(10_000) { distance() != null }
-        compose.onNodeWithTag(tag).assertIsDisplayed().assertIsOff()
+        compose.onNodeWithTag(tag).assertIsDisplayed()
+        compose.onNodeWithTag("catalog-check-HALLEY").assertIsOff()
         val after = compose.onNodeWithTag(tag).fetchSemanticsNode().boundsInRoot
         assertEquals(before.top, after.top, 1f)
         compose.runOnIdle { assertEquals(0, selectionActions); assertEquals(2, checked.size) }
@@ -93,7 +94,8 @@ class SpaceCompassCatalogRefreshUiTest {
         assertEquals(before, distance())
         compose.runOnIdle { time.longValue = start + 600_000L }
         compose.waitUntil(10_000) { distance() != null && distance() != before }
-        compose.onNodeWithTag(tag).assertIsDisplayed().assertIsOff()
+        compose.onNodeWithTag(tag).assertIsDisplayed()
+        compose.onNodeWithTag("catalog-check-HALLEY").assertIsOff()
         compose.runOnIdle { assertEquals(0, selectionActions) }
     }
 
@@ -108,7 +110,8 @@ class SpaceCompassCatalogRefreshUiTest {
         assertEquals(before, distance())
         compose.onNodeWithTag("catalog-refresh").assertIsEnabled().performClick()
         compose.waitUntil(10_000) { distance() != null && distance() != before }
-        compose.onNodeWithTag(tag).assertIsDisplayed().assertIsOff()
+        compose.onNodeWithTag(tag).assertIsDisplayed()
+        compose.onNodeWithTag("catalog-check-HALLEY").assertIsOff()
         assertEquals(bounds.top, compose.onNodeWithTag(tag).fetchSemanticsNode().boundsInRoot.top, 1f)
         compose.runOnIdle { assertEquals(1, refreshActions); assertEquals(0, selectionActions) }
     }
@@ -132,13 +135,49 @@ class SpaceCompassCatalogRefreshUiTest {
         compose.onNodeWithTag("celestial-catalog-scroll").performScrollToNode(hasTestTag("celestial-body-SUN"))
         compose.onNode(hasText("kg", substring = true) and hasAnyAncestor(hasTestTag("celestial-body-SUN")),
             useUnmergedTree = true).assertExists()
-        compose.onNodeWithTag("celestial-body-SUN").assertIsOn()
+        compose.onNodeWithTag("catalog-check-SUN").assertIsOn()
         compose.onNodeWithTag("catalog-sort-toggle").performClick()
         compose.onNodeWithTag("catalog-sort-DAY_TEMPERATURE_DESC").performScrollTo().performClick()
         compose.onNodeWithTag("catalog-value-header").assertTextEquals(resources.getString(R.string.catalog_sort_day_temperature))
         compose.onNodeWithTag("celestial-catalog-scroll").performScrollToNode(hasTestTag("celestial-body-MOON"))
         compose.onNodeWithTag("catalog-value-MOON", useUnmergedTree = true).assertTextEquals("≈127 °C")
-        compose.onNodeWithTag("celestial-body-MOON").assertIsOn()
+        compose.onNodeWithTag("catalog-check-MOON").assertIsOn()
         compose.runOnIdle { assertEquals(0, selectionActions) }
+    }
+
+    @Test fun tappingTheTitleReturnsToTheFirstRowWithoutChangingCatalogData() {
+        show()
+        compose.onNodeWithTag("catalog-title").assertHasClickAction().performClick()
+        compose.waitForIdle()
+        compose.onNodeWithTag("celestial-body-SUN").assertIsDisplayed()
+        val first = compose.onNodeWithTag("celestial-body-SUN").fetchSemanticsNode().boundsInRoot
+        val viewport = compose.onNodeWithTag("celestial-catalog-scroll").fetchSemanticsNode().boundsInRoot
+        assertEquals(viewport.top, first.top, 1f)
+        compose.onNodeWithTag("catalog-check-SUN").assertIsOn()
+        compose.onNodeWithTag("catalog-check-MOON").assertIsOn()
+        compose.onNodeWithTag("catalog-title").performClick()
+        compose.runOnIdle {
+            assertEquals(0, selectionActions)
+            assertEquals(0, refreshActions)
+            assertNull(observedBody)
+        }
+    }
+
+    @Test fun draggingDownTheCatalogHidesTheHeaderAndReversingRevealsIt() {
+        show()
+        val titleTop = compose.onNodeWithTag("catalog-title").fetchSemanticsNode().boundsInRoot.top
+        compose.onNodeWithTag("celestial-catalog-scroll").performTouchInput { swipeUp() }
+        compose.waitForIdle()
+        compose.onNodeWithTag("catalog-fixed-header").assertDoesNotExist()
+        assertEquals(titleTop, compose.onNodeWithTag("catalog-title").fetchSemanticsNode().boundsInRoot.top, 1f)
+        compose.onNodeWithTag("celestial-catalog-scroll").performTouchInput { swipeDown() }
+        compose.waitForIdle()
+        compose.onNodeWithTag("catalog-fixed-header").assertIsDisplayed()
+        compose.onNodeWithTag("celestial-catalog-scroll").performTouchInput { swipeUp() }
+        compose.onNodeWithTag("catalog-title").performClick()
+        compose.waitForIdle()
+        compose.onNodeWithTag("catalog-fixed-header").assertIsDisplayed()
+        compose.onNodeWithTag("catalog-check-SUN").assertIsOn().assertIsDisplayed()
+        compose.runOnIdle { assertEquals(0, selectionActions); assertEquals(0, refreshActions); assertNull(observedBody) }
     }
 }

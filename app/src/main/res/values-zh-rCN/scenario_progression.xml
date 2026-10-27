@@ -2,7 +2,7 @@
 <resources>
     <string name="scenario_speed">时间</string>
     <string name="scenario_speed_description">以最高3600×的速度倒退或推进场景时间。中间的零可暂停时间。</string>
-    <string name="scenario_resume">自定义场景恢复方式</string>
+    <string name="scenario_resume">场景恢复方式</string>
     <string name="scenario_resume_description">选择重新打开应用时模拟时间的恢复方式。所选速度适用于所有模式。</string>
     <string name="scenario_restart">从头开始</string>
     <string name="scenario_active">仅在应用使用期间</string>

@@ -100,5 +100,7 @@ internal data class SpaceCompassOrbitExportVocabulary(
     val elevation: String = "Elevation", val events: String = "Events", val selected: String = "Selected",
     val capturedAt: String = "Capture time", val observedAt: String = "Observation time",
     val context: String = "Capture details", val legend: String = "* = selected; ! = key point; — = unavailable",
-    val illuminated: String = "Illuminated disc", val pass: String = "Next pass"
+    val illuminated: String = "Illuminated disc", val pass: String = "Next pass",
+    val fictionNote: String = "Fictional illustration. Pointing follows the real reference, not a measured orbit.",
+    val referenceLabel: String = "Direction reference"
 )

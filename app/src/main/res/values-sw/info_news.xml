@@ -1,9 +1,9 @@
 <resources>
     <string name="info_news_title">Mambo mapya · %1$s</string>
-    <string name="info_news_star_sky" formatted="false">Gundua vitu 999, makundi yote 88 ya nyota na LV-426 inayopatikana kwa wote, kwa ufuatiliaji na marejeo ya kisayansi yaliyoboreshwa.</string>
-    <string name="info_news_texture_downloads" formatted="false">Kifurushi kipya cha picha 1.6: picha 174 na vijipicha 174 tofauti, vinavyopakuliwa kimoja kimoja na kuhifadhiwa bila mtandao.</string>
-    <string name="info_news_weather" formatted="false">Maelezo wazi zaidi, aikoni mpya za picha na panorama, na vitufe vya uchunguzi na njia ya kila siku vinavyoonekana vizuri zaidi usiku.</string>
-    <string name="info_news_viewer_zoom" formatted="false">Aina kwa idadi ya vitu, chaguo za kupanga kwa alfabeti na vidhibiti vilivyo wazi zaidi.</string>
-    <string name="info_news_settings" formatted="false">Lebo za marejeo zimetulia zaidi na Nadir katika −90°, mkabala na Zenithi.</string>
-    <string name="info_news_catalog" formatted="false">Mwendo wa miezi, mikaribiano ya vitu vilivyochaguliwa na hali ya upakiaji wa hali ya hewa vimeboreshwa.</string>
+    <string name="info_news_star_sky" formatted="false">Chunguza vitu 1009 kwa kichujio cha Sayansi ya kubuni na marejeo ya mbinguni ya kielelezo yaliyoainishwa wazi.</string>
+    <string name="info_news_texture_downloads" formatted="false">Kifurushi cha picha 1.7 kinaongeza picha kumi na vijipicha kumi huru, vinavyopakuliwa kimoja kimoja, kuhakikiwa na kuhifadhiwa bila mtandao.</string>
+    <string name="info_news_weather" formatted="false">Linganisha makadirio ya muda wa safari kuanzia kasi za kawaida hadi kasi ya mwanga na kasi za kubuni za warp, kwa vifupisho vya muda.</string>
+    <string name="info_news_viewer_zoom" formatted="false">Hifadhi, shiriki na ulete matukio yenye majina pamoja na hali iliyochaguliwa ya kuendeleza muda.</string>
+    <string name="info_news_settings" formatted="false">Muhtasari wazi zaidi wa tukio la sasa wenye mwinuko, ukanda wa saa na hali ya hewa za kiotomatiki, majina ya maeneo yaliyohifadhiwa na ikoni mpya.</string>
+    <string name="info_news_catalog" formatted="false">Uthibitisho wa mipangilio huonekana unapoondoka kwenye ukurasa uliobadilishwa. Vidhibiti vya vitu, vihesabu, rangi na visanduku vya taarifa vimeboreshwa.</string>
 </resources>

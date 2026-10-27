@@ -41,5 +41,5 @@ private val SpaceCompassCelestialBody.catalogAliases: List<String> get() = when 
     SpaceCompassCelestialBody.ORION_NEBULA -> listOf("M42", "NGC 1976", "Orion Nebula", "Nebulosa di Orione")
     SpaceCompassCelestialBody.PLEIADES -> listOf("M45", "Melotte 22", "Pleiades", "Pleiadi")
     SpaceCompassCelestialBody.TITAN -> listOf("Titan", "Titano", "Saturn VI")
-    else -> spaceCompassAdditionalCatalogAliases(this) + listOfNotNull(additionalCatalogEntry?.designation)
+    else -> fictionalReference?.let { listOf(it.universe, it.referenceName) + spaceCompassFictionalAliases(this) } ?: (spaceCompassAdditionalCatalogAliases(this) + listOfNotNull(additionalCatalogEntry?.designation))
 }

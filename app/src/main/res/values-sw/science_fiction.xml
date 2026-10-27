@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="catalog_type_scifi">Sayansi ya kubuni</string>
+    <string name="scifi_type_planet">Sayari ya kubuni</string>
+    <string name="scifi_type_moon">Mwezi wa kubuni</string>
+    <string name="scifi_type_giant">Jitu la gesi la kubuni</string>
+    <string name="scifi_type_spacecraft">Chombo cha anga cha kubuni</string>
+    <string name="scifi_universe">Ulimwengu wa hadithi</string>
+    <string name="scifi_reference">Rejeleo la mwelekeo</string>
+    <string name="scifi_model_note">Mchoro wa kubuni. Mwelekeo hufuata rejeleo halisi, si obiti iliyopimwa.</string>
+    <string name="scifi_credits">Michoro asilia iliyotengenezwa kwa msaada wa AI. Majina na ulimwengu wa kubuni ni mali ya wabunifu wake.</string>
+    <string name="scifi_name_arrakis">Arrakis</string>
+    <string name="scifi_description_arrakis">Ulimwengu wa jangwa wa Dune</string>
+    <string name="scifi_name_caladan">Caladan</string>
+    <string name="scifi_description_caladan">Ulimwengu wa bahari wa familia ya Atreides</string>
+    <string name="scifi_name_giedi_prime">Giedi Prime</string>
+    <string name="scifi_description_giedi_prime">Ulimwengu wa viwanda wa familia ya Harkonnen</string>
+    <string name="scifi_name_lv_223">LV-223</string>
+    <string name="scifi_description_lv_223">Mwezi wa miamba na kituo cha Wahandisi katika Prometheus</string>
+    <string name="scifi_name_calpamos">Calpamos</string>
+    <string name="scifi_description_calpamos">Jitu la gesi katika ulimwengu wake wa kubuni</string>
+    <string name="scifi_name_pandora">Pandora</string>
+    <string name="scifi_description_pandora">Mwezi wa misitu wa Avatar</string>
+    <string name="scifi_name_polyphemus">Polyphemus</string>
+    <string name="scifi_description_polyphemus">Jitu la gesi katika ulimwengu wake wa kubuni</string>
+    <string name="scifi_name_vulcan">Vulcan</string>
+    <string name="scifi_description_vulcan">Ulimwengu mkavu wa asili wa Wavulcan</string>
+    <string name="scifi_name_nostromo">Nostromo</string>
+    <string name="scifi_description_nostromo">Meli ya kukokota ya kibiashara ya Alien; rejeleo karibu na mwezi wa hadithi</string>
+    <string name="scifi_name_discovery_one">Discovery One</string>
+    <string name="scifi_description_discovery_one">Chombo cha uchunguzi cha filamu 2001; Mshtarii ndio lengo lake katika hadithi</string>
+    <string name="scifi_reference_note">Kitu cha kubuni. Mwelekeo na umbali unaokadiriwa hufuata rejeo halisi lililotajwa, si obiti iliyopimwa. Sifa za kifizikia hazikadiriwi; picha ni mchoro.</string>
+    <string name="catalog_type_spacecraft">Vyombo vya anga</string>
+    <string name="scifi_estimated_distance">Umbali unaokadiriwa wa rejeo</string>
+    <string name="scifi_distance_reference_note">Makadirio kulingana na %1$s, si umbali uliopimwa wa kitu hiki.</string>
+</resources>

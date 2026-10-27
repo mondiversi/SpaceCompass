@@ -69,16 +69,16 @@ class SpaceCompassCelestialMultiSelectionUiTest {
         compose.onNodeWithTag("celestial-selection-count", useUnmergedTree = true).assertExists()
         compose.onNodeWithTag("celestial-select").assert(SemanticsMatcher.expectValue(SemanticsProperties.StateDescription, "2"))
         compose.onNodeWithTag("celestial-select").performClick()
-        compose.onNodeWithTag("celestial-body-SUN").assertIsOn()
-        compose.onNodeWithTag("celestial-body-MOON").performScrollTo().assertIsOn()
-        compose.onNodeWithTag("celestial-body-MOON").performClick().assertIsOff()
+        compose.onNodeWithTag("catalog-check-SUN").assertIsOn()
+        compose.onNodeWithTag("catalog-check-MOON").performScrollTo().assertIsOn()
+        compose.onNodeWithTag("catalog-check-MOON").performClick().assertIsOff()
         compose.runOnIdle { assertEquals(setOf(SpaceCompassCelestialBody.SUN), selection.value.selected) }
-        compose.onNodeWithTag("celestial-body-MOON").performScrollTo().performClick()
-        compose.onNodeWithTag("celestial-body-MOON").assertIsOn()
+        compose.onNodeWithTag("catalog-check-MOON").performScrollTo().performClick()
+        compose.onNodeWithTag("catalog-check-MOON").assertIsOn()
         compose.onNodeWithTag("celestial-menu").assertIsDisplayed()
         compose.runOnIdle { assertEquals(setOf(SpaceCompassCelestialBody.SUN, SpaceCompassCelestialBody.MOON), selection.value.selected) }
         compose.onNodeWithTag("celestial-select").assert(SemanticsMatcher.expectValue(SemanticsProperties.StateDescription, "2"))
-        compose.onNodeWithTag("celestial-select-all").performScrollTo().performClick()
+        compose.onNodeWithTag("celestial-select-all").performClick()
         compose.runOnIdle { assertEquals(spaceCompassCelestialCatalogOrder.size, selection.value.selected.size) }
         compose.onNodeWithTag("celestial-select").assert(SemanticsMatcher.expectValue(
             SemanticsProperties.StateDescription, spaceCompassCelestialCatalogOrder.size.toString()))

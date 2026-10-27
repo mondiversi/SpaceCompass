@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="travel_title">旅行时间</string>
+    <string name="travel_description">在观测者参考系中，以当前距离和恒定速度估算。</string>
+    <string name="travel_speed">速度</string>
+    <string name="travel_duration">预计时间</string>
+    <string name="travel_distance_unavailable">距离不可用，无法计算旅行时间。</string>
+    <string name="travel_walking">步行</string>
+    <string name="travel_bicycle">自行车</string>
+    <string name="travel_car">汽车</string>
+    <string name="travel_aircraft">飞机</string>
+    <string name="travel_rocket">火箭</string>
+    <string name="travel_probe">高速探测器</string>
+    <string name="travel_light">光速</string>
+    <string name="travel_warp">曲速 %1$s</string>
+    <string name="travel_warp_note">曲速是虚构的比较尺度，并非物理上能够达到的速度。</string>
+</resources>

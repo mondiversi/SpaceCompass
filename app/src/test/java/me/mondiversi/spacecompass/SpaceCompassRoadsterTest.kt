@@ -140,7 +140,8 @@ class SpaceCompassRoadsterTest {
         assertEquals(157614, image.bytes)
         assertEquals("54c1a76dcb92b1512d9dcb1cd273af4771f7f347ff3abdd124383df934de19fe", image.sha256)
         assertEquals(2048, image.width); assertEquals(1024, image.height)
-        assertTrue(requireNotNull(image.url).endsWith("/${SpaceCompassCelestialTexturePolicy.PUBLISHED_PACK}/${image.name}"))
+        assertEquals("celestial-textures-v1.6", image.downloadPack)
+        assertTrue(requireNotNull(image.url).endsWith("/${image.downloadPack}/${image.name}"))
         assertEquals("SpaceX · CC0 1.0", spaceCompassCatalogImageCredit(body.viewerTexture))
     }
 }

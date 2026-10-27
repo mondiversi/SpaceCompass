@@ -973,7 +973,18 @@ internal enum class SpaceCompassCelestialBody(val nameResource: Int, val engine:
     SATELLITE_NORAD_28654(R.string.catalogue_satellite_norad_28654),
     SATELLITE_NORAD_33591(R.string.catalogue_satellite_norad_33591),
     SATELLITE_NORAD_27607(R.string.catalogue_satellite_norad_27607),
-    SATELLITE_NORAD_43017(R.string.catalogue_satellite_norad_43017)
+    SATELLITE_NORAD_43017(R.string.catalogue_satellite_norad_43017),
+    // Fictional reference identities are append-only, after the measured catalogue.
+    ARRAKIS(R.string.scifi_name_arrakis),
+    CALADAN(R.string.scifi_name_caladan),
+    GIEDI_PRIME(R.string.scifi_name_giedi_prime),
+    LV_223(R.string.scifi_name_lv_223),
+    CALPAMOS(R.string.scifi_name_calpamos),
+    PANDORA(R.string.scifi_name_pandora),
+    POLYPHEMUS(R.string.scifi_name_polyphemus),
+    VULCAN(R.string.scifi_name_vulcan),
+    NOSTROMO(R.string.scifi_name_nostromo),
+    DISCOVERY_ONE(R.string.scifi_name_discovery_one)
 }
 internal val SpaceCompassCelestialBody.isComet: Boolean get() = largeCatalogEntry?.entry?.type == SpaceCompassCatalogType.COMET || this == SpaceCompassCelestialBody.HALLEY || this == SpaceCompassCelestialBody.COMET_67P || this == SpaceCompassCelestialBody.ATLAS_3I || this == SpaceCompassCelestialBody.HALE_BOPP || this == SpaceCompassCelestialBody.ENCKE
 internal val SpaceCompassCelestialBody.isEarthSatellite: Boolean get() = this == SpaceCompassCelestialBody.ISS || this == SpaceCompassCelestialBody.STARLINK_V3 || catalogSatellite != null
@@ -989,7 +1000,7 @@ internal val spaceCompassCelestialCatalogOrder = spaceCompassIncludeAdditionalCa
     SpaceCompassCelestialBody.URANUS, SpaceCompassCelestialBody.NEPTUNE, SpaceCompassCelestialBody.PLUTO, SpaceCompassCelestialBody.SEDNA, SpaceCompassCelestialBody.HALLEY, SpaceCompassCelestialBody.COMET_67P,
     SpaceCompassCelestialBody.ATLAS_3I, SpaceCompassCelestialBody.NEW_HORIZONS, SpaceCompassCelestialBody.VOYAGER_1, SpaceCompassCelestialBody.VOYAGER_2, SpaceCompassCelestialBody.PROXIMA_CENTAURI, SpaceCompassCelestialBody.PROXIMA_B, SpaceCompassCelestialBody.ALPHA_CENTAURI, SpaceCompassCelestialBody.SIRIUS, SpaceCompassCelestialBody.ALTAIR, SpaceCompassCelestialBody.VEGA,
     SpaceCompassCelestialBody.LV_426, SpaceCompassCelestialBody.TRAPPIST_1_E, SpaceCompassCelestialBody.RX_J1856, SpaceCompassCelestialBody.PLEIADES, SpaceCompassCelestialBody.POLARIS, SpaceCompassCelestialBody.PSR_J0437,
-    SpaceCompassCelestialBody.BETELGEUSE, SpaceCompassCelestialBody.RIGEL, SpaceCompassCelestialBody.DENEB, SpaceCompassCelestialBody.SOUTHERN_CROSS, SpaceCompassCelestialBody.ORION_NEBULA, SpaceCompassCelestialBody.STEPHENSON_2_18, SpaceCompassCelestialBody.SAGITTARIUS_A, SpaceCompassCelestialBody.ANDROMEDA_CORE, SpaceCompassCelestialBody.M87, SpaceCompassCelestialBody.TON_618))
+    SpaceCompassCelestialBody.BETELGEUSE, SpaceCompassCelestialBody.RIGEL, SpaceCompassCelestialBody.DENEB, SpaceCompassCelestialBody.SOUTHERN_CROSS, SpaceCompassCelestialBody.ORION_NEBULA, SpaceCompassCelestialBody.STEPHENSON_2_18, SpaceCompassCelestialBody.SAGITTARIUS_A, SpaceCompassCelestialBody.ANDROMEDA_CORE, SpaceCompassCelestialBody.M87, SpaceCompassCelestialBody.TON_618)) + spaceCompassNewFictionalBodies
 internal val SpaceCompassCelestialBody.usesHorizons: Boolean
     get() = expandedHorizonsTarget != null || this == SpaceCompassCelestialBody.SEDNA || this == SpaceCompassCelestialBody.TITAN || isVoyager || isComet || this == SpaceCompassCelestialBody.TESLA_ROADSTER
 internal val SpaceCompassCelestialBody.isVoyager: Boolean
@@ -1014,6 +1025,7 @@ internal fun calculateSpaceCompassCelestialObservation(body: SpaceCompassCelesti
     require(latitude.isFinite() && latitude in -90.0..90.0 && longitude.isFinite() && longitude in -180.0..180.0)
     val observer = Observer(latitude, longitude, altitude)
     val time = spaceCompassAstronomyTime(timeMs)
+    body.fictionalReference?.let { return calculateSpaceCompassFictionalObservation(it, timeMs, latitude, longitude, altitude, remote) }
     if (body.constellationPattern != null) return SpaceCompassCelestialObservation(
         spaceCompassConstellationCentre(calculateSpaceCompassConstellation(body, timeMs, latitude, longitude, altitude)), Double.NaN)
     if (body == SpaceCompassCelestialBody.EARTH_CENTER) {

@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="catalog_type_scifi">공상 과학</string>
+    <string name="scifi_type_planet">가상의 행성</string>
+    <string name="scifi_type_moon">가상의 위성</string>
+    <string name="scifi_type_giant">가상의 거대 가스 행성</string>
+    <string name="scifi_type_spacecraft">가상의 우주선</string>
+    <string name="scifi_universe">작품 세계</string>
+    <string name="scifi_reference">방향 기준</string>
+    <string name="scifi_model_note">가상의 상상도입니다. 방향은 실제 기준 천체를 따르며 측정된 궤도가 아닙니다.</string>
+    <string name="scifi_credits">AI의 도움으로 제작한 원본 삽화입니다. 이름과 가상 세계는 각 창작자의 소유입니다.</string>
+    <string name="scifi_name_arrakis">아라키스</string>
+    <string name="scifi_description_arrakis">듄의 사막 세계</string>
+    <string name="scifi_name_caladan">칼라단</string>
+    <string name="scifi_description_caladan">아트레이데스 가문의 해양 고향 행성</string>
+    <string name="scifi_name_giedi_prime">기디 프라임</string>
+    <string name="scifi_description_giedi_prime">하코넨 가문의 산업화된 고향 행성</string>
+    <string name="scifi_name_lv_223">LV-223</string>
+    <string name="scifi_description_lv_223">프로메테우스의 암석 위성이자 엔지니어 전초기지</string>
+    <string name="scifi_name_calpamos">칼파모스</string>
+    <string name="scifi_description_calpamos">작품 세계에 등장하는 거대 가스 행성</string>
+    <string name="scifi_name_pandora">판도라</string>
+    <string name="scifi_description_pandora">아바타의 숲으로 덮인 위성</string>
+    <string name="scifi_name_polyphemus">폴리페모스</string>
+    <string name="scifi_description_polyphemus">작품 세계에 등장하는 거대 가스 행성</string>
+    <string name="scifi_name_vulcan">벌칸</string>
+    <string name="scifi_description_vulcan">벌칸족의 건조한 고향 행성</string>
+    <string name="scifi_name_nostromo">노스트로모</string>
+    <string name="scifi_description_nostromo">에이리언의 상업용 예인선. 이야기 속 위성 부근을 방향 기준으로 사용</string>
+    <string name="scifi_name_discovery_one">디스커버리 원</string>
+    <string name="scifi_description_discovery_one">영화 2001의 탐사선. 목성은 이야기 속 목적지</string>
+    <string name="scifi_reference_note">가상의 천체입니다. 방향과 대략적인 거리는 실측 궤도가 아닌 지정된 실제 참조 대상을 따릅니다. 물리적 특성은 추론하지 않으며 이미지는 예시입니다.</string>
+    <string name="catalog_type_spacecraft">우주선</string>
+    <string name="scifi_estimated_distance">참조 대상의 추정 거리</string>
+    <string name="scifi_distance_reference_note">%1$s에 기반한 추정값이며, 이 천체의 실측 거리가 아닙니다.</string>
+</resources>

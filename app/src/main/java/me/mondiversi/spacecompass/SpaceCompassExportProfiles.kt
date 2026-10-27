@@ -44,4 +44,5 @@ internal fun spaceCompassOrbitExportVocabulary(resources: SpaceCompassTextResour
     events=resources.getString(R.string.capture_table_events),selected=resources.getString(R.string.capture_table_selected),
     capturedAt=resources.getString(R.string.capture_table_captured),observedAt=resources.getString(R.string.capture_table_observed),
     context=resources.getString(R.string.capture_table_context),legend=resources.getString(R.string.capture_table_legend),
-    illuminated=resources.getString(R.string.celestial_view_illuminated),pass=resources.getString(R.string.celestial_pass))
+    illuminated=resources.getString(R.string.celestial_view_illuminated),pass=resources.getString(R.string.celestial_pass),
+    fictionNote=resources.getString(R.string.scifi_reference_note),referenceLabel=resources.getString(R.string.scifi_reference))

@@ -1,4 +1,5 @@
 <resources>
     <string name="observer_current_scenario">Huidig scenario</string>
-    <string name="observer_use_position_metadata">Hoogte en tijdzone van deze positie gebruiken</string>
+    <string name="observer_customize">Bewerken</string>
+    <string name="scenario_summary_automatic">Automatisch</string>
 </resources>

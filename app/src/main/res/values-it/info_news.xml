@@ -1,9 +1,9 @@
 <resources>
     <string name="info_news_title">Ultime novità · %1$s</string>
-    <string name="info_news_star_sky" formatted="false">Esplora 999 oggetti, tutte le 88 costellazioni e LV-426 disponibile per tutti, con tracciamento e riferimenti scientifici migliorati.</string>
-    <string name="info_news_texture_downloads" formatted="false">Nuovo pacchetto grafico 1.6: 174 immagini e 174 miniature separate, scaricate singolarmente e conservate offline.</string>
-    <string name="info_news_weather" formatted="false">Info più chiare, icone di scatto e panoramica riviste e pulsanti Osservatorio e Percorso giornaliero più contrastati di notte.</string>
-    <string name="info_news_viewer_zoom" formatted="false">Tipi ordinati per numero di oggetti, opzioni di ordinamento alfabetiche e comandi dell’oggetto più chiari.</string>
-    <string name="info_news_settings" formatted="false">Scritte dei riferimenti più stabili e Nadir a −90°, opposto allo Zenit.</string>
-    <string name="info_news_catalog" formatted="false">Migliorati moto delle lune, avvicinamenti tra oggetti selezionati e stato di caricamento del meteo.</string>
+    <string name="info_news_star_sky" formatted="false">Esplora 1009 oggetti con il filtro Fantascienza e riferimenti celesti illustrativi chiaramente indicati.</string>
+    <string name="info_news_texture_downloads" formatted="false">Il pacchetto grafico 1.7 aggiunge dieci immagini e dieci miniature indipendenti, scaricate singolarmente, verificate e conservate offline.</string>
+    <string name="info_news_weather" formatted="false">Confronta i tempi di viaggio stimati dalle velocità quotidiane alla luce e alle velocità warp immaginarie, con durate in forma compatta.</string>
+    <string name="info_news_viewer_zoom" formatted="false">Salva, condividi e importa scenari con un nome, inclusa la modalità di ripresa del tempo selezionata.</string>
+    <string name="info_news_settings" formatted="false">Riepilogo dello scenario attuale più chiaro, con quota, fuso e meteo automatici, nomi delle località salvati e icone riviste.</string>
+    <string name="info_news_catalog" formatted="false">La conferma delle impostazioni appare uscendo da una schermata modificata. Migliorati comandi degli oggetti, contatori, colori e fumetti.</string>
 </resources>

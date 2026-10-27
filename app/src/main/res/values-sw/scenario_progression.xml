@@ -2,7 +2,7 @@
 <resources>
     <string name="scenario_speed">Muda</string>
     <string name="scenario_speed_description">Rudisha au songesha muda wa hali hadi 3600×. Sifuri katikati husimamisha muda.</string>
-    <string name="scenario_resume">Kuendeleza hali maalum</string>
+    <string name="scenario_resume">Kuendeleza hali</string>
     <string name="scenario_resume_description">Chagua jinsi muda ulioigwa unavyoendelea unapofungua programu tena. Kasi iliyochaguliwa hutumika katika kila hali.</string>
     <string name="scenario_restart">Anza tena mwanzo</string>
     <string name="scenario_active">Wakati programu inatumika tu</string>

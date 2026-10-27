@@ -1,4 +1,5 @@
 <resources>
     <string name="observer_current_scenario">Bieżący scenariusz</string>
-    <string name="observer_use_position_metadata">Użyj wysokości i strefy czasowej tej pozycji</string>
+    <string name="observer_customize">Edytuj</string>
+    <string name="scenario_summary_automatic">Automatycznie</string>
 </resources>

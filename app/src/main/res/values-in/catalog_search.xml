@@ -2,4 +2,5 @@
 <resources>
     <string name="catalog_search">Cari</string>
     <string name="catalog_search_clear">Hapus pencarian</string>
+    <string name="catalog_scroll_to_top">Kembali ke awal daftar</string>
 </resources>

@@ -1,5 +1,15 @@
 # Changelog
 
+## 1.5.1 — 2026-10-27
+
+- Expand the catalogue to 1009 unique selectable entries with ten additional, explicitly illustrative science-fiction references. Science fiction overlaps the matching planet, moon and spacecraft filters without duplicate results. Approximate ranges identify their real reference source; unavailable physical facts remain absent.
+- Publish incremental graphics pack 1.7: ten quality-90/method-6 WebP images and ten independent previews, plus the complete manifest, credits, naming rules and checksums. Preserve all immutable pack-1.6 URLs, aliases, bytes and verified offline caches. No complete graphics ZIP or new celestial image is bundled in the APK.
+- Add an Observatory travel-time comparison from ordinary speeds through light speed and fictional Warp 9.999, with saved speed selection, current unit preferences and compact duration symbols.
+- Save, share and import named scenario files with all independent overrides, time speed and resumption policy. Validate imports before applying them; restore configured starting values without adding the time a file spent archived. Suggest compact filenames from enabled settings and cached place names.
+- Clarify the Current scenario popup with neutral labels/icons, highlighted effective values, automatic altitude/time-zone/weather indicators and cached place names. Keep the editor titled Scenario, the summary at 40/60 columns without dividers, and explicit altitude/time-zone overrides in their own islands. Use fast-forward for time flow.
+- Show settings-save confirmation once on leaving a modified settings page. Refine theme accents, counters, object controls, catalogue interaction and callout layout; preserve real GPS details independently of the scenario.
+- Refresh news in all twenty languages. Release 1.5.1/code 51 retains the distribution certificate and includes the signed update index, checksums and optional reference-information archive. Public release summaries describe general changes without singling out an individual catalogue entry.
+
 ## 1.5.0 — 2026-10-26
 
 - Expand the selectable catalogue to 999 entries, including all 88 IAU constellations. Keep descriptions and twenty-language resources in the APK. Reuse observer/date-dependent pointing, daily paths, scenarios, search, filters, reminders and exports; unavailable facts stay explicit.

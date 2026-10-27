@@ -55,12 +55,13 @@ internal fun SpaceCompassCelestialIconControl(selected: Boolean, label: String, 
             } else {
                 val pressed by pressSource.collectIsPressedAsState()
                 val style = spaceCompassCelestialControlStyle(selected, pressed, role).let { regular ->
-                    if (circularBackground && role == Role.Button && isSystemInDarkTheme()) {
-                        // Main island actions invert their contrast at night without changing viewer tabs.
-                        val fill = Color(0xFFD2D7DC)
-                        val glyph = Color(0xFF1C242B)
+                    if (circularBackground && role == Role.Button) {
+                        // Share the floating controls' opaque background, neutral glyph and subtle outline.
+                        val fill = MaterialTheme.colorScheme.background.copy(alpha = 1f)
+                        val glyph = MaterialTheme.colorScheme.onBackground
                         regular.copy(
                             background = if (pressed) glyph.copy(alpha = .12f).compositeOver(fill) else fill,
+                            border = glyph.copy(alpha = .35f),
                             content = glyph)
                     } else regular
                 }

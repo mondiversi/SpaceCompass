@@ -10,8 +10,8 @@
     <string name="panorama_labels_off">已隐藏标签</string>
     <string name="control_choice_message">%1$s：%2$s</string>
 
-    <string name="scene_scenario_on">已启用自定义场景</string>
-    <string name="scene_scenario_off">已停用自定义场景</string>
+    <string name="scene_scenario_on">已启用场景</string>
+    <string name="scene_scenario_off">已停用场景</string>
     <string name="scene_objects_on">已启用天体</string>
     <string name="scene_objects_off">已停用天体</string>
 </resources>

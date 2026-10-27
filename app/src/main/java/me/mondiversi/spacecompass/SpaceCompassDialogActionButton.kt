@@ -1,5 +1,6 @@
 package me.mondiversi.spacecompass
 
+import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.material3.ButtonDefaults
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
@@ -15,13 +16,15 @@ internal fun SpaceCompassDialogActionButton(
     onClick: () -> Unit,
     modifier: Modifier = Modifier,
     enabled: Boolean = true,
-    destructive: Boolean = false
+    destructive: Boolean = false,
+    contentPadding: PaddingValues = ButtonDefaults.TextButtonContentPadding
 ) {
     val locale = LocalResources.current.configuration.locales[0]
     TextButton(
         onClick = onClick,
         modifier = modifier,
         enabled = enabled,
+        contentPadding = contentPadding,
         colors = ButtonDefaults.textButtonColors(
             contentColor = if (destructive) SpaceCompassDestructiveActionColor
                 else MaterialTheme.colorScheme.primary

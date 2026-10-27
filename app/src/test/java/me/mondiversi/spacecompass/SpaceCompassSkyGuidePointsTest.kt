@@ -7,7 +7,7 @@ import kotlin.math.*
 class SpaceCompassSkyGuidePointsTest {
     private val retired = SpaceCompassCelestialBody.EARTH_CENTER
     @Test fun retiredCentreCannotReturnThroughCatalogFiltersOrLegacyPreferences() {
-        assertEquals(999, spaceCompassCelestialCatalogOrder.size)
+        assertEquals(1009, spaceCompassCelestialCatalogOrder.size)
         assertFalse(retired in spaceCompassAllCelestialOrder)
         assertFalse(retired in spaceCompassAvailableCelestialCatalog(SpaceCompassCelestialSelection().selected))
         for (visibility in SpaceCompassCatalogVisibility.entries)

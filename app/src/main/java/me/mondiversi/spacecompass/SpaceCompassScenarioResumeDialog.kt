@@ -10,7 +10,6 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.*
 import androidx.compose.runtime.saveable.rememberSaveable
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.platform.testTag
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
@@ -28,8 +27,6 @@ private val SpaceCompassScenarioResume.labelResource: Int
 @Composable
 internal fun SpaceCompassScenarioResumeButton(observer: SpaceCompassObserverState) {
     var expanded by rememberSaveable { mutableStateOf(false) }
-    val context = LocalContext.current
-    val saved = stringResource(R.string.settings_saved)
     val selection = stringResource(observer.timeSettings.resume.labelResource)
     SpaceCompassTitleActionButton(stringResource(R.string.scenario_resume), onClick = { expanded = true },
         modifier = Modifier.testTag("scenario-resume-open").semantics { stateDescription = selection }) {
@@ -39,7 +36,7 @@ internal fun SpaceCompassScenarioResumeButton(observer: SpaceCompassObserverStat
     if (expanded) SpaceCompassScenarioResumeDialog(observer.timeSettings.resume, onSelect = { mode ->
         if (observer.timeSettings.resume != mode) {
             observer.configureTime(observer.timeSettings.copy(resume = mode))
-            showSpaceCompassBottomMessage(context, saved)
+
         }
         expanded = false
     }, onDismiss = { expanded = false })

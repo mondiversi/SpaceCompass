@@ -3,7 +3,7 @@
     <string name="pc_info">Info und Mitwirkende</string>
     <string name="pc_display_automatic">Automatische Skalierung</string>
     <string name="pc_info_description">Ein astronomischer Kompass zum Finden von Himmelsobjekten, Erkunden ihrer Bahnen sowie Betrachten von Modellen und Mondphasen.</string>
-    <string name="pc_info_earth">Für die Nutzung auf der Erde gedacht: Die App nutzt die Schwerkraft und das Erdmagnetfeld zur Orientierung; GPS liefert die Position. Diese Bezugspunkte garantieren mit einem gewöhnlichen Smartphone keine zuverlässige Orientierung im Weltraum. Mit fortschrittlicherer Raumfahrttechnik und besseren Sensoren finden wir uns vielleicht eines Tages auch dort oben zurecht 🙂</string>
+    <string name="pc_info_earth">Vorerst bleiben wir auf der Erde: Fürs All brauchen Smartphones bessere Sensoren. Vielleicht eines Tages 🙂</string>
     <string name="pc_info_compass">Kompassgenauigkeit</string>
     <string name="pc_info_accuracy">Geringe Genauigkeit bedeutet, dass das Telefon eine niedrige Magnetkalibrierung meldet. Die Ausrichtung bleibt ungefähr, bis sich die Sensorgenauigkeit verbessert.</string>
     <string name="pc_info_credits">Quellen und Lizenzen</string>

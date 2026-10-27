@@ -1,0 +1,9 @@
+<resources>
+    <string name="scenario_export">Szenario exportieren</string>
+    <string name="scenario_import">Szenario importieren</string>
+    <string name="scenario_file_name">Szenarioname</string>
+    <string name="scenario_file_saved">Szenario gespeichert</string>
+    <string name="scenario_file_imported">Szenario importiert</string>
+    <string name="scenario_file_invalid">Ungültige oder nicht unterstützte Szenariodatei</string>
+    <string name="scenario_file_error">Szenario konnte nicht gespeichert oder geteilt werden</string>
+</resources>

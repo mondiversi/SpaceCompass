@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="catalog_type_scifi">Fantascienza</string>
+    <string name="scifi_type_planet">Pianeta immaginario</string>
+    <string name="scifi_type_moon">Luna immaginaria</string>
+    <string name="scifi_type_giant">Gigante gassoso immaginario</string>
+    <string name="scifi_type_spacecraft">Astronave immaginaria</string>
+    <string name="scifi_universe">Universo narrativo</string>
+    <string name="scifi_reference">Riferimento di puntamento</string>
+    <string name="scifi_model_note">Rappresentazione immaginaria. Il puntamento segue il riferimento reale, non un’orbita misurata.</string>
+    <string name="scifi_credits">Illustrazioni originali realizzate con assistenza IA. Nomi e ambientazioni appartengono ai rispettivi autori.</string>
+    <string name="scifi_name_arrakis">Arrakis</string>
+    <string name="scifi_description_arrakis">Mondo desertico di Dune</string>
+    <string name="scifi_name_caladan">Caladan</string>
+    <string name="scifi_description_caladan">Mondo oceanico di origine degli Atreides</string>
+    <string name="scifi_name_giedi_prime">Giedi Prime</string>
+    <string name="scifi_description_giedi_prime">Mondo industriale di origine degli Harkonnen</string>
+    <string name="scifi_name_lv_223">LV-223</string>
+    <string name="scifi_description_lv_223">Luna rocciosa e avamposto degli Ingegneri in Prometheus</string>
+    <string name="scifi_name_calpamos">Calpamos</string>
+    <string name="scifi_description_calpamos">Gigante gassoso della sua ambientazione narrativa</string>
+    <string name="scifi_name_pandora">Pandora</string>
+    <string name="scifi_description_pandora">Luna forestale di Avatar</string>
+    <string name="scifi_name_polyphemus">Polifemo</string>
+    <string name="scifi_description_polyphemus">Gigante gassoso della sua ambientazione narrativa</string>
+    <string name="scifi_name_vulcan">Vulcano</string>
+    <string name="scifi_description_vulcan">Mondo arido di origine dei Vulcaniani</string>
+    <string name="scifi_name_nostromo">Nostromo</string>
+    <string name="scifi_description_nostromo">Rimorchiatore commerciale di Alien; riferimento presso la luna del racconto</string>
+    <string name="scifi_name_discovery_one">Discovery One</string>
+    <string name="scifi_description_discovery_one">Nave esplorativa del film 2001; Giove è la sua destinazione narrativa</string>
+    <string name="scifi_reference_note">Oggetto immaginario. Direzione e distanza approssimativa seguono il riferimento reale indicato, non un’orbita misurata. Le proprietà fisiche non sono dedotte; l’immagine è illustrativa.</string>
+    <string name="catalog_type_spacecraft">Astronavi</string>
+    <string name="scifi_estimated_distance">Distanza stimata del riferimento</string>
+    <string name="scifi_distance_reference_note">Stima basata su %1$s, non su una distanza misurata dell’oggetto.</string>
+</resources>

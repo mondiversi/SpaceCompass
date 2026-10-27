@@ -10,13 +10,12 @@ internal const val SPACE_COMPASS_MAIN_OVERLAY_ALPHA = .72f
 // A point caption and its adjacent reminder button share the same subtle translucency.
 internal const val SPACE_COMPASS_POINT_CAPTION_ALPHA = .88f
 
-/** High-contrast attention text for light and dark status notices. */
+/** One shared orange per theme for notices, active scenario fields, icons and count badges. */
 internal fun spaceCompassAttentionColor(dark: Boolean): Color =
-    if (dark) Color(0xFFFF8F1F) else Color(0xFFAB3D00)
+    if (dark) Color(0xFFF2AA45) else Color(0xFFE88A2C)
 
-/** Reviewed day/night accents for the active scenario icon and its count badge. */
-internal fun spaceCompassScenarioAccentColor(dark: Boolean): Color =
-    if (dark) Color(0xFFF2AA45) else Color(0xFFFF9630)
+/** Scenario controls deliberately share the exact same palette as attention text. */
+internal fun spaceCompassScenarioAccentColor(dark: Boolean): Color = spaceCompassAttentionColor(dark)
 
 /** Night badges use dark digits on the brighter cyan/orange fills; daytime keeps white digits. */
 internal fun spaceCompassCounterTextColor(dark: Boolean): Color =

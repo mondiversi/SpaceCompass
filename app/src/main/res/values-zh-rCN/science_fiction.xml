@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="catalog_type_scifi">科幻</string>
+    <string name="scifi_type_planet">虚构行星</string>
+    <string name="scifi_type_moon">虚构卫星</string>
+    <string name="scifi_type_giant">虚构气态巨行星</string>
+    <string name="scifi_type_spacecraft">虚构飞船</string>
+    <string name="scifi_universe">作品宇宙</string>
+    <string name="scifi_reference">指向参考</string>
+    <string name="scifi_model_note">虚构想象图。指向跟随真实参考天体，而非实测轨道。</string>
+    <string name="scifi_credits">借助人工智能制作的原创插图。名称和虚构世界归各自创作者所有。</string>
+    <string name="scifi_name_arrakis">厄拉科斯</string>
+    <string name="scifi_description_arrakis">沙丘中的沙漠世界</string>
+    <string name="scifi_name_caladan">卡拉丹</string>
+    <string name="scifi_description_caladan">厄崔迪家族的海洋故乡</string>
+    <string name="scifi_name_giedi_prime">吉迪主星</string>
+    <string name="scifi_description_giedi_prime">哈克南家族的工业故乡</string>
+    <string name="scifi_name_lv_223">LV-223</string>
+    <string name="scifi_description_lv_223">普罗米修斯中的岩石卫星及工程师前哨站</string>
+    <string name="scifi_name_calpamos">卡尔帕莫斯</string>
+    <string name="scifi_description_calpamos">其虚构宇宙中的气态巨行星</string>
+    <string name="scifi_name_pandora">潘多拉</string>
+    <string name="scifi_description_pandora">阿凡达中的森林卫星</string>
+    <string name="scifi_name_polyphemus">波吕斐摩斯</string>
+    <string name="scifi_description_polyphemus">其虚构宇宙中的气态巨行星</string>
+    <string name="scifi_name_vulcan">瓦肯星</string>
+    <string name="scifi_description_vulcan">瓦肯人的干旱故乡</string>
+    <string name="scifi_name_nostromo">诺斯特罗莫</string>
+    <string name="scifi_description_nostromo">异形中的商业拖船；以故事中的卫星附近为方向参考</string>
+    <string name="scifi_name_discovery_one">发现一号</string>
+    <string name="scifi_description_discovery_one">电影2001中的探索飞船；木星是故事中的目的地</string>
+    <string name="scifi_reference_note">虚构天体。方向和大致距离依据指定的真实参照目标，而非实测轨道。不推断物理属性，图片仅为示意。</string>
+    <string name="catalog_type_spacecraft">飞船</string>
+    <string name="scifi_estimated_distance">参照目标的估计距离</string>
+    <string name="scifi_distance_reference_note">此估计基于%1$s，并非该天体的实测距离。</string>
+</resources>

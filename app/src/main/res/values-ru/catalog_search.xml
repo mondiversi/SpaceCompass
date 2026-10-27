@@ -2,4 +2,5 @@
 <resources>
     <string name="catalog_search">Найти</string>
     <string name="catalog_search_clear">Очистить поиск</string>
+    <string name="catalog_scroll_to_top">Вернуться к началу списка</string>
 </resources>

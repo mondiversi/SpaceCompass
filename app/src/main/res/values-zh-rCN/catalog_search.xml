@@ -2,4 +2,5 @@
 <resources>
     <string name="catalog_search">搜索</string>
     <string name="catalog_search_clear">清除搜索</string>
+    <string name="catalog_scroll_to_top">返回列表顶部</string>
 </resources>

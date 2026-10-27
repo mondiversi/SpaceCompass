@@ -61,8 +61,8 @@ internal fun SpaceCompassFloatingActionButton(
 /** Filled accent counter, enlarged by 10% from the original 20 dp badge.
  * Minimum sizing lets accessibility text grow and longer counts widen without clipping. */
 @Composable
-internal fun SpaceCompassFloatingCountBadge(count: String, modifier: Modifier = Modifier) {
-    val accent = MaterialTheme.colorScheme.primary
+internal fun SpaceCompassFloatingCountBadge(count: String, modifier: Modifier = Modifier,
+    accent: Color = MaterialTheme.colorScheme.primary) {
     Box(modifier.defaultMinSize(minWidth = 22.dp, minHeight = 22.dp)
         .background(accent, CircleShape)
         .clearAndSetSemantics {}, contentAlignment = Alignment.Center) {

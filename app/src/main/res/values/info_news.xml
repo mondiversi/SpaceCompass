@@ -1,9 +1,9 @@
 <resources>
     <string name="info_news_title">Latest news · %1$s</string>
-    <string name="info_news_star_sky" formatted="false">Explore 999 objects, all 88 constellations and public LV-426, with refined tracking and scientific references.</string>
-    <string name="info_news_texture_downloads" formatted="false">New graphics pack 1.6: 174 images and 174 separate previews, downloaded individually and cached offline.</string>
-    <string name="info_news_weather" formatted="false">Clearer Info, refined capture and panorama icons, and higher-contrast Observatory and Daily path shortcuts at night.</string>
-    <string name="info_news_viewer_zoom" formatted="false">Types ordered by object count, alphabetical sorting options and clearer object controls.</string>
-    <string name="info_news_settings" formatted="false">Steadier reference labels and Nadir at −90°, opposite Zenith.</string>
-    <string name="info_news_catalog" formatted="false">Improved moon motion, selected-object close approaches and explicit weather-loading status.</string>
+    <string name="info_news_star_sky" formatted="false">Explore 1009 objects with a Science fiction filter and clearly identified illustrative celestial references.</string>
+    <string name="info_news_texture_downloads" formatted="false">Graphics pack 1.7 adds ten images and ten independent previews, downloaded individually, verified and cached offline.</string>
+    <string name="info_news_weather" formatted="false">Compare estimated travel times from everyday speeds to light speed and fictional warp speeds, with compact duration units.</string>
+    <string name="info_news_viewer_zoom" formatted="false">Save, share and import named scenarios, including the selected time-resumption policy.</string>
+    <string name="info_news_settings" formatted="false">Clearer current-scenario summary with automatic altitude, time zone and weather, cached place names and revised icons.</string>
+    <string name="info_news_catalog" formatted="false">Settings confirmation appears when leaving a modified settings page. Refined object controls, counters, colours and callouts.</string>
 </resources>

@@ -13,7 +13,7 @@ class SpaceCompassHiddenCelestialTest {
     @Test fun publicCatalogAndMasterSelectionIncludeLv426WithoutChangingDefaults() {
         val initial = SpaceCompassCelestialSelection()
         assertEquals(setOf(SpaceCompassCelestialBody.SUN, SpaceCompassCelestialBody.MOON), initial.selected)
-        assertEquals(999, spaceCompassAvailableCelestialCatalog(initial.selected).size)
+        assertEquals(1009, spaceCompassAvailableCelestialCatalog(initial.selected).size)
         assertTrue(hidden in spaceCompassCelestialCatalogOrder)
         assertTrue(hidden in initial.toggleAll().selected)
         assertEquals(spaceCompassCelestialCatalogOrder.toSet(),
@@ -25,13 +25,13 @@ class SpaceCompassHiddenCelestialTest {
         val removed = selected.toggle(hidden)
         assertFalse(hidden in removed.selected)
         assertTrue(hidden in spaceCompassAvailableCelestialCatalog(removed.selected))
-        assertEquals(999, removed.toggleAll().selected.size)
+        assertEquals(1009, removed.toggleAll().selected.size)
     }
 
     @Test fun revealedObjectParticipatesInFiltersAndStableNumericSorting() {
         val catalog = spaceCompassAvailableCelestialCatalog(setOf(hidden))
-        assertEquals(SpaceCompassCatalogType.NATURAL_SATELLITE, hidden.catalogType)
-        val filtered = spaceCompassFilterCatalog(setOf(SpaceCompassCatalogType.NATURAL_SATELLITE),
+        assertEquals(SpaceCompassCatalogType.SCIENCE_FICTION, hidden.catalogType)
+        val filtered = spaceCompassFilterCatalog(setOf(SpaceCompassCatalogType.SCIENCE_FICTION),
             SpaceCompassCatalogVisibility.ABOVE, mapOf(hidden to 5.0), catalog)
         assertEquals(listOf(hidden), filtered)
         val sorted = spaceCompassSortCatalog(catalog, SpaceCompassCatalogSort.MASS_DESC, emptyMap(), emptyMap(), Locale.ENGLISH)
@@ -63,7 +63,7 @@ class SpaceCompassHiddenCelestialTest {
         val observation = calculateSpaceCompassCelestialObservation(hidden, time, -33.0, 151.0)!!
         assertTrue(observation.position.azimuthDegrees in 0.0..360.0)
         assertTrue(observation.position.elevationDegrees in -90.0..90.0)
-        assertEquals(39.3, observation.distanceKm / SPACE_COMPASS_LIGHT_YEAR_KM, .001)
+        assertTrue(observation.distanceKm.isNaN())
         val path = calculateSpaceCompassCelestialPath(hidden, LocalDate.parse("2027-04-06"), ZoneId.of("Australia/Sydney"),
             time, -33.0, 151.0, 0.0, SpaceCompassCelestialRemoteData())!!
         assertEquals(hidden, path.body)

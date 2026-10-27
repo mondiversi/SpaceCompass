@@ -2,7 +2,7 @@
 <resources>
     <string name="scenario_speed">時間</string>
     <string name="scenario_speed_description">シナリオの時間を最大3600×で逆行・早送りできます。中央のゼロで時間を停止します。</string>
-    <string name="scenario_resume">カスタムシナリオの再開</string>
+    <string name="scenario_resume">シナリオの再開</string>
     <string name="scenario_resume_description">アプリを開き直したときのシミュレーション時間の再開方法を選びます。選択した速度はすべてのモードに適用されます。</string>
     <string name="scenario_restart">最初から開始</string>
     <string name="scenario_active">アプリの使用中のみ</string>

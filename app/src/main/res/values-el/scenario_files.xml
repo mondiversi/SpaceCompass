@@ -1,0 +1,9 @@
+<resources>
+    <string name="scenario_export">Εξαγωγή σεναρίου</string>
+    <string name="scenario_import">Εισαγωγή σεναρίου</string>
+    <string name="scenario_file_name">Όνομα σεναρίου</string>
+    <string name="scenario_file_saved">Το σενάριο αποθηκεύτηκε</string>
+    <string name="scenario_file_imported">Το σενάριο εισήχθη</string>
+    <string name="scenario_file_invalid">Μη έγκυρο ή μη υποστηριζόμενο αρχείο σεναρίου</string>
+    <string name="scenario_file_error">Δεν ήταν δυνατή η αποθήκευση ή η κοινοποίηση του σεναρίου</string>
+</resources>

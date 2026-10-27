@@ -25,8 +25,16 @@ import java.util.Locale
 @Composable
 internal fun SpaceCompassObserverPage(modifier: Modifier = Modifier, onBack: () -> Unit = {}) {
     val observer = LocalSpaceCompassObserver.current ?: return
+    key(observer.editorGeneration) { SpaceCompassObserverEditor(observer, modifier, onBack) }
+}
+
+@OptIn(ExperimentalMaterial3Api::class, ExperimentalLayoutApi::class)
+@Composable
+private fun SpaceCompassObserverEditor(observer: SpaceCompassObserverState, modifier: Modifier, onBack: () -> Unit) {
     val context = LocalContext.current
     val resources = LocalResources.current
+    val rejectSettingsExit = LocalSpaceCompassSettingsExitFailure.current
+    val suggestScenarioName = spaceCompassScenarioNameSuggestion()
     val feet = LocalSpaceCompassUnits.current.feet
     val numeric = LocalSpaceCompassNumericFormat.current
     fun displayHeight(meters: Double) = formatSpaceCompassNumber(if (feet) meters / .3048 else meters, 2, numeric, grouping = false)
@@ -71,6 +79,9 @@ internal fun SpaceCompassObserverPage(modifier: Modifier = Modifier, onBack: () 
     var needsMetadata by rememberSaveable { mutableStateOf(false) }
     fun edited() { editRevision++; validationError = false }
     fun number(value: String) = spaceCompassObserverInputNumber(value)
+    // Warm and persist the administrative label while choosing/editing a scenario position.
+    rememberSpaceCompassEstimatedPlace(number(latitude), number(longitude),
+        enabled = simulatePosition && !LocalSpaceCompassScreensaverActive.current)
     fun effectiveZone() = when {
         simulateZone -> zone.trim()
         simulatePosition -> automaticZone.orEmpty()
@@ -101,16 +112,20 @@ internal fun SpaceCompassObserverPage(modifier: Modifier = Modifier, onBack: () 
     fun saveEditedDraft(leaving: Boolean = false) {
         if (editRevision == 0) return
         if (busy || needsMetadata) {
-            if (leaving) showSpaceCompassBottomMessage(context,
-                resources.getString(R.string.observer_not_saved))
+            if (leaving) {
+                rejectSettingsExit()
+                showSpaceCompassBottomMessage(context, resources.getString(R.string.observer_not_saved))
+            }
             return
         }
         val editing = currentDraft()
         val resolved = editing.resolve(observer.savedPlan, System.currentTimeMillis(), ZoneId.systemDefault().id)
         if (resolved.isFailure) {
             validationError = true
-            if (leaving) showSpaceCompassBottomMessage(context,
-                resources.getString(R.string.observer_not_saved))
+            if (leaving) {
+                rejectSettingsExit()
+                showSpaceCompassBottomMessage(context, resources.getString(R.string.observer_not_saved))
+            }
         } else {
             val previousDraft = savedDraft.value
             val unchangedMoment = editing.date == previousDraft.date && editing.time == previousDraft.time &&
@@ -122,15 +137,10 @@ internal fun SpaceCompassObserverPage(modifier: Modifier = Modifier, onBack: () 
                     advanceTime = old.advanceTime, clockOffsetMs = old.clockOffsetMs)
             } ?: value }
             clockOffset = nextPlan?.clockOffsetMs ?: clockOffset
-            val changes = spaceCompassObserverSectionChanges(savedDraft.value, editing)
-            val changed = observer.apply(nextPlan)
+            observer.apply(nextPlan)
             savedDraft.value = editing
             editRevision = 0
             validationError = false
-            if (changed && changes.isNotEmpty()) {
-                // One short message preserves every changed section, including bulk toggles.
-                showSpaceCompassBottomMessage(context, changes.joinToString("\n") { resources.getString(it.messageId) })
-            }
         }
     }
     fun applyClockEdit(value: SpaceCompassObserverDraft) {
@@ -207,30 +217,6 @@ internal fun SpaceCompassObserverPage(modifier: Modifier = Modifier, onBack: () 
             } finally { if (request == lookupRevision) busy = false }
         }
     }
-    fun applyPositionMetadata() {
-        if (!simulatePosition) return
-        val a = number(latitude) ?: return
-        val b = number(longitude) ?: return
-        if (a !in -90.0..90.0 || b !in -180.0..180.0) return
-        lookup?.cancel()
-        val request = ++lookupRevision
-        metadataField = null; busy = true; notice = 0
-        lookup = scope.launch {
-            try {
-                val result = lookupSpaceCompassObserverMetadata(a, b)
-                currentCoroutineContext().ensureActive()
-                if (request != lookupRevision || !simulatePosition || number(latitude) != a || number(longitude) != b) return@launch
-                val selected = currentDraft().withPositionMetadata(result, numeric, ZoneId.systemDefault().id)
-                altitude = selected.altitude; zone = selected.zone
-                automaticAltitude = selected.automaticAltitudeMeters; automaticZone = selected.automaticZoneId
-                date = selected.date; time = selected.time; preservedMoment = selected.preservedMomentMs
-                simulateAltitude = true; simulateZone = true; altitudeEdited = true; zoneEdited = true
-                pendingMoment = null; needsMetadata = false; edited()
-            } catch (cancelled: CancellationException) { throw cancelled
-            } catch (_: Exception) { notice = R.string.observer_metadata_failed
-            } finally { if (request == lookupRevision) busy = false }
-        }
-    }
     val selectedCoordinatesValid = simulatePosition && number(latitude)?.let { it in -90.0..90.0 } == true &&
         number(longitude)?.let { it in -180.0..180.0 } == true
     val deviceCoordinatesValid = device?.let { it.latitude.isFinite() && it.longitude.isFinite() &&
@@ -252,11 +238,25 @@ internal fun SpaceCompassObserverPage(modifier: Modifier = Modifier, onBack: () 
     Column(modifier.fillMaxSize().testTag("observer-page")) {
         SpaceCompassPageToolbar(stringResource(R.string.observer_title), onBack) {
             SpaceCompassScenarioResumeButton(observer)
+            SpaceCompassScenarioTransferActions(capture = {
+                saveEditedDraft()
+                if (editRevision != 0 || busy || needsMetadata) {
+                    showSpaceCompassBottomMessage(context, resources.getString(R.string.observer_not_saved))
+                    null
+                } else {
+                    val archive = SpaceCompassScenarioArchive.capture(observer, resources.getString(R.string.observer_title))
+                    val namedImport = observer.archiveName?.takeUnless {
+                        it == resources.getString(R.string.observer_title) || it == "Scenario"
+                    }
+                    archive.copy(name = namedImport ?: suggestScenarioName(archive))
+                }
+            }, onImport = { archive ->
+                // Discard old pending work before replacing the editor; disposal must not overwrite the imported file.
+                lookup?.cancel(); lookupRevision++; editRevision = 0
+                observer.importArchive(archive)
+            }, enabled = !busy)
         }
         SpaceCompassIslandGrid(Modifier.weight(1f), scroll = islandScroll) {
-            item(key = "summary", span = StaggeredGridItemSpan.FullLine) {
-                SpaceCompassObserverSummaryIsland(observer.plan)
-            }
             item(key = "position") {
                 SpaceCompassSettingsToggleIsland(stringResource(R.string.observer_place), iconKey = "coordinates",
                     checked = simulatePosition, toggleDescription = stringResource(R.string.observer_enable_position),
@@ -283,7 +283,7 @@ internal fun SpaceCompassObserverPage(modifier: Modifier = Modifier, onBack: () 
                             lookup = scope.launch {
                                 busy = true; notice = 0
                                 try {
-                                    val found = searchSpaceCompassObserverPlace(context.applicationContext, search)
+                                    val found = searchSpaceCompassObserverPlace(context.applicationContext, search, resources.configuration.locales[0])
                                     if (found == null) notice = R.string.observer_lookup_failed else {
                                         needsMetadata = false
                                         latitude = found.latitude.toString(); longitude = found.longitude.toString(); edited()
@@ -309,9 +309,6 @@ internal fun SpaceCompassObserverPage(modifier: Modifier = Modifier, onBack: () 
                     if (metadataField == null && notice != 0 && notice != R.string.observer_terrain_note)
                         Text(stringResource(notice), style = MaterialTheme.typography.bodySmall)
                     SpaceCompassSettingsDescription(stringResource(R.string.observer_privacy))
-                    SpaceCompassObserverAction(stringResource(R.string.observer_use_position_metadata),
-                        onClick = ::applyPositionMetadata, enabled = selectedCoordinatesValid && !busy,
-                        modifier = Modifier.fillMaxWidth().testTag("observer-use-position-metadata"))
                 }
             }
             item(key = "altitude") {
@@ -422,7 +419,7 @@ internal fun SpaceCompassObserverPage(modifier: Modifier = Modifier, onBack: () 
                     SpaceCompassScenarioMidnightNote()
                 }
             }
-            item(key = "scenario-speed") { SpaceCompassScenarioSpeedIsland(observer) { islandReveal.changed(6, it) } }
+            item(key = "scenario-speed") { SpaceCompassScenarioSpeedIsland(observer) { islandReveal.changed(5, it) } }
             if (validationError) item(key = "observer-validation", span = StaggeredGridItemSpan.FullLine) {
                 Text(stringResource(R.string.observer_invalid),
                     Modifier.padding(horizontal = 8.dp).testTag("observer-validation-error"),

@@ -2,7 +2,7 @@
 <resources>
     <string name="scenario_speed">Waktu</string>
     <string name="scenario_speed_description">Gerakkan waktu skenario mundur atau maju hingga 3600×. Nol di tengah menjeda waktu.</string>
-    <string name="scenario_resume">Melanjutkan skenario khusus</string>
+    <string name="scenario_resume">Melanjutkan skenario</string>
     <string name="scenario_resume_description">Pilih cara waktu simulasi dilanjutkan saat aplikasi dibuka kembali. Kecepatan yang dipilih berlaku di setiap mode.</string>
     <string name="scenario_restart">Mulai dari awal</string>
     <string name="scenario_active">Hanya saat aplikasi aktif</string>

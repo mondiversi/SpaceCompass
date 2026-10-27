@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="travel_title">Tempo di viaggio</string>
+    <string name="travel_description">Stima a velocità costante, sulla distanza attuale, nel riferimento dell’osservatore.</string>
+    <string name="travel_speed">Velocità</string>
+    <string name="travel_duration">Tempo stimato</string>
+    <string name="travel_distance_unavailable">Distanza non disponibile: impossibile calcolare il tempo di viaggio.</string>
+    <string name="travel_walking">A piedi</string>
+    <string name="travel_bicycle">Bicicletta</string>
+    <string name="travel_car">Auto</string>
+    <string name="travel_aircraft">Aereo</string>
+    <string name="travel_rocket">Razzo</string>
+    <string name="travel_probe">Sonda veloce</string>
+    <string name="travel_light">Velocità della luce</string>
+    <string name="travel_warp">Warp %1$s</string>
+    <string name="travel_warp_note">Warp è una scala di fantascienza, non una velocità fisicamente raggiungibile.</string>
+</resources>

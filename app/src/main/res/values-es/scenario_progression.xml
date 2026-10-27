@@ -2,7 +2,7 @@
 <resources>
     <string name="scenario_speed">Tiempo</string>
     <string name="scenario_speed_description">Retrocede o avanza en el tiempo hasta 3600×. El cero en el centro detiene el tiempo.</string>
-    <string name="scenario_resume">Reanudación del escenario personalizado</string>
+    <string name="scenario_resume">Reanudación del escenario</string>
     <string name="scenario_resume_description">Elige cómo se reanuda el tiempo simulado al volver a abrir la aplicación. La velocidad elegida se aplica en todos los modos.</string>
     <string name="scenario_restart">Reiniciar desde el principio</string>
     <string name="scenario_active">Solo con la aplicación activa</string>

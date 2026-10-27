@@ -2,7 +2,7 @@
 <resources>
     <string name="scenario_speed">Χρόνος</string>
     <string name="scenario_speed_description">Μετακινήστε τον χρόνο πίσω ή μπροστά έως 3600×. Το μηδέν στο κέντρο παγώνει τον χρόνο.</string>
-    <string name="scenario_resume">Συνέχιση προσαρμοσμένου σεναρίου</string>
+    <string name="scenario_resume">Συνέχιση σεναρίου</string>
     <string name="scenario_resume_description">Επιλέξτε πώς συνεχίζεται ο προσομοιωμένος χρόνος όταν ανοίγετε ξανά την εφαρμογή. Η επιλεγμένη ταχύτητα ισχύει σε κάθε λειτουργία.</string>
     <string name="scenario_restart">Επανεκκίνηση από την αρχή</string>
     <string name="scenario_active">Μόνο με ενεργή εφαρμογή</string>

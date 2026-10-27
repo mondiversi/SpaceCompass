@@ -2,4 +2,5 @@
 <resources>
     <string name="catalog_search">Zoeken</string>
     <string name="catalog_search_clear">Zoekopdracht wissen</string>
+    <string name="catalog_scroll_to_top">Terug naar het begin van de lijst</string>
 </resources>

@@ -20,8 +20,8 @@ class SpaceCompassHundredCatalogTest {
 
     @Test fun catalogueExtensionsKeepUniqueOrdinaryObjectsAndStableSelectionIdentifiers() {
         assertEquals(51, additions.size)
-        assertEquals(999, spaceCompassCelestialCatalogOrder.size)
-        assertEquals(999, spaceCompassCelestialCatalogOrder.distinct().size)
+        assertEquals(1009, spaceCompassCelestialCatalogOrder.size)
+        assertEquals(1009, spaceCompassCelestialCatalogOrder.distinct().size)
         assertTrue(SpaceCompassCelestialBody.LV_426 in spaceCompassCelestialCatalogOrder)
         assertFalse(SpaceCompassCelestialBody.EARTH_CENTER in spaceCompassCelestialCatalogOrder)
         for (body in additions) {

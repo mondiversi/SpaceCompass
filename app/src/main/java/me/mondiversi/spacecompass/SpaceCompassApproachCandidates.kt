@@ -8,7 +8,7 @@ import kotlin.math.sin
  * including at the poles and across the azimuth seam. Exact separation is checked later. */
 internal fun spaceCompassApproachCandidates(positions: Map<SpaceCompassCelestialBody, SpaceCompassSunPosition>):
     List<Pair<SpaceCompassCelestialBody, SpaceCompassCelestialBody>> {
-    val bodies = positions.keys.sortedBy { it.ordinal }
+    val bodies = positions.keys.filterNot { it.isFictional }.sortedBy { it.ordinal }
     if (bodies.size < 16) return buildList {
         for (i in bodies.indices) for (j in i + 1 until bodies.size) add(bodies[i] to bodies[j])
     }

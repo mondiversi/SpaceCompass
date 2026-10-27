@@ -163,3 +163,16 @@ The stable 1.6 release contains 174 full resources and 174 separate previews, al
 Per-image provenance, licences and transformations remain in the versioned manifest and credits.
 All celestial photographs and fictional LV-426 remain external; scientific catalogue text/data and
 their dataset notices are bundled and documented in [catalogue provenance](catalogue/README.md).
+
+
+## Additional fictional illustrations
+
+Original AI-assisted concept illustrations and independent previews are prepared externally in graphics pack 1.7. They are not photographs or observed maps. Full provenance, generation prompts, processing and project-artwork terms are in that pack’s manifest and CREDITS.md. Names and fictional settings remain attributed to their respective creators. See [fictional reference limits](docs/SCIENCE_FICTION_REFERENCES.md). No new celestial image is bundled in the APK.
+
+## Graphics collection 1.7 distribution
+
+The complete collection contains 184 full WebP resources and 184 independent previews,
+quality 90/method 6, totalling 43.74 MB (41.71 MiB; 43,735,950 bytes) with its manifest, credits and checksums.
+Release 1.7 publishes only ten new full images, ten previews and four metadata files,
+4.98 MB (4.75 MiB; 4,984,704 bytes). Older entries retain their exact individual pack-1.6 URLs and hashes.
+The complete catalogue is described by the version-1.7 manifest; no full texture ZIP is distributed.

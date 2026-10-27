@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="travel_title">Muda wa safari</string>
+    <string name="travel_description">Makadirio kwa kasi isiyobadilika na umbali wa sasa, katika mfumo wa mwangalizi.</string>
+    <string name="travel_speed">Kasi</string>
+    <string name="travel_duration">Muda unaokadiriwa</string>
+    <string name="travel_distance_unavailable">Umbali haupatikani: muda wa safari hauwezi kukokotolewa.</string>
+    <string name="travel_walking">Kutembea</string>
+    <string name="travel_bicycle">Baiskeli</string>
+    <string name="travel_car">Gari</string>
+    <string name="travel_aircraft">Ndege</string>
+    <string name="travel_rocket">Roketi</string>
+    <string name="travel_probe">Chombo cha haraka</string>
+    <string name="travel_light">Kasi ya mwanga</string>
+    <string name="travel_warp">Warp %1$s</string>
+    <string name="travel_warp_note">Warp ni kipimo cha kulinganisha cha kubuni, si kasi inayoweza kufikiwa kifizikia.</string>
+</resources>

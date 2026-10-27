@@ -117,14 +117,11 @@ internal class SpaceCompassNativePositionMap(
         } else {
             val readout = SpaceCompassNativePositionTable(context, density, fontScale, foregroundArgb, accentArgb, dark, scrollbarArgb)
             table = readout
-            // Both split slots retain the same scrollbar-safe card inset.
+            // Both split slots share the outer page inset; do not add a second card margin.
             val mapViewport = FrameLayout(context).apply {
                 tag = "position-map-viewport"
                 addView(content, FrameLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT,
-                    ViewGroup.LayoutParams.MATCH_PARENT).apply {
-                    marginStart = dp(spaceCompassDetailScrollInset.value)
-                    marginEnd = dp(spaceCompassDetailScrollInset.value)
-                })
+                    ViewGroup.LayoutParams.MATCH_PARENT))
             }
             val split = object : LinearLayout(context) {
                 private val splitChildren = arrayOf(mapViewport, readout)

@@ -12,6 +12,8 @@ internal fun spaceCompassCelestialDetailSections(body: SpaceCompassCelestialBody
     coordinates: SpaceCompassCelestialCoordinates?, resources: SpaceCompassTextResources, formatting: SpaceCompassPanoramaFormatting,
     units: SpaceCompassUnits): List<SpaceCompassCelestialDetailSection> {
     val numeric = formatting.numeric
+    val displayDistance = distance?.takeIf { it.isFinite() && it >= 0 }
+        ?: spaceCompassReferenceDistanceKm(body, timeMs, remote)
     val sections = mutableListOf<SpaceCompassCelestialDetailSection>()
     fun detailRow(label: Int, value: String, tag: String? = null) =
         SpaceCompassCelestialDetailRow(resources.getString(label), value, tag = tag)
@@ -24,7 +26,8 @@ internal fun spaceCompassCelestialDetailSections(body: SpaceCompassCelestialBody
         SpaceCompassCelestialDetailRow(resources.getString(R.string.celestial_view_classification),
             listOfNotNull(resources.getString(it), facts.spectralType).joinToString(" · "), tag = "celestial-view-classification")
     })
-    val sourceRows = body.largeCatalogEntry?.let { listOf(detailRow(R.string.catalogue_source, it.sourceLabel)) }.orEmpty()
+    val sourceRows = body.largeCatalogEntry?.let { listOf(detailRow(R.string.catalogue_source, it.sourceLabel)) }.orEmpty() +
+        body.fictionalReference?.let { listOf(detailRow(R.string.scifi_universe, it.universe), detailRow(R.string.scifi_reference, it.referenceName)) }.orEmpty()
     sections += SpaceCompassCelestialDetailSection(resources.getString(R.string.celestial_section_identity), "identity", identity + sourceRows,
         "celestial-view-information-island")
 
@@ -115,8 +118,8 @@ internal fun spaceCompassCelestialDetailSections(body: SpaceCompassCelestialBody
             add(detailRow(R.string.celestial_view_max_distance,
                 formatSpaceCompassSelectedDistance(body, facts.maximumParentKm, numeric, units.distance, units.feet) ?: "—"))
         }
-        add(detailRow(R.string.celestial_view_observer_distance,
-            formatSpaceCompassSelectedDistance(body, distance, numeric, units.distance, units.feet) ?: "—"))
+        add(detailRow(if (body.isFictional) R.string.scifi_estimated_distance else R.string.celestial_view_observer_distance,
+            formatSpaceCompassSelectedDistance(body, displayDistance, numeric, units.distance, units.feet) ?: "—"))
         if (physicalBody) {
             add(detailRow(R.string.celestial_view_phase, phase?.let { resources.getString(it.kind.nameResource) } ?: "—"))
             add(detailRow(R.string.celestial_view_illuminated, number(
@@ -124,7 +127,9 @@ internal fun spaceCompassCelestialDetailSections(body: SpaceCompassCelestialBody
         }
     }
     sections += SpaceCompassCelestialDetailSection(resources.getString(R.string.celestial_section_orbit), "distance", observation,
-        "celestial-view-orbit-island")
+        "celestial-view-orbit-island", body.fictionalReference?.let {
+            resources.getString(R.string.scifi_distance_reference_note, it.referenceName)
+        })
 
     sections += spaceCompassCelestialSpatialSection(body, coordinates, resources, formatting, units)
     return sections
@@ -169,7 +174,7 @@ private fun spaceCompassCelestialSpatialSection(body: SpaceCompassCelestialBody,
         SpaceCompassCelestialCoordinateFrame.GEOCENTRIC_TEME -> R.string.celestial_spatial_teme_note
         else -> R.string.celestial_spatial_geocentric_note
     }) }, when {
-        body.isFictional -> resources.getString(R.string.celestial_spatial_fiction_note)
+        body.isFictional -> resources.getString(R.string.scifi_reference_note)
         body == SpaceCompassCelestialBody.TRAPPIST_1_E -> resources.getString(R.string.celestial_spatial_host_note)
         else -> null
     }).joinToString("\n").ifEmpty { null }

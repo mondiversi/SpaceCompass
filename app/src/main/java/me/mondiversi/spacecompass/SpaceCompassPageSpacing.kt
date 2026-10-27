@@ -7,7 +7,7 @@ import androidx.compose.ui.unit.dp
 internal val spaceCompassPageContentPadding = PaddingValues(start = 10.dp, top = 0.dp, end = 10.dp, bottom = 0.dp)
 internal val spaceCompassIslandContentPadding = PaddingValues(12.dp)
 
-/** Keep detail cards and external notes clear of the viewport scrollbar. */
+/** Protect external detail notes from the scrollbar; cards use only the outer page inset. */
 internal val spaceCompassDetailScrollInset = 8.dp
 
 /** Match UVIR's independent settings/island metrics; do not apply these to sky overlays. */

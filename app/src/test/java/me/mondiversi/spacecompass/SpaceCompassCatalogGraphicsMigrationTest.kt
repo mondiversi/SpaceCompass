@@ -38,8 +38,8 @@ class SpaceCompassCatalogGraphicsMigrationTest {
             assertTrue(parent.name,names.matches(parent.name))
             val preview=SpaceCompassCelestialThumbnailPolicy.forImage(parent.name)!!
             assertEquals("thumb_"+parent.name,preview.name)
-            assertEquals(policy.PACK,parent.downloadPack)
-            assertEquals(policy.PACK,preview.downloadPack)
+            assertEquals(if (parent.name.startsWith("fictional_") && parent.name != "fictional_lv_426.webp") "celestial-textures-v1.7" else "celestial-textures-v1.6",parent.downloadPack)
+            assertEquals(parent.downloadPack,preview.downloadPack)
             assertTrue(policy.allowedUrl(requireNotNull(parent.url)))
             assertTrue(policy.allowedUrl(requireNotNull(preview.url)))
         }

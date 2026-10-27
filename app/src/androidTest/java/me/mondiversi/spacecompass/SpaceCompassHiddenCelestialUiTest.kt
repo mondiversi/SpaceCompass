@@ -25,9 +25,9 @@ class SpaceCompassHiddenCelestialUiTest {
             }
         }
         compose.onNodeWithTag("celestial-catalog-scroll").performScrollToNode(hasTestTag("celestial-body-LV_426"))
-        compose.onNodeWithTag("celestial-body-LV_426").assertIsOff().performClick()
-        compose.onNodeWithTag("celestial-body-LV_426").assertIsOn().performClick()
-        compose.onNodeWithTag("celestial-body-LV_426").assertIsOff()
+        compose.onNodeWithTag("catalog-check-LV_426").assertIsOff().performClick()
+        compose.onNodeWithTag("catalog-check-LV_426").assertIsOn().performClick()
+        compose.onNodeWithTag("catalog-check-LV_426").assertIsOff()
         compose.runOnIdle { assertFalse(SpaceCompassCelestialBody.LV_426 in selection.value.selected) }
     }
 }

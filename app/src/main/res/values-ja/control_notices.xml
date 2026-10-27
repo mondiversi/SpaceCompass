@@ -10,8 +10,8 @@
     <string name="panorama_labels_off">ラベルを非表示にしました</string>
     <string name="control_choice_message">%1$s：%2$s</string>
 
-    <string name="scene_scenario_on">カスタムシナリオを有効にしました</string>
-    <string name="scene_scenario_off">カスタムシナリオを無効にしました</string>
+    <string name="scene_scenario_on">シナリオを有効にしました</string>
+    <string name="scene_scenario_off">シナリオを無効にしました</string>
     <string name="scene_objects_on">天体を有効にしました</string>
     <string name="scene_objects_off">天体を無効にしました</string>
 </resources>

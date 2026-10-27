@@ -1,0 +1,9 @@
+<resources>
+    <string name="scenario_export">시나리오 내보내기</string>
+    <string name="scenario_import">시나리오 가져오기</string>
+    <string name="scenario_file_name">시나리오 이름</string>
+    <string name="scenario_file_saved">시나리오가 저장되었습니다</string>
+    <string name="scenario_file_imported">시나리오를 가져왔습니다</string>
+    <string name="scenario_file_invalid">유효하지 않거나 지원되지 않는 시나리오 파일입니다</string>
+    <string name="scenario_file_error">시나리오를 저장하거나 공유할 수 없습니다</string>
+</resources>

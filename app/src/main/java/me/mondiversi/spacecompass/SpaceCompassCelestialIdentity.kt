@@ -3,7 +3,7 @@ package me.mondiversi.spacecompass
 /** Stable catalogue designations; major planets already have their accepted names.
  * Sources: USGS/IAU nomenclature, NASA/JPL and the existing SIMBAD references.
  * A constellation designation is not a resolved component or a new pointing target. */
-internal val SpaceCompassCelestialBody.scientificDesignation: String? get() = when (this) {
+internal val SpaceCompassCelestialBody.scientificDesignation: String? get() = if (isFictional) null else when (this) {
     SpaceCompassCelestialBody.CERES -> "(1) Ceres"
     SpaceCompassCelestialBody.ENCELADUS -> "Saturn II · 602"
     SpaceCompassCelestialBody.VEGA -> "α Lyrae · HD 172167"
@@ -45,7 +45,7 @@ internal val SpaceCompassCelestialBody.scientificDesignation: String? get() = wh
     else -> additionalCatalogEntry?.designation
 }
 
-internal val SpaceCompassCelestialBody.scientificTypeResource: Int? get() = when (this) {
+internal val SpaceCompassCelestialBody.scientificTypeResource: Int? get() = fictionalReference?.classification ?: when (this) {
     SpaceCompassCelestialBody.TESLA_ROADSTER -> R.string.celestial_roadster_type
     SpaceCompassCelestialBody.EARTH_CENTER -> null
     SpaceCompassCelestialBody.SUN -> R.string.celestial_identity_solar_star
@@ -69,5 +69,7 @@ internal val SpaceCompassCelestialBody.scientificTypeResource: Int? get() = when
         SpaceCompassCatalogType.STAR_CLUSTER -> R.string.celestial_identity_cluster
         SpaceCompassCatalogType.CONSTELLATION -> R.string.catalog_type_constellation
         SpaceCompassCatalogType.GALAXY -> R.string.catalog_type_galaxy
+        SpaceCompassCatalogType.SCIENCE_FICTION -> R.string.catalog_type_scifi
+        SpaceCompassCatalogType.SPACECRAFT -> R.string.catalog_type_spacecraft
     }
 }

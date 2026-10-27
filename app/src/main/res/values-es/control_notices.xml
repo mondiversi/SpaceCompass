@@ -10,8 +10,8 @@
     <string name="panorama_labels_off">Etiquetas ocultas</string>
     <string name="control_choice_message">%1$s: %2$s</string>
 
-    <string name="scene_scenario_on">Escenario personalizado activado</string>
-    <string name="scene_scenario_off">Escenario personalizado desactivado</string>
+    <string name="scene_scenario_on">Escenario activado</string>
+    <string name="scene_scenario_off">Escenario desactivado</string>
     <string name="scene_objects_on">Objetos activados</string>
     <string name="scene_objects_off">Objetos desactivados</string>
 </resources>

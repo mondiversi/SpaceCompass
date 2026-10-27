@@ -1,4 +1,5 @@
 <resources>
     <string name="observer_current_scenario">Scénario actuel</string>
-    <string name="observer_use_position_metadata">Utiliser l’altitude et le fuseau de cette position</string>
+    <string name="observer_customize">Modifier</string>
+    <string name="scenario_summary_automatic">Automatique</string>
 </resources>

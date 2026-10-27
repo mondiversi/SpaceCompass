@@ -1,9 +1,9 @@
 <resources>
     <string name="info_news_title">آخر المستجدات · %1$s</string>
-    <string name="info_news_star_sky" formatted="false">استكشف 999 جرماً وجميع الكوكبات الـ88 وLV-426 المتاح للجميع، مع تحسين التتبع والمراجع العلمية.</string>
-    <string name="info_news_texture_downloads" formatted="false">حزمة الرسومات الجديدة 1.6: تضم 174 صورة و174 صورة مصغرة منفصلة، تُنزّل كل منها على حدة وتُحفظ للاستخدام دون اتصال.</string>
-    <string name="info_news_weather" formatted="false">معلومات أوضح وأيقونات محسّنة للتصوير والبانوراما وتباين أكبر لأزرار المرصد والمسار اليومي في الوضع الليلي.</string>
-    <string name="info_news_viewer_zoom" formatted="false">الأنواع مرتبة حسب عدد الأجرام، وخيارات فرز أبجدية، وعناصر تحكم أوضح.</string>
-    <string name="info_news_settings" formatted="false">تسميات مرجعية أكثر ثباتًا وسمت القدم عند −90°، مقابل سمت الرأس.</string>
-    <string name="info_news_catalog" formatted="false">تحسين حركة الأقمار وتقاربات الأجرام المحددة وحالة تحميل الطقس.</string>
+    <string name="info_news_star_sky" formatted="false">استكشف 1009 أجسام مع مرشح الخيال العلمي ومراجع سماوية توضيحية محددة بوضوح.</string>
+    <string name="info_news_texture_downloads" formatted="false">تضيف حزمة الرسومات 1.7 عشر صور وعشر معاينات مستقلة، تُنزّل منفردة وتُفحص وتُحفظ للاستخدام دون اتصال.</string>
+    <string name="info_news_weather" formatted="false">قارن أزمنة السفر التقديرية من السرعات اليومية إلى سرعة الضوء وسرعات وارب الخيالية، بوحدات زمن مختصرة.</string>
+    <string name="info_news_viewer_zoom" formatted="false">احفظ السيناريوهات المسماة وشاركها واستوردها، بما في ذلك وضع استئناف الزمن المحدد.</string>
+    <string name="info_news_settings" formatted="false">ملخص أوضح للسيناريو الحالي مع ارتفاع ومنطقة زمنية وطقس تلقائي، وأسماء أماكن محفوظة وأيقونات محدّثة.</string>
+    <string name="info_news_catalog" formatted="false">يظهر تأكيد الإعدادات عند مغادرة صفحة عُدلت. تحسين أدوات التحكم بالأجسام والعدادات والألوان وفقاعات المعلومات.</string>
 </resources>

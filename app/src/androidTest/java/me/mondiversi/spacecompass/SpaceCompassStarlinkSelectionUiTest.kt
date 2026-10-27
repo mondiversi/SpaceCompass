@@ -22,8 +22,8 @@ class SpaceCompassStarlinkSelectionUiTest {
             }
         } }
         compose.onNodeWithTag("celestial-select").performClick()
-        compose.onNodeWithTag("celestial-body-STARLINK_V3").performScrollTo().assertIsOff()
-            .assert(hasText("Starlink V3 · 40083")).performClick().assertIsOn()
+        compose.onNodeWithTag("catalog-check-STARLINK_V3").performScrollTo().assertIsOff()
+            .assertContentDescriptionEquals("Starlink V3 · 40083").performClick().assertIsOn()
         compose.onNodeWithTag("celestial-menu").assertIsDisplayed()
         compose.runOnIdle {
             assertEquals(setOf(SpaceCompassCelestialBody.ISS,SpaceCompassCelestialBody.STARLINK_V3),selection.value.selected)

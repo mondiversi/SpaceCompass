@@ -149,7 +149,11 @@ internal fun SpaceCompassSunFinderScreen(
     val observationTime = plan?.observationTimeMs(time) ?: time
     val requestTime = rememberSpaceCompassScenarioRequestTime(plan, time)
     val tile = visibleReadings.location?.let { spaceCompassSunWeatherTile(it.latitude, it.longitude) }
-    val weather = rememberSpaceCompassSunWeather(tile, resumed, selectedTimeMs = requestTime)
+    val deviceTile = deviceReadings.location?.let { spaceCompassSunWeatherTile(it.latitude, it.longitude) }
+    val deviceWeather = rememberSpaceCompassSunWeather(deviceTile, resumed)
+    // Share one live request when possible; scenario weather never replaces the device environment.
+    val weather = if (tile == deviceTile && requestTime == null) deviceWeather
+        else rememberSpaceCompassSunWeather(tile, resumed, selectedTimeMs = requestTime)
     // Warm the whole online catalog in the foreground; unchecked objects never become scene selections.
     val remote = rememberSpaceCompassCelestialRemote(selectedBodies, resumed, motionBodies = selectedBodies,
         retryRevision = remoteRetry, prefetchCatalog = true, catalogRefreshRevision = catalogRefresh,
@@ -166,7 +170,7 @@ internal fun SpaceCompassSunFinderScreen(
     }) {
     SpaceCompassSunFinderContent(visibleReadings,
         observationTime, primaryText, secondaryText, backgroundColor,
-        weather = weather,
+        weather = weather, deviceReadings = deviceReadings, deviceTimeMs = time, deviceWeather = deviceWeather,
         remote = remote, body = resolvedBody, onBodyChange = { applySelection(SpaceCompassCelestialSelection(selectedBodies, it)) },
         selectedBodies = selectedBodies, onSelectionChange = ::applySelection, onDismissRequest = onDismissRequest,
         resumed = resumed && !catalogOpen.value, onRemoteRetry = { remoteRetry++ }) {
@@ -220,6 +224,8 @@ internal fun SpaceCompassSunFinderContent(
     selectedBodies: Set<SpaceCompassCelestialBody> = setOf(body),
     onSelectionChange: ((SpaceCompassCelestialSelection) -> Unit)? = null,
     onDismissRequest: (() -> Unit)? = null, resumed: Boolean = true,
+    deviceReadings: SpaceCompassSunFinderReadings = readings, deviceTimeMs: Long = timeMs,
+    deviceWeather: SpaceCompassSunWeatherReading = weather,
     onRemoteRetry: () -> Unit = {}, onLocationAction: () -> Unit = {}
 ) {
     val dailyPathUiState = rememberSpaceCompassSunDailyPathUiState()
@@ -281,13 +287,19 @@ internal fun SpaceCompassSunFinderContent(
     val observerPlan = LocalSpaceCompassObserver.current?.plan
     LaunchedEffect(observerPlan) { dailyPathUiState.clearSelection() }
     var showEnvironment by rememberSaveable { mutableStateOf(false) }
+    var showScenarioSummary by rememberSaveable { mutableStateOf(false) }
     var showViewer by rememberSaveable { mutableStateOf(false) }
     val catalogOpen = LocalSpaceCompassCatalogOpen.current
     val hasActiveBody = body in selectedBodies
     val bodyName = if (hasActiveBody) stringResource(body.nameResource) else "—"
     val fix = readings.location
-    val estimatedPlace = rememberSpaceCompassEstimatedPlace(fix?.latitude, fix?.longitude,
-        enabled = showEnvironment && resumed)
+    // Device details are independent of the effective observer used for celestial calculations.
+    val deviceFix = deviceReadings.location
+    val deviceAltitude = deviceFix?.takeIf { it.hasAltitude() && it.altitude.isFinite() && it.altitude in -500.0..20_000.0 }?.altitude
+    val estimatedPlace = rememberSpaceCompassEstimatedPlace(deviceFix?.latitude, deviceFix?.longitude,
+        enabled = resumed && (showEnvironment || observerPlan?.simulatePosition != true))
+    val scenarioEstimatedPlace = if (observerPlan?.simulatePosition == true)
+        rememberSpaceCompassEstimatedPlace(fix?.latitude, fix?.longitude, enabled = resumed) else estimatedPlace
     val altitude = fix?.takeIf { it.hasAltitude() && it.altitude.isFinite() && it.altitude in -500.0..20_000.0 }?.altitude
     val sun = remember(timeMs, fix?.latitude, fix?.longitude, altitude) {
         fix?.let { calculateSpaceCompassSunPosition(timeMs, it.latitude, it.longitude, altitude ?: 0.0) }
@@ -335,7 +347,10 @@ internal fun SpaceCompassSunFinderContent(
     val activeOverlay = selectedOverlays[body]
     val target = if (!hasActiveBody) null else if (body == SpaceCompassCelestialBody.SUN) sun else activeOverlay?.observation?.position
     val speed = activeOverlay?.speedKmSecond
-    val shownDistance = activeOverlay?.distanceKm
+    val shownDistance = remember(body, activeOverlay?.distanceKm, timeMs, remote, fix?.latitude, fix?.longitude, altitude) {
+        spaceCompassDisplayObserverDistanceKm(body, activeOverlay?.distanceKm, timeMs, remote,
+            fix?.latitude, fix?.longitude, altitude ?: 0.0)
+    }
     val dailyPath = activeOverlay?.path
     val overlays = selectedOverlays - body
     val numeric = LocalSpaceCompassNumericFormat.current
@@ -388,13 +403,15 @@ internal fun SpaceCompassSunFinderContent(
         spaceCompassSunViewOrientation(visualPose.orientation, pointingTopEdge, false, displayRotation)
     val scenePointingOrientation = if (cameraEnabled) pointingOrientation else
         spaceCompassSunViewOrientation(visualPose.pointing, pointingTopEdge, false, displayRotation)
-    val height = formatSpaceCompassCelestialAltitude(altitude,
-        fix?.takeIf { it.hasVerticalAccuracy() }?.verticalAccuracyMeters?.toDouble(), numeric, units.feet) ?: "—"
+    val deviceOrientation = spaceCompassSunViewOrientation(deviceReadings.orientation, pointingTopEdge, cameraEnabled, displayRotation)
+    val devicePointingOrientation = spaceCompassSunTrustedPointingOrientation(deviceOrientation, deviceReadings.compassUsable)
+    val deviceHeight = formatSpaceCompassCelestialAltitude(deviceAltitude,
+        deviceFix?.takeIf { it.hasVerticalAccuracy() }?.verticalAccuracyMeters?.toDouble(), numeric, units.feet) ?: "—"
     val orientationRows = listOf(
         spaceCompassSunDataRow(stringResource(R.string.sun_finder_heading, SPACE_COMPASS_SUN_DATA_MARKER),
-            angle(spaceCompassSunPointingHeading(pointingOrientation)), "sun-data-heading"),
+            angle(spaceCompassSunPointingHeading(devicePointingOrientation)), "sun-data-heading"),
         spaceCompassSunDataRow(stringResource(R.string.sun_finder_tilt, SPACE_COMPASS_SUN_DATA_MARKER),
-            angle(orientation?.tiltDegrees), "sun-data-tilt")
+            angle(deviceOrientation?.tiltDegrees), "sun-data-tilt")
     )
     val speedTemplate = stringResource(if (body.isExtrasolar)
         R.string.celestial_table_speed else spaceCompassCelestialSpeedLabel(body), SPACE_COMPASS_SUN_DATA_MARKER)
@@ -410,26 +427,24 @@ internal fun SpaceCompassSunFinderContent(
             angle(target?.elevationDegrees), "sun-data-elevation")
     )
     val locationRows = listOf(
-        spaceCompassSunDataRow(stringResource(R.string.celestial_altitude, SPACE_COMPASS_SUN_DATA_MARKER), height, "sun-data-altitude")
+        spaceCompassSunDataRow(stringResource(R.string.celestial_altitude, SPACE_COMPASS_SUN_DATA_MARKER), deviceHeight, "sun-data-altitude")
     )
-    val simulated = LocalSpaceCompassObserver.current?.plan != null
-    val simulatedPosition = LocalSpaceCompassObserver.current?.plan?.simulatePosition == true
-    val simulatedAltitude = simulatedPosition || LocalSpaceCompassObserver.current?.plan?.simulateAltitude == true
     val locationInfoRows = listOf(
-        spaceCompassSunOptionalDataRow(stringResource(if (simulatedPosition) R.string.observer_coordinates_value else R.string.celestial_gps_coordinates, SPACE_COMPASS_SUN_DATA_MARKER),
-            formatSpaceCompassSelectedCoordinates(fix?.latitude, fix?.longitude, numeric, units.dms), "sun-info-coordinates"),
+        spaceCompassSunOptionalDataRow(stringResource(R.string.celestial_gps_coordinates, SPACE_COMPASS_SUN_DATA_MARKER),
+            formatSpaceCompassSelectedCoordinates(deviceFix?.latitude, deviceFix?.longitude, numeric, units.dms), "sun-info-coordinates"),
         spaceCompassSunOptionalDataRow(stringResource(R.string.celestial_gps_coordinate_accuracy, SPACE_COMPASS_SUN_DATA_MARKER),
-            fix?.takeIf { it.hasAccuracy() && it.accuracy.isFinite() && it.accuracy >= 0f }
+            deviceFix?.takeIf { it.hasAccuracy() && it.accuracy.isFinite() && it.accuracy >= 0f }
                 ?.let { formatSpaceCompassPhysicalLength(it.accuracy.toDouble(), 0, numeric, units.feet) }, "sun-info-accuracy"),
-        spaceCompassSunDataRow(stringResource(if (simulatedAltitude) R.string.observer_altitude_value else R.string.sun_finder_altitude, SPACE_COMPASS_SUN_DATA_MARKER), height, "sun-info-altitude"),
+        spaceCompassSunDataRow(stringResource(R.string.sun_finder_altitude, SPACE_COMPASS_SUN_DATA_MARKER), deviceHeight, "sun-info-altitude"),
         spaceCompassSunDataRow(stringResource(R.string.environment_estimated_place, SPACE_COMPASS_SUN_DATA_MARKER),
             estimatedPlace.text ?: stringResource(if (estimatedPlace.loading)
                 R.string.environment_place_loading else R.string.environment_place_unavailable), "sun-info-estimated-place")
     )
-    val weatherValue = stringResource(spaceCompassWeatherValueResource(currentWeather, weather.loading))
+    val currentDeviceWeather = deviceWeather.snapshot?.takeIf { deviceFix != null && spaceCompassSunWeatherSnapshotUsable(it, deviceTimeMs) }
+    val weatherValue = stringResource(spaceCompassWeatherValueResource(currentDeviceWeather, deviceWeather.loading))
     val weatherRow = spaceCompassSunDataRow(stringResource(R.string.sun_weather_estimate,
         SPACE_COMPASS_SUN_DATA_MARKER), weatherValue, "celestial-environment-weather")
-    val weatherText = if (currentWeather == null) weatherValue else weatherRow.announcement
+    val weatherText = if (currentDeviceWeather == null) weatherValue else weatherRow.announcement
     val panorama = rememberSpaceCompassPanoramaAction(timeMs, fix?.latitude, fix?.longitude, altitude,
         phase, currentWeather, selectedBodies, selectedOverlays, remote,
         gpsAccuracyMeters = fix?.takeIf { it.hasAccuracy() && it.accuracy.isFinite() && it.accuracy >= 0f }
@@ -440,8 +455,8 @@ internal fun SpaceCompassSunFinderContent(
         return
     }
     if (showEnvironment) {
-        SpaceCompassSunFinderModelInfo(currentWeather != null, weatherRow, locationInfoRows,
-            primaryText, secondaryText, backgroundColor, latitude = fix?.latitude, longitude = fix?.longitude) { showEnvironment = false }
+        SpaceCompassSunFinderModelInfo(currentDeviceWeather != null, weatherRow, locationInfoRows,
+            primaryText, secondaryText, backgroundColor, latitude = deviceFix?.latitude, longitude = deviceFix?.longitude) { showEnvironment = false }
         return
     }
     val locationActionLabel = (if (sun != null) null else when (readings.locationStatus) {
@@ -482,9 +497,9 @@ internal fun SpaceCompassSunFinderContent(
     val details: @Composable (Modifier, Boolean, Boolean) -> Unit = { modifier, compact, landscape ->
         Column(modifier.testTag("celestial-details-column"), horizontalAlignment = Alignment.CenterHorizontally,
             verticalArrangement = Arrangement.spacedBy(8.dp)) {
-            SpaceCompassSunFinderDataPanel(rows, locationRows, orientation, readings.compassUsable,
+            SpaceCompassSunFinderDataPanel(rows, locationRows, deviceOrientation, deviceReadings.compassUsable,
                 weatherText,
-                currentWeather != null, primaryText, secondaryText, backgroundColor, Modifier.fillMaxWidth().weight(1f, fill = false), compact,
+                currentDeviceWeather != null, primaryText, secondaryText, backgroundColor, Modifier.fillMaxWidth().weight(1f, fill = false), compact,
                 bodyName = bodyName, orientationRows = orientationRows,
                 onBodyNameClick = if (hasActiveBody) ({ catalogOpen?.value = true }) else null,
                 // Keep the object identity at its full above-horizon palette color.
@@ -628,7 +643,7 @@ internal fun SpaceCompassSunFinderContent(
                             notifyControl(if (enabled) R.string.scene_references_on else R.string.scene_references_off)
                         }, primaryText, backgroundColor)
                         SpaceCompassScenarioButton(LocalSpaceCompassObserver.current?.plan.activeSectionCount, primaryText, backgroundColor) {
-                            navigate("observer")
+                            showScenarioSummary = true
                         }
                         SpaceCompassCelestialSelector(body, primaryText, backgroundColor, Modifier, timeMs, remote,
                             selectedBodies, onSelectionChange?.let { { it(selection.toggleAll()) } }) {
@@ -713,4 +728,9 @@ internal fun SpaceCompassSunFinderContent(
             toolbar()
         }
     }
+    // Retain the summary request while editing; its separate dialog window must stay hidden behind pages.
+    if (showScenarioSummary && mainVisible) SpaceCompassScenarioSummaryDialog(observerPlan, fix?.latitude, fix?.longitude,
+        altitude, timeMs, zone, weather, placeReading = scenarioEstimatedPlace, deviceTimeMs = deviceTimeMs,
+        onCustomize = { navigate("observer") },
+        onDismiss = { showScenarioSummary = false })
 }

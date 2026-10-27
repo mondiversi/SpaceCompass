@@ -1,0 +1,9 @@
+<resources>
+    <string name="scenario_export">Exportar escenario</string>
+    <string name="scenario_import">Importar escenario</string>
+    <string name="scenario_file_name">Nombre del escenario</string>
+    <string name="scenario_file_saved">Escenario guardado</string>
+    <string name="scenario_file_imported">Escenario importado</string>
+    <string name="scenario_file_invalid">Archivo de escenario no válido o no compatible</string>
+    <string name="scenario_file_error">No se pudo guardar o compartir el escenario</string>
+</resources>

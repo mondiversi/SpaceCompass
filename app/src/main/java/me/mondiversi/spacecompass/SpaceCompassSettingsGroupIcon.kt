@@ -23,6 +23,11 @@ internal fun SpaceCompassSettingsGroupIcon(key: String, tint: Color) {
         SpaceCompassSettingsMenuIcon("observer", tint, Modifier.size(20.dp))
         return
     }
+    if (key == "weather") {
+        Icon(painterResource(R.drawable.ic_weather), contentDescription = null,
+            modifier = Modifier.size(20.dp), tint = tint)
+        return
+    }
     if (key == "ambient_music") {
         Icon(painterResource(R.drawable.ic_music), contentDescription = null,
             modifier = Modifier.size(20.dp), tint = tint)
@@ -38,14 +43,22 @@ internal fun SpaceCompassSettingsGroupIcon(key: String, tint: Color) {
         val outline = Stroke(strokeWidth, cap = StrokeCap.Round)
         fun point(x: Float, y: Float) = Offset(size.width * x, size.height * y)
         when (key) {
-            "scenario_speed", "scenario_resume" -> {
+            "scenario_speed" -> {
+                val forward = Path().apply {
+                    for (left in listOf(.10f, .52f)) {
+                        moveTo(size.width * left, size.height * .20f)
+                        lineTo(size.width * (left + .38f), size.height * .50f)
+                        lineTo(size.width * left, size.height * .80f)
+                        close()
+                    }
+                }
+                drawPath(forward, tint)
+            }
+            "scenario_resume" -> {
                 drawCircle(tint, size.minDimension * .35f, center, style = outline)
                 drawLine(tint, center, point(.5f, .27f), strokeWidth, StrokeCap.Round)
                 drawLine(tint, center, point(.68f, .57f), strokeWidth, StrokeCap.Round)
-                if (key == "scenario_speed") {
-                    drawLine(tint, point(.72f, .12f), point(.89f, .12f), strokeWidth, StrokeCap.Round)
-                    drawLine(tint, point(.80f, .04f), point(.89f, .12f), strokeWidth, StrokeCap.Round)
-                } else drawCircle(tint, size.minDimension * .08f, point(.82f, .78f))
+                drawCircle(tint, size.minDimension * .08f, point(.82f, .78f))
             }
             "events" -> {
                 drawRoundRect(tint, point(.12f, .20f), Size(size.width * .76f, size.height * .68f),

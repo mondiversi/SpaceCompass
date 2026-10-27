@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="travel_title">Waktu perjalanan</string>
+    <string name="travel_description">Perkiraan pada kecepatan tetap dan jarak saat ini, dalam kerangka acuan pengamat.</string>
+    <string name="travel_speed">Kecepatan</string>
+    <string name="travel_duration">Perkiraan waktu</string>
+    <string name="travel_distance_unavailable">Jarak tidak tersedia: waktu perjalanan tidak dapat dihitung.</string>
+    <string name="travel_walking">Berjalan kaki</string>
+    <string name="travel_bicycle">Sepeda</string>
+    <string name="travel_car">Mobil</string>
+    <string name="travel_aircraft">Pesawat</string>
+    <string name="travel_rocket">Roket</string>
+    <string name="travel_probe">Wahana cepat</string>
+    <string name="travel_light">Kecepatan cahaya</string>
+    <string name="travel_warp">Warp %1$s</string>
+    <string name="travel_warp_note">Warp adalah skala perbandingan fiksi, bukan kecepatan yang dapat dicapai secara fisik.</string>
+</resources>

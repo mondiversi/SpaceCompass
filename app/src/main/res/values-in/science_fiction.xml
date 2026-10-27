@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="catalog_type_scifi">Fiksi ilmiah</string>
+    <string name="scifi_type_planet">Planet fiktif</string>
+    <string name="scifi_type_moon">Bulan fiktif</string>
+    <string name="scifi_type_giant">Raksasa gas fiktif</string>
+    <string name="scifi_type_spacecraft">Kapal antariksa fiktif</string>
+    <string name="scifi_universe">Dunia cerita</string>
+    <string name="scifi_reference">Acuan arah</string>
+    <string name="scifi_model_note">Ilustrasi fiktif. Arah mengikuti acuan nyata, bukan orbit terukur.</string>
+    <string name="scifi_credits">Ilustrasi orisinal dibuat dengan bantuan AI. Nama dan dunia fiksi adalah milik penciptanya masing-masing.</string>
+    <string name="scifi_name_arrakis">Arrakis</string>
+    <string name="scifi_description_arrakis">Dunia gurun dalam Dune</string>
+    <string name="scifi_name_caladan">Caladan</string>
+    <string name="scifi_description_caladan">Dunia samudra asal Wangsa Atreides</string>
+    <string name="scifi_name_giedi_prime">Giedi Prime</string>
+    <string name="scifi_description_giedi_prime">Dunia industri asal Wangsa Harkonnen</string>
+    <string name="scifi_name_lv_223">LV-223</string>
+    <string name="scifi_description_lv_223">Bulan berbatu dan pos Engineer dalam Prometheus</string>
+    <string name="scifi_name_calpamos">Calpamos</string>
+    <string name="scifi_description_calpamos">Raksasa gas dalam dunia fiksinya</string>
+    <string name="scifi_name_pandora">Pandora</string>
+    <string name="scifi_description_pandora">Bulan berhutan dalam Avatar</string>
+    <string name="scifi_name_polyphemus">Polyphemus</string>
+    <string name="scifi_description_polyphemus">Raksasa gas dalam dunia fiksinya</string>
+    <string name="scifi_name_vulcan">Vulcan</string>
+    <string name="scifi_description_vulcan">Dunia gersang asal bangsa Vulcan</string>
+    <string name="scifi_name_nostromo">Nostromo</string>
+    <string name="scifi_description_nostromo">Kapal tunda niaga dalam Alien; acuan dekat bulan dalam cerita</string>
+    <string name="scifi_name_discovery_one">Discovery One</string>
+    <string name="scifi_description_discovery_one">Kapal penjelajah dari film 2001; Jupiter adalah tujuan dalam cerita</string>
+    <string name="scifi_reference_note">Objek fiksi. Arah dan perkiraan jarak mengikuti acuan nyata yang disebutkan, bukan orbit terukur. Sifat fisik tidak disimpulkan; gambar hanya ilustrasi.</string>
+    <string name="catalog_type_spacecraft">Kapal antariksa</string>
+    <string name="scifi_estimated_distance">Perkiraan jarak acuan</string>
+    <string name="scifi_distance_reference_note">Perkiraan berdasarkan %1$s, bukan jarak terukur objek ini.</string>
+</resources>

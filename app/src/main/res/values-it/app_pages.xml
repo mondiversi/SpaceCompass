@@ -3,7 +3,7 @@
     <string name="pc_info">Info e crediti</string>
     <string name="pc_display_automatic">Ridimensionamento automatico</string>
     <string name="pc_info_description">Una bussola astronomica per trovare oggetti celesti, esplorare le loro traiettorie e osservare modelli e fasi lunari.</string>
-    <string name="pc_info_earth">Pensata per essere usata sulla Terra: per l’orientamento l’app usa la gravità e il campo magnetico terrestre; il GPS fornisce la posizione. Questi riferimenti non garantiscono un orientamento affidabile nello spazio con un normale smartphone. Con tecnologie spaziali e sensori più evoluti, magari un giorno ci orienteremo anche lassù 🙂</string>
+    <string name="pc_info_earth">Per ora restiamo sulla Terra: per lo spazio servono smartphone con sensori più evoluti. Magari un giorno 🙂</string>
     <string name="pc_info_compass">Precisione della bussola</string>
     <string name="pc_info_accuracy">Precisione ridotta significa che il telefono segnala una calibrazione magnetica bassa. Il puntamento resta approssimativo finché la precisione del sensore migliora.</string>
     <string name="pc_info_credits">Crediti e licenze</string>

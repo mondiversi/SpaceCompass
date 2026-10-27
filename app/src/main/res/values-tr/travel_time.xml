@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="travel_title">Yolculuk süresi</string>
+    <string name="travel_description">Gözlemcinin referans çerçevesinde, sabit hız ve mevcut mesafeye dayalı tahmin.</string>
+    <string name="travel_speed">Hız</string>
+    <string name="travel_duration">Tahmini süre</string>
+    <string name="travel_distance_unavailable">Mesafe mevcut değil: yolculuk süresi hesaplanamıyor.</string>
+    <string name="travel_walking">Yürüyüş</string>
+    <string name="travel_bicycle">Bisiklet</string>
+    <string name="travel_car">Otomobil</string>
+    <string name="travel_aircraft">Uçak</string>
+    <string name="travel_rocket">Roket</string>
+    <string name="travel_probe">Hızlı sonda</string>
+    <string name="travel_light">Işık hızı</string>
+    <string name="travel_warp">Warp %1$s</string>
+    <string name="travel_warp_note">Warp, fiziksel olarak ulaşılabilen bir hız değil, kurgusal bir karşılaştırma ölçeğidir.</string>
+</resources>

@@ -110,15 +110,15 @@ internal fun createSpaceCompassCelestialThumbnail(context: Context?, body: Space
         SpaceCompassCelestialTextures.open(context, body)?.use { requireNotNull(BitmapFactory.decodeStream(it, null, options)) }
     }
     try {
-        if (body.hasCatalogPhotograph && map != null) return createSpaceCompassPhotographicThumbnail(map, extent)
+        if (body.hasCatalogPhotograph && map != null) return createSpaceCompassPhotographicThumbnail(map, extent, preserveFrame = body.isFictional && body.isSpacecraft)
         val pixels = IntArray(extent*extent)
-        val radius = if (body == SpaceCompassCelestialBody.SATURN) extent * 17.0 / 64 else extent * 28.0 / 64
+        val radius = if (body.hasIllustratedRings) extent * 17.0 / 64 else extent * 28.0 / 64
         for (y in 0 until extent) for (x in 0 until extent) {
             val nx = (x+0.5-extent/2)/radius; val ny = (extent/2-y-0.5)/radius
             val squared = nx*nx+ny*ny
             if (squared > 1) {
                 val ring = nx*nx+(ny/0.28).pow(2)
-                if (body == SpaceCompassCelestialBody.SATURN && ring in 1.20..3.10) pixels[y*extent+x] = 0xffb8a78b.toInt()
+                if (body.hasIllustratedRings && ring in 1.20..3.10) pixels[y*extent+x] = 0xffb8a78b.toInt()
                 continue
             }
             val nz = sqrt(1-squared)

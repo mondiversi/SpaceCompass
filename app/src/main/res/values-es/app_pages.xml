@@ -3,7 +3,7 @@
     <string name="pc_info">Info y créditos</string>
     <string name="pc_display_automatic">Escala automática</string>
     <string name="pc_info_description">Una brújula astronómica para encontrar objetos celestes, explorar sus trayectorias y ver modelos y fases lunares.</string>
-    <string name="pc_info_earth">Pensada para usarse en la Tierra: la app utiliza la gravedad y el campo magnético terrestre para orientarse; el GPS proporciona la posición. Estas referencias no garantizan una orientación fiable en el espacio con un móvil normal. Con tecnología espacial y sensores más avanzados, quizá algún día también podamos orientarnos allá arriba 🙂</string>
+    <string name="pc_info_earth">Por ahora nos quedamos en la Tierra: para el espacio hacen falta sensores de móvil más avanzados. Quizá algún día 🙂</string>
     <string name="pc_info_compass">Precisión de la brújula</string>
     <string name="pc_info_accuracy">Precisión reducida significa que el teléfono indica una calibración magnética baja. La orientación sigue siendo aproximada hasta que mejore la precisión del sensor.</string>
     <string name="pc_info_credits">Créditos y licencias</string>

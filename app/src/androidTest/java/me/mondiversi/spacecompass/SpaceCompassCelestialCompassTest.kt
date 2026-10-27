@@ -85,7 +85,7 @@ class SpaceCompassCelestialCompassTest {
         show()
         for (candidate in SpaceCompassCelestialBody.entries) {
             compose.onNodeWithTag("celestial-select").performClick()
-            compose.onNodeWithTag("celestial-body-${candidate.name}").performScrollTo().performClick()
+            compose.onNodeWithTag("catalog-check-${candidate.name}").performScrollTo().performClick()
             compose.runOnIdle { assertEquals(candidate, body.value) }
             compose.waitForIdle()
             compose.onNodeWithTag("celestial-select").assertContentDescriptionEquals(

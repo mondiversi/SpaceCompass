@@ -10,8 +10,8 @@
     <string name="panorama_labels_off">تم إخفاء التسميات</string>
     <string name="control_choice_message">%1$s: %2$s</string>
 
-    <string name="scene_scenario_on">تم تفعيل السيناريو المخصص</string>
-    <string name="scene_scenario_off">تم تعطيل السيناريو المخصص</string>
+    <string name="scene_scenario_on">تم تفعيل السيناريو</string>
+    <string name="scene_scenario_off">تم تعطيل السيناريو</string>
     <string name="scene_objects_on">تم تفعيل الأجرام</string>
     <string name="scene_objects_off">تم تعطيل الأجرام</string>
 </resources>

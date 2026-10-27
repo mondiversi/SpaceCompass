@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="travel_title">यात्रा का समय</string>
+    <string name="travel_description">प्रेक्षक के संदर्भ तंत्र में, स्थिर गति और वर्तमान दूरी के आधार पर अनुमान।</string>
+    <string name="travel_speed">गति</string>
+    <string name="travel_duration">अनुमानित समय</string>
+    <string name="travel_distance_unavailable">दूरी उपलब्ध नहीं: यात्रा का समय नहीं निकाला जा सकता।</string>
+    <string name="travel_walking">पैदल</string>
+    <string name="travel_bicycle">साइकिल</string>
+    <string name="travel_car">कार</string>
+    <string name="travel_aircraft">विमान</string>
+    <string name="travel_rocket">रॉकेट</string>
+    <string name="travel_probe">तेज़ अंतरिक्ष यान</string>
+    <string name="travel_light">प्रकाश की गति</string>
+    <string name="travel_warp">वार्प %1$s</string>
+    <string name="travel_warp_note">वार्प तुलना का एक काल्पनिक पैमाना है, भौतिक रूप से प्राप्त की जा सकने वाली गति नहीं।</string>
+</resources>

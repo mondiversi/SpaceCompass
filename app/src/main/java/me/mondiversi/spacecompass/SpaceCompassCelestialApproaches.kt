@@ -107,7 +107,7 @@ internal fun spaceCompassApproachPaths(paths: Map<SpaceCompassCelestialBody, Spa
         return observe(body,t).also { cache[key] = it }
     }
     val markers = paths.mapValues { mutableListOf<SpaceCompassSunPathPoint>() }
-    val bodies = paths.keys.sortedBy { it.ordinal }
+    val bodies = paths.keys.filterNot { it.isFictional }.sortedBy { it.ordinal }
     for (i in bodies.indices) for (j in i+1 until bodies.size) {
         checkCancelled()
         val a = bodies[i]; val b = bodies[j]

@@ -38,6 +38,7 @@ internal class SpaceCompassPlaceCache(private val capacity: Int = 16) {
     init { require(capacity > 0) }
     private val entries = LinkedHashMap<SpaceCompassPlaceKey, SpaceCompassPlaceCacheEntry>(capacity, .75f, true)
 
+    @Synchronized
     fun get(key: SpaceCompassPlaceKey, elapsed: Long): SpaceCompassPlaceCacheEntry? {
         val entry = entries[key] ?: return null
         if (elapsed >= entry.expiresElapsed) {
@@ -47,6 +48,7 @@ internal class SpaceCompassPlaceCache(private val capacity: Int = 16) {
         return entry
     }
 
+    @Synchronized
     fun put(key: SpaceCompassPlaceKey, text: String?, elapsed: Long, parts: SpaceCompassPlaceParts? = null): SpaceCompassPlaceCacheEntry {
         val value = text?.takeIf { it.isNotBlank() }
         val entry = SpaceCompassPlaceCacheEntry(value,

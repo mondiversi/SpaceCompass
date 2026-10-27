@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="travel_title">זמן מסע</string>
+    <string name="travel_description">הערכה במהירות קבועה ולפי המרחק הנוכחי, במערכת הייחוס של הצופה.</string>
+    <string name="travel_speed">מהירות</string>
+    <string name="travel_duration">זמן משוער</string>
+    <string name="travel_distance_unavailable">המרחק אינו זמין: אי אפשר לחשב את זמן המסע.</string>
+    <string name="travel_walking">הליכה</string>
+    <string name="travel_bicycle">אופניים</string>
+    <string name="travel_car">מכונית</string>
+    <string name="travel_aircraft">מטוס</string>
+    <string name="travel_rocket">רקטה</string>
+    <string name="travel_probe">גשושית מהירה</string>
+    <string name="travel_light">מהירות האור</string>
+    <string name="travel_warp">וורפ %1$s</string>
+    <string name="travel_warp_note">וורפ הוא סולם השוואה בדיוני, לא מהירות שאפשר להגיע אליה מבחינה פיזיקלית.</string>
+</resources>

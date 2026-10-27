@@ -10,8 +10,8 @@
     <string name="panorama_labels_off">Etiketler gizlendi</string>
     <string name="control_choice_message">%1$s: %2$s</string>
 
-    <string name="scene_scenario_on">Özel senaryo etkinleştirildi</string>
-    <string name="scene_scenario_off">Özel senaryo devre dışı bırakıldı</string>
+    <string name="scene_scenario_on">Senaryo etkinleştirildi</string>
+    <string name="scene_scenario_off">Senaryo devre dışı bırakıldı</string>
     <string name="scene_objects_on">Nesneler etkinleştirildi</string>
     <string name="scene_objects_off">Nesneler devre dışı bırakıldı</string>
 </resources>

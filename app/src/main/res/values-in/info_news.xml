@@ -1,9 +1,9 @@
 <resources>
     <string name="info_news_title">Perubahan terbaru · %1$s</string>
-    <string name="info_news_star_sky" formatted="false">Jelajahi 999 objek, seluruh 88 rasi bintang dan LV-426 yang tersedia untuk semua, dengan pelacakan dan referensi ilmiah yang ditingkatkan.</string>
-    <string name="info_news_texture_downloads" formatted="false">Paket grafis baru 1.6: 174 gambar dan 174 pratinjau terpisah, diunduh satu per satu dan disimpan secara offline.</string>
-    <string name="info_news_weather" formatted="false">Info lebih jelas, ikon foto dan panorama diperbarui, serta tombol Observatorium dan Lintasan harian lebih kontras pada malam hari.</string>
-    <string name="info_news_viewer_zoom" formatted="false">Jenis menurut jumlah objek, opsi pengurutan alfabetis dan kontrol objek yang lebih jelas.</string>
-    <string name="info_news_settings" formatted="false">Label referensi lebih stabil dan Nadir pada −90°, berlawanan dengan Zenit.</string>
-    <string name="info_news_catalog" formatted="false">Peningkatan gerak bulan, pendekatan objek terpilih dan status pemuatan cuaca.</string>
+    <string name="info_news_star_sky" formatted="false">Jelajahi 1009 objek dengan filter Fiksi ilmiah dan acuan langit ilustratif yang ditandai dengan jelas.</string>
+    <string name="info_news_texture_downloads" formatted="false">Paket grafis 1.7 menambahkan sepuluh gambar dan sepuluh pratinjau mandiri yang diunduh satu per satu, diverifikasi dan disimpan secara offline.</string>
+    <string name="info_news_weather" formatted="false">Bandingkan perkiraan waktu perjalanan dari kecepatan sehari-hari hingga kecepatan cahaya dan warp fiktif, dengan satuan durasi ringkas.</string>
+    <string name="info_news_viewer_zoom" formatted="false">Simpan, bagikan dan impor skenario bernama, termasuk mode pelanjutan waktu yang dipilih.</string>
+    <string name="info_news_settings" formatted="false">Ringkasan skenario saat ini lebih jelas dengan ketinggian, zona waktu dan cuaca otomatis, nama tempat tersimpan dan ikon baru.</string>
+    <string name="info_news_catalog" formatted="false">Konfirmasi pengaturan muncul saat keluar dari halaman pengaturan yang diubah. Kontrol objek, penghitung, warna dan balon informasi diperbaiki.</string>
 </resources>

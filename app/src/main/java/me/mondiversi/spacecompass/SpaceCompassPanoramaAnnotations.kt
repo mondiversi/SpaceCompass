@@ -58,7 +58,7 @@ internal fun drawSpaceCompassPanoramaTimeLabels(canvas: Canvas, labels: List<Spa
         val firstBaseline = bounds.top +
             (bounds.height() - lineHeight * (lines.size - 1) - metrics.descent - metrics.ascent) / 2
         lines.forEachIndexed { index, line ->
-            canvas.drawText(line, bounds.left + 9 * scale, firstBaseline + index * lineHeight, text)
+            drawSpaceCompassCaptureLabelLine(canvas, line, bounds.left + 9 * scale, firstBaseline + index * lineHeight, text)
         }
     }
 }

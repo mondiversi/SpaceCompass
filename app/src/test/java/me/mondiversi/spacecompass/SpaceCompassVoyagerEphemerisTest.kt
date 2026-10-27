@@ -144,6 +144,6 @@ class SpaceCompassVoyagerEphemerisTest {
             assertFalse(decoded.contains("SITE_COORD"))
             assertFalse(decoded.contains("latitude"))
         }
-        assertEquals(999, spaceCompassCelestialCatalogOrder.size)
+        assertEquals(1009, spaceCompassCelestialCatalogOrder.size)
     }
 }

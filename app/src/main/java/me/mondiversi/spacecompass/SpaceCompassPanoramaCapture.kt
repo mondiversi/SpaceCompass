@@ -82,7 +82,7 @@ internal fun rememberSpaceCompassPanoramaAction(timeMs: Long, latitude: Double?,
                 val credits = "NASA/GSFC/ASU; NASA/VTAD; NASA/JPL/USGS; Solar System Scope / INOVE; solarsystemscope.com/textures/; " +
                     "CC BY 4.0 (creativecommons.org/licenses/by/4.0/)" +
                     (if (!cameraEnabled) "; NASA/Goddard SVS, Deep Star Maps 2020; ESA/Gaia/DPAC; Ernie Wright (USRA)" else "") +
-                    (if (SpaceCompassCelestialBody.LV_426 in bodies) "; LV-426: fictional Alien moon; original AI illustration" else "") + if (captureWeather != null) "; Open-Meteo (CC BY 4.0)" else ""
+                    (if (bodies.any { it.isFictional }) "; Fictional references: original AI illustrations, not observed objects" else "") + if (captureWeather != null) "; Open-Meteo (CC BY 4.0)" else ""
                 val snapshot = SpaceCompassPanoramaSnapshot(timeMs, latitude ?: 0.0, longitude ?: 0.0, altitude ?: 0.0, phase, captureWeather,
                     objects, remote, "", emptyList(), emptyList(), labelMode = labelMode,
                     observerPositionKnown = latitude != null && longitude != null, showSkyReferences = showSkyReferences, center = center,

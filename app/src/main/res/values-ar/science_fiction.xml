@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="catalog_type_scifi">خيال علمي</string>
+    <string name="scifi_type_planet">كوكب خيالي</string>
+    <string name="scifi_type_moon">قمر خيالي</string>
+    <string name="scifi_type_giant">عملاق غازي خيالي</string>
+    <string name="scifi_type_spacecraft">سفينة فضائية خيالية</string>
+    <string name="scifi_universe">العالم القصصي</string>
+    <string name="scifi_reference">مرجع الاتجاه</string>
+    <string name="scifi_model_note">تمثيل خيالي. يتبع الاتجاه المرجع الحقيقي، وليس مداراً مقاساً.</string>
+    <string name="scifi_credits">رسوم أصلية أُعدت بمساعدة الذكاء الاصطناعي. الأسماء والعوالم الخيالية تخص أصحابها.</string>
+    <string name="scifi_name_arrakis">Arrakis</string>
+    <string name="scifi_description_arrakis">عالم Dune الصحراوي</string>
+    <string name="scifi_name_caladan">Caladan</string>
+    <string name="scifi_description_caladan">موطن آل أتريدس الغني بالمحيطات</string>
+    <string name="scifi_name_giedi_prime">Giedi Prime</string>
+    <string name="scifi_description_giedi_prime">الموطن الصناعي لآل هاركونن</string>
+    <string name="scifi_name_lv_223">LV-223</string>
+    <string name="scifi_description_lv_223">قمر صخري وموقع للمهندسين في Prometheus</string>
+    <string name="scifi_name_calpamos">Calpamos</string>
+    <string name="scifi_description_calpamos">عملاق غازي في عالمه الخيالي</string>
+    <string name="scifi_name_pandora">Pandora</string>
+    <string name="scifi_description_pandora">قمر غابي في Avatar</string>
+    <string name="scifi_name_polyphemus">Polyphemus</string>
+    <string name="scifi_description_polyphemus">عملاق غازي في عالمه الخيالي</string>
+    <string name="scifi_name_vulcan">Vulcan</string>
+    <string name="scifi_description_vulcan">الموطن القاحل للفولكانيين</string>
+    <string name="scifi_name_nostromo">Nostromo</string>
+    <string name="scifi_description_nostromo">قاطرة تجارية في Alien؛ مرجع قرب قمر القصة</string>
+    <string name="scifi_name_discovery_one">Discovery One</string>
+    <string name="scifi_description_discovery_one">سفينة استكشاف من فيلم 2001؛ المشتري وجهتها في القصة</string>
+    <string name="scifi_reference_note">جسم خيالي. يتبع الاتجاه والمسافة التقريبية المرجع الحقيقي المذكور، لا مداراً مقاساً. لا تُستنتج الخصائص الفيزيائية؛ الصورة توضيحية.</string>
+    <string name="catalog_type_spacecraft">سفن فضائية</string>
+    <string name="scifi_estimated_distance">المسافة التقديرية للمرجع</string>
+    <string name="scifi_distance_reference_note">تقدير يستند إلى %1$s، وليس مسافة مقاسة لهذا الجسم.</string>
+</resources>

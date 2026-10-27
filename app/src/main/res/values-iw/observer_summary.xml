@@ -1,4 +1,5 @@
 <resources>
     <string name="observer_current_scenario">התרחיש הנוכחי</string>
-    <string name="observer_use_position_metadata">שימוש בגובה ובאזור הזמן של מיקום זה</string>
+    <string name="observer_customize">עריכה</string>
+    <string name="scenario_summary_automatic">אוטומטי</string>
 </resources>

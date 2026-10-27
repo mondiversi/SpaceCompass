@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="catalog_type_scifi">Επιστημονική φαντασία</string>
+    <string name="scifi_type_planet">Φανταστικός πλανήτης</string>
+    <string name="scifi_type_moon">Φανταστικός δορυφόρος</string>
+    <string name="scifi_type_giant">Φανταστικός αέριος γίγαντας</string>
+    <string name="scifi_type_spacecraft">Φανταστικό διαστημόπλοιο</string>
+    <string name="scifi_universe">Αφηγηματικό σύμπαν</string>
+    <string name="scifi_reference">Αναφορά κατεύθυνσης</string>
+    <string name="scifi_model_note">Φανταστική απεικόνιση. Η κατεύθυνση ακολουθεί την πραγματική αναφορά, όχι μετρημένη τροχιά.</string>
+    <string name="scifi_credits">Πρωτότυπες εικονογραφήσεις με βοήθεια ΤΝ. Τα ονόματα και τα φανταστικά σύμπαντα ανήκουν στους δημιουργούς τους.</string>
+    <string name="scifi_name_arrakis">Arrakis</string>
+    <string name="scifi_description_arrakis">Ερημικός κόσμος του Dune</string>
+    <string name="scifi_name_caladan">Caladan</string>
+    <string name="scifi_description_caladan">Ωκεάνιος γενέθλιος κόσμος του Οίκου Ατρείδη</string>
+    <string name="scifi_name_giedi_prime">Giedi Prime</string>
+    <string name="scifi_description_giedi_prime">Βιομηχανικός γενέθλιος κόσμος του Οίκου Χαρκόνεν</string>
+    <string name="scifi_name_lv_223">LV-223</string>
+    <string name="scifi_description_lv_223">Βραχώδης δορυφόρος και φυλάκιο των Μηχανικών στο Prometheus</string>
+    <string name="scifi_name_calpamos">Calpamos</string>
+    <string name="scifi_description_calpamos">Αέριος γίγαντας του φανταστικού του σύμπαντος</string>
+    <string name="scifi_name_pandora">Pandora</string>
+    <string name="scifi_description_pandora">Δασώδης δορυφόρος του Avatar</string>
+    <string name="scifi_name_polyphemus">Polyphemus</string>
+    <string name="scifi_description_polyphemus">Αέριος γίγαντας του φανταστικού του σύμπαντος</string>
+    <string name="scifi_name_vulcan">Vulcan</string>
+    <string name="scifi_description_vulcan">Άνυδρος γενέθλιος κόσμος των Βουλκάνιων</string>
+    <string name="scifi_name_nostromo">Nostromo</string>
+    <string name="scifi_description_nostromo">Εμπορικό ρυμουλκό του Alien· αναφορά κοντά στον δορυφόρο της ιστορίας</string>
+    <string name="scifi_name_discovery_one">Discovery One</string>
+    <string name="scifi_description_discovery_one">Ερευνητικό σκάφος της ταινίας 2001· ο Δίας είναι ο αφηγηματικός προορισμός του</string>
+    <string name="scifi_reference_note">Φανταστικό αντικείμενο. Η κατεύθυνση και η προσεγγιστική απόσταση ακολουθούν την πραγματική αναφορά, όχι μετρημένη τροχιά. Δεν συνάγονται φυσικές ιδιότητες· η εικόνα είναι εικονογράφηση.</string>
+    <string name="catalog_type_spacecraft">Διαστημόπλοια</string>
+    <string name="scifi_estimated_distance">Εκτιμώμενη απόσταση αναφοράς</string>
+    <string name="scifi_distance_reference_note">Εκτίμηση βάσει του %1$s, όχι μετρημένη απόσταση αυτού του αντικειμένου.</string>
+</resources>

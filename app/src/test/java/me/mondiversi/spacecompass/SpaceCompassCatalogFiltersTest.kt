@@ -6,7 +6,7 @@ import org.junit.Test
 class SpaceCompassCatalogFiltersTest {
     @Test fun allBodiesHaveAnExplicitTypeAndMultipleTypesKeepTheRequestedOrder() {
         val groups = spaceCompassCelestialCatalogOrder.groupBy { it.catalogType }
-        assertEquals(SpaceCompassCatalogType.entries.toSet(), groups.keys)
+        assertEquals(SpaceCompassCatalogType.entries.toSet(), spaceCompassCelestialCatalogOrder.flatMap { it.catalogFilterTypes }.toSet())
         assertEquals(listOf(SpaceCompassCelestialBody.ISS, SpaceCompassCelestialBody.TIANGONG), groups[SpaceCompassCatalogType.SPACE_STATION])
         assertEquals(listOf(SpaceCompassCelestialBody.STARLINK_V3, SpaceCompassCelestialBody.HUBBLE, SpaceCompassCelestialBody.JWST, SpaceCompassCelestialBody.TESLA_ROADSTER), groups[SpaceCompassCatalogType.ARTIFICIAL_SATELLITE]!!.filter { it.largeCatalogEntry == null })
         assertEquals(listOf(SpaceCompassCelestialBody.RX_J1856, SpaceCompassCelestialBody.PSR_J0437, SpaceCompassCelestialBody.VELA_PULSAR), groups[SpaceCompassCatalogType.NEUTRON_STAR]!!.filter { it.largeCatalogEntry == null })

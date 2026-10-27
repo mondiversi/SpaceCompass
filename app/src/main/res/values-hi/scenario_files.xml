@@ -1,0 +1,9 @@
+<resources>
+    <string name="scenario_export">परिदृश्य निर्यात करें</string>
+    <string name="scenario_import">परिदृश्य आयात करें</string>
+    <string name="scenario_file_name">परिदृश्य का नाम</string>
+    <string name="scenario_file_saved">परिदृश्य सहेजा गया</string>
+    <string name="scenario_file_imported">परिदृश्य आयात किया गया</string>
+    <string name="scenario_file_invalid">परिदृश्य फ़ाइल अमान्य है या समर्थित नहीं है</string>
+    <string name="scenario_file_error">परिदृश्य सहेजा या साझा नहीं किया जा सका</string>
+</resources>

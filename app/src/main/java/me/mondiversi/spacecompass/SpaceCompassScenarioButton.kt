@@ -25,7 +25,7 @@ internal fun SpaceCompassScenarioButton(activeCount: Int, color: Color, backgrou
         stateText = if (active) "$activeLabel · $count" else null,
         overlay = {
             if (active) SpaceCompassFloatingCountBadge(count,
-                Modifier.align(Alignment.TopEnd).testTag("scenario-active-count"))
+                Modifier.align(Alignment.TopEnd).testTag("scenario-active-count"), accent = tint)
         }) {
         SpaceCompassSettingsMenuIcon("observer", tint, Modifier.size(26.dp),
             iconStrokeWidth = SpaceCompassFloatingIconStrokeWidth, crossed = !active)

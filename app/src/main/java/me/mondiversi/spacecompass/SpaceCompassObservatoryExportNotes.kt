@@ -10,7 +10,10 @@ internal fun spaceCompassObservatoryExportNotes(body: SpaceCompassCelestialBody,
     fun note(id: Int,vararg args: Any) { add(strings.getString(id,*args)) }
     if (body.expandedHorizonsTarget!=null) note(R.string.celestial_horizons_tracking_note)
     if (body.catalogSatellite!=null) note(R.string.celestial_satellite_tracking_note)
-    if (body.isFictional) { note(R.string.celestial_lv426_model_note);note(R.string.celestial_lv426_credits) }
+    if (body.isFictional) {
+        note(R.string.scifi_reference_note); note(R.string.scifi_credits)
+        body.fictionalReference?.let { add(it.universe + " · " + it.sourceUrl) }
+    }
     else {
         note(R.string.celestial_view_facts_note,formatSpaceCompassPressure(SpaceCompassPressureUnit.BAR.pascals,
             profile.formatting.numeric,profile.units.pressure)!!)
@@ -24,9 +27,9 @@ internal fun spaceCompassObservatoryExportNotes(body: SpaceCompassCelestialBody,
     if (body==SpaceCompassCelestialBody.SUN) note(R.string.celestial_view_sun_note)
     if (body==SpaceCompassCelestialBody.SEDNA) { note(R.string.celestial_view_sedna_note);note(R.string.celestial_view_sedna_facts) }
     if (body==SpaceCompassCelestialBody.POLARIS) { note(R.string.celestial_polaris_derived);note(R.string.celestial_polaris_facts) }
-    if (body.deepSkyReference!=null) note(body.deepSkyNoteResource)
+    if (body.isFictional || body.deepSkyReference!=null) note(body.deepSkyNoteResource)
     if (body==SpaceCompassCelestialBody.SOUTHERN_CROSS) note(R.string.celestial_southern_cross_note)
-    if (body.hasCatalogPhotograph) note(R.string.celestial_archival_image)
+    if (body.hasCatalogPhotograph && !body.isFictional) note(R.string.celestial_archival_image)
     spaceCompassCatalogImageCredit(body.viewerTexture)?.let(::add)
     if (body==SpaceCompassCelestialBody.TITAN) note(R.string.celestial_titan_note)
     if (body.isJovianMoon) note(R.string.celestial_view_jovian_credits)

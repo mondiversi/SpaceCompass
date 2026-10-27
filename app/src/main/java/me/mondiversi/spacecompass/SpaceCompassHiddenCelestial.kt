@@ -1,8 +1,8 @@
 package me.mondiversi.spacecompass
 
-/** Every listed object, including fictional LV-426, is immediately available. */
-internal val spaceCompassAllCelestialOrder = spaceCompassCelestialCatalogOrder
-internal val SpaceCompassCelestialBody.isFictional: Boolean get() = this == SpaceCompassCelestialBody.LV_426
+/** Every listed object is immediately available; fiction has its own explicit category. */
+internal val spaceCompassAllCelestialOrder get() = spaceCompassCelestialCatalogOrder
+internal val SpaceCompassCelestialBody.isFictional: Boolean get() = fictionalReference != null
 
 @Suppress("UNUSED_PARAMETER")
 internal fun spaceCompassAvailableCelestialCatalog(selected: Set<SpaceCompassCelestialBody>): List<SpaceCompassCelestialBody> =

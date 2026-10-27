@@ -2,4 +2,5 @@
 <resources>
     <string name="catalog_search">Αναζήτηση</string>
     <string name="catalog_search_clear">Εκκαθάριση αναζήτησης</string>
+    <string name="catalog_scroll_to_top">Επιστροφή στην αρχή της λίστας</string>
 </resources>

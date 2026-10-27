@@ -1,4 +1,5 @@
 <resources>
     <string name="observer_current_scenario">वर्तमान परिदृश्य</string>
-    <string name="observer_use_position_metadata">इस स्थान की ऊँचाई और समय क्षेत्र का उपयोग करें</string>
+    <string name="observer_customize">संपादित करें</string>
+    <string name="scenario_summary_automatic">स्वचालित</string>
 </resources>

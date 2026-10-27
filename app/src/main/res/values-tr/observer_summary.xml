@@ -1,4 +1,5 @@
 <resources>
     <string name="observer_current_scenario">Geçerli senaryo</string>
-    <string name="observer_use_position_metadata">Bu konumun rakımını ve saat dilimini kullan</string>
+    <string name="observer_customize">Düzenle</string>
+    <string name="scenario_summary_automatic">Otomatik</string>
 </resources>

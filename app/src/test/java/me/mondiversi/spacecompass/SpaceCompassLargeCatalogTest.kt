@@ -9,8 +9,8 @@ class SpaceCompassLargeCatalogTest {
     private val now = Instant.parse("2026-10-26T12:00:00Z").toEpochMilli()
     private fun fixture(name: String) = javaClass.classLoader!!.getResource("catalog-999/$name")!!.readText()
     @Test fun all999IdentitiesAreUniqueAndEveryAdditionHasARealPointingModel() {
-        assertEquals(999, spaceCompassCelestialCatalogOrder.size)
-        assertEquals(999, spaceCompassCelestialCatalogOrder.distinct().size)
+        assertEquals(1009, spaceCompassCelestialCatalogOrder.size)
+        assertEquals(1009, spaceCompassCelestialCatalogOrder.distinct().size)
         assertEquals(894, spaceCompassLargeCatalogEntries.size)
         spaceCompassLargeCatalogEntries.forEach { row ->
             val body = row.body
@@ -20,13 +20,13 @@ class SpaceCompassLargeCatalogTest {
             assertTrue(row.sourceUrl.startsWith("https://"))
         }
         val expected = mapOf(SpaceCompassCatalogType.PLANET to 7, SpaceCompassCatalogType.DWARF_PLANET to 30,
-            SpaceCompassCatalogType.NATURAL_SATELLITE to 81, SpaceCompassCatalogType.ASTEROID to 70,
+            SpaceCompassCatalogType.NATURAL_SATELLITE to 80, SpaceCompassCatalogType.ASTEROID to 70,
             SpaceCompassCatalogType.COMET to 40, SpaceCompassCatalogType.STAR to 250,
             SpaceCompassCatalogType.EXOPLANET to 60, SpaceCompassCatalogType.BLACK_HOLE to 30,
             SpaceCompassCatalogType.NEUTRON_STAR to 30, SpaceCompassCatalogType.GALAXY to 100,
             SpaceCompassCatalogType.NEBULA to 90, SpaceCompassCatalogType.STAR_CLUSTER to 70,
             SpaceCompassCatalogType.CONSTELLATION to 88, SpaceCompassCatalogType.SPACE_PROBE to 26,
-            SpaceCompassCatalogType.ARTIFICIAL_SATELLITE to 25, SpaceCompassCatalogType.SPACE_STATION to 2)
+            SpaceCompassCatalogType.ARTIFICIAL_SATELLITE to 25, SpaceCompassCatalogType.SPACE_STATION to 2, SpaceCompassCatalogType.SCIENCE_FICTION to 11)
         assertEquals(expected, spaceCompassCelestialCatalogOrder.groupingBy { it.catalogType }.eachCount())
     }
     private fun SpaceCompassCelestialBody.sourceName() = largeCatalogEntry!!.source
@@ -97,7 +97,7 @@ class SpaceCompassLargeCatalogTest {
         val expected=buildSet {
             for(i in bodies.indices) for(j in i+1 until bodies.size) {
                 val a=bodies[i];val b=bodies[j]
-                if (!spaceCompassSharesGalacticNucleus(a,b) && spaceCompassAngularSeparation(positions.getValue(a),positions.getValue(b))<=SPACE_COMPASS_APPROACH_LIMIT_DEGREES)
+                if (!a.isFictional && !b.isFictional && !spaceCompassSharesGalacticNucleus(a,b) && spaceCompassAngularSeparation(positions.getValue(a),positions.getValue(b))<=SPACE_COMPASS_APPROACH_LIMIT_DEGREES)
                     add(setOf(a,b))
             }
         }

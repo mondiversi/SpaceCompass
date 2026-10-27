@@ -9,9 +9,9 @@ import kotlinx.coroutines.Job
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
 
-/** One full-width summary precedes the five editable sections. */
+/** Editable sections start directly below the toolbar; the summary lives in its own dialog. */
 internal enum class SpaceCompassObserverSection { POSITION, ALTITUDE, ZONE, DATE, TIME;
-    val gridIndex: Int get() = ordinal + 1
+    val gridIndex: Int get() = ordinal
 }
 
 internal class SpaceCompassObserverIslandReveal(private val scope: CoroutineScope,

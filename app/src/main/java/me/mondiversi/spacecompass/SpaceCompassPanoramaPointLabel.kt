@@ -11,7 +11,7 @@ internal fun formatSpaceCompassPanoramaPointLabel(moment: String, position: Spac
     val sign = if (position.elevationDegrees > 0 && abs(position.elevationDegrees) >= .05) "+" else ""
     val momentLine = listOfNotNull(moment, countdown?.takeIf(String::isNotBlank)).joinToString(" · ")
     return listOfNotNull(pointName?.takeIf(String::isNotBlank), momentLine,
-        "$azimuth° · $sign$elevation°").joinToString("\n")
+        "↔ $azimuth° · ↕ $sign$elevation°").joinToString("\n")
 }
 
 /** Freeze elapsed/remaining whole minutes to the captured observation, never the export clock. */

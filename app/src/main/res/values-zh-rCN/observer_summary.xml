@@ -1,4 +1,5 @@
 <resources>
     <string name="observer_current_scenario">当前场景</string>
-    <string name="observer_use_position_metadata">使用此位置的海拔和时区</string>
+    <string name="observer_customize">修改</string>
+    <string name="scenario_summary_automatic">自动</string>
 </resources>

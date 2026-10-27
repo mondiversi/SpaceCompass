@@ -1,9 +1,9 @@
 <resources>
     <string name="info_news_title">تازه‌ترین تغییرات · %1$s</string>
-    <string name="info_news_star_sky" formatted="false">۹۹۹ جرم، هر ۸۸ صورت فلکی و LV-426 در دسترس همه را با ردیابی و منابع علمی بهبودیافته کاوش کنید.</string>
-    <string name="info_news_texture_downloads" formatted="false">بستهٔ گرافیکی جدید 1.6: شامل ۱۷۴ تصویر و ۱۷۴ پیش‌نمایش جداگانه که تکی دانلود و آفلاین ذخیره می‌شوند.</string>
-    <string name="info_news_weather" formatted="false">اطلاعات روشن‌تر، نمادهای بازطراحی‌شدهٔ عکس و پانوراما و دکمه‌های رصدخانه و مسیر روزانه با کنتراست بیشتر در حالت شب.</string>
-    <string name="info_news_viewer_zoom" formatted="false">نوع‌ها بر پایهٔ تعداد اجرام، گزینه‌های مرتب‌سازی الفبایی و کنترل‌های روشن‌تر.</string>
-    <string name="info_news_settings" formatted="false">برچسب‌های مرجع پایدارتر و سمت‌القدم در −90°، مقابل سمت‌الرأس.</string>
-    <string name="info_news_catalog" formatted="false">بهبود حرکت قمرها، نزدیکی اجرام انتخاب‌شده و وضعیت بارگذاری هواشناسی.</string>
+    <string name="info_news_star_sky" formatted="false">۱۰۰۹ جرم را با فیلتر علمی‌تخیلی و مراجع آسمانی نمایشی با برچسب روشن کاوش کنید.</string>
+    <string name="info_news_texture_downloads" formatted="false">بستهٔ گرافیکی ۱٫۷ ده تصویر و ده پیش‌نمایش مستقل اضافه می‌کند که جداگانه بارگیری، بررسی و برای استفادهٔ آفلاین ذخیره می‌شوند.</string>
+    <string name="info_news_weather" formatted="false">زمان تقریبی سفر را از سرعت‌های روزمره تا سرعت نور و سرعت‌های وارپ خیالی با واحدهای زمانی کوتاه مقایسه کنید.</string>
+    <string name="info_news_viewer_zoom" formatted="false">سناریوهای نام‌گذاری‌شده را همراه با حالت انتخاب‌شدهٔ ازسرگیری زمان ذخیره، اشتراک‌گذاری و وارد کنید.</string>
+    <string name="info_news_settings" formatted="false">خلاصهٔ روشن‌تر سناریوی فعلی با ارتفاع، منطقهٔ زمانی و آب‌وهوای خودکار، نام مکان‌های ذخیره‌شده و نمادهای تازه.</string>
+    <string name="info_news_catalog" formatted="false">تأیید تنظیمات هنگام خروج از صفحهٔ تغییریافته نمایش داده می‌شود. کنترل اجرام، شمارنده‌ها، رنگ‌ها و راهنماها بهبود یافته‌اند.</string>
 </resources>

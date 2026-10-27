@@ -76,7 +76,7 @@ class SpaceCompassPanoramaSelectionTest {
         val captured = snapshot(listOf(refreshed), state)
         val resolved = resolveSpaceCompassPanoramaSelections(captured, emptyMap()).single()
         assertEquals(point(1), resolved.point); assertEquals(initial, resolved.path)
-        assertEquals("01:00 · T+11h0m\n123.5° · +20.8°", formatSpaceCompassPanoramaSelection(captured, resolved))
+        assertEquals("01:00 · T+11h0m\n↔ 123.5° · ↕ +20.8°", formatSpaceCompassPanoramaSelection(captured, resolved))
     }
 
     @Test fun scientificAndUserPresentationsKeepPinsWhileFormattingTheirOwnCaptions() {
@@ -86,8 +86,8 @@ class SpaceCompassPanoramaSelectionTest {
         val italian = captured.copy(objects = captured.objects.map { it.copy(name = "Luna") },
             formatting = SpaceCompassPanoramaFormatting(locale = Locale.ITALIAN, numeric = SpaceCompassNumericFormat.SYSTEM,
                 deviceLocale = Locale.ITALIAN))
-        assertEquals("23:00 · T−11h0m\n123,5° · +20,8°", formatSpaceCompassPanoramaSelection(italian, resolved))
-        assertEquals("23:00 · T−11h0m\n123.5° · +20.8°", formatSpaceCompassPanoramaSelection(captured, resolved))
+        assertEquals("23:00 · T−11h0m\n↔ 123,5° · ↕ +20,8°", formatSpaceCompassPanoramaSelection(italian, resolved))
+        assertEquals("23:00 · T−11h0m\n↔ 123.5° · ↕ +20.8°", formatSpaceCompassPanoramaSelection(captured, resolved))
         assertEquals(captured.selectedPoints, italian.selectedPoints)
         assertEquals(captured.selectionTint, italian.selectionTint)
     }
@@ -133,9 +133,9 @@ class SpaceCompassPanoramaSelectionTest {
             pointEventNames = mapOf(SpaceCompassSunPathEvent.CULMINATION to "Culmine"))
         val selected = resolveSpaceCompassPanoramaSelections(captured,
             mapOf(moon.body to SpaceCompassSunPosition(180.0, -10.0)))
-        assertEquals("Culmine\n12:00 · T+0h0m\n123.5° · +20.8°",
+        assertEquals("Culmine\n12:00 · T+0h0m\n↔ 123.5° · ↕ +20.8°",
             formatSpaceCompassPanoramaSelection(captured, selected.single { !it.isCurrent }))
-        assertEquals("Attuale\n12:00 · T+0h0m\n180.0° · -10.0°",
+        assertEquals("Attuale\n12:00 · T+0h0m\n↔ 180.0° · ↕ -10.0°",
             formatSpaceCompassPanoramaSelection(captured, selected.single { it.isCurrent }))
     }
 }

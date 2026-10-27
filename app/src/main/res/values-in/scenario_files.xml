@@ -1,0 +1,9 @@
+<resources>
+    <string name="scenario_export">Ekspor skenario</string>
+    <string name="scenario_import">Impor skenario</string>
+    <string name="scenario_file_name">Nama skenario</string>
+    <string name="scenario_file_saved">Skenario disimpan</string>
+    <string name="scenario_file_imported">Skenario diimpor</string>
+    <string name="scenario_file_invalid">File skenario tidak valid atau tidak didukung</string>
+    <string name="scenario_file_error">Skenario tidak dapat disimpan atau dibagikan</string>
+</resources>

@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="catalog_type_scifi">מדע בדיוני</string>
+    <string name="scifi_type_planet">כוכב לכת בדיוני</string>
+    <string name="scifi_type_moon">ירח בדיוני</string>
+    <string name="scifi_type_giant">ענק גזים בדיוני</string>
+    <string name="scifi_type_spacecraft">חללית בדיונית</string>
+    <string name="scifi_universe">יקום סיפורי</string>
+    <string name="scifi_reference">נקודת ייחוס לכיוון</string>
+    <string name="scifi_model_note">איור בדיוני. הכיוון עוקב אחר נקודת הייחוס האמיתית, ולא אחר מסלול מדוד.</string>
+    <string name="scifi_credits">איורים מקוריים שנוצרו בסיוע בינה מלאכותית. השמות והעולמות הבדיוניים שייכים ליוצריהם.</string>
+    <string name="scifi_name_arrakis">Arrakis</string>
+    <string name="scifi_description_arrakis">עולם המדבר של חולית</string>
+    <string name="scifi_name_caladan">Caladan</string>
+    <string name="scifi_description_caladan">עולם הבית האוקייני של בית אטריידס</string>
+    <string name="scifi_name_giedi_prime">Giedi Prime</string>
+    <string name="scifi_description_giedi_prime">עולם הבית התעשייתי של בית הארקונן</string>
+    <string name="scifi_name_lv_223">LV-223</string>
+    <string name="scifi_description_lv_223">ירח סלעי ומוצב המהנדסים בפרומתאוס</string>
+    <string name="scifi_name_calpamos">Calpamos</string>
+    <string name="scifi_description_calpamos">ענק גזים ביקום הבדיוני שלו</string>
+    <string name="scifi_name_pandora">Pandora</string>
+    <string name="scifi_description_pandora">ירח מיוער באווטאר</string>
+    <string name="scifi_name_polyphemus">Polyphemus</string>
+    <string name="scifi_description_polyphemus">ענק גזים ביקום הבדיוני שלו</string>
+    <string name="scifi_name_vulcan">Vulcan</string>
+    <string name="scifi_description_vulcan">עולם הבית הצחיח של הוולקנים</string>
+    <string name="scifi_name_nostromo">Nostromo</string>
+    <string name="scifi_description_nostromo">גוררת מסחרית מהנוסע השמיני; נקודת ייחוס ליד ירח הסיפור</string>
+    <string name="scifi_name_discovery_one">Discovery One</string>
+    <string name="scifi_description_discovery_one">חללית המחקר מהסרט 2001; צדק הוא יעדה בסיפור</string>
+    <string name="scifi_reference_note">עצם בדיוני. הכיוון והמרחק המשוער מבוססים על נקודת הייחוס האמיתית שצוינה, ולא על מסלול מדוד. תכונות פיזיקליות אינן מוסקות; התמונה היא המחשה.</string>
+    <string name="catalog_type_spacecraft">חלליות</string>
+    <string name="scifi_estimated_distance">מרחק משוער לנקודת הייחוס</string>
+    <string name="scifi_distance_reference_note">הערכה לפי %1$s, ולא מרחק מדוד של העצם הזה.</string>
+</resources>

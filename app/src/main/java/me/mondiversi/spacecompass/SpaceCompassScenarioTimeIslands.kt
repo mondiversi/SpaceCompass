@@ -10,7 +10,6 @@ import androidx.compose.runtime.*
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.platform.LocalLayoutDirection
-import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.platform.testTag
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.semantics.semantics
@@ -29,14 +28,12 @@ import kotlin.math.roundToInt
 @OptIn(ExperimentalMaterial3Api::class)
 internal fun SpaceCompassScenarioSpeedIsland(observer: SpaceCompassObserverState, onExpanded: (Boolean) -> Unit = {}) {
     val settings = observer.timeSettings
-    val context = LocalContext.current
-    val saved = stringResource(R.string.settings_saved)
     val title = stringResource(R.string.scenario_speed)
     var index by remember(settings.enabled, settings.rate) {
         mutableFloatStateOf(spaceCompassScenarioRates.indexOf(settings.normalized().rate).toFloat())
     }
     SpaceCompassSettingsToggleIsland(title, "scenario_speed", settings.enabled, title, {
-        observer.configureTime(settings.copy(enabled = it)); onExpanded(it); showSpaceCompassBottomMessage(context, saved)
+        observer.configureTime(settings.copy(enabled = it)); onExpanded(it)
     }, Modifier.testTag("scenario-speed-enabled")) {
         SpaceCompassSettingsDescription(stringResource(R.string.scenario_speed_description))
         val rate = spaceCompassScenarioRates[index.roundToInt().coerceIn(spaceCompassScenarioRates.indices)]
@@ -84,7 +81,7 @@ internal fun SpaceCompassScenarioSpeedIsland(observer: SpaceCompassObserverState
                 }, onValueChangeFinished = {
                     val committedRate = spaceCompassScenarioRates[index.roundToInt().coerceIn(spaceCompassScenarioRates.indices)]
                     if (committedRate != settings.rate) {
-                        observer.configureTime(settings.copy(rate = committedRate)); showSpaceCompassBottomMessage(context, saved)
+                        observer.configureTime(settings.copy(rate = committedRate))
                     }
                 })
             Row(Modifier.fillMaxWidth(), horizontalArrangement = Arrangement.SpaceBetween) {

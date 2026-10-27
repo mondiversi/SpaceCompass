@@ -2,7 +2,7 @@
 <resources>
     <string name="scenario_speed">समय</string>
     <string name="scenario_speed_description">परिदृश्य का समय 3600× तक पीछे या आगे चलाएँ। बीच में शून्य समय को रोकता है।</string>
-    <string name="scenario_resume">कस्टम परिदृश्य फिर शुरू करना</string>
+    <string name="scenario_resume">परिदृश्य फिर शुरू करना</string>
     <string name="scenario_resume_description">चुनें कि ऐप फिर खोलने पर सिम्युलेटेड समय कैसे आगे बढ़े। चुनी हुई गति सभी मोड में लागू होती है।</string>
     <string name="scenario_restart">शुरुआत से फिर चलाएँ</string>
     <string name="scenario_active">केवल ऐप सक्रिय होने पर</string>

@@ -6,7 +6,6 @@ import androidx.compose.material3.Slider
 import androidx.compose.material3.Text
 import androidx.compose.runtime.*
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.platform.testTag
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.semantics.contentDescription
@@ -23,8 +22,6 @@ internal fun SpaceCompassAmbientMusicIsland() {
     val preferences = LocalSpaceCompassPreferences.current ?: return
     val settings = LocalSpaceCompassAmbientMusic.current
     val preview = LocalSpaceCompassMusicVolumePreview.current
-    val context = LocalContext.current
-    val saved = stringResource(R.string.settings_saved)
     val title = stringResource(R.string.music_title)
     val volumeTitle = stringResource(R.string.music_volume)
     var draft by remember(settings.volumePercent) { mutableFloatStateOf(settings.volumePercent.toFloat()) }
@@ -39,7 +36,7 @@ internal fun SpaceCompassAmbientMusicIsland() {
         onCheckedChange = { enabled ->
             if (enabled != settings.enabled) {
                 preferences.edit { putBoolean(SPACE_COMPASS_MUSIC_ENABLED_KEY, enabled) }
-                showSpaceCompassBottomMessage(context, saved)
+
             }
         }, modifier = Modifier.testTag("music-enabled")) {
         SpaceCompassSettingsDescription(stringResource(R.string.music_description))
@@ -58,7 +55,7 @@ internal fun SpaceCompassAmbientMusicIsland() {
                     val value = draft.roundToInt().coerceIn(0, 100)
                     if (value != settings.volumePercent) {
                         preferences.edit { putInt(SPACE_COMPASS_MUSIC_VOLUME_KEY, value) }
-                        showSpaceCompassBottomMessage(context, saved)
+
                     }
                     preview(null)
                 }, colors = spaceCompassSliderColors(), modifier = Modifier.fillMaxWidth()

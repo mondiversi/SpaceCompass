@@ -3,7 +3,7 @@
     <string name="pc_info">정보 및 크레딧</string>
     <string name="pc_display_automatic">자동 크기 조정</string>
     <string name="pc_info_description">천체를 찾고 궤적을 탐색하며 모델과 달의 위상을 관찰하는 천문 나침반입니다.</string>
-    <string name="pc_info_earth">지구에서 사용하도록 설계되었습니다. 앱은 중력과 지구 자기장으로 방향을 파악하고, GPS는 위치를 제공합니다. 일반 스마트폰에서는 이런 기준으로 우주에서 신뢰할 수 있는 방향을 보장하지 못합니다. 우주 기술과 센서가 더 발전하면, 언젠가 우주에서도 길을 찾을 수 있을지 모르겠네요 🙂</string>
+    <string name="pc_info_earth">아직은 지구에서만! 우주에서는 더 발전된 스마트폰 센서가 필요해요. 언젠가는 우주에서도 🙂</string>
     <string name="pc_info_compass">나침반 정확도</string>
     <string name="pc_info_accuracy">정확도 낮음은 휴대전화가 낮은 자기 보정 수준을 보고한다는 뜻입니다. 센서 정확도가 개선될 때까지 방향은 대략적입니다.</string>
     <string name="pc_info_credits">출처 및 라이선스</string>

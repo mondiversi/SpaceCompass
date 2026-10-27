@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="travel_title">زمان سفر</string>
+    <string name="travel_description">برآورد با سرعت ثابت و فاصلهٔ فعلی، در چارچوب مرجع ناظر.</string>
+    <string name="travel_speed">سرعت</string>
+    <string name="travel_duration">زمان تخمینی</string>
+    <string name="travel_distance_unavailable">فاصله در دسترس نیست: زمان سفر قابل محاسبه نیست.</string>
+    <string name="travel_walking">پیاده</string>
+    <string name="travel_bicycle">دوچرخه</string>
+    <string name="travel_car">خودرو</string>
+    <string name="travel_aircraft">هواپیما</string>
+    <string name="travel_rocket">موشک</string>
+    <string name="travel_probe">کاوشگر سریع</string>
+    <string name="travel_light">سرعت نور</string>
+    <string name="travel_warp">وارپ %1$s</string>
+    <string name="travel_warp_note">وارپ مقیاسی تخیلی برای مقایسه است، نه سرعتی که از نظر فیزیکی دست‌یافتنی باشد.</string>
+</resources>

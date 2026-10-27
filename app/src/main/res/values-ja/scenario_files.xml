@@ -1,0 +1,9 @@
+<resources>
+    <string name="scenario_export">シナリオを書き出す</string>
+    <string name="scenario_import">シナリオを読み込む</string>
+    <string name="scenario_file_name">シナリオ名</string>
+    <string name="scenario_file_saved">シナリオを保存しました</string>
+    <string name="scenario_file_imported">シナリオを読み込みました</string>
+    <string name="scenario_file_invalid">シナリオファイルが無効か、対応していません</string>
+    <string name="scenario_file_error">シナリオを保存または共有できませんでした</string>
+</resources>

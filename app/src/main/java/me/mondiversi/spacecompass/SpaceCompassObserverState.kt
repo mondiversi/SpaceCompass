@@ -29,11 +29,14 @@ internal class SpaceCompassObserverState(private val preferences: SharedPreferen
         private set
     var savedPlan by mutableStateOf<SpaceCompassObserverPlan?>(null)
         private set
+    var editorGeneration by mutableIntStateOf(0); private set
+    var archiveName by mutableStateOf<String?>(null); private set
     var devicePlace by mutableStateOf<SpaceCompassDevicePlace?>(null)
     init { reload() }
     fun reload() {
         if (preferences != null) {
-        savedPlan = decodeSpaceCompassObserverPlan(preferences.getString(SPACE_COMPASS_OBSERVER_PLAN, null))
+        savedPlan = decodeSpaceCompassObserverPlan(preferences.getString(SPACE_COMPASS_OBSERVER_PLAN, null),
+            allowInactive = preferences.getString(SPACE_COMPASS_OBSERVER_MODE, null) == "live")
         timeSettings = SpaceCompassScenarioTimeSettings(
             preferences?.getBoolean(scenarioEnabledKey, false) ?: false,
             preferences?.getInt(scenarioRateKey, 1) ?: 1,
@@ -68,6 +71,21 @@ internal class SpaceCompassObserverState(private val preferences: SharedPreferen
         plan = raw.copy().also { it.scenarioClock = clock }
         if (timeSettings.resume == SpaceCompassScenarioResume.ALWAYS) checkpoint()
     }
+    /** A deliberately imported speed is restored exactly; an archived file never carries elapsed runtime. */
+    fun importArchive(archive: SpaceCompassScenarioArchive) {
+        val checked = SpaceCompassScenarioArchive.decode(archive.encode())
+        val configured = checked.configurationAtImport(System.currentTimeMillis(), ZoneId.systemDefault())
+        clock = null; clockPlan = null
+        savedPlan = configured; localCustom = checked.custom; timeSettings = checked.timeSettings
+        preferences?.edit()?.putString(SPACE_COMPASS_OBSERVER_PLAN, configured.encode())
+            ?.putString(SPACE_COMPASS_OBSERVER_MODE, if (checked.custom) "custom" else "live")
+            ?.putBoolean(scenarioEnabledKey, timeSettings.enabled)?.putInt(scenarioRateKey, timeSettings.rate)
+            ?.putString(scenarioResumeKey, timeSettings.resume.name)?.remove(scenarioCheckpointKey)?.apply()
+        reload()
+        archiveName = checked.name
+        editorGeneration++
+    }
+
     fun configureTime(value: SpaceCompassScenarioTimeSettings) {
         // Re-enabling acceleration always requires a fresh, deliberate speed choice.
         val next = (if (!timeSettings.enabled && value.enabled) value.copy(rate = 1) else value).normalized()

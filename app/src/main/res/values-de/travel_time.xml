@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="travel_title">Reisezeit</string>
+    <string name="travel_description">Schätzung bei konstanter Geschwindigkeit und aktueller Entfernung, im Bezugssystem des Beobachters.</string>
+    <string name="travel_speed">Geschwindigkeit</string>
+    <string name="travel_duration">Geschätzte Zeit</string>
+    <string name="travel_distance_unavailable">Entfernung nicht verfügbar: Reisezeit kann nicht berechnet werden.</string>
+    <string name="travel_walking">Zu Fuß</string>
+    <string name="travel_bicycle">Fahrrad</string>
+    <string name="travel_car">Auto</string>
+    <string name="travel_aircraft">Flugzeug</string>
+    <string name="travel_rocket">Rakete</string>
+    <string name="travel_probe">Schnelle Sonde</string>
+    <string name="travel_light">Lichtgeschwindigkeit</string>
+    <string name="travel_warp">Warp %1$s</string>
+    <string name="travel_warp_note">Warp ist eine fiktive Vergleichsskala, keine physikalisch erreichbare Geschwindigkeit.</string>
+</resources>

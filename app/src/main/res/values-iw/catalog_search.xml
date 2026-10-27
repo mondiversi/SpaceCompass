@@ -2,4 +2,5 @@
 <resources>
     <string name="catalog_search">חיפוש</string>
     <string name="catalog_search_clear">נקה חיפוש</string>
+    <string name="catalog_scroll_to_top">חזרה לראש הרשימה</string>
 </resources>

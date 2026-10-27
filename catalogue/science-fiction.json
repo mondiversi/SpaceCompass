@@ -1,0 +1,224 @@
+{
+  "schema": 1,
+  "objects": [
+    {
+      "id": "LV_426",
+      "universe": "Alien",
+      "reference": "ζ² Reticuli",
+      "kind": "moon",
+      "host_body": null,
+      "texture": "lv426.webp",
+      "source": "https://www.avpcentral.com/calpamos",
+      "direction_only": true,
+      "physical_distance": null,
+      "measured_orbit": false,
+      "filter_types": [
+        "SCIENCE_FICTION",
+        "NATURAL_SATELLITE"
+      ],
+      "distance_estimate_reference": "ζ² Reticuli"
+    },
+    {
+      "id": "ARRAKIS",
+      "universe": "Dune",
+      "reference": "Canopus · α Carinae",
+      "kind": "planet",
+      "host_body": "CANOPUS",
+      "texture": "fictional_arrakis.webp",
+      "source": "https://andrejjh.github.io/duneToI.html",
+      "direction_only": true,
+      "physical_distance": null,
+      "measured_orbit": false,
+      "filter_types": [
+        "SCIENCE_FICTION",
+        "PLANET"
+      ],
+      "distance_estimate_reference": "Canopus · α Carinae"
+    },
+    {
+      "id": "CALADAN",
+      "universe": "Dune",
+      "reference": "δ Pavonis",
+      "kind": "planet",
+      "host_body": null,
+      "texture": "fictional_caladan.webp",
+      "source": "https://andrejjh.github.io/duneToI.html",
+      "direction_only": true,
+      "physical_distance": null,
+      "measured_orbit": false,
+      "filter_types": [
+        "SCIENCE_FICTION",
+        "PLANET"
+      ],
+      "distance_estimate_reference": "δ Pavonis"
+    },
+    {
+      "id": "GIEDI_PRIME",
+      "universe": "Dune",
+      "reference": "36 Ophiuchi B",
+      "kind": "planet",
+      "host_body": null,
+      "texture": "fictional_giedi_prime.webp",
+      "source": "https://andrejjh.github.io/duneToI.html",
+      "direction_only": true,
+      "physical_distance": null,
+      "measured_orbit": false,
+      "filter_types": [
+        "SCIENCE_FICTION",
+        "PLANET"
+      ],
+      "distance_estimate_reference": "36 Ophiuchi B"
+    },
+    {
+      "id": "LV_223",
+      "universe": "Alien",
+      "reference": "ζ² Reticuli",
+      "kind": "moon",
+      "host_body": null,
+      "texture": "fictional_lv_223.webp",
+      "source": "https://www.avpcentral.com/calpamos",
+      "direction_only": true,
+      "physical_distance": null,
+      "measured_orbit": false,
+      "filter_types": [
+        "SCIENCE_FICTION",
+        "NATURAL_SATELLITE"
+      ],
+      "distance_estimate_reference": "ζ² Reticuli"
+    },
+    {
+      "id": "CALPAMOS",
+      "universe": "Alien",
+      "reference": "ζ² Reticuli",
+      "kind": "giant",
+      "host_body": null,
+      "texture": "fictional_calpamos.webp",
+      "source": "https://www.avpcentral.com/calpamos",
+      "direction_only": true,
+      "physical_distance": null,
+      "measured_orbit": false,
+      "filter_types": [
+        "SCIENCE_FICTION",
+        "PLANET"
+      ],
+      "distance_estimate_reference": "ζ² Reticuli"
+    },
+    {
+      "id": "PANDORA",
+      "universe": "Avatar",
+      "reference": "α Centauri",
+      "kind": "moon",
+      "host_body": "ALPHA_CENTAURI",
+      "texture": "fictional_pandora.webp",
+      "source": "https://www.avatar.com/pandorapedia/pandora",
+      "direction_only": true,
+      "physical_distance": null,
+      "measured_orbit": false,
+      "filter_types": [
+        "SCIENCE_FICTION",
+        "NATURAL_SATELLITE"
+      ],
+      "distance_estimate_reference": "α Centauri"
+    },
+    {
+      "id": "POLYPHEMUS",
+      "universe": "Avatar",
+      "reference": "α Centauri",
+      "kind": "giant",
+      "host_body": "ALPHA_CENTAURI",
+      "texture": "fictional_polyphemus.webp",
+      "source": "https://www.avatar.com/pandorapedia/polyphemus",
+      "direction_only": true,
+      "physical_distance": null,
+      "measured_orbit": false,
+      "filter_types": [
+        "SCIENCE_FICTION",
+        "PLANET"
+      ],
+      "distance_estimate_reference": "α Centauri"
+    },
+    {
+      "id": "VULCAN",
+      "universe": "Star Trek",
+      "reference": "40 Eridani A",
+      "kind": "planet",
+      "host_body": null,
+      "texture": "fictional_vulcan.webp",
+      "source": "https://science.nasa.gov/universe/exoplanets/vulcan-may-not-be-real-but-spocks-home-system-is/",
+      "direction_only": true,
+      "physical_distance": null,
+      "measured_orbit": false,
+      "filter_types": [
+        "SCIENCE_FICTION",
+        "PLANET"
+      ],
+      "distance_estimate_reference": "40 Eridani A"
+    },
+    {
+      "id": "NOSTROMO",
+      "universe": "Alien",
+      "reference": "ζ² Reticuli",
+      "kind": "spacecraft",
+      "host_body": null,
+      "texture": "fictional_nostromo.webp",
+      "source": "https://www.avpgalaxy.net/files/scripts/aliens-1985-02-26.pdf",
+      "direction_only": true,
+      "physical_distance": null,
+      "measured_orbit": false,
+      "filter_types": [
+        "SCIENCE_FICTION",
+        "SPACECRAFT"
+      ],
+      "distance_estimate_reference": "ζ² Reticuli"
+    },
+    {
+      "id": "DISCOVERY_ONE",
+      "universe": "2001: A Space Odyssey",
+      "reference": "Jupiter · Solar System",
+      "kind": "spacecraft",
+      "host_body": "JUPITER",
+      "texture": "fictional_discovery_one.webp",
+      "source": "https://catalog.afi.com/Catalog/moviedetails/23399",
+      "direction_only": true,
+      "physical_distance": null,
+      "measured_orbit": false,
+      "filter_types": [
+        "SCIENCE_FICTION",
+        "SPACECRAFT"
+      ],
+      "distance_estimate_reference": "Jupiter · Solar System"
+    }
+  ],
+  "stellar_sources": {
+    "url": "https://simbad.cds.unistra.fr/simbad/sim-tap/sync?request=doQuery&lang=adql&format=json&query=SELECT+i.id%2Cb.main_id%2Cb.ra%2Cb.dec%2Cb.pmra%2Cb.pmdec%2Cb.plx_value+FROM+ident+AS+i+JOIN+basic+AS+b+ON+i.oidref%3Db.oid+WHERE+i.id+IN+%28%27HD+190248%27%2C%27HD+155885%27%2C%27HD+26965%27%29",
+    "rows": [
+      {
+        "id": "HD 155885",
+        "main_id": "*  36 Oph B",
+        "ra": 258.83743260923,
+        "dec": -26.602825956905555,
+        "pmra": -465.861,
+        "pmdec": -1141.168,
+        "plx_value": 168.1303
+      },
+      {
+        "id": "HD 190248",
+        "main_id": "* del Pav",
+        "ra": 302.1817036316884,
+        "dec": -66.18206743589695,
+        "pmra": 1211.761,
+        "pmdec": -1130.237,
+        "plx_value": 163.9544
+      },
+      {
+        "id": "HD  26965",
+        "main_id": "* omi02 Eri",
+        "ra": 63.817998412477074,
+        "dec": -7.652869660838334,
+        "pmra": -2240.085,
+        "pmdec": -3421.809,
+        "plx_value": 199.608
+      }
+    ]
+  }
+}

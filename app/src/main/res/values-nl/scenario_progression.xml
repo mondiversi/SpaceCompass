@@ -2,7 +2,7 @@
 <resources>
     <string name="scenario_speed">Tijd</string>
     <string name="scenario_speed_description">Laat de scenariotijd tot 3600× terug- of vooruitlopen. Nul in het midden pauzeert de tijd.</string>
-    <string name="scenario_resume">Aangepast scenario hervatten</string>
+    <string name="scenario_resume">Scenario hervatten</string>
     <string name="scenario_resume_description">Kies hoe de gesimuleerde tijd verdergaat wanneer de app opnieuw opent. De gekozen snelheid geldt in elke modus.</string>
     <string name="scenario_restart">Opnieuw beginnen</string>
     <string name="scenario_active">Alleen wanneer de app actief is</string>

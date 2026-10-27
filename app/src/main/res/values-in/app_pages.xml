@@ -3,7 +3,7 @@
     <string name="pc_info">Info dan kredit</string>
     <string name="pc_display_automatic">Penskalaan otomatis</string>
     <string name="pc_info_description">Kompas astronomi untuk menemukan benda langit, menjelajahi lintasannya, serta melihat model dan fase Bulan.</string>
-    <string name="pc_info_earth">Dirancang untuk digunakan di Bumi: aplikasi memakai gravitasi dan medan magnet Bumi untuk menentukan orientasi; GPS memberikan posisi. Acuan ini tidak menjamin orientasi yang andal di luar angkasa dengan smartphone biasa. Dengan teknologi antariksa dan sensor yang lebih maju, mungkin suatu hari kita juga bisa menemukan arah di sana 🙂</string>
+    <string name="pc_info_earth">Untuk saat ini, kita tetap di Bumi: luar angkasa memerlukan sensor ponsel yang lebih canggih. Mungkin suatu hari nanti 🙂</string>
     <string name="pc_info_compass">Akurasi kompas</string>
     <string name="pc_info_accuracy">Akurasi rendah berarti ponsel melaporkan kalibrasi magnetik rendah. Arah tetap berupa perkiraan sampai akurasi sensor membaik.</string>
     <string name="pc_info_credits">Kredit dan lisensi</string>

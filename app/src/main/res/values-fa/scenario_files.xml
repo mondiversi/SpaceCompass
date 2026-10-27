@@ -1,0 +1,9 @@
+<resources>
+    <string name="scenario_export">صدور سناریو</string>
+    <string name="scenario_import">ورود سناریو</string>
+    <string name="scenario_file_name">نام سناریو</string>
+    <string name="scenario_file_saved">سناریو ذخیره شد</string>
+    <string name="scenario_file_imported">سناریو وارد شد</string>
+    <string name="scenario_file_invalid">پروندهٔ سناریو نامعتبر است یا پشتیبانی نمی‌شود</string>
+    <string name="scenario_file_error">ذخیره یا اشتراک‌گذاری سناریو ممکن نشد</string>
+</resources>

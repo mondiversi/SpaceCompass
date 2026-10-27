@@ -10,7 +10,7 @@ internal data class SpaceCompassDeepSkyReference(val raHours: Double, val decDeg
     val distanceLy: Double, val pmRaMasYear: Double = 0.0, val pmDecMasYear: Double = 0.0,
     val hasMeasuredDistance: Boolean = true)
 internal val SpaceCompassCelestialBody.deepSkyReference: SpaceCompassDeepSkyReference?
-    get() = when (this) {
+    get() = if (isFictional) fictionalReference?.stellarReference?.copy(hasMeasuredDistance = false) else when (this) {
         SpaceCompassCelestialBody.VEGA -> SpaceCompassDeepSkyReference(18 + 36.0/60 + 56.33635/3600,
             38 + 47.0/60 + 1.2802/3600, 1000 / 130.23 * 3.261563777, 200.94, 286.23)
         // Schiller & Przybilla (2008): adopted spectroscopic distance, not inverted noisy Hipparcos parallax.
@@ -116,7 +116,7 @@ internal fun calculateSpaceCompassDeepSkyObservation(reference: SpaceCompassDeep
 }
 
 internal val SpaceCompassCelestialBody.deepSkyNoteResource: Int
-    get() = when (this) {
+    get() = fictionalReference?.description ?: when (this) {
         SpaceCompassCelestialBody.VEGA, SpaceCompassCelestialBody.ALTAIR -> R.string.celestial_bright_star_note
         SpaceCompassCelestialBody.DENEB -> R.string.celestial_deneb_note
         SpaceCompassCelestialBody.M87 -> R.string.celestial_m87_note

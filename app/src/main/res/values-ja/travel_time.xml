@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="travel_title">到達時間</string>
+    <string name="travel_description">観測者の基準系で、現在の距離を一定の速度で進む場合の推定です。</string>
+    <string name="travel_speed">速度</string>
+    <string name="travel_duration">推定時間</string>
+    <string name="travel_distance_unavailable">距離が不明なため、到達時間を計算できません。</string>
+    <string name="travel_walking">徒歩</string>
+    <string name="travel_bicycle">自転車</string>
+    <string name="travel_car">自動車</string>
+    <string name="travel_aircraft">飛行機</string>
+    <string name="travel_rocket">ロケット</string>
+    <string name="travel_probe">高速探査機</string>
+    <string name="travel_light">光速</string>
+    <string name="travel_warp">ワープ %1$s</string>
+    <string name="travel_warp_note">ワープは架空の比較尺度であり、物理的に実現できる速度ではありません。</string>
+</resources>

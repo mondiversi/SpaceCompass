@@ -209,12 +209,12 @@ internal fun SpaceCompassSunPointingViewport(
             Canvas(Modifier.fillMaxSize().testTag("sun-finder-reticle")) {
                 val aim = Offset(reticleCenter.x.toFloat(), reticleCenter.y.toFloat())
                 val reticle = Color.White
-                drawCircle(Color.Black.copy(alpha = 0.30f), SPACE_COMPASS_CELESTIAL_RETICLE_RADIUS_DP.dp.toPx(), aim, style = Stroke(3.dp.toPx()))
-                drawCircle(reticle, SPACE_COMPASS_CELESTIAL_RETICLE_RADIUS_DP.dp.toPx(), aim, style = Stroke(1.5.dp.toPx()))
+                drawCircle(Color.Black.copy(alpha = 0.30f), SPACE_COMPASS_CELESTIAL_RETICLE_RADIUS_DP.dp.toPx(), aim, style = Stroke(1.92.dp.toPx()))
+                drawCircle(reticle, SPACE_COMPASS_CELESTIAL_RETICLE_RADIUS_DP.dp.toPx(), aim, style = Stroke(0.96.dp.toPx()))
                 val inner = 24.dp.toPx(); val outer = 32.dp.toPx()
                 listOf(Offset(1f, 0f), Offset(-1f, 0f), Offset(0f, 1f), Offset(0f, -1f)).forEach {
-                    drawLine(Color.Black.copy(alpha = 0.30f), aim + it * inner, aim + it * outer, 3.dp.toPx(), StrokeCap.Round)
-                    drawLine(reticle, aim + it * inner, aim + it * outer, 1.5.dp.toPx(), StrokeCap.Round)
+                    drawLine(Color.Black.copy(alpha = 0.30f), aim + it * inner, aim + it * outer, 1.92.dp.toPx(), StrokeCap.Round)
+                    drawLine(reticle, aim + it * inner, aim + it * outer, 0.96.dp.toPx(), StrokeCap.Round)
                 }
             }
             SpaceCompassCelestialSceneInteraction(targets, current, focused, dailyPathUiState, timeMs, orientation.takeIf { compassReliable },

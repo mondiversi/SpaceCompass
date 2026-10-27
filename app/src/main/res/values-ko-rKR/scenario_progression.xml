@@ -2,7 +2,7 @@
 <resources>
     <string name="scenario_speed">시간</string>
     <string name="scenario_speed_description">시나리오 시간을 최대 3600×로 거꾸로 또는 앞으로 돌립니다. 가운데 0에서 시간이 멈춥니다.</string>
-    <string name="scenario_resume">사용자 지정 시나리오 재개</string>
+    <string name="scenario_resume">시나리오 재개</string>
     <string name="scenario_resume_description">앱을 다시 열 때 시뮬레이션 시간이 재개되는 방식을 선택합니다. 선택한 속도는 모든 모드에 적용됩니다.</string>
     <string name="scenario_restart">처음부터 다시 시작</string>
     <string name="scenario_active">앱 사용 중에만</string>

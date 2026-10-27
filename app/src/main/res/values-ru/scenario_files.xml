@@ -1,0 +1,9 @@
+<resources>
+    <string name="scenario_export">Экспорт сценария</string>
+    <string name="scenario_import">Импорт сценария</string>
+    <string name="scenario_file_name">Название сценария</string>
+    <string name="scenario_file_saved">Сценарий сохранён</string>
+    <string name="scenario_file_imported">Сценарий импортирован</string>
+    <string name="scenario_file_invalid">Недопустимый или неподдерживаемый файл сценария</string>
+    <string name="scenario_file_error">Не удалось сохранить сценарий или поделиться им</string>
+</resources>

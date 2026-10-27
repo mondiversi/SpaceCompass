@@ -2,4 +2,5 @@
 <resources>
     <string name="catalog_search">검색</string>
     <string name="catalog_search_clear">검색 지우기</string>
+    <string name="catalog_scroll_to_top">목록 맨 위로 이동</string>
 </resources>

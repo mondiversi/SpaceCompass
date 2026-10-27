@@ -19,13 +19,13 @@ import androidx.compose.ui.unit.sp
 internal data class SpaceCompassCelestialDetailRow(val label: String, val value: String,
     val subtitle: String? = null, val tag: String? = null)
 
-/** All sections share the model's inset and the established table typography, including RTL. */
+/** Sections fill the same page-inset slot as the model, preserving table typography and RTL. */
 @Composable
 internal fun SpaceCompassCelestialDetailTable(title: String, icon: String,
     rows: List<SpaceCompassCelestialDetailRow>, primaryText: Color, secondaryText: Color,
     tag: String, note: String? = null) {
     if (rows.isEmpty()) return
-    Column(Modifier.fillMaxWidth().padding(horizontal = spaceCompassDetailScrollInset).testTag(tag)
+    Column(Modifier.fillMaxWidth().testTag(tag)
         .clip(RoundedCornerShape(18.dp)).background(spaceCompassSettingsCardColor()).padding(12.dp),
         verticalArrangement = Arrangement.spacedBy(8.dp)) {
         Row(verticalAlignment = Alignment.CenterVertically, horizontalArrangement = Arrangement.spacedBy(8.dp)) {

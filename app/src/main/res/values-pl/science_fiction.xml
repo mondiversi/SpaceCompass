@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="catalog_type_scifi">Fantastyka naukowa</string>
+    <string name="scifi_type_planet">Fikcyjna planeta</string>
+    <string name="scifi_type_moon">Fikcyjny księżyc</string>
+    <string name="scifi_type_giant">Fikcyjny gazowy olbrzym</string>
+    <string name="scifi_type_spacecraft">Fikcyjny statek kosmiczny</string>
+    <string name="scifi_universe">Uniwersum</string>
+    <string name="scifi_reference">Punkt odniesienia kierunku</string>
+    <string name="scifi_model_note">Ilustracja fikcyjna. Kierunek wskazuje rzeczywisty punkt odniesienia, nie zmierzoną orbitę.</string>
+    <string name="scifi_credits">Oryginalne ilustracje wykonane z pomocą AI. Nazwy i fikcyjne światy należą do odpowiednich twórców.</string>
+    <string name="scifi_name_arrakis">Arrakis</string>
+    <string name="scifi_description_arrakis">Pustynny świat z Diuny</string>
+    <string name="scifi_name_caladan">Caladan</string>
+    <string name="scifi_description_caladan">Oceaniczny świat macierzysty rodu Atrydów</string>
+    <string name="scifi_name_giedi_prime">Giedi Prime</string>
+    <string name="scifi_description_giedi_prime">Przemysłowy świat macierzysty rodu Harkonnenów</string>
+    <string name="scifi_name_lv_223">LV-223</string>
+    <string name="scifi_description_lv_223">Skalisty księżyc i placówka Inżynierów w Prometeuszu</string>
+    <string name="scifi_name_calpamos">Calpamos</string>
+    <string name="scifi_description_calpamos">Gazowy olbrzym ze swojego fikcyjnego świata</string>
+    <string name="scifi_name_pandora">Pandora</string>
+    <string name="scifi_description_pandora">Leśny księżyc z Avatara</string>
+    <string name="scifi_name_polyphemus">Polyphemus</string>
+    <string name="scifi_description_polyphemus">Gazowy olbrzym ze swojego fikcyjnego świata</string>
+    <string name="scifi_name_vulcan">Vulcan</string>
+    <string name="scifi_description_vulcan">Suchy świat macierzysty Wolkan</string>
+    <string name="scifi_name_nostromo">Nostromo</string>
+    <string name="scifi_description_nostromo">Handlowy holownik z Obcego; punkt odniesienia przy księżycu z fabuły</string>
+    <string name="scifi_name_discovery_one">Discovery One</string>
+    <string name="scifi_description_discovery_one">Statek badawczy z filmu 2001; Jowisz jest jego celem w fabule</string>
+    <string name="scifi_reference_note">Obiekt fikcyjny. Kierunek i przybliżona odległość odpowiadają wskazanemu rzeczywistemu punktowi odniesienia, a nie zmierzonej orbicie. Właściwości fizyczne nie są wywnioskowane; obraz jest ilustracją.</string>
+    <string name="catalog_type_spacecraft">Statki kosmiczne</string>
+    <string name="scifi_estimated_distance">Szacowana odległość odniesienia</string>
+    <string name="scifi_distance_reference_note">Szacunek na podstawie %1$s, a nie zmierzonej odległości tego obiektu.</string>
+</resources>

@@ -1,0 +1,9 @@
+<resources>
+    <string name="scenario_export">Export scenario</string>
+    <string name="scenario_import">Import scenario</string>
+    <string name="scenario_file_name">Scenario name</string>
+    <string name="scenario_file_saved">Scenario saved</string>
+    <string name="scenario_file_imported">Scenario imported</string>
+    <string name="scenario_file_invalid">Invalid or unsupported scenario file</string>
+    <string name="scenario_file_error">Unable to save or share the scenario</string>
+</resources>

@@ -1,4 +1,5 @@
 <resources>
     <string name="observer_current_scenario">Aktuelles Szenario</string>
-    <string name="observer_use_position_metadata">Höhe und Zeitzone dieser Position übernehmen</string>
+    <string name="observer_customize">Bearbeiten</string>
+    <string name="scenario_summary_automatic">Automatisch</string>
 </resources>

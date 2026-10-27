@@ -10,8 +10,8 @@
     <string name="panorama_labels_off">라벨을 숨깁니다</string>
     <string name="control_choice_message">%1$s: %2$s</string>
 
-    <string name="scene_scenario_on">사용자 지정 시나리오가 켜졌습니다</string>
-    <string name="scene_scenario_off">사용자 지정 시나리오가 꺼졌습니다</string>
+    <string name="scene_scenario_on">시나리오가 켜졌습니다</string>
+    <string name="scene_scenario_off">시나리오가 꺼졌습니다</string>
     <string name="scene_objects_on">천체가 켜졌습니다</string>
     <string name="scene_objects_off">천체가 꺼졌습니다</string>
 </resources>

@@ -1,9 +1,9 @@
 <resources>
     <string name="info_news_title">Dernières nouveautés · %1$s</string>
-    <string name="info_news_star_sky" formatted="false">Explorez 999 objets, les 88 constellations et LV-426 accessible à tous, avec un suivi et des références scientifiques améliorés.</string>
-    <string name="info_news_texture_downloads" formatted="false">Nouveau pack graphique 1.6 : 174 images et 174 miniatures distinctes, téléchargées individuellement et conservées hors ligne.</string>
-    <string name="info_news_weather" formatted="false">Infos plus claires, icônes de capture et de panorama revues, et raccourcis Observatoire et Trajectoire quotidienne plus contrastés la nuit.</string>
-    <string name="info_news_viewer_zoom" formatted="false">Types classés par nombre d’objets, options de tri alphabétiques et commandes plus claires.</string>
-    <string name="info_news_settings" formatted="false">Libellés des repères plus stables et Nadir à −90°, opposé au Zénith.</string>
-    <string name="info_news_catalog" formatted="false">Mouvement des lunes, rapprochements des objets sélectionnés et état de chargement météo améliorés.</string>
+    <string name="info_news_star_sky" formatted="false">Explorez 1009 objets avec un filtre Science-fiction et des références célestes illustratives clairement identifiées.</string>
+    <string name="info_news_texture_downloads" formatted="false">Le pack graphique 1.7 ajoute dix images et dix aperçus indépendants, téléchargés séparément, vérifiés et conservés hors ligne.</string>
+    <string name="info_news_weather" formatted="false">Comparez les durées de voyage estimées, des vitesses quotidiennes à la lumière et aux vitesses warp fictives, avec des unités compactes.</string>
+    <string name="info_news_viewer_zoom" formatted="false">Enregistrez, partagez et importez des scénarios nommés, y compris le mode de reprise du temps choisi.</string>
+    <string name="info_news_settings" formatted="false">Résumé du scénario actuel plus clair, avec altitude, fuseau et météo automatiques, noms de lieux mémorisés et icônes revues.</string>
+    <string name="info_news_catalog" formatted="false">La confirmation des réglages apparaît en quittant une page modifiée. Commandes des objets, compteurs, couleurs et infobulles améliorés.</string>
 </resources>

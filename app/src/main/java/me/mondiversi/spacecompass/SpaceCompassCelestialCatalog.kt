@@ -7,7 +7,7 @@ internal const val SPACE_COMPASS_CELESTIAL_CATALOG_REFRESH_MS = 10 * 60_000L
 
 /** Static distant-object references are available before an asynchronous catalog refresh. */
 internal fun spaceCompassCelestialCatalogReferenceDistanceAu(body: SpaceCompassCelestialBody): Double? =
-    body.deepSkyReference?.takeIf { it.hasMeasuredDistance }?.let { it.distanceLy * SPACE_COMPASS_LIGHT_YEAR_KM / SPACE_COMPASS_AU_KM }
+    body.takeUnless { it.isFictional }?.deepSkyReference?.takeIf { it.hasMeasuredDistance }?.let { it.distanceLy * SPACE_COMPASS_LIGHT_YEAR_KM / SPACE_COMPASS_AU_KM }
         ?: if (body == SpaceCompassCelestialBody.POLARIS) 136.90 * 206264.80624709636 else null
 
 /** Fill only missing distant-object references. Nearby-object summaries keep their km values. */
@@ -19,7 +19,7 @@ internal fun spaceCompassCatalogDistancesWithReferences(calculated: Map<SpaceCom
 /** Actual heliocentric radius, not the observer range shown by the compass. */
 internal fun spaceCompassCelestialCatalogDistanceAu(body: SpaceCompassCelestialBody, timeMs: Long,
     remote: SpaceCompassCelestialRemoteData = SpaceCompassCelestialRemoteData()): Double? {
-    if (body.catalogType == SpaceCompassCatalogType.CONSTELLATION || body.deepSkyReference?.hasMeasuredDistance == false) return null
+    if (body.isFictional || body.catalogType == SpaceCompassCatalogType.CONSTELLATION || body.deepSkyReference?.hasMeasuredDistance == false) return null
     if (body == SpaceCompassCelestialBody.SUN) return 0.0
     if (body == SpaceCompassCelestialBody.EARTH_CENTER) return helioVector(Body.Earth, spaceCompassAstronomyTime(timeMs)).length()
     val time = spaceCompassAstronomyTime(timeMs)
@@ -47,7 +47,7 @@ internal const val SPACE_COMPASS_CELESTIAL_CATALOG_LY_THRESHOLD_AU = 10_000.0
 /** Earth-centred range in km, independent of GPS; never substitute a heliocentric range. */
 internal fun spaceCompassCelestialCatalogEarthDistanceKm(body: SpaceCompassCelestialBody, timeMs: Long,
     remote: SpaceCompassCelestialRemoteData = SpaceCompassCelestialRemoteData()): Double? {
-    if (body.catalogType == SpaceCompassCatalogType.CONSTELLATION || body.deepSkyReference?.hasMeasuredDistance == false) return null
+    if (body.isFictional || body.catalogType == SpaceCompassCatalogType.CONSTELLATION || body.deepSkyReference?.hasMeasuredDistance == false) return null
     if (body == SpaceCompassCelestialBody.EARTH_CENTER) return 0.0
     if (body.isEarthSatellite || body == SpaceCompassCelestialBody.MOON)
         return spaceCompassNearbyCatalogDistanceKm(body, timeMs, remote)?.takeIf { it.isFinite() && it >= 0 }

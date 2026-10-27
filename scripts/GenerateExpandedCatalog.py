@@ -31,11 +31,12 @@ def edit(name,fn):
 enum='\n'.join('    '+r['id']+'(R.string.catalogue_'+r['key']+'),' for r in rows).rstrip(',')
 def add_enum(t):
     start=t.index('    M51_CORE(R.string.celestial_m51_core)')
-    end=t.index('\n}',start)
+    marker='\n    // Fictional reference identities'
+    end=t.index(marker,start) if marker in t[start:] else t.index('\n}',start)
     existing=set(re.findall(r'^    ([A-Z0-9_]+)\(R.string.catalogue_',t[start:end],re.M))
     requested={r['id'] for r in rows}
     assert existing <= requested, 'Retire old identifiers explicitly; do not silently delete saved selection identities.'
-    return t[:start]+'    M51_CORE(R.string.celestial_m51_core),\n'+enum+t[end:]
+    return t[:start]+'    M51_CORE(R.string.celestial_m51_core),\n'+enum+(',' if t[end:].startswith(marker) else '')+t[end:]
 edit('SpaceCompassCelestialModel.kt',add_enum)
 
 builders=[]

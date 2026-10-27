@@ -14,7 +14,6 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.geometry.Offset
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.StrokeCap
-import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.platform.testTag
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.semantics.contentDescription
@@ -29,14 +28,12 @@ import androidx.core.content.edit
 internal fun SpaceCompassScreensaverIsland() {
     val preferences = LocalSpaceCompassPreferences.current ?: return
     val settings = LocalSpaceCompassScreensaverSettings.current
-    val context = LocalContext.current
-    val saved = stringResource(R.string.settings_saved)
     val title = stringResource(R.string.screensaver_title)
     SpaceCompassSettingsToggleIsland(title, "screensaver", settings.enabled, title,
         onCheckedChange = { enabled ->
             if (enabled != settings.enabled) {
                 preferences.edit { putBoolean(SPACE_COMPASS_SCREENSAVER_ENABLED_KEY, enabled) }
-                showSpaceCompassBottomMessage(context, saved)
+
             }
         }, modifier = Modifier.testTag("screensaver-enabled")) {
         SpaceCompassSettingsDescription(stringResource(R.string.screensaver_description))
@@ -81,7 +78,7 @@ internal fun SpaceCompassScreensaverIsland() {
                             expanded = false
                             if (!checked) {
                                 preferences.edit { putInt(SPACE_COMPASS_SCREENSAVER_DELAY_KEY, seconds) }
-                                showSpaceCompassBottomMessage(context, saved)
+
                             }
                         })
                 }

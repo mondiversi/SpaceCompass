@@ -2,7 +2,7 @@
 <resources>
     <string name="scenario_speed">Время</string>
     <string name="scenario_speed_description">Перемещайте время сценария назад или вперёд со скоростью до 3600×. Ноль в центре останавливает время.</string>
-    <string name="scenario_resume">Возобновление пользовательского сценария</string>
+    <string name="scenario_resume">Возобновление сценария</string>
     <string name="scenario_resume_description">Выберите, как возобновляется моделируемое время при повторном открытии приложения. Выбранная скорость действует во всех режимах.</string>
     <string name="scenario_restart">Начинать сначала</string>
     <string name="scenario_active">Только при активном приложении</string>

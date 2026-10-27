@@ -2,4 +2,5 @@
 <resources>
     <string name="catalog_search">Pesquisar</string>
     <string name="catalog_search_clear">Limpar pesquisa</string>
+    <string name="catalog_scroll_to_top">Voltar ao início da lista</string>
 </resources>

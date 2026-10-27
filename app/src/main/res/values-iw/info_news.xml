@@ -1,9 +1,9 @@
 <resources>
     <string name="info_news_title">החידושים האחרונים · %1$s</string>
-    <string name="info_news_star_sky" formatted="false">גלו 999 עצמים, את כל 88 קבוצות הכוכבים ואת LV-426 הזמין לכולם, עם מעקב ומקורות מדעיים משופרים.</string>
-    <string name="info_news_texture_downloads" formatted="false">חבילת גרפיקה חדשה 1.6: כוללת 174 תמונות ו־174 תמונות ממוזערות נפרדות, המורדות בנפרד ונשמרות לשימוש ללא חיבור.</string>
-    <string name="info_news_weather" formatted="false">מידע ברור יותר, סמלי צילום ופנורמה מחודשים וניגודיות גבוהה יותר בכפתורי מצפה הכוכבים והמסלול היומי במצב לילה.</string>
-    <string name="info_news_viewer_zoom" formatted="false">סוגים לפי מספר עצמים, אפשרויות מיון אלפביתיות ובקרי עצמים ברורים יותר.</string>
-    <string name="info_news_settings" formatted="false">תוויות ייחוס יציבות יותר ונדיר ב־−90°, מול הזניט.</string>
-    <string name="info_news_catalog" formatted="false">שיפור תנועת ירחים, התקרבויות עצמים נבחרים ומצב טעינת מזג האוויר.</string>
+    <string name="info_news_star_sky" formatted="false">גלו 1009 עצמים בעזרת מסנן מדע בדיוני ונקודות ייחוס שמימיות להמחשה המסומנות בבירור.</string>
+    <string name="info_news_texture_downloads" formatted="false">חבילת הגרפיקה 1.7 מוסיפה עשר תמונות ועשר תצוגות מקדימות נפרדות, עם הורדה אישית, אימות ושמירה ללא חיבור.</string>
+    <string name="info_news_weather" formatted="false">השוו זמני מסע משוערים ממהירויות יומיומיות עד למהירות האור ולמהירויות וורפ בדיוניות, עם יחידות זמן מקוצרות.</string>
+    <string name="info_news_viewer_zoom" formatted="false">שמרו, שתפו וייבאו תרחישים בעלי שם, כולל מצב המשך הזמן שנבחר.</string>
+    <string name="info_news_settings" formatted="false">סיכום ברור יותר של התרחיש הנוכחי עם גובה, אזור זמן ומזג אוויר אוטומטיים, שמות מקומות שמורים וסמלים מעודכנים.</string>
+    <string name="info_news_catalog" formatted="false">אישור ההגדרות מוצג ביציאה מדף הגדרות ששונה. שופרו פקדי העצמים, המונים, הצבעים ובועות המידע.</string>
 </resources>

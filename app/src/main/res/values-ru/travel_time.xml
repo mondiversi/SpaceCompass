@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="travel_title">Время в пути</string>
+    <string name="travel_description">Оценка при постоянной скорости и текущем расстоянии в системе отсчёта наблюдателя.</string>
+    <string name="travel_speed">Скорость</string>
+    <string name="travel_duration">Расчётное время</string>
+    <string name="travel_distance_unavailable">Расстояние недоступно: невозможно рассчитать время в пути.</string>
+    <string name="travel_walking">Пешком</string>
+    <string name="travel_bicycle">Велосипед</string>
+    <string name="travel_car">Автомобиль</string>
+    <string name="travel_aircraft">Самолёт</string>
+    <string name="travel_rocket">Ракета</string>
+    <string name="travel_probe">Быстрый зонд</string>
+    <string name="travel_light">Скорость света</string>
+    <string name="travel_warp">Варп %1$s</string>
+    <string name="travel_warp_note">Варп — вымышленная шкала сравнения, а не физически достижимая скорость.</string>
+</resources>

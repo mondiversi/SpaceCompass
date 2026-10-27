@@ -11,7 +11,7 @@ class SpaceCompassCelestialCatalogTest {
     @Test fun requestedPresentationOrderContainsEveryBodyExactlyOnce() {
         assertEquals(listOf("SUN","MERCURY","VENUS","ISS","STARLINK_V3","TIANGONG","HUBBLE","MOON","JWST","TESLA_ROADSTER","APOPHIS","PARKER_SOLAR_PROBE","EUROPA_CLIPPER","JUICE","MARS","CERES","JUPITER","IO","EUROPA",
             "SATURN","TITAN","ENCELADUS","URANUS","NEPTUNE","PLUTO","SEDNA","HALLEY","COMET_67P","ATLAS_3I","NEW_HORIZONS","VOYAGER_1","VOYAGER_2","PROXIMA_CENTAURI","PROXIMA_B","ALPHA_CENTAURI","SIRIUS","ALTAIR","VEGA","TRAPPIST_1_E","RX_J1856","PLEIADES","POLARIS","PSR_J0437","BETELGEUSE","RIGEL","DENEB","SOUTHERN_CROSS","ORION_NEBULA","STEPHENSON_2_18","SAGITTARIUS_A","ANDROMEDA_CORE","M87","TON_618"),
-            spaceCompassCelestialCatalogOrder.filter { it.additionalCatalogEntry == null && it != SpaceCompassCelestialBody.LV_426 }.map { it.name })
+            spaceCompassCelestialCatalogOrder.filter { it.additionalCatalogEntry == null && !it.isFictional }.map { it.name })
         assertEquals(SpaceCompassCelestialBody.entries.filterNot { it == SpaceCompassCelestialBody.EARTH_CENTER }.toSet(), spaceCompassCelestialCatalogOrder.toSet())
         assertEquals(SpaceCompassCelestialBody.entries.count { it != SpaceCompassCelestialBody.EARTH_CENTER },spaceCompassCelestialCatalogOrder.size)
     }

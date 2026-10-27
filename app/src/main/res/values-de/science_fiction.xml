@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="catalog_type_scifi">Science-Fiction</string>
+    <string name="scifi_type_planet">Fiktiver Planet</string>
+    <string name="scifi_type_moon">Fiktiver Mond</string>
+    <string name="scifi_type_giant">Fiktiver Gasriese</string>
+    <string name="scifi_type_spacecraft">Fiktives Raumschiff</string>
+    <string name="scifi_universe">Erzählwelt</string>
+    <string name="scifi_reference">Richtungsreferenz</string>
+    <string name="scifi_model_note">Fiktive Darstellung. Die Ausrichtung folgt der realen Referenz, keiner gemessenen Umlaufbahn.</string>
+    <string name="scifi_credits">Originalillustrationen mit KI-Unterstützung. Namen und fiktive Welten gehören ihren jeweiligen Urhebern.</string>
+    <string name="scifi_name_arrakis">Arrakis</string>
+    <string name="scifi_description_arrakis">Wüstenwelt aus Dune</string>
+    <string name="scifi_name_caladan">Caladan</string>
+    <string name="scifi_description_caladan">Ozeanische Heimatwelt des Hauses Atreides</string>
+    <string name="scifi_name_giedi_prime">Giedi Prime</string>
+    <string name="scifi_description_giedi_prime">Industrielle Heimatwelt des Hauses Harkonnen</string>
+    <string name="scifi_name_lv_223">LV-223</string>
+    <string name="scifi_description_lv_223">Felsmond und Außenposten der Ingenieure in Prometheus</string>
+    <string name="scifi_name_calpamos">Calpamos</string>
+    <string name="scifi_description_calpamos">Gasriese seiner fiktiven Welt</string>
+    <string name="scifi_name_pandora">Pandora</string>
+    <string name="scifi_description_pandora">Bewaldeter Mond aus Avatar</string>
+    <string name="scifi_name_polyphemus">Polyphemus</string>
+    <string name="scifi_description_polyphemus">Gasriese seiner fiktiven Welt</string>
+    <string name="scifi_name_vulcan">Vulcan</string>
+    <string name="scifi_description_vulcan">Trockene Heimatwelt der Vulkanier</string>
+    <string name="scifi_name_nostromo">Nostromo</string>
+    <string name="scifi_description_nostromo">Handelsschlepper aus Alien; Referenz nahe dem Mond der Geschichte</string>
+    <string name="scifi_name_discovery_one">Discovery One</string>
+    <string name="scifi_description_discovery_one">Forschungsschiff aus dem Film 2001; Jupiter ist sein erzählerisches Ziel</string>
+    <string name="scifi_reference_note">Fiktives Objekt. Richtung und ungefähre Entfernung folgen der genannten realen Referenz, keiner gemessenen Umlaufbahn. Physikalische Eigenschaften werden nicht abgeleitet; das Bild ist eine Illustration.</string>
+    <string name="catalog_type_spacecraft">Raumschiffe</string>
+    <string name="scifi_estimated_distance">Geschätzte Referenzentfernung</string>
+    <string name="scifi_distance_reference_note">Schätzung anhand von %1$s, keine gemessene Entfernung dieses Objekts.</string>
+</resources>

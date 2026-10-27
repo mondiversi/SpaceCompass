@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="catalog_type_scifi">विज्ञान कथा</string>
+    <string name="scifi_type_planet">काल्पनिक ग्रह</string>
+    <string name="scifi_type_moon">काल्पनिक उपग्रह</string>
+    <string name="scifi_type_giant">काल्पनिक गैसीय महाग्रह</string>
+    <string name="scifi_type_spacecraft">काल्पनिक अंतरिक्ष यान</string>
+    <string name="scifi_universe">कथा जगत</string>
+    <string name="scifi_reference">दिशा संदर्भ</string>
+    <string name="scifi_model_note">काल्पनिक चित्र। दिशा वास्तविक संदर्भ का अनुसरण करती है, मापी हुई कक्षा का नहीं।</string>
+    <string name="scifi_credits">एआई की सहायता से बनाए गए मौलिक चित्र। नाम और काल्पनिक जगत उनके संबंधित रचनाकारों के हैं।</string>
+    <string name="scifi_name_arrakis">Arrakis</string>
+    <string name="scifi_description_arrakis">ड्यून का रेगिस्तानी संसार</string>
+    <string name="scifi_name_caladan">Caladan</string>
+    <string name="scifi_description_caladan">हाउस एट्रीडीज़ का महासागरीय गृहलोक</string>
+    <string name="scifi_name_giedi_prime">Giedi Prime</string>
+    <string name="scifi_description_giedi_prime">हाउस हार्कोनन का औद्योगिक गृहलोक</string>
+    <string name="scifi_name_lv_223">LV-223</string>
+    <string name="scifi_description_lv_223">प्रोमेथियस का चट्टानी उपग्रह और इंजीनियरों की चौकी</string>
+    <string name="scifi_name_calpamos">Calpamos</string>
+    <string name="scifi_description_calpamos">अपने काल्पनिक जगत का गैसीय महाग्रह</string>
+    <string name="scifi_name_pandora">Pandora</string>
+    <string name="scifi_description_pandora">अवतार का वनाच्छादित उपग्रह</string>
+    <string name="scifi_name_polyphemus">Polyphemus</string>
+    <string name="scifi_description_polyphemus">अपने काल्पनिक जगत का गैसीय महाग्रह</string>
+    <string name="scifi_name_vulcan">Vulcan</string>
+    <string name="scifi_description_vulcan">वल्कनों का शुष्क गृहलोक</string>
+    <string name="scifi_name_nostromo">Nostromo</string>
+    <string name="scifi_description_nostromo">एलियन का वाणिज्यिक टग; कथा के उपग्रह के पास संदर्भ</string>
+    <string name="scifi_name_discovery_one">Discovery One</string>
+    <string name="scifi_description_discovery_one">फ़िल्म 2001 का खोजी यान; बृहस्पति कथा में इसका गंतव्य है</string>
+    <string name="scifi_reference_note">काल्पनिक पिंड। दिशा और अनुमानित दूरी बताए गए वास्तविक संदर्भ पर आधारित हैं, किसी मापी गई कक्षा पर नहीं। भौतिक गुणों का अनुमान नहीं लगाया जाता; चित्र केवल दृष्टांत है।</string>
+    <string name="catalog_type_spacecraft">अंतरिक्ष यान</string>
+    <string name="scifi_estimated_distance">संदर्भ की अनुमानित दूरी</string>
+    <string name="scifi_distance_reference_note">%1$s पर आधारित अनुमान, इस पिंड की मापी गई दूरी नहीं।</string>
+</resources>

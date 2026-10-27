@@ -1,9 +1,9 @@
 <resources>
     <string name="info_news_title">हाल के बदलाव · %1$s</string>
-    <string name="info_news_star_sky" formatted="false">बेहतर ट्रैकिंग और वैज्ञानिक संदर्भों के साथ 999 पिंड, सभी 88 तारामंडल और सभी के लिए उपलब्ध LV-426 खोजें।</string>
-    <string name="info_news_texture_downloads" formatted="false">नया ग्राफ़िक्स पैक 1.6: 174 चित्र और 174 अलग थंबनेल, जो अलग-अलग डाउनलोड होते हैं और ऑफ़लाइन सहेजे जाते हैं।</string>
-    <string name="info_news_weather" formatted="false">अधिक स्पष्ट जानकारी, बेहतर फ़ोटो और पैनोरमा चिह्न तथा रात में वेधशाला और दैनिक पथ बटनों का बेहतर कंट्रास्ट।</string>
-    <string name="info_news_viewer_zoom" formatted="false">पिंडों की संख्या के अनुसार प्रकार, वर्णानुक्रम में क्रमबद्ध विकल्प और स्पष्ट नियंत्रण।</string>
-    <string name="info_news_settings" formatted="false">अधिक स्थिर संदर्भ लेबल और शिरोबिंदु के विपरीत −90° पर अधोबिंदु।</string>
-    <string name="info_news_catalog" formatted="false">उपग्रहों की गति, चुने हुए पिंडों के निकट आगमन और मौसम लोड होने की स्थिति में सुधार।</string>
+    <string name="info_news_star_sky" formatted="false">विज्ञान-कथा फ़िल्टर और स्पष्ट रूप से चिह्नित काल्पनिक आकाशीय संदर्भों के साथ 1009 पिंडों को खोजें।</string>
+    <string name="info_news_texture_downloads" formatted="false">ग्राफ़िक्स पैक 1.7 में दस चित्र और दस स्वतंत्र पूर्वावलोकन जुड़े हैं, जो अलग-अलग डाउनलोड, सत्यापित और ऑफ़लाइन सहेजे जाते हैं।</string>
+    <string name="info_news_weather" formatted="false">संक्षिप्त अवधि इकाइयों में रोज़मर्रा की गति से प्रकाश की गति और काल्पनिक वार्प गति तक अनुमानित यात्रा समय की तुलना करें।</string>
+    <string name="info_news_viewer_zoom" formatted="false">चुनी गई समय-पुनरारंभ विधि सहित नाम वाले परिदृश्य सहेजें, साझा करें और आयात करें।</string>
+    <string name="info_news_settings" formatted="false">स्वचालित ऊँचाई, समय क्षेत्र और मौसम, सहेजे गए स्थान नाम और नए आइकन के साथ वर्तमान परिदृश्य का अधिक स्पष्ट सारांश।</string>
+    <string name="info_news_catalog" formatted="false">बदली हुई सेटिंग स्क्रीन से निकलने पर सेटिंग की पुष्टि दिखाई देती है। पिंड नियंत्रण, काउंटर, रंग और सूचना बुलबुले बेहतर किए गए हैं।</string>
 </resources>

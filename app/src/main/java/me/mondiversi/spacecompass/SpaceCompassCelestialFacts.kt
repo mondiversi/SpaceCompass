@@ -23,7 +23,7 @@ internal data class SpaceCompassCelestialFacts(
     val maximumMassSolar: Double? = null, val apparentMagnitude: Double? = null
 )
 
-internal fun spaceCompassCelestialFacts(body: SpaceCompassCelestialBody): SpaceCompassCelestialFacts = spaceCompassAdditionalCatalogFacts(body) ?: when (body) {
+internal fun spaceCompassCelestialFacts(body: SpaceCompassCelestialBody): SpaceCompassCelestialFacts = if (body.isFictional && body != SpaceCompassCelestialBody.LV_426) SpaceCompassCelestialFacts() else spaceCompassAdditionalCatalogFacts(body) ?: when (body) {
     SpaceCompassCelestialBody.CERES -> SpaceCompassCelestialFacts(diameterKm = 939.4, diameterEstimated = true,
         massKg = 62.6284 / 6.67430e-20, gravity = 62.6284 / (469.7 * 469.7) * 1000,
         density = 2162.0, rotationHours = 9.07417, revolutionDays = 4.60851 * 365.25,
@@ -187,7 +187,7 @@ internal fun formatSpaceCompassCelestialGravity(value: Double?, numeric: SpaceCo
 }
 
 internal val SpaceCompassCelestialBody.viewerTexture: String?
-    get() = if (additionalCatalogEntry != null) spaceCompassAdditionalCatalogImage(this) else when (this) {
+    get() = fictionalReference?.texture ?: if (additionalCatalogEntry != null) spaceCompassAdditionalCatalogImage(this) else when (this) {
         SpaceCompassCelestialBody.VEGA, SpaceCompassCelestialBody.DENEB, SpaceCompassCelestialBody.ALTAIR,
         SpaceCompassCelestialBody.SOUTHERN_CROSS -> null
         SpaceCompassCelestialBody.NEW_HORIZONS -> "new_horizons.webp"
@@ -210,7 +210,7 @@ internal val SpaceCompassCelestialBody.viewerTexture: String?
         SpaceCompassCelestialBody.VENUS -> "venus_atmosphere.webp"
         else -> "${name.lowercase(java.util.Locale.ROOT)}.webp"
     }
-internal val SpaceCompassCelestialBody.isSpacecraft: Boolean get() = isInterplanetaryCraft || isEarthSatellite || isVoyager || this == SpaceCompassCelestialBody.TESLA_ROADSTER
+internal val SpaceCompassCelestialBody.isSpacecraft: Boolean get() = fictionalReference?.spacecraft == true || isInterplanetaryCraft || isEarthSatellite || isVoyager || this == SpaceCompassCelestialBody.TESLA_ROADSTER
 
 /** Raster X increases eastward even for ISIS PositiveWest coordinate labels.
  * Europa/Pluto/Titan span 0..360; the other reference maps are centred on longitude zero. */
@@ -280,7 +280,7 @@ private fun siriusFacts(): SpaceCompassCelestialFacts {
         spectralType = "A1 V", binaryPeriodDays = 50.1284 * 365.25, apparentMagnitude = -1.46)
 }
 
-internal val SpaceCompassCelestialBody.hasCatalogPhotograph: Boolean get() = if (additionalCatalogEntry != null) spaceCompassAdditionalCatalogImage(this) != null else when (this) {
+internal val SpaceCompassCelestialBody.hasCatalogPhotograph: Boolean get() = if (isFictional) fictionalReference?.spacecraft == true else if (additionalCatalogEntry != null) spaceCompassAdditionalCatalogImage(this) != null else when (this) {
     SpaceCompassCelestialBody.CERES -> true
     SpaceCompassCelestialBody.NEW_HORIZONS, SpaceCompassCelestialBody.JWST, SpaceCompassCelestialBody.PARKER_SOLAR_PROBE,
     SpaceCompassCelestialBody.APOPHIS, SpaceCompassCelestialBody.EUROPA_CLIPPER, SpaceCompassCelestialBody.HUBBLE, SpaceCompassCelestialBody.M87,

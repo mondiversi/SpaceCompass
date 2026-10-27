@@ -86,12 +86,12 @@ internal class SpaceCompassCelestialGlRenderer(private val context: Context, pri
         glUniform1f(uniformLocations[3], framing.zoom.toFloat())
         glUniform2f(uniformLocations[4], framing.panX.toFloat(), framing.panY.toFloat())
         glUniform1f(uniformLocations[5],
-            (if (body == SpaceCompassCelestialBody.SATURN) 2.65f else 1.30f) / aspect.coerceAtMost(1f))
+            (if (body.hasIllustratedRings) 2.65f else 1.30f) / aspect.coerceAtMost(1f))
         glUniform1f(uniformLocations[6], if (body == SpaceCompassCelestialBody.SUN || body == SpaceCompassCelestialBody.POLARIS) 1f else 0f)
         // Visual fill reveals the observer-facing terrain even at new phase. This is not
         // measured illumination: the geometric light vector and reported phase remain untouched.
         glUniform1f(uniformLocations[7], if (inspectShadows) .24f else .012f)
-        glUniform1f(uniformLocations[8], if (body == SpaceCompassCelestialBody.SATURN) 1f else 0f)
+        glUniform1f(uniformLocations[8], if (body.hasIllustratedRings) 1f else 0f)
         glUniform1f(uniformLocations[9], body.textureLongitudeOffset.toFloat())
         glUniform1f(uniformLocations[10], if (body.textureHasUnmappedAreas) 1f else 0f)
         glUniform1i(uniformLocations[11], 0)

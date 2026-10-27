@@ -1,4 +1,5 @@
 <resources>
     <string name="observer_current_scenario">Cenário atual</string>
-    <string name="observer_use_position_metadata">Usar altitude e fuso horário desta posição</string>
+    <string name="observer_customize">Editar</string>
+    <string name="scenario_summary_automatic">Automático</string>
 </resources>

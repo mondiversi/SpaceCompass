@@ -1,9 +1,9 @@
 <resources>
     <string name="info_news_title">Последние новости · %1$s</string>
-    <string name="info_news_star_sky" formatted="false">Исследуйте 999 объектов, все 88 созвездий и доступную всем LV-426 с улучшенным отслеживанием и научными источниками.</string>
-    <string name="info_news_texture_downloads" formatted="false">Новый графический пакет 1.6: 174 изображения и 174 отдельные миниатюры, загружаемые по одной и сохраняемые офлайн.</string>
-    <string name="info_news_weather" formatted="false">Более понятная информация, обновлённые значки снимка и панорамы и более контрастные кнопки обсерватории и суточного пути в ночном режиме.</string>
-    <string name="info_news_viewer_zoom" formatted="false">Типы по числу объектов, параметры сортировки по алфавиту и более понятное управление объектами.</string>
-    <string name="info_news_settings" formatted="false">Более стабильные подписи ориентиров и Надир на −90°, напротив Зенита.</string>
-    <string name="info_news_catalog" formatted="false">Улучшены движение лун, сближения выбранных объектов и отображение загрузки погоды.</string>
+    <string name="info_news_star_sky" formatted="false">Исследуйте 1009 объектов с фильтром «Научная фантастика» и явно обозначенными иллюстративными небесными ориентирами.</string>
+    <string name="info_news_texture_downloads" formatted="false">Графический пакет 1.7 добавляет десять изображений и десять отдельных миниатюр с пофайловой загрузкой, проверкой и автономным кешем.</string>
+    <string name="info_news_weather" formatted="false">Сравнивайте расчётное время пути от обычных скоростей до скорости света и вымышленных варп-скоростей с краткими единицами длительности.</string>
+    <string name="info_news_viewer_zoom" formatted="false">Сохраняйте, отправляйте и импортируйте именованные сценарии вместе с выбранным режимом возобновления времени.</string>
+    <string name="info_news_settings" formatted="false">Более наглядная сводка текущего сценария: автоматические высота, часовой пояс и погода, сохранённые названия мест и обновлённые значки.</string>
+    <string name="info_news_catalog" formatted="false">Подтверждение настроек появляется при выходе с изменённой страницы. Улучшены управление объектами, счётчики, цвета и подсказки.</string>
 </resources>

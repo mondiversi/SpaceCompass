@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="catalog_type_scifi">Science fiction</string>
+    <string name="scifi_type_planet">Fictional planet</string>
+    <string name="scifi_type_moon">Fictional moon</string>
+    <string name="scifi_type_giant">Fictional gas giant</string>
+    <string name="scifi_type_spacecraft">Fictional spacecraft</string>
+    <string name="scifi_universe">Universe</string>
+    <string name="scifi_reference">Direction reference</string>
+    <string name="scifi_model_note">Fictional illustration. Pointing follows the real reference, not a measured orbit.</string>
+    <string name="scifi_credits">Original AI-assisted illustrations. Names and fictional settings belong to their respective creators.</string>
+    <string name="scifi_name_arrakis">Arrakis</string>
+    <string name="scifi_description_arrakis">Desert world of Dune</string>
+    <string name="scifi_name_caladan">Caladan</string>
+    <string name="scifi_description_caladan">Oceanic homeworld of House Atreides</string>
+    <string name="scifi_name_giedi_prime">Giedi Prime</string>
+    <string name="scifi_description_giedi_prime">Industrial homeworld of House Harkonnen</string>
+    <string name="scifi_name_lv_223">LV-223</string>
+    <string name="scifi_description_lv_223">Rocky moon and Engineer outpost in Prometheus</string>
+    <string name="scifi_name_calpamos">Calpamos</string>
+    <string name="scifi_description_calpamos">Gas giant in its fictional setting</string>
+    <string name="scifi_name_pandora">Pandora</string>
+    <string name="scifi_description_pandora">Forested moon in Avatar</string>
+    <string name="scifi_name_polyphemus">Polyphemus</string>
+    <string name="scifi_description_polyphemus">Gas giant in its fictional setting</string>
+    <string name="scifi_name_vulcan">Vulcan</string>
+    <string name="scifi_description_vulcan">Arid homeworld of the Vulcans</string>
+    <string name="scifi_name_nostromo">Nostromo</string>
+    <string name="scifi_description_nostromo">Commercial towing ship in Alien; reference near the story’s moon</string>
+    <string name="scifi_name_discovery_one">Discovery One</string>
+    <string name="scifi_description_discovery_one">Exploration ship from the film 2001; Jupiter is its narrative destination</string>
+    <string name="scifi_reference_note">Fictional object. Direction and approximate distance follow the named real reference, not a measured orbit. Physical properties are not inferred; the image is an illustration.</string>
+    <string name="catalog_type_spacecraft">Spacecraft</string>
+    <string name="scifi_estimated_distance">Estimated reference distance</string>
+    <string name="scifi_distance_reference_note">Estimate based on %1$s, not a measured distance of this object.</string>
+</resources>

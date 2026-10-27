@@ -1,4 +1,5 @@
 <resources>
     <string name="observer_current_scenario">Текущий сценарий</string>
-    <string name="observer_use_position_metadata">Использовать высоту и часовой пояс этого положения</string>
+    <string name="observer_customize">Изменить</string>
+    <string name="scenario_summary_automatic">Автоматически</string>
 </resources>

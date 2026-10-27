@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="catalog_type_scifi">Bilim kurgu</string>
+    <string name="scifi_type_planet">Kurgusal gezegen</string>
+    <string name="scifi_type_moon">Kurgusal uydu</string>
+    <string name="scifi_type_giant">Kurgusal gaz devi</string>
+    <string name="scifi_type_spacecraft">Kurgusal uzay gemisi</string>
+    <string name="scifi_universe">Kurgu evreni</string>
+    <string name="scifi_reference">Yön referansı</string>
+    <string name="scifi_model_note">Kurgusal gösterim. Yön, ölçülmüş bir yörüngeyi değil gerçek referansı izler.</string>
+    <string name="scifi_credits">Yapay zekâ desteğiyle hazırlanmış özgün çizimler. Adlar ve kurgusal evrenler ilgili yaratıcılarına aittir.</string>
+    <string name="scifi_name_arrakis">Arrakis</string>
+    <string name="scifi_description_arrakis">Dune evreninin çöl dünyası</string>
+    <string name="scifi_name_caladan">Caladan</string>
+    <string name="scifi_description_caladan">Atreides Hanesi’nin okyanuslarla kaplı anayurdu</string>
+    <string name="scifi_name_giedi_prime">Giedi Prime</string>
+    <string name="scifi_description_giedi_prime">Harkonnen Hanesi’nin sanayileşmiş anayurdu</string>
+    <string name="scifi_name_lv_223">LV-223</string>
+    <string name="scifi_description_lv_223">Prometheus’taki kayalık uydu ve Mühendis karakolu</string>
+    <string name="scifi_name_calpamos">Calpamos</string>
+    <string name="scifi_description_calpamos">Kendi kurgu evrenindeki gaz devi</string>
+    <string name="scifi_name_pandora">Pandora</string>
+    <string name="scifi_description_pandora">Avatar evreninin ormanlık uydusu</string>
+    <string name="scifi_name_polyphemus">Polyphemus</string>
+    <string name="scifi_description_polyphemus">Kendi kurgu evrenindeki gaz devi</string>
+    <string name="scifi_name_vulcan">Vulcan</string>
+    <string name="scifi_description_vulcan">Vulkanlıların kurak anayurdu</string>
+    <string name="scifi_name_nostromo">Nostromo</string>
+    <string name="scifi_description_nostromo">Alien filmindeki ticari römorkör; hikâyedeki uydu yakınında referans</string>
+    <string name="scifi_name_discovery_one">Discovery One</string>
+    <string name="scifi_description_discovery_one">2001 filmindeki keşif gemisi; hikâyedeki hedefi Jüpiter’dir</string>
+    <string name="scifi_reference_note">Kurgusal nesne. Yön ve yaklaşık mesafe, ölçülmüş bir yörüngeyi değil belirtilen gerçek referansı izler. Fiziksel özellikler türetilmez; görüntü bir çizimdir.</string>
+    <string name="catalog_type_spacecraft">Uzay gemileri</string>
+    <string name="scifi_estimated_distance">Tahmini referans mesafesi</string>
+    <string name="scifi_distance_reference_note">%1$s temelinde bir tahmindir, bu nesnenin ölçülmüş mesafesi değildir.</string>
+</resources>

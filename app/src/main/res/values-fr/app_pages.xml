@@ -3,7 +3,7 @@
     <string name="pc_info">Infos et crédits</string>
     <string name="pc_display_automatic">Mise à l’échelle automatique</string>
     <string name="pc_info_description">Une boussole astronomique pour trouver les objets célestes, explorer leurs trajectoires et observer des modèles et les phases lunaires.</string>
-    <string name="pc_info_earth">Conçue pour être utilisée sur Terre : l’application utilise la gravité et le champ magnétique terrestre pour l’orientation ; le GPS fournit la position. Ces repères ne garantissent pas une orientation fiable dans l’espace avec un smartphone ordinaire. Avec des technologies spatiales et des capteurs plus avancés, peut-être pourrons-nous un jour nous orienter là-haut aussi 🙂</string>
+    <string name="pc_info_earth">Pour l’instant, restons sur Terre : il faudra des capteurs de smartphone plus avancés pour l’espace. Un jour, peut-être 🙂</string>
     <string name="pc_info_compass">Précision de la boussole</string>
     <string name="pc_info_accuracy">Une précision réduite signifie que le téléphone signale un faible étalonnage magnétique. Le pointage reste approximatif jusqu’à ce que la précision du capteur s’améliore.</string>
     <string name="pc_info_credits">Crédits et licences</string>

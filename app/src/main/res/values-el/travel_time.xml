@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="travel_title">Χρόνος ταξιδιού</string>
+    <string name="travel_description">Εκτίμηση με σταθερή ταχύτητα και την τρέχουσα απόσταση, στο σύστημα αναφοράς του παρατηρητή.</string>
+    <string name="travel_speed">Ταχύτητα</string>
+    <string name="travel_duration">Εκτιμώμενος χρόνος</string>
+    <string name="travel_distance_unavailable">Η απόσταση δεν είναι διαθέσιμη: δεν υπολογίζεται ο χρόνος ταξιδιού.</string>
+    <string name="travel_walking">Με τα πόδια</string>
+    <string name="travel_bicycle">Ποδήλατο</string>
+    <string name="travel_car">Αυτοκίνητο</string>
+    <string name="travel_aircraft">Αεροπλάνο</string>
+    <string name="travel_rocket">Πύραυλος</string>
+    <string name="travel_probe">Γρήγορη διαστημοσυσκευή</string>
+    <string name="travel_light">Ταχύτητα του φωτός</string>
+    <string name="travel_warp">Warp %1$s</string>
+    <string name="travel_warp_note">Το Warp είναι φανταστική κλίμακα σύγκρισης, όχι φυσικά εφικτή ταχύτητα.</string>
+</resources>

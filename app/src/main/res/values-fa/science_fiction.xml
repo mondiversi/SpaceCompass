@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="catalog_type_scifi">علمی‌تخیلی</string>
+    <string name="scifi_type_planet">سیارهٔ خیالی</string>
+    <string name="scifi_type_moon">قمر خیالی</string>
+    <string name="scifi_type_giant">غول گازی خیالی</string>
+    <string name="scifi_type_spacecraft">فضاپیمای خیالی</string>
+    <string name="scifi_universe">جهان داستانی</string>
+    <string name="scifi_reference">مرجع جهت</string>
+    <string name="scifi_model_note">نمایش خیالی. جهت از مرجع واقعی پیروی می‌کند، نه از مدار اندازه‌گیری‌شده.</string>
+    <string name="scifi_credits">تصاویر اصیل با کمک هوش مصنوعی. نام‌ها و جهان‌های خیالی متعلق به پدیدآورندگان آن‌ها هستند.</string>
+    <string name="scifi_name_arrakis">Arrakis</string>
+    <string name="scifi_description_arrakis">جهان بیابانی تلماسه</string>
+    <string name="scifi_name_caladan">Caladan</string>
+    <string name="scifi_description_caladan">زادگاه اقیانوسی خاندان آتریدیز</string>
+    <string name="scifi_name_giedi_prime">Giedi Prime</string>
+    <string name="scifi_description_giedi_prime">زادگاه صنعتی خاندان هارکونن</string>
+    <string name="scifi_name_lv_223">LV-223</string>
+    <string name="scifi_description_lv_223">قمر سنگی و پایگاه مهندسان در پرومتئوس</string>
+    <string name="scifi_name_calpamos">Calpamos</string>
+    <string name="scifi_description_calpamos">غول گازی در جهان داستانی خود</string>
+    <string name="scifi_name_pandora">Pandora</string>
+    <string name="scifi_description_pandora">قمر جنگلی آواتار</string>
+    <string name="scifi_name_polyphemus">Polyphemus</string>
+    <string name="scifi_description_polyphemus">غول گازی در جهان داستانی خود</string>
+    <string name="scifi_name_vulcan">Vulcan</string>
+    <string name="scifi_description_vulcan">زادگاه خشک ولکان‌ها</string>
+    <string name="scifi_name_nostromo">Nostromo</string>
+    <string name="scifi_description_nostromo">یدک‌کش تجاری در بیگانه؛ مرجع نزدیک قمر داستان</string>
+    <string name="scifi_name_discovery_one">Discovery One</string>
+    <string name="scifi_description_discovery_one">فضاپیمای اکتشافی فیلم ۲۰۰۱؛ مشتری مقصد آن در داستان است</string>
+    <string name="scifi_reference_note">جرم تخیلی. جهت و فاصلهٔ تقریبی از مرجع واقعی نام‌برده پیروی می‌کنند، نه از مداری اندازه‌گیری‌شده. ویژگی‌های فیزیکی استنتاج نمی‌شوند؛ تصویر نمایشی است.</string>
+    <string name="catalog_type_spacecraft">فضاپیماها</string>
+    <string name="scifi_estimated_distance">فاصلهٔ تخمینی مرجع</string>
+    <string name="scifi_distance_reference_note">برآورد بر پایهٔ %1$s است، نه فاصلهٔ اندازه‌گیری‌شدهٔ این جرم.</string>
+</resources>

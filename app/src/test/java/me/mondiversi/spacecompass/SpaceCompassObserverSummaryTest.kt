@@ -11,7 +11,6 @@ class SpaceCompassObserverSummaryTest {
     private val draft = SpaceCompassObserverDraft(true, false, "28.35", "-14.1", "900", "Atlantic/Canary",
         "2027-04-06", "21:00", simulateAltitude = false, simulateZone = false,
         automaticAltitudeMeters = 102.5, automaticZoneId = "Atlantic/Canary", simulateDate = false)
-    private val metadata = SpaceCompassObserverMetadata(68.0, "Europe/Rome")
     private fun plan(value: SpaceCompassObserverDraft) = value.resolve(null, now, "Europe/Rome").getOrThrow()!!
 
     @Test fun badgeAndSummaryHaveExactlyTheSameSectionsForEverySwitchCombination() {
@@ -36,69 +35,8 @@ class SpaceCompassObserverSummaryTest {
         assertEquals(2, selected.copy(simulatePosition = false).activeSectionCount)
     }
 
-    @Test fun revealingSectionsSkipsTheNewSummaryWithoutChangingSectionOrder() {
-        assertEquals(listOf(1, 2, 3, 4, 5), SpaceCompassObserverSection.entries.map { it.gridIndex })
-    }
-
-    @Test fun metadataActionActivatesBothFieldsAndLeavesDateTimeOff() {
-        val changed = draft.withPositionMetadata(metadata, SpaceCompassNumericFormat.INTERNATIONAL, "Europe/Rome")
-        assertTrue(changed.simulatePosition); assertTrue(changed.simulateAltitude); assertTrue(changed.simulateZone)
-        assertFalse(changed.simulateDate); assertFalse(changed.simulateTime)
-        val selected = plan(changed)
-        assertEquals(3, selected.activeSectionCount)
-        assertEquals(68.0, selected.altitudeMeters, 0.0)
-        assertEquals("Europe/Rome", selected.zoneId)
-        assertEquals(68.0, selected.automaticAltitudeMeters!!, 0.0)
-        assertEquals("Europe/Rome", selected.automaticZoneId)
-        assertEquals(draft.latitude, changed.latitude); assertEquals(draft.longitude, changed.longitude)
-    }
-
-    @Test fun metadataActionPreservesFixedObservationInstantWhenConvertingToAnotherZone() {
-        val before = draft.copy(simulateDate = true, simulateTime = true)
-        val changed = before.withPositionMetadata(metadata, SpaceCompassNumericFormat.INTERNATIONAL, "Europe/Rome")
-        assertEquals(plan(before).timeOverrideMs, plan(changed).timeOverrideMs)
-        assertEquals("22:00", changed.time)
-        assertEquals(before.date, changed.date)
-    }
-
-    @Test fun partialCalendarChoicesAndTheirStoredClockAdvancementRemainIndependent() {
-        for ((date, time) in listOf(true to false, false to true, false to false)) {
-            val before = draft.copy(simulateDate = date, simulateTime = time, advanceTime = true, clockOffsetMs = 12345L)
-            val changed = before.withPositionMetadata(metadata, SpaceCompassNumericFormat.INTERNATIONAL, "Europe/Rome")
-            assertEquals(date, changed.simulateDate); assertEquals(time, changed.simulateTime)
-            assertEquals(before.date, changed.date); assertEquals(before.time, changed.time)
-            assertEquals(before.advanceTime, changed.advanceTime); assertEquals(before.clockOffsetMs, changed.clockOffsetMs)
-        }
-    }
-
-    @Test fun changingMetadataNeverReanchorsAnAdvancingClock() {
-        val before = draft.copy(simulateDate = true, simulateTime = true, advanceTime = true, clockOffsetMs = 18_000_000L)
-        val changed = before.withPositionMetadata(metadata, SpaceCompassNumericFormat.INTERNATIONAL, "Europe/Rome")
-        assertEquals(plan(before).observationTimeMs(now + 100_000), plan(changed).observationTimeMs(now + 100_000))
-    }
-
-    @Test fun altitudeUsesSelectedFeetForEditingAndMetersForStoredCalculations() {
-        val changed = draft.copy(feet = true).withPositionMetadata(metadata, SpaceCompassNumericFormat.EUROPEAN, "Europe/Rome")
-        assertTrue(changed.altitude.contains(','))
-        assertEquals(68.0, plan(changed).altitudeMeters, .002)
-    }
-
-    @Test fun invalidProviderValuesCannotPartiallyActivateEitherField() {
-        for (bad in listOf(metadata.copy(altitude = Double.NaN), metadata.copy(altitude = 21_000.0),
-            metadata.copy(zoneId = "invalid"))) {
-            assertTrue(runCatching { draft.withPositionMetadata(bad, SpaceCompassNumericFormat.INTERNATIONAL, "Europe/Rome") }.isFailure)
-            assertFalse(draft.simulateAltitude); assertFalse(draft.simulateZone)
-        }
-        assertTrue(runCatching { draft.copy(simulatePosition = false).withPositionMetadata(metadata,
-            SpaceCompassNumericFormat.INTERNATIONAL, "Europe/Rome") }.isFailure)
-    }
-
-    @Test fun applyingMetadataToExistingOverridesProducesModificationRatherThanActivation() {
-        val before = draft.copy(simulateAltitude = true, simulateZone = true)
-        val changed = before.withPositionMetadata(metadata, SpaceCompassNumericFormat.INTERNATIONAL, "Europe/Rome")
-        val notices = spaceCompassObserverSectionChanges(before, changed)
-        assertEquals(listOf(SpaceCompassObserverSection.ALTITUDE, SpaceCompassObserverSection.ZONE), notices.map { it.section })
-        assertTrue(notices.all { it.change == SpaceCompassObserverChange.MODIFIED })
+    @Test fun revealingSectionsStartsAtTheFirstEditableIslandWithoutChangingSectionOrder() {
+        assertEquals(listOf(0, 1, 2, 3, 4), SpaceCompassObserverSection.entries.map { it.gridIndex })
     }
 
     @Test fun historicalDatesAreReadableInSummaryWithoutChangingUnknownTimestampDefaultsElsewhere() {

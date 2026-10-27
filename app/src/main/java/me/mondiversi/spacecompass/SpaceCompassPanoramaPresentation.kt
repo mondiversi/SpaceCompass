@@ -71,11 +71,5 @@ internal fun spaceCompassPanoramaPresentation(snapshot: SpaceCompassPanoramaSnap
             resources.getString(R.string.sky_reference_south_pole),
         observerPointNames = resources.getString(R.string.sky_reference_nadir) to
             resources.getString(R.string.sky_reference_zenith),
-        orbitExportVocabulary = SpaceCompassOrbitExportVocabulary(
-            point = resources.getString(R.string.celestial_point_number), time = resources.getString(R.string.format_time_heading),
-            azimuth = resources.getString(R.string.capture_table_azimuth), elevation = resources.getString(R.string.capture_table_elevation),
-            events = resources.getString(R.string.capture_table_events), selected = resources.getString(R.string.capture_table_selected),
-            capturedAt = resources.getString(R.string.capture_table_captured), observedAt = resources.getString(R.string.capture_table_observed),
-            context = resources.getString(R.string.capture_table_context), legend = resources.getString(R.string.capture_table_legend),
-            illuminated = resources.getString(R.string.celestial_view_illuminated))), caption, resources.getString(R.string.pc_compass_approximate))
+        orbitExportVocabulary = spaceCompassOrbitExportVocabulary(resources.spaceCompassTextResources())), caption, resources.getString(R.string.pc_compass_approximate))
 }

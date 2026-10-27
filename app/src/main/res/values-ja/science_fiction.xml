@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="catalog_type_scifi">SF</string>
+    <string name="scifi_type_planet">架空の惑星</string>
+    <string name="scifi_type_moon">架空の衛星</string>
+    <string name="scifi_type_giant">架空の巨大ガス惑星</string>
+    <string name="scifi_type_spacecraft">架空の宇宙船</string>
+    <string name="scifi_universe">作品世界</string>
+    <string name="scifi_reference">指向基準</string>
+    <string name="scifi_model_note">架空の想像図です。指向は実在の基準天体に従い、実測の軌道ではありません。</string>
+    <string name="scifi_credits">AIを補助として制作したオリジナルイラストです。名称や架空の世界の権利はそれぞれの創作者に帰属します。</string>
+    <string name="scifi_name_arrakis">アラキス</string>
+    <string name="scifi_description_arrakis">デューンの砂漠世界</string>
+    <string name="scifi_name_caladan">カラダン</string>
+    <string name="scifi_description_caladan">アトレイデス家の海洋に覆われた故郷</string>
+    <string name="scifi_name_giedi_prime">ギエディ・プライム</string>
+    <string name="scifi_description_giedi_prime">ハルコンネン家の工業化された故郷</string>
+    <string name="scifi_name_lv_223">LV-223</string>
+    <string name="scifi_description_lv_223">プロメテウスに登場する岩石衛星とエンジニアの前哨基地</string>
+    <string name="scifi_name_calpamos">カルパモス</string>
+    <string name="scifi_description_calpamos">作品世界に登場する巨大ガス惑星</string>
+    <string name="scifi_name_pandora">パンドラ</string>
+    <string name="scifi_description_pandora">アバターに登場する森林の衛星</string>
+    <string name="scifi_name_polyphemus">ポリフェマス</string>
+    <string name="scifi_description_polyphemus">作品世界に登場する巨大ガス惑星</string>
+    <string name="scifi_name_vulcan">バルカン</string>
+    <string name="scifi_description_vulcan">バルカン人の乾燥した故郷</string>
+    <string name="scifi_name_nostromo">ノストロモ</string>
+    <string name="scifi_description_nostromo">エイリアンの商業曳航船。物語の衛星付近を指向基準とする</string>
+    <string name="scifi_name_discovery_one">ディスカバリー・ワン</string>
+    <string name="scifi_description_discovery_one">映画2001年宇宙の旅の探査船。木星が物語上の目的地</string>
+    <string name="scifi_reference_note">架空の天体です。方向とおおよその距離は、実測軌道ではなく指定された実在の参照先に基づきます。物理的特性は推測せず、画像はイラストです。</string>
+    <string name="catalog_type_spacecraft">宇宙船</string>
+    <string name="scifi_estimated_distance">参照先までの推定距離</string>
+    <string name="scifi_distance_reference_note">%1$sに基づく推定であり、この天体の実測距離ではありません。</string>
+</resources>

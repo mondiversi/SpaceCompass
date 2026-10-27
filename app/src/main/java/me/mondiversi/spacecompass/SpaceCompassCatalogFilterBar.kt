@@ -43,7 +43,7 @@ internal fun SpaceCompassCatalogFilterBar(types: Set<SpaceCompassCatalogType>, v
     }
     val selectedTypes = typeCounts.filter { it.type in types }
     val selectedTypeLabels = selectedTypes.map { typeLabels.getValue(it.type) }
-    val selectedTypeCount = countLabel(if (types.isEmpty()) availableBodies.size else selectedTypes.sumOf { it.count })
+    val selectedTypeCount = countLabel(spaceCompassCatalogTypeMatchCount(availableBodies, types))
     // AnimatedVisibility overlays sibling layouts; keep the separator below the whole panel.
     Column(Modifier.fillMaxWidth()) {
         Column(Modifier.fillMaxWidth().padding(horizontal = 10.dp, vertical = 8.dp).testTag("catalog-filter-bar"),

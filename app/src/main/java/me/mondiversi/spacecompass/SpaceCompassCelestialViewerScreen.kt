@@ -77,7 +77,10 @@ internal fun SpaceCompassCelestialObservatoryPage(body: SpaceCompassCelestialBod
     }
     val phase = remember(body, timeMs) { if (body == SpaceCompassCelestialBody.MOON) calculateSpaceCompassMoonPhase(timeMs) else null }
     val hasLocation = latitude != null && longitude != null
-    val distance = if (!hasLocation) null else geometry?.distanceKm ?: remoteDistance
+    val measuredDistance = if (!hasLocation) null else geometry?.distanceKm ?: remoteDistance
+    val distance = remember(body, measuredDistance, timeMs, remote, latitude, longitude, altitude) {
+        spaceCompassDisplayObserverDistanceKm(body, measuredDistance, timeMs, remote, latitude, longitude, altitude)
+    }
     val coordinateTimeMs = timeMs / 1000 * 1000
     val coordinates = key(body) {
         produceState<SpaceCompassCelestialCoordinates?>(null, coordinateTimeMs, remote) {
@@ -141,7 +144,7 @@ internal fun SpaceCompassCelestialObservatoryPage(body: SpaceCompassCelestialBod
     val spin = stringResource(R.string.celestial_view_rotation)
     val resume = stringResource(R.string.celestial_view_resume)
     val note = stringResource(when {
-        body.isFictional -> R.string.celestial_lv426_model_note
+        body.isFictional -> R.string.scifi_model_note
         body == SpaceCompassCelestialBody.EARTH_CENTER -> R.string.celestial_earth_center_note
         body == SpaceCompassCelestialBody.SOUTHERN_CROSS -> R.string.celestial_southern_cross_note
         body.hasCatalogPhotograph -> R.string.celestial_archival_image
@@ -155,7 +158,7 @@ internal fun SpaceCompassCelestialObservatoryPage(body: SpaceCompassCelestialBod
         else -> R.string.celestial_view_map_note
     })
     val model: @Composable (Modifier) -> Unit = { placement ->
-            Box(placement.padding(horizontal = spaceCompassDetailScrollInset).testTag("celestial-view-model").onSizeChanged { modelSize = it }.clip(RoundedCornerShape(18.dp)).background(Color(0xff04060c)),
+            Box(placement.testTag("celestial-view-model").onSizeChanged { modelSize = it }.clip(RoundedCornerShape(18.dp)).background(Color(0xff04060c)),
                 contentAlignment = Alignment.Center) {
                 // Only this restartable region reads the animation angle: facts do not recompose at 30 Hz.
                 val viewGeometry = if (rotating || !body.hasPhysicalFace) rotationState.value.geometry() else geometry.takeIf { hasLocation }
@@ -193,10 +196,11 @@ internal fun SpaceCompassCelestialObservatoryPage(body: SpaceCompassCelestialBod
     val info: @Composable (Modifier) -> Unit = { placement ->
         val scroll = rememberScrollState()
         Column(placement.testTag("celestial-view-information")
-            .scrollbarOverlay(scroll, secondaryText.copy(alpha = 0.46f)).verticalScroll(scroll),
+            .scrollbarOverlay(scroll, secondaryText.copy(alpha = 0.46f), touchTargetWidth = 8.dp).verticalScroll(scroll),
             verticalArrangement = Arrangement.spacedBy(8.dp)) {
             SpaceCompassCelestialDetailSections(body, facts, timeMs, remote, distance, phase,
                 geometry?.illuminatedFraction, coordinates, primaryText, secondaryText)
+            SpaceCompassTravelTimeIsland(body, distance, primaryText, secondaryText)
             Column(Modifier.fillMaxWidth().padding(start = spaceCompassDetailScrollInset, top = 4.dp,
                 end = spaceCompassDetailScrollInset)
                 .testTag("celestial-view-notes"), verticalArrangement = Arrangement.spacedBy(8.dp)) {
@@ -248,9 +252,9 @@ internal fun SpaceCompassCelestialObservatoryPage(body: SpaceCompassCelestialBod
                 spaceCompassCatalogImageCredit(body.viewerTexture)?.let { credit ->
                     Text(credit, color = secondaryText, fontSize = 10.sp, lineHeight = 13.sp)
                 }
-                if (body.hasCatalogPhotograph) Text(stringResource(R.string.celestial_archival_image),
+                if (body.hasCatalogPhotograph && !body.isFictional) Text(stringResource(R.string.celestial_archival_image),
                     color = secondaryText, fontSize = 11.sp, lineHeight = 14.sp)
-                if (body.deepSkyReference != null) Text(stringResource(body.deepSkyNoteResource),
+                if (body.isFictional || body.deepSkyReference != null) Text(stringResource(body.deepSkyNoteResource),
                     color = secondaryText, fontSize = 11.sp, lineHeight = 14.sp)
                 if (body == SpaceCompassCelestialBody.SOUTHERN_CROSS) Text(stringResource(R.string.celestial_southern_cross_note),
                     color = secondaryText, fontSize = 11.sp, lineHeight = 14.sp)
@@ -266,7 +270,7 @@ internal fun SpaceCompassCelestialObservatoryPage(body: SpaceCompassCelestialBod
                         else -> R.string.celestial_view_iss_note
                     }), color = secondaryText, fontSize = 11.sp, lineHeight = 14.sp)
                 }
-                Text(stringResource(if (body.isFictional) R.string.celestial_lv426_credits else R.string.celestial_view_credits), color = secondaryText, fontSize = 10.sp, lineHeight = 13.sp)
+                Text(stringResource(if (body.isFictional) R.string.scifi_credits else R.string.celestial_view_credits), color = secondaryText, fontSize = 10.sp, lineHeight = 13.sp)
                 if (body.isJovianMoon) Text(stringResource(R.string.celestial_view_jovian_credits), color = secondaryText,
                     fontSize = 10.sp, lineHeight = 13.sp)
             }

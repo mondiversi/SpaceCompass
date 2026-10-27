@@ -2,4 +2,5 @@
 <resources>
     <string name="catalog_search">جستجو</string>
     <string name="catalog_search_clear">پاک کردن جستجو</string>
+    <string name="catalog_scroll_to_top">بازگشت به ابتدای فهرست</string>
 </resources>

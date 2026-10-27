@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="catalog_type_scifi">Ciencia ficción</string>
+    <string name="scifi_type_planet">Planeta ficticio</string>
+    <string name="scifi_type_moon">Luna ficticia</string>
+    <string name="scifi_type_giant">Gigante gaseoso ficticio</string>
+    <string name="scifi_type_spacecraft">Nave espacial ficticia</string>
+    <string name="scifi_universe">Universo narrativo</string>
+    <string name="scifi_reference">Referencia de orientación</string>
+    <string name="scifi_model_note">Representación ficticia. La orientación sigue la referencia real, no una órbita medida.</string>
+    <string name="scifi_credits">Ilustraciones originales realizadas con ayuda de IA. Los nombres y universos ficticios pertenecen a sus respectivos creadores.</string>
+    <string name="scifi_name_arrakis">Arrakis</string>
+    <string name="scifi_description_arrakis">Mundo desértico de Dune</string>
+    <string name="scifi_name_caladan">Caladan</string>
+    <string name="scifi_description_caladan">Mundo oceánico natal de la Casa Atreides</string>
+    <string name="scifi_name_giedi_prime">Giedi Prime</string>
+    <string name="scifi_description_giedi_prime">Mundo industrial natal de la Casa Harkonnen</string>
+    <string name="scifi_name_lv_223">LV-223</string>
+    <string name="scifi_description_lv_223">Luna rocosa y puesto de los Ingenieros en Prometheus</string>
+    <string name="scifi_name_calpamos">Calpamos</string>
+    <string name="scifi_description_calpamos">Gigante gaseoso de su universo ficticio</string>
+    <string name="scifi_name_pandora">Pandora</string>
+    <string name="scifi_description_pandora">Luna boscosa de Avatar</string>
+    <string name="scifi_name_polyphemus">Polifemo</string>
+    <string name="scifi_description_polyphemus">Gigante gaseoso de su universo ficticio</string>
+    <string name="scifi_name_vulcan">Vulcano</string>
+    <string name="scifi_description_vulcan">Mundo árido natal de los vulcanos</string>
+    <string name="scifi_name_nostromo">Nostromo</string>
+    <string name="scifi_description_nostromo">Remolcador comercial de Alien; referencia cerca de la luna del relato</string>
+    <string name="scifi_name_discovery_one">Discovery One</string>
+    <string name="scifi_description_discovery_one">Nave exploradora del filme 2001; Júpiter es su destino narrativo</string>
+    <string name="scifi_reference_note">Objeto ficticio. La dirección y la distancia aproximada siguen la referencia real indicada, no una órbita medida. No se deducen propiedades físicas; la imagen es ilustrativa.</string>
+    <string name="catalog_type_spacecraft">Naves espaciales</string>
+    <string name="scifi_estimated_distance">Distancia estimada de referencia</string>
+    <string name="scifi_distance_reference_note">Estimación basada en %1$s, no en una distancia medida de este objeto.</string>
+</resources>

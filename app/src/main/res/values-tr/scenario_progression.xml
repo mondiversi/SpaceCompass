@@ -2,7 +2,7 @@
 <resources>
     <string name="scenario_speed">Zaman</string>
     <string name="scenario_speed_description">Senaryo zamanını 3600× hızla geri veya ileri alın. Ortadaki sıfır zamanı duraklatır.</string>
-    <string name="scenario_resume">Özel senaryoya devam</string>
+    <string name="scenario_resume">Senaryoya devam</string>
     <string name="scenario_resume_description">Uygulama yeniden açıldığında simüle edilen zamanın nasıl devam edeceğini seçin. Seçilen hız tüm modlarda geçerlidir.</string>
     <string name="scenario_restart">Baştan başlat</string>
     <string name="scenario_active">Yalnızca uygulama etkinken</string>

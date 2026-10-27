@@ -1,9 +1,9 @@
 <resources>
     <string name="info_news_title">Últimas novidades · %1$s</string>
-    <string name="info_news_star_sky" formatted="false">Explore 999 objetos, as 88 constelações e LV-426 disponível para todos, com seguimento e referências científicas melhorados.</string>
-    <string name="info_news_texture_downloads" formatted="false">Novo pacote gráfico 1.6: 174 imagens e 174 miniaturas separadas, descarregadas individualmente e guardadas offline.</string>
-    <string name="info_news_weather" formatted="false">Informações mais claras, ícones de captura e panorama revistos e atalhos do Observatório e Percurso diário com maior contraste à noite.</string>
-    <string name="info_news_viewer_zoom" formatted="false">Tipos por número de objetos, opções de ordenação alfabéticas e controlos mais claros.</string>
-    <string name="info_news_settings" formatted="false">Legendas de referência mais estáveis e Nadir a −90°, oposto ao Zénite.</string>
-    <string name="info_news_catalog" formatted="false">Melhorias no movimento das luas, aproximações de objetos selecionados e estado de carregamento meteorológico.</string>
+    <string name="info_news_star_sky" formatted="false">Explore 1009 objetos com um filtro de Ficção científica e referências celestes ilustrativas claramente identificadas.</string>
+    <string name="info_news_texture_downloads" formatted="false">O pacote gráfico 1.7 adiciona dez imagens e dez miniaturas independentes, transferidas individualmente, verificadas e guardadas offline.</string>
+    <string name="info_news_weather" formatted="false">Compare tempos de viagem estimados, das velocidades quotidianas à luz e às velocidades warp fictícias, com unidades de duração compactas.</string>
+    <string name="info_news_viewer_zoom" formatted="false">Guarde, partilhe e importe cenários com nome, incluindo a política escolhida para retomar o tempo.</string>
+    <string name="info_news_settings" formatted="false">Resumo do cenário atual mais claro, com altitude, fuso horário e meteorologia automáticos, locais guardados e ícones revistos.</string>
+    <string name="info_news_catalog" formatted="false">A confirmação das definições surge ao sair de uma página alterada. Melhorias nos controlos dos objetos, contadores, cores e etiquetas.</string>
 </resources>

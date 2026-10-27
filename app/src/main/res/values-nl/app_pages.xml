@@ -3,7 +3,7 @@
     <string name="pc_info">Info en credits</string>
     <string name="pc_display_automatic">Automatische schaal</string>
     <string name="pc_info_description">Een astronomisch kompas om hemelobjecten te vinden, hun banen te verkennen en modellen en maanfasen te bekijken.</string>
-    <string name="pc_info_earth">Ontworpen voor gebruik op aarde: de app gebruikt de zwaartekracht en het aardmagnetisch veld voor de oriëntatie; GPS levert de locatie. Deze referenties garanderen met een gewone smartphone geen betrouwbare oriëntatie in de ruimte. Met geavanceerdere ruimtetechnologie en sensoren vinden we misschien ooit ook daarboven onze weg 🙂</string>
+    <string name="pc_info_earth">Voorlopig blijven we op aarde: voor de ruimte zijn betere smartphonesensoren nodig. Misschien ooit 🙂</string>
     <string name="pc_info_compass">Kompasnauwkeurigheid</string>
     <string name="pc_info_accuracy">Lagere nauwkeurigheid betekent dat de telefoon een lage magnetische kalibratie meldt. De richting blijft bij benadering totdat de sensor nauwkeuriger wordt.</string>
     <string name="pc_info_credits">Bronnen en licenties</string>

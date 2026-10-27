@@ -82,10 +82,7 @@ internal class SpaceCompassNativePositionTable(context: Context, private val den
             card.addView(line)
         }
         column.addView(card, LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT,
-            ViewGroup.LayoutParams.WRAP_CONTENT).apply {
-            marginStart = dp(spaceCompassDetailScrollInset.value)
-            marginEnd = dp(spaceCompassDetailScrollInset.value)
-        })
+            ViewGroup.LayoutParams.WRAP_CONTENT))
         data.notes.forEach { note -> column.addView(label(note, secondary = true, small = true).apply {
             setPadding(dp(spaceCompassDetailScrollInset.value), dp(12f), dp(spaceCompassDetailScrollInset.value), 0)
         }) }

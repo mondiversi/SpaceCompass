@@ -2,7 +2,7 @@
 <resources>
     <string name="scenario_speed">Zeit</string>
     <string name="scenario_speed_description">Bewege die Szenariozeit bis zu 3600× rückwärts oder vorwärts. Null in der Mitte hält die Zeit an.</string>
-    <string name="scenario_resume">Benutzerdefiniertes Szenario fortsetzen</string>
+    <string name="scenario_resume">Szenario fortsetzen</string>
     <string name="scenario_resume_description">Wähle, wie die simulierte Zeit beim erneuten Öffnen der App fortgesetzt wird. Die gewählte Geschwindigkeit gilt in jedem Modus.</string>
     <string name="scenario_restart">Von vorne beginnen</string>
     <string name="scenario_active">Nur bei aktiver App</string>

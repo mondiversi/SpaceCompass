@@ -9,7 +9,11 @@ internal fun formatSpaceCompassExtrasolarDistance(km: Double?, numeric: SpaceCom
 
 /** Convert only at the display boundary; orbital calculations always use SI. */
 internal fun formatSpaceCompassSelectedDistance(body: SpaceCompassCelestialBody, km: Double?,
-    numeric: SpaceCompassNumericFormat, unit: String, normalFeet: Boolean = false): String? {
+    numeric: SpaceCompassNumericFormat, unit: String, normalFeet: Boolean = false): String? =
+    spaceCompassReferenceDistanceText(body, formatSpaceCompassRawSelectedDistance(body, km, numeric, unit, normalFeet))
+
+private fun formatSpaceCompassRawSelectedDistance(body: SpaceCompassCelestialBody, km: Double?,
+    numeric: SpaceCompassNumericFormat, unit: String, normalFeet: Boolean): String? {
     if (body.isEarthSatellite || body == SpaceCompassCelestialBody.MOON || body == SpaceCompassCelestialBody.EARTH_CENTER) {
         if (km == null || !km.isFinite() || km < 0) return null
         val miles = normalFeet || unit == "mi"

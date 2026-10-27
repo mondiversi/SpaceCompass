@@ -2,7 +2,7 @@
 <resources>
     <string name="scenario_speed">Time</string>
     <string name="scenario_speed_description">Move scenario time backward or forward up to 3600×. Zero in the centre pauses time.</string>
-    <string name="scenario_resume">Custom scenario resumption</string>
+    <string name="scenario_resume">Scenario resumption</string>
     <string name="scenario_resume_description">Choose how simulated time resumes when the app reopens. The selected speed applies in every mode.</string>
     <string name="scenario_restart">Restart from the beginning</string>
     <string name="scenario_active">Only while the app is active</string>

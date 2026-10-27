@@ -106,4 +106,19 @@ class SpaceCompassDailyPointNavigationUiTest {
         compose.runOnIdle { state.openMenu(path) }
         compose.onNodeWithTag("sun-path-point-12").assertIsSelected()
     }
+
+    @Test fun listGesturesHideAndRevealOnlyTheDailyTableHeader() {
+        val state = SpaceCompassSunDailyPathUiState(); state.openMenu(path); show(state)
+        val titleTop = compose.onNodeWithTag("sun-path-title").fetchSemanticsNode().boundsInRoot.top
+        val initialHeight = compose.onNodeWithTag("sun-path-list-viewport").fetchSemanticsNode().boundsInRoot.height
+        compose.onNodeWithTag("sun-path-list-viewport").performTouchInput { swipeUp() }
+        compose.waitForIdle()
+        compose.onNodeWithTag("sun-path-object-name").assertDoesNotExist()
+        assertTrue(compose.onNodeWithTag("sun-path-list-viewport").fetchSemanticsNode().boundsInRoot.height > initialHeight)
+        assertEquals(titleTop, compose.onNodeWithTag("sun-path-title").fetchSemanticsNode().boundsInRoot.top, 1f)
+        compose.onNodeWithTag("sun-path-list-viewport").performTouchInput { swipeDown() }
+        compose.waitForIdle()
+        compose.onNodeWithTag("sun-path-object-name").assertIsDisplayed()
+        compose.onNodeWithTag("sun-path-header-divider").assertIsDisplayed()
+    }
 }
