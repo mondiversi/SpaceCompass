@@ -146,7 +146,7 @@ Celestial graphics are separate individual files in
 Most full images are 2048×1024; existing illustrations retain their original source dimensions.
 Catalogue/live/captured glyphs request lightweight previews. The Observatory and image exports
 fetch full resources when needed; lunar phase stays dynamic. Images and previews total
-38,751,246 bytes before metadata. Downloads are individual, with independent size, SHA-256
+38,751,246 bytes before metadata. The complete graphics release is **39.25 MB (37.43 MiB; 39,250,432 bytes)**, including the manifest, credits and checksums. Downloads are individual, with independent size, SHA-256
 and dimension pins and persistent offline caches. Verified legacy filenames remain reusable.
 Missing photographs keep appropriate rendered symbols without disabling pointing.
 The APK contains scientific data, all twenty languages, the star atlas and separate Earth screensaver maps,

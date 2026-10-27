@@ -13,7 +13,7 @@ Historical missions retain real coverage windows; exoplanets trace the unresolve
 Constellations render linked stars rather than an arbitrarily rotated generic cross.
 
 Stable graphics pack 1.6 contains 174 full WebP files and 174 128×128 previews, quality 90/method 6.
-Full maps total 38,001,332 bytes; previews 749,914 bytes. Most maps are 2048×1024; existing illustrations retain their original source dimensions.
+Full maps total 38,001,332 bytes; previews 749,914 bytes. Including the manifest, credits and checksums, the complete graphics release is **39.25 MB (37.43 MiB; 39,250,432 bytes)**. Most maps are 2048×1024; existing illustrations retain their original source dimensions.
 The APK pins every individual resource to that release, preserving old bytes, aliases, caches and URLs.
 No complete graphics ZIP is distributed. The optional information ZIP is a reference snapshot, not a runtime package.
 
