@@ -1,9 +1,9 @@
 <resources>
     <string name="info_news_title">हाल के बदलाव · %1$s</string>
-    <string name="info_news_star_sky" formatted="false">परिदृश्य प्रबंधन सीधे खुलता है, हर पैरामीटर के लिए अलग स्क्रीन और मेन्यू में वर्तमान मान दिखते हैं।</string>
-    <string name="info_news_texture_downloads" formatted="false">शीर्षक पट्टी से कस्टम मान चालू करें। स्वचालित फ़ील्ड बेहतर विवरणों के साथ धूसर रंग में दिखाई देते रहते हैं।</string>
-    <string name="info_news_weather" formatted="false">ऐप की सेटिंग बदले बिना वर्तमान क्षण का पूरा परिदृश्य साझा करने के लिए निर्यात में स्वचालित मान भी शामिल करें।</string>
-    <string name="info_news_viewer_zoom" formatted="false">प्रकार और दृश्यता के साथ नए उत्पत्ति और लक्ष्यीकरण फ़िल्टर, परिणामों की गिनती और सहेजी गई प्राथमिकताओं सहित।</string>
-    <string name="info_news_settings" formatted="false">ऑब्जेक्ट सूची और प्रकार फ़िल्टर में श्रेणियों की पृष्ठभूमि हल्की और गहरी दोनों थीम में एक जैसी है।</string>
-    <string name="info_news_catalog" formatted="false">फ़िल्टर फ़ील्ड अधिक संक्षिप्त और सुसंगत हैं। परिदृश्य फ़ाइलें संगत रहती हैं और फिर से शुरू करने के विकल्प सुरक्षित रखती हैं।</string>
+    <string name="info_news_star_sky" formatted="false">कीप का आइकन कैटलॉग के फ़िल्टर को पहचानना आसान बनाता है।</string>
+    <string name="info_news_texture_downloads" formatted="false">ऊपर और नीचे के तीर, क्रमबद्ध करने और फ़िल्टर करने में अंतर स्पष्ट करते हैं।</string>
+    <string name="info_news_weather" formatted="false">वस्तुओं की सूची में श्रेणी के रंगों के बिना एक समान पृष्ठभूमि है।</string>
+    <string name="info_news_viewer_zoom" formatted="false">प्रकार फ़िल्टर की श्रेणियों की पृष्ठभूमि दोनों थीम में तटस्थ है।</string>
+    <string name="info_news_settings" formatted="false">खोज फ़ील्ड की ऊँचाई कम की गई है, जिससे ऊपर और नीचे अधिक जगह मिलती है।</string>
+    <string name="info_news_catalog" formatted="false">खोज का पाठ, संकेत पाठ और टिमटिमाता कर्सर लंबवत केंद्र में हैं।</string>
 </resources>

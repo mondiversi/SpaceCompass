@@ -1,9 +1,9 @@
 <resources>
     <string name="info_news_title">Neuigkeiten · %1$s</string>
-    <string name="info_news_star_sky" formatted="false">Die Szenarioverwaltung öffnet sich direkt, mit einer eigenen Ansicht für jeden Parameter und aktuellen Werten im Menü.</string>
-    <string name="info_news_texture_downloads" formatted="false">Aktiviere eigene Werte über die Titelleiste. Automatische Felder bleiben grau sichtbar und erhalten klarere Beschreibungen.</string>
-    <string name="info_news_weather" formatted="false">Beziehe automatische Werte beim Export ein, um ein vollständiges Szenario des aktuellen Moments zu teilen, ohne App-Einstellungen zu ändern.</string>
-    <string name="info_news_viewer_zoom" formatted="false">Neue Filter für Ursprung und Ausrichtung ergänzen Typ und Sichtbarkeit, mit Ergebniszahlen und gespeicherten Einstellungen.</string>
-    <string name="info_news_settings" formatted="false">Kategoriehintergründe stimmen in Objektliste und Typfilter überein, sowohl im hellen als auch im dunklen Design.</string>
-    <string name="info_news_catalog" formatted="false">Filterfelder sind kompakter und einheitlicher. Szenariodateien bleiben kompatibel und behalten die Fortsetzungsoptionen.</string>
+    <string name="info_news_star_sky" formatted="false">Ein Trichtersymbol macht die Katalogfilter leichter erkennbar.</string>
+    <string name="info_news_texture_downloads" formatted="false">Aufwärts- und Abwärtspfeile unterscheiden die Sortierung von den Filtern.</string>
+    <string name="info_news_weather" formatted="false">Die Objektliste hat einen einheitlichen Hintergrund ohne Kategoriefarben.</string>
+    <string name="info_news_viewer_zoom" formatted="false">Die Kategorien im Typfilter haben in beiden Designs einen neutralen Hintergrund.</string>
+    <string name="info_news_settings" formatted="false">Das Suchfeld ist niedriger und lässt oben und unten mehr Platz.</string>
+    <string name="info_news_catalog" formatted="false">Suchtext, Platzhalter und blinkender Cursor sind vertikal zentriert.</string>
 </resources>

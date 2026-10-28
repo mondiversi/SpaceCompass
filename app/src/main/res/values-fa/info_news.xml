@@ -1,9 +1,9 @@
 <resources>
     <string name="info_news_title">تازه‌ترین تغییرات · %1$s</string>
-    <string name="info_news_star_sky" formatted="false">مدیریت سناریو مستقیم باز می‌شود و برای هر پارامتر صفحه‌ای جداگانه و مقادیر فعلی در فهرست دارد.</string>
-    <string name="info_news_texture_downloads" formatted="false">مقادیر سفارشی را از نوار عنوان فعال کنید. فیلدهای خودکار با توضیحات روشن‌تر به رنگ خاکستری قابل مشاهده می‌مانند.</string>
-    <string name="info_news_weather" formatted="false">هنگام خروجی گرفتن مقادیر خودکار را نیز بگنجانید تا سناریوی کامل لحظه فعلی را بدون تغییر تنظیمات برنامه به اشتراک بگذارید.</string>
-    <string name="info_news_viewer_zoom" formatted="false">فیلترهای جدید منشأ و جهت‌یابی در کنار نوع و رؤیت‌پذیری، همراه با تعداد نتایج و تنظیمات ذخیره‌شده.</string>
-    <string name="info_news_settings" formatted="false">پس‌زمینه دسته‌ها در فهرست اجرام و فیلتر نوع، در هر دو پوسته روشن و تیره هماهنگ است.</string>
-    <string name="info_news_catalog" formatted="false">فیلدهای فیلتر فشرده‌تر و هماهنگ‌تر شده‌اند. فایل‌های سناریو سازگار می‌مانند و گزینه‌های ازسرگیری را حفظ می‌کنند.</string>
+    <string name="info_news_star_sky" formatted="false">نماد قیف، تشخیص فیلترهای فهرست را آسان‌تر می‌کند.</string>
+    <string name="info_news_texture_downloads" formatted="false">پیکان‌های بالا و پایین، مرتب‌سازی را از فیلترکردن متمایز می‌کنند.</string>
+    <string name="info_news_weather" formatted="false">فهرست اجرام پس‌زمینه‌ای یکدست و بدون رنگ‌بندی دسته‌ها دارد.</string>
+    <string name="info_news_viewer_zoom" formatted="false">دسته‌های فیلتر نوع در هر دو پوسته پس‌زمینه‌ای خنثی دارند.</string>
+    <string name="info_news_settings" formatted="false">ارتفاع کادر جستجو کمتر شده و فضای بیشتری در بالا و پایین آن وجود دارد.</string>
+    <string name="info_news_catalog" formatted="false">متن جستجو، متن راهنما و نشانگر چشمک‌زن به‌صورت عمودی در مرکز قرار دارند.</string>
 </resources>

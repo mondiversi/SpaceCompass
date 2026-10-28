@@ -1,9 +1,9 @@
 <resources>
     <string name="info_news_title">Dernières nouveautés · %1$s</string>
-    <string name="info_news_star_sky" formatted="false">La gestion des scénarios s’ouvre directement, avec un écran par paramètre et les valeurs actuelles dans le menu.</string>
-    <string name="info_news_texture_downloads" formatted="false">Activez les valeurs personnalisées depuis la barre de titre. Les champs automatiques restent visibles en gris, avec des descriptions plus claires.</string>
-    <string name="info_news_weather" formatted="false">Incluez les valeurs automatiques à l’export pour partager un scénario complet du moment présent sans changer les réglages de l’application.</string>
-    <string name="info_news_viewer_zoom" formatted="false">Nouveaux filtres Origine et Pointage aux côtés de Type et Visibilité, avec le nombre de résultats et les préférences mémorisées.</string>
-    <string name="info_news_settings" formatted="false">Les fonds des catégories concordent dans la liste des objets et le filtre Type, en thème clair comme en thème sombre.</string>
-    <string name="info_news_catalog" formatted="false">Champs de filtre plus compacts et cohérents. Les fichiers de scénario restent compatibles et conservent les options de reprise.</string>
+    <string name="info_news_star_sky" formatted="false">Une icône en forme d’entonnoir rend les filtres du catalogue plus reconnaissables.</string>
+    <string name="info_news_texture_downloads" formatted="false">Des flèches vers le haut et le bas distinguent le tri des filtres.</string>
+    <string name="info_news_weather" formatted="false">La liste des objets utilise un fond uniforme, sans couleurs par catégorie.</string>
+    <string name="info_news_viewer_zoom" formatted="false">Les catégories du filtre Type ont un fond neutre dans les deux thèmes.</string>
+    <string name="info_news_settings" formatted="false">Le champ de recherche est moins haut, avec davantage d’espace au-dessus et en dessous.</string>
+    <string name="info_news_catalog" formatted="false">Le texte de recherche, le texte indicatif et le curseur clignotant sont centrés verticalement.</string>
 </resources>

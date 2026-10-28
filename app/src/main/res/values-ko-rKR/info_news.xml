@@ -1,9 +1,9 @@
 <resources>
     <string name="info_news_title">최근 변경 사항 · %1$s</string>
-    <string name="info_news_star_sky" formatted="false">시나리오 관리가 바로 열리며, 매개변수별 전용 화면과 메뉴의 현재 값을 제공합니다.</string>
-    <string name="info_news_texture_downloads" formatted="false">제목 표시줄에서 사용자 지정 값을 활성화하세요. 자동 필드는 회색으로 계속 표시되며 설명도 더 명확해졌습니다.</string>
-    <string name="info_news_weather" formatted="false">내보낼 때 자동 값을 포함하여 앱 설정을 바꾸지 않고 현재 시점의 전체 시나리오를 공유하세요.</string>
-    <string name="info_news_viewer_zoom" formatted="false">유형 및 가시성에 더해 출처와 조준 필터를 추가했으며, 결과 수와 저장된 기본 설정을 지원합니다.</string>
-    <string name="info_news_settings" formatted="false">밝은 테마와 어두운 테마 모두에서 천체 목록과 유형 필터의 범주별 배경이 일치합니다.</string>
-    <string name="info_news_catalog" formatted="false">필터 필드가 더 간결하고 일관되게 표시됩니다. 시나리오 파일의 호환성과 재개 옵션은 유지됩니다.</string>
+    <string name="info_news_star_sky" formatted="false">깔때기 아이콘으로 카탈로그 필터를 더 쉽게 알아볼 수 있습니다.</string>
+    <string name="info_news_texture_downloads" formatted="false">위아래 화살표로 정렬과 필터를 구분할 수 있습니다.</string>
+    <string name="info_news_weather" formatted="false">천체 목록의 카테고리별 배경색을 없애고 배경을 통일했습니다.</string>
+    <string name="info_news_viewer_zoom" formatted="false">유형 필터의 카테고리는 두 테마 모두에서 중립적인 배경을 사용합니다.</string>
+    <string name="info_news_settings" formatted="false">검색창의 높이를 줄여 위아래 여백을 늘렸습니다.</string>
+    <string name="info_news_catalog" formatted="false">검색 텍스트, 안내 문구, 깜박이는 커서를 세로 중앙에 맞췄습니다.</string>
 </resources>

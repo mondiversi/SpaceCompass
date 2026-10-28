@@ -1,9 +1,9 @@
 <resources>
     <string name="info_news_title">Τελευταία νέα · %1$s</string>
-    <string name="info_news_star_sky" formatted="false">Η διαχείριση σεναρίου ανοίγει απευθείας, με ξεχωριστή οθόνη για κάθε παράμετρο και τις τρέχουσες τιμές στο μενού.</string>
-    <string name="info_news_texture_downloads" formatted="false">Ενεργοποίησε προσαρμοσμένες τιμές από τη γραμμή τίτλου. Τα αυτόματα πεδία παραμένουν ορατά σε γκρι, με σαφέστερες περιγραφές.</string>
-    <string name="info_news_weather" formatted="false">Συμπερίλαβε τις αυτόματες τιμές στην εξαγωγή για να μοιραστείς ένα πλήρες σενάριο της τρέχουσας στιγμής χωρίς αλλαγή των ρυθμίσεων της εφαρμογής.</string>
-    <string name="info_news_viewer_zoom" formatted="false">Νέα φίλτρα Προέλευσης και Στόχευσης δίπλα στον Τύπο και την Ορατότητα, με πλήθος αποτελεσμάτων και αποθηκευμένες προτιμήσεις.</string>
-    <string name="info_news_settings" formatted="false">Τα φόντα κατηγοριών ταιριάζουν στη λίστα αντικειμένων και στο φίλτρο Τύπου, σε φωτεινό και σκοτεινό θέμα.</string>
-    <string name="info_news_catalog" formatted="false">Πιο συμπαγή και ομοιόμορφα πεδία φίλτρων. Τα αρχεία σεναρίου παραμένουν συμβατά και διατηρούν τις επιλογές συνέχισης.</string>
+    <string name="info_news_star_sky" formatted="false">Ένα εικονίδιο χωνιού κάνει τα φίλτρα του καταλόγου πιο ευδιάκριτα.</string>
+    <string name="info_news_texture_downloads" formatted="false">Τα βέλη πάνω και κάτω ξεχωρίζουν την ταξινόμηση από τα φίλτρα.</string>
+    <string name="info_news_weather" formatted="false">Η λίστα αντικειμένων έχει ενιαίο φόντο, χωρίς χρώματα ανά κατηγορία.</string>
+    <string name="info_news_viewer_zoom" formatted="false">Οι κατηγορίες του φίλτρου Τύπος έχουν ουδέτερο φόντο και στα δύο θέματα.</string>
+    <string name="info_news_settings" formatted="false">Το πεδίο αναζήτησης έχει μικρότερο ύψος, με περισσότερο χώρο πάνω και κάτω.</string>
+    <string name="info_news_catalog" formatted="false">Το κείμενο αναζήτησης, η ένδειξη και ο δρομέας που αναβοσβήνει είναι κατακόρυφα κεντραρισμένα.</string>
 </resources>

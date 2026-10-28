@@ -1,9 +1,9 @@
 <resources>
     <string name="info_news_title">Perubahan terbaru · %1$s</string>
-    <string name="info_news_star_sky" formatted="false">Pengelolaan skenario terbuka langsung, dengan layar tersendiri untuk setiap parameter dan nilai saat ini di menu.</string>
-    <string name="info_news_texture_downloads" formatted="false">Aktifkan nilai khusus dari bilah judul. Bidang otomatis tetap terlihat dalam warna abu-abu, dengan deskripsi yang lebih jelas.</string>
-    <string name="info_news_weather" formatted="false">Sertakan nilai otomatis saat mengekspor untuk membagikan skenario lengkap saat ini tanpa mengubah pengaturan aplikasi.</string>
-    <string name="info_news_viewer_zoom" formatted="false">Filter Asal dan Pembidikan baru melengkapi Jenis dan Visibilitas, dengan jumlah hasil dan preferensi tersimpan.</string>
-    <string name="info_news_settings" formatted="false">Latar kategori serasi di daftar objek dan filter Jenis, dalam tema terang maupun gelap.</string>
-    <string name="info_news_catalog" formatted="false">Bidang filter lebih ringkas dan konsisten. Berkas skenario tetap kompatibel dan mempertahankan opsi pelanjutan.</string>
+    <string name="info_news_star_sky" formatted="false">Ikon corong membuat filter katalog lebih mudah dikenali.</string>
+    <string name="info_news_texture_downloads" formatted="false">Panah ke atas dan ke bawah membedakan pengurutan dari pemfilteran.</string>
+    <string name="info_news_weather" formatted="false">Daftar objek menggunakan latar seragam, tanpa warna kategori.</string>
+    <string name="info_news_viewer_zoom" formatted="false">Kategori pada filter Jenis menggunakan latar netral pada kedua tema.</string>
+    <string name="info_news_settings" formatted="false">Kolom pencarian dibuat lebih pendek secara vertikal, dengan ruang lebih di atas dan bawah.</string>
+    <string name="info_news_catalog" formatted="false">Teks pencarian, teks petunjuk, dan kursor berkedip dipusatkan secara vertikal.</string>
 </resources>

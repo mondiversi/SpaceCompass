@@ -1,9 +1,9 @@
 <resources>
     <string name="info_news_title">Son yenilikler · %1$s</string>
-    <string name="info_news_star_sky" formatted="false">Senaryo yönetimi doğrudan açılır; her parametre için ayrı bir ekran ve menüde güncel değerler sunar.</string>
-    <string name="info_news_texture_downloads" formatted="false">Özel değerleri başlık çubuğundan etkinleştirin. Otomatik alanlar daha açık açıklamalarla gri renkte görünür kalır.</string>
-    <string name="info_news_weather" formatted="false">Uygulama ayarlarını değiştirmeden mevcut anın tam senaryosunu paylaşmak için dışa aktarmaya otomatik değerleri de ekleyin.</string>
-    <string name="info_news_viewer_zoom" formatted="false">Tür ve Görünürlüğün yanında yeni Köken ve Yöneltme filtreleri, sonuç sayıları ve kaydedilen tercihlerle birlikte sunulur.</string>
-    <string name="info_news_settings" formatted="false">Kategori arka planları hem açık hem koyu temada nesne listesi ve Tür filtresinde tutarlıdır.</string>
-    <string name="info_news_catalog" formatted="false">Filtre alanları daha kompakt ve tutarlıdır. Senaryo dosyaları uyumlu kalır ve devam etme seçeneklerini korur.</string>
+    <string name="info_news_star_sky" formatted="false">Huni simgesi, katalog filtrelerinin daha kolay tanınmasını sağlar.</string>
+    <string name="info_news_texture_downloads" formatted="false">Yukarı ve aşağı oklar, sıralamayı filtrelemeden ayırır.</string>
+    <string name="info_news_weather" formatted="false">Nesne listesi, kategori renkleri olmadan tek tip bir arka plan kullanır.</string>
+    <string name="info_news_viewer_zoom" formatted="false">Tür filtresindeki kategoriler, her iki temada da nötr bir arka plan kullanır.</string>
+    <string name="info_news_settings" formatted="false">Arama alanının yüksekliği azaltıldı; üstte ve altta daha fazla boşluk bırakıldı.</string>
+    <string name="info_news_catalog" formatted="false">Arama metni, yer tutucu ve yanıp sönen imleç dikey olarak ortalandı.</string>
 </resources>

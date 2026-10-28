@@ -486,6 +486,9 @@ cache. ExportSnapshot completes one portable copy using the same effective-value
 without introducing a new observer state, schema or device-location injection.
 
 Catalogue origin/pointing preferences extend the existing stable filter keys. Calculation-keyed
-observations prevent availability results from leaking across scenario changes. RowColors is the
-single physical-category palette shared by object rows and the Type dropdown, including light/dark
-and selection variants. Scientific ephemerides, image pins and catalogue identities are unchanged.
+observations prevent availability results from leaking across scenario changes. Object rows and
+Type dropdown choices use neutral theme surfaces; the removed category palette has no runtime
+consumer. Selection remains explicit in checkboxes, bold names and thumbnail rims. The search
+input and placeholder share typography and centered alignment inside a 40 dp outline, preserving
+the existing 48 dp header touch space. Scientific ephemerides, image pins and catalogue identities
+are unchanged.

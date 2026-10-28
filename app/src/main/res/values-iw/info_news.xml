@@ -1,9 +1,9 @@
 <resources>
     <string name="info_news_title">החידושים האחרונים · %1$s</string>
-    <string name="info_news_star_sky" formatted="false">ניהול התרחיש נפתח ישירות, עם מסך נפרד לכל פרמטר והערכים הנוכחיים בתפריט.</string>
-    <string name="info_news_texture_downloads" formatted="false">הפעילו ערכים מותאמים משורת הכותרת. השדות האוטומטיים נשארים גלויים באפור, עם תיאורים ברורים יותר.</string>
-    <string name="info_news_weather" formatted="false">כללו ערכים אוטומטיים בייצוא כדי לשתף תרחיש מלא של הרגע הנוכחי בלי לשנות את הגדרות היישום.</string>
-    <string name="info_news_viewer_zoom" formatted="false">מסנני מקור וכיוון חדשים לצד סוג ונראות, עם מספר התוצאות והעדפות שמורות.</string>
-    <string name="info_news_settings" formatted="false">רקעי הקטגוריות תואמים ברשימת העצמים ובמסנן הסוג, בערכת נושא בהירה וכהה.</string>
-    <string name="info_news_catalog" formatted="false">שדות מסננים קומפקטיים ואחידים יותר. קובצי תרחיש נשארים תואמים ושומרים על אפשרויות החידוש.</string>
+    <string name="info_news_star_sky" formatted="false">סמל משפך מאפשר לזהות בקלות רבה יותר את מסנני הקטלוג.</string>
+    <string name="info_news_texture_downloads" formatted="false">חצים למעלה ולמטה מבדילים בין מיון לסינון.</string>
+    <string name="info_news_weather" formatted="false">לרשימת העצמים יש רקע אחיד, ללא צבעים לפי קטגוריה.</string>
+    <string name="info_news_viewer_zoom" formatted="false">לקטגוריות במסנן הסוג יש רקע ניטרלי בשתי ערכות הנושא.</string>
+    <string name="info_news_settings" formatted="false">שדה החיפוש נמוך יותר, עם מרווח גדול יותר מעליו ומתחתיו.</string>
+    <string name="info_news_catalog" formatted="false">טקסט החיפוש, טקסט הרמז והסמן המהבהב ממורכזים אנכית.</string>
 </resources>

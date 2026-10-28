@@ -1,9 +1,9 @@
 <resources>
     <string name="info_news_title">Laatste nieuws · %1$s</string>
-    <string name="info_news_star_sky" formatted="false">Scenariobeheer opent direct, met een apart scherm voor elke parameter en actuele waarden in het menu.</string>
-    <string name="info_news_texture_downloads" formatted="false">Schakel aangepaste waarden in via de titelbalk. Automatische velden blijven grijs zichtbaar, met duidelijkere beschrijvingen.</string>
-    <string name="info_news_weather" formatted="false">Neem automatische waarden op bij het exporteren om een volledig scenario van het huidige moment te delen zonder appinstellingen te wijzigen.</string>
-    <string name="info_news_viewer_zoom" formatted="false">Nieuwe filters voor Oorsprong en Richten naast Type en Zichtbaarheid, met resultaataantallen en opgeslagen voorkeuren.</string>
-    <string name="info_news_settings" formatted="false">Categorieachtergronden komen overeen in de objectlijst en het Type-filter, zowel in het lichte als het donkere thema.</string>
-    <string name="info_news_catalog" formatted="false">Compactere en consistentere filtervelden. Scenariobestanden blijven compatibel en behouden de hervattingsopties.</string>
+    <string name="info_news_star_sky" formatted="false">Een trechterpictogram maakt de catalogusfilters beter herkenbaar.</string>
+    <string name="info_news_texture_downloads" formatted="false">Pijlen omhoog en omlaag onderscheiden sorteren van filteren.</string>
+    <string name="info_news_weather" formatted="false">De objectenlijst heeft een egale achtergrond, zonder categoriekleuren.</string>
+    <string name="info_news_viewer_zoom" formatted="false">De categorieën in het typefilter hebben in beide thema’s een neutrale achtergrond.</string>
+    <string name="info_news_settings" formatted="false">Het zoekveld is minder hoog en laat boven en onder meer ruimte vrij.</string>
+    <string name="info_news_catalog" formatted="false">Zoektekst, plaatsaanduiding en knipperende cursor zijn verticaal gecentreerd.</string>
 </resources>

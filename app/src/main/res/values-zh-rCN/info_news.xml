@@ -1,9 +1,9 @@
 <resources>
     <string name="info_news_title">最新变化 · %1$s</string>
-    <string name="info_news_star_sky" formatted="false">直接打开场景管理，每个参数都有独立页面，菜单中显示当前值。</string>
-    <string name="info_news_texture_downloads" formatted="false">从标题栏启用自定义值。自动字段保持灰色可见，并提供更清晰的说明。</string>
-    <string name="info_news_weather" formatted="false">导出时包含自动值，即可分享当前时刻的完整场景，而不改变应用设置。</string>
-    <string name="info_news_viewer_zoom" formatted="false">在类型和可见性之外新增来源和指向筛选，并显示结果数量、保存偏好。</string>
-    <string name="info_news_settings" formatted="false">天体列表和类型筛选中的分类背景保持一致，同时适配浅色和深色主题。</string>
-    <string name="info_news_catalog" formatted="false">筛选字段更加紧凑统一。场景文件保持兼容，并保留恢复选项。</string>
+    <string name="info_news_star_sky" formatted="false">漏斗图标让目录筛选功能更容易辨认。</string>
+    <string name="info_news_texture_downloads" formatted="false">上下箭头可帮助区分排序与筛选。</string>
+    <string name="info_news_weather" formatted="false">天体列表改用统一背景，不再按类别设置背景颜色。</string>
+    <string name="info_news_viewer_zoom" formatted="false">类型筛选中的各个类别在两种主题下均使用统一的中性背景。</string>
+    <string name="info_news_settings" formatted="false">搜索框高度降低，上下留白更多。</string>
+    <string name="info_news_catalog" formatted="false">搜索文字、提示文字和闪烁光标均已垂直居中。</string>
 </resources>

@@ -35,7 +35,7 @@ internal fun SpaceCompassCatalogObjectRow(
     val observationInteraction = remember { MutableInteractionSource() }
     // Share observation feedback across the row without expanding its clickable area.
     Row(Modifier.fillMaxWidth().heightIn(min = 48.dp)
-        .background(spaceCompassCatalogRowBackground(body, checked, rowBackground))
+        .background(rowBackground)
         .indication(observationInteraction, ripple(color = color))
         .padding(start = 12.dp, end = 16.dp)
         .testTag("celestial-body-${body.name}"),

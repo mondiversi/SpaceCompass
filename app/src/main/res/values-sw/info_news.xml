@@ -1,9 +1,9 @@
 <resources>
     <string name="info_news_title">Mambo mapya · %1$s</string>
-    <string name="info_news_star_sky" formatted="false">Usimamizi wa hali hufunguka moja kwa moja, na skrini tofauti kwa kila kigezo na thamani za sasa kwenye menyu.</string>
-    <string name="info_news_texture_downloads" formatted="false">Washa thamani maalum kwenye upau wa kichwa. Sehemu za kiotomatiki hubaki zikionekana kwa kijivu, zikiwa na maelezo yaliyo wazi zaidi.</string>
-    <string name="info_news_weather" formatted="false">Jumuisha thamani za kiotomatiki unapotuma faili ili kushiriki hali kamili ya wakati wa sasa bila kubadilisha mipangilio ya programu.</string>
-    <string name="info_news_viewer_zoom" formatted="false">Vichujio vipya vya Asili na Uelekezaji vinaongezwa kwa Aina na Mwonekano, pamoja na idadi ya matokeo na mapendeleo yaliyohifadhiwa.</string>
-    <string name="info_news_settings" formatted="false">Mandharinyuma ya makundi yanafanana katika orodha ya vitu na kichujio cha Aina, kwenye mandhari nyepesi na nyeusi.</string>
-    <string name="info_news_catalog" formatted="false">Sehemu za vichujio zimekuwa fupi na zenye mpangilio sawa. Faili za hali zinabaki sambamba na kuhifadhi chaguo za kuendelea.</string>
+    <string name="info_news_star_sky" formatted="false">Aikoni ya faneli inafanya vichujio vya katalogi vitambulike kwa urahisi zaidi.</string>
+    <string name="info_news_texture_downloads" formatted="false">Mishale ya juu na chini inatofautisha upangaji na uchujaji.</string>
+    <string name="info_news_weather" formatted="false">Orodha ya vitu ina mandharinyuma sare, bila rangi za makundi.</string>
+    <string name="info_news_viewer_zoom" formatted="false">Makundi ya kichujio cha Aina yana mandharinyuma ya kawaida katika mandhari zote mbili.</string>
+    <string name="info_news_settings" formatted="false">Urefu wa kisanduku cha utafutaji umepunguzwa ili kuongeza nafasi juu na chini.</string>
+    <string name="info_news_catalog" formatted="false">Maandishi ya utafutaji, maandishi ya kidokezo na kishale kinachopepesa vimewekwa katikati wima.</string>
 </resources>

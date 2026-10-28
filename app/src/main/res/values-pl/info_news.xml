@@ -1,9 +1,9 @@
 <resources>
     <string name="info_news_title">Ostatnie nowości · %1$s</string>
-    <string name="info_news_star_sky" formatted="false">Zarządzanie scenariuszem otwiera się bezpośrednio, z osobnym ekranem dla każdego parametru i bieżącymi wartościami w menu.</string>
-    <string name="info_news_texture_downloads" formatted="false">Włączaj własne wartości na pasku tytułu. Pola automatyczne pozostają widoczne na szaro, z czytelniejszymi opisami.</string>
-    <string name="info_news_weather" formatted="false">Uwzględnij wartości automatyczne w eksporcie, aby udostępnić pełny scenariusz bieżącej chwili bez zmiany ustawień aplikacji.</string>
-    <string name="info_news_viewer_zoom" formatted="false">Nowe filtry Pochodzenie i Celowanie obok Typu i Widoczności, z liczbą wyników i zapisanymi preferencjami.</string>
-    <string name="info_news_settings" formatted="false">Tła kategorii są spójne na liście obiektów i w filtrze Typ, w jasnym i ciemnym motywie.</string>
-    <string name="info_news_catalog" formatted="false">Bardziej zwarte i jednolite pola filtrów. Pliki scenariuszy pozostają zgodne i zachowują opcje wznawiania.</string>
+    <string name="info_news_star_sky" formatted="false">Ikona lejka ułatwia rozpoznawanie filtrów katalogu.</string>
+    <string name="info_news_texture_downloads" formatted="false">Strzałki w górę i w dół odróżniają sortowanie od filtrowania.</string>
+    <string name="info_news_weather" formatted="false">Lista obiektów ma jednolite tło, bez kolorów kategorii.</string>
+    <string name="info_news_viewer_zoom" formatted="false">Kategorie filtra Typ mają neutralne tło w obu motywach.</string>
+    <string name="info_news_settings" formatted="false">Pole wyszukiwania jest niższe i pozostawia więcej miejsca nad i pod nim.</string>
+    <string name="info_news_catalog" formatted="false">Tekst wyszukiwania, tekst zastępczy i migający kursor są wyśrodkowane w pionie.</string>
 </resources>

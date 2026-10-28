@@ -8,8 +8,8 @@ paths, inspect reference facts and view textured models. Space Compass is a stan
 
 ## Download and install
 
-Download **space-compass-1.5.3.apk** from the
-[Space Compass 1.5.3 release](https://github.com/mondiversi/SpaceCompass/releases/tag/v1.5.3).
+Download **space-compass-1.5.4.apk** from the
+[Space Compass 1.5.4 release](https://github.com/mondiversi/SpaceCompass/releases/tag/v1.5.4).
 Android 8.0 or newer is required. Open the APK and follow Android's installation
 prompts; allow installation for your browser or file manager if requested.
 
@@ -22,14 +22,14 @@ one manual APK update to acquire this feature.
 The release includes `SHA256SUMS.txt` and a signed update index. GitHub's source
 ZIP/TAR archives and Actions debug artifacts are separate from the signed APK.
 See [distribution and signing](docs/GITHUB_RELEASES.md) and
-[the 1.5.3 release audit](docs/RELEASE_1_5_3.md).
+[the 1.5.4 release audit](docs/RELEASE_1_5_4.md).
 
 ## Features
 
 - Live azimuth/altitude, compass guidance, named daily paths and satellite passes. Pin multiple path points and manage the same selections in the daily path. Reticle-focused callouts show clock and T± side by side. Current positions and lunar phases remain available.
 - 1009 catalogue objects: Sun, Moon, planets, natural/artificial satellites,
   comets, Voyager spacecraft, nearby stars, nebulae, star clusters, compact objects and exoplanets.
-- Live search by localized name or catalog identifier, combined with four paired filters: type, visibility, origin and pointing availability. Selected objects remain pinned first and visible through filters/search; numeric or alphabetical sorting still applies within each group. Category tints match between list rows and Type choices in light/dark themes.
+- Live search by localized name or catalog identifier, combined with four paired filters: type, visibility, origin and pointing availability. Selected objects remain pinned first and visible through filters/search; numeric or alphabetical sorting still applies within each group. Object rows and Type choices use neutral theme backgrounds. A funnel identifies filters; up/down arrows identify sorting. The compact search field centers its text, hint and cursor.
 - Type/visibility filters and numeric sorting by Sun-centred or Earth-centred distance, mass, diameter, pressure,
   gravity and temperature. Missing properties remain unavailable and sort last.
 - Selections, active target, filters, sorting, units and interface settings persist.
@@ -87,7 +87,7 @@ See [distribution and signing](docs/GITHUB_RELEASES.md) and
 - Signed startup/manual GitHub updates with package, certificate, size and checksum verification.
 
 The application ID is `me.mondiversi.spacecompass`. The current stable version is
-**1.5.3**, with Android/update identity `1.5.3` and version code **53**.
+**1.5.4**, with Android/update identity `1.5.4` and version code **54**.
 This preserves the three-part update protocol used by existing preview installations.
 The app stores its preferences and caches privately.
 
@@ -149,7 +149,7 @@ Launcher/loading artwork and original illustrations are project assets.
 
 ## Data and graphics packages
 
-Release 1.5.3 includes **1009 selectable objects**, and an optional reference-information archive.
+Release 1.5.4 includes **1009 selectable objects**, and an optional reference-information archive.
 All descriptive data and translations remain inside the APK. Scientific limits and provenance are in the
 [catalogue sources](docs/CATALOG_999.md) and [canonical source catalogue](catalogue/README.md).
 

@@ -1,9 +1,9 @@
 <resources>
     <string name="info_news_title">最近の変更 · %1$s</string>
-    <string name="info_news_star_sky" formatted="false">シナリオ管理を直接開き、各パラメーターの専用画面とメニューの現在値で設定を確認できます。</string>
-    <string name="info_news_texture_downloads" formatted="false">タイトルバーからカスタム値を有効にできます。自動設定の項目はグレーで表示され、説明も分かりやすくなりました。</string>
-    <string name="info_news_weather" formatted="false">自動値を含めてエクスポートすると、アプリの設定を変更せずに現在のシナリオ全体を共有できます。</string>
-    <string name="info_news_viewer_zoom" formatted="false">種類と可視性に加え、由来と照準の新しいフィルターを追加。結果件数と設定の保存にも対応しています。</string>
-    <string name="info_news_settings" formatted="false">天体リストと種類フィルターのカテゴリー背景が、ライト・ダーク両テーマで統一されました。</string>
-    <string name="info_news_catalog" formatted="false">フィルター項目がよりコンパクトで統一された表示になりました。シナリオファイルの互換性と再開オプションは維持されます。</string>
+    <string name="info_news_star_sky" formatted="false">漏斗アイコンでカタログのフィルターが分かりやすくなりました。</string>
+    <string name="info_news_texture_downloads" formatted="false">上下の矢印で、並べ替えとフィルターを区別できます。</string>
+    <string name="info_news_weather" formatted="false">天体一覧の背景を統一し、カテゴリー別の背景色をなくしました。</string>
+    <string name="info_news_viewer_zoom" formatted="false">種類フィルターのカテゴリーは、両テーマで共通の落ち着いた背景を使います。</string>
+    <string name="info_news_settings" formatted="false">検索欄の高さを抑え、上下に余白を増やしました。</string>
+    <string name="info_news_catalog" formatted="false">検索文字、入力ヒント、点滅するカーソルを上下中央に揃えました。</string>
 </resources>

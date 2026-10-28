@@ -24,6 +24,7 @@ import androidx.compose.ui.platform.testTag
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.semantics.contentDescription
 import androidx.compose.ui.semantics.semantics
+import androidx.compose.ui.text.PlatformTextStyle
 import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.text.input.ImeAction
 import androidx.compose.ui.text.style.TextOverflow
@@ -41,24 +42,27 @@ internal fun SpaceCompassCatalogSearchField(query: String, onQuery: (String) -> 
     val focused by interaction.collectIsFocusedAsState()
     val keyboard = LocalSoftwareKeyboardController.current
     val focus = LocalFocusManager.current
+    val inputStyle = TextStyle(color = foreground, fontSize = 13.sp, lineHeight = 18.sp,
+        platformStyle = PlatformTextStyle(includeFontPadding = false))
     BasicTextField(query, { onQuery(it.take(128)) },
-        modifier = modifier.height(48.dp).border(if (focused) 2.dp else 1.dp,
+        // Keep the header's touch space while giving the outline more vertical breathing room.
+        modifier = modifier.height(48.dp).padding(vertical = 4.dp).border(if (focused) 2.dp else 1.dp,
             if (focused) MaterialTheme.colorScheme.primary else foreground.copy(alpha = .45f),
             RoundedCornerShape(10.dp)).testTag("catalog-search").semantics { contentDescription = label },
-        singleLine = true, textStyle = TextStyle(color = foreground, fontSize = 13.sp),
+        singleLine = true, textStyle = inputStyle,
         cursorBrush = SolidColor(MaterialTheme.colorScheme.primary), interactionSource = interaction,
         keyboardOptions = KeyboardOptions(imeAction = ImeAction.Search),
         keyboardActions = KeyboardActions(onSearch = { keyboard?.hide(); focus.clearFocus() }),
         decorationBox = { input ->
             Row(Modifier.fillMaxSize().padding(start = 10.dp, end = if (query.isEmpty()) 10.dp else 0.dp),
                 verticalAlignment = Alignment.CenterVertically) {
-                Box(Modifier.weight(1f)) {
-                    if (query.isEmpty()) Text(label, fontSize = 13.sp, maxLines = 1,
-                        color = foreground.copy(alpha = .65f), overflow = TextOverflow.Ellipsis)
+                Box(Modifier.weight(1f).fillMaxHeight(), contentAlignment = Alignment.CenterStart) {
+                    if (query.isEmpty()) Text(label, style = inputStyle.copy(color = foreground.copy(alpha = .65f)),
+                        maxLines = 1, overflow = TextOverflow.Ellipsis)
                     input()
                 }
                 if (query.isNotEmpty()) IconButton(onClick = { onQuery("") },
-                    modifier = Modifier.size(48.dp).testTag("catalog-search-clear")
+                    modifier = Modifier.width(48.dp).fillMaxHeight().testTag("catalog-search-clear")
                         .semantics { contentDescription = clearLabel }) {
                     Canvas(Modifier.size(16.dp)) {
                         drawLine(foreground, Offset(size.width * .2f, size.height * .2f),

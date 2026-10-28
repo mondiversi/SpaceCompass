@@ -2,7 +2,6 @@ package me.mondiversi.spacecompass
 
 import androidx.compose.foundation.BorderStroke
 import androidx.compose.foundation.Canvas
-import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.*
@@ -122,14 +121,11 @@ private fun CatalogFilterChoice(label: String, selected: String, choices: List<P
         SpaceCompassAdaptiveDropdownMenu(expanded, onDismissRequest = { expanded = false }, containerColor = menuBackground) {
             choices.forEach { (key, title) ->
                 val checked = selectedKeys?.let { if (key.isEmpty()) it.isEmpty() else key in it }
-                val rowBackground = if (field == CatalogFilterField.TYPE && key.isNotEmpty())
-                    spaceCompassCatalogTypeBackground(SpaceCompassCatalogType.valueOf(key), checked == true, menuBackground)
-                    else Color.Transparent
                 DropdownMenuItem(text = { Text(title, maxLines = 3, overflow = TextOverflow.Ellipsis) },
                     trailingIcon = checked?.let { value -> { Checkbox(value, onCheckedChange = null,
                         modifier = Modifier.clearAndSetSemantics {}) } },
                     onClick = { if (selectedKeys == null) expanded = false; onSelect(key) },
-                    modifier = Modifier.background(rowBackground).testTag("catalog-${field.key}-${key.ifEmpty { "all" }}")
+                    modifier = Modifier.testTag("catalog-${field.key}-${key.ifEmpty { "all" }}")
                         .semantics { if (checked != null) {
                             role = Role.Checkbox
                             toggleableState = if (checked) ToggleableState.On else ToggleableState.Off

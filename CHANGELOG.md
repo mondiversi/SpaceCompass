@@ -1,5 +1,14 @@
 # Changelog
 
+## 1.5.4 — 2026-10-28
+
+- Distinguish catalogue filters with a funnel glyph and sorting with paired up/down arrows. Retain the title-bar icon dimensions, theme-driven states, accessible actions and saved choices.
+- Remove category background colors from object rows and Type-filter choices. Use neutral light/dark surfaces while preserving checkboxes, bold selected names, thumbnail rims, selected-object pinning, category membership and result counts. Remove the unused category palette and its three obsolete tint-only tests.
+- Reduce the search outline from 48 to 40 dp within the existing 48 dp header touch space. Share one text style between input and placeholder, center both vertically, remove mismatched font padding and keep the clear action aligned. Preserve field width, native editing, query matching and keyboard actions.
+- Refresh all six in-app news summaries in twenty languages. Advance version/display to 1.5.4 and Android code to 54. Keep catalogue data, celestial calculations, scenario files, preferences, the distribution certificate and external graphics pack 1.7 unchanged.
+
+- Publish the signed APK and update index, matching optional reference-information archive, verification metadata and checksums. Verify the committed source, retained signing identity, physical phone, hosted checks and public downloads separately; preserve older releases and immutable graphics URLs.
+
 ## 1.5.3 — 2026-10-28
 
 - Standardize every celestial guide label with a compact parenthesized qualifier in all twenty languages, live views, camera photos, panoramas and both export profiles. Retain the published 1.5.3 version/code while replacing its source tag and signed assets in place.

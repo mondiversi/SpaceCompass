@@ -1,9 +1,9 @@
 <resources>
     <string name="info_news_title">Ultime novità · %1$s</string>
-    <string name="info_news_star_sky" formatted="false">Gestione scenario si apre direttamente, con una schermata per ogni parametro e i valori attuali nel menu.</string>
-    <string name="info_news_texture_downloads" formatted="false">Attiva le personalizzazioni dalla barra del titolo. I campi automatici restano visibili in grigio, con descrizioni più chiare.</string>
-    <string name="info_news_weather" formatted="false">Includi i valori automatici nell’esportazione per condividere uno scenario completo del momento senza cambiare le impostazioni nell’app.</string>
-    <string name="info_news_viewer_zoom" formatted="false">Nuovi filtri Origine e Puntamento, affiancati a Tipo e Visibilità, con conteggi e preferenze salvate.</string>
-    <string name="info_news_settings" formatted="false">Gli sfondi delle categorie sono coerenti nell’elenco oggetti e nel filtro Tipo, nei temi chiaro e scuro.</string>
-    <string name="info_news_catalog" formatted="false">Campi di filtro più compatti e uniformi. I file scenario restano compatibili e mantengono le opzioni di ripresa.</string>
+    <string name="info_news_star_sky" formatted="false">L’icona a imbuto rende più riconoscibili i filtri del catalogo.</string>
+    <string name="info_news_texture_downloads" formatted="false">Le frecce su e giù distinguono l’ordinamento dai filtri.</string>
+    <string name="info_news_weather" formatted="false">L’elenco oggetti ha uno sfondo uniforme, senza colori per categoria.</string>
+    <string name="info_news_viewer_zoom" formatted="false">Le categorie del filtro Tipo hanno uno sfondo neutro nei due temi.</string>
+    <string name="info_news_settings" formatted="false">La casella Cerca è più bassa, con più spazio sopra e sotto.</string>
+    <string name="info_news_catalog" formatted="false">Testo di ricerca, segnaposto e cursore lampeggiante sono centrati verticalmente.</string>
 </resources>

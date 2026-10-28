@@ -1,9 +1,9 @@
 <resources>
     <string name="info_news_title">Latest news · %1$s</string>
-    <string name="info_news_star_sky" formatted="false">Scenario management opens directly, with a separate screen for each parameter and current values in the menu.</string>
-    <string name="info_news_texture_downloads" formatted="false">Enable custom values from the title bar. Automatic fields stay visible in grey, with clearer descriptions.</string>
-    <string name="info_news_weather" formatted="false">Include automatic values when exporting to share a complete scenario of the current moment without changing your app settings.</string>
-    <string name="info_news_viewer_zoom" formatted="false">New Origin and Pointing filters join Type and Visibility, with result counts and saved preferences.</string>
-    <string name="info_news_settings" formatted="false">Category backgrounds match in the object list and Type filter, in both light and dark themes.</string>
-    <string name="info_news_catalog" formatted="false">Filter fields are more compact and consistent. Scenario files remain compatible and retain the resumption options.</string>
+    <string name="info_news_star_sky" formatted="false">A funnel icon makes catalogue filters easier to recognize.</string>
+    <string name="info_news_texture_downloads" formatted="false">Up/down arrows distinguish sorting from filtering.</string>
+    <string name="info_news_weather" formatted="false">The object list uses a uniform background, without category colors.</string>
+    <string name="info_news_viewer_zoom" formatted="false">Type filter categories use the same neutral background in both themes.</string>
+    <string name="info_news_settings" formatted="false">A more compact search field leaves extra space above and below.</string>
+    <string name="info_news_catalog" formatted="false">Search text, placeholder and blinking cursor are vertically centered.</string>
 </resources>

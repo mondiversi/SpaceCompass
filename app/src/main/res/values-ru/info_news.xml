@@ -1,9 +1,9 @@
 <resources>
     <string name="info_news_title">Последние новости · %1$s</string>
-    <string name="info_news_star_sky" formatted="false">Управление сценарием открывается напрямую: у каждого параметра свой экран, а в меню показаны текущие значения.</string>
-    <string name="info_news_texture_downloads" formatted="false">Включайте собственные значения в строке заголовка. Автоматические поля остаются видимыми серым цветом и снабжены более ясными описаниями.</string>
-    <string name="info_news_weather" formatted="false">Включите автоматические значения при экспорте, чтобы поделиться полным сценарием текущего момента без изменения настроек приложения.</string>
-    <string name="info_news_viewer_zoom" formatted="false">Новые фильтры происхождения и наведения дополняют тип и видимость, с количеством результатов и сохранением настроек.</string>
-    <string name="info_news_settings" formatted="false">Фоны категорий совпадают в списке объектов и фильтре типа, в светлой и тёмной темах.</string>
-    <string name="info_news_catalog" formatted="false">Более компактные и единообразные поля фильтров. Файлы сценариев сохраняют совместимость и параметры возобновления.</string>
+    <string name="info_news_star_sky" formatted="false">Значок воронки делает фильтры каталога более узнаваемыми.</string>
+    <string name="info_news_texture_downloads" formatted="false">Стрелки вверх и вниз позволяют отличить сортировку от фильтрации.</string>
+    <string name="info_news_weather" formatted="false">Список объектов имеет однородный фон без цветов категорий.</string>
+    <string name="info_news_viewer_zoom" formatted="false">Категории фильтра «Тип» имеют нейтральный фон в обеих темах.</string>
+    <string name="info_news_settings" formatted="false">Поле поиска стало ниже, с большим отступом сверху и снизу.</string>
+    <string name="info_news_catalog" formatted="false">Поисковый текст, подсказка и мигающий курсор выровнены по центру по вертикали.</string>
 </resources>
