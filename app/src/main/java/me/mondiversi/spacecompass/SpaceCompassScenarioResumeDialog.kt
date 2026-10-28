@@ -16,7 +16,7 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.semantics.semantics
 import androidx.compose.ui.semantics.stateDescription
 
-private val SpaceCompassScenarioResume.labelResource: Int
+internal val SpaceCompassScenarioResume.labelResource: Int
     get() = when (this) {
         SpaceCompassScenarioResume.RESTART -> R.string.scenario_restart
         SpaceCompassScenarioResume.ACTIVE -> R.string.scenario_active

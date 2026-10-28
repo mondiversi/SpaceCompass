@@ -2,7 +2,6 @@ package me.mondiversi.spacecompass
 
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.rememberScrollState
-import androidx.compose.foundation.selection.selectableGroup
 import androidx.compose.foundation.verticalScroll
 import androidx.compose.material3.*
 import androidx.compose.runtime.Composable
@@ -45,18 +44,8 @@ internal fun SpaceCompassPanoramaExportPage(state: SpaceCompassCaptureExportStat
                             HorizontalDivider(color=secondary.copy(alpha=.22f))
                             Spacer(Modifier.height(2.dp))
                         }
-                        Text(stringResource(R.string.panorama_export_profile),fontSize=15.sp,fontWeight=FontWeight.Bold)
-                        Column(Modifier.fillMaxWidth().selectableGroup().testTag("panorama-export-profile"),
-                            verticalArrangement=Arrangement.spacedBy(SpaceCompassSettingsChoiceSpacing)) {
-                            SpaceCompassPanoramaExportMode.entries.forEach { option ->
-                                SpaceCompassSettingsRadioRow(state.mode==option,{ state.changeMode(option) },
-                                    Modifier.fillMaxWidth().testTag("panorama-export-${option.key}"),enabled = !state.preparing && !state.saving) {
-                                    Text(stringResource(if (option==SpaceCompassPanoramaExportMode.SELECTED)
-                                        R.string.panorama_export_selected else R.string.panorama_export_international),
-                                        Modifier.weight(1f),fontSize=14.sp,fontWeight=FontWeight.Medium)
-                                }
-                            }
-                        }
+                        SpaceCompassExportProfileChoices(state.mode, state.changeMode,
+                            enabled = !state.preparing && !state.saving)
                         Column(Modifier.fillMaxWidth(),verticalArrangement=Arrangement.spacedBy(SpaceCompassSettingsActionGap)) {
                             HorizontalDivider(color=secondary.copy(alpha=.22f))
                             Spacer(Modifier.height(2.dp))

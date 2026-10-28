@@ -20,7 +20,7 @@ internal fun SpaceCompassCelestialSceneBackdrop(opticalFrame: SpaceCompassSunSce
     dailyPath: SpaceCompassSunDailyPath?, position: SpaceCompassSunPosition?, timeMs: Long,
     state: SpaceCompassSunDailyPathUiState, primaryText: Color, secondaryText: Color, background: Color,
     latitude: Double?, altitude: Double, showReferences: Boolean, toolbarHeight: Double, modifier: Modifier,
-    longitude: Double? = null) {
+    longitude: Double? = null, objectOpacity: Float = 1f) {
     if (opticalFrame == null || orientation == null) return
     val density = LocalDensity.current
     val paths = overlays.mapNotNull { (candidate, overlay) -> overlay.path?.let { candidate to it } }.toMap() +
@@ -70,7 +70,7 @@ internal fun SpaceCompassCelestialSceneBackdrop(opticalFrame: SpaceCompassSunSce
                 if (candidate.constellationPattern == null && projected.visible && !onFreeViewport) SpaceCompassCelestialLiveMarker(candidate,
                     projected.copy(x = projected.x / density.density, y = projected.y / density.density),
                     positions.getValue(candidate).elevationDegrees < 0, current[candidate], state,
-                    moonPhase = moonPhase, path = paths[candidate], interactive = false)
+                    moonPhase = moonPhase, path = paths[candidate], interactive = false, objectOpacity = objectOpacity)
             } }
         }
     }

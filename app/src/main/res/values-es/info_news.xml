@@ -1,9 +1,9 @@
 <resources>
     <string name="info_news_title">Últimas novedades · %1$s</string>
-    <string name="info_news_star_sky" formatted="false">Explora 1009 objetos con un filtro de Ciencia ficción y referencias celestes ilustrativas claramente identificadas.</string>
-    <string name="info_news_texture_downloads" formatted="false">El paquete gráfico 1.7 añade diez imágenes y diez miniaturas independientes, descargadas por separado, verificadas y guardadas sin conexión.</string>
-    <string name="info_news_weather" formatted="false">Compara tiempos de viaje estimados desde velocidades cotidianas hasta la luz y velocidades warp ficticias, con unidades de duración compactas.</string>
-    <string name="info_news_viewer_zoom" formatted="false">Guarda, comparte e importa escenarios con nombre, incluida la política seleccionada para reanudar el tiempo.</string>
-    <string name="info_news_settings" formatted="false">Resumen del escenario actual más claro, con altitud, zona horaria y meteorología automáticas, lugares guardados e iconos revisados.</string>
-    <string name="info_news_catalog" formatted="false">La confirmación de ajustes aparece al salir de una pantalla modificada. Mejoras en controles de objetos, contadores, colores y etiquetas.</string>
+    <string name="info_news_star_sky" formatted="false">El zoom de la cámara está ahora junto al botón de captura y conserva el nivel elegido.</string>
+    <string name="info_news_texture_downloads" formatted="false">Un nuevo control hace translúcidos los objetos sobre la cámara. Las fotos y exportaciones conservan la transparencia de la captura.</string>
+    <string name="info_news_weather" formatted="false">Una única elección de formato, guardada, se aplica a las exportaciones de imágenes, tablas y escenarios.</string>
+    <string name="info_news_viewer_zoom" formatted="false">Los nombres exportados siguen el idioma y los formatos elegidos, con guiones dentro de cada campo y guiones bajos entre campos.</string>
+    <string name="info_news_settings" formatted="false">El salvapantallas terrestre sigue el día y la noche reales y muestra la última posición GPS real, también en el lado oculto.</string>
+    <string name="info_news_catalog" formatted="false">El escenario actual muestra su modo de reanudación. La exportación de escenarios tiene una descripción y una separación de campos más claras.</string>
 </resources>

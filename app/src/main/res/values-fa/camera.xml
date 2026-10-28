@@ -7,4 +7,7 @@
     <string name="camera_view_description">نمای زندهٔ دوربین با موقعیت اجرام آسمانی</string>
     <string name="camera_zoom_level">بزرگ‌نمایی: %1$s</string>
     <string name="camera_photo_field_of_view">میدان دید افقی×عمودی: %1$s × %2$s</string>
+    <string name="camera_object_transparency">شفافیت اجرام</string>
+    <string name="camera_objects_translucent">اجرام نیمه‌شفاف</string>
+    <string name="camera_objects_opaque">اجرام مات</string>
 </resources>

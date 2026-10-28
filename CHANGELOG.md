@@ -1,5 +1,14 @@
 # Changelog
 
+## 1.5.2 — 2026-10-28
+
+- Move the rear-camera zoom selector beside the capture button. Add a lightweight half-dotted transparency control in its former position, slashed when off and theme-accented when on. Remember the camera-only 50% opacity choice; composite the complete object image, rim and backing together without fading trajectories or captions. Freeze that opacity in every captured photo and its later export variants.
+- Share one remembered selected-format or international-format choice between image, table and scenario exports. Generate consistent filenames using the chosen language, units, date/time format and frozen capture time: hyphens within fields and underscores between fields. Preserve manual scenario names and canonical version-1 import data beneath localized readable comments.
+- Add the scenario-resumption policy to Current scenario and refine the scenario-export description and divider. Shorten the Italian title to Ripresa scenario without changing saved policy values or scenario compatibility.
+- Make the Earth screensaver marker follow only the last valid real GPS position, with a translucent grey far-side marker. Calculate seasonal tilt and geographic daylight from the real UTC Sun, independently of scenarios, device zone and interface theme; transform surface and sunlight consistently during decorative rotation. Keep bundled Earth maps unchanged, update the isolated renderer pin, and retain idle power-saving behavior and minute-rate solar updates.
+- Refresh all six in-app news summaries in twenty languages. Retain catalogue data, astronomical calculations, camera calibration, permissions, selections and saved preferences. Reuse immutable graphics pack 1.7 and its individually verified offline downloads; no complete graphics ZIP or new celestial image is bundled or uploaded.
+- Release 1.5.2/code 52 with the existing distribution certificate, signed update index, optional reference-information archive, verification metadata and checksums. Record local builds, JVM tests, Android-test compilation, physical-device checks and hosted checks separately.
+
 ## 1.5.1 — 2026-10-27
 
 - Expand the catalogue to 1009 unique selectable entries with ten additional, explicitly illustrative science-fiction references. Science fiction overlaps the matching planet, moon and spacecraft filters without duplicate results. Approximate ranges identify their real reference source; unavailable physical facts remain absent.

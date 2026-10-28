@@ -30,6 +30,7 @@ internal fun rememberSpaceCompassPanoramaAction(timeMs: Long, latitude: Double?,
     bodies: Set<SpaceCompassCelestialBody>, overlays: Map<SpaceCompassCelestialBody, SpaceCompassCelestialOverlay>,
     remote: SpaceCompassCelestialRemoteData, gpsAccuracyMeters: Double? = null,
     cameraEnabled: Boolean = false, cameraCapture: SpaceCompassCameraCapture? = null,
+    cameraObjectOpacity: Float = 1f,
     showSkyReferences: Boolean = SPACE_COMPASS_SKY_REFERENCES_DEFAULT,
     showWeather: Boolean = SPACE_COMPASS_WEATHER_VISIBLE_DEFAULT,
     solarLighting: SpaceCompassSolarLighting? = null,
@@ -150,7 +151,7 @@ internal fun rememberSpaceCompassPanoramaAction(timeMs: Long, latitude: Double?,
                                 cameraSource = source
                                 source.writeBytes(frame.jpeg)
                                 SpaceCompassCameraPhotoSnapshot(source, frame.lens, frame.displayRotation, frame.attitude,
-                                    international.cameraWarning)
+                                    international.cameraWarning, objectOpacity = cameraObjectOpacity)
                             }
                             val bitmap = cameraPhoto?.let { renderSpaceCompassCameraPhoto(application, it.copy(warning = selected.cameraWarning), previewSnapshot) }
                                 ?: renderSpaceCompassPanorama(previewSnapshot, if (memory >= 192) 4096 else 3072, application)

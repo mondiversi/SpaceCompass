@@ -2,7 +2,7 @@
 <resources>
     <string name="scenario_speed">Tempo</string>
     <string name="scenario_speed_description">Scorri indietro o avanti fino a 3600×. Lo zero al centro ferma il tempo.</string>
-    <string name="scenario_resume">Ripresa dello scenario</string>
+    <string name="scenario_resume">Ripresa scenario</string>
     <string name="scenario_resume_description">Scegli come riprende il tempo simulato alla riapertura dell’app. La velocità selezionata si applica in ogni modalità.</string>
     <string name="scenario_restart">Riparti dall’inizio</string>
     <string name="scenario_active">Solo con app attiva</string>

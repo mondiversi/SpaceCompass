@@ -3,6 +3,7 @@ package me.mondiversi.spacecompass
 import androidx.activity.compose.rememberLauncherForActivityResult
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.compose.foundation.layout.*
+import androidx.compose.material3.HorizontalDivider
 import androidx.compose.material3.LocalContentColor
 import androidx.compose.material3.Text
 import androidx.compose.runtime.*
@@ -21,19 +22,23 @@ import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
 
-/** Android document pickers and shares are independent of astronomical exports and their preferences. */
+/** Scenarios share the export profile preference; their canonical import schema stays independent. */
 @OptIn(ExperimentalLayoutApi::class)
 @Composable
 internal fun SpaceCompassScenarioTransferActions(capture: () -> SpaceCompassScenarioArchive?,
     onImport: (SpaceCompassScenarioArchive) -> Unit, enabled: Boolean = true) {
     val context = LocalContext.current
     val resources = LocalResources.current
+    val profiles = rememberSpaceCompassDataExportProfiles()
+    val exportMode = rememberSpaceCompassExportMode()
+    val suggestName = spaceCompassScenarioNameSuggestion(profiles)
     val scope = rememberCoroutineScope()
     val latestCapture by rememberUpdatedState(capture)
     val latestImport by rememberUpdatedState(onImport)
     var exportText by rememberSaveable { mutableStateOf<String?>(null) }
     var pendingSave by rememberSaveable { mutableStateOf<String?>(null) }
     var name by rememberSaveable { mutableStateOf("") }
+    var nameEdited by rememberSaveable { mutableStateOf(false) }
     var working by remember { mutableStateOf(false) }
     fun notice(id: Int) = showSpaceCompassBottomMessage(context, resources.getString(id))
     val save = rememberLauncherForActivityResult(ActivityResultContracts.CreateDocument(SPACE_COMPASS_SCENARIO_MIME)) { uri ->
@@ -70,7 +75,11 @@ internal fun SpaceCompassScenarioTransferActions(capture: () -> SpaceCompassScen
     }
     SpaceCompassTitleActionButton(stringResource(R.string.scenario_export), {
         runCatching {
-            latestCapture()?.let { archive -> exportText = archive.encode(); name = archive.name }
+            latestCapture()?.let { archive ->
+                exportText = archive.encode()
+                nameEdited = archive.name !in listOf(resources.getString(R.string.observer_title), "Scenario")
+                name = if (nameEdited) archive.name else suggestName(archive,exportMode.mode)
+            }
         }.onFailure { notice(R.string.observer_not_saved) }
     }, Modifier.testTag("scenario-export-open"), enabled = enabled && !working) {
         SpaceCompassPanoramaExportIcon(SpaceCompassTitleActionIconStrokeWidth)
@@ -81,36 +90,49 @@ internal fun SpaceCompassScenarioTransferActions(capture: () -> SpaceCompassScen
         SpaceCompassScenarioImportIcon()
     }
     exportText?.let { content ->
+        val archive = remember(content) { SpaceCompassScenarioArchive.decode(content) }
+        LaunchedEffect(exportMode.mode,content) {
+            if (!nameEdited) name = suggestName(archive,exportMode.mode)
+        }
         val validName = name.isNotBlank() && name.none(Char::isISOControl) &&
             runCatching { spaceCompassScenarioFileName(name) }.isSuccess
+        fun exported() = archive.copy(name=name.trim()).let {
+            it to spaceCompassScenarioExportText(it,exportMode.mode,profiles.forMode(exportMode.mode))
+        }
         SpaceCompassAlertDialog(onDismissRequest = { exportText = null },
             modifier = Modifier.testTag("scenario-export-dialog"),
             title = { Text(stringResource(R.string.scenario_export)) },
             text = {
-                SpaceCompassSettingsTextField(name, { name = it.take(80) },
-                    Modifier.fillMaxWidth().testTag("scenario-export-name"), label = stringResource(R.string.scenario_file_name))
+                Column(Modifier.fillMaxWidth(),
+                    verticalArrangement=Arrangement.spacedBy(8.dp)) {
+                    SpaceCompassSettingsDescription(stringResource(R.string.panorama_export_description),pageDescription=true)
+                    SpaceCompassSettingsTextField(name, { name = it.take(80); nameEdited = true },
+                        Modifier.fillMaxWidth().testTag("scenario-export-name"), label = stringResource(R.string.scenario_file_name))
+                    HorizontalDivider(Modifier.fillMaxWidth().padding(vertical=4.dp).testTag("scenario-export-profile-divider"),
+                        color=spaceCompassDialogContentColor().copy(alpha=.16f))
+                    SpaceCompassExportProfileChoices(exportMode.mode,exportMode.change,enabled=!working)
+                }
             }, confirmButton = {
-                // Keep the three actions in reading order; compact padding fits the normal phone width.
                 FlowRow(Modifier.fillMaxWidth(), horizontalArrangement = Arrangement.spacedBy(8.dp, Alignment.End),
                     verticalArrangement = Arrangement.spacedBy(8.dp)) {
-                val padding = PaddingValues(horizontal = 8.dp, vertical = 8.dp)
-                SpaceCompassDialogActionButton(stringResource(R.string.celestial_remove_cancel), { exportText = null },
-                    Modifier.testTag("scenario-export-cancel"), destructive = true, contentPadding = padding)
-                SpaceCompassDialogActionButton(stringResource(R.string.panorama_save_phone), {
-                    runCatching {
-                        val archive = SpaceCompassScenarioArchive.decode(content).copy(name = name.trim())
-                        pendingSave = archive.encode()
-                        save.launch(spaceCompassScenarioFileName(archive.name))
-                        exportText = null
-                    }.onFailure { pendingSave = null; notice(R.string.scenario_file_error) }
-                }, Modifier.testTag("scenario-export-save"), enabled = validName, contentPadding = padding)
-                SpaceCompassDialogActionButton(stringResource(R.string.panorama_share), {
-                    runCatching {
-                        val archive = SpaceCompassScenarioArchive.decode(content).copy(name = name.trim())
-                        shareSpaceCompassScenario(context, archive, resources.getString(R.string.scenario_export))
-                        exportText = null
-                    }.onFailure { notice(R.string.scenario_file_error) }
-                }, Modifier.testTag("scenario-export-share"), enabled = validName, contentPadding = padding)
+                    val padding = PaddingValues(horizontal = 8.dp, vertical = 8.dp)
+                    SpaceCompassDialogActionButton(stringResource(R.string.celestial_remove_cancel), { exportText = null },
+                        Modifier.testTag("scenario-export-cancel"), destructive = true, contentPadding = padding)
+                    SpaceCompassDialogActionButton(stringResource(R.string.panorama_save_phone), {
+                        runCatching {
+                            val (named,text) = exported()
+                            pendingSave = text
+                            save.launch(spaceCompassScenarioFileName(named.name))
+                            exportText = null
+                        }.onFailure { pendingSave = null; notice(R.string.scenario_file_error) }
+                    }, Modifier.testTag("scenario-export-save"), enabled = validName && !working, contentPadding = padding)
+                    SpaceCompassDialogActionButton(stringResource(R.string.panorama_share), {
+                        runCatching {
+                            val (named,text) = exported()
+                            shareSpaceCompassScenario(context,named,resources.getString(R.string.scenario_export),text)
+                            exportText = null
+                        }.onFailure { notice(R.string.scenario_file_error) }
+                    }, Modifier.testTag("scenario-export-share"), enabled = validName && !working, contentPadding = padding)
                 }
             })
     }

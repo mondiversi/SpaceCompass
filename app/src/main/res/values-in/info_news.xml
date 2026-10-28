@@ -1,9 +1,9 @@
 <resources>
     <string name="info_news_title">Perubahan terbaru · %1$s</string>
-    <string name="info_news_star_sky" formatted="false">Jelajahi 1009 objek dengan filter Fiksi ilmiah dan acuan langit ilustratif yang ditandai dengan jelas.</string>
-    <string name="info_news_texture_downloads" formatted="false">Paket grafis 1.7 menambahkan sepuluh gambar dan sepuluh pratinjau mandiri yang diunduh satu per satu, diverifikasi dan disimpan secara offline.</string>
-    <string name="info_news_weather" formatted="false">Bandingkan perkiraan waktu perjalanan dari kecepatan sehari-hari hingga kecepatan cahaya dan warp fiktif, dengan satuan durasi ringkas.</string>
-    <string name="info_news_viewer_zoom" formatted="false">Simpan, bagikan dan impor skenario bernama, termasuk mode pelanjutan waktu yang dipilih.</string>
-    <string name="info_news_settings" formatted="false">Ringkasan skenario saat ini lebih jelas dengan ketinggian, zona waktu dan cuaca otomatis, nama tempat tersimpan dan ikon baru.</string>
-    <string name="info_news_catalog" formatted="false">Konfirmasi pengaturan muncul saat keluar dari halaman pengaturan yang diubah. Kontrol objek, penghitung, warna dan balon informasi diperbaiki.</string>
+    <string name="info_news_star_sky" formatted="false">Zoom kamera kini berada di samping tombol foto dan mengingat tingkat yang dipilih.</string>
+    <string name="info_news_texture_downloads" formatted="false">Kontrol baru membuat benda langit di atas kamera menjadi semitransparan. Foto dan ekspor mempertahankan transparansi saat pengambilan gambar.</string>
+    <string name="info_news_weather" formatted="false">Satu pilihan format data yang tersimpan kini berlaku untuk ekspor gambar, tabel, dan skenario.</string>
+    <string name="info_news_viewer_zoom" formatted="false">Nama berkas ekspor mengikuti bahasa dan format yang dipilih, dengan tanda hubung di dalam bidang dan garis bawah antarbidang.</string>
+    <string name="info_news_settings" formatted="false">Screensaver Bumi menampilkan siang dan malam yang sebenarnya serta posisi GPS nyata terakhir, yang juga terlihat di sisi belakang.</string>
+    <string name="info_news_catalog" formatted="false">Skenario saat ini kini menampilkan mode melanjutkan. Ekspor skenario memiliki deskripsi dan pemisahan bidang yang lebih jelas.</string>
 </resources>

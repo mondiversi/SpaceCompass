@@ -7,4 +7,7 @@
     <string name="camera_view_description">Вид с камеры в реальном времени с положениями небесных тел</string>
     <string name="camera_zoom_level">Масштаб: %1$s</string>
     <string name="camera_photo_field_of_view">Угол обзора Г×В: %1$s × %2$s</string>
+    <string name="camera_object_transparency">Прозрачность объектов</string>
+    <string name="camera_objects_translucent">Полупрозрачные объекты</string>
+    <string name="camera_objects_opaque">Непрозрачные объекты</string>
 </resources>

@@ -11,6 +11,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.graphics.graphicsLayer
 import androidx.compose.ui.graphics.Path
 import androidx.compose.ui.graphics.drawscope.Stroke
 import androidx.compose.ui.graphics.drawscope.rotate
@@ -35,7 +36,7 @@ internal fun SpaceCompassCelestialOffscreenMarker(body: SpaceCompassCelestialBod
     contextExclusions: List<SpaceCompassSunSceneFrame> = emptyList(),
     forcedPlacement: SpaceCompassCelestialOffscreenGeometry? = null,
     diameter: Dp = SPACE_COMPASS_CELESTIAL_OFFSCREEN_DIAMETER_DP.dp,
-    moonPhase: SpaceCompassMoonPhase? = null) {
+    moonPhase: SpaceCompassMoonPhase? = null, objectOpacity: Float = 1f) {
     val rtl = LocalLayoutDirection.current == LayoutDirection.Rtl
     val name = stringResource(body.nameResource)
     BoxWithConstraints(Modifier.fillMaxSize()) {
@@ -48,6 +49,7 @@ internal fun SpaceCompassCelestialOffscreenMarker(body: SpaceCompassCelestialBod
                 contentAlignment = Alignment.Center) {
                 SpaceCompassCelestialThumbnail(body, Modifier.size((SPACE_COMPASS_CELESTIAL_LIVE_PREVIEW_SIZE_DP *
                     (diameter.value / SPACE_COMPASS_CELESTIAL_OFFSCREEN_DIAMETER_DP).coerceAtMost(1f)).dp)
+                    .graphicsLayer(alpha = objectOpacity)
                     .border(0.8.dp, Color.White.copy(alpha = 0.65f), CircleShape)
                     .testTag("celestial-offscreen-preview-${body.name}"), muted = belowHorizon, moonPhase = moonPhase)
                 Canvas(Modifier.fillMaxSize().testTag("celestial-offscreen-pointer")) {

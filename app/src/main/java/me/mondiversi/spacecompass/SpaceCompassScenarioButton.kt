@@ -10,7 +10,7 @@ import androidx.compose.ui.platform.testTag
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
 
-/** Attention orange highlights active overrides; a crossed glyph marks all overrides off. */
+/** Attention orange and its count mark active overrides; the inactive glyph stays neutral. */
 @Composable
 internal fun SpaceCompassScenarioButton(activeCount: Int, color: Color, background: Color,
     onClick: () -> Unit) {
@@ -28,6 +28,6 @@ internal fun SpaceCompassScenarioButton(activeCount: Int, color: Color, backgrou
                 Modifier.align(Alignment.TopEnd).testTag("scenario-active-count"), accent = tint)
         }) {
         SpaceCompassSettingsMenuIcon("observer", tint, Modifier.size(26.dp),
-            iconStrokeWidth = SpaceCompassFloatingIconStrokeWidth, crossed = !active)
+            iconStrokeWidth = SpaceCompassFloatingIconStrokeWidth)
     }
 }

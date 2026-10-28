@@ -1,9 +1,9 @@
 <resources>
     <string name="info_news_title">Laatste nieuws · %1$s</string>
-    <string name="info_news_star_sky" formatted="false">Verken 1009 objecten met een Sciencefiction-filter en duidelijk aangeduide illustratieve hemelreferenties.</string>
-    <string name="info_news_texture_downloads" formatted="false">Grafisch pakket 1.7 voegt tien afbeeldingen en tien onafhankelijke voorbeelden toe, afzonderlijk gedownload, gecontroleerd en offline bewaard.</string>
-    <string name="info_news_weather" formatted="false">Vergelijk geschatte reistijden van alledaagse snelheden tot lichtsnelheid en fictieve warpsnelheden, met compacte tijdseenheden.</string>
-    <string name="info_news_viewer_zoom" formatted="false">Bewaar, deel en importeer benoemde scenario’s, inclusief de gekozen hervattingsmodus voor de tijd.</string>
-    <string name="info_news_settings" formatted="false">Duidelijker overzicht van het huidige scenario met automatische hoogte, tijdzone en weer, opgeslagen plaatsnamen en vernieuwde pictogrammen.</string>
-    <string name="info_news_catalog" formatted="false">De instellingenbevestiging verschijnt bij het verlaten van een gewijzigde instellingenpagina. Verbeterde objectbediening, tellers, kleuren en infovelden.</string>
+    <string name="info_news_star_sky" formatted="false">De camerazoom staat nu naast de opnameknop en onthoudt het gekozen zoomniveau.</string>
+    <string name="info_news_texture_downloads" formatted="false">Een nieuwe knop maakt hemelobjecten doorschijnend over het camerabeeld. Foto’s en exports behouden de transparantie van het opnamemoment.</string>
+    <string name="info_news_weather" formatted="false">Eén opgeslagen keuze voor de gegevensindeling geldt nu voor het exporteren van afbeeldingen, tabellen en scenario’s.</string>
+    <string name="info_news_viewer_zoom" formatted="false">Geëxporteerde bestandsnamen volgen de gekozen taal en notaties, met koppeltekens binnen velden en onderstrepingstekens ertussen.</string>
+    <string name="info_news_settings" formatted="false">De aardeschermbeveiliging toont de werkelijke dag- en nachtgebieden en de laatst bekende echte GPS-positie, ook op de achterkant.</string>
+    <string name="info_news_catalog" formatted="false">Het huidige scenario toont nu de hervattingsmodus. Scenario-export heeft een duidelijkere beschrijving en veldscheiding.</string>
 </resources>

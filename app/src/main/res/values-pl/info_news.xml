@@ -1,9 +1,9 @@
 <resources>
     <string name="info_news_title">Ostatnie nowości · %1$s</string>
-    <string name="info_news_star_sky" formatted="false">Odkrywaj 1009 obiektów dzięki filtrowi Fantastyka naukowa i wyraźnie oznaczonym ilustracyjnym odniesieniom na niebie.</string>
-    <string name="info_news_texture_downloads" formatted="false">Pakiet graficzny 1.7 dodaje dziesięć obrazów i dziesięć niezależnych miniatur, pobieranych osobno, sprawdzanych i zapisywanych offline.</string>
-    <string name="info_news_weather" formatted="false">Porównuj szacowany czas podróży od codziennych prędkości po prędkość światła i fikcyjne prędkości warp, ze skróconymi jednostkami czasu.</string>
-    <string name="info_news_viewer_zoom" formatted="false">Zapisuj, udostępniaj i importuj nazwane scenariusze wraz z wybranym sposobem wznawiania czasu.</string>
-    <string name="info_news_settings" formatted="false">Czytelniejsze podsumowanie bieżącego scenariusza z automatyczną wysokością, strefą czasową i pogodą, zapisanymi nazwami miejsc i nowymi ikonami.</string>
-    <string name="info_news_catalog" formatted="false">Potwierdzenie ustawień pojawia się przy opuszczaniu zmienionej strony. Ulepszono sterowanie obiektami, liczniki, kolory i dymki.</string>
+    <string name="info_news_star_sky" formatted="false">Zoom aparatu znajduje się teraz obok przycisku zdjęcia i zachowuje wybrany poziom.</string>
+    <string name="info_news_texture_downloads" formatted="false">Nowy przycisk pozwala wyświetlać półprzezroczyste obiekty na obrazie aparatu. Zdjęcia i eksport zachowują przezroczystość z chwili wykonania zdjęcia.</string>
+    <string name="info_news_weather" formatted="false">Jeden zapamiętany wybór formatu danych obowiązuje teraz przy eksporcie obrazów, tabel i scenariuszy.</string>
+    <string name="info_news_viewer_zoom" formatted="false">Nazwy eksportowanych plików uwzględniają wybrany język i formaty: łączniki wewnątrz pól oraz podkreślenia między nimi.</string>
+    <string name="info_news_settings" formatted="false">Wygaszacz Ziemi pokazuje rzeczywiste obszary dnia i nocy oraz ostatnią rzeczywistą pozycję GPS, widoczną także po drugiej stronie.</string>
+    <string name="info_news_catalog" formatted="false">Bieżący scenariusz pokazuje teraz tryb wznawiania. Eksport scenariuszy ma czytelniejszy opis i podział pól.</string>
 </resources>

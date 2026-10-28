@@ -25,11 +25,12 @@ internal fun readSpaceCompassScenario(context: Context, uri: Uri): SpaceCompassS
     return SpaceCompassScenarioArchive.decode(bytes.toString(Charsets.UTF_8))
 }
 
-internal fun shareSpaceCompassScenario(context: Context, archive: SpaceCompassScenarioArchive, title: String) {
+internal fun shareSpaceCompassScenario(context: Context, archive: SpaceCompassScenarioArchive, title: String,
+    text: String = archive.encode()) {
     val directory = File(context.cacheDir, "scenarios/${UUID.randomUUID()}")
     check(directory.mkdirs())
     val file = File(directory, spaceCompassScenarioFileName(archive.name))
-    file.writeText(archive.encode(), Charsets.UTF_8)
+    file.writeText(text, Charsets.UTF_8)
     val uri = FileProvider.getUriForFile(context, "${context.packageName}.fileprovider", file)
     val intent = Intent(Intent.ACTION_SEND).apply {
         type = SPACE_COMPASS_SCENARIO_MIME

@@ -7,4 +7,7 @@
     <string name="camera_view_description">खगोलीय पिंडों की स्थिति के साथ लाइव कैमरा दृश्य</string>
     <string name="camera_zoom_level">ज़ूम: %1$s</string>
     <string name="camera_photo_field_of_view">दृश्य क्षेत्र क्षैतिज×ऊर्ध्व: %1$s × %2$s</string>
+    <string name="camera_object_transparency">पिंडों की पारदर्शिता</string>
+    <string name="camera_objects_translucent">अर्धपारदर्शी पिंड</string>
+    <string name="camera_objects_opaque">अपारदर्शी पिंड</string>
 </resources>

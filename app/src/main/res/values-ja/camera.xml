@@ -7,4 +7,7 @@
     <string name="camera_view_description">天体の位置を重ねたライブカメラ表示</string>
     <string name="camera_zoom_level">ズーム: %1$s</string>
     <string name="camera_photo_field_of_view">画角（横×縦）: %1$s × %2$s</string>
+    <string name="camera_object_transparency">天体の透明度</string>
+    <string name="camera_objects_translucent">半透明の天体</string>
+    <string name="camera_objects_opaque">不透明の天体</string>
 </resources>

@@ -126,10 +126,9 @@ class SpaceCompassObserverClockTest {
         assertEquals(ms("1969-12-31T19:00:00Z"), beforeEpoch.dataRequestTimeMs(now, rome))
     }
 
-    @Test fun screensaverUsesTheSameMovingScenarioClockAsTheForegroundSky() {
-        val plan = plan(true, false)
-        val observer = SpaceCompassScreensaverSolarObserver(45.0, 9.0, 100.0, observerPlan = plan)
-        assertEquals(calculateSpaceCompassSunPosition(plan.observationTimeMs(now), 45.0, 9.0, 100.0).elevationDegrees,
+    @Test fun screensaverUsesRealTimeWhileTheForegroundSkyUsesTheScenarioClock() {
+        val observer = SpaceCompassScreensaverSolarObserver(45.0, 9.0, 100.0)
+        assertEquals(calculateSpaceCompassSunPosition(now, 45.0, 9.0, 100.0).elevationDegrees,
             observer.elevation(now), 0.0)
     }
 

@@ -2,13 +2,12 @@ package me.mondiversi.spacecompass
 
 /** One inexpensive solar calculation per idle minute keeps dawn/dusk moving without live location. */
 internal data class SpaceCompassScreensaverSolarObserver(val latitude: Double, val longitude: Double,
-    val altitude: Double = 0.0, val fixedTimeMs: Long? = null,
-    val observerPlan: SpaceCompassObserverPlan? = null) {
+    val altitude: Double = 0.0) {
     fun elevation(nowMs: Long): Double = calculateSpaceCompassSunPosition(
-        observerPlan?.observationTimeMs(nowMs) ?: fixedTimeMs ?: nowMs, latitude, longitude, altitude).elevationDegrees
+        nowMs, latitude, longitude, altitude).elevationDegrees
 }
 
-/** The globe is illustrative: shared solar-height bands drive its shader's light angle.
+/** Decorative environment bands only; the globe uses its independent Earth-fixed sunlight vector.
  * Interface theme never substitutes midnight/noon for the observer's daylight.
  * Without a solar fix, retain the local clock instead of inventing a GPS position.
  */

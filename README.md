@@ -8,8 +8,8 @@ paths, inspect reference facts and view textured models. Space Compass is a stan
 
 ## Download and install
 
-Download **space-compass-1.5.1.apk** from the
-[Space Compass 1.5.1 release](https://github.com/mondiversi/SpaceCompass/releases/tag/v1.5.1).
+Download **space-compass-1.5.2.apk** from the
+[Space Compass 1.5.2 release](https://github.com/mondiversi/SpaceCompass/releases/tag/v1.5.2).
 Android 8.0 or newer is required. Open the APK and follow Android's installation
 prompts; allow installation for your browser or file manager if requested.
 
@@ -22,7 +22,7 @@ one manual APK update to acquire this feature.
 The release includes `SHA256SUMS.txt` and a signed update index. GitHub's source
 ZIP/TAR archives and Actions debug artifacts are separate from the signed APK.
 See [distribution and signing](docs/GITHUB_RELEASES.md) and
-[the 1.5.1 release audit](docs/RELEASE_1_5_0.md).
+[the 1.5.2 release audit](docs/RELEASE_1_5_2.md).
 
 ## Features
 
@@ -38,19 +38,25 @@ See [distribution and signing](docs/GITHUB_RELEASES.md) and
 - Steadier sensor-driven motion combines short gyroscope increments with the measured magnetic/gravity reference, and pauses with the screensaver/background lifecycle.
 - Rear-camera overlays with celestial markers and paths, consistent ultrawide/zoom
   steps, pinch and direct level selection; full 360° sky panoramas.
+  Zoom sits beside capture; a saved camera-only transparency control fades complete object glyphs to 50%.
+  Photos and every export variant retain the opacity recorded at the shutter tap.
 - Exposure-time direction, inclination and field of view in camera photos; previews
   follow selected language/units independently of the export profile.
 - Optional celestial reference curves and celestial-pole, zenith and nadir crosses. Guide and
   camera modes start disabled; Sun and Moon are the initial checked objects.
 - Save or share images, readable TXT tables and CSV spreadsheets from captures, daily paths and the Observatory,
-  using selected-language/unit or international profiles. Special/selected points are chronological.
+  using one remembered selected-language/unit or international profile shared with scenario exports.
+  Filenames follow the chosen profile, with hyphens within fields and underscores between fields.
+  Special/selected points are chronological.
   Location disclosure applies to every output: captures inherit the preview; daily paths start
   with area only. Hidden location uses UTC. No automatic gallery save.
 - Day/night OpenStreetMap position details with GPS, altitude, estimated place and weather.
 - Custom scenarios with independently enabled position, altitude, time zone, date and time;
   optional −3600× to +3600× time speed with a central 0× pause and restart/active-only/always resumption. The current-scenario
   summary shows effective values, automatic place-derived metadata and an active-section badge.
-  Save, share and import named `.spacecompass` scenarios, including the resumption policy; archived files do not accrue elapsed time.
+  The summary also shows the resumption policy. Save, share and import named `.spacecompass` scenarios,
+  including that policy; readable fields and suggested filenames follow the export profile while import units
+  remain canonical. Archived files do not accrue elapsed time.
 - Read object names in the theme text color, with an outlined split-color dot: above-horizon orbit color on top and below-horizon color underneath. The dot remains visible beside shortened long names. Photo/panorama legends and image exports use the same text-sized dots, with outlines matching the lettering. Button counters use larger solid theme-accent badges with light/dark bold digits.
 - Tap the object name to open the catalogue. Checked objects remain first in the chosen order and visible despite filters/search. The island keeps Observatory and Daily path shortcuts; both page headers retain only Export.
 - Science fiction is an additional type-filter membership, with ten new clearly qualified illustrative references. Their real reference directions and approximate ranges do not imply measured fictional orbits or physical properties.
@@ -60,7 +66,7 @@ See [distribution and signing](docs/GITHUB_RELEASES.md) and
 - General settings combine light/dark themes, adjustable sky fluidity, event controls and original ambient music synthesized continuously offline. Balanced fluidity is the default; previously saved levels are retained.
   Music starts enabled at 20% volume, with saved on/off and ten-percent volume steps. Settings-save confirmations are deferred until leaving a modified settings page.
 - Music and scenario cards reveal their controls with 300 ms animations; disabled cards retain only their headings.
-- Full-screen animated Earth screensaver with local time, date and battery, enabled after five minutes by default. It shows the last known observer position on a correctly oriented globe with eastward spin and a Sun-facing seasonal perspective based on the effective scenario date. It pauses live sensors, GPS, camera and data refresh until dismissed.
+- Full-screen animated Earth screensaver with local time, date and battery, enabled after five minutes by default. It shows the last known real GPS position, with a dimmed grey marker on the far side, on a correctly oriented globe with eastward visual spin. Seasons and geographic day/night illumination follow the real UTC Sun independently of scenarios. It pauses live sensors, GPS, camera and data refresh until dismissed.
 - Solar-height-driven dawn/dusk lighting shared by sky, ground, weather and panoramic captures.
 - Translucent main islands with paths and objects drawn behind them, a reticle centred in the free sky area and a 50/50 landscape split.
 - Titled photo/panorama previews with opaque theme-matched toolbars and top-aligned controls, object-colour legends and larger wrapping photo metadata on a separate opaque black band.
@@ -77,7 +83,7 @@ See [distribution and signing](docs/GITHUB_RELEASES.md) and
 - Signed startup/manual GitHub updates with package, certificate, size and checksum verification.
 
 The application ID is `me.mondiversi.spacecompass`. The current stable version is
-**1.5.1**, with Android/update identity `1.5.1` and version code **51**.
+**1.5.2**, with Android/update identity `1.5.2` and version code **52**.
 This preserves the three-part update protocol used by existing preview installations.
 The app stores its preferences and caches privately.
 
@@ -139,7 +145,7 @@ Launcher/loading artwork and original illustrations are project assets.
 
 ## Data and graphics packages
 
-Release 1.5.1 includes **1009 selectable objects**, and an optional reference-information archive.
+Release 1.5.2 includes **1009 selectable objects**, and an optional reference-information archive.
 All descriptive data and translations remain inside the APK. Scientific limits and provenance are in the
 [catalogue sources](docs/CATALOG_999.md) and [canonical source catalogue](catalogue/README.md).
 

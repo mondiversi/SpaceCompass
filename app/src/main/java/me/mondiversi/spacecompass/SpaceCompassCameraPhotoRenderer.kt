@@ -4,6 +4,7 @@ import android.content.Context
 import android.graphics.*
 import androidx.compose.ui.graphics.toArgb
 import kotlin.math.hypot
+import kotlin.math.roundToInt
 
 /** Reproject onto the whole JPEG; controls, notices and main-page columns never cover the photo. */
 internal fun renderSpaceCompassCameraPhoto(context: Context, photo: SpaceCompassCameraPhotoSnapshot,
@@ -151,12 +152,18 @@ internal fun renderSpaceCompassCameraPhoto(context: Context, photo: SpaceCompass
         observations.forEach { (item,position) -> position?.let(::projection)?.let { p ->
             val x=p.x.toFloat(); val y=p.y.toFloat(); val radius=35*scale
             if (item.body.constellationPattern == null) {
+            // Composite the image, plate and rim once, matching the live thumbnail's alpha layer.
+            val layer = if (photo.objectOpacity < 1f) canvas.saveLayerAlpha(
+                x-radius-3*scale,y-radius-3*scale,x+radius+3*scale,y+radius+3*scale,
+                (photo.objectOpacity*255).roundToInt()) else canvas.save()
+            try {
             paint.style=Paint.Style.FILL; paint.color=0xcc07101b.toInt(); canvas.drawCircle(x,y,radius,paint)
             paint.style=Paint.Style.STROKE; paint.strokeWidth=2*scale; paint.color=spaceCompassCelestialPathTint(item.body).toArgb()
             canvas.drawCircle(x,y,radius,paint)
             val marker=renderSpaceCompassPanoramaMarker(context,item.body,snapshot.timeMs)
             try { canvas.drawBitmap(marker,null,RectF(x-radius+2*scale,y-radius+2*scale,x+radius-2*scale,y+radius-2*scale),
                 Paint(Paint.ANTI_ALIAS_FLAG or Paint.FILTER_BITMAP_FLAG)) } finally { marker.recycle() }
+            } finally { canvas.restoreToCount(layer) }
             }
             if (snapshot.labelMode.showsObject(item.body == snapshot.activeBody)) {
                 text.textSize=23*scale; text.style=Paint.Style.FILL; text.color=spaceCompassCelestialPathTint(item.body).toArgb()

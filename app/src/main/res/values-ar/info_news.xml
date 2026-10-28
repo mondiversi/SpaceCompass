@@ -1,9 +1,9 @@
 <resources>
     <string name="info_news_title">آخر المستجدات · %1$s</string>
-    <string name="info_news_star_sky" formatted="false">استكشف 1009 أجسام مع مرشح الخيال العلمي ومراجع سماوية توضيحية محددة بوضوح.</string>
-    <string name="info_news_texture_downloads" formatted="false">تضيف حزمة الرسومات 1.7 عشر صور وعشر معاينات مستقلة، تُنزّل منفردة وتُفحص وتُحفظ للاستخدام دون اتصال.</string>
-    <string name="info_news_weather" formatted="false">قارن أزمنة السفر التقديرية من السرعات اليومية إلى سرعة الضوء وسرعات وارب الخيالية، بوحدات زمن مختصرة.</string>
-    <string name="info_news_viewer_zoom" formatted="false">احفظ السيناريوهات المسماة وشاركها واستوردها، بما في ذلك وضع استئناف الزمن المحدد.</string>
-    <string name="info_news_settings" formatted="false">ملخص أوضح للسيناريو الحالي مع ارتفاع ومنطقة زمنية وطقس تلقائي، وأسماء أماكن محفوظة وأيقونات محدّثة.</string>
-    <string name="info_news_catalog" formatted="false">يظهر تأكيد الإعدادات عند مغادرة صفحة عُدلت. تحسين أدوات التحكم بالأجسام والعدادات والألوان وفقاعات المعلومات.</string>
+    <string name="info_news_star_sky" formatted="false">أصبح تقريب الكاميرا بجوار زر الالتقاط، مع الاحتفاظ بالمستوى المختار.</string>
+    <string name="info_news_texture_downloads" formatted="false">يتيح تحكم جديد عرض الأجرام شبه شفافة فوق الكاميرا. تحتفظ الصور والملفات المصدّرة بالشفافية المستخدمة عند الالتقاط.</string>
+    <string name="info_news_weather" formatted="false">يُحفظ اختيار موحّد لتنسيق البيانات ويُطبّق على تصدير الصور والجداول والسيناريوهات.</string>
+    <string name="info_news_viewer_zoom" formatted="false">تتبع أسماء الملفات المصدّرة اللغة والتنسيقات المختارة، مع شرطات داخل الحقول وشرطات سفلية بينها.</string>
+    <string name="info_news_settings" formatted="false">تعرض شاشة توقف الأرض مناطق النهار والليل الحقيقية وآخر موقع GPS حقيقي، ويظهر أيضًا على الجانب الخلفي.</string>
+    <string name="info_news_catalog" formatted="false">يعرض السيناريو الحالي الآن وضع الاستئناف. أصبح وصف تصدير السيناريوهات والفصل بين حقوله أوضح.</string>
 </resources>

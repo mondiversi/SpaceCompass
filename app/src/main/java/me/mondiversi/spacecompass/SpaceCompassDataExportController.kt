@@ -49,18 +49,16 @@ internal fun rememberSpaceCompassDataExport(ownerKey: String, options: List<Spac
     selectedAvailable: Boolean = true, capture: () -> SpaceCompassDataExportSource): SpaceCompassCaptureExportState {
     val context = LocalContext.current
     val resources = LocalResources.current
-    val preferences = LocalSpaceCompassPreferences.current
+    val exportMode = rememberSpaceCompassExportMode()
     val scope = rememberCoroutineScope()
     val latestCapture by rememberUpdatedState(capture)
     var source by remember(ownerKey) { mutableStateOf<SpaceCompassDataExportSource?>(null) }
     var visible by remember(ownerKey) { mutableStateOf(false) }
     var typeKeys by rememberSaveable(ownerKey) { mutableStateOf(emptyList<String>()) }
-    var modeKey by rememberSaveable(ownerKey) { mutableStateOf(
-        if (!selectedAvailable) SpaceCompassPanoramaExportMode.INTERNATIONAL.key else
-            SpaceCompassPanoramaExportMode.fromStored(preferences?.getString(SPACE_COMPASS_PANORAMA_EXPORT_MODE_KEY,null)).key) }
+
     var positionKey by rememberSaveable(ownerKey) { mutableStateOf<String?>(null) }
     val position = positionKey?.let(SpaceCompassPanoramaPosition::fromStored)
-    val mode = SpaceCompassPanoramaExportMode.fromStored(modeKey)
+    val mode = if (selectedAvailable) exportMode.mode else SpaceCompassPanoramaExportMode.INTERNATIONAL
     val counts = SpaceCompassCaptureExportType.entries.associateWith { type ->
         if (type in options) source?.counts?.get(type) ?: 1 else 0 }
     val types = SpaceCompassCaptureExportType.fromStored(typeKeys.toSet())
@@ -154,8 +152,7 @@ internal fun rememberSpaceCompassDataExport(ownerKey: String, options: List<Spac
         }, changeMode = { option ->
             if (!saving && request == null) {
                 failed = false
-                modeKey = option.key
-                preferences?.edit()?.putString(SPACE_COMPASS_PANORAMA_EXPORT_MODE_KEY,option.key)?.apply()
+                exportMode.change(option)
             }
         }, retry = { requestDelivery(lastAction) },
         save = { requestDelivery(SpaceCompassDataExportAction.SAVE) },

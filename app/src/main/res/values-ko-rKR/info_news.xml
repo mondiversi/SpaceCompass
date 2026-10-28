@@ -1,9 +1,9 @@
 <resources>
     <string name="info_news_title">최근 변경 사항 · %1$s</string>
-    <string name="info_news_star_sky" formatted="false">공상 과학 필터와 설명용임을 명확히 표시한 천체 참조 방향으로 1009개 대상을 탐색하세요.</string>
-    <string name="info_news_texture_downloads" formatted="false">그래픽 팩 1.7에 이미지 10개와 독립적인 미리보기 10개가 추가되었습니다. 개별 다운로드와 검증 후 오프라인에 저장됩니다.</string>
-    <string name="info_news_weather" formatted="false">일상적인 속도부터 광속과 가상의 워프 속도까지, 간결한 시간 단위로 예상 이동 시간을 비교하세요.</string>
-    <string name="info_news_viewer_zoom" formatted="false">선택한 시간 재개 방식까지 포함하여 이름이 있는 시나리오를 저장하고 공유하고 가져오세요.</string>
-    <string name="info_news_settings" formatted="false">현재 시나리오 요약을 개선했습니다. 자동 고도·시간대·날씨, 저장된 장소 이름과 새 아이콘을 표시합니다.</string>
-    <string name="info_news_catalog" formatted="false">변경한 설정 화면을 나갈 때 설정 확인 메시지가 표시됩니다. 대상 조작, 카운터, 색상과 말풍선도 개선했습니다.</string>
+    <string name="info_news_star_sky" formatted="false">카메라 줌이 촬영 버튼 옆으로 이동하며 선택한 줌 배율을 유지합니다.</string>
+    <string name="info_news_texture_downloads" formatted="false">카메라 위의 천체를 반투명하게 표시하는 새 기능을 추가했습니다. 사진과 내보내기에 촬영 당시의 투명도가 유지됩니다.</string>
+    <string name="info_news_weather" formatted="false">이제 이미지, 표, 시나리오 내보내기에 저장된 하나의 공통 데이터 형식 설정을 사용합니다.</string>
+    <string name="info_news_viewer_zoom" formatted="false">내보낸 파일 이름은 선택한 언어와 형식을 따르며, 필드 안에는 하이픈을, 필드 사이에는 밑줄을 사용합니다.</string>
+    <string name="info_news_settings" formatted="false">지구 화면 보호기는 실제 낮과 밤 및 마지막으로 확인된 실제 GPS 위치를 표시하며, 뒷면에서도 위치를 볼 수 있습니다.</string>
+    <string name="info_news_catalog" formatted="false">현재 시나리오에 재개 방식을 표시합니다. 시나리오 내보내기의 설명과 필드 구분이 더 명확해졌습니다.</string>
 </resources>

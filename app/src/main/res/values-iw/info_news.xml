@@ -1,9 +1,9 @@
 <resources>
     <string name="info_news_title">החידושים האחרונים · %1$s</string>
-    <string name="info_news_star_sky" formatted="false">גלו 1009 עצמים בעזרת מסנן מדע בדיוני ונקודות ייחוס שמימיות להמחשה המסומנות בבירור.</string>
-    <string name="info_news_texture_downloads" formatted="false">חבילת הגרפיקה 1.7 מוסיפה עשר תמונות ועשר תצוגות מקדימות נפרדות, עם הורדה אישית, אימות ושמירה ללא חיבור.</string>
-    <string name="info_news_weather" formatted="false">השוו זמני מסע משוערים ממהירויות יומיומיות עד למהירות האור ולמהירויות וורפ בדיוניות, עם יחידות זמן מקוצרות.</string>
-    <string name="info_news_viewer_zoom" formatted="false">שמרו, שתפו וייבאו תרחישים בעלי שם, כולל מצב המשך הזמן שנבחר.</string>
-    <string name="info_news_settings" formatted="false">סיכום ברור יותר של התרחיש הנוכחי עם גובה, אזור זמן ומזג אוויר אוטומטיים, שמות מקומות שמורים וסמלים מעודכנים.</string>
-    <string name="info_news_catalog" formatted="false">אישור ההגדרות מוצג ביציאה מדף הגדרות ששונה. שופרו פקדי העצמים, המונים, הצבעים ובועות המידע.</string>
+    <string name="info_news_star_sky" formatted="false">זום המצלמה נמצא כעת ליד כפתור הצילום ושומר על הרמה שנבחרה.</string>
+    <string name="info_news_texture_downloads" formatted="false">פקד חדש הופך את גרמי השמיים לשקופים למחצה מעל המצלמה. תמונות וייצוא שומרים על השקיפות בזמן הצילום.</string>
+    <string name="info_news_weather" formatted="false">בחירה אחת ושמורה של פורמט הנתונים חלה כעת על ייצוא תמונות, טבלאות ותרחישים.</string>
+    <string name="info_news_viewer_zoom" formatted="false">שמות הקבצים המיוצאים תואמים לשפה ולפורמטים שנבחרו, עם מקפים בתוך השדות וקווים תחתונים ביניהם.</string>
+    <string name="info_news_settings" formatted="false">שומר המסך של כדור הארץ מציג יום ולילה אמיתיים ואת מיקום ה-GPS האמיתי האחרון, הנראה גם בצד האחורי.</string>
+    <string name="info_news_catalog" formatted="false">התרחיש הנוכחי מציג כעת את מצב החידוש שלו. לייצוא תרחישים נוספו תיאור והפרדה ברורים יותר בין השדות.</string>
 </resources>

@@ -11,4 +11,7 @@ internal data class SpaceCompassCameraPhotoFrame(val jpeg: ByteArray, val lens: 
     val displayRotation: Int, val capturedTimeMs: Long, val attitude: SpaceCompassCameraAttitude?)
 
 internal data class SpaceCompassCameraPhotoSnapshot(val source: File, val lens: SpaceCompassCameraLens,
-    val displayRotation: Int, val attitude: SpaceCompassCameraAttitude?, val warning: String? = null)
+    val displayRotation: Int, val attitude: SpaceCompassCameraAttitude?, val warning: String? = null,
+    val objectOpacity: Float = 1f) {
+    init { require(objectOpacity.isFinite() && objectOpacity in 0f..1f) }
+}

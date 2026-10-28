@@ -1,7 +1,7 @@
 {
   "source": "https://www.mondiversi.me/",
   "source_sha256": "7a5149c0397cff93dac56499303a010ecacc8646a9335171e7b6b95578837bc4",
-  "earth_shader_and_orbit_geometry_preserved": true,
+  "earth_shader_and_orbit_geometry_preserved": false,
   "local_assets": [
     {
       "asset": "earth-day.webp",
@@ -28,8 +28,13 @@
       "source_embedded_sha256": "89b5f1d228fb90ccb7da5c99c55bb8aaf8e7bc8af481984e99dda88dfa6f13e7"
     }
   ],
-  "renderer_bytes": 12514,
+  "renderer_bytes": 19605,
   "no_network_or_audio": true,
-  "renderer_sha256": "c439d0660a87d7ecf0976efdc4ab6723548994b0d3f31d5c6106a59d183fd4cd",
-  "lighting_uses_observer_solar_elevation": true
+  "renderer_sha256": "a1b54c2b8c976c7ebf8ff60b814253fa702fe8d7891630d6efb0cf0fc133bfc5",
+  "lighting_uses_observer_solar_elevation": false,
+  "earth_texture_orientation_and_orbit_geometry_preserved": true,
+  "earth_lighting_uses_real_utc_sun": true,
+  "marker_source": "last_valid_real_device_gps",
+  "far_side_marker": "grey_translucent",
+  "solar_refresh_seconds": 60
 }

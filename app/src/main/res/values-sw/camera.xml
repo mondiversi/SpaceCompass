@@ -7,4 +7,7 @@
     <string name="camera_view_description">Mwonekano wa moja kwa moja wa kamera wenye nafasi za miili ya angani</string>
     <string name="camera_zoom_level">Ukuzaji: %1$s</string>
     <string name="camera_photo_field_of_view">Pembe ya mwonekano H×V: %1$s × %2$s</string>
+    <string name="camera_object_transparency">Uwazi wa magimba</string>
+    <string name="camera_objects_translucent">Magimba yenye uwazi kiasi</string>
+    <string name="camera_objects_opaque">Magimba yasiyo na uwazi</string>
 </resources>

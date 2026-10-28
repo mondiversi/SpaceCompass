@@ -1,9 +1,9 @@
 <resources>
     <string name="info_news_title">Son yenilikler · %1$s</string>
-    <string name="info_news_star_sky" formatted="false">Bilim kurgu filtresi ve açıkça işaretlenmiş temsili gökyüzü referanslarıyla 1009 nesneyi keşfedin.</string>
-    <string name="info_news_texture_downloads" formatted="false">Grafik paketi 1.7; tek tek indirilen, doğrulanan ve çevrimdışı saklanan on görüntü ve on bağımsız önizleme ekler.</string>
-    <string name="info_news_weather" formatted="false">Kısa süre birimleriyle günlük hızlardan ışık hızına ve kurgusal warp hızlarına kadar tahmini yolculuk sürelerini karşılaştırın.</string>
-    <string name="info_news_viewer_zoom" formatted="false">Seçilen zamanı sürdürme modu dâhil olmak üzere adlandırılmış senaryoları kaydedin, paylaşın ve içe aktarın.</string>
-    <string name="info_news_settings" formatted="false">Otomatik yükseklik, saat dilimi ve hava durumu, saklanan yer adları ve yenilenen simgelerle daha anlaşılır geçerli senaryo özeti.</string>
-    <string name="info_news_catalog" formatted="false">Ayar onayı, değiştirilmiş ayarlar sayfasından çıkarken gösterilir. Nesne kontrolleri, sayaçlar, renkler ve bilgi balonları iyileştirildi.</string>
+    <string name="info_news_star_sky" formatted="false">Kamera yakınlaştırması artık çekim düğmesinin yanında ve seçilen düzeyi koruyor.</string>
+    <string name="info_news_texture_downloads" formatted="false">Yeni bir kontrol, kamera üzerindeki gök cisimlerini yarı saydam yapar. Fotoğraflar ve dışa aktarımlar çekim anındaki saydamlığı korur.</string>
+    <string name="info_news_weather" formatted="false">Kaydedilen tek bir veri biçimi seçimi artık görüntü, tablo ve senaryo dışa aktarımlarına uygulanır.</string>
+    <string name="info_news_viewer_zoom" formatted="false">Dışa aktarılan dosya adları seçilen dil ve biçimlere uyar; alan içinde kısa çizgi, alanlar arasında alt çizgi kullanılır.</string>
+    <string name="info_news_settings" formatted="false">Dünya ekran koruyucusu gerçek gündüz ve gece bölgelerini ve son gerçek GPS konumunu arka tarafta da gösterir.</string>
+    <string name="info_news_catalog" formatted="false">Geçerli senaryo artık devam etme modunu gösterir. Senaryo dışa aktarımının açıklaması ve alan ayrımı daha nettir.</string>
 </resources>

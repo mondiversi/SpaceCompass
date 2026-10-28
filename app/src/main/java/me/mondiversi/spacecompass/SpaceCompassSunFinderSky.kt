@@ -88,7 +88,7 @@ internal fun SpaceCompassSunPointingViewport(
     topCenterActions: (@Composable (Modifier) -> Unit)? = null,
     topContentInset: androidx.compose.ui.unit.Dp = 0.dp,
     projectionTopInset: androidx.compose.ui.unit.Dp = 0.dp,
-    drawScene: Boolean = true,
+    drawScene: Boolean = true, objectOpacity: Float = 1f,
     approachOverlays: Map<SpaceCompassCelestialBody,SpaceCompassCelestialOverlay> = overlays
 ) {
     BoxWithConstraints(modifier.testTag("sun-finder-sky").semantics { contentDescription = description }) {
@@ -229,13 +229,13 @@ internal fun SpaceCompassSunPointingViewport(
                         moonPhase = moonPhase, path = paths[candidate],
                         interactive = compassReliable && !spaceCompassScenePointIsCovered(SpaceCompassSunScenePoint(
                             pixelProjections.getValue(candidate).x, pixelProjections.getValue(candidate).y), titleTouchExclusions),
-                        focused = focused?.let { it.isCurrent && it.body == candidate } == true)
+                        focused = focused?.let { it.isCurrent && it.body == candidate } == true, objectOpacity = objectOpacity)
                     }
                     else offscreen[candidate]?.let { placement ->
                         SpaceCompassCelestialOffscreenMarker(candidate, projected, below,
                             spaceCompassCelestialPathLineTint(spaceCompassCelestialPathTint(candidate), below),
                             menuItems = 0, forcedPlacement = placement, diameter = (markerDiameter / density.density).toFloat().dp,
-                            moonPhase = moonPhase)
+                            moonPhase = moonPhase, objectOpacity = objectOpacity)
                     }
                 } } }
                 if (drawScene) SpaceCompassApproachPathLayer(paths, orientation.takeIf { compassReliable },

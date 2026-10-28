@@ -1,18 +1,18 @@
 # Live rear-camera view
 
-The camera toggle is the first circular action above the sky, followed by celestial
-references and the celestial selector. It is outside the title toolbar. A slash
-indicates off; the ordinary camera indicates on. It starts off on each cold app
-start. Celestial guides also start off until explicitly enabled; the initial
-checked object set contains only Sun and Moon. Existing stored object selections
-remain independent of these first-use defaults. Capture is a separate neutral shutter circle at the bottom trailing corner
-of the sky, including the left sky column in landscape. In portrait, selecting
-a point puts its panel at the bottom of the sky and moves the complete zoom/shutter
-row immediately above it. Closing the panel returns the row to the bottom. Landscape
-keeps the selection above the data in the right column and the capture/zoom row at
-the bottom of the left sky column. The optical viewport does not resize, and
-captions/reference labels/edge locators reserve the measured controls and panel
-bounds in both layouts, including RTL.
+The camera toggle is the first circular action above the sky, outside the title
+toolbar. A slash indicates off; the ordinary camera indicates on. It starts off
+on each cold app start. The adjoining action is weather in virtual mode and object
+transparency in camera mode. References, scenario and object selection retain
+their existing corner group. Default object selection remains Sun and Moon;
+updates retain the user's saved selection.
+
+The camera zoom-ratio selector appears immediately before the capture button in
+the bottom capture group. Its menu is anchored to that button and opens into the
+available space above it. Both controls keep their existing sizes, margins,
+viewport exclusions and portrait/landscape placement. The sky's optical frame
+and camera calibration do not change when controls appear or disappear.
+
 When camera mode is off it generates the synthetic 360-degree panorama. When on,
 it requests a still rear-camera JPEG and draws frozen celestial overlays on it.
 The common preview has one Export control with the same two frozen presentation
@@ -176,14 +176,11 @@ export behavior, unreliable-heading policy and validation coverage.
 
 ## Rear-camera zoom controls
 
-The main pointing viewport shows minus, the current ratio and plus immediately
-before the shutter only while rear-camera mode is enabled. The circular actions
-reuse panorama icons, existing translated zoom labels and the current numeric
-format. Buttons, the ratio list and pinch requests share one adaptive zoom ladder
-with an exact ordinary 1x stop, and disable at the hardware endpoints or while
-capture/the lens handoff is not ready. Camera mode
-still starts disabled; turning it off resets zoom to 1x. Navigation keeps the
-requested ratio without writing camera settings to persistent preferences.
+The main pointing viewport shows the single current-ratio selector immediately
+before the shutter while rear-camera mode is enabled. The ratio list and pinch
+requests share one adaptive zoom ladder with an exact ordinary 1x stop. The
+selector disables while capture or a lens handoff is not ready. The last requested
+zoom is saved; new installations start at 1x. Camera mode itself still starts off.
 
 Public rear devices must expose valid optical metadata, preview and JPEG streams.
 The ordinary lens defines 1x. Separately exposed wide/tele lenses use ratios of
@@ -454,3 +451,22 @@ right group and four-button virtual group each centre their actual content. Shar
 policy are restored. The signed local APK is installed and checksum-verified with
 app data preserved. No preference, gallery save, document export, share or GitHub
 publication is changed.
+
+
+## Camera object translucency
+
+The upper camera-adjacent control toggles a remembered 50% object-image opacity.
+Its default is off. A diagonal slash marks the opaque/off state; the theme accent
+and unslashed half-dotted disc mark the translucent state. Its translated
+label and state are available to accessibility services. The preference is only
+effective in camera mode: virtual skies, catalogue thumbnails and Observatory
+images remain opaque. Live thumbnails, their existing rims and background plate
+share one compositing layer; trajectories, labels, direction arrows and controls
+remain readable and interactive.
+
+An immutable camera-photo snapshot records the opacity at the shutter tap. The
+photograph renderer composites the entire image/plate/rim group over the frozen
+JPEG before encoding. Selected/international language, label and privacy variants
+retain that exposure's opacity instead of reading a later preference. Preview,
+Save and Share therefore preserve it. No extra camera frame, catalogue download,
+image asset, gallery write or network request is needed for the toggle.

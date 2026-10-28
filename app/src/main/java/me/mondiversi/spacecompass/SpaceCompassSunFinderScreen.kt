@@ -250,6 +250,10 @@ internal fun SpaceCompassSunFinderContent(
     var pointingTopEdge by remember(scenePreferences) {
         mutableStateOf(scenePreferences.getBoolean(SPACE_COMPASS_POINTING_TOP_EDGE_KEY, false))
     }
+    var translucentCameraObjects by remember(scenePreferences) {
+        mutableStateOf(scenePreferences.getBoolean(SPACE_COMPASS_CAMERA_OBJECT_TRANSLUCENCY_KEY,false))
+    }
+    val cameraObjectOpacity = spaceCompassCameraObjectOpacity(cameraEnabled,translucentCameraObjects)
     val deviceView = LocalView.current
     var cameraPerspective by remember { mutableStateOf<SpaceCompassPerspective?>(null) }
     var cameraCapture by remember { mutableStateOf<SpaceCompassCameraCapture?>(null) }
@@ -311,11 +315,10 @@ internal fun SpaceCompassSunFinderContent(
     val phase = spaceCompassSunSkyPhase(sun?.elevationDegrees, rising)
     val solarLighting = remember(sun?.elevationDegrees) { spaceCompassSolarLighting(sun?.elevationDegrees) }
     val publishSolarObserver = LocalSpaceCompassScreensaverSolarObserver.current
-    val solarObserver = remember(fix?.latitude, fix?.longitude, altitude, observerPlan) {
-        fix?.let { SpaceCompassScreensaverSolarObserver(it.latitude, it.longitude, altitude ?: 0.0,
-            observerPlan = observerPlan) }
+    val solarObserver = remember(deviceFix?.latitude, deviceFix?.longitude, deviceAltitude) {
+        deviceFix?.let { SpaceCompassScreensaverSolarObserver(it.latitude, it.longitude, deviceAltitude ?: 0.0) }
     }
-    SideEffect { publishSolarObserver(solarObserver, observerPlan) }
+    SideEffect { publishSolarObserver(solarObserver) }
     val zone = spaceCompassObservationZone()
     val date = Instant.ofEpochMilli(timeMs).atZone(zone).toLocalDate()
     // Approximately 11 m location cells keep GPS jitter from rebuilding a whole day's curve.
@@ -448,7 +451,7 @@ internal fun SpaceCompassSunFinderContent(
     val panorama = rememberSpaceCompassPanoramaAction(timeMs, fix?.latitude, fix?.longitude, altitude,
         phase, currentWeather, selectedBodies, selectedOverlays, remote,
         gpsAccuracyMeters = fix?.takeIf { it.hasAccuracy() && it.accuracy.isFinite() && it.accuracy >= 0f }
-            ?.accuracy?.toDouble(), cameraEnabled = cameraEnabled, cameraCapture = cameraCapture, showSkyReferences = showSkyReferences, showWeather = showWeather, solarLighting = solarLighting,
+            ?.accuracy?.toDouble(), cameraEnabled = cameraEnabled, cameraCapture = cameraCapture, cameraObjectOpacity = cameraObjectOpacity, showSkyReferences = showSkyReferences, showWeather = showWeather, solarLighting = solarLighting,
         selectedPoints = dailyPathUiState.selectedPoints, activeBody = body.takeIf { it in selectedBodies })
     panorama.preview?.let { preview ->
         SpaceCompassPanoramaPreview(preview, panorama.closePreview)
@@ -545,6 +548,8 @@ internal fun SpaceCompassSunFinderContent(
         Row(modifier.padding(4.dp).testTag("celestial-capture-controls"),
             verticalAlignment = Alignment.CenterVertically,
             horizontalArrangement = Arrangement.spacedBy(8.dp)) {
+            if (cameraEnabled) SpaceCompassCameraZoomControls(cameraZoomRange, cameraZoomRequest, cameraZoomActual,
+                !panorama.busy && cameraCapture != null, ::updateCameraZoom, primaryText, backgroundColor)
             SpaceCompassCaptureButton(panorama.capture, !panorama.busy && (!cameraEnabled || cameraCapture != null),
                 cameraEnabled = cameraEnabled)
         }
@@ -580,7 +585,7 @@ internal fun SpaceCompassSunFinderContent(
                 topContentInset = if (floatingToolbar != null) 10.dp else topControlsInset,
                 projectionTopInset = if (floatingToolbar != null) 0.dp else with(density) { toolbarHeightPx.toDp() },
                 topCenterActions = floatingToolbar,
-                drawScene = false,
+                drawScene = false, objectOpacity = cameraObjectOpacity,
                 bottomStartActions = { modifier ->
                     Row(modifier.padding(4.dp), verticalAlignment = Alignment.CenterVertically,
                         horizontalArrangement = Arrangement.spacedBy(8.dp)) {
@@ -624,8 +629,15 @@ internal fun SpaceCompassSunFinderContent(
                                 notifyControl(R.string.scene_mode_camera)
                             } else cameraPermission.launch(Manifest.permission.CAMERA)
                         }, primaryText, backgroundColor)
-                        if (cameraEnabled) SpaceCompassCameraZoomControls(cameraZoomRange, cameraZoomRequest, cameraZoomActual,
-                            !panorama.busy && cameraCapture != null, ::updateCameraZoom, primaryText, backgroundColor)
+                        if (cameraEnabled) SpaceCompassCameraObjectTransparencyButton(translucentCameraObjects, { enabled ->
+                            if (translucentCameraObjects != enabled) {
+                                translucentCameraObjects = enabled
+                                scenePreferences.edit().putBoolean(SPACE_COMPASS_CAMERA_OBJECT_TRANSLUCENCY_KEY,enabled).apply()
+                                notifyControl(R.string.control_choice_message,
+                                    controlResources.getString(R.string.camera_object_transparency),
+                                    controlResources.getString(if (enabled) R.string.camera_objects_translucent else R.string.camera_objects_opaque))
+                            }
+                        }, primaryText, backgroundColor, enabled = !panorama.busy)
                         else SpaceCompassWeatherToggleButton(showWeather, { enabled ->
                             showWeather = enabled
                             scenePreferences.edit().putBoolean(SPACE_COMPASS_WEATHER_VISIBLE_KEY, enabled).apply()
@@ -685,7 +697,7 @@ internal fun SpaceCompassSunFinderContent(
             overlays, body.takeIf { hasActiveBody }, dailyPath.takeIf { hasActiveBody }, target, timeMs,
             dailyPathUiState, primaryText, secondaryText, backgroundColor,
             fix?.latitude, fix?.takeIf { it.hasAltitude() }?.altitude ?: 0.0, showSkyReferences,
-            toolbarHeightPx.toDouble(), Modifier.fillMaxSize(), longitude = fix?.longitude)
+            toolbarHeightPx.toDouble(), Modifier.fillMaxSize(), longitude = fix?.longitude, objectOpacity = cameraObjectOpacity)
         val minimumPanelWidth = if (largeText) 280.dp else 220.dp
         val detailsWidth = viewportWidth * 0.5f
         val compactPanel = viewportHeight < 420.dp && !largeText

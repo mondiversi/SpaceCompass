@@ -72,6 +72,7 @@ internal fun SpaceCompassScenarioSummaryDialog(plan: SpaceCompassObserverPlan?, 
         else -> R.string.scenario_time_paused
     })
     val speedValue = rateDirection + " · " + stringResource(R.string.scenario_speed_value, rateValue)
+    val resume = LocalSpaceCompassObserver.current?.timeSettings?.resume ?: clock?.settings?.resume ?: SpaceCompassScenarioResume.DEFAULT
 
     SpaceCompassAlertDialog(onDismissRequest = onDismiss,
         modifier = Modifier.testTag("scenario-summary-dialog"),
@@ -104,6 +105,8 @@ internal fun SpaceCompassScenarioSummaryDialog(plan: SpaceCompassObserverPlan?, 
                     highlighted = effects.speed)
                 SpaceCompassScenarioSummaryRow(weatherLabel,
                     stringResource(spaceCompassWeatherValueResource(snapshot, weather.loading)), "weather", highlighted = effects.weather, automatic = true)
+                SpaceCompassScenarioSummaryRow(stringResource(R.string.scenario_resume),
+                    stringResource(resume.labelResource), "resume")
             }
         })
 }
@@ -125,6 +128,7 @@ private fun SpaceCompassScenarioSummaryRow(label: String, value: String, key: St
                     "date" -> "date_format"
                     "time" -> "time_format"
                     "speed" -> "scenario_speed"
+                    "resume" -> "scenario_resume"
                     else -> key
                 }, secondary)
             }

@@ -7,4 +7,7 @@
     <string name="camera_view_description">Podgląd kamery na żywo z pozycjami ciał niebieskich</string>
     <string name="camera_zoom_level">Powiększenie: %1$s</string>
     <string name="camera_photo_field_of_view">Pole widzenia H×V: %1$s × %2$s</string>
+    <string name="camera_object_transparency">Przezroczystość obiektów</string>
+    <string name="camera_objects_translucent">Obiekty półprzezroczyste</string>
+    <string name="camera_objects_opaque">Obiekty nieprzezroczyste</string>
 </resources>

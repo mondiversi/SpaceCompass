@@ -20,6 +20,7 @@ class SpaceCompassScenarioTransferUiTest {
     private val preferenceName = "test_scenario_transfer_" + UUID.randomUUID()
     private val preferences = context.getSharedPreferences(preferenceName, Context.MODE_PRIVATE)
     private val shown = mutableStateOf(true)
+    private var retainedExport: SpaceCompassCaptureExportState? = null
     private val observer = SpaceCompassObserverState(preferences, elapsedClock = { 0L })
     private val moment = Instant.parse("2027-04-06T20:00:00Z").toEpochMilli()
     private val original = spaceCompassObserverPlan(45.0, 9.0, 112.0, moment, "Europe/Rome",
@@ -32,6 +33,8 @@ class SpaceCompassScenarioTransferUiTest {
                 LocalSpaceCompassObserver provides observer,
                 LocalSpaceCompassNumericFormat provides SpaceCompassNumericFormat.INTERNATIONAL,
                 LocalSpaceCompassUnits provides SpaceCompassUnits(distance = "mkm")) {
+                val export = rememberSpaceCompassDataExport("retained-test-export",emptyList()) { error("No delivery in this test") }
+                SideEffect { retainedExport = export }
                 if (shown.value) SpaceCompassObserverPage()
             }
         } }
@@ -50,7 +53,9 @@ class SpaceCompassScenarioTransferUiTest {
         assertTrue(resume.right <= export.left && export.right <= load.left)
         compose.onNodeWithTag("scenario-export-open").performClick()
         compose.onNodeWithTag("scenario-export-dialog").assertIsDisplayed()
-        compose.onNodeWithTag("scenario-export-name").assertTextContains("112 m", substring = true)
+        compose.onNodeWithText(context.getString(R.string.panorama_export_description)).assertExists()
+        compose.onNodeWithTag("scenario-export-profile-divider").assertExists()
+        compose.onNodeWithTag("scenario-export-name").assertTextContains("112m", substring = true)
         for (tag in listOf("scenario-export-cancel", "scenario-export-save", "scenario-export-share"))
             compose.onNodeWithTag(tag).assertIsEnabled()
         val actions = listOf("scenario-export-cancel", "scenario-export-save", "scenario-export-share")
@@ -59,6 +64,25 @@ class SpaceCompassScenarioTransferUiTest {
         compose.onNodeWithTag("scenario-export-cancel").performClick()
         compose.onNodeWithTag("scenario-export-dialog").assertDoesNotExist()
         compose.runOnIdle { assertEquals(original, observer.savedPlan) }
+    }
+
+    @Test fun scenarioProfileUpdatesRetainedExportsAndPreservesAnEditedName() {
+        preferences.edit().putString(SPACE_COMPASS_PANORAMA_EXPORT_MODE_KEY,"international").commit()
+        show(); compose.onNodeWithTag("scenario-export-open").performClick()
+        compose.onNodeWithTag("panorama-export-international").assertIsSelected()
+        compose.onNodeWithTag("panorama-export-selected").performClick()
+        compose.runOnIdle {
+            assertEquals("selected",preferences.getString(SPACE_COMPASS_PANORAMA_EXPORT_MODE_KEY,null))
+            assertEquals(SpaceCompassPanoramaExportMode.SELECTED,retainedExport!!.mode)
+        }
+        compose.onNodeWithTag("scenario-export-name").performTextReplacement("My-custom-scenario")
+        compose.onNodeWithTag("panorama-export-international").performClick()
+        compose.onNodeWithTag("scenario-export-name").assertTextContains("My-custom-scenario")
+        compose.runOnIdle { assertEquals(SpaceCompassPanoramaExportMode.INTERNATIONAL,retainedExport!!.mode) }
+        compose.onNodeWithTag("scenario-export-cancel").performClick()
+        compose.onNodeWithTag("scenario-export-open").performClick()
+        compose.onNodeWithTag("panorama-export-international").assertIsSelected()
+        compose.onNodeWithTag("scenario-export-cancel").performClick()
     }
 
     @Test fun emptyFileNamesDisableDeliveryWithoutChangingTheScenario() {

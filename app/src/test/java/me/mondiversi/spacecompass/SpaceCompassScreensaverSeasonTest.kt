@@ -63,19 +63,23 @@ class SpaceCompassScreensaverSeasonTest {
         assertTrue(abs(position(winter)) < abs(position(summer)))
     }
 
-    @Test fun aFixedScenarioUsesItsChosenSeasonEvenWhenTheActualMonthIsDifferent() {
-        val plan = SpaceCompassObserverPlan(45.185, 9.16, 80.0, summer, "UTC",
-            simulatePosition = false, simulateAltitude = false, simulateZone = false)
-        assertEquals(spaceCompassScreensaverSeason(summer), spaceCompassScreensaverSeason(winter, plan))
+    @Test fun realSeasonIsIndependentOfTheSystemTimeZone() {
+        val original=java.util.TimeZone.getDefault()
+        val expected=spaceCompassScreensaverSeason(winter)
+        try {
+            for (zone in listOf("Pacific/Auckland","Europe/Rome","America/New_York")) {
+                java.util.TimeZone.setDefault(java.util.TimeZone.getTimeZone(zone))
+                assertEquals(expected,spaceCompassScreensaverSeason(winter))
+            }
+        } finally { java.util.TimeZone.setDefault(original) }
     }
 
-    @Test fun anAdvancingScenarioUsesItsPersistedClockOffsetWithoutGps() {
-        val plan = SpaceCompassObserverPlan(45.185, 9.16, 80.0, summer, "UTC",
-            simulatePosition = false, simulateAltitude = false, simulateZone = false,
-            advanceTime = true, clockOffsetMs = summer-winter)
-        assertEquals(spaceCompassScreensaverSeason(summer), spaceCompassScreensaverSeason(winter, plan))
-        assertEquals(spaceCompassScreensaverSeason(summer+86_400_000),
-            spaceCompassScreensaverSeason(winter+86_400_000, plan))
+    @Test fun realSeasonAndLightingAgreeOnTheSolarDeclination() {
+        for (time in listOf(summer,winter)) {
+            val season=spaceCompassScreensaverSeason(time)
+            val sunlight=spaceCompassScreensaverSunlight(time)
+            assertEquals(Math.toDegrees(season.pitchRadians),Math.toDegrees(asin(sunlight.y)),.03)
+        }
     }
 
     @Test fun yearAndSeasonBoundariesHaveNoVisualJump() {

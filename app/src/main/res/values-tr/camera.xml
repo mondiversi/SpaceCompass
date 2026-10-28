@@ -7,4 +7,7 @@
     <string name="camera_view_description">Gök cisimlerinin konumlarıyla canlı kamera görünümü</string>
     <string name="camera_zoom_level">Yakınlaştırma: %1$s</string>
     <string name="camera_photo_field_of_view">Görüş alanı H×V: %1$s × %2$s</string>
+    <string name="camera_object_transparency">Nesne saydamlığı</string>
+    <string name="camera_objects_translucent">Yarı saydam nesneler</string>
+    <string name="camera_objects_opaque">Opak nesneler</string>
 </resources>

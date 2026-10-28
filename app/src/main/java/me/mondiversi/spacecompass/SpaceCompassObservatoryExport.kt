@@ -55,15 +55,17 @@ internal fun rememberSpaceCompassObservatoryExport(body: SpaceCompassCelestialBo
         val selected=spaceCompassObservatoryPresentation(body,timeMs,capturedAt,zone,remote,distance,phase,geometry,coordinates,profiles.selected)
         val international=spaceCompassObservatoryPresentation(body,timeMs,capturedAt,zone,remote,distance,phase,geometry,coordinates,profiles.international)
         val key="observatory-${UUID.randomUUID()}"
-        val stem=spaceCompassPanoramaFileName(capturedAt).removeSuffix(".jpg")+"_${body.name.lowercase(java.util.Locale.ROOT)}"
         SpaceCompassDataExportSource(key,options.associateWith { 1 }) { context,types,mode,_ ->
+            val profile=profiles.forMode(mode)
+            val stem=spaceCompassExportFileStem(capturedAt,profile.formatting,zone.id,
+                listOf(profile.strings.getString(body.nameResource),profile.strings.getString(R.string.celestial_details_title)))
             val presentation=if (mode==SpaceCompassPanoramaExportMode.SELECTED) selected else international
             if (types.any { it.extension=="jpg" }) ensureSpaceCompassCelestialTextures(context,setOf(body))
             val directory=spaceCompassPageExportDirectory(context,key,mode)
             SpaceCompassPreparedCaptureExport(options.filter { it in types }.map { type ->
                 val suffix=when (type) {
-                    SpaceCompassCaptureExportType.CURRENT_IMAGE -> "_current.jpg"
-                    SpaceCompassCaptureExportType.ROTATION_IMAGE -> "_rotation.jpg"
+                    SpaceCompassCaptureExportType.CURRENT_IMAGE -> "_${spaceCompassExportFilePart(profile.strings.getString(R.string.celestial_view_current),32,28)}.jpg"
+                    SpaceCompassCaptureExportType.ROTATION_IMAGE -> "_${spaceCompassExportFilePart(profile.strings.getString(R.string.celestial_view_rotation),32,28)}.jpg"
                     else -> ".${type.extension}"
                 }
                 writeSpaceCompassPageExportFile(directory,stem+suffix) { output ->

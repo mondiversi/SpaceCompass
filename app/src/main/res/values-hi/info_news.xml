@@ -1,9 +1,9 @@
 <resources>
     <string name="info_news_title">हाल के बदलाव · %1$s</string>
-    <string name="info_news_star_sky" formatted="false">विज्ञान-कथा फ़िल्टर और स्पष्ट रूप से चिह्नित काल्पनिक आकाशीय संदर्भों के साथ 1009 पिंडों को खोजें।</string>
-    <string name="info_news_texture_downloads" formatted="false">ग्राफ़िक्स पैक 1.7 में दस चित्र और दस स्वतंत्र पूर्वावलोकन जुड़े हैं, जो अलग-अलग डाउनलोड, सत्यापित और ऑफ़लाइन सहेजे जाते हैं।</string>
-    <string name="info_news_weather" formatted="false">संक्षिप्त अवधि इकाइयों में रोज़मर्रा की गति से प्रकाश की गति और काल्पनिक वार्प गति तक अनुमानित यात्रा समय की तुलना करें।</string>
-    <string name="info_news_viewer_zoom" formatted="false">चुनी गई समय-पुनरारंभ विधि सहित नाम वाले परिदृश्य सहेजें, साझा करें और आयात करें।</string>
-    <string name="info_news_settings" formatted="false">स्वचालित ऊँचाई, समय क्षेत्र और मौसम, सहेजे गए स्थान नाम और नए आइकन के साथ वर्तमान परिदृश्य का अधिक स्पष्ट सारांश।</string>
-    <string name="info_news_catalog" formatted="false">बदली हुई सेटिंग स्क्रीन से निकलने पर सेटिंग की पुष्टि दिखाई देती है। पिंड नियंत्रण, काउंटर, रंग और सूचना बुलबुले बेहतर किए गए हैं।</string>
+    <string name="info_news_star_sky" formatted="false">कैमरे का ज़ूम अब कैप्चर बटन के पास है और चुना गया स्तर याद रखता है।</string>
+    <string name="info_news_texture_downloads" formatted="false">नया नियंत्रण कैमरे के ऊपर खगोलीय पिंडों को अर्धपारदर्शी बनाता है। फ़ोटो और निर्यात में कैप्चर के समय की पारदर्शिता बनी रहती है।</string>
+    <string name="info_news_weather" formatted="false">डेटा प्रारूप का एक साझा, सहेजा गया विकल्प अब चित्रों, तालिकाओं और परिदृश्यों के निर्यात पर लागू होता है।</string>
+    <string name="info_news_viewer_zoom" formatted="false">निर्यात फ़ाइलों के नाम चुनी गई भाषा और प्रारूपों का पालन करते हैं: फ़ील्ड के भीतर हाइफ़न और उनके बीच अंडरस्कोर।</string>
+    <string name="info_news_settings" formatted="false">पृथ्वी का स्क्रीनसेवर वास्तविक दिन-रात और अंतिम ज्ञात वास्तविक GPS स्थिति दिखाता है, जो पीछे की ओर भी दिखाई देती है।</string>
+    <string name="info_news_catalog" formatted="false">वर्तमान परिदृश्य अब फिर से शुरू करने का तरीका भी दिखाता है। परिदृश्य निर्यात में विवरण और फ़ील्ड का विभाजन अधिक स्पष्ट है।</string>
 </resources>

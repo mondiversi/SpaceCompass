@@ -1,9 +1,9 @@
 <resources>
     <string name="info_news_title">Últimas novidades · %1$s</string>
-    <string name="info_news_star_sky" formatted="false">Explore 1009 objetos com um filtro de Ficção científica e referências celestes ilustrativas claramente identificadas.</string>
-    <string name="info_news_texture_downloads" formatted="false">O pacote gráfico 1.7 adiciona dez imagens e dez miniaturas independentes, transferidas individualmente, verificadas e guardadas offline.</string>
-    <string name="info_news_weather" formatted="false">Compare tempos de viagem estimados, das velocidades quotidianas à luz e às velocidades warp fictícias, com unidades de duração compactas.</string>
-    <string name="info_news_viewer_zoom" formatted="false">Guarde, partilhe e importe cenários com nome, incluindo a política escolhida para retomar o tempo.</string>
-    <string name="info_news_settings" formatted="false">Resumo do cenário atual mais claro, com altitude, fuso horário e meteorologia automáticos, locais guardados e ícones revistos.</string>
-    <string name="info_news_catalog" formatted="false">A confirmação das definições surge ao sair de uma página alterada. Melhorias nos controlos dos objetos, contadores, cores e etiquetas.</string>
+    <string name="info_news_star_sky" formatted="false">O zoom da câmara fica agora junto ao botão de captura e mantém o nível escolhido.</string>
+    <string name="info_news_texture_downloads" formatted="false">Um novo controlo torna os objetos translúcidos sobre a câmara. As fotografias e exportações mantêm a transparência usada na captura.</string>
+    <string name="info_news_weather" formatted="false">Uma única escolha de formato de dados, memorizada, aplica-se às exportações de imagens, tabelas e cenários.</string>
+    <string name="info_news_viewer_zoom" formatted="false">Os nomes dos ficheiros exportados seguem o idioma e os formatos escolhidos, com hífenes dentro dos campos e sublinhados entre campos.</string>
+    <string name="info_news_settings" formatted="false">O protetor de ecrã da Terra segue o dia e a noite reais e mostra a última posição GPS real, também no lado oculto.</string>
+    <string name="info_news_catalog" formatted="false">O cenário atual mostra agora o modo de retoma. A exportação de cenários tem uma descrição e uma separação de campos mais claras.</string>
 </resources>

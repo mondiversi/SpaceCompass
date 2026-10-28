@@ -1,9 +1,9 @@
 <resources>
     <string name="info_news_title">Ultime novità · %1$s</string>
-    <string name="info_news_star_sky" formatted="false">Esplora 1009 oggetti con il filtro Fantascienza e riferimenti celesti illustrativi chiaramente indicati.</string>
-    <string name="info_news_texture_downloads" formatted="false">Il pacchetto grafico 1.7 aggiunge dieci immagini e dieci miniature indipendenti, scaricate singolarmente, verificate e conservate offline.</string>
-    <string name="info_news_weather" formatted="false">Confronta i tempi di viaggio stimati dalle velocità quotidiane alla luce e alle velocità warp immaginarie, con durate in forma compatta.</string>
-    <string name="info_news_viewer_zoom" formatted="false">Salva, condividi e importa scenari con un nome, inclusa la modalità di ripresa del tempo selezionata.</string>
-    <string name="info_news_settings" formatted="false">Riepilogo dello scenario attuale più chiaro, con quota, fuso e meteo automatici, nomi delle località salvati e icone riviste.</string>
-    <string name="info_news_catalog" formatted="false">La conferma delle impostazioni appare uscendo da una schermata modificata. Migliorati comandi degli oggetti, contatori, colori e fumetti.</string>
+    <string name="info_news_star_sky" formatted="false">Lo zoom della fotocamera è ora accanto al pulsante di scatto e conserva il livello scelto.</string>
+    <string name="info_news_texture_downloads" formatted="false">Un nuovo comando rende semitrasparenti gli oggetti sopra la fotocamera. Foto ed esportazioni conservano la trasparenza usata allo scatto.</string>
+    <string name="info_news_weather" formatted="false">La scelta del formato dati è unica e memorizzata per esportare immagini, tabelle e scenari.</string>
+    <string name="info_news_viewer_zoom" formatted="false">I nomi dei file esportati seguono lingua e formati scelti, con trattini nei campi e underscore tra i campi.</string>
+    <string name="info_news_settings" formatted="false">Il salvaschermo della Terra segue il giorno e la notte reali e mostra l’ultima posizione GPS reale, visibile anche sul lato nascosto.</string>
+    <string name="info_news_catalog" formatted="false">Scenario attuale mostra anche Ripresa scenario. L’esportazione degli scenari ha una descrizione e una separazione dei campi più chiare.</string>
 </resources>

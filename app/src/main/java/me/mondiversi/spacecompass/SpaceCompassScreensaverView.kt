@@ -20,11 +20,13 @@ import androidx.core.view.WindowInsetsCompat
 
 /** Trusted, bundled animation only: no navigation, network, audio or JavaScript bridge. */
 internal class SpaceCompassScreensaverView(context: Context, dark: Boolean, lightHour: Double, elapsedSeconds: Double,
-    location: SpaceCompassScreensaverLocation?, season: SpaceCompassScreensaverSeason, onDismiss: () -> Unit) : FrameLayout(context) {
+    location: SpaceCompassScreensaverLocation?, season: SpaceCompassScreensaverSeason,
+    sunlight: SpaceCompassScreensaverSunlight, onDismiss: () -> Unit) : FrameLayout(context) {
     private var night = dark
     private var solarHour = lightHour
     private var markerLocation = location
     private var globeSeason = season
+    private var globeSunlight = sunlight
     private var loaded = false
     private val web = WebView(context).apply {
         setBackgroundColor(Color.rgb(2, 5, 12))
@@ -54,6 +56,7 @@ internal class SpaceCompassScreensaverView(context: Context, dark: Boolean, ligh
                 applyLighting()
                 applyLocation()
                 applySeason()
+                applySunlight()
             }
         }
     }
@@ -103,6 +106,7 @@ internal class SpaceCompassScreensaverView(context: Context, dark: Boolean, ligh
             .replace("__ELAPSED_SECONDS__", elapsedSeconds.toString())
             .replace("__NATIVE_LOCATION__", markerLocation?.javascript ?: "null")
             .replace("__NATIVE_EARTH_ORIENTATION__", globeSeason.javascript)
+            .replace("__NATIVE_SUN_DIRECTION__", globeSunlight.javascript)
         web.loadDataWithBaseURL("https://spacecompass.invalid/screensaver/", html, "text/html", "UTF-8", null)
     }
 
@@ -170,6 +174,13 @@ internal class SpaceCompassScreensaverView(context: Context, dark: Boolean, ligh
     }
     private fun applySeason() {
         if (loaded) web.evaluateJavascript("window.setNativeEarthOrientation(${globeSeason.javascript})", null)
+    }
+
+    fun updateSunlight(value: SpaceCompassScreensaverSunlight) {
+        if (globeSunlight != value) { globeSunlight = value; applySunlight() }
+    }
+    private fun applySunlight() {
+        if (loaded) web.evaluateJavascript("window.setNativeSunDirection(${globeSunlight.javascript})", null)
     }
 
     fun release() {

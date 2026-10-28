@@ -7,4 +7,7 @@
     <string name="camera_view_description">Vista fotocamera dal vivo con posizioni celesti</string>
     <string name="camera_zoom_level">Zoom: %1$s</string>
     <string name="camera_photo_field_of_view">Campo visivo H×V: %1$s × %2$s</string>
+    <string name="camera_object_transparency">Trasparenza oggetti</string>
+    <string name="camera_objects_translucent">Oggetti semitrasparenti</string>
+    <string name="camera_objects_opaque">Oggetti opachi</string>
 </resources>

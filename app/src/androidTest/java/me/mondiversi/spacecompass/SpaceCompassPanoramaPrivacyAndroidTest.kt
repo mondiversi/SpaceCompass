@@ -59,6 +59,25 @@ class SpaceCompassPanoramaPrivacyAndroidTest {
             assertTrue(ExifInterface(data.file.absolutePath).getLatLong(FloatArray(2)))
         } finally { root.deleteRecursively() }
     }
+    @Test fun deliveredNamesRespectHiddenPositionAndCopiesKeepTheirPrivateExif() {
+        val context = InstrumentationRegistry.getInstrumentation().targetContext
+        val root = File(context.cacheDir,"export-name-privacy-test-"+UUID.randomUUID()).apply { check(mkdirs()) }
+        try {
+            val fixture = fixture(root)
+            val data = fixture.copy(snapshot=fixture.snapshot!!.copy(zoneId="Asia/Kathmandu"))
+            val delivered = prepareSpaceCompassCaptureExport(context,data,setOf(SpaceCompassCaptureExportType.IMAGE),
+                SpaceCompassPanoramaPosition.HIDDEN,SpaceCompassPanoramaLabelMode.DEFAULT,
+                SpaceCompassPanoramaExportMode.INTERNATIONAL,SpaceCompassPanoramaCenter.SOUTH).files.single()
+            assertTrue(delivered.name.contains("_UTC+00.00_"))
+            assertFalse(delivered.name.contains("05.45"));assertFalse(delivered.name.contains("Private-town"))
+            val expected = prepareSpaceCompassPanoramaVariant(context,data,SpaceCompassPanoramaPosition.HIDDEN)
+            assertArrayEquals(expected.readBytes(),delivered.readBytes())
+            val exif=ExifInterface(delivered.absolutePath)
+            assertFalse(exif.getLatLong(FloatArray(2)))
+            assertNull(exif.getAttribute(ExifInterface.TAG_GPS_ALTITUDE))
+        } finally { root.deleteRecursively() }
+    }
+
     @Test fun privacyCacheNeverReusesTheCompleteFileAndKeepsEachVariantStable() {
         val context = InstrumentationRegistry.getInstrumentation().targetContext
         val root = File(context.cacheDir, "panorama-privacy-test-" + UUID.randomUUID()).apply { check(mkdirs()) }

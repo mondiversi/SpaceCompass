@@ -7,4 +7,7 @@
     <string name="camera_view_description">Vue caméra en direct avec les positions célestes</string>
     <string name="camera_zoom_level">Zoom : %1$s</string>
     <string name="camera_photo_field_of_view">Champ de vision H×V: %1$s × %2$s</string>
+    <string name="camera_object_transparency">Transparence des objets</string>
+    <string name="camera_objects_translucent">Objets semi-transparents</string>
+    <string name="camera_objects_opaque">Objets opaques</string>
 </resources>

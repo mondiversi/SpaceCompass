@@ -6,8 +6,9 @@ import androidx.compose.runtime.Composable
 @Composable
 internal fun rememberSpaceCompassCaptureExport(data: SpaceCompassPanoramaPreviewData,
     position: SpaceCompassPanoramaPosition, labels: SpaceCompassPanoramaLabelMode,
-    center: SpaceCompassPanoramaCenter, previewReady: Boolean): SpaceCompassCaptureExportState =
-    rememberSpaceCompassDataExport(data.file.absolutePath,
+    center: SpaceCompassPanoramaCenter, previewReady: Boolean): SpaceCompassCaptureExportState {
+    val profiles = rememberSpaceCompassDataExportProfiles()
+    return rememberSpaceCompassDataExport(data.file.absolutePath,
         listOf(SpaceCompassCaptureExportType.IMAGE,SpaceCompassCaptureExportType.TXT,SpaceCompassCaptureExportType.CSV),
         previewReady,
         data.selectedPresentation != null) {
@@ -17,6 +18,7 @@ internal fun rememberSpaceCompassCaptureExport(data: SpaceCompassPanoramaPreview
                 SpaceCompassCaptureExportType.CSV to if (data.orbitTable?.bodies?.isNotEmpty()==true) 1 else 0,
                 SpaceCompassCaptureExportType.TXT to if (data.orbitTable?.bodies?.isNotEmpty()==true) 1 else 0),
             initialPosition = position) { context,types,mode,disclosure ->
-            prepareSpaceCompassCaptureExport(context,data,types,disclosure,labels,mode,center)
+            prepareSpaceCompassCaptureExport(context,data,types,disclosure,labels,mode,center,profiles.forMode(mode))
         }
     }
+}

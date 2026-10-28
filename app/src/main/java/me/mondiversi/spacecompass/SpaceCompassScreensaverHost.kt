@@ -21,15 +21,16 @@ import java.time.LocalTime
 
 internal val LocalSpaceCompassScreensaverActive = staticCompositionLocalOf { false }
 internal val LocalSpaceCompassScreensaverSettings = staticCompositionLocalOf { SpaceCompassScreensaverSettings() }
-internal val LocalSpaceCompassScreensaverSolarObserver = staticCompositionLocalOf<(SpaceCompassScreensaverSolarObserver?, SpaceCompassObserverPlan?) -> Unit> { { _, _ -> } }
+internal val LocalSpaceCompassScreensaverSolarObserver = staticCompositionLocalOf<(SpaceCompassScreensaverSolarObserver?) -> Unit> { {} }
 
-private data class SpaceCompassScreensaverScene(val lightHour: Double, val season: SpaceCompassScreensaverSeason)
+private data class SpaceCompassScreensaverScene(val lightHour: Double, val season: SpaceCompassScreensaverSeason,
+    val sunlight: SpaceCompassScreensaverSunlight)
 
 private fun currentScreensaverScene(state: SpaceCompassScreensaverState): SpaceCompassScreensaverScene {
     val now = System.currentTimeMillis()
     return SpaceCompassScreensaverScene(
         spaceCompassScreensaverLightHour(state.solarObserver?.elevation(now), LocalTime.now().toSecondOfDay() / 3600.0),
-        spaceCompassScreensaverSeason(now, state.observerPlan))
+        spaceCompassScreensaverSeason(now),spaceCompassScreensaverSunlight(now))
 }
 
 /** Retain the current page and scroll state beneath a non-click-through cover. */
@@ -44,7 +45,7 @@ internal fun SpaceCompassScreensaverHost(state: SpaceCompassScreensaverState, co
     }
     SideEffect { pageOwner.setPaused(visible) }
     val initialScene = remember(state) { currentScreensaverScene(state) }
-    val scene by produceState(initialScene, state, visible, state.observerPlan) {
+    val scene by produceState(initialScene, state, visible) {
         value = currentScreensaverScene(state)
         if (visible) while (true) {
             delay(60_000L)
@@ -69,7 +70,7 @@ internal fun SpaceCompassScreensaverHost(state: SpaceCompassScreensaverState, co
             }
             if (visible) {
                 BackHandler { state.dismiss() }
-                SpaceCompassScreensaverLayer(isSystemInDarkTheme(), scene.lightHour, scene.season,
+                SpaceCompassScreensaverLayer(isSystemInDarkTheme(), scene.lightHour, scene.season, scene.sunlight,
                     stringResource(R.string.screensaver_dismiss), state.sceneStartedAt, state.location, state::dismiss)
             }
         }
@@ -78,7 +79,8 @@ internal fun SpaceCompassScreensaverHost(state: SpaceCompassScreensaverState, co
 
 /** Mount outside Compose's canvas, like the native position map, for legacy WebView compatibility. */
 @Composable
-private fun SpaceCompassScreensaverLayer(dark: Boolean, lightHour: Double, season: SpaceCompassScreensaverSeason, label: String,
+private fun SpaceCompassScreensaverLayer(dark: Boolean, lightHour: Double, season: SpaceCompassScreensaverSeason,
+    sunlight: SpaceCompassScreensaverSunlight, label: String,
     startedAt: Long, location: SpaceCompassScreensaverLocation?, onDismiss: () -> Unit) {
     val activity = LocalActivity.current ?: return
     val root = remember(activity) { activity.findViewById<ViewGroup>(android.R.id.content) }
@@ -86,7 +88,7 @@ private fun SpaceCompassScreensaverLayer(dark: Boolean, lightHour: Double, seaso
     val info = rememberSpaceCompassScreensaverInfo()
     val view = remember(activity) {
         SpaceCompassScreensaverView(activity, dark, lightHour,
-            (SystemClock.elapsedRealtime() - startedAt).coerceAtLeast(0L) / 1000.0, location, season) { callback.value() }
+            (SystemClock.elapsedRealtime() - startedAt).coerceAtLeast(0L) / 1000.0, location, season, sunlight) { callback.value() }
     }
     DisposableEffect(view, root) {
         val immersive = SpaceCompassScreensaverWindow(activity.window)
@@ -101,6 +103,7 @@ private fun SpaceCompassScreensaverLayer(dark: Boolean, lightHour: Double, seaso
         view.updateLighting(dark, lightHour)
         view.updateLocation(location)
         view.updateSeason(season)
+        view.updateSunlight(sunlight)
         view.updateInfo(info)
     }
 }

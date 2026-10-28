@@ -6,23 +6,18 @@ internal data class SpaceCompassScenarioNameParts(val position: String? = null, 
 /** Only enabled configuration enters the suggestion; dormant values and inferred metadata stay out. */
 internal fun spaceCompassScenarioSuggestedName(archive: SpaceCompassScenarioArchive,
     parts: SpaceCompassScenarioNameParts, fallback: String): String {
-    fun clean(value: String) = value.replace(Regex("[\\s\u00a0\u202f]+"), " ")
-        .replace(Regex("[\\\\/:*?\"<>|\\p{Cntrl}]"), "-").trim().trim('.')
-    fun limited(value: String, max: Int): String = value.take(max).let {
-        if (it.isNotEmpty() && Character.isHighSurrogate(it.last())) it.dropLast(1) else it
-    }.trimEnd()
     val c = archive.configuration
     val fields = listOf(
         parts.position.takeIf { c.simulatePosition },
         parts.altitude.takeIf { c.simulateAltitude }, parts.zone.takeIf { c.simulateZone },
         parts.date.takeIf { c.simulateDate }, parts.time.takeIf { c.simulateTime },
         parts.speed.takeIf { archive.timeSettings.enabled }
-    ).mapNotNull { it?.let(::clean)?.takeIf(String::isNotBlank) }.map { limited(it, 32) }.toMutableList()
-    if (fields.isEmpty()) return limited(clean(fallback).ifBlank { "Scenario" }, 80)
-    // Preserve compact numerical parameters; shorten the leading place name first.
-    while (fields.joinToString(" · ").length > 80) {
+    ).mapNotNull { it?.let { value -> spaceCompassExportFilePart(value,32) }?.takeIf(String::isNotBlank) }.toMutableList()
+    if (fields.isEmpty()) return spaceCompassExportFilePart(fallback,80).ifBlank { "Scenario" }
+    // Preserve every enabled field, shortening the longest component first.
+    while (fields.joinToString("_").let { it.length>80 || it.toByteArray(Charsets.UTF_8).size>220 }) {
         val index = fields.indices.maxBy { fields[it].length }
-        fields[index] = limited(fields[index], fields[index].length - 1)
+        fields[index] = spaceCompassLimitFileText(fields[index],fields[index].length-1)
     }
-    return fields.joinToString(" · ")
+    return fields.joinToString("_")
 }

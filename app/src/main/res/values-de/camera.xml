@@ -7,4 +7,7 @@
     <string name="camera_view_description">Live-Kameraansicht mit Himmelspositionen</string>
     <string name="camera_zoom_level">Zoom: %1$s</string>
     <string name="camera_photo_field_of_view">Bildwinkel H×V: %1$s × %2$s</string>
+    <string name="camera_object_transparency">Objekttransparenz</string>
+    <string name="camera_objects_translucent">Halbtransparente Objekte</string>
+    <string name="camera_objects_opaque">Undurchsichtige Objekte</string>
 </resources>

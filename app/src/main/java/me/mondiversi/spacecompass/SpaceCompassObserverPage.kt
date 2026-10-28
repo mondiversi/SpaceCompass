@@ -34,7 +34,6 @@ private fun SpaceCompassObserverEditor(observer: SpaceCompassObserverState, modi
     val context = LocalContext.current
     val resources = LocalResources.current
     val rejectSettingsExit = LocalSpaceCompassSettingsExitFailure.current
-    val suggestScenarioName = spaceCompassScenarioNameSuggestion()
     val feet = LocalSpaceCompassUnits.current.feet
     val numeric = LocalSpaceCompassNumericFormat.current
     fun displayHeight(meters: Double) = formatSpaceCompassNumber(if (feet) meters / .3048 else meters, 2, numeric, grouping = false)
@@ -248,7 +247,7 @@ private fun SpaceCompassObserverEditor(observer: SpaceCompassObserverState, modi
                     val namedImport = observer.archiveName?.takeUnless {
                         it == resources.getString(R.string.observer_title) || it == "Scenario"
                     }
-                    archive.copy(name = namedImport ?: suggestScenarioName(archive))
+                    archive.copy(name = namedImport ?: resources.getString(R.string.observer_title))
                 }
             }, onImport = { archive ->
                 // Discard old pending work before replacing the editor; disposal must not overwrite the imported file.

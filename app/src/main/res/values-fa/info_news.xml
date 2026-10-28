@@ -1,9 +1,9 @@
 <resources>
     <string name="info_news_title">تازه‌ترین تغییرات · %1$s</string>
-    <string name="info_news_star_sky" formatted="false">۱۰۰۹ جرم را با فیلتر علمی‌تخیلی و مراجع آسمانی نمایشی با برچسب روشن کاوش کنید.</string>
-    <string name="info_news_texture_downloads" formatted="false">بستهٔ گرافیکی ۱٫۷ ده تصویر و ده پیش‌نمایش مستقل اضافه می‌کند که جداگانه بارگیری، بررسی و برای استفادهٔ آفلاین ذخیره می‌شوند.</string>
-    <string name="info_news_weather" formatted="false">زمان تقریبی سفر را از سرعت‌های روزمره تا سرعت نور و سرعت‌های وارپ خیالی با واحدهای زمانی کوتاه مقایسه کنید.</string>
-    <string name="info_news_viewer_zoom" formatted="false">سناریوهای نام‌گذاری‌شده را همراه با حالت انتخاب‌شدهٔ ازسرگیری زمان ذخیره، اشتراک‌گذاری و وارد کنید.</string>
-    <string name="info_news_settings" formatted="false">خلاصهٔ روشن‌تر سناریوی فعلی با ارتفاع، منطقهٔ زمانی و آب‌وهوای خودکار، نام مکان‌های ذخیره‌شده و نمادهای تازه.</string>
-    <string name="info_news_catalog" formatted="false">تأیید تنظیمات هنگام خروج از صفحهٔ تغییریافته نمایش داده می‌شود. کنترل اجرام، شمارنده‌ها، رنگ‌ها و راهنماها بهبود یافته‌اند.</string>
+    <string name="info_news_star_sky" formatted="false">بزرگ‌نمایی دوربین اکنون کنار دکمهٔ ثبت تصویر است و مقدار انتخاب‌شده را حفظ می‌کند.</string>
+    <string name="info_news_texture_downloads" formatted="false">کنترل تازه اجرام آسمانی را روی تصویر دوربین نیمه‌شفاف می‌کند. عکس‌ها و خروجی‌ها شفافیت زمان ثبت را حفظ می‌کنند.</string>
+    <string name="info_news_weather" formatted="false">یک انتخاب مشترک و ذخیره‌شده برای قالب داده، اکنون در خروجی تصویر، جدول و سناریو به کار می‌رود.</string>
+    <string name="info_news_viewer_zoom" formatted="false">نام فایل‌های خروجی از زبان و قالب‌های انتخاب‌شده پیروی می‌کند؛ خط تیره درون بخش‌ها و زیرخط میان آن‌ها قرار می‌گیرد.</string>
+    <string name="info_news_settings" formatted="false">محافظ صفحهٔ زمین، نواحی واقعی روز و شب و آخرین موقعیت واقعی GPS را حتی در سمت پشت نشان می‌دهد.</string>
+    <string name="info_news_catalog" formatted="false">سناریوی کنونی اکنون شیوهٔ ازسرگیری را هم نشان می‌دهد. توضیح و جداسازی بخش‌های خروجی سناریو روشن‌تر شده است.</string>
 </resources>

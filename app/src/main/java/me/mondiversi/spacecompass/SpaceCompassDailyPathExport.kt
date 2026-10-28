@@ -47,9 +47,11 @@ internal fun rememberSpaceCompassDailyPathExport(path: SpaceCompassSunDailyPath,
         val selected=spaceCompassSingleOrbitPresentation(snapshot,profiles.selected)
         val international=spaceCompassSingleOrbitPresentation(snapshot,profiles.international)
         val key="orbit-${UUID.randomUUID()}"
-        val stem=spaceCompassPanoramaFileName(capturedAt).removeSuffix(".jpg")+"_${path.body.name.lowercase(java.util.Locale.ROOT)}_orbit"
         SpaceCompassDataExportSource(key,options.associateWith { 1 },initialPosition=SpaceCompassPanoramaPosition.AREA) { context,types,mode,position ->
             val profile=profiles.forMode(mode)
+            val stem=spaceCompassExportFileStem(capturedAt,profile.formatting,
+                if (position==SpaceCompassPanoramaPosition.HIDDEN) "UTC" else path.zone.id,
+                listOf(profile.strings.getString(path.body.nameResource),profile.strings.getString(R.string.celestial_orbits_title)))
             val presentation=spaceCompassSnapshotForDisclosure(if (mode==SpaceCompassPanoramaExportMode.SELECTED) selected else international,position)
             val directory=spaceCompassPageExportDirectory(context,key,mode,position)
             val place=if (position==SpaceCompassPanoramaPosition.HIDDEN) null else location?.let { fix ->

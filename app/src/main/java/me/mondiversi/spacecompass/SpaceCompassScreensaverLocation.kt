@@ -10,7 +10,7 @@ internal data class SpaceCompassScreensaverLocation(val latitude: Double, val lo
     val javascript: String get() = "[$latitude,$longitude]"
 }
 
-/** Keep the last usable effective position while live work is suspended or awaiting another fix. */
+/** Keep the last usable real-device position while live work is suspended or awaiting another fix. */
 internal fun spaceCompassScreensaverLocation(observer: SpaceCompassScreensaverSolarObserver?,
     previous: SpaceCompassScreensaverLocation?): SpaceCompassScreensaverLocation? {
     if (observer == null || !observer.latitude.isFinite() || observer.latitude !in -90.0..90.0 ||

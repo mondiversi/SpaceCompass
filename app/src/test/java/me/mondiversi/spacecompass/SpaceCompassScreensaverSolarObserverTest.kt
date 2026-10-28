@@ -14,8 +14,10 @@ class SpaceCompassScreensaverSolarObserverTest {
         assertTrue(observer.elevation(midnight) < -20)
     }
 
-    @Test fun aFixedScenarioDateKeepsItsChosenLightingWithoutLiveEphemerisWork() {
-        val observer = SpaceCompassScreensaverSolarObserver(45.31, 8.98, 70.0, noon)
-        assertEquals(observer.elevation(noon), observer.elevation(midnight), .000001)
+    @Test fun realTimeContinuesToChangeTheIdleLightingWithoutAFixedScenarioDate() {
+        val observer = SpaceCompassScreensaverSolarObserver(45.31, 8.98, 70.0)
+        assertEquals(calculateSpaceCompassSunPosition(midnight,45.31,8.98,70.0).elevationDegrees,
+            observer.elevation(midnight),.000001)
+        assertNotEquals(observer.elevation(noon),observer.elevation(midnight),1.0)
     }
 }

@@ -12,6 +12,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.graphics.graphicsLayer
 import androidx.compose.ui.layout.Layout
 import androidx.compose.ui.platform.LocalConfiguration
 import androidx.compose.ui.platform.LocalContext
@@ -35,7 +36,7 @@ internal const val SPACE_COMPASS_CELESTIAL_LIVE_PREVIEW_SIZE_DP = 32f
 internal fun SpaceCompassCelestialLiveMarker(body: SpaceCompassCelestialBody, projection: SpaceCompassSunProjection,
     belowHorizon: Boolean, point: SpaceCompassSunPathPoint?, state: SpaceCompassSunDailyPathUiState,
     moonPhase: SpaceCompassMoonPhase? = null,
-    path: SpaceCompassSunDailyPath? = null, interactive: Boolean = true, focused: Boolean = false) {
+    path: SpaceCompassSunDailyPath? = null, interactive: Boolean = true, focused: Boolean = false, objectOpacity: Float = 1f) {
     val name = stringResource(body.nameResource)
     val timeFormat = resolveSpaceCompassTimeFormat(LocalContext.current, LocalSpaceCompassTimeFormat.current)
     val locale = LocalConfiguration.current.locales[0]
@@ -62,6 +63,7 @@ internal fun SpaceCompassCelestialLiveMarker(body: SpaceCompassCelestialBody, pr
                 }
             }, contentAlignment = Alignment.Center) {
             SpaceCompassCelestialThumbnail(body, Modifier.size(SPACE_COMPASS_CELESTIAL_LIVE_PREVIEW_SIZE_DP.dp)
+                .graphicsLayer(alpha = objectOpacity)
                 .border(if (selected || focused) 1.8.dp else 0.8.dp,
                     when {
                         selected -> accent

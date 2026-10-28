@@ -7,4 +7,7 @@
     <string name="camera_view_description">תצוגת מצלמה חיה עם מיקומי גרמי השמיים</string>
     <string name="camera_zoom_level">זום: %1$s</string>
     <string name="camera_photo_field_of_view">שדה ראייה אופקי×אנכי: %1$s × %2$s</string>
+    <string name="camera_object_transparency">שקיפות עצמים</string>
+    <string name="camera_objects_translucent">עצמים שקופים למחצה</string>
+    <string name="camera_objects_opaque">עצמים אטומים</string>
 </resources>

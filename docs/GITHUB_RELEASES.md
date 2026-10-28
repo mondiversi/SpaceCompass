@@ -2,8 +2,8 @@
 
 Space Compass is distributed as a signed APK through
 [GitHub Releases](https://github.com/mondiversi/SpaceCompass/releases).
-The current stable release is **1.5.1**, tagged **v1.5.1**, application ID
-`me.mondiversi.spacecompass`, Android version name **1.5.1**, version code **51**,
+The current stable release is **1.5.2**, tagged **v1.5.2**, application ID
+`me.mondiversi.spacecompass`, Android version name **1.5.2**, version code **52**,
 minimum Android API 26. The three-part tag/version name retains compatibility with
 the signed update protocol used since preview 0.1.2.
 
@@ -338,9 +338,9 @@ pack 1.5 and older resource URLs remain unchanged; no complete texture ZIP is
 added. See the [release review](RELEASE_1_4_11.md).
 
 
-## 1.5.1 catalogue and graphics release
+## 1.5.0 catalogue and graphics release
 
-Version 1.5.1/code 50 publishes the 999-object catalogue, all 88 constellation patterns
+Version 1.5.0/code 50 publishes the 999-object catalogue, all 88 constellation patterns
 and stable graphics pack 1.6. The APK pins all 174 full images and 174
 previews to verified individual assets in that release. Publish and anonymously verify
 the graphics before publishing the matching APK. Graphics never become the latest app release.
@@ -348,3 +348,21 @@ Old releases, URLs and cache aliases remain available. No complete texture ZIP i
 The same distribution key signs the APK and update index. Twenty in-app news summaries,
 the reference-information archive and metadata reflect the exact tagged source.
 See [the release review](RELEASE_1_5_0.md) and [catalogue limits](CATALOG_999.md).
+
+
+## 1.5.1 scenarios and graphics
+
+Version 1.5.1/code 51 expands the catalogue to 1009 entries, adds portable named
+scenarios and travel-time comparisons, and pins incremental graphics collection 1.7.
+See [the release review](RELEASE_1_5_1.md).
+
+## 1.5.2 camera transparency, exports and Earth screensaver
+
+Version 1.5.2/code 52 adds saved camera-object translucency and shutter-side zoom,
+unifies export profiles and structured filenames, and shows scenario resumption
+in the summary. The screensaver uses real GPS and real UTC geographic daylight,
+including a dimmed far-side marker. All twenty in-app news summaries are refreshed.
+The existing certificate, signed update protocol, catalogue and immutable graphics
+collection 1.7 are retained. No new graphics release or complete texture ZIP is needed.
+The optional information archive reflects the exact tagged source.
+See [the release review](RELEASE_1_5_2.md).

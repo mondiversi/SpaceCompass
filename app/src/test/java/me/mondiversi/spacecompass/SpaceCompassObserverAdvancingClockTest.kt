@@ -122,12 +122,12 @@ class SpaceCompassObserverAdvancingClockTest {
         assertEquals(request, plan.dataRequestTimeMs(now + 60_000, rome))
     }
 
-    @Test fun advancingClockAndScreensaverUseTheSameInstantAcrossADaylightSavingChange() {
+    @Test fun scenarioClockKeepsItsOffsetButScreensaverFollowsRealTimeAcrossDaylightSaving() {
         val plan = running().copy(clockOffsetMs = 5 * 3_600_000L)
         val before = ms("2026-10-25T00:30:00Z")
         assertEquals(3_600_000L, plan.observationTimeMs(before + 3_600_000L, rome) - plan.observationTimeMs(before, rome))
-        val screensaver = SpaceCompassScreensaverSolarObserver(45.0, 9.0, 100.0, observerPlan = plan)
-        assertEquals(calculateSpaceCompassSunPosition(plan.observationTimeMs(before), 45.0, 9.0, 100.0).elevationDegrees,
+        val screensaver = SpaceCompassScreensaverSolarObserver(45.0, 9.0, 100.0)
+        assertEquals(calculateSpaceCompassSunPosition(before, 45.0, 9.0, 100.0).elevationDegrees,
             screensaver.elevation(before), 0.0)
     }
 }

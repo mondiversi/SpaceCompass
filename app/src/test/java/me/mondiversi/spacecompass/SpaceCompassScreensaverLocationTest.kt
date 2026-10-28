@@ -19,14 +19,14 @@ class SpaceCompassScreensaverLocationTest {
             assertSame(previous, spaceCompassScreensaverLocation(observer, previous))
     }
 
-    @Test fun theEffectiveScenarioPositionReplacesThePreviousFix() {
+    @Test fun aFreshRealGpsFixReplacesThePreviousFix() {
         val previous = SpaceCompassScreensaverLocation(45.31, 8.98)
-        val scenario = SpaceCompassScreensaverSolarObserver(28.5, -14.0)
+        val device = SpaceCompassScreensaverSolarObserver(28.5, -14.0)
         assertEquals(SpaceCompassScreensaverLocation(28.5, -14.0),
-            spaceCompassScreensaverLocation(scenario, previous))
+            spaceCompassScreensaverLocation(device, previous))
         assertEquals(previous, spaceCompassScreensaverLocation(
             SpaceCompassScreensaverSolarObserver(45.31, 8.98),
-            spaceCompassScreensaverLocation(scenario, previous)))
+            spaceCompassScreensaverLocation(device, previous)))
     }
 
     @Test fun serializationIsNumericEvenWithADecimalCommaLocale() {

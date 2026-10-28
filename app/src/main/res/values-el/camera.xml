@@ -7,4 +7,7 @@
     <string name="camera_view_description">Ζωντανή προβολή κάμερας με θέσεις ουράνιων σωμάτων</string>
     <string name="camera_zoom_level">Μεγέθυνση: %1$s</string>
     <string name="camera_photo_field_of_view">Οπτικό πεδίο Ο×Κ: %1$s × %2$s</string>
+    <string name="camera_object_transparency">Διαφάνεια αντικειμένων</string>
+    <string name="camera_objects_translucent">Ημιδιαφανή αντικείμενα</string>
+    <string name="camera_objects_opaque">Αδιαφανή αντικείμενα</string>
 </resources>

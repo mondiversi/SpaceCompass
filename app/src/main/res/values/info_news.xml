@@ -1,9 +1,9 @@
 <resources>
     <string name="info_news_title">Latest news · %1$s</string>
-    <string name="info_news_star_sky" formatted="false">Explore 1009 objects with a Science fiction filter and clearly identified illustrative celestial references.</string>
-    <string name="info_news_texture_downloads" formatted="false">Graphics pack 1.7 adds ten images and ten independent previews, downloaded individually, verified and cached offline.</string>
-    <string name="info_news_weather" formatted="false">Compare estimated travel times from everyday speeds to light speed and fictional warp speeds, with compact duration units.</string>
-    <string name="info_news_viewer_zoom" formatted="false">Save, share and import named scenarios, including the selected time-resumption policy.</string>
-    <string name="info_news_settings" formatted="false">Clearer current-scenario summary with automatic altitude, time zone and weather, cached place names and revised icons.</string>
-    <string name="info_news_catalog" formatted="false">Settings confirmation appears when leaving a modified settings page. Refined object controls, counters, colours and callouts.</string>
+    <string name="info_news_star_sky" formatted="false">Camera zoom now sits beside the capture button, with the same saved zoom level.</string>
+    <string name="info_news_texture_downloads" formatted="false">A new control makes celestial objects translucent over the camera. Photos and exports retain the transparency used at capture.</string>
+    <string name="info_news_weather" formatted="false">One remembered data-format choice now applies to image, table and scenario exports.</string>
+    <string name="info_news_viewer_zoom" formatted="false">Export filenames follow the chosen language and formats, with hyphens within fields and underscores between them.</string>
+    <string name="info_news_settings" formatted="false">The Earth screensaver uses real geographic day and night and the last known real GPS position, also visible on the far side.</string>
+    <string name="info_news_catalog" formatted="false">Current scenario now shows its resumption policy. Scenario exports have a clearer description and field separation.</string>
 </resources>

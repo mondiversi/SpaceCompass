@@ -61,7 +61,7 @@ class SpaceCompassScenarioSummaryUiTest {
         val weather = mutableStateOf(SpaceCompassSunWeatherReading(
             SpaceCompassSunWeatherSnapshot(SpaceCompassSunWeatherKind.CLEAR, 0f, moment)))
         dialog(weather = weather, onCustomize = { customized = true }, onDismiss = { dismissed = true })
-        for (key in listOf("position", "altitude", "zone", "date", "time", "speed", "weather")) {
+        for (key in listOf("position", "altitude", "zone", "date", "time", "speed", "weather", "resume")) {
             compose.onNodeWithTag("observer-summary-$key-value", useUnmergedTree = true).assertExists()
         }
         compose.onNodeWithTag("observer-summary-altitude-value", useUnmergedTree = true).assertTextEquals("112.00 m")
@@ -70,6 +70,11 @@ class SpaceCompassScenarioSummaryUiTest {
         compose.onNodeWithText(context.getString(R.string.scene_scenario_off)).assertDoesNotExist()
         compose.onNodeWithTag("observer-summary-speed-value", useUnmergedTree = true).assertTextEquals(
             context.getString(R.string.scenario_time_forward) + " · 1×")
+        compose.onNodeWithTag("observer-summary-resume-value", useUnmergedTree = true).assertTextEquals(
+            context.getString(R.string.scenario_restart))
+        val weatherRow = compose.onNodeWithTag("observer-summary-weather").fetchSemanticsNode().boundsInRoot
+        val resumeRow = compose.onNodeWithTag("observer-summary-resume").fetchSemanticsNode().boundsInRoot
+        assertTrue(resumeRow.top >= weatherRow.bottom)
         val close = compose.onNodeWithTag("scenario-summary-close").fetchSemanticsNode().boundsInRoot
         val customize = compose.onNodeWithTag("scenario-summary-customize").fetchSemanticsNode().boundsInRoot
         assertTrue("Customize precedes Close in the right-aligned action row", customize.right <= close.left)

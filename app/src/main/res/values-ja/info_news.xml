@@ -1,9 +1,9 @@
 <resources>
     <string name="info_news_title">最近の変更 · %1$s</string>
-    <string name="info_news_star_sky" formatted="false">SFフィルターと、説明用であることを明示した天体の参照方向で、1009個の天体・対象を探索できます。</string>
-    <string name="info_news_texture_downloads" formatted="false">グラフィックパック1.7に10枚の画像と10枚の独立したプレビューを追加。個別にダウンロード・検証し、オフラインで保存します。</string>
-    <string name="info_news_weather" formatted="false">日常の速度から光速、架空のワープ速度まで、短い時間単位で推定旅行時間を比較できます。</string>
-    <string name="info_news_viewer_zoom" formatted="false">時間の再開方法も含めて、名前付きのシナリオを保存・共有・インポートできます。</string>
-    <string name="info_news_settings" formatted="false">現在のシナリオの概要を改善。高度・タイムゾーン・天気の自動設定、保存した地名、新しいアイコンを表示します。</string>
-    <string name="info_news_catalog" formatted="false">設定変更の確認は、変更した設定画面を閉じるときに表示します。対象の操作、カウンター、色、吹き出しも改善しました。</string>
+    <string name="info_news_star_sky" formatted="false">カメラのズームが撮影ボタンの隣に移動し、選択した倍率を保持します。</string>
+    <string name="info_news_texture_downloads" formatted="false">カメラに重ねた天体を半透明にする操作を追加しました。写真と書き出しには撮影時の透明度が保持されます。</string>
+    <string name="info_news_weather" formatted="false">画像・表・シナリオの書き出しで、保存された共通のデータ形式設定を使用します。</string>
+    <string name="info_news_viewer_zoom" formatted="false">書き出すファイル名は選択した言語と形式に従い、項目内をハイフン、項目間をアンダースコアで区切ります。</string>
+    <string name="info_news_settings" formatted="false">地球のスクリーンセーバーは実際の昼夜と最後に取得した実際の GPS 位置を表示し、裏側でも位置を確認できます。</string>
+    <string name="info_news_catalog" formatted="false">現在のシナリオに再開方法を表示します。シナリオ書き出しの説明と項目の区切りが明確になりました。</string>
 </resources>

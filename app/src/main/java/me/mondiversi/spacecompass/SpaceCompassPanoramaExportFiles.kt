@@ -33,7 +33,7 @@ internal data class SpaceCompassPreparedCaptureExport(val files: List<File>) {
 internal fun prepareSpaceCompassCaptureExport(context: Context, data: SpaceCompassPanoramaPreviewData,
     types: Set<SpaceCompassCaptureExportType>, position: SpaceCompassPanoramaPosition,
     labels: SpaceCompassPanoramaLabelMode, mode: SpaceCompassPanoramaExportMode,
-    center: SpaceCompassPanoramaCenter): SpaceCompassPreparedCaptureExport {
+    center: SpaceCompassPanoramaCenter, profile: SpaceCompassDataExportProfile? = null): SpaceCompassPreparedCaptureExport {
     require(types.isNotEmpty())
     val files = SpaceCompassCaptureExportType.entries.filter { it in types }.map { type ->
         if (type == SpaceCompassCaptureExportType.IMAGE) {
@@ -60,7 +60,20 @@ internal fun prepareSpaceCompassCaptureExport(context: Context, data: SpaceCompa
             target
         }
     }
-    return SpaceCompassPreparedCaptureExport(files)
+    val snapshot = if (mode == SpaceCompassPanoramaExportMode.SELECTED) data.selectedPresentation?.snapshot else data.snapshot
+    val formatting = snapshot?.formatting ?: profile?.formatting ?: spaceCompassPanoramaInternationalFormatting
+    val title = profile?.strings?.getString(if (data.cameraPhoto == null) R.string.panorama_preview_title
+        else R.string.camera_capture_preview_title) ?: if (data.cameraPhoto == null) "Panorama" else "Photo"
+    val stem = spaceCompassExportFileStem(data.timeMs,formatting,
+        if (position==SpaceCompassPanoramaPosition.HIDDEN) "UTC" else snapshot?.zoneId ?: "UTC",listOf(title))
+    val directory = File(data.file.parentFile,"named-exports/" + spaceCompassPanoramaVariantKey(position,labels,mode,center))
+    check(directory.isDirectory || directory.mkdirs())
+    // Name delivery copies only: the frozen preview, render cache, EXIF privacy and image bytes stay intact.
+    return SpaceCompassPreparedCaptureExport(files.map { file ->
+        writeSpaceCompassPageExportFile(directory,"$stem.${file.extension}") { output ->
+            file.inputStream().use { it.copyTo(output) }
+        }
+    })
 }
 
 internal fun shareSpaceCompassCaptureExport(context: Context, batch: SpaceCompassPreparedCaptureExport, title: String) {

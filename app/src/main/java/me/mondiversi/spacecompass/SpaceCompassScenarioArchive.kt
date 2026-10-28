@@ -87,5 +87,5 @@ internal fun spaceCompassScenarioFileName(name: String): String {
     val safe = name.trim().removeSuffix(SPACE_COMPASS_SCENARIO_EXTENSION)
         .replace(Regex("[\\\\/:*?\"<>|\\p{Cntrl}]"), "_").trim().trim('.')
     require(safe.isNotBlank())
-    return safe.take(80) + SPACE_COMPASS_SCENARIO_EXTENSION
+    return spaceCompassLimitFileText(safe,80,trimDelimiters=false) + SPACE_COMPASS_SCENARIO_EXTENSION
 }

@@ -5,7 +5,7 @@ import kotlin.math.*
 
 /** Sun-facing seasonal view, with ecliptic north up. The geographic axis keeps its obliquity;
  * its apparent roll and its lean toward the viewer change continuously around the orbit.
- * Lighting and accelerated spin remain the screensaver's illustrative local day/night scene.
+ * Visual spin is accelerated; Earth-fixed lighting always uses the real solar direction.
  * https://science.nasa.gov/earth/earth-observatory/an-epic-view-of-the-seasons/
  */
 internal data class SpaceCompassScreensaverSeason(val rollRadians: Double, val pitchRadians: Double,
@@ -14,10 +14,8 @@ internal data class SpaceCompassScreensaverSeason(val rollRadians: Double, val p
     val javascript: String get() = "[$rollRadians,$pitchRadians]"
 }
 
-/** Independent of GPS, locale and hemisphere; a custom/advancing scenario uses its effective instant. */
-internal fun spaceCompassScreensaverSeason(nowMs: Long,
-    plan: SpaceCompassObserverPlan? = null): SpaceCompassScreensaverSeason {
-    val timeMs = plan?.observationTimeMs(nowMs) ?: nowMs
+/** Independent of GPS, locale, hemisphere and simulated dates: the saver uses the real season. */
+internal fun spaceCompassScreensaverSeason(timeMs: Long): SpaceCompassScreensaverSeason {
     val obliquity = spaceCompassSkyReferenceObliquity(timeMs)
     val epsilon = Math.toRadians(obliquity)
     val longitude = Math.toRadians(sunPosition(spaceCompassAstronomyTime(timeMs)).elon)

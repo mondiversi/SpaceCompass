@@ -1,9 +1,9 @@
 <resources>
     <string name="info_news_title">最新变化 · %1$s</string>
-    <string name="info_news_star_sky" formatted="false">探索1009个对象，新增科幻筛选，并清楚标明用于示意的天体参考方向。</string>
-    <string name="info_news_texture_downloads" formatted="false">图形包1.7新增十张图片和十张独立预览图，支持逐个下载、校验和离线缓存。</string>
-    <string name="info_news_weather" formatted="false">以简洁的时长单位，比较从日常速度到光速及虚构曲速的预计旅行时间。</string>
-    <string name="info_news_viewer_zoom" formatted="false">保存、分享和导入命名场景，同时保留所选的时间恢复方式。</string>
-    <string name="info_news_settings" formatted="false">当前场景摘要更加清晰，显示自动海拔、时区和天气、已缓存的地名以及更新后的图标。</string>
-    <string name="info_news_catalog" formatted="false">离开已修改的设置页面时才显示保存确认。优化了对象操作、计数标记、颜色和信息气泡。</string>
+    <string name="info_news_star_sky" formatted="false">相机变焦现在位于拍摄按钮旁，并保留所选变焦级别。</string>
+    <string name="info_news_texture_downloads" formatted="false">新增控制可将相机画面上的天体设为半透明。照片及导出内容保留拍摄时使用的透明度。</string>
+    <string name="info_news_weather" formatted="false">图片、表格和场景导出现在共用同一项已保存的数据格式选择。</string>
+    <string name="info_news_viewer_zoom" formatted="false">导出文件名遵循所选语言和格式，字段内使用连字符，字段之间使用下划线。</string>
+    <string name="info_news_settings" formatted="false">地球屏保按真实昼夜照明，并显示最后已知的真实 GPS 位置，在地球背面也可见。</string>
+    <string name="info_news_catalog" formatted="false">当前场景现在显示恢复模式。场景导出的说明和字段分隔更加清晰。</string>
 </resources>

@@ -7,4 +7,7 @@
     <string name="camera_view_description">천체 위치가 표시되는 실시간 카메라 보기</string>
     <string name="camera_zoom_level">확대/축소: %1$s</string>
     <string name="camera_photo_field_of_view">화각 가로×세로: %1$s × %2$s</string>
+    <string name="camera_object_transparency">천체 투명도</string>
+    <string name="camera_objects_translucent">반투명 천체</string>
+    <string name="camera_objects_opaque">불투명 천체</string>
 </resources>

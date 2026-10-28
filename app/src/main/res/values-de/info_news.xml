@@ -1,9 +1,9 @@
 <resources>
     <string name="info_news_title">Neuigkeiten · %1$s</string>
-    <string name="info_news_star_sky" formatted="false">Entdecke 1009 Objekte mit einem Science-Fiction-Filter und klar gekennzeichneten illustrativen Himmelsreferenzen.</string>
-    <string name="info_news_texture_downloads" formatted="false">Grafikpaket 1.7 ergänzt zehn Bilder und zehn unabhängige Vorschaubilder, einzeln heruntergeladen, geprüft und offline gespeichert.</string>
-    <string name="info_news_weather" formatted="false">Vergleiche geschätzte Reisezeiten von alltäglichen Geschwindigkeiten bis zu Lichtgeschwindigkeit und fiktivem Warp mit kompakten Zeiteinheiten.</string>
-    <string name="info_news_viewer_zoom" formatted="false">Speichere, teile und importiere benannte Szenarien einschließlich der gewählten Zeitfortsetzung.</string>
-    <string name="info_news_settings" formatted="false">Übersichtlichere Szenariozusammenfassung mit automatischer Höhe, Zeitzone und Wetter, gespeicherten Ortsnamen und überarbeiteten Symbolen.</string>
-    <string name="info_news_catalog" formatted="false">Die Einstellungsbestätigung erscheint beim Verlassen einer geänderten Einstellungsseite. Verbesserte Objektsteuerung, Zähler, Farben und Hinweisfelder.</string>
+    <string name="info_news_star_sky" formatted="false">Der Kamerazoom befindet sich jetzt neben der Aufnahmetaste und behält die gewählte Zoomstufe bei.</string>
+    <string name="info_news_texture_downloads" formatted="false">Eine neue Steuerung macht Himmelsobjekte im Kamerabild durchscheinend. Fotos und Exporte behalten die Transparenz der Aufnahme bei.</string>
+    <string name="info_news_weather" formatted="false">Eine gemeinsame, gespeicherte Datenformatauswahl gilt jetzt für Bild-, Tabellen- und Szenarioexporte.</string>
+    <string name="info_news_viewer_zoom" formatted="false">Exportierte Dateinamen folgen der gewählten Sprache und den Formaten, mit Bindestrichen innerhalb und Unterstrichen zwischen den Feldern.</string>
+    <string name="info_news_settings" formatted="false">Der Erd-Bildschirmschoner zeigt die tatsächlichen Tag- und Nachtgebiete sowie die letzte reale GPS-Position, auch auf der Rückseite.</string>
+    <string name="info_news_catalog" formatted="false">Das aktuelle Szenario zeigt nun seinen Fortsetzungsmodus. Szenarioexporte haben eine klarere Beschreibung und Feldtrennung.</string>
 </resources>

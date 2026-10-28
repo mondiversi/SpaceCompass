@@ -7,4 +7,7 @@
     <string name="camera_view_description">Live camera with celestial positions</string>
     <string name="camera_zoom_level">Zoom: %1$s</string>
     <string name="camera_photo_field_of_view">Field of view H×V: %1$s × %2$s</string>
+    <string name="camera_object_transparency">Object transparency</string>
+    <string name="camera_objects_translucent">Translucent objects</string>
+    <string name="camera_objects_opaque">Opaque objects</string>
 </resources>
