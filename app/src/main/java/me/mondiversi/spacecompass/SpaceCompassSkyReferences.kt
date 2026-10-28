@@ -8,11 +8,11 @@ import kotlin.math.*
  * https://aa.usno.navy.mil/faq/asa_glossary
  */
 internal enum class SpaceCompassSkyReference(val label: String, val tint: Int) {
-    EQUATOR("Celestial equator", 0xff8be5d1.toInt()),
-    CANCER("Tropic of Cancer (sky projection)", 0xffffd18a.toInt()),
-    CAPRICORN("Tropic of Capricorn (sky projection)", 0xffffd18a.toInt()),
-    ARCTIC("Arctic Circle (sky projection)", 0xff9fd4ff.toInt()),
-    ANTARCTIC("Antarctic Circle (sky projection)", 0xff9fd4ff.toInt())
+    EQUATOR("Equator (celestial)", 0xff8be5d1.toInt()),
+    CANCER("Tropic of Cancer (celestial)", 0xffffd18a.toInt()),
+    CAPRICORN("Tropic of Capricorn (celestial)", 0xffffd18a.toInt()),
+    ARCTIC("Arctic Circle (celestial)", 0xff9fd4ff.toInt()),
+    ANTARCTIC("Antarctic Circle (celestial)", 0xff9fd4ff.toInt())
 }
 
 internal data class SpaceCompassSkyReferenceCircle(val reference: SpaceCompassSkyReference,

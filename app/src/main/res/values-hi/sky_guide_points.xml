@@ -1,4 +1,4 @@
 <resources>
-    <string name="sky_reference_zenith">शीर्षबिंदु</string>
-    <string name="sky_reference_nadir">अधोबिंदु</string>
+    <string name="sky_reference_zenith">शीर्षबिंदु (खगोलीय)</string>
+    <string name="sky_reference_nadir">अधोबिंदु (खगोलीय)</string>
 </resources>

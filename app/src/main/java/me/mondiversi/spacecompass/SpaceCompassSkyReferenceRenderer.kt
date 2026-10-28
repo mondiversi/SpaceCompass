@@ -17,12 +17,12 @@ internal fun drawSpaceCompassSkyReferences(canvas: Canvas, latitude: Double, tim
     minimumLabelY: Float = 0f,
     circles: List<SpaceCompassSkyReferenceCircle>? = null,
     referenceNames: Map<SpaceCompassSkyReference, String> = emptyMap(),
-    poleNames: Pair<String, String> = "North celestial pole" to "South celestial pole",
+    poleNames: Pair<String, String> = "North Pole (celestial)" to "South Pole (celestial)",
     allowLabelOverlap: Boolean = true, showLabels: Boolean = true,
     numericFormat: SpaceCompassNumericFormat = SpaceCompassNumericFormat.INTERNATIONAL,
     systemLocale: java.util.Locale = java.util.Locale.getDefault(),
     centerAzimuthDegrees: Double = 180.0,
-    observerPointNames: Pair<String, String> = "Nadir" to "Zenith",
+    observerPointNames: Pair<String, String> = "Nadir (celestial)" to "Zenith (celestial)",
     observerAltitude: Double = 0.0,
     placementState: SpaceCompassSkyReferencePlacementState? = null): SpaceCompassSkyReferenceDrawing {
     placementState?.viewport(width, height, scale)

@@ -1,4 +1,4 @@
 <resources>
-    <string name="sky_reference_zenith">سرسو</string>
-    <string name="sky_reference_nadir">سمت‌القدم</string>
+    <string name="sky_reference_zenith">سرسو (آسمانی)</string>
+    <string name="sky_reference_nadir">سمت‌القدم (آسمانی)</string>
 </resources>

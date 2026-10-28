@@ -1,11 +1,11 @@
 <resources>
-    <string name="sky_reference_equator">Równik niebieski</string>
-    <string name="sky_reference_cancer">Zwrotnik Raka</string>
-    <string name="sky_reference_capricorn">Zwrotnik Koziorożca</string>
-    <string name="sky_reference_arctic">Koło podbiegunowe północne</string>
-    <string name="sky_reference_antarctic">Koło podbiegunowe południowe</string>
-    <string name="sky_reference_north_pole">Północny biegun niebieski</string>
-    <string name="sky_reference_south_pole">Południowy biegun niebieski</string>
+    <string name="sky_reference_equator">Równik (niebieski)</string>
+    <string name="sky_reference_cancer">Zwrotnik Raka (niebieski)</string>
+    <string name="sky_reference_capricorn">Zwrotnik Koziorożca (niebieski)</string>
+    <string name="sky_reference_arctic">Koło podbiegunowe północne (niebieskie)</string>
+    <string name="sky_reference_antarctic">Koło podbiegunowe południowe (niebieskie)</string>
+    <string name="sky_reference_north_pole">Biegun północny (niebieski)</string>
+    <string name="sky_reference_south_pole">Biegun południowy (niebieski)</string>
     <string name="sky_references_hide">Ukryj linie odniesienia na niebie</string>
     <string name="sky_references_show">Pokaż linie odniesienia na niebie</string>
 </resources>

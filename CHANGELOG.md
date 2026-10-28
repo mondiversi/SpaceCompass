@@ -2,6 +2,7 @@
 
 ## 1.5.3 — 2026-10-28
 
+- Standardize every celestial guide label with a compact parenthesized qualifier in all twenty languages, live views, camera photos, panoramas and both export profiles. Retain the published 1.5.3 version/code while replacing its source tag and signed assets in place.
 - Open Scenario management directly from the main view, replacing the intermediate summary dialog. Seven independent menu cards lead to Position, Altitude, Time zone, Date, Time, Time speed and Resumption. Keep the current effective values and cached locality in the menu, use trailing toolbar activation checkboxes, and retain full disabled forms in grey with consistent descriptions and 300 ms transitions.
 - Offer optional automatic-value completion in scenario exports. The export dialog starts unchecked, in the order Name → automatic-values checkbox → divider → Data format. Save/Share require configured values or a complete effective snapshot. Complete copies use the applied position, altitude, zone and instant, retain clock/resumption choices, do not mutate the observer, reject missing or unsupported data, and preserve canonical version-1 file compatibility.
 - Add persisted Origin (all/real/fiction) and Pointing (all/available/unavailable) filters alongside Type and Visibility. Pointing requires a valid direction, not a distance or an above-horizon position. Preserve selected objects as pinned visible exceptions, keep counts aligned with the displayed results, and do not reuse observations from a different scenario.

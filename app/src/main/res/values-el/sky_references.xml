@@ -1,11 +1,11 @@
 <resources>
-    <string name="sky_reference_equator">Ουράνιος ισημερινός</string>
-    <string name="sky_reference_cancer">Τροπικός του Καρκίνου</string>
-    <string name="sky_reference_capricorn">Τροπικός του Αιγόκερω</string>
-    <string name="sky_reference_arctic">Αρκτικός κύκλος</string>
-    <string name="sky_reference_antarctic">Ανταρκτικός κύκλος</string>
-    <string name="sky_reference_north_pole">Βόρειος ουράνιος πόλος</string>
-    <string name="sky_reference_south_pole">Νότιος ουράνιος πόλος</string>
+    <string name="sky_reference_equator">Ισημερινός (ουράνιος)</string>
+    <string name="sky_reference_cancer">Τροπικός του Καρκίνου (ουράνιος)</string>
+    <string name="sky_reference_capricorn">Τροπικός του Αιγόκερω (ουράνιος)</string>
+    <string name="sky_reference_arctic">Αρκτικός κύκλος (ουράνιος)</string>
+    <string name="sky_reference_antarctic">Ανταρκτικός κύκλος (ουράνιος)</string>
+    <string name="sky_reference_north_pole">Βόρειος πόλος (ουράνιος)</string>
+    <string name="sky_reference_south_pole">Νότιος πόλος (ουράνιος)</string>
     <string name="sky_references_hide">Απόκρυψη ουράνιων αναφορών</string>
     <string name="sky_references_show">Εμφάνιση ουράνιων αναφορών</string>
 </resources>

@@ -1,4 +1,4 @@
 <resources>
-    <string name="sky_reference_zenith">Ζενίθ</string>
-    <string name="sky_reference_nadir">Ναδίρ</string>
+    <string name="sky_reference_zenith">Ζενίθ (ουράνιο)</string>
+    <string name="sky_reference_nadir">Ναδίρ (ουράνιο)</string>
 </resources>

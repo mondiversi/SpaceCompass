@@ -1,4 +1,4 @@
 <resources>
-    <string name="sky_reference_zenith">Kilele cha anga</string>
-    <string name="sky_reference_nadir">Nadir</string>
+    <string name="sky_reference_zenith">Kilele cha anga (angani)</string>
+    <string name="sky_reference_nadir">Nadir (angani)</string>
 </resources>

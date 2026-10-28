@@ -1,4 +1,4 @@
 <resources>
-    <string name="sky_reference_zenith">Зенит</string>
-    <string name="sky_reference_nadir">Надир</string>
+    <string name="sky_reference_zenith">Зенит (небесный)</string>
+    <string name="sky_reference_nadir">Надир (небесный)</string>
 </resources>

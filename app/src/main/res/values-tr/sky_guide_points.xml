@@ -1,4 +1,4 @@
 <resources>
-    <string name="sky_reference_zenith">Başucu</string>
-    <string name="sky_reference_nadir">Nadir</string>
+    <string name="sky_reference_zenith">Başucu (göksel)</string>
+    <string name="sky_reference_nadir">Nadir (göksel)</string>
 </resources>

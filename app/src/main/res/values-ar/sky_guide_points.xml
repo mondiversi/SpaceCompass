@@ -1,4 +1,4 @@
 <resources>
-    <string name="sky_reference_zenith">سمت الرأس</string>
-    <string name="sky_reference_nadir">سمت القدم</string>
+    <string name="sky_reference_zenith">سمت الرأس (سماوي)</string>
+    <string name="sky_reference_nadir">سمت القدم (سماوي)</string>
 </resources>

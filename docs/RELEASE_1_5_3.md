@@ -35,3 +35,12 @@ compilation and release lint. Verify the retained certificate, non-debuggable/te
 16-KiB alignment and exact source revision embedded in the APK. Check the same-key phone update,
 hosted checks, public source tree and anonymous release downloads. Connected instrumentation is
 not executed without separate authorization; record those categories independently in metadata.
+
+
+## Same-version label correction
+
+The 1.5.3 assets were rebuilt in place to use a compact parenthesized celestial qualifier
+for all guide names, including the equator, tropics, polar circles, both poles, zenith and nadir.
+Localized live/preview text and international renderer defaults follow the same convention.
+Positions, angles, geometry, catalogue data, image resources and saved preferences are unchanged.
+The source tag, signed update index and optional reference archive match the replacement APK.
