@@ -1,9 +1,9 @@
 <resources>
     <string name="info_news_title">Últimas novidades · %1$s</string>
-    <string name="info_news_star_sky" formatted="false">O zoom da câmara fica agora junto ao botão de captura e mantém o nível escolhido.</string>
-    <string name="info_news_texture_downloads" formatted="false">Um novo controlo torna os objetos translúcidos sobre a câmara. As fotografias e exportações mantêm a transparência usada na captura.</string>
-    <string name="info_news_weather" formatted="false">Uma única escolha de formato de dados, memorizada, aplica-se às exportações de imagens, tabelas e cenários.</string>
-    <string name="info_news_viewer_zoom" formatted="false">Os nomes dos ficheiros exportados seguem o idioma e os formatos escolhidos, com hífenes dentro dos campos e sublinhados entre campos.</string>
-    <string name="info_news_settings" formatted="false">O protetor de ecrã da Terra segue o dia e a noite reais e mostra a última posição GPS real, também no lado oculto.</string>
-    <string name="info_news_catalog" formatted="false">O cenário atual mostra agora o modo de retoma. A exportação de cenários tem uma descrição e uma separação de campos mais claras.</string>
+    <string name="info_news_star_sky" formatted="false">A gestão de cenários abre diretamente, com um ecrã para cada parâmetro e os valores atuais no menu.</string>
+    <string name="info_news_texture_downloads" formatted="false">Ative os valores personalizados na barra de título. Os campos automáticos continuam visíveis a cinzento, com descrições mais claras.</string>
+    <string name="info_news_weather" formatted="false">Inclua os valores automáticos na exportação para partilhar um cenário completo do momento atual sem alterar as definições da aplicação.</string>
+    <string name="info_news_viewer_zoom" formatted="false">Novos filtros Origem e Apontamento junto de Tipo e Visibilidade, com contagens de resultados e preferências guardadas.</string>
+    <string name="info_news_settings" formatted="false">Os fundos das categorias são coerentes na lista de objetos e no filtro Tipo, tanto no tema claro como no escuro.</string>
+    <string name="info_news_catalog" formatted="false">Campos de filtro mais compactos e uniformes. Os ficheiros de cenário mantêm a compatibilidade e as opções de retoma.</string>
 </resources>

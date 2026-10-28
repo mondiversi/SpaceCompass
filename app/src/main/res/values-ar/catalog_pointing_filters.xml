@@ -1,0 +1,7 @@
+<resources>
+    <string name="catalog_origin">الأصل</string>
+    <string name="catalog_origin_real">حقيقية</string>
+    <string name="catalog_pointing">التوجيه</string>
+    <string name="catalog_pointing_available">متاح</string>
+    <string name="catalog_pointing_unavailable">غير متاح</string>
+</resources>

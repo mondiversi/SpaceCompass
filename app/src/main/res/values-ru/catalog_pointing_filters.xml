@@ -1,0 +1,7 @@
+<resources>
+    <string name="catalog_origin">Происхождение</string>
+    <string name="catalog_origin_real">Реальные</string>
+    <string name="catalog_pointing">Наведение</string>
+    <string name="catalog_pointing_available">Доступно</string>
+    <string name="catalog_pointing_unavailable">Недоступно</string>
+</resources>

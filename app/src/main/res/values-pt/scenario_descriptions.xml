@@ -1,0 +1,7 @@
+<resources>
+    <string name="scenario_position_description">Escolha o local a partir do qual observar o céu.</string>
+    <string name="scenario_altitude_description">Defina a altitude usada no cenário.</string>
+    <string name="scenario_zone_description">Escolha o fuso horário para a data e a hora do cenário.</string>
+    <string name="scenario_date_description">Escolha a data para calcular as posições dos objetos.</string>
+    <string name="scenario_time_description">Defina a hora no fuso horário do cenário.</string>
+</resources>

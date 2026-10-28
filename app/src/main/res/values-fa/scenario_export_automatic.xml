@@ -1,0 +1,5 @@
+<resources>
+    <string name="scenario_export_include_automatic">مقادیر خودکار نیز گنجانده شوند</string>
+    <string name="scenario_export_automatic_description">سناریو را با مکان، ارتفاع، منطقه زمانی، تاریخ و ساعت مورد استفاده فعلی تکمیل کنید.</string>
+    <string name="scenario_export_automatic_unavailable">مقادیر خودکار ناقص هستند، دوباره تلاش کنید</string>
+</resources>

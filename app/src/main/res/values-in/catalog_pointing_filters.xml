@@ -1,0 +1,7 @@
+<resources>
+    <string name="catalog_origin">Asal</string>
+    <string name="catalog_origin_real">Nyata</string>
+    <string name="catalog_pointing">Arah</string>
+    <string name="catalog_pointing_available">Tersedia</string>
+    <string name="catalog_pointing_unavailable">Tidak tersedia</string>
+</resources>

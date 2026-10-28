@@ -2,8 +2,8 @@
 
 Space Compass is distributed as a signed APK through
 [GitHub Releases](https://github.com/mondiversi/SpaceCompass/releases).
-The current stable release is **1.5.2**, tagged **v1.5.2**, application ID
-`me.mondiversi.spacecompass`, Android version name **1.5.2**, version code **52**,
+The current stable release is **1.5.3**, tagged **v1.5.3**, application ID
+`me.mondiversi.spacecompass`, Android version name **1.5.3**, version code **53**,
 minimum Android API 26. The three-part tag/version name retains compatibility with
 the signed update protocol used since preview 0.1.2.
 
@@ -366,3 +366,15 @@ The existing certificate, signed update protocol, catalogue and immutable graphi
 collection 1.7 are retained. No new graphics release or complete texture ZIP is needed.
 The optional information archive reflects the exact tagged source.
 See [the release review](RELEASE_1_5_2.md).
+
+
+## 1.5.3 scenario management and catalogue filters
+
+Version 1.5.3/code 53 introduces direct Scenario management with separate parameter screens,
+effective menu values and fully visible disabled forms. Scenario export can optionally capture
+automatic values as explicit values in a portable copy; configured-only files retain the previous
+version-1 format and resumption behavior. Origin and Pointing filters join the existing paired
+fields, and category colors match between catalogue rows and Type choices in both themes.
+The existing certificate and immutable graphics collection 1.7 are retained. No new graphics
+release or complete texture ZIP is produced. The optional information archive matches the
+tagged sources and updated twenty-language resources. See [the release review](RELEASE_1_5_3.md).

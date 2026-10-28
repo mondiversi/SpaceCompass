@@ -1,0 +1,7 @@
+<resources>
+    <string name="scenario_position_description">Choose the location used to calculate the sky.</string>
+    <string name="scenario_altitude_description">Set the altitude used for the scenario.</string>
+    <string name="scenario_zone_description">Choose the time zone for the scenario’s date and time.</string>
+    <string name="scenario_date_description">Choose the date used to calculate object positions.</string>
+    <string name="scenario_time_description">Set the time in the scenario’s time zone.</string>
+</resources>

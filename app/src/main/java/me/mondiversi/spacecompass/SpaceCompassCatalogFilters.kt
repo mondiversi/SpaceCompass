@@ -16,6 +16,18 @@ internal enum class SpaceCompassCatalogVisibility(val label: Int) {
     ALL(R.string.catalog_all), ABOVE(R.string.catalog_above_horizon), BELOW(R.string.catalog_below_horizon)
 }
 
+internal enum class SpaceCompassCatalogOrigin(val label: Int) {
+    ALL(R.string.catalog_all), REAL(R.string.catalog_origin_real), FICTION(R.string.catalog_type_scifi)
+}
+internal enum class SpaceCompassCatalogPointing(val label: Int) {
+    ALL(R.string.catalog_all), AVAILABLE(R.string.catalog_pointing_available), UNAVAILABLE(R.string.catalog_pointing_unavailable)
+}
+
+/** A finite direction is enough; direction-only references need not have a measured distance. */
+internal fun spaceCompassCatalogHasPointing(observation: SpaceCompassCelestialObservation?): Boolean =
+    observation?.position?.let { it.azimuthDegrees.isFinite() && it.elevationDegrees.isFinite() &&
+        it.elevationDegrees in -90.0..90.0 } == true
+
 internal data class SpaceCompassCatalogTypeCount(val type: SpaceCompassCatalogType, val count: Int)
 
 /** Counts describe the available catalogue, independently of the active search or horizon filter. */
@@ -85,9 +97,21 @@ internal fun spaceCompassCatalogTypeMatchCount(available: List<SpaceCompassCeles
 /** Unknown positions stay in All; filtering never changes the underlying checked set. */
 internal fun spaceCompassFilterCatalog(types: Set<SpaceCompassCatalogType>, visibility: SpaceCompassCatalogVisibility,
     elevations: Map<SpaceCompassCelestialBody, Double?>,
-    available: List<SpaceCompassCelestialBody> = spaceCompassCelestialCatalogOrder): List<SpaceCompassCelestialBody> =
+    available: List<SpaceCompassCelestialBody> = spaceCompassCelestialCatalogOrder,
+    origin: SpaceCompassCatalogOrigin = SpaceCompassCatalogOrigin.ALL,
+    pointing: SpaceCompassCatalogPointing = SpaceCompassCatalogPointing.ALL,
+    pointingAvailable: Map<SpaceCompassCelestialBody, Boolean> = emptyMap()): List<SpaceCompassCelestialBody> =
     available.filter { body ->
-        body.matchesCatalogTypes(types) && when (visibility) {
+        body.matchesCatalogTypes(types) && when (origin) {
+            SpaceCompassCatalogOrigin.ALL -> true
+            SpaceCompassCatalogOrigin.REAL -> !body.isFictional
+            SpaceCompassCatalogOrigin.FICTION -> body.isFictional
+        } && when (pointing) {
+            SpaceCompassCatalogPointing.ALL -> true
+            SpaceCompassCatalogPointing.AVAILABLE -> pointingAvailable[body] == true
+            // No entry means the current calculation is pending, not that pointing has failed.
+            SpaceCompassCatalogPointing.UNAVAILABLE -> pointingAvailable[body] == false
+        } && when (visibility) {
             SpaceCompassCatalogVisibility.ALL -> true
             SpaceCompassCatalogVisibility.ABOVE -> elevations[body]?.let { it.isFinite() && it >= 0.0 } == true
             SpaceCompassCatalogVisibility.BELOW -> elevations[body]?.let { it.isFinite() && it < 0.0 } == true

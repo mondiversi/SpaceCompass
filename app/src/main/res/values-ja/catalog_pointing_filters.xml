@@ -1,0 +1,7 @@
+<resources>
+    <string name="catalog_origin">由来</string>
+    <string name="catalog_origin_real">実在</string>
+    <string name="catalog_pointing">方向計算</string>
+    <string name="catalog_pointing_available">利用可能</string>
+    <string name="catalog_pointing_unavailable">利用不可</string>
+</resources>

@@ -1,5 +1,8 @@
 <resources>
     <string name="observer_current_scenario">Current scenario</string>
-    <string name="observer_customize">Edit</string>
+    <string name="observer_customize">Manage</string>
     <string name="scenario_summary_automatic">Automatic</string>
+    <string name="observer_management_title">Scenario management</string>
+    <string name="scenario_customize_value">Customize</string>
+    <string name="scenario_menu_live_position">Current GPS</string>
 </resources>

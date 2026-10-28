@@ -1,0 +1,7 @@
+<resources>
+    <string name="catalog_origin">उत्पत्ति</string>
+    <string name="catalog_origin_real">वास्तविक</string>
+    <string name="catalog_pointing">दिशा निर्धारण</string>
+    <string name="catalog_pointing_available">उपलब्ध</string>
+    <string name="catalog_pointing_unavailable">अनुपलब्ध</string>
+</resources>

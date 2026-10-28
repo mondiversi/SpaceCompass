@@ -1,0 +1,7 @@
+<resources>
+    <string name="catalog_origin">Köken</string>
+    <string name="catalog_origin_real">Gerçek</string>
+    <string name="catalog_pointing">Yön tayini</string>
+    <string name="catalog_pointing_available">Kullanılabilir</string>
+    <string name="catalog_pointing_unavailable">Kullanılamıyor</string>
+</resources>

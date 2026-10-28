@@ -1,0 +1,7 @@
+<resources>
+    <string name="catalog_origin">기원</string>
+    <string name="catalog_origin_real">실제</string>
+    <string name="catalog_pointing">방향 계산</string>
+    <string name="catalog_pointing_available">가능</string>
+    <string name="catalog_pointing_unavailable">불가</string>
+</resources>

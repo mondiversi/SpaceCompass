@@ -1,0 +1,7 @@
+<resources>
+    <string name="catalog_origin">Pochodzenie</string>
+    <string name="catalog_origin_real">Rzeczywiste</string>
+    <string name="catalog_pointing">Wyznaczanie kierunku</string>
+    <string name="catalog_pointing_available">Dostępne</string>
+    <string name="catalog_pointing_unavailable">Niedostępne</string>
+</resources>

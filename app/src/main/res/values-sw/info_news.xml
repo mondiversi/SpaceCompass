@@ -1,9 +1,9 @@
 <resources>
     <string name="info_news_title">Mambo mapya · %1$s</string>
-    <string name="info_news_star_sky" formatted="false">Kikuza cha kamera sasa kiko karibu na kitufe cha kupiga picha na huhifadhi kiwango ulichochagua.</string>
-    <string name="info_news_texture_downloads" formatted="false">Kidhibiti kipya hufanya vitu vya angani vipitishe mwanga kiasi juu ya kamera. Picha na faili zinazohamishwa huhifadhi hali hiyo ya wakati wa kupiga picha.</string>
-    <string name="info_news_weather" formatted="false">Chaguo moja la umbizo la data lililohifadhiwa sasa linatumika kwa picha, majedwali na hali zinazosafirishwa.</string>
-    <string name="info_news_viewer_zoom" formatted="false">Majina ya faili zinazohamishwa yanafuata lugha na miundo iliyochaguliwa, kwa vistari ndani ya sehemu na vistari chini kati ya sehemu.</string>
-    <string name="info_news_settings" formatted="false">Kihifadhi skrini cha Dunia huonyesha maeneo halisi ya mchana na usiku na eneo halisi la mwisho la GPS, hata upande wa nyuma.</string>
-    <string name="info_news_catalog" formatted="false">Hali ya sasa inaonyesha namna ya kuendelea. Usafirishaji wa hali una maelezo na utenganishaji wa sehemu ulio wazi zaidi.</string>
+    <string name="info_news_star_sky" formatted="false">Usimamizi wa hali hufunguka moja kwa moja, na skrini tofauti kwa kila kigezo na thamani za sasa kwenye menyu.</string>
+    <string name="info_news_texture_downloads" formatted="false">Washa thamani maalum kwenye upau wa kichwa. Sehemu za kiotomatiki hubaki zikionekana kwa kijivu, zikiwa na maelezo yaliyo wazi zaidi.</string>
+    <string name="info_news_weather" formatted="false">Jumuisha thamani za kiotomatiki unapotuma faili ili kushiriki hali kamili ya wakati wa sasa bila kubadilisha mipangilio ya programu.</string>
+    <string name="info_news_viewer_zoom" formatted="false">Vichujio vipya vya Asili na Uelekezaji vinaongezwa kwa Aina na Mwonekano, pamoja na idadi ya matokeo na mapendeleo yaliyohifadhiwa.</string>
+    <string name="info_news_settings" formatted="false">Mandharinyuma ya makundi yanafanana katika orodha ya vitu na kichujio cha Aina, kwenye mandhari nyepesi na nyeusi.</string>
+    <string name="info_news_catalog" formatted="false">Sehemu za vichujio zimekuwa fupi na zenye mpangilio sawa. Faili za hali zinabaki sambamba na kuhifadhi chaguo za kuendelea.</string>
 </resources>

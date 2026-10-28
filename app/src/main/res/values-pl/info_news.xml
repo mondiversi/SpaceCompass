@@ -1,9 +1,9 @@
 <resources>
     <string name="info_news_title">Ostatnie nowości · %1$s</string>
-    <string name="info_news_star_sky" formatted="false">Zoom aparatu znajduje się teraz obok przycisku zdjęcia i zachowuje wybrany poziom.</string>
-    <string name="info_news_texture_downloads" formatted="false">Nowy przycisk pozwala wyświetlać półprzezroczyste obiekty na obrazie aparatu. Zdjęcia i eksport zachowują przezroczystość z chwili wykonania zdjęcia.</string>
-    <string name="info_news_weather" formatted="false">Jeden zapamiętany wybór formatu danych obowiązuje teraz przy eksporcie obrazów, tabel i scenariuszy.</string>
-    <string name="info_news_viewer_zoom" formatted="false">Nazwy eksportowanych plików uwzględniają wybrany język i formaty: łączniki wewnątrz pól oraz podkreślenia między nimi.</string>
-    <string name="info_news_settings" formatted="false">Wygaszacz Ziemi pokazuje rzeczywiste obszary dnia i nocy oraz ostatnią rzeczywistą pozycję GPS, widoczną także po drugiej stronie.</string>
-    <string name="info_news_catalog" formatted="false">Bieżący scenariusz pokazuje teraz tryb wznawiania. Eksport scenariuszy ma czytelniejszy opis i podział pól.</string>
+    <string name="info_news_star_sky" formatted="false">Zarządzanie scenariuszem otwiera się bezpośrednio, z osobnym ekranem dla każdego parametru i bieżącymi wartościami w menu.</string>
+    <string name="info_news_texture_downloads" formatted="false">Włączaj własne wartości na pasku tytułu. Pola automatyczne pozostają widoczne na szaro, z czytelniejszymi opisami.</string>
+    <string name="info_news_weather" formatted="false">Uwzględnij wartości automatyczne w eksporcie, aby udostępnić pełny scenariusz bieżącej chwili bez zmiany ustawień aplikacji.</string>
+    <string name="info_news_viewer_zoom" formatted="false">Nowe filtry Pochodzenie i Celowanie obok Typu i Widoczności, z liczbą wyników i zapisanymi preferencjami.</string>
+    <string name="info_news_settings" formatted="false">Tła kategorii są spójne na liście obiektów i w filtrze Typ, w jasnym i ciemnym motywie.</string>
+    <string name="info_news_catalog" formatted="false">Bardziej zwarte i jednolite pola filtrów. Pliki scenariuszy pozostają zgodne i zachowują opcje wznawiania.</string>
 </resources>

@@ -1,0 +1,5 @@
+<resources>
+    <string name="scenario_export_include_automatic">Inclure aussi les valeurs automatiques</string>
+    <string name="scenario_export_automatic_description">Complétez le scénario avec le lieu, l’altitude, le fuseau horaire, la date et l’heure actuellement utilisés.</string>
+    <string name="scenario_export_automatic_unavailable">Valeurs automatiques incomplètes, réessayez</string>
+</resources>

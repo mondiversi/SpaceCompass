@@ -1,0 +1,7 @@
+<resources>
+    <string name="scenario_position_description">Выберите место для расчёта вида неба.</string>
+    <string name="scenario_altitude_description">Задайте высоту, используемую в сценарии.</string>
+    <string name="scenario_zone_description">Выберите часовой пояс для даты и времени сценария.</string>
+    <string name="scenario_date_description">Выберите дату для расчёта положений объектов.</string>
+    <string name="scenario_time_description">Задайте время в часовом поясе сценария.</string>
+</resources>

@@ -1,5 +1,8 @@
 <resources>
     <string name="observer_current_scenario">当前场景</string>
-    <string name="observer_customize">修改</string>
+    <string name="observer_customize">管理</string>
     <string name="scenario_summary_automatic">自动</string>
+    <string name="observer_management_title">场景管理</string>
+    <string name="scenario_customize_value">自定义</string>
+    <string name="scenario_menu_live_position">当前 GPS</string>
 </resources>

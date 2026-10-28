@@ -1,9 +1,9 @@
 <resources>
     <string name="info_news_title">Neuigkeiten · %1$s</string>
-    <string name="info_news_star_sky" formatted="false">Der Kamerazoom befindet sich jetzt neben der Aufnahmetaste und behält die gewählte Zoomstufe bei.</string>
-    <string name="info_news_texture_downloads" formatted="false">Eine neue Steuerung macht Himmelsobjekte im Kamerabild durchscheinend. Fotos und Exporte behalten die Transparenz der Aufnahme bei.</string>
-    <string name="info_news_weather" formatted="false">Eine gemeinsame, gespeicherte Datenformatauswahl gilt jetzt für Bild-, Tabellen- und Szenarioexporte.</string>
-    <string name="info_news_viewer_zoom" formatted="false">Exportierte Dateinamen folgen der gewählten Sprache und den Formaten, mit Bindestrichen innerhalb und Unterstrichen zwischen den Feldern.</string>
-    <string name="info_news_settings" formatted="false">Der Erd-Bildschirmschoner zeigt die tatsächlichen Tag- und Nachtgebiete sowie die letzte reale GPS-Position, auch auf der Rückseite.</string>
-    <string name="info_news_catalog" formatted="false">Das aktuelle Szenario zeigt nun seinen Fortsetzungsmodus. Szenarioexporte haben eine klarere Beschreibung und Feldtrennung.</string>
+    <string name="info_news_star_sky" formatted="false">Die Szenarioverwaltung öffnet sich direkt, mit einer eigenen Ansicht für jeden Parameter und aktuellen Werten im Menü.</string>
+    <string name="info_news_texture_downloads" formatted="false">Aktiviere eigene Werte über die Titelleiste. Automatische Felder bleiben grau sichtbar und erhalten klarere Beschreibungen.</string>
+    <string name="info_news_weather" formatted="false">Beziehe automatische Werte beim Export ein, um ein vollständiges Szenario des aktuellen Moments zu teilen, ohne App-Einstellungen zu ändern.</string>
+    <string name="info_news_viewer_zoom" formatted="false">Neue Filter für Ursprung und Ausrichtung ergänzen Typ und Sichtbarkeit, mit Ergebniszahlen und gespeicherten Einstellungen.</string>
+    <string name="info_news_settings" formatted="false">Kategoriehintergründe stimmen in Objektliste und Typfilter überein, sowohl im hellen als auch im dunklen Design.</string>
+    <string name="info_news_catalog" formatted="false">Filterfelder sind kompakter und einheitlicher. Szenariodateien bleiben kompatibel und behalten die Fortsetzungsoptionen.</string>
 </resources>

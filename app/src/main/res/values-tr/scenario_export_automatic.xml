@@ -1,0 +1,5 @@
+<resources>
+    <string name="scenario_export_include_automatic">Otomatik değerleri de dahil et</string>
+    <string name="scenario_export_automatic_description">Senaryoyu şu anda kullanılan konum, rakım, saat dilimi, tarih ve saatle tamamlayın.</string>
+    <string name="scenario_export_automatic_unavailable">Otomatik değerler eksik, tekrar deneyin</string>
+</resources>

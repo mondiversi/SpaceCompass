@@ -291,7 +291,6 @@ internal fun SpaceCompassSunFinderContent(
     val observerPlan = LocalSpaceCompassObserver.current?.plan
     LaunchedEffect(observerPlan) { dailyPathUiState.clearSelection() }
     var showEnvironment by rememberSaveable { mutableStateOf(false) }
-    var showScenarioSummary by rememberSaveable { mutableStateOf(false) }
     var showViewer by rememberSaveable { mutableStateOf(false) }
     val catalogOpen = LocalSpaceCompassCatalogOpen.current
     val hasActiveBody = body in selectedBodies
@@ -302,8 +301,6 @@ internal fun SpaceCompassSunFinderContent(
     val deviceAltitude = deviceFix?.takeIf { it.hasAltitude() && it.altitude.isFinite() && it.altitude in -500.0..20_000.0 }?.altitude
     val estimatedPlace = rememberSpaceCompassEstimatedPlace(deviceFix?.latitude, deviceFix?.longitude,
         enabled = resumed && (showEnvironment || observerPlan?.simulatePosition != true))
-    val scenarioEstimatedPlace = if (observerPlan?.simulatePosition == true)
-        rememberSpaceCompassEstimatedPlace(fix?.latitude, fix?.longitude, enabled = resumed) else estimatedPlace
     val altitude = fix?.takeIf { it.hasAltitude() && it.altitude.isFinite() && it.altitude in -500.0..20_000.0 }?.altitude
     val sun = remember(timeMs, fix?.latitude, fix?.longitude, altitude) {
         fix?.let { calculateSpaceCompassSunPosition(timeMs, it.latitude, it.longitude, altitude ?: 0.0) }
@@ -655,7 +652,7 @@ internal fun SpaceCompassSunFinderContent(
                             notifyControl(if (enabled) R.string.scene_references_on else R.string.scene_references_off)
                         }, primaryText, backgroundColor)
                         SpaceCompassScenarioButton(LocalSpaceCompassObserver.current?.plan.activeSectionCount, primaryText, backgroundColor) {
-                            showScenarioSummary = true
+                            navigate("observer")
                         }
                         SpaceCompassCelestialSelector(body, primaryText, backgroundColor, Modifier, timeMs, remote,
                             selectedBodies, onSelectionChange?.let { { it(selection.toggleAll()) } }) {
@@ -740,9 +737,4 @@ internal fun SpaceCompassSunFinderContent(
             toolbar()
         }
     }
-    // Retain the summary request while editing; its separate dialog window must stay hidden behind pages.
-    if (showScenarioSummary && mainVisible) SpaceCompassScenarioSummaryDialog(observerPlan, fix?.latitude, fix?.longitude,
-        altitude, timeMs, zone, weather, placeReading = scenarioEstimatedPlace, deviceTimeMs = deviceTimeMs,
-        onCustomize = { navigate("observer") },
-        onDismiss = { showScenarioSummary = false })
 }

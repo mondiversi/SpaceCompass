@@ -1,5 +1,14 @@
 # Changelog
 
+## 1.5.3 — 2026-10-28
+
+- Open Scenario management directly from the main view, replacing the intermediate summary dialog. Seven independent menu cards lead to Position, Altitude, Time zone, Date, Time, Time speed and Resumption. Keep the current effective values and cached locality in the menu, use trailing toolbar activation checkboxes, and retain full disabled forms in grey with consistent descriptions and 300 ms transitions.
+- Offer optional automatic-value completion in scenario exports. The export dialog starts unchecked, in the order Name → automatic-values checkbox → divider → Data format. Save/Share require configured values or a complete effective snapshot. Complete copies use the applied position, altitude, zone and instant, retain clock/resumption choices, do not mutate the observer, reject missing or unsupported data, and preserve canonical version-1 file compatibility.
+- Add persisted Origin (all/real/fiction) and Pointing (all/available/unavailable) filters alongside Type and Visibility. Pointing requires a valid direction, not a distance or an above-horizon position. Preserve selected objects as pinned visible exceptions, keep counts aligned with the displayed results, and do not reuse observations from a different scenario.
+- Share category colors between catalogue rows and Type dropdown choices, including selected rows and day/night variants. Fictional objects retain their physical family colors; cross-category filter choices remain neutral. Move compact filter captions inside their outlined fields without opaque caption patches.
+- Refresh the six in-app news summaries and align all 1,711 translatable keys across twenty languages. Preserve scientific data, trajectory calculations, object selections, units, permissions, caches, the distribution certificate and the immutable external graphics collection 1.7.
+- Release 1.5.3/code 53 with the signed APK and update index, optional reference-information archive, verification metadata and checksums. Record local JVM tests, Android-test compilation, release lint, physical-device checks and hosted checks separately.
+
 ## 1.5.2 — 2026-10-28
 
 - Move the rear-camera zoom selector beside the capture button. Add a lightweight half-dotted transparency control in its former position, slashed when off and theme-accented when on. Remember the camera-only 50% opacity choice; composite the complete object image, rim and backing together without fading trajectories or captions. Freeze that opacity in every captured photo and its later export variants.

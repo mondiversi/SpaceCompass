@@ -1,0 +1,7 @@
+<resources>
+    <string name="catalog_origin">Asili</string>
+    <string name="catalog_origin_real">Halisi</string>
+    <string name="catalog_pointing">Uelekezaji</string>
+    <string name="catalog_pointing_available">Inapatikana</string>
+    <string name="catalog_pointing_unavailable">Haipatikani</string>
+</resources>

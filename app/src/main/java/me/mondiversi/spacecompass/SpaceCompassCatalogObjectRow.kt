@@ -1,11 +1,13 @@
 package me.mondiversi.spacecompass
 
+import androidx.compose.foundation.background
 import androidx.compose.foundation.border
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.indication
 import androidx.compose.foundation.interaction.MutableInteractionSource
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.shape.CircleShape
+import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Checkbox
 import androidx.compose.material3.Text
 import androidx.compose.material3.ripple
@@ -28,11 +30,12 @@ import androidx.compose.ui.unit.sp
 @Composable
 internal fun SpaceCompassCatalogObjectRow(
     body: SpaceCompassCelestialBody, name: String, checked: Boolean, value: String, color: Color,
-    onToggle: () -> Unit, onObserve: () -> Unit
+    onToggle: () -> Unit, onObserve: () -> Unit, rowBackground: Color = MaterialTheme.colorScheme.surface
 ) {
     val observationInteraction = remember { MutableInteractionSource() }
     // Share observation feedback across the row without expanding its clickable area.
     Row(Modifier.fillMaxWidth().heightIn(min = 48.dp)
+        .background(spaceCompassCatalogRowBackground(body, checked, rowBackground))
         .indication(observationInteraction, ripple(color = color))
         .padding(start = 12.dp, end = 16.dp)
         .testTag("celestial-body-${body.name}"),
@@ -61,6 +64,6 @@ internal fun SpaceCompassCatalogObjectRow(
                 fontWeight = if (checked) FontWeight.Bold else FontWeight.Normal)
         }
         Text(value, Modifier.widthIn(max = 144.dp).testTag("catalog-value-${body.name}"),
-            textAlign = TextAlign.End, color = color.copy(alpha = .60f), fontSize = 11.sp, lineHeight = 14.sp)
+            textAlign = TextAlign.End, color = color.copy(alpha = .72f), fontSize = 11.sp, lineHeight = 14.sp)
     }
 }

@@ -1,5 +1,8 @@
 <resources>
     <string name="observer_current_scenario">Mandhari ya sasa</string>
-    <string name="observer_customize">Hariri</string>
+    <string name="observer_customize">Dhibiti</string>
     <string name="scenario_summary_automatic">Kiotomatiki</string>
+    <string name="observer_management_title">Usimamizi wa hali</string>
+    <string name="scenario_customize_value">Binafsisha</string>
+    <string name="scenario_menu_live_position">GPS ya sasa</string>
 </resources>

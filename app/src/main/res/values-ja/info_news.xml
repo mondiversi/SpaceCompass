@@ -1,9 +1,9 @@
 <resources>
     <string name="info_news_title">最近の変更 · %1$s</string>
-    <string name="info_news_star_sky" formatted="false">カメラのズームが撮影ボタンの隣に移動し、選択した倍率を保持します。</string>
-    <string name="info_news_texture_downloads" formatted="false">カメラに重ねた天体を半透明にする操作を追加しました。写真と書き出しには撮影時の透明度が保持されます。</string>
-    <string name="info_news_weather" formatted="false">画像・表・シナリオの書き出しで、保存された共通のデータ形式設定を使用します。</string>
-    <string name="info_news_viewer_zoom" formatted="false">書き出すファイル名は選択した言語と形式に従い、項目内をハイフン、項目間をアンダースコアで区切ります。</string>
-    <string name="info_news_settings" formatted="false">地球のスクリーンセーバーは実際の昼夜と最後に取得した実際の GPS 位置を表示し、裏側でも位置を確認できます。</string>
-    <string name="info_news_catalog" formatted="false">現在のシナリオに再開方法を表示します。シナリオ書き出しの説明と項目の区切りが明確になりました。</string>
+    <string name="info_news_star_sky" formatted="false">シナリオ管理を直接開き、各パラメーターの専用画面とメニューの現在値で設定を確認できます。</string>
+    <string name="info_news_texture_downloads" formatted="false">タイトルバーからカスタム値を有効にできます。自動設定の項目はグレーで表示され、説明も分かりやすくなりました。</string>
+    <string name="info_news_weather" formatted="false">自動値を含めてエクスポートすると、アプリの設定を変更せずに現在のシナリオ全体を共有できます。</string>
+    <string name="info_news_viewer_zoom" formatted="false">種類と可視性に加え、由来と照準の新しいフィルターを追加。結果件数と設定の保存にも対応しています。</string>
+    <string name="info_news_settings" formatted="false">天体リストと種類フィルターのカテゴリー背景が、ライト・ダーク両テーマで統一されました。</string>
+    <string name="info_news_catalog" formatted="false">フィルター項目がよりコンパクトで統一された表示になりました。シナリオファイルの互換性と再開オプションは維持されます。</string>
 </resources>

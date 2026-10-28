@@ -1,0 +1,7 @@
+<resources>
+    <string name="catalog_origin">来源</string>
+    <string name="catalog_origin_real">真实天体</string>
+    <string name="catalog_pointing">指向</string>
+    <string name="catalog_pointing_available">可用</string>
+    <string name="catalog_pointing_unavailable">不可用</string>
+</resources>

@@ -1,9 +1,9 @@
 <resources>
     <string name="info_news_title">تازه‌ترین تغییرات · %1$s</string>
-    <string name="info_news_star_sky" formatted="false">بزرگ‌نمایی دوربین اکنون کنار دکمهٔ ثبت تصویر است و مقدار انتخاب‌شده را حفظ می‌کند.</string>
-    <string name="info_news_texture_downloads" formatted="false">کنترل تازه اجرام آسمانی را روی تصویر دوربین نیمه‌شفاف می‌کند. عکس‌ها و خروجی‌ها شفافیت زمان ثبت را حفظ می‌کنند.</string>
-    <string name="info_news_weather" formatted="false">یک انتخاب مشترک و ذخیره‌شده برای قالب داده، اکنون در خروجی تصویر، جدول و سناریو به کار می‌رود.</string>
-    <string name="info_news_viewer_zoom" formatted="false">نام فایل‌های خروجی از زبان و قالب‌های انتخاب‌شده پیروی می‌کند؛ خط تیره درون بخش‌ها و زیرخط میان آن‌ها قرار می‌گیرد.</string>
-    <string name="info_news_settings" formatted="false">محافظ صفحهٔ زمین، نواحی واقعی روز و شب و آخرین موقعیت واقعی GPS را حتی در سمت پشت نشان می‌دهد.</string>
-    <string name="info_news_catalog" formatted="false">سناریوی کنونی اکنون شیوهٔ ازسرگیری را هم نشان می‌دهد. توضیح و جداسازی بخش‌های خروجی سناریو روشن‌تر شده است.</string>
+    <string name="info_news_star_sky" formatted="false">مدیریت سناریو مستقیم باز می‌شود و برای هر پارامتر صفحه‌ای جداگانه و مقادیر فعلی در فهرست دارد.</string>
+    <string name="info_news_texture_downloads" formatted="false">مقادیر سفارشی را از نوار عنوان فعال کنید. فیلدهای خودکار با توضیحات روشن‌تر به رنگ خاکستری قابل مشاهده می‌مانند.</string>
+    <string name="info_news_weather" formatted="false">هنگام خروجی گرفتن مقادیر خودکار را نیز بگنجانید تا سناریوی کامل لحظه فعلی را بدون تغییر تنظیمات برنامه به اشتراک بگذارید.</string>
+    <string name="info_news_viewer_zoom" formatted="false">فیلترهای جدید منشأ و جهت‌یابی در کنار نوع و رؤیت‌پذیری، همراه با تعداد نتایج و تنظیمات ذخیره‌شده.</string>
+    <string name="info_news_settings" formatted="false">پس‌زمینه دسته‌ها در فهرست اجرام و فیلتر نوع، در هر دو پوسته روشن و تیره هماهنگ است.</string>
+    <string name="info_news_catalog" formatted="false">فیلدهای فیلتر فشرده‌تر و هماهنگ‌تر شده‌اند. فایل‌های سناریو سازگار می‌مانند و گزینه‌های ازسرگیری را حفظ می‌کنند.</string>
 </resources>

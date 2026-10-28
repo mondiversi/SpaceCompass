@@ -1,9 +1,9 @@
 <resources>
     <string name="info_news_title">Perubahan terbaru · %1$s</string>
-    <string name="info_news_star_sky" formatted="false">Zoom kamera kini berada di samping tombol foto dan mengingat tingkat yang dipilih.</string>
-    <string name="info_news_texture_downloads" formatted="false">Kontrol baru membuat benda langit di atas kamera menjadi semitransparan. Foto dan ekspor mempertahankan transparansi saat pengambilan gambar.</string>
-    <string name="info_news_weather" formatted="false">Satu pilihan format data yang tersimpan kini berlaku untuk ekspor gambar, tabel, dan skenario.</string>
-    <string name="info_news_viewer_zoom" formatted="false">Nama berkas ekspor mengikuti bahasa dan format yang dipilih, dengan tanda hubung di dalam bidang dan garis bawah antarbidang.</string>
-    <string name="info_news_settings" formatted="false">Screensaver Bumi menampilkan siang dan malam yang sebenarnya serta posisi GPS nyata terakhir, yang juga terlihat di sisi belakang.</string>
-    <string name="info_news_catalog" formatted="false">Skenario saat ini kini menampilkan mode melanjutkan. Ekspor skenario memiliki deskripsi dan pemisahan bidang yang lebih jelas.</string>
+    <string name="info_news_star_sky" formatted="false">Pengelolaan skenario terbuka langsung, dengan layar tersendiri untuk setiap parameter dan nilai saat ini di menu.</string>
+    <string name="info_news_texture_downloads" formatted="false">Aktifkan nilai khusus dari bilah judul. Bidang otomatis tetap terlihat dalam warna abu-abu, dengan deskripsi yang lebih jelas.</string>
+    <string name="info_news_weather" formatted="false">Sertakan nilai otomatis saat mengekspor untuk membagikan skenario lengkap saat ini tanpa mengubah pengaturan aplikasi.</string>
+    <string name="info_news_viewer_zoom" formatted="false">Filter Asal dan Pembidikan baru melengkapi Jenis dan Visibilitas, dengan jumlah hasil dan preferensi tersimpan.</string>
+    <string name="info_news_settings" formatted="false">Latar kategori serasi di daftar objek dan filter Jenis, dalam tema terang maupun gelap.</string>
+    <string name="info_news_catalog" formatted="false">Bidang filter lebih ringkas dan konsisten. Berkas skenario tetap kompatibel dan mempertahankan opsi pelanjutan.</string>
 </resources>

@@ -1,0 +1,7 @@
+<resources>
+    <string name="catalog_origin">Herkomst</string>
+    <string name="catalog_origin_real">Werkelijk</string>
+    <string name="catalog_pointing">Richting</string>
+    <string name="catalog_pointing_available">Beschikbaar</string>
+    <string name="catalog_pointing_unavailable">Niet beschikbaar</string>
+</resources>

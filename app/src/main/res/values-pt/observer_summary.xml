@@ -1,5 +1,8 @@
 <resources>
     <string name="observer_current_scenario">Cenário atual</string>
-    <string name="observer_customize">Editar</string>
+    <string name="observer_customize">Gerir</string>
     <string name="scenario_summary_automatic">Automático</string>
+    <string name="observer_management_title">Gestão do cenário</string>
+    <string name="scenario_customize_value">Personalizar</string>
+    <string name="scenario_menu_live_position">GPS atual</string>
 </resources>

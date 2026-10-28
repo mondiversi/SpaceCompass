@@ -1,0 +1,5 @@
+<resources>
+    <string name="scenario_export_include_automatic">Sertakan juga nilai otomatis</string>
+    <string name="scenario_export_automatic_description">Lengkapi skenario dengan lokasi, ketinggian, zona waktu, tanggal, dan waktu yang sedang digunakan.</string>
+    <string name="scenario_export_automatic_unavailable">Nilai otomatis belum lengkap, coba lagi</string>
+</resources>

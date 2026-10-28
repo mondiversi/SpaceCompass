@@ -1,0 +1,7 @@
+<resources>
+    <string name="catalog_origin">Ursprung</string>
+    <string name="catalog_origin_real">Real</string>
+    <string name="catalog_pointing">Peilung</string>
+    <string name="catalog_pointing_available">Verfügbar</string>
+    <string name="catalog_pointing_unavailable">Nicht verfügbar</string>
+</resources>

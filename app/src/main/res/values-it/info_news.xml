@@ -1,9 +1,9 @@
 <resources>
     <string name="info_news_title">Ultime novità · %1$s</string>
-    <string name="info_news_star_sky" formatted="false">Lo zoom della fotocamera è ora accanto al pulsante di scatto e conserva il livello scelto.</string>
-    <string name="info_news_texture_downloads" formatted="false">Un nuovo comando rende semitrasparenti gli oggetti sopra la fotocamera. Foto ed esportazioni conservano la trasparenza usata allo scatto.</string>
-    <string name="info_news_weather" formatted="false">La scelta del formato dati è unica e memorizzata per esportare immagini, tabelle e scenari.</string>
-    <string name="info_news_viewer_zoom" formatted="false">I nomi dei file esportati seguono lingua e formati scelti, con trattini nei campi e underscore tra i campi.</string>
-    <string name="info_news_settings" formatted="false">Il salvaschermo della Terra segue il giorno e la notte reali e mostra l’ultima posizione GPS reale, visibile anche sul lato nascosto.</string>
-    <string name="info_news_catalog" formatted="false">Scenario attuale mostra anche Ripresa scenario. L’esportazione degli scenari ha una descrizione e una separazione dei campi più chiare.</string>
+    <string name="info_news_star_sky" formatted="false">Gestione scenario si apre direttamente, con una schermata per ogni parametro e i valori attuali nel menu.</string>
+    <string name="info_news_texture_downloads" formatted="false">Attiva le personalizzazioni dalla barra del titolo. I campi automatici restano visibili in grigio, con descrizioni più chiare.</string>
+    <string name="info_news_weather" formatted="false">Includi i valori automatici nell’esportazione per condividere uno scenario completo del momento senza cambiare le impostazioni nell’app.</string>
+    <string name="info_news_viewer_zoom" formatted="false">Nuovi filtri Origine e Puntamento, affiancati a Tipo e Visibilità, con conteggi e preferenze salvate.</string>
+    <string name="info_news_settings" formatted="false">Gli sfondi delle categorie sono coerenti nell’elenco oggetti e nel filtro Tipo, nei temi chiaro e scuro.</string>
+    <string name="info_news_catalog" formatted="false">Campi di filtro più compatti e uniformi. I file scenario restano compatibili e mantengono le opzioni di ripresa.</string>
 </resources>

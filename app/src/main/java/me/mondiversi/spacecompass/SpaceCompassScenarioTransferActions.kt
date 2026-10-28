@@ -25,7 +25,7 @@ import kotlinx.coroutines.withContext
 /** Scenarios share the export profile preference; their canonical import schema stays independent. */
 @OptIn(ExperimentalLayoutApi::class)
 @Composable
-internal fun SpaceCompassScenarioTransferActions(capture: () -> SpaceCompassScenarioArchive?,
+internal fun SpaceCompassScenarioTransferActions(capture: (Boolean) -> SpaceCompassScenarioArchive?,
     onImport: (SpaceCompassScenarioArchive) -> Unit, enabled: Boolean = true) {
     val context = LocalContext.current
     val resources = LocalResources.current
@@ -36,6 +36,8 @@ internal fun SpaceCompassScenarioTransferActions(capture: () -> SpaceCompassScen
     val latestCapture by rememberUpdatedState(capture)
     val latestImport by rememberUpdatedState(onImport)
     var exportText by rememberSaveable { mutableStateOf<String?>(null) }
+    var automaticText by rememberSaveable { mutableStateOf<String?>(null) }
+    var includeAutomatic by rememberSaveable { mutableStateOf(false) }
     var pendingSave by rememberSaveable { mutableStateOf<String?>(null) }
     var name by rememberSaveable { mutableStateOf("") }
     var nameEdited by rememberSaveable { mutableStateOf(false) }
@@ -75,8 +77,10 @@ internal fun SpaceCompassScenarioTransferActions(capture: () -> SpaceCompassScen
     }
     SpaceCompassTitleActionButton(stringResource(R.string.scenario_export), {
         runCatching {
-            latestCapture()?.let { archive ->
+            latestCapture(false)?.let { archive ->
                 exportText = archive.encode()
+                automaticText = null
+                includeAutomatic = false
                 nameEdited = archive.name !in listOf(resources.getString(R.string.observer_title), "Scenario")
                 name = if (nameEdited) archive.name else suggestName(archive,exportMode.mode)
             }
@@ -90,14 +94,18 @@ internal fun SpaceCompassScenarioTransferActions(capture: () -> SpaceCompassScen
         SpaceCompassScenarioImportIcon()
     }
     exportText?.let { content ->
-        val archive = remember(content) { SpaceCompassScenarioArchive.decode(content) }
-        LaunchedEffect(exportMode.mode,content) {
+        val selectedContent = if (includeAutomatic) automaticText ?: content else content
+        val archive = remember(selectedContent) { SpaceCompassScenarioArchive.decode(selectedContent) }
+        LaunchedEffect(exportMode.mode,selectedContent) {
             if (!nameEdited) name = suggestName(archive,exportMode.mode)
         }
         val validName = name.isNotBlank() && name.none(Char::isISOControl) &&
             runCatching { spaceCompassScenarioFileName(name) }.isSuccess
-        fun exported() = archive.copy(name=name.trim()).let {
-            it to spaceCompassScenarioExportText(it,exportMode.mode,profiles.forMode(exportMode.mode))
+        val hasValues = archive.custom || archive.timeSettings.enabled
+        fun exported(): Pair<SpaceCompassScenarioArchive, String> {
+            check(hasValues)
+            val named = archive.copy(name = name.trim())
+            return named to spaceCompassScenarioExportText(named, exportMode.mode, profiles.forMode(exportMode.mode))
         }
         SpaceCompassAlertDialog(onDismissRequest = { exportText = null },
             modifier = Modifier.testTag("scenario-export-dialog"),
@@ -108,6 +116,16 @@ internal fun SpaceCompassScenarioTransferActions(capture: () -> SpaceCompassScen
                     SpaceCompassSettingsDescription(stringResource(R.string.panorama_export_description),pageDescription=true)
                     SpaceCompassSettingsTextField(name, { name = it.take(80); nameEdited = true },
                         Modifier.fillMaxWidth().testTag("scenario-export-name"), label = stringResource(R.string.scenario_file_name))
+                    SpaceCompassSettingsCheckbox(stringResource(R.string.scenario_export_include_automatic), includeAutomatic, { checked ->
+                        if (!checked) includeAutomatic = false else {
+                            val snapshot = runCatching { latestCapture(true)?.encode() }.getOrNull()
+                            if (snapshot == null) notice(R.string.scenario_export_automatic_unavailable) else {
+                                automaticText = snapshot
+                                includeAutomatic = true
+                            }
+                        }
+                    }, Modifier.testTag("scenario-export-automatic"), enabled = !working)
+                    SpaceCompassSettingsDescription(stringResource(R.string.scenario_export_automatic_description))
                     HorizontalDivider(Modifier.fillMaxWidth().padding(vertical=4.dp).testTag("scenario-export-profile-divider"),
                         color=spaceCompassDialogContentColor().copy(alpha=.16f))
                     SpaceCompassExportProfileChoices(exportMode.mode,exportMode.change,enabled=!working)
@@ -125,14 +143,14 @@ internal fun SpaceCompassScenarioTransferActions(capture: () -> SpaceCompassScen
                             save.launch(spaceCompassScenarioFileName(named.name))
                             exportText = null
                         }.onFailure { pendingSave = null; notice(R.string.scenario_file_error) }
-                    }, Modifier.testTag("scenario-export-save"), enabled = validName && !working, contentPadding = padding)
+                    }, Modifier.testTag("scenario-export-save"), enabled = hasValues && validName && !working, contentPadding = padding)
                     SpaceCompassDialogActionButton(stringResource(R.string.panorama_share), {
                         runCatching {
                             val (named,text) = exported()
                             shareSpaceCompassScenario(context,named,resources.getString(R.string.scenario_export),text)
                             exportText = null
                         }.onFailure { notice(R.string.scenario_file_error) }
-                    }, Modifier.testTag("scenario-export-share"), enabled = validName && !working, contentPadding = padding)
+                    }, Modifier.testTag("scenario-export-share"), enabled = hasValues && validName && !working, contentPadding = padding)
                 }
             })
     }

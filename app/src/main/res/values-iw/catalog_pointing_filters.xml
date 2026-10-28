@@ -1,0 +1,7 @@
+<resources>
+    <string name="catalog_origin">מקור</string>
+    <string name="catalog_origin_real">אמיתיים</string>
+    <string name="catalog_pointing">כיוון</string>
+    <string name="catalog_pointing_available">זמין</string>
+    <string name="catalog_pointing_unavailable">לא זמין</string>
+</resources>

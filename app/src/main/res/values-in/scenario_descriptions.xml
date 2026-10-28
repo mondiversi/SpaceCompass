@@ -1,0 +1,7 @@
+<resources>
+    <string name="scenario_position_description">Pilih lokasi yang digunakan untuk menghitung posisi benda di langit.</string>
+    <string name="scenario_altitude_description">Atur ketinggian yang digunakan dalam skenario.</string>
+    <string name="scenario_zone_description">Pilih zona waktu untuk tanggal dan waktu skenario.</string>
+    <string name="scenario_date_description">Pilih tanggal untuk menghitung posisi objek.</string>
+    <string name="scenario_time_description">Atur waktu sesuai zona waktu skenario.</string>
+</resources>

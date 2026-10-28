@@ -1,5 +1,8 @@
 <resources>
     <string name="observer_current_scenario">Skenario saat ini</string>
-    <string name="observer_customize">Edit</string>
+    <string name="observer_customize">Kelola</string>
     <string name="scenario_summary_automatic">Otomatis</string>
+    <string name="observer_management_title">Pengelolaan skenario</string>
+    <string name="scenario_customize_value">Sesuaikan</string>
+    <string name="scenario_menu_live_position">GPS saat ini</string>
 </resources>

@@ -1,0 +1,7 @@
+<resources>
+    <string name="catalog_origin">Προέλευση</string>
+    <string name="catalog_origin_real">Πραγματικά</string>
+    <string name="catalog_pointing">Στόχευση</string>
+    <string name="catalog_pointing_available">Διαθέσιμη</string>
+    <string name="catalog_pointing_unavailable">Μη διαθέσιμη</string>
+</resources>

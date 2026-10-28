@@ -1,9 +1,9 @@
 <resources>
     <string name="info_news_title">Latest news · %1$s</string>
-    <string name="info_news_star_sky" formatted="false">Camera zoom now sits beside the capture button, with the same saved zoom level.</string>
-    <string name="info_news_texture_downloads" formatted="false">A new control makes celestial objects translucent over the camera. Photos and exports retain the transparency used at capture.</string>
-    <string name="info_news_weather" formatted="false">One remembered data-format choice now applies to image, table and scenario exports.</string>
-    <string name="info_news_viewer_zoom" formatted="false">Export filenames follow the chosen language and formats, with hyphens within fields and underscores between them.</string>
-    <string name="info_news_settings" formatted="false">The Earth screensaver uses real geographic day and night and the last known real GPS position, also visible on the far side.</string>
-    <string name="info_news_catalog" formatted="false">Current scenario now shows its resumption policy. Scenario exports have a clearer description and field separation.</string>
+    <string name="info_news_star_sky" formatted="false">Scenario management opens directly, with a separate screen for each parameter and current values in the menu.</string>
+    <string name="info_news_texture_downloads" formatted="false">Enable custom values from the title bar. Automatic fields stay visible in grey, with clearer descriptions.</string>
+    <string name="info_news_weather" formatted="false">Include automatic values when exporting to share a complete scenario of the current moment without changing your app settings.</string>
+    <string name="info_news_viewer_zoom" formatted="false">New Origin and Pointing filters join Type and Visibility, with result counts and saved preferences.</string>
+    <string name="info_news_settings" formatted="false">Category backgrounds match in the object list and Type filter, in both light and dark themes.</string>
+    <string name="info_news_catalog" formatted="false">Filter fields are more compact and consistent. Scenario files remain compatible and retain the resumption options.</string>
 </resources>

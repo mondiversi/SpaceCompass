@@ -1,0 +1,5 @@
+<resources>
+    <string name="scenario_export_include_automatic">Jumuisha pia thamani za kiotomatiki</string>
+    <string name="scenario_export_automatic_description">Kamilisha hali kwa eneo, mwinuko, ukanda wa saa, tarehe na saa vinavyotumika sasa.</string>
+    <string name="scenario_export_automatic_unavailable">Thamani za kiotomatiki hazijakamilika, jaribu tena</string>
+</resources>

@@ -1,0 +1,5 @@
+<resources>
+    <string name="scenario_export_include_automatic">Includi anche i valori automatici</string>
+    <string name="scenario_export_automatic_description">Completa lo scenario con posizione, quota, fuso, data e ora attualmente utilizzati.</string>
+    <string name="scenario_export_automatic_unavailable">Valori automatici incompleti, riprova</string>
+</resources>

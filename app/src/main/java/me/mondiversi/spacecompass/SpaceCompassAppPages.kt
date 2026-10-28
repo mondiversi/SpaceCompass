@@ -84,7 +84,7 @@ internal fun SpaceCompassAppPage(route: String, onBack: () -> Unit) {
         "appearance" -> R.string.settings_section_appearance
         "language" -> R.string.settings_section_language
         "units" -> R.string.settings_section_units
-        "observer" -> R.string.observer_title
+        "observer" -> R.string.observer_management_title
         else -> R.string.pc_info
     }
     Surface(color = spaceCompassPageBackground(), contentColor = MaterialTheme.colorScheme.onSurface, modifier = Modifier.fillMaxSize().testTag("page-$route")) {

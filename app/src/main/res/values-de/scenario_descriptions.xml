@@ -1,0 +1,7 @@
+<resources>
+    <string name="scenario_position_description">Wähle den Standort für die Berechnung des Himmels.</string>
+    <string name="scenario_altitude_description">Lege die Höhe für das Szenario fest.</string>
+    <string name="scenario_zone_description">Wähle die Zeitzone für Datum und Uhrzeit des Szenarios.</string>
+    <string name="scenario_date_description">Wähle das Datum für die Berechnung der Objektpositionen.</string>
+    <string name="scenario_time_description">Stelle die Uhrzeit in der Zeitzone des Szenarios ein.</string>
+</resources>

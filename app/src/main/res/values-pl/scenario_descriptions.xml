@@ -1,0 +1,7 @@
+<resources>
+    <string name="scenario_position_description">Wybierz lokalizację do obliczania wyglądu nieba.</string>
+    <string name="scenario_altitude_description">Ustaw wysokość używaną w scenariuszu.</string>
+    <string name="scenario_zone_description">Wybierz strefę czasową dla daty i godziny scenariusza.</string>
+    <string name="scenario_date_description">Wybierz datę do obliczania pozycji obiektów.</string>
+    <string name="scenario_time_description">Ustaw godzinę w strefie czasowej scenariusza.</string>
+</resources>

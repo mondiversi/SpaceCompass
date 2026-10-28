@@ -1,9 +1,9 @@
 <resources>
     <string name="info_news_title">Последние новости · %1$s</string>
-    <string name="info_news_star_sky" formatted="false">Масштаб камеры теперь расположен рядом с кнопкой съёмки и сохраняет выбранное значение.</string>
-    <string name="info_news_texture_downloads" formatted="false">Новая кнопка делает небесные объекты полупрозрачными поверх камеры. Фотографии и экспорт сохраняют прозрачность на момент съёмки.</string>
-    <string name="info_news_weather" formatted="false">Единый сохранённый выбор формата данных применяется к экспорту изображений, таблиц и сценариев.</string>
-    <string name="info_news_viewer_zoom" formatted="false">Имена экспортируемых файлов учитывают выбранные язык и форматы: дефисы внутри полей и подчёркивания между ними.</string>
-    <string name="info_news_settings" formatted="false">Заставка Земли показывает реальные области дня и ночи и последнюю реальную позицию GPS, видимую также на обратной стороне.</string>
-    <string name="info_news_catalog" formatted="false">Текущий сценарий теперь показывает режим возобновления. Экспорт сценариев получил более понятное описание и разделение полей.</string>
+    <string name="info_news_star_sky" formatted="false">Управление сценарием открывается напрямую: у каждого параметра свой экран, а в меню показаны текущие значения.</string>
+    <string name="info_news_texture_downloads" formatted="false">Включайте собственные значения в строке заголовка. Автоматические поля остаются видимыми серым цветом и снабжены более ясными описаниями.</string>
+    <string name="info_news_weather" formatted="false">Включите автоматические значения при экспорте, чтобы поделиться полным сценарием текущего момента без изменения настроек приложения.</string>
+    <string name="info_news_viewer_zoom" formatted="false">Новые фильтры происхождения и наведения дополняют тип и видимость, с количеством результатов и сохранением настроек.</string>
+    <string name="info_news_settings" formatted="false">Фоны категорий совпадают в списке объектов и фильтре типа, в светлой и тёмной темах.</string>
+    <string name="info_news_catalog" formatted="false">Более компактные и единообразные поля фильтров. Файлы сценариев сохраняют совместимость и параметры возобновления.</string>
 </resources>

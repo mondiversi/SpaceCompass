@@ -1,0 +1,7 @@
+<resources>
+    <string name="scenario_position_description">Kies de locatie waarvoor de hemel wordt berekend.</string>
+    <string name="scenario_altitude_description">Stel de hoogte voor het scenario in.</string>
+    <string name="scenario_zone_description">Kies de tijdzone voor de datum en tijd van het scenario.</string>
+    <string name="scenario_date_description">Kies de datum voor het berekenen van de objectposities.</string>
+    <string name="scenario_time_description">Stel de tijd in volgens de tijdzone van het scenario.</string>
+</resources>

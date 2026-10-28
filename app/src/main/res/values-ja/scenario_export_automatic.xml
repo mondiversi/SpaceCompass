@@ -1,0 +1,5 @@
+<resources>
+    <string name="scenario_export_include_automatic">自動設定の値も含める</string>
+    <string name="scenario_export_automatic_description">現在使用している場所、標高、タイムゾーン、日付と時刻でシナリオを補完します。</string>
+    <string name="scenario_export_automatic_unavailable">自動設定の値が不足しています。もう一度お試しください</string>
+</resources>

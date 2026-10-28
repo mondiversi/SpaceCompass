@@ -62,8 +62,9 @@ private fun SpaceCompassSettingsTitleIcon(key: String, tint: Color) {
 
 /** The whole heading owns activation; the decorative checkbox never toggles twice. */
 @Composable
-internal fun SpaceCompassSettingsToggleIsland(title: String, iconKey: String, checked: Boolean,
+internal fun SpaceCompassSettingsToggleIsland(title: String, iconKey: String?, checked: Boolean,
     toggleDescription: String, onCheckedChange: (Boolean) -> Unit, modifier: Modifier = Modifier,
+    inactiveSummary: String? = null, inactiveContent: (@Composable ColumnScope.() -> Unit)? = null,
     content: @Composable ColumnScope.() -> Unit) {
     val foreground = MaterialTheme.colorScheme.onSurface
     Surface(Modifier.fillMaxWidth(), shape = RoundedCornerShape(16.dp),
@@ -76,8 +77,10 @@ internal fun SpaceCompassSettingsToggleIsland(title: String, iconKey: String, ch
                     checkedState = checked, onClick = { onCheckedChange(!checked) })
                 .padding(spaceCompassIslandContentPadding),
                 verticalAlignment = Alignment.CenterVertically) {
-                SpaceCompassSettingsTitleIcon(iconKey, foreground)
-                Spacer(Modifier.width(8.dp))
+                if (iconKey != null) {
+                    SpaceCompassSettingsTitleIcon(iconKey, foreground)
+                    Spacer(Modifier.width(8.dp))
+                }
                 // Keep the existing glyph and text geometry inside the full-width header.
                 CompositionLocalProvider(LocalMinimumInteractiveComponentSize provides 0.dp) {
                     Checkbox(checked, onCheckedChange = null, modifier = Modifier.size(SpaceCompassSettingsControlSize),
@@ -86,6 +89,11 @@ internal fun SpaceCompassSettingsToggleIsland(title: String, iconKey: String, ch
                 Spacer(Modifier.width(6.dp))
                 Text(title, Modifier.weight(1f), fontSize = 15.sp, lineHeight = SpaceCompassSettingsCheckboxLineHeight,
                     fontWeight = if (checked) FontWeight.Bold else FontWeight.Normal)
+            }
+            if (inactiveSummary != null || inactiveContent != null) SpaceCompassSettingsIslandReveal(!checked) {
+                if (inactiveContent != null) inactiveContent()
+                else SpaceCompassSettingsDescription(requireNotNull(inactiveSummary),
+                    Modifier.fillMaxWidth().testTag("scenario-automatic-summary"))
             }
             SpaceCompassSettingsIslandReveal(checked) {
                 HorizontalDivider(color = foreground.copy(alpha = .20f))

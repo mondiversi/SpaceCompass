@@ -1,0 +1,7 @@
+<resources>
+    <string name="scenario_position_description">בחרו את המיקום המשמש לחישוב מיקומי העצמים בשמיים.</string>
+    <string name="scenario_altitude_description">הגדירו את הגובה המשמש בתרחיש.</string>
+    <string name="scenario_zone_description">בחרו את אזור הזמן לתאריך ולשעה של התרחיש.</string>
+    <string name="scenario_date_description">בחרו את התאריך לחישוב מיקומי העצמים.</string>
+    <string name="scenario_time_description">הגדירו את השעה לפי אזור הזמן של התרחיש.</string>
+</resources>

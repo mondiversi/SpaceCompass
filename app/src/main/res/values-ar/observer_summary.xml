@@ -1,5 +1,8 @@
 <resources>
     <string name="observer_current_scenario">السيناريو الحالي</string>
-    <string name="observer_customize">تعديل</string>
+    <string name="observer_customize">إدارة</string>
     <string name="scenario_summary_automatic">تلقائي</string>
+    <string name="observer_management_title">إدارة السيناريو</string>
+    <string name="scenario_customize_value">تخصيص</string>
+    <string name="scenario_menu_live_position">GPS الحالي</string>
 </resources>

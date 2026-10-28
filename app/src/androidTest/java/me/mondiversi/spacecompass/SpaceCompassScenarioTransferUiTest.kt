@@ -26,8 +26,8 @@ class SpaceCompassScenarioTransferUiTest {
     private val original = spaceCompassObserverPlan(45.0, 9.0, 112.0, moment, "Europe/Rome",
         simulatePosition = false, simulateTime = false, simulateAltitude = true, simulateZone = false, simulateDate = false)!!
 
-    private fun show() {
-        observer.apply(original)
+    private fun show(initial: SpaceCompassObserverPlan? = original) {
+        observer.apply(initial)
         compose.setContent { MaterialTheme {
             CompositionLocalProvider(LocalSpaceCompassPreferences provides preferences,
                 LocalSpaceCompassObserver provides observer,
@@ -45,12 +45,13 @@ class SpaceCompassScenarioTransferUiTest {
         compose.waitForIdle(); context.deleteSharedPreferences(preferenceName)
     }
 
-    @Test fun toolbarActionsFollowResumeExportImportAndTheExportDialogOffersThreeActions() {
+    @Test fun toolbarKeepsExportImportWithoutResumeAndTheExportDialogOffersThreeActions() {
         show()
-        val resume = compose.onNodeWithTag("scenario-resume-open").fetchSemanticsNode().boundsInRoot
+        compose.onNodeWithTag("scenario-resume-open").assertDoesNotExist()
+        compose.onNodeWithText(context.getString(R.string.observer_management_title)).assertExists()
         val export = compose.onNodeWithTag("scenario-export-open").fetchSemanticsNode().boundsInRoot
         val load = compose.onNodeWithTag("scenario-import-open").fetchSemanticsNode().boundsInRoot
-        assertTrue(resume.right <= export.left && export.right <= load.left)
+        assertTrue(export.right <= load.left)
         compose.onNodeWithTag("scenario-export-open").performClick()
         compose.onNodeWithTag("scenario-export-dialog").assertIsDisplayed()
         compose.onNodeWithText(context.getString(R.string.panorama_export_description)).assertExists()
@@ -96,15 +97,49 @@ class SpaceCompassScenarioTransferUiTest {
 
     @Test fun restoredArchivesRecreateEditorFieldsAndKeepTheImportedTimeRate() {
         show()
+        compose.onNodeWithTag("scenario-section-altitude").performScrollTo().performClick()
+        compose.onNodeWithTag("scenario-export-open").assertDoesNotExist()
         compose.onNodeWithTag("observer-altitude").assertTextContains("112.00", substring = true)
         compose.runOnIdle {
             observer.importArchive(SpaceCompassScenarioArchive("Imported", original.copy(altitudeMeters = 500.0),
                 SpaceCompassScenarioTimeSettings(true, -60, SpaceCompassScenarioResume.ACTIVE)))
         }
+        compose.onNodeWithTag("scenario-management-menu").assertExists()
+        compose.onNodeWithTag("scenario-section-altitude").performScrollTo().performClick()
         compose.onNodeWithTag("observer-altitude").assertTextContains("500.00", substring = true)
         compose.runOnIdle {
             assertEquals(-60, observer.timeSettings.rate)
             assertEquals(SpaceCompassScenarioResume.ACTIVE, observer.timeSettings.resume)
         }
     }
+    @Test fun liveExportNeedsAutomaticValuesAndTheChoiceResetsOnReopening() {
+        show(initial = null)
+        compose.runOnIdle { observer.devicePlace = SpaceCompassDevicePlace(28.35, -14.1, 102.5) }
+        compose.onNodeWithTag("scenario-export-open").assertIsEnabled().performClick()
+        compose.onNodeWithTag("scenario-export-automatic").assertIsOff()
+        compose.onNodeWithTag("scenario-export-save").assertIsNotEnabled()
+        compose.onNodeWithTag("scenario-export-share").assertIsNotEnabled()
+        compose.onNodeWithTag("scenario-export-automatic").performClick().assertIsOn()
+        compose.onNodeWithTag("scenario-export-save").assertIsEnabled()
+        compose.onNodeWithTag("scenario-export-share").assertIsEnabled()
+        compose.runOnIdle { assertNull(observer.plan); assertNull(observer.savedPlan) }
+        compose.onNodeWithTag("scenario-export-automatic").performClick().assertIsOff()
+        compose.onNodeWithTag("scenario-export-save").assertIsNotEnabled()
+        compose.onNodeWithTag("scenario-export-cancel").performClick()
+        compose.onNodeWithTag("scenario-export-open").performClick()
+        compose.onNodeWithTag("scenario-export-automatic").assertIsOff()
+        compose.onNodeWithTag("scenario-export-share").assertIsNotEnabled()
+        compose.onNodeWithTag("scenario-export-cancel").performClick()
+    }
+
+    @Test fun incompleteAutomaticValuesCannotEnableAnEmptyExport() {
+        show(initial = null)
+        compose.onNodeWithTag("scenario-export-open").performClick()
+        compose.onNodeWithTag("scenario-export-automatic").performClick().assertIsOff()
+        compose.onNodeWithTag("scenario-export-save").assertIsNotEnabled()
+        compose.onNodeWithTag("scenario-export-share").assertIsNotEnabled()
+        compose.onNodeWithTag("scenario-export-cancel").assertIsEnabled().performClick()
+        compose.runOnIdle { assertNull(observer.plan); assertNull(observer.savedPlan) }
+    }
+
 }

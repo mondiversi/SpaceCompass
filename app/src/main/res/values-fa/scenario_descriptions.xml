@@ -1,0 +1,7 @@
+<resources>
+    <string name="scenario_position_description">مکان مورد استفاده برای محاسبه آسمان را انتخاب کنید.</string>
+    <string name="scenario_altitude_description">ارتفاع مورد استفاده در سناریو را تنظیم کنید.</string>
+    <string name="scenario_zone_description">منطقه زمانی تاریخ و ساعت سناریو را انتخاب کنید.</string>
+    <string name="scenario_date_description">تاریخ مورد استفاده برای محاسبه موقعیت اجرام را انتخاب کنید.</string>
+    <string name="scenario_time_description">ساعت را مطابق منطقه زمانی سناریو تنظیم کنید.</string>
+</resources>
