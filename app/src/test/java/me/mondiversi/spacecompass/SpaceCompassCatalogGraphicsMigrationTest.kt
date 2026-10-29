@@ -33,12 +33,13 @@ class SpaceCompassCatalogGraphicsMigrationTest {
     @Test fun canonicalPairsHaveCoherentNamesAndPinThePublishedGraphicsRelease() {
         val names=Regex("(moon|planet|star|dwarf|asteroid|comet|probe|satellite|cluster|nebula|galaxy|black_hole|fictional)_[a-z0-9_]+\\.webp")
         val policy=SpaceCompassCelestialTexturePolicy
-        assertEquals(5,policy.images.count { it.downloadPack==null })
+        assertEquals(0,policy.images.count { it.downloadPack==null })
+        assertEquals(5,policy.images.count { it.downloadPack=="celestial-textures-v1.8" })
         policy.images.filter { it.downloadPack != null }.forEach { parent ->
             assertTrue(parent.name,names.matches(parent.name))
             val preview=SpaceCompassCelestialThumbnailPolicy.forImage(parent.name)!!
             assertEquals("thumb_"+parent.name,preview.name)
-            assertEquals(if (parent.name.startsWith("fictional_") && parent.name != "fictional_lv_426.webp") "celestial-textures-v1.7" else "celestial-textures-v1.6",parent.downloadPack)
+            assertEquals(if (parent.name in setOf("galaxy_ngc_1313.webp","galaxy_ngc_4526.webp","galaxy_ngc_3923.webp","galaxy_ic_0342.webp","nebula_ngc_2440.webp")) "celestial-textures-v1.8" else if (parent.name.startsWith("fictional_") && parent.name != "fictional_lv_426.webp") "celestial-textures-v1.7" else "celestial-textures-v1.6",parent.downloadPack)
             assertEquals(parent.downloadPack,preview.downloadPack)
             assertTrue(policy.allowedUrl(requireNotNull(parent.url)))
             assertTrue(policy.allowedUrl(requireNotNull(preview.url)))

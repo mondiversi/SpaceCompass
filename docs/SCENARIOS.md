@@ -34,12 +34,11 @@ menu lists Position, Altitude, Time zone, Date, Time, Time speed and Location re
 each with an icon, the current effective value, a secondary automatic status when applicable, and a direction-aware chevron. Position shows only its cached locality; coordinates remain in the Position child form. Date and time follow the running location clock.
 Only this menu has Export and Import. Both actions remain available for an automatic location. The export dialog keeps Name, the optional celestial-object checkbox, a divider and the shared data profile in that order. The checkbox starts off each time. Save and Share accept an explicit configuration, an automatic spatial snapshot when a valid fix is available, or an included object selection without GPS. Resumption alone does not make an otherwise automatic location a configured payload. Child toolbars have their section title and Back.
 
-The first six children have one checkbox at the trailing end of the toolbar, using the shared blue/cyan theme accent when enabled. There is no repeated activation header in the island. The complete form remains visible in both states. Off uses the real/effective values in disabled controls and a neutral grey 48% body treatment; on enables the retained configured inputs. The opacity transition takes 300 ms and the form does not collapse. Keyboard focus is cleared when disabling a section.
-Inactive configured values are retained. Time speed still resets to 1x when re-enabled.
-Resumption has its three existing radio choices and no activation switch. Active overrides
-use the theme's orange value accent in the menu; ordinary labels and icons remain neutral.
-
-One retained draft owner serves the whole hierarchy. Returning to the menu flushes valid
+Only the management menu toggles the first six overrides. Child toolbars contain their section title and Back, without activation checkboxes. All forms stay fully visible and editable at normal opacity, even while their override is off. Valid prepared values are saved independently of activation; enabling the menu checkbox applies the retained value. Temporarily busy lookups still disable their own controls, and incomplete input never replaces the last valid configuration.
++
++Time speed resets to 1x when re-enabled. Resumption has a permanently checked, disabled grey checkbox in the management menu; its child still offers the same three radio choices. It is never counted as a custom override. Active values use the theme's orange accent in the menu, while ordinary titles and icons remain neutral. Compact natural-height cards preserve the leading 48 dp touch target and independent landscape columns.
++
++One retained draft owner serves the whole hierarchy. Returning to the menu flushes valid
 edits and retains incomplete drafts without replacing the last valid plan. The menu shows
 validation feedback; the user can visit another dependent section before completing the draft.
 Management exit/export requires a complete saved configuration.

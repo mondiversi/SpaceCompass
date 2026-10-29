@@ -43,9 +43,9 @@ physical-parameter reference identifiers are retained in the canonical source. T
 regular catalogue datasets and their source notes are preserved. LV-426 remains explicitly fictional.
 
 
-## Catalogue expansion under development
+## Catalogue expansion in 1.7.0
 
-The local catalogue has 9,999 selectable identities. Published release 1.6.0 remains unchanged.
+Release 1.7.0 contains 9,999 selectable identities. The previous 1.6.0 identities, saved selections and favorites remain compatible.
 
 Additional references: SIMBAD/CDS (Wenger et al. 2000, A&AS 143, 9), the Lynds dark-nebula catalogue, NASA/JPL SBDB Query API, and Remco C. E. van den Bosch (2016), ApJ 831, 134, https://doi.org/10.3847/0004-637X/831/2/134. The black-hole mass compilation is from the author's repository, https://github.com/remco-space/Black-Hole-Mass-compilation, under its MIT licence. Upper limits and globular-cluster entries are excluded from the adopted black-hole masses.
 
