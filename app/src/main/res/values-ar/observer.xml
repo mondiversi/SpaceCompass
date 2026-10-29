@@ -1,5 +1,5 @@
 <resources>
-    <string name="observer_title">السيناريو</string>
+    <string name="observer_title">الموقع</string>
     <string name="observer_place">الموقع</string>
     <string name="observer_search">البحث عن مكان</string>
     <string name="observer_search_action">بحث</string>
@@ -19,10 +19,10 @@
     <string name="observer_apply">تعيين</string>
     <string name="observer_invalid">تحقق من الإحداثيات والارتفاع والتاريخ والوقت والمنطقة الزمنية. التواريخ: 1900–2100. الأوقات غير الموجودة بسبب تغيير التوقيت الصيفي غير صالحة.</string>
     <string name="observer_use_place">استخدام هذه النقطة</string>
-    <string name="observer_simulation">سيناريو</string>
+    <string name="observer_simulation">الموقع</string>
     <string name="observer_coordinates_value">الإحداثيات: %1$s</string>
     <string name="observer_altitude_value">الارتفاع: %1$s</string>
-    <string name="observer_simulation_active">السيناريو نشط</string>
+    <string name="observer_simulation_active">الموقع نشط</string>
     <string name="observer_enable_position">محاكاة الموقع</string>
     <string name="observer_enable_date">محاكاة التاريخ</string>
     <string name="observer_enable_time">محاكاة الوقت</string>

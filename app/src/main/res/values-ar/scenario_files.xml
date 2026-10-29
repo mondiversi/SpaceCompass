@@ -1,9 +1,9 @@
 <resources>
-    <string name="scenario_export">تصدير السيناريو</string>
-    <string name="scenario_import">استيراد السيناريو</string>
-    <string name="scenario_file_name">اسم السيناريو</string>
-    <string name="scenario_file_saved">تم حفظ السيناريو</string>
-    <string name="scenario_file_imported">تم استيراد السيناريو</string>
-    <string name="scenario_file_invalid">ملف السيناريو غير صالح أو غير مدعوم</string>
-    <string name="scenario_file_error">تعذر حفظ السيناريو أو مشاركته</string>
+    <string name="scenario_export">تصدير الموقع</string>
+    <string name="scenario_import">استيراد الموقع</string>
+    <string name="scenario_file_name">اسم الموقع</string>
+    <string name="scenario_file_saved">تم حفظ الموقع</string>
+    <string name="scenario_file_imported">تم استيراد الموقع</string>
+    <string name="scenario_file_invalid">ملف موقع غير صالح أو غير مدعوم</string>
+    <string name="scenario_file_error">تعذر حفظ الموقع أو مشاركته</string>
 </resources>

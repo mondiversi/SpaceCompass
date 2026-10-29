@@ -10,8 +10,8 @@
     <string name="panorama_labels_off">התוויות מוסתרות</string>
     <string name="control_choice_message">%1$s: %2$s</string>
 
-    <string name="scene_scenario_on">התרחיש הופעל</string>
-    <string name="scene_scenario_off">התרחיש הושבת</string>
+    <string name="scene_scenario_on">המיקום הופעל</string>
+    <string name="scene_scenario_off">המיקום הושבת</string>
     <string name="scene_objects_on">העצמים הופעלו</string>
     <string name="scene_objects_off">העצמים הושבתו</string>
 </resources>

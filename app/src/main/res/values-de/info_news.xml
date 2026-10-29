@@ -1,9 +1,9 @@
 <resources>
     <string name="info_news_title">Neuigkeiten · %1$s</string>
-    <string name="info_news_star_sky" formatted="false">Ein Trichtersymbol macht die Katalogfilter leichter erkennbar.</string>
-    <string name="info_news_texture_downloads" formatted="false">Aufwärts- und Abwärtspfeile unterscheiden die Sortierung von den Filtern.</string>
-    <string name="info_news_weather" formatted="false">Die Objektliste hat einen einheitlichen Hintergrund ohne Kategoriefarben.</string>
-    <string name="info_news_viewer_zoom" formatted="false">Die Kategorien im Typfilter haben in beiden Designs einen neutralen Hintergrund.</string>
-    <string name="info_news_settings" formatted="false">Das Suchfeld ist niedriger und lässt oben und unten mehr Platz.</string>
-    <string name="info_news_catalog" formatted="false">Suchtext, Platzhalter und blinkender Cursor sind vertikal zentriert.</string>
+    <string name="info_news_star_sky" formatted="false">Die Ortsverwaltung zeigt aktuelle Werte, hebt benutzerdefinierte Einstellungen fett hervor und bietet kompaktere Bedienelemente.</string>
+    <string name="info_news_texture_downloads" formatted="false">Markiere Objekte im Observatorium als Favoriten und zeige über das Herz im Katalog nur Favoriten an.</string>
+    <string name="info_news_weather" formatted="false">Die Kontrollkästchen der Favoriten sind rosa. Filteranzahlen berücksichtigen Favoriten, Suche und weitere aktive Filter.</string>
+    <string name="info_news_viewer_zoom" formatted="false">Ein neu ausgewähltes Objekt wird aktiv. Die Liste bleibt bis zur Rückkehr zur Hauptansicht an ihrer Position.</string>
+    <string name="info_news_settings" formatted="false">Ortsdateien können ausgewählte Objekte enthalten. Automatische Exporte teilen Position, Höhe und Zeitzone; Datum und Uhrzeit bleiben aktuell.</string>
+    <string name="info_news_catalog" formatted="false">Objektdaten werden bei Bedarf automatisch aktualisiert. Das geöffnete Filterfeld bleibt beim Scrollen sichtbar.</string>
 </resources>

@@ -1,9 +1,9 @@
 <resources>
     <string name="info_news_title">Perubahan terbaru · %1$s</string>
-    <string name="info_news_star_sky" formatted="false">Ikon corong membuat filter katalog lebih mudah dikenali.</string>
-    <string name="info_news_texture_downloads" formatted="false">Panah ke atas dan ke bawah membedakan pengurutan dari pemfilteran.</string>
-    <string name="info_news_weather" formatted="false">Daftar objek menggunakan latar seragam, tanpa warna kategori.</string>
-    <string name="info_news_viewer_zoom" formatted="false">Kategori pada filter Jenis menggunakan latar netral pada kedua tema.</string>
-    <string name="info_news_settings" formatted="false">Kolom pencarian dibuat lebih pendek secara vertikal, dengan ruang lebih di atas dan bawah.</string>
-    <string name="info_news_catalog" formatted="false">Teks pencarian, teks petunjuk, dan kursor berkedip dipusatkan secara vertikal.</string>
+    <string name="info_news_star_sky" formatted="false">Pengelolaan lokasi menampilkan nilai saat ini, pengaturan khusus bercetak tebal, dan kontrol yang lebih ringkas.</string>
+    <string name="info_news_texture_downloads" formatted="false">Tandai objek sebagai favorit di Observatorium, lalu gunakan hati di katalog untuk menampilkan favorit saja.</string>
+    <string name="info_news_weather" formatted="false">Kotak centang favorit memakai aksen merah muda. Jumlah filter menyesuaikan favorit, pencarian, dan filter aktif lainnya.</string>
+    <string name="info_news_viewer_zoom" formatted="false">Objek yang baru dipilih menjadi aktif. Daftar tetap di tempat hingga kembali ke tampilan utama.</string>
+    <string name="info_news_settings" formatted="false">Berkas lokasi dapat menyertakan objek terpilih. Ekspor otomatis membagikan posisi, ketinggian, dan zona waktu; tanggal dan waktu tetap mengikuti saat ini.</string>
+    <string name="info_news_catalog" formatted="false">Data objek diperbarui otomatis saat diperlukan. Panel filter yang terbuka tetap terlihat saat menggulir.</string>
 </resources>

@@ -1,5 +1,5 @@
 <resources>
     <string name="scenario_export_include_automatic">Incluir también los valores automáticos</string>
-    <string name="scenario_export_automatic_description">Completa el escenario con la ubicación, altitud, zona horaria, fecha y hora que se usan actualmente.</string>
+    <string name="scenario_export_automatic_description">Completa la ubicación con la ubicación, altitud, zona horaria, fecha y hora que se usan actualmente.</string>
     <string name="scenario_export_automatic_unavailable">Los valores automáticos están incompletos, inténtalo de nuevo</string>
 </resources>

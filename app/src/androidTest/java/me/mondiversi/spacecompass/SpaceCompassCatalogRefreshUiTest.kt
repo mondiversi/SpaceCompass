@@ -18,7 +18,6 @@ class SpaceCompassCatalogRefreshUiTest {
     private val time = mutableLongStateOf(start)
     private val remote = mutableStateOf(SpaceCompassCelestialRemoteData())
     private var selectionActions = 0
-    private var refreshActions = 0
     private var observedBody: SpaceCompassCelestialBody? = null
     private val checked = setOf(SpaceCompassCelestialBody.SUN, SpaceCompassCelestialBody.MOON)
     private val tag = "celestial-body-HALLEY"
@@ -38,7 +37,7 @@ class SpaceCompassCatalogRefreshUiTest {
                 SpaceCompassCelestialCatalogPage(time.longValue, remote.value, checked,
                     MaterialTheme.colorScheme.onSurface, MaterialTheme.colorScheme.background,
                     onBack = {}, onToggleAll = { selectionActions++ }, onSelect = { selectionActions++ },
-                    onRefresh = { refreshActions++ }, onObserve = { observedBody = it })
+                    onObserve = { observedBody = it })
             }
         } }
         compose.onNodeWithTag("celestial-catalog-scroll").performScrollToNode(hasTestTag(tag))
@@ -99,31 +98,21 @@ class SpaceCompassCatalogRefreshUiTest {
         compose.runOnIdle { assertEquals(0, selectionActions) }
     }
 
-    @Test fun manualRefreshRecalculatesWithinTheIntervalWithoutMovingOrSelectingRows() {
-        remote.value = SpaceCompassCelestialRemoteData(motions = mapOf(SpaceCompassCelestialBody.HALLEY to motion()))
+    @Test fun automaticProviderUpdatesStaySilentAndKeepRowsInPlaceWhileBusy() {
         show()
+        val before = compose.onNodeWithTag(tag).fetchSemanticsNode().boundsInRoot
+        compose.runOnIdle { remote.value = SpaceCompassCelestialRemoteData(refreshing = true,
+            motions = mapOf(SpaceCompassCelestialBody.HALLEY to motion())) }
         compose.waitUntil(10_000) { distance() != null }
-        val before = distance()
-        val bounds = compose.onNodeWithTag(tag).fetchSemanticsNode().boundsInRoot
-        compose.runOnIdle { time.longValue = start + 120_000L }
-        compose.waitForIdle()
-        assertEquals(before, distance())
-        compose.onNodeWithTag("catalog-refresh").assertIsEnabled().performClick()
-        compose.waitUntil(10_000) { distance() != null && distance() != before }
-        compose.onNodeWithTag(tag).assertIsDisplayed()
-        compose.onNodeWithTag("catalog-check-HALLEY").assertIsOff()
-        assertEquals(bounds.top, compose.onNodeWithTag(tag).fetchSemanticsNode().boundsInRoot.top, 1f)
-        compose.runOnIdle { assertEquals(1, refreshActions); assertEquals(0, selectionActions) }
-    }
-
-    @Test fun anActiveRemoteBatchDisablesDuplicateManualRequests() {
-        remote.value = SpaceCompassCelestialRemoteData(refreshing = true)
-        show()
-        compose.onNodeWithTag("catalog-refresh").assertIsNotEnabled()
-        compose.runOnIdle { assertEquals(0, refreshActions) }
+        compose.onNodeWithTag("catalog-refresh").assertDoesNotExist()
+        compose.onNodeWithTag("catalog-pull-refresh").assertDoesNotExist()
+        compose.onNodeWithTag("catalog-refresh-indicator").assertDoesNotExist()
+        compose.onNodeWithTag("catalog-check-HALLEY").assertIsOff().assertIsDisplayed()
+        assertEquals(before.top, compose.onNodeWithTag(tag).fetchSemanticsNode().boundsInRoot.top, 1f)
         compose.runOnIdle { remote.value = remote.value.copy(refreshing = false) }
-        compose.onNodeWithTag("catalog-refresh").assertIsEnabled().performClick()
-        compose.runOnIdle { assertEquals(1, refreshActions); assertEquals(0, selectionActions) }
+        compose.waitForIdle()
+        compose.onNodeWithTag("catalog-refresh-indicator").assertDoesNotExist()
+        compose.runOnIdle { assertEquals(0, selectionActions); assertNull(observedBody) }
     }
 
     @Test fun changingSortChangesHeaderAndValuesWithoutChangingCheckedObjects() {
@@ -158,7 +147,6 @@ class SpaceCompassCatalogRefreshUiTest {
         compose.onNodeWithTag("catalog-title").performClick()
         compose.runOnIdle {
             assertEquals(0, selectionActions)
-            assertEquals(0, refreshActions)
             assertNull(observedBody)
         }
     }
@@ -178,6 +166,6 @@ class SpaceCompassCatalogRefreshUiTest {
         compose.waitForIdle()
         compose.onNodeWithTag("catalog-fixed-header").assertIsDisplayed()
         compose.onNodeWithTag("catalog-check-SUN").assertIsOn().assertIsDisplayed()
-        compose.runOnIdle { assertEquals(0, selectionActions); assertEquals(0, refreshActions); assertNull(observedBody) }
+        compose.runOnIdle { assertEquals(0, selectionActions); assertNull(observedBody) }
     }
 }

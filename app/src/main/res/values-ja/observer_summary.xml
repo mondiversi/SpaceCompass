@@ -1,8 +1,8 @@
 <resources>
-    <string name="observer_current_scenario">現在のシナリオ</string>
+    <string name="observer_current_scenario">現在のロケーション</string>
     <string name="observer_customize">管理</string>
     <string name="scenario_summary_automatic">自動</string>
-    <string name="observer_management_title">シナリオ管理</string>
+    <string name="observer_management_title">ロケーション管理</string>
     <string name="scenario_customize_value">カスタマイズ</string>
     <string name="scenario_menu_live_position">現在の GPS</string>
 </resources>

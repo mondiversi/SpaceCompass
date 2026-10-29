@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="catalog_favorites_only">仅显示收藏</string>
+    <string name="catalog_favorites_off">关闭收藏筛选</string>
+    <string name="location_export_include_objects">保存地点时包含天体</string>
+    <string name="location_export_objects_description">保存勾选的天体和主视图中的当前天体。</string>
+</resources>

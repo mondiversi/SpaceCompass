@@ -1,9 +1,9 @@
 <resources>
-    <string name="scenario_export">シナリオを書き出す</string>
-    <string name="scenario_import">シナリオを読み込む</string>
-    <string name="scenario_file_name">シナリオ名</string>
-    <string name="scenario_file_saved">シナリオを保存しました</string>
-    <string name="scenario_file_imported">シナリオを読み込みました</string>
-    <string name="scenario_file_invalid">シナリオファイルが無効か、対応していません</string>
-    <string name="scenario_file_error">シナリオを保存または共有できませんでした</string>
+    <string name="scenario_export">ロケーションを書き出す</string>
+    <string name="scenario_import">ロケーションを読み込む</string>
+    <string name="scenario_file_name">ロケーション名</string>
+    <string name="scenario_file_saved">ロケーションを保存しました</string>
+    <string name="scenario_file_imported">ロケーションを読み込みました</string>
+    <string name="scenario_file_invalid">無効または未対応のロケーションファイル</string>
+    <string name="scenario_file_error">ロケーションの保存または共有ができません</string>
 </resources>

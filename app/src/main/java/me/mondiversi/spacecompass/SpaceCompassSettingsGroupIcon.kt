@@ -23,6 +23,11 @@ internal fun SpaceCompassSettingsGroupIcon(key: String, tint: Color) {
         SpaceCompassSettingsMenuIcon("observer", tint, Modifier.size(20.dp))
         return
     }
+    if (key == "scenario_resume") {
+        Icon(painterResource(R.drawable.ic_scenario_resume), contentDescription = null,
+            modifier = Modifier.size(20.dp), tint = tint)
+        return
+    }
     if (key == "weather") {
         Icon(painterResource(R.drawable.ic_weather), contentDescription = null,
             modifier = Modifier.size(20.dp), tint = tint)
@@ -53,12 +58,6 @@ internal fun SpaceCompassSettingsGroupIcon(key: String, tint: Color) {
                     }
                 }
                 drawPath(forward, tint)
-            }
-            "scenario_resume" -> {
-                drawCircle(tint, size.minDimension * .35f, center, style = outline)
-                drawLine(tint, center, point(.5f, .27f), strokeWidth, StrokeCap.Round)
-                drawLine(tint, center, point(.68f, .57f), strokeWidth, StrokeCap.Round)
-                drawCircle(tint, size.minDimension * .08f, point(.82f, .78f))
             }
             "events" -> {
                 drawRoundRect(tint, point(.12f, .20f), Size(size.width * .76f, size.height * .68f),

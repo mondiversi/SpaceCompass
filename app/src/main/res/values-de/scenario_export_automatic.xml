@@ -1,5 +1,5 @@
 <resources>
     <string name="scenario_export_include_automatic">Auch automatische Werte einbeziehen</string>
-    <string name="scenario_export_automatic_description">Ergänze das Szenario um den aktuell verwendeten Standort, die Höhe, Zeitzone, das Datum und die Uhrzeit.</string>
+    <string name="scenario_export_automatic_description">Ergänzt den Ort um die aktuell verwendeten Koordinaten, die Höhe, die Zeitzone, das Datum und die Uhrzeit.</string>
     <string name="scenario_export_automatic_unavailable">Automatische Werte unvollständig, versuche es erneut</string>
 </resources>

@@ -2,7 +2,7 @@
 <resources>
     <string name="scenario_speed">Temps</string>
     <string name="scenario_speed_description">Reculez ou avancez dans le temps jusqu’à 3600×. Le zéro au centre met le temps en pause.</string>
-    <string name="scenario_resume">Reprise du scénario</string>
+    <string name="scenario_resume">Reprise</string>
     <string name="scenario_resume_description">Choisissez comment le temps simulé reprend à la réouverture de l’application. La vitesse choisie s’applique à chaque mode.</string>
     <string name="scenario_restart">Repartir du début</string>
     <string name="scenario_active">Seulement quand l’application est active</string>
@@ -11,9 +11,9 @@
     <string name="scenario_speed_value">%1$s×</string>
     <string name="celestial_elevation_rising">Hauteur en hausse</string>
     <string name="celestial_elevation_falling">Hauteur en baisse</string>
-    <string name="scenario_restart_help">À chaque nouveau lancement de l’app, le temps du scénario repart des réglages initiaux. Pendant l’utilisation, il avance à la vitesse choisie.</string>
-    <string name="scenario_active_help">Le temps du scénario avance à la vitesse choisie uniquement pendant l’utilisation de l’app. Il se met en pause en arrière-plan et pendant l’économiseur d’écran, puis reprend là où il s’est arrêté.</string>
-    <string name="scenario_always_help">Le temps du scénario continue d’avancer à la vitesse choisie même lorsque l’app est fermée et après le redémarrage du téléphone.</string>
+    <string name="scenario_restart_help">À chaque nouveau lancement de l’app, le temps du lieu repart des réglages initiaux. Pendant l’utilisation, il avance à la vitesse choisie.</string>
+    <string name="scenario_active_help">Le temps du lieu avance à la vitesse choisie uniquement pendant l’utilisation de l’app. Il se met en pause en arrière-plan et pendant l’économiseur d’écran, puis reprend là où il s’est arrêté.</string>
+    <string name="scenario_always_help">Le temps du lieu continue d’avancer à la vitesse choisie même lorsque l’app est fermée et après le redémarrage du téléphone.</string>
     <string name="scenario_time_paused">Temps en pause</string>
     <string name="scenario_midnight_note">La date change automatiquement au passage de minuit, même en reculant.</string>
     <string name="scenario_time_backward">En arrière</string>

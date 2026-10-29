@@ -1,9 +1,9 @@
 <resources>
     <string name="info_news_title">最近の変更 · %1$s</string>
-    <string name="info_news_star_sky" formatted="false">漏斗アイコンでカタログのフィルターが分かりやすくなりました。</string>
-    <string name="info_news_texture_downloads" formatted="false">上下の矢印で、並べ替えとフィルターを区別できます。</string>
-    <string name="info_news_weather" formatted="false">天体一覧の背景を統一し、カテゴリー別の背景色をなくしました。</string>
-    <string name="info_news_viewer_zoom" formatted="false">種類フィルターのカテゴリーは、両テーマで共通の落ち着いた背景を使います。</string>
-    <string name="info_news_settings" formatted="false">検索欄の高さを抑え、上下に余白を増やしました。</string>
-    <string name="info_news_catalog" formatted="false">検索文字、入力ヒント、点滅するカーソルを上下中央に揃えました。</string>
+    <string name="info_news_star_sky" formatted="false">ロケーション管理で現在の値を確認できます。カスタム設定は太字になり、操作もコンパクトになりました。</string>
+    <string name="info_news_texture_downloads" formatted="false">観測所で天体をお気に入りに登録し、カタログのハートでお気に入りだけを表示できます。</string>
+    <string name="info_news_weather" formatted="false">お気に入りのチェックボックスはピンク色です。件数はお気に入り、検索、ほかの有効なフィルターに連動します。</string>
+    <string name="info_news_viewer_zoom" formatted="false">新たに選択した天体がアクティブになります。メイン画面に戻るまではリストの位置を保ちます。</string>
+    <string name="info_news_settings" formatted="false">ロケーションファイルに選択中の天体を含められます。自動エクスポートは位置、高度、タイムゾーンを共有し、日付と時刻は現在のままです。</string>
+    <string name="info_news_catalog" formatted="false">天体データは必要に応じて自動更新されます。開いたフィルターパネルはスクロール中も表示されます。</string>
 </resources>

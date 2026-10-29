@@ -1,6 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<resources>
-    <string name="catalog_refresh">Sasisha data</string>
-    <string name="catalog_refreshing">Inasasisha data…</string>
-    <string name="catalog_refresh_finished">Usasishaji wa vitu umekamilika.</string>
-</resources>

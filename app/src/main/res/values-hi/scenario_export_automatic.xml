@@ -1,5 +1,5 @@
 <resources>
     <string name="scenario_export_include_automatic">स्वचालित मान भी शामिल करें</string>
-    <string name="scenario_export_automatic_description">परिदृश्य में वर्तमान में इस्तेमाल हो रहे स्थान, ऊँचाई, समय क्षेत्र, तारीख और समय को शामिल करें।</string>
+    <string name="scenario_export_automatic_description">लोकेशन में वर्तमान में इस्तेमाल हो रहे स्थान, ऊँचाई, समय क्षेत्र, तारीख और समय को शामिल करें।</string>
     <string name="scenario_export_automatic_unavailable">स्वचालित मान अधूरे हैं, फिर कोशिश करें</string>
 </resources>

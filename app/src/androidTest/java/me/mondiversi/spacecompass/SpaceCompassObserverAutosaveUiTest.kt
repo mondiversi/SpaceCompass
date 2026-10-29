@@ -89,4 +89,22 @@ class SpaceCompassObserverAutosaveUiTest {
         compose.onNodeWithTag("observer-current-date").assertIsEnabled()
     }
 
+    @Test fun menuAndChildCheckboxesShareStateWhileValueClicksOnlyNavigate() {
+        show()
+        compose.onNodeWithTag("scenario-toggle-date").assertIsOn().performClick().assertIsOff()
+        compose.onNodeWithTag("scenario-management-menu").assertExists()
+        compose.runOnIdle { assertFalse(observer.plan!!.simulateDate); assertTrue(observer.plan!!.simulateTime) }
+        open("date")
+        compose.onNodeWithTag("observer-enabled-date").assertIsOff()
+        compose.onNodeWithTag("observer-date").assertIsNotEnabled()
+        compose.onNodeWithTag("observer-enabled-date").performClick().assertIsOn()
+        menu()
+        compose.onNodeWithTag("scenario-toggle-date").assertIsOn()
+        open("date")
+        compose.onNodeWithTag("observer-enabled-date").assertIsOn()
+        compose.runOnIdle { assertTrue(observer.plan!!.simulateDate) }
+        menu()
+        compose.onNodeWithTag("scenario-toggle-resume").assertDoesNotExist()
+    }
+
 }

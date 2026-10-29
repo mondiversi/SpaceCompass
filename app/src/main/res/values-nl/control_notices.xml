@@ -10,8 +10,8 @@
     <string name="panorama_labels_off">Labels verborgen</string>
     <string name="control_choice_message">%1$s: %2$s</string>
 
-    <string name="scene_scenario_on">Scenario ingeschakeld</string>
-    <string name="scene_scenario_off">Scenario uitgeschakeld</string>
+    <string name="scene_scenario_on">Locatie ingeschakeld</string>
+    <string name="scene_scenario_off">Locatie uitgeschakeld</string>
     <string name="scene_objects_on">Objecten ingeschakeld</string>
     <string name="scene_objects_off">Objecten uitgeschakeld</string>
 </resources>

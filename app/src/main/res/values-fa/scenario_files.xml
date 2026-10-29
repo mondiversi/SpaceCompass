@@ -1,9 +1,9 @@
 <resources>
-    <string name="scenario_export">صدور سناریو</string>
-    <string name="scenario_import">ورود سناریو</string>
-    <string name="scenario_file_name">نام سناریو</string>
-    <string name="scenario_file_saved">سناریو ذخیره شد</string>
-    <string name="scenario_file_imported">سناریو وارد شد</string>
-    <string name="scenario_file_invalid">پروندهٔ سناریو نامعتبر است یا پشتیبانی نمی‌شود</string>
-    <string name="scenario_file_error">ذخیره یا اشتراک‌گذاری سناریو ممکن نشد</string>
+    <string name="scenario_export">برون‌بری مکان</string>
+    <string name="scenario_import">درون‌ریزی مکان</string>
+    <string name="scenario_file_name">نام مکان</string>
+    <string name="scenario_file_saved">مکان ذخیره شد</string>
+    <string name="scenario_file_imported">مکان وارد شد</string>
+    <string name="scenario_file_invalid">فایل مکان نامعتبر یا پشتیبانی‌نشده است</string>
+    <string name="scenario_file_error">ذخیره یا اشتراک‌گذاری مکان ممکن نیست</string>
 </resources>

@@ -1,5 +1,5 @@
 <resources>
-    <string name="observer_title">시나리오</string>
+    <string name="observer_title">위치</string>
     <string name="observer_place">위치</string>
     <string name="observer_search">장소 검색</string>
     <string name="observer_search_action">검색</string>
@@ -19,10 +19,10 @@
     <string name="observer_apply">설정</string>
     <string name="observer_invalid">좌표, 고도, 날짜, 시간과 시간대를 확인하세요. 날짜 범위는 1900–2100년입니다. 서머타임 변경으로 존재하지 않는 시간은 사용할 수 없습니다.</string>
     <string name="observer_use_place">이 지점 사용</string>
-    <string name="observer_simulation">시나리오</string>
+    <string name="observer_simulation">위치</string>
     <string name="observer_coordinates_value">좌표: %1$s</string>
     <string name="observer_altitude_value">고도: %1$s</string>
-    <string name="observer_simulation_active">시나리오 활성</string>
+    <string name="observer_simulation_active">위치 활성화됨</string>
     <string name="observer_enable_position">위치 시뮬레이션</string>
     <string name="observer_enable_date">날짜 시뮬레이션</string>
     <string name="observer_enable_time">시간 시뮬레이션</string>

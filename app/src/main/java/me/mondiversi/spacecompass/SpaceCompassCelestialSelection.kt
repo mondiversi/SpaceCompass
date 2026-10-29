@@ -15,9 +15,12 @@ internal data class SpaceCompassCelestialSelection(
 
     fun toggle(body: SpaceCompassCelestialBody): SpaceCompassCelestialSelection {
         if (body !in spaceCompassAllCelestialOrder) return this
-        val updated = if (body in selected) selected - body else selected + body
-        return SpaceCompassCelestialSelection(updated, active?.takeIf { it in updated }
-            ?: spaceCompassAllCelestialOrder.firstOrNull { it in updated })
+        val adding = body !in selected
+        val updated = if (adding) selected + body else selected - body
+        // A newly checked object becomes active; unchecking another object keeps the current one.
+        val nextActive = if (adding) body else active?.takeIf { it in updated }
+            ?: spaceCompassAllCelestialOrder.firstOrNull { it in updated }
+        return SpaceCompassCelestialSelection(updated, nextActive)
     }
 
     /** A stale confirmation must never add an object that was already unchecked. */

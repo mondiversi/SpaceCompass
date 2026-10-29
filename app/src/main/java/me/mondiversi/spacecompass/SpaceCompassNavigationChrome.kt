@@ -58,6 +58,7 @@ internal fun SpaceCompassTitleActionButton(
     modifier: Modifier = Modifier,
     enabled: Boolean = true,
     iconColor: Color = spaceCompassTitleActionColor(),
+    selected: Boolean? = null,
     content: @Composable () -> Unit
 ) {
     SpaceCompassAccessibleIconButton(
@@ -65,6 +66,7 @@ internal fun SpaceCompassTitleActionButton(
         onClick = onClick,
         modifier = modifier.size(SpaceCompassTitleActionButtonSize),
         enabled = enabled,
+        selected = selected,
         pressedColor = iconColor,
         pressedVisualSize = SpaceCompassTitleActionPressedVisualSize,
         visualScale = SpaceCompassTitleActionVisualScale,

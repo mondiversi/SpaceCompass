@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="location_export_wait_position">In attesa dei dati di posizione per salvare la location attuale.</string>
+</resources>

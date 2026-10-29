@@ -112,32 +112,32 @@ class SpaceCompassScenarioTransferUiTest {
             assertEquals(SpaceCompassScenarioResume.ACTIVE, observer.timeSettings.resume)
         }
     }
-    @Test fun liveExportNeedsAutomaticValuesAndTheChoiceResetsOnReopening() {
+    @Test fun liveObjectsExportKeepsAutomaticValuesAndTheChoiceResetsOnReopening() {
         show(initial = null)
         compose.runOnIdle { observer.devicePlace = SpaceCompassDevicePlace(28.35, -14.1, 102.5) }
         compose.onNodeWithTag("scenario-export-open").assertIsEnabled().performClick()
-        compose.onNodeWithTag("scenario-export-automatic").assertIsOff()
-        compose.onNodeWithTag("scenario-export-save").assertIsNotEnabled()
-        compose.onNodeWithTag("scenario-export-share").assertIsNotEnabled()
-        compose.onNodeWithTag("scenario-export-automatic").performClick().assertIsOn()
+        compose.onNodeWithTag("location-export-objects").assertIsOff()
+        compose.onNodeWithTag("scenario-export-save").assertIsEnabled()
+        compose.onNodeWithTag("scenario-export-share").assertIsEnabled()
+        compose.onNodeWithTag("location-export-objects").performClick().assertIsOn()
         compose.onNodeWithTag("scenario-export-save").assertIsEnabled()
         compose.onNodeWithTag("scenario-export-share").assertIsEnabled()
         compose.runOnIdle { assertNull(observer.plan); assertNull(observer.savedPlan) }
-        compose.onNodeWithTag("scenario-export-automatic").performClick().assertIsOff()
-        compose.onNodeWithTag("scenario-export-save").assertIsNotEnabled()
+        compose.onNodeWithTag("location-export-objects").performClick().assertIsOff()
+        compose.onNodeWithTag("scenario-export-save").assertIsEnabled()
         compose.onNodeWithTag("scenario-export-cancel").performClick()
         compose.onNodeWithTag("scenario-export-open").performClick()
-        compose.onNodeWithTag("scenario-export-automatic").assertIsOff()
-        compose.onNodeWithTag("scenario-export-share").assertIsNotEnabled()
+        compose.onNodeWithTag("location-export-objects").assertIsOff()
+        compose.onNodeWithTag("scenario-export-share").assertIsEnabled()
         compose.onNodeWithTag("scenario-export-cancel").performClick()
     }
 
-    @Test fun incompleteAutomaticValuesCannotEnableAnEmptyExport() {
+    @Test fun includingObjectsDoesNotRequireOrInventALocationFix() {
         show(initial = null)
         compose.onNodeWithTag("scenario-export-open").performClick()
-        compose.onNodeWithTag("scenario-export-automatic").performClick().assertIsOff()
-        compose.onNodeWithTag("scenario-export-save").assertIsNotEnabled()
-        compose.onNodeWithTag("scenario-export-share").assertIsNotEnabled()
+        compose.onNodeWithTag("location-export-objects").performClick().assertIsOn()
+        compose.onNodeWithTag("scenario-export-save").assertIsEnabled()
+        compose.onNodeWithTag("scenario-export-share").assertIsEnabled()
         compose.onNodeWithTag("scenario-export-cancel").assertIsEnabled().performClick()
         compose.runOnIdle { assertNull(observer.plan); assertNull(observer.savedPlan) }
     }

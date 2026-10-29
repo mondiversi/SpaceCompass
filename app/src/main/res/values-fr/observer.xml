@@ -1,5 +1,5 @@
 <resources>
-    <string name="observer_title">Scénario</string>
+    <string name="observer_title">Lieu</string>
     <string name="observer_place">Position</string>
     <string name="observer_search">Rechercher un lieu</string>
     <string name="observer_search_action">Rechercher</string>
@@ -19,10 +19,10 @@
     <string name="observer_apply">Définir</string>
     <string name="observer_invalid">Vérifiez coordonnées, altitude, date, heure et fuseau. Dates : 1900–2100. Les heures inexistantes lors du changement d’heure sont invalides.</string>
     <string name="observer_use_place">Utiliser ce point</string>
-    <string name="observer_simulation">Scénario</string>
+    <string name="observer_simulation">Lieu</string>
     <string name="observer_coordinates_value">Coordonnées : %1$s</string>
     <string name="observer_altitude_value">Altitude : %1$s</string>
-    <string name="observer_simulation_active">Scénario actif</string>
+    <string name="observer_simulation_active">Lieu actif</string>
     <string name="observer_enable_position">Simuler la position</string>
     <string name="observer_enable_date">Simuler la date</string>
     <string name="observer_enable_time">Simuler l’heure</string>

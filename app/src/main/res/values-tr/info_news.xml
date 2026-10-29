@@ -1,9 +1,9 @@
 <resources>
     <string name="info_news_title">Son yenilikler · %1$s</string>
-    <string name="info_news_star_sky" formatted="false">Huni simgesi, katalog filtrelerinin daha kolay tanınmasını sağlar.</string>
-    <string name="info_news_texture_downloads" formatted="false">Yukarı ve aşağı oklar, sıralamayı filtrelemeden ayırır.</string>
-    <string name="info_news_weather" formatted="false">Nesne listesi, kategori renkleri olmadan tek tip bir arka plan kullanır.</string>
-    <string name="info_news_viewer_zoom" formatted="false">Tür filtresindeki kategoriler, her iki temada da nötr bir arka plan kullanır.</string>
-    <string name="info_news_settings" formatted="false">Arama alanının yüksekliği azaltıldı; üstte ve altta daha fazla boşluk bırakıldı.</string>
-    <string name="info_news_catalog" formatted="false">Arama metni, yer tutucu ve yanıp sönen imleç dikey olarak ortalandı.</string>
+    <string name="info_news_star_sky" formatted="false">Konum yönetimi güncel değerleri, kalın yazılan özel ayarları ve daha kompakt denetimleri gösterir.</string>
+    <string name="info_news_texture_downloads" formatted="false">Gözlemevi’nde nesneleri favorilere ekleyin; yalnızca favorileri göstermek için katalogdaki kalbi kullanın.</string>
+    <string name="info_news_weather" formatted="false">Favorilerin onay kutuları pembe vurguludur. Filtre sayıları favorilere, aramaya ve diğer etkin filtrelere göre değişir.</string>
+    <string name="info_news_viewer_zoom" formatted="false">Yeni seçilen nesne etkin olur. Ana görünüme dönene kadar liste yerinde kalır.</string>
+    <string name="info_news_settings" formatted="false">Konum dosyalarına seçili nesneler eklenebilir. Otomatik dışa aktarma konumu, yüksekliği ve saat dilimini paylaşır; tarih ve saat güncel kalır.</string>
+    <string name="info_news_catalog" formatted="false">Nesne verileri gerektiğinde otomatik yenilenir. Açık filtre paneli kaydırma sırasında görünür kalır.</string>
 </resources>

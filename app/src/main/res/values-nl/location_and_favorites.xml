@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="catalog_favorites_only">Alleen favorieten tonen</string>
+    <string name="catalog_favorites_off">Favorietenfilter uitschakelen</string>
+    <string name="location_export_include_objects">Hemelobjecten opnemen bij het opslaan van de locatie</string>
+    <string name="location_export_objects_description">Slaat de aangevinkte objecten en het actieve object in de hoofdweergave op.</string>
+</resources>

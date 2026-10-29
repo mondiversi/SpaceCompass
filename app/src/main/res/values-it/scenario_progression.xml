@@ -2,7 +2,7 @@
 <resources>
     <string name="scenario_speed">Tempo</string>
     <string name="scenario_speed_description">Scorri indietro o avanti fino a 3600×. Lo zero al centro ferma il tempo.</string>
-    <string name="scenario_resume">Ripresa scenario</string>
+    <string name="scenario_resume">Ripresa</string>
     <string name="scenario_resume_description">Scegli come riprende il tempo simulato alla riapertura dell’app. La velocità selezionata si applica in ogni modalità.</string>
     <string name="scenario_restart">Riparti dall’inizio</string>
     <string name="scenario_active">Solo con app attiva</string>
@@ -11,9 +11,9 @@
     <string name="scenario_speed_value">%1$s×</string>
     <string name="celestial_elevation_rising">Altezza in aumento</string>
     <string name="celestial_elevation_falling">Altezza in diminuzione</string>
-    <string name="scenario_restart_help">A ogni nuovo avvio dell’app, il tempo dello scenario riparte dalle impostazioni iniziali. Durante l’uso avanza alla velocità scelta.</string>
-    <string name="scenario_active_help">Il tempo dello scenario avanza alla velocità scelta solo mentre usi l’app. Si ferma in background e nel salvaschermo, poi riprende da dove era rimasto.</string>
-    <string name="scenario_always_help">Il tempo dello scenario continua ad avanzare alla velocità scelta anche con l’app chiusa e dopo il riavvio del telefono.</string>
+    <string name="scenario_restart_help">A ogni nuovo avvio dell’app, il tempo della location riparte dalle impostazioni iniziali. Durante l’uso avanza alla velocità scelta.</string>
+    <string name="scenario_active_help">Il tempo della location avanza alla velocità scelta solo mentre usi l’app. Si ferma in background e nel salvaschermo, poi riprende da dove era rimasto.</string>
+    <string name="scenario_always_help">Il tempo della location continua ad avanzare alla velocità scelta anche con l’app chiusa e dopo il riavvio del telefono.</string>
     <string name="scenario_time_paused">Tempo fermo</string>
     <string name="scenario_midnight_note">La data cambia automaticamente attraversando la mezzanotte, anche andando indietro.</string>
     <string name="scenario_time_backward">Indietro</string>

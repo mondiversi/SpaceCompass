@@ -21,7 +21,7 @@ internal fun spaceCompassScenarioExportFields(archive: SpaceCompassScenarioArchi
             (number(if (profile.units.feet) c.altitudeMeters/.3048 else c.altitudeMeters,1)+
                 if (profile.units.feet) "ft" else "m"))
         if (c.simulateZone) add(strings.getString(R.string.observer_zone) to
-            formatSpaceCompassObserverUtcOffset(ZoneId.of(c.zoneId).rules.getOffset(Instant.ofEpochMilli(c.timeMs))))
+            formatSpaceCompassObserverUtcOffset(ZoneId.of(c.zoneId).rules.getOffset(Instant.ofEpochMilli(if (archive.temporalSettingsIncluded) c.timeMs else System.currentTimeMillis()))))
         if (c.simulateDate) add(strings.getString(R.string.observer_date) to formatSpaceCompassDateOnly(c.timeMs,
             f.date,dateLocale,zone,f.numeric,f.deviceLocale,allowHistorical=true))
         if (c.simulateTime) add(strings.getString(R.string.observer_time) to formatSpaceCompassTimeOnly(c.timeMs,
@@ -58,7 +58,7 @@ internal fun spaceCompassScenarioExportText(archive: SpaceCompassScenarioArchive
         strings.getString(R.string.panorama_export_profile) to strings.getString(
             if (mode==SpaceCompassPanoramaExportMode.SELECTED) R.string.panorama_export_selected else R.string.panorama_export_international))+
         spaceCompassScenarioExportFields(archive,profile)+
-        (strings.getString(R.string.scenario_resume) to strings.getString(resume))
+        (if (archive.temporalSettingsIncluded) listOf(strings.getString(R.string.scenario_resume) to strings.getString(resume)) else emptyList())
     fun safeComment(value: String) = value.replace(Regex("[\\p{Cc}\\p{Cf}]")," ")
     val text = fields.joinToString("\n",postfix="\n") { "# ${safeComment(it.first)}: ${safeComment(it.second)}" }+archive.encode()
     require(text.toByteArray(Charsets.UTF_8).size <= SPACE_COMPASS_SCENARIO_FILE_LIMIT)

@@ -26,11 +26,13 @@ internal fun spaceCompassNeutralContentColor(): Color =
 internal fun spaceCompassCheckboxColors(
     uncheckedColor: Color = MaterialTheme.colorScheme.onSurfaceVariant,
     disabledCheckedColor: Color = MaterialTheme.colorScheme.onSurface.copy(alpha = 0.38f),
-    disabledUncheckedColor: Color = disabledCheckedColor
+    disabledUncheckedColor: Color = disabledCheckedColor,
+    checkedColor: Color = MaterialTheme.colorScheme.primary,
+    checkmarkColor: Color = MaterialTheme.colorScheme.onPrimary
 ): CheckboxColors = CheckboxDefaults.colors(
-    checkedColor = MaterialTheme.colorScheme.primary,
+    checkedColor = checkedColor,
     uncheckedColor = uncheckedColor,
-    checkmarkColor = MaterialTheme.colorScheme.onPrimary,
+    checkmarkColor = checkmarkColor,
     disabledCheckedColor = disabledCheckedColor,
     disabledUncheckedColor = disabledUncheckedColor,
     disabledIndeterminateColor = disabledCheckedColor

@@ -1,7 +1,7 @@
 <resources>
     <string name="scenario_position_description">आकाश की गणना के लिए इस्तेमाल होने वाला स्थान चुनें।</string>
-    <string name="scenario_altitude_description">परिदृश्य में इस्तेमाल होने वाली ऊँचाई सेट करें।</string>
-    <string name="scenario_zone_description">परिदृश्य की तारीख और समय के लिए समय क्षेत्र चुनें।</string>
+    <string name="scenario_altitude_description">लोकेशन में इस्तेमाल होने वाली ऊँचाई सेट करें।</string>
+    <string name="scenario_zone_description">लोकेशन की तारीख और समय के लिए समय क्षेत्र चुनें।</string>
     <string name="scenario_date_description">पिंडों की स्थितियों की गणना के लिए तारीख चुनें।</string>
-    <string name="scenario_time_description">परिदृश्य के समय क्षेत्र के अनुसार समय सेट करें।</string>
+    <string name="scenario_time_description">लोकेशन के समय क्षेत्र के अनुसार समय सेट करें।</string>
 </resources>

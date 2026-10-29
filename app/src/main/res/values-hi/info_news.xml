@@ -1,9 +1,9 @@
 <resources>
     <string name="info_news_title">हाल के बदलाव · %1$s</string>
-    <string name="info_news_star_sky" formatted="false">कीप का आइकन कैटलॉग के फ़िल्टर को पहचानना आसान बनाता है।</string>
-    <string name="info_news_texture_downloads" formatted="false">ऊपर और नीचे के तीर, क्रमबद्ध करने और फ़िल्टर करने में अंतर स्पष्ट करते हैं।</string>
-    <string name="info_news_weather" formatted="false">वस्तुओं की सूची में श्रेणी के रंगों के बिना एक समान पृष्ठभूमि है।</string>
-    <string name="info_news_viewer_zoom" formatted="false">प्रकार फ़िल्टर की श्रेणियों की पृष्ठभूमि दोनों थीम में तटस्थ है।</string>
-    <string name="info_news_settings" formatted="false">खोज फ़ील्ड की ऊँचाई कम की गई है, जिससे ऊपर और नीचे अधिक जगह मिलती है।</string>
-    <string name="info_news_catalog" formatted="false">खोज का पाठ, संकेत पाठ और टिमटिमाता कर्सर लंबवत केंद्र में हैं।</string>
+    <string name="info_news_star_sky" formatted="false">लोकेशन प्रबंधन में वर्तमान मान, मोटे अक्षरों में कस्टम सेटिंग और अधिक सघन नियंत्रण दिखते हैं।</string>
+    <string name="info_news_texture_downloads" formatted="false">वेधशाला में पिंडों को पसंदीदा बनाएँ और कैटलॉग के दिल वाले बटन से केवल पसंदीदा देखें।</string>
+    <string name="info_news_weather" formatted="false">पसंदीदा के चेकबॉक्स गुलाबी होते हैं। फ़िल्टर की गिनती पसंदीदा, खोज और अन्य सक्रिय फ़िल्टर के अनुसार बदलती है।</string>
+    <string name="info_news_viewer_zoom" formatted="false">नया चुना गया पिंड सक्रिय हो जाता है। मुख्य दृश्य पर लौटने तक सूची अपनी जगह रहती है।</string>
+    <string name="info_news_settings" formatted="false">लोकेशन फ़ाइलों में चुने हुए पिंड शामिल किए जा सकते हैं। स्वचालित निर्यात स्थान, ऊँचाई और समय क्षेत्र साझा करता है; तारीख और समय वर्तमान रहते हैं।</string>
+    <string name="info_news_catalog" formatted="false">ज़रूरत पड़ने पर पिंडों के डेटा अपने आप अपडेट होते हैं। स्क्रॉल करते समय खुला फ़िल्टर पैनल दिखाई देता रहता है।</string>
 </resources>

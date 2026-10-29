@@ -1,9 +1,9 @@
 <resources>
     <string name="info_news_title">آخر المستجدات · %1$s</string>
-    <string name="info_news_star_sky" formatted="false">أيقونة القمع تجعل مرشحات الكتالوج أسهل في التعرّف عليها.</string>
-    <string name="info_news_texture_downloads" formatted="false">تميّز الأسهم لأعلى ولأسفل الترتيب عن التصفية.</string>
-    <string name="info_news_weather" formatted="false">تستخدم قائمة الأجرام خلفية موحّدة دون ألوان للفئات.</string>
-    <string name="info_news_viewer_zoom" formatted="false">تستخدم فئات مرشح النوع خلفية محايدة في المظهرين الفاتح والداكن.</string>
-    <string name="info_news_settings" formatted="false">أصبح حقل البحث أقل ارتفاعًا، مع مساحة أكبر أعلاه وأسفله.</string>
-    <string name="info_news_catalog" formatted="false">تم توسيط نص البحث والنص الإرشادي ومؤشر الكتابة الوامض عموديًا.</string>
+    <string name="info_news_star_sky" formatted="false">تعرض إدارة الموقع القيم الحالية، مع إبراز الإعدادات المخصصة بخط عريض وعناصر تحكم أكثر اختصارًا.</string>
+    <string name="info_news_texture_downloads" formatted="false">أضف الأجرام إلى المفضلة من المرصد، واستخدم القلب في الكتالوج لعرض المفضلة فقط.</string>
+    <string name="info_news_weather" formatted="false">تظهر مربعات تحديد المفضلة بلمسة وردية. تتكيف أعداد المرشحات مع المفضلة والبحث والمرشحات النشطة الأخرى.</string>
+    <string name="info_news_viewer_zoom" formatted="false">يصبح الجرم المحدد حديثًا هو النشط. تبقى القائمة في مكانها حتى العودة إلى العرض الرئيسي.</string>
+    <string name="info_news_settings" formatted="false">يمكن لملفات الموقع تضمين الأجرام المحددة. يشارك التصدير التلقائي الموضع والارتفاع والمنطقة الزمنية، مع بقاء التاريخ والوقت حاليين.</string>
+    <string name="info_news_catalog" formatted="false">تُحدَّث بيانات الأجرام تلقائيًا عند الحاجة. تبقى لوحة المرشحات المفتوحة ظاهرة أثناء التمرير.</string>
 </resources>

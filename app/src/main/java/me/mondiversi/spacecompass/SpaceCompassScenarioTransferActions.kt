@@ -29,6 +29,7 @@ internal fun SpaceCompassScenarioTransferActions(capture: (Boolean) -> SpaceComp
     onImport: (SpaceCompassScenarioArchive) -> Unit, enabled: Boolean = true) {
     val context = LocalContext.current
     val resources = LocalResources.current
+    val observer = LocalSpaceCompassObserver.current
     val profiles = rememberSpaceCompassDataExportProfiles()
     val exportMode = rememberSpaceCompassExportMode()
     val suggestName = spaceCompassScenarioNameSuggestion(profiles)
@@ -36,8 +37,8 @@ internal fun SpaceCompassScenarioTransferActions(capture: (Boolean) -> SpaceComp
     val latestCapture by rememberUpdatedState(capture)
     val latestImport by rememberUpdatedState(onImport)
     var exportText by rememberSaveable { mutableStateOf<String?>(null) }
-    var automaticText by rememberSaveable { mutableStateOf<String?>(null) }
-    var includeAutomatic by rememberSaveable { mutableStateOf(false) }
+    var objectsText by rememberSaveable { mutableStateOf<String?>(null) }
+    var includeObjects by rememberSaveable { mutableStateOf(false) }
     var pendingSave by rememberSaveable { mutableStateOf<String?>(null) }
     var name by rememberSaveable { mutableStateOf("") }
     var nameEdited by rememberSaveable { mutableStateOf(false) }
@@ -79,8 +80,8 @@ internal fun SpaceCompassScenarioTransferActions(capture: (Boolean) -> SpaceComp
         runCatching {
             latestCapture(false)?.let { archive ->
                 exportText = archive.encode()
-                automaticText = null
-                includeAutomatic = false
+                objectsText = null
+                includeObjects = false
                 nameEdited = archive.name !in listOf(resources.getString(R.string.observer_title), "Scenario")
                 name = if (nameEdited) archive.name else suggestName(archive,exportMode.mode)
             }
@@ -94,14 +95,25 @@ internal fun SpaceCompassScenarioTransferActions(capture: (Boolean) -> SpaceComp
         SpaceCompassScenarioImportIcon()
     }
     exportText?.let { content ->
-        val selectedContent = if (includeAutomatic) automaticText ?: content else content
+        val baseArchive = remember(content) { SpaceCompassScenarioArchive.decode(content) }
+        // A location fix arriving while the dialog is open can complete the otherwise empty export.
+        LaunchedEffect(content, observer?.devicePlace) {
+            if (!baseArchive.custom && !baseArchive.timeSettings.enabled) {
+                runCatching { latestCapture(false) }.getOrNull()?.takeIf { it.custom }?.let { ready ->
+                    objectsText = objectsText?.let { included -> ready.copy(
+                        celestialSelection = SpaceCompassScenarioArchive.decode(included).celestialSelection).encode() }
+                    exportText = ready.encode()
+                }
+            }
+        }
+        val selectedContent = if (includeObjects) objectsText ?: content else content
         val archive = remember(selectedContent) { SpaceCompassScenarioArchive.decode(selectedContent) }
         LaunchedEffect(exportMode.mode,selectedContent) {
             if (!nameEdited) name = suggestName(archive,exportMode.mode)
         }
         val validName = name.isNotBlank() && name.none(Char::isISOControl) &&
             runCatching { spaceCompassScenarioFileName(name) }.isSuccess
-        val hasValues = archive.custom || archive.timeSettings.enabled
+        val hasValues = archive.custom || archive.timeSettings.enabled || archive.celestialSelection != null
         fun exported(): Pair<SpaceCompassScenarioArchive, String> {
             check(hasValues)
             val named = archive.copy(name = name.trim())
@@ -114,18 +126,20 @@ internal fun SpaceCompassScenarioTransferActions(capture: (Boolean) -> SpaceComp
                 Column(Modifier.fillMaxWidth(),
                     verticalArrangement=Arrangement.spacedBy(8.dp)) {
                     SpaceCompassSettingsDescription(stringResource(R.string.panorama_export_description),pageDescription=true)
+                    if (!hasValues) SpaceCompassSettingsDescription(
+                        stringResource(R.string.location_export_wait_position))
                     SpaceCompassSettingsTextField(name, { name = it.take(80); nameEdited = true },
                         Modifier.fillMaxWidth().testTag("scenario-export-name"), label = stringResource(R.string.scenario_file_name))
-                    SpaceCompassSettingsCheckbox(stringResource(R.string.scenario_export_include_automatic), includeAutomatic, { checked ->
-                        if (!checked) includeAutomatic = false else {
+                    SpaceCompassSettingsCheckbox(stringResource(R.string.location_export_include_objects), includeObjects, { checked ->
+                        if (!checked) includeObjects = false else {
                             val snapshot = runCatching { latestCapture(true)?.encode() }.getOrNull()
-                            if (snapshot == null) notice(R.string.scenario_export_automatic_unavailable) else {
-                                automaticText = snapshot
-                                includeAutomatic = true
+                            if (snapshot == null) notice(R.string.observer_not_saved) else {
+                                objectsText = snapshot
+                                includeObjects = true
                             }
                         }
-                    }, Modifier.testTag("scenario-export-automatic"), enabled = !working)
-                    SpaceCompassSettingsDescription(stringResource(R.string.scenario_export_automatic_description))
+                    }, Modifier.testTag("location-export-objects"), enabled = !working)
+                    SpaceCompassSettingsDescription(stringResource(R.string.location_export_objects_description))
                     HorizontalDivider(Modifier.fillMaxWidth().padding(vertical=4.dp).testTag("scenario-export-profile-divider"),
                         color=spaceCompassDialogContentColor().copy(alpha=.16f))
                     SpaceCompassExportProfileChoices(exportMode.mode,exportMode.change,enabled=!working)

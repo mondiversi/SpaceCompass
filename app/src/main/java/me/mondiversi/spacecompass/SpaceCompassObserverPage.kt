@@ -35,6 +35,7 @@ internal fun SpaceCompassObserverPage(modifier: Modifier = Modifier, onBack: () 
 private fun SpaceCompassObserverEditor(observer: SpaceCompassObserverState, modifier: Modifier, onBack: () -> Unit) {
     val context = LocalContext.current
     val resources = LocalResources.current
+    val preferences = LocalSpaceCompassPreferences.current
     val rejectSettingsExit = LocalSpaceCompassSettingsExitFailure.current
     val feet = LocalSpaceCompassUnits.current.feet
     val numeric = LocalSpaceCompassNumericFormat.current
@@ -42,7 +43,7 @@ private fun SpaceCompassObserverEditor(observer: SpaceCompassObserverState, modi
     val focusManager = LocalFocusManager.current
     val keyboard = LocalSoftwareKeyboardController.current
     val scope = rememberCoroutineScope()
-    val menuScroll = rememberScrollState()
+    val menuScroll = rememberLazyStaggeredGridState()
     var sectionName by rememberSaveable { mutableStateOf<String?>(null) }
     val section = SpaceCompassScenarioEditorSection.entries.firstOrNull { it.name == sectionName }
     val initial = remember { observer.savedPlan }
@@ -258,7 +259,20 @@ private fun SpaceCompassObserverEditor(observer: SpaceCompassObserverState, modi
     val effectivePosition = observer.plan?.resolvePlace(device) ?: device
     val overviewPlace = rememberSpaceCompassEstimatedPlace(effectivePosition?.latitude, effectivePosition?.longitude,
         enabled = section == null && !screensaver)
-    val menuEntries = spaceCompassScenarioMenuEntries(observer, overviewPlace, zonePreviewNow)
+    fun customizationEnabled(target: SpaceCompassScenarioEditorSection): Boolean? = when (target) {
+        SpaceCompassScenarioEditorSection.POSITION -> simulatePosition
+        SpaceCompassScenarioEditorSection.ALTITUDE -> simulateAltitude
+        SpaceCompassScenarioEditorSection.ZONE -> simulateZone
+        SpaceCompassScenarioEditorSection.DATE -> simulateDate
+        SpaceCompassScenarioEditorSection.TIME -> simulateTime
+        SpaceCompassScenarioEditorSection.SPEED -> observer.timeSettings.enabled
+        SpaceCompassScenarioEditorSection.RESUME -> null
+    }
+    val menuEntries = spaceCompassScenarioMenuEntries(observer, overviewPlace, zonePreviewNow).map { entry ->
+        customizationEnabled(entry.section)?.let { checked ->
+            entry.copy(customized = checked, automatic = !checked)
+        } ?: entry
+    }
     val currentValues = spaceCompassScenarioCurrentValues(observer.plan, device, observer.timeSettings,
         zonePreviewNow, ZoneId.systemDefault())
     val currentMoment = Instant.ofEpochMilli(currentValues.instant).atZone(currentValues.zone)
@@ -271,9 +285,9 @@ private fun SpaceCompassObserverEditor(observer: SpaceCompassObserverState, modi
             showSpaceCompassBottomMessage(context, resources.getString(R.string.observer_not_saved))
         } else onBack()
     }
-    fun setCustomization(checked: Boolean) {
+    fun setCustomization(target: SpaceCompassScenarioEditorSection, checked: Boolean) {
         if (!checked) { focusManager.clearFocus(force = true); keyboard?.hide() }
-        when (section) {
+        when (target) {
             SpaceCompassScenarioEditorSection.POSITION -> {
                 val selected = preservedMoment ?: spaceCompassObserverMoment(date.trim(), time.trim(),
                     effectiveZone())
@@ -359,9 +373,11 @@ private fun SpaceCompassObserverEditor(observer: SpaceCompassObserverState, modi
                 else -> null
             }
             activation?.let { (checked, label, tag) ->
-                SpaceCompassScenarioActivation(checked, stringResource(label), tag, ::setCustomization)
+                SpaceCompassScenarioActivation(checked, stringResource(label), tag) { value ->
+                    section?.let { setCustomization(it, value) }
+                }
             }
-            if (section == null) SpaceCompassScenarioTransferActions(capture = { includeAutomatic ->
+            if (section == null) SpaceCompassScenarioTransferActions(capture = { includeObjects ->
                 saveEditedDraft()
                 if (editRevision != 0 || busy || needsMetadata) {
                     showSpaceCompassBottomMessage(context, resources.getString(R.string.observer_not_saved))
@@ -370,12 +386,14 @@ private fun SpaceCompassObserverEditor(observer: SpaceCompassObserverState, modi
                     val now = System.currentTimeMillis()
                     val deviceZone = ZoneId.systemDefault()
                     val configured = SpaceCompassScenarioArchive.capture(observer, resources.getString(R.string.observer_title), now, deviceZone)
-                    val archive = if (includeAutomatic) configured.withAutomaticValues(spaceCompassScenarioCurrentValues(
-                        observer.plan, observer.devicePlace, observer.timeSettings, now, deviceZone)) else configured
+                    val exportBase = configured.withAutomaticLocation(spaceCompassScenarioCurrentValues(
+                        observer.plan, observer.devicePlace, observer.timeSettings, now, deviceZone)) ?: configured
+                    val archive = exportBase.copy(celestialSelection = if (includeObjects)
+                        readSpaceCompassCelestialSelection(preferences) else null)
                     val namedImport = observer.archiveName?.takeUnless {
                         it == resources.getString(R.string.observer_title) || it == "Scenario"
                     }
-                    archive?.copy(name = namedImport ?: resources.getString(R.string.observer_title))
+                    archive.copy(name = namedImport ?: resources.getString(R.string.observer_title))
                 }
             }, onImport = { archive ->
                 // Discard old pending work before replacing the editor; disposal must not overwrite the imported file.
@@ -384,7 +402,8 @@ private fun SpaceCompassObserverEditor(observer: SpaceCompassObserverState, modi
             }, enabled = !busy)
         }
         if (section == null) {
-            SpaceCompassScenarioMenu(menuEntries, { sectionName = it.name }, menuScroll, Modifier.weight(1f),
+            SpaceCompassScenarioMenu(menuEntries, { sectionName = it.name }, ::setCustomization,
+                menuScroll, Modifier.weight(1f),
                 validationMessage = if (validationError) stringResource(R.string.observer_invalid) else null)
         } else key(section) {
         SpaceCompassIslandGrid(Modifier.weight(1f), scroll = rememberLazyStaggeredGridState()) {

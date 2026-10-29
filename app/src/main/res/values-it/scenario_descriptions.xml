@@ -1,7 +1,7 @@
 <resources>
     <string name="scenario_position_description">Scegli la posizione da cui osservare il cielo.</string>
-    <string name="scenario_altitude_description">Imposta la quota da usare nello scenario.</string>
-    <string name="scenario_zone_description">Scegli il fuso orario per la data e l’ora dello scenario.</string>
+    <string name="scenario_altitude_description">Imposta la quota da usare nella location.</string>
+    <string name="scenario_zone_description">Scegli il fuso orario per la data e l’ora della location.</string>
     <string name="scenario_date_description">Scegli la data per calcolare le posizioni degli oggetti.</string>
-    <string name="scenario_time_description">Imposta l’ora nel fuso orario dello scenario.</string>
+    <string name="scenario_time_description">Imposta l’ora nel fuso orario della location.</string>
 </resources>

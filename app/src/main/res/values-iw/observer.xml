@@ -1,5 +1,5 @@
 <resources>
-    <string name="observer_title">תרחיש</string>
+    <string name="observer_title">מיקום</string>
     <string name="observer_place">מיקום</string>
     <string name="observer_search">חיפוש מקום</string>
     <string name="observer_search_action">חיפוש</string>
@@ -19,10 +19,10 @@
     <string name="observer_apply">הגדר</string>
     <string name="observer_invalid">בדקו קואורדינטות, גובה, תאריך, שעה ואזור זמן. תאריכים: 1900–2100. שעות שאינן קיימות במעבר לשעון קיץ אינן תקפות.</string>
     <string name="observer_use_place">שימוש בנקודה זו</string>
-    <string name="observer_simulation">תרחיש</string>
+    <string name="observer_simulation">מיקום</string>
     <string name="observer_coordinates_value">קואורדינטות: %1$s</string>
     <string name="observer_altitude_value">גובה: %1$s</string>
-    <string name="observer_simulation_active">תרחיש פעיל</string>
+    <string name="observer_simulation_active">המיקום פעיל</string>
     <string name="observer_enable_position">הדמיית מיקום</string>
     <string name="observer_enable_date">הדמיית תאריך</string>
     <string name="observer_enable_time">הדמיית שעה</string>

@@ -1,5 +1,5 @@
 <resources>
     <string name="scenario_export_include_automatic">לכלול גם ערכים אוטומטיים</string>
-    <string name="scenario_export_automatic_description">השלימו את התרחיש עם המיקום, הגובה, אזור הזמן, התאריך והשעה שבשימוש כעת.</string>
+    <string name="scenario_export_automatic_description">השלימו את המיקום עם המיקום, הגובה, אזור הזמן, התאריך והשעה שבשימוש כעת.</string>
     <string name="scenario_export_automatic_unavailable">הערכים האוטומטיים אינם מלאים, נסו שוב</string>
 </resources>

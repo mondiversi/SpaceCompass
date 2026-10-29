@@ -1,5 +1,5 @@
 <resources>
-    <string name="observer_title">Scenario</string>
+    <string name="observer_title">Location</string>
     <string name="observer_place">Posizione</string>
     <string name="observer_search">Cerca un luogo</string>
     <string name="observer_search_action">Cerca</string>
@@ -19,10 +19,10 @@
     <string name="observer_apply">Imposta</string>
     <string name="observer_invalid">Controlla coordinate, quota, data, ora e fuso. Date: 1900–2100. Le ore inesistenti al cambio dell’ora legale non sono utilizzabili.</string>
     <string name="observer_use_place">Usa questo punto</string>
-    <string name="observer_simulation">Scenario</string>
+    <string name="observer_simulation">Location</string>
     <string name="observer_coordinates_value">Coordinate: %1$s</string>
     <string name="observer_altitude_value">Quota: %1$s</string>
-    <string name="observer_simulation_active">Scenario attivo</string>
+    <string name="observer_simulation_active">Location attiva</string>
     <string name="observer_enable_position">Simula posizione</string>
     <string name="observer_enable_date">Simula data</string>
     <string name="observer_enable_time">Simula ora</string>

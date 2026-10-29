@@ -1,9 +1,9 @@
 <resources>
-    <string name="scenario_export">ייצוא תרחיש</string>
-    <string name="scenario_import">ייבוא תרחיש</string>
-    <string name="scenario_file_name">שם התרחיש</string>
-    <string name="scenario_file_saved">התרחיש נשמר</string>
-    <string name="scenario_file_imported">התרחיש יובא</string>
-    <string name="scenario_file_invalid">קובץ התרחיש אינו תקין או אינו נתמך</string>
-    <string name="scenario_file_error">לא ניתן לשמור או לשתף את התרחיש</string>
+    <string name="scenario_export">ייצוא מיקום</string>
+    <string name="scenario_import">ייבוא מיקום</string>
+    <string name="scenario_file_name">שם המיקום</string>
+    <string name="scenario_file_saved">המיקום נשמר</string>
+    <string name="scenario_file_imported">המיקום יובא</string>
+    <string name="scenario_file_invalid">קובץ מיקום לא תקין או לא נתמך</string>
+    <string name="scenario_file_error">לא ניתן לשמור או לשתף את המיקום</string>
 </resources>

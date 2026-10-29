@@ -1,8 +1,8 @@
 <resources>
-    <string name="observer_current_scenario">Escenario actual</string>
+    <string name="observer_current_scenario">Ubicación actual</string>
     <string name="observer_customize">Gestionar</string>
     <string name="scenario_summary_automatic">Automático</string>
-    <string name="observer_management_title">Gestión del escenario</string>
+    <string name="observer_management_title">Gestión de ubicaciones</string>
     <string name="scenario_customize_value">Personalizar</string>
     <string name="scenario_menu_live_position">GPS actual</string>
 </resources>

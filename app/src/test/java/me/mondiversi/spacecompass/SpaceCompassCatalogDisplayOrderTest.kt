@@ -25,6 +25,32 @@ class SpaceCompassCatalogDisplayOrderTest {
         assertEquals(setOf(SpaceCompassCatalogType.PLANET), types)
     }
 
+    @Test fun newlyCheckedObjectsStayInPlaceUntilTheNextCatalogVisit() {
+        val entryChecks = setOf(sun, moon)
+        val original = spaceCompassCatalogDisplayOrder(bodies, bodies.toSet(), entryChecks)
+        val currentChecks = entryChecks + mars
+        assertEquals(original, spaceCompassCatalogDisplayOrder(bodies, bodies.toSet(), currentChecks, entryChecks))
+        assertEquals(listOf(sun, moon, mars, venus),
+            spaceCompassCatalogDisplayOrder(bodies, bodies.toSet(), currentChecks))
+    }
+
+    @Test fun uncheckedEntryObjectsStayInTheirGroupUntilTheNextCatalogVisit() {
+        val entryChecks = setOf(sun, moon)
+        val currentChecks = setOf(sun, mars)
+        assertEquals(listOf(sun, moon, venus, mars),
+            spaceCompassCatalogDisplayOrder(bodies, bodies.toSet(), currentChecks, entryChecks))
+        assertEquals(listOf(sun, mars, venus, moon),
+            spaceCompassCatalogDisplayOrder(bodies, bodies.toSet(), currentChecks))
+    }
+
+    @Test fun deferredPriorityKeepsCurrentFilterExceptionsWithoutResurrectingUncheckedRows() {
+        val entryChecks = setOf(sun, moon)
+        val currentChecks = setOf(sun, mars)
+        val matching = setOf(venus)
+        assertEquals(listOf(sun, venus, mars),
+            spaceCompassCatalogDisplayOrder(bodies, matching, currentChecks, entryChecks))
+    }
+
     @Test fun deselectingAnExcludedObjectHidesItWhileMatchingObjectsRemain() {
         val matching = setOf(mars)
         assertEquals(listOf(moon, mars), spaceCompassCatalogDisplayOrder(bodies, matching, setOf(moon, mars)))

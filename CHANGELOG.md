@@ -1,5 +1,16 @@
 # Changelog
 
+## 1.6.0 — 2026-10-29
+
+- Introduce persistent favorites in Observatory and a heart filter in Objects. Keep favorite membership independent of scene selection and active targets; use the shared day/night pink accent on favorite checkboxes without adding row washes or thumbnail rings.
+- Make newly checked objects active immediately. Keep selected-first priority fixed for a catalogue visit, including Observatory round trips; regroup only after returning to the main scene and reopening Objects. Preserve saved filters, sorting, query behavior and checked-object exceptions.
+- Keep open filters visible while only the search/value header follows quick-return scrolling. Count every filter option against favorites, search and the other active facets, using the same retained selected-object rule as the displayed list.
+- Refresh object distances silently on their ten-minute cadence and as observer/model data change, retaining the independent horizon cadence, provider validity limits and verified offline caches. Remove exposed refresh gestures and progress notices.
+- Rename scenario UI to Location in twenty languages without changing stable preference keys or version-1 file identity. Compact menu cards show effective values, cached locality and bold customized data. Only the leading icon/checkbox/title changes activation; other space opens the child view. Match child controls and pack natural-height cards in landscape. Resumption remains a direct, always-editable three-choice policy with the original toolbar glyph.
+- Export optional checked celestial objects and the active object with a Location. Apply them atomically on import without transferring favorites or catalogue filters; preserve existing scene checks when omitted and clear them only for an explicitly empty included selection.
+- Export fully automatic locations as current position, altitude and time zone only. Keep date/time live on the recipient and leave its resumption choice intact. Preserve full temporal settings for configured locations, canonical values under both export profiles, backward file compatibility and validation before modifying preferences.
+- Refresh all six in-app news summaries across twenty languages. Release 1.6.0/code 55 with the existing distribution certificate, signed update index, optional reference-information archive, verification metadata and checksums. Reuse unchanged graphics collection 1.7 and its immutable individual downloads; no complete graphics ZIP or new celestial image is added.
+
 ## 1.5.4 — 2026-10-28
 
 - Distinguish catalogue filters with a funnel glyph and sorting with paired up/down arrows. Retain the title-bar icon dimensions, theme-driven states, accessible actions and saved choices.

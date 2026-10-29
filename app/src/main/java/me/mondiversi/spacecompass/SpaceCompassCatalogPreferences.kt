@@ -7,7 +7,8 @@ internal data class SpaceCompassCatalogPreferences(
     val types: Set<SpaceCompassCatalogType> = emptySet(),
     val visibility: SpaceCompassCatalogVisibility = SpaceCompassCatalogVisibility.ALL,
     val origin: SpaceCompassCatalogOrigin = SpaceCompassCatalogOrigin.ALL,
-    val pointing: SpaceCompassCatalogPointing = SpaceCompassCatalogPointing.ALL
+    val pointing: SpaceCompassCatalogPointing = SpaceCompassCatalogPointing.ALL,
+    val favoritesOnly: Boolean = false
 ) {
     val hasFilters: Boolean get() = types.isNotEmpty() || visibility != SpaceCompassCatalogVisibility.ALL ||
         origin != SpaceCompassCatalogOrigin.ALL || pointing != SpaceCompassCatalogPointing.ALL
@@ -15,13 +16,14 @@ internal data class SpaceCompassCatalogPreferences(
 
 /** Stable enum names survive app/process restarts; removed values fall back safely. */
 internal fun restoreSpaceCompassCatalogPreferences(sort: String?, types: Set<String>?, visibility: String?,
-    origin: String? = null, pointing: String? = null) =
+    origin: String? = null, pointing: String? = null, favoritesOnly: Boolean = false) =
     SpaceCompassCatalogPreferences(
         SpaceCompassCatalogSort.entries.firstOrNull { it.name == sort } ?: SpaceCompassCatalogSort.CATALOG,
         SpaceCompassCatalogType.entries.filter { it.name in types.orEmpty() }.toSet(),
         SpaceCompassCatalogVisibility.entries.firstOrNull { it.name == visibility } ?: SpaceCompassCatalogVisibility.ALL,
         SpaceCompassCatalogOrigin.entries.firstOrNull { it.name == origin } ?: SpaceCompassCatalogOrigin.ALL,
-        SpaceCompassCatalogPointing.entries.firstOrNull { it.name == pointing } ?: SpaceCompassCatalogPointing.ALL
+        SpaceCompassCatalogPointing.entries.firstOrNull { it.name == pointing } ?: SpaceCompassCatalogPointing.ALL,
+        favoritesOnly
     )
 
 internal fun readSpaceCompassCatalogPreferences(preferences: SharedPreferences?) = restoreSpaceCompassCatalogPreferences(
@@ -29,7 +31,8 @@ internal fun readSpaceCompassCatalogPreferences(preferences: SharedPreferences?)
     preferences?.getStringSet("catalog_types", null),
     preferences?.getString("catalog_visibility", null),
     preferences?.getString("catalog_origin", null),
-    preferences?.getString("catalog_pointing", null)
+    preferences?.getString("catalog_pointing", null),
+    preferences?.getBoolean("catalog_favorites_only", false) ?: false
 )
 
 /** Write from the selection event, rather than waiting for composition or page dismissal. */
@@ -40,5 +43,6 @@ internal fun saveSpaceCompassCatalogPreferences(preferences: SharedPreferences?,
         ?.putString("catalog_visibility", value.visibility.name)
         ?.putString("catalog_origin", value.origin.name)
         ?.putString("catalog_pointing", value.pointing.name)
+        ?.putBoolean("catalog_favorites_only", value.favoritesOnly)
         ?.apply()
 }

@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="scenario_speed">Tijd</string>
-    <string name="scenario_speed_description">Laat de scenariotijd tot 3600× terug- of vooruitlopen. Nul in het midden pauzeert de tijd.</string>
-    <string name="scenario_resume">Scenario hervatten</string>
+    <string name="scenario_speed_description">Laat de locatietijd tot 3600× terug- of vooruitlopen. Nul in het midden pauzeert de tijd.</string>
+    <string name="scenario_resume">Hervatten</string>
     <string name="scenario_resume_description">Kies hoe de gesimuleerde tijd verdergaat wanneer de app opnieuw opent. De gekozen snelheid geldt in elke modus.</string>
     <string name="scenario_restart">Opnieuw beginnen</string>
     <string name="scenario_active">Alleen wanneer de app actief is</string>
@@ -11,9 +11,9 @@
     <string name="scenario_speed_value">%1$s×</string>
     <string name="celestial_elevation_rising">Hoogte neemt toe</string>
     <string name="celestial_elevation_falling">Hoogte neemt af</string>
-    <string name="scenario_restart_help">Bij elke nieuwe start van de app begint de scenariotijd opnieuw vanuit de oorspronkelijke instellingen. Tijdens gebruik loopt de tijd op de gekozen snelheid.</string>
-    <string name="scenario_active_help">De scenariotijd loopt alleen tijdens gebruik van de app op de gekozen snelheid. Op de achtergrond en tijdens de schermbeveiliging pauzeert de tijd en gaat daarna verder waar die was gestopt.</string>
-    <string name="scenario_always_help">De scenariotijd blijft op de gekozen snelheid doorlopen, ook als de app is gesloten en nadat de telefoon opnieuw is gestart.</string>
+    <string name="scenario_restart_help">Bij elke nieuwe start van de app begint de locatietijd opnieuw vanuit de oorspronkelijke instellingen. Tijdens gebruik loopt de tijd op de gekozen snelheid.</string>
+    <string name="scenario_active_help">De locatietijd loopt alleen tijdens gebruik van de app op de gekozen snelheid. Op de achtergrond en tijdens de schermbeveiliging pauzeert de tijd en gaat daarna verder waar die was gestopt.</string>
+    <string name="scenario_always_help">De locatietijd blijft op de gekozen snelheid doorlopen, ook als de app is gesloten en nadat de telefoon opnieuw is gestart.</string>
     <string name="scenario_time_paused">Tijd gepauzeerd</string>
     <string name="scenario_midnight_note">De datum verandert automatisch bij het passeren van middernacht, ook achteruit.</string>
     <string name="scenario_time_backward">Achteruit</string>

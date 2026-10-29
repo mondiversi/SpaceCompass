@@ -55,13 +55,25 @@ class SpaceCompassCelestialSelectionTest {
         assertEquals(SpaceCompassCelestialBody.SUN, state.active)
         assertEquals(listOf(SpaceCompassCelestialBody.SUN, SpaceCompassCelestialBody.MOON), state.ordered)
     }
-    @Test fun addingObjectsDoesNotChangeTheInspectedObject() {
+    @Test fun newlyCheckedObjectBecomesTheInspectedObjectWithoutLosingOtherChecks() {
         val state = SpaceCompassCelestialSelection().toggle(SpaceCompassCelestialBody.ISS)
-        assertEquals(SpaceCompassCelestialBody.SUN, state.active)
+        assertEquals(SpaceCompassCelestialBody.ISS, state.active)
         assertEquals(listOf(SpaceCompassCelestialBody.SUN, SpaceCompassCelestialBody.ISS, SpaceCompassCelestialBody.MOON), state.ordered)
+    }
+    @Test fun lastNewlyCheckedObjectRemainsActiveAfterRestoringTheSavedSelection() {
+        var state = SpaceCompassCelestialSelection()
+        for (body in listOf(SpaceCompassCelestialBody.ISS, SpaceCompassCelestialBody.MARS, SpaceCompassCelestialBody.VOYAGER_1)) {
+            val previousChecks = state.selected
+            state = state.toggle(body)
+            assertEquals(previousChecks + body, state.selected)
+            assertEquals(body, state.active)
+            assertEquals(state, restoreSpaceCompassCelestialSelection(
+                state.ordered.map { it.name }.toSet(), state.active?.name))
+        }
     }
     @Test fun arrowsCycleCheckedObjectsAndWrapInBothDirections() {
         val state = SpaceCompassCelestialSelection().toggle(SpaceCompassCelestialBody.VOYAGER_1)
+            .copy(active = SpaceCompassCelestialBody.SUN)
         assertEquals(SpaceCompassCelestialBody.MOON, state.step(1).active)
         assertEquals(SpaceCompassCelestialBody.VOYAGER_1, state.step(-1).active)
         assertEquals(state.active, state.step(3).active)
@@ -91,8 +103,10 @@ class SpaceCompassCelestialSelectionTest {
         assertEquals(SpaceCompassCelestialBody.MOON, state.toggleAll().active)
     }
     @Test fun deselectingAnInactiveObjectDoesNotSwitchTheControls() {
-        val state = SpaceCompassCelestialSelection().toggle(SpaceCompassCelestialBody.MOON).toggle(SpaceCompassCelestialBody.MOON)
-        assertEquals(SpaceCompassCelestialSelection(), state)
+        val state = SpaceCompassCelestialSelection().toggle(SpaceCompassCelestialBody.ISS)
+        val after = state.toggle(SpaceCompassCelestialBody.MOON)
+        assertEquals(state.selected - SpaceCompassCelestialBody.MOON, after.selected)
+        assertEquals(SpaceCompassCelestialBody.ISS, after.active)
     }
     @Test(expected = IllegalArgumentException::class) fun activeObjectCannotBeOutsideSelection() {
         SpaceCompassCelestialSelection(setOf(SpaceCompassCelestialBody.MOON), SpaceCompassCelestialBody.SUN)

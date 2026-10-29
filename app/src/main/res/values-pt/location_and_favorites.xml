@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="catalog_favorites_only">Mostrar apenas favoritos</string>
+    <string name="catalog_favorites_off">Desativar filtro de favoritos</string>
+    <string name="location_export_include_objects">Incluir objetos celestes ao guardar a localização</string>
+    <string name="location_export_objects_description">Guarda os objetos assinalados e o objeto ativo na vista principal.</string>
+</resources>

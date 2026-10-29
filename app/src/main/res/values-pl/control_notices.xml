@@ -10,8 +10,8 @@
     <string name="panorama_labels_off">Etykiety ukryte</string>
     <string name="control_choice_message">%1$s: %2$s</string>
 
-    <string name="scene_scenario_on">Scenariusz włączony</string>
-    <string name="scene_scenario_off">Scenariusz wyłączony</string>
+    <string name="scene_scenario_on">Lokalizacja włączona</string>
+    <string name="scene_scenario_off">Lokalizacja wyłączona</string>
     <string name="scene_objects_on">Obiekty włączone</string>
     <string name="scene_objects_off">Obiekty wyłączone</string>
 </resources>

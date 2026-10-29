@@ -1,9 +1,9 @@
 <resources>
-    <string name="scenario_export">Senaryoyu dışa aktar</string>
-    <string name="scenario_import">Senaryoyu içe aktar</string>
-    <string name="scenario_file_name">Senaryo adı</string>
-    <string name="scenario_file_saved">Senaryo kaydedildi</string>
-    <string name="scenario_file_imported">Senaryo içe aktarıldı</string>
-    <string name="scenario_file_invalid">Geçersiz veya desteklenmeyen senaryo dosyası</string>
-    <string name="scenario_file_error">Senaryo kaydedilemedi veya paylaşılamadı</string>
+    <string name="scenario_export">Konumu dışa aktar</string>
+    <string name="scenario_import">Konumu içe aktar</string>
+    <string name="scenario_file_name">Konum adı</string>
+    <string name="scenario_file_saved">Konum kaydedildi</string>
+    <string name="scenario_file_imported">Konum içe aktarıldı</string>
+    <string name="scenario_file_invalid">Geçersiz veya desteklenmeyen konum dosyası</string>
+    <string name="scenario_file_error">Konum kaydedilemedi veya paylaşılamadı</string>
 </resources>

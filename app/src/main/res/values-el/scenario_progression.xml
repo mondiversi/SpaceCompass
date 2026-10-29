@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="scenario_speed">Χρόνος</string>
-    <string name="scenario_speed_description">Μετακινήστε τον χρόνο πίσω ή μπροστά έως 3600×. Το μηδέν στο κέντρο παγώνει τον χρόνο.</string>
-    <string name="scenario_resume">Συνέχιση σεναρίου</string>
+    <string name="scenario_speed_description">Μετακινήστε τον χρόνο της τοποθεσίας πίσω ή μπροστά έως 3600×. Το μηδέν στο κέντρο σταματά τον χρόνο.</string>
+    <string name="scenario_resume">Συνέχιση</string>
     <string name="scenario_resume_description">Επιλέξτε πώς συνεχίζεται ο προσομοιωμένος χρόνος όταν ανοίγετε ξανά την εφαρμογή. Η επιλεγμένη ταχύτητα ισχύει σε κάθε λειτουργία.</string>
     <string name="scenario_restart">Επανεκκίνηση από την αρχή</string>
     <string name="scenario_active">Μόνο με ενεργή εφαρμογή</string>
@@ -11,9 +11,9 @@
     <string name="scenario_speed_value">%1$s×</string>
     <string name="celestial_elevation_rising">Το ύψος αυξάνεται</string>
     <string name="celestial_elevation_falling">Το ύψος μειώνεται</string>
-    <string name="scenario_restart_help">Σε κάθε νέα εκκίνηση της εφαρμογής, ο χρόνος του σεναρίου ξεκινά από τις αρχικές ρυθμίσεις. Κατά τη χρήση προχωρά με την επιλεγμένη ταχύτητα.</string>
-    <string name="scenario_active_help">Ο χρόνος του σεναρίου προχωρά με την επιλεγμένη ταχύτητα μόνο όσο χρησιμοποιείς την εφαρμογή. Στο παρασκήνιο και στην προφύλαξη οθόνης σταματά προσωρινά και μετά συνεχίζει από εκεί που σταμάτησε.</string>
-    <string name="scenario_always_help">Ο χρόνος του σεναρίου συνεχίζει να προχωρά με την επιλεγμένη ταχύτητα ακόμη και με κλειστή την εφαρμογή και μετά την επανεκκίνηση του τηλεφώνου.</string>
+    <string name="scenario_restart_help">Κάθε νέα εκκίνηση της εφαρμογής επαναφέρει τον χρόνο της τοποθεσίας στις αρχικές ρυθμίσεις. Κατά τη χρήση προχωρά με την επιλεγμένη ταχύτητα.</string>
+    <string name="scenario_active_help">Ο χρόνος της τοποθεσίας προχωρά με την επιλεγμένη ταχύτητα μόνο κατά τη χρήση της εφαρμογής. Σταματά στο παρασκήνιο και στην προφύλαξη οθόνης και μετά συνεχίζει από εκεί που έμεινε.</string>
+    <string name="scenario_always_help">Ο χρόνος της τοποθεσίας συνεχίζει με την επιλεγμένη ταχύτητα ακόμη και όταν η εφαρμογή είναι κλειστή και μετά την επανεκκίνηση του τηλεφώνου.</string>
     <string name="scenario_time_paused">Ο χρόνος σε παύση</string>
     <string name="scenario_midnight_note">Η ημερομηνία αλλάζει αυτόματα όταν περνάτε τα μεσάνυχτα, ακόμη και προς τα πίσω.</string>
     <string name="scenario_time_backward">Πίσω</string>

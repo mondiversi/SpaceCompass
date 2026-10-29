@@ -1,7 +1,7 @@
 <resources>
     <string name="scenario_position_description">Επίλεξε την τοποθεσία για τον υπολογισμό του ουρανού.</string>
-    <string name="scenario_altitude_description">Όρισε το υψόμετρο που χρησιμοποιείται στο σενάριο.</string>
-    <string name="scenario_zone_description">Επίλεξε τη ζώνη ώρας για την ημερομηνία και την ώρα του σεναρίου.</string>
+    <string name="scenario_altitude_description">Ορίστε το υψόμετρο που χρησιμοποιείται για την τοποθεσία.</string>
+    <string name="scenario_zone_description">Επιλέξτε τη ζώνη ώρας για την ημερομηνία και την ώρα της τοποθεσίας.</string>
     <string name="scenario_date_description">Επίλεξε την ημερομηνία για τον υπολογισμό των θέσεων των αντικειμένων.</string>
-    <string name="scenario_time_description">Όρισε την ώρα στη ζώνη ώρας του σεναρίου.</string>
+    <string name="scenario_time_description">Ορίστε την ώρα στη ζώνη ώρας της τοποθεσίας.</string>
 </resources>

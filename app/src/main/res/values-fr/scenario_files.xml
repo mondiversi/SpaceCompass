@@ -1,9 +1,9 @@
 <resources>
-    <string name="scenario_export">Exporter le scénario</string>
-    <string name="scenario_import">Importer un scénario</string>
-    <string name="scenario_file_name">Nom du scénario</string>
-    <string name="scenario_file_saved">Scénario enregistré</string>
-    <string name="scenario_file_imported">Scénario importé</string>
-    <string name="scenario_file_invalid">Fichier de scénario non valide ou non pris en charge</string>
-    <string name="scenario_file_error">Impossible d’enregistrer ou de partager le scénario</string>
+    <string name="scenario_export">Exporter le lieu</string>
+    <string name="scenario_import">Importer un lieu</string>
+    <string name="scenario_file_name">Nom du lieu</string>
+    <string name="scenario_file_saved">Lieu enregistré</string>
+    <string name="scenario_file_imported">Lieu importé</string>
+    <string name="scenario_file_invalid">Fichier de lieu invalide ou non pris en charge</string>
+    <string name="scenario_file_error">Impossible d’enregistrer ou de partager le lieu</string>
 </resources>

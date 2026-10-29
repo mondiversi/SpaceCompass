@@ -1,7 +1,7 @@
 <resources>
     <string name="scenario_position_description">اختر الموقع المستخدم لحساب مواقع الأجرام في السماء.</string>
-    <string name="scenario_altitude_description">اضبط الارتفاع المستخدم في السيناريو.</string>
-    <string name="scenario_zone_description">اختر المنطقة الزمنية لتاريخ السيناريو ووقته.</string>
+    <string name="scenario_altitude_description">اضبط الارتفاع المستخدم في الموقع.</string>
+    <string name="scenario_zone_description">اختر المنطقة الزمنية لتاريخ الموقع ووقته.</string>
     <string name="scenario_date_description">اختر التاريخ المستخدم لحساب مواقع الأجرام.</string>
-    <string name="scenario_time_description">اضبط الوقت وفق المنطقة الزمنية للسيناريو.</string>
+    <string name="scenario_time_description">اضبط الوقت وفق المنطقة الزمنية للموقع.</string>
 </resources>

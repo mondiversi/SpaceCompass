@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="catalog_favorites_only">عرض المفضلة فقط</string>
+    <string name="catalog_favorites_off">إيقاف تصفية المفضلة</string>
+    <string name="location_export_include_objects">تضمين الأجرام السماوية عند حفظ الموقع</string>
+    <string name="location_export_objects_description">يحفظ الأجرام المحددة والجرم النشط في العرض الرئيسي.</string>
+</resources>

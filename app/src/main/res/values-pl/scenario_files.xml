@@ -1,9 +1,9 @@
 <resources>
-    <string name="scenario_export">Eksportuj scenariusz</string>
-    <string name="scenario_import">Importuj scenariusz</string>
-    <string name="scenario_file_name">Nazwa scenariusza</string>
-    <string name="scenario_file_saved">Scenariusz zapisany</string>
-    <string name="scenario_file_imported">Scenariusz zaimportowany</string>
-    <string name="scenario_file_invalid">Nieprawidłowy lub nieobsługiwany plik scenariusza</string>
-    <string name="scenario_file_error">Nie można zapisać ani udostępnić scenariusza</string>
+    <string name="scenario_export">Eksportuj lokalizację</string>
+    <string name="scenario_import">Importuj lokalizację</string>
+    <string name="scenario_file_name">Nazwa lokalizacji</string>
+    <string name="scenario_file_saved">Lokalizacja zapisana</string>
+    <string name="scenario_file_imported">Lokalizacja zaimportowana</string>
+    <string name="scenario_file_invalid">Nieprawidłowy lub nieobsługiwany plik lokalizacji</string>
+    <string name="scenario_file_error">Nie można zapisać ani udostępnić lokalizacji</string>
 </resources>

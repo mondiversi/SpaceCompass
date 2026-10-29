@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="scenario_speed">زمان</string>
-    <string name="scenario_speed_description">زمان سناریو را تا 3600× به عقب یا جلو ببرید. صفر در مرکز زمان را متوقف می‌کند.</string>
-    <string name="scenario_resume">ادامهٔ سناریو</string>
+    <string name="scenario_speed_description">زمان مکان را تا 3600× به عقب یا جلو ببرید. صفر در مرکز زمان را متوقف می‌کند.</string>
+    <string name="scenario_resume">ادامه</string>
     <string name="scenario_resume_description">انتخاب کنید زمان شبیه‌سازی‌شده با باز کردن دوبارهٔ برنامه چگونه ادامه یابد. سرعت انتخاب‌شده در همهٔ حالت‌ها اعمال می‌شود.</string>
     <string name="scenario_restart">شروع از ابتدا</string>
     <string name="scenario_active">فقط هنگام فعال بودن برنامه</string>
@@ -11,9 +11,9 @@
     <string name="scenario_speed_value">%1$s×</string>
     <string name="celestial_elevation_rising">ارتفاع در حال افزایش</string>
     <string name="celestial_elevation_falling">ارتفاع در حال کاهش</string>
-    <string name="scenario_restart_help">با هر بار راه‌اندازی جدید برنامه، زمان سناریو از تنظیمات اولیه شروع می‌شود. هنگام استفاده از برنامه، با سرعت انتخاب‌شده پیش می‌رود.</string>
-    <string name="scenario_active_help">زمان سناریو فقط هنگام استفاده از برنامه با سرعت انتخاب‌شده پیش می‌رود. در پس‌زمینه و هنگام نمایش محافظ صفحه متوقف می‌شود و سپس از همان‌جا ادامه می‌یابد.</string>
-    <string name="scenario_always_help">زمان سناریو حتی وقتی برنامه بسته است و پس از راه‌اندازی مجدد گوشی، با سرعت انتخاب‌شده به پیشروی ادامه می‌دهد.</string>
+    <string name="scenario_restart_help">با هر بار راه‌اندازی جدید برنامه، زمان مکان از تنظیمات اولیه شروع می‌شود. هنگام استفاده از برنامه، با سرعت انتخاب‌شده پیش می‌رود.</string>
+    <string name="scenario_active_help">زمان مکان فقط هنگام استفاده از برنامه با سرعت انتخاب‌شده پیش می‌رود. در پس‌زمینه و هنگام نمایش محافظ صفحه متوقف می‌شود و سپس از همان‌جا ادامه می‌یابد.</string>
+    <string name="scenario_always_help">زمان مکان حتی وقتی برنامه بسته است و پس از راه‌اندازی مجدد گوشی، با سرعت انتخاب‌شده به پیشروی ادامه می‌دهد.</string>
     <string name="scenario_time_paused">زمان متوقف است</string>
     <string name="scenario_midnight_note">تاریخ با عبور از نیمه‌شب خودکار تغییر می‌کند، حتی هنگام حرکت به عقب.</string>
     <string name="scenario_time_backward">به عقب</string>

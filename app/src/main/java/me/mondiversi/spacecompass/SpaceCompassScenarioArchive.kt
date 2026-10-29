@@ -5,13 +5,14 @@ import java.io.StringWriter
 import java.time.ZoneId
 import java.util.Properties
 
-internal const val SPACE_COMPASS_SCENARIO_FILE_LIMIT = 16_384
+internal const val SPACE_COMPASS_SCENARIO_FILE_LIMIT = 131_072
 internal const val SPACE_COMPASS_SCENARIO_EXTENSION = ".spacecompass"
 internal const val SPACE_COMPASS_SCENARIO_MIME = "application/octet-stream"
 
 /** Portable configuration only: no running-clock anchor, checkpoint, device ID or elapsed time. */
 internal data class SpaceCompassScenarioArchive(val name: String, val configuration: SpaceCompassObserverPlan,
-    val timeSettings: SpaceCompassScenarioTimeSettings) {
+    val timeSettings: SpaceCompassScenarioTimeSettings,
+    val celestialSelection: SpaceCompassCelestialSelection? = null, val temporalSettingsIncluded: Boolean = true) {
     val custom: Boolean get() = configuration.activeSections.isNotEmpty()
 
     fun configurationAtImport(now: Long, deviceZone: ZoneId): SpaceCompassObserverPlan {
@@ -25,6 +26,8 @@ internal data class SpaceCompassScenarioArchive(val name: String, val configurat
         require(name.isNotBlank() && name.length <= 80 && name.none(Char::isISOControl))
         require(timeSettings.rate in spaceCompassScenarioRates)
         val c = configuration
+        if (!temporalSettingsIncluded) require(!c.simulateDate && !c.simulateTime && !c.advanceTime &&
+            c.clockOffsetMs == null && c.timeMs == 0L && c.momentZoneId == "UTC" && timeSettings == SpaceCompassScenarioTimeSettings())
         val properties = Properties().apply {
             setProperty("format", "space-compass-scenario"); setProperty("version", "1"); setProperty("name", name)
             setProperty("latitude", c.latitude.toString()); setProperty("longitude", c.longitude.toString())
@@ -37,6 +40,14 @@ internal data class SpaceCompassScenarioArchive(val name: String, val configurat
             c.automaticZoneId?.let { setProperty("automaticZoneId", it) }
             setProperty("speedEnabled", timeSettings.enabled.toString()); setProperty("speedRate", timeSettings.rate.toString())
             setProperty("resume", timeSettings.resume.name)
+            // Legacy readers require neutral temporal fields; new readers leave the recipient's resume preference intact.
+            if (!temporalSettingsIncluded) setProperty("temporalSettingsIncluded", "false")
+            celestialSelection?.let { selection ->
+                require(selection.selected == selection.ordered.toSet())
+                setProperty("objectsIncluded", "true")
+                setProperty("objects", selection.ordered.joinToString(",") { it.name })
+                setProperty("activeObject", selection.active?.name.orEmpty())
+            }
         }
         // Properties escapes control characters and delimiters. Omit its generated wall-clock comment.
         val out = StringWriter().also { properties.store(it, null) }.toString()
@@ -78,7 +89,16 @@ internal data class SpaceCompassScenarioArchive(val name: String, val configurat
             val settings = SpaceCompassScenarioTimeSettings(bool("speedEnabled"), value("speedRate").toInt(),
                 SpaceCompassScenarioResume.valueOf(value("resume")))
             require(settings.rate in spaceCompassScenarioRates)
-            return SpaceCompassScenarioArchive(name, c, settings)
+            val selection = p.getProperty("objectsIncluded")?.let { included ->
+                if (!included.toBooleanStrict()) null else {
+                    val names = value("objects").takeIf { it.isNotBlank() }?.split(',')?.toSet() ?: emptySet()
+                    restoreSpaceCompassCelestialSelection(names, value("activeObject").takeIf { it.isNotEmpty() })
+                }
+            }
+            val temporal = p.getProperty("temporalSettingsIncluded")?.toBooleanStrict() ?: true
+            if (!temporal) require(!c.simulateDate && !c.simulateTime && !c.advanceTime && c.clockOffsetMs == null &&
+                c.timeMs == 0L && c.momentZoneId == "UTC" && settings == SpaceCompassScenarioTimeSettings())
+            return SpaceCompassScenarioArchive(name, c, settings, selection, temporal)
         }
     }
 }

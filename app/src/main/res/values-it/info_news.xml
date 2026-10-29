@@ -1,9 +1,9 @@
 <resources>
     <string name="info_news_title">Ultime novità · %1$s</string>
-    <string name="info_news_star_sky" formatted="false">L’icona a imbuto rende più riconoscibili i filtri del catalogo.</string>
-    <string name="info_news_texture_downloads" formatted="false">Le frecce su e giù distinguono l’ordinamento dai filtri.</string>
-    <string name="info_news_weather" formatted="false">L’elenco oggetti ha uno sfondo uniforme, senza colori per categoria.</string>
-    <string name="info_news_viewer_zoom" formatted="false">Le categorie del filtro Tipo hanno uno sfondo neutro nei due temi.</string>
-    <string name="info_news_settings" formatted="false">La casella Cerca è più bassa, con più spazio sopra e sotto.</string>
-    <string name="info_news_catalog" formatted="false">Testo di ricerca, segnaposto e cursore lampeggiante sono centrati verticalmente.</string>
+    <string name="info_news_star_sky" formatted="false">Gestione location mostra i valori attuali, con dati personalizzati in grassetto e comandi più compatti.</string>
+    <string name="info_news_texture_downloads" formatted="false">Salva i preferiti dall’Osservatorio e usa il cuore nel catalogo per mostrare solo gli oggetti preferiti.</string>
+    <string name="info_news_weather" formatted="false">Le checkbox dei preferiti hanno un accento rosa. I conteggi dei filtri seguono preferiti, ricerca e altri filtri attivi.</string>
+    <string name="info_news_viewer_zoom" formatted="false">Un nuovo oggetto selezionato diventa quello attivo, mentre l’elenco resta fermo fino al ritorno alla vista principale.</string>
+    <string name="info_news_settings" formatted="false">I file location possono includere gli oggetti selezionati. Le esportazioni automatiche condividono posizione, quota e fuso, lasciando data e ora correnti.</string>
+    <string name="info_news_catalog" formatted="false">I dati degli oggetti si aggiornano automaticamente quando serve. Il pannello filtri aperto resta visibile durante lo scorrimento.</string>
 </resources>

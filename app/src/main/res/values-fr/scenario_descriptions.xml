@@ -1,7 +1,7 @@
 <resources>
     <string name="scenario_position_description">Choisissez le lieu depuis lequel observer le ciel.</string>
-    <string name="scenario_altitude_description">Définissez l’altitude utilisée dans le scénario.</string>
-    <string name="scenario_zone_description">Choisissez le fuseau horaire pour la date et l’heure du scénario.</string>
+    <string name="scenario_altitude_description">Définissez l’altitude utilisée dans le lieu.</string>
+    <string name="scenario_zone_description">Choisissez le fuseau horaire pour la date et l’heure du lieu.</string>
     <string name="scenario_date_description">Choisissez la date pour calculer les positions des objets.</string>
-    <string name="scenario_time_description">Réglez l’heure dans le fuseau horaire du scénario.</string>
+    <string name="scenario_time_description">Réglez l’heure dans le fuseau horaire du lieu.</string>
 </resources>

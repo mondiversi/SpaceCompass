@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="scenario_speed">Czas</string>
-    <string name="scenario_speed_description">Cofaj czas scenariusza lub przesuwaj go naprzód do 3600×. Zero pośrodku zatrzymuje czas.</string>
-    <string name="scenario_resume">Wznawianie scenariusza</string>
+    <string name="scenario_speed_description">Przesuwaj czas lokalizacji wstecz lub naprzód z prędkością do 3600×. Zero pośrodku zatrzymuje czas.</string>
+    <string name="scenario_resume">Wznawianie</string>
     <string name="scenario_resume_description">Wybierz sposób wznawiania symulowanego czasu po ponownym otwarciu aplikacji. Wybrana prędkość obowiązuje w każdym trybie.</string>
     <string name="scenario_restart">Zacznij od początku</string>
     <string name="scenario_active">Tylko gdy aplikacja jest aktywna</string>
@@ -11,9 +11,9 @@
     <string name="scenario_speed_value">%1$s×</string>
     <string name="celestial_elevation_rising">Wysokość rośnie</string>
     <string name="celestial_elevation_falling">Wysokość maleje</string>
-    <string name="scenario_restart_help">Przy każdym nowym uruchomieniu aplikacji czas scenariusza zaczyna się od ustawień początkowych. Podczas korzystania z aplikacji płynie z wybraną prędkością.</string>
-    <string name="scenario_active_help">Czas scenariusza płynie z wybraną prędkością tylko podczas korzystania z aplikacji. W tle i podczas wygaszacza ekranu zatrzymuje się, a potem jest wznawiany od miejsca zatrzymania.</string>
-    <string name="scenario_always_help">Czas scenariusza nadal płynie z wybraną prędkością, nawet gdy aplikacja jest zamknięta i po ponownym uruchomieniu telefonu.</string>
+    <string name="scenario_restart_help">Każde nowe uruchomienie aplikacji rozpoczyna czas lokalizacji od ustawień początkowych. Podczas używania czas płynie z wybraną prędkością.</string>
+    <string name="scenario_active_help">Czas lokalizacji płynie z wybraną prędkością tylko podczas używania aplikacji. W tle i podczas wygaszacza ekranu zatrzymuje się, a następnie jest wznawiany od ostatniej chwili.</string>
+    <string name="scenario_always_help">Czas lokalizacji płynie z wybraną prędkością także po zamknięciu aplikacji i ponownym uruchomieniu telefonu.</string>
     <string name="scenario_time_paused">Czas wstrzymany</string>
     <string name="scenario_midnight_note">Data zmienia się automatycznie po przekroczeniu północy, również podczas cofania czasu.</string>
     <string name="scenario_time_backward">Wstecz</string>

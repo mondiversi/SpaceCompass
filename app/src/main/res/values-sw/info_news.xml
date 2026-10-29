@@ -1,9 +1,9 @@
 <resources>
     <string name="info_news_title">Mambo mapya · %1$s</string>
-    <string name="info_news_star_sky" formatted="false">Aikoni ya faneli inafanya vichujio vya katalogi vitambulike kwa urahisi zaidi.</string>
-    <string name="info_news_texture_downloads" formatted="false">Mishale ya juu na chini inatofautisha upangaji na uchujaji.</string>
-    <string name="info_news_weather" formatted="false">Orodha ya vitu ina mandharinyuma sare, bila rangi za makundi.</string>
-    <string name="info_news_viewer_zoom" formatted="false">Makundi ya kichujio cha Aina yana mandharinyuma ya kawaida katika mandhari zote mbili.</string>
-    <string name="info_news_settings" formatted="false">Urefu wa kisanduku cha utafutaji umepunguzwa ili kuongeza nafasi juu na chini.</string>
-    <string name="info_news_catalog" formatted="false">Maandishi ya utafutaji, maandishi ya kidokezo na kishale kinachopepesa vimewekwa katikati wima.</string>
+    <string name="info_news_star_sky" formatted="false">Usimamizi wa eneo unaonyesha thamani za sasa, mipangilio maalumu kwa herufi nzito na vidhibiti vilivyobana zaidi.</string>
+    <string name="info_news_texture_downloads" formatted="false">Weka vitu kama vipendwa kwenye Kiangalizi, kisha tumia moyo katika katalogi kuonyesha vipendwa pekee.</string>
+    <string name="info_news_weather" formatted="false">Visanduku vya vipendwa vina rangi ya waridi. Hesabu za vichujio hufuata vipendwa, utafutaji na vichujio vingine vinavyotumika.</string>
+    <string name="info_news_viewer_zoom" formatted="false">Kitu kipya kilichochaguliwa huwa kinachotumika. Orodha hubaki mahali pake hadi urudi kwenye mwonekano mkuu.</string>
+    <string name="info_news_settings" formatted="false">Faili za eneo zinaweza kujumuisha vitu vilivyochaguliwa. Usafirishaji otomatiki hushiriki nafasi, kimo na ukanda wa saa, huku tarehe na saa zikiendelea kuwa za sasa.</string>
+    <string name="info_news_catalog" formatted="false">Data ya vitu husasishwa kiotomatiki inapohitajika. Paneli ya vichujio iliyo wazi hubaki kuonekana unaposogeza orodha.</string>
 </resources>

@@ -1,9 +1,9 @@
 <resources>
-    <string name="scenario_export">Экспорт сценария</string>
-    <string name="scenario_import">Импорт сценария</string>
-    <string name="scenario_file_name">Название сценария</string>
-    <string name="scenario_file_saved">Сценарий сохранён</string>
-    <string name="scenario_file_imported">Сценарий импортирован</string>
-    <string name="scenario_file_invalid">Недопустимый или неподдерживаемый файл сценария</string>
-    <string name="scenario_file_error">Не удалось сохранить сценарий или поделиться им</string>
+    <string name="scenario_export">Экспорт локации</string>
+    <string name="scenario_import">Импорт локации</string>
+    <string name="scenario_file_name">Название локации</string>
+    <string name="scenario_file_saved">Локация сохранена</string>
+    <string name="scenario_file_imported">Локация импортирована</string>
+    <string name="scenario_file_invalid">Недопустимый или неподдерживаемый файл локации</string>
+    <string name="scenario_file_error">Не удалось сохранить локацию или поделиться ею</string>
 </resources>

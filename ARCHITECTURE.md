@@ -476,9 +476,9 @@ gaps expand slightly. Night island action circles invert to a light neutral fill
 daytime actions, viewer tabs and floating controls keep their existing styling.
 
 
-## Scenario management and filters 1.5.3
+## Location management and filters 1.5.3
 
-One retained observer editor owns the Scenario management menu and its seven child routes.
+One retained observer editor owns the Location management menu and its seven child routes.
 ScenarioMenu and ScenarioEditorChrome separate navigation and shared controls from form logic.
 ScenarioCurrentValues resolves the applied observer without modifying clock anchors; disabled
 forms retain drafts but show neutral effective values. Position summaries read the existing place

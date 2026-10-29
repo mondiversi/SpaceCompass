@@ -10,8 +10,8 @@
     <string name="panorama_labels_off">लेबल छिपाए गए हैं</string>
     <string name="control_choice_message">%1$s: %2$s</string>
 
-    <string name="scene_scenario_on">परिदृश्य चालू है</string>
-    <string name="scene_scenario_off">परिदृश्य बंद है</string>
+    <string name="scene_scenario_on">लोकेशन चालू की गई</string>
+    <string name="scene_scenario_off">लोकेशन बंद की गई</string>
     <string name="scene_objects_on">खगोलीय पिंड चालू हैं</string>
     <string name="scene_objects_off">खगोलीय पिंड बंद हैं</string>
 </resources>

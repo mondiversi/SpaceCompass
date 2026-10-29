@@ -10,8 +10,8 @@
     <string name="panorama_labels_off">Label disembunyikan</string>
     <string name="control_choice_message">%1$s: %2$s</string>
 
-    <string name="scene_scenario_on">Skenario diaktifkan</string>
-    <string name="scene_scenario_off">Skenario dinonaktifkan</string>
+    <string name="scene_scenario_on">Lokasi diaktifkan</string>
+    <string name="scene_scenario_off">Lokasi dinonaktifkan</string>
     <string name="scene_objects_on">Objek diaktifkan</string>
     <string name="scene_objects_off">Objek dinonaktifkan</string>
 </resources>

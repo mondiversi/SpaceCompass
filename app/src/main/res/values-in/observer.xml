@@ -1,5 +1,5 @@
 <resources>
-    <string name="observer_title">Skenario</string>
+    <string name="observer_title">Lokasi</string>
     <string name="observer_place">Posisi</string>
     <string name="observer_search">Cari tempat</string>
     <string name="observer_search_action">Cari</string>
@@ -19,10 +19,10 @@
     <string name="observer_apply">Tetapkan</string>
     <string name="observer_invalid">Periksa koordinat, ketinggian, tanggal, waktu dan zona waktu. Tanggal: 1900–2100. Waktu yang tidak ada saat perubahan waktu musim panas tidak valid.</string>
     <string name="observer_use_place">Gunakan titik ini</string>
-    <string name="observer_simulation">Skenario</string>
+    <string name="observer_simulation">Lokasi</string>
     <string name="observer_coordinates_value">Koordinat: %1$s</string>
     <string name="observer_altitude_value">Ketinggian: %1$s</string>
-    <string name="observer_simulation_active">Skenario aktif</string>
+    <string name="observer_simulation_active">Lokasi aktif</string>
     <string name="observer_enable_position">Simulasikan posisi</string>
     <string name="observer_enable_date">Simulasikan tanggal</string>
     <string name="observer_enable_time">Simulasikan waktu</string>

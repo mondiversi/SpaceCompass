@@ -1,9 +1,9 @@
 <resources>
     <string name="info_news_title">تازه‌ترین تغییرات · %1$s</string>
-    <string name="info_news_star_sky" formatted="false">نماد قیف، تشخیص فیلترهای فهرست را آسان‌تر می‌کند.</string>
-    <string name="info_news_texture_downloads" formatted="false">پیکان‌های بالا و پایین، مرتب‌سازی را از فیلترکردن متمایز می‌کنند.</string>
-    <string name="info_news_weather" formatted="false">فهرست اجرام پس‌زمینه‌ای یکدست و بدون رنگ‌بندی دسته‌ها دارد.</string>
-    <string name="info_news_viewer_zoom" formatted="false">دسته‌های فیلتر نوع در هر دو پوسته پس‌زمینه‌ای خنثی دارند.</string>
-    <string name="info_news_settings" formatted="false">ارتفاع کادر جستجو کمتر شده و فضای بیشتری در بالا و پایین آن وجود دارد.</string>
-    <string name="info_news_catalog" formatted="false">متن جستجو، متن راهنما و نشانگر چشمک‌زن به‌صورت عمودی در مرکز قرار دارند.</string>
+    <string name="info_news_star_sky" formatted="false">مدیریت مکان مقادیر فعلی را با تنظیمات سفارشی پررنگ و کنترل‌های جمع‌وجورتر نشان می‌دهد.</string>
+    <string name="info_news_texture_downloads" formatted="false">اجرام را در رصدخانه به علاقه‌مندی‌ها اضافه کنید و با قلب فهرست، فقط علاقه‌مندی‌ها را ببینید.</string>
+    <string name="info_news_weather" formatted="false">کادرهای انتخاب علاقه‌مندی‌ها صورتی هستند. شمارنده‌های فیلتر با علاقه‌مندی‌ها، جستجو و فیلترهای فعال دیگر هماهنگ می‌شوند.</string>
+    <string name="info_news_viewer_zoom" formatted="false">جرم تازه انتخاب‌شده فعال می‌شود. فهرست تا بازگشت به نمای اصلی در جای خود می‌ماند.</string>
+    <string name="info_news_settings" formatted="false">فایل‌های مکان می‌توانند اجرام انتخاب‌شده را داشته باشند. خروجی خودکار موقعیت، ارتفاع و منطقهٔ زمانی را به اشتراک می‌گذارد و تاریخ و ساعت جاری می‌مانند.</string>
+    <string name="info_news_catalog" formatted="false">داده‌های اجرام در صورت نیاز خودکار تازه می‌شوند. پنل فیلتر باز هنگام پیمایش نمایان می‌ماند.</string>
 </resources>

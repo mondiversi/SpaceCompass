@@ -1,6 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<resources>
-    <string name="catalog_refresh">به‌روزرسانی داده‌ها</string>
-    <string name="catalog_refreshing">در حال به‌روزرسانی داده‌ها…</string>
-    <string name="catalog_refresh_finished">به‌روزرسانی اجرام پایان یافت.</string>
-</resources>

@@ -1,6 +1,7 @@
 package me.mondiversi.spacecompass
 
 import androidx.compose.foundation.background
+import androidx.compose.foundation.isSystemInDarkTheme
 import androidx.compose.foundation.border
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.indication
@@ -30,9 +31,16 @@ import androidx.compose.ui.unit.sp
 @Composable
 internal fun SpaceCompassCatalogObjectRow(
     body: SpaceCompassCelestialBody, name: String, checked: Boolean, value: String, color: Color,
-    onToggle: () -> Unit, onObserve: () -> Unit, rowBackground: Color = MaterialTheme.colorScheme.surface
+    onToggle: () -> Unit, onObserve: () -> Unit, rowBackground: Color = MaterialTheme.colorScheme.surface,
+    favoriteTint: Color? = null
 ) {
     val observationInteraction = remember { MutableInteractionSource() }
+    // Favorite status changes the control's color, while its check still means scene selection.
+    val checkboxColors = spaceCompassCheckboxColors(
+        checkedColor = favoriteTint ?: MaterialTheme.colorScheme.primary,
+        uncheckedColor = favoriteTint ?: MaterialTheme.colorScheme.onSurfaceVariant,
+        checkmarkColor = if (favoriteTint != null) spaceCompassCounterTextColor(isSystemInDarkTheme())
+            else MaterialTheme.colorScheme.onPrimary)
     // Share observation feedback across the row without expanding its clickable area.
     Row(Modifier.fillMaxWidth().heightIn(min = 48.dp)
         .background(rowBackground)
@@ -44,7 +52,7 @@ internal fun SpaceCompassCatalogObjectRow(
         // Match the fixed header's checkbox centre, preserving a full touch target.
         // The following gap keeps that target outside the thumbnail/name action.
         Box(Modifier.width(24.dp).height(48.dp), contentAlignment = Alignment.Center) {
-            Checkbox(checked, onCheckedChange = { onToggle() }, colors = spaceCompassCheckboxColors(),
+            Checkbox(checked, onCheckedChange = { onToggle() }, colors = checkboxColors,
                 modifier = Modifier.requiredSize(48.dp).testTag("catalog-check-${body.name}")
                     .semantics { contentDescription = name })
         }

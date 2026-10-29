@@ -1,5 +1,5 @@
 <resources>
-    <string name="observer_title">Senaryo</string>
+    <string name="observer_title">Konum</string>
     <string name="observer_place">Konum</string>
     <string name="observer_search">Yer ara</string>
     <string name="observer_search_action">Ara</string>
@@ -19,10 +19,10 @@
     <string name="observer_apply">Ayarla</string>
     <string name="observer_invalid">Koordinat, rakım, tarih, saat ve saat dilimini kontrol edin. Tarihler: 1900–2100. Yaz saati değişimindeki var olmayan saatler geçersizdir.</string>
     <string name="observer_use_place">Bu noktayı kullan</string>
-    <string name="observer_simulation">Senaryo</string>
+    <string name="observer_simulation">Konum</string>
     <string name="observer_coordinates_value">Koordinatlar: %1$s</string>
     <string name="observer_altitude_value">Rakım: %1$s</string>
-    <string name="observer_simulation_active">Senaryo etkin</string>
+    <string name="observer_simulation_active">Konum etkin</string>
     <string name="observer_enable_position">Konumu simüle et</string>
     <string name="observer_enable_date">Tarihi simüle et</string>
     <string name="observer_enable_time">Saati simüle et</string>

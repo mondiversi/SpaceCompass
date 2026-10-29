@@ -1,7 +1,7 @@
 <resources>
     <string name="scenario_position_description">Chagua eneo la kutumia kukokotoa anga.</string>
-    <string name="scenario_altitude_description">Weka mwinuko unaotumika katika hali.</string>
-    <string name="scenario_zone_description">Chagua ukanda wa saa kwa tarehe na saa ya hali.</string>
+    <string name="scenario_altitude_description">Weka kimo cha kutumia kwa eneo.</string>
+    <string name="scenario_zone_description">Chagua ukanda wa saa kwa tarehe na saa ya eneo.</string>
     <string name="scenario_date_description">Chagua tarehe ya kukokotoa nafasi za vitu vya angani.</string>
-    <string name="scenario_time_description">Weka saa kulingana na ukanda wa saa wa hali.</string>
+    <string name="scenario_time_description">Weka saa katika ukanda wa saa wa eneo.</string>
 </resources>

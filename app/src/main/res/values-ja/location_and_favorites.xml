@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="catalog_favorites_only">お気に入りのみ表示</string>
+    <string name="catalog_favorites_off">お気に入りフィルターを解除</string>
+    <string name="location_export_include_objects">ロケーションの保存時に天体を含める</string>
+    <string name="location_export_objects_description">チェックした天体とメイン画面で表示中の天体を保存します。</string>
+</resources>

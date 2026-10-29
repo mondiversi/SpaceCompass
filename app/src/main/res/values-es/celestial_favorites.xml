@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="celestial_favorite_add">Añadir a favoritos</string>
+    <string name="celestial_favorite_remove">Quitar de favoritos</string>
+</resources>

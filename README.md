@@ -8,8 +8,8 @@ paths, inspect reference facts and view textured models. Space Compass is a stan
 
 ## Download and install
 
-Download **space-compass-1.5.4.apk** from the
-[Space Compass 1.5.4 release](https://github.com/mondiversi/SpaceCompass/releases/tag/v1.5.4).
+Download **space-compass-1.6.0.apk** from the
+[Space Compass 1.6.0 release](https://github.com/mondiversi/SpaceCompass/releases/tag/v1.6.0).
 Android 8.0 or newer is required. Open the APK and follow Android's installation
 prompts; allow installation for your browser or file manager if requested.
 
@@ -22,7 +22,7 @@ one manual APK update to acquire this feature.
 The release includes `SHA256SUMS.txt` and a signed update index. GitHub's source
 ZIP/TAR archives and Actions debug artifacts are separate from the signed APK.
 See [distribution and signing](docs/GITHUB_RELEASES.md) and
-[the 1.5.4 release audit](docs/RELEASE_1_5_4.md).
+[the 1.6.0 release audit](docs/RELEASE_1_6_0.md).
 
 ## Features
 
@@ -32,7 +32,9 @@ See [distribution and signing](docs/GITHUB_RELEASES.md) and
 - Live search by localized name or catalog identifier, combined with four paired filters: type, visibility, origin and pointing availability. Selected objects remain pinned first and visible through filters/search; numeric or alphabetical sorting still applies within each group. Object rows and Type choices use neutral theme backgrounds. A funnel identifies filters; up/down arrows identify sorting. The compact search field centers its text, hint and cursor.
 - Type/visibility filters and numeric sorting by Sun-centred or Earth-centred distance, mass, diameter, pressure,
   gravity and temperature. Missing properties remain unavailable and sort last.
-- Selections, active target, filters, sorting, units and interface settings persist.
+- Favorites are independent of scene selection: mark them with the Observatory heart and filter the catalogue with its heart. Favorite checkboxes use the shared day/night pink accent, while their check still controls scene selection. Favorites, filters, selected objects and the active target persist.
+- Newly checked objects become the active target without jumping to the top during the catalogue visit. Returning from Observatory keeps list position; returning to the main scene and reopening the catalogue refreshes selected-first grouping. An open filter panel stays fixed while the search/value header retains quick-return scrolling.
+- Filter-option counters combine favorites, search and the other active facets, including retained checked-object exceptions. Favorites-only remains a strict independent scope. Sorting, units and interface settings persist.
 - Send future path points to Android Clock or Calendar with a visible handoff; control the main-view alert button under General → Events.
 - Follow Tesla Roadster (2018) using JPL heliocentric ephemerides and a verified archival photograph.
 - Steadier sensor-driven motion combines short gyroscope increments with the measured magnetic/gravity reference, and pauses with the screensaver/background lifecycle.
@@ -45,31 +47,35 @@ See [distribution and signing](docs/GITHUB_RELEASES.md) and
 - Optional celestial reference curves and celestial-pole, zenith and nadir crosses. Guide and
   camera modes start disabled; Sun and Moon are the initial checked objects.
 - Save or share images, readable TXT tables and CSV spreadsheets from captures, daily paths and the Observatory,
-  using one remembered selected-language/unit or international profile shared with scenario exports.
+  using one remembered selected-language/unit or international profile shared with Location exports.
   Filenames follow the chosen profile, with hyphens within fields and underscores between fields.
   Special/selected points are chronological.
   Location disclosure applies to every output: captures inherit the preview; daily paths start
   with area only. Hidden location uses UTC. No automatic gallery save.
 - Day/night OpenStreetMap position details with GPS, altitude, estimated place and weather.
-- Custom scenarios with independently enabled position, altitude, time zone, date and time;
+- Location management with independently enabled position, altitude, time zone, date and time;
   optional −3600× to +3600× time speed with a central 0× pause and restart/active-only/always resumption.
-  Open Scenario management directly from the main scene. Independent menu cards show effective current
-  values; each parameter has its own child view with a trailing activation checkbox. Disabled forms stay
-  visible in grey and retain their configured values. Save, share and import named `.spacecompass` scenarios,
-  including the resumption policy. An optional unchecked-by-default export choice completes automatic
-  position, altitude, time zone and moment as explicit values in a portable copy, without changing the app.
-  Empty exports cannot be saved or shared; missing effective data are never replaced with invented zeros.
+  Open it directly from the main scene. Compact independent cards show effective current values;
+  customized values are bold. The leading icon/checkbox/title target toggles a parameter; values,
+  the chevron and other card space open its editor. Child activation remains synchronized and disabled
+  forms stay visible in grey. Resumption has no checkbox and always offers its three policies.
+  Natural-height cards pack into up to two readable columns in landscape.
+  Save, share and import named `.spacecompass` location files with optional scene objects and the active target.
+  Without observer or speed overrides, export captures the current position, altitude and time zone only;
+  date and time stay live at the imported place, and the recipient's resumption preference is retained.
+  Missing fixes remain explicit. Including an empty object selection clears the recipient's scene;
+  omitting objects leaves it alone. Favorites and catalogue filters are not transferred.
   Readable fields and suggested filenames follow the shared export profile; import values stay canonical.
-  Archived files do not accrue elapsed time.
+  Configured temporal locations retain speed and resumption without accruing time while archived.
 - Read object names in the theme text color, with an outlined split-color dot: above-horizon orbit color on top and below-horizon color underneath. The dot remains visible beside shortened long names. Photo/panorama legends and image exports use the same text-sized dots, with outlines matching the lettering. Button counters use larger solid theme-accent badges with light/dark bold digits.
-- Tap the object name to open the catalogue. Checked objects remain first in the chosen order and visible despite filters/search. The island keeps Observatory and Daily path shortcuts; both page headers retain only Export.
+- Tap the object name to open the catalogue. Checked objects remain first in the chosen order and visible despite filters/search. The island keeps Observatory and Daily path shortcuts. Observatory offers Favorite and Export; Daily path retains Export.
 - Science fiction is an additional type-filter membership, with ten new clearly qualified illustrative references. Their real reference directions and approximate ranges do not imply measured fictional orbits or physical properties.
 - Compare estimated travel times at everyday, light-speed and fictional warp speeds through Warp 9.999. The selected speed persists; compact duration symbols and unit preferences apply.
 - Observatory with textured interactive models, lunar phases, classified reference tables,
   qualified core temperatures, spatial context and credits. Export data and current/rotation images.
 - General settings combine light/dark themes, adjustable sky fluidity, event controls and original ambient music synthesized continuously offline. Balanced fluidity is the default; previously saved levels are retained.
   Music starts enabled at 20% volume, with saved on/off and ten-percent volume steps. Settings-save confirmations are deferred until leaving a modified settings page.
-- Music cards reveal their controls with 300 ms animations. Scenario child forms use the same duration for their active/disabled grey treatment, without collapsing their contents.
+- Music cards reveal their controls with 300 ms animations. Location child forms use the same duration for their active/disabled grey treatment, without collapsing their contents.
 - Full-screen animated Earth screensaver with local time, date and battery, enabled after five minutes by default. It shows the last known real GPS position, with a dimmed grey marker on the far side, on a correctly oriented globe with eastward visual spin. Seasons and geographic day/night illumination follow the real UTC Sun independently of scenarios. It pauses live sensors, GPS, camera and data refresh until dismissed.
 - Solar-height-driven dawn/dusk lighting shared by sky, ground, weather and panoramic captures.
 - Translucent main islands with paths and objects drawn behind them, a reticle centred in the free sky area and a 50/50 landscape split.
@@ -81,13 +87,13 @@ See [distribution and signing](docs/GITHUB_RELEASES.md) and
 - Enabled Earth-reference names remain visible through reticle crossings and all capture-label policies.
 - Daily paths use compact, uniformly thin reminder bells with more room for data. Daily paths pair key-event names with compact symbols and bold their complete rows, including clock/T± and angles. Culmination uses + consistently in the live sky, captures and image exports.
 - Time-coincident close-approach key events in paths, captures and exports; these are angular alignments, not eclipse predictions.
-- Compact Observatory shortcuts in the catalogue, 15-minute screensaver delay and independently packed General cards in landscape.
+- Open Observatory from a catalogue thumbnail or name; only the checkbox changes scene selection. Keep passive data values separate from both actions. Includes a 15-minute screensaver delay and independently packed General cards in landscape.
 - Animated introduction, phone/tablet and portrait/landscape layouts.
 - Twenty interface languages, system-language fallback and regional/unit defaults.
 - Signed startup/manual GitHub updates with package, certificate, size and checksum verification.
 
 The application ID is `me.mondiversi.spacecompass`. The current stable version is
-**1.5.4**, with Android/update identity `1.5.4` and version code **54**.
+**1.6.0**, with Android/update identity `1.6.0` and version code **55**.
 This preserves the three-part update protocol used by existing preview installations.
 The app stores its preferences and caches privately.
 
@@ -124,12 +130,12 @@ installer permission and always requires the user's confirmation.
 
 Sun, Moon and major-planet calculations run locally. Satellite elements and
 JPL Horizons ephemerides use bounded HTTPS requests and app-private caches. Catalog
-data refresh automatically every ten minutes and on request. Network failure does
+data refresh silently every ten minutes and when models or observer settings change. Network failure does
 not disable valid offline calculations. Unavailable/expired data remain explicit.
 
 Open-Meteo weather uses rounded coordinates. Position details use Android's geocoder,
 which may contact its configured service. Maps request OpenStreetMap tiles; night maps
-are styled in the app. User-initiated scenario lookups may contact the documented
+are styled in the app. User-initiated Location lookups may contact the documented
 location/elevation/time-zone providers. These lookups are foreground-only; street
 addresses, place names and observer coordinates are excluded from error logs.
 See [scenario provider details](docs/OBSERVATION_SIMULATION.md). Review provider terms
@@ -149,7 +155,7 @@ Launcher/loading artwork and original illustrations are project assets.
 
 ## Data and graphics packages
 
-Release 1.5.4 includes **1009 selectable objects**, and an optional reference-information archive.
+Release 1.6.0 includes **1009 selectable objects**, and an optional reference-information archive.
 All descriptive data and translations remain inside the APK. Scientific limits and provenance are in the
 [catalogue sources](docs/CATALOG_999.md) and [canonical source catalogue](catalogue/README.md).
 

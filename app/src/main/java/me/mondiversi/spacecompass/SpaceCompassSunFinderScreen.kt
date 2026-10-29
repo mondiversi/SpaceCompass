@@ -54,12 +54,10 @@ internal fun SpaceCompassSunFinderScreen(
     var requested by rememberSaveable { mutableStateOf(false) }
     var retry by remember { mutableIntStateOf(0) }
     var remoteRetry by remember { mutableIntStateOf(0) }
-    var catalogRefresh by remember { mutableIntStateOf(0) }
     var time by remember { mutableLongStateOf(System.currentTimeMillis()) }
     val preferences = LocalSpaceCompassPreferences.current
         ?: remember(context) { context.getSharedPreferences(SPACE_COMPASS_PREFERENCES_NAME, android.content.Context.MODE_PRIVATE) }
-    val initialSelection = remember(preferences) { restoreSpaceCompassCelestialSelection(
-        preferences.getStringSet("celestial_selected", null), preferences.getString("celestial_active", null)) }
+    val initialSelection = remember(preferences) { readSpaceCompassCelestialSelection(preferences) }
     var selectedBody by rememberSaveable { mutableStateOf(initialSelection.active ?: SpaceCompassCelestialBody.SUN) }
     var selectedNames by rememberSaveable { mutableStateOf(initialSelection.ordered.map { it.name }) }
     val selectedBodies = remember(selectedNames) { spaceCompassAllCelestialOrder.filter { it.name in selectedNames }.toSet() }
@@ -73,6 +71,20 @@ internal fun SpaceCompassSunFinderScreen(
                 .putString("celestial_active", migrated.active?.name).apply()
         }
     }
+    DisposableEffect(preferences) {
+        // Location imports can replace scene checks while this screen is retained behind another page.
+        fun syncSelection() {
+            val stored = readSpaceCompassCelestialSelection(preferences)
+            selectedNames = stored.ordered.map { it.name }
+            selectedBody = stored.active ?: SpaceCompassCelestialBody.SUN
+        }
+        val listener = android.content.SharedPreferences.OnSharedPreferenceChangeListener { _, key ->
+            if (key == null || key == "celestial_selected" || key == "celestial_active") syncSelection()
+        }
+        preferences.registerOnSharedPreferenceChangeListener(listener)
+        syncSelection()
+        onDispose { preferences.unregisterOnSharedPreferenceChangeListener(listener) }
+    }
     val selectionResources = LocalResources.current
     fun applySelection(selection: SpaceCompassCelestialSelection) {
         val nextNames = selection.ordered.map { it.name }
@@ -80,8 +92,7 @@ internal fun SpaceCompassSunFinderScreen(
         selectedNames = nextNames
         selection.active?.let { selectedBody = it }
         // Save in the selection event, before a subsequent frame or app closure.
-        preferences.edit().putStringSet("celestial_selected", selection.ordered.map { it.name }.toSet())
-            .putString("celestial_active", selection.active?.name).apply()
+        preferences.edit().putSpaceCompassCelestialSelection(selection).apply()
         activationNotice?.let { active ->
             showSpaceCompassBottomMessage(context, selectionResources.getString(
                 if (active) R.string.scene_objects_on else R.string.scene_objects_off))
@@ -156,7 +167,7 @@ internal fun SpaceCompassSunFinderScreen(
         else rememberSpaceCompassSunWeather(tile, resumed, selectedTimeMs = requestTime)
     // Warm the whole online catalog in the foreground; unchecked objects never become scene selections.
     val remote = rememberSpaceCompassCelestialRemote(selectedBodies, resumed, motionBodies = selectedBodies,
-        retryRevision = remoteRetry, prefetchCatalog = true, catalogRefreshRevision = catalogRefresh,
+        retryRevision = remoteRetry, prefetchCatalog = true,
         observationTimeOverrideMs = requestTime)
     BackHandler(onBack = onDismissRequest)
     CompositionLocalProvider(LocalSpaceCompassCatalogOpen provides catalogOpen) {
@@ -199,7 +210,7 @@ internal fun SpaceCompassSunFinderScreen(
                 onSelect = { applySelection(selection.toggle(it)) },
                 latitude = visibleReadings.location?.latitude, longitude = visibleReadings.location?.longitude,
                 altitude = visibleReadings.location?.takeIf { it.hasAltitude() }?.altitude ?: 0.0,
-                onRefresh = { catalogRefresh++ }, onObserve = { catalogViewerBody = it })
+                onObserve = { catalogViewerBody = it })
         }
         catalogViewerBody?.let { observedBody ->
             key(observedBody) {

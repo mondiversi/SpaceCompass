@@ -1,8 +1,8 @@
 <resources>
-    <string name="observer_current_scenario">سناریوی فعلی</string>
+    <string name="observer_current_scenario">مکان فعلی</string>
     <string name="observer_customize">مدیریت</string>
     <string name="scenario_summary_automatic">خودکار</string>
-    <string name="observer_management_title">مدیریت سناریو</string>
+    <string name="observer_management_title">مدیریت مکان‌ها</string>
     <string name="scenario_customize_value">سفارشی‌سازی</string>
     <string name="scenario_menu_live_position">GPS کنونی</string>
 </resources>

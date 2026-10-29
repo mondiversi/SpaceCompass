@@ -27,7 +27,8 @@ class SpaceCompassStarlinkSelectionUiTest {
         compose.onNodeWithTag("celestial-menu").assertIsDisplayed()
         compose.runOnIdle {
             assertEquals(setOf(SpaceCompassCelestialBody.ISS,SpaceCompassCelestialBody.STARLINK_V3),selection.value.selected)
-            assertEquals(SpaceCompassCelestialBody.STARLINK_V3,selection.value.step(1).active)
+            assertEquals(SpaceCompassCelestialBody.STARLINK_V3,selection.value.active)
+            assertEquals(SpaceCompassCelestialBody.ISS,selection.value.step(1).active)
         }
     }
 }

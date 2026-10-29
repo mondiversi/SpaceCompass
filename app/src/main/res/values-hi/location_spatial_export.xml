@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="location_export_wait_position">वर्तमान स्थान सहेजने के लिए स्थिति के डेटा की प्रतीक्षा है।</string>
+</resources>

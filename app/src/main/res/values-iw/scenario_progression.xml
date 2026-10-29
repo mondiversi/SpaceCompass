@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="scenario_speed">זמן</string>
-    <string name="scenario_speed_description">הזיזו את זמן התרחיש אחורה או קדימה עד 3600×. האפס במרכז עוצר את הזמן.</string>
-    <string name="scenario_resume">חידוש התרחיש</string>
+    <string name="scenario_speed_description">הזיזו את זמן המיקום אחורה או קדימה עד 3600×. האפס במרכז עוצר את הזמן.</string>
+    <string name="scenario_resume">המשך</string>
     <string name="scenario_resume_description">בחרו כיצד הזמן המדומה יתחדש בפתיחת היישום מחדש. המהירות שנבחרה חלה בכל המצבים.</string>
     <string name="scenario_restart">התחלה מחדש</string>
     <string name="scenario_active">רק כשהיישום פעיל</string>
@@ -11,9 +11,9 @@
     <string name="scenario_speed_value">%1$s×</string>
     <string name="celestial_elevation_rising">הגובה עולה</string>
     <string name="celestial_elevation_falling">הגובה יורד</string>
-    <string name="scenario_restart_help">בכל הפעלה חדשה של האפליקציה, זמן התרחיש מתחיל מחדש מההגדרות הראשוניות. בזמן השימוש הוא מתקדם במהירות שנבחרה.</string>
-    <string name="scenario_active_help">זמן התרחיש מתקדם במהירות שנבחרה רק בזמן השימוש באפליקציה. ברקע ובזמן שומר המסך הוא מושהה, ולאחר מכן ממשיך מהמקום שבו נעצר.</string>
-    <string name="scenario_always_help">זמן התרחיש ממשיך להתקדם במהירות שנבחרה גם כשהאפליקציה סגורה ולאחר הפעלה מחדש של הטלפון.</string>
+    <string name="scenario_restart_help">בכל הפעלה חדשה של האפליקציה, זמן המיקום מתחיל מחדש מההגדרות הראשוניות. בזמן השימוש הוא מתקדם במהירות שנבחרה.</string>
+    <string name="scenario_active_help">זמן המיקום מתקדם במהירות שנבחרה רק בזמן השימוש באפליקציה. ברקע ובזמן שומר המסך הוא מושהה, ולאחר מכן ממשיך מהמקום שבו נעצר.</string>
+    <string name="scenario_always_help">זמן המיקום ממשיך להתקדם במהירות שנבחרה גם כשהאפליקציה סגורה ולאחר הפעלה מחדש של הטלפון.</string>
     <string name="scenario_time_paused">הזמן מושהה</string>
     <string name="scenario_midnight_note">התאריך משתנה אוטומטית בחציית חצות, גם בתנועה אחורה.</string>
     <string name="scenario_time_backward">אחורה</string>

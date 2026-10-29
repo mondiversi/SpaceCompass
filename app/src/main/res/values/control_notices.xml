@@ -10,8 +10,8 @@
     <string name="panorama_labels_off">Labels hidden</string>
     <string name="control_choice_message">%1$s: %2$s</string>
 
-    <string name="scene_scenario_on">Scenario enabled</string>
-    <string name="scene_scenario_off">Scenario disabled</string>
+    <string name="scene_scenario_on">Location enabled</string>
+    <string name="scene_scenario_off">Location disabled</string>
     <string name="scene_objects_on">Objects enabled</string>
     <string name="scene_objects_off">Objects disabled</string>
 </resources>

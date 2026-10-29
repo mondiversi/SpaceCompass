@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="catalog_favorites_only">Afficher uniquement les favoris</string>
+    <string name="catalog_favorites_off">Désactiver le filtre des favoris</string>
+    <string name="location_export_include_objects">Inclure les objets célestes lors de l’enregistrement du lieu</string>
+    <string name="location_export_objects_description">Enregistre les objets cochés et l’objet actif dans la vue principale.</string>
+</resources>

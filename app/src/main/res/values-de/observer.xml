@@ -1,5 +1,5 @@
 <resources>
-    <string name="observer_title">Szenario</string>
+    <string name="observer_title">Ort</string>
     <string name="observer_place">Position</string>
     <string name="observer_search">Ort suchen</string>
     <string name="observer_search_action">Suchen</string>
@@ -19,10 +19,10 @@
     <string name="observer_apply">Festlegen</string>
     <string name="observer_invalid">Koordinaten, Höhe, Datum, Uhrzeit und Zeitzone prüfen. Daten: 1900–2100. Nicht existierende Sommerzeit-Uhrzeiten sind ungültig.</string>
     <string name="observer_use_place">Diesen Punkt verwenden</string>
-    <string name="observer_simulation">Szenario</string>
+    <string name="observer_simulation">Ort</string>
     <string name="observer_coordinates_value">Koordinaten: %1$s</string>
     <string name="observer_altitude_value">Höhe: %1$s</string>
-    <string name="observer_simulation_active">Szenario aktiv</string>
+    <string name="observer_simulation_active">Ort aktiv</string>
     <string name="observer_enable_position">Position simulieren</string>
     <string name="observer_enable_date">Datum simulieren</string>
     <string name="observer_enable_time">Uhrzeit simulieren</string>

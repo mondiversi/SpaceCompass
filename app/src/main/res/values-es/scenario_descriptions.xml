@@ -1,7 +1,7 @@
 <resources>
     <string name="scenario_position_description">Elige la ubicación desde la que observar el cielo.</string>
-    <string name="scenario_altitude_description">Establece la altitud que se usará en el escenario.</string>
-    <string name="scenario_zone_description">Elige la zona horaria para la fecha y la hora del escenario.</string>
+    <string name="scenario_altitude_description">Establece la altitud que se usará en la ubicación.</string>
+    <string name="scenario_zone_description">Elige la zona horaria para la fecha y la hora de la ubicación.</string>
     <string name="scenario_date_description">Elige la fecha para calcular las posiciones de los objetos.</string>
-    <string name="scenario_time_description">Establece la hora en la zona horaria del escenario.</string>
+    <string name="scenario_time_description">Establece la hora en la zona horaria de la ubicación.</string>
 </resources>

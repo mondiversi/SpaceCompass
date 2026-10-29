@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="catalog_favorites_only">Εμφάνιση μόνο αγαπημένων</string>
+    <string name="catalog_favorites_off">Απενεργοποίηση φίλτρου αγαπημένων</string>
+    <string name="location_export_include_objects">Συμπερίληψη ουράνιων αντικειμένων κατά την αποθήκευση της τοποθεσίας</string>
+    <string name="location_export_objects_description">Αποθηκεύει τα επιλεγμένα αντικείμενα και το ενεργό αντικείμενο της κύριας προβολής.</string>
+</resources>

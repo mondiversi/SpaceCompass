@@ -1,5 +1,5 @@
 <resources>
-    <string name="observer_title">情景</string>
+    <string name="observer_title">地点</string>
     <string name="observer_place">位置</string>
     <string name="observer_search">搜索地点</string>
     <string name="observer_search_action">搜索</string>
@@ -19,10 +19,10 @@
     <string name="observer_apply">设置</string>
     <string name="observer_invalid">请检查坐标、海拔、日期、时间和时区。日期范围为1900–2100年。夏令时切换时不存在的时间不可使用。</string>
     <string name="observer_use_place">使用此位置</string>
-    <string name="observer_simulation">场景</string>
+    <string name="observer_simulation">地点</string>
     <string name="observer_coordinates_value">坐标：%1$s</string>
     <string name="observer_altitude_value">海拔：%1$s</string>
-    <string name="observer_simulation_active">场景已启用</string>
+    <string name="observer_simulation_active">地点已启用</string>
     <string name="observer_enable_position">模拟位置</string>
     <string name="observer_enable_date">模拟日期</string>
     <string name="observer_enable_time">模拟时间</string>

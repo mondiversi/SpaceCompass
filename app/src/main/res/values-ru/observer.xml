@@ -1,5 +1,5 @@
 <resources>
-    <string name="observer_title">Сценарий</string>
+    <string name="observer_title">Локация</string>
     <string name="observer_place">Местоположение</string>
     <string name="observer_search">Поиск места</string>
     <string name="observer_search_action">Найти</string>
@@ -19,10 +19,10 @@
     <string name="observer_apply">Установить</string>
     <string name="observer_invalid">Проверьте координаты, высоту, дату, время и часовой пояс. Даты: 1900–2100. Несуществующее время при переходе на летнее время недопустимо.</string>
     <string name="observer_use_place">Использовать эту точку</string>
-    <string name="observer_simulation">Сценарий</string>
+    <string name="observer_simulation">Локация</string>
     <string name="observer_coordinates_value">Координаты: %1$s</string>
     <string name="observer_altitude_value">Высота: %1$s</string>
-    <string name="observer_simulation_active">Сценарий активен</string>
+    <string name="observer_simulation_active">Локация активна</string>
     <string name="observer_enable_position">Имитировать положение</string>
     <string name="observer_enable_date">Имитировать дату</string>
     <string name="observer_enable_time">Имитировать время</string>

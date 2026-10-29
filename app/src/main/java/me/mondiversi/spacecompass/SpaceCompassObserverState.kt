@@ -76,11 +76,15 @@ internal class SpaceCompassObserverState(private val preferences: SharedPreferen
         val checked = SpaceCompassScenarioArchive.decode(archive.encode())
         val configured = checked.configurationAtImport(System.currentTimeMillis(), ZoneId.systemDefault())
         clock = null; clockPlan = null
-        savedPlan = configured; localCustom = checked.custom; timeSettings = checked.timeSettings
-        preferences?.edit()?.putString(SPACE_COMPASS_OBSERVER_PLAN, configured.encode())
+        savedPlan = configured; localCustom = checked.custom
+        // A place-only import returns to live time without replacing this device's resumption preference.
+        timeSettings = if (checked.temporalSettingsIncluded) checked.timeSettings else timeSettings.copy(enabled = false)
+        val editor = preferences?.edit()?.putString(SPACE_COMPASS_OBSERVER_PLAN, configured.encode())
             ?.putString(SPACE_COMPASS_OBSERVER_MODE, if (checked.custom) "custom" else "live")
             ?.putBoolean(scenarioEnabledKey, timeSettings.enabled)?.putInt(scenarioRateKey, timeSettings.rate)
-            ?.putString(scenarioResumeKey, timeSettings.resume.name)?.remove(scenarioCheckpointKey)?.apply()
+            ?.putString(scenarioResumeKey, timeSettings.resume.name)?.remove(scenarioCheckpointKey)
+        checked.celestialSelection?.let { editor?.putSpaceCompassCelestialSelection(it) }
+        editor?.apply()
         reload()
         archiveName = checked.name
         editorGeneration++

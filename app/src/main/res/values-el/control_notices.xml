@@ -10,8 +10,8 @@
     <string name="panorama_labels_off">Οι ετικέτες αποκρύφτηκαν</string>
     <string name="control_choice_message">%1$s: %2$s</string>
 
-    <string name="scene_scenario_on">Το σενάριο ενεργοποιήθηκε</string>
-    <string name="scene_scenario_off">Το σενάριο απενεργοποιήθηκε</string>
+    <string name="scene_scenario_on">Η τοποθεσία ενεργοποιήθηκε</string>
+    <string name="scene_scenario_off">Η τοποθεσία απενεργοποιήθηκε</string>
     <string name="scene_objects_on">Τα αντικείμενα ενεργοποιήθηκαν</string>
     <string name="scene_objects_off">Τα αντικείμενα απενεργοποιήθηκαν</string>
 </resources>

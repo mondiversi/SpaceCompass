@@ -1,9 +1,9 @@
 <resources>
-    <string name="scenario_export">परिदृश्य निर्यात करें</string>
-    <string name="scenario_import">परिदृश्य आयात करें</string>
-    <string name="scenario_file_name">परिदृश्य का नाम</string>
-    <string name="scenario_file_saved">परिदृश्य सहेजा गया</string>
-    <string name="scenario_file_imported">परिदृश्य आयात किया गया</string>
-    <string name="scenario_file_invalid">परिदृश्य फ़ाइल अमान्य है या समर्थित नहीं है</string>
-    <string name="scenario_file_error">परिदृश्य सहेजा या साझा नहीं किया जा सका</string>
+    <string name="scenario_export">लोकेशन निर्यात करें</string>
+    <string name="scenario_import">लोकेशन आयात करें</string>
+    <string name="scenario_file_name">लोकेशन का नाम</string>
+    <string name="scenario_file_saved">लोकेशन सहेजी गई</string>
+    <string name="scenario_file_imported">लोकेशन आयात की गई</string>
+    <string name="scenario_file_invalid">अमान्य या असमर्थित लोकेशन फ़ाइल</string>
+    <string name="scenario_file_error">लोकेशन सहेजी या साझा नहीं की जा सकी</string>
 </resources>

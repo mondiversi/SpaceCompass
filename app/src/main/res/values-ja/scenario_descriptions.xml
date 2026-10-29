@@ -1,7 +1,7 @@
 <resources>
     <string name="scenario_position_description">空の計算に使用する場所を選択します。</string>
-    <string name="scenario_altitude_description">シナリオで使用する標高を設定します。</string>
-    <string name="scenario_zone_description">シナリオの日時に使用するタイムゾーンを選択します。</string>
+    <string name="scenario_altitude_description">ロケーションで使用する標高を設定します。</string>
+    <string name="scenario_zone_description">ロケーションの日時に使用するタイムゾーンを選択します。</string>
     <string name="scenario_date_description">天体の位置計算に使用する日付を選択します。</string>
-    <string name="scenario_time_description">シナリオのタイムゾーンで時刻を設定します。</string>
+    <string name="scenario_time_description">ロケーションのタイムゾーンで時刻を設定します。</string>
 </resources>

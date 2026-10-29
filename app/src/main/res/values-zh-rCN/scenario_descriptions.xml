@@ -1,7 +1,7 @@
 <resources>
     <string name="scenario_position_description">选择用于计算天空的位置。</string>
-    <string name="scenario_altitude_description">设置场景使用的海拔高度。</string>
-    <string name="scenario_zone_description">选择场景日期和时间使用的时区。</string>
+    <string name="scenario_altitude_description">设置地点使用的海拔高度。</string>
+    <string name="scenario_zone_description">选择地点日期和时间使用的时区。</string>
     <string name="scenario_date_description">选择用于计算天体位置的日期。</string>
-    <string name="scenario_time_description">按场景的时区设置时间。</string>
+    <string name="scenario_time_description">按地点的时区设置时间。</string>
 </resources>

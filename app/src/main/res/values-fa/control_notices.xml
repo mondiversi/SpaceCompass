@@ -10,8 +10,8 @@
     <string name="panorama_labels_off">برچسب‌ها پنهان شدند</string>
     <string name="control_choice_message">%1$s: %2$s</string>
 
-    <string name="scene_scenario_on">سناریو فعال شد</string>
-    <string name="scene_scenario_off">سناریو غیرفعال شد</string>
+    <string name="scene_scenario_on">مکان فعال شد</string>
+    <string name="scene_scenario_off">مکان غیرفعال شد</string>
     <string name="scene_objects_on">اجرام فعال شدند</string>
     <string name="scene_objects_off">اجرام غیرفعال شدند</string>
 </resources>

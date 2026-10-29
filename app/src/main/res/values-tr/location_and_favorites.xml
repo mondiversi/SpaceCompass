@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="catalog_favorites_only">Yalnızca favorileri göster</string>
+    <string name="catalog_favorites_off">Favori filtresini kapat</string>
+    <string name="location_export_include_objects">Konumu kaydederken gök cisimlerini dahil et</string>
+    <string name="location_export_objects_description">İşaretli cisimleri ve ana görünümdeki etkin cismi kaydeder.</string>
+</resources>

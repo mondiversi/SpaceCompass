@@ -1,5 +1,5 @@
 <resources>
     <string name="scenario_export_include_automatic">Uwzględnij też wartości automatyczne</string>
-    <string name="scenario_export_automatic_description">Uzupełnij scenariusz o aktualnie używane położenie, wysokość, strefę czasową, datę i godzinę.</string>
+    <string name="scenario_export_automatic_description">Uzupełnia lokalizację o aktualne współrzędne, wysokość, strefę czasową, datę i godzinę.</string>
     <string name="scenario_export_automatic_unavailable">Wartości automatyczne są niekompletne, spróbuj ponownie</string>
 </resources>

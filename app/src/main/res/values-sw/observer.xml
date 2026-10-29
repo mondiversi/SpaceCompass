@@ -1,5 +1,5 @@
 <resources>
-    <string name="observer_title">Hali</string>
+    <string name="observer_title">Eneo</string>
     <string name="observer_place">Nafasi</string>
     <string name="observer_search">Tafuta mahali</string>
     <string name="observer_search_action">Tafuta</string>
@@ -19,10 +19,10 @@
     <string name="observer_apply">Weka</string>
     <string name="observer_invalid">Kagua viwianishi, mwinuko, tarehe, saa na ukanda wa saa. Tarehe: 1900–2100. Saa zisizokuwepo wakati wa kubadili saa za kiangazi si halali.</string>
     <string name="observer_use_place">Tumia sehemu hii</string>
-    <string name="observer_simulation">Hali</string>
+    <string name="observer_simulation">Eneo</string>
     <string name="observer_coordinates_value">Viwianishi: %1$s</string>
     <string name="observer_altitude_value">Mwinuko: %1$s</string>
-    <string name="observer_simulation_active">Hali imewashwa</string>
+    <string name="observer_simulation_active">Eneo linatumika</string>
     <string name="observer_enable_position">Iga mahali</string>
     <string name="observer_enable_date">Iga tarehe</string>
     <string name="observer_enable_time">Iga saa</string>

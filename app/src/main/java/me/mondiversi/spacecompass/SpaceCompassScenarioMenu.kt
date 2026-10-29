@@ -1,16 +1,24 @@
 package me.mondiversi.spacecompass
 
 import android.icu.text.TimeZoneNames
-import androidx.compose.foundation.ScrollState
+import androidx.compose.foundation.lazy.staggeredgrid.LazyStaggeredGridState
+import androidx.compose.foundation.lazy.staggeredgrid.StaggeredGridItemSpan
+import androidx.compose.foundation.lazy.staggeredgrid.items
+import androidx.compose.foundation.interaction.MutableInteractionSource
+import androidx.compose.foundation.clickable
+import androidx.compose.foundation.selection.toggleable
 import androidx.compose.foundation.isSystemInDarkTheme
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.foundation.verticalScroll
 import androidx.compose.material3.*
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.CompositionLocalProvider
+import androidx.compose.ui.semantics.Role
 import androidx.compose.runtime.remember
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.layout.layout
 import androidx.compose.ui.geometry.Offset
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.Path
@@ -22,6 +30,7 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.text.style.TextDirection
 import androidx.compose.ui.text.TextStyle
+import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.LayoutDirection
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
@@ -81,53 +90,81 @@ internal fun spaceCompassScenarioMenuEntries(observer: SpaceCompassObserverState
             stringResource(observer.timeSettings.resume.labelResource)))
 }
 
-/** A single-column navigation list keeps every parameter reachable without expanding unrelated cards. */
+/** Only the compact icon/check/title target toggles; the rest of each card opens its editor. */
 @Composable
 internal fun SpaceCompassScenarioMenu(entries: List<SpaceCompassScenarioMenuEntry>,
-    onOpen: (SpaceCompassScenarioEditorSection) -> Unit, scroll: ScrollState, modifier: Modifier = Modifier,
-    validationMessage: String? = null) {
+    onOpen: (SpaceCompassScenarioEditorSection) -> Unit,
+    onToggle: (SpaceCompassScenarioEditorSection, Boolean) -> Unit,
+    scroll: LazyStaggeredGridState, modifier: Modifier = Modifier, validationMessage: String? = null) {
     val foreground = MaterialTheme.colorScheme.onSurface
     val attention = spaceCompassAttentionColor(isSystemInDarkTheme())
     val rtl = LocalLayoutDirection.current == LayoutDirection.Rtl
-    val direction = LocalLayoutDirection.current
-    Column(modifier.fillMaxWidth().scrollbarOverlay(scroll,foreground.copy(alpha=.46f))
-        .verticalScroll(scroll).padding(spaceCompassPageContentPadding).testTag("scenario-management-menu"),
-        verticalArrangement = Arrangement.spacedBy(SpaceCompassSettingsIslandGap)) {
-        entries.forEach { entry ->
-            Surface(onClick = { onOpen(entry.section) }, shape = RoundedCornerShape(16.dp),
+    SpaceCompassIslandGrid(modifier.testTag("scenario-management-menu"), scroll=scroll) {
+        items(entries, key={ it.section.key }) { entry ->
+            val title = stringResource(entry.section.titleResource)
+            val canToggle = entry.section != SpaceCompassScenarioEditorSection.RESUME
+            val open = { onOpen(entry.section) }
+            val activation = if (canToggle) Modifier.testTag("scenario-toggle-${entry.section.key}")
+                .toggleable(entry.customized, interactionSource=remember { MutableInteractionSource() }, indication=null,
+                    role=Role.Checkbox) { onToggle(entry.section, it) }
+                .spaceCompassAccessibleAction(title, role = Role.Checkbox, checkedState = entry.customized,
+                    onClick = { onToggle(entry.section, !entry.customized) })
+            else Modifier
+            Surface(onClick = open, shape = RoundedCornerShape(16.dp),
                 color = spaceCompassSettingsCardColor(), contentColor = foreground,
-                modifier = Modifier.fillMaxWidth().testTag("scenario-section-${entry.section.key}")) {
-                Row(Modifier.fillMaxWidth().heightIn(min=56.dp).padding(
-                    start=spaceCompassIslandContentPadding.calculateStartPadding(direction),
-                    end=spaceCompassIslandContentPadding.calculateEndPadding(direction),top=8.dp,bottom=8.dp),
-                    verticalAlignment=Alignment.CenterVertically,horizontalArrangement=Arrangement.spacedBy(10.dp)) {
-                    Box(Modifier.size(28.dp),contentAlignment=Alignment.Center) {
-                        SpaceCompassSettingsGroupIcon(entry.section.iconKey,foreground)
-                    }
-                    SpaceCompassSettingsChoiceLabel(stringResource(entry.section.titleResource),Modifier.weight(.48f),lineHeight=18.sp)
-                    Column(Modifier.weight(.52f), horizontalAlignment = Alignment.End,
-                        verticalArrangement = Arrangement.spacedBy(SpaceCompassSettingsChoiceSpacing)) {
-                        Text(entry.summary, Modifier.fillMaxWidth().testTag("scenario-summary-${entry.section.key}"),
-                            fontSize = 12.sp, lineHeight = 16.sp,
-                            color = if (entry.customized) attention else foreground.copy(alpha = .72f),
-                            textAlign = TextAlign.End, style = TextStyle(textDirection = TextDirection.ContentOrLtr))
-                        if (entry.automatic) Text(stringResource(R.string.scenario_summary_automatic),
-                            Modifier.fillMaxWidth(), fontSize = 11.sp, lineHeight = 14.sp,
-                            color = foreground.copy(alpha = .56f), textAlign = TextAlign.End)
-                    }
-                    SpaceCompassIconCanvas(foreground.copy(alpha=.72f),Modifier.size(18.dp)) { ink ->
-                        fun point(x: Float,y: Float)=Offset(size.width*(if(rtl) 1f-x else x),size.height*y)
-                        val path=Path().apply {
-                            moveTo(point(.38f,.25f).x,point(.38f,.25f).y)
-                            lineTo(point(.63f,.50f).x,point(.63f,.50f).y)
-                            lineTo(point(.38f,.75f).x,point(.38f,.75f).y)
+                modifier = Modifier.fillMaxWidth().testTag("scenario-section-${entry.section.key}")
+                    .spaceCompassNestedAccessibleAction("$title: ${entry.summary}", onClick = open)) {
+                Column(Modifier.fillMaxWidth().padding(start=12.dp,end=12.dp,top=0.dp,bottom=8.dp)) {
+                    Row(Modifier.fillMaxWidth(), horizontalArrangement=Arrangement.SpaceBetween,
+                        verticalAlignment=Alignment.CenterVertically) {
+                        // Keep the full activation target without an additional top inset around its contents.
+                        Box(Modifier.weight(1f,fill=false).heightIn(min=48.dp).then(activation),
+                            contentAlignment=Alignment.CenterStart) {
+                            Row(verticalAlignment=Alignment.CenterVertically,
+                                horizontalArrangement=Arrangement.spacedBy(6.dp)) {
+                                Box(Modifier.size(20.dp),contentAlignment=Alignment.Center) {
+                                    SpaceCompassSettingsGroupIcon(entry.section.iconKey,foreground)
+                                }
+                                if (canToggle) CompositionLocalProvider(LocalMinimumInteractiveComponentSize provides 0.dp) {
+                                    Checkbox(entry.customized, onCheckedChange = null,
+                                        modifier = Modifier.size(SpaceCompassSettingsControlSize),
+                                        colors = spaceCompassCheckboxColors(uncheckedColor = foreground.copy(alpha=.72f)))
+                                }
+                                SpaceCompassSettingsChoiceLabel(title,Modifier.weight(1f,fill=false),lineHeight=18.sp)
+                            }
                         }
-                        drawPath(path,ink,style=Stroke(2.dp.toPx(),cap=StrokeCap.Round,join=StrokeJoin.Round))
+                        Spacer(Modifier.width(8.dp))
+                        SpaceCompassIconCanvas(foreground.copy(alpha=.72f),Modifier.size(18.dp).offset(x=6.dp)) { ink ->
+                            fun point(x: Float,y: Float)=Offset(size.width*(if(rtl) 1f-x else x),size.height*y)
+                            val path=Path().apply {
+                                moveTo(point(.38f,.25f).x,point(.38f,.25f).y)
+                                lineTo(point(.63f,.50f).x,point(.63f,.50f).y)
+                                lineTo(point(.38f,.75f).x,point(.38f,.75f).y)
+                            }
+                            drawPath(path,ink,style=Stroke(2.dp.toPx(),cap=StrokeCap.Round,join=StrokeJoin.Round))
+                        }
+                    }
+                    // Consume a little of the header's lower blank area without shrinking its touch target.
+                    Row(Modifier.fillMaxWidth().layout { measurable, constraints ->
+                        val values = measurable.measure(constraints)
+                        val overlap = minOf(2.dp.roundToPx(), (values.height - constraints.minHeight).coerceAtLeast(0))
+                        layout(values.width, values.height - overlap) { values.placeRelative(0, -overlap) }
+                    },verticalAlignment=Alignment.CenterVertically,
+                        horizontalArrangement=Arrangement.spacedBy(10.dp)) {
+                        Text(entry.summary, Modifier.weight(1f).testTag("scenario-summary-${entry.section.key}"),
+                            fontSize=12.sp,lineHeight=16.sp,
+                            fontWeight=if(entry.customized) FontWeight.Bold else FontWeight.Normal,
+                            color=if(entry.customized) attention else foreground.copy(alpha=.72f),
+                            style=TextStyle(textDirection=TextDirection.ContentOrLtr))
+                        if(entry.automatic) Text(stringResource(R.string.scenario_summary_automatic),
+                            fontSize=11.sp,lineHeight=14.sp,color=foreground.copy(alpha=.56f))
                     }
                 }
             }
         }
-        if(validationMessage != null) Text(validationMessage,Modifier.padding(8.dp).testTag("observer-validation-error"),
-            color=MaterialTheme.colorScheme.error,style=MaterialTheme.typography.bodySmall)
+        if(validationMessage != null) item(key="validation", span=StaggeredGridItemSpan.FullLine) {
+            Text(validationMessage,Modifier.padding(8.dp).testTag("observer-validation-error"),
+                color=MaterialTheme.colorScheme.error,style=MaterialTheme.typography.bodySmall)
+        }
     }
 }

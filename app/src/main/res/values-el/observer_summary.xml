@@ -1,8 +1,8 @@
 <resources>
-    <string name="observer_current_scenario">Τρέχον σενάριο</string>
+    <string name="observer_current_scenario">Τρέχουσα τοποθεσία</string>
     <string name="observer_customize">Διαχείριση</string>
     <string name="scenario_summary_automatic">Αυτόματα</string>
-    <string name="observer_management_title">Διαχείριση σεναρίου</string>
+    <string name="observer_management_title">Διαχείριση τοποθεσιών</string>
     <string name="scenario_customize_value">Προσαρμογή</string>
     <string name="scenario_menu_live_position">Τρέχον GPS</string>
 </resources>

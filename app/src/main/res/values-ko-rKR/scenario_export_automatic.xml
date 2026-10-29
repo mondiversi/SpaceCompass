@@ -1,5 +1,5 @@
 <resources>
     <string name="scenario_export_include_automatic">자동 값도 포함</string>
-    <string name="scenario_export_automatic_description">현재 사용 중인 위치, 고도, 시간대, 날짜 및 시간으로 시나리오를 완성합니다.</string>
+    <string name="scenario_export_automatic_description">현재 사용 중인 위치, 고도, 시간대, 날짜 및 시간으로 위치를 완성합니다.</string>
     <string name="scenario_export_automatic_unavailable">자동 값이 불완전합니다. 다시 시도하세요</string>
 </resources>

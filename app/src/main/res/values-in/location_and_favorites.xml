@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="catalog_favorites_only">Tampilkan favorit saja</string>
+    <string name="catalog_favorites_off">Nonaktifkan filter favorit</string>
+    <string name="location_export_include_objects">Sertakan objek langit saat menyimpan lokasi</string>
+    <string name="location_export_objects_description">Menyimpan objek yang dicentang dan objek aktif pada tampilan utama.</string>
+</resources>

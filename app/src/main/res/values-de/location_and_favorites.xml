@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="catalog_favorites_only">Nur Favoriten anzeigen</string>
+    <string name="catalog_favorites_off">Favoritenfilter ausschalten</string>
+    <string name="location_export_include_objects">Himmelsobjekte beim Speichern des Orts einschließen</string>
+    <string name="location_export_objects_description">Speichert die markierten Objekte und das aktive Objekt der Hauptansicht.</string>
+</resources>

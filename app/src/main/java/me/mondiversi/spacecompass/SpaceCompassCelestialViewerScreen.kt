@@ -285,6 +285,7 @@ internal fun SpaceCompassCelestialObservatoryPage(body: SpaceCompassCelestialBod
         SpaceCompassPageToolbar(stringResource(R.string.celestial_details_title), { if (!export.saving) onBack() },
             modifier = Modifier.testTag("celestial-view-toolbar"),
             titleModifier = Modifier.testTag("celestial-view-title"), titleColor = primaryText) {
+            SpaceCompassCelestialFavoriteAction(body, enabled = !export.saving)
             SpaceCompassTitleActionButton(stringResource(R.string.panorama_export),export.open,
                 Modifier.testTag("observatory-export"),enabled=!export.saving) { SpaceCompassPanoramaExportIcon(2.dp) }
         }

@@ -20,16 +20,18 @@ import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 
+private data class CatalogFilterOption(val key: String, val title: String, val count: Int)
+
 private enum class CatalogFilterField(val key: String) { TYPE("type"), VISIBILITY("visibility"), ORIGIN("origin"), POINTING("pointing") }
 
 /** Two paired rows share the same outlined fields and trailing reset action. */
 @Composable
 internal fun SpaceCompassCatalogFilterBar(types: Set<SpaceCompassCatalogType>, visibility: SpaceCompassCatalogVisibility,
-    origin: SpaceCompassCatalogOrigin, pointing: SpaceCompassCatalogPointing, visibleCount: Int,
+    origin: SpaceCompassCatalogOrigin, pointing: SpaceCompassCatalogPointing, visibleCount: Int, counts: SpaceCompassCatalogFilterCounts,
     onType: (SpaceCompassCatalogType) -> Unit, onAllTypes: () -> Unit,
     onVisibility: (SpaceCompassCatalogVisibility) -> Unit, onOrigin: (SpaceCompassCatalogOrigin) -> Unit,
     onPointing: (SpaceCompassCatalogPointing) -> Unit, onReset: () -> Unit, searchActive: Boolean = false,
-    availableBodies: List<SpaceCompassCelestialBody> = spaceCompassCelestialCatalogOrder) {
+    availableBodies: List<SpaceCompassCelestialBody> = spaceCompassCelestialCatalogOrder, favoritesOnly: Boolean = false) {
     val all = stringResource(R.string.catalog_all)
     val numeric = LocalSpaceCompassNumericFormat.current
     val resultCount = formatSpaceCompassNumber(visibleCount.toDouble(), 0,
@@ -40,12 +42,11 @@ internal fun SpaceCompassCatalogFilterBar(types: Set<SpaceCompassCatalogType>, v
         spaceCompassCatalogTypeCounts(availableBodies, typeLabels, locale)
     }
     fun countLabel(count: Int) = formatSpaceCompassNumber(count.toDouble(), 0, numeric, grouping = false)
-    val typeChoices = listOf("" to "$all (${countLabel(availableBodies.size)})") + typeCounts.map {
-        it.type.name to "${typeLabels.getValue(it.type)} (${countLabel(it.count)})"
+    val typeChoices = listOf(CatalogFilterOption("",all,counts.allTypes)) + typeCounts.map {
+        CatalogFilterOption(it.type.name,typeLabels.getValue(it.type),counts.types.getValue(it.type))
     }
     val selectedTypes = typeCounts.filter { it.type in types }
     val selectedTypeLabels = selectedTypes.map { typeLabels.getValue(it.type) }
-    val selectedTypeCount = countLabel(spaceCompassCatalogTypeMatchCount(availableBodies, types))
     // AnimatedVisibility overlays sibling layouts; keep the separator below the whole panel.
     Column(Modifier.fillMaxWidth()) {
         Column(Modifier.fillMaxWidth().padding(horizontal = 10.dp, vertical = 8.dp).testTag("catalog-filter-bar"),
@@ -53,29 +54,29 @@ internal fun SpaceCompassCatalogFilterBar(types: Set<SpaceCompassCatalogType>, v
             Row(Modifier.fillMaxWidth(), horizontalArrangement = Arrangement.spacedBy(8.dp)) {
                 CatalogFilterChoice(stringResource(R.string.catalog_filter_type),
                     if (types.isEmpty()) all else selectedTypeLabels.joinToString(", "), typeChoices,
-                    Modifier.weight(1f).testTag("catalog-type-menu"), types.map { it.name }.toSet(), CatalogFilterField.TYPE, selectedTypeCount) { key ->
+                    Modifier.weight(1f).testTag("catalog-type-menu"), types.map { it.name }.toSet(), CatalogFilterField.TYPE, resultCount) { key ->
                     if (key.isEmpty()) onAllTypes() else onType(SpaceCompassCatalogType.valueOf(key))
                 }
                 CatalogFilterChoice(stringResource(R.string.catalog_visibility), stringResource(visibility.label),
-                    SpaceCompassCatalogVisibility.entries.map { it.name to stringResource(it.label) },
+                    SpaceCompassCatalogVisibility.entries.map { CatalogFilterOption(it.name,stringResource(it.label),counts.visibility.getValue(it)) },
                     Modifier.weight(1f).testTag("catalog-visibility-menu"), null, CatalogFilterField.VISIBILITY, resultCount) { key ->
                     onVisibility(SpaceCompassCatalogVisibility.valueOf(key))
                 }
             }
             Row(Modifier.fillMaxWidth(), horizontalArrangement = Arrangement.spacedBy(8.dp)) {
                 CatalogFilterChoice(stringResource(R.string.catalog_origin), stringResource(origin.label),
-                    SpaceCompassCatalogOrigin.entries.map { it.name to stringResource(it.label) },
+                    SpaceCompassCatalogOrigin.entries.map { CatalogFilterOption(it.name,stringResource(it.label),counts.origin.getValue(it)) },
                     Modifier.weight(1f).testTag("catalog-origin-menu"), null, CatalogFilterField.ORIGIN, resultCount) {
                     onOrigin(SpaceCompassCatalogOrigin.valueOf(it))
                 }
                 CatalogFilterChoice(stringResource(R.string.catalog_pointing), stringResource(pointing.label),
-                    SpaceCompassCatalogPointing.entries.map { it.name to stringResource(it.label) },
+                    SpaceCompassCatalogPointing.entries.map { CatalogFilterOption(it.name,stringResource(it.label),counts.pointing.getValue(it)) },
                     Modifier.weight(1f).testTag("catalog-pointing-menu"), null, CatalogFilterField.POINTING, resultCount) {
                     onPointing(SpaceCompassCatalogPointing.valueOf(it))
                 }
             }
             TextButton(onClick = onReset, enabled = types.isNotEmpty() || visibility != SpaceCompassCatalogVisibility.ALL ||
-                origin != SpaceCompassCatalogOrigin.ALL || pointing != SpaceCompassCatalogPointing.ALL || searchActive,
+                origin != SpaceCompassCatalogOrigin.ALL || pointing != SpaceCompassCatalogPointing.ALL || searchActive || favoritesOnly,
                 modifier = Modifier.align(Alignment.End).testTag("catalog-filter-reset")) {
                 Text(stringResource(R.string.catalog_reset_filters))
             }
@@ -85,9 +86,10 @@ internal fun SpaceCompassCatalogFilterBar(types: Set<SpaceCompassCatalogType>, v
 }
 
 @Composable
-private fun CatalogFilterChoice(label: String, selected: String, choices: List<Pair<String, String>>,
+private fun CatalogFilterChoice(label: String, selected: String, choices: List<CatalogFilterOption>,
     modifier: Modifier, selectedKeys: Set<String>?, field: CatalogFilterField, resultCount: String, onSelect: (String) -> Unit) {
     var expanded by remember { mutableStateOf(false) }
+    val numeric = LocalSpaceCompassNumericFormat.current
     val foreground = MaterialTheme.colorScheme.onSurface
     Box(modifier.semantics(mergeDescendants = true) { contentDescription = "$label: $selected ($resultCount)" }) {
         Surface(onClick = { expanded = true }, shape = RoundedCornerShape(10.dp), color = Color.Transparent,
@@ -119,9 +121,16 @@ private fun CatalogFilterChoice(label: String, selected: String, choices: List<P
         }
         val menuBackground = spaceCompassSettingsCardColor()
         SpaceCompassAdaptiveDropdownMenu(expanded, onDismissRequest = { expanded = false }, containerColor = menuBackground) {
-            choices.forEach { (key, title) ->
+            choices.forEach { (key, title, count) ->
                 val checked = selectedKeys?.let { if (key.isEmpty()) it.isEmpty() else key in it }
-                DropdownMenuItem(text = { Text(title, maxLines = 3, overflow = TextOverflow.Ellipsis) },
+                DropdownMenuItem(text = {
+                    Row(Modifier.fillMaxWidth(),verticalAlignment=Alignment.CenterVertically,
+                        horizontalArrangement=Arrangement.spacedBy(10.dp)) {
+                        Text(title,Modifier.weight(1f),maxLines=3,overflow=TextOverflow.Ellipsis)
+                        Text("(" + formatSpaceCompassNumber(count.toDouble(),0,numeric,grouping=false) + ")",
+                            maxLines=1,modifier=Modifier.testTag("catalog-${field.key}-${key.ifEmpty { "all" }}-count"))
+                    }
+                },
                     trailingIcon = checked?.let { value -> { Checkbox(value, onCheckedChange = null,
                         modifier = Modifier.clearAndSetSemantics {}) } },
                     onClick = { if (selectedKeys == null) expanded = false; onSelect(key) },

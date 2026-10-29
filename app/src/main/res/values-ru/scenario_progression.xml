@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="scenario_speed">Время</string>
-    <string name="scenario_speed_description">Перемещайте время сценария назад или вперёд со скоростью до 3600×. Ноль в центре останавливает время.</string>
-    <string name="scenario_resume">Возобновление сценария</string>
+    <string name="scenario_speed_description">Перемещайте время локации назад или вперёд со скоростью до 3600×. Ноль в центре останавливает время.</string>
+    <string name="scenario_resume">Возобновление</string>
     <string name="scenario_resume_description">Выберите, как возобновляется моделируемое время при повторном открытии приложения. Выбранная скорость действует во всех режимах.</string>
     <string name="scenario_restart">Начинать сначала</string>
     <string name="scenario_active">Только при активном приложении</string>
@@ -11,9 +11,9 @@
     <string name="scenario_speed_value">%1$s×</string>
     <string name="celestial_elevation_rising">Высота увеличивается</string>
     <string name="celestial_elevation_falling">Высота уменьшается</string>
-    <string name="scenario_restart_help">При каждом новом запуске приложения время сценария начинается с исходных настроек. Во время использования оно идёт с выбранной скоростью.</string>
-    <string name="scenario_active_help">Время сценария идёт с выбранной скоростью только при использовании приложения. В фоне и во время заставки оно приостанавливается, а затем продолжается с момента остановки.</string>
-    <string name="scenario_always_help">Время сценария продолжает идти с выбранной скоростью, даже когда приложение закрыто и после перезагрузки телефона.</string>
+    <string name="scenario_restart_help">При каждом новом запуске приложения время локации начинается с исходных настроек. Во время использования оно идёт с выбранной скоростью.</string>
+    <string name="scenario_active_help">Время локации идёт с выбранной скоростью только во время использования приложения. В фоне и во время заставки оно приостанавливается, а затем продолжается с того же момента.</string>
+    <string name="scenario_always_help">Время локации продолжает идти с выбранной скоростью даже при закрытом приложении и после перезагрузки телефона.</string>
     <string name="scenario_time_paused">Время на паузе</string>
     <string name="scenario_midnight_note">Дата меняется автоматически при переходе через полночь, в том числе при движении назад.</string>
     <string name="scenario_time_backward">Назад</string>

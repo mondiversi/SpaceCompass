@@ -1,9 +1,9 @@
 <resources>
     <string name="info_news_title">Ostatnie nowości · %1$s</string>
-    <string name="info_news_star_sky" formatted="false">Ikona lejka ułatwia rozpoznawanie filtrów katalogu.</string>
-    <string name="info_news_texture_downloads" formatted="false">Strzałki w górę i w dół odróżniają sortowanie od filtrowania.</string>
-    <string name="info_news_weather" formatted="false">Lista obiektów ma jednolite tło, bez kolorów kategorii.</string>
-    <string name="info_news_viewer_zoom" formatted="false">Kategorie filtra Typ mają neutralne tło w obu motywach.</string>
-    <string name="info_news_settings" formatted="false">Pole wyszukiwania jest niższe i pozostawia więcej miejsca nad i pod nim.</string>
-    <string name="info_news_catalog" formatted="false">Tekst wyszukiwania, tekst zastępczy i migający kursor są wyśrodkowane w pionie.</string>
+    <string name="info_news_star_sky" formatted="false">Zarządzanie lokalizacją pokazuje bieżące wartości, wyróżnia własne ustawienia pogrubieniem i ma bardziej zwarte przyciski.</string>
+    <string name="info_news_texture_downloads" formatted="false">Dodawaj obiekty do ulubionych w Obserwatorium, a sercem w katalogu włączaj widok samych ulubionych.</string>
+    <string name="info_news_weather" formatted="false">Pola wyboru ulubionych są różowe. Liczniki filtrów uwzględniają ulubione, wyszukiwanie i pozostałe aktywne filtry.</string>
+    <string name="info_news_viewer_zoom" formatted="false">Nowo zaznaczony obiekt staje się aktywny. Lista zachowuje położenie do powrotu do widoku głównego.</string>
+    <string name="info_news_settings" formatted="false">Pliki lokalizacji mogą zawierać wybrane obiekty. Eksport automatyczny udostępnia pozycję, wysokość i strefę, pozostawiając bieżącą datę i czas.</string>
+    <string name="info_news_catalog" formatted="false">Dane obiektów odświeżają się automatycznie w razie potrzeby. Otwarty panel filtrów pozostaje widoczny podczas przewijania.</string>
 </resources>

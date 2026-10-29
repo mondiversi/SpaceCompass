@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="location_export_wait_position">現在地を保存するため、位置データを待っています。</string>
+</resources>

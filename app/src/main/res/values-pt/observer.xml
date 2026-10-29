@@ -1,5 +1,5 @@
 <resources>
-    <string name="observer_title">Cenário</string>
+    <string name="observer_title">Localização</string>
     <string name="observer_place">Posição</string>
     <string name="observer_search">Pesquisar local</string>
     <string name="observer_search_action">Pesquisar</string>
@@ -19,10 +19,10 @@
     <string name="observer_apply">Definir</string>
     <string name="observer_invalid">Verifique coordenadas, altitude, data, hora e fuso. Datas: 1900–2100. Horas inexistentes na mudança de horário são inválidas.</string>
     <string name="observer_use_place">Usar este ponto</string>
-    <string name="observer_simulation">Cenário</string>
+    <string name="observer_simulation">Localização</string>
     <string name="observer_coordinates_value">Coordenadas: %1$s</string>
     <string name="observer_altitude_value">Altitude: %1$s</string>
-    <string name="observer_simulation_active">Cenário ativo</string>
+    <string name="observer_simulation_active">Localização ativa</string>
     <string name="observer_enable_position">Simular posição</string>
     <string name="observer_enable_date">Simular data</string>
     <string name="observer_enable_time">Simular hora</string>

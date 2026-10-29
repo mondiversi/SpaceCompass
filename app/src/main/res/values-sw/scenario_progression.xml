@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="scenario_speed">Muda</string>
-    <string name="scenario_speed_description">Rudisha au songesha muda wa hali hadi 3600×. Sifuri katikati husimamisha muda.</string>
-    <string name="scenario_resume">Kuendeleza hali</string>
+    <string name="scenario_speed_description">Sogeza muda wa eneo nyuma au mbele hadi 3600×. Sifuri katikati husimamisha muda.</string>
+    <string name="scenario_resume">Kuendelea</string>
     <string name="scenario_resume_description">Chagua jinsi muda ulioigwa unavyoendelea unapofungua programu tena. Kasi iliyochaguliwa hutumika katika kila hali.</string>
     <string name="scenario_restart">Anza tena mwanzo</string>
     <string name="scenario_active">Wakati programu inatumika tu</string>
@@ -11,9 +11,9 @@
     <string name="scenario_speed_value">%1$s×</string>
     <string name="celestial_elevation_rising">Mwinuko unaongezeka</string>
     <string name="celestial_elevation_falling">Mwinuko unapungua</string>
-    <string name="scenario_restart_help">Kila programu inapoanzishwa upya, muda wa hali huanza kutoka mipangilio ya awali. Wakati wa kutumia programu, muda husonga kwa kasi iliyochaguliwa.</string>
-    <string name="scenario_active_help">Muda wa hali husonga kwa kasi iliyochaguliwa tu unapotumia programu. Husimama programu ikiwa chinichini na wakati wa kihifadhi skrini, kisha huendelea kutoka uliposimama.</string>
-    <string name="scenario_always_help">Muda wa hali huendelea kusonga kwa kasi iliyochaguliwa hata programu ikiwa imefungwa na baada ya simu kuwashwa upya.</string>
+    <string name="scenario_restart_help">Kila programu inapoanzishwa upya, muda wa eneo huanza kutoka mipangilio ya mwanzo. Unapotumia programu, huendelea kwa kasi iliyochaguliwa.</string>
+    <string name="scenario_active_help">Muda wa eneo huendelea kwa kasi iliyochaguliwa tu unapotumia programu. Husimama programu ikiwa chinichini au kihifadhi skrini kikiwashwa, kisha huendelea ulipoishia.</string>
+    <string name="scenario_always_help">Muda wa eneo huendelea kwa kasi iliyochaguliwa hata programu ikiwa imefungwa na baada ya simu kuwashwa upya.</string>
     <string name="scenario_time_paused">Muda umesitishwa</string>
     <string name="scenario_midnight_note">Tarehe hubadilika moja kwa moja unapovuka usiku wa manane, hata ukirudisha muda nyuma.</string>
     <string name="scenario_time_backward">Nyuma</string>

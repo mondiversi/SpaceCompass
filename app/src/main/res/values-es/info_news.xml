@@ -1,9 +1,9 @@
 <resources>
     <string name="info_news_title">Últimas novedades · %1$s</string>
-    <string name="info_news_star_sky" formatted="false">Un icono de embudo permite reconocer mejor los filtros del catálogo.</string>
-    <string name="info_news_texture_downloads" formatted="false">Las flechas hacia arriba y abajo distinguen la ordenación de los filtros.</string>
-    <string name="info_news_weather" formatted="false">La lista de objetos tiene un fondo uniforme, sin colores por categoría.</string>
-    <string name="info_news_viewer_zoom" formatted="false">Las categorías del filtro Tipo tienen un fondo neutro en ambos temas.</string>
-    <string name="info_news_settings" formatted="false">El campo de búsqueda es menos alto y deja más espacio arriba y abajo.</string>
-    <string name="info_news_catalog" formatted="false">El texto de búsqueda, el texto de ayuda y el cursor intermitente están centrados verticalmente.</string>
+    <string name="info_news_star_sky" formatted="false">La gestión de ubicaciones muestra los valores actuales, con ajustes personalizados en negrita y controles más compactos.</string>
+    <string name="info_news_texture_downloads" formatted="false">Guarda objetos como favoritos en el Observatorio y usa el corazón del catálogo para mostrar solo los favoritos.</string>
+    <string name="info_news_weather" formatted="false">Las casillas de favoritos usan un acento rosa. Los recuentos se adaptan a favoritos, búsqueda y otros filtros activos.</string>
+    <string name="info_news_viewer_zoom" formatted="false">Un objeto recién seleccionado pasa a ser el activo. La lista permanece en su sitio hasta volver a la vista principal.</string>
+    <string name="info_news_settings" formatted="false">Los archivos de ubicación pueden incluir los objetos seleccionados. La exportación automática comparte posición, altitud y zona horaria, con fecha y hora actuales.</string>
+    <string name="info_news_catalog" formatted="false">Los datos se actualizan automáticamente cuando hace falta. El panel de filtros abierto permanece visible al desplazarte.</string>
 </resources>

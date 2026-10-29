@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="catalog_favorites_only">فقط علاقه‌مندی‌ها</string>
+    <string name="catalog_favorites_off">غیرفعال کردن فیلتر علاقه‌مندی‌ها</string>
+    <string name="location_export_include_objects">گنجاندن اجرام آسمانی هنگام ذخیرهٔ مکان</string>
+    <string name="location_export_objects_description">اجرام انتخاب‌شده و جرم فعال در نمای اصلی را ذخیره می‌کند.</string>
+</resources>

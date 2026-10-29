@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="celestial_favorite_add">즐겨찾기에 추가</string>
+    <string name="celestial_favorite_remove">즐겨찾기에서 제거</string>
+</resources>

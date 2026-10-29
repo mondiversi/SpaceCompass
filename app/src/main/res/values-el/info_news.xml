@@ -1,9 +1,9 @@
 <resources>
     <string name="info_news_title">Τελευταία νέα · %1$s</string>
-    <string name="info_news_star_sky" formatted="false">Ένα εικονίδιο χωνιού κάνει τα φίλτρα του καταλόγου πιο ευδιάκριτα.</string>
-    <string name="info_news_texture_downloads" formatted="false">Τα βέλη πάνω και κάτω ξεχωρίζουν την ταξινόμηση από τα φίλτρα.</string>
-    <string name="info_news_weather" formatted="false">Η λίστα αντικειμένων έχει ενιαίο φόντο, χωρίς χρώματα ανά κατηγορία.</string>
-    <string name="info_news_viewer_zoom" formatted="false">Οι κατηγορίες του φίλτρου Τύπος έχουν ουδέτερο φόντο και στα δύο θέματα.</string>
-    <string name="info_news_settings" formatted="false">Το πεδίο αναζήτησης έχει μικρότερο ύψος, με περισσότερο χώρο πάνω και κάτω.</string>
-    <string name="info_news_catalog" formatted="false">Το κείμενο αναζήτησης, η ένδειξη και ο δρομέας που αναβοσβήνει είναι κατακόρυφα κεντραρισμένα.</string>
+    <string name="info_news_star_sky" formatted="false">Η διαχείριση τοποθεσίας δείχνει τις τρέχουσες τιμές, με έντονες προσαρμοσμένες ρυθμίσεις και πιο συμπαγή χειριστήρια.</string>
+    <string name="info_news_texture_downloads" formatted="false">Σημείωσε αντικείμενα ως αγαπημένα στο Παρατηρητήριο και πάτησε την καρδιά στον κατάλογο για να εμφανίζονται μόνο τα αγαπημένα.</string>
+    <string name="info_news_weather" formatted="false">Τα πλαίσια επιλογής των αγαπημένων έχουν ροζ χρώμα. Οι μετρητές ακολουθούν τα αγαπημένα, την αναζήτηση και τα άλλα ενεργά φίλτρα.</string>
+    <string name="info_news_viewer_zoom" formatted="false">Ένα νέο επιλεγμένο αντικείμενο γίνεται ενεργό. Η λίστα μένει στη θέση της μέχρι την επιστροφή στην κύρια προβολή.</string>
+    <string name="info_news_settings" formatted="false">Τα αρχεία τοποθεσίας μπορούν να περιλαμβάνουν επιλεγμένα αντικείμενα. Η αυτόματη εξαγωγή μοιράζεται θέση, υψόμετρο και ζώνη ώρας, με τρέχουσα ημερομηνία και ώρα.</string>
+    <string name="info_news_catalog" formatted="false">Τα δεδομένα ανανεώνονται αυτόματα όταν χρειάζεται. Το ανοιχτό πλαίσιο φίλτρων παραμένει ορατό κατά την κύλιση.</string>
 </resources>

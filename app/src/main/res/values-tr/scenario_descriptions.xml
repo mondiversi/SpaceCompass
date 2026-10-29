@@ -1,7 +1,7 @@
 <resources>
     <string name="scenario_position_description">Gökyüzünü hesaplamak için kullanılacak konumu seçin.</string>
-    <string name="scenario_altitude_description">Senaryoda kullanılacak rakımı ayarlayın.</string>
-    <string name="scenario_zone_description">Senaryonun tarih ve saati için saat dilimini seçin.</string>
+    <string name="scenario_altitude_description">Konumda kullanılacak rakımı ayarlayın.</string>
+    <string name="scenario_zone_description">Konumnun tarih ve saati için saat dilimini seçin.</string>
     <string name="scenario_date_description">Gök cisimlerinin konumlarını hesaplamak için tarihi seçin.</string>
-    <string name="scenario_time_description">Saati senaryonun saat dilimine göre ayarlayın.</string>
+    <string name="scenario_time_description">Saati konumun saat dilimine göre ayarlayın.</string>
 </resources>

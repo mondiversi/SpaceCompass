@@ -1,5 +1,5 @@
 <resources>
     <string name="scenario_export_include_automatic">Συμπερίληψη και των αυτόματων τιμών</string>
-    <string name="scenario_export_automatic_description">Συμπλήρωσε το σενάριο με την τοποθεσία, το υψόμετρο, τη ζώνη ώρας, την ημερομηνία και την ώρα που χρησιμοποιούνται τώρα.</string>
+    <string name="scenario_export_automatic_description">Συμπληρώνει την τοποθεσία με τις τρέχουσες συντεταγμένες, το υψόμετρο, τη ζώνη ώρας, την ημερομηνία και την ώρα.</string>
     <string name="scenario_export_automatic_unavailable">Οι αυτόματες τιμές είναι ελλιπείς, δοκίμασε ξανά</string>
 </resources>

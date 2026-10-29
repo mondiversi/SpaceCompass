@@ -1,5 +1,5 @@
 <resources>
     <string name="scenario_export_include_automatic">Включить также автоматические значения</string>
-    <string name="scenario_export_automatic_description">Дополните сценарий используемыми сейчас местоположением, высотой, часовым поясом, датой и временем.</string>
+    <string name="scenario_export_automatic_description">Дополняет локацию текущими координатами, высотой, часовым поясом, датой и временем.</string>
     <string name="scenario_export_automatic_unavailable">Автоматические значения неполны, попробуйте ещё раз</string>
 </resources>

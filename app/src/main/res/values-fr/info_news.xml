@@ -1,9 +1,9 @@
 <resources>
     <string name="info_news_title">Dernières nouveautés · %1$s</string>
-    <string name="info_news_star_sky" formatted="false">Une icône en forme d’entonnoir rend les filtres du catalogue plus reconnaissables.</string>
-    <string name="info_news_texture_downloads" formatted="false">Des flèches vers le haut et le bas distinguent le tri des filtres.</string>
-    <string name="info_news_weather" formatted="false">La liste des objets utilise un fond uniforme, sans couleurs par catégorie.</string>
-    <string name="info_news_viewer_zoom" formatted="false">Les catégories du filtre Type ont un fond neutre dans les deux thèmes.</string>
-    <string name="info_news_settings" formatted="false">Le champ de recherche est moins haut, avec davantage d’espace au-dessus et en dessous.</string>
-    <string name="info_news_catalog" formatted="false">Le texte de recherche, le texte indicatif et le curseur clignotant sont centrés verticalement.</string>
+    <string name="info_news_star_sky" formatted="false">La gestion du lieu affiche les valeurs actuelles, avec les réglages personnalisés en gras et des commandes plus compactes.</string>
+    <string name="info_news_texture_downloads" formatted="false">Ajoutez des objets aux favoris dans l’Observatoire, puis utilisez le cœur du catalogue pour afficher uniquement les favoris.</string>
+    <string name="info_news_weather" formatted="false">Les cases des favoris prennent une teinte rose. Les compteurs suivent les favoris, la recherche et les autres filtres actifs.</string>
+    <string name="info_news_viewer_zoom" formatted="false">Un nouvel objet sélectionné devient actif. La liste reste en place jusqu’au retour à la vue principale.</string>
+    <string name="info_news_settings" formatted="false">Les fichiers de lieu peuvent inclure les objets sélectionnés. Les exports automatiques partagent position, altitude et fuseau, avec date et heure actuelles.</string>
+    <string name="info_news_catalog" formatted="false">Les données des objets s’actualisent automatiquement au besoin. Le panneau de filtres ouvert reste visible pendant le défilement.</string>
 </resources>

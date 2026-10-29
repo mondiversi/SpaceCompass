@@ -1,9 +1,9 @@
 <resources>
-    <string name="scenario_export">Hamisha hali</string>
-    <string name="scenario_import">Ingiza hali</string>
-    <string name="scenario_file_name">Jina la hali</string>
-    <string name="scenario_file_saved">Hali imehifadhiwa</string>
-    <string name="scenario_file_imported">Hali imeingizwa</string>
-    <string name="scenario_file_invalid">Faili ya hali si sahihi au haitumiki</string>
-    <string name="scenario_file_error">Hali haikuweza kuhifadhiwa au kushirikiwa</string>
+    <string name="scenario_export">Hamisha eneo</string>
+    <string name="scenario_import">Ingiza eneo</string>
+    <string name="scenario_file_name">Jina la eneo</string>
+    <string name="scenario_file_saved">Eneo limehifadhiwa</string>
+    <string name="scenario_file_imported">Eneo limeingizwa</string>
+    <string name="scenario_file_invalid">Faili ya eneo si sahihi au haitumiki</string>
+    <string name="scenario_file_error">Imeshindikana kuhifadhi au kushiriki eneo</string>
 </resources>

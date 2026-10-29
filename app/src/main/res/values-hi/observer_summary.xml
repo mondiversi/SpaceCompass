@@ -1,8 +1,8 @@
 <resources>
-    <string name="observer_current_scenario">वर्तमान परिदृश्य</string>
+    <string name="observer_current_scenario">वर्तमान लोकेशन</string>
     <string name="observer_customize">प्रबंधित करें</string>
     <string name="scenario_summary_automatic">स्वचालित</string>
-    <string name="observer_management_title">परिदृश्य प्रबंधन</string>
+    <string name="observer_management_title">लोकेशन प्रबंधन</string>
     <string name="scenario_customize_value">अनुकूलित करें</string>
     <string name="scenario_menu_live_position">वर्तमान GPS</string>
 </resources>

@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="catalog_favorites_only">केवल पसंदीदा दिखाएँ</string>
+    <string name="catalog_favorites_off">पसंदीदा फ़िल्टर बंद करें</string>
+    <string name="location_export_include_objects">लोकेशन सहेजते समय खगोलीय पिंड शामिल करें</string>
+    <string name="location_export_objects_description">चिह्नित पिंड और मुख्य दृश्य में सक्रिय पिंड सहेजता है।</string>
+</resources>

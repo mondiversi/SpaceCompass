@@ -1,5 +1,5 @@
 <resources>
     <string name="scenario_export_include_automatic">Ook automatische waarden opnemen</string>
-    <string name="scenario_export_automatic_description">Vul het scenario aan met de locatie, hoogte, tijdzone, datum en tijd die nu worden gebruikt.</string>
+    <string name="scenario_export_automatic_description">Vul de locatie aan met de locatie, hoogte, tijdzone, datum en tijd die nu worden gebruikt.</string>
     <string name="scenario_export_automatic_unavailable">Automatische waarden zijn onvolledig, probeer het opnieuw</string>
 </resources>

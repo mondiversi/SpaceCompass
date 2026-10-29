@@ -1,5 +1,5 @@
 <resources>
-    <string name="observer_title">シナリオ</string>
+    <string name="observer_title">ロケーション</string>
     <string name="observer_place">位置</string>
     <string name="observer_search">場所を検索</string>
     <string name="observer_search_action">検索</string>
@@ -19,10 +19,10 @@
     <string name="observer_apply">設定</string>
     <string name="observer_invalid">座標、標高、日付、時刻、タイムゾーンを確認してください。日付範囲は1900～2100年です。夏時間の切替で存在しない時刻は使用できません。</string>
     <string name="observer_use_place">この地点を使用</string>
-    <string name="observer_simulation">シナリオ</string>
+    <string name="observer_simulation">ロケーション</string>
     <string name="observer_coordinates_value">座標：%1$s</string>
     <string name="observer_altitude_value">標高：%1$s</string>
-    <string name="observer_simulation_active">シナリオ有効</string>
+    <string name="observer_simulation_active">ロケーション有効</string>
     <string name="observer_enable_position">位置をシミュレート</string>
     <string name="observer_enable_date">日付をシミュレート</string>
     <string name="observer_enable_time">時刻をシミュレート</string>

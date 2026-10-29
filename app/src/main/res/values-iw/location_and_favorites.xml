@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="catalog_favorites_only">הצגת מועדפים בלבד</string>
+    <string name="catalog_favorites_off">ביטול מסנן המועדפים</string>
+    <string name="location_export_include_objects">כלילת גרמי שמיים בשמירת המיקום</string>
+    <string name="location_export_objects_description">שמירת הגרמים המסומנים והגרם הפעיל בתצוגה הראשית.</string>
+</resources>

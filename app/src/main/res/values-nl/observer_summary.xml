@@ -1,8 +1,8 @@
 <resources>
-    <string name="observer_current_scenario">Huidig scenario</string>
+    <string name="observer_current_scenario">Huidige locatie</string>
     <string name="observer_customize">Beheren</string>
     <string name="scenario_summary_automatic">Automatisch</string>
-    <string name="observer_management_title">Scenariobeheer</string>
+    <string name="observer_management_title">Locatiebeheer</string>
     <string name="scenario_customize_value">Aanpassen</string>
     <string name="scenario_menu_live_position">Huidige GPS</string>
 </resources>

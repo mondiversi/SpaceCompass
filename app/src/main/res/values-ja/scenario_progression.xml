@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="scenario_speed">時間</string>
-    <string name="scenario_speed_description">シナリオの時間を最大3600×で逆行・早送りできます。中央のゼロで時間を停止します。</string>
-    <string name="scenario_resume">シナリオの再開</string>
+    <string name="scenario_speed_description">ロケーションの時間を最大3600×で逆行・早送りできます。中央のゼロで時間を停止します。</string>
+    <string name="scenario_resume">再開</string>
     <string name="scenario_resume_description">アプリを開き直したときのシミュレーション時間の再開方法を選びます。選択した速度はすべてのモードに適用されます。</string>
     <string name="scenario_restart">最初から開始</string>
     <string name="scenario_active">アプリの使用中のみ</string>
@@ -11,9 +11,9 @@
     <string name="scenario_speed_value">%1$s×</string>
     <string name="celestial_elevation_rising">高度が上昇中</string>
     <string name="celestial_elevation_falling">高度が下降中</string>
-    <string name="scenario_restart_help">アプリを新たに起動するたびに、シナリオの時刻が初期設定から始まります。アプリの使用中は選択した速度で進みます。</string>
-    <string name="scenario_active_help">シナリオの時刻は、アプリの使用中のみ選択した速度で進みます。バックグラウンドやスクリーンセーバー中は一時停止し、その後は停止した時刻から再開します。</string>
-    <string name="scenario_always_help">アプリを閉じている間やスマートフォンの再起動後も、シナリオの時刻は選択した速度で進み続けます。</string>
+    <string name="scenario_restart_help">アプリを新たに起動するたびに、ロケーションの時刻が初期設定から始まります。アプリの使用中は選択した速度で進みます。</string>
+    <string name="scenario_active_help">ロケーションの時刻は、アプリの使用中のみ選択した速度で進みます。バックグラウンドやスクリーンセーバー中は一時停止し、その後は停止した時刻から再開します。</string>
+    <string name="scenario_always_help">アプリを閉じている間やスマートフォンの再起動後も、ロケーションの時刻は選択した速度で進み続けます。</string>
     <string name="scenario_time_paused">時間は一時停止中</string>
     <string name="scenario_midnight_note">午前0時をまたぐと日付が自動で変わります。逆行時も同様です。</string>
     <string name="scenario_time_backward">逆行</string>

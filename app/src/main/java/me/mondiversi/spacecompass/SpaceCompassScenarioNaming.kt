@@ -13,7 +13,7 @@ internal fun spaceCompassScenarioSuggestedName(archive: SpaceCompassScenarioArch
         parts.date.takeIf { c.simulateDate }, parts.time.takeIf { c.simulateTime },
         parts.speed.takeIf { archive.timeSettings.enabled }
     ).mapNotNull { it?.let { value -> spaceCompassExportFilePart(value,32) }?.takeIf(String::isNotBlank) }.toMutableList()
-    if (fields.isEmpty()) return spaceCompassExportFilePart(fallback,80).ifBlank { "Scenario" }
+    if (fields.isEmpty()) return spaceCompassExportFilePart(fallback,80).ifBlank { "Location" }
     // Preserve every enabled field, shortening the longest component first.
     while (fields.joinToString("_").let { it.length>80 || it.toByteArray(Charsets.UTF_8).size>220 }) {
         val index = fields.indices.maxBy { fields[it].length }

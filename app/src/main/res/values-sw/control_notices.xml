@@ -10,8 +10,8 @@
     <string name="panorama_labels_off">Lebo zimefichwa</string>
     <string name="control_choice_message">%1$s: %2$s</string>
 
-    <string name="scene_scenario_on">Hali imewashwa</string>
-    <string name="scene_scenario_off">Hali imezimwa</string>
+    <string name="scene_scenario_on">Eneo limewashwa</string>
+    <string name="scene_scenario_off">Eneo limezimwa</string>
     <string name="scene_objects_on">Vitu vimewashwa</string>
     <string name="scene_objects_off">Vitu vimezimwa</string>
 </resources>
