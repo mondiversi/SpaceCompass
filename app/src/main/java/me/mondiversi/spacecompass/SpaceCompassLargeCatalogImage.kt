@@ -119,10 +119,10 @@ internal fun spaceCompassLargeCatalogImage(body: SpaceCompassCelestialBody): Str
     SpaceCompassCelestialBody.NEBULA_NGC_6818 -> "nebula_ngc_6818.webp"
     SpaceCompassCelestialBody.PROBE_JPL_M0064 -> "probe_jpl_m0064.webp"
     SpaceCompassCelestialBody.PROBE_JPL_M0202 -> "probe_jpl_m0202.webp"
-    else -> spaceCompassAdditionalCatalogImage(body)
+    else -> spaceCompassExtendedDeepSkyImage(body)
 }
 
-private fun spaceCompassAdditionalCatalogImage(body: SpaceCompassCelestialBody): String? = when (body.name) {
+private fun spaceCompassExtendedDeepSkyImage(body: SpaceCompassCelestialBody): String? = when (body.name) {
     "GALAXY_NGC_1313" -> "galaxy_ngc_1313.webp"
     "GALAXY_NGC_4526" -> "galaxy_ngc_4526.webp"
     "GALAXY_NGC_3923" -> "galaxy_ngc_3923.webp"

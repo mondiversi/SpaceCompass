@@ -175,10 +175,10 @@ internal fun spaceCompassLargeCatalogCredit(name: String?): String? = when (Spac
     "nebula_ngc_6818.webp" -> "GSFC"
     "probe_jpl_m0064.webp" -> "Marina Behabetz"
     "probe_jpl_m0202.webp" -> "NASA/Lockheed Martin"
-    else -> spaceCompassAdditionalCatalogCredit(name)
+    else -> spaceCompassExtendedDeepSkyCredit(name)
 }
 
-private fun spaceCompassAdditionalCatalogCredit(name: String?): String? = when (name) {
+private fun spaceCompassExtendedDeepSkyCredit(name: String?): String? = when (name) {
     "galaxy_ngc_1313.webp" -> "ESO"
     "galaxy_ngc_4526.webp" -> "ESA/Hubble & NASA, Acknowledgement: Judy Schmidt"
     "galaxy_ngc_3923.webp" -> "ESA/Hubble & NASA"
