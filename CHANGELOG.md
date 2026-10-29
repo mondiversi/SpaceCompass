@@ -1,5 +1,16 @@
 # Changelog
 
+## 1.7.0 — 2026-10-29
+
+- Explore **9,999 catalogue objects**, adding 8,990 references across Solar System bodies, spacecraft, satellites, stars, exoplanets and deep-sky objects. Existing selections and favorites remain compatible.
+- Expand real tracking with individually verified JPL targets and NORAD satellite references. Historical-only missions and unavailable measurements remain explicitly qualified; unresolved host directions do not pretend to be measured three-dimensional planetary positions.
+- Optimize catalogue calculation, search and automatic data refresh. Remote resources are requested for selected, observed or visible objects rather than downloading thousands of unused ephemerides.
+- Prepare Location values in always-visible, fully editable subpages. Enable or disable their use from Location management; prepared inactive values remain saved. Compact cards and a permanently checked, disabled Resumption checkbox clarify the controls.
+- Add **graphics collection 1.8**: five new photographs and five independent thumbnails, with per-resource integrity checks, attribution and offline cache support. All celestial photography stays outside the APK.
+- Refresh in-app release notes in all twenty languages. Retain Android 8.0+ support, the existing update signature, settings, filters, favorites and scene selections.
+
+- Publish version code 56 with the existing distribution certificate, signed update metadata, reference-information archive, validation report and individual graphics resources.
+
 ## 1.6.0 — 2026-10-29
 
 - Introduce persistent favorites in Observatory and a heart filter in Objects. Keep favorite membership independent of scene selection and active targets; use the shared day/night pink accent on favorite checkboxes without adding row washes or thumbnail rings.

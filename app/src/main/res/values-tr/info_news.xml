@@ -1,9 +1,9 @@
 <resources>
     <string name="info_news_title">Son yenilikler · %1$s</string>
-    <string name="info_news_star_sky" formatted="false">Konum yönetimi güncel değerleri, kalın yazılan özel ayarları ve daha kompakt denetimleri gösterir.</string>
-    <string name="info_news_texture_downloads" formatted="false">Gözlemevi’nde nesneleri favorilere ekleyin; yalnızca favorileri göstermek için katalogdaki kalbi kullanın.</string>
-    <string name="info_news_weather" formatted="false">Favorilerin onay kutuları pembe vurguludur. Filtre sayıları favorilere, aramaya ve diğer etkin filtrelere göre değişir.</string>
-    <string name="info_news_viewer_zoom" formatted="false">Yeni seçilen nesne etkin olur. Ana görünüme dönene kadar liste yerinde kalır.</string>
-    <string name="info_news_settings" formatted="false">Konum dosyalarına seçili nesneler eklenebilir. Otomatik dışa aktarma konumu, yüksekliği ve saat dilimini paylaşır; tarih ve saat güncel kalır.</string>
-    <string name="info_news_catalog" formatted="false">Nesne verileri gerektiğinde otomatik yenilenir. Açık filtre paneli kaydırma sırasında görünür kalır.</string>
+    <string name="info_news_star_sky" formatted="false">Katalog, Güneş Sistemi ve derin gökyüzünden 9.999 nesneye ulaşıyor.</string>
+    <string name="info_news_texture_downloads" formatted="false">Genişletilmiş izleme, geçmiş veya kullanılamayan verilerin sınırlarını açıkça belirterek doğrulanmış JPL ve uydu kaynaklarını kullanır.</string>
+    <string name="info_news_weather" formatted="false">Grafik paketi 1.8, ayrı ayrı indirilen ve çevrimdışı saklanan beş fotoğraf ve bağımsız küçük resimler ekler.</string>
+    <string name="info_news_viewer_zoom" formatted="false">Katalog hesaplamaları, arama ve veri yenileme daha büyük koleksiyon için optimize edildi.</string>
+    <string name="info_news_settings" formatted="false">Konum alt sayfaları her zaman düzenlenebilir. Özel değerleri yalnızca Konum yönetiminden etkinleştirin veya devre dışı bırakın.</string>
+    <string name="info_news_catalog" formatted="false">Daha kompakt Konum kartları ve her zaman işaretli, devre dışı sürdürme kutusu kontrolleri daha anlaşılır kılar.</string>
 </resources>

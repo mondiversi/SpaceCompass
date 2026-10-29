@@ -1,0 +1,131 @@
+[
+  {
+    "url": "https://ssd-api.jpl.nasa.gov/sbdb_query.api?fields=spkid%2Cfull_name%2Cpdes%2Cname%2Cprefix%2Cclass%2Cneo%2Cpha%2Cepoch%2Ce%2Ca%2Cq%2Ci%2Com%2Cw%2Cma%2Cper%2Cad%2Cdiameter%2CGM%2Cdensity%2Crot_per&sb-kind=a&sb-ns=n&limit=1600&sort=-diameter",
+    "sha256": "723ca73d8aa680fd66354336eacfe2f9968570775da53732e3c14b3c3a4debdc",
+    "bytes": 302063,
+    "retrievedUtc": "2026-10-29T09:44:41Z",
+    "file": "asteroids.json"
+  },
+  {
+    "url": "https://www.atnf.csiro.au/research/pulsar/psrcat/downloads/psrcat_pkg.tar.gz",
+    "sha256": "55daa29f71f344c8de4064969b5812d6cb3a9b851efae0bef004ac9d5f6740c0",
+    "bytes": 1249005,
+    "file": "atnf.tar.gz"
+  },
+  {
+    "url": "https://raw.githubusercontent.com/remco-space/Black-Hole-Mass-compilation/master/BHcompilation.fits",
+    "sha256": "119d720c3706627dfd5a4c7482b03946df7fbc0a1154c6196db3a5c34ad64930",
+    "bytes": 63360,
+    "retrievedUtc": "2026-10-29T09:49:29Z",
+    "file": "bh-author-BHcompilation.fits"
+  },
+  {
+    "url": "https://raw.githubusercontent.com/remco-space/Black-Hole-Mass-compilation/master/LICENSE",
+    "sha256": "4b7377076f34c7a1610931293bbdfb4738c9b55f7b08e19001fd5ac81a25dbea",
+    "bytes": 1243,
+    "retrievedUtc": "2026-10-29T09:49:30Z",
+    "file": "bh-author-LICENSE"
+  },
+  {
+    "url": "https://raw.githubusercontent.com/remco-space/Black-Hole-Mass-compilation/master/README.md",
+    "sha256": "375de013a9590db681c6dcc2a98545441f803034cf28ab398b9a52bc6d2f80de",
+    "bytes": 1103,
+    "retrievedUtc": "2026-10-29T09:49:29Z",
+    "file": "bh-author-README.md"
+  },
+  {
+    "url": "https://simbad.cfa.harvard.edu/simbad/sim-tap/sync?request=doQuery&lang=adql&format=json&query=SELECT+main_id%2Cra%2Cdec%2Cpmra%2Cpmdec%2Cplx_value%2Cotype+FROM+basic+WHERE+otype+IN+%28%27BH%27%2C%27BH%3F%27%29+AND+ra+IS+NOT+NULL+AND+dec+IS+NOT+NULL+ORDER+BY+main_id",
+    "sha256": "d9c927c669b038a68ec4fe3c7a2758944b0c3ffa1b8ab10e4fe265f21a5f12e1",
+    "bytes": 2551,
+    "retrievedUtc": "2026-10-29T09:47:53Z",
+    "file": "black-holes-simbad.json"
+  },
+  {
+    "url": "https://ssd-api.jpl.nasa.gov/sbdb_query.api?fields=spkid%2Cfull_name%2Cpdes%2Cname%2Cprefix%2Cclass%2Cneo%2Cpha%2Cepoch%2Ce%2Ca%2Cq%2Ci%2Com%2Cw%2Cma%2Cper%2Cad%2Cdiameter%2CGM%2Cdensity%2Crot_per&sb-kind=c&limit=700&sort=pdes&sb-xfrag=1",
+    "sha256": "8362fc9e55253c49e0721dc809d78483be6a36273a2412297ce94ffcef8e75c2",
+    "bytes": 124782,
+    "retrievedUtc": "2026-10-29T09:44:46Z",
+    "file": "comets.json"
+  },
+  {
+    "url": "https://simbad.cfa.harvard.edu/simbad/sim-tap/sync?request=doQuery&lang=adql&format=json&query=SELECT+TOP+1500+main_id%2Cra%2Cdec%2Cpmra%2Cpmdec%2Cplx_value%2Cotype+FROM+basic+WHERE+otype%3D%27DNe%27+AND+%28main_id+LIKE+%27LDN%25%27+OR+main_id+LIKE+%27B+%25%27+OR+main_id+LIKE+%27LBN%25%27%29+AND+ra+IS+NOT+NULL+AND+dec+IS+NOT+NULL+ORDER+BY+main_id",
+    "sha256": "8b6bdb57a2dd722b2ac1e0522a9e6c53175e3bc3fb47974c9b9772d0c91691b0",
+    "bytes": 92022,
+    "retrievedUtc": "2026-10-29T09:47:54Z",
+    "file": "dark-nebulae.json"
+  },
+  {
+    "url": "https://ssd.jpl.nasa.gov/api/horizons.api?format=json&COMMAND=%27%2A%27&MAKE_EPHEM=%27NO%27",
+    "sha256": "6aac0e25144d8eab513db2eb28e70af13f41eba635359d777a5e122fee17b21e",
+    "bytes": 68581,
+    "retrievedUtc": "2026-10-29T09:44:48Z",
+    "file": "major-bodies.json"
+  },
+  {
+    "url": "https://simbad.cfa.harvard.edu/simbad/sim-tap/sync?request=doQuery&lang=adql&format=json&query=SELECT+TOP+6000+main_id%2Cra%2Cdec%2Cpmra%2Cpmdec%2Cplx_value%2Cotype+FROM+basic+WHERE+otype+IN+%28%27DNe%27%2C%27RNe%27%2C%27EmO%27%2C%27HII%27%2C%27PN%27%2C%27SNR%27%2C%27Neb%27%29+AND+ra+IS+NOT+NULL+AND+dec+IS+NOT+NULL+ORDER+BY+main_id",
+    "sha256": "66a9bd4382cb0cdc5d3c735764410bc3a8622d188ba0b284c44383e321c88968",
+    "bytes": 409129,
+    "file": "nebulae-mirror.json"
+  },
+  {
+    "url": "https://simbad.cfa.harvard.edu/simbad/sim-tap/sync?request=doQuery&lang=adql&format=json&query=SELECT+%2A+FROM+otypedef",
+    "sha256": "c58d91231f6a294bb85173ea8abaf9c6da3cc02aa50ab2a73b116ee3d295e9d9",
+    "bytes": 23528,
+    "file": "object-types-mirror.json"
+  },
+  {
+    "url": "https://simbad.cfa.harvard.edu/simbad/sim-tap/sync?request=doQuery&lang=adql&format=json&query=SELECT+TOP+2000+main_id%2Cra%2Cdec%2Cpmra%2Cpmdec%2Cplx_value%2Cotype%2Csp_type+FROM+basic+WHERE+otype+IN+%28%27Psr%27%2C%27N%2A%27%29+AND+ra+IS+NOT+NULL+AND+dec+IS+NOT+NULL+ORDER+BY+main_id",
+    "sha256": "6e867c70c4745e6dd9af97fa4ef6b6edfbbec76d2760a19231844a89f2ff7f47",
+    "bytes": 157265,
+    "file": "pulsars-mirror.json"
+  },
+  {
+    "url": "https://db.satnogs.org/api/tle/?format=json",
+    "sha256": "2fc51f3faac7cb8b6fac8ee43659958d00d1b5f319786b096cf300a784d52218",
+    "bytes": 536637,
+    "retrievedUtc": "2026-10-29T09:46:26Z",
+    "file": "satnogs-tle.json"
+  },
+  {
+    "url": "https://ssd-api.jpl.nasa.gov/sbdb_query.api?fields=spkid%2Cfull_name%2Cpdes%2Cname%2Cprefix%2Cclass%2Cneo%2Cpha%2Cepoch%2Ce%2Ca%2Cq%2Ci%2Com%2Cw%2Cma%2Cper%2Cad%2Cdiameter%2CGM%2Cdensity%2Crot_per&sb-kind=a&sb-class=TNO&limit=250&sort=-diameter",
+    "sha256": "88e5e3e1fdd396bfab9fe689fc3960cbdb9a9370c8ba82b87a232c405fccde5a",
+    "bytes": 44690,
+    "retrievedUtc": "2026-10-29T09:44:43Z",
+    "file": "tno.json"
+  },
+  {
+    "file": "ngc.csv",
+    "url": "https://raw.githubusercontent.com/mattiaverga/OpenNGC/v20260501/database_files/NGC.csv",
+    "bytes": 3876288,
+    "sha256": "840fe0c9ee1332e551b2e722a0e92726cd7b157914a3d2177602832aadd3aa9e",
+    "inherited": true
+  },
+  {
+    "file": "ngc-addendum.csv",
+    "url": "https://raw.githubusercontent.com/mattiaverga/OpenNGC/v20260501/database_files/addendum.csv",
+    "bytes": 17484,
+    "sha256": "1d8f0914e643ada325a5a94d88d8fefad6a4937a2f77cc34f21483af22b11983",
+    "inherited": true
+  },
+  {
+    "file": "exoplanets.json",
+    "bytes": 2472521,
+    "url": "https://exoplanetarchive.ipac.caltech.edu/TAP/sync?query=select+pl_name%2Chostname%2Cra%2Cdec%2Csy_dist%2Csy_pmra%2Csy_pmdec%2Cpl_bmasse%2Cpl_bmasselim%2Cpl_rade%2Cpl_radelim%2Cpl_orbper%2Cpl_eqt%2Cpl_orbsmax%2Cst_teff%2Cst_mass%2Cst_rad+from+pscomppars&format=json",
+    "sha256": "337d8217b3504fc6e9dd22aad031a432cd8581ba4969960cc7a6603d4c75bc25",
+    "inherited": true
+  },
+  {
+    "file": "jpl-satellite-physical.html",
+    "bytes": 96641,
+    "url": "https://ssd.jpl.nasa.gov/sats/phys_par/",
+    "sha256": "9a9c004d950923ea368a8c4815d813c9c232c332d1586402a23b15d9581370d1",
+    "inherited": true
+  },
+  {
+    "file": "hyg-v41.csv",
+    "bytes": 33932548,
+    "url": "https://raw.githubusercontent.com/astronexus/HYG-Database/main/hyg/CURRENT/hygdata_v41.csv",
+    "sha256": "d9f69fd86bbf90a4e4d52b4c5c53eacfa6dfc0bfdef85bfd94f095e0bebe4ebd",
+    "inherited": true
+  }
+]

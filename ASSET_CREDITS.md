@@ -176,3 +176,12 @@ quality 90/method 6, totalling 43.74 MB (41.71 MiB; 43,735,950 bytes) with its m
 Release 1.7 publishes only ten new full images, ten previews and four metadata files,
 4.98 MB (4.75 MiB; 4,984,704 bytes). Older entries retain their exact individual pack-1.6 URLs and hashes.
 The complete catalogue is described by the version-1.7 manifest; no full texture ZIP is distributed.
+
+
+## Local catalogue expansion and graphics 1.8
+
+Five additional reviewed photographic plates and independent thumbnails are prepared in `textures/celestial-textures-v1.8`. All new files use WebP quality 90, method 6; full plates are 2048 × 1024, previews 128 × 128. Original aspect ratio is preserved with a black letterbox. No photographs or thumbnails are bundled into the APK, and no complete texture ZIP is produced.
+
+The logical collection contains 189 full images (42,855,924 bytes) and 189 thumbnails (807,650 bytes); the five new pairs add 444,858 bytes. Metadata is additional. Unchanged published assets retain their exact 1.6/1.7 URLs and pins. New resources have no network URL until publication is authorized.
+
+New credits: NGC 1313 — ESO, https://www.eso.org/public/images/eso0643a/ (CC BY 4.0; https://www.eso.org/public/copyright/); NGC 4526 — ESA/Hubble & NASA, acknowledgement Judy Schmidt; NGC 3923 and IC 342 — ESA/Hubble & NASA; NGC 2440 — NASA, ESA, and K. Noll (STScI), acknowledgement The Hubble Heritage Team (STScI/AURA). Source URLs, derivatives and byte/dimension/SHA-256 pins are retained in the new manifest and CREDITS.md.

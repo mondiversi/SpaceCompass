@@ -111,6 +111,19 @@ internal class SpaceCompassObserverState(private val preferences: SharedPreferen
         if (sync) edit.commit() else edit.apply()
     }
     override fun onCleared() { checkpoint(sync = true) }
+    /** Keep prepared values while all overrides are off, without creating a live override. */
+    fun storeEditorConfiguration(value: SpaceCompassObserverPlan?): Boolean {
+        if (value == null || value.activeSections.isNotEmpty()) return apply(value)
+        if (savedPlan == value && plan == null) return false
+        checkpoint()
+        preferences?.edit()?.putString(SPACE_COMPASS_OBSERVER_PLAN,value.encode())
+            ?.putString(SPACE_COMPASS_OBSERVER_MODE,"live")?.apply()
+        savedPlan = value
+        localCustom = false
+        reload()
+        return true
+    }
+
     fun apply(value: SpaceCompassObserverPlan?): Boolean {
         val custom = if (preferences == null) localCustom else preferences.getString(SPACE_COMPASS_OBSERVER_MODE, null) == "custom"
         if (value == null && !custom) return false

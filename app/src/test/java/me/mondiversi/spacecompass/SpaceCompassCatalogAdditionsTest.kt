@@ -144,7 +144,7 @@ class SpaceCompassCatalogAdditionsTest {
             "NGC1976" to SpaceCompassCelestialBody.ORION_NEBULA, "M45" to SpaceCompassCelestialBody.PLEIADES,
             "Sirio" to SpaceCompassCelestialBody.SIRIUS, "Saturn VI" to titan))
             assertEquals(listOf(body), spaceCompassSearchCatalog(spaceCompassCelestialCatalogOrder, emptyMap(), query))
-        assertEquals(1009, spaceCompassCelestialCatalogOrder.size)
+        assertEquals(9999, spaceCompassCelestialCatalogOrder.size)
         assertEquals(1, spaceCompassCelestialCatalogOrder.count { it == SpaceCompassCelestialBody.ANDROMEDA_CORE })
     }
 

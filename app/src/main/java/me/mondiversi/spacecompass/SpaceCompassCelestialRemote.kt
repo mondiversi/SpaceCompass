@@ -83,7 +83,8 @@ internal fun rememberSpaceCompassCelestialRemote(body: SpaceCompassCelestialBody
 internal fun rememberSpaceCompassCelestialRemote(bodies: Set<SpaceCompassCelestialBody>, resumed: Boolean,
     motionBodies: Set<SpaceCompassCelestialBody> = bodies, retryRevision: Int = 0,
     prefetchCatalog: Boolean = false, catalogRefreshRevision: Int = 0,
-    observationTimeOverrideMs: Long? = null): SpaceCompassCelestialRemoteData {
+    observationTimeOverrideMs: Long? = null,
+    catalogBodies: Set<SpaceCompassCelestialBody>? = null): SpaceCompassCelestialRemoteData {
     val context = LocalContext.current
     var data by remember { mutableStateOf(SpaceCompassCelestialRemoteData()) }
     val policy = remember { SpaceCompassCelestialRefreshPolicy() }
@@ -93,6 +94,7 @@ internal fun rememberSpaceCompassCelestialRemote(bodies: Set<SpaceCompassCelesti
     val currentBodies by rememberUpdatedState(bodies)
     val currentMotionBodies by rememberUpdatedState(motionBodies)
     val currentPrefetch by rememberUpdatedState(prefetchCatalog)
+    val currentCatalogBodies by rememberUpdatedState(catalogBodies)
     val currentRetry by rememberUpdatedState(retryRevision)
     val currentCatalogRefresh by rememberUpdatedState(catalogRefreshRevision)
     val currentObservationTimeOverride by rememberUpdatedState(observationTimeOverrideMs)
@@ -126,7 +128,7 @@ internal fun rememberSpaceCompassCelestialRemote(bodies: Set<SpaceCompassCelesti
             ephemerides = cached.ephemerides + data.ephemerides, motions = cached.motions + data.motions)
         cachesReady = true
     }
-    LaunchedEffect(bodies, motionBodies, networkRevision, retryRevision, catalogRefreshRevision, prefetchCatalog, observationTimeOverrideMs) {
+    LaunchedEffect(bodies, motionBodies, networkRevision, retryRevision, catalogRefreshRevision, prefetchCatalog, observationTimeOverrideMs, catalogBodies) {
         wake.trySend(Unit)
     }
     LaunchedEffect(resumed, cachesReady) {
@@ -142,7 +144,8 @@ internal fun rememberSpaceCompassCelestialRemote(bodies: Set<SpaceCompassCelesti
                 val selected = currentBodies
                 val motions = currentMotionBodies
                 val prefetch = currentPrefetch
-                val remoteBodies = spaceCompassCelestialRefreshBodies(selected, motions, prefetch)
+                val wanted = currentCatalogBodies
+                val remoteBodies = spaceCompassCelestialRefreshBodies(selected, motions, prefetch, wanted)
                 if (appliedRetry != currentRetry) {
                     policy.retryRequested(selected)
                     appliedRetry = currentRetry
@@ -155,7 +158,7 @@ internal fun rememberSpaceCompassCelestialRemote(bodies: Set<SpaceCompassCelesti
                 val upcoming = mutableListOf<Long>()
                 var interruptedPass = false
                 for (body in remoteBodies) {
-                    if (currentBodies != selected || currentMotionBodies != motions || currentPrefetch != prefetch) {
+                    if (currentBodies != selected || currentMotionBodies != motions || currentPrefetch != prefetch || currentCatalogBodies != wanted) {
                         interruptedPass = true
                         break
                     }

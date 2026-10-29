@@ -13,7 +13,7 @@ class SpaceCompassHiddenCelestialTest {
     @Test fun publicCatalogAndMasterSelectionIncludeLv426WithoutChangingDefaults() {
         val initial = SpaceCompassCelestialSelection()
         assertEquals(setOf(SpaceCompassCelestialBody.SUN, SpaceCompassCelestialBody.MOON), initial.selected)
-        assertEquals(1009, spaceCompassAvailableCelestialCatalog(initial.selected).size)
+        assertEquals(9999, spaceCompassAvailableCelestialCatalog(initial.selected).size)
         assertTrue(hidden in spaceCompassCelestialCatalogOrder)
         assertTrue(hidden in initial.toggleAll().selected)
         assertEquals(spaceCompassCelestialCatalogOrder.toSet(),
@@ -25,7 +25,7 @@ class SpaceCompassHiddenCelestialTest {
         val removed = selected.toggle(hidden)
         assertFalse(hidden in removed.selected)
         assertTrue(hidden in spaceCompassAvailableCelestialCatalog(removed.selected))
-        assertEquals(1009, removed.toggleAll().selected.size)
+        assertEquals(9999, removed.toggleAll().selected.size)
     }
 
     @Test fun revealedObjectParticipatesInFiltersAndStableNumericSorting() {

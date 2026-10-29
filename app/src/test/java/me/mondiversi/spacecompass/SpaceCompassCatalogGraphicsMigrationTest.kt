@@ -33,8 +33,8 @@ class SpaceCompassCatalogGraphicsMigrationTest {
     @Test fun canonicalPairsHaveCoherentNamesAndPinThePublishedGraphicsRelease() {
         val names=Regex("(moon|planet|star|dwarf|asteroid|comet|probe|satellite|cluster|nebula|galaxy|black_hole|fictional)_[a-z0-9_]+\\.webp")
         val policy=SpaceCompassCelestialTexturePolicy
-        assertEquals(0,policy.images.count { it.downloadPack==null })
-        policy.images.forEach { parent ->
+        assertEquals(5,policy.images.count { it.downloadPack==null })
+        policy.images.filter { it.downloadPack != null }.forEach { parent ->
             assertTrue(parent.name,names.matches(parent.name))
             val preview=SpaceCompassCelestialThumbnailPolicy.forImage(parent.name)!!
             assertEquals("thumb_"+parent.name,preview.name)

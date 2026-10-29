@@ -33,6 +33,13 @@ for lang,notes in text.items():
     assert folder.exists(),folder
     lines=['<?xml version="1.0" encoding="utf-8"?>','<resources>']
     for r in rows:
+        # Scientific catalogue designations are identical in every locale. Android's
+        # ordinary default-resource fallback retains the same text without 20 copies.
+        # Names with real translations and the translated nucleus qualifier retain all variants.
+        localized=bool(r.get('localizedNames')) or r['name'].endswith(' nucleus')
+        if not localized:
+            if lang=='en':lines.append('    <string name="catalogue_'+r['key']+'" translatable="false">'+xml(r['name'])+'</string>')
+            continue
         name=r.get('localizedNames',{}).get(lang,r['name'])
         nucleus={'en':'nucleus','it':'nucleo','de':'Kern','fr':'noyau','es':'núcleo','pt':'núcleo','nl':'kern',
             'pl':'jądro','ru':'ядро','tr':'çekirdek','el':'πυρήνας','ar':'نواة','fa':'هسته','he':'גרעין',

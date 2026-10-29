@@ -1,9 +1,9 @@
 <resources>
     <string name="info_news_title">Últimas novidades · %1$s</string>
-    <string name="info_news_star_sky" formatted="false">A gestão de localizações mostra os valores atuais, com definições personalizadas a negrito e controlos mais compactos.</string>
-    <string name="info_news_texture_downloads" formatted="false">Guarde objetos nos favoritos do Observatório e use o coração do catálogo para mostrar apenas os favoritos.</string>
-    <string name="info_news_weather" formatted="false">As caixas dos favoritos usam um destaque rosa. As contagens acompanham os favoritos, a pesquisa e os restantes filtros ativos.</string>
-    <string name="info_news_viewer_zoom" formatted="false">Um objeto acabado de selecionar torna-se ativo. A lista mantém a posição até regressar à vista principal.</string>
-    <string name="info_news_settings" formatted="false">Os ficheiros de localização podem incluir os objetos selecionados. A exportação automática partilha posição, altitude e fuso, mantendo data e hora atuais.</string>
-    <string name="info_news_catalog" formatted="false">Os dados dos objetos são atualizados automaticamente quando necessário. O painel de filtros aberto permanece visível ao deslocar a lista.</string>
+    <string name="info_news_star_sky" formatted="false">O catálogo chega a 9.999 objetos do Sistema Solar e do céu profundo.</string>
+    <string name="info_news_texture_downloads" formatted="false">O rastreio ampliado usa referências JPL e de satélites verificadas, com limites explícitos para dados históricos ou indisponíveis.</string>
+    <string name="info_news_weather" formatted="false">O pacote gráfico 1.8 adiciona cinco fotografias e miniaturas independentes, descarregadas individualmente e guardadas offline.</string>
+    <string name="info_news_viewer_zoom" formatted="false">Os cálculos, a pesquisa e a atualização de dados estão otimizados para o catálogo ampliado.</string>
+    <string name="info_news_settings" formatted="false">As subpáginas de localização permanecem editáveis. Ative ou desative cada valor personalizado apenas na gestão de localizações.</string>
+    <string name="info_news_catalog" formatted="false">Cartões mais compactos e uma caixa de retoma sempre marcada e desativada tornam os controlos mais claros.</string>
 </resources>

@@ -46,7 +46,7 @@ internal fun SpaceCompassSunFinderScreen(
     val observer = LocalSpaceCompassObserver.current
     val plan = observer?.plan
     val catalogOpen = rememberSaveable { mutableStateOf(false) }
-    var catalogViewerBody by rememberSaveable { mutableStateOf<SpaceCompassCelestialBody?>(null) }
+    var catalogViewerBody by rememberSaveable(stateSaver = spaceCompassOptionalCelestialBodySaver) { mutableStateOf<SpaceCompassCelestialBody?>(null) }
     val context = LocalContext.current
 
     val lifecycleOwner = LocalLifecycleOwner.current
@@ -58,9 +58,10 @@ internal fun SpaceCompassSunFinderScreen(
     val preferences = LocalSpaceCompassPreferences.current
         ?: remember(context) { context.getSharedPreferences(SPACE_COMPASS_PREFERENCES_NAME, android.content.Context.MODE_PRIVATE) }
     val initialSelection = remember(preferences) { readSpaceCompassCelestialSelection(preferences) }
-    var selectedBody by rememberSaveable { mutableStateOf(initialSelection.active ?: SpaceCompassCelestialBody.SUN) }
+    var selectedBody by rememberSaveable(stateSaver = spaceCompassCelestialBodySaver) { mutableStateOf(initialSelection.active ?: SpaceCompassCelestialBody.SUN) }
     var selectedNames by rememberSaveable { mutableStateOf(initialSelection.ordered.map { it.name }) }
-    val selectedBodies = remember(selectedNames) { spaceCompassAllCelestialOrder.filter { it.name in selectedNames }.toSet() }
+    val selectedNameSet = remember(selectedNames) { selectedNames.toHashSet() }
+    val selectedBodies = remember(selectedNameSet) { spaceCompassAllCelestialOrder.filter { it.name in selectedNameSet }.toSet() }
     val resolvedBody = selectedBody.takeIf { it in selectedBodies }
         ?: spaceCompassAllCelestialOrder.firstOrNull { it in selectedBodies } ?: SpaceCompassCelestialBody.SUN
     LaunchedEffect(preferences) {
@@ -165,10 +166,13 @@ internal fun SpaceCompassSunFinderScreen(
     // Share one live request when possible; scenario weather never replaces the device environment.
     val weather = if (tile == deviceTile && requestTime == null) deviceWeather
         else rememberSpaceCompassSunWeather(tile, resumed, selectedTimeMs = requestTime)
-    // Warm the whole online catalog in the foreground; unchecked objects never become scene selections.
-    val remote = rememberSpaceCompassCelestialRemote(selectedBodies, resumed, motionBodies = selectedBodies,
+    // Warm viewed catalogue rows, with selected objects/Observatory first. Never flood JPL
+    // with thousands of unseen targets; each downloaded model keeps its own offline cache.
+    var visibleCatalogBodies by remember { mutableStateOf<Set<SpaceCompassCelestialBody>>(emptySet()) }
+    val observedBodies = selectedBodies + listOfNotNull(catalogViewerBody)
+    val remote = rememberSpaceCompassCelestialRemote(observedBodies, resumed, motionBodies = observedBodies,
         retryRevision = remoteRetry, prefetchCatalog = true,
-        observationTimeOverrideMs = requestTime)
+        observationTimeOverrideMs = requestTime, catalogBodies = visibleCatalogBodies)
     BackHandler(onBack = onDismissRequest)
     CompositionLocalProvider(LocalSpaceCompassCatalogOpen provides catalogOpen) {
     Box(Modifier.fillMaxSize()) {
@@ -210,7 +214,7 @@ internal fun SpaceCompassSunFinderScreen(
                 onSelect = { applySelection(selection.toggle(it)) },
                 latitude = visibleReadings.location?.latitude, longitude = visibleReadings.location?.longitude,
                 altitude = visibleReadings.location?.takeIf { it.hasAltitude() }?.altitude ?: 0.0,
-                onObserve = { catalogViewerBody = it })
+                onObserve = { catalogViewerBody = it }, onDataNeeded = { visibleCatalogBodies = it })
         }
         catalogViewerBody?.let { observedBody ->
             key(observedBody) {

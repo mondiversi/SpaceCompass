@@ -50,6 +50,8 @@ private fun SpaceCompassObserverEditor(observer: SpaceCompassObserverState, modi
     val device = observer.devicePlace
     val initialMoment = remember { (observer.plan ?: initial)?.editorMoment(System.currentTimeMillis(), ZoneId.systemDefault())
         ?: Instant.ofEpochMilli(System.currentTimeMillis()).atZone(ZoneId.systemDefault()) }
+    val storedMoment = remember { initial?.let { Instant.ofEpochMilli(it.timeMs).atZone(ZoneId.of(it.momentZoneId)) }
+        ?: initialMoment }
     var advanceTime by rememberSaveable { mutableStateOf(initial?.advanceTime == true) }
     var clockOffset by rememberSaveable { mutableStateOf(initial?.clockOffsetMs) }
     var simulatePosition by rememberSaveable { mutableStateOf(observer.plan?.simulatePosition == true) }
@@ -71,8 +73,9 @@ private fun SpaceCompassObserverEditor(observer: SpaceCompassObserverState, modi
     var pendingMoment by rememberSaveable { mutableStateOf<Long?>(null) }
     var preservedMoment by rememberSaveable { mutableStateOf(if (observer.plan?.scenarioClock != null || initial?.advancesClock == true)
         initialMoment.toInstant().toEpochMilli() else initial?.timeOverrideMs) }
-    var date by rememberSaveable { mutableStateOf(initialMoment.toLocalDate().toString()) }
-    var time by rememberSaveable { mutableStateOf(initialMoment.toLocalTime().format(DateTimeFormatter.ofPattern("HH:mm"))) }
+    // Dormant fields keep their prepared values even when the active clock has moved on.
+    var date by rememberSaveable { mutableStateOf((if (initial?.simulateDate == false) storedMoment else initialMoment).toLocalDate().toString()) }
+    var time by rememberSaveable { mutableStateOf((if (initial?.simulateTime == false) storedMoment else initialMoment).toLocalTime().format(DateTimeFormatter.ofPattern("HH:mm"))) }
     var search by rememberSaveable { mutableStateOf("") }
     var busy by remember { mutableStateOf(false) }
     var notice by remember { mutableIntStateOf(0) }
@@ -85,14 +88,19 @@ private fun SpaceCompassObserverEditor(observer: SpaceCompassObserverState, modi
     var editRevision by rememberSaveable { mutableIntStateOf(0) }
     var validationError by remember { mutableStateOf(false) }
     var needsMetadata by rememberSaveable { mutableStateOf(false) }
-    fun edited() { editRevision++; validationError = false }
+    fun edited() {
+        when (section) {
+            SpaceCompassScenarioEditorSection.POSITION -> positionInitialized = true
+            SpaceCompassScenarioEditorSection.DATE -> dateInitialized = true
+            SpaceCompassScenarioEditorSection.TIME -> timeInitialized = true
+            else -> Unit
+        }
+        editRevision++; validationError = false
+    }
     fun number(value: String) = spaceCompassObserverInputNumber(value)
     // Warm and persist the administrative label while choosing/editing a scenario position.
     val configuredPlace = rememberSpaceCompassEstimatedPlace(number(latitude), number(longitude),
-        enabled = simulatePosition && !LocalSpaceCompassScreensaverActive.current)
-    val currentPlace = rememberSpaceCompassEstimatedPlace(device?.latitude, device?.longitude,
-        enabled = section == SpaceCompassScenarioEditorSection.POSITION && !simulatePosition &&
-            !LocalSpaceCompassScreensaverActive.current)
+        enabled = (simulatePosition || section == SpaceCompassScenarioEditorSection.POSITION) && !LocalSpaceCompassScreensaverActive.current)
     fun effectiveZone() = when {
         simulateZone -> zone.trim()
         simulatePosition -> automaticZone.orEmpty()
@@ -130,7 +138,7 @@ private fun SpaceCompassObserverEditor(observer: SpaceCompassObserverState, modi
             return
         }
         val editing = currentDraft()
-        val resolved = editing.resolve(observer.savedPlan, System.currentTimeMillis(), ZoneId.systemDefault().id)
+        val resolved = editing.resolveForEditor(section, observer.savedPlan, System.currentTimeMillis(), ZoneId.systemDefault().id)
         if (resolved.isFailure) {
             validationError = true
             if (leaving) {
@@ -148,7 +156,7 @@ private fun SpaceCompassObserverEditor(observer: SpaceCompassObserverState, modi
                     advanceTime = old.advanceTime, clockOffsetMs = old.clockOffsetMs)
             } ?: value }
             clockOffset = nextPlan?.clockOffsetMs ?: clockOffset
-            observer.apply(nextPlan)
+            observer.storeEditorConfiguration(nextPlan)
             savedDraft.value = editing
             editRevision = 0
             validationError = false
@@ -197,7 +205,6 @@ private fun SpaceCompassObserverEditor(observer: SpaceCompassObserverState, modi
     }
     fun detectMetadata(field: SpaceCompassObserverMetadataField, currentPosition: Boolean) {
         val point = if (currentPosition) observer.devicePlace ?: return else {
-            if (!simulatePosition) return
             SpaceCompassDevicePlace(number(latitude) ?: return, number(longitude) ?: return, null)
         }
         if (!point.latitude.isFinite() || !point.longitude.isFinite() ||
@@ -209,9 +216,9 @@ private fun SpaceCompassObserverEditor(observer: SpaceCompassObserverState, modi
             try {
                 val result = lookupSpaceCompassObserverMetadata(point.latitude, point.longitude)
                 currentCoroutineContext().ensureActive()
-                if (field == SpaceCompassObserverMetadataField.ALTITUDE && !simulateAltitude ||
-                    field == SpaceCompassObserverMetadataField.ZONE && !simulateZone) return@launch
-                val changed = currentDraft().withDetectedMetadata(field, result, numeric, ZoneId.systemDefault().id)
+                val changed = if (field == SpaceCompassObserverMetadataField.ZONE && !simulateZone)
+                    currentDraft().copy(zone=result.zoneId)
+                else currentDraft().withDetectedMetadata(field, result, numeric, ZoneId.systemDefault().id)
                 when (field) {
                     SpaceCompassObserverMetadataField.ALTITUDE -> {
                         altitude = changed.altitude; altitudeEdited = true
@@ -228,7 +235,7 @@ private fun SpaceCompassObserverEditor(observer: SpaceCompassObserverState, modi
             } finally { if (request == lookupRevision) busy = false }
         }
     }
-    val selectedCoordinatesValid = simulatePosition && number(latitude)?.let { it in -90.0..90.0 } == true &&
+    val selectedCoordinatesValid = number(latitude)?.let { it in -90.0..90.0 } == true &&
         number(longitude)?.let { it in -180.0..180.0 } == true
     val deviceCoordinatesValid = device?.let { it.latitude.isFinite() && it.longitude.isFinite() &&
         it.latitude in -90.0..90.0 && it.longitude in -180.0..180.0 } == true
@@ -247,7 +254,7 @@ private fun SpaceCompassObserverEditor(observer: SpaceCompassObserverState, modi
         .getOrNull()?.observationTimeMs(zonePreviewNow) ?: zonePreviewNow
     // A completed coordinate edit invalidates terrain/zone until the matching lookup succeeds.
     LaunchedEffect(latitude, longitude, simulatePosition, needsMetadata) {
-        if (simulatePosition && needsMetadata) {
+        if (needsMetadata) {
             delay(SPACE_COMPASS_OBSERVER_METADATA_DELAY_MS)
             val a = number(latitude); val b = number(longitude)
             if (a != null && b != null && a.isFinite() && b.isFinite() &&
@@ -273,9 +280,6 @@ private fun SpaceCompassObserverEditor(observer: SpaceCompassObserverState, modi
             entry.copy(customized = checked, automatic = !checked)
         } ?: entry
     }
-    val currentValues = spaceCompassScenarioCurrentValues(observer.plan, device, observer.timeSettings,
-        zonePreviewNow, ZoneId.systemDefault())
-    val currentMoment = Instant.ofEpochMilli(currentValues.instant).atZone(currentValues.zone)
     fun navigateBack() {
         saveEditedDraft()
         if (section != null) {
@@ -363,20 +367,6 @@ private fun SpaceCompassObserverEditor(observer: SpaceCompassObserverState, modi
     Column(modifier.fillMaxSize().testTag("observer-page")) {
         SpaceCompassPageToolbar(stringResource(section?.titleResource ?: R.string.observer_management_title),
             ::navigateBack) {
-            val activation = when (section) {
-                SpaceCompassScenarioEditorSection.POSITION -> Triple(simulatePosition, R.string.observer_enable_position, "observer-enabled-position")
-                SpaceCompassScenarioEditorSection.ALTITUDE -> Triple(simulateAltitude, R.string.observer_enable_altitude, "observer-enabled-altitude")
-                SpaceCompassScenarioEditorSection.ZONE -> Triple(simulateZone, R.string.observer_enable_zone, "observer-enabled-zone")
-                SpaceCompassScenarioEditorSection.DATE -> Triple(simulateDate, R.string.observer_enable_date, "observer-enabled-date")
-                SpaceCompassScenarioEditorSection.TIME -> Triple(simulateTime, R.string.observer_enable_time, "observer-enabled-time")
-                SpaceCompassScenarioEditorSection.SPEED -> Triple(observer.timeSettings.enabled, R.string.scenario_speed, "scenario-speed-enabled")
-                else -> null
-            }
-            activation?.let { (checked, label, tag) ->
-                SpaceCompassScenarioActivation(checked, stringResource(label), tag) { value ->
-                    section?.let { setCustomization(it, value) }
-                }
-            }
             if (section == null) SpaceCompassScenarioTransferActions(capture = { includeObjects ->
                 saveEditedDraft()
                 if (editRevision != 0 || busy || needsMetadata) {
@@ -408,10 +398,10 @@ private fun SpaceCompassObserverEditor(observer: SpaceCompassObserverState, modi
         } else key(section) {
         SpaceCompassIslandGrid(Modifier.weight(1f), scroll = rememberLazyStaggeredGridState()) {
             if (section == SpaceCompassScenarioEditorSection.POSITION) item(key = "position", span = StaggeredGridItemSpan.FullLine) {
-                SpaceCompassScenarioParameterIsland(checked = simulatePosition) {
+                SpaceCompassScenarioParameterIsland() {
                     SpaceCompassSettingsDescription(stringResource(R.string.scenario_position_description))
                     SpaceCompassSettingsTextField(search, { search = it.take(200) }, Modifier.fillMaxWidth().testTag("observer-search"),
-                        label = stringResource(R.string.observer_search), enabled = simulatePosition && !busy)
+                        label = stringResource(R.string.observer_search), enabled = !busy)
                     FlowRow(Modifier.fillMaxWidth(), horizontalArrangement = Arrangement.spacedBy(SpaceCompassSettingsControlGap)) {
                         TextButton(onClick = {
                             lookup?.cancel(); val request = ++lookupRevision; metadataField = null
@@ -428,36 +418,36 @@ private fun SpaceCompassObserverEditor(observer: SpaceCompassObserverState, modi
                                 } catch (_: Exception) { notice = R.string.observer_lookup_failed
                                 } finally { if (request == lookupRevision) busy = false }
                             }
-                        }, enabled = simulatePosition && !busy && search.isNotBlank()) {
+                        }, enabled = !busy && search.isNotBlank()) {
                             Text(stringResource(R.string.observer_search_action))
                         }
-                        TextButton(onClick = { showMap = true }, enabled = simulatePosition && !busy,
+                        TextButton(onClick = { showMap = true }, enabled = !busy,
                             modifier = Modifier.testTag("observer-open-map")) {
                             Text(stringResource(R.string.observer_map))
                         }
                     }
-                    SpaceCompassSettingsTextField(if (simulatePosition) latitude else device?.latitude?.toString().orEmpty(), { if (latitude != it) { invalidateMetadata(); latitude = it; edited() } }, Modifier.fillMaxWidth().testTag("observer-latitude"),
-                        label = stringResource(R.string.observer_latitude) + " (°)", enabled = simulatePosition && !busy)
-                    SpaceCompassSettingsTextField(if (simulatePosition) longitude else device?.longitude?.toString().orEmpty(), { if (longitude != it) { invalidateMetadata(); longitude = it; edited() } }, Modifier.fillMaxWidth().testTag("observer-longitude"),
-                        label = stringResource(R.string.observer_longitude) + " (°)", enabled = simulatePosition && !busy)
+                    SpaceCompassSettingsTextField(latitude, { if (latitude != it) { invalidateMetadata(); latitude = it; edited() } }, Modifier.fillMaxWidth().testTag("observer-latitude"),
+                        label = stringResource(R.string.observer_latitude) + " (°)", enabled = !busy)
+                    SpaceCompassSettingsTextField(longitude, { if (longitude != it) { invalidateMetadata(); longitude = it; edited() } }, Modifier.fillMaxWidth().testTag("observer-longitude"),
+                        label = stringResource(R.string.observer_longitude) + " (°)", enabled = !busy)
                     if (busy && metadataField == null) LinearProgressIndicator(Modifier.fillMaxWidth())
                     if (metadataField == null && notice != 0 && notice != R.string.observer_terrain_note)
                         Text(stringResource(notice), style = MaterialTheme.typography.bodySmall)
-                    val shownPlace = if (simulatePosition) configuredPlace else currentPlace
+                    val shownPlace = configuredPlace
                     SpaceCompassSettingsDescription(shownPlace.text ?: stringResource(if (shownPlace.loading)
                         R.string.environment_place_loading else R.string.environment_place_unavailable))
                     SpaceCompassSettingsDescription(stringResource(R.string.observer_privacy))
                 }
             }
             if (section == SpaceCompassScenarioEditorSection.ALTITUDE) item(key = "altitude", span = StaggeredGridItemSpan.FullLine) {
-                SpaceCompassScenarioParameterIsland(checked = simulateAltitude) {
+                SpaceCompassScenarioParameterIsland() {
                     SpaceCompassSettingsDescription(stringResource(R.string.scenario_altitude_description))
-                    SpaceCompassSettingsTextField(if (simulateAltitude) altitude else currentValues.altitudeMeters?.let(::displayHeight).orEmpty(), { if (altitude != it) { altitude = it; altitudeEdited = true; edited() } },
+                    SpaceCompassSettingsTextField(altitude, { if (altitude != it) { altitude = it; altitudeEdited = true; edited() } },
                         Modifier.fillMaxWidth().testTag("observer-altitude"),
                         label = stringResource(R.string.observer_altitude) + if (feet) " (ft)" else " (m)",
-                        enabled = simulateAltitude && !busy)
-                    SpaceCompassObserverMetadataActions("altitude", simulateAltitude && selectedCoordinatesValid && !busy,
-                        simulateAltitude && deviceCoordinatesValid && !busy, busy && metadataField == SpaceCompassObserverMetadataField.ALTITUDE,
+                        enabled = !busy)
+                    SpaceCompassObserverMetadataActions("altitude", selectedCoordinatesValid && !busy,
+                        deviceCoordinatesValid && !busy, busy && metadataField == SpaceCompassObserverMetadataField.ALTITUDE,
                         if (metadataField == SpaceCompassObserverMetadataField.ALTITUDE) notice else 0,
                         onSelected = { detectMetadata(SpaceCompassObserverMetadataField.ALTITUDE, false) },
                         onCurrent = { detectMetadata(SpaceCompassObserverMetadataField.ALTITUDE, true) })
@@ -465,35 +455,35 @@ private fun SpaceCompassObserverEditor(observer: SpaceCompassObserverState, modi
                 }
             }
             if (section == SpaceCompassScenarioEditorSection.ZONE) item(key = "zone", span = StaggeredGridItemSpan.FullLine) {
-                SpaceCompassScenarioParameterIsland(checked = simulateZone) {
+                SpaceCompassScenarioParameterIsland() {
                     SpaceCompassSettingsDescription(stringResource(R.string.scenario_zone_description))
-                    SpaceCompassObserverZonePicker(if (simulateZone) zone else currentValues.zone.id, zonePreviewMoment, enabled = simulateZone && !busy) { selectedZone ->
+                    SpaceCompassObserverZonePicker(zone, zonePreviewMoment, enabled = !busy) { selectedZone ->
                         if (zone != selectedZone) {
                             val instant = pendingMoment ?: preservedMoment ?:
                                 spaceCompassObserverMoment(date.trim(), time.trim(), effectiveZone())
                             zone = selectedZone; zoneEdited = true; preserveMoment(instant); edited()
                         }
                     }
-                    SpaceCompassObserverMetadataActions("zone", simulateZone && selectedCoordinatesValid && !busy,
-                        simulateZone && deviceCoordinatesValid && !busy, busy && metadataField == SpaceCompassObserverMetadataField.ZONE,
+                    SpaceCompassObserverMetadataActions("zone", selectedCoordinatesValid && !busy,
+                        deviceCoordinatesValid && !busy, busy && metadataField == SpaceCompassObserverMetadataField.ZONE,
                         if (metadataField == SpaceCompassObserverMetadataField.ZONE) notice else 0,
                         onSelected = { detectMetadata(SpaceCompassObserverMetadataField.ZONE, false) },
                         onCurrent = { detectMetadata(SpaceCompassObserverMetadataField.ZONE, true) })
                 }
             }
             if (section == SpaceCompassScenarioEditorSection.DATE) item(key = "date", span = StaggeredGridItemSpan.FullLine) {
-                SpaceCompassScenarioParameterIsland(checked = simulateDate) {
+                SpaceCompassScenarioParameterIsland() {
                     SpaceCompassSettingsDescription(stringResource(R.string.scenario_date_description))
-                    SpaceCompassSettingsTextField(if (simulateDate) date else currentMoment.toLocalDate().toString(), { if (date != it) { pendingMoment = null; preservedMoment = null; clockOffset = null; date = it; edited() } }, Modifier.fillMaxWidth().testTag("observer-date"),
-                        label = stringResource(R.string.observer_date), enabled = simulateDate && !busy, placeholder = "yyyy-MM-dd",
+                    SpaceCompassSettingsTextField(date, { if (date != it) { pendingMoment = null; preservedMoment = null; clockOffset = null; date = it; edited() } }, Modifier.fillMaxWidth().testTag("observer-date"),
+                        label = stringResource(R.string.observer_date), enabled = !busy, placeholder = "yyyy-MM-dd",
                         trailingIcon = { val label = stringResource(R.string.observer_date)
-                            IconButton(onClick = { showDate = true }, enabled = simulateDate && !busy, modifier = Modifier.semantics { contentDescription = label }) {
+                            IconButton(onClick = { showDate = true }, enabled = !busy, modifier = Modifier.semantics { contentDescription = label }) {
                                 SpaceCompassSettingsGroupIcon("date_format", MaterialTheme.colorScheme.primary)
                             } })
                     TextButton(onClick = {
                         currentDraft().withCurrentDate(System.currentTimeMillis(), ZoneId.systemDefault().id)
                             .onSuccess(::applyClockEdit).onFailure { validationError = true }
-                    }, enabled = simulateDate && !busy, modifier = Modifier.testTag("observer-current-date")) {
+                    }, enabled = !busy, modifier = Modifier.testTag("observer-current-date")) {
                         Text(stringResource(R.string.observer_current_date))
                     }
                     SpaceCompassSettingsDescription(stringResource(R.string.observer_limits))
@@ -501,28 +491,28 @@ private fun SpaceCompassObserverEditor(observer: SpaceCompassObserverState, modi
                 }
             }
             if (section == SpaceCompassScenarioEditorSection.TIME) item(key = "time", span = StaggeredGridItemSpan.FullLine) {
-                SpaceCompassScenarioParameterIsland(checked = simulateTime) {
+                SpaceCompassScenarioParameterIsland() {
                     SpaceCompassSettingsDescription(stringResource(R.string.scenario_time_description))
                     Text(stringResource(R.string.observer_zone) + ": " + effectiveZone().ifBlank { "—" },
                         style = MaterialTheme.typography.bodySmall)
-                    SpaceCompassSettingsTextField(if (simulateTime) time else currentMoment.toLocalTime().format(DateTimeFormatter.ofPattern("HH:mm")), { if (time != it) { pendingMoment = null; preservedMoment = null; clockOffset = null; time = it; edited() } }, Modifier.fillMaxWidth().testTag("observer-time"),
-                        label = stringResource(R.string.observer_time), enabled = simulateTime && !busy, placeholder = "HH:mm",
+                    SpaceCompassSettingsTextField(time, { if (time != it) { pendingMoment = null; preservedMoment = null; clockOffset = null; time = it; edited() } }, Modifier.fillMaxWidth().testTag("observer-time"),
+                        label = stringResource(R.string.observer_time), enabled = !busy, placeholder = "HH:mm",
                         trailingIcon = { val label = stringResource(R.string.observer_time)
-                            IconButton(onClick = { showTime = true }, enabled = simulateTime && !busy, modifier = Modifier.semantics { contentDescription = label }) {
+                            IconButton(onClick = { showTime = true }, enabled = !busy, modifier = Modifier.semantics { contentDescription = label }) {
                                 SpaceCompassSettingsGroupIcon("time_format", MaterialTheme.colorScheme.primary)
                             } })
                     TextButton(onClick = {
                         currentDraft().withCurrentTime(System.currentTimeMillis(), ZoneId.systemDefault().id)
                             .onSuccess(::applyClockEdit).onFailure { validationError = true }
-                    }, enabled = simulateTime && !busy, modifier = Modifier.testTag("observer-current-time")) {
+                    }, enabled = !busy, modifier = Modifier.testTag("observer-current-time")) {
                         Text(stringResource(R.string.observer_current_time))
                     }
                     SpaceCompassScenarioMidnightNote()
                 }
             }
             if (section == SpaceCompassScenarioEditorSection.SPEED) item(key = "scenario-speed", span = StaggeredGridItemSpan.FullLine) {
-                SpaceCompassScenarioParameterIsland(observer.timeSettings.enabled) {
-                    SpaceCompassScenarioSpeedControls(observer, enabled = observer.timeSettings.enabled, inactiveRate = currentValues.rate)
+                SpaceCompassScenarioParameterIsland() {
+                    SpaceCompassScenarioSpeedControls(observer, enabled = true, inactiveRate = observer.timeSettings.rate)
                 }
             }
             if (validationError) item(key = "observer-validation", span = StaggeredGridItemSpan.FullLine) {

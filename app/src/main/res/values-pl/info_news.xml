@@ -1,9 +1,9 @@
 <resources>
     <string name="info_news_title">Ostatnie nowości · %1$s</string>
-    <string name="info_news_star_sky" formatted="false">Zarządzanie lokalizacją pokazuje bieżące wartości, wyróżnia własne ustawienia pogrubieniem i ma bardziej zwarte przyciski.</string>
-    <string name="info_news_texture_downloads" formatted="false">Dodawaj obiekty do ulubionych w Obserwatorium, a sercem w katalogu włączaj widok samych ulubionych.</string>
-    <string name="info_news_weather" formatted="false">Pola wyboru ulubionych są różowe. Liczniki filtrów uwzględniają ulubione, wyszukiwanie i pozostałe aktywne filtry.</string>
-    <string name="info_news_viewer_zoom" formatted="false">Nowo zaznaczony obiekt staje się aktywny. Lista zachowuje położenie do powrotu do widoku głównego.</string>
-    <string name="info_news_settings" formatted="false">Pliki lokalizacji mogą zawierać wybrane obiekty. Eksport automatyczny udostępnia pozycję, wysokość i strefę, pozostawiając bieżącą datę i czas.</string>
-    <string name="info_news_catalog" formatted="false">Dane obiektów odświeżają się automatycznie w razie potrzeby. Otwarty panel filtrów pozostaje widoczny podczas przewijania.</string>
+    <string name="info_news_star_sky" formatted="false">Katalog obejmuje teraz 9999 obiektów Układu Słonecznego i głębokiego nieba.</string>
+    <string name="info_news_texture_downloads" formatted="false">Rozszerzone śledzenie korzysta ze zweryfikowanych danych JPL i satelitarnych, z wyraźnymi ograniczeniami dla danych historycznych lub niedostępnych.</string>
+    <string name="info_news_weather" formatted="false">Pakiet graficzny 1.8 dodaje pięć fotografii i osobne miniatury, pobierane pojedynczo i zapisywane offline.</string>
+    <string name="info_news_viewer_zoom" formatted="false">Obliczenia, wyszukiwanie i odświeżanie danych zoptymalizowano dla większego katalogu.</string>
+    <string name="info_news_settings" formatted="false">Podstrony lokalizacji pozostają edytowalne. Własne wartości można włączać i wyłączać tylko w zarządzaniu lokalizacją.</string>
+    <string name="info_news_catalog" formatted="false">Bardziej zwarte karty i stale zaznaczone, nieaktywne pole wznawiania ułatwiają obsługę.</string>
 </resources>

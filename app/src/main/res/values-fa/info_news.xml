@@ -1,9 +1,9 @@
 <resources>
     <string name="info_news_title">تازه‌ترین تغییرات · %1$s</string>
-    <string name="info_news_star_sky" formatted="false">مدیریت مکان مقادیر فعلی را با تنظیمات سفارشی پررنگ و کنترل‌های جمع‌وجورتر نشان می‌دهد.</string>
-    <string name="info_news_texture_downloads" formatted="false">اجرام را در رصدخانه به علاقه‌مندی‌ها اضافه کنید و با قلب فهرست، فقط علاقه‌مندی‌ها را ببینید.</string>
-    <string name="info_news_weather" formatted="false">کادرهای انتخاب علاقه‌مندی‌ها صورتی هستند. شمارنده‌های فیلتر با علاقه‌مندی‌ها، جستجو و فیلترهای فعال دیگر هماهنگ می‌شوند.</string>
-    <string name="info_news_viewer_zoom" formatted="false">جرم تازه انتخاب‌شده فعال می‌شود. فهرست تا بازگشت به نمای اصلی در جای خود می‌ماند.</string>
-    <string name="info_news_settings" formatted="false">فایل‌های مکان می‌توانند اجرام انتخاب‌شده را داشته باشند. خروجی خودکار موقعیت، ارتفاع و منطقهٔ زمانی را به اشتراک می‌گذارد و تاریخ و ساعت جاری می‌مانند.</string>
-    <string name="info_news_catalog" formatted="false">داده‌های اجرام در صورت نیاز خودکار تازه می‌شوند. پنل فیلتر باز هنگام پیمایش نمایان می‌ماند.</string>
+    <string name="info_news_star_sky" formatted="false">فهرست به ۹٬۹۹۹ جرم در منظومهٔ شمسی و اعماق آسمان گسترش یافت.</string>
+    <string name="info_news_texture_downloads" formatted="false">ردیابی گسترده از داده‌های تأییدشدهٔ JPL و ماهواره‌ها استفاده می‌کند و محدودیت داده‌های تاریخی یا ناموجود را روشن نشان می‌دهد.</string>
+    <string name="info_news_weather" formatted="false">بستهٔ گرافیکی 1.8 پنج عکس و تصاویر بندانگشتی مستقل اضافه می‌کند که جداگانه بارگیری و آفلاین ذخیره می‌شوند.</string>
+    <string name="info_news_viewer_zoom" formatted="false">محاسبات، جست‌وجو و به‌روزرسانی داده‌ها برای فهرست بزرگ‌تر بهینه شده‌اند.</string>
+    <string name="info_news_settings" formatted="false">زیرصفحه‌های مکان همیشه قابل ویرایش‌اند. مقادیر سفارشی را فقط از مدیریت مکان فعال یا غیرفعال کنید.</string>
+    <string name="info_news_catalog" formatted="false">کارت‌های فشرده‌تر و کادر ادامهٔ همیشه علامت‌خورده و غیرفعال، کنترل‌ها را روشن‌تر می‌کنند.</string>
 </resources>

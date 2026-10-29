@@ -3,7 +3,7 @@ package me.mondiversi.spacecompass
 /** Generated from catalogue/expanded-catalog.json; regenerate with scripts/GenerateExpandedCatalog.py. */
 internal fun spaceCompassLargeCatalogData19(): List<SpaceCompassLargeCatalogEntry> = listOf(
     SpaceCompassLargeCatalogEntry(
-        body = SpaceCompassCelestialBody.BLACK_HOLE_NGC_4486B_NUCLEUS,
+        body = SpaceCompassCelestialBody.valueOf("BLACK_HOLE_NGC_4486B_NUCLEUS"),
         entry = SpaceCompassAdditionalCatalogEntry(SpaceCompassCatalogType.BLACK_HOLE, "NGC  4486B", SpaceCompassDeepSkyReference(12.508884722222223, 12.490236111111107, Double.NaN, 0.0, 0.0, hasMeasuredDistance = false), null),
         facts = SpaceCompassCelestialFacts(),
         aliases = listOf("NGC  4486B", "NGC 4486B · nucleus", "NGC 4486B · nucleo", "NGC 4486B · Kern", "NGC 4486B · noyau", "NGC 4486B · núcleo", "NGC 4486B · kern", "NGC 4486B · jądro", "NGC 4486B · ядро", "NGC 4486B · çekirdek", "NGC 4486B · πυρήνας", "NGC 4486B · نواة", "NGC 4486B · هسته", "NGC 4486B · גרעין", "NGC 4486B · नाभिक", "NGC 4486B · inti", "NGC 4486B · kiini", "NGC 4486B · 核", "NGC 4486B · 핵", "NGC 4486B · 星系核"),
@@ -12,7 +12,7 @@ internal fun spaceCompassLargeCatalogData19(): List<SpaceCompassLargeCatalogEntr
         galaxy = "NGC 4486B",
         note = R.string.catalogue_compact_note),
     SpaceCompassLargeCatalogEntry(
-        body = SpaceCompassCelestialBody.BLACK_HOLE_NGC_4889_NUCLEUS,
+        body = SpaceCompassCelestialBody.valueOf("BLACK_HOLE_NGC_4889_NUCLEUS"),
         entry = SpaceCompassAdditionalCatalogEntry(SpaceCompassCatalogType.BLACK_HOLE, "NGC  4889", SpaceCompassDeepSkyReference(13.002249166666667, 27.977024999999998, Double.NaN, 0.0, 0.0, hasMeasuredDistance = false), null),
         facts = SpaceCompassCelestialFacts(),
         aliases = listOf("NGC  4889", "NGC 4889 · nucleus", "NGC 4889 · nucleo", "NGC 4889 · Kern", "NGC 4889 · noyau", "NGC 4889 · núcleo", "NGC 4889 · kern", "NGC 4889 · jądro", "NGC 4889 · ядро", "NGC 4889 · çekirdek", "NGC 4889 · πυρήνας", "NGC 4889 · نواة", "NGC 4889 · هسته", "NGC 4889 · גרעין", "NGC 4889 · नाभिक", "NGC 4889 · inti", "NGC 4889 · kiini", "NGC 4889 · 核", "NGC 4889 · 핵", "NGC 4889 · 星系核"),
@@ -21,7 +21,7 @@ internal fun spaceCompassLargeCatalogData19(): List<SpaceCompassLargeCatalogEntr
         galaxy = "NGC 4889",
         note = R.string.catalogue_compact_note),
     SpaceCompassLargeCatalogEntry(
-        body = SpaceCompassCelestialBody.BLACK_HOLE_SWIFT_J1357_2_0933,
+        body = SpaceCompassCelestialBody.valueOf("BLACK_HOLE_SWIFT_J1357_2_0933"),
         entry = SpaceCompassAdditionalCatalogEntry(SpaceCompassCatalogType.BLACK_HOLE, "CRTS J135716.8-093238", SpaceCompassDeepSkyReference(13.954676605277998, -9.54411013542, Double.NaN, 0.0, 0.0, hasMeasuredDistance = false), null),
         facts = SpaceCompassCelestialFacts(),
         aliases = listOf("SWIFT J1357.2-0933", "CRTS J135716.8-093238"),
@@ -31,7 +31,7 @@ internal fun spaceCompassLargeCatalogData19(): List<SpaceCompassLargeCatalogEntr
         note = R.string.catalogue_compact_note,
         classification = R.string.catalogue_compact_candidate),
     SpaceCompassLargeCatalogEntry(
-        body = SpaceCompassCelestialBody.BLACK_HOLE_SWIFT_J1753_5_0127,
+        body = SpaceCompassCelestialBody.valueOf("BLACK_HOLE_SWIFT_J1753_5_0127"),
         entry = SpaceCompassAdditionalCatalogEntry(SpaceCompassCatalogType.BLACK_HOLE, "2MAXI J1753-013", SpaceCompassDeepSkyReference(17.891191632400666, -1.45173793202, 23549.196945848373, 0.99, -3.535), null),
         facts = SpaceCompassCelestialFacts(),
         aliases = listOf("SWIFT J1753.5-0127", "2MAXI J1753-013"),
@@ -41,7 +41,7 @@ internal fun spaceCompassLargeCatalogData19(): List<SpaceCompassLargeCatalogEntr
         note = R.string.catalogue_compact_note,
         classification = R.string.catalogue_compact_candidate),
     SpaceCompassLargeCatalogEntry(
-        body = SpaceCompassCelestialBody.BLACK_HOLE_LMC_X_1,
+        body = SpaceCompassCelestialBody.valueOf("BLACK_HOLE_LMC_X_1"),
         entry = SpaceCompassAdditionalCatalogEntry(SpaceCompassCatalogType.BLACK_HOLE, "X LMC X-1", SpaceCompassDeepSkyReference(5.660785675124, -69.74320320934, Double.NaN, 1.889, 0.622, hasMeasuredDistance = false), null),
         facts = SpaceCompassCelestialFacts(),
         aliases = listOf("X LMC X-1"),
@@ -51,7 +51,7 @@ internal fun spaceCompassLargeCatalogData19(): List<SpaceCompassLargeCatalogEntr
         note = R.string.catalogue_compact_note,
         classification = R.string.catalogue_compact_candidate),
     SpaceCompassLargeCatalogEntry(
-        body = SpaceCompassCelestialBody.BLACK_HOLE_LMC_X_3,
+        body = SpaceCompassCelestialBody.valueOf("BLACK_HOLE_LMC_X_3"),
         entry = SpaceCompassAdditionalCatalogEntry(SpaceCompassCatalogType.BLACK_HOLE, "X LMC X-3", SpaceCompassDeepSkyReference(5.6490645445973335, -64.08425498264, Double.NaN, 1.678, 0.449, hasMeasuredDistance = false), null),
         facts = SpaceCompassCelestialFacts(),
         aliases = listOf("X LMC X-3"),
@@ -61,7 +61,7 @@ internal fun spaceCompassLargeCatalogData19(): List<SpaceCompassLargeCatalogEntr
         note = R.string.catalogue_compact_note,
         classification = R.string.catalogue_compact_candidate),
     SpaceCompassLargeCatalogEntry(
-        body = SpaceCompassCelestialBody.BLACK_HOLE_XTE_J1118_480,
+        body = SpaceCompassCelestialBody.valueOf("BLACK_HOLE_XTE_J1118_480"),
         entry = SpaceCompassAdditionalCatalogEntry(SpaceCompassCatalogType.BLACK_HOLE, "V* KV UMa", SpaceCompassDeepSkyReference(11.302998067235999, 48.0367540917, 20321.269638629285, -18.105, -6.687), null),
         facts = SpaceCompassCelestialFacts(),
         aliases = listOf("XTE J1118+480", "V* KV UMa"),
@@ -71,7 +71,7 @@ internal fun spaceCompassLargeCatalogData19(): List<SpaceCompassLargeCatalogEntr
         note = R.string.catalogue_compact_note,
         classification = R.string.catalogue_compact_candidate),
     SpaceCompassLargeCatalogEntry(
-        body = SpaceCompassCelestialBody.BLACK_HOLE_XTE_J1550_564,
+        body = SpaceCompassCelestialBody.valueOf("BLACK_HOLE_XTE_J1550_564"),
         entry = SpaceCompassAdditionalCatalogEntry(SpaceCompassCatalogType.BLACK_HOLE, "V* V381 Nor", SpaceCompassDeepSkyReference(15.849628831130667, -56.4764606625, 1389.6735308904986, -6.49, -3.49), null),
         facts = SpaceCompassCelestialFacts(),
         aliases = listOf("XTE J1550-564", "V* V381 Nor"),
@@ -81,7 +81,7 @@ internal fun spaceCompassLargeCatalogData19(): List<SpaceCompassLargeCatalogEntr
         note = R.string.catalogue_compact_note,
         classification = R.string.catalogue_compact_candidate),
     SpaceCompassLargeCatalogEntry(
-        body = SpaceCompassCelestialBody.BLACK_HOLE_GX_339_04,
+        body = SpaceCompassCelestialBody.valueOf("BLACK_HOLE_GX_339_04"),
         entry = SpaceCompassAdditionalCatalogEntry(SpaceCompassCatalogType.BLACK_HOLE, "V* V821 Ara", SpaceCompassDeepSkyReference(17.04705212198, -48.78974665404001, 16242.847495019922, -4.193, -4.862), null),
         facts = SpaceCompassCelestialFacts(),
         aliases = listOf("GX 339-04", "V* V821 Ara"),
@@ -91,7 +91,7 @@ internal fun spaceCompassLargeCatalogData19(): List<SpaceCompassLargeCatalogEntr
         note = R.string.catalogue_compact_note,
         classification = R.string.catalogue_compact_candidate),
     SpaceCompassLargeCatalogEntry(
-        body = SpaceCompassCelestialBody.BLACK_HOLE_V_GU_MUS,
+        body = SpaceCompassCelestialBody.valueOf("BLACK_HOLE_V_GU_MUS"),
         entry = SpaceCompassAdditionalCatalogEntry(SpaceCompassCatalogType.BLACK_HOLE, "V* GU Mus", SpaceCompassDeepSkyReference(11.440721154433334, -68.67579937582, 18180.400094760313, -2.933, -1.392), null),
         facts = SpaceCompassCelestialFacts(),
         aliases = listOf("V* GU Mus"),
@@ -101,7 +101,7 @@ internal fun spaceCompassLargeCatalogData19(): List<SpaceCompassLargeCatalogEntr
         note = R.string.catalogue_compact_note,
         classification = R.string.catalogue_compact_candidate),
     SpaceCompassLargeCatalogEntry(
-        body = SpaceCompassCelestialBody.NEUTRON_1E_1841_04_5,
+        body = SpaceCompassCelestialBody.valueOf("NEUTRON_1E_1841_04_5"),
         entry = SpaceCompassAdditionalCatalogEntry(SpaceCompassCatalogType.NEUTRON_STAR, "PSR J1841-0456", SpaceCompassDeepSkyReference(18.688692, -4.93651, Double.NaN, 0.0, 0.0, hasMeasuredDistance = false), null),
         facts = SpaceCompassCelestialFacts(),
         aliases = listOf("1E 1841-04.5", "PSR J1841-0456"),
@@ -110,7 +110,7 @@ internal fun spaceCompassLargeCatalogData19(): List<SpaceCompassLargeCatalogEntr
         galaxy = "MILKY_WAY",
         note = R.string.catalogue_direction_note),
     SpaceCompassLargeCatalogEntry(
-        body = SpaceCompassCelestialBody.NEUTRON_1E_2259_58_6,
+        body = SpaceCompassCelestialBody.valueOf("NEUTRON_1E_2259_58_6"),
         entry = SpaceCompassAdditionalCatalogEntry(SpaceCompassCatalogType.NEUTRON_STAR, "2E  4673", SpaceCompassDeepSkyReference(23.018927333333334, 58.87904, Double.NaN, 0.0, 0.0, hasMeasuredDistance = false), null),
         facts = SpaceCompassCelestialFacts(),
         aliases = listOf("1E 2259+58.6", "2E  4673"),
@@ -119,7 +119,7 @@ internal fun spaceCompassLargeCatalogData19(): List<SpaceCompassLargeCatalogEntr
         galaxy = "MILKY_WAY",
         note = R.string.catalogue_direction_note),
     SpaceCompassLargeCatalogEntry(
-        body = SpaceCompassCelestialBody.NEUTRON_4U_0142_61,
+        body = SpaceCompassCelestialBody.valueOf("NEUTRON_4U_0142_61"),
         entry = SpaceCompassAdditionalCatalogEntry(SpaceCompassCatalogType.NEUTRON_STAR, "PSR J0146+6145", SpaceCompassDeepSkyReference(1.7728353333333333, 61.75106, Double.NaN, 0.0, 0.0, hasMeasuredDistance = false), null),
         facts = SpaceCompassCelestialFacts(),
         aliases = listOf("4U 0142+61", "PSR J0146+6145"),
@@ -128,7 +128,7 @@ internal fun spaceCompassLargeCatalogData19(): List<SpaceCompassLargeCatalogEntr
         galaxy = "MILKY_WAY",
         note = R.string.catalogue_direction_note),
     SpaceCompassLargeCatalogEntry(
-        body = SpaceCompassCelestialBody.NEUTRON_GEMINGA,
+        body = SpaceCompassCelestialBody.valueOf("NEUTRON_GEMINGA"),
         entry = SpaceCompassAdditionalCatalogEntry(SpaceCompassCatalogType.NEUTRON_STAR, "PSR J0633+1746", SpaceCompassDeepSkyReference(6.565042500000001, 17.770252777777777, 815.3909442500001, 0.0, 0.0), null),
         facts = SpaceCompassCelestialFacts(),
         aliases = listOf("NAME Geminga", "PSR J0633+1746"),
@@ -137,7 +137,7 @@ internal fun spaceCompassLargeCatalogData19(): List<SpaceCompassLargeCatalogEntr
         galaxy = "MILKY_WAY",
         note = R.string.catalogue_reference_note),
     SpaceCompassLargeCatalogEntry(
-        body = SpaceCompassCelestialBody.NEUTRON_PSR_B0531_21,
+        body = SpaceCompassCelestialBody.valueOf("NEUTRON_PSR_B0531_21"),
         entry = SpaceCompassAdditionalCatalogEntry(SpaceCompassCatalogType.NEUTRON_STAR, "V* CM Tau", SpaceCompassDeepSkyReference(5.575540963739333, 22.01448713834, 6382.707978473581, -11.513, 2.302), null),
         facts = SpaceCompassCelestialFacts(),
         aliases = listOf("PSR B0531+21", "V* CM Tau"),
@@ -146,7 +146,7 @@ internal fun spaceCompassLargeCatalogData19(): List<SpaceCompassLargeCatalogEntr
         galaxy = "MILKY_WAY",
         note = R.string.catalogue_reference_note),
     SpaceCompassLargeCatalogEntry(
-        body = SpaceCompassCelestialBody.NEUTRON_PSR_B0656_14,
+        body = SpaceCompassCelestialBody.valueOf("NEUTRON_PSR_B0656_14"),
         entry = SpaceCompassAdditionalCatalogEntry(SpaceCompassCatalogType.NEUTRON_STAR, "PSR B0656+14", SpaceCompassDeepSkyReference(6.996718888888889, 14.238666666666665, Double.NaN, 0.0, 0.0, hasMeasuredDistance = false), null),
         facts = SpaceCompassCelestialFacts(),
         aliases = listOf("PSR B0656+14"),
@@ -155,7 +155,7 @@ internal fun spaceCompassLargeCatalogData19(): List<SpaceCompassLargeCatalogEntr
         galaxy = "MILKY_WAY",
         note = R.string.catalogue_direction_note),
     SpaceCompassLargeCatalogEntry(
-        body = SpaceCompassCelestialBody.NEUTRON_PSR_B0950_08,
+        body = SpaceCompassCelestialBody.valueOf("NEUTRON_PSR_B0950_08"),
         entry = SpaceCompassAdditionalCatalogEntry(SpaceCompassCatalogType.NEUTRON_STAR, "PSR B0950+08", SpaceCompassDeepSkyReference(9.885920027777777, 7.926916666666666, 412.85617430379745, -2.09, 29.46), null),
         facts = SpaceCompassCelestialFacts(),
         aliases = listOf("PSR B0950+08"),
@@ -164,7 +164,7 @@ internal fun spaceCompassLargeCatalogData19(): List<SpaceCompassLargeCatalogEntr
         galaxy = "MILKY_WAY",
         note = R.string.catalogue_reference_note),
     SpaceCompassLargeCatalogEntry(
-        body = SpaceCompassCelestialBody.NEUTRON_PSR_B1509_58,
+        body = SpaceCompassCelestialBody.valueOf("NEUTRON_PSR_B1509_58"),
         entry = SpaceCompassAdditionalCatalogEntry(SpaceCompassCatalogType.NEUTRON_STAR, "PSR B1509-58", SpaceCompassDeepSkyReference(15.22988, -59.131800000000005, Double.NaN, 0.0, 0.0, hasMeasuredDistance = false), null),
         facts = SpaceCompassCelestialFacts(),
         aliases = listOf("PSR B1509-58"),
@@ -173,7 +173,7 @@ internal fun spaceCompassLargeCatalogData19(): List<SpaceCompassLargeCatalogEntr
         galaxy = "MILKY_WAY",
         note = R.string.catalogue_direction_note),
     SpaceCompassLargeCatalogEntry(
-        body = SpaceCompassCelestialBody.NEUTRON_PSR_B1929_10,
+        body = SpaceCompassCelestialBody.valueOf("NEUTRON_PSR_B1929_10"),
         entry = SpaceCompassAdditionalCatalogEntry(SpaceCompassCatalogType.NEUTRON_STAR, "PSR B1929+10", SpaceCompassDeepSkyReference(19.537238055555555, 10.992605555555553, 151.70064079069766, 94.09, 42.99), null),
         facts = SpaceCompassCelestialFacts(),
         aliases = listOf("PSR B1929+10"),
@@ -182,7 +182,7 @@ internal fun spaceCompassLargeCatalogData19(): List<SpaceCompassLargeCatalogEntr
         galaxy = "MILKY_WAY",
         note = R.string.catalogue_reference_note),
     SpaceCompassLargeCatalogEntry(
-        body = SpaceCompassCelestialBody.NEUTRON_PSR_B1937_21,
+        body = SpaceCompassCelestialBody.valueOf("NEUTRON_PSR_B1937_21"),
         entry = SpaceCompassAdditionalCatalogEntry(SpaceCompassCatalogType.NEUTRON_STAR, "PSR B1937+21.4", SpaceCompassDeepSkyReference(19.660711137777778, 21.5830932, Double.NaN, -0.05, -0.47, hasMeasuredDistance = false), null),
         facts = SpaceCompassCelestialFacts(),
         aliases = listOf("PSR B1937+21", "PSR B1937+21.4"),
@@ -191,7 +191,7 @@ internal fun spaceCompassLargeCatalogData19(): List<SpaceCompassLargeCatalogEntr
         galaxy = "MILKY_WAY",
         note = R.string.catalogue_direction_note),
     SpaceCompassLargeCatalogEntry(
-        body = SpaceCompassCelestialBody.NEUTRON_PSR_J0030_0451,
+        body = SpaceCompassCelestialBody.valueOf("NEUTRON_PSR_J0030_0451"),
         entry = SpaceCompassAdditionalCatalogEntry(SpaceCompassCatalogType.NEUTRON_STAR, "PSR J0030+0451", SpaceCompassDeepSkyReference(0.5076176333333334, 4.861031777777777, 1120.8122945017183, -6.4, 1.0), null),
         facts = SpaceCompassCelestialFacts(),
         aliases = listOf("PSR J0030+0451"),
@@ -200,7 +200,7 @@ internal fun spaceCompassLargeCatalogData19(): List<SpaceCompassLargeCatalogEntr
         galaxy = "MILKY_WAY",
         note = R.string.catalogue_reference_note),
     SpaceCompassLargeCatalogEntry(
-        body = SpaceCompassCelestialBody.NEUTRON_PSR_J0108_1431,
+        body = SpaceCompassCelestialBody.valueOf("NEUTRON_PSR_J0108_1431"),
         entry = SpaceCompassAdditionalCatalogEntry(SpaceCompassCatalogType.NEUTRON_STAR, "PSR J0108-1431", SpaceCompassDeepSkyReference(1.135636111111111, -14.530138888888889, Double.NaN, 0.0, 0.0, hasMeasuredDistance = false), null),
         facts = SpaceCompassCelestialFacts(),
         aliases = listOf("PSR J0108-1431"),
@@ -209,7 +209,7 @@ internal fun spaceCompassLargeCatalogData19(): List<SpaceCompassLargeCatalogEntr
         galaxy = "MILKY_WAY",
         note = R.string.catalogue_direction_note),
     SpaceCompassLargeCatalogEntry(
-        body = SpaceCompassCelestialBody.NEUTRON_PSR_J0348_0432,
+        body = SpaceCompassCelestialBody.valueOf("NEUTRON_PSR_J0348_0432"),
         entry = SpaceCompassAdditionalCatalogEntry(SpaceCompassCatalogType.NEUTRON_STAR, "PSR J0348+0432", SpaceCompassDeepSkyReference(3.812121199263333, 4.53651720035, 6939.497397872341, 3.438, -0.226), null),
         facts = SpaceCompassCelestialFacts(),
         aliases = listOf("PSR J0348+0432"),
@@ -218,7 +218,7 @@ internal fun spaceCompassLargeCatalogData19(): List<SpaceCompassLargeCatalogEntr
         galaxy = "MILKY_WAY",
         note = R.string.catalogue_reference_note),
     SpaceCompassLargeCatalogEntry(
-        body = SpaceCompassCelestialBody.NEUTRON_PSR_J0737_3039A,
+        body = SpaceCompassCelestialBody.valueOf("NEUTRON_PSR_J0737_3039A"),
         entry = SpaceCompassAdditionalCatalogEntry(SpaceCompassCatalogType.NEUTRON_STAR, "PSR J0737-3039A", SpaceCompassDeepSkyReference(7.630901858333335, -30.661302638888888, Double.NaN, 0.0, 0.0, hasMeasuredDistance = false), null),
         facts = SpaceCompassCelestialFacts(),
         aliases = listOf("PSR J0737-3039A"),
@@ -227,7 +227,7 @@ internal fun spaceCompassLargeCatalogData19(): List<SpaceCompassLargeCatalogEntr
         galaxy = "MILKY_WAY",
         note = R.string.catalogue_direction_note),
     SpaceCompassLargeCatalogEntry(
-        body = SpaceCompassCelestialBody.NEUTRON_PSR_J0740_6620,
+        body = SpaceCompassCelestialBody.valueOf("NEUTRON_PSR_J0740_6620"),
         entry = SpaceCompassAdditionalCatalogEntry(SpaceCompassCatalogType.NEUTRON_STAR, "PSR J0740+6620", SpaceCompassDeepSkyReference(7.679388611111111, 66.34266666666667, Double.NaN, 0.0, 0.0, hasMeasuredDistance = false), null),
         facts = SpaceCompassCelestialFacts(),
         aliases = listOf("PSR J0740+6620"),
@@ -236,7 +236,7 @@ internal fun spaceCompassLargeCatalogData19(): List<SpaceCompassLargeCatalogEntr
         galaxy = "MILKY_WAY",
         note = R.string.catalogue_direction_note),
     SpaceCompassLargeCatalogEntry(
-        body = SpaceCompassCelestialBody.NEUTRON_PSR_J1012_5307,
+        body = SpaceCompassCelestialBody.valueOf("NEUTRON_PSR_J1012_5307"),
         entry = SpaceCompassAdditionalCatalogEntry(SpaceCompassCatalogType.NEUTRON_STAR, "PSR J1012+5307", SpaceCompassDeepSkyReference(10.2092873736, 53.11737459516, 1869.3052367033472, 2.736, -25.921), null),
         facts = SpaceCompassCelestialFacts(),
         aliases = listOf("PSR J1012+5307"),
@@ -245,7 +245,7 @@ internal fun spaceCompassLargeCatalogData19(): List<SpaceCompassLargeCatalogEntr
         galaxy = "MILKY_WAY",
         note = R.string.catalogue_reference_note),
     SpaceCompassLargeCatalogEntry(
-        body = SpaceCompassCelestialBody.NEUTRON_PSR_J1614_2230,
+        body = SpaceCompassCelestialBody.valueOf("NEUTRON_PSR_J1614_2230"),
         entry = SpaceCompassAdditionalCatalogEntry(SpaceCompassCatalogType.NEUTRON_STAR, "PSR J1614-2230", SpaceCompassDeepSkyReference(16.24347492777778, -22.50876166666667, 2508.895213076923, 4.4, -29.0), null),
         facts = SpaceCompassCelestialFacts(),
         aliases = listOf("PSR J1614-2230"),
@@ -254,7 +254,7 @@ internal fun spaceCompassLargeCatalogData19(): List<SpaceCompassLargeCatalogEntr
         galaxy = "MILKY_WAY",
         note = R.string.catalogue_reference_note),
     SpaceCompassLargeCatalogEntry(
-        body = SpaceCompassCelestialBody.NEUTRON_PSR_J1713_0747,
+        body = SpaceCompassCelestialBody.valueOf("NEUTRON_PSR_J1713_0747"),
         entry = SpaceCompassAdditionalCatalogEntry(SpaceCompassCatalogType.NEUTRON_STAR, "PSR J1713+0747", SpaceCompassDeepSkyReference(17.23042688369444, 7.793736177777777, 3706.3224738636363, 4.9215, -3.92), null),
         facts = SpaceCompassCelestialFacts(),
         aliases = listOf("PSR J1713+0747"),
@@ -263,7 +263,7 @@ internal fun spaceCompassLargeCatalogData19(): List<SpaceCompassLargeCatalogEntr
         galaxy = "MILKY_WAY",
         note = R.string.catalogue_reference_note),
     SpaceCompassLargeCatalogEntry(
-        body = SpaceCompassCelestialBody.NEUTRON_PSR_J1744_1134,
+        body = SpaceCompassCelestialBody.valueOf("NEUTRON_PSR_J1744_1134"),
         entry = SpaceCompassAdditionalCatalogEntry(SpaceCompassCatalogType.NEUTRON_STAR, "PSR J1744-1134", SpaceCompassDeepSkyReference(17.74150613455555, -11.581889255555557, 1249.641293869732, 18.806, -9.386), null),
         facts = SpaceCompassCelestialFacts(),
         aliases = listOf("PSR J1744-1134"),
@@ -272,7 +272,7 @@ internal fun spaceCompassLargeCatalogData19(): List<SpaceCompassLargeCatalogEntr
         galaxy = "MILKY_WAY",
         note = R.string.catalogue_reference_note),
     SpaceCompassLargeCatalogEntry(
-        body = SpaceCompassCelestialBody.NEUTRON_PSR_J1909_3744,
+        body = SpaceCompassCelestialBody.valueOf("NEUTRON_PSR_J1909_3744"),
         entry = SpaceCompassAdditionalCatalogEntry(SpaceCompassCatalogType.NEUTRON_STAR, "PSR J1909-3744", SpaceCompassDeepSkyReference(19.1631745, -37.73743722222221, 3545.178018478261, -9.523, -35.78), null),
         facts = SpaceCompassCelestialFacts(),
         aliases = listOf("PSR J1909-3744"),
@@ -281,7 +281,7 @@ internal fun spaceCompassLargeCatalogData19(): List<SpaceCompassLargeCatalogEntr
         galaxy = "MILKY_WAY",
         note = R.string.catalogue_reference_note),
     SpaceCompassLargeCatalogEntry(
-        body = SpaceCompassCelestialBody.NEUTRON_PSR_J2124_3358,
+        body = SpaceCompassCelestialBody.valueOf("NEUTRON_PSR_J2124_3358"),
         entry = SpaceCompassAdditionalCatalogEntry(SpaceCompassCatalogType.NEUTRON_STAR, "PSR J2124-3358", SpaceCompassDeepSkyReference(21.412176369444445, -33.97930331944445, 1583.283386893204, -14.09, -50.32), null),
         facts = SpaceCompassCelestialFacts(),
         aliases = listOf("PSR J2124-3358"),
@@ -290,7 +290,7 @@ internal fun spaceCompassLargeCatalogData19(): List<SpaceCompassLargeCatalogEntr
         galaxy = "MILKY_WAY",
         note = R.string.catalogue_reference_note),
     SpaceCompassLargeCatalogEntry(
-        body = SpaceCompassCelestialBody.NEUTRON_PSR_J2144_3933,
+        body = SpaceCompassCelestialBody.valueOf("NEUTRON_PSR_J2144_3933"),
         entry = SpaceCompassAdditionalCatalogEntry(SpaceCompassCatalogType.NEUTRON_STAR, "PSR J2144-3939", SpaceCompassDeepSkyReference(21.736669444444445, -39.566222222222216, Double.NaN, 0.0, 0.0, hasMeasuredDistance = false), null),
         facts = SpaceCompassCelestialFacts(),
         aliases = listOf("PSR J2144-3933", "PSR J2144-3939"),
@@ -299,7 +299,7 @@ internal fun spaceCompassLargeCatalogData19(): List<SpaceCompassLargeCatalogEntr
         galaxy = "MILKY_WAY",
         note = R.string.catalogue_direction_note),
     SpaceCompassLargeCatalogEntry(
-        body = SpaceCompassCelestialBody.NEUTRON_RX_J0720_4_3125,
+        body = SpaceCompassCelestialBody.valueOf("NEUTRON_RX_J0720_4_3125"),
         entry = SpaceCompassAdditionalCatalogEntry(SpaceCompassCatalogType.NEUTRON_STAR, "RX J0720.4-3125", SpaceCompassDeepSkyReference(7.340266944444445, -31.43061388888889, 905.9899380555555, -92.8, 55.3), null),
         facts = SpaceCompassCelestialFacts(),
         aliases = listOf("RX J0720.4-3125"),
@@ -308,7 +308,7 @@ internal fun spaceCompassLargeCatalogData19(): List<SpaceCompassLargeCatalogEntr
         galaxy = "MILKY_WAY",
         note = R.string.catalogue_reference_note),
     SpaceCompassLargeCatalogEntry(
-        body = SpaceCompassCelestialBody.NEUTRON_RX_J0806_4_4123,
+        body = SpaceCompassCelestialBody.valueOf("NEUTRON_RX_J0806_4_4123"),
         entry = SpaceCompassAdditionalCatalogEntry(SpaceCompassCatalogType.NEUTRON_STAR, "RX J0806.4-4123", SpaceCompassDeepSkyReference(8.106388888888889, -41.37583333333333, Double.NaN, 0.0, 0.0, hasMeasuredDistance = false), null),
         facts = SpaceCompassCelestialFacts(),
         aliases = listOf("RX J0806.4-4123"),
@@ -317,7 +317,7 @@ internal fun spaceCompassLargeCatalogData19(): List<SpaceCompassLargeCatalogEntr
         galaxy = "MILKY_WAY",
         note = R.string.catalogue_direction_note),
     SpaceCompassLargeCatalogEntry(
-        body = SpaceCompassCelestialBody.NEUTRON_RX_J1308_6_2127,
+        body = SpaceCompassCelestialBody.valueOf("NEUTRON_RX_J1308_6_2127"),
         entry = SpaceCompassAdditionalCatalogEntry(SpaceCompassCatalogType.NEUTRON_STAR, "RBS  1223", SpaceCompassDeepSkyReference(13.14686111111111, 21.452222222222222, Double.NaN, 0.0, 0.0, hasMeasuredDistance = false), null),
         facts = SpaceCompassCelestialFacts(),
         aliases = listOf("RX J1308.6+2127", "RBS  1223"),

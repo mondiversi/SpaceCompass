@@ -1,9 +1,9 @@
 <resources>
     <string name="info_news_title">Últimas novedades · %1$s</string>
-    <string name="info_news_star_sky" formatted="false">La gestión de ubicaciones muestra los valores actuales, con ajustes personalizados en negrita y controles más compactos.</string>
-    <string name="info_news_texture_downloads" formatted="false">Guarda objetos como favoritos en el Observatorio y usa el corazón del catálogo para mostrar solo los favoritos.</string>
-    <string name="info_news_weather" formatted="false">Las casillas de favoritos usan un acento rosa. Los recuentos se adaptan a favoritos, búsqueda y otros filtros activos.</string>
-    <string name="info_news_viewer_zoom" formatted="false">Un objeto recién seleccionado pasa a ser el activo. La lista permanece en su sitio hasta volver a la vista principal.</string>
-    <string name="info_news_settings" formatted="false">Los archivos de ubicación pueden incluir los objetos seleccionados. La exportación automática comparte posición, altitud y zona horaria, con fecha y hora actuales.</string>
-    <string name="info_news_catalog" formatted="false">Los datos se actualizan automáticamente cuando hace falta. El panel de filtros abierto permanece visible al desplazarte.</string>
+    <string name="info_news_star_sky" formatted="false">El catálogo alcanza 9.999 objetos del Sistema Solar y del cielo profundo.</string>
+    <string name="info_news_texture_downloads" formatted="false">El seguimiento ampliado utiliza referencias JPL y de satélites verificadas, con límites claros para datos históricos o no disponibles.</string>
+    <string name="info_news_weather" formatted="false">El paquete gráfico 1.8 añade cinco fotografías y miniaturas independientes, descargadas individualmente y guardadas sin conexión.</string>
+    <string name="info_news_viewer_zoom" formatted="false">Los cálculos, la búsqueda y la actualización de datos se optimizan para el catálogo ampliado.</string>
+    <string name="info_news_settings" formatted="false">Las subpantallas de ubicación siempre se pueden editar. Activa o desactiva cada valor personalizado solo desde la gestión de ubicaciones.</string>
+    <string name="info_news_catalog" formatted="false">Tarjetas más compactas y una casilla de reanudación siempre marcada y deshabilitada aclaran los controles.</string>
 </resources>

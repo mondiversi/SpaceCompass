@@ -316,4 +316,58 @@ class SpaceCompassObserverAutosaveTest {
         assertEquals(1, reopened.timeSettings.rate)
         assertEquals(original, reopened.savedPlan)
     }
+    @Test fun preparedAltitudePersistsWithoutEnablingAnyLocationOverride() {
+        val store=Store();val state=SpaceCompassObserverState(store.preferences,elapsedClock={0L})
+        val off=draft.copy(simulatePosition=false,simulateDate=false,simulateTime=false,simulateAltitude=false,simulateZone=false)
+        val prepared=off.copy(altitude="432.5").resolveForEditor(SpaceCompassScenarioEditorSection.ALTITUDE,null,now,"Europe/Rome").getOrThrow()!!
+        assertTrue(prepared.activeSections.isEmpty())
+        assertEquals(432.5,prepared.altitudeMeters,0.0)
+        assertEquals(draft.latitude.toDouble(),prepared.latitude,0.0)
+        assertEquals(draft.longitude.toDouble(),prepared.longitude,0.0)
+        assertEquals(draft.automaticAltitudeMeters,prepared.automaticAltitudeMeters)
+        assertEquals(draft.automaticZoneId,prepared.automaticZoneId)
+        assertTrue(state.storeEditorConfiguration(prepared))
+        assertNull(state.plan)
+        val reopened=SpaceCompassObserverState(store.preferences,elapsedClock={0L})
+        assertNull(reopened.plan)
+        assertEquals(prepared,reopened.savedPlan)
+        assertTrue(reopened.apply(prepared.copy(simulateAltitude=true)))
+        assertEquals(432.5,reopened.plan!!.resolvePlace(SpaceCompassDevicePlace(45.0,9.0,20.0))!!.altitude!!,0.0)
+    }
+
+    @Test fun preparedZoneDoesNotReinterpretAnAlreadyActiveFixedMoment() {
+        val input=draft.copy(simulatePosition=false,simulateAltitude=false,simulateZone=false,zone="Pacific/Honolulu")
+        val live=input.resolve(original,now,"Europe/Rome").getOrThrow()!!
+        val prepared=input.resolveForEditor(SpaceCompassScenarioEditorSection.ZONE,original,now,"Europe/Rome").getOrThrow()!!
+        assertFalse(prepared.simulateZone)
+        assertEquals("Pacific/Honolulu",prepared.zoneId)
+        assertEquals(live.observationTimeMs(now),prepared.observationTimeMs(now))
+        assertEquals("Europe/Rome",prepared.observationZone(java.time.ZoneId.of("Europe/Rome")).id)
+    }
+
+    @Test fun preparingAnInactiveDateKeepsTheCurrentTimeOnlyBehavior() {
+        val input=draft.copy(simulatePosition=false,simulateAltitude=false,simulateZone=false,simulateDate=false,date="2030-08-12")
+        val live=input.resolve(original,now,"Europe/Rome").getOrThrow()!!
+        val prepared=input.resolveForEditor(SpaceCompassScenarioEditorSection.DATE,original,now,"Europe/Rome").getOrThrow()!!
+        assertFalse(prepared.simulateDate);assertTrue(prepared.simulateTime)
+        assertEquals(live.observationTimeMs(now),prepared.observationTimeMs(now))
+        assertEquals("2030-08-12",java.time.Instant.ofEpochMilli(prepared.timeMs).atZone(java.time.ZoneId.of(prepared.momentZoneId)).toLocalDate().toString())
+    }
+
+    @Test fun preparingAnInactiveTimeKeepsTheCurrentDateOnlyBehavior() {
+        val input=draft.copy(simulatePosition=false,simulateAltitude=false,simulateZone=false,simulateTime=false,time="04:35")
+        val live=input.resolve(original,now,"Europe/Rome").getOrThrow()!!
+        val prepared=input.resolveForEditor(SpaceCompassScenarioEditorSection.TIME,original,now,"Europe/Rome").getOrThrow()!!
+        assertTrue(prepared.simulateDate);assertFalse(prepared.simulateTime)
+        assertEquals(live.observationTimeMs(now),prepared.observationTimeMs(now))
+        assertEquals("04:35",java.time.Instant.ofEpochMilli(prepared.timeMs).atZone(java.time.ZoneId.of(prepared.momentZoneId)).toLocalTime().toString())
+    }
+
+    @Test fun malformedPreparedValueCannotReplaceTheSavedConfiguration() {
+        val off=draft.copy(simulatePosition=false,simulateDate=false,simulateTime=false,simulateAltitude=false,simulateZone=false)
+        assertTrue(off.copy(altitude="-").resolveForEditor(SpaceCompassScenarioEditorSection.ALTITUDE,original,now,"Europe/Rome").isFailure)
+        assertTrue(off.copy(date="2030-02-30").resolveForEditor(SpaceCompassScenarioEditorSection.DATE,original,now,"Europe/Rome").isFailure)
+        assertNull(off.copy(altitude="-").resolveForEditor(null,original,now,"Europe/Rome").getOrThrow())
+    }
+
 }

@@ -2,9 +2,10 @@ package me.mondiversi.spacecompass
 
 /** Only online models need warming; local planets/stars already have distances without downloads. */
 internal fun spaceCompassCelestialRefreshBodies(selected: Set<SpaceCompassCelestialBody>,
-    motionBodies: Set<SpaceCompassCelestialBody>, prefetchCatalog: Boolean): List<SpaceCompassCelestialBody> =
+    motionBodies: Set<SpaceCompassCelestialBody>, prefetchCatalog: Boolean,
+    catalogBodies: Set<SpaceCompassCelestialBody>? = null): List<SpaceCompassCelestialBody> =
     spaceCompassCelestialCatalogOrder.filter {
-        (prefetchCatalog || it in selected) && (it.usesHorizons || it.isEarthSatellite)
+        ((prefetchCatalog && (catalogBodies == null || it in catalogBodies)) || it in selected) && (it.usesHorizons || it.isEarthSatellite)
     }.sortedBy {
         when {
             it in selected && it in motionBodies -> 0

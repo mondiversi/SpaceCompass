@@ -27,12 +27,12 @@ class SpaceCompassCelestialTexturePolicyTest {
 
     @Test fun packCoversEveryMapIncludingFictionalTextureWithoutDuplicateNames() {
         val images = SpaceCompassCelestialTexturePolicy.images
-        assertEquals(184, images.size)
-        assertEquals(184, images.map { it.name }.distinct().size)
+        assertEquals(189, images.size)
+        assertEquals(189, images.map { it.name }.distinct().size)
         assertTrue(images.any { it.name == "fictional_lv_426.webp" })
         for (body in SpaceCompassCelestialBody.entries.filter { it.viewerTexture != null })
             assertNotNull(body.name, SpaceCompassCelestialTexturePolicy.texture(body.viewerTexture))
-        assertEquals(42430882, images.sumOf { it.bytes })
+        assertEquals(42855924, images.sumOf { it.bytes })
     }
 
     @Test fun byteLengthAndDigestAreBothRequired() {
@@ -134,14 +134,14 @@ class SpaceCompassCelestialTexturePolicyTest {
 
     @Test fun publishedImagesUseTheExactGraphicsReleaseAndKeepLegacyCacheCompatibility() {
         val policy = SpaceCompassCelestialTexturePolicy
-        assertEquals("celestial-textures-v1.7", policy.PACK)
-        assertEquals("celestial-textures-v1.7", policy.PUBLISHED_PACK)
+        assertEquals("celestial-textures-v1.8", policy.PACK)
+        assertEquals("celestial-textures-v1.8", policy.PUBLISHED_PACK)
         assertTrue("celestial-textures-v1.5" in policy.legacyPacks)
-        for (image in policy.images) {
+        for (image in policy.images.filter { it.downloadPack != null }) {
             assertTrue(image.name.endsWith(".webp"))
             assertEquals(if (image.name == "fictional_lv_426.webp") 1774 else 2048, image.width)
             assertEquals(if (image.name == "fictional_lv_426.webp") 887 else 1024, image.height)
-                assertEquals(if (image.name.startsWith("fictional_") && image.name != "fictional_lv_426.webp") "celestial-textures-v1.7" else "celestial-textures-v1.6", image.downloadPack)
+                assertEquals(if (image.name in spaceCompassAdditionalCatalogImages().map { it.name }) "celestial-textures-v1.8" else if (image.name.startsWith("fictional_") && image.name != "fictional_lv_426.webp") "celestial-textures-v1.7" else "celestial-textures-v1.6", image.downloadPack)
                 assertEquals(image.name, image.downloadName)
                 assertEquals("https://github.com/mondiversi/SpaceCompass/releases/download/${image.downloadPack}/${image.downloadName}", image.url)
                 assertTrue(policy.allowedUrl(requireNotNull(image.url)))

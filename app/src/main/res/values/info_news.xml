@@ -1,9 +1,9 @@
 <resources>
     <string name="info_news_title">Latest news · %1$s</string>
-    <string name="info_news_star_sky" formatted="false">Location management shows current values, with bold customized settings and more compact controls.</string>
-    <string name="info_news_texture_downloads" formatted="false">Mark objects as favorites in Observatory, then use the catalogue heart to show only favorites.</string>
-    <string name="info_news_weather" formatted="false">Favorite checkboxes use a pink accent. Filter counts adapt to favorites, search and other active filters.</string>
-    <string name="info_news_viewer_zoom" formatted="false">New selections become the active object while the list stays in place until you return to the main view.</string>
-    <string name="info_news_settings" formatted="false">Location files can include selected objects. Automatic exports share position, altitude and time zone while date and time remain live.</string>
-    <string name="info_news_catalog" formatted="false">Object data refresh automatically when needed. The open filter panel stays visible while you browse.</string>
+    <string name="info_news_star_sky" formatted="false">The catalogue grows to 9,999 objects across the Solar System and the deep sky.</string>
+    <string name="info_news_texture_downloads" formatted="false">Expanded tracking uses verified JPL and satellite references, with explicit limits for historical or unavailable data.</string>
+    <string name="info_news_weather" formatted="false">Graphics pack 1.8 adds five photographs and independent thumbnails, downloaded individually and cached offline.</string>
+    <string name="info_news_viewer_zoom" formatted="false">Catalogue calculations, search and data refresh are optimized for the larger collection.</string>
+    <string name="info_news_settings" formatted="false">Location subpages remain fully editable. Enable or disable each custom value only from Location management.</string>
+    <string name="info_news_catalog" formatted="false">More compact Location cards and an always-checked, disabled Resumption checkbox make the controls clearer.</string>
 </resources>

@@ -20,8 +20,8 @@ class SpaceCompassHundredCatalogTest {
 
     @Test fun catalogueExtensionsKeepUniqueOrdinaryObjectsAndStableSelectionIdentifiers() {
         assertEquals(51, additions.size)
-        assertEquals(1009, spaceCompassCelestialCatalogOrder.size)
-        assertEquals(1009, spaceCompassCelestialCatalogOrder.distinct().size)
+        assertEquals(9999, spaceCompassCelestialCatalogOrder.size)
+        assertEquals(9999, spaceCompassCelestialCatalogOrder.distinct().size)
         assertTrue(SpaceCompassCelestialBody.LV_426 in spaceCompassCelestialCatalogOrder)
         assertFalse(SpaceCompassCelestialBody.EARTH_CENTER in spaceCompassCelestialCatalogOrder)
         for (body in additions) {
@@ -122,7 +122,7 @@ class SpaceCompassHundredCatalogTest {
     }
 
     @Test fun extendedObjectsAndExoplanetsDoNotInventPhysicalOrResolvedOrbitalData() {
-        assertEquals(100,spaceCompassFilterCatalog(setOf(SpaceCompassCatalogType.GALAXY),SpaceCompassCatalogVisibility.ALL,emptyMap()).size)
+        assertEquals(1600,spaceCompassFilterCatalog(setOf(SpaceCompassCatalogType.GALAXY),SpaceCompassCatalogVisibility.ALL,emptyMap()).size)
         assertEquals(SpaceCompassCelestialGalaxy.LMC,spaceCompassCelestialMembership(SpaceCompassCelestialBody.LARGE_MAGELLANIC_CLOUD).galaxy)
         assertEquals(SpaceCompassCelestialGalaxy.SMC,spaceCompassCelestialMembership(SpaceCompassCelestialBody.SMALL_MAGELLANIC_CLOUD).galaxy)
         assertEquals(SpaceCompassCelestialGalaxy.M51,spaceCompassCelestialMembership(SpaceCompassCelestialBody.M51).galaxy)

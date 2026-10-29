@@ -63,6 +63,6 @@ class SpaceCompassHiddenObjectOrderTest {
         assertEquals(current, values[alpha]!!, 0.0)
         assertNull(values[hidden])
         assertEquals(spaceCompassCelestialCatalogReferenceDistanceAu(sirius)!!, values[sirius]!!, 0.0)
-        assertEquals(1009, spaceCompassAvailableCelestialCatalog(emptySet()).size)
+        assertEquals(9999, spaceCompassAvailableCelestialCatalog(emptySet()).size)
     }
 }

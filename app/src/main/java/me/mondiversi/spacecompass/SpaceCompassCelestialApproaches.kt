@@ -111,7 +111,7 @@ internal fun spaceCompassApproachPaths(paths: Map<SpaceCompassCelestialBody, Spa
     for (i in bodies.indices) for (j in i+1 until bodies.size) {
         checkCancelled()
         val a = bodies[i]; val b = bodies[j]
-        if (spaceCompassSharesGalacticNucleus(a,b)) continue
+        if (spaceCompassSharesUnresolvedTarget(a,b)) continue
         val pa = paths.getValue(a); val pb = paths.getValue(b)
         if (pa.samples.isEmpty() || pb.samples.isEmpty()) continue
         val start = maxOf(pa.samples.first().timeMs, pb.samples.first().timeMs)
@@ -145,7 +145,7 @@ internal fun spaceCompassApproachPaths(paths: Map<SpaceCompassCelestialBody, Spa
 internal fun spaceCompassCurrentApproaches(timeMs: Long, positions: Map<SpaceCompassCelestialBody,SpaceCompassSunPosition>): List<SpaceCompassApproachPair> {
     return buildList {
         for ((a, b) in spaceCompassApproachCandidates(positions)) {
-            if (spaceCompassSharesGalacticNucleus(a,b)) continue
+            if (spaceCompassSharesUnresolvedTarget(a,b)) continue
             val first = positions.getValue(a); val second = positions.getValue(b)
             val distance = spaceCompassAngularSeparation(first,second)
             if (distance.isFinite() && distance <= SPACE_COMPASS_APPROACH_LIMIT_DEGREES)

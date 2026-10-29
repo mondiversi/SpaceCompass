@@ -5,7 +5,7 @@ import java.io.StringWriter
 import java.time.ZoneId
 import java.util.Properties
 
-internal const val SPACE_COMPASS_SCENARIO_FILE_LIMIT = 131_072
+internal const val SPACE_COMPASS_SCENARIO_FILE_LIMIT = 1_048_576
 internal const val SPACE_COMPASS_SCENARIO_EXTENSION = ".spacecompass"
 internal const val SPACE_COMPASS_SCENARIO_MIME = "application/octet-stream"
 

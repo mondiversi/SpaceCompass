@@ -3,7 +3,7 @@ package me.mondiversi.spacecompass
 /** Generated from catalogue/expanded-catalog.json; regenerate with scripts/GenerateExpandedCatalog.py. */
 internal fun spaceCompassLargeCatalogData17(): List<SpaceCompassLargeCatalogEntry> = listOf(
     SpaceCompassLargeCatalogEntry(
-        body = SpaceCompassCelestialBody.CLUSTER_C041,
+        body = SpaceCompassCelestialBody.valueOf("CLUSTER_C041"),
         entry = SpaceCompassAdditionalCatalogEntry(SpaceCompassCatalogType.STAR_CLUSTER, "C041", SpaceCompassDeepSkyReference(4.448333333333333, 15.866666666666667, Double.NaN, 104.92, -28.0, hasMeasuredDistance = false), null),
         facts = SpaceCompassCelestialFacts(),
         aliases = listOf("C041", "Hyades"),
@@ -12,7 +12,7 @@ internal fun spaceCompassLargeCatalogData17(): List<SpaceCompassLargeCatalogEntr
         galaxy = "UNKNOWN",
         note = R.string.catalogue_direction_note),
     SpaceCompassLargeCatalogEntry(
-        body = SpaceCompassCelestialBody.EXOPLANET_TRAPPIST_1_B,
+        body = SpaceCompassCelestialBody.valueOf("EXOPLANET_TRAPPIST_1_B"),
         entry = SpaceCompassAdditionalCatalogEntry(SpaceCompassCatalogType.EXOPLANET, "TRAPPIST-1 b", SpaceCompassDeepSkyReference(23.108426126666664, -5.0434618, 40.54087509483364, 901.0, -492.0), null),
         facts = SpaceCompassCelestialFacts(parentName = "TRAPPIST-1", massKg = 8.2058028e+24, massEstimated = true, diameterKm = 14220.072000000002, diameterEstimated = true, revolutionDays = 1.510826),
         aliases = listOf("TRAPPIST-1 b", "TRAPPIST-1"),
@@ -22,7 +22,7 @@ internal fun spaceCompassLargeCatalogData17(): List<SpaceCompassLargeCatalogEntr
         note = R.string.celestial_unresolved_exoplanet_note,
         temperatures = listOf(SpaceCompassCelestialTemperature(SpaceCompassCelestialTemperatureKind.EQUILIBRIUM_MODEL, 124.45000000000005))),
     SpaceCompassLargeCatalogEntry(
-        body = SpaceCompassCelestialBody.EXOPLANET_TRAPPIST_1_C,
+        body = SpaceCompassCelestialBody.valueOf("EXOPLANET_TRAPPIST_1_C"),
         entry = SpaceCompassAdditionalCatalogEntry(SpaceCompassCatalogType.EXOPLANET, "TRAPPIST-1 c", SpaceCompassDeepSkyReference(23.108426126666664, -5.0434618, 40.54087509483364, 901.0, -492.0), null),
         facts = SpaceCompassCelestialFacts(parentName = "TRAPPIST-1", massKg = 7.8116376e+24, massEstimated = true, diameterKm = 13977.974, diameterEstimated = true, revolutionDays = 2.421937),
         aliases = listOf("TRAPPIST-1 c", "TRAPPIST-1"),
@@ -32,7 +32,7 @@ internal fun spaceCompassLargeCatalogData17(): List<SpaceCompassLargeCatalogEntr
         note = R.string.celestial_unresolved_exoplanet_note,
         temperatures = listOf(SpaceCompassCelestialTemperature(SpaceCompassCelestialTemperatureKind.EQUILIBRIUM_MODEL, 66.55000000000001))),
     SpaceCompassLargeCatalogEntry(
-        body = SpaceCompassCelestialBody.EXOPLANET_TRAPPIST_1_D,
+        body = SpaceCompassCelestialBody.valueOf("EXOPLANET_TRAPPIST_1_D"),
         entry = SpaceCompassAdditionalCatalogEntry(SpaceCompassCatalogType.EXOPLANET, "TRAPPIST-1 d", SpaceCompassDeepSkyReference(23.108426126666664, -5.0434618, 40.54087509483364, 901.0, -492.0), null),
         facts = SpaceCompassCelestialFacts(parentName = "TRAPPIST-1", massKg = 2.3172136000000002e+24, massEstimated = true, diameterKm = 10040.696, diameterEstimated = true, revolutionDays = 4.049219),
         aliases = listOf("TRAPPIST-1 d", "TRAPPIST-1"),
@@ -42,7 +42,7 @@ internal fun spaceCompassLargeCatalogData17(): List<SpaceCompassLargeCatalogEntr
         note = R.string.celestial_unresolved_exoplanet_note,
         temperatures = listOf(SpaceCompassCelestialTemperature(SpaceCompassCelestialTemperatureKind.EQUILIBRIUM_MODEL, 13.050000000000011))),
     SpaceCompassLargeCatalogEntry(
-        body = SpaceCompassCelestialBody.EXOPLANET_TRAPPIST_1_F,
+        body = SpaceCompassCelestialBody.valueOf("EXOPLANET_TRAPPIST_1_F"),
         entry = SpaceCompassAdditionalCatalogEntry(SpaceCompassCatalogType.EXOPLANET, "TRAPPIST-1 f", SpaceCompassDeepSkyReference(23.108426126666664, -5.0434618, 40.54087509483364, 901.0, -492.0), null),
         facts = SpaceCompassCelestialFacts(parentName = "TRAPPIST-1", massKg = 6.205115799999999e+24, massEstimated = true, diameterKm = 13315.39, diameterEstimated = true, revolutionDays = 9.20754),
         aliases = listOf("TRAPPIST-1 f", "TRAPPIST-1"),
@@ -52,7 +52,7 @@ internal fun spaceCompassLargeCatalogData17(): List<SpaceCompassLargeCatalogEntr
         note = R.string.celestial_unresolved_exoplanet_note,
         temperatures = listOf(SpaceCompassCelestialTemperature(SpaceCompassCelestialTemperatureKind.EQUILIBRIUM_MODEL, -55.44999999999999))),
     SpaceCompassLargeCatalogEntry(
-        body = SpaceCompassCelestialBody.EXOPLANET_TRAPPIST_1_G,
+        body = SpaceCompassCelestialBody.valueOf("EXOPLANET_TRAPPIST_1_G"),
         entry = SpaceCompassAdditionalCatalogEntry(SpaceCompassCatalogType.EXOPLANET, "TRAPPIST-1 g", SpaceCompassDeepSkyReference(23.108426126666664, -5.0434618, 40.54087509483364, 901.0, -492.0), null),
         facts = SpaceCompassCelestialFacts(parentName = "TRAPPIST-1", massKg = 7.8892762e+24, massEstimated = true, diameterKm = 14385.718, diameterEstimated = true, revolutionDays = 12.352446),
         aliases = listOf("TRAPPIST-1 g", "TRAPPIST-1"),
@@ -62,7 +62,7 @@ internal fun spaceCompassLargeCatalogData17(): List<SpaceCompassLargeCatalogEntr
         note = R.string.celestial_unresolved_exoplanet_note,
         temperatures = listOf(SpaceCompassCelestialTemperature(SpaceCompassCelestialTemperatureKind.EQUILIBRIUM_MODEL, -75.84999999999997))),
     SpaceCompassLargeCatalogEntry(
-        body = SpaceCompassCelestialBody.EXOPLANET_TRAPPIST_1_H,
+        body = SpaceCompassCelestialBody.valueOf("EXOPLANET_TRAPPIST_1_H"),
         entry = SpaceCompassAdditionalCatalogEntry(SpaceCompassCatalogType.EXOPLANET, "TRAPPIST-1 h", SpaceCompassDeepSkyReference(23.108426126666664, -5.0434618, 40.54087509483364, 901.0, -492.0), null),
         facts = SpaceCompassCelestialFacts(parentName = "TRAPPIST-1", massKg = 1.9469372000000002e+24, massEstimated = true, diameterKm = 9620.210000000001, diameterEstimated = true, revolutionDays = 18.772866),
         aliases = listOf("TRAPPIST-1 h", "TRAPPIST-1"),
@@ -72,7 +72,7 @@ internal fun spaceCompassLargeCatalogData17(): List<SpaceCompassLargeCatalogEntr
         note = R.string.celestial_unresolved_exoplanet_note,
         temperatures = listOf(SpaceCompassCelestialTemperature(SpaceCompassCelestialTemperatureKind.EQUILIBRIUM_MODEL, -101.44999999999999))),
     SpaceCompassLargeCatalogEntry(
-        body = SpaceCompassCelestialBody.EXOPLANET_PROXIMA_CEN_D,
+        body = SpaceCompassCelestialBody.valueOf("EXOPLANET_PROXIMA_CEN_D"),
         entry = SpaceCompassAdditionalCatalogEntry(SpaceCompassCatalogType.EXOPLANET, "Proxima Cen d", SpaceCompassDeepSkyReference(14.492897713333333, -62.6761821, 4.24391417099463, -3781.31, 769.766), null),
         facts = SpaceCompassCelestialFacts(parentName = "Proxima Cen", massKg = 1.5527720000000002e+24, massEstimated = true, diameterKm = 8817.464, diameterEstimated = true, revolutionDays = 5.12338),
         aliases = listOf("Proxima Cen d", "Proxima Cen"),
@@ -82,7 +82,7 @@ internal fun spaceCompassLargeCatalogData17(): List<SpaceCompassLargeCatalogEntr
         note = R.string.celestial_unresolved_exoplanet_note,
         temperatures = listOf(SpaceCompassCelestialTemperature(SpaceCompassCelestialTemperatureKind.EQUILIBRIUM_MODEL, 8.850000000000023))),
     SpaceCompassLargeCatalogEntry(
-        body = SpaceCompassCelestialBody.EXOPLANET_TOI_700_E,
+        body = SpaceCompassCelestialBody.valueOf("EXOPLANET_TOI_700_E"),
         entry = SpaceCompassAdditionalCatalogEntry(SpaceCompassCatalogType.EXOPLANET, "TOI-700 e", SpaceCompassDeepSkyReference(6.473047766666666, -65.5786149, 101.5210649047905, -102.75, 161.805), null),
         facts = SpaceCompassCelestialFacts(parentName = "TOI-700", massKg = 4.2880396e+24, massEstimated = true, diameterKm = 11709.898000000001, diameterEstimated = true, revolutionDays = 27.810124),
         aliases = listOf("TOI-700 e", "TOI-700"),
@@ -92,7 +92,7 @@ internal fun spaceCompassLargeCatalogData17(): List<SpaceCompassLargeCatalogEntr
         note = R.string.celestial_unresolved_exoplanet_note,
         temperatures = listOf(SpaceCompassCelestialTemperature(SpaceCompassCelestialTemperatureKind.EQUILIBRIUM_MODEL, -0.25))),
     SpaceCompassLargeCatalogEntry(
-        body = SpaceCompassCelestialBody.EXOPLANET_TOI_700_B,
+        body = SpaceCompassCelestialBody.valueOf("EXOPLANET_TOI_700_B"),
         entry = SpaceCompassAdditionalCatalogEntry(SpaceCompassCatalogType.EXOPLANET, "TOI-700 b", SpaceCompassDeepSkyReference(6.473047766666666, -65.5786149, 101.5210649047905, -102.75, 161.805), null),
         facts = SpaceCompassCelestialFacts(parentName = "TOI-700", massKg = 5.0703978e+24, massEstimated = true, diameterKm = 12270.546, diameterEstimated = true, revolutionDays = 9.97722),
         aliases = listOf("TOI-700 b", "TOI-700"),
@@ -102,7 +102,7 @@ internal fun spaceCompassLargeCatalogData17(): List<SpaceCompassLargeCatalogEntr
         note = R.string.celestial_unresolved_exoplanet_note,
         temperatures = listOf(SpaceCompassCelestialTemperature(SpaceCompassCelestialTemperatureKind.EQUILIBRIUM_MODEL, 143.85000000000002))),
     SpaceCompassLargeCatalogEntry(
-        body = SpaceCompassCelestialBody.EXOPLANET_TOI_700_C,
+        body = SpaceCompassCelestialBody.valueOf("EXOPLANET_TOI_700_C"),
         entry = SpaceCompassAdditionalCatalogEntry(SpaceCompassCatalogType.EXOPLANET, "TOI-700 c", SpaceCompassDeepSkyReference(6.473047766666666, -65.5786149, 101.5210649047905, -102.75, 161.805), null),
         facts = SpaceCompassCelestialFacts(parentName = "TOI-700", massKg = 4.1566512e+25, massEstimated = true, diameterKm = 32300.97, diameterEstimated = true, revolutionDays = 16.0511039),
         aliases = listOf("TOI-700 c", "TOI-700"),
@@ -112,7 +112,7 @@ internal fun spaceCompassLargeCatalogData17(): List<SpaceCompassLargeCatalogEntr
         note = R.string.celestial_unresolved_exoplanet_note,
         temperatures = listOf(SpaceCompassCelestialTemperature(SpaceCompassCelestialTemperatureKind.EQUILIBRIUM_MODEL, 82.85000000000002))),
     SpaceCompassLargeCatalogEntry(
-        body = SpaceCompassCelestialBody.EXOPLANET_KEPLER_22_B,
+        body = SpaceCompassCelestialBody.valueOf("EXOPLANET_KEPLER_22_B"),
         entry = SpaceCompassAdditionalCatalogEntry(SpaceCompassCatalogType.EXOPLANET, "Kepler-22 b", SpaceCompassDeepSkyReference(19.281147006666668, 47.8841427, 634.837296682834, -39.7173, -66.6869), null),
         facts = SpaceCompassCelestialFacts(parentName = "Kepler-22", diameterKm = 26758.2, diameterEstimated = true, revolutionDays = 289.863876),
         aliases = listOf("Kepler-22 b", "Kepler-22"),
@@ -122,7 +122,7 @@ internal fun spaceCompassLargeCatalogData17(): List<SpaceCompassLargeCatalogEntr
         note = R.string.celestial_unresolved_exoplanet_note,
         temperatures = listOf(SpaceCompassCelestialTemperature(SpaceCompassCelestialTemperatureKind.EQUILIBRIUM_MODEL, 5.850000000000023))),
     SpaceCompassLargeCatalogEntry(
-        body = SpaceCompassCelestialBody.EXOPLANET_KEPLER_452_B,
+        body = SpaceCompassCelestialBody.valueOf("EXOPLANET_KEPLER_452_B"),
         entry = SpaceCompassAdditionalCatalogEntry(SpaceCompassCatalogType.EXOPLANET, "Kepler-452 b", SpaceCompassDeepSkyReference(19.73358346666667, 44.2775861, 1799.4927979928789, 9.97399, 9.01192), null),
         facts = SpaceCompassCelestialFacts(parentName = "Kepler-452", massKg = 1.9648538e+25, massEstimated = true, diameterKm = 20769.46, diameterEstimated = true, revolutionDays = 384.843),
         aliases = listOf("Kepler-452 b", "Kepler-452"),
@@ -132,7 +132,7 @@ internal fun spaceCompassLargeCatalogData17(): List<SpaceCompassLargeCatalogEntr
         note = R.string.celestial_unresolved_exoplanet_note,
         temperatures = listOf(SpaceCompassCelestialTemperature(SpaceCompassCelestialTemperatureKind.EQUILIBRIUM_MODEL, -8.149999999999977))),
     SpaceCompassLargeCatalogEntry(
-        body = SpaceCompassCelestialBody.EXOPLANET_KEPLER_62_E,
+        body = SpaceCompassCelestialBody.valueOf("EXOPLANET_KEPLER_62_E"),
         entry = SpaceCompassAdditionalCatalogEntry(SpaceCompassCatalogType.EXOPLANET, "Kepler-62 e", SpaceCompassDeepSkyReference(18.880837473333333, 45.3496992, 981.3197398410981, -25.1534, -31.1696), null),
         facts = SpaceCompassCelestialFacts(parentName = "Kepler-62", diameterKm = 20514.620000000003, diameterEstimated = true, revolutionDays = 122.3874),
         aliases = listOf("Kepler-62 e", "Kepler-62"),
@@ -142,7 +142,7 @@ internal fun spaceCompassLargeCatalogData17(): List<SpaceCompassLargeCatalogEntr
         note = R.string.celestial_unresolved_exoplanet_note,
         temperatures = listOf(SpaceCompassCelestialTemperature(SpaceCompassCelestialTemperatureKind.EQUILIBRIUM_MODEL, -3.1499999999999773))),
     SpaceCompassLargeCatalogEntry(
-        body = SpaceCompassCelestialBody.EXOPLANET_KEPLER_62_F,
+        body = SpaceCompassCelestialBody.valueOf("EXOPLANET_KEPLER_62_F"),
         entry = SpaceCompassAdditionalCatalogEntry(SpaceCompassCatalogType.EXOPLANET, "Kepler-62 f", SpaceCompassDeepSkyReference(18.880837473333333, 45.3496992, 981.3197398410981, -25.1534, -31.1696), null),
         facts = SpaceCompassCelestialFacts(parentName = "Kepler-62", diameterKm = 17966.219999999998, diameterEstimated = true, revolutionDays = 267.291),
         aliases = listOf("Kepler-62 f", "Kepler-62"),
@@ -152,7 +152,7 @@ internal fun spaceCompassLargeCatalogData17(): List<SpaceCompassLargeCatalogEntr
         note = R.string.celestial_unresolved_exoplanet_note,
         temperatures = listOf(SpaceCompassCelestialTemperature(SpaceCompassCelestialTemperatureKind.EQUILIBRIUM_MODEL, -65.14999999999998))),
     SpaceCompassLargeCatalogEntry(
-        body = SpaceCompassCelestialBody.EXOPLANET_KEPLER_1649_C,
+        body = SpaceCompassCelestialBody.valueOf("EXOPLANET_KEPLER_1649_C"),
         entry = SpaceCompassAdditionalCatalogEntry(SpaceCompassCatalogType.EXOPLANET, "Kepler-1649 c", SpaceCompassDeepSkyReference(19.50019784, 41.8299933, 300.6878046345401, -135.842, -99.2319), null),
         facts = SpaceCompassCelestialFacts(parentName = "Kepler-1649", massKg = 7.16664e+24, massEstimated = true, diameterKm = 13506.52, diameterEstimated = true, revolutionDays = 19.53527),
         aliases = listOf("Kepler-1649 c", "Kepler-1649"),
@@ -162,7 +162,7 @@ internal fun spaceCompassLargeCatalogData17(): List<SpaceCompassLargeCatalogEntr
         note = R.string.celestial_unresolved_exoplanet_note,
         temperatures = listOf(SpaceCompassCelestialTemperature(SpaceCompassCelestialTemperatureKind.EQUILIBRIUM_MODEL, -39.14999999999998))),
     SpaceCompassLargeCatalogEntry(
-        body = SpaceCompassCelestialBody.EXOPLANET_KEPLER_442_B,
+        body = SpaceCompassCelestialBody.valueOf("EXOPLANET_KEPLER_442_B"),
         entry = SpaceCompassAdditionalCatalogEntry(SpaceCompassCatalogType.EXOPLANET, "Kepler-442 b", SpaceCompassDeepSkyReference(19.02444019333333, 39.2800704, 1193.618187649805, 7.78538, 1.91715), null),
         facts = SpaceCompassCelestialFacts(parentName = "Kepler-442", massKg = 1.4094392e+25, massEstimated = true, diameterKm = 17074.280000000002, diameterEstimated = true, revolutionDays = 112.3053),
         aliases = listOf("Kepler-442 b", "Kepler-442"),
@@ -172,7 +172,7 @@ internal fun spaceCompassLargeCatalogData17(): List<SpaceCompassLargeCatalogEntr
         note = R.string.celestial_unresolved_exoplanet_note,
         temperatures = listOf(SpaceCompassCelestialTemperature(SpaceCompassCelestialTemperatureKind.EQUILIBRIUM_MODEL, -32.14999999999998))),
     SpaceCompassLargeCatalogEntry(
-        body = SpaceCompassCelestialBody.EXOPLANET_KEPLER_438_B,
+        body = SpaceCompassCelestialBody.valueOf("EXOPLANET_KEPLER_438_B"),
         entry = SpaceCompassAdditionalCatalogEntry(SpaceCompassCatalogType.EXOPLANET, "Kepler-438 b", SpaceCompassDeepSkyReference(18.77638157333333, 41.9510686, 639.0801728611566, -20.3406, -22.8105), null),
         facts = SpaceCompassCelestialFacts(parentName = "Kepler-438", massKg = 8.719412e+24, massEstimated = true, diameterKm = 14271.04, diameterEstimated = true, revolutionDays = 35.23319),
         aliases = listOf("Kepler-438 b", "Kepler-438"),
@@ -182,7 +182,7 @@ internal fun spaceCompassLargeCatalogData17(): List<SpaceCompassLargeCatalogEntr
         note = R.string.celestial_unresolved_exoplanet_note,
         temperatures = listOf(SpaceCompassCelestialTemperature(SpaceCompassCelestialTemperatureKind.EQUILIBRIUM_MODEL, 14.850000000000023))),
     SpaceCompassLargeCatalogEntry(
-        body = SpaceCompassCelestialBody.EXOPLANET_KEPLER_186_B,
+        body = SpaceCompassCelestialBody.valueOf("EXOPLANET_KEPLER_186_B"),
         entry = SpaceCompassAdditionalCatalogEntry(SpaceCompassCatalogType.EXOPLANET, "Kepler-186 b", SpaceCompassDeepSkyReference(19.9101824, 43.9549884, 579.234157412538, 2.09856, -4.36055), null),
         facts = SpaceCompassCelestialFacts(parentName = "Kepler-186", massKg = 7.405528000000001e+24, massEstimated = true, diameterKm = 13633.94, diameterEstimated = true, revolutionDays = 3.8867907),
         aliases = listOf("Kepler-186 b", "Kepler-186"),
@@ -192,7 +192,7 @@ internal fun spaceCompassLargeCatalogData17(): List<SpaceCompassLargeCatalogEntr
         note = R.string.celestial_unresolved_exoplanet_note,
         temperatures = listOf(SpaceCompassCelestialTemperature(SpaceCompassCelestialTemperatureKind.EQUILIBRIUM_MODEL, 297.85))),
     SpaceCompassLargeCatalogEntry(
-        body = SpaceCompassCelestialBody.EXOPLANET_KEPLER_186_C,
+        body = SpaceCompassCelestialBody.valueOf("EXOPLANET_KEPLER_186_C"),
         entry = SpaceCompassAdditionalCatalogEntry(SpaceCompassCatalogType.EXOPLANET, "Kepler-186 c", SpaceCompassDeepSkyReference(19.9101824, 43.9549884, 579.234157412538, 2.09856, -4.36055), null),
         facts = SpaceCompassCelestialFacts(parentName = "Kepler-186", massKg = 1.254162e+25, massEstimated = true, diameterKm = 15927.5, diameterEstimated = true, revolutionDays = 7.267302),
         aliases = listOf("Kepler-186 c", "Kepler-186"),
@@ -202,7 +202,7 @@ internal fun spaceCompassLargeCatalogData17(): List<SpaceCompassLargeCatalogEntr
         note = R.string.celestial_unresolved_exoplanet_note,
         temperatures = listOf(SpaceCompassCelestialTemperature(SpaceCompassCelestialTemperatureKind.EQUILIBRIUM_MODEL, 190.85000000000002))),
     SpaceCompassLargeCatalogEntry(
-        body = SpaceCompassCelestialBody.EXOPLANET_KEPLER_186_D,
+        body = SpaceCompassCelestialBody.valueOf("EXOPLANET_KEPLER_186_D"),
         entry = SpaceCompassAdditionalCatalogEntry(SpaceCompassCatalogType.EXOPLANET, "Kepler-186 d", SpaceCompassDeepSkyReference(19.9101824, 43.9549884, 579.234157412538, 2.09856, -4.36055), null),
         facts = SpaceCompassCelestialFacts(parentName = "Kepler-186", massKg = 1.5169388000000002e+25, massEstimated = true, diameterKm = 17838.8, diameterEstimated = true, revolutionDays = 13.342996),
         aliases = listOf("Kepler-186 d", "Kepler-186"),
@@ -212,7 +212,7 @@ internal fun spaceCompassLargeCatalogData17(): List<SpaceCompassLargeCatalogEntr
         note = R.string.celestial_unresolved_exoplanet_note,
         temperatures = listOf(SpaceCompassCelestialTemperature(SpaceCompassCelestialTemperatureKind.EQUILIBRIUM_MODEL, 105.85000000000002))),
     SpaceCompassLargeCatalogEntry(
-        body = SpaceCompassCelestialBody.EXOPLANET_KEPLER_186_E,
+        body = SpaceCompassCelestialBody.valueOf("EXOPLANET_KEPLER_186_E"),
         entry = SpaceCompassAdditionalCatalogEntry(SpaceCompassCatalogType.EXOPLANET, "Kepler-186 e", SpaceCompassDeepSkyReference(19.9101824, 43.9549884, 579.234157412538, 2.09856, -4.36055), null),
         facts = SpaceCompassCelestialFacts(parentName = "Kepler-186", massKg = 1.284023e+25, massEstimated = true, diameterKm = 16182.34, diameterEstimated = true, revolutionDays = 22.407704),
         aliases = listOf("Kepler-186 e", "Kepler-186"),
@@ -222,7 +222,7 @@ internal fun spaceCompassLargeCatalogData17(): List<SpaceCompassLargeCatalogEntr
         note = R.string.celestial_unresolved_exoplanet_note,
         temperatures = listOf(SpaceCompassCelestialTemperature(SpaceCompassCelestialTemperatureKind.EQUILIBRIUM_MODEL, 45.85000000000002))),
     SpaceCompassLargeCatalogEntry(
-        body = SpaceCompassCelestialBody.EXOPLANET_KEPLER_16_B,
+        body = SpaceCompassCelestialBody.valueOf("EXOPLANET_KEPLER_16_B"),
         entry = SpaceCompassAdditionalCatalogEntry(SpaceCompassCatalogType.EXOPLANET, "Kepler-16 b", SpaceCompassDeepSkyReference(19.271722046666664, 51.757229, 244.8951685088004, 14.0407, -48.601), null),
         facts = SpaceCompassCelestialFacts(parentName = "Kepler-16", massKg = 6.320558426e+26, massEstimated = true, diameterKm = 107660.9806, diameterEstimated = true, revolutionDays = 228.776),
         aliases = listOf("Kepler-16 b", "Kepler-16"),
@@ -232,7 +232,7 @@ internal fun spaceCompassLargeCatalogData17(): List<SpaceCompassLargeCatalogEntr
         note = R.string.celestial_unresolved_exoplanet_note,
         temperatures = listOf(SpaceCompassCelestialTemperature(SpaceCompassCelestialTemperatureKind.EQUILIBRIUM_MODEL, -67.24999999999997))),
     SpaceCompassLargeCatalogEntry(
-        body = SpaceCompassCelestialBody.EXOPLANET_KEPLER_47_B,
+        body = SpaceCompassCelestialBody.valueOf("EXOPLANET_KEPLER_47_B"),
         entry = SpaceCompassAdditionalCatalogEntry(SpaceCompassCatalogType.EXOPLANET, "Kepler-47 b", SpaceCompassDeepSkyReference(19.68652588666667, 46.9204303, 3343.16810270054, -3.49403, -10.0654), null),
         facts = SpaceCompassCelestialFacts(parentName = "Kepler-47", massKg = 1.2362454e+25, massEstimated = true, diameterKm = 38863.1, diameterEstimated = true, revolutionDays = 49.4643),
         aliases = listOf("Kepler-47 b", "Kepler-47"),
@@ -242,7 +242,7 @@ internal fun spaceCompassLargeCatalogData17(): List<SpaceCompassLargeCatalogEntr
         note = R.string.celestial_unresolved_exoplanet_note,
         temperatures = listOf(SpaceCompassCelestialTemperature(SpaceCompassCelestialTemperatureKind.EQUILIBRIUM_MODEL, 217.05))),
     SpaceCompassLargeCatalogEntry(
-        body = SpaceCompassCelestialBody.EXOPLANET_KEPLER_47_C,
+        body = SpaceCompassCelestialBody.valueOf("EXOPLANET_KEPLER_47_C"),
         entry = SpaceCompassAdditionalCatalogEntry(SpaceCompassCatalogType.EXOPLANET, "Kepler-47 c", SpaceCompassDeepSkyReference(19.68652588666667, 46.9204303, 3343.16810270054, -3.49403, -10.0654), null),
         facts = SpaceCompassCelestialFacts(parentName = "Kepler-47", massKg = 1.8931874e+25, massEstimated = true, diameterKm = 59250.3, diameterEstimated = true, revolutionDays = 303.227),
         aliases = listOf("Kepler-47 c", "Kepler-47"),
@@ -252,7 +252,7 @@ internal fun spaceCompassLargeCatalogData17(): List<SpaceCompassLargeCatalogEntr
         note = R.string.celestial_unresolved_exoplanet_note,
         temperatures = listOf(SpaceCompassCelestialTemperature(SpaceCompassCelestialTemperatureKind.EQUILIBRIUM_MODEL, -5.329999999999984))),
     SpaceCompassLargeCatalogEntry(
-        body = SpaceCompassCelestialBody.EXOPLANET_51_PEG_B,
+        body = SpaceCompassCelestialBody.valueOf("EXOPLANET_51_PEG_B"),
         entry = SpaceCompassAdditionalCatalogEntry(SpaceCompassCatalogType.EXOPLANET, "51 Peg b", SpaceCompassDeepSkyReference(22.957835993333333, 20.7690958, 50.4283421817078, 207.363, 62.094), null),
         facts = SpaceCompassCelestialFacts(parentName = "51 Peg", massKg = 1.1578622354940941e+27, massEstimated = true, diameterKm = 179662.19999999998, diameterEstimated = true, revolutionDays = 4.2307966),
         aliases = listOf("51 Peg b", "51 Peg"),
@@ -262,7 +262,7 @@ internal fun spaceCompassLargeCatalogData17(): List<SpaceCompassLargeCatalogEntr
         note = R.string.celestial_unresolved_exoplanet_note,
         temperatures = listOf(SpaceCompassCelestialTemperature(SpaceCompassCelestialTemperatureKind.EQUILIBRIUM_MODEL, 1055.7800000000002))),
     SpaceCompassLargeCatalogEntry(
-        body = SpaceCompassCelestialBody.EXOPLANET_55_CNC_E,
+        body = SpaceCompassCelestialBody.valueOf("EXOPLANET_55_CNC_E"),
         entry = SpaceCompassAdditionalCatalogEntry(SpaceCompassCatalogType.EXOPLANET, "55 Cnc e", SpaceCompassDeepSkyReference(8.876455819999999, 28.3298154, 41.0484109154335, -485.872, -233.651), null),
         facts = SpaceCompassCelestialFacts(parentName = "55 Cnc", massKg = 4.7717878e+25, massEstimated = true, diameterKm = 23891.25, diameterEstimated = true, revolutionDays = 0.7365474),
         aliases = listOf("55 Cnc e", "55 Cnc"),
@@ -272,7 +272,7 @@ internal fun spaceCompassLargeCatalogData17(): List<SpaceCompassLargeCatalogEntr
         note = R.string.celestial_unresolved_exoplanet_note,
         temperatures = listOf(SpaceCompassCelestialTemperature(SpaceCompassCelestialTemperatureKind.EQUILIBRIUM_MODEL, 1684.85))),
     SpaceCompassLargeCatalogEntry(
-        body = SpaceCompassCelestialBody.EXOPLANET_HD_209458_B,
+        body = SpaceCompassCelestialBody.valueOf("EXOPLANET_HD_209458_B"),
         entry = SpaceCompassAdditionalCatalogEntry(SpaceCompassCatalogType.EXOPLANET, "HD 209458 b", SpaceCompassDeepSkyReference(22.05300146, 18.8842419, 157.5387489311432, 29.5787, -17.8904), null),
         facts = SpaceCompassCelestialFacts(parentName = "HD 209458", massKg = 1.38564535798e+27, massEstimated = true, diameterKm = 198526.85842, diameterEstimated = true, revolutionDays = 3.52474859),
         aliases = listOf("HD 209458 b", "HD 209458"),
@@ -282,7 +282,7 @@ internal fun spaceCompassLargeCatalogData17(): List<SpaceCompassLargeCatalogEntr
         note = R.string.celestial_unresolved_exoplanet_note,
         temperatures = listOf(SpaceCompassCelestialTemperature(SpaceCompassCelestialTemperatureKind.EQUILIBRIUM_MODEL, 1185.85))),
     SpaceCompassLargeCatalogEntry(
-        body = SpaceCompassCelestialBody.EXOPLANET_HD_189733_B,
+        body = SpaceCompassCelestialBody.valueOf("EXOPLANET_HD_189733_B"),
         entry = SpaceCompassAdditionalCatalogEntry(SpaceCompassCatalogType.EXOPLANET, "HD 189733 b", SpaceCompassDeepSkyReference(20.012141486666668, 22.7097759, 64.4608941758726, -3.29445, -250.225), null),
         facts = SpaceCompassCelestialFacts(parentName = "HD 189733", massKg = 2.14490308838e+27, massEstimated = true, diameterKm = 161392.33813999998, diameterEstimated = true, revolutionDays = 2.21857567),
         aliases = listOf("HD 189733 b", "HD 189733"),
@@ -292,7 +292,7 @@ internal fun spaceCompassLargeCatalogData17(): List<SpaceCompassLargeCatalogEntr
         note = R.string.celestial_unresolved_exoplanet_note,
         temperatures = listOf(SpaceCompassCelestialTemperature(SpaceCompassCelestialTemperatureKind.EQUILIBRIUM_MODEL, 935.85))),
     SpaceCompassLargeCatalogEntry(
-        body = SpaceCompassCelestialBody.EXOPLANET_WASP_12_B,
+        body = SpaceCompassCelestialBody.valueOf("EXOPLANET_WASP_12_B"),
         entry = SpaceCompassAdditionalCatalogEntry(SpaceCompassCatalogType.EXOPLANET, "WASP-12 b", SpaceCompassDeepSkyReference(6.509109666666666, 29.6722662, 1393.490077468142, -1.57989, -6.95773), null),
         facts = SpaceCompassCelestialFacts(parentName = "WASP-12", massKg = 2.79027215922e+27, massEstimated = true, diameterKm = 280650.79509336, diameterEstimated = true, revolutionDays = 1.091418901),
         aliases = listOf("WASP-12 b", "WASP-12"),
@@ -302,7 +302,7 @@ internal fun spaceCompassLargeCatalogData17(): List<SpaceCompassLargeCatalogEntr
         note = R.string.celestial_unresolved_exoplanet_note,
         temperatures = listOf(SpaceCompassCelestialTemperature(SpaceCompassCelestialTemperatureKind.EQUILIBRIUM_MODEL, 2327.85))),
     SpaceCompassLargeCatalogEntry(
-        body = SpaceCompassCelestialBody.EXOPLANET_WASP_39_B,
+        body = SpaceCompassCelestialBody.valueOf("EXOPLANET_WASP_39_B"),
         entry = SpaceCompassAdditionalCatalogEntry(SpaceCompassCatalogType.EXOPLANET, "WASP-39 b", SpaceCompassDeepSkyReference(14.488443179999999, -3.4444994, 697.9159401300141, -19.0528, 0.345245), null),
         facts = SpaceCompassCelestialFacts(parentName = "WASP-39", massKg = 5.3337855560600006e+26, massEstimated = true, diameterKm = 182673.27476200002, diameterEstimated = true, revolutionDays = 4.0552941),
         aliases = listOf("WASP-39 b", "WASP-39"),
@@ -312,7 +312,7 @@ internal fun spaceCompassLargeCatalogData17(): List<SpaceCompassLargeCatalogEntr
         note = R.string.celestial_unresolved_exoplanet_note,
         temperatures = listOf(SpaceCompassCelestialTemperature(SpaceCompassCelestialTemperatureKind.EQUILIBRIUM_MODEL, 892.85))),
     SpaceCompassLargeCatalogEntry(
-        body = SpaceCompassCelestialBody.EXOPLANET_WASP_43_B,
+        body = SpaceCompassCelestialBody.valueOf("EXOPLANET_WASP_43_B"),
         entry = SpaceCompassAdditionalCatalogEntry(SpaceCompassCatalogType.EXOPLANET, "WASP-43 b", SpaceCompassDeepSkyReference(10.32721246, -9.8064431, 282.9298944942859, -42.0435, -38.1925), null),
         facts = SpaceCompassCelestialFacts(parentName = "WASP-43", massKg = 3.3785571508000004e+27, massEstimated = true, diameterKm = 132822.608, diameterEstimated = true, revolutionDays = 0.813475),
         aliases = listOf("WASP-43 b", "WASP-43"),
@@ -322,7 +322,7 @@ internal fun spaceCompassLargeCatalogData17(): List<SpaceCompassLargeCatalogEntr
         note = R.string.celestial_unresolved_exoplanet_note,
         temperatures = listOf(SpaceCompassCelestialTemperature(SpaceCompassCelestialTemperatureKind.EQUILIBRIUM_MODEL, 1153.5500000000002))),
     SpaceCompassLargeCatalogEntry(
-        body = SpaceCompassCelestialBody.EXOPLANET_WASP_76_B,
+        body = SpaceCompassCelestialBody.valueOf("EXOPLANET_WASP_76_B"),
         entry = SpaceCompassAdditionalCatalogEntry(SpaceCompassCatalogType.EXOPLANET, "WASP-76 b", SpaceCompassDeepSkyReference(1.7755290666666668, 2.700389, 634.240430511643, 45.3985, -40.8191), null),
         facts = SpaceCompassCelestialFacts(parentName = "WASP-76", massKg = 1.696932522195092e+27, massEstimated = true, diameterKm = 264797.23870324, diameterEstimated = true, revolutionDays = 1.80988198),
         aliases = listOf("WASP-76 b", "WASP-76"),
@@ -332,7 +332,7 @@ internal fun spaceCompassLargeCatalogData17(): List<SpaceCompassLargeCatalogEntr
         note = R.string.celestial_unresolved_exoplanet_note,
         temperatures = listOf(SpaceCompassCelestialTemperature(SpaceCompassCelestialTemperatureKind.EQUILIBRIUM_MODEL, 1954.85))),
     SpaceCompassLargeCatalogEntry(
-        body = SpaceCompassCelestialBody.EXOPLANET_WASP_121_B,
+        body = SpaceCompassCelestialBody.valueOf("EXOPLANET_WASP_121_B"),
         entry = SpaceCompassAdditionalCatalogEntry(SpaceCompassCatalogType.EXOPLANET, "WASP-121 b", SpaceCompassDeepSkyReference(7.173348746666666, -39.0972705, 880.2895402847461, -3.84814, 25.6065), null),
         facts = SpaceCompassCelestialFacts(parentName = "WASP-121", massKg = 2.220817730373918e+27, massEstimated = true, diameterKm = 248800.85748995998, diameterEstimated = true, revolutionDays = 1.27492504),
         aliases = listOf("WASP-121 b", "WASP-121"),
@@ -342,7 +342,7 @@ internal fun spaceCompassLargeCatalogData17(): List<SpaceCompassLargeCatalogEntr
         note = R.string.celestial_unresolved_exoplanet_note,
         temperatures = listOf(SpaceCompassCelestialTemperature(SpaceCompassCelestialTemperatureKind.EQUILIBRIUM_MODEL, 2135.85))),
     SpaceCompassLargeCatalogEntry(
-        body = SpaceCompassCelestialBody.EXOPLANET_K2_18_B,
+        body = SpaceCompassCelestialBody.valueOf("EXOPLANET_K2_18_B"),
         entry = SpaceCompassAdditionalCatalogEntry(SpaceCompassCatalogType.EXOPLANET, "K2-18 b", SpaceCompassDeepSkyReference(11.5040094, 7.5878315, 124.02618112246822, -80.3765, -133.142), null),
         facts = SpaceCompassCelestialFacts(parentName = "K2-18", massKg = 5.3272024e+25, massEstimated = true, diameterKm = 30198.54, diameterEstimated = true, revolutionDays = 32.939623),
         aliases = listOf("K2-18 b", "K2-18"),

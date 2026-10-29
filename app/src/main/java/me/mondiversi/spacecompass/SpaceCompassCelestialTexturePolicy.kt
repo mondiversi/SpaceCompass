@@ -19,10 +19,10 @@ internal data class SpaceCompassCelestialTexture(val name: String, val bytes: In
 
 /** Versioned public maps. Digests and dimensions belong to this APK, not a remote manifest. */
 internal object SpaceCompassCelestialTexturePolicy {
-    const val PACK = "celestial-textures-v1.7"
+    const val PACK = "celestial-textures-v1.8"
     // Versioned individual downloads are published before the matching application release.
-    const val PUBLISHED_PACK = PACK
-    val legacyPacks = listOf("celestial-textures-v1.6", "celestial-textures-v1.5", "celestial-textures-v1.4", "celestial-textures-v1.3", "celestial-textures-v1.2.1", "celestial-textures-v1.2", "celestial-textures-v1.1", "celestial-textures-v1")
+    const val PUBLISHED_PACK = "celestial-textures-v1.8"
+    val legacyPacks = listOf("celestial-textures-v1.7", "celestial-textures-v1.6", "celestial-textures-v1.5", "celestial-textures-v1.4", "celestial-textures-v1.3", "celestial-textures-v1.2.1", "celestial-textures-v1.2", "celestial-textures-v1.1", "celestial-textures-v1")
     const val BASE_URL = "https://github.com/mondiversi/SpaceCompass/releases/download/$PUBLISHED_PACK"
     val images = listOf(
         SpaceCompassCelestialTexture("moon_jpl_0502.webp", 389900, "ff03436f223b26cd5930edddd4408b8e4a5fad3826b08d7dedb34b4711667a8f", 2048, 1024, downloadPack = "celestial-textures-v1.6", downloadName = "moon_jpl_0502.webp"),
@@ -209,7 +209,7 @@ internal object SpaceCompassCelestialTexturePolicy {
         SpaceCompassCelestialTexture("fictional_vulcan.webp", 568534, "d81c4553c8ae2cebd9094098d0850a8aedd2fc30e8b24dd7951da4766a60ec29", 2048, 1024, downloadPack = "celestial-textures-v1.7", downloadName = "fictional_vulcan.webp"),
         SpaceCompassCelestialTexture("fictional_nostromo.webp", 246646, "da096667d63fef15fc52de07f6b9f67e52dd3b79d97ae8355e2d2e920aac1c1e", 2048, 1024, downloadPack = "celestial-textures-v1.7", downloadName = "fictional_nostromo.webp"),
         SpaceCompassCelestialTexture("fictional_discovery_one.webp", 78672, "1665dd32ecdc227075808d8a8ae165aff58a49ea79d61a306af5c1d74255129e", 2048, 1024, downloadPack = "celestial-textures-v1.7", downloadName = "fictional_discovery_one.webp")
-    )
+    ) + spaceCompassAdditionalCatalogImages()
     private val byName = (images + SpaceCompassCelestialThumbnailPolicy.images).associateBy { it.name }
     fun texture(name: String?) = byName[SpaceCompassTextureAliases.canonical(name)]
     fun allowedUrl(url: String, redirect: Boolean = false): Boolean = runCatching {

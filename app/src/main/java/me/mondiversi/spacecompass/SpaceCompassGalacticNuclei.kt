@@ -16,6 +16,8 @@ internal fun spaceCompassSharesGalacticNucleus(a: SpaceCompassCelestialBody, b: 
 
 private fun spaceCompassLargeNuclearPair(galaxy: SpaceCompassCelestialBody, nucleus: SpaceCompassCelestialBody): Boolean {
     if (galaxy.catalogType != SpaceCompassCatalogType.GALAXY || nucleus.catalogType != SpaceCompassCatalogType.BLACK_HOLE) return false
-    val host = nucleus.largeCatalogEntry?.galaxy?.takeIf { it.startsWith("NGC ") } ?: return false
-    return galaxy.additionalCatalogEntry?.designation == host
+    val host = nucleus.largeCatalogEntry?.galaxy?.takeUnless {
+        it in setOf("MILKY_WAY","UNKNOWN","SELF","NONE","LMC","SMC")
+    } ?: return false
+    return galaxy.additionalCatalogEntry?.designation?.let(::spaceCompassUnresolvedReferenceKey) == spaceCompassUnresolvedReferenceKey(host)
 }

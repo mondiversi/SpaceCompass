@@ -3,7 +3,7 @@ package me.mondiversi.spacecompass
 /** Generated from catalogue/expanded-catalog.json; regenerate with scripts/GenerateExpandedCatalog.py. */
 internal fun spaceCompassLargeCatalogData18(): List<SpaceCompassLargeCatalogEntry> = listOf(
     SpaceCompassLargeCatalogEntry(
-        body = SpaceCompassCelestialBody.EXOPLANET_LHS_1140_B,
+        body = SpaceCompassCelestialBody.valueOf("EXOPLANET_LHS_1140_B"),
         entry = SpaceCompassAdditionalCatalogEntry(SpaceCompassCatalogType.EXOPLANET, "LHS 1140 b", SpaceCompassDeepSkyReference(0.7499088, -15.2741085, 48.878120918499704, 317.585, -596.617), null),
         facts = SpaceCompassCelestialFacts(parentName = "LHS 1140", massKg = 3.344432e+25, massEstimated = true, diameterKm = 22043.66, diameterEstimated = true, revolutionDays = 24.73723),
         aliases = listOf("LHS 1140 b", "LHS 1140"),
@@ -13,7 +13,7 @@ internal fun spaceCompassLargeCatalogData18(): List<SpaceCompassLargeCatalogEntr
         note = R.string.celestial_unresolved_exoplanet_note,
         temperatures = listOf(SpaceCompassCelestialTemperature(SpaceCompassCelestialTemperatureKind.EQUILIBRIUM_MODEL, -47.14999999999998))),
     SpaceCompassLargeCatalogEntry(
-        body = SpaceCompassCelestialBody.EXOPLANET_LHS_3844_B,
+        body = SpaceCompassCelestialBody.valueOf("EXOPLANET_LHS_3844_B"),
         entry = SpaceCompassAdditionalCatalogEntry(SpaceCompassCatalogType.EXOPLANET, "LHS 3844 b", SpaceCompassDeepSkyReference(22.69974692, -69.1721081, 48.547072195134206, 334.357, -726.974), null),
         facts = SpaceCompassCelestialFacts(parentName = "LHS 3844", massKg = 1.4154114e+25, massEstimated = true, diameterKm = 16386.212, diameterEstimated = true, revolutionDays = 0.462929709),
         aliases = listOf("LHS 3844 b", "LHS 3844"),
@@ -23,7 +23,7 @@ internal fun spaceCompassLargeCatalogData18(): List<SpaceCompassLargeCatalogEntr
         note = R.string.celestial_unresolved_exoplanet_note,
         temperatures = listOf(SpaceCompassCelestialTemperature(SpaceCompassCelestialTemperatureKind.EQUILIBRIUM_MODEL, 542.85))),
     SpaceCompassLargeCatalogEntry(
-        body = SpaceCompassCelestialBody.EXOPLANET_GJ_1214_B,
+        body = SpaceCompassCelestialBody.valueOf("EXOPLANET_GJ_1214_B"),
         entry = SpaceCompassAdditionalCatalogEntry(SpaceCompassCatalogType.EXOPLANET, "GJ 1214 b", SpaceCompassDeepSkyReference(17.255426606666667, 4.9606795, 47.7580999174779, 580.447, -749.588), null),
         facts = SpaceCompassCelestialFacts(parentName = "GJ 1214", massKg = 5.0226202e+25, massEstimated = true, diameterKm = 34823.886, diameterEstimated = true, revolutionDays = 1.580404531),
         aliases = listOf("GJ 1214 b", "GJ 1214"),
@@ -33,7 +33,7 @@ internal fun spaceCompassLargeCatalogData18(): List<SpaceCompassLargeCatalogEntr
         note = R.string.celestial_unresolved_exoplanet_note,
         temperatures = listOf(SpaceCompassCelestialTemperature(SpaceCompassCelestialTemperatureKind.EQUILIBRIUM_MODEL, 293.85))),
     SpaceCompassLargeCatalogEntry(
-        body = SpaceCompassCelestialBody.EXOPLANET_GJ_436_B,
+        body = SpaceCompassCelestialBody.valueOf("EXOPLANET_GJ_436_B"),
         entry = SpaceCompassAdditionalCatalogEntry(SpaceCompassCatalogType.EXOPLANET, "GJ 436 b", SpaceCompassDeepSkyReference(11.703369086666667, 26.7030669, 31.810716445474167, 895.047, -814.031), null),
         facts = SpaceCompassCelestialFacts(parentName = "GJ 436", massKg = 1.3198562000000002e+26, massEstimated = true, diameterKm = 53134.14, diameterEstimated = true, revolutionDays = 2.64388312),
         aliases = listOf("GJ 436 b", "GJ 436"),
@@ -43,7 +43,7 @@ internal fun spaceCompassLargeCatalogData18(): List<SpaceCompassLargeCatalogEntr
         note = R.string.celestial_unresolved_exoplanet_note,
         temperatures = listOf(SpaceCompassCelestialTemperature(SpaceCompassCelestialTemperatureKind.EQUILIBRIUM_MODEL, 412.85))),
     SpaceCompassLargeCatalogEntry(
-        body = SpaceCompassCelestialBody.EXOPLANET_GJ_1132_B,
+        body = SpaceCompassCelestialBody.valueOf("EXOPLANET_GJ_1132_B"),
         entry = SpaceCompassAdditionalCatalogEntry(SpaceCompassCatalogType.EXOPLANET, "GJ 1132 b", SpaceCompassDeepSkyReference(10.247271306666667, -47.1549358, 41.138103919301, -1053.98, 414.3), null),
         facts = SpaceCompassCelestialFacts(parentName = "GJ 1132", massKg = 1.0971219200318e+25, massEstimated = true, diameterKm = 15182.2796703, diameterEstimated = true, revolutionDays = 1.62892911),
         aliases = listOf("GJ 1132 b", "GJ 1132"),
@@ -53,7 +53,7 @@ internal fun spaceCompassLargeCatalogData18(): List<SpaceCompassLargeCatalogEntr
         note = R.string.celestial_unresolved_exoplanet_note,
         temperatures = listOf(SpaceCompassCelestialTemperature(SpaceCompassCelestialTemperatureKind.EQUILIBRIUM_MODEL, 310.65))),
     SpaceCompassLargeCatalogEntry(
-        body = SpaceCompassCelestialBody.EXOPLANET_GJ_667_C_C,
+        body = SpaceCompassCelestialBody.valueOf("EXOPLANET_GJ_667_C_C"),
         entry = SpaceCompassAdditionalCatalogEntry(SpaceCompassCatalogType.EXOPLANET, "GJ 667 C c", SpaceCompassDeepSkyReference(17.316737393333334, -34.9977651, 23.62663753803692, 1131.61, -215.545), null),
         facts = SpaceCompassCelestialFacts(parentName = "GJ 667 C", massKg = 2.269436e+25, massEstimated = true, diameterKm = 22553.34, diameterEstimated = true, revolutionDays = 28.14),
         aliases = listOf("GJ 667 C c", "GJ 667 C"),
@@ -62,7 +62,7 @@ internal fun spaceCompassLargeCatalogData18(): List<SpaceCompassLargeCatalogEntr
         galaxy = "MILKY_WAY",
         note = R.string.celestial_unresolved_exoplanet_note),
     SpaceCompassLargeCatalogEntry(
-        body = SpaceCompassCelestialBody.EXOPLANET_GJ_273_B,
+        body = SpaceCompassCelestialBody.valueOf("EXOPLANET_GJ_273_B"),
         entry = SpaceCompassAdditionalCatalogEntry(SpaceCompassCatalogType.EXOPLANET, "GJ 273 b", SpaceCompassDeepSkyReference(7.456806066666667, 5.225807, 19.313464060237695, 571.0, -3694.0), null),
         facts = SpaceCompassCelestialFacts(parentName = "GJ 273", massKg = 1.7259658000000001e+25, massEstimated = true, diameterKm = 19240.420000000002, diameterEstimated = true, revolutionDays = 18.6498),
         aliases = listOf("GJ 273 b", "GJ 273"),
@@ -72,7 +72,7 @@ internal fun spaceCompassLargeCatalogData18(): List<SpaceCompassLargeCatalogEntr
         note = R.string.celestial_unresolved_exoplanet_note,
         temperatures = listOf(SpaceCompassCelestialTemperature(SpaceCompassCelestialTemperatureKind.EQUILIBRIUM_MODEL, 19.32000000000005))),
     SpaceCompassLargeCatalogEntry(
-        body = SpaceCompassCelestialBody.EXOPLANET_ROSS_128_B,
+        body = SpaceCompassCelestialBody.valueOf("EXOPLANET_ROSS_128_B"),
         entry = SpaceCompassAdditionalCatalogEntry(SpaceCompassCatalogType.EXOPLANET, "Ross 128 b", SpaceCompassDeepSkyReference(11.795840239999999, 0.7992898, 11.006277428037581, 607.678, -1223.32), null),
         facts = SpaceCompassCelestialFacts(parentName = "Ross 128", massKg = 8.36108e+24, massEstimated = true, diameterKm = 14143.62, diameterEstimated = true, revolutionDays = 9.8658),
         aliases = listOf("Ross 128 b", "Ross 128"),
@@ -82,7 +82,7 @@ internal fun spaceCompassLargeCatalogData18(): List<SpaceCompassLargeCatalogEntr
         note = R.string.celestial_unresolved_exoplanet_note,
         temperatures = listOf(SpaceCompassCelestialTemperature(SpaceCompassCelestialTemperatureKind.EQUILIBRIUM_MODEL, 27.850000000000023))),
     SpaceCompassLargeCatalogEntry(
-        body = SpaceCompassCelestialBody.EXOPLANET_BARNARD_B,
+        body = SpaceCompassCelestialBody.valueOf("EXOPLANET_BARNARD_B"),
         entry = SpaceCompassAdditionalCatalogEntry(SpaceCompassCatalogType.EXOPLANET, "Barnard b", SpaceCompassDeepSkyReference(17.96324096, 4.7379808, 5.95740931687935, -802.803, 10362.5), null),
         facts = SpaceCompassCelestialFacts(parentName = "Barnard's star", massKg = 1.7856878e+24, massEstimated = true, diameterKm = 9174.24, diameterEstimated = true, revolutionDays = 3.1542),
         aliases = listOf("Barnard b", "Barnard's star"),
@@ -92,7 +92,7 @@ internal fun spaceCompassLargeCatalogData18(): List<SpaceCompassLargeCatalogEntr
         note = R.string.celestial_unresolved_exoplanet_note,
         temperatures = listOf(SpaceCompassCelestialTemperature(SpaceCompassCelestialTemperatureKind.EQUILIBRIUM_MODEL, 164.85000000000002))),
     SpaceCompassLargeCatalogEntry(
-        body = SpaceCompassCelestialBody.EXOPLANET_TEEGARDEN_S_STAR_B,
+        body = SpaceCompassCelestialBody.valueOf("EXOPLANET_TEEGARDEN_S_STAR_B"),
         entry = SpaceCompassAdditionalCatalogEntry(SpaceCompassCatalogType.EXOPLANET, "Teegarden's Star b", SpaceCompassDeepSkyReference(2.88460966, 16.8649024, 12.49433328565606, 3429.53, -3806.16), null),
         facts = SpaceCompassCelestialFacts(parentName = "Teegarden's Star", massKg = 6.927751999999999e+24, massEstimated = true, diameterKm = 13379.1, diameterEstimated = true, revolutionDays = 4.90634),
         aliases = listOf("Teegarden's Star b", "Teegarden's Star"),
@@ -102,7 +102,7 @@ internal fun spaceCompassLargeCatalogData18(): List<SpaceCompassLargeCatalogEntr
         note = R.string.celestial_unresolved_exoplanet_note,
         temperatures = listOf(SpaceCompassCelestialTemperature(SpaceCompassCelestialTemperatureKind.EQUILIBRIUM_MODEL, 3.8500000000000227))),
     SpaceCompassLargeCatalogEntry(
-        body = SpaceCompassCelestialBody.EXOPLANET_WOLF_1061_C,
+        body = SpaceCompassCelestialBody.valueOf("EXOPLANET_WOLF_1061_C"),
         entry = SpaceCompassAdditionalCatalogEntry(SpaceCompassCatalogType.EXOPLANET, "Wolf 1061 c", SpaceCompassDeepSkyReference(16.504988506666667, -12.6676866, 14.044032698659842, -94.0273, -1183.78), null),
         facts = SpaceCompassCelestialFacts(parentName = "Wolf 1061", massKg = 2.0365202e+25, massEstimated = true, diameterKm = 21151.719999999998, diameterEstimated = true, revolutionDays = 17.8719),
         aliases = listOf("Wolf 1061 c", "Wolf 1061"),
@@ -112,7 +112,7 @@ internal fun spaceCompassLargeCatalogData18(): List<SpaceCompassLargeCatalogEntr
         note = R.string.celestial_unresolved_exoplanet_note,
         temperatures = listOf(SpaceCompassCelestialTemperature(SpaceCompassCelestialTemperatureKind.EQUILIBRIUM_MODEL, 26.150000000000034))),
     SpaceCompassLargeCatalogEntry(
-        body = SpaceCompassCelestialBody.EXOPLANET_HR_8799_B,
+        body = SpaceCompassCelestialBody.valueOf("EXOPLANET_HR_8799_B"),
         entry = SpaceCompassAdditionalCatalogEntry(SpaceCompassCatalogType.EXOPLANET, "HR 8799 b", SpaceCompassDeepSkyReference(23.124676573333332, 21.1340376, 134.52026257496573, 108.301, -49.4804), null),
         facts = SpaceCompassCelestialFacts(parentName = "HR 8799", massKg = 1.19444e+28, massEstimated = true, diameterKm = 165646.0, diameterEstimated = true, revolutionDays = 170000.0),
         aliases = listOf("HR 8799 b", "HR 8799"),
@@ -122,7 +122,7 @@ internal fun spaceCompassLargeCatalogData18(): List<SpaceCompassLargeCatalogEntr
         note = R.string.celestial_unresolved_exoplanet_note,
         temperatures = listOf(SpaceCompassCelestialTemperature(SpaceCompassCelestialTemperatureKind.EQUILIBRIUM_MODEL, 926.85))),
     SpaceCompassLargeCatalogEntry(
-        body = SpaceCompassCelestialBody.EXOPLANET_HR_8799_C,
+        body = SpaceCompassCelestialBody.valueOf("EXOPLANET_HR_8799_C"),
         entry = SpaceCompassAdditionalCatalogEntry(SpaceCompassCatalogType.EXOPLANET, "HR 8799 c", SpaceCompassDeepSkyReference(23.124676573333332, 21.1340376, 134.52026257496573, 108.301, -49.4804), null),
         facts = SpaceCompassCelestialFacts(parentName = "HR 8799", massKg = 1.79166e+28, massEstimated = true, diameterKm = 165646.0, diameterEstimated = true, revolutionDays = 69000.0),
         aliases = listOf("HR 8799 c", "HR 8799"),
@@ -132,7 +132,7 @@ internal fun spaceCompassLargeCatalogData18(): List<SpaceCompassLargeCatalogEntr
         note = R.string.celestial_unresolved_exoplanet_note,
         temperatures = listOf(SpaceCompassCelestialTemperature(SpaceCompassCelestialTemperatureKind.EQUILIBRIUM_MODEL, 926.85))),
     SpaceCompassLargeCatalogEntry(
-        body = SpaceCompassCelestialBody.EXOPLANET_HR_8799_D,
+        body = SpaceCompassCelestialBody.valueOf("EXOPLANET_HR_8799_D"),
         entry = SpaceCompassAdditionalCatalogEntry(SpaceCompassCatalogType.EXOPLANET, "HR 8799 d", SpaceCompassDeepSkyReference(23.124676573333332, 21.1340376, 134.52026257496573, 108.301, -49.4804), null),
         facts = SpaceCompassCelestialFacts(parentName = "HR 8799", massKg = 1.79166e+28, massEstimated = true, diameterKm = 165646.0, diameterEstimated = true, revolutionDays = 37000.0),
         aliases = listOf("HR 8799 d", "HR 8799"),
@@ -142,7 +142,7 @@ internal fun spaceCompassLargeCatalogData18(): List<SpaceCompassLargeCatalogEntr
         note = R.string.celestial_unresolved_exoplanet_note,
         temperatures = listOf(SpaceCompassCelestialTemperature(SpaceCompassCelestialTemperatureKind.EQUILIBRIUM_MODEL, 1026.85))),
     SpaceCompassLargeCatalogEntry(
-        body = SpaceCompassCelestialBody.EXOPLANET_HR_8799_E,
+        body = SpaceCompassCelestialBody.valueOf("EXOPLANET_HR_8799_E"),
         entry = SpaceCompassAdditionalCatalogEntry(SpaceCompassCatalogType.EXOPLANET, "HR 8799 e", SpaceCompassDeepSkyReference(23.124676573333332, 21.1340376, 134.52026257496573, 108.301, -49.4804), null),
         facts = SpaceCompassCelestialFacts(parentName = "HR 8799", massKg = 1.8981443260000001e+28, massEstimated = true, diameterKm = 167105.34126000002, diameterEstimated = true, revolutionDays = 20815.6),
         aliases = listOf("HR 8799 e", "HR 8799"),
@@ -152,7 +152,7 @@ internal fun spaceCompassLargeCatalogData18(): List<SpaceCompassLargeCatalogEntr
         note = R.string.celestial_unresolved_exoplanet_note,
         temperatures = listOf(SpaceCompassCelestialTemperature(SpaceCompassCelestialTemperatureKind.EQUILIBRIUM_MODEL, 876.85))),
     SpaceCompassLargeCatalogEntry(
-        body = SpaceCompassCelestialBody.EXOPLANET_BET_PIC_B,
+        body = SpaceCompassCelestialBody.valueOf("EXOPLANET_BET_PIC_B"),
         entry = SpaceCompassAdditionalCatalogEntry(SpaceCompassCatalogType.EXOPLANET, "bet Pic b", SpaceCompassDeepSkyReference(5.788082246666666, -51.066148, 64.3969675258434, 2.49266, 82.577), null),
         facts = SpaceCompassCelestialFacts(parentName = "bet Pic", massKg = 1.6513772866882982e+28, massEstimated = true, diameterKm = 235661.3787, diameterEstimated = true, revolutionDays = 8682.0),
         aliases = listOf("bet Pic b", "bet Pic"),
@@ -162,7 +162,7 @@ internal fun spaceCompassLargeCatalogData18(): List<SpaceCompassLargeCatalogEntr
         note = R.string.celestial_unresolved_exoplanet_note,
         temperatures = listOf(SpaceCompassCelestialTemperature(SpaceCompassCelestialTemperatureKind.EQUILIBRIUM_MODEL, 1338.85))),
     SpaceCompassLargeCatalogEntry(
-        body = SpaceCompassCelestialBody.EXOPLANET_BET_PIC_C,
+        body = SpaceCompassCelestialBody.valueOf("EXOPLANET_BET_PIC_C"),
         entry = SpaceCompassAdditionalCatalogEntry(SpaceCompassCatalogType.EXOPLANET, "bet Pic c", SpaceCompassDeepSkyReference(5.788082246666666, -51.066148, 64.3969675258434, 2.49266, 82.577), null),
         facts = SpaceCompassCelestialFacts(parentName = "bet Pic", massKg = 1.6513772866882982e+28, massEstimated = true, diameterKm = 159275.0, diameterEstimated = true, revolutionDays = 1202.0),
         aliases = listOf("bet Pic c", "bet Pic"),
@@ -172,7 +172,7 @@ internal fun spaceCompassLargeCatalogData18(): List<SpaceCompassLargeCatalogEntr
         note = R.string.celestial_unresolved_exoplanet_note,
         temperatures = listOf(SpaceCompassCelestialTemperature(SpaceCompassCelestialTemperatureKind.EQUILIBRIUM_MODEL, 976.85))),
     SpaceCompassLargeCatalogEntry(
-        body = SpaceCompassCelestialBody.EXOPLANET_51_ERI_B,
+        body = SpaceCompassCelestialBody.valueOf("EXOPLANET_51_ERI_B"),
         entry = SpaceCompassAdditionalCatalogEntry(SpaceCompassCatalogType.EXOPLANET, "51 Eri b", SpaceCompassDeepSkyReference(4.62671616, -2.4738245, 97.0559840940775, 44.3523, -63.8329), null),
         facts = SpaceCompassCelestialFacts(parentName = "51 Eri", revolutionDays = 9100.0),
         aliases = listOf("51 Eri b", "51 Eri"),
@@ -182,7 +182,7 @@ internal fun spaceCompassLargeCatalogData18(): List<SpaceCompassLargeCatalogEntr
         note = R.string.celestial_unresolved_exoplanet_note,
         temperatures = listOf(SpaceCompassCelestialTemperature(SpaceCompassCelestialTemperatureKind.EQUILIBRIUM_MODEL, 533.85))),
     SpaceCompassLargeCatalogEntry(
-        body = SpaceCompassCelestialBody.EXOPLANET_PDS_70_B,
+        body = SpaceCompassCelestialBody.valueOf("EXOPLANET_PDS_70_B"),
         entry = SpaceCompassAdditionalCatalogEntry(SpaceCompassCatalogType.EXOPLANET, "PDS 70 b", SpaceCompassDeepSkyReference(14.13614268, -41.3980405, 368.765446882728, -29.6608, -23.8227), null),
         facts = SpaceCompassCelestialFacts(parentName = "PDS 70", massKg = 6.07403139931328e+27, massEstimated = true, diameterKm = 279936.67085014004, diameterEstimated = true, revolutionDays = 43500.0),
         aliases = listOf("PDS 70 b", "PDS 70"),
@@ -192,7 +192,7 @@ internal fun spaceCompassLargeCatalogData18(): List<SpaceCompassLargeCatalogEntr
         note = R.string.celestial_unresolved_exoplanet_note,
         temperatures = listOf(SpaceCompassCelestialTemperature(SpaceCompassCelestialTemperatureKind.EQUILIBRIUM_MODEL, 1118.85))),
     SpaceCompassLargeCatalogEntry(
-        body = SpaceCompassCelestialBody.EXOPLANET_PDS_70_C,
+        body = SpaceCompassCelestialBody.valueOf("EXOPLANET_PDS_70_C"),
         entry = SpaceCompassAdditionalCatalogEntry(SpaceCompassCatalogType.EXOPLANET, "PDS 70 c", SpaceCompassDeepSkyReference(14.13614268, -41.3980405, 368.765446882728, -29.6608, -23.8227), null),
         facts = SpaceCompassCelestialFacts(parentName = "PDS 70", massKg = 1.42360110921405e+28, massEstimated = true, diameterKm = 282793.16756818, diameterEstimated = true),
         aliases = listOf("PDS 70 c", "PDS 70"),
@@ -202,7 +202,7 @@ internal fun spaceCompassLargeCatalogData18(): List<SpaceCompassLargeCatalogEntr
         note = R.string.celestial_unresolved_exoplanet_note,
         temperatures = listOf(SpaceCompassCelestialTemperature(SpaceCompassCelestialTemperatureKind.EQUILIBRIUM_MODEL, 780.85))),
     SpaceCompassLargeCatalogEntry(
-        body = SpaceCompassCelestialBody.EXOPLANET_HIP_65426_B,
+        body = SpaceCompassCelestialBody.valueOf("EXOPLANET_HIP_65426_B"),
         entry = SpaceCompassAdditionalCatalogEntry(SpaceCompassCatalogType.EXOPLANET, "HIP 65426 b", SpaceCompassDeepSkyReference(13.410011513333334, -51.5045384, 355.102756220875, -34.2457, -18.8113), null),
         facts = SpaceCompassCelestialFacts(parentName = "HIP 65426", massKg = 1.7083298934e+28, massEstimated = true, diameterKm = 214237.61700000003, diameterEstimated = true),
         aliases = listOf("HIP 65426 b", "HIP 65426"),
@@ -212,7 +212,7 @@ internal fun spaceCompassLargeCatalogData18(): List<SpaceCompassLargeCatalogEntr
         note = R.string.celestial_unresolved_exoplanet_note,
         temperatures = listOf(SpaceCompassCelestialTemperature(SpaceCompassCelestialTemperatureKind.EQUILIBRIUM_MODEL, 1226.85))),
     SpaceCompassLargeCatalogEntry(
-        body = SpaceCompassCelestialBody.EXOPLANET_HD_95086_B,
+        body = SpaceCompassCelestialBody.valueOf("EXOPLANET_HD_95086_B"),
         entry = SpaceCompassAdditionalCatalogEntry(SpaceCompassCatalogType.EXOPLANET, "HD 95086 b", SpaceCompassDeepSkyReference(10.95080688, -68.6672917, 281.23779520677834, -41.1358, 12.7), null),
         facts = SpaceCompassCelestialFacts(parentName = "HD 95086", massKg = 9.4898258e+27, massEstimated = true, diameterKm = 164371.80000000002, diameterEstimated = true),
         aliases = listOf("HD 95086 b", "HD 95086"),
@@ -222,7 +222,7 @@ internal fun spaceCompassLargeCatalogData18(): List<SpaceCompassLargeCatalogEntr
         note = R.string.celestial_unresolved_exoplanet_note,
         temperatures = listOf(SpaceCompassCelestialTemperature(SpaceCompassCelestialTemperatureKind.EQUILIBRIUM_MODEL, 726.85))),
     SpaceCompassLargeCatalogEntry(
-        body = SpaceCompassCelestialBody.BLACK_HOLE_GINGA_1354_64,
+        body = SpaceCompassCelestialBody.valueOf("BLACK_HOLE_GINGA_1354_64"),
         entry = SpaceCompassAdditionalCatalogEntry(SpaceCompassCatalogType.BLACK_HOLE, "V* BW Cir", SpaceCompassDeepSkyReference(13.969367426043862, -64.73479384958083, 2559.2936103264283, -5.072, -2.105), null),
         facts = SpaceCompassCelestialFacts(),
         aliases = listOf("Ginga 1354-64", "V* BW Cir"),
@@ -232,7 +232,7 @@ internal fun spaceCompassLargeCatalogData18(): List<SpaceCompassLargeCatalogEntr
         note = R.string.catalogue_compact_note,
         classification = R.string.catalogue_compact_candidate),
     SpaceCompassLargeCatalogEntry(
-        body = SpaceCompassCelestialBody.BLACK_HOLE_GINGA_2000_25,
+        body = SpaceCompassCelestialBody.valueOf("BLACK_HOLE_GINGA_2000_25"),
         entry = SpaceCompassAdditionalCatalogEntry(SpaceCompassCatalogType.BLACK_HOLE, "V* QZ Vul", SpaceCompassDeepSkyReference(20.047089455753085, 25.23628657401223, Double.NaN, 0.0, 0.0, hasMeasuredDistance = false), null),
         facts = SpaceCompassCelestialFacts(),
         aliases = listOf("Ginga 2000+25", "V* QZ Vul"),
@@ -242,7 +242,7 @@ internal fun spaceCompassLargeCatalogData18(): List<SpaceCompassLargeCatalogEntr
         note = R.string.catalogue_compact_note,
         classification = R.string.catalogue_compact_candidate),
     SpaceCompassLargeCatalogEntry(
-        body = SpaceCompassCelestialBody.BLACK_HOLE_GRANAT_1915_105,
+        body = SpaceCompassCelestialBody.valueOf("BLACK_HOLE_GRANAT_1915_105"),
         entry = SpaceCompassAdditionalCatalogEntry(SpaceCompassCatalogType.BLACK_HOLE, "Granat 1915+105", SpaceCompassDeepSkyReference(19.253209933333334, 10.945807, Double.NaN, 0.0, 0.0, hasMeasuredDistance = false), null),
         facts = SpaceCompassCelestialFacts(),
         aliases = listOf("Granat 1915+105"),
@@ -252,7 +252,7 @@ internal fun spaceCompassLargeCatalogData18(): List<SpaceCompassLargeCatalogEntr
         note = R.string.catalogue_compact_note,
         classification = R.string.catalogue_compact_candidate),
     SpaceCompassLargeCatalogEntry(
-        body = SpaceCompassCelestialBody.BLACK_HOLE_GRO_J1655_40,
+        body = SpaceCompassCelestialBody.valueOf("BLACK_HOLE_GRO_J1655_40"),
         entry = SpaceCompassAdditionalCatalogEntry(SpaceCompassCatalogType.BLACK_HOLE, "V* V1033 Sco", SpaceCompassDeepSkyReference(16.900039554528306, -39.84576713926111, 11239.020596140592, -4.329, -7.461), null),
         facts = SpaceCompassCelestialFacts(),
         aliases = listOf("GRO J1655-40", "V* V1033 Sco"),
@@ -262,7 +262,7 @@ internal fun spaceCompassLargeCatalogData18(): List<SpaceCompassLargeCatalogEntr
         note = R.string.catalogue_compact_note,
         classification = R.string.catalogue_compact_candidate),
     SpaceCompassLargeCatalogEntry(
-        body = SpaceCompassCelestialBody.BLACK_HOLE_H_1705_250,
+        body = SpaceCompassCelestialBody.valueOf("BLACK_HOLE_H_1705_250"),
         entry = SpaceCompassAdditionalCatalogEntry(SpaceCompassCatalogType.BLACK_HOLE, "V* V2107 Oph", SpaceCompassDeepSkyReference(17.13736349213261, -25.091711024438332, 1517.2886941756606, -6.967, -8.508), null),
         facts = SpaceCompassCelestialFacts(),
         aliases = listOf("H 1705-250", "V* V2107 Oph"),
@@ -272,7 +272,7 @@ internal fun spaceCompassLargeCatalogData18(): List<SpaceCompassLargeCatalogEntr
         note = R.string.catalogue_compact_note,
         classification = R.string.catalogue_compact_candidate),
     SpaceCompassLargeCatalogEntry(
-        body = SpaceCompassCelestialBody.BLACK_HOLE_MAXI_J1348_630,
+        body = SpaceCompassCelestialBody.valueOf("BLACK_HOLE_MAXI_J1348_630"),
         entry = SpaceCompassAdditionalCatalogEntry(SpaceCompassCatalogType.BLACK_HOLE, "MAXI J1348-630", SpaceCompassDeepSkyReference(13.803538564900665, -63.27491918978, Double.NaN, 0.0, 0.0, hasMeasuredDistance = false), null),
         facts = SpaceCompassCelestialFacts(),
         aliases = listOf("MAXI J1348-630"),
@@ -282,7 +282,7 @@ internal fun spaceCompassLargeCatalogData18(): List<SpaceCompassLargeCatalogEntr
         note = R.string.catalogue_compact_note,
         classification = R.string.catalogue_compact_candidate),
     SpaceCompassLargeCatalogEntry(
-        body = SpaceCompassCelestialBody.BLACK_HOLE_MAXI_J1659_152,
+        body = SpaceCompassCelestialBody.valueOf("BLACK_HOLE_MAXI_J1659_152"),
         entry = SpaceCompassAdditionalCatalogEntry(SpaceCompassCatalogType.BLACK_HOLE, "MAXI J1659-152", SpaceCompassDeepSkyReference(16.983800000000002, -15.257980555555555, Double.NaN, 0.0, 0.0, hasMeasuredDistance = false), null),
         facts = SpaceCompassCelestialFacts(),
         aliases = listOf("MAXI J1659-152"),
@@ -292,7 +292,7 @@ internal fun spaceCompassLargeCatalogData18(): List<SpaceCompassLargeCatalogEntr
         note = R.string.catalogue_compact_note,
         classification = R.string.catalogue_compact_candidate),
     SpaceCompassLargeCatalogEntry(
-        body = SpaceCompassCelestialBody.BLACK_HOLE_MAXI_J1820_070,
+        body = SpaceCompassCelestialBody.valueOf("BLACK_HOLE_MAXI_J1820_070"),
         entry = SpaceCompassAdditionalCatalogEntry(SpaceCompassCatalogType.BLACK_HOLE, "MAXI J1820+070", SpaceCompassDeepSkyReference(18.339428439346662, 7.1853569054, 8834.13807421452, -3.093, -6.286), null),
         facts = SpaceCompassCelestialFacts(),
         aliases = listOf("MAXI J1820+070"),
@@ -302,7 +302,7 @@ internal fun spaceCompassLargeCatalogData18(): List<SpaceCompassLargeCatalogEntr
         note = R.string.catalogue_compact_note,
         classification = R.string.catalogue_compact_candidate),
     SpaceCompassLargeCatalogEntry(
-        body = SpaceCompassCelestialBody.BLACK_HOLE_NGC_1277_NUCLEUS,
+        body = SpaceCompassCelestialBody.valueOf("BLACK_HOLE_NGC_1277_NUCLEUS"),
         entry = SpaceCompassAdditionalCatalogEntry(SpaceCompassCatalogType.BLACK_HOLE, "NGC  1277", SpaceCompassDeepSkyReference(3.3309681785420007, 41.57359289979, 1308.2887192137987, 0.602, -2.792), null),
         facts = SpaceCompassCelestialFacts(),
         aliases = listOf("NGC  1277", "NGC 1277 · nucleus", "NGC 1277 · nucleo", "NGC 1277 · Kern", "NGC 1277 · noyau", "NGC 1277 · núcleo", "NGC 1277 · kern", "NGC 1277 · jądro", "NGC 1277 · ядро", "NGC 1277 · çekirdek", "NGC 1277 · πυρήνας", "NGC 1277 · نواة", "NGC 1277 · هسته", "NGC 1277 · גרעין", "NGC 1277 · नाभिक", "NGC 1277 · inti", "NGC 1277 · kiini", "NGC 1277 · 核", "NGC 1277 · 핵", "NGC 1277 · 星系核"),
@@ -311,7 +311,7 @@ internal fun spaceCompassLargeCatalogData18(): List<SpaceCompassLargeCatalogEntr
         galaxy = "NGC 1277",
         note = R.string.catalogue_compact_note),
     SpaceCompassLargeCatalogEntry(
-        body = SpaceCompassCelestialBody.BLACK_HOLE_NGC_3115_NUCLEUS,
+        body = SpaceCompassCelestialBody.valueOf("BLACK_HOLE_NGC_3115_NUCLEUS"),
         entry = SpaceCompassAdditionalCatalogEntry(SpaceCompassCatalogType.BLACK_HOLE, "NGC  3115", SpaceCompassDeepSkyReference(10.087201958528, -7.718606308970001, Double.NaN, 0.0, 0.0, hasMeasuredDistance = false), null),
         facts = SpaceCompassCelestialFacts(),
         aliases = listOf("NGC  3115", "NGC 3115 · nucleus", "NGC 3115 · nucleo", "NGC 3115 · Kern", "NGC 3115 · noyau", "NGC 3115 · núcleo", "NGC 3115 · kern", "NGC 3115 · jądro", "NGC 3115 · ядро", "NGC 3115 · çekirdek", "NGC 3115 · πυρήνας", "NGC 3115 · نواة", "NGC 3115 · هسته", "NGC 3115 · גרעין", "NGC 3115 · नाभिक", "NGC 3115 · inti", "NGC 3115 · kiini", "NGC 3115 · 核", "NGC 3115 · 핵", "NGC 3115 · 星系核"),
@@ -320,7 +320,7 @@ internal fun spaceCompassLargeCatalogData18(): List<SpaceCompassLargeCatalogEntr
         galaxy = "NGC 3115",
         note = R.string.catalogue_compact_note),
     SpaceCompassLargeCatalogEntry(
-        body = SpaceCompassCelestialBody.BLACK_HOLE_NGC_3379_NUCLEUS,
+        body = SpaceCompassCelestialBody.valueOf("BLACK_HOLE_NGC_3379_NUCLEUS"),
         entry = SpaceCompassAdditionalCatalogEntry(SpaceCompassCatalogType.BLACK_HOLE, "M 105", SpaceCompassDeepSkyReference(10.79711111111111, 12.581630555555554, Double.NaN, 0.0, 0.0, hasMeasuredDistance = false), null),
         facts = SpaceCompassCelestialFacts(),
         aliases = listOf("NGC  3379", "M 105", "NGC 3379 · nucleus", "NGC 3379 · nucleo", "NGC 3379 · Kern", "NGC 3379 · noyau", "NGC 3379 · núcleo", "NGC 3379 · kern", "NGC 3379 · jądro", "NGC 3379 · ядро", "NGC 3379 · çekirdek", "NGC 3379 · πυρήνας", "NGC 3379 · نواة", "NGC 3379 · هسته", "NGC 3379 · גרעין", "NGC 3379 · नाभिक", "NGC 3379 · inti", "NGC 3379 · kiini", "NGC 3379 · 核", "NGC 3379 · 핵", "NGC 3379 · 星系核"),
@@ -329,7 +329,7 @@ internal fun spaceCompassLargeCatalogData18(): List<SpaceCompassLargeCatalogEntr
         galaxy = "NGC 3379",
         note = R.string.catalogue_compact_note),
     SpaceCompassLargeCatalogEntry(
-        body = SpaceCompassCelestialBody.BLACK_HOLE_NGC_4258_NUCLEUS,
+        body = SpaceCompassCelestialBody.valueOf("BLACK_HOLE_NGC_4258_NUCLEUS"),
         entry = SpaceCompassAdditionalCatalogEntry(SpaceCompassCatalogType.BLACK_HOLE, "M 106", SpaceCompassDeepSkyReference(12.316005555555554, 47.30371944444444, Double.NaN, 0.0, 0.0, hasMeasuredDistance = false), null),
         facts = SpaceCompassCelestialFacts(),
         aliases = listOf("NGC  4258", "M 106", "NGC 4258 · nucleus", "NGC 4258 · nucleo", "NGC 4258 · Kern", "NGC 4258 · noyau", "NGC 4258 · núcleo", "NGC 4258 · kern", "NGC 4258 · jądro", "NGC 4258 · ядро", "NGC 4258 · çekirdek", "NGC 4258 · πυρήνας", "NGC 4258 · نواة", "NGC 4258 · هسته", "NGC 4258 · גרעין", "NGC 4258 · नाभिक", "NGC 4258 · inti", "NGC 4258 · kiini", "NGC 4258 · 核", "NGC 4258 · 핵", "NGC 4258 · 星系核"),
@@ -338,7 +338,7 @@ internal fun spaceCompassLargeCatalogData18(): List<SpaceCompassLargeCatalogEntr
         galaxy = "NGC 4258",
         note = R.string.catalogue_compact_note),
     SpaceCompassLargeCatalogEntry(
-        body = SpaceCompassCelestialBody.BLACK_HOLE_NGC_4261_NUCLEUS,
+        body = SpaceCompassCelestialBody.valueOf("BLACK_HOLE_NGC_4261_NUCLEUS"),
         entry = SpaceCompassAdditionalCatalogEntry(SpaceCompassCatalogType.BLACK_HOLE, "NGC  4261", SpaceCompassDeepSkyReference(12.323115573055555, 5.824916673333333, Double.NaN, -0.00883, 0.03145, hasMeasuredDistance = false), null),
         facts = SpaceCompassCelestialFacts(),
         aliases = listOf("NGC  4261", "NGC 4261 · nucleus", "NGC 4261 · nucleo", "NGC 4261 · Kern", "NGC 4261 · noyau", "NGC 4261 · núcleo", "NGC 4261 · kern", "NGC 4261 · jądro", "NGC 4261 · ядро", "NGC 4261 · çekirdek", "NGC 4261 · πυρήνας", "NGC 4261 · نواة", "NGC 4261 · هسته", "NGC 4261 · גרעין", "NGC 4261 · नाभिक", "NGC 4261 · inti", "NGC 4261 · kiini", "NGC 4261 · 核", "NGC 4261 · 핵", "NGC 4261 · 星系核"),

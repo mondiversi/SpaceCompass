@@ -8,8 +8,8 @@ paths, inspect reference facts and view textured models. Space Compass is a stan
 
 ## Download and install
 
-Download **space-compass-1.6.0.apk** from the
-[Space Compass 1.6.0 release](https://github.com/mondiversi/SpaceCompass/releases/tag/v1.6.0).
+Download **space-compass-1.7.0.apk** from the
+[Space Compass 1.7.0 release](https://github.com/mondiversi/SpaceCompass/releases/tag/v1.7.0).
 Android 8.0 or newer is required. Open the APK and follow Android's installation
 prompts; allow installation for your browser or file manager if requested.
 
@@ -22,12 +22,12 @@ one manual APK update to acquire this feature.
 The release includes `SHA256SUMS.txt` and a signed update index. GitHub's source
 ZIP/TAR archives and Actions debug artifacts are separate from the signed APK.
 See [distribution and signing](docs/GITHUB_RELEASES.md) and
-[the 1.6.0 release audit](docs/RELEASE_1_6_0.md).
+[the 1.7.0 release audit](docs/RELEASE_1_7_0.md).
 
 ## Features
 
 - Live azimuth/altitude, compass guidance, named daily paths and satellite passes. Pin multiple path points and manage the same selections in the daily path. Reticle-focused callouts show clock and T± side by side. Current positions and lunar phases remain available.
-- 1009 catalogue objects: Sun, Moon, planets, natural/artificial satellites,
+- 9,999 catalogue objects: Sun, Moon, planets, natural/artificial satellites,
   comets, Voyager spacecraft, nearby stars, nebulae, star clusters, compact objects and exoplanets.
 - Live search by localized name or catalog identifier, combined with four paired filters: type, visibility, origin and pointing availability. Selected objects remain pinned first and visible through filters/search; numeric or alphabetical sorting still applies within each group. Object rows and Type choices use neutral theme backgrounds. A funnel identifies filters; up/down arrows identify sorting. The compact search field centers its text, hint and cursor.
 - Type/visibility filters and numeric sorting by Sun-centred or Earth-centred distance, mass, diameter, pressure,
@@ -57,8 +57,9 @@ See [distribution and signing](docs/GITHUB_RELEASES.md) and
   optional −3600× to +3600× time speed with a central 0× pause and restart/active-only/always resumption.
   Open it directly from the main scene. Compact independent cards show effective current values;
   customized values are bold. The leading icon/checkbox/title target toggles a parameter; values,
-  the chevron and other card space open its editor. Child activation remains synchronized and disabled
-  forms stay visible in grey. Resumption has no checkbox and always offers its three policies.
+  the chevron and other card space open its editor. Child forms stay fully visible and editable, with activation controlled only by the management menu.
+  Prepared inactive values are saved without applying them. Resumption has an always-checked, disabled grey
+  checkbox and still offers its three policies.
   Natural-height cards pack into up to two readable columns in landscape.
   Save, share and import named `.spacecompass` location files with optional scene objects and the active target.
   Without observer or speed overrides, export captures the current position, altitude and time zone only;
@@ -75,7 +76,7 @@ See [distribution and signing](docs/GITHUB_RELEASES.md) and
   qualified core temperatures, spatial context and credits. Export data and current/rotation images.
 - General settings combine light/dark themes, adjustable sky fluidity, event controls and original ambient music synthesized continuously offline. Balanced fluidity is the default; previously saved levels are retained.
   Music starts enabled at 20% volume, with saved on/off and ten-percent volume steps. Settings-save confirmations are deferred until leaving a modified settings page.
-- Music cards reveal their controls with 300 ms animations. Location child forms use the same duration for their active/disabled grey treatment, without collapsing their contents.
+- Music cards reveal their controls with 300 ms animations. Location child forms stay fully editable independently of their activation in the management menu.
 - Full-screen animated Earth screensaver with local time, date and battery, enabled after five minutes by default. It shows the last known real GPS position, with a dimmed grey marker on the far side, on a correctly oriented globe with eastward visual spin. Seasons and geographic day/night illumination follow the real UTC Sun independently of scenarios. It pauses live sensors, GPS, camera and data refresh until dismissed.
 - Solar-height-driven dawn/dusk lighting shared by sky, ground, weather and panoramic captures.
 - Translucent main islands with paths and objects drawn behind them, a reticle centred in the free sky area and a 50/50 landscape split.
@@ -93,7 +94,7 @@ See [distribution and signing](docs/GITHUB_RELEASES.md) and
 - Signed startup/manual GitHub updates with package, certificate, size and checksum verification.
 
 The application ID is `me.mondiversi.spacecompass`. The current stable version is
-**1.6.0**, with Android/update identity `1.6.0` and version code **55**.
+**1.7.0**, with Android/update identity `1.7.0` and version code **56**.
 This preserves the three-part update protocol used by existing preview installations.
 The app stores its preferences and caches privately.
 
@@ -155,18 +156,17 @@ Launcher/loading artwork and original illustrations are project assets.
 
 ## Data and graphics packages
 
-Release 1.6.0 includes **1009 selectable objects**, and an optional reference-information archive.
+Release 1.7.0 includes **9,999 selectable objects**, and an optional reference-information archive.
 All descriptive data and translations remain inside the APK. Scientific limits and provenance are in the
-[catalogue sources](docs/CATALOG_999.md) and [canonical source catalogue](catalogue/README.md).
+[catalogue sources](docs/CATALOG_9999.md) and [canonical source catalogue](catalogue/README.md).
 
-The [graphics collection 1.7](https://github.com/mondiversi/SpaceCompass/releases/tag/celestial-textures-v1.7)
-contains **184 full images and 184 independent 128×128 previews**, all WebP quality 90/method 6.
+The [graphics collection 1.8](https://github.com/mondiversi/SpaceCompass/releases/tag/celestial-textures-v1.8)
+contains **189 full images and 189 independent 128×128 previews**, all WebP quality 90/method 6.
 Most full images are 2048×1024; existing illustrations retain their original source dimensions.
 Catalogue/live/captured glyphs request lightweight previews. The Observatory and image exports
 fetch full resources when needed; lunar phase stays dynamic.
-The complete logical collection is **43.74 MB (41.71 MiB; 43,735,950 bytes)**, including metadata.
-The incremental 1.7 release adds ten images and ten previews, plus index, credits and checksums:
-**4.98 MB (4.75 MiB; 4,984,704 bytes)**. Unchanged files continue to download from immutable pack 1.6;
+The complete logical image collection is **43.66 MB (41.64 MiB; 43,663,574 bytes)**, excluding metadata.
+The incremental 1.8 release adds five photographs and five previews: **444,858 image bytes**, plus index, credits and checksums. Unchanged files continue to download from immutable packs 1.6 and 1.7;
 the manifest and APK pin every resource to its exact version, size, SHA-256 and dimensions.
 Downloads are individual, with persistent offline caches and reusable verified legacy filenames.
 Missing photographs keep appropriate rendered symbols without disabling pointing.

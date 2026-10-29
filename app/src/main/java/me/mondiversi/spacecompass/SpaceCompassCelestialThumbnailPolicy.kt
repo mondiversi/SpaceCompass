@@ -187,7 +187,7 @@ internal object SpaceCompassCelestialThumbnailPolicy {
         SpaceCompassCelestialTexture("thumb_fictional_vulcan.webp", 4644, "7c088b35eb45883fc74465998229825cb8197944f7abf6170e7c53c083f5f3e2", 128, 128, downloadPack = "celestial-textures-v1.7", downloadName = "thumb_fictional_vulcan.webp"),
         SpaceCompassCelestialTexture("thumb_fictional_nostromo.webp", 1880, "c1b9169790840b75d2b2d13475c2c2c6b41b95b6e9aa3d0fa146aa0a497a6bd9", 128, 128, downloadPack = "celestial-textures-v1.7", downloadName = "thumb_fictional_nostromo.webp"),
         SpaceCompassCelestialTexture("thumb_fictional_discovery_one.webp", 1018, "a7586b32d0f35ade89b94db056d28d2a6bf555de2b4eed6d2476e3d96653a91a", 128, 128, downloadPack = "celestial-textures-v1.7", downloadName = "thumb_fictional_discovery_one.webp")
-    )
+    ) + spaceCompassAdditionalCatalogThumbnails()
     private val byParent = images.associateBy { it.name.removePrefix("thumb_") }
     fun forImage(name: String?) = byParent[SpaceCompassTextureAliases.canonical(name)]
 }

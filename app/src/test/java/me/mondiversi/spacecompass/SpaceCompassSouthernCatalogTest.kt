@@ -21,7 +21,7 @@ class SpaceCompassSouthernCatalogTest {
     @Test fun additionsAreUniqueAndRetainTheCorrectCategoriesAndDefaults() {
         val bodies = listOf(SpaceCompassCelestialBody.CERES, SpaceCompassCelestialBody.ENCELADUS,
             SpaceCompassCelestialBody.VEGA, SpaceCompassCelestialBody.DENEB, SpaceCompassCelestialBody.ALTAIR, cross)
-        assertEquals(1009, spaceCompassCelestialCatalogOrder.size)
+        assertEquals(9999, spaceCompassCelestialCatalogOrder.size)
         for (body in bodies) {
             assertEquals(1, spaceCompassCelestialCatalogOrder.count { it == body })
             assertNotNull(body.scientificDesignation)

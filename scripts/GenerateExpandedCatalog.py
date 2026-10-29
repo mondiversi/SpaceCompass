@@ -28,16 +28,9 @@ def edit(name,fn):
     if CHECK:assert updated==text,name
     elif updated!=text:path.write_text(updated,encoding='utf-8',newline='\n')
 
-enum='\n'.join('    '+r['id']+'(R.string.catalogue_'+r['key']+'),' for r in rows).rstrip(',')
-def add_enum(t):
-    start=t.index('    M51_CORE(R.string.celestial_m51_core)')
-    marker='\n    // Fictional reference identities'
-    end=t.index(marker,start) if marker in t[start:] else t.index('\n}',start)
-    existing=set(re.findall(r'^    ([A-Z0-9_]+)\(R.string.catalogue_',t[start:end],re.M))
-    requested={r['id'] for r in rows}
-    assert existing <= requested, 'Retire old identifiers explicitly; do not silently delete saved selection identities.'
-    return t[:start]+'    M51_CORE(R.string.celestial_m51_core),\n'+enum+(',' if t[end:].startswith(marker) else '')+t[end:]
-edit('SpaceCompassCelestialModel.kt',add_enum)
+# Identity definitions are independently append-only; never reassign saved ordinals.
+identities=json.loads((stage/'body-identities.json').read_text())
+assert {r['id'] for r in rows} <= {d['name'] for d in identities}
 
 builders=[]
 for start in range(0,len(rows),35):
@@ -52,7 +45,7 @@ for start in range(0,len(rows),35):
         elif r['type']=='BLACK_HOLE':note='R.string.catalogue_compact_note'
         elif 'target' in r:note='R.string.celestial_horizons_tracking_note'
         elif 'satellite' in r:note='R.string.celestial_satellite_tracking_note'
-        fields=['body = SpaceCompassCelestialBody.'+r['id'],
+        fields=['body = SpaceCompassCelestialBody.valueOf('+string(r['id'])+')',
             'entry = SpaceCompassAdditionalCatalogEntry(SpaceCompassCatalogType.'+r['type']+', '+string(r['designation'])+', '+(ref(r['reference']) if 'reference'in r else 'null')+', '+('SpaceCompassHorizonsTarget('+string(r['target']['command'])+', '+string(r['target']['expected'])+', 0.0..'+value(r['target']['maxAu'])+')' if 'target'in r else 'null')+')',
             'facts = '+facts(r.get('facts',{})),
             'aliases = listOf('+', '.join(string(s) for s in dict.fromkeys(r.get('aliases',[])+list(r.get('localizedNames',{}).values())))+')',
@@ -99,7 +92,7 @@ internal data class SpaceCompassConstellationPattern(val stars: List<SpaceCompas
 internal val spaceCompassLargeCatalogEntries: List<SpaceCompassLargeCatalogEntry> by lazy {
     buildList {
 '''+''.join('        addAll('+b+')\n' for b in builders)+'''    }.also { entries ->
-        check(entries.size == 894 && entries.map { it.body }.toSet().size == entries.size)
+        check(entries.size == '''+str(len(rows))+''' && entries.map { it.body }.toSet().size == entries.size)
     }
 }
 private val largeCatalogByOrdinal: Array<SpaceCompassLargeCatalogEntry?> by lazy {
@@ -119,7 +112,7 @@ internal fun spaceCompassIncludeLargeCatalog(previous: List<SpaceCompassCelestia
             add(body)
             if (last[body.catalogType] == index) addAll(additions[body.catalogType].orEmpty().map { it.body })
         }
-    }.also { check(it.size == 999 && it.toSet().size == it.size) }
+    }.also { check(it.size == '''+str(len(rows)+105)+''' && it.toSet().size == it.size) }
 }
 ''')
 

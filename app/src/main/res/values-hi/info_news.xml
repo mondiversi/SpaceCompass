@@ -1,9 +1,9 @@
 <resources>
     <string name="info_news_title">हाल के बदलाव · %1$s</string>
-    <string name="info_news_star_sky" formatted="false">लोकेशन प्रबंधन में वर्तमान मान, मोटे अक्षरों में कस्टम सेटिंग और अधिक सघन नियंत्रण दिखते हैं।</string>
-    <string name="info_news_texture_downloads" formatted="false">वेधशाला में पिंडों को पसंदीदा बनाएँ और कैटलॉग के दिल वाले बटन से केवल पसंदीदा देखें।</string>
-    <string name="info_news_weather" formatted="false">पसंदीदा के चेकबॉक्स गुलाबी होते हैं। फ़िल्टर की गिनती पसंदीदा, खोज और अन्य सक्रिय फ़िल्टर के अनुसार बदलती है।</string>
-    <string name="info_news_viewer_zoom" formatted="false">नया चुना गया पिंड सक्रिय हो जाता है। मुख्य दृश्य पर लौटने तक सूची अपनी जगह रहती है।</string>
-    <string name="info_news_settings" formatted="false">लोकेशन फ़ाइलों में चुने हुए पिंड शामिल किए जा सकते हैं। स्वचालित निर्यात स्थान, ऊँचाई और समय क्षेत्र साझा करता है; तारीख और समय वर्तमान रहते हैं।</string>
-    <string name="info_news_catalog" formatted="false">ज़रूरत पड़ने पर पिंडों के डेटा अपने आप अपडेट होते हैं। स्क्रॉल करते समय खुला फ़िल्टर पैनल दिखाई देता रहता है।</string>
+    <string name="info_news_star_sky" formatted="false">कैटलॉग में अब सौर मंडल और गहरे आकाश के 9,999 पिंड हैं।</string>
+    <string name="info_news_texture_downloads" formatted="false">विस्तृत ट्रैकिंग सत्यापित JPL और उपग्रह स्रोतों का उपयोग करती है तथा ऐतिहासिक या अनुपलब्ध डेटा की सीमाएँ स्पष्ट करती है।</string>
+    <string name="info_news_weather" formatted="false">ग्राफ़िक्स पैक 1.8 में पाँच नई तस्वीरें और अलग थंबनेल हैं, जो अलग-अलग डाउनलोड होकर ऑफ़लाइन सहेजे जाते हैं।</string>
+    <string name="info_news_viewer_zoom" formatted="false">बड़े कैटलॉग के लिए गणना, खोज और डेटा रीफ़्रेश बेहतर किए गए हैं।</string>
+    <string name="info_news_settings" formatted="false">लोकेशन के उपपृष्ठ हमेशा संपादन योग्य रहते हैं। कस्टम मान केवल लोकेशन प्रबंधन से चालू या बंद करें।</string>
+    <string name="info_news_catalog" formatted="false">अधिक सघन कार्ड और हमेशा चयनित, निष्क्रिय पुनः आरंभ चेकबॉक्स नियंत्रणों को स्पष्ट बनाते हैं।</string>
 </resources>

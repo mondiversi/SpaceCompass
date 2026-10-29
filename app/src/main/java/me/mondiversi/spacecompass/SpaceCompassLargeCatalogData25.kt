@@ -3,7 +3,7 @@ package me.mondiversi.spacecompass
 /** Generated from catalogue/expanded-catalog.json; regenerate with scripts/GenerateExpandedCatalog.py. */
 internal fun spaceCompassLargeCatalogData25(): List<SpaceCompassLargeCatalogEntry> = listOf(
     SpaceCompassLargeCatalogEntry(
-        body = SpaceCompassCelestialBody.MOON_JPL_0713,
+        body = SpaceCompassCelestialBody.valueOf("MOON_JPL_0713"),
         entry = SpaceCompassAdditionalCatalogEntry(SpaceCompassCatalogType.NATURAL_SATELLITE, "Rosalind · JPL 713", null, SpaceCompassHorizonsTarget("713", "Rosalind (713)", 0.0..10000.0)),
         facts = SpaceCompassCelestialFacts(revolutionDays = 0.558459, parent = SpaceCompassCelestialBody.URANUS),
         aliases = listOf("Rosalind", "713"),
@@ -12,7 +12,7 @@ internal fun spaceCompassLargeCatalogData25(): List<SpaceCompassLargeCatalogEntr
         galaxy = "MILKY_WAY",
         note = R.string.celestial_horizons_tracking_note),
     SpaceCompassLargeCatalogEntry(
-        body = SpaceCompassCelestialBody.MOON_JPL_0714,
+        body = SpaceCompassCelestialBody.valueOf("MOON_JPL_0714"),
         entry = SpaceCompassAdditionalCatalogEntry(SpaceCompassCatalogType.NATURAL_SATELLITE, "Belinda · JPL 714", null, SpaceCompassHorizonsTarget("714", "Belinda (714)", 0.0..10000.0)),
         facts = SpaceCompassCelestialFacts(revolutionDays = 0.623525, parent = SpaceCompassCelestialBody.URANUS),
         aliases = listOf("Belinda", "714"),
@@ -21,7 +21,7 @@ internal fun spaceCompassLargeCatalogData25(): List<SpaceCompassLargeCatalogEntr
         galaxy = "MILKY_WAY",
         note = R.string.celestial_horizons_tracking_note),
     SpaceCompassLargeCatalogEntry(
-        body = SpaceCompassCelestialBody.MOON_JPL_0715,
+        body = SpaceCompassCelestialBody.valueOf("MOON_JPL_0715"),
         entry = SpaceCompassAdditionalCatalogEntry(SpaceCompassCatalogType.NATURAL_SATELLITE, "Puck · JPL 715", null, SpaceCompassHorizonsTarget("715", "Puck (715)", 0.0..10000.0)),
         facts = SpaceCompassCelestialFacts(revolutionDays = 0.761832, parent = SpaceCompassCelestialBody.URANUS),
         aliases = listOf("Puck", "715", "Пак", "פאק", "パック", "퍽", "天卫十五"),
@@ -30,7 +30,7 @@ internal fun spaceCompassLargeCatalogData25(): List<SpaceCompassLargeCatalogEntr
         galaxy = "MILKY_WAY",
         note = R.string.celestial_horizons_tracking_note),
     SpaceCompassLargeCatalogEntry(
-        body = SpaceCompassCelestialBody.MOON_JPL_0716,
+        body = SpaceCompassCelestialBody.valueOf("MOON_JPL_0716"),
         entry = SpaceCompassAdditionalCatalogEntry(SpaceCompassCatalogType.NATURAL_SATELLITE, "Caliban · JPL 716", null, SpaceCompassHorizonsTarget("716", "Caliban (716)", 0.0..10000.0)),
         facts = SpaceCompassCelestialFacts(revolutionDays = 579.7595, parent = SpaceCompassCelestialBody.URANUS),
         aliases = listOf("Caliban", "716"),
@@ -39,7 +39,7 @@ internal fun spaceCompassLargeCatalogData25(): List<SpaceCompassLargeCatalogEntr
         galaxy = "MILKY_WAY",
         note = R.string.celestial_horizons_tracking_note),
     SpaceCompassLargeCatalogEntry(
-        body = SpaceCompassCelestialBody.MOON_JPL_0717,
+        body = SpaceCompassCelestialBody.valueOf("MOON_JPL_0717"),
         entry = SpaceCompassAdditionalCatalogEntry(SpaceCompassCatalogType.NATURAL_SATELLITE, "Sycorax · JPL 717", null, SpaceCompassHorizonsTarget("717", "Sycorax (717)", 0.0..10000.0)),
         facts = SpaceCompassCelestialFacts(revolutionDays = 1288.4048, parent = SpaceCompassCelestialBody.URANUS),
         aliases = listOf("Sycorax", "717"),
@@ -48,7 +48,7 @@ internal fun spaceCompassLargeCatalogData25(): List<SpaceCompassLargeCatalogEntr
         galaxy = "MILKY_WAY",
         note = R.string.celestial_horizons_tracking_note),
     SpaceCompassLargeCatalogEntry(
-        body = SpaceCompassCelestialBody.MOON_JPL_0802,
+        body = SpaceCompassCelestialBody.valueOf("MOON_JPL_0802"),
         entry = SpaceCompassAdditionalCatalogEntry(SpaceCompassCatalogType.NATURAL_SATELLITE, "Nereid · JPL 802", null, SpaceCompassHorizonsTarget("802", "Nereid (802)", 0.0..10000.0)),
         facts = SpaceCompassCelestialFacts(diameterKm = 340.0, diameterEstimated = true, diameterErrorKm = 50.0, revolutionDays = 360.1403, parent = SpaceCompassCelestialBody.NEPTUNE),
         aliases = listOf("Nereid", "802", "Nereide", "Néréide", "Nereida", "Нереида", "Νηρηίδα", "‎نيريد‎", "נראיד", "ネレイド", "네레이드", "海卫二"),
@@ -57,7 +57,7 @@ internal fun spaceCompassLargeCatalogData25(): List<SpaceCompassLargeCatalogEntr
         galaxy = "MILKY_WAY",
         note = R.string.celestial_horizons_tracking_note),
     SpaceCompassLargeCatalogEntry(
-        body = SpaceCompassCelestialBody.MOON_JPL_0803,
+        body = SpaceCompassCelestialBody.valueOf("MOON_JPL_0803"),
         entry = SpaceCompassAdditionalCatalogEntry(SpaceCompassCatalogType.NATURAL_SATELLITE, "Naiad · JPL 803", null, SpaceCompassHorizonsTarget("803", "Naiad (803)", 0.0..10000.0)),
         facts = SpaceCompassCelestialFacts(massKg = 1.2780366480379965e+17, massEstimated = true, diameterKm = 58.0, diameterEstimated = true, diameterErrorKm = 12.0, gravity = 0.01014268727705113, density = 1251.1000000000001, revolutionDays = 0.29398, parent = SpaceCompassCelestialBody.NEPTUNE),
         aliases = listOf("Naiad", "803", "Naiade", "Naïade", "Náyade", "Náiade", "Najada", "Наяда", "Ναϊάδα", "‎ناياد‎", "נייד", "Nalad", "ナイアド", "나이아드", "海卫三"),
@@ -66,7 +66,7 @@ internal fun spaceCompassLargeCatalogData25(): List<SpaceCompassLargeCatalogEntr
         galaxy = "MILKY_WAY",
         note = R.string.celestial_horizons_tracking_note),
     SpaceCompassLargeCatalogEntry(
-        body = SpaceCompassCelestialBody.MOON_JPL_0804,
+        body = SpaceCompassCelestialBody.valueOf("MOON_JPL_0804"),
         entry = SpaceCompassAdditionalCatalogEntry(SpaceCompassCatalogType.NATURAL_SATELLITE, "Thalassa · JPL 804", null, SpaceCompassHorizonsTarget("804", "Thalassa (804)", 0.0..10000.0)),
         facts = SpaceCompassCelestialFacts(massKg = 3.5344530512563117e+17, massEstimated = true, diameterKm = 80.0, diameterEstimated = true, diameterErrorKm = 16.0, gravity = 0.01474375, density = 1318.4, revolutionDays = 0.311078, parent = SpaceCompassCelestialBody.NEPTUNE),
         aliases = listOf("Thalassa", "804", "Talassa", "Talasa", "Таласса", "Θάλασσα", "‎ثالاسا‎", "תלסה", "タラッサ", "탈라사", "海卫四"),
@@ -75,7 +75,7 @@ internal fun spaceCompassLargeCatalogData25(): List<SpaceCompassLargeCatalogEntr
         galaxy = "MILKY_WAY",
         note = R.string.celestial_horizons_tracking_note),
     SpaceCompassLargeCatalogEntry(
-        body = SpaceCompassCelestialBody.MOON_JPL_0805,
+        body = SpaceCompassCelestialBody.valueOf("MOON_JPL_0805"),
         entry = SpaceCompassAdditionalCatalogEntry(SpaceCompassCatalogType.NATURAL_SATELLITE, "Despina · JPL 805", null, SpaceCompassHorizonsTarget("805", "Despina (805)", 0.0..10000.0)),
         facts = SpaceCompassCelestialFacts(massKg = 1.7489474551638374e+18, massEstimated = true, diameterKm = 148.0, diameterEstimated = true, diameterErrorKm = 20.0, gravity = 0.021316654492330167, density = 1030.4, revolutionDays = 0.334656, parent = SpaceCompassCelestialBody.NEPTUNE),
         aliases = listOf("Despina", "805", "Despoina", "Деспина", "Δέσποινα", "‎ديسبينا‎", "דספינה", "デスピナ", "데스피나", "海卫五"),
@@ -84,7 +84,7 @@ internal fun spaceCompassLargeCatalogData25(): List<SpaceCompassLargeCatalogEntr
         galaxy = "MILKY_WAY",
         note = R.string.celestial_horizons_tracking_note),
     SpaceCompassLargeCatalogEntry(
-        body = SpaceCompassCelestialBody.MOON_JPL_0806,
+        body = SpaceCompassCelestialBody.valueOf("MOON_JPL_0806"),
         entry = SpaceCompassAdditionalCatalogEntry(SpaceCompassCatalogType.NATURAL_SATELLITE, "Galatea · JPL 806", null, SpaceCompassHorizonsTarget("806", "Galatea (806)", 0.0..10000.0)),
         facts = SpaceCompassCelestialFacts(massKg = 2.8452421976836526e+18, massEstimated = true, diameterKm = 158.0, diameterEstimated = true, diameterErrorKm = 24.0, gravity = 0.030427816055119374, density = 1377.6999999999998, revolutionDays = 0.428744, parent = SpaceCompassCelestialBody.NEPTUNE),
         aliases = listOf("Galatea", "806", "Galatée", "Галатея", "74 Γαλάτεια", "‎جالاتي‎", "גלתיאה", "ガラテア", "갈라테아", "巫女星"),
@@ -93,7 +93,7 @@ internal fun spaceCompassLargeCatalogData25(): List<SpaceCompassLargeCatalogEntr
         galaxy = "MILKY_WAY",
         note = R.string.celestial_horizons_tracking_note),
     SpaceCompassLargeCatalogEntry(
-        body = SpaceCompassCelestialBody.MOON_JPL_0807,
+        body = SpaceCompassCelestialBody.valueOf("MOON_JPL_0807"),
         entry = SpaceCompassAdditionalCatalogEntry(SpaceCompassCatalogType.NATURAL_SATELLITE, "Larissa · JPL 807", null, SpaceCompassHorizonsTarget("807", "Larissa (807)", 0.0..10000.0)),
         facts = SpaceCompassCelestialFacts(massKg = 3.8182281287925325e+18, massEstimated = true, diameterKm = 192.0, diameterEstimated = true, diameterErrorKm = 14.0, gravity = 0.027651909722222222, density = 1030.3, revolutionDays = 0.554989, parent = SpaceCompassCelestialBody.NEPTUNE),
         aliases = listOf("Larissa", "807", "Larisa", "Ларисса", "1162 Λάρισα", "‎لاريسا‎", "לריסה", "ラリッサ", "라리사", "拉丽莎星"),
@@ -102,7 +102,7 @@ internal fun spaceCompassLargeCatalogData25(): List<SpaceCompassLargeCatalogEntr
         galaxy = "MILKY_WAY",
         note = R.string.celestial_horizons_tracking_note),
     SpaceCompassLargeCatalogEntry(
-        body = SpaceCompassCelestialBody.MOON_JPL_0808,
+        body = SpaceCompassCelestialBody.valueOf("MOON_JPL_0808"),
         entry = SpaceCompassAdditionalCatalogEntry(SpaceCompassCatalogType.NATURAL_SATELLITE, "Proteus · JPL 808", null, SpaceCompassHorizonsTarget("808", "Proteus (808)", 0.0..10000.0)),
         facts = SpaceCompassCelestialFacts(massKg = 3.8706980507319116e+19, massEstimated = true, diameterKm = 416.0, diameterEstimated = true, diameterErrorKm = 16.0, gravity = 0.059712925295857984, density = 1026.8999999999999, revolutionDays = 1.122315, parent = SpaceCompassCelestialBody.NEPTUNE),
         aliases = listOf("Proteus", "808", "Proteo", "Protée", "Proteu", "Proteusz", "Протей", "Πρωτέας", "‎بروتيوس‎", "פרוטאוס", "プロテウス", "프로테우스", "海卫八"),
@@ -111,7 +111,7 @@ internal fun spaceCompassLargeCatalogData25(): List<SpaceCompassLargeCatalogEntr
         galaxy = "MILKY_WAY",
         note = R.string.celestial_horizons_tracking_note),
     SpaceCompassLargeCatalogEntry(
-        body = SpaceCompassCelestialBody.MOON_JPL_0809,
+        body = SpaceCompassCelestialBody.valueOf("MOON_JPL_0809"),
         entry = SpaceCompassAdditionalCatalogEntry(SpaceCompassCatalogType.NATURAL_SATELLITE, "Halimede · JPL 809", null, SpaceCompassHorizonsTarget("809", "Halimede (809)", 0.0..10000.0)),
         facts = SpaceCompassCelestialFacts(revolutionDays = 1879.7825, parent = SpaceCompassCelestialBody.NEPTUNE),
         aliases = listOf("Halimede", "809", "Alimede", "Halimède", "Галимеда", "Αλιμήδη", "‎هاليميدي‎", "הלימיד", "ハリメデ", "할리메데", "海卫九"),
@@ -120,7 +120,7 @@ internal fun spaceCompassLargeCatalogData25(): List<SpaceCompassLargeCatalogEntr
         galaxy = "MILKY_WAY",
         note = R.string.celestial_horizons_tracking_note),
     SpaceCompassLargeCatalogEntry(
-        body = SpaceCompassCelestialBody.MOON_JPL_0902,
+        body = SpaceCompassCelestialBody.valueOf("MOON_JPL_0902"),
         entry = SpaceCompassAdditionalCatalogEntry(SpaceCompassCatalogType.NATURAL_SATELLITE, "Nix · JPL 902", null, SpaceCompassHorizonsTarget("902", "Nix (902)", 0.0..10000.0)),
         facts = SpaceCompassCelestialFacts(massKg = 2.247426696432585e+16, massEstimated = true, diameterKm = 36.0, diameterEstimated = true, diameterErrorKm = 2.0, gravity = 0.004629629629629629, density = 880.0, parent = SpaceCompassCelestialBody.PLUTO),
         aliases = listOf("Nix", "902", "Notte", "Никта", "Νυξ", "‎نيكس‎", "ניקס", "ニクス", "닉스", "冥卫二"),
@@ -129,7 +129,7 @@ internal fun spaceCompassLargeCatalogData25(): List<SpaceCompassLargeCatalogEntr
         galaxy = "MILKY_WAY",
         note = R.string.celestial_horizons_tracking_note),
     SpaceCompassLargeCatalogEntry(
-        body = SpaceCompassCelestialBody.MOON_JPL_0903,
+        body = SpaceCompassCelestialBody.valueOf("MOON_JPL_0903"),
         entry = SpaceCompassAdditionalCatalogEntry(SpaceCompassCatalogType.NATURAL_SATELLITE, "Hydra · JPL 903", null, SpaceCompassHorizonsTarget("903", "Hydra (903)", 0.0..10000.0)),
         facts = SpaceCompassCelestialFacts(massKg = 2.9965689285767796e+16, massEstimated = true, diameterKm = 37.0, diameterEstimated = true, diameterErrorKm = 2.0, gravity = 0.005843681519357195, density = 1210.0, parent = SpaceCompassCelestialBody.PLUTO),
         aliases = listOf("Hydra", "903", "Idra", "Wasserschlange", "Hydra (Hidra)", "Wąż Wodny (Hydra)", "Гидра", "Su Yılanı", "Ύδρα", "‎‎الشجاع‎‎", "مار باریک", "הידרה", "うみへび", "바다뱀자리", "长蛇座"),
@@ -138,7 +138,7 @@ internal fun spaceCompassLargeCatalogData25(): List<SpaceCompassLargeCatalogEntr
         galaxy = "MILKY_WAY",
         note = R.string.celestial_horizons_tracking_note),
     SpaceCompassLargeCatalogEntry(
-        body = SpaceCompassCelestialBody.MOON_JPL_0904,
+        body = SpaceCompassCelestialBody.valueOf("MOON_JPL_0904"),
         entry = SpaceCompassAdditionalCatalogEntry(SpaceCompassCatalogType.NATURAL_SATELLITE, "Kerberos · JPL 904", null, SpaceCompassHorizonsTarget("904", "Kerberos (904)", 0.0..10000.0)),
         facts = SpaceCompassCelestialFacts(parent = SpaceCompassCelestialBody.PLUTO),
         aliases = listOf("Kerberos", "904", "Cerbero", "Kerbéros", "Cérbero", "Кербер", "Κέρβερος", "‎كيربيروس‎", "קרברוס", "ケルベロス", "케르베로스", "冥卫四"),
@@ -147,7 +147,7 @@ internal fun spaceCompassLargeCatalogData25(): List<SpaceCompassLargeCatalogEntr
         galaxy = "MILKY_WAY",
         note = R.string.celestial_horizons_tracking_note),
     SpaceCompassLargeCatalogEntry(
-        body = SpaceCompassCelestialBody.MOON_JPL_0905,
+        body = SpaceCompassCelestialBody.valueOf("MOON_JPL_0905"),
         entry = SpaceCompassAdditionalCatalogEntry(SpaceCompassCatalogType.NATURAL_SATELLITE, "Styx · JPL 905", null, SpaceCompassHorizonsTarget("905", "Styx (905)", 0.0..10000.0)),
         facts = SpaceCompassCelestialFacts(parent = SpaceCompassCelestialBody.PLUTO),
         aliases = listOf("Styx", "905", "Estigia", "Estige", "Стикс", "Στυξ ", "‎ستايكس‎", "סטיקס", "ステュクス", "스틱스", "冥卫五"),
@@ -156,7 +156,7 @@ internal fun spaceCompassLargeCatalogData25(): List<SpaceCompassLargeCatalogEntr
         galaxy = "MILKY_WAY",
         note = R.string.celestial_horizons_tracking_note),
     SpaceCompassLargeCatalogEntry(
-        body = SpaceCompassCelestialBody.PROBE_JPL_M0061,
+        body = SpaceCompassCelestialBody.valueOf("PROBE_JPL_M0061"),
         entry = SpaceCompassAdditionalCatalogEntry(SpaceCompassCatalogType.SPACE_PROBE, "Juno · JPL -61", null, SpaceCompassHorizonsTarget("-61", "Juno (spacecraft) (-61)", 0.0..10000.0)),
         facts = SpaceCompassCelestialFacts(),
         aliases = listOf("Juno", "-61"),
@@ -165,7 +165,7 @@ internal fun spaceCompassLargeCatalogData25(): List<SpaceCompassLargeCatalogEntr
         galaxy = "MILKY_WAY",
         note = R.string.celestial_horizons_tracking_note),
     SpaceCompassLargeCatalogEntry(
-        body = SpaceCompassCelestialBody.PROBE_JPL_M0082,
+        body = SpaceCompassCelestialBody.valueOf("PROBE_JPL_M0082"),
         entry = SpaceCompassAdditionalCatalogEntry(SpaceCompassCatalogType.SPACE_PROBE, "Cassini · JPL -82", null, SpaceCompassHorizonsTarget("-82", "Cassini (spacecraft) (-82)", 0.0..10000.0)),
         facts = SpaceCompassCelestialFacts(),
         aliases = listOf("Cassini", "-82"),
@@ -174,7 +174,7 @@ internal fun spaceCompassLargeCatalogData25(): List<SpaceCompassLargeCatalogEntr
         galaxy = "MILKY_WAY",
         note = R.string.celestial_horizons_tracking_note),
     SpaceCompassLargeCatalogEntry(
-        body = SpaceCompassCelestialBody.PROBE_JPL_M0077,
+        body = SpaceCompassCelestialBody.valueOf("PROBE_JPL_M0077"),
         entry = SpaceCompassAdditionalCatalogEntry(SpaceCompassCatalogType.SPACE_PROBE, "Galileo · JPL -77", null, SpaceCompassHorizonsTarget("-77", "Galileo (spacecraft) (-77)", 0.0..10000.0)),
         facts = SpaceCompassCelestialFacts(),
         aliases = listOf("Galileo", "-77"),
@@ -183,7 +183,7 @@ internal fun spaceCompassLargeCatalogData25(): List<SpaceCompassLargeCatalogEntr
         galaxy = "MILKY_WAY",
         note = R.string.celestial_horizons_tracking_note),
     SpaceCompassLargeCatalogEntry(
-        body = SpaceCompassCelestialBody.PROBE_JPL_M0226,
+        body = SpaceCompassCelestialBody.valueOf("PROBE_JPL_M0226"),
         entry = SpaceCompassAdditionalCatalogEntry(SpaceCompassCatalogType.SPACE_PROBE, "Rosetta · JPL -226", null, SpaceCompassHorizonsTarget("-226", "Rosetta (spacecraft) (-226)", 0.0..10000.0)),
         facts = SpaceCompassCelestialFacts(),
         aliases = listOf("Rosetta", "-226"),
@@ -192,7 +192,7 @@ internal fun spaceCompassLargeCatalogData25(): List<SpaceCompassLargeCatalogEntr
         galaxy = "MILKY_WAY",
         note = R.string.celestial_horizons_tracking_note),
     SpaceCompassLargeCatalogEntry(
-        body = SpaceCompassCelestialBody.PROBE_JPL_M0203,
+        body = SpaceCompassCelestialBody.valueOf("PROBE_JPL_M0203"),
         entry = SpaceCompassAdditionalCatalogEntry(SpaceCompassCatalogType.SPACE_PROBE, "Dawn · JPL -203", null, SpaceCompassHorizonsTarget("-203", "Dawn (spacecraft) (-203)", 0.0..10000.0)),
         facts = SpaceCompassCelestialFacts(),
         aliases = listOf("Dawn", "-203"),
@@ -201,7 +201,7 @@ internal fun spaceCompassLargeCatalogData25(): List<SpaceCompassLargeCatalogEntr
         galaxy = "MILKY_WAY",
         note = R.string.celestial_horizons_tracking_note),
     SpaceCompassLargeCatalogEntry(
-        body = SpaceCompassCelestialBody.PROBE_JPL_M0135,
+        body = SpaceCompassCelestialBody.valueOf("PROBE_JPL_M0135"),
         entry = SpaceCompassAdditionalCatalogEntry(SpaceCompassCatalogType.SPACE_PROBE, "DART · JPL -135", null, SpaceCompassHorizonsTarget("-135", "DART (spacecraft) (-135)", 0.0..10000.0)),
         facts = SpaceCompassCelestialFacts(),
         aliases = listOf("DART", "-135"),
@@ -210,7 +210,7 @@ internal fun spaceCompassLargeCatalogData25(): List<SpaceCompassLargeCatalogEntr
         galaxy = "MILKY_WAY",
         note = R.string.celestial_horizons_tracking_note),
     SpaceCompassLargeCatalogEntry(
-        body = SpaceCompassCelestialBody.PROBE_JPL_M0064,
+        body = SpaceCompassCelestialBody.valueOf("PROBE_JPL_M0064"),
         entry = SpaceCompassAdditionalCatalogEntry(SpaceCompassCatalogType.SPACE_PROBE, "OSIRIS-REx · JPL -64", null, SpaceCompassHorizonsTarget("-64", "OSIRIS-REx (spacecraft) (-64)", 0.0..10000.0)),
         facts = SpaceCompassCelestialFacts(),
         aliases = listOf("OSIRIS-REx", "-64"),
@@ -219,7 +219,7 @@ internal fun spaceCompassLargeCatalogData25(): List<SpaceCompassLargeCatalogEntr
         galaxy = "MILKY_WAY",
         note = R.string.celestial_horizons_tracking_note),
     SpaceCompassLargeCatalogEntry(
-        body = SpaceCompassCelestialBody.PROBE_JPL_M0037,
+        body = SpaceCompassCelestialBody.valueOf("PROBE_JPL_M0037"),
         entry = SpaceCompassAdditionalCatalogEntry(SpaceCompassCatalogType.SPACE_PROBE, "Hayabusa 2 · JPL -37", null, SpaceCompassHorizonsTarget("-37", "Hayabusa 2 (spacecraft) (-37)", 0.0..10000.0)),
         facts = SpaceCompassCelestialFacts(),
         aliases = listOf("Hayabusa 2", "-37"),
@@ -228,7 +228,7 @@ internal fun spaceCompassLargeCatalogData25(): List<SpaceCompassLargeCatalogEntr
         galaxy = "MILKY_WAY",
         note = R.string.celestial_horizons_tracking_note),
     SpaceCompassLargeCatalogEntry(
-        body = SpaceCompassCelestialBody.PROBE_JPL_M0130,
+        body = SpaceCompassCelestialBody.valueOf("PROBE_JPL_M0130"),
         entry = SpaceCompassAdditionalCatalogEntry(SpaceCompassCatalogType.SPACE_PROBE, "Hayabusa · JPL -130", null, SpaceCompassHorizonsTarget("-130", "Hayabusa (spacecraft) (-130)", 0.0..10000.0)),
         facts = SpaceCompassCelestialFacts(),
         aliases = listOf("Hayabusa", "-130"),
@@ -237,7 +237,7 @@ internal fun spaceCompassLargeCatalogData25(): List<SpaceCompassLargeCatalogEntr
         galaxy = "MILKY_WAY",
         note = R.string.celestial_horizons_tracking_note),
     SpaceCompassLargeCatalogEntry(
-        body = SpaceCompassCelestialBody.PROBE_JPL_M0140,
+        body = SpaceCompassCelestialBody.valueOf("PROBE_JPL_M0140"),
         entry = SpaceCompassAdditionalCatalogEntry(SpaceCompassCatalogType.SPACE_PROBE, "Deep Impact Flyby - EPOXI (spacecr · JPL -140", null, SpaceCompassHorizonsTarget("-140", "Deep Impact Flyby - EPOXI (spacecraft) (-140)", 0.0..10000.0)),
         facts = SpaceCompassCelestialFacts(),
         aliases = listOf("Deep Impact Flyby - EPOXI (spacecr", "-140"),
@@ -246,7 +246,7 @@ internal fun spaceCompassLargeCatalogData25(): List<SpaceCompassLargeCatalogEntr
         galaxy = "MILKY_WAY",
         note = R.string.celestial_horizons_tracking_note),
     SpaceCompassLargeCatalogEntry(
-        body = SpaceCompassCelestialBody.PROBE_JPL_M0029,
+        body = SpaceCompassCelestialBody.valueOf("PROBE_JPL_M0029"),
         entry = SpaceCompassAdditionalCatalogEntry(SpaceCompassCatalogType.SPACE_PROBE, "Stardust (bus) · JPL -29", null, SpaceCompassHorizonsTarget("-29", "Stardust (bus) (spacecraft) (-29)", 0.0..10000.0)),
         facts = SpaceCompassCelestialFacts(),
         aliases = listOf("Stardust (bus)", "-29"),
@@ -255,7 +255,7 @@ internal fun spaceCompassLargeCatalogData25(): List<SpaceCompassLargeCatalogEntr
         galaxy = "MILKY_WAY",
         note = R.string.celestial_horizons_tracking_note),
     SpaceCompassLargeCatalogEntry(
-        body = SpaceCompassCelestialBody.PROBE_JPL_M0041,
+        body = SpaceCompassCelestialBody.valueOf("PROBE_JPL_M0041"),
         entry = SpaceCompassAdditionalCatalogEntry(SpaceCompassCatalogType.SPACE_PROBE, "Mars Express · JPL -41", null, SpaceCompassHorizonsTarget("-41", "Mars Express (spacecraft) (-41)", 0.0..10000.0)),
         facts = SpaceCompassCelestialFacts(),
         aliases = listOf("Mars Express", "-41"),
@@ -264,7 +264,7 @@ internal fun spaceCompassLargeCatalogData25(): List<SpaceCompassLargeCatalogEntr
         galaxy = "MILKY_WAY",
         note = R.string.celestial_horizons_tracking_note),
     SpaceCompassLargeCatalogEntry(
-        body = SpaceCompassCelestialBody.PROBE_JPL_M0074,
+        body = SpaceCompassCelestialBody.valueOf("PROBE_JPL_M0074"),
         entry = SpaceCompassAdditionalCatalogEntry(SpaceCompassCatalogType.SPACE_PROBE, "Mars Reconnaissance Orbiter (space · JPL -74", null, SpaceCompassHorizonsTarget("-74", "Mars Reconnaissance Orbiter (spacecraft) (-74)", 0.0..10000.0)),
         facts = SpaceCompassCelestialFacts(),
         aliases = listOf("Mars Reconnaissance Orbiter (space", "-74"),
@@ -273,7 +273,7 @@ internal fun spaceCompassLargeCatalogData25(): List<SpaceCompassLargeCatalogEntr
         galaxy = "MILKY_WAY",
         note = R.string.celestial_horizons_tracking_note),
     SpaceCompassLargeCatalogEntry(
-        body = SpaceCompassCelestialBody.PROBE_JPL_M0053,
+        body = SpaceCompassCelestialBody.valueOf("PROBE_JPL_M0053"),
         entry = SpaceCompassAdditionalCatalogEntry(SpaceCompassCatalogType.SPACE_PROBE, "Mars Odyssey · JPL -53", null, SpaceCompassHorizonsTarget("-53", "Mars Odyssey (spacecraft) (-53)", 0.0..10000.0)),
         facts = SpaceCompassCelestialFacts(),
         aliases = listOf("Mars Odyssey", "-53"),
@@ -282,7 +282,7 @@ internal fun spaceCompassLargeCatalogData25(): List<SpaceCompassLargeCatalogEntr
         galaxy = "MILKY_WAY",
         note = R.string.celestial_horizons_tracking_note),
     SpaceCompassLargeCatalogEntry(
-        body = SpaceCompassCelestialBody.PROBE_JPL_M0202,
+        body = SpaceCompassCelestialBody.valueOf("PROBE_JPL_M0202"),
         entry = SpaceCompassAdditionalCatalogEntry(SpaceCompassCatalogType.SPACE_PROBE, "MAVEN · JPL -202", null, SpaceCompassHorizonsTarget("-202", "MAVEN (spacecraft) (-202)", 0.0..10000.0)),
         facts = SpaceCompassCelestialFacts(),
         aliases = listOf("MAVEN", "-202"),
@@ -291,7 +291,7 @@ internal fun spaceCompassLargeCatalogData25(): List<SpaceCompassLargeCatalogEntr
         galaxy = "MILKY_WAY",
         note = R.string.celestial_horizons_tracking_note),
     SpaceCompassLargeCatalogEntry(
-        body = SpaceCompassCelestialBody.PROBE_JPL_M0143,
+        body = SpaceCompassCelestialBody.valueOf("PROBE_JPL_M0143"),
         entry = SpaceCompassAdditionalCatalogEntry(SpaceCompassCatalogType.SPACE_PROBE, "ExoMars16 TGO · JPL -143", null, SpaceCompassHorizonsTarget("-143", "ExoMars16 TGO (spacecraft) (-143)", 0.0..10000.0)),
         facts = SpaceCompassCelestialFacts(),
         aliases = listOf("ExoMars16 TGO", "-143"),
@@ -300,7 +300,7 @@ internal fun spaceCompassLargeCatalogData25(): List<SpaceCompassLargeCatalogEntr
         galaxy = "MILKY_WAY",
         note = R.string.celestial_horizons_tracking_note),
     SpaceCompassLargeCatalogEntry(
-        body = SpaceCompassCelestialBody.SATELLITE_NORAD_39084,
+        body = SpaceCompassCelestialBody.valueOf("SATELLITE_NORAD_39084"),
         entry = SpaceCompassAdditionalCatalogEntry(SpaceCompassCatalogType.ARTIFICIAL_SATELLITE, "NORAD 39084 · 13008A", null, null),
         facts = SpaceCompassCelestialFacts(parentIsEarth = true),
         aliases = listOf("Landsat 8", "LANDSAT 8", "39084"),
@@ -310,7 +310,7 @@ internal fun spaceCompassLargeCatalogData25(): List<SpaceCompassLargeCatalogEntr
         note = R.string.celestial_satellite_tracking_note,
         satellite = SpaceCompassCatalogSatellite("39084", "13008A", "LANDSAT 8", 96.2169..100.2169, 13.77099872..15.370998720000001, 6400.0..9000.0, 6.0..9.0)),
     SpaceCompassLargeCatalogEntry(
-        body = SpaceCompassCelestialBody.SATELLITE_NORAD_49260,
+        body = SpaceCompassCelestialBody.valueOf("SATELLITE_NORAD_49260"),
         entry = SpaceCompassAdditionalCatalogEntry(SpaceCompassCatalogType.ARTIFICIAL_SATELLITE, "NORAD 49260 · 21088A", null, null),
         facts = SpaceCompassCelestialFacts(parentIsEarth = true),
         aliases = listOf("Landsat 9", "LANDSAT 9", "49260"),

@@ -28,6 +28,11 @@ jobs:
           cache: gradle
       - name: Install Android SDK packages
         run: '"$ANDROID_HOME/cmdline-tools/latest/bin/sdkmanager" "platforms;android-37.0" "build-tools;36.0.0"'
+      - name: Verify generated catalogue
+        run: |
+          python3 scripts/GenerateBodyIdentities.py --check
+          python3 scripts/GenerateExpandedCatalog.py --check
+          python3 scripts/GenerateExpandedCatalogResources.py --check
       - name: Build app and run checks
         run: ./gradlew --no-daemon --stacktrace :app:assembleDebug :app:testDebugUnitTest :app:compileDebugAndroidTestKotlin :app:assembleRelease :app:lintRelease
       - name: Upload development APK and test reports

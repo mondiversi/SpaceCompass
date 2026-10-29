@@ -1,9 +1,9 @@
 <resources>
     <string name="info_news_title">Ultime novità · %1$s</string>
-    <string name="info_news_star_sky" formatted="false">Gestione location mostra i valori attuali, con dati personalizzati in grassetto e comandi più compatti.</string>
-    <string name="info_news_texture_downloads" formatted="false">Salva i preferiti dall’Osservatorio e usa il cuore nel catalogo per mostrare solo gli oggetti preferiti.</string>
-    <string name="info_news_weather" formatted="false">Le checkbox dei preferiti hanno un accento rosa. I conteggi dei filtri seguono preferiti, ricerca e altri filtri attivi.</string>
-    <string name="info_news_viewer_zoom" formatted="false">Un nuovo oggetto selezionato diventa quello attivo, mentre l’elenco resta fermo fino al ritorno alla vista principale.</string>
-    <string name="info_news_settings" formatted="false">I file location possono includere gli oggetti selezionati. Le esportazioni automatiche condividono posizione, quota e fuso, lasciando data e ora correnti.</string>
-    <string name="info_news_catalog" formatted="false">I dati degli oggetti si aggiornano automaticamente quando serve. Il pannello filtri aperto resta visibile durante lo scorrimento.</string>
+    <string name="info_news_star_sky" formatted="false">Il catalogo arriva a 9.999 oggetti, dal Sistema solare al cielo profondo.</string>
+    <string name="info_news_texture_downloads" formatted="false">Il tracciamento ampliato usa riferimenti JPL e satellitari verificati, con limiti espliciti per dati storici o non disponibili.</string>
+    <string name="info_news_weather" formatted="false">Il pacchetto grafico 1.8 aggiunge cinque fotografie e miniature indipendenti, scaricate singolarmente e conservate offline.</string>
+    <string name="info_news_viewer_zoom" formatted="false">Calcoli, ricerca e aggiornamento dati sono ottimizzati per il catalogo ampliato.</string>
+    <string name="info_news_settings" formatted="false">Le sottoview Location restano sempre modificabili. Attiva o disattiva ogni valore personalizzato solo da Gestione location.</string>
+    <string name="info_news_catalog" formatted="false">Isole Location più compatte e checkbox Ripresa sempre selezionata e disabilitata rendono i comandi più chiari.</string>
 </resources>

@@ -1,9 +1,9 @@
 <resources>
     <string name="info_news_title">Laatste nieuws · %1$s</string>
-    <string name="info_news_star_sky" formatted="false">Locatiebeheer toont actuele waarden, met aangepaste instellingen vetgedrukt en compactere bediening.</string>
-    <string name="info_news_texture_downloads" formatted="false">Markeer objecten als favoriet in het Observatorium en gebruik het hart in de catalogus om alleen favorieten te tonen.</string>
-    <string name="info_news_weather" formatted="false">Selectievakjes van favorieten hebben een roze accent. Filteraantallen volgen favorieten, zoekopdrachten en andere actieve filters.</string>
-    <string name="info_news_viewer_zoom" formatted="false">Een nieuw geselecteerd object wordt actief. De lijst blijft op zijn plaats tot je teruggaat naar de hoofdweergave.</string>
-    <string name="info_news_settings" formatted="false">Locatiebestanden kunnen geselecteerde objecten bevatten. Automatische exports delen positie, hoogte en tijdzone; datum en tijd blijven actueel.</string>
-    <string name="info_news_catalog" formatted="false">Objectgegevens worden zo nodig automatisch vernieuwd. Het geopende filterpaneel blijft zichtbaar tijdens het scrollen.</string>
+    <string name="info_news_star_sky" formatted="false">De catalogus groeit naar 9.999 objecten in het zonnestelsel en daarbuiten.</string>
+    <string name="info_news_texture_downloads" formatted="false">Uitgebreide volgfuncties gebruiken gecontroleerde JPL- en satellietgegevens, met duidelijke grenzen voor historische of ontbrekende gegevens.</string>
+    <string name="info_news_weather" formatted="false">Grafisch pakket 1.8 voegt vijf foto’s en aparte miniaturen toe, die afzonderlijk worden gedownload en offline bewaard.</string>
+    <string name="info_news_viewer_zoom" formatted="false">Berekeningen, zoeken en gegevensverversing zijn geoptimaliseerd voor de grotere catalogus.</string>
+    <string name="info_news_settings" formatted="false">De locatie-subpagina’s blijven bewerkbaar. Schakel aangepaste waarden alleen in of uit via Locatiebeheer.</string>
+    <string name="info_news_catalog" formatted="false">Compactere locatiekaarten en een altijd aangevinkt, uitgeschakeld hervattingsvakje maken de bediening duidelijker.</string>
 </resources>

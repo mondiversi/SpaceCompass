@@ -1,9 +1,9 @@
 <resources>
     <string name="info_news_title">Последние новости · %1$s</string>
-    <string name="info_news_star_sky" formatted="false">Управление местоположением показывает текущие значения: пользовательские настройки выделены жирным, элементы управления стали компактнее.</string>
-    <string name="info_news_texture_downloads" formatted="false">Добавляйте объекты в избранное в Обсерватории и нажимайте сердце в каталоге, чтобы видеть только избранные.</string>
-    <string name="info_news_weather" formatted="false">Флажки избранных объектов выделены розовым. Счётчики учитывают избранное, поиск и другие активные фильтры.</string>
-    <string name="info_news_viewer_zoom" formatted="false">Новый выбранный объект становится активным. Список сохраняет положение до возврата на главный экран.</string>
-    <string name="info_news_settings" formatted="false">Файлы местоположения могут включать выбранные объекты. Автоматический экспорт передаёт позицию, высоту и часовой пояс, сохраняя текущие дату и время.</string>
-    <string name="info_news_catalog" formatted="false">Данные объектов обновляются автоматически по мере необходимости. Открытая панель фильтров остаётся видимой при прокрутке.</string>
+    <string name="info_news_star_sky" formatted="false">Каталог расширен до 9999 объектов Солнечной системы и глубокого космоса.</string>
+    <string name="info_news_texture_downloads" formatted="false">Расширенное отслеживание использует проверенные данные JPL и спутников с явными ограничениями для исторических или недоступных данных.</string>
+    <string name="info_news_weather" formatted="false">Графический пакет 1.8 добавляет пять фотографий и отдельные миниатюры, загружаемые по одной и сохраняемые офлайн.</string>
+    <string name="info_news_viewer_zoom" formatted="false">Вычисления, поиск и обновление данных оптимизированы для расширенного каталога.</string>
+    <string name="info_news_settings" formatted="false">Вложенные страницы местоположения всегда доступны для редактирования. Включайте и отключайте свои значения только в управлении местоположением.</string>
+    <string name="info_news_catalog" formatted="false">Более компактные карточки и всегда отмеченный неактивный флажок возобновления делают управление понятнее.</string>
 </resources>

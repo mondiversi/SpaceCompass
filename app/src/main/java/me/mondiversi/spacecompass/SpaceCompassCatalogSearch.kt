@@ -2,19 +2,26 @@ package me.mondiversi.spacecompass
 
 import java.text.Normalizer
 
-/** Search only the supplied visible catalog; scientific IDs also match independently of UI language. */
-internal fun spaceCompassSearchCatalog(available: List<SpaceCompassCelestialBody>,
-    localizedNames: Map<SpaceCompassCelestialBody, String>, query: String): List<SpaceCompassCelestialBody> {
-    fun normalized(value: String) = Normalizer.normalize(value, Normalizer.Form.NFD)
-        .filter { it.isLetterOrDigit() }
-    val needle = normalized(query)
-    if (needle.isEmpty()) return available
-    return available.filter { body ->
-        normalized(localizedNames[body].orEmpty()).contains(needle, ignoreCase = true) ||
-            normalized(body.name).contains(needle, ignoreCase = true) ||
-            body.catalogAliases.any { normalized(it).contains(needle, ignoreCase = true) }
+private fun spaceCompassSearchText(value: String) = Normalizer.normalize(value, Normalizer.Form.NFD)
+    .filter { it.isLetterOrDigit() }.lowercase(java.util.Locale.ROOT)
+
+/** An immutable per-locale index avoids normalizing tens of thousands of aliases per keystroke. */
+internal class SpaceCompassCatalogSearchIndex(private val available: List<SpaceCompassCelestialBody>,
+    localizedNames: Map<SpaceCompassCelestialBody,String>) {
+    private val texts = available.associateWith { body ->
+        (listOf(localizedNames[body].orEmpty(),body.name) + body.catalogAliases)
+            .filter { it.isNotBlank() }.map(::spaceCompassSearchText).distinct()
+    }
+    fun search(query: String): List<SpaceCompassCelestialBody> {
+        val needle = spaceCompassSearchText(query)
+        return if (needle.isEmpty()) available else available.filter { body -> texts.getValue(body).any { needle in it } }
     }
 }
+
+/** Search only the supplied visible catalog; scientific IDs also match independently of UI language. */
+internal fun spaceCompassSearchCatalog(available: List<SpaceCompassCelestialBody>,
+    localizedNames: Map<SpaceCompassCelestialBody, String>, query: String): List<SpaceCompassCelestialBody> =
+    if (query.isBlank()) available else SpaceCompassCatalogSearchIndex(available,localizedNames).search(query)
 
 private val SpaceCompassCelestialBody.catalogAliases: List<String> get() = when (this) {
     SpaceCompassCelestialBody.CERES -> listOf("1 Ceres", "Cerere", "Cérès", "A801 AA")

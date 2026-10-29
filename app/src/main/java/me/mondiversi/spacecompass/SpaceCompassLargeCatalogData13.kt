@@ -3,7 +3,7 @@ package me.mondiversi.spacecompass
 /** Generated from catalogue/expanded-catalog.json; regenerate with scripts/GenerateExpandedCatalog.py. */
 internal fun spaceCompassLargeCatalogData13(): List<SpaceCompassLargeCatalogEntry> = listOf(
     SpaceCompassLargeCatalogEntry(
-        body = SpaceCompassCelestialBody.NEBULA_NGC_7000,
+        body = SpaceCompassCelestialBody.valueOf("NEBULA_NGC_7000"),
         entry = SpaceCompassAdditionalCatalogEntry(SpaceCompassCatalogType.NEBULA, "NGC 7000", SpaceCompassDeepSkyReference(20.988094444444446, 44.528777777777776, Double.NaN, 0.0, 0.0, hasMeasuredDistance = false), null),
         facts = SpaceCompassCelestialFacts(),
         aliases = listOf("NGC7000", "NGC 7000", "North America Nebula"),
@@ -12,7 +12,7 @@ internal fun spaceCompassLargeCatalogData13(): List<SpaceCompassLargeCatalogEntr
         galaxy = "UNKNOWN",
         note = R.string.catalogue_direction_note),
     SpaceCompassLargeCatalogEntry(
-        body = SpaceCompassCelestialBody.NEBULA_NGC_1981,
+        body = SpaceCompassCelestialBody.valueOf("NEBULA_NGC_1981"),
         entry = SpaceCompassAdditionalCatalogEntry(SpaceCompassCatalogType.NEBULA, "NGC 1981", SpaceCompassDeepSkyReference(5.585997222222222, -4.425055555555556, Double.NaN, -0.58, 0.8, hasMeasuredDistance = false), null),
         facts = SpaceCompassCelestialFacts(apparentMagnitude = 4.2),
         aliases = listOf("NGC1981", "NGC 1981", "Upper Sword"),
@@ -21,7 +21,7 @@ internal fun spaceCompassLargeCatalogData13(): List<SpaceCompassLargeCatalogEntr
         galaxy = "UNKNOWN",
         note = R.string.catalogue_direction_note),
     SpaceCompassLargeCatalogEntry(
-        body = SpaceCompassCelestialBody.NEBULA_IC_2944,
+        body = SpaceCompassCelestialBody.valueOf("NEBULA_IC_2944"),
         entry = SpaceCompassAdditionalCatalogEntry(SpaceCompassCatalogType.NEBULA, "IC 2944", SpaceCompassDeepSkyReference(11.596369444444445, -63.01983333333333, Double.NaN, -6.05, -0.38, hasMeasuredDistance = false), null),
         facts = SpaceCompassCelestialFacts(),
         aliases = listOf("IC2944", "IC 2944", "lam Cen Nebula"),
@@ -30,7 +30,7 @@ internal fun spaceCompassLargeCatalogData13(): List<SpaceCompassLargeCatalogEntr
         galaxy = "UNKNOWN",
         note = R.string.catalogue_direction_note),
     SpaceCompassLargeCatalogEntry(
-        body = SpaceCompassCelestialBody.NEBULA_NGC_1499,
+        body = SpaceCompassCelestialBody.valueOf("NEBULA_NGC_1499"),
         entry = SpaceCompassAdditionalCatalogEntry(SpaceCompassCatalogType.NEBULA, "NGC 1499", SpaceCompassDeepSkyReference(4.054005555555555, 36.367472222222226, Double.NaN, 0.0, 0.0, hasMeasuredDistance = false), null),
         facts = SpaceCompassCelestialFacts(),
         aliases = listOf("NGC1499", "NGC 1499", "California Nebula"),
@@ -39,7 +39,7 @@ internal fun spaceCompassLargeCatalogData13(): List<SpaceCompassLargeCatalogEntr
         galaxy = "UNKNOWN",
         note = R.string.catalogue_direction_note),
     SpaceCompassLargeCatalogEntry(
-        body = SpaceCompassCelestialBody.NEBULA_IC_4604,
+        body = SpaceCompassCelestialBody.valueOf("NEBULA_IC_4604"),
         entry = SpaceCompassAdditionalCatalogEntry(SpaceCompassCatalogType.NEBULA, "IC 4604", SpaceCompassDeepSkyReference(16.425325, -23.436583333333335, Double.NaN, 0.0, 0.0, hasMeasuredDistance = false), null),
         facts = SpaceCompassCelestialFacts(),
         aliases = listOf("IC4604", "IC 4604", "rho Oph Nebula"),
@@ -48,7 +48,7 @@ internal fun spaceCompassLargeCatalogData13(): List<SpaceCompassLargeCatalogEntr
         galaxy = "UNKNOWN",
         note = R.string.catalogue_direction_note),
     SpaceCompassLargeCatalogEntry(
-        body = SpaceCompassCelestialBody.NEBULA_IC_4703,
+        body = SpaceCompassCelestialBody.valueOf("NEBULA_IC_4703"),
         entry = SpaceCompassAdditionalCatalogEntry(SpaceCompassCatalogType.NEBULA, "IC 4703", SpaceCompassDeepSkyReference(18.315616666666667, -13.84538888888889, Double.NaN, 0.178, -1.576, hasMeasuredDistance = false), null),
         facts = SpaceCompassCelestialFacts(apparentMagnitude = 6.0),
         aliases = listOf("IC4703", "IC 4703", "Eagle Nebula", "Star Queen"),
@@ -57,7 +57,7 @@ internal fun spaceCompassLargeCatalogData13(): List<SpaceCompassLargeCatalogEntr
         galaxy = "UNKNOWN",
         note = R.string.catalogue_direction_note),
     SpaceCompassLargeCatalogEntry(
-        body = SpaceCompassCelestialBody.NEBULA_NGC_2238,
+        body = SpaceCompassCelestialBody.valueOf("NEBULA_NGC_2238"),
         entry = SpaceCompassAdditionalCatalogEntry(SpaceCompassCatalogType.NEBULA, "NGC 2238", SpaceCompassDeepSkyReference(6.511213888888889, 5.013055555555556, Double.NaN, -1.63, 0.15, hasMeasuredDistance = false), null),
         facts = SpaceCompassCelestialFacts(),
         aliases = listOf("NGC2238", "NGC 2238", "Rosette Nebula"),
@@ -66,7 +66,7 @@ internal fun spaceCompassLargeCatalogData13(): List<SpaceCompassLargeCatalogEntr
         galaxy = "UNKNOWN",
         note = R.string.catalogue_direction_note),
     SpaceCompassLargeCatalogEntry(
-        body = SpaceCompassCelestialBody.NEBULA_NGC_6960,
+        body = SpaceCompassCelestialBody.valueOf("NEBULA_NGC_6960"),
         entry = SpaceCompassAdditionalCatalogEntry(SpaceCompassCatalogType.NEBULA, "NGC 6960", SpaceCompassDeepSkyReference(20.76616111111111, 30.595138888888886, Double.NaN, 0.0, 0.0, hasMeasuredDistance = false), null),
         facts = SpaceCompassCelestialFacts(),
         aliases = listOf("NGC6960", "NGC 6960", "Veil Nebula", "Filamentary Nebula", "Western Veil"),
@@ -75,7 +75,7 @@ internal fun spaceCompassLargeCatalogData13(): List<SpaceCompassLargeCatalogEntr
         galaxy = "UNKNOWN",
         note = R.string.catalogue_direction_note),
     SpaceCompassLargeCatalogEntry(
-        body = SpaceCompassCelestialBody.NEBULA_NGC_6992,
+        body = SpaceCompassCelestialBody.valueOf("NEBULA_NGC_6992"),
         entry = SpaceCompassAdditionalCatalogEntry(SpaceCompassCatalogType.NEBULA, "NGC 6992", SpaceCompassDeepSkyReference(20.938630555555555, 31.74275, Double.NaN, 0.0, 0.0, hasMeasuredDistance = false), null),
         facts = SpaceCompassCelestialFacts(),
         aliases = listOf("NGC6992", "NGC 6992", "Eastern Veil", "Network Nebula"),
@@ -84,7 +84,7 @@ internal fun spaceCompassLargeCatalogData13(): List<SpaceCompassLargeCatalogEntr
         galaxy = "UNKNOWN",
         note = R.string.catalogue_direction_note),
     SpaceCompassLargeCatalogEntry(
-        body = SpaceCompassCelestialBody.NEBULA_NGC_6995,
+        body = SpaceCompassCelestialBody.valueOf("NEBULA_NGC_6995"),
         entry = SpaceCompassAdditionalCatalogEntry(SpaceCompassCatalogType.NEBULA, "NGC 6995", SpaceCompassDeepSkyReference(20.95298888888889, 31.235166666666668, Double.NaN, 0.0, 0.0, hasMeasuredDistance = false), null),
         facts = SpaceCompassCelestialFacts(),
         aliases = listOf("NGC6995", "NGC 6995", "Eastern Veil", "Network Nebula"),
@@ -93,7 +93,7 @@ internal fun spaceCompassLargeCatalogData13(): List<SpaceCompassLargeCatalogEntr
         galaxy = "UNKNOWN",
         note = R.string.catalogue_direction_note),
     SpaceCompassLargeCatalogEntry(
-        body = SpaceCompassCelestialBody.NEBULA_IC_5146,
+        body = SpaceCompassCelestialBody.valueOf("NEBULA_IC_5146"),
         entry = SpaceCompassAdditionalCatalogEntry(SpaceCompassCatalogType.NEBULA, "IC 5146", SpaceCompassDeepSkyReference(21.89132222222222, 47.26691666666667, Double.NaN, -2.91, -2.49, hasMeasuredDistance = false), null),
         facts = SpaceCompassCelestialFacts(apparentMagnitude = 7.2),
         aliases = listOf("IC5146", "IC 5146", "Cocoon Nebula"),
@@ -102,7 +102,7 @@ internal fun spaceCompassLargeCatalogData13(): List<SpaceCompassLargeCatalogEntr
         galaxy = "UNKNOWN",
         note = R.string.catalogue_direction_note),
     SpaceCompassLargeCatalogEntry(
-        body = SpaceCompassCelestialBody.NEBULA_NGC_7023,
+        body = SpaceCompassCelestialBody.valueOf("NEBULA_NGC_7023"),
         entry = SpaceCompassAdditionalCatalogEntry(SpaceCompassCatalogType.NEBULA, "NGC 7023", SpaceCompassDeepSkyReference(21.02656111111111, 68.16955555555556, Double.NaN, 0.0, 0.0, hasMeasuredDistance = false), null),
         facts = SpaceCompassCelestialFacts(),
         aliases = listOf("NGC7023", "NGC 7023", "Iris Nebula"),
@@ -111,7 +111,7 @@ internal fun spaceCompassLargeCatalogData13(): List<SpaceCompassLargeCatalogEntr
         galaxy = "UNKNOWN",
         note = R.string.catalogue_direction_note),
     SpaceCompassLargeCatalogEntry(
-        body = SpaceCompassCelestialBody.NEBULA_NGC_2070,
+        body = SpaceCompassCelestialBody.valueOf("NEBULA_NGC_2070"),
         entry = SpaceCompassAdditionalCatalogEntry(SpaceCompassCatalogType.NEBULA, "NGC 2070", SpaceCompassDeepSkyReference(5.645099999999999, -69.10088888888889, Double.NaN, 0.0, 0.0, hasMeasuredDistance = false), null),
         facts = SpaceCompassCelestialFacts(apparentMagnitude = 7.25),
         aliases = listOf("NGC2070", "NGC 2070", "30 Dor Cluster", "Tarantula Nebula"),
@@ -120,7 +120,7 @@ internal fun spaceCompassLargeCatalogData13(): List<SpaceCompassLargeCatalogEntr
         galaxy = "UNKNOWN",
         note = R.string.catalogue_direction_note),
     SpaceCompassLargeCatalogEntry(
-        body = SpaceCompassCelestialBody.NEBULA_NGC_7293,
+        body = SpaceCompassCelestialBody.valueOf("NEBULA_NGC_7293"),
         entry = SpaceCompassAdditionalCatalogEntry(SpaceCompassCatalogType.NEBULA, "NGC 7293", SpaceCompassDeepSkyReference(22.494047222222225, -20.837333333333333, Double.NaN, 38.869, -3.419, hasMeasuredDistance = false), null),
         facts = SpaceCompassCelestialFacts(apparentMagnitude = 7.3),
         aliases = listOf("NGC7293", "NGC 7293", "Helix Nebula"),
@@ -129,7 +129,7 @@ internal fun spaceCompassLargeCatalogData13(): List<SpaceCompassLargeCatalogEntr
         galaxy = "UNKNOWN",
         note = R.string.catalogue_direction_note),
     SpaceCompassLargeCatalogEntry(
-        body = SpaceCompassCelestialBody.NEBULA_NGC_6888,
+        body = SpaceCompassCelestialBody.valueOf("NEBULA_NGC_6888"),
         entry = SpaceCompassAdditionalCatalogEntry(SpaceCompassCatalogType.NEBULA, "NGC 6888", SpaceCompassDeepSkyReference(20.201819444444443, 38.35494444444445, Double.NaN, 0.0, 0.0, hasMeasuredDistance = false), null),
         facts = SpaceCompassCelestialFacts(),
         aliases = listOf("NGC6888", "NGC 6888", "Crescent Nebula"),
@@ -138,7 +138,7 @@ internal fun spaceCompassLargeCatalogData13(): List<SpaceCompassLargeCatalogEntr
         galaxy = "UNKNOWN",
         note = R.string.catalogue_direction_note),
     SpaceCompassLargeCatalogEntry(
-        body = SpaceCompassCelestialBody.NEBULA_NGC_3242,
+        body = SpaceCompassCelestialBody.valueOf("NEBULA_NGC_3242"),
         entry = SpaceCompassAdditionalCatalogEntry(SpaceCompassCatalogType.NEBULA, "NGC 3242", SpaceCompassDeepSkyReference(10.4128, -18.642222222222223, Double.NaN, -4.557, 0.66, hasMeasuredDistance = false), null),
         facts = SpaceCompassCelestialFacts(apparentMagnitude = 7.7),
         aliases = listOf("NGC3242", "NGC 3242", "Jupiter's Ghost Nebula"),
@@ -147,7 +147,7 @@ internal fun spaceCompassLargeCatalogData13(): List<SpaceCompassLargeCatalogEntr
         galaxy = "UNKNOWN",
         note = R.string.catalogue_direction_note),
     SpaceCompassLargeCatalogEntry(
-        body = SpaceCompassCelestialBody.NEBULA_IC_5070,
+        body = SpaceCompassCelestialBody.valueOf("NEBULA_IC_5070"),
         entry = SpaceCompassAdditionalCatalogEntry(SpaceCompassCatalogType.NEBULA, "IC 5070", SpaceCompassDeepSkyReference(20.8502, 44.4015, Double.NaN, 0.0, 0.0, hasMeasuredDistance = false), null),
         facts = SpaceCompassCelestialFacts(),
         aliases = listOf("IC5070", "IC 5070", "Pelican Nebula"),
@@ -156,7 +156,7 @@ internal fun spaceCompassLargeCatalogData13(): List<SpaceCompassLargeCatalogEntr
         galaxy = "UNKNOWN",
         note = R.string.catalogue_direction_note),
     SpaceCompassLargeCatalogEntry(
-        body = SpaceCompassCelestialBody.NEBULA_NGC_7009,
+        body = SpaceCompassCelestialBody.valueOf("NEBULA_NGC_7009"),
         entry = SpaceCompassAdditionalCatalogEntry(SpaceCompassCatalogType.NEBULA, "NGC 7009", SpaceCompassDeepSkyReference(21.06966388888889, -11.363249999999999, Double.NaN, 7.75, 1.002, hasMeasuredDistance = false), null),
         facts = SpaceCompassCelestialFacts(apparentMagnitude = 8.0),
         aliases = listOf("NGC7009", "NGC 7009", "Saturn Nebula"),
@@ -165,7 +165,7 @@ internal fun spaceCompassLargeCatalogData13(): List<SpaceCompassLargeCatalogEntr
         galaxy = "UNKNOWN",
         note = R.string.catalogue_direction_note),
     SpaceCompassLargeCatalogEntry(
-        body = SpaceCompassCelestialBody.NEBULA_NGC_3918,
+        body = SpaceCompassCelestialBody.valueOf("NEBULA_NGC_3918"),
         entry = SpaceCompassAdditionalCatalogEntry(SpaceCompassCatalogType.NEBULA, "NGC 3918", SpaceCompassDeepSkyReference(11.838319444444444, -57.18233333333333, Double.NaN, -3.228, 2.718, hasMeasuredDistance = false), null),
         facts = SpaceCompassCelestialFacts(apparentMagnitude = 8.1),
         aliases = listOf("NGC3918", "NGC 3918", "Blue Planetary"),
@@ -174,7 +174,7 @@ internal fun spaceCompassLargeCatalogData13(): List<SpaceCompassLargeCatalogEntr
         galaxy = "UNKNOWN",
         note = R.string.catalogue_direction_note),
     SpaceCompassLargeCatalogEntry(
-        body = SpaceCompassCelestialBody.NEBULA_NGC_7662,
+        body = SpaceCompassCelestialBody.valueOf("NEBULA_NGC_7662"),
         entry = SpaceCompassAdditionalCatalogEntry(SpaceCompassCatalogType.NEBULA, "NGC 7662", SpaceCompassDeepSkyReference(23.43163888888889, 42.53494444444444, Double.NaN, 12.2, -1.0, hasMeasuredDistance = false), null),
         facts = SpaceCompassCelestialFacts(apparentMagnitude = 8.3),
         aliases = listOf("NGC7662", "NGC 7662", "Copeland's Blue Snowball"),
@@ -183,7 +183,7 @@ internal fun spaceCompassLargeCatalogData13(): List<SpaceCompassLargeCatalogEntr
         galaxy = "UNKNOWN",
         note = R.string.catalogue_direction_note),
     SpaceCompassLargeCatalogEntry(
-        body = SpaceCompassCelestialBody.NEBULA_NGC_6543,
+        body = SpaceCompassCelestialBody.valueOf("NEBULA_NGC_6543"),
         entry = SpaceCompassAdditionalCatalogEntry(SpaceCompassCatalogType.NEBULA, "NGC 6543", SpaceCompassDeepSkyReference(17.975941666666664, 66.63319444444444, Double.NaN, -0.555, -6.413, hasMeasuredDistance = false), null),
         facts = SpaceCompassCelestialFacts(apparentMagnitude = 9.01),
         aliases = listOf("NGC6543", "NGC 6543", "Cat's Eye Nebula"),
@@ -192,7 +192,7 @@ internal fun spaceCompassLargeCatalogData13(): List<SpaceCompassLargeCatalogEntr
         galaxy = "UNKNOWN",
         note = R.string.catalogue_direction_note),
     SpaceCompassLargeCatalogEntry(
-        body = SpaceCompassCelestialBody.NEBULA_NGC_3132,
+        body = SpaceCompassCelestialBody.valueOf("NEBULA_NGC_3132"),
         entry = SpaceCompassAdditionalCatalogEntry(SpaceCompassCatalogType.NEBULA, "NGC 3132", SpaceCompassDeepSkyReference(10.117147222222222, -40.43658333333333, Double.NaN, -7.693, 0.411, hasMeasuredDistance = false), null),
         facts = SpaceCompassCelestialFacts(apparentMagnitude = 9.2),
         aliases = listOf("NGC3132", "NGC 3132", "Eight-Burst Nebula"),
@@ -201,7 +201,7 @@ internal fun spaceCompassLargeCatalogData13(): List<SpaceCompassLargeCatalogEntr
         galaxy = "UNKNOWN",
         note = R.string.catalogue_direction_note),
     SpaceCompassLargeCatalogEntry(
-        body = SpaceCompassCelestialBody.NEBULA_NGC_6818,
+        body = SpaceCompassCelestialBody.valueOf("NEBULA_NGC_6818"),
         entry = SpaceCompassAdditionalCatalogEntry(SpaceCompassCatalogType.NEBULA, "NGC 6818", SpaceCompassDeepSkyReference(19.732702777777774, -14.153166666666667, Double.NaN, 0.0, 0.0, hasMeasuredDistance = false), null),
         facts = SpaceCompassCelestialFacts(apparentMagnitude = 9.3),
         aliases = listOf("NGC6818", "NGC 6818", "Little Gem Nebula"),
@@ -210,7 +210,7 @@ internal fun spaceCompassLargeCatalogData13(): List<SpaceCompassLargeCatalogEntr
         galaxy = "UNKNOWN",
         note = R.string.catalogue_direction_note),
     SpaceCompassLargeCatalogEntry(
-        body = SpaceCompassCelestialBody.NEBULA_NGC_6826,
+        body = SpaceCompassCelestialBody.valueOf("NEBULA_NGC_6826"),
         entry = SpaceCompassAdditionalCatalogEntry(SpaceCompassCatalogType.NEBULA, "NGC 6826", SpaceCompassDeepSkyReference(19.746697222222224, 50.52502777777778, Double.NaN, -9.232, -11.522, hasMeasuredDistance = false), null),
         facts = SpaceCompassCelestialFacts(apparentMagnitude = 9.44),
         aliases = listOf("NGC6826", "NGC 6826", "Blinking Planetary"),
@@ -219,7 +219,7 @@ internal fun spaceCompassLargeCatalogData13(): List<SpaceCompassLargeCatalogEntr
         galaxy = "UNKNOWN",
         note = R.string.catalogue_direction_note),
     SpaceCompassLargeCatalogEntry(
-        body = SpaceCompassCelestialBody.NEBULA_NGC_6302,
+        body = SpaceCompassCelestialBody.valueOf("NEBULA_NGC_6302"),
         entry = SpaceCompassAdditionalCatalogEntry(SpaceCompassCatalogType.NEBULA, "NGC 6302", SpaceCompassDeepSkyReference(17.229063888888888, -37.10313888888889, Double.NaN, 0.0, 0.0, hasMeasuredDistance = false), null),
         facts = SpaceCompassCelestialFacts(apparentMagnitude = 9.6),
         aliases = listOf("NGC6302", "NGC 6302", "Bug Nebula", "Butterfly Nebula"),
@@ -228,7 +228,7 @@ internal fun spaceCompassLargeCatalogData13(): List<SpaceCompassLargeCatalogEntr
         galaxy = "UNKNOWN",
         note = R.string.catalogue_direction_note),
     SpaceCompassLargeCatalogEntry(
-        body = SpaceCompassCelestialBody.NEBULA_NGC_2392,
+        body = SpaceCompassCelestialBody.valueOf("NEBULA_NGC_2392"),
         entry = SpaceCompassAdditionalCatalogEntry(SpaceCompassCatalogType.NEBULA, "NGC 2392", SpaceCompassDeepSkyReference(7.486322222222222, 20.91183333333333, Double.NaN, -1.412, 0.55, hasMeasuredDistance = false), null),
         facts = SpaceCompassCelestialFacts(apparentMagnitude = 9.61),
         aliases = listOf("NGC2392", "NGC 2392", "Eskimo Nebula"),
@@ -237,7 +237,7 @@ internal fun spaceCompassLargeCatalogData13(): List<SpaceCompassLargeCatalogEntr
         galaxy = "UNKNOWN",
         note = R.string.catalogue_direction_note),
     SpaceCompassLargeCatalogEntry(
-        body = SpaceCompassCelestialBody.NEBULA_NGC_1555,
+        body = SpaceCompassCelestialBody.valueOf("NEBULA_NGC_1555"),
         entry = SpaceCompassAdditionalCatalogEntry(SpaceCompassCatalogType.NEBULA, "NGC 1555", SpaceCompassDeepSkyReference(4.366508333333333, 19.53516666666667, Double.NaN, 0.0, 0.0, hasMeasuredDistance = false), null),
         facts = SpaceCompassCelestialFacts(),
         aliases = listOf("NGC1555", "NGC 1555", "Hind's Nebula", "Hind's Variable Nebula"),
@@ -246,7 +246,7 @@ internal fun spaceCompassLargeCatalogData13(): List<SpaceCompassLargeCatalogEntr
         galaxy = "UNKNOWN",
         note = R.string.catalogue_direction_note),
     SpaceCompassLargeCatalogEntry(
-        body = SpaceCompassCelestialBody.NEBULA_IC_0405,
+        body = SpaceCompassCelestialBody.valueOf("NEBULA_IC_0405"),
         entry = SpaceCompassAdditionalCatalogEntry(SpaceCompassCatalogType.NEBULA, "IC 405", SpaceCompassDeepSkyReference(5.274855555555556, 34.35616666666667, Double.NaN, 0.0, 0.0, hasMeasuredDistance = false), null),
         facts = SpaceCompassCelestialFacts(),
         aliases = listOf("IC0405", "IC 405", "Flaming Star Nebula"),
@@ -255,7 +255,7 @@ internal fun spaceCompassLargeCatalogData13(): List<SpaceCompassLargeCatalogEntr
         galaxy = "UNKNOWN",
         note = R.string.catalogue_direction_note),
     SpaceCompassLargeCatalogEntry(
-        body = SpaceCompassCelestialBody.NEBULA_NGC_7635,
+        body = SpaceCompassCelestialBody.valueOf("NEBULA_NGC_7635"),
         entry = SpaceCompassAdditionalCatalogEntry(SpaceCompassCatalogType.NEBULA, "NGC 7635", SpaceCompassDeepSkyReference(23.346, 61.212361111111115, Double.NaN, 0.0, 0.0, hasMeasuredDistance = false), null),
         facts = SpaceCompassCelestialFacts(),
         aliases = listOf("NGC7635", "NGC 7635", "Bubble Nebula"),
@@ -264,7 +264,7 @@ internal fun spaceCompassLargeCatalogData13(): List<SpaceCompassLargeCatalogEntr
         galaxy = "UNKNOWN",
         note = R.string.catalogue_direction_note),
     SpaceCompassLargeCatalogEntry(
-        body = SpaceCompassCelestialBody.NEBULA_NGC_6905,
+        body = SpaceCompassCelestialBody.valueOf("NEBULA_NGC_6905"),
         entry = SpaceCompassAdditionalCatalogEntry(SpaceCompassCatalogType.NEBULA, "NGC 6905", SpaceCompassDeepSkyReference(20.37305277777778, 20.10452777777778, Double.NaN, -6.938, -5.53, hasMeasuredDistance = false), null),
         facts = SpaceCompassCelestialFacts(apparentMagnitude = 11.1),
         aliases = listOf("NGC6905", "NGC 6905", "Blue Flash Nebula"),
@@ -273,7 +273,7 @@ internal fun spaceCompassLargeCatalogData13(): List<SpaceCompassLargeCatalogEntr
         galaxy = "UNKNOWN",
         note = R.string.catalogue_direction_note),
     SpaceCompassLargeCatalogEntry(
-        body = SpaceCompassCelestialBody.NEBULA_NGC_6445,
+        body = SpaceCompassCelestialBody.valueOf("NEBULA_NGC_6445"),
         entry = SpaceCompassAdditionalCatalogEntry(SpaceCompassCatalogType.NEBULA, "NGC 6445", SpaceCompassDeepSkyReference(17.82085, -20.0095, Double.NaN, 0.0, 0.0, hasMeasuredDistance = false), null),
         facts = SpaceCompassCelestialFacts(apparentMagnitude = 11.2),
         aliases = listOf("NGC6445", "NGC 6445", "Little Gem"),
@@ -282,7 +282,7 @@ internal fun spaceCompassLargeCatalogData13(): List<SpaceCompassLargeCatalogEntr
         galaxy = "UNKNOWN",
         note = R.string.catalogue_direction_note),
     SpaceCompassLargeCatalogEntry(
-        body = SpaceCompassCelestialBody.NEBULA_NGC_6369,
+        body = SpaceCompassCelestialBody.valueOf("NEBULA_NGC_6369"),
         entry = SpaceCompassAdditionalCatalogEntry(SpaceCompassCatalogType.NEBULA, "NGC 6369", SpaceCompassDeepSkyReference(17.48902777777778, -23.759444444444444, Double.NaN, -0.241, -0.851, hasMeasuredDistance = false), null),
         facts = SpaceCompassCelestialFacts(apparentMagnitude = 11.4),
         aliases = listOf("NGC6369", "NGC 6369", "Little Ghost Nebula"),
@@ -291,7 +291,7 @@ internal fun spaceCompassLargeCatalogData13(): List<SpaceCompassLargeCatalogEntr
         galaxy = "UNKNOWN",
         note = R.string.catalogue_direction_note),
     SpaceCompassLargeCatalogEntry(
-        body = SpaceCompassCelestialBody.NEBULA_NGC_6309,
+        body = SpaceCompassCelestialBody.valueOf("NEBULA_NGC_6309"),
         entry = SpaceCompassAdditionalCatalogEntry(SpaceCompassCatalogType.NEBULA, "NGC 6309", SpaceCompassDeepSkyReference(17.234527777777778, -12.910555555555556, Double.NaN, -1.91, 3.069, hasMeasuredDistance = false), null),
         facts = SpaceCompassCelestialFacts(apparentMagnitude = 11.5),
         aliases = listOf("NGC6309", "NGC 6309", "Box Nebula"),
@@ -300,7 +300,7 @@ internal fun spaceCompassLargeCatalogData13(): List<SpaceCompassLargeCatalogEntr
         galaxy = "UNKNOWN",
         note = R.string.catalogue_direction_note),
     SpaceCompassLargeCatalogEntry(
-        body = SpaceCompassCelestialBody.NEBULA_NGC_6741,
+        body = SpaceCompassCelestialBody.valueOf("NEBULA_NGC_6741"),
         entry = SpaceCompassAdditionalCatalogEntry(SpaceCompassCatalogType.NEBULA, "NGC 6741", SpaceCompassDeepSkyReference(19.04361111111111, -0.4493888888888889, Double.NaN, 0.0, 0.0, hasMeasuredDistance = false), null),
         facts = SpaceCompassCelestialFacts(apparentMagnitude = 11.5),
         aliases = listOf("NGC6741", "NGC 6741", "Phantom Streak Nebula"),
@@ -309,7 +309,7 @@ internal fun spaceCompassLargeCatalogData13(): List<SpaceCompassLargeCatalogEntr
         galaxy = "UNKNOWN",
         note = R.string.catalogue_direction_note),
     SpaceCompassLargeCatalogEntry(
-        body = SpaceCompassCelestialBody.NEBULA_NGC_6537,
+        body = SpaceCompassCelestialBody.valueOf("NEBULA_NGC_6537"),
         entry = SpaceCompassAdditionalCatalogEntry(SpaceCompassCatalogType.NEBULA, "NGC 6537", SpaceCompassDeepSkyReference(18.086972222222222, -19.842972222222222, Double.NaN, 17.5, -1.4, hasMeasuredDistance = false), null),
         facts = SpaceCompassCelestialFacts(apparentMagnitude = 11.6),
         aliases = listOf("NGC6537", "NGC 6537", "Red Spider Nebula"),

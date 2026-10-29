@@ -108,3 +108,46 @@ An archived launch photograph, not a current view or attitude measurement.
 External thumb_*.webp reference previews inherit the source credits and licences
 of their parent images. They use 128 x 128 WebP, quality 90, method 6. The external
 manifest/CREDITS.md retain per-file authors, source, parent and integrity details.
+
+
+## Catalogue expansion under development
+
+The local catalogue has 9,999 selectable identities. Published release 1.6.0 remains unchanged.
+
+Additional references: SIMBAD/CDS (Wenger et al. 2000, A&AS 143, 9), the Lynds dark-nebula catalogue, NASA/JPL SBDB Query API, and Remco C. E. van den Bosch (2016), ApJ 831, 134, https://doi.org/10.3847/0004-637X/831/2/134. The black-hole mass compilation is from the author's repository, https://github.com/remco-space/Black-Hole-Mass-compilation, under its MIT licence. Upper limits and globular-cluster entries are excluded from the adopted black-hole masses.
+
+Scientific data and translations are bundled; images and independent thumbnails remain external. Missing distances, masses, temperatures and expired trajectories are not invented.
+
+
+## Local catalogue expansion and graphics 1.8
+
+Five additional reviewed photographic plates and independent thumbnails are prepared in `textures/celestial-textures-v1.8`. All new files use WebP quality 90, method 6; full plates are 2048 × 1024, previews 128 × 128. Original aspect ratio is preserved with a black letterbox. No photographs or thumbnails are bundled into the APK, and no complete texture ZIP is produced.
+
+The logical collection contains 189 full images (42,855,924 bytes) and 189 thumbnails (807,650 bytes); the five new pairs add 444,858 bytes. Metadata is additional. Unchanged published assets retain their exact 1.6/1.7 URLs and pins. New resources have no network URL until publication is authorized.
+
+New credits: NGC 1313 — ESO, https://www.eso.org/public/images/eso0643a/ (CC BY 4.0; https://www.eso.org/public/copyright/); NGC 4526 — ESA/Hubble & NASA, acknowledgement Judy Schmidt; NGC 3923 and IC 342 — ESA/Hubble & NASA; NGC 2440 — NASA, ESA, and K. Noll (STScI), acknowledgement The Hubble Heritage Team (STScI/AURA). Source URLs, derivatives and byte/dimension/SHA-256 pins are retained in the new manifest and CREDITS.md.
+
+
+The MIT License (MIT)
+
+Copyright (c) 2016 Remco van den Bosch
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+And please cite my paper associated with this code and datatable. The paper can be found here http://arxiv.org/abs/1606.01246 and will be published in ApJ.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.

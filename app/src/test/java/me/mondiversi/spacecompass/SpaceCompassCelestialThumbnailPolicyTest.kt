@@ -62,7 +62,7 @@ class SpaceCompassCelestialThumbnailPolicyTest {
     }
 
     @Test fun publishedPreviewsUseIndependentVersionedUrlsAndRejectCorruption() {
-        for (preview in previews.images) {
+        for (preview in previews.images.filter { it.downloadPack != null }) {
                 assertEquals(policy.images.single { "thumb_" + it.name == preview.name }.downloadPack, preview.downloadPack)
                 assertEquals(preview.name, preview.downloadName)
                 assertEquals("https://github.com/mondiversi/SpaceCompass/releases/download/${preview.downloadPack}/${preview.downloadName}", preview.url)

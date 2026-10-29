@@ -3,7 +3,7 @@ package me.mondiversi.spacecompass
 /** Generated from catalogue/expanded-catalog.json; regenerate with scripts/GenerateExpandedCatalog.py. */
 internal fun spaceCompassLargeCatalogData06(): List<SpaceCompassLargeCatalogEntry> = listOf(
     SpaceCompassLargeCatalogEntry(
-        body = SpaceCompassCelestialBody.STAR_HIP_101772,
+        body = SpaceCompassCelestialBody.valueOf("STAR_HIP_101772"),
         entry = SpaceCompassAdditionalCatalogEntry(SpaceCompassCatalogType.STAR, "HIP 101772 · HD 196171", SpaceCompassDeepSkyReference(20.626116, -47.291502, 98.32864627986291, 49.2, 66.07), null),
         facts = SpaceCompassCelestialFacts(apparentMagnitude = 3.11, spectralType = "K0III"),
         aliases = listOf("Alp Ind", "Gl 794.1", "7869"),
@@ -12,7 +12,7 @@ internal fun spaceCompassLargeCatalogData06(): List<SpaceCompassLargeCatalogEntr
         galaxy = "MILKY_WAY",
         note = R.string.catalogue_reference_note),
     SpaceCompassLargeCatalogEntry(
-        body = SpaceCompassCelestialBody.STAR_HIP_027628,
+        body = SpaceCompassCelestialBody.valueOf("STAR_HIP_027628"),
         entry = SpaceCompassAdditionalCatalogEntry(SpaceCompassCatalogType.STAR, "HIP 27628 · HD 39425", SpaceCompassDeepSkyReference(5.849329, -35.768309, 87.1842090102316, 55.74, 404.68), null),
         facts = SpaceCompassCelestialFacts(apparentMagnitude = 3.12, spectralType = "K1.5III"),
         aliases = listOf("Wazn", "Bet Col", "2040", "Вазн", "Βαζν (Βάρος)", "‎‎الوزن ‏‎‎‎", "ワズン", "와즌", "子二 Wazn"),
@@ -21,7 +21,7 @@ internal fun spaceCompassLargeCatalogData06(): List<SpaceCompassLargeCatalogEntr
         galaxy = "MILKY_WAY",
         note = R.string.catalogue_reference_note),
     SpaceCompassLargeCatalogEntry(
-        body = SpaceCompassCelestialBody.STAR_HIP_044127,
+        body = SpaceCompassCelestialBody.valueOf("STAR_HIP_044127"),
         entry = SpaceCompassAdditionalCatalogEntry(SpaceCompassCatalogType.STAR, "HIP 44127 · HD 76644", SpaceCompassDeepSkyReference(8.986828, 48.041826, 47.3239857787592, -441.12, -215.21), null),
         facts = SpaceCompassCelestialFacts(apparentMagnitude = 3.12, spectralType = "A7IV"),
         aliases = listOf("Talitha", "9Iot UMa", "Gl 331A", "3569", "Talita", "Талита", "‎‎القفزة الثالثة 1 ‎‎‎", "タリタ", "달리다", "上台一 Talitha"),
@@ -30,7 +30,7 @@ internal fun spaceCompassLargeCatalogData06(): List<SpaceCompassLargeCatalogEntr
         galaxy = "MILKY_WAY",
         note = R.string.catalogue_reference_note),
     SpaceCompassLargeCatalogEntry(
-        body = SpaceCompassCelestialBody.STAR_HIP_083081,
+        body = SpaceCompassCelestialBody.valueOf("STAR_HIP_083081"),
         entry = SpaceCompassAdditionalCatalogEntry(SpaceCompassCatalogType.STAR, "HIP 83081 · HD 152786", SpaceCompassDeepSkyReference(16.977006, -55.990141, 486.0750897192201, -18.31, -35.29), null),
         facts = SpaceCompassCelestialFacts(apparentMagnitude = 3.12, spectralType = "K5III"),
         aliases = listOf("Zet Ara", "GJ 9581", "6285"),
@@ -39,7 +39,7 @@ internal fun spaceCompassLargeCatalogData06(): List<SpaceCompassLargeCatalogEntr
         galaxy = "MILKY_WAY",
         note = R.string.catalogue_reference_note),
     SpaceCompassLargeCatalogEntry(
-        body = SpaceCompassCelestialBody.STAR_HIP_084379,
+        body = SpaceCompassCelestialBody.valueOf("STAR_HIP_084379"),
         entry = SpaceCompassAdditionalCatalogEntry(SpaceCompassCatalogType.STAR, "HIP 84379 · HD 156164", SpaceCompassDeepSkyReference(17.250531, 24.839204, 75.1340354797274, -21.14, -157.68), null),
         facts = SpaceCompassCelestialFacts(apparentMagnitude = 3.12, spectralType = "A3IVv SB"),
         aliases = listOf("Sarin", "65Del Her", "GJ 3995A", "6410", "Сарин", "Σαρίν", "‎‎سارن‎‎", "サリン", "사린", "天市左垣一 魏 Sarin"),
@@ -48,7 +48,7 @@ internal fun spaceCompassLargeCatalogData06(): List<SpaceCompassLargeCatalogEntr
         galaxy = "MILKY_WAY",
         note = R.string.catalogue_reference_note),
     SpaceCompassLargeCatalogEntry(
-        body = SpaceCompassCelestialBody.STAR_HIP_073334,
+        body = SpaceCompassCelestialBody.valueOf("STAR_HIP_073334"),
         entry = SpaceCompassAdditionalCatalogEntry(SpaceCompassCatalogType.STAR, "HIP 73334 · HD 132200", SpaceCompassDeepSkyReference(14.986025, -42.104194, 383.26244555873757, -17.76, -21.33), null),
         facts = SpaceCompassCelestialFacts(apparentMagnitude = 3.13, spectralType = "B2IV"),
         aliases = listOf("Kap Cen", "5576"),
@@ -57,7 +57,7 @@ internal fun spaceCompassLargeCatalogData06(): List<SpaceCompassLargeCatalogEntr
         galaxy = "MILKY_WAY",
         note = R.string.catalogue_reference_note),
     SpaceCompassLargeCatalogEntry(
-        body = SpaceCompassCelestialBody.STAR_HIP_045860,
+        body = SpaceCompassCelestialBody.valueOf("STAR_HIP_045860"),
         entry = SpaceCompassAdditionalCatalogEntry(SpaceCompassCatalogType.STAR, "HIP 45860 · HD 80493", SpaceCompassDeepSkyReference(9.350925, 34.392562, 203.0861609205705, -222.8, 14.78), null),
         facts = SpaceCompassCelestialFacts(apparentMagnitude = 3.14, spectralType = "M0IIIvar"),
         aliases = listOf("40Alp Lyn", "3705"),
@@ -66,7 +66,7 @@ internal fun spaceCompassLargeCatalogData06(): List<SpaceCompassLargeCatalogEntr
         galaxy = "MILKY_WAY",
         note = R.string.catalogue_reference_note),
     SpaceCompassLargeCatalogEntry(
-        body = SpaceCompassCelestialBody.STAR_HIP_046701,
+        body = SpaceCompassCelestialBody.valueOf("STAR_HIP_046701"),
         entry = SpaceCompassAdditionalCatalogEntry(SpaceCompassCatalogType.STAR, "HIP 46701 · HD 82668", SpaceCompassDeepSkyReference(9.520371, -57.034377, 238.94248845939768, -32.58, 6.08), null),
         facts = SpaceCompassCelestialFacts(apparentMagnitude = 3.16, spectralType = "K5III"),
         aliases = listOf("3803", "HIP 46701"),
@@ -75,7 +75,7 @@ internal fun spaceCompassLargeCatalogData06(): List<SpaceCompassLargeCatalogEntr
         galaxy = "MILKY_WAY",
         note = R.string.catalogue_reference_note),
     SpaceCompassLargeCatalogEntry(
-        body = SpaceCompassCelestialBody.STAR_HIP_084380,
+        body = SpaceCompassCelestialBody.valueOf("STAR_HIP_084380"),
         entry = SpaceCompassAdditionalCatalogEntry(SpaceCompassCatalogType.STAR, "HIP 84380 · HD 156283", SpaceCompassDeepSkyReference(17.250788, 36.809162, 376.6238586470318, -27.35, 2.7), null),
         facts = SpaceCompassCelestialFacts(apparentMagnitude = 3.16, spectralType = "K3IIvar"),
         aliases = listOf("67Pi  Her", "6418"),
@@ -84,7 +84,7 @@ internal fun spaceCompassLargeCatalogData06(): List<SpaceCompassLargeCatalogEntr
         galaxy = "MILKY_WAY",
         note = R.string.catalogue_reference_note),
     SpaceCompassLargeCatalogEntry(
-        body = SpaceCompassCelestialBody.STAR_HIP_031685,
+        body = SpaceCompassCelestialBody.valueOf("STAR_HIP_031685"),
         entry = SpaceCompassAdditionalCatalogEntry(SpaceCompassCatalogType.STAR, "HIP 31685 · HD 47670", SpaceCompassDeepSkyReference(6.629353, -43.195934, 371.47645869417045, -0.43, -3.99), null),
         facts = SpaceCompassCelestialFacts(apparentMagnitude = 3.17, spectralType = "B8III SB"),
         aliases = listOf("Nu  Pup", "2451"),
@@ -93,7 +93,7 @@ internal fun spaceCompassLargeCatalogData06(): List<SpaceCompassLargeCatalogEntr
         galaxy = "MILKY_WAY",
         note = R.string.catalogue_reference_note),
     SpaceCompassLargeCatalogEntry(
-        body = SpaceCompassCelestialBody.STAR_HIP_046853,
+        body = SpaceCompassCelestialBody.valueOf("STAR_HIP_046853"),
         entry = SpaceCompassAdditionalCatalogEntry(SpaceCompassCatalogType.STAR, "HIP 46853 · HD 82328", SpaceCompassDeepSkyReference(9.547715, 51.6773, 43.9622919938053, -947.06, -535.6), null),
         facts = SpaceCompassCelestialFacts(apparentMagnitude = 3.17, spectralType = "F6IV"),
         aliases = listOf("25The UMa", "Gl 354A", "3775"),
@@ -102,7 +102,7 @@ internal fun spaceCompassLargeCatalogData06(): List<SpaceCompassLargeCatalogEntr
         galaxy = "MILKY_WAY",
         note = R.string.catalogue_reference_note),
     SpaceCompassLargeCatalogEntry(
-        body = SpaceCompassCelestialBody.STAR_HIP_083895,
+        body = SpaceCompassCelestialBody.valueOf("STAR_HIP_083895"),
         entry = SpaceCompassAdditionalCatalogEntry(SpaceCompassCatalogType.STAR, "HIP 83895 · HD 155763", SpaceCompassDeepSkyReference(17.146448, 65.714683, 328.4554540064073, -20.76, 19.15), null),
         facts = SpaceCompassCelestialFacts(apparentMagnitude = 3.17, spectralType = "B6III"),
         aliases = listOf("Aldhibah", "22Zet Dra", "6396", "Алдиба", "‎‎الذئبان‎‎", "アルディバー", "알드히바흐", "紫微左垣四 上弼 Aldhibah"),
@@ -111,7 +111,7 @@ internal fun spaceCompassLargeCatalogData06(): List<SpaceCompassLargeCatalogEntr
         galaxy = "MILKY_WAY",
         note = R.string.catalogue_reference_note),
     SpaceCompassLargeCatalogEntry(
-        body = SpaceCompassCelestialBody.STAR_HIP_092041,
+        body = SpaceCompassCelestialBody.valueOf("STAR_HIP_092041"),
         entry = SpaceCompassAdditionalCatalogEntry(SpaceCompassCatalogType.STAR, "HIP 92041 · HD 173300", SpaceCompassDeepSkyReference(18.76094, -26.990778, 239.2931065654252, 51.15, 0.45), null),
         facts = SpaceCompassCelestialFacts(apparentMagnitude = 3.17, spectralType = "B8.5III"),
         aliases = listOf("27Phi Sgr", "7039"),
@@ -120,7 +120,7 @@ internal fun spaceCompassLargeCatalogData06(): List<SpaceCompassLargeCatalogEntr
         galaxy = "MILKY_WAY",
         note = R.string.catalogue_reference_note),
     SpaceCompassLargeCatalogEntry(
-        body = SpaceCompassCelestialBody.STAR_HIP_023767,
+        body = SpaceCompassCelestialBody.valueOf("STAR_HIP_023767"),
         entry = SpaceCompassAdditionalCatalogEntry(SpaceCompassCatalogType.STAR, "HIP 23767 · HD 32630", SpaceCompassDeepSkyReference(5.10858, 41.234474, 243.40039382980132, 30.6, -68.41), null),
         facts = SpaceCompassCelestialFacts(apparentMagnitude = 3.18, spectralType = "B3V"),
         aliases = listOf("Haedus", "10Eta Aur", "1641", "Гаедус", "‎‎الجديان 1‎‎", "ヘドゥス", "해두스"),
@@ -129,7 +129,7 @@ internal fun spaceCompassLargeCatalogData06(): List<SpaceCompassLargeCatalogEntr
         galaxy = "MILKY_WAY",
         note = R.string.catalogue_reference_note),
     SpaceCompassLargeCatalogEntry(
-        body = SpaceCompassCelestialBody.STAR_HIP_071908,
+        body = SpaceCompassCelestialBody.valueOf("STAR_HIP_071908"),
         entry = SpaceCompassAdditionalCatalogEntry(SpaceCompassCatalogType.STAR, "HIP 71908 · HD 128898", SpaceCompassDeepSkyReference(14.708492, -64.975138, 54.04411178489, -192.64, -234.07), null),
         facts = SpaceCompassCelestialFacts(apparentMagnitude = 3.18, spectralType = "F1Vp"),
         aliases = listOf("Alp Cir", "Gl 560A", "5463"),
@@ -138,7 +138,7 @@ internal fun spaceCompassLargeCatalogData06(): List<SpaceCompassLargeCatalogEntr
         galaxy = "MILKY_WAY",
         note = R.string.catalogue_reference_note),
     SpaceCompassLargeCatalogEntry(
-        body = SpaceCompassCelestialBody.STAR_HIP_022449,
+        body = SpaceCompassCelestialBody.valueOf("STAR_HIP_022449"),
         entry = SpaceCompassAdditionalCatalogEntry(SpaceCompassCatalogType.STAR, "HIP 22449 · HD 30652", SpaceCompassDeepSkyReference(4.830669, 6.961276, 26.315601178346803, 463.44, 11.62), null),
         facts = SpaceCompassCelestialFacts(apparentMagnitude = 3.19, spectralType = "F6V"),
         aliases = listOf("Tabit", "1Pi 3Ori", "Gl 178", "1543", "Табит", "‎‎الثابت‎‎", "タビト", "타비트", "参旗六 Tabit"),
@@ -147,7 +147,7 @@ internal fun spaceCompassLargeCatalogData06(): List<SpaceCompassLargeCatalogEntr
         galaxy = "MILKY_WAY",
         note = R.string.catalogue_reference_note),
     SpaceCompassLargeCatalogEntry(
-        body = SpaceCompassCelestialBody.STAR_HIP_023685,
+        body = SpaceCompassCelestialBody.valueOf("STAR_HIP_023685"),
         entry = SpaceCompassAdditionalCatalogEntry(SpaceCompassCatalogType.STAR, "HIP 23685 · HD 32887", SpaceCompassDeepSkyReference(5.091018, -22.371032, 213.31344645610938, 19.27, -72.35), null),
         facts = SpaceCompassCelestialFacts(apparentMagnitude = 3.19, spectralType = "K4III"),
         aliases = listOf("2Eps Lep", "1654"),
@@ -156,7 +156,7 @@ internal fun spaceCompassLargeCatalogData06(): List<SpaceCompassLargeCatalogEntr
         galaxy = "MILKY_WAY",
         note = R.string.catalogue_reference_note),
     SpaceCompassLargeCatalogEntry(
-        body = SpaceCompassCelestialBody.STAR_HIP_083000,
+        body = SpaceCompassCelestialBody.valueOf("STAR_HIP_083000"),
         entry = SpaceCompassAdditionalCatalogEntry(SpaceCompassCatalogType.STAR, "HIP 83000 · HD 153210", SpaceCompassDeepSkyReference(16.961139, 9.375033, 91.4627283729002, -293.03, -9.7), null),
         facts = SpaceCompassCelestialFacts(apparentMagnitude = 3.19, spectralType = "K2IIIvar"),
         aliases = listOf("27Kap Oph", "6299"),
@@ -165,7 +165,7 @@ internal fun spaceCompassLargeCatalogData06(): List<SpaceCompassLargeCatalogEntr
         galaxy = "MILKY_WAY",
         note = R.string.catalogue_reference_note),
     SpaceCompassLargeCatalogEntry(
-        body = SpaceCompassCelestialBody.STAR_HIP_087261,
+        body = SpaceCompassCelestialBody.valueOf("STAR_HIP_087261"),
         entry = SpaceCompassAdditionalCatalogEntry(SpaceCompassCatalogType.STAR, "HIP 87261 · HD 161892", SpaceCompassDeepSkyReference(17.830965, -37.043304, 125.8317828294154, 42.09, 27.77), null),
         facts = SpaceCompassCelestialFacts(apparentMagnitude = 3.19, spectralType = "K0/K1III"),
         aliases = listOf("Fuyue", "6630", "Файю", "‎فويوي‎", "フユエ", "푸유에", "傅说 Fuyue"),
@@ -174,7 +174,7 @@ internal fun spaceCompassLargeCatalogData06(): List<SpaceCompassLargeCatalogEntr
         galaxy = "MILKY_WAY",
         note = R.string.catalogue_reference_note),
     SpaceCompassLargeCatalogEntry(
-        body = SpaceCompassCelestialBody.STAR_HIP_104732,
+        body = SpaceCompassCelestialBody.valueOf("STAR_HIP_104732"),
         entry = SpaceCompassAdditionalCatalogEntry(SpaceCompassCatalogType.STAR, "HIP 104732 · HD 202109", SpaceCompassDeepSkyReference(21.215607, 30.226916, 143.1138308146053, 6.87, -68.12), null),
         facts = SpaceCompassCelestialFacts(apparentMagnitude = 3.21, spectralType = "G8II SB"),
         aliases = listOf("64Zet Cyg", "8115"),
@@ -183,7 +183,7 @@ internal fun spaceCompassLargeCatalogData06(): List<SpaceCompassLargeCatalogEntr
         galaxy = "MILKY_WAY",
         note = R.string.catalogue_reference_note),
     SpaceCompassLargeCatalogEntry(
-        body = SpaceCompassCelestialBody.STAR_HIP_116727,
+        body = SpaceCompassCelestialBody.valueOf("STAR_HIP_116727"),
         entry = SpaceCompassAdditionalCatalogEntry(SpaceCompassCatalogType.STAR, "HIP 116727 · HD 222404", SpaceCompassDeepSkyReference(23.65582, 77.632276, 45.9958770087648, -48.85, 127.18), null),
         facts = SpaceCompassCelestialFacts(apparentMagnitude = 3.21, spectralType = "K1IV"),
         aliases = listOf("Errai", "35Gam Cep", "Gl 903", "8974", "Эррай", "‎‎الراعي ‎‎‎", "エライ", "엘라이", "少卫增八 Errai"),
@@ -192,7 +192,7 @@ internal fun spaceCompassLargeCatalogData06(): List<SpaceCompassLargeCatalogEntr
         galaxy = "MILKY_WAY",
         note = R.string.catalogue_reference_note),
     SpaceCompassLargeCatalogEntry(
-        body = SpaceCompassCelestialBody.STAR_HIP_075141,
+        body = SpaceCompassCelestialBody.valueOf("STAR_HIP_075141"),
         entry = SpaceCompassAdditionalCatalogEntry(SpaceCompassCatalogType.STAR, "HIP 75141 · HD 136298", SpaceCompassDeepSkyReference(15.356201, -40.647518, 883.8925897891979, -19.11, -24.05), null),
         facts = SpaceCompassCelestialFacts(apparentMagnitude = 3.22, spectralType = "B1.5IV"),
         aliases = listOf("Del Lup", "5695"),
@@ -201,7 +201,7 @@ internal fun spaceCompassLargeCatalogData06(): List<SpaceCompassLargeCatalogEntr
         galaxy = "MILKY_WAY",
         note = R.string.catalogue_reference_note),
     SpaceCompassLargeCatalogEntry(
-        body = SpaceCompassCelestialBody.STAR_HIP_079882,
+        body = SpaceCompassCelestialBody.valueOf("STAR_HIP_079882"),
         entry = SpaceCompassAdditionalCatalogEntry(SpaceCompassCatalogType.STAR, "HIP 79882 · HD 146791", SpaceCompassDeepSkyReference(16.305358, -4.692511, 106.44798314632669, 82.39, 40.08), null),
         facts = SpaceCompassCelestialFacts(apparentMagnitude = 3.23, spectralType = "G8III"),
         aliases = listOf("Yed Posterior", "2Eps Oph", "GJ 3949", "6075", "Йед Постериор", "Γιεντ Ποστέριορ", "‎‎اليد الخلفية ‎‎‎", "イェッド・ポステリオル", "뒤쪽 예드", "天市右垣十 楚 Yed Posterior"),
@@ -210,7 +210,7 @@ internal fun spaceCompassLargeCatalogData06(): List<SpaceCompassLargeCatalogEntr
         galaxy = "MILKY_WAY",
         note = R.string.catalogue_reference_note),
     SpaceCompassLargeCatalogEntry(
-        body = SpaceCompassCelestialBody.STAR_HIP_089962,
+        body = SpaceCompassCelestialBody.valueOf("STAR_HIP_089962"),
         entry = SpaceCompassAdditionalCatalogEntry(SpaceCompassCatalogType.STAR, "HIP 89962 · HD 168723", SpaceCompassDeepSkyReference(18.355167, -2.898825, 60.477872491400205, -547.57, -700.72), null),
         facts = SpaceCompassCelestialFacts(apparentMagnitude = 3.23, spectralType = "K0III-IV"),
         aliases = listOf("58Eta Ser", "Gl 711", "6869"),
@@ -219,7 +219,7 @@ internal fun spaceCompassLargeCatalogData06(): List<SpaceCompassLargeCatalogEntr
         galaxy = "MILKY_WAY",
         note = R.string.catalogue_reference_note),
     SpaceCompassLargeCatalogEntry(
-        body = SpaceCompassCelestialBody.STAR_HIP_106032,
+        body = SpaceCompassCelestialBody.valueOf("STAR_HIP_106032"),
         entry = SpaceCompassAdditionalCatalogEntry(SpaceCompassCatalogType.STAR, "HIP 106032 · HD 205021", SpaceCompassDeepSkyReference(21.477662, 70.560716, 685.2023645272681, 12.6, 8.73), null),
         facts = SpaceCompassCelestialFacts(apparentMagnitude = 3.23, spectralType = "B2IIIv SB"),
         aliases = listOf("Alfirk", "8Bet Cep", "8238", "Альфирк", "‎‎كوكبا الفرق 2‎‎", "アルフィルク", "알피르크", "上卫增一 Alfirk"),
@@ -228,7 +228,7 @@ internal fun spaceCompassLargeCatalogData06(): List<SpaceCompassLargeCatalogEntr
         galaxy = "MILKY_WAY",
         note = R.string.catalogue_reference_note),
     SpaceCompassLargeCatalogEntry(
-        body = SpaceCompassCelestialBody.STAR_HIP_032607,
+        body = SpaceCompassCelestialBody.valueOf("STAR_HIP_032607"),
         entry = SpaceCompassAdditionalCatalogEntry(SpaceCompassCatalogType.STAR, "HIP 32607 · HD 50241", SpaceCompassDeepSkyReference(6.803194, -61.941391, 96.5530509596641, -68.39, 242.03), null),
         facts = SpaceCompassCelestialFacts(apparentMagnitude = 3.24, spectralType = "A7IV"),
         aliases = listOf("Alp Pic", "Gl 248", "2550"),
@@ -237,7 +237,7 @@ internal fun spaceCompassLargeCatalogData06(): List<SpaceCompassLargeCatalogEntr
         galaxy = "MILKY_WAY",
         note = R.string.catalogue_reference_note),
     SpaceCompassLargeCatalogEntry(
-        body = SpaceCompassCelestialBody.STAR_HIP_099473,
+        body = SpaceCompassCelestialBody.valueOf("STAR_HIP_099473"),
         entry = SpaceCompassAdditionalCatalogEntry(SpaceCompassCatalogType.STAR, "HIP 99473 · HD 191692", SpaceCompassDeepSkyReference(20.188413, -0.821461, 286.3532318346251, 35.48, 6.05), null),
         facts = SpaceCompassCelestialFacts(apparentMagnitude = 3.24, spectralType = "B9.5III"),
         aliases = listOf("65The Aql", "7710"),
@@ -246,7 +246,7 @@ internal fun spaceCompassLargeCatalogData06(): List<SpaceCompassLargeCatalogEntr
         galaxy = "MILKY_WAY",
         note = R.string.catalogue_reference_note),
     SpaceCompassLargeCatalogEntry(
-        body = SpaceCompassCelestialBody.STAR_HIP_036377,
+        body = SpaceCompassCelestialBody.valueOf("STAR_HIP_036377"),
         entry = SpaceCompassAdditionalCatalogEntry(SpaceCompassCatalogType.STAR, "HIP 36377 · HD 59717", SpaceCompassDeepSkyReference(7.487179, -43.301432, 193.6794848313248, -59.86, 188.73), null),
         facts = SpaceCompassCelestialFacts(apparentMagnitude = 3.25, spectralType = "K5III SB"),
         aliases = listOf("Sig Pup", "2878"),
@@ -255,7 +255,7 @@ internal fun spaceCompassLargeCatalogData06(): List<SpaceCompassLargeCatalogEntr
         galaxy = "MILKY_WAY",
         note = R.string.catalogue_reference_note),
     SpaceCompassLargeCatalogEntry(
-        body = SpaceCompassCelestialBody.STAR_HIP_068895,
+        body = SpaceCompassCelestialBody.valueOf("STAR_HIP_068895"),
         entry = SpaceCompassAdditionalCatalogEntry(SpaceCompassCatalogType.STAR, "HIP 68895 · HD 123123", SpaceCompassDeepSkyReference(14.106193, -26.682361, 100.9773622231646, 43.05, -140.82), null),
         facts = SpaceCompassCelestialFacts(apparentMagnitude = 3.25, spectralType = "K2III"),
         aliases = listOf("49Pi  Hya", "Gl 538.1", "5287"),
@@ -264,7 +264,7 @@ internal fun spaceCompassLargeCatalogData06(): List<SpaceCompassLargeCatalogEntr
         galaxy = "MILKY_WAY",
         note = R.string.catalogue_reference_note),
     SpaceCompassLargeCatalogEntry(
-        body = SpaceCompassCelestialBody.STAR_HIP_073714,
+        body = SpaceCompassCelestialBody.valueOf("STAR_HIP_073714"),
         entry = SpaceCompassAdditionalCatalogEntry(SpaceCompassCatalogType.STAR, "HIP 73714 · HD 133216", SpaceCompassDeepSkyReference(15.067839, -25.281965, 288.3786629401421, -71.85, -44.69), null),
         facts = SpaceCompassCelestialFacts(apparentMagnitude = 3.25, spectralType = "M3/M4III"),
         aliases = listOf("Brachium", "20Sig Lib", "5603", "Braccio", "Brazo", "Брачиум", "‎‎براخيوم‎‎", "ブラキウム", "브라키움", "折威七 Brachium"),
@@ -273,7 +273,7 @@ internal fun spaceCompassLargeCatalogData06(): List<SpaceCompassLargeCatalogEntr
         galaxy = "MILKY_WAY",
         note = R.string.catalogue_reference_note),
     SpaceCompassLargeCatalogEntry(
-        body = SpaceCompassCelestialBody.STAR_HIP_093194,
+        body = SpaceCompassCelestialBody.valueOf("STAR_HIP_093194"),
         entry = SpaceCompassAdditionalCatalogEntry(SpaceCompassCatalogType.STAR, "HIP 93194 · HD 176437", SpaceCompassDeepSkyReference(18.982395, 32.689557, 620.0692620569557, -2.76, 1.77), null),
         facts = SpaceCompassCelestialFacts(apparentMagnitude = 3.25, spectralType = "B9III"),
         aliases = listOf("Sulafat", "14Gam Lyr", "7178", "Сулафат", "‎‎السلحفاة ‎‎‎", "スラファト", "술라파트", "渐台三 Sulafat"),
@@ -282,7 +282,7 @@ internal fun spaceCompassLargeCatalogData06(): List<SpaceCompassLargeCatalogEntr
         galaxy = "MILKY_WAY",
         note = R.string.catalogue_reference_note),
     SpaceCompassLargeCatalogEntry(
-        body = SpaceCompassCelestialBody.STAR_HIP_017678,
+        body = SpaceCompassCelestialBody.valueOf("STAR_HIP_017678"),
         entry = SpaceCompassAdditionalCatalogEntry(SpaceCompassCatalogType.STAR, "HIP 17678 · HD 24512", SpaceCompassDeepSkyReference(3.787295, -74.238962, 214.0133780426536, 51.07, 115.27), null),
         facts = SpaceCompassCelestialFacts(apparentMagnitude = 3.26, spectralType = "M2III"),
         aliases = listOf("Gam Hyi", "1208"),
@@ -291,7 +291,7 @@ internal fun spaceCompassLargeCatalogData06(): List<SpaceCompassLargeCatalogEntr
         galaxy = "MILKY_WAY",
         note = R.string.catalogue_reference_note),
     SpaceCompassLargeCatalogEntry(
-        body = SpaceCompassCelestialBody.STAR_HIP_003092,
+        body = SpaceCompassCelestialBody.valueOf("STAR_HIP_003092"),
         entry = SpaceCompassAdditionalCatalogEntry(SpaceCompassCatalogType.STAR, "HIP 3092 · HD 3627", SpaceCompassDeepSkyReference(0.655462, 30.861024, 105.518111313504, 115.38, -83.05), null),
         facts = SpaceCompassCelestialFacts(apparentMagnitude = 3.27, spectralType = "K3III..."),
         aliases = listOf("31Del And", "165"),
@@ -300,7 +300,7 @@ internal fun spaceCompassLargeCatalogData06(): List<SpaceCompassLargeCatalogEntr
         galaxy = "MILKY_WAY",
         note = R.string.catalogue_reference_note),
     SpaceCompassLargeCatalogEntry(
-        body = SpaceCompassCelestialBody.STAR_HIP_084970,
+        body = SpaceCompassCelestialBody.valueOf("STAR_HIP_084970"),
         entry = SpaceCompassAdditionalCatalogEntry(SpaceCompassCatalogType.STAR, "HIP 84970 · HD 157056", SpaceCompassDeepSkyReference(17.366827, -24.999545, 436.03780903437456, -8.84, -23.64), null),
         facts = SpaceCompassCelestialFacts(apparentMagnitude = 3.27, spectralType = "B2IV"),
         aliases = listOf("42The Oph", "6453"),
@@ -309,7 +309,7 @@ internal fun spaceCompassLargeCatalogData06(): List<SpaceCompassLargeCatalogEntr
         galaxy = "MILKY_WAY",
         note = R.string.catalogue_reference_note),
     SpaceCompassLargeCatalogEntry(
-        body = SpaceCompassCelestialBody.STAR_HIP_113136,
+        body = SpaceCompassCelestialBody.valueOf("STAR_HIP_113136"),
         entry = SpaceCompassAdditionalCatalogEntry(SpaceCompassCatalogType.STAR, "HIP 113136 · HD 216627", SpaceCompassDeepSkyReference(22.910837, -15.82082, 160.5889633753936, -44.08, -24.81), null),
         facts = SpaceCompassCelestialFacts(apparentMagnitude = 3.27, spectralType = "A3V"),
         aliases = listOf("Skat", "76Del Aqr", "8709", "Скат", "Σκατ", "‎‎الساق - ساق ساقي الماء ‎‎‎", "スカット", "스캇", "羽林军二十六 Skat"),

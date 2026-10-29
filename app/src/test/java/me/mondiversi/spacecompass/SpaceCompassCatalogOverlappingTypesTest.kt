@@ -35,11 +35,11 @@ class SpaceCompassCatalogOverlappingTypesTest {
         assertEquals(rows.size, spaceCompassCatalogTypeMatchCount(catalogue, types))
         val counts = spaceCompassCatalogTypeCounts(catalogue, emptyMap(), Locale.ROOT).associate { it.type to it.count }
         assertEquals(13, counts.getValue(SpaceCompassCatalogType.PLANET))
-        assertEquals(83, counts.getValue(SpaceCompassCatalogType.NATURAL_SATELLITE))
+        assertEquals(203, counts.getValue(SpaceCompassCatalogType.NATURAL_SATELLITE))
         assertEquals(11, counts.getValue(SpaceCompassCatalogType.SCIENCE_FICTION))
         assertEquals(2, counts.getValue(SpaceCompassCatalogType.SPACECRAFT))
-        assertEquals(1009, spaceCompassCatalogTypeMatchCount(catalogue, emptySet()))
-        assertEquals(1009, spaceCompassCatalogTypeMatchCount(catalogue, SpaceCompassCatalogType.entries.toSet()))
+        assertEquals(9999, spaceCompassCatalogTypeMatchCount(catalogue, emptySet()))
+        assertEquals(9999, spaceCompassCatalogTypeMatchCount(catalogue, SpaceCompassCatalogType.entries.toSet()))
         assertEquals(catalogue, spaceCompassFilterCatalog(SpaceCompassCatalogType.entries.toSet(),
             SpaceCompassCatalogVisibility.ALL, emptyMap()))
     }

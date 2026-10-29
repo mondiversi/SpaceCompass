@@ -50,13 +50,14 @@ internal fun SpaceCompassCelestialCatalogPage(timeMs: Long, remote: SpaceCompass
     selectedBodies: Set<SpaceCompassCelestialBody>, color: Color, background: Color,
     onBack: () -> Unit, onToggleAll: (Set<SpaceCompassCelestialBody>) -> Unit, onSelect: (SpaceCompassCelestialBody) -> Unit,
     latitude: Double? = null, longitude: Double? = null, altitude: Double = 0.0,
-    onObserve: (SpaceCompassCelestialBody) -> Unit = {}) {
+    onObserve: (SpaceCompassCelestialBody) -> Unit = {},
+    onDataNeeded: (Set<SpaceCompassCelestialBody>) -> Unit = {}) {
     val preferences = LocalSpaceCompassPreferences.current
     // Capture grouping for this catalogue visit, including its independent Observatory round trips.
     // Closing the catalogue back to the main view discards the snapshot; checks save immediately.
     val prioritySelectedNames = rememberSaveable { selectedBodies.map { it.name } }
     val prioritySelected = remember(prioritySelectedNames) {
-        spaceCompassAllCelestialOrder.filter { it.name in prioritySelectedNames }.toSet()
+        prioritySelectedNames.toHashSet().let { names -> spaceCompassAllCelestialOrder.filter { it.name in names }.toSet() }
     }
     val availableBodies = remember(selectedBodies) { spaceCompassAvailableCelestialCatalog(selectedBodies) }
     var catalogPreferences by remember(preferences) { mutableStateOf(readSpaceCompassCatalogPreferences(preferences)) }
@@ -78,8 +79,10 @@ internal fun SpaceCompassCelestialCatalogPage(timeMs: Long, remote: SpaceCompass
         saveSpaceCompassCatalogPreferences(preferences, updated)
     }
     val locale = androidx.compose.ui.platform.LocalConfiguration.current.locales[0]
-    val localizedNames = availableBodies.associateWith { body ->
-        stringResource(if (body == SpaceCompassCelestialBody.ANDROMEDA_CORE) R.string.celestial_andromeda_short else body.nameResource)
+    val resources = androidx.compose.ui.platform.LocalResources.current
+    val localizedNames = remember(availableBodies,resources,locale) {
+        availableBodies.associateWith { body -> resources.getString(
+            if (body == SpaceCompassCelestialBody.ANDROMEDA_CORE) R.string.celestial_andromeda_short else body.nameResource) }
     }
     var solarDistances by remember { mutableStateOf<Map<SpaceCompassCelestialBody, Double?>>(emptyMap()) }
     var earthDistances by remember { mutableStateOf<Map<SpaceCompassCelestialBody, Double?>>(emptyMap()) }
@@ -101,7 +104,6 @@ internal fun SpaceCompassCelestialCatalogPage(timeMs: Long, remote: SpaceCompass
     val catalogCount = formatSpaceCompassNumber(availableBodies.size.toDouble(),
         0, numeric, grouping = false)
     val units = LocalSpaceCompassUnits.current
-    val resources = androidx.compose.ui.platform.LocalResources.current
     val referencePressure = formatSpaceCompassPressure(SpaceCompassPressureUnit.BAR.pascals, numeric, units.pressure)!!
     val referenceLabel: (Int) -> String = { id ->
         if (id == R.string.catalog_temperature_atmosphere) resources.getString(id, referencePressure)
@@ -128,47 +130,32 @@ internal fun SpaceCompassCelestialCatalogPage(timeMs: Long, remote: SpaceCompass
     val observations = observationSnapshot?.takeIf { it.first === observationKey }?.second.orEmpty()
     LaunchedEffect(observationKey) {
         val calculated = withContext(Dispatchers.Default) {
-            availableBodies.associateWith { body ->
-                if (catalogLatitude == null || catalogLongitude == null) null else runCatching {
-                    calculateSpaceCompassCelestialObservation(body, visibilityTime, catalogLatitude, catalogLongitude, catalogAltitude, catalogRemote)
-                }.getOrNull()
-            }
+            spaceCompassCatalogObservations(availableBodies,visibilityTime,catalogLatitude,catalogLongitude,catalogAltitude,catalogRemote)
         }
         observationSnapshot = observationKey to calculated
     }
     LaunchedEffect(availableBodies, catalogTime, catalogRemote, catalogLatitude, catalogLongitude, catalogAltitude) {
         val snapshot = withContext(Dispatchers.Default) {
-            val ranges = availableBodies.associateWith { body -> runCatching {
-                when {
-                    body == SpaceCompassCelestialBody.EARTH_CENTER ->
-                        if (catalogLatitude == null || catalogLongitude == null) null else
-                            calculateSpaceCompassCelestialObservation(body, catalogTime, catalogLatitude, catalogLongitude, catalogAltitude, catalogRemote)?.distanceKm
-                    body.isEarthSatellite || body == SpaceCompassCelestialBody.MOON -> spaceCompassNearbyCatalogDistanceKm(body, catalogTime, catalogRemote)
-                    else -> spaceCompassCatalogDisplaySolarDistanceAu(body, catalogTime, catalogRemote)
-                }
-            }.getOrNull() }
-            val solar = availableBodies.associateWith { body ->
-                runCatching { spaceCompassCatalogDisplaySolarDistanceAu(body, catalogTime, catalogRemote) }.getOrNull()
-            }
-            val earth = availableBodies.associateWith { body ->
-                runCatching { spaceCompassCatalogDisplayEarthDistanceKm(body, catalogTime, catalogRemote) }.getOrNull()
-            }
-            Triple(ranges, solar, earth)
+            spaceCompassCatalogDistances(availableBodies,catalogTime,catalogRemote)
         }
-        distances = snapshot.first
-        solarDistances = snapshot.second
-        earthDistances = snapshot.third
+        distances = snapshot.displayed
+        solarDistances = snapshot.solar
+        earthDistances = snapshot.earth
     }
     // Static distant references enter the correct sort position before network refresh.
-    val readySolarDistances = spaceCompassCatalogDistancesWithReferences(solarDistances, availableBodies)
-    val readyDistances = spaceCompassCatalogDistancesWithReferences(distances, availableBodies)
+    val readySolarDistances = remember(solarDistances,availableBodies) {
+        spaceCompassCatalogDistancesWithReferences(solarDistances, availableBodies)
+    }
+    val readyDistances = remember(distances,availableBodies) {
+        spaceCompassCatalogDistancesWithReferences(distances, availableBodies)
+    }
     val filteredBodies = remember(types, visibility, origin, pointing, observations, availableBodies) {
         spaceCompassFilterCatalog(types, visibility, observations.mapValues { it.value?.position?.elevationDegrees }, availableBodies,
             origin, pointing, observations.mapValues { spaceCompassCatalogHasPointing(it.value) })
     }
-    val matchingBodies = remember(filteredBodies, localizedNames, query) {
-        spaceCompassSearchCatalog(filteredBodies, localizedNames, query)
-    }
+    val searchIndex = remember(availableBodies,localizedNames) { SpaceCompassCatalogSearchIndex(availableBodies,localizedNames) }
+    val searchScope = remember(searchIndex,query) { searchIndex.search(query).toSet() }
+    val matchingBodies = remember(filteredBodies,searchScope) { filteredBodies.filter { it in searchScope } }
     val sortedBodies = remember(availableBodies, sort, localizedNames, readySolarDistances, locale, earthDistances) {
         spaceCompassSortCatalog(availableBodies, sort, localizedNames, readySolarDistances, locale, earthDistances)
     }
@@ -178,14 +165,18 @@ internal fun SpaceCompassCelestialCatalogPage(timeMs: Long, remote: SpaceCompass
     }
     val elevations = remember(observations) { observations.mapValues { it.value?.position?.elevationDegrees } }
     val pointingAvailability = remember(observations) { observations.mapValues { spaceCompassCatalogHasPointing(it.value) } }
-    val searchScope = remember(availableBodies,localizedNames,query) {
-        spaceCompassSearchCatalog(availableBodies,localizedNames,query).toSet()
-    }
     val filterCounts = remember(filterAvailableBodies,selectedBodies,types,visibility,origin,pointing,
         elevations,pointingAvailability,searchScope) {
         spaceCompassCatalogFilterCounts(filterAvailableBodies,selectedBodies,types,visibility,origin,pointing,
             elevations,pointingAvailability,searchScope)
     }
+    val dataNeeded by rememberUpdatedState(onDataNeeded)
+    LaunchedEffect(catalogScroll,visibleBodies) {
+        snapshotFlow { catalogScroll.layoutInfo.visibleItemsInfo.mapNotNull { item ->
+            (item.key as? String)?.let { runCatching { SpaceCompassCelestialBody.valueOf(it) }.getOrNull() }
+        }.toSet() }.collect { dataNeeded(it) }
+    }
+    DisposableEffect(Unit) { onDispose { dataNeeded(emptySet()) } }
     val checkedCount = visibleBodies.count { it in selectedBodies }
     val checkedState = when {
         checkedCount == 0 -> ToggleableState.Off

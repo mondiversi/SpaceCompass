@@ -125,9 +125,11 @@ internal fun SpaceCompassScenarioMenu(entries: List<SpaceCompassScenarioMenuEntr
                                 Box(Modifier.size(20.dp),contentAlignment=Alignment.Center) {
                                     SpaceCompassSettingsGroupIcon(entry.section.iconKey,foreground)
                                 }
-                                if (canToggle) CompositionLocalProvider(LocalMinimumInteractiveComponentSize provides 0.dp) {
-                                    Checkbox(entry.customized, onCheckedChange = null,
-                                        modifier = Modifier.size(SpaceCompassSettingsControlSize),
+                                CompositionLocalProvider(LocalMinimumInteractiveComponentSize provides 0.dp) {
+                                    Checkbox(checked = if (canToggle) entry.customized else true,
+                                        enabled = canToggle, onCheckedChange = if (canToggle) null else { _ -> },
+                                        modifier = Modifier.size(SpaceCompassSettingsControlSize).then(
+                                            if (!canToggle) Modifier.testTag("scenario-resume-required") else Modifier),
                                         colors = spaceCompassCheckboxColors(uncheckedColor = foreground.copy(alpha=.72f)))
                                 }
                                 SpaceCompassSettingsChoiceLabel(title,Modifier.weight(1f,fill=false),lineHeight=18.sp)
@@ -147,7 +149,7 @@ internal fun SpaceCompassScenarioMenu(entries: List<SpaceCompassScenarioMenuEntr
                     // Consume a little of the header's lower blank area without shrinking its touch target.
                     Row(Modifier.fillMaxWidth().layout { measurable, constraints ->
                         val values = measurable.measure(constraints)
-                        val overlap = minOf(2.dp.roundToPx(), (values.height - constraints.minHeight).coerceAtLeast(0))
+                        val overlap = minOf(4.dp.roundToPx(), (values.height - constraints.minHeight).coerceAtLeast(0))
                         layout(values.width, values.height - overlap) { values.placeRelative(0, -overlap) }
                     },verticalAlignment=Alignment.CenterVertically,
                         horizontalArrangement=Arrangement.spacedBy(10.dp)) {

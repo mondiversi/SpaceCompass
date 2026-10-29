@@ -1,9 +1,9 @@
 <resources>
     <string name="info_news_title">Neuigkeiten · %1$s</string>
-    <string name="info_news_star_sky" formatted="false">Die Ortsverwaltung zeigt aktuelle Werte, hebt benutzerdefinierte Einstellungen fett hervor und bietet kompaktere Bedienelemente.</string>
-    <string name="info_news_texture_downloads" formatted="false">Markiere Objekte im Observatorium als Favoriten und zeige über das Herz im Katalog nur Favoriten an.</string>
-    <string name="info_news_weather" formatted="false">Die Kontrollkästchen der Favoriten sind rosa. Filteranzahlen berücksichtigen Favoriten, Suche und weitere aktive Filter.</string>
-    <string name="info_news_viewer_zoom" formatted="false">Ein neu ausgewähltes Objekt wird aktiv. Die Liste bleibt bis zur Rückkehr zur Hauptansicht an ihrer Position.</string>
-    <string name="info_news_settings" formatted="false">Ortsdateien können ausgewählte Objekte enthalten. Automatische Exporte teilen Position, Höhe und Zeitzone; Datum und Uhrzeit bleiben aktuell.</string>
-    <string name="info_news_catalog" formatted="false">Objektdaten werden bei Bedarf automatisch aktualisiert. Das geöffnete Filterfeld bleibt beim Scrollen sichtbar.</string>
+    <string name="info_news_star_sky" formatted="false">Der Katalog wächst auf 9.999 Objekte im Sonnensystem und im tiefen Weltraum.</string>
+    <string name="info_news_texture_downloads" formatted="false">Die erweiterte Nachführung nutzt geprüfte JPL- und Satellitendaten mit klaren Grenzen bei historischen oder fehlenden Daten.</string>
+    <string name="info_news_weather" formatted="false">Grafikpaket 1.8 ergänzt fünf Fotos und separate Vorschaubilder, die einzeln geladen und offline gespeichert werden.</string>
+    <string name="info_news_viewer_zoom" formatted="false">Katalogberechnungen, Suche und Datenaktualisierung sind für die größere Sammlung optimiert.</string>
+    <string name="info_news_settings" formatted="false">Die Standort-Unterseiten bleiben bearbeitbar. Eigene Werte werden nur in der Standortverwaltung aktiviert oder deaktiviert.</string>
+    <string name="info_news_catalog" formatted="false">Kompaktere Standortkarten und ein dauerhaft markiertes, deaktiviertes Kontrollkästchen für die Fortsetzung machen die Bedienung klarer.</string>
 </resources>

@@ -1,9 +1,9 @@
 <resources>
     <string name="info_news_title">Mambo mapya · %1$s</string>
-    <string name="info_news_star_sky" formatted="false">Usimamizi wa eneo unaonyesha thamani za sasa, mipangilio maalumu kwa herufi nzito na vidhibiti vilivyobana zaidi.</string>
-    <string name="info_news_texture_downloads" formatted="false">Weka vitu kama vipendwa kwenye Kiangalizi, kisha tumia moyo katika katalogi kuonyesha vipendwa pekee.</string>
-    <string name="info_news_weather" formatted="false">Visanduku vya vipendwa vina rangi ya waridi. Hesabu za vichujio hufuata vipendwa, utafutaji na vichujio vingine vinavyotumika.</string>
-    <string name="info_news_viewer_zoom" formatted="false">Kitu kipya kilichochaguliwa huwa kinachotumika. Orodha hubaki mahali pake hadi urudi kwenye mwonekano mkuu.</string>
-    <string name="info_news_settings" formatted="false">Faili za eneo zinaweza kujumuisha vitu vilivyochaguliwa. Usafirishaji otomatiki hushiriki nafasi, kimo na ukanda wa saa, huku tarehe na saa zikiendelea kuwa za sasa.</string>
-    <string name="info_news_catalog" formatted="false">Data ya vitu husasishwa kiotomatiki inapohitajika. Paneli ya vichujio iliyo wazi hubaki kuonekana unaposogeza orodha.</string>
+    <string name="info_news_star_sky" formatted="false">Katalogi imeongezeka hadi vitu 9,999 vya Mfumo wa Jua na anga za mbali.</string>
+    <string name="info_news_texture_downloads" formatted="false">Ufuatiliaji uliopanuliwa unatumia marejeleo ya JPL na satelaiti yaliyothibitishwa, ukiweka wazi mipaka ya data za kihistoria au zisizopatikana.</string>
+    <string name="info_news_weather" formatted="false">Kifurushi cha picha 1.8 kinaongeza picha tano na vijipicha huru, vinavyopakuliwa kimoja kimoja na kuhifadhiwa bila mtandao.</string>
+    <string name="info_news_viewer_zoom" formatted="false">Mahesabu, utafutaji na usasishaji wa data vimeboreshwa kwa katalogi kubwa zaidi.</string>
+    <string name="info_news_settings" formatted="false">Kurasa ndogo za eneo zinaweza kuhaririwa daima. Washa au zima thamani maalum kupitia Usimamizi wa eneo pekee.</string>
+    <string name="info_news_catalog" formatted="false">Kadi fupi zaidi na kisanduku cha kuendelea kilichotiwa alama daima na kisichoweza kuzimwa hufanya vidhibiti vieleweke zaidi.</string>
 </resources>

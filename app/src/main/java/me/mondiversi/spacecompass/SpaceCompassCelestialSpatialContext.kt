@@ -58,7 +58,7 @@ internal fun spaceCompassCelestialMembership(body: SpaceCompassCelestialBody): S
                 else -> SpaceCompassCelestialGalaxy.UNKNOWN
             }, galaxyDesignation = when {
                 data.galaxy == "SELF" -> data.entry.designation
-                data.galaxy.startsWith("NGC ") -> data.galaxy
+                data.galaxy !in setOf("MILKY_WAY","UNKNOWN","SELF","NONE","LMC","SMC") -> data.galaxy
                 else -> null
             })
     } else if (!body.isExtrasolar) SpaceCompassCelestialMembership(systemResource = R.string.celestial_spatial_solar_system)

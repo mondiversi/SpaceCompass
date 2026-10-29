@@ -8,7 +8,15 @@ import kotlin.math.*
  * References, limitations and physical identifications: docs/DEEP_SKY.md. */
 internal data class SpaceCompassDeepSkyReference(val raHours: Double, val decDegrees: Double,
     val distanceLy: Double, val pmRaMasYear: Double = 0.0, val pmDecMasYear: Double = 0.0,
-    val hasMeasuredDistance: Boolean = true)
+    val hasMeasuredDistance: Boolean = true) {
+    init {
+        require(raHours.isFinite() && raHours >= 0 && raHours < 24)
+        require(decDegrees.isFinite() && decDegrees in -90.0..90.0)
+        require(pmRaMasYear.isFinite() && pmDecMasYear.isFinite())
+        require(if (hasMeasuredDistance) distanceLy.isFinite() && distanceLy > 0
+            else distanceLy.isNaN() || distanceLy.isFinite() && distanceLy > 0)
+    }
+}
 internal val SpaceCompassCelestialBody.deepSkyReference: SpaceCompassDeepSkyReference?
     get() = if (isFictional) fictionalReference?.stellarReference?.copy(hasMeasuredDistance = false) else when (this) {
         SpaceCompassCelestialBody.VEGA -> SpaceCompassDeepSkyReference(18 + 36.0/60 + 56.33635/3600,
@@ -95,24 +103,7 @@ internal fun calculateSpaceCompassDeepSkyObservation(body: SpaceCompassCelestial
 
 internal fun calculateSpaceCompassDeepSkyObservation(reference: SpaceCompassDeepSkyReference, timeMs: Long,
     observer: Observer): SpaceCompassCelestialObservation {
-    val stellar = spaceCompassStellarReferenceVector(reference, timeMs)
-    val time = spaceCompassAstronomyTime(timeMs)
-    val earth = helioState(Body.Earth, time)
-    val site = observer.toVector(time, EquatorEpoch.J2000)
-    // A direction-only catalogue reference has no fabricated distance or parallax.
-    val ray = if (reference.hasMeasuredDistance)
-        stellar - SpaceCompassViewVector(earth.x + site.x, earth.y + site.y, earth.z + site.z) else stellar
-    val distanceAu = sqrt(ray.dot(ray))
-    // First-order annual aberration; residual is far below a phone compass's accuracy.
-    val sight = ray.unit()
-    val beta = SpaceCompassViewVector(earth.vx, earth.vy, earth.vz) * (1 / 173.144632674240)
-    val apparent = (sight + beta - sight*sight.dot(beta)).unit()
-    // EQJ -> horizontal includes precession, nutation and sidereal rotation for this UTC instant.
-    val horizontal = rotationEqjHor(time, observer).rotate(Vector(apparent.x, apparent.y, apparent.z, time))
-    val azimuth = (Math.toDegrees(atan2(-horizontal.y, horizontal.x)) + 360) % 360
-    val elevation = Math.toDegrees(atan2(horizontal.z, hypot(horizontal.x, horizontal.y)))
-    return SpaceCompassCelestialObservation(SpaceCompassSunPosition(azimuth, elevation),
-        if (reference.hasMeasuredDistance) distanceAu * SPACE_COMPASS_AU_KM else Double.NaN)
+    return SpaceCompassDeepSkyFrame(timeMs, observer).observe(reference)
 }
 
 internal val SpaceCompassCelestialBody.deepSkyNoteResource: Int

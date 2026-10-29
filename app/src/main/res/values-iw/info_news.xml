@@ -1,9 +1,9 @@
 <resources>
     <string name="info_news_title">החידושים האחרונים · %1$s</string>
-    <string name="info_news_star_sky" formatted="false">ניהול המיקום מציג ערכים נוכחיים, הגדרות מותאמות בהדגשה ופקדים קומפקטיים יותר.</string>
-    <string name="info_news_texture_downloads" formatted="false">סמנו עצמים כמועדפים במצפה והשתמשו בלב שבקטלוג כדי להציג רק מועדפים.</string>
-    <string name="info_news_weather" formatted="false">תיבות הסימון של מועדפים מודגשות בוורוד. מוני המסננים מתעדכנים לפי המועדפים, החיפוש ושאר המסננים הפעילים.</string>
-    <string name="info_news_viewer_zoom" formatted="false">עצם שנבחר כעת הופך לפעיל. הרשימה נשארת במקומה עד החזרה לתצוגה הראשית.</string>
-    <string name="info_news_settings" formatted="false">קובצי מיקום יכולים לכלול עצמים נבחרים. ייצוא אוטומטי משתף מיקום, גובה ואזור זמן, והתאריך והשעה נשארים עדכניים.</string>
-    <string name="info_news_catalog" formatted="false">נתוני העצמים מתרעננים אוטומטית לפי הצורך. חלונית מסננים פתוחה נשארת גלויה במהלך הגלילה.</string>
+    <string name="info_news_star_sky" formatted="false">הקטלוג גדל ל־9,999 גרמי שמיים ממערכת השמש ומהחלל העמוק.</string>
+    <string name="info_news_texture_downloads" formatted="false">המעקב המורחב משתמש במקורות JPL ונתוני לוויינים מאומתים, עם מגבלות ברורות לנתונים היסטוריים או חסרים.</string>
+    <string name="info_news_weather" formatted="false">חבילת הגרפיקה 1.8 מוסיפה חמש תמונות ותמונות ממוזערות עצמאיות, המורדות בנפרד ונשמרות לשימוש לא מקוון.</string>
+    <string name="info_news_viewer_zoom" formatted="false">החישובים, החיפוש ורענון הנתונים הותאמו לקטלוג המורחב.</string>
+    <string name="info_news_settings" formatted="false">דפי המשנה של המיקום תמיד ניתנים לעריכה. הפעלה וכיבוי של ערכים מותאמים נעשים רק בניהול המיקום.</string>
+    <string name="info_news_catalog" formatted="false">כרטיסים קומפקטיים יותר ותיבת חידוש מסומנת וקבועה שאינה ניתנת לביטול מבהירים את הפקדים.</string>
 </resources>

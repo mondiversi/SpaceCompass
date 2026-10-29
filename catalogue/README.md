@@ -41,3 +41,12 @@ applicable to NASA/JPL, SIMBAD and NORAD records; no ownership of their observat
 Per-object URLs, target headers, validation dates, raw-query SHA-256 values and available
 physical-parameter reference identifiers are retained in the canonical source. The two earlier
 regular catalogue datasets and their source notes are preserved. LV-426 remains explicitly fictional.
+
+
+## Catalogue expansion under development
+
+The local catalogue has 9,999 selectable identities. Published release 1.6.0 remains unchanged.
+
+Additional references: SIMBAD/CDS (Wenger et al. 2000, A&AS 143, 9), the Lynds dark-nebula catalogue, NASA/JPL SBDB Query API, and Remco C. E. van den Bosch (2016), ApJ 831, 134, https://doi.org/10.3847/0004-637X/831/2/134. The black-hole mass compilation is from the author's repository, https://github.com/remco-space/Black-Hole-Mass-compilation, under its MIT licence. Upper limits and globular-cluster entries are excluded from the adopted black-hole masses.
+
+Scientific data and translations are bundled; images and independent thumbnails remain external. Missing distances, masses, temperatures and expired trajectories are not invented.

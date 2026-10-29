@@ -41,19 +41,19 @@ class SpaceCompassObserverAutosaveUiTest {
         compose.onNodeWithTag("scenario-management-menu").assertExists()
     }
 
-    @Test fun openingDoesNotRewriteTheSavedMomentAndCheckboxesSaveWithoutLeaving() {
+    @Test fun openingDoesNotRewriteTheSavedMomentAndOnlyMenuCheckboxesToggleOverrides() {
         show()
-        compose.runOnIdle { assertEquals(initial, observer.plan) }
+        compose.runOnIdle { assertEquals(initial,observer.plan) }
+        compose.onNodeWithTag("scenario-toggle-time").performClick()
+        compose.runOnIdle { assertTrue(observer.plan!!.simulateDate);assertFalse(observer.plan!!.simulateTime) }
         open("time")
-        compose.onNodeWithTag("observer-enabled-time").performClick()
-        compose.runOnIdle { assertTrue(observer.plan!!.simulateDate); assertFalse(observer.plan!!.simulateTime) }
-        menu(); open("date")
-        compose.onNodeWithTag("observer-enabled-date").performClick()
-        compose.runOnIdle { assertNull(observer.plan); assertNotNull(observer.savedPlan) }
-        menu(); open("time")
-        compose.onNodeWithTag("observer-enabled-time").performClick()
-        compose.runOnIdle { assertTrue(observer.plan!!.simulateTime); assertFalse(observer.plan!!.simulateDate) }
-        compose.onNodeWithTag("observer-page").assertExists()
+        compose.onNodeWithTag("observer-enabled-time").assertDoesNotExist()
+        compose.onNodeWithTag("observer-time").assertIsEnabled()
+        menu()
+        compose.onNodeWithTag("scenario-toggle-date").performClick()
+        compose.runOnIdle { assertNull(observer.plan);assertNotNull(observer.savedPlan) }
+        compose.onNodeWithTag("scenario-toggle-time").performClick()
+        compose.runOnIdle { assertTrue(observer.plan!!.simulateTime);assertFalse(observer.plan!!.simulateDate) }
     }
 
     @Test fun completeTextChangeAutosavesAndIncompleteDateRetainsTheLastValidPlan() {
@@ -79,32 +79,34 @@ class SpaceCompassObserverAutosaveUiTest {
             assertEquals(spaceCompassObserverMoment(date, "21:05", ZoneId.systemDefault().id), observer.plan!!.timeMs)
         }
     }
-    @Test fun inactiveDateKeepsItsCompleteFormVisibleButDisablesItsActions() {
-        show(); open("date")
-        compose.onNodeWithTag("observer-enabled-date").performClick().assertIsOff()
-        compose.onNodeWithTag("observer-date").assertIsDisplayed().assertIsNotEnabled()
-        compose.onNodeWithTag("observer-current-date").assertExists().assertIsNotEnabled()
-        compose.onNodeWithTag("observer-enabled-date").performClick().assertIsOn()
-        compose.onNodeWithTag("observer-date").assertIsEnabled()
+    @Test fun inactiveDateStaysEditableAndPreparedValuesWaitForTheMenuCheckbox() {
+        show()
+        compose.onNodeWithTag("scenario-toggle-date").performClick().assertIsOff()
+        open("date")
+        compose.onNodeWithTag("observer-enabled-date").assertDoesNotExist()
+        compose.onNodeWithTag("observer-date").assertIsDisplayed().assertIsEnabled().performTextReplacement("2030-08-12")
         compose.onNodeWithTag("observer-current-date").assertIsEnabled()
+        compose.waitUntil(10_000) { observer.savedPlan?.let { Instant.ofEpochMilli(it.timeMs).atZone(ZoneId.of(it.momentZoneId)).toLocalDate().toString() }=="2030-08-12" }
+        compose.runOnIdle { assertFalse(observer.plan!!.simulateDate) }
+        menu()
+        compose.onNodeWithTag("scenario-toggle-date").assertIsOff().performClick().assertIsOn()
+        open("date")
+        compose.onNodeWithTag("observer-date").assertTextContains("2030-08-12")
     }
 
-    @Test fun menuAndChildCheckboxesShareStateWhileValueClicksOnlyNavigate() {
+    @Test fun childToolbarsHaveNoActivationCheckboxAndResumptionIsAlwaysCheckedAndDisabled() {
         show()
         compose.onNodeWithTag("scenario-toggle-date").assertIsOn().performClick().assertIsOff()
-        compose.onNodeWithTag("scenario-management-menu").assertExists()
-        compose.runOnIdle { assertFalse(observer.plan!!.simulateDate); assertTrue(observer.plan!!.simulateTime) }
         open("date")
-        compose.onNodeWithTag("observer-enabled-date").assertIsOff()
-        compose.onNodeWithTag("observer-date").assertIsNotEnabled()
-        compose.onNodeWithTag("observer-enabled-date").performClick().assertIsOn()
+        compose.onNodeWithTag("observer-enabled-date").assertDoesNotExist()
+        compose.onNodeWithTag("observer-date").assertIsEnabled()
         menu()
-        compose.onNodeWithTag("scenario-toggle-date").assertIsOn()
-        open("date")
-        compose.onNodeWithTag("observer-enabled-date").assertIsOn()
-        compose.runOnIdle { assertTrue(observer.plan!!.simulateDate) }
-        menu()
+        compose.onNodeWithTag("scenario-toggle-date").performClick().assertIsOn()
+        compose.onNodeWithTag("scenario-resume-required").performScrollTo().assertIsOn().assertIsNotEnabled()
         compose.onNodeWithTag("scenario-toggle-resume").assertDoesNotExist()
+        open("resume")
+        compose.onNodeWithTag("scenario-resume-choices").assertExists()
+        compose.onNodeWithTag("scenario-resume-ALWAYS").assertIsEnabled()
     }
 
 }

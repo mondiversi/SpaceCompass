@@ -3,7 +3,7 @@ package me.mondiversi.spacecompass
 /** Generated from catalogue/expanded-catalog.json; regenerate with scripts/GenerateExpandedCatalog.py. */
 internal fun spaceCompassLargeCatalogData22(): List<SpaceCompassLargeCatalogEntry> = listOf(
     SpaceCompassLargeCatalogEntry(
-        body = SpaceCompassCelestialBody.ASTEROID_24,
+        body = SpaceCompassCelestialBody.valueOf("ASTEROID_24"),
         entry = SpaceCompassAdditionalCatalogEntry(SpaceCompassCatalogType.ASTEROID, "24 Themis (A853 GA)", null, SpaceCompassHorizonsTarget("24;", "24 Themis (A853 GA)", 0.0..10000.0)),
         facts = SpaceCompassCelestialFacts(diameterKm = 198.0, diameterEstimated = true, rotationHours = 8.374, revolutionDays = 2036.206225191411, minimumParentKm = 416068080.2537609, maximumParentKm = 524602649.0563051, parent = SpaceCompassCelestialBody.SUN),
         aliases = listOf("24", "24 Themis (A853 GA)", "24 Themis"),
@@ -12,7 +12,7 @@ internal fun spaceCompassLargeCatalogData22(): List<SpaceCompassLargeCatalogEntr
         galaxy = "MILKY_WAY",
         note = R.string.celestial_horizons_tracking_note),
     SpaceCompassLargeCatalogEntry(
-        body = SpaceCompassCelestialBody.ASTEROID_25,
+        body = SpaceCompassCelestialBody.valueOf("ASTEROID_25"),
         entry = SpaceCompassAdditionalCatalogEntry(SpaceCompassCatalogType.ASTEROID, "25 Phocaea (A853 GB)", null, SpaceCompassHorizonsTarget("25;", "25 Phocaea (A853 GB)", 0.0..10000.0)),
         facts = SpaceCompassCelestialFacts(diameterKm = 61.054, diameterEstimated = true, diameterErrorKm = 2.463, rotationHours = 9.9341, revolutionDays = 1359.01907565643, minimumParentKm = 268050177.3482769, maximumParentKm = 450361679.7652618, parent = SpaceCompassCelestialBody.SUN),
         aliases = listOf("25", "25 Phocaea (A853 GB)", "25 Phocaea"),
@@ -21,7 +21,7 @@ internal fun spaceCompassLargeCatalogData22(): List<SpaceCompassLargeCatalogEntr
         galaxy = "MILKY_WAY",
         note = R.string.celestial_horizons_tracking_note),
     SpaceCompassLargeCatalogEntry(
-        body = SpaceCompassCelestialBody.ASTEROID_26,
+        body = SpaceCompassCelestialBody.valueOf("ASTEROID_26"),
         entry = SpaceCompassAdditionalCatalogEntry(SpaceCompassCatalogType.ASTEROID, "26 Proserpina (A853 JA)", null, SpaceCompassHorizonsTarget("26;", "26 Proserpina (A853 JA)", 0.0..10000.0)),
         facts = SpaceCompassCelestialFacts(diameterKm = 94.8, diameterEstimated = true, diameterErrorKm = 1.7, rotationHours = 13.11, revolutionDays = 1580.209711416775, minimumParentKm = 361960064.83488363, maximumParentKm = 432428421.15350163, parent = SpaceCompassCelestialBody.SUN),
         aliases = listOf("26", "26 Proserpina (A853 JA)", "26 Proserpina"),
@@ -30,7 +30,7 @@ internal fun spaceCompassLargeCatalogData22(): List<SpaceCompassLargeCatalogEntr
         galaxy = "MILKY_WAY",
         note = R.string.celestial_horizons_tracking_note),
     SpaceCompassLargeCatalogEntry(
-        body = SpaceCompassCelestialBody.ASTEROID_27,
+        body = SpaceCompassCelestialBody.valueOf("ASTEROID_27"),
         entry = SpaceCompassAdditionalCatalogEntry(SpaceCompassCatalogType.ASTEROID, "27 Euterpe (A853 VA)", null, SpaceCompassHorizonsTarget("27;", "27 Euterpe (A853 VA)", 0.0..10000.0)),
         facts = SpaceCompassCelestialFacts(diameterKm = 96.0, diameterEstimated = true, rotationHours = 10.4082, revolutionDays = 1313.21510625796, minimumParentKm = 290855207.30561584, maximumParentKm = 411322498.37468904, parent = SpaceCompassCelestialBody.SUN),
         aliases = listOf("27", "27 Euterpe (A853 VA)", "27 Euterpe"),
@@ -39,7 +39,7 @@ internal fun spaceCompassLargeCatalogData22(): List<SpaceCompassLargeCatalogEntr
         galaxy = "MILKY_WAY",
         note = R.string.celestial_horizons_tracking_note),
     SpaceCompassLargeCatalogEntry(
-        body = SpaceCompassCelestialBody.ASTEROID_28,
+        body = SpaceCompassCelestialBody.valueOf("ASTEROID_28"),
         entry = SpaceCompassAdditionalCatalogEntry(SpaceCompassCatalogType.ASTEROID, "28 Bellona (A854 EA)", null, SpaceCompassHorizonsTarget("28;", "28 Bellona (A854 EA)", 0.0..10000.0)),
         facts = SpaceCompassCelestialFacts(diameterKm = 120.9, diameterEstimated = true, diameterErrorKm = 3.4, rotationHours = 15.706, revolutionDays = 1691.054982358375, minimumParentKm = 353658630.2693912, maximumParentKm = 477457303.8733928, parent = SpaceCompassCelestialBody.SUN),
         aliases = listOf("28", "28 Bellona (A854 EA)", "28 Bellona"),
@@ -48,7 +48,7 @@ internal fun spaceCompassLargeCatalogData22(): List<SpaceCompassLargeCatalogEntr
         galaxy = "MILKY_WAY",
         note = R.string.celestial_horizons_tracking_note),
     SpaceCompassLargeCatalogEntry(
-        body = SpaceCompassCelestialBody.ASTEROID_29,
+        body = SpaceCompassCelestialBody.valueOf("ASTEROID_29"),
         entry = SpaceCompassAdditionalCatalogEntry(SpaceCompassCatalogType.ASTEROID, "29 Amphitrite (A854 EB)", null, SpaceCompassHorizonsTarget("29;", "29 Amphitrite (A854 EB)", 0.0..10000.0)),
         facts = SpaceCompassCelestialFacts(diameterKm = 189.559, diameterEstimated = true, diameterErrorKm = 1.129, rotationHours = 5.3921, revolutionDays = 1491.334791487487, minimumParentKm = 354198219.0727979, maximumParentKm = 410118259.30201656, parent = SpaceCompassCelestialBody.SUN),
         aliases = listOf("29", "29 Amphitrite (A854 EB)", "29 Amphitrite", "29 Amfitrite", "29 Amfitryta", "29 Амфитрита", "29 29 Αμφιτρίτη", "29 ‎أمفيتريتي‎", "29 אמפיטריטה‬", "29 アンフィトリテ", "29 암피트리테", "29 海后星"),
@@ -57,7 +57,7 @@ internal fun spaceCompassLargeCatalogData22(): List<SpaceCompassLargeCatalogEntr
         galaxy = "MILKY_WAY",
         note = R.string.celestial_horizons_tracking_note),
     SpaceCompassLargeCatalogEntry(
-        body = SpaceCompassCelestialBody.ASTEROID_30,
+        body = SpaceCompassCelestialBody.valueOf("ASTEROID_30"),
         entry = SpaceCompassAdditionalCatalogEntry(SpaceCompassCatalogType.ASTEROID, "30 Urania (A854 OA)", null, SpaceCompassHorizonsTarget("30;", "30 Urania (A854 OA)", 0.0..10000.0)),
         facts = SpaceCompassCelestialFacts(diameterKm = 92.787, diameterEstimated = true, diameterErrorKm = 2.04, rotationHours = 13.686, revolutionDays = 1328.75237884215, minimumParentKm = 309040429.23654926, maximumParentKm = 398664944.2744344, parent = SpaceCompassCelestialBody.SUN),
         aliases = listOf("30", "30 Urania (A854 OA)", "30 Urania"),
@@ -66,7 +66,7 @@ internal fun spaceCompassLargeCatalogData22(): List<SpaceCompassLargeCatalogEntr
         galaxy = "MILKY_WAY",
         note = R.string.celestial_horizons_tracking_note),
     SpaceCompassLargeCatalogEntry(
-        body = SpaceCompassCelestialBody.ASTEROID_31,
+        body = SpaceCompassCelestialBody.valueOf("ASTEROID_31"),
         entry = SpaceCompassAdditionalCatalogEntry(SpaceCompassCatalogType.ASTEROID, "31 Euphrosyne (A854 RA)", null, SpaceCompassHorizonsTarget("31;", "31 Euphrosyne (A854 RA)", 0.0..10000.0)),
         facts = SpaceCompassCelestialFacts(diameterKm = 267.08, diameterEstimated = true, diameterErrorKm = 2.611, rotationHours = 5.53, revolutionDays = 2053.621257597387, minimumParentKm = 370939043.7824068, maximumParentKm = 575087576.6092573, parent = SpaceCompassCelestialBody.SUN),
         aliases = listOf("31", "31 Euphrosyne (A854 RA)", "31 Euphrosyne", "31 Eufrosine", "31 Eufrosyna", "31 Евфросина", "31 31 Ευφροσύνη", "31 ‎يوفروسايني‎", "31 אוּפְרוסִינֵה", "31 エウフロシネ", "31 유프로시네", "31 丽神星"),
@@ -75,7 +75,7 @@ internal fun spaceCompassLargeCatalogData22(): List<SpaceCompassLargeCatalogEntr
         galaxy = "MILKY_WAY",
         note = R.string.celestial_horizons_tracking_note),
     SpaceCompassLargeCatalogEntry(
-        body = SpaceCompassCelestialBody.ASTEROID_32,
+        body = SpaceCompassCelestialBody.valueOf("ASTEROID_32"),
         entry = SpaceCompassAdditionalCatalogEntry(SpaceCompassCatalogType.ASTEROID, "32 Pomona (A854 UA)", null, SpaceCompassHorizonsTarget("32;", "32 Pomona (A854 UA)", 0.0..10000.0)),
         facts = SpaceCompassCelestialFacts(diameterKm = 80.76, diameterEstimated = true, diameterErrorKm = 1.6, rotationHours = 9.448, revolutionDays = 1521.633868688619, minimumParentKm = 355983261.88705015, maximumParentKm = 418650760.0907391, parent = SpaceCompassCelestialBody.SUN),
         aliases = listOf("32", "32 Pomona (A854 UA)", "32 Pomona"),
@@ -84,7 +84,7 @@ internal fun spaceCompassLargeCatalogData22(): List<SpaceCompassLargeCatalogEntr
         galaxy = "MILKY_WAY",
         note = R.string.celestial_horizons_tracking_note),
     SpaceCompassLargeCatalogEntry(
-        body = SpaceCompassCelestialBody.ASTEROID_33,
+        body = SpaceCompassCelestialBody.valueOf("ASTEROID_33"),
         entry = SpaceCompassAdditionalCatalogEntry(SpaceCompassCatalogType.ASTEROID, "33 Polyhymnia (A854 UB)", null, SpaceCompassHorizonsTarget("33;", "33 Polyhymnia (A854 UB)", 0.0..10000.0)),
         facts = SpaceCompassCelestialFacts(diameterKm = 52.929, diameterEstimated = true, diameterErrorKm = 2.304, rotationHours = 18.608, revolutionDays = 1777.150535740877, minimumParentKm = 285866235.597085, maximumParentKm = 573224958.9819121, parent = SpaceCompassCelestialBody.SUN),
         aliases = listOf("33", "33 Polyhymnia (A854 UB)", "33 Polyhymnia"),
@@ -93,7 +93,7 @@ internal fun spaceCompassLargeCatalogData22(): List<SpaceCompassLargeCatalogEntr
         galaxy = "MILKY_WAY",
         note = R.string.celestial_horizons_tracking_note),
     SpaceCompassLargeCatalogEntry(
-        body = SpaceCompassCelestialBody.ASTEROID_34,
+        body = SpaceCompassCelestialBody.valueOf("ASTEROID_34"),
         entry = SpaceCompassAdditionalCatalogEntry(SpaceCompassCatalogType.ASTEROID, "34 Circe (A855 GA)", null, SpaceCompassHorizonsTarget("34;", "34 Circe (A855 GA)", 0.0..10000.0)),
         facts = SpaceCompassCelestialFacts(diameterKm = 132.992, diameterEstimated = true, diameterErrorKm = 1.033, rotationHours = 12.15, revolutionDays = 1609.550494203828, minimumParentKm = 359273701.2455929, maximumParentKm = 444917888.56958836, parent = SpaceCompassCelestialBody.SUN),
         aliases = listOf("34", "34 Circe (A855 GA)", "34 Circe"),
@@ -102,7 +102,7 @@ internal fun spaceCompassLargeCatalogData22(): List<SpaceCompassLargeCatalogEntr
         galaxy = "MILKY_WAY",
         note = R.string.celestial_horizons_tracking_note),
     SpaceCompassLargeCatalogEntry(
-        body = SpaceCompassCelestialBody.ASTEROID_35,
+        body = SpaceCompassCelestialBody.valueOf("ASTEROID_35"),
         entry = SpaceCompassAdditionalCatalogEntry(SpaceCompassCatalogType.ASTEROID, "35 Leukothea (A855 HA)", null, SpaceCompassHorizonsTarget("35;", "35 Leukothea (A855 HA)", 0.0..10000.0)),
         facts = SpaceCompassCelestialFacts(diameterKm = 103.055, diameterEstimated = true, diameterErrorKm = 1.201, rotationHours = 31.9, revolutionDays = 1902.070765956482, minimumParentKm = 351900951.4113009, maximumParentKm = 546991162.3593028, parent = SpaceCompassCelestialBody.SUN),
         aliases = listOf("35", "35 Leukothea (A855 HA)", "35 Leukothea"),
@@ -111,7 +111,7 @@ internal fun spaceCompassLargeCatalogData22(): List<SpaceCompassLargeCatalogEntr
         galaxy = "MILKY_WAY",
         note = R.string.celestial_horizons_tracking_note),
     SpaceCompassLargeCatalogEntry(
-        body = SpaceCompassCelestialBody.ASTEROID_36,
+        body = SpaceCompassCelestialBody.valueOf("ASTEROID_36"),
         entry = SpaceCompassAdditionalCatalogEntry(SpaceCompassCatalogType.ASTEROID, "36 Atalante (A855 TA)", null, SpaceCompassHorizonsTarget("36;", "36 Atalante (A855 TA)", 0.0..10000.0)),
         facts = SpaceCompassCelestialFacts(diameterKm = 132.842, diameterEstimated = true, diameterErrorKm = 29.191, rotationHours = 9.93, revolutionDays = 1660.870641574505, minimumParentKm = 284874706.0436876, maximumParentKm = 536321615.55727655, parent = SpaceCompassCelestialBody.SUN),
         aliases = listOf("36", "36 Atalante (A855 TA)", "36 Atalante"),
@@ -120,7 +120,7 @@ internal fun spaceCompassLargeCatalogData22(): List<SpaceCompassLargeCatalogEntr
         galaxy = "MILKY_WAY",
         note = R.string.celestial_horizons_tracking_note),
     SpaceCompassLargeCatalogEntry(
-        body = SpaceCompassCelestialBody.ASTEROID_37,
+        body = SpaceCompassCelestialBody.valueOf("ASTEROID_37"),
         entry = SpaceCompassAdditionalCatalogEntry(SpaceCompassCatalogType.ASTEROID, "37 Fides (A855 TB)", null, SpaceCompassHorizonsTarget("37;", "37 Fides (A855 TB)", 0.0..10000.0)),
         facts = SpaceCompassCelestialFacts(diameterKm = 108.35, diameterEstimated = true, diameterErrorKm = 1.9, rotationHours = 7.3335, revolutionDays = 1569.760079769006, minimumParentKm = 326416174.00403965, maximumParentKm = 464466345.69906485, parent = SpaceCompassCelestialBody.SUN),
         aliases = listOf("37", "37 Fides (A855 TB)", "37 Fides"),
@@ -129,7 +129,7 @@ internal fun spaceCompassLargeCatalogData22(): List<SpaceCompassLargeCatalogEntr
         galaxy = "MILKY_WAY",
         note = R.string.celestial_horizons_tracking_note),
     SpaceCompassLargeCatalogEntry(
-        body = SpaceCompassCelestialBody.ASTEROID_38,
+        body = SpaceCompassCelestialBody.valueOf("ASTEROID_38"),
         entry = SpaceCompassAdditionalCatalogEntry(SpaceCompassCatalogType.ASTEROID, "38 Leda (A856 AA)", null, SpaceCompassHorizonsTarget("38;", "38 Leda (A856 AA)", 0.0..10000.0)),
         facts = SpaceCompassCelestialFacts(diameterKm = 92.255, diameterEstimated = true, diameterErrorKm = 0.49, rotationHours = 12.838, revolutionDays = 1659.00608285271, minimumParentKm = 348381508.3849957, maximumParentKm = 472200093.2973239, parent = SpaceCompassCelestialBody.SUN),
         aliases = listOf("38", "38 Leda (A856 AA)", "38 Leda", "38 Léda", "38 Леда", "38 Λήδα", "38 ‎ليدا‎", "38 לדה", "38 レダ", "38 레다", "38 木卫十三"),
@@ -138,7 +138,7 @@ internal fun spaceCompassLargeCatalogData22(): List<SpaceCompassLargeCatalogEntr
         galaxy = "MILKY_WAY",
         note = R.string.celestial_horizons_tracking_note),
     SpaceCompassLargeCatalogEntry(
-        body = SpaceCompassCelestialBody.ASTEROID_39,
+        body = SpaceCompassCelestialBody.valueOf("ASTEROID_39"),
         entry = SpaceCompassAdditionalCatalogEntry(SpaceCompassCatalogType.ASTEROID, "39 Laetitia (A856 CA)", null, SpaceCompassHorizonsTarget("39;", "39 Laetitia (A856 CA)", 0.0..10000.0)),
         facts = SpaceCompassCelestialFacts(diameterKm = 179.484, diameterEstimated = true, diameterErrorKm = 1.685, rotationHours = 5.138, revolutionDays = 1683.234939985771, minimumParentKm = 367139937.4854667, maximumParentKm = 461411766.46134734, parent = SpaceCompassCelestialBody.SUN),
         aliases = listOf("39", "39 Laetitia (A856 CA)", "39 Laetitia"),
@@ -147,7 +147,7 @@ internal fun spaceCompassLargeCatalogData22(): List<SpaceCompassLargeCatalogEntr
         galaxy = "MILKY_WAY",
         note = R.string.celestial_horizons_tracking_note),
     SpaceCompassLargeCatalogEntry(
-        body = SpaceCompassCelestialBody.ASTEROID_40,
+        body = SpaceCompassCelestialBody.valueOf("ASTEROID_40"),
         entry = SpaceCompassAdditionalCatalogEntry(SpaceCompassCatalogType.ASTEROID, "40 Harmonia (A856 FA)", null, SpaceCompassHorizonsTarget("40;", "40 Harmonia (A856 FA)", 0.0..10000.0)),
         facts = SpaceCompassCelestialFacts(diameterKm = 111.251, diameterEstimated = true, diameterErrorKm = 0.391, rotationHours = 8.91, revolutionDays = 1247.340873147317, minimumParentKm = 323413186.47158384, maximumParentKm = 355081668.71048355, parent = SpaceCompassCelestialBody.SUN),
         aliases = listOf("40", "40 Harmonia (A856 FA)", "40 Harmonia"),
@@ -156,7 +156,7 @@ internal fun spaceCompassLargeCatalogData22(): List<SpaceCompassLargeCatalogEntr
         galaxy = "MILKY_WAY",
         note = R.string.celestial_horizons_tracking_note),
     SpaceCompassLargeCatalogEntry(
-        body = SpaceCompassCelestialBody.ASTEROID_41,
+        body = SpaceCompassCelestialBody.valueOf("ASTEROID_41"),
         entry = SpaceCompassAdditionalCatalogEntry(SpaceCompassCatalogType.ASTEROID, "41 Daphne (A856 KA)", null, SpaceCompassHorizonsTarget("41;", "41 Daphne (A856 KA)", 0.0..10000.0)),
         facts = SpaceCompassCelestialFacts(diameterKm = 205.495, diameterEstimated = true, diameterErrorKm = 1.881, rotationHours = 5.988, revolutionDays = 1681.380559948365, minimumParentKm = 302096958.82926726, maximumParentKm = 525846102.81290513, parent = SpaceCompassCelestialBody.SUN),
         aliases = listOf("41", "41 Daphne (A856 KA)", "41 Daphne", "41 Daphné", "41 Dafne", "41 Дафна", "41 41 Δάφνη", "41 ‎دافني‎", "41 דפני", "41 ダフネ", "41 다프네", "41 桂神星"),
@@ -165,7 +165,7 @@ internal fun spaceCompassLargeCatalogData22(): List<SpaceCompassLargeCatalogEntr
         galaxy = "MILKY_WAY",
         note = R.string.celestial_horizons_tracking_note),
     SpaceCompassLargeCatalogEntry(
-        body = SpaceCompassCelestialBody.ASTEROID_42,
+        body = SpaceCompassCelestialBody.valueOf("ASTEROID_42"),
         entry = SpaceCompassAdditionalCatalogEntry(SpaceCompassCatalogType.ASTEROID, "42 Isis (A856 KB)", null, SpaceCompassHorizonsTarget("42;", "42 Isis (A856 KB)", 0.0..10000.0)),
         facts = SpaceCompassCelestialFacts(diameterKm = 110.997, diameterEstimated = true, diameterErrorKm = 1.378, rotationHours = 13.59, revolutionDays = 1396.271603834893, minimumParentKm = 284536355.368577, maximumParentKm = 446944662.1363438, parent = SpaceCompassCelestialBody.SUN),
         aliases = listOf("42", "42 Isis (A856 KB)", "42 Isis", "42 Изис", "42 ‎‎إيزيس‎‎", "42 イシス", "42 이시스", "42 天狼增三 Isis"),
@@ -174,7 +174,7 @@ internal fun spaceCompassLargeCatalogData22(): List<SpaceCompassLargeCatalogEntr
         galaxy = "MILKY_WAY",
         note = R.string.celestial_horizons_tracking_note),
     SpaceCompassLargeCatalogEntry(
-        body = SpaceCompassCelestialBody.ASTEROID_43,
+        body = SpaceCompassCelestialBody.valueOf("ASTEROID_43"),
         entry = SpaceCompassAdditionalCatalogEntry(SpaceCompassCatalogType.ASTEROID, "43 Ariadne (A857 GA)", null, SpaceCompassHorizonsTarget("43;", "43 Ariadne (A857 GA)", 0.0..10000.0)),
         facts = SpaceCompassCelestialFacts(diameterKm = 71.34, diameterEstimated = true, diameterErrorKm = 1.254, rotationHours = 5.76218, revolutionDays = 1195.43676403398, minimumParentKm = 274467686.50328845, maximumParentKm = 385071890.9675017, parent = SpaceCompassCelestialBody.SUN),
         aliases = listOf("43", "43 Ariadne (A857 GA)", "43 Ariadne"),
@@ -183,7 +183,7 @@ internal fun spaceCompassLargeCatalogData22(): List<SpaceCompassLargeCatalogEntr
         galaxy = "MILKY_WAY",
         note = R.string.celestial_horizons_tracking_note),
     SpaceCompassLargeCatalogEntry(
-        body = SpaceCompassCelestialBody.ASTEROID_44,
+        body = SpaceCompassCelestialBody.valueOf("ASTEROID_44"),
         entry = SpaceCompassAdditionalCatalogEntry(SpaceCompassCatalogType.ASTEROID, "44 Nysa (A857 KA)", null, SpaceCompassHorizonsTarget("44;", "44 Nysa (A857 KA)", 0.0..10000.0)),
         facts = SpaceCompassCelestialFacts(diameterKm = 70.64, diameterEstimated = true, diameterErrorKm = 4.0, rotationHours = 6.422, revolutionDays = 1377.190456197457, minimumParentKm = 308158987.3687533, maximumParentKm = 416642583.76255596, parent = SpaceCompassCelestialBody.SUN),
         aliases = listOf("44", "44 Nysa (A857 KA)", "44 Nysa"),
@@ -192,7 +192,7 @@ internal fun spaceCompassLargeCatalogData22(): List<SpaceCompassLargeCatalogEntr
         galaxy = "MILKY_WAY",
         note = R.string.celestial_horizons_tracking_note),
     SpaceCompassLargeCatalogEntry(
-        body = SpaceCompassCelestialBody.ASTEROID_45,
+        body = SpaceCompassCelestialBody.valueOf("ASTEROID_45"),
         entry = SpaceCompassAdditionalCatalogEntry(SpaceCompassCatalogType.ASTEROID, "45 Eugenia (A857 MA)", null, SpaceCompassHorizonsTarget("45;", "45 Eugenia (A857 MA)", 0.0..10000.0)),
         facts = SpaceCompassCelestialFacts(diameterKm = 202.327, diameterEstimated = true, diameterErrorKm = 2.168, rotationHours = 5.699, revolutionDays = 1641.48676821488, minimumParentKm = 374252509.74168897, maximumParentKm = 440541912.4898397, parent = SpaceCompassCelestialBody.SUN),
         aliases = listOf("45", "45 Eugenia (A857 MA)", "45 Eugenia", "45 Eugénie", "45 Евгения", "45 45 Ευγενία", "45 ‎يوجينيا‎", "45 יוג'יניה", "45 エウゲニア", "45 외제니아", "45 香女星"),
@@ -201,7 +201,7 @@ internal fun spaceCompassLargeCatalogData22(): List<SpaceCompassLargeCatalogEntr
         galaxy = "MILKY_WAY",
         note = R.string.celestial_horizons_tracking_note),
     SpaceCompassLargeCatalogEntry(
-        body = SpaceCompassCelestialBody.COMET_8P,
+        body = SpaceCompassCelestialBody.valueOf("COMET_8P"),
         entry = SpaceCompassAdditionalCatalogEntry(SpaceCompassCatalogType.COMET, "8P/Tuttle", null, SpaceCompassHorizonsTarget("DES=8P;NOFRAG;CAP;", "8P/Tuttle", 0.0..10000.0)),
         facts = SpaceCompassCelestialFacts(diameterKm = 4.5, diameterEstimated = true, diameterErrorKm = 1.0, revolutionDays = 4971.002810563728, minimumParentKm = 153676371.5808875, maximumParentKm = 1551826528.5939043, parent = SpaceCompassCelestialBody.SUN),
         aliases = listOf("8P", "8P/Tuttle"),
@@ -210,7 +210,7 @@ internal fun spaceCompassLargeCatalogData22(): List<SpaceCompassLargeCatalogEntr
         galaxy = "MILKY_WAY",
         note = R.string.celestial_horizons_tracking_note),
     SpaceCompassLargeCatalogEntry(
-        body = SpaceCompassCelestialBody.COMET_9P,
+        body = SpaceCompassCelestialBody.valueOf("COMET_9P"),
         entry = SpaceCompassAdditionalCatalogEntry(SpaceCompassCatalogType.COMET, "9P/Tempel 1", null, SpaceCompassHorizonsTarget("DES=9P;NOFRAG;CAP;", "9P/Tempel 1", 0.0..10000.0)),
         facts = SpaceCompassCelestialFacts(diameterKm = 6.0, diameterEstimated = true, diameterErrorKm = 0.2, rotationHours = 40.7, revolutionDays = 2038.281680411032, minimumParentKm = 230760769.7769131, maximumParentKm = 710549052.7783682, parent = SpaceCompassCelestialBody.SUN),
         aliases = listOf("9P", "9P/Tempel 1"),
@@ -219,7 +219,7 @@ internal fun spaceCompassLargeCatalogData22(): List<SpaceCompassLargeCatalogEntr
         galaxy = "MILKY_WAY",
         note = R.string.celestial_horizons_tracking_note),
     SpaceCompassLargeCatalogEntry(
-        body = SpaceCompassCelestialBody.COMET_10P,
+        body = SpaceCompassCelestialBody.valueOf("COMET_10P"),
         entry = SpaceCompassAdditionalCatalogEntry(SpaceCompassCatalogType.COMET, "10P/Tempel 2", null, SpaceCompassHorizonsTarget("DES=10P;NOFRAG;CAP;", "10P/Tempel 2", 0.0..10000.0)),
         facts = SpaceCompassCelestialFacts(diameterKm = 10.6, diameterEstimated = true, rotationHours = 8.93, revolutionDays = 1957.95235366728, minimumParentKm = 211898384.80292273, maximumParentKm = 704514533.3289192, parent = SpaceCompassCelestialBody.SUN),
         aliases = listOf("10P", "10P/Tempel 2"),
@@ -228,7 +228,7 @@ internal fun spaceCompassLargeCatalogData22(): List<SpaceCompassLargeCatalogEntr
         galaxy = "MILKY_WAY",
         note = R.string.celestial_horizons_tracking_note),
     SpaceCompassLargeCatalogEntry(
-        body = SpaceCompassCelestialBody.COMET_12P,
+        body = SpaceCompassCelestialBody.valueOf("COMET_12P"),
         entry = SpaceCompassAdditionalCatalogEntry(SpaceCompassCatalogType.COMET, "12P/Pons-Brooks", null, SpaceCompassHorizonsTarget("DES=12P;NOFRAG;CAP;", "12P/Pons-Brooks", 0.0..10000.0)),
         facts = SpaceCompassCelestialFacts(revolutionDays = 26020.73090152191, minimumParentKm = 116815162.92564523, maximumParentKm = 5024838078.953766, parent = SpaceCompassCelestialBody.SUN),
         aliases = listOf("12P", "12P/Pons-Brooks"),
@@ -237,7 +237,7 @@ internal fun spaceCompassLargeCatalogData22(): List<SpaceCompassLargeCatalogEntr
         galaxy = "MILKY_WAY",
         note = R.string.celestial_horizons_tracking_note),
     SpaceCompassLargeCatalogEntry(
-        body = SpaceCompassCelestialBody.COMET_15P,
+        body = SpaceCompassCelestialBody.valueOf("COMET_15P"),
         entry = SpaceCompassAdditionalCatalogEntry(SpaceCompassCatalogType.COMET, "15P/Finlay", null, SpaceCompassHorizonsTarget("DES=15P;NOFRAG;CAP;", "15P/Finlay", 0.0..10000.0)),
         facts = SpaceCompassCelestialFacts(revolutionDays = 2381.913860522549, minimumParentKm = 146110292.57554716, maximumParentKm = 898226288.7707801, parent = SpaceCompassCelestialBody.SUN),
         aliases = listOf("15P", "15P/Finlay"),
@@ -246,7 +246,7 @@ internal fun spaceCompassLargeCatalogData22(): List<SpaceCompassLargeCatalogEntr
         galaxy = "MILKY_WAY",
         note = R.string.celestial_horizons_tracking_note),
     SpaceCompassLargeCatalogEntry(
-        body = SpaceCompassCelestialBody.COMET_17P,
+        body = SpaceCompassCelestialBody.valueOf("COMET_17P"),
         entry = SpaceCompassAdditionalCatalogEntry(SpaceCompassCatalogType.COMET, "17P/Holmes", null, SpaceCompassHorizonsTarget("DES=17P;NOFRAG;CAP;", "17P/Holmes", 0.0..10000.0)),
         facts = SpaceCompassCelestialFacts(diameterKm = 3.42, diameterEstimated = true, revolutionDays = 2522.100567356379, minimumParentKm = 309118456.66874194, maximumParentKm = 775802395.3407168, parent = SpaceCompassCelestialBody.SUN),
         aliases = listOf("17P", "17P/Holmes"),
@@ -255,7 +255,7 @@ internal fun spaceCompassLargeCatalogData22(): List<SpaceCompassLargeCatalogEntr
         galaxy = "MILKY_WAY",
         note = R.string.celestial_horizons_tracking_note),
     SpaceCompassLargeCatalogEntry(
-        body = SpaceCompassCelestialBody.COMET_19P,
+        body = SpaceCompassCelestialBody.valueOf("COMET_19P"),
         entry = SpaceCompassAdditionalCatalogEntry(SpaceCompassCatalogType.COMET, "19P/Borrelly", null, SpaceCompassHorizonsTarget("DES=19P;NOFRAG;CAP;", "19P/Borrelly", 0.0..10000.0)),
         facts = SpaceCompassCelestialFacts(diameterKm = 4.8, diameterEstimated = true, revolutionDays = 2502.134549097954, minimumParentKm = 195384103.97731397, maximumParentKm = 883803370.814401, parent = SpaceCompassCelestialBody.SUN),
         aliases = listOf("19P", "19P/Borrelly"),
@@ -264,7 +264,7 @@ internal fun spaceCompassLargeCatalogData22(): List<SpaceCompassLargeCatalogEntr
         galaxy = "MILKY_WAY",
         note = R.string.celestial_horizons_tracking_note),
     SpaceCompassLargeCatalogEntry(
-        body = SpaceCompassCelestialBody.COMET_21P,
+        body = SpaceCompassCelestialBody.valueOf("COMET_21P"),
         entry = SpaceCompassAdditionalCatalogEntry(SpaceCompassCatalogType.COMET, "21P/Giacobini-Zinner", null, SpaceCompassHorizonsTarget("DES=21P;NOFRAG;CAP;", "21P/Giacobini-Zinner", 0.0..10000.0)),
         facts = SpaceCompassCelestialFacts(diameterKm = 2.0, diameterEstimated = true, revolutionDays = 2391.976226852044, minimumParentKm = 151608615.8719013, maximumParentKm = 895667090.0296214, parent = SpaceCompassCelestialBody.SUN),
         aliases = listOf("21P", "21P/Giacobini-Zinner"),
@@ -273,7 +273,7 @@ internal fun spaceCompassLargeCatalogData22(): List<SpaceCompassLargeCatalogEntr
         galaxy = "MILKY_WAY",
         note = R.string.celestial_horizons_tracking_note),
     SpaceCompassLargeCatalogEntry(
-        body = SpaceCompassCelestialBody.COMET_22P,
+        body = SpaceCompassCelestialBody.valueOf("COMET_22P"),
         entry = SpaceCompassAdditionalCatalogEntry(SpaceCompassCatalogType.COMET, "22P/Kopff", null, SpaceCompassHorizonsTarget("DES=22P;NOFRAG;CAP;", "22P/Kopff", 0.0..10000.0)),
         facts = SpaceCompassCelestialFacts(diameterKm = 3.0, diameterEstimated = true, diameterErrorKm = 0.4, revolutionDays = 2334.920079196706, minimumParentKm = 232584613.68170896, maximumParentKm = 797970295.3760632, parent = SpaceCompassCelestialBody.SUN),
         aliases = listOf("22P", "22P/Kopff"),
@@ -282,7 +282,7 @@ internal fun spaceCompassLargeCatalogData22(): List<SpaceCompassLargeCatalogEntr
         galaxy = "MILKY_WAY",
         note = R.string.celestial_horizons_tracking_note),
     SpaceCompassLargeCatalogEntry(
-        body = SpaceCompassCelestialBody.COMET_26P,
+        body = SpaceCompassCelestialBody.valueOf("COMET_26P"),
         entry = SpaceCompassAdditionalCatalogEntry(SpaceCompassCatalogType.COMET, "26P/Grigg-Skjellerup", null, SpaceCompassHorizonsTarget("DES=26P;NOFRAG;CAP;", "26P/Grigg-Skjellerup", 0.0..10000.0)),
         facts = SpaceCompassCelestialFacts(diameterKm = 2.6, diameterEstimated = true, revolutionDays = 1920.965017929774, minimumParentKm = 163020533.3728224, maximumParentKm = 741814541.6247395, parent = SpaceCompassCelestialBody.SUN),
         aliases = listOf("26P", "26P/Grigg-Skjellerup"),
@@ -291,7 +291,7 @@ internal fun spaceCompassLargeCatalogData22(): List<SpaceCompassLargeCatalogEntr
         galaxy = "MILKY_WAY",
         note = R.string.celestial_horizons_tracking_note),
     SpaceCompassLargeCatalogEntry(
-        body = SpaceCompassCelestialBody.COMET_27P,
+        body = SpaceCompassCelestialBody.valueOf("COMET_27P"),
         entry = SpaceCompassAdditionalCatalogEntry(SpaceCompassCatalogType.COMET, "27P/Crommelin", null, SpaceCompassHorizonsTarget("DES=27P;NOFRAG;CAP;", "27P/Crommelin", 0.0..10000.0)),
         facts = SpaceCompassCelestialFacts(revolutionDays = 10016.01149936462, minimumParentKm = 109836266.15430744, maximumParentKm = 2610899293.225402, parent = SpaceCompassCelestialBody.SUN),
         aliases = listOf("27P", "27P/Crommelin"),
@@ -300,7 +300,7 @@ internal fun spaceCompassLargeCatalogData22(): List<SpaceCompassLargeCatalogEntr
         galaxy = "MILKY_WAY",
         note = R.string.celestial_horizons_tracking_note),
     SpaceCompassLargeCatalogEntry(
-        body = SpaceCompassCelestialBody.COMET_29P,
+        body = SpaceCompassCelestialBody.valueOf("COMET_29P"),
         entry = SpaceCompassAdditionalCatalogEntry(SpaceCompassCatalogType.COMET, "29P/Schwassmann-Wachmann 1", null, SpaceCompassHorizonsTarget("DES=29P;NOFRAG;CAP;", "29P/Schwassmann-Wachmann 1", 0.0..10000.0)),
         facts = SpaceCompassCelestialFacts(diameterKm = 60.4, diameterEstimated = true, diameterErrorKm = 7.4, revolutionDays = 5429.978561767271, minimumParentKm = 863946855.283631, maximumParentKm = 944983582.454731, parent = SpaceCompassCelestialBody.SUN),
         aliases = listOf("29P", "29P/Schwassmann-Wachmann 1"),
@@ -309,7 +309,7 @@ internal fun spaceCompassLargeCatalogData22(): List<SpaceCompassLargeCatalogEntr
         galaxy = "MILKY_WAY",
         note = R.string.celestial_horizons_tracking_note),
     SpaceCompassLargeCatalogEntry(
-        body = SpaceCompassCelestialBody.COMET_41P,
+        body = SpaceCompassCelestialBody.valueOf("COMET_41P"),
         entry = SpaceCompassAdditionalCatalogEntry(SpaceCompassCatalogType.COMET, "41P/Tuttle-Giacobini-Kresak", null, SpaceCompassHorizonsTarget("DES=41P;NOFRAG;CAP;", "41P/Tuttle-Giacobini-Kresak", 0.0..10000.0)),
         facts = SpaceCompassCelestialFacts(diameterKm = 1.4, diameterEstimated = true, revolutionDays = 1979.362667765171, minimumParentKm = 156336171.1161589, maximumParentKm = 766745313.1811304, parent = SpaceCompassCelestialBody.SUN),
         aliases = listOf("41P", "41P/Tuttle-Giacobini-Kresak"),

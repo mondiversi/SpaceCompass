@@ -480,8 +480,9 @@ daytime actions, viewer tabs and floating controls keep their existing styling.
 
 One retained observer editor owns the Location management menu and its seven child routes.
 ScenarioMenu and ScenarioEditorChrome separate navigation and shared controls from form logic.
-ScenarioCurrentValues resolves the applied observer without modifying clock anchors; disabled
-forms retain drafts but show neutral effective values. Position summaries read the existing place
+ScenarioCurrentValues resolves the applied observer without modifying clock anchors; child
+forms retain editable drafts without enabling overrides. Dormant values persist in live mode;
+the management menu owns activation and displays effective values. Position summaries read the existing place
 cache. ExportSnapshot completes one portable copy using the same effective-value resolver,
 without introducing a new observer state, schema or device-location injection.
 
