@@ -1,0 +1,6 @@
+<resources>
+    <string name="reticle_enable">Показать прицел и сведения о точках</string>
+    <string name="reticle_disable">Скрыть прицел и сведения о точках</string>
+    <string name="scene_reticle_on">Прицел и сведения о точках показаны</string>
+    <string name="scene_reticle_off">Прицел и сведения о точках скрыты</string>
+</resources>

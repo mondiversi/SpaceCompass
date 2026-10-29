@@ -1,9 +1,9 @@
 <resources>
     <string name="info_news_title">Últimas novidades · %1$s</string>
-    <string name="info_news_star_sky" formatted="false">O catálogo chega a 9.999 objetos do Sistema Solar e do céu profundo.</string>
-    <string name="info_news_texture_downloads" formatted="false">O rastreio ampliado usa referências JPL e de satélites verificadas, com limites explícitos para dados históricos ou indisponíveis.</string>
-    <string name="info_news_weather" formatted="false">O pacote gráfico 1.8 adiciona cinco fotografias e miniaturas independentes, descarregadas individualmente e guardadas offline.</string>
-    <string name="info_news_viewer_zoom" formatted="false">Os cálculos, a pesquisa e a atualização de dados estão otimizados para o catálogo ampliado.</string>
-    <string name="info_news_settings" formatted="false">As subpáginas de localização permanecem editáveis. Ative ou desative cada valor personalizado apenas na gestão de localizações.</string>
-    <string name="info_news_catalog" formatted="false">Cartões mais compactos e uma caixa de retoma sempre marcada e desativada tornam os controlos mais claros.</string>
+    <string name="info_news_star_sky" formatted="false">Um novo botão na vista principal mostra ou oculta o retículo e as informações dos pontos e memoriza a escolha.</string>
+    <string name="info_news_texture_downloads" formatted="false">As etiquetas das fotografias e panoramas mantêm as suas próprias definições, independentes do retículo da vista em direto.</string>
+    <string name="info_news_weather" formatted="false">A pesquisa, os filtros e a ordenação são processados em segundo plano para uma lista de objetos mais rápida a responder.</string>
+    <string name="info_news_viewer_zoom" formatted="false">O carregamento opcional das linhas espera pelo fim da deslocação; as miniaturas prontas continuam visíveis.</string>
+    <string name="info_news_settings" formatted="false">Um fundo preto semitransparente melhora o contraste dos símbolos celestes gerados pela aplicação.</string>
+    <string name="info_news_catalog" formatted="false">Um indicador circular centrado acompanha o tema diurno/noturno enquanto a lista inicial é preparada.</string>
 </resources>

@@ -1,9 +1,9 @@
 <resources>
     <string name="info_news_title">Perubahan terbaru · %1$s</string>
-    <string name="info_news_star_sky" formatted="false">Katalog bertambah menjadi 9.999 objek di Tata Surya dan langit dalam.</string>
-    <string name="info_news_texture_downloads" formatted="false">Pelacakan yang diperluas memakai referensi JPL dan satelit terverifikasi, dengan batas yang jelas untuk data historis atau tidak tersedia.</string>
-    <string name="info_news_weather" formatted="false">Paket grafis 1.8 menambahkan lima foto dan gambar mini terpisah, diunduh satu per satu dan disimpan offline.</string>
-    <string name="info_news_viewer_zoom" formatted="false">Perhitungan, pencarian, dan penyegaran data dioptimalkan untuk katalog yang lebih besar.</string>
-    <string name="info_news_settings" formatted="false">Subhalaman lokasi selalu dapat diedit. Aktifkan atau nonaktifkan nilai khusus hanya dari Pengelolaan lokasi.</string>
-    <string name="info_news_catalog" formatted="false">Kartu lebih ringkas dan kotak Lanjutkan yang selalu dicentang serta dinonaktifkan membuat kontrol lebih jelas.</string>
+    <string name="info_news_star_sky" formatted="false">Tombol baru di tampilan utama menampilkan atau menyembunyikan bidikan dan informasi titik serta mengingat pilihan Anda.</string>
+    <string name="info_news_texture_downloads" formatted="false">Label foto dan panorama tetap memakai pengaturan sendiri, terpisah dari bidikan pada tampilan langsung.</string>
+    <string name="info_news_weather" formatted="false">Pencarian, filter, dan pengurutan diproses di latar belakang agar daftar objek lebih responsif.</string>
+    <string name="info_news_viewer_zoom" formatted="false">Pemuatan baris yang tidak mendesak menunggu hingga pengguliran berhenti; gambar mini yang siap tetap terlihat.</string>
+    <string name="info_news_settings" formatted="false">Latar hitam semitransparan meningkatkan kontras simbol langit yang digambar oleh aplikasi.</string>
+    <string name="info_news_catalog" formatted="false">Indikator pemuatan melingkar di tengah mengikuti tema siang/malam saat daftar awal disiapkan.</string>
 </resources>

@@ -1,0 +1,6 @@
+<resources>
+    <string name="reticle_enable">Εμφάνιση σταυρονήματος και πληροφοριών σημείων</string>
+    <string name="reticle_disable">Απόκρυψη σταυρονήματος και πληροφοριών σημείων</string>
+    <string name="scene_reticle_on">Το σταυρόνημα και οι πληροφορίες σημείων εμφανίζονται</string>
+    <string name="scene_reticle_off">Το σταυρόνημα και οι πληροφορίες σημείων αποκρύπτονται</string>
+</resources>

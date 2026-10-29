@@ -1,9 +1,9 @@
 <resources>
     <string name="info_news_title">Ostatnie nowości · %1$s</string>
-    <string name="info_news_star_sky" formatted="false">Katalog obejmuje teraz 9999 obiektów Układu Słonecznego i głębokiego nieba.</string>
-    <string name="info_news_texture_downloads" formatted="false">Rozszerzone śledzenie korzysta ze zweryfikowanych danych JPL i satelitarnych, z wyraźnymi ograniczeniami dla danych historycznych lub niedostępnych.</string>
-    <string name="info_news_weather" formatted="false">Pakiet graficzny 1.8 dodaje pięć fotografii i osobne miniatury, pobierane pojedynczo i zapisywane offline.</string>
-    <string name="info_news_viewer_zoom" formatted="false">Obliczenia, wyszukiwanie i odświeżanie danych zoptymalizowano dla większego katalogu.</string>
-    <string name="info_news_settings" formatted="false">Podstrony lokalizacji pozostają edytowalne. Własne wartości można włączać i wyłączać tylko w zarządzaniu lokalizacją.</string>
-    <string name="info_news_catalog" formatted="false">Bardziej zwarte karty i stale zaznaczone, nieaktywne pole wznawiania ułatwiają obsługę.</string>
+    <string name="info_news_star_sky" formatted="false">Nowy przycisk w widoku głównym pokazuje lub ukrywa celownik i informacje o punktach oraz zapamiętuje wybór.</string>
+    <string name="info_news_texture_downloads" formatted="false">Etykiety zdjęć i panoram zachowują własne ustawienia, niezależne od celownika w widoku na żywo.</string>
+    <string name="info_news_weather" formatted="false">Wyszukiwanie, filtrowanie i sortowanie odbywa się w tle, dzięki czemu lista obiektów reaguje sprawniej.</string>
+    <string name="info_news_viewer_zoom" formatted="false">Opcjonalne wczytywanie wierszy czeka na zakończenie przewijania; gotowe miniatury pozostają widoczne.</string>
+    <string name="info_news_settings" formatted="false">Półprzezroczyste czarne tło poprawia kontrast symboli niebieskich generowanych przez aplikację.</string>
+    <string name="info_news_catalog" formatted="false">Wyśrodkowany okrągły wskaźnik wczytywania dopasowuje się do motywu dziennego i nocnego podczas przygotowywania listy.</string>
 </resources>

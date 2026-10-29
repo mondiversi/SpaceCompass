@@ -1,9 +1,9 @@
 <resources>
     <string name="info_news_title">Dernières nouveautés · %1$s</string>
-    <string name="info_news_star_sky" formatted="false">Le catalogue atteint 9 999 objets du Système solaire et du ciel profond.</string>
-    <string name="info_news_texture_downloads" formatted="false">Le suivi étendu utilise des références JPL et satellitaires vérifiées, avec des limites explicites pour les données historiques ou indisponibles.</string>
-    <string name="info_news_weather" formatted="false">Le pack graphique 1.8 ajoute cinq photos et des miniatures indépendantes, téléchargées individuellement et conservées hors ligne.</string>
-    <string name="info_news_viewer_zoom" formatted="false">Les calculs, la recherche et les mises à jour sont optimisés pour le catalogue enrichi.</string>
-    <string name="info_news_settings" formatted="false">Les sous-pages de lieu restent modifiables. Activez ou désactivez chaque valeur personnalisée uniquement dans la gestion des lieux.</string>
-    <string name="info_news_catalog" formatted="false">Des cartes plus compactes et une case de reprise toujours cochée et désactivée clarifient les commandes.</string>
+    <string name="info_news_star_sky" formatted="false">Un nouveau bouton dans la vue principale affiche ou masque le réticule et les informations des points, et mémorise ce choix.</string>
+    <string name="info_news_texture_downloads" formatted="false">Les étiquettes des photos et panoramas conservent leurs propres réglages, indépendants du réticule de la vue en direct.</string>
+    <string name="info_news_weather" formatted="false">La recherche, les filtres et le tri sont traités en arrière-plan pour une liste d’objets plus réactive.</string>
+    <string name="info_news_viewer_zoom" formatted="false">Le chargement facultatif des lignes attend la fin du défilement ; les miniatures prêtes restent visibles.</string>
+    <string name="info_news_settings" formatted="false">Un fond noir translucide améliore le contraste des symboles célestes générés par l’application.</string>
+    <string name="info_news_catalog" formatted="false">Un indicateur circulaire centré suit le thème jour/nuit pendant la préparation de la liste initiale.</string>
 </resources>

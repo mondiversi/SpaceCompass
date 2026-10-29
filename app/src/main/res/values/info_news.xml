@@ -1,9 +1,9 @@
 <resources>
     <string name="info_news_title">Latest news · %1$s</string>
-    <string name="info_news_star_sky" formatted="false">The catalogue grows to 9,999 objects across the Solar System and the deep sky.</string>
-    <string name="info_news_texture_downloads" formatted="false">Expanded tracking uses verified JPL and satellite references, with explicit limits for historical or unavailable data.</string>
-    <string name="info_news_weather" formatted="false">Graphics pack 1.8 adds five photographs and independent thumbnails, downloaded individually and cached offline.</string>
-    <string name="info_news_viewer_zoom" formatted="false">Catalogue calculations, search and data refresh are optimized for the larger collection.</string>
-    <string name="info_news_settings" formatted="false">Location subpages remain fully editable. Enable or disable each custom value only from Location management.</string>
-    <string name="info_news_catalog" formatted="false">More compact Location cards and an always-checked, disabled Resumption checkbox make the controls clearer.</string>
+    <string name="info_news_star_sky" formatted="false">A new main-view button shows or hides the reticle and point callouts, remembering your choice.</string>
+    <string name="info_news_texture_downloads" formatted="false">Photo and panorama labels keep their own settings, independently of the live reticle.</string>
+    <string name="info_news_weather" formatted="false">Search, filters and sorting run in the background for a more responsive object list.</string>
+    <string name="info_news_viewer_zoom" formatted="false">Optional row loading waits until scrolling stops; ready thumbnails remain visible.</string>
+    <string name="info_news_settings" formatted="false">A translucent black backing improves contrast for app-generated celestial symbols.</string>
+    <string name="info_news_catalog" formatted="false">A centered circular indicator follows the day/night theme while the initial list is prepared.</string>
 </resources>

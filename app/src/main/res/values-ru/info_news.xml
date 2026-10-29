@@ -1,9 +1,9 @@
 <resources>
     <string name="info_news_title">Последние новости · %1$s</string>
-    <string name="info_news_star_sky" formatted="false">Каталог расширен до 9999 объектов Солнечной системы и глубокого космоса.</string>
-    <string name="info_news_texture_downloads" formatted="false">Расширенное отслеживание использует проверенные данные JPL и спутников с явными ограничениями для исторических или недоступных данных.</string>
-    <string name="info_news_weather" formatted="false">Графический пакет 1.8 добавляет пять фотографий и отдельные миниатюры, загружаемые по одной и сохраняемые офлайн.</string>
-    <string name="info_news_viewer_zoom" formatted="false">Вычисления, поиск и обновление данных оптимизированы для расширенного каталога.</string>
-    <string name="info_news_settings" formatted="false">Вложенные страницы местоположения всегда доступны для редактирования. Включайте и отключайте свои значения только в управлении местоположением.</string>
-    <string name="info_news_catalog" formatted="false">Более компактные карточки и всегда отмеченный неактивный флажок возобновления делают управление понятнее.</string>
+    <string name="info_news_star_sky" formatted="false">Новая кнопка на главном экране показывает или скрывает прицел и сведения о точках, запоминая выбор.</string>
+    <string name="info_news_texture_downloads" formatted="false">Подписи фотографий и панорам сохраняют собственные настройки независимо от прицела в текущем виде.</string>
+    <string name="info_news_weather" formatted="false">Поиск, фильтрация и сортировка выполняются в фоне, чтобы список объектов быстрее реагировал.</string>
+    <string name="info_news_viewer_zoom" formatted="false">Необязательная загрузка строк ждёт окончания прокрутки; готовые миниатюры остаются видимыми.</string>
+    <string name="info_news_settings" formatted="false">Полупрозрачный чёрный фон улучшает контраст небесных символов, создаваемых приложением.</string>
+    <string name="info_news_catalog" formatted="false">При подготовке начального списка по центру отображается круговой индикатор загрузки с учётом дневной или ночной темы.</string>
 </resources>

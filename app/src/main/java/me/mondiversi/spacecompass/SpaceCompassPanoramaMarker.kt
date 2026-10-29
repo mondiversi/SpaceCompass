@@ -20,6 +20,7 @@ internal fun renderSpaceCompassPanoramaMarker(context: Context?, body: SpaceComp
         if ((!body.isSpacecraft || body.hasCatalogPhotograph) && !body.isComet && body != SpaceCompassCelestialBody.EARTH_CENTER && !body.usesDeepSkySymbol)
             texture = createSpaceCompassCelestialThumbnail(context, body, extent)
         CanvasDrawScope().draw(Density(1f), LayoutDirection.Ltr, Canvas(output.asImageBitmap()), Size(extent.toFloat(), extent.toFloat())) {
+            if (body.usesGeneratedThumbnailBackdrop) drawSpaceCompassGeneratedThumbnailBackdrop()
             when {
                 body.isComet -> drawSpaceCompassCometSymbol(body)
                 body == SpaceCompassCelestialBody.EARTH_CENTER -> drawSpaceCompassEarthCenterSymbol()

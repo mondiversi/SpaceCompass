@@ -1,0 +1,6 @@
+<resources>
+    <string name="reticle_enable">Richtkruis en puntinformatie tonen</string>
+    <string name="reticle_disable">Richtkruis en puntinformatie verbergen</string>
+    <string name="scene_reticle_on">Richtkruis en puntinformatie zichtbaar</string>
+    <string name="scene_reticle_off">Richtkruis en puntinformatie verborgen</string>
+</resources>

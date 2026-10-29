@@ -1,9 +1,9 @@
 <resources>
     <string name="info_news_title">تازه‌ترین تغییرات · %1$s</string>
-    <string name="info_news_star_sky" formatted="false">فهرست به ۹٬۹۹۹ جرم در منظومهٔ شمسی و اعماق آسمان گسترش یافت.</string>
-    <string name="info_news_texture_downloads" formatted="false">ردیابی گسترده از داده‌های تأییدشدهٔ JPL و ماهواره‌ها استفاده می‌کند و محدودیت داده‌های تاریخی یا ناموجود را روشن نشان می‌دهد.</string>
-    <string name="info_news_weather" formatted="false">بستهٔ گرافیکی 1.8 پنج عکس و تصاویر بندانگشتی مستقل اضافه می‌کند که جداگانه بارگیری و آفلاین ذخیره می‌شوند.</string>
-    <string name="info_news_viewer_zoom" formatted="false">محاسبات، جست‌وجو و به‌روزرسانی داده‌ها برای فهرست بزرگ‌تر بهینه شده‌اند.</string>
-    <string name="info_news_settings" formatted="false">زیرصفحه‌های مکان همیشه قابل ویرایش‌اند. مقادیر سفارشی را فقط از مدیریت مکان فعال یا غیرفعال کنید.</string>
-    <string name="info_news_catalog" formatted="false">کارت‌های فشرده‌تر و کادر ادامهٔ همیشه علامت‌خورده و غیرفعال، کنترل‌ها را روشن‌تر می‌کنند.</string>
+    <string name="info_news_star_sky" formatted="false">دکمه‌ای تازه در نمای اصلی نشانگر هدف و اطلاعات نقاط را نمایش می‌دهد یا پنهان می‌کند و انتخاب شما را به خاطر می‌سپارد.</string>
+    <string name="info_news_texture_downloads" formatted="false">برچسب‌های عکس و پانوراما تنظیمات مستقل خود را جدا از نشانگر هدف نمای زنده حفظ می‌کنند.</string>
+    <string name="info_news_weather" formatted="false">جست‌وجو، فیلتر و مرتب‌سازی در پس‌زمینه انجام می‌شوند تا فهرست اجرام سریع‌تر پاسخ دهد.</string>
+    <string name="info_news_viewer_zoom" formatted="false">بارگیری اختیاری ردیف‌ها تا توقف پیمایش صبر می‌کند؛ تصاویر بندانگشتی آماده همچنان دیده می‌شوند.</string>
+    <string name="info_news_settings" formatted="false">پس‌زمینهٔ سیاه نیمه‌شفاف، کنتراست نمادهای آسمانی تولیدشده در برنامه را بهتر می‌کند.</string>
+    <string name="info_news_catalog" formatted="false">هنگام آماده‌سازی فهرست اولیه، نشانگر بارگیری دایره‌ای در مرکز با پوستهٔ روز و شب هماهنگ می‌شود.</string>
 </resources>

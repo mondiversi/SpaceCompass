@@ -1,9 +1,9 @@
 <resources>
     <string name="info_news_title">最新变化 · %1$s</string>
-    <string name="info_news_star_sky" formatted="false">目录扩展至9,999个天体，涵盖太阳系和深空。</string>
-    <string name="info_news_texture_downloads" formatted="false">扩展追踪采用经过验证的JPL和卫星资料，并明确说明历史数据或不可用数据的限制。</string>
-    <string name="info_news_weather" formatted="false">图像包1.8新增五张照片及独立缩略图，按需单独下载并离线缓存。</string>
-    <string name="info_news_viewer_zoom" formatted="false">针对扩展目录优化了计算、搜索和数据刷新。</string>
-    <string name="info_news_settings" formatted="false">位置子页面始终可以编辑。自定义值仅通过位置管理页面启用或停用。</string>
-    <string name="info_news_catalog" formatted="false">位置卡片更加紧凑，恢复复选框始终勾选且不可取消，使操作更清晰。</string>
+    <string name="info_news_star_sky" formatted="false">主界面新增按钮，可显示或隐藏准星和点位信息，并记住您的选择。</string>
+    <string name="info_news_texture_downloads" formatted="false">照片和全景图的标签仍使用独立设置，不受实时视图准星开关影响。</string>
+    <string name="info_news_weather" formatted="false">搜索、筛选和排序改为在后台处理，让天体列表响应更流畅。</string>
+    <string name="info_news_viewer_zoom" formatted="false">非紧急的行加载会等待滚动停止后继续，已准备好的缩略图保持可见。</string>
+    <string name="info_news_settings" formatted="false">为应用绘制的天体符号添加半透明黑色背景，提高对比度。</string>
+    <string name="info_news_catalog" formatted="false">初始列表准备期间，中央会显示与日间或夜间主题相适应的圆形加载指示器。</string>
 </resources>

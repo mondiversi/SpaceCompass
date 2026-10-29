@@ -27,6 +27,7 @@ internal fun SpaceCompassCelestialSceneInteraction(targets: List<SpaceCompassCel
     paths: Map<SpaceCompassCelestialBody, SpaceCompassSunDailyPath> = targets.mapNotNull { it.path?.let { p -> it.body to p } }.toMap(),
     pinnedTargets: List<SpaceCompassCelestialSceneTarget>? = null,
     hitExclusions: List<SpaceCompassSunSceneFrame> = emptyList(),
+    showCaptions: Boolean = true,
     liveMarkers: @Composable () -> Unit = {}) {
     androidx.compose.foundation.layout.BoxWithConstraints(Modifier.fillMaxSize()) {
         val density = LocalDensity.current
@@ -61,7 +62,7 @@ internal fun SpaceCompassCelestialSceneInteraction(targets: List<SpaceCompassCel
         }
         // Local marker targets stay above the scene detector; captions paint and receive taps last.
         liveMarkers()
-        if (nowMs != null) {
+        if (showCaptions && nowMs != null) {
             SpaceCompassCelestialSceneBadges(pinned, focused, nowMs, primaryText, secondaryText, backgroundColor, excluded)
         }
     }

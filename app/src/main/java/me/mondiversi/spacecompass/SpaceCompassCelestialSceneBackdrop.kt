@@ -20,7 +20,7 @@ internal fun SpaceCompassCelestialSceneBackdrop(opticalFrame: SpaceCompassSunSce
     dailyPath: SpaceCompassSunDailyPath?, position: SpaceCompassSunPosition?, timeMs: Long,
     state: SpaceCompassSunDailyPathUiState, primaryText: Color, secondaryText: Color, background: Color,
     latitude: Double?, altitude: Double, showReferences: Boolean, toolbarHeight: Double, modifier: Modifier,
-    longitude: Double? = null, objectOpacity: Float = 1f) {
+    longitude: Double? = null, objectOpacity: Float = 1f, showReticle: Boolean = true) {
     if (opticalFrame == null || orientation == null) return
     val density = LocalDensity.current
     val paths = overlays.mapNotNull { (candidate, overlay) -> overlay.path?.let { candidate to it } }.toMap() +
@@ -38,8 +38,8 @@ internal fun SpaceCompassCelestialSceneBackdrop(opticalFrame: SpaceCompassSunSce
         val targets = remember(paths, current, orientation, width, height, perspective) {
             projectSpaceCompassCelestialSceneTargets(paths, current, orientation, width, height, perspective)
         }
-        val focused = focusedSpaceCompassCelestialSceneTarget(targets, width, height,
-            with(density) { SPACE_COMPASS_CELESTIAL_RETICLE_RADIUS_DP.dp.toPx().toDouble() }, perspective)
+        val focused = if (showReticle) focusedSpaceCompassCelestialSceneTarget(targets, width, height,
+            with(density) { SPACE_COMPASS_CELESTIAL_RETICLE_RADIUS_DP.dp.toPx().toDouble() }, perspective) else null
         val projections = remember(positions, orientation, width, height, perspective) {
             positions.mapValues { projectSpaceCompassSun(it.value, orientation, width, height, perspective) }
         }

@@ -1,9 +1,9 @@
 <resources>
     <string name="info_news_title">Laatste nieuws · %1$s</string>
-    <string name="info_news_star_sky" formatted="false">De catalogus groeit naar 9.999 objecten in het zonnestelsel en daarbuiten.</string>
-    <string name="info_news_texture_downloads" formatted="false">Uitgebreide volgfuncties gebruiken gecontroleerde JPL- en satellietgegevens, met duidelijke grenzen voor historische of ontbrekende gegevens.</string>
-    <string name="info_news_weather" formatted="false">Grafisch pakket 1.8 voegt vijf foto’s en aparte miniaturen toe, die afzonderlijk worden gedownload en offline bewaard.</string>
-    <string name="info_news_viewer_zoom" formatted="false">Berekeningen, zoeken en gegevensverversing zijn geoptimaliseerd voor de grotere catalogus.</string>
-    <string name="info_news_settings" formatted="false">De locatie-subpagina’s blijven bewerkbaar. Schakel aangepaste waarden alleen in of uit via Locatiebeheer.</string>
-    <string name="info_news_catalog" formatted="false">Compactere locatiekaarten en een altijd aangevinkt, uitgeschakeld hervattingsvakje maken de bediening duidelijker.</string>
+    <string name="info_news_star_sky" formatted="false">Een nieuwe knop in de hoofdweergave toont of verbergt het richtkruis en de puntinformatie en onthoudt je keuze.</string>
+    <string name="info_news_texture_downloads" formatted="false">Labels op foto’s en panorama’s behouden hun eigen instellingen, onafhankelijk van het richtkruis in de liveweergave.</string>
+    <string name="info_news_weather" formatted="false">Zoeken, filteren en sorteren gebeurt op de achtergrond, zodat de objectenlijst sneller reageert.</string>
+    <string name="info_news_viewer_zoom" formatted="false">Optioneel laden van rijen wacht totdat het scrollen stopt; gereedstaande miniaturen blijven zichtbaar.</string>
+    <string name="info_news_settings" formatted="false">Een doorschijnende zwarte achtergrond verbetert het contrast van hemelssymbolen die de app zelf tekent.</string>
+    <string name="info_news_catalog" formatted="false">Een gecentreerde ronde laadindicator volgt het dag-/nachtthema terwijl de eerste lijst wordt voorbereid.</string>
 </resources>

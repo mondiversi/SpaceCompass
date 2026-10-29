@@ -1,0 +1,6 @@
+<resources>
+    <string name="reticle_enable">Afficher le réticule et les informations des points</string>
+    <string name="reticle_disable">Masquer le réticule et les informations des points</string>
+    <string name="scene_reticle_on">Réticule et informations des points affichés</string>
+    <string name="scene_reticle_off">Réticule et informations des points masqués</string>
+</resources>

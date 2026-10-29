@@ -1,9 +1,9 @@
 <resources>
     <string name="info_news_title">最近の変更 · %1$s</string>
-    <string name="info_news_star_sky" formatted="false">カタログが太陽系から深宇宙まで9,999天体に拡大しました。</string>
-    <string name="info_news_texture_downloads" formatted="false">追跡対象を拡大し、検証済みのJPL・衛星データを使用します。過去のデータや利用できないデータの制約も明示します。</string>
-    <string name="info_news_weather" formatted="false">画像パック1.8に5枚の写真と独立したサムネイルを追加。個別にダウンロードしてオフライン保存します。</string>
-    <string name="info_news_viewer_zoom" formatted="false">拡大したカタログに合わせて計算、検索、データ更新を最適化しました。</string>
-    <string name="info_news_settings" formatted="false">位置の各サブページは常に編集できます。カスタム値の有効・無効は位置管理から切り替えます。</string>
-    <string name="info_news_catalog" formatted="false">位置カードをさらにコンパクトにし、再開のチェック欄は常にオンの変更不可表示にしました。</string>
+    <string name="info_news_star_sky" formatted="false">メイン画面の新しいボタンで照準とポイント情報を表示・非表示にでき、選択が保存されます。</string>
+    <string name="info_news_texture_downloads" formatted="false">写真とパノラマのラベル設定は、ライブ画面の照準とは独立したままです。</string>
+    <string name="info_news_weather" formatted="false">検索・フィルター・並べ替えをバックグラウンドで処理し、天体一覧の応答性を改善しました。</string>
+    <string name="info_news_viewer_zoom" formatted="false">必須ではない行データの読み込みはスクロール停止後に再開し、読み込み済みのサムネイルは表示を維持します。</string>
+    <string name="info_news_settings" formatted="false">アプリが描く天体シンボルに半透明の黒い背景を加え、コントラストを改善しました。</string>
+    <string name="info_news_catalog" formatted="false">最初の一覧の準備中は、昼夜のテーマに合った円形の読み込み表示が中央に現れます。</string>
 </resources>

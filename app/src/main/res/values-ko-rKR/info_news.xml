@@ -1,9 +1,9 @@
 <resources>
     <string name="info_news_title">최근 변경 사항 · %1$s</string>
-    <string name="info_news_star_sky" formatted="false">태양계부터 심원천체까지 카탈로그가 9,999개 천체로 확대됩니다.</string>
-    <string name="info_news_texture_downloads" formatted="false">확대된 추적은 검증된 JPL 및 위성 자료를 사용하며, 과거 자료나 사용할 수 없는 자료의 한계를 명시합니다.</string>
-    <string name="info_news_weather" formatted="false">그래픽 팩 1.8에 사진 5장과 독립 썸네일이 추가됩니다. 각각 다운로드하여 오프라인에 저장합니다.</string>
-    <string name="info_news_viewer_zoom" formatted="false">확대된 카탈로그에 맞춰 계산, 검색, 데이터 새로고침을 최적화했습니다.</string>
-    <string name="info_news_settings" formatted="false">위치 하위 화면은 항상 편집할 수 있습니다. 사용자 지정 값은 위치 관리에서만 켜거나 끕니다.</string>
-    <string name="info_news_catalog" formatted="false">위치 카드를 더 간결하게 하고 재개 체크박스는 항상 선택된 비활성 상태로 표시하여 조작을 명확하게 했습니다.</string>
+    <string name="info_news_star_sky" formatted="false">메인 화면의 새 버튼으로 조준선과 지점 정보를 표시하거나 숨길 수 있으며 선택이 저장됩니다.</string>
+    <string name="info_news_texture_downloads" formatted="false">사진과 파노라마의 라벨은 실시간 화면의 조준선과 독립된 설정을 유지합니다.</string>
+    <string name="info_news_weather" formatted="false">검색, 필터, 정렬을 백그라운드에서 처리하여 천체 목록의 반응성을 개선했습니다.</string>
+    <string name="info_news_viewer_zoom" formatted="false">긴급하지 않은 행 로딩은 스크롤이 멈춘 뒤 재개되며 준비된 미리보기는 계속 표시됩니다.</string>
+    <string name="info_news_settings" formatted="false">앱에서 생성하는 천체 기호에 반투명 검은 배경을 더해 대비를 개선했습니다.</string>
+    <string name="info_news_catalog" formatted="false">처음 목록을 준비하는 동안 낮과 밤 테마에 맞는 원형 로딩 표시가 가운데 나타납니다.</string>
 </resources>

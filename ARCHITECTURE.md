@@ -493,3 +493,25 @@ consumer. Selection remains explicit in checkboxes, bold names and thumbnail rim
 input and placeholder share typography and centered alignment inside a 40 dp outline, preserving
 the existing 48 dp header touch space. Scientific ephemerides, image pins and catalogue identities
 are unchanged.
+
+
+## Catalogue presentation and live reticle 1.7.1
+
+SpaceCompassCatalogPresenter owns a per-visit immutable localized search index and bounded derived caches.
+Its Default-dispatched, mutex-protected work prepares filtering, sorting, selected-row totals and optional
+facet counts without catalogue-sized work in composition. Effect cancellation prevents obsolete queries
+from replacing the current presentation. Checked objects retain the visit's priority snapshot; favorites,
+search and every filter keep their existing intersection and checked-object exception rules. Complete
+facet counts are computed only for an open panel, in one pass; pending values use a dash rather than zero.
+
+The row-scoped load gate waits 160 ms after dragging/flinging stops before allowing new optional image
+work and visible-object prefetch. Existing verified pixels remain drawable. An image request already
+started may finish; lifecycle cancellation, download integrity, retry policy and selected/observed target
+updates retain their existing behavior. The main sky and Observatory do not inherit this browsing gate.
+The initial circular progress item fills only the list viewport and takes the active theme primary color.
+
+sky_reticle_visible defaults to true and persists independently of panorama_label_mode. Disabling it
+suppresses the live reticle, focus captions and their reminder action, including the backdrop's automatic
+focus highlight. Orbit-point selections and capture-label settings are not changed. Generated symbols
+receive circular 82%-black backing in live thumbnails and rendered capture markers; photographic pixels
+and surface-map previews keep their original content.

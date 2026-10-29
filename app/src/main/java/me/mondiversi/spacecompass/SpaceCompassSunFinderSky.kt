@@ -89,7 +89,8 @@ internal fun SpaceCompassSunPointingViewport(
     topContentInset: androidx.compose.ui.unit.Dp = 0.dp,
     projectionTopInset: androidx.compose.ui.unit.Dp = 0.dp,
     drawScene: Boolean = true, objectOpacity: Float = 1f,
-    approachOverlays: Map<SpaceCompassCelestialBody,SpaceCompassCelestialOverlay> = overlays
+    approachOverlays: Map<SpaceCompassCelestialBody,SpaceCompassCelestialOverlay> = overlays,
+    showReticle: Boolean = true
 ) {
     BoxWithConstraints(modifier.testTag("sun-finder-sky").semantics { contentDescription = description }) {
         val density = LocalDensity.current
@@ -132,8 +133,8 @@ internal fun SpaceCompassSunPointingViewport(
         val targets = remember(paths, current, orientation, compassReliable, width, height, scenePerspective) {
             projectSpaceCompassCelestialSceneTargets(paths, current, orientation.takeIf { compassReliable }, width, height, scenePerspective)
         }
-        val focused = focusedSpaceCompassCelestialSceneTarget(targets, width, height,
-            with(density) { SPACE_COMPASS_CELESTIAL_RETICLE_RADIUS_DP.dp.toPx().toDouble() }, scenePerspective)
+        val focused = if (showReticle) focusedSpaceCompassCelestialSceneTarget(targets, width, height,
+            with(density) { SPACE_COMPASS_CELESTIAL_RETICLE_RADIUS_DP.dp.toPx().toDouble() }, scenePerspective) else null
         val selectedPoints = dailyPathUiState.selectedPoints
         val pinned = remember(selectedPoints, paths, current, orientation, compassReliable, width, height, scenePerspective) {
             projectSpaceCompassSelectedOrbitTargets(selectedPoints, paths, current,
@@ -206,7 +207,7 @@ internal fun SpaceCompassSunPointingViewport(
                     highlightedPoint = focused?.takeIf { it.body == candidate && !it.isCurrent }?.point, perspective = scenePerspective,
                     drawApproaches = false)
             } }
-            Canvas(Modifier.fillMaxSize().testTag("sun-finder-reticle")) {
+            if (showReticle) Canvas(Modifier.fillMaxSize().testTag("sun-finder-reticle")) {
                 val aim = Offset(reticleCenter.x.toFloat(), reticleCenter.y.toFloat())
                 val reticle = Color.White
                 drawCircle(Color.Black.copy(alpha = 0.30f), SPACE_COMPASS_CELESTIAL_RETICLE_RADIUS_DP.dp.toPx(), aim, style = Stroke(1.92.dp.toPx()))
@@ -220,7 +221,8 @@ internal fun SpaceCompassSunPointingViewport(
             SpaceCompassCelestialSceneInteraction(targets, current, focused, dailyPathUiState, timeMs, orientation.takeIf { compassReliable },
                 // Captions paint above celestial locators; moving them must not flip a caption's side.
                 primaryText, secondaryText, backgroundColor, exclusions,
-                scenePerspective, paths, pinnedTargets = pinned, hitExclusions = titleTouchExclusions) {
+                scenePerspective, paths, pinnedTargets = pinned, hitExclusions = titleTouchExclusions,
+                showCaptions = showReticle) {
                 // Only thumbnails have small local targets; they never intercept another path's whole viewport.
                 spaceCompassAllCelestialOrder.forEach { candidate -> key(candidate) { projections[candidate]?.let { projected ->
                     val below = positions.getValue(candidate).elevationDegrees < 0

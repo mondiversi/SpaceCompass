@@ -1,0 +1,6 @@
+<resources>
+    <string name="reticle_enable">照準とポイント情報を表示</string>
+    <string name="reticle_disable">照準とポイント情報を非表示</string>
+    <string name="scene_reticle_on">照準とポイント情報を表示しました</string>
+    <string name="scene_reticle_off">照準とポイント情報を非表示にしました</string>
+</resources>

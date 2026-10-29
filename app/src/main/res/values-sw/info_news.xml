@@ -1,9 +1,9 @@
 <resources>
     <string name="info_news_title">Mambo mapya · %1$s</string>
-    <string name="info_news_star_sky" formatted="false">Katalogi imeongezeka hadi vitu 9,999 vya Mfumo wa Jua na anga za mbali.</string>
-    <string name="info_news_texture_downloads" formatted="false">Ufuatiliaji uliopanuliwa unatumia marejeleo ya JPL na satelaiti yaliyothibitishwa, ukiweka wazi mipaka ya data za kihistoria au zisizopatikana.</string>
-    <string name="info_news_weather" formatted="false">Kifurushi cha picha 1.8 kinaongeza picha tano na vijipicha huru, vinavyopakuliwa kimoja kimoja na kuhifadhiwa bila mtandao.</string>
-    <string name="info_news_viewer_zoom" formatted="false">Mahesabu, utafutaji na usasishaji wa data vimeboreshwa kwa katalogi kubwa zaidi.</string>
-    <string name="info_news_settings" formatted="false">Kurasa ndogo za eneo zinaweza kuhaririwa daima. Washa au zima thamani maalum kupitia Usimamizi wa eneo pekee.</string>
-    <string name="info_news_catalog" formatted="false">Kadi fupi zaidi na kisanduku cha kuendelea kilichotiwa alama daima na kisichoweza kuzimwa hufanya vidhibiti vieleweke zaidi.</string>
+    <string name="info_news_star_sky" formatted="false">Kitufe kipya kwenye mwonekano mkuu huonyesha au kuficha kilenga na maelezo ya nukta, na hukumbuka chaguo lako.</string>
+    <string name="info_news_texture_downloads" formatted="false">Lebo za picha na panorama huhifadhi mipangilio yake bila kutegemea kilenga cha mwonekano wa moja kwa moja.</string>
+    <string name="info_news_weather" formatted="false">Utafutaji, vichujio na upangaji hufanywa chinichini ili orodha ya vitu iitikie haraka zaidi.</string>
+    <string name="info_news_viewer_zoom" formatted="false">Upakiaji wa ziada wa safu husubiri usogezaji usimame; vijipicha vilivyo tayari hubaki kuonekana.</string>
+    <string name="info_news_settings" formatted="false">Mandharinyuma meusi yenye uwazi kiasi huboresha utofauti wa alama za angani zinazochorwa na programu.</string>
+    <string name="info_news_catalog" formatted="false">Kiashirio cha kupakia cha duara katikati hufuata mandhari ya mchana/usiku wakati orodha ya kwanza inaandaliwa.</string>
 </resources>

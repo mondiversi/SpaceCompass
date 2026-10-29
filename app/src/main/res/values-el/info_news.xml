@@ -1,9 +1,9 @@
 <resources>
     <string name="info_news_title">Τελευταία νέα · %1$s</string>
-    <string name="info_news_star_sky" formatted="false">Ο κατάλογος φτάνει τα 9.999 αντικείμενα του Ηλιακού Συστήματος και του βαθέος ουρανού.</string>
-    <string name="info_news_texture_downloads" formatted="false">Η διευρυμένη παρακολούθηση χρησιμοποιεί επαληθευμένα δεδομένα JPL και δορυφόρων, με σαφή όρια για ιστορικά ή μη διαθέσιμα δεδομένα.</string>
-    <string name="info_news_weather" formatted="false">Το πακέτο γραφικών 1.8 προσθέτει πέντε φωτογραφίες και ανεξάρτητες μικρογραφίες, με μεμονωμένη λήψη και αποθήκευση εκτός σύνδεσης.</string>
-    <string name="info_news_viewer_zoom" formatted="false">Οι υπολογισμοί, η αναζήτηση και η ανανέωση δεδομένων βελτιστοποιήθηκαν για τον μεγαλύτερο κατάλογο.</string>
-    <string name="info_news_settings" formatted="false">Οι υποσελίδες τοποθεσίας παραμένουν επεξεργάσιμες. Ενεργοποιήστε ή απενεργοποιήστε τις προσαρμοσμένες τιμές μόνο από τη διαχείριση τοποθεσίας.</string>
-    <string name="info_news_catalog" formatted="false">Πιο συμπαγείς κάρτες και ένα πάντα επιλεγμένο, ανενεργό πλαίσιο συνέχισης κάνουν τους ελέγχους σαφέστερους.</string>
+    <string name="info_news_star_sky" formatted="false">Ένα νέο κουμπί στην κύρια προβολή εμφανίζει ή κρύβει το σταυρόνημα και τις πληροφορίες σημείων και θυμάται την επιλογή.</string>
+    <string name="info_news_texture_downloads" formatted="false">Οι ετικέτες φωτογραφιών και πανοραμάτων διατηρούν ανεξάρτητες ρυθμίσεις από το σταυρόνημα της ζωντανής προβολής.</string>
+    <string name="info_news_weather" formatted="false">Η αναζήτηση, τα φίλτρα και η ταξινόμηση εκτελούνται στο παρασκήνιο για πιο άμεση απόκριση της λίστας αντικειμένων.</string>
+    <string name="info_news_viewer_zoom" formatted="false">Η προαιρετική φόρτωση γραμμών περιμένει να σταματήσει η κύλιση· οι έτοιμες μικρογραφίες παραμένουν ορατές.</string>
+    <string name="info_news_settings" formatted="false">Ένα ημιδιαφανές μαύρο φόντο βελτιώνει την αντίθεση των ουράνιων συμβόλων που δημιουργεί η εφαρμογή.</string>
+    <string name="info_news_catalog" formatted="false">Μια κεντραρισμένη κυκλική ένδειξη φόρτωσης ακολουθεί το θέμα ημέρας/νύχτας όσο ετοιμάζεται η αρχική λίστα.</string>
 </resources>

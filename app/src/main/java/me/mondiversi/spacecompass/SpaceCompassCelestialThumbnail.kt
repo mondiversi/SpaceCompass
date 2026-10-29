@@ -8,6 +8,7 @@ import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.runtime.*
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
+import androidx.compose.ui.draw.drawBehind
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.ColorFilter
 import androidx.compose.ui.graphics.ColorMatrix
@@ -20,6 +21,7 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.semantics.contentDescription
 import androidx.compose.ui.semantics.semantics
 import androidx.compose.ui.unit.IntSize
+import kotlinx.coroutines.flow.first
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
 import android.util.LruCache
@@ -28,6 +30,14 @@ import kotlin.math.*
 private val celestialThumbnailDispatcher = Dispatchers.Default.limitedParallelism(2)
 private val celestialThumbnailCache = object : LruCache<SpaceCompassCelestialBody, ImageBitmap>(4 * 1024 * 1024) {
     override fun sizeOf(key: SpaceCompassCelestialBody, value: ImageBitmap) = value.width * value.height * 4
+}
+
+/** Back only app-generated symbols; downloaded photographs and surface previews keep their pixels. */
+internal val SpaceCompassCelestialBody.usesGeneratedThumbnailBackdrop: Boolean
+    get() = isComet || usesDeepSkySymbol || (viewerTexture == null && !isSpacecraft)
+
+internal fun androidx.compose.ui.graphics.drawscope.DrawScope.drawSpaceCompassGeneratedThumbnailBackdrop() {
+    drawCircle(Color.Black.copy(alpha = .82f), radius = size.minDimension / 2)
 }
 
 /** Independently downloaded reference previews; phases and structural symbols remain dynamic. */
@@ -39,31 +49,37 @@ internal fun SpaceCompassCelestialThumbnail(body: SpaceCompassCelestialBody, mod
         if (muted) ColorFilter.colorMatrix(ColorMatrix().apply { setToSaturation(0f) }) else null
     }
     val opacity = if (muted) 0.70f else 1f
+    val previewModifier = if (body.usesGeneratedThumbnailBackdrop)
+        modifier.drawBehind { drawSpaceCompassGeneratedThumbnailBackdrop() } else modifier
     val phase = moonPhase.takeIf { body == SpaceCompassCelestialBody.MOON }
     val phaseDescription = phase?.let {
         stringResource(R.string.moon_phase_description, stringResource(it.kind.nameResource),
             formatSpaceCompassNumber(it.illuminatedFraction * 100, 1, LocalSpaceCompassNumericFormat.current))
     }
     if (body.isComet) {
-        SpaceCompassCometSymbol(body, modifier, opacity)
+        SpaceCompassCometSymbol(body, previewModifier, opacity)
     } else if (body == SpaceCompassCelestialBody.EARTH_CENTER) {
-        SpaceCompassEarthCenterSymbol(modifier, opacity)
+        SpaceCompassEarthCenterSymbol(previewModifier, opacity)
     } else if (body.usesDeepSkySymbol) {
-        SpaceCompassDeepSkySymbol(body, modifier, opacity)
+        SpaceCompassDeepSkySymbol(body, previewModifier, opacity)
     } else if (body.isSpacecraft && !body.hasCatalogPhotograph) {
         val geometry = remember { SpaceCompassCelestialRotation(yaw = 25.0, pitch = 50.0).geometry() }
         SpaceCompassCelestialCraftCanvas(body, geometry, SpaceCompassCelestialViewportState(), modifier.clip(CircleShape), colorFilter, opacity)
     } else {
         val previewName = SpaceCompassCelestialThumbnailPolicy.forImage(body.viewerTexture)?.name
-        val textureReady = rememberSpaceCompassCelestialImage(previewName)
+        val loadsAllowed by rememberUpdatedState(LocalSpaceCompassCatalogLoadsAllowed.current)
+        val textureReady = rememberSpaceCompassCelestialImage(previewName, loadingEnabled = loadsAllowed)
         val thumbnail by produceState(celestialThumbnailCache[body].takeIf { textureReady }, body, textureReady) {
+            celestialThumbnailCache[body].takeIf { textureReady }?.let { value = it; return@produceState }
+            // Keep ready pixels and cheap generated symbols; postpone new decodes during catalogue scrolling.
+            snapshotFlow { loadsAllowed }.first { it }
             value = withContext(celestialThumbnailDispatcher) {
                 celestialThumbnailCache[body].takeIf { textureReady } ?: runCatching { createSpaceCompassCelestialThumbnail(context.applicationContext, body).asImageBitmap() }
                     .onFailure { SpaceCompassErrorLog.record(context, "celestial:thumbnail", it) }.getOrNull()
                     ?.also { if (textureReady) celestialThumbnailCache.put(body, it) }
             }
         }
-        Canvas(modifier.then(if (phaseDescription == null) Modifier else Modifier.semantics {
+        Canvas(previewModifier.then(if (phaseDescription == null) Modifier else Modifier.semantics {
             contentDescription = phaseDescription
         })) { drawSpaceCompassCelestialThumbnail(thumbnail, phase, colorFilter, opacity) }
     }

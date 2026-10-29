@@ -8,6 +8,7 @@ import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.LifecycleEventObserver
 import androidx.lifecycle.compose.LocalLifecycleOwner
 import kotlinx.coroutines.*
+import kotlinx.coroutines.flow.first
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.update
 import kotlinx.coroutines.sync.Mutex
@@ -136,7 +137,7 @@ internal fun rememberSpaceCompassCelestialTexture(body: SpaceCompassCelestialBod
     rememberSpaceCompassCelestialImage(body.viewerTexture)
 
 @Composable
-internal fun rememberSpaceCompassCelestialImage(name: String?): Boolean {
+internal fun rememberSpaceCompassCelestialImage(name: String?, loadingEnabled: Boolean = true): Boolean {
     val context = LocalContext.current.applicationContext
     val texture = SpaceCompassCelestialTexturePolicy.texture(name) ?: return true
     val ready by SpaceCompassCelestialTextures.ready.collectAsState()
@@ -150,9 +151,15 @@ internal fun rememberSpaceCompassCelestialImage(name: String?): Boolean {
         lifecycle.addObserver(observer)
         onDispose { lifecycle.removeObserver(observer) }
     }
+    val mayStartLoading by rememberUpdatedState(loadingEnabled)
     LaunchedEffect(context, texture.name, resumed) {
         if (!resumed) return@LaunchedEffect
-        while (!SpaceCompassCelestialTextures.ensureImage(context, name)) delay(30_000)
+        // Do not cancel an already started download when a gesture begins; gate the next attempt.
+        while (true) {
+            snapshotFlow { mayStartLoading }.first { it }
+            if (SpaceCompassCelestialTextures.ensureImage(context, name)) break
+            delay(30_000)
+        }
     }
     return texture.name in ready
 }

@@ -11,7 +11,6 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.geometry.Offset
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.StrokeCap
-import androidx.compose.ui.platform.LocalConfiguration
 import androidx.compose.ui.platform.testTag
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.semantics.*
@@ -20,30 +19,26 @@ import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 
-private data class CatalogFilterOption(val key: String, val title: String, val count: Int)
+private data class CatalogFilterOption(val key: String, val title: String, val count: Int?)
 
 private enum class CatalogFilterField(val key: String) { TYPE("type"), VISIBILITY("visibility"), ORIGIN("origin"), POINTING("pointing") }
 
 /** Two paired rows share the same outlined fields and trailing reset action. */
 @Composable
 internal fun SpaceCompassCatalogFilterBar(types: Set<SpaceCompassCatalogType>, visibility: SpaceCompassCatalogVisibility,
-    origin: SpaceCompassCatalogOrigin, pointing: SpaceCompassCatalogPointing, visibleCount: Int, counts: SpaceCompassCatalogFilterCounts,
+    origin: SpaceCompassCatalogOrigin, pointing: SpaceCompassCatalogPointing, visibleCount: Int?, counts: SpaceCompassCatalogFilterCounts?,
     onType: (SpaceCompassCatalogType) -> Unit, onAllTypes: () -> Unit,
     onVisibility: (SpaceCompassCatalogVisibility) -> Unit, onOrigin: (SpaceCompassCatalogOrigin) -> Unit,
     onPointing: (SpaceCompassCatalogPointing) -> Unit, onReset: () -> Unit, searchActive: Boolean = false,
-    availableBodies: List<SpaceCompassCelestialBody> = spaceCompassCelestialCatalogOrder, favoritesOnly: Boolean = false) {
+    typeOrder: List<SpaceCompassCatalogTypeCount> = emptyList(), favoritesOnly: Boolean = false) {
     val all = stringResource(R.string.catalog_all)
     val numeric = LocalSpaceCompassNumericFormat.current
-    val resultCount = formatSpaceCompassNumber(visibleCount.toDouble(), 0,
-        numeric, grouping = false)
-    val locale = LocalConfiguration.current.locales[0]
+    val resultCount = visibleCount?.let { formatSpaceCompassNumber(it.toDouble(), 0,
+        numeric, grouping = false) } ?: "—"
     val typeLabels = SpaceCompassCatalogType.entries.associateWith { stringResource(it.label) }
-    val typeCounts = remember(availableBodies, typeLabels, locale) {
-        spaceCompassCatalogTypeCounts(availableBodies, typeLabels, locale)
-    }
-    fun countLabel(count: Int) = formatSpaceCompassNumber(count.toDouble(), 0, numeric, grouping = false)
-    val typeChoices = listOf(CatalogFilterOption("",all,counts.allTypes)) + typeCounts.map {
-        CatalogFilterOption(it.type.name,typeLabels.getValue(it.type),counts.types.getValue(it.type))
+    val typeCounts = typeOrder.ifEmpty { SpaceCompassCatalogType.entries.map { SpaceCompassCatalogTypeCount(it, 0) } }
+    val typeChoices = listOf(CatalogFilterOption("",all,counts?.allTypes)) + typeCounts.map {
+        CatalogFilterOption(it.type.name,typeLabels.getValue(it.type),counts?.types?.getValue(it.type))
     }
     val selectedTypes = typeCounts.filter { it.type in types }
     val selectedTypeLabels = selectedTypes.map { typeLabels.getValue(it.type) }
@@ -58,19 +53,19 @@ internal fun SpaceCompassCatalogFilterBar(types: Set<SpaceCompassCatalogType>, v
                     if (key.isEmpty()) onAllTypes() else onType(SpaceCompassCatalogType.valueOf(key))
                 }
                 CatalogFilterChoice(stringResource(R.string.catalog_visibility), stringResource(visibility.label),
-                    SpaceCompassCatalogVisibility.entries.map { CatalogFilterOption(it.name,stringResource(it.label),counts.visibility.getValue(it)) },
+                    SpaceCompassCatalogVisibility.entries.map { CatalogFilterOption(it.name,stringResource(it.label),counts?.visibility?.getValue(it)) },
                     Modifier.weight(1f).testTag("catalog-visibility-menu"), null, CatalogFilterField.VISIBILITY, resultCount) { key ->
                     onVisibility(SpaceCompassCatalogVisibility.valueOf(key))
                 }
             }
             Row(Modifier.fillMaxWidth(), horizontalArrangement = Arrangement.spacedBy(8.dp)) {
                 CatalogFilterChoice(stringResource(R.string.catalog_origin), stringResource(origin.label),
-                    SpaceCompassCatalogOrigin.entries.map { CatalogFilterOption(it.name,stringResource(it.label),counts.origin.getValue(it)) },
+                    SpaceCompassCatalogOrigin.entries.map { CatalogFilterOption(it.name,stringResource(it.label),counts?.origin?.getValue(it)) },
                     Modifier.weight(1f).testTag("catalog-origin-menu"), null, CatalogFilterField.ORIGIN, resultCount) {
                     onOrigin(SpaceCompassCatalogOrigin.valueOf(it))
                 }
                 CatalogFilterChoice(stringResource(R.string.catalog_pointing), stringResource(pointing.label),
-                    SpaceCompassCatalogPointing.entries.map { CatalogFilterOption(it.name,stringResource(it.label),counts.pointing.getValue(it)) },
+                    SpaceCompassCatalogPointing.entries.map { CatalogFilterOption(it.name,stringResource(it.label),counts?.pointing?.getValue(it)) },
                     Modifier.weight(1f).testTag("catalog-pointing-menu"), null, CatalogFilterField.POINTING, resultCount) {
                     onPointing(SpaceCompassCatalogPointing.valueOf(it))
                 }
@@ -127,7 +122,7 @@ private fun CatalogFilterChoice(label: String, selected: String, choices: List<C
                     Row(Modifier.fillMaxWidth(),verticalAlignment=Alignment.CenterVertically,
                         horizontalArrangement=Arrangement.spacedBy(10.dp)) {
                         Text(title,Modifier.weight(1f),maxLines=3,overflow=TextOverflow.Ellipsis)
-                        Text("(" + formatSpaceCompassNumber(count.toDouble(),0,numeric,grouping=false) + ")",
+                        Text("(" + (count?.let { formatSpaceCompassNumber(it.toDouble(),0,numeric,grouping=false) } ?: "—") + ")",
                             maxLines=1,modifier=Modifier.testTag("catalog-${field.key}-${key.ifEmpty { "all" }}-count"))
                     }
                 },

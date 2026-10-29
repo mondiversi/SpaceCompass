@@ -1,9 +1,9 @@
 <resources>
     <string name="info_news_title">החידושים האחרונים · %1$s</string>
-    <string name="info_news_star_sky" formatted="false">הקטלוג גדל ל־9,999 גרמי שמיים ממערכת השמש ומהחלל העמוק.</string>
-    <string name="info_news_texture_downloads" formatted="false">המעקב המורחב משתמש במקורות JPL ונתוני לוויינים מאומתים, עם מגבלות ברורות לנתונים היסטוריים או חסרים.</string>
-    <string name="info_news_weather" formatted="false">חבילת הגרפיקה 1.8 מוסיפה חמש תמונות ותמונות ממוזערות עצמאיות, המורדות בנפרד ונשמרות לשימוש לא מקוון.</string>
-    <string name="info_news_viewer_zoom" formatted="false">החישובים, החיפוש ורענון הנתונים הותאמו לקטלוג המורחב.</string>
-    <string name="info_news_settings" formatted="false">דפי המשנה של המיקום תמיד ניתנים לעריכה. הפעלה וכיבוי של ערכים מותאמים נעשים רק בניהול המיקום.</string>
-    <string name="info_news_catalog" formatted="false">כרטיסים קומפקטיים יותר ותיבת חידוש מסומנת וקבועה שאינה ניתנת לביטול מבהירים את הפקדים.</string>
+    <string name="info_news_star_sky" formatted="false">כפתור חדש בתצוגה הראשית מציג או מסתיר את הכוונת ואת פרטי הנקודות ושומר את הבחירה.</string>
+    <string name="info_news_texture_downloads" formatted="false">התוויות בתמונות ובפנורמות שומרות על הגדרות נפרדות מהכוונת בתצוגה החיה.</string>
+    <string name="info_news_weather" formatted="false">החיפוש, הסינון והמיון מתבצעים ברקע כדי שרשימת העצמים תגיב מהר יותר.</string>
+    <string name="info_news_viewer_zoom" formatted="false">טעינה לא חיונית של שורות ממתינה לסיום הגלילה; תמונות ממוזערות מוכנות נשארות גלויות.</string>
+    <string name="info_news_settings" formatted="false">רקע שחור שקוף למחצה משפר את הניגודיות של סמלי השמיים שהאפליקציה יוצרת.</string>
+    <string name="info_news_catalog" formatted="false">מחוון טעינה מעגלי במרכז מותאם לערכת הנושא של יום ולילה בזמן הכנת הרשימה הראשונית.</string>
 </resources>

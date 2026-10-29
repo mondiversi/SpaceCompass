@@ -40,6 +40,9 @@ class SpaceCompassCatalogRefreshUiTest {
                     onObserve = { observedBody = it })
             }
         } }
+        compose.waitUntil(10_000) {
+            compose.onAllNodesWithTag("celestial-body-SUN").fetchSemanticsNodes().isNotEmpty()
+        }
         compose.onNodeWithTag("celestial-catalog-scroll").performScrollToNode(hasTestTag(tag))
         compose.onNodeWithTag("catalog-check-HALLEY").assertIsOff()
     }

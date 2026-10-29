@@ -1,9 +1,9 @@
 <resources>
     <string name="info_news_title">آخر المستجدات · %1$s</string>
-    <string name="info_news_star_sky" formatted="false">يتسع الفهرس إلى 9,999 جرمًا من المجموعة الشمسية والسماء العميقة.</string>
-    <string name="info_news_texture_downloads" formatted="false">يستخدم التتبع الموسّع مراجع JPL وبيانات أقمار صناعية موثقة، مع توضيح حدود البيانات التاريخية أو غير المتاحة.</string>
-    <string name="info_news_weather" formatted="false">تضيف حزمة الرسومات 1.8 خمس صور وصورًا مصغرة مستقلة، تُنزّل منفردة وتُحفظ دون اتصال.</string>
-    <string name="info_news_viewer_zoom" formatted="false">حُسّنت الحسابات والبحث وتحديث البيانات لتناسب الفهرس الموسّع.</string>
-    <string name="info_news_settings" formatted="false">تبقى الصفحات الفرعية للموقع قابلة للتحرير دائمًا. فعّل القيم المخصصة أو عطّلها من إدارة الموقع فقط.</string>
-    <string name="info_news_catalog" formatted="false">بطاقات موقع أكثر اختصارًا وخانة استئناف محددة دائمًا وغير قابلة للإلغاء تجعل عناصر التحكم أوضح.</string>
+    <string name="info_news_star_sky" formatted="false">زر جديد في العرض الرئيسي يُظهر أو يُخفي مؤشر التصويب ومعلومات النقاط ويتذكر اختيارك.</string>
+    <string name="info_news_texture_downloads" formatted="false">تحتفظ تسميات الصور والبانوراما بإعداداتها المستقلة عن مؤشر التصويب في العرض المباشر.</string>
+    <string name="info_news_weather" formatted="false">يعمل البحث والتصفية والترتيب في الخلفية لتستجيب قائمة الأجرام بسرعة أكبر.</string>
+    <string name="info_news_viewer_zoom" formatted="false">ينتظر التحميل الاختياري للصفوف حتى يتوقف التمرير؛ وتبقى الصور المصغرة الجاهزة ظاهرة.</string>
+    <string name="info_news_settings" formatted="false">تحسّن خلفية سوداء شبه شفافة تباين رموز الأجرام التي ينشئها التطبيق.</string>
+    <string name="info_news_catalog" formatted="false">يتوافق مؤشر تحميل دائري في الوسط مع المظهر النهاري والليلي أثناء إعداد القائمة الأولية.</string>
 </resources>

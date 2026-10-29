@@ -1,9 +1,9 @@
 <resources>
     <string name="info_news_title">Neuigkeiten · %1$s</string>
-    <string name="info_news_star_sky" formatted="false">Der Katalog wächst auf 9.999 Objekte im Sonnensystem und im tiefen Weltraum.</string>
-    <string name="info_news_texture_downloads" formatted="false">Die erweiterte Nachführung nutzt geprüfte JPL- und Satellitendaten mit klaren Grenzen bei historischen oder fehlenden Daten.</string>
-    <string name="info_news_weather" formatted="false">Grafikpaket 1.8 ergänzt fünf Fotos und separate Vorschaubilder, die einzeln geladen und offline gespeichert werden.</string>
-    <string name="info_news_viewer_zoom" formatted="false">Katalogberechnungen, Suche und Datenaktualisierung sind für die größere Sammlung optimiert.</string>
-    <string name="info_news_settings" formatted="false">Die Standort-Unterseiten bleiben bearbeitbar. Eigene Werte werden nur in der Standortverwaltung aktiviert oder deaktiviert.</string>
-    <string name="info_news_catalog" formatted="false">Kompaktere Standortkarten und ein dauerhaft markiertes, deaktiviertes Kontrollkästchen für die Fortsetzung machen die Bedienung klarer.</string>
+    <string name="info_news_star_sky" formatted="false">Eine neue Schaltfläche in der Hauptansicht zeigt oder verbirgt Fadenkreuz und Punktinformationen und merkt sich die Auswahl.</string>
+    <string name="info_news_texture_downloads" formatted="false">Beschriftungen von Fotos und Panoramen behalten ihre eigenen Einstellungen, unabhängig vom Fadenkreuz der Liveansicht.</string>
+    <string name="info_news_weather" formatted="false">Suche, Filter und Sortierung laufen im Hintergrund, damit die Objektliste schneller reagiert.</string>
+    <string name="info_news_viewer_zoom" formatted="false">Optionale Zeileninhalte werden erst nach dem Scrollen geladen; fertige Vorschaubilder bleiben sichtbar.</string>
+    <string name="info_news_settings" formatted="false">Ein halbtransparenter schwarzer Hintergrund verbessert den Kontrast der von der App erzeugten Himmelssymbole.</string>
+    <string name="info_news_catalog" formatted="false">Ein mittiger kreisförmiger Ladeindikator folgt dem Tag-/Nachtthema, während die erste Liste vorbereitet wird.</string>
 </resources>

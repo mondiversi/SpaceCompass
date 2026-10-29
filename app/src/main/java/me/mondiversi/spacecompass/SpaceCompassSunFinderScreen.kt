@@ -262,6 +262,9 @@ internal fun SpaceCompassSunFinderContent(
     var showWeather by remember(scenePreferences) {
         mutableStateOf(scenePreferences.getBoolean(SPACE_COMPASS_WEATHER_VISIBLE_KEY, SPACE_COMPASS_WEATHER_VISIBLE_DEFAULT))
     }
+    var showReticle by remember(scenePreferences) {
+        mutableStateOf(readSpaceCompassReticleVisible(scenePreferences))
+    }
     var pointingTopEdge by remember(scenePreferences) {
         mutableStateOf(scenePreferences.getBoolean(SPACE_COMPASS_POINTING_TOP_EDGE_KEY, false))
     }
@@ -597,7 +600,7 @@ internal fun SpaceCompassSunFinderContent(
                 topContentInset = if (floatingToolbar != null) 10.dp else topControlsInset,
                 projectionTopInset = if (floatingToolbar != null) 0.dp else with(density) { toolbarHeightPx.toDp() },
                 topCenterActions = floatingToolbar,
-                drawScene = false, objectOpacity = cameraObjectOpacity,
+                drawScene = false, objectOpacity = cameraObjectOpacity, showReticle = showReticle,
                 bottomStartActions = { modifier ->
                     Row(modifier.padding(4.dp), verticalAlignment = Alignment.CenterVertically,
                         horizontalArrangement = Arrangement.spacedBy(8.dp)) {
@@ -655,6 +658,11 @@ internal fun SpaceCompassSunFinderContent(
                             scenePreferences.edit().putBoolean(SPACE_COMPASS_WEATHER_VISIBLE_KEY, enabled).apply()
                             notifyControl(if (enabled) R.string.scene_weather_on else R.string.scene_weather_off)
                         }, primaryText, backgroundColor)
+                        SpaceCompassReticleToggleButton(showReticle, { visible ->
+                            showReticle = visible
+                            saveSpaceCompassReticleVisible(scenePreferences, visible)
+                            notifyControl(if (visible) R.string.scene_reticle_on else R.string.scene_reticle_off)
+                        }, primaryText, backgroundColor)
                     }
                 },
                 topEndActions = { modifier ->
@@ -709,7 +717,8 @@ internal fun SpaceCompassSunFinderContent(
             overlays, body.takeIf { hasActiveBody }, dailyPath.takeIf { hasActiveBody }, target, timeMs,
             dailyPathUiState, primaryText, secondaryText, backgroundColor,
             fix?.latitude, fix?.takeIf { it.hasAltitude() }?.altitude ?: 0.0, showSkyReferences,
-            toolbarHeightPx.toDouble(), Modifier.fillMaxSize(), longitude = fix?.longitude, objectOpacity = cameraObjectOpacity)
+            toolbarHeightPx.toDouble(), Modifier.fillMaxSize(), longitude = fix?.longitude, objectOpacity = cameraObjectOpacity,
+            showReticle = showReticle)
         val minimumPanelWidth = if (largeText) 280.dp else 220.dp
         val detailsWidth = viewportWidth * 0.5f
         val compactPanel = viewportHeight < 420.dp && !largeText

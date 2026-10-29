@@ -3,6 +3,8 @@ package me.mondiversi.spacecompass
 import android.content.Context
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.runtime.*
+import androidx.compose.ui.semantics.SemanticsProperties
+import androidx.compose.ui.semantics.getOrNull
 import androidx.compose.ui.test.*
 import androidx.compose.ui.test.junit4.createComposeRule
 import androidx.test.platform.app.InstrumentationRegistry
@@ -40,8 +42,13 @@ class SpaceCompassCatalogFavoriteCountsUiTest {
     }
 
     private fun assertTypeCount(count: Int) {
-        compose.onNodeWithTag("catalog-type-menu").assertContentDescriptionEquals(
-            context.getString(R.string.catalog_filter_type) + ": " + context.getString(R.string.catalog_all) + " ($count)")
+        val expected = context.getString(R.string.catalog_filter_type) + ": " + context.getString(R.string.catalog_all) + " ($count)"
+        compose.waitUntil(10_000) {
+            compose.onAllNodesWithTag("catalog-type-menu").fetchSemanticsNodes().any {
+                it.config.getOrNull(SemanticsProperties.ContentDescription)?.contains(expected) == true
+            }
+        }
+        compose.onNodeWithTag("catalog-type-menu").assertContentDescriptionEquals(expected)
     }
 
     @Test fun heartRestrictsCategoryTotalsAndDropdownChoicesWithoutChangingTheCatalogueTitle() {

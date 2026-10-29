@@ -1,5 +1,14 @@
 # Changelog
 
+## 1.7.1 — 2026-10-29
+
+- Add a persistent main-view reticle/point-callout control, enabled by default and accented for the day/night theme. Hide live captions and their reminder action together without changing selected points or photo/panorama label policies.
+- Move localized indexing, search, filtering, sorting and displayed-selection counts away from composition. Cache reusable sort/index results, publish only completed current queries, and calculate complete facet counts only while the filter panel is open. Count facets in one pass while retaining checked-object exceptions, favorite scopes and missing-data semantics.
+- Defer optional thumbnail downloads/decodes and newly visible-object prefetch until scrolling settles. Keep cached pixels and selected/observed object updates available; do not cancel an already-started image download merely because a gesture begins.
+- Replace the initial linear wait animation with a circular theme-colored indicator centered inside the empty list viewport, excluding the toolbar, search header and filter panel. Do not add artificial loading delays.
+- Improve generated celestial-symbol contrast with translucent black backing in thumbnails and capture markers. Existing external photographic resources, catalogue identities and scientific calculations remain unchanged.
+- Refresh six in-app news summaries in all twenty languages. Release version 1.7.1/code 57 with the existing certificate, signed update index, optional reference-information archive and unchanged external graphics collection 1.8.
+
 ## 1.7.0 — 2026-10-29
 
 - Explore **9,999 catalogue objects**, adding 8,990 references across Solar System bodies, spacecraft, satellites, stars, exoplanets and deep-sky objects. Existing selections and favorites remain compatible.
