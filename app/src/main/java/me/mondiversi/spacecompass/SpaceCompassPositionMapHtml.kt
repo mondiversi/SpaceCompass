@@ -5,7 +5,7 @@ import android.net.Uri
 
 /** Bundled, integrity-verified Leaflet; the device contacts only OSM for map tiles. */
 internal fun spaceCompassPositionMapHtml(context: Context, url: String, dark: Boolean,
-    pickable: Boolean, token: String, zoomIn: String, zoomOut: String): String {
+    pickable: Boolean, token: String, zoomIn: String, zoomOut: String, positionKnown: Boolean = true): String {
     val uri = Uri.parse(url)
     val coordinates = requireNotNull(uri.getQueryParameter("marker")).split(',').map(String::toDouble)
     val latitude = coordinates[0].coerceIn(-85.0, 85.0)
@@ -29,7 +29,7 @@ internal fun spaceCompassPositionMapHtml(context: Context, url: String, dark: Bo
       .space-pin{background:transparent;border:0;}
       .space-pin svg{width:32px;height:44px;filter:drop-shadow(0 2px 2px #0008);}
       </style></head><body><div id="map"></div><script>$js</script><script>
-      var map=L.map('map',{zoomControl:false,attributionControl:true}).setView([$latitude,$longitude],${if (pickable) 5 else 15});
+      var map=L.map('map',{zoomControl:false,attributionControl:true}).setView([$latitude,$longitude],${if (pickable) { if (positionKnown) 5 else 2 } else 15});
       // Keep text-only library attribution and the tile provider's separate credit.
       map.attributionControl.setPrefix('<a href="https://leafletjs.com">Leaflet</a>');
       L.control.zoom({zoomInTitle:$inLabel,zoomOutTitle:$outLabel}).addTo(map);
@@ -39,7 +39,7 @@ internal fun spaceCompassPositionMapHtml(context: Context, url: String, dark: Bo
       tiles.on('load',function(){if(loaded===0)window.location.href='spacecompass://tiles-error/$token';});
       var pin=L.divIcon({className:'space-pin',iconSize:[32,44],iconAnchor:[16,44],html:
         '<svg viewBox="0 0 32 44"><path fill="#e53935" stroke="#fff" stroke-width="2" d="M16 42C12 35 2 24 2 16a14 14 0 0 1 28 0c0 8-10 19-14 26Z"/><circle cx="16" cy="16" r="5" fill="#fff"/></svg>'});
-      var marker=L.marker([$latitude,$longitude],{icon:pin}).addTo(map);
-      ${if (pickable) "map.on('click',function(e){var p=e.latlng.wrap();marker.setLatLng(p);window.location.href='spacecompass://pick/$token?latitude='+p.lat+'&longitude='+p.lng;});" else ""}
+      var marker=L.marker([$latitude,$longitude],{icon:pin})${if (positionKnown) ".addTo(map)" else ""};
+      ${if (pickable) "map.on('click',function(e){var p=e.latlng.wrap();marker.setLatLng(p).addTo(map);window.location.href='spacecompass://pick/$token?latitude='+p.lat+'&longitude='+p.lng;});" else ""}
       </script></body></html>"""
 }

@@ -15,10 +15,11 @@
     <string name="observer_date">Datum</string>
     <string name="observer_time">Uhrzeit</string>
     <string name="observer_limits">Manche Bahndaten sind außerhalb ihres Gültigkeitszeitraums nicht verfügbar. Wetterschätzungen, wenn verfügbar; andernfalls ein klarer Standardhimmel.</string>
-    <string name="observer_privacy">Die Suche nutzt den Android-Geocoder. Die Karte nutzt OpenStreetMap; gewählte Koordinaten werden für Höhe und Zeitzone an Open-Meteo gesendet.</string>
+    <string name="observer_privacy">Die Karte nutzt OpenStreetMap; gewählte Koordinaten werden für Höhe und Zeitzone an Open-Meteo gesendet.</string>
     <string name="observer_apply">Festlegen</string>
     <string name="observer_invalid">Koordinaten, Höhe, Datum, Uhrzeit und Zeitzone prüfen. Daten: 1900–2100. Nicht existierende Sommerzeit-Uhrzeiten sind ungültig.</string>
     <string name="observer_use_place">Diesen Punkt verwenden</string>
+    <string name="observer_use_current_position">Aktuelle Position verwenden</string>
     <string name="observer_simulation">Ort</string>
     <string name="observer_coordinates_value">Koordinaten: %1$s</string>
     <string name="observer_altitude_value">Höhe: %1$s</string>

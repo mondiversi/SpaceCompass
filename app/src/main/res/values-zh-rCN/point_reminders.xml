@@ -7,5 +7,5 @@
     <string name="point_reminder_no_calendar">没有可用的日历应用</string>
     <string name="settings_events_title">事件</string>
     <string name="settings_events_show_alarm">在主界面显示提醒按钮</string>
-    <string name="settings_events_description">管理天文事件的相关选项。</string>
+    <string name="settings_events_description">管理事件的相关选项。</string>
 </resources>

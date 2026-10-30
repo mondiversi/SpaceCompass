@@ -7,5 +7,5 @@
     <string name="point_reminder_no_calendar">برنامهٔ تقویم در دسترس نیست</string>
     <string name="settings_events_title">رویدادها</string>
     <string name="settings_events_show_alarm">نمایش دکمه هشدار در صفحه اصلی</string>
-    <string name="settings_events_description">گزینه‌های مربوط به رویدادهای آسمانی را مدیریت کنید.</string>
+    <string name="settings_events_description">گزینه‌های مربوط به رویدادها را مدیریت کنید.</string>
 </resources>

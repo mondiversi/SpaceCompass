@@ -100,7 +100,7 @@ class SpaceCompassSelectedPointCaptureAndroidTest {
                 val geometry = spaceCompassCameraPhotoGeometry(lens,1024,768,0)
                 val p = projectSpaceCompassSun(captured.selectedPoints.single().point.position,orientation,
                     1024.0,768.0,geometry.perspective)
-                val caption = prepareSpaceCompassCameraCaptureCaption(captured.caption,1024,768)
+                val caption = prepareSpaceCompassCameraCaptureCaption(captured.caption,1024,768,context)
                 assertEquals(1024,bitmap.width)
                 assertTrue("The entire 768 px lens frame fits below the metadata",bitmap.height > caption.height + 768)
                 assertTrue(p.visible); assertPin(bitmap,p.x,p.y+caption.height,10.0*(768f/1080f))

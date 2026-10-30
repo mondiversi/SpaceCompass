@@ -41,7 +41,7 @@ class SpaceCompassCameraObjectTransparencyAndroidTest {
             val opaque=renderSpaceCompassCameraPhoto(context,photo,snapshot).also(outputs::add)
             val frozen=photo.copy(objectOpacity=.5f)
             val translucent=renderSpaceCompassCameraPhoto(context,frozen,snapshot).also(outputs::add)
-            val caption=prepareSpaceCompassCameraCaptureCaption(snapshot.caption,1024,768)
+            val caption=prepareSpaceCompassCameraCaptureCaption(snapshot.caption,1024,768,context)
             val x=512;val y=caption.height+384
             val base=baseline.getPixel(x,y);val solid=opaque.getPixel(x,y);val half=translucent.getPixel(x,y)
             val channels=listOf<(Int)->Int>(Color::red,Color::green,Color::blue)

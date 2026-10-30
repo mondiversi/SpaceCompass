@@ -15,10 +15,11 @@
     <string name="observer_date">Date</string>
     <string name="observer_time">Heure</string>
     <string name="observer_limits">Certaines données orbitales sont indisponibles hors de leur période de validité. Estimations météo si disponibles ; sinon, ciel dégagé par défaut.</string>
-    <string name="observer_privacy">La recherche utilise le géocodeur Android. La carte utilise OpenStreetMap ; les coordonnées choisies sont envoyées à Open-Meteo pour l’altitude et le fuseau.</string>
+    <string name="observer_privacy">La carte utilise OpenStreetMap ; les coordonnées choisies sont envoyées à Open-Meteo pour l’altitude et le fuseau.</string>
     <string name="observer_apply">Définir</string>
     <string name="observer_invalid">Vérifiez coordonnées, altitude, date, heure et fuseau. Dates : 1900–2100. Les heures inexistantes lors du changement d’heure sont invalides.</string>
     <string name="observer_use_place">Utiliser ce point</string>
+    <string name="observer_use_current_position">Utiliser la position actuelle</string>
     <string name="observer_simulation">Lieu</string>
     <string name="observer_coordinates_value">Coordonnées : %1$s</string>
     <string name="observer_altitude_value">Altitude : %1$s</string>

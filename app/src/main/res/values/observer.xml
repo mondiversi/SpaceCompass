@@ -15,10 +15,11 @@
     <string name="observer_date">Date</string>
     <string name="observer_time">Time</string>
     <string name="observer_limits">Some orbital data are unavailable outside their valid dates. Weather estimates when available; otherwise a clear base sky.</string>
-    <string name="observer_privacy">Place search uses Android’s geocoder. Maps use OpenStreetMap; selected coordinates are sent to Open-Meteo for altitude and time zone.</string>
+    <string name="observer_privacy">Maps use OpenStreetMap; selected coordinates are sent to Open-Meteo for altitude and time zone.</string>
     <string name="observer_apply">Set</string>
     <string name="observer_invalid">Check coordinates, altitude, date, time and time zone. Dates: 1900–2100. Nonexistent daylight-saving times cannot be used.</string>
     <string name="observer_use_place">Use this point</string>
+    <string name="observer_use_current_position">Use current position</string>
     <string name="observer_simulation">Location</string>
     <string name="observer_coordinates_value">Coordinates: %1$s</string>
     <string name="observer_altitude_value">Altitude: %1$s</string>

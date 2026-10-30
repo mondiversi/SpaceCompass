@@ -8,19 +8,19 @@ import org.junit.Test
 class SpaceCompassCelestialTabularLayoutTest {
     private fun source(name: String) = File("src/main/java/me/mondiversi/spacecompass/$name").readText()
 
-    @Test fun landscapePlacesTheToolbarInsideOnlyTheSkyColumnAndKeepsTheDetailColumnFullHeight() {
+    @Test fun landscapeKeepsFullHeightSkyAndDetailsWithFloatingNavigation() {
         val screen = source("SpaceCompassSunFinderScreen.kt")
         assertTrue(screen.contains("val detailsWidth = viewportWidth * 0.5f"))
         val split = screen.substringAfter("testTag(\"celestial-landscape-layout\")")
             .substringBefore("} else Box(Modifier.fillMaxSize().clipToBounds())")
         assertTrue(split.contains("Box(Modifier.weight(1f).fillMaxHeight().clipToBounds())"))
-        assertTrue(split.contains("toolbar()"))
+        assertFalse(screen.contains("toolbar()"))
         assertTrue(split.contains("pointing(true)"))
         assertTrue(split.contains("Column(Modifier.width(detailsWidth).fillMaxHeight().padding(10.dp)"))
         assertTrue(split.contains("details(Modifier.fillMaxWidth().weight(1f)"))
         assertFalse(screen.contains("viewportWidth * 0.43f"))
         assertTrue(screen.contains("detailsWidth - 20.dp >= minimumPanelWidth"))
-        assertTrue(screen.substringAfter("} else Box(Modifier.fillMaxSize().clipToBounds())").contains("toolbar()"))
+        assertTrue(screen.contains("projectionTopInset = 0.dp"))
     }
 
     @Test fun viewerHasNoExtraTopOrBottomGapAndKeepsSideAndCardPadding() {
@@ -231,7 +231,7 @@ class SpaceCompassCelestialTabularLayoutTest {
         assertTrue(table.indexOf("accuracy.value") < table.indexOf("label(row.value)"))
         assertTrue(table.indexOf("column.addView(card)") < table.indexOf("data.notes.forEach"))
         assertFalse(panel.contains("rows.filter { it.tag == \"celestial-distance\" }"))
-        assertTrue(screen.contains("SpaceCompassMenuTitle(stringResource(R.string.app_name)"))
+        assertTrue(screen.contains("SpaceCompassMainNavigationControls(primaryText, backgroundColor, modifier)"))
         assertTrue(source("SpaceCompassCelestialControls.kt").contains("SpaceCompassCelestialCatalogIcon"))
         assertFalse(source("SpaceCompassCelestialControls.kt").contains("SpaceCompassDisclosureChevron"))
         assertFalse(source("SpaceCompassSunFinderSky.kt").contains("pathTint = if (overlays.isEmpty())"))
@@ -253,11 +253,11 @@ class SpaceCompassCelestialTabularLayoutTest {
         assertFalse(readouts.contains("Text(\"–\""))
         assertTrue(readouts.contains("Modifier.testTag(row.tag).clearAndSetSemantics"))
         val island = source("SpaceCompassCelestialBodyDataIsland.kt")
-        assertTrue(island.contains(".padding(horizontal = 12.dp)"))
+        assertTrue(island.contains(".padding(horizontal = 10.dp)"))
         val header = island.substringAfter("testTag(\"celestial-body-header\")").substringBefore("HorizontalDivider")
         assertTrue(header.contains(".padding(vertical = 1.dp)"))
         val content = island.substringAfter("testTag(\"celestial-body-content\")")
-        assertTrue(content.contains(".padding(vertical = if (compact) 8.dp else 10.dp)"))
+        assertTrue(content.contains(".padding(vertical = if (compact) 6.dp else 8.dp)"))
         assertFalse(island.contains(".padding(horizontal = 10.dp, vertical = if (compact) 3.dp else 4.dp)"))
         assertTrue(island.contains("Modifier.size(48.dp).testTag(\"celestial-body-previous\")"))
         assertTrue(island.contains("Modifier.size(48.dp).testTag(\"celestial-body-next\")"))

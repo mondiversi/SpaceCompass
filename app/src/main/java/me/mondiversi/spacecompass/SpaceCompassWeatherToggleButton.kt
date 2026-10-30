@@ -12,6 +12,7 @@ import androidx.compose.material3.Surface
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.geometry.Offset
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.platform.testTag
 import androidx.compose.ui.res.painterResource
@@ -34,9 +35,12 @@ internal fun SpaceCompassWeatherToggleButton(checked: Boolean, onCheckedChange: 
                 IconToggleButton(checked, onCheckedChange, enabled = enabled, modifier = Modifier.fillMaxSize().testTag("toggle-weather"),
                     colors = IconButtonDefaults.iconToggleButtonColors(contentColor = color, checkedContentColor = tint,
                         disabledContentColor = color.copy(alpha = .38f))) {
-                    Icon(painterResource(if (checked) R.drawable.ic_weather else R.drawable.ic_weather_off),
-                        stringResource(if (checked) R.string.sky_weather_disable else R.string.sky_weather_enable),
-                        Modifier.size(26.dp))
+                    // Balance the cloud and sun after fitting; the slash changes their visual weight.
+                    SpaceCompassFloatingGlyph(spaceCompassFloatingVectorInk(if (checked) R.drawable.ic_weather else R.drawable.ic_weather_off),
+                        opticalOffset = if (checked) Offset(-1.2f, -1.1f) else Offset(-.75f, -.15f)) {
+                        SpaceCompassFloatingVectorIcon(if (checked) R.drawable.ic_weather else R.drawable.ic_weather_off,
+                            stringResource(if (checked) R.string.sky_weather_disable else R.string.sky_weather_enable))
+                    }
                 }
             }
         }

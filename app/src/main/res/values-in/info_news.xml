@@ -1,9 +1,9 @@
 <resources>
     <string name="info_news_title">Perubahan terbaru · %1$s</string>
-    <string name="info_news_star_sky" formatted="false">Tombol baru di tampilan utama menampilkan atau menyembunyikan bidikan dan informasi titik serta mengingat pilihan Anda.</string>
-    <string name="info_news_texture_downloads" formatted="false">Label foto dan panorama tetap memakai pengaturan sendiri, terpisah dari bidikan pada tampilan langsung.</string>
-    <string name="info_news_weather" formatted="false">Pencarian, filter, dan pengurutan diproses di latar belakang agar daftar objek lebih responsif.</string>
-    <string name="info_news_viewer_zoom" formatted="false">Pemuatan baris yang tidak mendesak menunggu hingga pengguliran berhenti; gambar mini yang siap tetap terlihat.</string>
-    <string name="info_news_settings" formatted="false">Latar hitam semitransparan meningkatkan kontras simbol langit yang digambar oleh aplikasi.</string>
-    <string name="info_news_catalog" formatted="false">Indikator pemuatan melingkar di tengah mengikuti tema siang/malam saat daftar awal disiapkan.</string>
+    <string name="info_news_star_sky" formatted="false">Tombol Info dan Menu di tengah serta kontrol ringkas dan seimbang secara visual menyempurnakan tampilan utama.</string>
+    <string name="info_news_texture_downloads" formatted="false">Posisi bidikan dan jarak panel informasi lebih konsisten menyesuaikan orientasi tegak dan mendatar.</string>
+    <string name="info_news_weather" formatted="false">Editor posisi Location memiliki peta selebar kartu, koordinat berdampingan, dan tombol tindakan yang seragam.</string>
+    <string name="info_news_viewer_zoom" formatted="false">Perkiraan cuaca terlihat di editor posisi, dan pilihan bahasa diurutkan menurut kode bahasa.</string>
+    <string name="info_news_settings" formatted="false">Baris objek, penghitung filter, dan kontrol pilihan banyak tetap stabil selama pembaruan otomatis.</string>
+    <string name="info_news_catalog" formatted="false">Bagian atas foto dan panorama menampilkan logo aplikasi; kontras simbol pengambilan gambar lebih baik pada siang dan malam.</string>
 </resources>

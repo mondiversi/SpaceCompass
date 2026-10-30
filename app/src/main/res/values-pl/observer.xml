@@ -15,10 +15,11 @@
     <string name="observer_date">Data</string>
     <string name="observer_time">Godzina</string>
     <string name="observer_limits">Niektóre dane orbitalne są niedostępne poza okresem ważności. Szacowana pogoda, gdy jest dostępna; w przeciwnym razie domyślne bezchmurne niebo.</string>
-    <string name="observer_privacy">Wyszukiwanie korzysta z geokodera Android. Mapa korzysta z OpenStreetMap; wybrane współrzędne są wysyłane do Open-Meteo w celu ustalenia wysokości i strefy.</string>
+    <string name="observer_privacy">Mapa korzysta z OpenStreetMap; wybrane współrzędne są wysyłane do Open-Meteo w celu ustalenia wysokości i strefy.</string>
     <string name="observer_apply">Ustaw</string>
     <string name="observer_invalid">Sprawdź współrzędne, wysokość, datę, godzinę i strefę. Daty: 1900–2100. Nieistniejące godziny przy zmianie czasu są nieprawidłowe.</string>
     <string name="observer_use_place">Użyj tego punktu</string>
+    <string name="observer_use_current_position">Użyj bieżącej pozycji</string>
     <string name="observer_simulation">Lokalizacja</string>
     <string name="observer_coordinates_value">Współrzędne: %1$s</string>
     <string name="observer_altitude_value">Wysokość: %1$s</string>

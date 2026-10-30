@@ -1,9 +1,9 @@
 <resources>
     <string name="info_news_title">हाल के बदलाव · %1$s</string>
-    <string name="info_news_star_sky" formatted="false">मुख्य दृश्य का नया बटन निशाना और बिंदुओं की जानकारी दिखाता या छिपाता है और आपकी पसंद याद रखता है।</string>
-    <string name="info_news_texture_downloads" formatted="false">फ़ोटो और पैनोरमा के लेबल अपनी अलग सेटिंग बनाए रखते हैं; वे लाइव दृश्य के निशाने पर निर्भर नहीं हैं।</string>
-    <string name="info_news_weather" formatted="false">सूची को अधिक सहज बनाने के लिए खोज, फ़िल्टर और क्रमबद्ध करने का काम पृष्ठभूमि में होता है।</string>
-    <string name="info_news_viewer_zoom" formatted="false">पंक्तियों की वैकल्पिक लोडिंग स्क्रॉल रुकने तक प्रतीक्षा करती है; तैयार थंबनेल दिखाई देते रहते हैं।</string>
-    <string name="info_news_settings" formatted="false">हल्की पारदर्शिता वाला काला बैकग्राउंड ऐप में बनाए गए खगोलीय प्रतीकों का कंट्रास्ट बढ़ाता है।</string>
-    <string name="info_news_catalog" formatted="false">शुरुआती सूची तैयार होते समय बीच में गोल लोडिंग संकेतक दिन और रात की थीम के अनुसार दिखाई देता है।</string>
+    <string name="info_news_star_sky" formatted="false">बीच में सूचना और मेनू बटन तथा छोटे, दृश्य रूप से संतुलित नियंत्रण मुख्य दृश्य को बेहतर बनाते हैं।</string>
+    <string name="info_news_texture_downloads" formatted="false">निशाने की जगह और सूचना पैनलों के बीच का अंतर खड़ी और आड़ी स्क्रीन के अनुसार बेहतर ढंग से बदलते हैं।</string>
+    <string name="info_news_weather" formatted="false">Location के स्थिति संपादक में पूरी चौड़ाई वाला मानचित्र, साथ-साथ निर्देशांक और एक जैसे क्रिया बटन हैं।</string>
+    <string name="info_news_viewer_zoom" formatted="false">स्थिति संपादक में अनुमानित मौसम दिखता है और भाषाएँ उनके कोड के क्रम में रखी गई हैं।</string>
+    <string name="info_news_settings" formatted="false">अपने-आप अपडेट होते समय खगोलीय पिंडों की पंक्तियाँ, फ़िल्टर की गिनती और एक साथ कई चयन करने के नियंत्रण स्थिर रहते हैं।</string>
+    <string name="info_news_catalog" formatted="false">फ़ोटो और पैनोरमा के शीर्ष पर ऐप का लोगो दिखता है; चित्र लेने के चिह्नों का दिन और रात में कंट्रास्ट बेहतर किया गया है।</string>
 </resources>

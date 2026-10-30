@@ -1,9 +1,9 @@
 <resources>
     <string name="info_news_title">Ultime novità · %1$s</string>
-    <string name="info_news_star_sky" formatted="false">Un nuovo pulsante nella vista principale mostra o nasconde mirino e fumetti dei punti, ricordando la scelta.</string>
-    <string name="info_news_texture_downloads" formatted="false">Le etichette di foto e panoramiche mantengono impostazioni indipendenti dal mirino della vista principale.</string>
-    <string name="info_news_weather" formatted="false">Ricerca, filtri e ordinamenti vengono elaborati in background per una lista Oggetti più reattiva.</string>
-    <string name="info_news_viewer_zoom" formatted="false">I caricamenti facoltativi delle righe attendono la fine dello scorrimento; le miniature pronte restano visibili.</string>
-    <string name="info_news_settings" formatted="false">Un fondino nero semitrasparente migliora il contrasto dei simboli celesti generati dall’app.</string>
-    <string name="info_news_catalog" formatted="false">Un indicatore circolare centrato segue il tema giorno/notte mentre viene preparata la lista iniziale.</string>
+    <string name="info_news_star_sky" formatted="false">Pulsanti Info e Menu centrati e comandi compatti, bilanciati visivamente, rinnovano la vista principale.</string>
+    <string name="info_news_texture_downloads" formatted="false">Posizione del mirino e spazi tra i riquadri informativi più coerenti in verticale e in orizzontale.</string>
+    <string name="info_news_weather" formatted="false">L’editor Posizione di Location integra una mappa a tutta larghezza, coordinate affiancate e pulsanti uniformi.</string>
+    <string name="info_news_viewer_zoom" formatted="false">Meteo stimato visibile nell’editor Posizione e lingue ordinate per il rispettivo codice.</string>
+    <string name="info_news_settings" formatted="false">Righe degli oggetti, conteggi dei filtri e selezione multipla restano stabili durante gli aggiornamenti automatici.</string>
+    <string name="info_news_catalog" formatted="false">Il logo dell’app compare nelle intestazioni di foto e panoramiche; migliore contrasto giorno/notte dei simboli di scatto.</string>
 </resources>

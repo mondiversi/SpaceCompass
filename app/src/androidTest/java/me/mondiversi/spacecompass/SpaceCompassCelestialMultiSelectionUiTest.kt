@@ -206,11 +206,9 @@ class SpaceCompassCelestialMultiSelectionUiTest {
         val angles = compose.onNodeWithTag("celestial-body-angles").fetchSemanticsNode().boundsInRoot
         assertEquals(speed.center.y - distance.center.y, angles.center.y - speed.center.y, 1f)
     }
-    @Test fun orbitsTitleIsIndependentOfTheActiveObjectAndTheCatalogueActionIsAtTheRightEdge() {
+    @Test fun appNavigationIsIndependentOfTheActiveObjectAndTheCatalogueActionIsAtTheRightEdge() {
         show()
-        val context = androidx.test.platform.app.InstrumentationRegistry.getInstrumentation().targetContext
-        compose.onNodeWithText(context.getString(R.string.celestial_orbits_title)).assertIsDisplayed()
-        val title = compose.onNodeWithTag("celestial-title").fetchSemanticsNode().boundsInRoot
+        val title = compose.onNodeWithTag("main-info").fetchSemanticsNode().boundsInRoot
         val action = compose.onNodeWithTag("celestial-select").fetchSemanticsNode().boundsInRoot
         assertTrue(action.left >= title.right)
         compose.onNodeWithTag("celestial-select").performClick()

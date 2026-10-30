@@ -7,5 +7,5 @@
     <string name="point_reminder_no_calendar">Nenhuma aplicação de calendário disponível</string>
     <string name="settings_events_title">Eventos</string>
     <string name="settings_events_show_alarm">Mostrar o botão de alerta na vista principal</string>
-    <string name="settings_events_description">Gerencie as opções de eventos celestes.</string>
+    <string name="settings_events_description">Gerencie as opções de eventos.</string>
 </resources>

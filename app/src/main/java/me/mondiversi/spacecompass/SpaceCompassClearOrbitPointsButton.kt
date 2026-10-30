@@ -25,18 +25,20 @@ internal fun SpaceCompassClearOrbitPointsButton(onClear: () -> Unit, color: Colo
     val clear: () -> Unit = { haptics.spaceCompassHaptic(SpaceCompassHapticCue.COMMAND); onClear() }
     SpaceCompassFloatingActionButton(label, clear, color, background,
         modifier.testTag("clear-orbit-points"), stateText = count,
+        glyphInk = spaceCompassFloatingInk(26f, .125f, .125f, .875f, .875f),
         overlay = {
             SpaceCompassFloatingCountBadge(count,
                 Modifier.align(Alignment.TopEnd).testTag("clear-orbit-points-count"))
         }) {
+        val visualStroke = SpaceCompassFloatingIconStrokeWidth * LocalSpaceCompassFloatingStrokeScale.current
         Canvas(Modifier.size(26.dp)) {
             fun point(x: Float, y: Float) = Offset(x * size.width / 24, y * size.height / 24)
             val center = point(12f, 12f)
             drawCircle(color, radius = size.width * 9f / 24f, center = center,
-                style = Stroke(SpaceCompassFloatingIconStrokeWidth.toPx()))
+                style = Stroke(visualStroke.toPx()))
             drawCircle(color, radius = size.width * 2f / 24f, center = center)
-            drawLine(color, point(8f, 8f), point(16f, 16f), SpaceCompassFloatingIconStrokeWidth.toPx(), cap = StrokeCap.Round)
-            drawLine(color, point(16f, 8f), point(8f, 16f), SpaceCompassFloatingIconStrokeWidth.toPx(), cap = StrokeCap.Round)
+            drawLine(color, point(8f, 8f), point(16f, 16f), visualStroke.toPx(), cap = StrokeCap.Round)
+            drawLine(color, point(16f, 8f), point(8f, 16f), visualStroke.toPx(), cap = StrokeCap.Round)
         }
     }
 }

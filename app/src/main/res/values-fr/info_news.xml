@@ -1,9 +1,9 @@
 <resources>
     <string name="info_news_title">Dernières nouveautés · %1$s</string>
-    <string name="info_news_star_sky" formatted="false">Un nouveau bouton dans la vue principale affiche ou masque le réticule et les informations des points, et mémorise ce choix.</string>
-    <string name="info_news_texture_downloads" formatted="false">Les étiquettes des photos et panoramas conservent leurs propres réglages, indépendants du réticule de la vue en direct.</string>
-    <string name="info_news_weather" formatted="false">La recherche, les filtres et le tri sont traités en arrière-plan pour une liste d’objets plus réactive.</string>
-    <string name="info_news_viewer_zoom" formatted="false">Le chargement facultatif des lignes attend la fin du défilement ; les miniatures prêtes restent visibles.</string>
-    <string name="info_news_settings" formatted="false">Un fond noir translucide améliore le contraste des symboles célestes générés par l’application.</string>
-    <string name="info_news_catalog" formatted="false">Un indicateur circulaire centré suit le thème jour/nuit pendant la préparation de la liste initiale.</string>
+    <string name="info_news_star_sky" formatted="false">Les boutons Infos et Menu centrés et les commandes compactes et visuellement équilibrées améliorent la vue principale.</string>
+    <string name="info_news_texture_downloads" formatted="false">La position du réticule et l’espacement des panneaux s’adaptent mieux aux orientations portrait et paysage.</string>
+    <string name="info_news_weather" formatted="false">L’éditeur de position de Location intègre une carte sur toute la largeur, des coordonnées côte à côte et des boutons uniformes.</string>
+    <string name="info_news_viewer_zoom" formatted="false">La météo estimée apparaît dans l’éditeur de position et les langues sont triées par leur code.</string>
+    <string name="info_news_settings" formatted="false">Les lignes d’objets, les compteurs de filtres et la sélection multiple restent stables pendant les mises à jour automatiques.</string>
+    <string name="info_news_catalog" formatted="false">Les en-têtes des photos et panoramas affichent le logo de l’application ; les symboles de capture offrent un meilleur contraste jour/nuit.</string>
 </resources>

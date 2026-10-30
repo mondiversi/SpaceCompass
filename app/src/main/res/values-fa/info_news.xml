@@ -1,9 +1,9 @@
 <resources>
     <string name="info_news_title">تازه‌ترین تغییرات · %1$s</string>
-    <string name="info_news_star_sky" formatted="false">دکمه‌ای تازه در نمای اصلی نشانگر هدف و اطلاعات نقاط را نمایش می‌دهد یا پنهان می‌کند و انتخاب شما را به خاطر می‌سپارد.</string>
-    <string name="info_news_texture_downloads" formatted="false">برچسب‌های عکس و پانوراما تنظیمات مستقل خود را جدا از نشانگر هدف نمای زنده حفظ می‌کنند.</string>
-    <string name="info_news_weather" formatted="false">جست‌وجو، فیلتر و مرتب‌سازی در پس‌زمینه انجام می‌شوند تا فهرست اجرام سریع‌تر پاسخ دهد.</string>
-    <string name="info_news_viewer_zoom" formatted="false">بارگیری اختیاری ردیف‌ها تا توقف پیمایش صبر می‌کند؛ تصاویر بندانگشتی آماده همچنان دیده می‌شوند.</string>
-    <string name="info_news_settings" formatted="false">پس‌زمینهٔ سیاه نیمه‌شفاف، کنتراست نمادهای آسمانی تولیدشده در برنامه را بهتر می‌کند.</string>
-    <string name="info_news_catalog" formatted="false">هنگام آماده‌سازی فهرست اولیه، نشانگر بارگیری دایره‌ای در مرکز با پوستهٔ روز و شب هماهنگ می‌شود.</string>
+    <string name="info_news_star_sky" formatted="false">دکمه‌های اطلاعات و منو در مرکز و کنترل‌های جمع‌وجور با توازن بصری، نمای اصلی را بهبود می‌دهند.</string>
+    <string name="info_news_texture_downloads" formatted="false">جای نشانه‌گیر و فاصلهٔ پنل‌های اطلاعاتی بهتر با حالت عمودی و افقی هماهنگ می‌شود.</string>
+    <string name="info_news_weather" formatted="false">ویرایشگر موقعیت Location شامل نقشهٔ تمام‌عرض، مختصات کنار هم و دکمه‌های یکدست است.</string>
+    <string name="info_news_viewer_zoom" formatted="false">آب‌وهوای تخمینی در ویرایشگر موقعیت دیده می‌شود و زبان‌ها بر اساس کد زبان مرتب می‌شوند.</string>
+    <string name="info_news_settings" formatted="false">ردیف اجرام، شمارنده‌های فیلتر و کنترل‌های انتخاب چندگانه هنگام به‌روزرسانی خودکار ثابت می‌مانند.</string>
+    <string name="info_news_catalog" formatted="false">سرصفحهٔ عکس‌ها و پانوراما نشان برنامه را نمایش می‌دهد؛ کنتراست نمادهای ثبت تصویر در روز و شب بهبود یافته است.</string>
 </resources>

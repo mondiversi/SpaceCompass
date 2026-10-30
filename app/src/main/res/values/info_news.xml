@@ -1,9 +1,9 @@
 <resources>
     <string name="info_news_title">Latest news · %1$s</string>
-    <string name="info_news_star_sky" formatted="false">A new main-view button shows or hides the reticle and point callouts, remembering your choice.</string>
-    <string name="info_news_texture_downloads" formatted="false">Photo and panorama labels keep their own settings, independently of the live reticle.</string>
-    <string name="info_news_weather" formatted="false">Search, filters and sorting run in the background for a more responsive object list.</string>
-    <string name="info_news_viewer_zoom" formatted="false">Optional row loading waits until scrolling stops; ready thumbnails remain visible.</string>
-    <string name="info_news_settings" formatted="false">A translucent black backing improves contrast for app-generated celestial symbols.</string>
-    <string name="info_news_catalog" formatted="false">A centered circular indicator follows the day/night theme while the initial list is prepared.</string>
+    <string name="info_news_star_sky" formatted="false">Centered Info and Menu buttons and compact, optically balanced controls refine the main view.</string>
+    <string name="info_news_texture_downloads" formatted="false">Reticle placement and information-panel spacing adapt more consistently to portrait and landscape.</string>
+    <string name="info_news_weather" formatted="false">The Location position editor has a full-width map, side-by-side coordinates and consistent action buttons.</string>
+    <string name="info_news_viewer_zoom" formatted="false">Estimated weather is visible in the position editor, and language choices are sorted by language code.</string>
+    <string name="info_news_settings" formatted="false">Object rows, filter counts and bulk-selection controls remain stable during automatic updates.</string>
+    <string name="info_news_catalog" formatted="false">Photo and panorama headers show the app logo; capture symbols use improved day/night contrast.</string>
 </resources>

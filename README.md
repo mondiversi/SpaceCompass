@@ -8,8 +8,8 @@ paths, inspect reference facts and view textured models. Space Compass is a stan
 
 ## Download and install
 
-Download **space-compass-1.7.1.apk** from the
-[Space Compass 1.7.1 release](https://github.com/mondiversi/SpaceCompass/releases/tag/v1.7.1).
+Download **space-compass-1.7.2.apk** from the
+[Space Compass 1.7.2 release](https://github.com/mondiversi/SpaceCompass/releases/tag/v1.7.2).
 Android 8.0 or newer is required. Open the APK and follow Android's installation
 prompts; allow installation for your browser or file manager if requested.
 
@@ -22,7 +22,7 @@ one manual APK update to acquire this feature.
 The release includes `SHA256SUMS.txt` and a signed update index. GitHub's source
 ZIP/TAR archives and Actions debug artifacts are separate from the signed APK.
 See [distribution and signing](docs/GITHUB_RELEASES.md) and
-[the 1.7.1 release audit](docs/RELEASE_1_7_1.md).
+[the 1.7.2 release audit](docs/RELEASE_1_7_2.md).
 
 ## Features
 
@@ -62,6 +62,7 @@ See [distribution and signing](docs/GITHUB_RELEASES.md) and
   the chevron and other card space open its editor. Child forms stay fully visible and editable, with activation controlled only by the management menu.
   Prepared inactive values are saved without applying them. Resumption has an always-checked, disabled grey
   checkbox and still offers its three policies.
+  The position editor embeds a square-cornered full-width map, paired coordinates, consistent action buttons and estimated weather. Normal scrolling remains available without stretching content away from the native map.
   Natural-height cards pack into up to two readable columns in landscape.
   Save, share and import named `.spacecompass` location files with optional scene objects and the active target.
   Without observer or speed overrides, export captures the current position, altitude and time zone only;
@@ -83,7 +84,7 @@ See [distribution and signing](docs/GITHUB_RELEASES.md) and
 - Solar-height-driven dawn/dusk lighting shared by sky, ground, weather and panoramic captures.
 - Translucent main islands with paths and objects drawn behind them, a reticle centred in the free sky area and a 50/50 landscape split.
 - Titled photo/panorama previews with opaque theme-matched toolbars and top-aligned controls, object-colour legends and larger wrapping photo metadata on a separate opaque black band.
-- White reticle, existing-outline object focus/selection, a lighter daytime blue and stable bottom-right landscape capture. Collapsed landscape panels use a floating central title bar.
+- White reticle, existing-outline object focus/selection, a lighter daytime blue and stable bottom-right landscape capture. Equal-size Info/logo and Menu controls stay centered between the upper corner controls; the menu opens from its own anchor. The lower-left row keeps panel collapse and pointing-axis selection. Capture symbols are white by day and dark at night.
 - Stable ground, orbits and star background when returning from background; optically centred object arrows and a clear screensaver return hint. Focused callouts cover celestial icons without jumping; split-color keys beside object names and in capture legends show both horizon treatments.
 - Compact T+/T− hour/minute offsets shared by views and exports; orbit points behind translucent title/information overlays remain visible without being selectable.
 - Capture labels can show only key events and selected points across all objects; this is the default for fresh settings. Existing saved label choices remain intact.
@@ -96,7 +97,7 @@ See [distribution and signing](docs/GITHUB_RELEASES.md) and
 - Signed startup/manual GitHub updates with package, certificate, size and checksum verification.
 
 The application ID is `me.mondiversi.spacecompass`. The current stable version is
-**1.7.1**, with Android/update identity `1.7.1` and version code **57**.
+**1.7.2**, with Android/update identity `1.7.2` and version code **58**.
 This preserves the three-part update protocol used by existing preview installations.
 The app stores its preferences and caches privately.
 
@@ -158,7 +159,7 @@ Launcher/loading artwork and original illustrations are project assets.
 
 ## Data and graphics packages
 
-Release 1.7.1 includes **9,999 selectable objects**, and an optional reference-information archive.
+Release 1.7.2 includes **9,999 selectable objects**, and an optional reference-information archive.
 All descriptive data and translations remain inside the APK. Scientific limits and provenance are in the
 [catalogue sources](docs/CATALOG_9999.md) and [canonical source catalogue](catalogue/README.md).
 

@@ -53,6 +53,7 @@ internal fun SpaceCompassAdaptiveDropdownMenu(
     shape: Shape = MenuDefaults.shape,
     tonalElevation: Dp = MenuDefaults.TonalElevation,
     scrollbarColor: Color = spaceCompassNeutralContentColor().copy(alpha = 0.45f),
+    centerOnAnchor: Boolean = false,
     content: @Composable ColumnScope.() -> Unit
 ) {
     if (!expanded) return
@@ -65,7 +66,7 @@ internal fun SpaceCompassAdaptiveDropdownMenu(
     val configuration = LocalConfiguration.current
     val direction = LocalLayoutDirection.current
     val margin = with(density) { 8.dp.roundToPx() }
-    val position = remember(margin) { SpaceCompassDropdownPositionProvider(margin) }
+    val position = remember(margin, centerOnAnchor) { SpaceCompassDropdownPositionProvider(margin, centerOnAnchor) }
     Popup(onDismissRequest = onDismissRequest, popupPositionProvider = position,
         properties = PopupProperties(focusable = true)) {
         CompositionLocalProvider(LocalDensity provides density, LocalConfiguration provides configuration,
@@ -86,7 +87,8 @@ internal fun SpaceCompassAdaptiveDropdownMenu(
 }
 
 /** Prefer below/above the anchor, clamp to the visible window, and mirror the start edge in RTL. */
-internal class SpaceCompassDropdownPositionProvider(private val margin: Int) : PopupPositionProvider {
+internal class SpaceCompassDropdownPositionProvider(private val margin: Int,
+    private val centerOnAnchor: Boolean = false) : PopupPositionProvider {
     override fun calculatePosition(anchorBounds: IntRect, windowSize: IntSize,
         layoutDirection: LayoutDirection, popupContentSize: IntSize): IntOffset {
         val maxX = (windowSize.width - margin - popupContentSize.width).coerceAtLeast(margin)
@@ -95,7 +97,9 @@ internal class SpaceCompassDropdownPositionProvider(private val margin: Int) : P
             else anchorBounds.right - popupContentSize.width
         val end = if (layoutDirection == LayoutDirection.Ltr) anchorBounds.right - popupContentSize.width
             else anchorBounds.left
-        val x = listOf(start, end).firstOrNull { it in margin..maxX } ?: start.coerceIn(margin, maxX)
+        val x = if (centerOnAnchor) {
+            (anchorBounds.left + (anchorBounds.width - popupContentSize.width) / 2).coerceIn(margin, maxX)
+        } else listOf(start, end).firstOrNull { it in margin..maxX } ?: start.coerceIn(margin, maxX)
         val y = listOf(anchorBounds.bottom, anchorBounds.top - popupContentSize.height)
             .firstOrNull { it in margin..maxY } ?: anchorBounds.bottom.coerceIn(margin, maxY)
         return IntOffset(x, y)

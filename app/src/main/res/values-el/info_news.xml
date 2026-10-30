@@ -1,9 +1,9 @@
 <resources>
     <string name="info_news_title">Τελευταία νέα · %1$s</string>
-    <string name="info_news_star_sky" formatted="false">Ένα νέο κουμπί στην κύρια προβολή εμφανίζει ή κρύβει το σταυρόνημα και τις πληροφορίες σημείων και θυμάται την επιλογή.</string>
-    <string name="info_news_texture_downloads" formatted="false">Οι ετικέτες φωτογραφιών και πανοραμάτων διατηρούν ανεξάρτητες ρυθμίσεις από το σταυρόνημα της ζωντανής προβολής.</string>
-    <string name="info_news_weather" formatted="false">Η αναζήτηση, τα φίλτρα και η ταξινόμηση εκτελούνται στο παρασκήνιο για πιο άμεση απόκριση της λίστας αντικειμένων.</string>
-    <string name="info_news_viewer_zoom" formatted="false">Η προαιρετική φόρτωση γραμμών περιμένει να σταματήσει η κύλιση· οι έτοιμες μικρογραφίες παραμένουν ορατές.</string>
-    <string name="info_news_settings" formatted="false">Ένα ημιδιαφανές μαύρο φόντο βελτιώνει την αντίθεση των ουράνιων συμβόλων που δημιουργεί η εφαρμογή.</string>
-    <string name="info_news_catalog" formatted="false">Μια κεντραρισμένη κυκλική ένδειξη φόρτωσης ακολουθεί το θέμα ημέρας/νύχτας όσο ετοιμάζεται η αρχική λίστα.</string>
+    <string name="info_news_star_sky" formatted="false">Τα κεντραρισμένα κουμπιά πληροφοριών και μενού και τα συμπαγή, οπτικά ισορροπημένα χειριστήρια βελτιώνουν την κύρια προβολή.</string>
+    <string name="info_news_texture_downloads" formatted="false">Η θέση του σταυρονήματος και τα κενά των πληροφοριακών πλαισίων προσαρμόζονται καλύτερα σε κατακόρυφο και οριζόντιο προσανατολισμό.</string>
+    <string name="info_news_weather" formatted="false">Η επεξεργασία θέσης του Location περιλαμβάνει χάρτη πλήρους πλάτους, συντεταγμένες δίπλα δίπλα και ομοιόμορφα κουμπιά ενεργειών.</string>
+    <string name="info_news_viewer_zoom" formatted="false">Ο εκτιμώμενος καιρός εμφανίζεται στην επεξεργασία θέσης και οι γλώσσες ταξινομούνται κατά κωδικό.</string>
+    <string name="info_news_settings" formatted="false">Οι γραμμές αντικειμένων, οι μετρητές φίλτρων και η πολλαπλή επιλογή παραμένουν σταθερά στις αυτόματες ενημερώσεις.</string>
+    <string name="info_news_catalog" formatted="false">Οι κεφαλίδες φωτογραφιών και πανοραμάτων εμφανίζουν το λογότυπο της εφαρμογής· βελτιώθηκε η αντίθεση των συμβόλων λήψης ημέρα και νύχτα.</string>
 </resources>

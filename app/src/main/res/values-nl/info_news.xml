@@ -1,9 +1,9 @@
 <resources>
     <string name="info_news_title">Laatste nieuws · %1$s</string>
-    <string name="info_news_star_sky" formatted="false">Een nieuwe knop in de hoofdweergave toont of verbergt het richtkruis en de puntinformatie en onthoudt je keuze.</string>
-    <string name="info_news_texture_downloads" formatted="false">Labels op foto’s en panorama’s behouden hun eigen instellingen, onafhankelijk van het richtkruis in de liveweergave.</string>
-    <string name="info_news_weather" formatted="false">Zoeken, filteren en sorteren gebeurt op de achtergrond, zodat de objectenlijst sneller reageert.</string>
-    <string name="info_news_viewer_zoom" formatted="false">Optioneel laden van rijen wacht totdat het scrollen stopt; gereedstaande miniaturen blijven zichtbaar.</string>
-    <string name="info_news_settings" formatted="false">Een doorschijnende zwarte achtergrond verbetert het contrast van hemelssymbolen die de app zelf tekent.</string>
-    <string name="info_news_catalog" formatted="false">Een gecentreerde ronde laadindicator volgt het dag-/nachtthema terwijl de eerste lijst wordt voorbereid.</string>
+    <string name="info_news_star_sky" formatted="false">Gecentreerde Info- en Menuknoppen en compacte, optisch gebalanceerde bediening verbeteren de hoofdweergave.</string>
+    <string name="info_news_texture_downloads" formatted="false">De positie van het richtkruis en de tussenruimte van informatiepanelen passen zich beter aan de staande en liggende stand aan.</string>
+    <string name="info_news_weather" formatted="false">De positie-editor van Location heeft een kaart over de volledige breedte, coördinaten naast elkaar en uniforme actieknoppen.</string>
+    <string name="info_news_viewer_zoom" formatted="false">Geschat weer is zichtbaar in de positie-editor en talen worden op taalcode gesorteerd.</string>
+    <string name="info_news_settings" formatted="false">Objectrijen, filtertellers en meervoudige selectie blijven stabiel tijdens automatische updates.</string>
+    <string name="info_news_catalog" formatted="false">Kopregels van foto\'s en panorama\'s tonen het app-logo; opnamesymbolen hebben een beter dag-/nachtcontrast.</string>
 </resources>

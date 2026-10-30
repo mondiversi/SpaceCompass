@@ -60,8 +60,8 @@ The complete 20-language resource sets are checked for exact key parity, placeho
 empty text, duplicate keys, broken UTF-8 and untranslated long English sentences.
 Catalog identifiers, scientific unit symbols and proper names can legitimately match.
 
-Island-based pages use the shared `SpaceCompassPageSpacing` defaults: 8 dp outer
-horizontal margins and 14 dp island horizontal padding, with existing vertical spacing
+Island-based pages use the shared `SpaceCompassPageSpacing` defaults: 10 dp outer
+horizontal margins and 12 dp island horizontal padding, with existing vertical spacing
 and accessible touch targets preserved. New pages should use these same defaults.
 
 Secondary page toolbars have no separate background fill. Island content begins
@@ -69,8 +69,8 @@ directly below the toolbar with no top content margin; the main toolbar is indep
 
 ## Celestial catalog filters
 
-The catalog page owns a single observation/range snapshot for its opening time and
-quantized GPS observer. Its filter panel combines an OR-set of object types with
+The catalog page owns complete observation/range snapshots for the current minute and
+quantized GPS observer. Its previous completed snapshot remains displayed during a refresh. Its filter panel combines an OR-set of object types with
 a geometric-horizon visibility filter. Missing/stale satellite positions remain
 available only under All. Filters never mutate object selection. Select-all acts
 only on displayed objects and preserves hidden checked objects and a valid active
@@ -79,10 +79,9 @@ Earth centre is a guide cross, not a selectable object. Legacy selection identif
 are migrated without resetting other preferences; zenith and pole crosses share the
 reference-guide renderer and the capture visibility rules.
 
-Each catalog row keeps its selection action and adds a separate compact info button
-after the current sort value. That button opens the existing Observatory for any
-object, including unchecked objects, without changing checked objects or the active
-compass target. The retained, unplaced catalog keeps its search, filters and scroll
+Each catalog row separates its actions: the checkbox changes scene selection, while
+the thumbnail/name opens the Observatory, including for unchecked objects, without
+changing scene selection or the active compass target. The sort value stays passive. The retained, unplaced catalog keeps its search, filters and scroll
 position while the viewer is open; it exposes no hidden touch or accessibility nodes.
 Both toolbar Back and Android Back return to that catalog before leaving it.
 
@@ -515,3 +514,12 @@ suppresses the live reticle, focus captions and their reminder action, including
 focus highlight. Orbit-point selections and capture-label settings are not changed. Generated symbols
 receive circular 82%-black backing in live thumbnails and rendered capture markers; photographic pixels
 and surface-map previews keep their original content.
+
+
+## Floating controls, native-map layout and snapshot publication 1.7.2
+
+The top-center scene group contains independent Info/logo and Menu controls at the same compact size. The logo opens the existing Info page directly; the menu uses its own normal start-aligned popup anchor. Bottom-start collapse and pointing-axis controls retain their row and persistent choices. Shared ink fitting uses 53% of the circle's largest dimension while compensating stroke width separately; optical translations apply after fitting and do not change the hit region. Weather and label glyphs balance their normal and slashed states independently. Capture symbols use white/dark foregrounds for day/night; the white border and pressed-surface animation remain independent.
+
+The Location position editor keeps ordinary vertical scrolling with a disabled edge overscroll effect. Its native WebView is a sibling layer positioned and clipped from the Compose map slot. Stretching only the Compose renderer would deform text/buttons independently of that layer. The map spans the island width with square corners; descriptive/form content retains the shared inset. Visible native hit regions continue to clip at the page viewport, protecting the toolbar while scrolling.
+
+Catalogue observation and presentation snapshots publish atomically. A background observation refresh does not invalidate displayed user-scope controls. Facet counts keep their last complete presentation through panel transitions, while closed panels still avoid recomputing facets. Initial observation work uses a latched first key until completion so a rapidly advancing simulated clock cannot continuously cancel the first catalogue load. User-scope changes still invalidate bulk actions until the corresponding presentation is ready.

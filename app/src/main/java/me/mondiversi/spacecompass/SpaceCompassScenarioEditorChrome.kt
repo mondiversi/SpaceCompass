@@ -9,10 +9,12 @@ import androidx.compose.ui.unit.dp
 
 /** Editors stay fully visible and usable; activation belongs only to the management menu. */
 @Composable
-internal fun SpaceCompassScenarioParameterIsland(content: @Composable ColumnScope.() -> Unit) {
+internal fun SpaceCompassScenarioParameterIsland(
+    contentPadding: PaddingValues = spaceCompassIslandContentPadding,
+    content: @Composable ColumnScope.() -> Unit) {
     Surface(Modifier.fillMaxWidth(), shape = RoundedCornerShape(16.dp),
         color = spaceCompassSettingsCardColor(), contentColor = MaterialTheme.colorScheme.onSurface) {
-        Column(Modifier.fillMaxWidth().padding(spaceCompassIslandContentPadding),
+        Column(Modifier.fillMaxWidth().padding(contentPadding),
             verticalArrangement = Arrangement.spacedBy(SpaceCompassSettingsGroupGap), content = content)
     }
 }

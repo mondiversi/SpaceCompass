@@ -39,6 +39,8 @@ internal fun SpaceCompassFloatingActionButton(
     selectedState: Boolean? = null,
     stateText: String? = null,
     backgroundAlpha: Float = 1f,
+    glyphInk: SpaceCompassFloatingInk? = null,
+    border: BorderStroke = BorderStroke(1.dp, color.copy(alpha = .35f)),
     overlay: @Composable BoxScope.() -> Unit = {},
     content: @Composable () -> Unit
 ) {
@@ -50,8 +52,10 @@ internal fun SpaceCompassFloatingActionButton(
                     stateText = stateText, onClick = onClick),
                 shape = CircleShape, color = background.copy(alpha = backgroundAlpha),
                 contentColor = color.copy(alpha = if (enabled) 1f else .38f),
-                border = BorderStroke(1.dp, color.copy(alpha = .35f)), shadowElevation = 3.dp) {
-                Box(Modifier.fillMaxSize(), contentAlignment = Alignment.Center) { content() }
+                border = border, shadowElevation = 3.dp) {
+                Box(Modifier.fillMaxSize(), contentAlignment = Alignment.Center) {
+                    if (glyphInk == null) content() else SpaceCompassFloatingGlyph(glyphInk, content = content)
+                }
             }
             overlay()
         }

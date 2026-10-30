@@ -7,5 +7,5 @@
     <string name="point_reminder_no_calendar">Нет доступного приложения календаря</string>
     <string name="settings_events_title">События</string>
     <string name="settings_events_show_alarm">Показывать кнопку оповещения на главном экране</string>
-    <string name="settings_events_description">Настройте параметры небесных событий.</string>
+    <string name="settings_events_description">Настройте параметры событий.</string>
 </resources>

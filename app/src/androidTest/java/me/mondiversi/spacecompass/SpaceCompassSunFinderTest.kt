@@ -91,8 +91,7 @@ class SpaceCompassSunFinderTest {
         }
         for (dark in listOf(false, true)) {
             compose.runOnIdle { night.value = dark }
-            compose.onNode(hasText(resources.getString(R.string.celestial_orbits_title)) and
-                hasAnyAncestor(hasTestTag("celestial-title"))).assertIsDisplayed()
+            compose.onNodeWithTag("app-settings").assertIsDisplayed()
             assertGpsInEnvironmentGroup("sun-data-altitude")
             compose.onNodeWithTag("sun-data-gps").assertDoesNotExist()
             compose.onNodeWithText("Sole allineato").assertDoesNotExist()

@@ -35,14 +35,13 @@ internal fun SpaceCompassCaptureButton(
     val label = stringResource(R.string.panorama_capture)
     val haptics = rememberSpaceCompassHapticController()
     val background = MaterialTheme.colorScheme.primary
-    val foreground = Color.White
-    val iconColor = if (isSystemInDarkTheme()) MaterialTheme.colorScheme.background else foreground
+    val foreground = spaceCompassCounterTextColor(isSystemInDarkTheme())
     val interaction = remember { MutableInteractionSource() }
     val pressed by interaction.collectIsPressedAsState()
     val restingBackground = background.copy(alpha = 1f)
     // Animate the circular surface itself instead of a platform ripple mask.
     val containerColor by animateColorAsState(
-        targetValue = if (enabled && pressed) lerp(restingBackground, foreground, .12f) else restingBackground,
+        targetValue = if (enabled && pressed) lerp(restingBackground, Color.White, .12f) else restingBackground,
         animationSpec = tween(durationMillis = if (pressed) 90 else 140),
         label = "capturePressedColor"
     )
@@ -63,17 +62,21 @@ internal fun SpaceCompassCaptureButton(
             shape = CircleShape,
             color = containerColor,
             contentColor = foreground,
-            border = BorderStroke(2.dp, foreground.copy(alpha = if (enabled) .35f else .12f)),
+            border = BorderStroke(2.dp, Color.White.copy(alpha = if (enabled) .35f else .12f)),
             // Native elevation shadows show a polygon through the translucent disabled fill.
             shadowElevation = 0.dp
         ) {
             Box(contentAlignment = Alignment.Center) {
-                SpaceCompassSettingsMenuIcon(
-                    if (cameraEnabled) "capture" else "panorama",
-                    iconColor.copy(alpha = if (enabled) 1f else .38f),
-                    modifier = Modifier.size(26.dp * CaptureControlSizeMultiplier),
-                    iconStrokeWidth = SpaceCompassFloatingIconStrokeWidth
-                )
+                SpaceCompassFloatingGlyph(if (cameraEnabled) spaceCompassFloatingInk(31.2f, .11f, .11f, .89f, .89f)
+                    else spaceCompassFloatingInk(31.2f, .12f, .22f, .88f, .76f, 5.525f),
+                    circleSide = 48.dp * CaptureControlSizeMultiplier) {
+                    SpaceCompassSettingsMenuIcon(
+                        if (cameraEnabled) "capture" else "panorama",
+                        foreground.copy(alpha = if (enabled) 1f else .38f),
+                        modifier = Modifier.size(26.dp * CaptureControlSizeMultiplier),
+                        iconStrokeWidth = SpaceCompassFloatingIconStrokeWidth
+                    )
+                }
             }
         }
     }

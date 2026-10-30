@@ -7,5 +7,5 @@
     <string name="point_reminder_no_calendar">Tidak ada aplikasi kalender yang tersedia</string>
     <string name="settings_events_title">Peristiwa</string>
     <string name="settings_events_show_alarm">Tampilkan tombol peringatan di layar utama</string>
-    <string name="settings_events_description">Kelola opsi terkait peristiwa langit.</string>
+    <string name="settings_events_description">Kelola opsi terkait peristiwa.</string>
 </resources>

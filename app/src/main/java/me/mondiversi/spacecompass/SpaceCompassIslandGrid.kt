@@ -1,6 +1,8 @@
 package me.mondiversi.spacecompass
 
 import android.content.res.Configuration
+import androidx.compose.foundation.OverscrollEffect
+import androidx.compose.foundation.rememberOverscrollEffect
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.lazy.staggeredgrid.*
 import androidx.compose.material3.MaterialTheme
@@ -23,7 +25,9 @@ internal fun spaceCompassIslandColumnCount(landscape: Boolean, contentWidthDp: F
 /** Pack natural-height islands into the shortest column; keyed content survives reflow. */
 @Composable
 internal fun SpaceCompassIslandGrid(modifier: Modifier = Modifier,
-    scroll: LazyStaggeredGridState = rememberLazyStaggeredGridState(), content: LazyStaggeredGridScope.() -> Unit) {
+    scroll: LazyStaggeredGridState = rememberLazyStaggeredGridState(),
+    overscrollEffect: OverscrollEffect? = rememberOverscrollEffect(),
+    content: LazyStaggeredGridScope.() -> Unit) {
     val configuration = LocalConfiguration.current
     val density = LocalDensity.current
     val direction = LocalLayoutDirection.current
@@ -35,7 +39,7 @@ internal fun SpaceCompassIslandGrid(modifier: Modifier = Modifier,
             configuration.orientation == Configuration.ORIENTATION_LANDSCAPE,
             contentWidth.value, density.fontScale)
         LazyVerticalStaggeredGrid(columns = StaggeredGridCells.Fixed(columns),
-            state = scroll,
+            state = scroll, overscrollEffect = overscrollEffect,
             modifier = Modifier.fillMaxSize().staggeredScrollbarOverlay(scroll, scrollbarColor)
                 .testTag("island-grid"),
             contentPadding = spaceCompassPageContentPadding,

@@ -1,9 +1,9 @@
 <resources>
     <string name="info_news_title">최근 변경 사항 · %1$s</string>
-    <string name="info_news_star_sky" formatted="false">메인 화면의 새 버튼으로 조준선과 지점 정보를 표시하거나 숨길 수 있으며 선택이 저장됩니다.</string>
-    <string name="info_news_texture_downloads" formatted="false">사진과 파노라마의 라벨은 실시간 화면의 조준선과 독립된 설정을 유지합니다.</string>
-    <string name="info_news_weather" formatted="false">검색, 필터, 정렬을 백그라운드에서 처리하여 천체 목록의 반응성을 개선했습니다.</string>
-    <string name="info_news_viewer_zoom" formatted="false">긴급하지 않은 행 로딩은 스크롤이 멈춘 뒤 재개되며 준비된 미리보기는 계속 표시됩니다.</string>
-    <string name="info_news_settings" formatted="false">앱에서 생성하는 천체 기호에 반투명 검은 배경을 더해 대비를 개선했습니다.</string>
-    <string name="info_news_catalog" formatted="false">처음 목록을 준비하는 동안 낮과 밤 테마에 맞는 원형 로딩 표시가 가운데 나타납니다.</string>
+    <string name="info_news_star_sky" formatted="false">정보와 메뉴 버튼을 중앙에 배치하고 조작 버튼을 작고 시각적으로 균형 있게 다듬었습니다.</string>
+    <string name="info_news_texture_downloads" formatted="false">조준선 위치와 정보 패널 간격이 세로와 가로 화면에 더 일관되게 맞춰집니다.</string>
+    <string name="info_news_weather" formatted="false">Location 위치 편집기에 카드 너비를 채우는 지도, 나란히 배치된 좌표와 통일된 동작 버튼을 제공합니다.</string>
+    <string name="info_news_viewer_zoom" formatted="false">위치 편집기에서 예상 날씨를 볼 수 있으며 언어는 언어 코드 순으로 정렬됩니다.</string>
+    <string name="info_news_settings" formatted="false">자동 업데이트 중에도 천체 행, 필터 개수와 일괄 선택 표시가 안정적으로 유지됩니다.</string>
+    <string name="info_news_catalog" formatted="false">사진과 파노라마 머리글에 앱 로고가 표시되며 촬영 기호의 주간·야간 대비가 개선되었습니다.</string>
 </resources>

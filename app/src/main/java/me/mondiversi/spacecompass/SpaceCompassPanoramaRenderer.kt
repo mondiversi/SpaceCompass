@@ -45,7 +45,7 @@ internal fun renderSpaceCompassPanorama(snapshot: SpaceCompassPanoramaSnapshot, 
     val sceneHeight = sceneWidth / 2
     // A separate slim heading keeps even the zenith marker clear of the capture details.
     // Angular projection remains 360° × 180° at its original 2:1 scale.
-    val caption = prepareSpaceCompassCaptureCaption(snapshot.caption, width)
+    val caption = prepareSpaceCompassCaptureCaption(snapshot.caption, width, context = context)
     val sceneTop = spaceCompassPanoramaSceneTop(caption, width)
     val legend = prepareSpaceCompassPanoramaLegend(snapshot.objects.filter {
         it.path != null || observations[it] != null

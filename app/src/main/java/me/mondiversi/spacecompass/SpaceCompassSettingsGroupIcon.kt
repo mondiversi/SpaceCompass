@@ -43,8 +43,9 @@ internal fun SpaceCompassSettingsGroupIcon(key: String, tint: Color) {
             modifier = Modifier.size(20.dp), tint = tint)
         return
     }
+    val actionStrokeScale = LocalSpaceCompassActionGlyphStrokeScale.current
     SpaceCompassIconCanvas(tint, Modifier.size(20.dp)) { tint ->
-        val strokeWidth = maxOf(1.6.dp.toPx(), size.minDimension * 0.08f)
+        val strokeWidth = maxOf(1.6.dp.toPx(), size.minDimension * 0.08f) * actionStrokeScale
         val outline = Stroke(strokeWidth, cap = StrokeCap.Round)
         fun point(x: Float, y: Float) = Offset(size.width * x, size.height * y)
         when (key) {

@@ -15,10 +15,11 @@
     <string name="observer_date">التاريخ</string>
     <string name="observer_time">الوقت</string>
     <string name="observer_limits">بعض البيانات المدارية غير متاحة خارج فترة صلاحيتها. تُستخدم تقديرات الطقس عند توفرها؛ وإلا تُعرض سماء صافية افتراضية.</string>
-    <string name="observer_privacy">يستخدم البحث الترميز الجغرافي في Android. تستخدم الخريطة OpenStreetMap؛ تُرسل الإحداثيات المختارة إلى Open-Meteo لتحديد الارتفاع والمنطقة الزمنية.</string>
+    <string name="observer_privacy">تستخدم الخريطة OpenStreetMap؛ تُرسل الإحداثيات المختارة إلى Open-Meteo لتحديد الارتفاع والمنطقة الزمنية.</string>
     <string name="observer_apply">تعيين</string>
     <string name="observer_invalid">تحقق من الإحداثيات والارتفاع والتاريخ والوقت والمنطقة الزمنية. التواريخ: 1900–2100. الأوقات غير الموجودة بسبب تغيير التوقيت الصيفي غير صالحة.</string>
     <string name="observer_use_place">استخدام هذه النقطة</string>
+    <string name="observer_use_current_position">استخدم الموقع الحالي</string>
     <string name="observer_simulation">الموقع</string>
     <string name="observer_coordinates_value">الإحداثيات: %1$s</string>
     <string name="observer_altitude_value">الارتفاع: %1$s</string>

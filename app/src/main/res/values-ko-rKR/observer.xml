@@ -15,10 +15,11 @@
     <string name="observer_date">날짜</string>
     <string name="observer_time">시간</string>
     <string name="observer_limits">일부 궤도 데이터는 유효 기간 밖에서 사용할 수 없습니다. 날씨 추정치를 사용할 수 있으면 반영하고, 없으면 기본 맑은 하늘을 표시합니다.</string>
-    <string name="observer_privacy">검색은 Android 지오코더를 사용합니다. 지도는 OpenStreetMap을 사용하며 고도와 시간대 조회를 위해 선택한 좌표를 Open-Meteo로 보냅니다.</string>
+    <string name="observer_privacy">지도는 OpenStreetMap을 사용하며 고도와 시간대 조회를 위해 선택한 좌표를 Open-Meteo로 보냅니다.</string>
     <string name="observer_apply">설정</string>
     <string name="observer_invalid">좌표, 고도, 날짜, 시간과 시간대를 확인하세요. 날짜 범위는 1900–2100년입니다. 서머타임 변경으로 존재하지 않는 시간은 사용할 수 없습니다.</string>
     <string name="observer_use_place">이 지점 사용</string>
+    <string name="observer_use_current_position">현재 위치 사용</string>
     <string name="observer_simulation">위치</string>
     <string name="observer_coordinates_value">좌표: %1$s</string>
     <string name="observer_altitude_value">고도: %1$s</string>

@@ -34,8 +34,9 @@ internal fun SpaceCompassCameraToggleButton(checked: Boolean, onCheckedChange: (
                     modifier = Modifier.fillMaxSize().testTag("toggle-camera")
                         .semantics { contentDescription = label },
                     colors = IconButtonDefaults.iconToggleButtonColors(contentColor = color, checkedContentColor = tint)) {
-                    Icon(painterResource(if (checked) R.drawable.ic_camera else R.drawable.ic_camera_off),
-                        null, Modifier.size(26.dp))
+                    SpaceCompassFloatingGlyph(spaceCompassFloatingVectorInk(if (checked) R.drawable.ic_camera else R.drawable.ic_camera_off)) {
+                        SpaceCompassFloatingVectorIcon(if (checked) R.drawable.ic_camera else R.drawable.ic_camera_off)
+                    }
                 }
             }
         }

@@ -15,10 +15,11 @@
     <string name="observer_date">Tanggal</string>
     <string name="observer_time">Waktu</string>
     <string name="observer_limits">Sebagian data orbit tidak tersedia di luar tanggal validnya. Estimasi cuaca jika tersedia; jika tidak, langit dasar yang cerah.</string>
-    <string name="observer_privacy">Pencarian menggunakan geocoder Android. Peta menggunakan OpenStreetMap; koordinat pilihan dikirim ke Open-Meteo untuk ketinggian dan zona waktu.</string>
+    <string name="observer_privacy">Peta menggunakan OpenStreetMap; koordinat pilihan dikirim ke Open-Meteo untuk ketinggian dan zona waktu.</string>
     <string name="observer_apply">Tetapkan</string>
     <string name="observer_invalid">Periksa koordinat, ketinggian, tanggal, waktu dan zona waktu. Tanggal: 1900–2100. Waktu yang tidak ada saat perubahan waktu musim panas tidak valid.</string>
     <string name="observer_use_place">Gunakan titik ini</string>
+    <string name="observer_use_current_position">Gunakan posisi saat ini</string>
     <string name="observer_simulation">Lokasi</string>
     <string name="observer_coordinates_value">Koordinat: %1$s</string>
     <string name="observer_altitude_value">Ketinggian: %1$s</string>

@@ -7,5 +7,5 @@
     <string name="point_reminder_no_calendar">사용 가능한 캘린더 앱이 없습니다</string>
     <string name="settings_events_title">이벤트</string>
     <string name="settings_events_show_alarm">메인 화면에 알림 버튼 표시</string>
-    <string name="settings_events_description">천체 이벤트 관련 옵션을 설정합니다.</string>
+    <string name="settings_events_description">이벤트 관련 옵션을 설정합니다.</string>
 </resources>

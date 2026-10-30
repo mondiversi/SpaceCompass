@@ -7,5 +7,5 @@
     <string name="point_reminder_no_calendar">कोई कैलेंडर ऐप उपलब्ध नहीं है</string>
     <string name="settings_events_title">घटनाएँ</string>
     <string name="settings_events_show_alarm">मुख्य स्क्रीन पर अलर्ट बटन दिखाएँ</string>
-    <string name="settings_events_description">खगोलीय घटनाओं के विकल्प प्रबंधित करें।</string>
+    <string name="settings_events_description">घटनाओं के विकल्प प्रबंधित करें।</string>
 </resources>

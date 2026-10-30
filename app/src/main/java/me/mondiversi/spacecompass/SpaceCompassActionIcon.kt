@@ -14,6 +14,8 @@ internal fun spaceCompassActionIconResource(@DrawableRes original: Int, emphasiz
     if (!emphasized) original else when (original) {
         R.drawable.ic_check -> R.drawable.ic_action_check
         R.drawable.ic_update -> R.drawable.ic_action_update
+        R.drawable.ic_location_pin -> R.drawable.ic_action_location_pin
+        R.drawable.ic_refresh -> R.drawable.ic_action_refresh
         // The filled repository logo is already solid; preserve its internal cutouts.
         else -> original
     }

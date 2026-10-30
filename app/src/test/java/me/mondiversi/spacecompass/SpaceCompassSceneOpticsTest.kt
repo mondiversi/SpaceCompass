@@ -125,4 +125,50 @@ class SpaceCompassSceneOpticsTest {
             assertEquals(camera.perspective.focalY(optical.height), extended.focalY(2000.0), 1e-8)
         }
     }
+
+    @Test fun mainReticleUsesTheIslandEdgeOrSystemBarSafeAreaAsRequested() {
+        val portrait = SpaceCompassSunSceneFrame(34.0, 0.0, 1012.0, 1155.0)
+        val expanded = spaceCompassMainReticleOpticalFrame(portrait, 1998.0, false, true, 34.0)
+        assertEquals(594.5, expanded.top + expanded.height / 2, 1e-8)
+        val full = portrait.copy(height = 1964.0)
+        val collapsed = spaceCompassMainReticleOpticalFrame(full, 1998.0, false, false, 34.0)
+        assertEquals(1998.0 * .40, collapsed.top + collapsed.height / 2, 1e-8)
+        for (open in listOf(false, true)) for (left in listOf(34.0, 1150.0)) {
+            val viewport = SpaceCompassSunSceneFrame(left, 0.0, if (open) 1000.0 else 2100.0, 872.0)
+            val optical = spaceCompassMainReticleOpticalFrame(viewport, 906.0, true, open, 34.0)
+            assertEquals(453.0, optical.top + optical.height / 2, 1e-8)
+            assertEquals(viewport.left + viewport.width / 2, optical.left + optical.width / 2, 1e-8)
+            assertEquals(viewport.height, optical.height, 0.0)
+        }
+    }
+
+    @Test fun shiftedMainReticleKeepsCameraStarsGroundAndFocusedObjectsOnTheSameRay() {
+        for ((viewport, height, landscape, open) in listOf(
+            MainReticleFixture(SpaceCompassSunSceneFrame(34.0, 0.0, 1012.0, 1155.0),1998.0,false,true),
+            MainReticleFixture(SpaceCompassSunSceneFrame(34.0, 0.0, 1012.0, 1964.0),1998.0,false,false),
+            MainReticleFixture(SpaceCompassSunSceneFrame(34.0, 0.0, 1000.0, 872.0),906.0,true,true),
+            MainReticleFixture(SpaceCompassSunSceneFrame(34.0, 0.0, 2100.0, 872.0),906.0,true,false))) {
+            val optical = spaceCompassMainReticleOpticalFrame(viewport,height,landscape,open,34.0)
+            val localFrame = optical.copy(left=0.0,top=optical.top-viewport.top)
+            val local = spaceCompassSceneFramePerspective(viewport.width,viewport.height,localFrame,null)!!
+            val current = SpaceCompassSunPathPoint(0L,SpaceCompassSunPosition(0.0,0.0))
+            val targets = projectSpaceCompassCelestialSceneTargets(emptyMap(),mapOf(SpaceCompassCelestialBody.SUN to current),
+                facingNorth,viewport.width,viewport.height,local)
+            assertEquals(current,focusedSpaceCompassCelestialSceneTarget(targets,viewport.width,viewport.height,19.0,local)!!.point)
+            val aim = targets.single().projection
+            val ray = spaceCompassStarViewRay(viewport.left+aim.x,viewport.top+aim.y,facingNorth,optical)
+            assertEquals(1.0,ray.dot(facingNorth.forward),1e-8)
+            val ground = projectSpaceCompassSunGround(facingNorth,optical,2280.0,height)!!
+            assertEquals(viewport.top+aim.y,ground.horizonOrigin!!.y,1e-8)
+            for (sensor in listOf(0,90,180,270)) for (display in listOf(0,90,180,270)) {
+                val lens = SpaceCompassCameraLens(0.0,0.0,4000.0,3000.0,3000.0,3000.0,2000.0,1500.0,sensor)
+                val camera = spaceCompassCameraGeometry(lens,1280.0,960.0,display,2280.0,height,optical)!!
+                assertEquals(viewport.left+aim.x,camera.destination.map { it.x }.average(),1e-8)
+                assertEquals(viewport.top+aim.y,camera.destination.map { it.y }.average(),1e-8)
+            }
+        }
+    }
+
+    private data class MainReticleFixture(val viewport: SpaceCompassSunSceneFrame, val height: Double,
+        val landscape: Boolean, val open: Boolean)
 }

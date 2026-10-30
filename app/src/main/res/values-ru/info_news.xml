@@ -1,9 +1,9 @@
 <resources>
     <string name="info_news_title">Последние новости · %1$s</string>
-    <string name="info_news_star_sky" formatted="false">Новая кнопка на главном экране показывает или скрывает прицел и сведения о точках, запоминая выбор.</string>
-    <string name="info_news_texture_downloads" formatted="false">Подписи фотографий и панорам сохраняют собственные настройки независимо от прицела в текущем виде.</string>
-    <string name="info_news_weather" formatted="false">Поиск, фильтрация и сортировка выполняются в фоне, чтобы список объектов быстрее реагировал.</string>
-    <string name="info_news_viewer_zoom" formatted="false">Необязательная загрузка строк ждёт окончания прокрутки; готовые миниатюры остаются видимыми.</string>
-    <string name="info_news_settings" formatted="false">Полупрозрачный чёрный фон улучшает контраст небесных символов, создаваемых приложением.</string>
-    <string name="info_news_catalog" formatted="false">При подготовке начального списка по центру отображается круговой индикатор загрузки с учётом дневной или ночной темы.</string>
+    <string name="info_news_star_sky" formatted="false">Расположенные по центру кнопки информации и меню и компактные, визуально сбалансированные элементы управления улучшают главный экран.</string>
+    <string name="info_news_texture_downloads" formatted="false">Положение прицела и интервалы между информационными панелями лучше адаптируются к вертикальной и горизонтальной ориентации.</string>
+    <string name="info_news_weather" formatted="false">В редакторе положения Location появились карта на всю ширину, координаты рядом и единообразные кнопки действий.</string>
+    <string name="info_news_viewer_zoom" formatted="false">Расчётная погода видна в редакторе положения, а языки упорядочены по их кодам.</string>
+    <string name="info_news_settings" formatted="false">Строки объектов, счётчики фильтров и множественный выбор остаются стабильными при автоматических обновлениях.</string>
+    <string name="info_news_catalog" formatted="false">В заголовках фотографий и панорам отображается логотип приложения; контраст значков съёмки улучшен для дня и ночи.</string>
 </resources>

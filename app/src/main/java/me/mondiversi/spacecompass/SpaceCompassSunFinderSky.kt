@@ -90,15 +90,18 @@ internal fun SpaceCompassSunPointingViewport(
     projectionTopInset: androidx.compose.ui.unit.Dp = 0.dp,
     drawScene: Boolean = true, objectOpacity: Float = 1f,
     approachOverlays: Map<SpaceCompassCelestialBody,SpaceCompassCelestialOverlay> = overlays,
-    showReticle: Boolean = true
+    showReticle: Boolean = true,
+    topControlSpacing: androidx.compose.ui.unit.Dp = 8.dp,
+    opticalFrame: SpaceCompassSunSceneFrame? = null
 ) {
     BoxWithConstraints(modifier.testTag("sun-finder-sky").semantics { contentDescription = description }) {
         val density = LocalDensity.current
         val rtl = LocalLayoutDirection.current == LayoutDirection.Rtl
         val width = with(density) { maxWidth.toPx().toDouble() }
         val height = with(density) { maxHeight.toPx().toDouble() }
-        val scenePerspective = remember(width, height, projectionTopInset, perspective) {
-            spaceCompassSceneDrawingPerspective(width, height,
+        val scenePerspective = remember(width, height, projectionTopInset, perspective, opticalFrame) {
+            if (opticalFrame != null) spaceCompassSceneFramePerspective(width, height, opticalFrame, perspective)
+            else spaceCompassSceneDrawingPerspective(width, height,
                 with(density) { projectionTopInset.toPx().toDouble() }, perspective)
         }
         val reticleCenter = SpaceCompassSunScenePoint(width * (scenePerspective?.principalX ?: .5),
@@ -111,8 +114,10 @@ internal fun SpaceCompassSunPointingViewport(
         var topEndActionsSize by remember { mutableStateOf(IntSize.Zero) }
         var topCenterActionsSize by remember { mutableStateOf(IntSize.Zero) }
         val centerActionsSize = if (topCenterActions == null) IntSize.Zero else topCenterActionsSize
-        val centerActionsTop = topContentInset + 4.dp +
-            (spaceCompassFloatingControlSize - with(density) { centerActionsSize.height.toDp() }) / 2
+        val centerActionsHeight = if (centerActionsSize.height > 0)
+            with(density) { centerActionsSize.height.toDp() } else spaceCompassFloatingControlBaseSize
+        val centerActionsTop = topContentInset + 4.dp + (spaceCompassFloatingControlSize - centerActionsHeight) / 2
+        val centerGap = topControlSpacing - 4.dp
         val centerActionsLeft = (if (rtl) topEndActionsSize.width else topStartActionsSize.width) +
             (width - topStartActionsSize.width - topEndActionsSize.width - centerActionsSize.width) / 2
         val paths = overlays.mapNotNull { (candidate, overlay) -> overlay.path?.let { candidate to it } }.toMap() +
@@ -254,10 +259,10 @@ internal fun SpaceCompassSunPointingViewport(
             topEndActions(Modifier.align(Alignment.TopEnd).onSizeChanged { topEndActionsSize = it }
                 .padding(top = topContentInset))
             if (topCenterActions != null) {
-                // Keep the floating title and menu between the measured corner clusters, also in RTL.
+                // Keep floating app navigation between the measured corner clusters, also in RTL.
                 Box(Modifier.align(Alignment.TopCenter).fillMaxWidth()
-                    .padding(start = with(density) { topStartActionsSize.width.toDp() } + 8.dp,
-                        end = with(density) { topEndActionsSize.width.toDp() } + 8.dp,
+                    .padding(start = with(density) { topStartActionsSize.width.toDp() } + centerGap,
+                        end = with(density) { topEndActionsSize.width.toDp() } + centerGap,
                         top = centerActionsTop.coerceAtLeast(0.dp)), contentAlignment = Alignment.TopCenter) {
                     topCenterActions(Modifier.widthIn(max = 360.dp)
                         .onSizeChanged { topCenterActionsSize = it })

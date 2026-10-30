@@ -15,10 +15,11 @@
     <string name="observer_date">Data</string>
     <string name="observer_time">Ora</string>
     <string name="observer_limits">Alcuni dati orbitali non sono disponibili fuori dalle date di validità. Stime meteo quando disponibili; altrimenti cielo pulito di base.</string>
-    <string name="observer_privacy">La ricerca usa il geocodificatore Android. La mappa usa OpenStreetMap; le coordinate scelte vengono inviate a Open-Meteo per quota e fuso.</string>
+    <string name="observer_privacy">La mappa usa OpenStreetMap; le coordinate scelte vengono inviate a Open-Meteo per quota e fuso.</string>
     <string name="observer_apply">Imposta</string>
     <string name="observer_invalid">Controlla coordinate, quota, data, ora e fuso. Date: 1900–2100. Le ore inesistenti al cambio dell’ora legale non sono utilizzabili.</string>
     <string name="observer_use_place">Usa questo punto</string>
+    <string name="observer_use_current_position">Usa posizione attuale</string>
     <string name="observer_simulation">Location</string>
     <string name="observer_coordinates_value">Coordinate: %1$s</string>
     <string name="observer_altitude_value">Quota: %1$s</string>

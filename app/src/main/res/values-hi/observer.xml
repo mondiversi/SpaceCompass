@@ -15,10 +15,11 @@
     <string name="observer_date">तारीख</string>
     <string name="observer_time">समय</string>
     <string name="observer_limits">कुछ कक्षीय डेटा वैध तारीखों के बाहर उपलब्ध नहीं हैं। उपलब्ध होने पर मौसम के अनुमान; अन्यथा सामान्य साफ़ आकाश।</string>
-    <string name="observer_privacy">खोज Android जियोकोडर इस्तेमाल करती है। नक्शा OpenStreetMap इस्तेमाल करता है; चुने गए निर्देशांक ऊँचाई और समय क्षेत्र के लिए Open-Meteo को भेजे जाते हैं।</string>
+    <string name="observer_privacy">नक्शा OpenStreetMap इस्तेमाल करता है; चुने गए निर्देशांक ऊँचाई और समय क्षेत्र के लिए Open-Meteo को भेजे जाते हैं।</string>
     <string name="observer_apply">सेट करें</string>
     <string name="observer_invalid">निर्देशांक, ऊँचाई, तारीख, समय और समय क्षेत्र जाँचें। तारीखें: 1900–2100। ग्रीष्मकालीन समय बदलाव में अस्तित्वहीन समय मान्य नहीं हैं।</string>
     <string name="observer_use_place">यह बिंदु इस्तेमाल करें</string>
+    <string name="observer_use_current_position">वर्तमान स्थान का उपयोग करें</string>
     <string name="observer_simulation">लोकेशन</string>
     <string name="observer_coordinates_value">निर्देशांक: %1$s</string>
     <string name="observer_altitude_value">ऊँचाई: %1$s</string>

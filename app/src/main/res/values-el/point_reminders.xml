@@ -7,5 +7,5 @@
     <string name="point_reminder_no_calendar">Δεν υπάρχει διαθέσιμη εφαρμογή ημερολογίου</string>
     <string name="settings_events_title">Συμβάντα</string>
     <string name="settings_events_show_alarm">Εμφάνιση κουμπιού ειδοποίησης στην κύρια οθόνη</string>
-    <string name="settings_events_description">Διαχειριστείτε τις επιλογές για ουράνια φαινόμενα.</string>
+    <string name="settings_events_description">Διαχειριστείτε τις επιλογές για συμβάντα.</string>
 </resources>

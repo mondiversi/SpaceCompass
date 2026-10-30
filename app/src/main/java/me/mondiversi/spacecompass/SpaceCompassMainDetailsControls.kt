@@ -26,9 +26,6 @@ import androidx.compose.ui.graphics.StrokeCap
 import androidx.compose.ui.graphics.StrokeJoin
 import androidx.compose.ui.graphics.drawscope.Stroke
 import androidx.compose.ui.graphics.drawscope.rotate
-import androidx.compose.ui.graphics.drawscope.translate
-import kotlin.math.cos
-import kotlin.math.sin
 import androidx.compose.ui.platform.testTag
 import androidx.compose.ui.platform.LocalLayoutDirection
 import androidx.compose.ui.unit.LayoutDirection
@@ -65,23 +62,21 @@ internal fun SpaceCompassMainDetailsToggleButton(expanded: Boolean, onClick: () 
             shape = CircleShape, color = background.copy(alpha = 1f), contentColor = color,
             border = BorderStroke(1.dp, color.copy(alpha = .35f)), shadowElevation = 3.dp) {
             Box(contentAlignment = Alignment.Center) {
-                Canvas(Modifier.size(26.dp)) {
-                    // The requested optical correction stays above the circle center in both states.
-                    val pivot = Offset(size.width / 2f, size.height / 2f - 1.dp.toPx())
-                    val halfWidth = size.width * .27f
-                    val halfHeight = size.height * .14f
-                    val chevron = Path().apply {
-                        moveTo(pivot.x - halfWidth, pivot.y - halfHeight)
-                        lineTo(pivot.x, pivot.y + halfHeight)
-                        lineTo(pivot.x + halfWidth, pivot.y - halfHeight)
-                    }
-                    // Rotate around the optical centre while preserving the reviewed portrait alignment.
-                    val radians = Math.toRadians(angle.toDouble())
-                    val opticalCorrection = halfHeight / 3f
-                    translate(left = -opticalCorrection * sin(radians).toFloat(),
-                        top = opticalCorrection * (1f + cos(radians).toFloat())) {
+                SpaceCompassFloatingGlyph(spaceCompassChevronFloatingInk(angle),
+                    opticalOffset = spaceCompassChevronOpticalOffset(angle)) {
+                    val visualStroke = SpaceCompassFloatingIconStrokeWidth * LocalSpaceCompassFloatingStrokeScale.current
+                    Canvas(Modifier.size(26.dp)) {
+                        // Geometry is fitted first; optical balance belongs to the outer glyph transform.
+                        val pivot = center
+                        val halfWidth = size.width * .27f
+                        val halfHeight = size.height * .14f
+                        val chevron = Path().apply {
+                            moveTo(pivot.x - halfWidth, pivot.y - halfHeight)
+                            lineTo(pivot.x, pivot.y + halfHeight)
+                            lineTo(pivot.x + halfWidth, pivot.y - halfHeight)
+                        }
                         rotate(angle, pivot) {
-                            drawPath(chevron, color, style = Stroke(SpaceCompassFloatingIconStrokeWidth.toPx(), cap = StrokeCap.Round, join = StrokeJoin.Round))
+                            drawPath(chevron, color, style = Stroke(visualStroke.toPx(), cap = StrokeCap.Round, join = StrokeJoin.Round))
                         }
                     }
                 }

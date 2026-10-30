@@ -7,5 +7,5 @@
     <string name="point_reminder_no_calendar">Hakuna programu ya kalenda inayopatikana</string>
     <string name="settings_events_title">Matukio</string>
     <string name="settings_events_show_alarm">Onyesha kitufe cha arifa kwenye skrini kuu</string>
-    <string name="settings_events_description">Dhibiti chaguo za matukio ya angani.</string>
+    <string name="settings_events_description">Dhibiti chaguo za matukio.</string>
 </resources>

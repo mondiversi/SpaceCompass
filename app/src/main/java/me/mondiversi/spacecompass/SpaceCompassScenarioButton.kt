@@ -22,6 +22,7 @@ internal fun SpaceCompassScenarioButton(activeCount: Int, color: Color, backgrou
         LocalSpaceCompassNumericFormat.current, grouping = false)
     SpaceCompassFloatingActionButton(label, onClick, tint, background,
         Modifier.testTag("open-scenario"), selectedState = active,
+        glyphInk = spaceCompassFloatingInk(26f, .10f, .1075f, .93f, .90f),
         stateText = if (active) "$activeLabel · $count" else null,
         overlay = {
             if (active) SpaceCompassFloatingCountBadge(count,

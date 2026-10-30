@@ -15,7 +15,7 @@ internal fun renderSpaceCompassCameraPhoto(context: Context, photo: SpaceCompass
     try {
         val width=geometry.width; val height=geometry.height
         val scale=(minOf(width,height)/1080f).coerceAtLeast(.45f)
-        val caption=prepareSpaceCompassCameraCaptureCaption(snapshot.caption,width,height)
+        val caption=prepareSpaceCompassCameraCaptureCaption(snapshot.caption,width,height,context)
         val observations = snapshot.objects.associateWith { item -> runCatching {
             calculateSpaceCompassCelestialObservation(item.body,snapshot.timeMs,snapshot.latitude,snapshot.longitude,
                 snapshot.altitude,snapshot.remote)

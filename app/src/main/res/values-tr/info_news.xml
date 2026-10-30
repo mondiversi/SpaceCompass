@@ -1,9 +1,9 @@
 <resources>
     <string name="info_news_title">Son yenilikler · %1$s</string>
-    <string name="info_news_star_sky" formatted="false">Ana görünümdeki yeni düğme nişangâhı ve nokta bilgilerini gösterir veya gizler; seçiminizi hatırlar.</string>
-    <string name="info_news_texture_downloads" formatted="false">Fotoğraf ve panorama etiketleri, canlı görünümdeki nişangâhtan bağımsız kendi ayarlarını korur.</string>
-    <string name="info_news_weather" formatted="false">Nesne listesinin daha hızlı tepki vermesi için arama, filtreleme ve sıralama arka planda işlenir.</string>
-    <string name="info_news_viewer_zoom" formatted="false">İsteğe bağlı satır yüklemeleri kaydırma bitene kadar bekler; hazır küçük resimler görünür kalır.</string>
-    <string name="info_news_settings" formatted="false">Yarı saydam siyah arka plan, uygulamanın oluşturduğu gök cismi simgelerinin kontrastını artırır.</string>
-    <string name="info_news_catalog" formatted="false">İlk liste hazırlanırken ortalanmış dairesel yükleme göstergesi gündüz/gece temasına uyum sağlar.</string>
+    <string name="info_news_star_sky" formatted="false">Ortalanmış Bilgi ve Menü düğmeleri ile kompakt ve görsel olarak dengeli kontroller ana görünümü iyileştirir.</string>
+    <string name="info_news_texture_downloads" formatted="false">Nişangâh konumu ve bilgi panelleri arasındaki boşluklar dikey ve yatay yönlere daha tutarlı uyum sağlar.</string>
+    <string name="info_news_weather" formatted="false">Location konum düzenleyicisi tam genişlikte harita, yan yana koordinatlar ve tutarlı işlem düğmeleri içerir.</string>
+    <string name="info_news_viewer_zoom" formatted="false">Tahmini hava durumu konum düzenleyicisinde görünür; diller dil koduna göre sıralanır.</string>
+    <string name="info_news_settings" formatted="false">Otomatik güncellemelerde nesne satırları, filtre sayaçları ve çoklu seçim kontrolleri sabit kalır.</string>
+    <string name="info_news_catalog" formatted="false">Fotoğraf ve panorama başlıklarında uygulama logosu gösterilir; çekim simgelerinin gündüz/gece kontrastı iyileştirildi.</string>
 </resources>

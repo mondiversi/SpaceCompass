@@ -15,10 +15,11 @@
     <string name="observer_date">Datum</string>
     <string name="observer_time">Tijd</string>
     <string name="observer_limits">Sommige baangegevens zijn buiten hun geldigheidsperiode niet beschikbaar. Weerschattingen indien beschikbaar; anders een heldere standaardhemel.</string>
-    <string name="observer_privacy">Zoeken gebruikt de Android-geocoder. De kaart gebruikt OpenStreetMap; gekozen coördinaten gaan naar Open-Meteo voor hoogte en tijdzone.</string>
+    <string name="observer_privacy">De kaart gebruikt OpenStreetMap; gekozen coördinaten gaan naar Open-Meteo voor hoogte en tijdzone.</string>
     <string name="observer_apply">Instellen</string>
     <string name="observer_invalid">Controleer coördinaten, hoogte, datum, tijd en tijdzone. Datums: 1900–2100. Niet-bestaande tijden bij een zomertijdwisseling zijn ongeldig.</string>
     <string name="observer_use_place">Dit punt gebruiken</string>
+    <string name="observer_use_current_position">Huidige positie gebruiken</string>
     <string name="observer_simulation">Locatie</string>
     <string name="observer_coordinates_value">Coördinaten: %1$s</string>
     <string name="observer_altitude_value">Hoogte: %1$s</string>

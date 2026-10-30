@@ -53,13 +53,20 @@ internal fun SpaceCompassCelestialBodyDataIsland(bodyName: String?, primaryText:
     // Absorb blank-surface taps; child navigation and details actions keep priority.
     Column(Modifier.fillMaxWidth().testTag("sun-finder-body-data").clip(shape)
         .spaceCompassSceneInputShield().background(spaceCompassSettingsCardColor().copy(alpha = SPACE_COMPASS_MAIN_OVERLAY_ALPHA))
-        .padding(horizontal = 12.dp)) {
+        .padding(horizontal = 10.dp)) {
         if (bodyName != null || navigation != null) {
             // Compact only the title bar; retain the normal insets around the data below it.
             // The next chevron ends 10 dp before its slot edge. Include the first action's
             // blank inset so the navigation/action gap is measured between visible glyphs.
             // Keep the trailing actions anchored at the island's content edge.
             Row(Modifier.fillMaxWidth().testTag("celestial-body-header")
+                // Bring the divider into the unused lower touch inset; targets retain their full height.
+                .layout { measurable, constraints ->
+                    val header = measurable.measure(constraints)
+                    layout(header.width, (header.height - 3.dp.roundToPx()).coerceAtLeast(0)) {
+                        header.placeRelative(0, 0)
+                    }
+                }
                 .padding(vertical = 1.dp), verticalAlignment = Alignment.CenterVertically,
                 horizontalArrangement = Arrangement.spacedBy(if (navigation == null) 0.dp
                     else SpaceCompassObjectNavigationActionGap - 10.dp - (48.dp - 30.dp) / 2)) {
@@ -114,7 +121,7 @@ internal fun SpaceCompassCelestialBodyDataIsland(bodyName: String?, primaryText:
             HorizontalDivider(color = primaryText.copy(alpha = 0.12f))
         }
         Column(Modifier.fillMaxWidth().testTag("celestial-body-content")
-            .padding(vertical = if (compact) 8.dp else 10.dp),
+            .padding(vertical = if (compact) 6.dp else 8.dp),
             verticalArrangement = Arrangement.spacedBy(if (compact) 3.dp else 4.dp), content = content)
     }
 }

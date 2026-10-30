@@ -1,9 +1,9 @@
 <resources>
     <string name="info_news_title">Últimas novidades · %1$s</string>
-    <string name="info_news_star_sky" formatted="false">Um novo botão na vista principal mostra ou oculta o retículo e as informações dos pontos e memoriza a escolha.</string>
-    <string name="info_news_texture_downloads" formatted="false">As etiquetas das fotografias e panoramas mantêm as suas próprias definições, independentes do retículo da vista em direto.</string>
-    <string name="info_news_weather" formatted="false">A pesquisa, os filtros e a ordenação são processados em segundo plano para uma lista de objetos mais rápida a responder.</string>
-    <string name="info_news_viewer_zoom" formatted="false">O carregamento opcional das linhas espera pelo fim da deslocação; as miniaturas prontas continuam visíveis.</string>
-    <string name="info_news_settings" formatted="false">Um fundo preto semitransparente melhora o contraste dos símbolos celestes gerados pela aplicação.</string>
-    <string name="info_news_catalog" formatted="false">Um indicador circular centrado acompanha o tema diurno/noturno enquanto a lista inicial é preparada.</string>
+    <string name="info_news_star_sky" formatted="false">Os botões Informações e Menu centrados e os controlos compactos e visualmente equilibrados melhoram a vista principal.</string>
+    <string name="info_news_texture_downloads" formatted="false">A posição da mira e o espaçamento dos painéis adaptam-se melhor às orientações vertical e horizontal.</string>
+    <string name="info_news_weather" formatted="false">O editor de posição de Location inclui um mapa a toda a largura, coordenadas lado a lado e botões uniformes.</string>
+    <string name="info_news_viewer_zoom" formatted="false">O tempo estimado aparece no editor de posição e os idiomas são ordenados pelo respetivo código.</string>
+    <string name="info_news_settings" formatted="false">As linhas de objetos, os contadores de filtros e a seleção múltipla mantêm-se estáveis durante as atualizações automáticas.</string>
+    <string name="info_news_catalog" formatted="false">Os cabeçalhos das fotografias e panoramas mostram o logótipo da aplicação; os símbolos de captura têm melhor contraste de dia e de noite.</string>
 </resources>

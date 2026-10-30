@@ -15,10 +15,11 @@
     <string name="observer_date">Ημερομηνία</string>
     <string name="observer_time">Ώρα</string>
     <string name="observer_limits">Ορισμένα τροχιακά δεδομένα δεν διατίθενται εκτός ισχύος. Εκτιμήσεις καιρού όταν είναι διαθέσιμες· διαφορετικά, βασικός καθαρός ουρανός.</string>
-    <string name="observer_privacy">Η αναζήτηση χρησιμοποιεί τον γεωκωδικοποιητή Android. Ο χάρτης χρησιμοποιεί OpenStreetMap· οι επιλεγμένες συντεταγμένες αποστέλλονται στο Open-Meteo για υψόμετρο και ζώνη ώρας.</string>
+    <string name="observer_privacy">Ο χάρτης χρησιμοποιεί OpenStreetMap· οι επιλεγμένες συντεταγμένες αποστέλλονται στο Open-Meteo για υψόμετρο και ζώνη ώρας.</string>
     <string name="observer_apply">Ορισμός</string>
     <string name="observer_invalid">Ελέγξτε συντεταγμένες, υψόμετρο, ημερομηνία, ώρα και ζώνη. Ημερομηνίες: 1900–2100. Ανύπαρκτες ώρες κατά την αλλαγή θερινής ώρας δεν επιτρέπονται.</string>
     <string name="observer_use_place">Χρήση αυτού του σημείου</string>
+    <string name="observer_use_current_position">Χρήση τρέχουσας θέσης</string>
     <string name="observer_simulation">Τοποθεσία</string>
     <string name="observer_coordinates_value">Συντεταγμένες: %1$s</string>
     <string name="observer_altitude_value">Υψόμετρο: %1$s</string>

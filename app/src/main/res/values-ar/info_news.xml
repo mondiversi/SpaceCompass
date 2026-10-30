@@ -1,9 +1,9 @@
 <resources>
     <string name="info_news_title">آخر المستجدات · %1$s</string>
-    <string name="info_news_star_sky" formatted="false">زر جديد في العرض الرئيسي يُظهر أو يُخفي مؤشر التصويب ومعلومات النقاط ويتذكر اختيارك.</string>
-    <string name="info_news_texture_downloads" formatted="false">تحتفظ تسميات الصور والبانوراما بإعداداتها المستقلة عن مؤشر التصويب في العرض المباشر.</string>
-    <string name="info_news_weather" formatted="false">يعمل البحث والتصفية والترتيب في الخلفية لتستجيب قائمة الأجرام بسرعة أكبر.</string>
-    <string name="info_news_viewer_zoom" formatted="false">ينتظر التحميل الاختياري للصفوف حتى يتوقف التمرير؛ وتبقى الصور المصغرة الجاهزة ظاهرة.</string>
-    <string name="info_news_settings" formatted="false">تحسّن خلفية سوداء شبه شفافة تباين رموز الأجرام التي ينشئها التطبيق.</string>
-    <string name="info_news_catalog" formatted="false">يتوافق مؤشر تحميل دائري في الوسط مع المظهر النهاري والليلي أثناء إعداد القائمة الأولية.</string>
+    <string name="info_news_star_sky" formatted="false">أزرار المعلومات والقائمة في الوسط وعناصر التحكم المدمجة والمتوازنة بصريًا تحسن العرض الرئيسي.</string>
+    <string name="info_news_texture_downloads" formatted="false">يتكيف موضع مؤشر التصويب والتباعد بين لوحات المعلومات بصورة أفضل مع الوضعين العمودي والأفقي.</string>
+    <string name="info_news_weather" formatted="false">يتضمن محرر الموضع في Location خريطة بعرض كامل وإحداثيات متجاورة وأزرار إجراءات موحدة.</string>
+    <string name="info_news_viewer_zoom" formatted="false">يظهر الطقس التقديري في محرر الموضع، وتُرتب اللغات حسب رموزها.</string>
+    <string name="info_news_settings" formatted="false">تبقى صفوف الأجرام وعدادات المرشحات وعناصر التحديد المتعدد مستقرة أثناء التحديثات التلقائية.</string>
+    <string name="info_news_catalog" formatted="false">تُظهر ترويسات الصور والبانوراما شعار التطبيق؛ وتحسن تباين رموز الالتقاط نهارًا وليلًا.</string>
 </resources>

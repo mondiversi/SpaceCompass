@@ -28,3 +28,17 @@ internal fun spaceCompassSceneFramePerspective(width: Double, height: Double, op
         (optical.left + source.principalX * optical.width) / width,
         (optical.top + source.principalY * optical.height) / height)
 }
+
+/** Layout coordinates exclude Android system bars. Shift the shared optical axis, retaining focal lengths. */
+internal fun spaceCompassMainReticleOpticalFrame(viewport: SpaceCompassSunSceneFrame, sceneHeight: Double,
+    landscape: Boolean, detailsExpanded: Boolean, detailsGap: Double): SpaceCompassSunSceneFrame {
+    if (!sceneHeight.isFinite() || sceneHeight <= 0 || !viewport.height.isFinite() || viewport.height <= 0 ||
+        !viewport.top.isFinite()) return viewport
+    val gap = detailsGap.takeIf { it.isFinite() && it > 0 } ?: 0.0
+    val centerY = when {
+        landscape -> sceneHeight / 2
+        detailsExpanded -> (viewport.top + viewport.height + gap) / 2
+        else -> sceneHeight * .40 // 60 percent of the usable height, measured upwards from the bottom.
+    }.coerceIn(0.0, sceneHeight)
+    return viewport.copy(top = centerY - viewport.height / 2)
+}

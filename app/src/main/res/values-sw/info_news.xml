@@ -1,9 +1,9 @@
 <resources>
     <string name="info_news_title">Mambo mapya · %1$s</string>
-    <string name="info_news_star_sky" formatted="false">Kitufe kipya kwenye mwonekano mkuu huonyesha au kuficha kilenga na maelezo ya nukta, na hukumbuka chaguo lako.</string>
-    <string name="info_news_texture_downloads" formatted="false">Lebo za picha na panorama huhifadhi mipangilio yake bila kutegemea kilenga cha mwonekano wa moja kwa moja.</string>
-    <string name="info_news_weather" formatted="false">Utafutaji, vichujio na upangaji hufanywa chinichini ili orodha ya vitu iitikie haraka zaidi.</string>
-    <string name="info_news_viewer_zoom" formatted="false">Upakiaji wa ziada wa safu husubiri usogezaji usimame; vijipicha vilivyo tayari hubaki kuonekana.</string>
-    <string name="info_news_settings" formatted="false">Mandharinyuma meusi yenye uwazi kiasi huboresha utofauti wa alama za angani zinazochorwa na programu.</string>
-    <string name="info_news_catalog" formatted="false">Kiashirio cha kupakia cha duara katikati hufuata mandhari ya mchana/usiku wakati orodha ya kwanza inaandaliwa.</string>
+    <string name="info_news_star_sky" formatted="false">Vitufe vya taarifa na menyu vilivyo katikati na vidhibiti vidogo vyenye usawaziko wa kuona vinaboresha mwonekano mkuu.</string>
+    <string name="info_news_texture_downloads" formatted="false">Mahali pa kilenga na nafasi kati ya paneli za taarifa hubadilika vizuri zaidi kati ya mwonekano wima na mlalo.</string>
+    <string name="info_news_weather" formatted="false">Kihariri cha nafasi cha Location kina ramani ya upana wote, viwianishi vilivyo sambamba na vitufe vya vitendo vinavyolingana.</string>
+    <string name="info_news_viewer_zoom" formatted="false">Hali ya hewa iliyokadiriwa huonekana kwenye kihariri cha nafasi, na lugha hupangwa kwa misimbo yake.</string>
+    <string name="info_news_settings" formatted="false">Safu za vitu, vihesabu vya vichujio na vidhibiti vya uteuzi wa pamoja hubaki thabiti wakati wa masasisho ya kiotomatiki.</string>
+    <string name="info_news_catalog" formatted="false">Vichwa vya picha na panorama huonyesha nembo ya programu; alama za kupiga picha zina utofauti bora mchana na usiku.</string>
 </resources>

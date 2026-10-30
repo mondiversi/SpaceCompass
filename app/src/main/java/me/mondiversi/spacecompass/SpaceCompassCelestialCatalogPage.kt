@@ -105,7 +105,7 @@ internal fun SpaceCompassCelestialCatalogPage(timeMs: Long, remote: SpaceCompass
     val focusManager = androidx.compose.ui.platform.LocalFocusManager.current
     // Loading flags alone must not trigger catalog calculations.
     val catalogRemote = remember(remote.iss, remote.starlink, remote.satellites, remote.ephemerides, remote.motions) { remote }
-    var observationSnapshot by remember { mutableStateOf<Pair<Any, Map<SpaceCompassCelestialBody, SpaceCompassCelestialObservation?>>?>(null) }
+    var observationSnapshot by remember { mutableStateOf<Map<SpaceCompassCelestialBody, SpaceCompassCelestialObservation?>?>(null, referentialEqualityPolicy()) }
     val catalogLatitude = latitude?.let { round(it * 10000) / 10000 }
     val catalogLongitude = longitude?.let { round(it * 10000) / 10000 }
     val catalogAltitude = round(altitude / 10) * 10
@@ -117,12 +117,16 @@ internal fun SpaceCompassCelestialCatalogPage(timeMs: Long, remote: SpaceCompass
         catalogRemote, catalogLatitude, catalogLongitude, catalogAltitude) { timeMs }
     val observationKey = remember(availableBodies, visibilityTime, catalogRemote,
         catalogLatitude, catalogLongitude, catalogAltitude) { Any() }
-    val observations = observationSnapshot?.takeIf { it.first === observationKey }?.second.orEmpty()
-    LaunchedEffect(observationKey) {
+    // Retain the previous complete sky while the next calculation is pending.
+    val observations = observationSnapshot.orEmpty()
+    val observationsReady = observationSnapshot != null
+    // The first full snapshot must finish even if an accelerated clock changes inputs meanwhile.
+    val initialObservationKey = remember { observationKey }
+    LaunchedEffect(if (observationSnapshot == null) initialObservationKey else observationKey) {
         val calculated = withContext(Dispatchers.Default) {
             spaceCompassCatalogObservations(availableBodies,visibilityTime,catalogLatitude,catalogLongitude,catalogAltitude,catalogRemote)
         }
-        observationSnapshot = observationKey to calculated
+        observationSnapshot = calculated
     }
     LaunchedEffect(availableBodies, catalogTime, catalogRemote, catalogLatitude, catalogLongitude, catalogAltitude) {
         val snapshot = withContext(Dispatchers.Default) {
@@ -141,11 +145,16 @@ internal fun SpaceCompassCelestialCatalogPage(timeMs: Long, remote: SpaceCompass
         SpaceCompassCatalogQuery(catalogPreferences, query, selectedBodies, prioritySelected,
             favorites.bodies, observations, distanceSnapshot)
     }
-    var presentation by remember { mutableStateOf<SpaceCompassCatalogPresentation?>(null) }
-    // LaunchedEffect cancels obsolete requests; only the latest complete worker result is published.
-    LaunchedEffect(presenter, request, filtersOpen) {
-        presenter?.let { presentation = it.present(request, countsNeeded = filtersOpen) }
+    var viewState by remember { mutableStateOf(SpaceCompassCatalogViewState()) }
+    // Never publish a temporary empty sky or clear facets during a worker refresh.
+    LaunchedEffect(presenter, request, filtersOpen, observationsReady) {
+        if (observationsReady) presenter?.let {
+            val result = it.present(request, countsNeeded = filtersOpen)
+            viewState = viewState.publish(result)
+        }
     }
+    val presentation = viewState.presentation
+    val filterPresentation = viewState.filterPresentation
     val visibleBodies = presentation?.visible.orEmpty()
     val localizedNames = presentation?.names.orEmpty()
     val readySolarDistances = presentation?.solarDistances.orEmpty()
@@ -153,8 +162,8 @@ internal fun SpaceCompassCelestialCatalogPage(timeMs: Long, remote: SpaceCompass
     val earthDistances = presentation?.query?.distances?.earth.orEmpty()
     val displayedSort = presentation?.query?.preferences?.sort ?: sort
     val valueField = displayedSort.valueField
-    val resultsCurrent = presentation?.query === request
-    val filterCounts = presentation?.counts.takeIf { resultsCurrent }
+    val resultsCurrent = presentation?.query?.hasSameControlsAs(request) == true
+    val filterCounts = filterPresentation?.counts
     val dataNeeded by rememberUpdatedState(onDataNeeded)
     LaunchedEffect(catalogScroll) {
         snapshotFlow {
@@ -196,9 +205,9 @@ internal fun SpaceCompassCelestialCatalogPage(timeMs: Long, remote: SpaceCompass
                 }
             }
             // The open filter panel stays fixed; only the search/value header follows list gestures.
-            AnimatedVisibility(filtersOpen, enter = expandVertically() + fadeIn(), exit = shrinkVertically() + fadeOut()) {
-                SpaceCompassCatalogFilterBar(types, visibility, origin, pointing, visibleCount = visibleBodies.size.takeIf { resultsCurrent }, counts = filterCounts, searchActive = query.isNotBlank(),
-                    typeOrder = presentation?.typeOrder.orEmpty(), favoritesOnly = favoritesOnly,
+            AnimatedVisibility(filtersOpen && filterCounts != null, enter = expandVertically() + fadeIn(), exit = shrinkVertically() + fadeOut()) {
+                SpaceCompassCatalogFilterBar(types, visibility, origin, pointing, visibleCount = filterPresentation?.visible?.size, counts = filterCounts, searchActive = query.isNotBlank(),
+                    typeOrder = filterPresentation?.typeOrder.orEmpty(), favoritesOnly = favoritesOnly,
                     onType = { type -> updateCatalogPreferences(catalogPreferences.copy(
                         types = if (type in types) types - type else types + type)) },
                     onAllTypes = { updateCatalogPreferences(catalogPreferences.copy(types = emptySet())) },

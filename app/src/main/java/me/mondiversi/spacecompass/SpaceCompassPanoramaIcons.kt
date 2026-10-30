@@ -90,10 +90,11 @@ internal enum class SpaceCompassPanoramaControl { BACK, ZOOM_OUT, ZOOM_IN }
 
 @Composable
 internal fun SpaceCompassPanoramaControlIcon(control: SpaceCompassPanoramaControl) {
+    val visualStroke = SpaceCompassFloatingIconStrokeWidth * LocalSpaceCompassFloatingStrokeScale.current
     val tint = LocalContentColor.current
     val rtl = LocalLayoutDirection.current == LayoutDirection.Rtl
     SpaceCompassIconCanvas(tint, Modifier.size(24.dp)) { tint ->
-        val stroke = SpaceCompassFloatingIconStrokeWidth.toPx()
+        val stroke = visualStroke.toPx()
         fun line(ax: Float, ay: Float, bx: Float, by: Float) = drawLine(tint,
             Offset(size.width * ax, size.height * ay), Offset(size.width * bx, size.height * by),
             stroke, StrokeCap.Round)
@@ -113,6 +114,7 @@ internal fun SpaceCompassPanoramaControlIcon(control: SpaceCompassPanoramaContro
 /** Location disclosure control; a slash distinguishes the omitted-position variant. */
 @Composable
 internal fun SpaceCompassPanoramaPositionIcon(hidden: Boolean) {
+    val visualStroke = SpaceCompassFloatingIconStrokeWidth * LocalSpaceCompassFloatingStrokeScale.current
     val tint = LocalContentColor.current
     SpaceCompassIconCanvas(tint, Modifier.size(24.dp)) { tint ->
         val pin = Path().apply {
@@ -125,11 +127,11 @@ internal fun SpaceCompassPanoramaPositionIcon(hidden: Boolean) {
                 size.width * .5f, size.height * .91f)
             close()
         }
-        drawPath(pin, tint, style = Stroke(SpaceCompassFloatingIconStrokeWidth.toPx(), cap = StrokeCap.Round, join = StrokeJoin.Round))
+        drawPath(pin, tint, style = Stroke(visualStroke.toPx(), cap = StrokeCap.Round, join = StrokeJoin.Round))
         drawCircle(tint, size.minDimension * .105f, Offset(size.width * .5f, size.height * .37f),
-            style = Stroke(SpaceCompassFloatingIconStrokeWidth.toPx()))
+            style = Stroke(visualStroke.toPx()))
         if (hidden) drawLine(tint, Offset(size.width * .10f, size.height * .12f),
-            Offset(size.width * .90f, size.height * .88f), SpaceCompassFloatingIconStrokeWidth.toPx(), StrokeCap.Round)
+            Offset(size.width * .90f, size.height * .88f), visualStroke.toPx(), StrokeCap.Round)
     }
 }
 
@@ -137,6 +139,7 @@ internal fun SpaceCompassPanoramaPositionIcon(hidden: Boolean) {
 /** Label tag, crossed only when all annotations are hidden. */
 @Composable
 internal fun SpaceCompassPanoramaLabelsIcon(hidden: Boolean = false) {
+    val visualStroke = SpaceCompassFloatingIconStrokeWidth * LocalSpaceCompassFloatingStrokeScale.current
     val tint = LocalContentColor.current
     SpaceCompassIconCanvas(tint, Modifier.size(24.dp)) { tint ->
         val tag = Path().apply {
@@ -147,20 +150,21 @@ internal fun SpaceCompassPanoramaLabelsIcon(hidden: Boolean = false) {
             lineTo(size.width * .16f, size.height * .50f)
             close()
         }
-        drawPath(tag, tint, style = Stroke(SpaceCompassFloatingIconStrokeWidth.toPx(), cap = StrokeCap.Round, join = StrokeJoin.Round))
+        drawPath(tag, tint, style = Stroke(visualStroke.toPx(), cap = StrokeCap.Round, join = StrokeJoin.Round))
         drawCircle(tint, size.minDimension * .065f, Offset(size.width * .30f, size.height * .30f),
-            style = Stroke(SpaceCompassFloatingIconStrokeWidth.toPx()))
+            style = Stroke(visualStroke.toPx()))
         if (hidden) drawLine(tint, Offset(size.width * .10f, size.height * .12f),
-            Offset(size.width * .90f, size.height * .88f), SpaceCompassFloatingIconStrokeWidth.toPx(), StrokeCap.Round)
+            Offset(size.width * .90f, size.height * .88f), visualStroke.toPx(), StrokeCap.Round)
     }
 }
 
 
 @Composable
 internal fun SpaceCompassPanoramaCompassIcon() {
+    val visualStroke = SpaceCompassFloatingIconStrokeWidth * LocalSpaceCompassFloatingStrokeScale.current
     val tint = LocalContentColor.current
     SpaceCompassIconCanvas(tint, Modifier.size(24.dp)) { tint ->
-        drawCircle(tint, size.minDimension * .40f, style = Stroke(SpaceCompassFloatingIconStrokeWidth.toPx()))
+        drawCircle(tint, size.minDimension * .40f, style = Stroke(visualStroke.toPx()))
         val needle = Path().apply {
             moveTo(size.width * .68f, size.height * .20f)
             lineTo(size.width * .57f, size.height * .57f)
@@ -168,7 +172,7 @@ internal fun SpaceCompassPanoramaCompassIcon() {
             lineTo(size.width * .42f, size.height * .42f)
             close()
         }
-        drawPath(needle, tint, style = Stroke(SpaceCompassFloatingIconStrokeWidth.toPx(), cap = StrokeCap.Round, join = StrokeJoin.Round))
-        drawLine(tint, Offset(size.width*.42f,size.height*.42f), Offset(size.width*.57f,size.height*.57f), SpaceCompassFloatingIconStrokeWidth.toPx())
+        drawPath(needle, tint, style = Stroke(visualStroke.toPx(), cap = StrokeCap.Round, join = StrokeJoin.Round))
+        drawLine(tint, Offset(size.width*.42f,size.height*.42f), Offset(size.width*.57f,size.height*.57f), visualStroke.toPx())
     }
 }

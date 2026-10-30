@@ -1,9 +1,9 @@
 <resources>
     <string name="info_news_title">Últimas novedades · %1$s</string>
-    <string name="info_news_star_sky" formatted="false">Un nuevo botón en la vista principal muestra u oculta la retícula y la información de los puntos y recuerda la elección.</string>
-    <string name="info_news_texture_downloads" formatted="false">Las etiquetas de fotos y panorámicas mantienen sus propios ajustes, independientes de la retícula de la vista en directo.</string>
-    <string name="info_news_weather" formatted="false">La búsqueda, los filtros y la ordenación se procesan en segundo plano para una lista de objetos más ágil.</string>
-    <string name="info_news_viewer_zoom" formatted="false">La carga opcional de las filas espera hasta que termina el desplazamiento; las miniaturas listas siguen visibles.</string>
-    <string name="info_news_settings" formatted="false">Un fondo negro semitransparente mejora el contraste de los símbolos celestes generados por la aplicación.</string>
-    <string name="info_news_catalog" formatted="false">Un indicador circular centrado sigue el tema diurno/nocturno mientras se prepara la lista inicial.</string>
+    <string name="info_news_star_sky" formatted="false">Los botones Información y Menú centrados y los controles compactos y equilibrados mejoran la vista principal.</string>
+    <string name="info_news_texture_downloads" formatted="false">La posición de la retícula y los espacios entre paneles se adaptan mejor a las orientaciones vertical y horizontal.</string>
+    <string name="info_news_weather" formatted="false">El editor de posición de Location incluye un mapa de ancho completo, coordenadas en paralelo y botones uniformes.</string>
+    <string name="info_news_viewer_zoom" formatted="false">El tiempo estimado aparece en el editor de posición y los idiomas se ordenan por su código.</string>
+    <string name="info_news_settings" formatted="false">Las filas de objetos, los contadores de filtros y la selección múltiple permanecen estables durante las actualizaciones automáticas.</string>
+    <string name="info_news_catalog" formatted="false">Las cabeceras de fotos y panorámicas muestran el logotipo de la aplicación; los símbolos de captura mejoran su contraste de día y de noche.</string>
 </resources>

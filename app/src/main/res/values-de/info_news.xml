@@ -1,9 +1,9 @@
 <resources>
     <string name="info_news_title">Neuigkeiten · %1$s</string>
-    <string name="info_news_star_sky" formatted="false">Eine neue Schaltfläche in der Hauptansicht zeigt oder verbirgt Fadenkreuz und Punktinformationen und merkt sich die Auswahl.</string>
-    <string name="info_news_texture_downloads" formatted="false">Beschriftungen von Fotos und Panoramen behalten ihre eigenen Einstellungen, unabhängig vom Fadenkreuz der Liveansicht.</string>
-    <string name="info_news_weather" formatted="false">Suche, Filter und Sortierung laufen im Hintergrund, damit die Objektliste schneller reagiert.</string>
-    <string name="info_news_viewer_zoom" formatted="false">Optionale Zeileninhalte werden erst nach dem Scrollen geladen; fertige Vorschaubilder bleiben sichtbar.</string>
-    <string name="info_news_settings" formatted="false">Ein halbtransparenter schwarzer Hintergrund verbessert den Kontrast der von der App erzeugten Himmelssymbole.</string>
-    <string name="info_news_catalog" formatted="false">Ein mittiger kreisförmiger Ladeindikator folgt dem Tag-/Nachtthema, während die erste Liste vorbereitet wird.</string>
+    <string name="info_news_star_sky" formatted="false">Zentrierte Info- und Menütasten sowie kompakte, optisch ausgewogene Bedienelemente verbessern die Hauptansicht.</string>
+    <string name="info_news_texture_downloads" formatted="false">Fadenkreuzposition und Abstände der Informationsfelder passen sich besser an Hoch- und Querformat an.</string>
+    <string name="info_news_weather" formatted="false">Der Positionseditor in Location bietet eine Karte über die gesamte Breite, Koordinaten nebeneinander und einheitliche Aktionstasten.</string>
+    <string name="info_news_viewer_zoom" formatted="false">Geschätztes Wetter ist im Positionseditor sichtbar; die Sprachauswahl ist nach Sprachcode sortiert.</string>
+    <string name="info_news_settings" formatted="false">Objektzeilen, Filterzähler und Mehrfachauswahl bleiben bei automatischen Aktualisierungen stabil.</string>
+    <string name="info_news_catalog" formatted="false">Foto- und Panoramakopfzeilen zeigen das App-Logo; Aufnahmesymbole bieten einen verbesserten Tag-/Nachtkontrast.</string>
 </resources>

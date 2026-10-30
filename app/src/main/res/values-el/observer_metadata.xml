@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="observer_detect_selected">Εντοπισμός από την ορισμένη θέση</string>
-    <string name="observer_detect_current">Εντοπισμός από την τρέχουσα θέση</string>
+    <string name="observer_detect_selected">Από την ορισμένη θέση</string>
+    <string name="observer_detect_current">Από την τρέχουσα θέση</string>
     <string name="observer_zone_search">Αναζήτηση ζώνης ώρας</string>
     <string name="observer_zone_no_results">Δεν βρέθηκαν αντίστοιχες ζώνες ώρας.</string>
     <string name="observer_metadata_failed">Ο εντοπισμός δεν είναι διαθέσιμος. Δοκιμάστε ξανά ή εισαγάγετε μια τιμή.</string>

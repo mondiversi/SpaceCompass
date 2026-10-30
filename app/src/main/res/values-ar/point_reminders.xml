@@ -7,5 +7,5 @@
     <string name="point_reminder_no_calendar">لا يوجد تطبيق تقويم متاح</string>
     <string name="settings_events_title">الأحداث</string>
     <string name="settings_events_show_alarm">إظهار زر التنبيه في الشاشة الرئيسية</string>
-    <string name="settings_events_description">إدارة خيارات الأحداث السماوية.</string>
+    <string name="settings_events_description">إدارة خيارات الأحداث.</string>
 </resources>

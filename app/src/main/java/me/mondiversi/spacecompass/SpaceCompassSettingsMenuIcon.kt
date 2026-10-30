@@ -22,8 +22,9 @@ internal fun SpaceCompassSettingsMenuIcon(
     iconStrokeWidth: Dp? = null,
     crossed: Boolean = false
 ) {
+    val strokeScale = LocalSpaceCompassFloatingStrokeScale.current
     SpaceCompassIconCanvas(tint, modifier) { tint ->
-        val strokeWidth = iconStrokeWidth?.toPx() ?: maxOf(1.6.dp.toPx(), size.minDimension * 0.08f)
+        val strokeWidth = (iconStrokeWidth?.toPx() ?: maxOf(1.6.dp.toPx(), size.minDimension * 0.08f)) * strokeScale
         when (route) {
             "capture" -> {
                 val outerRadius = size.minDimension * .39f

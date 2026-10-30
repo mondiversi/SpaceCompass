@@ -31,8 +31,8 @@ internal fun SpaceCompassReticleToggleButton(checked: Boolean, onCheckedChange: 
         stringResource(if (checked) R.string.reticle_disable else R.string.reticle_enable),
         { onCheckedChange(!checked) }, tint, background,
         Modifier.testTag("toggle-reticle"), selectedState = checked,
+        glyphInk = spaceCompassFloatingVectorInk(if (checked) R.drawable.ic_reticle else R.drawable.ic_reticle_off),
         stateText = stringResource(if (checked) R.string.scene_reticle_on else R.string.scene_reticle_off)) {
-        Icon(painterResource(if (checked) R.drawable.ic_reticle else R.drawable.ic_reticle_off),
-            contentDescription = null, modifier = Modifier.size(26.dp))
+        SpaceCompassFloatingVectorIcon(if (checked) R.drawable.ic_reticle else R.drawable.ic_reticle_off)
     }
 }

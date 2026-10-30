@@ -1,5 +1,14 @@
 # Changelog
 
+## 1.7.2 — 2026-10-30
+
+- Refine the main scene with compact, optically balanced floating glyphs, equal-size centered Info/logo and Menu controls, and a standard anchored menu. Retain the lower-left collapse/pointing-axis row and restore dark capture symbols at night.
+- Improve portrait/landscape reticle placement, information-panel spacing and object-island action glyph weight without changing scientific projections or saved choices.
+- Embed a full-width rectangular map in the Location position editor; keep paired coordinate fields, estimated weather and consistent action buttons. Remove edge stretching only from the native-map editor.
+- Keep the last complete catalogue observation and facet snapshots during automatic updates, preventing row/count/selection flashes. Let the first snapshot finish under accelerated simulated clocks.
+- Add the app logo to photo and panorama metadata bands, preserving original floating-icon stroke weights while fitting their visible geometry. Sort language choices by their codes and refresh all six news summaries in twenty languages.
+- Release version 1.7.2/code 58 with the existing signing identity, signed update index and optional information archive. Reuse immutable external graphics collection 1.8 without new texture archives.
+
 ## 1.7.1 — 2026-10-29
 
 - Add a persistent main-view reticle/point-callout control, enabled by default and accented for the day/night theme. Hide live captions and their reminder action together without changing selected points or photo/panorama label policies.

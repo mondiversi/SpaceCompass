@@ -15,10 +15,11 @@
     <string name="observer_date">Дата</string>
     <string name="observer_time">Время</string>
     <string name="observer_limits">Некоторые орбитальные данные недоступны вне срока действия. Оценки погоды, когда доступны; иначе базовое ясное небо.</string>
-    <string name="observer_privacy">Поиск использует геокодер Android. Карта использует OpenStreetMap; выбранные координаты отправляются в Open-Meteo для высоты и часового пояса.</string>
+    <string name="observer_privacy">Карта использует OpenStreetMap; выбранные координаты отправляются в Open-Meteo для высоты и часового пояса.</string>
     <string name="observer_apply">Установить</string>
     <string name="observer_invalid">Проверьте координаты, высоту, дату, время и часовой пояс. Даты: 1900–2100. Несуществующее время при переходе на летнее время недопустимо.</string>
     <string name="observer_use_place">Использовать эту точку</string>
+    <string name="observer_use_current_position">Использовать текущую позицию</string>
     <string name="observer_simulation">Локация</string>
     <string name="observer_coordinates_value">Координаты: %1$s</string>
     <string name="observer_altitude_value">Высота: %1$s</string>

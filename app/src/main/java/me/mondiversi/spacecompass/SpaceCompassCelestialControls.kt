@@ -57,6 +57,8 @@ internal fun SpaceCompassCelestialSelector(body: SpaceCompassCelestialBody, colo
         LocalSpaceCompassNumericFormat.current, grouping = false)
     SpaceCompassFloatingActionButton(label, { catalogOpen?.value = true }, tint, background,
         modifier.testTag("celestial-select"), stateText = count,
+        glyphInk = spaceCompassFloatingInk(26f, .086f, if (selectedBodies.isEmpty()) .125f else .23f,
+            .914f, if (selectedBodies.isEmpty()) .875f else .77f),
         overlay = {
             if (selectedBodies.isNotEmpty()) SpaceCompassFloatingCountBadge(count,
                 Modifier.align(Alignment.TopEnd).testTag("celestial-selection-count"))
@@ -69,8 +71,9 @@ internal fun SpaceCompassCelestialSelector(body: SpaceCompassCelestialBody, colo
 /** One familiar ringed planet, accented when objects are selected. */
 @Composable
 private fun SpaceCompassCelestialCatalogIcon(modifier: Modifier, tint: Color, crossed: Boolean) {
+    val visualStroke = SpaceCompassFloatingIconStrokeWidth * LocalSpaceCompassFloatingStrokeScale.current
     Canvas(modifier) {
-        val stroke = Stroke(SpaceCompassFloatingIconStrokeWidth.toPx(), cap = StrokeCap.Round)
+        val stroke = Stroke(visualStroke.toPx(), cap = StrokeCap.Round)
         drawCircle(tint, size.minDimension * 0.27f, style = stroke)
         rotate(-28f) {
             val topLeft = Offset(size.width * 0.04f, size.height * 0.33f)
@@ -83,7 +86,7 @@ private fun SpaceCompassCelestialCatalogIcon(modifier: Modifier, tint: Color, cr
         if (crossed) drawLine(tint,
             Offset(size.width * .125f, size.height * .125f),
             Offset(size.width * .875f, size.height * .875f),
-            strokeWidth = SpaceCompassFloatingIconStrokeWidth.toPx(), cap = StrokeCap.Round)
+            strokeWidth = visualStroke.toPx(), cap = StrokeCap.Round)
     }
 }
 /** One kilometer unit only, plus AU. Extra Mkm precision keeps live probe distances visible. */

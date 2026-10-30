@@ -15,10 +15,11 @@
     <string name="observer_date">Tarih</string>
     <string name="observer_time">Saat</string>
     <string name="observer_limits">Bazı yörünge verileri geçerlilik tarihleri dışında kullanılamaz. Varsa hava durumu tahminleri; yoksa temel açık gökyüzü.</string>
-    <string name="observer_privacy">Arama Android coğrafi kodlayıcısını kullanır. Harita OpenStreetMap kullanır; seçilen koordinatlar rakım ve saat dilimi için Open-Meteo’ya gönderilir.</string>
+    <string name="observer_privacy">Harita OpenStreetMap kullanır; seçilen koordinatlar rakım ve saat dilimi için Open-Meteo’ya gönderilir.</string>
     <string name="observer_apply">Ayarla</string>
     <string name="observer_invalid">Koordinat, rakım, tarih, saat ve saat dilimini kontrol edin. Tarihler: 1900–2100. Yaz saati değişimindeki var olmayan saatler geçersizdir.</string>
     <string name="observer_use_place">Bu noktayı kullan</string>
+    <string name="observer_use_current_position">Geçerli konumu kullan</string>
     <string name="observer_simulation">Konum</string>
     <string name="observer_coordinates_value">Koordinatlar: %1$s</string>
     <string name="observer_altitude_value">Rakım: %1$s</string>

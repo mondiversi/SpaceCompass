@@ -73,7 +73,8 @@ internal fun SpaceCompassPointReminderButton(body: SpaceCompassCelestialBody, po
         .then(if (request == null) Modifier.spaceCompassSceneInputShield() else Modifier).testTag(tag)
     if (badgeBackground != null) {
         SpaceCompassFloatingActionButton(description, onClick, tint, badgeBackground,
-            buttonModifier, enabled = request != null, backgroundAlpha = SPACE_COMPASS_POINT_CAPTION_ALPHA) {
+            buttonModifier, enabled = request != null, backgroundAlpha = SPACE_COMPASS_POINT_CAPTION_ALPHA,
+            glyphInk = spaceCompassFloatingInk(28f, .18f, .10f, .82f, .89f)) {
             SpaceCompassPointReminderGlyph(tint, request != null, Modifier.size(28.dp),
                 iconStrokeWidth = SpaceCompassFloatingIconStrokeWidth)
         }
@@ -94,8 +95,9 @@ internal fun SpaceCompassPointReminderButton(body: SpaceCompassCelestialBody, po
 internal fun SpaceCompassPointReminderGlyph(tint: Color, enabled: Boolean, modifier: Modifier,
     iconStrokeWidth: Dp = 2.dp) {
     val tint = if (enabled) tint else tint.copy(alpha = .35f)
+    val visualStroke = iconStrokeWidth * LocalSpaceCompassFloatingStrokeScale.current
     SpaceCompassIconCanvas(tint, modifier) { color ->
-        val stroke = Stroke(iconStrokeWidth.toPx(), cap = StrokeCap.Round)
+        val stroke = Stroke(visualStroke.toPx(), cap = StrokeCap.Round)
         val bell = Path().apply {
             moveTo(size.width*.18f, size.height*.73f)
             cubicTo(size.width*.30f, size.height*.60f, size.width*.27f, size.height*.48f, size.width*.28f, size.height*.39f)
@@ -104,7 +106,7 @@ internal fun SpaceCompassPointReminderGlyph(tint: Color, enabled: Boolean, modif
             close()
         }
         drawPath(bell, color, style = stroke)
-        drawLine(color, Offset(size.width*.5f, size.height*.10f), Offset(size.width*.5f, size.height*.18f), iconStrokeWidth.toPx(), StrokeCap.Round)
+        drawLine(color, Offset(size.width*.5f, size.height*.10f), Offset(size.width*.5f, size.height*.18f), visualStroke.toPx(), StrokeCap.Round)
         drawArc(color, 0f, 180f, false, topLeft = Offset(size.width*.4f, size.height*.72f),
             size = androidx.compose.ui.geometry.Size(size.width*.2f, size.height*.17f), style = stroke)
     }

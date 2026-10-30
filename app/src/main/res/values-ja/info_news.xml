@@ -1,9 +1,9 @@
 <resources>
     <string name="info_news_title">最近の変更 · %1$s</string>
-    <string name="info_news_star_sky" formatted="false">メイン画面の新しいボタンで照準とポイント情報を表示・非表示にでき、選択が保存されます。</string>
-    <string name="info_news_texture_downloads" formatted="false">写真とパノラマのラベル設定は、ライブ画面の照準とは独立したままです。</string>
-    <string name="info_news_weather" formatted="false">検索・フィルター・並べ替えをバックグラウンドで処理し、天体一覧の応答性を改善しました。</string>
-    <string name="info_news_viewer_zoom" formatted="false">必須ではない行データの読み込みはスクロール停止後に再開し、読み込み済みのサムネイルは表示を維持します。</string>
-    <string name="info_news_settings" formatted="false">アプリが描く天体シンボルに半透明の黒い背景を加え、コントラストを改善しました。</string>
-    <string name="info_news_catalog" formatted="false">最初の一覧の準備中は、昼夜のテーマに合った円形の読み込み表示が中央に現れます。</string>
+    <string name="info_news_star_sky" formatted="false">情報とメニューのボタンを中央に並べ、コンパクトで見た目のバランスが取れた操作部にしました。</string>
+    <string name="info_news_texture_downloads" formatted="false">照準の位置と情報パネルの間隔が、縦向きと横向きにより自然に対応します。</string>
+    <string name="info_news_weather" formatted="false">Locationの位置編集に、カード幅いっぱいの地図、横並びの座標、一貫した操作ボタンを追加しました。</string>
+    <string name="info_news_viewer_zoom" formatted="false">位置編集に推定天気を表示し、言語の選択肢を言語コード順に並べました。</string>
+    <string name="info_news_settings" formatted="false">自動更新中も天体の行、フィルター件数、一括選択の表示を安定して保ちます。</string>
+    <string name="info_news_catalog" formatted="false">写真とパノラマのヘッダーにアプリのロゴを表示し、撮影記号の昼夜のコントラストを改善しました。</string>
 </resources>

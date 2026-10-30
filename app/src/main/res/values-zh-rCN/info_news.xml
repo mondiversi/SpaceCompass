@@ -1,9 +1,9 @@
 <resources>
     <string name="info_news_title">最新变化 · %1$s</string>
-    <string name="info_news_star_sky" formatted="false">主界面新增按钮，可显示或隐藏准星和点位信息，并记住您的选择。</string>
-    <string name="info_news_texture_downloads" formatted="false">照片和全景图的标签仍使用独立设置，不受实时视图准星开关影响。</string>
-    <string name="info_news_weather" formatted="false">搜索、筛选和排序改为在后台处理，让天体列表响应更流畅。</string>
-    <string name="info_news_viewer_zoom" formatted="false">非紧急的行加载会等待滚动停止后继续，已准备好的缩略图保持可见。</string>
-    <string name="info_news_settings" formatted="false">为应用绘制的天体符号添加半透明黑色背景，提高对比度。</string>
-    <string name="info_news_catalog" formatted="false">初始列表准备期间，中央会显示与日间或夜间主题相适应的圆形加载指示器。</string>
+    <string name="info_news_star_sky" formatted="false">信息和菜单按钮居中并排，操作按钮更加紧凑，视觉上也更平衡。</string>
+    <string name="info_news_texture_downloads" formatted="false">准星位置和信息面板间距更自然地适应竖屏与横屏。</string>
+    <string name="info_news_weather" formatted="false">Location的位置编辑器提供卡片全宽地图、并排坐标和统一的操作按钮。</string>
+    <string name="info_news_viewer_zoom" formatted="false">位置编辑器显示预估天气，语言选项按语言代码排序。</string>
+    <string name="info_news_settings" formatted="false">自动更新时，天体行、筛选计数和批量选择显示保持稳定。</string>
+    <string name="info_news_catalog" formatted="false">照片和全景图的顶部显示应用标志，并改善了拍摄符号在日间与夜间的对比度。</string>
 </resources>

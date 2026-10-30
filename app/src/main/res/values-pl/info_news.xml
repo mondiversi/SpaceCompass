@@ -1,9 +1,9 @@
 <resources>
     <string name="info_news_title">Ostatnie nowości · %1$s</string>
-    <string name="info_news_star_sky" formatted="false">Nowy przycisk w widoku głównym pokazuje lub ukrywa celownik i informacje o punktach oraz zapamiętuje wybór.</string>
-    <string name="info_news_texture_downloads" formatted="false">Etykiety zdjęć i panoram zachowują własne ustawienia, niezależne od celownika w widoku na żywo.</string>
-    <string name="info_news_weather" formatted="false">Wyszukiwanie, filtrowanie i sortowanie odbywa się w tle, dzięki czemu lista obiektów reaguje sprawniej.</string>
-    <string name="info_news_viewer_zoom" formatted="false">Opcjonalne wczytywanie wierszy czeka na zakończenie przewijania; gotowe miniatury pozostają widoczne.</string>
-    <string name="info_news_settings" formatted="false">Półprzezroczyste czarne tło poprawia kontrast symboli niebieskich generowanych przez aplikację.</string>
-    <string name="info_news_catalog" formatted="false">Wyśrodkowany okrągły wskaźnik wczytywania dopasowuje się do motywu dziennego i nocnego podczas przygotowywania listy.</string>
+    <string name="info_news_star_sky" formatted="false">Wyśrodkowane przyciski Informacje i Menu oraz zwarte, optycznie wyważone elementy sterowania poprawiają widok główny.</string>
+    <string name="info_news_texture_downloads" formatted="false">Położenie celownika i odstępy paneli informacyjnych lepiej dostosowują się do orientacji pionowej i poziomej.</string>
+    <string name="info_news_weather" formatted="false">Edytor pozycji Location zawiera mapę na pełną szerokość, współrzędne obok siebie i spójne przyciski działań.</string>
+    <string name="info_news_viewer_zoom" formatted="false">Szacowana pogoda jest widoczna w edytorze pozycji, a języki są uporządkowane według kodów.</string>
+    <string name="info_news_settings" formatted="false">Wiersze obiektów, liczniki filtrów i zaznaczanie wielu elementów pozostają stabilne podczas automatycznych aktualizacji.</string>
+    <string name="info_news_catalog" formatted="false">Nagłówki zdjęć i panoram pokazują logo aplikacji; symbole wykonywania zdjęć mają lepszy kontrast w dzień i w nocy.</string>
 </resources>

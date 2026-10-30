@@ -15,10 +15,11 @@
     <string name="observer_date">تاریخ</string>
     <string name="observer_time">زمان</string>
     <string name="observer_limits">بعضی داده‌های مداری خارج از دوره اعتبار در دسترس نیستند. در صورت دسترسی، برآورد آب‌وهوا استفاده می‌شود؛ در غیر این صورت آسمان صاف پیش‌فرض نمایش داده می‌شود.</string>
-    <string name="observer_privacy">جستجو از زمین‌کدگذار Android استفاده می‌کند. نقشه از OpenStreetMap استفاده می‌کند؛ مختصات انتخابی برای ارتفاع و منطقه زمانی به Open-Meteo ارسال می‌شوند.</string>
+    <string name="observer_privacy">نقشه از OpenStreetMap استفاده می‌کند؛ مختصات انتخابی برای ارتفاع و منطقه زمانی به Open-Meteo ارسال می‌شوند.</string>
     <string name="observer_apply">تنظیم</string>
     <string name="observer_invalid">مختصات، ارتفاع، تاریخ، زمان و منطقه زمانی را بررسی کنید. تاریخ‌ها: 1900–2100. زمان‌های ناموجود هنگام تغییر ساعت تابستانی معتبر نیستند.</string>
     <string name="observer_use_place">استفاده از این نقطه</string>
+    <string name="observer_use_current_position">استفاده از موقعیت فعلی</string>
     <string name="observer_simulation">مکان</string>
     <string name="observer_coordinates_value">مختصات: %1$s</string>
     <string name="observer_altitude_value">ارتفاع: %1$s</string>
