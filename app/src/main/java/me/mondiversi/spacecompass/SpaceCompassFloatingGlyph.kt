@@ -1,6 +1,9 @@
 package me.mondiversi.spacecompass
 
 import android.graphics.RectF
+import android.content.res.Resources
+import android.content.res.XmlResourceParser
+import android.util.TypedValue
 import androidx.annotation.DrawableRes
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.size
@@ -88,12 +91,21 @@ internal fun spaceCompassChevronOpticalOffset(angle: Float): Offset {
         kotlin.math.cos(radians).toFloat() * distance)
 }
 
+/** Resolve compiled drawable XML through its asset cookie, preserving qualified resource selection. */
+private fun spaceCompassOpenVectorXml(resources: Resources, @DrawableRes resource: Int): XmlResourceParser {
+    val value = TypedValue()
+    resources.getValue(resource, value, true)
+    val path = requireNotNull(value.string).toString()
+    require(path.endsWith(".xml")) { "Floating vector artwork must be XML" }
+    return resources.assets.openXmlResourceParser(value.assetCookie, path)
+}
+
 /** These floating vector resources contain flat paths; use their actual paths rather than the padded viewport. */
 @Composable
 internal fun spaceCompassFloatingVectorInk(@DrawableRes resource: Int, side: Float = 26f): SpaceCompassFloatingInk {
     val resources = LocalResources.current
     return remember(resources, resource, side) {
-        val xml = resources.getXml(resource)
+        val xml = spaceCompassOpenVectorXml(resources, resource)
         val android = "http://schemas.android.com/apk/res/android"
         var width = 24f; var height = 24f; var maxStroke = 0f
         val all = RectF()
@@ -129,7 +141,7 @@ internal fun spaceCompassFloatingVectorInk(@DrawableRes resource: Int, side: Flo
 internal fun SpaceCompassFloatingVectorIcon(@DrawableRes resource: Int, label: String? = null) {
     val resources = LocalResources.current
     val data = remember(resources, resource) {
-        val xml = resources.getXml(resource)
+        val xml = spaceCompassOpenVectorXml(resources, resource)
         val android = "http://schemas.android.com/apk/res/android"
         var width = 24f; var height = 24f
         val paths = mutableListOf<Pair<android.graphics.Path, Float>>()
