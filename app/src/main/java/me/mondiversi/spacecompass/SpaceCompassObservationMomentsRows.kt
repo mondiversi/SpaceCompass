@@ -89,8 +89,9 @@ internal fun SpaceCompassObservationMomentsRows(body: SpaceCompassCelestialBody,
                     formatting.locale, timeZone, formatting.numeric, formatting.deviceLocale, includeSeconds = false,
                     allowHistorical = true) }
                 val offset = point?.let { formatSpaceCompassObserverUtcOffset(zone.rules.getOffset(Instant.ofEpochMilli(it.timeMs))) }
+                val elevationText = point?.let { formatSpaceCompassPanoramaElevation(it.position.elevationDegrees, formatting) + "°" }
                 Text(if (point == null) { if (!result.first) stringResource(R.string.pc_loading) else "—" }
-                    else "$dateText\n$clockText · $offset", color = if (enabled) MaterialTheme.colorScheme.primary else secondaryText,
+                    else "$dateText\n$clockText · $offset\n$elevationText", color = if (enabled) MaterialTheme.colorScheme.primary else secondaryText,
                     fontSize = 12.sp, lineHeight = 16.sp, style = TextStyle(textDirection = TextDirection.ContentOrLtr))
             }
         }

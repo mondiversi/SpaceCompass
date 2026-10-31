@@ -1,7 +1,7 @@
 <resources>
     <string name="info_news_title">Neuigkeiten · %1$s</string>
-    <string name="info_news_star_sky" formatted="false">Das Observatorium vergleicht obere Kulminationen im Jahr der Location und ermittelt die jährliche maximale und minimale Höhe.</string>
-    <string name="info_news_texture_downloads" formatted="false">Mittlere Höhen zeigen die tatsächlichen Kulminationen nahe dem Mittelwert der Jahresextreme, einschließlich aller zunehmenden und abnehmenden Durchgänge.</string>
+    <string name="info_news_star_sky" formatted="false">Observatorium behält alle bedeutsamen jährlichen Höhenmaxima und -minima bei; ihre Anzahl richtet sich nach Objekt und Location.</string>
+    <string name="info_news_texture_downloads" formatted="false">Jeder Zeitpunkt zeigt Datum, Ortszeit, UTC-Versatz und Höhe in Grad, einschließlich aller Durchgänge nahe dem Mittel der absoluten jährlichen Extremhöhen.</string>
     <string name="info_news_weather" formatted="false">Datum und Uhrzeit antippen, um diesen Moment für die Location einzustellen und die Zeit bei 0× anzuhalten. Ort, Höhe und Wiederaufnahme bleiben erhalten.</string>
     <string name="info_news_viewer_zoom" formatted="false">Jahresberechnungen verwenden die wirksame Location und Zeitzone einschließlich Sommerzeit. Unzureichende Bahndaten werden angezeigt.</string>
     <string name="info_news_settings" formatted="false">Jedes Objekt merkt sich getrennte Scrollpositionen für Observatorium und Tagesbahn während der aktuellen Sitzung.</string>

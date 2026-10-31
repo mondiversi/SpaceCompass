@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="observation_height_maximum">Maksimum roczne</string>
-    <string name="observation_height_minimum">Minimum roczne</string>
+    <string name="observation_height_maximum">Maksimum wysokości</string>
+    <string name="observation_height_minimum">Minimum wysokości</string>
     <string name="observation_height_mid_rising">Średnia wysokość · wzrost</string>
     <string name="observation_height_mid_setting">Średnia wysokość · spadek</string>
-    <string name="observation_moments_year">Porównanie górowań w roku kalendarzowym Location. Dotknij daty i godziny, aby zatrzymać się w tej chwili.</string>
+    <string name="observation_moments_year">Maksima, minima i przejścia przez wysokość pośrednią górowań w roku kalendarzowym Location. Dotknij daty i godziny, aby zatrzymać się w tej chwili.</string>
     <string name="observation_moments_midpoint_note">Średnia wysokość: górowanie najbliższe średniej rocznej maksymalnej i minimalnej wysokości.</string>
     <string name="observation_moments_unavailable">Dostępne dane orbitalne nie pozwalają na wiarygodne obliczenia roczne.</string>
     <string name="observation_moment_applied">Ustawiono datę i godzinę · Czas zatrzymany</string>

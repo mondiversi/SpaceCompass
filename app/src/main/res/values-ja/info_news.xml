@@ -1,7 +1,7 @@
 <resources>
     <string name="info_news_title">最近の変更 · %1$s</string>
-    <string name="info_news_star_sky" formatted="false">天文台はLocationの年全体で上方子午線通過の高度を比較し、年間最高と最低の高度を求めます。</string>
-    <string name="info_news_texture_downloads" formatted="false">中間高度では年間最高・最低の平均に最も近い実際の上方子午線通過を示し、増加・減少するすべての通過を保持します。</string>
+    <string name="info_news_star_sky" formatted="false">観測所は年間の高度変化の有意な極大・極小をすべて保持し、その数は天体とLocationに応じて変わります。</string>
+    <string name="info_news_texture_downloads" formatted="false">各時点に日付、現地時刻、UTCオフセット、高度（度）を表示し、年間の絶対的な最高・最低高度の平均付近を通過する時点もすべて保持します。</string>
     <string name="info_news_weather" formatted="false">観測日時をタップすると、その瞬間をLocationに設定して時間を0×で停止します。位置、高度、再開設定は保持されます。</string>
     <string name="info_news_viewer_zoom" formatted="false">年間計算は有効なLocationと夏時間を含む時間帯を使用します。軌道データが年間を網羅しない場合は明示します。</string>
     <string name="info_news_settings" formatted="false">各天体は現在のセッション中、天文台と日周経路のスクロール位置を別々に記憶します。</string>

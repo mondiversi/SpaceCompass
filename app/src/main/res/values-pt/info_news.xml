@@ -1,7 +1,7 @@
 <resources>
     <string name="info_news_title">Últimas novidades · %1$s</string>
-    <string name="info_news_star_sky" formatted="false">O Observatório compara as culminações superiores ao longo do ano da Location para encontrar as alturas máxima e mínima anuais.</string>
-    <string name="info_news_texture_downloads" formatted="false">A altura média mostra as culminações reais mais próximas da média dos extremos anuais, mantendo todas as passagens crescentes e decrescentes.</string>
+    <string name="info_news_star_sky" formatted="false">O Observatório mantém todos os máximos e mínimos anuais significativos de altura; o número depende do objeto e da Location.</string>
+    <string name="info_news_texture_downloads" formatted="false">Cada momento mostra data, hora local, desvio UTC e altura em graus, incluindo todas as passagens próximas da média dos extremos anuais absolutos.</string>
     <string name="info_news_weather" formatted="false">Toque na data e hora de uma observação para aplicar esse instante à Location e parar o tempo em 0×, preservando posição, altitude e retoma.</string>
     <string name="info_news_viewer_zoom" formatted="false">Os cálculos anuais usam a Location e o fuso efetivos, incluindo a hora de verão. A cobertura orbital insuficiente é indicada.</string>
     <string name="info_news_settings" formatted="false">Cada objeto guarda separadamente o deslocamento do Observatório e do Percurso diário durante a sessão atual.</string>

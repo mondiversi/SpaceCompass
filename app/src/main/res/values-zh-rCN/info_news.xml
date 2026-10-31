@@ -1,7 +1,7 @@
 <resources>
     <string name="info_news_title">最新变化 · %1$s</string>
-    <string name="info_news_star_sky" formatted="false">观测台比较Location全年各次上中天的高度，以查找年度最高和最低高度。</string>
-    <string name="info_news_texture_downloads" formatted="false">中间高度显示最接近年度最高与最低高度平均值的实际中天时刻，保留所有上升和下降阶段的经过。</string>
+    <string name="info_news_star_sky" formatted="false">观测台保留一年中所有显著的高度极大值和极小值，数量随天体及Location而变化。</string>
+    <string name="info_news_texture_downloads" formatted="false">每个时刻均显示日期、当地时间、UTC偏移和以度为单位的高度，并保留所有接近全年绝对最高与最低高度平均值的经过时刻。</string>
     <string name="info_news_weather" formatted="false">点按观测日期和时间，即可将该时刻应用到Location并将时间暂停为0×，同时保留位置、高度和恢复设置。</string>
     <string name="info_news_viewer_zoom" formatted="false">年度计算使用有效的Location和时区，包括夏令时。轨道数据不足以覆盖全年时会明确提示。</string>
     <string name="info_news_settings" formatted="false">每个天体在当前会话中分别记住观测台和每日路径的滚动位置。</string>

@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="observation_height_maximum">Jahresmaximum</string>
-    <string name="observation_height_minimum">Jahresminimum</string>
+    <string name="observation_height_maximum">Höhenmaximum</string>
+    <string name="observation_height_minimum">Höhenminimum</string>
     <string name="observation_height_mid_rising">Mittlere Höhe · zunehmend</string>
     <string name="observation_height_mid_setting">Mittlere Höhe · abnehmend</string>
-    <string name="observation_moments_year">Vergleich der oberen Kulminationen im Kalenderjahr der Location. Datum und Uhrzeit antippen, um diesen Moment anzuhalten.</string>
+    <string name="observation_moments_year">Maxima, Minima und Durchgänge auf mittlerer Höhe der oberen Kulminationen im Kalenderjahr der Location. Datum und Uhrzeit antippen, um diesen Moment anzuhalten.</string>
     <string name="observation_moments_midpoint_note">Mittlere Höhe: die Kulmination, die dem Mittelwert der jährlichen maximalen und minimalen Höhe am nächsten liegt.</string>
     <string name="observation_moments_unavailable">Die verfügbaren Bahndaten ermöglichen keine zuverlässige Jahresberechnung.</string>
     <string name="observation_moment_applied">Datum und Uhrzeit eingestellt · Zeit angehalten</string>

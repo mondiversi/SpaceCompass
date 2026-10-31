@@ -1,7 +1,7 @@
 <resources>
     <string name="info_news_title">Latest news · %1$s</string>
-    <string name="info_news_star_sky" formatted="false">Observatory compares upper culminations across the Location’s year to find the annual maximum and minimum heights.</string>
-    <string name="info_news_texture_downloads" formatted="false">Mid-height entries show the actual culminations nearest the mean of the annual extremes, retaining every increasing and decreasing passage.</string>
+    <string name="info_news_star_sky" formatted="false">Observatory keeps every significant annual height peak and trough, adapting their number to the object and Location.</string>
+    <string name="info_news_texture_downloads" formatted="false">Each moment shows date, local time, UTC offset and elevation in degrees, including every mid-height passage near the mean of the absolute annual extremes.</string>
     <string name="info_news_weather" formatted="false">Tap an observation date and time to apply that instant to the Location and pause time at 0×, preserving position, altitude and resumption choices.</string>
     <string name="info_news_viewer_zoom" formatted="false">Annual calculations use the effective Location and time zone, including daylight saving; incomplete orbital coverage is clearly indicated.</string>
     <string name="info_news_settings" formatted="false">Each object remembers independent Observatory and Daily path scroll positions throughout the current session.</string>

@@ -1,7 +1,7 @@
 <resources>
     <string name="info_news_title">Последние новости · %1$s</string>
-    <string name="info_news_star_sky" formatted="false">Обсерватория сравнивает верхние кульминации за год Location, определяя годовую максимальную и минимальную высоту.</string>
-    <string name="info_news_texture_downloads" formatted="false">Средняя высота показывает реальные кульминации, ближайшие к среднему годовых экстремумов, сохраняя все возрастающие и убывающие прохождения.</string>
+    <string name="info_news_star_sky" formatted="false">Обсерватория сохраняет все значимые годовые максимумы и минимумы высоты; их число зависит от объекта и Location.</string>
+    <string name="info_news_texture_downloads" formatted="false">Для каждого момента показаны дата, местное время, смещение UTC и высота в градусах, включая все прохождения вблизи среднего абсолютных годовых экстремумов.</string>
     <string name="info_news_weather" formatted="false">Нажмите на дату и время наблюдения, чтобы задать этот момент в Location и остановить время на 0×, сохранив положение, высоту и возобновление.</string>
     <string name="info_news_viewer_zoom" formatted="false">Годовые расчёты используют действующие Location и часовой пояс с учётом летнего времени. Недостаточное покрытие орбиты явно указано.</string>
     <string name="info_news_settings" formatted="false">Каждый объект раздельно запоминает прокрутку Обсерватории и Дневного пути в текущем сеансе.</string>

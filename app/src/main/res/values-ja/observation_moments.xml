@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="observation_height_maximum">年間最高</string>
-    <string name="observation_height_minimum">年間最低</string>
+    <string name="observation_height_maximum">最高高度</string>
+    <string name="observation_height_minimum">最低高度</string>
     <string name="observation_height_mid_rising">中間高度 · 増加</string>
     <string name="observation_height_mid_setting">中間高度 · 減少</string>
-    <string name="observation_moments_year">Locationの暦年全体で上方子午線通過時の高度を比較します。日時をタップすると、その瞬間で時間を停止します。</string>
+    <string name="observation_moments_year">Locationの暦年全体における上方子午線通過時の高度の極大・極小と中間高度の通過を比較します。日時をタップすると、その瞬間で時間を停止します。</string>
     <string name="observation_moments_midpoint_note">中間高度：年間最高高度と最低高度の平均に最も近い上方子午線通過です。</string>
     <string name="observation_moments_unavailable">利用可能な軌道データでは、信頼できる年間計算を行えません。</string>
     <string name="observation_moment_applied">日時を設定 · 時間停止中</string>

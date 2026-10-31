@@ -2,12 +2,14 @@
 
 ## 1.7.3 — 2026-10-31
 
-- Add annual observation moments to Observatory: compare upper culminations throughout the Location calendar year to find the highest and lowest annual culmination, using effective coordinates, observer altitude and local time-zone rules.
-- Show each passage near the mean of the two annual heights. Choose the nearer actual upper culmination instead of interpolating a non-culminating time between days. Preserve multiple lunar/other passages; identify increasing and decreasing heights.
+- Add annual observation moments to Observatory: compare upper culminations throughout the Location calendar year and retain every significant local height maximum and minimum, using effective coordinates, observer altitude and local time-zone rules. The number adapts to each object and location, including both equatorial solar peaks and troughs.
+- Display each event’s date, local time, UTC offset and elevation in degrees, using the selected numeric format. Show each passage near the mean of the absolute annual maximum and minimum heights. Choose the nearer actual upper culmination instead of interpolating a non-culminating time between days. Preserve multiple lunar/other passages; identify increasing and decreasing heights.
 - Tap a calculated date/time to configure the Location at that exact instant and pause time at 0× atomically. Preserve spatial overrides and resumption policy, discard stale temporal checkpoints, and retain precise instants across daylight-saving overlaps and app reopening.
 - Calculate annual tracks in cancellable background work, cached by object, year, Location and source. Clearly mark incomplete annual ephemerides and short-lived satellite data unavailable instead of extrapolating them into an annual prediction.
 - Retain independent Observatory and Daily path scroll positions for each object within the activity session, including rotation, normal backgrounding and all main/catalogue entry points. Keep the desired offset through temporary loading/remeasurement, remember the daily header state, and prefer returning to the consulted position over incidental selected-point centering.
 - Refresh all six in-app news summaries in twenty languages. Release version 1.7.3/code 59 with the existing certificate, signed update index and optional reference-information archive. External graphics collection 1.8 remains unchanged, with no new complete texture archive.
+
+The refreshed 1.7.3 retains version code 59 and the existing release/tag. An already installed 1.7.3 does not receive a same-code update offer; manually reinstall the refreshed APK to obtain these refinements.
 
 ## 1.7.2 — 2026-10-30
 

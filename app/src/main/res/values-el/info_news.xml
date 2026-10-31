@@ -1,7 +1,7 @@
 <resources>
     <string name="info_news_title">Τελευταία νέα · %1$s</string>
-    <string name="info_news_star_sky" formatted="false">Το Παρατηρητήριο συγκρίνει τις άνω μεσουρανήσεις στο έτος της Location για το ετήσιο μέγιστο και ελάχιστο ύψος.</string>
-    <string name="info_news_texture_downloads" formatted="false">Το μέσο ύψος δείχνει τις πραγματικές μεσουρανήσεις πλησιέστερα στον μέσο όρο των ετήσιων άκρων, διατηρώντας κάθε αυξανόμενη και μειούμενη διέλευση.</string>
+    <string name="info_news_star_sky" formatted="false">Το Παρατηρητήριο διατηρεί όλα τα σημαντικά ετήσια μέγιστα και ελάχιστα ύψους· ο αριθμός τους εξαρτάται από το αντικείμενο και τη Location.</string>
+    <string name="info_news_texture_downloads" formatted="false">Κάθε στιγμή δείχνει ημερομηνία, τοπική ώρα, απόκλιση UTC και ύψος σε μοίρες, μαζί με όλες τις διελεύσεις κοντά στον μέσο όρο των απόλυτων ετήσιων ακραίων υψών.</string>
     <string name="info_news_weather" formatted="false">Πατήστε ημερομηνία και ώρα παρατήρησης για εφαρμογή στη Location και παύση χρόνου στο 0×, διατηρώντας θέση, υψόμετρο και συνέχιση.</string>
     <string name="info_news_viewer_zoom" formatted="false">Οι ετήσιοι υπολογισμοί χρησιμοποιούν την ενεργή Location και ζώνη ώρας, με θερινή ώρα. Η ανεπαρκής τροχιακή κάλυψη επισημαίνεται.</string>
     <string name="info_news_settings" formatted="false">Κάθε αντικείμενο θυμάται χωριστά την κύλιση στο Παρατηρητήριο και στην Ημερήσια διαδρομή για την τρέχουσα συνεδρία.</string>

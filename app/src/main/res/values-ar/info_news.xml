@@ -1,7 +1,7 @@
 <resources>
     <string name="info_news_title">آخر المستجدات · %1$s</string>
-    <string name="info_news_star_sky" formatted="false">يقارن المرصد العبور العلوي على مدار سنة Location لتحديد أقصى وأدنى ارتفاع سنوي.</string>
-    <string name="info_news_texture_downloads" formatted="false">يعرض منتصف الارتفاع العبور العلوي الفعلي الأقرب إلى متوسط الحدين السنويين، مع الاحتفاظ بكل مرور متزايد أو متناقص.</string>
+    <string name="info_news_star_sky" formatted="false">يحتفظ المرصد بكل قمم وقيعان الارتفاع السنوية المهمة، ويتغير عددها بحسب الجرم وLocation.</string>
+    <string name="info_news_texture_downloads" formatted="false">تعرض كل لحظة التاريخ والوقت المحلي وفرق UTC والارتفاع بالدرجات، مع الاحتفاظ بكل مرات المرور قرب متوسط الارتفاعين السنويين الأقصى والأدنى المطلقين.</string>
     <string name="info_news_weather" formatted="false">اضغط على تاريخ ووقت الرصد لتطبيق تلك اللحظة على Location وإيقاف الزمن عند 0×، مع الحفاظ على الموقع والارتفاع والاستئناف.</string>
     <string name="info_news_viewer_zoom" formatted="false">تستخدم الحسابات السنوية Location والمنطقة الزمنية الفعليتين بما فيهما التوقيت الصيفي. يُشار بوضوح إلى قصور البيانات المدارية.</string>
     <string name="info_news_settings" formatted="false">يتذكر كل جسم موضع التمرير في المرصد والمسار اليومي بشكل مستقل خلال الجلسة الحالية.</string>

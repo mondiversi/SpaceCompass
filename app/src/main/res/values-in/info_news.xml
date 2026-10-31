@@ -1,7 +1,7 @@
 <resources>
     <string name="info_news_title">Perubahan terbaru · %1$s</string>
-    <string name="info_news_star_sky" formatted="false">Observatorium membandingkan kulminasi atas sepanjang tahun Location untuk menemukan ketinggian maksimum dan minimum tahunan.</string>
-    <string name="info_news_texture_downloads" formatted="false">Ketinggian tengah menunjukkan kulminasi nyata terdekat dengan rata-rata ekstrem tahunan, mempertahankan setiap lintasan meningkat dan menurun.</string>
+    <string name="info_news_star_sky" formatted="false">Observatorium mempertahankan semua puncak dan lembah ketinggian tahunan yang signifikan; jumlahnya bergantung pada objek dan Location.</string>
+    <string name="info_news_texture_downloads" formatted="false">Setiap momen menampilkan tanggal, waktu lokal, selisih UTC dan ketinggian dalam derajat, termasuk semua lintasan dekat rata-rata ekstrem tahunan absolut.</string>
     <string name="info_news_weather" formatted="false">Ketuk tanggal dan waktu pengamatan untuk menerapkan momen tersebut pada Location dan menjeda waktu pada 0×, sambil mempertahankan posisi, ketinggian, dan pelanjutan.</string>
     <string name="info_news_viewer_zoom" formatted="false">Perhitungan tahunan memakai Location dan zona waktu efektif, termasuk waktu musim panas. Cakupan orbit yang tidak memadai ditandai dengan jelas.</string>
     <string name="info_news_settings" formatted="false">Setiap objek mengingat posisi gulir Observatorium dan Jalur harian secara terpisah selama sesi saat ini.</string>

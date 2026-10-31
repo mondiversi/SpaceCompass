@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="observation_height_maximum">الحد الأقصى السنوي</string>
-    <string name="observation_height_minimum">الحد الأدنى السنوي</string>
+    <string name="observation_height_maximum">أقصى ارتفاع</string>
+    <string name="observation_height_minimum">أدنى ارتفاع</string>
     <string name="observation_height_mid_rising">منتصف الارتفاع · تزايد</string>
     <string name="observation_height_mid_setting">منتصف الارتفاع · تناقص</string>
-    <string name="observation_moments_year">مقارنة العبور العلوي خلال السنة التقويمية لـ Location. اضغط على التاريخ والوقت لإيقاف الزمن عند تلك اللحظة.</string>
+    <string name="observation_moments_year">قمم وقيعان وعبور منتصف ارتفاع العبور العلوي خلال السنة التقويمية لـ Location. اضغط على التاريخ والوقت لإيقاف الزمن عند تلك اللحظة.</string>
     <string name="observation_moments_midpoint_note">منتصف الارتفاع: العبور العلوي الأقرب إلى متوسط أقصى وأدنى ارتفاع سنوي.</string>
     <string name="observation_moments_unavailable">البيانات المدارية المتاحة لا تكفي لإجراء حساب سنوي موثوق.</string>
     <string name="observation_moment_applied">تم ضبط التاريخ والوقت · الزمن متوقف</string>

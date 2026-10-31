@@ -1,7 +1,7 @@
 <resources>
     <string name="info_news_title">تازه‌ترین تغییرات · %1$s</string>
-    <string name="info_news_star_sky" formatted="false">رصدخانه گذرهای بالایی را در سال Location مقایسه می‌کند تا بیشترین و کمترین ارتفاع سالانه را بیابد.</string>
-    <string name="info_news_texture_downloads" formatted="false">ارتفاع میانی گذرهای بالایی واقعی نزدیک به میانگین دو حد سالانه را نشان می‌دهد و همهٔ عبورهای افزایشی و کاهشی را حفظ می‌کند.</string>
+    <string name="info_news_star_sky" formatted="false">رصدخانه همهٔ بیشینه‌ها و کمینه‌های مهم ارتفاع سالانه را حفظ می‌کند؛ تعداد آن‌ها به جرم و Location بستگی دارد.</string>
+    <string name="info_news_texture_downloads" formatted="false">هر لحظه تاریخ، ساعت محلی، اختلاف UTC و ارتفاع بر حسب درجه را نشان می‌دهد و همهٔ گذرهای نزدیک میانگین بیشینه و کمینهٔ مطلق سالانه حفظ می‌شوند.</string>
     <string name="info_news_weather" formatted="false">روی تاریخ و ساعت رصد بزنید تا آن لحظه در Location تنظیم و زمان در 0× متوقف شود؛ موقعیت، ارتفاع و تنظیم ادامه حفظ می‌شوند.</string>
     <string name="info_news_viewer_zoom" formatted="false">محاسبات سالانه از Location و منطقهٔ زمانی مؤثر، همراه با ساعت تابستانی استفاده می‌کنند. پوشش مداری ناکافی به‌روشنی مشخص می‌شود.</string>
     <string name="info_news_settings" formatted="false">هر جرم، جای پیمایش رصدخانه و مسیر روزانه را در نشست جاری به‌طور جداگانه به یاد می‌سپارد.</string>

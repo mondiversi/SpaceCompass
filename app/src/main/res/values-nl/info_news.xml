@@ -1,7 +1,7 @@
 <resources>
     <string name="info_news_title">Laatste nieuws · %1$s</string>
-    <string name="info_news_star_sky" formatted="false">Het Observatorium vergelijkt bovenste culminaties in het jaar van de Location om de jaarlijkse maximale en minimale hoogte te vinden.</string>
-    <string name="info_news_texture_downloads" formatted="false">Middenhoogten tonen de werkelijke culminaties het dichtst bij het gemiddelde van de jaaruitersten, met alle stijgende en dalende passages.</string>
+    <string name="info_news_star_sky" formatted="false">Observatorium behoudt alle betekenisvolle jaarlijkse hoogtemaxima en -minima; hun aantal hangt af van het object en de Location.</string>
+    <string name="info_news_texture_downloads" formatted="false">Elk moment toont datum, lokale tijd, UTC-offset en hoogte in graden, inclusief alle passages nabij het gemiddelde van de absolute jaaruitersten.</string>
     <string name="info_news_weather" formatted="false">Tik op datum en tijd om dat moment voor de Location in te stellen en de tijd op 0× te pauzeren. Positie, hoogte en hervatting blijven behouden.</string>
     <string name="info_news_viewer_zoom" formatted="false">Jaarberekeningen gebruiken de effectieve Location en tijdzone, inclusief zomertijd. Onvoldoende baandekking wordt aangegeven.</string>
     <string name="info_news_settings" formatted="false">Elk object onthoudt afzonderlijke scrollposities voor Observatorium en Dagbaan tijdens de huidige sessie.</string>

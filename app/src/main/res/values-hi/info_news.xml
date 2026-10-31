@@ -1,7 +1,7 @@
 <resources>
     <string name="info_news_title">हाल के बदलाव · %1$s</string>
-    <string name="info_news_star_sky" formatted="false">वेधशाला Location के वर्ष में ऊपरी मध्याह्न पारगमन की तुलना करके वार्षिक अधिकतम और न्यूनतम ऊँचाई खोजती है।</string>
-    <string name="info_news_texture_downloads" formatted="false">मध्य ऊँचाई वार्षिक चरमों के औसत के सबसे निकट के वास्तविक ऊपरी पारगमन दिखाती है, सभी बढ़ते और घटते पारगमन बनाए रखती है।</string>
+    <string name="info_news_star_sky" formatted="false">वेधशाला सभी महत्वपूर्ण वार्षिक अधिकतम और न्यूनतम ऊँचाइयाँ रखती है; उनकी संख्या पिंड और Location पर निर्भर करती है।</string>
+    <string name="info_news_texture_downloads" formatted="false">हर क्षण के लिए तारीख, स्थानीय समय, UTC अंतर और डिग्री में ऊँचाई दिखाई जाती है, साथ ही वार्षिक चरम ऊँचाइयों के औसत के पास के सभी पारगमन।</string>
     <string name="info_news_weather" formatted="false">अवलोकन की तारीख और समय पर टैप करके वह क्षण Location में सेट करें और समय 0× पर रोकें; स्थान, ऊँचाई और पुनः आरंभ का विकल्प बना रहता है।</string>
     <string name="info_news_viewer_zoom" formatted="false">वार्षिक गणनाएँ प्रभावी Location और समय क्षेत्र, ग्रीष्मकालीन समय सहित, इस्तेमाल करती हैं। अपर्याप्त कक्षीय डेटा स्पष्ट रूप से बताया जाता है।</string>
     <string name="info_news_settings" formatted="false">हर वस्तु वर्तमान सत्र में वेधशाला और दैनिक पथ की अलग-अलग स्क्रॉल स्थितियाँ याद रखती है।</string>

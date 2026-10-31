@@ -1,7 +1,7 @@
 <resources>
     <string name="info_news_title">Ostatnie nowości · %1$s</string>
-    <string name="info_news_star_sky" formatted="false">Obserwatorium porównuje górowania w roku Location, wyznaczając roczną maksymalną i minimalną wysokość.</string>
-    <string name="info_news_texture_downloads" formatted="false">Średnia wysokość wskazuje rzeczywiste górowania najbliższe średniej skrajnych wysokości rocznych, zachowując wszystkie przejścia rosnące i malejące.</string>
+    <string name="info_news_star_sky" formatted="false">Obserwatorium zachowuje wszystkie istotne roczne maksima i minima wysokości; ich liczba zależy od obiektu i Location.</string>
+    <string name="info_news_texture_downloads" formatted="false">Każdy moment pokazuje datę, czas lokalny, przesunięcie UTC i wysokość w stopniach, w tym wszystkie przejścia w pobliżu średniej bezwzględnych ekstremów rocznych.</string>
     <string name="info_news_weather" formatted="false">Dotknij daty i godziny obserwacji, aby ustawić tę chwilę w Location i zatrzymać czas na 0×, zachowując pozycję, wysokość i wznowienie.</string>
     <string name="info_news_viewer_zoom" formatted="false">Obliczenia roczne korzystają z bieżącej Location i strefy, uwzględniając czas letni. Niepełne dane orbitalne są wyraźnie oznaczone.</string>
     <string name="info_news_settings" formatted="false">Każdy obiekt osobno zapamiętuje przewijanie Obserwatorium i Trasy dziennej w bieżącej sesji.</string>

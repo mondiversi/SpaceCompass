@@ -531,8 +531,13 @@ The Orbit and observation island compares all upper culminations in the observat
 year, using the effective Location coordinates and height. Upper meridian crossings are bracketed
 hourly and refined to 250 ms from the same topocentric ENU directions as the sky renderer, including
 zenith/polar cases without azimuth discontinuities. Annual minimum means the lowest upper
-culmination, not the nightly lower transit or a civil-day boundary. All crossings of the mean of the
-annual extrema are represented by the nearer real culmination; no interpolated non-culminating
+culmination, not the nightly lower transit. All significant local maxima and minima of the annual
+upper-culmination curve are retained, rather than only one absolute pair: for example, the equatorial
+Sun has two peaks and two troughs. A 0.01-degree prominence threshold on both sides rejects tiny
+numerical ripples; plateaus choose one actual middle transit. Calendar edges are not cyclically
+joined, and the absolute bounded-year extremes remain available even for monotonic curves. Rows
+group maxima, minima and mid-height crossings, chronologically within each group. All crossings
+of the mean of the absolute annual extrema are represented by the nearer real culmination; no interpolated non-culminating
 instant is invented. Short-lived TLEs and incomplete annual ephemerides explicitly yield unavailable
 annual data. Background work is cancellable and cached by object, year, zone, source and the same
 small GPS/height cells as the sky paths, independently from time ticks and selected-day changes.

@@ -13,9 +13,48 @@ internal enum class SpaceCompassObservationMomentKind { MAXIMUM, MINIMUM, MID_RI
 internal data class SpaceCompassObservationMoment(val kind: SpaceCompassObservationMomentKind,
     val point: SpaceCompassSunPathPoint)
 
-/** Annual extrema compare upper culminations, never the nightly lower transit.
- * Mid-height is the mean of those two heights. Select the nearest actual culmination on
- * each crossing: interpolating a date between two noons would no longer be a culmination.
+/** Local turning points of the upper-culmination curve, with at least 0.01 degrees of
+ * prominence on both sides. Sub-arcminute ripples must not create extra seasonal events.
+ * Plateaus select one actual middle transit. Calendar edges are not joined: an object's
+ * next January need not repeat its previous January (especially for the Moon/planets).
+ */
+private fun spaceCompassAnnualTurningPoints(points: List<SpaceCompassSunPathPoint>, maximum: Boolean):
+    List<SpaceCompassSunPathPoint> {
+    val sign = if (maximum) 1 else -1
+    fun height(index: Int) = sign * points[index].position.elevationDegrees
+    val result = mutableListOf<SpaceCompassSunPathPoint>()
+    var start = 0
+    while (start < points.size) {
+        val peak = height(start)
+        var end = start
+        while (end + 1 < points.size && abs(height(end + 1) - peak) < 1e-9) end++
+        if (start > 0 && end < points.lastIndex && peak > height(start - 1) && peak > height(end + 1)) {
+            var leftFloor = peak
+            var index = start - 1
+            while (index >= 0 && height(index) <= peak) {
+                leftFloor = minOf(leftFloor, height(index)); index--
+            }
+            var rightFloor = peak
+            index = end + 1
+            while (index < points.size && height(index) <= peak) {
+                rightFloor = minOf(rightFloor, height(index)); index++
+            }
+            if (peak - maxOf(leftFloor, rightFloor) >= .01) result += points[(start + end) / 2]
+        }
+        start = end + 1
+    }
+    // Always represent the bounded year's absolute extreme, including a monotonic year's
+    // endpoint or an almost constant curve, without duplicating an already represented plateau.
+    val absolute = if (maximum) points.maxBy { it.position.elevationDegrees }
+        else points.minBy { it.position.elevationDegrees }
+    if (result.none { abs(it.position.elevationDegrees - absolute.position.elevationDegrees) < 1e-9 })
+        result += absolute
+    return result.sortedBy { it.timeMs }
+}
+
+/** Compare every significant maximum/minimum of the year's upper culminations, never the
+ * nightly lower transit. Mid-height uses the absolute annual range and retains every crossing.
+ * Select the nearest actual culmination: interpolating between noons would not be a culmination.
  */
 internal fun spaceCompassAnnualObservationMoments(culminations: List<SpaceCompassSunPathPoint>):
     List<SpaceCompassObservationMoment>? {
@@ -23,10 +62,14 @@ internal fun spaceCompassAnnualObservationMoments(culminations: List<SpaceCompas
         culminations.zipWithNext().any { (a, b) -> a.timeMs >= b.timeMs }) return null
     val maximum = culminations.maxBy { it.position.elevationDegrees }
     val minimum = culminations.minBy { it.position.elevationDegrees }
-    val result = mutableListOf(SpaceCompassObservationMoment(SpaceCompassObservationMomentKind.MAXIMUM, maximum),
-        SpaceCompassObservationMoment(SpaceCompassObservationMomentKind.MINIMUM, minimum))
+    val result = (spaceCompassAnnualTurningPoints(culminations, maximum = true).map {
+        SpaceCompassObservationMoment(SpaceCompassObservationMomentKind.MAXIMUM, it)
+    } + spaceCompassAnnualTurningPoints(culminations, maximum = false).map {
+        SpaceCompassObservationMoment(SpaceCompassObservationMomentKind.MINIMUM, it)
+    }).toMutableList()
     if (maximum.position.elevationDegrees - minimum.position.elevationDegrees < 1e-6) return result
     val target = (maximum.position.elevationDegrees + minimum.position.elevationDegrees) / 2
+    val midpointTimes = mutableSetOf<Long>()
     for ((a, b) in culminations.zipWithNext()) {
         val from = a.position.elevationDegrees - target
         val to = b.position.elevationDegrees - target
@@ -34,7 +77,7 @@ internal fun spaceCompassAnnualObservationMoments(culminations: List<SpaceCompas
         val setting = from > 0 && to <= 0
         if (!rising && !setting) continue
         val selected = if (abs(from) <= abs(to)) a else b
-        if (result.drop(2).any { it.point.timeMs == selected.timeMs }) continue
+        if (!midpointTimes.add(selected.timeMs)) continue
         result += SpaceCompassObservationMoment(if (rising) SpaceCompassObservationMomentKind.MID_RISING
             else SpaceCompassObservationMomentKind.MID_SETTING, selected)
     }

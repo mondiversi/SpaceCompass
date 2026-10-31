@@ -1,7 +1,7 @@
 <resources>
     <string name="info_news_title">최근 변경 사항 · %1$s</string>
-    <string name="info_news_star_sky" formatted="false">관측소는 Location의 연도 전체에서 상방 자오선 통과 고도를 비교하여 연간 최고 및 최저 고도를 찾습니다.</string>
-    <string name="info_news_texture_downloads" formatted="false">중간 고도는 연간 최고·최저의 평균에 가장 가까운 실제 상방 자오선 통과를 표시하며 증가·감소하는 모든 통과를 유지합니다.</string>
+    <string name="info_news_star_sky" formatted="false">관측소는 연간 고도의 유의미한 극대와 극소를 모두 유지하며, 그 수는 천체와 Location에 따라 달라집니다.</string>
+    <string name="info_news_texture_downloads" formatted="false">각 시점에 날짜, 현지 시각, UTC 오프셋과 고도를 도 단위로 표시하며, 연간 절대 최고·최저 고도의 평균 부근을 통과하는 모든 시점을 유지합니다.</string>
     <string name="info_news_weather" formatted="false">관측 날짜와 시간을 누르면 해당 순간을 Location에 적용하고 시간을 0×로 멈춥니다. 위치, 고도, 재개 설정은 유지됩니다.</string>
     <string name="info_news_viewer_zoom" formatted="false">연간 계산은 서머타임을 포함한 실제 Location과 시간대를 사용합니다. 궤도 데이터의 연간 범위가 부족하면 명확히 표시합니다.</string>
     <string name="info_news_settings" formatted="false">각 천체는 현재 세션 동안 관측소와 일일 경로의 스크롤 위치를 별도로 기억합니다.</string>

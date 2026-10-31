@@ -1,7 +1,7 @@
 <resources>
     <string name="info_news_title">Ultime novità · %1$s</string>
-    <string name="info_news_star_sky" formatted="false">L’Osservatorio confronta i culmini nell’anno della Location per trovare le altezze massima e minima annuali.</string>
-    <string name="info_news_texture_downloads" formatted="false">La mezz’altezza mostra i culmini più vicini alla media degli estremi annuali, mantenendo tutti i passaggi crescenti e decrescenti.</string>
+    <string name="info_news_star_sky" formatted="false">I massimi e minimi annuali dell’Osservatorio sono dinamici: vengono mantenuti tutti gli estremi significativi in base all’oggetto e alla Location.</string>
+    <string name="info_news_texture_downloads" formatted="false">Ogni momento mostra data, ora, fuso ed elevazione in gradi. Sono conservati tutti i passaggi a mezz’altezza vicini alla media degli estremi annuali assoluti.</string>
     <string name="info_news_weather" formatted="false">Tocca data e ora di un’osservazione per impostare quell’istante nella Location e fermare il tempo a 0×, conservando posizione, quota e ripresa.</string>
     <string name="info_news_viewer_zoom" formatted="false">I calcoli annuali usano Location e fuso effettivi, compresa l’ora legale; la copertura orbitale insufficiente viene segnalata.</string>
     <string name="info_news_settings" formatted="false">Ogni oggetto ricorda separatamente lo scorrimento di Osservatorio e Percorso giornaliero durante la sessione attuale.</string>

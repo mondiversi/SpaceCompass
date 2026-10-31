@@ -1,7 +1,7 @@
 <resources>
     <string name="info_news_title">Dernières nouveautés · %1$s</string>
-    <string name="info_news_star_sky" formatted="false">L’Observatoire compare les culminations supérieures sur l’année de la Location pour trouver les hauteurs maximale et minimale annuelles.</string>
-    <string name="info_news_texture_downloads" formatted="false">La mi-hauteur présente les culminations réelles les plus proches de la moyenne des extrêmes annuels, en conservant tous les passages croissants et décroissants.</string>
+    <string name="info_news_star_sky" formatted="false">L’Observatoire conserve tous les maxima et minima annuels significatifs de hauteur ; leur nombre dépend de l’objet et de la Location.</string>
+    <string name="info_news_texture_downloads" formatted="false">Chaque instant affiche date, heure locale, décalage UTC et hauteur en degrés, avec tous les passages proches de la moyenne des extrêmes annuels absolus.</string>
     <string name="info_news_weather" formatted="false">Touchez la date et l’heure d’une observation pour appliquer cet instant à la Location et arrêter le temps à 0×, en conservant position, altitude et reprise.</string>
     <string name="info_news_viewer_zoom" formatted="false">Les calculs annuels utilisent la Location et le fuseau effectifs, avec l’heure d’été. Une couverture orbitale insuffisante est signalée.</string>
     <string name="info_news_settings" formatted="false">Chaque objet mémorise séparément le défilement de l’Observatoire et du Parcours quotidien pendant la session actuelle.</string>
