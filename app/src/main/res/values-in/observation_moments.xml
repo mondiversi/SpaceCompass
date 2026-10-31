@@ -1,11 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="observation_height_maximum">Ketinggian maksimum</string>
-    <string name="observation_height_minimum">Ketinggian minimum</string>
-    <string name="observation_height_mid_rising">Ketinggian tengah · meningkat</string>
-    <string name="observation_height_mid_setting">Ketinggian tengah · menurun</string>
-    <string name="observation_moments_year">Puncak, lembah, dan lintasan ketinggian tengah kulminasi atas sepanjang tahun kalender Location. Ketuk tanggal dan waktu untuk berhenti pada saat itu.</string>
+    <string name="observation_height_maximum">Maksimum tahunan</string>
+    <string name="observation_height_minimum">Minimum tahunan</string>
+    <string name="observation_height_mid_rising">Ketinggian tengah meningkat %1$s</string>
+    <string name="observation_height_mid_setting">Ketinggian tengah menurun %1$s</string>
+    <string name="observation_moments_year">Puncak, lembah, dan lintasan ketinggian tengah kulminasi atas sepanjang tahun yang dipilih. Ketuk tanggal dan waktu untuk menjeda pada saat itu.</string>
     <string name="observation_moments_midpoint_note">Ketinggian tengah: kulminasi yang paling dekat dengan rata-rata ketinggian maksimum dan minimum tahunan.</string>
     <string name="observation_moments_unavailable">Data orbit yang tersedia tidak mencukupi untuk perhitungan tahunan yang andal.</string>
     <string name="observation_moment_applied">Tanggal dan waktu diatur · Waktu dijeda</string>
+    <string name="observation_height_cycle_maximum">Maksimum siklus %1$s</string>
+    <string name="observation_height_cycle_minimum">Minimum siklus %1$s</string>
+    <string name="observation_height_cycle_maximum_single">Maksimum siklus</string>
+    <string name="observation_height_cycle_minimum_single">Minimum siklus</string>
+    <string name="observation_height_mid_rising_single">Ketinggian tengah meningkat</string>
+    <string name="observation_height_mid_setting_single">Ketinggian tengah menurun</string>
+    <string name="observation_heights_title">Ketinggian utama</string>
+    <string name="observation_heights_year">Tahun</string>
 </resources>

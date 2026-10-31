@@ -1,11 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="observation_height_maximum">Максимум высоты</string>
-    <string name="observation_height_minimum">Минимум высоты</string>
-    <string name="observation_height_mid_rising">Средняя высота · рост</string>
-    <string name="observation_height_mid_setting">Средняя высота · снижение</string>
-    <string name="observation_moments_year">Максимумы, минимумы и прохождения средней высоты верхних кульминаций в календарном году Location. Нажмите на дату и время, чтобы остановиться в этот момент.</string>
+    <string name="observation_height_maximum">Годовой максимум</string>
+    <string name="observation_height_minimum">Годовой минимум</string>
+    <string name="observation_height_mid_rising">Средняя высота рост %1$s</string>
+    <string name="observation_height_mid_setting">Средняя высота снижение %1$s</string>
+    <string name="observation_moments_year">Максимумы, минимумы и прохождения средней высоты верхних кульминаций за выбранный год. Нажмите дату и время, чтобы остановить время в этот момент.</string>
     <string name="observation_moments_midpoint_note">Средняя высота: кульминация, ближайшая к среднему между годовой максимальной и минимальной высотой.</string>
     <string name="observation_moments_unavailable">Доступных орбитальных данных недостаточно для надёжного годового расчёта.</string>
     <string name="observation_moment_applied">Дата и время заданы · Время остановлено</string>
+    <string name="observation_height_cycle_maximum">Максимум цикла %1$s</string>
+    <string name="observation_height_cycle_minimum">Минимум цикла %1$s</string>
+    <string name="observation_height_cycle_maximum_single">Максимум цикла</string>
+    <string name="observation_height_cycle_minimum_single">Минимум цикла</string>
+    <string name="observation_height_mid_rising_single">Средняя высота рост</string>
+    <string name="observation_height_mid_setting_single">Средняя высота снижение</string>
+    <string name="observation_heights_title">Ключевые высоты</string>
+    <string name="observation_heights_year">Год</string>
 </resources>

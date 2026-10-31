@@ -1,11 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="observation_height_maximum">Maximum height</string>
-    <string name="observation_height_minimum">Minimum height</string>
-    <string name="observation_height_mid_rising">Mid-height · increasing</string>
-    <string name="observation_height_mid_setting">Mid-height · decreasing</string>
-    <string name="observation_moments_year">Peaks, troughs and mid-height passages of upper culminations throughout the Location’s calendar year. Tap a date and time to pause at that moment.</string>
+    <string name="observation_height_maximum">Annual maximum</string>
+    <string name="observation_height_minimum">Annual minimum</string>
+    <string name="observation_height_mid_rising">Mid-height increasing %1$s</string>
+    <string name="observation_height_mid_setting">Mid-height decreasing %1$s</string>
+    <string name="observation_moments_year">Peaks, troughs and mid-height passages of upper culminations throughout the selected year. Tap a date and time to pause at that moment.</string>
     <string name="observation_moments_midpoint_note">Mid-height: the culmination nearest to the mean of the annual maximum and minimum heights.</string>
     <string name="observation_moments_unavailable">Available orbital data do not cover a reliable annual calculation.</string>
     <string name="observation_moment_applied">Date and time set · Time paused</string>
+    <string name="observation_height_cycle_maximum">Cycle maximum %1$s</string>
+    <string name="observation_height_cycle_minimum">Cycle minimum %1$s</string>
+    <string name="observation_height_cycle_maximum_single">Cycle maximum</string>
+    <string name="observation_height_cycle_minimum_single">Cycle minimum</string>
+    <string name="observation_height_mid_rising_single">Mid-height increasing</string>
+    <string name="observation_height_mid_setting_single">Mid-height decreasing</string>
+    <string name="observation_heights_title">Key heights</string>
+    <string name="observation_heights_year">Year</string>
 </resources>

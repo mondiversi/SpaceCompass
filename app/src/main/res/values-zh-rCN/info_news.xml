@@ -1,9 +1,9 @@
 <resources>
     <string name="info_news_title">最新变化 · %1$s</string>
-    <string name="info_news_star_sky" formatted="false">观测台保留一年中所有显著的高度极大值和极小值，数量随天体及Location而变化。</string>
-    <string name="info_news_texture_downloads" formatted="false">每个时刻均显示日期、当地时间、UTC偏移和以度为单位的高度，并保留所有接近全年绝对最高与最低高度平均值的经过时刻。</string>
-    <string name="info_news_weather" formatted="false">点按观测日期和时间，即可将该时刻应用到Location并将时间暂停为0×，同时保留位置、高度和恢复设置。</string>
-    <string name="info_news_viewer_zoom" formatted="false">年度计算使用有效的Location和时区，包括夏令时。轨道数据不足以覆盖全年时会明确提示。</string>
-    <string name="info_news_settings" formatted="false">每个天体在当前会话中分别记住观测台和每日路径的滚动位置。</string>
-    <string name="info_news_catalog" formatted="false">切换页面、旋转屏幕和进入后台后仍保留滚动位置。临时加载和选中点居中不会清除已查看的位置。</string>
+    <string name="info_news_star_sky" formatted="false">关键高度可从观测台打开独立页面，分别以事件、仰角和日期时间三列显示。</string>
+    <string name="info_news_texture_downloads" formatted="false">可选择1900至2100年的任意年份。稳定的年度计算保留显著极大值、极小值和中间高度经过时刻；同类事件只有一个时不再编号。</string>
+    <string name="info_news_weather" formatted="false">可将关键高度导出为CSV电子表格或易读的TXT表格，并使用所选格式及位置隐私设置。</string>
+    <string name="info_news_viewer_zoom" formatted="false">主界面右上角的控件分为两行。第二行为相机、天气和0°/90°；相机模式下显示透明度和缩放。</string>
+    <string name="info_news_settings" formatted="false">设置、Location表单和导出名称采用更紧凑的输入框和选择框，同时保留标签、原生编辑方式及主题颜色。</string>
+    <string name="info_news_catalog" formatted="false">点击Location管理标题可统一启用或停用已准备的自定义值。每个天体的观测台、每日路径和关键高度页面分别保留滚动位置。</string>
 </resources>

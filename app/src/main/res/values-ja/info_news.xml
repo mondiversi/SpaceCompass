@@ -1,9 +1,9 @@
 <resources>
     <string name="info_news_title">最近の変更 · %1$s</string>
-    <string name="info_news_star_sky" formatted="false">観測所は年間の高度変化の有意な極大・極小をすべて保持し、その数は天体とLocationに応じて変わります。</string>
-    <string name="info_news_texture_downloads" formatted="false">各時点に日付、現地時刻、UTCオフセット、高度（度）を表示し、年間の絶対的な最高・最低高度の平均付近を通過する時点もすべて保持します。</string>
-    <string name="info_news_weather" formatted="false">観測日時をタップすると、その瞬間をLocationに設定して時間を0×で停止します。位置、高度、再開設定は保持されます。</string>
-    <string name="info_news_viewer_zoom" formatted="false">年間計算は有効なLocationと夏時間を含む時間帯を使用します。軌道データが年間を網羅しない場合は明示します。</string>
-    <string name="info_news_settings" formatted="false">各天体は現在のセッション中、天文台と日周経路のスクロール位置を別々に記憶します。</string>
-    <string name="info_news_catalog" formatted="false">画面移動、回転、バックグラウンドへの移行後もスクロール位置を保持します。一時的な読み込みや点の中央配置で閲覧位置が消えることはありません。</string>
+    <string name="info_news_star_sky" formatted="false">主な高度は観測所から専用ページで開き、イベント、高度、日時を別々の列に表示します。</string>
+    <string name="info_news_texture_downloads" formatted="false">1900～2100年から年を選択できます。安定した年間計算で有意な極大・極小と中間高度の通過を保持し、同種のイベントが1件の場合は番号を付けません。</string>
+    <string name="info_news_weather" formatted="false">主な高度をCSVスプレッドシートまたは読みやすいTXT表として、選択した書式と位置情報の公開範囲でエクスポートできます。</string>
+    <string name="info_news_viewer_zoom" formatted="false">メイン画面の操作ボタンは右上の2段構成です。2段目にカメラ、天気、0°/90°を配置し、カメラモードでは透明度とズームを表示します。</string>
+    <string name="info_news_settings" formatted="false">設定、Locationフォーム、エクスポート名の入力・選択欄をコンパクトにし、ラベル、標準の編集操作、テーマの色を維持しました。</string>
+    <string name="info_news_catalog" formatted="false">Location管理のタイトルをタップすると、準備したカスタム値をまとめて有効・無効にできます。各天体の観測所、日別経路、主な高度は別々のスクロール位置を保持します。</string>
 </resources>

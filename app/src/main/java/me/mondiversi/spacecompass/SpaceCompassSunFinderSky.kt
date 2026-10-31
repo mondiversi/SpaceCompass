@@ -271,10 +271,10 @@ internal fun SpaceCompassSunPointingViewport(
             // Keep the optical viewport fixed: controls stack over the scene instead of resizing it.
             Column(Modifier.align(Alignment.BottomCenter).fillMaxWidth(), horizontalAlignment = Alignment.End) {
                 Row(Modifier.fillMaxWidth(), verticalAlignment = Alignment.CenterVertically) {
-                    Box(Modifier.align(Alignment.Bottom), contentAlignment = Alignment.CenterStart) {
+                    // Measure capture/zoom first, so a crowded start group cannot squeeze its circles.
+                    Box(Modifier.weight(1f).align(Alignment.Bottom), contentAlignment = Alignment.CenterStart) {
                         bottomStartActions(Modifier.onSizeChanged { bottomStartActionsSize = it })
                     }
-                    Spacer(Modifier.weight(1f))
                     Box(Modifier.align(Alignment.Bottom)) {
                         bottomActions(Modifier.onSizeChanged { bottomActionsSize = it })
                     }

@@ -1,6 +1,5 @@
 package me.mondiversi.spacecompass
 
-import androidx.compose.foundation.BorderStroke
 import androidx.compose.foundation.Canvas
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.selection.selectableGroup
@@ -9,7 +8,6 @@ import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Surface
 import androidx.compose.material3.Text
 import androidx.compose.runtime.*
-import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.geometry.Offset
 import androidx.compose.ui.graphics.Color
@@ -48,21 +46,17 @@ internal fun SpaceCompassScreensaverIsland() {
         }
         Text(delayTitle, fontSize = 13.sp, fontWeight = FontWeight.Medium)
         Box(Modifier.fillMaxWidth()) {
-            Surface(onClick = { expanded = true }, color = Color.Transparent,
-                shape = MaterialTheme.shapes.small, border = BorderStroke(1.dp, MaterialTheme.colorScheme.outline),
-                modifier = Modifier.fillMaxWidth().heightIn(min = 48.dp).testTag("screensaver-delay-field")
+            SpaceCompassCompactSelectionField(onClick = { expanded = true },
+                modifier = Modifier.testTag("screensaver-delay-field")
                     .semantics { contentDescription = delayTitle }) {
-                Row(Modifier.padding(horizontal = 12.dp, vertical = 10.dp), verticalAlignment = Alignment.CenterVertically,
-                    horizontalArrangement = Arrangement.spacedBy(8.dp)) {
-                    Text(options.first { it.first == settings.delaySeconds }.second, Modifier.weight(1f),
-                        fontSize = 14.sp, lineHeight = 18.sp)
-                    Canvas(Modifier.size(16.dp)) {
-                        val stroke = 1.7.dp.toPx()
-                        drawLine(foreground, Offset(size.width * .2f, size.height * .35f),
-                            Offset(size.width * .5f, size.height * .65f), stroke, StrokeCap.Round)
-                        drawLine(foreground, Offset(size.width * .5f, size.height * .65f),
-                            Offset(size.width * .8f, size.height * .35f), stroke, StrokeCap.Round)
-                    }
+                Text(options.first { it.first == settings.delaySeconds }.second, Modifier.weight(1f),
+                    fontSize = 14.sp, lineHeight = 18.sp)
+                Canvas(Modifier.size(16.dp)) {
+                    val stroke = 1.7.dp.toPx()
+                    drawLine(foreground, Offset(size.width * .2f, size.height * .35f),
+                        Offset(size.width * .5f, size.height * .65f), stroke, StrokeCap.Round)
+                    drawLine(foreground, Offset(size.width * .5f, size.height * .65f),
+                        Offset(size.width * .8f, size.height * .35f), stroke, StrokeCap.Round)
                 }
             }
             SpaceCompassAdaptiveDropdownMenu(expanded, { expanded = false },

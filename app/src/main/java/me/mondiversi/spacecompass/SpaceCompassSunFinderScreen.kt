@@ -228,6 +228,7 @@ internal fun SpaceCompassSunFinderScreen(
     }
 }
 
+@OptIn(ExperimentalLayoutApi::class)
 @Composable
 internal fun SpaceCompassSunFinderContent(
     readings: SpaceCompassSunFinderReadings, timeMs: Long, primaryText: Color,
@@ -539,8 +540,6 @@ internal fun SpaceCompassSunFinderContent(
             Row(modifier.padding(4.dp).testTag("celestial-capture-controls"),
                 verticalAlignment = Alignment.Bottom,
                 horizontalArrangement = Arrangement.spacedBy(8.dp)) {
-                if (cameraEnabled) SpaceCompassCameraZoomControls(cameraZoomRange, cameraZoomRequest, cameraZoomActual,
-                    !panorama.busy && cameraCapture != null, ::updateCameraZoom, primaryText, backgroundColor)
                 CompositionLocalProvider(LocalSpaceCompassFloatingControlMultiplier provides 1f) {
                     SpaceCompassCaptureButton(panorama.capture, !panorama.busy && (!cameraEnabled || cameraCapture != null),
                         cameraEnabled = cameraEnabled)
@@ -552,7 +551,7 @@ internal fun SpaceCompassSunFinderContent(
     val pointing: @Composable (Boolean) -> Unit = { landscape ->
         BoxWithConstraints(Modifier.fillMaxSize().spaceCompassCameraPinchZoom(cameraZoomRange, cameraZoomRequest,
             cameraEnabled && !panorama.busy, cameraCapture != null, ::updateCameraZoom)) {
-            val regularTopRowWidth = spaceCompassFloatingControlBaseSize * (4 * SPACE_COMPASS_COMPACT_CONTROL_MULTIPLIER + 1) + 40.dp
+            val regularTopRowWidth = spaceCompassFloatingControlBaseSize * (6 * SPACE_COMPASS_COMPACT_CONTROL_MULTIPLIER) + 56.dp
             val topControlSpacing = if (maxWidth >= regularTopRowWidth) 8.dp else 4.dp
             CompositionLocalProvider(LocalSpaceCompassFloatingControlMultiplier provides SPACE_COMPASS_COMPACT_CONTROL_MULTIPLIER) {
                 SpaceCompassSunPointingViewport(target, scenePointingOrientation.takeIf { !cameraEnabled || cameraPerspective != null },
@@ -580,25 +579,16 @@ internal fun SpaceCompassSunFinderContent(
                     opticalFrame = pointingFrame?.let { viewport -> groundFrame?.let { optical ->
                         optical.copy(left = optical.left - viewport.left, top = optical.top - viewport.top)
                     } },
-                    topCenterActions = if (onDismissRequest != null) ({ modifier ->
-                        SpaceCompassMainNavigationControls(primaryText, backgroundColor, modifier)
-                    }) else null,
                     drawScene = false, objectOpacity = cameraObjectOpacity, showReticle = showReticle,
                     bottomStartActions = { modifier ->
-                        Row(modifier.padding(4.dp).testTag("celestial-bottom-start-controls"), verticalAlignment = Alignment.CenterVertically,
-                            horizontalArrangement = Arrangement.spacedBy(8.dp)) {
+                        // Keep panel and point-selection actions together at the bottom edge.
+                        FlowRow(modifier.padding(4.dp).testTag("celestial-bottom-start-controls"),
+                            horizontalArrangement = Arrangement.spacedBy(8.dp),
+                            verticalArrangement = Arrangement.spacedBy(8.dp)) {
                             SpaceCompassMainDetailsToggleButton(detailsExpanded, {
                                 detailsExpanded = !detailsExpanded
                                 scenePreferences.edit().putBoolean(SPACE_COMPASS_MAIN_DETAILS_KEY, detailsExpanded).apply()
                             }, primaryText, backgroundColor, landscape = landscape)
-                            SpaceCompassPointingAxisButton(pointingTopEdge && !cameraEnabled, { topEdge ->
-                                pointingTopEdge = topEdge
-                                scenePreferences.edit().putBoolean(SPACE_COMPASS_POINTING_TOP_EDGE_KEY, topEdge).apply()
-                                notifyControl(R.string.control_choice_message, controlResources.getString(
-                                    if (topEdge) R.string.pointing_axis_top_edge else R.string.pointing_axis_camera),
-                                    formatSpaceCompassNumber(if (topEdge) 0.0 else 90.0, 0, numeric,
-                                        grouping = false, systemLocale = controlLocale) + "°")
-                            }, primaryText, backgroundColor, enabled = !cameraEnabled)
                             val selectedPointCount = dailyPathUiState.selectedPoints.size
                             if (selectedPointCount > 0) SpaceCompassClearOrbitPointsButton({
                                 dailyPathUiState.clearSelection()
@@ -615,10 +605,43 @@ internal fun SpaceCompassSunFinderContent(
                         }
                     },
                     topStartActions = { modifier ->
-                        Column(modifier.padding(4.dp).testTag("celestial-top-start-controls"),
+                        Box(modifier.padding(if (onDismissRequest != null) 4.dp else 0.dp)
+                            .testTag("celestial-top-start-controls")) {
+                            if (onDismissRequest != null)
+                                SpaceCompassMainNavigationControls(primaryText, backgroundColor)
+                        }
+                    },
+                    topEndActions = { modifier ->
+                        val navigationWidth = if (onDismissRequest != null) spaceCompassFloatingControlSize * 2 + 16.dp else 0.dp
+                        val availableWidth = (maxWidth - navigationWidth - 8.dp).coerceAtLeast(spaceCompassFloatingControlSize + 8.dp)
+                        // Navigation and scene controls have separate rows sharing the trailing edge.
+                        Column(modifier.widthIn(max = availableWidth).padding(4.dp).testTag("celestial-top-end-controls")
+                            .spaceCompassSceneInputShield(), horizontalAlignment = Alignment.End,
                             verticalArrangement = Arrangement.spacedBy(topControlSpacing)) {
-                            Row(verticalAlignment = Alignment.CenterVertically,
-                                horizontalArrangement = Arrangement.spacedBy(topControlSpacing)) {
+                            FlowRow(Modifier.testTag("celestial-top-end-primary-controls"),
+                                horizontalArrangement = Arrangement.spacedBy(topControlSpacing, Alignment.End),
+                                verticalArrangement = Arrangement.spacedBy(topControlSpacing)) {
+                                SpaceCompassReticleToggleButton(showReticle, { visible ->
+                                    showReticle = visible
+                                    saveSpaceCompassReticleVisible(scenePreferences, visible)
+                                    notifyControl(if (visible) R.string.scene_reticle_on else R.string.scene_reticle_off)
+                                }, primaryText, backgroundColor)
+                                SpaceCompassSkyReferenceButton(showSkyReferences, { enabled ->
+                                    showSkyReferences = enabled
+                                    scenePreferences.edit().putBoolean(SPACE_COMPASS_SKY_REFERENCES_KEY, enabled).apply()
+                                    notifyControl(if (enabled) R.string.scene_references_on else R.string.scene_references_off)
+                                }, primaryText, backgroundColor)
+                                SpaceCompassScenarioButton(LocalSpaceCompassObserver.current?.plan.activeSectionCount, primaryText, backgroundColor) {
+                                    navigate("observer")
+                                }
+                                SpaceCompassCelestialSelector(body, primaryText, backgroundColor, Modifier, timeMs, remote,
+                                    selectedBodies, onSelectionChange?.let { { it(selection.toggleAll()) } }) {
+                                    if (onSelectionChange != null) onSelectionChange(selection.toggle(it)) else onBodyChange(it)
+                                }
+                            }
+                            FlowRow(Modifier.testTag("celestial-top-end-secondary-controls"),
+                                horizontalArrangement = Arrangement.spacedBy(topControlSpacing, Alignment.End),
+                                verticalArrangement = Arrangement.spacedBy(topControlSpacing)) {
                                 SpaceCompassCameraToggleButton(cameraEnabled, { enabled ->
                                     if (!enabled) {
                                         cameraEnabled = false
@@ -642,33 +665,17 @@ internal fun SpaceCompassSunFinderContent(
                                     scenePreferences.edit().putBoolean(SPACE_COMPASS_WEATHER_VISIBLE_KEY, enabled).apply()
                                     notifyControl(if (enabled) R.string.scene_weather_on else R.string.scene_weather_off)
                                 }, primaryText, backgroundColor)
+                                if (cameraEnabled) SpaceCompassCameraZoomControls(cameraZoomRange, cameraZoomRequest, cameraZoomActual,
+                                    !panorama.busy && cameraCapture != null, ::updateCameraZoom, primaryText, backgroundColor)
+                                else SpaceCompassPointingAxisButton(pointingTopEdge, { topEdge ->
+                                    pointingTopEdge = topEdge
+                                    scenePreferences.edit().putBoolean(SPACE_COMPASS_POINTING_TOP_EDGE_KEY, topEdge).apply()
+                                    notifyControl(R.string.control_choice_message, controlResources.getString(
+                                        if (topEdge) R.string.pointing_axis_top_edge else R.string.pointing_axis_camera),
+                                        formatSpaceCompassNumber(if (topEdge) 0.0 else 90.0, 0, numeric,
+                                            grouping = false, systemLocale = controlLocale) + "°")
+                                }, primaryText, backgroundColor)
                             }
-                            SpaceCompassReticleToggleButton(showReticle, { visible ->
-                                showReticle = visible
-                                saveSpaceCompassReticleVisible(scenePreferences, visible)
-                                notifyControl(if (visible) R.string.scene_reticle_on else R.string.scene_reticle_off)
-                            }, primaryText, backgroundColor)
-                        }
-                    },
-                    topEndActions = { modifier ->
-                        Column(modifier.padding(4.dp).testTag("celestial-top-end-controls"),
-                            horizontalAlignment = Alignment.End,
-                            verticalArrangement = Arrangement.spacedBy(topControlSpacing)) {
-                            Row(verticalAlignment = Alignment.CenterVertically,
-                                horizontalArrangement = Arrangement.spacedBy(topControlSpacing)) {
-                                SpaceCompassScenarioButton(LocalSpaceCompassObserver.current?.plan.activeSectionCount, primaryText, backgroundColor) {
-                                    navigate("observer")
-                                }
-                                SpaceCompassCelestialSelector(body, primaryText, backgroundColor, Modifier, timeMs, remote,
-                                    selectedBodies, onSelectionChange?.let { { it(selection.toggleAll()) } }) {
-                                    if (onSelectionChange != null) onSelectionChange(selection.toggle(it)) else onBodyChange(it)
-                                }
-                            }
-                            SpaceCompassSkyReferenceButton(showSkyReferences, { enabled ->
-                                showSkyReferences = enabled
-                                scenePreferences.edit().putBoolean(SPACE_COMPASS_SKY_REFERENCES_KEY, enabled).apply()
-                                notifyControl(if (enabled) R.string.scene_references_on else R.string.scene_references_off)
-                            }, primaryText, backgroundColor)
                         }
                     })
             }

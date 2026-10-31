@@ -1,11 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="observation_height_maximum">Maximale hoogte</string>
-    <string name="observation_height_minimum">Minimale hoogte</string>
-    <string name="observation_height_mid_rising">Middenhoogte · stijgend</string>
-    <string name="observation_height_mid_setting">Middenhoogte · dalend</string>
-    <string name="observation_moments_year">Maxima, minima en passages op middenhoogte van de bovenste culminaties in het kalenderjaar van de Location. Tik op datum en tijd om dat moment stil te zetten.</string>
+    <string name="observation_height_maximum">Jaarmaximum</string>
+    <string name="observation_height_minimum">Jaarminimum</string>
+    <string name="observation_height_mid_rising">Middenhoogte stijgend %1$s</string>
+    <string name="observation_height_mid_setting">Middenhoogte dalend %1$s</string>
+    <string name="observation_moments_year">Maxima, minima en passages op halve hoogte van de bovenste culminaties in het gekozen jaar. Tik op een datum en tijd om op dat moment te pauzeren.</string>
     <string name="observation_moments_midpoint_note">Middenhoogte: de culminatie die het dichtst bij het gemiddelde van de jaarlijkse maximale en minimale hoogte ligt.</string>
     <string name="observation_moments_unavailable">De beschikbare baangegevens laten geen betrouwbare jaarberekening toe.</string>
     <string name="observation_moment_applied">Datum en tijd ingesteld · Tijd stilgezet</string>
+    <string name="observation_height_cycle_maximum">Cyclusmaximum %1$s</string>
+    <string name="observation_height_cycle_minimum">Cyclusminimum %1$s</string>
+    <string name="observation_height_cycle_maximum_single">Cyclusmaximum</string>
+    <string name="observation_height_cycle_minimum_single">Cyclusminimum</string>
+    <string name="observation_height_mid_rising_single">Middenhoogte stijgend</string>
+    <string name="observation_height_mid_setting_single">Middenhoogte dalend</string>
+    <string name="observation_heights_title">Belangrijke hoogten</string>
+    <string name="observation_heights_year">Jaar</string>
 </resources>

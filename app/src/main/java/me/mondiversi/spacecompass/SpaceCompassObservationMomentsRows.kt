@@ -12,90 +12,87 @@ import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.platform.testTag
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.semantics.Role
+import androidx.compose.ui.semantics.semantics
+import androidx.compose.ui.semantics.contentDescription
+import androidx.compose.ui.text.AnnotatedString
+import androidx.compose.ui.text.SpanStyle
+import androidx.compose.ui.text.buildAnnotatedString
+import androidx.compose.ui.text.withStyle
+import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.text.style.TextDirection
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import kotlinx.coroutines.CancellationException
-import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.ensureActive
-import kotlin.coroutines.coroutineContext
-import kotlin.math.round
-import kotlinx.coroutines.withContext
 import java.time.Instant
 import java.time.ZoneId
 import java.util.TimeZone
 
 /** One selected object/year is evaluated off the UI thread, independently of sensor/live ticks. */
 @Composable
-internal fun SpaceCompassObservationMomentsRows(body: SpaceCompassCelestialBody, timeMs: Long,
-    latitude: Double?, longitude: Double?, altitude: Double, remote: SpaceCompassCelestialRemoteData,
+internal fun SpaceCompassObservationMomentsRows(result: SpaceCompassObservationMomentsUiState,
     secondaryText: Color) {
     val context = LocalContext.current
     val observer = LocalSpaceCompassObserver.current
     val zone = spaceCompassObservationZone()
-    val year = Instant.ofEpochMilli(timeMs).atZone(zone).year
-    // Same ~11 m / 10 m cells as the cached sky paths prevent GPS jitter cancelling annual work.
-    val latitudeKey = latitude?.let { round(it * 10_000) / 10_000 }
-    val longitudeKey = longitude?.let { round(it * 10_000) / 10_000 }
-    val altitudeKey = round(altitude / 10) * 10
-    val orbit = remote.satelliteOrbit(body)
-    // key() prevents a previous place/year's links remaining clickable while the annual result loads.
-    val result = key(body, year, zone, latitudeKey, longitudeKey, altitudeKey, orbit, remote.ephemerides[body]) {
-        produceState<Pair<Boolean, List<SpaceCompassObservationMoment>?>>(false to null) {
-            val moments = if (latitude == null || longitude == null) null else withContext(Dispatchers.Default) {
-                val job = coroutineContext
-                try { calculateSpaceCompassObservationMoments(body, timeMs, zone,
-                    latitude, longitude, altitude, remote) { job.ensureActive() } }
-                catch (cancelled: CancellationException) { throw cancelled }
-                catch (error: Exception) {
-                    SpaceCompassErrorLog.record(context, "observatory:annual_moments", error); null
-                }
-            }
-            value = true to moments
-        }.value
-    }
-    val formatting = rememberSpaceCompassDataExportProfiles().selected.formatting
-    val timeZone = TimeZone.getTimeZone(zone)
+    val profile = rememberSpaceCompassDataExportProfiles().selected
+    val formatting = profile.formatting
+    val timeZone = remember(zone) { TimeZone.getTimeZone(zone) }
     val appliedMessage = stringResource(R.string.observation_moment_applied)
     Text(stringResource(R.string.observation_moments_year), color = secondaryText, fontSize = 10.sp, lineHeight = 13.sp)
-    if (result.first && result.second == null) Text(stringResource(if (latitude == null || longitude == null)
+    if (result.complete && result.moments == null) Text(stringResource(if (!result.hasLocation)
         R.string.celestial_view_location_needed else R.string.observation_moments_unavailable),
         color = secondaryText, fontSize = 10.sp, lineHeight = 13.sp)
-    val placeholders = SpaceCompassObservationMomentKind.entries.map { it to null }
-    val rows = result.second?.map { it.kind to it.point } ?: placeholders
+    val prepared = remember(result.moments) { result.moments?.let(::spaceCompassObservationMomentRows) }
+    val rows = prepared ?: SpaceCompassObservationMomentKind.entries.map {
+        SpaceCompassObservationMomentRow(it, null, annualExtreme = it == SpaceCompassObservationMomentKind.MAXIMUM ||
+            it == SpaceCompassObservationMomentKind.MINIMUM)
+    }
     for ((index, entry) in rows.withIndex()) {
-        val (kind, point) = entry
-        val label = stringResource(when (kind) {
-            SpaceCompassObservationMomentKind.MAXIMUM -> R.string.observation_height_maximum
-            SpaceCompassObservationMomentKind.MINIMUM -> R.string.observation_height_minimum
-            SpaceCompassObservationMomentKind.MID_RISING -> R.string.observation_height_mid_rising
-            SpaceCompassObservationMomentKind.MID_SETTING -> R.string.observation_height_mid_setting
-        })
-        val enabled = point != null && observer != null &&
+        val kind = entry.kind
+        val point = entry.point
+        val label = spaceCompassObservationMomentTitle(entry, profile)
+        val enabled = result.complete && point != null && observer != null &&
             Instant.ofEpochMilli(point.timeMs).atZone(zone).year in 1900..2100
+        val elevation = remember(point, formatting) { point?.let {
+            formatSpaceCompassPanoramaElevation(it.position.elevationDegrees, formatting) + "°"
+        } ?: "—" }
+        val elevationDescription = stringResource(R.string.celestial_point_elevation, elevation)
         Row(Modifier.fillMaxWidth(), verticalAlignment = Alignment.CenterVertically,
-            horizontalArrangement = Arrangement.spacedBy(10.dp)) {
-            Text(label, Modifier.weight(.52f), color = secondaryText, fontSize = 12.sp, lineHeight = 16.sp)
-            Column(Modifier.weight(.48f).defaultMinSize(minHeight = 48.dp)
+            horizontalArrangement = Arrangement.spacedBy(6.dp)) {
+            Row(Modifier.weight(.40f).testTag("observation-moment-label-$index"),
+                verticalAlignment = Alignment.CenterVertically, horizontalArrangement = Arrangement.spacedBy(6.dp)) {
+                SpaceCompassObservationMomentIcon(kind, secondaryText,
+                    Modifier.testTag("observation-moment-icon-${kind.name.lowercase()}-$index"))
+                Text(label, Modifier.weight(1f), color = secondaryText, fontSize = 12.sp, lineHeight = 16.sp)
+            }
+            Text(elevation, Modifier.weight(.15f).testTag("observation-moment-elevation-$index")
+                .semantics { contentDescription = elevationDescription }, color = secondaryText,
+                fontSize = 12.sp, lineHeight = 16.sp, textAlign = TextAlign.Center,
+                style = TextStyle(textDirection = TextDirection.ContentOrLtr))
+            Column(Modifier.weight(.45f).defaultMinSize(minHeight = 48.dp)
                 .testTag("observation-moment-${kind.name.lowercase()}-$index")
                 .clickable(enabled = enabled, onClickLabel = label, role = Role.Button) {
                     if (point != null && observer?.observeAt(point.timeMs, ZoneId.systemDefault()) == true)
                         showSpaceCompassBottomMessage(context, appliedMessage)
                 }, verticalArrangement = Arrangement.Center) {
-                val dateText = point?.let { formatSpaceCompassDateOnly(it.timeMs, formatting.date,
-                    formatting.deviceLocale, timeZone, formatting.numeric, formatting.deviceLocale, allowHistorical = true) }
-                val clockText = point?.let { formatSpaceCompassTimeOnly(it.timeMs, formatting.time,
-                    formatting.locale, timeZone, formatting.numeric, formatting.deviceLocale, includeSeconds = false,
-                    allowHistorical = true) }
-                val offset = point?.let { formatSpaceCompassObserverUtcOffset(zone.rules.getOffset(Instant.ofEpochMilli(it.timeMs))) }
-                val elevationText = point?.let { formatSpaceCompassPanoramaElevation(it.position.elevationDegrees, formatting) + "°" }
-                Text(if (point == null) { if (!result.first) stringResource(R.string.pc_loading) else "—" }
-                    else "$dateText\n$clockText · $offset\n$elevationText", color = if (enabled) MaterialTheme.colorScheme.primary else secondaryText,
+                val valueText = remember(point, formatting, zone) { point?.let {
+                    val dateText = formatSpaceCompassDateOnly(it.timeMs, formatting.date,
+                        formatting.deviceLocale, timeZone, formatting.numeric, formatting.deviceLocale, allowHistorical = true)
+                    val clockText = formatSpaceCompassTimeOnly(it.timeMs, formatting.time,
+                        formatting.locale, timeZone, formatting.numeric, formatting.deviceLocale, includeSeconds = false,
+                        allowHistorical = true)
+                    val offset = formatSpaceCompassObserverUtcOffset(zone.rules.getOffset(Instant.ofEpochMilli(it.timeMs)))
+                    buildAnnotatedString {
+                        append(dateText); append("\n"); append(clockText)
+                        withStyle(SpanStyle(fontSize = 10.sp)) { append(" · $offset") }
+                    }
+                } }
+                Text(valueText ?: AnnotatedString(if (!result.complete) stringResource(R.string.pc_loading) else "—"),
+                    color = if (enabled) MaterialTheme.colorScheme.primary else secondaryText,
                     fontSize = 12.sp, lineHeight = 16.sp, style = TextStyle(textDirection = TextDirection.ContentOrLtr))
             }
         }
     }
-    if (result.second != null) Text(stringResource(R.string.observation_moments_midpoint_note),
+    if (result.moments != null) Text(stringResource(R.string.observation_moments_midpoint_note),
         color = secondaryText, fontSize = 10.sp, lineHeight = 13.sp)
 }

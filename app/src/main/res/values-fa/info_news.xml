@@ -1,9 +1,9 @@
 <resources>
     <string name="info_news_title">تازه‌ترین تغییرات · %1$s</string>
-    <string name="info_news_star_sky" formatted="false">رصدخانه همهٔ بیشینه‌ها و کمینه‌های مهم ارتفاع سالانه را حفظ می‌کند؛ تعداد آن‌ها به جرم و Location بستگی دارد.</string>
-    <string name="info_news_texture_downloads" formatted="false">هر لحظه تاریخ، ساعت محلی، اختلاف UTC و ارتفاع بر حسب درجه را نشان می‌دهد و همهٔ گذرهای نزدیک میانگین بیشینه و کمینهٔ مطلق سالانه حفظ می‌شوند.</string>
-    <string name="info_news_weather" formatted="false">روی تاریخ و ساعت رصد بزنید تا آن لحظه در Location تنظیم و زمان در 0× متوقف شود؛ موقعیت، ارتفاع و تنظیم ادامه حفظ می‌شوند.</string>
-    <string name="info_news_viewer_zoom" formatted="false">محاسبات سالانه از Location و منطقهٔ زمانی مؤثر، همراه با ساعت تابستانی استفاده می‌کنند. پوشش مداری ناکافی به‌روشنی مشخص می‌شود.</string>
-    <string name="info_news_settings" formatted="false">هر جرم، جای پیمایش رصدخانه و مسیر روزانه را در نشست جاری به‌طور جداگانه به یاد می‌سپارد.</string>
-    <string name="info_news_catalog" formatted="false">جای پیمایش با جابه‌جایی، چرخش و رفتن به پس‌زمینه حفظ می‌شود. بارگیری موقت و وسط‌چینی نقطه‌ها جای بررسی‌شده را پاک نمی‌کنند.</string>
+    <string name="info_news_star_sky" formatted="false">ارتفاع‌های کلیدی از رصدخانه در صفحه‌ای مستقل با ستون‌های جداگانه برای رویداد، ارتفاع و تاریخ/ساعت باز می‌شود.</string>
+    <string name="info_news_texture_downloads" formatted="false">سالی بین 1900 و 2100 انتخاب کنید. محاسبات سالانهٔ پایدار، بیشینه‌ها و کمینه‌های مهم و گذرهای نیم‌ارتفاع را حفظ می‌کنند؛ رویدادهای تکی دیگر شماره ندارند.</string>
+    <string name="info_news_weather" formatted="false">ارتفاع‌های کلیدی را با قالب‌های انتخابی و حریم خصوصی موقعیت، به‌صورت صفحه‌گستردهٔ CSV یا جدول خوانای TXT صادر کنید.</string>
+    <string name="info_news_viewer_zoom" formatted="false">کنترل‌های نمای اصلی در دو ردیف در گوشهٔ بالای صفحه قرار دارند. دوربین، هواشناسی و 0°/90° در ردیف دوم هستند؛ در حالت دوربین، شفافیت و بزرگ‌نمایی نمایش داده می‌شوند.</string>
+    <string name="info_news_settings" formatted="false">تنظیمات، فرم‌های Location و نام‌های خروجی از فیلدهای ورودی و انتخاب فشرده‌تر استفاده می‌کنند و برچسب‌ها، ویرایش بومی و رنگ‌های پوسته حفظ می‌شوند.</string>
+    <string name="info_news_catalog" formatted="false">برای فعال یا غیرفعال کردن هم‌زمان مقادیر سفارشی آماده‌شده، عنوان مدیریت Location را لمس کنید. هر جرم موقعیت پیمایش جداگانه‌ای برای رصدخانه، مسیر روزانه و ارتفاع‌های کلیدی نگه می‌دارد.</string>
 </resources>

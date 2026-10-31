@@ -1,9 +1,9 @@
 <resources>
     <string name="info_news_title">Mambo mapya · %1$s</string>
-    <string name="info_news_star_sky" formatted="false">Observatory huhifadhi vilele na viwango vya chini vyote muhimu vya kimo kwa mwaka; idadi hutegemea kitu na Location.</string>
-    <string name="info_news_texture_downloads" formatted="false">Kila wakati huonyesha tarehe, saa za eneo, tofauti ya UTC na kimo kwa digrii, pamoja na vipito vyote karibu na wastani wa kimo cha juu na cha chini kabisa cha mwaka.</string>
-    <string name="info_news_weather" formatted="false">Gusa tarehe na saa ya uchunguzi kuweka wakati huo kwenye Location na kusimamisha muda kwa 0×, bila kupoteza mahali, mwinuko au chaguo la kuendelea.</string>
-    <string name="info_news_viewer_zoom" formatted="false">Hesabu za mwaka hutumia Location na ukanda wa saa unaotumika, pamoja na saa za kiangazi. Data za obiti zisizotosha huonyeshwa wazi.</string>
-    <string name="info_news_settings" formatted="false">Kila kitu kinakumbuka kando nafasi za kusogeza katika Kituo cha uchunguzi na Njia ya siku katika kipindi hiki.</string>
-    <string name="info_news_catalog" formatted="false">Nafasi ya kusogeza hubaki unapotembea kwenye programu, kuzungusha au kwenda chinichini. Kupakia kwa muda na kuweka nukta katikati hakufuti nafasi.</string>
+    <string name="info_news_star_sky" formatted="false">Miinuko muhimu hufunguliwa kutoka Kituo cha uchunguzi kwenye ukurasa wake, wenye safu tofauti za tukio, mwinuko na tarehe/saa.</string>
+    <string name="info_news_texture_downloads" formatted="false">Chagua mwaka kuanzia 1900 hadi 2100. Hesabu thabiti za mwaka huhifadhi vilele, mabonde na vipito vya nusu ya mwinuko vilivyo muhimu; matukio ya pekee hayana nambari tena.</string>
+    <string name="info_news_weather" formatted="false">Hamisha Miinuko muhimu kama lahajedwali la CSV au jedwali la TXT linalosomeka, kwa miundo uliyochagua na faragha ya eneo.</string>
+    <string name="info_news_viewer_zoom" formatted="false">Vidhibiti vya mwonekano mkuu viko katika mistari miwili juu kulia. Kamera, Hali ya hewa na 0°/90° viko kwenye mstari wa pili; hali ya kamera huonyesha Uwazi na Kukuza.</string>
+    <string name="info_news_settings" formatted="false">Mipangilio, fomu za Location na majina ya faili za kuhamisha hutumia sehemu fupi zaidi za kuingiza na kuchagua, huku zikihifadhi lebo, uhariri asilia na rangi za mandhari.</string>
+    <string name="info_news_catalog" formatted="false">Gusa kichwa cha usimamizi wa Location ili kuwasha au kuzima pamoja thamani maalumu zilizoandaliwa. Kila kitu huhifadhi nafasi tofauti za kusogeza za Kituo cha uchunguzi, Njia ya kila siku na Miinuko muhimu.</string>
 </resources>

@@ -1,11 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="observation_height_maximum">أقصى ارتفاع</string>
-    <string name="observation_height_minimum">أدنى ارتفاع</string>
-    <string name="observation_height_mid_rising">منتصف الارتفاع · تزايد</string>
-    <string name="observation_height_mid_setting">منتصف الارتفاع · تناقص</string>
-    <string name="observation_moments_year">قمم وقيعان وعبور منتصف ارتفاع العبور العلوي خلال السنة التقويمية لـ Location. اضغط على التاريخ والوقت لإيقاف الزمن عند تلك اللحظة.</string>
+    <string name="observation_height_maximum">الحد الأقصى السنوي</string>
+    <string name="observation_height_minimum">الحد الأدنى السنوي</string>
+    <string name="observation_height_mid_rising">منتصف الارتفاع تزايد %1$s</string>
+    <string name="observation_height_mid_setting">منتصف الارتفاع تناقص %1$s</string>
+    <string name="observation_moments_year">قمم وقيعان وعبور منتصف ارتفاع العبور العلوي خلال السنة المحددة. اضغط على التاريخ والوقت لإيقاف الزمن عند تلك اللحظة.</string>
     <string name="observation_moments_midpoint_note">منتصف الارتفاع: العبور العلوي الأقرب إلى متوسط أقصى وأدنى ارتفاع سنوي.</string>
     <string name="observation_moments_unavailable">البيانات المدارية المتاحة لا تكفي لإجراء حساب سنوي موثوق.</string>
     <string name="observation_moment_applied">تم ضبط التاريخ والوقت · الزمن متوقف</string>
+    <string name="observation_height_cycle_maximum">الحد الأقصى للدورة %1$s</string>
+    <string name="observation_height_cycle_minimum">الحد الأدنى للدورة %1$s</string>
+    <string name="observation_height_cycle_maximum_single">الحد الأقصى للدورة</string>
+    <string name="observation_height_cycle_minimum_single">الحد الأدنى للدورة</string>
+    <string name="observation_height_mid_rising_single">منتصف الارتفاع تزايد</string>
+    <string name="observation_height_mid_setting_single">منتصف الارتفاع تناقص</string>
+    <string name="observation_heights_title">الارتفاعات المهمة</string>
+    <string name="observation_heights_year">السنة</string>
 </resources>

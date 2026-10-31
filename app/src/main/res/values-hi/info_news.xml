@@ -1,9 +1,9 @@
 <resources>
     <string name="info_news_title">हाल के बदलाव · %1$s</string>
-    <string name="info_news_star_sky" formatted="false">वेधशाला सभी महत्वपूर्ण वार्षिक अधिकतम और न्यूनतम ऊँचाइयाँ रखती है; उनकी संख्या पिंड और Location पर निर्भर करती है।</string>
-    <string name="info_news_texture_downloads" formatted="false">हर क्षण के लिए तारीख, स्थानीय समय, UTC अंतर और डिग्री में ऊँचाई दिखाई जाती है, साथ ही वार्षिक चरम ऊँचाइयों के औसत के पास के सभी पारगमन।</string>
-    <string name="info_news_weather" formatted="false">अवलोकन की तारीख और समय पर टैप करके वह क्षण Location में सेट करें और समय 0× पर रोकें; स्थान, ऊँचाई और पुनः आरंभ का विकल्प बना रहता है।</string>
-    <string name="info_news_viewer_zoom" formatted="false">वार्षिक गणनाएँ प्रभावी Location और समय क्षेत्र, ग्रीष्मकालीन समय सहित, इस्तेमाल करती हैं। अपर्याप्त कक्षीय डेटा स्पष्ट रूप से बताया जाता है।</string>
-    <string name="info_news_settings" formatted="false">हर वस्तु वर्तमान सत्र में वेधशाला और दैनिक पथ की अलग-अलग स्क्रॉल स्थितियाँ याद रखती है।</string>
-    <string name="info_news_catalog" formatted="false">नेविगेशन, घुमाव और पृष्ठभूमि में जाने पर स्क्रॉल स्थिति बनी रहती है। अस्थायी लोडिंग और बिंदु केंद्रण देखी गई स्थिति नहीं मिटाते।</string>
+    <string name="info_news_star_sky" formatted="false">प्रमुख ऊँचाइयाँ वेधशाला से एक अलग पृष्ठ में खुलती हैं, जिसमें घटना, उन्नयन और दिनांक/समय के अलग स्तंभ हैं।</string>
+    <string name="info_news_texture_downloads" formatted="false">1900 से 2100 के बीच वर्ष चुनें। स्थिर वार्षिक गणनाएँ महत्वपूर्ण अधिकतम, न्यूनतम और आधी ऊँचाई के पारगमन बनाए रखती हैं; अकेली घटनाओं पर अब क्रमांक नहीं होता।</string>
+    <string name="info_news_weather" formatted="false">प्रमुख ऊँचाइयाँ चुने हुए प्रारूपों और स्थान की गोपनीयता के साथ CSV स्प्रेडशीट या पठनीय TXT तालिका में निर्यात करें।</string>
+    <string name="info_news_viewer_zoom" formatted="false">मुख्य दृश्य के नियंत्रण ऊपर दाईं ओर दो पंक्तियों में हैं। कैमरा, मौसम और 0°/90° दूसरी पंक्ति में हैं; कैमरा मोड में पारदर्शिता और ज़ूम दिखते हैं।</string>
+    <string name="info_news_settings" formatted="false">सेटिंग्स, Location फ़ॉर्म और निर्यात के नामों में अधिक सघन इनपुट और चयन फ़ील्ड हैं; लेबल, मूल संपादन और थीम के रंग बने रहते हैं।</string>
+    <string name="info_news_catalog" formatted="false">तैयार किए गए व्यक्तिगत मानों को एक साथ चालू या बंद करने के लिए Location प्रबंधन का शीर्षक छुएँ। प्रत्येक वस्तु के लिए वेधशाला, दैनिक पथ और प्रमुख ऊँचाइयों की स्क्रॉल स्थितियाँ अलग रहती हैं।</string>
 </resources>

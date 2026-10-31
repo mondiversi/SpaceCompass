@@ -52,4 +52,22 @@ class SpaceCompassObserverOverrideSelectionTest {
         assertEquals(original.clockOffsetMs, restarted.clockOffsetMs)
         assertEquals(later + 18_000_000, restarted.observationTimeMs(later))
     }
+
+    @Test fun bulkOffReturnsToLiveAndReactivationUsesNormalSpeedWithoutReplacingResumptionOrPreparedValues() {
+        val state = SpaceCompassObserverState(null,elapsedClock={0L})
+        val active = draft.withAllOverrides(true).resolve(null,now,"Europe/Rome").getOrThrow()!!
+        state.storeEditorConfiguration(active)
+        state.configureTime(SpaceCompassScenarioTimeSettings(true,1,SpaceCompassScenarioResume.ACTIVE))
+        state.configureTime(state.timeSettings.copy(rate=3600))
+        state.storeEditorConfiguration(draft.withAllOverrides(false).resolve(active,now,"Europe/Rome").getOrThrow())
+        state.configureTime(state.timeSettings.copy(enabled=false))
+        assertNull(state.plan);assertFalse(state.timeSettings.enabled)
+        assertEquals(active,state.savedPlan)
+        state.storeEditorConfiguration(draft.withAllOverrides(true).resolve(state.savedPlan,now,"Europe/Rome").getOrThrow())
+        state.configureTime(state.timeSettings.copy(enabled=true))
+        assertEquals(1,state.timeSettings.rate)
+        assertEquals(SpaceCompassScenarioResume.ACTIVE,state.timeSettings.resume)
+        assertEquals(5,state.savedPlan!!.activeSections.size)
+    }
+
 }

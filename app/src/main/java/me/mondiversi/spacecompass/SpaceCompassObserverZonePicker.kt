@@ -1,7 +1,6 @@
 package me.mondiversi.spacecompass
 
 import android.icu.text.TimeZoneNames
-import androidx.compose.foundation.BorderStroke
 import androidx.compose.foundation.Canvas
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.lazy.LazyColumn
@@ -10,10 +9,8 @@ import androidx.compose.foundation.lazy.rememberLazyListState
 import androidx.compose.foundation.selection.selectableGroup
 import androidx.compose.material3.*
 import androidx.compose.runtime.*
-import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.geometry.Offset
-import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.StrokeCap
 import androidx.compose.ui.platform.LocalConfiguration
 import androidx.compose.ui.platform.testTag
@@ -41,26 +38,21 @@ internal fun SpaceCompassObserverZonePicker(value: String, timeMs: Long, enabled
     }
     val foreground = MaterialTheme.colorScheme.onSurface
     val tint = foreground.copy(alpha = if (enabled) 1f else .4f)
-    Surface(onClick = { search = ""; expanded = true }, enabled = enabled,
-        modifier = Modifier.fillMaxWidth().heightIn(min = 56.dp).testTag("observer-zone"),
-        shape = MaterialTheme.shapes.small, color = Color.Transparent,
-        border = BorderStroke(1.dp, MaterialTheme.colorScheme.outline.copy(alpha = if (enabled) 1f else .4f))) {
-        Row(Modifier.padding(horizontal = 12.dp, vertical = 10.dp), verticalAlignment = Alignment.CenterVertically,
-            horizontalArrangement = Arrangement.spacedBy(8.dp)) {
-            Column(Modifier.weight(1f)) {
-                Text(label(value), color = tint, fontSize = 14.sp, maxLines = 2, overflow = TextOverflow.Ellipsis)
-                if (label(value) != value) Text(value, color = tint.copy(alpha = .65f), fontSize = 10.sp,
-                    maxLines = 1, overflow = TextOverflow.Ellipsis, style = TextStyle(textDirection = TextDirection.Ltr))
-            }
-            selected?.let { Text(formatSpaceCompassObserverUtcOffset(it), color = tint, fontSize = 12.sp,
-                style = TextStyle(textDirection = TextDirection.Ltr), maxLines = 1) }
-            Canvas(Modifier.size(16.dp)) {
-                val stroke = 1.7.dp.toPx()
-                drawLine(tint, Offset(size.width * .2f, size.height * .35f),
-                    Offset(size.width * .5f, size.height * .65f), stroke, StrokeCap.Round)
-                drawLine(tint, Offset(size.width * .5f, size.height * .65f),
-                    Offset(size.width * .8f, size.height * .35f), stroke, StrokeCap.Round)
-            }
+    SpaceCompassCompactSelectionField(onClick = { search = ""; expanded = true }, enabled = enabled,
+        modifier = Modifier.testTag("observer-zone")) {
+        Column(Modifier.weight(1f)) {
+            Text(label(value), color = tint, fontSize = 14.sp, maxLines = 2, overflow = TextOverflow.Ellipsis)
+            if (label(value) != value) Text(value, color = tint.copy(alpha = .65f), fontSize = 10.sp,
+                maxLines = 1, overflow = TextOverflow.Ellipsis, style = TextStyle(textDirection = TextDirection.Ltr))
+        }
+        selected?.let { Text(formatSpaceCompassObserverUtcOffset(it), color = tint, fontSize = 12.sp,
+            style = TextStyle(textDirection = TextDirection.Ltr), maxLines = 1) }
+        Canvas(Modifier.size(16.dp)) {
+            val stroke = 1.7.dp.toPx()
+            drawLine(tint, Offset(size.width * .2f, size.height * .35f),
+                Offset(size.width * .5f, size.height * .65f), stroke, StrokeCap.Round)
+            drawLine(tint, Offset(size.width * .5f, size.height * .65f),
+                Offset(size.width * .8f, size.height * .35f), stroke, StrokeCap.Round)
         }
     }
     if (expanded) {

@@ -49,6 +49,16 @@ internal fun SpaceCompassSettingsGroupIcon(key: String, tint: Color) {
         val outline = Stroke(strokeWidth, cap = StrokeCap.Round)
         fun point(x: Float, y: Float) = Offset(size.width * x, size.height * y)
         when (key) {
+            "sky_heights" -> {
+                val curve = Path().apply {
+                    moveTo(size.width * .10f, size.height * .74f)
+                    quadraticTo(size.width * .50f, size.height * -.26f,
+                        size.width * .90f, size.height * .74f)
+                }
+                drawLine(tint, point(.10f, .88f), point(.90f, .88f), strokeWidth, StrokeCap.Round)
+                drawPath(curve, tint, style = outline)
+                drawCircle(tint, size.minDimension * .08f, point(.50f, .24f))
+            }
             "scenario_speed" -> {
                 val forward = Path().apply {
                     for (left in listOf(.10f, .52f)) {

@@ -1,9 +1,9 @@
 <resources>
     <string name="info_news_title">آخر المستجدات · %1$s</string>
-    <string name="info_news_star_sky" formatted="false">يحتفظ المرصد بكل قمم وقيعان الارتفاع السنوية المهمة، ويتغير عددها بحسب الجرم وLocation.</string>
-    <string name="info_news_texture_downloads" formatted="false">تعرض كل لحظة التاريخ والوقت المحلي وفرق UTC والارتفاع بالدرجات، مع الاحتفاظ بكل مرات المرور قرب متوسط الارتفاعين السنويين الأقصى والأدنى المطلقين.</string>
-    <string name="info_news_weather" formatted="false">اضغط على تاريخ ووقت الرصد لتطبيق تلك اللحظة على Location وإيقاف الزمن عند 0×، مع الحفاظ على الموقع والارتفاع والاستئناف.</string>
-    <string name="info_news_viewer_zoom" formatted="false">تستخدم الحسابات السنوية Location والمنطقة الزمنية الفعليتين بما فيهما التوقيت الصيفي. يُشار بوضوح إلى قصور البيانات المدارية.</string>
-    <string name="info_news_settings" formatted="false">يتذكر كل جسم موضع التمرير في المرصد والمسار اليومي بشكل مستقل خلال الجلسة الحالية.</string>
-    <string name="info_news_catalog" formatted="false">تُحفظ مواضع التمرير عند التنقل والتدوير والانتقال إلى الخلفية. التحميل المؤقت وتوسيط النقاط لا يمحوان الموضع المعروض.</string>
+    <string name="info_news_star_sky" formatted="false">تفتح الارتفاعات المهمة من المرصد في صفحة مستقلة بأعمدة منفصلة للحدث والارتفاع والتاريخ والوقت.</string>
+    <string name="info_news_texture_downloads" formatted="false">اختر سنة من 1900 إلى 2100. تحافظ الحسابات السنوية المستقرة على القيم القصوى والدنيا المهمة ومرورات نصف الارتفاع؛ ولم تعد الأحداث المفردة تحتاج إلى ترقيم.</string>
+    <string name="info_news_weather" formatted="false">صدّر الارتفاعات المهمة كجدول بيانات CSV أو جدول TXT مقروء، باستخدام التنسيقات المختارة وخصوصية الموقع.</string>
+    <string name="info_news_viewer_zoom" formatted="false">تظهر عناصر التحكم الرئيسية في صفين في الزاوية العلوية. الكاميرا والطقس و0°/90° في الصف الثاني؛ ويعرض وضع الكاميرا الشفافية والتكبير.</string>
+    <string name="info_news_settings" formatted="false">تستخدم الإعدادات ونماذج Location وأسماء التصدير حقول إدخال واختيار أكثر إحكامًا، مع الاحتفاظ بالتسميات والتحرير الأصلي وألوان السمة.</string>
+    <string name="info_news_catalog" formatted="false">انقر عنوان إدارة Location لتفعيل القيم المخصصة المُعدّة أو تعطيلها معًا. يحتفظ كل جسم بمواضع تمرير مستقلة للمرصد والمسار اليومي والارتفاعات المهمة.</string>
 </resources>

@@ -8,7 +8,7 @@ import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.ViewModelStoreOwner
 import kotlinx.coroutines.flow.collect
 
-internal enum class SpaceCompassObjectPage { OBSERVATORY, DAILY_PATH }
+internal enum class SpaceCompassObjectPage { OBSERVATORY, DAILY_PATH, SKY_HEIGHTS }
 
 internal class SpaceCompassObjectPageScrollEntry {
     val scroll = ScrollState(0)

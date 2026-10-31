@@ -1,9 +1,9 @@
 <resources>
     <string name="info_news_title">Últimas novedades · %1$s</string>
-    <string name="info_news_star_sky" formatted="false">Observatorio conserva todos los máximos y mínimos anuales significativos de altura; su número depende del objeto y de la Location.</string>
-    <string name="info_news_texture_downloads" formatted="false">Cada momento muestra fecha, hora local, desfase UTC y altura en grados, incluidos todos los pasos cercanos a la media de los extremos anuales absolutos.</string>
-    <string name="info_news_weather" formatted="false">Toca la fecha y la hora de una observación para aplicar ese instante a la Location y detener el tiempo en 0×, conservando posición, altitud y reanudación.</string>
-    <string name="info_news_viewer_zoom" formatted="false">Los cálculos anuales usan la Location y zona horaria efectivas, incluido el horario de verano. Se indica la cobertura orbital insuficiente.</string>
-    <string name="info_news_settings" formatted="false">Cada objeto recuerda por separado el desplazamiento del Observatorio y del Recorrido diario durante la sesión actual.</string>
-    <string name="info_news_catalog" formatted="false">El desplazamiento se conserva al navegar, girar y pasar a segundo plano. La carga temporal y el centrado de puntos no borran la posición consultada.</string>
+    <string name="info_news_star_sky" formatted="false">Alturas clave se abre desde el Observatorio en una página propia, con columnas separadas para el momento, la elevación y la fecha/hora.</string>
+    <string name="info_news_texture_downloads" formatted="false">Elige un año de 1900 a 2100. Los cálculos anuales permanecen estables y conservan los extremos significativos y pasos a media altura; los eventos únicos ya no llevan número.</string>
+    <string name="info_news_weather" formatted="false">Exporta Alturas clave como hoja de cálculo CSV o tabla TXT legible, con los formatos elegidos y la privacidad de la ubicación.</string>
+    <string name="info_news_viewer_zoom" formatted="false">Los controles principales ocupan dos filas arriba a la derecha. Cámara, Meteo y 0°/90° comparten la segunda; el modo cámara muestra Transparencia y Zoom.</string>
+    <string name="info_news_settings" formatted="false">Los ajustes, formularios de Location y nombres de exportación usan campos de entrada y selección más compactos, conservando etiquetas, edición nativa y colores del tema.</string>
+    <string name="info_news_catalog" formatted="false">Toca el título de gestión de Location para activar o desactivar juntos los valores personalizados preparados. Cada objeto conserva desplazamientos separados para Observatorio, Recorrido diario y Alturas clave.</string>
 </resources>

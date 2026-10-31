@@ -527,7 +527,7 @@ Catalogue observation and presentation snapshots publish atomically. A backgroun
 
 ## Observatory observation moments
 
-The Orbit and observation island compares all upper culminations in the observation-zone calendar
+The Key heights page compares all upper culminations in the observation-zone calendar
 year, using the effective Location coordinates and height. Upper meridian crossings are bracketed
 hourly and refined to 250 ms from the same topocentric ENU directions as the sky renderer, including
 zenith/polar cases without azimuth discontinuities. Annual minimum means the lowest upper
@@ -535,12 +535,36 @@ culmination, not the nightly lower transit. All significant local maxima and min
 upper-culmination curve are retained, rather than only one absolute pair: for example, the equatorial
 Sun has two peaks and two troughs. A 0.01-degree prominence threshold on both sides rejects tiny
 numerical ripples; plateaus choose one actual middle transit. Calendar edges are not cyclically
-joined, and the absolute bounded-year extremes remain available even for monotonic curves. Rows
-group maxima, minima and mid-height crossings, chronologically within each group. All crossings
+joined, and the absolute bounded-year extremes remain available even for monotonic curves.
+Cycle extrema and mid-height events retain chronological order within each kind. All crossings
 of the mean of the absolute annual extrema are represented by the nearer real culmination; no interpolated non-culminating
 instant is invented. Short-lived TLEs and incomplete annual ephemerides explicitly yield unavailable
-annual data. Background work is cancellable and cached by object, year, zone, source and the same
-small GPS/height cells as the sky paths, independently from time ticks and selected-day changes.
+annual data. Background work is cancellable and cached by object, year, zone, source and the accepted
+GPS anchors, independently from time ticks and selected-day changes. For this annual summary only,
+GPS drift within 100 m horizontally / 50 m vertically keeps the accepted reference; fixed Location
+coordinates and heights remain exact. A bounded activity ViewModel cache retains completed results
+through navigation and rotation. Recalculation keeps same-calendar results visible with date actions
+disabled until current data arrive; unavailable outcomes replace stale results and cancelled jobs
+are never cached. The live sky retains its current inputs. Presentation puts the two absolute annual
+extremes first, then the remaining cycle extrema and increasing/decreasing midpoint passages in
+chronological order within each kind. Ordinal numbers appear only when a kind has more than one
+remaining event; annual summary events are not duplicated. The Observatory's orbit island links to
+the dedicated Key heights page, which owns the annual calculation and a separate per-object session
+scroll. Its flat daily-path-style surface reuses the table, formats, date actions and unavailable states.
+A right-aligned editable year combo accepts 1900–2100, starts with the Location calendar year and
+keeps consultation separate from Location settings. Its numeric input supports localized digits;
+invalid drafts disable date/export actions. The selected year drives the annual calculation and
+frozen export reference, including leap-day/DST conversion; switching years returns to the top.
+The object/year quick-return header, toolbar, divider and surface palette match the daily path.
+The hidden Observatory retains its model state and scroll, with automatic rotation paused.
+Sky-height rows use three columns: moment labels 40%, neutral read-only elevation 15%, and
+clickable date/time 45%, with compact 6 dp gaps. The UTC offset uses the existing secondary 10 sp
+size so ordinary date/time links fit two lines without shrinking the main text or touch target.
+Decorative plus/minus and trend chevrons share daily-path semantics. Annual TXT/CSV exports freeze the completed cache result and its exact
+accepted observer reference at opening time. Dates, clocks, seasonal UTC offsets and elevations have
+separate table columns. The shared export page owns empty-by-default file choices, the global
+formatting preference and area-by-default position disclosure; hidden disclosure uses UTC and
+omits location metadata. Returning from export preserves the heights page and its scroll.
 
 Selecting a moment commits date, clock and enabled 0x speed in one preference edit, removes any
 previous temporal checkpoint, and preserves effective spatial overrides/resumption policy. Exact
@@ -562,3 +586,25 @@ annual Moon details loading) does not erase the requested offset before the full
 Daily path also retains its quick-return header visibility; restoring an already visited table takes
 precedence over the automatic last-selected-point centering. First visits still support explicit
 point centering, and subsequent path-data refreshes do not repeatedly recenter a consulted table.
+
+The management title is a bulk Location shortcut: any active override or speed disables all;
+an entirely automatic Location enables the five prepared fields and speed at the normal 1x rate.
+The mandatory resumption policy is retained. Bulk field changes validate once, cancel stale
+metadata lookups and retain prepared values; missing/invalid inputs never become invented fixes.
+
+
+## Compact fields and main scene controls
+
+Settings text and selection fields share a 44 dp minimum frame, 16 dp horizontal / 4 dp
+vertical content padding, an eight-dp floating-label allowance and a 40 dp icon reservation.
+Material decoration retains label, cursor, focus, error and native-input behavior. Search
+and filter controls retain their specialized geometry. Location overrides reuse these
+fields without changing their persisted values or independent activation.
+
+The main scene places equal-size Info/logo and Menu controls at the upper start edge.
+The upper end group measures two trailing-aligned rows: reticle, references, Location and
+objects; then camera, weather/transparency and axis/zoom. Flow rows retain complete circles
+in narrower viewports. The bottom start group contains collapse and optional point clearing;
+capture is measured separately so it cannot be squeezed by adjacent actions. The measured
+header and input shield keep labels/taps clear of the controls without moving the optical
+projection, reticle reference or landscape capture anchor.

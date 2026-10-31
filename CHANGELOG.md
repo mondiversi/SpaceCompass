@@ -1,5 +1,15 @@
 # Changelog
 
+## 1.7.4 — 2026-10-31
+
+- Open **Key heights** from Observatory on a dedicated daily-path-style page. Show moment, elevation and date/time in separate 40% / 15% / 45% columns, with compact event icons and numbering only for repeated events of the same kind.
+- Choose an independent consultation year from 1900–2100, initially following the Location year. Keep significant annual extrema and midpoint passages, the effective observer and seasonal offsets. Cache completed calculations through GPS drift, navigation and rotation; do not invent annual data outside orbital coverage.
+- Export the frozen annual result as a CSV spreadsheet or readable TXT table, with the shared selected/international profile and area-by-default position disclosure. Date actions still configure the Location at the exact event instant and pause time.
+- Reorganize the main scene into upper-left Info/logo and Menu controls and two upper-right rows. The second row is Camera, Weather, 0°/90°; camera mode reuses the last two slots for Transparency and Zoom. Keep collapse/clear at the lower left and preserve capture size and its fixed landscape anchor.
+- Share compact text/selection field geometry across settings, Location forms and export names while retaining native editing and existing catalogue search/filter dimensions. Tapping the Location-management title toggles prepared fields and time speed together, retaining the mandatory resumption policy.
+- Retain independent per-object session scroll for Observatory, Daily path and Key heights. Refresh six news summaries and the shared page/action/export title in twenty languages.
+- Release 1.7.4/code 60 with the existing distribution certificate, signed update index, reference-information archive and validation metadata. Reuse immutable graphics collection 1.8 and its individual downloads; no complete texture ZIP is distributed.
+
 ## 1.7.3 — 2026-10-31
 
 - Add annual observation moments to Observatory: compare upper culminations throughout the Location calendar year and retain every significant local height maximum and minimum, using effective coordinates, observer altitude and local time-zone rules. The number adapts to each object and location, including both equatorial solar peaks and troughs.

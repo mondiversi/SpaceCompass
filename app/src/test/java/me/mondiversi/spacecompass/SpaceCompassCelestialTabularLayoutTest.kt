@@ -231,7 +231,7 @@ class SpaceCompassCelestialTabularLayoutTest {
         assertTrue(table.indexOf("accuracy.value") < table.indexOf("label(row.value)"))
         assertTrue(table.indexOf("column.addView(card)") < table.indexOf("data.notes.forEach"))
         assertFalse(panel.contains("rows.filter { it.tag == \"celestial-distance\" }"))
-        assertTrue(screen.contains("SpaceCompassMainNavigationControls(primaryText, backgroundColor, modifier)"))
+        assertTrue(screen.contains("SpaceCompassMainNavigationControls(primaryText, backgroundColor)"))
         assertTrue(source("SpaceCompassCelestialControls.kt").contains("SpaceCompassCelestialCatalogIcon"))
         assertFalse(source("SpaceCompassCelestialControls.kt").contains("SpaceCompassDisclosureChevron"))
         assertFalse(source("SpaceCompassSunFinderSky.kt").contains("pathTint = if (overlays.isEmpty())"))

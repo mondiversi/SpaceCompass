@@ -15,6 +15,7 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.*
 import androidx.compose.ui.semantics.semantics
 import androidx.compose.ui.semantics.contentDescription
+import androidx.compose.ui.semantics.Role
 import kotlinx.coroutines.*
 import java.time.*
 import java.time.format.DateTimeFormatter
@@ -360,10 +361,38 @@ private fun SpaceCompassObserverEditor(observer: SpaceCompassObserverState, modi
             else -> Unit
         }
     }
+    fun toggleAllCustomizations() {
+        val enable = currentDraft().enabledOverrideCount == 0 && !observer.timeSettings.enabled
+        focusManager.clearFocus(force = true); keyboard?.hide()
+        lookup?.cancel(); lookupRevision++; busy = false; metadataField = null; notice = 0
+        needsMetadata = false; pendingMoment = null
+        if (enable) {
+            if (!positionInitialized) {
+                latitude = device?.latitude?.toString().orEmpty()
+                longitude = device?.longitude?.toString().orEmpty()
+                automaticAltitude = device?.altitude; automaticZone = device?.let { ZoneId.systemDefault().id }
+                positionInitialized = true
+            }
+            if (!altitudeEdited) altitude = (automaticAltitude ?: device?.altitude)?.let(::displayHeight).orEmpty()
+            if (!zoneEdited) zone = automaticZone ?: ZoneId.systemDefault().id
+            altitudeEdited = true; zoneEdited = true
+            val current = Instant.ofEpochMilli(System.currentTimeMillis()).atZone(
+                runCatching { ZoneId.of(zone) }.getOrDefault(ZoneId.systemDefault()))
+            if (!dateInitialized) date = current.toLocalDate().toString()
+            if (!timeInitialized) time = current.toLocalTime().format(DateTimeFormatter.ofPattern("HH:mm"))
+            dateInitialized = true; timeInitialized = true
+        }
+        val next = currentDraft().withAllOverrides(enable)
+        simulatePosition = next.simulatePosition; simulateAltitude = next.simulateAltitude
+        simulateZone = next.simulateZone; simulateDate = next.simulateDate; simulateTime = next.simulateTime
+        edited(); saveEditedDraft()
+        observer.configureTime(observer.timeSettings.copy(enabled = enable))
+    }
     BackHandler(onBack = ::navigateBack)
     Column(modifier.fillMaxSize().testTag("observer-page")) {
         SpaceCompassPageToolbar(stringResource(section?.titleResource ?: R.string.observer_management_title),
-            ::navigateBack) {
+            ::navigateBack, titleModifier = if (section == null) Modifier.testTag("location-toggle-all-title")
+                .clickable(role = Role.Button, onClick = ::toggleAllCustomizations) else Modifier) {
             if (section == null) SpaceCompassScenarioTransferActions(capture = { includeObjects ->
                 saveEditedDraft()
                 if (editRevision != 0 || busy || needsMetadata) {

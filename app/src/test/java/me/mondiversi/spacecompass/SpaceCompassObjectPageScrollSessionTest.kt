@@ -11,6 +11,8 @@ class SpaceCompassObjectPageScrollSessionTest {
         sun.entry.position.request(780)
         val path = session.open(SpaceCompassCelestialBody.SUN, SpaceCompassObjectPage.DAILY_PATH)
         path.entry.position.request(320)
+        val heights = session.open(SpaceCompassCelestialBody.SUN, SpaceCompassObjectPage.SKY_HEIGHTS)
+        heights.entry.position.request(640)
         val moon = session.open(SpaceCompassCelestialBody.MOON, SpaceCompassObjectPage.OBSERVATORY)
         moon.entry.position.request(1200)
         val again = session.open(SpaceCompassCelestialBody.SUN, SpaceCompassObjectPage.OBSERVATORY)
@@ -18,6 +20,7 @@ class SpaceCompassObjectPageScrollSessionTest {
         assertSame(sun.entry.scroll, again.entry.scroll)
         assertEquals(780, again.entry.position.offset)
         assertEquals(320, session.open(SpaceCompassCelestialBody.SUN, SpaceCompassObjectPage.DAILY_PATH).entry.position.offset)
+        assertEquals(640, session.open(SpaceCompassCelestialBody.SUN, SpaceCompassObjectPage.SKY_HEIGHTS).entry.position.offset)
         assertEquals(1200, session.open(SpaceCompassCelestialBody.MOON, SpaceCompassObjectPage.OBSERVATORY).entry.position.offset)
     }
 

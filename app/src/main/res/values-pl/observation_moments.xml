@@ -1,11 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="observation_height_maximum">Maksimum wysokości</string>
-    <string name="observation_height_minimum">Minimum wysokości</string>
-    <string name="observation_height_mid_rising">Średnia wysokość · wzrost</string>
-    <string name="observation_height_mid_setting">Średnia wysokość · spadek</string>
-    <string name="observation_moments_year">Maksima, minima i przejścia przez wysokość pośrednią górowań w roku kalendarzowym Location. Dotknij daty i godziny, aby zatrzymać się w tej chwili.</string>
+    <string name="observation_height_maximum">Maksimum roczne</string>
+    <string name="observation_height_minimum">Minimum roczne</string>
+    <string name="observation_height_mid_rising">Średnia wysokość wzrost %1$s</string>
+    <string name="observation_height_mid_setting">Średnia wysokość spadek %1$s</string>
+    <string name="observation_moments_year">Maksima, minima i przejścia przez średnią wysokość górowań w wybranym roku. Dotknij daty i godziny, aby zatrzymać czas w tym momencie.</string>
     <string name="observation_moments_midpoint_note">Średnia wysokość: górowanie najbliższe średniej rocznej maksymalnej i minimalnej wysokości.</string>
     <string name="observation_moments_unavailable">Dostępne dane orbitalne nie pozwalają na wiarygodne obliczenia roczne.</string>
     <string name="observation_moment_applied">Ustawiono datę i godzinę · Czas zatrzymany</string>
+    <string name="observation_height_cycle_maximum">Maksimum cyklu %1$s</string>
+    <string name="observation_height_cycle_minimum">Minimum cyklu %1$s</string>
+    <string name="observation_height_cycle_maximum_single">Maksimum cyklu</string>
+    <string name="observation_height_cycle_minimum_single">Minimum cyklu</string>
+    <string name="observation_height_mid_rising_single">Średnia wysokość wzrost</string>
+    <string name="observation_height_mid_setting_single">Średnia wysokość spadek</string>
+    <string name="observation_heights_title">Kluczowe wysokości</string>
+    <string name="observation_heights_year">Rok</string>
 </resources>

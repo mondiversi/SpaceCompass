@@ -1,9 +1,9 @@
 <resources>
     <string name="info_news_title">Neuigkeiten · %1$s</string>
-    <string name="info_news_star_sky" formatted="false">Observatorium behält alle bedeutsamen jährlichen Höhenmaxima und -minima bei; ihre Anzahl richtet sich nach Objekt und Location.</string>
-    <string name="info_news_texture_downloads" formatted="false">Jeder Zeitpunkt zeigt Datum, Ortszeit, UTC-Versatz und Höhe in Grad, einschließlich aller Durchgänge nahe dem Mittel der absoluten jährlichen Extremhöhen.</string>
-    <string name="info_news_weather" formatted="false">Datum und Uhrzeit antippen, um diesen Moment für die Location einzustellen und die Zeit bei 0× anzuhalten. Ort, Höhe und Wiederaufnahme bleiben erhalten.</string>
-    <string name="info_news_viewer_zoom" formatted="false">Jahresberechnungen verwenden die wirksame Location und Zeitzone einschließlich Sommerzeit. Unzureichende Bahndaten werden angezeigt.</string>
-    <string name="info_news_settings" formatted="false">Jedes Objekt merkt sich getrennte Scrollpositionen für Observatorium und Tagesbahn während der aktuellen Sitzung.</string>
-    <string name="info_news_catalog" formatted="false">Scrollpositionen bleiben bei Navigation, Drehung und Hintergrundbetrieb erhalten. Vorübergehendes Laden und Punktzentrierung löschen die betrachtete Position nicht.</string>
+    <string name="info_news_star_sky" formatted="false">Wichtige Höhen öffnet sich im Observatorium als eigene Seite mit getrennten Spalten für Ereignis, Höhe sowie Datum und Uhrzeit.</string>
+    <string name="info_news_texture_downloads" formatted="false">Wähle ein Jahr von 1900 bis 2100. Stabile Jahresberechnungen behalten bedeutende Extrema und Durchgänge auf halber Höhe; einzelne Ereignisse benötigen keine Nummer mehr.</string>
+    <string name="info_news_weather" formatted="false">Exportiere Wichtige Höhen als CSV-Tabelle oder lesbare TXT-Tabelle mit den gewählten Formaten und dem gewünschten Standortschutz.</string>
+    <string name="info_news_viewer_zoom" formatted="false">Die Hauptansicht hat oben rechts zwei Steuerungszeilen. Kamera, Wetter und 0°/90° stehen in der zweiten; im Kameramodus erscheinen Transparenz und Zoom.</string>
+    <string name="info_news_settings" formatted="false">Einstellungen, Location-Formulare und Exportnamen verwenden kompaktere Eingabe- und Auswahlfelder mit unveränderten Beschriftungen, nativer Bearbeitung und Themenfarben.</string>
+    <string name="info_news_catalog" formatted="false">Tippe auf den Titel der Location-Verwaltung, um vorbereitete benutzerdefinierte Werte gemeinsam ein- oder auszuschalten. Jedes Objekt behält getrennte Scrollpositionen für Observatorium, Tagesbahn und Wichtige Höhen.</string>
 </resources>

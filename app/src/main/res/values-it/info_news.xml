@@ -1,9 +1,9 @@
 <resources>
     <string name="info_news_title">Ultime novità · %1$s</string>
-    <string name="info_news_star_sky" formatted="false">I massimi e minimi annuali dell’Osservatorio sono dinamici: vengono mantenuti tutti gli estremi significativi in base all’oggetto e alla Location.</string>
-    <string name="info_news_texture_downloads" formatted="false">Ogni momento mostra data, ora, fuso ed elevazione in gradi. Sono conservati tutti i passaggi a mezz’altezza vicini alla media degli estremi annuali assoluti.</string>
-    <string name="info_news_weather" formatted="false">Tocca data e ora di un’osservazione per impostare quell’istante nella Location e fermare il tempo a 0×, conservando posizione, quota e ripresa.</string>
-    <string name="info_news_viewer_zoom" formatted="false">I calcoli annuali usano Location e fuso effettivi, compresa l’ora legale; la copertura orbitale insufficiente viene segnalata.</string>
-    <string name="info_news_settings" formatted="false">Ogni oggetto ricorda separatamente lo scorrimento di Osservatorio e Percorso giornaliero durante la sessione attuale.</string>
-    <string name="info_news_catalog" formatted="false">Lo scorrimento resta memorizzato tra navigazione, rotazione e background; caricamenti temporanei e centratura dei punti non cancellano la posizione consultata.</string>
+    <string name="info_news_star_sky" formatted="false">Altezze chiave si apre dall’Osservatorio in una pagina dedicata, con colonne separate per momento, elevazione e data/ora.</string>
+    <string name="info_news_texture_downloads" formatted="false">Scegli l’anno dal 1900 al 2100. I calcoli annuali restano stabili e mantengono estremi significativi e passaggi a mezz’altezza; gli eventi singoli non hanno più un numero.</string>
+    <string name="info_news_weather" formatted="false">Esporta Altezze chiave come foglio di calcolo CSV o tabella leggibile TXT, con i formati scelti e la riservatezza della posizione.</string>
+    <string name="info_news_viewer_zoom" formatted="false">I comandi principali occupano due righe in alto a destra. Fotocamera, Meteo e 0°/90° sono sulla seconda; in modalità fotocamera compaiono Trasparenza e Zoom.</string>
+    <string name="info_news_settings" formatted="false">Impostazioni, moduli Location e nomi delle esportazioni hanno campi di testo e selezione più compatti, mantenendo etichette, modifica nativa e colori del tema.</string>
+    <string name="info_news_catalog" formatted="false">Tocca il titolo di Gestione location per attivare o disattivare insieme i valori personalizzati preparati. Ogni oggetto conserva scorrimenti separati per Osservatorio, Percorso giornaliero e Altezze chiave.</string>
 </resources>

@@ -1,11 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="observation_height_maximum">Massimo di altezza</string>
-    <string name="observation_height_minimum">Minimo di altezza</string>
-    <string name="observation_height_mid_rising">Mezz’altezza · crescente</string>
-    <string name="observation_height_mid_setting">Mezz’altezza · decrescente</string>
-    <string name="observation_moments_year">Massimi, minimi e passaggi a mezz’altezza dei culmini nell’anno della Location. Tocca data e ora per osservare quel momento a tempo fermo.</string>
+    <string name="observation_height_maximum">Massimo annuale</string>
+    <string name="observation_height_minimum">Minimo annuale</string>
+    <string name="observation_height_mid_rising">Mezz’altezza crescente %1$s</string>
+    <string name="observation_height_mid_setting">Mezz’altezza decrescente %1$s</string>
+    <string name="observation_moments_year">Massimi, minimi e passaggi a mezz’altezza dei culmini nell’anno selezionato. Tocca data e ora per osservare quel momento a tempo fermo.</string>
     <string name="observation_moments_midpoint_note">Mezz’altezza: il culmine più vicino alla media delle altezze massima e minima annuali.</string>
     <string name="observation_moments_unavailable">I dati orbitali disponibili non consentono un calcolo annuale attendibile.</string>
     <string name="observation_moment_applied">Data e ora impostate · Tempo fermo</string>
+    <string name="observation_height_cycle_maximum">Massimo del ciclo %1$s</string>
+    <string name="observation_height_cycle_minimum">Minimo del ciclo %1$s</string>
+    <string name="observation_height_cycle_maximum_single">Massimo del ciclo</string>
+    <string name="observation_height_cycle_minimum_single">Minimo del ciclo</string>
+    <string name="observation_height_mid_rising_single">Mezz’altezza crescente</string>
+    <string name="observation_height_mid_setting_single">Mezz’altezza decrescente</string>
+    <string name="observation_heights_title">Altezze chiave</string>
+    <string name="observation_heights_year">Anno</string>
 </resources>

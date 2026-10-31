@@ -2,8 +2,8 @@
 
 Space Compass is distributed as a signed APK through
 [GitHub Releases](https://github.com/mondiversi/SpaceCompass/releases).
-The current stable release is **1.7.3**, tagged **v1.7.3**, application ID
-`me.mondiversi.spacecompass`, Android version name **1.7.3**, version code **59**,
+The current stable release is **1.7.4**, tagged **v1.7.4**, application ID
+`me.mondiversi.spacecompass`, Android version name **1.7.4**, version code **60**,
 minimum Android API 26. The three-part tag/version name retains compatibility with
 the signed update protocol used since preview 0.1.2.
 
@@ -414,6 +414,6 @@ Version 1.7.0/code 56 expands the selectable catalogue to 9,999 objects, retains
 
 Version 1.7.2/code 58 refines floating controls and direct Info/menu navigation, removes catalogue refresh flashes, embeds the full-width Location map and adds capture-header branding. All twenty news summaries are updated. Graphics collection 1.8 remains byte-identical and individually downloadable, with no new graphics release or complete texture archive. The APK, signed update index, optional reference-information archive, verification metadata and checksums describe the same committed source. See [release verification](RELEASE_1_7_2.md).
 
-## 1.7.3 annual observation and session scroll
+## 1.7.4 annual observation and session scroll
 
-Version 1.7.3/code 59 adds dynamic annual upper-culmination extrema, date/time/UTC/elevation readouts and clickable observation moments that pause the Location clock, plus per-object Observatory/Daily path session scroll memory. Its same-version refresh retains all significant extrema per object and location rather than one absolute pair; the existing release and tag are updated without changing Android code 59. Twenty-language news, generated resources, numerical regression tests and source/artifact integrity are checked. Short-lived orbital data are not represented as full-year predictions. Graphics collection 1.8 is unchanged and its individual download pins remain immutable. The APK, signed update index, optional information archive, validation report and checksums refer to the exact release source. See [release verification](RELEASE_1_7_3.md).
+Version 1.7.4/code 59 adds dynamic annual upper-culmination extrema, date/time/UTC/elevation readouts and clickable observation moments that pause the Location clock, plus per-object Observatory/Daily path session scroll memory. Its same-version refresh retains all significant extrema per object and location rather than one absolute pair; the existing release and tag are updated without changing Android code 59. Twenty-language news, generated resources, numerical regression tests and source/artifact integrity are checked. Short-lived orbital data are not represented as full-year predictions. Graphics collection 1.8 is unchanged and its individual download pins remain immutable. The APK, signed update index, optional information archive, validation report and checksums refer to the exact release source. See [release verification](RELEASE_1_7_3.md).

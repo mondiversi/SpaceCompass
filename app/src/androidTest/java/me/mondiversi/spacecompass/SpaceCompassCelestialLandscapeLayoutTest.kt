@@ -44,43 +44,62 @@ class SpaceCompassCelestialLandscapeLayoutTest {
         }
     }
 
-    private fun navigationFitsBetweenCornerControls() {
+    private fun floatingGroupsFitCurrentLayout() {
         compose.onNodeWithTag("celestial-toolbar").assertDoesNotExist()
         val navigation = compose.onNodeWithTag("celestial-main-navigation").fetchSemanticsNode().boundsInRoot
         val start = compose.onNodeWithTag("celestial-top-start-controls").fetchSemanticsNode().boundsInRoot
         val end = compose.onNodeWithTag("celestial-top-end-controls").fetchSemanticsNode().boundsInRoot
-        val left = if (direction.value == LayoutDirection.Rtl) end else start
-        val right = if (direction.value == LayoutDirection.Rtl) start else end
-        assertTrue(navigation.left >= left.right)
-        assertTrue(navigation.right <= right.left)
-        assertEquals((left.right + right.left) / 2f, navigation.center.x, 1f)
+        assertTrue(navigation.left >= start.left)
+        assertTrue(navigation.right <= start.right)
         val logo = compose.onNodeWithTag("main-info").fetchSemanticsNode().boundsInRoot
-        val camera = compose.onNodeWithTag("toggle-camera").fetchSemanticsNode().boundsInRoot
-        assertEquals(camera.center.y, logo.center.y, 1f)
-        assertEquals(logo.width, camera.width, 1f)
         val menu = compose.onNodeWithTag("app-settings").fetchSemanticsNode().boundsInRoot
-        val axis = compose.onNodeWithTag("toggle-pointing-axis").fetchSemanticsNode().boundsInRoot
-        val chevron = compose.onNodeWithTag("toggle-main-details").fetchSemanticsNode().boundsInRoot
-        assertEquals(camera.width, menu.width, 1f)
+        val objects = compose.onNodeWithTag("celestial-select").fetchSemanticsNode().boundsInRoot
+        val references = compose.onNodeWithTag("toggle-sky-references").fetchSemanticsNode().boundsInRoot
+        val reticle = compose.onNodeWithTag("toggle-reticle").fetchSemanticsNode().boundsInRoot
         assertEquals(logo.center.y, menu.center.y, 1f)
-        assertEquals(axis.center.y, chevron.center.y, 1f)
-        assertTrue(menu.bottom < axis.top)
+        assertEquals(objects.center.y, references.center.y, 1f)
+        assertEquals(objects.center.y, reticle.center.y, 1f)
         if (direction.value == LayoutDirection.Rtl) {
             assertTrue(menu.right < logo.left)
-            assertTrue(axis.right < chevron.left)
+            assertTrue(end.right < start.left)
+            assertTrue(objects.right < references.left)
+            assertTrue(references.right < reticle.left)
         } else {
             assertTrue(logo.right < menu.left)
-            assertTrue(chevron.right < axis.left)
+            assertTrue(start.right < end.left)
+            assertTrue(reticle.right < references.left)
+            assertTrue(references.right < objects.left)
         }
-        val reticle = compose.onNodeWithTag("toggle-reticle").fetchSemanticsNode().boundsInRoot
-        val references = compose.onNodeWithTag("toggle-sky-references").fetchSemanticsNode().boundsInRoot
-        val objects = compose.onNodeWithTag("celestial-select").fetchSemanticsNode().boundsInRoot
-        assertEquals(camera.center.x, reticle.center.x, 1f)
-        assertEquals(objects.center.x, references.center.x, 1f)
-        assertTrue(reticle.top > camera.bottom)
-        assertTrue(references.top > objects.bottom)
-        assertEquals(reticle.center.y, references.center.y, 1f)
-        assertEquals(camera.width, reticle.width, 1f)
+        val axis = compose.onNodeWithTag("toggle-pointing-axis").fetchSemanticsNode().boundsInRoot
+        val chevron = compose.onNodeWithTag("toggle-main-details").fetchSemanticsNode().boundsInRoot
+        val weather = compose.onNodeWithTag("toggle-weather").fetchSemanticsNode().boundsInRoot
+        val camera = compose.onNodeWithTag("toggle-camera").fetchSemanticsNode().boundsInRoot
+        compose.onNodeWithTag("celestial-center-start-controls").assertDoesNotExist()
+        compose.onNodeWithTag("celestial-center-end-controls").assertDoesNotExist()
+        val primary = compose.onNodeWithTag("celestial-top-end-primary-controls").fetchSemanticsNode().boundsInRoot
+        val secondary = compose.onNodeWithTag("celestial-top-end-secondary-controls").fetchSemanticsNode().boundsInRoot
+        assertEquals(camera.center.y, weather.center.y, 1f)
+        assertEquals(camera.center.y, axis.center.y, 1f)
+        assertTrue(primary.bottom < secondary.top)
+        assertTrue(secondary.bottom < chevron.top)
+        listOf(camera, weather, axis, chevron).forEach { bounds ->
+            assertEquals(logo.width, bounds.width, 1f)
+        }
+        if (direction.value == LayoutDirection.Rtl) {
+            assertEquals(objects.left, axis.left, 1f)
+            assertEquals(primary.left, secondary.left, 1f)
+            assertEquals(logo.right, chevron.right, 1f)
+            assertTrue(axis.right < weather.left)
+            assertTrue(weather.right < camera.left)
+            assertEquals(weather.left - axis.right, camera.left - weather.right, 1f)
+        } else {
+            assertEquals(objects.right, axis.right, 1f)
+            assertEquals(primary.right, secondary.right, 1f)
+            assertEquals(logo.left, chevron.left, 1f)
+            assertTrue(camera.right < weather.left)
+            assertTrue(weather.right < axis.left)
+            assertEquals(weather.left - camera.right, axis.left - weather.right, 1f)
+        }
     }
 
     @Test fun landscapeKeepsEqualColumnsAndFloatingNavigationInBothThemesAndDirections() {
@@ -91,7 +110,7 @@ class SpaceCompassCelestialLandscapeLayoutTest {
                     width.value = w; night.value = dark
                     direction.value = if (rtl) LayoutDirection.Rtl else LayoutDirection.Ltr
                 }
-                navigationFitsBetweenCornerControls()
+                floatingGroupsFitCurrentLayout()
                 val root = compose.onNodeWithTag("sun-finder-content").fetchSemanticsNode().boundsInRoot
                 val details = compose.onNodeWithTag("celestial-details-column").fetchSemanticsNode().boundsInRoot
                 val island = compose.onNodeWithTag("sun-finder-body-data").fetchSemanticsNode().boundsInRoot
@@ -115,13 +134,13 @@ class SpaceCompassCelestialLandscapeLayoutTest {
         show()
         compose.runOnIdle { width.value = 360f; height.value = 640f }
         compose.onNodeWithTag("celestial-landscape-layout").assertDoesNotExist()
-        navigationFitsBetweenCornerControls()
+        floatingGroupsFitCurrentLayout()
         val root = compose.onNodeWithTag("sun-finder-content").fetchSemanticsNode().boundsInRoot
         val sky = compose.onNodeWithTag("celestial-pointing-area").fetchSemanticsNode().boundsInRoot
         assertEquals(root.top, sky.top, 1f)
         compose.runOnIdle { width.value = 640f; height.value = 360f }
         compose.onNodeWithTag("celestial-landscape-layout").assertExists()
-        navigationFitsBetweenCornerControls()
+        floatingGroupsFitCurrentLayout()
         compose.onNodeWithTag("celestial-select").performClick()
         compose.onNodeWithTag("celestial-menu").assertIsDisplayed()
     }
@@ -132,7 +151,7 @@ class SpaceCompassCelestialLandscapeLayoutTest {
         compose.onNodeWithTag("celestial-landscape-layout").assertDoesNotExist()
         compose.runOnIdle { width.value = 800f }
         compose.onNodeWithTag("celestial-landscape-layout").assertExists()
-        navigationFitsBetweenCornerControls()
+        floatingGroupsFitCurrentLayout()
         compose.onNodeWithTag("sun-finder-details").assertExists()
     }
 }

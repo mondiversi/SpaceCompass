@@ -1,11 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="observation_height_maximum">גובה מרבי</string>
-    <string name="observation_height_minimum">גובה מזערי</string>
-    <string name="observation_height_mid_rising">מחצית הגובה · עולה</string>
-    <string name="observation_height_mid_setting">מחצית הגובה · יורדת</string>
-    <string name="observation_moments_year">שיאים, שפלים ומעברים בגובה הביניים של המעברים העליונים לאורך השנה הקלנדרית של Location. הקישו על התאריך והשעה כדי לעצור באותו רגע.</string>
+    <string name="observation_height_maximum">מקסימום שנתי</string>
+    <string name="observation_height_minimum">מינימום שנתי</string>
+    <string name="observation_height_mid_rising">מחצית הגובה עולה %1$s</string>
+    <string name="observation_height_mid_setting">מחצית הגובה יורדת %1$s</string>
+    <string name="observation_moments_year">שיאים, שפלים ומעברים בגובה הביניים של המעברים העליונים לאורך השנה שנבחרה. הקישו על תאריך ושעה כדי לעצור את הזמן באותו רגע.</string>
     <string name="observation_moments_midpoint_note">מחצית הגובה: המעבר העליון הקרוב ביותר לממוצע הגובה המרבי והמזערי השנתי.</string>
     <string name="observation_moments_unavailable">נתוני המסלול הזמינים אינם מספיקים לחישוב שנתי אמין.</string>
     <string name="observation_moment_applied">התאריך והשעה הוגדרו · הזמן מושהה</string>
+    <string name="observation_height_cycle_maximum">מקסימום מחזור %1$s</string>
+    <string name="observation_height_cycle_minimum">מינימום מחזור %1$s</string>
+    <string name="observation_height_cycle_maximum_single">מקסימום מחזור</string>
+    <string name="observation_height_cycle_minimum_single">מינימום מחזור</string>
+    <string name="observation_height_mid_rising_single">מחצית הגובה עולה</string>
+    <string name="observation_height_mid_setting_single">מחצית הגובה יורדת</string>
+    <string name="observation_heights_title">גבהים עיקריים</string>
+    <string name="observation_heights_year">שנה</string>
 </resources>

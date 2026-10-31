@@ -1,11 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="observation_height_maximum">بیشینهٔ ارتفاع</string>
-    <string name="observation_height_minimum">کمینهٔ ارتفاع</string>
-    <string name="observation_height_mid_rising">ارتفاع میانی · افزایشی</string>
-    <string name="observation_height_mid_setting">ارتفاع میانی · کاهشی</string>
-    <string name="observation_moments_year">بیشینه‌ها، کمینه‌ها و گذرهای ارتفاع میانیِ گذرهای بالایی در سال تقویمی Location. برای توقف در آن لحظه، روی تاریخ و ساعت بزنید.</string>
+    <string name="observation_height_maximum">بیشینهٔ سالانه</string>
+    <string name="observation_height_minimum">کمینهٔ سالانه</string>
+    <string name="observation_height_mid_rising">ارتفاع میانی افزایشی %1$s</string>
+    <string name="observation_height_mid_setting">ارتفاع میانی کاهشی %1$s</string>
+    <string name="observation_moments_year">بیشینه‌ها، کمینه‌ها و گذرهای ارتفاع میانیِ اوج‌های بالایی در سال انتخاب‌شده. برای توقف زمان در آن لحظه، تاریخ و ساعت را لمس کنید.</string>
     <string name="observation_moments_midpoint_note">ارتفاع میانی: گذر بالایی نزدیک‌تر به میانگین بیشترین و کمترین ارتفاع سالانه.</string>
     <string name="observation_moments_unavailable">داده‌های مداری موجود برای محاسبهٔ سالانهٔ قابل اعتماد کافی نیستند.</string>
     <string name="observation_moment_applied">تاریخ و ساعت تنظیم شد · زمان متوقف است</string>
+    <string name="observation_height_cycle_maximum">بیشینهٔ چرخهٔ %1$s</string>
+    <string name="observation_height_cycle_minimum">کمینهٔ چرخهٔ %1$s</string>
+    <string name="observation_height_cycle_maximum_single">بیشینهٔ چرخهٔ</string>
+    <string name="observation_height_cycle_minimum_single">کمینهٔ چرخهٔ</string>
+    <string name="observation_height_mid_rising_single">ارتفاع میانی افزایشی</string>
+    <string name="observation_height_mid_setting_single">ارتفاع میانی کاهشی</string>
+    <string name="observation_heights_title">ارتفاع‌های کلیدی</string>
+    <string name="observation_heights_year">سال</string>
 </resources>

@@ -1,11 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="observation_height_maximum">高度极大值</string>
-    <string name="observation_height_minimum">高度极小值</string>
-    <string name="observation_height_mid_rising">中间高度 · 上升</string>
-    <string name="observation_height_mid_setting">中间高度 · 下降</string>
-    <string name="observation_moments_year">比较Location整个日历年中上中天高度的极大值、极小值及中间高度的经过时刻。点按日期和时间可暂停在该时刻。</string>
+    <string name="observation_height_maximum">年度最高</string>
+    <string name="observation_height_minimum">年度最低</string>
+    <string name="observation_height_mid_rising">中间高度 上升 %1$s</string>
+    <string name="observation_height_mid_setting">中间高度 下降 %1$s</string>
+    <string name="observation_moments_year">所选年份内上中天高度的最高值、最低值和中间高度过境。点击日期和时间可将时间暂停在该时刻。</string>
     <string name="observation_moments_midpoint_note">中间高度：最接近年度最高和最低高度平均值的上中天时刻。</string>
     <string name="observation_moments_unavailable">现有轨道数据不足以进行可靠的年度计算。</string>
     <string name="observation_moment_applied">已设置日期和时间 · 时间已暂停</string>
+    <string name="observation_height_cycle_maximum">周期最高 %1$s</string>
+    <string name="observation_height_cycle_minimum">周期最低 %1$s</string>
+    <string name="observation_height_cycle_maximum_single">周期最高</string>
+    <string name="observation_height_cycle_minimum_single">周期最低</string>
+    <string name="observation_height_mid_rising_single">中间高度 上升</string>
+    <string name="observation_height_mid_setting_single">中间高度 下降</string>
+    <string name="observation_heights_title">关键高度</string>
+    <string name="observation_heights_year">年份</string>
 </resources>

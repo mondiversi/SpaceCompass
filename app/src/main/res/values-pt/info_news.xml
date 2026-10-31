@@ -1,9 +1,9 @@
 <resources>
     <string name="info_news_title">Últimas novidades · %1$s</string>
-    <string name="info_news_star_sky" formatted="false">O Observatório mantém todos os máximos e mínimos anuais significativos de altura; o número depende do objeto e da Location.</string>
-    <string name="info_news_texture_downloads" formatted="false">Cada momento mostra data, hora local, desvio UTC e altura em graus, incluindo todas as passagens próximas da média dos extremos anuais absolutos.</string>
-    <string name="info_news_weather" formatted="false">Toque na data e hora de uma observação para aplicar esse instante à Location e parar o tempo em 0×, preservando posição, altitude e retoma.</string>
-    <string name="info_news_viewer_zoom" formatted="false">Os cálculos anuais usam a Location e o fuso efetivos, incluindo a hora de verão. A cobertura orbital insuficiente é indicada.</string>
-    <string name="info_news_settings" formatted="false">Cada objeto guarda separadamente o deslocamento do Observatório e do Percurso diário durante a sessão atual.</string>
-    <string name="info_news_catalog" formatted="false">O deslocamento mantém-se entre navegação, rotação e segundo plano. O carregamento temporário e a centragem de pontos não apagam a posição consultada.</string>
+    <string name="info_news_star_sky" formatted="false">Alturas-chave abre no Observatório numa página própria, com colunas separadas para momento, elevação e data/hora.</string>
+    <string name="info_news_texture_downloads" formatted="false">Escolha um ano de 1900 a 2100. Os cálculos anuais mantêm-se estáveis e preservam extremos significativos e passagens a meia altura; eventos únicos deixam de ter número.</string>
+    <string name="info_news_weather" formatted="false">Exporte Alturas-chave como folha de cálculo CSV ou tabela TXT legível, com os formatos escolhidos e a privacidade da localização.</string>
+    <string name="info_news_viewer_zoom" formatted="false">Os controlos principais ocupam duas linhas no canto superior direito. Câmara, Meteorologia e 0°/90° ficam na segunda; o modo de câmara mostra Transparência e Zoom.</string>
+    <string name="info_news_settings" formatted="false">Definições, formulários de Location e nomes de exportação usam campos de entrada e seleção mais compactos, mantendo rótulos, edição nativa e cores do tema.</string>
+    <string name="info_news_catalog" formatted="false">Toque no título da gestão de Location para ativar ou desativar em conjunto os valores personalizados preparados. Cada objeto mantém posições de deslocamento separadas para Observatório, Percurso diário e Alturas-chave.</string>
 </resources>

@@ -1,11 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="observation_height_maximum">Altura máxima</string>
-    <string name="observation_height_minimum">Altura mínima</string>
-    <string name="observation_height_mid_rising">Altura media · creciente</string>
-    <string name="observation_height_mid_setting">Altura media · decreciente</string>
-    <string name="observation_moments_year">Máximos, mínimos y pasos por la altura intermedia de las culminaciones superiores durante el año de la Location. Toca la fecha y la hora para detenerte en ese momento.</string>
+    <string name="observation_height_maximum">Máximo anual</string>
+    <string name="observation_height_minimum">Mínimo anual</string>
+    <string name="observation_height_mid_rising">Altura media creciente %1$s</string>
+    <string name="observation_height_mid_setting">Altura media decreciente %1$s</string>
+    <string name="observation_moments_year">Máximos, mínimos y pasos por la altura media de las culminaciones superiores durante el año seleccionado. Toca una fecha y hora para detener el tiempo en ese momento.</string>
     <string name="observation_moments_midpoint_note">Altura media: la culminación más cercana a la media de las alturas máxima y mínima anuales.</string>
     <string name="observation_moments_unavailable">Los datos orbitales disponibles no permiten un cálculo anual fiable.</string>
     <string name="observation_moment_applied">Fecha y hora fijadas · Tiempo detenido</string>
+    <string name="observation_height_cycle_maximum">Máximo del ciclo %1$s</string>
+    <string name="observation_height_cycle_minimum">Mínimo del ciclo %1$s</string>
+    <string name="observation_height_cycle_maximum_single">Máximo del ciclo</string>
+    <string name="observation_height_cycle_minimum_single">Mínimo del ciclo</string>
+    <string name="observation_height_mid_rising_single">Altura media creciente</string>
+    <string name="observation_height_mid_setting_single">Altura media decreciente</string>
+    <string name="observation_heights_title">Alturas clave</string>
+    <string name="observation_heights_year">Año</string>
 </resources>

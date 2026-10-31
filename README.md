@@ -8,8 +8,8 @@ paths, inspect reference facts and view textured models. Space Compass is a stan
 
 ## Download and install
 
-Download **space-compass-1.7.3.apk** from the
-[Space Compass 1.7.3 release](https://github.com/mondiversi/SpaceCompass/releases/tag/v1.7.3).
+Download **space-compass-1.7.4.apk** from the
+[Space Compass 1.7.4 release](https://github.com/mondiversi/SpaceCompass/releases/tag/v1.7.4).
 Android 8.0 or newer is required. Open the APK and follow Android's installation
 prompts; allow installation for your browser or file manager if requested.
 
@@ -22,7 +22,7 @@ one manual APK update to acquire this feature.
 The release includes `SHA256SUMS.txt` and a signed update index. GitHub's source
 ZIP/TAR archives and Actions debug artifacts are separate from the signed APK.
 See [distribution and signing](docs/GITHUB_RELEASES.md) and
-[the 1.7.3 release audit](docs/RELEASE_1_7_3.md).
+[the 1.7.4 release audit](docs/RELEASE_1_7_3.md).
 
 ## Features
 
@@ -42,7 +42,7 @@ See [distribution and signing](docs/GITHUB_RELEASES.md) and
 - Steadier sensor-driven motion combines short gyroscope increments with the measured magnetic/gravity reference, and pauses with the screensaver/background lifecycle.
 - Rear-camera overlays with celestial markers and paths, consistent ultrawide/zoom
   steps, pinch and direct level selection; full 360° sky panoramas.
-  Zoom sits beside capture; a saved camera-only transparency control fades complete object glyphs to 50%.
+  The second upper-right row contains Camera, Weather and 0°/90°; camera mode reuses the latter two slots for Transparency and Zoom. A saved camera-only transparency control fades complete object glyphs to 50%.
   Photos and every export variant retain the opacity recorded at the shutter tap.
 - Exposure-time direction, inclination and field of view in camera photos; previews
   follow selected language/units independently of the export profile.
@@ -60,6 +60,7 @@ See [distribution and signing](docs/GITHUB_RELEASES.md) and
   Open it directly from the main scene. Compact independent cards show effective current values;
   customized values are bold. The leading icon/checkbox/title target toggles a parameter; values,
   the chevron and other card space open its editor. Child forms stay fully visible and editable, with activation controlled only by the management menu.
+  Tapping the management title toggles prepared overrides and time speed together; enabling time starts at normal 1×.
   Prepared inactive values are saved without applying them. Resumption has an always-checked, disabled grey
   checkbox and still offers its three policies.
   The position editor embeds a square-cornered full-width map, paired coordinates, consistent action buttons and estimated weather. Normal scrolling remains available without stretching content away from the native map.
@@ -72,13 +73,14 @@ See [distribution and signing](docs/GITHUB_RELEASES.md) and
   Readable fields and suggested filenames follow the shared export profile; import values stay canonical.
   Configured temporal locations retain speed and resumption without accruing time while archived.
 - Read object names in the theme text color, with an outlined split-color dot: above-horizon orbit color on top and below-horizon color underneath. The dot remains visible beside shortened long names. Photo/panorama legends and image exports use the same text-sized dots, with outlines matching the lettering. Button counters use larger solid theme-accent badges with light/dark bold digits.
-- In Observatory, compare annual upper culminations for the Location year: all significant height maxima/minima and every passage closest to the mean of the absolute annual extremes. Event counts adapt to object and location. Dates, local times, UTC offsets and elevations in degrees use the selected formats. Tap a moment to set the Location date/time and pause at 0×. Effective position, altitude and seasonal time-zone offsets are respected. Incomplete annual orbital data remain explicitly unavailable.
-- Observatory and Daily path remember separate scroll positions for each object during the current activity session, across navigation, rotation and normal backgrounding. Temporary data loading does not erase the consulted position. A new session starts at the top.
+- Open **Key heights** from Observatory, select a year from 1900 to 2100 and compare annual upper culminations: all significant height maxima/minima and every passage closest to the mean of the absolute annual extremes. Event counts adapt to object and location, with numbering only for repeated events. Separate moment/elevation/date-time columns use the selected formats; frozen TXT/CSV exports share the standard formatting and location-disclosure choices. Tap a moment to set the Location date/time and pause at 0×. Effective position, altitude and seasonal time-zone offsets are respected. Incomplete annual orbital data remain explicitly unavailable.
+- Observatory, Daily path and Key heights remember separate scroll positions for each object during the current activity session, across navigation, rotation and normal backgrounding. Temporary data loading does not erase the consulted position. A new session starts at the top.
 - Tap the object name to open the catalogue. Checked objects remain first in the chosen order and visible despite filters/search. The island keeps Observatory and Daily path shortcuts. Observatory offers Favorite and Export; Daily path retains Export.
 - Science fiction is an additional type-filter membership, with ten new clearly qualified illustrative references. Their real reference directions and approximate ranges do not imply measured fictional orbits or physical properties.
 - Compare estimated travel times at everyday, light-speed and fictional warp speeds through Warp 9.999. The selected speed persists; compact duration symbols and unit preferences apply.
 - Observatory with textured interactive models, lunar phases, classified reference tables,
   qualified core temperatures, spatial context and credits. Export data and current/rotation images.
+- Settings inputs, Location coordinates/altitude/date/time, dropdown selections and export names use compact shared fields. Native editing, floating labels, focus/error behavior and theme colors remain available; catalogue search and filter fields keep their own geometry.
 - General settings combine light/dark themes, adjustable sky fluidity, event controls and original ambient music synthesized continuously offline. Balanced fluidity is the default; previously saved levels are retained.
   Music starts enabled at 20% volume, with saved on/off and ten-percent volume steps. Settings-save confirmations are deferred until leaving a modified settings page.
 - Music cards reveal their controls with 300 ms animations. Location child forms stay fully editable independently of their activation in the management menu.
@@ -86,7 +88,7 @@ See [distribution and signing](docs/GITHUB_RELEASES.md) and
 - Solar-height-driven dawn/dusk lighting shared by sky, ground, weather and panoramic captures.
 - Translucent main islands with paths and objects drawn behind them, a reticle centred in the free sky area and a 50/50 landscape split.
 - Titled photo/panorama previews with opaque theme-matched toolbars and top-aligned controls, object-colour legends and larger wrapping photo metadata on a separate opaque black band.
-- White reticle, existing-outline object focus/selection, a lighter daytime blue and stable bottom-right landscape capture. Equal-size Info/logo and Menu controls stay centered between the upper corner controls; the menu opens from its own anchor. The lower-left row keeps panel collapse and pointing-axis selection. Capture symbols are white by day and dark at night.
+- White reticle, existing-outline object focus/selection, a lighter daytime blue and stable bottom-right landscape capture. Equal-size Info/logo and Menu controls stay at the upper left. The upper-right group has reticle, reference lines, Location and Objects above Camera, Weather and 0°/90°; camera mode substitutes Transparency and Zoom. The lower-left row keeps panel collapse and selected-point clearing. Capture retains its size and its white-by-day/dark-at-night symbol.
 - Stable ground, orbits and star background when returning from background; optically centred object arrows and a clear screensaver return hint. Focused callouts cover celestial icons without jumping; split-color keys beside object names and in capture legends show both horizon treatments.
 - Compact T+/T− hour/minute offsets shared by views and exports; orbit points behind translucent title/information overlays remain visible without being selectable.
 - Capture labels can show only key events and selected points across all objects; this is the default for fresh settings. Existing saved label choices remain intact.
@@ -99,7 +101,7 @@ See [distribution and signing](docs/GITHUB_RELEASES.md) and
 - Signed startup/manual GitHub updates with package, certificate, size and checksum verification.
 
 The application ID is `me.mondiversi.spacecompass`. The current stable version is
-**1.7.3**, with Android/update identity `1.7.3` and version code **59**.
+**1.7.4**, with Android/update identity `1.7.4` and version code **60**.
 This preserves the three-part update protocol used by existing preview installations.
 The app stores its preferences and caches privately.
 
@@ -161,7 +163,7 @@ Launcher/loading artwork and original illustrations are project assets.
 
 ## Data and graphics packages
 
-Release 1.7.3 includes **9,999 selectable objects**, and an optional reference-information archive.
+Release 1.7.4 includes **9,999 selectable objects**, and an optional reference-information archive.
 All descriptive data and translations remain inside the APK. Scientific limits and provenance are in the
 [catalogue sources](docs/CATALOG_9999.md) and [canonical source catalogue](catalogue/README.md).
 

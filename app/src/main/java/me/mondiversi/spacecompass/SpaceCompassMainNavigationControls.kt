@@ -10,7 +10,7 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.platform.testTag
 import androidx.compose.ui.unit.dp
 
-/** Equal-size information and menu controls share one centred anchor between the corner groups. */
+/** Equal-size information and menu controls share one main-navigation group. */
 @Composable
 internal fun SpaceCompassMainNavigationControls(color: Color, background: Color, modifier: Modifier = Modifier) {
     Box(modifier.testTag("celestial-main-navigation").spaceCompassSceneInputShield()
