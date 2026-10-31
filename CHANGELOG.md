@@ -1,5 +1,14 @@
 # Changelog
 
+## 1.7.3 — 2026-10-31
+
+- Add annual observation moments to Observatory: compare upper culminations throughout the Location calendar year to find the highest and lowest annual culmination, using effective coordinates, observer altitude and local time-zone rules.
+- Show each passage near the mean of the two annual heights. Choose the nearer actual upper culmination instead of interpolating a non-culminating time between days. Preserve multiple lunar/other passages; identify increasing and decreasing heights.
+- Tap a calculated date/time to configure the Location at that exact instant and pause time at 0× atomically. Preserve spatial overrides and resumption policy, discard stale temporal checkpoints, and retain precise instants across daylight-saving overlaps and app reopening.
+- Calculate annual tracks in cancellable background work, cached by object, year, Location and source. Clearly mark incomplete annual ephemerides and short-lived satellite data unavailable instead of extrapolating them into an annual prediction.
+- Retain independent Observatory and Daily path scroll positions for each object within the activity session, including rotation, normal backgrounding and all main/catalogue entry points. Keep the desired offset through temporary loading/remeasurement, remember the daily header state, and prefer returning to the consulted position over incidental selected-point centering.
+- Refresh all six in-app news summaries in twenty languages. Release version 1.7.3/code 59 with the existing certificate, signed update index and optional reference-information archive. External graphics collection 1.8 remains unchanged, with no new complete texture archive.
+
 ## 1.7.2 — 2026-10-30
 
 - Refine the main scene with compact, optically balanced floating glyphs, equal-size centered Info/logo and Menu controls, and a standard anchored menu. Retain the lower-left collapse/pointing-axis row and restore dark capture symbols at night.

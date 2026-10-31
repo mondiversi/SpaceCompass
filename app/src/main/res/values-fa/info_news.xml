@@ -1,9 +1,9 @@
 <resources>
     <string name="info_news_title">تازه‌ترین تغییرات · %1$s</string>
-    <string name="info_news_star_sky" formatted="false">دکمه‌های اطلاعات و منو در مرکز و کنترل‌های جمع‌وجور با توازن بصری، نمای اصلی را بهبود می‌دهند.</string>
-    <string name="info_news_texture_downloads" formatted="false">جای نشانه‌گیر و فاصلهٔ پنل‌های اطلاعاتی بهتر با حالت عمودی و افقی هماهنگ می‌شود.</string>
-    <string name="info_news_weather" formatted="false">ویرایشگر موقعیت Location شامل نقشهٔ تمام‌عرض، مختصات کنار هم و دکمه‌های یکدست است.</string>
-    <string name="info_news_viewer_zoom" formatted="false">آب‌وهوای تخمینی در ویرایشگر موقعیت دیده می‌شود و زبان‌ها بر اساس کد زبان مرتب می‌شوند.</string>
-    <string name="info_news_settings" formatted="false">ردیف اجرام، شمارنده‌های فیلتر و کنترل‌های انتخاب چندگانه هنگام به‌روزرسانی خودکار ثابت می‌مانند.</string>
-    <string name="info_news_catalog" formatted="false">سرصفحهٔ عکس‌ها و پانوراما نشان برنامه را نمایش می‌دهد؛ کنتراست نمادهای ثبت تصویر در روز و شب بهبود یافته است.</string>
+    <string name="info_news_star_sky" formatted="false">رصدخانه گذرهای بالایی را در سال Location مقایسه می‌کند تا بیشترین و کمترین ارتفاع سالانه را بیابد.</string>
+    <string name="info_news_texture_downloads" formatted="false">ارتفاع میانی گذرهای بالایی واقعی نزدیک به میانگین دو حد سالانه را نشان می‌دهد و همهٔ عبورهای افزایشی و کاهشی را حفظ می‌کند.</string>
+    <string name="info_news_weather" formatted="false">روی تاریخ و ساعت رصد بزنید تا آن لحظه در Location تنظیم و زمان در 0× متوقف شود؛ موقعیت، ارتفاع و تنظیم ادامه حفظ می‌شوند.</string>
+    <string name="info_news_viewer_zoom" formatted="false">محاسبات سالانه از Location و منطقهٔ زمانی مؤثر، همراه با ساعت تابستانی استفاده می‌کنند. پوشش مداری ناکافی به‌روشنی مشخص می‌شود.</string>
+    <string name="info_news_settings" formatted="false">هر جرم، جای پیمایش رصدخانه و مسیر روزانه را در نشست جاری به‌طور جداگانه به یاد می‌سپارد.</string>
+    <string name="info_news_catalog" formatted="false">جای پیمایش با جابه‌جایی، چرخش و رفتن به پس‌زمینه حفظ می‌شود. بارگیری موقت و وسط‌چینی نقطه‌ها جای بررسی‌شده را پاک نمی‌کنند.</string>
 </resources>

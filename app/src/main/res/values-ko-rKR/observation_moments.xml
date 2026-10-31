@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="observation_height_maximum">연간 최고</string>
+    <string name="observation_height_minimum">연간 최저</string>
+    <string name="observation_height_mid_rising">중간 고도 · 증가</string>
+    <string name="observation_height_mid_setting">중간 고도 · 감소</string>
+    <string name="observation_moments_year">Location의 달력 연도 전체에서 상방 자오선 통과 고도를 비교합니다. 날짜와 시간을 누르면 해당 순간에 멈춥니다.</string>
+    <string name="observation_moments_midpoint_note">중간 고도: 연간 최고 및 최저 고도의 평균에 가장 가까운 상방 자오선 통과입니다.</string>
+    <string name="observation_moments_unavailable">사용 가능한 궤도 데이터로는 신뢰할 수 있는 연간 계산을 할 수 없습니다.</string>
+    <string name="observation_moment_applied">날짜 및 시간 설정 · 시간 일시 정지</string>
+</resources>

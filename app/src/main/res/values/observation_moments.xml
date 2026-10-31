@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="observation_height_maximum">Annual maximum</string>
+    <string name="observation_height_minimum">Annual minimum</string>
+    <string name="observation_height_mid_rising">Mid-height · increasing</string>
+    <string name="observation_height_mid_setting">Mid-height · decreasing</string>
+    <string name="observation_moments_year">Compare upper culminations throughout the Location’s calendar year. Tap a date and time to pause at that moment.</string>
+    <string name="observation_moments_midpoint_note">Mid-height: the culmination nearest to the mean of the annual maximum and minimum heights.</string>
+    <string name="observation_moments_unavailable">Available orbital data do not cover a reliable annual calculation.</string>
+    <string name="observation_moment_applied">Date and time set · Time paused</string>
+</resources>

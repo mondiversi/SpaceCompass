@@ -1,9 +1,9 @@
 <resources>
     <string name="info_news_title">Laatste nieuws · %1$s</string>
-    <string name="info_news_star_sky" formatted="false">Gecentreerde Info- en Menuknoppen en compacte, optisch gebalanceerde bediening verbeteren de hoofdweergave.</string>
-    <string name="info_news_texture_downloads" formatted="false">De positie van het richtkruis en de tussenruimte van informatiepanelen passen zich beter aan de staande en liggende stand aan.</string>
-    <string name="info_news_weather" formatted="false">De positie-editor van Location heeft een kaart over de volledige breedte, coördinaten naast elkaar en uniforme actieknoppen.</string>
-    <string name="info_news_viewer_zoom" formatted="false">Geschat weer is zichtbaar in de positie-editor en talen worden op taalcode gesorteerd.</string>
-    <string name="info_news_settings" formatted="false">Objectrijen, filtertellers en meervoudige selectie blijven stabiel tijdens automatische updates.</string>
-    <string name="info_news_catalog" formatted="false">Kopregels van foto\'s en panorama\'s tonen het app-logo; opnamesymbolen hebben een beter dag-/nachtcontrast.</string>
+    <string name="info_news_star_sky" formatted="false">Het Observatorium vergelijkt bovenste culminaties in het jaar van de Location om de jaarlijkse maximale en minimale hoogte te vinden.</string>
+    <string name="info_news_texture_downloads" formatted="false">Middenhoogten tonen de werkelijke culminaties het dichtst bij het gemiddelde van de jaaruitersten, met alle stijgende en dalende passages.</string>
+    <string name="info_news_weather" formatted="false">Tik op datum en tijd om dat moment voor de Location in te stellen en de tijd op 0× te pauzeren. Positie, hoogte en hervatting blijven behouden.</string>
+    <string name="info_news_viewer_zoom" formatted="false">Jaarberekeningen gebruiken de effectieve Location en tijdzone, inclusief zomertijd. Onvoldoende baandekking wordt aangegeven.</string>
+    <string name="info_news_settings" formatted="false">Elk object onthoudt afzonderlijke scrollposities voor Observatorium en Dagbaan tijdens de huidige sessie.</string>
+    <string name="info_news_catalog" formatted="false">Scrollposities blijven behouden bij navigeren, draaien en achtergrondgebruik. Tijdelijk laden en puntcentrering wissen de bekeken positie niet.</string>
 </resources>

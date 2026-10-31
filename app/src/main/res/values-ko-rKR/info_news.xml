@@ -1,9 +1,9 @@
 <resources>
     <string name="info_news_title">최근 변경 사항 · %1$s</string>
-    <string name="info_news_star_sky" formatted="false">정보와 메뉴 버튼을 중앙에 배치하고 조작 버튼을 작고 시각적으로 균형 있게 다듬었습니다.</string>
-    <string name="info_news_texture_downloads" formatted="false">조준선 위치와 정보 패널 간격이 세로와 가로 화면에 더 일관되게 맞춰집니다.</string>
-    <string name="info_news_weather" formatted="false">Location 위치 편집기에 카드 너비를 채우는 지도, 나란히 배치된 좌표와 통일된 동작 버튼을 제공합니다.</string>
-    <string name="info_news_viewer_zoom" formatted="false">위치 편집기에서 예상 날씨를 볼 수 있으며 언어는 언어 코드 순으로 정렬됩니다.</string>
-    <string name="info_news_settings" formatted="false">자동 업데이트 중에도 천체 행, 필터 개수와 일괄 선택 표시가 안정적으로 유지됩니다.</string>
-    <string name="info_news_catalog" formatted="false">사진과 파노라마 머리글에 앱 로고가 표시되며 촬영 기호의 주간·야간 대비가 개선되었습니다.</string>
+    <string name="info_news_star_sky" formatted="false">관측소는 Location의 연도 전체에서 상방 자오선 통과 고도를 비교하여 연간 최고 및 최저 고도를 찾습니다.</string>
+    <string name="info_news_texture_downloads" formatted="false">중간 고도는 연간 최고·최저의 평균에 가장 가까운 실제 상방 자오선 통과를 표시하며 증가·감소하는 모든 통과를 유지합니다.</string>
+    <string name="info_news_weather" formatted="false">관측 날짜와 시간을 누르면 해당 순간을 Location에 적용하고 시간을 0×로 멈춥니다. 위치, 고도, 재개 설정은 유지됩니다.</string>
+    <string name="info_news_viewer_zoom" formatted="false">연간 계산은 서머타임을 포함한 실제 Location과 시간대를 사용합니다. 궤도 데이터의 연간 범위가 부족하면 명확히 표시합니다.</string>
+    <string name="info_news_settings" formatted="false">각 천체는 현재 세션 동안 관측소와 일일 경로의 스크롤 위치를 별도로 기억합니다.</string>
+    <string name="info_news_catalog" formatted="false">화면 이동, 회전, 백그라운드 전환 후에도 스크롤 위치를 유지합니다. 임시 로딩이나 지점 중앙 정렬로 보던 위치가 사라지지 않습니다.</string>
 </resources>

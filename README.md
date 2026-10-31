@@ -8,8 +8,8 @@ paths, inspect reference facts and view textured models. Space Compass is a stan
 
 ## Download and install
 
-Download **space-compass-1.7.2.apk** from the
-[Space Compass 1.7.2 release](https://github.com/mondiversi/SpaceCompass/releases/tag/v1.7.2).
+Download **space-compass-1.7.3.apk** from the
+[Space Compass 1.7.3 release](https://github.com/mondiversi/SpaceCompass/releases/tag/v1.7.3).
 Android 8.0 or newer is required. Open the APK and follow Android's installation
 prompts; allow installation for your browser or file manager if requested.
 
@@ -22,7 +22,7 @@ one manual APK update to acquire this feature.
 The release includes `SHA256SUMS.txt` and a signed update index. GitHub's source
 ZIP/TAR archives and Actions debug artifacts are separate from the signed APK.
 See [distribution and signing](docs/GITHUB_RELEASES.md) and
-[the 1.7.2 release audit](docs/RELEASE_1_7_2.md).
+[the 1.7.3 release audit](docs/RELEASE_1_7_3.md).
 
 ## Features
 
@@ -72,6 +72,8 @@ See [distribution and signing](docs/GITHUB_RELEASES.md) and
   Readable fields and suggested filenames follow the shared export profile; import values stay canonical.
   Configured temporal locations retain speed and resumption without accruing time while archived.
 - Read object names in the theme text color, with an outlined split-color dot: above-horizon orbit color on top and below-horizon color underneath. The dot remains visible beside shortened long names. Photo/panorama legends and image exports use the same text-sized dots, with outlines matching the lettering. Button counters use larger solid theme-accent badges with light/dark bold digits.
+- In Observatory, compare annual upper culminations for the Location year: highest and lowest annual heights and each passage closest to their mean. Tap a moment to set the Location date/time and pause at 0×. Effective position, altitude and seasonal time-zone offsets are respected. Incomplete annual orbital data remain explicitly unavailable.
+- Observatory and Daily path remember separate scroll positions for each object during the current activity session, across navigation, rotation and normal backgrounding. Temporary data loading does not erase the consulted position. A new session starts at the top.
 - Tap the object name to open the catalogue. Checked objects remain first in the chosen order and visible despite filters/search. The island keeps Observatory and Daily path shortcuts. Observatory offers Favorite and Export; Daily path retains Export.
 - Science fiction is an additional type-filter membership, with ten new clearly qualified illustrative references. Their real reference directions and approximate ranges do not imply measured fictional orbits or physical properties.
 - Compare estimated travel times at everyday, light-speed and fictional warp speeds through Warp 9.999. The selected speed persists; compact duration symbols and unit preferences apply.
@@ -97,7 +99,7 @@ See [distribution and signing](docs/GITHUB_RELEASES.md) and
 - Signed startup/manual GitHub updates with package, certificate, size and checksum verification.
 
 The application ID is `me.mondiversi.spacecompass`. The current stable version is
-**1.7.2**, with Android/update identity `1.7.2` and version code **58**.
+**1.7.3**, with Android/update identity `1.7.3` and version code **59**.
 This preserves the three-part update protocol used by existing preview installations.
 The app stores its preferences and caches privately.
 
@@ -159,7 +161,7 @@ Launcher/loading artwork and original illustrations are project assets.
 
 ## Data and graphics packages
 
-Release 1.7.2 includes **9,999 selectable objects**, and an optional reference-information archive.
+Release 1.7.3 includes **9,999 selectable objects**, and an optional reference-information archive.
 All descriptive data and translations remain inside the APK. Scientific limits and provenance are in the
 [catalogue sources](docs/CATALOG_9999.md) and [canonical source catalogue](catalogue/README.md).
 

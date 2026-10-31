@@ -1,9 +1,9 @@
 <resources>
     <string name="info_news_title">החידושים האחרונים · %1$s</string>
-    <string name="info_news_star_sky" formatted="false">כפתורי מידע ותפריט ממורכזים ופקדים קומפקטיים ומאוזנים חזותית משפרים את התצוגה הראשית.</string>
-    <string name="info_news_texture_downloads" formatted="false">מיקום הכוונת והמרווחים בין לוחות המידע מותאמים טוב יותר לתצוגה לאורך ולרוחב.</string>
-    <string name="info_news_weather" formatted="false">עורך המיקום של Location כולל מפה ברוחב מלא, קואורדינטות זו לצד זו וכפתורי פעולה אחידים.</string>
-    <string name="info_news_viewer_zoom" formatted="false">מזג האוויר המשוער מופיע בעורך המיקום, והשפות ממוינות לפי קוד השפה.</string>
-    <string name="info_news_settings" formatted="false">שורות העצמים, מוני המסננים ופקדי הבחירה המרובה נשארים יציבים במהלך עדכונים אוטומטיים.</string>
-    <string name="info_news_catalog" formatted="false">כותרות התמונות והפנורמות מציגות את סמל היישום; ניגודיות סמלי הצילום שופרה ביום ובלילה.</string>
+    <string name="info_news_star_sky" formatted="false">המצפה משווה מעברים עליונים לאורך השנה של Location כדי למצוא את הגובה המרבי והמזערי השנתי.</string>
+    <string name="info_news_texture_downloads" formatted="false">מחצית הגובה מציגה את המעברים העליונים האמיתיים הקרובים לממוצע הקצוות השנתיים, תוך שמירה על כל מעבר עולה ויורד.</string>
+    <string name="info_news_weather" formatted="false">הקישו על תאריך ושעת תצפית כדי להחיל את הרגע על Location ולהשהות את הזמן ב־0×, תוך שמירת המיקום, הגובה ואופן החידוש.</string>
+    <string name="info_news_viewer_zoom" formatted="false">החישובים השנתיים משתמשים ב־Location ובאזור הזמן הפעילים, כולל שעון קיץ. כיסוי מסלולי לא מספיק מצוין בבירור.</string>
+    <string name="info_news_settings" formatted="false">כל עצם זוכר בנפרד את מיקומי הגלילה במצפה ובמסלול היומי במהלך ההפעלה הנוכחית.</string>
+    <string name="info_news_catalog" formatted="false">מיקומי הגלילה נשמרים בניווט, בסיבוב ובמעבר לרקע. טעינה זמנית ומרכוז נקודות אינם מוחקים את המיקום שנצפה.</string>
 </resources>

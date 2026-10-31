@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="observation_height_maximum">वार्षिक अधिकतम</string>
+    <string name="observation_height_minimum">वार्षिक न्यूनतम</string>
+    <string name="observation_height_mid_rising">मध्य ऊँचाई · बढ़ती</string>
+    <string name="observation_height_mid_setting">मध्य ऊँचाई · घटती</string>
+    <string name="observation_moments_year">Location के कैलेंडर वर्ष में ऊपरी मध्याह्न पारगमन की तुलना। उस क्षण पर रुकने के लिए तारीख और समय पर टैप करें।</string>
+    <string name="observation_moments_midpoint_note">मध्य ऊँचाई: वार्षिक अधिकतम और न्यूनतम ऊँचाई के औसत के सबसे निकट का ऊपरी पारगमन।</string>
+    <string name="observation_moments_unavailable">उपलब्ध कक्षीय डेटा विश्वसनीय वार्षिक गणना के लिए पर्याप्त नहीं है।</string>
+    <string name="observation_moment_applied">तारीख और समय सेट · समय रुका हुआ</string>
+</resources>

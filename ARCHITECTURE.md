@@ -523,3 +523,37 @@ The top-center scene group contains independent Info/logo and Menu controls at t
 The Location position editor keeps ordinary vertical scrolling with a disabled edge overscroll effect. Its native WebView is a sibling layer positioned and clipped from the Compose map slot. Stretching only the Compose renderer would deform text/buttons independently of that layer. The map spans the island width with square corners; descriptive/form content retains the shared inset. Visible native hit regions continue to clip at the page viewport, protecting the toolbar while scrolling.
 
 Catalogue observation and presentation snapshots publish atomically. A background observation refresh does not invalidate displayed user-scope controls. Facet counts keep their last complete presentation through panel transitions, while closed panels still avoid recomputing facets. Initial observation work uses a latched first key until completion so a rapidly advancing simulated clock cannot continuously cancel the first catalogue load. User-scope changes still invalidate bulk actions until the corresponding presentation is ready.
+
+
+## Observatory observation moments
+
+The Orbit and observation island compares all upper culminations in the observation-zone calendar
+year, using the effective Location coordinates and height. Upper meridian crossings are bracketed
+hourly and refined to 250 ms from the same topocentric ENU directions as the sky renderer, including
+zenith/polar cases without azimuth discontinuities. Annual minimum means the lowest upper
+culmination, not the nightly lower transit or a civil-day boundary. All crossings of the mean of the
+annual extrema are represented by the nearer real culmination; no interpolated non-culminating
+instant is invented. Short-lived TLEs and incomplete annual ephemerides explicitly yield unavailable
+annual data. Background work is cancellable and cached by object, year, zone, source and the same
+small GPS/height cells as the sky paths, independently from time ticks and selected-day changes.
+
+Selecting a moment commits date, clock and enabled 0x speed in one preference edit, removes any
+previous temporal checkpoint, and preserves effective spatial overrides/resumption policy. Exact
+instants retain seconds and DST overlap identity even when the user-facing link displays minutes.
+Inactive old spatial settings remain inactive. The ordinary acceleration re-enable safeguard stays
+at 1x for manual editor actions.
+
+
+## Object-page session scroll
+
+An activity-retained, memory-only session lazily owns independent Observatory and Daily path scroll
+entries keyed by stable body identity. All catalogue/main-scene entry points share that owner. Entries
+survive navigation, backgrounding and activity configuration changes; no offset enters preferences,
+Location archives or process-restorable saved state. A new activity session starts with empty entries.
+
+The Observatory scroll is hoisted outside responsive layout branches. A small position controller
+distinguishes intentional scrolling from measurement clamping: temporary shorter content (such as
+annual Moon details loading) does not erase the requested offset before the full content returns.
+Daily path also retains its quick-return header visibility; restoring an already visited table takes
+precedence over the automatic last-selected-point centering. First visits still support explicit
+point centering, and subsequent path-data refreshes do not repeatedly recenter a consulted table.

@@ -1,9 +1,9 @@
 <resources>
     <string name="info_news_title">Son yenilikler · %1$s</string>
-    <string name="info_news_star_sky" formatted="false">Ortalanmış Bilgi ve Menü düğmeleri ile kompakt ve görsel olarak dengeli kontroller ana görünümü iyileştirir.</string>
-    <string name="info_news_texture_downloads" formatted="false">Nişangâh konumu ve bilgi panelleri arasındaki boşluklar dikey ve yatay yönlere daha tutarlı uyum sağlar.</string>
-    <string name="info_news_weather" formatted="false">Location konum düzenleyicisi tam genişlikte harita, yan yana koordinatlar ve tutarlı işlem düğmeleri içerir.</string>
-    <string name="info_news_viewer_zoom" formatted="false">Tahmini hava durumu konum düzenleyicisinde görünür; diller dil koduna göre sıralanır.</string>
-    <string name="info_news_settings" formatted="false">Otomatik güncellemelerde nesne satırları, filtre sayaçları ve çoklu seçim kontrolleri sabit kalır.</string>
-    <string name="info_news_catalog" formatted="false">Fotoğraf ve panorama başlıklarında uygulama logosu gösterilir; çekim simgelerinin gündüz/gece kontrastı iyileştirildi.</string>
+    <string name="info_news_star_sky" formatted="false">Gözlemevi, yıllık en yüksek ve en düşük yükseklikleri bulmak için Location yılı boyunca üst geçişleri karşılaştırır.</string>
+    <string name="info_news_texture_downloads" formatted="false">Orta yükseklik, yıllık uç değerlerin ortalamasına en yakın gerçek üst geçişleri gösterir ve tüm artan ve azalan geçişleri korur.</string>
+    <string name="info_news_weather" formatted="false">O anı Location için ayarlamak ve zamanı 0× ile durdurmak için gözlem tarih ve saatine dokunun. Konum, rakım ve sürdürme seçimi korunur.</string>
+    <string name="info_news_viewer_zoom" formatted="false">Yıllık hesaplamalar etkin Location ve saat dilimini, yaz saatiyle birlikte kullanır. Yetersiz yörünge kapsamı belirtilir.</string>
+    <string name="info_news_settings" formatted="false">Her nesne, geçerli oturum boyunca Gözlemevi ve Günlük yol kaydırma konumlarını ayrı ayrı hatırlar.</string>
+    <string name="info_news_catalog" formatted="false">Kaydırma konumu gezinme, döndürme ve arka plana geçişte korunur. Geçici yükleme ve nokta ortalama, incelenen konumu silmez.</string>
 </resources>

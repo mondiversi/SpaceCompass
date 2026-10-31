@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="observation_height_maximum">Jaarmaximum</string>
+    <string name="observation_height_minimum">Jaarminimum</string>
+    <string name="observation_height_mid_rising">Middenhoogte · stijgend</string>
+    <string name="observation_height_mid_setting">Middenhoogte · dalend</string>
+    <string name="observation_moments_year">Vergelijking van bovenste culminaties in het kalenderjaar van de Location. Tik op datum en tijd om dat moment stil te zetten.</string>
+    <string name="observation_moments_midpoint_note">Middenhoogte: de culminatie die het dichtst bij het gemiddelde van de jaarlijkse maximale en minimale hoogte ligt.</string>
+    <string name="observation_moments_unavailable">De beschikbare baangegevens laten geen betrouwbare jaarberekening toe.</string>
+    <string name="observation_moment_applied">Datum en tijd ingesteld · Tijd stilgezet</string>
+</resources>

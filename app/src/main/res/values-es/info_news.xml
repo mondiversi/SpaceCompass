@@ -1,9 +1,9 @@
 <resources>
     <string name="info_news_title">Últimas novedades · %1$s</string>
-    <string name="info_news_star_sky" formatted="false">Los botones Información y Menú centrados y los controles compactos y equilibrados mejoran la vista principal.</string>
-    <string name="info_news_texture_downloads" formatted="false">La posición de la retícula y los espacios entre paneles se adaptan mejor a las orientaciones vertical y horizontal.</string>
-    <string name="info_news_weather" formatted="false">El editor de posición de Location incluye un mapa de ancho completo, coordenadas en paralelo y botones uniformes.</string>
-    <string name="info_news_viewer_zoom" formatted="false">El tiempo estimado aparece en el editor de posición y los idiomas se ordenan por su código.</string>
-    <string name="info_news_settings" formatted="false">Las filas de objetos, los contadores de filtros y la selección múltiple permanecen estables durante las actualizaciones automáticas.</string>
-    <string name="info_news_catalog" formatted="false">Las cabeceras de fotos y panorámicas muestran el logotipo de la aplicación; los símbolos de captura mejoran su contraste de día y de noche.</string>
+    <string name="info_news_star_sky" formatted="false">El Observatorio compara las culminaciones superiores durante el año de la Location para encontrar las alturas máxima y mínima anuales.</string>
+    <string name="info_news_texture_downloads" formatted="false">La altura media muestra las culminaciones reales más cercanas a la media de los extremos anuales, conservando todos los pasos crecientes y decrecientes.</string>
+    <string name="info_news_weather" formatted="false">Toca la fecha y la hora de una observación para aplicar ese instante a la Location y detener el tiempo en 0×, conservando posición, altitud y reanudación.</string>
+    <string name="info_news_viewer_zoom" formatted="false">Los cálculos anuales usan la Location y zona horaria efectivas, incluido el horario de verano. Se indica la cobertura orbital insuficiente.</string>
+    <string name="info_news_settings" formatted="false">Cada objeto recuerda por separado el desplazamiento del Observatorio y del Recorrido diario durante la sesión actual.</string>
+    <string name="info_news_catalog" formatted="false">El desplazamiento se conserva al navegar, girar y pasar a segundo plano. La carga temporal y el centrado de puntos no borran la posición consultada.</string>
 </resources>

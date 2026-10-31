@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="observation_height_maximum">Kilele cha mwaka</string>
+    <string name="observation_height_minimum">Kiwango cha chini cha mwaka</string>
+    <string name="observation_height_mid_rising">Kimo cha kati · kinaongezeka</string>
+    <string name="observation_height_mid_setting">Kimo cha kati · kinapungua</string>
+    <string name="observation_moments_year">Linganisha vilele vya juu katika mwaka wa kalenda wa Location. Gusa tarehe na saa ili kusimamisha wakati huo.</string>
+    <string name="observation_moments_midpoint_note">Kimo cha kati: kilele kilicho karibu zaidi na wastani wa kimo cha juu na cha chini cha mwaka.</string>
+    <string name="observation_moments_unavailable">Data za obiti zilizopo hazitoshi kwa hesabu ya mwaka inayotegemeka.</string>
+    <string name="observation_moment_applied">Tarehe na saa zimewekwa · Muda umesimama</string>
+</resources>

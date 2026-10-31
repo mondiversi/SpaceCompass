@@ -2,7 +2,6 @@ package me.mondiversi.spacecompass
 
 import androidx.activity.compose.BackHandler
 import androidx.compose.foundation.background
-import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.verticalScroll
 import androidx.compose.material3.Surface
 import androidx.compose.foundation.clickable
@@ -104,16 +103,25 @@ internal fun SpaceCompassSunDailyPathPage(
     val pageBackground = spaceCompassSurfacePalette(backgroundColor.luminance() < .4f).island
     val highlightColor = MaterialTheme.colorScheme.primary
     val openingPointId = remember(path) { state.menuFocusPointId }
-    val scroll = rememberScrollState()
-    val quickHeader = rememberSpaceCompassQuickReturnHeader()
-    var openingPointCentered by remember(path, openingPointId) { mutableStateOf(false) }
+    val scrollVisit = rememberSpaceCompassObjectPageScroll(path.body, SpaceCompassObjectPage.DAILY_PATH)
+    val scroll = scrollVisit.entry.scroll
+    val quickHeader = key(path.body) {
+        rememberSpaceCompassQuickReturnHeader(initialVisible = scrollVisit.entry.headerVisible)
+    }
+    val headerVisible = quickHeader.visible
+    SideEffect { scrollVisit.entry.headerVisible = headerVisible }
+    DisposableEffect(scrollVisit.entry, quickHeader) {
+        onDispose { scrollVisit.entry.headerVisible = quickHeader.visible }
+    }
+    // Returning to a consulted table takes precedence over its incidental last-selected point.
+    var openingPointCentered by remember(path.body, openingPointId) { mutableStateOf(scrollVisit.returning) }
     var viewport by remember { mutableStateOf<Rect?>(null) }
     var pointCenter by remember(path) { mutableStateOf<Int?>(null) }
     val viewportHeight = viewport?.height?.roundToInt() ?: 0
     LaunchedEffect(path, openingPointId, viewportHeight, pointCenter, scroll.maxValue) {
         if (!openingPointCentered && openingPointId != null && viewportHeight > 0) pointCenter?.let {
             openingPointCentered = true
-            scroll.scrollTo(spaceCompassDailyPathCenterScroll(it, viewportHeight, scroll.maxValue))
+            scrollVisit.entry.scrollTo(spaceCompassDailyPathCenterScroll(it, viewportHeight, scroll.maxValue))
         }
     }
     val countdownLocale = if (LocalSpaceCompassNumericFormat.current == SpaceCompassNumericFormat.SYSTEM)

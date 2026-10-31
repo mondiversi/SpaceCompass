@@ -1,9 +1,9 @@
 <resources>
     <string name="info_news_title">Perubahan terbaru · %1$s</string>
-    <string name="info_news_star_sky" formatted="false">Tombol Info dan Menu di tengah serta kontrol ringkas dan seimbang secara visual menyempurnakan tampilan utama.</string>
-    <string name="info_news_texture_downloads" formatted="false">Posisi bidikan dan jarak panel informasi lebih konsisten menyesuaikan orientasi tegak dan mendatar.</string>
-    <string name="info_news_weather" formatted="false">Editor posisi Location memiliki peta selebar kartu, koordinat berdampingan, dan tombol tindakan yang seragam.</string>
-    <string name="info_news_viewer_zoom" formatted="false">Perkiraan cuaca terlihat di editor posisi, dan pilihan bahasa diurutkan menurut kode bahasa.</string>
-    <string name="info_news_settings" formatted="false">Baris objek, penghitung filter, dan kontrol pilihan banyak tetap stabil selama pembaruan otomatis.</string>
-    <string name="info_news_catalog" formatted="false">Bagian atas foto dan panorama menampilkan logo aplikasi; kontras simbol pengambilan gambar lebih baik pada siang dan malam.</string>
+    <string name="info_news_star_sky" formatted="false">Observatorium membandingkan kulminasi atas sepanjang tahun Location untuk menemukan ketinggian maksimum dan minimum tahunan.</string>
+    <string name="info_news_texture_downloads" formatted="false">Ketinggian tengah menunjukkan kulminasi nyata terdekat dengan rata-rata ekstrem tahunan, mempertahankan setiap lintasan meningkat dan menurun.</string>
+    <string name="info_news_weather" formatted="false">Ketuk tanggal dan waktu pengamatan untuk menerapkan momen tersebut pada Location dan menjeda waktu pada 0×, sambil mempertahankan posisi, ketinggian, dan pelanjutan.</string>
+    <string name="info_news_viewer_zoom" formatted="false">Perhitungan tahunan memakai Location dan zona waktu efektif, termasuk waktu musim panas. Cakupan orbit yang tidak memadai ditandai dengan jelas.</string>
+    <string name="info_news_settings" formatted="false">Setiap objek mengingat posisi gulir Observatorium dan Jalur harian secara terpisah selama sesi saat ini.</string>
+    <string name="info_news_catalog" formatted="false">Posisi gulir bertahan saat navigasi, rotasi, dan masuk latar belakang. Pemuatan sementara dan pemusatan titik tidak menghapus posisi yang dilihat.</string>
 </resources>

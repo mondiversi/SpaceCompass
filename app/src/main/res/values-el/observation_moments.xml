@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="observation_height_maximum">Ετήσιο μέγιστο</string>
+    <string name="observation_height_minimum">Ετήσιο ελάχιστο</string>
+    <string name="observation_height_mid_rising">Μέσο ύψος · αυξανόμενο</string>
+    <string name="observation_height_mid_setting">Μέσο ύψος · μειούμενο</string>
+    <string name="observation_moments_year">Σύγκριση άνω μεσουρανήσεων στο έτος της Location. Πατήστε ημερομηνία και ώρα για παύση σε εκείνη τη στιγμή.</string>
+    <string name="observation_moments_midpoint_note">Μέσο ύψος: η μεσουράνηση πλησιέστερα στον μέσο όρο του ετήσιου μέγιστου και ελάχιστου ύψους.</string>
+    <string name="observation_moments_unavailable">Τα διαθέσιμα τροχιακά δεδομένα δεν επαρκούν για αξιόπιστο ετήσιο υπολογισμό.</string>
+    <string name="observation_moment_applied">Ορίστηκαν ημερομηνία και ώρα · Χρόνος σε παύση</string>
+</resources>

@@ -193,13 +193,16 @@ internal fun SpaceCompassCelestialObservatoryPage(body: SpaceCompassCelestialBod
                         .padding(horizontal = 6.dp, vertical = 3.dp).testTag("celestial-view-model-note"))
             }
     }
+    // Outside portrait/landscape branches: the same object/session owns this information scroll.
+    val scroll = rememberSpaceCompassObjectPageScroll(body, SpaceCompassObjectPage.OBSERVATORY).entry.scroll
     val info: @Composable (Modifier) -> Unit = { placement ->
-        val scroll = rememberScrollState()
         Column(placement.testTag("celestial-view-information")
             .scrollbarOverlay(scroll, secondaryText.copy(alpha = 0.46f), touchTargetWidth = 8.dp).verticalScroll(scroll),
             verticalArrangement = Arrangement.spacedBy(8.dp)) {
             SpaceCompassCelestialDetailSections(body, facts, timeMs, remote, distance, phase,
-                geometry?.illuminatedFraction, coordinates, primaryText, secondaryText)
+                geometry?.illuminatedFraction, coordinates, primaryText, secondaryText,
+                orbitContent = { SpaceCompassObservationMomentsRows(body, timeMs, latitude, longitude, altitude,
+                    remote, secondaryText) })
             SpaceCompassTravelTimeIsland(body, distance, primaryText, secondaryText)
             Column(Modifier.fillMaxWidth().padding(start = spaceCompassDetailScrollInset, top = 4.dp,
                 end = spaceCompassDetailScrollInset)

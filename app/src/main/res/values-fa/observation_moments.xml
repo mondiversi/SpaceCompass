@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="observation_height_maximum">بیشینهٔ سالانه</string>
+    <string name="observation_height_minimum">کمینهٔ سالانه</string>
+    <string name="observation_height_mid_rising">ارتفاع میانی · افزایشی</string>
+    <string name="observation_height_mid_setting">ارتفاع میانی · کاهشی</string>
+    <string name="observation_moments_year">مقایسهٔ گذرهای بالایی در سال تقویمی Location. برای توقف در آن لحظه، روی تاریخ و ساعت بزنید.</string>
+    <string name="observation_moments_midpoint_note">ارتفاع میانی: گذر بالایی نزدیک‌تر به میانگین بیشترین و کمترین ارتفاع سالانه.</string>
+    <string name="observation_moments_unavailable">داده‌های مداری موجود برای محاسبهٔ سالانهٔ قابل اعتماد کافی نیستند.</string>
+    <string name="observation_moment_applied">تاریخ و ساعت تنظیم شد · زمان متوقف است</string>
+</resources>

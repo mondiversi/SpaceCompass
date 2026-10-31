@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="observation_height_maximum">Massimo annuale</string>
+    <string name="observation_height_minimum">Minimo annuale</string>
+    <string name="observation_height_mid_rising">Mezz’altezza · crescente</string>
+    <string name="observation_height_mid_setting">Mezz’altezza · decrescente</string>
+    <string name="observation_moments_year">Confronto dei culmini nell’anno della Location. Tocca data e ora per osservare quel momento a tempo fermo.</string>
+    <string name="observation_moments_midpoint_note">Mezz’altezza: il culmine più vicino alla media delle altezze massima e minima annuali.</string>
+    <string name="observation_moments_unavailable">I dati orbitali disponibili non consentono un calcolo annuale attendibile.</string>
+    <string name="observation_moment_applied">Data e ora impostate · Tempo fermo</string>
+</resources>

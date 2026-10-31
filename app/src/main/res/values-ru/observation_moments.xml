@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="observation_height_maximum">Годовой максимум</string>
+    <string name="observation_height_minimum">Годовой минимум</string>
+    <string name="observation_height_mid_rising">Средняя высота · рост</string>
+    <string name="observation_height_mid_setting">Средняя высота · снижение</string>
+    <string name="observation_moments_year">Сравнение верхних кульминаций в календарном году Location. Нажмите на дату и время, чтобы остановиться в этот момент.</string>
+    <string name="observation_moments_midpoint_note">Средняя высота: кульминация, ближайшая к среднему между годовой максимальной и минимальной высотой.</string>
+    <string name="observation_moments_unavailable">Доступных орбитальных данных недостаточно для надёжного годового расчёта.</string>
+    <string name="observation_moment_applied">Дата и время заданы · Время остановлено</string>
+</resources>

@@ -1,9 +1,9 @@
 <resources>
     <string name="info_news_title">最新变化 · %1$s</string>
-    <string name="info_news_star_sky" formatted="false">信息和菜单按钮居中并排，操作按钮更加紧凑，视觉上也更平衡。</string>
-    <string name="info_news_texture_downloads" formatted="false">准星位置和信息面板间距更自然地适应竖屏与横屏。</string>
-    <string name="info_news_weather" formatted="false">Location的位置编辑器提供卡片全宽地图、并排坐标和统一的操作按钮。</string>
-    <string name="info_news_viewer_zoom" formatted="false">位置编辑器显示预估天气，语言选项按语言代码排序。</string>
-    <string name="info_news_settings" formatted="false">自动更新时，天体行、筛选计数和批量选择显示保持稳定。</string>
-    <string name="info_news_catalog" formatted="false">照片和全景图的顶部显示应用标志，并改善了拍摄符号在日间与夜间的对比度。</string>
+    <string name="info_news_star_sky" formatted="false">观测台比较Location全年各次上中天的高度，以查找年度最高和最低高度。</string>
+    <string name="info_news_texture_downloads" formatted="false">中间高度显示最接近年度最高与最低高度平均值的实际中天时刻，保留所有上升和下降阶段的经过。</string>
+    <string name="info_news_weather" formatted="false">点按观测日期和时间，即可将该时刻应用到Location并将时间暂停为0×，同时保留位置、高度和恢复设置。</string>
+    <string name="info_news_viewer_zoom" formatted="false">年度计算使用有效的Location和时区，包括夏令时。轨道数据不足以覆盖全年时会明确提示。</string>
+    <string name="info_news_settings" formatted="false">每个天体在当前会话中分别记住观测台和每日路径的滚动位置。</string>
+    <string name="info_news_catalog" formatted="false">切换页面、旋转屏幕和进入后台后仍保留滚动位置。临时加载和选中点居中不会清除已查看的位置。</string>
 </resources>

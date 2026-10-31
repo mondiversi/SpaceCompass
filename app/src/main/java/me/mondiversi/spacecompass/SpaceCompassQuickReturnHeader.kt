@@ -33,6 +33,7 @@ internal class SpaceCompassQuickReturnHeaderState(
     private var travel = 0f
 
     fun show() { visible = true; travel = 0f }
+    fun hide() { visible = false; travel = 0f }
 
     val connection = object : NestedScrollConnection {
         override fun onPostScroll(consumed: Offset, available: Offset, source: NestedScrollSource): Offset {
@@ -50,10 +51,10 @@ internal class SpaceCompassQuickReturnHeaderState(
 }
 
 @Composable
-internal fun rememberSpaceCompassQuickReturnHeader(pinned: Boolean = false): SpaceCompassQuickReturnHeaderState {
+internal fun rememberSpaceCompassQuickReturnHeader(pinned: Boolean = false, initialVisible: Boolean = true): SpaceCompassQuickReturnHeaderState {
     val currentPinned by rememberUpdatedState(pinned)
     val threshold = with(LocalDensity.current) { 8.dp.toPx() }
-    val state = remember(threshold) { SpaceCompassQuickReturnHeaderState(threshold) { currentPinned } }
+    val state = remember(threshold) { SpaceCompassQuickReturnHeaderState(threshold) { currentPinned }.apply { if (!initialVisible) hide() } }
     LaunchedEffect(pinned) { if (pinned) state.show() }
     return state
 }

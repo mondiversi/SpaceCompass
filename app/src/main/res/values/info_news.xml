@@ -1,9 +1,9 @@
 <resources>
     <string name="info_news_title">Latest news · %1$s</string>
-    <string name="info_news_star_sky" formatted="false">Centered Info and Menu buttons and compact, optically balanced controls refine the main view.</string>
-    <string name="info_news_texture_downloads" formatted="false">Reticle placement and information-panel spacing adapt more consistently to portrait and landscape.</string>
-    <string name="info_news_weather" formatted="false">The Location position editor has a full-width map, side-by-side coordinates and consistent action buttons.</string>
-    <string name="info_news_viewer_zoom" formatted="false">Estimated weather is visible in the position editor, and language choices are sorted by language code.</string>
-    <string name="info_news_settings" formatted="false">Object rows, filter counts and bulk-selection controls remain stable during automatic updates.</string>
-    <string name="info_news_catalog" formatted="false">Photo and panorama headers show the app logo; capture symbols use improved day/night contrast.</string>
+    <string name="info_news_star_sky" formatted="false">Observatory compares upper culminations across the Location’s year to find the annual maximum and minimum heights.</string>
+    <string name="info_news_texture_downloads" formatted="false">Mid-height entries show the actual culminations nearest the mean of the annual extremes, retaining every increasing and decreasing passage.</string>
+    <string name="info_news_weather" formatted="false">Tap an observation date and time to apply that instant to the Location and pause time at 0×, preserving position, altitude and resumption choices.</string>
+    <string name="info_news_viewer_zoom" formatted="false">Annual calculations use the effective Location and time zone, including daylight saving; incomplete orbital coverage is clearly indicated.</string>
+    <string name="info_news_settings" formatted="false">Each object remembers independent Observatory and Daily path scroll positions throughout the current session.</string>
+    <string name="info_news_catalog" formatted="false">Scroll positions survive navigation, rotation and backgrounding; temporary loading and selected-point centering do not erase a consulted position.</string>
 </resources>

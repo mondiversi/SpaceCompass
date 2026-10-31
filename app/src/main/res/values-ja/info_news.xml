@@ -1,9 +1,9 @@
 <resources>
     <string name="info_news_title">最近の変更 · %1$s</string>
-    <string name="info_news_star_sky" formatted="false">情報とメニューのボタンを中央に並べ、コンパクトで見た目のバランスが取れた操作部にしました。</string>
-    <string name="info_news_texture_downloads" formatted="false">照準の位置と情報パネルの間隔が、縦向きと横向きにより自然に対応します。</string>
-    <string name="info_news_weather" formatted="false">Locationの位置編集に、カード幅いっぱいの地図、横並びの座標、一貫した操作ボタンを追加しました。</string>
-    <string name="info_news_viewer_zoom" formatted="false">位置編集に推定天気を表示し、言語の選択肢を言語コード順に並べました。</string>
-    <string name="info_news_settings" formatted="false">自動更新中も天体の行、フィルター件数、一括選択の表示を安定して保ちます。</string>
-    <string name="info_news_catalog" formatted="false">写真とパノラマのヘッダーにアプリのロゴを表示し、撮影記号の昼夜のコントラストを改善しました。</string>
+    <string name="info_news_star_sky" formatted="false">天文台はLocationの年全体で上方子午線通過の高度を比較し、年間最高と最低の高度を求めます。</string>
+    <string name="info_news_texture_downloads" formatted="false">中間高度では年間最高・最低の平均に最も近い実際の上方子午線通過を示し、増加・減少するすべての通過を保持します。</string>
+    <string name="info_news_weather" formatted="false">観測日時をタップすると、その瞬間をLocationに設定して時間を0×で停止します。位置、高度、再開設定は保持されます。</string>
+    <string name="info_news_viewer_zoom" formatted="false">年間計算は有効なLocationと夏時間を含む時間帯を使用します。軌道データが年間を網羅しない場合は明示します。</string>
+    <string name="info_news_settings" formatted="false">各天体は現在のセッション中、天文台と日周経路のスクロール位置を別々に記憶します。</string>
+    <string name="info_news_catalog" formatted="false">画面移動、回転、バックグラウンドへの移行後もスクロール位置を保持します。一時的な読み込みや点の中央配置で閲覧位置が消えることはありません。</string>
 </resources>

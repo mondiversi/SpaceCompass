@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="observation_height_maximum">Máximo anual</string>
+    <string name="observation_height_minimum">Mínimo anual</string>
+    <string name="observation_height_mid_rising">Altura média · crescente</string>
+    <string name="observation_height_mid_setting">Altura média · decrescente</string>
+    <string name="observation_moments_year">Comparação das culminações superiores no ano da Location. Toque na data e hora para parar nesse momento.</string>
+    <string name="observation_moments_midpoint_note">Altura média: a culminação mais próxima da média das alturas máxima e mínima anuais.</string>
+    <string name="observation_moments_unavailable">Os dados orbitais disponíveis não permitem um cálculo anual fiável.</string>
+    <string name="observation_moment_applied">Data e hora definidas · Tempo parado</string>
+</resources>

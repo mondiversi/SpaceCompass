@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="observation_height_maximum">Yıllık maksimum</string>
+    <string name="observation_height_minimum">Yıllık minimum</string>
+    <string name="observation_height_mid_rising">Orta yükseklik · artan</string>
+    <string name="observation_height_mid_setting">Orta yükseklik · azalan</string>
+    <string name="observation_moments_year">Location takvim yılı boyunca üst geçişlerin karşılaştırması. O anda durmak için tarih ve saate dokunun.</string>
+    <string name="observation_moments_midpoint_note">Orta yükseklik: yıllık en yüksek ve en düşük yüksekliklerin ortalamasına en yakın üst geçiş.</string>
+    <string name="observation_moments_unavailable">Mevcut yörünge verileri güvenilir bir yıllık hesaplama için yeterli değil.</string>
+    <string name="observation_moment_applied">Tarih ve saat ayarlandı · Zaman durduruldu</string>
+</resources>

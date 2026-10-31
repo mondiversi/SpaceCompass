@@ -1,9 +1,9 @@
 <resources>
     <string name="info_news_title">Ostatnie nowości · %1$s</string>
-    <string name="info_news_star_sky" formatted="false">Wyśrodkowane przyciski Informacje i Menu oraz zwarte, optycznie wyważone elementy sterowania poprawiają widok główny.</string>
-    <string name="info_news_texture_downloads" formatted="false">Położenie celownika i odstępy paneli informacyjnych lepiej dostosowują się do orientacji pionowej i poziomej.</string>
-    <string name="info_news_weather" formatted="false">Edytor pozycji Location zawiera mapę na pełną szerokość, współrzędne obok siebie i spójne przyciski działań.</string>
-    <string name="info_news_viewer_zoom" formatted="false">Szacowana pogoda jest widoczna w edytorze pozycji, a języki są uporządkowane według kodów.</string>
-    <string name="info_news_settings" formatted="false">Wiersze obiektów, liczniki filtrów i zaznaczanie wielu elementów pozostają stabilne podczas automatycznych aktualizacji.</string>
-    <string name="info_news_catalog" formatted="false">Nagłówki zdjęć i panoram pokazują logo aplikacji; symbole wykonywania zdjęć mają lepszy kontrast w dzień i w nocy.</string>
+    <string name="info_news_star_sky" formatted="false">Obserwatorium porównuje górowania w roku Location, wyznaczając roczną maksymalną i minimalną wysokość.</string>
+    <string name="info_news_texture_downloads" formatted="false">Średnia wysokość wskazuje rzeczywiste górowania najbliższe średniej skrajnych wysokości rocznych, zachowując wszystkie przejścia rosnące i malejące.</string>
+    <string name="info_news_weather" formatted="false">Dotknij daty i godziny obserwacji, aby ustawić tę chwilę w Location i zatrzymać czas na 0×, zachowując pozycję, wysokość i wznowienie.</string>
+    <string name="info_news_viewer_zoom" formatted="false">Obliczenia roczne korzystają z bieżącej Location i strefy, uwzględniając czas letni. Niepełne dane orbitalne są wyraźnie oznaczone.</string>
+    <string name="info_news_settings" formatted="false">Każdy obiekt osobno zapamiętuje przewijanie Obserwatorium i Trasy dziennej w bieżącej sesji.</string>
+    <string name="info_news_catalog" formatted="false">Przewijanie zostaje zachowane przy nawigacji, obrocie i pracy w tle. Tymczasowe ładowanie i centrowanie punktów nie kasują oglądanej pozycji.</string>
 </resources>

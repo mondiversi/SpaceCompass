@@ -1,9 +1,9 @@
 <resources>
     <string name="info_news_title">Ultime novità · %1$s</string>
-    <string name="info_news_star_sky" formatted="false">Pulsanti Info e Menu centrati e comandi compatti, bilanciati visivamente, rinnovano la vista principale.</string>
-    <string name="info_news_texture_downloads" formatted="false">Posizione del mirino e spazi tra i riquadri informativi più coerenti in verticale e in orizzontale.</string>
-    <string name="info_news_weather" formatted="false">L’editor Posizione di Location integra una mappa a tutta larghezza, coordinate affiancate e pulsanti uniformi.</string>
-    <string name="info_news_viewer_zoom" formatted="false">Meteo stimato visibile nell’editor Posizione e lingue ordinate per il rispettivo codice.</string>
-    <string name="info_news_settings" formatted="false">Righe degli oggetti, conteggi dei filtri e selezione multipla restano stabili durante gli aggiornamenti automatici.</string>
-    <string name="info_news_catalog" formatted="false">Il logo dell’app compare nelle intestazioni di foto e panoramiche; migliore contrasto giorno/notte dei simboli di scatto.</string>
+    <string name="info_news_star_sky" formatted="false">L’Osservatorio confronta i culmini nell’anno della Location per trovare le altezze massima e minima annuali.</string>
+    <string name="info_news_texture_downloads" formatted="false">La mezz’altezza mostra i culmini più vicini alla media degli estremi annuali, mantenendo tutti i passaggi crescenti e decrescenti.</string>
+    <string name="info_news_weather" formatted="false">Tocca data e ora di un’osservazione per impostare quell’istante nella Location e fermare il tempo a 0×, conservando posizione, quota e ripresa.</string>
+    <string name="info_news_viewer_zoom" formatted="false">I calcoli annuali usano Location e fuso effettivi, compresa l’ora legale; la copertura orbitale insufficiente viene segnalata.</string>
+    <string name="info_news_settings" formatted="false">Ogni oggetto ricorda separatamente lo scorrimento di Osservatorio e Percorso giornaliero durante la sessione attuale.</string>
+    <string name="info_news_catalog" formatted="false">Lo scorrimento resta memorizzato tra navigazione, rotazione e background; caricamenti temporanei e centratura dei punti non cancellano la posizione consultata.</string>
 </resources>

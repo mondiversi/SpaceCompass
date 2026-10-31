@@ -1,9 +1,9 @@
 <resources>
     <string name="info_news_title">Mambo mapya · %1$s</string>
-    <string name="info_news_star_sky" formatted="false">Vitufe vya taarifa na menyu vilivyo katikati na vidhibiti vidogo vyenye usawaziko wa kuona vinaboresha mwonekano mkuu.</string>
-    <string name="info_news_texture_downloads" formatted="false">Mahali pa kilenga na nafasi kati ya paneli za taarifa hubadilika vizuri zaidi kati ya mwonekano wima na mlalo.</string>
-    <string name="info_news_weather" formatted="false">Kihariri cha nafasi cha Location kina ramani ya upana wote, viwianishi vilivyo sambamba na vitufe vya vitendo vinavyolingana.</string>
-    <string name="info_news_viewer_zoom" formatted="false">Hali ya hewa iliyokadiriwa huonekana kwenye kihariri cha nafasi, na lugha hupangwa kwa misimbo yake.</string>
-    <string name="info_news_settings" formatted="false">Safu za vitu, vihesabu vya vichujio na vidhibiti vya uteuzi wa pamoja hubaki thabiti wakati wa masasisho ya kiotomatiki.</string>
-    <string name="info_news_catalog" formatted="false">Vichwa vya picha na panorama huonyesha nembo ya programu; alama za kupiga picha zina utofauti bora mchana na usiku.</string>
+    <string name="info_news_star_sky" formatted="false">Kituo cha uchunguzi kinalinganisha vilele vya juu katika mwaka wa Location ili kupata kimo cha juu na cha chini cha mwaka.</string>
+    <string name="info_news_texture_downloads" formatted="false">Kimo cha kati huonyesha vilele halisi vilivyo karibu na wastani wa viwango vya mwaka, kikihifadhi kila mpito unaoongezeka au kupungua.</string>
+    <string name="info_news_weather" formatted="false">Gusa tarehe na saa ya uchunguzi kuweka wakati huo kwenye Location na kusimamisha muda kwa 0×, bila kupoteza mahali, mwinuko au chaguo la kuendelea.</string>
+    <string name="info_news_viewer_zoom" formatted="false">Hesabu za mwaka hutumia Location na ukanda wa saa unaotumika, pamoja na saa za kiangazi. Data za obiti zisizotosha huonyeshwa wazi.</string>
+    <string name="info_news_settings" formatted="false">Kila kitu kinakumbuka kando nafasi za kusogeza katika Kituo cha uchunguzi na Njia ya siku katika kipindi hiki.</string>
+    <string name="info_news_catalog" formatted="false">Nafasi ya kusogeza hubaki unapotembea kwenye programu, kuzungusha au kwenda chinichini. Kupakia kwa muda na kuweka nukta katikati hakufuti nafasi.</string>
 </resources>

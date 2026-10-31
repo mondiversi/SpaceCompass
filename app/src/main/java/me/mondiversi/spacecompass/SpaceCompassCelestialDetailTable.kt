@@ -23,7 +23,7 @@ internal data class SpaceCompassCelestialDetailRow(val label: String, val value:
 @Composable
 internal fun SpaceCompassCelestialDetailTable(title: String, icon: String,
     rows: List<SpaceCompassCelestialDetailRow>, primaryText: Color, secondaryText: Color,
-    tag: String, note: String? = null) {
+    tag: String, note: String? = null, extraContent: (@Composable () -> Unit)? = null) {
     if (rows.isEmpty()) return
     Column(Modifier.fillMaxWidth().testTag(tag)
         .clip(RoundedCornerShape(18.dp)).background(spaceCompassSettingsCardColor()).padding(12.dp),
@@ -45,6 +45,7 @@ internal fun SpaceCompassCelestialDetailTable(title: String, icon: String,
                     style = TextStyle(textDirection = TextDirection.ContentOrLtr)) }
             }
         }
+        extraContent?.invoke()
         note?.let { Text(it, color = secondaryText, fontSize = 10.sp, lineHeight = 13.sp) }
     }
 }

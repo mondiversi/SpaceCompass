@@ -100,6 +100,23 @@ internal class SpaceCompassObserverState(private val preferences: SharedPreferen
         if (preferences == null) timeSettings = next
         reload()
     }
+    /** Select and freeze an event atomically, bypassing the deliberate 1x re-enable safeguard. */
+    fun observeAt(instant: Long, deviceZone: ZoneId = ZoneId.systemDefault()): Boolean {
+        val selected = spaceCompassObserverPlanAtMoment(plan, savedPlan, instant, deviceZone) ?: return false
+        val paused = timeSettings.copy(enabled = true, rate = 0)
+        if (savedPlan == selected && timeSettings == paused && plan != null) return false
+        clock = null; clockPlan = null
+        // Every preference becomes visible together, so listeners cannot resurrect a running checkpoint.
+        preferences?.edit()?.putString(SPACE_COMPASS_OBSERVER_PLAN, selected.encode())
+            ?.putString(SPACE_COMPASS_OBSERVER_MODE, "custom")?.putBoolean(scenarioEnabledKey, true)
+            ?.putInt(scenarioRateKey, 0)?.putString(scenarioResumeKey, paused.resume.name)
+            ?.remove(scenarioCheckpointKey)?.apply()
+        savedPlan = selected; timeSettings = paused; localCustom = true
+        reload()
+        editorGeneration++
+        return true
+    }
+
     fun active(value: Boolean) {
         active = value; clock?.setActive(value, System.currentTimeMillis())
         if (!value) checkpoint(sync = true)

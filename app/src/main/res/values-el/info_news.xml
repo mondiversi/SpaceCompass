@@ -1,9 +1,9 @@
 <resources>
     <string name="info_news_title">Τελευταία νέα · %1$s</string>
-    <string name="info_news_star_sky" formatted="false">Τα κεντραρισμένα κουμπιά πληροφοριών και μενού και τα συμπαγή, οπτικά ισορροπημένα χειριστήρια βελτιώνουν την κύρια προβολή.</string>
-    <string name="info_news_texture_downloads" formatted="false">Η θέση του σταυρονήματος και τα κενά των πληροφοριακών πλαισίων προσαρμόζονται καλύτερα σε κατακόρυφο και οριζόντιο προσανατολισμό.</string>
-    <string name="info_news_weather" formatted="false">Η επεξεργασία θέσης του Location περιλαμβάνει χάρτη πλήρους πλάτους, συντεταγμένες δίπλα δίπλα και ομοιόμορφα κουμπιά ενεργειών.</string>
-    <string name="info_news_viewer_zoom" formatted="false">Ο εκτιμώμενος καιρός εμφανίζεται στην επεξεργασία θέσης και οι γλώσσες ταξινομούνται κατά κωδικό.</string>
-    <string name="info_news_settings" formatted="false">Οι γραμμές αντικειμένων, οι μετρητές φίλτρων και η πολλαπλή επιλογή παραμένουν σταθερά στις αυτόματες ενημερώσεις.</string>
-    <string name="info_news_catalog" formatted="false">Οι κεφαλίδες φωτογραφιών και πανοραμάτων εμφανίζουν το λογότυπο της εφαρμογής· βελτιώθηκε η αντίθεση των συμβόλων λήψης ημέρα και νύχτα.</string>
+    <string name="info_news_star_sky" formatted="false">Το Παρατηρητήριο συγκρίνει τις άνω μεσουρανήσεις στο έτος της Location για το ετήσιο μέγιστο και ελάχιστο ύψος.</string>
+    <string name="info_news_texture_downloads" formatted="false">Το μέσο ύψος δείχνει τις πραγματικές μεσουρανήσεις πλησιέστερα στον μέσο όρο των ετήσιων άκρων, διατηρώντας κάθε αυξανόμενη και μειούμενη διέλευση.</string>
+    <string name="info_news_weather" formatted="false">Πατήστε ημερομηνία και ώρα παρατήρησης για εφαρμογή στη Location και παύση χρόνου στο 0×, διατηρώντας θέση, υψόμετρο και συνέχιση.</string>
+    <string name="info_news_viewer_zoom" formatted="false">Οι ετήσιοι υπολογισμοί χρησιμοποιούν την ενεργή Location και ζώνη ώρας, με θερινή ώρα. Η ανεπαρκής τροχιακή κάλυψη επισημαίνεται.</string>
+    <string name="info_news_settings" formatted="false">Κάθε αντικείμενο θυμάται χωριστά την κύλιση στο Παρατηρητήριο και στην Ημερήσια διαδρομή για την τρέχουσα συνεδρία.</string>
+    <string name="info_news_catalog" formatted="false">Η κύλιση διατηρείται κατά την πλοήγηση, περιστροφή και λειτουργία στο παρασκήνιο. Προσωρινή φόρτωση και κεντράρισμα σημείων δεν διαγράφουν τη θέση.</string>
 </resources>
