@@ -24,6 +24,69 @@ ZIP/TAR archives and Actions debug artifacts are separate from the signed APK.
 See [distribution and signing](docs/GITHUB_RELEASES.md) and
 [the 1.7.5 release audit](docs/RELEASE_1_7_5.md).
 
+<!-- app-gallery:start -->
+## Gallery
+
+See Space Compass in portrait and landscape, by day and by night. These English screenshots use a public London demonstration, without personal location data. Select an image to view it at full size.
+
+<table>
+  <tr>
+    <td align="center">
+      <a href="docs/screenshots/full/01-day-sky-portrait.webp"><img src="docs/screenshots/thumbs/01-day-sky-portrait.webp" width="220" alt="Daylight sky in Space Compass"></a><br>
+      <sub>Daylight sky</sub>
+    </td>
+    <td align="center">
+      <a href="docs/screenshots/full/02-night-sky-portrait.webp"><img src="docs/screenshots/thumbs/02-night-sky-portrait.webp" width="220" alt="Night sky in Space Compass"></a><br>
+      <sub>Night sky</sub>
+    </td>
+    <td align="center">
+      <a href="docs/screenshots/full/03-observatory-portrait.webp"><img src="docs/screenshots/thumbs/03-observatory-portrait.webp" width="220" alt="Saturn Observatory in Space Compass"></a><br>
+      <sub>Saturn Observatory</sub>
+    </td>
+  </tr>
+  <tr>
+    <td align="center">
+      <a href="docs/screenshots/full/04-daily-path-portrait.webp"><img src="docs/screenshots/thumbs/04-daily-path-portrait.webp" width="220" alt="Daily path in Space Compass"></a><br>
+      <sub>Daily path</sub>
+    </td>
+    <td align="center">
+      <a href="docs/screenshots/full/05-catalogue-portrait.webp"><img src="docs/screenshots/thumbs/05-catalogue-portrait.webp" width="220" alt="Catalogue and filters in Space Compass"></a><br>
+      <sub>Catalogue and filters</sub>
+    </td>
+    <td align="center">
+      <a href="docs/screenshots/full/06-location-portrait.webp"><img src="docs/screenshots/thumbs/06-location-portrait.webp" width="220" alt="Location management in Space Compass"></a><br>
+      <sub>Location management</sub>
+    </td>
+  </tr>
+</table>
+
+<table>
+  <tr>
+    <td align="center">
+      <a href="docs/screenshots/full/09-observatory-landscape.webp"><img src="docs/screenshots/thumbs/09-observatory-landscape.webp" width="350" alt="Landscape Observatory in Space Compass"></a><br>
+      <sub>Landscape Observatory</sub>
+    </td>
+    <td align="center">
+      <a href="docs/screenshots/full/10-sunrise-landscape.webp"><img src="docs/screenshots/thumbs/10-sunrise-landscape.webp" width="350" alt="Dawn in landscape in Space Compass"></a><br>
+      <sub>Dawn in landscape</sub>
+    </td>
+  </tr>
+  <tr>
+    <td align="center">
+      <a href="docs/screenshots/full/11-panorama-landscape.webp"><img src="docs/screenshots/thumbs/11-panorama-landscape.webp" width="350" alt="Full-sky panorama in Space Compass"></a><br>
+      <sub>Full-sky panorama</sub>
+    </td>
+    <td align="center">
+      <a href="docs/screenshots/full/14-daily-path-landscape.webp"><img src="docs/screenshots/thumbs/14-daily-path-landscape.webp" width="350" alt="Landscape daily path in Space Compass"></a><br>
+      <sub>Landscape daily path</sub>
+    </td>
+  </tr>
+</table>
+
+[Explore all 14 screenshots and unframed app captures](docs/screenshots/README.md).
+
+<!-- app-gallery:end -->
+
 ## Features
 
 - A remembered main-view reticle/callout toggle, independent of capture labels. Generated celestial symbols use translucent dark backing for contrast.
