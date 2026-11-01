@@ -424,8 +424,7 @@ internal fun SpaceCompassSunFinderContent(
     val devicePointingOrientation = spaceCompassSunTrustedPointingOrientation(deviceOrientation, deviceReadings.compassUsable)
     val deviceVerticalAccuracy = deviceFix?.takeIf { it.hasVerticalAccuracy() }?.verticalAccuracyMeters?.toDouble()
     val deviceHeight = formatSpaceCompassCelestialAltitude(deviceAltitude, deviceVerticalAccuracy, numeric, units.feet) ?: "—"
-    val deviceHeightStacked = formatSpaceCompassCelestialAltitude(deviceAltitude, deviceVerticalAccuracy,
-        numeric, units.feet, accuracyOnNewLine = true) ?: "—"
+    val deviceHeightSummary = formatSpaceCompassCelestialAltitude(deviceAltitude, null, numeric, units.feet) ?: "—"
     val orientationRows = listOf(
         spaceCompassSunDataRow(stringResource(R.string.sun_finder_heading, SPACE_COMPASS_SUN_DATA_MARKER),
             angle(spaceCompassSunPointingHeading(devicePointingOrientation)), "sun-data-heading"),
@@ -446,7 +445,7 @@ internal fun SpaceCompassSunFinderContent(
             angle(target?.elevationDegrees), "sun-data-elevation")
     )
     val locationRows = listOf(
-        spaceCompassSunDataRow(stringResource(R.string.celestial_altitude, SPACE_COMPASS_SUN_DATA_MARKER), deviceHeight, "sun-data-altitude")
+        spaceCompassSunDataRow(stringResource(R.string.sun_finder_altitude, SPACE_COMPASS_SUN_DATA_MARKER), deviceHeightSummary, "sun-data-altitude")
     )
     val locationInfoRows = listOf(
         spaceCompassSunOptionalDataRow(stringResource(R.string.celestial_gps_coordinates, SPACE_COMPASS_SUN_DATA_MARKER),
@@ -520,13 +519,10 @@ internal fun SpaceCompassSunFinderContent(
         onPrevious = { onBodyChange(previousBody!!) },
         onNext = { onBodyChange(nextBody!!) }) else null
     val pathActionTitle = stringResource(spaceCompassCelestialPathTitle(body))
-    val details: @Composable (Modifier, Boolean, Boolean) -> Unit = { modifier, compact, landscape ->
+    val details: @Composable (Modifier, Boolean) -> Unit = { modifier, compact ->
         Column(modifier.testTag("celestial-details-column"), horizontalAlignment = Alignment.CenterHorizontally,
             verticalArrangement = Arrangement.spacedBy(8.dp)) {
-            val displayedLocationRows = if (landscape) locationRows.map { row ->
-                if (row.tag == "sun-data-altitude") row.copy(value = deviceHeightStacked) else row
-            } else locationRows
-            SpaceCompassSunFinderDataPanel(rows, displayedLocationRows, deviceOrientation, deviceReadings.compassUsable,
+            SpaceCompassSunFinderDataPanel(rows, locationRows, deviceOrientation, deviceReadings.compassUsable,
                 weatherText,
                 currentDeviceWeather != null, primaryText, secondaryText, backgroundColor, Modifier.fillMaxWidth().weight(1f, fill = false), compact,
                 bodyName = bodyName, orientationRows = orientationRows,
@@ -730,7 +726,8 @@ internal fun SpaceCompassSunFinderContent(
         // A 40% data pane still fits compact phone islands; retain the large-text fallback.
         val minimumPanelWidth = if (largeText) 280.dp else 210.dp
         val detailsWidth = viewportWidth * 0.4f
-        val compactPanel = viewportHeight < 420.dp && !largeText
+        // Keep the islands at their regular size when the available height changes.
+        val compactPanel = false
         if (viewportWidth > viewportHeight && detailsWidth - 20.dp >= minimumPanelWidth) {
             // Floating navigation stays in the sky column beside the full-height data column.
             Box(Modifier.fillMaxSize().testTag("celestial-landscape-layout")) {
@@ -745,7 +742,7 @@ internal fun SpaceCompassSunFinderContent(
                 // Equal insets towards the sky and the outer edge, including in RTL.
                 SpaceCompassMainDetailsVisibility(detailsExpanded, landscape = true) {
                     Column(Modifier.width(detailsWidth).fillMaxHeight().padding(10.dp)) {
-                        details(Modifier.fillMaxWidth().weight(1f), compactPanel, true)
+                        details(Modifier.fillMaxWidth().weight(1f), compactPanel)
                         Spacer(Modifier.height(with(density) { landscapeCaptureSize.height.toDp() }))
                     }
                 }
@@ -762,7 +759,7 @@ internal fun SpaceCompassSunFinderContent(
                 SpaceCompassMainDetailsVisibility(detailsExpanded, landscape = false) {
                     Column {
                         Spacer(Modifier.height(10.dp))
-                        details(Modifier.fillMaxWidth().heightIn(max = viewportHeight * 0.56f), compactPanel, false)
+                        details(Modifier.fillMaxWidth().heightIn(max = viewportHeight * 0.56f), compactPanel)
                     }
                 }
             }

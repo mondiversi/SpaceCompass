@@ -1,6 +1,7 @@
 package me.mondiversi.spacecompass
 
 import androidx.activity.compose.BackHandler
+import android.content.res.Configuration
 import android.content.Intent
 import android.net.Uri
 import androidx.compose.foundation.*
@@ -15,6 +16,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.platform.LocalContext
+import androidx.compose.ui.platform.LocalConfiguration
 import androidx.compose.ui.platform.LocalDensity
 import androidx.compose.ui.platform.testTag
 import androidx.compose.ui.res.stringResource
@@ -48,7 +50,8 @@ internal fun SpaceCompassSunFinderDataPanel(
     bodyActions: @Composable () -> Unit = {}
 ) {
     val scroll = rememberScrollState()
-    val style = TextStyle(fontSize = if (compact) 11.sp else 12.sp,
+    val landscape = LocalConfiguration.current.orientation == Configuration.ORIENTATION_LANDSCAPE
+    val style = TextStyle(fontSize = if (landscape || compact) 11.sp else 12.sp,
         lineHeight = if (compact) 14.sp else 16.sp, fontFeatureSettings = "tnum")
     val detailsLabel = stringResource(R.string.celestial_details_compact)
     Column(modifier.testTag("sun-finder-details")

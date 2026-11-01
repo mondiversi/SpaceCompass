@@ -613,6 +613,11 @@ The measured header/footer and input shield keep captions/taps clear of controls
 changing scientific projection. Capture's circle and target are 15% smaller; the default zoom
 uses 0.5x or the hardware minimum unless a previous camera choice has been saved.
 
+Main information islands retain their regular padding, line height and 80 dp compass when
+rotated. Their data rows use 11 sp text in landscape and 12 sp in portrait. The compact GPS
+altitude readout omits vertical uncertainty; the Position details row retains the complete
+value and GPS vertical accuracy. A scroll fallback keeps content reachable in short windows.
+
 The stable catalogue rank is built once. Marker composition, navigation and edge packing use
 ordered displayed subsets; unchecked catalogue entries create no per-frame movable groups.
 Panel expand/collapse retains its 300 ms transition. Live curve captions share measured text
