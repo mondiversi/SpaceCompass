@@ -10,7 +10,7 @@ class SpaceCompassCelestialTabularLayoutTest {
 
     @Test fun landscapeKeepsFullHeightSkyAndDetailsWithFloatingNavigation() {
         val screen = source("SpaceCompassSunFinderScreen.kt")
-        assertTrue(screen.contains("val detailsWidth = viewportWidth * 0.4f"))
+        assertTrue(screen.contains("val detailsWidth = viewportWidth * 0.45f"))
         val split = screen.substringAfter("testTag(\"celestial-landscape-layout\")")
             .substringBefore("} else Box(Modifier.fillMaxSize().clipToBounds())")
         assertTrue(split.contains("Box(Modifier.weight(1f).fillMaxHeight().clipToBounds())"))

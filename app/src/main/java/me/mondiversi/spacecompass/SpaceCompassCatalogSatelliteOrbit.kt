@@ -67,7 +67,8 @@ internal class SpaceCompassCatalogSatelliteSources(private val body: SpaceCompas
     ) { text, now -> require(SpaceCompassCatalogSatelliteOrbit.parse(body, text).usable(now)) {
         "Satellite elements are too old" } }
 
-    private var preferSatnogs = false
+    // A compact structured response avoids serial HTML/primary-provider timeouts for each visible row.
+    private var preferSatnogs = true
     private var satnogsStopped = false
     private suspend fun satnogs(now: Long, fetch: suspend (String, Int) -> String): String {
         check(!satnogsStopped) { "Satellite JSON provider stopped for this session" }
@@ -82,7 +83,9 @@ internal class SpaceCompassCatalogSatelliteSources(private val body: SpaceCompas
         }
     }
     suspend fun load(now: Long, fetch: suspend (String, Int) -> String): String {
+        var triedSatnogs = false
         if (preferSatnogs) {
+            triedSatnogs = true
             try { return satnogs(now, fetch) }
             catch (cancelled: kotlinx.coroutines.CancellationException) { throw cancelled }
             catch (_: Exception) { /* Independently validated original providers remain available. */ }
@@ -90,7 +93,7 @@ internal class SpaceCompassCatalogSatelliteSources(private val body: SpaceCompas
         try { return sources.load(now, fetch) }
         catch (cancelled: kotlinx.coroutines.CancellationException) { throw cancelled }
         catch (original: Exception) {
-            if (satnogsStopped) throw original
+            if (satnogsStopped || triedSatnogs) throw original
             return satnogs(now, fetch).also { preferSatnogs = true }
         }
     }

@@ -108,6 +108,7 @@ internal fun SpaceCompassSunDailyPathLayer(
                     style = Stroke(1.5.dp.toPx(), pathEffect = dash))
             }
             val occupiedLabels = sharedOrbitLabels ?: mutableListOf<android.graphics.RectF>()
+            namePlacement.retainKeys(arrows.map { it.first.toString() }.toSet())
             // Decorative only: neither add hit targets nor cover hourly/event/live markers.
             arrows.forEach { (_, arrow) ->
                 if (points.any { (_, point) -> hypot(point.x - arrow.center.x, point.y - arrow.center.y) < 16.dp.toPx() } ||
@@ -125,7 +126,7 @@ internal fun SpaceCompassSunDailyPathLayer(
             }
             arrows.forEach { (moment, arrow) ->
                 drawSpaceCompassOrbitName(drawContext.canvas.nativeCanvas, objectName, segments, arrow, orbitText,
-                    (if (arrow.belowHorizon) below else above).toArgb(), 9.dp.toPx(), occupiedLabels, size.width, size.height, namePlacement, moment.toString())
+                    (if (arrow.belowHorizon) below else above).toArgb(), 9.dp.toPx(), occupiedLabels, size.width, size.height, namePlacement, moment.toString(), projection = perspective)
             }
             points.forEach { (marker, projected) ->
                 if (!drawApproaches && SpaceCompassSunPathEvent.APPROACH in marker.events) return@forEach

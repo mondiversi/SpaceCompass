@@ -6,5 +6,7 @@
   <string name="celestial_starlink_timeout">CelesTrak / Satcat ने समय पर जवाब नहीं दिया: %1$s का डेटा डाउनलोड नहीं हो सका। दूसरा नेटवर्क आज़माएँ।</string>
   <string name="celestial_data_unavailable_compact">डेटा उपलब्ध नहीं।</string>
   <string name="celestial_date_unavailable">इस तारीख के लिए डेटा उपलब्ध नहीं है।</string>
-  <string name="catalog_date_unavailable">तारीख दायरे से बाहर</string>
+  <string name="catalog_date_unavailable">तारीख सीमा से बाहर</string>
+  <string name="catalog_data_stale">डेटा अपडेट नहीं है</string>
+  <string name="catalog_value_unavailable">उपलब्ध नहीं</string>
 </resources>

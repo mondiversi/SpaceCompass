@@ -1,9 +1,9 @@
 <resources>
     <string name="info_news_title">Perubahan terbaru · %1$s</string>
-    <string name="info_news_star_sky" formatted="false">Buka Peristiwa utama dari Observatorium untuk objek, lokasi, dan tahun yang dilihat. Ketuk tanggal untuk melihat saat itu dengan waktu dijeda.</string>
-    <string name="info_news_texture_downloads" formatted="false">Lihat periode kutub, panjang siang, waktu terbit/terbenam ekstrem, fase Bulan, perigee/apogee, dan peristiwa planet jika data tepercaya tersedia.</string>
-    <string name="info_news_weather" formatted="false">Ekspor peristiwa tahunan sebagai CSV atau TXT yang mudah dibaca dengan pilihan format dan privasi lokasi bersama. Hasil tetap stabil saat jam diperbarui dan GPS sedikit bergeser.</string>
-    <string name="info_news_viewer_zoom" formatted="false">Logo di kiri, menu di kanan, kontrol utama di tengah. Kamera di samping pengambilan; cuaca dan 0°/90° di bawah tengah. Lanskap: rasio langit/kartu 60/40. Dalam lanskap, akurasi ketinggian berada di baris kedua.</string>
-    <string name="info_news_settings" formatted="false">Label orbit dan referensi langit dapat ditempatkan di atas atau bawah garis yang berdekatan agar lebih stabil dan mudah dibaca.</string>
-    <string name="info_news_catalog" formatted="false">Transisi kartu lebih mulus, tetap 300 ms, tanpa memindai objek yang tidak dipilih. Zoom awal 0,5× atau tampilan terluas yang didukung; kontrol pengambilan lebih ringkas.</string>
+    <string name="info_news_star_sky" formatted="false">Urutan bawaan kini mengikuti jarak yang meningkat dari Matahari. Kolom nilai sesuai dengan pengurutan dan objek terpilih tetap di atas.</string>
+    <string name="info_news_texture_downloads" formatted="false">Pemulihan data satelit lebih cepat melalui sumber alternatif tervalidasi. Pesan berbeda untuk pemuatan, data lama, tanggal di luar rentang, dan nilai yang tidak tersedia.</string>
+    <string name="info_news_weather" formatted="false">Jalur harian terbuka dengan posisi Saat ini di tengah jika memungkinkan. Kembali ke objek mempertahankan posisi gulir yang dilihat selama sesi.</string>
+    <string name="info_news_viewer_zoom" formatted="false">Dalam lanskap, rasio langit/informasi adalah 55/45. Ketinggian GPS lebih jelas; 0°/90° dan Cuaca bertukar tempat sementara kontrol kamera tetap.</string>
+    <string name="info_news_settings" formatted="false">Label orbit dan acuan langit tetap lebih dekat ke garisnya, lebih stabil pada persilangan dan saat beralih ke kamera.</string>
+    <string name="info_news_catalog" formatted="false">Tombol tangkap sama besar dengan kontrol lain, dengan tepi berdenyut lembut dan simbol lebih tipis. Jarak dan pemusatan panah lebih konsisten.</string>
 </resources>

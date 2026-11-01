@@ -32,14 +32,17 @@ internal fun spaceCompassSkyGuideCaptionBounds(anchor: SpaceCompassSunScenePoint
 /** Live-only bounded history. Captured images keep their independent one-shot layout. */
 internal class SpaceCompassSkyReferencePlacementState {
     private var viewport: Triple<Int, Int, Float>? = null
+    private var projection: SpaceCompassPerspective? = null
     private val captions = SpaceCompassCurveCaptionPlacementState()
     private val repeats = mutableMapOf<SpaceCompassSkyReference, List<SpaceCompassSunScenePoint>>()
 
-    fun viewport(width: Int, height: Int, scale: Float) {
+    fun viewport(width: Int, height: Int, scale: Float, perspective: SpaceCompassPerspective? = null) {
         val next = Triple(width, height, scale)
-        if (next != viewport) { repeats.clear(); viewport = next }
-        captions.viewport(width, height, scale)
+        if (next != viewport || perspective != projection) { repeats.clear(); viewport = next; projection = perspective }
+        captions.viewport(width, height, scale, perspective)
     }
+
+    fun forgetCaption(key: String) = captions.forget(key)
 
     fun caption(key: String, segments: List<SpaceCompassSunPathSegment>,
         candidates: List<SpaceCompassSunScenePoint>, scale: Float, width: Double, height: Double,

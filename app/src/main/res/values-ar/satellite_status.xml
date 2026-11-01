@@ -6,5 +6,7 @@
   <string name="celestial_starlink_timeout">لم يستجب CelesTrak / Satcat في الوقت المحدد: تعذر تنزيل بيانات %1$s. جرّب شبكة أخرى.</string>
   <string name="celestial_data_unavailable_compact">البيانات غير متاحة.</string>
   <string name="celestial_date_unavailable">البيانات غير متاحة لهذا التاريخ.</string>
-  <string name="catalog_date_unavailable">التاريخ غير مشمول</string>
+  <string name="catalog_date_unavailable">التاريخ خارج النطاق</string>
+  <string name="catalog_data_stale">البيانات غير محدّثة</string>
+  <string name="catalog_value_unavailable">غير متاح</string>
 </resources>

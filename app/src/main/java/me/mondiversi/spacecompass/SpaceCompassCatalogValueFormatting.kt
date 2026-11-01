@@ -1,6 +1,6 @@
 package me.mondiversi.spacecompass
 
-/** Alphabetical/default order retain the usual distance summary; numeric orders expose their key. */
+/** Default and alphabetical views show solar distance; other numeric orders expose their own key. */
 internal val SpaceCompassCatalogSort.valueField: SpaceCompassCatalogSortField
     get() = field?.takeUnless { it == SpaceCompassCatalogSortField.NAME } ?: SpaceCompassCatalogSortField.DISTANCE
 

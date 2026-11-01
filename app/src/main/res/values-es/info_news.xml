@@ -1,9 +1,9 @@
 <resources>
     <string name="info_news_title">Últimas novedades · %1$s</string>
-    <string name="info_news_star_sky" formatted="false">Abre Eventos clave desde el Observatorio para el objeto, ubicación y año consultados. Toca una fecha para observar ese instante con el tiempo detenido.</string>
-    <string name="info_news_texture_downloads" formatted="false">Consulta periodos polares, duración del día, salidas y puestas extremas, fases lunares, perigeo/apogeo y eventos planetarios cuando existan datos fiables.</string>
-    <string name="info_news_weather" formatted="false">Exporta eventos anuales como CSV o TXT legible con las opciones comunes de formato y privacidad. Los resultados permanecen estables ante actualizaciones del reloj y pequeñas variaciones GPS.</string>
-    <string name="info_news_viewer_zoom" formatted="false">Logo a la izquierda, menú a la derecha y controles centrados. Cámara junto a captura; Meteo y 0°/90° abajo al centro. En horizontal, proporción cielo/tarjetas 60/40. La precisión de altitud ocupa otra línea en horizontal.</string>
-    <string name="info_news_settings" formatted="false">Las etiquetas de órbitas y referencias celestes pueden situarse encima o debajo de líneas cercanas, con una posición más estable y legible.</string>
-    <string name="info_news_catalog" formatted="false">Transiciones de tarjetas más fluidas de 300 ms sin recorrer objetos no seleccionados. Zoom inicial de 0,5× o la vista más amplia disponible; controles de captura más compactos.</string>
+    <string name="info_news_star_sky" formatted="false">El orden predeterminado sigue la distancia creciente al Sol. La columna coincide con el criterio elegido y los objetos seleccionados permanecen primero.</string>
+    <string name="info_news_texture_downloads" formatted="false">Recuperación más rápida de datos satelitales con fuentes alternativas validadas. Mensajes distintos para carga, datos desactualizados, fechas fuera del intervalo y valores no disponibles.</string>
+    <string name="info_news_weather" formatted="false">La trayectoria diaria se abre con Actual centrado cuando es posible. Al volver a un objeto se conserva la posición consultada durante la sesión.</string>
+    <string name="info_news_viewer_zoom" formatted="false">En horizontal, proporción cielo/información 55/45. Altitud GPS más clara; 0°/90° y Meteo intercambian posiciones y los controles de cámara conservan las suyas.</string>
+    <string name="info_news_settings" formatted="false">Las etiquetas de órbitas y referencias celestes permanecen cerca de su línea, más estables en cruces y al cambiar a la cámara.</string>
+    <string name="info_news_catalog" formatted="false">Captura tiene el mismo tamaño que los demás controles, un borde que pulsa suavemente y un símbolo más fino. Espaciado y centrado de flechas más uniformes.</string>
 </resources>

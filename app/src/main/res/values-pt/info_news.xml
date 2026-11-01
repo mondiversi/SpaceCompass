@@ -1,9 +1,9 @@
 <resources>
     <string name="info_news_title">Últimas novidades · %1$s</string>
-    <string name="info_news_star_sky" formatted="false">Abra Eventos principais no Observatório para o objeto, localização e ano consultados. Toque numa data para observar esse instante com o tempo parado.</string>
-    <string name="info_news_texture_downloads" formatted="false">Consulte períodos polares, duração do dia, nascimentos/ocasos extremos, fases lunares, perigeu/apogeu e eventos planetários quando existirem dados fiáveis.</string>
-    <string name="info_news_weather" formatted="false">Exporte eventos anuais em CSV ou TXT legível com as opções comuns de formato e privacidade. Os resultados mantêm-se estáveis com atualizações do relógio e pequenas variações GPS.</string>
-    <string name="info_news_viewer_zoom" formatted="false">Logótipo à esquerda, menu à direita e comandos centrados. Câmara junto à captura; Meteo e 0°/90° em baixo ao centro. Na horizontal, proporção céu/cartões 60/40. Na horizontal, a precisão da altitude fica na segunda linha.</string>
-    <string name="info_news_settings" formatted="false">As legendas de órbitas e referências celestes podem ficar acima ou abaixo de linhas próximas, mantendo uma posição mais estável e legível.</string>
-    <string name="info_news_catalog" formatted="false">Transições dos cartões mais fluidas, sempre em 300 ms, sem percorrer objetos não selecionados. Zoom inicial de 0,5× ou a vista mais ampla disponível; comandos de captura mais compactos.</string>
+    <string name="info_news_star_sky" formatted="false">A ordem padrão segue a distância crescente ao Sol. A coluna corresponde ao critério escolhido e os objetos selecionados continuam no início.</string>
+    <string name="info_news_texture_downloads" formatted="false">Recuperação mais rápida de dados de satélites com fontes alternativas validadas. Mensagens distintas para carregamento, dados desatualizados, datas fora do intervalo e valores indisponíveis.</string>
+    <string name="info_news_weather" formatted="false">A trajetória diária abre com Atual centralizado quando possível. Ao voltar a um objeto, a posição consultada na sessão é mantida.</string>
+    <string name="info_news_viewer_zoom" formatted="false">Na horizontal, proporção céu/informações 55/45. Altitude GPS mais clara; 0°/90° e Meteorologia trocam de lugar e os controles da câmera mantêm suas posições.</string>
+    <string name="info_news_settings" formatted="false">As etiquetas das órbitas e referências celestes ficam próximas da própria linha, mais estáveis nos cruzamentos e ao alternar a câmera.</string>
+    <string name="info_news_catalog" formatted="false">Captura tem o tamanho dos outros controles, borda pulsante suave e símbolo mais fino. Espaçamento e centralização das setas mais consistentes.</string>
 </resources>

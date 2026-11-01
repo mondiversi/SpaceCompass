@@ -21,7 +21,10 @@ internal data class SpaceCompassCelestialRemoteData(val iss: SpaceCompassIssOrbi
     val timedOutBodies: Set<SpaceCompassCelestialBody> = emptySet(),
     val refreshing: Boolean = false,
     val completedCatalogRefreshRevision: Int = 0,
-    val satellites: Map<SpaceCompassCelestialBody, SpaceCompassCatalogSatelliteOrbit> = emptyMap())
+    val satellites: Map<SpaceCompassCelestialBody, SpaceCompassCatalogSatelliteOrbit> = emptyMap(),
+    val requestedBodies: Set<SpaceCompassCelestialBody> = emptySet(),
+    val activeRequest: SpaceCompassCelestialRequest? = null,
+    val failedRequests: Set<SpaceCompassCelestialRequest> = emptySet())
 
 internal suspend fun fetchSpaceCompassCelestialText(url: String, maximumBytes: Int = 65_536): String = withContext(Dispatchers.IO) {
     require(maximumBytes in 1..SPACE_COMPASS_SATCAT_MAX_BYTES)
@@ -103,8 +106,13 @@ internal fun rememberSpaceCompassCelestialRemote(bodies: Set<SpaceCompassCelesti
     val starlinkSources = remember { SpaceCompassStarlinkSources() }
     val catalogSatelliteSources = remember { SpaceCompassCelestialBody.entries.filter { it.catalogSatellite != null }
         .associateWith { SpaceCompassCatalogSatelliteSources(it) } }
+    val sourceHealth = remember { SpaceCompassOrbitalSourceHealth() }
+    val fetch: suspend (String, Int) -> String = { url, maximum ->
+        sourceHealth.fetch(url, maximum, System::currentTimeMillis, ::fetchSpaceCompassCelestialText)
+    }
     val networkRevision = rememberSpaceCompassNetworkRevision(resumed) {
         policy.networkChanged()
+        sourceHealth.networkChanged()
     }
     // Restore every local cache before scheduling any downloads, including unselected catalog objects.
     LaunchedEffect(context) {
@@ -139,13 +147,15 @@ internal fun rememberSpaceCompassCelestialRemote(bodies: Set<SpaceCompassCelesti
                 while (wake.tryReceive().isSuccess) { /* coalesce wake-ups before this pass */ }
                 // Viewing a new date changes JPL's requested window, not the transport clock.
                 if (policy.horizonsDateChanged(currentObservationTimeOverride ?: System.currentTimeMillis())) {
-                    data = data.copy(timedOutBodies = data.timedOutBodies.filterNot { it.usesHorizons }.toSet())
+                    data = data.copy(timedOutBodies = data.timedOutBodies.filterNot { it.usesHorizons }.toSet(),
+                        failedRequests = data.failedRequests.filterNot { it.body.usesHorizons }.toSet())
                 }
                 val selected = currentBodies
                 val motions = currentMotionBodies
                 val prefetch = currentPrefetch
                 val wanted = currentCatalogBodies
                 val remoteBodies = spaceCompassCelestialRefreshBodies(selected, motions, prefetch, wanted)
+                data = data.copy(requestedBodies = remoteBodies.toSet())
                 if (appliedRetry != currentRetry) {
                     policy.retryRequested(selected)
                     appliedRetry = currentRetry
@@ -184,16 +194,16 @@ internal fun rememberSpaceCompassCelestialRemote(bodies: Set<SpaceCompassCelesti
                     }
                     try {
                         for (request in pending) {
-                            data = data.copy(refreshing = true, loading = body in currentBodies, loadingMotionFor =
+                            data = data.copy(refreshing = true, activeRequest = request, loading = body in currentBodies, loadingMotionFor =
                                 if (body in currentBodies && (request.motion || satellite || (!motionUsable && pending.any { it.motion }))) body else null)
                             val result = policy.attempt(request, System::currentTimeMillis) {
                                 val text = if (body == SpaceCompassCelestialBody.STARLINK_V3)
-                                    starlinkSources.load(System.currentTimeMillis(), ::fetchSpaceCompassCelestialText)
-                                else if (iss) issSources.load(System.currentTimeMillis(), ::fetchSpaceCompassCelestialText)
+                                    starlinkSources.load(System.currentTimeMillis(), fetch)
+                                else if (iss) issSources.load(System.currentTimeMillis(), fetch)
                                 else if (body.catalogSatellite != null) catalogSatelliteSources.getValue(body)
-                                    .load(System.currentTimeMillis(), ::fetchSpaceCompassCelestialText)
-                                else fetchSpaceCompassCelestialText(spaceCompassHorizonsUrl(body,
-                                    requestTime, geometricMotion = request.motion))
+                                    .load(System.currentTimeMillis(), fetch)
+                                else fetch(spaceCompassHorizonsUrl(body,
+                                    requestTime, geometricMotion = request.motion), 65_536)
                                 val updated = when {
                                     body.catalogSatellite != null -> {
                                         val orbit = SpaceCompassCatalogSatelliteOrbit.parse(body, text)
@@ -222,10 +232,12 @@ internal fun rememberSpaceCompassCelestialRemote(bodies: Set<SpaceCompassCelesti
                                     }
                                 }
                                 withContext(Dispatchers.IO) { storeOrbitalCache(context, body, text, request.motion) }
-                                data = updated.copy(timedOutBodies = updated.timedOutBodies - body)
+                                data = updated.copy(timedOutBodies = updated.timedOutBodies - body,
+                                    failedRequests = updated.failedRequests - request)
                             }
                             result.exceptionOrNull()?.let { error ->
-                                data = data.copy(timedOutBodies = if (error is java.net.SocketTimeoutException)
+                                data = data.copy(failedRequests = data.failedRequests + request,
+                                    timedOutBodies = if (error is java.net.SocketTimeoutException)
                                     data.timedOutBodies + body else data.timedOutBodies - body)
                                 // Public orbital requests contain no GPS, sensor credentials or device identifiers.
                                 android.util.Log.w("SpaceCompassCelestial", "${body.name}: ${if (request.motion) "velocity" else "position"} refresh failed", error)
@@ -235,7 +247,7 @@ internal fun rememberSpaceCompassCelestialRemote(bodies: Set<SpaceCompassCelesti
                             // Failure of one component must not block the other or discard valid cached data.
                         }
                     } finally {
-                        data = data.copy(loading = false, loadingMotionFor = null)
+                        data = data.copy(loading = false, loadingMotionFor = null, activeRequest = null)
                     }
                     upcoming += System.currentTimeMillis() + 1_000L
                 }
@@ -247,7 +259,8 @@ internal fun rememberSpaceCompassCelestialRemote(bodies: Set<SpaceCompassCelesti
                     .coerceIn(1L, if (prefetch) SPACE_COMPASS_CELESTIAL_CATALOG_REFRESH_MS else SPACE_COMPASS_CELESTIAL_REFRESH_MS)
                 withTimeoutOrNull(waitMs) { wake.receive() }
             }
-        } finally { data = data.copy(loading = false, loadingMotionFor = null, refreshing = false) }
+        } finally { data = data.copy(loading = false, loadingMotionFor = null, activeRequest = null,
+            requestedBodies = emptySet(), refreshing = false) }
     }
     return data
 }

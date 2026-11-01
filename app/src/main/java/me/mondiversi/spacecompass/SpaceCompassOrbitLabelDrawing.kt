@@ -18,10 +18,11 @@ internal fun drawSpaceCompassOrbitName(canvas: Canvas, name: String, segments: L
     arrow: SpaceCompassSunPathArrow, paint: Paint, tint: Int, offset: Float,
     occupied: MutableList<RectF> = mutableListOf(),
     viewportWidth: Float = canvas.width.toFloat(), viewportHeight: Float = canvas.height.toFloat(),
-    placement: SpaceCompassCurveCaptionPlacementState? = null, placementKey: String = ""): Boolean {
+    placement: SpaceCompassCurveCaptionPlacementState? = null, placementKey: String = "",
+    projection: SpaceCompassPerspective? = null): Boolean {
     val layout = if (placement != null) {
         val scale = paint.textSize / 24f
-        placement.viewport(viewportWidth.toInt(), viewportHeight.toInt(), scale)
+        placement.viewport(viewportWidth.toInt(), viewportHeight.toInt(), scale, projection)
         placement.place(placementKey, segments, listOf(arrow.center), listOf(paint.textSize), offset.toDouble(),
             viewportWidth.toDouble(), viewportHeight.toDouble(), 0.0, occupied.map {
                 SpaceCompassSunSceneFrame(it.left.toDouble(), it.top.toDouble(), it.width().toDouble(), it.height().toDouble())

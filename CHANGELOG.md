@@ -1,5 +1,15 @@
 # Changelog
 
+## 1.7.6 — 2026-11-01
+
+- Make the default catalogue order genuinely increase by Sun-centred distance, with consistent value columns, stable ties and retained selected-first grouping.
+- Prefer validated structured satellite responses and share host-outage backoff across objects. Retain individual caches, provider protections and explicit orbital-validity limits.
+- Distinguish loading, outdated data, dates outside coverage and unavailable quantities in all catalogue orders and twenty languages. Keep approximate solar references marked with ≈.
+- Center Current on the first Daily path visit while preserving manually consulted session positions on return.
+- Stabilize orbit and celestial-guide labels near crossings, viewport re-entry and camera-mode changes without unnecessary clearance from their own lines.
+- Refine the 55/45 landscape split, GPS-altitude summary, floating capture size/pulse, optical chevron centering and normal-mode Weather/0°/90° order. Camera control positions are retained.
+- Refresh the English portrait/landscape screenshot gallery and its main README previews.
+
 ## 1.7.5 — 2026-11-01
 
 - Add **Key events** below Key heights in Observatory, with independent year selection and object/session scroll. Use the inspected body and effective Location, observer altitude, civil-year bounds and time-zone rules. Tapping a date preserves spatial overrides, applies the exact instant and pauses time atomically at 0×.

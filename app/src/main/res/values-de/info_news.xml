@@ -1,9 +1,9 @@
 <resources>
     <string name="info_news_title">Neuigkeiten · %1$s</string>
-    <string name="info_news_star_sky" formatted="false">Öffne Wichtige Ereignisse in der Sternwarte für Objekt, Standort und Jahr. Tippe auf ein Datum, um diesen Zeitpunkt bei angehaltener Zeit zu betrachten.</string>
-    <string name="info_news_texture_downloads" formatted="false">Entdecke polare Zeiträume, Tageslängen, früheste/späteste Auf- und Untergänge, Mondphasen, Perigäum/Apogäum und Planetenereignisse, soweit verlässliche Daten vorliegen.</string>
-    <string name="info_news_weather" formatted="false">Exportiere Jahresereignisse als CSV oder lesbare TXT mit den gemeinsamen Format- und Standortschutzoptionen. Ergebnisse bleiben bei Uhraktualisierungen und gewöhnlichen GPS-Schwankungen stabil.</string>
-    <string name="info_news_viewer_zoom" formatted="false">Logo links, Menü rechts, Hauptsteuerung mittig. Kamera neben der Aufnahme; Wetter und 0°/90° unten mittig. Im Querformat gilt Himmel/Karten 60/40. Im Querformat steht die Höhengenauigkeit in einer eigenen zweiten Zeile.</string>
-    <string name="info_news_settings" formatted="false">Beschriftungen von Bahnen und Himmelsreferenzen können über oder unter nahe Linien wechseln und bleiben dabei stabiler und lesbarer.</string>
-    <string name="info_news_catalog" formatted="false">Flüssigere Kartenübergänge dauern weiterhin 300 ms, ohne ungewählte Katalogobjekte zu durchsuchen. Standardzoom: 0,5× oder weiteste unterstützte Ansicht; kompaktere Aufnahmesteuerung.</string>
+    <string name="info_news_star_sky" formatted="false">Die Standardreihenfolge folgt nun der zunehmenden Entfernung zur Sonne. Die Wertespalte passt zur Sortierung; ausgewählte Objekte bleiben oben.</string>
+    <string name="info_news_texture_downloads" formatted="false">Schnellere Wiederherstellung von Satellitendaten über geprüfte alternative Quellen. Eigene Meldungen für Laden, veraltete Daten, nicht abgedeckte Daten und fehlende Werte.</string>
+    <string name="info_news_weather" formatted="false">Der Tagesverlauf öffnet sich möglichst mit Aktuell in der Mitte. Beim Zurückkehren bleibt die in dieser Sitzung betrachtete Scrollposition erhalten.</string>
+    <string name="info_news_viewer_zoom" formatted="false">Im Querformat gilt eine 55/45-Aufteilung für Himmel und Informationen. Klarere GPS-Höhe; 0°/90° und Wetter tauschen Plätze, die Kamerasteuerung bleibt an ihrer Position.</string>
+    <string name="info_news_settings" formatted="false">Beschriftungen von Bahnen und Himmelslinien bleiben näher an ihrer Linie und stabiler bei Kreuzungen sowie beim Wechsel zur Kamera.</string>
+    <string name="info_news_catalog" formatted="false">Aufnahme ist so groß wie die anderen Bedienelemente, mit sanft pulsierendem Rand und feinerem Symbol. Einheitlichere Abstände und zentrierte Pfeile.</string>
 </resources>

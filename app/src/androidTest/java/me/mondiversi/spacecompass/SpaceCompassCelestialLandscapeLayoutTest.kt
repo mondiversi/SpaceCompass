@@ -95,21 +95,21 @@ class SpaceCompassCelestialLandscapeLayoutTest {
         assertEquals(sky.center.x, centre.center.x, 1f)
         assertEquals(chevron.bottom, axis.bottom, 1f)
         assertTrue(topCentre.bottom < centre.top)
-        listOf(camera, weather, axis, chevron).forEach { bounds ->
+        listOf(camera, weather, axis, chevron, capture).forEach { bounds ->
             assertEquals(logo.width, bounds.width, 1f)
         }
         if (direction.value == LayoutDirection.Rtl) {
             assertEquals(logo.right, chevron.right, 1f)
-            assertTrue(axis.right < weather.left)
+            assertTrue(weather.right < axis.left)
             assertTrue(capture.right < camera.left)
         } else {
             assertEquals(logo.left, chevron.left, 1f)
-            assertTrue(weather.right < axis.left)
+            assertTrue(axis.right < weather.left)
             assertTrue(camera.right < capture.left)
         }
     }
 
-    @Test fun landscapeKeepsEqualColumnsAndFloatingNavigationInBothThemesAndDirections() {
+    @Test fun landscapeKeepsRequestedColumnsAndFloatingNavigationInBothThemesAndDirections() {
         show()
         for (w in listOf(640f, 1200f)) for (dark in listOf(false, true))
             for (rtl in listOf(false, true)) {
@@ -123,14 +123,15 @@ class SpaceCompassCelestialLandscapeLayoutTest {
                 val island = compose.onNodeWithTag("sun-finder-body-data").fetchSemanticsNode().boundsInRoot
                 val sky = compose.onNodeWithTag("celestial-pointing-area").fetchSemanticsNode().boundsInRoot
                 val capture = compose.onNodeWithTag("celestial-capture-controls").fetchSemanticsNode().boundsInRoot
-                assertEquals(root.width * .6f - 10f, sky.width, 1f)
+                assertEquals(root.width * .55f - 10f, sky.width, 1f)
                 assertEquals(root.top, sky.top, 1f)
                 assertEquals(root.top + 5f, details.top, 1f)
                 assertTrue(capture.top >= details.bottom)
                 assertTrue(capture.bottom <= root.bottom - 5f)
-                if (rtl) assertTrue(capture.right <= root.center.x + 1f)
-                else assertTrue(capture.left >= root.center.x - 1f)
-                val innerGap = if (rtl) root.center.x - island.right else island.left - root.center.x
+                val boundary = if (rtl) root.right - root.width * .55f else root.left + root.width * .55f
+                if (rtl) assertTrue(capture.right <= boundary + 1f)
+                else assertTrue(capture.left >= boundary - 1f)
+                val innerGap = if (rtl) boundary - island.right else island.left - boundary
                 val outerGap = if (rtl) island.left - root.left else root.right - island.right
                 assertEquals(outerGap, innerGap, 1f)
                 assertEquals(5f, innerGap, 1f)

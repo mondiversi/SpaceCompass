@@ -1,9 +1,9 @@
 <resources>
     <string name="info_news_title">Ultime novità · %1$s</string>
-    <string name="info_news_star_sky" formatted="false">Eventi chiave si apre dall’Osservatorio e segue oggetto, Location e anno. Tocca una data per osservare quell’istante con il tempo fermo.</string>
-    <string name="info_news_texture_downloads" formatted="false">Consulta periodi polari, durata del giorno, albe e tramonti estremi, fasi lunari, perigeo/apogeo ed eventi planetari, quando i dati lo consentono.</string>
-    <string name="info_news_weather" formatted="false">Esporta gli eventi annuali in CSV o TXT con i formati e la riservatezza scelti. I risultati restano stabili tra aggiornamenti dell’orologio e piccoli cambiamenti GPS.</string>
-    <string name="info_news_viewer_zoom" formatted="false">Logo a sinistra, menu a destra e comandi centrati. Fotocamera accanto allo scatto; Meteo e 0°/90° in basso al centro. In orizzontale, proporzione cielo/isole 60/40. La precisione della quota va a capo in orizzontale.</string>
-    <string name="info_news_settings" formatted="false">Le etichette di orbite e riferimenti celesti si collocano sopra o sotto le linee quando sono vicine, restando più stabili e leggibili.</string>
-    <string name="info_news_catalog" formatted="false">Apertura e chiusura delle isole più fluide, sempre in 0,3 secondi. Zoom iniziale a 0,5× o alla vista più ampia supportata; comandi di scatto più compatti.</string>
+    <string name="info_news_star_sky" formatted="false">Il predefinito ordina davvero per distanza crescente dal Sole. La colonna segue il criterio scelto e gli oggetti selezionati restano in cima.</string>
+    <string name="info_news_texture_downloads" formatted="false">Recupero dei dati satellitari più rapido con fonti alternative validate. Messaggi distinti per caricamento, dati non aggiornati, date fuori intervallo e valori non disponibili.</string>
+    <string name="info_news_weather" formatted="false">Il percorso giornaliero si apre con Attuale centrato dove possibile. Tornando a un oggetto resta la posizione consultata durante la sessione.</string>
+    <string name="info_news_viewer_zoom" formatted="false">In orizzontale, proporzione cielo/informazioni 55/45. Quota GPS più chiara; 0°/90° e Meteo si scambiano, mantenendo le posizioni dei comandi fotocamera.</string>
+    <string name="info_news_settings" formatted="false">Le etichette di orbite e riferimenti celesti restano vicine alla propria linea, più stabili agli incroci e passando alla vista fotocamera.</string>
+    <string name="info_news_catalog" formatted="false">Scatto ha la stessa dimensione degli altri comandi, un bordo che pulsa dolcemente e un simbolo più sottile. Distanze e centratura delle frecce più coerenti.</string>
 </resources>

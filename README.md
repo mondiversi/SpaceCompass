@@ -8,8 +8,8 @@ paths, inspect reference facts and view textured models. Space Compass is a stan
 
 ## Download and install
 
-Download **space-compass-1.7.5.apk** from the
-[Space Compass 1.7.5 release](https://github.com/mondiversi/SpaceCompass/releases/tag/v1.7.5).
+Download **space-compass-1.7.6.apk** from the
+[Space Compass 1.7.6 release](https://github.com/mondiversi/SpaceCompass/releases/tag/v1.7.6).
 Android 8.0 or newer is required. Open the APK and follow Android's installation
 prompts; allow installation for your browser or file manager if requested.
 
@@ -22,7 +22,7 @@ one manual APK update to acquire this feature.
 The release includes `SHA256SUMS.txt` and a signed update index. GitHub's source
 ZIP/TAR archives and Actions debug artifacts are separate from the signed APK.
 See [distribution and signing](docs/GITHUB_RELEASES.md) and
-[the 1.7.5 release audit](docs/RELEASE_1_7_5.md).
+[the 1.7.6 release audit](docs/RELEASE_1_7_6.md).
 
 <!-- app-gallery:start -->
 ## Gallery
@@ -95,6 +95,8 @@ See Space Compass in portrait and landscape, by day and by night. These English 
 - 9,999 catalogue objects: Sun, Moon, planets, natural/artificial satellites,
   comets, Voyager spacecraft, nearby stars, nebulae, star clusters, compact objects and exoplanets.
 - Live search by localized name or catalog identifier, combined with four paired filters: type, visibility, origin and pointing availability. Selected objects remain pinned first and visible through filters/search; numeric or alphabetical sorting still applies within each group. Object rows and Type choices use neutral theme backgrounds. A funnel identifies filters; up/down arrows identify sorting. The compact search field centers its text, hint and cursor.
+- Default catalogue order follows increasing Sun-centred distance, with selected-first grouping retained. Every distance column uses one reference; alphabetical order shows the solar column too. Near-Earth satellite solar references are explicitly approximate (≈).
+- Validated alternative satellite sources recover current data without repeating one unreachable host timeout for every row. Loading, outdated data, dates outside coverage and unavailable values have distinct localized messages. Expired orbital data never supply a pointing or Earth-centred range.
 - Type/visibility filters and numeric sorting by Sun-centred or Earth-centred distance, mass, diameter, pressure,
   gravity and temperature. Missing properties remain unavailable and sort last.
 - Favorites are independent of scene selection: mark them with the Observatory heart and filter the catalogue with its heart. Favorite checkboxes use the shared day/night pink accent, while their check still controls scene selection. Favorites, filters, selected objects and the active target persist.
@@ -138,6 +140,7 @@ See Space Compass in portrait and landscape, by day and by night. These English 
 - Read object names in the theme text color, with an outlined split-color dot: above-horizon orbit color on top and below-horizon color underneath. The dot remains visible beside shortened long names. Photo/panorama legends and image exports use the same text-sized dots, with outlines matching the lettering. Button counters use larger solid theme-accent badges with light/dark bold digits.
 - Open **Key heights** from Observatory, select a year from 1900 to 2100 and compare annual upper culminations: all significant height maxima/minima and every passage closest to the mean of the absolute annual extremes. Event counts adapt to object and location, with numbering only for repeated events. Separate moment/elevation/date-time columns use the selected formats; frozen TXT/CSV exports share the standard formatting and location-disclosure choices. Tap a moment to set the Location date/time and pause at 0×. Effective position, altitude and seasonal time-zone offsets are respected. Incomplete annual orbital data remain explicitly unavailable.
 - Open **Key events** below Key heights for a separate object/Location/year calendar. Solar polar-period boundaries and durations, day-length and sunrise/sunset extremes, lunar phases/apsides and supported planetary events use the accepted observer and local time-zone rules. Read each event’s local elevation, apply its date at paused 0× time, or export frozen CSV/TXT with the standard format/privacy choices. Short-lived orbital data never become invented annual predictions. See [calculation scope](docs/KEY_EVENTS.md).
+- Daily path centers Current on an object's first visit where the real list bounds permit. Returning preserves the manually consulted session position; live updates do not keep recentering the list.
 - Observatory, Daily path, Key heights and Key events remember separate scroll positions for each object during the current activity session, across navigation, rotation and normal backgrounding. Temporary data loading does not erase the consulted position. A new session starts at the top.
 - Tap the object name to open the catalogue. Checked objects remain first in the chosen order and visible despite filters/search. The island keeps Observatory and Daily path shortcuts. Observatory offers Favorite and Export; Daily path retains Export.
 - Science fiction is an additional type-filter membership, with ten new clearly qualified illustrative references. Their real reference directions and approximate ranges do not imply measured fictional orbits or physical properties.
@@ -150,11 +153,12 @@ See Space Compass in portrait and landscape, by day and by night. These English 
 - Music cards reveal their controls with 300 ms animations. Location child forms stay fully editable independently of their activation in the management menu.
 - Full-screen animated Earth screensaver with local time, date and battery, enabled after five minutes by default. It shows the last known real GPS position, with a dimmed grey marker on the far side, on a correctly oriented globe with eastward visual spin. Seasons and geographic day/night illumination follow the real UTC Sun independently of scenarios. It pauses live sensors, GPS, camera and data refresh until dismissed.
 - Solar-height-driven dawn/dusk lighting shared by sky, ground, weather and panoramic captures.
-- Translucent main islands with paths and objects drawn behind them, a reticle centred in the free sky area and a 60% sky / 40% information landscape split. The compass island shows GPS altitude alone; Position details retain its vertical accuracy. Landscape data rows use 11 sp text (12 sp in portrait), with regular line height, inner spacing and compass size.
+- Translucent main islands with paths and objects drawn behind them, a reticle centred in the free sky area and a 55% sky / 45% information landscape split. The compass island shows GPS altitude alone; Position details retain its vertical accuracy. Landscape data rows use 11 sp text (12 sp in portrait), with regular line height, inner spacing and compass size.
 - Orbit/reference names can settle above or below nearby lines, with shared measured clearance and stable placement. Panel transitions remain 300 ms; marker composition, navigation and locators process the displayed subset instead of repeatedly scanning the full catalogue.
 - Titled photo/panorama previews with opaque theme-matched toolbars and top-aligned controls, object-colour legends and larger wrapping photo metadata on a separate opaque black band.
-- White reticle, existing-outline object focus/selection and a fixed bottom-right landscape capture anchor. Info/logo stays at the upper left, Menu at the upper right, and reticle/reference/Location/Objects controls are centred between them. Camera sits beside the compact capture action. Weather and pointing-axis controls share the lower centre, becoming Transparency and Zoom in camera mode. Collapse and point clearing remain lower left. Camera zoom defaults to 0.5× or the widest supported lens when no saved choice exists; subsequent choices remain saved.
+- White reticle, existing-outline object focus/selection and a fixed bottom-right landscape capture anchor. Info/logo stays at the upper left, Menu at the upper right, and reticle/reference/Location/Objects controls are centred between them. Camera sits beside the compact capture action. Pointing-axis and Weather controls share the lower centre; camera mode keeps Transparency then Zoom in their previous positions. Collapse and point clearing remain lower left. Camera zoom defaults to 0.5× or the widest supported lens when no saved choice exists; subsequent choices remain saved.
 - Stable ground, orbits and star background when returning from background; optically centred object arrows and a clear screensaver return hint. Focused callouts cover celestial icons without jumping; split-color keys beside object names and in capture legends show both horizon treatments.
+- Capture matches the other floating control sizes, with a fine symbol and a gentle 3.2-second border pulse. Orbit/reference caption placement uses compact measured offsets, projection-specific state and bounded re-entry retries to keep nearby names steady.
 - Compact T+/T− hour/minute offsets shared by views and exports; orbit points behind translucent title/information overlays remain visible without being selectable.
 - Capture labels can show only key events and selected points across all objects; this is the default for fresh settings. Existing saved label choices remain intact.
 - Enabled Earth-reference names remain visible through reticle crossings and all capture-label policies.
@@ -166,7 +170,7 @@ See Space Compass in portrait and landscape, by day and by night. These English 
 - Signed startup/manual GitHub updates with package, certificate, size and checksum verification.
 
 The application ID is `me.mondiversi.spacecompass`. The current stable version is
-**1.7.5**, with Android/update identity `1.7.5` and version code **61**.
+**1.7.6**, with Android/update identity `1.7.6` and version code **62**.
 This preserves the three-part update protocol used by existing preview installations.
 The app stores its preferences and caches privately.
 
@@ -228,7 +232,7 @@ Launcher/loading artwork and original illustrations are project assets.
 
 ## Data and graphics packages
 
-Release 1.7.5 includes **9,999 selectable objects**, and an optional reference-information archive.
+Release 1.7.6 includes **9,999 selectable objects**, and an optional reference-information archive.
 All descriptive data and translations remain inside the APK. Scientific limits and provenance are in the
 [catalogue sources](docs/CATALOG_9999.md) and [canonical source catalogue](catalogue/README.md).
 

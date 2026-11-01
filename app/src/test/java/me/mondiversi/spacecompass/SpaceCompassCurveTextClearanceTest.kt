@@ -59,14 +59,14 @@ class SpaceCompassCurveTextClearanceTest {
         val state = SpaceCompassCurveCaptionPlacementState().apply { viewport(1000, 2000, 1.6875f) }
         val caption = state.place("nearby", segments, listOf(center), listOf(40.5f), 20.25,
             1000.0, 2000.0, 0.0, occupied, 1.6875f) { 650.0 }!!
-        assertTrue(caption.layout.below)
+        assertFalse(caption.layout.below)
         assertTrue(caption.layout.additionalOffset > 0)
         assertFalse(caption.layout.collisionFrames.any { run -> occupied.any { overlaps(run, it) } })
         repeat(60) {
             val retained = state.place("nearby", segments, listOf(center), listOf(40.5f), 20.25,
                 1000.0, 2000.0, 0.0, emptyList(), 1.6875f) { 650.0 }!!
-            assertEquals(caption.layout.additionalOffset, retained.layout.additionalOffset, 0.0)
-            assertEquals(caption.layout.baseline, retained.layout.baseline)
+            assertFalse(retained.layout.below)
+            assertEquals(0.0, retained.layout.additionalOffset, 0.0)
         }
         assertFalse(orbit.below)
     }

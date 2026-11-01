@@ -55,4 +55,7 @@ internal fun spaceCompassReferenceDistanceText(body: SpaceCompassCelestialBody, 
 
 internal fun formatSpaceCompassCatalogDisplayDistance(body: SpaceCompassCelestialBody, distanceAu: Double?,
     numeric: SpaceCompassNumericFormat, unit: String): String = spaceCompassReferenceDistanceText(body,
-    formatSpaceCompassCelestialCatalogDistance(distanceAu, numeric, unit)) ?: "—"
+    formatSpaceCompassCelestialCatalogDistance(distanceAu, numeric, unit))?.let {
+        // Earth-centred satellites share Earth's solar reference at catalogue resolution.
+        if (body.isEarthSatellite && it != "—") "≈ $it" else it
+    } ?: "—"

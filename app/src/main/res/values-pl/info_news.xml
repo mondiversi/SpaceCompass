@@ -1,9 +1,9 @@
 <resources>
     <string name="info_news_title">Ostatnie nowości · %1$s</string>
-    <string name="info_news_star_sky" formatted="false">Otwórz Kluczowe zjawiska z Obserwatorium dla oglądanego obiektu, lokalizacji i roku. Dotknij daty, aby zobaczyć ten moment przy zatrzymanym czasie.</string>
-    <string name="info_news_texture_downloads" formatted="false">Sprawdzaj okresy polarne, długość dnia, skrajne wschody/zachody, fazy Księżyca, perygeum/apogeum i zjawiska planetarne, jeśli dostępne są wiarygodne dane.</string>
-    <string name="info_news_weather" formatted="false">Eksportuj zjawiska roczne do CSV lub czytelnego TXT ze wspólnymi opcjami formatu i prywatności. Wyniki pozostają stabilne przy aktualizacjach zegara i niewielkich zmianach GPS.</string>
-    <string name="info_news_viewer_zoom" formatted="false">Logo po lewej, menu po prawej, główne przyciski pośrodku. Aparat obok zdjęcia; pogoda i 0°/90° na dole pośrodku. Poziomo: proporcja niebo/karty 60/40. Poziomo dokładność wysokości jest w drugim wierszu.</string>
-    <string name="info_news_settings" formatted="false">Podpisy orbit i odniesień niebieskich mogą znajdować się nad lub pod pobliskimi liniami, zachowując stabilniejsze i czytelniejsze położenie.</string>
-    <string name="info_news_catalog" formatted="false">Płynniejsze przejścia kart nadal trwają 300 ms i nie przeglądają niezaznaczonych obiektów. Początkowy zoom 0,5× lub najszerszy obsługiwany widok; mniejsze przyciski zdjęć.</string>
+    <string name="info_news_star_sky" formatted="false">Domyślna kolejność odpowiada rosnącej odległości od Słońca. Kolumna wartości jest zgodna z sortowaniem, a wybrane obiekty pozostają na początku.</string>
+    <string name="info_news_texture_downloads" formatted="false">Szybsze odzyskiwanie danych satelitów ze zweryfikowanych źródeł alternatywnych. Osobne komunikaty ładowania, nieaktualnych danych, dat poza zakresem i niedostępnych wartości.</string>
+    <string name="info_news_weather" formatted="false">Trasa dzienna otwiera się z pozycją Aktualna pośrodku, gdy to możliwe. Powrót do obiektu zachowuje miejsce przeglądane w tej sesji.</string>
+    <string name="info_news_viewer_zoom" formatted="false">W poziomie proporcja niebo/informacje wynosi 55/45. Czytelniejsza wysokość GPS; 0°/90° i Pogoda zamieniają miejsca, pozycje przycisków aparatu pozostają bez zmian.</string>
+    <string name="info_news_settings" formatted="false">Etykiety orbit i odniesień niebieskich pozostają bliżej swoich linii, stabilniej przy przecięciach i przełączaniu widoku aparatu.</string>
+    <string name="info_news_catalog" formatted="false">Przycisk zdjęcia ma rozmiar pozostałych, delikatnie pulsującą krawędź i cieńszy symbol. Spójniejsze odstępy i wyśrodkowanie strzałek.</string>
 </resources>

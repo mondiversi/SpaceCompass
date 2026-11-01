@@ -1,9 +1,9 @@
 <resources>
     <string name="info_news_title">Dernières nouveautés · %1$s</string>
-    <string name="info_news_star_sky" formatted="false">Ouvrez Événements clés depuis l’Observatoire pour l’objet, le lieu et l’année consultés. Touchez une date pour observer cet instant avec le temps arrêté.</string>
-    <string name="info_news_texture_downloads" formatted="false">Consultez les périodes polaires, durées du jour, levers/couchers extrêmes, phases lunaires, périgées/apogées et événements planétaires lorsque les données sont fiables.</string>
-    <string name="info_news_weather" formatted="false">Exportez les événements annuels en CSV ou TXT lisible avec les choix communs de format et de confidentialité. Les résultats restent stables malgré les mises à jour de l’horloge et les petites dérives GPS.</string>
-    <string name="info_news_viewer_zoom" formatted="false">Logo à gauche, menu à droite et commandes centrées. Caméra près de la capture ; météo et 0°/90° en bas au centre. En paysage, proportion ciel/cartes 60/40. En paysage, la précision d’altitude passe à la ligne.</string>
-    <string name="info_news_settings" formatted="false">Les légendes des orbites et repères célestes peuvent passer au-dessus ou au-dessous des lignes proches, avec un placement plus stable et lisible.</string>
-    <string name="info_news_catalog" formatted="false">Transitions des cartes plus fluides, toujours en 300 ms, sans parcourir les objets non cochés. Zoom initial de 0,5× ou vue la plus large disponible ; commandes de capture plus compactes.</string>
+    <string name="info_news_star_sky" formatted="false">Le classement par défaut suit la distance croissante au Soleil. La colonne correspond au tri choisi et les objets sélectionnés restent en tête.</string>
+    <string name="info_news_texture_downloads" formatted="false">Récupération plus rapide des données satellitaires grâce à des sources alternatives validées. Messages distincts pour le chargement, les données anciennes, les dates hors période et les valeurs indisponibles.</string>
+    <string name="info_news_weather" formatted="false">Le parcours quotidien affiche Actuel au centre si possible. Le retour à un objet conserve la position consultée pendant la session.</string>
+    <string name="info_news_viewer_zoom" formatted="false">En paysage, répartition ciel/données 55/45. Altitude GPS plus claire ; 0°/90° et Météo échangent leurs places, les commandes photo gardent les leurs.</string>
+    <string name="info_news_settings" formatted="false">Les étiquettes des orbites et repères célestes restent près de leur ligne, plus stables aux croisements et lors du passage à la caméra.</string>
+    <string name="info_news_catalog" formatted="false">Capture adopte la taille des autres commandes, un bord animé en douceur et un symbole plus fin. Espacement et centrage des flèches plus cohérents.</string>
 </resources>

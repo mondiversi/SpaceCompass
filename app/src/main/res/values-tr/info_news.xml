@@ -1,9 +1,9 @@
 <resources>
     <string name="info_news_title">Son yenilikler · %1$s</string>
-    <string name="info_news_star_sky" formatted="false">Gözlemevinden seçili cisim, konum ve yıl için Önemli olaylar sayfasını açın. Zamanı durdurarak o anı görmek için tarihe dokunun.</string>
-    <string name="info_news_texture_downloads" formatted="false">Güvenilir veriler varsa kutup dönemlerini, gün uzunluğunu, en erken/geç doğuş ve batışları, Ay evrelerini, yerberi/yeröteyi ve gezegen olaylarını inceleyin.</string>
-    <string name="info_news_weather" formatted="false">Yıllık olayları ortak biçim ve konum gizliliği seçenekleriyle CSV veya okunabilir TXT olarak dışa aktarın. Sonuçlar saat güncellemelerinde ve küçük GPS sapmalarında kararlı kalır.</string>
-    <string name="info_news_viewer_zoom" formatted="false">Logo solda, menü sağda, ana denetimler ortada. Kamera çekimin yanında; hava ve 0°/90° alt ortada. Yatayda gökyüzü/kart oranı 60/40 olur. Yatayda yükseklik doğruluğu ikinci satıra geçer.</string>
-    <string name="info_news_settings" formatted="false">Yörünge ve göksel referans etiketleri yakın çizgilerin üstüne veya altına yerleşerek daha kararlı ve okunaklı kalabilir.</string>
-    <string name="info_news_catalog" formatted="false">Daha akıcı kart geçişleri seçilmeyen cisimleri taramadan yine 300 ms sürer. Başlangıç yakınlaştırması 0,5× veya desteklenen en geniş görünüm; daha kompakt çekim denetimleri.</string>
+    <string name="info_news_star_sky" formatted="false">Varsayılan sıralama artık Güneşe olan uzaklığın artışını izler. Değer sütunu seçilen sıralamayla eşleşir ve seçili nesneler en üstte kalır.</string>
+    <string name="info_news_texture_downloads" formatted="false">Doğrulanmış alternatif kaynaklarla uydu verileri daha hızlı yenilenir. Yükleme, eski veriler, kapsam dışı tarihler ve kullanılamayan değerler ayrı mesajlarla gösterilir.</string>
+    <string name="info_news_weather" formatted="false">Günlük yol mümkün olduğunda Güncel konumu ortalayarak açılır. Nesneye dönüldüğünde oturumda incelenen kaydırma konumu korunur.</string>
+    <string name="info_news_viewer_zoom" formatted="false">Yatay görünümde gökyüzü/bilgi oranı 55/45. GPS yüksekliği daha açık; 0°/90° ve Hava Durumu yer değiştirirken kamera kontrolleri konumlarını korur.</string>
+    <string name="info_news_settings" formatted="false">Yörünge ve gök referansı etiketleri kendi çizgilerine daha yakın kalır; kesişimlerde ve kamera geçişlerinde daha kararlıdır.</string>
+    <string name="info_news_catalog" formatted="false">Çekim düğmesi diğer kontrollerle aynı boyutta, yumuşakça titreşen bir kenarlık ve daha ince bir simgeyle gösterilir. Aralıklar ve ok hizaları daha tutarlıdır.</string>
 </resources>

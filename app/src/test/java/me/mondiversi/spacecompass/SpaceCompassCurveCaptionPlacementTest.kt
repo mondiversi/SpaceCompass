@@ -19,7 +19,7 @@ class SpaceCompassCurveCaptionPlacementTest {
     @Test fun everyGuideCanUseTheOtherSideOfAnOrbitNameAtTheSameAnchor() {
         for (guide in SpaceCompassSkyReference.entries) {
             val orbitName = place(state(), key = "orbit")!!
-            val guideName = place(state(), guide.name, occupied = listOf(orbitName.layout.bounds))!!
+            val guideName = place(state(), guide.name, points = listOf(candidates.first()), occupied = listOf(orbitName.layout.bounds))!!
             assertFalse(orbitName.layout.below)
             assertTrue(guideName.layout.below)
             assertEquals(orbitName.layout.anchor, guideName.layout.anchor)
@@ -31,13 +31,14 @@ class SpaceCompassCurveCaptionPlacementTest {
         val first = state(); val second = state()
         for (frame in 0..120) {
             val drift = sin(frame.toDouble()) * .2
-            val a = place(first, "orbit-a", 150+drift, follow = false)!!
-            val b = place(second, "orbit-b", 153+drift, occupied = listOf(a.layout.bounds), follow = false)!!
+            val a = place(first, "orbit-a", 150+drift, points = listOf(SpaceCompassSunScenePoint(150.0, 150+drift)), follow = false)!!
+            val b = place(second, "orbit-b", 153+drift, points = listOf(SpaceCompassSunScenePoint(150.0, 153+drift)),
+                occupied = listOf(a.layout.bounds), follow = false)!!
             assertFalse(a.layout.below)
             assertTrue(b.layout.below)
             assertFalse(overlaps(a.layout.bounds, b.layout.bounds))
         }
-        assertTrue(place(second, "orbit-b", 153.0, follow = false)!!.layout.below)
+        assertFalse(place(second, "orbit-b", 153.0, follow = false)!!.layout.below)
     }
 
     @Test fun ifBothSidesAreBlockedANameMovesAlongItsActualCurveAndStaysThere() {
@@ -82,7 +83,71 @@ class SpaceCompassCurveCaptionPlacementTest {
             assertTrue(layout.below)
         }
         val below = spaceCompassCurveTextLayout(line(), candidates.first(), 100.0, 20.0, 12.0, below = true)!!
-        assertTrue(below.bounds.top > 150.0 + 12.0)
+        assertTrue(below.collisionFrames.minOf { it.top } >= 150.0 + 12.0 - 1e-8)
         assertNull(spaceCompassCurveTextLayout(line(), candidates.first(), 100.0, 20.0, -12.0, below = true))
+    }
+
+    @Test fun anOrbitNameReclaimsTheCloseAboveSideAtItsCurrentArrow() {
+        val s = state()
+        val block = listOf(SpaceCompassSunSceneFrame(0.0, 0.0, 600.0, 150.0))
+        assertTrue(place(s, points = listOf(candidates.first()), occupied = block, follow = false)!!.layout.below)
+        val next = place(s, y = 160.0, points = listOf(SpaceCompassSunScenePoint(170.0, 160.0)), follow = false)!!
+        assertFalse(next.layout.below)
+        assertEquals(0.0, next.layout.additionalOffset, 0.0)
+        assertEquals(SpaceCompassSunScenePoint(170.0, 160.0), next.layout.anchor)
+        repeat(60) {
+            assertFalse(place(s, y = 160.0, points = listOf(next.layout.anchor), follow = false)!!.layout.below)
+        }
+    }
+
+    @Test fun belowNamesStayNearTheirOwnCurveInsteadOfTwoAndAHalfTextHeightsAway() {
+        for (size in listOf(20.0, 40.0)) {
+            val below = spaceCompassCurveTextLayout(line(200.0), SpaceCompassSunScenePoint(300.0, 200.0),
+                100.0, size, 12.0, below = true)!!
+            val distance = below.baseline.first().y - 200.0
+            assertTrue(distance >= 12.0 + size)
+            assertTrue("Below lettering should remain close to the route", distance <= 12.0 + size * 1.5)
+            assertTrue(below.collisionFrames.all { it.top >= 212.0 - 1e-8 })
+        }
+    }
+
+    @Test fun aBelowFallbackCanRecoverAboveAtAnotherAnchorAfterTheViewMoves() {
+        var now = 0L
+        val s = SpaceCompassCurveCaptionPlacementState { now }.apply { viewport(600, 400, 1f) }
+        val allAbove = listOf(SpaceCompassSunSceneFrame(0.0, 0.0, 600.0, 150.0))
+        assertTrue(place(s, occupied = allAbove)!!.layout.below)
+        assertTrue(place(s, occupied = allAbove)!!.layout.below)
+        val leftAbove = listOf(SpaceCompassSunSceneFrame(0.0, 0.0, 300.0, 150.0))
+        now = 100_000_000L
+        assertTrue(place(s, occupied = leftAbove)!!.layout.below)
+        now = 250_000_000L
+        val recovered = place(s, occupied = leftAbove)!!
+        assertFalse(recovered.layout.below)
+        assertEquals(450.0, recovered.layout.anchor.x, 0.0)
+        assertEquals(0.0, recovered.layout.additionalOffset, 0.0)
+    }
+
+    @Test fun leavingTheViewAndReturningDoesNotRestoreAnOldFallback() {
+        val s = state()
+        val obstacle = listOf(SpaceCompassSunSceneFrame(60.0, 70.0, 210.0, 330.0))
+        assertEquals(450.0, place(s, occupied = obstacle)!!.layout.anchor.x, 0.0)
+        assertNull(s.place("name", emptyList(), emptyList(), listOf(24f), 12.0,
+            600.0, 400.0, 0.0, emptyList(), 1f) { 100.0 })
+        assertEquals(150.0, place(s)!!.layout.anchor.x, 0.0)
+        assertEquals(450.0, place(s, occupied = obstacle)!!.layout.anchor.x, 0.0)
+        s.retainKeys(emptySet())
+        assertEquals(150.0, place(s)!!.layout.anchor.x, 0.0)
+    }
+
+    @Test fun cameraAndNormalProjectionChangesResetTheOldScreenPlacement() {
+        val s = state()
+        val normal = SpaceCompassPerspective(.8, .8)
+        val camera = SpaceCompassPerspective(.45, .6, .48, .52)
+        val obstacle = listOf(SpaceCompassSunSceneFrame(60.0, 70.0, 210.0, 330.0))
+        for (projection in listOf(normal, camera, normal, camera, normal)) {
+            s.viewport(600, 400, 1f, projection)
+            assertEquals(150.0, place(s)!!.layout.anchor.x, 0.0)
+            assertEquals(450.0, place(s, occupied = obstacle)!!.layout.anchor.x, 0.0)
+        }
     }
 }

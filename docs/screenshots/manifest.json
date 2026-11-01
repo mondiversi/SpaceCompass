@@ -1,6 +1,7 @@
 {
   "language": "en",
-  "capture_build": "1.7.5 development build",
+  "capture_build": "1.7.6",
+  "capture_variant": "debug",
   "demonstration_locations": [
     "London, United Kingdom"
   ],
@@ -21,8 +22,8 @@
         1080,
         1857
       ],
-      "full_bytes": 296238,
-      "sha256": "cceecd54970c2cbd413063034af570ee722ce0d579dfbe74f3aac8c070d19bf2"
+      "full_bytes": 295390,
+      "sha256": "17878bf3d0c7272610c32bb478e75164428e13fb21ff138bfb1a7f9ad727ec09"
     },
     {
       "id": "02-night-sky-portrait",
@@ -37,8 +38,8 @@
         1080,
         1857
       ],
-      "full_bytes": 424576,
-      "sha256": "cc854e8076b8b796fbc6014639982eb79a0e9b6f6a8c6c756b742370b468bdbc"
+      "full_bytes": 420816,
+      "sha256": "c5407258345647ed5aef560b407a7753afe7fc155afb0a9985a0094339049f7b"
     },
     {
       "id": "03-observatory-portrait",
@@ -53,8 +54,8 @@
         1080,
         1857
       ],
-      "full_bytes": 204954,
-      "sha256": "7960f6e62238f422c263059366cc61358c2193ccde6762302055bbaf76642d94"
+      "full_bytes": 204890,
+      "sha256": "88294a2060c3d661200b13237868c941bec8adb708a8bd8c146a559ad8a7f29c"
     },
     {
       "id": "04-daily-path-portrait",
@@ -69,8 +70,8 @@
         1080,
         1857
       ],
-      "full_bytes": 115438,
-      "sha256": "9a69483fe5644fbd852b305b0aacb4c581533695436efd5965e7fd9f28fd9759"
+      "full_bytes": 120022,
+      "sha256": "72f745e550052ab5e50a4a8479fa72dba574495379474929419eb5b46ddcbce2"
     },
     {
       "id": "05-catalogue-portrait",
@@ -85,8 +86,8 @@
         1080,
         1857
       ],
-      "full_bytes": 182242,
-      "sha256": "769e60b8297efb896c4b7556a00e39b4baff0b9bd1800336635e6847e2cddf43"
+      "full_bytes": 186310,
+      "sha256": "df019823387f8ae83ac150003ac986fe394503ebfb2b9219b542661342e7474b"
     },
     {
       "id": "06-location-portrait",
@@ -101,8 +102,8 @@
         1080,
         1857
       ],
-      "full_bytes": 124984,
-      "sha256": "ab93be7b7865c86f2d5e000b41100758f1f1202325bfda1b348606360c0db922"
+      "full_bytes": 125152,
+      "sha256": "6025b28193af3d82e90f58cbf87a9e683eb1c9d1eb299a8a5a5c96017221ad0b"
     },
     {
       "id": "07-key-heights-portrait",
@@ -149,8 +150,8 @@
         1920,
         1017
       ],
-      "full_bytes": 189188,
-      "sha256": "2261a65488433691f9dab9512a6e9750ad4aca9fd6ab3b05db5edcbdc1fb505d"
+      "full_bytes": 189440,
+      "sha256": "2f509d27f0e980e04aa4735aa02dabe9ec3894f36bd040c8f39855155e56ed1f"
     },
     {
       "id": "10-sunrise-landscape",
@@ -165,8 +166,8 @@
         1920,
         1017
       ],
-      "full_bytes": 298918,
-      "sha256": "d324164f49478afd4366c453098901f32be8a1c5724732ccb6a7b81cdfcad9ef"
+      "full_bytes": 289756,
+      "sha256": "e6a7cbd3ea42e06e005f829ebdcc70e50564df21feee5880969d150bae9a636e"
     },
     {
       "id": "11-panorama-landscape",
@@ -181,8 +182,8 @@
         1920,
         1017
       ],
-      "full_bytes": 365278,
-      "sha256": "8c0382bae7f4554134f506cf77bea31b42365773eee42770e08793e2e6fd7584"
+      "full_bytes": 366078,
+      "sha256": "65f0dd5add6caf66ce21a07183e6b9d6cd0860e5e6b481fb50e908aced7878d1"
     },
     {
       "id": "12-export-portrait",
@@ -229,8 +230,8 @@
         1920,
         1017
       ],
-      "full_bytes": 73502,
-      "sha256": "b2716444bbe482b3d04ee6d540772b8a488ca4dfe21715c1ded9361a01c1b7c0"
+      "full_bytes": 83422,
+      "sha256": "8591b2c0333e12b49f239d775c4f48e17c1fcddde5ba7b54d7c11d0bdff23ada"
     }
   ]
 }

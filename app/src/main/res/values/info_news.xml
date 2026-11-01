@@ -1,9 +1,9 @@
 <resources>
     <string name="info_news_title">Latest news · %1$s</string>
-    <string name="info_news_star_sky" formatted="false">Open Key events from Observatory for the inspected object, Location and year. Tap a date to observe that instant with time paused.</string>
-    <string name="info_news_texture_downloads" formatted="false">Explore polar periods, daylight duration, sunrise/sunset extremes, lunar phases, perigee/apogee and planetary events where reliable data are available.</string>
-    <string name="info_news_weather" formatted="false">Export annual events as CSV or readable TXT using the shared formatting and location-privacy choices. Results remain stable through clock updates and ordinary GPS drift.</string>
-    <string name="info_news_viewer_zoom" formatted="false">Logo left, Menu right and main controls centered. Camera sits beside capture; Weather and 0°/90° sit at the lower center. Landscape uses a 60/40 sky/island split. Altitude accuracy moves to its own second line in landscape.</string>
-    <string name="info_news_settings" formatted="false">Orbit and celestial-reference captions can move above or below nearby lines, keeping their placement more stable and readable.</string>
-    <string name="info_news_catalog" formatted="false">Smoother 300 ms island transitions avoid scanning unchecked catalogue objects. Default camera zoom is 0.5× or the widest supported view; capture controls are more compact.</string>
+    <string name="info_news_star_sky" formatted="false">Default catalogue order now follows increasing distance from the Sun. Value columns match the selected sort, with selected objects kept first.</string>
+    <string name="info_news_texture_downloads" formatted="false">Faster satellite-data recovery with validated alternative sources. Loading, outdated data, dates outside coverage and unavailable values have distinct messages.</string>
+    <string name="info_news_weather" formatted="false">Daily path opens with Current centered where possible. Returning to an object keeps the position you consulted during the session.</string>
+    <string name="info_news_viewer_zoom" formatted="false">Landscape has a 55/45 sky/information split. GPS altitude is clearer; 0°/90° and Weather swap places while camera controls keep their positions.</string>
+    <string name="info_news_settings" formatted="false">Orbit and celestial-guide captions stay closer to their own lines, with steadier placement near crossings and when switching the camera view.</string>
+    <string name="info_news_catalog" formatted="false">Capture has the same size as the other controls, a gentle pulsing border and a finer symbol. Control spacing and chevron alignment are more consistent.</string>
 </resources>

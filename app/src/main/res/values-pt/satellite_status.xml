@@ -7,4 +7,6 @@
   <string name="celestial_data_unavailable_compact">Dados indisponíveis.</string>
   <string name="celestial_date_unavailable">Dados indisponíveis para esta data.</string>
   <string name="catalog_date_unavailable">Data fora do intervalo</string>
+  <string name="catalog_data_stale">Dados não atualizados</string>
+  <string name="catalog_value_unavailable">Indisponível</string>
 </resources>

@@ -7,4 +7,6 @@
   <string name="celestial_data_unavailable_compact">הנתונים אינם זמינים.</string>
   <string name="celestial_date_unavailable">אין נתונים לתאריך זה.</string>
   <string name="catalog_date_unavailable">התאריך מחוץ לטווח</string>
+  <string name="catalog_data_stale">הנתונים אינם מעודכנים</string>
+  <string name="catalog_value_unavailable">לא זמין</string>
 </resources>

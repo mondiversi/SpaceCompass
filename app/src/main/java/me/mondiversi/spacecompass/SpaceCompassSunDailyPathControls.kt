@@ -102,7 +102,7 @@ internal fun SpaceCompassSunDailyPathPage(
     val currentName = stringResource(R.string.celestial_current_position)
     val pageBackground = spaceCompassSurfacePalette(backgroundColor.luminance() < .4f).island
     val highlightColor = MaterialTheme.colorScheme.primary
-    val openingPointId = remember(path) { state.menuFocusPointId }
+    val openingPointId = "current"
     val scrollVisit = rememberSpaceCompassObjectPageScroll(path.body, SpaceCompassObjectPage.DAILY_PATH)
     val scroll = scrollVisit.entry.scroll
     val quickHeader = key(path.body) {
@@ -113,13 +113,13 @@ internal fun SpaceCompassSunDailyPathPage(
     DisposableEffect(scrollVisit.entry, quickHeader) {
         onDispose { scrollVisit.entry.headerVisible = quickHeader.visible }
     }
-    // Returning to a consulted table takes precedence over its incidental last-selected point.
-    var openingPointCentered by remember(path.body, openingPointId) { mutableStateOf(scrollVisit.returning) }
+    // Center the live snapshot on the first visit; preserve a consulted table on return.
+    var openingPointCentered by remember(path.body) { mutableStateOf(scrollVisit.returning) }
     var viewport by remember { mutableStateOf<Rect?>(null) }
     var pointCenter by remember(path) { mutableStateOf<Int?>(null) }
     val viewportHeight = viewport?.height?.roundToInt() ?: 0
     LaunchedEffect(path, openingPointId, viewportHeight, pointCenter, scroll.maxValue) {
-        if (!openingPointCentered && openingPointId != null && viewportHeight > 0) pointCenter?.let {
+        if (!openingPointCentered && viewportHeight > 0) pointCenter?.let {
             openingPointCentered = true
             scrollVisit.entry.scrollTo(spaceCompassDailyPathCenterScroll(it, viewportHeight, scroll.maxValue))
         }

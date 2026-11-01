@@ -6,5 +6,7 @@
   <string name="celestial_starlink_timeout">CelesTrak / Satcat به‌موقع پاسخ نداد: دریافت داده‌های %1$s ممکن نشد. شبکهٔ دیگری را امتحان کنید.</string>
   <string name="celestial_data_unavailable_compact">داده‌ها در دسترس نیست.</string>
   <string name="celestial_date_unavailable">داده‌ای برای این تاریخ موجود نیست.</string>
-  <string name="catalog_date_unavailable">تاریخ خارج از پوشش</string>
+  <string name="catalog_date_unavailable">تاریخ خارج از بازه</string>
+  <string name="catalog_data_stale">داده‌ها به‌روز نیستند</string>
+  <string name="catalog_value_unavailable">در دسترس نیست</string>
 </resources>

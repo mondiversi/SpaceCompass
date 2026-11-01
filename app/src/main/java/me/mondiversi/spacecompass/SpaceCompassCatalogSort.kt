@@ -56,8 +56,8 @@ internal fun spaceCompassCatalogPhysicalSortValue(body: SpaceCompassCelestialBod
 internal fun spaceCompassSortCatalog(bodies: List<SpaceCompassCelestialBody>, sort: SpaceCompassCatalogSort,
     names: Map<SpaceCompassCelestialBody, String>, solarDistancesAu: Map<SpaceCompassCelestialBody, Double?>,
     locale: Locale, earthDistancesKm: Map<SpaceCompassCelestialBody, Double?> = emptyMap()): List<SpaceCompassCelestialBody> {
-    if (sort == SpaceCompassCatalogSort.CATALOG) return bodies
-    val field = requireNotNull(sort.field)
+    // Preserve the saved CATALOG identifier while making Default a numeric solar order.
+    val field = sort.field ?: SpaceCompassCatalogSortField.DISTANCE
     val collator = Collator.getInstance(locale)
     val original = spaceCompassAllCelestialOrder.withIndex().associate { it.value to it.index }
     val values = if (field == SpaceCompassCatalogSortField.NAME) emptyMap() else bodies.associateWith { body ->

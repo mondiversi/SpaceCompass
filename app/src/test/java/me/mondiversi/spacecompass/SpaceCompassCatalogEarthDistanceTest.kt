@@ -24,7 +24,7 @@ class SpaceCompassCatalogEarthDistanceTest {
             SpaceCompassCatalogSort.EARTH_DISTANCE_DESC, emptyMap(), solar, Locale.ROOT, earth))
         assertEquals(listOf(sun, iss, starlink), spaceCompassSortCatalog(bodies,
             SpaceCompassCatalogSort.DISTANCE_ASC, emptyMap(), solar, Locale.ROOT, earth))
-        assertEquals(bodies, spaceCompassSortCatalog(bodies,
+        assertEquals(listOf(sun, iss, starlink), spaceCompassSortCatalog(bodies,
             SpaceCompassCatalogSort.CATALOG, emptyMap(), solar, Locale.ROOT, earth))
     }
 

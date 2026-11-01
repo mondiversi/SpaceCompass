@@ -6,5 +6,7 @@
   <string name="celestial_starlink_timeout">CelesTrak / Satcat non risponde in tempo: impossibile scaricare i dati di %1$s. Prova un’altra rete.</string>
   <string name="celestial_data_unavailable_compact">Dati non disponibili.</string>
   <string name="celestial_date_unavailable">Dati non disponibili per questa data.</string>
-  <string name="catalog_date_unavailable">Data non coperta</string>
+  <string name="catalog_date_unavailable">Data fuori intervallo</string>
+  <string name="catalog_data_stale">Dati non aggiornati</string>
+  <string name="catalog_value_unavailable">Non disponibile</string>
 </resources>

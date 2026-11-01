@@ -1,9 +1,9 @@
 <resources>
     <string name="info_news_title">החידושים האחרונים · %1$s</string>
-    <string name="info_news_star_sky" formatted="false">פתחו אירועים מרכזיים מהמצפה עבור העצם, המיקום והשנה שנבחרו. הקישו על תאריך כדי לצפות באותו רגע כשהזמן מושהה.</string>
-    <string name="info_news_texture_downloads" formatted="false">עיינו בתקופות קוטביות, אורך היום, זמני זריחה ושקיעה קיצוניים, מופעי הירח, פריגיאה ואפוגיאה ואירועים פלנטריים כאשר יש נתונים אמינים.</string>
-    <string name="info_news_weather" formatted="false">ייצאו אירועים שנתיים כ-CSV או TXT קריא עם אפשרויות העיצוב ופרטיות המיקום המשותפות. התוצאות יציבות בעדכוני שעון ובסטיות GPS קלות.</string>
-    <string name="info_news_viewer_zoom" formatted="false">הלוגו והתפריט בקצות השורה והפקדים הראשיים במרכז. מצלמה לצד הצילום; מזג אוויר ו-0°/90° למטה במרכז. לרוחב: יחס שמיים/כרטיסים 60/40. לרוחב, דיוק הגובה מופיע בשורה שנייה.</string>
-    <string name="info_news_settings" formatted="false">תוויות מסלולים ונקודות ייחוס שמימיות יכולות להופיע מעל או מתחת לקווים קרובים, במיקום יציב וקריא יותר.</string>
-    <string name="info_news_catalog" formatted="false">מעברי כרטיסים חלקים יותר, עדיין במשך 300 אלפיות שנייה, ללא סריקת עצמים שלא נבחרו. זום התחלתי 0.5× או המבט הרחב הנתמך ביותר; פקדי צילום קומפקטיים יותר.</string>
+    <string name="info_news_star_sky" formatted="false">סדר ברירת המחדל כעת עולה לפי המרחק מהשמש. עמודת הערכים תואמת למיון והעצמים שנבחרו נשארים בראש הרשימה.</string>
+    <string name="info_news_texture_downloads" formatted="false">שחזור מהיר יותר של נתוני לוויינים ממקורות חלופיים מאומתים. הודעות נפרדות לטעינה, נתונים לא מעודכנים, תאריך מחוץ לטווח וערכים לא זמינים.</string>
+    <string name="info_news_weather" formatted="false">המסלול היומי נפתח כשהמיקום הנוכחי במרכז, כשאפשר. החזרה לעצם שומרת את מיקום הגלילה שנצפה במהלך ההפעלה.</string>
+    <string name="info_news_viewer_zoom" formatted="false">בתצוגה אופקית יחס השמיים למידע הוא 55/45. גובה GPS ברור יותר; 0°/90° ומזג האוויר מחליפים מקום ובקרי המצלמה נשארים במקומם.</string>
+    <string name="info_news_settings" formatted="false">תוויות מסלולים וקווי ייחוס שמימיים נשארות קרובות יותר לקו שלהן ויציבות יותר בהצטלבויות ובמעבר למצלמה.</string>
+    <string name="info_news_catalog" formatted="false">כפתור הצילום בגודל שאר הכפתורים, עם גבול פועם בעדינות וסמל דק יותר. מרווחים ומרכוז החצים עקביים יותר.</string>
 </resources>

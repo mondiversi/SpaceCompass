@@ -124,7 +124,8 @@ class SpaceCompassExpandedCatalogTest {
                 "<pre><code>$tle</code></pre>"
             }
             assertEquals(tle.trim(),result.trim())
-            assertEquals(2,urls.size)
+            assertEquals(3,urls.size)
+            assertTrue(urls.first().contains("db.satnogs.org"))
             assertTrue(urls.last().endsWith("/"+body.catalogSatellite!!.norad))
         }
     }

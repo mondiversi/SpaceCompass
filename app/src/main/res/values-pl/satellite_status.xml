@@ -7,4 +7,6 @@
   <string name="celestial_data_unavailable_compact">Dane niedostępne.</string>
   <string name="celestial_date_unavailable">Brak danych dla tej daty.</string>
   <string name="catalog_date_unavailable">Data poza zakresem</string>
+  <string name="catalog_data_stale">Dane nieaktualne</string>
+  <string name="catalog_value_unavailable">Niedostępne</string>
 </resources>

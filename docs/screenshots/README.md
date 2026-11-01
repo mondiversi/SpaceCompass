@@ -104,7 +104,7 @@ The presentation cards add an English heading and a decorative frame around genu
 - **Language:** English, with metric units.
 - **Location:** a public London, United Kingdom demonstration. No personal location, account information, notifications or private camera images were used.
 - **Environment:** an isolated Android 15 emulator, with portrait and landscape layouts, light and dark themes, and illustrative dates and times.
-- **Build:** the current development build based on version 1.7.5. Some presentation refinements shown here may appear in a subsequent release.
+- **Build:** Space Compass version 1.7.6. The interface was captured from the matching debug build; the published APK uses the distribution signature.
 - **Dimensions:** 1080 × 1920 for portrait cards; 1920 × 1080 for landscape cards. Full-size cards and unframed captures use lossless WebP; the README uses smaller WebP previews.
 - **Astronomy:** planetary appearances are reconstructed by the app from maps and calculated viewing geometry. Dates, paths, heights and events are examples for the selected Location and moment.
 

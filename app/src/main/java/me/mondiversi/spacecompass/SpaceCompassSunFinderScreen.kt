@@ -554,10 +554,8 @@ internal fun SpaceCompassSunFinderContent(
                         notifyControl(R.string.scene_mode_camera)
                     } else cameraPermission.launch(Manifest.permission.CAMERA)
                 }, primaryText, backgroundColor)
-                CompositionLocalProvider(LocalSpaceCompassFloatingControlMultiplier provides .85f) {
-                    SpaceCompassCaptureButton(panorama.capture, !panorama.busy && (!cameraEnabled || cameraCapture != null),
-                        cameraEnabled = cameraEnabled)
-                }
+                SpaceCompassCaptureButton(panorama.capture, !panorama.busy && (!cameraEnabled || cameraCapture != null),
+                    cameraEnabled = cameraEnabled, animateBorder = resumed && mainVisible)
             }
         }
     }
@@ -623,13 +621,6 @@ internal fun SpaceCompassSunFinderContent(
                                         controlResources.getString(if (enabled) R.string.camera_objects_translucent else R.string.camera_objects_opaque))
                                 }
                             }, primaryText, backgroundColor, enabled = !panorama.busy)
-                            else SpaceCompassWeatherToggleButton(showWeather, { enabled ->
-                                showWeather = enabled
-                                scenePreferences.edit().putBoolean(SPACE_COMPASS_WEATHER_VISIBLE_KEY, enabled).apply()
-                                notifyControl(if (enabled) R.string.scene_weather_on else R.string.scene_weather_off)
-                            }, primaryText, backgroundColor)
-                            if (cameraEnabled) SpaceCompassCameraZoomControls(cameraZoomRange, cameraZoomRequest, cameraZoomActual,
-                                !panorama.busy && cameraCapture != null, ::updateCameraZoom, primaryText, backgroundColor)
                             else SpaceCompassPointingAxisButton(pointingTopEdge, { topEdge ->
                                 pointingTopEdge = topEdge
                                 scenePreferences.edit().putBoolean(SPACE_COMPASS_POINTING_TOP_EDGE_KEY, topEdge).apply()
@@ -637,6 +628,13 @@ internal fun SpaceCompassSunFinderContent(
                                     if (topEdge) R.string.pointing_axis_top_edge else R.string.pointing_axis_camera),
                                     formatSpaceCompassNumber(if (topEdge) 0.0 else 90.0, 0, numeric,
                                         grouping = false, systemLocale = controlLocale) + "°")
+                            }, primaryText, backgroundColor)
+                            if (cameraEnabled) SpaceCompassCameraZoomControls(cameraZoomRange, cameraZoomRequest, cameraZoomActual,
+                                !panorama.busy && cameraCapture != null, ::updateCameraZoom, primaryText, backgroundColor)
+                            else SpaceCompassWeatherToggleButton(showWeather, { enabled ->
+                                showWeather = enabled
+                                scenePreferences.edit().putBoolean(SPACE_COMPASS_WEATHER_VISIBLE_KEY, enabled).apply()
+                                notifyControl(if (enabled) R.string.scene_weather_on else R.string.scene_weather_off)
                             }, primaryText, backgroundColor)
                         }
                     },
@@ -723,9 +721,9 @@ internal fun SpaceCompassSunFinderContent(
             fix?.latitude, fix?.takeIf { it.hasAltitude() }?.altitude ?: 0.0, showSkyReferences,
             0.0, Modifier.fillMaxSize(), longitude = fix?.longitude, objectOpacity = cameraObjectOpacity,
             showReticle = showReticle)
-        // A 40% data pane still fits compact phone islands; retain the large-text fallback.
+        // Retain the readability fallback when the 45% information pane is too narrow.
         val minimumPanelWidth = if (largeText) 280.dp else 210.dp
-        val detailsWidth = viewportWidth * 0.4f
+        val detailsWidth = viewportWidth * 0.45f
         // Keep the islands at their regular size when the available height changes.
         val compactPanel = false
         if (viewportWidth > viewportHeight && detailsWidth - 20.dp >= minimumPanelWidth) {

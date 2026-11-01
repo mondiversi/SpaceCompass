@@ -26,7 +26,7 @@ internal fun drawSpaceCompassSkyReferences(canvas: Canvas, latitude: Double, tim
     observerAltitude: Double = 0.0,
     placementState: SpaceCompassSkyReferencePlacementState? = null,
     beforeCaptionLayout: ((List<SpaceCompassSunScenePoint>) -> Unit)? = null): SpaceCompassSkyReferenceDrawing {
-    placementState?.viewport(width, height, scale)
+    placementState?.viewport(width, height, scale, perspective)
     val fixedReserved = occupied.map { SpaceCompassSunSceneFrame(it.left.toDouble(), it.top.toDouble(),
         it.width().toDouble(), it.height().toDouble()) }
     val liveMinimumY = maxOf(minimumLabelY.toDouble(), fixedReserved.filter {
@@ -72,7 +72,7 @@ internal fun drawSpaceCompassSkyReferences(canvas: Canvas, latitude: Double, tim
     val curveRuns = mutableListOf<Triple<SpaceCompassSkyReferenceCircle, List<SpaceCompassSunPathSegment>, List<SpaceCompassSunScenePoint>>>()
     fun curveLabel(key: String, value: String, candidates: List<SpaceCompassSunScenePoint>,
         segments: List<SpaceCompassSunPathSegment>, tint: Int, retainAnchor: Boolean = true): SpaceCompassSkyReferenceCurveLabel? {
-        if (!showLabels || candidates.isEmpty()) return null
+        if (!showLabels || candidates.isEmpty()) { placementState?.forgetCaption(key); return null }
         val reserved = occupied.map { SpaceCompassSunSceneFrame(it.left.toDouble(), it.top.toDouble(),
             it.width().toDouble(), it.height().toDouble()) }
         fun record(layout: SpaceCompassCurveTextLayout, textSize: Float): SpaceCompassSkyReferenceCurveLabel {

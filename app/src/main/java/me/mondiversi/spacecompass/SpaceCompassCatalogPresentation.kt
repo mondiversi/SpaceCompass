@@ -60,7 +60,7 @@ internal class SpaceCompassCatalogPresenter private constructor(
                 solar = spaceCompassCatalogDistancesWithReferences(query.distances.solar, bodies)
                 lastDistances = query.distances
             }
-            val sortDistances = when (preferences.sort.field) {
+            val sortDistances = when (preferences.sort.field ?: SpaceCompassCatalogSortField.DISTANCE) {
                 SpaceCompassCatalogSortField.DISTANCE -> solar
                 SpaceCompassCatalogSortField.EARTH_DISTANCE -> query.distances.earth
                 else -> null

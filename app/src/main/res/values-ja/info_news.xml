@@ -1,9 +1,9 @@
 <resources>
     <string name="info_news_title">最近の変更 · %1$s</string>
-    <string name="info_news_star_sky" formatted="false">観測所から、選択中の天体・地点・年の「主な天文現象」を開けます。日付をタップすると、時間を止めてその瞬間を観察できます。</string>
-    <string name="info_news_texture_downloads" formatted="false">信頼できるデータがある場合、極昼・極夜、昼の長さ、最早・最遅の日の出と日の入り、月相、近地点・遠地点、惑星の現象を確認できます。</string>
-    <string name="info_news_weather" formatted="false">共通の表示形式と位置情報の公開範囲で、年間現象をCSVまたは読みやすいTXTに出力できます。時刻更新や通常のGPS変動でも結果は安定します。</string>
-    <string name="info_news_viewer_zoom" formatted="false">ロゴは左、メニューは右、主な操作は中央に配置。カメラは撮影の隣、天気と0°/90°は下中央。横画面の空とカードの比率は60/40です。 横画面では高度の精度を2行目に表示します。</string>
-    <string name="info_news_settings" formatted="false">軌道と天球基準のラベルは、近接する線の上または下に配置でき、位置がより安定して読みやすくなります。</string>
-    <string name="info_news_catalog" formatted="false">未選択の天体を走査せず、カードの開閉がより滑らかな300msに。初期ズームは0.5×または対応する最広角で、撮影ボタンもコンパクトになりました。</string>
+    <string name="info_news_star_sky" formatted="false">標準の並び順が太陽からの距離の昇順になりました。値の列は選択した並べ替えに対応し、選択済みの天体は先頭に残ります。</string>
+    <string name="info_news_texture_downloads" formatted="false">検証済みの代替データ源で衛星データをより速く回復します。読み込み中、古いデータ、範囲外の日付、利用できない値を別々に表示します。</string>
+    <string name="info_news_weather" formatted="false">日周経路は可能な場合に現在位置を中央にして開きます。天体に戻ると、そのセッションで見ていたスクロール位置を維持します。</string>
+    <string name="info_news_viewer_zoom" formatted="false">横向きの空と情報の比率を55/45にしました。GPS高度を明確化し、0°/90°と天気を入れ替えました。カメラ操作の位置は維持します。</string>
+    <string name="info_news_settings" formatted="false">軌道や天球ガイドのラベルが自分の線の近くに留まり、交差部分やカメラ表示の切り替え時も安定します。</string>
+    <string name="info_news_catalog" formatted="false">撮影ボタンを他の操作と同じ大きさにし、縁を穏やかに明滅させ、記号を細くしました。間隔と矢印の見た目の中心を調整しました。</string>
 </resources>

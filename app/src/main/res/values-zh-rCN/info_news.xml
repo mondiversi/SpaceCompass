@@ -1,9 +1,9 @@
 <resources>
     <string name="info_news_title">最新变化 · %1$s</string>
-    <string name="info_news_star_sky" formatted="false">从观测台打开所选天体、地点和年份的“关键事件”。点按日期即可暂停时间并观察该时刻。</string>
-    <string name="info_news_texture_downloads" formatted="false">有可靠数据时，可查看极昼极夜、白昼时长、最早和最晚日出日落、月相、近地点和远地点以及行星事件。</string>
-    <string name="info_news_weather" formatted="false">使用统一的格式和位置隐私选项，将年度事件导出为CSV或易读TXT。时钟更新和普通GPS漂移不会导致结果反复加载。</string>
-    <string name="info_news_viewer_zoom" formatted="false">标志在左，菜单在右，主要控件居中。相机位于拍摄按钮旁，天气和0°/90°在下方中央。横屏时天空与信息卡的比例为60/40。 横屏时高度精度显示在第二行。</string>
-    <string name="info_news_settings" formatted="false">轨道和天球参考标签可放在相邻线条的上方或下方，位置更加稳定，也更易阅读。</string>
-    <string name="info_news_catalog" formatted="false">不再扫描未选天体，信息卡开合更流畅，时长仍为300毫秒。默认变焦为0.5×或支持的最广角；拍摄控件更加紧凑。</string>
+    <string name="info_news_star_sky" formatted="false">默认排序现在按距太阳的距离递增排列。数值列与所选排序一致，已选天体仍置于顶部。</string>
+    <string name="info_news_texture_downloads" formatted="false">通过经过验证的备用来源更快恢复卫星数据。分别显示加载中、数据未更新、日期超出范围和数值不可用。</string>
+    <string name="info_news_weather" formatted="false">打开每日路径时，在条件允许时将当前位置居中。返回某个天体时保留本次会话中查看的滚动位置。</string>
+    <string name="info_news_viewer_zoom" formatted="false">横屏的天空与信息比例为55/45。GPS高度更清晰；0°/90°与天气交换位置，摄像头控件位置保持不变。</string>
+    <string name="info_news_settings" formatted="false">轨道和天球参考线的标签更贴近各自的线，在交叉处和切换摄像头时也更稳定。</string>
+    <string name="info_news_catalog" formatted="false">拍摄按钮与其他控件大小一致，边框柔和闪动，内部图标更纤细。调整了控件间距及箭头的视觉居中。</string>
 </resources>

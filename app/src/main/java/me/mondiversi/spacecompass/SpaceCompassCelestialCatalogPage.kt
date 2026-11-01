@@ -158,16 +158,16 @@ internal fun SpaceCompassCelestialCatalogPage(timeMs: Long, remote: SpaceCompass
     val visibleBodies = presentation?.visible.orEmpty()
     val localizedNames = presentation?.names.orEmpty()
     val readySolarDistances = presentation?.solarDistances.orEmpty()
-    val readyDistances = presentation?.displayedDistances.orEmpty()
     val earthDistances = presentation?.query?.distances?.earth.orEmpty()
     val displayedSort = presentation?.query?.preferences?.sort ?: sort
     val valueField = displayedSort.valueField
     val resultsCurrent = presentation?.query?.hasSameControlsAs(request) == true
     val filterCounts = filterPresentation?.counts
     val dataNeeded by rememberUpdatedState(onDataNeeded)
+    val currentLoadsAllowed by rememberUpdatedState(loadsAllowed)
     LaunchedEffect(catalogScroll) {
         snapshotFlow {
-            if (!loadsAllowed || catalogScroll.isScrollInProgress) emptySet()
+            if (!currentLoadsAllowed || catalogScroll.isScrollInProgress) emptySet()
             else catalogScroll.layoutInfo.visibleItemsInfo.mapNotNull { item ->
                 (item.key as? String)?.let { runCatching { SpaceCompassCelestialBody.valueOf(it) }.getOrNull() }
             }.toSet()
@@ -263,17 +263,17 @@ internal fun SpaceCompassCelestialCatalogPage(timeMs: Long, remote: SpaceCompass
                     color = color.copy(alpha = .65f), fontSize = 14.sp)
             }
             items(visibleBodies, key = { it.name }) { candidate ->
-                val value = if (valueField == SpaceCompassCatalogSortField.EARTH_DISTANCE)
-                    formatSpaceCompassCelestialCatalogEarthDistance(candidate, earthDistances[candidate], numeric, distanceUnit, units.feet)
-                    else if (valueField != SpaceCompassCatalogSortField.DISTANCE)
-                    formatSpaceCompassCatalogPhysicalValue(candidate, valueField, numeric, units, referenceLabel)
-                    else if (displayedSort.field == SpaceCompassCatalogSortField.DISTANCE)
-                    formatSpaceCompassCatalogDisplayDistance(candidate, readySolarDistances[candidate], numeric, distanceUnit)
-                    else if (readyDistances[candidate] == null && spaceCompassCelestialDataOutsideDate(candidate, catalogTime, catalogRemote))
-                    stringResource(R.string.catalog_date_unavailable)
-                    else if (candidate.isEarthSatellite || candidate == SpaceCompassCelestialBody.MOON || candidate == SpaceCompassCelestialBody.EARTH_CENTER)
-                    (formatSpaceCompassSelectedDistance(candidate, readyDistances[candidate], numeric, distanceUnit, units.feet) ?: "—") + "\n" + (if (candidate == SpaceCompassCelestialBody.EARTH_CENTER) "GPS" else stringResource(R.string.celestial_view_earth))
-                    else formatSpaceCompassCatalogDisplayDistance(candidate, readyDistances[candidate], numeric, distanceUnit)
+                val formattedValue = when (valueField) {
+                    SpaceCompassCatalogSortField.EARTH_DISTANCE ->
+                        formatSpaceCompassCelestialCatalogEarthDistance(candidate, earthDistances[candidate], numeric, distanceUnit, units.feet)
+                    SpaceCompassCatalogSortField.DISTANCE ->
+                        formatSpaceCompassCatalogDisplayDistance(candidate, readySolarDistances[candidate], numeric, distanceUnit)
+                    else -> formatSpaceCompassCatalogPhysicalValue(candidate, valueField, numeric, units, referenceLabel)
+                }
+                val value = if (formattedValue != "—") formattedValue else stringResource(
+                    spaceCompassCatalogMissingValueState(candidate, valueField, catalogTime,
+                        System.currentTimeMillis(), remote,
+                        calculationPending = presentation?.query?.distances?.solar?.isEmpty() != false).label)
                 SpaceCompassCatalogObjectRow(candidate, localizedNames.getValue(candidate),
                     checked = candidate in selectedBodies, value = value, color = color,
                     rowBackground = listBackground,

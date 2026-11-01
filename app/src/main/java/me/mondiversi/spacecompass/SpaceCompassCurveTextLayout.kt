@@ -13,8 +13,8 @@ internal fun spaceCompassCurveTextLayout(segments: List<SpaceCompassSunPathSegme
     center: SpaceCompassSunScenePoint, textWidth: Double, textSize: Double, offset: Double,
     below: Boolean = false, additionalOffset: Double = 0.0): SpaceCompassCurveTextLayout? {
     if (!offset.isFinite() || offset < 0 || !additionalOffset.isFinite() || additionalOffset < 0) return null
-    // Below-curve text includes ascenders and a gap beyond the trajectory's point markers.
-    val baselineOffset = (if (below) offset + textSize * 2.5 else offset) + additionalOffset
+    // Match the clearance ribbon's ascenders: the nearest ink stays one offset from its own curve.
+    val baselineOffset = (if (below) offset + textSize * 1.35 else offset) + additionalOffset
     val baseline = spaceCompassOrbitTextBaseline(segments, center, textWidth, textSize, baselineOffset, below) ?: return null
     val left = baseline.minOf { it.x } - textSize
     val top = baseline.minOf { it.y } - textSize * 1.6
