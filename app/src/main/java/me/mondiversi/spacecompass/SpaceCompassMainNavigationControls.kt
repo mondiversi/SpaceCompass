@@ -1,23 +1,28 @@
 package me.mondiversi.spacecompass
 
-import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
-import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.wrapContentWidth
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.platform.testTag
-import androidx.compose.ui.unit.dp
 
-/** Equal-size information and menu controls share one main-navigation group. */
+/** Independent corner hosts retain the same information/menu controls and exact hit regions. */
 @Composable
-internal fun SpaceCompassMainNavigationControls(color: Color, background: Color, modifier: Modifier = Modifier) {
-    Box(modifier.testTag("celestial-main-navigation").spaceCompassSceneInputShield()
-        .wrapContentWidth(unbounded = true)) {
-        Row(horizontalArrangement = Arrangement.spacedBy(8.dp)) {
-            SpaceCompassMainInfoButton(color, background)
-            SpaceCompassSettingsButton(color, background)
-        }
+internal fun SpaceCompassMainInfoControl(color: Color, background: Color, modifier: Modifier = Modifier) {
+    SpaceCompassMainNavigationControl(modifier.testTag("celestial-main-info-navigation")) {
+        SpaceCompassMainInfoButton(color, background)
     }
+}
+
+@Composable
+internal fun SpaceCompassMainMenuControl(color: Color, background: Color, modifier: Modifier = Modifier) {
+    SpaceCompassMainNavigationControl(modifier.testTag("celestial-main-menu-navigation")) {
+        SpaceCompassSettingsButton(color, background)
+    }
+}
+
+@Composable
+private fun SpaceCompassMainNavigationControl(modifier: Modifier, content: @Composable () -> Unit) {
+    Box(modifier.spaceCompassSceneInputShield().wrapContentWidth(unbounded = true)) { content() }
 }

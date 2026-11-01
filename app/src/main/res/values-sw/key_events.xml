@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="key_events_title">Matukio muhimu</string>
+    <string name="key_events_description">Matukio ya kitu, mwaka na eneo lililochaguliwa. Gusa tarehe kuona wakati huo huku muda umesimamishwa.</string>
+    <string name="key_events_empty">Hakuna matukio ya aina hii kwa kitu hiki katika mwaka uliochaguliwa.</string>
+    <string name="key_events_horizon_note">Upeo bora usio na vizuizi, kama katika njia ya kila siku. Vipindi vya ncha ni kati ya kuchomoza na kutua kunakofuatana; saa za mwisho hutumia saa za eneo.</string>
+    <string name="key_events_global_note">Matukio ya obiti hutokea wakati mmoja duniani. Mwinuko hukokotolewa kutoka eneo; umbali hupimwa kati ya vituo vya miili.</string>
+    <string name="key_events_value">Thamani</string>
+    <string name="key_event_polar_day_start">Mwanzo wa mchana wa ncha</string>
+    <string name="key_event_polar_day_end">Mwisho wa mchana wa ncha</string>
+    <string name="key_event_polar_night_start">Mwanzo wa usiku wa ncha</string>
+    <string name="key_event_polar_night_end">Mwisho wa usiku wa ncha</string>
+    <string name="key_event_longest_day">Mchana mrefu zaidi</string>
+    <string name="key_event_shortest_day">Mchana mfupi zaidi</string>
+    <string name="key_event_earliest_sunrise">Macheo ya mapema zaidi</string>
+    <string name="key_event_latest_sunrise">Macheo ya kuchelewa zaidi</string>
+    <string name="key_event_earliest_sunset">Machweo ya mapema zaidi</string>
+    <string name="key_event_latest_sunset">Machweo ya kuchelewa zaidi</string>
+    <string name="key_event_new_moon">Mwezi mpya</string>
+    <string name="key_event_first_quarter">Robo ya kwanza</string>
+    <string name="key_event_full_moon">Mwezi mpevu</string>
+    <string name="key_event_last_quarter">Robo ya mwisho</string>
+    <string name="key_event_perigee">Perigee</string>
+    <string name="key_event_apogee">Apogee</string>
+    <string name="key_event_opposition">Upinzani</string>
+    <string name="key_event_morning_elongation">Urefu wa pembe wa asubuhi mkubwa zaidi</string>
+    <string name="key_event_evening_elongation">Urefu wa pembe wa jioni mkubwa zaidi</string>
+    <string name="key_event_perihelion">Perihelioni</string>
+    <string name="key_event_aphelion">Aphelioni</string>
+    <string name="key_event_nearest_earth">Umbali mdogo zaidi kutoka Dunia</string>
+    <string name="key_event_farthest_earth">Umbali mkubwa zaidi kutoka Dunia</string>
+</resources>

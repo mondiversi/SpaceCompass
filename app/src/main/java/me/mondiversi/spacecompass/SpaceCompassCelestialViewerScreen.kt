@@ -47,6 +47,7 @@ internal fun SpaceCompassCelestialObservatoryPage(body: SpaceCompassCelestialBod
     val context = LocalContext.current
     var rotating by rememberSaveable(body) { mutableStateOf(false) }
     var heightsVisible by rememberSaveable(body) { mutableStateOf(false) }
+    var eventsVisible by rememberSaveable(body) { mutableStateOf(false) }
     val rotationState = rememberSaveable(body, stateSaver = rotationSaver) {
         mutableStateOf(SpaceCompassCelestialRotation(pitch = if (body.isSpacecraft) 50.0 else 15.0))
     }
@@ -102,9 +103,9 @@ internal fun SpaceCompassCelestialObservatoryPage(body: SpaceCompassCelestialBod
         }
         lifecycle.addObserver(observer); onDispose { lifecycle.removeObserver(observer) }
     }
-    LaunchedEffect(rotating, automatic, resumed, export.visible, heightsVisible) {
+    LaunchedEffect(rotating, automatic, resumed, export.visible, heightsVisible, eventsVisible) {
         // Cap to 30 updates/s and stop entirely off-screen or in a manually held orientation.
-        if (rotating && automatic && resumed && !export.visible && !heightsVisible) {
+        if (rotating && automatic && resumed && !export.visible && !heightsVisible && !eventsVisible) {
             var previous = 0L
             while (true) withFrameNanos { frame ->
                 if (previous == 0L) previous = frame
@@ -115,8 +116,8 @@ internal fun SpaceCompassCelestialObservatoryPage(body: SpaceCompassCelestialBod
             }
         }
     }
-    LaunchedEffect(body, rotating, returning, resumed, export.visible, heightsVisible) {
-        if (rotating && returning && resumed && !export.visible && !heightsVisible) {
+    LaunchedEffect(body, rotating, returning, resumed, export.visible, heightsVisible, eventsVisible) {
+        if (rotating && returning && resumed && !export.visible && !heightsVisible && !eventsVisible) {
             if (!android.animation.ValueAnimator.areAnimatorsEnabled()) {
                 rotationState.value = rotationState.value.resume()
             } else {
@@ -139,7 +140,8 @@ internal fun SpaceCompassCelestialObservatoryPage(body: SpaceCompassCelestialBod
             }
         }
     }
-    BackHandler { if (heightsVisible) heightsVisible = false
+    BackHandler { if (eventsVisible) eventsVisible = false
+        else if (heightsVisible) heightsVisible = false
         else if (export.visible) export.close() else if (!export.saving) onBack() }
     val referencePressure = formatSpaceCompassPressure(SpaceCompassPressureUnit.BAR.pascals, numeric, units.pressure)!!
     val actual = stringResource(R.string.celestial_view_current)
@@ -204,9 +206,15 @@ internal fun SpaceCompassCelestialObservatoryPage(body: SpaceCompassCelestialBod
             SpaceCompassCelestialDetailSections(body, facts, timeMs, remote, distance, phase,
                 geometry?.illuminatedFraction, coordinates, primaryText, secondaryText,
                 orbitContent = {
-                    SpaceCompassSettingsActionButton(stringResource(R.string.observation_heights_title),
-                        { heightsVisible = true }, Modifier.testTag("open-sky-heights")) {
-                        SpaceCompassSettingsGroupIcon("sky_heights", LocalContentColor.current)
+                    Column(verticalArrangement = Arrangement.spacedBy(8.dp)) {
+                        SpaceCompassSettingsActionButton(stringResource(R.string.observation_heights_title),
+                            { heightsVisible = true }, Modifier.testTag("open-sky-heights")) {
+                            SpaceCompassSettingsGroupIcon("sky_heights", LocalContentColor.current)
+                        }
+                        SpaceCompassSettingsActionButton(stringResource(R.string.key_events_title),
+                            { eventsVisible = true }, Modifier.testTag("open-key-events")) {
+                            SpaceCompassSettingsGroupIcon("events", LocalContentColor.current)
+                        }
                     }
                 })
             SpaceCompassTravelTimeIsland(body, distance, primaryText, secondaryText)
@@ -289,7 +297,7 @@ internal fun SpaceCompassCelestialObservatoryPage(body: SpaceCompassCelestialBod
     Box(Modifier.fillMaxSize()) {
     Column(Modifier.fillMaxSize().layout { measurable,constraints ->
         val placeable=measurable.measure(constraints)
-        layout(placeable.width,placeable.height) { if (!export.visible && !heightsVisible) placeable.placeRelative(0,0) }
+        layout(placeable.width,placeable.height) { if (!export.visible && !heightsVisible && !eventsVisible) placeable.placeRelative(0,0) }
     }.background(backgroundColor).testTag("celestial-viewer")) {
         SpaceCompassPageToolbar(stringResource(R.string.celestial_details_title), { if (!export.saving) onBack() },
             modifier = Modifier.testTag("celestial-view-toolbar"),
@@ -310,5 +318,7 @@ internal fun SpaceCompassCelestialObservatoryPage(body: SpaceCompassCelestialBod
     if (export.visible) SpaceCompassPanoramaExportPage(export)
     if (heightsVisible) SpaceCompassSkyHeightsPage(body, timeMs, latitude, longitude, altitude, remote,
         onBack = { heightsVisible = false })
+    if (eventsVisible) SpaceCompassKeyEventsPage(body, timeMs, latitude, longitude, altitude, remote,
+        onBack = { eventsVisible = false })
     }
 }

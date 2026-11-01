@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="key_events_title">Önemli olaylar</string>
+    <string name="key_events_description">Seçili cisim, yıl ve konum için olaylar. Zamanı durdurarak o anı görmek için bir tarihe dokunun.</string>
+    <string name="key_events_empty">Seçilen yılda bu cisim için bu tür bir olay yok.</string>
+    <string name="key_events_horizon_note">Günlük yoldaki gibi ideal, engelsiz ufuk. Kutup süreleri ardışık doğuş ve batışlar arasındadır; uç saatler konumun yerel saatini kullanır.</string>
+    <string name="key_events_global_note">Yörünge olaylarının anları evrenseldir. Yükseklik konumdan hesaplanır; uzaklıklar cisimlerin merkezleri arasında ölçülür.</string>
+    <string name="key_events_value">Değer</string>
+    <string name="key_event_polar_day_start">Kutup gündüzü başlangıcı</string>
+    <string name="key_event_polar_day_end">Kutup gündüzü sonu</string>
+    <string name="key_event_polar_night_start">Kutup gecesi başlangıcı</string>
+    <string name="key_event_polar_night_end">Kutup gecesi sonu</string>
+    <string name="key_event_longest_day">En uzun gün</string>
+    <string name="key_event_shortest_day">En kısa gün</string>
+    <string name="key_event_earliest_sunrise">En erken gün doğumu</string>
+    <string name="key_event_latest_sunrise">En geç gün doğumu</string>
+    <string name="key_event_earliest_sunset">En erken gün batımı</string>
+    <string name="key_event_latest_sunset">En geç gün batımı</string>
+    <string name="key_event_new_moon">Yeni ay</string>
+    <string name="key_event_first_quarter">İlk dördün</string>
+    <string name="key_event_full_moon">Dolunay</string>
+    <string name="key_event_last_quarter">Son dördün</string>
+    <string name="key_event_perigee">Yerberi</string>
+    <string name="key_event_apogee">Yeröte</string>
+    <string name="key_event_opposition">Karşı konum</string>
+    <string name="key_event_morning_elongation">En büyük sabah uzanımı</string>
+    <string name="key_event_evening_elongation">En büyük akşam uzanımı</string>
+    <string name="key_event_perihelion">Günberi</string>
+    <string name="key_event_aphelion">Günöte</string>
+    <string name="key_event_nearest_earth">Dünya’ya en küçük uzaklık</string>
+    <string name="key_event_farthest_earth">Dünya’ya en büyük uzaklık</string>
+</resources>

@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="key_events_title">Wichtige Ereignisse</string>
+    <string name="key_events_description">Ereignisse für das gewählte Objekt, Jahr und den Standort. Tippe auf ein Datum, um den Zeitpunkt bei angehaltener Zeit zu betrachten.</string>
+    <string name="key_events_empty">Keine Ereignisse dieser Art für dieses Objekt im gewählten Jahr.</string>
+    <string name="key_events_horizon_note">Idealer freier Horizont wie beim Tagesverlauf. Polare Zeiträume liegen zwischen aufeinanderfolgenden Auf- und Untergängen; Zeitextreme verwenden die Ortszeit.</string>
+    <string name="key_events_global_note">Bahnereignisse haben universelle Zeitpunkte. Die Höhe wird vom Standort berechnet; Entfernungen gelten zwischen den Körperzentren.</string>
+    <string name="key_events_value">Wert</string>
+    <string name="key_event_polar_day_start">Beginn des Polartags</string>
+    <string name="key_event_polar_day_end">Ende des Polartags</string>
+    <string name="key_event_polar_night_start">Beginn der Polarnacht</string>
+    <string name="key_event_polar_night_end">Ende der Polarnacht</string>
+    <string name="key_event_longest_day">Längster Tag</string>
+    <string name="key_event_shortest_day">Kürzester Tag</string>
+    <string name="key_event_earliest_sunrise">Frühester Sonnenaufgang</string>
+    <string name="key_event_latest_sunrise">Spätester Sonnenaufgang</string>
+    <string name="key_event_earliest_sunset">Frühester Sonnenuntergang</string>
+    <string name="key_event_latest_sunset">Spätester Sonnenuntergang</string>
+    <string name="key_event_new_moon">Neumond</string>
+    <string name="key_event_first_quarter">Erstes Viertel</string>
+    <string name="key_event_full_moon">Vollmond</string>
+    <string name="key_event_last_quarter">Letztes Viertel</string>
+    <string name="key_event_perigee">Perigäum</string>
+    <string name="key_event_apogee">Apogäum</string>
+    <string name="key_event_opposition">Opposition</string>
+    <string name="key_event_morning_elongation">Größte Morgenelongation</string>
+    <string name="key_event_evening_elongation">Größte Abendelongation</string>
+    <string name="key_event_perihelion">Perihel</string>
+    <string name="key_event_aphelion">Aphel</string>
+    <string name="key_event_nearest_earth">Kleinste Erdentfernung</string>
+    <string name="key_event_farthest_earth">Größte Erdentfernung</string>
+</resources>

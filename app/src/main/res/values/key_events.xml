@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="key_events_title">Key events</string>
+    <string name="key_events_description">Events for the selected object, year and Location. Tap a date to observe that instant with time paused.</string>
+    <string name="key_events_empty">No events of this kind for this object in the selected year.</string>
+    <string name="key_events_horizon_note">Ideal unobstructed horizon, as in Daily path. Polar durations span consecutive rise/set events; clock extremes use the Location’s local time.</string>
+    <string name="key_events_global_note">Orbital events have universal instants. Elevation is calculated from the Location; distances are measured between body centres.</string>
+    <string name="key_events_value">Value</string>
+    <string name="key_event_polar_day_start">Start of polar day</string>
+    <string name="key_event_polar_day_end">End of polar day</string>
+    <string name="key_event_polar_night_start">Start of polar night</string>
+    <string name="key_event_polar_night_end">End of polar night</string>
+    <string name="key_event_longest_day">Longest day</string>
+    <string name="key_event_shortest_day">Shortest day</string>
+    <string name="key_event_earliest_sunrise">Earliest sunrise</string>
+    <string name="key_event_latest_sunrise">Latest sunrise</string>
+    <string name="key_event_earliest_sunset">Earliest sunset</string>
+    <string name="key_event_latest_sunset">Latest sunset</string>
+    <string name="key_event_new_moon">New moon</string>
+    <string name="key_event_first_quarter">First quarter</string>
+    <string name="key_event_full_moon">Full moon</string>
+    <string name="key_event_last_quarter">Last quarter</string>
+    <string name="key_event_perigee">Perigee</string>
+    <string name="key_event_apogee">Apogee</string>
+    <string name="key_event_opposition">Opposition</string>
+    <string name="key_event_morning_elongation">Greatest morning elongation</string>
+    <string name="key_event_evening_elongation">Greatest evening elongation</string>
+    <string name="key_event_perihelion">Perihelion</string>
+    <string name="key_event_aphelion">Aphelion</string>
+    <string name="key_event_nearest_earth">Minimum Earth distance</string>
+    <string name="key_event_farthest_earth">Maximum Earth distance</string>
+</resources>

@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="key_events_title">الأحداث الرئيسية</string>
+    <string name="key_events_description">أحداث الجرم والسنة والموقع المحددة. المس تاريخًا لمشاهدة تلك اللحظة مع إيقاف الزمن.</string>
+    <string name="key_events_empty">لا توجد أحداث من هذا النوع لهذا الجرم في السنة المحددة.</string>
+    <string name="key_events_horizon_note">أفق مثالي مكشوف كما في المسار اليومي. تمتد الفترات القطبية بين الشروق والغروب المتتاليين؛ وتستخدم الأوقات القصوى التوقيت المحلي للموقع.</string>
+    <string name="key_events_global_note">للأحداث المدارية لحظات عالمية موحدة. يُحسب الارتفاع من الموقع، وتُقاس المسافات بين مراكز الأجرام.</string>
+    <string name="key_events_value">القيمة</string>
+    <string name="key_event_polar_day_start">بداية النهار القطبي</string>
+    <string name="key_event_polar_day_end">نهاية النهار القطبي</string>
+    <string name="key_event_polar_night_start">بداية الليل القطبي</string>
+    <string name="key_event_polar_night_end">نهاية الليل القطبي</string>
+    <string name="key_event_longest_day">أطول نهار</string>
+    <string name="key_event_shortest_day">أقصر نهار</string>
+    <string name="key_event_earliest_sunrise">أبكر شروق</string>
+    <string name="key_event_latest_sunrise">أكثر شروق تأخرًا</string>
+    <string name="key_event_earliest_sunset">أبكر غروب</string>
+    <string name="key_event_latest_sunset">أكثر غروب تأخرًا</string>
+    <string name="key_event_new_moon">المحاق</string>
+    <string name="key_event_first_quarter">التربيع الأول</string>
+    <string name="key_event_full_moon">البدر</string>
+    <string name="key_event_last_quarter">التربيع الأخير</string>
+    <string name="key_event_perigee">الحضيض الأرضي</string>
+    <string name="key_event_apogee">الأوج الأرضي</string>
+    <string name="key_event_opposition">المقابلة</string>
+    <string name="key_event_morning_elongation">الاستطالة الصباحية العظمى</string>
+    <string name="key_event_evening_elongation">الاستطالة المسائية العظمى</string>
+    <string name="key_event_perihelion">الحضيض الشمسي</string>
+    <string name="key_event_aphelion">الأوج الشمسي</string>
+    <string name="key_event_nearest_earth">أقل مسافة من الأرض</string>
+    <string name="key_event_farthest_earth">أكبر مسافة من الأرض</string>
+</resources>

@@ -46,26 +46,33 @@ class SpaceCompassCelestialLandscapeLayoutTest {
 
     private fun floatingGroupsFitCurrentLayout() {
         compose.onNodeWithTag("celestial-toolbar").assertDoesNotExist()
-        val navigation = compose.onNodeWithTag("celestial-main-navigation").fetchSemanticsNode().boundsInRoot
+        val infoNavigation = compose.onNodeWithTag("celestial-main-info-navigation").fetchSemanticsNode().boundsInRoot
+        val menuNavigation = compose.onNodeWithTag("celestial-main-menu-navigation").fetchSemanticsNode().boundsInRoot
         val start = compose.onNodeWithTag("celestial-top-start-controls").fetchSemanticsNode().boundsInRoot
         val end = compose.onNodeWithTag("celestial-top-end-controls").fetchSemanticsNode().boundsInRoot
-        assertTrue(navigation.left >= start.left)
-        assertTrue(navigation.right <= start.right)
+        assertTrue(infoNavigation.left >= start.left && infoNavigation.right <= start.right)
+        assertTrue(menuNavigation.left >= end.left && menuNavigation.right <= end.right)
         val logo = compose.onNodeWithTag("main-info").fetchSemanticsNode().boundsInRoot
         val menu = compose.onNodeWithTag("app-settings").fetchSemanticsNode().boundsInRoot
         val objects = compose.onNodeWithTag("celestial-select").fetchSemanticsNode().boundsInRoot
         val references = compose.onNodeWithTag("toggle-sky-references").fetchSemanticsNode().boundsInRoot
         val reticle = compose.onNodeWithTag("toggle-reticle").fetchSemanticsNode().boundsInRoot
+        val topCentre = compose.onNodeWithTag("celestial-top-center-controls").fetchSemanticsNode().boundsInRoot
+        val sky = compose.onNodeWithTag("sun-finder-sky").fetchSemanticsNode().boundsInRoot
+        assertEquals(sky.center.x, topCentre.center.x, 1f)
         assertEquals(logo.center.y, menu.center.y, 1f)
+        assertEquals(logo.center.y, reticle.center.y, 1f)
         assertEquals(objects.center.y, references.center.y, 1f)
         assertEquals(objects.center.y, reticle.center.y, 1f)
         if (direction.value == LayoutDirection.Rtl) {
-            assertTrue(menu.right < logo.left)
+            assertTrue(menu.right < topCentre.left)
+            assertTrue(topCentre.right < logo.left)
             assertTrue(end.right < start.left)
             assertTrue(objects.right < references.left)
             assertTrue(references.right < reticle.left)
         } else {
-            assertTrue(logo.right < menu.left)
+            assertTrue(logo.right < topCentre.left)
+            assertTrue(topCentre.right < menu.left)
             assertTrue(start.right < end.left)
             assertTrue(reticle.right < references.left)
             assertTrue(references.right < objects.left)
@@ -76,29 +83,29 @@ class SpaceCompassCelestialLandscapeLayoutTest {
         val camera = compose.onNodeWithTag("toggle-camera").fetchSemanticsNode().boundsInRoot
         compose.onNodeWithTag("celestial-center-start-controls").assertDoesNotExist()
         compose.onNodeWithTag("celestial-center-end-controls").assertDoesNotExist()
-        val primary = compose.onNodeWithTag("celestial-top-end-primary-controls").fetchSemanticsNode().boundsInRoot
-        val secondary = compose.onNodeWithTag("celestial-top-end-secondary-controls").fetchSemanticsNode().boundsInRoot
-        assertEquals(camera.center.y, weather.center.y, 1f)
-        assertEquals(camera.center.y, axis.center.y, 1f)
-        assertTrue(primary.bottom < secondary.top)
-        assertTrue(secondary.bottom < chevron.top)
+        compose.onNodeWithTag("celestial-top-end-primary-controls").assertDoesNotExist()
+        compose.onNodeWithTag("celestial-top-end-secondary-controls").assertDoesNotExist()
+        val centre = compose.onNodeWithTag("celestial-bottom-center-controls").fetchSemanticsNode().boundsInRoot
+        val capture = compose.onNodeWithTag("capture-panorama").fetchSemanticsNode().boundsInRoot
+        val captureGroup = compose.onNodeWithTag("celestial-capture-controls").fetchSemanticsNode().boundsInRoot
+        assertEquals(weather.center.y, axis.center.y, 1f)
+        assertEquals(capture.bottom, camera.bottom, 1f)
+        assertTrue(camera.left >= captureGroup.left && camera.right <= captureGroup.right)
+        assertTrue(capture.left >= captureGroup.left && capture.right <= captureGroup.right)
+        assertEquals(sky.center.x, centre.center.x, 1f)
+        assertEquals(chevron.bottom, axis.bottom, 1f)
+        assertTrue(topCentre.bottom < centre.top)
         listOf(camera, weather, axis, chevron).forEach { bounds ->
             assertEquals(logo.width, bounds.width, 1f)
         }
         if (direction.value == LayoutDirection.Rtl) {
-            assertEquals(objects.left, axis.left, 1f)
-            assertEquals(primary.left, secondary.left, 1f)
             assertEquals(logo.right, chevron.right, 1f)
             assertTrue(axis.right < weather.left)
-            assertTrue(weather.right < camera.left)
-            assertEquals(weather.left - axis.right, camera.left - weather.right, 1f)
+            assertTrue(capture.right < camera.left)
         } else {
-            assertEquals(objects.right, axis.right, 1f)
-            assertEquals(primary.right, secondary.right, 1f)
             assertEquals(logo.left, chevron.left, 1f)
-            assertTrue(camera.right < weather.left)
             assertTrue(weather.right < axis.left)
-            assertEquals(weather.left - camera.right, axis.left - weather.right, 1f)
+            assertTrue(camera.right < capture.left)
         }
     }
 
@@ -116,7 +123,7 @@ class SpaceCompassCelestialLandscapeLayoutTest {
                 val island = compose.onNodeWithTag("sun-finder-body-data").fetchSemanticsNode().boundsInRoot
                 val sky = compose.onNodeWithTag("celestial-pointing-area").fetchSemanticsNode().boundsInRoot
                 val capture = compose.onNodeWithTag("celestial-capture-controls").fetchSemanticsNode().boundsInRoot
-                assertEquals(root.width * .5f - 10f, sky.width, 1f)
+                assertEquals(root.width * .6f - 10f, sky.width, 1f)
                 assertEquals(root.top, sky.top, 1f)
                 assertEquals(root.top + 5f, details.top, 1f)
                 assertTrue(capture.top >= details.bottom)

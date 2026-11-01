@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="key_events_title">मुख्य घटनाएँ</string>
+    <string name="key_events_description">चुनी गई वस्तु, वर्ष और स्थान की घटनाएँ। समय रोककर उस क्षण को देखने के लिए तारीख पर टैप करें।</string>
+    <string name="key_events_empty">चुने गए वर्ष में इस वस्तु के लिए इस प्रकार की कोई घटना नहीं है।</string>
+    <string name="key_events_horizon_note">दैनिक पथ की तरह आदर्श खुला क्षितिज। ध्रुवीय अवधियाँ क्रमिक उदय और अस्त के बीच हैं; चरम समय स्थान के स्थानीय समय में हैं।</string>
+    <string name="key_events_global_note">कक्षीय घटनाओं के क्षण सार्वभौमिक होते हैं। उन्नयन स्थान से गणना किया जाता है; दूरियाँ पिंडों के केंद्रों के बीच मापी जाती हैं।</string>
+    <string name="key_events_value">मान</string>
+    <string name="key_event_polar_day_start">ध्रुवीय दिन का आरंभ</string>
+    <string name="key_event_polar_day_end">ध्रुवीय दिन का अंत</string>
+    <string name="key_event_polar_night_start">ध्रुवीय रात का आरंभ</string>
+    <string name="key_event_polar_night_end">ध्रुवीय रात का अंत</string>
+    <string name="key_event_longest_day">सबसे लंबा दिन</string>
+    <string name="key_event_shortest_day">सबसे छोटा दिन</string>
+    <string name="key_event_earliest_sunrise">सबसे जल्दी सूर्योदय</string>
+    <string name="key_event_latest_sunrise">सबसे देर से सूर्योदय</string>
+    <string name="key_event_earliest_sunset">सबसे जल्दी सूर्यास्त</string>
+    <string name="key_event_latest_sunset">सबसे देर से सूर्यास्त</string>
+    <string name="key_event_new_moon">अमावस्या</string>
+    <string name="key_event_first_quarter">प्रथम चतुर्थांश</string>
+    <string name="key_event_full_moon">पूर्णिमा</string>
+    <string name="key_event_last_quarter">अंतिम चतुर्थांश</string>
+    <string name="key_event_perigee">उपभू</string>
+    <string name="key_event_apogee">अपभू</string>
+    <string name="key_event_opposition">प्रतियुति</string>
+    <string name="key_event_morning_elongation">अधिकतम प्रातः कालीन दीर्घांतरण</string>
+    <string name="key_event_evening_elongation">अधिकतम सायंकालीन दीर्घांतरण</string>
+    <string name="key_event_perihelion">उपसौर</string>
+    <string name="key_event_aphelion">अपसौर</string>
+    <string name="key_event_nearest_earth">पृथ्वी से न्यूनतम दूरी</string>
+    <string name="key_event_farthest_earth">पृथ्वी से अधिकतम दूरी</string>
+</resources>

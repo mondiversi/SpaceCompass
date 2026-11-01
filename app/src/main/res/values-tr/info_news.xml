@@ -1,9 +1,9 @@
 <resources>
     <string name="info_news_title">Son yenilikler · %1$s</string>
-    <string name="info_news_star_sky" formatted="false">Önemli yükseklikler, Gözlemevinden açılan ayrı bir sayfada olay, yükseklik ve tarih/saat sütunları sunar.</string>
-    <string name="info_news_texture_downloads" formatted="false">1900 ile 2100 arasında bir yıl seçin. Kararlı yıllık hesaplamalar anlamlı uç değerleri ve yarı yükseklik geçişlerini korur; tek olaylar artık numaralandırılmaz.</string>
-    <string name="info_news_weather" formatted="false">Önemli yükseklikleri seçilen biçimler ve konum gizliliğiyle CSV hesap tablosu veya okunabilir TXT tablosu olarak dışa aktarın.</string>
-    <string name="info_news_viewer_zoom" formatted="false">Ana görünümün sağ üstünde iki düğme sırası bulunur. Kamera, Hava ve 0°/90° ikinci sıradadır; kamera modunda Saydamlık ve Yakınlaştırma görünür.</string>
-    <string name="info_news_settings" formatted="false">Ayarlar, Location formları ve dışa aktarma adları; etiketleri, yerel düzenlemeyi ve tema renklerini koruyan daha kompakt giriş ve seçim alanları kullanır.</string>
-    <string name="info_news_catalog" formatted="false">Hazırlanmış özel değerleri birlikte açıp kapatmak için Location yönetimi başlığına dokunun. Her nesne Gözlemevi, Günlük yol ve Önemli yükseklikler için ayrı kaydırma konumlarını korur.</string>
+    <string name="info_news_star_sky" formatted="false">Gözlemevinden seçili cisim, konum ve yıl için Önemli olaylar sayfasını açın. Zamanı durdurarak o anı görmek için tarihe dokunun.</string>
+    <string name="info_news_texture_downloads" formatted="false">Güvenilir veriler varsa kutup dönemlerini, gün uzunluğunu, en erken/geç doğuş ve batışları, Ay evrelerini, yerberi/yeröteyi ve gezegen olaylarını inceleyin.</string>
+    <string name="info_news_weather" formatted="false">Yıllık olayları ortak biçim ve konum gizliliği seçenekleriyle CSV veya okunabilir TXT olarak dışa aktarın. Sonuçlar saat güncellemelerinde ve küçük GPS sapmalarında kararlı kalır.</string>
+    <string name="info_news_viewer_zoom" formatted="false">Logo solda, menü sağda, ana denetimler ortada. Kamera çekimin yanında; hava ve 0°/90° alt ortada. Yatayda gökyüzü/kart oranı 60/40 olur. Yatayda yükseklik doğruluğu ikinci satıra geçer.</string>
+    <string name="info_news_settings" formatted="false">Yörünge ve göksel referans etiketleri yakın çizgilerin üstüne veya altına yerleşerek daha kararlı ve okunaklı kalabilir.</string>
+    <string name="info_news_catalog" formatted="false">Daha akıcı kart geçişleri seçilmeyen cisimleri taramadan yine 300 ms sürer. Başlangıç yakınlaştırması 0,5× veya desteklenen en geniş görünüm; daha kompakt çekim denetimleri.</string>
 </resources>

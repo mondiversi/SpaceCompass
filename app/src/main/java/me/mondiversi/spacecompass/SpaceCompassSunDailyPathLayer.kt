@@ -60,7 +60,7 @@ internal fun SpaceCompassSunDailyPathLayer(
     val arrows = remember(directions, orientation, viewport, density, perspective) {
         if (orientation == null) emptyList() else directions.mapNotNull {
             projectSpaceCompassSunPathArrow(it, orientation, viewport.width.toDouble(), viewport.height.toDouble(),
-                with(density) { 5.dp.toPx().toDouble() }, perspective)
+                with(density) { 5.dp.toPx().toDouble() }, perspective)?.let { arrow -> it.timeMs to arrow }
         }
     }
     val projectedCurrent = if (orientation == null || currentPoint == null || viewport.width <= 0 || viewport.height <= 0) null else
@@ -79,6 +79,8 @@ internal fun SpaceCompassSunDailyPathLayer(
     val below = spaceCompassCelestialPathVisibilityTint(above, true)
     val objectName = stringResource(path.body.nameResource)
     val orbitText = remember(density) { spaceCompassOrbitTextPaint(with(density) { 13.sp.toPx() }) }
+    val sharedOrbitLabels = LocalSpaceCompassOrbitLabelReservations.current
+    val namePlacement = remember(path.body, path.date, path.zone, density, objectName) { SpaceCompassCurveCaptionPlacementState() }
     Box(Modifier.fillMaxSize().onSizeChanged { viewport = it }) {
         if (orientation != null) Canvas(Modifier.fillMaxSize().testTag("sun-daily-path")
             // Orientation updates must not cancel a finger already touching the trajectory.
@@ -105,9 +107,9 @@ internal fun SpaceCompassSunDailyPathLayer(
                 drawPath(curve, spaceCompassCelestialPathLineTint(above, underground),
                     style = Stroke(1.5.dp.toPx(), pathEffect = dash))
             }
-            val occupiedLabels = mutableListOf<android.graphics.RectF>()
+            val occupiedLabels = sharedOrbitLabels ?: mutableListOf<android.graphics.RectF>()
             // Decorative only: neither add hit targets nor cover hourly/event/live markers.
-            arrows.forEach { arrow ->
+            arrows.forEach { (_, arrow) ->
                 if (points.any { (_, point) -> hypot(point.x - arrow.center.x, point.y - arrow.center.y) < 16.dp.toPx() } ||
                     projectedCurrent?.let { hypot(it.x - arrow.center.x, it.y - arrow.center.y) < 26.dp.toPx() } == true)
                     return@forEach
@@ -121,9 +123,9 @@ internal fun SpaceCompassSunDailyPathLayer(
                 drawPath(chevron, (if (arrow.belowHorizon) below else above).copy(alpha = 0.95f),
                     style = Stroke(1.5.dp.toPx(), cap = StrokeCap.Round, join = StrokeJoin.Round))
             }
-            arrows.forEach { arrow ->
+            arrows.forEach { (moment, arrow) ->
                 drawSpaceCompassOrbitName(drawContext.canvas.nativeCanvas, objectName, segments, arrow, orbitText,
-                    (if (arrow.belowHorizon) below else above).toArgb(), 9.dp.toPx(), occupiedLabels, size.width, size.height)
+                    (if (arrow.belowHorizon) below else above).toArgb(), 9.dp.toPx(), occupiedLabels, size.width, size.height, namePlacement, moment.toString())
             }
             points.forEach { (marker, projected) ->
                 if (!drawApproaches && SpaceCompassSunPathEvent.APPROACH in marker.events) return@forEach

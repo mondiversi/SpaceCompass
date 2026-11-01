@@ -1,9 +1,9 @@
 <resources>
     <string name="info_news_title">Ostatnie nowości · %1$s</string>
-    <string name="info_news_star_sky" formatted="false">Kluczowe wysokości otwierają się z Obserwatorium na osobnej stronie z kolumnami zdarzenia, elewacji oraz daty i godziny.</string>
-    <string name="info_news_texture_downloads" formatted="false">Wybierz rok od 1900 do 2100. Stabilne obliczenia roczne zachowują istotne ekstrema i przejścia przez połowę wysokości; pojedyncze zdarzenia nie są już numerowane.</string>
-    <string name="info_news_weather" formatted="false">Eksportuj Kluczowe wysokości jako arkusz CSV lub czytelną tabelę TXT z wybranymi formatami i ochroną danych pozycji.</string>
-    <string name="info_news_viewer_zoom" formatted="false">Główny widok ma dwa rzędy przycisków w prawym górnym rogu. Aparat, Pogoda i 0°/90° są w drugim; tryb aparatu pokazuje Przezroczystość i Zoom.</string>
-    <string name="info_news_settings" formatted="false">Ustawienia, formularze Location i nazwy eksportów mają bardziej zwarte pola tekstowe i wyboru, z zachowaniem etykiet, natywnej edycji i kolorów motywu.</string>
-    <string name="info_news_catalog" formatted="false">Dotknij tytułu zarządzania Location, aby razem włączyć lub wyłączyć przygotowane wartości własne. Każdy obiekt zachowuje osobne pozycje przewijania Obserwatorium, Ścieżki dziennej i Kluczowych wysokości.</string>
+    <string name="info_news_star_sky" formatted="false">Otwórz Kluczowe zjawiska z Obserwatorium dla oglądanego obiektu, lokalizacji i roku. Dotknij daty, aby zobaczyć ten moment przy zatrzymanym czasie.</string>
+    <string name="info_news_texture_downloads" formatted="false">Sprawdzaj okresy polarne, długość dnia, skrajne wschody/zachody, fazy Księżyca, perygeum/apogeum i zjawiska planetarne, jeśli dostępne są wiarygodne dane.</string>
+    <string name="info_news_weather" formatted="false">Eksportuj zjawiska roczne do CSV lub czytelnego TXT ze wspólnymi opcjami formatu i prywatności. Wyniki pozostają stabilne przy aktualizacjach zegara i niewielkich zmianach GPS.</string>
+    <string name="info_news_viewer_zoom" formatted="false">Logo po lewej, menu po prawej, główne przyciski pośrodku. Aparat obok zdjęcia; pogoda i 0°/90° na dole pośrodku. Poziomo: proporcja niebo/karty 60/40. Poziomo dokładność wysokości jest w drugim wierszu.</string>
+    <string name="info_news_settings" formatted="false">Podpisy orbit i odniesień niebieskich mogą znajdować się nad lub pod pobliskimi liniami, zachowując stabilniejsze i czytelniejsze położenie.</string>
+    <string name="info_news_catalog" formatted="false">Płynniejsze przejścia kart nadal trwają 300 ms i nie przeglądają niezaznaczonych obiektów. Początkowy zoom 0,5× lub najszerszy obsługiwany widok; mniejsze przyciski zdjęć.</string>
 </resources>

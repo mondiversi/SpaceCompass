@@ -10,7 +10,7 @@ class SpaceCompassCelestialTabularLayoutTest {
 
     @Test fun landscapeKeepsFullHeightSkyAndDetailsWithFloatingNavigation() {
         val screen = source("SpaceCompassSunFinderScreen.kt")
-        assertTrue(screen.contains("val detailsWidth = viewportWidth * 0.5f"))
+        assertTrue(screen.contains("val detailsWidth = viewportWidth * 0.4f"))
         val split = screen.substringAfter("testTag(\"celestial-landscape-layout\")")
             .substringBefore("} else Box(Modifier.fillMaxSize().clipToBounds())")
         assertTrue(split.contains("Box(Modifier.weight(1f).fillMaxHeight().clipToBounds())"))
@@ -231,7 +231,6 @@ class SpaceCompassCelestialTabularLayoutTest {
         assertTrue(table.indexOf("accuracy.value") < table.indexOf("label(row.value)"))
         assertTrue(table.indexOf("column.addView(card)") < table.indexOf("data.notes.forEach"))
         assertFalse(panel.contains("rows.filter { it.tag == \"celestial-distance\" }"))
-        assertTrue(screen.contains("SpaceCompassMainNavigationControls(primaryText, backgroundColor)"))
         assertTrue(source("SpaceCompassCelestialControls.kt").contains("SpaceCompassCelestialCatalogIcon"))
         assertFalse(source("SpaceCompassCelestialControls.kt").contains("SpaceCompassDisclosureChevron"))
         assertFalse(source("SpaceCompassSunFinderSky.kt").contains("pathTint = if (overlays.isEmpty())"))

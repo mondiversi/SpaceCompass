@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="key_events_title">Kluczowe zjawiska</string>
+    <string name="key_events_description">Zjawiska dla wybranego obiektu, roku i lokalizacji. Dotknij daty, aby zobaczyć ten moment przy zatrzymanym czasie.</string>
+    <string name="key_events_empty">Brak zjawisk tego typu dla obiektu w wybranym roku.</string>
+    <string name="key_events_horizon_note">Idealny odsłonięty horyzont, jak w przebiegu dziennym. Okresy polarne obejmują kolejne wschody i zachody; skrajne godziny uwzględniają czas lokalny.</string>
+    <string name="key_events_global_note">Zjawiska orbitalne mają wspólne chwile wystąpienia. Wysokość obliczana jest dla lokalizacji, a odległości między środkami ciał.</string>
+    <string name="key_events_value">Wartość</string>
+    <string name="key_event_polar_day_start">Początek dnia polarnego</string>
+    <string name="key_event_polar_day_end">Koniec dnia polarnego</string>
+    <string name="key_event_polar_night_start">Początek nocy polarnej</string>
+    <string name="key_event_polar_night_end">Koniec nocy polarnej</string>
+    <string name="key_event_longest_day">Najdłuższy dzień</string>
+    <string name="key_event_shortest_day">Najkrótszy dzień</string>
+    <string name="key_event_earliest_sunrise">Najwcześniejszy wschód Słońca</string>
+    <string name="key_event_latest_sunrise">Najpóźniejszy wschód Słońca</string>
+    <string name="key_event_earliest_sunset">Najwcześniejszy zachód Słońca</string>
+    <string name="key_event_latest_sunset">Najpóźniejszy zachód Słońca</string>
+    <string name="key_event_new_moon">Nów</string>
+    <string name="key_event_first_quarter">Pierwsza kwadra</string>
+    <string name="key_event_full_moon">Pełnia</string>
+    <string name="key_event_last_quarter">Ostatnia kwadra</string>
+    <string name="key_event_perigee">Perygeum</string>
+    <string name="key_event_apogee">Apogeum</string>
+    <string name="key_event_opposition">Opozycja</string>
+    <string name="key_event_morning_elongation">Maksymalna elongacja poranna</string>
+    <string name="key_event_evening_elongation">Maksymalna elongacja wieczorna</string>
+    <string name="key_event_perihelion">Peryhelium</string>
+    <string name="key_event_aphelion">Aphelium</string>
+    <string name="key_event_nearest_earth">Minimalna odległość od Ziemi</string>
+    <string name="key_event_farthest_earth">Maksymalna odległość od Ziemi</string>
+</resources>

@@ -11,7 +11,7 @@ internal data class SpaceCompassCelestialSelection(
     val active: SpaceCompassCelestialBody? = selected.firstOrNull()
 ) {
     init { require(active == null && selected.isEmpty() || active in selected) }
-    val ordered: List<SpaceCompassCelestialBody> get() = spaceCompassAllCelestialOrder.filter { it in selected }
+    val ordered: List<SpaceCompassCelestialBody> get() = spaceCompassOrderedCelestialSubset(selected)
 
     fun toggle(body: SpaceCompassCelestialBody): SpaceCompassCelestialSelection {
         if (body !in spaceCompassAllCelestialOrder) return this
@@ -43,6 +43,7 @@ internal data class SpaceCompassCelestialSelection(
     }
 
     fun step(delta: Int): SpaceCompassCelestialSelection {
+        val ordered = ordered
         if (ordered.isEmpty()) return this
         val index = ordered.indexOf(active)
         return copy(active = ordered[Math.floorMod(index + delta, ordered.size)])

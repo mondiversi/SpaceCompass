@@ -1,5 +1,15 @@
 # Changelog
 
+## 1.7.5 — 2026-11-01
+
+- Add **Key events** below Key heights in Observatory, with independent year selection and object/session scroll. Use the inspected body and effective Location, observer altitude, civil-year bounds and time-zone rules. Tapping a date preserves spatial overrides, applies the exact instant and pauses time atomically at 0×.
+- Calculate solar polar daylight/darkness boundaries and full durations, longest/shortest ordinary daylight and local-clock sunrise/sunset extremes. Include lunar phases and geocentric apsides, supported planetary elongations/oppositions/apsides and annual Earth-distance extrema. Keep unavailable full-year remote/satellite data explicit; no fictitious physical events or eclipse predictions are introduced.
+- Export frozen annual events as CSV or readable TXT, sharing the selected/international profile and position-disclosure choices. Reuse cancellable background calculations and bounded, observer-aware session caching; clock ticks and ordinary GPS drift do not reload completed calendars.
+- Stabilize orbit/reference captions when nearby curves compete for space. Share measured text clearances, allow placement above/below tracks and retain accepted placement through small changes. Keep scientific positions and capture geometry unchanged.
+- Reorganize main controls with Info/logo left, Menu right and centred upper actions. Place Camera beside compact capture and Weather/pointing-axis controls at the lower centre; camera mode reuses the centre pair for Transparency/Zoom. Use 60% sky and 40% information in readable landscape windows, with GPS altitude uncertainty on a second line below its value. Default unsaved camera zoom to 0.5× or the widest supported view; retain later saved choices.
+- Improve 300 ms information-panel transitions by composing and ordering the displayed celestial subset rather than visiting the entire catalogue every frame. Retain canonical marker order, selection, directional locators, touch shields and accessibility fallbacks.
+- Refresh six in-app news summaries in all twenty languages. Release 1.7.5/code 61 with the existing certificate, signed update index, reference-information archive, checksums and validation metadata. Reuse immutable graphics collection 1.8 and individual downloads, with no complete texture ZIP.
+
 ## 1.7.4 — 2026-10-31
 
 - Open **Key heights** from Observatory on a dedicated daily-path-style page. Show moment, elevation and date/time in separate 40% / 15% / 45% columns, with compact event icons and numbering only for repeated events of the same kind.

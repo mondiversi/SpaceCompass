@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="key_events_title">关键事件</string>
+    <string name="key_events_description">所选天体、年份和地点的事件。点按日期即可暂停时间并观察该时刻。</string>
+    <string name="key_events_empty">所选年份中，此天体没有此类事件。</string>
+    <string name="key_events_horizon_note">采用与每日轨迹相同的理想无遮挡地平线。极昼和极夜时长为相邻升落之间的间隔；最早和最晚时刻使用地点的当地时间。</string>
+    <string name="key_events_global_note">轨道事件在全球同一瞬间发生。仰角根据地点计算；距离按天体中心之间测量。</string>
+    <string name="key_events_value">数值</string>
+    <string name="key_event_polar_day_start">极昼开始</string>
+    <string name="key_event_polar_day_end">极昼结束</string>
+    <string name="key_event_polar_night_start">极夜开始</string>
+    <string name="key_event_polar_night_end">极夜结束</string>
+    <string name="key_event_longest_day">白昼最长的一天</string>
+    <string name="key_event_shortest_day">白昼最短的一天</string>
+    <string name="key_event_earliest_sunrise">最早日出</string>
+    <string name="key_event_latest_sunrise">最晚日出</string>
+    <string name="key_event_earliest_sunset">最早日落</string>
+    <string name="key_event_latest_sunset">最晚日落</string>
+    <string name="key_event_new_moon">新月</string>
+    <string name="key_event_first_quarter">上弦月</string>
+    <string name="key_event_full_moon">满月</string>
+    <string name="key_event_last_quarter">下弦月</string>
+    <string name="key_event_perigee">近地点</string>
+    <string name="key_event_apogee">远地点</string>
+    <string name="key_event_opposition">冲</string>
+    <string name="key_event_morning_elongation">晨最大距角</string>
+    <string name="key_event_evening_elongation">昏最大距角</string>
+    <string name="key_event_perihelion">近日点</string>
+    <string name="key_event_aphelion">远日点</string>
+    <string name="key_event_nearest_earth">与地球的最小距离</string>
+    <string name="key_event_farthest_earth">与地球的最大距离</string>
+</resources>

@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="key_events_title">Événements clés</string>
+    <string name="key_events_description">Événements pour l’objet, l’année et le lieu choisis. Touchez une date pour observer cet instant avec le temps arrêté.</string>
+    <string name="key_events_empty">Aucun événement de ce type pour cet objet durant l’année choisie.</string>
+    <string name="key_events_horizon_note">Horizon idéal dégagé, comme dans le parcours quotidien. Les périodes polaires relient des levers et couchers consécutifs ; les horaires extrêmes utilisent l’heure locale du lieu.</string>
+    <string name="key_events_global_note">Les événements orbitaux ont des instants universels. L’élévation est calculée depuis le lieu ; les distances relient les centres des corps.</string>
+    <string name="key_events_value">Valeur</string>
+    <string name="key_event_polar_day_start">Début du jour polaire</string>
+    <string name="key_event_polar_day_end">Fin du jour polaire</string>
+    <string name="key_event_polar_night_start">Début de la nuit polaire</string>
+    <string name="key_event_polar_night_end">Fin de la nuit polaire</string>
+    <string name="key_event_longest_day">Jour le plus long</string>
+    <string name="key_event_shortest_day">Jour le plus court</string>
+    <string name="key_event_earliest_sunrise">Lever le plus précoce</string>
+    <string name="key_event_latest_sunrise">Lever le plus tardif</string>
+    <string name="key_event_earliest_sunset">Coucher le plus précoce</string>
+    <string name="key_event_latest_sunset">Coucher le plus tardif</string>
+    <string name="key_event_new_moon">Nouvelle lune</string>
+    <string name="key_event_first_quarter">Premier quartier</string>
+    <string name="key_event_full_moon">Pleine lune</string>
+    <string name="key_event_last_quarter">Dernier quartier</string>
+    <string name="key_event_perigee">Périgée</string>
+    <string name="key_event_apogee">Apogée</string>
+    <string name="key_event_opposition">Opposition</string>
+    <string name="key_event_morning_elongation">Élongation matinale maximale</string>
+    <string name="key_event_evening_elongation">Élongation vespérale maximale</string>
+    <string name="key_event_perihelion">Périhélie</string>
+    <string name="key_event_aphelion">Aphélie</string>
+    <string name="key_event_nearest_earth">Distance minimale à la Terre</string>
+    <string name="key_event_farthest_earth">Distance maximale à la Terre</string>
+</resources>

@@ -1,9 +1,9 @@
 <resources>
     <string name="info_news_title">最近の変更 · %1$s</string>
-    <string name="info_news_star_sky" formatted="false">主な高度は観測所から専用ページで開き、イベント、高度、日時を別々の列に表示します。</string>
-    <string name="info_news_texture_downloads" formatted="false">1900～2100年から年を選択できます。安定した年間計算で有意な極大・極小と中間高度の通過を保持し、同種のイベントが1件の場合は番号を付けません。</string>
-    <string name="info_news_weather" formatted="false">主な高度をCSVスプレッドシートまたは読みやすいTXT表として、選択した書式と位置情報の公開範囲でエクスポートできます。</string>
-    <string name="info_news_viewer_zoom" formatted="false">メイン画面の操作ボタンは右上の2段構成です。2段目にカメラ、天気、0°/90°を配置し、カメラモードでは透明度とズームを表示します。</string>
-    <string name="info_news_settings" formatted="false">設定、Locationフォーム、エクスポート名の入力・選択欄をコンパクトにし、ラベル、標準の編集操作、テーマの色を維持しました。</string>
-    <string name="info_news_catalog" formatted="false">Location管理のタイトルをタップすると、準備したカスタム値をまとめて有効・無効にできます。各天体の観測所、日別経路、主な高度は別々のスクロール位置を保持します。</string>
+    <string name="info_news_star_sky" formatted="false">観測所から、選択中の天体・地点・年の「主な天文現象」を開けます。日付をタップすると、時間を止めてその瞬間を観察できます。</string>
+    <string name="info_news_texture_downloads" formatted="false">信頼できるデータがある場合、極昼・極夜、昼の長さ、最早・最遅の日の出と日の入り、月相、近地点・遠地点、惑星の現象を確認できます。</string>
+    <string name="info_news_weather" formatted="false">共通の表示形式と位置情報の公開範囲で、年間現象をCSVまたは読みやすいTXTに出力できます。時刻更新や通常のGPS変動でも結果は安定します。</string>
+    <string name="info_news_viewer_zoom" formatted="false">ロゴは左、メニューは右、主な操作は中央に配置。カメラは撮影の隣、天気と0°/90°は下中央。横画面の空とカードの比率は60/40です。 横画面では高度の精度を2行目に表示します。</string>
+    <string name="info_news_settings" formatted="false">軌道と天球基準のラベルは、近接する線の上または下に配置でき、位置がより安定して読みやすくなります。</string>
+    <string name="info_news_catalog" formatted="false">未選択の天体を走査せず、カードの開閉がより滑らかな300msに。初期ズームは0.5×または対応する最広角で、撮影ボタンもコンパクトになりました。</string>
 </resources>

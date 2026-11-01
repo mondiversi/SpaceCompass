@@ -1,9 +1,9 @@
 <resources>
     <string name="info_news_title">Latest news · %1$s</string>
-    <string name="info_news_star_sky" formatted="false">Key heights opens from Observatory on its own page, with separate moment, elevation and date/time columns.</string>
-    <string name="info_news_texture_downloads" formatted="false">Choose the year from 1900 to 2100. Stable annual calculations retain significant extrema and mid-height passages; single events no longer need a number.</string>
-    <string name="info_news_weather" formatted="false">Export Key heights as a CSV spreadsheet or readable TXT table, using the selected formats and location privacy.</string>
-    <string name="info_news_viewer_zoom" formatted="false">Main-view controls use two upper-right rows. Camera, Weather and 0°/90° share the second row; camera mode shows Transparency and Zoom.</string>
-    <string name="info_news_settings" formatted="false">Settings, Location forms and export names share more compact input and selection fields, retaining labels, native editing and theme colors.</string>
-    <string name="info_news_catalog" formatted="false">Tap the Location management title to switch prepared custom values on or off together. Each object retains separate Observatory, Daily path and Key heights scroll positions.</string>
+    <string name="info_news_star_sky" formatted="false">Open Key events from Observatory for the inspected object, Location and year. Tap a date to observe that instant with time paused.</string>
+    <string name="info_news_texture_downloads" formatted="false">Explore polar periods, daylight duration, sunrise/sunset extremes, lunar phases, perigee/apogee and planetary events where reliable data are available.</string>
+    <string name="info_news_weather" formatted="false">Export annual events as CSV or readable TXT using the shared formatting and location-privacy choices. Results remain stable through clock updates and ordinary GPS drift.</string>
+    <string name="info_news_viewer_zoom" formatted="false">Logo left, Menu right and main controls centered. Camera sits beside capture; Weather and 0°/90° sit at the lower center. Landscape uses a 60/40 sky/island split. Altitude accuracy moves to its own second line in landscape.</string>
+    <string name="info_news_settings" formatted="false">Orbit and celestial-reference captions can move above or below nearby lines, keeping their placement more stable and readable.</string>
+    <string name="info_news_catalog" formatted="false">Smoother 300 ms island transitions avoid scanning unchecked catalogue objects. Default camera zoom is 0.5× or the widest supported view; capture controls are more compact.</string>
 </resources>

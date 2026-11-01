@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="key_events_title">אירועים מרכזיים</string>
+    <string name="key_events_description">אירועים עבור העצם, השנה והמיקום שנבחרו. יש להקיש על תאריך כדי לצפות ברגע כשהזמן מושהה.</string>
+    <string name="key_events_empty">אין אירועים מסוג זה עבור העצם בשנה שנבחרה.</string>
+    <string name="key_events_horizon_note">אופק אידאלי ללא מכשולים, כמו במסלול היומי. תקופות קוטביות נמשכות בין זריחות ושקיעות עוקבות; זמני הקיצון משתמשים בשעה המקומית של המיקום.</string>
+    <string name="key_events_global_note">לאירועים מסלוליים יש רגעים אוניברסליים. הגובה מחושב מהמיקום; המרחקים נמדדים בין מרכזי הגופים.</string>
+    <string name="key_events_value">ערך</string>
+    <string name="key_event_polar_day_start">תחילת היום הקוטבי</string>
+    <string name="key_event_polar_day_end">סיום היום הקוטבי</string>
+    <string name="key_event_polar_night_start">תחילת הלילה הקוטבי</string>
+    <string name="key_event_polar_night_end">סיום הלילה הקוטבי</string>
+    <string name="key_event_longest_day">היום הארוך ביותר</string>
+    <string name="key_event_shortest_day">היום הקצר ביותר</string>
+    <string name="key_event_earliest_sunrise">הזריחה המוקדמת ביותר</string>
+    <string name="key_event_latest_sunrise">הזריחה המאוחרת ביותר</string>
+    <string name="key_event_earliest_sunset">השקיעה המוקדמת ביותר</string>
+    <string name="key_event_latest_sunset">השקיעה המאוחרת ביותר</string>
+    <string name="key_event_new_moon">מולד הירח</string>
+    <string name="key_event_first_quarter">רבע ראשון</string>
+    <string name="key_event_full_moon">ירח מלא</string>
+    <string name="key_event_last_quarter">רבע אחרון</string>
+    <string name="key_event_perigee">פריגיאה</string>
+    <string name="key_event_apogee">אפוגיאה</string>
+    <string name="key_event_opposition">ניגוד</string>
+    <string name="key_event_morning_elongation">אלונגציית בוקר מרבית</string>
+    <string name="key_event_evening_elongation">אלונגציית ערב מרבית</string>
+    <string name="key_event_perihelion">פריהליון</string>
+    <string name="key_event_aphelion">אפהליון</string>
+    <string name="key_event_nearest_earth">המרחק המזערי מכדור הארץ</string>
+    <string name="key_event_farthest_earth">המרחק המרבי מכדור הארץ</string>
+</resources>

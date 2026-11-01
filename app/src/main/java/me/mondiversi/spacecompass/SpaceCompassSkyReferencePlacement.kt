@@ -2,8 +2,6 @@ package me.mondiversi.spacecompass
 
 import kotlin.math.hypot
 
-internal data class SpaceCompassSkyReferenceCaptionPlacement(val layout: SpaceCompassCurveTextLayout, val textSize: Float)
-
 /** Project continuously onto the visible curve instead of jumping between sampled midpoints. */
 internal fun spaceCompassNearestSkyReferenceAnchor(segments: List<SpaceCompassSunPathSegment>,
     target: SpaceCompassSunScenePoint): SpaceCompassSunScenePoint? {
@@ -34,40 +32,22 @@ internal fun spaceCompassSkyGuideCaptionBounds(anchor: SpaceCompassSunScenePoint
 /** Live-only bounded history. Captured images keep their independent one-shot layout. */
 internal class SpaceCompassSkyReferencePlacementState {
     private var viewport: Triple<Int, Int, Float>? = null
-    private val captions = mutableMapOf<String, SpaceCompassSkyReferenceCaptionPlacement>()
+    private val captions = SpaceCompassCurveCaptionPlacementState()
     private val repeats = mutableMapOf<SpaceCompassSkyReference, List<SpaceCompassSunScenePoint>>()
 
     fun viewport(width: Int, height: Int, scale: Float) {
         val next = Triple(width, height, scale)
-        if (next != viewport) { captions.clear(); repeats.clear(); viewport = next }
+        if (next != viewport) { repeats.clear(); viewport = next }
+        captions.viewport(width, height, scale)
     }
 
     fun caption(key: String, segments: List<SpaceCompassSunPathSegment>,
         candidates: List<SpaceCompassSunScenePoint>, scale: Float, width: Double, height: Double,
         minimumY: Double, fixed: List<SpaceCompassSunSceneFrame>, occupied: List<SpaceCompassSunSceneFrame>,
-        measure: (Float) -> Double): SpaceCompassSkyReferenceCaptionPlacement? {
-        val previous = captions[key]
-        val sizes = (listOfNotNull(previous?.textSize) + listOf(24f, 22f, 20f).map { it * scale }).distinct()
-        fun choose(points: List<SpaceCompassSunScenePoint>, reserved: List<SpaceCompassSunSceneFrame>): SpaceCompassSkyReferenceCaptionPlacement? {
-            for (size in sizes) {
-                val layout = spaceCompassChooseCurveTextLayout(segments, points, measure(size),
-                    size.toDouble(), 12.0 * scale, width, height, minimumY, reserved) ?: continue
-                return SpaceCompassSkyReferenceCaptionPlacement(layout, size).also { captions[key] = it }
-            }
-            return null
-        }
-        // Other moving guide captions/crosses do not evict an established name.
-        previous?.let { last -> spaceCompassNearestSkyReferenceAnchor(segments, last.layout.anchor)?.let {
-            choose(listOf(it), fixed)?.let { chosen -> return chosen }
-        } }
-        // New anchors need extra edge clearance; retained ones may approach the edge before moving.
-        val margin = 16.0 * scale
-        val edges = listOf(SpaceCompassSunSceneFrame(0.0, minimumY, margin, height - minimumY),
-            SpaceCompassSunSceneFrame(width - margin, minimumY, margin, height - minimumY),
-            SpaceCompassSunSceneFrame(0.0, minimumY, width, margin),
-            SpaceCompassSunSceneFrame(0.0, height - margin, width, margin))
-        return choose(candidates, occupied + edges) ?: choose(candidates, occupied)
-    }
+        followPreviousAnchor: Boolean = true, measure: (Float) -> Double): SpaceCompassCurveCaptionPlacement? =
+        captions.place(key, segments, candidates, listOf(24f, 22f, 20f).map { it * scale },
+            12.0 * scale, width, height, minimumY, (fixed + occupied).distinct(), scale,
+            followPreviousAnchor = followPreviousAnchor, measure = measure)
 
     fun degreeAnchors(reference: SpaceCompassSkyReference, segments: List<SpaceCompassSunPathSegment>,
         candidates: List<SpaceCompassSunScenePoint>, spacing: Double, reserved: List<SpaceCompassSunScenePoint>,

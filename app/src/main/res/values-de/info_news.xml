@@ -1,9 +1,9 @@
 <resources>
     <string name="info_news_title">Neuigkeiten · %1$s</string>
-    <string name="info_news_star_sky" formatted="false">Wichtige Höhen öffnet sich im Observatorium als eigene Seite mit getrennten Spalten für Ereignis, Höhe sowie Datum und Uhrzeit.</string>
-    <string name="info_news_texture_downloads" formatted="false">Wähle ein Jahr von 1900 bis 2100. Stabile Jahresberechnungen behalten bedeutende Extrema und Durchgänge auf halber Höhe; einzelne Ereignisse benötigen keine Nummer mehr.</string>
-    <string name="info_news_weather" formatted="false">Exportiere Wichtige Höhen als CSV-Tabelle oder lesbare TXT-Tabelle mit den gewählten Formaten und dem gewünschten Standortschutz.</string>
-    <string name="info_news_viewer_zoom" formatted="false">Die Hauptansicht hat oben rechts zwei Steuerungszeilen. Kamera, Wetter und 0°/90° stehen in der zweiten; im Kameramodus erscheinen Transparenz und Zoom.</string>
-    <string name="info_news_settings" formatted="false">Einstellungen, Location-Formulare und Exportnamen verwenden kompaktere Eingabe- und Auswahlfelder mit unveränderten Beschriftungen, nativer Bearbeitung und Themenfarben.</string>
-    <string name="info_news_catalog" formatted="false">Tippe auf den Titel der Location-Verwaltung, um vorbereitete benutzerdefinierte Werte gemeinsam ein- oder auszuschalten. Jedes Objekt behält getrennte Scrollpositionen für Observatorium, Tagesbahn und Wichtige Höhen.</string>
+    <string name="info_news_star_sky" formatted="false">Öffne Wichtige Ereignisse in der Sternwarte für Objekt, Standort und Jahr. Tippe auf ein Datum, um diesen Zeitpunkt bei angehaltener Zeit zu betrachten.</string>
+    <string name="info_news_texture_downloads" formatted="false">Entdecke polare Zeiträume, Tageslängen, früheste/späteste Auf- und Untergänge, Mondphasen, Perigäum/Apogäum und Planetenereignisse, soweit verlässliche Daten vorliegen.</string>
+    <string name="info_news_weather" formatted="false">Exportiere Jahresereignisse als CSV oder lesbare TXT mit den gemeinsamen Format- und Standortschutzoptionen. Ergebnisse bleiben bei Uhraktualisierungen und gewöhnlichen GPS-Schwankungen stabil.</string>
+    <string name="info_news_viewer_zoom" formatted="false">Logo links, Menü rechts, Hauptsteuerung mittig. Kamera neben der Aufnahme; Wetter und 0°/90° unten mittig. Im Querformat gilt Himmel/Karten 60/40. Im Querformat steht die Höhengenauigkeit in einer eigenen zweiten Zeile.</string>
+    <string name="info_news_settings" formatted="false">Beschriftungen von Bahnen und Himmelsreferenzen können über oder unter nahe Linien wechseln und bleiben dabei stabiler und lesbarer.</string>
+    <string name="info_news_catalog" formatted="false">Flüssigere Kartenübergänge dauern weiterhin 300 ms, ohne ungewählte Katalogobjekte zu durchsuchen. Standardzoom: 0,5× oder weiteste unterstützte Ansicht; kompaktere Aufnahmesteuerung.</string>
 </resources>

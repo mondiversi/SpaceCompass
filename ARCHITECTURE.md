@@ -601,10 +601,30 @@ Material decoration retains label, cursor, focus, error and native-input behavio
 and filter controls retain their specialized geometry. Location overrides reuse these
 fields without changing their persisted values or independent activation.
 
-The main scene places equal-size Info/logo and Menu controls at the upper start edge.
-The upper end group measures two trailing-aligned rows: reticle, references, Location and
-objects; then camera, weather/transparency and axis/zoom. Flow rows retain complete circles
-in narrower viewports. The bottom start group contains collapse and optional point clearing;
-capture is measured separately so it cannot be squeezed by adjacent actions. The measured
-header and input shield keep labels/taps clear of the controls without moving the optical
-projection, reticle reference or landscape capture anchor.
+The main scene places Info/logo at the upper start and Menu at the upper end. Reticle,
+references, Location and objects are centred between them; flow rows retain complete circles
+in narrower viewports. The bottom start group contains collapse and optional point clearing.
+Weather/transparency and axis/zoom form a separately measured bottom-centre group. Camera
+sits beside capture at the bottom end. Empty footer hosts publish zero bounds after rotation,
+and narrow sky viewports can lift the centre group clear of the corner controls. Main landscape
+layout gives sky 60% and information 40%, with a readability fallback for large accessibility
+text/narrow windows. Capture stays outside the panels' transition at a fixed viewport anchor.
+The measured header/footer and input shield keep captions/taps clear of controls without
+changing scientific projection. Capture's circle and target are 15% smaller; the default zoom
+uses 0.5x or the hardware minimum unless a previous camera choice has been saved.
+
+The stable catalogue rank is built once. Marker composition, navigation and edge packing use
+ordered displayed subsets; unchecked catalogue entries create no per-frame movable groups.
+Panel expand/collapse retains its 300 ms transition. Live curve captions share measured text
+clearance, can move above/below close tracks, and retain accepted placement through small
+changes; no full rotated bounding rectangle is used as a blanket caption exclusion.
+
+## Key events
+
+The Observatory owns a separate annual-event page and per-object session scroll. Its year,
+position, altitude, source and time-zone keyed, activity-retained cache follows the exact-manual
+and stable-GPS observer policy used by Key heights. Numerical searches run off the UI thread,
+support cancellation and do not restart on clock or orientation updates. Stale replacement
+rows remain non-actionable. Event date selection shares the atomic paused-time observer
+operation; CSV/TXT freezes the accepted result and shares format/position disclosure policies.
+See [event calculations and limitations](docs/KEY_EVENTS.md).

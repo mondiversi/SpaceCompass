@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="key_events_title">Ключевые события</string>
+    <string name="key_events_description">События для выбранных объекта, года и местоположения. Нажмите на дату, чтобы увидеть этот момент с остановленным временем.</string>
+    <string name="key_events_empty">Для этого объекта нет событий данного типа в выбранном году.</string>
+    <string name="key_events_horizon_note">Идеальный открытый горизонт, как в суточном пути. Полярные периоды ограничены последовательными восходами и закатами; крайние часы указаны по местному времени.</string>
+    <string name="key_events_global_note">Орбитальные события происходят в единый момент. Высота рассчитывается для местоположения; расстояния измеряются между центрами тел.</string>
+    <string name="key_events_value">Значение</string>
+    <string name="key_event_polar_day_start">Начало полярного дня</string>
+    <string name="key_event_polar_day_end">Конец полярного дня</string>
+    <string name="key_event_polar_night_start">Начало полярной ночи</string>
+    <string name="key_event_polar_night_end">Конец полярной ночи</string>
+    <string name="key_event_longest_day">Самый длинный день</string>
+    <string name="key_event_shortest_day">Самый короткий день</string>
+    <string name="key_event_earliest_sunrise">Самый ранний восход</string>
+    <string name="key_event_latest_sunrise">Самый поздний восход</string>
+    <string name="key_event_earliest_sunset">Самый ранний закат</string>
+    <string name="key_event_latest_sunset">Самый поздний закат</string>
+    <string name="key_event_new_moon">Новолуние</string>
+    <string name="key_event_first_quarter">Первая четверть</string>
+    <string name="key_event_full_moon">Полнолуние</string>
+    <string name="key_event_last_quarter">Последняя четверть</string>
+    <string name="key_event_perigee">Перигей</string>
+    <string name="key_event_apogee">Апогей</string>
+    <string name="key_event_opposition">Противостояние</string>
+    <string name="key_event_morning_elongation">Наибольшая утренняя элонгация</string>
+    <string name="key_event_evening_elongation">Наибольшая вечерняя элонгация</string>
+    <string name="key_event_perihelion">Перигелий</string>
+    <string name="key_event_aphelion">Афелий</string>
+    <string name="key_event_nearest_earth">Минимальное расстояние от Земли</string>
+    <string name="key_event_farthest_earth">Максимальное расстояние от Земли</string>
+</resources>

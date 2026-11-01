@@ -1,9 +1,9 @@
 <resources>
     <string name="info_news_title">Últimas novidades · %1$s</string>
-    <string name="info_news_star_sky" formatted="false">Alturas-chave abre no Observatório numa página própria, com colunas separadas para momento, elevação e data/hora.</string>
-    <string name="info_news_texture_downloads" formatted="false">Escolha um ano de 1900 a 2100. Os cálculos anuais mantêm-se estáveis e preservam extremos significativos e passagens a meia altura; eventos únicos deixam de ter número.</string>
-    <string name="info_news_weather" formatted="false">Exporte Alturas-chave como folha de cálculo CSV ou tabela TXT legível, com os formatos escolhidos e a privacidade da localização.</string>
-    <string name="info_news_viewer_zoom" formatted="false">Os controlos principais ocupam duas linhas no canto superior direito. Câmara, Meteorologia e 0°/90° ficam na segunda; o modo de câmara mostra Transparência e Zoom.</string>
-    <string name="info_news_settings" formatted="false">Definições, formulários de Location e nomes de exportação usam campos de entrada e seleção mais compactos, mantendo rótulos, edição nativa e cores do tema.</string>
-    <string name="info_news_catalog" formatted="false">Toque no título da gestão de Location para ativar ou desativar em conjunto os valores personalizados preparados. Cada objeto mantém posições de deslocamento separadas para Observatório, Percurso diário e Alturas-chave.</string>
+    <string name="info_news_star_sky" formatted="false">Abra Eventos principais no Observatório para o objeto, localização e ano consultados. Toque numa data para observar esse instante com o tempo parado.</string>
+    <string name="info_news_texture_downloads" formatted="false">Consulte períodos polares, duração do dia, nascimentos/ocasos extremos, fases lunares, perigeu/apogeu e eventos planetários quando existirem dados fiáveis.</string>
+    <string name="info_news_weather" formatted="false">Exporte eventos anuais em CSV ou TXT legível com as opções comuns de formato e privacidade. Os resultados mantêm-se estáveis com atualizações do relógio e pequenas variações GPS.</string>
+    <string name="info_news_viewer_zoom" formatted="false">Logótipo à esquerda, menu à direita e comandos centrados. Câmara junto à captura; Meteo e 0°/90° em baixo ao centro. Na horizontal, proporção céu/cartões 60/40. Na horizontal, a precisão da altitude fica na segunda linha.</string>
+    <string name="info_news_settings" formatted="false">As legendas de órbitas e referências celestes podem ficar acima ou abaixo de linhas próximas, mantendo uma posição mais estável e legível.</string>
+    <string name="info_news_catalog" formatted="false">Transições dos cartões mais fluidas, sempre em 300 ms, sem percorrer objetos não selecionados. Zoom inicial de 0,5× ou a vista mais ampla disponível; comandos de captura mais compactos.</string>
 </resources>

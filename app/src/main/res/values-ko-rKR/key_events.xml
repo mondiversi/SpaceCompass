@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="key_events_title">주요 천문 현상</string>
+    <string name="key_events_description">선택한 천체, 연도 및 위치의 현상입니다. 날짜를 누르면 시간을 멈추고 해당 순간을 관찰합니다.</string>
+    <string name="key_events_empty">선택한 연도에는 이 천체에 해당 유형의 현상이 없습니다.</string>
+    <string name="key_events_horizon_note">일일 경로와 같은 장애물 없는 이상적인 지평선을 사용합니다. 극지 기간은 연속된 출몰 사이의 간격이며, 시각의 극값은 위치의 현지 시간을 사용합니다.</string>
+    <string name="key_events_global_note">궤도 현상은 전 세계에서 동일한 순간에 일어납니다. 고도는 위치에서 계산하며 거리는 천체 중심 사이를 측정합니다.</string>
+    <string name="key_events_value">값</string>
+    <string name="key_event_polar_day_start">백야 시작</string>
+    <string name="key_event_polar_day_end">백야 종료</string>
+    <string name="key_event_polar_night_start">극야 시작</string>
+    <string name="key_event_polar_night_end">극야 종료</string>
+    <string name="key_event_longest_day">낮이 가장 긴 날</string>
+    <string name="key_event_shortest_day">낮이 가장 짧은 날</string>
+    <string name="key_event_earliest_sunrise">가장 이른 일출</string>
+    <string name="key_event_latest_sunrise">가장 늦은 일출</string>
+    <string name="key_event_earliest_sunset">가장 이른 일몰</string>
+    <string name="key_event_latest_sunset">가장 늦은 일몰</string>
+    <string name="key_event_new_moon">신월</string>
+    <string name="key_event_first_quarter">상현</string>
+    <string name="key_event_full_moon">보름달</string>
+    <string name="key_event_last_quarter">하현</string>
+    <string name="key_event_perigee">근지점</string>
+    <string name="key_event_apogee">원지점</string>
+    <string name="key_event_opposition">충</string>
+    <string name="key_event_morning_elongation">최대 새벽 이각</string>
+    <string name="key_event_evening_elongation">최대 저녁 이각</string>
+    <string name="key_event_perihelion">근일점</string>
+    <string name="key_event_aphelion">원일점</string>
+    <string name="key_event_nearest_earth">지구와의 최소 거리</string>
+    <string name="key_event_farthest_earth">지구와의 최대 거리</string>
+</resources>

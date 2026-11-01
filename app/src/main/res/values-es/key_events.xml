@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="key_events_title">Eventos clave</string>
+    <string name="key_events_description">Eventos del objeto, año y ubicación seleccionados. Toca una fecha para observar ese instante con el tiempo detenido.</string>
+    <string name="key_events_empty">No hay eventos de este tipo para el objeto en el año seleccionado.</string>
+    <string name="key_events_horizon_note">Horizonte ideal despejado, como en el recorrido diario. Los periodos polares abarcan salidas y puestas consecutivas; los horarios extremos usan la hora local de la ubicación.</string>
+    <string name="key_events_global_note">Los eventos orbitales tienen instantes universales. La elevación se calcula desde la ubicación; las distancias se miden entre los centros de los cuerpos.</string>
+    <string name="key_events_value">Valor</string>
+    <string name="key_event_polar_day_start">Inicio del día polar</string>
+    <string name="key_event_polar_day_end">Fin del día polar</string>
+    <string name="key_event_polar_night_start">Inicio de la noche polar</string>
+    <string name="key_event_polar_night_end">Fin de la noche polar</string>
+    <string name="key_event_longest_day">Día más largo</string>
+    <string name="key_event_shortest_day">Día más corto</string>
+    <string name="key_event_earliest_sunrise">Amanecer más temprano</string>
+    <string name="key_event_latest_sunrise">Amanecer más tardío</string>
+    <string name="key_event_earliest_sunset">Ocaso más temprano</string>
+    <string name="key_event_latest_sunset">Ocaso más tardío</string>
+    <string name="key_event_new_moon">Luna nueva</string>
+    <string name="key_event_first_quarter">Cuarto creciente</string>
+    <string name="key_event_full_moon">Luna llena</string>
+    <string name="key_event_last_quarter">Cuarto menguante</string>
+    <string name="key_event_perigee">Perigeo</string>
+    <string name="key_event_apogee">Apogeo</string>
+    <string name="key_event_opposition">Oposición</string>
+    <string name="key_event_morning_elongation">Máxima elongación matutina</string>
+    <string name="key_event_evening_elongation">Máxima elongación vespertina</string>
+    <string name="key_event_perihelion">Perihelio</string>
+    <string name="key_event_aphelion">Afelio</string>
+    <string name="key_event_nearest_earth">Distancia mínima a la Tierra</string>
+    <string name="key_event_farthest_earth">Distancia máxima a la Tierra</string>
+</resources>

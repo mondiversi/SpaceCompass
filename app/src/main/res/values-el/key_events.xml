@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="key_events_title">Κύρια γεγονότα</string>
+    <string name="key_events_description">Γεγονότα για το επιλεγμένο αντικείμενο, έτος και τοποθεσία. Αγγίξτε μια ημερομηνία για να δείτε τη στιγμή με τον χρόνο σταματημένο.</string>
+    <string name="key_events_empty">Δεν υπάρχουν γεγονότα αυτού του τύπου για το αντικείμενο στο επιλεγμένο έτος.</string>
+    <string name="key_events_horizon_note">Ιδανικός ελεύθερος ορίζοντας, όπως στην ημερήσια διαδρομή. Οι πολικές περίοδοι ορίζονται από διαδοχικές ανατολές και δύσεις· οι ακραίες ώρες χρησιμοποιούν την τοπική ώρα.</string>
+    <string name="key_events_global_note">Τα τροχιακά γεγονότα έχουν κοινές χρονικές στιγμές. Το ύψος υπολογίζεται από την τοποθεσία· οι αποστάσεις μετρώνται μεταξύ των κέντρων των σωμάτων.</string>
+    <string name="key_events_value">Τιμή</string>
+    <string name="key_event_polar_day_start">Έναρξη πολικής ημέρας</string>
+    <string name="key_event_polar_day_end">Λήξη πολικής ημέρας</string>
+    <string name="key_event_polar_night_start">Έναρξη πολικής νύχτας</string>
+    <string name="key_event_polar_night_end">Λήξη πολικής νύχτας</string>
+    <string name="key_event_longest_day">Μεγαλύτερη ημέρα</string>
+    <string name="key_event_shortest_day">Μικρότερη ημέρα</string>
+    <string name="key_event_earliest_sunrise">Πρωιμότερη ανατολή</string>
+    <string name="key_event_latest_sunrise">Αργότερη ανατολή</string>
+    <string name="key_event_earliest_sunset">Πρωιμότερη δύση</string>
+    <string name="key_event_latest_sunset">Αργότερη δύση</string>
+    <string name="key_event_new_moon">Νέα Σελήνη</string>
+    <string name="key_event_first_quarter">Πρώτο τέταρτο</string>
+    <string name="key_event_full_moon">Πανσέληνος</string>
+    <string name="key_event_last_quarter">Τελευταίο τέταρτο</string>
+    <string name="key_event_perigee">Περίγειο</string>
+    <string name="key_event_apogee">Απόγειο</string>
+    <string name="key_event_opposition">Αντίθεση</string>
+    <string name="key_event_morning_elongation">Μέγιστη πρωινή αποχή</string>
+    <string name="key_event_evening_elongation">Μέγιστη βραδινή αποχή</string>
+    <string name="key_event_perihelion">Περιήλιο</string>
+    <string name="key_event_aphelion">Αφήλιο</string>
+    <string name="key_event_nearest_earth">Ελάχιστη απόσταση από τη Γη</string>
+    <string name="key_event_farthest_earth">Μέγιστη απόσταση από τη Γη</string>
+</resources>

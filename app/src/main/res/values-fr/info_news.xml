@@ -1,9 +1,9 @@
 <resources>
     <string name="info_news_title">Dernières nouveautés · %1$s</string>
-    <string name="info_news_star_sky" formatted="false">Hauteurs clés dispose de sa propre page depuis l’Observatoire, avec des colonnes distinctes pour le moment, l’élévation et la date/heure.</string>
-    <string name="info_news_texture_downloads" formatted="false">Choisissez une année de 1900 à 2100. Les calculs annuels restent stables et conservent les extrema significatifs et les passages à mi-hauteur ; les événements uniques ne sont plus numérotés.</string>
-    <string name="info_news_weather" formatted="false">Exportez Hauteurs clés en feuille de calcul CSV ou en tableau TXT lisible, avec les formats choisis et la confidentialité de la position.</string>
-    <string name="info_news_viewer_zoom" formatted="false">Les commandes principales occupent deux rangées en haut à droite. Appareil photo, Météo et 0°/90° sont sur la seconde ; le mode photo affiche Transparence et Zoom.</string>
-    <string name="info_news_settings" formatted="false">Les paramètres, formulaires Location et noms des exports utilisent des champs de saisie et de sélection plus compacts, tout en conservant libellés, édition native et couleurs du thème.</string>
-    <string name="info_news_catalog" formatted="false">Touchez le titre de gestion de Location pour activer ou désactiver ensemble les valeurs personnalisées préparées. Chaque objet conserve des positions de défilement distinctes pour l’Observatoire, le Parcours quotidien et Hauteurs clés.</string>
+    <string name="info_news_star_sky" formatted="false">Ouvrez Événements clés depuis l’Observatoire pour l’objet, le lieu et l’année consultés. Touchez une date pour observer cet instant avec le temps arrêté.</string>
+    <string name="info_news_texture_downloads" formatted="false">Consultez les périodes polaires, durées du jour, levers/couchers extrêmes, phases lunaires, périgées/apogées et événements planétaires lorsque les données sont fiables.</string>
+    <string name="info_news_weather" formatted="false">Exportez les événements annuels en CSV ou TXT lisible avec les choix communs de format et de confidentialité. Les résultats restent stables malgré les mises à jour de l’horloge et les petites dérives GPS.</string>
+    <string name="info_news_viewer_zoom" formatted="false">Logo à gauche, menu à droite et commandes centrées. Caméra près de la capture ; météo et 0°/90° en bas au centre. En paysage, proportion ciel/cartes 60/40. En paysage, la précision d’altitude passe à la ligne.</string>
+    <string name="info_news_settings" formatted="false">Les légendes des orbites et repères célestes peuvent passer au-dessus ou au-dessous des lignes proches, avec un placement plus stable et lisible.</string>
+    <string name="info_news_catalog" formatted="false">Transitions des cartes plus fluides, toujours en 300 ms, sans parcourir les objets non cochés. Zoom initial de 0,5× ou vue la plus large disponible ; commandes de capture plus compactes.</string>
 </resources>

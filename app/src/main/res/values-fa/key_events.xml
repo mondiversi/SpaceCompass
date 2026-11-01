@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="key_events_title">رویدادهای کلیدی</string>
+    <string name="key_events_description">رویدادهای جرم، سال و مکان انتخاب‌شده. برای مشاهدهٔ آن لحظه با زمان متوقف، تاریخ را لمس کنید.</string>
+    <string name="key_events_empty">برای این جرم در سال انتخاب‌شده رویدادی از این نوع وجود ندارد.</string>
+    <string name="key_events_horizon_note">افق ایدئال و بدون مانع، مانند مسیر روزانه. دوره‌های قطبی بین طلوع و غروب‌های پیاپی هستند؛ زمان‌های حدی از ساعت محلی مکان استفاده می‌کنند.</string>
+    <string name="key_events_global_note">رویدادهای مداری لحظه‌های جهانی مشترک دارند. ارتفاع از مکان محاسبه می‌شود؛ فاصله‌ها میان مراکز اجرام اندازه‌گیری می‌شوند.</string>
+    <string name="key_events_value">مقدار</string>
+    <string name="key_event_polar_day_start">آغاز روز قطبی</string>
+    <string name="key_event_polar_day_end">پایان روز قطبی</string>
+    <string name="key_event_polar_night_start">آغاز شب قطبی</string>
+    <string name="key_event_polar_night_end">پایان شب قطبی</string>
+    <string name="key_event_longest_day">بلندترین روز</string>
+    <string name="key_event_shortest_day">کوتاه‌ترین روز</string>
+    <string name="key_event_earliest_sunrise">زودترین طلوع</string>
+    <string name="key_event_latest_sunrise">دیرترین طلوع</string>
+    <string name="key_event_earliest_sunset">زودترین غروب</string>
+    <string name="key_event_latest_sunset">دیرترین غروب</string>
+    <string name="key_event_new_moon">ماه نو</string>
+    <string name="key_event_first_quarter">تربیع اول</string>
+    <string name="key_event_full_moon">ماه کامل</string>
+    <string name="key_event_last_quarter">تربیع آخر</string>
+    <string name="key_event_perigee">حضیض زمینی</string>
+    <string name="key_event_apogee">اوج زمینی</string>
+    <string name="key_event_opposition">مقابله</string>
+    <string name="key_event_morning_elongation">بیشترین کشیدگی صبحگاهی</string>
+    <string name="key_event_evening_elongation">بیشترین کشیدگی شامگاهی</string>
+    <string name="key_event_perihelion">حضیض خورشیدی</string>
+    <string name="key_event_aphelion">اوج خورشیدی</string>
+    <string name="key_event_nearest_earth">کمترین فاصله از زمین</string>
+    <string name="key_event_farthest_earth">بیشترین فاصله از زمین</string>
+</resources>

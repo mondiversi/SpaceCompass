@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="key_events_title">Belangrijke momenten</string>
+    <string name="key_events_description">Gebeurtenissen voor het gekozen object, jaar en de locatie. Tik op een datum om dat moment met stilstaande tijd te bekijken.</string>
+    <string name="key_events_empty">Geen gebeurtenissen van dit type voor dit object in het gekozen jaar.</string>
+    <string name="key_events_horizon_note">Ideale vrije horizon, zoals bij het dagelijkse pad. Poolperioden lopen tussen opeenvolgende opkomsten en ondergangen; uiterste kloktijden gebruiken de lokale tijd.</string>
+    <string name="key_events_global_note">Baangebeurtenissen hebben universele tijdstippen. De hoogte wordt vanaf de locatie berekend; afstanden gelden tussen de middelpunten van de hemellichamen.</string>
+    <string name="key_events_value">Waarde</string>
+    <string name="key_event_polar_day_start">Begin pooldag</string>
+    <string name="key_event_polar_day_end">Einde pooldag</string>
+    <string name="key_event_polar_night_start">Begin poolnacht</string>
+    <string name="key_event_polar_night_end">Einde poolnacht</string>
+    <string name="key_event_longest_day">Langste dag</string>
+    <string name="key_event_shortest_day">Kortste dag</string>
+    <string name="key_event_earliest_sunrise">Vroegste zonsopkomst</string>
+    <string name="key_event_latest_sunrise">Laatste zonsopkomst</string>
+    <string name="key_event_earliest_sunset">Vroegste zonsondergang</string>
+    <string name="key_event_latest_sunset">Laatste zonsondergang</string>
+    <string name="key_event_new_moon">Nieuwe maan</string>
+    <string name="key_event_first_quarter">Eerste kwartier</string>
+    <string name="key_event_full_moon">Volle maan</string>
+    <string name="key_event_last_quarter">Laatste kwartier</string>
+    <string name="key_event_perigee">Perigeum</string>
+    <string name="key_event_apogee">Apogeum</string>
+    <string name="key_event_opposition">Oppositie</string>
+    <string name="key_event_morning_elongation">Grootste ochtendelongatie</string>
+    <string name="key_event_evening_elongation">Grootste avondelongatie</string>
+    <string name="key_event_perihelion">Perihelium</string>
+    <string name="key_event_aphelion">Aphelium</string>
+    <string name="key_event_nearest_earth">Kleinste afstand tot de aarde</string>
+    <string name="key_event_farthest_earth">Grootste afstand tot de aarde</string>
+</resources>

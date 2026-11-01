@@ -8,6 +8,12 @@ class SpaceCompassCelestialAltitudeFormattingTest {
         assertEquals("112 m (±8 m)", formatSpaceCompassCelestialAltitude(112.4, 7.6, SpaceCompassNumericFormat.INTERNATIONAL))
         assertEquals("-12 m (±5 m)", formatSpaceCompassCelestialAltitude(-12.0, 5.0, SpaceCompassNumericFormat.INTERNATIONAL))
         assertEquals("0 m (±0 m)", formatSpaceCompassCelestialAltitude(0.0, 0.0, SpaceCompassNumericFormat.INTERNATIONAL))
+        assertEquals("112 m\n(±8 m)", formatSpaceCompassCelestialAltitude(112.4, 7.6,
+            SpaceCompassNumericFormat.INTERNATIONAL, accuracyOnNewLine = true))
+        assertEquals("100 ft\n(±10 ft)", formatSpaceCompassCelestialAltitude(30.48, 3.048,
+            SpaceCompassNumericFormat.INTERNATIONAL, feet = true, accuracyOnNewLine = true))
+        assertEquals("112 m", formatSpaceCompassCelestialAltitude(112.0, null,
+            SpaceCompassNumericFormat.INTERNATIONAL, accuracyOnNewLine = true))
     }
     @Test fun missingOrInvalidPrecisionIsNotInvented() {
         for (accuracy in listOf(null, -1.0, Double.NaN, Double.POSITIVE_INFINITY))

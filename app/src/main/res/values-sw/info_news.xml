@@ -1,9 +1,9 @@
 <resources>
     <string name="info_news_title">Mambo mapya · %1$s</string>
-    <string name="info_news_star_sky" formatted="false">Miinuko muhimu hufunguliwa kutoka Kituo cha uchunguzi kwenye ukurasa wake, wenye safu tofauti za tukio, mwinuko na tarehe/saa.</string>
-    <string name="info_news_texture_downloads" formatted="false">Chagua mwaka kuanzia 1900 hadi 2100. Hesabu thabiti za mwaka huhifadhi vilele, mabonde na vipito vya nusu ya mwinuko vilivyo muhimu; matukio ya pekee hayana nambari tena.</string>
-    <string name="info_news_weather" formatted="false">Hamisha Miinuko muhimu kama lahajedwali la CSV au jedwali la TXT linalosomeka, kwa miundo uliyochagua na faragha ya eneo.</string>
-    <string name="info_news_viewer_zoom" formatted="false">Vidhibiti vya mwonekano mkuu viko katika mistari miwili juu kulia. Kamera, Hali ya hewa na 0°/90° viko kwenye mstari wa pili; hali ya kamera huonyesha Uwazi na Kukuza.</string>
-    <string name="info_news_settings" formatted="false">Mipangilio, fomu za Location na majina ya faili za kuhamisha hutumia sehemu fupi zaidi za kuingiza na kuchagua, huku zikihifadhi lebo, uhariri asilia na rangi za mandhari.</string>
-    <string name="info_news_catalog" formatted="false">Gusa kichwa cha usimamizi wa Location ili kuwasha au kuzima pamoja thamani maalumu zilizoandaliwa. Kila kitu huhifadhi nafasi tofauti za kusogeza za Kituo cha uchunguzi, Njia ya kila siku na Miinuko muhimu.</string>
+    <string name="info_news_star_sky" formatted="false">Fungua Matukio muhimu kutoka Kituo cha uchunguzi kwa kitu, eneo na mwaka unaotazama. Gusa tarehe kuona wakati huo huku muda umesimamishwa.</string>
+    <string name="info_news_texture_downloads" formatted="false">Angalia vipindi vya ncha, urefu wa mchana, nyakati za mwisho za macheo/machweo, awamu za Mwezi, perigee/apogee na matukio ya sayari ikiwa data za kuaminika zinapatikana.</string>
+    <string name="info_news_weather" formatted="false">Hamisha matukio ya mwaka kama CSV au TXT inayosomeka kwa chaguo za pamoja za muundo na faragha ya eneo. Matokeo hubaki thabiti saa ikisasishwa na GPS ikibadilika kidogo.</string>
+    <string name="info_news_viewer_zoom" formatted="false">Nembo kushoto, menyu kulia na vidhibiti vikuu katikati. Kamera karibu na kunasa; hali ya hewa na 0°/90° chini katikati. Kwa mlalo, uwiano wa anga/kadi ni 60/40. Kwa mlalo, usahihi wa mwinuko uko katika mstari wa pili.</string>
+    <string name="info_news_settings" formatted="false">Lebo za obiti na marejeo ya anga zinaweza kuwekwa juu au chini ya mistari iliyo karibu, zikiwa thabiti na rahisi kusomeka zaidi.</string>
+    <string name="info_news_catalog" formatted="false">Mabadiliko ya kadi ni laini zaidi, bado kwa ms 300, bila kupitia vitu visivyochaguliwa. Ukuzaji wa mwanzo ni 0.5× au mwonekano mpana zaidi unaotumika; vidhibiti vya kunasa vimeshikana zaidi.</string>
 </resources>

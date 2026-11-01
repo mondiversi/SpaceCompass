@@ -1,9 +1,9 @@
 <resources>
     <string name="info_news_title">最新变化 · %1$s</string>
-    <string name="info_news_star_sky" formatted="false">关键高度可从观测台打开独立页面，分别以事件、仰角和日期时间三列显示。</string>
-    <string name="info_news_texture_downloads" formatted="false">可选择1900至2100年的任意年份。稳定的年度计算保留显著极大值、极小值和中间高度经过时刻；同类事件只有一个时不再编号。</string>
-    <string name="info_news_weather" formatted="false">可将关键高度导出为CSV电子表格或易读的TXT表格，并使用所选格式及位置隐私设置。</string>
-    <string name="info_news_viewer_zoom" formatted="false">主界面右上角的控件分为两行。第二行为相机、天气和0°/90°；相机模式下显示透明度和缩放。</string>
-    <string name="info_news_settings" formatted="false">设置、Location表单和导出名称采用更紧凑的输入框和选择框，同时保留标签、原生编辑方式及主题颜色。</string>
-    <string name="info_news_catalog" formatted="false">点击Location管理标题可统一启用或停用已准备的自定义值。每个天体的观测台、每日路径和关键高度页面分别保留滚动位置。</string>
+    <string name="info_news_star_sky" formatted="false">从观测台打开所选天体、地点和年份的“关键事件”。点按日期即可暂停时间并观察该时刻。</string>
+    <string name="info_news_texture_downloads" formatted="false">有可靠数据时，可查看极昼极夜、白昼时长、最早和最晚日出日落、月相、近地点和远地点以及行星事件。</string>
+    <string name="info_news_weather" formatted="false">使用统一的格式和位置隐私选项，将年度事件导出为CSV或易读TXT。时钟更新和普通GPS漂移不会导致结果反复加载。</string>
+    <string name="info_news_viewer_zoom" formatted="false">标志在左，菜单在右，主要控件居中。相机位于拍摄按钮旁，天气和0°/90°在下方中央。横屏时天空与信息卡的比例为60/40。 横屏时高度精度显示在第二行。</string>
+    <string name="info_news_settings" formatted="false">轨道和天球参考标签可放在相邻线条的上方或下方，位置更加稳定，也更易阅读。</string>
+    <string name="info_news_catalog" formatted="false">不再扫描未选天体，信息卡开合更流畅，时长仍为300毫秒。默认变焦为0.5×或支持的最广角；拍摄控件更加紧凑。</string>
 </resources>

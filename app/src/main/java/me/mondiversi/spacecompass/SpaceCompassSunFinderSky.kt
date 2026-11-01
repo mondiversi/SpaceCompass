@@ -81,6 +81,7 @@ internal fun SpaceCompassSunPointingViewport(
     observerLatitude: Double? = null, showSkyReferences: Boolean = SPACE_COMPASS_SKY_REFERENCES_DEFAULT,
     observerAltitude: Double = 0.0,
     bottomStartActions: @Composable (Modifier) -> Unit = {},
+    bottomCenterActions: @Composable (Modifier) -> Unit = {},
     bottomActions: @Composable (Modifier) -> Unit = {},
     noticesBelowReticle: Boolean = false,
     topStartActions: @Composable (Modifier) -> Unit = {},
@@ -110,16 +111,24 @@ internal fun SpaceCompassSunPointingViewport(
         var noticeSize by remember { mutableStateOf(IntSize.Zero) }
         var bottomActionsSize by remember { mutableStateOf(IntSize.Zero) }
         var bottomStartActionsSize by remember { mutableStateOf(IntSize.Zero) }
+        var bottomCenterActionsSize by remember { mutableStateOf(IntSize.Zero) }
         var topStartActionsSize by remember { mutableStateOf(IntSize.Zero) }
         var topEndActionsSize by remember { mutableStateOf(IntSize.Zero) }
         var topCenterActionsSize by remember { mutableStateOf(IntSize.Zero) }
         val centerActionsSize = if (topCenterActions == null) IntSize.Zero else topCenterActionsSize
-        val centerActionsHeight = if (centerActionsSize.height > 0)
-            with(density) { centerActionsSize.height.toDp() } else spaceCompassFloatingControlBaseSize
-        val centerActionsTop = topContentInset + 4.dp + (spaceCompassFloatingControlSize - centerActionsHeight) / 2
-        val centerGap = topControlSpacing - 4.dp
+        val centerActionsTop = topContentInset
+        val centerGap = (topControlSpacing - 4.dp).coerceAtLeast(0.dp)
         val centerActionsLeft = (if (rtl) topEndActionsSize.width else topStartActionsSize.width) +
             (width - topStartActionsSize.width - topEndActionsSize.width - centerActionsSize.width) / 2
+        val bottomCenterLeft = (width - bottomCenterActionsSize.width) / 2
+        val bottomGap = with(density) { 8.dp.toPx().toDouble() }
+        val startWidth = if (rtl) bottomActionsSize.width else bottomStartActionsSize.width
+        val endWidth = if (rtl) bottomStartActionsSize.width else bottomActionsSize.width
+        // Narrow windows can lift the centre pair clear of the corner groups without shrinking controls.
+        val bottomCenterLift = if (bottomCenterActionsSize.width > 0 &&
+            (bottomCenterLeft < startWidth + bottomGap ||
+                bottomCenterLeft + bottomCenterActionsSize.width > width - endWidth - bottomGap))
+            maxOf(bottomActionsSize.height, bottomStartActionsSize.height) + bottomGap else 0.0
         val paths = overlays.mapNotNull { (candidate, overlay) -> overlay.path?.let { candidate to it } }.toMap() +
             (dailyPath?.let { mapOf(body to it) } ?: emptyMap())
         val positions = overlays.mapNotNull { (candidate, overlay) -> overlay.observation?.position?.let { candidate to it } }.toMap() +
@@ -133,6 +142,8 @@ internal fun SpaceCompassSunPointingViewport(
                     projected.x <= maxWidth.value - radius && projected.y <= maxHeight.value - radius)
             }
         }
+        // Only projected bodies participate in composition; thousands of unchecked catalog entries do not.
+        val markerBodies = remember(projections.keys) { spaceCompassOrderedCelestialSubset(projections.keys) }
         val current = timeMs?.let { moment -> positions.mapValues { SpaceCompassSunPathPoint(moment, it.value) } }.orEmpty()
         val moonPhase = rememberSpaceCompassMoonMarkerPhase(timeMs.takeIf { SpaceCompassCelestialBody.MOON in positions })
         val targets = remember(paths, current, orientation, compassReliable, width, height, scenePerspective) {
@@ -190,6 +201,10 @@ internal fun SpaceCompassSunPointingViewport(
                 add(SpaceCompassSunSceneFrame(if (rtl) width - bottomStartActionsSize.width else 0.0,
                     height - bottomStartActionsSize.height,
                     bottomStartActionsSize.width.toDouble(), bottomStartActionsSize.height.toDouble()))
+            if (bottomCenterActionsSize.width > 0 && bottomCenterActionsSize.height > 0)
+                add(SpaceCompassSunSceneFrame(bottomCenterLeft,
+                    height - bottomCenterLift - bottomCenterActionsSize.height,
+                    bottomCenterActionsSize.width.toDouble(), bottomCenterActionsSize.height.toDouble()))
         }
         val pixelProjections = projections.mapValues { it.value.copy(x = it.value.x * density.density, y = it.value.y * density.density) }
         val liveDiameter = with(density) { SPACE_COMPASS_CELESTIAL_LIVE_PREVIEW_SIZE_DP.dp.toPx().toDouble() }
@@ -229,7 +244,7 @@ internal fun SpaceCompassSunPointingViewport(
                 scenePerspective, paths, pinnedTargets = pinned, hitExclusions = titleTouchExclusions,
                 showCaptions = showReticle) {
                 // Only thumbnails have small local targets; they never intercept another path's whole viewport.
-                spaceCompassAllCelestialOrder.forEach { candidate -> key(candidate) { projections[candidate]?.let { projected ->
+                markerBodies.forEach { candidate -> key(candidate) { projections[candidate]?.let { projected ->
                     val below = positions.getValue(candidate).elevationDegrees < 0
                     if (projected.visible) {
                         if (candidate.constellationPattern == null) SpaceCompassCelestialLiveMarker(candidate, projected, below, current[candidate], dailyPathUiState,
@@ -259,7 +274,7 @@ internal fun SpaceCompassSunPointingViewport(
             topEndActions(Modifier.align(Alignment.TopEnd).onSizeChanged { topEndActionsSize = it }
                 .padding(top = topContentInset))
             if (topCenterActions != null) {
-                // Keep floating app navigation between the measured corner clusters, also in RTL.
+                // Centre the scene controls between the measured corner buttons, also in RTL.
                 Box(Modifier.align(Alignment.TopCenter).fillMaxWidth()
                     .padding(start = with(density) { topStartActionsSize.width.toDp() } + centerGap,
                         end = with(density) { topEndActionsSize.width.toDp() } + centerGap,
@@ -273,13 +288,19 @@ internal fun SpaceCompassSunPointingViewport(
                 Row(Modifier.fillMaxWidth(), verticalAlignment = Alignment.CenterVertically) {
                     // Measure capture/zoom first, so a crowded start group cannot squeeze its circles.
                     Box(Modifier.weight(1f).align(Alignment.Bottom), contentAlignment = Alignment.CenterStart) {
-                        bottomStartActions(Modifier.onSizeChanged { bottomStartActionsSize = it })
+                        Box(Modifier.onSizeChanged { bottomStartActionsSize = it }) {
+                            bottomStartActions(Modifier)
+                        }
                     }
-                    Box(Modifier.align(Alignment.Bottom)) {
-                        bottomActions(Modifier.onSizeChanged { bottomActionsSize = it })
+                    // Measure the host even when its slot becomes empty after a layout change.
+                    Box(Modifier.align(Alignment.Bottom).onSizeChanged { bottomActionsSize = it }) {
+                        bottomActions(Modifier)
                     }
                 }
             }
+            bottomCenterActions(Modifier.align(Alignment.BottomCenter)
+                .offset(y = with(density) { (-bottomCenterLift).toFloat().toDp() })
+                .onSizeChanged { bottomCenterActionsSize = it })
             SpaceCompassSunStatusNotices(compassWarning, statusMessage, statusActionLabel, onStatusAction,
                 backgroundColor,
                 (if (noticesBelowReticle) Modifier.align(Alignment.TopCenter).offset(y = noticeTopInset)

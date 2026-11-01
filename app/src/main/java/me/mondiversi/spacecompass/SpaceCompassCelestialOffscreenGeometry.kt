@@ -62,16 +62,17 @@ internal fun fitSpaceCompassCelestialOffscreenDiameter(projections: Map<SpaceCom
 internal fun placeSpaceCompassCelestialOffscreenMarkers(projections: Map<SpaceCompassCelestialBody, SpaceCompassSunProjection>,
     width: Double, height: Double, diameter: Double,
     excluded: List<SpaceCompassSunSceneFrame> = emptyList()): Map<SpaceCompassCelestialBody, SpaceCompassCelestialOffscreenGeometry> {
-    if (listOf(width, height, diameter).any { !it.isFinite() || it <= 0 }) return emptyMap()
+    if (projections.isEmpty() || listOf(width, height, diameter).any { !it.isFinite() || it <= 0 }) return emptyMap()
     val extent = min(diameter, min(width, height))
     val occupied = excluded.toMutableList()
     val edgeRings = (0..2).map { celestialEdgeSlots(width, height, extent, excluded, it) }
+    val offscreenCount = projections.values.count { !it.visible }
     return buildMap {
-        spaceCompassAllCelestialOrder.forEach { body ->
+        spaceCompassOrderedCelestialSubset(projections.keys).forEach { body ->
             val projection = projections[body] ?: return@forEach
             val original = placeSpaceCompassCelestialOffscreenMarker(projection, width, height, extent, excluded) ?: return@forEach
             // Fill the outer ring before any inward fallback; arbitrary initial positions fragment its capacity.
-            val center = if (projections.values.count { !it.visible } == 1) original.center else edgeRings.firstNotNullOfOrNull { ring ->
+            val center = if (offscreenCount == 1) original.center else edgeRings.firstNotNullOfOrNull { ring ->
                 ring.filter { celestialMarkerClear(it, extent, occupied) }
                     .minByOrNull { hypot(it.x - original.center.x, it.y - original.center.y) }
             } ?: original.center

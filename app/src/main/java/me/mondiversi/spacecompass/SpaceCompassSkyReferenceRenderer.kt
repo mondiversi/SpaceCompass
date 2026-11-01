@@ -24,7 +24,8 @@ internal fun drawSpaceCompassSkyReferences(canvas: Canvas, latitude: Double, tim
     centerAzimuthDegrees: Double = 180.0,
     observerPointNames: Pair<String, String> = "Nadir (celestial)" to "Zenith (celestial)",
     observerAltitude: Double = 0.0,
-    placementState: SpaceCompassSkyReferencePlacementState? = null): SpaceCompassSkyReferenceDrawing {
+    placementState: SpaceCompassSkyReferencePlacementState? = null,
+    beforeCaptionLayout: ((List<SpaceCompassSunScenePoint>) -> Unit)? = null): SpaceCompassSkyReferenceDrawing {
     placementState?.viewport(width, height, scale)
     val fixedReserved = occupied.map { SpaceCompassSunSceneFrame(it.left.toDouble(), it.top.toDouble(),
         it.width().toDouble(), it.height().toDouble()) }
@@ -75,13 +76,14 @@ internal fun drawSpaceCompassSkyReferences(canvas: Canvas, latitude: Double, tim
         val reserved = occupied.map { SpaceCompassSunSceneFrame(it.left.toDouble(), it.top.toDouble(),
             it.width().toDouble(), it.height().toDouble()) }
         fun record(layout: SpaceCompassCurveTextLayout, textSize: Float): SpaceCompassSkyReferenceCurveLabel {
-            val b = layout.bounds
-            occupied += RectF(b.left.toFloat(), b.top.toFloat(), (b.left+b.width).toFloat(), (b.top+b.height).toFloat())
+            (if (placementState == null) listOf(layout.bounds) else layout.collisionFrames).forEach { b ->
+                occupied += RectF(b.left.toFloat(), b.top.toFloat(), (b.left+b.width).toFloat(), (b.top+b.height).toFloat())
+            }
             return SpaceCompassSkyReferenceCurveLabel(value, layout, tint, textSize).also { curveLabels += it }
         }
-        if (placementState != null && retainAnchor) {
+        if (placementState != null) {
             val retained = placementState.caption(key, segments, candidates, scale, width.toDouble(),
-                height.toDouble(), liveMinimumY, fixedReserved, reserved) { size ->
+                height.toDouble(), liveMinimumY, fixedReserved, reserved, followPreviousAnchor = retainAnchor) { size ->
                 text.textSize = size; text.measureText(value).toDouble()
             } ?: return null
             return record(retained.layout, retained.textSize)
@@ -91,7 +93,7 @@ internal fun drawSpaceCompassSkyReferences(canvas: Canvas, latitude: Double, tim
             text.textSize = size * scale
             val layout = spaceCompassChooseCurveTextLayout(segments, candidates, text.measureText(value).toDouble(),
                 text.textSize.toDouble(), (12f * scale).toDouble(), width.toDouble(), height.toDouble(),
-                minimumLabelY.toDouble(), if (placementState != null) fixedReserved else reserved) ?: continue
+                minimumLabelY.toDouble(), reserved) ?: continue
             return record(layout, text.textSize)
         }
         return null
@@ -115,6 +117,7 @@ internal fun drawSpaceCompassSkyReferences(canvas: Canvas, latitude: Double, tim
         }
     }
     val poles = mutableListOf<SpaceCompassSunScenePoint>()
+    val deferredPointCaptions = mutableListOf<Pair<String, SpaceCompassSunScenePoint>>()
     spaceCompassSkyGuidePoints(latitude, observerAltitude).forEach { guide ->
         val name = when (guide.kind) {
             SpaceCompassSkyGuidePointKind.NORTH_POLE -> poleNames.first
@@ -132,9 +135,13 @@ internal fun drawSpaceCompassSkyReferences(canvas: Canvas, latitude: Double, tim
                 p.x.toFloat() + 12 * scale, p.y.toFloat() + 12 * scale) }
             val degrees = guide.labelDegrees?.let { value ->
                 "  ${formatSpaceCompassSkyReferenceDegrees(value, numericFormat, systemLocale)}" }.orEmpty()
-            label(name + degrees, listOf(it), Color.WHITE)
+            if (beforeCaptionLayout == null) label(name + degrees, listOf(it), Color.WHITE)
+            else deferredPointCaptions += (name + degrees) to it
         }
     }
+    // Live orbit names register their actual bounds before guide captions choose either side.
+    beforeCaptionLayout?.invoke(poles)
+    deferredPointCaptions.forEach { (name, anchor) -> label(name, listOf(anchor), Color.WHITE) }
     // Point captions retain their horizontal boxes. Curved names/degree repeats use free, readable runs.
     curveRuns.forEach { (circle, segments, visible) ->
         val candidates = visible

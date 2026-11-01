@@ -24,24 +24,25 @@ class SpaceCompassSkyReferencePlacementTest {
         }
     }
 
-    @Test fun changingCandidateOrderAndMovingObstaclesCannotBounceAnEstablishedName() {
+    @Test fun aNameMovesBelowAnObstructingCaptionAndStaysStableDespiteCandidateReordering() {
         val state = SpaceCompassSkyReferencePlacementState().apply { viewport(600, 400, 1f) }
         val original = caption(state)!!
         for (frame in 0..120) {
             val jitter = sin(frame.toDouble()) * .2
             val points = candidates.map { it.copy(y = 150 + jitter) }.let { if (frame % 2 == 0) it.reversed() else it }
-            val moving = listOf(SpaceCompassSunSceneFrame(80.0 + frame % 3, 75.0, 150.0, 110.0))
+            val moving = listOf(SpaceCompassSunSceneFrame(80.0 + frame % 3, 60.0, 150.0, 90.0))
             val current = caption(state, 150 + jitter, points, occupied = moving)!!
             assertEquals(original.layout.anchor.x, current.layout.anchor.x, 1e-8)
             assertEquals(150 + jitter, current.layout.anchor.y, 1e-8)
             assertEquals(original.textSize, current.textSize)
+            assertTrue(current.layout.below)
         }
     }
 
     @Test fun aFixedControlMayRelocateANameOnceAndFreedSpaceDoesNotPullItBack() {
         val state = SpaceCompassSkyReferencePlacementState().apply { viewport(600, 400, 1f) }
         assertEquals(150.0, caption(state)!!.layout.anchor.x, 0.0)
-        val obstacle = listOf(SpaceCompassSunSceneFrame(60.0, 70.0, 210.0, 140.0))
+        val obstacle = listOf(SpaceCompassSunSceneFrame(60.0, 70.0, 210.0, 330.0))
         assertEquals(450.0, caption(state, fixed = obstacle)!!.layout.anchor.x, 0.0)
         repeat(20) { assertEquals(450.0, caption(state)!!.layout.anchor.x, 0.0) }
     }
@@ -59,7 +60,7 @@ class SpaceCompassSkyReferencePlacementTest {
 
     @Test fun viewportChangesResetOldPlacementAndClippedFragmentsNeverBecomeFalseBaselines() {
         val state = SpaceCompassSkyReferencePlacementState().apply { viewport(600, 400, 1f) }
-        caption(state, fixed = listOf(SpaceCompassSunSceneFrame(60.0, 70.0, 210.0, 140.0)))
+        caption(state, fixed = listOf(SpaceCompassSunSceneFrame(60.0, 70.0, 210.0, 330.0)))
         state.viewport(400, 600, 1f)
         assertEquals(150.0, caption(state)!!.layout.anchor.x, 0.0)
         val fragments = listOf(SpaceCompassSunPathSegment(SpaceCompassSunScenePoint(0.0, 150.0),

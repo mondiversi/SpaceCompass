@@ -38,8 +38,10 @@ internal fun SpaceCompassSkyReferenceLayer(latitude: Double?, timeMs: Long?,
     val placement = remember(names, poles, observerPoints, numericFormat, scale) {
         SpaceCompassSkyReferencePlacementState()
     }
-    val guides = if (!ready) Modifier else Modifier.drawWithContent {
-        if (size.width <= 0f || size.height <= 0f) { drawContent(); return@drawWithContent }
+    val orbitLabels = remember { mutableListOf<RectF>() }
+    val guides = Modifier.drawWithContent {
+        orbitLabels.clear()
+        if (!ready || size.width <= 0f || size.height <= 0f) { drawContent(); return@drawWithContent }
         val occupied = exclusions.map { frame -> RectF(frame.left.toFloat(), frame.top.toFloat(),
             (frame.left + frame.width).toFloat(), (frame.top + frame.height).toFloat()) }.toMutableList()
         val canvas = drawContext.canvas.nativeCanvas
@@ -48,14 +50,18 @@ internal fun SpaceCompassSkyReferenceLayer(latitude: Double?, timeMs: Long?,
             size.width.toInt(), size.height.toInt(), scale, occupied, orientation, perspective,
             circles = circles, referenceNames = names, poleNames = poles, allowLabelOverlap = false,
             numericFormat = numericFormat, observerPointNames = observerPoints, observerAltitude = observerAltitude,
-            placementState = placement)
-        // Curves/crosses stay behind bodies; all shaped names and point captions are drawn once in front.
-        drawSpaceCompassSkyReferenceLabels(canvas, drawing.copy(labels = emptyList(), curveLabels = emptyList()), scale)
-        canvas.restore()
-        drawContent()
-        canvas.save(); canvas.clipRect(0f, 0f, size.width, size.height)
+            placementState = placement, beforeCaptionLayout = { projectedPoles ->
+                drawSpaceCompassSkyReferenceLabels(canvas, SpaceCompassSkyReferenceDrawing(emptyList(), projectedPoles), scale)
+                canvas.restore()
+                drawContent()
+                // The shared list contains only names actually drawn in this viewport and draw pass.
+                occupied += orbitLabels
+                canvas.save(); canvas.clipRect(0f, 0f, size.width, size.height)
+            })
         drawSpaceCompassSkyReferenceLabels(canvas, drawing.copy(poles = emptyList()), scale)
         canvas.restore()
     }
-    Box(Modifier.fillMaxSize().then(guides).testTag("sky-reference-guides"), content = content)
+    CompositionLocalProvider(LocalSpaceCompassOrbitLabelReservations provides orbitLabels) {
+        Box(Modifier.fillMaxSize().then(guides).testTag("sky-reference-guides"), content = content)
+    }
 }

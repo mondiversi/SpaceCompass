@@ -17,17 +17,26 @@ internal fun spaceCompassOrbitTextPaint(size: Float) = Paint(Paint.ANTI_ALIAS_FL
 internal fun drawSpaceCompassOrbitName(canvas: Canvas, name: String, segments: List<SpaceCompassSunPathSegment>,
     arrow: SpaceCompassSunPathArrow, paint: Paint, tint: Int, offset: Float,
     occupied: MutableList<RectF> = mutableListOf(),
-    viewportWidth: Float = canvas.width.toFloat(), viewportHeight: Float = canvas.height.toFloat()): Boolean {
-    val baseline = spaceCompassOrbitTextBaseline(segments, arrow.center, paint.measureText(name).toDouble(),
-        paint.textSize.toDouble(), offset.toDouble()) ?: return false
-    val bounds = RectF(baseline.minOf { it.x }.toFloat() - paint.textSize,
-        baseline.minOf { it.y }.toFloat() - paint.textSize * 1.6f,
-        baseline.maxOf { it.x }.toFloat() + paint.textSize,
-        baseline.maxOf { it.y }.toFloat() + paint.textSize)
-    if (bounds.left < 0 || bounds.top < 0 || bounds.right > viewportWidth || bounds.bottom > viewportHeight ||
-        occupied.any { RectF.intersects(it, bounds) }) return false
+    viewportWidth: Float = canvas.width.toFloat(), viewportHeight: Float = canvas.height.toFloat(),
+    placement: SpaceCompassCurveCaptionPlacementState? = null, placementKey: String = ""): Boolean {
+    val layout = if (placement != null) {
+        val scale = paint.textSize / 24f
+        placement.viewport(viewportWidth.toInt(), viewportHeight.toInt(), scale)
+        placement.place(placementKey, segments, listOf(arrow.center), listOf(paint.textSize), offset.toDouble(),
+            viewportWidth.toDouble(), viewportHeight.toDouble(), 0.0, occupied.map {
+                SpaceCompassSunSceneFrame(it.left.toDouble(), it.top.toDouble(), it.width().toDouble(), it.height().toDouble())
+            }, scale, followPreviousAnchor = false) { paint.measureText(name).toDouble() }?.layout
+    } else spaceCompassCurveTextLayout(segments, arrow.center, paint.measureText(name).toDouble(),
+        paint.textSize.toDouble(), offset.toDouble())
+    if (layout == null) return false
+    val bounds = (if (placement == null) listOf(layout.bounds) else layout.collisionFrames).map { b ->
+        RectF(b.left.toFloat(), b.top.toFloat(), (b.left+b.width).toFloat(), (b.top+b.height).toFloat())
+    }
+    if (bounds.any { run -> run.left < 0 || run.top < 0 || run.right > viewportWidth || run.bottom > viewportHeight ||
+        occupied.any { RectF.intersects(it, run) } }) return false
+    val baseline = layout.baseline
     drawSpaceCompassCurveText(canvas, name, baseline, paint, tint)
-    occupied += bounds
+    occupied.addAll(bounds)
     return true
 }
 

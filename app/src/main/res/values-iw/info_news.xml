@@ -1,9 +1,9 @@
 <resources>
     <string name="info_news_title">החידושים האחרונים · %1$s</string>
-    <string name="info_news_star_sky" formatted="false">גבהים עיקריים נפתחים ממצפה הכוכבים בעמוד נפרד, עם עמודות לאירוע, לגובה ולתאריך ולשעה.</string>
-    <string name="info_news_texture_downloads" formatted="false">בחרו שנה מ־1900 עד 2100. החישובים השנתיים היציבים שומרים על נקודות קיצון משמעותיות ומעברים בחצי הגובה; אירועים יחידים אינם ממוספרים עוד.</string>
-    <string name="info_news_weather" formatted="false">ייצאו גבהים עיקריים כגיליון CSV או כטבלת TXT קריאה, עם התבניות שנבחרו ופרטיות המיקום.</string>
-    <string name="info_news_viewer_zoom" formatted="false">הפקדים הראשיים מסודרים בשתי שורות בפינה העליונה. מצלמה, מזג אוויר ו־0°/90° בשורה השנייה; במצב מצלמה מופיעים שקיפות וזום.</string>
-    <string name="info_news_settings" formatted="false">ההגדרות, טופסי Location ושמות הייצוא משתמשים בשדות קלט ובחירה קומפקטיים יותר, תוך שמירה על תוויות, עריכה מובנית וצבעי ערכת הנושא.</string>
-    <string name="info_news_catalog" formatted="false">הקישו על כותרת ניהול Location כדי להפעיל או לכבות יחד ערכים מותאמים שהוכנו. כל עצם שומר מיקומי גלילה נפרדים למצפה הכוכבים, למסלול היומי ולגבהים עיקריים.</string>
+    <string name="info_news_star_sky" formatted="false">פתחו אירועים מרכזיים מהמצפה עבור העצם, המיקום והשנה שנבחרו. הקישו על תאריך כדי לצפות באותו רגע כשהזמן מושהה.</string>
+    <string name="info_news_texture_downloads" formatted="false">עיינו בתקופות קוטביות, אורך היום, זמני זריחה ושקיעה קיצוניים, מופעי הירח, פריגיאה ואפוגיאה ואירועים פלנטריים כאשר יש נתונים אמינים.</string>
+    <string name="info_news_weather" formatted="false">ייצאו אירועים שנתיים כ-CSV או TXT קריא עם אפשרויות העיצוב ופרטיות המיקום המשותפות. התוצאות יציבות בעדכוני שעון ובסטיות GPS קלות.</string>
+    <string name="info_news_viewer_zoom" formatted="false">הלוגו והתפריט בקצות השורה והפקדים הראשיים במרכז. מצלמה לצד הצילום; מזג אוויר ו-0°/90° למטה במרכז. לרוחב: יחס שמיים/כרטיסים 60/40. לרוחב, דיוק הגובה מופיע בשורה שנייה.</string>
+    <string name="info_news_settings" formatted="false">תוויות מסלולים ונקודות ייחוס שמימיות יכולות להופיע מעל או מתחת לקווים קרובים, במיקום יציב וקריא יותר.</string>
+    <string name="info_news_catalog" formatted="false">מעברי כרטיסים חלקים יותר, עדיין במשך 300 אלפיות שנייה, ללא סריקת עצמים שלא נבחרו. זום התחלתי 0.5× או המבט הרחב הנתמך ביותר; פקדי צילום קומפקטיים יותר.</string>
 </resources>

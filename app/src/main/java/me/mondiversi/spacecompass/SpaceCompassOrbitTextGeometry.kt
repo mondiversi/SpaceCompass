@@ -5,7 +5,7 @@ import kotlin.math.*
 /** Space shaped glyphs on their actual offset curve, not on the orbit underneath. */
 internal fun spaceCompassOrbitTextBaseline(
     segments: List<SpaceCompassSunPathSegment>, center: SpaceCompassSunScenePoint,
-    textWidth: Double, textSize: Double, offset: Double
+    textWidth: Double, textSize: Double, offset: Double, below: Boolean = false
 ): List<SpaceCompassSunScenePoint>? {
     if (!textWidth.isFinite() || textWidth <= 0 || !textSize.isFinite() || textSize <= 0 ||
         !offset.isFinite() || offset < 0) return null
@@ -27,7 +27,7 @@ internal fun spaceCompassOrbitTextBaseline(
             val after = directions[i.coerceAtMost(directions.lastIndex)]
             val denominator = 1 + before.x * after.x + before.y * after.y
             if (denominator < 1.5) return null // Reject corners that would create a sharp offset spike.
-            val amount = offset / denominator
+            val amount = (if (below) -offset else offset) / denominator
             SpaceCompassSunScenePoint(point.x + (before.y + after.y) * amount,
                 point.y - (before.x + after.x) * amount)
         }
