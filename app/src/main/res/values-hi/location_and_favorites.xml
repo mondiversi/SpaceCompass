@@ -2,6 +2,6 @@
 <resources>
     <string name="catalog_favorites_only">केवल पसंदीदा दिखाएँ</string>
     <string name="catalog_favorites_off">पसंदीदा फ़िल्टर बंद करें</string>
-    <string name="location_export_include_objects">लोकेशन सहेजते समय खगोलीय पिंड शामिल करें</string>
-    <string name="location_export_objects_description">चिह्नित पिंड और मुख्य दृश्य में सक्रिय पिंड सहेजता है।</string>
+    <string name="location_export_include_objects">खगोलीय वस्तुएँ और चुने हुए बिंदु शामिल करें</string>
+    <string name="location_export_objects_description">चिह्नित वस्तुओं, सक्रिय वस्तु और उनके पथों पर चुने हुए बिंदुओं को सहेजता है।</string>
 </resources>

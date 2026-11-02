@@ -1,9 +1,9 @@
 <resources>
     <string name="info_news_title">最新变化 · %1$s</string>
-    <string name="info_news_star_sky" formatted="false">交互式教程说明主要控件，欢迎消息仅在首次启动时显示。</string>
-    <string name="info_news_texture_downloads" formatted="false">可选择当天轨迹（0–24）或未来24小时（+24h）。每日轨迹、拍摄标签和导出表格使用同一时间范围。</string>
-    <string name="info_news_weather" formatted="false">轻触空白天空可显示或隐藏准星及信息气泡。拍摄标签保留各自的独立设置。</string>
-    <string name="info_news_viewer_zoom" formatted="false">已选点可显示其对跖方向。轻触对跖点按钮可显示或隐藏；长按可取消选择所有点。</string>
-    <string name="info_news_settings" formatted="false">可见对跖点会包含在照片、全景图及其导出表格中。每日轨迹及其导出仅保留原始点。</string>
-    <string name="info_news_catalog" formatted="false">当前天体仅使用一个边框，颜色与其在地平线上方或下方的轨迹一致。已选当前位置使用蓝色或青色边框。</string>
+    <string name="info_news_star_sky" formatted="false">Location导出可包含已选天体、当前天体及轨迹上已选的点。</string>
+    <string name="info_news_texture_downloads" formatted="false">导入会恢复已选点，并保持对旧版Location文件的兼容。</string>
+    <string name="info_news_weather" formatted="false">等大的图标区分已选点及其对跖点，计数徽标采用中性的日夜配色。</string>
+    <string name="info_news_viewer_zoom" formatted="false">天空和相机视图中的对跖点标记内部透明，与照片和全景图保持一致。</string>
+    <string name="info_news_settings" formatted="false">教程中的点击不会改变实际选择或对跖点。相机演示仅影响教程控件。</string>
+    <string name="info_news_catalog" formatted="false">点和对跖点的通知更加清晰。短按不再振动，长按仍会通过触觉反馈取消所有点的选择。</string>
 </resources>

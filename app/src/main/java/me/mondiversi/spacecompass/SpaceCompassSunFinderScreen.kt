@@ -577,7 +577,7 @@ internal fun SpaceCompassSunFinderContent(
                 }, primaryText, backgroundColor)
                 SpaceCompassCaptureButton(if (tutorialActive) ({}) else panorama.capture,
                     tutorialActive || (!panorama.busy && (!cameraEnabled || cameraCapture != null)),
-                    cameraEnabled = cameraControlsMode, animateBorder = resumed && mainVisible)
+                    cameraEnabled = cameraEnabled, animateBorder = resumed && mainVisible)
             }
         }
     }
@@ -614,7 +614,7 @@ internal fun SpaceCompassSunFinderContent(
                         optical.copy(left = optical.left - viewport.left, top = optical.top - viewport.top)
                     } },
                     drawScene = false, objectOpacity = cameraObjectOpacity, showReticle = showReticle,
-                    showAntipodes = if (tutorialActive) tutorial?.antipodesPreview == true else showAntipodes,
+                    showAntipodes = showAntipodes,
                     onToggleReticle = {
                         showReticle = !showReticle
                         saveSpaceCompassReticleVisible(scenePreferences, showReticle)
@@ -631,7 +631,7 @@ internal fun SpaceCompassSunFinderContent(
                             }, primaryText, backgroundColor, landscape = landscape)
                             val selectedPointCount = dailyPathUiState.selectedPoints.size
                             if (selectedPointCount > 0 || tutorialActive) SpaceCompassAntipodesButton(
-                                if (tutorialActive) tutorial?.antipodesPreview == true else showAntipodes, {
+                                showAntipodes, {
                                     if (tutorialActive) tutorial?.explore(SpaceCompassTutorialFeature.ANTIPODES)
                                     else {
                                         dailyPathUiState.toggleAntipodes()
@@ -762,7 +762,7 @@ internal fun SpaceCompassSunFinderContent(
             dailyPathUiState, primaryText, secondaryText, backgroundColor,
             fix?.latitude, fix?.takeIf { it.hasAltitude() }?.altitude ?: 0.0, showSkyReferences,
             0.0, Modifier.fillMaxSize(), longitude = fix?.longitude, objectOpacity = cameraObjectOpacity,
-            showReticle = showReticle, showAntipodes = !tutorialActive && showAntipodes)
+            showReticle = showReticle, showAntipodes = showAntipodes)
         // Retain the readability fallback when the 45% information pane is too narrow.
         val minimumPanelWidth = if (largeText) 280.dp else 210.dp
         val detailsWidth = viewportWidth * 0.45f

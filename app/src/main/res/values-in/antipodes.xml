@@ -2,6 +2,8 @@
 <resources>
     <string name="scene_antipodes" formatted="false">Antipoda</string>
     <string name="scene_antipode" formatted="false">Antipoda</string>
-    <string name="scene_antipodes_on" formatted="false">Antipoda ditampilkan</string>
-    <string name="scene_antipodes_off" formatted="false">Antipoda disembunyikan</string>
+    <string name="scene_antipodes_on" formatted="false">Titik terpilih dan antipoda terlihat</string>
+    <string name="scene_antipodes_off" formatted="false">Hanya titik terpilih yang terlihat</string>
+    <string name="scene_selected_points" formatted="false">Titik terpilih</string>
+    <string name="scene_selected_points_antipodes" formatted="false">Titik terpilih dan antipodanya</string>
 </resources>

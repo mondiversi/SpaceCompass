@@ -118,6 +118,16 @@ internal class SpaceCompassSunDailyPathUiState(
     }
     fun clearSelection() { selection.clear(); lastSelectedKey = null; antipodesVisible = false }
 
+    /** Missing legacy payloads preserve pins; an explicit list replaces them without haptic feedback. */
+    fun restoreImportedPoints(points: List<SpaceCompassSelectedOrbitPoint>?) {
+        if (points == null) return
+        points.forEach(::spaceCompassCheckLocationPoint)
+        require(points.map { it.key }.toSet().size == points.size)
+        clearSelection()
+        closeMenu()
+        points.forEach { add(it.copy(path = null)) }
+    }
+
     /** Explicit navigation helpers: sky taps use toggleScenePoint instead. */
     fun openPoint(path: SpaceCompassSunDailyPath, point: SpaceCompassSunPathPoint,
         currentPoint: SpaceCompassSunPathPoint? = null) {
@@ -135,8 +145,11 @@ internal class SpaceCompassSunDailyPathUiState(
     }
 }
 
+internal val LocalSpaceCompassOrbitSelection = staticCompositionLocalOf<SpaceCompassSunDailyPathUiState?> { null }
+
 @Composable
 internal fun rememberSpaceCompassSunDailyPathUiState(): SpaceCompassSunDailyPathUiState {
+    LocalSpaceCompassOrbitSelection.current?.let { return it }
     val haptics = rememberSpaceCompassHapticController()
     return remember(haptics) {
         SpaceCompassSunDailyPathUiState { selected ->
@@ -168,7 +181,7 @@ internal fun projectSpaceCompassSelectedOrbitTargets(selected: List<SpaceCompass
         val displayed = if (antipodes) point.antipodalDirection() else point
         projectSpaceCompassSun(displayed.position, orientation, width, height, perspective).takeIf { it.visible }?.let {
             SpaceCompassCelestialSceneTarget(body, displayed, SpaceCompassSunScenePoint(it.x, it.y),
-                if (!saved.key.isCurrent && refreshedMarker == null) saved.path else path ?: saved.path,
+                if (!saved.key.isCurrent && refreshedMarker == null) saved.path ?: compatiblePath else path ?: saved.path,
                 saved.key.isCurrent, point.takeIf { antipodes })
         }
     }

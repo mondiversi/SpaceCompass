@@ -12,7 +12,8 @@ internal const val SPACE_COMPASS_SCENARIO_MIME = "application/octet-stream"
 /** Portable configuration only: no running-clock anchor, checkpoint, device ID or elapsed time. */
 internal data class SpaceCompassScenarioArchive(val name: String, val configuration: SpaceCompassObserverPlan,
     val timeSettings: SpaceCompassScenarioTimeSettings,
-    val celestialSelection: SpaceCompassCelestialSelection? = null, val temporalSettingsIncluded: Boolean = true) {
+    val celestialSelection: SpaceCompassCelestialSelection? = null, val temporalSettingsIncluded: Boolean = true,
+    val selectedOrbitPoints: List<SpaceCompassSelectedOrbitPoint>? = null) {
     val custom: Boolean get() = configuration.activeSections.isNotEmpty()
 
     fun configurationAtImport(now: Long, deviceZone: ZoneId): SpaceCompassObserverPlan {
@@ -49,6 +50,7 @@ internal data class SpaceCompassScenarioArchive(val name: String, val configurat
                 setProperty("activeObject", selection.active?.name.orEmpty())
             }
         }
+        properties.putSpaceCompassLocationPoints(selectedOrbitPoints, celestialSelection)
         // Properties escapes control characters and delimiters. Omit its generated wall-clock comment.
         val out = StringWriter().also { properties.store(it, null) }.toString()
             .lineSequence().filter { it.isNotEmpty() && !it.startsWith('#') }.sorted().joinToString("\n", postfix = "\n")
@@ -98,7 +100,8 @@ internal data class SpaceCompassScenarioArchive(val name: String, val configurat
             val temporal = p.getProperty("temporalSettingsIncluded")?.toBooleanStrict() ?: true
             if (!temporal) require(!c.simulateDate && !c.simulateTime && !c.advanceTime && c.clockOffsetMs == null &&
                 c.timeMs == 0L && c.momentZoneId == "UTC" && settings == SpaceCompassScenarioTimeSettings())
-            return SpaceCompassScenarioArchive(name, c, settings, selection, temporal)
+            val points = p.readSpaceCompassLocationPoints(selection)
+            return SpaceCompassScenarioArchive(name, c, settings, selection, temporal, points)
         }
     }
 }

@@ -1,9 +1,9 @@
 <resources>
     <string name="info_news_title">تازه‌ترین تغییرات · %1$s</string>
-    <string name="info_news_star_sky" formatted="false">آموزش تعاملی کنترل‌های اصلی را توضیح می‌دهد. پیام خوشامد فقط در نخستین اجرا نمایش داده می‌شود.</string>
-    <string name="info_news_texture_downloads" formatted="false">مسیرهای روز (0–24) یا ۲۴ ساعت آینده (+24h) را انتخاب کنید. مسیر روزانه، برچسب عکس‌ها و جدول‌های خروجی از بازه یکسانی پیروی می‌کنند.</string>
-    <string name="info_news_weather" formatted="false">برای نمایش یا پنهان کردن نشانگر و حباب‌های اطلاعات، آسمان خالی را لمس کنید. برچسب عکس‌ها تنظیم مستقل خود را حفظ می‌کنند.</string>
-    <string name="info_news_viewer_zoom" formatted="false">نقاط انتخاب‌شده می‌توانند جهت‌های مقابل خود را نشان دهند. برای نمایش یا پنهان کردن، دکمه پادسوها را لمس کنید؛ برای لغو انتخاب همه نقاط، آن را نگه دارید.</string>
-    <string name="info_news_settings" formatted="false">پادسوهای نمایان در عکس‌ها، پانوراماها و جدول‌های خروجی مربوط گنجانده می‌شوند. مسیر روزانه و خروجی‌های آن فقط نقاط اصلی را نگه می‌دارند.</string>
-    <string name="info_news_catalog" formatted="false">اجرام فعلی یک حاشیه به رنگ مدار در بالا یا پایین افق دارند. موقعیت‌های فعلی انتخاب‌شده حاشیه آبی یا فیروزه‌ای دارند.</string>
+    <string name="info_news_star_sky" formatted="false">خروجی Location می‌تواند شامل اجرام آسمانی انتخاب‌شده، جرم فعال و نقاط انتخاب‌شده روی مسیرها باشد.</string>
+    <string name="info_news_texture_downloads" formatted="false">وارد کردن فایل، نقاط انتخاب‌شده را بازیابی می‌کند و با فایل‌های قدیمی Location سازگار می‌ماند.</string>
+    <string name="info_news_weather" formatted="false">نمادهای هم‌اندازه نقاط انتخاب‌شده را از نقاط مقابل آن‌ها متمایز می‌کنند و شمارنده رنگ‌های خنثی روز و شب دارد.</string>
+    <string name="info_news_viewer_zoom" formatted="false">داخل نشانگرهای نقاط مقابل در نمای آسمان و دوربین، مانند عکس‌ها و پانوراماها شفاف است.</string>
+    <string name="info_news_settings" formatted="false">لمس‌ها در آموزش، انتخاب‌های واقعی یا نقاط مقابل را تغییر نمی‌دهند. نمایش دوربین فقط بر کنترل‌های آموزش اثر می‌گذارد.</string>
+    <string name="info_news_catalog" formatted="false">اعلان‌های روشن‌تر برای نقاط و نقاط مقابل. لمس کوتاه دیگر لرزش ندارد؛ نگه‌داشتن دکمه انتخاب همه نقاط را با بازخورد لمسی لغو می‌کند.</string>
 </resources>

@@ -2,6 +2,8 @@
 <resources>
     <string name="scene_antipodes" formatted="false">Антиподы</string>
     <string name="scene_antipode" formatted="false">Антипод</string>
-    <string name="scene_antipodes_on" formatted="false">Антиподы показаны</string>
-    <string name="scene_antipodes_off" formatted="false">Антиподы скрыты</string>
+    <string name="scene_antipodes_on" formatted="false">Видны выбранные точки и антиподы</string>
+    <string name="scene_antipodes_off" formatted="false">Видны только выбранные точки</string>
+    <string name="scene_selected_points" formatted="false">Выбранные точки</string>
+    <string name="scene_selected_points_antipodes" formatted="false">Выбранные точки и их антиподы</string>
 </resources>

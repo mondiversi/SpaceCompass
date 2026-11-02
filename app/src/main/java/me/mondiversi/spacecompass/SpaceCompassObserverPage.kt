@@ -34,6 +34,7 @@ private fun SpaceCompassObserverEditor(observer: SpaceCompassObserverState, modi
     val context = LocalContext.current
     val resources = LocalResources.current
     val preferences = LocalSpaceCompassPreferences.current
+    val orbitSelection = LocalSpaceCompassOrbitSelection.current
     val rejectSettingsExit = LocalSpaceCompassSettingsExitFailure.current
     val feet = LocalSpaceCompassUnits.current.feet
     val numeric = LocalSpaceCompassNumericFormat.current
@@ -404,8 +405,8 @@ private fun SpaceCompassObserverEditor(observer: SpaceCompassObserverState, modi
                     val configured = SpaceCompassScenarioArchive.capture(observer, resources.getString(R.string.observer_title), now, deviceZone)
                     val exportBase = configured.withAutomaticLocation(spaceCompassScenarioCurrentValues(
                         observer.plan, observer.devicePlace, observer.timeSettings, now, deviceZone)) ?: configured
-                    val archive = exportBase.copy(celestialSelection = if (includeObjects)
-                        readSpaceCompassCelestialSelection(preferences) else null)
+                    val archive = if (includeObjects) exportBase.withCelestialObjects(
+                        readSpaceCompassCelestialSelection(preferences), orbitSelection?.selectedPoints.orEmpty()) else exportBase
                     val namedImport = observer.archiveName?.takeUnless {
                         it == resources.getString(R.string.observer_title) || it == "Scenario"
                     }
@@ -415,6 +416,7 @@ private fun SpaceCompassObserverEditor(observer: SpaceCompassObserverState, modi
                 // Discard old pending work before replacing the editor; disposal must not overwrite the imported file.
                 lookup?.cancel(); lookupRevision++; editRevision = 0
                 observer.importArchive(archive)
+                orbitSelection?.restoreImportedPoints(archive.selectedOrbitPoints)
             }, enabled = !busy)
         }
         if (section == null) {

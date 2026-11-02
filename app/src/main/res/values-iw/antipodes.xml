@@ -2,6 +2,8 @@
 <resources>
     <string name="scene_antipodes" formatted="false">נקודות נגדיות</string>
     <string name="scene_antipode" formatted="false">נקודה נגדית</string>
-    <string name="scene_antipodes_on" formatted="false">הנקודות הנגדיות מוצגות</string>
-    <string name="scene_antipodes_off" formatted="false">הנקודות הנגדיות מוסתרות</string>
+    <string name="scene_antipodes_on" formatted="false">הנקודות שנבחרו והנקודות הנגדיות מוצגות</string>
+    <string name="scene_antipodes_off" formatted="false">רק הנקודות שנבחרו מוצגות</string>
+    <string name="scene_selected_points" formatted="false">נקודות שנבחרו</string>
+    <string name="scene_selected_points_antipodes" formatted="false">נקודות שנבחרו והנקודות הנגדיות שלהן</string>
 </resources>

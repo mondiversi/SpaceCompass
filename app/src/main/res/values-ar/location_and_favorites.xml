@@ -2,6 +2,6 @@
 <resources>
     <string name="catalog_favorites_only">عرض المفضلة فقط</string>
     <string name="catalog_favorites_off">إيقاف تصفية المفضلة</string>
-    <string name="location_export_include_objects">تضمين الأجرام السماوية عند حفظ الموقع</string>
-    <string name="location_export_objects_description">يحفظ الأجرام المحددة والجرم النشط في العرض الرئيسي.</string>
+    <string name="location_export_include_objects">تضمين الأجرام السماوية والنقاط المحددة</string>
+    <string name="location_export_objects_description">يحفظ الأجرام المؤشر عليها والجرم النشط والنقاط المحددة على مساراتها.</string>
 </resources>

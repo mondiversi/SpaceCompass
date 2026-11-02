@@ -2,6 +2,8 @@
 <resources>
     <string name="scene_antipodes" formatted="false">Αντίποδες</string>
     <string name="scene_antipode" formatted="false">Αντίποδας</string>
-    <string name="scene_antipodes_on" formatted="false">Οι αντίποδες εμφανίζονται</string>
-    <string name="scene_antipodes_off" formatted="false">Οι αντίποδες κρύφτηκαν</string>
+    <string name="scene_antipodes_on" formatted="false">Ορατά τα επιλεγμένα σημεία και οι αντίποδες</string>
+    <string name="scene_antipodes_off" formatted="false">Ορατά μόνο τα επιλεγμένα σημεία</string>
+    <string name="scene_selected_points" formatted="false">Επιλεγμένα σημεία</string>
+    <string name="scene_selected_points_antipodes" formatted="false">Επιλεγμένα σημεία και οι αντίποδές τους</string>
 </resources>

@@ -1,9 +1,9 @@
 <resources>
     <string name="info_news_title">Ostatnie nowości · %1$s</string>
-    <string name="info_news_star_sky" formatted="false">Interaktywny samouczek objaśnia główne elementy sterowania. Powitanie pojawia się tylko przy pierwszym uruchomieniu.</string>
-    <string name="info_news_texture_downloads" formatted="false">Wybierz trajektorie dnia (0–24) lub następnych 24 godzin (+24h). Przebieg dzienny, etykiety zdjęć i eksportowane tabele używają tego samego przedziału.</string>
-    <string name="info_news_weather" formatted="false">Dotknij pustego nieba, aby pokazać lub ukryć celownik i dymki informacyjne. Etykiety zdjęć zachowują osobne ustawienie.</string>
-    <string name="info_news_viewer_zoom" formatted="false">Wybrane punkty mogą pokazywać kierunki antypodalne. Dotknij Antypody, aby je pokazać lub ukryć; przytrzymaj, aby odznaczyć wszystkie punkty.</string>
-    <string name="info_news_settings" formatted="false">Widoczne antypody są uwzględniane na zdjęciach, panoramach i w ich eksportowanych tabelach. Przebieg dzienny i jego eksporty zachowują tylko oryginalne punkty.</string>
-    <string name="info_news_catalog" formatted="false">Aktualne obiekty mają jedną obwódkę w kolorze orbity nad lub pod horyzontem. Wybrane aktualne pozycje mają obwódkę niebieską lub błękitną.</string>
+    <string name="info_news_star_sky" formatted="false">Eksporty Location mogą zawierać wybrane obiekty niebieskie, aktywny obiekt i wybrane punkty na torach.</string>
+    <string name="info_news_texture_downloads" formatted="false">Import przywraca wybrane punkty i pozostaje zgodny ze starszymi plikami Location.</string>
+    <string name="info_news_weather" formatted="false">Symbole o jednakowej wielkości odróżniają wybrane punkty od ich antypodów, z neutralnym licznikiem dziennym i nocnym.</string>
+    <string name="info_news_viewer_zoom" formatted="false">Znaczniki antypodów mają przezroczyste wnętrze w widoku nieba i aparatu, tak jak na zdjęciach i panoramach.</string>
+    <string name="info_news_settings" formatted="false">Dotknięcia w samouczku nie zmieniają rzeczywistych wyborów ani antypodów. Demonstracja aparatu dotyczy tylko elementów samouczka.</string>
+    <string name="info_news_catalog" formatted="false">Czytelniejsze powiadomienia o punktach i antypodach. Krótkie dotknięcie już nie wibruje; przytrzymanie odznacza wszystkie punkty z reakcją dotykową.</string>
 </resources>

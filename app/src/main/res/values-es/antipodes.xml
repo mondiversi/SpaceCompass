@@ -2,6 +2,8 @@
 <resources>
     <string name="scene_antipodes" formatted="false">Antípodas</string>
     <string name="scene_antipode" formatted="false">Antípoda</string>
-    <string name="scene_antipodes_on" formatted="false">Antípodas visibles</string>
-    <string name="scene_antipodes_off" formatted="false">Antípodas ocultas</string>
+    <string name="scene_antipodes_on" formatted="false">Puntos seleccionados y antípodas visibles</string>
+    <string name="scene_antipodes_off" formatted="false">Solo puntos seleccionados visibles</string>
+    <string name="scene_selected_points" formatted="false">Puntos seleccionados</string>
+    <string name="scene_selected_points_antipodes" formatted="false">Puntos seleccionados y sus antípodas</string>
 </resources>

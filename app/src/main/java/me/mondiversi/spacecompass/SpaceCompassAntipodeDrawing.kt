@@ -7,9 +7,8 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.drawscope.DrawScope
 import androidx.compose.ui.graphics.drawscope.Stroke
 
-internal fun DrawScope.drawSpaceCompassAntipode(center: Offset, radius: Float, tint: Color, width: Float,
-    halo: Boolean = true) {
-    if (halo) drawCircle(Color.Black.copy(alpha = .65f), radius + width, center)
+/** Outline-only marker: preserve the sky or camera image inside the antipode. */
+internal fun DrawScope.drawSpaceCompassAntipode(center: Offset, radius: Float, tint: Color, width: Float) {
     drawCircle(tint, radius, center, style = Stroke(width))
     val delta = Offset(radius * .48f, -radius * .48f)
     drawLine(tint, center - delta, center + delta, width)

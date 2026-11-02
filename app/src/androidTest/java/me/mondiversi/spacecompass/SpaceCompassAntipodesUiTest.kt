@@ -37,7 +37,7 @@ class SpaceCompassAntipodesUiTest {
                 else lightColorScheme(primary = Color.Blue)) {
                 Box(Modifier.size(120.dp)) {
                     if (state.selectedPoints.isNotEmpty()) SpaceCompassAntipodesButton(state.antipodesVisible, state::toggleAntipodes,
-                        MaterialTheme.colorScheme.primary, if (dark.value) Color.Black else Color.White,
+                        MaterialTheme.colorScheme.onSurface, if (dark.value) Color.Black else Color.White,
                         selectedCount = state.selectedPoints.size, onClear = state::clearSelection)
                 }
             }
@@ -58,15 +58,22 @@ class SpaceCompassAntipodesUiTest {
         compose.runOnIdle { state.clearSelection() }
         compose.onNodeWithTag("toggle-antipodes").assertDoesNotExist()
     }
-    @Test fun activeAntipodeIconUsesTheBlueOrCyanThemeAccent() {
-        state.select(moon, markers[0]); state.toggleAntipodes(); show()
+    @Test fun pointAndAntipodeModesChangeTheSymbolWhileKeepingNeutralThemeInk() {
+        state.select(moon, markers[0]); show()
         for (night in listOf(false, true)) {
             compose.runOnIdle { dark.value = night }
-            val bitmap = compose.onNodeWithTag("toggle-antipodes").captureToImage().asAndroidBitmap()
-            val pixels = IntArray(bitmap.width * bitmap.height)
-            bitmap.getPixels(pixels, 0, bitmap.width, 0, 0, bitmap.width, bitmap.height)
-            val foreground = (if (night) Color.Cyan else Color.Blue).toArgb()
-            assertTrue("The antipode icon has visible theme accent ink", pixels.count { it == foreground } > 10)
+            var previous: IntArray? = null
+            for (enabled in listOf(false, true)) {
+                compose.runOnIdle { if (state.antipodesVisible != enabled) state.toggleAntipodes() }
+                val bitmap = compose.onNodeWithTag("toggle-antipodes").captureToImage().asAndroidBitmap()
+                val pixels = IntArray(bitmap.width * bitmap.height)
+                bitmap.getPixels(pixels, 0, bitmap.width, 0, 0, bitmap.width, bitmap.height)
+                val scheme = if (night) darkColorScheme(primary = Color.Cyan) else lightColorScheme(primary = Color.Blue)
+                assertTrue("Both symbols retain neutral theme ink", pixels.count { it == scheme.onSurface.toArgb() } > 10)
+                assertEquals("The counter and icon do not use selection blue/cyan", 0, pixels.count { it == scheme.primary.toArgb() })
+                previous?.let { assertTrue("The two modes have different symbols", !pixels.contentEquals(it)) }
+                previous = pixels
+            }
         }
     }
     @Test fun longPressClearsEveryOrbitAndDisablesAntipodes() {

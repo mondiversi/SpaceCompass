@@ -2,6 +2,8 @@
 <resources>
     <string name="scene_antipodes" formatted="false">Nukta kinzani</string>
     <string name="scene_antipode" formatted="false">Nukta kinzani</string>
-    <string name="scene_antipodes_on" formatted="false">Nukta kinzani zinaonekana</string>
-    <string name="scene_antipodes_off" formatted="false">Nukta kinzani zimefichwa</string>
+    <string name="scene_antipodes_on" formatted="false">Nukta zilizochaguliwa na antipodi zinaonekana</string>
+    <string name="scene_antipodes_off" formatted="false">Nukta zilizochaguliwa pekee zinaonekana</string>
+    <string name="scene_selected_points" formatted="false">Nukta zilizochaguliwa</string>
+    <string name="scene_selected_points_antipodes" formatted="false">Nukta zilizochaguliwa na antipodi zake</string>
 </resources>

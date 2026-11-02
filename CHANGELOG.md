@@ -1,5 +1,13 @@
 # Changelog
 
+## 1.7.8 — 2026-11-02
+
+- Include selected orbit points with celestial objects in Location exports and restore them on import. Preserve the active object, event information and point selection; keep older files compatible and reset derived antipodes on import.
+- Use distinct, equally sized selected-point and antipode symbols with a neutral day/night counter. Short antipode toggles no longer vibrate; holding the button still clears selected points with haptic feedback.
+- Remove the dark fill behind projected antipodes so the sky or camera image remains visible, matching photo and panorama exports.
+- Keep tutorial taps read-only for antipodes and other controls. Only the camera control changes its tutorial presentation; it never starts the real camera. Explanations and accessibility labels follow the actual point/antipode state.
+- Clarify the Android notifications for selected points alone or selected points with antipodes, with translations in all twenty languages.
+
 ## 1.7.7 — 2026-11-02
 
 - Add an interactive main-view tutorial, accessible from the menu, and a welcome shown once. The camera demonstration does not enable the actual camera or alter saved preferences.

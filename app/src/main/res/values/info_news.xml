@@ -1,9 +1,9 @@
 <resources>
     <string name="info_news_title">Latest news · %1$s</string>
-    <string name="info_news_star_sky" formatted="false">An interactive tutorial explains the main controls, with a welcome shown only on the first launch.</string>
-    <string name="info_news_texture_downloads" formatted="false">Choose calendar-day paths (0–24) or the next 24 hours (+24h). Daily path, capture labels and exported tables follow the same interval.</string>
-    <string name="info_news_weather" formatted="false">Tap empty sky to show or hide the reticle and its information bubbles. Capture labels keep their own setting.</string>
-    <string name="info_news_viewer_zoom" formatted="false">Selected points can show their antipodal directions. Tap the Antipodes button to show or hide them; hold it to deselect all points.</string>
-    <string name="info_news_settings" formatted="false">Visible antipodes are included in photos, panoramas and their exported tables. Daily path and its exports retain only the original points.</string>
-    <string name="info_news_catalog" formatted="false">Current objects use one border matching the orbit colour above or below the horizon. Selected current positions have a blue or cyan border.</string>
+    <string name="info_news_star_sky" formatted="false">Location exports can include selected celestial objects, the active object and selected orbit points.</string>
+    <string name="info_news_texture_downloads" formatted="false">Importing restores selected points and remains compatible with older Location files.</string>
+    <string name="info_news_weather" formatted="false">Equally sized symbols distinguish selected points from their antipodes, with a neutral day/night counter.</string>
+    <string name="info_news_viewer_zoom" formatted="false">Antipode markers have transparent interiors in the sky and camera views, consistently with photos and panoramas.</string>
+    <string name="info_news_settings" formatted="false">Tutorial taps leave real selections and antipodes unchanged. The camera demonstration affects only tutorial controls.</string>
+    <string name="info_news_catalog" formatted="false">Clearer point and antipode notifications. Short toggles no longer vibrate; holding still clears selected points with feedback.</string>
 </resources>

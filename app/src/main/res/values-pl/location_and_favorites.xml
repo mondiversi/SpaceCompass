@@ -2,6 +2,6 @@
 <resources>
     <string name="catalog_favorites_only">Pokaż tylko ulubione</string>
     <string name="catalog_favorites_off">Wyłącz filtr ulubionych</string>
-    <string name="location_export_include_objects">Uwzględnij obiekty niebieskie przy zapisie lokalizacji</string>
-    <string name="location_export_objects_description">Zapisuje zaznaczone obiekty i aktywny obiekt widoku głównego.</string>
+    <string name="location_export_include_objects">Dołącz obiekty niebieskie i wybrane punkty</string>
+    <string name="location_export_objects_description">Zapisuje zaznaczone obiekty, aktywny obiekt i wybrane punkty na ich trajektoriach.</string>
 </resources>

@@ -1,9 +1,9 @@
 <resources>
     <string name="info_news_title">Últimas novidades · %1$s</string>
-    <string name="info_news_star_sky" formatted="false">Um tutorial interativo explica os comandos principais, com boas-vindas exibidas apenas na primeira abertura.</string>
-    <string name="info_news_texture_downloads" formatted="false">Escolha trajetórias do dia (0–24) ou das próximas 24 horas (+24h). Percurso diário, etiquetas das capturas e tabelas exportadas seguem o mesmo intervalo.</string>
-    <string name="info_news_weather" formatted="false">Toque no céu vazio para mostrar ou ocultar a mira e os balões informativos. As etiquetas das capturas mantêm a própria configuração.</string>
-    <string name="info_news_viewer_zoom" formatted="false">Os pontos selecionados podem mostrar suas direções antípodas. Toque em Antípodas para mostrar ou ocultar; mantenha pressionado para desmarcar todos os pontos.</string>
-    <string name="info_news_settings" formatted="false">As antípodas visíveis são incluídas nas fotos, panoramas e respectivas tabelas exportadas. Percurso diário e suas exportações mantêm apenas os pontos originais.</string>
-    <string name="info_news_catalog" formatted="false">Os objetos atuais têm uma única borda da cor da órbita, acima ou abaixo do horizonte. As posições atuais selecionadas têm borda azul ou ciano.</string>
+    <string name="info_news_star_sky" formatted="false">As exportações de Location podem incluir os objetos celestes selecionados, o objeto ativo e os pontos selecionados nas trajetórias.</string>
+    <string name="info_news_texture_downloads" formatted="false">A importação restaura os pontos selecionados e mantém a compatibilidade com ficheiros Location anteriores.</string>
+    <string name="info_news_weather" formatted="false">Símbolos do mesmo tamanho distinguem os pontos selecionados dos seus antípodas, com um contador neutro de dia e noite.</string>
+    <string name="info_news_viewer_zoom" formatted="false">Os marcadores de antípodas têm o interior transparente nas vistas do céu e da câmara, como nas fotografias e panoramas.</string>
+    <string name="info_news_settings" formatted="false">Os toques no tutorial não alteram as seleções reais nem os antípodas. A demonstração da câmara afeta apenas os controlos do tutorial.</string>
+    <string name="info_news_catalog" formatted="false">Notificações mais claras para pontos e antípodas. O toque breve já não vibra; manter premido desmarca todos os pontos com resposta tátil.</string>
 </resources>

@@ -2,6 +2,8 @@
 <resources>
     <string name="scene_antipodes" formatted="false">대척점</string>
     <string name="scene_antipode" formatted="false">대척점</string>
-    <string name="scene_antipodes_on" formatted="false">대척점 표시</string>
-    <string name="scene_antipodes_off" formatted="false">대척점 숨김</string>
+    <string name="scene_antipodes_on" formatted="false">선택한 점과 대척점 표시</string>
+    <string name="scene_antipodes_off" formatted="false">선택한 점만 표시</string>
+    <string name="scene_selected_points" formatted="false">선택한 점</string>
+    <string name="scene_selected_points_antipodes" formatted="false">선택한 점과 해당 대척점</string>
 </resources>

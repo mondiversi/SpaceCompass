@@ -1,9 +1,9 @@
 <resources>
     <string name="info_news_title">החידושים האחרונים · %1$s</string>
-    <string name="info_news_star_sky" formatted="false">מדריך אינטראקטיבי מסביר את הפקדים הראשיים. הודעת הפתיחה מופיעה רק בהפעלה הראשונה.</string>
-    <string name="info_news_texture_downloads" formatted="false">בחרו מסלולי יום (0–24) או את 24 השעות הבאות (+24h). המסלול היומי, תוויות הצילום והטבלאות המיוצאות משתמשים באותו טווח.</string>
-    <string name="info_news_weather" formatted="false">געו בשמיים ריקים כדי להציג או להסתיר את הכוונת ובועות המידע. תוויות הצילום שומרות על ההגדרה הנפרדת שלהן.</string>
-    <string name="info_news_viewer_zoom" formatted="false">נקודות שנבחרו יכולות להציג את הכיוונים הנגדיים שלהן. געו בכפתור האנטיפודים להצגה או להסתרה; לחצו לחיצה ממושכת לביטול בחירת כל הנקודות.</string>
-    <string name="info_news_settings" formatted="false">אנטיפודים גלויים נכללים בתמונות, בפנורמות ובטבלאות המיוצאות שלהן. המסלול היומי והייצוא שלו שומרים רק על הנקודות המקוריות.</string>
-    <string name="info_news_catalog" formatted="false">לעצמים הנוכחיים מסגרת אחת בצבע המסלול מעל או מתחת לאופק. למיקומים נוכחיים שנבחרו מסגרת כחולה או תכולה.</string>
+    <string name="info_news_star_sky" formatted="false">ייצוא Location יכול לכלול עצמים שמימיים שנבחרו, את העצם הפעיל ונקודות שנבחרו במסלולים.</string>
+    <string name="info_news_texture_downloads" formatted="false">הייבוא משחזר נקודות שנבחרו ושומר על תאימות לקובצי Location ישנים.</string>
+    <string name="info_news_weather" formatted="false">סמלים באותו גודל מבדילים בין הנקודות שנבחרו לנקודות הנגדיות שלהן, עם מונה בצבעים ניטרליים ביום ובלילה.</string>
+    <string name="info_news_viewer_zoom" formatted="false">פנים הסמנים של הנקודות הנגדיות שקוף בתצוגת השמיים והמצלמה, כמו בתמונות ובפנורמות.</string>
+    <string name="info_news_settings" formatted="false">נגיעות במדריך אינן משנות בחירות אמיתיות או נקודות נגדיות. הדגמת המצלמה משפיעה רק על פקדי המדריך.</string>
+    <string name="info_news_catalog" formatted="false">התראות ברורות יותר לנקודות ולנקודות נגדיות. נגיעה קצרה כבר אינה רוטטת; לחיצה ממושכת מבטלת את בחירת כל הנקודות עם משוב מישושי.</string>
 </resources>

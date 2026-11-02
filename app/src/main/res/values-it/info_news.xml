@@ -1,9 +1,9 @@
 <resources>
     <string name="info_news_title">Ultime novità · %1$s</string>
-    <string name="info_news_star_sky" formatted="false">Un tutorial interattivo spiega i comandi principali, con un benvenuto mostrato soltanto al primo avvio.</string>
-    <string name="info_news_texture_downloads" formatted="false">Scegli i percorsi del giorno (0–24) o delle prossime 24 ore (+24h). Percorso giornaliero, etichette degli scatti e tabelle esportate seguono lo stesso intervallo.</string>
-    <string name="info_news_weather" formatted="false">Tocca il cielo libero per mostrare o nascondere mirino e fumetti informativi. Le etichette degli scatti mantengono la propria impostazione.</string>
-    <string name="info_news_viewer_zoom" formatted="false">I punti selezionati possono mostrare le direzioni antipodali. Tocca Antipodi per mostrarle o nasconderle; tieni premuto per deselezionare tutti i punti.</string>
-    <string name="info_news_settings" formatted="false">Gli antipodi visibili sono inclusi in foto, panoramiche e relative tabelle esportate. Percorso giornaliero e sue esportazioni mantengono soltanto i punti originali.</string>
-    <string name="info_news_catalog" formatted="false">Gli oggetti attuali hanno un solo bordo del colore dell’orbita, sopra o sotto l’orizzonte. Le posizioni attuali selezionate hanno il bordo blu o azzurro.</string>
+    <string name="info_news_star_sky" formatted="false">Le Location esportate possono includere gli oggetti celesti selezionati, l’oggetto attivo e i punti selezionati sulle orbite.</string>
+    <string name="info_news_texture_downloads" formatted="false">L’importazione ripristina i punti selezionati e resta compatibile con i file Location precedenti.</string>
+    <string name="info_news_weather" formatted="false">Simboli della stessa dimensione distinguono i punti selezionati dai relativi antipodi, con un contatore neutro giorno/notte.</string>
+    <string name="info_news_viewer_zoom" formatted="false">Gli antipodi hanno l’interno trasparente nella vista del cielo e con fotocamera, come nelle foto e panoramiche.</string>
+    <string name="info_news_settings" formatted="false">I tocchi nel tutorial non modificano le selezioni reali né gli antipodi. La dimostrazione della fotocamera riguarda solo i comandi del tutorial.</string>
+    <string name="info_news_catalog" formatted="false">Notifiche più chiare per punti e antipodi. Il tocco breve non vibra; tenendo premuto si deselezionano tutti i punti con feedback.</string>
 </resources>

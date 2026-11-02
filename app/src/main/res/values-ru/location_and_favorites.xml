@@ -2,6 +2,6 @@
 <resources>
     <string name="catalog_favorites_only">Только избранное</string>
     <string name="catalog_favorites_off">Отключить фильтр избранного</string>
-    <string name="location_export_include_objects">Сохранять небесные объекты вместе с локацией</string>
-    <string name="location_export_objects_description">Сохраняет отмеченные объекты и активный объект главного экрана.</string>
+    <string name="location_export_include_objects">Включить небесные объекты и выбранные точки</string>
+    <string name="location_export_objects_description">Сохраняет отмеченные объекты, активный объект и выбранные точки на их траекториях.</string>
 </resources>

@@ -2,6 +2,6 @@
 <resources>
     <string name="catalog_favorites_only">הצגת מועדפים בלבד</string>
     <string name="catalog_favorites_off">ביטול מסנן המועדפים</string>
-    <string name="location_export_include_objects">כלילת גרמי שמיים בשמירת המיקום</string>
-    <string name="location_export_objects_description">שמירת הגרמים המסומנים והגרם הפעיל בתצוגה הראשית.</string>
+    <string name="location_export_include_objects">כלול עצמים שמימיים ונקודות שנבחרו</string>
+    <string name="location_export_objects_description">שומר את העצמים המסומנים, את העצם הפעיל ואת הנקודות שנבחרו במסלוליהם.</string>
 </resources>

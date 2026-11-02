@@ -1,9 +1,9 @@
 <resources>
     <string name="info_news_title">Mambo mapya · %1$s</string>
-    <string name="info_news_star_sky" formatted="false">Mafunzo shirikishi yanaeleza vidhibiti vikuu. Karibisho huonekana mara ya kwanza tu programu inapofunguliwa.</string>
-    <string name="info_news_texture_downloads" formatted="false">Chagua njia za siku (0–24) au saa 24 zijazo (+24h). Njia ya kila siku, lebo za picha na majedwali yaliyohamishwa hutumia kipindi kimoja.</string>
-    <string name="info_news_weather" formatted="false">Gusa anga tupu kuonyesha au kuficha kilenga na viputo vya taarifa. Lebo za picha hubaki na mpangilio wake tofauti.</string>
-    <string name="info_news_viewer_zoom" formatted="false">Nukta zilizochaguliwa zinaweza kuonyesha mielekeo yake ya upande wa pili. Gusa Antipodi kuonyesha au kuficha; shikilia ili kuondoa uchaguzi wa nukta zote.</string>
-    <string name="info_news_settings" formatted="false">Antipodi zinazoonekana hujumuishwa katika picha, panorama na majedwali yake yaliyohamishwa. Njia ya kila siku na uhamishaji wake hubakiza nukta asili pekee.</string>
-    <string name="info_news_catalog" formatted="false">Vitu vya sasa vina mpaka mmoja wa rangi ya njia juu au chini ya upeo wa macho. Nafasi za sasa zilizochaguliwa zina mpaka wa buluu au samawati.</string>
+    <string name="info_news_star_sky" formatted="false">Uhamishaji wa Location unaweza kujumuisha vitu vya angani vilivyochaguliwa, kitu kinachotumika na nukta zilizochaguliwa kwenye njia.</string>
+    <string name="info_news_texture_downloads" formatted="false">Uingizaji hurejesha nukta zilizochaguliwa na unaendelea kuendana na faili za zamani za Location.</string>
+    <string name="info_news_weather" formatted="false">Alama zenye ukubwa sawa hutofautisha nukta zilizochaguliwa na antipodi zake, huku kihesabu kikiwa na rangi zisizoegemea za mchana na usiku.</string>
+    <string name="info_news_viewer_zoom" formatted="false">Ndani ya alama za antipodi kuna uwazi katika mwonekano wa anga na kamera, kama kwenye picha na panorama.</string>
+    <string name="info_news_settings" formatted="false">Miguso kwenye mafunzo haibadili chaguo halisi au antipodi. Onyesho la kamera huathiri vidhibiti vya mafunzo pekee.</string>
+    <string name="info_news_catalog" formatted="false">Arifa wazi zaidi za nukta na antipodi. Mguso mfupi hautetemeki tena; kushikilia huondoa chaguo la nukta zote kwa mwitikio wa mguso.</string>
 </resources>

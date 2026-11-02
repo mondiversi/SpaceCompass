@@ -100,8 +100,11 @@ internal fun SpaceCompassScenarioTransferActions(capture: (Boolean) -> SpaceComp
         LaunchedEffect(content, observer?.devicePlace) {
             if (!baseArchive.custom && !baseArchive.timeSettings.enabled) {
                 runCatching { latestCapture(false) }.getOrNull()?.takeIf { it.custom }?.let { ready ->
-                    objectsText = objectsText?.let { included -> ready.copy(
-                        celestialSelection = SpaceCompassScenarioArchive.decode(included).celestialSelection).encode() }
+                    objectsText = objectsText?.let { included ->
+                        val scene = SpaceCompassScenarioArchive.decode(included)
+                        ready.copy(celestialSelection = scene.celestialSelection,
+                            selectedOrbitPoints = scene.selectedOrbitPoints).encode()
+                    }
                     exportText = ready.encode()
                 }
             }

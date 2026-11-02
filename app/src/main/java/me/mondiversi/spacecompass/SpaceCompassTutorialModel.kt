@@ -55,7 +55,8 @@ internal fun spaceCompassTutorialCardPosition(area: Rect, card: Size, margin: Fl
 }
 
 internal data class SpaceCompassTutorialTarget(val feature: SpaceCompassTutorialFeature, val bounds: Rect,
-    val circular: Boolean = true, val point: Boolean = false, val visualBounds: Rect? = null) {
+    val circular: Boolean = true, val point: Boolean = false, val visualBounds: Rect? = null,
+    val title: Int = feature.title) {
     val highlightBounds: Rect get() = visualBounds ?: bounds
     fun translated(offset: Offset): SpaceCompassTutorialTarget = copy(bounds = bounds.translate(offset),
         visualBounds = visualBounds?.translate(offset))

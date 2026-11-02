@@ -1,9 +1,9 @@
 <resources>
     <string name="info_news_title">Neuigkeiten · %1$s</string>
-    <string name="info_news_star_sky" formatted="false">Ein interaktives Tutorial erklärt die wichtigsten Bedienelemente. Die Begrüßung erscheint nur beim ersten Start.</string>
-    <string name="info_news_texture_downloads" formatted="false">Wähle Tagesbahnen (0–24) oder die nächsten 24 Stunden (+24h). Tagesverlauf, Aufnahmebeschriftungen und exportierte Tabellen nutzen dasselbe Intervall.</string>
-    <string name="info_news_weather" formatted="false">Tippe auf freien Himmel, um Fadenkreuz und Infoblasen ein- oder auszublenden. Aufnahmebeschriftungen behalten ihre eigene Einstellung.</string>
-    <string name="info_news_viewer_zoom" formatted="false">Ausgewählte Punkte können ihre Gegenrichtungen anzeigen. Tippe auf Antipoden zum Ein- oder Ausblenden; halte die Taste gedrückt, um alle Punkte abzuwählen.</string>
-    <string name="info_news_settings" formatted="false">Sichtbare Antipoden erscheinen in Fotos, Panoramen und deren exportierten Tabellen. Tagesverlauf und seine Exporte behalten nur die ursprünglichen Punkte.</string>
-    <string name="info_news_catalog" formatted="false">Aktuelle Objekte haben einen Rand in der Bahnfarbe über oder unter dem Horizont. Ausgewählte aktuelle Positionen haben einen blauen oder hellblauen Rand.</string>
+    <string name="info_news_star_sky" formatted="false">Location-Exporte können ausgewählte Himmelsobjekte, das aktive Objekt und ausgewählte Bahnpunkte enthalten.</string>
+    <string name="info_news_texture_downloads" formatted="false">Beim Import werden ausgewählte Punkte wiederhergestellt; ältere Location-Dateien bleiben kompatibel.</string>
+    <string name="info_news_weather" formatted="false">Gleich große Symbole unterscheiden ausgewählte Punkte von ihren Gegenpunkten, mit einem neutralen Tag-/Nachtzähler.</string>
+    <string name="info_news_viewer_zoom" formatted="false">Gegenpunktmarkierungen sind in der Himmels- und Kameraansicht innen transparent, wie auf Fotos und Panoramen.</string>
+    <string name="info_news_settings" formatted="false">Tippen im Tutorial verändert weder echte Auswahlen noch Gegenpunkte. Die Kamerademonstration betrifft nur Tutorial-Steuerelemente.</string>
+    <string name="info_news_catalog" formatted="false">Klarere Meldungen für Punkte und Gegenpunkte. Kurzes Tippen vibriert nicht mehr; Gedrückthalten hebt alle Punktauswahlen mit Rückmeldung auf.</string>
 </resources>

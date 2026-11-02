@@ -1,9 +1,9 @@
 <resources>
     <string name="info_news_title">آخر المستجدات · %1$s</string>
-    <string name="info_news_star_sky" formatted="false">يشرح دليل تفاعلي عناصر التحكم الرئيسية، مع ترحيب يظهر عند التشغيل الأول فقط.</string>
-    <string name="info_news_texture_downloads" formatted="false">اختر مسارات اليوم (0–24) أو الساعات الأربع والعشرين القادمة (+24h). يتبع المسار اليومي وتسميات اللقطات والجداول المصدّرة الفترة نفسها.</string>
-    <string name="info_news_weather" formatted="false">المس السماء الخالية لإظهار المؤشر وفقاعات المعلومات أو إخفائها. تحتفظ تسميات اللقطات بإعدادها المستقل.</string>
-    <string name="info_news_viewer_zoom" formatted="false">يمكن للنقاط المحددة إظهار اتجاهاتها المقابلة. المس زر النقاط المقابلة لإظهارها أو إخفائها، واضغط مطولاً لإلغاء تحديد جميع النقاط.</string>
-    <string name="info_news_settings" formatted="false">تُدرج النقاط المقابلة الظاهرة في الصور والبانوراما والجداول المصدّرة المرتبطة بها. يحتفظ المسار اليومي وتصديراته بالنقاط الأصلية فقط.</string>
-    <string name="info_news_catalog" formatted="false">للأجرام الحالية إطار واحد بلون المدار فوق الأفق أو تحته. تتميز المواضع الحالية المحددة بإطار أزرق أو سماوي.</string>
+    <string name="info_news_star_sky" formatted="false">يمكن أن تتضمن صادرات Location الأجرام السماوية المحددة والجرم النشط والنقاط المحددة على المسارات.</string>
+    <string name="info_news_texture_downloads" formatted="false">تستعيد عملية الاستيراد النقاط المحددة وتبقى متوافقة مع ملفات Location السابقة.</string>
+    <string name="info_news_weather" formatted="false">تميّز رموز بالحجم نفسه النقاط المحددة عن نقاطها المقابلة، مع عدّاد بألوان محايدة للنهار والليل.</string>
+    <string name="info_news_viewer_zoom" formatted="false">أصبح داخل علامات النقاط المقابلة شفافاً في عرض السماء والكاميرا، كما في الصور والبانوراما.</string>
+    <string name="info_news_settings" formatted="false">لا تغيّر اللمسات في الدليل التحديدات الحقيقية أو النقاط المقابلة. يغيّر عرض الكاميرا عناصر الدليل فقط.</string>
+    <string name="info_news_catalog" formatted="false">إشعارات أوضح للنقاط والنقاط المقابلة. لم تعد اللمسة القصيرة تهتز؛ ويُلغي الضغط المطوّل تحديد جميع النقاط مع استجابة لمسية.</string>
 </resources>

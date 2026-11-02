@@ -114,15 +114,26 @@ class SpaceCompassAntipodesTest {
             assertTrue(label.contains("210.0°")); assertTrue(label.contains("-20.0°"))
         }
     }
-    @Test fun tutorialPreviewNeverTouchesSelectionsAndResetsOnExit() {
-        val selected = state(); val before = selected.selectedPoints
-        val guide = SpaceCompassTutorialState(mutableStateOf(false), mutableStateOf(false), mutableStateOf(false))
-        guide.explore(SpaceCompassTutorialFeature.ANTIPODES); assertFalse(guide.antipodesPreview)
-        guide.start(); guide.explore(SpaceCompassTutorialFeature.ANTIPODES); assertTrue(guide.antipodesPreview)
-        guide.explore(SpaceCompassTutorialFeature.CAMERA); assertTrue(guide.antipodesPreview)
-        guide.close(); assertFalse(guide.antipodesPreview)
-        assertEquals(before, selected.selectedPoints)
-        guide.start(); assertFalse(guide.antipodesPreview)
+    @Test fun tutorialAntipodesOnlyExplainAndNeverChangeTheActualSceneOrCameraDemonstration() {
+        for (visible in listOf(false, true)) {
+            val selected = state()
+            if (visible) selected.toggleAntipodes()
+            val before = selected.selectedPoints
+            val guide = SpaceCompassTutorialState(mutableStateOf(false), mutableStateOf(false), mutableStateOf(false))
+            guide.start()
+            repeat(3) { guide.explore(SpaceCompassTutorialFeature.ANTIPODES) }
+            assertFalse(guide.cameraPreview)
+            assertEquals(visible, selected.antipodesVisible)
+            assertEquals(before, selected.selectedPoints)
+            guide.explore(SpaceCompassTutorialFeature.CAMERA)
+            guide.explore(SpaceCompassTutorialFeature.ANTIPODES)
+            assertTrue(guide.cameraPreview)
+            assertFalse(spaceCompassTutorialCameraEnabled(true, guide.active))
+            assertEquals(visible, selected.antipodesVisible)
+            guide.close()
+            assertEquals(before, selected.selectedPoints)
+            assertEquals(visible, selected.antipodesVisible)
+        }
     }
     @Test fun unavailableRefreshedCoordinatesDoNotCrashOrInventAnAntipode() {
         val selection = state().also { it.selectCurrent(body, point, path) }

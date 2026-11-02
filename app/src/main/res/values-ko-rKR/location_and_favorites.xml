@@ -2,6 +2,6 @@
 <resources>
     <string name="catalog_favorites_only">즐겨찾기만 표시</string>
     <string name="catalog_favorites_off">즐겨찾기 필터 해제</string>
-    <string name="location_export_include_objects">위치를 저장할 때 천체 포함</string>
-    <string name="location_export_objects_description">선택한 천체와 기본 화면에서 활성화된 천체를 저장합니다.</string>
+    <string name="location_export_include_objects">천체 및 선택한 점 포함</string>
+    <string name="location_export_objects_description">체크한 천체, 활성 천체와 경로에서 선택한 점을 저장합니다.</string>
 </resources>

@@ -164,18 +164,11 @@ internal fun SpaceCompassSunPointingViewport(
             projectSpaceCompassSelectedOrbitTargets(selectedPoints, paths, current,
                 orientation.takeIf { compassReliable }, width, height, scenePerspective)
         }
-        val tutorial = LocalSpaceCompassTutorial.current
-        val antipodeZone = spaceCompassObservationZone()
-        val antipodes = remember(antipodeZone, selectedPoints, paths, current, orientation, compassReliable, width, height,
-            scenePerspective, showAntipodes, tutorial?.active, tutorial?.antipodesPreview) {
-            if (!showAntipodes) emptyList() else {
-                // An isolated tutorial sample keeps this conditional control discoverable with no saved pins.
-                val demo = if (tutorial?.active == true && selectedPoints.isEmpty()) current.entries.firstOrNull()?.let { (b,p) ->
-                    listOf(SpaceCompassSelectedOrbitPoint(spaceCompassOrbitPointKey(b,p,antipodeZone,current=true),p,paths[b]))
-                }.orEmpty() else selectedPoints
-                projectSpaceCompassSelectedOrbitTargets(demo, paths, current, orientation.takeIf { compassReliable },
-                    width, height, scenePerspective, antipodes = true)
-            }
+        val observationZone = spaceCompassObservationZone()
+        val antipodes = remember(selectedPoints, paths, current, orientation, compassReliable, width, height,
+            scenePerspective, showAntipodes) {
+            if (!showAntipodes) emptyList() else projectSpaceCompassSelectedOrbitTargets(selectedPoints,
+                paths, current, orientation.takeIf { compassReliable }, width, height, scenePerspective, antipodes = true)
         }
         val focused = if (showReticle) focusedSpaceCompassCelestialSceneTarget(targets + antipodes, width, height,
             with(density) { SPACE_COMPASS_CELESTIAL_RETICLE_RADIUS_DP.dp.toPx().toDouble() }, scenePerspective) else null
@@ -266,7 +259,7 @@ internal fun SpaceCompassSunPointingViewport(
                 primaryText, secondaryText, backgroundColor, exclusions,
                 scenePerspective, paths, pinnedTargets = pinned, hitExclusions = titleTouchExclusions,
                 showCaptions = showReticle, onEmptySpaceTap = onToggleReticle,
-                antipodeTargets = antipodes, drawAntipodeMarkers = tutorial?.active == true) {
+                antipodeTargets = antipodes, drawAntipodeMarkers = drawScene) {
                 // Only thumbnails have small local targets; they never intercept another path's whole viewport.
                 markerBodies.forEach { candidate -> key(candidate) { projections[candidate]?.let { projected ->
                     val below = positions.getValue(candidate).elevationDegrees < 0
@@ -283,7 +276,7 @@ internal fun SpaceCompassSunPointingViewport(
                             menuItems = 0, forcedPlacement = placement, diameter = (markerDiameter / density.density).toFloat().dp,
                             moonPhase = moonPhase, objectOpacity = objectOpacity,
                             selected = current[candidate]?.let { dailyPathUiState.isCurrentSelected(candidate, it,
-                                paths[candidate]?.zone ?: antipodeZone) } == true)
+                                paths[candidate]?.zone ?: observationZone) } == true)
                     }
                 } } }
                 if (drawScene) SpaceCompassApproachPathLayer(paths, orientation.takeIf { compassReliable },

@@ -1,9 +1,9 @@
 <resources>
     <string name="info_news_title">最近の変更 · %1$s</string>
-    <string name="info_news_star_sky" formatted="false">インタラクティブなチュートリアルで主な操作を説明します。ようこそメッセージは初回起動時のみ表示されます。</string>
-    <string name="info_news_texture_downloads" formatted="false">当日（0–24）または今後24時間（+24h）の軌跡を選べます。日周経路、撮影ラベル、書き出す表は同じ時間範囲に従います。</string>
-    <string name="info_news_weather" formatted="false">何もない空をタップすると照準と情報吹き出しを表示・非表示にできます。撮影ラベルは独立した設定を維持します。</string>
-    <string name="info_news_viewer_zoom" formatted="false">選択した点の反対方向を表示できます。対蹠点ボタンをタップして表示・非表示を切り替え、長押しですべての点の選択を解除します。</string>
-    <string name="info_news_settings" formatted="false">表示中の対蹠点は写真、パノラマ、およびそれらの書き出し表に含まれます。日周経路とその書き出しには元の点のみが残ります。</string>
-    <string name="info_news_catalog" formatted="false">現在の天体には、地平線の上下に応じた軌跡色の枠を1つ表示します。選択した現在位置の枠は青または水色になります。</string>
+    <string name="info_news_star_sky" formatted="false">Locationの書き出しに、選択した天体、現在の天体、軌道上で選択した点を含められます。</string>
+    <string name="info_news_texture_downloads" formatted="false">読み込み時に選択した点を復元し、以前のLocationファイルとの互換性も保ちます。</string>
+    <string name="info_news_weather" formatted="false">同じ大きさの記号で選択した点と対蹠点を区別します。カウンターは昼夜とも中立色です。</string>
+    <string name="info_news_viewer_zoom" formatted="false">空とカメラの表示で対蹠点マーカーの内部が透明になり、写真やパノラマと統一されました。</string>
+    <string name="info_news_settings" formatted="false">チュートリアル内のタップは実際の選択や対蹠点を変更しません。カメラの実演はチュートリアルの操作部だけに反映されます。</string>
+    <string name="info_news_catalog" formatted="false">点と対蹠点の通知が明確になりました。短いタップは振動せず、長押しは触覚フィードバック付きで全点の選択を解除します。</string>
 </resources>

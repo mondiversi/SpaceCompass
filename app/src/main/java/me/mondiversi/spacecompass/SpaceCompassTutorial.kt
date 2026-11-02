@@ -43,7 +43,7 @@ internal enum class SpaceCompassTutorialFeature(val title: Int, val description:
     ZOOM(R.string.tutorial_zoom_title, R.string.tutorial_zoom),
     CAPTURE(R.string.panorama_capture, R.string.tutorial_capture),
     PANELS(R.string.main_details_hide, R.string.tutorial_panels),
-    ANTIPODES(R.string.scene_antipodes, R.string.tutorial_antipodes),
+    ANTIPODES(R.string.scene_selected_points, R.string.tutorial_antipodes),
     NAVIGATION(R.string.tutorial_navigation_title, R.string.tutorial_navigation),
     OBSERVATORY(R.string.celestial_details_title, R.string.tutorial_observatory),
     DAILY(R.string.celestial_daily_path, R.string.tutorial_daily),
@@ -61,18 +61,15 @@ internal class SpaceCompassTutorialState(activeState: MutableState<Boolean>, wel
     var welcome by welcomeState
     var cameraPreview by cameraPreviewState
         private set
-    var antipodesPreview by mutableStateOf(false)
-        private set
     var skyViewport by mutableStateOf<Rect?>(null)
     val targets = mutableStateMapOf<Any, SpaceCompassTutorialTarget>()
-    fun start() { targets.clear(); skyViewport = null; cameraPreview = false; antipodesPreview = false; active = true }
-    fun close() { active = false; cameraPreview = false; antipodesPreview = false; targets.clear(); skyViewport = null }
+    fun start() { targets.clear(); skyViewport = null; cameraPreview = false; active = true }
+    fun close() { active = false; cameraPreview = false; targets.clear(); skyViewport = null }
     fun explore(feature: SpaceCompassTutorialFeature) {
         if (!active) return
         when (feature) {
             SpaceCompassTutorialFeature.MENU -> close()
             SpaceCompassTutorialFeature.CAMERA -> cameraPreview = !cameraPreview
-            SpaceCompassTutorialFeature.ANTIPODES -> antipodesPreview = !antipodesPreview
             else -> Unit
         }
     }
@@ -81,7 +78,7 @@ internal val LocalSpaceCompassTutorial = staticCompositionLocalOf<SpaceCompassTu
 
 /** No layout work, registration or scene overhead outside an active tutorial. */
 internal fun Modifier.spaceCompassTutorialTarget(feature: SpaceCompassTutorialFeature, enabled: Boolean = true,
-    circular: Boolean = true): Modifier = composed {
+    circular: Boolean = true, title: Int = feature.title): Modifier = composed {
     val tutorial = LocalSpaceCompassTutorial.current
     if (tutorial?.active != true || !enabled) return@composed this
     val id = remember { Any() }
@@ -89,7 +86,7 @@ internal fun Modifier.spaceCompassTutorialTarget(feature: SpaceCompassTutorialFe
     onGloballyPositioned { coordinates ->
         val bounds = coordinates.boundsInRoot()
         if (bounds.width > 0 && bounds.height > 0)
-            tutorial.targets[id] = SpaceCompassTutorialTarget(feature, bounds, circular)
+            tutorial.targets[id] = SpaceCompassTutorialTarget(feature, bounds, circular, title = title)
     }
 }
 
@@ -146,7 +143,10 @@ private fun SpaceCompassTutorialOverlay(state: SpaceCompassTutorialState) {
     val targets = state.targets.values.map { it.translated(-origin) }
     val currentTargets by rememberUpdatedState(targets)
     val pointRadius = with(density) { 24.dp.toPx() }
-    val title = stringResource(selected?.title ?: R.string.tutorial_title)
+    // A visible antipode marker shares the feature, but the button owns its current title.
+    fun titleResource(feature: SpaceCompassTutorialFeature): Int =
+        targets.firstOrNull { it.feature == feature && !it.point }?.title ?: feature.title
+    val title = stringResource(selected?.let(::titleResource) ?: R.string.tutorial_title)
     val description = stringResource(selected?.description ?: R.string.tutorial_instruction)
     val close = stringResource(R.string.close)
     fun explain(feature: SpaceCompassTutorialFeature) {
@@ -155,7 +155,7 @@ private fun SpaceCompassTutorialOverlay(state: SpaceCompassTutorialState) {
     }
     val accessibleFeatures = targets.map { it.feature }.distinct()
         .filterNot { it == SpaceCompassTutorialFeature.MENU }.map { feature ->
-        val label = stringResource(feature.title)
+        val label = stringResource(titleResource(feature))
         CustomAccessibilityAction(label) {
             explain(feature); true
         }

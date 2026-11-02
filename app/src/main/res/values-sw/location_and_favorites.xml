@@ -2,6 +2,6 @@
 <resources>
     <string name="catalog_favorites_only">Onyesha vipendwa pekee</string>
     <string name="catalog_favorites_off">Zima kichujio cha vipendwa</string>
-    <string name="location_export_include_objects">Jumuisha vitu vya angani unapohifadhi eneo</string>
-    <string name="location_export_objects_description">Huhifadhi vitu vilivyowekwa alama na kitu kinachotumika kwenye mwonekano mkuu.</string>
+    <string name="location_export_include_objects">Jumuisha vitu vya angani na nukta zilizochaguliwa</string>
+    <string name="location_export_objects_description">Huhifadhi vitu vilivyotiwa alama, kitu kinachotumika na nukta zilizochaguliwa kwenye njia zake.</string>
 </resources>

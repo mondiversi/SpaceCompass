@@ -677,3 +677,16 @@ exclude them. Long press clears selections without dispatching a second toggle.
 Current-object borders are drawn outside image-opacity effects. Normal tint uses
 the same horizon-aware trajectory function as the orbit; selected-current accent
 has priority and reuses the existing outline, including offscreen locators.
+
+
+## Portable Location point selections
+
+The app-page scope owns the shared orbit-selection session, so Location export and
+import address the same pins used by the sky and Daily path. The optional v1 point
+extension stores stable object IDs, UTC instants, selection dates/zones, current
+identity, directions, lunar phases and event/approach metadata. Full path caches,
+antipodal copies, favourites and filter state are excluded. Canonical properties
+remain independent of the human-readable export profile and old readers ignore
+the extension. Missing legacy payloads preserve session pins; explicit payloads
+replace them silently and start with antipodes off. Validation precedes applying
+any configuration and retains the bounded one-megabyte document limit.

@@ -1,9 +1,9 @@
 <resources>
     <string name="info_news_title">Son yenilikler · %1$s</string>
-    <string name="info_news_star_sky" formatted="false">Etkileşimli öğretici ana kontrolleri açıklar. Karşılama yalnızca ilk açılışta gösterilir.</string>
-    <string name="info_news_texture_downloads" formatted="false">Günlük yolları (0–24) veya sonraki 24 saati (+24h) seçin. Günlük yol, çekim etiketleri ve dışa aktarılan tablolar aynı aralığı izler.</string>
-    <string name="info_news_weather" formatted="false">Nişangâhı ve bilgi balonlarını göstermek veya gizlemek için boş gökyüzüne dokunun. Çekim etiketleri kendi ayarını korur.</string>
-    <string name="info_news_viewer_zoom" formatted="false">Seçili noktalar antipodal yönlerini gösterebilir. Antipotlar düğmesine dokunarak gösterin veya gizleyin; tüm noktaların seçimini kaldırmak için basılı tutun.</string>
-    <string name="info_news_settings" formatted="false">Görünür antipotlar fotoğraflara, panoramalara ve ilgili dışa aktarılan tablolara eklenir. Günlük yol ve dışa aktarımları yalnızca özgün noktaları korur.</string>
-    <string name="info_news_catalog" formatted="false">Güncel nesnelerin ufkun üstü veya altındaki yörünge rengine uyan tek kenarlığı vardır. Seçili güncel konumların kenarlığı mavi veya camgöbeğidir.</string>
+    <string name="info_news_star_sky" formatted="false">Location dışa aktarımları seçili gök cisimlerini, etkin cismi ve yollardaki seçili noktaları içerebilir.</string>
+    <string name="info_news_texture_downloads" formatted="false">İçe aktarma seçili noktaları geri yükler ve eski Location dosyalarıyla uyumlu kalır.</string>
+    <string name="info_news_weather" formatted="false">Aynı boyuttaki simgeler seçili noktaları karşıt noktalarından ayırır; sayaç gündüz ve gece nötr renkler kullanır.</string>
+    <string name="info_news_viewer_zoom" formatted="false">Karşıt nokta işaretlerinin içi gökyüzü ve kamera görünümünde, fotoğraf ve panoramalardaki gibi şeffaftır.</string>
+    <string name="info_news_settings" formatted="false">Öğreticideki dokunuşlar gerçek seçimleri veya karşıt noktaları değiştirmez. Kamera gösterimi yalnızca öğretici kontrollerini etkiler.</string>
+    <string name="info_news_catalog" formatted="false">Noktalar ve karşıt noktalar için daha açık bildirimler. Kısa dokunuş artık titreşmez; basılı tutmak tüm nokta seçimlerini dokunsal geri bildirimle temizler.</string>
 </resources>

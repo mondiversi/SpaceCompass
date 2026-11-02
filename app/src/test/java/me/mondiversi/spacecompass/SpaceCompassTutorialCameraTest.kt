@@ -14,9 +14,12 @@ class SpaceCompassTutorialCameraTest {
         assertTrue(guide.active)
         assertTrue(guide.cameraPreview)
         assertFalse(spaceCompassTutorialCameraEnabled(true, guide.active))
-        guide.explore(SpaceCompassTutorialFeature.ZOOM)
-        guide.explore(SpaceCompassTutorialFeature.TRANSPARENCY)
-        assertTrue(guide.cameraPreview)
+        SpaceCompassTutorialFeature.entries.filterNot { it in setOf(
+            SpaceCompassTutorialFeature.CAMERA, SpaceCompassTutorialFeature.MENU) }.forEach { feature ->
+            guide.explore(feature)
+            assertTrue(guide.cameraPreview)
+            assertFalse(spaceCompassTutorialCameraEnabled(true, guide.active))
+        }
         guide.explore(SpaceCompassTutorialFeature.CAMERA)
         assertFalse(guide.cameraPreview)
         assertTrue(guide.active)

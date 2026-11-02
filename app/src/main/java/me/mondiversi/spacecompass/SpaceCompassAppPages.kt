@@ -36,6 +36,7 @@ internal fun SpaceCompassAppPages(content: @Composable () -> Unit) {
     val holder = rememberSaveableStateHolder()
     val observer = rememberSpaceCompassObserverState()
     val objectScrollSession = rememberSpaceCompassObjectPageScrollSession()
+    val orbitSelection = rememberSpaceCompassSunDailyPathUiState()
     val settingsConfirmation = rememberSpaceCompassSettingsExitNotice(route)
     val tutorial = LocalSpaceCompassTutorial.current
     LaunchedEffect(tutorial?.active) { if (tutorial?.active == true) route = null }
@@ -44,6 +45,7 @@ internal fun SpaceCompassAppPages(content: @Composable () -> Unit) {
     },
         LocalSpaceCompassSettingsExitFailure provides settingsConfirmation::rejectExit,
         LocalSpaceCompassObserver provides observer, LocalSpaceCompassObjectPageScrollSession provides objectScrollSession,
+        LocalSpaceCompassOrbitSelection provides orbitSelection,
         LocalSpaceCompassMainVisible provides (route == null && !screensaverActive)) {
         SpaceCompassDropdownDimmingHost {
             // Keep remember/effects/caches alive. An unplaced layer has no drawing,

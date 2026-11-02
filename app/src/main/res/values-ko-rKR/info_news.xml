@@ -1,9 +1,9 @@
 <resources>
     <string name="info_news_title">최근 변경 사항 · %1$s</string>
-    <string name="info_news_star_sky" formatted="false">대화형 튜토리얼이 주요 조작을 설명합니다. 환영 메시지는 처음 실행할 때만 표시됩니다.</string>
-    <string name="info_news_texture_downloads" formatted="false">당일 경로(0–24) 또는 앞으로 24시간(+24h)을 선택하세요. 일일 경로, 촬영 라벨과 내보낸 표가 같은 시간 범위를 따릅니다.</string>
-    <string name="info_news_weather" formatted="false">빈 하늘을 탭하여 조준선과 정보 말풍선을 표시하거나 숨길 수 있습니다. 촬영 라벨은 별도 설정을 유지합니다.</string>
-    <string name="info_news_viewer_zoom" formatted="false">선택한 점의 대척 방향을 표시할 수 있습니다. 대척점 버튼을 탭하여 표시하거나 숨기고, 길게 눌러 모든 점의 선택을 해제하세요.</string>
-    <string name="info_news_settings" formatted="false">표시된 대척점은 사진, 파노라마와 해당 내보내기 표에 포함됩니다. 일일 경로와 그 내보내기에는 원래 점만 유지됩니다.</string>
-    <string name="info_news_catalog" formatted="false">현재 천체는 지평선 위아래에 맞는 경로 색상의 테두리 하나를 사용합니다. 선택한 현재 위치의 테두리는 파란색 또는 하늘색입니다.</string>
+    <string name="info_news_star_sky" formatted="false">Location 내보내기에 선택한 천체, 활성 천체와 궤도에서 선택한 점을 포함할 수 있습니다.</string>
+    <string name="info_news_texture_downloads" formatted="false">가져오기는 선택한 점을 복원하며 이전 Location 파일과의 호환성을 유지합니다.</string>
+    <string name="info_news_weather" formatted="false">같은 크기의 기호로 선택한 점과 대척점을 구분하며, 카운터는 낮과 밤에 중립 색상을 사용합니다.</string>
+    <string name="info_news_viewer_zoom" formatted="false">하늘과 카메라 화면에서 대척점 표식 내부가 투명해져 사진 및 파노라마와 일관됩니다.</string>
+    <string name="info_news_settings" formatted="false">튜토리얼에서 탭해도 실제 선택이나 대척점은 바뀌지 않습니다. 카메라 시연은 튜토리얼 컨트롤에만 적용됩니다.</string>
+    <string name="info_news_catalog" formatted="false">점과 대척점 알림을 더 명확하게 했습니다. 짧게 탭하면 진동하지 않으며, 길게 누르면 촉각 피드백과 함께 모든 점 선택이 해제됩니다.</string>
 </resources>
