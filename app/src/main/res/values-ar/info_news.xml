@@ -1,9 +1,9 @@
 <resources>
     <string name="info_news_title">آخر المستجدات · %1$s</string>
-    <string name="info_news_star_sky" formatted="false">الترتيب الافتراضي يتبع الآن المسافة المتزايدة من الشمس. يتوافق عمود القيم مع الفرز المختار وتبقى الأجرام المحددة أولًا.</string>
-    <string name="info_news_texture_downloads" formatted="false">استعادة أسرع لبيانات الأقمار من مصادر بديلة موثوقة. رسائل منفصلة للتحميل والبيانات القديمة والتواريخ خارج النطاق والقيم غير المتاحة.</string>
-    <string name="info_news_weather" formatted="false">يفتح المسار اليومي مع توسيط الموضع الحالي قدر الإمكان. تحتفظ العودة إلى الجرم بموضع التمرير الذي عرضته خلال الجلسة.</string>
-    <string name="info_news_viewer_zoom" formatted="false">في العرض الأفقي، نسبة السماء إلى المعلومات 55/45. ارتفاع GPS أوضح؛ يتبادل زرا 0°/90° والطقس مكانيهما مع ثبات مواضع أزرار الكاميرا.</string>
-    <string name="info_news_settings" formatted="false">تبقى تسميات المدارات والمراجع السماوية أقرب إلى خطوطها وأكثر ثباتًا عند التقاطعات والتبديل إلى الكاميرا.</string>
-    <string name="info_news_catalog" formatted="false">زر الالتقاط بحجم الأزرار الأخرى مع إطار نابض بهدوء ورمز أدق. مسافات ومحاذاة بصرية للأسهم أكثر اتساقًا.</string>
+    <string name="info_news_star_sky" formatted="false">يشرح دليل تفاعلي عناصر التحكم الرئيسية، مع ترحيب يظهر عند التشغيل الأول فقط.</string>
+    <string name="info_news_texture_downloads" formatted="false">اختر مسارات اليوم (0–24) أو الساعات الأربع والعشرين القادمة (+24h). يتبع المسار اليومي وتسميات اللقطات والجداول المصدّرة الفترة نفسها.</string>
+    <string name="info_news_weather" formatted="false">المس السماء الخالية لإظهار المؤشر وفقاعات المعلومات أو إخفائها. تحتفظ تسميات اللقطات بإعدادها المستقل.</string>
+    <string name="info_news_viewer_zoom" formatted="false">يمكن للنقاط المحددة إظهار اتجاهاتها المقابلة. المس زر النقاط المقابلة لإظهارها أو إخفائها، واضغط مطولاً لإلغاء تحديد جميع النقاط.</string>
+    <string name="info_news_settings" formatted="false">تُدرج النقاط المقابلة الظاهرة في الصور والبانوراما والجداول المصدّرة المرتبطة بها. يحتفظ المسار اليومي وتصديراته بالنقاط الأصلية فقط.</string>
+    <string name="info_news_catalog" formatted="false">للأجرام الحالية إطار واحد بلون المدار فوق الأفق أو تحته. تتميز المواضع الحالية المحددة بإطار أزرق أو سماوي.</string>
 </resources>

@@ -1,9 +1,9 @@
 <resources>
     <string name="info_news_title">Últimas novidades · %1$s</string>
-    <string name="info_news_star_sky" formatted="false">A ordem padrão segue a distância crescente ao Sol. A coluna corresponde ao critério escolhido e os objetos selecionados continuam no início.</string>
-    <string name="info_news_texture_downloads" formatted="false">Recuperação mais rápida de dados de satélites com fontes alternativas validadas. Mensagens distintas para carregamento, dados desatualizados, datas fora do intervalo e valores indisponíveis.</string>
-    <string name="info_news_weather" formatted="false">A trajetória diária abre com Atual centralizado quando possível. Ao voltar a um objeto, a posição consultada na sessão é mantida.</string>
-    <string name="info_news_viewer_zoom" formatted="false">Na horizontal, proporção céu/informações 55/45. Altitude GPS mais clara; 0°/90° e Meteorologia trocam de lugar e os controles da câmera mantêm suas posições.</string>
-    <string name="info_news_settings" formatted="false">As etiquetas das órbitas e referências celestes ficam próximas da própria linha, mais estáveis nos cruzamentos e ao alternar a câmera.</string>
-    <string name="info_news_catalog" formatted="false">Captura tem o tamanho dos outros controles, borda pulsante suave e símbolo mais fino. Espaçamento e centralização das setas mais consistentes.</string>
+    <string name="info_news_star_sky" formatted="false">Um tutorial interativo explica os comandos principais, com boas-vindas exibidas apenas na primeira abertura.</string>
+    <string name="info_news_texture_downloads" formatted="false">Escolha trajetórias do dia (0–24) ou das próximas 24 horas (+24h). Percurso diário, etiquetas das capturas e tabelas exportadas seguem o mesmo intervalo.</string>
+    <string name="info_news_weather" formatted="false">Toque no céu vazio para mostrar ou ocultar a mira e os balões informativos. As etiquetas das capturas mantêm a própria configuração.</string>
+    <string name="info_news_viewer_zoom" formatted="false">Os pontos selecionados podem mostrar suas direções antípodas. Toque em Antípodas para mostrar ou ocultar; mantenha pressionado para desmarcar todos os pontos.</string>
+    <string name="info_news_settings" formatted="false">As antípodas visíveis são incluídas nas fotos, panoramas e respectivas tabelas exportadas. Percurso diário e suas exportações mantêm apenas os pontos originais.</string>
+    <string name="info_news_catalog" formatted="false">Os objetos atuais têm uma única borda da cor da órbita, acima ou abaixo do horizonte. As posições atuais selecionadas têm borda azul ou ciano.</string>
 </resources>

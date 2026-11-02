@@ -31,7 +31,7 @@ internal fun SpaceCompassSkyReferenceButton(checked: Boolean, onCheckedChange: (
             contentColor = tint, border = BorderStroke(1.dp, tint.copy(alpha = .35f)), shadowElevation = 3.dp) {
             Box(contentAlignment = Alignment.Center) {
                 IconToggleButton(checked = checked, onCheckedChange = onCheckedChange,
-                    modifier = Modifier.fillMaxSize().testTag("toggle-sky-references"),
+                    modifier = Modifier.fillMaxSize().testTag("toggle-sky-references").spaceCompassTutorialTarget(SpaceCompassTutorialFeature.GUIDES),
                     colors = IconButtonDefaults.iconToggleButtonColors(contentColor = color, checkedContentColor = tint)) {
                     SpaceCompassFloatingGlyph(spaceCompassFloatingVectorInk(if (checked) R.drawable.ic_sky_references else R.drawable.ic_sky_references_off)) {
                         SpaceCompassFloatingVectorIcon(if (checked) R.drawable.ic_sky_references else R.drawable.ic_sky_references_off,

@@ -1,9 +1,9 @@
 <resources>
     <string name="info_news_title">Son yenilikler · %1$s</string>
-    <string name="info_news_star_sky" formatted="false">Varsayılan sıralama artık Güneşe olan uzaklığın artışını izler. Değer sütunu seçilen sıralamayla eşleşir ve seçili nesneler en üstte kalır.</string>
-    <string name="info_news_texture_downloads" formatted="false">Doğrulanmış alternatif kaynaklarla uydu verileri daha hızlı yenilenir. Yükleme, eski veriler, kapsam dışı tarihler ve kullanılamayan değerler ayrı mesajlarla gösterilir.</string>
-    <string name="info_news_weather" formatted="false">Günlük yol mümkün olduğunda Güncel konumu ortalayarak açılır. Nesneye dönüldüğünde oturumda incelenen kaydırma konumu korunur.</string>
-    <string name="info_news_viewer_zoom" formatted="false">Yatay görünümde gökyüzü/bilgi oranı 55/45. GPS yüksekliği daha açık; 0°/90° ve Hava Durumu yer değiştirirken kamera kontrolleri konumlarını korur.</string>
-    <string name="info_news_settings" formatted="false">Yörünge ve gök referansı etiketleri kendi çizgilerine daha yakın kalır; kesişimlerde ve kamera geçişlerinde daha kararlıdır.</string>
-    <string name="info_news_catalog" formatted="false">Çekim düğmesi diğer kontrollerle aynı boyutta, yumuşakça titreşen bir kenarlık ve daha ince bir simgeyle gösterilir. Aralıklar ve ok hizaları daha tutarlıdır.</string>
+    <string name="info_news_star_sky" formatted="false">Etkileşimli öğretici ana kontrolleri açıklar. Karşılama yalnızca ilk açılışta gösterilir.</string>
+    <string name="info_news_texture_downloads" formatted="false">Günlük yolları (0–24) veya sonraki 24 saati (+24h) seçin. Günlük yol, çekim etiketleri ve dışa aktarılan tablolar aynı aralığı izler.</string>
+    <string name="info_news_weather" formatted="false">Nişangâhı ve bilgi balonlarını göstermek veya gizlemek için boş gökyüzüne dokunun. Çekim etiketleri kendi ayarını korur.</string>
+    <string name="info_news_viewer_zoom" formatted="false">Seçili noktalar antipodal yönlerini gösterebilir. Antipotlar düğmesine dokunarak gösterin veya gizleyin; tüm noktaların seçimini kaldırmak için basılı tutun.</string>
+    <string name="info_news_settings" formatted="false">Görünür antipotlar fotoğraflara, panoramalara ve ilgili dışa aktarılan tablolara eklenir. Günlük yol ve dışa aktarımları yalnızca özgün noktaları korur.</string>
+    <string name="info_news_catalog" formatted="false">Güncel nesnelerin ufkun üstü veya altındaki yörünge rengine uyan tek kenarlığı vardır. Seçili güncel konumların kenarlığı mavi veya camgöbeğidir.</string>
 </resources>

@@ -1,6 +1,9 @@
 package me.mondiversi.spacecompass
 
+import androidx.compose.foundation.Canvas
 import androidx.compose.foundation.layout.BoxWithConstraints
+import androidx.compose.material3.MaterialTheme
+import androidx.compose.ui.geometry.Offset
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.key
@@ -20,7 +23,7 @@ internal fun SpaceCompassCelestialSceneBackdrop(opticalFrame: SpaceCompassSunSce
     dailyPath: SpaceCompassSunDailyPath?, position: SpaceCompassSunPosition?, timeMs: Long,
     state: SpaceCompassSunDailyPathUiState, primaryText: Color, secondaryText: Color, background: Color,
     latitude: Double?, altitude: Double, showReferences: Boolean, toolbarHeight: Double, modifier: Modifier,
-    longitude: Double? = null, objectOpacity: Float = 1f, showReticle: Boolean = true) {
+    longitude: Double? = null, objectOpacity: Float = 1f, showReticle: Boolean = true, showAntipodes: Boolean = false) {
     if (opticalFrame == null || orientation == null) return
     val density = LocalDensity.current
     val paths = overlays.mapNotNull { (candidate, overlay) -> overlay.path?.let { candidate to it } }.toMap() +
@@ -72,6 +75,18 @@ internal fun SpaceCompassCelestialSceneBackdrop(opticalFrame: SpaceCompassSunSce
                     positions.getValue(candidate).elevationDegrees < 0, current[candidate], state,
                     moonPhase = moonPhase, path = paths[candidate], interactive = false, objectOpacity = objectOpacity)
             } }
+        }
+        val selected = state.selectedPoints
+        val antipodes = remember(selected, paths, current, orientation, width, height, perspective, showAntipodes) {
+            if (showAntipodes) projectSpaceCompassSelectedOrbitTargets(selected, paths, current, orientation,
+                width, height, perspective, antipodes = true) else emptyList()
+        }
+        val accent = MaterialTheme.colorScheme.primary
+        Canvas(Modifier.fillMaxSize().testTag("celestial-full-scene-antipodes")) {
+            antipodes.forEach { target ->
+                drawSpaceCompassAntipode(Offset(target.projection.x.toFloat(), target.projection.y.toFloat()),
+                    7.dp.toPx(), accent, 1.8.dp.toPx())
+            }
         }
     }
 }

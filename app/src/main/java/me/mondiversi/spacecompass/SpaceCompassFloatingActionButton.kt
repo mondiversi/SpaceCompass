@@ -2,6 +2,7 @@ package me.mondiversi.spacecompass
 
 import androidx.compose.foundation.BorderStroke
 import androidx.compose.foundation.background
+import androidx.compose.foundation.combinedClickable
 import androidx.compose.foundation.isSystemInDarkTheme
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.BoxScope
@@ -42,19 +43,34 @@ internal fun SpaceCompassFloatingActionButton(
     glyphInk: SpaceCompassFloatingInk? = null,
     border: BorderStroke = BorderStroke(1.dp, color.copy(alpha = .35f)),
     overlay: @Composable BoxScope.() -> Unit = {},
+    onLongClickLabel: String? = null,
+    onLongClick: (() -> Unit)? = null,
     content: @Composable () -> Unit
 ) {
     SpaceCompassFloatingControlHitRegion {
         Box(Modifier.spaceCompassFloatingControlVisual().size(48.dp)) {
-            Surface(onClick = onClick, enabled = enabled,
-                modifier = Modifier.fillMaxSize().then(modifier).spaceCompassAccessibleAction(
-                    label, enabled = enabled, selectedState = selectedState,
-                    stateText = stateText, onClick = onClick),
-                shape = CircleShape, color = background.copy(alpha = backgroundAlpha),
-                contentColor = color.copy(alpha = if (enabled) 1f else .38f),
-                border = border, shadowElevation = 3.dp) {
+            val target = Modifier.fillMaxSize().then(modifier).spaceCompassAccessibleAction(
+                label, enabled = enabled, selectedState = selectedState,
+                onLongClickLabel = onLongClickLabel, onLongClick = onLongClick,
+                stateText = stateText, onClick = onClick)
+            val face: @Composable () -> Unit = {
                 Box(Modifier.fillMaxSize(), contentAlignment = Alignment.Center) {
                     if (glyphInk == null) content() else SpaceCompassFloatingGlyph(glyphInk, content = content)
+                }
+            }
+            if (onLongClick == null) {
+                Surface(onClick = onClick, enabled = enabled, modifier = target,
+                    shape = CircleShape, color = background.copy(alpha = backgroundAlpha),
+                    contentColor = color.copy(alpha = if (enabled) 1f else .38f),
+                    border = border, shadowElevation = 3.dp, content = face)
+            } else {
+                // One recognizer owns both gestures, so releasing a long press never triggers a click.
+                Surface(modifier = target, shape = CircleShape, color = background.copy(alpha = backgroundAlpha),
+                    contentColor = color.copy(alpha = if (enabled) 1f else .38f),
+                    border = border, shadowElevation = 3.dp) {
+                    Box(Modifier.fillMaxSize().combinedClickable(enabled = enabled,
+                        onClickLabel = label, onLongClickLabel = onLongClickLabel,
+                        onLongClick = onLongClick, hapticFeedbackEnabled = false, onClick = onClick)) { face() }
                 }
             }
             overlay()

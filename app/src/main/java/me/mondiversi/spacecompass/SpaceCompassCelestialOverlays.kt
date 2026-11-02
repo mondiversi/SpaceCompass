@@ -20,7 +20,8 @@ internal data class SpaceCompassCelestialOverlay(val body: SpaceCompassCelestial
 @Composable
 internal fun rememberSpaceCompassCelestialOverlays(bodies: Set<SpaceCompassCelestialBody>, timeMs: Long,
     date: LocalDate, zone: ZoneId, latitude: Double?, longitude: Double?, altitude: Double,
-    remote: SpaceCompassCelestialRemoteData, pathBodies: Set<SpaceCompassCelestialBody> = bodies): Map<SpaceCompassCelestialBody, SpaceCompassCelestialOverlay> {
+    remote: SpaceCompassCelestialRemoteData, pathBodies: Set<SpaceCompassCelestialBody> = bodies,
+    forward24Hours: Boolean = false): Map<SpaceCompassCelestialBody, SpaceCompassCelestialOverlay> {
     val context = LocalContext.current
     return spaceCompassAllCelestialOrder.filter { it in bodies }.associateWith { body -> key(body) {
         // ISS moves quickly; ordinary objects do not need another ephemeris calculation every half-second.
@@ -44,17 +45,20 @@ internal fun rememberSpaceCompassCelestialOverlays(bodies: Set<SpaceCompassCeles
                     latitude, longitude, altitude, remote)?.distanceKm }.getOrNull()
             }
         }
-        val passBucket = if (body.isEarthSatellite) timeMs / 60_000 else 0L
+        val passBucket = if (forward24Hours) spaceCompassForwardPathAnchor(timeMs) else if (body.isEarthSatellite) timeMs / 60_000 else 0L
         val path by produceState<SpaceCompassSunDailyPath?>(null, consulted, date, zone, latitude, longitude, altitude,
-            orbit, remote.ephemerides[body], passBucket) {
+            orbit, remote.ephemerides[body], passBucket, forward24Hours) {
             value = if (!consulted || !body.supportsDailyPath || latitude == null || longitude == null) null else withContext(Dispatchers.Default) {
-                runCatching { calculateSpaceCompassCelestialPath(body, date, zone, timeMs, latitude, longitude, altitude, remote) }
+                runCatching {
+                    if (forward24Hours) calculateSpaceCompassForwardPathBuffer(body,timeMs,zone,latitude,longitude,altitude,remote) { coroutineContext.ensureActive() }
+                    else calculateSpaceCompassCelestialPath(body, date, zone, timeMs, latitude, longitude, altitude, remote)
+                }
                     .onFailure { SpaceCompassErrorLog.record(context, "celestial:path:${body.name}", it) }.getOrNull()
             }
         }
         val observation = timedObservation?.second
         SpaceCompassCelestialOverlay(body, observation, if (body.usesLiveDistance) observation?.distanceKm else noonDistance,
-            speed, path, timedObservation?.first)
+            speed, path?.takeIf { it.forward24Hours == forward24Hours }, timedObservation?.first)
     } }
 }
 

@@ -1,9 +1,9 @@
 <resources>
     <string name="info_news_title">Mambo mapya · %1$s</string>
-    <string name="info_news_star_sky" formatted="false">Mpangilio chaguomsingi sasa hufuata umbali unaoongezeka kutoka Jua. Safu ya thamani inalingana na upangaji na vitu vilivyochaguliwa hubaki juu.</string>
-    <string name="info_news_texture_downloads" formatted="false">Data ya satelaiti hurejeshwa haraka kupitia vyanzo mbadala vilivyothibitishwa. Ujumbe tofauti kwa upakiaji, data ya zamani, tarehe nje ya kipindi na thamani zisizopatikana.</string>
-    <string name="info_news_weather" formatted="false">Njia ya kila siku hufunguka na nafasi ya Sasa katikati inapowezekana. Kurudi kwa kitu huhifadhi nafasi ya kusogeza iliyotazamwa katika kipindi.</string>
-    <string name="info_news_viewer_zoom" formatted="false">Katika mlalo, uwiano wa anga/taarifa ni 55/45. Kimo cha GPS ni wazi zaidi; 0°/90° na Hali ya hewa hubadilishana nafasi, vidhibiti vya kamera hubaki pale.</string>
-    <string name="info_news_settings" formatted="false">Lebo za obiti na marejeo ya angani hubaki karibu na mistari yake, zikiwa thabiti zaidi kwenye makutano na unapobadili kamera.</string>
-    <string name="info_news_catalog" formatted="false">Kitufe cha kunasa kina ukubwa wa vidhibiti vingine, ukingo unaodunda taratibu na alama nyembamba. Nafasi na upangaji wa mishale ni sawia zaidi.</string>
+    <string name="info_news_star_sky" formatted="false">Mafunzo shirikishi yanaeleza vidhibiti vikuu. Karibisho huonekana mara ya kwanza tu programu inapofunguliwa.</string>
+    <string name="info_news_texture_downloads" formatted="false">Chagua njia za siku (0–24) au saa 24 zijazo (+24h). Njia ya kila siku, lebo za picha na majedwali yaliyohamishwa hutumia kipindi kimoja.</string>
+    <string name="info_news_weather" formatted="false">Gusa anga tupu kuonyesha au kuficha kilenga na viputo vya taarifa. Lebo za picha hubaki na mpangilio wake tofauti.</string>
+    <string name="info_news_viewer_zoom" formatted="false">Nukta zilizochaguliwa zinaweza kuonyesha mielekeo yake ya upande wa pili. Gusa Antipodi kuonyesha au kuficha; shikilia ili kuondoa uchaguzi wa nukta zote.</string>
+    <string name="info_news_settings" formatted="false">Antipodi zinazoonekana hujumuishwa katika picha, panorama na majedwali yake yaliyohamishwa. Njia ya kila siku na uhamishaji wake hubakiza nukta asili pekee.</string>
+    <string name="info_news_catalog" formatted="false">Vitu vya sasa vina mpaka mmoja wa rangi ya njia juu au chini ya upeo wa macho. Nafasi za sasa zilizochaguliwa zina mpaka wa buluu au samawati.</string>
 </resources>

@@ -40,6 +40,10 @@ internal class SpaceCompassSunDailyPathUiState(
     private val selection = mutableStateMapOf<SpaceCompassOrbitPointKey, SpaceCompassSelectedOrbitPoint>()
     private var lastSelectedKey: SpaceCompassOrbitPointKey? = null
     val selectedPoints: List<SpaceCompassSelectedOrbitPoint> get() = selection.values.toList()
+    var antipodesVisible by mutableStateOf(false)
+        private set
+
+    fun toggleAntipodes() { antipodesVisible = selection.isNotEmpty() && !antipodesVisible }
 
     fun openMenu(path: SpaceCompassSunDailyPath, currentPoint: SpaceCompassSunPathPoint? = null) {
         menuPath = path
@@ -47,7 +51,7 @@ internal class SpaceCompassSunDailyPathUiState(
         menuFocusPointId = lastSelectedKey?.takeIf { it in selection && it.body == path.body }?.let { key ->
             spaceCompassSelectedDailyPathEntries(path, currentPoint, selectedPoints).firstOrNull { row ->
                 spaceCompassOrbitPointKeysMatch(key, spaceCompassOrbitPointKey(path.body, row.point,
-                    path.zone, path.date.takeUnless { row.isCurrent }, row.isCurrent))
+                    path.zone, spaceCompassPathSelectionDate(path,row.point).takeUnless { row.isCurrent }, row.isCurrent))
             }?.pointId
         }
     }
@@ -57,7 +61,7 @@ internal class SpaceCompassSunDailyPathUiState(
     }
 
     fun isSelected(path: SpaceCompassSunDailyPath, point: SpaceCompassSunPathPoint, current: Boolean = false): Boolean =
-        matchingKey(spaceCompassOrbitPointKey(path.body, point, path.zone, path.date.takeUnless { current }, current)) != null
+        matchingKey(spaceCompassOrbitPointKey(path.body, point, path.zone, spaceCompassPathSelectionDate(path,point).takeUnless { current }, current)) != null
 
     fun isCurrentSelected(body: SpaceCompassCelestialBody, point: SpaceCompassSunPathPoint, zone: ZoneId): Boolean =
         spaceCompassOrbitPointKey(body, point, zone, current = true) in selection
@@ -79,17 +83,18 @@ internal class SpaceCompassSunDailyPathUiState(
         else {
             selection.remove(existing)
             if (lastSelectedKey == existing) lastSelectedKey = selection.keys.lastOrNull()
+            if (selection.isEmpty()) antipodesVisible = false
         }
         // Only explicit point toggles produce feedback; refresh/navigation/reset remain silent.
         onPointToggled(existing == null)
     }
     fun select(path: SpaceCompassSunDailyPath, point: SpaceCompassSunPathPoint) {
         if (valid(point)) add(SpaceCompassSelectedOrbitPoint(
-            spaceCompassOrbitPointKey(path.body, point, path.zone, path.date), point, path))
+            spaceCompassOrbitPointKey(path.body, point, path.zone, spaceCompassPathSelectionDate(path,point)), point, path))
     }
     fun togglePoint(path: SpaceCompassSunDailyPath, point: SpaceCompassSunPathPoint) {
         if (valid(point)) toggle(SpaceCompassSelectedOrbitPoint(
-            spaceCompassOrbitPointKey(path.body, point, path.zone, path.date), point, path))
+            spaceCompassOrbitPointKey(path.body, point, path.zone, spaceCompassPathSelectionDate(path,point)), point, path))
     }
     fun selectCurrent(body: SpaceCompassCelestialBody, point: SpaceCompassSunPathPoint,
         path: SpaceCompassSunDailyPath? = null, zone: ZoneId = path?.zone ?: ZoneId.systemDefault()) {
@@ -102,15 +107,16 @@ internal class SpaceCompassSunDailyPathUiState(
         toggle(SpaceCompassSelectedOrbitPoint(spaceCompassOrbitPointKey(body, normalized, zone, current = true), normalized, path))
     }
     fun toggleScenePoint(target: SpaceCompassCelestialSceneTarget, zone: ZoneId) {
-        if (target.isCurrent) toggleCurrent(target.body, target.point, target.path, target.path?.zone ?: zone)
-        else target.path?.let { togglePoint(it, target.point) }
+        val source = target.antipodeOf ?: target.point
+        if (target.isCurrent) toggleCurrent(target.body, source, target.path, target.path?.zone ?: zone)
+        else target.path?.let { togglePoint(it, source) }
     }
     fun toggleMenuPoint(pointId: String) {
         val path = menuPath ?: return
         if (pointId == "current") menuCurrentPoint?.let { toggleCurrent(path.body, it, path) }
         else pointId.toIntOrNull()?.let { path.markers.getOrNull(it) }?.let { togglePoint(path, it) }
     }
-    fun clearSelection() { selection.clear(); lastSelectedKey = null }
+    fun clearSelection() { selection.clear(); lastSelectedKey = null; antipodesVisible = false }
 
     /** Explicit navigation helpers: sky taps use toggleScenePoint instead. */
     fun openPoint(path: SpaceCompassSunDailyPath, point: SpaceCompassSunPathPoint,
@@ -143,21 +149,27 @@ internal fun rememberSpaceCompassSunDailyPathUiState(): SpaceCompassSunDailyPath
 internal fun projectSpaceCompassSelectedOrbitTargets(selected: List<SpaceCompassSelectedOrbitPoint>,
     paths: Map<SpaceCompassCelestialBody, SpaceCompassSunDailyPath>, current: Map<SpaceCompassCelestialBody, SpaceCompassSunPathPoint>,
     orientation: SpaceCompassSunOrientation?, width: Double, height: Double,
-    perspective: SpaceCompassPerspective? = null): List<SpaceCompassCelestialSceneTarget> {
+    perspective: SpaceCompassPerspective? = null, antipodes: Boolean = false): List<SpaceCompassCelestialSceneTarget> {
     if (orientation == null || width <= 0 || height <= 0 || !width.isFinite() || !height.isFinite()) return emptyList()
     return selected.sortedWith(compareBy({ it.key.body.ordinal }, { it.point.timeMs }, { it.key.event?.ordinal ?: -1 })).mapNotNull { saved ->
         val body = saved.key.body
         val path = paths[body]
-        val compatiblePath = path?.takeIf { it.date == saved.key.date && it.zone.id == saved.key.zoneId }
+        val compatiblePath = path?.takeIf { spaceCompassPathAcceptsSelection(it,saved) }
         val refreshedMarker = compatiblePath?.markers?.firstOrNull {
-            spaceCompassOrbitPointKeysMatch(spaceCompassOrbitPointKey(body, it, compatiblePath.zone, compatiblePath.date), saved.key)
+            spaceCompassOrbitPointKeysMatch(spaceCompassOrbitPointKey(body, it, compatiblePath.zone, spaceCompassPathSelectionDate(compatiblePath,it)), saved.key)
         }
         val point = if (saved.key.isCurrent) current[body]?.takeIf {
             spaceCompassOrbitPointKey(body, it, path?.zone ?: ZoneId.of(saved.key.zoneId), current = true) == saved.key
         } else compatiblePath?.let { refreshedMarker ?: saved.point }
         point ?: return@mapNotNull null
-        projectSpaceCompassSun(point.position, orientation, width, height, perspective).takeIf { it.visible }?.let {
-            SpaceCompassCelestialSceneTarget(body, point, SpaceCompassSunScenePoint(it.x, it.y), if (!saved.key.isCurrent && refreshedMarker == null) saved.path else path ?: saved.path, saved.key.isCurrent)
+        if (!point.position.azimuthDegrees.isFinite() || !point.position.elevationDegrees.isFinite() ||
+            point.position.elevationDegrees !in -90.0..90.0) return@mapNotNull null
+        // Mirror before projecting: a source behind the observer can have a visible antipode.
+        val displayed = if (antipodes) point.antipodalDirection() else point
+        projectSpaceCompassSun(displayed.position, orientation, width, height, perspective).takeIf { it.visible }?.let {
+            SpaceCompassCelestialSceneTarget(body, displayed, SpaceCompassSunScenePoint(it.x, it.y),
+                if (!saved.key.isCurrent && refreshedMarker == null) saved.path else path ?: saved.path,
+                saved.key.isCurrent, point.takeIf { antipodes })
         }
     }
 }

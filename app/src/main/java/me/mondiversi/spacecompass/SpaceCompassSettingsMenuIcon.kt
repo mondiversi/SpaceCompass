@@ -96,6 +96,22 @@ internal fun SpaceCompassSettingsMenuIcon(
                 drawLine(tint, clockCenter, Offset(size.width * .79f, size.height * .72f),
                     strokeWidth, StrokeCap.Round)
             }
+            "tutorial" -> {
+                // An open guide book remains distinct from the information glyph.
+                val book = Path().apply {
+                    moveTo(center.x, size.height * .26f)
+                    quadraticTo(size.width * .30f, size.height * .10f, size.width * .08f, size.height * .18f)
+                    lineTo(size.width * .08f, size.height * .76f)
+                    quadraticTo(size.width * .30f, size.height * .68f, center.x, size.height * .84f)
+                    quadraticTo(size.width * .70f, size.height * .68f, size.width * .92f, size.height * .76f)
+                    lineTo(size.width * .92f, size.height * .18f)
+                    quadraticTo(size.width * .70f, size.height * .10f, center.x, size.height * .26f)
+                    close()
+                }
+                drawPath(book, tint, style = Stroke(strokeWidth, join = StrokeJoin.Round))
+                drawLine(tint, Offset(center.x, size.height * .26f), Offset(center.x, size.height * .84f),
+                    strokeWidth, StrokeCap.Round)
+            }
             "info" -> {
                 drawCircle(tint, size.minDimension * .39f, style = Stroke(strokeWidth))
                 drawCircle(tint, strokeWidth * .7f, Offset(center.x, size.height * .31f))

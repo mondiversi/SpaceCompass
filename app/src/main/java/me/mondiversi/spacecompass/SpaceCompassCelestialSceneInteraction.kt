@@ -11,6 +11,7 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.drawscope.Stroke
 import androidx.compose.ui.input.pointer.pointerInput
 import androidx.compose.ui.platform.LocalDensity
+import androidx.compose.ui.platform.testTag
 import androidx.compose.ui.unit.dp
 
 /** Catch blank chrome taps without adding an accessibility action; child controls retain priority. */
@@ -28,6 +29,9 @@ internal fun SpaceCompassCelestialSceneInteraction(targets: List<SpaceCompassCel
     pinnedTargets: List<SpaceCompassCelestialSceneTarget>? = null,
     hitExclusions: List<SpaceCompassSunSceneFrame> = emptyList(),
     showCaptions: Boolean = true,
+    onEmptySpaceTap: (() -> Unit)? = null,
+    antipodeTargets: List<SpaceCompassCelestialSceneTarget> = emptyList(),
+    drawAntipodeMarkers: Boolean = true,
     liveMarkers: @Composable () -> Unit = {}) {
     androidx.compose.foundation.layout.BoxWithConstraints(Modifier.fillMaxSize()) {
         val density = LocalDensity.current
@@ -36,21 +40,26 @@ internal fun SpaceCompassCelestialSceneInteraction(targets: List<SpaceCompassCel
         val historical = pinned.filter { saved -> !saved.isCurrent && targets.none { target ->
             !target.isCurrent && target.body == saved.body && target.path != null && saved.path != null &&
                 spaceCompassOrbitPointKeysMatch(
-                    spaceCompassOrbitPointKey(target.body, target.point, target.path.zone, target.path.date),
-                    spaceCompassOrbitPointKey(saved.body, saved.point, saved.path.zone, saved.path.date))
+                    spaceCompassOrbitPointKey(target.body, target.point, target.path.zone, spaceCompassPathSelectionDate(target.path,target.point)),
+                    spaceCompassOrbitPointKey(saved.body, saved.point, saved.path.zone, spaceCompassPathSelectionDate(saved.path,saved.point)))
         } }
-        val currentTargets by rememberUpdatedState(targets + historical)
+        val currentTargets by rememberUpdatedState(targets + historical + antipodeTargets)
         val blockedRegions by rememberUpdatedState(hitExclusions)
+        val emptyTapExclusions by rememberUpdatedState(excluded)
+        val emptySpaceTap by rememberUpdatedState(onEmptySpaceTap)
         val zone by rememberUpdatedState(spaceCompassObservationZone())
         val radius = with(LocalDensity.current) { SPACE_COMPASS_SUN_PATH_TOUCH_RADIUS_DP.dp.toPx().toDouble() }
         val accent = MaterialTheme.colorScheme.primary
-        Canvas(Modifier.fillMaxSize().pointerInput(radius) {
-            detectTapGestures { tap ->
-                tappedSpaceCompassCelestialSceneTarget(currentTargets,
-                    SpaceCompassSunScenePoint(tap.x.toDouble(), tap.y.toDouble()), radius, blockedRegions)?.let {
-                    state.toggleScenePoint(it, zone)
-                }
-            }
+        Canvas(Modifier.fillMaxSize().testTag("celestial-scene-input").pointerInput(radius) {
+            var press = Offset.Zero
+            detectTapGestures(onPress = { press = it }, onTap = { tap ->
+                val point = SpaceCompassSunScenePoint(tap.x.toDouble(), tap.y.toDouble())
+                val target = tappedSpaceCompassCelestialSceneTarget(currentTargets, point, radius, blockedRegions)
+                if (target != null) state.toggleScenePoint(target, zone)
+                else if ((tap - press).getDistance() <= viewConfiguration.touchSlop &&
+                    !spaceCompassScenePointIsCovered(point, blockedRegions) &&
+                    !spaceCompassScenePointIsCovered(point, emptyTapExclusions)) emptySpaceTap?.invoke()
+            })
         }) {
             historical.forEach {
                 val r = (if (it.point.event == SpaceCompassSunPathEvent.HOUR) 4.dp else 6.dp).toPx()
@@ -60,8 +69,15 @@ internal fun SpaceCompassCelestialSceneInteraction(targets: List<SpaceCompassCel
                 drawCircle(accent, r + 3.dp.toPx(), center, style = Stroke(1.8.dp.toPx()))
             }
         }
-        // Local marker targets stay above the scene detector; captions paint and receive taps last.
+        SpaceCompassTutorialScene(currentTargets, excluded + hitExclusions)
+        // Local marker controls retain their direct tap and accessibility actions.
         liveMarkers()
+        if (drawAntipodeMarkers) Canvas(Modifier.fillMaxSize().testTag("celestial-antipodes")) {
+            antipodeTargets.forEach { target ->
+                drawSpaceCompassAntipode(Offset(target.projection.x.toFloat(), target.projection.y.toFloat()),
+                    7.dp.toPx(), accent, 1.8.dp.toPx())
+            }
+        }
         if (showCaptions && nowMs != null) {
             SpaceCompassCelestialSceneBadges(pinned, focused, nowMs, primaryText, secondaryText, backgroundColor, excluded)
         }

@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="tutorial_title" formatted="false">ट्यूटोरियल</string>
+    <string name="tutorial_welcome_title" formatted="false">Space Compass में आपका स्वागत है</string>
+    <string name="tutorial_welcome_body" formatted="false">अलग स्थानों और समयों से आकाश और खगोलीय पिंडों के पथ देखें। इंटरैक्टिव ट्यूटोरियल में मुख्य नियंत्रण जानें।</string>
+    <string name="tutorial_instruction" formatted="false">बिना सेटिंग बदले उसका काम जानने के लिए किसी उभरे नियंत्रण या कक्षा बिंदु को छुएँ।</string>
+    <string name="tutorial_zoom_title" formatted="false">कैमरा ज़ूम</string>
+    <string name="tutorial_navigation_title" formatted="false">चुना गया पिंड</string>
+    <string name="tutorial_points_title" formatted="false">कक्षा बिंदु</string>
+    <string name="tutorial_info" formatted="false">ऐप की जानकारी, नई सुविधाएँ और स्रोत खोलें।</string>
+    <string name="tutorial_menu" formatted="false">सामान्य, भाषा, इकाइयाँ, ट्यूटोरियल और जानकारी व श्रेय खोलें।</string>
+    <string name="tutorial_objects" formatted="false">दिखने वाले पिंड चुनें। खोजें, फ़िल्टर करें और पसंदीदा सहेजें।</string>
+    <string name="tutorial_location" formatted="false">स्थान, ऊँचाई, समय क्षेत्र, तारीख, समय और समय की गति बदलें।</string>
+    <string name="tutorial_guides" formatted="false">खगोलीय वृत्त, ध्रुव, शिरोबिंदु और अधोबिंदु दिखाएँ। ये आकाशीय प्रक्षेपण हैं, ज़मीनी रास्ते नहीं।</string>
+    <string name="tutorial_forward" formatted="false">0–24 आधी रात से आधी रात तक पूरा कैलेंडर दिन दिखाता है। +24h दिखाए गए समय से अगले 24 घंटे दिखाता है, भले ही समय सिमुलेटेड हो। पथ, चित्र और निर्यात इसी अंतराल का उपयोग करते हैं।</string>
+    <string name="tutorial_camera" formatted="false">सिमुलेटेड आकाश और असली अक्ष वाले पिछले कैमरे के बीच बदलें। यहाँ कैमरा उपयोग किए बिना ज़ूम और पारदर्शिता जान सकते हैं। सामान्य दृश्य पर लौटने के लिए फिर टैप करें।</string>
+    <string name="tutorial_weather" formatted="false">सिमुलेटेड आकाश और पैनोरमा में मौसम दिखाएँ या छिपाएँ। कैमरा मोड में उपलब्ध नहीं।</string>
+    <string name="tutorial_axis" formatted="false">कैमरे का अक्ष (90°) या फ़ोन की लंबाई का अक्ष (0°) चुनें। कैमरा हमेशा अपना अक्ष उपयोग करता है।</string>
+    <string name="tutorial_transparency" formatted="false">कैमरे से मिलान के लिए पिंडों के चित्र पारदर्शी बनाएँ। चित्र यह चुनाव बनाए रखता है।</string>
+    <string name="tutorial_zoom" formatted="false">कैमरा ज़ूम चुनें या चित्र पर दो उँगलियों का उपयोग करें।</string>
+    <string name="tutorial_capture" formatted="false">आकाश का पैनोरमा या खगोलीय परतों वाला कैमरा चित्र बनाएँ। पूर्वावलोकन से निर्यात करें।</string>
+    <string name="tutorial_panels" formatted="false">आकाश के लिए जगह बनाने को पिंड और कंपास पैनल समेटें या फैलाएँ।</string>
+    <string name="tutorial_antipodes" formatted="false">चुने हुए बिंदुओं की विपरीत दिशा दिखाने या छिपाने के लिए टैप करें: दिगंश +180° और उन्नतांश का चिह्न उलट जाता है। सभी बिंदुओं का चयन हटाने के लिए दबाकर रखें।</string>
+    <string name="tutorial_navigation" formatted="false">चुने पिंडों में आगे-पीछे जाएँ। पैनल सक्रिय पिंड और पथ के रंग दिखाता है। वस्तुओं की सूची खोलने के लिए नाम पर टैप करें।</string>
+    <string name="tutorial_observatory" formatted="false">मॉडल, वैज्ञानिक जानकारी, यात्रा समय और वार्षिक ऊँचाइयाँ व घटनाएँ खोलें।</string>
+    <string name="tutorial_daily" formatted="false">पथ, समय, ऊँचाई और चुनने योग्य बिंदु देखें। भविष्य की घटनाओं में अनुस्मारक लगाया जा सकता है।</string>
+    <string name="tutorial_gps" formatted="false">Location से स्वतंत्र वास्तविक स्थान, GPS ऊँचाई, दिशा और मौसम देखें।</string>
+    <string name="tutorial_points" formatted="false">कक्षा बिंदु चुनें। पिंड, समय, T, दिगंश और ऊँचाई पढ़ने के लिए उस पर निशाना लगाएँ। वस्तु के किनारे का रंग उसकी कक्षा के रंग जैसा होता है; वर्तमान स्थिति चुनने पर वह नीला या आसमानी हो जाता है।</string>
+    <string name="tutorial_reticle" formatted="false">निशाना और बिंदु जानकारी दिखाने या छिपाने के लिए खाली आकाश छुएँ। निर्यात के लेबल नहीं बदलते।</string>
+    <string name="tutorial_reminder" formatted="false">योग्य भविष्य की घटना के लिए Android अलार्म या कैलेंडर खोलें। बीती घटनाओं और वर्तमान बिंदु के लिए अलार्म नहीं।</string>
+    <string name="tutorial_status_title" formatted="false">स्थिति और पुनर्प्राप्ति</string>
+    <string name="tutorial_status" formatted="false">वर्तमान स्थिति पढ़ें। कार्रवाई अनुमति माँग सकती है, स्थान चालू कर सकती है या कक्षा और मौसम का डेटा फिर लोड कर सकती है। ट्यूटोरियल कार्रवाई नहीं करता।</string>
+</resources>

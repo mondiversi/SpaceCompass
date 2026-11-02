@@ -50,7 +50,7 @@ internal fun SpaceCompassCameraZoomControls(range: SpaceCompassCameraZoomRange?,
                 anchorTop = anchor.top
                 anchorBottom = anchor.bottom
             }
-                .testTag("camera-zoom-value")) {
+                .testTag("camera-zoom-value").spaceCompassTutorialTarget(SpaceCompassTutorialFeature.ZOOM, enabled = canChoose)) {
             Text(value, Modifier.padding(2.dp), fontSize = 14.sp, fontWeight = FontWeight.SemiBold,
                 textAlign = TextAlign.Center, maxLines = 1)
         }

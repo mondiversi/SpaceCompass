@@ -27,7 +27,8 @@ internal data class SpaceCompassPanoramaSnapshot(val timeMs: Long, val latitude:
     val selectionTint: Int = 0xff1987d4.toInt(), val zoneId: String = "UTC",
     val orbitExportVocabulary: SpaceCompassOrbitExportVocabulary = SpaceCompassOrbitExportVocabulary(),
     val displayZoneId: String? = null, val activeBody: SpaceCompassCelestialBody? = null,
-    val bodyNames: Map<SpaceCompassCelestialBody,String> = emptyMap())
+    val bodyNames: Map<SpaceCompassCelestialBody,String> = emptyMap(),val forward24Hours: Boolean = false,
+    val showAntipodes: Boolean = false)
 
 internal fun renderSpaceCompassPanorama(snapshot: SpaceCompassPanoramaSnapshot, width: Int = 4096, context: android.content.Context? = null): Bitmap {
     require(width in 512..4096 && snapshot.objects.isNotEmpty())
@@ -215,7 +216,7 @@ internal fun renderSpaceCompassPanorama(snapshot: SpaceCompassPanoramaSnapshot, 
                 }
                 if (!snapshot.labelMode.showsPathPoint(marker, item.body == snapshot.activeBody) ||
                     spaceCompassPanoramaPointSelected(selections, item.body, marker)) return@forEach
-                val time = snapshot.markerTimes[marker.timeMs] ?: formatSpaceCompassPanoramaExportTime(marker.timeMs,
+                val time = snapshot.markerTimes[marker.timeMs] ?: formatSpaceCompassPanoramaMarkerTime(marker.timeMs,snapshot.timeMs,
                     snapshot.displayTimeZone,snapshot.formatting)
                 // Read elevation from this object's marker, not the timestamp shared by other paths.
                 val label = formatSpaceCompassPanoramaPathPointLabel(time, marker, snapshot.formatting, snapshot.pointEventNames, snapshot.timeMs, snapshot.bodyNames)

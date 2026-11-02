@@ -8,8 +8,8 @@ paths, inspect reference facts and view textured models. Space Compass is a stan
 
 ## Download and install
 
-Download **space-compass-1.7.6.apk** from the
-[Space Compass 1.7.6 release](https://github.com/mondiversi/SpaceCompass/releases/tag/v1.7.6).
+Download **space-compass-1.7.7.apk** from the
+[Space Compass 1.7.7 release](https://github.com/mondiversi/SpaceCompass/releases/tag/v1.7.7).
 Android 8.0 or newer is required. Open the APK and follow Android's installation
 prompts; allow installation for your browser or file manager if requested.
 
@@ -22,7 +22,7 @@ one manual APK update to acquire this feature.
 The release includes `SHA256SUMS.txt` and a signed update index. GitHub's source
 ZIP/TAR archives and Actions debug artifacts are separate from the signed APK.
 See [distribution and signing](docs/GITHUB_RELEASES.md) and
-[the 1.7.6 release audit](docs/RELEASE_1_7_6.md).
+[the 1.7.7 release audit](docs/RELEASE_1_7_7.md).
 
 <!-- app-gallery:start -->
 ## Gallery
@@ -89,8 +89,12 @@ See Space Compass in portrait and landscape, by day and by night. These English 
 
 ## Features
 
-- A remembered main-view reticle/callout toggle, independent of capture labels. Generated celestial symbols use translucent dark backing for contrast.
+- Tap empty sky to toggle the remembered main-view reticle and information bubbles, independently of capture labels. Generated celestial symbols use translucent dark backing for contrast.
 - Catalogue search, filtering, sorting and optional facet counts run off the UI thread. Ready previews remain visible while optional row loading waits for scrolling to settle; initial loading uses a centered theme-aware spinner.
+- An interactive main-view tutorial explains controls without changing the real scene, including camera-only controls. A one-time welcome offers quick access; reopen the tutorial from the menu.
+- Choose calendar-day tracks (0–24, the default) or a rolling next-24-hour window (+24h). Daily path, capture labels, reminders and exported capture tables follow the chosen interval.
+- Selected points can display opposite directions (azimuth +180°, reversed elevation). Tap Antipodes to toggle them; hold to deselect all points. Antipodes start hidden and reset when no points remain. Visible antipodes appear in captures and their tables, while Daily path and its exports retain original points only.
+- Current object glyphs use one trajectory-coloured border, respecting above/below-horizon variants. Selected current positions use the theme accent without an additional outer ring.
 - Live azimuth/altitude, compass guidance, named daily paths and satellite passes. Pin multiple path points and manage the same selections in the daily path. Reticle-focused callouts show clock and T± side by side. Current positions and lunar phases remain available.
 - 9,999 catalogue objects: Sun, Moon, planets, natural/artificial satellites,
   comets, Voyager spacecraft, nearby stars, nebulae, star clusters, compact objects and exoplanets.
@@ -170,7 +174,7 @@ See Space Compass in portrait and landscape, by day and by night. These English 
 - Signed startup/manual GitHub updates with package, certificate, size and checksum verification.
 
 The application ID is `me.mondiversi.spacecompass`. The current stable version is
-**1.7.6**, with Android/update identity `1.7.6` and version code **62**.
+**1.7.7**, with Android/update identity `1.7.7` and version code **62**.
 This preserves the three-part update protocol used by existing preview installations.
 The app stores its preferences and caches privately.
 
@@ -232,7 +236,7 @@ Launcher/loading artwork and original illustrations are project assets.
 
 ## Data and graphics packages
 
-Release 1.7.6 includes **9,999 selectable objects**, and an optional reference-information archive.
+Release 1.7.7 includes **9,999 selectable objects**, and an optional reference-information archive.
 All descriptive data and translations remain inside the APK. Scientific limits and provenance are in the
 [catalogue sources](docs/CATALOG_9999.md) and [canonical source catalogue](catalogue/README.md).
 

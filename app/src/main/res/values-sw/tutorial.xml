@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="tutorial_title" formatted="false">Mafunzo</string>
+    <string name="tutorial_welcome_title" formatted="false">Karibu Space Compass</string>
+    <string name="tutorial_welcome_body" formatted="false">Chunguza anga na njia za vitu vya angani katika maeneo na nyakati tofauti. Jifunze vidhibiti kupitia mafunzo shirikishi.</string>
+    <string name="tutorial_instruction" formatted="false">Gusa kidhibiti kilichoangaziwa au nukta ya obiti ili kujua kazi yake bila kubadili mipangilio.</string>
+    <string name="tutorial_zoom_title" formatted="false">Ukuzaji wa kamera</string>
+    <string name="tutorial_navigation_title" formatted="false">Kitu kilichochaguliwa</string>
+    <string name="tutorial_points_title" formatted="false">Nukta za obiti</string>
+    <string name="tutorial_info" formatted="false">Fungua taarifa za programu, mambo mapya na vyanzo.</string>
+    <string name="tutorial_menu" formatted="false">Fungua Jumla, Lugha, Vipimo, Mafunzo na Taarifa na shukrani.</string>
+    <string name="tutorial_objects" formatted="false">Chagua vitu vya kuonyesha. Tafuta, chuja na hifadhi vipendwa.</string>
+    <string name="tutorial_location" formatted="false">Weka eneo, kimo, ukanda wa saa, tarehe, saa na kasi ya muda.</string>
+    <string name="tutorial_guides" formatted="false">Onyesha miduara ya angani, ncha, zenithi na nadiri. Haya ni makadirio ya angani, si njia ardhini.</string>
+    <string name="tutorial_forward" formatted="false">0–24 huonyesha siku nzima ya kalenda kutoka usiku wa manane hadi usiku wa manane. +24h huonyesha saa 24 baada ya muda unaoonyeshwa, hata ukiwa wa kuigwa. Njia, picha na uhamishaji hutumia kipindi hicho.</string>
+    <string name="tutorial_camera" formatted="false">Badili kati ya anga la kuigwa na kamera ya nyuma yenye mhimili wake halisi. Hapa unaweza kuchunguza Ukuzaji na Uwazi bila kutumia kamera. Gusa tena kurudi kwenye mwonekano wa kawaida.</string>
+    <string name="tutorial_weather" formatted="false">Onyesha au ficha hali ya hewa kwenye anga la kuigwa na panorama. Haipatikani katika hali ya kamera.</string>
+    <string name="tutorial_axis" formatted="false">Chagua mhimili wa kamera (90°) au urefu wa simu (0°). Kamera hutumia mhimili wake daima.</string>
+    <string name="tutorial_transparency" formatted="false">Fanya picha za vitu zipitishe mwanga ili kulinganisha na kamera. Picha huhifadhi chaguo hili.</string>
+    <string name="tutorial_zoom" formatted="false">Chagua ukuzaji wa kamera au tumia vidole viwili kwenye picha.</string>
+    <string name="tutorial_capture" formatted="false">Andaa panorama ya anga au picha ya kamera yenye tabaka za anga. Hamisha kutoka hakiki.</string>
+    <string name="tutorial_panels" formatted="false">Funga au panua paneli za kitu na dira ili kuongeza nafasi ya anga.</string>
+    <string name="tutorial_antipodes" formatted="false">Gusa kuonyesha au kuficha mwelekeo wa kinyume wa nukta zilizochaguliwa: azimuthi +180° na ishara ya mwinuko inageuka. Shikilia ili kuondoa chaguo la nukta zote.</string>
+    <string name="tutorial_navigation" formatted="false">Pitia vitu vilivyochaguliwa. Paneli huonyesha kitu hai na rangi za njia yake. Gusa jina kufungua katalogi ya vitu.</string>
+    <string name="tutorial_observatory" formatted="false">Fungua modeli, taarifa za kisayansi, muda wa safari na miinuko na matukio ya mwaka.</string>
+    <string name="tutorial_daily" formatted="false">Tazama njia, saa, miinuko na nukta zinazochagulika. Matukio yajayo yanaweza kupewa vikumbusho.</string>
+    <string name="tutorial_gps" formatted="false">Tazama eneo halisi, kimo cha GPS, mwelekeo na hali ya hewa, tofauti na Location.</string>
+    <string name="tutorial_points" formatted="false">Chagua nukta ya obiti. Ilenge ili kusoma kitu, saa, T, azimuthi na mwinuko. Mpaka wa kitu hufuata rangi ya njia yake; ukichagua nafasi yake ya sasa huwa bluu au samawati.</string>
+    <string name="tutorial_reticle" formatted="false">Gusa anga tupu kuonyesha au kuficha kilengaji na taarifa. Lebo za picha zinazohamishwa hazibadiliki.</string>
+    <string name="tutorial_reminder" formatted="false">Fungua kengele au kalenda ya Android kwa tukio lijalo linalofaa. Si kwa yaliyopita au nukta ya sasa.</string>
+    <string name="tutorial_status_title" formatted="false">Hali na urejeshaji</string>
+    <string name="tutorial_status" formatted="false">Soma hali ya sasa. Kitendo kinaweza kuomba ruhusa, kuwasha eneo au kupakia tena data za obiti na hali ya hewa. Mafunzo hayatekelezi kitendo.</string>
+</resources>

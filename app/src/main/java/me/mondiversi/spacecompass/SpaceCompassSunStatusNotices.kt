@@ -71,7 +71,8 @@ internal fun SpaceCompassSunStatusNotices(
             }
             Text(text, color = if (messageAttention) warningOrange else primaryText,
                 fontSize = 10.sp, lineHeight = 13.sp,
-                modifier = Modifier.testTag("sun-finder-status-island")
+                modifier = Modifier.testTag("sun-finder-status-island").spaceCompassTutorialTarget(SpaceCompassTutorialFeature.STATUS,
+                        enabled = !actionLabel.isNullOrBlank(), circular = false)
                     .semantics { liveRegion = LiveRegionMode.Polite }
                     .background(noticeBackground, shape).padding(noticePadding))
         }

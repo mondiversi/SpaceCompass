@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="scene_antipodes" formatted="false">Antipoda</string>
+    <string name="scene_antipode" formatted="false">Antipoda</string>
+    <string name="scene_antipodes_on" formatted="false">Antipoda ditampilkan</string>
+    <string name="scene_antipodes_off" formatted="false">Antipoda disembunyikan</string>
+</resources>

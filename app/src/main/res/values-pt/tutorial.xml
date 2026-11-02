@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="tutorial_title" formatted="false">Tutorial</string>
+    <string name="tutorial_welcome_title" formatted="false">Bem-vindo ao Space Compass</string>
+    <string name="tutorial_welcome_body" formatted="false">Explore o céu e as trajetórias dos astros em outros locais e momentos. Descubra os comandos no tutorial interativo.</string>
+    <string name="tutorial_instruction" formatted="false">Toque num comando destacado ou ponto orbital para conhecer a função sem alterar as definições.</string>
+    <string name="tutorial_zoom_title" formatted="false">Zoom da câmara</string>
+    <string name="tutorial_navigation_title" formatted="false">Objeto selecionado</string>
+    <string name="tutorial_points_title" formatted="false">Pontos orbitais</string>
+    <string name="tutorial_info" formatted="false">Abra informações, novidades e créditos das fontes.</string>
+    <string name="tutorial_menu" formatted="false">Abra Geral, Idioma, Unidades, Tutorial e Informações e créditos.</string>
+    <string name="tutorial_objects" formatted="false">Escolha os objetos visíveis. Pesquise, filtre e guarde favoritos.</string>
+    <string name="tutorial_location" formatted="false">Personalize posição, altitude, fuso horário, data, hora e velocidade do tempo.</string>
+    <string name="tutorial_guides" formatted="false">Mostre círculos celestes, polos, zénite e nadir. São projeções no céu, não percursos no solo.</string>
+    <string name="tutorial_forward" formatted="false">0–24 mostra o dia inteiro, de meia-noite a meia-noite. +24h mostra as 24 horas após o momento apresentado, mesmo que simulado. Trajetórias, capturas e exportações usam o mesmo intervalo.</string>
+    <string name="tutorial_camera" formatted="false">Alterne entre o céu simulado e a câmara traseira com o seu eixo real. Aqui pode explorar Zoom e Transparência sem usar a câmara. Toque novamente para voltar à vista normal.</string>
+    <string name="tutorial_weather" formatted="false">Mostre ou oculte o tempo atmosférico no céu simulado e panoramas. Indisponível com a câmara.</string>
+    <string name="tutorial_axis" formatted="false">Escolha o eixo da câmara (90°) ou o comprimento do telefone (0°). A câmara usa sempre o seu próprio eixo.</string>
+    <string name="tutorial_transparency" formatted="false">Torne as imagens dos objetos translúcidas para comparar com a câmara. A captura mantém a escolha.</string>
+    <string name="tutorial_zoom" formatted="false">Escolha o zoom da câmara ou use dois dedos sobre a imagem.</string>
+    <string name="tutorial_capture" formatted="false">Prepare um panorama do céu ou uma foto com sobreposições astronómicas. Exporte a partir da pré-visualização.</string>
+    <string name="tutorial_panels" formatted="false">Recolha ou expanda os painéis do objeto e da bússola para libertar espaço.</string>
+    <string name="tutorial_antipodes" formatted="false">Toca para mostrar ou ocultar a direção oposta dos pontos selecionados: azimute +180° e elevação de sinal contrário. Mantém premido para desmarcar todos os pontos.</string>
+    <string name="tutorial_navigation" formatted="false">Percorra os objetos selecionados. O painel mostra o objeto ativo e as cores da trajetória. Toca no nome para abrir o catálogo de objetos.</string>
+    <string name="tutorial_observatory" formatted="false">Abra o modelo, dados científicos, tempo de viagem, alturas e eventos anuais.</string>
+    <string name="tutorial_daily" formatted="false">Consulte trajetória, horários, elevações e pontos selecionáveis. Eventos futuros podem ter alertas.</string>
+    <string name="tutorial_gps" formatted="false">Consulte posição real, altitude GPS, orientação e meteorologia, independentemente da Location.</string>
+    <string name="tutorial_points" formatted="false">Selecione um ponto. Aponte para ler objeto, hora, T, azimute e elevação. O contorno do objeto segue a cor da sua trajetória; fica azul ou azul-claro ao selecionar a posição atual.</string>
+    <string name="tutorial_reticle" formatted="false">Toque no céu vazio para mostrar ou ocultar a mira e informações. Não altera as etiquetas exportadas.</string>
+    <string name="tutorial_reminder" formatted="false">Abra o alarme ou calendário Android para um evento futuro válido. Não se aplica ao passado nem ao ponto atual.</string>
+    <string name="tutorial_status_title" formatted="false">Estado e recuperação</string>
+    <string name="tutorial_status" formatted="false">Consulte o estado. A ação pode pedir permissão, ativar a localização ou tentar carregar dados orbitais ou meteorológicos. O tutorial não executa a ação.</string>
+</resources>

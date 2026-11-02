@@ -1,9 +1,9 @@
 <resources>
     <string name="info_news_title">Latest news · %1$s</string>
-    <string name="info_news_star_sky" formatted="false">Default catalogue order now follows increasing distance from the Sun. Value columns match the selected sort, with selected objects kept first.</string>
-    <string name="info_news_texture_downloads" formatted="false">Faster satellite-data recovery with validated alternative sources. Loading, outdated data, dates outside coverage and unavailable values have distinct messages.</string>
-    <string name="info_news_weather" formatted="false">Daily path opens with Current centered where possible. Returning to an object keeps the position you consulted during the session.</string>
-    <string name="info_news_viewer_zoom" formatted="false">Landscape has a 55/45 sky/information split. GPS altitude is clearer; 0°/90° and Weather swap places while camera controls keep their positions.</string>
-    <string name="info_news_settings" formatted="false">Orbit and celestial-guide captions stay closer to their own lines, with steadier placement near crossings and when switching the camera view.</string>
-    <string name="info_news_catalog" formatted="false">Capture has the same size as the other controls, a gentle pulsing border and a finer symbol. Control spacing and chevron alignment are more consistent.</string>
+    <string name="info_news_star_sky" formatted="false">An interactive tutorial explains the main controls, with a welcome shown only on the first launch.</string>
+    <string name="info_news_texture_downloads" formatted="false">Choose calendar-day paths (0–24) or the next 24 hours (+24h). Daily path, capture labels and exported tables follow the same interval.</string>
+    <string name="info_news_weather" formatted="false">Tap empty sky to show or hide the reticle and its information bubbles. Capture labels keep their own setting.</string>
+    <string name="info_news_viewer_zoom" formatted="false">Selected points can show their antipodal directions. Tap the Antipodes button to show or hide them; hold it to deselect all points.</string>
+    <string name="info_news_settings" formatted="false">Visible antipodes are included in photos, panoramas and their exported tables. Daily path and its exports retain only the original points.</string>
+    <string name="info_news_catalog" formatted="false">Current objects use one border matching the orbit colour above or below the horizon. Selected current positions have a blue or cyan border.</string>
 </resources>

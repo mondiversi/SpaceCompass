@@ -21,7 +21,7 @@ internal fun SpaceCompassScenarioButton(activeCount: Int, color: Color, backgrou
     val count = formatSpaceCompassNumber(activeCount.toDouble(), 0,
         LocalSpaceCompassNumericFormat.current, grouping = false)
     SpaceCompassFloatingActionButton(label, onClick, tint, background,
-        Modifier.testTag("open-scenario"), selectedState = active,
+        Modifier.testTag("open-scenario").spaceCompassTutorialTarget(SpaceCompassTutorialFeature.LOCATION), selectedState = active,
         glyphInk = spaceCompassFloatingInk(26f, .10f, .1075f, .93f, .90f),
         stateText = if (active) "$activeLabel · $count" else null,
         overlay = {

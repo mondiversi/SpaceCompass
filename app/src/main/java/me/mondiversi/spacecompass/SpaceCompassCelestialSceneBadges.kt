@@ -18,11 +18,11 @@ import kotlin.math.roundToInt
 internal fun SpaceCompassCelestialSceneBadges(pinned: List<SpaceCompassCelestialSceneTarget>,
     focused: SpaceCompassCelestialSceneTarget?, nowMs: Long, primaryText: Color, secondaryText: Color,
     backgroundColor: Color, excluded: List<SpaceCompassSunSceneFrame>) {
-    val selected = focused != null && pinned.any { it.body == focused.body && it.isCurrent == focused.isCurrent &&
+    val selected = focused?.isAntipode == true || focused != null && pinned.any { it.body == focused.body && it.isCurrent == focused.isCurrent &&
         (it.isCurrent || it.point.timeMs == focused.point.timeMs && it.point.event == focused.point.event) }
     val items = listOfNotNull(focused)
     if (items.isEmpty()) return
-    val showReminder = spaceCompassMainReminderButtonVisible(LocalSpaceCompassPresentationSettings.current)
+    val showReminder = focused?.isAntipode != true && spaceCompassMainReminderButtonVisible(LocalSpaceCompassPresentationSettings.current)
     val realNowMs = rememberSpaceCompassPointReminderNow(active = showReminder)
     val reminderGap = 8.dp
     val reminderWidth = if (showReminder) reminderGap + spaceCompassFloatingControlSize else 0.dp
@@ -35,9 +35,11 @@ internal fun SpaceCompassCelestialSceneBadges(pinned: List<SpaceCompassCelestial
         items.forEachIndexed { index, target -> key(target.body, target.point.timeMs, target.point.event, target.isCurrent) {
             val zone = target.path?.zone ?: spaceCompassObservationZone()
             val labels = target.path?.let { rememberSpaceCompassSunPathLabels(it) }
-            val name = if (target.isCurrent) stringResource(R.string.celestial_point_current)
+            val eventName = if (target.isCurrent) stringResource(R.string.celestial_point_current)
                 else if (target.point.event == SpaceCompassSunPathEvent.HOUR) ""
                 else labels?.name?.invoke(target.point).orEmpty()
+            val name = if (target.isAntipode) listOf(stringResource(R.string.scene_antipode), eventName)
+                .filter { it.isNotBlank() }.joinToString(" · ") else eventName
             Row(Modifier.width(IntrinsicSize.Max).spaceCompassSceneInputShield(),
                 verticalAlignment = Alignment.CenterVertically, horizontalArrangement = Arrangement.spacedBy(reminderGap)) {
                 SpaceCompassCelestialBadgeContent(target.point.timeMs, nowMs, zone, target.point.position,

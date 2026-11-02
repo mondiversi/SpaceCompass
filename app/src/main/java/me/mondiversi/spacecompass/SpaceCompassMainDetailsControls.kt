@@ -58,7 +58,7 @@ internal fun SpaceCompassMainDetailsToggleButton(expanded: Boolean, onClick: () 
     val angle by animateFloatAsState(targetAngle, tween(detailsAnimationMs), label = "main details chevron")
     SpaceCompassFloatingControlHitRegion {
         Surface(onClick = onClick, modifier = modifier.spaceCompassFloatingControlVisual().size(48.dp)
-            .testTag("toggle-main-details").spaceCompassAccessibleAction(label, onClick = onClick),
+            .testTag("toggle-main-details").spaceCompassTutorialTarget(SpaceCompassTutorialFeature.PANELS).spaceCompassAccessibleAction(label, onClick = onClick),
             shape = CircleShape, color = background.copy(alpha = 1f), contentColor = color,
             border = BorderStroke(1.dp, color.copy(alpha = .35f)), shadowElevation = 3.dp) {
             Box(contentAlignment = Alignment.Center) {

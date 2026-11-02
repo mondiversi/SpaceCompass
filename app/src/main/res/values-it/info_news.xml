@@ -1,9 +1,9 @@
 <resources>
     <string name="info_news_title">Ultime novità · %1$s</string>
-    <string name="info_news_star_sky" formatted="false">Il predefinito ordina davvero per distanza crescente dal Sole. La colonna segue il criterio scelto e gli oggetti selezionati restano in cima.</string>
-    <string name="info_news_texture_downloads" formatted="false">Recupero dei dati satellitari più rapido con fonti alternative validate. Messaggi distinti per caricamento, dati non aggiornati, date fuori intervallo e valori non disponibili.</string>
-    <string name="info_news_weather" formatted="false">Il percorso giornaliero si apre con Attuale centrato dove possibile. Tornando a un oggetto resta la posizione consultata durante la sessione.</string>
-    <string name="info_news_viewer_zoom" formatted="false">In orizzontale, proporzione cielo/informazioni 55/45. Quota GPS più chiara; 0°/90° e Meteo si scambiano, mantenendo le posizioni dei comandi fotocamera.</string>
-    <string name="info_news_settings" formatted="false">Le etichette di orbite e riferimenti celesti restano vicine alla propria linea, più stabili agli incroci e passando alla vista fotocamera.</string>
-    <string name="info_news_catalog" formatted="false">Scatto ha la stessa dimensione degli altri comandi, un bordo che pulsa dolcemente e un simbolo più sottile. Distanze e centratura delle frecce più coerenti.</string>
+    <string name="info_news_star_sky" formatted="false">Un tutorial interattivo spiega i comandi principali, con un benvenuto mostrato soltanto al primo avvio.</string>
+    <string name="info_news_texture_downloads" formatted="false">Scegli i percorsi del giorno (0–24) o delle prossime 24 ore (+24h). Percorso giornaliero, etichette degli scatti e tabelle esportate seguono lo stesso intervallo.</string>
+    <string name="info_news_weather" formatted="false">Tocca il cielo libero per mostrare o nascondere mirino e fumetti informativi. Le etichette degli scatti mantengono la propria impostazione.</string>
+    <string name="info_news_viewer_zoom" formatted="false">I punti selezionati possono mostrare le direzioni antipodali. Tocca Antipodi per mostrarle o nasconderle; tieni premuto per deselezionare tutti i punti.</string>
+    <string name="info_news_settings" formatted="false">Gli antipodi visibili sono inclusi in foto, panoramiche e relative tabelle esportate. Percorso giornaliero e sue esportazioni mantengono soltanto i punti originali.</string>
+    <string name="info_news_catalog" formatted="false">Gli oggetti attuali hanno un solo bordo del colore dell’orbita, sopra o sotto l’orizzonte. Le posizioni attuali selezionate hanno il bordo blu o azzurro.</string>
 </resources>

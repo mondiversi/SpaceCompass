@@ -1,0 +1,3 @@
+<resources>
+    <string name="celestial_forward_satellite_note">今後24時間を、地平線の下も含めて1時間ごとの点で表示します。概要には、この時間内の現在または次の通過を表示します。見えることを保証するものではありません。\nCelesTrak / Satcat · Space-Track</string>
+</resources>

@@ -18,7 +18,7 @@ internal fun spaceCompassSnapshotForDisclosure(snapshot: SpaceCompassPanoramaSna
         snapshot.selectedPoints.map { it.point.timeMs }
     return snapshot.copy(displayZoneId=zoneId,
         currentTime=formatSpaceCompassPanoramaExportTime(snapshot.timeMs,zone,snapshot.formatting),
-        markerTimes=times.associateWith { formatSpaceCompassPanoramaExportTime(it,zone,snapshot.formatting) })
+        markerTimes=times.associateWith { formatSpaceCompassPanoramaMarkerTime(it,snapshot.timeMs,zone,snapshot.formatting) })
 }
 
 internal fun spaceCompassDailyExportCaption(snapshot: SpaceCompassPanoramaSnapshot,

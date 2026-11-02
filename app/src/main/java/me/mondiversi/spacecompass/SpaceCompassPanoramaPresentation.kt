@@ -66,7 +66,7 @@ internal fun spaceCompassPanoramaPresentation(snapshot: SpaceCompassPanoramaSnap
         elevationNames = listOf(90.0, 60.0, 30.0, 0.0, -30.0, -60.0, -90.0).map { "${if (it > 0) "+" else ""}${angle(it)}" },
         azimuthNames = (0..12).map { angle(it * 30.0) },
         markerTimes = objects.flatMap { it.path?.markers.orEmpty() }.associate { point ->
-            point.timeMs to formatSpaceCompassPanoramaExportTime(point.timeMs, zone, formatting) },
+            point.timeMs to formatSpaceCompassPanoramaMarkerTime(point.timeMs, snapshot.timeMs, zone, formatting) },
         referenceNames = names, poleNames = resources.getString(R.string.sky_reference_north_pole) to
             resources.getString(R.string.sky_reference_south_pole),
         observerPointNames = resources.getString(R.string.sky_reference_nadir) to

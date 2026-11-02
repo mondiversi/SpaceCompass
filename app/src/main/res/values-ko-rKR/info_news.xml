@@ -1,9 +1,9 @@
 <resources>
     <string name="info_news_title">최근 변경 사항 · %1$s</string>
-    <string name="info_news_star_sky" formatted="false">기본 정렬이 태양과의 거리 오름차순을 따릅니다. 값 열은 선택한 정렬과 일치하며 선택한 천체는 위에 유지됩니다.</string>
-    <string name="info_news_texture_downloads" formatted="false">검증된 대체 소스로 위성 데이터를 더 빠르게 복구합니다. 로딩, 오래된 데이터, 범위 밖 날짜, 사용할 수 없는 값을 각각 구분합니다.</string>
-    <string name="info_news_weather" formatted="false">일일 경로를 열면 가능한 경우 현재 위치가 가운데에 표시됩니다. 천체로 돌아오면 세션에서 보던 스크롤 위치가 유지됩니다.</string>
-    <string name="info_news_viewer_zoom" formatted="false">가로 화면의 하늘/정보 비율은 55/45입니다. GPS 고도를 명확히 하고 0°/90°와 날씨 위치를 바꿨으며 카메라 컨트롤 위치는 유지합니다.</string>
-    <string name="info_news_settings" formatted="false">궤도와 천구 가이드의 라벨이 해당 선에 더 가깝게 유지되며 교차점과 카메라 전환에서도 더 안정적입니다.</string>
-    <string name="info_news_catalog" formatted="false">촬영 버튼은 다른 컨트롤과 같은 크기로, 부드럽게 맥동하는 테두리와 더 얇은 기호를 사용합니다. 간격과 화살표의 시각적 중심을 맞췄습니다.</string>
+    <string name="info_news_star_sky" formatted="false">대화형 튜토리얼이 주요 조작을 설명합니다. 환영 메시지는 처음 실행할 때만 표시됩니다.</string>
+    <string name="info_news_texture_downloads" formatted="false">당일 경로(0–24) 또는 앞으로 24시간(+24h)을 선택하세요. 일일 경로, 촬영 라벨과 내보낸 표가 같은 시간 범위를 따릅니다.</string>
+    <string name="info_news_weather" formatted="false">빈 하늘을 탭하여 조준선과 정보 말풍선을 표시하거나 숨길 수 있습니다. 촬영 라벨은 별도 설정을 유지합니다.</string>
+    <string name="info_news_viewer_zoom" formatted="false">선택한 점의 대척 방향을 표시할 수 있습니다. 대척점 버튼을 탭하여 표시하거나 숨기고, 길게 눌러 모든 점의 선택을 해제하세요.</string>
+    <string name="info_news_settings" formatted="false">표시된 대척점은 사진, 파노라마와 해당 내보내기 표에 포함됩니다. 일일 경로와 그 내보내기에는 원래 점만 유지됩니다.</string>
+    <string name="info_news_catalog" formatted="false">현재 천체는 지평선 위아래에 맞는 경로 색상의 테두리 하나를 사용합니다. 선택한 현재 위치의 테두리는 파란색 또는 하늘색입니다.</string>
 </resources>

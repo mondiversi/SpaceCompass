@@ -37,7 +37,11 @@ internal fun SpaceCompassAppPages(content: @Composable () -> Unit) {
     val observer = rememberSpaceCompassObserverState()
     val objectScrollSession = rememberSpaceCompassObjectPageScrollSession()
     val settingsConfirmation = rememberSpaceCompassSettingsExitNotice(route)
-    CompositionLocalProvider(LocalSpaceCompassNavigate provides { route = it },
+    val tutorial = LocalSpaceCompassTutorial.current
+    LaunchedEffect(tutorial?.active) { if (tutorial?.active == true) route = null }
+    CompositionLocalProvider(LocalSpaceCompassNavigate provides {
+        if (it == "tutorial") { route = null; tutorial?.start() } else route = it
+    },
         LocalSpaceCompassSettingsExitFailure provides settingsConfirmation::rejectExit,
         LocalSpaceCompassObserver provides observer, LocalSpaceCompassObjectPageScrollSession provides objectScrollSession,
         LocalSpaceCompassMainVisible provides (route == null && !screensaverActive)) {
@@ -60,7 +64,7 @@ internal fun SpaceCompassAppPages(content: @Composable () -> Unit) {
 internal fun SpaceCompassMainInfoButton(color: Color, background: Color) {
     val navigate = LocalSpaceCompassNavigate.current
     SpaceCompassFloatingActionButton(stringResource(R.string.pc_info), { navigate("info") },
-        color, background, Modifier.testTag("main-info"),
+        color, background, Modifier.testTag("main-info").spaceCompassTutorialTarget(SpaceCompassTutorialFeature.INFO),
         border = BorderStroke(2.dp, Color.White.copy(alpha = .35f))) {
         Box(Modifier.fillMaxSize()) {
             Image(painterResource(R.drawable.ic_space_compass_button), contentDescription = null,
@@ -80,24 +84,36 @@ internal fun SpaceCompassMainInfoButton(color: Color, background: Color) {
 internal fun SpaceCompassSettingsButton(color: Color, background: Color) {
     var expanded by rememberSaveable { mutableStateOf(false) }
     val navigate = LocalSpaceCompassNavigate.current
+    val tutorial = LocalSpaceCompassTutorial.current
+    val tutorialActive = tutorial?.active == true
+    LaunchedEffect(tutorialActive) { if (tutorialActive) expanded = false }
     val card = spaceCompassSettingsCardColor()
     val foreground = MaterialTheme.colorScheme.onSurface
     Box {
-        SpaceCompassFloatingActionButton(stringResource(R.string.pc_settings), { expanded = true },
-            color, background, Modifier.testTag("app-settings"),
-            glyphInk = spaceCompassFloatingInk(26f, 4f / 24f, .25f, 20f / 24f, .75f)) {
+        SpaceCompassFloatingActionButton(stringResource(if (tutorialActive) R.string.close else R.string.pc_settings),
+            { if (tutorialActive) tutorial?.close() else expanded = true },
+            color, background, Modifier.testTag("app-settings").spaceCompassTutorialTarget(SpaceCompassTutorialFeature.MENU),
+            glyphInk = if (tutorialActive) spaceCompassFloatingInk(26f, .24f, .24f, .76f, .76f)
+                else spaceCompassFloatingInk(26f, 4f / 24f, .25f, 20f / 24f, .75f)) {
             val stroke = SpaceCompassFloatingIconStrokeWidth * LocalSpaceCompassFloatingStrokeScale.current
             SpaceCompassIconCanvas(color, Modifier.size(26.dp)) { ink ->
-                for (y in listOf(.25f, .5f, .75f)) drawLine(ink,
-                    Offset(size.width * 4f / 24f, size.height * y),
-                    Offset(size.width * 20f / 24f, size.height * y),
-                    stroke.toPx(), StrokeCap.Round)
+                if (tutorialActive) {
+                    drawLine(ink, Offset(size.width * .24f, size.height * .24f),
+                        Offset(size.width * .76f, size.height * .76f), stroke.toPx(), StrokeCap.Round)
+                    drawLine(ink, Offset(size.width * .76f, size.height * .24f),
+                        Offset(size.width * .24f, size.height * .76f), stroke.toPx(), StrokeCap.Round)
+                } else {
+                    for (y in listOf(.25f, .5f, .75f)) drawLine(ink,
+                        Offset(size.width * 4f / 24f, size.height * y),
+                        Offset(size.width * 20f / 24f, size.height * y),
+                        stroke.toPx(), StrokeCap.Round)
+                }
             }
         }
-        SpaceCompassAdaptiveDropdownMenu(expanded, { expanded = false }, containerColor = card,
+        SpaceCompassAdaptiveDropdownMenu(expanded && !tutorialActive, { expanded = false }, containerColor = card,
             modifier = Modifier.testTag("app-settings-menu"), shape = RoundedCornerShape(16.dp)) {
             listOf("appearance" to R.string.settings_section_appearance, "language" to R.string.settings_section_language,
-                "units" to R.string.settings_section_units, "info" to R.string.pc_info).forEachIndexed { index, (route, title) ->
+                "units" to R.string.settings_section_units, "tutorial" to R.string.tutorial_title, "info" to R.string.pc_info).forEachIndexed { index, (route, title) ->
                 if (index > 0) HorizontalDivider(color = foreground.copy(alpha = .10f))
                 DropdownMenuItem(text = {
                     Row(verticalAlignment = Alignment.CenterVertically, horizontalArrangement = Arrangement.spacedBy(8.dp)) {

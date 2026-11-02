@@ -11,7 +11,6 @@ import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.graphicsLayer
 import androidx.compose.ui.layout.Layout
 import androidx.compose.ui.platform.LocalConfiguration
@@ -62,16 +61,14 @@ internal fun SpaceCompassCelestialLiveMarker(body: SpaceCompassCelestialBody, pr
                     onClick { state.toggleCurrent(body, point, path, zone); true }
                 }
             }, contentAlignment = Alignment.Center) {
-            SpaceCompassCelestialThumbnail(body, Modifier.size(SPACE_COMPASS_CELESTIAL_LIVE_PREVIEW_SIZE_DP.dp)
-                .graphicsLayer(alpha = objectOpacity)
+            Box(Modifier.size(SPACE_COMPASS_CELESTIAL_LIVE_PREVIEW_SIZE_DP.dp)
                 .border(if (selected || focused) 1.8.dp else 0.8.dp,
-                    when {
-                        selected -> accent
-                        focused -> Color.White
-                        else -> (if (belowHorizon) Color.LightGray else Color.White).copy(alpha = 0.65f)
-                    }, CircleShape)
-                .testTag(if (interactive) "celestial-live-preview-${body.name}" else "celestial-background-preview-${body.name}"),
-                muted = belowHorizon, moonPhase = moonPhase)
+                    if (selected) accent else spaceCompassCelestialPathLineTint(
+                        spaceCompassCelestialPathTint(body), belowHorizon), CircleShape)
+                .testTag(if (interactive) "celestial-live-preview-${body.name}" else "celestial-background-preview-${body.name}")) {
+                SpaceCompassCelestialThumbnail(body, Modifier.fillMaxSize().graphicsLayer(alpha = objectOpacity),
+                    muted = belowHorizon, moonPhase = moonPhase)
+            }
         }
     }) { measurables, constraints ->
         val targetSize = (SPACE_COMPASS_SUN_PATH_TOUCH_RADIUS_DP * 2).dp.roundToPx()

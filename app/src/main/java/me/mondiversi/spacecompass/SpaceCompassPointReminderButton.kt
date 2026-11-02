@@ -73,7 +73,8 @@ internal fun SpaceCompassPointReminderButton(body: SpaceCompassCelestialBody, po
         .then(if (request == null) Modifier.spaceCompassSceneInputShield() else Modifier).testTag(tag)
     if (badgeBackground != null) {
         SpaceCompassFloatingActionButton(description, onClick, tint, badgeBackground,
-            buttonModifier, enabled = request != null, backgroundAlpha = SPACE_COMPASS_POINT_CAPTION_ALPHA,
+            buttonModifier.spaceCompassTutorialTarget(SpaceCompassTutorialFeature.REMINDER, enabled = request != null),
+            enabled = request != null, backgroundAlpha = SPACE_COMPASS_POINT_CAPTION_ALPHA,
             glyphInk = spaceCompassFloatingInk(28f, .18f, .10f, .82f, .89f)) {
             SpaceCompassPointReminderGlyph(tint, request != null, Modifier.size(28.dp),
                 iconStrokeWidth = SpaceCompassFloatingIconStrokeWidth)

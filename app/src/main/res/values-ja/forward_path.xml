@@ -1,0 +1,6 @@
+<resources>
+    <string name="forward_path_title">今後24時間</string>
+    <string name="scene_forward_path_on">今から24時間</string>
+    <string name="scene_forward_path_off">一日全体</string>
+    <string name="path_interval_title">軌道の時間範囲</string>
+</resources>

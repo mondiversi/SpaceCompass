@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="scene_antipodes" formatted="false">Nukta kinzani</string>
+    <string name="scene_antipode" formatted="false">Nukta kinzani</string>
+    <string name="scene_antipodes_on" formatted="false">Nukta kinzani zinaonekana</string>
+    <string name="scene_antipodes_off" formatted="false">Nukta kinzani zimefichwa</string>
+</resources>

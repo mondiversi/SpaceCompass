@@ -70,7 +70,7 @@ internal fun rememberSpaceCompassSunPathLabels(path: SpaceCompassSunDailyPath): 
     val approach = stringResource(R.string.celestial_approach)
     return remember(path, locale, deviceLocale, dateLocale, timeFormat, dateFormat, numeric, rise, culmination, set, minimum, current, numbered, pointTime, approach, resources) {
         val names = SpaceCompassSunPathPointNames(path.markers, rise, culmination, set, minimum, current,
-            hourlyZone = path.zone.takeUnless { path.body.isEarthSatellite }, approach = { point ->
+            hourlyZone = path.zone.takeUnless { path.body.isEarthSatellite && !path.forward24Hours }, approach = { point ->
                 point.approach?.let { "$approach · ${resources.getString(it.other.nameResource)} · " +
                     formatSpaceCompassNumber(it.separationDegrees, 2, numeric, grouping = false, systemLocale = deviceLocale) + "°" } ?: approach
             }) {
@@ -82,7 +82,10 @@ internal fun rememberSpaceCompassSunPathLabels(path: SpaceCompassSunDailyPath): 
             formatSpaceCompassCelestialMoment(point.timeMs, path.samples.first().timeMs, path.zone,
                 timeFormat, dateFormat, locale, deviceLocale, numeric)
         }
-        SpaceCompassSunPathLabels(formatSpaceCompassDateOnly(path.samples.first().timeMs, dateFormat, dateLocale, zone, numeric, deviceLocale),
+        val interval=if(path.forward24Hours) formatSpaceCompassPathInterval(path.samples.first().timeMs,
+            path.samples.last().timeMs,path.zone,timeFormat,dateFormat,numeric,locale,deviceLocale)
+            else formatSpaceCompassDateOnly(path.samples.first().timeMs,dateFormat,dateLocale,zone,numeric,deviceLocale)
+        SpaceCompassSunPathLabels(interval,
             name = names::name,
             point = { String.format(locale, pointTime, names.name(it), moment(it)) },
             current = { String.format(locale, pointTime, names.current, moment(it)) },
@@ -103,9 +106,9 @@ internal fun SpaceCompassSunDailyPathPage(
     val pageBackground = spaceCompassSurfacePalette(backgroundColor.luminance() < .4f).island
     val highlightColor = MaterialTheme.colorScheme.primary
     val openingPointId = "current"
-    val scrollVisit = rememberSpaceCompassObjectPageScroll(path.body, SpaceCompassObjectPage.DAILY_PATH)
+    val scrollVisit = rememberSpaceCompassObjectPageScroll(path.body, SpaceCompassObjectPage.DAILY_PATH,path.forward24Hours.takeIf { it })
     val scroll = scrollVisit.entry.scroll
-    val quickHeader = key(path.body) {
+    val quickHeader = key(path.body,path.forward24Hours) {
         rememberSpaceCompassQuickReturnHeader(initialVisible = scrollVisit.entry.headerVisible)
     }
     val headerVisible = quickHeader.visible
@@ -114,7 +117,7 @@ internal fun SpaceCompassSunDailyPathPage(
         onDispose { scrollVisit.entry.headerVisible = quickHeader.visible }
     }
     // Center the live snapshot on the first visit; preserve a consulted table on return.
-    var openingPointCentered by remember(path.body) { mutableStateOf(scrollVisit.returning) }
+    var openingPointCentered by remember(path.body,path.forward24Hours) { mutableStateOf(scrollVisit.returning) }
     var viewport by remember { mutableStateOf<Rect?>(null) }
     var pointCenter by remember(path) { mutableStateOf<Int?>(null) }
     val viewportHeight = viewport?.height?.roundToInt() ?: 0
@@ -200,7 +203,7 @@ internal fun SpaceCompassSunDailyPathPage(
             Column(Modifier.fillMaxSize().scrollbarOverlay(scroll, secondaryText.copy(alpha = .46f))
                 .verticalScroll(scroll)) {
                 if (path.body.isEarthSatellite) {
-                    Text(stringResource(R.string.celestial_iss_note), color = secondaryText, fontSize = 12.sp,
+                    Text(stringResource(if(path.forward24Hours) R.string.celestial_forward_satellite_note else R.string.celestial_iss_note), color = secondaryText, fontSize = 12.sp,
                         modifier = Modifier.padding(start = 10.dp, end = 10.dp, bottom = 8.dp))
                 }
                 if (path.body.isEarthSatellite) {
@@ -209,22 +212,23 @@ internal fun SpaceCompassSunDailyPathPage(
                     if (path.issPass.isEmpty()) Text(stringResource(R.string.celestial_iss_no_pass),
                         color = secondaryText, fontSize = 12.sp, modifier = Modifier.padding(horizontal = 10.dp).testTag("iss-no-pass"))
                     path.issPass.forEach { point ->
-                        val emphasized = point.events.any { it != SpaceCompassSunPathEvent.HOUR }
+                        val currentPassPoint=path.forward24Hours && point.timeMs==path.samples.first().timeMs
+                        val emphasized = currentPassPoint || point.events.any { it != SpaceCompassSunPathEvent.HOUR }
                         // Informational rows, not points on the current orbit (the pass may be tomorrow).
                         Row(Modifier.fillMaxWidth().clipToBounds()
                             .padding(start = 18.dp, end = 8.dp, top = 6.dp, bottom = 6.dp).testTag("iss-pass-${point.event.name}"),
                             verticalAlignment = Alignment.CenterVertically, horizontalArrangement = Arrangement.spacedBy(8.dp)) {
-                            SpaceCompassDailyPathPointCaption(labels.name(point), labels.moment(point),
+                            SpaceCompassDailyPathPointCaption(if(currentPassPoint) currentName else labels.name(point), labels.moment(point),
                                 formatSpaceCompassPointCountdown(point.timeMs, nowMs, countdownLocale),
                                 primaryText, secondaryText, emphasized, Modifier.weight(1f), point = point,
                                 trend = spaceCompassElevationTrend(point, path.issPass))
                             angleValues(point, secondaryText, emphasized)
-                            SpaceCompassPointReminderButton(path.body, point, nowMs, realNowMs, false,
+                            SpaceCompassPointReminderButton(path.body, point, nowMs, realNowMs, currentPassPoint,
                                 labels.name(point), primaryText, tag = "iss-pass-reminder-${point.event.name}")
                         }
                     }
                     HorizontalDivider(Modifier.padding(horizontal = 10.dp, vertical = 8.dp), color = secondaryText.copy(alpha = 0.25f))
-                    Text(stringResource(R.string.celestial_orbit), color = primaryText, fontSize = 12.sp,
+                    Text(stringResource(if(path.forward24Hours) R.string.forward_path_title else R.string.celestial_orbit), color = primaryText, fontSize = 12.sp,
                         fontWeight = FontWeight.Bold, modifier = Modifier.padding(start = 10.dp, end = 10.dp, bottom = 4.dp))
                 }
                 entries.forEach { entry ->

@@ -1,0 +1,6 @@
+<resources>
+    <string name="forward_path_title">Επόμενες 24 ώρες</string>
+    <string name="scene_forward_path_on">Επόμενες 24 ώρες</string>
+    <string name="scene_forward_path_off">Ολόκληρη ημέρα</string>
+    <string name="path_interval_title">Διάστημα τροχιάς</string>
+</resources>

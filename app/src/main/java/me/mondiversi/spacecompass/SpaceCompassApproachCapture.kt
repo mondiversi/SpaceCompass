@@ -11,10 +11,10 @@ internal fun freezeSpaceCompassApproachSnapshot(snapshot: SpaceCompassPanoramaSn
     val date = Instant.ofEpochMilli(snapshot.timeMs).atZone(zone).toLocalDate()
     val paths = snapshot.objects.mapNotNull { item ->
         checkCancelled()
-        val path = item.path?.takeIf { it.date == date && it.zone == zone &&
+        val path = item.path?.takeIf { !snapshot.forward24Hours && !it.forward24Hours && it.date == date && it.zone == zone &&
             (!item.body.isEarthSatellite || snapshot.timeMs in (it.samples.first().timeMs..it.samples.last().timeMs)) }
             ?: calculateSpaceCompassCelestialPath(item.body,date,zone,snapshot.timeMs,snapshot.latitude,
-                snapshot.longitude,snapshot.altitude,snapshot.remote)
+                snapshot.longitude,snapshot.altitude,snapshot.remote,forward24Hours=snapshot.forward24Hours)
         path?.let { item.body to it }
     }.toMap()
     val decorated = spaceCompassApproachPaths(paths,{ body,t ->

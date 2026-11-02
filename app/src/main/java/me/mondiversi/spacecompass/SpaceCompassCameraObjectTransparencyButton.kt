@@ -20,7 +20,7 @@ internal fun SpaceCompassCameraObjectTransparencyButton(checked: Boolean, onChec
     color: Color, background: Color, enabled: Boolean = true) {
     val tint = spaceCompassFloatingControlTint(color,checked,enabled)
     SpaceCompassFloatingActionButton(stringResource(R.string.camera_object_transparency),{ onCheckedChange(!checked) },
-        tint,background,Modifier.testTag("toggle-camera-object-transparency"),enabled=enabled,selectedState=checked,
+        tint,background,Modifier.testTag("toggle-camera-object-transparency").spaceCompassTutorialTarget(SpaceCompassTutorialFeature.TRANSPARENCY, enabled = enabled),enabled=enabled,selectedState=checked,
         stateText=stringResource(if (checked) R.string.camera_objects_translucent else R.string.camera_objects_opaque),
         glyphInk=spaceCompassFloatingInk(26f, if (checked) .14f else .12f, if (checked) .14f else .12f,
             if (checked) .86f else .88f, if (checked) .86f else .88f)) {

@@ -8,7 +8,7 @@ internal fun spaceCompassSingleOrbitExportSnapshot(path: SpaceCompassSunDailyPat
     SpaceCompassPanoramaSnapshot(current?.timeMs ?: observationTime,0.0,0.0,0.0,SpaceCompassSunSkyPhase.NIGHT,null,
         listOf(SpaceCompassPanoramaObject(path.body,path.body.name,path)),SpaceCompassCelestialRemoteData(),
         "",emptyList(),emptyList(),observerPositionKnown=false,
-        selectedPoints=selections.filter { it.key.body==path.body }.toList(),zoneId=path.zone.id)
+        selectedPoints=selections.filter { it.key.body==path.body }.toList(),zoneId=path.zone.id,forward24Hours=path.forward24Hours)
 
 internal fun spaceCompassSingleOrbitPresentation(snapshot: SpaceCompassPanoramaSnapshot,
     profile: SpaceCompassDataExportProfile): SpaceCompassPanoramaSnapshot {
@@ -28,7 +28,7 @@ internal fun spaceCompassSingleOrbitExportTable(snapshot: SpaceCompassPanoramaSn
     path: SpaceCompassSunDailyPath, current: SpaceCompassSunPathPoint?): SpaceCompassCapturedOrbitTable {
     val currentPositions=current?.let { mapOf(path.body to it.position) }.orEmpty()
     val baseTable=captureSpaceCompassOrbitTable(snapshot,currentPositions)
-    return baseTable.copy(rows=spaceCompassChronologicalOrbitExportRows(baseTable.rows+path.issPass.mapIndexed { index,point ->
+    return baseTable.copy(rows=spaceCompassChronologicalOrbitExportRows(baseTable.rows+(if(path.forward24Hours) emptyList() else path.issPass).mapIndexed { index,point ->
         SpaceCompassOrbitExportRow(SpaceCompassOrbitExportRowKind.PASS,index,event=point.event,
             cells=mapOf(path.body to SpaceCompassOrbitExportCell(point.copy(coincidentEvents=point.coincidentEvents.toSet()),false)))
     }))

@@ -1,9 +1,9 @@
 <resources>
     <string name="info_news_title">החידושים האחרונים · %1$s</string>
-    <string name="info_news_star_sky" formatted="false">סדר ברירת המחדל כעת עולה לפי המרחק מהשמש. עמודת הערכים תואמת למיון והעצמים שנבחרו נשארים בראש הרשימה.</string>
-    <string name="info_news_texture_downloads" formatted="false">שחזור מהיר יותר של נתוני לוויינים ממקורות חלופיים מאומתים. הודעות נפרדות לטעינה, נתונים לא מעודכנים, תאריך מחוץ לטווח וערכים לא זמינים.</string>
-    <string name="info_news_weather" formatted="false">המסלול היומי נפתח כשהמיקום הנוכחי במרכז, כשאפשר. החזרה לעצם שומרת את מיקום הגלילה שנצפה במהלך ההפעלה.</string>
-    <string name="info_news_viewer_zoom" formatted="false">בתצוגה אופקית יחס השמיים למידע הוא 55/45. גובה GPS ברור יותר; 0°/90° ומזג האוויר מחליפים מקום ובקרי המצלמה נשארים במקומם.</string>
-    <string name="info_news_settings" formatted="false">תוויות מסלולים וקווי ייחוס שמימיים נשארות קרובות יותר לקו שלהן ויציבות יותר בהצטלבויות ובמעבר למצלמה.</string>
-    <string name="info_news_catalog" formatted="false">כפתור הצילום בגודל שאר הכפתורים, עם גבול פועם בעדינות וסמל דק יותר. מרווחים ומרכוז החצים עקביים יותר.</string>
+    <string name="info_news_star_sky" formatted="false">מדריך אינטראקטיבי מסביר את הפקדים הראשיים. הודעת הפתיחה מופיעה רק בהפעלה הראשונה.</string>
+    <string name="info_news_texture_downloads" formatted="false">בחרו מסלולי יום (0–24) או את 24 השעות הבאות (+24h). המסלול היומי, תוויות הצילום והטבלאות המיוצאות משתמשים באותו טווח.</string>
+    <string name="info_news_weather" formatted="false">געו בשמיים ריקים כדי להציג או להסתיר את הכוונת ובועות המידע. תוויות הצילום שומרות על ההגדרה הנפרדת שלהן.</string>
+    <string name="info_news_viewer_zoom" formatted="false">נקודות שנבחרו יכולות להציג את הכיוונים הנגדיים שלהן. געו בכפתור האנטיפודים להצגה או להסתרה; לחצו לחיצה ממושכת לביטול בחירת כל הנקודות.</string>
+    <string name="info_news_settings" formatted="false">אנטיפודים גלויים נכללים בתמונות, בפנורמות ובטבלאות המיוצאות שלהן. המסלול היומי והייצוא שלו שומרים רק על הנקודות המקוריות.</string>
+    <string name="info_news_catalog" formatted="false">לעצמים הנוכחיים מסגרת אחת בצבע המסלול מעל או מתחת לאופק. למיקומים נוכחיים שנבחרו מסגרת כחולה או תכולה.</string>
 </resources>

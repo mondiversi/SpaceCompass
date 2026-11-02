@@ -196,25 +196,33 @@ internal fun SpaceCompassCelestialSkyActions(body: SpaceCompassCelestialBody, on
     onPath: (() -> Unit)? = null, pathTitle: String = "", pathSelected: Boolean = false,
     modifier: Modifier = Modifier, targetSpacing: Dp = (-5).dp, plainTint: Color? = null) {
     val viewTitle = stringResource(R.string.celestial_view_open)
+    val observatoryTutorial = rememberSpaceCompassTutorialAnchor(SpaceCompassTutorialFeature.OBSERVATORY,
+        enabled = onVisualize != null, circular = true)
+    val pathTutorial = rememberSpaceCompassTutorialAnchor(SpaceCompassTutorialFeature.DAILY,
+        enabled = onPath != null, circular = true)
     // The main object's header can compact the shared controls without changing overlays.
     Row(modifier, verticalAlignment = Alignment.CenterVertically,
         horizontalArrangement = Arrangement.spacedBy(targetSpacing)) {
         if (onVisualize != null) SpaceCompassCelestialIconControl(false, viewTitle, onVisualize,
-            Modifier.testTag("celestial-visualize"), Role.Button, plainTint,
+            Modifier.testTag("celestial-visualize").then(observatoryTutorial?.touchModifier ?: Modifier), Role.Button, plainTint,
             circularBackground = plainTint != null) {
-            if (plainTint != null) SpaceCompassObjectHeaderIcon(SpaceCompassObjectHeaderGlyph.OBSERVATORY, strokeWidth = 1.4.dp)
-            else SpaceCompassCelestialTelescopeIcon(Modifier.size(22.dp))
+            SpaceCompassTutorialIconHighlight(observatoryTutorial) {
+                if (plainTint != null) SpaceCompassObjectHeaderIcon(SpaceCompassObjectHeaderGlyph.OBSERVATORY, strokeWidth = 1.4.dp)
+                else SpaceCompassCelestialTelescopeIcon(Modifier.size(22.dp))
+            }
         }
         if (onPath != null) SpaceCompassCelestialIconControl(pathSelected, pathTitle, onPath,
-            Modifier.testTag("sun-path-open"), Role.Button, plainTint,
+            Modifier.testTag("sun-path-open").then(pathTutorial?.touchModifier ?: Modifier), Role.Button, plainTint,
             circularBackground = plainTint != null) {
-            if (plainTint != null) SpaceCompassObjectHeaderIcon(SpaceCompassObjectHeaderGlyph.DAILY_PATH, strokeWidth = 1.4.dp)
-            else {
-                val tint = LocalContentColor.current
-                Canvas(Modifier.size(18.dp)) {
-                    val curve = Path().apply { moveTo(0f, size.height * 0.8f)
-                        cubicTo(size.width * 0.25f, 0f, size.width * 0.75f, 0f, size.width, size.height * 0.8f) }
-                    drawPath(curve, tint, style = Stroke(1.5.dp.toPx(), cap = StrokeCap.Round))
+            SpaceCompassTutorialIconHighlight(pathTutorial) {
+                if (plainTint != null) SpaceCompassObjectHeaderIcon(SpaceCompassObjectHeaderGlyph.DAILY_PATH, strokeWidth = 1.4.dp)
+                else {
+                    val tint = LocalContentColor.current
+                    Canvas(Modifier.size(18.dp)) {
+                        val curve = Path().apply { moveTo(0f, size.height * 0.8f)
+                            cubicTo(size.width * 0.25f, 0f, size.width * 0.75f, 0f, size.width, size.height * 0.8f) }
+                        drawPath(curve, tint, style = Stroke(1.5.dp.toPx(), cap = StrokeCap.Round))
+                    }
                 }
             }
         }

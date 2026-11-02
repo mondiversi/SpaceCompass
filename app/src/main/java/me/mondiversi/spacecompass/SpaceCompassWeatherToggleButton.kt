@@ -32,7 +32,7 @@ internal fun SpaceCompassWeatherToggleButton(checked: Boolean, onCheckedChange: 
             color = background.copy(alpha = 1f), contentColor = tint.copy(alpha = if (enabled) 1f else .38f),
             border = BorderStroke(1.dp, tint.copy(alpha = if (enabled) .35f else .13f)), shadowElevation = 3.dp) {
             Box(contentAlignment = Alignment.Center) {
-                IconToggleButton(checked, onCheckedChange, enabled = enabled, modifier = Modifier.fillMaxSize().testTag("toggle-weather"),
+                IconToggleButton(checked, onCheckedChange, enabled = enabled, modifier = Modifier.fillMaxSize().testTag("toggle-weather").spaceCompassTutorialTarget(SpaceCompassTutorialFeature.WEATHER, enabled = enabled),
                     colors = IconButtonDefaults.iconToggleButtonColors(contentColor = color, checkedContentColor = tint,
                         disabledContentColor = color.copy(alpha = .38f))) {
                     // Balance the cloud and sun after fitting; the slash changes their visual weight.

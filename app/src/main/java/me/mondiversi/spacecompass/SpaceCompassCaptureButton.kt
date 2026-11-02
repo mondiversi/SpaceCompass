@@ -72,7 +72,7 @@ internal fun SpaceCompassCaptureButton(
         Surface(
             modifier = modifier.spaceCompassFloatingControlVisual()
                 .size(48.dp)
-                .testTag("capture-panorama")
+                .testTag("capture-panorama").spaceCompassTutorialTarget(SpaceCompassTutorialFeature.CAPTURE, enabled = enabled)
                 .drawWithContent {
                     drawContent()
                     val edge = 2.dp.toPx()

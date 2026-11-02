@@ -35,6 +35,12 @@ internal fun formatSpaceCompassPanoramaExportTime(timeMs: Long, zone: TimeZone,
     formatSpaceCompassTimeOnly(timeMs, formatting.time, formatting.locale,
         zone, formatting.numeric, formatting.deviceLocale, includeSeconds = false)
 
+/** Label the point's own date when a frozen track crosses the displayed midnight. */
+internal fun formatSpaceCompassPanoramaMarkerTime(timeMs: Long, capturedTimeMs: Long, zone: TimeZone,
+    formatting: SpaceCompassPanoramaFormatting = spaceCompassPanoramaInternationalFormatting): String =
+    formatSpaceCompassCelestialMoment(timeMs,capturedTimeMs,zone.toZoneId(),formatting.time,formatting.date,
+        formatting.locale,formatting.deviceLocale,formatting.numeric)
+
 /** Keep the observation zone explicit in both profiles, including fractional and seasonal offsets. */
 internal fun formatSpaceCompassPanoramaExportTimestamp(timeMs: Long, zone: TimeZone,
     formatting: SpaceCompassPanoramaFormatting = spaceCompassPanoramaInternationalFormatting): String {

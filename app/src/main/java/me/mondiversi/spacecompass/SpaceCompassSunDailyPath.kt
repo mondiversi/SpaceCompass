@@ -26,7 +26,8 @@ internal data class SpaceCompassSunDailyPath(
     val date: LocalDate, val zone: ZoneId, val samples: List<SpaceCompassSunPathPoint>,
     val markers: List<SpaceCompassSunPathPoint>, val body: SpaceCompassCelestialBody = SpaceCompassCelestialBody.SUN,
     // Separate from the current orbit: the next geometric pass can be many hours later.
-    val issPass: List<SpaceCompassSunPathPoint> = emptyList()
+    val issPass: List<SpaceCompassSunPathPoint> = emptyList(),
+    val forward24Hours: Boolean = false
 )
 
 /** UTC solar calculations, local civil-day bounds. DST days correctly contain 23/25 hourly markers.

@@ -56,7 +56,7 @@ internal fun SpaceCompassCelestialSelector(body: SpaceCompassCelestialBody, colo
     val count = formatSpaceCompassNumber(selectedBodies.size.toDouble(), 0,
         LocalSpaceCompassNumericFormat.current, grouping = false)
     SpaceCompassFloatingActionButton(label, { catalogOpen?.value = true }, tint, background,
-        modifier.testTag("celestial-select"), stateText = count,
+        modifier.testTag("celestial-select").spaceCompassTutorialTarget(SpaceCompassTutorialFeature.OBJECTS), stateText = count,
         glyphInk = spaceCompassFloatingInk(26f, .086f, if (selectedBodies.isEmpty()) .125f else .23f,
             .914f, if (selectedBodies.isEmpty()) .875f else .77f),
         overlay = {

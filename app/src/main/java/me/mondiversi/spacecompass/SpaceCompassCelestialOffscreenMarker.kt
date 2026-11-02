@@ -7,6 +7,7 @@ import androidx.compose.foundation.layout.BoxWithConstraints
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.shape.CircleShape
+import androidx.compose.material3.MaterialTheme
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
@@ -36,7 +37,7 @@ internal fun SpaceCompassCelestialOffscreenMarker(body: SpaceCompassCelestialBod
     contextExclusions: List<SpaceCompassSunSceneFrame> = emptyList(),
     forcedPlacement: SpaceCompassCelestialOffscreenGeometry? = null,
     diameter: Dp = SPACE_COMPASS_CELESTIAL_OFFSCREEN_DIAMETER_DP.dp,
-    moonPhase: SpaceCompassMoonPhase? = null, objectOpacity: Float = 1f) {
+    moonPhase: SpaceCompassMoonPhase? = null, objectOpacity: Float = 1f, selected: Boolean = false) {
     val rtl = LocalLayoutDirection.current == LayoutDirection.Rtl
     val name = stringResource(body.nameResource)
     BoxWithConstraints(Modifier.fillMaxSize()) {
@@ -47,11 +48,15 @@ internal fun SpaceCompassCelestialOffscreenMarker(body: SpaceCompassCelestialBod
             Box(Modifier.size(diameter)
                 .testTag("celestial-offscreen-marker").semantics { contentDescription = name },
                 contentAlignment = Alignment.Center) {
-                SpaceCompassCelestialThumbnail(body, Modifier.size((SPACE_COMPASS_CELESTIAL_LIVE_PREVIEW_SIZE_DP *
+                Box(Modifier.size((SPACE_COMPASS_CELESTIAL_LIVE_PREVIEW_SIZE_DP *
                     (diameter.value / SPACE_COMPASS_CELESTIAL_OFFSCREEN_DIAMETER_DP).coerceAtMost(1f)).dp)
-                    .graphicsLayer(alpha = objectOpacity)
-                    .border(0.8.dp, Color.White.copy(alpha = 0.65f), CircleShape)
-                    .testTag("celestial-offscreen-preview-${body.name}"), muted = belowHorizon, moonPhase = moonPhase)
+                    .border(if (selected) 1.8.dp else 0.8.dp,
+                        if (selected) MaterialTheme.colorScheme.primary else spaceCompassCelestialPathLineTint(
+                            spaceCompassCelestialPathTint(body), belowHorizon), CircleShape)
+                    .testTag("celestial-offscreen-preview-${body.name}")) {
+                    SpaceCompassCelestialThumbnail(body, Modifier.fillMaxSize().graphicsLayer(alpha = objectOpacity),
+                        muted = belowHorizon, moonPhase = moonPhase)
+                }
                 Canvas(Modifier.fillMaxSize().testTag("celestial-offscreen-pointer")) {
                     val scale = (size.minDimension / SPACE_COMPASS_CELESTIAL_OFFSCREEN_DIAMETER_DP.dp.toPx()).coerceAtMost(1f)
                     rotate(bearing, center) {

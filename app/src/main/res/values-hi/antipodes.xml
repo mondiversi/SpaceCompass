@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="scene_antipodes" formatted="false">प्रतिमुख बिंदु</string>
+    <string name="scene_antipode" formatted="false">प्रतिमुख बिंदु</string>
+    <string name="scene_antipodes_on" formatted="false">प्रतिमुख बिंदु दिख रहे हैं</string>
+    <string name="scene_antipodes_off" formatted="false">प्रतिमुख बिंदु छिपे हैं</string>
+</resources>

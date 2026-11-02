@@ -74,19 +74,24 @@ internal fun SpaceCompassSunFinderDataPanel(
                     SpaceCompassSunFinderCompass(orientation, compassReliable, primaryText, Modifier.size(compassSize))
                 }
                 Box(Modifier.weight(1f).align(Alignment.CenterVertically).testTag("sun-finder-environment-values")) {
-                    Column(Modifier.fillMaxWidth().heightIn(min = 48.dp)
-                        .clip(RoundedCornerShape(8.dp)).clickable { onInfo() }
-                        .spaceCompassAccessibleAction(detailsLabel, onClick = { onInfo() }),
+                    Column(Modifier.fillMaxWidth().heightIn(min = 48.dp),
                         verticalArrangement = Arrangement.spacedBy(2.dp, Alignment.CenterVertically)) {
                         SpaceCompassSunFinderDataTable(orientationRows + locationRows, style, primaryText, secondaryText, compact,
                             Modifier.fillMaxWidth().testTag("sun-finder-location-data"))
 
                         Box(Modifier.fillMaxWidth().testTag("sun-finder-info"),
                             contentAlignment = Alignment.TopStart) {
-                            Text(detailsLabel, Modifier.padding(vertical = 2.dp), color = primaryText,
-                                maxLines = 1, softWrap = false, overflow = androidx.compose.ui.text.style.TextOverflow.Ellipsis,
-                                style = style, fontWeight = FontWeight.Medium,
-                                textDecoration = TextDecoration.Underline)
+                            // Keep pointer activation on the label, without automatic expansion into the data rows.
+                            SpaceCompassFloatingControlHitRegion {
+                                Text(detailsLabel, Modifier.padding(vertical = 2.dp)
+                                    .clickable(onClickLabel = detailsLabel, onClick = onInfo)
+                                    .spaceCompassAccessibleAction(detailsLabel, onClick = onInfo)
+                                    .spaceCompassTutorialTarget(SpaceCompassTutorialFeature.GPS, circular = false),
+                                    color = primaryText, maxLines = 1, softWrap = false,
+                                    overflow = androidx.compose.ui.text.style.TextOverflow.Ellipsis,
+                                    style = style, fontWeight = FontWeight.Medium,
+                                    textDecoration = TextDecoration.Underline)
+                            }
                         }
                     }
 

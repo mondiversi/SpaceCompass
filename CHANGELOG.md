@@ -1,5 +1,15 @@
 # Changelog
 
+## 1.7.7 — 2026-11-02
+
+- Add an interactive main-view tutorial, accessible from the menu, and a welcome shown once. The camera demonstration does not enable the actual camera or alter saved preferences.
+- Choose calendar-day trajectories (0–24) or the rolling next 24 hours (+24h), consistently across Daily path, labels, satellite passes, reminders, snapshots and capture-table exports.
+- Replace the reticle button with a tap on empty sky to show or hide the reticle and hover information. Capture-label settings remain independent; the GPS details link is the island’s explicit navigation target.
+- Show antipodal directions of selected points. Tap the Antipodes button to toggle them; hold it to clear selected points with haptic feedback. Visibility resets when all points are removed and starts off on a fresh session.
+- Preserve visible antipodes in photo/panorama snapshots and their CSV/readable-table exports, without adding them to Daily path or its exports.
+- Use a single orbit-coloured current-object outline, including above/below-horizon colours and offscreen locators. Selected current positions use the day/night accent, even with translucent object images.
+- Refine tutorial highlights, accessible control actions and consistent twenty-language explanations.
+
 ## 1.7.6 — 2026-11-01
 
 - Make the default catalogue order genuinely increase by Sun-centred distance, with consistent value columns, stable ties and retained selected-first grouping.

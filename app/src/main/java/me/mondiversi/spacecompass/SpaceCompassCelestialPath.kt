@@ -12,7 +12,11 @@ internal fun spaceCompassCelestialPathTitle(body: SpaceCompassCelestialBody): In
 
 /** Cached apparent civil-day curve; Earth satellites use a complete current orbit; probes use their apparent daily sky track. */
 internal fun calculateSpaceCompassCelestialPath(body: SpaceCompassCelestialBody, date: LocalDate, zone: ZoneId, now: Long,
-    latitude: Double, longitude: Double, altitude: Double, remote: SpaceCompassCelestialRemoteData): SpaceCompassSunDailyPath? {
+    latitude: Double, longitude: Double, altitude: Double, remote: SpaceCompassCelestialRemoteData,
+    forward24Hours: Boolean = false): SpaceCompassSunDailyPath? {
+    if (forward24Hours) return calculateSpaceCompassForwardPathBuffer(body,now,zone,latitude,longitude,altitude,remote)?.let { buffer ->
+        trimSpaceCompassForwardPath(buffer,now) { t -> calculateSpaceCompassCelestialObservation(body,t,latitude,longitude,altitude,remote)?.position }
+    }
     if (!body.supportsDailyPath) return null
     if (body == SpaceCompassCelestialBody.SUN) return calculateSpaceCompassSunDailyPath(date, zone, latitude, longitude, altitude)
     if (body.isEarthSatellite) return remote.satelliteOrbit(body)?.let {

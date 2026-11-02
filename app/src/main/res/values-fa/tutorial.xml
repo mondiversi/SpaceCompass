@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="tutorial_title" formatted="false">آموزش</string>
+    <string name="tutorial_welcome_title" formatted="false">به Space Compass خوش آمدید</string>
+    <string name="tutorial_welcome_body" formatted="false">آسمان و مسیر اجرام را در مکان‌ها و زمان‌های دیگر ببینید. با آموزش تعاملی کنترل‌ها را بشناسید.</string>
+    <string name="tutorial_instruction" formatted="false">برای شناخت عملکرد، کنترل روشن یا نقطه مداری را لمس کنید؛ تنظیمات تغییر نمی‌کنند.</string>
+    <string name="tutorial_zoom_title" formatted="false">بزرگ‌نمایی دوربین</string>
+    <string name="tutorial_navigation_title" formatted="false">جرم انتخاب‌شده</string>
+    <string name="tutorial_points_title" formatted="false">نقاط مدار</string>
+    <string name="tutorial_info" formatted="false">اطلاعات برنامه، تازه‌ها و منابع را باز کنید.</string>
+    <string name="tutorial_menu" formatted="false">تنظیمات عمومی، زبان، واحدها، آموزش و اطلاعات را باز کنید.</string>
+    <string name="tutorial_objects" formatted="false">اجرام نمایان را انتخاب کنید. جستجو و فیلتر کنید و موارد دلخواه را ذخیره کنید.</string>
+    <string name="tutorial_location" formatted="false">مکان، ارتفاع، منطقه زمانی، تاریخ، ساعت و سرعت زمان را تنظیم کنید.</string>
+    <string name="tutorial_guides" formatted="false">دایره‌های آسمانی، قطب‌ها، سمت‌الرأس و سمت‌القدم را نمایش دهید. این‌ها تصویر آسمانی‌اند، نه مسیر زمینی.</string>
+    <string name="tutorial_forward" formatted="false">0–24 تمام روز تقویمی را از نیمه‌شب تا نیمه‌شب نشان می‌دهد. +24h بیست‌وچهار ساعت پس از زمان نمایش‌داده‌شده، حتی زمان شبیه‌سازی‌شده، را نشان می‌دهد. مسیرها، تصاویر و خروجی‌ها از همین بازه استفاده می‌کنند.</string>
+    <string name="tutorial_camera" formatted="false">بین آسمان شبیه‌سازی‌شده و دوربین پشتی با محور واقعی آن جابه‌جا شوید. اینجا بزرگ‌نمایی و شفافیت را بدون استفاده از دوربین بررسی کنید. برای بازگشت به نمای عادی دوباره لمس کنید.</string>
+    <string name="tutorial_weather" formatted="false">آب‌وهوا را در آسمان شبیه‌سازی‌شده و پانوراما نمایش دهید یا پنهان کنید. در حالت دوربین فعال نیست.</string>
+    <string name="tutorial_axis" formatted="false">محور دوربین (90°) یا طول گوشی (0°) را انتخاب کنید. دوربین همیشه محور خودش را به کار می‌برد.</string>
+    <string name="tutorial_transparency" formatted="false">تصاویر اجرام را نیمه‌شفاف کنید تا با دوربین مقایسه شوند. عکس این انتخاب را حفظ می‌کند.</string>
+    <string name="tutorial_zoom" formatted="false">بزرگ‌نمایی دوربین را انتخاب کنید یا از دو انگشت روی تصویر استفاده کنید.</string>
+    <string name="tutorial_capture" formatted="false">پانورامای آسمان یا عکس دوربین با لایه‌های نجومی بسازید. از پیش‌نمایش خروجی بگیرید.</string>
+    <string name="tutorial_panels" formatted="false">پنل‌های جرم و قطب‌نما را جمع یا باز کنید تا آسمان بیشتری ببینید.</string>
+    <string name="tutorial_antipodes" formatted="false">برای نمایش یا پنهان کردن جهت مخالف نقاط انتخاب‌شده لمس کنید: سمت +۱۸۰ درجه و ارتفاع با علامت معکوس. برای لغو انتخاب همه نقاط نگه دارید.</string>
+    <string name="tutorial_navigation" formatted="false">میان اجرام انتخاب‌شده حرکت کنید. پنل جرم فعال و رنگ مسیر آن را نشان می‌دهد. برای باز کردن فهرست اجرام، نام را لمس کنید.</string>
+    <string name="tutorial_observatory" formatted="false">مدل، داده‌های علمی، زمان سفر و ارتفاع‌ها و رویدادهای سالانه را باز کنید.</string>
+    <string name="tutorial_daily" formatted="false">مسیر، ساعت‌ها، ارتفاع‌ها و نقاط قابل انتخاب را ببینید. رویدادهای آینده می‌توانند یادآور داشته باشند.</string>
+    <string name="tutorial_gps" formatted="false">مکان واقعی، ارتفاع GPS، جهت و آب‌وهوا را مستقل از Location ببینید.</string>
+    <string name="tutorial_points" formatted="false">یک نقطه مداری را انتخاب کنید. برای دیدن جرم، ساعت، T، سمت و ارتفاع به آن نشانه بروید. حاشیه جرم هم‌رنگ مسیر آن است؛ با انتخاب موقعیت فعلی، آبی یا فیروزه‌ای می‌شود.</string>
+    <string name="tutorial_reticle" formatted="false">آسمان خالی را لمس کنید تا نشانه و اطلاعات نقاط نمایش یا پنهان شوند. برچسب‌های خروجی تغییر نمی‌کنند.</string>
+    <string name="tutorial_reminder" formatted="false">برای رویداد آینده مجاز، زنگ یا تقویم Android را باز کنید. رویدادهای گذشته و نقطه فعلی شامل نمی‌شوند.</string>
+    <string name="tutorial_status_title" formatted="false">وضعیت و بازیابی</string>
+    <string name="tutorial_status" formatted="false">وضعیت فعلی را بخوانید. عملکرد می‌تواند مجوز بخواهد، مکان را فعال کند یا بارگیری داده‌های مداری و هوا را تکرار کند. آموزش آن را اجرا نمی‌کند.</string>
+</resources>

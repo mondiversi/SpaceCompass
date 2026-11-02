@@ -18,6 +18,8 @@ import androidx.compose.ui.platform.LocalDensity
 import androidx.compose.ui.platform.LocalLayoutDirection
 import androidx.compose.ui.layout.onSizeChanged
 import androidx.compose.ui.res.stringResource
+import androidx.compose.ui.semantics.CustomAccessibilityAction
+import androidx.compose.ui.semantics.customActions
 import androidx.compose.ui.semantics.contentDescription
 import androidx.compose.ui.semantics.semantics
 import androidx.compose.ui.unit.dp
@@ -92,10 +94,18 @@ internal fun SpaceCompassSunPointingViewport(
     drawScene: Boolean = true, objectOpacity: Float = 1f,
     approachOverlays: Map<SpaceCompassCelestialBody,SpaceCompassCelestialOverlay> = overlays,
     showReticle: Boolean = true,
+    onToggleReticle: (() -> Unit)? = null,
     topControlSpacing: androidx.compose.ui.unit.Dp = 8.dp,
-    opticalFrame: SpaceCompassSunSceneFrame? = null
+    opticalFrame: SpaceCompassSunSceneFrame? = null,
+    showAntipodes: Boolean = false
 ) {
-    BoxWithConstraints(modifier.testTag("sun-finder-sky").semantics { contentDescription = description }) {
+    val reticleAction = stringResource(if (showReticle) R.string.reticle_disable else R.string.reticle_enable)
+    BoxWithConstraints(modifier.testTag("sun-finder-sky").spaceCompassTutorialViewport().semantics {
+        contentDescription = description
+        customActions = buildList {
+            if (onToggleReticle != null) add(CustomAccessibilityAction(reticleAction) { onToggleReticle(); true })
+        }
+    }) {
         val density = LocalDensity.current
         val rtl = LocalLayoutDirection.current == LayoutDirection.Rtl
         val width = with(density) { maxWidth.toPx().toDouble() }
@@ -149,13 +159,26 @@ internal fun SpaceCompassSunPointingViewport(
         val targets = remember(paths, current, orientation, compassReliable, width, height, scenePerspective) {
             projectSpaceCompassCelestialSceneTargets(paths, current, orientation.takeIf { compassReliable }, width, height, scenePerspective)
         }
-        val focused = if (showReticle) focusedSpaceCompassCelestialSceneTarget(targets, width, height,
-            with(density) { SPACE_COMPASS_CELESTIAL_RETICLE_RADIUS_DP.dp.toPx().toDouble() }, scenePerspective) else null
         val selectedPoints = dailyPathUiState.selectedPoints
         val pinned = remember(selectedPoints, paths, current, orientation, compassReliable, width, height, scenePerspective) {
             projectSpaceCompassSelectedOrbitTargets(selectedPoints, paths, current,
                 orientation.takeIf { compassReliable }, width, height, scenePerspective)
         }
+        val tutorial = LocalSpaceCompassTutorial.current
+        val antipodeZone = spaceCompassObservationZone()
+        val antipodes = remember(antipodeZone, selectedPoints, paths, current, orientation, compassReliable, width, height,
+            scenePerspective, showAntipodes, tutorial?.active, tutorial?.antipodesPreview) {
+            if (!showAntipodes) emptyList() else {
+                // An isolated tutorial sample keeps this conditional control discoverable with no saved pins.
+                val demo = if (tutorial?.active == true && selectedPoints.isEmpty()) current.entries.firstOrNull()?.let { (b,p) ->
+                    listOf(SpaceCompassSelectedOrbitPoint(spaceCompassOrbitPointKey(b,p,antipodeZone,current=true),p,paths[b]))
+                }.orEmpty() else selectedPoints
+                projectSpaceCompassSelectedOrbitTargets(demo, paths, current, orientation.takeIf { compassReliable },
+                    width, height, scenePerspective, antipodes = true)
+            }
+        }
+        val focused = if (showReticle) focusedSpaceCompassCelestialSceneTarget(targets + antipodes, width, height,
+            with(density) { SPACE_COMPASS_CELESTIAL_RETICLE_RADIUS_DP.dp.toPx().toDouble() }, scenePerspective) else null
         val padding = with(density) { 4.dp.toPx().toDouble() }
         // The reticle's outer arms end at 32 dp; keep an eight-dp gap before notices.
         val noticeTopInset = with(density) { reticleCenter.y.toFloat().toDp() } + 40.dp
@@ -242,7 +265,8 @@ internal fun SpaceCompassSunPointingViewport(
                 // Captions paint above celestial locators; moving them must not flip a caption's side.
                 primaryText, secondaryText, backgroundColor, exclusions,
                 scenePerspective, paths, pinnedTargets = pinned, hitExclusions = titleTouchExclusions,
-                showCaptions = showReticle) {
+                showCaptions = showReticle, onEmptySpaceTap = onToggleReticle,
+                antipodeTargets = antipodes, drawAntipodeMarkers = tutorial?.active == true) {
                 // Only thumbnails have small local targets; they never intercept another path's whole viewport.
                 markerBodies.forEach { candidate -> key(candidate) { projections[candidate]?.let { projected ->
                     val below = positions.getValue(candidate).elevationDegrees < 0
@@ -257,7 +281,9 @@ internal fun SpaceCompassSunPointingViewport(
                         SpaceCompassCelestialOffscreenMarker(candidate, projected, below,
                             spaceCompassCelestialPathLineTint(spaceCompassCelestialPathTint(candidate), below),
                             menuItems = 0, forcedPlacement = placement, diameter = (markerDiameter / density.density).toFloat().dp,
-                            moonPhase = moonPhase, objectOpacity = objectOpacity)
+                            moonPhase = moonPhase, objectOpacity = objectOpacity,
+                            selected = current[candidate]?.let { dailyPathUiState.isCurrentSelected(candidate, it,
+                                paths[candidate]?.zone ?: antipodeZone) } == true)
                     }
                 } } }
                 if (drawScene) SpaceCompassApproachPathLayer(paths, orientation.takeIf { compassReliable },

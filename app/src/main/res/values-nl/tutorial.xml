@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="tutorial_title" formatted="false">Tutorial</string>
+    <string name="tutorial_welcome_title" formatted="false">Welkom bij Space Compass</string>
+    <string name="tutorial_welcome_body" formatted="false">Verken de hemel en de banen van hemellichamen op andere plaatsen en tijden. Ontdek de bediening met de interactieve tutorial.</string>
+    <string name="tutorial_instruction" formatted="false">Tik op een gemarkeerde knop of baanpunt voor uitleg, zonder instellingen te wijzigen.</string>
+    <string name="tutorial_zoom_title" formatted="false">Camerazoom</string>
+    <string name="tutorial_navigation_title" formatted="false">Geselecteerd object</string>
+    <string name="tutorial_points_title" formatted="false">Baanpunten</string>
+    <string name="tutorial_info" formatted="false">Open appinformatie, nieuws en bronvermeldingen.</string>
+    <string name="tutorial_menu" formatted="false">Open Algemeen, Taal, Eenheden, Tutorial en Info en credits.</string>
+    <string name="tutorial_objects" formatted="false">Kies zichtbare objecten. Zoek, filter en bewaar favorieten.</string>
+    <string name="tutorial_location" formatted="false">Pas positie, hoogte, tijdzone, datum, tijd en tijdsnelheid aan.</string>
+    <string name="tutorial_guides" formatted="false">Toon hemelcirkels, polen, zenit en nadir. Dit zijn hemelprojecties, geen routes op de grond.</string>
+    <string name="tutorial_forward" formatted="false">0–24 toont de hele kalenderdag van middernacht tot middernacht. +24h toont de volgende 24 uur vanaf het weergegeven tijdstip, ook bij simulatie. Banen, opnamen en exports gebruiken hetzelfde interval.</string>
+    <string name="tutorial_camera" formatted="false">Wissel tussen de gesimuleerde hemel en de achtercamera met haar echte kijkas. Hier bekijk je Zoom en Transparantie zonder de camera te gebruiken. Tik opnieuw om terug te gaan naar de normale weergave.</string>
+    <string name="tutorial_weather" formatted="false">Toon of verberg weer in de gesimuleerde hemel en panorama’s. Niet beschikbaar in cameramodus.</string>
+    <string name="tutorial_axis" formatted="false">Kies de camera-as (90°) of de lengteas van de telefoon (0°). De camera gebruikt altijd haar eigen as.</string>
+    <string name="tutorial_transparency" formatted="false">Maak objectafbeeldingen doorschijnend om ze met de camera te vergelijken. De opname bewaart deze keuze.</string>
+    <string name="tutorial_zoom" formatted="false">Kies de camerazoom of knijp met twee vingers op het beeld.</string>
+    <string name="tutorial_capture" formatted="false">Maak een hemelpanorama of camerafoto met astronomische overlays. Exporteer vanuit het voorbeeld.</string>
+    <string name="tutorial_panels" formatted="false">Klap object- en kompaspanelen in of uit voor meer hemelruimte.</string>
+    <string name="tutorial_antipodes" formatted="false">Tik om de tegengestelde richting van geselecteerde punten te tonen of te verbergen: azimut +180° en hoogte met omgekeerd teken. Houd ingedrukt om alle punten te deselecteren.</string>
+    <string name="tutorial_navigation" formatted="false">Blader door geselecteerde objecten. Het paneel toont het actieve object en de baankleuren. Tik op de naam om de objectcatalogus te openen.</string>
+    <string name="tutorial_observatory" formatted="false">Open model, wetenschappelijke gegevens, reistijd en jaarlijkse hoogten en gebeurtenissen.</string>
+    <string name="tutorial_daily" formatted="false">Bekijk baan, tijden, hoogten en selecteerbare punten. Toekomstige gebeurtenissen kunnen herinneringen krijgen.</string>
+    <string name="tutorial_gps" formatted="false">Bekijk echte positie, GPS-hoogte, oriëntatie en weer, onafhankelijk van de Location.</string>
+    <string name="tutorial_points" formatted="false">Selecteer een baanpunt. Richt erop voor object, tijd, T, azimut en hoogte. De rand van het object volgt de kleur van zijn baan; bij selectie van de huidige positie wordt hij blauw of cyaan.</string>
+    <string name="tutorial_reticle" formatted="false">Tik op lege hemel om dradenkruis en puntinformatie te tonen of verbergen. Exportlabels veranderen niet.</string>
+    <string name="tutorial_reminder" formatted="false">Open Android-alarm of agenda voor een geschikte toekomstige gebeurtenis. Niet voor verleden of huidig punt.</string>
+    <string name="tutorial_status_title" formatted="false">Status en herstel</string>
+    <string name="tutorial_status" formatted="false">Lees de status. De actie kan toestemming vragen, locatie inschakelen of baan- en weergegevens opnieuw laden. De tutorial voert de actie niet uit.</string>
+</resources>

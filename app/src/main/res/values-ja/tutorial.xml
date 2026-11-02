@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="tutorial_title" formatted="false">チュートリアル</string>
+    <string name="tutorial_welcome_title" formatted="false">Space Compassへようこそ</string>
+    <string name="tutorial_welcome_body" formatted="false">さまざまな場所や時刻の空と天体の軌跡を探索できます。対話式チュートリアルで主な操作を確認しましょう。</string>
+    <string name="tutorial_instruction" formatted="false">強調された操作や軌道上の点をタップすると、設定を変えずに機能を確認できます。</string>
+    <string name="tutorial_zoom_title" formatted="false">カメラズーム</string>
+    <string name="tutorial_navigation_title" formatted="false">選択中の天体</string>
+    <string name="tutorial_points_title" formatted="false">軌道上の点</string>
+    <string name="tutorial_info" formatted="false">アプリ情報、更新内容、出典を開きます。</string>
+    <string name="tutorial_menu" formatted="false">一般、言語、単位、チュートリアル、情報とクレジットを開きます。</string>
+    <string name="tutorial_objects" formatted="false">表示する天体を選びます。検索、絞り込み、お気に入りの保存ができます。</string>
+    <string name="tutorial_location" formatted="false">位置、標高、タイムゾーン、日付、時刻、時間の速さを変更します。</string>
+    <string name="tutorial_guides" formatted="false">天の基準円、極、天頂、天底を表示します。空への投影であり、地上の経路ではありません。</string>
+    <string name="tutorial_forward" formatted="false">0–24は午前0時から翌日の午前0時までの暦日全体を表示します。+24hは表示中の時刻から24時間先までを表示し、シミュレーション時刻にも対応します。軌道、撮影画像、出力は同じ時間範囲を使います。</string>
+    <string name="tutorial_camera" formatted="false">仮想の空と背面カメラを切り替えます。カメラは実際の撮影軸を使います。 ここではカメラを使わずにズームと透明度の操作を確認できます。もう一度タップすると通常表示に戻ります。</string>
+    <string name="tutorial_weather" formatted="false">仮想の空とパノラマの天気効果を表示または非表示にします。カメラ使用中は無効です。</string>
+    <string name="tutorial_axis" formatted="false">カメラ軸（90°）または端末の長軸（0°）を選びます。カメラは常に自身の軸を使います。</string>
+    <string name="tutorial_transparency" formatted="false">天体画像を半透明にしてカメラ映像と比較します。撮影画像にも反映されます。</string>
+    <string name="tutorial_zoom" formatted="false">カメラのズーム倍率を選びます。映像を2本の指で拡大縮小することもできます。</string>
+    <string name="tutorial_capture" formatted="false">全天パノラマまたは天体表示付きのカメラ写真を作成します。プレビューから出力できます。</string>
+    <string name="tutorial_panels" formatted="false">天体とコンパスのパネルを開閉して空の表示領域を広げます。</string>
+    <string name="tutorial_antipodes" formatted="false">タップすると選択した点の反対方向を表示・非表示にします。方位角は+180°、高度の符号は反転します。長押しですべての点の選択を解除します。</string>
+    <string name="tutorial_navigation" formatted="false">選択した天体を切り替えます。パネルには表示中の天体と軌跡の色が表示されます。 名前をタップすると天体カタログを開きます。</string>
+    <string name="tutorial_observatory" formatted="false">天体モデル、科学データ、移動時間、年間の重要な高度とイベントを開きます。</string>
+    <string name="tutorial_daily" formatted="false">軌道、時刻、高度、選択できる点を確認します。未来のイベントには通知を設定できます。</string>
+    <string name="tutorial_gps" formatted="false">Locationと無関係に、実際の位置、GPS標高、向き、天気を確認します。</string>
+    <string name="tutorial_points" formatted="false">軌道上の点を選択または解除します。照準を合わせると天体、時刻、T、方位角、高度が表示されます。 天体の枠は軌跡と同じ色で、現在位置を選択すると青色または水色になります。</string>
+    <string name="tutorial_reticle" formatted="false">何もない空をタップして照準と点の情報を表示・非表示にします。出力画像のラベルには影響しません。</string>
+    <string name="tutorial_reminder" formatted="false">対象となる未来のイベントをAndroidのアラームまたはカレンダーで開きます。過去や現在の点には設定できません。</string>
+    <string name="tutorial_status_title" formatted="false">状態と復旧</string>
+    <string name="tutorial_status" formatted="false">現在の状態を確認します。操作で権限の要求、位置情報の有効化、軌道・天気データの再取得ができます。チュートリアルでは実行しません。</string>
+</resources>

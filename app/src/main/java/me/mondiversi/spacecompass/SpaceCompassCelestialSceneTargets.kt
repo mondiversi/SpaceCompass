@@ -4,7 +4,10 @@ import kotlin.math.hypot
 
 /** A single shared hit/focus list keeps the body's identity and each marker's exact provenance. */
 internal data class SpaceCompassCelestialSceneTarget(val body: SpaceCompassCelestialBody, val point: SpaceCompassSunPathPoint,
-    val projection: SpaceCompassSunScenePoint, val path: SpaceCompassSunDailyPath? = null, val isCurrent: Boolean = false)
+    val projection: SpaceCompassSunScenePoint, val path: SpaceCompassSunDailyPath? = null, val isCurrent: Boolean = false,
+    val antipodeOf: SpaceCompassSunPathPoint? = null) {
+    val isAntipode: Boolean get() = antipodeOf != null
+}
 
 internal fun projectSpaceCompassCelestialSceneTargets(paths: Map<SpaceCompassCelestialBody, SpaceCompassSunDailyPath>,
     current: Map<SpaceCompassCelestialBody, SpaceCompassSunPathPoint>, orientation: SpaceCompassSunOrientation?,

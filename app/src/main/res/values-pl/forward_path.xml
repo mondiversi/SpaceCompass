@@ -1,0 +1,6 @@
+<resources>
+    <string name="forward_path_title">Następne 24 godziny</string>
+    <string name="scene_forward_path_on">Najbliższe 24 godziny</string>
+    <string name="scene_forward_path_off">Cały dzień</string>
+    <string name="path_interval_title">Przedział trasy</string>
+</resources>

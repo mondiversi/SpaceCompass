@@ -1,9 +1,9 @@
 <resources>
     <string name="info_news_title">Ostatnie nowości · %1$s</string>
-    <string name="info_news_star_sky" formatted="false">Domyślna kolejność odpowiada rosnącej odległości od Słońca. Kolumna wartości jest zgodna z sortowaniem, a wybrane obiekty pozostają na początku.</string>
-    <string name="info_news_texture_downloads" formatted="false">Szybsze odzyskiwanie danych satelitów ze zweryfikowanych źródeł alternatywnych. Osobne komunikaty ładowania, nieaktualnych danych, dat poza zakresem i niedostępnych wartości.</string>
-    <string name="info_news_weather" formatted="false">Trasa dzienna otwiera się z pozycją Aktualna pośrodku, gdy to możliwe. Powrót do obiektu zachowuje miejsce przeglądane w tej sesji.</string>
-    <string name="info_news_viewer_zoom" formatted="false">W poziomie proporcja niebo/informacje wynosi 55/45. Czytelniejsza wysokość GPS; 0°/90° i Pogoda zamieniają miejsca, pozycje przycisków aparatu pozostają bez zmian.</string>
-    <string name="info_news_settings" formatted="false">Etykiety orbit i odniesień niebieskich pozostają bliżej swoich linii, stabilniej przy przecięciach i przełączaniu widoku aparatu.</string>
-    <string name="info_news_catalog" formatted="false">Przycisk zdjęcia ma rozmiar pozostałych, delikatnie pulsującą krawędź i cieńszy symbol. Spójniejsze odstępy i wyśrodkowanie strzałek.</string>
+    <string name="info_news_star_sky" formatted="false">Interaktywny samouczek objaśnia główne elementy sterowania. Powitanie pojawia się tylko przy pierwszym uruchomieniu.</string>
+    <string name="info_news_texture_downloads" formatted="false">Wybierz trajektorie dnia (0–24) lub następnych 24 godzin (+24h). Przebieg dzienny, etykiety zdjęć i eksportowane tabele używają tego samego przedziału.</string>
+    <string name="info_news_weather" formatted="false">Dotknij pustego nieba, aby pokazać lub ukryć celownik i dymki informacyjne. Etykiety zdjęć zachowują osobne ustawienie.</string>
+    <string name="info_news_viewer_zoom" formatted="false">Wybrane punkty mogą pokazywać kierunki antypodalne. Dotknij Antypody, aby je pokazać lub ukryć; przytrzymaj, aby odznaczyć wszystkie punkty.</string>
+    <string name="info_news_settings" formatted="false">Widoczne antypody są uwzględniane na zdjęciach, panoramach i w ich eksportowanych tabelach. Przebieg dzienny i jego eksporty zachowują tylko oryginalne punkty.</string>
+    <string name="info_news_catalog" formatted="false">Aktualne obiekty mają jedną obwódkę w kolorze orbity nad lub pod horyzontem. Wybrane aktualne pozycje mają obwódkę niebieską lub błękitną.</string>
 </resources>

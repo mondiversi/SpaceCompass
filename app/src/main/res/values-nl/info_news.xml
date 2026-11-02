@@ -1,9 +1,9 @@
 <resources>
     <string name="info_news_title">Laatste nieuws · %1$s</string>
-    <string name="info_news_star_sky" formatted="false">De standaardvolgorde volgt de toenemende afstand tot de zon. De waardekolom past bij de sortering en geselecteerde objecten blijven bovenaan.</string>
-    <string name="info_news_texture_downloads" formatted="false">Sneller herstel van satellietgegevens via gevalideerde alternatieve bronnen. Aparte meldingen voor laden, verouderde gegevens, datums buiten het bereik en ontbrekende waarden.</string>
-    <string name="info_news_weather" formatted="false">Het dagpad opent zo mogelijk met Huidig in het midden. Bij terugkeer naar een object blijft de bekeken positie tijdens de sessie behouden.</string>
-    <string name="info_news_viewer_zoom" formatted="false">Liggend is de verdeling hemel/informatie 55/45. Duidelijkere GPS-hoogte; 0°/90° en Weer wisselen van plaats, camerabediening blijft op dezelfde plek.</string>
-    <string name="info_news_settings" formatted="false">Labels van banen en hemelreferenties blijven dichter bij hun eigen lijn en stabieler bij kruisingen en het wisselen naar de camera.</string>
-    <string name="info_news_catalog" formatted="false">Opname heeft dezelfde grootte als de andere knoppen, een zacht pulserende rand en een fijner symbool. Consistentere afstanden en pijlcentrering.</string>
+    <string name="info_news_star_sky" formatted="false">Een interactieve handleiding legt de belangrijkste knoppen uit. De welkomstmelding verschijnt alleen bij de eerste start.</string>
+    <string name="info_news_texture_downloads" formatted="false">Kies dagbanen (0–24) of de volgende 24 uur (+24h). Dagpad, opnamelabels en geëxporteerde tabellen gebruiken hetzelfde interval.</string>
+    <string name="info_news_weather" formatted="false">Tik op lege hemel om het vizier en de informatieballonnen te tonen of te verbergen. Opnamelabels behouden hun eigen instelling.</string>
+    <string name="info_news_viewer_zoom" formatted="false">Geselecteerde punten kunnen hun antipodale richtingen tonen. Tik op Antipoden om ze te tonen of te verbergen; houd ingedrukt om alle punten te deselecteren.</string>
+    <string name="info_news_settings" formatted="false">Zichtbare antipoden staan in foto’s, panorama’s en hun geëxporteerde tabellen. Dagpad en de bijbehorende exports behouden alleen de oorspronkelijke punten.</string>
+    <string name="info_news_catalog" formatted="false">Actuele objecten hebben één rand in de baankleur boven of onder de horizon. Geselecteerde actuele posities hebben een blauwe of cyaankleurige rand.</string>
 </resources>

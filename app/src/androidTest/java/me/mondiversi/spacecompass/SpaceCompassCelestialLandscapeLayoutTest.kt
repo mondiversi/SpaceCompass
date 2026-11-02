@@ -56,26 +56,30 @@ class SpaceCompassCelestialLandscapeLayoutTest {
         val menu = compose.onNodeWithTag("app-settings").fetchSemanticsNode().boundsInRoot
         val objects = compose.onNodeWithTag("celestial-select").fetchSemanticsNode().boundsInRoot
         val references = compose.onNodeWithTag("toggle-sky-references").fetchSemanticsNode().boundsInRoot
-        val reticle = compose.onNodeWithTag("toggle-reticle").fetchSemanticsNode().boundsInRoot
+        compose.onNodeWithTag("toggle-reticle").assertDoesNotExist()
+        val forward = compose.onNodeWithTag("toggle-forward-path").fetchSemanticsNode().boundsInRoot
         val topCentre = compose.onNodeWithTag("celestial-top-center-controls").fetchSemanticsNode().boundsInRoot
         val sky = compose.onNodeWithTag("sun-finder-sky").fetchSemanticsNode().boundsInRoot
         assertEquals(sky.center.x, topCentre.center.x, 1f)
         assertEquals(logo.center.y, menu.center.y, 1f)
-        assertEquals(logo.center.y, reticle.center.y, 1f)
+        assertEquals(logo.center.y, references.center.y, 1f)
         assertEquals(objects.center.y, references.center.y, 1f)
-        assertEquals(objects.center.y, reticle.center.y, 1f)
+        assertEquals(objects.center.y, forward.center.y, 1f)
+
         if (direction.value == LayoutDirection.Rtl) {
             assertTrue(menu.right < topCentre.left)
             assertTrue(topCentre.right < logo.left)
             assertTrue(end.right < start.left)
             assertTrue(objects.right < references.left)
-            assertTrue(references.right < reticle.left)
+            assertTrue(references.right < forward.left)
+
         } else {
             assertTrue(logo.right < topCentre.left)
             assertTrue(topCentre.right < menu.left)
             assertTrue(start.right < end.left)
-            assertTrue(reticle.right < references.left)
+
             assertTrue(references.right < objects.left)
+            assertTrue(forward.right < references.left)
         }
         val axis = compose.onNodeWithTag("toggle-pointing-axis").fetchSemanticsNode().boundsInRoot
         val chevron = compose.onNodeWithTag("toggle-main-details").fetchSemanticsNode().boundsInRoot

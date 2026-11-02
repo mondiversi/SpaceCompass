@@ -26,8 +26,11 @@ internal fun SpaceCompassCelestialViewerScreen(body: SpaceCompassCelestialBody, 
     val date = Instant.ofEpochMilli(timeMs).atZone(zone).toLocalDate()
     val calculated = if (sharedPathState == null) rememberSpaceCompassCelestialOverlays(setOf(body),
         timeMs, date, zone, latitude?.let { round(it * 10_000) / 10_000 },
-        longitude?.let { round(it * 10_000) / 10_000 }, round(altitude / 10) * 10, remote)[body] else null
-    val available = overlay ?: calculated
+        longitude?.let { round(it * 10_000) / 10_000 }, round(altitude / 10) * 10, remote, forward24Hours =
+            LocalSpaceCompassPreferences.current?.getBoolean(SPACE_COMPASS_FORWARD_PATH_KEY,false) == true)[body] else null
+    val standalone=calculated?.let { rememberSpaceCompassForwardOverlays(mapOf(body to it),
+        it.path?.forward24Hours == true,timeMs,latitude,longitude,altitude,remote)[body] }
+    val available = overlay ?: standalone
     val path = available?.path ?: state.menuPath?.takeIf { it.body == body }
     val current = spaceCompassCurrentPathPoint(body, timeMs, available?.observation?.position)
     SideEffect { state.refreshMenu(path, current) }

@@ -1,0 +1,6 @@
+<resources>
+    <string name="forward_path_title">Saa 24 zijazo</string>
+    <string name="scene_forward_path_on">Saa 24 zijazo</string>
+    <string name="scene_forward_path_off">Siku nzima</string>
+    <string name="path_interval_title">Kipindi cha njia</string>
+</resources>

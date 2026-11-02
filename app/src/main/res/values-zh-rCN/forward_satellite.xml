@@ -1,0 +1,3 @@
+<resources>
+    <string name="celestial_forward_satellite_note">以每小时的点显示未来24小时轨迹，包括地平线以下的部分。摘要显示此时间段内当前或下一次过境。不保证实际可见。\nCelesTrak / Satcat · Space-Track</string>
+</resources>

@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="tutorial_title" formatted="false">Tutoriel</string>
+    <string name="tutorial_welcome_title" formatted="false">Bienvenue dans Space Compass</string>
+    <string name="tutorial_welcome_body" formatted="false">Explorez le ciel et les trajectoires des astres, depuis différents lieux et à différentes dates. Découvrez les commandes avec le tutoriel interactif.</string>
+    <string name="tutorial_instruction" formatted="false">Touchez une commande éclairée ou un point de trajectoire pour découvrir sa fonction, sans modifier vos réglages.</string>
+    <string name="tutorial_zoom_title" formatted="false">Zoom caméra</string>
+    <string name="tutorial_navigation_title" formatted="false">Objet sélectionné</string>
+    <string name="tutorial_points_title" formatted="false">Points des trajectoires</string>
+    <string name="tutorial_info" formatted="false">Ouvrez les informations, les nouveautés et les crédits.</string>
+    <string name="tutorial_menu" formatted="false">Ouvrez Général, Langue, Unités, Tutoriel et Informations et crédits.</string>
+    <string name="tutorial_objects" formatted="false">Choisissez les objets à afficher. Recherchez, filtrez et enregistrez vos favoris.</string>
+    <string name="tutorial_location" formatted="false">Personnalisez le lieu, l’altitude, le fuseau, la date, l’heure et la vitesse du temps.</string>
+    <string name="tutorial_guides" formatted="false">Affichez les cercles célestes, les pôles, le zénith et le nadir. Ce sont des projections célestes, pas des itinéraires terrestres.</string>
+    <string name="tutorial_forward" formatted="false">0–24 affiche la journée entière, de minuit à minuit. +24h affiche les 24 heures suivant l’heure affichée, même simulée. Trajectoires, captures et exports utilisent le même intervalle.</string>
+    <string name="tutorial_camera" formatted="false">Basculez entre le ciel simulé et la caméra arrière, qui utilise son axe réel. Ici, explorez Zoom et Transparence sans utiliser la caméra. Touchez à nouveau pour revenir à la vue normale.</string>
+    <string name="tutorial_weather" formatted="false">Affichez ou masquez la météo du ciel simulé et des panoramas. Indisponible en mode caméra.</string>
+    <string name="tutorial_axis" formatted="false">Pointez selon l’axe de la caméra (90°) ou la longueur du téléphone (0°). La caméra conserve son propre axe.</string>
+    <string name="tutorial_transparency" formatted="false">Rendez les objets translucides pour les comparer à la caméra. Ce choix est conservé dans la capture.</string>
+    <string name="tutorial_zoom" formatted="false">Choisissez le zoom de la caméra, ou pincez l’image avec deux doigts.</string>
+    <string name="tutorial_capture" formatted="false">Préparez un panorama du ciel ou une photo avec les superpositions astronomiques. Exportez depuis l’aperçu.</string>
+    <string name="tutorial_panels" formatted="false">Repliez ou dépliez les panneaux de l’objet et de la boussole pour dégager le ciel.</string>
+    <string name="tutorial_antipodes" formatted="false">Touche pour afficher ou masquer la direction opposée des points sélectionnés : azimut +180° et élévation de signe opposé. Maintiens le bouton enfoncé pour tout désélectionner.</string>
+    <string name="tutorial_navigation" formatted="false">Parcourez les objets sélectionnés. Le panneau indique l’objet actif et les couleurs de sa trajectoire. Touche le nom pour ouvrir le catalogue des objets.</string>
+    <string name="tutorial_observatory" formatted="false">Ouvrez le modèle, les données scientifiques, la durée du voyage et les hauteurs et événements annuels.</string>
+    <string name="tutorial_daily" formatted="false">Consultez la trajectoire, les heures, les élévations et les points sélectionnables. Les événements futurs peuvent avoir un rappel.</string>
+    <string name="tutorial_gps" formatted="false">Consultez la position réelle, l’altitude GPS, l’orientation et la météo, indépendamment de la Location.</string>
+    <string name="tutorial_points" formatted="false">Sélectionnez un point de trajectoire. Visez-le pour lire l’objet, l’heure, T, l’azimut et l’élévation. Le bord de l’objet reprend la couleur de sa trajectoire ; il devient bleu ou cyan si tu sélectionnes sa position actuelle.</string>
+    <string name="tutorial_reticle" formatted="false">Touchez le ciel vide pour afficher ou masquer le réticule et les informations. Les étiquettes exportées restent inchangées.</string>
+    <string name="tutorial_reminder" formatted="false">Ouvrez une alarme ou le calendrier Android pour un événement futur admissible. Pas d’alarme pour le passé ou le point actuel.</string>
+    <string name="tutorial_status_title" formatted="false">État et récupération</string>
+    <string name="tutorial_status" formatted="false">Consultez l’état actuel. Son action peut demander une autorisation, activer la position ou réessayer les données orbitales ou météo. Le tutoriel ne l’exécute pas.</string>
+</resources>

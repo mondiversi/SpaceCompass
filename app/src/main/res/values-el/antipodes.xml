@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="scene_antipodes" formatted="false">Αντίποδες</string>
+    <string name="scene_antipode" formatted="false">Αντίποδας</string>
+    <string name="scene_antipodes_on" formatted="false">Οι αντίποδες εμφανίζονται</string>
+    <string name="scene_antipodes_off" formatted="false">Οι αντίποδες κρύφτηκαν</string>
+</resources>

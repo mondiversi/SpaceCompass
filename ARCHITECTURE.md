@@ -509,7 +509,10 @@ started may finish; lifecycle cancellation, download integrity, retry policy and
 updates retain their existing behavior. The main sky and Observatory do not inherit this browsing gate.
 The initial circular progress item fills only the list viewport and takes the active theme primary color.
 
-sky_reticle_visible defaults to true and persists independently of panorama_label_mode. Disabling it
+sky_reticle_visible defaults to true and persists independently of panorama_label_mode. A tap in
+uncovered empty sky toggles it; point/marker taps keep selecting points, and controls/islands keep their
+own actions. The removed floating reticle button is replaced by a localized accessibility custom action.
+Disabling it
 suppresses the live reticle, focus captions and their reminder action, including the backdrop's automatic
 focus highlight. Orbit-point selections and capture-label settings are not changed. Generated symbols
 receive circular 82%-black backing in live thumbnails and rendered capture markers; photographic pixels
@@ -633,3 +636,44 @@ support cancellation and do not restart on clock or orientation updates. Stale r
 rows remain non-actionable. Event date selection shares the atomic paused-time observer
 operation; CSV/TXT freezes the accepted result and shares format/position disclosure policies.
 See [event calculations and limitations](docs/KEY_EVENTS.md).
+
+## Optional forward 24-hour tracks
+
+The persistent sky_forward_24_hours preference defaults to false. Enabled tracks use a shared
+25-hour ephemeris buffer anchored hourly, with exact rolling 24-hour endpoints trimmed off the UI
+thread. Pair analysis uses stable buffers rather than recalculating on sensor/clock frames.
+Daily-path pages and captures consume these same windows; shutter snapshots recompute exact bounds.
+Rolling point identities use the point civil date and historical pins outside the window remain stored
+but hidden. TLE/JPL validity is preserved; unsupported intervals never fall back to a civil-day curve.
+
+Capture marker labels use their own civil date when it differs from the frozen observation date.
+The shared formatter applies to panorama/photo markers, pins and disclosure/profile rebuilds;
+CSV/TXT keep full point timestamps and UTC offsets from the same frozen forward window.
+The forward-window control is slashed while disabled and uses the normal accent while enabled.
+
+Forward satellite pass summaries derive from the displayed markers and endpoints. Ongoing passes
+start with Current; incomplete boundary passes show only events inside the 24-hour interval.
+Their summary rows do not duplicate the same points in forward exports. The daily-path header
+shows both bounds in the selected date/time formats. Its session scroll key includes window mode;
+switching modes recenters Current once, while repeat visits in the same mode preserve scrolling.
+
+
+## Main tutorial and selected-point antipodes (1.7.7)
+
+The main tutorial owns read-only demo state and measured control anchors. Hit
+targets and visual spotlight bounds are independent, so compact highlights do
+not reduce accessibility targets. The bounded central explanation uses scrolling
+and measurement fallback; camera demonstration never starts CameraX. Welcome
+visibility has a one-time persisted acknowledgement. X and Back close the overlay.
+
+SpaceCompassSunDailyPathUiState owns transient antipode visibility alongside real
+selected points. Empty selection and a new session force visibility off. Derived
+antipodes reverse elevation and rotate azimuth by 180 degrees; they never become
+selectable orbital events. The backdrop renders them once, while foreground focus
+and hit layers handle interaction. Capture snapshots freeze both visibility and
+source pins. Capture renderers/tables include derived directions; daily-path tables
+exclude them. Long press clears selections without dispatching a second toggle.
+
+Current-object borders are drawn outside image-opacity effects. Normal tint uses
+the same horizon-aware trajectory function as the orbit; selected-current accent
+has priority and reuses the existing outline, including offscreen locators.

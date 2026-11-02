@@ -26,7 +26,7 @@ internal fun SpaceCompassPointingAxisButton(checked: Boolean, onCheckedChange: (
             color = background.copy(alpha = 1f), contentColor = color.copy(alpha = if (enabled) 1f else .38f),
             border = BorderStroke(1.dp, color.copy(alpha = if (enabled) .35f else .13f)), shadowElevation = 3.dp) {
             Box(contentAlignment = Alignment.Center) {
-                IconToggleButton(checked, onCheckedChange, enabled = enabled, modifier = Modifier.fillMaxSize().testTag("toggle-pointing-axis"),
+                IconToggleButton(checked, onCheckedChange, enabled = enabled, modifier = Modifier.fillMaxSize().testTag("toggle-pointing-axis").spaceCompassTutorialTarget(SpaceCompassTutorialFeature.AXIS, enabled = enabled),
                     colors = IconButtonDefaults.iconToggleButtonColors(contentColor = color, checkedContentColor = color,
                         disabledContentColor = color.copy(alpha = .38f))) {
                     SpaceCompassPointingAxisGlyph(checked,

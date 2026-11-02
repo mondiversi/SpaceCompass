@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="tutorial_title" formatted="false">Samouczek</string>
+    <string name="tutorial_welcome_title" formatted="false">Witaj w Space Compass</string>
+    <string name="tutorial_welcome_body" formatted="false">Odkrywaj niebo i tory ciał niebieskich w różnych miejscach i chwilach. Poznaj sterowanie w interaktywnym samouczku.</string>
+    <string name="tutorial_instruction" formatted="false">Dotknij wyróżnionego przycisku lub punktu orbity, aby poznać funkcję bez zmiany ustawień.</string>
+    <string name="tutorial_zoom_title" formatted="false">Zoom aparatu</string>
+    <string name="tutorial_navigation_title" formatted="false">Wybrany obiekt</string>
+    <string name="tutorial_points_title" formatted="false">Punkty orbity</string>
+    <string name="tutorial_info" formatted="false">Otwórz informacje, nowości i źródła.</string>
+    <string name="tutorial_menu" formatted="false">Otwórz Ogólne, Język, Jednostki, Samouczek oraz Informacje i autorzy.</string>
+    <string name="tutorial_objects" formatted="false">Wybierz widoczne obiekty. Wyszukuj, filtruj i zapisuj ulubione.</string>
+    <string name="tutorial_location" formatted="false">Zmień pozycję, wysokość, strefę czasową, datę, godzinę i tempo czasu.</string>
+    <string name="tutorial_guides" formatted="false">Pokaż okręgi niebieskie, bieguny, zenit i nadir. To projekcje na niebie, nie trasy naziemne.</string>
+    <string name="tutorial_forward" formatted="false">0–24 pokazuje cały dzień kalendarzowy, od północy do północy. +24h pokazuje kolejne 24 godziny od wyświetlanej chwili, także symulowanej. Tory, zdjęcia i eksport używają tego samego przedziału.</string>
+    <string name="tutorial_camera" formatted="false">Przełącz symulowane niebo na tylny aparat z jego rzeczywistą osią. Tutaj poznasz Zoom i Przezroczystość bez używania aparatu. Dotknij ponownie, aby wrócić do zwykłego widoku.</string>
+    <string name="tutorial_weather" formatted="false">Pokaż lub ukryj pogodę na symulowanym niebie i panoramach. Niedostępne w trybie aparatu.</string>
+    <string name="tutorial_axis" formatted="false">Wybierz oś aparatu (90°) lub długości telefonu (0°). Aparat zawsze używa własnej osi.</string>
+    <string name="tutorial_transparency" formatted="false">Zwiększ przezroczystość obiektów, aby porównać je z obrazem aparatu. Zdjęcie zachowa wybór.</string>
+    <string name="tutorial_zoom" formatted="false">Wybierz zoom aparatu lub użyj gestu dwóch palców.</string>
+    <string name="tutorial_capture" formatted="false">Przygotuj panoramę nieba lub zdjęcie z nakładką astronomiczną. Eksportuj z podglądu.</string>
+    <string name="tutorial_panels" formatted="false">Zwiń lub rozwiń panele obiektu i kompasu, aby odsłonić niebo.</string>
+    <string name="tutorial_antipodes" formatted="false">Dotknij, aby pokazać lub ukryć kierunek przeciwny do wybranych punktów: azymut +180° i wysokość o przeciwnym znaku. Przytrzymaj, aby odznaczyć wszystkie punkty.</string>
+    <string name="tutorial_navigation" formatted="false">Przeglądaj wybrane obiekty. Panel pokazuje aktywny obiekt i kolory toru. Dotknij nazwy, aby otworzyć katalog obiektów.</string>
+    <string name="tutorial_observatory" formatted="false">Otwórz model, dane naukowe, czas podróży oraz roczne wysokości i wydarzenia.</string>
+    <string name="tutorial_daily" formatted="false">Zobacz tor, godziny, wysokości i wybieralne punkty. Przyszłe wydarzenia mogą mieć przypomnienia.</string>
+    <string name="tutorial_gps" formatted="false">Zobacz rzeczywistą pozycję, wysokość GPS, orientację i pogodę, niezależnie od Location.</string>
+    <string name="tutorial_points" formatted="false">Wybierz punkt orbity. Wyceluj w niego, aby odczytać obiekt, godzinę, T, azymut i wysokość. Obramowanie obiektu ma kolor jego toru; po wybraniu aktualnej pozycji zmienia się na niebieskie lub jasnoniebieskie.</string>
+    <string name="tutorial_reticle" formatted="false">Dotknij pustego nieba, aby przełączyć celownik i informacje. Nie zmienia to etykiet eksportu.</string>
+    <string name="tutorial_reminder" formatted="false">Otwórz alarm lub kalendarz Androida dla przyszłego wydarzenia. Nie dotyczy przeszłości ani punktu aktualnego.</string>
+    <string name="tutorial_status_title" formatted="false">Stan i przywracanie</string>
+    <string name="tutorial_status" formatted="false">Odczytaj stan. Działanie może poprosić o uprawnienie, włączyć lokalizację lub ponowić pobieranie danych orbitalnych i pogody. Samouczek go nie wykonuje.</string>
+</resources>

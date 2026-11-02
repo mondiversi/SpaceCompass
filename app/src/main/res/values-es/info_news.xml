@@ -1,9 +1,9 @@
 <resources>
     <string name="info_news_title">Últimas novedades · %1$s</string>
-    <string name="info_news_star_sky" formatted="false">El orden predeterminado sigue la distancia creciente al Sol. La columna coincide con el criterio elegido y los objetos seleccionados permanecen primero.</string>
-    <string name="info_news_texture_downloads" formatted="false">Recuperación más rápida de datos satelitales con fuentes alternativas validadas. Mensajes distintos para carga, datos desactualizados, fechas fuera del intervalo y valores no disponibles.</string>
-    <string name="info_news_weather" formatted="false">La trayectoria diaria se abre con Actual centrado cuando es posible. Al volver a un objeto se conserva la posición consultada durante la sesión.</string>
-    <string name="info_news_viewer_zoom" formatted="false">En horizontal, proporción cielo/información 55/45. Altitud GPS más clara; 0°/90° y Meteo intercambian posiciones y los controles de cámara conservan las suyas.</string>
-    <string name="info_news_settings" formatted="false">Las etiquetas de órbitas y referencias celestes permanecen cerca de su línea, más estables en cruces y al cambiar a la cámara.</string>
-    <string name="info_news_catalog" formatted="false">Captura tiene el mismo tamaño que los demás controles, un borde que pulsa suavemente y un símbolo más fino. Espaciado y centrado de flechas más uniformes.</string>
+    <string name="info_news_star_sky" formatted="false">Un tutorial interactivo explica los controles principales, con una bienvenida que aparece solo al iniciar por primera vez.</string>
+    <string name="info_news_texture_downloads" formatted="false">Elige trayectorias del día (0–24) o de las próximas 24 horas (+24h). Recorrido diario, etiquetas de capturas y tablas exportadas siguen el mismo intervalo.</string>
+    <string name="info_news_weather" formatted="false">Toca el cielo vacío para mostrar u ocultar la retícula y sus bocadillos informativos. Las etiquetas de las capturas conservan su propio ajuste.</string>
+    <string name="info_news_viewer_zoom" formatted="false">Los puntos seleccionados pueden mostrar sus direcciones antípodas. Toca Antípodas para mostrarlas u ocultarlas; mantén pulsado para deseleccionar todos los puntos.</string>
+    <string name="info_news_settings" formatted="false">Las antípodas visibles se incluyen en fotos, panorámicas y sus tablas exportadas. Recorrido diario y sus exportaciones conservan solo los puntos originales.</string>
+    <string name="info_news_catalog" formatted="false">Los objetos actuales tienen un único borde del color de la órbita, sobre o bajo el horizonte. Las posiciones actuales seleccionadas tienen borde azul o celeste.</string>
 </resources>

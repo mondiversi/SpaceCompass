@@ -3,7 +3,7 @@ package me.mondiversi.spacecompass
 import java.time.Instant
 import java.time.ZoneId
 
-internal enum class SpaceCompassOrbitExportRowKind { POINT, CURRENT, EVENT, SELECTED, PASS }
+internal enum class SpaceCompassOrbitExportRowKind { POINT, CURRENT, EVENT, SELECTED, PASS, ANTIPODE }
 
 internal data class SpaceCompassOrbitExportCell(val point: SpaceCompassSunPathPoint, val selected: Boolean)
 
@@ -40,7 +40,8 @@ internal fun captureSpaceCompassOrbitTable(snapshot: SpaceCompassPanoramaSnapsho
         runCatching { calculateSpaceCompassCelestialObservation(item.body, snapshot.timeMs, snapshot.latitude,
             snapshot.longitude, snapshot.altitude, snapshot.remote)?.position }.getOrNull()?.let { item.body to it }
     }.toMap()
-    val pins = resolveSpaceCompassPanoramaSelections(snapshot, current)
+    val resolved = resolveSpaceCompassPanoramaSelections(snapshot, current)
+    val pins = resolved.filterNot { it.isAntipode }
     val rows = linkedMapOf<Triple<SpaceCompassOrbitExportRowKind, Int, Int>, SpaceCompassOrbitExportRow>()
     fun add(kind: SpaceCompassOrbitExportRowKind, index: Int, occurrence: Int,
         body: SpaceCompassCelestialBody, point: SpaceCompassSunPathPoint, event: SpaceCompassSunPathEvent? = null,
@@ -53,18 +54,18 @@ internal fun captureSpaceCompassOrbitTable(snapshot: SpaceCompassPanoramaSnapsho
             coincidentEvents = point.coincidentEvents.toSet()), selected)))
     }
     // Preserve all 0..23 sample labels even when an object's data is unavailable.
-    repeat(24) { rows[Triple(SpaceCompassOrbitExportRowKind.POINT,it,0)] =
+    if (!snapshot.forward24Hours) repeat(24) { rows[Triple(SpaceCompassOrbitExportRowKind.POINT,it,0)] =
         SpaceCompassOrbitExportRow(SpaceCompassOrbitExportRowKind.POINT,it) }
     snapshot.objects.forEach { item ->
         val path = item.path ?: if (snapshot.observerPositionKnown) runCatching {
             calculateSpaceCompassCelestialPath(item.body, Instant.ofEpochMilli(snapshot.timeMs).atZone(zone).toLocalDate(),
-                zone, snapshot.timeMs, snapshot.latitude, snapshot.longitude, snapshot.altitude, snapshot.remote)
+                zone, snapshot.timeMs, snapshot.latitude, snapshot.longitude, snapshot.altitude, snapshot.remote,forward24Hours=snapshot.forward24Hours)
         }.getOrNull() else null
         val hourly = path?.markers.orEmpty().filter { SpaceCompassSunPathEvent.HOUR in it.events }
             .distinctBy { it.timeMs }.sortedBy { it.timeMs }
         val occurrences = mutableMapOf<Int,Int>()
         hourly.forEachIndexed { index, point ->
-            val number = if (item.body.isEarthSatellite) index else Instant.ofEpochMilli(point.timeMs)
+            val number = if (item.body.isEarthSatellite && path?.forward24Hours != true) index else Instant.ofEpochMilli(point.timeMs)
                 .atZone(path!!.zone).hour
             val occurrence = occurrences.getOrDefault(number,0)
             occurrences[number] = occurrence + 1
@@ -90,6 +91,11 @@ internal fun captureSpaceCompassOrbitTable(snapshot: SpaceCompassPanoramaSnapsho
             add(SpaceCompassOrbitExportRowKind.SELECTED,index,0,item.body,pin.point,selected=true)
         }
     }
+    resolved.filter { it.isAntipode }.groupBy { it.body }.forEach { (body, mirrors) ->
+        mirrors.sortedBy { it.point.timeMs }.forEachIndexed { index, mirror ->
+            add(SpaceCompassOrbitExportRowKind.ANTIPODE, index, 0, body, mirror.point, selected = true)
+        }
+    }
     val sorted = spaceCompassChronologicalOrbitExportRows(rows.values.toList())
     return SpaceCompassCapturedOrbitTable(snapshot.timeMs,snapshot.zoneId,snapshot.objects.map { it.body }.toList(),sorted)
 }
@@ -102,5 +108,5 @@ internal data class SpaceCompassOrbitExportVocabulary(
     val context: String = "Capture details", val legend: String = "* = selected; ! = key point; — = unavailable",
     val illuminated: String = "Illuminated disc", val pass: String = "Next pass",
     val fictionNote: String = "Fictional illustration. Pointing follows the real reference, not a measured orbit.",
-    val referenceLabel: String = "Direction reference"
+    val referenceLabel: String = "Direction reference", val antipode: String = "Antipode"
 )

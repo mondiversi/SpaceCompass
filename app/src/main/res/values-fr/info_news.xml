@@ -1,9 +1,9 @@
 <resources>
     <string name="info_news_title">Dernières nouveautés · %1$s</string>
-    <string name="info_news_star_sky" formatted="false">Le classement par défaut suit la distance croissante au Soleil. La colonne correspond au tri choisi et les objets sélectionnés restent en tête.</string>
-    <string name="info_news_texture_downloads" formatted="false">Récupération plus rapide des données satellitaires grâce à des sources alternatives validées. Messages distincts pour le chargement, les données anciennes, les dates hors période et les valeurs indisponibles.</string>
-    <string name="info_news_weather" formatted="false">Le parcours quotidien affiche Actuel au centre si possible. Le retour à un objet conserve la position consultée pendant la session.</string>
-    <string name="info_news_viewer_zoom" formatted="false">En paysage, répartition ciel/données 55/45. Altitude GPS plus claire ; 0°/90° et Météo échangent leurs places, les commandes photo gardent les leurs.</string>
-    <string name="info_news_settings" formatted="false">Les étiquettes des orbites et repères célestes restent près de leur ligne, plus stables aux croisements et lors du passage à la caméra.</string>
-    <string name="info_news_catalog" formatted="false">Capture adopte la taille des autres commandes, un bord animé en douceur et un symbole plus fin. Espacement et centrage des flèches plus cohérents.</string>
+    <string name="info_news_star_sky" formatted="false">Un tutoriel interactif explique les principales commandes, avec un accueil affiché uniquement au premier lancement.</string>
+    <string name="info_news_texture_downloads" formatted="false">Choisissez les trajectoires du jour (0–24) ou des prochaines 24 heures (+24h). Parcours quotidien, étiquettes des captures et tableaux exportés suivent le même intervalle.</string>
+    <string name="info_news_weather" formatted="false">Touchez le ciel vide pour afficher ou masquer le réticule et ses bulles d’information. Les étiquettes des captures gardent leur propre réglage.</string>
+    <string name="info_news_viewer_zoom" formatted="false">Les points sélectionnés peuvent afficher leurs directions antipodales. Touchez Antipodes pour les afficher ou les masquer ; maintenez pour désélectionner tous les points.</string>
+    <string name="info_news_settings" formatted="false">Les antipodes visibles figurent dans les photos, panoramas et tableaux associés exportés. Le parcours quotidien et ses exports conservent uniquement les points d’origine.</string>
+    <string name="info_news_catalog" formatted="false">Les objets actuels ont une seule bordure de la couleur de leur orbite, au-dessus ou sous l’horizon. Les positions actuelles sélectionnées ont une bordure bleue ou cyan.</string>
 </resources>

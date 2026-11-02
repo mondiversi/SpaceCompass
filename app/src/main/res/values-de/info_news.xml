@@ -1,9 +1,9 @@
 <resources>
     <string name="info_news_title">Neuigkeiten · %1$s</string>
-    <string name="info_news_star_sky" formatted="false">Die Standardreihenfolge folgt nun der zunehmenden Entfernung zur Sonne. Die Wertespalte passt zur Sortierung; ausgewählte Objekte bleiben oben.</string>
-    <string name="info_news_texture_downloads" formatted="false">Schnellere Wiederherstellung von Satellitendaten über geprüfte alternative Quellen. Eigene Meldungen für Laden, veraltete Daten, nicht abgedeckte Daten und fehlende Werte.</string>
-    <string name="info_news_weather" formatted="false">Der Tagesverlauf öffnet sich möglichst mit Aktuell in der Mitte. Beim Zurückkehren bleibt die in dieser Sitzung betrachtete Scrollposition erhalten.</string>
-    <string name="info_news_viewer_zoom" formatted="false">Im Querformat gilt eine 55/45-Aufteilung für Himmel und Informationen. Klarere GPS-Höhe; 0°/90° und Wetter tauschen Plätze, die Kamerasteuerung bleibt an ihrer Position.</string>
-    <string name="info_news_settings" formatted="false">Beschriftungen von Bahnen und Himmelslinien bleiben näher an ihrer Linie und stabiler bei Kreuzungen sowie beim Wechsel zur Kamera.</string>
-    <string name="info_news_catalog" formatted="false">Aufnahme ist so groß wie die anderen Bedienelemente, mit sanft pulsierendem Rand und feinerem Symbol. Einheitlichere Abstände und zentrierte Pfeile.</string>
+    <string name="info_news_star_sky" formatted="false">Ein interaktives Tutorial erklärt die wichtigsten Bedienelemente. Die Begrüßung erscheint nur beim ersten Start.</string>
+    <string name="info_news_texture_downloads" formatted="false">Wähle Tagesbahnen (0–24) oder die nächsten 24 Stunden (+24h). Tagesverlauf, Aufnahmebeschriftungen und exportierte Tabellen nutzen dasselbe Intervall.</string>
+    <string name="info_news_weather" formatted="false">Tippe auf freien Himmel, um Fadenkreuz und Infoblasen ein- oder auszublenden. Aufnahmebeschriftungen behalten ihre eigene Einstellung.</string>
+    <string name="info_news_viewer_zoom" formatted="false">Ausgewählte Punkte können ihre Gegenrichtungen anzeigen. Tippe auf Antipoden zum Ein- oder Ausblenden; halte die Taste gedrückt, um alle Punkte abzuwählen.</string>
+    <string name="info_news_settings" formatted="false">Sichtbare Antipoden erscheinen in Fotos, Panoramen und deren exportierten Tabellen. Tagesverlauf und seine Exporte behalten nur die ursprünglichen Punkte.</string>
+    <string name="info_news_catalog" formatted="false">Aktuelle Objekte haben einen Rand in der Bahnfarbe über oder unter dem Horizont. Ausgewählte aktuelle Positionen haben einen blauen oder hellblauen Rand.</string>
 </resources>

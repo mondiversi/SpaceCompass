@@ -1,9 +1,9 @@
 <resources>
     <string name="info_news_title">最新变化 · %1$s</string>
-    <string name="info_news_star_sky" formatted="false">默认排序现在按距太阳的距离递增排列。数值列与所选排序一致，已选天体仍置于顶部。</string>
-    <string name="info_news_texture_downloads" formatted="false">通过经过验证的备用来源更快恢复卫星数据。分别显示加载中、数据未更新、日期超出范围和数值不可用。</string>
-    <string name="info_news_weather" formatted="false">打开每日路径时，在条件允许时将当前位置居中。返回某个天体时保留本次会话中查看的滚动位置。</string>
-    <string name="info_news_viewer_zoom" formatted="false">横屏的天空与信息比例为55/45。GPS高度更清晰；0°/90°与天气交换位置，摄像头控件位置保持不变。</string>
-    <string name="info_news_settings" formatted="false">轨道和天球参考线的标签更贴近各自的线，在交叉处和切换摄像头时也更稳定。</string>
-    <string name="info_news_catalog" formatted="false">拍摄按钮与其他控件大小一致，边框柔和闪动，内部图标更纤细。调整了控件间距及箭头的视觉居中。</string>
+    <string name="info_news_star_sky" formatted="false">交互式教程说明主要控件，欢迎消息仅在首次启动时显示。</string>
+    <string name="info_news_texture_downloads" formatted="false">可选择当天轨迹（0–24）或未来24小时（+24h）。每日轨迹、拍摄标签和导出表格使用同一时间范围。</string>
+    <string name="info_news_weather" formatted="false">轻触空白天空可显示或隐藏准星及信息气泡。拍摄标签保留各自的独立设置。</string>
+    <string name="info_news_viewer_zoom" formatted="false">已选点可显示其对跖方向。轻触对跖点按钮可显示或隐藏；长按可取消选择所有点。</string>
+    <string name="info_news_settings" formatted="false">可见对跖点会包含在照片、全景图及其导出表格中。每日轨迹及其导出仅保留原始点。</string>
+    <string name="info_news_catalog" formatted="false">当前天体仅使用一个边框，颜色与其在地平线上方或下方的轨迹一致。已选当前位置使用蓝色或青色边框。</string>
 </resources>

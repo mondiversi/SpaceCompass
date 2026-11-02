@@ -18,6 +18,7 @@ private fun spaceCompassOrbitExportRowName(row: SpaceCompassOrbitExportRow, snap
     val label = when (row.kind) {
         SpaceCompassOrbitExportRowKind.POINT -> String.format(snapshot.formatting.locale,vocabulary.point,number)
         SpaceCompassOrbitExportRowKind.CURRENT -> snapshot.currentPointName
+        SpaceCompassOrbitExportRowKind.ANTIPODE -> vocabulary.antipode
         SpaceCompassOrbitExportRowKind.EVENT -> snapshot.pointEventNames[row.event] ?: row.event!!.name
         SpaceCompassOrbitExportRowKind.SELECTED -> "${vocabulary.selected} · ${String.format(snapshot.formatting.locale,vocabulary.point,number)}"
         SpaceCompassOrbitExportRowKind.PASS -> "${vocabulary.pass} · " +
@@ -35,12 +36,13 @@ private fun spaceCompassOrbitExportCellValues(cell: SpaceCompassOrbitExportCell?
     val formatting = snapshot.formatting
     val zone = snapshot.displayTimeZone
     val moment = formatSpaceCompassPanoramaExportTimestamp(point.timeMs,zone,formatting).removePrefix("Space Compass · ")
-    val events = point.events.filter { it != SpaceCompassSunPathEvent.HOUR }.sortedBy { it.ordinal }
+    val events = if (row.kind == SpaceCompassOrbitExportRowKind.ANTIPODE) snapshot.orbitExportVocabulary.antipode
+        else point.events.filter { it != SpaceCompassSunPathEvent.HOUR }.sortedBy { it.ordinal }
         .mapNotNull { event -> snapshot.pointEventNames[event]?.let {
             if (event == SpaceCompassSunPathEvent.APPROACH)
                 spaceCompassApproachLabel(point,it,formatting,snapshot.bodyNames) else it
         } }.joinToString(" · ")
-    val illumination = point.moonPhase?.illuminatedFraction?.let {
+    val illumination = point.takeUnless { row.kind == SpaceCompassOrbitExportRowKind.ANTIPODE }?.moonPhase?.illuminatedFraction?.let {
         formatSpaceCompassNumber(it*100,1,formatting.numeric,grouping=false,systemLocale=formatting.deviceLocale)
     } ?: "—"
     return listOf(moment,formatSpaceCompassPanoramaPointCountdown(point.timeMs,snapshot.timeMs,formatting),
@@ -77,8 +79,9 @@ internal fun spaceCompassOrbitExportGrid(table: SpaceCompassCapturedOrbitTable, 
         metadata(vocabulary.observedAt,formatSpaceCompassPanoramaExportTimestamp(table.observationTimeMs,zone,snapshot.formatting)),
         metadata(vocabulary.context,caption),metadata(vocabulary.events,vocabulary.legend)) +
         listOfNotNull(spaceCompassFictionalOrbitNotes(snapshot)?.let { metadata(vocabulary.context,it) }) + table.rows.map { row ->
-        val special = row.kind == SpaceCompassOrbitExportRowKind.CURRENT || row.kind == SpaceCompassOrbitExportRowKind.EVENT ||
-            row.cells.values.any { cell -> cell.point.events.any { it != SpaceCompassSunPathEvent.HOUR } }
+        val special = row.kind != SpaceCompassOrbitExportRowKind.ANTIPODE &&
+            (row.kind == SpaceCompassOrbitExportRowKind.CURRENT || row.kind == SpaceCompassOrbitExportRowKind.EVENT ||
+                row.cells.values.any { cell -> cell.point.events.any { it != SpaceCompassSunPathEvent.HOUR } })
         val prefix = (if (row.cells.values.any { it.selected }) "* " else "") + (if (special) "! " else "")
         listOf(prefix + spaceCompassOrbitExportRowName(row,snapshot)) + table.bodies.flatMap {
             spaceCompassOrbitExportCellValues(row.cells[it],row,snapshot)
@@ -108,8 +111,9 @@ internal fun renderSpaceCompassOrbitTxt(table: SpaceCompassCapturedOrbitTable, s
     val headerText = header.joinToString("\n")
     val names = listOf(vocabulary.point.replace("%s", "").replace("%1\$s", "").trim()) + snapshot.objects.map { it.name }
     val rows = table.rows.map { row ->
-        val special = row.kind == SpaceCompassOrbitExportRowKind.CURRENT || row.kind == SpaceCompassOrbitExportRowKind.EVENT ||
-            row.cells.values.any { cell -> cell.point.events.any { it != SpaceCompassSunPathEvent.HOUR } }
+        val special = row.kind != SpaceCompassOrbitExportRowKind.ANTIPODE &&
+            (row.kind == SpaceCompassOrbitExportRowKind.CURRENT || row.kind == SpaceCompassOrbitExportRowKind.EVENT ||
+                row.cells.values.any { cell -> cell.point.events.any { it != SpaceCompassSunPathEvent.HOUR } })
         val name = (if (row.cells.values.any { it.selected }) "* " else "") + (if (special) "! " else "") +
             spaceCompassOrbitExportRowName(row,snapshot)
         listOf(listOf(name)) + table.bodies.map { body ->

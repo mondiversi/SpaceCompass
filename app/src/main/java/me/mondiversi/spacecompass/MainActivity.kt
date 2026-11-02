@@ -30,6 +30,8 @@ class MainActivity : ComponentActivity() {
         SpaceCompassUpdates.start(applicationContext, freshLaunch = savedInstanceState == null)
         setContent {
             SpaceCompassPreferences {
+                // Keep tutorial state above adaptive layout branches during window/orientation changes.
+                val tutorial = rememberSpaceCompassTutorialState()
                 val dark = isSystemInDarkTheme()
                 val saverVisible = screensaver.visible
                 val surfaces = spaceCompassSurfacePalette(dark)
@@ -58,10 +60,12 @@ class MainActivity : ComponentActivity() {
                         SpaceCompassAdaptiveDisplay {
                             SpaceCompassLaunchGate(showLaunchScreen = savedInstanceState == null) {
                                 SpaceCompassScreensaverHost(screensaver) {
-                                    SpaceCompassAppPages {
-                                        SpaceCompassSunFinderScreen(background, primary, secondary) { finish() }
+                                    SpaceCompassTutorialHost(tutorial) { blocking ->
+                                        SpaceCompassAppPages {
+                                            SpaceCompassSunFinderScreen(background, primary, secondary) { finish() }
+                                        }
+                                        if (!blocking) SpaceCompassUpdateHost()
                                     }
-                                    SpaceCompassUpdateHost()
                                 }
                             }
                         }

@@ -1,0 +1,6 @@
+<resources>
+    <string name="forward_path_title">未来24小时</string>
+    <string name="scene_forward_path_on">未来24小时</string>
+    <string name="scene_forward_path_off">全天</string>
+    <string name="path_interval_title">轨迹时间范围</string>
+</resources>

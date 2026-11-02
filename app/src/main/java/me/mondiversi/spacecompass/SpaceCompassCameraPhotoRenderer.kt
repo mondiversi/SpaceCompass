@@ -119,7 +119,7 @@ internal fun renderSpaceCompassCameraPhoto(context: Context, photo: SpaceCompass
                 points+=Triple(marker,point,markerTint)
                 if (snapshot.labelMode.showsPathPoint(marker, item.body == snapshot.activeBody) &&
                     !spaceCompassPanoramaPointSelected(selections, item.body, marker)) {
-                    val time=snapshot.markerTimes[marker.timeMs] ?: formatSpaceCompassPanoramaExportTime(marker.timeMs,
+                    val time=snapshot.markerTimes[marker.timeMs] ?: formatSpaceCompassPanoramaMarkerTime(marker.timeMs,snapshot.timeMs,
                         snapshot.displayTimeZone,snapshot.formatting)
                     labels += SpaceCompassPanoramaTimeLabel(formatSpaceCompassPanoramaPathPointLabel(time,marker,
                         snapshot.formatting,snapshot.pointEventNames,snapshot.timeMs,snapshot.bodyNames),point,markerTint,

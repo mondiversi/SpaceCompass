@@ -133,6 +133,8 @@ internal fun Modifier.spaceCompassAccessibleAction(
     checkedState: Boolean? = null,
     stateText: String? = null,
     preserveChildActions: Boolean = false,
+    onLongClickLabel: String? = null,
+    onLongClick: (() -> Unit)? = null,
     onClick: () -> Unit
 ): Modifier {
     val clickAction = onClick
@@ -146,6 +148,9 @@ internal fun Modifier.spaceCompassAccessibleAction(
         }
         stateText?.let { stateDescription = it }
         if (!enabled) disabled()
+        if (onLongClick != null) this[SemanticsActions.OnLongClick] = AccessibilityAction(label = onLongClickLabel) {
+            if (enabled) { onLongClick(); true } else false
+        }
         this[SemanticsActions.OnClick] =
             AccessibilityAction(label = label) {
                 if (enabled) {

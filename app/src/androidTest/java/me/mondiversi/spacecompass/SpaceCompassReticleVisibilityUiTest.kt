@@ -41,22 +41,21 @@ class SpaceCompassReticleVisibilityUiTest {
                     key(generation.intValue) {
                         var visible by remember { mutableStateOf(readSpaceCompassReticleVisible(preferences)) }
                         Column(Modifier.fillMaxSize()) {
-                            SpaceCompassReticleToggleButton(visible,{ next ->
-                                saveSpaceCompassReticleVisible(preferences,next);visible=next
-                            },Color.Black,Color.White)
                             Box(Modifier.size(340.dp,420.dp)) {
                                 SpaceCompassSunPointingViewport(null,facing(point.position),Modifier.fillMaxSize(),
                                     "synthetic sky",state,dailyPath=path,body=path.body,timeMs=now,
-                                    showActions=false,showReticle=visible)
+                                    showActions=false,showReticle=visible,onToggleReticle={
+                                        visible=!visible;saveSpaceCompassReticleVisible(preferences,visible)
+                                    })
                             }
                         }
                     }
                 }
             }
-            compose.onNodeWithTag("toggle-reticle").assertIsSelected()
+            compose.onNodeWithTag("toggle-reticle").assertDoesNotExist()
             compose.onNodeWithTag("sun-finder-reticle").assertExists()
             compose.onNodeWithTag("celestial-badge-caption").assertExists()
-            compose.onNodeWithTag("toggle-reticle").performClick().assertIsNotSelected()
+            tapEmptySky()
             assertFalse(readSpaceCompassReticleVisible(preferences))
             compose.onNodeWithTag("sun-finder-reticle").assertDoesNotExist()
             compose.onNodeWithTag("celestial-badge-caption").assertDoesNotExist()
@@ -67,13 +66,49 @@ class SpaceCompassReticleVisibilityUiTest {
                     preferences.getString(SPACE_COMPASS_PANORAMA_LABEL_MODE_KEY,null))
                 generation.intValue++
             }
-            compose.onNodeWithTag("toggle-reticle").assertIsNotSelected()
+            compose.onNodeWithTag("toggle-reticle").assertDoesNotExist()
             compose.onNodeWithTag("sun-finder-reticle").assertDoesNotExist()
-            compose.onNodeWithTag("toggle-reticle").performClick().assertIsSelected()
+            tapEmptySky()
             compose.onNodeWithTag("sun-finder-reticle").assertExists()
             compose.onNodeWithTag("celestial-badge-caption").assertExists()
             compose.runOnIdle { assertTrue(state.isSelected(path,point)) }
         } finally { context.deleteSharedPreferences(preferenceName) }
+    }
+
+    private fun tapEmptySky() {
+        compose.onNodeWithTag("celestial-scene-input").performTouchInput {
+            click(androidx.compose.ui.geometry.Offset(width - 8f, height - 8f))
+        }
+    }
+
+    @Test fun pointTapsAndDragsDoNotToggleReticleAndCoveredAreasAreInert() {
+        val visible=mutableStateOf(true)
+        val now=1_800_000_000_000L
+        val point=SpaceCompassSunPathPoint(now,SpaceCompassSunPosition(180.0,25.0))
+        val path=SpaceCompassSunDailyPath(LocalDate.of(2027,1,15),ZoneId.of("UTC"),
+            listOf(point),listOf(point),SpaceCompassCelestialBody.MOON)
+        val state=SpaceCompassSunDailyPathUiState()
+        compose.setContent { MaterialTheme {
+            SpaceCompassSunPointingViewport(null,facing(point.position),Modifier.size(340.dp,420.dp),
+                "synthetic sky",state,dailyPath=path,body=path.body,timeMs=now,
+                showActions=false,showReticle=visible.value,onToggleReticle={visible.value=!visible.value},
+                timeBadgeExclusions=listOf(SpaceCompassSunSceneFrame(0.0,0.0,50.0,50.0)))
+        } }
+        val scene=compose.onNodeWithTag("celestial-scene-input")
+        scene.performTouchInput { click(center) }
+        compose.runOnIdle { assertTrue(state.isSelected(path,point));assertTrue(visible.value) }
+        scene.performTouchInput { click(androidx.compose.ui.geometry.Offset(5f,5f)) }
+        compose.runOnIdle { assertTrue(visible.value) }
+        scene.performTouchInput { swipe(
+            androidx.compose.ui.geometry.Offset(width*.15f,height*.85f),
+            androidx.compose.ui.geometry.Offset(width*.85f,height*.85f)) }
+        compose.runOnIdle { assertTrue(visible.value) }
+        tapEmptySky()
+        compose.runOnIdle { assertFalse(visible.value) }
+        scene.performTouchInput { click(center) }
+        compose.runOnIdle { assertFalse(state.isSelected(path,point));assertFalse(visible.value) }
+        tapEmptySky()
+        compose.runOnIdle { assertTrue(visible.value) }
     }
 
     private fun facing(position: SpaceCompassSunPosition): SpaceCompassSunOrientation {

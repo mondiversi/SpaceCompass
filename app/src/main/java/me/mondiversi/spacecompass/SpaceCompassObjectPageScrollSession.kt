@@ -10,7 +10,7 @@ import kotlinx.coroutines.flow.collect
 
 internal enum class SpaceCompassObjectPage { OBSERVATORY, DAILY_PATH, SKY_HEIGHTS, KEY_EVENTS }
 
-internal class SpaceCompassObjectPageScrollEntry {
+internal class SpaceCompassObjectPageScrollEntry(val contentKey: Any? = null) {
     val scroll = ScrollState(0)
     val position = SpaceCompassObjectPageScrollPosition()
     var headerVisible = true
@@ -27,8 +27,10 @@ internal data class SpaceCompassObjectPageScrollVisit(val entry: SpaceCompassObj
 /** Lazily allocated and confined to the activity session: no preferences, archive or saved state. */
 internal class SpaceCompassObjectPageScrollSession {
     private val entries = mutableMapOf<Pair<SpaceCompassCelestialBody, SpaceCompassObjectPage>, SpaceCompassObjectPageScrollEntry>()
-    fun open(body: SpaceCompassCelestialBody, page: SpaceCompassObjectPage): SpaceCompassObjectPageScrollVisit {
-        val entry = entries.getOrPut(body to page) { SpaceCompassObjectPageScrollEntry() }
+    fun open(body: SpaceCompassCelestialBody, page: SpaceCompassObjectPage, contentKey: Any? = null): SpaceCompassObjectPageScrollVisit {
+        val key=body to page
+        val entry=entries[key]?.takeIf { it.contentKey == contentKey }
+            ?: SpaceCompassObjectPageScrollEntry(contentKey).also { entries[key]=it }
         return SpaceCompassObjectPageScrollVisit(entry, entry.visited).also { entry.visited = true }
     }
 }
@@ -51,10 +53,10 @@ internal fun rememberSpaceCompassObjectPageScrollSession(): SpaceCompassObjectPa
 
 @Composable
 internal fun rememberSpaceCompassObjectPageScroll(body: SpaceCompassCelestialBody,
-    page: SpaceCompassObjectPage): SpaceCompassObjectPageScrollVisit {
+    page: SpaceCompassObjectPage, contentKey: Any? = null): SpaceCompassObjectPageScrollVisit {
     val fallback = remember { SpaceCompassObjectPageScrollSession() }
     val session = LocalSpaceCompassObjectPageScrollSession.current ?: fallback
-    val visit = remember(session, body, page) { session.open(body, page) }
+    val visit = remember(session, body, page, contentKey) { session.open(body, page, contentKey) }
     val entry = visit.entry
     LaunchedEffect(entry) {
         snapshotFlow { Triple(entry.scroll.value, entry.scroll.maxValue, entry.scroll.isScrollInProgress) }

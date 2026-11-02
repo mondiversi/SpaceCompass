@@ -29,7 +29,7 @@ internal fun spaceCompassDailyPathListEntries(path: SpaceCompassSunDailyPath,
     val live = current?.takeIf {
         it.timeMs in first..last && it.position.azimuthDegrees.isFinite() &&
             it.position.elevationDegrees.isFinite() && it.position.elevationDegrees in -90.0..90.0 &&
-            (path.body.isEarthSatellite || Instant.ofEpochMilli(it.timeMs).atZone(path.zone).toLocalDate() == path.date)
+            (path.forward24Hours || path.body.isEarthSatellite || Instant.ofEpochMilli(it.timeMs).atZone(path.zone).toLocalDate() == path.date)
     } ?: return entries
     // Stable sorting puts Current before a coincident hourly/event row without removing that event.
     return (listOf(SpaceCompassDailyPathListEntry(live)) + entries).sortedBy { it.point.timeMs }
@@ -40,9 +40,9 @@ internal fun spaceCompassSelectedDailyPathEntries(path: SpaceCompassSunDailyPath
     current: SpaceCompassSunPathPoint?, selected: List<SpaceCompassSelectedOrbitPoint>): List<SpaceCompassDailyPathListEntry> {
     val entries = spaceCompassDailyPathListEntries(path, current)
     val historical = selected.filter { saved -> !saved.key.isCurrent && saved.key.body == path.body &&
-        saved.key.date == path.date && saved.key.zoneId == path.zone.id && saved.path != null &&
+        spaceCompassPathAcceptsSelection(path,saved) && saved.path != null &&
         entries.none { !it.isCurrent && spaceCompassOrbitPointKeysMatch(saved.key,
-            spaceCompassOrbitPointKey(path.body, it.point, path.zone, path.date)) }
+            spaceCompassOrbitPointKey(path.body, it.point, path.zone, spaceCompassPathSelectionDate(path,it.point))) }
     }.map { SpaceCompassDailyPathListEntry(it.point, sourcePath = it.path) }
     return (entries + historical).sortedBy { it.point.timeMs }
 }

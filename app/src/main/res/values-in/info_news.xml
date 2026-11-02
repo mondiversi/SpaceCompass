@@ -1,9 +1,9 @@
 <resources>
     <string name="info_news_title">Perubahan terbaru · %1$s</string>
-    <string name="info_news_star_sky" formatted="false">Urutan bawaan kini mengikuti jarak yang meningkat dari Matahari. Kolom nilai sesuai dengan pengurutan dan objek terpilih tetap di atas.</string>
-    <string name="info_news_texture_downloads" formatted="false">Pemulihan data satelit lebih cepat melalui sumber alternatif tervalidasi. Pesan berbeda untuk pemuatan, data lama, tanggal di luar rentang, dan nilai yang tidak tersedia.</string>
-    <string name="info_news_weather" formatted="false">Jalur harian terbuka dengan posisi Saat ini di tengah jika memungkinkan. Kembali ke objek mempertahankan posisi gulir yang dilihat selama sesi.</string>
-    <string name="info_news_viewer_zoom" formatted="false">Dalam lanskap, rasio langit/informasi adalah 55/45. Ketinggian GPS lebih jelas; 0°/90° dan Cuaca bertukar tempat sementara kontrol kamera tetap.</string>
-    <string name="info_news_settings" formatted="false">Label orbit dan acuan langit tetap lebih dekat ke garisnya, lebih stabil pada persilangan dan saat beralih ke kamera.</string>
-    <string name="info_news_catalog" formatted="false">Tombol tangkap sama besar dengan kontrol lain, dengan tepi berdenyut lembut dan simbol lebih tipis. Jarak dan pemusatan panah lebih konsisten.</string>
+    <string name="info_news_star_sky" formatted="false">Tutorial interaktif menjelaskan kontrol utama, dengan sambutan yang hanya muncul saat pertama kali dibuka.</string>
+    <string name="info_news_texture_downloads" formatted="false">Pilih lintasan harian (0–24) atau 24 jam berikutnya (+24h). Lintasan harian, label tangkapan dan tabel ekspor mengikuti rentang yang sama.</string>
+    <string name="info_news_weather" formatted="false">Ketuk langit kosong untuk menampilkan atau menyembunyikan bidikan dan balon informasi. Label tangkapan tetap memiliki pengaturan tersendiri.</string>
+    <string name="info_news_viewer_zoom" formatted="false">Titik yang dipilih dapat menampilkan arah antipodalnya. Ketuk Antipoda untuk menampilkan atau menyembunyikan; tekan lama untuk membatalkan pilihan semua titik.</string>
+    <string name="info_news_settings" formatted="false">Antipoda yang terlihat disertakan dalam foto, panorama dan tabel ekspornya. Lintasan harian dan ekspornya hanya menyimpan titik asli.</string>
+    <string name="info_news_catalog" formatted="false">Objek saat ini memiliki satu tepi dengan warna lintasan di atas atau di bawah horizon. Posisi saat ini yang dipilih memiliki tepi biru atau sian.</string>
 </resources>
