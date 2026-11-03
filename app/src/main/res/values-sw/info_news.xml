@@ -1,9 +1,9 @@
 <resources>
     <string name="info_news_title">Mambo mapya · %1$s</string>
-    <string name="info_news_star_sky" formatted="false">Uhamishaji wa Location unaweza kujumuisha vitu vya angani vilivyochaguliwa, kitu kinachotumika na nukta zilizochaguliwa kwenye njia.</string>
-    <string name="info_news_texture_downloads" formatted="false">Uingizaji hurejesha nukta zilizochaguliwa na unaendelea kuendana na faili za zamani za Location.</string>
-    <string name="info_news_weather" formatted="false">Alama zenye ukubwa sawa hutofautisha nukta zilizochaguliwa na antipodi zake, huku kihesabu kikiwa na rangi zisizoegemea za mchana na usiku.</string>
-    <string name="info_news_viewer_zoom" formatted="false">Ndani ya alama za antipodi kuna uwazi katika mwonekano wa anga na kamera, kama kwenye picha na panorama.</string>
-    <string name="info_news_settings" formatted="false">Miguso kwenye mafunzo haibadili chaguo halisi au antipodi. Onyesho la kamera huathiri vidhibiti vya mafunzo pekee.</string>
-    <string name="info_news_catalog" formatted="false">Arifa wazi zaidi za nukta na antipodi. Mguso mfupi hautetemeki tena; kushikilia huondoa chaguo la nukta zote kwa mwitikio wa mguso.</string>
+    <string name="info_news_star_sky" formatted="false">Vidhibiti vilivyozimwa ni vya kijivu bila mstari wa kukata, huku ukubwa na mpangilio wa alama vikibaki sawa. Location ya kiotomatiki pia ni ya kijivu.</string>
+    <string name="info_news_texture_downloads" formatted="false">Katika mlalo uliokunjwa, Vitu, Location, Mistari na 0–24 viko kushoto; mhimili/hali ya hewa au uwazi/kuza kwa kamera viko kulia.</string>
+    <string name="info_news_weather" formatted="false">Kamera iko juu ya Kunasa na nukta/antipodi chini ya Menyu. Makundi ya pembeni yako katikati ya vitufe vya pembe.</string>
+    <string name="info_news_viewer_zoom" formatted="false">Ukingo wa kunasa hupiga kutoka bluu/siani ya mandhari hadi kijivu cha kawaida kwa sekunde 3.2. Ukingo tuli hubaki ukionekana uhuishaji ukizimwa.</string>
+    <string name="info_news_settings" formatted="false">Hali ya hewa ya kuona huwashwa kwa chaguo-msingi, huku chaguo zilizohifadhiwa zikiheshimiwa. Majaribio ya hali ya hewa hufichwa ikiwa imezimwa au kamera inatumika.</string>
+    <string name="info_news_catalog" formatted="false">Lebo na Nafasi zilizofichwa ni za kijivu katika mwonekano wa awali. Chaguo za lebo zimepangwa upya bila kubadili chaguo lililohifadhiwa.</string>
 </resources>

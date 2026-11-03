@@ -1,9 +1,9 @@
 <resources>
     <string name="info_news_title">Ostatnie nowości · %1$s</string>
-    <string name="info_news_star_sky" formatted="false">Eksporty Location mogą zawierać wybrane obiekty niebieskie, aktywny obiekt i wybrane punkty na torach.</string>
-    <string name="info_news_texture_downloads" formatted="false">Import przywraca wybrane punkty i pozostaje zgodny ze starszymi plikami Location.</string>
-    <string name="info_news_weather" formatted="false">Symbole o jednakowej wielkości odróżniają wybrane punkty od ich antypodów, z neutralnym licznikiem dziennym i nocnym.</string>
-    <string name="info_news_viewer_zoom" formatted="false">Znaczniki antypodów mają przezroczyste wnętrze w widoku nieba i aparatu, tak jak na zdjęciach i panoramach.</string>
-    <string name="info_news_settings" formatted="false">Dotknięcia w samouczku nie zmieniają rzeczywistych wyborów ani antypodów. Demonstracja aparatu dotyczy tylko elementów samouczka.</string>
-    <string name="info_news_catalog" formatted="false">Czytelniejsze powiadomienia o punktach i antypodach. Krótkie dotknięcie już nie wibruje; przytrzymanie odznacza wszystkie punkty z reakcją dotykową.</string>
+    <string name="info_news_star_sky" formatted="false">Wyłączone opcje są szare bez przekreślenia, z zachowaniem rozmiaru i wyrównania ikon. Automatyczna Location również jest szara.</string>
+    <string name="info_news_texture_downloads" formatted="false">W kompaktowym układzie poziomym Obiekty, Location, Linie i 0–24 są po lewej, a oś/pogoda lub przezroczystość/zoom aparatu po prawej.</string>
+    <string name="info_news_weather" formatted="false">Aparat znajduje się nad przechwytywaniem, a punkty/antypody pod Menu. Grupy boczne są wyśrodkowane między przyciskami narożnymi.</string>
+    <string name="info_news_viewer_zoom" formatted="false">Obramowanie migawki pulsuje od niebieskiego/cyjanu motywu do neutralnej szarości w cyklu 3,2 sekundy. Bez animacji pozostaje widoczna stała ramka.</string>
+    <string name="info_news_settings" formatted="false">Pogoda wizualna jest domyślnie włączona z zachowaniem zapisanych wyborów. Ponowienia pogody są ukryte, gdy pogoda jest wyłączona lub aparat aktywny.</string>
+    <string name="info_news_catalog" formatted="false">Ukryte Etykiety i Pozycja są szare w podglądach. Kolejność trybów etykiet zmieniono bez naruszania zapisanego wyboru.</string>
 </resources>

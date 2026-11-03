@@ -14,7 +14,7 @@ import androidx.compose.ui.unit.dp
 import kotlin.math.cos
 import kotlin.math.sin
 
-/** A hollow disc suggests transparency; a matching diagonal slash marks the opaque/off state. */
+/** A hollow disc suggests transparency; the opaque/off state uses a muted tint. */
 @Composable
 internal fun SpaceCompassCameraObjectTransparencyButton(checked: Boolean, onCheckedChange: (Boolean) -> Unit,
     color: Color, background: Color, enabled: Boolean = true) {
@@ -22,8 +22,7 @@ internal fun SpaceCompassCameraObjectTransparencyButton(checked: Boolean, onChec
     SpaceCompassFloatingActionButton(stringResource(R.string.camera_object_transparency),{ onCheckedChange(!checked) },
         tint,background,Modifier.testTag("toggle-camera-object-transparency").spaceCompassTutorialTarget(SpaceCompassTutorialFeature.TRANSPARENCY, enabled = enabled),enabled=enabled,selectedState=checked,
         stateText=stringResource(if (checked) R.string.camera_objects_translucent else R.string.camera_objects_opaque),
-        glyphInk=spaceCompassFloatingInk(26f, if (checked) .14f else .12f, if (checked) .14f else .12f,
-            if (checked) .86f else .88f, if (checked) .86f else .88f)) {
+        glyphInk=spaceCompassFloatingInk(26f, .14f, .14f, .86f, .86f)) {
         val visualStroke = SpaceCompassFloatingIconStrokeWidth * LocalSpaceCompassFloatingStrokeScale.current
         SpaceCompassIconCanvas(tint.copy(alpha=if(enabled) 1f else .38f),Modifier.size(26.dp)) { ink ->
             val radius=size.minDimension*.36f
@@ -36,10 +35,6 @@ internal fun SpaceCompassCameraObjectTransparencyButton(checked: Boolean, onChec
                 val angle=Math.toRadians(degrees.toDouble())
                 val point=centre+Offset(cos(angle).toFloat()*radius,sin(angle).toFloat()*radius)
                 drawCircle(ink,stroke*.5f,point)
-            }
-            if (!checked) {
-                drawLine(ink,Offset(size.width*.12f,size.height*.12f),
-                    Offset(size.width*.88f,size.height*.88f),stroke,cap=StrokeCap.Round)
             }
         }
     }

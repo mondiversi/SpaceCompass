@@ -1,9 +1,9 @@
 <resources>
     <string name="info_news_title">Últimas novidades · %1$s</string>
-    <string name="info_news_star_sky" formatted="false">As exportações de Location podem incluir os objetos celestes selecionados, o objeto ativo e os pontos selecionados nas trajetórias.</string>
-    <string name="info_news_texture_downloads" formatted="false">A importação restaura os pontos selecionados e mantém a compatibilidade com ficheiros Location anteriores.</string>
-    <string name="info_news_weather" formatted="false">Símbolos do mesmo tamanho distinguem os pontos selecionados dos seus antípodas, com um contador neutro de dia e noite.</string>
-    <string name="info_news_viewer_zoom" formatted="false">Os marcadores de antípodas têm o interior transparente nas vistas do céu e da câmara, como nas fotografias e panoramas.</string>
-    <string name="info_news_settings" formatted="false">Os toques no tutorial não alteram as seleções reais nem os antípodas. A demonstração da câmara afeta apenas os controlos do tutorial.</string>
-    <string name="info_news_catalog" formatted="false">Notificações mais claras para pontos e antípodas. O toque breve já não vibra; manter premido desmarca todos os pontos com resposta tátil.</string>
+    <string name="info_news_star_sky" formatted="false">Os controlos desligados são cinzentos sem traço, mantendo o tamanho e o alinhamento. Location automática também é cinzenta.</string>
+    <string name="info_news_texture_downloads" formatted="false">Em paisagem compacta, Objetos, Location, Referências e 0–24 ficam à esquerda; eixo/meteorologia ou transparência/zoom da câmara ficam à direita.</string>
+    <string name="info_news_weather" formatted="false">Câmara fica acima de Capturar e pontos/antípodas abaixo de Menu. Os grupos laterais ficam centrados entre os botões dos cantos.</string>
+    <string name="info_news_viewer_zoom" formatted="false">O contorno do obturador pulsa do azul/ciano do tema ao cinzento neutro em 3,2 segundos. Sem animações, continua visível um contorno fixo.</string>
+    <string name="info_news_settings" formatted="false">A meteorologia visual está ativa por predefinição, respeitando as escolhas guardadas. As novas tentativas ficam ocultas com meteorologia desligada ou câmara ativa.</string>
+    <string name="info_news_catalog" formatted="false">As Etiquetas e a Posição ocultas ficam cinzentas nas pré-visualizações. Os modos de etiquetas são reordenados sem alterar a escolha guardada.</string>
 </resources>

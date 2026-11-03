@@ -1,9 +1,9 @@
 <resources>
     <string name="info_news_title">Ultime novità · %1$s</string>
-    <string name="info_news_star_sky" formatted="false">Le Location esportate possono includere gli oggetti celesti selezionati, l’oggetto attivo e i punti selezionati sulle orbite.</string>
-    <string name="info_news_texture_downloads" formatted="false">L’importazione ripristina i punti selezionati e resta compatibile con i file Location precedenti.</string>
-    <string name="info_news_weather" formatted="false">Simboli della stessa dimensione distinguono i punti selezionati dai relativi antipodi, con un contatore neutro giorno/notte.</string>
-    <string name="info_news_viewer_zoom" formatted="false">Gli antipodi hanno l’interno trasparente nella vista del cielo e con fotocamera, come nelle foto e panoramiche.</string>
-    <string name="info_news_settings" formatted="false">I tocchi nel tutorial non modificano le selezioni reali né gli antipodi. La dimostrazione della fotocamera riguarda solo i comandi del tutorial.</string>
-    <string name="info_news_catalog" formatted="false">Notifiche più chiare per punti e antipodi. Il tocco breve non vibra; tenendo premuto si deselezionano tutti i punti con feedback.</string>
+    <string name="info_news_star_sky" formatted="false">Le icone spente sono grigie senza barra, con dimensioni e allineamento costanti. Anche Location automatica è grigia.</string>
+    <string name="info_news_texture_downloads" formatted="false">In orizzontale con isole compattate, Oggetti, Location, Linee e 0–24 stanno a sinistra; asse/Meteo o Trasparenza/Zoom a destra.</string>
+    <string name="info_news_weather" formatted="false">Fotocamera sopra Scatta e punti/antipodi sotto Menu. Entrambi i gruppi laterali sono centrati tra i pulsanti agli angoli.</string>
+    <string name="info_news_viewer_zoom" formatted="false">Il bordo di Scatta pulsa dal blu/azzurro del tema al grigio degli altri bordi in 3,2 secondi. Con animazioni disattivate resta visibile un bordo fisso.</string>
+    <string name="info_news_settings" formatted="false">Il meteo è attivo di default, rispettando le scelte salvate. Il suo avviso con Riprova resta nascosto con meteo spento o fotocamera attiva.</string>
+    <string name="info_news_catalog" formatted="false">Nelle anteprime, Etichette e Posizione nascoste sono grigie. Le modalità delle etichette sono riordinate senza cambiare la scelta salvata.</string>
 </resources>

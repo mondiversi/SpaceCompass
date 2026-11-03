@@ -111,9 +111,9 @@ internal fun SpaceCompassPanoramaControlIcon(control: SpaceCompassPanoramaContro
     }
 }
 
-/** Location disclosure control; a slash distinguishes the omitted-position variant. */
+/** Location disclosure glyph; its control tint indicates whether position is hidden. */
 @Composable
-internal fun SpaceCompassPanoramaPositionIcon(hidden: Boolean) {
+internal fun SpaceCompassPanoramaPositionIcon() {
     val visualStroke = SpaceCompassFloatingIconStrokeWidth * LocalSpaceCompassFloatingStrokeScale.current
     val tint = LocalContentColor.current
     SpaceCompassIconCanvas(tint, Modifier.size(24.dp)) { tint ->
@@ -130,15 +130,13 @@ internal fun SpaceCompassPanoramaPositionIcon(hidden: Boolean) {
         drawPath(pin, tint, style = Stroke(visualStroke.toPx(), cap = StrokeCap.Round, join = StrokeJoin.Round))
         drawCircle(tint, size.minDimension * .105f, Offset(size.width * .5f, size.height * .37f),
             style = Stroke(visualStroke.toPx()))
-        if (hidden) drawLine(tint, Offset(size.width * .10f, size.height * .12f),
-            Offset(size.width * .90f, size.height * .88f), visualStroke.toPx(), StrokeCap.Round)
     }
 }
 
 
-/** Label tag, crossed only when all annotations are hidden. */
+/** Label tag; its control tint indicates whether annotations are hidden. */
 @Composable
-internal fun SpaceCompassPanoramaLabelsIcon(hidden: Boolean = false) {
+internal fun SpaceCompassPanoramaLabelsIcon() {
     val visualStroke = SpaceCompassFloatingIconStrokeWidth * LocalSpaceCompassFloatingStrokeScale.current
     val tint = LocalContentColor.current
     SpaceCompassIconCanvas(tint, Modifier.size(24.dp)) { tint ->
@@ -153,8 +151,6 @@ internal fun SpaceCompassPanoramaLabelsIcon(hidden: Boolean = false) {
         drawPath(tag, tint, style = Stroke(visualStroke.toPx(), cap = StrokeCap.Round, join = StrokeJoin.Round))
         drawCircle(tint, size.minDimension * .065f, Offset(size.width * .30f, size.height * .30f),
             style = Stroke(visualStroke.toPx()))
-        if (hidden) drawLine(tint, Offset(size.width * .10f, size.height * .12f),
-            Offset(size.width * .90f, size.height * .88f), visualStroke.toPx(), StrokeCap.Round)
     }
 }
 

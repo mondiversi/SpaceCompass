@@ -25,6 +25,7 @@ import androidx.compose.ui.draw.drawWithContent
 import androidx.compose.ui.graphics.drawscope.Stroke
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.graphics.compositeOver
 import androidx.compose.ui.graphics.lerp
 import androidx.compose.ui.platform.testTag
 import androidx.compose.ui.res.stringResource
@@ -41,20 +42,24 @@ internal fun SpaceCompassCaptureButton(
     val label = stringResource(R.string.panorama_capture)
     val haptics = rememberSpaceCompassHapticController()
     val background = MaterialTheme.colorScheme.primary
-    val foreground = spaceCompassCounterTextColor(isSystemInDarkTheme())
+    val night = isSystemInDarkTheme()
+    val foreground = spaceCompassCounterTextColor(night)
+    // Match the neutral controls' 35% outline over their opaque page surface.
+    val borderNeutral = MaterialTheme.colorScheme.onSurface.copy(alpha = .35f)
+        .compositeOver(MaterialTheme.colorScheme.background)
     // Balance the denser shutter/orbit artwork with the neighboring open symbols.
     val glyphStroke = SpaceCompassFloatingIconStrokeWidth * .8f
     val interaction = remember { MutableInteractionSource() }
     val pressed by interaction.collectIsPressedAsState()
     val restingBackground = background.copy(alpha = 1f)
-    // Read the animated opacity only while drawing, keeping layout and scene composition stable.
-    val borderOpacity = if (enabled && animateBorder && ValueAnimator.areAnimatorsEnabled()) {
+    // Read the colour blend only while drawing, keeping layout and scene composition stable.
+    val borderProgress = if (enabled && animateBorder && ValueAnimator.areAnimatorsEnabled()) {
         rememberInfiniteTransition(label = "captureBorderPulse").animateFloat(
-            initialValue = .40f, targetValue = .70f,
+            initialValue = 0f, targetValue = 1f,
             animationSpec = infiniteRepeatable(tween(1_600), RepeatMode.Reverse),
-            label = "captureBorderOpacity"
+            label = "captureBorderProgress"
         )
-    } else rememberUpdatedState(if (enabled) .35f else .12f)
+    } else rememberUpdatedState(1f)
     // Animate the circular surface itself instead of a platform ripple mask.
     val containerColor by animateColorAsState(
         targetValue = if (enabled && pressed) lerp(restingBackground, Color.White, .12f) else restingBackground,
@@ -76,7 +81,8 @@ internal fun SpaceCompassCaptureButton(
                 .drawWithContent {
                     drawContent()
                     val edge = 2.dp.toPx()
-                    drawCircle(Color.White.copy(alpha = borderOpacity.value),
+                    drawCircle(lerp(background, borderNeutral, borderProgress.value)
+                        .copy(alpha = if (enabled) 1f else .12f),
                         radius = (size.minDimension - edge) / 2, style = Stroke(edge))
                 }
                 .clickable(interactionSource = interaction, indication = null, enabled = enabled, onClick = capture)

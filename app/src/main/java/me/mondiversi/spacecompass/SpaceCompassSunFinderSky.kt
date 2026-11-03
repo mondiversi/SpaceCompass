@@ -97,7 +97,8 @@ internal fun SpaceCompassSunPointingViewport(
     onToggleReticle: (() -> Unit)? = null,
     topControlSpacing: androidx.compose.ui.unit.Dp = 8.dp,
     opticalFrame: SpaceCompassSunSceneFrame? = null,
-    showAntipodes: Boolean = false
+    showAntipodes: Boolean = false,
+    sideControls: Boolean = false
 ) {
     val reticleAction = stringResource(if (showReticle) R.string.reticle_disable else R.string.reticle_enable)
     BoxWithConstraints(modifier.testTag("sun-finder-sky").spaceCompassTutorialViewport().semantics {
@@ -126,16 +127,27 @@ internal fun SpaceCompassSunPointingViewport(
         var topEndActionsSize by remember { mutableStateOf(IntSize.Zero) }
         var topCenterActionsSize by remember { mutableStateOf(IntSize.Zero) }
         val centerActionsSize = if (topCenterActions == null) IntSize.Zero else topCenterActionsSize
-        val centerActionsTop = topContentInset
+        val sideControlsCenterY = (topStartActionsSize.height + height - bottomStartActionsSize.height) / 2
+        val centerActionsTop = if (sideControls) with(density) {
+            // Centre the column in the actual gap between logo and panel chevron.
+            (sideControlsCenterY - centerActionsSize.height / 2).coerceAtLeast(0.0).toFloat().toDp()
+        } else topContentInset
         val centerGap = (topControlSpacing - 4.dp).coerceAtLeast(0.dp)
-        val centerActionsLeft = (if (rtl) topEndActionsSize.width else topStartActionsSize.width) +
+        val centerActionsLeft = if (sideControls) {
+            if (rtl) width - centerActionsSize.width else 0.0
+        } else (if (rtl) topEndActionsSize.width else topStartActionsSize.width) +
             (width - topStartActionsSize.width - topEndActionsSize.width - centerActionsSize.width) / 2
-        val bottomCenterLeft = (width - bottomCenterActionsSize.width) / 2
+        val bottomCenterLeft = if (sideControls) {
+            if (rtl) 0.0 else width - bottomCenterActionsSize.width
+        } else (width - bottomCenterActionsSize.width) / 2
         val bottomGap = with(density) { 8.dp.toPx().toDouble() }
         val startWidth = if (rtl) bottomActionsSize.width else bottomStartActionsSize.width
         val endWidth = if (rtl) bottomStartActionsSize.width else bottomActionsSize.width
         // Narrow windows can lift the centre pair clear of the corner groups without shrinking controls.
-        val bottomCenterLift = if (bottomCenterActionsSize.width > 0 &&
+        // Menu/shutter share the logo/chevron corner centres; secondary corner buttons do not move this axis.
+        val bottomCenterLift = if (sideControls) {
+            (height - sideControlsCenterY - bottomCenterActionsSize.height / 2).coerceAtLeast(0.0)
+        } else if (bottomCenterActionsSize.width > 0 &&
             (bottomCenterLeft < startWidth + bottomGap ||
                 bottomCenterLeft + bottomCenterActionsSize.width > width - endWidth - bottomGap))
             maxOf(bottomActionsSize.height, bottomStartActionsSize.height) + bottomGap else 0.0
@@ -292,7 +304,11 @@ internal fun SpaceCompassSunPointingViewport(
                 .padding(top = topContentInset))
             topEndActions(Modifier.align(Alignment.TopEnd).onSizeChanged { topEndActionsSize = it }
                 .padding(top = topContentInset))
-            if (topCenterActions != null) {
+            if (topCenterActions != null && sideControls) {
+                topCenterActions(Modifier.align(Alignment.TopStart)
+                    .offset(y = centerActionsTop.coerceAtLeast(0.dp))
+                    .onSizeChanged { topCenterActionsSize = it })
+            } else if (topCenterActions != null) {
                 // Centre the scene controls between the measured corner buttons, also in RTL.
                 Box(Modifier.align(Alignment.TopCenter).fillMaxWidth()
                     .padding(start = with(density) { topStartActionsSize.width.toDp() } + centerGap,
@@ -317,7 +333,7 @@ internal fun SpaceCompassSunPointingViewport(
                     }
                 }
             }
-            bottomCenterActions(Modifier.align(Alignment.BottomCenter)
+            bottomCenterActions(Modifier.align(if (sideControls) Alignment.BottomEnd else Alignment.BottomCenter)
                 .offset(y = with(density) { (-bottomCenterLift).toFloat().toDp() })
                 .onSizeChanged { bottomCenterActionsSize = it })
             SpaceCompassSunStatusNotices(compassWarning, statusMessage, statusActionLabel, onStatusAction,

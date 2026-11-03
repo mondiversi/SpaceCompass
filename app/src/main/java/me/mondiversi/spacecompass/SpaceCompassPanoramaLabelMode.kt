@@ -5,8 +5,8 @@ internal const val SPACE_COMPASS_PANORAMA_LABEL_MODE_KEY = "panorama_label_mode"
 /** Display policy is independent of selected rings, angular axes and position disclosure. */
 internal enum class SpaceCompassPanoramaLabelMode(val key: String, val labelResource: Int) {
     ALL("all", R.string.panorama_labels_all),
-    KEY_SELECTED("key-selected", R.string.panorama_labels_key_selected),
     OBJECTS_SELECTED("objects-selected", R.string.panorama_labels_objects_selected),
+    KEY_SELECTED("key-selected", R.string.panorama_labels_key_selected),
     SELECTED("selected", R.string.panorama_labels_selected),
     NONE("none", R.string.panorama_labels_none);
 

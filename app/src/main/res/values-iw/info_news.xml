@@ -1,9 +1,9 @@
 <resources>
     <string name="info_news_title">החידושים האחרונים · %1$s</string>
-    <string name="info_news_star_sky" formatted="false">ייצוא Location יכול לכלול עצמים שמימיים שנבחרו, את העצם הפעיל ונקודות שנבחרו במסלולים.</string>
-    <string name="info_news_texture_downloads" formatted="false">הייבוא משחזר נקודות שנבחרו ושומר על תאימות לקובצי Location ישנים.</string>
-    <string name="info_news_weather" formatted="false">סמלים באותו גודל מבדילים בין הנקודות שנבחרו לנקודות הנגדיות שלהן, עם מונה בצבעים ניטרליים ביום ובלילה.</string>
-    <string name="info_news_viewer_zoom" formatted="false">פנים הסמנים של הנקודות הנגדיות שקוף בתצוגת השמיים והמצלמה, כמו בתמונות ובפנורמות.</string>
-    <string name="info_news_settings" formatted="false">נגיעות במדריך אינן משנות בחירות אמיתיות או נקודות נגדיות. הדגמת המצלמה משפיעה רק על פקדי המדריך.</string>
-    <string name="info_news_catalog" formatted="false">התראות ברורות יותר לנקודות ולנקודות נגדיות. נגיעה קצרה כבר אינה רוטטת; לחיצה ממושכת מבטלת את בחירת כל הנקודות עם משוב מישושי.</string>
+    <string name="info_news_star_sky" formatted="false">פקדים כבויים אפורים ללא קו אלכסוני, תוך שמירה על גודל ויישור הסמלים. גם Location אוטומטית אפורה.</string>
+    <string name="info_news_texture_downloads" formatted="false">בתצוגה אופקית מצומצמת, עצמים, Location, קווים ו־0–24 משמאל; ציר/מזג אוויר או שקיפות/זום מצלמה מימין.</string>
+    <string name="info_news_weather" formatted="false">מצלמה נמצאת מעל צילום, ונקודות/נקודות נגדיות מתחת לתפריט. קבוצות הצד ממורכזות בין כפתורי הפינות.</string>
+    <string name="info_news_viewer_zoom" formatted="false">מסגרת הצילום פועמת מכחול/טורקיז הערכה לאפור ניטרלי במשך 3.2 שניות. ללא הנפשות נשארת מסגרת קבועה גלויה.</string>
+    <string name="info_news_settings" formatted="false">מזג האוויר החזותי מופעל כברירת מחדל תוך שמירה על בחירות שמורות. ניסיונות חוזרים מוסתרים כשהוא כבוי או כשהמצלמה פעילה.</string>
+    <string name="info_news_catalog" formatted="false">תוויות ומיקום מוסתרים אפורים בתצוגה המקדימה. סדר אפשרויות התוויות השתנה ללא שינוי הבחירה השמורה.</string>
 </resources>

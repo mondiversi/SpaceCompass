@@ -1,9 +1,9 @@
 <resources>
     <string name="info_news_title">Neuigkeiten · %1$s</string>
-    <string name="info_news_star_sky" formatted="false">Location-Exporte können ausgewählte Himmelsobjekte, das aktive Objekt und ausgewählte Bahnpunkte enthalten.</string>
-    <string name="info_news_texture_downloads" formatted="false">Beim Import werden ausgewählte Punkte wiederhergestellt; ältere Location-Dateien bleiben kompatibel.</string>
-    <string name="info_news_weather" formatted="false">Gleich große Symbole unterscheiden ausgewählte Punkte von ihren Gegenpunkten, mit einem neutralen Tag-/Nachtzähler.</string>
-    <string name="info_news_viewer_zoom" formatted="false">Gegenpunktmarkierungen sind in der Himmels- und Kameraansicht innen transparent, wie auf Fotos und Panoramen.</string>
-    <string name="info_news_settings" formatted="false">Tippen im Tutorial verändert weder echte Auswahlen noch Gegenpunkte. Die Kamerademonstration betrifft nur Tutorial-Steuerelemente.</string>
-    <string name="info_news_catalog" formatted="false">Klarere Meldungen für Punkte und Gegenpunkte. Kurzes Tippen vibriert nicht mehr; Gedrückthalten hebt alle Punktauswahlen mit Rückmeldung auf.</string>
+    <string name="info_news_star_sky" formatted="false">Ausgeschaltete Steuerelemente sind grau statt durchgestrichen, bei gleicher Symbolgröße und Ausrichtung. Automatische Location ist ebenfalls grau.</string>
+    <string name="info_news_texture_downloads" formatted="false">Im kompakten Querformat stehen Objekte, Location, Hilfslinien und 0–24 links; Ausrichtung/Wetter oder Kameratransparenz/Zoom rechts.</string>
+    <string name="info_news_weather" formatted="false">Kamera steht über Aufnahme, Punkte/Gegenpunkte unter Menü. Beide Seitengruppen sind zwischen den Eckschaltflächen zentriert.</string>
+    <string name="info_news_viewer_zoom" formatted="false">Der Auslöserrand pulsiert in 3,2 Sekunden vom Themenblau/Cyan zum neutralen Randgrau. Bei deaktivierten Animationen bleibt ein fester Rand sichtbar.</string>
+    <string name="info_news_settings" formatted="false">Visuelles Wetter ist standardmäßig aktiv; gespeicherte Einstellungen bleiben erhalten. Wetter-Wiederholungen sind bei verborgenem Wetter oder aktiver Kamera ausgeblendet.</string>
+    <string name="info_news_catalog" formatted="false">Ausgeblendete Vorschau-Beschriftungen und Positionsdaten sind grau. Die Beschriftungsoptionen sind neu geordnet, ohne die gespeicherte Auswahl zu ändern.</string>
 </resources>

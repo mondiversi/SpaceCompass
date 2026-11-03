@@ -57,20 +57,18 @@ internal fun SpaceCompassCelestialSelector(body: SpaceCompassCelestialBody, colo
         LocalSpaceCompassNumericFormat.current, grouping = false)
     SpaceCompassFloatingActionButton(label, { catalogOpen?.value = true }, tint, background,
         modifier.testTag("celestial-select").spaceCompassTutorialTarget(SpaceCompassTutorialFeature.OBJECTS), stateText = count,
-        glyphInk = spaceCompassFloatingInk(26f, .086f, if (selectedBodies.isEmpty()) .125f else .23f,
-            .914f, if (selectedBodies.isEmpty()) .875f else .77f),
+        glyphInk = spaceCompassFloatingInk(26f, .086f, .23f, .914f, .77f),
         overlay = {
             if (selectedBodies.isNotEmpty()) SpaceCompassFloatingCountBadge(count,
                 Modifier.align(Alignment.TopEnd).testTag("celestial-selection-count"))
         }) {
-        SpaceCompassCelestialCatalogIcon(Modifier.size(26.dp), tint,
-            crossed = selectedBodies.isEmpty())
+        SpaceCompassCelestialCatalogIcon(Modifier.size(26.dp), tint)
     }
 }
 
 /** One familiar ringed planet, accented when objects are selected. */
 @Composable
-private fun SpaceCompassCelestialCatalogIcon(modifier: Modifier, tint: Color, crossed: Boolean) {
+private fun SpaceCompassCelestialCatalogIcon(modifier: Modifier, tint: Color) {
     val visualStroke = SpaceCompassFloatingIconStrokeWidth * LocalSpaceCompassFloatingStrokeScale.current
     Canvas(modifier) {
         val stroke = Stroke(visualStroke.toPx(), cap = StrokeCap.Round)
@@ -83,10 +81,6 @@ private fun SpaceCompassCelestialCatalogIcon(modifier: Modifier, tint: Color, cr
             drawArc(tint, 180f, 28f, false, topLeft, ringSize, style = stroke)
             drawArc(tint, 332f, 28f, false, topLeft, ringSize, style = stroke)
         }
-        if (crossed) drawLine(tint,
-            Offset(size.width * .125f, size.height * .125f),
-            Offset(size.width * .875f, size.height * .875f),
-            strokeWidth = visualStroke.toPx(), cap = StrokeCap.Round)
     }
 }
 /** One kilometer unit only, plus AU. Extra Mkm precision keeps live probe distances visible. */

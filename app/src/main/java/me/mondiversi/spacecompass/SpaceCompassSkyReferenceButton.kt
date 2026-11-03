@@ -5,7 +5,6 @@ import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.shape.CircleShape
-import androidx.compose.material3.Icon
 import androidx.compose.material3.IconButtonDefaults
 import androidx.compose.material3.IconToggleButton
 import androidx.compose.material3.Surface
@@ -14,14 +13,13 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.platform.testTag
-import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
 
 internal const val SPACE_COMPASS_SKY_REFERENCES_KEY = "sky_references_visible"
 internal const val SPACE_COMPASS_SKY_REFERENCES_DEFAULT = false
 
-/** The slash marks hidden guides; visible guides use the theme accent. */
+/** Hidden guides use a muted tint; visible guides use the theme accent. */
 @Composable
 internal fun SpaceCompassSkyReferenceButton(checked: Boolean, onCheckedChange: (Boolean) -> Unit,
     color: Color, background: Color) {
@@ -32,9 +30,9 @@ internal fun SpaceCompassSkyReferenceButton(checked: Boolean, onCheckedChange: (
             Box(contentAlignment = Alignment.Center) {
                 IconToggleButton(checked = checked, onCheckedChange = onCheckedChange,
                     modifier = Modifier.fillMaxSize().testTag("toggle-sky-references").spaceCompassTutorialTarget(SpaceCompassTutorialFeature.GUIDES),
-                    colors = IconButtonDefaults.iconToggleButtonColors(contentColor = color, checkedContentColor = tint)) {
-                    SpaceCompassFloatingGlyph(spaceCompassFloatingVectorInk(if (checked) R.drawable.ic_sky_references else R.drawable.ic_sky_references_off)) {
-                        SpaceCompassFloatingVectorIcon(if (checked) R.drawable.ic_sky_references else R.drawable.ic_sky_references_off,
+                    colors = IconButtonDefaults.iconToggleButtonColors(contentColor = tint, checkedContentColor = tint)) {
+                    SpaceCompassFloatingGlyph(spaceCompassFloatingVectorInk(R.drawable.ic_sky_references)) {
+                        SpaceCompassFloatingVectorIcon(R.drawable.ic_sky_references,
                             stringResource(if (checked) R.string.sky_references_hide else R.string.sky_references_show))
                     }
                 }

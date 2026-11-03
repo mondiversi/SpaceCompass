@@ -1,9 +1,9 @@
 <resources>
     <string name="info_news_title">最新变化 · %1$s</string>
-    <string name="info_news_star_sky" formatted="false">Location导出可包含已选天体、当前天体及轨迹上已选的点。</string>
-    <string name="info_news_texture_downloads" formatted="false">导入会恢复已选点，并保持对旧版Location文件的兼容。</string>
-    <string name="info_news_weather" formatted="false">等大的图标区分已选点及其对跖点，计数徽标采用中性的日夜配色。</string>
-    <string name="info_news_viewer_zoom" formatted="false">天空和相机视图中的对跖点标记内部透明，与照片和全景图保持一致。</string>
-    <string name="info_news_settings" formatted="false">教程中的点击不会改变实际选择或对跖点。相机演示仅影响教程控件。</string>
-    <string name="info_news_catalog" formatted="false">点和对跖点的通知更加清晰。短按不再振动，长按仍会通过触觉反馈取消所有点的选择。</string>
+    <string name="info_news_star_sky" formatted="false">关闭的控件显示为无斜线的灰色，图标尺寸与对齐保持不变。自动Location也显示为灰色。</string>
+    <string name="info_news_texture_downloads" formatted="false">横屏且信息面板收起时，天体、Location、基准线和0–24位于左侧；朝向/天气或相机透明度/变焦位于右侧。</string>
+    <string name="info_news_weather" formatted="false">相机按钮位于拍摄上方，点/对跖点按钮位于菜单下方。两侧按钮组都在上下角落按钮之间居中。</string>
+    <string name="info_news_viewer_zoom" formatted="false">拍摄边框以3.2秒周期从主题蓝色/青色渐变到标准灰色。关闭动画时仍显示固定边框。</string>
+    <string name="info_news_settings" formatted="false">天气显示默认开启，并尊重已保存的选择。天气关闭或相机开启时隐藏天气重试提示。</string>
+    <string name="info_news_catalog" formatted="false">预览中隐藏的标签和位置显示为灰色。标签选项已重新排序，不改变已保存的选择。</string>
 </resources>

@@ -5,7 +5,6 @@ import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.shape.CircleShape
-import androidx.compose.material3.Icon
 import androidx.compose.material3.IconButtonDefaults
 import androidx.compose.material3.IconToggleButton
 import androidx.compose.material3.Surface
@@ -14,13 +13,12 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.platform.testTag
-import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.semantics.contentDescription
 import androidx.compose.ui.semantics.semantics
 import androidx.compose.ui.unit.dp
 
-/** The camera stays recognizable in both states; a slash marks its disabled state. */
+/** The camera retains one glyph; a muted tint marks its off state. */
 @Composable
 internal fun SpaceCompassCameraToggleButton(checked: Boolean, onCheckedChange: (Boolean) -> Unit,
     color: Color, background: Color) {
@@ -33,9 +31,9 @@ internal fun SpaceCompassCameraToggleButton(checked: Boolean, onCheckedChange: (
                 IconToggleButton(checked = checked, onCheckedChange = onCheckedChange,
                     modifier = Modifier.fillMaxSize().testTag("toggle-camera").spaceCompassTutorialTarget(SpaceCompassTutorialFeature.CAMERA)
                         .semantics { contentDescription = label },
-                    colors = IconButtonDefaults.iconToggleButtonColors(contentColor = color, checkedContentColor = tint)) {
-                    SpaceCompassFloatingGlyph(spaceCompassFloatingVectorInk(if (checked) R.drawable.ic_camera else R.drawable.ic_camera_off)) {
-                        SpaceCompassFloatingVectorIcon(if (checked) R.drawable.ic_camera else R.drawable.ic_camera_off)
+                    colors = IconButtonDefaults.iconToggleButtonColors(contentColor = tint, checkedContentColor = tint)) {
+                    SpaceCompassFloatingGlyph(spaceCompassFloatingVectorInk(R.drawable.ic_camera)) {
+                        SpaceCompassFloatingVectorIcon(R.drawable.ic_camera)
                     }
                 }
             }

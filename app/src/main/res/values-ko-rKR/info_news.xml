@@ -1,9 +1,9 @@
 <resources>
     <string name="info_news_title">최근 변경 사항 · %1$s</string>
-    <string name="info_news_star_sky" formatted="false">Location 내보내기에 선택한 천체, 활성 천체와 궤도에서 선택한 점을 포함할 수 있습니다.</string>
-    <string name="info_news_texture_downloads" formatted="false">가져오기는 선택한 점을 복원하며 이전 Location 파일과의 호환성을 유지합니다.</string>
-    <string name="info_news_weather" formatted="false">같은 크기의 기호로 선택한 점과 대척점을 구분하며, 카운터는 낮과 밤에 중립 색상을 사용합니다.</string>
-    <string name="info_news_viewer_zoom" formatted="false">하늘과 카메라 화면에서 대척점 표식 내부가 투명해져 사진 및 파노라마와 일관됩니다.</string>
-    <string name="info_news_settings" formatted="false">튜토리얼에서 탭해도 실제 선택이나 대척점은 바뀌지 않습니다. 카메라 시연은 튜토리얼 컨트롤에만 적용됩니다.</string>
-    <string name="info_news_catalog" formatted="false">점과 대척점 알림을 더 명확하게 했습니다. 짧게 탭하면 진동하지 않으며, 길게 누르면 촉각 피드백과 함께 모든 점 선택이 해제됩니다.</string>
+    <string name="info_news_star_sky" formatted="false">꺼진 컨트롤은 빗금 없이 회색으로 표시되며 아이콘 크기와 정렬은 유지됩니다. 자동 Location도 회색입니다.</string>
+    <string name="info_news_texture_downloads" formatted="false">정보 패널을 접은 가로 모드에서는 천체, Location, 기준선과 0–24가 왼쪽에, 축/날씨 또는 카메라 투명도/줌이 오른쪽에 배치됩니다.</string>
+    <string name="info_news_weather" formatted="false">카메라는 촬영 위에, 점/대척점 컨트롤은 메뉴 아래에 놓입니다. 양쪽 그룹은 모서리 버튼 사이의 중앙에 정렬됩니다.</string>
+    <string name="info_news_viewer_zoom" formatted="false">촬영 테두리는 테마의 파랑/청록에서 기본 회색으로 3.2초 주기로 변합니다. 애니메이션을 끄면 고정 테두리가 표시됩니다.</string>
+    <string name="info_news_settings" formatted="false">저장된 선택을 유지하며 날씨 표시는 기본으로 켜집니다. 날씨가 꺼져 있거나 카메라가 켜져 있으면 날씨 재시도 알림은 숨겨집니다.</string>
+    <string name="info_news_catalog" formatted="false">미리보기에서 숨긴 레이블과 위치는 회색입니다. 저장된 선택을 바꾸지 않고 레이블 옵션 순서를 조정했습니다.</string>
 </resources>

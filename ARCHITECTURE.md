@@ -521,7 +521,7 @@ and surface-map previews keep their original content.
 
 ## Floating controls, native-map layout and snapshot publication 1.7.2
 
-The top-center scene group contains independent Info/logo and Menu controls at the same compact size. The logo opens the existing Info page directly; the menu uses its own normal start-aligned popup anchor. Bottom-start collapse and pointing-axis controls retain their row and persistent choices. Shared ink fitting uses 53% of the circle's largest dimension while compensating stroke width separately; optical translations apply after fitting and do not change the hit region. Weather and label glyphs balance their normal and slashed states independently. Capture symbols use white/dark foregrounds for day/night; the white border and pressed-surface animation remain independent.
+The top-center scene group contains independent Info/logo and Menu controls at the same compact size. The logo opens the existing Info page directly; the menu uses its own normal start-aligned popup anchor. Bottom-start collapse and pointing-axis controls retain their row and persistent choices. Shared ink fitting uses 53% of the circle's largest dimension while compensating stroke width separately; optical translations apply after fitting and do not change the hit region. Weather and label glyphs keep the same fitted bounds and optical offsets across active and muted off states. Capture symbols use white/dark foregrounds for day/night; the accent-to-neutral border pulse and pressed-surface animation remain independent.
 
 The Location position editor keeps ordinary vertical scrolling with a disabled edge overscroll effect. Its native WebView is a sibling layer positioned and clipped from the Compose map slot. Stretching only the Compose renderer would deform text/buttons independently of that layer. The map spans the island width with square corners; descriptive/form content retains the shared inset. Visible native hit regions continue to clip at the page viewport, protecting the toolbar while scrolling.
 
@@ -649,7 +649,7 @@ but hidden. TLE/JPL validity is preserved; unsupported intervals never fall back
 Capture marker labels use their own civil date when it differs from the frozen observation date.
 The shared formatter applies to panorama/photo markers, pins and disclosure/profile rebuilds;
 CSV/TXT keep full point timestamps and UTC offsets from the same frozen forward window.
-The forward-window control is slashed while disabled and uses the normal accent while enabled.
+The forward-window control is a neutral interval choice: 0–24 or +24h, without an on/off slash or selected accent.
 
 Forward satellite pass summaries derive from the displayed markers and endpoints. Ongoing passes
 start with Current; incomplete boundary passes show only events inside the 24-hour interval.
@@ -690,3 +690,28 @@ remain independent of the human-readable export profile and old readers ignore
 the extension. Missing legacy payloads preserve session pins; explicit payloads
 replace them silently and start with antipodes off. Validation precedes applying
 any configuration and retains the bounded one-megabyte document limit.
+
+
+## Compact landscape and inactive states (1.7.9)
+
+SpaceCompassMainControlGroups owns presentation-only row/column arrangements;
+state, persistence and actions retain their existing owners. Compact landscape
+uses left navigation and right view-mode columns. Camera/shutter stack vertically
+at the fixed bottom-end anchor; the conditional point/antipode action follows Menu.
+Expanded and portrait layouts retain their existing rows. Small windows bound and
+scroll the columns instead of reducing individual circle or touch-target sizes.
+
+SpaceCompassSunPointingViewport computes one shared vertical axis from measured
+corner groups. The side columns and their orbital hit-exclusion frames use that
+axis consistently, also in RTL. Additional camera and antipode controls do not
+move the Menu/shutter or logo/chevron reference centres. Capture remains outside
+the animated details pane, preserving its bottom-end position during collapse.
+
+Inactive toggle tint is centralized and distinct from neutral one-shot actions
+and unavailable controls. Icon geometry is independent of state, avoiding scale
+or optical-position changes. Active Location overrides retain attention orange.
+The shutter reads pulse progress only in drawWithContent, avoiding per-frame
+layout or scene recomposition; reduced-motion mode uses the static grey endpoint.
+Visual weather defaults on only without a stored value. Existing weather-error
+priority checks continue to suppress irrelevant retries when weather is hidden.
+Preview labels and position retain their stable keys and privacy/export logic.

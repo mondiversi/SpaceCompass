@@ -1,9 +1,9 @@
 <resources>
     <string name="info_news_title">Последние новости · %1$s</string>
-    <string name="info_news_star_sky" formatted="false">Экспорт Location может включать выбранные небесные объекты, активный объект и выбранные точки траекторий.</string>
-    <string name="info_news_texture_downloads" formatted="false">Импорт восстанавливает выбранные точки и совместим с прежними файлами Location.</string>
-    <string name="info_news_weather" formatted="false">Символы одинакового размера различают выбранные точки и их антиподы, а счётчик имеет нейтральные дневные и ночные цвета.</string>
-    <string name="info_news_viewer_zoom" formatted="false">Внутренняя область маркеров антиподов прозрачна в режиме неба и камеры, как на фотографиях и панорамах.</string>
-    <string name="info_news_settings" formatted="false">Нажатия в руководстве не меняют реальные выделения и антиподы. Демонстрация камеры затрагивает только элементы руководства.</string>
-    <string name="info_news_catalog" formatted="false">Более понятные уведомления о точках и антиподах. Короткое нажатие больше не вызывает вибрацию; удержание снимает выделение всех точек с откликом.</string>
+    <string name="info_news_star_sky" formatted="false">Выключенные элементы серые без перечёркивания, с прежним размером и выравниванием значков. Автоматическая Location тоже серая.</string>
+    <string name="info_news_texture_downloads" formatted="false">В компактном альбомном режиме Объекты, Location, Линии и 0–24 находятся слева, а ось/погода или прозрачность/масштаб камеры справа.</string>
+    <string name="info_news_weather" formatted="false">Камера расположена над съёмкой, точки/антиподы под Меню. Боковые группы центрированы между угловыми кнопками.</string>
+    <string name="info_news_viewer_zoom" formatted="false">Рамка съёмки пульсирует от синего/голубого цвета темы до нейтрального серого за 3,2 секунды. Без анимации остаётся видимая неподвижная рамка.</string>
+    <string name="info_news_settings" formatted="false">Визуальная погода включена по умолчанию с сохранением записанных настроек. Повторные запросы скрыты при выключенной погоде или активной камере.</string>
+    <string name="info_news_catalog" formatted="false">Скрытые Подписи и Положение в предпросмотре серые. Порядок режимов подписей изменён без изменения сохранённого выбора.</string>
 </resources>

@@ -1,9 +1,9 @@
 <resources>
     <string name="info_news_title">Últimas novedades · %1$s</string>
-    <string name="info_news_star_sky" formatted="false">Las exportaciones de Location pueden incluir los objetos celestes seleccionados, el objeto activo y los puntos seleccionados en las trayectorias.</string>
-    <string name="info_news_texture_downloads" formatted="false">La importación restaura los puntos seleccionados y sigue siendo compatible con archivos Location anteriores.</string>
-    <string name="info_news_weather" formatted="false">Símbolos del mismo tamaño distinguen los puntos seleccionados de sus antípodas, con un contador neutro de día y noche.</string>
-    <string name="info_news_viewer_zoom" formatted="false">Los marcadores de antípodas tienen el interior transparente en las vistas del cielo y la cámara, como en fotos y panorámicas.</string>
-    <string name="info_news_settings" formatted="false">Los toques en el tutorial no alteran las selecciones reales ni las antípodas. La demostración de cámara solo afecta a los controles del tutorial.</string>
-    <string name="info_news_catalog" formatted="false">Notificaciones más claras para puntos y antípodas. El toque breve ya no vibra; mantener pulsado deselecciona todos los puntos con respuesta táctil.</string>
+    <string name="info_news_star_sky" formatted="false">Los controles apagados son grises sin barra, conservando el tamaño y la alineación. Location automática también es gris.</string>
+    <string name="info_news_texture_downloads" formatted="false">En horizontal compacto, Objetos, Location, Referencias y 0–24 quedan a la izquierda; eje/tiempo o transparencia/zoom de cámara, a la derecha.</string>
+    <string name="info_news_weather" formatted="false">Cámara se sitúa sobre Capturar, y puntos/antípodas bajo Menú. Los grupos laterales se centran entre los botones de las esquinas.</string>
+    <string name="info_news_viewer_zoom" formatted="false">El borde del disparador pulsa del azul/cian del tema al gris neutro en 3,2 segundos. Con las animaciones desactivadas queda un borde fijo visible.</string>
+    <string name="info_news_settings" formatted="false">El tiempo visual está activo por defecto, respetando las elecciones guardadas. Los reintentos meteorológicos se ocultan si está apagado o la cámara está activa.</string>
+    <string name="info_news_catalog" formatted="false">Las Etiquetas y la Posición ocultas son grises en las vistas previas. Las opciones de etiquetas se reordenan sin cambiar la elección guardada.</string>
 </resources>

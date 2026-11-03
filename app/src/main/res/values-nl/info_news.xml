@@ -1,9 +1,9 @@
 <resources>
     <string name="info_news_title">Laatste nieuws · %1$s</string>
-    <string name="info_news_star_sky" formatted="false">Location-exporten kunnen geselecteerde hemelobjecten, het actieve object en geselecteerde baanpunten bevatten.</string>
-    <string name="info_news_texture_downloads" formatted="false">Importeren herstelt geselecteerde punten en blijft compatibel met oudere Location-bestanden.</string>
-    <string name="info_news_weather" formatted="false">Even grote symbolen onderscheiden geselecteerde punten van hun antipoden, met een neutrale dag-/nachtteller.</string>
-    <string name="info_news_viewer_zoom" formatted="false">Antipodemarkeringen zijn vanbinnen transparant in de hemel- en cameraweergave, net als in foto’s en panorama’s.</string>
-    <string name="info_news_settings" formatted="false">Tikken in de tutorial verandert echte selecties en antipoden niet. De camerademonstratie beïnvloedt alleen de tutorialbediening.</string>
-    <string name="info_news_catalog" formatted="false">Duidelijkere meldingen voor punten en antipoden. Kort tikken trilt niet meer; ingedrukt houden wist alle puntselecties met voelbare feedback.</string>
+    <string name="info_news_star_sky" formatted="false">Uitgeschakelde opties zijn grijs zonder schuine streep, met dezelfde pictogramgrootte en uitlijning. Automatische Location is ook grijs.</string>
+    <string name="info_news_texture_downloads" formatted="false">In compacte liggende weergave staan Objecten, Location, Hulplijnen en 0–24 links; as/weer of cameratransparantie/zoom staan rechts.</string>
+    <string name="info_news_weather" formatted="false">Camera staat boven Opname en punten/antipoden onder Menu. Beide zijgroepen staan midden tussen de hoekknoppen.</string>
+    <string name="info_news_viewer_zoom" formatted="false">De opnamerand pulseert in 3,2 seconden van themablauw/cyaan naar neutraal randgrijs. Bij uitgeschakelde animaties blijft een vaste rand zichtbaar.</string>
+    <string name="info_news_settings" formatted="false">Visueel weer staat standaard aan, met behoud van opgeslagen keuzes. Weerpogingen blijven verborgen wanneer weer uitstaat of de camera actief is.</string>
+    <string name="info_news_catalog" formatted="false">Verborgen Labels en Positie zijn grijs in het voorbeeld. De labelopties zijn opnieuw geordend zonder de opgeslagen keuze te wijzigen.</string>
 </resources>

@@ -18,15 +18,20 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.graphics.lerp
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.semantics.clearAndSetSemantics
 
-/** Accent only a persistent active state; disabled controls retain their neutral disabled tint. */
+/** Muted off states remain actionable; null keeps ordinary actions neutral. */
 @Composable
-internal fun spaceCompassFloatingControlTint(color: Color, active: Boolean, enabled: Boolean = true): Color =
-    if (active && enabled) MaterialTheme.colorScheme.primary else color
+internal fun spaceCompassFloatingControlTint(color: Color, active: Boolean?, enabled: Boolean = true): Color = when {
+    !enabled -> color
+    active == true -> MaterialTheme.colorScheme.primary
+    active == false -> lerp(color, MaterialTheme.colorScheme.surface, .55f)
+    else -> color
+}
 
 /** A fixed-size floating action; badges share its scale without being clipped by the circle. */
 @Composable

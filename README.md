@@ -8,8 +8,8 @@ paths, inspect reference facts and view textured models. Space Compass is a stan
 
 ## Download and install
 
-Download **space-compass-1.7.8.apk** from the
-[Space Compass 1.7.8 release](https://github.com/mondiversi/SpaceCompass/releases/tag/v1.7.8).
+Download **space-compass-1.7.9.apk** from the
+[Space Compass 1.7.9 release](https://github.com/mondiversi/SpaceCompass/releases/tag/v1.7.9).
 Android 8.0 or newer is required. Open the APK and follow Android's installation
 prompts; allow installation for your browser or file manager if requested.
 
@@ -22,7 +22,7 @@ one manual APK update to acquire this feature.
 The release includes `SHA256SUMS.txt` and a signed update index. GitHub's source
 ZIP/TAR archives and Actions debug artifacts are separate from the signed APK.
 See [distribution and signing](docs/GITHUB_RELEASES.md) and
-[the 1.7.8 release audit](docs/RELEASE_1_7_8.md).
+[the 1.7.9 release audit](docs/RELEASE_1_7_9.md).
 
 <!-- app-gallery:start -->
 ## Gallery
@@ -112,12 +112,12 @@ See Space Compass in portrait and landscape, by day and by night. These English 
 - Steadier sensor-driven motion combines short gyroscope increments with the measured magnetic/gravity reference, and pauses with the screensaver/background lifecycle.
 - Rear-camera overlays with celestial markers and paths, consistent ultrawide/zoom
   steps, pinch and direct level selection; full 360° sky panoramas.
-  Camera sits beside capture at the bottom right. Weather and 0°/90° share the lower centre; camera mode reuses those slots for Transparency and Zoom. A saved camera-only transparency control fades complete object glyphs to 50%.
+  Compact landscape places Camera above Capture, with axis/weather or Transparency/Zoom in the right-side column. Other layouts keep Camera beside Capture. A saved camera-only transparency control fades complete object glyphs to 50%.
   Photos and every export variant retain the opacity recorded at the shutter tap.
 - Exposure-time direction, inclination and field of view in camera photos; previews
   follow selected language/units independently of the export profile.
 - Optional celestial reference curves and celestial-pole, zenith and nadir crosses. Guide and
-  camera modes start disabled; Sun and Moon are the initial checked objects.
+  camera modes start disabled; weather starts enabled unless a saved choice overrides it. Sun and Moon are the initial checked objects.
 - Save or share images, readable TXT tables and CSV spreadsheets from captures, daily paths and the Observatory,
   using one remembered selected-language/unit or international profile shared with Location exports.
   Filenames follow the chosen profile, with hyphens within fields and underscores between fields.
@@ -161,7 +161,7 @@ See Space Compass in portrait and landscape, by day and by night. These English 
 - Translucent main islands with paths and objects drawn behind them, a reticle centred in the free sky area and a 55% sky / 45% information landscape split. The compass island shows GPS altitude alone; Position details retain its vertical accuracy. Landscape data rows use 11 sp text (12 sp in portrait), with regular line height, inner spacing and compass size.
 - Orbit/reference names can settle above or below nearby lines, with shared measured clearance and stable placement. Panel transitions remain 300 ms; marker composition, navigation and locators process the displayed subset instead of repeatedly scanning the full catalogue.
 - Titled photo/panorama previews with opaque theme-matched toolbars and top-aligned controls, object-colour legends and larger wrapping photo metadata on a separate opaque black band.
-- White reticle, existing-outline object focus/selection and a fixed bottom-right landscape capture anchor. Info/logo stays at the upper left, Menu at the upper right, and reticle/reference/Location/Objects controls are centred between them. Camera sits beside the compact capture action. Pointing-axis and Weather controls share the lower centre; camera mode keeps Transparency then Zoom in their previous positions. Collapse and point clearing remain lower left. Camera zoom defaults to 0.5× or the widest supported lens when no saved choice exists; subsequent choices remain saved.
+- White reticle, existing-outline object focus/selection and a fixed bottom-right landscape capture anchor. In compact landscape, Objects/Location/Guides/0–24 form the left column; axis/weather or Transparency/Zoom form the right column. Camera sits above Capture, and selected-point/antipode controls appear below Menu. Both columns centre between their corner anchors. Other layouts retain their existing rows. Icons use muted grey, without a slash, when off; active toggles retain their theme colour. Capture keeps the same circle size and pulses its border between the day/night accent and neutral outline grey over 3.2 seconds. Camera zoom defaults to 0.5× or the widest supported lens when no saved choice exists; subsequent choices remain saved.
 - Stable ground, orbits and star background when returning from background; optically centred object arrows and a clear screensaver return hint. Focused callouts cover celestial icons without jumping; split-color keys beside object names and in capture legends show both horizon treatments.
 - Capture matches the other floating control sizes, with a fine symbol and a gentle 3.2-second border pulse. Orbit/reference caption placement uses compact measured offsets, projection-specific state and bounded re-entry retries to keep nearby names steady.
 - Compact T+/T− hour/minute offsets shared by views and exports; orbit points behind translucent title/information overlays remain visible without being selectable.
@@ -175,7 +175,7 @@ See Space Compass in portrait and landscape, by day and by night. These English 
 - Signed startup/manual GitHub updates with package, certificate, size and checksum verification.
 
 The application ID is `me.mondiversi.spacecompass`. The current stable version is
-**1.7.8**, with Android/update identity `1.7.8` and version code **64**.
+**1.7.9**, with Android/update identity `1.7.9` and version code **65**.
 This preserves the three-part update protocol used by existing preview installations.
 The app stores its preferences and caches privately.
 
@@ -237,7 +237,7 @@ Launcher/loading artwork and original illustrations are project assets.
 
 ## Data and graphics packages
 
-Release 1.7.8 includes **9,999 selectable objects**, and an optional reference-information archive.
+Release 1.7.9 includes **9,999 selectable objects**, and an optional reference-information archive.
 All descriptive data and translations remain inside the APK. Scientific limits and provenance are in the
 [catalogue sources](docs/CATALOG_9999.md) and [canonical source catalogue](catalogue/README.md).
 

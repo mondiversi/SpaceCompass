@@ -1,9 +1,9 @@
 <resources>
     <string name="info_news_title">हाल के बदलाव · %1$s</string>
-    <string name="info_news_star_sky" formatted="false">Location निर्यात में चुने हुए खगोलीय पिंड, सक्रिय पिंड और पथों पर चुने हुए बिंदु शामिल हो सकते हैं।</string>
-    <string name="info_news_texture_downloads" formatted="false">आयात चुने हुए बिंदुओं को बहाल करता है और पुरानी Location फ़ाइलों के साथ संगत रहता है।</string>
-    <string name="info_news_weather" formatted="false">समान आकार के चिह्न चुने हुए बिंदुओं और उनके प्रतिमुख बिंदुओं को अलग करते हैं। काउंटर दिन और रात में तटस्थ रंग रखता है।</string>
-    <string name="info_news_viewer_zoom" formatted="false">आकाश और कैमरा दृश्य में प्रतिमुख चिह्नों का अंदरूनी भाग पारदर्शी है, जैसे फ़ोटो और पैनोरमा में।</string>
-    <string name="info_news_settings" formatted="false">ट्यूटोरियल में टैप करने से वास्तविक चयन या प्रतिमुख बिंदु नहीं बदलते। कैमरा प्रदर्शन केवल ट्यूटोरियल के नियंत्रण बदलता है।</string>
-    <string name="info_news_catalog" formatted="false">बिंदुओं और प्रतिमुख बिंदुओं की सूचनाएँ अधिक स्पष्ट हैं। छोटे टैप पर अब कंपन नहीं होता; दबाकर रखने से स्पर्श प्रतिक्रिया के साथ सभी बिंदु अचयनित होते हैं।</string>
+    <string name="info_news_star_sky" formatted="false">बंद नियंत्रण बिना तिरछी रेखा के धूसर दिखते हैं और चिह्नों का आकार व संरेखण समान रहता है। स्वचालित Location भी धूसर है।</string>
+    <string name="info_news_texture_downloads" formatted="false">संकुचित क्षैतिज दृश्य में पिंड, Location, रेखाएँ और 0–24 बाईं ओर हैं; अक्ष/मौसम या कैमरा पारदर्शिता/ज़ूम दाईं ओर हैं।</string>
+    <string name="info_news_weather" formatted="false">कैमरा कैप्चर के ऊपर और बिंदु/प्रतिमुख बिंदु मेनू के नीचे हैं। दोनों पार्श्व समूह कोनों के बटनों के बीच केंद्रित हैं।</string>
+    <string name="info_news_viewer_zoom" formatted="false">कैप्चर की सीमा 3.2 सेकंड में थीम के नीले/आसमानी रंग से तटस्थ धूसर तक स्पंदित होती है। एनीमेशन बंद होने पर स्थिर सीमा दिखती रहती है।</string>
+    <string name="info_news_settings" formatted="false">सहेजे गए विकल्पों का सम्मान करते हुए दृश्य मौसम डिफ़ॉल्ट रूप से चालू है। मौसम बंद होने या कैमरा सक्रिय होने पर मौसम के पुनः प्रयास छिपे रहते हैं।</string>
+    <string name="info_news_catalog" formatted="false">पूर्वावलोकन में छिपे लेबल और स्थान धूसर हैं। सहेजा गया विकल्प बदले बिना लेबल विकल्पों का क्रम बदला गया है।</string>
 </resources>

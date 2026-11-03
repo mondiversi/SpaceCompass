@@ -148,20 +148,15 @@ internal fun SpaceCompassPanoramaPreview(data: SpaceCompassPanoramaPreviewData, 
                     active = requestedLabelMode != SpaceCompassPanoramaLabelMode.NONE,
                     stateText = stringResource(requestedLabelMode.labelResource),
                     modifier = Modifier.testTag("panorama-point-labels"),
-                    glyphInk = if (requestedLabelMode == SpaceCompassPanoramaLabelMode.NONE)
-                        spaceCompassFloatingInk(24f, .10f, .12f, .90f, .88f)
-                    else spaceCompassFloatingInk(24f, .16f, .16f, .86f, .86f),
+                    glyphInk = spaceCompassFloatingInk(24f, .16f, .16f, .86f, .86f),
                     // The tag and its hole carry more visual weight at the upper-left corner.
-                    opticalOffset = if (requestedLabelMode == SpaceCompassPanoramaLabelMode.NONE)
-                        Offset(.6f, .65f) else Offset(2.1f, 2.1f)) { SpaceCompassPanoramaLabelsIcon(requestedLabelMode == SpaceCompassPanoramaLabelMode.NONE) }
+                    opticalOffset = Offset(2.1f, 2.1f)) { SpaceCompassPanoramaLabelsIcon() }
                 if (showCaptionOptions) SpaceCompassPanoramaCircleButton(
                     stringResource(R.string.panorama_position), { choosePosition = true }, enabled = !export.saving,
                     active = requestedPosition != SpaceCompassPanoramaPosition.HIDDEN,
                     modifier = Modifier.testTag("panorama-position"), stateText = positionState,
-                    glyphInk = spaceCompassFloatingInk(24f,
-                        if (requestedPosition == SpaceCompassPanoramaPosition.HIDDEN) .10f else .19f, .10f,
-                        if (requestedPosition == SpaceCompassPanoramaPosition.HIDDEN) .90f else .81f, .91f)) {
-                    SpaceCompassPanoramaPositionIcon(requestedPosition == SpaceCompassPanoramaPosition.HIDDEN)
+                    glyphInk = spaceCompassFloatingInk(24f, .19f, .10f, .81f, .91f)) {
+                    SpaceCompassPanoramaPositionIcon()
                 }
                 if (showCenter) SpaceCompassPanoramaCircleButton(
                     stringResource(R.string.panorama_center), { chooseCenter = true }, enabled = !export.saving,
@@ -272,7 +267,7 @@ private fun SpaceCompassPanoramaZoomImage(bitmap: android.graphics.Bitmap, modif
 @Composable
 private fun SpaceCompassPanoramaCircleButton(label: String, onClick: () -> Unit,
     modifier: Modifier = Modifier, enabled: Boolean = true, checked: Boolean? = null,
-    active: Boolean = checked == true, stateText: String? = null,
+    active: Boolean? = checked, stateText: String? = null,
     glyphInk: SpaceCompassFloatingInk? = null, opticalOffset: Offset = Offset.Zero,
     content: @Composable () -> Unit) {
     val foreground = spaceCompassFloatingControlTint(MaterialTheme.colorScheme.onSurface,

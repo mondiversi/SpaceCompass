@@ -1,5 +1,15 @@
 # Changelog
 
+## 1.7.9 — 2026-11-03
+
+- Replace off-state slashes with muted day/night greys while retaining each glyph's shape, size and optical alignment. Location uses grey when no parameters are customized; its active orange and counter remain unchanged.
+- Add side columns specifically to compact landscape: Objects, Location, celestial guides and 0–24 on the left; axis/weather or camera transparency/zoom on the right. Camera moves above the fixed shutter, and selected-point/antipode controls move below Menu.
+- Centre both side groups between their corner anchors and retain measured hit exclusions, so hidden orbital points cannot intercept button taps. Short windows keep bounded scrollable control groups.
+- Pulse the shutter border between theme blue/cyan and the same neutral outline grey used by other controls, with a 3.2-second cycle. Preserve a visible static outline when system animations are disabled.
+- Enable visual weather by default when no choice has been saved. Preserve explicit saved settings and keep weather retries hidden when visual weather is off or the camera is active.
+- Keep preview Labels and Position grey and actionable when set to None. Place key/selected-point labels below selected-object/selected-point labels, preserving the default and stored mode keys.
+- Consolidate control containers and shared alignment calculations, clean up the edited UI code, refresh documentation and translate release news in all twenty languages.
+
 ## 1.7.8 — 2026-11-02
 
 - Include selected orbit points with celestial objects in Location exports and restore them on import. Preserve the active object, event information and point selection; keep older files compatible and reset derived antipodes on import.

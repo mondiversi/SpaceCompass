@@ -10,12 +10,13 @@ import androidx.compose.ui.platform.testTag
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
 
-/** Attention orange and its count mark active overrides; the inactive glyph stays neutral. */
+/** Attention orange marks active overrides; a muted gray glyph marks automatic values. */
 @Composable
 internal fun SpaceCompassScenarioButton(activeCount: Int, color: Color, background: Color,
     onClick: () -> Unit) {
     val active = activeCount > 0
-    val tint = if (active) spaceCompassScenarioAccentColor(background.luminance() < .4f) else color
+    val tint = if (active) spaceCompassScenarioAccentColor(background.luminance() < .4f)
+        else spaceCompassFloatingControlTint(color, active = false)
     val label = stringResource(R.string.observer_title)
     val activeLabel = stringResource(R.string.observer_simulation_active)
     val count = formatSpaceCompassNumber(activeCount.toDouble(), 0,

@@ -1,9 +1,9 @@
 <resources>
     <string name="info_news_title">最近の変更 · %1$s</string>
-    <string name="info_news_star_sky" formatted="false">Locationの書き出しに、選択した天体、現在の天体、軌道上で選択した点を含められます。</string>
-    <string name="info_news_texture_downloads" formatted="false">読み込み時に選択した点を復元し、以前のLocationファイルとの互換性も保ちます。</string>
-    <string name="info_news_weather" formatted="false">同じ大きさの記号で選択した点と対蹠点を区別します。カウンターは昼夜とも中立色です。</string>
-    <string name="info_news_viewer_zoom" formatted="false">空とカメラの表示で対蹠点マーカーの内部が透明になり、写真やパノラマと統一されました。</string>
-    <string name="info_news_settings" formatted="false">チュートリアル内のタップは実際の選択や対蹠点を変更しません。カメラの実演はチュートリアルの操作部だけに反映されます。</string>
-    <string name="info_news_catalog" formatted="false">点と対蹠点の通知が明確になりました。短いタップは振動せず、長押しは触覚フィードバック付きで全点の選択を解除します。</string>
+    <string name="info_news_star_sky" formatted="false">オフの操作は斜線のないグレー表示になり、アイコンの大きさと位置は変わりません。自動のLocationもグレーです。</string>
+    <string name="info_news_texture_downloads" formatted="false">情報パネルを閉じた横画面では、天体・Location・基準線・0–24が左、軸と天気またはカメラの透明度とズームが右に並びます。</string>
+    <string name="info_news_weather" formatted="false">カメラは撮影の上、選択した点と対蹠点の操作はメニューの下に配置します。左右のグループは隅のボタンの中間に揃います。</string>
+    <string name="info_news_viewer_zoom" formatted="false">撮影ボタンの枠はテーマの青・シアンから標準のグレーへ3.2秒周期で変化します。アニメーション無効時も固定の枠を表示します。</string>
+    <string name="info_news_settings" formatted="false">保存した設定を尊重しつつ、天気表示は初期状態でオンです。天気がオフ、またはカメラ使用中は天気の再試行を表示しません。</string>
+    <string name="info_news_catalog" formatted="false">プレビューで非表示のラベルと位置情報はグレーです。保存した選択を変えずにラベルの選択肢を並べ替えました。</string>
 </resources>

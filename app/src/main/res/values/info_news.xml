@@ -1,9 +1,9 @@
 <resources>
     <string name="info_news_title">Latest news · %1$s</string>
-    <string name="info_news_star_sky" formatted="false">Location exports can include selected celestial objects, the active object and selected orbit points.</string>
-    <string name="info_news_texture_downloads" formatted="false">Importing restores selected points and remains compatible with older Location files.</string>
-    <string name="info_news_weather" formatted="false">Equally sized symbols distinguish selected points from their antipodes, with a neutral day/night counter.</string>
-    <string name="info_news_viewer_zoom" formatted="false">Antipode markers have transparent interiors in the sky and camera views, consistently with photos and panoramas.</string>
-    <string name="info_news_settings" formatted="false">Tutorial taps leave real selections and antipodes unchanged. The camera demonstration affects only tutorial controls.</string>
-    <string name="info_news_catalog" formatted="false">Clearer point and antipode notifications. Short toggles no longer vibrate; holding still clears selected points with feedback.</string>
+    <string name="info_news_star_sky" formatted="false">Off controls use grey instead of a slash, retaining the same icon size and alignment. Automatic Location is grey too.</string>
+    <string name="info_news_texture_downloads" formatted="false">Compact landscape places Objects, Location, Guides and 0–24 on the left, with axis/weather or camera transparency/zoom on the right.</string>
+    <string name="info_news_weather" formatted="false">Camera sits above Capture and points/antipodes below Menu. Both side groups centre between their corner buttons.</string>
+    <string name="info_news_viewer_zoom" formatted="false">The shutter border pulses from theme blue/cyan to neutral outline grey over 3.2 seconds. A static border remains visible with animations off.</string>
+    <string name="info_news_settings" formatted="false">Visual weather is on by default while saved choices are respected. Weather retries stay hidden when weather is off or the camera is active.</string>
+    <string name="info_news_catalog" formatted="false">Hidden preview Labels and Position are grey. Label options are reordered without changing the saved choice.</string>
 </resources>
