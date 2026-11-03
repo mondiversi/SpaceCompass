@@ -2,8 +2,8 @@
 <resources>
     <string name="scene_antipodes" formatted="false">对跖点</string>
     <string name="scene_antipode" formatted="false">对跖点</string>
-    <string name="scene_antipodes_on" formatted="false">显示已选点及对跖点</string>
-    <string name="scene_antipodes_off" formatted="false">仅显示已选点</string>
+    <string name="scene_antipodes_on" formatted="false">对跖点已显示</string>
+    <string name="scene_antipodes_off" formatted="false">对跖点未显示</string>
     <string name="scene_selected_points" formatted="false">已选点</string>
     <string name="scene_selected_points_antipodes" formatted="false">已选点及其对跖点</string>
 </resources>

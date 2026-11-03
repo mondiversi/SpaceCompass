@@ -2,8 +2,8 @@
 <resources>
     <string name="scene_antipodes" formatted="false">प्रतिमुख बिंदु</string>
     <string name="scene_antipode" formatted="false">प्रतिमुख बिंदु</string>
-    <string name="scene_antipodes_on" formatted="false">चुने हुए बिंदु और प्रतिमुख बिंदु दिखाई दे रहे हैं</string>
-    <string name="scene_antipodes_off" formatted="false">केवल चुने हुए बिंदु दिखाई दे रहे हैं</string>
+    <string name="scene_antipodes_on" formatted="false">प्रतिमुख बिंदु दिखाई दे रहे हैं</string>
+    <string name="scene_antipodes_off" formatted="false">प्रतिमुख बिंदु दिखाई नहीं दे रहे हैं</string>
     <string name="scene_selected_points" formatted="false">चुने हुए बिंदु</string>
     <string name="scene_selected_points_antipodes" formatted="false">चुने हुए बिंदु और उनके प्रतिमुख बिंदु</string>
 </resources>

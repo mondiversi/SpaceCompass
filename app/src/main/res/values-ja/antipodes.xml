@@ -2,8 +2,8 @@
 <resources>
     <string name="scene_antipodes" formatted="false">対蹠点</string>
     <string name="scene_antipode" formatted="false">対蹠点</string>
-    <string name="scene_antipodes_on" formatted="false">選択した点と対蹠点を表示</string>
-    <string name="scene_antipodes_off" formatted="false">選択した点のみ表示</string>
+    <string name="scene_antipodes_on" formatted="false">対蹠点を表示</string>
+    <string name="scene_antipodes_off" formatted="false">対蹠点を非表示</string>
     <string name="scene_selected_points" formatted="false">選択した点</string>
     <string name="scene_selected_points_antipodes" formatted="false">選択した点とその対蹠点</string>
 </resources>

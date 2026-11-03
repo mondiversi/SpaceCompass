@@ -2,8 +2,8 @@
 <resources>
     <string name="scene_antipodes" formatted="false">Karşıt noktalar</string>
     <string name="scene_antipode" formatted="false">Karşıt nokta</string>
-    <string name="scene_antipodes_on" formatted="false">Seçili noktalar ve karşıt noktalar görünür</string>
-    <string name="scene_antipodes_off" formatted="false">Yalnızca seçili noktalar görünür</string>
+    <string name="scene_antipodes_on" formatted="false">Karşıt noktalar görünür</string>
+    <string name="scene_antipodes_off" formatted="false">Karşıt noktalar görünmez</string>
     <string name="scene_selected_points" formatted="false">Seçili noktalar</string>
     <string name="scene_selected_points_antipodes" formatted="false">Seçili noktalar ve karşıt noktaları</string>
 </resources>

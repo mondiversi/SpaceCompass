@@ -10,6 +10,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.asAndroidBitmap
 import androidx.compose.ui.graphics.toArgb
+import androidx.compose.ui.graphics.lerp
 import androidx.compose.ui.test.*
 import androidx.compose.ui.test.junit4.createComposeRule
 import androidx.compose.ui.unit.dp
@@ -58,21 +59,25 @@ class SpaceCompassAntipodesUiTest {
         compose.runOnIdle { state.clearSelection() }
         compose.onNodeWithTag("toggle-antipodes").assertDoesNotExist()
     }
-    @Test fun pointAndAntipodeModesChangeTheSymbolWhileKeepingNeutralThemeInk() {
+    @Test fun antipodeSymbolAndCounterShareMutedOrActiveThemeInk() {
         state.select(moon, markers[0]); show()
         for (night in listOf(false, true)) {
             compose.runOnIdle { dark.value = night }
-            var previous: IntArray? = null
             for (enabled in listOf(false, true)) {
                 compose.runOnIdle { if (state.antipodesVisible != enabled) state.toggleAntipodes() }
                 val bitmap = compose.onNodeWithTag("toggle-antipodes").captureToImage().asAndroidBitmap()
                 val pixels = IntArray(bitmap.width * bitmap.height)
                 bitmap.getPixels(pixels, 0, bitmap.width, 0, 0, bitmap.width, bitmap.height)
                 val scheme = if (night) darkColorScheme(primary = Color.Cyan) else lightColorScheme(primary = Color.Blue)
-                assertTrue("Both symbols retain neutral theme ink", pixels.count { it == scheme.onSurface.toArgb() } > 10)
-                assertEquals("The counter and icon do not use selection blue/cyan", 0, pixels.count { it == scheme.primary.toArgb() })
-                previous?.let { assertTrue("The two modes have different symbols", !pixels.contentEquals(it)) }
-                previous = pixels
+                val expected = if (enabled) scheme.primary else lerp(scheme.onSurface, scheme.surface, .55f)
+                assertTrue("The antipode glyph uses its state tint", pixels.count { it == expected.toArgb() } > 10)
+                val counter = compose.onNodeWithTag("antipodes-count", useUnmergedTree = true)
+                    .captureToImage().asAndroidBitmap()
+                val counterPixels = IntArray(counter.width * counter.height)
+                counter.getPixels(counterPixels, 0, counter.width, 0, 0, counter.width, counter.height)
+                assertTrue("The badge shares the exact glyph tint", counterPixels.count { it == expected.toArgb() } > 10)
+                if (!enabled) assertEquals("Off mode contains no selection accent", 0,
+                    pixels.count { it == scheme.primary.toArgb() })
             }
         }
     }

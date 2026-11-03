@@ -19,6 +19,17 @@ disabled. Inactive controls, neutral actions and unavailable controls remain
 distinct. Redundant imports and the newly edited callback formatting were cleaned
 up; no library upgrades or broad scientific-model refactors are part of this release.
 
+## Same-version antipode refresh
+
+The existing 1.7.9 release is refreshed without changing Android version code 65.
+The antipode control keeps one symbol in both states: its icon and counter use
+the shared muted grey when hidden and the day/night primary accent when visible.
+The two visibility confirmations are translated in all twenty languages. Long-press
+clearing, automatic reset, calculations, tutorial behavior and in-app news are retained.
+The existing visual test contract is adapted and compiled; connected UI tests
+are not executed on the personal phone. Earlier native layout checks describe
+the unchanged layout and are not claimed as new exact-build visual checks.
+
 ## File sizes and resources
 
 The largest source is the generated, identity-stable celestial model (about 78 kB);

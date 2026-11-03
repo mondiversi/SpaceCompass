@@ -475,3 +475,8 @@ shutter border, saved-choice-aware weather default and compact-landscape side
 columns. News is updated in twenty languages. The graphics collection remains 1.8;
 individual resources and integrity pins are unchanged. See the
 [release audit](RELEASE_1_7_9.md) for architecture, size and verification scope.
+
+The same-version refresh keeps version code 65, replaces the existing release
+assets and moves v1.7.9 to the refreshed source commit. Antipode visibility now
+uses a fixed symbol with matching muted/active icon and counter colours and
+shorter localized confirmations. In-app news and the graphics collection are unchanged.

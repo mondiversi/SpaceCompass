@@ -2,8 +2,8 @@
 <resources>
     <string name="scene_antipodes" formatted="false">نقاط مقابل</string>
     <string name="scene_antipode" formatted="false">نقطه مقابل</string>
-    <string name="scene_antipodes_on" formatted="false">نقاط انتخاب‌شده و نقاط مقابل نمایان هستند</string>
-    <string name="scene_antipodes_off" formatted="false">فقط نقاط انتخاب‌شده نمایان هستند</string>
+    <string name="scene_antipodes_on" formatted="false">نقاط مقابل نمایان هستند</string>
+    <string name="scene_antipodes_off" formatted="false">نقاط مقابل نمایان نیستند</string>
     <string name="scene_selected_points" formatted="false">نقاط انتخاب‌شده</string>
     <string name="scene_selected_points_antipodes" formatted="false">نقاط انتخاب‌شده و نقاط مقابل آن‌ها</string>
 </resources>

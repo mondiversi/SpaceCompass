@@ -2,6 +2,7 @@
 
 ## 1.7.9 — 2026-11-03
 
+- Same-version refresh: keep the antipode symbol fixed, with a grey icon/counter when hidden and the day/night accent when visible. Short visibility confirmations are translated in twenty languages; long-press clearing and tutorial behavior are retained.
 - Replace off-state slashes with muted day/night greys while retaining each glyph's shape, size and optical alignment. Location uses grey when no parameters are customized; its active orange and counter remain unchanged.
 - Add side columns specifically to compact landscape: Objects, Location, celestial guides and 0–24 on the left; axis/weather or camera transparency/zoom on the right. Camera moves above the fixed shutter, and selected-point/antipode controls move below Menu.
 - Centre both side groups between their corner anchors and retain measured hit exclusions, so hidden orbital points cannot intercept button taps. Short windows keep bounded scrollable control groups.
