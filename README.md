@@ -89,101 +89,32 @@ See Space Compass in portrait and landscape, by day and by night. These English 
 
 ## Features
 
-- Tap empty sky to toggle the remembered main-view reticle and information bubbles, independently of capture labels. Generated celestial symbols use translucent dark backing for contrast.
-- Catalogue search, filtering, sorting and optional facet counts run off the UI thread. Ready previews remain visible while optional row loading waits for scrolling to settle; initial loading uses a centered theme-aware spinner.
-- An interactive main-view tutorial explains controls without changing the real scene, including camera-only controls. A one-time welcome offers quick access; reopen the tutorial from the menu.
-- Choose calendar-day tracks (0–24, the default) or a rolling next-24-hour window (+24h). Daily path, capture labels, reminders and exported capture tables follow the chosen interval.
-- Selected points can display opposite directions (azimuth +180°, reversed elevation). The antipode button and its counter are muted grey when hidden and use the day/night accent when visible. Tap to toggle antipodes; hold to deselect all points. Antipodes start hidden and reset when no points remain. Visible antipodes appear in captures and their tables, while Daily path and its exports retain original points only.
-- Location exports can include checked objects, the active object and selected orbit points. Imports restore the pins without enabling antipodes, and older Location files remain compatible.
-- Current object glyphs use one trajectory-coloured border, respecting above/below-horizon variants. Selected current positions use the theme accent without an additional outer ring.
-- Live azimuth/altitude, compass guidance, named daily paths and satellite passes. Pin multiple path points and manage the same selections in the daily path. Reticle-focused callouts show clock and T± side by side. Current positions and lunar phases remain available.
-- 9,999 catalogue objects: Sun, Moon, planets, natural/artificial satellites,
-  comets, Voyager spacecraft, nearby stars, nebulae, star clusters, compact objects and exoplanets.
-- Live search by localized name or catalog identifier, combined with four paired filters: type, visibility, origin and pointing availability. Selected objects remain pinned first and visible through filters/search; numeric or alphabetical sorting still applies within each group. Object rows and Type choices use neutral theme backgrounds. A funnel identifies filters; up/down arrows identify sorting. The compact search field centers its text, hint and cursor.
-- Default catalogue order follows increasing Sun-centred distance, with selected-first grouping retained. Every distance column uses one reference; alphabetical order shows the solar column too. Near-Earth satellite solar references are explicitly approximate (≈).
-- Validated alternative satellite sources recover current data without repeating one unreachable host timeout for every row. Loading, outdated data, dates outside coverage and unavailable values have distinct localized messages. Expired orbital data never supply a pointing or Earth-centred range.
-- Type/visibility filters and numeric sorting by Sun-centred or Earth-centred distance, mass, diameter, pressure,
-  gravity and temperature. Missing properties remain unavailable and sort last.
-- Favorites are independent of scene selection: mark them with the Observatory heart and filter the catalogue with its heart. Favorite checkboxes use the shared day/night pink accent, while their check still controls scene selection. Favorites, filters, selected objects and the active target persist.
-- Newly checked objects become the active target without jumping to the top during the catalogue visit. Returning from Observatory keeps list position; returning to the main scene and reopening the catalogue refreshes selected-first grouping. An open filter panel stays fixed while the search/value header retains quick-return scrolling.
-- Filter-option counters combine favorites, search and the other active facets, including retained checked-object exceptions. Favorites-only remains a strict independent scope. Sorting, units and interface settings persist.
-- Send future path points to Android Clock or Calendar with a visible handoff; control the main-view alert button under General → Events.
-- Follow Tesla Roadster (2018) using JPL heliocentric ephemerides and a verified archival photograph.
-- Steadier sensor-driven motion combines short gyroscope increments with the measured magnetic/gravity reference, and pauses with the screensaver/background lifecycle.
-- Rear-camera overlays with celestial markers and paths, consistent ultrawide/zoom
-  steps, pinch and direct level selection; full 360° sky panoramas.
-  Compact landscape places Camera above Capture, with axis/weather or Transparency/Zoom in the right-side column. Other layouts keep Camera beside Capture. A saved camera-only transparency control fades complete object glyphs to 50%.
-  Photos and every export variant retain the opacity recorded at the shutter tap.
-- Exposure-time direction, inclination and field of view in camera photos; previews
-  follow selected language/units independently of the export profile.
-- Optional celestial reference curves and celestial-pole, zenith and nadir crosses. Guide and
-  camera modes start disabled; weather starts enabled unless a saved choice overrides it. Sun and Moon are the initial checked objects.
-- Save or share images, readable TXT tables and CSV spreadsheets from captures, daily paths and the Observatory,
-  using one remembered selected-language/unit or international profile shared with Location exports.
-  Filenames follow the chosen profile, with hyphens within fields and underscores between fields.
-  Special/selected points are chronological.
-  Location disclosure applies to every output: captures inherit the preview; daily paths start
-  with area only. Hidden location uses UTC. No automatic gallery save.
-- Day/night OpenStreetMap position details with GPS, altitude, estimated place and weather.
-- Location management with independently enabled position, altitude, time zone, date and time;
-  optional −3600× to +3600× time speed with a central 0× pause and restart/active-only/always resumption.
-  Open it directly from the main scene. Compact independent cards show effective current values;
-  customized values are bold. The leading icon/checkbox/title target toggles a parameter; values,
-  the chevron and other card space open its editor. Child forms stay fully visible and editable, with activation controlled only by the management menu.
-  Tapping the management title toggles prepared overrides and time speed together; enabling time starts at normal 1×.
-  Prepared inactive values are saved without applying them. Resumption has an always-checked, disabled grey
-  checkbox and still offers its three policies.
-  The position editor embeds a square-cornered full-width map, paired coordinates, consistent action buttons and estimated weather. Normal scrolling remains available without stretching content away from the native map.
-  Natural-height cards pack into up to two readable columns in landscape.
-  Save, share and import named `.spacecompass` location files with optional scene objects and the active target.
-  Without observer or speed overrides, export captures the current position, altitude and time zone only;
-  date and time stay live at the imported place, and the recipient's resumption preference is retained.
-  Missing fixes remain explicit. Including an empty object selection clears the recipient's scene;
-  omitting objects leaves it alone. Favorites and catalogue filters are not transferred.
-  Readable fields and suggested filenames follow the shared export profile; import values stay canonical.
-  Configured temporal locations retain speed and resumption without accruing time while archived.
-- Read object names in the theme text color, with an outlined split-color dot: above-horizon orbit color on top and below-horizon color underneath. The dot remains visible beside shortened long names. Photo/panorama legends and image exports use the same text-sized dots, with outlines matching the lettering. Button counters use larger solid theme-accent badges with light/dark bold digits.
-- Open **Key heights** from Observatory, select a year from 1900 to 2100 and compare annual upper culminations: all significant height maxima/minima and every passage closest to the mean of the absolute annual extremes. Event counts adapt to object and location, with numbering only for repeated events. Separate moment/elevation/date-time columns use the selected formats; frozen TXT/CSV exports share the standard formatting and location-disclosure choices. Tap a moment to set the Location date/time and pause at 0×. Effective position, altitude and seasonal time-zone offsets are respected. Incomplete annual orbital data remain explicitly unavailable.
-- Open **Key events** below Key heights for a separate object/Location/year calendar. Solar polar-period boundaries and durations, day-length and sunrise/sunset extremes, lunar phases/apsides and supported planetary events use the accepted observer and local time-zone rules. Read each event’s local elevation, apply its date at paused 0× time, or export frozen CSV/TXT with the standard format/privacy choices. Short-lived orbital data never become invented annual predictions. See [calculation scope](docs/KEY_EVENTS.md).
-- Daily path centers Current on an object's first visit where the real list bounds permit. Returning preserves the manually consulted session position; live updates do not keep recentering the list.
-- Observatory, Daily path, Key heights and Key events remember separate scroll positions for each object during the current activity session, across navigation, rotation and normal backgrounding. Temporary data loading does not erase the consulted position. A new session starts at the top.
-- Tap the object name to open the catalogue. Checked objects remain first in the chosen order and visible despite filters/search. The island keeps Observatory and Daily path shortcuts. Observatory offers Favorite and Export; Daily path retains Export.
-- Science fiction is an additional type-filter membership, with ten new clearly qualified illustrative references. Their real reference directions and approximate ranges do not imply measured fictional orbits or physical properties.
-- Compare estimated travel times at everyday, light-speed and fictional warp speeds through Warp 9.999. The selected speed persists; compact duration symbols and unit preferences apply.
-- Observatory with textured interactive models, lunar phases, classified reference tables,
-  qualified core temperatures, spatial context and credits. Export data and current/rotation images.
-- Settings inputs, Location coordinates/altitude/date/time, dropdown selections and export names use compact shared fields. Native editing, floating labels, focus/error behavior and theme colors remain available; catalogue search and filter fields keep their own geometry.
-- General settings combine light/dark themes, adjustable sky fluidity, event controls and original ambient music synthesized continuously offline. Balanced fluidity is the default; previously saved levels are retained.
-  Music starts enabled at 20% volume, with saved on/off and ten-percent volume steps. Settings-save confirmations are deferred until leaving a modified settings page.
-- Music cards reveal their controls with 300 ms animations. Location child forms stay fully editable independently of their activation in the management menu.
-- Full-screen animated Earth screensaver with local time, date and battery, enabled after five minutes by default. It shows the last known real GPS position, with a dimmed grey marker on the far side, on a correctly oriented globe with eastward visual spin. Seasons and geographic day/night illumination follow the real UTC Sun independently of scenarios. It pauses live sensors, GPS, camera and data refresh until dismissed.
-- Solar-height-driven dawn/dusk lighting shared by sky, ground, weather and panoramic captures.
-- Translucent main islands with paths and objects drawn behind them, a reticle centred in the free sky area and a 55% sky / 45% information landscape split. The compass island shows GPS altitude alone; Position details retain its vertical accuracy. Landscape data rows use 11 sp text (12 sp in portrait), with regular line height, inner spacing and compass size.
-- Orbit/reference names can settle above or below nearby lines, with shared measured clearance and stable placement. Panel transitions remain 300 ms; marker composition, navigation and locators process the displayed subset instead of repeatedly scanning the full catalogue.
-- Titled photo/panorama previews with opaque theme-matched toolbars and top-aligned controls, object-colour legends and larger wrapping photo metadata on a separate opaque black band.
-- White reticle, existing-outline object focus/selection and a fixed bottom-right landscape capture anchor. In compact landscape, Objects/Location/Guides/0–24 form the left column; axis/weather or Transparency/Zoom form the right column. Camera sits above Capture, and selected-point/antipode controls appear below Menu. Both columns centre between their corner anchors. Other layouts retain their existing rows. Icons use muted grey, without a slash, when off; active toggles retain their theme colour. Capture keeps the same circle size and pulses its border between the day/night accent and neutral outline grey over 3.2 seconds. Camera zoom defaults to 0.5× or the widest supported lens when no saved choice exists; subsequent choices remain saved.
-- Stable ground, orbits and star background when returning from background; optically centred object arrows and a clear screensaver return hint. Focused callouts cover celestial icons without jumping; split-color keys beside object names and in capture legends show both horizon treatments.
-- Capture matches the other floating control sizes, with a fine symbol and a gentle 3.2-second border pulse. Orbit/reference caption placement uses compact measured offsets, projection-specific state and bounded re-entry retries to keep nearby names steady.
-- Compact T+/T− hour/minute offsets shared by views and exports; orbit points behind translucent title/information overlays remain visible without being selectable.
-- Capture labels can show only key events and selected points across all objects; this is the default for fresh settings. Existing saved label choices remain intact.
-- Enabled Earth-reference names remain visible through reticle crossings and all capture-label policies.
-- Daily paths use compact, uniformly thin reminder bells with more room for data. Daily paths pair key-event names with compact symbols and bold their complete rows, including clock/T± and angles. Culmination uses + consistently in the live sky, captures and image exports.
-- Time-coincident close-approach key events in paths, captures and exports; these are angular alignments, not eclipse predictions.
-- Open Observatory from a catalogue thumbnail or name; only the checkbox changes scene selection. Keep passive data values separate from both actions. Includes a 15-minute screensaver delay and independently packed General cards in landscape.
-- Animated introduction, phone/tablet and portrait/landscape layouts.
-- Twenty interface languages, system-language fallback and regional/unit defaults.
-- Signed startup/manual GitHub updates with package, certificate, size and checksum verification.
+- **Find objects in the sky.** Point your phone to see where the Sun, Moon, planets and other objects are, including those below the horizon.
+- **See the sky through your camera.** Overlay objects and their paths on your surroundings. Zoom in or out and fade the object images to compare their predicted positions with what you see.
+- **Follow daily paths.** See when an object rises, reaches its highest point and sets. Choose today's full path or the next 24 hours, select points of interest and check how long until they happen.
+- **Explore other places and times.** Create a Location with a different place, date or time. Pause, speed up or reverse time, then save or share the Location with your chosen objects and selected points.
+- **Plan your observations.** Key heights and Key events help you explore the year's important moments for the chosen object and place. Tap a moment to view the sky at that time. Future path points can also be sent to Android's Clock or Calendar.
+- **Capture the view.** Take a camera photo with celestial overlays or generate a full 360° sky panorama. Choose which labels to show and use the colour legend to identify each object's path.
+- **Save and share your findings.** Export images, CSV spreadsheets and readable tables from captures, daily paths and the Observatory. Choose your language and units or international formatting, and control how much location information to include.
+- **Browse 9,999 objects.** Discover planets, moons, stars, constellations, galaxies, spacecraft and more. Search, filter and sort the catalogue, mark favourites and choose what appears in your sky.
+- **Take a closer look in the Observatory.** Explore images and interactive models, lunar phases, object facts and spatial context. Compare estimated travel times at different speeds, from walking to light speed and fictional warp speeds.
+- **Add reference points.** Show celestial guide lines, the poles, zenith and nadir, or display the opposite directions of your selected points with Antipodes.
+- **Make it comfortable to use.** Choose light or dark mode, your preferred units and one of twenty interface languages. Follow the built-in tutorial, adjust sky smoothness, enjoy optional ambient music or relax with the animated Earth screensaver, which pauses live tracking while active.
 
-The application ID is `me.mondiversi.spacecompass`. The current stable version is
-**1.7.9**, with Android/update identity `1.7.9` and version code **65**.
-This preserves the three-part update protocol used by existing preview installations.
-The app stores its preferences and caches privately.
+Sun, Moon and major-planet calculations work offline, and downloaded images stay
+available on your device. Weather, satellites and some other objects need online
+data. Supported events and available predictions depend on the object and date.
 
 Scientific facts carry their qualifications and source notices. Unavailable data
 are not replaced with invented values. This is a sky visualization and not a
 safety or navigation instrument.
 
 ## Build and checks
+
+The application ID is `me.mondiversi.spacecompass`. The current stable version is
+**1.7.9**, with Android/update identity `1.7.9` and version code **65**.
+This preserves the three-part update protocol used by existing preview installations.
+The app stores its preferences and caches privately.
 
 Open in Android Studio. Install Android SDK Platform 37.0 and Build Tools 36.0.0.
 The local build uses the bundled Android Studio JDK 25; CI uses Temurin 25.
