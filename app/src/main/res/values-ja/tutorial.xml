@@ -26,6 +26,7 @@
     <string name="tutorial_daily" formatted="false">軌道、時刻、高度、選択できる点を確認します。未来のイベントには通知を設定できます。</string>
     <string name="tutorial_gps" formatted="false">Locationと無関係に、実際の位置、GPS標高、向き、天気を確認します。</string>
     <string name="tutorial_points" formatted="false">軌道上の点を選択または解除します。照準を合わせると天体、時刻、T、方位角、高度が表示されます。 天体の枠は軌跡と同じ色で、現在位置を選択すると青色または水色になります。</string>
+    <string name="tutorial_reticle_title" formatted="false">照準とアイコンの表示</string>
     <string name="tutorial_reticle" formatted="false">何もない空をタップして照準と点の情報を表示・非表示にします。 空の何もない場所をダブルタップすると、操作ボタンを表示または非表示にできます。</string>
     <string name="tutorial_reminder" formatted="false">対象となる未来のイベントをAndroidのアラームまたはカレンダーで開きます。過去や現在の点には設定できません。</string>
     <string name="tutorial_status_title" formatted="false">状態と復旧</string>

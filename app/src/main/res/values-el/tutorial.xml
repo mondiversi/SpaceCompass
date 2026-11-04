@@ -26,6 +26,7 @@
     <string name="tutorial_daily" formatted="false">Δείτε τροχιά, ώρες, ύψη και επιλέξιμα σημεία. Τα μελλοντικά γεγονότα μπορούν να έχουν υπενθύμιση.</string>
     <string name="tutorial_gps" formatted="false">Δείτε πραγματική θέση, υψόμετρο GPS, προσανατολισμό και καιρό, ανεξάρτητα από τη Location.</string>
     <string name="tutorial_points" formatted="false">Επιλέξτε σημείο τροχιάς. Στοχεύστε το για αντικείμενο, ώρα, T, αζιμούθιο και ύψος. Το περίγραμμα του αντικειμένου ακολουθεί το χρώμα της τροχιάς του· όταν επιλέγεις την τρέχουσα θέση γίνεται μπλε ή γαλάζιο.</string>
+    <string name="tutorial_reticle_title" formatted="false">Εμφάνιση στόχαστρου και εικονιδίων</string>
     <string name="tutorial_reticle" formatted="false">Αγγίξτε κενό ουρανό για εμφάνιση ή απόκρυψη στόχαστρου και πληροφοριών. Πατήστε δύο φορές σε κενό σημείο του ουρανού για εμφάνιση ή απόκρυψη των χειριστηρίων.</string>
     <string name="tutorial_reminder" formatted="false">Ανοίξτε ξυπνητήρι ή ημερολόγιο Android για κατάλληλο μελλοντικό γεγονός. Εξαιρούνται παρελθόν και τρέχον σημείο.</string>
     <string name="tutorial_status_title" formatted="false">Κατάσταση και επαναφορά</string>

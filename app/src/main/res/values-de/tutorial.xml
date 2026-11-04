@@ -26,6 +26,7 @@
     <string name="tutorial_daily" formatted="false">Sieh Bahn, Zeiten, Höhen und auswählbare Punkte. Für zukünftige Ereignisse sind Erinnerungen möglich.</string>
     <string name="tutorial_gps" formatted="false">Zeige tatsächlichen Standort, GPS-Höhe, Ausrichtung und Wetter, unabhängig von der Location.</string>
     <string name="tutorial_points" formatted="false">Wähle einen Bahnpunkt. Ziele darauf, um Objekt, Uhrzeit, T, Azimut und Höhe zu lesen. Der Objektrand hat die Farbe seiner Bahn; bei Auswahl der aktuellen Position wird er blau oder hellblau.</string>
+    <string name="tutorial_reticle_title" formatted="false">Fadenkreuz und Symbole anzeigen</string>
     <string name="tutorial_reticle" formatted="false">Tippe auf freien Himmel, um Fadenkreuz und Punktinformationen umzuschalten. Tippe doppelt auf den freien Himmel, um die Bedienelemente ein- oder auszublenden.</string>
     <string name="tutorial_reminder" formatted="false">Öffne Android-Wecker oder Kalender für ein gültiges zukünftiges Ereignis. Vergangene Ereignisse und der aktuelle Punkt sind ausgeschlossen.</string>
     <string name="tutorial_status_title" formatted="false">Status und Wiederherstellung</string>

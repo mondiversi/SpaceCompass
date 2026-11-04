@@ -50,7 +50,7 @@ internal enum class SpaceCompassTutorialFeature(val title: Int, val description:
     DAILY(R.string.celestial_daily_path, R.string.tutorial_daily),
     GPS(R.string.celestial_details_compact, R.string.tutorial_gps),
     POINT(R.string.tutorial_points_title, R.string.tutorial_points),
-    RETICLE(R.string.reticle_enable, R.string.tutorial_reticle),
+    RETICLE(R.string.tutorial_reticle_title, R.string.tutorial_reticle),
     REMINDER(R.string.point_reminder_alarm, R.string.tutorial_reminder),
     STATUS(R.string.tutorial_status_title, R.string.tutorial_status)
 }

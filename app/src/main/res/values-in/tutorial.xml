@@ -26,6 +26,7 @@
     <string name="tutorial_daily" formatted="false">Lihat lintasan, waktu, elevasi dan titik yang dapat dipilih. Peristiwa mendatang dapat diberi pengingat.</string>
     <string name="tutorial_gps" formatted="false">Lihat posisi nyata, ketinggian GPS, orientasi dan cuaca, terpisah dari Location.</string>
     <string name="tutorial_points" formatted="false">Pilih titik orbit. Arahkan bidikan untuk membaca objek, jam, T, azimut dan elevasi. Tepi objek mengikuti warna lintasannya; memilih posisi saat ini mengubahnya menjadi biru atau sian.</string>
+    <string name="tutorial_reticle_title" formatted="false">Tampilkan bidikan dan ikon</string>
     <string name="tutorial_reticle" formatted="false">Sentuh langit kosong untuk menampilkan atau menyembunyikan bidikan dan informasi. Ketuk dua kali bagian langit yang kosong untuk menampilkan atau menyembunyikan kontrol.</string>
     <string name="tutorial_reminder" formatted="false">Buka alarm atau kalender Android untuk peristiwa mendatang yang sesuai. Tidak untuk peristiwa lampau atau titik saat ini.</string>
     <string name="tutorial_status_title" formatted="false">Status dan pemulihan</string>

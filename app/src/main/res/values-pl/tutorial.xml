@@ -26,6 +26,7 @@
     <string name="tutorial_daily" formatted="false">Zobacz tor, godziny, wysokości i wybieralne punkty. Przyszłe wydarzenia mogą mieć przypomnienia.</string>
     <string name="tutorial_gps" formatted="false">Zobacz rzeczywistą pozycję, wysokość GPS, orientację i pogodę, niezależnie od Location.</string>
     <string name="tutorial_points" formatted="false">Wybierz punkt orbity. Wyceluj w niego, aby odczytać obiekt, godzinę, T, azymut i wysokość. Obramowanie obiektu ma kolor jego toru; po wybraniu aktualnej pozycji zmienia się na niebieskie lub jasnoniebieskie.</string>
+    <string name="tutorial_reticle_title" formatted="false">Pokaż celownik i ikony</string>
     <string name="tutorial_reticle" formatted="false">Dotknij pustego nieba, aby przełączyć celownik i informacje. Stuknij dwukrotnie puste miejsce na niebie, aby pokazać lub ukryć elementy sterujące.</string>
     <string name="tutorial_reminder" formatted="false">Otwórz alarm lub kalendarz Androida dla przyszłego wydarzenia. Nie dotyczy przeszłości ani punktu aktualnego.</string>
     <string name="tutorial_status_title" formatted="false">Stan i przywracanie</string>

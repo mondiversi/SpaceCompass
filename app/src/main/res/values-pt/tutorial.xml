@@ -26,6 +26,7 @@
     <string name="tutorial_daily" formatted="false">Consulte trajetória, horários, elevações e pontos selecionáveis. Eventos futuros podem ter alertas.</string>
     <string name="tutorial_gps" formatted="false">Consulte posição real, altitude GPS, orientação e meteorologia, independentemente da Location.</string>
     <string name="tutorial_points" formatted="false">Selecione um ponto. Aponte para ler objeto, hora, T, azimute e elevação. O contorno do objeto segue a cor da sua trajetória; fica azul ou azul-claro ao selecionar a posição atual.</string>
+    <string name="tutorial_reticle_title" formatted="false">Mostrar a mira e os ícones</string>
     <string name="tutorial_reticle" formatted="false">Toque no céu vazio para mostrar ou ocultar a mira e informações. Toque duas vezes numa área vazia do céu para mostrar ou ocultar os controlos.</string>
     <string name="tutorial_reminder" formatted="false">Abra o alarme ou calendário Android para um evento futuro válido. Não se aplica ao passado nem ao ponto atual.</string>
     <string name="tutorial_status_title" formatted="false">Estado e recuperação</string>

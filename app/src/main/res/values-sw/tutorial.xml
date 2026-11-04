@@ -26,6 +26,7 @@
     <string name="tutorial_daily" formatted="false">Tazama njia, saa, miinuko na nukta zinazochagulika. Matukio yajayo yanaweza kupewa vikumbusho.</string>
     <string name="tutorial_gps" formatted="false">Tazama eneo halisi, kimo cha GPS, mwelekeo na hali ya hewa, tofauti na Location.</string>
     <string name="tutorial_points" formatted="false">Chagua nukta ya obiti. Ilenge ili kusoma kitu, saa, T, azimuthi na mwinuko. Mpaka wa kitu hufuata rangi ya njia yake; ukichagua nafasi yake ya sasa huwa bluu au samawati.</string>
+    <string name="tutorial_reticle_title" formatted="false">Onyesha kilenga na aikoni</string>
     <string name="tutorial_reticle" formatted="false">Gusa anga tupu kuonyesha au kuficha kilengaji na taarifa. Gusa mara mbili sehemu tupu ya anga ili kuonyesha au kuficha vidhibiti.</string>
     <string name="tutorial_reminder" formatted="false">Fungua kengele au kalenda ya Android kwa tukio lijalo linalofaa. Si kwa yaliyopita au nukta ya sasa.</string>
     <string name="tutorial_status_title" formatted="false">Hali na urejeshaji</string>
