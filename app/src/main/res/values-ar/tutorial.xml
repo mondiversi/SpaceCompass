@@ -21,8 +21,8 @@
     <string name="tutorial_capture" formatted="false">جهّز بانوراما للسماء أو صورة كاميرا بطبقات فلكية. صدّر من المعاينة.</string>
     <string name="tutorial_panels" formatted="false">اطوِ أو وسّع لوحتي الجسم والبوصلة لإظهار مساحة أكبر من السماء.</string>
     <string name="tutorial_antipodes" formatted="false">المس لإظهار أو إخفاء الاتجاه المعاكس للنقاط المحددة: السمت +180° والارتفاع بعلامة معاكسة. اضغط مطولاً لإلغاء تحديد جميع النقاط.</string>
-    <string name="tutorial_navigation" formatted="false">تنقّل بين الأجسام المحددة. تعرض اللوحة الجسم النشط وألوان مساره. المس الاسم لفتح كتالوج الأجرام.</string>
-    <string name="tutorial_observatory" formatted="false">افتح النموذج والبيانات العلمية ووقت الرحلة والارتفاعات والأحداث السنوية.</string>
+    <string name="tutorial_navigation" formatted="false">تنقّل بين الأجسام المحددة. تعرض اللوحة الجسم النشط وألوان مساره.</string>
+    <string name="tutorial_observatory" formatted="false">المس اسم الجسم لفتح المرصد: النموذج والمعلومات العلمية ومدة الرحلة والارتفاعات والأحداث المهمة. يحتوي الشريط العلوي على المسار اليومي ثم التصدير ثم المفضلة.</string>
     <string name="tutorial_daily" formatted="false">اعرض المسار والأوقات والارتفاعات والنقاط القابلة للتحديد. يمكن تذكيرك بالأحداث المستقبلية.</string>
     <string name="tutorial_gps" formatted="false">اعرض موقعك الحقيقي وارتفاع GPS والاتجاه والطقس، بصورة مستقلة عن Location.</string>
     <string name="tutorial_points" formatted="false">حدّد نقطة مدارية. وجّه المؤشر إليها لقراءة الجسم والوقت وT والسمت والارتفاع. تتبع حدود الجرم لون مساره؛ وتصبح زرقاء أو سماوية عند تحديد موقعه الحالي.</string>
@@ -30,4 +30,5 @@
     <string name="tutorial_reminder" formatted="false">افتح منبه Android أو التقويم لحدث مستقبلي مناسب. لا يشمل الأحداث الماضية أو النقطة الحالية.</string>
     <string name="tutorial_status_title" formatted="false">الحالة والاستعادة</string>
     <string name="tutorial_status" formatted="false">اقرأ الحالة الحالية. قد يطلب الإجراء إذنًا أو يفعّل الموقع أو يعيد تحميل بيانات المدار أو الطقس. لا ينفّذ الدليل الإجراء.</string>
+    <string name="tutorial_remove" formatted="false">أزل الجسم النشط من الأجسام المحددة بعد التأكيد. يبقى الجسم متاحًا في الكتالوج.</string>
 </resources>

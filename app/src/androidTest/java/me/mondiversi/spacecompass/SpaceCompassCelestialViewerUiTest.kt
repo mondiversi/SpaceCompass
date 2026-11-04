@@ -116,6 +116,21 @@ class SpaceCompassCelestialViewerUiTest {
                     SpaceCompassPressureUnit.BAR)!!)).assertDoesNotExist()
         }
     }
+    @Test fun portraitModelFreesSpaceWhileDetailsScrollAndExpandsAtTheTop() {
+        show()
+        val model = compose.onNodeWithTag("celestial-view-model")
+        val details = compose.onNodeWithTag("celestial-view-information")
+        val expanded = model.fetchSemanticsNode().boundsInRoot.height
+        val initialDetails = details.fetchSemanticsNode().boundsInRoot.height
+        repeat(2) { details.performTouchInput { swipeUp() } }
+        val compact = model.fetchSemanticsNode().boundsInRoot.height
+        val minimum = with(compose.density) { 104.dp.toPx() }
+        assertEquals(maxOf(expanded / 2, minimum).coerceAtMost(expanded), compact, 2f)
+        assertTrue(details.fetchSemanticsNode().boundsInRoot.height > initialDetails)
+        repeat(5) { details.performTouchInput { swipeDown() } }
+        assertEquals(expanded, model.fetchSemanticsNode().boundsInRoot.height, 2f)
+    }
+
     @Test fun landscapeKeepsTabsInsideModelAndUsesSeparateInformationHalf() {
         show()
         compose.runOnIdle { wide.value = true }

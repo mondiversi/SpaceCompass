@@ -9,6 +9,7 @@ import androidx.compose.runtime.*
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.platform.LocalContext
+import androidx.compose.ui.platform.LocalResources
 import androidx.compose.ui.platform.testTag
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
@@ -17,7 +18,7 @@ internal fun spaceCompassCelestialFavoriteColor(darkTheme: Boolean): Color =
     if (darkTheme) Color(0xFFF29ADE) else Color(0xFFB83291)
 
 internal data class SpaceCompassCelestialFavoritesPreference(val bodies: Set<SpaceCompassCelestialBody>,
-    val toggle: (SpaceCompassCelestialBody) -> Unit)
+    val toggle: (SpaceCompassCelestialBody) -> Boolean)
 
 /** The retained catalogue and independently opened observatories observe the same stored favorites. */
 @Composable
@@ -37,7 +38,9 @@ internal fun rememberSpaceCompassCelestialFavorites(): SpaceCompassCelestialFavo
         onDispose { preferences.unregisterOnSharedPreferenceChangeListener(listener) }
     }
     return SpaceCompassCelestialFavoritesPreference(favorites) { body ->
-        favorites = toggleSpaceCompassCelestialFavorite(preferences, body)
+        val updated = toggleSpaceCompassCelestialFavorite(preferences, body)
+        favorites = updated
+        body in updated
     }
 }
 
@@ -50,11 +53,17 @@ internal fun SpaceCompassCelestialFavoriteIcon(filled: Boolean) {
 /** Shared toolbar dimensions and stroke; preference changes also update retained observatories. */
 @Composable
 internal fun SpaceCompassCelestialFavoriteAction(body: SpaceCompassCelestialBody, enabled: Boolean = true) {
+    val context = LocalContext.current
+    val resources = LocalResources.current
     val favorites = rememberSpaceCompassCelestialFavorites()
     val favorite = body in favorites.bodies
     SpaceCompassTitleActionButton(
         contentDescription = stringResource(if (favorite) R.string.celestial_favorite_remove else R.string.celestial_favorite_add),
-        onClick = { favorites.toggle(body) }, modifier = Modifier.testTag("observatory-favorite"),
+        onClick = {
+            val added = favorites.toggle(body)
+            showSpaceCompassBottomMessage(context, resources.getString(
+                if (added) R.string.celestial_favorite_added else R.string.celestial_favorite_removed))
+        }, modifier = Modifier.testTag("observatory-favorite"),
         enabled = enabled, selected = favorite,
         iconColor = if (favorite) spaceCompassCelestialFavoriteColor(isSystemInDarkTheme())
             else spaceCompassTitleActionColor()

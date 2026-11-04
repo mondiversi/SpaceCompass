@@ -51,15 +51,16 @@ internal fun SpaceCompassCelestialSelector(body: SpaceCompassCelestialBody, colo
     selectedBodies: Set<SpaceCompassCelestialBody> = setOf(body),
     onToggleAll: (() -> Unit)? = null, onSelect: (SpaceCompassCelestialBody) -> Unit) {
     val catalogOpen = LocalSpaceCompassCatalogOpen.current
-    val tint = spaceCompassFloatingControlTint(color, selectedBodies.isNotEmpty())
+    val selectedCount = selectedBodies.size + LocalSpaceCompassComparisonOverlays.current.size
+    val tint = spaceCompassFloatingControlTint(color, selectedCount > 0)
     val label = stringResource(R.string.celestial_select)
-    val count = formatSpaceCompassNumber(selectedBodies.size.toDouble(), 0,
+    val count = formatSpaceCompassNumber(selectedCount.toDouble(), 0,
         LocalSpaceCompassNumericFormat.current, grouping = false)
     SpaceCompassFloatingActionButton(label, { catalogOpen?.value = true }, tint, background,
         modifier.testTag("celestial-select").spaceCompassTutorialTarget(SpaceCompassTutorialFeature.OBJECTS), stateText = count,
         glyphInk = spaceCompassFloatingInk(26f, .086f, .23f, .914f, .77f),
         overlay = {
-            if (selectedBodies.isNotEmpty()) SpaceCompassFloatingCountBadge(count,
+            if (selectedCount > 0) SpaceCompassFloatingCountBadge(count,
                 Modifier.align(Alignment.TopEnd).testTag("celestial-selection-count"))
         }) {
         SpaceCompassCelestialCatalogIcon(Modifier.size(26.dp), tint)

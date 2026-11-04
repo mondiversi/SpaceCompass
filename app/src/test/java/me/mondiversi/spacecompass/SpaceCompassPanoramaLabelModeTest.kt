@@ -4,6 +4,36 @@ import org.junit.Assert.*
 import org.junit.Test
 
 class SpaceCompassPanoramaLabelModeTest {
+    @Test fun defaultCurveNamesDoNotEnableHourlyPillsOrThumbnailNamesAndNoneStillHidesThem() {
+        val mode = SpaceCompassPanoramaLabelMode.DEFAULT
+        assertTrue(mode.showsOrbitName(activeObject = false, selectedObject = false))
+        assertFalse(mode.showsObject(activeObject = false))
+        val hour = SpaceCompassSunPathPoint(1_000L, SpaceCompassSunPosition(15.0, 25.0))
+        assertFalse(mode.showsPathPoint(hour, activeObject = false))
+        for (active in listOf(false, true)) for (selected in listOf(false, true)) {
+            assertFalse(SpaceCompassPanoramaLabelMode.NONE.showsOrbitName(active, selected))
+            assertEquals(selected, SpaceCompassPanoramaLabelMode.SELECTED.showsOrbitName(active, selected))
+            assertEquals(active || selected, SpaceCompassPanoramaLabelMode.OBJECTS_SELECTED.showsOrbitName(active, selected))
+        }
+    }
+
+    @Test fun selectedOnlyCurveNamesBelongToTheExactLiveOrFrozenInstance() {
+        val body = SpaceCompassCelestialBody.SUN
+        val time = java.time.Instant.parse("2026-06-21T12:00:00Z").toEpochMilli()
+        val c = SpaceCompassTemporalComparison.create(body, time, java.time.ZoneId.of("UTC"),
+            SpaceCompassComparisonSource.HEIGHT, "MONTHLY:2026-06-21")
+        val live = SpaceCompassPanoramaObject(body,"Sun",null)
+        val frozen = SpaceCompassPanoramaObject(body,"Sun · 21/06/26 · 12:00",null,c)
+        val snapshot = SpaceCompassPanoramaSnapshot(time,0.0,0.0,0.0,SpaceCompassSunSkyPhase.AFTERNOON,null,
+            listOf(live,frozen),SpaceCompassCelestialRemoteData(),"",emptyList(),emptyList(),
+            labelMode=SpaceCompassPanoramaLabelMode.SELECTED)
+        val point = SpaceCompassSunPathPoint(time,SpaceCompassSunPosition(180.0,60.0))
+        val pin = SpaceCompassPanoramaSelectedPoint(body,point,null,true,comparison=c)
+        assertTrue(snapshot.showsOrbitName(frozen,listOf(pin)))
+        assertFalse(snapshot.showsOrbitName(live,listOf(pin)))
+        assertFalse(snapshot.showsOrbitName(frozen,emptyList()))
+        assertTrue(snapshot.showsOrbitName(live,listOf(pin.copy(comparison=null))))
+    }
     @Test fun freshAndUnknownSettingsUseKeyPointsWhileExistingChoicesArePreserved() {
         val mode = SpaceCompassPanoramaLabelMode.KEY_SELECTED
         assertEquals(mode, SpaceCompassPanoramaLabelMode.DEFAULT)

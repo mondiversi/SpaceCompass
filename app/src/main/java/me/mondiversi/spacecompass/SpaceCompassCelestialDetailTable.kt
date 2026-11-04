@@ -45,7 +45,7 @@ internal fun SpaceCompassCelestialDetailTable(title: String, icon: String,
                     style = TextStyle(textDirection = TextDirection.ContentOrLtr)) }
             }
         }
-        extraContent?.invoke()
         note?.let { Text(it, color = secondaryText, fontSize = 10.sp, lineHeight = 13.sp) }
+        extraContent?.invoke()
     }
 }

@@ -9,7 +9,10 @@ import java.io.ByteArrayOutputStream
 import java.io.File
 import java.util.UUID
 
-internal fun readSpaceCompassScenario(context: Context, uri: Uri): SpaceCompassScenarioArchive {
+internal fun readSpaceCompassScenario(context: Context, uri: Uri): SpaceCompassScenarioArchive =
+    SpaceCompassScenarioArchive.decode(readSpaceCompassDocumentText(context, uri, SPACE_COMPASS_SCENARIO_FILE_LIMIT))
+
+internal fun readSpaceCompassDocumentText(context: Context, uri: Uri, sizeLimit: Int): String {
     require(uri.scheme == "content")
     val bytes = context.contentResolver.openInputStream(uri)?.use { input ->
         val out = ByteArrayOutputStream()
@@ -17,23 +20,27 @@ internal fun readSpaceCompassScenario(context: Context, uri: Uri): SpaceCompassS
         while (true) {
             val count = input.read(buffer)
             if (count < 0) break
-            require(out.size() + count <= SPACE_COMPASS_SCENARIO_FILE_LIMIT)
+            require(out.size() + count <= sizeLimit)
             out.write(buffer, 0, count)
         }
         out.toByteArray()
-    } ?: error("Scenario document unavailable")
-    return SpaceCompassScenarioArchive.decode(bytes.toString(Charsets.UTF_8))
+    } ?: error("Document unavailable")
+    return bytes.toString(Charsets.UTF_8)
 }
 
 internal fun shareSpaceCompassScenario(context: Context, archive: SpaceCompassScenarioArchive, title: String,
-    text: String = archive.encode()) {
-    val directory = File(context.cacheDir, "scenarios/${UUID.randomUUID()}")
+    text: String = archive.encode()) = shareSpaceCompassTextDocument(context, "scenarios",
+    spaceCompassScenarioFileName(archive.name), title, text, SPACE_COMPASS_SCENARIO_MIME)
+
+internal fun shareSpaceCompassTextDocument(context: Context, cacheFolder: String, fileName: String, title: String,
+    text: String, mimeType: String) {
+    val directory = File(context.cacheDir, "$cacheFolder/${UUID.randomUUID()}")
     check(directory.mkdirs())
-    val file = File(directory, spaceCompassScenarioFileName(archive.name))
+    val file = File(directory, fileName)
     file.writeText(text, Charsets.UTF_8)
     val uri = FileProvider.getUriForFile(context, "${context.packageName}.fileprovider", file)
     val intent = Intent(Intent.ACTION_SEND).apply {
-        type = SPACE_COMPASS_SCENARIO_MIME
+        type = mimeType
         putExtra(Intent.EXTRA_STREAM, uri)
         clipData = ClipData.newUri(context.contentResolver, file.name, uri)
         addFlags(Intent.FLAG_GRANT_READ_URI_PERMISSION)

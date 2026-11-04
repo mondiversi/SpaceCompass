@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="key_events_title">Matukio muhimu</string>
-    <string name="key_events_description">Matukio ya kitu, mwaka na eneo lililochaguliwa. Gusa tarehe kuona wakati huo huku muda umesimamishwa.</string>
+    <string name="key_events_description">Matukio ya kitu, mwaka na eneo lililochaguliwa.</string>
     <string name="key_events_empty">Hakuna matukio ya aina hii kwa kitu hiki katika mwaka uliochaguliwa.</string>
     <string name="key_events_horizon_note">Upeo bora usio na vizuizi, kama katika njia ya kila siku. Vipindi vya ncha ni kati ya kuchomoza na kutua kunakofuatana; saa za mwisho hutumia saa za eneo.</string>
     <string name="key_events_global_note">Matukio ya obiti hutokea wakati mmoja duniani. Mwinuko hukokotolewa kutoka eneo; umbali hupimwa kati ya vituo vya miili.</string>

@@ -4,7 +4,7 @@
     <string name="observation_height_minimum">Annual minimum</string>
     <string name="observation_height_mid_rising">Mid-height increasing %1$s</string>
     <string name="observation_height_mid_setting">Mid-height decreasing %1$s</string>
-    <string name="observation_moments_year">Peaks, troughs and mid-height passages of upper culminations throughout the selected year. Tap a date and time to pause at that moment.</string>
+    <string name="observation_moments_year">Peaks, troughs and mid-height passages of upper culminations throughout the selected year.</string>
     <string name="observation_moments_midpoint_note">Mid-height: the culmination nearest to the mean of the annual maximum and minimum heights.</string>
     <string name="observation_moments_unavailable">Available orbital data do not cover a reliable annual calculation.</string>
     <string name="observation_moment_applied">Date and time set · Time paused</string>
@@ -16,4 +16,12 @@
     <string name="observation_height_mid_setting_single">Mid-height decreasing</string>
     <string name="observation_heights_title">Key heights</string>
     <string name="observation_heights_year">Year</string>
+
+    <string name="observation_height_monthly">Culmination (21st)</string>
+    <string name="comparison_selection_note">Select a checkbox to add a fixed-time comparison in the sky without changing the Location.</string>
+    <string name="comparison_reference_point">Reference</string>
+    <string name="observatory_key_points">Key points</string>
+    <string name="observatory_key_heights">Heights</string>
+    <string name="observatory_key_events">Events</string>
+    <string name="observatory_menu">Observatory menu</string>
 </resources>

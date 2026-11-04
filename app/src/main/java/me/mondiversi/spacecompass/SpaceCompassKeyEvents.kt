@@ -18,13 +18,14 @@ internal enum class SpaceCompassKeyEventKind(val title: Int) {
     FARTHEST_EARTH(R.string.key_event_farthest_earth)
 }
 
-/** Instants are universal; elevation is always topocentric at the accepted Location/altitude.
+/** Instants are universal; azimuth/elevation are always topocentric at the accepted Location/altitude.
  * Distances for apsides/approaches are centre-to-centre, not GPS altitude or slant range. */
 internal data class SpaceCompassKeyEvent(val kind: SpaceCompassKeyEventKind, val timeMs: Long,
     val elevation: Double, val distanceKm: Double? = null, val durationMs: Long? = null,
-    val angle: Double? = null) {
+    val angle: Double? = null, val azimuth: Double? = null) {
     init {
         require(elevation.isFinite() && elevation in -90.0..90.0)
+        require(azimuth == null || azimuth.isFinite() && azimuth >= 0.0 && azimuth < 360.0)
         require(distanceKm == null || distanceKm.isFinite() && distanceKm >= 0)
         require(durationMs == null || durationMs >= 0)
         require(angle == null || angle.isFinite() && angle in 0.0..180.0)

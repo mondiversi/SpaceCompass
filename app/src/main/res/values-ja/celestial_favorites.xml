@@ -2,4 +2,6 @@
 <resources>
     <string name="celestial_favorite_add">お気に入りに追加</string>
     <string name="celestial_favorite_remove">お気に入りから削除</string>
+    <string name="celestial_favorite_added">お気に入りに追加しました</string>
+    <string name="celestial_favorite_removed">お気に入りから削除しました</string>
 </resources>

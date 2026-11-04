@@ -37,6 +37,7 @@ internal fun SpaceCompassAppPages(content: @Composable () -> Unit) {
     val observer = rememberSpaceCompassObserverState()
     val objectScrollSession = rememberSpaceCompassObjectPageScrollSession()
     val orbitSelection = rememberSpaceCompassSunDailyPathUiState()
+    val comparisons = rememberSpaceCompassTemporalComparisons(orbitSelection)
     val settingsConfirmation = rememberSpaceCompassSettingsExitNotice(route)
     val tutorial = LocalSpaceCompassTutorial.current
     LaunchedEffect(tutorial?.active) { if (tutorial?.active == true) route = null }
@@ -45,7 +46,7 @@ internal fun SpaceCompassAppPages(content: @Composable () -> Unit) {
     },
         LocalSpaceCompassSettingsExitFailure provides settingsConfirmation::rejectExit,
         LocalSpaceCompassObserver provides observer, LocalSpaceCompassObjectPageScrollSession provides objectScrollSession,
-        LocalSpaceCompassOrbitSelection provides orbitSelection,
+        LocalSpaceCompassOrbitSelection provides orbitSelection, LocalSpaceCompassComparisons provides comparisons,
         LocalSpaceCompassMainVisible provides (route == null && !screensaverActive)) {
         SpaceCompassDropdownDimmingHost {
             // Keep remember/effects/caches alive. An unplaced layer has no drawing,
@@ -105,10 +106,7 @@ internal fun SpaceCompassSettingsButton(color: Color, background: Color) {
                     drawLine(ink, Offset(size.width * .76f, size.height * .24f),
                         Offset(size.width * .24f, size.height * .76f), stroke.toPx(), StrokeCap.Round)
                 } else {
-                    for (y in listOf(.25f, .5f, .75f)) drawLine(ink,
-                        Offset(size.width * 4f / 24f, size.height * y),
-                        Offset(size.width * 20f / 24f, size.height * y),
-                        stroke.toPx(), StrokeCap.Round)
+                    drawSpaceCompassMenuGlyph(ink, stroke.toPx())
                 }
             }
         }
@@ -117,14 +115,8 @@ internal fun SpaceCompassSettingsButton(color: Color, background: Color) {
             listOf("appearance" to R.string.settings_section_appearance, "language" to R.string.settings_section_language,
                 "units" to R.string.settings_section_units, "tutorial" to R.string.tutorial_title, "info" to R.string.pc_info).forEachIndexed { index, (route, title) ->
                 if (index > 0) HorizontalDivider(color = foreground.copy(alpha = .10f))
-                DropdownMenuItem(text = {
-                    Row(verticalAlignment = Alignment.CenterVertically, horizontalArrangement = Arrangement.spacedBy(8.dp)) {
-                        SpaceCompassSettingsMenuIcon(route, foreground)
-                        Text(stringResource(title), color = foreground)
-                    }
-                },
-                    modifier = Modifier.testTag("open-$route"),
-                    onClick = { expanded = false; navigate(route) })
+                SpaceCompassNavigationMenuItem(stringResource(title), { expanded = false; navigate(route) },
+                    Modifier.testTag("open-$route")) { tint -> SpaceCompassSettingsMenuIcon(route, tint) }
             }
         }
     }

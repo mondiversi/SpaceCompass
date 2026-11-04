@@ -9,7 +9,7 @@ import kotlin.math.cos
 import kotlin.math.hypot
 import kotlin.math.sin
 
-internal enum class SpaceCompassObservationMomentKind { MAXIMUM, MINIMUM, MID_RISING, MID_SETTING }
+internal enum class SpaceCompassObservationMomentKind { MAXIMUM, MINIMUM, MID_RISING, MID_SETTING, MONTHLY }
 internal data class SpaceCompassObservationMoment(val kind: SpaceCompassObservationMomentKind,
     val point: SpaceCompassSunPathPoint)
 
@@ -141,7 +141,8 @@ internal fun calculateSpaceCompassAnnualCulminations(year: Int, zone: ZoneId, la
 
 internal fun calculateSpaceCompassObservationMoments(body: SpaceCompassCelestialBody, timeMs: Long,
     zone: ZoneId, latitude: Double, longitude: Double, altitude: Double,
-    remote: SpaceCompassCelestialRemoteData, checkCancelled: () -> Unit = {}): List<SpaceCompassObservationMoment>? {
+    remote: SpaceCompassCelestialRemoteData, includeMonthlySolar: Boolean = false,
+    checkCancelled: () -> Unit = {}): List<SpaceCompassObservationMoment>? {
     // Short-lived TLEs must never be propagated across a year to fabricate an annual extreme.
     if (!body.supportsDailyPath || body.isEarthSatellite) return null
     val year = Instant.ofEpochMilli(timeMs).atZone(zone).year
@@ -149,8 +150,15 @@ internal fun calculateSpaceCompassObservationMoments(body: SpaceCompassCelestial
         if (body == SpaceCompassCelestialBody.SUN) calculateSpaceCompassSunPosition(time, latitude, longitude, altitude)
         else calculateSpaceCompassCelestialObservation(body, time, latitude, longitude, altitude, remote)?.position
     }, checkCancelled) ?: return null
-    return spaceCompassAnnualObservationMoments(culminations)
+    val annual = spaceCompassAnnualObservationMoments(culminations) ?: return null
+    return annual + if (includeMonthlySolar && body == SpaceCompassCelestialBody.SUN) spaceCompassMonthlySolarMoments(culminations, zone) else emptyList()
 }
+
+internal fun spaceCompassMonthlySolarMoments(culminations: List<SpaceCompassSunPathPoint>, zone: ZoneId) =
+    culminations.filter { Instant.ofEpochMilli(it.timeMs).atZone(zone).dayOfMonth == 21 }
+        .distinctBy { Instant.ofEpochMilli(it.timeMs).atZone(zone).toLocalDate() }
+        .map { SpaceCompassObservationMoment(SpaceCompassObservationMomentKind.MONTHLY, it) }
+
 
 /** Preserve spatial overrides; inactive saved places must never be silently re-enabled. */
 internal fun spaceCompassObserverPlanAtMoment(active: SpaceCompassObserverPlan?, saved: SpaceCompassObserverPlan?,

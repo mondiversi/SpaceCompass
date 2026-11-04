@@ -1,5 +1,13 @@
 # Changelog
 
+## 1.8.0 — 2026-11-04
+
+- **Compare the sky across dates.** Add paths from Key Heights and Key Events alongside the live sky without changing your Location. The Sun also has a culmination entry for the 21st of each month.
+- **Create Personal Moments.** Save a named date with an optional time for an object, then turn its path on or off. Share or import a dedicated Personal Moments file for that object.
+- **Keep comparisons organized.** Dated paths follow their parent object in chronological order and reappear when it is enabled again. Key Heights and Key Events now show azimuth and elevation.
+- **Find object tools faster.** Tap an object's name in the sky controls to open its Observatory. Its menu groups Daily Path, Key Heights, Key Events, Personal Moments and Export.
+- **Share what you see.** Photos and panoramas label paths and include active comparisons in their exports. Location files can include the active comparisons, selected points and antipode visibility with the selected objects.
+
 ## 1.7.9 — 2026-11-03
 
 - Same-version refresh: keep the antipode symbol fixed, with a grey icon/counter when hidden and the day/night accent when visible. Short visibility confirmations are translated in twenty languages; long-press clearing and tutorial behavior are retained.

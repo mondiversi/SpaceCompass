@@ -9,7 +9,7 @@ internal fun freezeSpaceCompassApproachSnapshot(snapshot: SpaceCompassPanoramaSn
     if (!snapshot.observerPositionKnown) return snapshot
     val zone = ZoneId.of(snapshot.zoneId)
     val date = Instant.ofEpochMilli(snapshot.timeMs).atZone(zone).toLocalDate()
-    val paths = snapshot.objects.mapNotNull { item ->
+    val paths = snapshot.objects.filter { it.comparison == null }.mapNotNull { item ->
         checkCancelled()
         val path = item.path?.takeIf { !snapshot.forward24Hours && !it.forward24Hours && it.date == date && it.zone == zone &&
             (!item.body.isEarthSatellite || snapshot.timeMs in (it.samples.first().timeMs..it.samples.last().timeMs)) }
@@ -23,7 +23,12 @@ internal fun freezeSpaceCompassApproachSnapshot(snapshot: SpaceCompassPanoramaSn
     val sun = calculateSpaceCompassSunPosition(snapshot.timeMs,snapshot.latitude,snapshot.longitude,snapshot.altitude)
     val rising = calculateSpaceCompassSunPosition(snapshot.timeMs+60_000,snapshot.latitude,snapshot.longitude,snapshot.altitude)
         .elevationDegrees >= sun.elevationDegrees
-    return snapshot.copy(objects = snapshot.objects.map { it.copy(path = decorated[it.body]) },
+    return snapshot.copy(objects = snapshot.objects.map { item ->
+        val c = item.comparison
+        if (c == null) item.copy(path = decorated[item.body]) else item.copy(path =
+            calculateSpaceCompassCelestialPath(c.body, Instant.ofEpochMilli(c.timeMs).atZone(c.zone).toLocalDate(),
+                c.zone, c.timeMs, snapshot.latitude, snapshot.longitude, snapshot.altitude, snapshot.remote)?.copy(comparison = c))
+    },
         phase = spaceCompassSunSkyPhase(sun.elevationDegrees,rising), solarLighting = spaceCompassSolarLighting(sun.elevationDegrees),
         weather = snapshot.weather?.takeIf { spaceCompassSunWeatherSnapshotUsable(it,snapshot.timeMs) })
 }

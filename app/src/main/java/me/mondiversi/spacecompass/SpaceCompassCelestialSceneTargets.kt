@@ -5,7 +5,7 @@ import kotlin.math.hypot
 /** A single shared hit/focus list keeps the body's identity and each marker's exact provenance. */
 internal data class SpaceCompassCelestialSceneTarget(val body: SpaceCompassCelestialBody, val point: SpaceCompassSunPathPoint,
     val projection: SpaceCompassSunScenePoint, val path: SpaceCompassSunDailyPath? = null, val isCurrent: Boolean = false,
-    val antipodeOf: SpaceCompassSunPathPoint? = null) {
+    val antipodeOf: SpaceCompassSunPathPoint? = null, val comparison: SpaceCompassTemporalComparison? = path?.comparison) {
     val isAntipode: Boolean get() = antipodeOf != null
 }
 
@@ -18,8 +18,8 @@ internal fun projectSpaceCompassCelestialSceneTargets(paths: Map<SpaceCompassCel
             SpaceCompassCelestialSceneTarget(body, point, SpaceCompassSunScenePoint(it.x, it.y), path, live)
         }
     // Live positions, then named events, then hourly points: the order resolves exact ties only.
-    return spaceCompassAllCelestialOrder.mapNotNull { body -> current[body]?.let { target(body, it, paths[body], true) } } +
-        spaceCompassAllCelestialOrder.flatMap { body -> paths[body]?.let { path ->
+    return spaceCompassOrderedCelestialSubset(current.keys).mapNotNull { body -> current[body]?.let { target(body, it, paths[body], true) } } +
+        spaceCompassOrderedCelestialSubset(paths.keys).flatMap { body -> paths[body]?.let { path ->
             path.markers.mapNotNull { target(body, it, path, false) }
         }.orEmpty() }.sortedBy { if (it.point.event == SpaceCompassSunPathEvent.HOUR) 1 else 0 }
 }

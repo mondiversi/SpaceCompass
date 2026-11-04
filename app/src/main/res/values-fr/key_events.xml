@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="key_events_title">Événements clés</string>
-    <string name="key_events_description">Événements pour l’objet, l’année et le lieu choisis. Touchez une date pour observer cet instant avec le temps arrêté.</string>
+    <string name="key_events_description">Événements pour l’objet, l’année et le lieu choisis.</string>
     <string name="key_events_empty">Aucun événement de ce type pour cet objet durant l’année choisie.</string>
     <string name="key_events_horizon_note">Horizon idéal dégagé, comme dans le parcours quotidien. Les périodes polaires relient des levers et couchers consécutifs ; les horaires extrêmes utilisent l’heure locale du lieu.</string>
     <string name="key_events_global_note">Les événements orbitaux ont des instants universels. L’élévation est calculée depuis le lieu ; les distances relient les centres des corps.</string>

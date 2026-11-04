@@ -4,7 +4,7 @@
     <string name="observation_height_minimum">מינימום שנתי</string>
     <string name="observation_height_mid_rising">מחצית הגובה עולה %1$s</string>
     <string name="observation_height_mid_setting">מחצית הגובה יורדת %1$s</string>
-    <string name="observation_moments_year">שיאים, שפלים ומעברים בגובה הביניים של המעברים העליונים לאורך השנה שנבחרה. הקישו על תאריך ושעה כדי לעצור את הזמן באותו רגע.</string>
+    <string name="observation_moments_year">שיאים, שפלים ומעברים בגובה הביניים של המעברים העליונים לאורך השנה שנבחרה.</string>
     <string name="observation_moments_midpoint_note">מחצית הגובה: המעבר העליון הקרוב ביותר לממוצע הגובה המרבי והמזערי השנתי.</string>
     <string name="observation_moments_unavailable">נתוני המסלול הזמינים אינם מספיקים לחישוב שנתי אמין.</string>
     <string name="observation_moment_applied">התאריך והשעה הוגדרו · הזמן מושהה</string>
@@ -16,4 +16,12 @@
     <string name="observation_height_mid_setting_single">מחצית הגובה יורדת</string>
     <string name="observation_heights_title">גבהים עיקריים</string>
     <string name="observation_heights_year">שנה</string>
+
+    <string name="observation_height_monthly">מעבר עליון ב־21</string>
+    <string name="comparison_selection_note">סמנו תיבה כדי להוסיף השוואת שמיים בזמן קבוע בלי לשנות את Location.</string>
+    <string name="comparison_reference_point">ייחוס</string>
+    <string name="observatory_key_points">נקודות עיקריות</string>
+    <string name="observatory_key_heights">גבהים</string>
+    <string name="observatory_key_events">אירועים</string>
+    <string name="observatory_menu">תפריט המצפה</string>
 </resources>

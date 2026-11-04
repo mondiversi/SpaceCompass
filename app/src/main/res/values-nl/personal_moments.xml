@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="personal_moments_title">Persoonlijke momenten</string>
+    <string name="personal_moment_add">Moment toevoegen</string>
+    <string name="personal_moment_time_optional">Tijd (optioneel)</string>
+    <string name="personal_moment_delete">Moment verwijderen</string>
+    <string name="personal_moments_empty">Geen persoonlijke momenten.</string>
+    <string name="personal_moment_duplicate">Dit moment bestaat al</string>
+    <string name="personal_moments_export">Persoonlijke momenten exporteren</string>
+    <string name="personal_moments_import">Persoonlijke momenten importeren</string>
+    <string name="personal_moments_file_saved">Persoonlijke momenten opgeslagen</string>
+    <string name="personal_moments_file_imported">Persoonlijke momenten geïmporteerd</string>
+    <string name="personal_moments_file_existing">Deze momenten zijn al opgeslagen</string>
+    <string name="personal_moments_file_wrong_body">Dit bestand bevat momenten voor %1$s</string>
+    <string name="personal_moments_file_error">Persoonlijke momenten konden niet worden opgeslagen of gedeeld</string>
+    <string name="personal_moments_file_import_error">Persoonlijke momenten konden niet worden geïmporteerd</string>
+</resources>

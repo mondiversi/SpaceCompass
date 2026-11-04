@@ -1,9 +1,9 @@
 <resources>
     <string name="info_news_title">最近の変更 · %1$s</string>
-    <string name="info_news_star_sky" formatted="false">オフの操作は斜線のないグレー表示になり、アイコンの大きさと位置は変わりません。自動のLocationもグレーです。</string>
-    <string name="info_news_texture_downloads" formatted="false">情報パネルを閉じた横画面では、天体・Location・基準線・0–24が左、軸と天気またはカメラの透明度とズームが右に並びます。</string>
-    <string name="info_news_weather" formatted="false">カメラは撮影の上、選択した点と対蹠点の操作はメニューの下に配置します。左右のグループは隅のボタンの中間に揃います。</string>
-    <string name="info_news_viewer_zoom" formatted="false">撮影ボタンの枠はテーマの青・シアンから標準のグレーへ3.2秒周期で変化します。アニメーション無効時も固定の枠を表示します。</string>
-    <string name="info_news_settings" formatted="false">保存した設定を尊重しつつ、天気表示は初期状態でオンです。天気がオフ、またはカメラ使用中は天気の再試行を表示しません。</string>
-    <string name="info_news_catalog" formatted="false">プレビューで非表示のラベルと位置情報はグレーです。保存した選択を変えずにラベルの選択肢を並べ替えました。</string>
+    <string name="info_news_star_sky" formatted="false">主要な高度やイベントの日付別経路を現在の空と比較できます。</string>
+    <string name="info_news_texture_downloads" formatted="false">名前、日付、任意の時刻を指定して個人の観測時点を保存できます。</string>
+    <string name="info_news_weather" formatted="false">個人の観測時点は単独で入出力でき、有効な比較はLocationにも含められます。</string>
+    <string name="info_news_viewer_zoom" formatted="false">日付別経路は天体ごとに時系列で表示されます。</string>
+    <string name="info_news_settings" formatted="false">観測所メニューから経路、主要な点、個人の観測時点をすぐに開けます。</string>
+    <string name="info_news_catalog" formatted="false">写真とパノラマには経路名が表示され、書き出しには有効な比較が含まれます。</string>
 </resources>

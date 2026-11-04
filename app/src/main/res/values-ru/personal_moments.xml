@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="personal_moments_title">Личные моменты</string>
+    <string name="personal_moment_add">Добавить момент</string>
+    <string name="personal_moment_time_optional">Время (необязательно)</string>
+    <string name="personal_moment_delete">Удалить момент</string>
+    <string name="personal_moments_empty">Нет личных моментов.</string>
+    <string name="personal_moment_duplicate">Этот момент уже существует</string>
+    <string name="personal_moments_export">Экспорт личных моментов</string>
+    <string name="personal_moments_import">Импорт личных моментов</string>
+    <string name="personal_moments_file_saved">Личные моменты сохранены</string>
+    <string name="personal_moments_file_imported">Личные моменты импортированы</string>
+    <string name="personal_moments_file_existing">Эти моменты уже сохранены</string>
+    <string name="personal_moments_file_wrong_body">Файл содержит моменты для объекта %1$s</string>
+    <string name="personal_moments_file_error">Не удалось сохранить личные моменты или поделиться ими</string>
+    <string name="personal_moments_file_import_error">Не удалось импортировать личные моменты</string>
+</resources>

@@ -100,7 +100,7 @@ internal fun SpaceCompassSunDailyPathPage(
     nowMs: Long = System.currentTimeMillis(), location: SpaceCompassExportLocation? = null,
     onBack: () -> Unit = { state.closeMenu() }
 ) {
-    val path = state.menuPath ?: return
+    val path = state.menuPath?.takeIf { it.comparison == null } ?: return
     val labels = rememberSpaceCompassSunPathLabels(path)
     val currentName = stringResource(R.string.celestial_current_position)
     val pageBackground = spaceCompassSurfacePalette(backgroundColor.luminance() < .4f).island

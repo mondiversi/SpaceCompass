@@ -31,7 +31,9 @@ internal class SpaceCompassKeyEventsCache(private val limit: Int = 16) {
 
 internal class SpaceCompassKeyEventsViewModel : ViewModel() { val cache = SpaceCompassKeyEventsCache() }
 internal data class SpaceCompassKeyEventsUiState(val events: List<SpaceCompassKeyEvent>?,
-    val complete: Boolean, val hasLocation: Boolean, val calculationRequest: SpaceCompassObservationRequest? = null)
+    val complete: Boolean, val hasLocation: Boolean, val calculationRequest: SpaceCompassObservationRequest? = null) {
+    val totalRows: Int? get() = events?.size ?: 0.takeIf { complete }
+}
 
 /** Keyed by body/year/Location/data, never orientation, sensor ticks or the live clock. */
 @Composable

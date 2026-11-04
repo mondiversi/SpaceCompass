@@ -22,7 +22,8 @@ internal fun spaceCompassObservationMomentRows(moments: List<SpaceCompassObserva
         (others.filter { it.kind == SpaceCompassObservationMomentKind.MAXIMUM } +
             others.filter { it.kind == SpaceCompassObservationMomentKind.MINIMUM } +
             others.filter { it.kind == SpaceCompassObservationMomentKind.MID_RISING ||
-                it.kind == SpaceCompassObservationMomentKind.MID_SETTING }).map {
+                it.kind == SpaceCompassObservationMomentKind.MID_SETTING } +
+            others.filter { it.kind == SpaceCompassObservationMomentKind.MONTHLY }).map {
             val number = counters.getOrDefault(it.kind, 0) + 1
             counters[it.kind] = number
             SpaceCompassObservationMomentRow(it.kind, it.point,

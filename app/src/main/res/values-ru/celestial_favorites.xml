@@ -2,4 +2,6 @@
 <resources>
     <string name="celestial_favorite_add">Добавить в избранное</string>
     <string name="celestial_favorite_remove">Удалить из избранного</string>
+    <string name="celestial_favorite_added">Добавлено в избранное</string>
+    <string name="celestial_favorite_removed">Удалено из избранного</string>
 </resources>

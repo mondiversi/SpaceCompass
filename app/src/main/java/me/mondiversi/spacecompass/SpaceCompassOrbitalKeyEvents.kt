@@ -19,7 +19,8 @@ internal fun calculateSpaceCompassKeyEvents(calendar: SpaceCompassObservationCal
         if (instant !in bounds) return
         val position = requireNotNull(calculateSpaceCompassCelestialObservation(body, instant,
             place.latitude, place.longitude, place.altitude, remote)).position
-        result += SpaceCompassKeyEvent(kind, instant, position.elevationDegrees, distanceKm = distance, angle = angle)
+        result += SpaceCompassKeyEvent(kind, instant, position.elevationDegrees, distanceKm = distance, angle = angle,
+            azimuth = position.azimuthDegrees)
     }
     val start = spaceCompassAstronomyTime(bounds.first)
     if (body == SpaceCompassCelestialBody.MOON) {

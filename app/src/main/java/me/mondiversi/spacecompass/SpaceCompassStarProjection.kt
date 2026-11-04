@@ -30,7 +30,7 @@ internal fun spaceCompassStarUv(direction: SpaceCompassViewVector): Pair<Double,
     return u to (0.5 - asin(ray.z.coerceIn(-1.0, 1.0)) / PI)
 }
 
-/** Same 60-degree pinhole, principal point and screen basis as the orbit/object projection. */
+/** Same virtual wide-angle lens, principal point and screen basis as the orbit/object projection. */
 internal fun spaceCompassStarViewRay(x: Double, y: Double, orientation: SpaceCompassSunOrientation,
     frame: SpaceCompassSunSceneFrame): SpaceCompassSunVector {
     require(frame.width > 0 && frame.height > 0)

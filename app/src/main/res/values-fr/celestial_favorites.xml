@@ -2,4 +2,6 @@
 <resources>
     <string name="celestial_favorite_add">Ajouter aux favoris</string>
     <string name="celestial_favorite_remove">Retirer des favoris</string>
+    <string name="celestial_favorite_added">Ajouté aux favoris</string>
+    <string name="celestial_favorite_removed">Retiré des favoris</string>
 </resources>

@@ -1,9 +1,9 @@
 <resources>
     <string name="info_news_title">Son yenilikler · %1$s</string>
-    <string name="info_news_star_sky" formatted="false">Kapalı kontroller çizgi yerine gri görünür; simge boyutu ve hizası korunur. Otomatik Location da gridir.</string>
-    <string name="info_news_texture_downloads" formatted="false">Kompakt yatay görünümde Nesneler, Location, Kılavuzlar ve 0–24 solda; eksen/hava veya kamera saydamlığı/yakınlaştırma sağdadır.</string>
-    <string name="info_news_weather" formatted="false">Kamera, Yakala düğmesinin üstünde; noktalar/karşıt noktalar Menü altında yer alır. Yan gruplar köşe düğmeleri arasında ortalanır.</string>
-    <string name="info_news_viewer_zoom" formatted="false">Deklanşör kenarı 3,2 saniyede tema mavisi/camgöbeği ile nötr gri arasında geçiş yapar. Animasyon kapalıyken sabit kenar görünür kalır.</string>
-    <string name="info_news_settings" formatted="false">Görsel hava durumu varsayılan olarak açıktır; kayıtlı seçimler korunur. Hava kapalıyken veya kamera etkinken hava yeniden deneme uyarıları gizlenir.</string>
-    <string name="info_news_catalog" formatted="false">Önizlemede gizli Etiketler ve Konum gri görünür. Etiket seçenekleri kayıtlı seçim değiştirilmeden yeniden sıralandı.</string>
+    <string name="info_news_star_sky" formatted="false">Önemli yükseklik ve olaylara ait yörüngeleri güncel gökyüzüyle karşılaştırın.</string>
+    <string name="info_news_texture_downloads" formatted="false">Kişisel anları ad, tarih ve isteğe bağlı saatle kaydedin.</string>
+    <string name="info_news_weather" formatted="false">Kişisel anları ayrı içe ve dışa aktarın ya da etkin karşılaştırmaları bir Location dosyasına ekleyin.</string>
+    <string name="info_news_viewer_zoom" formatted="false">Tarihli yörüngeler, nesnenin altında tarih sırasıyla gösterilir.</string>
+    <string name="info_news_settings" formatted="false">Gözlemevi menüsü yörüngelere, önemli noktalara ve kişisel anlara hızlı erişim sağlar.</string>
+    <string name="info_news_catalog" formatted="false">Fotoğraflar ve panoramalar yörünge adlarını gösterir ve dışa aktarımda etkin karşılaştırmaları içerir.</string>
 </resources>

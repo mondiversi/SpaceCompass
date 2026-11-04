@@ -11,13 +11,13 @@ import androidx.compose.ui.Modifier
 @Composable
 internal fun SpaceCompassSettingsActionButton(label: String, onClick: () -> Unit,
     modifier: Modifier = Modifier, enabled: Boolean = true, primary: Boolean = true,
-    icon: @Composable () -> Unit) {
+    contentPadding: PaddingValues = ButtonDefaults.ContentPadding, icon: @Composable () -> Unit) {
     CompositionLocalProvider(LocalSpaceCompassSettingsActionButtons provides true) {
         val foreground = MaterialTheme.colorScheme.onSurface
         val resting = if (primary) spaceCompassPrimaryOutlinedButtonColors()
             else spaceCompassOutlinedActionColors(foreground)
         OutlinedButton(onClick, modifier.fillMaxWidth(), enabled = enabled,
-            colors = resting,
+            colors = resting, contentPadding = contentPadding,
             border = if (primary) spaceCompassPrimaryOutlinedButtonBorder(enabled, foreground)
                 else spaceCompassOutlinedActionBorder(enabled, foreground)) {
             SpaceCompassLabeledButtonContent(label, icon)

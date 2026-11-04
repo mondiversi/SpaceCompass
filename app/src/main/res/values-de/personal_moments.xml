@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="personal_moments_title">Persönliche Zeitpunkte</string>
+    <string name="personal_moment_add">Zeitpunkt hinzufügen</string>
+    <string name="personal_moment_time_optional">Uhrzeit (optional)</string>
+    <string name="personal_moment_delete">Zeitpunkt löschen</string>
+    <string name="personal_moments_empty">Keine persönlichen Zeitpunkte.</string>
+    <string name="personal_moment_duplicate">Dieser Zeitpunkt ist bereits vorhanden</string>
+    <string name="personal_moments_export">Persönliche Zeitpunkte exportieren</string>
+    <string name="personal_moments_import">Persönliche Zeitpunkte importieren</string>
+    <string name="personal_moments_file_saved">Persönliche Zeitpunkte gespeichert</string>
+    <string name="personal_moments_file_imported">Persönliche Zeitpunkte importiert</string>
+    <string name="personal_moments_file_existing">Diese Zeitpunkte sind bereits gespeichert</string>
+    <string name="personal_moments_file_wrong_body">Diese Datei enthält Zeitpunkte für %1$s</string>
+    <string name="personal_moments_file_error">Persönliche Zeitpunkte konnten nicht gespeichert oder geteilt werden</string>
+    <string name="personal_moments_file_import_error">Persönliche Zeitpunkte konnten nicht importiert werden</string>
+</resources>

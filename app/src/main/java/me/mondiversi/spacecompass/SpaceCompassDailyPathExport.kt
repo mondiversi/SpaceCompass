@@ -6,16 +6,21 @@ import java.util.UUID
 internal fun spaceCompassSingleOrbitExportSnapshot(path: SpaceCompassSunDailyPath,
     current: SpaceCompassSunPathPoint?, selections: List<SpaceCompassSelectedOrbitPoint>, observationTime: Long) =
     SpaceCompassPanoramaSnapshot(current?.timeMs ?: observationTime,0.0,0.0,0.0,SpaceCompassSunSkyPhase.NIGHT,null,
-        listOf(SpaceCompassPanoramaObject(path.body,path.body.name,path)),SpaceCompassCelestialRemoteData(),
+        listOf(SpaceCompassPanoramaObject(path.body,path.body.name,path,currentPoint=current)),SpaceCompassCelestialRemoteData(),
         "",emptyList(),emptyList(),observerPositionKnown=false,
-        selectedPoints=selections.filter { it.key.body==path.body }.toList(),zoneId=path.zone.id,forward24Hours=path.forward24Hours)
+        selectedPoints=selections.filter { it.key.body==path.body && it.key.comparisonId==path.comparison?.id }.toList(),zoneId=path.zone.id,forward24Hours=path.forward24Hours)
 
 internal fun spaceCompassSingleOrbitPresentation(snapshot: SpaceCompassPanoramaSnapshot,
     profile: SpaceCompassDataExportProfile): SpaceCompassPanoramaSnapshot {
     val strings=profile.strings
-    return snapshot.copy(objects=snapshot.objects.map { it.copy(name=strings.getString(it.body.nameResource)) },
+    return snapshot.copy(objects=snapshot.objects.map { it.copy(name=it.comparison?.let { c -> spaceCompassComparisonName(c, strings.getString(it.body.nameResource), profile.formatting) }
+            ?: strings.getString(it.body.nameResource)) },
         bodyNames=snapshot.objects.map { it.body }.associateWith { strings.getString(it.nameResource) },
         formatting=profile.formatting,currentPointName=strings.getString(R.string.celestial_point_current),
+        referencePointName=strings.getString(R.string.comparison_reference_point),
+        comparisonPointNames=snapshot.objects.mapNotNull { item -> item.comparison?.let { c ->
+            c.id to strings.getString(spaceCompassComparisonPointNameResource(c) ?: R.string.comparison_reference_point)
+        } }.toMap(),
         pointEventNames=mapOf(SpaceCompassSunPathEvent.SUNRISE to R.string.celestial_rise,
             SpaceCompassSunPathEvent.CULMINATION to R.string.sun_path_culmination,
             SpaceCompassSunPathEvent.SUNSET to R.string.celestial_set,

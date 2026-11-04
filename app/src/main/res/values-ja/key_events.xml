@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="key_events_title">主な天文現象</string>
-    <string name="key_events_description">選択した天体・年・地点の現象です。日付をタップすると、時間を止めてその瞬間を観察できます。</string>
+    <string name="key_events_description">選択した天体・年・地点の現象です。</string>
     <string name="key_events_empty">選択した年には、この天体の該当する現象はありません。</string>
     <string name="key_events_horizon_note">日周経路と同じ、遮るもののない理想的な地平線を使用します。極昼・極夜の期間は連続する出没の間隔で、時刻の極値は地点の現地時刻です。</string>
     <string name="key_events_global_note">軌道上の現象は世界共通の瞬間に起こります。高度は地点から計算し、距離は天体の中心間で測ります。</string>

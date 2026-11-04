@@ -4,6 +4,7 @@ import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.darkColorScheme
 import androidx.compose.material3.lightColorScheme
 import androidx.compose.runtime.CompositionLocalProvider
+import androidx.compose.runtime.mutableStateOf
 import androidx.compose.ui.test.*
 import androidx.compose.ui.test.junit4.createComposeRule
 import java.time.Instant
@@ -17,6 +18,8 @@ class SpaceCompassKeyEventsUiTest {
     @get:Rule val compose = createComposeRule()
     private val instant = Instant.parse("2026-07-01T12:34:56Z").toEpochMilli()
     private val state = SpaceCompassObserverState(null,elapsedClock={0L})
+    private val visible = mutableStateOf(true)
+    private val comparisons = SpaceCompassTemporalComparisonState(SpaceCompassSunDailyPathUiState())
     private val prepared = SpaceCompassObserverPlan(28.3,-14.1,1000.0,instant,"Atlantic/Canary",
         simulatePosition=true,simulateAltitude=true,simulateZone=true)
 
@@ -25,29 +28,54 @@ class SpaceCompassKeyEventsUiTest {
         val request=SpaceCompassObservationRequest(
             SpaceCompassObservationCalendar(SpaceCompassCelestialBody.MOON,2026,ZoneId.of("Atlantic/Canary")),
             SpaceCompassObservationPlace(28.3,-14.1,1000.0,true,true),null,null)
-        val result=SpaceCompassKeyEventsUiState(listOf(SpaceCompassKeyEvent(
-            SpaceCompassKeyEventKind.FULL_MOON,instant,42.0)),complete,true,request)
+        val events = (0..2).map { index ->
+            SpaceCompassKeyEvent(SpaceCompassKeyEventKind.FULL_MOON, instant + index * 86_400_000L, 42.0)
+        }
+        val result=SpaceCompassKeyEventsUiState(events,complete,true,request)
         compose.setContent {
-            CompositionLocalProvider(LocalSpaceCompassObserver provides state) {
+            CompositionLocalProvider(LocalSpaceCompassObserver provides state, LocalSpaceCompassComparisons provides comparisons) {
                 MaterialTheme(colorScheme=if(night)darkColorScheme() else lightColorScheme()) {
-                    SpaceCompassKeyEventsRows(SpaceCompassCelestialBody.MOON,result,MaterialTheme.colorScheme.onSurface)
+                    if (visible.value) SpaceCompassKeyEventsRows(SpaceCompassCelestialBody.MOON,result,MaterialTheme.colorScheme.onSurface)
                 }
             }
         }
     }
-    @Test fun completedDateTapAppliesTheInstantAndKeepsTheObserversSpatialOverrides() {
+    @Test fun completedCheckboxAddsAndRemovesAComparisonWithoutChangingLocation() {
         show(true,false)
-        compose.onNodeWithTag("key-event-date-0").assertIsEnabled().performClick()
+        compose.onNodeWithTag("key-event-comparison-0").assertIsEnabled().assertIsOff().performClick()
+        compose.onNodeWithTag("key-event-comparison-0").assertIsOn()
         compose.runOnIdle {
-            assertEquals(prepared.position,state.plan!!.position)
-            assertEquals(prepared.altitudeMeters,state.plan!!.altitudeMeters,0.0)
-            assertEquals(0,state.timeSettings.multiplier)
-            assertEquals(instant,state.plan!!.observationTimeMs(instant+3_600_000,ZoneId.of("UTC")))
+            assertEquals(prepared,state.plan)
+            assertEquals(1,comparisons.entries.size)
+            assertEquals(instant,comparisons.entries.single().timeMs)
         }
+        compose.onNodeWithTag("key-event-comparison-0").performClick().assertIsOff()
+        compose.runOnIdle { assertTrue(comparisons.entries.isEmpty()) }
     }
-    @Test fun datesFromAReplacedLocationStayVisibleButCannotBeAppliedWhileRefreshing() {
+    @Test fun eventChecksMoveToTheTopOnlyWhenThePageIsReopened() {
+        show(true, false)
+        fun checkbox(index: Int) = compose.onNodeWithTag("key-event-comparison-$index")
+        fun rowY(index: Int) = checkbox(index).fetchSemanticsNode().boundsInRoot.center.y
+        fun reopen() {
+            compose.runOnIdle { visible.value = false }
+            compose.waitForIdle()
+            compose.runOnIdle { visible.value = true }
+        }
+        checkbox(2).performClick().assertIsOn()
+        checkbox(1).performClick().assertIsOn()
+        assertTrue(rowY(0) < rowY(1) && rowY(1) < rowY(2))
+        reopen()
+        assertTrue(rowY(1) < rowY(2) && rowY(2) < rowY(0))
+        checkbox(1).performClick().assertIsOff()
+        assertTrue(rowY(1) < rowY(2))
+        reopen()
+        assertTrue(rowY(2) < rowY(0) && rowY(0) < rowY(1))
+        checkbox(2).assertIsOn()
+    }
+    @Test fun staleEventsKeepTheirValuesButCannotAddComparisonsWhileRefreshing() {
         show(false,true)
         compose.onNodeWithTag("key-events-loading").assertIsDisplayed()
-        compose.onNodeWithTag("key-event-date-0").assertIsDisplayed().assertIsNotEnabled()
+        compose.onNodeWithTag("key-event-date-0").assertIsDisplayed().assertHasNoClickAction()
+        compose.onNodeWithTag("key-event-comparison-0").assertIsNotEnabled()
     }
 }

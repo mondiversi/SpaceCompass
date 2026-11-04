@@ -36,16 +36,17 @@ internal fun SpaceCompassCelestialLiveMarker(body: SpaceCompassCelestialBody, pr
     belowHorizon: Boolean, point: SpaceCompassSunPathPoint?, state: SpaceCompassSunDailyPathUiState,
     moonPhase: SpaceCompassMoonPhase? = null,
     path: SpaceCompassSunDailyPath? = null, interactive: Boolean = true, focused: Boolean = false, objectOpacity: Float = 1f) {
-    val name = stringResource(body.nameResource)
+    val name = path?.comparison?.let { spaceCompassComparisonDisplayName(it) } ?: stringResource(body.nameResource)
     val timeFormat = resolveSpaceCompassTimeFormat(LocalContext.current, LocalSpaceCompassTimeFormat.current)
     val locale = LocalConfiguration.current.locales[0]
-    val moment = point?.let { formatSpaceCompassCelestialMoment(it.timeMs, it.timeMs, spaceCompassObservationZone(),
+    val markerZone = path?.zone ?: spaceCompassObservationZone()
+    val moment = point?.let { formatSpaceCompassCelestialMoment(it.timeMs, it.timeMs, markerZone,
         timeFormat, LocalSpaceCompassDateFormat.current, locale, LocalSpaceCompassDeviceLocale.current,
         LocalSpaceCompassNumericFormat.current) }
     val zone = path?.zone ?: spaceCompassObservationZone()
-    val selected = point?.let { state.isCurrentSelected(body, it, zone) } == true
+    val selected = point?.let { state.isCurrentSelected(body, it, zone, path?.comparison?.id) } == true
     val accent = androidx.compose.material3.MaterialTheme.colorScheme.primary
-    val current = stringResource(R.string.celestial_current_position)
+    val current = path?.comparison?.let { spaceCompassComparisonPointName(it) } ?: stringResource(R.string.celestial_current_position)
     val label = moment?.let { "$name, ${stringResource(R.string.celestial_point_time, current, it)}" } ?: name
     Layout(modifier = Modifier.fillMaxSize(), content = {
         Box(Modifier.size((SPACE_COMPASS_SUN_PATH_TOUCH_RADIUS_DP * 2).dp)
@@ -64,7 +65,7 @@ internal fun SpaceCompassCelestialLiveMarker(body: SpaceCompassCelestialBody, pr
             Box(Modifier.size(SPACE_COMPASS_CELESTIAL_LIVE_PREVIEW_SIZE_DP.dp)
                 .border(if (selected || focused) 1.8.dp else 0.8.dp,
                     if (selected) accent else spaceCompassCelestialPathLineTint(
-                        spaceCompassCelestialPathTint(body), belowHorizon), CircleShape)
+                        (path?.comparison?.let(::spaceCompassComparisonTint) ?: spaceCompassCelestialPathTint(body)), belowHorizon), CircleShape)
                 .testTag(if (interactive) "celestial-live-preview-${body.name}" else "celestial-background-preview-${body.name}")) {
                 SpaceCompassCelestialThumbnail(body, Modifier.fillMaxSize().graphicsLayer(alpha = objectOpacity),
                     muted = belowHorizon, moonPhase = moonPhase)

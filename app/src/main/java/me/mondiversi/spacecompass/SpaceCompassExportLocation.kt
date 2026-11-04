@@ -16,7 +16,12 @@ internal fun spaceCompassSnapshotForDisclosure(snapshot: SpaceCompassPanoramaSna
     val zone = TimeZone.getTimeZone(zoneId)
     val times = snapshot.markerTimes.keys + snapshot.objects.flatMap { it.path?.markers.orEmpty() }.map { it.timeMs } +
         snapshot.selectedPoints.map { it.point.timeMs }
-    return snapshot.copy(displayZoneId=zoneId,
+    val hidden = position == SpaceCompassPanoramaPosition.HIDDEN
+    val objects = if (!hidden) snapshot.objects else snapshot.objects.map { item ->
+        item.comparison?.let { c -> item.copy(name = spaceCompassComparisonName(c.copy(zoneId = "UTC"),
+            snapshot.bodyNames[item.body] ?: item.name.substringBefore(" · "), snapshot.formatting)) } ?: item
+    }
+    return snapshot.copy(displayZoneId=zoneId, positionHidden=hidden, objects=objects,
         currentTime=formatSpaceCompassPanoramaExportTime(snapshot.timeMs,zone,snapshot.formatting),
         markerTimes=times.associateWith { formatSpaceCompassPanoramaMarkerTime(it,snapshot.timeMs,zone,snapshot.formatting) })
 }

@@ -36,6 +36,8 @@ internal fun rememberSpaceCompassPanoramaAction(timeMs: Long, latitude: Double?,
     solarLighting: SpaceCompassSolarLighting? = null,
     selectedPoints: List<SpaceCompassSelectedOrbitPoint> = emptyList(),
     activeBody: SpaceCompassCelestialBody? = null,forward24Hours: Boolean = false, showAntipodes: Boolean = false): SpaceCompassPanoramaAction {
+    val comparisonOverlays = LocalSpaceCompassComparisonOverlays.current
+    val activeComparisonId = comparisonOverlays.activeSpaceCompassComparison(LocalSpaceCompassComparisons.current?.activeId)?.id
     val selectionTint = MaterialTheme.colorScheme.primary.toArgb()
     val context = LocalContext.current
     val resources = LocalResources.current
@@ -64,7 +66,7 @@ internal fun rememberSpaceCompassPanoramaAction(timeMs: Long, latitude: Double?,
     return SpaceCompassPanoramaAction(busy, capture = {
         if (!busy) {
             if (cameraEnabled && cameraCapture == null) notify(R.string.camera_unavailable)
-            else if (!cameraEnabled && (latitude == null || longitude == null || bodies.isEmpty())) notify(R.string.panorama_not_ready)
+            else if (!cameraEnabled && (latitude == null || longitude == null || bodies.isEmpty() && comparisonOverlays.isEmpty())) notify(R.string.panorama_not_ready)
             else {
                 val position = SpaceCompassPanoramaPosition.fromStored(preferences?.getString(SPACE_COMPASS_PANORAMA_POSITION_KEY, null))
                 val labelMode = SpaceCompassPanoramaLabelMode.fromStored(
@@ -77,6 +79,8 @@ internal fun rememberSpaceCompassPanoramaAction(timeMs: Long, latitude: Double?,
                 val capturedTime = if (simulated) System.currentTimeMillis() else timeMs
                 val objects = spaceCompassAllCelestialOrder.filter { it in bodies && latitude != null && longitude != null }.map {
                     SpaceCompassPanoramaObject(it, exportResources.getString(it.nameResource), overlays[it]?.path)
+                } + comparisonOverlays.map { (c, overlay) ->
+                    SpaceCompassPanoramaObject(c.body, exportResources.getString(c.body.nameResource), overlay.path, c)
                 }
                 // Real photographs keep actual weather; the virtual sky can explicitly suppress effects.
                 val captureWeather = weather.takeIf { cameraEnabled || showWeather }
@@ -89,7 +93,7 @@ internal fun rememberSpaceCompassPanoramaAction(timeMs: Long, latitude: Double?,
                     observerPositionKnown = latitude != null && longitude != null, showSkyReferences = showSkyReferences, center = center,
                     weatherEffectsEnabled = cameraEnabled || showWeather, solarLighting = solarLighting,
                     selectedPoints = selectedPoints.toList(), showAntipodes = showAntipodes, selectionTint = selectionTint, zoneId = observationZone.id,
-                    activeBody = activeBody?.takeIf { it in bodies },forward24Hours = forward24Hours)
+                    activeBody = activeBody?.takeIf { it in bodies },forward24Hours = forward24Hours, activeComparisonId = activeComparisonId)
                 busy = true
                 val preparingNotice = showSpaceCompassBottomMessage(application,
                     resources.getString(R.string.panorama_preparing))
@@ -107,7 +111,7 @@ internal fun rememberSpaceCompassPanoramaAction(timeMs: Long, latitude: Double?,
                             val captureJob = kotlin.coroutines.coroutineContext
                             val frozenSnapshot = freezeSpaceCompassApproachSnapshot(referenceSnapshot) { captureJob.ensureActive() }
                             // Captured object glyphs use reference previews; full viewer maps stay independent.
-                            ensureSpaceCompassCelestialThumbnails(application, bodies)
+                            ensureSpaceCompassCelestialThumbnails(application, frozenSnapshot.objects.map { it.body }.toSet())
                             val cameraFieldOfView = photoFrame?.let { frame ->
                                 // Read JPEG dimensions only; no bitmap allocation or second exposure.
                                 val dimensions = BitmapFactory.Options().apply { inJustDecodeBounds = true }

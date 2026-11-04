@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="key_events_title">رویدادهای کلیدی</string>
-    <string name="key_events_description">رویدادهای جرم، سال و مکان انتخاب‌شده. برای مشاهدهٔ آن لحظه با زمان متوقف، تاریخ را لمس کنید.</string>
+    <string name="key_events_description">رویدادهای جرم، سال و مکان انتخاب‌شده.</string>
     <string name="key_events_empty">برای این جرم در سال انتخاب‌شده رویدادی از این نوع وجود ندارد.</string>
     <string name="key_events_horizon_note">افق ایدئال و بدون مانع، مانند مسیر روزانه. دوره‌های قطبی بین طلوع و غروب‌های پیاپی هستند؛ زمان‌های حدی از ساعت محلی مکان استفاده می‌کنند.</string>
     <string name="key_events_global_note">رویدادهای مداری لحظه‌های جهانی مشترک دارند. ارتفاع از مکان محاسبه می‌شود؛ فاصله‌ها میان مراکز اجرام اندازه‌گیری می‌شوند.</string>

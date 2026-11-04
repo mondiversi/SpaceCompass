@@ -1,9 +1,9 @@
 <resources>
     <string name="info_news_title">Ultime novità · %1$s</string>
-    <string name="info_news_star_sky" formatted="false">Le icone spente sono grigie senza barra, con dimensioni e allineamento costanti. Anche Location automatica è grigia.</string>
-    <string name="info_news_texture_downloads" formatted="false">In orizzontale con isole compattate, Oggetti, Location, Linee e 0–24 stanno a sinistra; asse/Meteo o Trasparenza/Zoom a destra.</string>
-    <string name="info_news_weather" formatted="false">Fotocamera sopra Scatta e punti/antipodi sotto Menu. Entrambi i gruppi laterali sono centrati tra i pulsanti agli angoli.</string>
-    <string name="info_news_viewer_zoom" formatted="false">Il bordo di Scatta pulsa dal blu/azzurro del tema al grigio degli altri bordi in 3,2 secondi. Con animazioni disattivate resta visibile un bordo fisso.</string>
-    <string name="info_news_settings" formatted="false">Il meteo è attivo di default, rispettando le scelte salvate. Il suo avviso con Riprova resta nascosto con meteo spento o fotocamera attiva.</string>
-    <string name="info_news_catalog" formatted="false">Nelle anteprime, Etichette e Posizione nascoste sono grigie. Le modalità delle etichette sono riordinate senza cambiare la scelta salvata.</string>
+    <string name="info_news_star_sky" formatted="false">Confronta le traiettorie di Altezze ed Eventi chiave con il cielo del momento.</string>
+    <string name="info_news_texture_downloads" formatted="false">Salva Momenti personali con un nome, una data e un’ora facoltativa.</string>
+    <string name="info_news_weather" formatted="false">Importa ed esporta i Momenti personali a parte o includi i confronti attivi in una Location.</string>
+    <string name="info_news_viewer_zoom" formatted="false">Le traiettorie a data fissa sono raggruppate sotto l’oggetto in ordine cronologico.</string>
+    <string name="info_news_settings" formatted="false">Il menu dell’Osservatorio dà accesso rapido a percorsi, punti chiave e momenti personali.</string>
+    <string name="info_news_catalog" formatted="false">Scatti e panoramiche mostrano i nomi sulle traiettorie e includono i confronti attivi nelle esportazioni.</string>
 </resources>

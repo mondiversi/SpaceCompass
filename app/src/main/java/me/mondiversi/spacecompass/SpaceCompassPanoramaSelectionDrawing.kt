@@ -7,7 +7,7 @@ import android.graphics.RectF
 internal fun spaceCompassPanoramaSelectionLabels(snapshot: SpaceCompassPanoramaSnapshot,
     selected: List<SpaceCompassPanoramaSelectedPoint>, scale: Float, currentRadius: Float,
     projection: (SpaceCompassSunPosition) -> SpaceCompassSunScenePoint?, occupied: MutableList<RectF>
-): List<SpaceCompassPanoramaTimeLabel> = selected.mapNotNull { pin ->
+): List<SpaceCompassPanoramaTimeLabel> = spaceCompassUniqueComparisonCaptionPins(selected).mapNotNull { pin ->
     val point = projection(pin.point.position) ?: return@mapNotNull null
     val radius = if (pin.isAntipode) 12f else if (pin.isCurrent) currentRadius else if (pin.point.event == SpaceCompassSunPathEvent.HOUR) 10f else 20f
     occupied += RectF(point.x.toFloat() - radius * scale, point.y.toFloat() - radius * scale,

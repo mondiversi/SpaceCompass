@@ -21,8 +21,8 @@
     <string name="tutorial_capture" formatted="false">Prepara una panoramica di tutto il cielo oppure uno scatto dell’inquadratura con le sovrapposizioni astronomiche. Esporta dall’anteprima.</string>
     <string name="tutorial_panels" formatted="false">Compatta o espandi le isole dell’oggetto e della bussola per lasciare più spazio al cielo.</string>
     <string name="tutorial_antipodes" formatted="false">Tocca per mostrare o nascondere la direzione opposta dei punti selezionati: azimut +180° e altezza di segno opposto. Tieni premuto per deselezionare tutti i punti.</string>
-    <string name="tutorial_navigation" formatted="false">Scorri gli oggetti selezionati. L’isola mostra l’oggetto attivo e i colori della sua traiettoria. Tocca il nome per aprire il catalogo degli oggetti.</string>
-    <string name="tutorial_observatory" formatted="false">Apri il modello dell’oggetto, le informazioni scientifiche, il tempo di viaggio e le altezze e gli eventi chiave annuali.</string>
+    <string name="tutorial_navigation" formatted="false">Scorri gli oggetti selezionati. L’isola mostra l’oggetto attivo e i colori della sua traiettoria.</string>
+    <string name="tutorial_observatory" formatted="false">Tocca il nome dell’oggetto per aprire l’Osservatorio: modello, dati scientifici, tempo di viaggio, altezze ed eventi chiave. Nella barra in alto trovi Percorso giornaliero, Esporta e Preferiti, in questo ordine.</string>
     <string name="tutorial_daily" formatted="false">Apri la traiettoria dell’oggetto attivo, con orari, elevazioni e punti selezionabili. Per gli eventi futuri puoi impostare un’allerta.</string>
     <string name="tutorial_gps" formatted="false">Apri i dettagli della posizione reale, della quota GPS, dell’orientamento e del meteo. Questi valori sono indipendenti dalla Location.</string>
     <string name="tutorial_points" formatted="false">Seleziona o deseleziona un punto dell’orbita. Puntalo con il mirino per leggere oggetto, ora, T, azimut ed elevazione. Il bordo dell’oggetto segue il colore della traiettoria; diventa blu o azzurro quando selezioni la sua posizione attuale.</string>
@@ -30,4 +30,5 @@
     <string name="tutorial_reminder" formatted="false">Apri la sveglia o il calendario Android per un evento futuro compatibile. Gli eventi passati e il punto attuale non possono avere una sveglia.</string>
     <string name="tutorial_status_title" formatted="false">Stato e ripristino</string>
     <string name="tutorial_status" formatted="false">Leggi lo stato attuale. L’azione può richiedere un permesso, attivare la posizione o riprovare il caricamento dei dati orbitali o meteo. Il tutorial non esegue l’azione.</string>
+    <string name="tutorial_remove" formatted="false">Rimuovi l’oggetto attivo dagli oggetti selezionati dopo la conferma. L’oggetto rimane disponibile nel catalogo.</string>
 </resources>

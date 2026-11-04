@@ -1,6 +1,8 @@
 package me.mondiversi.spacecompass
 
 import androidx.activity.compose.BackHandler
+import androidx.compose.foundation.clickable
+import androidx.compose.ui.semantics.Role
 import androidx.compose.foundation.background
 import androidx.compose.ui.input.nestedscroll.nestedScroll
 import androidx.compose.foundation.layout.*
@@ -26,7 +28,7 @@ import kotlinx.coroutines.launch
 @Composable
 internal fun SpaceCompassKeyEventsPage(body: SpaceCompassCelestialBody, timeMs: Long,
     latitude: Double?, longitude: Double?, altitude: Double, remote: SpaceCompassCelestialRemoteData,
-    onBack: () -> Unit) {
+    defaultYearResult: SpaceCompassKeyEventsUiState, onBack: () -> Unit) {
     val foreground = MaterialTheme.colorScheme.onSurface
     val secondary = foreground.copy(alpha = .72f)
     val pageBackground = spaceCompassSurfacePalette(spaceCompassPageBackground().luminance() < .4f).island
@@ -48,10 +50,13 @@ internal fun SpaceCompassKeyEventsPage(body: SpaceCompassCelestialBody, timeMs: 
     val referenceTime = remember(timeMs, year, zone) {
         if (year in spaceCompassObservationYears) spaceCompassObservationYearReference(timeMs, year, zone) else timeMs
     }
-    val computed = rememberSpaceCompassKeyEvents(SpaceCompassObservationCalendar(body, year, zone),
-        latitude, longitude, altitude, remote)
+    val computed = if (year == locationYear) defaultYearResult else
+        rememberSpaceCompassKeyEvents(SpaceCompassObservationCalendar(body, year, zone),
+            latitude, longitude, altitude, remote)
     val result = computed.copy(complete = computed.complete && yearValid)
     val export = rememberSpaceCompassKeyEventsExport(body, referenceTime, result)
+    val comparisons = LocalSpaceCompassComparisons.current
+    val choices = remember(body, result, zone) { spaceCompassEventComparisonChoices(body, result, zone) }
     BackHandler { if (export.visible) export.close() else if (!export.saving) onBack() }
     Box(Modifier.fillMaxSize()) {
         Surface(Modifier.fillMaxSize().layout { measurable, constraints ->
@@ -59,8 +64,11 @@ internal fun SpaceCompassKeyEventsPage(body: SpaceCompassCelestialBody, timeMs: 
             layout(placeable.width, placeable.height) { if (!export.visible) placeable.placeRelative(0, 0) }
         }.testTag("page-key-events"), color = pageBackground, contentColor = foreground) {
             Column(Modifier.fillMaxSize()) {
-                SpaceCompassPageToolbar(stringResource(R.string.key_events_title),
-                    { if (!export.saving) onBack() }, modifier = Modifier.background(spaceCompassPageBackground())) {
+                SpaceCompassPageToolbar(spaceCompassObservationCountLabel(stringResource(R.string.key_events_title), result.totalRows, countFirst = true),
+                    { if (!export.saving) onBack() }, modifier = Modifier.background(spaceCompassPageBackground()),
+                    titleModifier = Modifier.testTag("key-events-toggle-all-title").clickable(
+                        enabled = !export.saving && comparisons?.canToggleAll(choices) == true,
+                        role = Role.Button) { comparisons?.toggleAll(choices) }) {
                     SpaceCompassTitleActionButton(stringResource(R.string.panorama_export), export.open,
                         Modifier.testTag("key-events-export"),
                         enabled = result.complete && !result.events.isNullOrEmpty() && !export.saving) {
@@ -68,7 +76,7 @@ internal fun SpaceCompassKeyEventsPage(body: SpaceCompassCelestialBody, timeMs: 
                     }
                 }
                 SpaceCompassQuickReturnHeader(quickHeader, Modifier.testTag("key-events-header")) {
-                    Row(Modifier.fillMaxWidth().padding(start = 18.dp, end = 8.dp, top = 8.dp, bottom = 8.dp),
+                    Row(Modifier.fillMaxWidth().padding(SpaceCompassObservationHeaderPadding),
                         verticalAlignment = Alignment.CenterVertically, horizontalArrangement = Arrangement.spacedBy(8.dp)) {
                         SpaceCompassScrollingText(stringResource(body.nameResource), Modifier.weight(1f),
                             color = foreground, style = TextStyle(fontSize = 14.sp, lineHeight = 18.sp,
@@ -84,7 +92,7 @@ internal fun SpaceCompassKeyEventsPage(body: SpaceCompassCelestialBody, timeMs: 
                 }
                 Column(Modifier.fillMaxWidth().weight(1f).nestedScroll(quickHeader.connection).clipToBounds()
                     .scrollbarOverlay(scroll, secondary.copy(alpha = .46f)).verticalScroll(scroll)
-                    .padding(start = 18.dp, end = 8.dp, top = 8.dp),
+                    .padding(SpaceCompassObservationContentPadding),
                     verticalArrangement = Arrangement.spacedBy(8.dp)) {
                     SpaceCompassKeyEventsRows(body, result, secondary)
                 }

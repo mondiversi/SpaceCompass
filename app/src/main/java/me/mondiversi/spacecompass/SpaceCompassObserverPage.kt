@@ -35,6 +35,7 @@ private fun SpaceCompassObserverEditor(observer: SpaceCompassObserverState, modi
     val resources = LocalResources.current
     val preferences = LocalSpaceCompassPreferences.current
     val orbitSelection = LocalSpaceCompassOrbitSelection.current
+    val comparisons = LocalSpaceCompassComparisons.current
     val rejectSettingsExit = LocalSpaceCompassSettingsExitFailure.current
     val feet = LocalSpaceCompassUnits.current.feet
     val numeric = LocalSpaceCompassNumericFormat.current
@@ -406,17 +407,29 @@ private fun SpaceCompassObserverEditor(observer: SpaceCompassObserverState, modi
                     val exportBase = configured.withAutomaticLocation(spaceCompassScenarioCurrentValues(
                         observer.plan, observer.devicePlace, observer.timeSettings, now, deviceZone)) ?: configured
                     val archive = if (includeObjects) exportBase.withCelestialObjects(
-                        readSpaceCompassCelestialSelection(preferences), orbitSelection?.selectedPoints.orEmpty()) else exportBase
+                        readSpaceCompassCelestialSelection(preferences), orbitSelection?.selectedPoints.orEmpty(),
+                        comparisons?.entries.orEmpty(), comparisons?.activeId, orbitSelection?.antipodesVisible == true,
+                        comparisons?.personalMoments.orEmpty()) else exportBase
                     val namedImport = observer.archiveName?.takeUnless {
                         it == resources.getString(R.string.observer_title) || it == "Scenario"
                     }
                     archive.copy(name = namedImport ?: resources.getString(R.string.observer_title))
                 }
             }, onImport = { archive ->
+                val localMoments = comparisons?.personalMoments.orEmpty()
+                val mergedMoments = mergeSpaceCompassPersonalMoments(localMoments, archive.personalMoments)
+                val disabledIds = mergedMoments.filterNot { it.enabled }.mapTo(hashSetOf()) { it.id }
+                val localIds = localMoments.mapTo(hashSetOf()) { it.id }
+                val importedPoints = archive.selectedOrbitPoints?.let { incoming ->
+                    val localPersonalPins = orbitSelection?.selectedPoints.orEmpty().filter { it.key.comparisonId in localIds }
+                    (localPersonalPins + incoming.filterNot { it.key.comparisonId in disabledIds }).distinctBy { it.key }
+                }
                 // Discard old pending work before replacing the editor; disposal must not overwrite the imported file.
                 lookup?.cancel(); lookupRevision++; editRevision = 0
                 observer.importArchive(archive)
-                orbitSelection?.restoreImportedPoints(archive.selectedOrbitPoints)
+                comparisons?.restore(archive.comparisons, archive.activeComparisonId, archive.personalMoments)
+                orbitSelection?.restoreImportedPoints(importedPoints)
+                archive.antipodesVisible?.let { orbitSelection?.restoreAntipodes(it) }
             }, enabled = !busy)
         }
         if (section == null) {
@@ -582,7 +595,7 @@ private fun SpaceCompassObserverEditor(observer: SpaceCompassObserverState, modi
 
 /** Keep the complete Material calendar/dial inside the same bounded app dialog on small phones. */
 @Composable
-private fun SpaceCompassObserverPickerScale(preferredWidthDp: Float, content: @Composable () -> Unit) {
+internal fun SpaceCompassObserverPickerScale(preferredWidthDp: Float, content: @Composable () -> Unit) {
     BoxWithConstraints(Modifier.fillMaxWidth()) {
         val density = LocalDensity.current
         val factor = (maxWidth.value / preferredWidthDp).coerceIn(.5f, 1f)

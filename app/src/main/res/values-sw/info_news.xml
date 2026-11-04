@@ -1,9 +1,9 @@
 <resources>
     <string name="info_news_title">Mambo mapya · %1$s</string>
-    <string name="info_news_star_sky" formatted="false">Vidhibiti vilivyozimwa ni vya kijivu bila mstari wa kukata, huku ukubwa na mpangilio wa alama vikibaki sawa. Location ya kiotomatiki pia ni ya kijivu.</string>
-    <string name="info_news_texture_downloads" formatted="false">Katika mlalo uliokunjwa, Vitu, Location, Mistari na 0–24 viko kushoto; mhimili/hali ya hewa au uwazi/kuza kwa kamera viko kulia.</string>
-    <string name="info_news_weather" formatted="false">Kamera iko juu ya Kunasa na nukta/antipodi chini ya Menyu. Makundi ya pembeni yako katikati ya vitufe vya pembe.</string>
-    <string name="info_news_viewer_zoom" formatted="false">Ukingo wa kunasa hupiga kutoka bluu/siani ya mandhari hadi kijivu cha kawaida kwa sekunde 3.2. Ukingo tuli hubaki ukionekana uhuishaji ukizimwa.</string>
-    <string name="info_news_settings" formatted="false">Hali ya hewa ya kuona huwashwa kwa chaguo-msingi, huku chaguo zilizohifadhiwa zikiheshimiwa. Majaribio ya hali ya hewa hufichwa ikiwa imezimwa au kamera inatumika.</string>
-    <string name="info_news_catalog" formatted="false">Lebo na Nafasi zilizofichwa ni za kijivu katika mwonekano wa awali. Chaguo za lebo zimepangwa upya bila kubadili chaguo lililohifadhiwa.</string>
+    <string name="info_news_star_sky" formatted="false">Linganisha njia za miinuko na matukio muhimu na anga la sasa.</string>
+    <string name="info_news_texture_downloads" formatted="false">Hifadhi nyakati binafsi kwa jina, tarehe na saa ya hiari.</string>
+    <string name="info_news_weather" formatted="false">Ingiza na hamisha nyakati binafsi kando au jumuisha milinganisho inayoonekana katika Location.</string>
+    <string name="info_news_viewer_zoom" formatted="false">Njia zenye tarehe zimepangwa kwa mpangilio wa wakati chini ya kitu husika.</string>
+    <string name="info_news_settings" formatted="false">Menyu ya Kituo cha Uchunguzi hufungua haraka njia, nukta muhimu na nyakati binafsi.</string>
+    <string name="info_news_catalog" formatted="false">Picha na panorama huonyesha majina ya njia na kujumuisha milinganisho inayoonekana wakati wa kuhamisha.</string>
 </resources>

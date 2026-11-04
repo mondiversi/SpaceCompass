@@ -28,12 +28,12 @@ class SpaceCompassCelestialTabularLayoutTest {
         assertTrue(viewer.contains(".padding(horizontal = 10.dp)"))
         assertFalse(viewer.contains("bottom = 6.dp"))
         assertTrue(source("SpaceCompassNativePositionMap.kt").contains("setPadding(dp(10f), 0, dp(10f), 0)"))
-        assertTrue(viewer.contains("Row(Modifier.fillMaxSize(), horizontalArrangement = Arrangement.spacedBy(12.dp))"))
+        assertTrue(viewer.contains("Row(Modifier.fillMaxSize(), horizontalArrangement = Arrangement.spacedBy(modelGap))"))
         val placement = viewer.substringAfter("BoxWithConstraints(Modifier.fillMaxSize()")
         assertFalse(placement.contains(".padding(top"))
         assertFalse(placement.contains("vertical = 6.dp"))
         val portrait = viewer.substringAfter("} else Column(Modifier.fillMaxSize(),")
-            .substringBefore("model(Modifier.weight")
+            .substringBefore("info(Modifier.weight")
         assertFalse(portrait.contains(".padding(top"))
         assertTrue(source("SpaceCompassCelestialDetailTable.kt").contains(
             ".background(spaceCompassSettingsCardColor()).padding(12.dp)"))
@@ -264,7 +264,7 @@ class SpaceCompassCelestialTabularLayoutTest {
 
     @Test fun selectionCountIsCompactCircularAndIndependentOfInspectedObject() {
         val controls = source("SpaceCompassCelestialControls.kt")
-        assertTrue(controls.contains("if (selectedBodies.isNotEmpty()) SpaceCompassFloatingCountBadge(count"))
+        assertTrue(controls.contains("if (selectedCount > 0) SpaceCompassFloatingCountBadge(count"))
         assertTrue(controls.contains("Modifier.align(Alignment.TopEnd).testTag(\"celestial-selection-count\")"))
         val badge = source("SpaceCompassFloatingActionButton.kt").substringAfter("internal fun SpaceCompassFloatingCountBadge")
         assertTrue(badge.contains("Text(count"))

@@ -1,9 +1,9 @@
 <resources>
     <string name="info_news_title">Latest news · %1$s</string>
-    <string name="info_news_star_sky" formatted="false">Off controls use grey instead of a slash, retaining the same icon size and alignment. Automatic Location is grey too.</string>
-    <string name="info_news_texture_downloads" formatted="false">Compact landscape places Objects, Location, Guides and 0–24 on the left, with axis/weather or camera transparency/zoom on the right.</string>
-    <string name="info_news_weather" formatted="false">Camera sits above Capture and points/antipodes below Menu. Both side groups centre between their corner buttons.</string>
-    <string name="info_news_viewer_zoom" formatted="false">The shutter border pulses from theme blue/cyan to neutral outline grey over 3.2 seconds. A static border remains visible with animations off.</string>
-    <string name="info_news_settings" formatted="false">Visual weather is on by default while saved choices are respected. Weather retries stay hidden when weather is off or the camera is active.</string>
-    <string name="info_news_catalog" formatted="false">Hidden preview Labels and Position are grey. Label options are reordered without changing the saved choice.</string>
+    <string name="info_news_star_sky" formatted="false">Compare dated paths from Key Heights and Key Events alongside the current sky.</string>
+    <string name="info_news_texture_downloads" formatted="false">Save named Personal Moments with a date and an optional time.</string>
+    <string name="info_news_weather" formatted="false">Import and export Personal Moments separately, or include active comparisons in a Location.</string>
+    <string name="info_news_viewer_zoom" formatted="false">Dated paths are grouped under their object and shown in chronological order.</string>
+    <string name="info_news_settings" formatted="false">The Observatory menu gives quick access to paths, key points and personal moments.</string>
+    <string name="info_news_catalog" formatted="false">Photos and panoramas show path names and include active comparisons in their exports.</string>
 </resources>

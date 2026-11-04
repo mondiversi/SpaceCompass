@@ -45,8 +45,8 @@ class SpaceCompassCelestialSelectionTest {
     @Test fun sceneReceivesOnlyCheckedCachedObjects() {
         val screen = java.io.File("src/main/java/me/mondiversi/spacecompass/SpaceCompassSunFinderScreen.kt").readText()
         assertTrue(screen.contains("spaceCompassSelectedCelestialEntries(allOverlays, selectedBodies)"))
-        assertTrue(screen.contains("val overlays = selectedOverlays - body"))
-        assertTrue(screen.contains("val activeOverlay = selectedOverlays[body]"))
+        assertTrue(screen.contains("if (activeComparison == null) selectedOverlays - sceneBody else selectedOverlays"))
+        assertTrue(screen.contains("if (activeComparison == null) selectedOverlays[sceneBody]"))
         assertFalse(screen.contains("val overlays = if (hasActiveBody) allOverlays - body else allOverlays"))
     }
     @Test fun startsWithSunAndMoonAndInspectsTheSun() {

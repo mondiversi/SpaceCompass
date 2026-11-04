@@ -16,12 +16,14 @@ internal class SpaceCompassCatalogQuery(
     val prioritySelected: Set<SpaceCompassCelestialBody>,
     val favorites: Set<SpaceCompassCelestialBody>,
     val observations: Map<SpaceCompassCelestialBody, SpaceCompassCelestialObservation?>,
-    val distances: SpaceCompassCatalogDistances)
+    val distances: SpaceCompassCatalogDistances,
+    val comparisons: List<SpaceCompassTemporalComparison> = emptyList())
 
 internal class SpaceCompassCatalogPresentation(
     val query: SpaceCompassCatalogQuery,
     val names: Map<SpaceCompassCelestialBody, String>,
     val visible: List<SpaceCompassCelestialBody>,
+    val rows: List<SpaceCompassCatalogDisplayRow>,
     val checkedCount: Int,
     val displayedDistances: Map<SpaceCompassCelestialBody, Double?>,
     val solarDistances: Map<SpaceCompassCelestialBody, Double?>,
@@ -95,7 +97,8 @@ internal class SpaceCompassCatalogPresenter private constructor(
                     preferences.origin, preferences.pointing, elevations, pointing, searchMatches)
             } else null
             currentCoroutineContext().ensureActive()
-            SpaceCompassCatalogPresentation(query, names, visible, visible.count { it in query.selected },
+            val rows = spaceCompassCatalogDisplayRows(visible, query.selected, query.comparisons)
+            SpaceCompassCatalogPresentation(query, names, visible, rows, visible.count { it in query.selected },
                 displayed, solar, counts, if (countsNeeded) typeOrder else emptyList())
         } }
 

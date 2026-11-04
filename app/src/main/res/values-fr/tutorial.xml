@@ -21,8 +21,8 @@
     <string name="tutorial_capture" formatted="false">Préparez un panorama du ciel ou une photo avec les superpositions astronomiques. Exportez depuis l’aperçu.</string>
     <string name="tutorial_panels" formatted="false">Repliez ou dépliez les panneaux de l’objet et de la boussole pour dégager le ciel.</string>
     <string name="tutorial_antipodes" formatted="false">Touche pour afficher ou masquer la direction opposée des points sélectionnés : azimut +180° et élévation de signe opposé. Maintiens le bouton enfoncé pour tout désélectionner.</string>
-    <string name="tutorial_navigation" formatted="false">Parcourez les objets sélectionnés. Le panneau indique l’objet actif et les couleurs de sa trajectoire. Touche le nom pour ouvrir le catalogue des objets.</string>
-    <string name="tutorial_observatory" formatted="false">Ouvrez le modèle, les données scientifiques, la durée du voyage et les hauteurs et événements annuels.</string>
+    <string name="tutorial_navigation" formatted="false">Parcourez les objets sélectionnés. Le panneau indique l’objet actif et les couleurs de sa trajectoire.</string>
+    <string name="tutorial_observatory" formatted="false">Touchez le nom de l’objet pour ouvrir l’Observatoire : modèle, données scientifiques, durée du voyage, hauteurs et événements clés. En haut figurent Trajectoire quotidienne, Exporter et Favoris, dans cet ordre.</string>
     <string name="tutorial_daily" formatted="false">Consultez la trajectoire, les heures, les élévations et les points sélectionnables. Les événements futurs peuvent avoir un rappel.</string>
     <string name="tutorial_gps" formatted="false">Consultez la position réelle, l’altitude GPS, l’orientation et la météo, indépendamment de la Location.</string>
     <string name="tutorial_points" formatted="false">Sélectionnez un point de trajectoire. Visez-le pour lire l’objet, l’heure, T, l’azimut et l’élévation. Le bord de l’objet reprend la couleur de sa trajectoire ; il devient bleu ou cyan si tu sélectionnes sa position actuelle.</string>
@@ -30,4 +30,5 @@
     <string name="tutorial_reminder" formatted="false">Ouvrez une alarme ou le calendrier Android pour un événement futur admissible. Pas d’alarme pour le passé ou le point actuel.</string>
     <string name="tutorial_status_title" formatted="false">État et récupération</string>
     <string name="tutorial_status" formatted="false">Consultez l’état actuel. Son action peut demander une autorisation, activer la position ou réessayer les données orbitales ou météo. Le tutoriel ne l’exécute pas.</string>
+    <string name="tutorial_remove" formatted="false">Retire l’objet actif des objets sélectionnés après confirmation. L’objet reste disponible dans le catalogue.</string>
 </resources>

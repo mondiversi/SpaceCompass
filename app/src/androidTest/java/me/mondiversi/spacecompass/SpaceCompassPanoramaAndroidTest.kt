@@ -210,7 +210,7 @@ class SpaceCompassPanoramaAndroidTest {
         } finally { uri?.let { context.contentResolver.delete(it, null, null) }; file.delete() }
     }
 
-    @Test fun compactCaptionKeepsOneLineAndTheLegendStaysBelowTheAngularScene() {
+    @Test fun wrappedCaptionKeepsItsGlyphsCenteredAndTheLegendStaysBelowTheAngularScene() {
         val caption = "Space Compass · 05/10/26 · 20:32 CEST · Zinasco, Lombardia, Italia · " +
             "45.106887° N · 8.999557° E (±20 m) · GPS altitude 118 m · Partly cloudy (53%)"
         for (value in listOf("Space Compass", caption, caption.repeat(2), "Space Compass · المدينة، البلد · غائم جزئياً (53%)")) {
@@ -224,7 +224,7 @@ class SpaceCompassPanoramaAndroidTest {
                 assertTrue(bounds.top > 0)
                 assertEquals("Visible glyphs are centered inside the compact band",
                     heading.height / 2f,bounds.centerY(),.001f)
-                assertTrue("Only small padding is reserved around the fitted line",heading.height-bounds.height() <= 17 * (1024/1080f))
+                assertTrue("Only small shared padding is reserved around the wrapped caption",heading.height-bounds.height() <= 17 * (1024/1080f))
                 assertTrue("Top azimuth ticks and zenith markers are outside the caption",
                     bounds.bottom + 2 * .25f <= sceneTop - SPACE_COMPASS_PANORAMA_TOP_AXIS_HEIGHT * .25f)
 

@@ -37,9 +37,10 @@ internal fun SpaceCompassCelestialOffscreenMarker(body: SpaceCompassCelestialBod
     contextExclusions: List<SpaceCompassSunSceneFrame> = emptyList(),
     forcedPlacement: SpaceCompassCelestialOffscreenGeometry? = null,
     diameter: Dp = SPACE_COMPASS_CELESTIAL_OFFSCREEN_DIAMETER_DP.dp,
-    moonPhase: SpaceCompassMoonPhase? = null, objectOpacity: Float = 1f, selected: Boolean = false) {
+    moonPhase: SpaceCompassMoonPhase? = null, objectOpacity: Float = 1f, selected: Boolean = false,
+    nameOverride: String? = null, pathTint: Color? = null) {
     val rtl = LocalLayoutDirection.current == LayoutDirection.Rtl
-    val name = stringResource(body.nameResource)
+    val name = nameOverride ?: stringResource(body.nameResource)
     BoxWithConstraints(Modifier.fillMaxSize()) {
         // Direction uses the unclamped projection, not a thumbnail moved clear of a menu.
         val bearing = Math.toDegrees(kotlin.math.atan2(projection.y - maxHeight.value / 2,
@@ -52,7 +53,7 @@ internal fun SpaceCompassCelestialOffscreenMarker(body: SpaceCompassCelestialBod
                     (diameter.value / SPACE_COMPASS_CELESTIAL_OFFSCREEN_DIAMETER_DP).coerceAtMost(1f)).dp)
                     .border(if (selected) 1.8.dp else 0.8.dp,
                         if (selected) MaterialTheme.colorScheme.primary else spaceCompassCelestialPathLineTint(
-                            spaceCompassCelestialPathTint(body), belowHorizon), CircleShape)
+                            (pathTint ?: spaceCompassCelestialPathTint(body)), belowHorizon), CircleShape)
                     .testTag("celestial-offscreen-preview-${body.name}")) {
                     SpaceCompassCelestialThumbnail(body, Modifier.fillMaxSize().graphicsLayer(alpha = objectOpacity),
                         muted = belowHorizon, moonPhase = moonPhase)

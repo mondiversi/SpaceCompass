@@ -21,8 +21,8 @@
     <string name="tutorial_capture" formatted="false">Tüm gökyüzü panoraması veya astronomik katmanlı kamera fotoğrafı hazırlayın. Önizlemeden dışa aktarın.</string>
     <string name="tutorial_panels" formatted="false">Gökyüzünü açmak için nesne ve pusula panellerini daraltın veya genişletin.</string>
     <string name="tutorial_antipodes" formatted="false">Seçili noktaların karşıt yönünü göstermek veya gizlemek için dokun: azimut +180° olur ve yüksekliğin işareti tersine döner. Tüm noktaların seçimini kaldırmak için basılı tut.</string>
-    <string name="tutorial_navigation" formatted="false">Seçili nesneler arasında gezinin. Panel etkin nesneyi ve yol renklerini gösterir. Nesne kataloğunu açmak için ada dokun.</string>
-    <string name="tutorial_observatory" formatted="false">Modeli, bilimsel bilgileri, yolculuk süresini ve yıllık yüksekliklerle olayları açın.</string>
+    <string name="tutorial_navigation" formatted="false">Seçili nesneler arasında gezinin. Panel etkin nesneyi ve yol renklerini gösterir.</string>
+    <string name="tutorial_observatory" formatted="false">Gözlemevini açmak için nesnenin adına dokun: model, bilimsel bilgiler, yolculuk süresi, önemli yükseklikler ve olaylar. Üst çubukta sırasıyla Günlük yol, Dışa aktar ve Favoriler bulunur.</string>
     <string name="tutorial_daily" formatted="false">Yolu, saatleri, yükseklikleri ve seçilebilir noktaları görün. Gelecek olaylara hatırlatıcı eklenebilir.</string>
     <string name="tutorial_gps" formatted="false">Location’dan bağımsız gerçek konumu, GPS yüksekliğini, yönelimi ve hava durumunu görün.</string>
     <string name="tutorial_points" formatted="false">Bir yörünge noktasını seçin. Nesne, saat, T, azimut ve yüksekliği okumak için nişangâhı ona yöneltin. Nesnenin kenarlığı yörüngesinin rengindedir; güncel konumunu seçtiğinde mavi veya açık mavi olur.</string>
@@ -30,4 +30,5 @@
     <string name="tutorial_reminder" formatted="false">Uygun gelecek olay için Android alarmını veya takvimini açın. Geçmiş olaylar ve mevcut nokta için alarm kurulamaz.</string>
     <string name="tutorial_status_title" formatted="false">Durum ve kurtarma</string>
     <string name="tutorial_status" formatted="false">Güncel durumu okuyun. Eylem izin isteyebilir, konumu açabilir veya yörünge ve hava verilerini yeniden yükleyebilir. Öğretici eylemi yürütmez.</string>
+    <string name="tutorial_remove" formatted="false">Onayladıktan sonra etkin nesneyi seçili nesnelerden kaldır. Nesne katalogda kullanılabilir olmaya devam eder.</string>
 </resources>

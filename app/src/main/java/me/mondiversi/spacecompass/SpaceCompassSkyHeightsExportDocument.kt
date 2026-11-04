@@ -16,7 +16,7 @@ internal fun captureSpaceCompassSkyHeights(result: SpaceCompassObservationMoment
     val request = requireNotNull(result.calculationRequest)
     val moments = requireNotNull(result.moments).toList()
     require(moments.isNotEmpty() && moments.all {
-        it.point.position.elevationDegrees.isFinite() &&
+        it.point.position.elevationDegrees.isFinite() && it.point.position.azimuthDegrees.isFinite() &&
             Instant.ofEpochMilli(it.point.timeMs).atZone(request.calendar.zone).year == request.calendar.year
     })
     return SpaceCompassSkyHeightsSnapshot(request.calendar, request.place, moments, observationTimeMs, capturedAtMs)
@@ -56,12 +56,13 @@ internal fun spaceCompassSkyHeightsDocument(snapshot: SpaceCompassSkyHeightsSnap
     }
     val columns = listOf(strings.getString(R.string.capture_table_events), strings.getString(R.string.format_date_time_heading),
         strings.getString(R.string.format_time_heading), strings.getString(R.string.observer_zone),
-        strings.getString(R.string.capture_table_elevation) + " (°)")
+        strings.getString(R.string.capture_table_azimuth) + " (°)", strings.getString(R.string.capture_table_elevation) + " (°)")
     val rows = spaceCompassObservationMomentRows(snapshot.moments).map { entry ->
         val point = requireNotNull(entry.point)
         listOf(spaceCompassObservationMomentTitle(entry, profile), skyHeightsDate(point.timeMs, zone, format),
             skyHeightsClock(point.timeMs, zone, format),
             formatSpaceCompassObserverUtcOffset(zone.toZoneId().rules.getOffset(Instant.ofEpochMilli(point.timeMs))),
+            formatSpaceCompassPanoramaElevation(point.position.azimuthDegrees, format),
             formatSpaceCompassPanoramaElevation(point.position.elevationDegrees, format))
     }
     val notes = listOf(strings.getString(R.string.observation_moments_midpoint_note)) +

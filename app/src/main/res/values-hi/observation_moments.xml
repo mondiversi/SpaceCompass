@@ -4,7 +4,7 @@
     <string name="observation_height_minimum">वार्षिक न्यूनतम</string>
     <string name="observation_height_mid_rising">मध्य ऊँचाई बढ़ती %1$s</string>
     <string name="observation_height_mid_setting">मध्य ऊँचाई घटती %1$s</string>
-    <string name="observation_moments_year">चुने हुए वर्ष में ऊपरी चरमोत्कर्षों के अधिकतम, न्यूनतम और मध्य ऊँचाई के पारगमन। उस क्षण समय रोकने के लिए तारीख और समय पर टैप करें।</string>
+    <string name="observation_moments_year">चुने हुए वर्ष में ऊपरी चरमोत्कर्षों के अधिकतम, न्यूनतम और मध्य ऊँचाई के पारगमन।</string>
     <string name="observation_moments_midpoint_note">मध्य ऊँचाई: वार्षिक अधिकतम और न्यूनतम ऊँचाई के औसत के सबसे निकट का ऊपरी पारगमन।</string>
     <string name="observation_moments_unavailable">उपलब्ध कक्षीय डेटा विश्वसनीय वार्षिक गणना के लिए पर्याप्त नहीं है।</string>
     <string name="observation_moment_applied">तारीख और समय सेट · समय रुका हुआ</string>
@@ -16,4 +16,12 @@
     <string name="observation_height_mid_setting_single">मध्य ऊँचाई घटती</string>
     <string name="observation_heights_title">प्रमुख ऊँचाइयाँ</string>
     <string name="observation_heights_year">वर्ष</string>
+
+    <string name="observation_height_monthly">21 तारीख का उच्चतम पारगमन</string>
+    <string name="comparison_selection_note">Location बदले बिना आकाश में निश्चित समय की तुलना जोड़ने के लिए चेकबॉक्स चुनें।</string>
+    <string name="comparison_reference_point">संदर्भ</string>
+    <string name="observatory_key_points">प्रमुख बिंदु</string>
+    <string name="observatory_key_heights">ऊँचाइयाँ</string>
+    <string name="observatory_key_events">घटनाएँ</string>
+    <string name="observatory_menu">वेधशाला मेनू</string>
 </resources>

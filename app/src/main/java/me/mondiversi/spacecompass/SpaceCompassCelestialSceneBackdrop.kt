@@ -25,11 +25,12 @@ internal fun SpaceCompassCelestialSceneBackdrop(opticalFrame: SpaceCompassSunSce
     latitude: Double?, altitude: Double, showReferences: Boolean, toolbarHeight: Double, modifier: Modifier,
     longitude: Double? = null, objectOpacity: Float = 1f, showReticle: Boolean = true, showAntipodes: Boolean = false) {
     if (opticalFrame == null || orientation == null) return
+    val comparisonOverlays = LocalSpaceCompassComparisonOverlays.current
     val density = LocalDensity.current
     val paths = overlays.mapNotNull { (candidate, overlay) -> overlay.path?.let { candidate to it } }.toMap() +
-        (dailyPath?.takeIf { body != null }?.let { mapOf(requireNotNull(body) to it) } ?: emptyMap())
+        (dailyPath?.takeIf { body != null && it.comparison == null }?.let { mapOf(requireNotNull(body) to it) } ?: emptyMap())
     val positions = overlays.mapNotNull { (candidate, overlay) -> overlay.observation?.position?.let { candidate to it } }.toMap() +
-        (position?.takeIf { body != null }?.let { mapOf(requireNotNull(body) to it) } ?: emptyMap())
+        (position?.takeIf { body != null && dailyPath?.comparison == null }?.let { mapOf(requireNotNull(body) to it) } ?: emptyMap())
     val current = positions.mapValues { SpaceCompassSunPathPoint(timeMs, it.value) }
     val moonPhase = rememberSpaceCompassMoonMarkerPhase(timeMs.takeIf { SpaceCompassCelestialBody.MOON in positions })
     BoxWithConstraints(modifier.clipToBounds().testTag("celestial-full-scene")) {
@@ -38,8 +39,9 @@ internal fun SpaceCompassCelestialSceneBackdrop(opticalFrame: SpaceCompassSunSce
         val perspective = remember(width, height, opticalFrame, cameraPerspective) {
             spaceCompassSceneFramePerspective(width, height, opticalFrame, cameraPerspective)
         }
-        val targets = remember(paths, current, orientation, width, height, perspective) {
-            projectSpaceCompassCelestialSceneTargets(paths, current, orientation, width, height, perspective)
+        val targets = remember(paths, current, comparisonOverlays, orientation, width, height, perspective) {
+            projectSpaceCompassCelestialSceneTargets(paths, current, orientation, width, height, perspective) +
+                projectSpaceCompassComparisonTargets(comparisonOverlays, orientation, width, height, perspective)
         }
         val focused = if (showReticle) focusedSpaceCompassCelestialSceneTarget(targets, width, height,
             with(density) { SPACE_COMPASS_CELESTIAL_RETICLE_RADIUS_DP.dp.toPx().toDouble() }, perspective) else null
@@ -58,10 +60,13 @@ internal fun SpaceCompassCelestialSceneBackdrop(opticalFrame: SpaceCompassSunSce
             enabled = showReferences, observerAltitude = altitude) {
             SpaceCompassConstellationsLayer(positions.keys, timeMs,
                 latitude, longitude, altitude, orientation, perspective)
+            SpaceCompassTemporalComparisonLayer(comparisonOverlays, orientation, perspective, state,
+                primaryText, secondaryText, background, focused, width / density.density, height / density.density,
+                objectOpacity, drawPaths = true, drawMarkers = true, interactive = false, markerViewport = opticalFrame)
             paths.forEach { (candidate, path) -> key(candidate) {
                 SpaceCompassSunDailyPathLayer(path, orientation, state, primaryText, secondaryText, background,
                     showActions = false, interactive = false, pathTint = spaceCompassCelestialPathTint(candidate),
-                    highlightedPoint = focused?.takeIf { it.body == candidate && !it.isCurrent }?.point,
+                    highlightedPoint = focused?.takeIf { it.body == candidate && it.comparison == null && !it.isCurrent }?.point,
                     perspective = perspective)
             } }
             // The free viewport retains its interactive thumbnails; covered/marginal ones are decorative only.
@@ -77,9 +82,9 @@ internal fun SpaceCompassCelestialSceneBackdrop(opticalFrame: SpaceCompassSunSce
             } }
         }
         val selected = state.selectedPoints
-        val antipodes = remember(selected, paths, current, orientation, width, height, perspective, showAntipodes) {
+        val antipodes = remember(selected, paths, current, comparisonOverlays, orientation, width, height, perspective, showAntipodes) {
             if (showAntipodes) projectSpaceCompassSelectedOrbitTargets(selected, paths, current, orientation,
-                width, height, perspective, antipodes = true) else emptyList()
+                width, height, perspective, antipodes = true, comparisons = comparisonOverlays) else emptyList()
         }
         val accent = MaterialTheme.colorScheme.primary
         Canvas(Modifier.fillMaxSize().testTag("celestial-full-scene-antipodes")) {

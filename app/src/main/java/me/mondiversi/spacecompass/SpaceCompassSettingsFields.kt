@@ -30,10 +30,10 @@ import androidx.compose.ui.unit.sp
 /** UVIR-sized descriptions, with Space Compass's own theme and resources. */
 @Composable
 internal fun SpaceCompassSettingsDescription(text: String, modifier: Modifier = Modifier,
-    pageDescription: Boolean = false) {
+    pageDescription: Boolean = false, compact: Boolean = false) {
     Text(text, modifier, color = MaterialTheme.colorScheme.onSurface.copy(alpha = .72f),
-        fontSize = if (pageDescription) 13.sp else 12.sp,
-        lineHeight = if (pageDescription) 18.sp else 16.sp)
+        fontSize = when { compact -> 10.sp; pageDescription -> 13.sp; else -> 12.sp },
+        lineHeight = when { compact -> 13.sp; pageDescription -> 18.sp; else -> 16.sp })
 }
 
 internal val SpaceCompassCompactFieldContentPadding = PaddingValues(horizontal = 16.dp, vertical = 4.dp)

@@ -161,6 +161,7 @@ internal val LocalSpaceCompassObserver = staticCompositionLocalOf<SpaceCompassOb
 /** Live mode follows phone-zone changes instead of retaining a composition-time default. */
 @Composable
 internal fun spaceCompassObservationZone(): ZoneId {
+    LocalSpaceCompassObservationZoneOverride.current?.let { return it }
     val deviceZone = ZoneId.systemDefault()
     return LocalSpaceCompassObserver.current?.plan?.observationZone(deviceZone) ?: deviceZone
 }

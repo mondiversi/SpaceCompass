@@ -38,10 +38,10 @@ internal fun SpaceCompassCelestialSceneInteraction(targets: List<SpaceCompassCel
         val pinned = pinnedTargets ?: projectSpaceCompassSelectedOrbitTargets(state.selectedPoints, paths, currentPoints,
             orientation, with(density) { maxWidth.toPx().toDouble() }, with(density) { maxHeight.toPx().toDouble() }, perspective)
         val historical = pinned.filter { saved -> !saved.isCurrent && targets.none { target ->
-            !target.isCurrent && target.body == saved.body && target.path != null && saved.path != null &&
+            !target.isCurrent && target.body == saved.body && target.comparison?.id == saved.comparison?.id && target.path != null && saved.path != null &&
                 spaceCompassOrbitPointKeysMatch(
-                    spaceCompassOrbitPointKey(target.body, target.point, target.path.zone, spaceCompassPathSelectionDate(target.path,target.point)),
-                    spaceCompassOrbitPointKey(saved.body, saved.point, saved.path.zone, spaceCompassPathSelectionDate(saved.path,saved.point)))
+                    spaceCompassOrbitPointKey(target.body, target.point, target.path.zone, spaceCompassPathSelectionDate(target.path,target.point), comparisonId = target.comparison?.id),
+                    spaceCompassOrbitPointKey(saved.body, saved.point, saved.path.zone, spaceCompassPathSelectionDate(saved.path,saved.point), comparisonId = saved.comparison?.id))
         } }
         val currentTargets by rememberUpdatedState(targets + historical + antipodeTargets)
         val blockedRegions by rememberUpdatedState(hitExclusions)

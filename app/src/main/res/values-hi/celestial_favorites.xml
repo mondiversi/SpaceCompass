@@ -2,4 +2,6 @@
 <resources>
     <string name="celestial_favorite_add">पसंदीदा में जोड़ें</string>
     <string name="celestial_favorite_remove">पसंदीदा से हटाएँ</string>
+    <string name="celestial_favorite_added">पसंदीदा में जोड़ा गया</string>
+    <string name="celestial_favorite_removed">पसंदीदा से हटाया गया</string>
 </resources>

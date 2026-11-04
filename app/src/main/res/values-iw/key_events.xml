@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="key_events_title">אירועים מרכזיים</string>
-    <string name="key_events_description">אירועים עבור העצם, השנה והמיקום שנבחרו. יש להקיש על תאריך כדי לצפות ברגע כשהזמן מושהה.</string>
+    <string name="key_events_description">אירועים עבור העצם, השנה והמיקום שנבחרו.</string>
     <string name="key_events_empty">אין אירועים מסוג זה עבור העצם בשנה שנבחרה.</string>
     <string name="key_events_horizon_note">אופק אידאלי ללא מכשולים, כמו במסלול היומי. תקופות קוטביות נמשכות בין זריחות ושקיעות עוקבות; זמני הקיצון משתמשים בשעה המקומית של המיקום.</string>
     <string name="key_events_global_note">לאירועים מסלוליים יש רגעים אוניברסליים. הגובה מחושב מהמיקום; המרחקים נמדדים בין מרכזי הגופים.</string>

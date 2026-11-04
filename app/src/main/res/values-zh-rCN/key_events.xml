@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="key_events_title">关键事件</string>
-    <string name="key_events_description">所选天体、年份和地点的事件。点按日期即可暂停时间并观察该时刻。</string>
+    <string name="key_events_description">所选天体、年份和地点的事件。</string>
     <string name="key_events_empty">所选年份中，此天体没有此类事件。</string>
     <string name="key_events_horizon_note">采用与每日轨迹相同的理想无遮挡地平线。极昼和极夜时长为相邻升落之间的间隔；最早和最晚时刻使用地点的当地时间。</string>
     <string name="key_events_global_note">轨道事件在全球同一瞬间发生。仰角根据地点计算；距离按天体中心之间测量。</string>

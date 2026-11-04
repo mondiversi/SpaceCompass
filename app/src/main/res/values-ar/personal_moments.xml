@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="personal_moments_title">لحظات شخصية</string>
+    <string name="personal_moment_add">إضافة لحظة</string>
+    <string name="personal_moment_time_optional">الوقت (اختياري)</string>
+    <string name="personal_moment_delete">حذف اللحظة</string>
+    <string name="personal_moments_empty">لا توجد لحظات شخصية.</string>
+    <string name="personal_moment_duplicate">هذه اللحظة موجودة بالفعل</string>
+    <string name="personal_moments_export">تصدير اللحظات الشخصية</string>
+    <string name="personal_moments_import">استيراد اللحظات الشخصية</string>
+    <string name="personal_moments_file_saved">تم حفظ اللحظات الشخصية</string>
+    <string name="personal_moments_file_imported">تم استيراد اللحظات الشخصية</string>
+    <string name="personal_moments_file_existing">هذه اللحظات محفوظة بالفعل</string>
+    <string name="personal_moments_file_wrong_body">يحتوي هذا الملف على لحظات لـ %1$s</string>
+    <string name="personal_moments_file_error">تعذر حفظ اللحظات الشخصية أو مشاركتها</string>
+    <string name="personal_moments_file_import_error">تعذر استيراد اللحظات الشخصية</string>
+</resources>

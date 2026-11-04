@@ -2,13 +2,12 @@
 
 ## Vertically centered caption — current local update
 
-The fitted single-line caption is centered vertically between the upper image
-edge and the top angular grid line, using the shaped text layout's actual height.
-The renderer and caption share a 144 px heading at the 4096 px export width,
-scaled proportionally for other resolutions. This leaves room for the unchanged
-44 px reserved extent of a current object at +90 degrees. Horizontal centering,
-text fitting, the full 360 by 180 degree scene and its 2:1 projection are retained.
-The same bitmap layout serves preview, Save, Share and all disclosure variants.
+The information caption wraps at a fixed, shared font size and is centered by
+its visible glyph bounds inside its own opaque black band. The legend uses the
+same type and margins in a separate footer. Band heights follow their content;
+the top azimuth gutter and the 44 px reserved extent of a zenith marker remain
+outside the heading. The full 360 by 180 degree scene keeps its 2:1 projection.
+Preview, Save, Share and all disclosure variants use the same bitmap layout.
 
 Capture uses a neutral shutter circle at the bottom trailing corner of the main
 sky viewport, including its left column in landscape. It has a localized
@@ -85,7 +84,7 @@ associated with its point. All point pills are drawn after all curves/orbit name
 so another object's line cannot cross their text; current images/names keep their
 reserved space and remain the last layer. Current positions use the same drawing primitives and textures
 as the live app, including the frozen lunar phase and spacecraft/ISS models.
-Known objects are named on the scene without a redundant object legend.
+Known objects are named on the scene according to the label mode, with a persistent bottom identity legend.
 Objects without a usable position or trajectory cannot be drawn; their live
 status remains available in the app.
 
@@ -314,3 +313,26 @@ another checked object. The All, Selected points and None modes retain their sco
 Photo projection still omits anything outside the captured field, and common label
 placement retains collision avoidance and prioritizes pinned/current captions.
 Language, disclosure and scientific export variants retain this frozen target.
+
+## Information-band typography
+
+Caption and legend share one bold white font size, based on the capture's short
+side: 26 px per 1080 px, with the existing 0.45 minimum scale. Both use 16-unit
+horizontal and 8-unit vertical insets at that scale, and center visible glyphs.
+Panoramas use their 2:1 scene dimensions; photographs use the uncropped upright
+JPEG dimensions. Long captions and legend names wrap at full size instead of
+shrinking or truncating. Legend rows use their actual wrapped height, with color
+dots scaled to the text. Both bands remain outside the unchanged angular/photo
+frame and use the same layout for previews and exported language/unit profiles.
+
+## Trajectory names in captures
+
+Both camera photos and synthetic panoramas draw object names along their projected
+trajectories in the default Key and selected points mode. This is independent of
+hourly point pills and names over current thumbnails. All includes every curve;
+Object and selected points includes the active curve and curves with selected
+points; Selected points includes only curves with selected points; None hides all
+curve names. Frozen comparisons use their own localized object/date/time/zone
+name and independent selection identity. The bottom legend remains present.
+Curved names use the main view's shared placement, outline, above/below-horizon
+tints and collision avoidance, constrained to the photographed/panoramic frame.

@@ -4,7 +4,7 @@
     <string name="observation_height_minimum">Mínimo anual</string>
     <string name="observation_height_mid_rising">Altura média crescente %1$s</string>
     <string name="observation_height_mid_setting">Altura média decrescente %1$s</string>
-    <string name="observation_moments_year">Máximos, mínimos e passagens pela altura média das culminações superiores ao longo do ano selecionado. Toque numa data e hora para parar o tempo nesse momento.</string>
+    <string name="observation_moments_year">Máximos, mínimos e passagens pela altura média das culminações superiores ao longo do ano selecionado.</string>
     <string name="observation_moments_midpoint_note">Altura média: a culminação mais próxima da média das alturas máxima e mínima anuais.</string>
     <string name="observation_moments_unavailable">Os dados orbitais disponíveis não permitem um cálculo anual fiável.</string>
     <string name="observation_moment_applied">Data e hora definidas · Tempo parado</string>
@@ -16,4 +16,12 @@
     <string name="observation_height_mid_setting_single">Altura média decrescente</string>
     <string name="observation_heights_title">Alturas-chave</string>
     <string name="observation_heights_year">Ano</string>
+
+    <string name="observation_height_monthly">Culminação do dia 21</string>
+    <string name="comparison_selection_note">Selecione uma caixa para adicionar uma comparação do céu num instante fixo, sem alterar a Location.</string>
+    <string name="comparison_reference_point">Referência</string>
+    <string name="observatory_key_points">Pontos-chave</string>
+    <string name="observatory_key_heights">Alturas</string>
+    <string name="observatory_key_events">Eventos</string>
+    <string name="observatory_menu">Menu do observatório</string>
 </resources>

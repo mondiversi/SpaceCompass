@@ -4,7 +4,7 @@
     <string name="observation_height_minimum">年度最低</string>
     <string name="observation_height_mid_rising">中间高度 上升 %1$s</string>
     <string name="observation_height_mid_setting">中间高度 下降 %1$s</string>
-    <string name="observation_moments_year">所选年份内上中天高度的最高值、最低值和中间高度过境。点击日期和时间可将时间暂停在该时刻。</string>
+    <string name="observation_moments_year">所选年份内上中天高度的最高值、最低值和中间高度过境。</string>
     <string name="observation_moments_midpoint_note">中间高度：最接近年度最高和最低高度平均值的上中天时刻。</string>
     <string name="observation_moments_unavailable">现有轨道数据不足以进行可靠的年度计算。</string>
     <string name="observation_moment_applied">已设置日期和时间 · 时间已暂停</string>
@@ -16,4 +16,12 @@
     <string name="observation_height_mid_setting_single">中间高度 下降</string>
     <string name="observation_heights_title">关键高度</string>
     <string name="observation_heights_year">年份</string>
+
+    <string name="observation_height_monthly">21日上中天</string>
+    <string name="comparison_selection_note">勾选复选框可添加固定时刻的天空对比，而不更改 Location。</string>
+    <string name="comparison_reference_point">参考</string>
+    <string name="observatory_key_points">关键点</string>
+    <string name="observatory_key_heights">高度</string>
+    <string name="observatory_key_events">事件</string>
+    <string name="observatory_menu">天文台菜单</string>
 </resources>

@@ -4,7 +4,7 @@
     <string name="observation_height_minimum">Yıllık minimum</string>
     <string name="observation_height_mid_rising">Orta yükseklik artan %1$s</string>
     <string name="observation_height_mid_setting">Orta yükseklik azalan %1$s</string>
-    <string name="observation_moments_year">Seçilen yıl boyunca üst geçişlerin maksimum, minimum ve orta yükseklik geçişleri. O anda zamanı durdurmak için tarih ve saate dokunun.</string>
+    <string name="observation_moments_year">Seçilen yıl boyunca üst geçişlerin maksimum, minimum ve orta yükseklik geçişleri.</string>
     <string name="observation_moments_midpoint_note">Orta yükseklik: yıllık en yüksek ve en düşük yüksekliklerin ortalamasına en yakın üst geçiş.</string>
     <string name="observation_moments_unavailable">Mevcut yörünge verileri güvenilir bir yıllık hesaplama için yeterli değil.</string>
     <string name="observation_moment_applied">Tarih ve saat ayarlandı · Zaman durduruldu</string>
@@ -16,4 +16,12 @@
     <string name="observation_height_mid_setting_single">Orta yükseklik azalan</string>
     <string name="observation_heights_title">Önemli yükseklikler</string>
     <string name="observation_heights_year">Yıl</string>
+
+    <string name="observation_height_monthly">Ayın 21’inde üst geçiş</string>
+    <string name="comparison_selection_note">Location ayarını değiştirmeden gökyüzüne sabit zamanlı bir karşılaştırma eklemek için kutuyu işaretleyin.</string>
+    <string name="comparison_reference_point">Referans</string>
+    <string name="observatory_key_points">Önemli noktalar</string>
+    <string name="observatory_key_heights">Yükseklikler</string>
+    <string name="observatory_key_events">Olaylar</string>
+    <string name="observatory_menu">Gözlemevi menüsü</string>
 </resources>

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="personal_moments_title">لحظه‌های شخصی</string>
+    <string name="personal_moment_add">افزودن لحظه</string>
+    <string name="personal_moment_time_optional">ساعت (اختیاری)</string>
+    <string name="personal_moment_delete">حذف لحظه</string>
+    <string name="personal_moments_empty">لحظهٔ شخصی وجود ندارد.</string>
+    <string name="personal_moment_duplicate">این لحظه از قبل وجود دارد</string>
+    <string name="personal_moments_export">صدور لحظه‌های شخصی</string>
+    <string name="personal_moments_import">وارد کردن لحظه‌های شخصی</string>
+    <string name="personal_moments_file_saved">لحظه‌های شخصی ذخیره شدند</string>
+    <string name="personal_moments_file_imported">لحظه‌های شخصی وارد شدند</string>
+    <string name="personal_moments_file_existing">این لحظه‌ها از قبل ذخیره شده‌اند</string>
+    <string name="personal_moments_file_wrong_body">این فایل شامل لحظه‌های %1$s است</string>
+    <string name="personal_moments_file_error">ذخیره یا اشتراک‌گذاری لحظه‌های شخصی ممکن نبود</string>
+    <string name="personal_moments_file_import_error">وارد کردن لحظه‌های شخصی ممکن نبود</string>
+</resources>

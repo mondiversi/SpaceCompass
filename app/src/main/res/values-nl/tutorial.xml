@@ -21,8 +21,8 @@
     <string name="tutorial_capture" formatted="false">Maak een hemelpanorama of camerafoto met astronomische overlays. Exporteer vanuit het voorbeeld.</string>
     <string name="tutorial_panels" formatted="false">Klap object- en kompaspanelen in of uit voor meer hemelruimte.</string>
     <string name="tutorial_antipodes" formatted="false">Tik om de tegengestelde richting van geselecteerde punten te tonen of te verbergen: azimut +180° en hoogte met omgekeerd teken. Houd ingedrukt om alle punten te deselecteren.</string>
-    <string name="tutorial_navigation" formatted="false">Blader door geselecteerde objecten. Het paneel toont het actieve object en de baankleuren. Tik op de naam om de objectcatalogus te openen.</string>
-    <string name="tutorial_observatory" formatted="false">Open model, wetenschappelijke gegevens, reistijd en jaarlijkse hoogten en gebeurtenissen.</string>
+    <string name="tutorial_navigation" formatted="false">Blader door geselecteerde objecten. Het paneel toont het actieve object en de baankleuren.</string>
+    <string name="tutorial_observatory" formatted="false">Tik op de objectnaam om het Observatorium te openen: model, wetenschappelijke gegevens, reistijd, belangrijke hoogtes en gebeurtenissen. Bovenaan staan Dagbaan, Exporteren en Favorieten, in die volgorde.</string>
     <string name="tutorial_daily" formatted="false">Bekijk baan, tijden, hoogten en selecteerbare punten. Toekomstige gebeurtenissen kunnen herinneringen krijgen.</string>
     <string name="tutorial_gps" formatted="false">Bekijk echte positie, GPS-hoogte, oriëntatie en weer, onafhankelijk van de Location.</string>
     <string name="tutorial_points" formatted="false">Selecteer een baanpunt. Richt erop voor object, tijd, T, azimut en hoogte. De rand van het object volgt de kleur van zijn baan; bij selectie van de huidige positie wordt hij blauw of cyaan.</string>
@@ -30,4 +30,5 @@
     <string name="tutorial_reminder" formatted="false">Open Android-alarm of agenda voor een geschikte toekomstige gebeurtenis. Niet voor verleden of huidig punt.</string>
     <string name="tutorial_status_title" formatted="false">Status en herstel</string>
     <string name="tutorial_status" formatted="false">Lees de status. De actie kan toestemming vragen, locatie inschakelen of baan- en weergegevens opnieuw laden. De tutorial voert de actie niet uit.</string>
+    <string name="tutorial_remove" formatted="false">Verwijder het actieve object na bevestiging uit de geselecteerde objecten. Het object blijft beschikbaar in de catalogus.</string>
 </resources>

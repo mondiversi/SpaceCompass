@@ -4,7 +4,7 @@
     <string name="observation_height_minimum">Jaarminimum</string>
     <string name="observation_height_mid_rising">Middenhoogte stijgend %1$s</string>
     <string name="observation_height_mid_setting">Middenhoogte dalend %1$s</string>
-    <string name="observation_moments_year">Maxima, minima en passages op halve hoogte van de bovenste culminaties in het gekozen jaar. Tik op een datum en tijd om op dat moment te pauzeren.</string>
+    <string name="observation_moments_year">Maxima, minima en passages op halve hoogte van de bovenste culminaties in het gekozen jaar.</string>
     <string name="observation_moments_midpoint_note">Middenhoogte: de culminatie die het dichtst bij het gemiddelde van de jaarlijkse maximale en minimale hoogte ligt.</string>
     <string name="observation_moments_unavailable">De beschikbare baangegevens laten geen betrouwbare jaarberekening toe.</string>
     <string name="observation_moment_applied">Datum en tijd ingesteld · Tijd stilgezet</string>
@@ -16,4 +16,12 @@
     <string name="observation_height_mid_setting_single">Middenhoogte dalend</string>
     <string name="observation_heights_title">Belangrijke hoogten</string>
     <string name="observation_heights_year">Jaar</string>
+
+    <string name="observation_height_monthly">Culminatie op de 21e</string>
+    <string name="comparison_selection_note">Vink een vakje aan om de hemel op een vast tijdstip te vergelijken zonder de Location te wijzigen.</string>
+    <string name="comparison_reference_point">Referentie</string>
+    <string name="observatory_key_points">Kernpunten</string>
+    <string name="observatory_key_heights">Hoogten</string>
+    <string name="observatory_key_events">Momenten</string>
+    <string name="observatory_menu">Menu van de sterrenwacht</string>
 </resources>

@@ -2,4 +2,6 @@
 <resources>
     <string name="celestial_favorite_add">添加到收藏</string>
     <string name="celestial_favorite_remove">从收藏中移除</string>
+    <string name="celestial_favorite_added">已添加到收藏</string>
+    <string name="celestial_favorite_removed">已从收藏中移除</string>
 </resources>

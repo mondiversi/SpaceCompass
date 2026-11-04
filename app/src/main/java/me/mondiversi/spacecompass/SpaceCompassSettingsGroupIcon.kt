@@ -91,6 +91,17 @@ internal fun SpaceCompassSettingsGroupIcon(key: String, tint: Color) {
                 }
                 drawPath(event, tint)
             }
+            "personal_moments" -> {
+                drawCircle(tint, size.minDimension * .17f, point(.50f, .27f), style = outline)
+                val shoulders = Path().apply {
+                    moveTo(size.width * .15f, size.height * .87f)
+                    cubicTo(size.width * .17f, size.height * .68f, size.width * .30f, size.height * .57f,
+                        size.width * .50f, size.height * .57f)
+                    cubicTo(size.width * .70f, size.height * .57f, size.width * .83f, size.height * .68f,
+                        size.width * .85f, size.height * .87f)
+                }
+                drawPath(shoulders, tint, style = outline)
+            }
             "identity" -> {
                 drawCircle(tint, size.minDimension * .28f, center, style = outline)
                 val ringPlacement = point(.5f, .5f)

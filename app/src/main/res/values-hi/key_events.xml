@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="key_events_title">मुख्य घटनाएँ</string>
-    <string name="key_events_description">चुनी गई वस्तु, वर्ष और स्थान की घटनाएँ। समय रोककर उस क्षण को देखने के लिए तारीख पर टैप करें।</string>
+    <string name="key_events_description">चुनी गई वस्तु, वर्ष और स्थान की घटनाएँ।</string>
     <string name="key_events_empty">चुने गए वर्ष में इस वस्तु के लिए इस प्रकार की कोई घटना नहीं है।</string>
     <string name="key_events_horizon_note">दैनिक पथ की तरह आदर्श खुला क्षितिज। ध्रुवीय अवधियाँ क्रमिक उदय और अस्त के बीच हैं; चरम समय स्थान के स्थानीय समय में हैं।</string>
     <string name="key_events_global_note">कक्षीय घटनाओं के क्षण सार्वभौमिक होते हैं। उन्नयन स्थान से गणना किया जाता है; दूरियाँ पिंडों के केंद्रों के बीच मापी जाती हैं।</string>

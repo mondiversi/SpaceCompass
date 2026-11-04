@@ -14,11 +14,13 @@ import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.graphicsLayer
 import androidx.compose.ui.layout.layout
-import androidx.compose.ui.layout.onSizeChanged
 import androidx.compose.ui.unit.IntSize
 import androidx.compose.ui.platform.LocalContext
+import androidx.compose.ui.platform.LocalDensity
 import androidx.compose.ui.platform.testTag
 import androidx.compose.ui.res.stringResource
+import androidx.compose.ui.semantics.heading
+import androidx.compose.ui.semantics.semantics
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
@@ -27,6 +29,7 @@ import androidx.lifecycle.LifecycleEventObserver
 import androidx.lifecycle.compose.LocalLifecycleOwner
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
+import java.time.Instant
 
 private val rotationSaver = Saver<SpaceCompassCelestialRotation, List<Any>>(
     save = { listOf(it.yaw, it.pitch, it.automatic, it.manualOrientation.w,
@@ -43,11 +46,18 @@ private val viewportSaver = Saver<SpaceCompassCelestialViewportState, List<Doubl
 internal fun SpaceCompassCelestialObservatoryPage(body: SpaceCompassCelestialBody, timeMs: Long,
     latitude: Double?, longitude: Double?, altitude: Double, remote: SpaceCompassCelestialRemoteData,
     primaryText: Color, secondaryText: Color, backgroundColor: Color,
-    onBack: () -> Unit) {
+    onDailyPath: (() -> Unit)? = null, onBack: () -> Unit) {
     val context = LocalContext.current
+    val observationZone = spaceCompassObservationZone()
+    val observationYear = remember(timeMs, observationZone) { Instant.ofEpochMilli(timeMs).atZone(observationZone).year }
+    val calendar = SpaceCompassObservationCalendar(body, observationYear, observationZone)
+    val defaultHeights = rememberSpaceCompassObservationMoments(calendar, timeMs, latitude, longitude, altitude, remote)
+    val defaultEvents = rememberSpaceCompassKeyEvents(calendar, latitude, longitude, altitude, remote)
+    val heightsCount = remember(defaultHeights) { defaultHeights.totalRows }
     var rotating by rememberSaveable(body) { mutableStateOf(false) }
     var heightsVisible by rememberSaveable(body) { mutableStateOf(false) }
     var eventsVisible by rememberSaveable(body) { mutableStateOf(false) }
+    var personalMomentsVisible by rememberSaveable(body) { mutableStateOf(false) }
     val rotationState = rememberSaveable(body, stateSaver = rotationSaver) {
         mutableStateOf(SpaceCompassCelestialRotation(pitch = if (body.isSpacecraft) 50.0 else 15.0))
     }
@@ -103,9 +113,9 @@ internal fun SpaceCompassCelestialObservatoryPage(body: SpaceCompassCelestialBod
         }
         lifecycle.addObserver(observer); onDispose { lifecycle.removeObserver(observer) }
     }
-    LaunchedEffect(rotating, automatic, resumed, export.visible, heightsVisible, eventsVisible) {
+    LaunchedEffect(rotating, automatic, resumed, export.visible, heightsVisible, eventsVisible, personalMomentsVisible) {
         // Cap to 30 updates/s and stop entirely off-screen or in a manually held orientation.
-        if (rotating && automatic && resumed && !export.visible && !heightsVisible && !eventsVisible) {
+        if (rotating && automatic && resumed && !export.visible && !heightsVisible && !eventsVisible && !personalMomentsVisible) {
             var previous = 0L
             while (true) withFrameNanos { frame ->
                 if (previous == 0L) previous = frame
@@ -116,8 +126,8 @@ internal fun SpaceCompassCelestialObservatoryPage(body: SpaceCompassCelestialBod
             }
         }
     }
-    LaunchedEffect(body, rotating, returning, resumed, export.visible, heightsVisible, eventsVisible) {
-        if (rotating && returning && resumed && !export.visible && !heightsVisible && !eventsVisible) {
+    LaunchedEffect(body, rotating, returning, resumed, export.visible, heightsVisible, eventsVisible, personalMomentsVisible) {
+        if (rotating && returning && resumed && !export.visible && !heightsVisible && !eventsVisible && !personalMomentsVisible) {
             if (!android.animation.ValueAnimator.areAnimatorsEnabled()) {
                 rotationState.value = rotationState.value.resume()
             } else {
@@ -140,7 +150,8 @@ internal fun SpaceCompassCelestialObservatoryPage(body: SpaceCompassCelestialBod
             }
         }
     }
-    BackHandler { if (eventsVisible) eventsVisible = false
+    BackHandler { if (personalMomentsVisible) personalMomentsVisible = false
+        else if (eventsVisible) eventsVisible = false
         else if (heightsVisible) heightsVisible = false
         else if (export.visible) export.close() else if (!export.saving) onBack() }
     val referencePressure = formatSpaceCompassPressure(SpaceCompassPressureUnit.BAR.pascals, numeric, units.pressure)!!
@@ -162,7 +173,7 @@ internal fun SpaceCompassCelestialObservatoryPage(body: SpaceCompassCelestialBod
         else -> R.string.celestial_view_map_note
     })
     val model: @Composable (Modifier) -> Unit = { placement ->
-            Box(placement.testTag("celestial-view-model").onSizeChanged { modelSize = it }.clip(RoundedCornerShape(18.dp)).background(Color(0xff04060c)),
+            Box(placement.testTag("celestial-view-model").clip(RoundedCornerShape(18.dp)).background(Color(0xff04060c)),
                 contentAlignment = Alignment.Center) {
                 // Only this restartable region reads the animation angle: facts do not recompose at 30 Hz.
                 val viewGeometry = if (rotating || !body.hasPhysicalFace) rotationState.value.geometry() else geometry.takeIf { hasLocation }
@@ -206,13 +217,21 @@ internal fun SpaceCompassCelestialObservatoryPage(body: SpaceCompassCelestialBod
             SpaceCompassCelestialDetailSections(body, facts, timeMs, remote, distance, phase,
                 geometry?.illuminatedFraction, coordinates, primaryText, secondaryText,
                 orbitContent = {
-                    Column(verticalArrangement = Arrangement.spacedBy(8.dp)) {
-                        SpaceCompassSettingsActionButton(stringResource(R.string.observation_heights_title),
-                            { heightsVisible = true }, Modifier.testTag("open-sky-heights")) {
+                    HorizontalDivider(Modifier.padding(top = 4.dp), color = primaryText.copy(alpha = 0.12f))
+                    Text(stringResource(R.string.observatory_key_points), Modifier.semantics { heading() },
+                        color = primaryText, fontWeight = FontWeight.SemiBold, fontSize = 13.sp, lineHeight = 17.sp)
+                    val buttonPadding = PaddingValues(horizontal = 12.dp, vertical = 8.dp)
+                    Row(Modifier.fillMaxWidth(), horizontalArrangement = Arrangement.spacedBy(8.dp)) {
+                        SpaceCompassSettingsActionButton(
+                            spaceCompassObservationCountLabel(stringResource(R.string.observatory_key_heights), heightsCount),
+                            { heightsVisible = true }, Modifier.weight(1f).testTag("open-sky-heights"),
+                            contentPadding = buttonPadding) {
                             SpaceCompassSettingsGroupIcon("sky_heights", LocalContentColor.current)
                         }
-                        SpaceCompassSettingsActionButton(stringResource(R.string.key_events_title),
-                            { eventsVisible = true }, Modifier.testTag("open-key-events")) {
+                        SpaceCompassSettingsActionButton(
+                            spaceCompassObservationCountLabel(stringResource(R.string.observatory_key_events), defaultEvents.totalRows),
+                            { eventsVisible = true }, Modifier.weight(1f).testTag("open-key-events"),
+                            contentPadding = buttonPadding) {
                             SpaceCompassSettingsGroupIcon("events", LocalContentColor.current)
                         }
                     }
@@ -297,28 +316,47 @@ internal fun SpaceCompassCelestialObservatoryPage(body: SpaceCompassCelestialBod
     Box(Modifier.fillMaxSize()) {
     Column(Modifier.fillMaxSize().layout { measurable,constraints ->
         val placeable=measurable.measure(constraints)
-        layout(placeable.width,placeable.height) { if (!export.visible && !heightsVisible && !eventsVisible) placeable.placeRelative(0,0) }
+        layout(placeable.width,placeable.height) { if (!export.visible && !heightsVisible && !eventsVisible && !personalMomentsVisible) placeable.placeRelative(0,0) }
     }.background(backgroundColor).testTag("celestial-viewer")) {
         SpaceCompassPageToolbar(stringResource(R.string.celestial_details_title), { if (!export.saving) onBack() },
             modifier = Modifier.testTag("celestial-view-toolbar"),
             titleModifier = Modifier.testTag("celestial-view-title"), titleColor = primaryText) {
             SpaceCompassCelestialFavoriteAction(body, enabled = !export.saving)
-            SpaceCompassTitleActionButton(stringResource(R.string.panorama_export),export.open,
-                Modifier.testTag("observatory-export"),enabled=!export.saving) { SpaceCompassPanoramaExportIcon(2.dp) }
+            SpaceCompassObservatoryMenu(enabled = !export.saving, onDailyPath = onDailyPath,
+                onHeights = { heightsVisible = true }, onEvents = { eventsVisible = true },
+                onPersonalMoments = { personalMomentsVisible = true }, onExport = export.open)
         }
         BoxWithConstraints(Modifier.fillMaxSize().padding(horizontal = 10.dp)) {
             // Start below the toolbar with side insets; system bars already own the bottom safe area.
-            if (maxWidth > maxHeight && maxWidth >= 540.dp) Row(Modifier.fillMaxSize(), horizontalArrangement = Arrangement.spacedBy(12.dp)) {
-                model(Modifier.weight(1f).fillMaxHeight()); info(Modifier.weight(1f).fillMaxHeight())
-            } else Column(Modifier.fillMaxSize(), verticalArrangement = Arrangement.spacedBy(10.dp)) {
-                model(Modifier.weight(1f).fillMaxWidth()); info(Modifier.weight(1f).fillMaxWidth())
+            val sideBySide = maxWidth > maxHeight && maxWidth >= 540.dp
+            val modelGap = if (sideBySide) 12.dp else 10.dp
+            val expandedHeight = if (sideBySide) maxHeight else ((maxHeight - modelGap) / 2).coerceAtLeast(0.dp)
+            val expandedWidth = if (sideBySide) (maxWidth - modelGap) / 2 else maxWidth
+            val exportSize = with(LocalDensity.current) { IntSize(expandedWidth.roundToPx(), expandedHeight.roundToPx()) }
+            // Scroll compaction is local to the page; image exports use the expanded proportions.
+            SideEffect { modelSize = exportSize }
+            if (sideBySide) Row(Modifier.fillMaxSize(), horizontalArrangement = Arrangement.spacedBy(modelGap)) {
+                model(Modifier.weight(1f).fillMaxHeight())
+                info(Modifier.weight(1f).fillMaxHeight())
+            } else Column(Modifier.fillMaxSize(), verticalArrangement = Arrangement.spacedBy(modelGap)) {
+                val compactHeight = (expandedHeight / 2).coerceIn(minOf(104.dp, expandedHeight), expandedHeight)
+                model(Modifier.fillMaxWidth().layout { measurable, constraints ->
+                    // Read the offset during measurement to keep the model's composition and surface stable.
+                    val fraction = (scroll.value / 120.dp.toPx()).coerceIn(0f, 1f)
+                    val height = (expandedHeight - (expandedHeight - compactHeight) * fraction)
+                        .roundToPx().coerceIn(constraints.minHeight, constraints.maxHeight)
+                    val placeable = measurable.measure(constraints.copy(minHeight = height, maxHeight = height))
+                    layout(placeable.width, height) { placeable.placeRelative(0, 0) }
+                })
+                info(Modifier.weight(1f).fillMaxWidth())
             }
         }
     }
     if (export.visible) SpaceCompassPanoramaExportPage(export)
     if (heightsVisible) SpaceCompassSkyHeightsPage(body, timeMs, latitude, longitude, altitude, remote,
-        onBack = { heightsVisible = false })
+        defaultHeights, onBack = { heightsVisible = false })
     if (eventsVisible) SpaceCompassKeyEventsPage(body, timeMs, latitude, longitude, altitude, remote,
-        onBack = { eventsVisible = false })
+        defaultEvents, onBack = { eventsVisible = false })
+    if (personalMomentsVisible) SpaceCompassPersonalMomentsPage(body, timeMs, onBack = { personalMomentsVisible = false })
     }
 }

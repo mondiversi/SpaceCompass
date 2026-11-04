@@ -2,4 +2,6 @@
 <resources>
     <string name="celestial_favorite_add">Toevoegen aan favorieten</string>
     <string name="celestial_favorite_remove">Verwijderen uit favorieten</string>
+    <string name="celestial_favorite_added">Toegevoegd aan favorieten</string>
+    <string name="celestial_favorite_removed">Verwijderd uit favorieten</string>
 </resources>

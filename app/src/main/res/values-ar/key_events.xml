@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="key_events_title">الأحداث الرئيسية</string>
-    <string name="key_events_description">أحداث الجرم والسنة والموقع المحددة. المس تاريخًا لمشاهدة تلك اللحظة مع إيقاف الزمن.</string>
+    <string name="key_events_description">أحداث الجرم والسنة والموقع المحددة.</string>
     <string name="key_events_empty">لا توجد أحداث من هذا النوع لهذا الجرم في السنة المحددة.</string>
     <string name="key_events_horizon_note">أفق مثالي مكشوف كما في المسار اليومي. تمتد الفترات القطبية بين الشروق والغروب المتتاليين؛ وتستخدم الأوقات القصوى التوقيت المحلي للموقع.</string>
     <string name="key_events_global_note">للأحداث المدارية لحظات عالمية موحدة. يُحسب الارتفاع من الموقع، وتُقاس المسافات بين مراكز الأجرام.</string>

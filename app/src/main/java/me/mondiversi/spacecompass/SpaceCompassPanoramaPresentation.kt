@@ -45,7 +45,9 @@ internal fun spaceCompassPanoramaPresentation(snapshot: SpaceCompassPanoramaSnap
         })
     fun angle(value: Double) = formatSpaceCompassNumber(value, 0, formatting.numeric,
         grouping = false, systemLocale = formatting.deviceLocale) + "°"
-    val objects = snapshot.objects.map { it.copy(name = resources.getString(it.body.nameResource)) }
+    val objects = snapshot.objects.map { item -> item.copy(name = item.comparison?.let {
+        spaceCompassComparisonName(it, resources.getString(item.body.nameResource), formatting)
+    } ?: resources.getString(item.body.nameResource)) }
     val names = mapOf(SpaceCompassSkyReference.EQUATOR to R.string.sky_reference_equator,
         SpaceCompassSkyReference.CANCER to R.string.sky_reference_cancer,
         SpaceCompassSkyReference.CAPRICORN to R.string.sky_reference_capricorn,
@@ -54,6 +56,10 @@ internal fun spaceCompassPanoramaPresentation(snapshot: SpaceCompassPanoramaSnap
     return SpaceCompassPanoramaPresentation(snapshot.copy(objects = objects, formatting = formatting,
         bodyNames = snapshot.objects.map { it.body }.associateWith { resources.getString(it.nameResource) },
         currentPointName = resources.getString(R.string.celestial_point_current),
+        referencePointName = resources.getString(R.string.comparison_reference_point),
+        comparisonPointNames = objects.mapNotNull { item -> item.comparison?.let { c ->
+            c.id to resources.getString(spaceCompassComparisonPointNameResource(c) ?: R.string.comparison_reference_point)
+        } }.toMap(),
         pointEventNames = mapOf(SpaceCompassSunPathEvent.SUNRISE to R.string.celestial_rise,
             SpaceCompassSunPathEvent.CULMINATION to R.string.sun_path_culmination,
             SpaceCompassSunPathEvent.SUNSET to R.string.celestial_set,

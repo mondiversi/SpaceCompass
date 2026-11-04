@@ -45,9 +45,11 @@ internal fun spaceCompassKeyEventsDocument(snapshot: SpaceCompassKeyEventsSnapsh
     }
     return SpaceCompassSkyHeightsDocument(title, metadata, listOf(strings.getString(R.string.capture_table_events),
         strings.getString(R.string.format_date_time_heading), strings.getString(R.string.format_time_heading),
-        strings.getString(R.string.observer_zone), strings.getString(R.string.capture_table_elevation) + " (°)",
+        strings.getString(R.string.observer_zone), strings.getString(R.string.capture_table_azimuth) + " (°)",
+        strings.getString(R.string.capture_table_elevation) + " (°)",
         strings.getString(R.string.key_events_value)), snapshot.events.map { event ->
         listOf(strings.getString(event.kind.title), date(event.timeMs), clock(event.timeMs), offset(event.timeMs),
+            event.azimuth?.let { formatSpaceCompassPanoramaElevation(it, f) } ?: "—",
             formatSpaceCompassPanoramaElevation(event.elevation, f), spaceCompassKeyEventValue(event, body, profile))
     }, listOf(strings.getString(if (body == SpaceCompassCelestialBody.SUN) R.string.key_events_horizon_note
         else R.string.key_events_global_note)),

@@ -80,10 +80,14 @@ internal data class SpaceCompassSunProjection(
     val visible: Boolean, val x: Double, val y: Double, val separationDegrees: Double
 )
 
-/** Sun and horizon must use exactly the same perspective. */
-internal fun spaceCompassSunProjectionFocalLength(height: Double): Double = height / (2 * tan(Math.toRadians(30.0)))
+/** A 0.95x virtual wide-angle view relative to the original 60-degree vertical lens. */
+internal const val SPACE_COMPASS_VIRTUAL_SKY_ZOOM = .95
 
-/** Virtual 60-degree vertical perspective by default; camera mode supplies the actual lens/crop. */
+/** Sun, stars, paths and horizon share this virtual focal length; camera optics are supplied separately. */
+internal fun spaceCompassSunProjectionFocalLength(height: Double): Double =
+    height * SPACE_COMPASS_VIRTUAL_SKY_ZOOM / (2 * tan(Math.toRadians(30.0)))
+
+/** Virtual wide-angle perspective by default; camera mode supplies the actual lens/crop. */
 internal fun projectSpaceCompassSun(
     sun: SpaceCompassSunPosition, orientation: SpaceCompassSunOrientation, width: Double, height: Double,
     perspective: SpaceCompassPerspective? = null

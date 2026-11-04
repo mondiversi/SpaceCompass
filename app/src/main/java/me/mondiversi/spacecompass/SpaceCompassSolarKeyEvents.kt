@@ -17,7 +17,11 @@ internal fun calculateSpaceCompassSolarKeyEvents(calendar: SpaceCompassObservati
     val crossings = spaceCompassEventCrossings(curve, -.833, ::elevation, checkCancelled)
     val result = mutableListOf<SpaceCompassKeyEvent>()
     fun add(kind: SpaceCompassKeyEventKind, time: Long, duration: Long? = null) {
-        if (time in bounds) result += SpaceCompassKeyEvent(kind, time, elevation(time), durationMs = duration)
+        if (time in bounds) {
+            val direction = position(time)
+            result += SpaceCompassKeyEvent(kind, time, direction.elevationDegrees, durationMs = duration,
+                azimuth = direction.azimuthDegrees)
+        }
     }
     val polar = crossings.zipWithNext().filter { (a,b) -> b.timeMs-a.timeMs > 25*3_600_000L }
     for ((a,b) in polar) {

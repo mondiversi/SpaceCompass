@@ -4,7 +4,7 @@
     <string name="observation_height_minimum">年間最低</string>
     <string name="observation_height_mid_rising">中間高度 増加 %1$s</string>
     <string name="observation_height_mid_setting">中間高度 減少 %1$s</string>
-    <string name="observation_moments_year">選択した年の上方通過の最高・最低高度と中間高度の通過。日時をタップすると、その瞬間で時間を停止します。</string>
+    <string name="observation_moments_year">選択した年の上方通過の最高・最低高度と中間高度の通過。</string>
     <string name="observation_moments_midpoint_note">中間高度：年間最高高度と最低高度の平均に最も近い上方子午線通過です。</string>
     <string name="observation_moments_unavailable">利用可能な軌道データでは、信頼できる年間計算を行えません。</string>
     <string name="observation_moment_applied">日時を設定 · 時間停止中</string>
@@ -16,4 +16,12 @@
     <string name="observation_height_mid_setting_single">中間高度 減少</string>
     <string name="observation_heights_title">主な高度</string>
     <string name="observation_heights_year">年</string>
+
+    <string name="observation_height_monthly">21日の南中</string>
+    <string name="comparison_selection_note">チェックボックスを選ぶと、Location を変更せずに固定時刻の空を比較できます。</string>
+    <string name="comparison_reference_point">基準</string>
+    <string name="observatory_key_points">主なポイント</string>
+    <string name="observatory_key_heights">高度</string>
+    <string name="observatory_key_events">天文現象</string>
+    <string name="observatory_menu">観測所メニュー</string>
 </resources>

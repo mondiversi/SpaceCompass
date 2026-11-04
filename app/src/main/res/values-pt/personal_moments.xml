@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="personal_moments_title">Momentos pessoais</string>
+    <string name="personal_moment_add">Adicionar momento</string>
+    <string name="personal_moment_time_optional">Hora (opcional)</string>
+    <string name="personal_moment_delete">Excluir momento</string>
+    <string name="personal_moments_empty">Nenhum momento pessoal.</string>
+    <string name="personal_moment_duplicate">Este momento já existe</string>
+    <string name="personal_moments_export">Exportar momentos pessoais</string>
+    <string name="personal_moments_import">Importar momentos pessoais</string>
+    <string name="personal_moments_file_saved">Momentos pessoais salvos</string>
+    <string name="personal_moments_file_imported">Momentos pessoais importados</string>
+    <string name="personal_moments_file_existing">Esses momentos já estão salvos</string>
+    <string name="personal_moments_file_wrong_body">O arquivo contém momentos de %1$s</string>
+    <string name="personal_moments_file_error">Não foi possível salvar ou compartilhar os momentos pessoais</string>
+    <string name="personal_moments_file_import_error">Não foi possível importar os momentos pessoais</string>
+</resources>

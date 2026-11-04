@@ -18,9 +18,9 @@ import androidx.compose.ui.unit.dp
 
 /** Smaller navigation glyphs leave more room for the name. */
 internal enum class SpaceCompassObjectHeaderGlyph {
-    CHEVRON, OBSERVATORY, DAILY_PATH;
+    CHEVRON, REMOVE, OBSERVATORY, DAILY_PATH;
 
-    val visualScale: Float get() = if (this == CHEVRON) .75f else 1f
+    val visualScale: Float get() = if (this == CHEVRON || this == REMOVE) .75f else 1f
     val width: Dp get() = (if (this == CHEVRON) 9.dp else 16.dp) * visualScale
 }
 
@@ -54,6 +54,10 @@ internal fun SpaceCompassObjectHeaderIcon(glyph: SpaceCompassObjectHeaderGlyph,
                     moveTo(left, top); lineTo(right, size.height / 2); lineTo(left, bottom)
                 }
                 drawPath(chevron, color, style = Stroke(stroke, cap = StrokeCap.Round, join = StrokeJoin.Round))
+            }
+            SpaceCompassObjectHeaderGlyph.REMOVE -> {
+                drawLine(color, Offset(left, top), Offset(right, bottom), stroke, StrokeCap.Round)
+                drawLine(color, Offset(right, top), Offset(left, bottom), stroke, StrokeCap.Round)
             }
             SpaceCompassObjectHeaderGlyph.OBSERVATORY -> {
                 // Preserve the tube and tripod proportions within their actual occupied bounds.

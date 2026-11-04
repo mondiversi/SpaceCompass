@@ -1,6 +1,8 @@
 package me.mondiversi.spacecompass
 
 import androidx.activity.compose.BackHandler
+import androidx.compose.foundation.clickable
+import androidx.compose.ui.semantics.Role
 import androidx.compose.foundation.background
 import androidx.compose.ui.input.nestedscroll.nestedScroll
 import androidx.compose.foundation.layout.*
@@ -26,7 +28,7 @@ import kotlinx.coroutines.launch
 @Composable
 internal fun SpaceCompassSkyHeightsPage(body: SpaceCompassCelestialBody, timeMs: Long,
     latitude: Double?, longitude: Double?, altitude: Double, remote: SpaceCompassCelestialRemoteData,
-    onBack: () -> Unit) {
+    defaultYearResult: SpaceCompassObservationMomentsUiState, onBack: () -> Unit) {
     val foreground = MaterialTheme.colorScheme.onSurface
     val secondary = foreground.copy(alpha = .72f)
     val pageBackground = spaceCompassSurfacePalette(spaceCompassPageBackground().luminance() < .4f).island
@@ -48,10 +50,13 @@ internal fun SpaceCompassSkyHeightsPage(body: SpaceCompassCelestialBody, timeMs:
     val referenceTime = remember(timeMs, year, zone) {
         if (year in spaceCompassObservationYears) spaceCompassObservationYearReference(timeMs, year, zone) else timeMs
     }
-    val computed = rememberSpaceCompassObservationMoments(SpaceCompassObservationCalendar(body, year, zone),
-        referenceTime, latitude, longitude, altitude, remote)
+    val computed = if (year == locationYear) defaultYearResult else
+        rememberSpaceCompassObservationMoments(SpaceCompassObservationCalendar(body, year, zone),
+            referenceTime, latitude, longitude, altitude, remote)
     val result = computed.copy(complete = computed.complete && yearValid)
     val export = rememberSpaceCompassSkyHeightsExport(body, referenceTime, result)
+    val comparisons = LocalSpaceCompassComparisons.current
+    val choices = remember(body, result, zone) { spaceCompassHeightComparisonChoices(body, result, zone) }
     BackHandler { if (export.visible) export.close() else if (!export.saving) onBack() }
     Box(Modifier.fillMaxSize()) {
         Surface(Modifier.fillMaxSize().layout { measurable, constraints ->
@@ -59,8 +64,12 @@ internal fun SpaceCompassSkyHeightsPage(body: SpaceCompassCelestialBody, timeMs:
             layout(placeable.width, placeable.height) { if (!export.visible) placeable.placeRelative(0, 0) }
         }.testTag("page-sky-heights"), color = pageBackground, contentColor = foreground) {
             Column(Modifier.fillMaxSize()) {
-                SpaceCompassPageToolbar(stringResource(R.string.observation_heights_title),
-                    { if (!export.saving) onBack() }, modifier = Modifier.background(spaceCompassPageBackground())) {
+                val totalRows = remember(result) { result.totalRows }
+                SpaceCompassPageToolbar(spaceCompassObservationCountLabel(stringResource(R.string.observation_heights_title), totalRows, countFirst = true),
+                    { if (!export.saving) onBack() }, modifier = Modifier.background(spaceCompassPageBackground()),
+                    titleModifier = Modifier.testTag("sky-heights-toggle-all-title").clickable(
+                        enabled = !export.saving && comparisons?.canToggleAll(choices) == true,
+                        role = Role.Button) { comparisons?.toggleAll(choices) }) {
                     SpaceCompassTitleActionButton(stringResource(R.string.panorama_export), export.open,
                         Modifier.testTag("sky-heights-export"),
                         enabled = result.complete && !result.moments.isNullOrEmpty() && !export.saving) {
@@ -68,7 +77,7 @@ internal fun SpaceCompassSkyHeightsPage(body: SpaceCompassCelestialBody, timeMs:
                     }
                 }
                 SpaceCompassQuickReturnHeader(quickHeader, Modifier.testTag("sky-heights-header")) {
-                    Row(Modifier.fillMaxWidth().padding(start = 18.dp, end = 8.dp, top = 8.dp, bottom = 8.dp),
+                    Row(Modifier.fillMaxWidth().padding(SpaceCompassObservationHeaderPadding),
                         verticalAlignment = Alignment.CenterVertically, horizontalArrangement = Arrangement.spacedBy(8.dp)) {
                         SpaceCompassScrollingText(stringResource(body.nameResource), Modifier.weight(1f),
                             color = foreground, style = TextStyle(fontSize = 14.sp, lineHeight = 18.sp,
@@ -84,9 +93,9 @@ internal fun SpaceCompassSkyHeightsPage(body: SpaceCompassCelestialBody, timeMs:
                 }
                 Column(Modifier.fillMaxWidth().weight(1f).nestedScroll(quickHeader.connection).clipToBounds()
                     .scrollbarOverlay(scroll, secondary.copy(alpha = .46f)).verticalScroll(scroll)
-                    .padding(start = 18.dp, end = 8.dp, top = 8.dp),
+                    .padding(SpaceCompassObservationContentPadding),
                     verticalArrangement = Arrangement.spacedBy(8.dp)) {
-                    SpaceCompassObservationMomentsRows(result, secondary)
+                    SpaceCompassObservationMomentsRows(body, result, secondary)
                 }
             }
         }

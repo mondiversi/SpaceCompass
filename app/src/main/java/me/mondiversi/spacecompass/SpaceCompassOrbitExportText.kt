@@ -2,6 +2,9 @@ package me.mondiversi.spacecompass
 
 import java.util.TimeZone
 
+private fun SpaceCompassPanoramaSnapshot.forComparison(c: SpaceCompassTemporalComparison?) =
+    forCurrentInstance(c)
+
 internal fun spaceCompassOrbitCsvCell(value: String): String {
     // Geographic names can come from external sources; keep spreadsheet formulas inert.
     val trimmed = value.trimStart()
@@ -17,7 +20,10 @@ private fun spaceCompassOrbitExportRowName(row: SpaceCompassOrbitExportRow, snap
         grouping=false,systemLocale=snapshot.formatting.deviceLocale)
     val label = when (row.kind) {
         SpaceCompassOrbitExportRowKind.POINT -> String.format(snapshot.formatting.locale,vocabulary.point,number)
-        SpaceCompassOrbitExportRowKind.CURRENT -> snapshot.currentPointName
+        SpaceCompassOrbitExportRowKind.CURRENT -> (listOfNotNull(snapshot.currentPointName.takeIf { row.cells.isNotEmpty() }) +
+            snapshot.objects.mapNotNull { item -> item.comparison?.takeIf { it.id in row.comparisonCells }?.let {
+                snapshot.comparisonPointName(it)
+            } }).distinct().joinToString(" / ")
         SpaceCompassOrbitExportRowKind.ANTIPODE -> vocabulary.antipode
         SpaceCompassOrbitExportRowKind.EVENT -> snapshot.pointEventNames[row.event] ?: row.event!!.name
         SpaceCompassOrbitExportRowKind.SELECTED -> "${vocabulary.selected} · ${String.format(snapshot.formatting.locale,vocabulary.point,number)}"
@@ -48,7 +54,7 @@ private fun spaceCompassOrbitExportCellValues(cell: SpaceCompassOrbitExportCell?
     return listOf(moment,formatSpaceCompassPanoramaPointCountdown(point.timeMs,snapshot.timeMs,formatting),
         formatSpaceCompassPanoramaElevation(point.position.azimuthDegrees,formatting),
         formatSpaceCompassPanoramaElevation(point.position.elevationDegrees,formatting),
-        events.ifBlank { if (row.kind == SpaceCompassOrbitExportRowKind.CURRENT) snapshot.currentPointName else "" },
+        if (row.kind == SpaceCompassOrbitExportRowKind.CURRENT) snapshot.currentPointName else events,
         if (cell.selected) "* ${snapshot.orbitExportVocabulary.selected}" else "",illumination)
 }
 
@@ -81,10 +87,10 @@ internal fun spaceCompassOrbitExportGrid(table: SpaceCompassCapturedOrbitTable, 
         listOfNotNull(spaceCompassFictionalOrbitNotes(snapshot)?.let { metadata(vocabulary.context,it) }) + table.rows.map { row ->
         val special = row.kind != SpaceCompassOrbitExportRowKind.ANTIPODE &&
             (row.kind == SpaceCompassOrbitExportRowKind.CURRENT || row.kind == SpaceCompassOrbitExportRowKind.EVENT ||
-                row.cells.values.any { cell -> cell.point.events.any { it != SpaceCompassSunPathEvent.HOUR } })
-        val prefix = (if (row.cells.values.any { it.selected }) "* " else "") + (if (special) "! " else "")
-        listOf(prefix + spaceCompassOrbitExportRowName(row,snapshot)) + table.bodies.flatMap {
-            spaceCompassOrbitExportCellValues(row.cells[it],row,snapshot)
+                row.allCells.any { cell -> cell.point.events.any { it != SpaceCompassSunPathEvent.HOUR } })
+        val prefix = (if (row.allCells.any { it.selected }) "* " else "") + (if (special) "! " else "")
+        listOf(prefix + spaceCompassOrbitExportRowName(row,snapshot)) + snapshot.objects.flatMap { item ->
+            spaceCompassOrbitExportCellValues(row.cell(item), row, snapshot.forComparison(item.comparison))
         }
     }
 }
@@ -113,12 +119,12 @@ internal fun renderSpaceCompassOrbitTxt(table: SpaceCompassCapturedOrbitTable, s
     val rows = table.rows.map { row ->
         val special = row.kind != SpaceCompassOrbitExportRowKind.ANTIPODE &&
             (row.kind == SpaceCompassOrbitExportRowKind.CURRENT || row.kind == SpaceCompassOrbitExportRowKind.EVENT ||
-                row.cells.values.any { cell -> cell.point.events.any { it != SpaceCompassSunPathEvent.HOUR } })
-        val name = (if (row.cells.values.any { it.selected }) "* " else "") + (if (special) "! " else "") +
+                row.allCells.any { cell -> cell.point.events.any { it != SpaceCompassSunPathEvent.HOUR } })
+        val name = (if (row.allCells.any { it.selected }) "* " else "") + (if (special) "! " else "") +
             spaceCompassOrbitExportRowName(row,snapshot)
-        listOf(listOf(name)) + table.bodies.map { body ->
-            if (row.cells[body] == null) listOf("—") else {
-                val values = spaceCompassOrbitExportCellValues(row.cells[body],row,snapshot)
+        listOf(listOf(name)) + snapshot.objects.map { item ->
+            if (row.cell(item) == null) listOf("—") else {
+                val values = spaceCompassOrbitExportCellValues(row.cell(item),row,snapshot.forComparison(item.comparison))
                 listOf(values[0],"${values[1]} · ${vocabulary.azimuth}: ${values[2]}° · ${vocabulary.elevation}: ${values[3]}°") +
                     listOfNotNull(values[4].takeIf { it.isNotBlank() },values[5].takeIf { it.isNotBlank() },
                         values[6].takeIf { it != "—" }?.let { "${vocabulary.illuminated}: $it%" })

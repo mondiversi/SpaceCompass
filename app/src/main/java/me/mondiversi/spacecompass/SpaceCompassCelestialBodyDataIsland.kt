@@ -33,12 +33,9 @@ import androidx.compose.ui.unit.LayoutDirection
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 
-// Measure from the next chevron's visible edge to the first action circle.
-internal val SpaceCompassObjectNavigationActionGap = 15.dp
+// Measure the visible chevron-to-X gap; retain independent arrow and remove hit regions.
+internal val SpaceCompassObjectNavigationActionGap = 16.dp
 private val SpaceCompassObjectNameChevronGap = 12.dp
-
-internal val SpaceCompassObjectDetailsActionTargetSpacing = spaceCompassObjectHeaderTargetSpacing(
-    SpaceCompassObjectHeaderGlyph.OBSERVATORY, SpaceCompassObjectHeaderGlyph.DAILY_PATH) + 6.dp
 
 /** Navigation visits only the checked objects. No arrows for a single or empty selection. */
 internal data class SpaceCompassCelestialBodyNavigation(val previousLabel: String, val nextLabel: String,
@@ -52,7 +49,7 @@ internal fun SpaceCompassCelestialBodyDataIsland(bodyName: String?, primaryText:
     bodyNameColor: Color = primaryText, onBodyNameClick: (() -> Unit)? = null,
     content: @Composable ColumnScope.() -> Unit) {
     val shape = RoundedCornerShape(20.dp)
-    val nameTutorial = rememberSpaceCompassTutorialAnchor(SpaceCompassTutorialFeature.OBJECTS,
+    val nameTutorial = rememberSpaceCompassTutorialAnchor(SpaceCompassTutorialFeature.OBSERVATORY,
         enabled = onBodyNameClick != null)
     val tutorialNameHeightPx = if (nameTutorial != null) remember(nameTutorial) { mutableIntStateOf(0) } else null
     // Absorb blank-surface taps; child navigation and details actions keep priority.
@@ -61,8 +58,8 @@ internal fun SpaceCompassCelestialBodyDataIsland(bodyName: String?, primaryText:
         .padding(horizontal = 10.dp)) {
         if (bodyName != null || navigation != null) {
             // Compact only the title bar; retain the normal insets around the data below it.
-            // The next chevron ends 10 dp before its slot edge. Include the first action's
-            // blank inset so the navigation/action gap is measured between visible glyphs.
+            // The next chevron ends 10 dp before its slot edge. Measure the smaller X
+            // rather than the former action circle when reclaiming space for the name.
             // Keep the trailing actions anchored at the island's content edge.
             Row(Modifier.fillMaxWidth().testTag("celestial-body-header")
                 // Bring the divider into the unused lower touch inset; targets retain their full height.
@@ -74,7 +71,8 @@ internal fun SpaceCompassCelestialBodyDataIsland(bodyName: String?, primaryText:
                 }
                 .padding(vertical = 1.dp), verticalAlignment = Alignment.CenterVertically,
                 horizontalArrangement = Arrangement.spacedBy(if (navigation == null) 0.dp
-                    else SpaceCompassObjectNavigationActionGap - 10.dp - (48.dp - 30.dp) / 2)) {
+                    else SpaceCompassObjectNavigationActionGap - 10.dp -
+                        (48.dp - SpaceCompassObjectHeaderGlyph.REMOVE.width) / 2)) {
                 // Fit the name between the unfilled glyphs, retaining 48 dp navigation targets.
                 Box(Modifier.weight(1f).heightIn(min = 48.dp)) {
                     val nameInteraction = remember { MutableInteractionSource() }
@@ -90,7 +88,7 @@ internal fun SpaceCompassCelestialBodyDataIsland(bodyName: String?, primaryText:
                                 SpaceCompassObjectHeaderGlyph.CHEVRON.width + 10.dp + SpaceCompassObjectNameChevronGap)
                         .then(if (onBodyNameClick != null) Modifier.heightIn(min = 48.dp)
                             .clickable(interactionSource = nameInteraction, indication = null,
-                                role = Role.Button, onClickLabel = stringResource(R.string.celestial_select),
+                                role = Role.Button, onClickLabel = stringResource(R.string.celestial_details_title),
                                 onClick = onBodyNameClick).wrapContentHeight() else Modifier)
                         .testTag("celestial-body-island-title").then(nameTutorial?.touchModifier ?: Modifier).semantics(mergeDescendants = true) { heading() },
                         horizontalArrangement = Arrangement.spacedBy(6.dp, Alignment.CenterHorizontally),

@@ -4,7 +4,7 @@
     <string name="observation_height_minimum">Jahresminimum</string>
     <string name="observation_height_mid_rising">Mittlere Höhe zunehmend %1$s</string>
     <string name="observation_height_mid_setting">Mittlere Höhe abnehmend %1$s</string>
-    <string name="observation_moments_year">Hochpunkte, Tiefpunkte und Durchgänge durch die mittlere Höhe der oberen Kulminationen im gewählten Jahr. Datum und Uhrzeit antippen, um diesen Moment bei angehaltener Zeit zu betrachten.</string>
+    <string name="observation_moments_year">Hochpunkte, Tiefpunkte und Durchgänge durch die mittlere Höhe der oberen Kulminationen im gewählten Jahr.</string>
     <string name="observation_moments_midpoint_note">Mittlere Höhe: die Kulmination, die dem Mittelwert der jährlichen maximalen und minimalen Höhe am nächsten liegt.</string>
     <string name="observation_moments_unavailable">Die verfügbaren Bahndaten ermöglichen keine zuverlässige Jahresberechnung.</string>
     <string name="observation_moment_applied">Datum und Uhrzeit eingestellt · Zeit angehalten</string>
@@ -16,4 +16,12 @@
     <string name="observation_height_mid_setting_single">Mittlere Höhe abnehmend</string>
     <string name="observation_heights_title">Wichtige Höhen</string>
     <string name="observation_heights_year">Jahr</string>
+
+    <string name="observation_height_monthly">Kulmination am 21.</string>
+    <string name="comparison_selection_note">Wähle ein Kontrollkästchen, um einen Vergleich zu einem festen Zeitpunkt am Himmel hinzuzufügen, ohne die Location zu ändern.</string>
+    <string name="comparison_reference_point">Referenz</string>
+    <string name="observatory_key_points">Schlüsselpunkte</string>
+    <string name="observatory_key_heights">Höhen</string>
+    <string name="observatory_key_events">Ereignisse</string>
+    <string name="observatory_menu">Menü der Sternwarte</string>
 </resources>

@@ -67,10 +67,18 @@ class SpaceCompassSunDailyPathPopupTest {
     private fun openDailyPath() {
         if (compose.onAllNodesWithTag("celestial-body-island-title").fetchSemanticsNodes().isNotEmpty())
             compose.onNodeWithTag("celestial-body-island-title").performClick()
+        compose.onNodeWithTag("observatory-menu").performClick()
         compose.waitUntil(10_000) {
-            compose.onAllNodes(hasTestTag("sun-path-open") and isEnabled()).fetchSemanticsNodes().isNotEmpty()
+            compose.onAllNodes(hasTestTag("observatory-path") and isEnabled()).fetchSemanticsNodes().isNotEmpty()
         }
-        compose.onNodeWithTag("sun-path-open").performClick()
+        compose.onNodeWithTag("observatory-path").performClick()
+    }
+
+    private fun closeObjectPages() {
+        repeat(2) {
+            if (compose.onAllNodesWithTag("celestial-select").fetchSemanticsNodes().isEmpty())
+                compose.onNodeWithContentDescription(resources.getString(R.string.navigate_back)).performClick()
+        }
     }
 
     @Test fun popupStaysOpenDuringTemporaryLocationLossAndRecovery() {
@@ -121,7 +129,7 @@ class SpaceCompassSunDailyPathPopupTest {
         compose.runOnIdle { time.value += 86_400_000 }
         compose.onNodeWithTag("sun-path-page").assertIsDisplayed()
         assertEquals(originalDate, dateRow.fetchSemanticsNode().config[SemanticsProperties.Text])
-        compose.onNodeWithContentDescription(resources.getString(R.string.close)).performClick()
+        closeObjectPages()
         compose.waitUntil(5_000) { compose.onAllNodesWithTag("celestial-body-island-title").fetchSemanticsNodes().isNotEmpty() }
         openDailyPath()
         org.junit.Assert.assertNotEquals(originalDate, dateRow.fetchSemanticsNode().config[SemanticsProperties.Text])
@@ -135,14 +143,14 @@ class SpaceCompassSunDailyPathPopupTest {
             compose.onNodeWithTag("sun-path-page").assertIsDisplayed()
             compose.onNode(isToggleable()).assertIsOff()
         }
-        compose.onNodeWithContentDescription(resources.getString(R.string.close)).performClick()
+        closeObjectPages()
         openDailyPath()
         compose.onNode(isToggleable()).assertIsOff()
     }
 
     @Test fun closingThePopupRemainsEffectiveAfterGpsAndClockRefreshes() {
         open()
-        compose.onNodeWithContentDescription(resources.getString(R.string.close)).performClick()
+        closeObjectPages()
         compose.runOnIdle { location.value = null; time.value += 2_000 }
         compose.onNodeWithTag("sun-path-page").assertDoesNotExist()
         compose.runOnIdle { location.value = fix(45.01, 150.0) }

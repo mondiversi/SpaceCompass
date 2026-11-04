@@ -21,8 +21,8 @@
     <string name="tutorial_capture" formatted="false">Prepare a full-sky panorama, or capture the current camera view with celestial overlays. Export from the preview.</string>
     <string name="tutorial_panels" formatted="false">Collapse or expand the object and compass islands to gain sky space.</string>
     <string name="tutorial_antipodes" formatted="false">Tap to show or hide the opposite direction of selected points: azimuth +180° and elevation with the opposite sign. Hold to deselect all points.</string>
-    <string name="tutorial_navigation" formatted="false">Move through the selected objects. The island shows the active object and its trajectory colors. Tap the name to open the object catalog.</string>
-    <string name="tutorial_observatory" formatted="false">Open the object model, scientific details, travel time and annual key heights and events.</string>
+    <string name="tutorial_navigation" formatted="false">Move through the selected objects. The island shows the active object and its trajectory colors.</string>
+    <string name="tutorial_observatory" formatted="false">Tap the object name to open the Observatory: model, scientific details, travel time, key heights and events. Its top bar contains Daily path, Export and Favorites, in that order.</string>
     <string name="tutorial_daily" formatted="false">Open the active object’s trajectory, times, elevations and selectable points. Future events can have reminders.</string>
     <string name="tutorial_gps" formatted="false">Open details of your real position, GPS altitude, orientation and weather. These values are independent of the Location.</string>
     <string name="tutorial_points" formatted="false">Select or deselect an orbit point. Aim the reticle at a point to read its object, time, T, azimuth and elevation. The object border follows its trajectory colour; selecting its current position changes the border to blue or cyan.</string>
@@ -30,4 +30,5 @@
     <string name="tutorial_reminder" formatted="false">Open Android’s alarm or calendar for an eligible future event. Past events and the current point cannot have an alarm.</string>
     <string name="tutorial_status_title" formatted="false">Status and recovery</string>
     <string name="tutorial_status" formatted="false">Read the current status. Its action can request permission, enable location or retry unavailable orbital or weather data. The tutorial does not execute the action.</string>
+    <string name="tutorial_remove" formatted="false">Remove the active object from the selected objects after confirmation. The object remains available in the catalog.</string>
 </resources>

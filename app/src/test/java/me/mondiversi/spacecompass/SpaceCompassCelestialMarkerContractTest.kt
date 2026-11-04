@@ -13,12 +13,12 @@ class SpaceCompassCelestialMarkerContractTest {
 
     @Test fun edgePlacementAndCaptionExclusionsUseOnlyTheInspectedBodyWithoutRemovingPathsOrVisibleObjects() {
         val sky = source("SpaceCompassSunFinderSky.kt")
-        assertTrue(sky.contains("spaceCompassCelestialDirectionalProjections(pixelProjections, offscreenBody)"))
+        assertTrue(sky.contains("spaceCompassCelestialDirectionalProjections(pixelProjections, offscreenBody.takeIf { activeComparisonId == null })"))
         assertTrue(sky.contains("fitSpaceCompassCelestialOffscreenDiameter(directionalProjections"))
         assertTrue(sky.contains("placeSpaceCompassCelestialOffscreenMarkers(directionalProjections"))
         assertTrue(sky.contains("paths.forEach"))
         assertTrue(Regex("if \\(projected.visible\\)[\\s\\S]{0,180}SpaceCompassCelestialLiveMarker").containsMatchIn(sky))
-        assertTrue(source("SpaceCompassSunFinderScreen.kt").contains("offscreenBody = body.takeIf { hasActiveBody }"))
+        assertTrue(source("SpaceCompassSunFinderScreen.kt").contains("offscreenBody = sceneBody.takeIf { hasActiveBody }"))
     }
 
     @Test fun everyTargetReusesItsCataloguePreviewAtTheSameSize() {

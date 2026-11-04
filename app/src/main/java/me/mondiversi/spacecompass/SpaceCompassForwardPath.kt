@@ -80,6 +80,6 @@ internal fun spaceCompassPathSelectionDate(path: SpaceCompassSunDailyPath, point
     if (path.forward24Hours) Instant.ofEpochMilli(point.timeMs).atZone(path.zone).toLocalDate() else path.date
 
 internal fun spaceCompassPathAcceptsSelection(path: SpaceCompassSunDailyPath, saved: SpaceCompassSelectedOrbitPoint): Boolean =
-    path.zone.id == saved.key.zoneId && if (path.forward24Hours)
+    path.body == saved.key.body && path.comparison?.id == saved.key.comparisonId && path.zone.id == saved.key.zoneId && if (path.forward24Hours)
         path.samples.isNotEmpty() && saved.point.timeMs in path.samples.first().timeMs..path.samples.last().timeMs
     else path.date == saved.key.date

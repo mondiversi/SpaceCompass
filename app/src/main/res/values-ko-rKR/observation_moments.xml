@@ -4,7 +4,7 @@
     <string name="observation_height_minimum">연간 최저</string>
     <string name="observation_height_mid_rising">중간 고도 증가 %1$s</string>
     <string name="observation_height_mid_setting">중간 고도 감소 %1$s</string>
-    <string name="observation_moments_year">선택한 연도의 상방 통과 최고·최저 고도와 중간 고도 통과입니다. 날짜와 시간을 누르면 해당 순간에 시간을 멈춥니다.</string>
+    <string name="observation_moments_year">선택한 연도의 상방 통과 최고·최저 고도와 중간 고도 통과입니다.</string>
     <string name="observation_moments_midpoint_note">중간 고도: 연간 최고 및 최저 고도의 평균에 가장 가까운 상방 자오선 통과입니다.</string>
     <string name="observation_moments_unavailable">사용 가능한 궤도 데이터로는 신뢰할 수 있는 연간 계산을 할 수 없습니다.</string>
     <string name="observation_moment_applied">날짜 및 시간 설정 · 시간 일시 정지</string>
@@ -16,4 +16,12 @@
     <string name="observation_height_mid_setting_single">중간 고도 감소</string>
     <string name="observation_heights_title">주요 고도</string>
     <string name="observation_heights_year">연도</string>
+
+    <string name="observation_height_monthly">21일 상방 통과</string>
+    <string name="comparison_selection_note">체크박스를 선택하면 Location을 변경하지 않고 고정 시각의 하늘을 비교할 수 있습니다.</string>
+    <string name="comparison_reference_point">기준</string>
+    <string name="observatory_key_points">주요 지점</string>
+    <string name="observatory_key_heights">고도</string>
+    <string name="observatory_key_events">천문 현상</string>
+    <string name="observatory_menu">관측소 메뉴</string>
 </resources>

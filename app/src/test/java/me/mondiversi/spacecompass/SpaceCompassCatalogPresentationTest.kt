@@ -1,5 +1,7 @@
 package me.mondiversi.spacecompass
 
+import java.time.Instant
+import java.time.ZoneOffset
 import java.util.Locale
 import kotlinx.coroutines.runBlocking
 import org.junit.Assert.*
@@ -15,8 +17,9 @@ class SpaceCompassCatalogPresentationTest {
     private val distances = SpaceCompassCatalogDistances(emptyMap(), emptyMap(), emptyMap())
     private fun request(preferences: SpaceCompassCatalogPreferences = SpaceCompassCatalogPreferences(),
         search: String = "", selected: Set<SpaceCompassCelestialBody> = setOf(moon, mars),
-        favorites: Set<SpaceCompassCelestialBody> = emptySet()) = SpaceCompassCatalogQuery(
-        preferences, search, selected, setOf(moon), favorites, emptyMap(), distances)
+        favorites: Set<SpaceCompassCelestialBody> = emptySet(),
+        comparisons: List<SpaceCompassTemporalComparison> = emptyList()) = SpaceCompassCatalogQuery(
+        preferences, search, selected, setOf(moon), favorites, emptyMap(), distances, comparisons)
     private suspend fun presenter() = SpaceCompassCatalogPresenter.create(bodies, Locale.ENGLISH,
         { names.getValue(it) }, { it.name })
 
@@ -47,6 +50,29 @@ class SpaceCompassCatalogPresentationTest {
         assertEquals(listOf(moon), newer.visible)
         assertEquals(1, newer.checkedCount)
         assertEquals(listOf(moon, comet, mars), result.visible) // Previously published snapshots remain immutable.
+    }
+
+    @Test fun datedRowsFollowTheirSelectedParentInChronologicalOrder() = runBlocking {
+        val calculator = presenter()
+        fun dated(body: SpaceCompassCelestialBody, date: String) = SpaceCompassTemporalComparison.create(
+            body, Instant.parse("${date}T12:00:00Z").toEpochMilli(), ZoneOffset.UTC,
+            SpaceCompassComparisonSource.HEIGHT, "MONTHLY:$date")
+        val early = dated(sun, "2026-06-21")
+        val late = dated(sun, "2026-12-21")
+        val moonDate = dated(moon, "2026-08-21")
+        val comparisons = listOf(late, moonDate, early)
+        val alphabetical = SpaceCompassCatalogPreferences(sort = SpaceCompassCatalogSort.NAME_ASC)
+        val chosen = calculator.present(request(alphabetical, search = "no match", selected = setOf(sun, moon),
+            comparisons = comparisons), false)
+        assertEquals(listOf(moon, moon, sun, sun, sun), chosen.rows.map { it.body })
+        assertEquals(listOf(null, moonDate, null, early, late), chosen.rows.map { it.comparison })
+        assertEquals(chosen.rows.size, chosen.rows.map { it.key }.toSet().size)
+        val hidden = calculator.present(request(alphabetical, selected = setOf(moon), comparisons = comparisons), false)
+        assertTrue(sun in hidden.visible)
+        assertEquals(listOf(moonDate), hidden.rows.mapNotNull { it.comparison })
+        val removed = calculator.present(request(alphabetical, selected = setOf(sun, moon),
+            comparisons = comparisons - early), false)
+        assertEquals(listOf(moonDate, late), removed.rows.mapNotNull { it.comparison })
     }
 
     @Test fun closedFiltersHaveNoFacetWorkAndOpeningThemUsesTheFavoriteScopeAndCheckedExceptions() = runBlocking {

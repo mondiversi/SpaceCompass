@@ -18,7 +18,9 @@ internal class SpaceCompassObservationMomentsViewModel : ViewModel() {
 
 internal data class SpaceCompassObservationMomentsUiState(val moments: List<SpaceCompassObservationMoment>?,
     val complete: Boolean, val hasLocation: Boolean,
-    val calculationRequest: SpaceCompassObservationRequest? = null)
+    val calculationRequest: SpaceCompassObservationRequest? = null) {
+    val totalRows: Int? get() = moments?.let { spaceCompassObservationMomentRows(it).size } ?: 0.takeIf { complete }
+}
 
 /** Keep the last same-object/year/zone result visible while changed inputs are evaluated.
  * A stale date must not remain clickable, and a completed unavailable result replaces old data.
@@ -49,7 +51,7 @@ internal fun rememberSpaceCompassObservationMoments(calendar: SpaceCompassObserv
             val job = coroutineContext
             try { calculateSpaceCompassObservationMoments(calendar.body,
                 spaceCompassObservationYearReference(timeMs, calendar.year, calendar.zone), calendar.zone,
-                place.latitude, place.longitude, place.altitude, remote) { job.ensureActive() } }
+                place.latitude, place.longitude, place.altitude, remote, includeMonthlySolar = true) { job.ensureActive() } }
             catch (cancelled: CancellationException) { throw cancelled }
             catch (error: Exception) {
                 SpaceCompassErrorLog.record(context, "observatory:annual_moments", error); null

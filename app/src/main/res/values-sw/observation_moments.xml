@@ -4,7 +4,7 @@
     <string name="observation_height_minimum">Kiwango cha chini cha mwaka</string>
     <string name="observation_height_mid_rising">Kimo cha kati kinaongezeka %1$s</string>
     <string name="observation_height_mid_setting">Kimo cha kati kinapungua %1$s</string>
-    <string name="observation_moments_year">Vilele, mabonde na vipito vya kimo cha kati vya upeo wa juu katika mwaka uliochaguliwa. Gusa tarehe na saa ili kusimamisha muda wakati huo.</string>
+    <string name="observation_moments_year">Vilele, mabonde na vipito vya kimo cha kati vya upeo wa juu katika mwaka uliochaguliwa.</string>
     <string name="observation_moments_midpoint_note">Kimo cha kati: kilele kilicho karibu zaidi na wastani wa kimo cha juu na cha chini cha mwaka.</string>
     <string name="observation_moments_unavailable">Data za obiti zilizopo hazitoshi kwa hesabu ya mwaka inayotegemeka.</string>
     <string name="observation_moment_applied">Tarehe na saa zimewekwa · Muda umesimama</string>
@@ -16,4 +16,12 @@
     <string name="observation_height_mid_setting_single">Kimo cha kati kinapungua</string>
     <string name="observation_heights_title">Miinuko muhimu</string>
     <string name="observation_heights_year">Mwaka</string>
+
+    <string name="observation_height_monthly">Kilele cha tarehe 21</string>
+    <string name="comparison_selection_note">Chagua kisanduku ili kulinganisha anga kwa wakati maalumu bila kubadilisha Location.</string>
+    <string name="comparison_reference_point">Rejeleo</string>
+    <string name="observatory_key_points">Nukta muhimu</string>
+    <string name="observatory_key_heights">Miinuko</string>
+    <string name="observatory_key_events">Matukio</string>
+    <string name="observatory_menu">Menyu ya kiangalizi</string>
 </resources>

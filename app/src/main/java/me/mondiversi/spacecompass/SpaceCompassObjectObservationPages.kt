@@ -1,42 +1,70 @@
 package me.mondiversi.spacecompass
 
-import androidx.compose.runtime.Composable
-import androidx.compose.runtime.SideEffect
+import androidx.compose.runtime.*
+import androidx.compose.runtime.saveable.rememberSaveable
+import androidx.compose.runtime.saveable.rememberSaveableStateHolder
 import androidx.compose.ui.graphics.Color
 import java.time.Instant
 import kotlin.math.round
 
-/** Object pages return directly to their entry point without changing the scene selection.
- * Main-scene paths/pins are reused; standalone path entries calculate their own observed path. */
+@Composable
+internal fun spaceCompassObservationCountLabel(label: String, total: Int?, countFirst: Boolean = false): String {
+    val format = LocalSpaceCompassNumericFormat.current
+    val locale = LocalSpaceCompassDeviceLocale.current
+    val number = total?.let { formatSpaceCompassNumber(it.toDouble(), 0, format, grouping = false, systemLocale = locale) } ?: "—"
+    return if (countFirst) "$number $label" else "$label ($number)"
+}
+
+/** Object pages preserve their entry point, active object and shared path selections. */
 @Composable
 internal fun SpaceCompassCelestialViewerScreen(body: SpaceCompassCelestialBody, timeMs: Long,
     latitude: Double?, longitude: Double?, altitude: Double, remote: SpaceCompassCelestialRemoteData,
     primaryText: Color, secondaryText: Color, backgroundColor: Color,
     sharedPathState: SpaceCompassSunDailyPathUiState? = null,
     overlay: SpaceCompassCelestialOverlay? = null, startWithPath: Boolean = false,
-    exportLocation: SpaceCompassExportLocation? = null, onBack: () -> Unit) {
-    if (!startWithPath) {
-        SpaceCompassCelestialObservatoryPage(body, timeMs, latitude, longitude, altitude, remote,
-            primaryText, secondaryText, backgroundColor, onBack = onBack)
-        return
-    }
+    exportLocation: SpaceCompassExportLocation? = null,
+    dailyObservation: SpaceCompassLocationDailyObservation? = null,
+    viewComparisonId: String? = overlay?.path?.comparison?.id, onBack: () -> Unit) {
+    var pathVisible by rememberSaveable(body, viewComparisonId, startWithPath) { mutableStateOf(startWithPath) }
+    val pages = rememberSaveableStateHolder()
     val ownState = rememberSpaceCompassSunDailyPathUiState()
     val state = sharedPathState ?: ownState
-    val zone = spaceCompassObservationZone()
-    val date = Instant.ofEpochMilli(timeMs).atZone(zone).toLocalDate()
-    val calculated = if (sharedPathState == null) rememberSpaceCompassCelestialOverlays(setOf(body),
-        timeMs, date, zone, latitude?.let { round(it * 10_000) / 10_000 },
-        longitude?.let { round(it * 10_000) / 10_000 }, round(altitude / 10) * 10, remote, forward24Hours =
-            LocalSpaceCompassPreferences.current?.getBoolean(SPACE_COMPASS_FORWARD_PATH_KEY,false) == true)[body] else null
-    val standalone=calculated?.let { rememberSpaceCompassForwardOverlays(mapOf(body to it),
-        it.path?.forward24Hours == true,timeMs,latitude,longitude,altitude,remote)[body] }
-    val available = overlay ?: standalone
-    val path = available?.path ?: state.menuPath?.takeIf { it.body == body }
-    val current = spaceCompassCurrentPathPoint(body, timeMs, available?.observation?.position)
-    SideEffect { state.refreshMenu(path, current) }
+    val dailyTimeMs = dailyObservation?.timeMs ?: timeMs
+    val zone = dailyObservation?.zone ?: spaceCompassObservationZone()
+    val date = Instant.ofEpochMilli(dailyTimeMs).atZone(zone).toLocalDate()
+    val injected = if (dailyObservation != null) dailyObservation.overlay else overlay
+    val liveOverlay = spaceCompassLocationDailyOverlay(body, injected)
+    val forward24Hours = LocalSpaceCompassPreferences.current?.getBoolean(SPACE_COMPASS_FORWARD_PATH_KEY, false) == true
+    val calculated = if (sharedPathState == null || liveOverlay == null) rememberSpaceCompassCelestialOverlays(setOf(body),
+        dailyTimeMs, date, zone, latitude?.let { round(it * 10_000) / 10_000 },
+        longitude?.let { round(it * 10_000) / 10_000 }, round(altitude / 10) * 10, remote, forward24Hours = forward24Hours)[body] else null
+    val standalone = calculated?.let { rememberSpaceCompassForwardOverlays(mapOf(body to it),
+        it.path?.forward24Hours == true,dailyTimeMs,latitude,longitude,altitude,remote)[body] }
+    val available = liveOverlay ?: standalone
+    val path = spaceCompassLocationDailyPath(body, dailyTimeMs, zone, forward24Hours, available?.path, state.menuPath)
+    val current = spaceCompassCurrentPathPoint(body, dailyTimeMs, available?.observation?.position)
+    if (!pathVisible) {
+        pages.SaveableStateProvider(viewComparisonId ?: body.name) {
+            SpaceCompassCelestialObservatoryPage(body, timeMs, latitude, longitude, altitude, remote,
+                primaryText, secondaryText, backgroundColor, onDailyPath = path?.let { ready -> {
+                    state.openMenu(ready, current)
+                    pathVisible = true
+                } }, onBack = onBack)
+        }
+        return
+    }
+    SideEffect {
+        if (path != null && (state.menuPath?.body != body || state.menuPath?.comparison?.id != path.comparison?.id)) state.openMenu(path, current)
+        else state.refreshMenu(path, current)
+    }
     val location = exportLocation ?: latitude?.let { lat -> longitude?.let { lon ->
         SpaceCompassExportLocation(lat, lon, altitude, null)
     } }
+    CompositionLocalProvider(LocalSpaceCompassObservationZoneOverride provides zone) {
     SpaceCompassSunDailyPathPage(state, primaryText, secondaryText, backgroundColor,
-        nowMs = timeMs, location = location, onBack = onBack)
+        nowMs = dailyTimeMs, location = location, onBack = {
+            state.closeMenu()
+            if (startWithPath) onBack() else pathVisible = false
+        })
+    }
 }

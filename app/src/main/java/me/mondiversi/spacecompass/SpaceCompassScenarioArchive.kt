@@ -13,7 +13,10 @@ internal const val SPACE_COMPASS_SCENARIO_MIME = "application/octet-stream"
 internal data class SpaceCompassScenarioArchive(val name: String, val configuration: SpaceCompassObserverPlan,
     val timeSettings: SpaceCompassScenarioTimeSettings,
     val celestialSelection: SpaceCompassCelestialSelection? = null, val temporalSettingsIncluded: Boolean = true,
-    val selectedOrbitPoints: List<SpaceCompassSelectedOrbitPoint>? = null) {
+    val selectedOrbitPoints: List<SpaceCompassSelectedOrbitPoint>? = null,
+    val comparisons: List<SpaceCompassTemporalComparison>? = null,
+    val activeComparisonId: String? = null, val antipodesVisible: Boolean? = null,
+    val personalMoments: List<SpaceCompassPersonalMoment>? = null) {
     val custom: Boolean get() = configuration.activeSections.isNotEmpty()
 
     fun configurationAtImport(now: Long, deviceZone: ZoneId): SpaceCompassObserverPlan {
@@ -50,7 +53,12 @@ internal data class SpaceCompassScenarioArchive(val name: String, val configurat
                 setProperty("activeObject", selection.active?.name.orEmpty())
             }
         }
-        properties.putSpaceCompassLocationPoints(selectedOrbitPoints, celestialSelection)
+        properties.putSpaceCompassLocationPoints(selectedOrbitPoints?.filter { it.key.comparisonId == null }, celestialSelection)
+        require((comparisons == null && personalMoments == null) || celestialSelection != null)
+        val personalIds = personalMoments.orEmpty().filter { it.enabled }.mapTo(hashSetOf()) { it.id }
+        properties.putSpaceCompassComparisons(comparisons, selectedOrbitPoints?.filterNot { it.key.comparisonId in personalIds },
+            activeComparisonId.takeUnless { it in personalIds }, antipodesVisible)
+        properties.putSpaceCompassPersonalMoments(personalMoments, selectedOrbitPoints, activeComparisonId)
         // Properties escapes control characters and delimiters. Omit its generated wall-clock comment.
         val out = StringWriter().also { properties.store(it, null) }.toString()
             .lineSequence().filter { it.isNotEmpty() && !it.startsWith('#') }.sorted().joinToString("\n", postfix = "\n")
@@ -100,8 +108,18 @@ internal data class SpaceCompassScenarioArchive(val name: String, val configurat
             val temporal = p.getProperty("temporalSettingsIncluded")?.toBooleanStrict() ?: true
             if (!temporal) require(!c.simulateDate && !c.simulateTime && !c.advanceTime && c.clockOffsetMs == null &&
                 c.timeMs == 0L && c.momentZoneId == "UTC" && settings == SpaceCompassScenarioTimeSettings())
-            val points = p.readSpaceCompassLocationPoints(selection)
-            return SpaceCompassScenarioArchive(name, c, settings, selection, temporal, points)
+            val comparisons = p.readSpaceCompassComparisons()
+            val moments = p.readSpaceCompassPersonalMoments()
+            require((comparisons == null && moments == null) || selection != null)
+            val points = p.readSpaceCompassLocationPoints(selection)?.let {
+                it + p.readSpaceCompassComparisonPoints(comparisons.orEmpty()) + p.readSpaceCompassPersonalPins(moments.orEmpty())
+            }
+            val activePersonal = p.getProperty("activePersonalMoment")
+            val activeLegacy = p.getProperty("activeComparison")
+            require(activePersonal == null || activeLegacy == null && moments?.any { it.id == activePersonal && it.enabled } == true)
+            val active = activePersonal ?: activeLegacy
+            return SpaceCompassScenarioArchive(name, c, settings, selection, temporal, points, comparisons,
+                active, p.getProperty("antipodesVisible")?.toBooleanStrict(), moments)
         }
     }
 }

@@ -8,8 +8,8 @@ paths, inspect reference facts and view textured models. Space Compass is a stan
 
 ## Download and install
 
-Download **space-compass-1.7.9.apk** from the
-[Space Compass 1.7.9 release](https://github.com/mondiversi/SpaceCompass/releases/tag/v1.7.9).
+Download **space-compass-1.8.0.apk** from the
+[Space Compass 1.8.0 release](https://github.com/mondiversi/SpaceCompass/releases/tag/v1.8.0).
 Android 8.0 or newer is required. Open the APK and follow Android's installation
 prompts; allow installation for your browser or file manager if requested.
 
@@ -21,8 +21,7 @@ one manual APK update to acquire this feature.
 
 The release includes `SHA256SUMS.txt` and a signed update index. GitHub's source
 ZIP/TAR archives and Actions debug artifacts are separate from the signed APK.
-See [distribution and signing](docs/GITHUB_RELEASES.md) and
-[the 1.7.9 release audit](docs/RELEASE_1_7_9.md).
+See [distribution and signing](docs/GITHUB_RELEASES.md) for verification details.
 
 <!-- app-gallery:start -->
 ## Gallery
@@ -93,7 +92,7 @@ See Space Compass in portrait and landscape, by day and by night. These English 
 - **See the sky through your camera.** Overlay objects and their paths on your surroundings. Zoom in or out and fade the object images to compare their predicted positions with what you see.
 - **Follow daily paths.** See when an object rises, reaches its highest point and sets. Choose today's full path or the next 24 hours, select points of interest and check how long until they happen.
 - **Explore other places and times.** Create a Location with a different place, date or time. Pause, speed up or reverse time, then save or share the Location with your chosen objects and selected points.
-- **Plan your observations.** Key heights and Key events help you explore the year's important moments for the chosen object and place. Tap a moment to view the sky at that time. Future path points can also be sent to Android's Clock or Calendar.
+- **Plan your observations.** Compare the current sky with dated paths from Key Heights, Key Events or your own Personal Moments. Save or share Personal Moments separately, or include active comparisons when exporting a Location. Future path points can also be sent to Android's Clock or Calendar.
 - **Capture the view.** Take a camera photo with celestial overlays or generate a full 360° sky panorama. Choose which labels to show and use the colour legend to identify each object's path.
 - **Save and share your findings.** Export images, CSV spreadsheets and readable tables from captures, daily paths and the Observatory. Choose your language and units or international formatting, and control how much location information to include.
 - **Browse 9,999 objects.** Discover planets, moons, stars, constellations, galaxies, spacecraft and more. Search, filter and sort the catalogue, mark favourites and choose what appears in your sky.
@@ -112,7 +111,7 @@ safety or navigation instrument.
 ## Build and checks
 
 The application ID is `me.mondiversi.spacecompass`. The current stable version is
-**1.7.9**, with Android/update identity `1.7.9` and version code **65**.
+**1.8.0**, with Android/update identity `1.8.0` and version code **66**.
 This preserves the three-part update protocol used by existing preview installations.
 The app stores its preferences and caches privately.
 
@@ -168,7 +167,7 @@ Launcher/loading artwork and original illustrations are project assets.
 
 ## Data and graphics packages
 
-Release 1.7.9 includes **9,999 selectable objects**, and an optional reference-information archive.
+Release 1.8.0 includes **9,999 selectable objects**, and an optional reference-information archive.
 All descriptive data and translations remain inside the APK. Scientific limits and provenance are in the
 [catalogue sources](docs/CATALOG_9999.md) and [canonical source catalogue](catalogue/README.md).
 

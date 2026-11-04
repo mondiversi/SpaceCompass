@@ -1,9 +1,9 @@
 <resources>
     <string name="info_news_title">آخر المستجدات · %1$s</string>
-    <string name="info_news_star_sky" formatted="false">تظهر الخيارات المتوقفة بالرمادي دون خط مائل، مع ثبات حجم الرموز ومحاذاتها. وتظهر Location التلقائية بالرمادي أيضاً.</string>
-    <string name="info_news_texture_downloads" formatted="false">في العرض الأفقي المضغوط، تظهر الأجرام وLocation والخطوط و0–24 يساراً، والمحور/الطقس أو شفافية/تقريب الكاميرا يميناً.</string>
-    <string name="info_news_weather" formatted="false">تظهر الكاميرا فوق الالتقاط، والنقاط/النقاط المقابلة تحت القائمة. تتمركز المجموعات الجانبية بين أزرار الزوايا.</string>
-    <string name="info_news_viewer_zoom" formatted="false">ينبض إطار الالتقاط من أزرق/سماوي السمة إلى الرمادي المحايد خلال 3.2 ثانية. يبقى إطار ثابت مرئياً عند إيقاف الحركة.</string>
-    <string name="info_news_settings" formatted="false">الطقس المرئي مفعّل افتراضياً مع احترام الخيارات المحفوظة. تُخفى إعادة محاولة الطقس عند إيقافه أو تشغيل الكاميرا.</string>
-    <string name="info_news_catalog" formatted="false">تظهر التسميات والموقع المخفيان بالرمادي في المعاينة. أُعيد ترتيب خيارات التسميات دون تغيير الخيار المحفوظ.</string>
+    <string name="info_news_star_sky" formatted="false">قارن مسارات الارتفاعات والأحداث الرئيسية بالسماء الحالية.</string>
+    <string name="info_news_texture_downloads" formatted="false">احفظ لحظات شخصية باسم وتاريخ ووقت اختياري.</string>
+    <string name="info_news_weather" formatted="false">استورد اللحظات الشخصية وصدّرها بشكل مستقل، أو أدرج المقارنات النشطة في Location.</string>
+    <string name="info_news_viewer_zoom" formatted="false">تُجمع المسارات المؤرخة أسفل الجرم بترتيب زمني.</string>
+    <string name="info_news_settings" formatted="false">توفر قائمة المرصد وصولاً سريعاً إلى المسارات والنقاط الرئيسية واللحظات الشخصية.</string>
+    <string name="info_news_catalog" formatted="false">تعرض الصور والبانوراما أسماء المسارات وتتضمن المقارنات النشطة عند التصدير.</string>
 </resources>

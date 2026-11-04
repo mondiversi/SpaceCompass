@@ -2,4 +2,6 @@
 <resources>
     <string name="celestial_favorite_add">Προσθήκη στα αγαπημένα</string>
     <string name="celestial_favorite_remove">Αφαίρεση από τα αγαπημένα</string>
+    <string name="celestial_favorite_added">Προστέθηκε στα αγαπημένα</string>
+    <string name="celestial_favorite_removed">Αφαιρέθηκε από τα αγαπημένα</string>
 </resources>

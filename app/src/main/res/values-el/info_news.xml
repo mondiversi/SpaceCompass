@@ -1,9 +1,9 @@
 <resources>
     <string name="info_news_title">Τελευταία νέα · %1$s</string>
-    <string name="info_news_star_sky" formatted="false">Τα ανενεργά χειριστήρια είναι γκρι χωρίς διαγραφή, με σταθερό μέγεθος και ευθυγράμμιση. Η αυτόματη Location είναι επίσης γκρι.</string>
-    <string name="info_news_texture_downloads" formatted="false">Σε συμπτυγμένη οριζόντια προβολή, Αντικείμενα, Location, Οδηγοί και 0–24 είναι αριστερά· άξονας/καιρός ή διαφάνεια/ζουμ κάμερας δεξιά.</string>
-    <string name="info_news_weather" formatted="false">Η Κάμερα βρίσκεται πάνω από τη Λήψη και τα σημεία/αντίποδες κάτω από το Μενού. Οι πλευρικές ομάδες κεντράρονται μεταξύ των γωνιακών κουμπιών.</string>
-    <string name="info_news_viewer_zoom" formatted="false">Το περίγραμμα λήψης πάλλεται από το μπλε/κυανό του θέματος στο ουδέτερο γκρι σε 3,2 δευτερόλεπτα. Χωρίς κινήσεις παραμένει ορατό σταθερό περίγραμμα.</string>
-    <string name="info_news_settings" formatted="false">Ο οπτικός καιρός είναι ενεργός από προεπιλογή, με σεβασμό στις αποθηκευμένες επιλογές. Οι επαναλήψεις καιρού κρύβονται όταν ο καιρός είναι κλειστός ή η κάμερα ενεργή.</string>
-    <string name="info_news_catalog" formatted="false">Οι κρυφές Ετικέτες και η Θέση είναι γκρι στις προεπισκοπήσεις. Οι επιλογές ετικετών αναδιατάχθηκαν χωρίς αλλαγή της αποθηκευμένης επιλογής.</string>
+    <string name="info_news_star_sky" formatted="false">Συγκρίνετε τις τροχιές σημαντικών υψών και συμβάντων με τον τρέχοντα ουρανό.</string>
+    <string name="info_news_texture_downloads" formatted="false">Αποθηκεύστε προσωπικές στιγμές με όνομα, ημερομηνία και προαιρετική ώρα.</string>
+    <string name="info_news_weather" formatted="false">Εισαγάγετε και εξαγάγετε προσωπικές στιγμές χωριστά ή συμπεριλάβετε ενεργές συγκρίσεις σε ένα Location.</string>
+    <string name="info_news_viewer_zoom" formatted="false">Οι τροχιές με ημερομηνία ομαδοποιούνται ανά αντικείμενο με χρονολογική σειρά.</string>
+    <string name="info_news_settings" formatted="false">Το μενού του Αστεροσκοπείου δίνει γρήγορη πρόσβαση σε τροχιές, σημαντικά σημεία και προσωπικές στιγμές.</string>
+    <string name="info_news_catalog" formatted="false">Φωτογραφίες και πανοράματα δείχνουν τα ονόματα των τροχιών και περιλαμβάνουν τις ενεργές συγκρίσεις στην εξαγωγή.</string>
 </resources>

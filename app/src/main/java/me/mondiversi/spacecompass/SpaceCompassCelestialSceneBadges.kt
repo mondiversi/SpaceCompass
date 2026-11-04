@@ -18,7 +18,7 @@ import kotlin.math.roundToInt
 internal fun SpaceCompassCelestialSceneBadges(pinned: List<SpaceCompassCelestialSceneTarget>,
     focused: SpaceCompassCelestialSceneTarget?, nowMs: Long, primaryText: Color, secondaryText: Color,
     backgroundColor: Color, excluded: List<SpaceCompassSunSceneFrame>) {
-    val selected = focused?.isAntipode == true || focused != null && pinned.any { it.body == focused.body && it.isCurrent == focused.isCurrent &&
+    val selected = focused?.isAntipode == true || focused != null && pinned.any { it.body == focused.body && it.comparison?.id == focused.comparison?.id && it.isCurrent == focused.isCurrent &&
         (it.isCurrent || it.point.timeMs == focused.point.timeMs && it.point.event == focused.point.event) }
     val items = listOfNotNull(focused)
     if (items.isEmpty()) return
@@ -32,18 +32,22 @@ internal fun SpaceCompassCelestialSceneBadges(pinned: List<SpaceCompassCelestial
     Layout(modifier = Modifier.drawBehind {
         connectors.forEach { (start, end) -> drawLine(accent.copy(alpha = .65f), start, end, .8.dp.toPx()) }
     }, content = {
-        items.forEachIndexed { index, target -> key(target.body, target.point.timeMs, target.point.event, target.isCurrent) {
-            val zone = target.path?.zone ?: spaceCompassObservationZone()
+        items.forEachIndexed { index, target -> key(target.body, target.comparison?.id, target.point.timeMs, target.point.event, target.isCurrent) {
+            val zone = target.comparison?.zone ?: target.path?.zone ?: spaceCompassObservationZone()
             val labels = target.path?.let { rememberSpaceCompassSunPathLabels(it) }
-            val eventName = if (target.isCurrent) stringResource(R.string.celestial_point_current)
+            val comparisonAnchor = target.comparison?.let { c -> target.isCurrent ||
+                LocalSpaceCompassComparisonOverlays.current.firstOrNull { it.comparison.id == c.id }?.overlay?.observation?.position
+                    ?.let { spaceCompassComparisonAnchorMatches(c, it, target.point) } == true } == true
+            val eventName = if (comparisonAnchor) spaceCompassComparisonPointName(requireNotNull(target.comparison))
+                else if (target.isCurrent) stringResource(R.string.celestial_point_current)
                 else if (target.point.event == SpaceCompassSunPathEvent.HOUR) ""
                 else labels?.name?.invoke(target.point).orEmpty()
             val name = if (target.isAntipode) listOf(stringResource(R.string.scene_antipode), eventName)
                 .filter { it.isNotBlank() }.joinToString(" · ") else eventName
             Row(Modifier.width(IntrinsicSize.Max).spaceCompassSceneInputShield(),
                 verticalAlignment = Alignment.CenterVertically, horizontalArrangement = Arrangement.spacedBy(reminderGap)) {
-                SpaceCompassCelestialBadgeContent(target.point.timeMs, nowMs, zone, target.point.position,
-                    primaryText, secondaryText, backgroundColor, name, stringResource(target.body.nameResource),
+                SpaceCompassCelestialBadgeContent(target.point.timeMs, target.comparison?.timeMs ?: nowMs, zone, target.point.position,
+                    primaryText, secondaryText, backgroundColor, name, target.comparison?.let { spaceCompassComparisonDisplayName(it) } ?: stringResource(target.body.nameResource),
                     pinned = selected, modifier = Modifier.weight(1f))
                 if (showReminder) Box(Modifier.align(Alignment.CenterVertically), contentAlignment = Alignment.Center) {
                     SpaceCompassPointReminderButton(target.body, target.point, nowMs, realNowMs, target.isCurrent,

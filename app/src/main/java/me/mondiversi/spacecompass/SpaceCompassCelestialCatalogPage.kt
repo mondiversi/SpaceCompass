@@ -140,10 +140,16 @@ internal fun SpaceCompassCelestialCatalogPage(timeMs: Long, remote: SpaceCompass
                 R.string.celestial_andromeda_short else body.nameResource) },
             typeLabel = { resources.getString(it.label) })
     }
+    val comparisons = LocalSpaceCompassComparisons.current
+    val comparisonZone = spaceCompassObservationZone()
+    val storedComparisons = remember(comparisons?.entries, comparisons?.personalMoments, comparisonZone) {
+        comparisons?.sceneEntries(comparisonZone).orEmpty()
+    }
+    val comparisonIds = remember(storedComparisons) { storedComparisons.map { it.id }.toSet() }
     val request = remember(catalogPreferences, query, selectedBodies, prioritySelected, favorites.bodies,
-        observations, distanceSnapshot, resources, locale) {
+        observations, distanceSnapshot, resources, locale, storedComparisons) {
         SpaceCompassCatalogQuery(catalogPreferences, query, selectedBodies, prioritySelected,
-            favorites.bodies, observations, distanceSnapshot)
+            favorites.bodies, observations, distanceSnapshot, storedComparisons)
     }
     var viewState by remember { mutableStateOf(SpaceCompassCatalogViewState()) }
     // Never publish a temporary empty sky or clear facets during a worker refresh.
@@ -262,7 +268,16 @@ internal fun SpaceCompassCelestialCatalogPage(timeMs: Long, remote: SpaceCompass
                 Text(stringResource(R.string.catalog_no_results), Modifier.fillMaxWidth().padding(16.dp),
                     color = color.copy(alpha = .65f), fontSize = 14.sp)
             }
-            items(visibleBodies, key = { it.name }) { candidate ->
+            items(presentation?.rows.orEmpty(), key = { it.key }, contentType = { it.comparison != null }) { row ->
+                val candidate = row.body
+                val comparison = row.comparison
+                if (comparison != null) {
+                    // The last worker snapshot can briefly outlive a selection change.
+                    if (candidate in selectedBodies && comparison.id in comparisonIds) {
+                        SpaceCompassCatalogComparisonRow(comparison, color) { comparisons?.remove(comparison.id) }
+                    }
+                    return@items
+                }
                 val formattedValue = when (valueField) {
                     SpaceCompassCatalogSortField.EARTH_DISTANCE ->
                         formatSpaceCompassCelestialCatalogEarthDistance(candidate, earthDistances[candidate], numeric, distanceUnit, units.feet)

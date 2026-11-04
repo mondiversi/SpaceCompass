@@ -19,7 +19,16 @@ internal fun SpaceCompassObservationMomentIcon(kind: SpaceCompassObservationMome
     modifier: Modifier = Modifier) {
     Canvas(modifier.size(12.dp).clearAndSetSemantics { }) {
         val d = size.minDimension * .32f
-        if (kind == SpaceCompassObservationMomentKind.MAXIMUM || kind == SpaceCompassObservationMomentKind.MINIMUM) {
+        if (kind == SpaceCompassObservationMomentKind.MONTHLY) {
+            val left = size.width * .16f
+            val top = size.height * .25f
+            drawRoundRect(color, Offset(left, top), androidx.compose.ui.geometry.Size(size.width * .68f, size.height * .60f),
+                cornerRadius = androidx.compose.ui.geometry.CornerRadius(1.dp.toPx()), style = Stroke(1.3.dp.toPx()))
+            drawLine(color, Offset(left, size.height * .43f), Offset(size.width - left, size.height * .43f), 1.2.dp.toPx())
+            for (x in listOf(.33f, .67f)) drawLine(color, Offset(size.width * x, size.height * .14f),
+                Offset(size.width * x, size.height * .33f), 1.3.dp.toPx(), StrokeCap.Round)
+            drawCircle(color, .7.dp.toPx(), Offset(center.x, size.height * .65f))
+        } else if (kind == SpaceCompassObservationMomentKind.MAXIMUM || kind == SpaceCompassObservationMomentKind.MINIMUM) {
             drawLine(color, Offset(center.x - d, center.y), Offset(center.x + d, center.y),
                 1.8.dp.toPx(), StrokeCap.Round)
             if (kind == SpaceCompassObservationMomentKind.MAXIMUM)

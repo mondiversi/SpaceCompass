@@ -27,6 +27,7 @@ class SpaceCompassSkyHeightsExportTest {
             R.string.format_date_time_heading -> "Date"
             R.string.format_time_heading -> "Time"
             R.string.observer_zone -> "Time zone"
+            R.string.capture_table_azimuth -> "Azimuth"
             R.string.capture_table_elevation -> "Elevation"
             else -> "field-$id"
         }
@@ -64,13 +65,14 @@ class SpaceCompassSkyHeightsExportTest {
 
     @Test fun structuredRowsMatchTheScreenNamesAndKeepIndividualSeasonalOffsets() {
         val doc = spaceCompassSkyHeightsDocument(snapshot(), profile(), place, SpaceCompassPanoramaPosition.AREA)
-        assertEquals(listOf("Events","Date","Time","Time zone","Elevation (°)"), doc.columns)
+        assertEquals(listOf("Events","Date","Time","Time zone","Azimuth (°)","Elevation (°)"), doc.columns)
         assertTrue(doc.title.endsWith("2026"))
         assertEquals(listOf("Annual maximum","Annual minimum","Mid-height increasing","Mid-height decreasing"),doc.rows.map { it[0] })
-        assertTrue(doc.rows.all { it.size == 5 })
+        assertTrue(doc.rows.all { it.size == 6 })
+        assertTrue(doc.rows.all { it[4] == "180.0" })
         assertEquals(listOf("UTC+02:00","UTC+01:00","UTC+01:00","UTC+02:00"),doc.rows.map { it[3] })
         assertTrue(doc.rows[0][2].contains("17")) // Preserve the actual culmination's seconds.
-        assertEquals("68.3",doc.rows[0][4])
+        assertEquals("68.3",doc.rows[0][5])
         val csv = renderSpaceCompassSkyHeightsCsv(doc)
         val txt = renderSpaceCompassSkyHeightsTxt(doc)
         assertTrue(csv.startsWith("\uFEFF")); assertTrue(csv.contains("\"Annual maximum\",\"2026-06-21\""))
@@ -82,7 +84,8 @@ class SpaceCompassSkyHeightsExportTest {
             SpaceCompassDateFormat.EUROPEAN, SpaceCompassTimeFormat.H12, feet=true, dms=true))
         val doc = spaceCompassSkyHeightsDocument(snapshot(), selected, place, SpaceCompassPanoramaPosition.COMPLETE)
         assertTrue(doc.decimalComma)
-        assertEquals("68,3",doc.rows[0][4])
+        assertEquals("180,0",doc.rows[0][4])
+        assertEquals("68,3",doc.rows[0][5])
         assertTrue(doc.rows[0][1].startsWith("21/06/"))
         val csv = renderSpaceCompassSkyHeightsCsv(doc)
         assertTrue(csv.contains("\"Annual maximum\";"))

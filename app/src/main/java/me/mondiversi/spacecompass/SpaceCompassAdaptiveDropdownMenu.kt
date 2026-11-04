@@ -9,13 +9,18 @@ import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.ColumnScope
 import androidx.compose.foundation.layout.IntrinsicSize
+import androidx.compose.foundation.layout.Arrangement
+import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.heightIn
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.layout.widthIn
 import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.verticalScroll
+import androidx.compose.material3.DropdownMenuItem
+import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.MenuDefaults
+import androidx.compose.material3.Text
 import androidx.compose.material3.Surface
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.CompositionLocalProvider
@@ -25,6 +30,7 @@ import androidx.compose.runtime.mutableIntStateOf
 import androidx.compose.runtime.setValue
 import androidx.compose.runtime.staticCompositionLocalOf
 import androidx.compose.runtime.remember
+import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.drawBehind
 import androidx.compose.ui.graphics.Color
@@ -84,6 +90,19 @@ internal fun SpaceCompassAdaptiveDropdownMenu(
             }
         }
     }
+}
+
+@Composable
+internal fun SpaceCompassNavigationMenuItem(title: String, onClick: () -> Unit,
+    modifier: Modifier = Modifier, enabled: Boolean = true, icon: @Composable (Color) -> Unit) {
+    val foreground = MaterialTheme.colorScheme.onSurface
+    val tint = if (enabled) foreground else foreground.copy(alpha = .38f)
+    DropdownMenuItem(text = {
+        Row(verticalAlignment = Alignment.CenterVertically, horizontalArrangement = Arrangement.spacedBy(8.dp)) {
+            icon(tint)
+            Text(title, color = tint)
+        }
+    }, onClick = onClick, modifier = modifier, enabled = enabled)
 }
 
 /** Prefer below/above the anchor, clamp to the visible window, and mirror the start edge in RTL. */

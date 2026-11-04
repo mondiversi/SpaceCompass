@@ -67,7 +67,7 @@ internal fun drawSpaceCompassPanoramaTimeLabels(canvas: Canvas, labels: List<Spa
 internal fun spaceCompassPanoramaCurrentLabel(snapshot: SpaceCompassPanoramaSnapshot,
     position: SpaceCompassSunPosition, point: SpaceCompassSunScenePoint, tint: Int, radius: Float): SpaceCompassPanoramaTimeLabel {
     val time = snapshot.currentTime ?: formatSpaceCompassPanoramaExportTime(snapshot.timeMs,
-        java.util.TimeZone.getTimeZone("UTC"), snapshot.formatting)
+        snapshot.displayTimeZone, snapshot.formatting)
     val value = formatSpaceCompassPanoramaPointLabel(time, position, snapshot.formatting,
         snapshot.currentPointName, formatSpaceCompassPanoramaPointCountdown(snapshot.timeMs, snapshot.timeMs, snapshot.formatting))
     return SpaceCompassPanoramaTimeLabel(value, point, tint, principal = true, pointRadius = radius, current = true)

@@ -1,9 +1,9 @@
 <resources>
     <string name="info_news_title">تازه‌ترین تغییرات · %1$s</string>
-    <string name="info_news_star_sky" formatted="false">کنترل‌های خاموش بدون خط مورب و به رنگ خاکستری هستند؛ اندازه و هم‌ترازی نمادها ثابت می‌ماند. Location خودکار نیز خاکستری است.</string>
-    <string name="info_news_texture_downloads" formatted="false">در نمای افقی فشرده، اجرام، Location، خطوط و 0–24 در چپ و محور/هوا یا شفافیت/بزرگ‌نمایی دوربین در راست هستند.</string>
-    <string name="info_news_weather" formatted="false">دوربین بالای ثبت تصویر و نقاط/نقاط مقابل زیر منو قرار می‌گیرند. گروه‌های کناری بین دکمه‌های گوشه‌ها وسط‌چین می‌شوند.</string>
-    <string name="info_news_viewer_zoom" formatted="false">حاشیه ثبت تصویر طی ۳٫۲ ثانیه از آبی/فیروزه‌ای پوسته به خاکستری خنثی می‌تپد. با خاموش بودن پویانمایی، حاشیه ثابت نمایان می‌ماند.</string>
-    <string name="info_news_settings" formatted="false">نمایش هوا به‌طور پیش‌فرض روشن است و انتخاب‌های ذخیره‌شده حفظ می‌شوند. تلاش دوباره هوا هنگام خاموشی هوا یا فعال بودن دوربین پنهان است.</string>
-    <string name="info_news_catalog" formatted="false">برچسب‌ها و موقعیت پنهان در پیش‌نمایش خاکستری هستند. ترتیب گزینه‌های برچسب بدون تغییر انتخاب ذخیره‌شده عوض شده است.</string>
+    <string name="info_news_star_sky" formatted="false">مسیرهای ارتفاع‌ها و رویدادهای کلیدی را با آسمان کنونی مقایسه کنید.</string>
+    <string name="info_news_texture_downloads" formatted="false">لحظه‌های شخصی را با نام، تاریخ و زمان اختیاری ذخیره کنید.</string>
+    <string name="info_news_weather" formatted="false">لحظه‌های شخصی را جداگانه وارد و صادر کنید یا مقایسه‌های فعال را در Location بگنجانید.</string>
+    <string name="info_news_viewer_zoom" formatted="false">مسیرهای تاریخ‌دار به ترتیب زمانی زیر جرم مربوطه قرار می‌گیرند.</string>
+    <string name="info_news_settings" formatted="false">منوی رصدخانه دسترسی سریع به مسیرها، نقاط کلیدی و لحظه‌های شخصی را فراهم می‌کند.</string>
+    <string name="info_news_catalog" formatted="false">عکس‌ها و پانوراماها نام مسیرها را نشان می‌دهند و مقایسه‌های فعال را در خروجی می‌گنجانند.</string>
 </resources>

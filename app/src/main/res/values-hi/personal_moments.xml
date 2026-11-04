@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="personal_moments_title">व्यक्तिगत क्षण</string>
+    <string name="personal_moment_add">क्षण जोड़ें</string>
+    <string name="personal_moment_time_optional">समय (वैकल्पिक)</string>
+    <string name="personal_moment_delete">क्षण हटाएँ</string>
+    <string name="personal_moments_empty">कोई व्यक्तिगत क्षण नहीं।</string>
+    <string name="personal_moment_duplicate">यह क्षण पहले से मौजूद है</string>
+    <string name="personal_moments_export">व्यक्तिगत क्षण निर्यात करें</string>
+    <string name="personal_moments_import">व्यक्तिगत क्षण आयात करें</string>
+    <string name="personal_moments_file_saved">व्यक्तिगत क्षण सहेजे गए</string>
+    <string name="personal_moments_file_imported">व्यक्तिगत क्षण आयात किए गए</string>
+    <string name="personal_moments_file_existing">ये क्षण पहले से सहेजे गए हैं</string>
+    <string name="personal_moments_file_wrong_body">इस फ़ाइल में %1$s के क्षण हैं</string>
+    <string name="personal_moments_file_error">व्यक्तिगत क्षण सहेजे या साझा नहीं किए जा सके</string>
+    <string name="personal_moments_file_import_error">व्यक्तिगत क्षण आयात नहीं किए जा सके</string>
+</resources>

@@ -74,10 +74,10 @@ internal fun SpaceCompassSunDailyPathLayer(
         viewport.width.toDouble(), viewport.height.toDouble(),
         with(density) { SPACE_COMPASS_CELESTIAL_RETICLE_RADIUS_DP.dp.toPx().toDouble() })
     val title = stringResource(spaceCompassCelestialPathTitle(path.body))
-    val above = pathTint ?: spaceCompassCelestialPathTint(path.body)
+    val above = pathTint ?: path.comparison?.let(::spaceCompassComparisonTint) ?: spaceCompassCelestialPathTint(path.body)
     // The same subdued treatment preserves each object's identity below the horizon.
     val below = spaceCompassCelestialPathVisibilityTint(above, true)
-    val objectName = stringResource(path.body.nameResource)
+    val objectName = path.comparison?.let { spaceCompassComparisonDisplayName(it) } ?: stringResource(path.body.nameResource)
     val orbitText = remember(density) { spaceCompassOrbitTextPaint(with(density) { 13.sp.toPx() }) }
     val sharedOrbitLabels = LocalSpaceCompassOrbitLabelReservations.current
     val namePlacement = remember(path.body, path.date, path.zone, density, objectName) { SpaceCompassCurveCaptionPlacementState() }

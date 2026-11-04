@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="personal_moments_title">自定义观测时刻</string>
+    <string name="personal_moment_add">添加观测时刻</string>
+    <string name="personal_moment_time_optional">时间（可选）</string>
+    <string name="personal_moment_delete">删除观测时刻</string>
+    <string name="personal_moments_empty">没有自定义观测时刻。</string>
+    <string name="personal_moment_duplicate">此观测时刻已存在</string>
+    <string name="personal_moments_export">导出自定义观测时刻</string>
+    <string name="personal_moments_import">导入自定义观测时刻</string>
+    <string name="personal_moments_file_saved">已保存自定义观测时刻</string>
+    <string name="personal_moments_file_imported">已导入自定义观测时刻</string>
+    <string name="personal_moments_file_existing">这些观测时刻已保存</string>
+    <string name="personal_moments_file_wrong_body">此文件包含 %1$s 的观测时刻</string>
+    <string name="personal_moments_file_error">无法保存或分享自定义观测时刻</string>
+    <string name="personal_moments_file_import_error">无法导入自定义观测时刻</string>
+</resources>

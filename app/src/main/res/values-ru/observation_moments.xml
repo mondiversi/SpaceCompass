@@ -4,7 +4,7 @@
     <string name="observation_height_minimum">Годовой минимум</string>
     <string name="observation_height_mid_rising">Средняя высота рост %1$s</string>
     <string name="observation_height_mid_setting">Средняя высота снижение %1$s</string>
-    <string name="observation_moments_year">Максимумы, минимумы и прохождения средней высоты верхних кульминаций за выбранный год. Нажмите дату и время, чтобы остановить время в этот момент.</string>
+    <string name="observation_moments_year">Максимумы, минимумы и прохождения средней высоты верхних кульминаций за выбранный год.</string>
     <string name="observation_moments_midpoint_note">Средняя высота: кульминация, ближайшая к среднему между годовой максимальной и минимальной высотой.</string>
     <string name="observation_moments_unavailable">Доступных орбитальных данных недостаточно для надёжного годового расчёта.</string>
     <string name="observation_moment_applied">Дата и время заданы · Время остановлено</string>
@@ -16,4 +16,12 @@
     <string name="observation_height_mid_setting_single">Средняя высота снижение</string>
     <string name="observation_heights_title">Ключевые высоты</string>
     <string name="observation_heights_year">Год</string>
+
+    <string name="observation_height_monthly">Кульминация 21-го</string>
+    <string name="comparison_selection_note">Отметьте флажок, чтобы добавить сравнение неба на фиксированный момент, не изменяя Location.</string>
+    <string name="comparison_reference_point">Опорная позиция</string>
+    <string name="observatory_key_points">Ключевые точки</string>
+    <string name="observatory_key_heights">Высоты</string>
+    <string name="observatory_key_events">События</string>
+    <string name="observatory_menu">Меню обсерватории</string>
 </resources>

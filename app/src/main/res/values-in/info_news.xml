@@ -1,9 +1,9 @@
 <resources>
     <string name="info_news_title">Perubahan terbaru · %1$s</string>
-    <string name="info_news_star_sky" formatted="false">Kontrol yang mati berwarna abu-abu tanpa garis miring, dengan ukuran dan posisi ikon tetap. Location otomatis juga abu-abu.</string>
-    <string name="info_news_texture_downloads" formatted="false">Pada lanskap ringkas, Objek, Location, Garis dan 0–24 berada di kiri; sumbu/cuaca atau transparansi/zoom kamera di kanan.</string>
-    <string name="info_news_weather" formatted="false">Kamera berada di atas Tangkap dan titik/antipoda di bawah Menu. Kedua kelompok samping berada di tengah antara tombol sudut.</string>
-    <string name="info_news_viewer_zoom" formatted="false">Tepi rana berdenyut dari biru/sian tema ke abu-abu netral selama 3,2 detik. Tepi tetap terlihat saat animasi dimatikan.</string>
-    <string name="info_news_settings" formatted="false">Cuaca visual aktif secara bawaan dengan tetap menghormati pilihan tersimpan. Percobaan ulang cuaca disembunyikan jika cuaca mati atau kamera aktif.</string>
-    <string name="info_news_catalog" formatted="false">Label dan Posisi yang disembunyikan berwarna abu-abu pada pratinjau. Opsi label diurutkan ulang tanpa mengubah pilihan tersimpan.</string>
+    <string name="info_news_star_sky" formatted="false">Bandingkan lintasan dari ketinggian dan peristiwa utama dengan langit saat ini.</string>
+    <string name="info_news_texture_downloads" formatted="false">Simpan momen pribadi dengan nama, tanggal, dan waktu opsional.</string>
+    <string name="info_news_weather" formatted="false">Impor dan ekspor momen pribadi secara terpisah atau sertakan perbandingan aktif dalam Location.</string>
+    <string name="info_news_viewer_zoom" formatted="false">Lintasan bertanggal dikelompokkan di bawah objeknya sesuai urutan waktu.</string>
+    <string name="info_news_settings" formatted="false">Menu Observatorium memberi akses cepat ke lintasan, titik utama, dan momen pribadi.</string>
+    <string name="info_news_catalog" formatted="false">Foto dan panorama menampilkan nama lintasan dan menyertakan perbandingan aktif saat diekspor.</string>
 </resources>

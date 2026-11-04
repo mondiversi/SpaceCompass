@@ -21,8 +21,8 @@
     <string name="tutorial_capture" formatted="false">הכינו פנורמת שמיים או צילום עם שכבות אסטרונומיות. יצאו מהתצוגה המקדימה.</string>
     <string name="tutorial_panels" formatted="false">כווצו או הרחיבו את לוחות העצם והמצפן כדי לפנות מקום לשמיים.</string>
     <string name="tutorial_antipodes" formatted="false">יש להקיש כדי להציג או להסתיר את הכיוון הנגדי לנקודות שנבחרו: אזימוט +180° וגובה בסימן הפוך. לחיצה ממושכת מבטלת את בחירת כל הנקודות.</string>
-    <string name="tutorial_navigation" formatted="false">דפדפו בין העצמים הנבחרים. הלוח מציג את העצם הפעיל וצבעי מסלולו. יש להקיש על השם כדי לפתוח את קטלוג העצמים.</string>
-    <string name="tutorial_observatory" formatted="false">פתחו מודל, נתונים מדעיים, זמן נסיעה וגבהים ואירועים שנתיים.</string>
+    <string name="tutorial_navigation" formatted="false">דפדפו בין העצמים הנבחרים. הלוח מציג את העצם הפעיל וצבעי מסלולו.</string>
+    <string name="tutorial_observatory" formatted="false">הקש על שם העצם לפתיחת המצפה: מודל, נתונים מדעיים, זמן נסיעה, גבהים ואירועים חשובים. בסרגל העליון נמצאים מסלול יומי, ייצוא ומועדפים, בסדר הזה.</string>
     <string name="tutorial_daily" formatted="false">צפו במסלול, בשעות, בגבהים ובנקודות לבחירה. אפשר להוסיף תזכורת לאירועים עתידיים.</string>
     <string name="tutorial_gps" formatted="false">צפו במיקום האמיתי, בגובה GPS, בכיוון ובמזג האוויר, בנפרד מ-Location.</string>
     <string name="tutorial_points" formatted="false">בחרו נקודת מסלול. כוונו אליה לקריאת העצם, השעה, T, האזימוט והגובה. גבול העצם מקבל את צבע המסלול שלו; בחירת המיקום הנוכחי משנה אותו לכחול או לתכלת.</string>
@@ -30,4 +30,5 @@
     <string name="tutorial_reminder" formatted="false">פתחו שעון מעורר או יומן Android לאירוע עתידי מתאים. לא לאירועי עבר או לנקודה הנוכחית.</string>
     <string name="tutorial_status_title" formatted="false">מצב ושחזור</string>
     <string name="tutorial_status" formatted="false">קראו את המצב הנוכחי. הפעולה יכולה לבקש הרשאה, להפעיל מיקום או לנסות שוב נתוני מסלול ומזג אוויר. המדריך אינו מבצע אותה.</string>
+    <string name="tutorial_remove" formatted="false">הסר את העצם הפעיל מהעצמים שנבחרו לאחר אישור. העצם נשאר זמין בקטלוג.</string>
 </resources>

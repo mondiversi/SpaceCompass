@@ -1,9 +1,9 @@
 <resources>
     <string name="info_news_title">Neuigkeiten · %1$s</string>
-    <string name="info_news_star_sky" formatted="false">Ausgeschaltete Steuerelemente sind grau statt durchgestrichen, bei gleicher Symbolgröße und Ausrichtung. Automatische Location ist ebenfalls grau.</string>
-    <string name="info_news_texture_downloads" formatted="false">Im kompakten Querformat stehen Objekte, Location, Hilfslinien und 0–24 links; Ausrichtung/Wetter oder Kameratransparenz/Zoom rechts.</string>
-    <string name="info_news_weather" formatted="false">Kamera steht über Aufnahme, Punkte/Gegenpunkte unter Menü. Beide Seitengruppen sind zwischen den Eckschaltflächen zentriert.</string>
-    <string name="info_news_viewer_zoom" formatted="false">Der Auslöserrand pulsiert in 3,2 Sekunden vom Themenblau/Cyan zum neutralen Randgrau. Bei deaktivierten Animationen bleibt ein fester Rand sichtbar.</string>
-    <string name="info_news_settings" formatted="false">Visuelles Wetter ist standardmäßig aktiv; gespeicherte Einstellungen bleiben erhalten. Wetter-Wiederholungen sind bei verborgenem Wetter oder aktiver Kamera ausgeblendet.</string>
-    <string name="info_news_catalog" formatted="false">Ausgeblendete Vorschau-Beschriftungen und Positionsdaten sind grau. Die Beschriftungsoptionen sind neu geordnet, ohne die gespeicherte Auswahl zu ändern.</string>
+    <string name="info_news_star_sky" formatted="false">Vergleiche Bahnen aus Schlüsselhöhen und Schlüsselereignissen mit dem aktuellen Himmel.</string>
+    <string name="info_news_texture_downloads" formatted="false">Speichere persönliche Momente mit Namen, Datum und optionaler Uhrzeit.</string>
+    <string name="info_news_weather" formatted="false">Importiere und exportiere persönliche Momente separat oder füge einer Location aktive Vergleiche hinzu.</string>
+    <string name="info_news_viewer_zoom" formatted="false">Datierte Bahnen stehen chronologisch unter dem jeweiligen Objekt.</string>
+    <string name="info_news_settings" formatted="false">Das Observatorium-Menü bietet schnellen Zugriff auf Bahnen, Schlüsselpunkte und persönliche Momente.</string>
+    <string name="info_news_catalog" formatted="false">Fotos und Panoramen beschriften Bahnen und enthalten aktive Vergleiche im Export.</string>
 </resources>

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="key_events_title">Wichtige Ereignisse</string>
-    <string name="key_events_description">Ereignisse für das gewählte Objekt, Jahr und den Standort. Tippe auf ein Datum, um den Zeitpunkt bei angehaltener Zeit zu betrachten.</string>
+    <string name="key_events_description">Ereignisse für das gewählte Objekt, Jahr und den Standort.</string>
     <string name="key_events_empty">Keine Ereignisse dieser Art für dieses Objekt im gewählten Jahr.</string>
     <string name="key_events_horizon_note">Idealer freier Horizont wie beim Tagesverlauf. Polare Zeiträume liegen zwischen aufeinanderfolgenden Auf- und Untergängen; Zeitextreme verwenden die Ortszeit.</string>
     <string name="key_events_global_note">Bahnereignisse haben universelle Zeitpunkte. Die Höhe wird vom Standort berechnet; Entfernungen gelten zwischen den Körperzentren.</string>

@@ -3,4 +3,5 @@
     <cache-path name="app_updates" path="updates/" />
     <cache-path name="panorama_previews" path="panoramas/" />
     <cache-path name="scenario_files" path="scenarios/" />
+    <cache-path name="personal_moment_files" path="personal_moments/" />
 </paths>

@@ -21,8 +21,8 @@
     <string name="tutorial_capture" formatted="false">生成全天全景或带有天文叠加层的相机照片。从预览中导出。</string>
     <string name="tutorial_panels" formatted="false">收起或展开天体与指南针面板，为天空留出更多空间。</string>
     <string name="tutorial_antipodes" formatted="false">点击可显示或隐藏已选点的相反方向：方位角+180°，高度角符号相反。长按可取消所有点的选择。</string>
-    <string name="tutorial_navigation" formatted="false">浏览已选天体。面板显示当前天体及其轨迹颜色。 点击名称可打开天体目录。</string>
-    <string name="tutorial_observatory" formatted="false">打开模型、科学数据、旅行时间以及年度关键高度和事件。</string>
+    <string name="tutorial_navigation" formatted="false">浏览已选天体。面板显示当前天体及其轨迹颜色。</string>
+    <string name="tutorial_observatory" formatted="false">点击天体名称打开观测台，查看模型、科学数据、旅行时间、关键高度和事件。顶部工具栏依次为“每日轨迹”“导出”和“收藏”。</string>
     <string name="tutorial_daily" formatted="false">查看轨迹、时刻、高度及可选轨道点。未来事件可以设置提醒。</string>
     <string name="tutorial_gps" formatted="false">查看真实位置、GPS海拔、朝向和天气，与Location设置无关。</string>
     <string name="tutorial_points" formatted="false">选择或取消轨道点。将准星对准它可查看天体、时间、T、方位角和高度。 天体边框采用轨迹的颜色；选择当前位置时，边框会变为蓝色或青色。</string>
@@ -30,4 +30,5 @@
     <string name="tutorial_reminder" formatted="false">为适用的未来事件打开Android闹钟或日历。过去事件和当前位置不能设置闹钟。</string>
     <string name="tutorial_status_title" formatted="false">状态与恢复</string>
     <string name="tutorial_status" formatted="false">查看当前状态。操作可请求权限、开启定位或重新加载轨道和天气数据。教程不会执行该操作。</string>
+    <string name="tutorial_remove" formatted="false">确认后，将当前天体从已选天体中移除。 该天体仍可在目录中选择。</string>
 </resources>

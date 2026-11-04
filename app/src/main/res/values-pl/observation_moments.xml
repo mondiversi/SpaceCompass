@@ -4,7 +4,7 @@
     <string name="observation_height_minimum">Minimum roczne</string>
     <string name="observation_height_mid_rising">Średnia wysokość wzrost %1$s</string>
     <string name="observation_height_mid_setting">Średnia wysokość spadek %1$s</string>
-    <string name="observation_moments_year">Maksima, minima i przejścia przez średnią wysokość górowań w wybranym roku. Dotknij daty i godziny, aby zatrzymać czas w tym momencie.</string>
+    <string name="observation_moments_year">Maksima, minima i przejścia przez średnią wysokość górowań w wybranym roku.</string>
     <string name="observation_moments_midpoint_note">Średnia wysokość: górowanie najbliższe średniej rocznej maksymalnej i minimalnej wysokości.</string>
     <string name="observation_moments_unavailable">Dostępne dane orbitalne nie pozwalają na wiarygodne obliczenia roczne.</string>
     <string name="observation_moment_applied">Ustawiono datę i godzinę · Czas zatrzymany</string>
@@ -16,4 +16,12 @@
     <string name="observation_height_mid_setting_single">Średnia wysokość spadek</string>
     <string name="observation_heights_title">Kluczowe wysokości</string>
     <string name="observation_heights_year">Rok</string>
+
+    <string name="observation_height_monthly">Kulminacja 21. dnia</string>
+    <string name="comparison_selection_note">Zaznacz pole, aby dodać porównanie nieba w ustalonej chwili bez zmiany Location.</string>
+    <string name="comparison_reference_point">Odniesienie</string>
+    <string name="observatory_key_points">Kluczowe punkty</string>
+    <string name="observatory_key_heights">Wysokości</string>
+    <string name="observatory_key_events">Zjawiska</string>
+    <string name="observatory_menu">Menu obserwatorium</string>
 </resources>

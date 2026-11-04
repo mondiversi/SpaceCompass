@@ -1,9 +1,9 @@
 <resources>
     <string name="info_news_title">Dernières nouveautés · %1$s</string>
-    <string name="info_news_star_sky" formatted="false">Les commandes désactivées sont grises sans barre, avec une taille et un alignement constants. Location automatique est également grise.</string>
-    <string name="info_news_texture_downloads" formatted="false">En paysage compact, Objets, Location, Repères et 0–24 sont à gauche ; axe/météo ou transparence/zoom de caméra sont à droite.</string>
-    <string name="info_news_weather" formatted="false">Caméra se place au-dessus de Capture, et points/antipodes sous Menu. Les groupes latéraux sont centrés entre les boutons des coins.</string>
-    <string name="info_news_viewer_zoom" formatted="false">Le bord du déclencheur passe du bleu/cyan du thème au gris neutre en 3,2 secondes. Un bord fixe reste visible si les animations sont désactivées.</string>
-    <string name="info_news_settings" formatted="false">La météo visuelle est active par défaut, en respectant les choix enregistrés. Les relances météo sont masquées si la météo est désactivée ou la caméra active.</string>
-    <string name="info_news_catalog" formatted="false">Les Étiquettes et la Position masquées sont grises dans les aperçus. Les modes d’étiquettes sont réordonnés sans modifier le choix enregistré.</string>
+    <string name="info_news_star_sky" formatted="false">Comparez les trajectoires des hauteurs et événements clés avec le ciel actuel.</string>
+    <string name="info_news_texture_downloads" formatted="false">Enregistrez des moments personnels avec un nom, une date et une heure facultative.</string>
+    <string name="info_news_weather" formatted="false">Importez et exportez les moments personnels séparément ou incluez les comparaisons actives dans une Location.</string>
+    <string name="info_news_viewer_zoom" formatted="false">Les trajectoires datées sont regroupées par objet dans l’ordre chronologique.</string>
+    <string name="info_news_settings" formatted="false">Le menu de l’Observatoire donne accès aux trajectoires, points clés et moments personnels.</string>
+    <string name="info_news_catalog" formatted="false">Les photos et panoramas affichent le nom des trajectoires et incluent les comparaisons actives à l’exportation.</string>
 </resources>

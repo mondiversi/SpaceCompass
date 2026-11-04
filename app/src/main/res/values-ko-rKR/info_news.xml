@@ -1,9 +1,9 @@
 <resources>
     <string name="info_news_title">최근 변경 사항 · %1$s</string>
-    <string name="info_news_star_sky" formatted="false">꺼진 컨트롤은 빗금 없이 회색으로 표시되며 아이콘 크기와 정렬은 유지됩니다. 자동 Location도 회색입니다.</string>
-    <string name="info_news_texture_downloads" formatted="false">정보 패널을 접은 가로 모드에서는 천체, Location, 기준선과 0–24가 왼쪽에, 축/날씨 또는 카메라 투명도/줌이 오른쪽에 배치됩니다.</string>
-    <string name="info_news_weather" formatted="false">카메라는 촬영 위에, 점/대척점 컨트롤은 메뉴 아래에 놓입니다. 양쪽 그룹은 모서리 버튼 사이의 중앙에 정렬됩니다.</string>
-    <string name="info_news_viewer_zoom" formatted="false">촬영 테두리는 테마의 파랑/청록에서 기본 회색으로 3.2초 주기로 변합니다. 애니메이션을 끄면 고정 테두리가 표시됩니다.</string>
-    <string name="info_news_settings" formatted="false">저장된 선택을 유지하며 날씨 표시는 기본으로 켜집니다. 날씨가 꺼져 있거나 카메라가 켜져 있으면 날씨 재시도 알림은 숨겨집니다.</string>
-    <string name="info_news_catalog" formatted="false">미리보기에서 숨긴 레이블과 위치는 회색입니다. 저장된 선택을 바꾸지 않고 레이블 옵션 순서를 조정했습니다.</string>
+    <string name="info_news_star_sky" formatted="false">주요 고도와 이벤트의 경로를 현재 하늘과 비교하세요.</string>
+    <string name="info_news_texture_downloads" formatted="false">이름, 날짜, 선택 사항인 시간을 지정하여 개인 관측 시점을 저장하세요.</string>
+    <string name="info_news_weather" formatted="false">개인 관측 시점을 별도로 가져오거나 내보내고, 활성 비교를 Location에 포함할 수 있습니다.</string>
+    <string name="info_news_viewer_zoom" formatted="false">날짜가 지정된 경로는 해당 천체 아래에 시간순으로 표시됩니다.</string>
+    <string name="info_news_settings" formatted="false">관측소 메뉴에서 경로, 주요 지점, 개인 관측 시점을 빠르게 열 수 있습니다.</string>
+    <string name="info_news_catalog" formatted="false">사진과 파노라마에는 경로 이름이 표시되며 내보내기에 활성 비교가 포함됩니다.</string>
 </resources>

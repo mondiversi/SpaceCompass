@@ -55,10 +55,20 @@ class SpaceCompassCelestialCompassTest {
         }
     }
     private fun openDailyPath() {
+        if (compose.onAllNodesWithTag("celestial-body-island-title").fetchSemanticsNodes().isNotEmpty())
+            compose.onNodeWithTag("celestial-body-island-title").performClick()
+        compose.onNodeWithTag("observatory-menu").performClick()
         compose.waitUntil(10_000) {
-            compose.onAllNodes(hasTestTag("sun-path-open") and isEnabled()).fetchSemanticsNodes().isNotEmpty()
+            compose.onAllNodes(hasTestTag("observatory-path") and isEnabled()).fetchSemanticsNodes().isNotEmpty()
         }
-        compose.onNodeWithTag("sun-path-open").performClick()
+        compose.onNodeWithTag("observatory-path").performClick()
+    }
+
+    private fun closeObjectPages() {
+        repeat(2) {
+            if (compose.onAllNodesWithTag("celestial-select").fetchSemanticsNodes().isEmpty())
+                compose.onNodeWithContentDescription(resources.getString(R.string.navigate_back)).performClick()
+        }
     }
 
     @Test fun moonPathShowsPhaseIconsBeforeEveryTimeInBothThemes() {
@@ -122,27 +132,30 @@ class SpaceCompassCelestialCompassTest {
                 R.string.celestial_daily_path))
             compose.onNodeWithTag("sun-path-object-name").assertTextEquals(resources.getString(candidate.nameResource))
             repeat(10) { compose.runOnIdle { time.longValue += 2_000 }; compose.onNodeWithTag("sun-path-page").assertIsDisplayed() }
-            compose.onNodeWithContentDescription(resources.getString(R.string.close)).performClick()
+            closeObjectPages()
         }
     }
     @Test fun islandActionsOpenSeparateObjectPagesWithoutToolbarShortcutsInBothLayouts() {
         show()
         for (landscape in listOf(false, true)) {
             compose.runOnIdle { wide.value = landscape; body.value = SpaceCompassCelestialBody.EUROPA }
-            compose.onNodeWithTag("celestial-visualize").assertIsDisplayed().performClick()
+            compose.onNodeWithTag("celestial-visualize").assertDoesNotExist()
+            compose.onNodeWithTag("celestial-body-island-title").assertIsDisplayed().performClick()
             compose.onNodeWithTag("celestial-view-title").assertTextEquals(resources.getString(R.string.celestial_details_title))
-            compose.onNodeWithTag("observatory-export").assertIsDisplayed()
+            compose.onNodeWithTag("observatory-menu").assertIsDisplayed()
+            compose.onNodeWithTag("observatory-export").assertDoesNotExist()
             compose.onNodeWithTag("sun-path-open").assertDoesNotExist()
             compose.onNodeWithTag("object-page-observatory").assertDoesNotExist()
-            compose.onNodeWithContentDescription(resources.getString(R.string.close)).performClick()
-            compose.onNodeWithTag("celestial-visualize").assertIsDisplayed()
+            closeObjectPages()
+            compose.onNodeWithTag("celestial-visualize").assertDoesNotExist()
+            compose.onNodeWithTag("celestial-body-island-title").assertIsDisplayed()
             openDailyPath()
             compose.onNodeWithTag("sun-path-page").assertIsDisplayed()
             compose.onNodeWithTag("daily-path-export").assertIsDisplayed()
             compose.onNodeWithTag("sun-path-object-name").assertTextEquals(resources.getString(SpaceCompassCelestialBody.EUROPA.nameResource))
             compose.onNodeWithTag("object-page-observatory").assertDoesNotExist()
             compose.runOnIdle { assertEquals(SpaceCompassCelestialBody.EUROPA, body.value) }
-            compose.onNodeWithContentDescription(resources.getString(R.string.close)).performClick()
+            closeObjectPages()
         }
     }
     @Test fun lightDarkAndWideLayoutsKeepSelectorDistanceAndDataUsable() {

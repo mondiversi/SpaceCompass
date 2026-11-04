@@ -2,4 +2,6 @@
 <resources>
     <string name="celestial_favorite_add">Ongeza kwenye vipendwa</string>
     <string name="celestial_favorite_remove">Ondoa kwenye vipendwa</string>
+    <string name="celestial_favorite_added">Imeongezwa kwenye vipendwa</string>
+    <string name="celestial_favorite_removed">Imeondolewa kwenye vipendwa</string>
 </resources>

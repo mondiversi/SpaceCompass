@@ -23,7 +23,7 @@ internal fun rememberSpaceCompassCelestialOverlays(bodies: Set<SpaceCompassCeles
     remote: SpaceCompassCelestialRemoteData, pathBodies: Set<SpaceCompassCelestialBody> = bodies,
     forward24Hours: Boolean = false): Map<SpaceCompassCelestialBody, SpaceCompassCelestialOverlay> {
     val context = LocalContext.current
-    return spaceCompassAllCelestialOrder.filter { it in bodies }.associateWith { body -> key(body) {
+    return spaceCompassOrderedCelestialSubset(bodies).associateWith { body -> key(body) {
         // ISS moves quickly; ordinary objects do not need another ephemeris calculation every half-second.
         val observationTime = if (body in pathBodies || body.isEarthSatellite) timeMs else timeMs / 2_000 * 2_000
         val orbit = remote.satelliteOrbit(body)

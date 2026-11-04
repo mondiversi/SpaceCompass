@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="personal_moments_title">Nyakati binafsi</string>
+    <string name="personal_moment_add">Ongeza wakati</string>
+    <string name="personal_moment_time_optional">Saa (si lazima)</string>
+    <string name="personal_moment_delete">Futa wakati</string>
+    <string name="personal_moments_empty">Hakuna nyakati binafsi.</string>
+    <string name="personal_moment_duplicate">Wakati huu tayari upo</string>
+    <string name="personal_moments_export">Hamisha nyakati binafsi</string>
+    <string name="personal_moments_import">Leta nyakati binafsi</string>
+    <string name="personal_moments_file_saved">Nyakati binafsi zimehifadhiwa</string>
+    <string name="personal_moments_file_imported">Nyakati binafsi zimeletwa</string>
+    <string name="personal_moments_file_existing">Nyakati hizi tayari zimehifadhiwa</string>
+    <string name="personal_moments_file_wrong_body">Faili hii ina nyakati za %1$s</string>
+    <string name="personal_moments_file_error">Imeshindwa kuhifadhi au kushiriki nyakati binafsi</string>
+    <string name="personal_moments_file_import_error">Imeshindwa kuleta nyakati binafsi</string>
+</resources>

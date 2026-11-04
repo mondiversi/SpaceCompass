@@ -9,22 +9,34 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.Path
 import androidx.compose.ui.graphics.StrokeCap
 import androidx.compose.ui.graphics.StrokeJoin
+import androidx.compose.ui.graphics.drawscope.DrawScope
 import androidx.compose.ui.graphics.drawscope.Stroke
 import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
+
+internal val SpaceCompassMenuIconSize = 20.dp
+internal val SpaceCompassMenuIconStrokeWidth = 1.6.dp
+
+internal fun DrawScope.drawSpaceCompassMenuGlyph(tint: Color, strokeWidth: Float) {
+    for (line in 1..3) {
+        val y = size.height * line / 4f
+        drawLine(tint, Offset(size.width * 4f / 24f, y), Offset(size.width * 20f / 24f, y),
+            strokeWidth, StrokeCap.Round)
+    }
+}
 
 /** Compact menu glyphs follow the app's existing visual vocabulary. */
 @Composable
 internal fun SpaceCompassSettingsMenuIcon(
     route: String,
     tint: Color,
-    modifier: Modifier = Modifier.size(20.dp),
+    modifier: Modifier = Modifier.size(SpaceCompassMenuIconSize),
     iconStrokeWidth: Dp? = null,
     crossed: Boolean = false
 ) {
     val strokeScale = LocalSpaceCompassFloatingStrokeScale.current
     SpaceCompassIconCanvas(tint, modifier) { tint ->
-        val strokeWidth = (iconStrokeWidth?.toPx() ?: maxOf(1.6.dp.toPx(), size.minDimension * 0.08f)) * strokeScale
+        val strokeWidth = (iconStrokeWidth?.toPx() ?: maxOf(SpaceCompassMenuIconStrokeWidth.toPx(), size.minDimension * 0.08f)) * strokeScale
         when (route) {
             "capture" -> {
                 val outerRadius = size.minDimension * .39f

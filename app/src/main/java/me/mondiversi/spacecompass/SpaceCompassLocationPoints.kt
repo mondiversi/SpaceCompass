@@ -25,7 +25,7 @@ internal fun spaceCompassCheckLocationPoint(saved: SpaceCompassSelectedOrbitPoin
         require(it.other.name in locationPointBodies && it.other != key.body &&
             it.separationDegrees.isFinite() && it.separationDegrees in 0.0..180.0)
     }
-    require(key == spaceCompassOrbitPointKey(key.body, point, zone, key.date, current = key.isCurrent))
+    require(key == spaceCompassOrbitPointKey(key.body, point, zone, key.date, current = key.isCurrent, comparisonId = key.comparisonId))
 }
 
 /** Optional v1 extension: earlier apps ignore these properties and retain the original Location schema. */
@@ -84,5 +84,13 @@ internal fun Properties.readSpaceCompassLocationPoints(selection: SpaceCompassCe
 
 /** Strip live path caches and omit points whose object is not part of the exported scene. */
 internal fun SpaceCompassScenarioArchive.withCelestialObjects(selection: SpaceCompassCelestialSelection,
-    points: List<SpaceCompassSelectedOrbitPoint>): SpaceCompassScenarioArchive = copy(celestialSelection = selection,
-        selectedOrbitPoints = points.filter { it.key.body in selection.selected }.map { it.copy(path = null) })
+    points: List<SpaceCompassSelectedOrbitPoint>, comparisons: List<SpaceCompassTemporalComparison>? = null,
+    activeComparisonId: String? = null, antipodesVisible: Boolean? = null,
+    personalMoments: List<SpaceCompassPersonalMoment>? = null): SpaceCompassScenarioArchive = copy(celestialSelection = selection,
+        comparisons = comparisons, activeComparisonId = activeComparisonId, antipodesVisible = antipodesVisible,
+        personalMoments = personalMoments?.filter { it.enabled },
+        selectedOrbitPoints = points.filter { saved ->
+            if (saved.key.comparisonId == null) saved.key.body in selection.selected
+            else comparisons.orEmpty().any { it.id == saved.key.comparisonId && it.body == saved.key.body } ||
+                personalMoments.orEmpty().any { it.enabled && it.id == saved.key.comparisonId && it.body == saved.key.body }
+        }.map { it.copy(path = null) })

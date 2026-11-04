@@ -8,6 +8,7 @@ internal fun spaceCompassObservationMomentTitle(entry: SpaceCompassObservationMo
         else R.string.observation_height_minimum)
     val single = entry.number == null
     val id = when (entry.kind) {
+        SpaceCompassObservationMomentKind.MONTHLY -> R.string.observation_height_monthly
         SpaceCompassObservationMomentKind.MAXIMUM -> if (single) R.string.observation_height_cycle_maximum_single
             else R.string.observation_height_cycle_maximum
         SpaceCompassObservationMomentKind.MINIMUM -> if (single) R.string.observation_height_cycle_minimum_single
@@ -17,7 +18,8 @@ internal fun spaceCompassObservationMomentTitle(entry: SpaceCompassObservationMo
         SpaceCompassObservationMomentKind.MID_SETTING -> if (single) R.string.observation_height_mid_setting_single
             else R.string.observation_height_mid_setting
     }
-    return if (single) profile.strings.getString(id) else profile.strings.getString(id,
+    return if (entry.kind == SpaceCompassObservationMomentKind.MONTHLY) profile.strings.getString(id)
+    else if (single) profile.strings.getString(id) else profile.strings.getString(id,
         formatSpaceCompassNumber(entry.number!!.toDouble(), 0, profile.formatting.numeric,
             grouping = false, systemLocale = profile.formatting.deviceLocale))
 }

@@ -4,7 +4,7 @@
     <string name="observation_height_minimum">الحد الأدنى السنوي</string>
     <string name="observation_height_mid_rising">منتصف الارتفاع تزايد %1$s</string>
     <string name="observation_height_mid_setting">منتصف الارتفاع تناقص %1$s</string>
-    <string name="observation_moments_year">قمم وقيعان وعبور منتصف ارتفاع العبور العلوي خلال السنة المحددة. اضغط على التاريخ والوقت لإيقاف الزمن عند تلك اللحظة.</string>
+    <string name="observation_moments_year">قمم وقيعان وعبور منتصف ارتفاع العبور العلوي خلال السنة المحددة.</string>
     <string name="observation_moments_midpoint_note">منتصف الارتفاع: العبور العلوي الأقرب إلى متوسط أقصى وأدنى ارتفاع سنوي.</string>
     <string name="observation_moments_unavailable">البيانات المدارية المتاحة لا تكفي لإجراء حساب سنوي موثوق.</string>
     <string name="observation_moment_applied">تم ضبط التاريخ والوقت · الزمن متوقف</string>
@@ -16,4 +16,12 @@
     <string name="observation_height_mid_setting_single">منتصف الارتفاع تناقص</string>
     <string name="observation_heights_title">الارتفاعات المهمة</string>
     <string name="observation_heights_year">السنة</string>
+
+    <string name="observation_height_monthly">عبور يوم 21</string>
+    <string name="comparison_selection_note">حدد مربع الاختيار لإضافة مقارنة للسماء في لحظة ثابتة دون تغيير Location.</string>
+    <string name="comparison_reference_point">مرجع</string>
+    <string name="observatory_key_points">النقاط الرئيسية</string>
+    <string name="observatory_key_heights">الارتفاعات</string>
+    <string name="observatory_key_events">الأحداث</string>
+    <string name="observatory_menu">قائمة المرصد</string>
 </resources>

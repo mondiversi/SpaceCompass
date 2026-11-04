@@ -4,7 +4,7 @@
     <string name="observation_height_minimum">Minimo annuale</string>
     <string name="observation_height_mid_rising">Mezz’altezza crescente %1$s</string>
     <string name="observation_height_mid_setting">Mezz’altezza decrescente %1$s</string>
-    <string name="observation_moments_year">Massimi, minimi e passaggi a mezz’altezza dei culmini nell’anno selezionato. Tocca data e ora per osservare quel momento a tempo fermo.</string>
+    <string name="observation_moments_year">Massimi, minimi e passaggi a mezz’altezza dei culmini nell’anno selezionato.</string>
     <string name="observation_moments_midpoint_note">Mezz’altezza: il culmine più vicino alla media delle altezze massima e minima annuali.</string>
     <string name="observation_moments_unavailable">I dati orbitali disponibili non consentono un calcolo annuale attendibile.</string>
     <string name="observation_moment_applied">Data e ora impostate · Tempo fermo</string>
@@ -16,4 +16,12 @@
     <string name="observation_height_mid_setting_single">Mezz’altezza decrescente</string>
     <string name="observation_heights_title">Altezze chiave</string>
     <string name="observation_heights_year">Anno</string>
+
+    <string name="observation_height_monthly">Culmine del 21</string>
+    <string name="comparison_selection_note">Seleziona una checkbox per aggiungere un confronto nel cielo a un istante fisso, senza modificare la Location.</string>
+    <string name="comparison_reference_point">Riferimento</string>
+    <string name="observatory_key_points">Punti chiave</string>
+    <string name="observatory_key_heights">Altezze</string>
+    <string name="observatory_key_events">Eventi</string>
+    <string name="observatory_menu">Menu Osservatorio</string>
 </resources>

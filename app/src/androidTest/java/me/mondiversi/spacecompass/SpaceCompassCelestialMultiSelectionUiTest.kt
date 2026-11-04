@@ -88,12 +88,13 @@ class SpaceCompassCelestialMultiSelectionUiTest {
         compose.onNodeWithTag("celestial-select").assert(SemanticsMatcher.expectValue(SemanticsProperties.StateDescription, "0"))
         compose.onNodeWithTag("celestial-menu").assertIsDisplayed()
     }
-    @Test fun threePathsButOnePairOfActionsAndArrowsChangeOnlyTheInspectedObject() {
+    @Test fun threePathsKeepRemovalAndArrowsChangeOnlyTheInspectedObject() {
         selection.value = SpaceCompassCelestialSelection(setOf(SpaceCompassCelestialBody.SUN, SpaceCompassCelestialBody.MOON, SpaceCompassCelestialBody.MARS), SpaceCompassCelestialBody.SUN)
         show()
         compose.waitUntil(15_000) { compose.onAllNodesWithTag("sun-daily-path").fetchSemanticsNodes().size == 3 }
-        compose.onAllNodesWithTag("celestial-visualize").assertCountEquals(1)
-        compose.onAllNodesWithTag("sun-path-open").assertCountEquals(1)
+        compose.onAllNodesWithTag("celestial-visualize").assertCountEquals(0)
+        compose.onAllNodesWithTag("sun-path-open").assertCountEquals(0)
+        compose.onNodeWithTag("celestial-body-remove").assertIsDisplayed()
         compose.onNodeWithTag("celestial-body-island-title").assertHasClickAction()
             .assert(hasAnyAncestor(hasTestTag("celestial-body-header")))
         compose.onNodeWithTag("celestial-body-next").performClick()

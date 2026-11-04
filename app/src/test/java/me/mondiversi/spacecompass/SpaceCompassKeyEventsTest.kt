@@ -53,8 +53,11 @@ class SpaceCompassKeyEventsTest {
         val place=SpaceCompassObservationPlace(0.0, -78.0, 4000.0,true,true)
         val events=calculateSpaceCompassKeyEvents(sunCalendar,place)!!
         assertTrue(events.none { it.kind.name.startsWith("POLAR_") })
-        events.forEach { assertEquals(calculateSpaceCompassSunPosition(it.timeMs,place.latitude,place.longitude,
-            place.altitude).elevationDegrees,it.elevation,0.0) }
+        for (event in events) {
+            val position=calculateSpaceCompassSunPosition(event.timeMs,place.latitude,place.longitude,place.altitude)
+            assertEquals(position.elevationDegrees,event.elevation,0.0)
+            assertEquals(position.azimuthDegrees,event.azimuth!!,0.0)
+        }
         assertNotEquals(solar,events)
     }
 
@@ -63,6 +66,15 @@ class SpaceCompassKeyEventsTest {
         assertTrue(lunar.size in 74..82)
         assertEquals(lunar.map { it.kind to it.timeMs },other.map { it.kind to it.timeMs })
         assertTrue(lunar.zip(other).any { (a,b) -> kotlin.math.abs(a.elevation-b.elevation)>20 })
+        assertTrue(lunar.zip(other).any { (a,b) -> kotlin.math.abs(a.azimuth!!-b.azimuth!!)>20 })
+        for ((events,place) in listOf(lunar to north,other to SpaceCompassObservationPlace(-33.9,151.2,1500.0))) {
+            for (event in events) {
+                val position=calculateSpaceCompassCelestialObservation(SpaceCompassCelestialBody.MOON,event.timeMs,
+                    place.latitude,place.longitude,place.altitude)!!.position
+                assertEquals(position.azimuthDegrees,event.azimuth!!,0.0)
+                assertEquals(position.elevationDegrees,event.elevation,0.0)
+            }
+        }
         assertTrue(lunar.filter { it.kind==SpaceCompassKeyEventKind.PERIGEE }.all { it.distanceKm!! in 350_000.0..380_000.0 })
         assertTrue(lunar.filter { it.kind==SpaceCompassKeyEventKind.APOGEE }.all { it.distanceKm!! in 400_000.0..410_000.0 })
     }
@@ -77,7 +89,13 @@ class SpaceCompassKeyEventsTest {
         val date=Instant.ofEpochMilli(opposition.timeMs).atZone(rome)
         assertEquals(1,date.monthValue);assertTrue(date.dayOfMonth in 14..18)
         assertEquals(2,mars.count { it.kind==SpaceCompassKeyEventKind.NEAREST_EARTH || it.kind==SpaceCompassKeyEventKind.FARTHEST_EARTH })
-        assertTrue(mars.all { it.elevation.isFinite() })
+        for (event in mercury+mars) assertTrue(event.azimuth!! >= 0.0 && event.azimuth < 360.0)
+        for (event in mars) {
+            val position=calculateSpaceCompassCelestialObservation(SpaceCompassCelestialBody.MARS,event.timeMs,
+                north.latitude,north.longitude,north.altitude)!!.position
+            assertEquals(position.azimuthDegrees,event.azimuth!!,0.0)
+            assertEquals(position.elevationDegrees,event.elevation,0.0)
+        }
     }
 
     @Test fun yearAndZoneBoundsHandleLeapYearsAndEveryReturnedInstant() {
@@ -110,6 +128,13 @@ class SpaceCompassKeyEventsTest {
         assertFalse(crossings[0].rising);assertTrue(crossings[1].rising)
         assertTrue(kotlin.math.abs(3_900_000L-crossings[0].timeMs)<=250L)
         assertTrue(kotlin.math.abs(4_100_000L-crossings[1].timeMs)<=250L)
+    }
+
+    @Test fun azimuthCannotAcceptNonFiniteOrOutOfRangeDirections() {
+        for (invalid in listOf(Double.NaN,Double.POSITIVE_INFINITY,-.01,360.0)) {
+            try { lunar.first().copy(azimuth=invalid);fail("Invalid direction accepted: $invalid") }
+            catch (_:IllegalArgumentException) { }
+        }
     }
 
     @Test(expected=CancellationException::class) fun annualSearchHonoursCancellation() {

@@ -13,3 +13,25 @@ internal fun spaceCompassCatalogDisplayOrder(sortedAvailable: List<SpaceCompassC
     }.partition { it in prioritySelected }
     return checked + others
 }
+
+internal data class SpaceCompassCatalogDisplayRow(
+    val body: SpaceCompassCelestialBody,
+    val comparison: SpaceCompassTemporalComparison? = null
+) {
+    val key: String get() = comparison?.let { "comparison:${it.id}" } ?: body.name
+}
+
+/** Variants follow their visible, selected parent and retain independent lazy-list keys. */
+internal fun spaceCompassCatalogDisplayRows(visibleBodies: List<SpaceCompassCelestialBody>,
+    selectedBodies: Set<SpaceCompassCelestialBody>, comparisons: List<SpaceCompassTemporalComparison>):
+    List<SpaceCompassCatalogDisplayRow> {
+    val byBody = comparisons.filter { it.body in selectedBodies }
+        .sortedWith(compareBy({ it.source == SpaceCompassComparisonSource.PERSONAL }, { it.personalDate },
+            { it.personalDate != null && it.hasReference }, { it.timeMs }, { it.id })).groupBy { it.body }
+    return buildList {
+        for (body in visibleBodies) {
+            add(SpaceCompassCatalogDisplayRow(body))
+            for (comparison in byBody[body].orEmpty()) add(SpaceCompassCatalogDisplayRow(body, comparison))
+        }
+    }
+}

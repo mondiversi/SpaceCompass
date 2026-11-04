@@ -1,9 +1,9 @@
 <resources>
     <string name="info_news_title">Ostatnie nowości · %1$s</string>
-    <string name="info_news_star_sky" formatted="false">Wyłączone opcje są szare bez przekreślenia, z zachowaniem rozmiaru i wyrównania ikon. Automatyczna Location również jest szara.</string>
-    <string name="info_news_texture_downloads" formatted="false">W kompaktowym układzie poziomym Obiekty, Location, Linie i 0–24 są po lewej, a oś/pogoda lub przezroczystość/zoom aparatu po prawej.</string>
-    <string name="info_news_weather" formatted="false">Aparat znajduje się nad przechwytywaniem, a punkty/antypody pod Menu. Grupy boczne są wyśrodkowane między przyciskami narożnymi.</string>
-    <string name="info_news_viewer_zoom" formatted="false">Obramowanie migawki pulsuje od niebieskiego/cyjanu motywu do neutralnej szarości w cyklu 3,2 sekundy. Bez animacji pozostaje widoczna stała ramka.</string>
-    <string name="info_news_settings" formatted="false">Pogoda wizualna jest domyślnie włączona z zachowaniem zapisanych wyborów. Ponowienia pogody są ukryte, gdy pogoda jest wyłączona lub aparat aktywny.</string>
-    <string name="info_news_catalog" formatted="false">Ukryte Etykiety i Pozycja są szare w podglądach. Kolejność trybów etykiet zmieniono bez naruszania zapisanego wyboru.</string>
+    <string name="info_news_star_sky" formatted="false">Porównuj trajektorie z kluczowych wysokości i zdarzeń z aktualnym niebem.</string>
+    <string name="info_news_texture_downloads" formatted="false">Zapisuj własne momenty z nazwą, datą i opcjonalną godziną.</string>
+    <string name="info_news_weather" formatted="false">Importuj i eksportuj własne momenty oddzielnie lub dołącz aktywne porównania do Location.</string>
+    <string name="info_news_viewer_zoom" formatted="false">Trajektorie z datą są grupowane pod obiektami w kolejności chronologicznej.</string>
+    <string name="info_news_settings" formatted="false">Menu obserwatorium zapewnia szybki dostęp do trajektorii, kluczowych punktów i własnych momentów.</string>
+    <string name="info_news_catalog" formatted="false">Zdjęcia i panoramy pokazują nazwy trajektorii i uwzględniają aktywne porównania podczas eksportu.</string>
 </resources>

@@ -21,8 +21,8 @@
     <string name="tutorial_capture" formatted="false">Prepare um panorama do céu ou uma foto com sobreposições astronómicas. Exporte a partir da pré-visualização.</string>
     <string name="tutorial_panels" formatted="false">Recolha ou expanda os painéis do objeto e da bússola para libertar espaço.</string>
     <string name="tutorial_antipodes" formatted="false">Toca para mostrar ou ocultar a direção oposta dos pontos selecionados: azimute +180° e elevação de sinal contrário. Mantém premido para desmarcar todos os pontos.</string>
-    <string name="tutorial_navigation" formatted="false">Percorra os objetos selecionados. O painel mostra o objeto ativo e as cores da trajetória. Toca no nome para abrir o catálogo de objetos.</string>
-    <string name="tutorial_observatory" formatted="false">Abra o modelo, dados científicos, tempo de viagem, alturas e eventos anuais.</string>
+    <string name="tutorial_navigation" formatted="false">Percorra os objetos selecionados. O painel mostra o objeto ativo e as cores da trajetória.</string>
+    <string name="tutorial_observatory" formatted="false">Toca no nome do objeto para abrir o Observatório: modelo, dados científicos, tempo de viagem, alturas e eventos principais. Na barra superior aparecem Percurso diário, Exportar e Favoritos, por esta ordem.</string>
     <string name="tutorial_daily" formatted="false">Consulte trajetória, horários, elevações e pontos selecionáveis. Eventos futuros podem ter alertas.</string>
     <string name="tutorial_gps" formatted="false">Consulte posição real, altitude GPS, orientação e meteorologia, independentemente da Location.</string>
     <string name="tutorial_points" formatted="false">Selecione um ponto. Aponte para ler objeto, hora, T, azimute e elevação. O contorno do objeto segue a cor da sua trajetória; fica azul ou azul-claro ao selecionar a posição atual.</string>
@@ -30,4 +30,5 @@
     <string name="tutorial_reminder" formatted="false">Abra o alarme ou calendário Android para um evento futuro válido. Não se aplica ao passado nem ao ponto atual.</string>
     <string name="tutorial_status_title" formatted="false">Estado e recuperação</string>
     <string name="tutorial_status" formatted="false">Consulte o estado. A ação pode pedir permissão, ativar a localização ou tentar carregar dados orbitais ou meteorológicos. O tutorial não executa a ação.</string>
+    <string name="tutorial_remove" formatted="false">Remove o objeto ativo dos objetos selecionados após confirmação. O objeto continua disponível no catálogo.</string>
 </resources>

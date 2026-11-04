@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="key_events_title">Belangrijke momenten</string>
-    <string name="key_events_description">Gebeurtenissen voor het gekozen object, jaar en de locatie. Tik op een datum om dat moment met stilstaande tijd te bekijken.</string>
+    <string name="key_events_description">Gebeurtenissen voor het gekozen object, jaar en de locatie.</string>
     <string name="key_events_empty">Geen gebeurtenissen van dit type voor dit object in het gekozen jaar.</string>
     <string name="key_events_horizon_note">Ideale vrije horizon, zoals bij het dagelijkse pad. Poolperioden lopen tussen opeenvolgende opkomsten en ondergangen; uiterste kloktijden gebruiken de lokale tijd.</string>
     <string name="key_events_global_note">Baangebeurtenissen hebben universele tijdstippen. De hoogte wordt vanaf de locatie berekend; afstanden gelden tussen de middelpunten van de hemellichamen.</string>

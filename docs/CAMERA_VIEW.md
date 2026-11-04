@@ -45,7 +45,7 @@ to the pointing viewport's reticle, including the split landscape layout.
 The same density-independent horizontal and vertical focal ratios are passed to
 body projection, paths, direction arrows, event markers, hit/focus targets, floating
 point captions and horizon clipping. Camera overlays wait for capture metadata
-instead of using the virtual sky's fixed 60-degree field of view.
+instead of using the virtual sky's wide-angle projection. The virtual view uses 0.95x the original 60-degree vertical lens focal length (about 62.6 degrees vertically); camera mode always uses the actual lens and crop, independently of that virtual scale.
 
 This is sensor-based sky pointing, not visual SLAM or an astrometrically calibrated
 camera. Absolute direction still depends on the handset's compass/declination and

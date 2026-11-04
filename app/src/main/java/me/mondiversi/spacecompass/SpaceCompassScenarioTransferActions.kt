@@ -103,7 +103,9 @@ internal fun SpaceCompassScenarioTransferActions(capture: (Boolean) -> SpaceComp
                     objectsText = objectsText?.let { included ->
                         val scene = SpaceCompassScenarioArchive.decode(included)
                         ready.copy(celestialSelection = scene.celestialSelection,
-                            selectedOrbitPoints = scene.selectedOrbitPoints).encode()
+                            selectedOrbitPoints = scene.selectedOrbitPoints, comparisons = scene.comparisons,
+                            activeComparisonId = scene.activeComparisonId, antipodesVisible = scene.antipodesVisible,
+                            personalMoments = scene.personalMoments).encode()
                     }
                     exportText = ready.encode()
                 }
@@ -175,7 +177,7 @@ internal fun SpaceCompassScenarioTransferActions(capture: (Boolean) -> SpaceComp
 
 /** Matches the export tray and its 24 dp viewport; the downward arrow denotes restoration. */
 @Composable
-private fun SpaceCompassScenarioImportIcon() {
+internal fun SpaceCompassScenarioImportIcon() {
     val tint = LocalContentColor.current
     SpaceCompassIconCanvas(tint, Modifier.size(SpaceCompassTitleActionIconSize).offset(y = (-1.5).dp)) { color ->
         fun line(ax: Float, ay: Float, bx: Float, by: Float) = drawLine(color,

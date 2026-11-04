@@ -50,15 +50,15 @@ internal fun SpaceCompassPanoramaActionIcon(share: Boolean) {
 internal val SpaceCompassExportIconViewport = 24.dp
 
 /** Painted bounds include the round stroke caps: the tray spans 20–80%, the arrow 25–88%. */
-internal fun spaceCompassExportIconInkSize(strokeWidth: androidx.compose.ui.unit.Dp) =
-    androidx.compose.ui.unit.DpSize(SpaceCompassExportIconViewport * .60f + strokeWidth,
-        SpaceCompassExportIconViewport * .63f + strokeWidth)
+internal fun spaceCompassExportIconInkSize(strokeWidth: androidx.compose.ui.unit.Dp, iconSize: androidx.compose.ui.unit.Dp) =
+    androidx.compose.ui.unit.DpSize(iconSize * .60f + strokeWidth, iconSize * .63f + strokeWidth)
 
 /** Upward export arrow and tray, including its optical vertical correction. */
 @Composable
-internal fun SpaceCompassPanoramaExportIcon(strokeWidth: androidx.compose.ui.unit.Dp = 2.21.dp) {
+internal fun SpaceCompassPanoramaExportIcon(strokeWidth: androidx.compose.ui.unit.Dp = 2.21.dp,
+    iconSize: androidx.compose.ui.unit.Dp = SpaceCompassExportIconViewport) {
     val tint = LocalContentColor.current
-    SpaceCompassIconCanvas(tint, Modifier.size(SpaceCompassExportIconViewport).offset(y = (-1.5).dp)) { tint ->
+    SpaceCompassIconCanvas(tint, Modifier.size(iconSize).offset(y = iconSize * (-.0625f))) { tint ->
         val stroke = strokeWidth.toPx()
         fun line(ax: Float, ay: Float, bx: Float, by: Float) = drawLine(tint,
             Offset(size.width * ax, size.height * ay), Offset(size.width * bx, size.height * by),

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="key_events_title">Peristiwa utama</string>
-    <string name="key_events_description">Peristiwa untuk objek, tahun, dan lokasi terpilih. Ketuk tanggal untuk melihat saat itu dengan waktu dijeda.</string>
+    <string name="key_events_description">Peristiwa untuk objek, tahun, dan lokasi terpilih.</string>
     <string name="key_events_empty">Tidak ada peristiwa jenis ini untuk objek tersebut pada tahun terpilih.</string>
     <string name="key_events_horizon_note">Horizon ideal tanpa penghalang, seperti lintasan harian. Periode kutub berada di antara terbit dan terbenam berurutan; waktu ekstrem memakai waktu setempat.</string>
     <string name="key_events_global_note">Peristiwa orbit memiliki saat universal. Elevasi dihitung dari lokasi; jarak diukur antara pusat benda.</string>

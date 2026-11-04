@@ -2,4 +2,6 @@
 <resources>
     <string name="celestial_favorite_add">Tambahkan ke favorit</string>
     <string name="celestial_favorite_remove">Hapus dari favorit</string>
+    <string name="celestial_favorite_added">Ditambahkan ke favorit</string>
+    <string name="celestial_favorite_removed">Dihapus dari favorit</string>
 </resources>

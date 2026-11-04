@@ -2,4 +2,6 @@
 <resources>
     <string name="celestial_favorite_add">افزودن به علاقه‌مندی‌ها</string>
     <string name="celestial_favorite_remove">حذف از علاقه‌مندی‌ها</string>
+    <string name="celestial_favorite_added">به علاقه‌مندی‌ها افزوده شد</string>
+    <string name="celestial_favorite_removed">از علاقه‌مندی‌ها حذف شد</string>
 </resources>

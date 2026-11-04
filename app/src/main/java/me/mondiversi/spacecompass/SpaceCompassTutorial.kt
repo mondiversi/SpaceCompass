@@ -46,6 +46,7 @@ internal enum class SpaceCompassTutorialFeature(val title: Int, val description:
     ANTIPODES(R.string.scene_selected_points, R.string.tutorial_antipodes),
     NAVIGATION(R.string.tutorial_navigation_title, R.string.tutorial_navigation),
     OBSERVATORY(R.string.celestial_details_title, R.string.tutorial_observatory),
+    REMOVE(R.string.celestial_remove_title, R.string.tutorial_remove),
     DAILY(R.string.celestial_daily_path, R.string.tutorial_daily),
     GPS(R.string.celestial_details_compact, R.string.tutorial_gps),
     POINT(R.string.tutorial_points_title, R.string.tutorial_points),

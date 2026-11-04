@@ -42,7 +42,7 @@ internal fun spaceCompassSelectedDailyPathEntries(path: SpaceCompassSunDailyPath
     val historical = selected.filter { saved -> !saved.key.isCurrent && saved.key.body == path.body &&
         spaceCompassPathAcceptsSelection(path,saved) &&
         entries.none { !it.isCurrent && spaceCompassOrbitPointKeysMatch(saved.key,
-            spaceCompassOrbitPointKey(path.body, it.point, path.zone, spaceCompassPathSelectionDate(path,it.point))) }
+            spaceCompassOrbitPointKey(path.body, it.point, path.zone, spaceCompassPathSelectionDate(path,it.point), comparisonId = path.comparison?.id)) }
     }.map { SpaceCompassDailyPathListEntry(it.point, sourcePath = it.path ?: path) }
     return (entries + historical).sortedBy { it.point.timeMs }
 }

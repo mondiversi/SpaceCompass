@@ -4,7 +4,7 @@
     <string name="observation_height_minimum">Minimum tahunan</string>
     <string name="observation_height_mid_rising">Ketinggian tengah meningkat %1$s</string>
     <string name="observation_height_mid_setting">Ketinggian tengah menurun %1$s</string>
-    <string name="observation_moments_year">Puncak, lembah, dan lintasan ketinggian tengah kulminasi atas sepanjang tahun yang dipilih. Ketuk tanggal dan waktu untuk menjeda pada saat itu.</string>
+    <string name="observation_moments_year">Puncak, lembah, dan lintasan ketinggian tengah kulminasi atas sepanjang tahun yang dipilih.</string>
     <string name="observation_moments_midpoint_note">Ketinggian tengah: kulminasi yang paling dekat dengan rata-rata ketinggian maksimum dan minimum tahunan.</string>
     <string name="observation_moments_unavailable">Data orbit yang tersedia tidak mencukupi untuk perhitungan tahunan yang andal.</string>
     <string name="observation_moment_applied">Tanggal dan waktu diatur · Waktu dijeda</string>
@@ -16,4 +16,12 @@
     <string name="observation_height_mid_setting_single">Ketinggian tengah menurun</string>
     <string name="observation_heights_title">Ketinggian utama</string>
     <string name="observation_heights_year">Tahun</string>
+
+    <string name="observation_height_monthly">Kulminasi tanggal 21</string>
+    <string name="comparison_selection_note">Centang kotak untuk menambahkan perbandingan langit pada waktu tetap tanpa mengubah Location.</string>
+    <string name="comparison_reference_point">Acuan</string>
+    <string name="observatory_key_points">Titik penting</string>
+    <string name="observatory_key_heights">Ketinggian</string>
+    <string name="observatory_key_events">Peristiwa</string>
+    <string name="observatory_menu">Menu observatorium</string>
 </resources>

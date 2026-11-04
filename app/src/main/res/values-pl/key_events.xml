@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="key_events_title">Kluczowe zjawiska</string>
-    <string name="key_events_description">Zjawiska dla wybranego obiektu, roku i lokalizacji. Dotknij daty, aby zobaczyć ten moment przy zatrzymanym czasie.</string>
+    <string name="key_events_description">Zjawiska dla wybranego obiektu, roku i lokalizacji.</string>
     <string name="key_events_empty">Brak zjawisk tego typu dla obiektu w wybranym roku.</string>
     <string name="key_events_horizon_note">Idealny odsłonięty horyzont, jak w przebiegu dziennym. Okresy polarne obejmują kolejne wschody i zachody; skrajne godziny uwzględniają czas lokalny.</string>
     <string name="key_events_global_note">Zjawiska orbitalne mają wspólne chwile wystąpienia. Wysokość obliczana jest dla lokalizacji, a odległości między środkami ciał.</string>
