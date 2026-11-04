@@ -98,7 +98,7 @@ internal fun SpaceCompassSunPointingViewport(
     topControlSpacing: androidx.compose.ui.unit.Dp = 8.dp,
     opticalFrame: SpaceCompassSunSceneFrame? = null,
     showAntipodes: Boolean = false,
-    sideControls: Boolean = false
+    sideControls: Boolean = false, activeComparisonId: String? = null
 ) {
     val reticleAction = stringResource(if (showReticle) R.string.reticle_disable else R.string.reticle_enable)
     BoxWithConstraints(modifier.testTag("sun-finder-sky").spaceCompassTutorialViewport().semantics {
@@ -108,7 +108,6 @@ internal fun SpaceCompassSunPointingViewport(
         }
     }) {
         val comparisonOverlays = LocalSpaceCompassComparisonOverlays.current
-        val activeComparisonId = comparisonOverlays.activeSpaceCompassComparison(LocalSpaceCompassComparisons.current?.activeId)?.id
         val density = LocalDensity.current
         val rtl = LocalLayoutDirection.current == LayoutDirection.Rtl
         val width = with(density) { maxWidth.toPx().toDouble() }

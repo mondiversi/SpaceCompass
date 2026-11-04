@@ -36,13 +36,15 @@ class SpaceCompassPersonalMomentTest {
         assertTrue(state.sceneEntries(rome).isEmpty())
         state.togglePersonalMoment(timed.id)
         assertEquals(timed.id, state.activeId)
-        assertEquals(listOf(timed.resolve(rome)), state.visibleEntries(setOf(sun), rome))
-        assertTrue(state.visibleEntries(emptySet(), rome).isEmpty())
+        assertEquals(listOf(timed.resolve(rome)), state.sceneEntries(rome))
         state.remove(timed.id)
         assertEquals(listOf(timed), state.personalMoments)
         assertEquals(listOf(sun), parents)
         assertNull(state.activeId)
+        assertTrue(state.selectComparison(timed.resolve(rome)))
+        assertEquals(listOf(timed.resolve(rome)), state.sceneEntries(rome))
         state.deletePersonalMoment(timed.id)
+        assertFalse(state.selectComparison(timed.resolve(rome)))
         assertTrue(state.personalMoments.isEmpty())
     }
 

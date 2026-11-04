@@ -1,9 +1,9 @@
 <resources>
     <string name="info_news_title">Mambo mapya · %1$s</string>
-    <string name="info_news_star_sky" formatted="false">Linganisha njia za miinuko na matukio muhimu na anga la sasa.</string>
-    <string name="info_news_texture_downloads" formatted="false">Hifadhi nyakati binafsi kwa jina, tarehe na saa ya hiari.</string>
-    <string name="info_news_weather" formatted="false">Ingiza na hamisha nyakati binafsi kando au jumuisha milinganisho inayoonekana katika Location.</string>
-    <string name="info_news_viewer_zoom" formatted="false">Njia zenye tarehe zimepangwa kwa mpangilio wa wakati chini ya kitu husika.</string>
-    <string name="info_news_settings" formatted="false">Menyu ya Kituo cha Uchunguzi hufungua haraka njia, nukta muhimu na nyakati binafsi.</string>
-    <string name="info_news_catalog" formatted="false">Picha na panorama huonyesha majina ya njia na kujumuisha milinganisho inayoonekana wakati wa kuhamisha.</string>
+    <string name="info_news_star_sky" formatted="false">Njia zenye tarehe hubaki zikionekana unapozima kitu cha sasa.</string>
+    <string name="info_news_texture_downloads" formatted="false">Ondoa uteuzi wa kila tarehe kivyake katika Vitu, Miinuko Muhimu, Matukio Muhimu au Nyakati Binafsi.</string>
+    <string name="info_news_weather" formatted="false">Tarehe zinazotumika hubaki chini ya kitu husika katika katalogi hata uteuzi wake ukiondolewa.</string>
+    <string name="info_news_viewer_zoom" formatted="false">Chaguo la kitu cha sasa na la tarehe huhifadhiwa kando na hubaki programu inapofunguliwa tena.</string>
+    <string name="info_news_settings" formatted="false">Nukta zilizochaguliwa na zile zilizo upande mkabala hubaki kwenye njia zenye tarehe zinazotumika.</string>
+    <string name="info_news_catalog" formatted="false">Picha, panorama na faili za Location zinazohamishwa pamoja na vitu vya angani zinaweza kujumuisha njia zenye tarehe zinazotumika.</string>
 </resources>

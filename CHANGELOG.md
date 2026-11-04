@@ -1,5 +1,11 @@
 # Changelog
 
+## 1.8.1 — 2026-11-04
+
+- Dated paths stay visible when their live object is unchecked. Live and dated selections are saved independently.
+- Unchecking a dated path in Objects leaves its row in place for the current visit, so you can check it again.
+- The Personal Moments trash icon uses the theme’s destructive red, with a confirmation before removal.
+
 ## 1.8.0 — 2026-11-04
 
 - **Compare the sky across dates.** Add paths from Key Heights and Key Events alongside the live sky without changing your Location. The Sun also has a culmination entry for the 21st of each month.

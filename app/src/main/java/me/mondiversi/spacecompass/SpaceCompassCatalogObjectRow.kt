@@ -30,13 +30,13 @@ import androidx.compose.ui.unit.sp
 /** The dated child keeps a separate checkbox and follows the catalog's reading direction. */
 @Composable
 internal fun SpaceCompassCatalogComparisonRow(comparison: SpaceCompassTemporalComparison, color: Color,
-    onDeselect: () -> Unit) {
+    checked: Boolean, onCheckedChange: (Boolean) -> Unit) {
     val name = spaceCompassComparisonDisplayName(comparison)
     Row(Modifier.fillMaxWidth().heightIn(min = 48.dp).padding(start = 36.dp, end = 16.dp)
         .testTag("catalog-comparison-${comparison.id}"),
         verticalAlignment = Alignment.CenterVertically, horizontalArrangement = Arrangement.spacedBy(12.dp)) {
         Box(Modifier.width(24.dp).height(48.dp), contentAlignment = Alignment.Center) {
-            Checkbox(checked = true, onCheckedChange = { onDeselect() }, colors = spaceCompassCheckboxColors(),
+            Checkbox(checked = checked, onCheckedChange = onCheckedChange, colors = spaceCompassCheckboxColors(),
                 modifier = Modifier.requiredSize(48.dp).testTag("catalog-comparison-check-${comparison.id}")
                     .semantics { contentDescription = name })
         }

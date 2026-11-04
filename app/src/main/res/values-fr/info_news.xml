@@ -1,9 +1,9 @@
 <resources>
     <string name="info_news_title">Dernières nouveautés · %1$s</string>
-    <string name="info_news_star_sky" formatted="false">Comparez les trajectoires des hauteurs et événements clés avec le ciel actuel.</string>
-    <string name="info_news_texture_downloads" formatted="false">Enregistrez des moments personnels avec un nom, une date et une heure facultative.</string>
-    <string name="info_news_weather" formatted="false">Importez et exportez les moments personnels séparément ou incluez les comparaisons actives dans une Location.</string>
-    <string name="info_news_viewer_zoom" formatted="false">Les trajectoires datées sont regroupées par objet dans l’ordre chronologique.</string>
-    <string name="info_news_settings" formatted="false">Le menu de l’Observatoire donne accès aux trajectoires, points clés et moments personnels.</string>
-    <string name="info_news_catalog" formatted="false">Les photos et panoramas affichent le nom des trajectoires et incluent les comparaisons actives à l’exportation.</string>
+    <string name="info_news_star_sky" formatted="false">Les trajectoires datées restent visibles lorsque vous désactivez l’objet actuel.</string>
+    <string name="info_news_texture_downloads" formatted="false">Décochez chaque date séparément dans Objets, Hauteurs clés, Événements clés ou Moments personnels.</string>
+    <string name="info_news_weather" formatted="false">Dans le catalogue, les dates actives restent sous leur objet même si sa case est décochée.</string>
+    <string name="info_news_viewer_zoom" formatted="false">Les sélections de l’objet actuel et des dates sont enregistrées séparément et conservées au redémarrage.</string>
+    <string name="info_news_settings" formatted="false">Les points sélectionnés et leurs antipodes restent disponibles sur les trajectoires datées actives.</string>
+    <string name="info_news_catalog" formatted="false">Les photos, les panoramas et les exports de Location avec objets célestes peuvent inclure les trajectoires datées actives.</string>
 </resources>

@@ -1,9 +1,9 @@
 <resources>
     <string name="info_news_title">हाल के बदलाव · %1$s</string>
-    <string name="info_news_star_sky" formatted="false">मुख्य ऊँचाइयों और घटनाओं के पथों की तुलना मौजूदा आकाश से करें।</string>
-    <string name="info_news_texture_downloads" formatted="false">निजी क्षणों को नाम, तारीख और वैकल्पिक समय के साथ सहेजें।</string>
-    <string name="info_news_weather" formatted="false">निजी क्षण अलग से आयात और निर्यात करें या सक्रिय तुलनाएँ Location में शामिल करें।</string>
-    <string name="info_news_viewer_zoom" formatted="false">तारीख वाले पथ संबंधित पिंड के नीचे समय क्रम में दिखते हैं।</string>
-    <string name="info_news_settings" formatted="false">वेधशाला मेनू से पथों, मुख्य बिंदुओं और निजी क्षणों तक जल्दी पहुँचें।</string>
-    <string name="info_news_catalog" formatted="false">फ़ोटो और पैनोरमा पथों के नाम दिखाते हैं और निर्यात में सक्रिय तुलनाएँ शामिल करते हैं।</string>
+    <string name="info_news_star_sky" formatted="false">मौजूदा पिंड को बंद करने पर भी तारीख वाले पथ दिखाई देते हैं।</string>
+    <string name="info_news_texture_downloads" formatted="false">पिंड, मुख्य ऊँचाइयाँ, मुख्य घटनाएँ या निजी क्षण में हर तारीख का चयन अलग से हटाएँ।</string>
+    <string name="info_news_weather" formatted="false">पिंड का चयन हटाने पर भी सक्रिय तारीखें सूची में उसी के नीचे रहती हैं।</string>
+    <string name="info_news_viewer_zoom" formatted="false">मौजूदा पिंड और तारीखों के चयन अलग से सहेजे जाते हैं और ऐप दोबारा खोलने पर बने रहते हैं।</string>
+    <string name="info_news_settings" formatted="false">सक्रिय तारीख वाले पथों पर चुने गए बिंदु और उनके विपरीत बिंदु उपलब्ध रहते हैं।</string>
+    <string name="info_news_catalog" formatted="false">फ़ोटो, पैनोरमा और आकाशीय पिंडों के साथ निर्यात की गई Location में सक्रिय तारीख वाले पथ शामिल हो सकते हैं।</string>
 </resources>

@@ -1,9 +1,9 @@
 <resources>
     <string name="info_news_title">Τελευταία νέα · %1$s</string>
-    <string name="info_news_star_sky" formatted="false">Συγκρίνετε τις τροχιές σημαντικών υψών και συμβάντων με τον τρέχοντα ουρανό.</string>
-    <string name="info_news_texture_downloads" formatted="false">Αποθηκεύστε προσωπικές στιγμές με όνομα, ημερομηνία και προαιρετική ώρα.</string>
-    <string name="info_news_weather" formatted="false">Εισαγάγετε και εξαγάγετε προσωπικές στιγμές χωριστά ή συμπεριλάβετε ενεργές συγκρίσεις σε ένα Location.</string>
-    <string name="info_news_viewer_zoom" formatted="false">Οι τροχιές με ημερομηνία ομαδοποιούνται ανά αντικείμενο με χρονολογική σειρά.</string>
-    <string name="info_news_settings" formatted="false">Το μενού του Αστεροσκοπείου δίνει γρήγορη πρόσβαση σε τροχιές, σημαντικά σημεία και προσωπικές στιγμές.</string>
-    <string name="info_news_catalog" formatted="false">Φωτογραφίες και πανοράματα δείχνουν τα ονόματα των τροχιών και περιλαμβάνουν τις ενεργές συγκρίσεις στην εξαγωγή.</string>
+    <string name="info_news_star_sky" formatted="false">Οι τροχιές με ημερομηνία μένουν ορατές όταν απενεργοποιείτε το τρέχον αντικείμενο.</string>
+    <string name="info_news_texture_downloads" formatted="false">Αποεπιλέξτε κάθε ημερομηνία χωριστά στα Αντικείμενα, τα Σημαντικά ύψη, τα Σημαντικά συμβάντα ή τις Προσωπικές στιγμές.</string>
+    <string name="info_news_weather" formatted="false">Οι ενεργές ημερομηνίες παραμένουν κάτω από το αντικείμενό τους στον κατάλογο ακόμη κι όταν αυτό αποεπιλεγεί.</string>
+    <string name="info_news_viewer_zoom" formatted="false">Οι επιλογές του τρέχοντος αντικειμένου και των ημερομηνιών αποθηκεύονται χωριστά και διατηρούνται μετά την επανεκκίνηση.</string>
+    <string name="info_news_settings" formatted="false">Τα επιλεγμένα σημεία και τα αντίποδά τους παραμένουν διαθέσιμα στις ενεργές τροχιές με ημερομηνία.</string>
+    <string name="info_news_catalog" formatted="false">Φωτογραφίες, πανοράματα και εξαγωγές Location με ουράνια αντικείμενα μπορούν να περιέχουν τις ενεργές τροχιές με ημερομηνία.</string>
 </resources>

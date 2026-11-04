@@ -1,9 +1,9 @@
 <resources>
     <string name="info_news_title">Perubahan terbaru · %1$s</string>
-    <string name="info_news_star_sky" formatted="false">Bandingkan lintasan dari ketinggian dan peristiwa utama dengan langit saat ini.</string>
-    <string name="info_news_texture_downloads" formatted="false">Simpan momen pribadi dengan nama, tanggal, dan waktu opsional.</string>
-    <string name="info_news_weather" formatted="false">Impor dan ekspor momen pribadi secara terpisah atau sertakan perbandingan aktif dalam Location.</string>
-    <string name="info_news_viewer_zoom" formatted="false">Lintasan bertanggal dikelompokkan di bawah objeknya sesuai urutan waktu.</string>
-    <string name="info_news_settings" formatted="false">Menu Observatorium memberi akses cepat ke lintasan, titik utama, dan momen pribadi.</string>
-    <string name="info_news_catalog" formatted="false">Foto dan panorama menampilkan nama lintasan dan menyertakan perbandingan aktif saat diekspor.</string>
+    <string name="info_news_star_sky" formatted="false">Lintasan bertanggal tetap terlihat saat objek terkini dinonaktifkan.</string>
+    <string name="info_news_texture_downloads" formatted="false">Hapus centang tiap tanggal secara terpisah di Objek, Ketinggian Utama, Peristiwa Utama, atau Momen Pribadi.</string>
+    <string name="info_news_weather" formatted="false">Tanggal aktif tetap dikelompokkan di bawah objeknya dalam katalog meski objek itu tidak dicentang.</string>
+    <string name="info_news_viewer_zoom" formatted="false">Pilihan objek terkini dan tanggal disimpan terpisah dan tetap ada saat aplikasi dibuka ulang.</string>
+    <string name="info_news_settings" formatted="false">Titik terpilih dan antipodanya tetap tersedia pada lintasan bertanggal yang aktif.</string>
+    <string name="info_news_catalog" formatted="false">Foto, panorama, dan ekspor Location dengan objek langit dapat menyertakan lintasan bertanggal yang aktif.</string>
 </resources>

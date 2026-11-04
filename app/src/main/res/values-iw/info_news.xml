@@ -1,9 +1,9 @@
 <resources>
     <string name="info_news_title">החידושים האחרונים · %1$s</string>
-    <string name="info_news_star_sky" formatted="false">השוו מסלולים מגבהים ומאירועים מרכזיים לשמיים הנוכחיים.</string>
-    <string name="info_news_texture_downloads" formatted="false">שמרו רגעים אישיים עם שם, תאריך ושעה לבחירה.</string>
-    <string name="info_news_weather" formatted="false">ייבאו וייצאו רגעים אישיים בנפרד או כללו השוואות פעילות ב־Location.</string>
-    <string name="info_news_viewer_zoom" formatted="false">מסלולים לפי תאריך מופיעים תחת העצם בסדר כרונולוגי.</string>
-    <string name="info_news_settings" formatted="false">תפריט המצפה מציע גישה מהירה למסלולים, לנקודות מרכזיות ולרגעים אישיים.</string>
-    <string name="info_news_catalog" formatted="false">תמונות ופנורמות מציגות שמות מסלולים וכוללות השוואות פעילות בייצוא.</string>
+    <string name="info_news_star_sky" formatted="false">מסלולים לפי תאריך נשארים גלויים כשמכבים את העצם הנוכחי.</string>
+    <string name="info_news_texture_downloads" formatted="false">אפשר לבטל כל תאריך בנפרד בעצמים, בגבהים מרכזיים, באירועים מרכזיים או ברגעים אישיים.</string>
+    <string name="info_news_weather" formatted="false">תאריכים פעילים נשארים תחת העצם שלהם בקטלוג גם כשהוא אינו מסומן.</string>
+    <string name="info_news_viewer_zoom" formatted="false">הבחירות של העצם הנוכחי ושל התאריכים נשמרות בנפרד גם לאחר פתיחה מחדש של האפליקציה.</string>
+    <string name="info_news_settings" formatted="false">נקודות שנבחרו והנקודות הנגדיות שלהן נשארות זמינות במסלולים הפעילים לפי תאריך.</string>
+    <string name="info_news_catalog" formatted="false">תמונות, פנורמות וקובצי Location שיוצאו עם עצמים שמימיים יכולים לכלול מסלולים פעילים לפי תאריך.</string>
 </resources>

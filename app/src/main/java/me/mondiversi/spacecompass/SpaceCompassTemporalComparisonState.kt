@@ -23,9 +23,6 @@ internal class SpaceCompassTemporalComparisonState(
     fun sceneEntries(zone: ZoneId): List<SpaceCompassTemporalComparison> =
         entries + personalMoments.filter { it.enabled }.sortedWith(spaceCompassPersonalMomentOrder).map { it.resolve(zone) }
 
-    fun visibleEntries(selectedBodies: Set<SpaceCompassCelestialBody>, zone: ZoneId = ZoneId.systemDefault()) =
-        sceneEntries(zone).filter { it.body in selectedBodies }
-
     fun canAddPersonalMoment(moment: SpaceCompassPersonalMoment) =
         personalMoments.size < SPACE_COMPASS_PERSONAL_MOMENT_LIMIT && personalMoments.none { it.id == moment.id }
 
@@ -70,13 +67,22 @@ internal class SpaceCompassTemporalComparisonState(
     fun toggle(body: SpaceCompassCelestialBody, timeMs: Long, zone: ZoneId,
         source: SpaceCompassComparisonSource, origin: String, annualExtreme: Boolean = false) {
         val old = entries.firstOrNull { it.body == body && it.source == source && it.origin == origin }
-        if (old != null) remove(old.id) else {
-            if (entries.size >= 512) return
-            val added = SpaceCompassTemporalComparison.create(body, timeMs, zone, source, origin, annualExtreme)
-            entries = entries + added
-            activeId = added.id
-        }
+        if (old != null) remove(old.id)
+        else selectComparison(SpaceCompassTemporalComparison.create(body, timeMs, zone, source, origin, annualExtreme))
     }
+
+    fun selectComparison(comparison: SpaceCompassTemporalComparison): Boolean {
+        if (comparison.source == SpaceCompassComparisonSource.PERSONAL) {
+            val moment = personalMoments.firstOrNull { it.id == comparison.id } ?: return false
+            if (!moment.enabled) togglePersonalMoment(moment.id)
+        } else if (entries.none { it.id == comparison.id }) {
+            if (entries.size >= 512) return false
+            entries = entries + comparison
+            activeId = comparison.id
+        }
+        return true
+    }
+
     /** One page/year is toggled atomically; pins belonging to removed comparisons are pruned together. */
     fun toggleAll(candidates: List<SpaceCompassTemporalComparison>) {
         val choices = candidates.distinctBy { it.id }

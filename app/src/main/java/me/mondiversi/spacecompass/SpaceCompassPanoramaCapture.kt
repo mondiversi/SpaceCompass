@@ -35,9 +35,9 @@ internal fun rememberSpaceCompassPanoramaAction(timeMs: Long, latitude: Double?,
     showWeather: Boolean = SPACE_COMPASS_WEATHER_VISIBLE_DEFAULT,
     solarLighting: SpaceCompassSolarLighting? = null,
     selectedPoints: List<SpaceCompassSelectedOrbitPoint> = emptyList(),
-    activeBody: SpaceCompassCelestialBody? = null,forward24Hours: Boolean = false, showAntipodes: Boolean = false): SpaceCompassPanoramaAction {
+    activeBody: SpaceCompassCelestialBody? = null, activeComparisonId: String? = null,
+    forward24Hours: Boolean = false, showAntipodes: Boolean = false): SpaceCompassPanoramaAction {
     val comparisonOverlays = LocalSpaceCompassComparisonOverlays.current
-    val activeComparisonId = comparisonOverlays.activeSpaceCompassComparison(LocalSpaceCompassComparisons.current?.activeId)?.id
     val selectionTint = MaterialTheme.colorScheme.primary.toArgb()
     val context = LocalContext.current
     val resources = LocalResources.current
@@ -87,7 +87,7 @@ internal fun rememberSpaceCompassPanoramaAction(timeMs: Long, latitude: Double?,
                 val credits = "NASA/GSFC/ASU; NASA/VTAD; NASA/JPL/USGS; Solar System Scope / INOVE; solarsystemscope.com/textures/; " +
                     "CC BY 4.0 (creativecommons.org/licenses/by/4.0/)" +
                     (if (!cameraEnabled) "; NASA/Goddard SVS, Deep Star Maps 2020; ESA/Gaia/DPAC; Ernie Wright (USRA)" else "") +
-                    (if (bodies.any { it.isFictional }) "; Fictional references: original AI illustrations, not observed objects" else "") + if (captureWeather != null) "; Open-Meteo (CC BY 4.0)" else ""
+                    (if (objects.any { it.body.isFictional }) "; Fictional references: original AI illustrations, not observed objects" else "") + if (captureWeather != null) "; Open-Meteo (CC BY 4.0)" else ""
                 val snapshot = SpaceCompassPanoramaSnapshot(timeMs, latitude ?: 0.0, longitude ?: 0.0, altitude ?: 0.0, phase, captureWeather,
                     objects, remote, "", emptyList(), emptyList(), labelMode = labelMode,
                     observerPositionKnown = latitude != null && longitude != null, showSkyReferences = showSkyReferences, center = center,

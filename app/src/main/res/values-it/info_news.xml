@@ -1,9 +1,9 @@
 <resources>
     <string name="info_news_title">Ultime novità · %1$s</string>
-    <string name="info_news_star_sky" formatted="false">Confronta le traiettorie di Altezze ed Eventi chiave con il cielo del momento.</string>
-    <string name="info_news_texture_downloads" formatted="false">Salva Momenti personali con un nome, una data e un’ora facoltativa.</string>
-    <string name="info_news_weather" formatted="false">Importa ed esporta i Momenti personali a parte o includi i confronti attivi in una Location.</string>
-    <string name="info_news_viewer_zoom" formatted="false">Le traiettorie a data fissa sono raggruppate sotto l’oggetto in ordine cronologico.</string>
-    <string name="info_news_settings" formatted="false">Il menu dell’Osservatorio dà accesso rapido a percorsi, punti chiave e momenti personali.</string>
-    <string name="info_news_catalog" formatted="false">Scatti e panoramiche mostrano i nomi sulle traiettorie e includono i confronti attivi nelle esportazioni.</string>
+    <string name="info_news_star_sky" formatted="false">Le traiettorie a data fissa restano visibili quando spegni il corpo attuale.</string>
+    <string name="info_news_texture_downloads" formatted="false">Puoi deselezionare ogni data in Oggetti, Altezze chiave, Eventi chiave o Momenti personali.</string>
+    <string name="info_news_weather" formatted="false">In Oggetti, le date attive restano raggruppate sotto il corpo anche quando la sua casella è spenta.</string>
+    <string name="info_news_viewer_zoom" formatted="false">L’app salva separatamente le selezioni del corpo attuale e delle date, anche dopo il riavvio.</string>
+    <string name="info_news_settings" formatted="false">I punti selezionati e i loro antipodi restano disponibili sulle traiettorie a data fissa attive.</string>
+    <string name="info_news_catalog" formatted="false">Scatti, panoramiche ed esportazioni Location con oggetti celesti possono includere le traiettorie a data fissa attive.</string>
 </resources>

@@ -81,7 +81,9 @@ internal fun SpaceCompassPersonalMomentsPage(body: SpaceCompassCelestialBody, ti
                             }
                         }
                         SpaceCompassTitleActionButton(stringResource(R.string.personal_moment_delete), { deleteId = moment.id },
-                            Modifier.testTag("personal-moment-delete-${moment.id}")) { SpaceCompassPersonalMomentTrashIcon() }
+                            Modifier.testTag("personal-moment-delete-${moment.id}"), iconColor = SpaceCompassDestructiveActionColor) {
+                            SpaceCompassPersonalMomentTrashIcon()
+                        }
                     }
                 }
             }

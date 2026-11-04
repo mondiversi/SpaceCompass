@@ -84,7 +84,8 @@ internal class SpaceCompassCatalogPresenter private constructor(
             }
             val matching = spaceCompassFilterCatalog(preferences.types, preferences.visibility, elevations,
                 bodies, preferences.origin, preferences.pointing, pointing).filter { it in searchMatches }.toSet()
-            val visible = spaceCompassCatalogDisplayOrder(sorted, matching, query.selected, query.prioritySelected,
+            val pinned = query.selected + query.comparisons.map { it.body }
+            val visible = spaceCompassCatalogDisplayOrder(sorted, matching, pinned, query.prioritySelected,
                 query.favorites.takeIf { preferences.favoritesOnly })
             currentCoroutineContext().ensureActive()
             val counts = if (countsNeeded) {
@@ -93,11 +94,11 @@ internal class SpaceCompassCatalogPresenter private constructor(
                     typeOrder = spaceCompassCatalogTypeCounts(scope, typeLabels, locale)
                     lastTypeScope = scope
                 }
-                spaceCompassCatalogFilterCounts(scope, query.selected, preferences.types, preferences.visibility,
+                spaceCompassCatalogFilterCounts(scope, pinned, preferences.types, preferences.visibility,
                     preferences.origin, preferences.pointing, elevations, pointing, searchMatches)
             } else null
             currentCoroutineContext().ensureActive()
-            val rows = spaceCompassCatalogDisplayRows(visible, query.selected, query.comparisons)
+            val rows = spaceCompassCatalogDisplayRows(visible, query.comparisons)
             SpaceCompassCatalogPresentation(query, names, visible, rows, visible.count { it in query.selected },
                 displayed, solar, counts, if (countsNeeded) typeOrder else emptyList())
         } }

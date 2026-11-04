@@ -1,6 +1,6 @@
 # Temporal comparisons
 
-Key heights and Key events can add independent, fixed-time instances of an object to the sky. Check a row to add its comparison; uncheck it or remove the corresponding island entry to remove it. The Observatory buttons count available rows for their respective pages. Dated paths appear in chronological order after their parent object. Unchecking the parent hides its paths and rechecking it restores the saved selections.
+Key heights and Key events can add independent, fixed-time instances of an object to the sky. Check a row to add its comparison; uncheck it or remove the corresponding island entry to remove it. The Observatory buttons count available rows for their respective pages. Dated paths appear in chronological order after their parent object. Unchecking the live object leaves its checked dated paths visible. Uncheck each dated path individually to hide it. In Objects, its unchecked row remains available until you leave the catalogue so you can check it again. Live and dated selections persist independently across app restarts.
 
 Each comparison retains its UTC instant and observation time zone. Geometry is recalculated for the effective Location position and altitude; it does not retain a separate observer position or advance with the live clock. Solar monthly rows use the actual upper transit on the 21st of each local-calendar month, including daylight-saving transitions. Annual extrema and intermediate-height searches remain independent of these monthly references.
 

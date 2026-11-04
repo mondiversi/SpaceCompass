@@ -1,9 +1,9 @@
 <resources>
     <string name="info_news_title">Últimas novidades · %1$s</string>
-    <string name="info_news_star_sky" formatted="false">Compara as trajetórias de alturas e eventos-chave com o céu atual.</string>
-    <string name="info_news_texture_downloads" formatted="false">Guarda momentos pessoais com nome, data e hora opcional.</string>
-    <string name="info_news_weather" formatted="false">Importa e exporta momentos pessoais separadamente ou inclui comparações ativas numa Location.</string>
-    <string name="info_news_viewer_zoom" formatted="false">As trajetórias com data aparecem por ordem cronológica sob o respetivo objeto.</string>
-    <string name="info_news_settings" formatted="false">O menu do Observatório dá acesso rápido a trajetórias, pontos-chave e momentos pessoais.</string>
-    <string name="info_news_catalog" formatted="false">As fotos e panorâmicas mostram os nomes das trajetórias e incluem as comparações ativas na exportação.</string>
+    <string name="info_news_star_sky" formatted="false">As trajetórias com data continuam visíveis ao desativar o objeto atual.</string>
+    <string name="info_news_texture_downloads" formatted="false">Desmarca cada data separadamente em Objetos, Alturas-chave, Eventos-chave ou Momentos pessoais.</string>
+    <string name="info_news_weather" formatted="false">As datas ativas permanecem agrupadas sob o objeto no catálogo, mesmo com a sua caixa desmarcada.</string>
+    <string name="info_news_viewer_zoom" formatted="false">As seleções do objeto atual e das datas são guardadas separadamente e mantidas ao reiniciar.</string>
+    <string name="info_news_settings" formatted="false">Os pontos selecionados e os seus antípodas permanecem disponíveis nas trajetórias com data ativas.</string>
+    <string name="info_news_catalog" formatted="false">Fotografias, panorâmicas e exportações de Location com objetos celestes podem incluir as trajetórias com data ativas.</string>
 </resources>

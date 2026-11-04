@@ -52,7 +52,7 @@ class SpaceCompassCatalogPresentationTest {
         assertEquals(listOf(moon, comet, mars), result.visible) // Previously published snapshots remain immutable.
     }
 
-    @Test fun datedRowsFollowTheirSelectedParentInChronologicalOrder() = runBlocking {
+    @Test fun datedRowsStayGroupedInChronologicalOrderWithAnUncheckedParent() = runBlocking {
         val calculator = presenter()
         fun dated(body: SpaceCompassCelestialBody, date: String) = SpaceCompassTemporalComparison.create(
             body, Instant.parse("${date}T12:00:00Z").toEpochMilli(), ZoneOffset.UTC,
@@ -67,9 +67,11 @@ class SpaceCompassCatalogPresentationTest {
         assertEquals(listOf(moon, moon, sun, sun, sun), chosen.rows.map { it.body })
         assertEquals(listOf(null, moonDate, null, early, late), chosen.rows.map { it.comparison })
         assertEquals(chosen.rows.size, chosen.rows.map { it.key }.toSet().size)
-        val hidden = calculator.present(request(alphabetical, selected = setOf(moon), comparisons = comparisons), false)
-        assertTrue(sun in hidden.visible)
-        assertEquals(listOf(moonDate), hidden.rows.mapNotNull { it.comparison })
+        val unchecked = calculator.present(request(alphabetical, search = "no match", selected = setOf(moon),
+            comparisons = comparisons), false)
+        assertEquals(listOf(moon, sun), unchecked.visible)
+        assertEquals(1, unchecked.checkedCount)
+        assertEquals(chosen.rows, unchecked.rows)
         val removed = calculator.present(request(alphabetical, selected = setOf(sun, moon),
             comparisons = comparisons - early), false)
         assertEquals(listOf(moonDate, late), removed.rows.mapNotNull { it.comparison })

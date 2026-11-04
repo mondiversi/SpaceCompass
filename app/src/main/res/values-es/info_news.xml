@@ -1,9 +1,9 @@
 <resources>
     <string name="info_news_title">Últimas novedades · %1$s</string>
-    <string name="info_news_star_sky" formatted="false">Compara las trayectorias de alturas y eventos clave con el cielo actual.</string>
-    <string name="info_news_texture_downloads" formatted="false">Guarda momentos personales con nombre, fecha y hora opcional.</string>
-    <string name="info_news_weather" formatted="false">Importa y exporta momentos personales por separado o incluye las comparaciones activas en una Location.</string>
-    <string name="info_news_viewer_zoom" formatted="false">Las trayectorias con fecha se agrupan bajo cada objeto en orden cronológico.</string>
-    <string name="info_news_settings" formatted="false">El menú del Observatorio da acceso rápido a trayectorias, puntos clave y momentos personales.</string>
-    <string name="info_news_catalog" formatted="false">Las fotos y panorámicas muestran los nombres de las trayectorias e incluyen las comparaciones activas al exportar.</string>
+    <string name="info_news_star_sky" formatted="false">Las trayectorias con fecha siguen visibles al desactivar el objeto actual.</string>
+    <string name="info_news_texture_downloads" formatted="false">Desmarca cada fecha por separado en Objetos, Alturas clave, Eventos clave o Momentos personales.</string>
+    <string name="info_news_weather" formatted="false">Las fechas activas siguen agrupadas bajo su objeto en el catálogo, aunque su casilla esté desmarcada.</string>
+    <string name="info_news_viewer_zoom" formatted="false">Las selecciones del objeto actual y de las fechas se guardan por separado y se mantienen al reiniciar.</string>
+    <string name="info_news_settings" formatted="false">Los puntos seleccionados y sus antípodas siguen disponibles en las trayectorias con fecha activas.</string>
+    <string name="info_news_catalog" formatted="false">Las fotos, panorámicas y exportaciones de Location con objetos celestes pueden incluir las trayectorias con fecha activas.</string>
 </resources>

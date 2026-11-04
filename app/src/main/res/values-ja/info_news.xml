@@ -1,9 +1,9 @@
 <resources>
     <string name="info_news_title">最近の変更 · %1$s</string>
-    <string name="info_news_star_sky" formatted="false">主要な高度やイベントの日付別経路を現在の空と比較できます。</string>
-    <string name="info_news_texture_downloads" formatted="false">名前、日付、任意の時刻を指定して個人の観測時点を保存できます。</string>
-    <string name="info_news_weather" formatted="false">個人の観測時点は単独で入出力でき、有効な比較はLocationにも含められます。</string>
-    <string name="info_news_viewer_zoom" formatted="false">日付別経路は天体ごとに時系列で表示されます。</string>
-    <string name="info_news_settings" formatted="false">観測所メニューから経路、主要な点、個人の観測時点をすぐに開けます。</string>
-    <string name="info_news_catalog" formatted="false">写真とパノラマには経路名が表示され、書き出しには有効な比較が含まれます。</string>
+    <string name="info_news_star_sky" formatted="false">現在の天体をオフにしても、日付別経路は表示されます。</string>
+    <string name="info_news_texture_downloads" formatted="false">天体、主要な高度、主要なイベント、個人の観測時点で日付ごとに選択を解除できます。</string>
+    <string name="info_news_weather" formatted="false">天体のチェックを外しても、有効な日付はカタログ内でその天体の下に表示されます。</string>
+    <string name="info_news_viewer_zoom" formatted="false">現在の天体と日付の選択は別々に保存され、アプリの再起動後も維持されます。</string>
+    <string name="info_news_settings" formatted="false">有効な日付別経路では選択した点とその対蹠点を引き続き表示できます。</string>
+    <string name="info_news_catalog" formatted="false">写真、パノラマ、天体を含むLocationの書き出しには、有効な日付別経路を含められます。</string>
 </resources>

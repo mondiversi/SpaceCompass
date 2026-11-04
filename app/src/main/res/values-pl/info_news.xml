@@ -1,9 +1,9 @@
 <resources>
     <string name="info_news_title">Ostatnie nowości · %1$s</string>
-    <string name="info_news_star_sky" formatted="false">Porównuj trajektorie z kluczowych wysokości i zdarzeń z aktualnym niebem.</string>
-    <string name="info_news_texture_downloads" formatted="false">Zapisuj własne momenty z nazwą, datą i opcjonalną godziną.</string>
-    <string name="info_news_weather" formatted="false">Importuj i eksportuj własne momenty oddzielnie lub dołącz aktywne porównania do Location.</string>
-    <string name="info_news_viewer_zoom" formatted="false">Trajektorie z datą są grupowane pod obiektami w kolejności chronologicznej.</string>
-    <string name="info_news_settings" formatted="false">Menu obserwatorium zapewnia szybki dostęp do trajektorii, kluczowych punktów i własnych momentów.</string>
-    <string name="info_news_catalog" formatted="false">Zdjęcia i panoramy pokazują nazwy trajektorii i uwzględniają aktywne porównania podczas eksportu.</string>
+    <string name="info_news_star_sky" formatted="false">Trajektorie z datą pozostają widoczne po wyłączeniu aktualnego obiektu.</string>
+    <string name="info_news_texture_downloads" formatted="false">Każdą datę można odznaczyć osobno w Obiektach, Kluczowych wysokościach, Kluczowych zdarzeniach lub Własnych momentach.</string>
+    <string name="info_news_weather" formatted="false">Aktywne daty pozostają pod swoim obiektem w katalogu, nawet gdy jego pole jest odznaczone.</string>
+    <string name="info_news_viewer_zoom" formatted="false">Wybór aktualnego obiektu i dat jest zapisywany osobno i zachowywany po ponownym uruchomieniu.</string>
+    <string name="info_news_settings" formatted="false">Zaznaczone punkty i ich antypody pozostają dostępne na aktywnych trajektoriach z datą.</string>
+    <string name="info_news_catalog" formatted="false">Zdjęcia, panoramy i eksport Location z obiektami niebieskimi mogą zawierać aktywne trajektorie z datą.</string>
 </resources>

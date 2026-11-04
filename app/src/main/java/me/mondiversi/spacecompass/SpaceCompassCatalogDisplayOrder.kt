@@ -21,16 +21,15 @@ internal data class SpaceCompassCatalogDisplayRow(
     val key: String get() = comparison?.let { "comparison:${it.id}" } ?: body.name
 }
 
-/** Variants follow their visible, selected parent and retain independent lazy-list keys. */
+/** Dated rows follow their body group even when its live row is absent. */
 internal fun spaceCompassCatalogDisplayRows(visibleBodies: List<SpaceCompassCelestialBody>,
-    selectedBodies: Set<SpaceCompassCelestialBody>, comparisons: List<SpaceCompassTemporalComparison>):
+    comparisons: List<SpaceCompassTemporalComparison>, includeLive: (SpaceCompassCelestialBody) -> Boolean = { true }):
     List<SpaceCompassCatalogDisplayRow> {
-    val byBody = comparisons.filter { it.body in selectedBodies }
-        .sortedWith(compareBy({ it.source == SpaceCompassComparisonSource.PERSONAL }, { it.personalDate },
+    val byBody = comparisons.sortedWith(compareBy({ it.source == SpaceCompassComparisonSource.PERSONAL }, { it.personalDate },
             { it.personalDate != null && it.hasReference }, { it.timeMs }, { it.id })).groupBy { it.body }
     return buildList {
         for (body in visibleBodies) {
-            add(SpaceCompassCatalogDisplayRow(body))
+            if (includeLive(body)) add(SpaceCompassCatalogDisplayRow(body))
             for (comparison in byBody[body].orEmpty()) add(SpaceCompassCatalogDisplayRow(body, comparison))
         }
     }

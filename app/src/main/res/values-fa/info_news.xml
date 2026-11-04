@@ -1,9 +1,9 @@
 <resources>
     <string name="info_news_title">تازه‌ترین تغییرات · %1$s</string>
-    <string name="info_news_star_sky" formatted="false">مسیرهای ارتفاع‌ها و رویدادهای کلیدی را با آسمان کنونی مقایسه کنید.</string>
-    <string name="info_news_texture_downloads" formatted="false">لحظه‌های شخصی را با نام، تاریخ و زمان اختیاری ذخیره کنید.</string>
-    <string name="info_news_weather" formatted="false">لحظه‌های شخصی را جداگانه وارد و صادر کنید یا مقایسه‌های فعال را در Location بگنجانید.</string>
-    <string name="info_news_viewer_zoom" formatted="false">مسیرهای تاریخ‌دار به ترتیب زمانی زیر جرم مربوطه قرار می‌گیرند.</string>
-    <string name="info_news_settings" formatted="false">منوی رصدخانه دسترسی سریع به مسیرها، نقاط کلیدی و لحظه‌های شخصی را فراهم می‌کند.</string>
-    <string name="info_news_catalog" formatted="false">عکس‌ها و پانوراماها نام مسیرها را نشان می‌دهند و مقایسه‌های فعال را در خروجی می‌گنجانند.</string>
+    <string name="info_news_star_sky" formatted="false">با خاموش کردن جرم کنونی، مسیرهای تاریخ‌دار همچنان دیده می‌شوند.</string>
+    <string name="info_news_texture_downloads" formatted="false">انتخاب هر تاریخ را جداگانه در اجرام، ارتفاع‌های کلیدی، رویدادهای کلیدی یا لحظه‌های شخصی بردارید.</string>
+    <string name="info_news_weather" formatted="false">تاریخ‌های فعال در فهرست زیر جرم خود باقی می‌مانند، حتی اگر انتخاب جرم برداشته شود.</string>
+    <string name="info_news_viewer_zoom" formatted="false">انتخاب جرم کنونی و تاریخ‌ها جداگانه ذخیره می‌شود و پس از راه‌اندازی دوباره باقی می‌ماند.</string>
+    <string name="info_news_settings" formatted="false">نقاط انتخاب‌شده و نقاط مقابل آن‌ها روی مسیرهای تاریخ‌دار فعال همچنان در دسترس‌اند.</string>
+    <string name="info_news_catalog" formatted="false">عکس‌ها، پانوراماها و خروجی‌های Location همراه با اجرام آسمانی می‌توانند مسیرهای تاریخ‌دار فعال را در بر بگیرند.</string>
 </resources>

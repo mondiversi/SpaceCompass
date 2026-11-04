@@ -1,9 +1,9 @@
 <resources>
     <string name="info_news_title">آخر المستجدات · %1$s</string>
-    <string name="info_news_star_sky" formatted="false">قارن مسارات الارتفاعات والأحداث الرئيسية بالسماء الحالية.</string>
-    <string name="info_news_texture_downloads" formatted="false">احفظ لحظات شخصية باسم وتاريخ ووقت اختياري.</string>
-    <string name="info_news_weather" formatted="false">استورد اللحظات الشخصية وصدّرها بشكل مستقل، أو أدرج المقارنات النشطة في Location.</string>
-    <string name="info_news_viewer_zoom" formatted="false">تُجمع المسارات المؤرخة أسفل الجرم بترتيب زمني.</string>
-    <string name="info_news_settings" formatted="false">توفر قائمة المرصد وصولاً سريعاً إلى المسارات والنقاط الرئيسية واللحظات الشخصية.</string>
-    <string name="info_news_catalog" formatted="false">تعرض الصور والبانوراما أسماء المسارات وتتضمن المقارنات النشطة عند التصدير.</string>
+    <string name="info_news_star_sky" formatted="false">تبقى المسارات المؤرخة مرئية عند إيقاف الجرم الحالي.</string>
+    <string name="info_news_texture_downloads" formatted="false">ألغِ اختيار كل تاريخ على حدة من الأجرام أو الارتفاعات الرئيسية أو الأحداث الرئيسية أو اللحظات الشخصية.</string>
+    <string name="info_news_weather" formatted="false">تبقى التواريخ النشطة مجمّعة تحت جرمها في القائمة حتى عند إلغاء تحديده.</string>
+    <string name="info_news_viewer_zoom" formatted="false">تُحفظ اختيارات الجرم الحالي والتواريخ بشكل منفصل وتبقى بعد إعادة تشغيل التطبيق.</string>
+    <string name="info_news_settings" formatted="false">تظل النقاط المحددة والنقاط المقابلة لها متاحة على المسارات المؤرخة النشطة.</string>
+    <string name="info_news_catalog" formatted="false">يمكن أن تتضمن الصور والبانوراما وملفات Location المصدّرة مع الأجرام السماوية المسارات المؤرخة النشطة.</string>
 </resources>

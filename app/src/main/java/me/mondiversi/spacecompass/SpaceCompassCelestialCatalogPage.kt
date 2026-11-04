@@ -55,7 +55,14 @@ internal fun SpaceCompassCelestialCatalogPage(timeMs: Long, remote: SpaceCompass
     val preferences = LocalSpaceCompassPreferences.current
     // Capture grouping for this catalogue visit, including its independent Observatory round trips.
     // Closing the catalogue back to the main view discards the snapshot; checks save immediately.
-    val prioritySelectedNames = rememberSaveable { selectedBodies.map { it.name } }
+    val comparisons = LocalSpaceCompassComparisons.current
+    val comparisonZone = spaceCompassObservationZone()
+    val storedComparisons = remember(comparisons?.entries, comparisons?.personalMoments, comparisonZone) {
+        comparisons?.sceneEntries(comparisonZone).orEmpty()
+    }
+    val prioritySelectedNames = rememberSaveable {
+        (selectedBodies + storedComparisons.map { it.body }).map { it.name }
+    }
     val prioritySelected = remember(prioritySelectedNames) {
         prioritySelectedNames.mapNotNull { runCatching { SpaceCompassCelestialBody.valueOf(it) }.getOrNull() }.toSet()
     }
@@ -140,16 +147,20 @@ internal fun SpaceCompassCelestialCatalogPage(timeMs: Long, remote: SpaceCompass
                 R.string.celestial_andromeda_short else body.nameResource) },
             typeLabel = { resources.getString(it.label) })
     }
-    val comparisons = LocalSpaceCompassComparisons.current
-    val comparisonZone = spaceCompassObservationZone()
-    val storedComparisons = remember(comparisons?.entries, comparisons?.personalMoments, comparisonZone) {
-        comparisons?.sceneEntries(comparisonZone).orEmpty()
+    // Keep an unchecked date in place for this visit so its checkbox can undo the change.
+    var uncheckedComparisons by rememberSaveable { mutableStateOf(arrayListOf<SpaceCompassTemporalComparison>()) }
+    val displayedComparisons = remember(storedComparisons, uncheckedComparisons, comparisons?.personalMoments) {
+        val personalIds = comparisons?.personalMoments.orEmpty().mapTo(hashSetOf()) { it.id }
+        (storedComparisons + uncheckedComparisons.filter {
+            it.source != SpaceCompassComparisonSource.PERSONAL || it.id in personalIds
+        }).distinctBy { it.id }
     }
-    val comparisonIds = remember(storedComparisons) { storedComparisons.map { it.id }.toSet() }
+    val comparisonIds = remember(storedComparisons) { storedComparisons.mapTo(hashSetOf()) { it.id } }
+    val displayedComparisonIds = remember(displayedComparisons) { displayedComparisons.mapTo(hashSetOf()) { it.id } }
     val request = remember(catalogPreferences, query, selectedBodies, prioritySelected, favorites.bodies,
-        observations, distanceSnapshot, resources, locale, storedComparisons) {
+        observations, distanceSnapshot, resources, locale, displayedComparisons) {
         SpaceCompassCatalogQuery(catalogPreferences, query, selectedBodies, prioritySelected,
-            favorites.bodies, observations, distanceSnapshot, storedComparisons)
+            favorites.bodies, observations, distanceSnapshot, displayedComparisons)
     }
     var viewState by remember { mutableStateOf(SpaceCompassCatalogViewState()) }
     // Never publish a temporary empty sky or clear facets during a worker refresh.
@@ -273,8 +284,17 @@ internal fun SpaceCompassCelestialCatalogPage(timeMs: Long, remote: SpaceCompass
                 val comparison = row.comparison
                 if (comparison != null) {
                     // The last worker snapshot can briefly outlive a selection change.
-                    if (candidate in selectedBodies && comparison.id in comparisonIds) {
-                        SpaceCompassCatalogComparisonRow(comparison, color) { comparisons?.remove(comparison.id) }
+                    if (comparison.id in displayedComparisonIds) {
+                        SpaceCompassCatalogComparisonRow(comparison, color, checked = comparison.id in comparisonIds) { checked ->
+                            if (checked) {
+                                if (comparisons?.selectComparison(comparison) == true)
+                                    uncheckedComparisons = ArrayList(uncheckedComparisons.filterNot { it.id == comparison.id })
+                            } else {
+                                if (uncheckedComparisons.none { it.id == comparison.id })
+                                    uncheckedComparisons = ArrayList(uncheckedComparisons + comparison)
+                                comparisons?.remove(comparison.id)
+                            }
+                        }
                     }
                     return@items
                 }

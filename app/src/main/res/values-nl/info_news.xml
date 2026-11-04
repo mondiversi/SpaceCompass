@@ -1,9 +1,9 @@
 <resources>
     <string name="info_news_title">Laatste nieuws · %1$s</string>
-    <string name="info_news_star_sky" formatted="false">Vergelijk banen van belangrijke hoogten en gebeurtenissen met de huidige hemel.</string>
-    <string name="info_news_texture_downloads" formatted="false">Sla persoonlijke momenten op met een naam, datum en optioneel tijdstip.</string>
-    <string name="info_news_weather" formatted="false">Importeer en exporteer persoonlijke momenten apart of voeg actieve vergelijkingen toe aan een Location.</string>
-    <string name="info_news_viewer_zoom" formatted="false">Banen met een vaste datum staan per object in chronologische volgorde.</string>
-    <string name="info_news_settings" formatted="false">Het menu van het observatorium geeft snel toegang tot banen, belangrijke punten en persoonlijke momenten.</string>
-    <string name="info_news_catalog" formatted="false">Foto’s en panorama’s tonen baannamen en nemen actieve vergelijkingen op bij export.</string>
+    <string name="info_news_star_sky" formatted="false">Banen met een vaste datum blijven zichtbaar als je het huidige object uitschakelt.</string>
+    <string name="info_news_texture_downloads" formatted="false">Vink elke datum apart uit in Objecten, Belangrijke hoogten, Belangrijke gebeurtenissen of Persoonlijke momenten.</string>
+    <string name="info_news_weather" formatted="false">Actieve datums blijven in de catalogus onder hun object staan, ook als het object is uitgevinkt.</string>
+    <string name="info_news_viewer_zoom" formatted="false">De selecties van het huidige object en de datums worden afzonderlijk bewaard bij opnieuw opstarten.</string>
+    <string name="info_news_settings" formatted="false">Geselecteerde punten en hun tegenpunten blijven beschikbaar op actieve banen met een vaste datum.</string>
+    <string name="info_news_catalog" formatted="false">Foto’s, panorama’s en Location-exports met hemelobjecten kunnen actieve banen met een vaste datum bevatten.</string>
 </resources>

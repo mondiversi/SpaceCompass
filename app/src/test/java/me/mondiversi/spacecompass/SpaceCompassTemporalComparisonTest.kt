@@ -91,6 +91,10 @@ class SpaceCompassTemporalComparisonTest {
         state.toggle(sun, active.timeMs, zone, active.source, active.origin)
         assertNull(state.activeId)
         assertEquals(listOf(sun), parents)
+        assertTrue(state.selectComparison(active))
+        assertTrue(state.selectComparison(active))
+        assertEquals(listOf(active), state.entries)
+        assertEquals(active.id, state.activeId)
     }
 
     @Test fun navigationVisitsEachParentsDatedVariantsBeforeTheNextObject() {
@@ -100,10 +104,14 @@ class SpaceCompassTemporalComparisonTest {
         val lunar = SpaceCompassTemporalComparison.create(moon, early.timeMs, zone, early.source, early.origin)
         val personal = SpaceCompassPersonalMoment(sun, "Test", LocalDate.of(2026, 1, 1), null).resolve(zone)
         val dates = listOf(lunar, late, personal, early)
-        val order = spaceCompassCatalogDisplayRows(listOf(sun, moon), setOf(sun, moon), dates)
+        val order = spaceCompassCatalogDisplayRows(listOf(sun, moon), dates)
         assertEquals(listOf(sun to null, sun to early.id, sun to late.id, sun to personal.id, moon to null, moon to lunar.id),
             order.map { it.body to it.comparison?.id })
-        assertEquals(order.take(4), spaceCompassCatalogDisplayRows(listOf(sun), setOf(sun), dates))
+        assertEquals(order.take(4), spaceCompassCatalogDisplayRows(listOf(sun), dates))
+        val uncheckedSun = spaceCompassCatalogDisplayRows(listOf(sun, moon), dates) { it == moon }
+        assertEquals(order.drop(1), uncheckedSun)
+        assertEquals(order.filter { it.comparison != null },
+            spaceCompassCatalogDisplayRows(listOf(sun, moon), dates) { false })
     }
 
     @Test fun liveAndTwoCopiesOfTheSamePointHaveIndependentSelectionKeys() {
@@ -139,16 +147,14 @@ class SpaceCompassTemporalComparisonTest {
         assertTrue(imported.antipodesVisible)
         val saved = SpaceCompassTemporalComparisonState(imported)
         saved.restore(restored.comparisons, restored.activeComparisonId)
-        assertTrue(saved.visibleEntries(restored.celestialSelection.selected).isEmpty())
-        val hidden = saved.visibleEntries(setOf(SpaceCompassCelestialBody.MOON)).map(::overlay)
-        assertTrue(hidden.isEmpty())
-        assertNull(hidden.activeSpaceCompassComparison(saved.activeId))
-        assertEquals(listOf(c, d), saved.entries)
+        val visible = saved.sceneEntries(zone).map(::overlay)
+        assertEquals(listOf(c, d), visible.map { it.comparison })
+        assertEquals(c, visible.activeSpaceCompassComparison(saved.activeId))
         assertEquals(2, imported.selectedPoints.size)
-        val visibleAgain = saved.visibleEntries(setOf(sun)).map(::overlay)
-        assertEquals(listOf(c, d), visibleAgain.map { it.comparison })
-        assertEquals(c, visibleAgain.activeSpaceCompassComparison(saved.activeId))
-        imported.toggleCurrent(sun,point(c),path(c)); assertEquals(1,imported.selectedPoints.size)
+        saved.remove(c.id)
+        assertEquals(listOf(d), saved.sceneEntries(zone))
+        assertEquals(1, imported.selectedPoints.size)
+        assertTrue(imported.antipodesVisible)
     }
     @Test fun missingSceneExtensionDoesNotInventCopiesOrAntipodeFlags() {
         val old=SpaceCompassScenarioArchive("Old",spaceCompassObserverPlan(45.0,9.0,100.0,now,zone.id)!!,SpaceCompassScenarioTimeSettings())

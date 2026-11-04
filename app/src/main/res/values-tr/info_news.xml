@@ -1,9 +1,9 @@
 <resources>
     <string name="info_news_title">Son yenilikler · %1$s</string>
-    <string name="info_news_star_sky" formatted="false">Önemli yükseklik ve olaylara ait yörüngeleri güncel gökyüzüyle karşılaştırın.</string>
-    <string name="info_news_texture_downloads" formatted="false">Kişisel anları ad, tarih ve isteğe bağlı saatle kaydedin.</string>
-    <string name="info_news_weather" formatted="false">Kişisel anları ayrı içe ve dışa aktarın ya da etkin karşılaştırmaları bir Location dosyasına ekleyin.</string>
-    <string name="info_news_viewer_zoom" formatted="false">Tarihli yörüngeler, nesnenin altında tarih sırasıyla gösterilir.</string>
-    <string name="info_news_settings" formatted="false">Gözlemevi menüsü yörüngelere, önemli noktalara ve kişisel anlara hızlı erişim sağlar.</string>
-    <string name="info_news_catalog" formatted="false">Fotoğraflar ve panoramalar yörünge adlarını gösterir ve dışa aktarımda etkin karşılaştırmaları içerir.</string>
+    <string name="info_news_star_sky" formatted="false">Güncel nesne kapatıldığında tarihli yörüngeler görünür kalır.</string>
+    <string name="info_news_texture_downloads" formatted="false">Nesneler, Önemli Yükseklikler, Önemli Olaylar veya Kişisel Anlar bölümünde her tarihin seçimini ayrı kaldırın.</string>
+    <string name="info_news_weather" formatted="false">Etkin tarihler, nesnenin işareti kaldırılsa bile katalogda onun altında kalır.</string>
+    <string name="info_news_viewer_zoom" formatted="false">Güncel nesne ve tarih seçimleri ayrı kaydedilir ve uygulama yeniden açıldığında korunur.</string>
+    <string name="info_news_settings" formatted="false">Seçili noktalar ve karşıt noktaları, etkin tarihli yörüngelerde kullanılabilir.</string>
+    <string name="info_news_catalog" formatted="false">Fotoğraflar, panoramalar ve gök cisimleri içeren Location dışa aktarımları etkin tarihli yörüngeleri içerebilir.</string>
 </resources>
