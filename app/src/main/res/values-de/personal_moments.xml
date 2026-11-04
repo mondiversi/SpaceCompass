@@ -7,6 +7,11 @@
     <string name="personal_moments_empty">Keine persönlichen Zeitpunkte.</string>
     <string name="personal_moment_duplicate">Dieser Zeitpunkt ist bereits vorhanden</string>
     <string name="personal_moments_export">Persönliche Zeitpunkte exportieren</string>
+    <string name="personal_moments_scope_all">Alle Objekte</string>
+    <string name="personal_moments_archive_file">Importierbare Datei</string>
+    <string name="personal_moments_object_column">Objekt</string>
+    <string name="personal_moments_scope_object">Nur dieses Objekt</string>
+    <string name="personal_moments_scope_selected">Nur ausgewählte Momente</string>
     <string name="personal_moments_import">Persönliche Zeitpunkte importieren</string>
     <string name="personal_moments_file_saved">Persönliche Zeitpunkte gespeichert</string>
     <string name="personal_moments_file_imported">Persönliche Zeitpunkte importiert</string>

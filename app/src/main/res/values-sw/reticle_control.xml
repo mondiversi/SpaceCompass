@@ -3,4 +3,6 @@
     <string name="reticle_disable">Ficha kilenga na maelezo ya nukta</string>
     <string name="scene_reticle_on">Kilenga na maelezo ya nukta yanaonekana</string>
     <string name="scene_reticle_off">Kilenga na maelezo ya nukta yamefichwa</string>
+    <string name="sky_controls_show">Onyesha vidhibiti</string>
+    <string name="sky_controls_hide">Ficha vidhibiti</string>
 </resources>

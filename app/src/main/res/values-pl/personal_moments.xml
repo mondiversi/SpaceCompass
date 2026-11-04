@@ -7,6 +7,11 @@
     <string name="personal_moments_empty">Brak własnych momentów.</string>
     <string name="personal_moment_duplicate">Ten moment już istnieje</string>
     <string name="personal_moments_export">Eksportuj własne momenty</string>
+    <string name="personal_moments_scope_all">Wszystkie obiekty</string>
+    <string name="personal_moments_archive_file">Plik do importu</string>
+    <string name="personal_moments_object_column">Obiekt</string>
+    <string name="personal_moments_scope_object">Tylko ten obiekt</string>
+    <string name="personal_moments_scope_selected">Tylko wybrane momenty</string>
     <string name="personal_moments_import">Importuj własne momenty</string>
     <string name="personal_moments_file_saved">Zapisano własne momenty</string>
     <string name="personal_moments_file_imported">Zaimportowano własne momenty</string>

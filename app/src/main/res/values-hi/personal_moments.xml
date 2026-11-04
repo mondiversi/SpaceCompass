@@ -7,6 +7,11 @@
     <string name="personal_moments_empty">कोई व्यक्तिगत क्षण नहीं।</string>
     <string name="personal_moment_duplicate">यह क्षण पहले से मौजूद है</string>
     <string name="personal_moments_export">व्यक्तिगत क्षण निर्यात करें</string>
+    <string name="personal_moments_scope_all">सभी पिंड</string>
+    <string name="personal_moments_archive_file">आयात योग्य फ़ाइल</string>
+    <string name="personal_moments_object_column">पिंड</string>
+    <string name="personal_moments_scope_object">केवल यह पिंड</string>
+    <string name="personal_moments_scope_selected">केवल चुने गए क्षण</string>
     <string name="personal_moments_import">व्यक्तिगत क्षण आयात करें</string>
     <string name="personal_moments_file_saved">व्यक्तिगत क्षण सहेजे गए</string>
     <string name="personal_moments_file_imported">व्यक्तिगत क्षण आयात किए गए</string>

@@ -3,4 +3,6 @@
     <string name="reticle_disable">Sembunyikan bidikan dan informasi titik</string>
     <string name="scene_reticle_on">Bidikan dan informasi titik ditampilkan</string>
     <string name="scene_reticle_off">Bidikan dan informasi titik disembunyikan</string>
+    <string name="sky_controls_show">Tampilkan kontrol</string>
+    <string name="sky_controls_hide">Sembunyikan kontrol</string>
 </resources>

@@ -1,14 +1,13 @@
 package me.mondiversi.spacecompass
 
+import androidx.activity.compose.BackHandler
 import androidx.activity.compose.rememberLauncherForActivityResult
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.compose.foundation.layout.*
 import androidx.compose.material3.HorizontalDivider
 import androidx.compose.material3.LocalContentColor
-import androidx.compose.material3.Text
 import androidx.compose.runtime.*
 import androidx.compose.runtime.saveable.rememberSaveable
-import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.geometry.Offset
 import androidx.compose.ui.graphics.StrokeCap
@@ -23,10 +22,9 @@ import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
 
 /** Scenarios share the export profile preference; their canonical import schema stays independent. */
-@OptIn(ExperimentalLayoutApi::class)
 @Composable
-internal fun SpaceCompassScenarioTransferActions(capture: (Boolean) -> SpaceCompassScenarioArchive?,
-    onImport: (SpaceCompassScenarioArchive) -> Unit, enabled: Boolean = true) {
+internal fun rememberSpaceCompassScenarioTransfer(capture: (Boolean) -> SpaceCompassScenarioArchive?,
+    onImport: (SpaceCompassScenarioArchive) -> Unit, enabled: Boolean = true): SpaceCompassDocumentTransfer {
     val context = LocalContext.current
     val resources = LocalResources.current
     val observer = LocalSpaceCompassObserver.current
@@ -76,103 +74,94 @@ internal fun SpaceCompassScenarioTransferActions(capture: (Boolean) -> SpaceComp
             }
         }
     }
-    SpaceCompassTitleActionButton(stringResource(R.string.scenario_export), {
-        runCatching {
-            latestCapture(false)?.let { archive ->
-                exportText = archive.encode()
-                objectsText = null
-                includeObjects = false
-                nameEdited = archive.name !in listOf(resources.getString(R.string.observer_title), "Scenario")
-                name = if (nameEdited) archive.name else suggestName(archive,exportMode.mode)
-            }
-        }.onFailure { notice(R.string.observer_not_saved) }
-    }, Modifier.testTag("scenario-export-open"), enabled = enabled && !working) {
-        SpaceCompassPanoramaExportIcon(SpaceCompassTitleActionIconStrokeWidth)
-    }
-    SpaceCompassTitleActionButton(stringResource(R.string.scenario_import), {
-        runCatching { load.launch(arrayOf("*/*")) }.onFailure { notice(R.string.scenario_file_invalid) }
-    }, Modifier.testTag("scenario-import-open"), enabled = enabled && !working) {
-        SpaceCompassScenarioImportIcon()
-    }
-    exportText?.let { content ->
-        val baseArchive = remember(content) { SpaceCompassScenarioArchive.decode(content) }
-        // A location fix arriving while the dialog is open can complete the otherwise empty export.
-        LaunchedEffect(content, observer?.devicePlace) {
-            if (!baseArchive.custom && !baseArchive.timeSettings.enabled) {
-                runCatching { latestCapture(false) }.getOrNull()?.takeIf { it.custom }?.let { ready ->
-                    objectsText = objectsText?.let { included ->
-                        val scene = SpaceCompassScenarioArchive.decode(included)
-                        ready.copy(celestialSelection = scene.celestialSelection,
-                            selectedOrbitPoints = scene.selectedOrbitPoints, comparisons = scene.comparisons,
-                            activeComparisonId = scene.activeComparisonId, antipodesVisible = scene.antipodesVisible,
-                            personalMoments = scene.personalMoments).encode()
-                    }
-                    exportText = ready.encode()
-                }
-            }
-        }
-        val selectedContent = if (includeObjects) objectsText ?: content else content
-        val archive = remember(selectedContent) { SpaceCompassScenarioArchive.decode(selectedContent) }
-        LaunchedEffect(exportMode.mode,selectedContent) {
-            if (!nameEdited) name = suggestName(archive,exportMode.mode)
-        }
-        val validName = name.isNotBlank() && name.none(Char::isISOControl) &&
-            runCatching { spaceCompassScenarioFileName(name) }.isSuccess
-        val hasValues = archive.custom || archive.timeSettings.enabled || archive.celestialSelection != null
-        fun exported(): Pair<SpaceCompassScenarioArchive, String> {
-            check(hasValues)
-            val named = archive.copy(name = name.trim())
-            return named to spaceCompassScenarioExportText(named, exportMode.mode, profiles.forMode(exportMode.mode))
-        }
-        SpaceCompassAlertDialog(onDismissRequest = { exportText = null },
-            modifier = Modifier.testTag("scenario-export-dialog"),
-            title = { Text(stringResource(R.string.scenario_export)) },
-            text = {
-                Column(Modifier.fillMaxWidth(),
-                    verticalArrangement=Arrangement.spacedBy(8.dp)) {
-                    SpaceCompassSettingsDescription(stringResource(R.string.panorama_export_description),pageDescription=true)
-                    if (!hasValues) SpaceCompassSettingsDescription(
-                        stringResource(R.string.location_export_wait_position))
-                    SpaceCompassSettingsTextField(name, { name = it.take(80); nameEdited = true },
-                        Modifier.fillMaxWidth().testTag("scenario-export-name"), label = stringResource(R.string.scenario_file_name))
-                    SpaceCompassSettingsCheckbox(stringResource(R.string.location_export_include_objects), includeObjects, { checked ->
-                        if (!checked) includeObjects = false else {
-                            val snapshot = runCatching { latestCapture(true)?.encode() }.getOrNull()
-                            if (snapshot == null) notice(R.string.observer_not_saved) else {
-                                objectsText = snapshot
-                                includeObjects = true
-                            }
+    val exportPage = exportText?.let { content ->
+        @Composable {
+            val baseArchive = remember(content) { SpaceCompassScenarioArchive.decode(content) }
+            // A location fix arriving while the dialog is open can complete the otherwise empty export.
+            LaunchedEffect(content, observer?.devicePlace) {
+                if (!baseArchive.custom && !baseArchive.timeSettings.enabled) {
+                    runCatching { latestCapture(false) }.getOrNull()?.takeIf { it.custom }?.let { ready ->
+                        objectsText = objectsText?.let { included ->
+                            val scene = SpaceCompassScenarioArchive.decode(included)
+                            ready.copy(celestialSelection = scene.celestialSelection,
+                                selectedOrbitPoints = scene.selectedOrbitPoints, comparisons = scene.comparisons,
+                                activeComparisonId = scene.activeComparisonId, antipodesVisible = scene.antipodesVisible,
+                                personalMoments = scene.personalMoments).encode()
                         }
-                    }, Modifier.testTag("location-export-objects"), enabled = !working)
-                    SpaceCompassSettingsDescription(stringResource(R.string.location_export_objects_description))
-                    HorizontalDivider(Modifier.fillMaxWidth().padding(vertical=4.dp).testTag("scenario-export-profile-divider"),
-                        color=spaceCompassDialogContentColor().copy(alpha=.16f))
-                    SpaceCompassExportProfileChoices(exportMode.mode,exportMode.change,enabled=!working)
+                        exportText = ready.encode()
+                    }
                 }
-            }, confirmButton = {
-                FlowRow(Modifier.fillMaxWidth(), horizontalArrangement = Arrangement.spacedBy(8.dp, Alignment.End),
-                    verticalArrangement = Arrangement.spacedBy(8.dp)) {
-                    val padding = PaddingValues(horizontal = 8.dp, vertical = 8.dp)
-                    SpaceCompassDialogActionButton(stringResource(R.string.celestial_remove_cancel), { exportText = null },
-                        Modifier.testTag("scenario-export-cancel"), destructive = true, contentPadding = padding)
-                    SpaceCompassDialogActionButton(stringResource(R.string.panorama_save_phone), {
-                        runCatching {
-                            val (named,text) = exported()
-                            pendingSave = text
-                            save.launch(spaceCompassScenarioFileName(named.name))
-                            exportText = null
-                        }.onFailure { pendingSave = null; notice(R.string.scenario_file_error) }
-                    }, Modifier.testTag("scenario-export-save"), enabled = hasValues && validName && !working, contentPadding = padding)
-                    SpaceCompassDialogActionButton(stringResource(R.string.panorama_share), {
-                        runCatching {
-                            val (named,text) = exported()
-                            shareSpaceCompassScenario(context,named,resources.getString(R.string.scenario_export),text)
-                            exportText = null
-                        }.onFailure { notice(R.string.scenario_file_error) }
-                    }, Modifier.testTag("scenario-export-share"), enabled = hasValues && validName && !working, contentPadding = padding)
-                }
-            })
+            }
+            val selectedContent = if (includeObjects) objectsText ?: content else content
+            val archive = remember(selectedContent) { SpaceCompassScenarioArchive.decode(selectedContent) }
+            LaunchedEffect(exportMode.mode,selectedContent) {
+                if (!nameEdited) name = suggestName(archive,exportMode.mode)
+            }
+            val validName = name.isNotBlank() && name.none(Char::isISOControl) &&
+                runCatching { spaceCompassScenarioFileName(name) }.isSuccess
+            val hasValues = archive.custom || archive.timeSettings.enabled || archive.celestialSelection != null
+            fun exported(): Pair<SpaceCompassScenarioArchive, String> {
+                check(hasValues)
+                val named = archive.copy(name = name.trim())
+                return named to spaceCompassScenarioExportText(named, exportMode.mode, profiles.forMode(exportMode.mode))
+            }
+            val close = { if (!working) exportText = null }
+            BackHandler(onBack = close)
+            SpaceCompassDataExportPage(close, Modifier.testTag("scenario-export-page")) {
+                if (!hasValues) SpaceCompassSettingsDescription(stringResource(R.string.location_export_wait_position))
+                SpaceCompassSettingsTextField(name, { name = it.take(80); nameEdited = true },
+                    Modifier.fillMaxWidth().testTag("scenario-export-name"), label = stringResource(R.string.scenario_file_name),
+                    enabled = !working)
+                SpaceCompassSettingsCheckbox(stringResource(R.string.location_export_include_objects), includeObjects, { checked ->
+                    if (!checked) includeObjects = false else {
+                        val snapshot = runCatching { latestCapture(true)?.encode() }.getOrNull()
+                        if (snapshot == null) notice(R.string.observer_not_saved) else {
+                            objectsText = snapshot
+                            includeObjects = true
+                        }
+                    }
+                }, Modifier.testTag("location-export-objects"), enabled = !working)
+                SpaceCompassSettingsDescription(stringResource(R.string.location_export_objects_description))
+                HorizontalDivider(Modifier.fillMaxWidth().padding(vertical = 4.dp).testTag("scenario-export-profile-divider"),
+                    color = spaceCompassDialogContentColor().copy(alpha = .16f))
+                SpaceCompassExportProfileChoices(exportMode.mode, exportMode.change, enabled = !working)
+                SpaceCompassDataExportActions(save = {
+                    runCatching {
+                        val (named, text) = exported()
+                        pendingSave = text
+                        save.launch(spaceCompassScenarioFileName(named.name))
+                        close()
+                    }.onFailure { pendingSave = null; notice(R.string.scenario_file_error) }
+                }, share = {
+                    runCatching {
+                        val (named, text) = exported()
+                        shareSpaceCompassScenario(context, named, resources.getString(R.string.scenario_export), text)
+                        close()
+                    }.onFailure { notice(R.string.scenario_file_error) }
+                }, enabled = hasValues && validName && !working,
+                    saveModifier = Modifier.testTag("scenario-export-save"), shareModifier = Modifier.testTag("scenario-export-share"))
+            }
+        }
     }
+    return SpaceCompassDocumentTransfer(
+        openExport = {
+            runCatching {
+                latestCapture(false)?.let { archive ->
+                    exportText = archive.encode()
+                    objectsText = null
+                    includeObjects = false
+                    nameEdited = archive.name !in listOf(resources.getString(R.string.observer_title), "Scenario")
+                    name = if (nameEdited) archive.name else suggestName(archive, exportMode.mode)
+                }
+            }.onFailure { notice(R.string.observer_not_saved) }
+        },
+        openImport = {
+            runCatching { load.launch(arrayOf("*/*")) }.onFailure { notice(R.string.scenario_file_invalid) }
+        },
+        canExport = enabled && !working && pendingSave == null,
+        canImport = enabled && !working && pendingSave == null,
+        exportPage = exportPage
+    )
 }
 
 /** Matches the export tray and its 24 dp viewport; the downward arrow denotes restoration. */

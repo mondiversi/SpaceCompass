@@ -1,9 +1,9 @@
 <resources>
     <string name="info_news_title">تازه‌ترین تغییرات · %1$s</string>
-    <string name="info_news_star_sky" formatted="false">با خاموش کردن جرم کنونی، مسیرهای تاریخ‌دار همچنان دیده می‌شوند.</string>
-    <string name="info_news_texture_downloads" formatted="false">انتخاب هر تاریخ را جداگانه در اجرام، ارتفاع‌های کلیدی، رویدادهای کلیدی یا لحظه‌های شخصی بردارید.</string>
-    <string name="info_news_weather" formatted="false">تاریخ‌های فعال در فهرست زیر جرم خود باقی می‌مانند، حتی اگر انتخاب جرم برداشته شود.</string>
-    <string name="info_news_viewer_zoom" formatted="false">انتخاب جرم کنونی و تاریخ‌ها جداگانه ذخیره می‌شود و پس از راه‌اندازی دوباره باقی می‌ماند.</string>
-    <string name="info_news_settings" formatted="false">نقاط انتخاب‌شده و نقاط مقابل آن‌ها روی مسیرهای تاریخ‌دار فعال همچنان در دسترس‌اند.</string>
-    <string name="info_news_catalog" formatted="false">عکس‌ها، پانوراماها و خروجی‌های Location همراه با اجرام آسمانی می‌توانند مسیرهای تاریخ‌دار فعال را در بر بگیرند.</string>
+    <string name="info_news_star_sky" formatted="false">برای نمایش یا پنهان کردن نشانگر هدف، روی بخش خالی آسمان بزنید.</string>
+    <string name="info_news_texture_downloads" formatted="false">برای نمایش یا پنهان کردن کنترل‌ها در نمای آسمان و پیش‌نمایش عکس و پانوراما، دو بار بزنید.</string>
+    <string name="info_news_weather" formatted="false">مکان و لحظه‌های شخصی اکنون صفحه‌ای ویژه برای برون‌بری دارند.</string>
+    <string name="info_news_viewer_zoom" formatted="false">لحظه‌های شخصی را به‌صورت پروندهٔ قابل ورود یا صفحه‌گستردهٔ CSV برون‌بری کنید.</string>
+    <string name="info_news_settings" formatted="false">لحظه‌های همهٔ اجرام یا فقط جرم فعلی را برون‌بری کنید. می‌توانید تنها لحظه‌های انتخاب‌شده را بگنجانید.</string>
+    <string name="info_news_catalog" formatted="false">نام‌های پیشنهادی پرونده از زبان و قالب‌های انتخابی شما برای برون‌بری پیروی می‌کنند.</string>
 </resources>

@@ -1,9 +1,9 @@
 <resources>
     <string name="info_news_title">Τελευταία νέα · %1$s</string>
-    <string name="info_news_star_sky" formatted="false">Οι τροχιές με ημερομηνία μένουν ορατές όταν απενεργοποιείτε το τρέχον αντικείμενο.</string>
-    <string name="info_news_texture_downloads" formatted="false">Αποεπιλέξτε κάθε ημερομηνία χωριστά στα Αντικείμενα, τα Σημαντικά ύψη, τα Σημαντικά συμβάντα ή τις Προσωπικές στιγμές.</string>
-    <string name="info_news_weather" formatted="false">Οι ενεργές ημερομηνίες παραμένουν κάτω από το αντικείμενό τους στον κατάλογο ακόμη κι όταν αυτό αποεπιλεγεί.</string>
-    <string name="info_news_viewer_zoom" formatted="false">Οι επιλογές του τρέχοντος αντικειμένου και των ημερομηνιών αποθηκεύονται χωριστά και διατηρούνται μετά την επανεκκίνηση.</string>
-    <string name="info_news_settings" formatted="false">Τα επιλεγμένα σημεία και τα αντίποδά τους παραμένουν διαθέσιμα στις ενεργές τροχιές με ημερομηνία.</string>
-    <string name="info_news_catalog" formatted="false">Φωτογραφίες, πανοράματα και εξαγωγές Location με ουράνια αντικείμενα μπορούν να περιέχουν τις ενεργές τροχιές με ημερομηνία.</string>
+    <string name="info_news_star_sky" formatted="false">Πατήστε σε κενό σημείο του ουρανού για να εμφανίσετε ή να αποκρύψετε το στόχαστρο.</string>
+    <string name="info_news_texture_downloads" formatted="false">Πατήστε δύο φορές για εμφάνιση ή απόκρυψη των χειριστηρίων στον ουρανό και στην προεπισκόπηση φωτογραφιών και πανοραμάτων.</string>
+    <string name="info_news_weather" formatted="false">Η τοποθεσία και οι προσωπικές στιγμές έχουν πλέον ξεχωριστή οθόνη εξαγωγής.</string>
+    <string name="info_news_viewer_zoom" formatted="false">Εξαγάγετε τις προσωπικές στιγμές ως αρχείο με δυνατότητα εισαγωγής ή ως φύλλο CSV.</string>
+    <string name="info_news_settings" formatted="false">Εξαγάγετε στιγμές από όλα τα αντικείμενα ή μόνο από το τρέχον. Μπορείτε να συμπεριλάβετε μόνο τις επιλεγμένες στιγμές.</string>
+    <string name="info_news_catalog" formatted="false">Τα προτεινόμενα ονόματα αρχείων ακολουθούν τη γλώσσα και τις μορφές εξαγωγής που επιλέγετε.</string>
 </resources>

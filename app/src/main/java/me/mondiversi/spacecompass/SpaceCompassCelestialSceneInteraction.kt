@@ -1,7 +1,10 @@
 package me.mondiversi.spacecompass
 
 import androidx.compose.foundation.Canvas
+import androidx.compose.foundation.gestures.awaitEachGesture
+import androidx.compose.foundation.gestures.awaitFirstDown
 import androidx.compose.foundation.gestures.detectTapGestures
+import androidx.compose.foundation.gestures.waitForUpOrCancellation
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.runtime.*
@@ -13,6 +16,8 @@ import androidx.compose.ui.input.pointer.pointerInput
 import androidx.compose.ui.platform.LocalDensity
 import androidx.compose.ui.platform.testTag
 import androidx.compose.ui.unit.dp
+
+private const val SKY_DOUBLE_TAP_WINDOW_MS = 200L
 
 /** Catch blank chrome taps without adding an accessibility action; child controls retain priority. */
 internal fun Modifier.spaceCompassSceneInputShield(): Modifier = pointerInput(Unit) { detectTapGestures {} }
@@ -30,6 +35,7 @@ internal fun SpaceCompassCelestialSceneInteraction(targets: List<SpaceCompassCel
     hitExclusions: List<SpaceCompassSunSceneFrame> = emptyList(),
     showCaptions: Boolean = true,
     onEmptySpaceTap: (() -> Unit)? = null,
+    onEmptySpaceDoubleTap: (() -> Unit)? = null,
     antipodeTargets: List<SpaceCompassCelestialSceneTarget> = emptyList(),
     drawAntipodeMarkers: Boolean = true,
     liveMarkers: @Composable () -> Unit = {}) {
@@ -47,19 +53,44 @@ internal fun SpaceCompassCelestialSceneInteraction(targets: List<SpaceCompassCel
         val blockedRegions by rememberUpdatedState(hitExclusions)
         val emptyTapExclusions by rememberUpdatedState(excluded)
         val emptySpaceTap by rememberUpdatedState(onEmptySpaceTap)
+        val emptySpaceDoubleTap by rememberUpdatedState(onEmptySpaceDoubleTap)
         val zone by rememberUpdatedState(spaceCompassObservationZone())
         val radius = with(LocalDensity.current) { SPACE_COMPASS_SUN_PATH_TOUCH_RADIUS_DP.dp.toPx().toDouble() }
         val accent = MaterialTheme.colorScheme.primary
         Canvas(Modifier.fillMaxSize().testTag("celestial-scene-input").pointerInput(radius) {
-            var press = Offset.Zero
-            detectTapGestures(onPress = { press = it }, onTap = { tap ->
+            fun handleTap(press: Offset, tap: Offset): Boolean {
                 val point = SpaceCompassSunScenePoint(tap.x.toDouble(), tap.y.toDouble())
                 val target = tappedSpaceCompassCelestialSceneTarget(currentTargets, point, radius, blockedRegions)
-                if (target != null) state.toggleScenePoint(target, zone)
-                else if ((tap - press).getDistance() <= viewConfiguration.touchSlop &&
+                if (target != null) {
+                    state.toggleScenePoint(target, zone)
+                    return false
+                }
+                return (tap - press).getDistance() <= viewConfiguration.touchSlop &&
                     !spaceCompassScenePointIsCovered(point, blockedRegions) &&
-                    !spaceCompassScenePointIsCovered(point, emptyTapExclusions)) emptySpaceTap?.invoke()
-            })
+                    !spaceCompassScenePointIsCovered(point, emptyTapExclusions)
+            }
+            awaitEachGesture {
+                val firstDown = awaitFirstDown().also { it.consume() }
+                val firstUp = waitForUpOrCancellation()?.also { it.consume() } ?: return@awaitEachGesture
+                if (!handleTap(firstDown.position, firstUp.position)) return@awaitEachGesture
+                // Only empty sky enters the double-tap window. Orbit points remain immediate.
+                val secondDown = if (emptySpaceDoubleTap == null) null else
+                    withTimeoutOrNull(minOf(viewConfiguration.doubleTapTimeoutMillis, SKY_DOUBLE_TAP_WINDOW_MS)) {
+                        val earliest = firstUp.uptimeMillis + viewConfiguration.doubleTapMinTimeMillis
+                        var down = awaitFirstDown()
+                        while (down.uptimeMillis < earliest) down = awaitFirstDown()
+                        down
+                    }
+                if (secondDown == null) {
+                    emptySpaceTap?.invoke()
+                    return@awaitEachGesture
+                }
+                secondDown.consume()
+                val secondUp = waitForUpOrCancellation()?.also { it.consume() }
+                if (secondUp != null && handleTap(secondDown.position, secondUp.position)) {
+                    emptySpaceDoubleTap?.invoke()
+                } else emptySpaceTap?.invoke()
+            }
         }) {
             historical.forEach {
                 val r = (if (it.point.event == SpaceCompassSunPathEvent.HOUR) 4.dp else 6.dp).toPx()

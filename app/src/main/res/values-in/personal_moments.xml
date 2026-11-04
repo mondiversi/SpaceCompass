@@ -7,6 +7,11 @@
     <string name="personal_moments_empty">Belum ada momen pribadi.</string>
     <string name="personal_moment_duplicate">Momen ini sudah ada</string>
     <string name="personal_moments_export">Ekspor momen pribadi</string>
+    <string name="personal_moments_scope_all">Semua objek</string>
+    <string name="personal_moments_archive_file">File yang dapat diimpor</string>
+    <string name="personal_moments_object_column">Objek</string>
+    <string name="personal_moments_scope_object">Hanya objek ini</string>
+    <string name="personal_moments_scope_selected">Hanya momen terpilih</string>
     <string name="personal_moments_import">Impor momen pribadi</string>
     <string name="personal_moments_file_saved">Momen pribadi disimpan</string>
     <string name="personal_moments_file_imported">Momen pribadi diimpor</string>

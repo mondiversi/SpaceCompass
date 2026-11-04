@@ -7,6 +7,11 @@
     <string name="personal_moments_empty">Hakuna nyakati binafsi.</string>
     <string name="personal_moment_duplicate">Wakati huu tayari upo</string>
     <string name="personal_moments_export">Hamisha nyakati binafsi</string>
+    <string name="personal_moments_scope_all">Vitu vyote</string>
+    <string name="personal_moments_archive_file">Faili inayoweza kuingizwa</string>
+    <string name="personal_moments_object_column">Kitu</string>
+    <string name="personal_moments_scope_object">Kitu hiki pekee</string>
+    <string name="personal_moments_scope_selected">Nyakati zilizochaguliwa pekee</string>
     <string name="personal_moments_import">Leta nyakati binafsi</string>
     <string name="personal_moments_file_saved">Nyakati binafsi zimehifadhiwa</string>
     <string name="personal_moments_file_imported">Nyakati binafsi zimeletwa</string>

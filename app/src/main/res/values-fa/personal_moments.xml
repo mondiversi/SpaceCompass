@@ -7,6 +7,11 @@
     <string name="personal_moments_empty">لحظهٔ شخصی وجود ندارد.</string>
     <string name="personal_moment_duplicate">این لحظه از قبل وجود دارد</string>
     <string name="personal_moments_export">صدور لحظه‌های شخصی</string>
+    <string name="personal_moments_scope_all">همهٔ اجرام</string>
+    <string name="personal_moments_archive_file">فایل قابل وارد کردن</string>
+    <string name="personal_moments_object_column">جرم</string>
+    <string name="personal_moments_scope_object">فقط این جرم</string>
+    <string name="personal_moments_scope_selected">فقط لحظه‌های انتخاب‌شده</string>
     <string name="personal_moments_import">وارد کردن لحظه‌های شخصی</string>
     <string name="personal_moments_file_saved">لحظه‌های شخصی ذخیره شدند</string>
     <string name="personal_moments_file_imported">لحظه‌های شخصی وارد شدند</string>

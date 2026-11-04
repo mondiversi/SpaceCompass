@@ -1,9 +1,9 @@
 <resources>
     <string name="info_news_title">Últimas novidades · %1$s</string>
-    <string name="info_news_star_sky" formatted="false">As trajetórias com data continuam visíveis ao desativar o objeto atual.</string>
-    <string name="info_news_texture_downloads" formatted="false">Desmarca cada data separadamente em Objetos, Alturas-chave, Eventos-chave ou Momentos pessoais.</string>
-    <string name="info_news_weather" formatted="false">As datas ativas permanecem agrupadas sob o objeto no catálogo, mesmo com a sua caixa desmarcada.</string>
-    <string name="info_news_viewer_zoom" formatted="false">As seleções do objeto atual e das datas são guardadas separadamente e mantidas ao reiniciar.</string>
-    <string name="info_news_settings" formatted="false">Os pontos selecionados e os seus antípodas permanecem disponíveis nas trajetórias com data ativas.</string>
-    <string name="info_news_catalog" formatted="false">Fotografias, panorâmicas e exportações de Location com objetos celestes podem incluir as trajetórias com data ativas.</string>
+    <string name="info_news_star_sky" formatted="false">Toque numa área vazia do céu para mostrar ou ocultar a mira.</string>
+    <string name="info_news_texture_downloads" formatted="false">Toque duas vezes para mostrar ou ocultar os controlos na vista do céu e nas pré-visualizações de fotos e panoramas.</string>
+    <string name="info_news_weather" formatted="false">Localização e Momentos pessoais têm agora um ecrã de exportação próprio.</string>
+    <string name="info_news_viewer_zoom" formatted="false">Exporte momentos pessoais como ficheiro importável ou folha de cálculo CSV.</string>
+    <string name="info_news_settings" formatted="false">Exporte momentos de todos os objetos ou apenas do objeto atual. Pode incluir apenas os momentos selecionados.</string>
+    <string name="info_news_catalog" formatted="false">Os nomes de ficheiro sugeridos seguem o idioma e os formatos escolhidos para a exportação.</string>
 </resources>

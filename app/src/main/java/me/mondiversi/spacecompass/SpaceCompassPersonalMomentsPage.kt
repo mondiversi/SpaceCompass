@@ -6,6 +6,7 @@ import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.itemsIndexed
+import androidx.compose.foundation.lazy.rememberLazyListState
 import androidx.compose.foundation.selection.toggleable
 import androidx.compose.material3.*
 import androidx.compose.runtime.*
@@ -36,6 +37,9 @@ internal fun SpaceCompassPersonalMomentsPage(body: SpaceCompassCelestialBody, ti
     val utc = remember { TimeZone.getTimeZone("UTC") }
     var add by rememberSaveable(body) { mutableStateOf(false) }
     var deleteId by rememberSaveable(body) { mutableStateOf<String?>(null) }
+    val transfer = rememberSpaceCompassPersonalMomentTransfer(body, state)
+    val listState = rememberLazyListState()
+    transfer.exportPage?.let { it(); return }
     BackHandler(onBack = onBack)
     Surface(Modifier.fillMaxSize().testTag("page-personal-moments"), color = spaceCompassPageBackground()) {
         Column {
@@ -52,11 +56,18 @@ internal fun SpaceCompassPersonalMomentsPage(body: SpaceCompassCelestialBody, ti
                         drawLine(ink, center - Offset(0f, r), center + Offset(0f, r), stroke, StrokeCap.Round)
                     }
                 }
-                SpaceCompassPersonalMomentTransferActions(body, moments, state)
+                SpaceCompassTitleActionButton(stringResource(R.string.personal_moments_export), transfer.openExport,
+                    Modifier.testTag("personal-moments-export"), enabled = transfer.canExport) {
+                    SpaceCompassPanoramaExportIcon(SpaceCompassTitleActionIconStrokeWidth)
+                }
+                SpaceCompassTitleActionButton(stringResource(R.string.personal_moments_import), transfer.openImport,
+                    Modifier.testTag("personal-moments-import"), enabled = transfer.canImport) {
+                    SpaceCompassScenarioImportIcon()
+                }
             }
             if (moments.isEmpty()) Box(Modifier.fillMaxSize(), contentAlignment = Alignment.Center) {
                 Text(stringResource(R.string.personal_moments_empty), Modifier.padding(16.dp), color = secondary)
-            } else LazyColumn(Modifier.fillMaxSize(), contentPadding = PaddingValues(horizontal = 10.dp, vertical = 8.dp)) {
+            } else LazyColumn(Modifier.fillMaxSize(), state = listState, contentPadding = PaddingValues(horizontal = 10.dp, vertical = 8.dp)) {
                 itemsIndexed(moments, key = { _, moment -> moment.id }) { index, moment ->
                     if (index > 0) HorizontalDivider(color = secondary.copy(alpha = .18f))
                     val stamp = remember(moment.date, moment.time, formatting) {

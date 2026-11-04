@@ -7,6 +7,11 @@
     <string name="personal_moments_empty">אין רגעים אישיים.</string>
     <string name="personal_moment_duplicate">הרגע הזה כבר קיים</string>
     <string name="personal_moments_export">ייצוא רגעים אישיים</string>
+    <string name="personal_moments_scope_all">כל העצמים</string>
+    <string name="personal_moments_archive_file">קובץ שניתן לייבא</string>
+    <string name="personal_moments_object_column">עצם</string>
+    <string name="personal_moments_scope_object">העצם הזה בלבד</string>
+    <string name="personal_moments_scope_selected">רק הרגעים שנבחרו</string>
     <string name="personal_moments_import">ייבוא רגעים אישיים</string>
     <string name="personal_moments_file_saved">הרגעים האישיים נשמרו</string>
     <string name="personal_moments_file_imported">הרגעים האישיים יובאו</string>

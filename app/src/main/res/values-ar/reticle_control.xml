@@ -3,4 +3,6 @@
     <string name="reticle_disable">إخفاء مؤشر التصويب ومعلومات النقاط</string>
     <string name="scene_reticle_on">مؤشر التصويب ومعلومات النقاط ظاهرة</string>
     <string name="scene_reticle_off">مؤشر التصويب ومعلومات النقاط مخفية</string>
+    <string name="sky_controls_show">إظهار عناصر التحكم</string>
+    <string name="sky_controls_hide">إخفاء عناصر التحكم</string>
 </resources>

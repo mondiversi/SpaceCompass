@@ -3,4 +3,6 @@
     <string name="reticle_disable">Ocultar retículo e informações dos pontos</string>
     <string name="scene_reticle_on">Retículo e informações dos pontos visíveis</string>
     <string name="scene_reticle_off">Retículo e informações dos pontos ocultos</string>
+    <string name="sky_controls_show">Mostrar controlos</string>
+    <string name="sky_controls_hide">Ocultar controlos</string>
 </resources>

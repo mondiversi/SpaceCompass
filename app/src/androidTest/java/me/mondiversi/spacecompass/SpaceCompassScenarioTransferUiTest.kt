@@ -45,7 +45,7 @@ class SpaceCompassScenarioTransferUiTest {
         compose.waitForIdle(); context.deleteSharedPreferences(preferenceName)
     }
 
-    @Test fun toolbarKeepsExportImportWithoutResumeAndTheExportDialogOffersThreeActions() {
+    @Test fun toolbarKeepsExportImportAndTheExportPageReturnsToLocation() {
         show()
         compose.onNodeWithTag("scenario-resume-open").assertDoesNotExist()
         compose.onNodeWithText(context.getString(R.string.observer_management_title)).assertExists()
@@ -53,17 +53,14 @@ class SpaceCompassScenarioTransferUiTest {
         val load = compose.onNodeWithTag("scenario-import-open").fetchSemanticsNode().boundsInRoot
         assertTrue(export.right <= load.left)
         compose.onNodeWithTag("scenario-export-open").performClick()
-        compose.onNodeWithTag("scenario-export-dialog").assertIsDisplayed()
+        compose.onNodeWithTag("scenario-export-page").assertIsDisplayed()
         compose.onNodeWithText(context.getString(R.string.panorama_export_description)).assertExists()
         compose.onNodeWithTag("scenario-export-profile-divider").assertExists()
         compose.onNodeWithTag("scenario-export-name").assertTextContains("112m", substring = true)
-        for (tag in listOf("scenario-export-cancel", "scenario-export-save", "scenario-export-share"))
-            compose.onNodeWithTag(tag).assertIsEnabled()
-        val actions = listOf("scenario-export-cancel", "scenario-export-save", "scenario-export-share")
-            .map { compose.onNodeWithTag(it).fetchSemanticsNode().boundsInRoot }
-        assertTrue(actions.zipWithNext().all { (a, b) -> a.top == b.top && a.right <= b.left })
-        compose.onNodeWithTag("scenario-export-cancel").performClick()
-        compose.onNodeWithTag("scenario-export-dialog").assertDoesNotExist()
+        for (tag in listOf("scenario-export-save", "scenario-export-share"))
+            compose.onNodeWithTag(tag).performScrollTo().assertIsEnabled()
+        compose.onNodeWithContentDescription(context.getString(R.string.navigate_back)).performClick()
+        compose.onNodeWithTag("scenario-export-page").assertDoesNotExist()
         compose.runOnIdle { assertEquals(original, observer.savedPlan) }
     }
 
@@ -80,10 +77,10 @@ class SpaceCompassScenarioTransferUiTest {
         compose.onNodeWithTag("panorama-export-international").performClick()
         compose.onNodeWithTag("scenario-export-name").assertTextContains("My-custom-scenario")
         compose.runOnIdle { assertEquals(SpaceCompassPanoramaExportMode.INTERNATIONAL,retainedExport!!.mode) }
-        compose.onNodeWithTag("scenario-export-cancel").performClick()
+        compose.onNodeWithContentDescription(context.getString(R.string.navigate_back)).performClick()
         compose.onNodeWithTag("scenario-export-open").performClick()
         compose.onNodeWithTag("panorama-export-international").assertIsSelected()
-        compose.onNodeWithTag("scenario-export-cancel").performClick()
+        compose.onNodeWithContentDescription(context.getString(R.string.navigate_back)).performClick()
     }
 
     @Test fun emptyFileNamesDisableDeliveryWithoutChangingTheScenario() {
@@ -91,7 +88,7 @@ class SpaceCompassScenarioTransferUiTest {
         compose.onNodeWithTag("scenario-export-name").performTextClearance()
         compose.onNodeWithTag("scenario-export-save").assertIsNotEnabled()
         compose.onNodeWithTag("scenario-export-share").assertIsNotEnabled()
-        compose.onNodeWithTag("scenario-export-cancel").assertIsEnabled().performClick()
+        compose.onNodeWithContentDescription(context.getString(R.string.navigate_back)).performClick()
         compose.runOnIdle { assertEquals(original, observer.savedPlan) }
     }
 
@@ -125,11 +122,11 @@ class SpaceCompassScenarioTransferUiTest {
         compose.runOnIdle { assertNull(observer.plan); assertNull(observer.savedPlan) }
         compose.onNodeWithTag("location-export-objects").performClick().assertIsOff()
         compose.onNodeWithTag("scenario-export-save").assertIsEnabled()
-        compose.onNodeWithTag("scenario-export-cancel").performClick()
+        compose.onNodeWithContentDescription(context.getString(R.string.navigate_back)).performClick()
         compose.onNodeWithTag("scenario-export-open").performClick()
         compose.onNodeWithTag("location-export-objects").assertIsOff()
         compose.onNodeWithTag("scenario-export-share").assertIsEnabled()
-        compose.onNodeWithTag("scenario-export-cancel").performClick()
+        compose.onNodeWithContentDescription(context.getString(R.string.navigate_back)).performClick()
     }
 
     @Test fun includingObjectsDoesNotRequireOrInventALocationFix() {
@@ -138,7 +135,7 @@ class SpaceCompassScenarioTransferUiTest {
         compose.onNodeWithTag("location-export-objects").performClick().assertIsOn()
         compose.onNodeWithTag("scenario-export-save").assertIsEnabled()
         compose.onNodeWithTag("scenario-export-share").assertIsEnabled()
-        compose.onNodeWithTag("scenario-export-cancel").assertIsEnabled().performClick()
+        compose.onNodeWithContentDescription(context.getString(R.string.navigate_back)).performClick()
         compose.runOnIdle { assertNull(observer.plan); assertNull(observer.savedPlan) }
     }
 

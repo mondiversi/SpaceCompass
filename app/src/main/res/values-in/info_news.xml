@@ -1,9 +1,9 @@
 <resources>
     <string name="info_news_title">Perubahan terbaru · %1$s</string>
-    <string name="info_news_star_sky" formatted="false">Lintasan bertanggal tetap terlihat saat objek terkini dinonaktifkan.</string>
-    <string name="info_news_texture_downloads" formatted="false">Hapus centang tiap tanggal secara terpisah di Objek, Ketinggian Utama, Peristiwa Utama, atau Momen Pribadi.</string>
-    <string name="info_news_weather" formatted="false">Tanggal aktif tetap dikelompokkan di bawah objeknya dalam katalog meski objek itu tidak dicentang.</string>
-    <string name="info_news_viewer_zoom" formatted="false">Pilihan objek terkini dan tanggal disimpan terpisah dan tetap ada saat aplikasi dibuka ulang.</string>
-    <string name="info_news_settings" formatted="false">Titik terpilih dan antipodanya tetap tersedia pada lintasan bertanggal yang aktif.</string>
-    <string name="info_news_catalog" formatted="false">Foto, panorama, dan ekspor Location dengan objek langit dapat menyertakan lintasan bertanggal yang aktif.</string>
+    <string name="info_news_star_sky" formatted="false">Ketuk bagian langit yang kosong untuk menampilkan atau menyembunyikan bidik.</string>
+    <string name="info_news_texture_downloads" formatted="false">Ketuk dua kali untuk menampilkan atau menyembunyikan kontrol di tampilan langit serta pratinjau foto dan panorama.</string>
+    <string name="info_news_weather" formatted="false">Lokasi dan Momen Pribadi kini memiliki layar ekspor khusus.</string>
+    <string name="info_news_viewer_zoom" formatted="false">Ekspor momen pribadi sebagai berkas yang dapat diimpor atau lembar kerja CSV.</string>
+    <string name="info_news_settings" formatted="false">Ekspor momen dari semua objek atau hanya objek saat ini. Anda dapat menyertakan momen yang dipilih saja.</string>
+    <string name="info_news_catalog" formatted="false">Nama berkas yang disarankan mengikuti bahasa dan format yang Anda pilih untuk ekspor.</string>
 </resources>

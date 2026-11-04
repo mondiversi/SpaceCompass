@@ -3,4 +3,6 @@
     <string name="reticle_disable">निशाना और बिंदुओं की जानकारी छिपाएँ</string>
     <string name="scene_reticle_on">निशाना और बिंदुओं की जानकारी दिखाई गई</string>
     <string name="scene_reticle_off">निशाना और बिंदुओं की जानकारी छिपाई गई</string>
+    <string name="sky_controls_show">नियंत्रण दिखाएँ</string>
+    <string name="sky_controls_hide">नियंत्रण छिपाएँ</string>
 </resources>

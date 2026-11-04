@@ -11,6 +11,7 @@ import androidx.compose.foundation.gestures.detectTransformGestures
 import androidx.compose.foundation.layout.*
 import androidx.compose.material3.*
 import androidx.compose.runtime.*
+import androidx.compose.runtime.saveable.rememberSaveable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.geometry.Offset
@@ -30,7 +31,10 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.IntSize
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.Dp
+import androidx.compose.ui.semantics.CustomAccessibilityAction
 import androidx.compose.ui.semantics.Role
+import androidx.compose.ui.semantics.customActions
+import androidx.compose.ui.semantics.semantics
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
 import java.io.File
@@ -70,6 +74,7 @@ internal fun SpaceCompassPanoramaPreview(data: SpaceCompassPanoramaPreviewData, 
     var choosePosition by remember { mutableStateOf(false) }
     var chooseLabels by remember { mutableStateOf(false) }
     var chooseCenter by remember { mutableStateOf(false) }
+    var controlsVisible by rememberSaveable(data.file.absolutePath) { mutableStateOf(true) }
     var currentCenter by remember(data.file) { mutableStateOf(data.snapshot?.center ?: SpaceCompassPanoramaCenter.SOUTH) }
     var requestedCenter by remember(data.file) { mutableStateOf(data.snapshot?.center ?: SpaceCompassPanoramaCenter.SOUTH) }
     LaunchedEffect(data, requestedPosition, requestedLabelMode, requestedCenter, revision) {
@@ -138,10 +143,12 @@ internal fun SpaceCompassPanoramaPreview(data: SpaceCompassPanoramaPreviewData, 
         }.testTag("panorama-full-image-viewport")) {
             if (bitmap == null || !positionReady) Box(Modifier.fillMaxSize(), contentAlignment = Alignment.Center) {
                 if (failed || preparationFailed) Text(stringResource(R.string.panorama_error)) else CircularProgressIndicator()
-            } else SpaceCompassPanoramaZoomImage(bitmap, Modifier.fillMaxSize(), topInset)
+            } else SpaceCompassPanoramaZoomImage(bitmap, Modifier.fillMaxSize(), topInset, controlsVisible) {
+                controlsVisible = !controlsVisible
+            }
             val showCaptionOptions = data.snapshot != null && data.captionData != null
             val showCenter = data.cameraPhoto == null && data.snapshot != null
-            Column(Modifier.align(Alignment.TopEnd).spaceCompassPanoramaTopControlInsets(topInset)
+            if (controlsVisible) Column(Modifier.align(Alignment.TopEnd).spaceCompassPanoramaTopControlInsets(topInset)
                 .testTag("panorama-right-controls"), verticalArrangement = Arrangement.spacedBy(8.dp)) {
                 if (showCaptionOptions) SpaceCompassPanoramaCircleButton(
                     stringResource(R.string.panorama_point_labels), { chooseLabels = true }, enabled = !export.saving,
@@ -211,7 +218,7 @@ internal fun SpaceCompassPanoramaPreview(data: SpaceCompassPanoramaPreviewData, 
 
 @Composable
 private fun SpaceCompassPanoramaZoomImage(bitmap: android.graphics.Bitmap, modifier: Modifier,
-    topInset: Dp) {
+    topInset: Dp, controlsVisible: Boolean, onToggleControls: () -> Unit) {
     val image = remember(bitmap) { bitmap.asImageBitmap() }
     var size by remember { mutableStateOf(IntSize.Zero) }
     var zoom by remember { mutableFloatStateOf(1f) }
@@ -229,16 +236,20 @@ private fun SpaceCompassPanoramaZoomImage(bitmap: android.graphics.Bitmap, modif
     LaunchedEffect(size, topInsetPx) { offset = bound(offset, zoom) }
     val zoomInLabel = stringResource(R.string.celestial_view_zoom_in)
     val zoomOutLabel = stringResource(R.string.celestial_view_zoom_out)
+    val controlsAction = stringResource(if (controlsVisible) R.string.sky_controls_hide else R.string.sky_controls_show)
+    val toggleControls by rememberUpdatedState(onToggleControls)
     Box(modifier.clipToBounds().background(Color.Black).onSizeChanged { size = it; offset = bound(offset, zoom) }
+        .testTag("panorama-image-gestures")
+        .semantics { customActions = listOf(CustomAccessibilityAction(controlsAction) { toggleControls(); true }) }
         .pointerInput(bitmap, size, topInsetPx) { detectTransformGestures { centroid, pan, scale, _ ->
             val next = (zoom * scale).coerceIn(1f, 8f)
             val ratio = next / zoom
             val center = Offset(size.width / 2f, (size.height + topInsetPx) / 2f)
             offset = bound(offset * ratio + (centroid - center) * (1 - ratio) + pan, next)
             zoom = next
-        } }.pointerInput(bitmap) { detectTapGestures(onDoubleTap = {
-            zoom = if (zoom > 1f) 1f else 3f; offset = Offset.Zero
-        }) }) {
+        } }.pointerInput(bitmap) {
+            detectTapGestures(onDoubleTap = { toggleControls() })
+        }) {
         Image(image, stringResource(R.string.panorama_preview), Modifier.fillMaxSize()
             .graphicsLayer {
                 // Fit below the toolbar; its opaque surface covers any zoomed image overflow.
@@ -247,7 +258,7 @@ private fun SpaceCompassPanoramaZoomImage(bitmap: android.graphics.Bitmap, modif
                 scaleX = zoom * base; scaleY = zoom * base
                 translationX = offset.x; translationY = offset.y + topInsetPx / 2f },
             contentScale = ContentScale.Fit)
-        Column(Modifier.align(Alignment.TopStart).spaceCompassPanoramaTopControlInsets(topInset)
+        if (controlsVisible) Column(Modifier.align(Alignment.TopStart).spaceCompassPanoramaTopControlInsets(topInset)
             .testTag("panorama-left-controls"), verticalArrangement = Arrangement.spacedBy(8.dp)) {
             SpaceCompassPanoramaCircleButton(zoomOutLabel,
                 onClick = { zoom = (zoom / 1.5f).coerceAtLeast(1f); offset = bound(offset, zoom) },

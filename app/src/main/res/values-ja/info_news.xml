@@ -1,9 +1,9 @@
 <resources>
     <string name="info_news_title">最近の変更 · %1$s</string>
-    <string name="info_news_star_sky" formatted="false">現在の天体をオフにしても、日付別経路は表示されます。</string>
-    <string name="info_news_texture_downloads" formatted="false">天体、主要な高度、主要なイベント、個人の観測時点で日付ごとに選択を解除できます。</string>
-    <string name="info_news_weather" formatted="false">天体のチェックを外しても、有効な日付はカタログ内でその天体の下に表示されます。</string>
-    <string name="info_news_viewer_zoom" formatted="false">現在の天体と日付の選択は別々に保存され、アプリの再起動後も維持されます。</string>
-    <string name="info_news_settings" formatted="false">有効な日付別経路では選択した点とその対蹠点を引き続き表示できます。</string>
-    <string name="info_news_catalog" formatted="false">写真、パノラマ、天体を含むLocationの書き出しには、有効な日付別経路を含められます。</string>
+    <string name="info_news_star_sky" formatted="false">空の何もない場所をタップすると、照準を表示または非表示にできます。</string>
+    <string name="info_news_texture_downloads" formatted="false">ダブルタップで、空の画面や写真・パノラマのプレビューの操作ボタンを表示または非表示にできます。</string>
+    <string name="info_news_weather" formatted="false">ロケーションとパーソナルモーメントに専用のエクスポート画面ができました。</string>
+    <string name="info_news_viewer_zoom" formatted="false">パーソナルモーメントを、インポート可能なファイルまたはCSVとしてエクスポートできます。</string>
+    <string name="info_news_settings" formatted="false">すべての天体、または表示中の天体のモーメントをエクスポートできます。選択済みのものだけに絞ることもできます。</string>
+    <string name="info_news_catalog" formatted="false">ファイル名の候補には、エクスポートで選んだ言語と書式が使われます。</string>
 </resources>

@@ -18,7 +18,7 @@
     <string name="tutorial_axis" formatted="false">Escolha o eixo da câmara (90°) ou o comprimento do telefone (0°). A câmara usa sempre o seu próprio eixo.</string>
     <string name="tutorial_transparency" formatted="false">Torne as imagens dos objetos translúcidas para comparar com a câmara. A captura mantém a escolha.</string>
     <string name="tutorial_zoom" formatted="false">Escolha o zoom da câmara ou use dois dedos sobre a imagem.</string>
-    <string name="tutorial_capture" formatted="false">Prepare um panorama do céu ou uma foto com sobreposições astronómicas. Exporte a partir da pré-visualização.</string>
+    <string name="tutorial_capture" formatted="false">Prepare um panorama do céu ou uma foto com sobreposições astronómicas. Exporte a partir da pré-visualização. Na pré-visualização, toque duas vezes na imagem para mostrar ou ocultar os controlos.</string>
     <string name="tutorial_panels" formatted="false">Recolha ou expanda os painéis do objeto e da bússola para libertar espaço.</string>
     <string name="tutorial_antipodes" formatted="false">Toca para mostrar ou ocultar a direção oposta dos pontos selecionados: azimute +180° e elevação de sinal contrário. Mantém premido para desmarcar todos os pontos.</string>
     <string name="tutorial_navigation" formatted="false">Percorra os objetos selecionados. O painel mostra o objeto ativo e as cores da trajetória.</string>
@@ -26,7 +26,7 @@
     <string name="tutorial_daily" formatted="false">Consulte trajetória, horários, elevações e pontos selecionáveis. Eventos futuros podem ter alertas.</string>
     <string name="tutorial_gps" formatted="false">Consulte posição real, altitude GPS, orientação e meteorologia, independentemente da Location.</string>
     <string name="tutorial_points" formatted="false">Selecione um ponto. Aponte para ler objeto, hora, T, azimute e elevação. O contorno do objeto segue a cor da sua trajetória; fica azul ou azul-claro ao selecionar a posição atual.</string>
-    <string name="tutorial_reticle" formatted="false">Toque no céu vazio para mostrar ou ocultar a mira e informações. Não altera as etiquetas exportadas.</string>
+    <string name="tutorial_reticle" formatted="false">Toque no céu vazio para mostrar ou ocultar a mira e informações. Não altera as etiquetas exportadas. Toque duas vezes numa área vazia do céu para mostrar ou ocultar os controlos.</string>
     <string name="tutorial_reminder" formatted="false">Abra o alarme ou calendário Android para um evento futuro válido. Não se aplica ao passado nem ao ponto atual.</string>
     <string name="tutorial_status_title" formatted="false">Estado e recuperação</string>
     <string name="tutorial_status" formatted="false">Consulte o estado. A ação pode pedir permissão, ativar a localização ou tentar carregar dados orbitais ou meteorológicos. O tutorial não executa a ação.</string>

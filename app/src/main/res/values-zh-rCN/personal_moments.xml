@@ -7,6 +7,11 @@
     <string name="personal_moments_empty">没有自定义观测时刻。</string>
     <string name="personal_moment_duplicate">此观测时刻已存在</string>
     <string name="personal_moments_export">导出自定义观测时刻</string>
+    <string name="personal_moments_scope_all">所有天体</string>
+    <string name="personal_moments_archive_file">可导入文件</string>
+    <string name="personal_moments_object_column">天体</string>
+    <string name="personal_moments_scope_object">仅此天体</string>
+    <string name="personal_moments_scope_selected">仅选中的时刻</string>
     <string name="personal_moments_import">导入自定义观测时刻</string>
     <string name="personal_moments_file_saved">已保存自定义观测时刻</string>
     <string name="personal_moments_file_imported">已导入自定义观测时刻</string>

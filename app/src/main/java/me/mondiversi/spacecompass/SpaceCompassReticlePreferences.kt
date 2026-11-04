@@ -4,6 +4,7 @@ import android.content.SharedPreferences
 
 internal const val SPACE_COMPASS_RETICLE_VISIBLE_KEY = "sky_reticle_visible"
 internal const val SPACE_COMPASS_RETICLE_VISIBLE_DEFAULT = true
+internal const val SPACE_COMPASS_SKY_CONTROLS_VISIBLE_KEY = "sky_controls_visible"
 
 internal fun readSpaceCompassReticleVisible(preferences: SharedPreferences?): Boolean =
     preferences?.getBoolean(SPACE_COMPASS_RETICLE_VISIBLE_KEY, SPACE_COMPASS_RETICLE_VISIBLE_DEFAULT)

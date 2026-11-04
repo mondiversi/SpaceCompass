@@ -1,9 +1,9 @@
 <resources>
     <string name="info_news_title">Neuigkeiten · %1$s</string>
-    <string name="info_news_star_sky" formatted="false">Datierte Bahnen bleiben sichtbar, wenn du das aktuelle Objekt ausschaltest.</string>
-    <string name="info_news_texture_downloads" formatted="false">Deaktiviere jedes Datum einzeln in Objekte, Schlüsselhöhen, Schlüsselereignisse oder persönliche Momente.</string>
-    <string name="info_news_weather" formatted="false">Aktive Datumsbahnen bleiben im Katalog unter ihrem Objekt, auch wenn dessen Auswahl aufgehoben ist.</string>
-    <string name="info_news_viewer_zoom" formatted="false">Die aktuelle und die datierte Auswahl werden getrennt gespeichert und beim Neustart wiederhergestellt.</string>
-    <string name="info_news_settings" formatted="false">Ausgewählte Punkte und ihre Gegenpunkte bleiben auf aktiven datierten Bahnen verfügbar.</string>
-    <string name="info_news_catalog" formatted="false">Fotos, Panoramen und Location-Exporte mit Himmelsobjekten können aktive datierte Bahnen enthalten.</string>
+    <string name="info_news_star_sky" formatted="false">Tippe auf den freien Himmel, um das Fadenkreuz ein- oder auszublenden.</string>
+    <string name="info_news_texture_downloads" formatted="false">Tippe doppelt, um die Bedienelemente in der Himmelsansicht und der Foto- und Panoramavorschau ein- oder auszublenden.</string>
+    <string name="info_news_weather" formatted="false">Standort und persönliche Momente haben nun eine eigene Exportansicht.</string>
+    <string name="info_news_viewer_zoom" formatted="false">Exportiere persönliche Momente als importierbare Datei oder CSV-Tabelle.</string>
+    <string name="info_news_settings" formatted="false">Exportiere Momente aller Objekte oder nur des aktuellen Objekts. Du kannst den Export auf ausgewählte Momente beschränken.</string>
+    <string name="info_news_catalog" formatted="false">Vorgeschlagene Dateinamen verwenden die Sprache und Formate des Exports.</string>
 </resources>

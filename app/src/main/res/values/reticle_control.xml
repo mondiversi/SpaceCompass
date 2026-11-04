@@ -3,4 +3,6 @@
     <string name="reticle_disable">Hide reticle and point information</string>
     <string name="scene_reticle_on">Reticle and point information shown</string>
     <string name="scene_reticle_off">Reticle and point information hidden</string>
+    <string name="sky_controls_show">Show controls</string>
+    <string name="sky_controls_hide">Hide controls</string>
 </resources>

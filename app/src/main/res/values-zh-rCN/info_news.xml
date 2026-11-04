@@ -1,9 +1,9 @@
 <resources>
     <string name="info_news_title">最新变化 · %1$s</string>
-    <string name="info_news_star_sky" formatted="false">关闭当前天体后，指定日期的轨迹仍会显示。</string>
-    <string name="info_news_texture_downloads" formatted="false">可以在天体、关键高度、关键事件或个人时刻中逐一取消选择日期。</string>
-    <string name="info_news_weather" formatted="false">即使取消勾选当前天体，启用的日期仍会列在目录中对应天体的下方。</string>
-    <string name="info_news_viewer_zoom" formatted="false">当前天体与日期的选择独立保存，应用重启后仍会保留。</string>
-    <string name="info_news_settings" formatted="false">启用的日期轨迹仍可显示已选点及其对跖点。</string>
-    <string name="info_news_catalog" formatted="false">照片、全景图和包含天体的 Location 导出文件可以纳入启用的日期轨迹。</string>
+    <string name="info_news_star_sky" formatted="false">点按天空空白处可显示或隐藏准星。</string>
+    <string name="info_news_texture_downloads" formatted="false">双击可在天空视图及照片和全景预览中显示或隐藏操作按钮。</string>
+    <string name="info_news_weather" formatted="false">位置和个人时刻现在有专门的导出页面。</string>
+    <string name="info_news_viewer_zoom" formatted="false">可将个人时刻导出为可导入的文件或 CSV 表格。</string>
+    <string name="info_news_settings" formatted="false">可以导出所有天体或仅当前天体的时刻，也可以只包含已选中的时刻。</string>
+    <string name="info_news_catalog" formatted="false">建议的文件名会使用所选的导出语言和格式。</string>
 </resources>

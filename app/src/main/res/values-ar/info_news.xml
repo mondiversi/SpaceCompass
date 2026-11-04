@@ -1,9 +1,9 @@
 <resources>
     <string name="info_news_title">آخر المستجدات · %1$s</string>
-    <string name="info_news_star_sky" formatted="false">تبقى المسارات المؤرخة مرئية عند إيقاف الجرم الحالي.</string>
-    <string name="info_news_texture_downloads" formatted="false">ألغِ اختيار كل تاريخ على حدة من الأجرام أو الارتفاعات الرئيسية أو الأحداث الرئيسية أو اللحظات الشخصية.</string>
-    <string name="info_news_weather" formatted="false">تبقى التواريخ النشطة مجمّعة تحت جرمها في القائمة حتى عند إلغاء تحديده.</string>
-    <string name="info_news_viewer_zoom" formatted="false">تُحفظ اختيارات الجرم الحالي والتواريخ بشكل منفصل وتبقى بعد إعادة تشغيل التطبيق.</string>
-    <string name="info_news_settings" formatted="false">تظل النقاط المحددة والنقاط المقابلة لها متاحة على المسارات المؤرخة النشطة.</string>
-    <string name="info_news_catalog" formatted="false">يمكن أن تتضمن الصور والبانوراما وملفات Location المصدّرة مع الأجرام السماوية المسارات المؤرخة النشطة.</string>
+    <string name="info_news_star_sky" formatted="false">انقر على مساحة فارغة من السماء لإظهار علامة التصويب أو إخفائها.</string>
+    <string name="info_news_texture_downloads" formatted="false">انقر مرتين لإظهار أدوات التحكم أو إخفائها في عرض السماء ومعاينات الصور والصور البانورامية.</string>
+    <string name="info_news_weather" formatted="false">أصبح للموقع واللحظات الشخصية شاشة مخصصة للتصدير.</string>
+    <string name="info_news_viewer_zoom" formatted="false">صدّر اللحظات الشخصية كملف قابل للاستيراد أو جدول بيانات CSV.</string>
+    <string name="info_news_settings" formatted="false">صدّر لحظات جميع الأجرام أو الجرم الحالي فقط. يمكنك تضمين اللحظات المحددة فقط.</string>
+    <string name="info_news_catalog" formatted="false">تتبع أسماء الملفات المقترحة اللغة والتنسيقات التي تختارها للتصدير.</string>
 </resources>

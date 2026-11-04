@@ -1,5 +1,12 @@
 # Changelog
 
+## 1.8.2 — 2026-11-04
+
+- Tap empty sky to toggle the reticle and its point information. Double-tap to show or hide the main sky controls. The gestures work independently.
+- Double-tap a photo or panorama preview to toggle its overlay controls. Back and Export remain accessible in the title bar.
+- Export Location and Personal Moments through dedicated screens. Personal Moments supports importable files and CSV, with a choice of all or one object and a selected-moments filter.
+- Suggested names for both Personal Moments file types use the chosen export language, date and time formats. The importable data stays portable across locales.
+
 ## 1.8.1 — 2026-11-04
 
 - Dated paths stay visible when their live object is unchecked. Live and dated selections are saved independently.

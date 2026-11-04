@@ -1,9 +1,9 @@
 <resources>
     <string name="info_news_title">החידושים האחרונים · %1$s</string>
-    <string name="info_news_star_sky" formatted="false">מסלולים לפי תאריך נשארים גלויים כשמכבים את העצם הנוכחי.</string>
-    <string name="info_news_texture_downloads" formatted="false">אפשר לבטל כל תאריך בנפרד בעצמים, בגבהים מרכזיים, באירועים מרכזיים או ברגעים אישיים.</string>
-    <string name="info_news_weather" formatted="false">תאריכים פעילים נשארים תחת העצם שלהם בקטלוג גם כשהוא אינו מסומן.</string>
-    <string name="info_news_viewer_zoom" formatted="false">הבחירות של העצם הנוכחי ושל התאריכים נשמרות בנפרד גם לאחר פתיחה מחדש של האפליקציה.</string>
-    <string name="info_news_settings" formatted="false">נקודות שנבחרו והנקודות הנגדיות שלהן נשארות זמינות במסלולים הפעילים לפי תאריך.</string>
-    <string name="info_news_catalog" formatted="false">תמונות, פנורמות וקובצי Location שיוצאו עם עצמים שמימיים יכולים לכלול מסלולים פעילים לפי תאריך.</string>
+    <string name="info_news_star_sky" formatted="false">הקישו על אזור ריק בשמיים כדי להציג או להסתיר את הכוונת.</string>
+    <string name="info_news_texture_downloads" formatted="false">הקישו פעמיים כדי להציג או להסתיר את הפקדים בתצוגת השמיים ובתצוגה המקדימה של תמונות ופנורמות.</string>
+    <string name="info_news_weather" formatted="false">למיקום ולרגעים אישיים יש כעת מסך ייצוא ייעודי.</string>
+    <string name="info_news_viewer_zoom" formatted="false">ייצאו רגעים אישיים כקובץ הניתן לייבוא או כגיליון CSV.</string>
+    <string name="info_news_settings" formatted="false">ייצאו רגעים מכל העצמים או רק מהעצם הנוכחי. אפשר לכלול רק את הרגעים שנבחרו.</string>
+    <string name="info_news_catalog" formatted="false">שמות הקבצים המוצעים משתמשים בשפה ובתבניות שבחרתם לייצוא.</string>
 </resources>

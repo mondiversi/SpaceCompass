@@ -11,15 +11,15 @@ internal const val SPACE_COMPASS_PERSONAL_MOMENTS_EXTENSION = ".spacecompass-mom
 internal const val SPACE_COMPASS_PERSONAL_MOMENTS_FILE_LIMIT = 512 * 1024
 private const val PERSONAL_MOMENTS_FORMAT = "space-compass-personal-moments"
 
-/** A portable, object-scoped file of personal definitions and their checkboxes. */
-internal data class SpaceCompassPersonalMomentsFile(val body: SpaceCompassCelestialBody,
+/** Portable definitions. A body identifies a single-object export; collections can span bodies. */
+internal data class SpaceCompassPersonalMomentsFile(val body: SpaceCompassCelestialBody?,
     val moments: List<SpaceCompassPersonalMoment>) {
-    init { require(moments.isNotEmpty() && moments.all { it.body == body }) }
+    init { require(moments.isNotEmpty() && (body == null || moments.all { it.body == body })) }
 
     fun encode(): String {
         val properties = Properties().apply {
             setProperty("format", PERSONAL_MOMENTS_FORMAT)
-            setProperty("object", body.name)
+            if (body == null) setProperty("scope", "collection") else setProperty("object", body.name)
             putPersonalMomentDefinitions(moments)
         }
         val text = StringWriter().also { properties.store(it, null) }.toString()
@@ -33,7 +33,14 @@ internal data class SpaceCompassPersonalMomentsFile(val body: SpaceCompassCelest
             require(text.toByteArray(Charsets.UTF_8).size <= SPACE_COMPASS_PERSONAL_MOMENTS_FILE_LIMIT)
             val properties = Properties().apply { load(StringReader(text.removePrefix("\uFEFF"))) }
             require(properties.getProperty("format") == PERSONAL_MOMENTS_FORMAT)
-            val body = SpaceCompassCelestialBody.valueOf(requireNotNull(properties.getProperty("object")))
+            val body = when (properties.getProperty("scope")) {
+                null -> SpaceCompassCelestialBody.valueOf(requireNotNull(properties.getProperty("object")))
+                "collection" -> {
+                    require(!properties.containsKey("object"))
+                    null
+                }
+                else -> throw IllegalArgumentException("Unknown personal moments scope")
+            }
             return SpaceCompassPersonalMomentsFile(body, requireNotNull(properties.readSpaceCompassPersonalMoments()))
         }
     }

@@ -80,6 +80,49 @@ class SpaceCompassPersonalMomentTest {
         }
     }
 
+    @Test fun exportScopesKeepTheChosenBodiesAndChecks() {
+        val checked = timed.copy(enabled = true)
+        val moon = untimed.copy(body = SpaceCompassCelestialBody.MOON, enabled = true)
+        val all = listOf(checked, untimed, moon)
+        assertEquals(all, SpaceCompassPersonalMomentsExportScope.ALL.momentsFor(sun, all))
+        assertEquals(listOf(checked, untimed), SpaceCompassPersonalMomentsExportScope.OBJECT.momentsFor(sun, all))
+        assertEquals(listOf(checked, moon), SpaceCompassPersonalMomentsExportScope.ALL.momentsFor(sun, all, onlySelected = true))
+        assertEquals(listOf(checked), SpaceCompassPersonalMomentsExportScope.OBJECT.momentsFor(sun, all, onlySelected = true))
+        assertTrue(SpaceCompassPersonalMomentsExportScope.OBJECT.momentsFor(SpaceCompassCelestialBody.MARS, all).isEmpty())
+        assertTrue(SpaceCompassPersonalMomentsExportScope.ALL.momentsFor(sun, listOf(untimed), onlySelected = true).isEmpty())
+    }
+
+    @Test fun csvKeepsCivilDatesAndBlankTimesAndEscapesUserInput() {
+        val labels = mapOf(R.string.personal_moments_object_column to "Object", R.string.celestial_view_name to "Name",
+            R.string.observer_date to "Date", R.string.observer_time to "Time", R.string.capture_table_selected to "Selected",
+            sun.nameResource to "Sun", R.string.celestial_view_yes to "Yes", R.string.celestial_view_no to "No")
+        val profile = SpaceCompassDataExportProfile(spaceCompassPanoramaInternationalFormatting, SpaceCompassUnits(),
+            SpaceCompassTextResources { id, _ -> labels.getValue(id) })
+        val csv = renderSpaceCompassPersonalMomentsCsv(listOf(timed.copy(name = "=1+1", enabled = true), untimed), profile)
+        val lines = csv.removePrefix("\uFEFF").trimEnd().lines()
+        assertEquals("\"Object\",\"Name\",\"Date\",\"Time\",\"Selected\"", lines[0])
+        assertEquals("\"Sun\",\"'=1+1\",\"2026-06-21\",\"13:30\",\"Yes\"", lines[1])
+        assertEquals("\"Sun\",\"Percorso del giorno\",\"2026-06-20\",\"\",\"No\"", lines[2])
+    }
+
+    @Test fun collectionFileRoundTripsMultipleObjectsAndImportsWithoutReplacingExistingChecks() {
+        val moon = untimed.copy(body = SpaceCompassCelestialBody.MOON, enabled = true)
+        val file = SpaceCompassPersonalMomentsFile(null, listOf(timed.copy(enabled = true), untimed, moon))
+        val text = file.encode()
+        assertEquals(file, SpaceCompassPersonalMomentsFile.decode(text))
+        assertThrows(IllegalArgumentException::class.java) {
+            SpaceCompassPersonalMomentsFile.decode(text.replace("scope=collection", "scope=collection\nobject=SUN"))
+        }
+        assertThrows(IllegalArgumentException::class.java) {
+            SpaceCompassPersonalMomentsFile.decode(text.replace("scope=collection", ""))
+        }
+        val state = SpaceCompassTemporalComparisonState(SpaceCompassSunDailyPathUiState())
+        state.addPersonalMoment(timed)
+        assertEquals(2, state.importPersonalMoments(SpaceCompassPersonalMomentsFile.decode(text).moments))
+        assertEquals(listOf(timed, untimed, moon), state.personalMoments)
+        assertEquals(0, state.importPersonalMoments(file.moments))
+    }
+
     @Test fun dedicatedImportKeepsExistingChecksAndDoesNotSelectAnotherObject() {
         val state = SpaceCompassTemporalComparisonState(SpaceCompassSunDailyPathUiState())
         val moon = timed.copy(body = SpaceCompassCelestialBody.MOON, enabled = true)

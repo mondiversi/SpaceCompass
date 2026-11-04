@@ -3,6 +3,7 @@ package me.mondiversi.spacecompass
 import android.content.Context
 import androidx.compose.foundation.layout.*
 import androidx.compose.material3.MaterialTheme
+import androidx.compose.ui.platform.testTag
 import androidx.compose.runtime.*
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
@@ -40,13 +41,15 @@ class SpaceCompassReticleVisibilityUiTest {
                 MaterialTheme {
                     key(generation.intValue) {
                         var visible by remember { mutableStateOf(readSpaceCompassReticleVisible(preferences)) }
+                        var controlsVisible by remember { mutableStateOf(true) }
                         Column(Modifier.fillMaxSize()) {
                             Box(Modifier.size(340.dp,420.dp)) {
                                 SpaceCompassSunPointingViewport(null,facing(point.position),Modifier.fillMaxSize(),
                                     "synthetic sky",state,dailyPath=path,body=path.body,timeMs=now,
-                                    showActions=false,showReticle=visible,onToggleReticle={
+                                    showActions=false,showReticle=visible,showFloatingControls=controlsVisible,onToggleReticle={
                                         visible=!visible;saveSpaceCompassReticleVisible(preferences,visible)
-                                    })
+                                    }, onToggleFloatingControls={ controlsVisible=!controlsVisible },
+                                    topStartActions={ Box(it.size(40.dp).testTag("fixture-floating-control")) })
                             }
                         }
                     }
@@ -55,11 +58,25 @@ class SpaceCompassReticleVisibilityUiTest {
             compose.onNodeWithTag("toggle-reticle").assertDoesNotExist()
             compose.onNodeWithTag("sun-finder-reticle").assertExists()
             compose.onNodeWithTag("celestial-badge-caption").assertExists()
+            compose.onNodeWithTag("fixture-floating-control").assertExists()
             tapEmptySky()
-            assertFalse(readSpaceCompassReticleVisible(preferences))
+            compose.waitUntil(2_000) { !readSpaceCompassReticleVisible(preferences) }
             compose.onNodeWithTag("sun-finder-reticle").assertDoesNotExist()
             compose.onNodeWithTag("celestial-badge-caption").assertDoesNotExist()
             compose.onNodeWithTag("celestial-badge-reminder").assertDoesNotExist()
+            compose.onNodeWithTag("fixture-floating-control").assertExists()
+            tapEmptySky(twice = true)
+            compose.onNodeWithTag("fixture-floating-control").assertDoesNotExist()
+            compose.onNodeWithTag("sun-finder-reticle").assertDoesNotExist()
+            tapEmptySky()
+            compose.waitUntil(2_000) { readSpaceCompassReticleVisible(preferences) }
+            compose.onNodeWithTag("sun-finder-reticle").assertExists()
+            compose.onNodeWithTag("fixture-floating-control").assertDoesNotExist()
+            tapEmptySky(twice = true)
+            compose.onNodeWithTag("fixture-floating-control").assertExists()
+            compose.onNodeWithTag("sun-finder-reticle").assertExists()
+            tapEmptySky()
+            compose.waitUntil(2_000) { !readSpaceCompassReticleVisible(preferences) }
             compose.runOnIdle {
                 assertTrue(state.isSelected(path,point))
                 assertEquals(SpaceCompassPanoramaLabelMode.ALL.key,
@@ -69,15 +86,21 @@ class SpaceCompassReticleVisibilityUiTest {
             compose.onNodeWithTag("toggle-reticle").assertDoesNotExist()
             compose.onNodeWithTag("sun-finder-reticle").assertDoesNotExist()
             tapEmptySky()
+            compose.waitUntil(2_000) { readSpaceCompassReticleVisible(preferences) }
             compose.onNodeWithTag("sun-finder-reticle").assertExists()
             compose.onNodeWithTag("celestial-badge-caption").assertExists()
+            compose.onNodeWithTag("fixture-floating-control").assertExists()
             compose.runOnIdle { assertTrue(state.isSelected(path,point)) }
         } finally { context.deleteSharedPreferences(preferenceName) }
     }
 
-    private fun tapEmptySky() {
+    private fun tapEmptySky(twice: Boolean = false) {
         compose.onNodeWithTag("celestial-scene-input").performTouchInput {
-            click(androidx.compose.ui.geometry.Offset(width - 8f, height - 8f))
+            val point = androidx.compose.ui.geometry.Offset(width - 8f, height - 8f)
+            if (twice) doubleClick(point) else {
+                click(point)
+                advanceEventTime(viewConfiguration.doubleTapTimeoutMillis + 1)
+            }
         }
     }
 

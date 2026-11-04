@@ -3,4 +3,6 @@
     <string name="reticle_disable">Скрыть прицел и сведения о точках</string>
     <string name="scene_reticle_on">Прицел и сведения о точках показаны</string>
     <string name="scene_reticle_off">Прицел и сведения о точках скрыты</string>
+    <string name="sky_controls_show">Показать элементы управления</string>
+    <string name="sky_controls_hide">Скрыть элементы управления</string>
 </resources>

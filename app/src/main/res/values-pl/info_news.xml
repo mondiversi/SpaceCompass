@@ -1,9 +1,9 @@
 <resources>
     <string name="info_news_title">Ostatnie nowości · %1$s</string>
-    <string name="info_news_star_sky" formatted="false">Trajektorie z datą pozostają widoczne po wyłączeniu aktualnego obiektu.</string>
-    <string name="info_news_texture_downloads" formatted="false">Każdą datę można odznaczyć osobno w Obiektach, Kluczowych wysokościach, Kluczowych zdarzeniach lub Własnych momentach.</string>
-    <string name="info_news_weather" formatted="false">Aktywne daty pozostają pod swoim obiektem w katalogu, nawet gdy jego pole jest odznaczone.</string>
-    <string name="info_news_viewer_zoom" formatted="false">Wybór aktualnego obiektu i dat jest zapisywany osobno i zachowywany po ponownym uruchomieniu.</string>
-    <string name="info_news_settings" formatted="false">Zaznaczone punkty i ich antypody pozostają dostępne na aktywnych trajektoriach z datą.</string>
-    <string name="info_news_catalog" formatted="false">Zdjęcia, panoramy i eksport Location z obiektami niebieskimi mogą zawierać aktywne trajektorie z datą.</string>
+    <string name="info_news_star_sky" formatted="false">Stuknij puste miejsce na niebie, aby pokazać lub ukryć celownik.</string>
+    <string name="info_news_texture_downloads" formatted="false">Stuknij dwukrotnie, aby pokazać lub ukryć elementy sterujące na niebie oraz w podglądzie zdjęć i panoram.</string>
+    <string name="info_news_weather" formatted="false">Lokalizacja i chwile osobiste mają teraz osobny ekran eksportu.</string>
+    <string name="info_news_viewer_zoom" formatted="false">Eksportuj chwile osobiste jako plik do zaimportowania lub arkusz CSV.</string>
+    <string name="info_news_settings" formatted="false">Eksportuj chwile wszystkich obiektów lub tylko bieżącego. Możesz też uwzględnić wyłącznie zaznaczone chwile.</string>
+    <string name="info_news_catalog" formatted="false">Sugerowane nazwy plików odpowiadają językowi i formatom wybranym do eksportu.</string>
 </resources>

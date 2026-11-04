@@ -3,4 +3,6 @@
     <string name="reticle_disable">הסתרת הכוונת ופרטי הנקודות</string>
     <string name="scene_reticle_on">הכוונת ופרטי הנקודות מוצגים</string>
     <string name="scene_reticle_off">הכוונת ופרטי הנקודות מוסתרים</string>
+    <string name="sky_controls_show">הצגת פקדים</string>
+    <string name="sky_controls_hide">הסתרת פקדים</string>
 </resources>

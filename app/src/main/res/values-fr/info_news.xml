@@ -1,9 +1,9 @@
 <resources>
     <string name="info_news_title">Dernières nouveautés · %1$s</string>
-    <string name="info_news_star_sky" formatted="false">Les trajectoires datées restent visibles lorsque vous désactivez l’objet actuel.</string>
-    <string name="info_news_texture_downloads" formatted="false">Décochez chaque date séparément dans Objets, Hauteurs clés, Événements clés ou Moments personnels.</string>
-    <string name="info_news_weather" formatted="false">Dans le catalogue, les dates actives restent sous leur objet même si sa case est décochée.</string>
-    <string name="info_news_viewer_zoom" formatted="false">Les sélections de l’objet actuel et des dates sont enregistrées séparément et conservées au redémarrage.</string>
-    <string name="info_news_settings" formatted="false">Les points sélectionnés et leurs antipodes restent disponibles sur les trajectoires datées actives.</string>
-    <string name="info_news_catalog" formatted="false">Les photos, les panoramas et les exports de Location avec objets célestes peuvent inclure les trajectoires datées actives.</string>
+    <string name="info_news_star_sky" formatted="false">Touchez une zone vide du ciel pour afficher ou masquer le réticule.</string>
+    <string name="info_news_texture_downloads" formatted="false">Touchez deux fois pour afficher ou masquer les commandes dans la vue du ciel et dans les aperçus de photos et de panoramas.</string>
+    <string name="info_news_weather" formatted="false">Lieu et Moments personnels disposent désormais d’un écran d’exportation dédié.</string>
+    <string name="info_news_viewer_zoom" formatted="false">Exportez vos moments personnels dans un fichier importable ou un tableur CSV.</string>
+    <string name="info_news_settings" formatted="false">Exportez les moments de tous les objets ou de l’objet affiché. Vous pouvez limiter l’exportation aux moments sélectionnés.</string>
+    <string name="info_news_catalog" formatted="false">Les noms de fichiers proposés suivent la langue et les formats choisis pour l’exportation.</string>
 </resources>

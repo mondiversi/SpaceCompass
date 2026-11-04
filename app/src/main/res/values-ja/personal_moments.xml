@@ -7,6 +7,11 @@
     <string name="personal_moments_empty">カスタム観測日時はありません。</string>
     <string name="personal_moment_duplicate">この観測日時はすでにあります</string>
     <string name="personal_moments_export">カスタム観測日時をエクスポート</string>
+    <string name="personal_moments_scope_all">すべての天体</string>
+    <string name="personal_moments_archive_file">読み込み用ファイル</string>
+    <string name="personal_moments_object_column">天体</string>
+    <string name="personal_moments_scope_object">この天体のみ</string>
+    <string name="personal_moments_scope_selected">選択した観測時点のみ</string>
     <string name="personal_moments_import">カスタム観測日時をインポート</string>
     <string name="personal_moments_file_saved">カスタム観測日時を保存しました</string>
     <string name="personal_moments_file_imported">カスタム観測日時をインポートしました</string>

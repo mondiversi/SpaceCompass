@@ -18,7 +18,7 @@
     <string name="tutorial_axis" formatted="false">Wybierz oś aparatu (90°) lub długości telefonu (0°). Aparat zawsze używa własnej osi.</string>
     <string name="tutorial_transparency" formatted="false">Zwiększ przezroczystość obiektów, aby porównać je z obrazem aparatu. Zdjęcie zachowa wybór.</string>
     <string name="tutorial_zoom" formatted="false">Wybierz zoom aparatu lub użyj gestu dwóch palców.</string>
-    <string name="tutorial_capture" formatted="false">Przygotuj panoramę nieba lub zdjęcie z nakładką astronomiczną. Eksportuj z podglądu.</string>
+    <string name="tutorial_capture" formatted="false">Przygotuj panoramę nieba lub zdjęcie z nakładką astronomiczną. Eksportuj z podglądu. W podglądzie stuknij dwukrotnie obraz, aby pokazać lub ukryć elementy sterujące.</string>
     <string name="tutorial_panels" formatted="false">Zwiń lub rozwiń panele obiektu i kompasu, aby odsłonić niebo.</string>
     <string name="tutorial_antipodes" formatted="false">Dotknij, aby pokazać lub ukryć kierunek przeciwny do wybranych punktów: azymut +180° i wysokość o przeciwnym znaku. Przytrzymaj, aby odznaczyć wszystkie punkty.</string>
     <string name="tutorial_navigation" formatted="false">Przeglądaj wybrane obiekty. Panel pokazuje aktywny obiekt i kolory toru.</string>
@@ -26,7 +26,7 @@
     <string name="tutorial_daily" formatted="false">Zobacz tor, godziny, wysokości i wybieralne punkty. Przyszłe wydarzenia mogą mieć przypomnienia.</string>
     <string name="tutorial_gps" formatted="false">Zobacz rzeczywistą pozycję, wysokość GPS, orientację i pogodę, niezależnie od Location.</string>
     <string name="tutorial_points" formatted="false">Wybierz punkt orbity. Wyceluj w niego, aby odczytać obiekt, godzinę, T, azymut i wysokość. Obramowanie obiektu ma kolor jego toru; po wybraniu aktualnej pozycji zmienia się na niebieskie lub jasnoniebieskie.</string>
-    <string name="tutorial_reticle" formatted="false">Dotknij pustego nieba, aby przełączyć celownik i informacje. Nie zmienia to etykiet eksportu.</string>
+    <string name="tutorial_reticle" formatted="false">Dotknij pustego nieba, aby przełączyć celownik i informacje. Nie zmienia to etykiet eksportu. Stuknij dwukrotnie puste miejsce na niebie, aby pokazać lub ukryć elementy sterujące.</string>
     <string name="tutorial_reminder" formatted="false">Otwórz alarm lub kalendarz Androida dla przyszłego wydarzenia. Nie dotyczy przeszłości ani punktu aktualnego.</string>
     <string name="tutorial_status_title" formatted="false">Stan i przywracanie</string>
     <string name="tutorial_status" formatted="false">Odczytaj stan. Działanie może poprosić o uprawnienie, włączyć lokalizację lub ponowić pobieranie danych orbitalnych i pogody. Samouczek go nie wykonuje.</string>

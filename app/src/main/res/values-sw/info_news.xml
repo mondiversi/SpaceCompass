@@ -1,9 +1,9 @@
 <resources>
     <string name="info_news_title">Mambo mapya · %1$s</string>
-    <string name="info_news_star_sky" formatted="false">Njia zenye tarehe hubaki zikionekana unapozima kitu cha sasa.</string>
-    <string name="info_news_texture_downloads" formatted="false">Ondoa uteuzi wa kila tarehe kivyake katika Vitu, Miinuko Muhimu, Matukio Muhimu au Nyakati Binafsi.</string>
-    <string name="info_news_weather" formatted="false">Tarehe zinazotumika hubaki chini ya kitu husika katika katalogi hata uteuzi wake ukiondolewa.</string>
-    <string name="info_news_viewer_zoom" formatted="false">Chaguo la kitu cha sasa na la tarehe huhifadhiwa kando na hubaki programu inapofunguliwa tena.</string>
-    <string name="info_news_settings" formatted="false">Nukta zilizochaguliwa na zile zilizo upande mkabala hubaki kwenye njia zenye tarehe zinazotumika.</string>
-    <string name="info_news_catalog" formatted="false">Picha, panorama na faili za Location zinazohamishwa pamoja na vitu vya angani zinaweza kujumuisha njia zenye tarehe zinazotumika.</string>
+    <string name="info_news_star_sky" formatted="false">Tryck på en tom del av himlen för att visa eller dölja siktet.</string>
+    <string name="info_news_texture_downloads" formatted="false">Tryck två gånger för att visa eller dölja reglagen i himmelsvyn och i förhandsvisningar av foton och panoraman.</string>
+    <string name="info_news_weather" formatted="false">Plats och personliga ögonblick har nu en egen exportvy.</string>
+    <string name="info_news_viewer_zoom" formatted="false">Exportera personliga ögonblick som en importerbar fil eller ett CSV-kalkylblad.</string>
+    <string name="info_news_settings" formatted="false">Exportera ögonblick för alla objekt eller bara det aktuella objektet. Du kan välja att endast ta med markerade ögonblick.</string>
+    <string name="info_news_catalog" formatted="false">Föreslagna filnamn följer det språk och de format du väljer för exporten.</string>
 </resources>

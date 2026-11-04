@@ -7,6 +7,11 @@
     <string name="personal_moments_empty">No personal moments.</string>
     <string name="personal_moment_duplicate">This moment already exists</string>
     <string name="personal_moments_export">Export personal moments</string>
+    <string name="personal_moments_scope_all">All objects</string>
+    <string name="personal_moments_archive_file">Importable file</string>
+    <string name="personal_moments_object_column">Object</string>
+    <string name="personal_moments_scope_object">Only this object</string>
+    <string name="personal_moments_scope_selected">Only selected moments</string>
     <string name="personal_moments_import">Import personal moments</string>
     <string name="personal_moments_file_saved">Personal moments saved</string>
     <string name="personal_moments_file_imported">Personal moments imported</string>

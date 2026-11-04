@@ -3,4 +3,6 @@
     <string name="reticle_disable">Nascondi mirino e dettagli dei punti</string>
     <string name="scene_reticle_on">Mirino e dettagli dei punti visibili</string>
     <string name="scene_reticle_off">Mirino e dettagli dei punti nascosti</string>
+    <string name="sky_controls_show">Mostra comandi</string>
+    <string name="sky_controls_hide">Nascondi comandi</string>
 </resources>

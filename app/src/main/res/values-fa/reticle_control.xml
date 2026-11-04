@@ -3,4 +3,6 @@
     <string name="reticle_disable">پنهان کردن نشانگر هدف و اطلاعات نقاط</string>
     <string name="scene_reticle_on">نشانگر هدف و اطلاعات نقاط نمایان است</string>
     <string name="scene_reticle_off">نشانگر هدف و اطلاعات نقاط پنهان است</string>
+    <string name="sky_controls_show">نمایش کنترل‌ها</string>
+    <string name="sky_controls_hide">پنهان کردن کنترل‌ها</string>
 </resources>

@@ -3,4 +3,6 @@
     <string name="reticle_disable">Nişangâhı ve nokta bilgilerini gizle</string>
     <string name="scene_reticle_on">Nişangâh ve nokta bilgileri görünür</string>
     <string name="scene_reticle_off">Nişangâh ve nokta bilgileri gizli</string>
+    <string name="sky_controls_show">Kontrolleri göster</string>
+    <string name="sky_controls_hide">Kontrolleri gizle</string>
 </resources>

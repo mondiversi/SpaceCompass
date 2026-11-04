@@ -299,9 +299,14 @@ internal fun SpaceCompassSunFinderContent(
         mutableStateOf(scenePreferences.getBoolean(SPACE_COMPASS_FORWARD_PATH_KEY,false))
     }
     val showAntipodes = dailyPathUiState.antipodesVisible
-    var showReticle by remember(scenePreferences) {
+    var reticleVisible by remember(scenePreferences) {
         mutableStateOf(readSpaceCompassReticleVisible(scenePreferences))
     }
+    var skyControlsVisible by remember(scenePreferences) {
+        mutableStateOf(scenePreferences.getBoolean(SPACE_COMPASS_SKY_CONTROLS_VISIBLE_KEY, true))
+    }
+    val showReticle = reticleVisible || tutorialActive
+    val showSkyControls = skyControlsVisible || tutorialActive
     var pointingTopEdge by remember(scenePreferences) {
         mutableStateOf(scenePreferences.getBoolean(SPACE_COMPASS_POINTING_TOP_EDGE_KEY, false))
     }
@@ -655,7 +660,7 @@ internal fun SpaceCompassSunFinderContent(
         }
     }
 
-    var landscapeCaptureSize by remember { mutableStateOf(IntSize.Zero) }
+    var landscapeCaptureSize by remember(showSkyControls) { mutableStateOf(IntSize.Zero) }
     val pointing: @Composable (Boolean) -> Unit = { landscape ->
         BoxWithConstraints(Modifier.fillMaxSize().spaceCompassCameraPinchZoom(cameraZoomRange, cameraZoomRequest,
             cameraEnabled && !panorama.busy, cameraCapture != null, ::updateCameraZoom)) {
@@ -692,12 +697,16 @@ internal fun SpaceCompassSunFinderContent(
                         optical.copy(left = optical.left - viewport.left, top = optical.top - viewport.top)
                     } },
                     drawScene = false, objectOpacity = cameraObjectOpacity, showReticle = showReticle,
-                    showAntipodes = showAntipodes,
-                    onToggleReticle = {
-                        showReticle = !showReticle
-                        saveSpaceCompassReticleVisible(scenePreferences, showReticle)
-                        notifyControl(if (showReticle) R.string.scene_reticle_on else R.string.scene_reticle_off)
-                    },
+                    showFloatingControls = showSkyControls, showAntipodes = showAntipodes,
+                    onToggleReticle = if (tutorialActive) null else ({
+                        reticleVisible = !reticleVisible
+                        saveSpaceCompassReticleVisible(scenePreferences, reticleVisible)
+                        notifyControl(if (reticleVisible) R.string.scene_reticle_on else R.string.scene_reticle_off)
+                    }),
+                    onToggleFloatingControls = if (tutorialActive) null else ({
+                        skyControlsVisible = !skyControlsVisible
+                        scenePreferences.edit().putBoolean(SPACE_COMPASS_SKY_CONTROLS_VISIBLE_KEY, skyControlsVisible).apply()
+                    }),
                     bottomStartActions = { modifier ->
                         // Keep panel and point-selection actions together at the bottom edge.
                         FlowRow(modifier.padding(4.dp).testTag("celestial-bottom-start-controls"),
@@ -859,7 +868,7 @@ internal fun SpaceCompassSunFinderContent(
                 }
             }
             // One stable overlay stays outside the information panels' transition and changing sky width.
-            captureControls(Modifier.align(Alignment.BottomEnd).padding(10.dp)
+            if (showSkyControls) captureControls(Modifier.align(Alignment.BottomEnd).padding(10.dp)
                 .onSizeChanged { landscapeCaptureSize = it }, !detailsExpanded)
             }
         } else Box(Modifier.fillMaxSize().clipToBounds()) {

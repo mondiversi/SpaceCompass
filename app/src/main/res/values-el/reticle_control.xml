@@ -3,4 +3,6 @@
     <string name="reticle_disable">Απόκρυψη σταυρονήματος και πληροφοριών σημείων</string>
     <string name="scene_reticle_on">Το σταυρόνημα και οι πληροφορίες σημείων εμφανίζονται</string>
     <string name="scene_reticle_off">Το σταυρόνημα και οι πληροφορίες σημείων αποκρύπτονται</string>
+    <string name="sky_controls_show">Εμφάνιση χειριστηρίων</string>
+    <string name="sky_controls_hide">Απόκρυψη χειριστηρίων</string>
 </resources>

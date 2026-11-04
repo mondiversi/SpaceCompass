@@ -17,7 +17,11 @@ Tapping the Key heights or Key events title toggles all enabled rows for the dis
 ## Personal Moments
 
 An object can have named personal moments with a date and an optional time.
-Checking one adds its fixed-time path. The dedicated Personal Moments transfer
-includes the object's full list, including unchecked entries. Import adds missing
-entries and retains the saved checked state of moments that already exist.
+Checking one adds its fixed-time path. The dedicated Personal Moments export
+selects all objects or just the current object, with an independent checked-only
+filter. The selected export profile formats the suggested names of both file
+types, including their UTC export timestamp. The importable file retains its
+portable format. CSV also uses the profile for its spreadsheet contents.
+Multi-object collections can be imported from any Observatory.
+Import adds missing entries and retains the checked state of existing moments.
 Location exports with celestial objects include active personal moments.

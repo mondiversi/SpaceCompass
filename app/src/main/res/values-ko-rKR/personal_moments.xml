@@ -7,6 +7,11 @@
     <string name="personal_moments_empty">개인 관측 시점이 없습니다.</string>
     <string name="personal_moment_duplicate">이 관측 시점이 이미 있습니다</string>
     <string name="personal_moments_export">개인 관측 시점 내보내기</string>
+    <string name="personal_moments_scope_all">모든 천체</string>
+    <string name="personal_moments_archive_file">가져올 수 있는 파일</string>
+    <string name="personal_moments_object_column">천체</string>
+    <string name="personal_moments_scope_object">이 천체만</string>
+    <string name="personal_moments_scope_selected">선택한 관측 시점만</string>
     <string name="personal_moments_import">개인 관측 시점 가져오기</string>
     <string name="personal_moments_file_saved">개인 관측 시점을 저장했습니다</string>
     <string name="personal_moments_file_imported">개인 관측 시점을 가져왔습니다</string>

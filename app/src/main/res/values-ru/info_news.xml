@@ -1,9 +1,9 @@
 <resources>
     <string name="info_news_title">Последние новости · %1$s</string>
-    <string name="info_news_star_sky" formatted="false">Траектории на выбранные даты остаются видимыми после отключения текущего объекта.</string>
-    <string name="info_news_texture_downloads" formatted="false">Каждую дату можно отключить отдельно в списке объектов, ключевых высот, событий или личных моментов.</string>
-    <string name="info_news_weather" formatted="false">Активные даты остаются под своим объектом в каталоге, даже если его флажок снят.</string>
-    <string name="info_news_viewer_zoom" formatted="false">Выбор текущего объекта и дат сохраняется отдельно и восстанавливается после перезапуска.</string>
-    <string name="info_news_settings" formatted="false">Выбранные точки и их антиподы остаются доступны на активных траекториях с датами.</string>
-    <string name="info_news_catalog" formatted="false">Фотографии, панорамы и экспорт Location с небесными объектами могут включать активные траектории с датами.</string>
+    <string name="info_news_star_sky" formatted="false">Коснитесь пустого участка неба, чтобы показать или скрыть прицел.</string>
+    <string name="info_news_texture_downloads" formatted="false">Дважды коснитесь экрана, чтобы показать или скрыть кнопки в режиме неба и при просмотре снимков и панорам.</string>
+    <string name="info_news_weather" formatted="false">Для местоположения и личных моментов появился отдельный экран экспорта.</string>
+    <string name="info_news_viewer_zoom" formatted="false">Экспортируйте личные моменты в файл для импорта или в таблицу CSV.</string>
+    <string name="info_news_settings" formatted="false">Экспортируйте моменты всех объектов или только текущего. Можно включить только отмеченные моменты.</string>
+    <string name="info_news_catalog" formatted="false">Предлагаемые имена файлов используют язык и форматы, выбранные для экспорта.</string>
 </resources>

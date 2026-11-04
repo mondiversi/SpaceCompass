@@ -3,4 +3,6 @@
     <string name="reticle_disable">Ukryj celownik i informacje o punktach</string>
     <string name="scene_reticle_on">Celownik i informacje o punktach widoczne</string>
     <string name="scene_reticle_off">Celownik i informacje o punktach ukryte</string>
+    <string name="sky_controls_show">Pokaż elementy sterujące</string>
+    <string name="sky_controls_hide">Ukryj elementy sterujące</string>
 </resources>

@@ -390,47 +390,58 @@ private fun SpaceCompassObserverEditor(observer: SpaceCompassObserverState, modi
         edited(); saveEditedDraft()
         observer.configureTime(observer.timeSettings.copy(enabled = enable))
     }
+    val transfer = if (section == null) rememberSpaceCompassScenarioTransfer(capture = { includeObjects ->
+        saveEditedDraft()
+        if (editRevision != 0 || busy || needsMetadata) {
+            showSpaceCompassBottomMessage(context, resources.getString(R.string.observer_not_saved))
+            null
+        } else {
+            val now = System.currentTimeMillis()
+            val deviceZone = ZoneId.systemDefault()
+            val configured = SpaceCompassScenarioArchive.capture(observer, resources.getString(R.string.observer_title), now, deviceZone)
+            val exportBase = configured.withAutomaticLocation(spaceCompassScenarioCurrentValues(
+                observer.plan, observer.devicePlace, observer.timeSettings, now, deviceZone)) ?: configured
+            val archive = if (includeObjects) exportBase.withCelestialObjects(
+                readSpaceCompassCelestialSelection(preferences), orbitSelection?.selectedPoints.orEmpty(),
+                comparisons?.entries.orEmpty(), comparisons?.activeId, orbitSelection?.antipodesVisible == true,
+                comparisons?.personalMoments.orEmpty()) else exportBase
+            val namedImport = observer.archiveName?.takeUnless {
+                it == resources.getString(R.string.observer_title) || it == "Scenario"
+            }
+            archive.copy(name = namedImport ?: resources.getString(R.string.observer_title))
+        }
+    }, onImport = { archive ->
+        val localMoments = comparisons?.personalMoments.orEmpty()
+        val mergedMoments = mergeSpaceCompassPersonalMoments(localMoments, archive.personalMoments)
+        val disabledIds = mergedMoments.filterNot { it.enabled }.mapTo(hashSetOf()) { it.id }
+        val localIds = localMoments.mapTo(hashSetOf()) { it.id }
+        val importedPoints = archive.selectedOrbitPoints?.let { incoming ->
+            val localPersonalPins = orbitSelection?.selectedPoints.orEmpty().filter { it.key.comparisonId in localIds }
+            (localPersonalPins + incoming.filterNot { it.key.comparisonId in disabledIds }).distinctBy { it.key }
+        }
+        // Discard old pending work before replacing the editor; disposal must not overwrite the imported file.
+        lookup?.cancel(); lookupRevision++; editRevision = 0
+        observer.importArchive(archive)
+        comparisons?.restore(archive.comparisons, archive.activeComparisonId, archive.personalMoments)
+        orbitSelection?.restoreImportedPoints(importedPoints)
+        archive.antipodesVisible?.let { orbitSelection?.restoreAntipodes(it) }
+    }, enabled = !busy) else null
+    transfer?.exportPage?.let { it(); return }
     BackHandler(onBack = ::navigateBack)
     Column(modifier.fillMaxSize().testTag("observer-page")) {
         SpaceCompassPageToolbar(stringResource(section?.titleResource ?: R.string.observer_management_title),
             ::navigateBack, titleModifier = if (section == null) Modifier.testTag("location-toggle-all-title")
                 .clickable(role = Role.Button, onClick = ::toggleAllCustomizations) else Modifier) {
-            if (section == null) SpaceCompassScenarioTransferActions(capture = { includeObjects ->
-                saveEditedDraft()
-                if (editRevision != 0 || busy || needsMetadata) {
-                    showSpaceCompassBottomMessage(context, resources.getString(R.string.observer_not_saved))
-                    null
-                } else {
-                    val now = System.currentTimeMillis()
-                    val deviceZone = ZoneId.systemDefault()
-                    val configured = SpaceCompassScenarioArchive.capture(observer, resources.getString(R.string.observer_title), now, deviceZone)
-                    val exportBase = configured.withAutomaticLocation(spaceCompassScenarioCurrentValues(
-                        observer.plan, observer.devicePlace, observer.timeSettings, now, deviceZone)) ?: configured
-                    val archive = if (includeObjects) exportBase.withCelestialObjects(
-                        readSpaceCompassCelestialSelection(preferences), orbitSelection?.selectedPoints.orEmpty(),
-                        comparisons?.entries.orEmpty(), comparisons?.activeId, orbitSelection?.antipodesVisible == true,
-                        comparisons?.personalMoments.orEmpty()) else exportBase
-                    val namedImport = observer.archiveName?.takeUnless {
-                        it == resources.getString(R.string.observer_title) || it == "Scenario"
-                    }
-                    archive.copy(name = namedImport ?: resources.getString(R.string.observer_title))
+            if (transfer != null) {
+                SpaceCompassTitleActionButton(stringResource(R.string.scenario_export), transfer.openExport,
+                    Modifier.testTag("scenario-export-open"), enabled = transfer.canExport) {
+                    SpaceCompassPanoramaExportIcon(SpaceCompassTitleActionIconStrokeWidth)
                 }
-            }, onImport = { archive ->
-                val localMoments = comparisons?.personalMoments.orEmpty()
-                val mergedMoments = mergeSpaceCompassPersonalMoments(localMoments, archive.personalMoments)
-                val disabledIds = mergedMoments.filterNot { it.enabled }.mapTo(hashSetOf()) { it.id }
-                val localIds = localMoments.mapTo(hashSetOf()) { it.id }
-                val importedPoints = archive.selectedOrbitPoints?.let { incoming ->
-                    val localPersonalPins = orbitSelection?.selectedPoints.orEmpty().filter { it.key.comparisonId in localIds }
-                    (localPersonalPins + incoming.filterNot { it.key.comparisonId in disabledIds }).distinctBy { it.key }
+                SpaceCompassTitleActionButton(stringResource(R.string.scenario_import), transfer.openImport,
+                    Modifier.testTag("scenario-import-open"), enabled = transfer.canImport) {
+                    SpaceCompassScenarioImportIcon()
                 }
-                // Discard old pending work before replacing the editor; disposal must not overwrite the imported file.
-                lookup?.cancel(); lookupRevision++; editRevision = 0
-                observer.importArchive(archive)
-                comparisons?.restore(archive.comparisons, archive.activeComparisonId, archive.personalMoments)
-                orbitSelection?.restoreImportedPoints(importedPoints)
-                archive.antipodesVisible?.let { orbitSelection?.restoreAntipodes(it) }
-            }, enabled = !busy)
+            }
         }
         if (section == null) {
             SpaceCompassScenarioMenu(menuEntries, { sectionName = it.name }, ::setCustomization,

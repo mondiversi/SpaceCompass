@@ -7,6 +7,11 @@
     <string name="personal_moments_empty">لا توجد لحظات شخصية.</string>
     <string name="personal_moment_duplicate">هذه اللحظة موجودة بالفعل</string>
     <string name="personal_moments_export">تصدير اللحظات الشخصية</string>
+    <string name="personal_moments_scope_all">كل الأجرام</string>
+    <string name="personal_moments_archive_file">ملف قابل للاستيراد</string>
+    <string name="personal_moments_object_column">الجرم</string>
+    <string name="personal_moments_scope_object">هذا الجرم فقط</string>
+    <string name="personal_moments_scope_selected">اللحظات المحددة فقط</string>
     <string name="personal_moments_import">استيراد اللحظات الشخصية</string>
     <string name="personal_moments_file_saved">تم حفظ اللحظات الشخصية</string>
     <string name="personal_moments_file_imported">تم استيراد اللحظات الشخصية</string>

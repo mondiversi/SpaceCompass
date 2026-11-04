@@ -3,4 +3,6 @@
     <string name="reticle_disable">조준선과 지점 정보 숨기기</string>
     <string name="scene_reticle_on">조준선과 지점 정보 표시됨</string>
     <string name="scene_reticle_off">조준선과 지점 정보 숨겨짐</string>
+    <string name="sky_controls_show">컨트롤 표시</string>
+    <string name="sky_controls_hide">컨트롤 숨기기</string>
 </resources>

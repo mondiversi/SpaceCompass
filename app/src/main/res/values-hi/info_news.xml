@@ -1,9 +1,9 @@
 <resources>
     <string name="info_news_title">हाल के बदलाव · %1$s</string>
-    <string name="info_news_star_sky" formatted="false">मौजूदा पिंड को बंद करने पर भी तारीख वाले पथ दिखाई देते हैं।</string>
-    <string name="info_news_texture_downloads" formatted="false">पिंड, मुख्य ऊँचाइयाँ, मुख्य घटनाएँ या निजी क्षण में हर तारीख का चयन अलग से हटाएँ।</string>
-    <string name="info_news_weather" formatted="false">पिंड का चयन हटाने पर भी सक्रिय तारीखें सूची में उसी के नीचे रहती हैं।</string>
-    <string name="info_news_viewer_zoom" formatted="false">मौजूदा पिंड और तारीखों के चयन अलग से सहेजे जाते हैं और ऐप दोबारा खोलने पर बने रहते हैं।</string>
-    <string name="info_news_settings" formatted="false">सक्रिय तारीख वाले पथों पर चुने गए बिंदु और उनके विपरीत बिंदु उपलब्ध रहते हैं।</string>
-    <string name="info_news_catalog" formatted="false">फ़ोटो, पैनोरमा और आकाशीय पिंडों के साथ निर्यात की गई Location में सक्रिय तारीख वाले पथ शामिल हो सकते हैं।</string>
+    <string name="info_news_star_sky" formatted="false">निशाना दिखाने या छिपाने के लिए आकाश की खाली जगह पर टैप करें।</string>
+    <string name="info_news_texture_downloads" formatted="false">आकाश दृश्य और फ़ोटो व पैनोरमा के पूर्वावलोकन में नियंत्रण दिखाने या छिपाने के लिए दो बार टैप करें।</string>
+    <string name="info_news_weather" formatted="false">स्थान और निजी पलों को निर्यात करने के लिए अब अलग स्क्रीन है।</string>
+    <string name="info_news_viewer_zoom" formatted="false">निजी पल आयात करने योग्य फ़ाइल या CSV स्प्रेडशीट के रूप में निर्यात करें।</string>
+    <string name="info_news_settings" formatted="false">सभी पिंडों या सिर्फ़ मौजूदा पिंड के पल निर्यात करें। आप सिर्फ़ चुने हुए पल शामिल कर सकते हैं।</string>
+    <string name="info_news_catalog" formatted="false">सुझाए गए फ़ाइल नाम निर्यात के लिए चुनी गई भाषा और प्रारूपों का पालन करते हैं।</string>
 </resources>

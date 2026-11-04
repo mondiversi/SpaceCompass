@@ -98,13 +98,17 @@ internal fun SpaceCompassSunPointingViewport(
     topControlSpacing: androidx.compose.ui.unit.Dp = 8.dp,
     opticalFrame: SpaceCompassSunSceneFrame? = null,
     showAntipodes: Boolean = false,
-    sideControls: Boolean = false, activeComparisonId: String? = null
+    sideControls: Boolean = false, activeComparisonId: String? = null,
+    showFloatingControls: Boolean = true,
+    onToggleFloatingControls: (() -> Unit)? = null
 ) {
     val reticleAction = stringResource(if (showReticle) R.string.reticle_disable else R.string.reticle_enable)
+    val controlsAction = stringResource(if (showFloatingControls) R.string.sky_controls_hide else R.string.sky_controls_show)
     BoxWithConstraints(modifier.testTag("sun-finder-sky").spaceCompassTutorialViewport().semantics {
         contentDescription = description
         customActions = buildList {
             if (onToggleReticle != null) add(CustomAccessibilityAction(reticleAction) { onToggleReticle(); true })
+            if (onToggleFloatingControls != null) add(CustomAccessibilityAction(controlsAction) { onToggleFloatingControls(); true })
         }
     }) {
         val comparisonOverlays = LocalSpaceCompassComparisonOverlays.current
@@ -119,14 +123,14 @@ internal fun SpaceCompassSunPointingViewport(
         }
         val reticleCenter = SpaceCompassSunScenePoint(width * (scenePerspective?.principalX ?: .5),
             height * (scenePerspective?.principalY ?: .5))
-        var menuSize by remember { mutableStateOf(IntSize.Zero) }
+        var menuSize by remember(showFloatingControls) { mutableStateOf(IntSize.Zero) }
         var noticeSize by remember { mutableStateOf(IntSize.Zero) }
-        var bottomActionsSize by remember { mutableStateOf(IntSize.Zero) }
-        var bottomStartActionsSize by remember { mutableStateOf(IntSize.Zero) }
-        var bottomCenterActionsSize by remember { mutableStateOf(IntSize.Zero) }
-        var topStartActionsSize by remember { mutableStateOf(IntSize.Zero) }
-        var topEndActionsSize by remember { mutableStateOf(IntSize.Zero) }
-        var topCenterActionsSize by remember { mutableStateOf(IntSize.Zero) }
+        var bottomActionsSize by remember(showFloatingControls) { mutableStateOf(IntSize.Zero) }
+        var bottomStartActionsSize by remember(showFloatingControls) { mutableStateOf(IntSize.Zero) }
+        var bottomCenterActionsSize by remember(showFloatingControls) { mutableStateOf(IntSize.Zero) }
+        var topStartActionsSize by remember(showFloatingControls) { mutableStateOf(IntSize.Zero) }
+        var topEndActionsSize by remember(showFloatingControls) { mutableStateOf(IntSize.Zero) }
+        var topCenterActionsSize by remember(showFloatingControls) { mutableStateOf(IntSize.Zero) }
         val centerActionsSize = if (topCenterActions == null) IntSize.Zero else topCenterActionsSize
         val sideControlsCenterY = (topStartActionsSize.height + height - bottomStartActionsSize.height) / 2
         val centerActionsTop = if (sideControls) with(density) {
@@ -276,6 +280,7 @@ internal fun SpaceCompassSunPointingViewport(
                 primaryText, secondaryText, backgroundColor, exclusions,
                 scenePerspective, paths, pinnedTargets = pinned, hitExclusions = titleTouchExclusions,
                 showCaptions = showReticle, onEmptySpaceTap = onToggleReticle,
+                onEmptySpaceDoubleTap = onToggleFloatingControls,
                 antipodeTargets = antipodes, drawAntipodeMarkers = drawScene) {
                 // Only thumbnails have small local targets; they never intercept another path's whole viewport.
                 SpaceCompassTemporalComparisonLayer(comparisonOverlays, orientation.takeIf { compassReliable }, scenePerspective,
@@ -304,47 +309,49 @@ internal fun SpaceCompassSunPointingViewport(
                     scenePerspective, dailyPathUiState, focused)
                 SpaceCompassCurrentApproachLayer(approachOverlays, orientation.takeIf { compassReliable }, scenePerspective, width, height)
             }
-            if (showActions) SpaceCompassCelestialSkyActions(body, onVisualize,
-                dailyPath?.let { { dailyPathUiState.openMenu(it, current[body]?.let { point -> spaceCompassCurrentPathPoint(body, point.timeMs, point.position) }) } },
-                stringResource(spaceCompassCelestialPathTitle(body)),
-                pathSelected = dailyPath != null,
-                modifier = Modifier.align(Alignment.TopEnd).padding(4.dp).onSizeChanged { menuSize = it })
-            topStartActions(Modifier.align(Alignment.TopStart).onSizeChanged { topStartActionsSize = it }
-                .padding(top = topContentInset))
-            topEndActions(Modifier.align(Alignment.TopEnd).onSizeChanged { topEndActionsSize = it }
-                .padding(top = topContentInset))
-            if (topCenterActions != null && sideControls) {
-                topCenterActions(Modifier.align(Alignment.TopStart)
-                    .offset(y = centerActionsTop.coerceAtLeast(0.dp))
-                    .onSizeChanged { topCenterActionsSize = it })
-            } else if (topCenterActions != null) {
-                // Centre the scene controls between the measured corner buttons, also in RTL.
-                Box(Modifier.align(Alignment.TopCenter).fillMaxWidth()
-                    .padding(start = with(density) { topStartActionsSize.width.toDp() } + centerGap,
-                        end = with(density) { topEndActionsSize.width.toDp() } + centerGap,
-                        top = centerActionsTop.coerceAtLeast(0.dp)), contentAlignment = Alignment.TopCenter) {
-                    topCenterActions(Modifier.widthIn(max = 360.dp)
+            if (showFloatingControls) {
+                if (showActions) SpaceCompassCelestialSkyActions(body, onVisualize,
+                    dailyPath?.let { { dailyPathUiState.openMenu(it, current[body]?.let { point -> spaceCompassCurrentPathPoint(body, point.timeMs, point.position) }) } },
+                    stringResource(spaceCompassCelestialPathTitle(body)),
+                    pathSelected = dailyPath != null,
+                    modifier = Modifier.align(Alignment.TopEnd).padding(4.dp).onSizeChanged { menuSize = it })
+                topStartActions(Modifier.align(Alignment.TopStart).onSizeChanged { topStartActionsSize = it }
+                    .padding(top = topContentInset))
+                topEndActions(Modifier.align(Alignment.TopEnd).onSizeChanged { topEndActionsSize = it }
+                    .padding(top = topContentInset))
+                if (topCenterActions != null && sideControls) {
+                    topCenterActions(Modifier.align(Alignment.TopStart)
+                        .offset(y = centerActionsTop.coerceAtLeast(0.dp))
                         .onSizeChanged { topCenterActionsSize = it })
+                } else if (topCenterActions != null) {
+                    // Centre the scene controls between the measured corner buttons, also in RTL.
+                    Box(Modifier.align(Alignment.TopCenter).fillMaxWidth()
+                        .padding(start = with(density) { topStartActionsSize.width.toDp() } + centerGap,
+                            end = with(density) { topEndActionsSize.width.toDp() } + centerGap,
+                            top = centerActionsTop.coerceAtLeast(0.dp)), contentAlignment = Alignment.TopCenter) {
+                        topCenterActions(Modifier.widthIn(max = 360.dp)
+                            .onSizeChanged { topCenterActionsSize = it })
+                    }
                 }
-            }
-            // Keep the optical viewport fixed: controls stack over the scene instead of resizing it.
-            Column(Modifier.align(Alignment.BottomCenter).fillMaxWidth(), horizontalAlignment = Alignment.End) {
-                Row(Modifier.fillMaxWidth(), verticalAlignment = Alignment.CenterVertically) {
-                    // Measure capture/zoom first, so a crowded start group cannot squeeze its circles.
-                    Box(Modifier.weight(1f).align(Alignment.Bottom), contentAlignment = Alignment.CenterStart) {
-                        Box(Modifier.onSizeChanged { bottomStartActionsSize = it }) {
-                            bottomStartActions(Modifier)
+                // Keep the optical viewport fixed: controls stack over the scene instead of resizing it.
+                Column(Modifier.align(Alignment.BottomCenter).fillMaxWidth(), horizontalAlignment = Alignment.End) {
+                    Row(Modifier.fillMaxWidth(), verticalAlignment = Alignment.CenterVertically) {
+                        // Measure capture/zoom first, so a crowded start group cannot squeeze its circles.
+                        Box(Modifier.weight(1f).align(Alignment.Bottom), contentAlignment = Alignment.CenterStart) {
+                            Box(Modifier.onSizeChanged { bottomStartActionsSize = it }) {
+                                bottomStartActions(Modifier)
+                            }
+                        }
+                        // Measure the host even when its slot becomes empty after a layout change.
+                        Box(Modifier.align(Alignment.Bottom).onSizeChanged { bottomActionsSize = it }) {
+                            bottomActions(Modifier)
                         }
                     }
-                    // Measure the host even when its slot becomes empty after a layout change.
-                    Box(Modifier.align(Alignment.Bottom).onSizeChanged { bottomActionsSize = it }) {
-                        bottomActions(Modifier)
-                    }
                 }
+                bottomCenterActions(Modifier.align(if (sideControls) Alignment.BottomEnd else Alignment.BottomCenter)
+                    .offset(y = with(density) { (-bottomCenterLift).toFloat().toDp() })
+                    .onSizeChanged { bottomCenterActionsSize = it })
             }
-            bottomCenterActions(Modifier.align(if (sideControls) Alignment.BottomEnd else Alignment.BottomCenter)
-                .offset(y = with(density) { (-bottomCenterLift).toFloat().toDp() })
-                .onSizeChanged { bottomCenterActionsSize = it })
             SpaceCompassSunStatusNotices(compassWarning, statusMessage, statusActionLabel, onStatusAction,
                 backgroundColor,
                 (if (noticesBelowReticle) Modifier.align(Alignment.TopCenter).offset(y = noticeTopInset)

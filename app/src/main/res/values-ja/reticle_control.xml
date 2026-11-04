@@ -3,4 +3,6 @@
     <string name="reticle_disable">照準とポイント情報を非表示</string>
     <string name="scene_reticle_on">照準とポイント情報を表示しました</string>
     <string name="scene_reticle_off">照準とポイント情報を非表示にしました</string>
+    <string name="sky_controls_show">操作ボタンを表示</string>
+    <string name="sky_controls_hide">操作ボタンを非表示</string>
 </resources>

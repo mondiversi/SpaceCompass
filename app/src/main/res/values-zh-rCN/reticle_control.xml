@@ -3,4 +3,6 @@
     <string name="reticle_disable">隐藏准星和点位信息</string>
     <string name="scene_reticle_on">已显示准星和点位信息</string>
     <string name="scene_reticle_off">已隐藏准星和点位信息</string>
+    <string name="sky_controls_show">显示控件</string>
+    <string name="sky_controls_hide">隐藏控件</string>
 </resources>

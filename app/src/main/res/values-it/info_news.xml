@@ -1,9 +1,9 @@
 <resources>
     <string name="info_news_title">Ultime novità · %1$s</string>
-    <string name="info_news_star_sky" formatted="false">Le traiettorie a data fissa restano visibili quando spegni il corpo attuale.</string>
-    <string name="info_news_texture_downloads" formatted="false">Puoi deselezionare ogni data in Oggetti, Altezze chiave, Eventi chiave o Momenti personali.</string>
-    <string name="info_news_weather" formatted="false">In Oggetti, le date attive restano raggruppate sotto il corpo anche quando la sua casella è spenta.</string>
-    <string name="info_news_viewer_zoom" formatted="false">L’app salva separatamente le selezioni del corpo attuale e delle date, anche dopo il riavvio.</string>
-    <string name="info_news_settings" formatted="false">I punti selezionati e i loro antipodi restano disponibili sulle traiettorie a data fissa attive.</string>
-    <string name="info_news_catalog" formatted="false">Scatti, panoramiche ed esportazioni Location con oggetti celesti possono includere le traiettorie a data fissa attive.</string>
+    <string name="info_news_star_sky" formatted="false">Tocca il cielo libero per mostrare o nascondere il mirino.</string>
+    <string name="info_news_texture_downloads" formatted="false">Tocca due volte per mostrare o nascondere i comandi nella vista principale e nelle anteprime di scatti e panoramiche.</string>
+    <string name="info_news_weather" formatted="false">Location e Momenti personali hanno ora una schermata di esportazione dedicata.</string>
+    <string name="info_news_viewer_zoom" formatted="false">Esporta i Momenti personali come file importabile o come foglio di calcolo CSV.</string>
+    <string name="info_news_settings" formatted="false">Esporta i momenti di tutti gli oggetti o solo di quello aperto. Puoi includere soltanto i momenti selezionati.</string>
+    <string name="info_news_catalog" formatted="false">I nomi suggeriti seguono la lingua e i formati scelti per l’esportazione.</string>
 </resources>

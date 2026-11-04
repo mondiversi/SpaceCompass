@@ -3,4 +3,6 @@
     <string name="reticle_disable">Fadenkreuz und Punktinformationen ausblenden</string>
     <string name="scene_reticle_on">Fadenkreuz und Punktinformationen eingeblendet</string>
     <string name="scene_reticle_off">Fadenkreuz und Punktinformationen ausgeblendet</string>
+    <string name="sky_controls_show">Steuerelemente anzeigen</string>
+    <string name="sky_controls_hide">Steuerelemente ausblenden</string>
 </resources>
