@@ -26,7 +26,7 @@
     <string name="tutorial_daily" formatted="false">पथ, समय, ऊँचाई और चुनने योग्य बिंदु देखें। भविष्य की घटनाओं में अनुस्मारक लगाया जा सकता है।</string>
     <string name="tutorial_gps" formatted="false">Location से स्वतंत्र वास्तविक स्थान, GPS ऊँचाई, दिशा और मौसम देखें।</string>
     <string name="tutorial_points" formatted="false">कक्षा बिंदु चुनें। पिंड, समय, T, दिगंश और ऊँचाई पढ़ने के लिए उस पर निशाना लगाएँ। वस्तु के किनारे का रंग उसकी कक्षा के रंग जैसा होता है; वर्तमान स्थिति चुनने पर वह नीला या आसमानी हो जाता है।</string>
-    <string name="tutorial_reticle" formatted="false">निशाना और बिंदु जानकारी दिखाने या छिपाने के लिए खाली आकाश छुएँ। निर्यात के लेबल नहीं बदलते। नियंत्रण दिखाने या छिपाने के लिए आकाश की खाली जगह पर दो बार टैप करें।</string>
+    <string name="tutorial_reticle" formatted="false">निशाना और बिंदु जानकारी दिखाने या छिपाने के लिए खाली आकाश छुएँ। नियंत्रण दिखाने या छिपाने के लिए आकाश की खाली जगह पर दो बार टैप करें।</string>
     <string name="tutorial_reminder" formatted="false">योग्य भविष्य की घटना के लिए Android अलार्म या कैलेंडर खोलें। बीती घटनाओं और वर्तमान बिंदु के लिए अलार्म नहीं।</string>
     <string name="tutorial_status_title" formatted="false">स्थिति और पुनर्प्राप्ति</string>
     <string name="tutorial_status" formatted="false">वर्तमान स्थिति पढ़ें। कार्रवाई अनुमति माँग सकती है, स्थान चालू कर सकती है या कक्षा और मौसम का डेटा फिर लोड कर सकती है। ट्यूटोरियल कार्रवाई नहीं करता।</string>

@@ -26,7 +26,7 @@
     <string name="tutorial_daily" formatted="false">查看轨迹、时刻、高度及可选轨道点。未来事件可以设置提醒。</string>
     <string name="tutorial_gps" formatted="false">查看真实位置、GPS海拔、朝向和天气，与Location设置无关。</string>
     <string name="tutorial_points" formatted="false">选择或取消轨道点。将准星对准它可查看天体、时间、T、方位角和高度。 天体边框采用轨迹的颜色；选择当前位置时，边框会变为蓝色或青色。</string>
-    <string name="tutorial_reticle" formatted="false">轻触空白天空可显示或隐藏准星和轨道点信息。不会更改导出图像的标签。 双击天空空白处可显示或隐藏操作按钮。</string>
+    <string name="tutorial_reticle" formatted="false">轻触空白天空可显示或隐藏准星和轨道点信息。 双击天空空白处可显示或隐藏操作按钮。</string>
     <string name="tutorial_reminder" formatted="false">为适用的未来事件打开Android闹钟或日历。过去事件和当前位置不能设置闹钟。</string>
     <string name="tutorial_status_title" formatted="false">状态与恢复</string>
     <string name="tutorial_status" formatted="false">查看当前状态。操作可请求权限、开启定位或重新加载轨道和天气数据。教程不会执行该操作。</string>

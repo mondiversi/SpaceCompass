@@ -26,7 +26,7 @@
     <string name="tutorial_daily" formatted="false">Bekijk baan, tijden, hoogten en selecteerbare punten. Toekomstige gebeurtenissen kunnen herinneringen krijgen.</string>
     <string name="tutorial_gps" formatted="false">Bekijk echte positie, GPS-hoogte, oriëntatie en weer, onafhankelijk van de Location.</string>
     <string name="tutorial_points" formatted="false">Selecteer een baanpunt. Richt erop voor object, tijd, T, azimut en hoogte. De rand van het object volgt de kleur van zijn baan; bij selectie van de huidige positie wordt hij blauw of cyaan.</string>
-    <string name="tutorial_reticle" formatted="false">Tik op lege hemel om dradenkruis en puntinformatie te tonen of verbergen. Exportlabels veranderen niet. Tik twee keer op een leeg deel van de hemel om de bediening te tonen of te verbergen.</string>
+    <string name="tutorial_reticle" formatted="false">Tik op lege hemel om dradenkruis en puntinformatie te tonen of verbergen. Tik twee keer op een leeg deel van de hemel om de bediening te tonen of te verbergen.</string>
     <string name="tutorial_reminder" formatted="false">Open Android-alarm of agenda voor een geschikte toekomstige gebeurtenis. Niet voor verleden of huidig punt.</string>
     <string name="tutorial_status_title" formatted="false">Status en herstel</string>
     <string name="tutorial_status" formatted="false">Lees de status. De actie kan toestemming vragen, locatie inschakelen of baan- en weergegevens opnieuw laden. De tutorial voert de actie niet uit.</string>

@@ -26,7 +26,7 @@
     <string name="tutorial_daily" formatted="false">Apri la traiettoria dell’oggetto attivo, con orari, elevazioni e punti selezionabili. Per gli eventi futuri puoi impostare un’allerta.</string>
     <string name="tutorial_gps" formatted="false">Apri i dettagli della posizione reale, della quota GPS, dell’orientamento e del meteo. Questi valori sono indipendenti dalla Location.</string>
     <string name="tutorial_points" formatted="false">Seleziona o deseleziona un punto dell’orbita. Puntalo con il mirino per leggere oggetto, ora, T, azimut ed elevazione. Il bordo dell’oggetto segue il colore della traiettoria; diventa blu o azzurro quando selezioni la sua posizione attuale.</string>
-    <string name="tutorial_reticle" formatted="false">Tocca il cielo vuoto per mostrare o nascondere il mirino e le informazioni dei punti. La scelta non modifica le etichette delle immagini esportate. Tocca due volte il cielo vuoto per mostrare o nascondere i comandi.</string>
+    <string name="tutorial_reticle" formatted="false">Tocca il cielo vuoto per mostrare o nascondere il mirino e le informazioni dei punti. Tocca due volte il cielo vuoto per mostrare o nascondere i comandi.</string>
     <string name="tutorial_reminder" formatted="false">Apri la sveglia o il calendario Android per un evento futuro compatibile. Gli eventi passati e il punto attuale non possono avere una sveglia.</string>
     <string name="tutorial_status_title" formatted="false">Stato e ripristino</string>
     <string name="tutorial_status" formatted="false">Leggi lo stato attuale. L’azione può richiedere un permesso, attivare la posizione o riprovare il caricamento dei dati orbitali o meteo. Il tutorial non esegue l’azione.</string>

@@ -26,7 +26,7 @@
     <string name="tutorial_daily" formatted="false">اعرض المسار والأوقات والارتفاعات والنقاط القابلة للتحديد. يمكن تذكيرك بالأحداث المستقبلية.</string>
     <string name="tutorial_gps" formatted="false">اعرض موقعك الحقيقي وارتفاع GPS والاتجاه والطقس، بصورة مستقلة عن Location.</string>
     <string name="tutorial_points" formatted="false">حدّد نقطة مدارية. وجّه المؤشر إليها لقراءة الجسم والوقت وT والسمت والارتفاع. تتبع حدود الجرم لون مساره؛ وتصبح زرقاء أو سماوية عند تحديد موقعه الحالي.</string>
-    <string name="tutorial_reticle" formatted="false">المس السماء الخالية لإظهار أو إخفاء المؤشر ومعلومات النقاط. لا تتغير تسميات الصور المصدّرة. انقر نقرًا مزدوجًا على السماء الخالية لإظهار أدوات التحكم أو إخفائها.</string>
+    <string name="tutorial_reticle" formatted="false">المس السماء الخالية لإظهار أو إخفاء المؤشر ومعلومات النقاط. انقر نقرًا مزدوجًا على السماء الخالية لإظهار أدوات التحكم أو إخفائها.</string>
     <string name="tutorial_reminder" formatted="false">افتح منبه Android أو التقويم لحدث مستقبلي مناسب. لا يشمل الأحداث الماضية أو النقطة الحالية.</string>
     <string name="tutorial_status_title" formatted="false">الحالة والاستعادة</string>
     <string name="tutorial_status" formatted="false">اقرأ الحالة الحالية. قد يطلب الإجراء إذنًا أو يفعّل الموقع أو يعيد تحميل بيانات المدار أو الطقس. لا ينفّذ الدليل الإجراء.</string>

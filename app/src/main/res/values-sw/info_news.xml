@@ -1,9 +1,9 @@
 <resources>
     <string name="info_news_title">Mambo mapya · %1$s</string>
-    <string name="info_news_star_sky" formatted="false">Tryck på en tom del av himlen för att visa eller dölja siktet.</string>
-    <string name="info_news_texture_downloads" formatted="false">Tryck två gånger för att visa eller dölja reglagen i himmelsvyn och i förhandsvisningar av foton och panoraman.</string>
-    <string name="info_news_weather" formatted="false">Plats och personliga ögonblick har nu en egen exportvy.</string>
-    <string name="info_news_viewer_zoom" formatted="false">Exportera personliga ögonblick som en importerbar fil eller ett CSV-kalkylblad.</string>
-    <string name="info_news_settings" formatted="false">Exportera ögonblick för alla objekt eller bara det aktuella objektet. Du kan välja att endast ta med markerade ögonblick.</string>
-    <string name="info_news_catalog" formatted="false">Föreslagna filnamn följer det språk och de format du väljer för exporten.</string>
+    <string name="info_news_star_sky" formatted="false">Gusa sehemu tupu ya anga ili kuonyesha au kuficha kilenga.</string>
+    <string name="info_news_texture_downloads" formatted="false">Gusa mara mbili ili kuonyesha au kuficha vidhibiti katika mwonekano wa anga na katika hakiki za picha na panorama.</string>
+    <string name="info_news_weather" formatted="false">Eneo na Nyakati binafsi sasa zina skrini maalumu za kuhamisha faili.</string>
+    <string name="info_news_viewer_zoom" formatted="false">Hamisha nyakati binafsi kama faili inayoweza kuingizwa au kama lahajedwali la CSV.</string>
+    <string name="info_news_settings" formatted="false">Hamisha nyakati za vitu vyote au za kitu cha sasa pekee. Unaweza kujumuisha nyakati zilizochaguliwa pekee.</string>
+    <string name="info_news_catalog" formatted="false">Majina yanayopendekezwa ya faili hufuata lugha na miundo uliyochagua kwa uhamishaji.</string>
 </resources>

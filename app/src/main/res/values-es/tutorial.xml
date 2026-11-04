@@ -26,7 +26,7 @@
     <string name="tutorial_daily" formatted="false">Consulta la trayectoria, horarios, elevaciones y puntos seleccionables. Los eventos futuros admiten avisos.</string>
     <string name="tutorial_gps" formatted="false">Consulta la posición real, altitud GPS, orientación y meteorología, independientemente de la Location.</string>
     <string name="tutorial_points" formatted="false">Selecciona o deselecciona un punto. Apúntalo para leer objeto, hora, T, azimut y elevación. El borde del objeto sigue el color de su trayectoria; se vuelve azul o celeste al seleccionar su posición actual.</string>
-    <string name="tutorial_reticle" formatted="false">Toca el cielo vacío para mostrar u ocultar la retícula y la información. No afecta a las etiquetas exportadas. Toca dos veces una zona vacía del cielo para mostrar u ocultar los controles.</string>
+    <string name="tutorial_reticle" formatted="false">Toca el cielo vacío para mostrar u ocultar la retícula y la información. Toca dos veces una zona vacía del cielo para mostrar u ocultar los controles.</string>
     <string name="tutorial_reminder" formatted="false">Abre la alarma o el calendario de Android para un evento futuro válido. No se pueden programar eventos pasados ni el punto actual.</string>
     <string name="tutorial_status_title" formatted="false">Estado y recuperación</string>
     <string name="tutorial_status" formatted="false">Consulta el estado. La acción puede pedir permiso, activar la ubicación o reintentar los datos orbitales o meteorológicos. El tutorial no ejecuta la acción.</string>

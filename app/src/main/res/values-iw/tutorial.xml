@@ -26,7 +26,7 @@
     <string name="tutorial_daily" formatted="false">צפו במסלול, בשעות, בגבהים ובנקודות לבחירה. אפשר להוסיף תזכורת לאירועים עתידיים.</string>
     <string name="tutorial_gps" formatted="false">צפו במיקום האמיתי, בגובה GPS, בכיוון ובמזג האוויר, בנפרד מ-Location.</string>
     <string name="tutorial_points" formatted="false">בחרו נקודת מסלול. כוונו אליה לקריאת העצם, השעה, T, האזימוט והגובה. גבול העצם מקבל את צבע המסלול שלו; בחירת המיקום הנוכחי משנה אותו לכחול או לתכלת.</string>
-    <string name="tutorial_reticle" formatted="false">געו בשמיים ריקים כדי להציג או להסתיר את הכוונת והמידע. תוויות הייצוא לא משתנות. הקישו פעמיים על אזור ריק בשמיים כדי להציג או להסתיר את הפקדים.</string>
+    <string name="tutorial_reticle" formatted="false">געו בשמיים ריקים כדי להציג או להסתיר את הכוונת והמידע. הקישו פעמיים על אזור ריק בשמיים כדי להציג או להסתיר את הפקדים.</string>
     <string name="tutorial_reminder" formatted="false">פתחו שעון מעורר או יומן Android לאירוע עתידי מתאים. לא לאירועי עבר או לנקודה הנוכחית.</string>
     <string name="tutorial_status_title" formatted="false">מצב ושחזור</string>
     <string name="tutorial_status" formatted="false">קראו את המצב הנוכחי. הפעולה יכולה לבקש הרשאה, להפעיל מיקום או לנסות שוב נתוני מסלול ומזג אוויר. המדריך אינו מבצע אותה.</string>

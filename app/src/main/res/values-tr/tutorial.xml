@@ -26,7 +26,7 @@
     <string name="tutorial_daily" formatted="false">Yolu, saatleri, yükseklikleri ve seçilebilir noktaları görün. Gelecek olaylara hatırlatıcı eklenebilir.</string>
     <string name="tutorial_gps" formatted="false">Location’dan bağımsız gerçek konumu, GPS yüksekliğini, yönelimi ve hava durumunu görün.</string>
     <string name="tutorial_points" formatted="false">Bir yörünge noktasını seçin. Nesne, saat, T, azimut ve yüksekliği okumak için nişangâhı ona yöneltin. Nesnenin kenarlığı yörüngesinin rengindedir; güncel konumunu seçtiğinde mavi veya açık mavi olur.</string>
-    <string name="tutorial_reticle" formatted="false">Nişangâhı ve nokta bilgilerini göstermek veya gizlemek için boş gökyüzüne dokunun. Dışa aktarılan etiketler değişmez. Kontrolleri göstermek veya gizlemek için gökyüzündeki boş bir alana iki kez dokunun.</string>
+    <string name="tutorial_reticle" formatted="false">Nişangâhı ve nokta bilgilerini göstermek veya gizlemek için boş gökyüzüne dokunun. Kontrolleri göstermek veya gizlemek için gökyüzündeki boş bir alana iki kez dokunun.</string>
     <string name="tutorial_reminder" formatted="false">Uygun gelecek olay için Android alarmını veya takvimini açın. Geçmiş olaylar ve mevcut nokta için alarm kurulamaz.</string>
     <string name="tutorial_status_title" formatted="false">Durum ve kurtarma</string>
     <string name="tutorial_status" formatted="false">Güncel durumu okuyun. Eylem izin isteyebilir, konumu açabilir veya yörünge ve hava verilerini yeniden yükleyebilir. Öğretici eylemi yürütmez.</string>
