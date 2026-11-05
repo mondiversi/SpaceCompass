@@ -123,17 +123,19 @@ internal fun <T> rememberSpaceCompassConfigurationTransfer(scene: Boolean, obser
             BackHandler(onBack=close)
             SpaceCompassDataExportPage(close,Modifier.testTag(if (scene) "scene-export-page" else "scenario-export-page")) {
                 if (include && (!scene || completeAutomatic) && complete==null) SpaceCompassSettingsDescription(stringResource(R.string.location_export_wait_position))
-                SpaceCompassSettingsTextField(name,{ name=it.take(80);nameEdited=true },
-                    Modifier.fillMaxWidth().testTag("scenario-export-name"),
-                    label=stringResource(if (scene) R.string.scene_file_name else R.string.scenario_file_name),enabled=!working)
-                Column(Modifier.fillMaxWidth(),verticalArrangement=Arrangement.spacedBy(SpaceCompassSettingsChoiceSpacing)) {
-                    SpaceCompassSettingsCheckbox(stringResource(if (scene) R.string.scene_export_include_location
-                        else R.string.scenario_export_include_automatic),include,{ include=it },
-                        Modifier.testTag(if (scene) "scene-export-location" else "location-export-automatic"),
-                        enabled=!working,compact=true)
-                    if (scene) SpaceCompassSettingsCheckbox(stringResource(R.string.scenario_export_include_automatic),
-                        completeAutomatic,{ completeAutomatic=it },
-                        Modifier.testTag("scene-export-automatic"),enabled=include && !working,compact=true)
+                Column(Modifier.fillMaxWidth(),verticalArrangement=Arrangement.spacedBy(SpaceCompassSettingsControlGap)) {
+                    SpaceCompassSettingsTextField(name,{ name=it.take(80);nameEdited=true },
+                        Modifier.fillMaxWidth().testTag("scenario-export-name"),
+                        label=stringResource(if (scene) R.string.scene_file_name else R.string.scenario_file_name),enabled=!working)
+                    Column(Modifier.fillMaxWidth(),verticalArrangement=Arrangement.spacedBy(SpaceCompassSettingsChoiceSpacing)) {
+                        SpaceCompassSettingsCheckbox(stringResource(if (scene) R.string.scene_export_include_location
+                            else R.string.scenario_export_include_automatic),include,{ include=it },
+                            Modifier.testTag(if (scene) "scene-export-location" else "location-export-automatic"),
+                            enabled=!working,compact=true)
+                        if (scene) SpaceCompassSettingsCheckbox(stringResource(R.string.scenario_export_include_automatic),
+                            completeAutomatic,{ completeAutomatic=it },
+                            Modifier.testTag("scene-export-automatic"),enabled=include && !working,compact=true)
+                    }
                 }
                 HorizontalDivider(Modifier.fillMaxWidth().padding(vertical=4.dp).testTag("scenario-export-profile-divider"),
                     color=spaceCompassDialogContentColor().copy(alpha=.16f))
