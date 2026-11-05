@@ -1,9 +1,9 @@
 <resources>
     <string name="info_news_title">हाल के बदलाव · %1$s</string>
-    <string name="info_news_star_sky" formatted="false">प्रमुख घटनाओं में अधिक सहज स्क्रॉलिंग, चंद्रमा की लंबी सूचियों में भी।</string>
-    <string name="info_news_texture_downloads" formatted="false">प्रमुख ऊँचाइयाँ लंबी सूचियों को अधिक कुशलता से दिखाती हैं।</string>
-    <string name="info_news_weather" formatted="false">व्यक्तिगत क्षण स्क्रॉल करते समय बार-बार फ़ॉर्मैट करने से बचते हैं।</string>
-    <string name="info_news_viewer_zoom" formatted="false">हर खगोलीय पिंड मौजूदा सत्र के दौरान अपनी सूची की स्थिति बनाए रखता है।</string>
-    <string name="info_news_settings" formatted="false">अस्थायी लोडिंग अब सूची की स्थिति रीसेट नहीं करती।</string>
-    <string name="info_news_catalog" formatted="false">इन सूचियों को देखते समय वेधशाला में छिपे मॉडल के अपडेट रुक जाते हैं।</string>
+    <string name="info_news_star_sky" formatted="false">मुख्य मेनू से मौजूदा दृश्य सहेजें और साझा करें।</string>
+    <string name="info_news_texture_downloads" formatted="false">दृश्य चुने हुए पिंड, दिनांकित पथ, बिंदु और प्रतिमुख बिंदु सुरक्षित रखते हैं।</string>
+    <string name="info_news_weather" formatted="false">सक्रिय पिंड और प्रदर्शन विकल्पों के साथ दृश्य आयात करें।</string>
+    <string name="info_news_viewer_zoom" formatted="false">Location फ़ाइलों में अब केवल स्थान और समय की सेटिंग होती हैं।</string>
+    <string name="info_news_settings" formatted="false">चुनें कि Location शामिल करें और स्वचालित पैरामीटर पूरे करें या नहीं।</string>
+    <string name="info_news_catalog" formatted="false">अधिक संक्षिप्त निर्यात विकल्प और पुरानी मिश्रित फ़ाइलों का समर्थन।</string>
 </resources>

@@ -38,26 +38,34 @@ internal fun SpaceCompassAppPages(content: @Composable () -> Unit) {
     val objectScrollSession = rememberSpaceCompassObjectPageScrollSession()
     val orbitSelection = rememberSpaceCompassSunDailyPathUiState()
     val comparisons = rememberSpaceCompassTemporalComparisons(orbitSelection)
+    val sceneTransfer = rememberSpaceCompassSceneTransfer(observer, comparisons, orbitSelection)
+    val sceneExportVisible = sceneTransfer.exportPage != null
     val settingsConfirmation = rememberSpaceCompassSettingsExitNotice(route)
     val tutorial = LocalSpaceCompassTutorial.current
     LaunchedEffect(tutorial?.active) { if (tutorial?.active == true) route = null }
     CompositionLocalProvider(LocalSpaceCompassNavigate provides {
-        if (it == "tutorial") { route = null; tutorial?.start() } else route = it
+        when (it) {
+            "tutorial" -> { route = null; tutorial?.start() }
+            "scene-export" -> { route = null; sceneTransfer.openExport() }
+            "scene-import" -> { route = null; sceneTransfer.openImport() }
+            else -> route = it
+        }
     },
         LocalSpaceCompassSettingsExitFailure provides settingsConfirmation::rejectExit,
         LocalSpaceCompassObserver provides observer, LocalSpaceCompassObjectPageScrollSession provides objectScrollSession,
         LocalSpaceCompassOrbitSelection provides orbitSelection, LocalSpaceCompassComparisons provides comparisons,
-        LocalSpaceCompassMainVisible provides (route == null && !screensaverActive)) {
+        LocalSpaceCompassMainVisible provides (route == null && !screensaverActive && !sceneExportVisible)) {
         SpaceCompassDropdownDimmingHost {
             // Keep remember/effects/caches alive. An unplaced layer has no drawing,
             // touch targets or accessibility nodes behind the foreground page.
             Box(Modifier.fillMaxSize().layout { measurable, constraints ->
                 val placeable = measurable.measure(constraints)
                 layout(placeable.width, placeable.height) {
-                    if (route == null) placeable.placeRelative(0, 0)
+                    if (route == null && !sceneExportVisible) placeable.placeRelative(0, 0)
                 }
             }) { holder.SaveableStateProvider("compass") { content() } }
             route?.let { SpaceCompassAppPage(it, onBack = { route = null }) }
+            sceneTransfer.exportPage?.invoke()
         }
     }
 }
@@ -113,7 +121,8 @@ internal fun SpaceCompassSettingsButton(color: Color, background: Color) {
         SpaceCompassAdaptiveDropdownMenu(expanded && !tutorialActive, { expanded = false }, containerColor = card,
             modifier = Modifier.testTag("app-settings-menu"), shape = RoundedCornerShape(16.dp)) {
             listOf("appearance" to R.string.settings_section_appearance, "language" to R.string.settings_section_language,
-                "units" to R.string.settings_section_units, "tutorial" to R.string.tutorial_title, "info" to R.string.pc_info).forEachIndexed { index, (route, title) ->
+                "units" to R.string.settings_section_units, "scene-export" to R.string.scene_export,
+                "scene-import" to R.string.scene_import, "tutorial" to R.string.tutorial_title, "info" to R.string.pc_info).forEachIndexed { index, (route, title) ->
                 if (index > 0) HorizontalDivider(color = foreground.copy(alpha = .10f))
                 SpaceCompassNavigationMenuItem(stringResource(title), { expanded = false; navigate(route) },
                     Modifier.testTag("open-$route")) { tint -> SpaceCompassSettingsMenuIcon(route, tint) }

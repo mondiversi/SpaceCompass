@@ -77,7 +77,7 @@ internal fun SpaceCompassSunFinderScreen(
         }
     }
     DisposableEffect(preferences) {
-        // Location imports can replace scene checks while this screen is retained behind another page.
+        // Scene imports can replace scene checks while this screen is retained behind another page.
         fun syncSelection() {
             val stored = readSpaceCompassCelestialSelection(preferences)
             selectedNames = stored.ordered.map { it.name }
@@ -312,6 +312,18 @@ internal fun SpaceCompassSunFinderContent(
     }
     var translucentCameraObjects by remember(scenePreferences) {
         mutableStateOf(scenePreferences.getBoolean(SPACE_COMPASS_CAMERA_OBJECT_TRANSLUCENCY_KEY,false))
+    }
+    DisposableEffect(scenePreferences) {
+        val listener = android.content.SharedPreferences.OnSharedPreferenceChangeListener { _, key ->
+            when (key) {
+                SPACE_COMPASS_SKY_REFERENCES_KEY -> showSkyReferences = scenePreferences.getBoolean(key,SPACE_COMPASS_SKY_REFERENCES_DEFAULT)
+                SPACE_COMPASS_FORWARD_PATH_KEY -> forward24Hours = scenePreferences.getBoolean(key,false)
+                SPACE_COMPASS_WEATHER_VISIBLE_KEY -> showWeather = scenePreferences.getBoolean(key,SPACE_COMPASS_WEATHER_VISIBLE_DEFAULT)
+                SPACE_COMPASS_CAMERA_OBJECT_TRANSLUCENCY_KEY -> translucentCameraObjects = scenePreferences.getBoolean(key,false)
+            }
+        }
+        scenePreferences.registerOnSharedPreferenceChangeListener(listener)
+        onDispose { scenePreferences.unregisterOnSharedPreferenceChangeListener(listener) }
     }
     val cameraObjectOpacity = spaceCompassCameraObjectOpacity(cameraEnabled,translucentCameraObjects)
     val deviceView = LocalView.current

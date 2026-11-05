@@ -1,9 +1,9 @@
 <resources>
     <string name="info_news_title">最近の変更 · %1$s</string>
-    <string name="info_news_star_sky" formatted="false">主要イベントのスクロールが滑らかになり、月の長い一覧も快適に閲覧できます。</string>
-    <string name="info_news_texture_downloads" formatted="false">主要高度の長い一覧をより効率的に表示します。</string>
-    <string name="info_news_weather" formatted="false">個人の瞬間ではスクロール中の繰り返し整形を抑えます。</string>
-    <string name="info_news_viewer_zoom" formatted="false">現在のセッション中は天体ごとに一覧の位置を保持します。</string>
-    <string name="info_news_settings" formatted="false">一時的な読み込みで一覧の位置がリセットされなくなりました。</string>
-    <string name="info_news_catalog" formatted="false">これらの一覧を閲覧中は、天文台の非表示モデルの更新を一時停止します。</string>
+    <string name="info_news_star_sky" formatted="false">メインメニューから現在のシーンを保存・共有できます。</string>
+    <string name="info_news_texture_downloads" formatted="false">シーンには選択した天体、日付付き経路、点、対蹠点が保存されます。</string>
+    <string name="info_news_weather" formatted="false">アクティブな天体と表示設定を含むシーンを読み込めます。</string>
+    <string name="info_news_viewer_zoom" formatted="false">Locationファイルには場所と時刻の設定のみが含まれるようになりました。</string>
+    <string name="info_news_settings" formatted="false">Locationを含めるか、自動パラメーターを補完するかを選べます。</string>
+    <string name="info_news_catalog" formatted="false">書き出しオプションをコンパクトにし、従来の混合ファイルにも対応しました。</string>
 </resources>

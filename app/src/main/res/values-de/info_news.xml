@@ -1,9 +1,9 @@
 <resources>
     <string name="info_news_title">Neuigkeiten · %1$s</string>
-    <string name="info_news_star_sky" formatted="false">Flüssigeres Scrollen in Schlüsselereignissen, auch in langen Mondlisten.</string>
-    <string name="info_news_texture_downloads" formatted="false">Schlüsselhöhen zeigen lange Listen effizienter an.</string>
-    <string name="info_news_weather" formatted="false">Persönliche Momente vermeiden wiederholte Formatierungen beim Scrollen.</string>
-    <string name="info_news_viewer_zoom" formatted="false">Jedes Objekt behält seine Listenposition während der aktuellen Sitzung.</string>
-    <string name="info_news_settings" formatted="false">Vorübergehendes Laden setzt die Listenposition nicht mehr zurück.</string>
-    <string name="info_news_catalog" formatted="false">Verdeckte Modellaktualisierungen im Observatorium pausieren beim Durchsehen dieser Listen.</string>
+    <string name="info_news_star_sky" formatted="false">Aktuelle Szene über das Hauptmenü speichern und teilen.</string>
+    <string name="info_news_texture_downloads" formatted="false">Szenen behalten ausgewählte Objekte, datierte Bahnen, Punkte und Antipoden.</string>
+    <string name="info_news_weather" formatted="false">Szene mit aktivem Objekt und Anzeigeoptionen importieren.</string>
+    <string name="info_news_viewer_zoom" formatted="false">Location-Dateien enthalten jetzt nur Orts- und Zeiteinstellungen.</string>
+    <string name="info_news_settings" formatted="false">Wählen, ob die Location enthalten ist und automatische Parameter ergänzt werden.</string>
+    <string name="info_news_catalog" formatted="false">Kompaktere Exportoptionen und Unterstützung bisheriger gemischter Dateien.</string>
 </resources>

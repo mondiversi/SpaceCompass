@@ -1,9 +1,9 @@
 <resources>
     <string name="info_news_title">החידושים האחרונים · %1$s</string>
-    <string name="info_news_star_sky" formatted="false">גלילה חלקה יותר באירועי מפתח, כולל רשימות ארוכות של הירח.</string>
-    <string name="info_news_texture_downloads" formatted="false">גבהי מפתח מציגים רשימות ארוכות ביעילות רבה יותר.</string>
-    <string name="info_news_weather" formatted="false">רגעים אישיים נמנעים מעיצוב חוזר בזמן הגלילה.</string>
-    <string name="info_news_viewer_zoom" formatted="false">כל גרם שמיים שומר את מיקום הרשימה במהלך ההפעלה הנוכחית.</string>
-    <string name="info_news_settings" formatted="false">טעינה זמנית אינה מאפסת עוד את מיקום הרשימה.</string>
-    <string name="info_news_catalog" formatted="false">עדכוני המודל המוסתר במצפה מושהים בזמן העיון ברשימות אלה.</string>
+    <string name="info_news_star_sky" formatted="false">שמרו ושתפו את הסצנה הנוכחית מהתפריט הראשי.</string>
+    <string name="info_news_texture_downloads" formatted="false">סצנות שומרות גרמי שמיים נבחרים, מסלולים מתוארכים, נקודות ואנטיפודים.</string>
+    <string name="info_news_weather" formatted="false">ייבאו סצנה עם הגרם הפעיל ואפשרויות התצוגה שלה.</string>
+    <string name="info_news_viewer_zoom" formatted="false">קובצי Location מכילים כעת רק הגדרות מקום וזמן.</string>
+    <string name="info_news_settings" formatted="false">בחרו אם לכלול את Location ולהשלים פרמטרים אוטומטיים.</string>
+    <string name="info_news_catalog" formatted="false">אפשרויות ייצוא קומפקטיות יותר ותמיכה בקבצים המשולבים הקודמים.</string>
 </resources>

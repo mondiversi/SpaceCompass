@@ -1,9 +1,9 @@
 <resources>
     <string name="info_news_title">آخر المستجدات · %1$s</string>
-    <string name="info_news_star_sky" formatted="false">تمرير أكثر سلاسة في الأحداث الرئيسية، بما في ذلك قوائم القمر الطويلة.</string>
-    <string name="info_news_texture_downloads" formatted="false">تعرض الارتفاعات الرئيسية القوائم الطويلة بكفاءة أكبر.</string>
-    <string name="info_news_weather" formatted="false">تتجنب اللحظات الشخصية تكرار التنسيق أثناء التمرير.</string>
-    <string name="info_news_viewer_zoom" formatted="false">يحتفظ كل جرم بموضع قائمته خلال الجلسة الحالية.</string>
-    <string name="info_news_settings" formatted="false">لم يعد التحميل المؤقت يعيد تعيين موضع القائمة.</string>
-    <string name="info_news_catalog" formatted="false">تتوقف تحديثات النموذج المخفي في المرصد مؤقتًا أثناء تصفح هذه القوائم.</string>
+    <string name="info_news_star_sky" formatted="false">احفظ المشهد الحالي وشاركه من القائمة الرئيسية.</string>
+    <string name="info_news_texture_downloads" formatted="false">تحتفظ المشاهد بالأجرام المحددة والمسارات المؤرخة والنقاط والنقاط المقابلة.</string>
+    <string name="info_news_weather" formatted="false">استورد مشهدًا مع جرمه النشط وخيارات عرضه.</string>
+    <string name="info_news_viewer_zoom" formatted="false">تحتوي ملفات Location الآن على إعدادات المكان والوقت فقط.</string>
+    <string name="info_news_settings" formatted="false">اختر تضمين Location وإكمال المعلمات التلقائية.</string>
+    <string name="info_news_catalog" formatted="false">خيارات تصدير أكثر إحكامًا ودعم الملفات المختلطة السابقة.</string>
 </resources>

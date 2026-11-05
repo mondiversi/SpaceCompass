@@ -1,9 +1,9 @@
 <resources>
     <string name="info_news_title">Ultime novità · %1$s</string>
-    <string name="info_news_star_sky" formatted="false">Scorrimento più fluido negli Eventi chiave, anche nelle lunghe liste della Luna.</string>
-    <string name="info_news_texture_downloads" formatted="false">Le Altezze chiave visualizzano le liste lunghe in modo più efficiente.</string>
-    <string name="info_news_weather" formatted="false">I Momenti personali evitano formattazioni ripetute durante lo scorrimento.</string>
-    <string name="info_news_viewer_zoom" formatted="false">Ogni oggetto conserva la posizione della lista durante la sessione corrente.</string>
-    <string name="info_news_settings" formatted="false">I caricamenti temporanei non azzerano più la posizione della lista.</string>
-    <string name="info_news_catalog" formatted="false">Gli aggiornamenti del modello nascosto in Osservatorio si sospendono mentre esplori queste liste.</string>
+    <string name="info_news_star_sky" formatted="false">Salva e condividi lo Scenario attuale dal menu principale.</string>
+    <string name="info_news_texture_downloads" formatted="false">Gli Scenari conservano oggetti selezionati, percorsi datati, punti e Antipodi.</string>
+    <string name="info_news_weather" formatted="false">Importa uno Scenario con il suo oggetto attivo e le scelte di visualizzazione.</string>
+    <string name="info_news_viewer_zoom" formatted="false">I file Location contengono ora solo le impostazioni di luogo e tempo.</string>
+    <string name="info_news_settings" formatted="false">Scegli se includere la Location e completare i parametri automatici.</string>
+    <string name="info_news_catalog" formatted="false">Opzioni di esportazione più compatte e supporto ai precedenti file misti.</string>
 </resources>

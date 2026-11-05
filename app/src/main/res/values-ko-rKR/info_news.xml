@@ -1,9 +1,9 @@
 <resources>
     <string name="info_news_title">최근 변경 사항 · %1$s</string>
-    <string name="info_news_star_sky" formatted="false">주요 이벤트에서 달의 긴 목록을 포함해 스크롤이 더 부드러워졌습니다.</string>
-    <string name="info_news_texture_downloads" formatted="false">주요 고도에서 긴 목록을 더 효율적으로 표시합니다.</string>
-    <string name="info_news_weather" formatted="false">개인 순간에서 스크롤 중 반복되는 형식 처리를 줄입니다.</string>
-    <string name="info_news_viewer_zoom" formatted="false">현재 세션 동안 천체별로 목록 위치를 유지합니다.</string>
-    <string name="info_news_settings" formatted="false">일시적인 로딩으로 목록 위치가 초기화되지 않습니다.</string>
-    <string name="info_news_catalog" formatted="false">이 목록을 탐색하는 동안 천문대의 숨겨진 모델 업데이트를 일시 중지합니다.</string>
+    <string name="info_news_star_sky" formatted="false">메인 메뉴에서 현재 장면을 저장하고 공유하세요.</string>
+    <string name="info_news_texture_downloads" formatted="false">장면은 선택한 천체, 날짜별 경로, 지점과 대척점을 유지합니다.</string>
+    <string name="info_news_weather" formatted="false">활성 천체와 표시 설정을 포함한 장면을 가져오세요.</string>
+    <string name="info_news_viewer_zoom" formatted="false">Location 파일에는 이제 장소와 시간 설정만 포함됩니다.</string>
+    <string name="info_news_settings" formatted="false">Location 포함 여부와 자동 매개변수 완성 여부를 선택하세요.</string>
+    <string name="info_news_catalog" formatted="false">더 간결한 내보내기 옵션과 기존 혼합 파일 지원을 제공합니다.</string>
 </resources>

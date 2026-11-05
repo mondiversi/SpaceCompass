@@ -28,6 +28,7 @@ class SpaceCompassScenarioTransferUiTest {
 
     private fun show(initial: SpaceCompassObserverPlan? = original) {
         observer.apply(initial)
+        observer.devicePlace = SpaceCompassDevicePlace(45.0,9.0,112.0)
         compose.setContent { MaterialTheme {
             CompositionLocalProvider(LocalSpaceCompassPreferences provides preferences,
                 LocalSpaceCompassObserver provides observer,
@@ -109,32 +110,36 @@ class SpaceCompassScenarioTransferUiTest {
             assertEquals(SpaceCompassScenarioResume.ACTIVE, observer.timeSettings.resume)
         }
     }
-    @Test fun liveObjectsExportKeepsAutomaticValuesAndTheChoiceResetsOnReopening() {
+    @Test fun automaticLocationExportKeepsLiveValuesAndTheChoiceResetsOnReopening() {
         show(initial = null)
         compose.runOnIdle { observer.devicePlace = SpaceCompassDevicePlace(28.35, -14.1, 102.5) }
         compose.onNodeWithTag("scenario-export-open").assertIsEnabled().performClick()
-        compose.onNodeWithTag("location-export-objects").assertIsOff()
-        compose.onNodeWithTag("scenario-export-save").assertIsEnabled()
-        compose.onNodeWithTag("scenario-export-share").assertIsEnabled()
-        compose.onNodeWithTag("location-export-objects").performClick().assertIsOn()
-        compose.onNodeWithTag("scenario-export-save").assertIsEnabled()
-        compose.onNodeWithTag("scenario-export-share").assertIsEnabled()
+        compose.onNodeWithTag("location-export-objects").assertDoesNotExist()
+        compose.onNodeWithTag("location-export-automatic").assertIsOn()
+        compose.onNodeWithTag("scenario-export-save").performScrollTo().assertIsEnabled()
+        compose.onNodeWithTag("location-export-automatic").performScrollTo().performClick().assertIsOff()
+        compose.onNodeWithTag("scenario-export-save").performScrollTo().assertIsNotEnabled()
+        compose.onNodeWithTag("location-export-automatic").performScrollTo().performClick().assertIsOn()
+        compose.onNodeWithTag("scenario-export-save").performScrollTo().assertIsEnabled()
         compose.runOnIdle { assertNull(observer.plan); assertNull(observer.savedPlan) }
-        compose.onNodeWithTag("location-export-objects").performClick().assertIsOff()
-        compose.onNodeWithTag("scenario-export-save").assertIsEnabled()
+        compose.onNodeWithTag("location-export-automatic").performScrollTo().performClick().assertIsOff()
         compose.onNodeWithContentDescription(context.getString(R.string.navigate_back)).performClick()
         compose.onNodeWithTag("scenario-export-open").performClick()
-        compose.onNodeWithTag("location-export-objects").assertIsOff()
-        compose.onNodeWithTag("scenario-export-share").assertIsEnabled()
+        compose.onNodeWithTag("location-export-automatic").assertIsOn()
+        compose.onNodeWithTag("scenario-export-share").performScrollTo().assertIsEnabled()
         compose.onNodeWithContentDescription(context.getString(R.string.navigate_back)).performClick()
     }
 
-    @Test fun includingObjectsDoesNotRequireOrInventALocationFix() {
+    @Test fun automaticCompletionWaitsForARealFixRatherThanInventingValues() {
         show(initial = null)
+        compose.runOnIdle { observer.devicePlace = null }
         compose.onNodeWithTag("scenario-export-open").performClick()
-        compose.onNodeWithTag("location-export-objects").performClick().assertIsOn()
+        compose.onNodeWithTag("location-export-automatic").assertIsOn()
+        compose.onNodeWithTag("scenario-export-save").performScrollTo().assertIsNotEnabled()
+        compose.runOnIdle { observer.devicePlace = SpaceCompassDevicePlace(28.35,-14.1,null) }
+        compose.onNodeWithTag("scenario-export-save").assertIsNotEnabled()
+        compose.runOnIdle { observer.devicePlace = SpaceCompassDevicePlace(28.35,-14.1,102.5) }
         compose.onNodeWithTag("scenario-export-save").assertIsEnabled()
-        compose.onNodeWithTag("scenario-export-share").assertIsEnabled()
         compose.onNodeWithContentDescription(context.getString(R.string.navigate_back)).performClick()
         compose.runOnIdle { assertNull(observer.plan); assertNull(observer.savedPlan) }
     }

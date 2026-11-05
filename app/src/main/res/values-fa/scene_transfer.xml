@@ -1,0 +1,11 @@
+<resources>
+    <string name="scene_title">سناریو</string>
+    <string name="scene_export">صادر کردن</string>
+    <string name="scene_import">وارد کردن</string>
+    <string name="scene_file_name">نام سناریو</string>
+    <string name="scene_export_include_location">گنجاندن Location</string>
+    <string name="scene_file_saved">سناریو ذخیره شد</string>
+    <string name="scene_file_imported">سناریو وارد شد</string>
+    <string name="scene_file_invalid">پرونده سناریو نامعتبر است</string>
+    <string name="scene_file_error">انتقال سناریو ممکن نشد</string>
+</resources>

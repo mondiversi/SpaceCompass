@@ -1,9 +1,9 @@
 <resources>
     <string name="info_news_title">تازه‌ترین تغییرات · %1$s</string>
-    <string name="info_news_star_sky" formatted="false">پیمایش روان‌تر در رویدادهای کلیدی، از جمله فهرست‌های طولانی ماه.</string>
-    <string name="info_news_texture_downloads" formatted="false">ارتفاع‌های کلیدی فهرست‌های طولانی را کارآمدتر نمایش می‌دهد.</string>
-    <string name="info_news_weather" formatted="false">لحظه‌های شخصی از قالب‌بندی تکراری هنگام پیمایش جلوگیری می‌کند.</string>
-    <string name="info_news_viewer_zoom" formatted="false">هر جرم جایگاه فهرست خود را در نشست جاری حفظ می‌کند.</string>
-    <string name="info_news_settings" formatted="false">بارگذاری موقت دیگر جایگاه فهرست را بازنشانی نمی‌کند.</string>
-    <string name="info_news_catalog" formatted="false">به‌روزرسانی مدل پنهان رصدخانه هنگام مرور این فهرست‌ها متوقف می‌شود.</string>
+    <string name="info_news_star_sky" formatted="false">صحنه فعلی را از منوی اصلی ذخیره و هم‌رسانی کنید.</string>
+    <string name="info_news_texture_downloads" formatted="false">صحنه‌ها اجرام انتخاب‌شده، مسیرهای تاریخ‌دار، نقاط و نقاط مقابل را حفظ می‌کنند.</string>
+    <string name="info_news_weather" formatted="false">صحنه را با جرم فعال و گزینه‌های نمایش آن وارد کنید.</string>
+    <string name="info_news_viewer_zoom" formatted="false">فایل‌های Location اکنون فقط تنظیمات مکان و زمان را دارند.</string>
+    <string name="info_news_settings" formatted="false">انتخاب کنید که Location گنجانده شود و پارامترهای خودکار تکمیل شوند.</string>
+    <string name="info_news_catalog" formatted="false">گزینه‌های فشرده‌تر برون‌بری و پشتیبانی از فایل‌های ترکیبی قبلی.</string>
 </resources>

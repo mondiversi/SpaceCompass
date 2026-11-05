@@ -1,9 +1,9 @@
 <resources>
     <string name="info_news_title">Últimas novedades · %1$s</string>
-    <string name="info_news_star_sky" formatted="false">Desplazamiento más fluido en Eventos clave, incluso en las largas listas de la Luna.</string>
-    <string name="info_news_texture_downloads" formatted="false">Las Alturas clave muestran las listas largas con mayor eficiencia.</string>
-    <string name="info_news_weather" formatted="false">Los Momentos personales evitan repetir el formato durante el desplazamiento.</string>
-    <string name="info_news_viewer_zoom" formatted="false">Cada objeto conserva la posición de su lista durante la sesión actual.</string>
-    <string name="info_news_settings" formatted="false">Las cargas temporales ya no restablecen la posición de la lista.</string>
-    <string name="info_news_catalog" formatted="false">El modelo oculto del Observatorio pausa sus actualizaciones mientras exploras estas listas.</string>
+    <string name="info_news_star_sky" formatted="false">Guarda y comparte la Escena actual desde el menú principal.</string>
+    <string name="info_news_texture_downloads" formatted="false">Las Escenas conservan objetos seleccionados, trayectorias fechadas, puntos y Antípodas.</string>
+    <string name="info_news_weather" formatted="false">Importa una Escena con su objeto activo y opciones de visualización.</string>
+    <string name="info_news_viewer_zoom" formatted="false">Los archivos Location ahora contienen solo ajustes de lugar y tiempo.</string>
+    <string name="info_news_settings" formatted="false">Elige si incluir Location y completar los parámetros automáticos.</string>
+    <string name="info_news_catalog" formatted="false">Opciones de exportación más compactas y compatibilidad con archivos mixtos anteriores.</string>
 </resources>

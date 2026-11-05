@@ -1,0 +1,11 @@
+<resources>
+    <string name="scene_title">سيناريو</string>
+    <string name="scene_export">تصدير</string>
+    <string name="scene_import">استيراد</string>
+    <string name="scene_file_name">اسم السيناريو</string>
+    <string name="scene_export_include_location">تضمين Location</string>
+    <string name="scene_file_saved">تم حفظ السيناريو</string>
+    <string name="scene_file_imported">تم استيراد السيناريو</string>
+    <string name="scene_file_invalid">ملف السيناريو غير صالح</string>
+    <string name="scene_file_error">تعذر نقل السيناريو</string>
+</resources>

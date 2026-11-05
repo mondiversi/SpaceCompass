@@ -171,10 +171,12 @@ internal fun SpaceCompassSettingsChoices(spec: SpaceCompassSettingSpec, language
 
 @Composable
 internal fun SpaceCompassSettingsCheckbox(label: String, checked: Boolean, onCheckedChange: (Boolean) -> Unit,
-    modifier: Modifier = Modifier, enabled: Boolean = true) {
+    modifier: Modifier = Modifier, enabled: Boolean = true, compact: Boolean = false) {
     val foreground = MaterialTheme.colorScheme.onSurface
-    Row(modifier.fillMaxWidth().heightIn(min = 48.dp)
-        .toggleable(checked, enabled = enabled, role = Role.Checkbox, onValueChange = onCheckedChange),
+    // Grouped options use the same vertical padding as settings choices.
+    Row(modifier.fillMaxWidth().then(if (compact) Modifier else Modifier.heightIn(min = 48.dp))
+        .toggleable(checked, enabled = enabled, role = Role.Checkbox, onValueChange = onCheckedChange)
+        .then(if (compact) Modifier.padding(vertical = SpaceCompassSettingsChoiceVerticalPadding) else Modifier),
         verticalAlignment = Alignment.CenterVertically) {
         CompositionLocalProvider(LocalMinimumInteractiveComponentSize provides 0.dp) {
             Checkbox(checked, onCheckedChange = null, enabled = enabled, modifier = Modifier.size(SpaceCompassSettingsControlSize),

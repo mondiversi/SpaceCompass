@@ -1,5 +1,13 @@
 # Changelog
 
+## 1.8.4 — 2026-11-05
+
+- Save and share Scenes from the main menu, including selected objects, the active object, dated comparisons, active Personal Moments, orbit points and Antipodes.
+- Restore scene display choices, with optional Location import; preserve the recipient's observer settings when Location is omitted.
+- Separate Location files from celestial selections. Choose whether automatic parameters are completed with a stable snapshot of their current values.
+- Keep local Personal Moment definitions while restoring incoming scene selections, and support previous mixed Location/object files.
+- Compact and align the two Scene export checkboxes; automatic completion remains visible but disabled when Location is excluded.
+
 ## 1.8.3 — 2026-11-05
 
 - Smoother scrolling in Key Events and Key Heights, including long lunar lists. Only visible rows and nearby content are composed.

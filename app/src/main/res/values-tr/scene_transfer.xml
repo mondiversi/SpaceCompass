@@ -1,0 +1,11 @@
+<resources>
+    <string name="scene_title">Senaryo</string>
+    <string name="scene_export">Dışa aktar</string>
+    <string name="scene_import">İçe aktar</string>
+    <string name="scene_file_name">Senaryo adı</string>
+    <string name="scene_export_include_location">Location dahil et</string>
+    <string name="scene_file_saved">Senaryo kaydedildi</string>
+    <string name="scene_file_imported">Senaryo içe aktarıldı</string>
+    <string name="scene_file_invalid">Geçersiz senaryo dosyası</string>
+    <string name="scene_file_error">Senaryo aktarılamadı</string>
+</resources>

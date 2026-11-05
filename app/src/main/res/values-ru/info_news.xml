@@ -1,9 +1,9 @@
 <resources>
     <string name="info_news_title">Последние новости · %1$s</string>
-    <string name="info_news_star_sky" formatted="false">Более плавная прокрутка Ключевых событий, включая длинные списки Луны.</string>
-    <string name="info_news_texture_downloads" formatted="false">Ключевые высоты эффективнее отображают длинные списки.</string>
-    <string name="info_news_weather" formatted="false">Личные моменты избегают повторного форматирования при прокрутке.</string>
-    <string name="info_news_viewer_zoom" formatted="false">Каждый объект сохраняет положение списка в течение текущего сеанса.</string>
-    <string name="info_news_settings" formatted="false">Временная загрузка больше не сбрасывает положение списка.</string>
-    <string name="info_news_catalog" formatted="false">Обновления скрытой модели в Обсерватории приостанавливаются при просмотре этих списков.</string>
+    <string name="info_news_star_sky" formatted="false">Сохраняйте текущую Сцену и делитесь ею через главное меню.</string>
+    <string name="info_news_texture_downloads" formatted="false">Сцены сохраняют выбранные объекты, траектории с датами, точки и Антиподы.</string>
+    <string name="info_news_weather" formatted="false">Импортируйте Сцену с активным объектом и настройками отображения.</string>
+    <string name="info_news_viewer_zoom" formatted="false">Файлы Location теперь содержат только настройки места и времени.</string>
+    <string name="info_news_settings" formatted="false">Выберите, включать ли Location и заполнять ли автоматические параметры.</string>
+    <string name="info_news_catalog" formatted="false">Более компактные параметры экспорта и поддержка прежних смешанных файлов.</string>
 </resources>

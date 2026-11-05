@@ -1,9 +1,9 @@
 <resources>
     <string name="info_news_title">最新变化 · %1$s</string>
-    <string name="info_news_star_sky" formatted="false">关键事件滚动更加流畅，包括较长的月球列表。</string>
-    <string name="info_news_texture_downloads" formatted="false">关键高度可更高效地显示长列表。</string>
-    <string name="info_news_weather" formatted="false">个人时刻在滚动时避免重复格式化。</string>
-    <string name="info_news_viewer_zoom" formatted="false">每个天体都会在当前会话中保留列表位置。</string>
-    <string name="info_news_settings" formatted="false">临时加载不再重置列表位置。</string>
-    <string name="info_news_catalog" formatted="false">浏览这些列表时，天文台中隐藏的模型会暂停更新。</string>
+    <string name="info_news_star_sky" formatted="false">从主菜单保存并分享当前场景。</string>
+    <string name="info_news_texture_downloads" formatted="false">场景保留已选天体、带日期的轨迹、点及对跖点。</string>
+    <string name="info_news_weather" formatted="false">导入场景时恢复活动天体及显示选项。</string>
+    <string name="info_news_viewer_zoom" formatted="false">Location文件现在仅包含地点与时间设置。</string>
+    <string name="info_news_settings" formatted="false">选择是否包含Location并补全自动参数。</string>
+    <string name="info_news_catalog" formatted="false">导出选项更加紧凑，并兼容以前的混合文件。</string>
 </resources>

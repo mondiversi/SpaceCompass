@@ -715,3 +715,14 @@ layout or scene recomposition; reduced-motion mode uses the static grey endpoint
 Visual weather defaults on only without a stored value. Existing weather-error
 priority checks continue to suppress irrelevant retries when weather is hidden.
 Preview labels and position retain their stable keys and privacy/export logic.
+
+
+## Separate Scene and Location transfer (1.8.4)
+
+Scene transfer owns the celestial selection, active dated object, selected points,
+Antipodes and portable display choices. Its versioned envelope optionally includes
+the observer configuration. Location transfer now strips celestial extensions,
+including when reading legacy mixed files. Capture resolves automatic values once;
+export choices reuse that snapshot. Validation and personal-library capacity checks
+precede mutation. Unshared local Personal Moment definitions are retained unchecked.
+See [the transfer contract](docs/SCENE_TRANSFER.md).

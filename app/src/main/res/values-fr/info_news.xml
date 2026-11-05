@@ -1,9 +1,9 @@
 <resources>
     <string name="info_news_title">Dernières nouveautés · %1$s</string>
-    <string name="info_news_star_sky" formatted="false">Défilement plus fluide dans les Événements clés, même pour les longues listes lunaires.</string>
-    <string name="info_news_texture_downloads" formatted="false">Les Hauteurs clés affichent les longues listes plus efficacement.</string>
-    <string name="info_news_weather" formatted="false">Les Moments personnels évitent les mises en forme répétées pendant le défilement.</string>
-    <string name="info_news_viewer_zoom" formatted="false">Chaque objet conserve la position de sa liste pendant la session en cours.</string>
-    <string name="info_news_settings" formatted="false">Les chargements temporaires ne réinitialisent plus la position de la liste.</string>
-    <string name="info_news_catalog" formatted="false">Le modèle masqué de l’Observatoire suspend ses mises à jour pendant la consultation de ces listes.</string>
+    <string name="info_news_star_sky" formatted="false">Enregistrez et partagez la Scène actuelle depuis le menu principal.</string>
+    <string name="info_news_texture_downloads" formatted="false">Les Scènes conservent les objets sélectionnés, trajectoires datées, points et Antipodes.</string>
+    <string name="info_news_weather" formatted="false">Importez une Scène avec son objet actif et ses choix d’affichage.</string>
+    <string name="info_news_viewer_zoom" formatted="false">Les fichiers Location contiennent désormais seulement les réglages de lieu et de temps.</string>
+    <string name="info_news_settings" formatted="false">Choisissez si vous souhaitez inclure la Location et compléter les paramètres automatiques.</string>
+    <string name="info_news_catalog" formatted="false">Options d’exportation plus compactes et prise en charge des anciens fichiers mixtes.</string>
 </resources>

@@ -1,0 +1,11 @@
+<resources>
+    <string name="scene_title">परिदृश्य</string>
+    <string name="scene_export">निर्यात</string>
+    <string name="scene_import">आयात</string>
+    <string name="scene_file_name">परिदृश्य का नाम</string>
+    <string name="scene_export_include_location">Location शामिल करें</string>
+    <string name="scene_file_saved">परिदृश्य सहेजा गया</string>
+    <string name="scene_file_imported">परिदृश्य आयात किया गया</string>
+    <string name="scene_file_invalid">अमान्य परिदृश्य फ़ाइल</string>
+    <string name="scene_file_error">परिदृश्य स्थानांतरित नहीं किया जा सका</string>
+</resources>

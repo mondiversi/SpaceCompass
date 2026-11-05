@@ -1,9 +1,9 @@
 <resources>
     <string name="info_news_title">Latest news · %1$s</string>
-    <string name="info_news_star_sky" formatted="false">Smoother scrolling in Key Events, including long lunar lists.</string>
-    <string name="info_news_texture_downloads" formatted="false">Key Heights displays long lists more efficiently.</string>
-    <string name="info_news_weather" formatted="false">Personal Moments avoids repeated formatting while scrolling.</string>
-    <string name="info_news_viewer_zoom" formatted="false">Each object keeps its list position during the current session.</string>
-    <string name="info_news_settings" formatted="false">Temporary loading no longer resets the list position.</string>
-    <string name="info_news_catalog" formatted="false">Hidden Observatory model updates pause while you browse these lists.</string>
+    <string name="info_news_star_sky" formatted="false">Save and share the current Scene from the main menu.</string>
+    <string name="info_news_texture_downloads" formatted="false">Scenes retain selected objects, dated paths, points and Antipodes.</string>
+    <string name="info_news_weather" formatted="false">Import a Scene with its active object and display choices.</string>
+    <string name="info_news_viewer_zoom" formatted="false">Location files now contain only place and time settings.</string>
+    <string name="info_news_settings" formatted="false">Choose whether to include Location and complete automatic parameters.</string>
+    <string name="info_news_catalog" formatted="false">More compact export options and support for previous mixed files.</string>
 </resources>

@@ -1,9 +1,9 @@
 <resources>
     <string name="info_news_title">Τελευταία νέα · %1$s</string>
-    <string name="info_news_star_sky" formatted="false">Ομαλότερη κύλιση στα Βασικά γεγονότα, ακόμη και στις μεγάλες λίστες της Σελήνης.</string>
-    <string name="info_news_texture_downloads" formatted="false">Τα Βασικά ύψη εμφανίζουν μεγάλες λίστες πιο αποδοτικά.</string>
-    <string name="info_news_weather" formatted="false">Οι Προσωπικές στιγμές αποφεύγουν την επαναλαμβανόμενη μορφοποίηση κατά την κύλιση.</string>
-    <string name="info_news_viewer_zoom" formatted="false">Κάθε αντικείμενο διατηρεί τη θέση της λίστας στην τρέχουσα συνεδρία.</string>
-    <string name="info_news_settings" formatted="false">Η προσωρινή φόρτωση δεν επαναφέρει πλέον τη θέση της λίστας.</string>
-    <string name="info_news_catalog" formatted="false">Οι ενημερώσεις του κρυμμένου μοντέλου στο Παρατηρητήριο παύουν όσο περιηγείστε σε αυτές τις λίστες.</string>
+    <string name="info_news_star_sky" formatted="false">Αποθηκεύστε και μοιραστείτε την τρέχουσα Σκηνή από το κύριο μενού.</string>
+    <string name="info_news_texture_downloads" formatted="false">Οι Σκηνές διατηρούν επιλεγμένα αντικείμενα, τροχιές με ημερομηνία, σημεία και Αντίποδες.</string>
+    <string name="info_news_weather" formatted="false">Εισαγάγετε μια Σκηνή με το ενεργό αντικείμενο και τις επιλογές προβολής.</string>
+    <string name="info_news_viewer_zoom" formatted="false">Τα αρχεία Location περιέχουν πλέον μόνο ρυθμίσεις τόπου και χρόνου.</string>
+    <string name="info_news_settings" formatted="false">Επιλέξτε αν θα συμπεριληφθεί η Location και θα συμπληρωθούν οι αυτόματες παράμετροι.</string>
+    <string name="info_news_catalog" formatted="false">Πιο συμπαγείς επιλογές εξαγωγής και υποστήριξη παλαιότερων μικτών αρχείων.</string>
 </resources>

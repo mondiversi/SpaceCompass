@@ -38,6 +38,14 @@ internal fun SpaceCompassSettingsMenuIcon(
     SpaceCompassIconCanvas(tint, modifier) { tint ->
         val strokeWidth = (iconStrokeWidth?.toPx() ?: maxOf(SpaceCompassMenuIconStrokeWidth.toPx(), size.minDimension * 0.08f)) * strokeScale
         when (route) {
+            "scene-export", "scene-import" -> {
+                fun line(ax: Float,ay: Float,bx: Float,by: Float) = drawLine(tint,
+                    Offset(size.width*ax,size.height*ay),Offset(size.width*bx,size.height*by),strokeWidth,StrokeCap.Round)
+                line(.18f,.68f,.18f,.88f);line(.18f,.88f,.82f,.88f);line(.82f,.88f,.82f,.68f)
+                line(.5f,.16f,.5f,.62f)
+                if (route=="scene-export") { line(.33f,.34f,.5f,.16f);line(.67f,.34f,.5f,.16f) }
+                else { line(.33f,.45f,.5f,.62f);line(.67f,.45f,.5f,.62f) }
+            }
             "capture" -> {
                 val outerRadius = size.minDimension * .39f
                 val apertureRadius = size.minDimension * .17f

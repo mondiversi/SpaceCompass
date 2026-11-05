@@ -132,9 +132,10 @@ internal class SpaceCompassTemporalComparisonState(
         }
     }
     fun restore(values: List<SpaceCompassTemporalComparison>?, active: String?,
-        moments: List<SpaceCompassPersonalMoment>? = null) {
+        moments: List<SpaceCompassPersonalMoment>? = null, replaceScene: Boolean = false) {
         if (values == null && moments == null) return
-        val merged = mergeSpaceCompassPersonalMoments(personalMoments, moments)
+        val merged = if (replaceScene && moments != null) spaceCompassScenePersonalMoments(personalMoments,moments)
+            else mergeSpaceCompassPersonalMoments(personalMoments, moments)
         if (values != null) {
             require(values.size <= 512 && values.distinctBy { it.id }.size == values.size)
             entries.filterNot { old -> values.any { it.id == old.id } }.forEach { points.removeComparison(it.id) }

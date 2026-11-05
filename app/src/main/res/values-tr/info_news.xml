@@ -1,9 +1,9 @@
 <resources>
     <string name="info_news_title">Son yenilikler · %1$s</string>
-    <string name="info_news_star_sky" formatted="false">Önemli Olaylarda, uzun Ay listeleri dahil daha akıcı kaydırma.</string>
-    <string name="info_news_texture_downloads" formatted="false">Önemli Yükseklikler uzun listeleri daha verimli görüntüler.</string>
-    <string name="info_news_weather" formatted="false">Kişisel Anlar kaydırma sırasında tekrarlanan biçimlendirmeyi önler.</string>
-    <string name="info_news_viewer_zoom" formatted="false">Her nesne geçerli oturum boyunca liste konumunu korur.</string>
-    <string name="info_news_settings" formatted="false">Geçici yükleme artık liste konumunu sıfırlamaz.</string>
-    <string name="info_news_catalog" formatted="false">Bu listelere göz atarken Gözlemevindeki gizli modelin güncellemeleri duraklatılır.</string>
+    <string name="info_news_star_sky" formatted="false">Geçerli Sahneyi ana menüden kaydedin ve paylaşın.</string>
+    <string name="info_news_texture_downloads" formatted="false">Sahneler seçili nesneleri, tarihli yolları, noktaları ve Antipotları korur.</string>
+    <string name="info_news_weather" formatted="false">Sahneyi etkin nesnesi ve görüntüleme seçimleriyle içe aktarın.</string>
+    <string name="info_news_viewer_zoom" formatted="false">Location dosyaları artık yalnızca yer ve zaman ayarlarını içerir.</string>
+    <string name="info_news_settings" formatted="false">Location bilgisinin eklenmesini ve otomatik parametrelerin tamamlanmasını seçin.</string>
+    <string name="info_news_catalog" formatted="false">Daha kompakt dışa aktarma seçenekleri ve önceki karma dosyalar için destek.</string>
 </resources>

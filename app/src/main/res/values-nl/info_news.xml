@@ -1,9 +1,9 @@
 <resources>
     <string name="info_news_title">Laatste nieuws · %1$s</string>
-    <string name="info_news_star_sky" formatted="false">Soepeler scrollen in Belangrijke gebeurtenissen, ook in lange maanlijsten.</string>
-    <string name="info_news_texture_downloads" formatted="false">Belangrijke hoogten tonen lange lijsten efficiënter.</string>
-    <string name="info_news_weather" formatted="false">Persoonlijke momenten vermijden herhaalde opmaak tijdens het scrollen.</string>
-    <string name="info_news_viewer_zoom" formatted="false">Elk object onthoudt zijn lijstpositie tijdens de huidige sessie.</string>
-    <string name="info_news_settings" formatted="false">Tijdelijk laden zet de lijstpositie niet meer terug.</string>
-    <string name="info_news_catalog" formatted="false">Het verborgen model in het Observatorium pauzeert updates terwijl je deze lijsten bekijkt.</string>
+    <string name="info_news_star_sky" formatted="false">Bewaar en deel de huidige scène via het hoofdmenu.</string>
+    <string name="info_news_texture_downloads" formatted="false">Scènes bewaren geselecteerde objecten, gedateerde banen, punten en antipoden.</string>
+    <string name="info_news_weather" formatted="false">Importeer een scène met het actieve object en de weergavekeuzes.</string>
+    <string name="info_news_viewer_zoom" formatted="false">Location-bestanden bevatten nu alleen plaats- en tijdinstellingen.</string>
+    <string name="info_news_settings" formatted="false">Kies of Location wordt opgenomen en automatische parameters worden aangevuld.</string>
+    <string name="info_news_catalog" formatted="false">Compactere exportopties en ondersteuning voor eerdere gemengde bestanden.</string>
 </resources>

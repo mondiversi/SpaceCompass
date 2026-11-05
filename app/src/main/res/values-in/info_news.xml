@@ -1,9 +1,9 @@
 <resources>
     <string name="info_news_title">Perubahan terbaru · %1$s</string>
-    <string name="info_news_star_sky" formatted="false">Pengguliran lebih lancar di Peristiwa penting, termasuk daftar Bulan yang panjang.</string>
-    <string name="info_news_texture_downloads" formatted="false">Ketinggian penting menampilkan daftar panjang dengan lebih efisien.</string>
-    <string name="info_news_weather" formatted="false">Momen pribadi menghindari pemformatan berulang saat menggulir.</string>
-    <string name="info_news_viewer_zoom" formatted="false">Setiap objek mempertahankan posisi daftarnya selama sesi saat ini.</string>
-    <string name="info_news_settings" formatted="false">Pemuatan sementara tidak lagi mengatur ulang posisi daftar.</string>
-    <string name="info_news_catalog" formatted="false">Pembaruan model tersembunyi di Observatorium dijeda saat Anda menjelajahi daftar ini.</string>
+    <string name="info_news_star_sky" formatted="false">Simpan dan bagikan Adegan saat ini dari menu utama.</string>
+    <string name="info_news_texture_downloads" formatted="false">Adegan menyimpan objek terpilih, lintasan bertanggal, titik dan Antipoda.</string>
+    <string name="info_news_weather" formatted="false">Impor Adegan dengan objek aktif dan pilihan tampilannya.</string>
+    <string name="info_news_viewer_zoom" formatted="false">Berkas Location kini hanya berisi pengaturan tempat dan waktu.</string>
+    <string name="info_news_settings" formatted="false">Pilih apakah menyertakan Location dan melengkapi parameter otomatis.</string>
+    <string name="info_news_catalog" formatted="false">Opsi ekspor lebih ringkas dan dukungan berkas campuran sebelumnya.</string>
 </resources>

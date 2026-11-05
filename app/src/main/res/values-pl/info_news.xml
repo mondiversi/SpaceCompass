@@ -1,9 +1,9 @@
 <resources>
     <string name="info_news_title">Ostatnie nowości · %1$s</string>
-    <string name="info_news_star_sky" formatted="false">Płynniejsze przewijanie Kluczowych wydarzeń, także długich list Księżyca.</string>
-    <string name="info_news_texture_downloads" formatted="false">Kluczowe wysokości wydajniej wyświetlają długie listy.</string>
-    <string name="info_news_weather" formatted="false">Osobiste momenty unikają ponownego formatowania podczas przewijania.</string>
-    <string name="info_news_viewer_zoom" formatted="false">Każdy obiekt zachowuje pozycję listy podczas bieżącej sesji.</string>
-    <string name="info_news_settings" formatted="false">Tymczasowe ładowanie nie resetuje już pozycji listy.</string>
-    <string name="info_news_catalog" formatted="false">Aktualizacje ukrytego modelu w Obserwatorium są wstrzymywane podczas przeglądania tych list.</string>
+    <string name="info_news_star_sky" formatted="false">Zapisuj i udostępniaj bieżącą Scenę z menu głównego.</string>
+    <string name="info_news_texture_downloads" formatted="false">Sceny zachowują wybrane obiekty, datowane trasy, punkty i Antypody.</string>
+    <string name="info_news_weather" formatted="false">Importuj Scenę z aktywnym obiektem i opcjami wyświetlania.</string>
+    <string name="info_news_viewer_zoom" formatted="false">Pliki Location zawierają teraz tylko ustawienia miejsca i czasu.</string>
+    <string name="info_news_settings" formatted="false">Wybierz, czy dołączyć Location i uzupełnić parametry automatyczne.</string>
+    <string name="info_news_catalog" formatted="false">Bardziej zwarte opcje eksportu i obsługa wcześniejszych plików mieszanych.</string>
 </resources>
