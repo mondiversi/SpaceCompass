@@ -1,9 +1,9 @@
 <resources>
     <string name="info_news_title">最近の変更 · %1$s</string>
-    <string name="info_news_star_sky" formatted="false">空の何もない場所をタップすると、照準を表示または非表示にできます。</string>
-    <string name="info_news_texture_downloads" formatted="false">ダブルタップで、空の画面や写真・パノラマのプレビューの操作ボタンを表示または非表示にできます。</string>
-    <string name="info_news_weather" formatted="false">ロケーションとパーソナルモーメントに専用のエクスポート画面ができました。</string>
-    <string name="info_news_viewer_zoom" formatted="false">パーソナルモーメントを、インポート可能なファイルまたはCSVとしてエクスポートできます。</string>
-    <string name="info_news_settings" formatted="false">すべての天体、または表示中の天体のモーメントをエクスポートできます。選択済みのものだけに絞ることもできます。</string>
-    <string name="info_news_catalog" formatted="false">ファイル名の候補には、エクスポートで選んだ言語と書式が使われます。</string>
+    <string name="info_news_star_sky" formatted="false">主要イベントのスクロールが滑らかになり、月の長い一覧も快適に閲覧できます。</string>
+    <string name="info_news_texture_downloads" formatted="false">主要高度の長い一覧をより効率的に表示します。</string>
+    <string name="info_news_weather" formatted="false">個人の瞬間ではスクロール中の繰り返し整形を抑えます。</string>
+    <string name="info_news_viewer_zoom" formatted="false">現在のセッション中は天体ごとに一覧の位置を保持します。</string>
+    <string name="info_news_settings" formatted="false">一時的な読み込みで一覧の位置がリセットされなくなりました。</string>
+    <string name="info_news_catalog" formatted="false">これらの一覧を閲覧中は、天文台の非表示モデルの更新を一時停止します。</string>
 </resources>

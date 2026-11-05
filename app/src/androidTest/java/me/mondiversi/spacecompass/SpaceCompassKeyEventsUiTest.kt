@@ -72,6 +72,34 @@ class SpaceCompassKeyEventsUiTest {
         assertTrue(rowY(2) < rowY(0) && rowY(0) < rowY(1))
         checkbox(2).assertIsOn()
     }
+    @Test fun aLongListRetainsItsScrollPositionAcrossAPlaceholder() {
+        state.apply(prepared)
+        val body = SpaceCompassCelestialBody.MOON
+        val events = List(80) { index ->
+            SpaceCompassKeyEvent(SpaceCompassKeyEventKind.FULL_MOON, instant + index * 86_400_000L, 42.0)
+        }
+        val loaded = SpaceCompassKeyEventsUiState(events, complete = true, hasLocation = true)
+        val result = mutableStateOf(loaded)
+        compose.setContent {
+            CompositionLocalProvider(LocalSpaceCompassObserver provides state) {
+                MaterialTheme {
+                    SpaceCompassKeyEventsPage(body, instant, 28.3, -14.1, 1000.0,
+                        SpaceCompassCelestialRemoteData(), result.value, onBack = {})
+                }
+            }
+        }
+
+        val target = "key-event-row-55"
+        compose.onNodeWithTag(target).assertDoesNotExist()
+        compose.onNodeWithTag("key-events-list").performScrollToNode(hasTestTag(target))
+        val row = compose.onNodeWithTag(target).assertIsDisplayed()
+        val position = row.fetchSemanticsNode().boundsInRoot.top
+        compose.runOnIdle { result.value = loaded.copy(events = null, complete = false) }
+        compose.onNodeWithTag("key-events-loading").assertIsDisplayed()
+        compose.runOnIdle { result.value = loaded }
+        assertEquals(position, row.assertIsDisplayed().fetchSemanticsNode().boundsInRoot.top, .5f)
+    }
+
     @Test fun staleEventsKeepTheirValuesButCannotAddComparisonsWhileRefreshing() {
         show(false,true)
         compose.onNodeWithTag("key-events-loading").assertIsDisplayed()

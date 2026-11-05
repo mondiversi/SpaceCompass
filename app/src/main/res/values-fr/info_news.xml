@@ -1,9 +1,9 @@
 <resources>
     <string name="info_news_title">Dernières nouveautés · %1$s</string>
-    <string name="info_news_star_sky" formatted="false">Touchez une zone vide du ciel pour afficher ou masquer le réticule.</string>
-    <string name="info_news_texture_downloads" formatted="false">Touchez deux fois pour afficher ou masquer les commandes dans la vue du ciel et dans les aperçus de photos et de panoramas.</string>
-    <string name="info_news_weather" formatted="false">Lieu et Moments personnels disposent désormais d’un écran d’exportation dédié.</string>
-    <string name="info_news_viewer_zoom" formatted="false">Exportez vos moments personnels dans un fichier importable ou un tableur CSV.</string>
-    <string name="info_news_settings" formatted="false">Exportez les moments de tous les objets ou de l’objet affiché. Vous pouvez limiter l’exportation aux moments sélectionnés.</string>
-    <string name="info_news_catalog" formatted="false">Les noms de fichiers proposés suivent la langue et les formats choisis pour l’exportation.</string>
+    <string name="info_news_star_sky" formatted="false">Défilement plus fluide dans les Événements clés, même pour les longues listes lunaires.</string>
+    <string name="info_news_texture_downloads" formatted="false">Les Hauteurs clés affichent les longues listes plus efficacement.</string>
+    <string name="info_news_weather" formatted="false">Les Moments personnels évitent les mises en forme répétées pendant le défilement.</string>
+    <string name="info_news_viewer_zoom" formatted="false">Chaque objet conserve la position de sa liste pendant la session en cours.</string>
+    <string name="info_news_settings" formatted="false">Les chargements temporaires ne réinitialisent plus la position de la liste.</string>
+    <string name="info_news_catalog" formatted="false">Le modèle masqué de l’Observatoire suspend ses mises à jour pendant la consultation de ces listes.</string>
 </resources>

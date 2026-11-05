@@ -35,6 +35,7 @@ internal fun SpaceCompassPersonalMomentsPage(body: SpaceCompassCelestialBody, ti
     val secondary = MaterialTheme.colorScheme.onSurfaceVariant
     val formatting = rememberSpaceCompassDataExportProfiles().selected.formatting
     val utc = remember { TimeZone.getTimeZone("UTC") }
+    val stamps = remember(moments, formatting) { mutableMapOf<String, String>() }
     var add by rememberSaveable(body) { mutableStateOf(false) }
     var deleteId by rememberSaveable(body) { mutableStateOf<String?>(null) }
     val transfer = rememberSpaceCompassPersonalMomentTransfer(body, state)
@@ -70,7 +71,7 @@ internal fun SpaceCompassPersonalMomentsPage(body: SpaceCompassCelestialBody, ti
             } else LazyColumn(Modifier.fillMaxSize(), state = listState, contentPadding = PaddingValues(horizontal = 10.dp, vertical = 8.dp)) {
                 itemsIndexed(moments, key = { _, moment -> moment.id }) { index, moment ->
                     if (index > 0) HorizontalDivider(color = secondary.copy(alpha = .18f))
-                    val stamp = remember(moment.date, moment.time, formatting) {
+                    val stamp = stamps.getOrPut(moment.id) {
                         val time = moment.date.atTime(moment.time ?: LocalTime.NOON).toInstant(ZoneOffset.UTC).toEpochMilli()
                         val dateText = formatSpaceCompassDateOnly(time, formatting.date, formatting.deviceLocale,
                             utc, formatting.numeric, formatting.deviceLocale, allowHistorical = true)

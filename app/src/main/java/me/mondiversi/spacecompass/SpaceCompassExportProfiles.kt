@@ -30,12 +30,15 @@ internal fun rememberSpaceCompassDataExportProfiles(): SpaceCompassDataExportPro
     val international=remember(context,configuration) { context.createConfigurationContext(Configuration(configuration).apply {
         setLocale(spaceCompassPanoramaExportLocale);setLayoutDirection(spaceCompassPanoramaExportLocale)
     }).resources.spaceCompassTextResources() }
-    val units=LocalSpaceCompassUnits.current
-    val selected=SpaceCompassDataExportProfile(SpaceCompassPanoramaFormatting(configuration.locales[0],
-        LocalSpaceCompassNumericFormat.current,LocalSpaceCompassDateFormat.current,LocalSpaceCompassTimeFormat.current,
-        units.feet,units.dms,LocalSpaceCompassDeviceLocale.current),units,resources.spaceCompassTextResources())
-    return SpaceCompassDataExportProfiles(selected,SpaceCompassDataExportProfile(spaceCompassPanoramaInternationalFormatting,
-        SpaceCompassUnits(pressure=SpaceCompassPressureUnit.PASCAL),international))
+    val units = LocalSpaceCompassUnits.current
+    val formatting = SpaceCompassPanoramaFormatting(configuration.locales[0], LocalSpaceCompassNumericFormat.current,
+        LocalSpaceCompassDateFormat.current, LocalSpaceCompassTimeFormat.current, units.feet, units.dms,
+        LocalSpaceCompassDeviceLocale.current)
+    return remember(resources, configuration, formatting, units, international) {
+        SpaceCompassDataExportProfiles(SpaceCompassDataExportProfile(formatting, units, resources.spaceCompassTextResources()),
+            SpaceCompassDataExportProfile(spaceCompassPanoramaInternationalFormatting,
+                SpaceCompassUnits(pressure = SpaceCompassPressureUnit.PASCAL), international))
+    }
 }
 
 internal fun spaceCompassOrbitExportVocabulary(resources: SpaceCompassTextResources) = SpaceCompassOrbitExportVocabulary(

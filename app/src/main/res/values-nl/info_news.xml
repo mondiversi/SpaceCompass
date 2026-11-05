@@ -1,9 +1,9 @@
 <resources>
     <string name="info_news_title">Laatste nieuws · %1$s</string>
-    <string name="info_news_star_sky" formatted="false">Tik op een leeg deel van de hemel om het vizier te tonen of te verbergen.</string>
-    <string name="info_news_texture_downloads" formatted="false">Tik twee keer om de bediening te tonen of te verbergen in de hemelweergave en in voorbeelden van foto’s en panorama’s.</string>
-    <string name="info_news_weather" formatted="false">Locatie en Persoonlijke momenten hebben nu een eigen exportscherm.</string>
-    <string name="info_news_viewer_zoom" formatted="false">Exporteer persoonlijke momenten als importeerbaar bestand of CSV-spreadsheet.</string>
-    <string name="info_news_settings" formatted="false">Exporteer momenten van alle objecten of alleen van het huidige object. Je kunt ook alleen geselecteerde momenten opnemen.</string>
-    <string name="info_news_catalog" formatted="false">Voorgestelde bestandsnamen volgen de taal en notaties die je voor de export kiest.</string>
+    <string name="info_news_star_sky" formatted="false">Soepeler scrollen in Belangrijke gebeurtenissen, ook in lange maanlijsten.</string>
+    <string name="info_news_texture_downloads" formatted="false">Belangrijke hoogten tonen lange lijsten efficiënter.</string>
+    <string name="info_news_weather" formatted="false">Persoonlijke momenten vermijden herhaalde opmaak tijdens het scrollen.</string>
+    <string name="info_news_viewer_zoom" formatted="false">Elk object onthoudt zijn lijstpositie tijdens de huidige sessie.</string>
+    <string name="info_news_settings" formatted="false">Tijdelijk laden zet de lijstpositie niet meer terug.</string>
+    <string name="info_news_catalog" formatted="false">Het verborgen model in het Observatorium pauzeert updates terwijl je deze lijsten bekijkt.</string>
 </resources>

@@ -1,9 +1,9 @@
 <resources>
     <string name="info_news_title">Neuigkeiten · %1$s</string>
-    <string name="info_news_star_sky" formatted="false">Tippe auf den freien Himmel, um das Fadenkreuz ein- oder auszublenden.</string>
-    <string name="info_news_texture_downloads" formatted="false">Tippe doppelt, um die Bedienelemente in der Himmelsansicht und der Foto- und Panoramavorschau ein- oder auszublenden.</string>
-    <string name="info_news_weather" formatted="false">Standort und persönliche Momente haben nun eine eigene Exportansicht.</string>
-    <string name="info_news_viewer_zoom" formatted="false">Exportiere persönliche Momente als importierbare Datei oder CSV-Tabelle.</string>
-    <string name="info_news_settings" formatted="false">Exportiere Momente aller Objekte oder nur des aktuellen Objekts. Du kannst den Export auf ausgewählte Momente beschränken.</string>
-    <string name="info_news_catalog" formatted="false">Vorgeschlagene Dateinamen verwenden die Sprache und Formate des Exports.</string>
+    <string name="info_news_star_sky" formatted="false">Flüssigeres Scrollen in Schlüsselereignissen, auch in langen Mondlisten.</string>
+    <string name="info_news_texture_downloads" formatted="false">Schlüsselhöhen zeigen lange Listen effizienter an.</string>
+    <string name="info_news_weather" formatted="false">Persönliche Momente vermeiden wiederholte Formatierungen beim Scrollen.</string>
+    <string name="info_news_viewer_zoom" formatted="false">Jedes Objekt behält seine Listenposition während der aktuellen Sitzung.</string>
+    <string name="info_news_settings" formatted="false">Vorübergehendes Laden setzt die Listenposition nicht mehr zurück.</string>
+    <string name="info_news_catalog" formatted="false">Verdeckte Modellaktualisierungen im Observatorium pausieren beim Durchsehen dieser Listen.</string>
 </resources>

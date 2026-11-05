@@ -1,9 +1,9 @@
 <resources>
     <string name="info_news_title">हाल के बदलाव · %1$s</string>
-    <string name="info_news_star_sky" formatted="false">निशाना दिखाने या छिपाने के लिए आकाश की खाली जगह पर टैप करें।</string>
-    <string name="info_news_texture_downloads" formatted="false">आकाश दृश्य और फ़ोटो व पैनोरमा के पूर्वावलोकन में नियंत्रण दिखाने या छिपाने के लिए दो बार टैप करें।</string>
-    <string name="info_news_weather" formatted="false">स्थान और निजी पलों को निर्यात करने के लिए अब अलग स्क्रीन है।</string>
-    <string name="info_news_viewer_zoom" formatted="false">निजी पल आयात करने योग्य फ़ाइल या CSV स्प्रेडशीट के रूप में निर्यात करें।</string>
-    <string name="info_news_settings" formatted="false">सभी पिंडों या सिर्फ़ मौजूदा पिंड के पल निर्यात करें। आप सिर्फ़ चुने हुए पल शामिल कर सकते हैं।</string>
-    <string name="info_news_catalog" formatted="false">सुझाए गए फ़ाइल नाम निर्यात के लिए चुनी गई भाषा और प्रारूपों का पालन करते हैं।</string>
+    <string name="info_news_star_sky" formatted="false">प्रमुख घटनाओं में अधिक सहज स्क्रॉलिंग, चंद्रमा की लंबी सूचियों में भी।</string>
+    <string name="info_news_texture_downloads" formatted="false">प्रमुख ऊँचाइयाँ लंबी सूचियों को अधिक कुशलता से दिखाती हैं।</string>
+    <string name="info_news_weather" formatted="false">व्यक्तिगत क्षण स्क्रॉल करते समय बार-बार फ़ॉर्मैट करने से बचते हैं।</string>
+    <string name="info_news_viewer_zoom" formatted="false">हर खगोलीय पिंड मौजूदा सत्र के दौरान अपनी सूची की स्थिति बनाए रखता है।</string>
+    <string name="info_news_settings" formatted="false">अस्थायी लोडिंग अब सूची की स्थिति रीसेट नहीं करती।</string>
+    <string name="info_news_catalog" formatted="false">इन सूचियों को देखते समय वेधशाला में छिपे मॉडल के अपडेट रुक जाते हैं।</string>
 </resources>

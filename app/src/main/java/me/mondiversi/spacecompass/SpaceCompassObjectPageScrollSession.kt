@@ -2,6 +2,7 @@ package me.mondiversi.spacecompass
 
 import androidx.activity.compose.LocalActivity
 import androidx.compose.foundation.ScrollState
+import androidx.compose.foundation.lazy.LazyListState
 import androidx.compose.runtime.*
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
@@ -11,7 +12,8 @@ import kotlinx.coroutines.flow.collect
 internal enum class SpaceCompassObjectPage { OBSERVATORY, DAILY_PATH, SKY_HEIGHTS, KEY_EVENTS }
 
 internal class SpaceCompassObjectPageScrollEntry(val contentKey: Any? = null) {
-    val scroll = ScrollState(0)
+    val scroll by lazy { ScrollState(0) }
+    val lazyScroll by lazy { LazyListState() }
     val position = SpaceCompassObjectPageScrollPosition()
     var headerVisible = true
     var visited = false
@@ -52,11 +54,17 @@ internal fun rememberSpaceCompassObjectPageScrollSession(): SpaceCompassObjectPa
 }
 
 @Composable
-internal fun rememberSpaceCompassObjectPageScroll(body: SpaceCompassCelestialBody,
+internal fun rememberSpaceCompassObjectPageVisit(body: SpaceCompassCelestialBody,
     page: SpaceCompassObjectPage, contentKey: Any? = null): SpaceCompassObjectPageScrollVisit {
     val fallback = remember { SpaceCompassObjectPageScrollSession() }
     val session = LocalSpaceCompassObjectPageScrollSession.current ?: fallback
-    val visit = remember(session, body, page, contentKey) { session.open(body, page, contentKey) }
+    return remember(session, body, page, contentKey) { session.open(body, page, contentKey) }
+}
+
+@Composable
+internal fun rememberSpaceCompassObjectPageScroll(body: SpaceCompassCelestialBody,
+    page: SpaceCompassObjectPage, contentKey: Any? = null): SpaceCompassObjectPageScrollVisit {
+    val visit = rememberSpaceCompassObjectPageVisit(body, page, contentKey)
     val entry = visit.entry
     LaunchedEffect(entry) {
         snapshotFlow { Triple(entry.scroll.value, entry.scroll.maxValue, entry.scroll.isScrollInProgress) }

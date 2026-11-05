@@ -1,9 +1,9 @@
 <resources>
     <string name="info_news_title">Последние новости · %1$s</string>
-    <string name="info_news_star_sky" formatted="false">Коснитесь пустого участка неба, чтобы показать или скрыть прицел.</string>
-    <string name="info_news_texture_downloads" formatted="false">Дважды коснитесь экрана, чтобы показать или скрыть кнопки в режиме неба и при просмотре снимков и панорам.</string>
-    <string name="info_news_weather" formatted="false">Для местоположения и личных моментов появился отдельный экран экспорта.</string>
-    <string name="info_news_viewer_zoom" formatted="false">Экспортируйте личные моменты в файл для импорта или в таблицу CSV.</string>
-    <string name="info_news_settings" formatted="false">Экспортируйте моменты всех объектов или только текущего. Можно включить только отмеченные моменты.</string>
-    <string name="info_news_catalog" formatted="false">Предлагаемые имена файлов используют язык и форматы, выбранные для экспорта.</string>
+    <string name="info_news_star_sky" formatted="false">Более плавная прокрутка Ключевых событий, включая длинные списки Луны.</string>
+    <string name="info_news_texture_downloads" formatted="false">Ключевые высоты эффективнее отображают длинные списки.</string>
+    <string name="info_news_weather" formatted="false">Личные моменты избегают повторного форматирования при прокрутке.</string>
+    <string name="info_news_viewer_zoom" formatted="false">Каждый объект сохраняет положение списка в течение текущего сеанса.</string>
+    <string name="info_news_settings" formatted="false">Временная загрузка больше не сбрасывает положение списка.</string>
+    <string name="info_news_catalog" formatted="false">Обновления скрытой модели в Обсерватории приостанавливаются при просмотре этих списков.</string>
 </resources>

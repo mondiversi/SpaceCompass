@@ -1,9 +1,9 @@
 <resources>
     <string name="info_news_title">Τελευταία νέα · %1$s</string>
-    <string name="info_news_star_sky" formatted="false">Πατήστε σε κενό σημείο του ουρανού για να εμφανίσετε ή να αποκρύψετε το στόχαστρο.</string>
-    <string name="info_news_texture_downloads" formatted="false">Πατήστε δύο φορές για εμφάνιση ή απόκρυψη των χειριστηρίων στον ουρανό και στην προεπισκόπηση φωτογραφιών και πανοραμάτων.</string>
-    <string name="info_news_weather" formatted="false">Η τοποθεσία και οι προσωπικές στιγμές έχουν πλέον ξεχωριστή οθόνη εξαγωγής.</string>
-    <string name="info_news_viewer_zoom" formatted="false">Εξαγάγετε τις προσωπικές στιγμές ως αρχείο με δυνατότητα εισαγωγής ή ως φύλλο CSV.</string>
-    <string name="info_news_settings" formatted="false">Εξαγάγετε στιγμές από όλα τα αντικείμενα ή μόνο από το τρέχον. Μπορείτε να συμπεριλάβετε μόνο τις επιλεγμένες στιγμές.</string>
-    <string name="info_news_catalog" formatted="false">Τα προτεινόμενα ονόματα αρχείων ακολουθούν τη γλώσσα και τις μορφές εξαγωγής που επιλέγετε.</string>
+    <string name="info_news_star_sky" formatted="false">Ομαλότερη κύλιση στα Βασικά γεγονότα, ακόμη και στις μεγάλες λίστες της Σελήνης.</string>
+    <string name="info_news_texture_downloads" formatted="false">Τα Βασικά ύψη εμφανίζουν μεγάλες λίστες πιο αποδοτικά.</string>
+    <string name="info_news_weather" formatted="false">Οι Προσωπικές στιγμές αποφεύγουν την επαναλαμβανόμενη μορφοποίηση κατά την κύλιση.</string>
+    <string name="info_news_viewer_zoom" formatted="false">Κάθε αντικείμενο διατηρεί τη θέση της λίστας στην τρέχουσα συνεδρία.</string>
+    <string name="info_news_settings" formatted="false">Η προσωρινή φόρτωση δεν επαναφέρει πλέον τη θέση της λίστας.</string>
+    <string name="info_news_catalog" formatted="false">Οι ενημερώσεις του κρυμμένου μοντέλου στο Παρατηρητήριο παύουν όσο περιηγείστε σε αυτές τις λίστες.</string>
 </resources>

@@ -8,8 +8,8 @@ paths, inspect reference facts and view textured models. Space Compass is a stan
 
 ## Download and install
 
-Download **space-compass-1.8.2.apk** from the
-[Space Compass 1.8.2 release](https://github.com/mondiversi/SpaceCompass/releases/tag/v1.8.2).
+Download **space-compass-1.8.3.apk** from the
+[Space Compass 1.8.3 release](https://github.com/mondiversi/SpaceCompass/releases/tag/v1.8.3).
 Android 8.0 or newer is required. Open the APK and follow Android's installation
 prompts; allow installation for your browser or file manager if requested.
 
@@ -167,7 +167,7 @@ Launcher/loading artwork and original illustrations are project assets.
 
 ## Data and graphics packages
 
-Release 1.8.2 includes **9,999 selectable objects**, and an optional reference-information archive.
+Release 1.8.3 includes **9,999 selectable objects**, and an optional reference-information archive.
 All descriptive data and translations remain inside the APK. Scientific limits and provenance are in the
 [catalogue sources](docs/CATALOG_9999.md) and [canonical source catalogue](catalogue/README.md).
 

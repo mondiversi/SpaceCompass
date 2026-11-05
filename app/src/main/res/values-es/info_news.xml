@@ -1,9 +1,9 @@
 <resources>
     <string name="info_news_title">Últimas novedades · %1$s</string>
-    <string name="info_news_star_sky" formatted="false">Toca una zona vacía del cielo para mostrar u ocultar la mira.</string>
-    <string name="info_news_texture_downloads" formatted="false">Toca dos veces para mostrar u ocultar los controles en el cielo y en la vista previa de fotos y panorámicas.</string>
-    <string name="info_news_weather" formatted="false">Ubicación y Momentos personales tienen ahora una pantalla de exportación propia.</string>
-    <string name="info_news_viewer_zoom" formatted="false">Exporta los momentos personales como archivo importable o como hoja de cálculo CSV.</string>
-    <string name="info_news_settings" formatted="false">Exporta momentos de todos los objetos o solo del actual. Puedes incluir únicamente los momentos seleccionados.</string>
-    <string name="info_news_catalog" formatted="false">Los nombres sugeridos usan el idioma y los formatos que elijas para exportar.</string>
+    <string name="info_news_star_sky" formatted="false">Desplazamiento más fluido en Eventos clave, incluso en las largas listas de la Luna.</string>
+    <string name="info_news_texture_downloads" formatted="false">Las Alturas clave muestran las listas largas con mayor eficiencia.</string>
+    <string name="info_news_weather" formatted="false">Los Momentos personales evitan repetir el formato durante el desplazamiento.</string>
+    <string name="info_news_viewer_zoom" formatted="false">Cada objeto conserva la posición de su lista durante la sesión actual.</string>
+    <string name="info_news_settings" formatted="false">Las cargas temporales ya no restablecen la posición de la lista.</string>
+    <string name="info_news_catalog" formatted="false">El modelo oculto del Observatorio pausa sus actualizaciones mientras exploras estas listas.</string>
 </resources>

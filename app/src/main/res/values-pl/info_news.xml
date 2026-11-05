@@ -1,9 +1,9 @@
 <resources>
     <string name="info_news_title">Ostatnie nowości · %1$s</string>
-    <string name="info_news_star_sky" formatted="false">Stuknij puste miejsce na niebie, aby pokazać lub ukryć celownik.</string>
-    <string name="info_news_texture_downloads" formatted="false">Stuknij dwukrotnie, aby pokazać lub ukryć elementy sterujące na niebie oraz w podglądzie zdjęć i panoram.</string>
-    <string name="info_news_weather" formatted="false">Lokalizacja i chwile osobiste mają teraz osobny ekran eksportu.</string>
-    <string name="info_news_viewer_zoom" formatted="false">Eksportuj chwile osobiste jako plik do zaimportowania lub arkusz CSV.</string>
-    <string name="info_news_settings" formatted="false">Eksportuj chwile wszystkich obiektów lub tylko bieżącego. Możesz też uwzględnić wyłącznie zaznaczone chwile.</string>
-    <string name="info_news_catalog" formatted="false">Sugerowane nazwy plików odpowiadają językowi i formatom wybranym do eksportu.</string>
+    <string name="info_news_star_sky" formatted="false">Płynniejsze przewijanie Kluczowych wydarzeń, także długich list Księżyca.</string>
+    <string name="info_news_texture_downloads" formatted="false">Kluczowe wysokości wydajniej wyświetlają długie listy.</string>
+    <string name="info_news_weather" formatted="false">Osobiste momenty unikają ponownego formatowania podczas przewijania.</string>
+    <string name="info_news_viewer_zoom" formatted="false">Każdy obiekt zachowuje pozycję listy podczas bieżącej sesji.</string>
+    <string name="info_news_settings" formatted="false">Tymczasowe ładowanie nie resetuje już pozycji listy.</string>
+    <string name="info_news_catalog" formatted="false">Aktualizacje ukrytego modelu w Obserwatorium są wstrzymywane podczas przeglądania tych list.</string>
 </resources>

@@ -1,9 +1,9 @@
 <resources>
     <string name="info_news_title">Mambo mapya · %1$s</string>
-    <string name="info_news_star_sky" formatted="false">Gusa sehemu tupu ya anga ili kuonyesha au kuficha kilenga.</string>
-    <string name="info_news_texture_downloads" formatted="false">Gusa mara mbili ili kuonyesha au kuficha vidhibiti katika mwonekano wa anga na katika hakiki za picha na panorama.</string>
-    <string name="info_news_weather" formatted="false">Eneo na Nyakati binafsi sasa zina skrini maalumu za kuhamisha faili.</string>
-    <string name="info_news_viewer_zoom" formatted="false">Hamisha nyakati binafsi kama faili inayoweza kuingizwa au kama lahajedwali la CSV.</string>
-    <string name="info_news_settings" formatted="false">Hamisha nyakati za vitu vyote au za kitu cha sasa pekee. Unaweza kujumuisha nyakati zilizochaguliwa pekee.</string>
-    <string name="info_news_catalog" formatted="false">Majina yanayopendekezwa ya faili hufuata lugha na miundo uliyochagua kwa uhamishaji.</string>
+    <string name="info_news_star_sky" formatted="false">Usogezaji laini zaidi katika Matukio muhimu, hata kwenye orodha ndefu za Mwezi.</string>
+    <string name="info_news_texture_downloads" formatted="false">Miinuko muhimu huonyesha orodha ndefu kwa ufanisi zaidi.</string>
+    <string name="info_news_weather" formatted="false">Nyakati binafsi huepuka kurudia uumbizaji wakati wa kusogeza.</string>
+    <string name="info_news_viewer_zoom" formatted="false">Kila gimba huhifadhi nafasi ya orodha yake katika kipindi cha sasa.</string>
+    <string name="info_news_settings" formatted="false">Upakiaji wa muda hauweki tena nafasi ya orodha upya.</string>
+    <string name="info_news_catalog" formatted="false">Masasisho ya modeli iliyofichwa katika Kitazamio husitishwa unapovinjari orodha hizi.</string>
 </resources>

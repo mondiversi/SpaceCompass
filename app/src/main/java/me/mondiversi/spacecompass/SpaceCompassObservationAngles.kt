@@ -5,6 +5,7 @@ import androidx.compose.foundation.layout.*
 import androidx.compose.material3.HorizontalDivider
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.remember
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.geometry.Offset
@@ -57,7 +58,7 @@ internal fun SpaceCompassObservationAngles(azimuth: Double?, elevation: Double?,
 @Composable
 private fun SpaceCompassObservationAngle(value: Double?, azimuth: Boolean,
     formatting: SpaceCompassPanoramaFormatting, color: Color, tag: String) {
-    val text = value?.let { formatSpaceCompassPanoramaElevation(it, formatting) + "°" } ?: "—"
+    val text = remember(value, formatting) { value?.let { formatSpaceCompassPanoramaElevation(it, formatting) + "°" } ?: "—" }
     val description = stringResource(if (azimuth) R.string.celestial_point_azimuth else R.string.celestial_point_elevation, text)
     Row(Modifier.testTag(tag).clearAndSetSemantics { contentDescription = description },
         verticalAlignment = Alignment.CenterVertically, horizontalArrangement = Arrangement.spacedBy(3.dp)) {

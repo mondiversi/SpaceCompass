@@ -1,9 +1,9 @@
 <resources>
     <string name="info_news_title">החידושים האחרונים · %1$s</string>
-    <string name="info_news_star_sky" formatted="false">הקישו על אזור ריק בשמיים כדי להציג או להסתיר את הכוונת.</string>
-    <string name="info_news_texture_downloads" formatted="false">הקישו פעמיים כדי להציג או להסתיר את הפקדים בתצוגת השמיים ובתצוגה המקדימה של תמונות ופנורמות.</string>
-    <string name="info_news_weather" formatted="false">למיקום ולרגעים אישיים יש כעת מסך ייצוא ייעודי.</string>
-    <string name="info_news_viewer_zoom" formatted="false">ייצאו רגעים אישיים כקובץ הניתן לייבוא או כגיליון CSV.</string>
-    <string name="info_news_settings" formatted="false">ייצאו רגעים מכל העצמים או רק מהעצם הנוכחי. אפשר לכלול רק את הרגעים שנבחרו.</string>
-    <string name="info_news_catalog" formatted="false">שמות הקבצים המוצעים משתמשים בשפה ובתבניות שבחרתם לייצוא.</string>
+    <string name="info_news_star_sky" formatted="false">גלילה חלקה יותר באירועי מפתח, כולל רשימות ארוכות של הירח.</string>
+    <string name="info_news_texture_downloads" formatted="false">גבהי מפתח מציגים רשימות ארוכות ביעילות רבה יותר.</string>
+    <string name="info_news_weather" formatted="false">רגעים אישיים נמנעים מעיצוב חוזר בזמן הגלילה.</string>
+    <string name="info_news_viewer_zoom" formatted="false">כל גרם שמיים שומר את מיקום הרשימה במהלך ההפעלה הנוכחית.</string>
+    <string name="info_news_settings" formatted="false">טעינה זמנית אינה מאפסת עוד את מיקום הרשימה.</string>
+    <string name="info_news_catalog" formatted="false">עדכוני המודל המוסתר במצפה מושהים בזמן העיון ברשימות אלה.</string>
 </resources>

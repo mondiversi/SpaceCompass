@@ -1,9 +1,9 @@
 <resources>
     <string name="info_news_title">آخر المستجدات · %1$s</string>
-    <string name="info_news_star_sky" formatted="false">انقر على مساحة فارغة من السماء لإظهار علامة التصويب أو إخفائها.</string>
-    <string name="info_news_texture_downloads" formatted="false">انقر مرتين لإظهار أدوات التحكم أو إخفائها في عرض السماء ومعاينات الصور والصور البانورامية.</string>
-    <string name="info_news_weather" formatted="false">أصبح للموقع واللحظات الشخصية شاشة مخصصة للتصدير.</string>
-    <string name="info_news_viewer_zoom" formatted="false">صدّر اللحظات الشخصية كملف قابل للاستيراد أو جدول بيانات CSV.</string>
-    <string name="info_news_settings" formatted="false">صدّر لحظات جميع الأجرام أو الجرم الحالي فقط. يمكنك تضمين اللحظات المحددة فقط.</string>
-    <string name="info_news_catalog" formatted="false">تتبع أسماء الملفات المقترحة اللغة والتنسيقات التي تختارها للتصدير.</string>
+    <string name="info_news_star_sky" formatted="false">تمرير أكثر سلاسة في الأحداث الرئيسية، بما في ذلك قوائم القمر الطويلة.</string>
+    <string name="info_news_texture_downloads" formatted="false">تعرض الارتفاعات الرئيسية القوائم الطويلة بكفاءة أكبر.</string>
+    <string name="info_news_weather" formatted="false">تتجنب اللحظات الشخصية تكرار التنسيق أثناء التمرير.</string>
+    <string name="info_news_viewer_zoom" formatted="false">يحتفظ كل جرم بموضع قائمته خلال الجلسة الحالية.</string>
+    <string name="info_news_settings" formatted="false">لم يعد التحميل المؤقت يعيد تعيين موضع القائمة.</string>
+    <string name="info_news_catalog" formatted="false">تتوقف تحديثات النموذج المخفي في المرصد مؤقتًا أثناء تصفح هذه القوائم.</string>
 </resources>

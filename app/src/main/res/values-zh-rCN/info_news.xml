@@ -1,9 +1,9 @@
 <resources>
     <string name="info_news_title">最新变化 · %1$s</string>
-    <string name="info_news_star_sky" formatted="false">点按天空空白处可显示或隐藏准星。</string>
-    <string name="info_news_texture_downloads" formatted="false">双击可在天空视图及照片和全景预览中显示或隐藏操作按钮。</string>
-    <string name="info_news_weather" formatted="false">位置和个人时刻现在有专门的导出页面。</string>
-    <string name="info_news_viewer_zoom" formatted="false">可将个人时刻导出为可导入的文件或 CSV 表格。</string>
-    <string name="info_news_settings" formatted="false">可以导出所有天体或仅当前天体的时刻，也可以只包含已选中的时刻。</string>
-    <string name="info_news_catalog" formatted="false">建议的文件名会使用所选的导出语言和格式。</string>
+    <string name="info_news_star_sky" formatted="false">关键事件滚动更加流畅，包括较长的月球列表。</string>
+    <string name="info_news_texture_downloads" formatted="false">关键高度可更高效地显示长列表。</string>
+    <string name="info_news_weather" formatted="false">个人时刻在滚动时避免重复格式化。</string>
+    <string name="info_news_viewer_zoom" formatted="false">每个天体都会在当前会话中保留列表位置。</string>
+    <string name="info_news_settings" formatted="false">临时加载不再重置列表位置。</string>
+    <string name="info_news_catalog" formatted="false">浏览这些列表时，天文台中隐藏的模型会暂停更新。</string>
 </resources>

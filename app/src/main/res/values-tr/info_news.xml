@@ -1,9 +1,9 @@
 <resources>
     <string name="info_news_title">Son yenilikler · %1$s</string>
-    <string name="info_news_star_sky" formatted="false">Nişangâhı göstermek veya gizlemek için gökyüzündeki boş bir alana dokunun.</string>
-    <string name="info_news_texture_downloads" formatted="false">Gökyüzü görünümünde ve fotoğraf ile panorama önizlemelerinde kontrolleri göstermek veya gizlemek için iki kez dokunun.</string>
-    <string name="info_news_weather" formatted="false">Konum ve Kişisel Anlar için artık ayrı bir dışa aktarma ekranı var.</string>
-    <string name="info_news_viewer_zoom" formatted="false">Kişisel anları içe aktarılabilir dosya veya CSV elektronik tablosu olarak dışa aktarın.</string>
-    <string name="info_news_settings" formatted="false">Tüm nesnelerin veya yalnızca açık nesnenin anlarını dışa aktarın. Yalnızca seçili anları da dahil edebilirsiniz.</string>
-    <string name="info_news_catalog" formatted="false">Önerilen dosya adları dışa aktarma için seçtiğiniz dil ve biçimlere uyar.</string>
+    <string name="info_news_star_sky" formatted="false">Önemli Olaylarda, uzun Ay listeleri dahil daha akıcı kaydırma.</string>
+    <string name="info_news_texture_downloads" formatted="false">Önemli Yükseklikler uzun listeleri daha verimli görüntüler.</string>
+    <string name="info_news_weather" formatted="false">Kişisel Anlar kaydırma sırasında tekrarlanan biçimlendirmeyi önler.</string>
+    <string name="info_news_viewer_zoom" formatted="false">Her nesne geçerli oturum boyunca liste konumunu korur.</string>
+    <string name="info_news_settings" formatted="false">Geçici yükleme artık liste konumunu sıfırlamaz.</string>
+    <string name="info_news_catalog" formatted="false">Bu listelere göz atarken Gözlemevindeki gizli modelin güncellemeleri duraklatılır.</string>
 </resources>

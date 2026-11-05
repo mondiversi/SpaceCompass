@@ -2,8 +2,8 @@
 
 Space Compass is distributed as a signed APK through
 [GitHub Releases](https://github.com/mondiversi/SpaceCompass/releases).
-The current stable release is **1.8.2**, tagged **v1.8.2**, application ID
-`me.mondiversi.spacecompass`, Android version name **1.8.2**, version code **68**,
+The current stable release is **1.8.3**, tagged **v1.8.3**, application ID
+`me.mondiversi.spacecompass`, Android version name **1.8.3**, version code **69**,
 minimum Android API 26. The three-part tag/version name retains compatibility with
 the signed update protocol used since preview 0.1.2.
 
@@ -488,3 +488,14 @@ signed update index, optional information archive, checksums and validation
 metadata. The app continues to use the existing graphics collection 1.8 and its
 individual WebP downloads. The personal moments file format is independent of
 the Location file format. See [temporal comparisons](TEMPORAL_COMPARISONS.md).
+
+
+## 1.8.3 smoother Observatory lists
+
+Version 1.8.3 uses Android version code 69. Key Heights and Key Events use lazy
+rows and retain their per-object session scroll position across loading states.
+Covered Observatory work pauses while child lists are visible. Personal Moments
+reuses formatted row values. News is updated in all twenty languages. The signed
+APK, signed update index, information archive and validation metadata correspond
+to the same source commit. Graphics collection 1.8 and all resource pins remain
+unchanged. See [the release audit](RELEASE_1_8_3.md).

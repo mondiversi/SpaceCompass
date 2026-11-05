@@ -6,7 +6,7 @@ import androidx.compose.ui.semantics.Role
 import androidx.compose.foundation.background
 import androidx.compose.ui.input.nestedscroll.nestedScroll
 import androidx.compose.foundation.layout.*
-import androidx.compose.foundation.verticalScroll
+import androidx.compose.foundation.lazy.rememberLazyListState
 import androidx.compose.material3.*
 import androidx.compose.runtime.*
 import androidx.compose.runtime.saveable.rememberSaveable
@@ -22,7 +22,6 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import java.time.Instant
-import kotlinx.coroutines.launch
 
 /** Independent annual browsing uses the daily-path page chrome, without touching the Location. */
 @Composable
@@ -32,8 +31,8 @@ internal fun SpaceCompassSkyHeightsPage(body: SpaceCompassCelestialBody, timeMs:
     val foreground = MaterialTheme.colorScheme.onSurface
     val secondary = foreground.copy(alpha = .72f)
     val pageBackground = spaceCompassSurfacePalette(spaceCompassPageBackground().luminance() < .4f).island
-    val visit = rememberSpaceCompassObjectPageScroll(body, SpaceCompassObjectPage.SKY_HEIGHTS)
-    val scroll = visit.entry.scroll
+    val entry = rememberSpaceCompassObjectPageVisit(body, SpaceCompassObjectPage.SKY_HEIGHTS).entry
+    val loadingScroll = rememberLazyListState()
     val zone = spaceCompassObservationZone()
     val locationYear = Instant.ofEpochMilli(timeMs).atZone(zone).year
     var customYear by rememberSaveable(body) { mutableStateOf<Int?>(null) }
@@ -41,12 +40,11 @@ internal fun SpaceCompassSkyHeightsPage(body: SpaceCompassCelestialBody, timeMs:
     var yearValid by remember { mutableStateOf(true) }
     var yearInteracting by remember { mutableStateOf(false) }
     val quickHeader = rememberSpaceCompassQuickReturnHeader(pinned = yearInteracting,
-        initialVisible = visit.entry.headerVisible)
-    SideEffect { visit.entry.headerVisible = quickHeader.visible }
-    DisposableEffect(visit.entry, quickHeader) {
-        onDispose { visit.entry.headerVisible = quickHeader.visible }
+        initialVisible = entry.headerVisible)
+    SideEffect { entry.headerVisible = quickHeader.visible }
+    DisposableEffect(entry, quickHeader) {
+        onDispose { entry.headerVisible = quickHeader.visible }
     }
-    val scope = rememberCoroutineScope()
     val referenceTime = remember(timeMs, year, zone) {
         if (year in spaceCompassObservationYears) spaceCompassObservationYearReference(timeMs, year, zone) else timeMs
     }
@@ -54,6 +52,8 @@ internal fun SpaceCompassSkyHeightsPage(body: SpaceCompassCelestialBody, timeMs:
         rememberSpaceCompassObservationMoments(SpaceCompassObservationCalendar(body, year, zone),
             referenceTime, latitude, longitude, altitude, remote)
     val result = computed.copy(complete = computed.complete && yearValid)
+    // Placeholder rows must not clamp the saved position of the loaded list.
+    val scroll = if (result.moments.isNullOrEmpty()) loadingScroll else entry.lazyScroll
     val export = rememberSpaceCompassSkyHeightsExport(body, referenceTime, result)
     val comparisons = LocalSpaceCompassComparisons.current
     val choices = remember(body, result, zone) { spaceCompassHeightComparisonChoices(body, result, zone) }
@@ -83,7 +83,10 @@ internal fun SpaceCompassSkyHeightsPage(body: SpaceCompassCelestialBody, timeMs:
                             color = foreground, style = TextStyle(fontSize = 14.sp, lineHeight = 18.sp,
                                 fontWeight = FontWeight.SemiBold))
                         SpaceCompassSkyHeightsYearField(year, { selected ->
-                            if (selected != year) scope.launch { visit.entry.scrollTo(0) }
+                            if (selected != year) {
+                                entry.lazyScroll.requestScrollToItem(0)
+                                loadingScroll.requestScrollToItem(0)
+                            }
                             customYear = selected.takeUnless { value -> value == locationYear }
                         },
                             { yearValid = it }, { yearInteracting = it }, Modifier.width(128.dp))
@@ -91,12 +94,9 @@ internal fun SpaceCompassSkyHeightsPage(body: SpaceCompassCelestialBody, timeMs:
                     HorizontalDivider(Modifier.padding(horizontal = 10.dp), thickness = .5.dp,
                         color = secondary.copy(alpha = .25f))
                 }
-                Column(Modifier.fillMaxWidth().weight(1f).nestedScroll(quickHeader.connection).clipToBounds()
-                    .scrollbarOverlay(scroll, secondary.copy(alpha = .46f)).verticalScroll(scroll)
-                    .padding(SpaceCompassObservationContentPadding),
-                    verticalArrangement = Arrangement.spacedBy(8.dp)) {
-                    SpaceCompassObservationMomentsRows(body, result, secondary)
-                }
+                SpaceCompassObservationMomentsRows(body, result, secondary,
+                    Modifier.fillMaxWidth().weight(1f).nestedScroll(quickHeader.connection).clipToBounds()
+                        .lazyScrollbarOverlay(scroll, secondary.copy(alpha = .46f)), scroll)
             }
         }
         if (export.visible) SpaceCompassPanoramaExportPage(export)

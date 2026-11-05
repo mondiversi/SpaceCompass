@@ -1,5 +1,12 @@
 # Changelog
 
+## 1.8.3 — 2026-11-05
+
+- Smoother scrolling in Key Events and Key Heights, including long lunar lists. Only visible rows and nearby content are composed.
+- Pause hidden Observatory model, geometry and rotation updates while Key Events, Key Heights or Personal Moments is open, and resume on return.
+- Reuse formatted row values and export resource profiles instead of repeating that work during scrolling.
+- Retain per-object list positions during the current session, including across temporary loading placeholders.
+
 ## 1.8.2 — 2026-11-04
 
 - Tap empty sky to toggle the reticle and its point information. Double-tap to show or hide the main sky controls. The gestures work independently.

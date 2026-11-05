@@ -42,6 +42,9 @@ private val viewportSaver = Saver<SpaceCompassCelestialViewportState, List<Doubl
     save = { listOf(it.zoom, it.panX, it.panY) },
     restore = { SpaceCompassCelestialViewportState(it[0], it[1], it[2]).transform(1.0) })
 
+private data class SpaceCompassObservatoryFrame(val timeMs: Long, val latitude: Double?,
+    val longitude: Double?, val altitude: Double, val remote: SpaceCompassCelestialRemoteData)
+
 @Composable
 internal fun SpaceCompassCelestialObservatoryPage(body: SpaceCompassCelestialBody, timeMs: Long,
     latitude: Double?, longitude: Double?, altitude: Double, remote: SpaceCompassCelestialRemoteData,
@@ -58,6 +61,13 @@ internal fun SpaceCompassCelestialObservatoryPage(body: SpaceCompassCelestialBod
     var heightsVisible by rememberSaveable(body) { mutableStateOf(false) }
     var eventsVisible by rememberSaveable(body) { mutableStateOf(false) }
     var personalMomentsVisible by rememberSaveable(body) { mutableStateOf(false) }
+    val detailListVisible = heightsVisible || eventsVisible || personalMomentsVisible
+    val liveFrame = SpaceCompassObservatoryFrame(timeMs, latitude, longitude, altitude, remote)
+    var lastVisibleFrame by remember(body) { mutableStateOf(liveFrame) }
+    // Annual pages still receive live observer inputs, but the covered model does not.
+    val (modelTime, modelLatitude, modelLongitude, modelAltitude, modelRemote) =
+        if (detailListVisible) lastVisibleFrame else liveFrame
+    SideEffect { if (!detailListVisible) lastVisibleFrame = liveFrame }
     val rotationState = rememberSaveable(body, stateSaver = rotationSaver) {
         mutableStateOf(SpaceCompassCelestialRotation(pitch = if (body.isSpacecraft) 50.0 else 15.0))
     }
@@ -72,37 +82,40 @@ internal fun SpaceCompassCelestialObservatoryPage(body: SpaceCompassCelestialBod
     val units = LocalSpaceCompassUnits.current
     val geometry = key(body) {
         // A fresh fix must not dispose/recreate the GL surface while the replacement is calculated.
-        produceState<SpaceCompassCelestialViewGeometry?>(null, timeMs, latitude, longitude, altitude,
-            remote.ephemerides[body].takeIf { body == SpaceCompassCelestialBody.TITAN || body == SpaceCompassCelestialBody.ENCELADUS }) {
-            value = if (latitude == null || longitude == null) null else withContext(Dispatchers.Default) {
-                runCatching { calculateSpaceCompassCelestialViewGeometry(body, timeMs, latitude, longitude, altitude, remote) }
+        produceState<SpaceCompassCelestialViewGeometry?>(null, detailListVisible, modelTime, modelLatitude, modelLongitude, modelAltitude,
+            modelRemote.ephemerides[body].takeIf { body == SpaceCompassCelestialBody.TITAN || body == SpaceCompassCelestialBody.ENCELADUS }) {
+            if (detailListVisible) return@produceState
+            value = if (modelLatitude == null || modelLongitude == null) null else withContext(Dispatchers.Default) {
+                runCatching { calculateSpaceCompassCelestialViewGeometry(body, modelTime, modelLatitude, modelLongitude, modelAltitude, modelRemote) }
                     .onFailure { SpaceCompassErrorLog.record(context, "celestial_viewer:geometry", it) }.getOrNull()
             }
         }.value
     }
     val remoteDistance = key(body) {
-        produceState<Double?>(null, timeMs, remote, latitude, longitude, altitude) {
-            value = if (body.hasPhysicalFace || latitude == null || longitude == null) null else withContext(Dispatchers.Default) {
-                runCatching { calculateSpaceCompassCelestialObservation(body, timeMs, latitude, longitude, altitude, remote)?.distanceKm }.getOrNull()
+        produceState<Double?>(null, detailListVisible, modelTime, modelRemote, modelLatitude, modelLongitude, modelAltitude) {
+            if (detailListVisible) return@produceState
+            value = if (body.hasPhysicalFace || modelLatitude == null || modelLongitude == null) null else withContext(Dispatchers.Default) {
+                runCatching { calculateSpaceCompassCelestialObservation(body, modelTime, modelLatitude, modelLongitude, modelAltitude, modelRemote)?.distanceKm }.getOrNull()
             }
         }.value
     }
-    val phase = remember(body, timeMs) { if (body == SpaceCompassCelestialBody.MOON) calculateSpaceCompassMoonPhase(timeMs) else null }
-    val hasLocation = latitude != null && longitude != null
+    val phase = remember(body, modelTime) { if (body == SpaceCompassCelestialBody.MOON) calculateSpaceCompassMoonPhase(modelTime) else null }
+    val hasLocation = modelLatitude != null && modelLongitude != null
     val measuredDistance = if (!hasLocation) null else geometry?.distanceKm ?: remoteDistance
-    val distance = remember(body, measuredDistance, timeMs, remote, latitude, longitude, altitude) {
-        spaceCompassDisplayObserverDistanceKm(body, measuredDistance, timeMs, remote, latitude, longitude, altitude)
+    val distance = remember(body, measuredDistance, modelTime, modelRemote, modelLatitude, modelLongitude, modelAltitude) {
+        spaceCompassDisplayObserverDistanceKm(body, measuredDistance, modelTime, modelRemote, modelLatitude, modelLongitude, modelAltitude)
     }
-    val coordinateTimeMs = timeMs / 1000 * 1000
+    val coordinateTimeMs = modelTime / 1000 * 1000
     val coordinates = key(body) {
-        produceState<SpaceCompassCelestialCoordinates?>(null, coordinateTimeMs, remote) {
+        produceState<SpaceCompassCelestialCoordinates?>(null, detailListVisible, coordinateTimeMs, modelRemote) {
+            if (detailListVisible) return@produceState
             value = withContext(Dispatchers.Default) {
-                runCatching { calculateSpaceCompassCelestialCoordinates(body, coordinateTimeMs, remote) }
+                runCatching { calculateSpaceCompassCelestialCoordinates(body, coordinateTimeMs, modelRemote) }
                     .onFailure { SpaceCompassErrorLog.record(context, "celestial_viewer:coordinates", it) }.getOrNull()
             }
         }.value
     }
-    val export = rememberSpaceCompassObservatoryExport(body,timeMs,remote,distance,phase,geometry,coordinates,
+    val export = rememberSpaceCompassObservatoryExport(body,modelTime,modelRemote,distance,phase,geometry,coordinates,
         { rotationState.value },{ viewportState.value },{ modelSize })
     val lifecycle = LocalLifecycleOwner.current.lifecycle
     var resumed by remember { mutableStateOf(lifecycle.currentState.isAtLeast(Lifecycle.State.RESUMED)) }
@@ -113,9 +126,9 @@ internal fun SpaceCompassCelestialObservatoryPage(body: SpaceCompassCelestialBod
         }
         lifecycle.addObserver(observer); onDispose { lifecycle.removeObserver(observer) }
     }
-    LaunchedEffect(rotating, automatic, resumed, export.visible, heightsVisible, eventsVisible, personalMomentsVisible) {
+    LaunchedEffect(rotating, automatic, resumed, export.visible, detailListVisible) {
         // Cap to 30 updates/s and stop entirely off-screen or in a manually held orientation.
-        if (rotating && automatic && resumed && !export.visible && !heightsVisible && !eventsVisible && !personalMomentsVisible) {
+        if (rotating && automatic && resumed && !export.visible && !detailListVisible) {
             var previous = 0L
             while (true) withFrameNanos { frame ->
                 if (previous == 0L) previous = frame
@@ -126,8 +139,8 @@ internal fun SpaceCompassCelestialObservatoryPage(body: SpaceCompassCelestialBod
             }
         }
     }
-    LaunchedEffect(body, rotating, returning, resumed, export.visible, heightsVisible, eventsVisible, personalMomentsVisible) {
-        if (rotating && returning && resumed && !export.visible && !heightsVisible && !eventsVisible && !personalMomentsVisible) {
+    LaunchedEffect(body, rotating, returning, resumed, export.visible, detailListVisible) {
+        if (rotating && returning && resumed && !export.visible && !detailListVisible) {
             if (!android.animation.ValueAnimator.areAnimatorsEnabled()) {
                 rotationState.value = rotationState.value.resume()
             } else {
@@ -189,7 +202,7 @@ internal fun SpaceCompassCelestialObservatoryPage(body: SpaceCompassCelestialBod
                     { rotationState.value = it }, viewportState.value, { viewportState.value = it },
                     stringResource(body.nameResource), resume, Modifier.fillMaxSize())
                 else if (body == SpaceCompassCelestialBody.TITAN && hasLocation) Text(
-                    if (remote.loading) stringResource(R.string.celestial_loading)
+                    if (modelRemote.loading) stringResource(R.string.celestial_loading)
                     else stringResource(R.string.celestial_unavailable, stringResource(body.nameResource)),
                     Modifier.padding(16.dp), color = Color.White, fontSize = 13.sp)
                 else Text(stringResource(R.string.celestial_view_location_needed), Modifier.padding(16.dp), color = Color.White, fontSize = 13.sp)
@@ -214,7 +227,7 @@ internal fun SpaceCompassCelestialObservatoryPage(body: SpaceCompassCelestialBod
         Column(placement.testTag("celestial-view-information")
             .scrollbarOverlay(scroll, secondaryText.copy(alpha = 0.46f), touchTargetWidth = 8.dp).verticalScroll(scroll),
             verticalArrangement = Arrangement.spacedBy(8.dp)) {
-            SpaceCompassCelestialDetailSections(body, facts, timeMs, remote, distance, phase,
+            SpaceCompassCelestialDetailSections(body, facts, modelTime, modelRemote, distance, phase,
                 geometry?.illuminatedFraction, coordinates, primaryText, secondaryText,
                 orbitContent = {
                     HorizontalDivider(Modifier.padding(top = 4.dp), color = primaryText.copy(alpha = 0.12f))
@@ -315,8 +328,11 @@ internal fun SpaceCompassCelestialObservatoryPage(body: SpaceCompassCelestialBod
 
     Box(Modifier.fillMaxSize()) {
     Column(Modifier.fillMaxSize().layout { measurable,constraints ->
-        val placeable=measurable.measure(constraints)
-        layout(placeable.width,placeable.height) { if (!export.visible && !heightsVisible && !eventsVisible && !personalMomentsVisible) placeable.placeRelative(0,0) }
+        if (detailListVisible) layout(constraints.minWidth, constraints.minHeight) {}
+        else {
+            val placeable = measurable.measure(constraints)
+            layout(placeable.width, placeable.height) { if (!export.visible) placeable.placeRelative(0, 0) }
+        }
     }.background(backgroundColor).testTag("celestial-viewer")) {
         SpaceCompassPageToolbar(stringResource(R.string.celestial_details_title), { if (!export.saving) onBack() },
             modifier = Modifier.testTag("celestial-view-toolbar"),
