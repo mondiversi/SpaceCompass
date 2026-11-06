@@ -1,9 +1,9 @@
 <resources>
     <string name="scenario_export">लोकेशन निर्यात करें</string>
-    <string name="scenario_import">लोकेशन आयात करें</string>
+    <string name="scenario_import">लोकेशन लोड करें</string>
     <string name="scenario_file_name">लोकेशन का नाम</string>
     <string name="scenario_file_saved">लोकेशन सहेजी गई</string>
-    <string name="scenario_file_imported">लोकेशन आयात की गई</string>
+    <string name="scenario_file_imported">लोकेशन लोड की गई</string>
     <string name="scenario_file_invalid">अमान्य या असमर्थित लोकेशन फ़ाइल</string>
     <string name="scenario_file_error">लोकेशन सहेजी या साझा नहीं की जा सकी</string>
 </resources>

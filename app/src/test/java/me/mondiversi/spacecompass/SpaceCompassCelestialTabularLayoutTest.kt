@@ -164,7 +164,6 @@ class SpaceCompassCelestialTabularLayoutTest {
         assertTrue(island.contains("LayoutDirection.Rtl"))
         assertEquals(2, Regex("if \\(navigation != null\\) SpaceCompassCelestialBodyNavigationArrow").findAll(island).count())
         assertFalse(island.contains("else Spacer(Modifier.width(48.dp))"))
-        assertTrue(island.contains("actions()"))
         assertTrue(source("SpaceCompassSunFinderDataPanel.kt").contains("bodyNavigation: SpaceCompassCelestialBodyNavigation? = null"))
     }
 

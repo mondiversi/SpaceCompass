@@ -1,9 +1,9 @@
 <resources>
     <string name="info_news_title">Mambo mapya · %1$s</string>
-    <string name="info_news_star_sky" formatted="false">Hifadhi na ushiriki Mandhari ya sasa kutoka menyu kuu.</string>
-    <string name="info_news_texture_downloads" formatted="false">Mandhari huhifadhi magimba yaliyochaguliwa, njia zenye tarehe, nukta na Antipodi.</string>
-    <string name="info_news_weather" formatted="false">Ingiza Mandhari pamoja na gimba lake tendaji na chaguo za mwonekano.</string>
-    <string name="info_news_viewer_zoom" formatted="false">Faili za Location sasa zina mipangilio ya mahali na wakati pekee.</string>
-    <string name="info_news_settings" formatted="false">Chagua kujumuisha Location na kukamilisha vigezo vya kiotomatiki.</string>
-    <string name="info_news_catalog" formatted="false">Chaguo za kuhamisha zilizoshikana zaidi na usaidizi wa faili mchanganyiko za awali.</string>
+    <string name="info_news_star_sky" formatted="false">Muziki wa mandharinyuma huendelea kupitia spika unapotoa vipokea sauti.</string>
+    <string name="info_news_texture_downloads" formatted="false">Kadi ya gimba iliyo rahisi zaidi bila kitufe cha kuondoa.</string>
+    <string name="info_news_weather" formatted="false">Mishale ya kusogeza magimba sasa ina nafasi sawa kutoka kingo.</string>
+    <string name="info_news_viewer_zoom" formatted="false">Vichwa maalumu kwa kurasa za kuhamisha mandhari na eneo.</string>
+    <string name="info_news_settings" formatted="false">Maneno ya kupakia yamewekwa sawa katika amri, ujumbe na miundo ya faili.</string>
+    <string name="info_news_catalog" formatted="false">Tafsiri na lebo za ufikivu zimesasishwa katika lugha zote ishirini.</string>
 </resources>

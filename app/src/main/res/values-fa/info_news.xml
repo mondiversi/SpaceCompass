@@ -1,9 +1,9 @@
 <resources>
     <string name="info_news_title">تازه‌ترین تغییرات · %1$s</string>
-    <string name="info_news_star_sky" formatted="false">صحنه فعلی را از منوی اصلی ذخیره و هم‌رسانی کنید.</string>
-    <string name="info_news_texture_downloads" formatted="false">صحنه‌ها اجرام انتخاب‌شده، مسیرهای تاریخ‌دار، نقاط و نقاط مقابل را حفظ می‌کنند.</string>
-    <string name="info_news_weather" formatted="false">صحنه را با جرم فعال و گزینه‌های نمایش آن وارد کنید.</string>
-    <string name="info_news_viewer_zoom" formatted="false">فایل‌های Location اکنون فقط تنظیمات مکان و زمان را دارند.</string>
-    <string name="info_news_settings" formatted="false">انتخاب کنید که Location گنجانده شود و پارامترهای خودکار تکمیل شوند.</string>
-    <string name="info_news_catalog" formatted="false">گزینه‌های فشرده‌تر برون‌بری و پشتیبانی از فایل‌های ترکیبی قبلی.</string>
+    <string name="info_news_star_sky" formatted="false">موسیقی پس‌زمینه پس از قطع هدفون از بلندگوها ادامه می‌یابد.</string>
+    <string name="info_news_texture_downloads" formatted="false">کادر جرم ساده‌تر و بدون دکمه حذف.</string>
+    <string name="info_news_weather" formatted="false">پیکان‌های جابه‌جایی بین اجرام اکنون حاشیه‌های متقارن دارند.</string>
+    <string name="info_news_viewer_zoom" formatted="false">عنوان‌های اختصاصی برای صفحه‌های برون‌بری سناریو و مکان.</string>
+    <string name="info_news_settings" formatted="false">واژگان یکسان بارگذاری در فرمان‌ها، پیام‌ها و قالب‌های فایل.</string>
+    <string name="info_news_catalog" formatted="false">ترجمه‌ها و برچسب‌های دسترس‌پذیری در هر بیست زبان به‌روز شدند.</string>
 </resources>

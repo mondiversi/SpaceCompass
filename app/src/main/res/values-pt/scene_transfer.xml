@@ -1,11 +1,11 @@
 <resources>
     <string name="scene_title">Cenário</string>
     <string name="scene_export">Exportar</string>
-    <string name="scene_import">Importar</string>
+    <string name="scene_import">Carregar</string>
     <string name="scene_file_name">Nome do cenário</string>
     <string name="scene_export_include_location">Incluir Location</string>
     <string name="scene_file_saved">Cenário guardado</string>
-    <string name="scene_file_imported">Cenário importado</string>
+    <string name="scene_file_imported">Cenário carregado</string>
     <string name="scene_file_invalid">Ficheiro de cenário inválido</string>
     <string name="scene_file_error">Não foi possível transferir o cenário</string>
 </resources>

@@ -1,9 +1,9 @@
 <resources>
     <string name="scenario_export">Ekspor lokasi</string>
-    <string name="scenario_import">Impor lokasi</string>
+    <string name="scenario_import">Muat lokasi</string>
     <string name="scenario_file_name">Nama lokasi</string>
     <string name="scenario_file_saved">Lokasi disimpan</string>
-    <string name="scenario_file_imported">Lokasi diimpor</string>
+    <string name="scenario_file_imported">Lokasi dimuat</string>
     <string name="scenario_file_invalid">File lokasi tidak valid atau tidak didukung</string>
     <string name="scenario_file_error">Lokasi tidak dapat disimpan atau dibagikan</string>
 </resources>

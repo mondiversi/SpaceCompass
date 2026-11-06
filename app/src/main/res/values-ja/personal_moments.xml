@@ -12,11 +12,11 @@
     <string name="personal_moments_object_column">天体</string>
     <string name="personal_moments_scope_object">この天体のみ</string>
     <string name="personal_moments_scope_selected">選択した観測時点のみ</string>
-    <string name="personal_moments_import">カスタム観測日時をインポート</string>
+    <string name="personal_moments_import">カスタム観測日時を読み込む</string>
     <string name="personal_moments_file_saved">カスタム観測日時を保存しました</string>
-    <string name="personal_moments_file_imported">カスタム観測日時をインポートしました</string>
+    <string name="personal_moments_file_imported">カスタム観測日時を読み込みました</string>
     <string name="personal_moments_file_existing">これらの観測日時は保存済みです</string>
     <string name="personal_moments_file_wrong_body">このファイルには %1$s の観測日時が含まれています</string>
     <string name="personal_moments_file_error">カスタム観測日時を保存または共有できませんでした</string>
-    <string name="personal_moments_file_import_error">カスタム観測日時をインポートできませんでした</string>
+    <string name="personal_moments_file_import_error">カスタム観測日時を読み込めませんでした</string>
 </resources>

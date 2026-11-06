@@ -726,3 +726,15 @@ including when reading legacy mixed files. Capture resolves automatic values onc
 export choices reuse that snapshot. Validation and personal-library capacity checks
 precede mutation. Unshared local Personal Moment definitions are retained unchecked.
 See [the transfer contract](docs/SCENE_TRANSFER.md).
+
+
+## Interface and media routing (1.8.5)
+
+The object selector now owns just its caption and mirrored navigation arrows;
+removal-dialog state is no longer mounted in the main screen. Equal relative insets
+preserve RTL and the existing 48 dp touch slots. Source-specific export headings
+are optional parameters of the shared export page; only Scenario and Location
+override the default heading. Loading vocabulary changes resource values without
+renaming canonical archive fields, routes or formats. AudioTrack follows Android's
+media route without treating headphone removal as permanent focus loss; foreground,
+volume and real focus-loss policies are unchanged.

@@ -1,9 +1,9 @@
 <resources>
     <string name="info_news_title">Son yenilikler · %1$s</string>
-    <string name="info_news_star_sky" formatted="false">Geçerli Sahneyi ana menüden kaydedin ve paylaşın.</string>
-    <string name="info_news_texture_downloads" formatted="false">Sahneler seçili nesneleri, tarihli yolları, noktaları ve Antipotları korur.</string>
-    <string name="info_news_weather" formatted="false">Sahneyi etkin nesnesi ve görüntüleme seçimleriyle içe aktarın.</string>
-    <string name="info_news_viewer_zoom" formatted="false">Location dosyaları artık yalnızca yer ve zaman ayarlarını içerir.</string>
-    <string name="info_news_settings" formatted="false">Location bilgisinin eklenmesini ve otomatik parametrelerin tamamlanmasını seçin.</string>
-    <string name="info_news_catalog" formatted="false">Daha kompakt dışa aktarma seçenekleri ve önceki karma dosyalar için destek.</string>
+    <string name="info_news_star_sky" formatted="false">Kulaklıklar çıkarıldığında arka plan müziği hoparlörlerden çalmaya devam eder.</string>
+    <string name="info_news_texture_downloads" formatted="false">Kaldırma düğmesi olmadan daha sade bir nesne paneli.</string>
+    <string name="info_news_weather" formatted="false">Nesne gezinme okları artık kenarlardan eşit uzaklıktadır.</string>
+    <string name="info_news_viewer_zoom" formatted="false">Senaryo ve konum dışa aktarma sayfaları için özel başlıklar.</string>
+    <string name="info_news_settings" formatted="false">Komutlarda, iletilerde ve dosya biçimlerinde tutarlı yükleme ifadeleri.</string>
+    <string name="info_news_catalog" formatted="false">Yirmi dilin tamamında çeviriler ve erişilebilirlik etiketleri güncellendi.</string>
 </resources>

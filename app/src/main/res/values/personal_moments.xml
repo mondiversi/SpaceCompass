@@ -8,15 +8,15 @@
     <string name="personal_moment_duplicate">This moment already exists</string>
     <string name="personal_moments_export">Export personal moments</string>
     <string name="personal_moments_scope_all">All objects</string>
-    <string name="personal_moments_archive_file">Importable file</string>
+    <string name="personal_moments_archive_file">Loadable file</string>
     <string name="personal_moments_object_column">Object</string>
     <string name="personal_moments_scope_object">Only this object</string>
     <string name="personal_moments_scope_selected">Only selected moments</string>
-    <string name="personal_moments_import">Import personal moments</string>
+    <string name="personal_moments_import">Load personal moments</string>
     <string name="personal_moments_file_saved">Personal moments saved</string>
-    <string name="personal_moments_file_imported">Personal moments imported</string>
+    <string name="personal_moments_file_imported">Personal moments loaded</string>
     <string name="personal_moments_file_existing">These moments are already saved</string>
     <string name="personal_moments_file_wrong_body">This file contains moments for %1$s</string>
     <string name="personal_moments_file_error">Could not save or share personal moments</string>
-    <string name="personal_moments_file_import_error">Could not import personal moments</string>
+    <string name="personal_moments_file_import_error">Could not load personal moments</string>
 </resources>

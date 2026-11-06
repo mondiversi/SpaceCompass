@@ -1,11 +1,11 @@
 <resources>
     <string name="scene_title">Scenario</string>
     <string name="scene_export">Exporteren</string>
-    <string name="scene_import">Importeren</string>
+    <string name="scene_import">Laden</string>
     <string name="scene_file_name">Scenarionaam</string>
     <string name="scene_export_include_location">Location opnemen</string>
     <string name="scene_file_saved">Scenario opgeslagen</string>
-    <string name="scene_file_imported">Scenario geïmporteerd</string>
+    <string name="scene_file_imported">Scenario geladen</string>
     <string name="scene_file_invalid">Ongeldig scenariobestand</string>
     <string name="scene_file_error">Kan het scenario niet overdragen</string>
 </resources>

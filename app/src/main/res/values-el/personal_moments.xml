@@ -8,15 +8,15 @@
     <string name="personal_moment_duplicate">Η στιγμή υπάρχει ήδη</string>
     <string name="personal_moments_export">Εξαγωγή προσωπικών στιγμών</string>
     <string name="personal_moments_scope_all">Όλα τα αντικείμενα</string>
-    <string name="personal_moments_archive_file">Αρχείο για εισαγωγή</string>
+    <string name="personal_moments_archive_file">Αρχείο για φόρτωση</string>
     <string name="personal_moments_object_column">Αντικείμενο</string>
     <string name="personal_moments_scope_object">Μόνο αυτό το αντικείμενο</string>
     <string name="personal_moments_scope_selected">Μόνο οι επιλεγμένες στιγμές</string>
-    <string name="personal_moments_import">Εισαγωγή προσωπικών στιγμών</string>
+    <string name="personal_moments_import">Φόρτωση προσωπικών στιγμών</string>
     <string name="personal_moments_file_saved">Οι προσωπικές στιγμές αποθηκεύτηκαν</string>
-    <string name="personal_moments_file_imported">Οι προσωπικές στιγμές εισήχθησαν</string>
+    <string name="personal_moments_file_imported">Οι προσωπικές στιγμές φορτώθηκαν</string>
     <string name="personal_moments_file_existing">Αυτές οι στιγμές είναι ήδη αποθηκευμένες</string>
     <string name="personal_moments_file_wrong_body">Το αρχείο περιέχει στιγμές για %1$s</string>
     <string name="personal_moments_file_error">Αδυναμία αποθήκευσης ή κοινοποίησης προσωπικών στιγμών</string>
-    <string name="personal_moments_file_import_error">Αδυναμία εισαγωγής προσωπικών στιγμών</string>
+    <string name="personal_moments_file_import_error">Αδυναμία φόρτωσης προσωπικών στιγμών</string>
 </resources>

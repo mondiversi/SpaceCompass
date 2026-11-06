@@ -8,15 +8,15 @@
     <string name="personal_moment_duplicate">هذه اللحظة موجودة بالفعل</string>
     <string name="personal_moments_export">تصدير اللحظات الشخصية</string>
     <string name="personal_moments_scope_all">كل الأجرام</string>
-    <string name="personal_moments_archive_file">ملف قابل للاستيراد</string>
+    <string name="personal_moments_archive_file">ملف قابل للتحميل</string>
     <string name="personal_moments_object_column">الجرم</string>
     <string name="personal_moments_scope_object">هذا الجرم فقط</string>
     <string name="personal_moments_scope_selected">اللحظات المحددة فقط</string>
-    <string name="personal_moments_import">استيراد اللحظات الشخصية</string>
+    <string name="personal_moments_import">تحميل اللحظات الشخصية</string>
     <string name="personal_moments_file_saved">تم حفظ اللحظات الشخصية</string>
-    <string name="personal_moments_file_imported">تم استيراد اللحظات الشخصية</string>
+    <string name="personal_moments_file_imported">تم تحميل اللحظات الشخصية</string>
     <string name="personal_moments_file_existing">هذه اللحظات محفوظة بالفعل</string>
     <string name="personal_moments_file_wrong_body">يحتوي هذا الملف على لحظات لـ %1$s</string>
     <string name="personal_moments_file_error">تعذر حفظ اللحظات الشخصية أو مشاركتها</string>
-    <string name="personal_moments_file_import_error">تعذر استيراد اللحظات الشخصية</string>
+    <string name="personal_moments_file_import_error">تعذر تحميل اللحظات الشخصية</string>
 </resources>

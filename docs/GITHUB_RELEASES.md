@@ -2,8 +2,8 @@
 
 Space Compass is distributed as a signed APK through
 [GitHub Releases](https://github.com/mondiversi/SpaceCompass/releases).
-The current stable release is **1.8.4**, tagged **v1.8.4**, application ID
-`me.mondiversi.spacecompass`, Android version name **1.8.4**, version code **70**,
+The current stable release is **1.8.5**, tagged **v1.8.5**, application ID
+`me.mondiversi.spacecompass`, Android version name **1.8.5**, version code **71**,
 minimum Android API 26. The three-part tag/version name retains compatibility with
 the signed update protocol used since preview 0.1.2.
 
@@ -509,3 +509,12 @@ is optional and uses a stable snapshot. The signed APK, update index and informa
 archive correspond to the same source commit. All twenty news translations are
 updated. Graphics collection 1.8 is unchanged. See [the release audit](RELEASE_1_8_4.md)
 and [transfer details](SCENE_TRANSFER.md).
+
+
+## 1.8.5 interface and loading refinements
+
+Version 1.8.5 uses Android version code 71. It keeps music playing across ordinary
+headphone-to-speaker routing, simplifies the object island and aligns its arrows.
+Scenario/Location export pages have their own headings; loading terminology is
+consistent across the twenty languages. See [the release audit](RELEASE_1_8_5.md).
+The graphics collection, credits, individual downloads and integrity pins are unchanged.

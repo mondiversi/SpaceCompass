@@ -1,15 +1,11 @@
 package me.mondiversi.spacecompass
 
-import android.content.BroadcastReceiver
 import android.content.Context
-import android.content.Intent
-import android.content.IntentFilter
 import android.media.AudioAttributes
 import android.media.AudioFocusRequest
 import android.media.AudioManager
 import android.os.Handler
 import android.os.Looper
-import androidx.core.content.ContextCompat
 
 /** Foreground-only generative music; saved policy and device media volume remain independent. */
 internal class SpaceCompassAmbientMusicPlayer(context: Context) {
@@ -36,18 +32,8 @@ internal class SpaceCompassAmbientMusicPlayer(context: Context) {
             if (change == AudioManager.AUDIOFOCUS_LOSS) abandonFocus()
             reconcile()
         }, handler).build()
-    private val noisy = object : BroadcastReceiver() {
-        override fun onReceive(context: Context?, intent: Intent?) {
-            if (intent?.action == AudioManager.ACTION_AUDIO_BECOMING_NOISY) {
-                policy.onFocus(SpaceCompassMusicFocus.LOST)
-                output.stop(); abandonFocus()
-            }
-        }
-    }
-    init {
-        ContextCompat.registerReceiver(this.context, noisy,
-            IntentFilter(AudioManager.ACTION_AUDIO_BECOMING_NOISY), ContextCompat.RECEIVER_NOT_EXPORTED)
-    }
+    // AudioTrack follows Android's media route automatically, including back to the speaker.
+    // Route changes do not revoke focus; genuine focus loss still pauses playback below.
 
     fun update(settings: SpaceCompassAmbientMusicSettings) { policy.update(settings); reconcile() }
     fun foreground(value: Boolean) { policy.setForeground(value); reconcile() }
@@ -69,6 +55,5 @@ internal class SpaceCompassAmbientMusicPlayer(context: Context) {
 
     fun release() {
         policy.setForeground(false); output.release(); abandonFocus()
-        context.unregisterReceiver(noisy)
     }
 }

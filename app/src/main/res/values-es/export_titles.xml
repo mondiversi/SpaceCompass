@@ -1,0 +1,4 @@
+<resources>
+    <string name="scene_export_title">Exportación de escenario</string>
+    <string name="location_export_title">Exportación de ubicación</string>
+</resources>

@@ -1,9 +1,9 @@
 <resources>
     <string name="info_news_title">החידושים האחרונים · %1$s</string>
-    <string name="info_news_star_sky" formatted="false">שמרו ושתפו את הסצנה הנוכחית מהתפריט הראשי.</string>
-    <string name="info_news_texture_downloads" formatted="false">סצנות שומרות גרמי שמיים נבחרים, מסלולים מתוארכים, נקודות ואנטיפודים.</string>
-    <string name="info_news_weather" formatted="false">ייבאו סצנה עם הגרם הפעיל ואפשרויות התצוגה שלה.</string>
-    <string name="info_news_viewer_zoom" formatted="false">קובצי Location מכילים כעת רק הגדרות מקום וזמן.</string>
-    <string name="info_news_settings" formatted="false">בחרו אם לכלול את Location ולהשלים פרמטרים אוטומטיים.</string>
-    <string name="info_news_catalog" formatted="false">אפשרויות ייצוא קומפקטיות יותר ותמיכה בקבצים המשולבים הקודמים.</string>
+    <string name="info_news_star_sky" formatted="false">מוזיקת הרקע ממשיכה דרך הרמקולים לאחר ניתוק האוזניות.</string>
+    <string name="info_news_texture_downloads" formatted="false">חלונית גרם שמיים נקייה יותר ללא כפתור ההסרה.</string>
+    <string name="info_news_weather" formatted="false">לחיצי הניווט בין גרמי השמיים יש כעת שוליים סימטריים.</string>
+    <string name="info_news_viewer_zoom" formatted="false">כותרות נפרדות לדפי ייצוא תרחיש ומיקום.</string>
+    <string name="info_news_settings" formatted="false">מונחי טעינה אחידים בפקודות, בהודעות ובתבניות הקבצים.</string>
+    <string name="info_news_catalog" formatted="false">תרגומים ותוויות נגישות עודכנו בכל עשרים השפות.</string>
 </resources>

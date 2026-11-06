@@ -1,11 +1,11 @@
 <resources>
     <string name="scene_title">场景</string>
     <string name="scene_export">导出</string>
-    <string name="scene_import">导入</string>
+    <string name="scene_import">加载</string>
     <string name="scene_file_name">场景名称</string>
     <string name="scene_export_include_location">包含Location</string>
     <string name="scene_file_saved">场景已保存</string>
-    <string name="scene_file_imported">场景已导入</string>
+    <string name="scene_file_imported">场景已加载</string>
     <string name="scene_file_invalid">无效的场景文件</string>
     <string name="scene_file_error">无法传输场景</string>
 </resources>

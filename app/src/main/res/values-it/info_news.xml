@@ -1,9 +1,9 @@
 <resources>
     <string name="info_news_title">Ultime novità · %1$s</string>
-    <string name="info_news_star_sky" formatted="false">Salva e condividi lo Scenario attuale dal menu principale.</string>
-    <string name="info_news_texture_downloads" formatted="false">Gli Scenari conservano oggetti selezionati, percorsi datati, punti e Antipodi.</string>
-    <string name="info_news_weather" formatted="false">Importa uno Scenario con il suo oggetto attivo e le scelte di visualizzazione.</string>
-    <string name="info_news_viewer_zoom" formatted="false">I file Location contengono ora solo le impostazioni di luogo e tempo.</string>
-    <string name="info_news_settings" formatted="false">Scegli se includere la Location e completare i parametri automatici.</string>
-    <string name="info_news_catalog" formatted="false">Opzioni di esportazione più compatte e supporto ai precedenti file misti.</string>
+    <string name="info_news_star_sky" formatted="false">La musica di sottofondo prosegue dagli altoparlanti scollegando gli auricolari.</string>
+    <string name="info_news_texture_downloads" formatted="false">Isola oggetto più pulita, senza il pulsante di rimozione.</string>
+    <string name="info_news_weather" formatted="false">Frecce di navigazione degli oggetti con margini simmetrici ai bordi.</string>
+    <string name="info_news_viewer_zoom" formatted="false">Titoli dedicati per Esportazione scenario ed Esportazione location.</string>
+    <string name="info_news_settings" formatted="false">Terminologia Carica uniforme nei comandi, nei messaggi e nei formati dei file.</string>
+    <string name="info_news_catalog" formatted="false">Traduzioni ed etichette di accessibilità aggiornate in tutte le venti lingue.</string>
 </resources>

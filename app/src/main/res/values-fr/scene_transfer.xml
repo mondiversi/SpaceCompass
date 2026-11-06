@@ -1,11 +1,11 @@
 <resources>
     <string name="scene_title">Scénario</string>
     <string name="scene_export">Exporter</string>
-    <string name="scene_import">Importer</string>
+    <string name="scene_import">Charger</string>
     <string name="scene_file_name">Nom du scénario</string>
     <string name="scene_export_include_location">Inclure la Location</string>
     <string name="scene_file_saved">Scénario enregistré</string>
-    <string name="scene_file_imported">Scénario importé</string>
+    <string name="scene_file_imported">Scénario chargé</string>
     <string name="scene_file_invalid">Fichier de scénario non valide</string>
     <string name="scene_file_error">Impossible de transférer le scénario</string>
 </resources>

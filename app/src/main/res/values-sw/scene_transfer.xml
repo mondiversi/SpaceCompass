@@ -1,11 +1,11 @@
 <resources>
     <string name="scene_title">Mandhari</string>
     <string name="scene_export">Hamisha</string>
-    <string name="scene_import">Ingiza</string>
+    <string name="scene_import">Pakia</string>
     <string name="scene_file_name">Jina la mandhari</string>
     <string name="scene_export_include_location">Jumuisha Location</string>
     <string name="scene_file_saved">Mandhari yamehifadhiwa</string>
-    <string name="scene_file_imported">Mandhari yameingizwa</string>
+    <string name="scene_file_imported">Mandhari yamepakiwa</string>
     <string name="scene_file_invalid">Faili ya mandhari si halali</string>
     <string name="scene_file_error">Imeshindikana kuhamisha mandhari</string>
 </resources>

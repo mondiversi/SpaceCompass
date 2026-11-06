@@ -1,0 +1,4 @@
+<resources>
+    <string name="scene_export_title">시나리오 내보내기</string>
+    <string name="location_export_title">위치 내보내기</string>
+</resources>

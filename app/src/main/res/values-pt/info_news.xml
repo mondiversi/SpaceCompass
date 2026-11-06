@@ -1,9 +1,9 @@
 <resources>
     <string name="info_news_title">Últimas novidades · %1$s</string>
-    <string name="info_news_star_sky" formatted="false">Guarde e partilhe a Cena atual no menu principal.</string>
-    <string name="info_news_texture_downloads" formatted="false">As Cenas mantêm objetos selecionados, trajetórias datadas, pontos e Antípodas.</string>
-    <string name="info_news_weather" formatted="false">Importe uma Cena com o objeto ativo e as opções de visualização.</string>
-    <string name="info_news_viewer_zoom" formatted="false">Os ficheiros Location contêm agora apenas definições de local e tempo.</string>
-    <string name="info_news_settings" formatted="false">Escolha se pretende incluir a Location e completar os parâmetros automáticos.</string>
-    <string name="info_news_catalog" formatted="false">Opções de exportação mais compactas e suporte para ficheiros mistos anteriores.</string>
+    <string name="info_news_star_sky" formatted="false">A música de fundo continua nos altifalantes ao desligar os auriculares.</string>
+    <string name="info_news_texture_downloads" formatted="false">Painel do objeto mais simples, sem o botão de remoção.</string>
+    <string name="info_news_weather" formatted="false">As setas de navegação dos objetos têm agora margens simétricas.</string>
+    <string name="info_news_viewer_zoom" formatted="false">Títulos próprios para as páginas de exportação de cenário e localização.</string>
+    <string name="info_news_settings" formatted="false">Terminologia Carregar uniforme nos comandos, mensagens e formatos de ficheiro.</string>
+    <string name="info_news_catalog" formatted="false">Traduções e etiquetas de acessibilidade atualizadas nos vinte idiomas.</string>
 </resources>

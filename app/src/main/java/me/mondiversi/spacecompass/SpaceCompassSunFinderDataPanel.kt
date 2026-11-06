@@ -46,8 +46,7 @@ internal fun SpaceCompassSunFinderDataPanel(
     onBodyNameClick: (() -> Unit)? = null,
     orientationRows: List<SpaceCompassSunDataRow> = emptyList(),
     locationInfoRows: List<SpaceCompassSunDataRow> = emptyList(),
-    onInfo: () -> Unit = {},
-    bodyActions: @Composable () -> Unit = {}
+    onInfo: () -> Unit = {}
 ) {
     val scroll = rememberScrollState()
     val landscape = LocalConfiguration.current.orientation == Configuration.ORIENTATION_LANDSCAPE
@@ -58,7 +57,7 @@ internal fun SpaceCompassSunFinderDataPanel(
         // Normally fits without scrolling. Keep a fallback for large accessibility fonts/windows.
         .scrollbarOverlay(scroll, secondaryText.copy(alpha = 0.46f))
         .verticalScroll(scroll), verticalArrangement = Arrangement.spacedBy(8.dp)) {
-        if (rows.isNotEmpty()) SpaceCompassCelestialBodyDataIsland(bodyName, primaryText, backgroundColor, compact, bodyNavigation, bodyActions, bodyNameColor = bodyNameColor, onBodyNameClick = onBodyNameClick) {
+        if (rows.isNotEmpty()) SpaceCompassCelestialBodyDataIsland(bodyName, primaryText, backgroundColor, compact, bodyNavigation, bodyNameColor = bodyNameColor, onBodyNameClick = onBodyNameClick) {
             val angles = rows.filter { it.tag == "sun-data-azimuth" || it.tag == "sun-data-elevation" }
             Column(Modifier.fillMaxWidth().testTag("sun-finder-pointing-data")) {
                 SpaceCompassSunFinderDataTable(rows - angles.toSet(),

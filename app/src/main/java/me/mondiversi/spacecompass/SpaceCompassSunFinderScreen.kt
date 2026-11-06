@@ -371,9 +371,8 @@ internal fun SpaceCompassSunFinderContent(
         viewerComparison = activeComparison
         showViewer = true
     }
-    var removeTargetName by rememberSaveable { mutableStateOf<String?>(null) }
     LaunchedEffect(tutorialActive) {
-        if (tutorialActive) { showViewer = false; showEnvironment = false; removeTargetName = null; dailyPathUiState.closeMenu() }
+        if (tutorialActive) { showViewer = false; showEnvironment = false; dailyPathUiState.closeMenu() }
     }
     val hasActiveBody = activeComparison != null || sceneBody in selectedBodies
     val bodyName = if (activeComparison != null) spaceCompassComparisonDisplayName(activeComparison) else if (hasActiveBody) stringResource(sceneBody.nameResource) else "—"
@@ -605,17 +604,6 @@ internal fun SpaceCompassSunFinderContent(
         previousLabel = stringResource(navigationEntries[Math.floorMod(activeIndex - 1, navigationEntries.size)].body.nameResource),
         nextLabel = stringResource(navigationEntries[(activeIndex + 1) % navigationEntries.size].body.nameResource),
         onPrevious = { navigateEntry(-1) }, onNext = { navigateEntry(1) }) else null
-    val removalComparison = comparisonOverlays.activeSpaceCompassComparison(removeTargetName)
-    val removalTarget = removalComparison?.body ?: removeTargetName?.let { name ->
-        selectedBodies.firstOrNull { it.name == name }
-    }
-    if (removalTarget != null && onSelectionChange != null) {
-        SpaceCompassRemoveObjectDialog(removalTarget, onDismiss = { removeTargetName = null }, onConfirm = {
-            removeTargetName = null
-            if (removalComparison != null) comparisons?.remove(removalComparison.id)
-            else onSelectionChange(selection.deselect(removalTarget))
-        }, nameOverride = removalComparison?.let { spaceCompassComparisonDisplayName(it) })
-    }
     val details: @Composable (Modifier, Boolean) -> Unit = { modifier, compact ->
         Column(modifier.testTag("celestial-details-column"), horizontalAlignment = Alignment.CenterHorizontally,
             verticalArrangement = Arrangement.spacedBy(8.dp)) {
@@ -626,10 +614,7 @@ internal fun SpaceCompassSunFinderContent(
                 onBodyNameClick = if (hasActiveBody) (::openViewer) else null,
                 // Keep the object identity at its full above-horizon palette color.
                 bodyNameColor = if (hasActiveBody) activeComparison?.let(::spaceCompassComparisonTint) ?: spaceCompassCelestialPathTint(sceneBody) else primaryText,
-                bodyNavigation = navigation, locationInfoRows = locationInfoRows, onInfo = { showEnvironment = true }, bodyActions = {
-                    if (hasActiveBody && onSelectionChange != null)
-                        SpaceCompassRemoveObjectButton(bodyName, { removeTargetName = activeComparison?.id ?: sceneBody.name }, primaryText)
-                })
+                bodyNavigation = navigation, locationInfoRows = locationInfoRows, onInfo = { showEnvironment = true })
         }
     }
     val navigate = LocalSpaceCompassNavigate.current

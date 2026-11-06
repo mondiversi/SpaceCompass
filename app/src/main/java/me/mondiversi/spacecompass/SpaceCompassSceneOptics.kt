@@ -38,7 +38,7 @@ internal fun spaceCompassMainReticleOpticalFrame(viewport: SpaceCompassSunSceneF
     val centerY = when {
         landscape -> sceneHeight / 2
         detailsExpanded -> (viewport.top + viewport.height + gap) / 2
-        else -> sceneHeight * .40 // 60 percent of the usable height, measured upwards from the bottom.
+        else -> sceneHeight * .40
     }.coerceIn(0.0, sceneHeight)
     return viewport.copy(top = centerY - viewport.height / 2)
 }

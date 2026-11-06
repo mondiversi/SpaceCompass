@@ -1,9 +1,9 @@
 <resources>
     <string name="scenario_export">Exportar localização</string>
-    <string name="scenario_import">Importar localização</string>
+    <string name="scenario_import">Carregar localização</string>
     <string name="scenario_file_name">Nome da localização</string>
     <string name="scenario_file_saved">Localização guardada</string>
-    <string name="scenario_file_imported">Localização importada</string>
+    <string name="scenario_file_imported">Localização carregada</string>
     <string name="scenario_file_invalid">Ficheiro de localização inválido ou não suportado</string>
     <string name="scenario_file_error">Não foi possível guardar ou partilhar a localização</string>
 </resources>

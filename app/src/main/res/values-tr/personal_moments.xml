@@ -8,15 +8,15 @@
     <string name="personal_moment_duplicate">Bu an zaten var</string>
     <string name="personal_moments_export">Kişisel anları dışa aktar</string>
     <string name="personal_moments_scope_all">Tüm nesneler</string>
-    <string name="personal_moments_archive_file">İçe aktarılabilir dosya</string>
+    <string name="personal_moments_archive_file">Yüklenebilir dosya</string>
     <string name="personal_moments_object_column">Nesne</string>
     <string name="personal_moments_scope_object">Yalnızca bu nesne</string>
     <string name="personal_moments_scope_selected">Yalnızca seçili anlar</string>
-    <string name="personal_moments_import">Kişisel anları içe aktar</string>
+    <string name="personal_moments_import">Kişisel anları yükle</string>
     <string name="personal_moments_file_saved">Kişisel anlar kaydedildi</string>
-    <string name="personal_moments_file_imported">Kişisel anlar içe aktarıldı</string>
+    <string name="personal_moments_file_imported">Kişisel anlar yüklendi</string>
     <string name="personal_moments_file_existing">Bu anlar zaten kayıtlı</string>
     <string name="personal_moments_file_wrong_body">Bu dosya %1$s için anlar içeriyor</string>
     <string name="personal_moments_file_error">Kişisel anlar kaydedilemedi veya paylaşılamadı</string>
-    <string name="personal_moments_file_import_error">Kişisel anlar içe aktarılamadı</string>
+    <string name="personal_moments_file_import_error">Kişisel anlar yüklenemedi</string>
 </resources>

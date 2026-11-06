@@ -1,9 +1,9 @@
 <resources>
     <string name="info_news_title">Neuigkeiten · %1$s</string>
-    <string name="info_news_star_sky" formatted="false">Aktuelle Szene über das Hauptmenü speichern und teilen.</string>
-    <string name="info_news_texture_downloads" formatted="false">Szenen behalten ausgewählte Objekte, datierte Bahnen, Punkte und Antipoden.</string>
-    <string name="info_news_weather" formatted="false">Szene mit aktivem Objekt und Anzeigeoptionen importieren.</string>
-    <string name="info_news_viewer_zoom" formatted="false">Location-Dateien enthalten jetzt nur Orts- und Zeiteinstellungen.</string>
-    <string name="info_news_settings" formatted="false">Wählen, ob die Location enthalten ist und automatische Parameter ergänzt werden.</string>
-    <string name="info_news_catalog" formatted="false">Kompaktere Exportoptionen und Unterstützung bisheriger gemischter Dateien.</string>
+    <string name="info_news_star_sky" formatted="false">Die Hintergrundmusik läuft nach dem Trennen der Kopfhörer über die Lautsprecher weiter.</string>
+    <string name="info_news_texture_downloads" formatted="false">Eine übersichtlichere Objektkarte ohne Entfernen-Schaltfläche.</string>
+    <string name="info_news_weather" formatted="false">Die Pfeile zur Objektnavigation haben jetzt gleiche Randabstände.</string>
+    <string name="info_news_viewer_zoom" formatted="false">Eigene Seitentitel für Szenario- und Ortsexport.</string>
+    <string name="info_news_settings" formatted="false">Einheitliche Bezeichnungen zum Laden in Befehlen, Meldungen und Dateiformaten.</string>
+    <string name="info_news_catalog" formatted="false">Übersetzungen und Barrierefreiheitsbeschriftungen in allen zwanzig Sprachen aktualisiert.</string>
 </resources>

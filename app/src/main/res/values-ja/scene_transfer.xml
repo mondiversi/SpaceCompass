@@ -1,11 +1,11 @@
 <resources>
     <string name="scene_title">シナリオ</string>
     <string name="scene_export">エクスポート</string>
-    <string name="scene_import">インポート</string>
+    <string name="scene_import">読み込む</string>
     <string name="scene_file_name">シナリオ名</string>
     <string name="scene_export_include_location">Locationを含める</string>
     <string name="scene_file_saved">シナリオを保存しました</string>
-    <string name="scene_file_imported">シナリオをインポートしました</string>
+    <string name="scene_file_imported">シナリオを読み込みました</string>
     <string name="scene_file_invalid">無効なシナリオファイルです</string>
     <string name="scene_file_error">シナリオを転送できません</string>
 </resources>

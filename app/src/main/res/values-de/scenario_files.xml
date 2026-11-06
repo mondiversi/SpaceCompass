@@ -1,9 +1,9 @@
 <resources>
     <string name="scenario_export">Ort exportieren</string>
-    <string name="scenario_import">Ort importieren</string>
+    <string name="scenario_import">Ort laden</string>
     <string name="scenario_file_name">Name des Orts</string>
     <string name="scenario_file_saved">Ort gespeichert</string>
-    <string name="scenario_file_imported">Ort importiert</string>
+    <string name="scenario_file_imported">Ort geladen</string>
     <string name="scenario_file_invalid">Ungültige oder nicht unterstützte Ortsdatei</string>
     <string name="scenario_file_error">Der Ort kann nicht gespeichert oder geteilt werden</string>
 </resources>

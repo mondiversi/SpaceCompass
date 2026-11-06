@@ -121,7 +121,8 @@ internal fun <T> rememberSpaceCompassConfigurationTransfer(scene: Boolean, obser
             }
             val close={ if (!working) configuredText=null }
             BackHandler(onBack=close)
-            SpaceCompassDataExportPage(close,Modifier.testTag(if (scene) "scene-export-page" else "scenario-export-page")) {
+            SpaceCompassDataExportPage(close,Modifier.testTag(if (scene) "scene-export-page" else "scenario-export-page"),
+                title=stringResource(if (scene) R.string.scene_export_title else R.string.location_export_title)) {
                 if (include && (!scene || completeAutomatic) && complete==null) SpaceCompassSettingsDescription(stringResource(R.string.location_export_wait_position))
                 Column(Modifier.fillMaxWidth(),verticalArrangement=Arrangement.spacedBy(SpaceCompassSettingsControlGap)) {
                     SpaceCompassSettingsTextField(name,{ name=it.take(80);nameEdited=true },

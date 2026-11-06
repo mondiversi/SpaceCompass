@@ -1,11 +1,11 @@
 <resources>
     <string name="scene_title">Σενάριο</string>
     <string name="scene_export">Εξαγωγή</string>
-    <string name="scene_import">Εισαγωγή</string>
+    <string name="scene_import">Φόρτωση</string>
     <string name="scene_file_name">Όνομα σεναρίου</string>
     <string name="scene_export_include_location">Συμπερίληψη Location</string>
     <string name="scene_file_saved">Το σενάριο αποθηκεύτηκε</string>
-    <string name="scene_file_imported">Το σενάριο εισήχθη</string>
+    <string name="scene_file_imported">Το σενάριο φορτώθηκε</string>
     <string name="scene_file_invalid">Μη έγκυρο αρχείο σεναρίου</string>
     <string name="scene_file_error">Αδυναμία μεταφοράς του σεναρίου</string>
 </resources>

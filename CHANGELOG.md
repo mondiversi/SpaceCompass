@@ -1,5 +1,13 @@
 # Changelog
 
+## 1.8.5 — 2026-11-06
+
+- Keep background music playing when headphones are disconnected. Android handles the media route; actual audio-focus interruptions still pause playback.
+- Remove the object-island removal button and give the two navigation arrows equal visible edge margins and equal spacing around the name.
+- Add dedicated Scenario export and Location export headings; other export pages retain Data export.
+- Use consistent Load, loaded and loadable terminology in commands, feedback, accessibility labels and the Personal Moments file-format choice, translated into all twenty languages.
+- Preserve the compact-portrait reticle at 40% of the usable height from the top; expanded portrait and landscape remain centred. The original compass island and its GPS details link are retained.
+
 ## 1.8.4 — 2026-11-05
 
 - Save and share Scenes from the main menu, including selected objects, the active object, dated comparisons, active Personal Moments, orbit points and Antipodes.

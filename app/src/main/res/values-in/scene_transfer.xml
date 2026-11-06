@@ -1,11 +1,11 @@
 <resources>
     <string name="scene_title">Skenario</string>
     <string name="scene_export">Ekspor</string>
-    <string name="scene_import">Impor</string>
+    <string name="scene_import">Muat</string>
     <string name="scene_file_name">Nama skenario</string>
     <string name="scene_export_include_location">Sertakan Location</string>
     <string name="scene_file_saved">Skenario disimpan</string>
-    <string name="scene_file_imported">Skenario diimpor</string>
+    <string name="scene_file_imported">Skenario dimuat</string>
     <string name="scene_file_invalid">Berkas skenario tidak valid</string>
     <string name="scene_file_error">Skenario tidak dapat ditransfer</string>
 </resources>

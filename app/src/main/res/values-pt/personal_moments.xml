@@ -8,15 +8,15 @@
     <string name="personal_moment_duplicate">Este momento já existe</string>
     <string name="personal_moments_export">Exportar momentos pessoais</string>
     <string name="personal_moments_scope_all">Todos os objetos</string>
-    <string name="personal_moments_archive_file">Ficheiro importável</string>
+    <string name="personal_moments_archive_file">Ficheiro carregável</string>
     <string name="personal_moments_object_column">Objeto</string>
     <string name="personal_moments_scope_object">Apenas este objeto</string>
     <string name="personal_moments_scope_selected">Apenas os momentos selecionados</string>
-    <string name="personal_moments_import">Importar momentos pessoais</string>
+    <string name="personal_moments_import">Carregar momentos pessoais</string>
     <string name="personal_moments_file_saved">Momentos pessoais salvos</string>
-    <string name="personal_moments_file_imported">Momentos pessoais importados</string>
+    <string name="personal_moments_file_imported">Momentos pessoais carregados</string>
     <string name="personal_moments_file_existing">Esses momentos já estão salvos</string>
     <string name="personal_moments_file_wrong_body">O arquivo contém momentos de %1$s</string>
     <string name="personal_moments_file_error">Não foi possível salvar ou compartilhar os momentos pessoais</string>
-    <string name="personal_moments_file_import_error">Não foi possível importar os momentos pessoais</string>
+    <string name="personal_moments_file_import_error">Não foi possível carregar os momentos pessoais</string>
 </resources>

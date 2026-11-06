@@ -1,9 +1,9 @@
 <resources>
     <string name="info_news_title">Τελευταία νέα · %1$s</string>
-    <string name="info_news_star_sky" formatted="false">Αποθηκεύστε και μοιραστείτε την τρέχουσα Σκηνή από το κύριο μενού.</string>
-    <string name="info_news_texture_downloads" formatted="false">Οι Σκηνές διατηρούν επιλεγμένα αντικείμενα, τροχιές με ημερομηνία, σημεία και Αντίποδες.</string>
-    <string name="info_news_weather" formatted="false">Εισαγάγετε μια Σκηνή με το ενεργό αντικείμενο και τις επιλογές προβολής.</string>
-    <string name="info_news_viewer_zoom" formatted="false">Τα αρχεία Location περιέχουν πλέον μόνο ρυθμίσεις τόπου και χρόνου.</string>
-    <string name="info_news_settings" formatted="false">Επιλέξτε αν θα συμπεριληφθεί η Location και θα συμπληρωθούν οι αυτόματες παράμετροι.</string>
-    <string name="info_news_catalog" formatted="false">Πιο συμπαγείς επιλογές εξαγωγής και υποστήριξη παλαιότερων μικτών αρχείων.</string>
+    <string name="info_news_star_sky" formatted="false">Η μουσική υπόκρουση συνεχίζει από τα ηχεία όταν αποσυνδέονται τα ακουστικά.</string>
+    <string name="info_news_texture_downloads" formatted="false">Πιο λιτό πλαίσιο αντικειμένου χωρίς κουμπί αφαίρεσης.</string>
+    <string name="info_news_weather" formatted="false">Τα βέλη πλοήγησης αντικειμένων έχουν πλέον συμμετρικά περιθώρια.</string>
+    <string name="info_news_viewer_zoom" formatted="false">Ξεχωριστοί τίτλοι σελίδων εξαγωγής σεναρίου και τοποθεσίας.</string>
+    <string name="info_news_settings" formatted="false">Ενιαία ορολογία φόρτωσης σε εντολές, μηνύματα και μορφές αρχείων.</string>
+    <string name="info_news_catalog" formatted="false">Ενημερωμένες μεταφράσεις και ετικέτες προσβασιμότητας και στις είκοσι γλώσσες.</string>
 </resources>

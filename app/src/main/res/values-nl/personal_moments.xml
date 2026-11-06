@@ -8,15 +8,15 @@
     <string name="personal_moment_duplicate">Dit moment bestaat al</string>
     <string name="personal_moments_export">Persoonlijke momenten exporteren</string>
     <string name="personal_moments_scope_all">Alle objecten</string>
-    <string name="personal_moments_archive_file">Importeerbaar bestand</string>
+    <string name="personal_moments_archive_file">Laadbaar bestand</string>
     <string name="personal_moments_object_column">Object</string>
     <string name="personal_moments_scope_object">Alleen dit object</string>
     <string name="personal_moments_scope_selected">Alleen geselecteerde momenten</string>
-    <string name="personal_moments_import">Persoonlijke momenten importeren</string>
+    <string name="personal_moments_import">Persoonlijke momenten laden</string>
     <string name="personal_moments_file_saved">Persoonlijke momenten opgeslagen</string>
-    <string name="personal_moments_file_imported">Persoonlijke momenten geïmporteerd</string>
+    <string name="personal_moments_file_imported">Persoonlijke momenten geladen</string>
     <string name="personal_moments_file_existing">Deze momenten zijn al opgeslagen</string>
     <string name="personal_moments_file_wrong_body">Dit bestand bevat momenten voor %1$s</string>
     <string name="personal_moments_file_error">Persoonlijke momenten konden niet worden opgeslagen of gedeeld</string>
-    <string name="personal_moments_file_import_error">Persoonlijke momenten konden niet worden geïmporteerd</string>
+    <string name="personal_moments_file_import_error">Persoonlijke momenten konden niet worden geladen</string>
 </resources>

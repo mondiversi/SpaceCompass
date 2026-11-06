@@ -1,0 +1,4 @@
+<resources>
+    <string name="scene_export_title">Senaryo dışa aktarma</string>
+    <string name="location_export_title">Konum dışa aktarma</string>
+</resources>

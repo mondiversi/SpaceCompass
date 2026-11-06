@@ -1,9 +1,9 @@
 <resources>
     <string name="info_news_title">Latest news · %1$s</string>
-    <string name="info_news_star_sky" formatted="false">Save and share the current Scene from the main menu.</string>
-    <string name="info_news_texture_downloads" formatted="false">Scenes retain selected objects, dated paths, points and Antipodes.</string>
-    <string name="info_news_weather" formatted="false">Import a Scene with its active object and display choices.</string>
-    <string name="info_news_viewer_zoom" formatted="false">Location files now contain only place and time settings.</string>
-    <string name="info_news_settings" formatted="false">Choose whether to include Location and complete automatic parameters.</string>
-    <string name="info_news_catalog" formatted="false">More compact export options and support for previous mixed files.</string>
+    <string name="info_news_star_sky" formatted="false">Background music continues through the speakers when headphones are disconnected.</string>
+    <string name="info_news_texture_downloads" formatted="false">A cleaner object island without the removal button.</string>
+    <string name="info_news_weather" formatted="false">Object navigation arrows now have matching edge margins.</string>
+    <string name="info_news_viewer_zoom" formatted="false">Dedicated Scenario export and Location export page titles.</string>
+    <string name="info_news_settings" formatted="false">Consistent Load wording in commands, messages and file formats.</string>
+    <string name="info_news_catalog" formatted="false">Updated translations and accessibility labels in all twenty languages.</string>
 </resources>

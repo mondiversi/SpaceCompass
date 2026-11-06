@@ -1,9 +1,9 @@
 <resources>
     <string name="scenario_export">Export location</string>
-    <string name="scenario_import">Import location</string>
+    <string name="scenario_import">Load location</string>
     <string name="scenario_file_name">Location name</string>
     <string name="scenario_file_saved">Location saved</string>
-    <string name="scenario_file_imported">Location imported</string>
+    <string name="scenario_file_imported">Location loaded</string>
     <string name="scenario_file_invalid">Invalid or unsupported location file</string>
     <string name="scenario_file_error">Unable to save or share the location</string>
 </resources>

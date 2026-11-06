@@ -8,15 +8,15 @@
     <string name="personal_moment_duplicate">הרגע הזה כבר קיים</string>
     <string name="personal_moments_export">ייצוא רגעים אישיים</string>
     <string name="personal_moments_scope_all">כל העצמים</string>
-    <string name="personal_moments_archive_file">קובץ שניתן לייבא</string>
+    <string name="personal_moments_archive_file">קובץ שניתן לטעון</string>
     <string name="personal_moments_object_column">עצם</string>
     <string name="personal_moments_scope_object">העצם הזה בלבד</string>
     <string name="personal_moments_scope_selected">רק הרגעים שנבחרו</string>
-    <string name="personal_moments_import">ייבוא רגעים אישיים</string>
+    <string name="personal_moments_import">טעינת רגעים אישיים</string>
     <string name="personal_moments_file_saved">הרגעים האישיים נשמרו</string>
-    <string name="personal_moments_file_imported">הרגעים האישיים יובאו</string>
+    <string name="personal_moments_file_imported">הרגעים האישיים נטענו</string>
     <string name="personal_moments_file_existing">הרגעים האלה כבר שמורים</string>
     <string name="personal_moments_file_wrong_body">הקובץ מכיל רגעים עבור %1$s</string>
     <string name="personal_moments_file_error">לא ניתן לשמור או לשתף את הרגעים האישיים</string>
-    <string name="personal_moments_file_import_error">לא ניתן לייבא את הרגעים האישיים</string>
+    <string name="personal_moments_file_import_error">לא ניתן לטעון את הרגעים האישיים</string>
 </resources>

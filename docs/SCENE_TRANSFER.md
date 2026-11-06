@@ -7,7 +7,7 @@ retains automatic fields; an entirely automatic configuration cannot then be sav
 Missing GPS/altitude data is reported as pending rather than invented. A complete
 snapshot does not drift as the export name, profile or checkbox is edited.
 
-The main menu orders Units, Export, Import, Tutorial. Its new Scene document contains
+The main menu orders Units, Export, Load, Tutorial. Its new Scene document contains
 checked live bodies, the active body, enabled comparisons and Personal Moments,
 selected orbit points, antipode visibility, celestial guides, the 0–24/+24h mode,
 weather visibility and camera-object translucency. Location is included by default,

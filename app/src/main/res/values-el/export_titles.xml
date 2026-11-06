@@ -1,0 +1,4 @@
+<resources>
+    <string name="scene_export_title">Εξαγωγή σεναρίου</string>
+    <string name="location_export_title">Εξαγωγή τοποθεσίας</string>
+</resources>

@@ -1,11 +1,11 @@
 <resources>
     <string name="scene_title">תרחיש</string>
     <string name="scene_export">ייצוא</string>
-    <string name="scene_import">ייבוא</string>
+    <string name="scene_import">טעינה</string>
     <string name="scene_file_name">שם התרחיש</string>
     <string name="scene_export_include_location">כלול Location</string>
     <string name="scene_file_saved">התרחיש נשמר</string>
-    <string name="scene_file_imported">התרחיש יובא</string>
+    <string name="scene_file_imported">התרחיש נטען</string>
     <string name="scene_file_invalid">קובץ תרחיש לא תקין</string>
     <string name="scene_file_error">לא ניתן להעביר את התרחיש</string>
 </resources>

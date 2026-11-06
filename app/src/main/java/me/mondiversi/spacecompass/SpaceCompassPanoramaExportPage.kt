@@ -16,13 +16,14 @@ import androidx.compose.ui.unit.sp
 /** The same scrollable page and action footer for every export source. */
 @Composable
 internal fun SpaceCompassDataExportPage(onBack: () -> Unit, modifier: Modifier = Modifier,
+    title: String = stringResource(R.string.panorama_export_title),
     content: @Composable ColumnScope.() -> Unit) {
     val foreground = MaterialTheme.colorScheme.onSurface
     val secondary = foreground.copy(alpha = .72f)
     val scroll = rememberScrollState()
     Surface(modifier.fillMaxSize().testTag("page-export"), color = spaceCompassPageBackground(), contentColor = foreground) {
         Column(Modifier.fillMaxSize()) {
-            SpaceCompassPageToolbar(stringResource(R.string.panorama_export_title), onBack)
+            SpaceCompassPageToolbar(title, onBack)
             Column(Modifier.fillMaxWidth().weight(1f).scrollbarOverlay(scroll, secondary.copy(alpha = .46f))
                 .verticalScroll(scroll).padding(spaceCompassPageContentPadding)) {
                 SpaceCompassSettingsIsland {

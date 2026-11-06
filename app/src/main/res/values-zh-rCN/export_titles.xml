@@ -1,0 +1,4 @@
+<resources>
+    <string name="scene_export_title">导出场景</string>
+    <string name="location_export_title">导出地点</string>
+</resources>

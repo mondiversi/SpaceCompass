@@ -8,15 +8,15 @@
     <string name="personal_moment_duplicate">Этот момент уже существует</string>
     <string name="personal_moments_export">Экспорт личных моментов</string>
     <string name="personal_moments_scope_all">Все объекты</string>
-    <string name="personal_moments_archive_file">Файл для импорта</string>
+    <string name="personal_moments_archive_file">Файл для загрузки</string>
     <string name="personal_moments_object_column">Объект</string>
     <string name="personal_moments_scope_object">Только этот объект</string>
     <string name="personal_moments_scope_selected">Только выбранные моменты</string>
-    <string name="personal_moments_import">Импорт личных моментов</string>
+    <string name="personal_moments_import">Загрузить личные моменты</string>
     <string name="personal_moments_file_saved">Личные моменты сохранены</string>
-    <string name="personal_moments_file_imported">Личные моменты импортированы</string>
+    <string name="personal_moments_file_imported">Личные моменты загружены</string>
     <string name="personal_moments_file_existing">Эти моменты уже сохранены</string>
     <string name="personal_moments_file_wrong_body">Файл содержит моменты для объекта %1$s</string>
     <string name="personal_moments_file_error">Не удалось сохранить личные моменты или поделиться ими</string>
-    <string name="personal_moments_file_import_error">Не удалось импортировать личные моменты</string>
+    <string name="personal_moments_file_import_error">Не удалось загрузить личные моменты</string>
 </resources>

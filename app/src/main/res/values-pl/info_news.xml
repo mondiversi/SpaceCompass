@@ -1,9 +1,9 @@
 <resources>
     <string name="info_news_title">Ostatnie nowości · %1$s</string>
-    <string name="info_news_star_sky" formatted="false">Zapisuj i udostępniaj bieżącą Scenę z menu głównego.</string>
-    <string name="info_news_texture_downloads" formatted="false">Sceny zachowują wybrane obiekty, datowane trasy, punkty i Antypody.</string>
-    <string name="info_news_weather" formatted="false">Importuj Scenę z aktywnym obiektem i opcjami wyświetlania.</string>
-    <string name="info_news_viewer_zoom" formatted="false">Pliki Location zawierają teraz tylko ustawienia miejsca i czasu.</string>
-    <string name="info_news_settings" formatted="false">Wybierz, czy dołączyć Location i uzupełnić parametry automatyczne.</string>
-    <string name="info_news_catalog" formatted="false">Bardziej zwarte opcje eksportu i obsługa wcześniejszych plików mieszanych.</string>
+    <string name="info_news_star_sky" formatted="false">Muzyka w tle jest nadal odtwarzana przez głośniki po odłączeniu słuchawek.</string>
+    <string name="info_news_texture_downloads" formatted="false">Czytelniejszy panel obiektu bez przycisku usuwania.</string>
+    <string name="info_news_weather" formatted="false">Strzałki nawigacji obiektów mają teraz symetryczne marginesy.</string>
+    <string name="info_news_viewer_zoom" formatted="false">Osobne tytuły stron eksportu scenariusza i lokalizacji.</string>
+    <string name="info_news_settings" formatted="false">Spójne nazewnictwo wczytywania w poleceniach, komunikatach i formatach plików.</string>
+    <string name="info_news_catalog" formatted="false">Zaktualizowane tłumaczenia i etykiety dostępności we wszystkich dwudziestu językach.</string>
 </resources>

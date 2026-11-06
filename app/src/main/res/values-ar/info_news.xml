@@ -1,9 +1,9 @@
 <resources>
     <string name="info_news_title">آخر المستجدات · %1$s</string>
-    <string name="info_news_star_sky" formatted="false">احفظ المشهد الحالي وشاركه من القائمة الرئيسية.</string>
-    <string name="info_news_texture_downloads" formatted="false">تحتفظ المشاهد بالأجرام المحددة والمسارات المؤرخة والنقاط والنقاط المقابلة.</string>
-    <string name="info_news_weather" formatted="false">استورد مشهدًا مع جرمه النشط وخيارات عرضه.</string>
-    <string name="info_news_viewer_zoom" formatted="false">تحتوي ملفات Location الآن على إعدادات المكان والوقت فقط.</string>
-    <string name="info_news_settings" formatted="false">اختر تضمين Location وإكمال المعلمات التلقائية.</string>
-    <string name="info_news_catalog" formatted="false">خيارات تصدير أكثر إحكامًا ودعم الملفات المختلطة السابقة.</string>
+    <string name="info_news_star_sky" formatted="false">تستمر موسيقى الخلفية عبر مكبرات الصوت عند فصل سماعات الرأس.</string>
+    <string name="info_news_texture_downloads" formatted="false">لوحة جرم أكثر بساطة دون زر الإزالة.</string>
+    <string name="info_news_weather" formatted="false">أصبحت أسهم التنقل بين الأجرام ذات هوامش متناظرة.</string>
+    <string name="info_news_viewer_zoom" formatted="false">عناوين مخصصة لصفحتي تصدير السيناريو والموقع.</string>
+    <string name="info_news_settings" formatted="false">توحيد مصطلحات التحميل في الأوامر والرسائل وتنسيقات الملفات.</string>
+    <string name="info_news_catalog" formatted="false">تحديث الترجمات وتسميات تسهيل الاستخدام بجميع اللغات العشرين.</string>
 </resources>

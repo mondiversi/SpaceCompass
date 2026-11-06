@@ -1,9 +1,9 @@
 <resources>
     <string name="info_news_title">Últimas novedades · %1$s</string>
-    <string name="info_news_star_sky" formatted="false">Guarda y comparte la Escena actual desde el menú principal.</string>
-    <string name="info_news_texture_downloads" formatted="false">Las Escenas conservan objetos seleccionados, trayectorias fechadas, puntos y Antípodas.</string>
-    <string name="info_news_weather" formatted="false">Importa una Escena con su objeto activo y opciones de visualización.</string>
-    <string name="info_news_viewer_zoom" formatted="false">Los archivos Location ahora contienen solo ajustes de lugar y tiempo.</string>
-    <string name="info_news_settings" formatted="false">Elige si incluir Location y completar los parámetros automáticos.</string>
-    <string name="info_news_catalog" formatted="false">Opciones de exportación más compactas y compatibilidad con archivos mixtos anteriores.</string>
+    <string name="info_news_star_sky" formatted="false">La música de fondo continúa por los altavoces al desconectar los auriculares.</string>
+    <string name="info_news_texture_downloads" formatted="false">Panel del objeto más limpio, sin el botón para quitarlo.</string>
+    <string name="info_news_weather" formatted="false">Las flechas de navegación de objetos tienen márgenes simétricos.</string>
+    <string name="info_news_viewer_zoom" formatted="false">Títulos específicos para las páginas de exportación de escenario y ubicación.</string>
+    <string name="info_news_settings" formatted="false">Terminología Cargar uniforme en comandos, mensajes y formatos de archivo.</string>
+    <string name="info_news_catalog" formatted="false">Traducciones y etiquetas de accesibilidad actualizadas en los veinte idiomas.</string>
 </resources>

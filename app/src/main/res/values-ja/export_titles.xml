@@ -1,0 +1,4 @@
+<resources>
+    <string name="scene_export_title">シナリオの書き出し</string>
+    <string name="location_export_title">ロケーションの書き出し</string>
+</resources>

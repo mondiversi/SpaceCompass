@@ -1,9 +1,9 @@
 <resources>
     <string name="info_news_title">Laatste nieuws · %1$s</string>
-    <string name="info_news_star_sky" formatted="false">Bewaar en deel de huidige scène via het hoofdmenu.</string>
-    <string name="info_news_texture_downloads" formatted="false">Scènes bewaren geselecteerde objecten, gedateerde banen, punten en antipoden.</string>
-    <string name="info_news_weather" formatted="false">Importeer een scène met het actieve object en de weergavekeuzes.</string>
-    <string name="info_news_viewer_zoom" formatted="false">Location-bestanden bevatten nu alleen plaats- en tijdinstellingen.</string>
-    <string name="info_news_settings" formatted="false">Kies of Location wordt opgenomen en automatische parameters worden aangevuld.</string>
-    <string name="info_news_catalog" formatted="false">Compactere exportopties en ondersteuning voor eerdere gemengde bestanden.</string>
+    <string name="info_news_star_sky" formatted="false">Achtergrondmuziek gaat via de luidsprekers verder wanneer de hoofdtelefoon wordt losgekoppeld.</string>
+    <string name="info_news_texture_downloads" formatted="false">Een overzichtelijker objectpaneel zonder verwijderknop.</string>
+    <string name="info_news_weather" formatted="false">De pijlen voor objectnavigatie hebben nu gelijke randafstanden.</string>
+    <string name="info_news_viewer_zoom" formatted="false">Eigen paginatitels voor het exporteren van scenario’s en locaties.</string>
+    <string name="info_news_settings" formatted="false">Consistente laadterminologie in opdrachten, meldingen en bestandsformaten.</string>
+    <string name="info_news_catalog" formatted="false">Vertalingen en toegankelijkheidslabels bijgewerkt in alle twintig talen.</string>
 </resources>

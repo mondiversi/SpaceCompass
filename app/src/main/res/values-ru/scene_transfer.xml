@@ -1,11 +1,11 @@
 <resources>
     <string name="scene_title">Сценарий</string>
     <string name="scene_export">Экспорт</string>
-    <string name="scene_import">Импорт</string>
+    <string name="scene_import">Загрузить</string>
     <string name="scene_file_name">Название сценария</string>
     <string name="scene_export_include_location">Включить Location</string>
     <string name="scene_file_saved">Сценарий сохранён</string>
-    <string name="scene_file_imported">Сценарий импортирован</string>
+    <string name="scene_file_imported">Сценарий загружен</string>
     <string name="scene_file_invalid">Недопустимый файл сценария</string>
     <string name="scene_file_error">Не удалось передать сценарий</string>
 </resources>
