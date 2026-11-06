@@ -15,7 +15,6 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.*
 import androidx.compose.ui.semantics.semantics
 import androidx.compose.ui.semantics.contentDescription
-import androidx.compose.ui.semantics.Role
 import kotlinx.coroutines.*
 import java.time.*
 import java.time.format.DateTimeFormatter
@@ -407,7 +406,7 @@ private fun SpaceCompassObserverEditor(observer: SpaceCompassObserverState, modi
     Column(modifier.fillMaxSize().testTag("observer-page")) {
         SpaceCompassPageToolbar(stringResource(section?.titleResource ?: R.string.observer_management_title),
             ::navigateBack, titleModifier = if (section == null) Modifier.testTag("location-toggle-all-title")
-                .clickable(role = Role.Button, onClick = ::toggleAllCustomizations) else Modifier) {
+                .spaceCompassTitleClick(onClick = ::toggleAllCustomizations) else Modifier) {
             if (transfer != null) {
                 SpaceCompassTitleActionButton(stringResource(R.string.scenario_export), transfer.openExport,
                     Modifier.testTag("scenario-export-open"), enabled = transfer.canExport) {

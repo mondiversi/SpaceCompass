@@ -23,7 +23,6 @@ import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.verticalScroll
 import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
-import androidx.compose.foundation.interaction.MutableInteractionSource
 import androidx.compose.foundation.Canvas
 import androidx.compose.foundation.gestures.detectTapGestures
 import androidx.compose.ui.input.pointer.pointerInput
@@ -89,8 +88,7 @@ internal fun SpaceCompassCelestialCatalogPage(timeMs: Long, remote: SpaceCompass
     var searchFocused by remember { mutableStateOf(false) }
     val quickHeader = rememberSpaceCompassQuickReturnHeader(pinned = searchFocused)
     val catalogScope = rememberCoroutineScope()
-    val titleAction = Modifier.testTag("catalog-title").clickable(
-        interactionSource = remember { MutableInteractionSource() }, indication = null,
+    val titleAction = Modifier.testTag("catalog-title").spaceCompassTitleClick(
         onClickLabel = stringResource(R.string.catalog_scroll_to_top)
     ) { quickHeader.show(); catalogScope.launch { catalogScroll.animateScrollToItem(0) } }
     LaunchedEffect(sort, types, visibility, origin, pointing, query, favoritesOnly) { quickHeader.show(); catalogScroll.scrollToItem(0) }

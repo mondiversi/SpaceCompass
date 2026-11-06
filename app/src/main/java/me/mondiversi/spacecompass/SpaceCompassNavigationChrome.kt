@@ -1,6 +1,8 @@
 package me.mondiversi.spacecompass
 
 import androidx.compose.foundation.Canvas
+import androidx.compose.foundation.clickable
+import androidx.compose.foundation.interaction.MutableInteractionSource
 import androidx.compose.foundation.layout.*
 import androidx.compose.material3.*
 import androidx.compose.runtime.*
@@ -78,6 +80,14 @@ internal fun SpaceCompassTitleActionButton(
         )
     }
 }
+
+/** Title shortcuts keep their action and accessibility without a pressed background. */
+@Composable
+internal fun Modifier.spaceCompassTitleClick(enabled: Boolean = true, onClickLabel: String? = null,
+    onClick: () -> Unit): Modifier = clickable(
+    interactionSource = remember { MutableInteractionSource() }, indication = null,
+    enabled = enabled, role = androidx.compose.ui.semantics.Role.Button,
+    onClickLabel = onClickLabel, onClick = onClick)
 
 /** All secondary pages share the celestial detail toolbar's compact title spacing. */
 @Composable

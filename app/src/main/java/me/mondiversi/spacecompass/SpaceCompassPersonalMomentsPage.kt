@@ -46,7 +46,7 @@ internal fun SpaceCompassPersonalMomentsPage(body: SpaceCompassCelestialBody, ti
         Column {
             SpaceCompassPageToolbar(spaceCompassObservationCountLabel(stringResource(R.string.personal_moments_title), moments.size, countFirst = true),
                 onBack, titleModifier = Modifier.testTag("personal-moments-toggle-all-title")
-                    .clickable(enabled = moments.isNotEmpty(), role = Role.Button) { state?.toggleAllPersonalMoments(body) }) {
+                    .spaceCompassTitleClick(enabled = moments.isNotEmpty()) { state?.toggleAllPersonalMoments(body) }) {
                 SpaceCompassTitleActionButton(stringResource(R.string.personal_moment_add), { add = true },
                     Modifier.testTag("personal-moment-add"), enabled = state != null && saved.size < SPACE_COMPASS_PERSONAL_MOMENT_LIMIT) {
                     val ink = LocalContentColor.current

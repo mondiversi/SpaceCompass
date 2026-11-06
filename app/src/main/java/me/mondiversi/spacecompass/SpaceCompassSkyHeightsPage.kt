@@ -2,7 +2,6 @@ package me.mondiversi.spacecompass
 
 import androidx.activity.compose.BackHandler
 import androidx.compose.foundation.clickable
-import androidx.compose.ui.semantics.Role
 import androidx.compose.foundation.background
 import androidx.compose.ui.input.nestedscroll.nestedScroll
 import androidx.compose.foundation.layout.*
@@ -67,9 +66,8 @@ internal fun SpaceCompassSkyHeightsPage(body: SpaceCompassCelestialBody, timeMs:
                 val totalRows = remember(result) { result.totalRows }
                 SpaceCompassPageToolbar(spaceCompassObservationCountLabel(stringResource(R.string.observation_heights_title), totalRows, countFirst = true),
                     { if (!export.saving) onBack() }, modifier = Modifier.background(spaceCompassPageBackground()),
-                    titleModifier = Modifier.testTag("sky-heights-toggle-all-title").clickable(
-                        enabled = !export.saving && comparisons?.canToggleAll(choices) == true,
-                        role = Role.Button) { comparisons?.toggleAll(choices) }) {
+                    titleModifier = Modifier.testTag("sky-heights-toggle-all-title").spaceCompassTitleClick(
+                        enabled = !export.saving && comparisons?.canToggleAll(choices) == true) { comparisons?.toggleAll(choices) }) {
                     SpaceCompassTitleActionButton(stringResource(R.string.panorama_export), export.open,
                         Modifier.testTag("sky-heights-export"),
                         enabled = result.complete && !result.moments.isNullOrEmpty() && !export.saving) {

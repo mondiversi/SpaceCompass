@@ -2,7 +2,6 @@ package me.mondiversi.spacecompass
 
 import androidx.activity.compose.BackHandler
 import androidx.compose.foundation.clickable
-import androidx.compose.ui.semantics.Role
 import androidx.compose.foundation.background
 import androidx.compose.ui.input.nestedscroll.nestedScroll
 import androidx.compose.foundation.layout.*
@@ -66,9 +65,8 @@ internal fun SpaceCompassKeyEventsPage(body: SpaceCompassCelestialBody, timeMs: 
             Column(Modifier.fillMaxSize()) {
                 SpaceCompassPageToolbar(spaceCompassObservationCountLabel(stringResource(R.string.key_events_title), result.totalRows, countFirst = true),
                     { if (!export.saving) onBack() }, modifier = Modifier.background(spaceCompassPageBackground()),
-                    titleModifier = Modifier.testTag("key-events-toggle-all-title").clickable(
-                        enabled = !export.saving && comparisons?.canToggleAll(choices) == true,
-                        role = Role.Button) { comparisons?.toggleAll(choices) }) {
+                    titleModifier = Modifier.testTag("key-events-toggle-all-title").spaceCompassTitleClick(
+                        enabled = !export.saving && comparisons?.canToggleAll(choices) == true) { comparisons?.toggleAll(choices) }) {
                     SpaceCompassTitleActionButton(stringResource(R.string.panorama_export), export.open,
                         Modifier.testTag("key-events-export"),
                         enabled = result.complete && !result.events.isNullOrEmpty() && !export.saving) {
