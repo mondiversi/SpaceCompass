@@ -62,17 +62,22 @@ private fun SpaceCompassObservationAngle(value: Double?, azimuth: Boolean,
     val description = stringResource(if (azimuth) R.string.celestial_point_azimuth else R.string.celestial_point_elevation, text)
     Row(Modifier.testTag(tag).clearAndSetSemantics { contentDescription = description },
         verticalAlignment = Alignment.CenterVertically, horizontalArrangement = Arrangement.spacedBy(3.dp)) {
-        // Draw the horizontal/vertical double arrows so their ink is centered on the value.
-        Canvas(Modifier.size(10.dp)) {
-            fun point(x: Float, y: Float) = if (azimuth) Offset(size.width*x, size.height*y)
-                else Offset(size.width*y, size.height*x)
-            fun line(x1: Float, y1: Float, x2: Float, y2: Float) =
-                drawLine(color, point(x1,y1), point(x2,y2), 1.dp.toPx(), StrokeCap.Round)
-            line(.1f,.5f,.9f,.5f)
-            line(.1f,.5f,.34f,.26f); line(.1f,.5f,.34f,.74f)
-            line(.9f,.5f,.66f,.26f); line(.9f,.5f,.66f,.74f)
-        }
+        SpaceCompassObservationAngleIcon(azimuth, color)
         Text(text, color = color, fontSize = 12.sp, lineHeight = 16.sp, softWrap = false,
             style = TextStyle(textDirection = TextDirection.ContentOrLtr))
+    }
+}
+
+/** Shared horizontal/vertical double arrows identify azimuth/elevation without translated abbreviations. */
+@Composable
+internal fun SpaceCompassObservationAngleIcon(azimuth: Boolean, color: Color) {
+    Canvas(Modifier.size(10.dp)) {
+        fun point(x: Float, y: Float) = if (azimuth) Offset(size.width*x, size.height*y)
+            else Offset(size.width*y, size.height*x)
+        fun line(x1: Float, y1: Float, x2: Float, y2: Float) =
+            drawLine(color, point(x1,y1), point(x2,y2), 1.dp.toPx(), StrokeCap.Round)
+        line(.1f,.5f,.9f,.5f)
+        line(.1f,.5f,.34f,.26f); line(.1f,.5f,.34f,.74f)
+        line(.9f,.5f,.66f,.26f); line(.9f,.5f,.66f,.74f)
     }
 }

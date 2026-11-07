@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="scenario_speed">זמן</string>
-    <string name="scenario_speed_description">הזיזו את זמן המיקום אחורה או קדימה עד 3600×. האפס במרכז עוצר את הזמן.</string>
+    <string name="scenario_speed_description">הזיזו את זמן המיקום אחורה או קדימה עד 86400×. האפס במרכז עוצר את הזמן.</string>
     <string name="scenario_resume">המשך</string>
     <string name="scenario_resume_description">בחרו כיצד הזמן המדומה יתחדש בפתיחת היישום מחדש. המהירות שנבחרה חלה בכל המצבים.</string>
     <string name="scenario_restart">התחלה מחדש</string>

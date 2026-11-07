@@ -1,9 +1,9 @@
 <resources>
     <string name="info_news_title">최근 변경 사항 · %1$s</string>
-    <string name="info_news_star_sky" formatted="false">헤드폰을 분리하면 배경 음악이 스피커에서 계속 재생됩니다.</string>
-    <string name="info_news_texture_downloads" formatted="false">삭제 버튼을 없애 천체 패널을 간결하게 만들었습니다.</string>
-    <string name="info_news_weather" formatted="false">천체 탐색 화살표의 양쪽 가장자리 여백을 맞췄습니다.</string>
-    <string name="info_news_viewer_zoom" formatted="false">시나리오 및 위치 내보내기 페이지에 전용 제목을 추가했습니다.</string>
-    <string name="info_news_settings" formatted="false">명령, 메시지 및 파일 형식의 불러오기 용어를 통일했습니다.</string>
-    <string name="info_news_catalog" formatted="false">20개 언어 전체의 번역과 접근성 레이블을 업데이트했습니다.</string>
+    <string name="info_news_star_sky" formatted="false">새 시간 배율로 시간을 일시 정지하거나 되돌리고, 초당 최대 하루까지 빠르게 진행하세요.</string>
+    <string name="info_news_texture_downloads" formatted="false">Location 변경은 기본 하늘로 돌아갈 때 적용되며 설정 중에는 시간이 멈춥니다.</string>
+    <string name="info_news_weather" formatted="false">Location의 미래 날짜와 시간을 UTC 차이와 함께 하늘 상단에 계속 표시합니다.</string>
+    <string name="info_news_viewer_zoom" formatted="false">시간을 다시 켜면 일시 정지와 역방향을 포함한 마지막 속도가 복원됩니다.</string>
+    <string name="info_news_settings" formatted="false">새 날짜가 되면 현재 경로의 선택 지점은 해제되고 고정 날짜 비교는 선택 상태로 유지됩니다.</string>
+    <string name="info_news_catalog" formatted="false">방위각과 고도 레이블을 더 간결하게 하고 사진과 파노라마의 시각과 T를 양쪽 끝에 표시합니다.</string>
 </resources>

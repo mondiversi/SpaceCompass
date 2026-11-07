@@ -167,7 +167,7 @@ class SpaceCompassObserverAutosaveTest {
         assertEquals(60,state.timeSettings.multiplier)
         assertNotNull(state.plan?.scenarioClock)
     }
-    @Test fun reEnablingAccelerationResetsEverySavedSpeedAndPersistsOneTimesAcrossAllResumeModes() {
+    @Test fun reEnablingAccelerationRestoresEverySavedSpeedAcrossAllResumeModes() {
         for (mode in SpaceCompassScenarioResume.entries) {
             for (rate in spaceCompassScenarioRates) {
                 val store = Store()
@@ -178,14 +178,14 @@ class SpaceCompassObserverAutosaveTest {
                 state.configureTime(state.timeSettings.copy(enabled = true))
                 val reopened = SpaceCompassObserverState(store.preferences, elapsedClock = { 0L })
                 assertTrue(reopened.timeSettings.enabled)
-                assertEquals(1, reopened.timeSettings.rate)
-                assertEquals(1, reopened.timeSettings.multiplier)
+                assertEquals(rate, reopened.timeSettings.rate)
+                assertEquals(rate, reopened.timeSettings.multiplier)
                 assertEquals(mode, reopened.timeSettings.resume)
             }
         }
     }
 
-    @Test fun speedToggleKeepsTheReachedScenarioInstantAndThenAdvancesAtNormalSpeed() {
+    @Test fun speedToggleKeepsTheReachedScenarioInstantAndRestoresItsSelectedSpeed() {
         for (persistent in listOf(false, true)) {
             val store = Store()
             var elapsed = 0L
@@ -203,13 +203,13 @@ class SpaceCompassObserverAutosaveTest {
             val reached = state.plan!!.observationTimeMs(System.currentTimeMillis())
             assertEquals(start + 3602_000, reached)
             state.configureTime(state.timeSettings.copy(enabled = true))
-            assertEquals(1, state.timeSettings.multiplier)
+            assertEquals(3600, state.timeSettings.multiplier)
             assertEquals(reached, state.plan!!.observationTimeMs(System.currentTimeMillis()))
             assertEquals(original, state.savedPlan)
             elapsed += 1000
-            assertEquals(reached + 1000, state.plan!!.observationTimeMs(System.currentTimeMillis()))
+            assertEquals(reached + 3600_000, state.plan!!.observationTimeMs(System.currentTimeMillis()))
             state.reload()
-            assertEquals(1, state.timeSettings.multiplier)
+            assertEquals(3600, state.timeSettings.multiplier)
             state.configureTime(state.timeSettings.copy(rate = 60))
             state.reload()
             assertEquals(60, state.timeSettings.multiplier)
@@ -293,7 +293,7 @@ class SpaceCompassObserverAutosaveTest {
         assertEquals(original, reopened.savedPlan)
     }
 
-    @Test fun anEnabledZeroRateSurvivesReloadAndReopeningButReactivationStillStartsAtOne() {
+    @Test fun anEnabledZeroRateSurvivesReloadReopeningAndReactivation() {
         val store = Store()
         var elapsed = 0L
         val state = SpaceCompassObserverState(store.preferences, elapsedClock = { elapsed })
@@ -313,7 +313,7 @@ class SpaceCompassObserverAutosaveTest {
         reopened.configureTime(reopened.timeSettings.copy(enabled = false))
         assertEquals(1, reopened.timeSettings.multiplier)
         reopened.configureTime(reopened.timeSettings.copy(enabled = true))
-        assertEquals(1, reopened.timeSettings.rate)
+        assertEquals(0, reopened.timeSettings.rate)
         assertEquals(original, reopened.savedPlan)
     }
     @Test fun preparedAltitudePersistsWithoutEnablingAnyLocationOverride() {

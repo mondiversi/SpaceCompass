@@ -1,9 +1,9 @@
 <resources>
     <string name="info_news_title">最新变化 · %1$s</string>
-    <string name="info_news_star_sky" formatted="false">断开耳机后，背景音乐会继续通过扬声器播放。</string>
-    <string name="info_news_texture_downloads" formatted="false">移除删除按钮，让天体面板更加简洁。</string>
-    <string name="info_news_weather" formatted="false">天体切换箭头现在具有对称的边距。</string>
-    <string name="info_news_viewer_zoom" formatted="false">场景和地点导出页面使用各自的专属标题。</string>
-    <string name="info_news_settings" formatted="false">统一命令、消息及文件格式中的加载用语。</string>
-    <string name="info_news_catalog" formatted="false">更新全部20种语言的翻译和无障碍标签。</string>
+    <string name="info_news_star_sky" formatted="false">使用新的时间刻度暂停、倒流或加速时间，最高每秒前进一天。</string>
+    <string name="info_news_texture_downloads" formatted="false">Location 更改在返回主天空视图时生效；配置期间时间保持暂停。</string>
+    <string name="info_news_weather" formatted="false">Location 的未来日期和时间会显示在天空顶部，并附带 UTC 时差。</string>
+    <string name="info_news_viewer_zoom" formatted="false">重新启用时间时恢复上次速度，包括暂停和倒流。</string>
+    <string name="info_news_settings" formatted="false">进入新的一天时清除当前轨迹上选中的点，固定日期的对比仍保持选中。</string>
+    <string name="info_news_catalog" formatted="false">方位角和高度标签更加紧凑；照片和全景图的时间与 T 分别显示在两侧。</string>
 </resources>

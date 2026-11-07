@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="scenario_speed">Muda</string>
-    <string name="scenario_speed_description">Sogeza muda wa eneo nyuma au mbele hadi 3600×. Sifuri katikati husimamisha muda.</string>
+    <string name="scenario_speed_description">Sogeza muda wa eneo nyuma au mbele hadi 86400×. Sifuri katikati husimamisha muda.</string>
     <string name="scenario_resume">Kuendelea</string>
     <string name="scenario_resume_description">Chagua jinsi muda ulioigwa unavyoendelea unapofungua programu tena. Kasi iliyochaguliwa hutumika katika kila hali.</string>
     <string name="scenario_restart">Anza tena mwanzo</string>

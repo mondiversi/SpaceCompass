@@ -1,9 +1,9 @@
 <resources>
     <string name="info_news_title">Ostatnie nowości · %1$s</string>
-    <string name="info_news_star_sky" formatted="false">Muzyka w tle jest nadal odtwarzana przez głośniki po odłączeniu słuchawek.</string>
-    <string name="info_news_texture_downloads" formatted="false">Czytelniejszy panel obiektu bez przycisku usuwania.</string>
-    <string name="info_news_weather" formatted="false">Strzałki nawigacji obiektów mają teraz symetryczne marginesy.</string>
-    <string name="info_news_viewer_zoom" formatted="false">Osobne tytuły stron eksportu scenariusza i lokalizacji.</string>
-    <string name="info_news_settings" formatted="false">Spójne nazewnictwo wczytywania w poleceniach, komunikatach i formatach plików.</string>
-    <string name="info_news_catalog" formatted="false">Zaktualizowane tłumaczenia i etykiety dostępności we wszystkich dwudziestu językach.</string>
+    <string name="info_news_star_sky" formatted="false">Wstrzymaj, cofnij lub przyspiesz czas do jednej doby na sekundę dzięki nowej skali.</string>
+    <string name="info_news_texture_downloads" formatted="false">Zmiany Location są stosowane po powrocie do głównego nieba; podczas konfiguracji czas jest zatrzymany.</string>
+    <string name="info_news_weather" formatted="false">Przyszła data i godzina Location pozostają widoczne u góry nieba wraz z przesunięciem UTC.</string>
+    <string name="info_news_viewer_zoom" formatted="false">Ponowne włączenie czasu przywraca ostatnią prędkość, także pauzę i bieg wstecz.</string>
+    <string name="info_news_settings" formatted="false">Nowy dzień usuwa zaznaczone punkty bieżących torów; porównania z ustaloną datą pozostają zaznaczone.</string>
+    <string name="info_news_catalog" formatted="false">Zwięźlejsze etykiety azymutu i wysokości; na zdjęciach i panoramach godzina i T znajdują się po przeciwnych stronach.</string>
 </resources>

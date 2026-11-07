@@ -89,7 +89,8 @@ class SpaceCompassCelestialSceneInteractionTest {
         assertEquals(clock.center.y, countdown.center.y, .5f)
         val azimuth = compose.onNodeWithTag("celestial-badge-azimuth").fetchSemanticsNode().boundsInRoot
         val elevation = compose.onNodeWithTag("celestial-badge-elevation").fetchSemanticsNode().boundsInRoot
-        assertEquals(azimuth.right, elevation.right, 0.5f)
+        assertTrue(azimuth.right <= elevation.left + .5f)
+        assertEquals(azimuth.center.y, elevation.center.y, 0.5f)
         compose.onNodeWithTag("sun-finder-sky").performTouchInput { click(center) }
         compose.onNodeWithTag("sun-path-page").assertDoesNotExist()
         compose.onNodeWithTag("celestial-pinned-badge").assertIsDisplayed()

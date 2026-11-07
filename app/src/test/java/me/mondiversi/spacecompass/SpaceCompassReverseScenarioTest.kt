@@ -15,12 +15,13 @@ class SpaceCompassReverseScenarioTest {
         SpaceCompassScenarioTimeSettings(true, rate, mode), "reverse", Instant.parse(start).toEpochMilli(),
         wall, elapsed, checkpoint) { elapsed }
 
-    @Test fun pauseIsTheExactMiddleAndEveryOldForwardSpeedHasAnEqualReverseStep() {
+    @Test fun pauseIsTheExactMiddleAndEveryForwardSpeedHasAnEqualReverseStep() {
         val rates = spaceCompassScenarioRates
         assertEquals(0, rates[rates.lastIndex / 2])
         assertEquals(1, rates[rates.lastIndex / 2 + 1])
         assertEquals(-1, rates[rates.lastIndex / 2 - 1])
-        assertEquals(-3600, rates.first()); assertEquals(3600, rates.last())
+        assertEquals(25, rates.size)
+        assertEquals(-86400, rates.first()); assertEquals(86400, rates.last())
         assertEquals(rates, rates.reversed().map { -it })
         for (rate in rates) {
             val settings = SpaceCompassScenarioTimeSettings(true, rate).normalized()

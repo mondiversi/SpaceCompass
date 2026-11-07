@@ -13,13 +13,30 @@ All existing observation, capture, weather and screen-saver consumers resolve
 time through `observationTimeMs`, so acceleration also crosses civil midnights,
 month/year boundaries and daylight-saving transitions in either direction.
 
-The discrete slider is symmetric: -3600× through -1× on the left, a paused 0× at
-the exact centre, and +1× through +3600× on the right. Both directions use the
-reviewed magnitudes 1, 2, 3, 6, 10, 30, 60, 120, 300, 600, 1800 and 3600. Physical
+The discrete slider has 25 positions and is symmetric: -86400× through -1× on the
+left, a paused 0× at the exact centre, and +1× through +86400× on the right. Both
+directions use the reviewed magnitudes 1, 5, 10, 30, 60, 300, 900, 3600, 7200,
+21600, 43200 and 86400. The maximum corresponds to one elapsed 24-hour day per
+real second; local civil days still follow the selected zone's daylight-saving rules.
+Older saved or imported rates that no longer have a slider step (2, 3, 6, 120, 600,
+1800, with either sign) migrate to the nearest slower magnitude, preserving the
+direction, enabled flag and resumption policy. Unknown rates remain invalid in
+archives. Physical
 left/right direction is retained in RTL locales. A centre-origin track and compact
 direction/rate/real-second equivalence rows distinguish rewind, pause and forward.
-Clock input remains the standard accessible stepped Slider. Re-enabling Time resets
-to +1×; changing direction or passing through pause retains the reached instant.
+Clock input remains the standard accessible stepped Slider. Re-enabling Time restores
+the last selected rate, including zero or rewind. Its new-install value remains +1×.
+Changing direction or passing through pause retains the reached instant.
+Location management edits use a retained, non-running observer preview. Every valid
+option is still autosaved, but the live observer keeps its previous configuration
+until navigation returns to the main sky. The preview and the existing scenario
+clock are held while editing, including Always mode; a new rate never consumes
+time spent choosing other fields. Returning from a parameter to the management
+list does not apply it. Main-view return applies the prepared configuration and
+reanchors its clock once. A prepared clock marker prevents process recreation
+from counting the time spent editing; imports/exports within management use the
+prepared values rather than the unchanged live observer.
+
 Acceleration is off by default (effective +1×). Settings remain saved independently
 of the date/time switches. Changing rate/resumption retains the reached instant;
 editing a configured temporal component establishes a new origin. Position-only
@@ -85,3 +102,32 @@ Verification includes pure clock persistence/reboot/DST/rate tests, deliberately
 asynchronous path intersections, simultaneous intersections between samples,
 missing data, stable close pairs, selection identity, real Sun/Moon directions,
 chronological text/CSV formatting, existing tests and translation parity.
+
+## Daily point selections
+
+The main sky's point bubbles keep their object/event title and clock/countdown,
+then show azimuth and elevation together on one row. Shared horizontal/vertical
+double-arrow icons identify the two values; translated accessibility descriptions
+remain complete.
+
+The selection owner tracks the effective civil date in the Location zone. A date
+change (real midnight, simulated progression, rewind or a different configured day)
+clears all pins belonging to live tracks, including current positions, hourly and
+key-event markers. This also applies in the forward-24-hour mode. Pins attached to
+fixed height/event/personal comparisons keep their identity and remain selected.
+The reset is silent; count badges update and antipodes turn off only if no pins
+remain. Merely reopening a page or refreshing data within the same day preserves
+selections. Scene loading establishes the incoming Location day before restoring
+its pins, so imported live points survive loading and expire at the next date
+change. An already generated image/export remains its original frozen snapshot.
+
+## Capture clock columns
+
+Photo and panorama bubbles share the same drawing/layout routine. Their clock
+row places the observation time at the left edge and T at the right edge without
+a visible separator, matching the main sky. Labels measure both fields and a
+font-relative minimum gap before placement; wider event titles or angle rows
+naturally spread the columns further apart. Angle rows keep their middle dot and
+icons. Canonical label strings retain their clock/countdown boundary for internal
+compatibility; only the clock row is rendered as columns, leaving personal titles
+and translated event names untouched.

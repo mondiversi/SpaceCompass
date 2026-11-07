@@ -100,6 +100,7 @@ internal fun SpaceCompassSunPointingViewport(
     showAntipodes: Boolean = false,
     sideControls: Boolean = false, activeComparisonId: String? = null,
     showFloatingControls: Boolean = true,
+    scenarioMomentLabel: String? = null,
     onToggleFloatingControls: (() -> Unit)? = null
 ) {
     val reticleAction = stringResource(if (showReticle) R.string.reticle_disable else R.string.reticle_enable)
@@ -132,11 +133,21 @@ internal fun SpaceCompassSunPointingViewport(
         var topEndActionsSize by remember(showFloatingControls) { mutableStateOf(IntSize.Zero) }
         var topCenterActionsSize by remember(showFloatingControls) { mutableStateOf(IntSize.Zero) }
         val centerActionsSize = if (topCenterActions == null) IntSize.Zero else topCenterActionsSize
+        var scenarioMomentSize by remember(scenarioMomentLabel != null) { mutableStateOf(IntSize.Zero) }
         val sideControlsCenterY = (topStartActionsSize.height + height - bottomStartActionsSize.height) / 2
         val centerActionsTop = if (sideControls) with(density) {
             // Centre the column in the actual gap between logo and panel chevron.
             (sideControlsCenterY - centerActionsSize.height / 2).coerceAtLeast(0.0).toFloat().toDp()
         } else topContentInset
+        val scenarioMomentTop = if (showFloatingControls && !sideControls && topCenterActions != null) {
+            val controlHeight = with(density) { centerActionsSize.height.toDp() }
+                .coerceAtLeast(spaceCompassFloatingControlSize + 8.dp)
+            centerActionsTop + controlHeight + 6.dp
+        } else topContentInset
+        val scenarioMomentFrame = if (scenarioMomentLabel != null && scenarioMomentSize.width > 0)
+            SpaceCompassSunSceneFrame((width - scenarioMomentSize.width) / 2,
+                with(density) { scenarioMomentTop.toPx().toDouble() },
+                scenarioMomentSize.width.toDouble(), scenarioMomentSize.height.toDouble()) else null
         val centerGap = (topControlSpacing - 4.dp).coerceAtLeast(0.dp)
         val centerActionsLeft = if (sideControls) {
             if (rtl) width - centerActionsSize.width else 0.0
@@ -194,6 +205,7 @@ internal fun SpaceCompassSunPointingViewport(
         // The reticle's outer arms end at 32 dp; keep an eight-dp gap before notices.
         val noticeTopInset = with(density) { reticleCenter.y.toFloat().toDp() } + 40.dp
         val titleTouchExclusions = buildList {
+            scenarioMomentFrame?.let { add(it) }
             val headerHeight = with(density) { projectionTopInset.toPx().toDouble() }.coerceIn(0.0, height)
             if (headerHeight > 0) add(SpaceCompassSunSceneFrame(0.0, 0.0, width, headerHeight))
             if (centerActionsSize.width > 0 && centerActionsSize.height > 0) add(SpaceCompassSunSceneFrame(
@@ -201,6 +213,7 @@ internal fun SpaceCompassSunPointingViewport(
                 centerActionsSize.width.toDouble(), centerActionsSize.height.toDouble()))
         }
         val exclusions = buildList {
+            scenarioMomentFrame?.let { add(it) }
             addAll(timeBadgeExclusions)
             // Paths can pass beneath the header, while captions and edge locators avoid it.
             val topInsetPx = with(density) { topContentInset.toPx().toDouble() }.coerceIn(0.0, height)
@@ -351,6 +364,21 @@ internal fun SpaceCompassSunPointingViewport(
                 bottomCenterActions(Modifier.align(if (sideControls) Alignment.BottomEnd else Alignment.BottomCenter)
                     .offset(y = with(density) { (-bottomCenterLift).toFloat().toDp() })
                     .onSizeChanged { bottomCenterActionsSize = it })
+            }
+            scenarioMomentLabel?.let { label ->
+                // This read-only clock stays visible when the floating controls are hidden.
+                val cornerInset = if (showFloatingControls && sideControls) with(density) {
+                    maxOf(topStartActionsSize.width, topEndActionsSize.width).toDp()
+                } + 8.dp else 4.dp
+                Box(Modifier.align(Alignment.TopCenter).fillMaxWidth()
+                    .padding(start = cornerInset, end = cornerInset, top = scenarioMomentTop),
+                    contentAlignment = Alignment.TopCenter) {
+                    SpaceCompassScenarioMomentText(label,
+                        foreground = spaceCompassScenarioAccentColor(backgroundColor.luminance() < .4f),
+                        outline = primaryText.copy(alpha = .35f),
+                        modifier = Modifier.widthIn(max = 360.dp).onSizeChanged { scenarioMomentSize = it }
+                            .padding(horizontal = 4.dp, vertical = 2.dp).testTag("main-scenario-moment"))
+                }
             }
             SpaceCompassSunStatusNotices(compassWarning, statusMessage, statusActionLabel, onStatusAction,
                 backgroundColor,

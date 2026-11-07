@@ -115,12 +115,12 @@ class SpaceCompassScenarioClockTest {
         paused.setActive(true, wall + 1000)
         elapsed += 5000
         assertEquals(reached, paused.at(wall + 6000))
-        val resumed = SpaceCompassScenarioClock(SpaceCompassScenarioTimeSettings(true, 2,
+        val resumed = SpaceCompassScenarioClock(SpaceCompassScenarioTimeSettings(true, 5,
             SpaceCompassScenarioResume.ACTIVE), "resumed", paused.at(wall + 6000), wall + 6000, elapsed) { elapsed }
         resumed.setActive(true, wall + 6000)
         assertEquals(reached, resumed.at(wall + 6000))
         elapsed += 1000
-        assertEquals(reached + 2000, resumed.at(wall + 7000))
+        assertEquals(reached + 5000, resumed.at(wall + 7000))
     }
 
     @Test fun aPausedClockKeepsCelestialPositionsAndWeatherRequestsAtTheFrozenMoment() {

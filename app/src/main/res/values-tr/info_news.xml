@@ -1,9 +1,9 @@
 <resources>
     <string name="info_news_title">Son yenilikler · %1$s</string>
-    <string name="info_news_star_sky" formatted="false">Kulaklıklar çıkarıldığında arka plan müziği hoparlörlerden çalmaya devam eder.</string>
-    <string name="info_news_texture_downloads" formatted="false">Kaldırma düğmesi olmadan daha sade bir nesne paneli.</string>
-    <string name="info_news_weather" formatted="false">Nesne gezinme okları artık kenarlardan eşit uzaklıktadır.</string>
-    <string name="info_news_viewer_zoom" formatted="false">Senaryo ve konum dışa aktarma sayfaları için özel başlıklar.</string>
-    <string name="info_news_settings" formatted="false">Komutlarda, iletilerde ve dosya biçimlerinde tutarlı yükleme ifadeleri.</string>
-    <string name="info_news_catalog" formatted="false">Yirmi dilin tamamında çeviriler ve erişilebilirlik etiketleri güncellendi.</string>
+    <string name="info_news_star_sky" formatted="false">Yenilenen zaman ölçeğiyle zamanı duraklatın, geri sarın veya saniyede bir güne kadar hızlandırın.</string>
+    <string name="info_news_texture_downloads" formatted="false">Location değişiklikleri ana gökyüzüne dönünce uygulanır; yapılandırma sırasında zaman duraklatılır.</string>
+    <string name="info_news_weather" formatted="false">Location için gelecekteki tarih ve saat, UTC farkıyla birlikte gökyüzünün üstünde görünür kalır.</string>
+    <string name="info_news_viewer_zoom" formatted="false">Zamanı yeniden etkinleştirmek duraklatma ve geri akış dâhil son hızı geri yükler.</string>
+    <string name="info_news_settings" formatted="false">Yeni bir gün, güncel yollardaki seçili noktaları temizler; sabit tarihli karşılaştırmalar seçili kalır.</string>
+    <string name="info_news_catalog" formatted="false">Daha kompakt azimut ve yükseklik etiketleri; fotoğraf ve panoramalarda saat ile T karşılıklı kenarlarda gösterilir.</string>
 </resources>

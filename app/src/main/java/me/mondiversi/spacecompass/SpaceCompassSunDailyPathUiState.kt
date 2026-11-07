@@ -39,11 +39,23 @@ internal class SpaceCompassSunDailyPathUiState(
         private set
     private val selection = mutableStateMapOf<SpaceCompassOrbitPointKey, SpaceCompassSelectedOrbitPoint>()
     private var lastSelectedKey: SpaceCompassOrbitPointKey? = null
+    private var observationDate: LocalDate? = null
     val selectedPoints: List<SpaceCompassSelectedOrbitPoint> get() = selection.values.toList()
     var antipodesVisible by mutableStateOf(false)
         private set
 
     fun toggleAntipodes() { antipodesVisible = selection.isNotEmpty() && !antipodesVisible }
+
+    /** A new effective civil day expires only live-track pins, never fixed comparison moments. */
+    fun refreshObservationDate(date: LocalDate) {
+        val changed = observationDate?.let { it != date } == true
+        observationDate = date
+        if (!changed) return
+        selection.keys.filter { it.comparisonId == null }.forEach(selection::remove)
+        if (lastSelectedKey !in selection) lastSelectedKey = selection.keys.lastOrNull()
+        if (menuPath?.comparison == null) menuFocusPointId = null
+        if (selection.isEmpty()) antipodesVisible = false
+    }
 
     fun openMenu(path: SpaceCompassSunDailyPath, currentPoint: SpaceCompassSunPathPoint? = null) {
         menuPath = path

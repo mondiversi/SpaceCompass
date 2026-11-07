@@ -1,9 +1,9 @@
 <resources>
     <string name="info_news_title">Neuigkeiten · %1$s</string>
-    <string name="info_news_star_sky" formatted="false">Die Hintergrundmusik läuft nach dem Trennen der Kopfhörer über die Lautsprecher weiter.</string>
-    <string name="info_news_texture_downloads" formatted="false">Eine übersichtlichere Objektkarte ohne Entfernen-Schaltfläche.</string>
-    <string name="info_news_weather" formatted="false">Die Pfeile zur Objektnavigation haben jetzt gleiche Randabstände.</string>
-    <string name="info_news_viewer_zoom" formatted="false">Eigene Seitentitel für Szenario- und Ortsexport.</string>
-    <string name="info_news_settings" formatted="false">Einheitliche Bezeichnungen zum Laden in Befehlen, Meldungen und Dateiformaten.</string>
-    <string name="info_news_catalog" formatted="false">Übersetzungen und Barrierefreiheitsbeschriftungen in allen zwanzig Sprachen aktualisiert.</string>
+    <string name="info_news_star_sky" formatted="false">Zeit anhalten, zurückspulen oder bis zu einem Tag pro Sekunde beschleunigen: mit der überarbeiteten Zeitskala.</string>
+    <string name="info_news_texture_downloads" formatted="false">Location-Änderungen gelten erst bei der Rückkehr zum Himmel; während der Einrichtung bleibt die Zeit angehalten.</string>
+    <string name="info_news_weather" formatted="false">Zukünftige Datums- und Zeitangaben der Location bleiben oben im Himmel mit UTC-Abweichung sichtbar.</string>
+    <string name="info_news_viewer_zoom" formatted="false">Beim erneuten Aktivieren wird die letzte Zeitgeschwindigkeit wiederhergestellt, auch Pause und Rücklauf.</string>
+    <string name="info_news_settings" formatted="false">Ein neuer Tag löscht ausgewählte Punkte laufender Bahnen; Vergleiche mit festem Datum bleiben ausgewählt.</string>
+    <string name="info_news_catalog" formatted="false">Kompaktere Azimut- und Höhenangaben; Fotos und Panoramen zeigen Uhrzeit und T an gegenüberliegenden Seiten.</string>
 </resources>

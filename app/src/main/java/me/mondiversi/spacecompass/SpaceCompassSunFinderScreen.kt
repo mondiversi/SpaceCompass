@@ -398,7 +398,10 @@ internal fun SpaceCompassSunFinderContent(
     }
     SideEffect { publishSolarObserver(solarObserver) }
     val zone = spaceCompassObservationZone()
+    val scenarioMomentLabel = spaceCompassScenarioMomentLabel(observerPlan, timeMs, deviceTimeMs, zone)
     val date = Instant.ofEpochMilli(timeMs).atZone(zone).toLocalDate()
+    // Use the Location clock/zone, including accelerated forward/rewind, rather than device midnight.
+    SideEffect { dailyPathUiState.refreshObservationDate(date) }
     // Approximately 11 m location cells keep GPS jitter from rebuilding a whole day's curve.
     // All ephemeris work runs off the UI thread; orientation merely projects the cached vectors.
     val pathLatitude = fix?.latitude?.let { round(it * 10_000) / 10_000 }
@@ -695,6 +698,7 @@ internal fun SpaceCompassSunFinderContent(
                     } },
                     drawScene = false, objectOpacity = cameraObjectOpacity, showReticle = showReticle,
                     showFloatingControls = showSkyControls, showAntipodes = showAntipodes,
+                    scenarioMomentLabel = scenarioMomentLabel,
                     onToggleReticle = if (tutorialActive) null else ({
                         reticleVisible = !reticleVisible
                         saveSpaceCompassReticleVisible(scenePreferences, reticleVisible)

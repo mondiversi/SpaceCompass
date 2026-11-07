@@ -1,9 +1,9 @@
 <resources>
     <string name="info_news_title">Mambo mapya · %1$s</string>
-    <string name="info_news_star_sky" formatted="false">Muziki wa mandharinyuma huendelea kupitia spika unapotoa vipokea sauti.</string>
-    <string name="info_news_texture_downloads" formatted="false">Kadi ya gimba iliyo rahisi zaidi bila kitufe cha kuondoa.</string>
-    <string name="info_news_weather" formatted="false">Mishale ya kusogeza magimba sasa ina nafasi sawa kutoka kingo.</string>
-    <string name="info_news_viewer_zoom" formatted="false">Vichwa maalumu kwa kurasa za kuhamisha mandhari na eneo.</string>
-    <string name="info_news_settings" formatted="false">Maneno ya kupakia yamewekwa sawa katika amri, ujumbe na miundo ya faili.</string>
-    <string name="info_news_catalog" formatted="false">Tafsiri na lebo za ufikivu zimesasishwa katika lugha zote ishirini.</string>
+    <string name="info_news_star_sky" formatted="false">Sitisha, rudisha nyuma au ongeza kasi ya muda hadi siku moja kwa sekunde kwa kipimo kipya.</string>
+    <string name="info_news_texture_downloads" formatted="false">Mabadiliko ya Location yanatumika unaporudi kwenye anga kuu; muda husimama wakati wa usanidi.</string>
+    <string name="info_news_weather" formatted="false">Tarehe na saa za baadaye za Location hubaki juu ya anga, pamoja na tofauti ya UTC.</string>
+    <string name="info_news_viewer_zoom" formatted="false">Kuwasha muda tena hurejesha kasi ya mwisho, ikiwemo kusitisha na kurudi nyuma.</string>
+    <string name="info_news_settings" formatted="false">Siku mpya huondoa uteuzi wa nukta za njia za sasa; milinganisho yenye tarehe maalumu hubaki imechaguliwa.</string>
+    <string name="info_news_catalog" formatted="false">Lebo fupi zaidi za azimuthi na mwinuko; picha na panorama huonyesha saa na T kwenye kingo zinazokabiliana.</string>
 </resources>

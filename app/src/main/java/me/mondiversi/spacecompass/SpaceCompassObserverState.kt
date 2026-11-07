@@ -17,14 +17,20 @@ private const val scenarioEnabledKey = "scenario_speed_enabled"
 private const val scenarioRateKey = "scenario_speed_rate"
 private const val scenarioResumeKey = "scenario_resume"
 private const val scenarioCheckpointKey = "scenario_clock_checkpoint"
+private const val scenarioPreparedClockKey = "scenario_prepared_clock"
 
 internal class SpaceCompassObserverState(private val preferences: SharedPreferences?,
-    private val elapsedClock: () -> Long = { android.os.SystemClock.elapsedRealtime() }) : ViewModel() {
+    private val elapsedClock: () -> Long = { android.os.SystemClock.elapsedRealtime() },
+    private val editorPreview: Boolean = false, initialPreviewInstant: Long? = null) : ViewModel() {
     var timeSettings by mutableStateOf(SpaceCompassScenarioTimeSettings()); private set
     private var clock: SpaceCompassScenarioClock? = null
     private var clockPlan: SpaceCompassObserverPlan? = null
     private var active = false
     private var localCustom = false
+    private var applyingDeferred = false
+    private var editor: SpaceCompassObserverState? = null
+    private var previewSeed = initialPreviewInstant
+    private var preparedClock: SpaceCompassScenarioCheckpoint? = null
     var plan by mutableStateOf<SpaceCompassObserverPlan?>(null, referentialEqualityPolicy())
         private set
     var savedPlan by mutableStateOf<SpaceCompassObserverPlan?>(null)
@@ -34,6 +40,8 @@ internal class SpaceCompassObserverState(private val preferences: SharedPreferen
     var devicePlace by mutableStateOf<SpaceCompassDevicePlace?>(null)
     init { reload() }
     fun reload() {
+        if (applyingDeferred) return
+        val seed = previewSeed.also { previewSeed = null }
         if (preferences != null) {
         savedPlan = decodeSpaceCompassObserverPlan(preferences.getString(SPACE_COMPASS_OBSERVER_PLAN, null),
             allowInactive = preferences.getString(SPACE_COMPASS_OBSERVER_MODE, null) == "live")
@@ -51,38 +59,98 @@ internal class SpaceCompassObserverState(private val preferences: SharedPreferen
                 simulateDate = false) else null
         if (raw == null || !raw.hasCustomMoment && !timeSettings.enabled) {
             clock = null; clockPlan = null; plan = raw
+            if (editorPreview) {
+                preparedClock = null
+                preferences?.edit()?.remove(scenarioPreparedClockKey)?.apply()
+            }
             // Returning wholly to live time ends the temporal session, while retaining its settings.
             if (preferences?.getString(scenarioCheckpointKey,null) != null)
                 preferences?.edit()?.remove(scenarioCheckpointKey)?.apply()
             return
         }
         val signature = spaceCompassScenarioClockSignature(raw, timeSettings, ZoneId.systemDefault())
-        if (clock?.signature != signature) {
+        val prepared = (preparedClock ?: SpaceCompassScenarioCheckpoint.decode(
+            preferences?.getString(scenarioPreparedClockKey, null)))?.takeIf { it.signature == signature }
+        if (clock?.signature != signature || prepared != null && clock?.at(now, elapsedClock()) != prepared.instant) {
             val sameMoment = clockPlan?.let { spaceCompassScenarioClockSignature(it, SpaceCompassScenarioTimeSettings(), ZoneId.systemDefault()) ==
                 spaceCompassScenarioClockSignature(raw, SpaceCompassScenarioTimeSettings(), ZoneId.systemDefault()) } == true
-            val current = clock?.takeIf { sameMoment }?.at(now)
+            val current = seed ?: clock?.takeIf { sameMoment }?.at(now)
             val checkpoint = SpaceCompassScenarioCheckpoint.decode(preferences?.getString(scenarioCheckpointKey, null))
-            val configured = if (timeSettings.resume == SpaceCompassScenarioResume.RESTART)
+            val configured = if (editorPreview || prepared != null || timeSettings.resume == SpaceCompassScenarioResume.RESTART)
                 raw.copy(advanceTime = false, clockOffsetMs = null) else raw
-            clock = SpaceCompassScenarioClock(timeSettings, signature, current ?: configured.observationTimeMs(now), now,
-                elapsedClock(), checkpoint, elapsedClock).also { it.setActive(active, now) }
+            clock = SpaceCompassScenarioClock(timeSettings, signature, prepared?.instant ?: current ?: configured.observationTimeMs(now), now,
+                elapsedClock(), checkpoint.takeUnless { editorPreview || prepared != null }, elapsedClock).also {
+                    if (editorPreview || prepared != null) it.hold(now, elapsedClock())
+                    it.setActive(active, now, elapsedClock())
+                }
             clockPlan = raw
         }
         plan = raw.copy().also { it.scenarioClock = clock }
-        if (timeSettings.resume == SpaceCompassScenarioResume.ALWAYS) checkpoint()
+        if (editorPreview) {
+            preparedClock = clock?.checkpoint(now, elapsedClock())
+            preferences?.edit()?.putString(scenarioPreparedClockKey, preparedClock?.encode())?.apply()
+        } else if (timeSettings.resume == SpaceCompassScenarioResume.ALWAYS) checkpoint()
+    }
+
+    /** Keep the running observer unchanged while the editor autosaves its prepared configuration. */
+    fun beginEditing(): SpaceCompassObserverState {
+        editor?.let { return it }
+        checkpoint(sync = true)
+        val now = System.currentTimeMillis()
+        clock?.hold(now, elapsedClock())
+        applyingDeferred = true
+        return SpaceCompassObserverState(preferences, elapsedClock, editorPreview = true,
+            initialPreviewInstant = plan?.observationTimeMs(now)).also { draft ->
+            if (preferences == null) {
+                draft.savedPlan = savedPlan; draft.timeSettings = timeSettings; draft.localCustom = localCustom
+                draft.previewSeed = plan?.observationTimeMs(now); draft.reload()
+            }
+            draft.devicePlace = devicePlace; draft.archiveName = archiveName
+            editor = draft
+        }
+    }
+
+    /** Called only when the navigation route returns to the main sky, after the editor flushes. */
+    fun finishEditing() {
+        val draft = editor
+        if (draft == null && preferences?.getString(scenarioPreparedClockKey, null) == null) return
+        val now = System.currentTimeMillis()
+        if (draft != null) {
+            val instant = draft.clock?.at(now, elapsedClock())
+            val saved = draft.savedPlan?.let { value ->
+                if (value.advancesClock && instant != null) value.copy(clockOffsetMs = instant - now) else value
+            }
+            draft.savedPlan = saved
+            preparedClock = if (saved != null && instant != null) SpaceCompassScenarioCheckpoint(
+                spaceCompassScenarioClockSignature(saved, draft.timeSettings, ZoneId.systemDefault()), instant, now) else null
+            preferences?.edit()?.apply {
+                if (saved != null) putString(SPACE_COMPASS_OBSERVER_PLAN, saved.encode())
+                putString(scenarioPreparedClockKey, preparedClock?.encode())
+            }?.apply()
+            if (preferences == null) {
+                savedPlan = saved; timeSettings = draft.timeSettings; localCustom = draft.localCustom
+            }
+            archiveName = draft.archiveName ?: archiveName
+        }
+        applyingDeferred = false; editor = null
+        reload()
+        clock?.release(now, elapsedClock())
+        preparedClock = null
+        preferences?.edit()?.remove(scenarioPreparedClockKey)?.apply()
+        checkpoint(sync = true)
     }
     /** A deliberately imported speed is restored exactly; an archived file never carries elapsed runtime. */
     fun importArchive(archive: SpaceCompassScenarioArchive) {
         val checked = SpaceCompassScenarioArchive.decode(archive.encode())
         val configured = checked.configurationAtImport(System.currentTimeMillis(), ZoneId.systemDefault())
-        clock = null; clockPlan = null
+        clock = null; clockPlan = null; preparedClock = null
         savedPlan = configured; localCustom = checked.custom
         // A place-only import returns to live time without replacing this device's resumption preference.
         timeSettings = if (checked.temporalSettingsIncluded) checked.timeSettings else timeSettings.copy(enabled = false)
         val editor = preferences?.edit()?.putString(SPACE_COMPASS_OBSERVER_PLAN, configured.encode())
             ?.putString(SPACE_COMPASS_OBSERVER_MODE, if (checked.custom) "custom" else "live")
             ?.putBoolean(scenarioEnabledKey, timeSettings.enabled)?.putInt(scenarioRateKey, timeSettings.rate)
-            ?.putString(scenarioResumeKey, timeSettings.resume.name)?.remove(scenarioCheckpointKey)
+            ?.putString(scenarioResumeKey, timeSettings.resume.name)?.remove(scenarioCheckpointKey)?.remove(scenarioPreparedClockKey)
         checked.celestialSelection?.let { editor?.putSpaceCompassCelestialSelection(it) }
         editor?.apply()
         reload()
@@ -91,8 +159,8 @@ internal class SpaceCompassObserverState(private val preferences: SharedPreferen
     }
 
     fun configureTime(value: SpaceCompassScenarioTimeSettings) {
-        // Re-enabling acceleration always requires a fresh, deliberate speed choice.
-        val next = (if (!timeSettings.enabled && value.enabled) value.copy(rate = 1) else value).normalized()
+        // Activation changes only the switch; the last chosen speed (including pause/rewind) stays prepared.
+        val next = value.normalized()
         if (timeSettings == next) return
         checkpoint()
         preferences?.edit()?.putBoolean(scenarioEnabledKey, next.enabled)?.putInt(scenarioRateKey, next.rate)
@@ -100,17 +168,17 @@ internal class SpaceCompassObserverState(private val preferences: SharedPreferen
         if (preferences == null) timeSettings = next
         reload()
     }
-    /** Select and freeze an event atomically, bypassing the deliberate 1x re-enable safeguard. */
+    /** Select and freeze an event atomically while retaining configured spatial values. */
     fun observeAt(instant: Long, deviceZone: ZoneId = ZoneId.systemDefault()): Boolean {
         val selected = spaceCompassObserverPlanAtMoment(plan, savedPlan, instant, deviceZone) ?: return false
         val paused = timeSettings.copy(enabled = true, rate = 0)
         if (savedPlan == selected && timeSettings == paused && plan != null) return false
-        clock = null; clockPlan = null
+        clock = null; clockPlan = null; preparedClock = null
         // Every preference becomes visible together, so listeners cannot resurrect a running checkpoint.
         preferences?.edit()?.putString(SPACE_COMPASS_OBSERVER_PLAN, selected.encode())
             ?.putString(SPACE_COMPASS_OBSERVER_MODE, "custom")?.putBoolean(scenarioEnabledKey, true)
             ?.putInt(scenarioRateKey, 0)?.putString(scenarioResumeKey, paused.resume.name)
-            ?.remove(scenarioCheckpointKey)?.apply()
+            ?.remove(scenarioCheckpointKey)?.remove(scenarioPreparedClockKey)?.apply()
         savedPlan = selected; timeSettings = paused; localCustom = true
         reload()
         editorGeneration++
@@ -122,6 +190,7 @@ internal class SpaceCompassObserverState(private val preferences: SharedPreferen
         if (!value) checkpoint(sync = true)
     }
     fun checkpoint(sync: Boolean = false) {
+        if (editorPreview || applyingDeferred) return
         if (clock?.settings?.resume == SpaceCompassScenarioResume.RESTART) return
         val value = clock?.checkpoint(System.currentTimeMillis()) ?: return
         val edit = preferences?.edit()?.putString(scenarioCheckpointKey, value.encode()) ?: return

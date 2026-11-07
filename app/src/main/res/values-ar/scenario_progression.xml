@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="scenario_speed">الزمن</string>
-    <string name="scenario_speed_description">حرّك زمن الموقع إلى الخلف أو الأمام حتى 3600×. الصفر في المنتصف يوقف الزمن.</string>
+    <string name="scenario_speed_description">حرّك زمن الموقع إلى الخلف أو الأمام حتى 86400×. الصفر في المنتصف يوقف الزمن.</string>
     <string name="scenario_resume">استئناف</string>
     <string name="scenario_resume_description">اختر كيفية استئناف الزمن المحاكى عند إعادة فتح التطبيق. تُطبَّق السرعة المحددة في جميع الأوضاع.</string>
     <string name="scenario_restart">البدء من البداية</string>

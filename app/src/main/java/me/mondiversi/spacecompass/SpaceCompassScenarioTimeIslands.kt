@@ -42,8 +42,13 @@ internal fun SpaceCompassScenarioSpeedControls(observer: SpaceCompassObserverSta
     val shown = (if (rate < 0) "−" else if (rate > 0) "+" else "") + number(abs(rate))
     val speed = stringResource(R.string.scenario_speed_value, shown)
     val magnitude = abs(rate)
-    val divisor = if (magnitude >= 3600) 3600 else if (magnitude >= 60) 60 else 1
-    val unit = if (divisor == 3600) "h" else if (divisor == 60) "min" else "s"
+    val divisor = when {
+        magnitude >= 86400 -> 86400
+        magnitude >= 3600 -> 3600
+        magnitude >= 60 -> 60
+        else -> 1
+    }
+    val unit = when (divisor) { 86400 -> "d"; 3600 -> "h"; 60 -> "min"; else -> "s" }
     val duration = formatSpaceCompassNumber(magnitude.toDouble()/divisor, if (magnitude % divisor == 0) 0 else 1,
         numeric, grouping = false, systemLocale = locale) + " $unit"
     val direction = stringResource(when {

@@ -20,7 +20,7 @@ internal fun drawSpaceCompassPanoramaTimeLabels(canvas: Canvas, labels: List<Spa
     }
     val placed = labels.sortedBy { if (it.selected) 0 else if (it.current) 1 else if (it.principal) 2 else 3 }.mapNotNull { label ->
         val lines = label.text.lines()
-        val labelWidth = lines.maxOf(text::measureText) + 18 * scale
+        val labelWidth = spaceCompassCaptureCaptionContentWidth(lines, text.measureText("  "), text::measureText) + 18 * scale
         val heightForLabel = maxOf(34 * scale, lineHeight * lines.size + 10 * scale)
         val nearby = spaceCompassPanoramaLabelBounds(label.point, labelWidth.toDouble(), heightForLabel.toDouble(),
             width.toDouble(), height.toDouble(), scale.toDouble(), obstacles, label.pointRadius.toDouble())
@@ -58,7 +58,14 @@ internal fun drawSpaceCompassPanoramaTimeLabels(canvas: Canvas, labels: List<Spa
         val firstBaseline = bounds.top +
             (bounds.height() - lineHeight * (lines.size - 1) - metrics.descent - metrics.ascent) / 2
         lines.forEachIndexed { index, line ->
-            drawSpaceCompassCaptureLabelLine(canvas, line, bounds.left + 9 * scale, firstBaseline + index * lineHeight, text)
+            val baseline = firstBaseline + index * lineHeight
+            val columns = spaceCompassCaptureClockColumns(lines, index)
+            if (columns != null) {
+                canvas.drawText(columns.clock, bounds.left + 9 * scale, baseline, text)
+                canvas.drawText(columns.countdown, bounds.right - 9 * scale - text.measureText(columns.countdown), baseline, text)
+            } else {
+                drawSpaceCompassCaptureLabelLine(canvas, line, bounds.left + 9 * scale, baseline, text)
+            }
         }
     }
 }

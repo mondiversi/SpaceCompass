@@ -1,9 +1,9 @@
 <resources>
     <string name="info_news_title">Ultime novità · %1$s</string>
-    <string name="info_news_star_sky" formatted="false">La musica di sottofondo prosegue dagli altoparlanti scollegando gli auricolari.</string>
-    <string name="info_news_texture_downloads" formatted="false">Isola oggetto più pulita, senza il pulsante di rimozione.</string>
-    <string name="info_news_weather" formatted="false">Frecce di navigazione degli oggetti con margini simmetrici ai bordi.</string>
-    <string name="info_news_viewer_zoom" formatted="false">Titoli dedicati per Esportazione scenario ed Esportazione location.</string>
-    <string name="info_news_settings" formatted="false">Terminologia Carica uniforme nei comandi, nei messaggi e nei formati dei file.</string>
-    <string name="info_news_catalog" formatted="false">Traduzioni ed etichette di accessibilità aggiornate in tutte le venti lingue.</string>
+    <string name="info_news_star_sky" formatted="false">Metti in pausa, riavvolgi o accelera il tempo fino a un giorno al secondo con la nuova scala.</string>
+    <string name="info_news_texture_downloads" formatted="false">Le modifiche della Location si applicano tornando al cielo principale; il tempo resta fermo durante la configurazione.</string>
+    <string name="info_news_weather" formatted="false">Data e ora future della Location restano visibili in alto nel cielo, con lo scarto UTC.</string>
+    <string name="info_news_viewer_zoom" formatted="false">Riattivando il tempo ritrovi l’ultima velocità scelta, anche pausa e avanzamento inverso.</string>
+    <string name="info_news_settings" formatted="false">Al cambio di giorno si cancellano i punti selezionati dei percorsi correnti, mantenendo i confronti a data fissa.</string>
+    <string name="info_news_catalog" formatted="false">Azimut e altezza più compatti nei fumetti; foto e panoramiche mostrano ora e T ai lati opposti.</string>
 </resources>

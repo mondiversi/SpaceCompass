@@ -142,6 +142,23 @@ class SpaceCompassSceneArchiveTest {
         assertEquals(plan,observer.savedPlan);assertEquals(contents().timeSettings,observer.timeSettings)
         assertEquals(selection,readSpaceCompassCelestialSelection(store.preferences))
     }
+    @Test fun loadingADifferentDayRestoresIncomingLivePinsBeforeTheNextRollover() {
+        val store = Store()
+        val observer = SpaceCompassObserverState(store.preferences, elapsedClock = { 0L })
+        observer.apply(plan.copy(timeMs = now - 86_400_000L))
+        val points = SpaceCompassSunDailyPathUiState()
+        val oldDate = java.time.Instant.ofEpochMilli(now).atZone(zone).toLocalDate().minusDays(1)
+        points.refreshObservationDate(oldDate)
+        val comparisons = SpaceCompassTemporalComparisonState(points)
+        importSpaceCompassScene(scene(), observer, comparisons, points, store.preferences)
+        points.refreshObservationDate(oldDate.plusDays(1)) // First main-view frame after loading.
+        assertEquals(contents().selectedOrbitPoints!!.toSet(), points.selectedPoints.toSet())
+        assertTrue(points.antipodesVisible)
+        points.refreshObservationDate(oldDate.plusDays(2))
+        assertEquals(contents().selectedOrbitPoints!!.filter { it.key.comparisonId != null }.toSet(),
+            points.selectedPoints.toSet())
+    }
+
     @Test fun legacyLocationImportCannotReplaceTheRecipientsObjectsOrPoints() {
         val store=Store(mapOf("celestial_selected" to setOf("MARS"),"celestial_active" to "MARS"))
         val observer=SpaceCompassObserverState(store.preferences,elapsedClock={0L})

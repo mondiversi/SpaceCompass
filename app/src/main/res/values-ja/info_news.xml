@@ -1,9 +1,9 @@
 <resources>
     <string name="info_news_title">最近の変更 · %1$s</string>
-    <string name="info_news_star_sky" formatted="false">ヘッドホンを外すと、BGMはスピーカーから再生を続けます。</string>
-    <string name="info_news_texture_downloads" formatted="false">削除ボタンをなくし、天体パネルをすっきりさせました。</string>
-    <string name="info_news_weather" formatted="false">天体を切り替える矢印の左右の余白を揃えました。</string>
-    <string name="info_news_viewer_zoom" formatted="false">シナリオとロケーションの書き出しページに専用タイトルを追加しました。</string>
-    <string name="info_news_settings" formatted="false">コマンド、メッセージ、ファイル形式で読み込みの表現を統一しました。</string>
-    <string name="info_news_catalog" formatted="false">全20言語の翻訳とアクセシビリティラベルを更新しました。</string>
+    <string name="info_news_star_sky" formatted="false">新しい時間スケールで、一時停止、逆再生、毎秒最大1日の早送りができます。</string>
+    <string name="info_news_texture_downloads" formatted="false">Locationの変更はメインの空に戻ると適用され、設定中は時間が停止します。</string>
+    <string name="info_news_weather" formatted="false">Locationの未来の日付と時刻を、UTCオフセットとともに空の上部に表示します。</string>
+    <string name="info_news_viewer_zoom" formatted="false">時間を再び有効にすると、一時停止や逆方向も含めて最後の速度が復元されます。</string>
+    <string name="info_news_settings" formatted="false">日付が変わると現在の経路の選択点を解除し、固定日時の比較は選択したまま保持します。</string>
+    <string name="info_news_catalog" formatted="false">方位角と高度のラベルをコンパクトにし、写真とパノラマでは時刻とTを左右に分けて表示します。</string>
 </resources>

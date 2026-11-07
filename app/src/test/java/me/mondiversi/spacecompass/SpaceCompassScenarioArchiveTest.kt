@@ -133,7 +133,7 @@ class SpaceCompassScenarioArchiveTest {
         SpaceCompassObserverState(store.preferences, elapsedClock = { 0L }).importArchive(archive)
         val reopened = SpaceCompassObserverState(store.preferences, elapsedClock = { 0L })
         assertNull(reopened.plan); assertEquals(config, reopened.savedPlan)
-        assertEquals(archive.timeSettings, reopened.timeSettings)
+        assertEquals(archive.timeSettings.normalized(), reopened.timeSettings)
         assertFalse(store.values.containsKey("scenario_clock_checkpoint"))
     }
 

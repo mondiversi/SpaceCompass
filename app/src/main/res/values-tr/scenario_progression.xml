@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="scenario_speed">Zaman</string>
-    <string name="scenario_speed_description">Konum zamanını 3600× hızla geri veya ileri alın. Ortadaki sıfır zamanı duraklatır.</string>
+    <string name="scenario_speed_description">Konum zamanını 86400× hızla geri veya ileri alın. Ortadaki sıfır zamanı duraklatır.</string>
     <string name="scenario_resume">Sürdürme</string>
     <string name="scenario_resume_description">Uygulama yeniden açıldığında simüle edilen zamanın nasıl devam edeceğini seçin. Seçilen hız tüm modlarda geçerlidir.</string>
     <string name="scenario_restart">Baştan başlat</string>

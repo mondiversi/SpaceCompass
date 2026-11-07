@@ -1,9 +1,9 @@
 <resources>
     <string name="info_news_title">हाल के बदलाव · %1$s</string>
-    <string name="info_news_star_sky" formatted="false">हेडफ़ोन हटाने पर पृष्ठभूमि संगीत स्पीकर से बजता रहता है।</string>
-    <string name="info_news_texture_downloads" formatted="false">हटाने के बटन के बिना अधिक साफ़ पिंड पैनल।</string>
-    <string name="info_news_weather" formatted="false">पिंड नेविगेशन के तीरों के किनारे अब समान दूरी पर हैं।</string>
-    <string name="info_news_viewer_zoom" formatted="false">परिदृश्य और लोकेशन निर्यात पृष्ठों के लिए अलग शीर्षक।</string>
-    <string name="info_news_settings" formatted="false">कमांड, संदेश और फ़ाइल प्रारूपों में लोड संबंधी एकसमान शब्दावली।</string>
-    <string name="info_news_catalog" formatted="false">सभी बीस भाषाओं में अनुवाद और सुलभता लेबल अपडेट किए गए हैं।</string>
+    <string name="info_news_star_sky" formatted="false">नई समय-सीढ़ी से समय रोकें, पीछे चलाएँ या एक सेकंड में एक दिन तक तेज़ करें।</string>
+    <string name="info_news_texture_downloads" formatted="false">Location के बदलाव मुख्य आकाश पर लौटने पर लागू होते हैं; सेटिंग करते समय समय रुका रहता है।</string>
+    <string name="info_news_weather" formatted="false">Location की भविष्य की तारीख और समय UTC अंतर के साथ आकाश के ऊपर दिखाई देते रहते हैं।</string>
+    <string name="info_news_viewer_zoom" formatted="false">समय फिर चालू करने पर पिछली गति लौटती है, जिसमें विराम और उलटी दिशा भी शामिल हैं।</string>
+    <string name="info_news_settings" formatted="false">नया दिन वर्तमान पथों के चुने बिंदु हटाता है; तय तारीख वाली तुलनाएँ चुनी रहती हैं।</string>
+    <string name="info_news_catalog" formatted="false">दिगंश और उन्नयन के अधिक संक्षिप्त लेबल; फ़ोटो और पैनोरमा में समय और T विपरीत किनारों पर दिखते हैं।</string>
 </resources>

@@ -1,9 +1,9 @@
 <resources>
     <string name="info_news_title">تازه‌ترین تغییرات · %1$s</string>
-    <string name="info_news_star_sky" formatted="false">موسیقی پس‌زمینه پس از قطع هدفون از بلندگوها ادامه می‌یابد.</string>
-    <string name="info_news_texture_downloads" formatted="false">کادر جرم ساده‌تر و بدون دکمه حذف.</string>
-    <string name="info_news_weather" formatted="false">پیکان‌های جابه‌جایی بین اجرام اکنون حاشیه‌های متقارن دارند.</string>
-    <string name="info_news_viewer_zoom" formatted="false">عنوان‌های اختصاصی برای صفحه‌های برون‌بری سناریو و مکان.</string>
-    <string name="info_news_settings" formatted="false">واژگان یکسان بارگذاری در فرمان‌ها، پیام‌ها و قالب‌های فایل.</string>
-    <string name="info_news_catalog" formatted="false">ترجمه‌ها و برچسب‌های دسترس‌پذیری در هر بیست زبان به‌روز شدند.</string>
+    <string name="info_news_star_sky" formatted="false">با مقیاس جدید، زمان را متوقف کنید، به عقب ببرید یا تا یک روز در ثانیه سرعت دهید.</string>
+    <string name="info_news_texture_downloads" formatted="false">تغییرات Location هنگام بازگشت به آسمان اصلی اعمال می‌شوند؛ زمان هنگام تنظیم متوقف می‌ماند.</string>
+    <string name="info_news_weather" formatted="false">تاریخ و ساعت آیندهٔ Location با اختلاف UTC در بالای آسمان نمایان می‌مانند.</string>
+    <string name="info_news_viewer_zoom" formatted="false">فعال‌کردن دوبارهٔ زمان، آخرین سرعت را همراه با توقف یا حرکت معکوس برمی‌گرداند.</string>
+    <string name="info_news_settings" formatted="false">روز جدید انتخاب نقاط مسیرهای جاری را پاک می‌کند؛ مقایسه‌های دارای تاریخ ثابت انتخاب‌شده می‌مانند.</string>
+    <string name="info_news_catalog" formatted="false">برچسب‌های فشرده‌تر سمت و ارتفاع؛ عکس‌ها و پانوراماها ساعت و T را در دو سوی مقابل نشان می‌دهند.</string>
 </resources>

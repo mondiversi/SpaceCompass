@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="scenario_speed">Czas</string>
-    <string name="scenario_speed_description">Przesuwaj czas lokalizacji wstecz lub naprzód z prędkością do 3600×. Zero pośrodku zatrzymuje czas.</string>
+    <string name="scenario_speed_description">Przesuwaj czas lokalizacji wstecz lub naprzód z prędkością do 86400×. Zero pośrodku zatrzymuje czas.</string>
     <string name="scenario_resume">Wznawianie</string>
     <string name="scenario_resume_description">Wybierz sposób wznawiania symulowanego czasu po ponownym otwarciu aplikacji. Wybrana prędkość obowiązuje w każdym trybie.</string>
     <string name="scenario_restart">Zacznij od początku</string>

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="scenario_speed">Tempo</string>
-    <string name="scenario_speed_description">Recue ou avance no tempo até 3600×. O zero ao centro para o tempo.</string>
+    <string name="scenario_speed_description">Recue ou avance no tempo até 86400×. O zero ao centro para o tempo.</string>
     <string name="scenario_resume">Retoma</string>
     <string name="scenario_resume_description">Escolha como o tempo simulado é retomado ao reabrir a aplicação. A velocidade escolhida aplica-se a todos os modos.</string>
     <string name="scenario_restart">Recomeçar do início</string>

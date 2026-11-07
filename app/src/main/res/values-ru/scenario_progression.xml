@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="scenario_speed">Время</string>
-    <string name="scenario_speed_description">Перемещайте время локации назад или вперёд со скоростью до 3600×. Ноль в центре останавливает время.</string>
+    <string name="scenario_speed_description">Перемещайте время локации назад или вперёд со скоростью до 86400×. Ноль в центре останавливает время.</string>
     <string name="scenario_resume">Возобновление</string>
     <string name="scenario_resume_description">Выберите, как возобновляется моделируемое время при повторном открытии приложения. Выбранная скорость действует во всех режимах.</string>
     <string name="scenario_restart">Начинать сначала</string>

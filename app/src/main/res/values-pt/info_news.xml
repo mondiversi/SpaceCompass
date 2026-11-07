@@ -1,9 +1,9 @@
 <resources>
     <string name="info_news_title">Últimas novidades · %1$s</string>
-    <string name="info_news_star_sky" formatted="false">A música de fundo continua nos altifalantes ao desligar os auriculares.</string>
-    <string name="info_news_texture_downloads" formatted="false">Painel do objeto mais simples, sem o botão de remoção.</string>
-    <string name="info_news_weather" formatted="false">As setas de navegação dos objetos têm agora margens simétricas.</string>
-    <string name="info_news_viewer_zoom" formatted="false">Títulos próprios para as páginas de exportação de cenário e localização.</string>
-    <string name="info_news_settings" formatted="false">Terminologia Carregar uniforme nos comandos, mensagens e formatos de ficheiro.</string>
-    <string name="info_news_catalog" formatted="false">Traduções e etiquetas de acessibilidade atualizadas nos vinte idiomas.</string>
+    <string name="info_news_star_sky" formatted="false">Pause, recue ou acelere o tempo até um dia por segundo com a nova escala.</string>
+    <string name="info_news_texture_downloads" formatted="false">As alterações da Location são aplicadas ao voltar ao céu principal; o tempo fica em pausa durante a configuração.</string>
+    <string name="info_news_weather" formatted="false">A data e a hora futuras da Location permanecem visíveis no topo do céu, com o desvio UTC.</string>
+    <string name="info_news_viewer_zoom" formatted="false">Ao reativar o tempo, recupera a última velocidade, incluindo pausa e sentido inverso.</string>
+    <string name="info_news_settings" formatted="false">Um novo dia limpa os pontos selecionados dos percursos atuais; as comparações com data fixa são mantidas.</string>
+    <string name="info_news_catalog" formatted="false">Rótulos de azimute e elevação mais compactos; fotos e panoramas mostram a hora e T em lados opostos.</string>
 </resources>

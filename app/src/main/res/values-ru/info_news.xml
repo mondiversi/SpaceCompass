@@ -1,9 +1,9 @@
 <resources>
     <string name="info_news_title">Последние новости · %1$s</string>
-    <string name="info_news_star_sky" formatted="false">Фоновая музыка продолжает звучать через динамики после отключения наушников.</string>
-    <string name="info_news_texture_downloads" formatted="false">Более простой блок объекта без кнопки удаления.</string>
-    <string name="info_news_weather" formatted="false">Стрелки навигации по объектам теперь имеют симметричные отступы.</string>
-    <string name="info_news_viewer_zoom" formatted="false">Отдельные заголовки страниц экспорта сценария и локации.</string>
-    <string name="info_news_settings" formatted="false">Единая терминология загрузки в командах, сообщениях и форматах файлов.</string>
-    <string name="info_news_catalog" formatted="false">Обновлены переводы и подписи специальных возможностей на всех двадцати языках.</string>
+    <string name="info_news_star_sky" formatted="false">Останавливайте, обращайте или ускоряйте время до суток за секунду с новой шкалой.</string>
+    <string name="info_news_texture_downloads" formatted="false">Изменения Location применяются при возвращении к основному небу; во время настройки время приостановлено.</string>
+    <string name="info_news_weather" formatted="false">Будущие дата и время Location остаются видимыми вверху неба со смещением UTC.</string>
+    <string name="info_news_viewer_zoom" formatted="false">При повторном включении восстанавливается последняя скорость, включая паузу и обратный ход.</string>
+    <string name="info_news_settings" formatted="false">Новый день снимает выбор точек текущих траекторий; сравнения с фиксированной датой остаются выбранными.</string>
+    <string name="info_news_catalog" formatted="false">Компактные подписи азимута и высоты; на фото и панорамах время и T расположены по разным краям.</string>
 </resources>

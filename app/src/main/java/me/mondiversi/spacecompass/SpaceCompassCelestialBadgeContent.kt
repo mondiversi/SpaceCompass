@@ -22,7 +22,7 @@ import androidx.compose.ui.text.rememberTextMeasurer
 import androidx.compose.ui.text.style.TextOverflow
 import java.time.ZoneId
 
-/** The object heading, clock/countdown and two angle rows remain visible together. */
+/** The object heading, clock/countdown and compact angle row remain visible together. */
 @Composable
 internal fun SpaceCompassCelestialBadgeContent(timeMs: Long, nowMs: Long, zone: ZoneId,
     position: SpaceCompassSunPosition, primaryText: Color, secondaryText: Color, backgroundColor: Color,

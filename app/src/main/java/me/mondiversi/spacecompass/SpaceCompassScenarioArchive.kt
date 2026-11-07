@@ -28,7 +28,7 @@ internal data class SpaceCompassScenarioArchive(val name: String, val configurat
 
     fun encode(): String {
         require(name.isNotBlank() && name.length <= 80 && name.none(Char::isISOControl))
-        require(timeSettings.rate in spaceCompassScenarioRates)
+        require(spaceCompassSupportedScenarioRate(timeSettings.rate))
         val c = configuration
         if (!temporalSettingsIncluded) require(!c.simulateDate && !c.simulateTime && !c.advanceTime &&
             c.clockOffsetMs == null && c.timeMs == 0L && c.momentZoneId == "UTC" && timeSettings == SpaceCompassScenarioTimeSettings())
@@ -98,7 +98,7 @@ internal data class SpaceCompassScenarioArchive(val name: String, val configurat
                 clockOffsetMs = if (advance && time) 0L else null, allowInactive = true))
             val settings = SpaceCompassScenarioTimeSettings(bool("speedEnabled"), value("speedRate").toInt(),
                 SpaceCompassScenarioResume.valueOf(value("resume")))
-            require(settings.rate in spaceCompassScenarioRates)
+            require(spaceCompassSupportedScenarioRate(settings.rate))
             val selection = p.getProperty("objectsIncluded")?.let { included ->
                 if (!included.toBooleanStrict()) null else {
                     val names = value("objects").takeIf { it.isNotBlank() }?.split(',')?.toSet() ?: emptySet()
@@ -118,7 +118,7 @@ internal data class SpaceCompassScenarioArchive(val name: String, val configurat
             val activeLegacy = p.getProperty("activeComparison")
             require(activePersonal == null || activeLegacy == null && moments?.any { it.id == activePersonal && it.enabled } == true)
             val active = activePersonal ?: activeLegacy
-            return SpaceCompassScenarioArchive(name, c, settings, selection, temporal, points, comparisons,
+            return SpaceCompassScenarioArchive(name, c, settings.normalized(), selection, temporal, points, comparisons,
                 active, p.getProperty("antipodesVisible")?.toBooleanStrict(), moments)
         }
     }

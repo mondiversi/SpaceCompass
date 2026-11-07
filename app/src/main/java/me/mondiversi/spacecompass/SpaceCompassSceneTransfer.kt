@@ -28,6 +28,12 @@ internal fun importSpaceCompassScene(archive: SpaceCompassSceneArchive, observer
     val scene=checked.contents
     scene.personalMoments?.let { spaceCompassScenePersonalMoments(comparisons.personalMoments,it) }
     if (checked.locationIncluded) observer.importArchive(scene.locationOnly())
+    // Expire the previous scene before restoring the incoming pins, which already belong to this day.
+    val realNow = System.currentTimeMillis()
+    val deviceZone = java.time.ZoneId.systemDefault()
+    val sceneZone = observer.plan?.observationZone(deviceZone) ?: deviceZone
+    val sceneTime = observer.plan?.observationTimeMs(realNow, deviceZone) ?: realNow
+    points.refreshObservationDate(java.time.Instant.ofEpochMilli(sceneTime).atZone(sceneZone).toLocalDate())
     val editor=preferences.edit().putSpaceCompassCelestialSelection(requireNotNull(scene.celestialSelection))
     checked.display?.let(editor::putSpaceCompassSceneDisplay)
     editor.apply()

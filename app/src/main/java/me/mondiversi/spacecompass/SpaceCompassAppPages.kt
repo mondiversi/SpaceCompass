@@ -35,6 +35,13 @@ internal fun SpaceCompassAppPages(content: @Composable () -> Unit) {
     var route by rememberSaveable { mutableStateOf<String?>(null) }
     val holder = rememberSaveableStateHolder()
     val observer = rememberSpaceCompassObserverState()
+    val editor = remember(observer, route == "observer") {
+        if (route == "observer") observer.beginEditing() else null
+    }
+    SideEffect {
+        editor?.devicePlace = observer.devicePlace
+        if (route == null) observer.finishEditing()
+    }
     val objectScrollSession = rememberSpaceCompassObjectPageScrollSession()
     val orbitSelection = rememberSpaceCompassSunDailyPathUiState()
     val comparisons = rememberSpaceCompassTemporalComparisons(orbitSelection)
@@ -48,7 +55,7 @@ internal fun SpaceCompassAppPages(content: @Composable () -> Unit) {
             "tutorial" -> { route = null; tutorial?.start() }
             "scene-export" -> { route = null; sceneTransfer.openExport() }
             "scene-import" -> { route = null; sceneTransfer.openImport() }
-            else -> route = it
+            else -> { if (it == "observer") observer.beginEditing(); route = it }
         }
     },
         LocalSpaceCompassSettingsExitFailure provides settingsConfirmation::rejectExit,
@@ -64,7 +71,11 @@ internal fun SpaceCompassAppPages(content: @Composable () -> Unit) {
                     if (route == null && !sceneExportVisible) placeable.placeRelative(0, 0)
                 }
             }) { holder.SaveableStateProvider("compass") { content() } }
-            route?.let { SpaceCompassAppPage(it, onBack = { route = null }) }
+            route?.let {
+                CompositionLocalProvider(LocalSpaceCompassObserver provides (editor ?: observer)) {
+                    SpaceCompassAppPage(it, onBack = { observer.finishEditing(); route = null })
+                }
+            }
             sceneTransfer.exportPage?.invoke()
         }
     }

@@ -1,9 +1,9 @@
 <resources>
     <string name="info_news_title">Perubahan terbaru · %1$s</string>
-    <string name="info_news_star_sky" formatted="false">Musik latar terus diputar melalui pengeras suara saat headphone dilepas.</string>
-    <string name="info_news_texture_downloads" formatted="false">Panel objek lebih bersih tanpa tombol hapus.</string>
-    <string name="info_news_weather" formatted="false">Panah navigasi objek kini memiliki jarak tepi yang simetris.</string>
-    <string name="info_news_viewer_zoom" formatted="false">Judul khusus untuk halaman ekspor skenario dan lokasi.</string>
-    <string name="info_news_settings" formatted="false">Istilah pemuatan yang konsisten pada perintah, pesan dan format berkas.</string>
-    <string name="info_news_catalog" formatted="false">Terjemahan dan label aksesibilitas diperbarui dalam kedua puluh bahasa.</string>
+    <string name="info_news_star_sky" formatted="false">Jeda, putar mundur, atau percepat waktu hingga satu hari per detik dengan skala baru.</string>
+    <string name="info_news_texture_downloads" formatted="false">Perubahan Location diterapkan saat kembali ke langit utama; waktu dijeda selama pengaturan.</string>
+    <string name="info_news_weather" formatted="false">Tanggal dan waktu Location di masa depan tetap terlihat di atas langit, beserta selisih UTC.</string>
+    <string name="info_news_viewer_zoom" formatted="false">Mengaktifkan waktu kembali memulihkan kecepatan terakhir, termasuk jeda dan mundur.</string>
+    <string name="info_news_settings" formatted="false">Hari baru menghapus pilihan titik pada lintasan saat ini; perbandingan bertanggal tetap tetap dipilih.</string>
+    <string name="info_news_catalog" formatted="false">Label azimut dan elevasi lebih ringkas; foto dan panorama menampilkan waktu dan T di sisi berlawanan.</string>
 </resources>

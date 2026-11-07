@@ -1,5 +1,15 @@
 # Changelog
 
+## 1.8.6 — 2026-11-07
+
+- Extend the symmetric time scale to ±86,400× (one day per second), with pause at the centre. Migrate supported legacy rates conservatively without changing direction.
+- Defer Location changes until returning to the main sky and hold simulated time during editing, including across process restoration.
+- Show a running future-day Location date, time and UTC offset at the top of the sky, with theme orange and a thin grey outline.
+- Restore the last chosen time rate when re-enabling it, including zero and reverse rates.
+- Clear selected live-path points when the effective local date changes, preserving fixed dated comparisons; restore imported scene selections against the incoming date.
+- Compact main-sky azimuth/elevation bubbles with shared icons and middle-dot separation. In photos and panoramas, place clock and T at opposite edges without a separating dot.
+- Update in-app news in all twenty languages; keep the external graphics collection unchanged.
+
 ## 1.8.5 — 2026-11-06
 
 - Keep background music playing when headphones are disconnected. Android handles the media route; actual audio-focus interruptions still pause playback.

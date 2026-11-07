@@ -1,9 +1,9 @@
 <resources>
     <string name="info_news_title">החידושים האחרונים · %1$s</string>
-    <string name="info_news_star_sky" formatted="false">מוזיקת הרקע ממשיכה דרך הרמקולים לאחר ניתוק האוזניות.</string>
-    <string name="info_news_texture_downloads" formatted="false">חלונית גרם שמיים נקייה יותר ללא כפתור ההסרה.</string>
-    <string name="info_news_weather" formatted="false">לחיצי הניווט בין גרמי השמיים יש כעת שוליים סימטריים.</string>
-    <string name="info_news_viewer_zoom" formatted="false">כותרות נפרדות לדפי ייצוא תרחיש ומיקום.</string>
-    <string name="info_news_settings" formatted="false">מונחי טעינה אחידים בפקודות, בהודעות ובתבניות הקבצים.</string>
-    <string name="info_news_catalog" formatted="false">תרגומים ותוויות נגישות עודכנו בכל עשרים השפות.</string>
+    <string name="info_news_star_sky" formatted="false">אפשר להשהות, להריץ לאחור או להאיץ את הזמן עד יום בשנייה בעזרת הסולם החדש.</string>
+    <string name="info_news_texture_downloads" formatted="false">שינויי Location נכנסים לתוקף בחזרה לשמיים הראשיים; הזמן מושהה במהלך ההגדרה.</string>
+    <string name="info_news_weather" formatted="false">תאריך ושעה עתידיים של Location נשארים גלויים בראש השמיים, עם הפרש UTC.</string>
+    <string name="info_news_viewer_zoom" formatted="false">הפעלה מחדש של הזמן משחזרת את המהירות האחרונה, כולל השהיה והרצה לאחור.</string>
+    <string name="info_news_settings" formatted="false">יום חדש מנקה נקודות נבחרות במסלולים הנוכחיים; השוואות בתאריך קבוע נשארות נבחרות.</string>
+    <string name="info_news_catalog" formatted="false">תוויות אזימוט וגובה קומפקטיות יותר; בתמונות ובפנורמות השעה ו־T מוצגים בקצוות מנוגדים.</string>
 </resources>

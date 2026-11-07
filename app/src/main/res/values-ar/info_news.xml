@@ -1,9 +1,9 @@
 <resources>
     <string name="info_news_title">آخر المستجدات · %1$s</string>
-    <string name="info_news_star_sky" formatted="false">تستمر موسيقى الخلفية عبر مكبرات الصوت عند فصل سماعات الرأس.</string>
-    <string name="info_news_texture_downloads" formatted="false">لوحة جرم أكثر بساطة دون زر الإزالة.</string>
-    <string name="info_news_weather" formatted="false">أصبحت أسهم التنقل بين الأجرام ذات هوامش متناظرة.</string>
-    <string name="info_news_viewer_zoom" formatted="false">عناوين مخصصة لصفحتي تصدير السيناريو والموقع.</string>
-    <string name="info_news_settings" formatted="false">توحيد مصطلحات التحميل في الأوامر والرسائل وتنسيقات الملفات.</string>
-    <string name="info_news_catalog" formatted="false">تحديث الترجمات وتسميات تسهيل الاستخدام بجميع اللغات العشرين.</string>
+    <string name="info_news_star_sky" formatted="false">أوقف الزمن مؤقتًا أو أعده للخلف أو سرّعه حتى يوم في الثانية باستخدام المقياس الجديد.</string>
+    <string name="info_news_texture_downloads" formatted="false">تُطبّق تغييرات Location عند العودة إلى السماء الرئيسية؛ ويتوقف الزمن أثناء الإعداد.</string>
+    <string name="info_news_weather" formatted="false">يبقى تاريخ ووقت Location المستقبليان ظاهرين أعلى السماء مع فرق التوقيت عن UTC.</string>
+    <string name="info_news_viewer_zoom" formatted="false">تُعيد إعادة تفعيل الزمن آخر سرعة مختارة، بما فيها التوقف والرجوع للخلف.</string>
+    <string name="info_news_settings" formatted="false">يمسح اليوم الجديد النقاط المحددة على المسارات الحالية؛ وتبقى المقارنات ذات التاريخ الثابت محددة.</string>
+    <string name="info_news_catalog" formatted="false">تسميات أكثر اختصارًا للسمت والارتفاع؛ تعرض الصور والبانوراما الوقت وT على طرفين متقابلين.</string>
 </resources>

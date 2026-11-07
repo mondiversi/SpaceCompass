@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="scenario_speed">زمان</string>
-    <string name="scenario_speed_description">زمان مکان را تا 3600× به عقب یا جلو ببرید. صفر در مرکز زمان را متوقف می‌کند.</string>
+    <string name="scenario_speed_description">زمان مکان را تا 86400× به عقب یا جلو ببرید. صفر در مرکز زمان را متوقف می‌کند.</string>
     <string name="scenario_resume">ادامه</string>
     <string name="scenario_resume_description">انتخاب کنید زمان شبیه‌سازی‌شده با باز کردن دوبارهٔ برنامه چگونه ادامه یابد. سرعت انتخاب‌شده در همهٔ حالت‌ها اعمال می‌شود.</string>
     <string name="scenario_restart">شروع از ابتدا</string>
