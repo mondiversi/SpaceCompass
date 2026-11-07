@@ -1,9 +1,9 @@
 <resources>
     <string name="info_news_title">Últimas novidades · %1$s</string>
-    <string name="info_news_star_sky" formatted="false">Toque no céu vazio para mostrar ou ocultar a mira e os ícones em conjunto.</string>
-    <string name="info_news_texture_downloads" formatted="false">Toque duas vezes no céu vazio para pausar ou retomar o tempo.</string>
-    <string name="info_news_weather" formatted="false">Em pausa, a data, a hora e o desvio UTC ficam visíveis a laranja com o símbolo de pausa.</string>
-    <string name="info_news_viewer_zoom" formatted="false">O tempo real volta ao momento atual; datas, horas ou velocidades personalizadas continuam do instante parado.</string>
-    <string name="info_news_settings" formatted="false">Os balões mostram a hora e T juntos com um ponto médio, também em fotos e panoramas.</string>
-    <string name="info_news_catalog" formatted="false">As comparações com data separam o título do objeto e a data; os textos longos passam para outra linha.</string>
+    <string name="info_news_star_sky" formatted="false">Explore o céu simulado com zoom salvo de 0,5× a 1×.</string>
+    <string name="info_news_texture_downloads" formatted="false">Clima/transparência e zoom mantêm posições coerentes nos dois modos.</string>
+    <string name="info_news_weather" formatted="false">Os controles de 0°/90° e pontos selecionados se adaptam às orientações vertical e horizontal.</string>
+    <string name="info_news_viewer_zoom" formatted="false">Novas instalações começam com o eixo longitudinal do telefone (0°).</string>
+    <string name="info_news_settings" formatted="false">Gire a Terra do protetor de tela; após 10 segundos sem interação, ela retorna suavemente à rotação normal.</string>
+    <string name="info_news_catalog" formatted="false">Toque duas vezes em qualquer lugar para sair do protetor de tela. Tutorial de zoom atualizado nos vinte idiomas.</string>
 </resources>

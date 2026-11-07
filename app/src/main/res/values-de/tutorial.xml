@@ -4,7 +4,7 @@
     <string name="tutorial_welcome_title" formatted="false">Willkommen bei Space Compass</string>
     <string name="tutorial_welcome_body" formatted="false">Erkunde den Himmel und die Bahnen der Himmelskörper von anderen Orten und zu anderen Zeiten. Das interaktive Tutorial erklärt die Bedienung.</string>
     <string name="tutorial_instruction" formatted="false">Tippe auf ein hervorgehobenes Bedienelement oder einen Bahnpunkt, um seine Funktion kennenzulernen. Einstellungen bleiben unverändert.</string>
-    <string name="tutorial_zoom_title" formatted="false">Kamerazoom</string>
+    <string name="tutorial_zoom_title" formatted="false">Zoom</string>
     <string name="tutorial_navigation_title" formatted="false">Ausgewähltes Objekt</string>
     <string name="tutorial_points_title" formatted="false">Bahnpunkte</string>
     <string name="tutorial_info" formatted="false">Öffne App-Informationen, Neuigkeiten und Quellenangaben.</string>
@@ -17,7 +17,7 @@
     <string name="tutorial_weather" formatted="false">Zeige oder verberge Wettereffekte im simulierten Himmel und in Panoramen. Im Kameramodus nicht verfügbar.</string>
     <string name="tutorial_axis" formatted="false">Wähle Kameraachse (90°) oder Telefonlängsachse (0°). Die Kamera verwendet immer ihre eigene Achse.</string>
     <string name="tutorial_transparency" formatted="false">Mache Objektbilder durchscheinend, um sie mit dem Kamerabild zu vergleichen. Die Aufnahme übernimmt diese Wahl.</string>
-    <string name="tutorial_zoom" formatted="false">Wähle den Kamerazoom oder zoome mit zwei Fingern im Kamerabild.</string>
+    <string name="tutorial_zoom" formatted="false">Wähle den Zoom des simulierten Himmels von 0,5× bis 1×. Im Kameramodus nutze den verfügbaren Zoom oder zwei Finger. Beide Einstellungen werden getrennt gespeichert.</string>
     <string name="tutorial_capture" formatted="false">Erstelle ein Himmelspanorama oder ein Kamerafoto mit astronomischen Einblendungen. Exportiere aus der Vorschau. Tippe in der Vorschau auf das Bild, um die Bedienelemente ein- oder auszublenden.</string>
     <string name="tutorial_panels" formatted="false">Klappe Objekt- und Kompassfelder ein oder aus, um mehr Himmel zu sehen.</string>
     <string name="tutorial_antipodes" formatted="false">Tippe, um die Gegenrichtung ausgewählter Punkte anzuzeigen oder auszublenden: Azimut +180° und Höhe mit umgekehrtem Vorzeichen. Halte die Taste gedrückt, um alle Punkte abzuwählen.</string>

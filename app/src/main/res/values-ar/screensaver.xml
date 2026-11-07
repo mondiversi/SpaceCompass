@@ -2,7 +2,7 @@
     <string name="screensaver_title">شاشة التوقف</string>
     <string name="screensaver_description">عند خمول التطبيق، يعرض الأرض المتحركة ويوقف التتبع مؤقتًا لتوفير الطاقة.</string>
     <string name="screensaver_delay">البدء بعد</string>
-    <string name="screensaver_dismiss">المس للعودة إلى التطبيق</string>
+    <string name="screensaver_dismiss">انقر مرتين في أي مكان للعودة إلى التطبيق</string>
     <string name="screensaver_seconds">%1$s ث</string>
     <string name="screensaver_minutes">%1$s د</string>
     <string name="screensaver_battery">البطارية: %1$s</string>

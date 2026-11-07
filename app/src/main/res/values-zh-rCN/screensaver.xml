@@ -2,7 +2,7 @@
     <string name="screensaver_title">屏幕保护程序</string>
     <string name="screensaver_description">应用闲置时显示动态地球，并暂停跟踪以节省电量。</string>
     <string name="screensaver_delay">启动等待时间</string>
-    <string name="screensaver_dismiss">轻触返回应用</string>
+    <string name="screensaver_dismiss">双击任意位置返回应用</string>
     <string name="screensaver_seconds">%1$s 秒</string>
     <string name="screensaver_minutes">%1$s 分钟</string>
     <string name="screensaver_battery">电量：%1$s</string>

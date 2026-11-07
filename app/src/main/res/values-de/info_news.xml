@@ -1,9 +1,9 @@
 <resources>
     <string name="info_news_title">Neuigkeiten · %1$s</string>
-    <string name="info_news_star_sky" formatted="false">Tippe auf freien Himmel, um Fadenkreuz und Symbole gemeinsam ein- oder auszublenden.</string>
-    <string name="info_news_texture_downloads" formatted="false">Tippe doppelt auf freien Himmel, um die Zeit anzuhalten oder fortzusetzen.</string>
-    <string name="info_news_weather" formatted="false">In der Pause bleiben Datum, Uhrzeit und UTC-Abweichung orange mit Pausensymbol sichtbar.</string>
-    <string name="info_news_viewer_zoom" formatted="false">Live-Zeit kehrt zu jetzt zurück; eigene Datums-, Zeit- oder Geschwindigkeitseinstellungen setzen am angehaltenen Zeitpunkt fort.</string>
-    <string name="info_news_settings" formatted="false">Punktbeschriftungen zeigen Uhrzeit und T nebeneinander mit Mittelpunkt, auch auf Fotos und Panoramen.</string>
-    <string name="info_news_catalog" formatted="false">Bei datierten Vergleichen stehen Objekttitel und Datum getrennt; lange Texte werden umgebrochen.</string>
+    <string name="info_news_star_sky" formatted="false">Erkunde den simulierten Himmel mit gespeichertem Zoom von 0,5× bis 1×.</string>
+    <string name="info_news_texture_downloads" formatted="false">Wetter/Transparenz und Zoom haben jetzt einheitliche Positionen.</string>
+    <string name="info_news_weather" formatted="false">Die Bedienelemente für 0°/90° und ausgewählte Punkte passen sich Hoch- und Querformat an.</string>
+    <string name="info_news_viewer_zoom" formatted="false">Neue Installationen starten mit der Längsachse des Telefons (0°).</string>
+    <string name="info_news_settings" formatted="false">Drehe die Erde im Bildschirmschoner. Nach 10 Sekunden ohne Eingabe kehrt sie sanft zur normalen Drehung zurück.</string>
+    <string name="info_news_catalog" formatted="false">Tippe zum Verlassen des Bildschirmschoners zweimal auf eine beliebige Stelle. Das Zoom-Tutorial ist in allen zwanzig Sprachen aktualisiert.</string>
 </resources>

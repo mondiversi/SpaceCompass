@@ -4,7 +4,7 @@
     <string name="tutorial_welcome_title" formatted="false">Space Compass에 오신 것을 환영합니다</string>
     <string name="tutorial_welcome_body" formatted="false">다른 장소와 시간의 하늘과 천체 경로를 탐색하세요. 대화형 튜토리얼에서 주요 조작을 알아보세요.</string>
     <string name="tutorial_instruction" formatted="false">강조된 버튼이나 궤도 지점을 누르면 설정을 바꾸지 않고 기능을 확인할 수 있습니다.</string>
-    <string name="tutorial_zoom_title" formatted="false">카메라 줌</string>
+    <string name="tutorial_zoom_title" formatted="false">확대</string>
     <string name="tutorial_navigation_title" formatted="false">선택한 천체</string>
     <string name="tutorial_points_title" formatted="false">궤도 지점</string>
     <string name="tutorial_info" formatted="false">앱 정보, 새 소식과 출처를 엽니다.</string>
@@ -17,7 +17,7 @@
     <string name="tutorial_weather" formatted="false">가상 하늘과 파노라마의 날씨 효과를 표시하거나 숨깁니다. 카메라 모드에서는 사용할 수 없습니다.</string>
     <string name="tutorial_axis" formatted="false">카메라 축(90°) 또는 휴대전화 길이 축(0°)을 선택합니다. 카메라는 항상 자신의 축을 사용합니다.</string>
     <string name="tutorial_transparency" formatted="false">천체 이미지를 반투명하게 하여 카메라 영상과 비교합니다. 촬영 결과에도 반영됩니다.</string>
-    <string name="tutorial_zoom" formatted="false">카메라 배율을 선택하거나 영상에서 두 손가락으로 확대 및 축소합니다.</string>
+    <string name="tutorial_zoom" formatted="false">시뮬레이션 하늘의 확대 배율을 0.5×~1×에서 선택하세요. 카메라 모드에서는 지원되는 줌이나 두 손가락 제스처를 사용하세요. 두 설정은 별도로 저장됩니다.</string>
     <string name="tutorial_capture" formatted="false">전체 하늘 파노라마 또는 천체 표시가 있는 카메라 사진을 만듭니다. 미리보기에서 내보냅니다. 미리보기 이미지를 탭하면 조작 버튼을 표시하거나 숨길 수 있습니다.</string>
     <string name="tutorial_panels" formatted="false">천체와 나침반 패널을 접거나 펼쳐 하늘 공간을 확보합니다.</string>
     <string name="tutorial_antipodes" formatted="false">탭하면 선택한 점의 반대 방향을 표시하거나 숨깁니다. 방위각은 +180°이고 고도는 부호가 반대입니다. 길게 누르면 모든 점의 선택이 해제됩니다.</string>

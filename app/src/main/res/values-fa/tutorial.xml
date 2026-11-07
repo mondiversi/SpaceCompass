@@ -4,7 +4,7 @@
     <string name="tutorial_welcome_title" formatted="false">به Space Compass خوش آمدید</string>
     <string name="tutorial_welcome_body" formatted="false">آسمان و مسیر اجرام را در مکان‌ها و زمان‌های دیگر ببینید. با آموزش تعاملی کنترل‌ها را بشناسید.</string>
     <string name="tutorial_instruction" formatted="false">برای شناخت عملکرد، کنترل روشن یا نقطه مداری را لمس کنید؛ تنظیمات تغییر نمی‌کنند.</string>
-    <string name="tutorial_zoom_title" formatted="false">بزرگ‌نمایی دوربین</string>
+    <string name="tutorial_zoom_title" formatted="false">بزرگ‌نمایی</string>
     <string name="tutorial_navigation_title" formatted="false">جرم انتخاب‌شده</string>
     <string name="tutorial_points_title" formatted="false">نقاط مدار</string>
     <string name="tutorial_info" formatted="false">اطلاعات برنامه، تازه‌ها و منابع را باز کنید.</string>
@@ -17,7 +17,7 @@
     <string name="tutorial_weather" formatted="false">آب‌وهوا را در آسمان شبیه‌سازی‌شده و پانوراما نمایش دهید یا پنهان کنید. در حالت دوربین فعال نیست.</string>
     <string name="tutorial_axis" formatted="false">محور دوربین (90°) یا طول گوشی (0°) را انتخاب کنید. دوربین همیشه محور خودش را به کار می‌برد.</string>
     <string name="tutorial_transparency" formatted="false">تصاویر اجرام را نیمه‌شفاف کنید تا با دوربین مقایسه شوند. عکس این انتخاب را حفظ می‌کند.</string>
-    <string name="tutorial_zoom" formatted="false">بزرگ‌نمایی دوربین را انتخاب کنید یا از دو انگشت روی تصویر استفاده کنید.</string>
+    <string name="tutorial_zoom" formatted="false">بزرگ‌نمایی آسمان شبیه‌سازی‌شده را از 0.5× تا 1× انتخاب کنید. در حالت دوربین از بزرگ‌نمایی موجود یا دو انگشت استفاده کنید. این دو تنظیم جداگانه ذخیره می‌شوند.</string>
     <string name="tutorial_capture" formatted="false">پانورامای آسمان یا عکس دوربین با لایه‌های نجومی بسازید. از پیش‌نمایش خروجی بگیرید. در پیش‌نمایش، برای نمایش یا پنهان کردن کنترل‌ها روی تصویر بزنید.</string>
     <string name="tutorial_panels" formatted="false">پنل‌های جرم و قطب‌نما را جمع یا باز کنید تا آسمان بیشتری ببینید.</string>
     <string name="tutorial_antipodes" formatted="false">برای نمایش یا پنهان کردن جهت مخالف نقاط انتخاب‌شده لمس کنید: سمت +۱۸۰ درجه و ارتفاع با علامت معکوس. برای لغو انتخاب همه نقاط نگه دارید.</string>

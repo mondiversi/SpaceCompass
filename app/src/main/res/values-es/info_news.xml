@@ -1,9 +1,9 @@
 <resources>
     <string name="info_news_title">Últimas novedades · %1$s</string>
-    <string name="info_news_star_sky" formatted="false">Toca el cielo vacío para mostrar u ocultar juntos la retícula y los iconos.</string>
-    <string name="info_news_texture_downloads" formatted="false">Toca dos veces el cielo vacío para pausar o reanudar el tiempo.</string>
-    <string name="info_news_weather" formatted="false">En pausa se muestran fecha, hora y desfase UTC en naranja, con el símbolo de pausa.</string>
-    <string name="info_news_viewer_zoom" formatted="false">El tiempo real vuelve a ahora; las fechas, horas o velocidades personalizadas continúan desde el instante detenido.</string>
-    <string name="info_news_settings" formatted="false">La hora y T aparecen juntas con un punto medio en las etiquetas, también en fotos y panorámicas.</string>
-    <string name="info_news_catalog" formatted="false">Las comparaciones con fecha separan el título del objeto y la fecha; los textos largos se ajustan a varias líneas.</string>
+    <string name="info_news_star_sky" formatted="false">Explora el cielo simulado con zoom guardado de 0,5× a 1×.</string>
+    <string name="info_news_texture_downloads" formatted="false">Tiempo atmosférico/transparencia y zoom mantienen posiciones coherentes en ambos modos.</string>
+    <string name="info_news_weather" formatted="false">Los controles de 0°/90° y puntos seleccionados se adaptan a la orientación vertical y horizontal.</string>
+    <string name="info_news_viewer_zoom" formatted="false">Las nuevas instalaciones empiezan con el eje longitudinal del teléfono (0°).</string>
+    <string name="info_news_settings" formatted="false">Gira la Tierra del salvapantallas; tras 10 segundos sin interacción vuelve suavemente a su rotación normal.</string>
+    <string name="info_news_catalog" formatted="false">Toca dos veces en cualquier punto para salir del salvapantallas. Tutorial de zoom actualizado en los veinte idiomas.</string>
 </resources>

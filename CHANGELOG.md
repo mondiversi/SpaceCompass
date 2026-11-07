@@ -1,5 +1,14 @@
 # Changelog
 
+## 1.8.8 — 2026-11-07
+
+- Add remembered virtual-sky zoom from 0.5× to 1× in six steps, defaulting to 1×. Use one perspective for objects, paths, stars, terrain, targets and guide labels.
+- Keep camera zoom separate, starting at 0.5× or the widest available lens and respecting device limits and saved choices. Pair zoom with weather in the virtual view and object transparency in camera mode.
+- Refine control placement: axis beside the chevron in portrait and compact landscape, below Menu in expanded landscape; selected points above Capture in portrait, beside it in compact landscape and at the sky column's lower-right edge in expanded landscape.
+- Default new installations to the phone-length pointing axis (0°); retain existing axis preferences and the real camera's optical axis.
+- Let the screensaver Earth be dragged, holding the chosen view until ten idle seconds pass and returning smoothly to the current rotation phase and seasonal orientation. Keep geographic sunlight and the real-position marker aligned in WebGL and the offline fallback.
+- Require a double tap anywhere to leave the screensaver. Retain tracking suspension, music and low-rate idle rendering; update its return hint and zoom tutorial in all twenty languages.
+
 ## 1.8.7 — 2026-11-07
 
 - Tap empty sky to show or hide the reticle and floating controls together; double-tap to pause or resume the effective observation clock.

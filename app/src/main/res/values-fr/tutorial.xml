@@ -4,7 +4,7 @@
     <string name="tutorial_welcome_title" formatted="false">Bienvenue dans Space Compass</string>
     <string name="tutorial_welcome_body" formatted="false">Explorez le ciel et les trajectoires des astres, depuis différents lieux et à différentes dates. Découvrez les commandes avec le tutoriel interactif.</string>
     <string name="tutorial_instruction" formatted="false">Touchez une commande éclairée ou un point de trajectoire pour découvrir sa fonction, sans modifier vos réglages.</string>
-    <string name="tutorial_zoom_title" formatted="false">Zoom caméra</string>
+    <string name="tutorial_zoom_title" formatted="false">Zoom</string>
     <string name="tutorial_navigation_title" formatted="false">Objet sélectionné</string>
     <string name="tutorial_points_title" formatted="false">Points des trajectoires</string>
     <string name="tutorial_info" formatted="false">Ouvrez les informations, les nouveautés et les crédits.</string>
@@ -17,7 +17,7 @@
     <string name="tutorial_weather" formatted="false">Affichez ou masquez la météo du ciel simulé et des panoramas. Indisponible en mode caméra.</string>
     <string name="tutorial_axis" formatted="false">Pointez selon l’axe de la caméra (90°) ou la longueur du téléphone (0°). La caméra conserve son propre axe.</string>
     <string name="tutorial_transparency" formatted="false">Rendez les objets translucides pour les comparer à la caméra. Ce choix est conservé dans la capture.</string>
-    <string name="tutorial_zoom" formatted="false">Choisissez le zoom de la caméra, ou pincez l’image avec deux doigts.</string>
+    <string name="tutorial_zoom" formatted="false">Choisissez le zoom du ciel simulé de 0,5× à 1×. En mode appareil photo, utilisez le zoom disponible ou deux doigts sur l’image. Les deux réglages sont enregistrés séparément.</string>
     <string name="tutorial_capture" formatted="false">Préparez un panorama du ciel ou une photo avec les superpositions astronomiques. Exportez depuis l’aperçu. Dans l’aperçu, touchez l’image pour afficher ou masquer les commandes.</string>
     <string name="tutorial_panels" formatted="false">Repliez ou dépliez les panneaux de l’objet et de la boussole pour dégager le ciel.</string>
     <string name="tutorial_antipodes" formatted="false">Touche pour afficher ou masquer la direction opposée des points sélectionnés : azimut +180° et élévation de signe opposé. Maintiens le bouton enfoncé pour tout désélectionner.</string>

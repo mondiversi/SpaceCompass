@@ -1,9 +1,9 @@
 <resources>
     <string name="info_news_title">Son yenilikler · %1$s</string>
-    <string name="info_news_star_sky" formatted="false">Nişangâhı ve simgeleri birlikte göstermek veya gizlemek için boş gökyüzüne dokunun.</string>
-    <string name="info_news_texture_downloads" formatted="false">Zamanı duraklatmak veya sürdürmek için boş gökyüzüne çift dokunun.</string>
-    <string name="info_news_weather" formatted="false">Duraklatıldığında tarih, saat ve UTC farkı duraklatma simgesiyle turuncu görünür kalır.</string>
-    <string name="info_news_viewer_zoom" formatted="false">Gerçek zaman şu ana döner; özel tarih, saat veya hızlar durdurulan andan devam eder.</string>
-    <string name="info_news_settings" formatted="false">Nokta etiketleri saati ve T değerini orta noktayla yan yana gösterir; fotoğraf ve panoramalarda da geçerlidir.</string>
-    <string name="info_news_catalog" formatted="false">Tarihli karşılaştırmalarda nesne başlığı ve tarih ayrıdır; uzun metinler alt satıra geçer.</string>
+    <string name="info_news_star_sky" formatted="false">Simüle gökyüzünü, kaydedilen 0,5×–1× yakınlaştırmayla keşfedin.</string>
+    <string name="info_news_texture_downloads" formatted="false">Hava durumu/saydamlık ve yakınlaştırma, iki modda da tutarlı konumlardadır.</string>
+    <string name="info_news_weather" formatted="false">0°/90° ve seçili nokta düğmeleri dikey ve yatay düzene uyum sağlar.</string>
+    <string name="info_news_viewer_zoom" formatted="false">Yeni kurulumlar telefonun uzun ekseniyle (0°) başlar.</string>
+    <string name="info_news_settings" formatted="false">Ekran koruyucudaki Dünya’yı döndürün; 10 saniye işlem yapılmadığında normal dönüşüne yumuşakça döner.</string>
+    <string name="info_news_catalog" formatted="false">Ekran koruyucudan çıkmak için herhangi bir yere iki kez dokunun. Yakınlaştırma öğreticisi yirmi dilde güncellendi.</string>
 </resources>

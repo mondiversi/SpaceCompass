@@ -32,9 +32,9 @@ internal fun spaceCompassStarUv(direction: SpaceCompassViewVector): Pair<Double,
 
 /** Same virtual wide-angle lens, principal point and screen basis as the orbit/object projection. */
 internal fun spaceCompassStarViewRay(x: Double, y: Double, orientation: SpaceCompassSunOrientation,
-    frame: SpaceCompassSunSceneFrame): SpaceCompassSunVector {
+    frame: SpaceCompassSunSceneFrame, zoom: Float = SPACE_COMPASS_VIRTUAL_SKY_ZOOM.toFloat()): SpaceCompassSunVector {
     require(frame.width > 0 && frame.height > 0)
-    val focal = spaceCompassSunProjectionFocalLength(frame.height)
+    val focal = spaceCompassVirtualFocalLength(frame.height, zoom)
     val dx = (x - frame.left - frame.width / 2) / focal
     val dy = -(y - frame.top - frame.height / 2) / focal
     return SpaceCompassSunVector(orientation.forward.east + orientation.right.east * dx + orientation.screenUp.east * dy,
@@ -57,9 +57,9 @@ internal fun spaceCompassStarHorizonOpacity(up: Double): Double {
 
 internal data class SpaceCompassStarDrawing(val frame: SpaceCompassSunSceneFrame,
     val right: SpaceCompassViewVector, val screenUp: SpaceCompassViewVector, val forward: SpaceCompassViewVector,
-    val worldUp: SpaceCompassViewVector, val opacity: Float)
+    val worldUp: SpaceCompassViewVector, val opacity: Float, val zoom: Float = SPACE_COMPASS_VIRTUAL_SKY_ZOOM.toFloat())
 
 internal fun spaceCompassStarDrawing(basis: SpaceCompassStarBasis, orientation: SpaceCompassSunOrientation,
-    frame: SpaceCompassSunSceneFrame, opacity: Float) = SpaceCompassStarDrawing(frame,
+    frame: SpaceCompassSunSceneFrame, opacity: Float, zoom: Float = SPACE_COMPASS_VIRTUAL_SKY_ZOOM.toFloat()) = SpaceCompassStarDrawing(frame,
     basis.transform(orientation.right), basis.transform(orientation.screenUp), basis.transform(orientation.forward),
-    SpaceCompassViewVector(orientation.right.up, orientation.screenUp.up, orientation.forward.up), opacity)
+    SpaceCompassViewVector(orientation.right.up, orientation.screenUp.up, orientation.forward.up), opacity, zoom)

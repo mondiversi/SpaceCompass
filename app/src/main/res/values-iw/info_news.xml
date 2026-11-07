@@ -1,9 +1,9 @@
 <resources>
     <string name="info_news_title">החידושים האחרונים · %1$s</string>
-    <string name="info_news_star_sky" formatted="false">געו בשמיים פנויים כדי להציג או להסתיר יחד את הכוונת והסמלים.</string>
-    <string name="info_news_texture_downloads" formatted="false">הקישו פעמיים על שמיים פנויים כדי להשהות או להמשיך את הזמן.</string>
-    <string name="info_news_weather" formatted="false">בהשהיה התאריך, השעה והפרש UTC נשארים גלויים בכתום עם סמל השהיה.</string>
-    <string name="info_news_viewer_zoom" formatted="false">זמן אמת חוזר לעכשיו; תאריך, שעה או קצב מותאמים ממשיכים מהנקודה שנעצרה.</string>
-    <string name="info_news_settings" formatted="false">התוויות מציגות שעה ו־T זה לצד זה עם נקודה אמצעית, גם בתמונות ובפנורמות.</string>
-    <string name="info_news_catalog" formatted="false">השוואות מתוארכות מפרידות בין כותרת העצם לתאריך; טקסט ארוך גולש לשורות.</string>
+    <string name="info_news_star_sky" formatted="false">סיירו בשמיים המדומים עם זום שמור מ־0.5× עד 1×.</string>
+    <string name="info_news_texture_downloads" formatted="false">מזג אוויר/שקיפות וזום נמצאים כעת במיקומים עקביים בשני המצבים.</string>
+    <string name="info_news_weather" formatted="false">פקדי 0°/90° והנקודות שנבחרו מותאמים לתצוגה אנכית ואופקית.</string>
+    <string name="info_news_viewer_zoom" formatted="false">התקנות חדשות מתחילות עם ציר האורך של הטלפון (0°).</string>
+    <string name="info_news_settings" formatted="false">סובבו את כדור הארץ בשומר המסך; אחרי 10 שניות ללא פעולה הוא חוזר בהדרגה לסיבוב הרגיל.</string>
+    <string name="info_news_catalog" formatted="false">הקישו פעמיים בכל מקום כדי לצאת משומר המסך. מדריך הזום עודכן בכל עשרים השפות.</string>
 </resources>

@@ -2,7 +2,7 @@
     <string name="screensaver_title">Screensaver</string>
     <string name="screensaver_description">When the app is idle, shows an animated Earth and pauses tracking to save energy.</string>
     <string name="screensaver_delay">Start after</string>
-    <string name="screensaver_dismiss">Tap to return to the app</string>
+    <string name="screensaver_dismiss">Double-tap anywhere to return to the app</string>
     <string name="screensaver_seconds">%1$s s</string>
     <string name="screensaver_minutes">%1$s min</string>
     <string name="screensaver_battery">Battery: %1$s</string>

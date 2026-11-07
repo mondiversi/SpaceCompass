@@ -26,7 +26,7 @@ internal fun SpaceCompassMainNavigationControls(vertical: Boolean, modifier: Mod
     }
 }
 
-/** Axis/weather become transparency/zoom in camera mode without changing their side-column order. */
+/** Weather becomes transparency in camera mode; both views keep zoom in the second slot. */
 @Composable
 internal fun SpaceCompassMainViewModeControls(vertical: Boolean, modifier: Modifier,
     maximumHeight: Dp, content: @Composable () -> Unit) {
@@ -38,13 +38,24 @@ internal fun SpaceCompassMainViewModeControls(vertical: Boolean, modifier: Modif
         horizontalArrangement = Arrangement.spacedBy(8.dp)) { content() }
 }
 
-/** Keep the shutter at the same bottom-end anchor while moving its camera switch above it. */
+/** Pin antipodes above the shutter in portrait and beside it in landscape. */
 @Composable
 internal fun SpaceCompassMainCaptureControls(vertical: Boolean, modifier: Modifier,
+    antipodes: @Composable () -> Unit, landscape: Boolean,
     camera: @Composable () -> Unit, capture: @Composable () -> Unit) {
     val target = modifier.padding(4.dp).testTag("celestial-capture-controls")
-    if (vertical) Column(target, horizontalAlignment = Alignment.End,
-        verticalArrangement = Arrangement.spacedBy(8.dp)) { camera(); capture() }
-    else Row(target, verticalAlignment = Alignment.Bottom,
-        horizontalArrangement = Arrangement.spacedBy(8.dp)) { camera(); capture() }
+    Row(target, verticalAlignment = Alignment.Bottom, horizontalArrangement = Arrangement.spacedBy(8.dp)) {
+        if (landscape && vertical) {
+            antipodes()
+            Column(horizontalAlignment = Alignment.End, verticalArrangement = Arrangement.spacedBy(8.dp)) {
+                camera(); capture()
+            }
+        } else {
+            camera()
+            if (landscape) { antipodes(); capture() }
+            else Column(horizontalAlignment = Alignment.End, verticalArrangement = Arrangement.spacedBy(8.dp)) {
+                antipodes(); capture()
+            }
+        }
+    }
 }

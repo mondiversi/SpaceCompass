@@ -15,7 +15,7 @@ internal const val SPACE_COMPASS_STAR_MAP_ASSET = "sky/starmap.webp"
 @Composable
 internal fun SpaceCompassStarField(timeMs: Long, latitude: Double?, longitude: Double?, altitude: Double,
     orientation: SpaceCompassSunOrientation?, frame: SpaceCompassSunSceneFrame?, solarElevation: Double?,
-    weather: SpaceCompassSunWeatherSnapshot?, active: Boolean, modifier: Modifier) {
+    weather: SpaceCompassSunWeatherSnapshot?, active: Boolean, modifier: Modifier, zoom: Float = SPACE_COMPASS_VIRTUAL_SKY_ZOOM.toFloat()) {
     val visibility = spaceCompassStarVisibility(solarElevation, weather)
     val opacity by animateFloatAsState(visibility, tween(1_500), label = "stellar twilight")
     val timeBucket = Math.floorDiv(timeMs, 10_000L)
@@ -28,7 +28,7 @@ internal fun SpaceCompassStarField(timeMs: Long, latitude: Double?, longitude: D
     }
     val matrix = basis
     if (matrix != null && orientation != null && frame != null && frame.width > 0 && frame.height > 0 && opacity > .001f) {
-        val drawing = remember(matrix, orientation, frame, opacity) { spaceCompassStarDrawing(matrix, orientation, frame, opacity) }
+        val drawing = remember(matrix, orientation, frame, opacity, zoom) { spaceCompassStarDrawing(matrix, orientation, frame, opacity, zoom) }
         AndroidView(factory = { SpaceCompassStarTextureView(it) }, modifier = modifier.testTag("celestial-star-background"),
             onRelease = { it.release() }, update = { it.update(drawing) })
     }

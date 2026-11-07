@@ -4,8 +4,8 @@ General contains a screensaver below background music. Its activation and delay
 (30 s, 1, 2, 5, 10 or 15 min; default 5 min) are saved. New installations enable it;
 updates retain saved choices. One activity-owned monotonic inactivity deadline
 handles touch, scroll, keys, held gestures, keyboard, focus and rotation. Sensor
-and data updates never count as user interaction. Touch or Back dismisses the
-cover without activating controls underneath.
+and data updates never count as user interaction. Double-tap anywhere or press Back to dismiss the
+cover without activating controls underneath. A single touch does not dismiss it.
 
 The cover is immersive, including the Android system bars. An animated globe
 stays centered at the same physical size across portrait/landscape, using 66% of
@@ -57,8 +57,23 @@ parallax is applied to the global illumination.
 
 The same sphere transforms drive shader sampling and the marker, including the
 offline software fallback for missing/lost WebGL. Fallback source/normals are
-cached; rasterization is capped at one frame per second, with exact pin alignment
-to its last frame. Reduced-motion and context-loss paths are verified. Seasonal
+cached; automatic rasterization is capped at one frame per second, with interactive
+updates while dragging or returning and exact pin alignment to its last frame. Reduced-motion and context-loss paths are verified. Seasonal
 host updates run once per minute and do not restart live page work.
 
 Reference: [NASA's seasonal Earth views](https://science.nasa.gov/earth/earth-observatory/an-epic-view-of-the-seasons/).
+
+
+## Manual globe view
+
+Dragging anywhere on the cover turns the globe horizontally and vertically, while
+the ordinary accelerated spin is held. Ten seconds after release, a 1.2-second eased
+transition restores the current automatic spin phase and the real seasonal axis.
+Re-grabbing a returning globe continues from its visible pose. The same view
+transform is used for the texture, Earth-fixed sunlight and front/far-side marker.
+
+The native cover owns gesture recognition and consumes the whole gesture. Double
+tap dismissal completes on the second release, preventing touches from reaching
+the underlying page. Its accessible click action remains available. The existing
+20-fps idle scheduler is reused; reduced-motion and background cancellation are
+preserved, and no live tracking or data request is resumed by globe interaction.

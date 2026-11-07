@@ -4,7 +4,7 @@
     <string name="tutorial_welcome_title" formatted="false">Добро пожаловать в Space Compass</string>
     <string name="tutorial_welcome_body" formatted="false">Исследуйте небо и траектории небесных тел в разных местах и в разное время. Изучите управление в интерактивном обучении.</string>
     <string name="tutorial_instruction" formatted="false">Нажмите подсвеченную кнопку или точку орбиты, чтобы узнать её функцию без изменения настроек.</string>
-    <string name="tutorial_zoom_title" formatted="false">Масштаб камеры</string>
+    <string name="tutorial_zoom_title" formatted="false">Масштаб</string>
     <string name="tutorial_navigation_title" formatted="false">Выбранный объект</string>
     <string name="tutorial_points_title" formatted="false">Точки орбит</string>
     <string name="tutorial_info" formatted="false">Откройте сведения, новости и источники.</string>
@@ -17,7 +17,7 @@
     <string name="tutorial_weather" formatted="false">Покажите или скройте погоду на виртуальном небе и панорамах. Недоступно в режиме камеры.</string>
     <string name="tutorial_axis" formatted="false">Выберите ось камеры (90°) или продольную ось телефона (0°). Камера всегда использует свою ось.</string>
     <string name="tutorial_transparency" formatted="false">Сделайте объекты полупрозрачными для сравнения с камерой. Снимок сохраняет этот выбор.</string>
-    <string name="tutorial_zoom" formatted="false">Выберите масштаб камеры или используйте жест двумя пальцами.</string>
+    <string name="tutorial_zoom" formatted="false">Выберите масштаб моделируемого неба от 0,5× до 1×. В режиме камеры используйте доступный зум или жест двумя пальцами. Обе настройки сохраняются отдельно.</string>
     <string name="tutorial_capture" formatted="false">Создайте панораму неба или фото с астрономическими наложениями. Экспортируйте из предпросмотра. В режиме предпросмотра коснитесь изображения, чтобы показать или скрыть элементы управления.</string>
     <string name="tutorial_panels" formatted="false">Сверните или разверните панели объекта и компаса, чтобы освободить небо.</string>
     <string name="tutorial_antipodes" formatted="false">Коснись, чтобы показать или скрыть противоположное направление выбранных точек: азимут +180°, высота с обратным знаком. Удерживай кнопку, чтобы снять выбор всех точек.</string>

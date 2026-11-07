@@ -92,23 +92,29 @@ class SpaceCompassCelestialLandscapeLayoutTest {
         val centre = compose.onNodeWithTag("celestial-bottom-center-controls").fetchSemanticsNode().boundsInRoot
         val capture = compose.onNodeWithTag("capture-panorama").fetchSemanticsNode().boundsInRoot
         val captureGroup = compose.onNodeWithTag("celestial-capture-controls").fetchSemanticsNode().boundsInRoot
-        assertEquals(weather.center.y, axis.center.y, 1f)
+        val zoom = compose.onNodeWithTag("virtual-zoom-value").fetchSemanticsNode().boundsInRoot
+        assertEquals(weather.center.y, zoom.center.y, 1f)
         assertEquals(capture.bottom, camera.bottom, 1f)
         assertTrue(camera.left >= captureGroup.left && camera.right <= captureGroup.right)
         assertTrue(capture.left >= captureGroup.left && capture.right <= captureGroup.right)
         assertEquals(sky.center.x, centre.center.x, 1f)
-        assertEquals(chevron.bottom, axis.bottom, 1f)
+        if (width.value > height.value) {
+            assertEquals(menu.center.x, axis.center.x, 1f)
+            assertTrue(axis.top > menu.bottom)
+        } else assertEquals(chevron.bottom, axis.bottom, 1f)
         assertTrue(topCentre.bottom < centre.top)
         listOf(camera, weather, axis, chevron, capture).forEach { bounds ->
             assertEquals(logo.width, bounds.width, 1f)
         }
         if (direction.value == LayoutDirection.Rtl) {
             assertEquals(logo.right, chevron.right, 1f)
-            assertTrue(weather.right < axis.left)
+            assertTrue(zoom.right < weather.left)
+            assertTrue(axis.right < chevron.left)
             assertTrue(capture.right < camera.left)
         } else {
             assertEquals(logo.left, chevron.left, 1f)
-            assertTrue(axis.right < weather.left)
+            assertTrue(weather.right < zoom.left)
+            assertTrue(chevron.right < axis.left)
             assertTrue(camera.right < capture.left)
         }
     }

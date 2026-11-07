@@ -2,7 +2,7 @@
     <string name="screensaver_title">Salvaschermo</string>
     <string name="screensaver_description">Quando l’app è inattiva, mostra la Terra animata e sospende il tracciamento per risparmiare energia.</string>
     <string name="screensaver_delay">Avvia dopo</string>
-    <string name="screensaver_dismiss">Tocca per tornare all’app</string>
+    <string name="screensaver_dismiss">Tocca due volte un punto qualsiasi per tornare all’app</string>
     <string name="screensaver_seconds">%1$s s</string>
     <string name="screensaver_minutes">%1$s min</string>
     <string name="screensaver_battery">Batteria: %1$s</string>

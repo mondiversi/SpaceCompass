@@ -21,8 +21,9 @@ import kotlin.math.abs
 
 @Composable
 internal fun SpaceCompassCameraZoomControls(range: SpaceCompassCameraZoomRange?, requested: Float,
-    actual: Float, enabled: Boolean, onZoom: (Float) -> Unit, color: Color, background: Color) {
+    actual: Float, enabled: Boolean, onZoom: (Float) -> Unit, color: Color, background: Color, camera: Boolean = true) {
     var expanded by remember { mutableStateOf(false) }
+    val tag = if (camera) "camera-zoom" else "virtual-zoom"
     val canChoose = enabled && range != null
     val presets = remember(range) { range?.presets().orEmpty() }
     val numeric = LocalSpaceCompassNumericFormat.current
@@ -50,19 +51,19 @@ internal fun SpaceCompassCameraZoomControls(range: SpaceCompassCameraZoomRange?,
                 anchorTop = anchor.top
                 anchorBottom = anchor.bottom
             }
-                .testTag("camera-zoom-value").spaceCompassTutorialTarget(SpaceCompassTutorialFeature.ZOOM, enabled = canChoose)) {
+                .testTag("$tag-value").spaceCompassTutorialTarget(SpaceCompassTutorialFeature.ZOOM, enabled = canChoose)) {
             Text(value, Modifier.padding(2.dp), fontSize = 14.sp, fontWeight = FontWeight.SemiBold,
                 textAlign = TextAlign.Center, maxLines = 1)
         }
         SpaceCompassAdaptiveDropdownMenu(expanded, onDismissRequest = { expanded = false },
-            modifier = Modifier.widthIn(min = 144.dp).heightIn(max = menuHeight).selectableGroup().testTag("camera-zoom-menu"),
+            modifier = Modifier.widthIn(min = 144.dp).heightIn(max = menuHeight).selectableGroup().testTag("$tag-menu"),
             containerColor = spaceCompassSettingsCardColor()) {
             presets.forEach { preset ->
                 val checked = abs(preset - requested) < .005f
                 DropdownMenuItem(text = { Text(label(preset), fontSize = 14.sp, maxLines = 1) },
                     trailingIcon = { RadioButton(checked, onClick = null,
                         modifier = Modifier.clearAndSetSemantics {}) },
-                    modifier = Modifier.testTag("camera-zoom-preset-$preset").semantics {
+                    modifier = Modifier.testTag("$tag-preset-$preset").semantics {
                         role = Role.RadioButton
                         selected = checked
                     },

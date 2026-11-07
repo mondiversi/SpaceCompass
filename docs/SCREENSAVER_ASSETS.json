@@ -28,9 +28,9 @@
       "source_embedded_sha256": "89b5f1d228fb90ccb7da5c99c55bb8aaf8e7bc8af481984e99dda88dfa6f13e7"
     }
   ],
-  "renderer_bytes": 19605,
+  "renderer_bytes": 22409,
   "no_network_or_audio": true,
-  "renderer_sha256": "a1b54c2b8c976c7ebf8ff60b814253fa702fe8d7891630d6efb0cf0fc133bfc5",
+  "renderer_sha256": "7ffe2f0b21460a700ff63b1a491811e2a70a20e8907a31fd5e9a6f141038157b",
   "lighting_uses_observer_solar_elevation": false,
   "earth_texture_orientation_and_orbit_geometry_preserved": true,
   "earth_lighting_uses_real_utc_sun": true,

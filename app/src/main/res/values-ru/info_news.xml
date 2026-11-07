@@ -1,9 +1,9 @@
 <resources>
     <string name="info_news_title">Последние новости · %1$s</string>
-    <string name="info_news_star_sky" formatted="false">Коснитесь пустого неба, чтобы одновременно показать или скрыть прицел и значки.</string>
-    <string name="info_news_texture_downloads" formatted="false">Дважды коснитесь пустого неба, чтобы остановить или продолжить время.</string>
-    <string name="info_news_weather" formatted="false">При остановке дата, время и смещение UTC остаются оранжевыми, со значком паузы.</string>
-    <string name="info_news_viewer_zoom" formatted="false">Реальное время возвращается к текущему моменту; свои дата, время или скорость продолжаются с остановленной точки.</string>
-    <string name="info_news_settings" formatted="false">В подписях время и T стоят рядом через среднюю точку, в том числе на фото и панорамах.</string>
-    <string name="info_news_catalog" formatted="false">В сравнениях с датой заголовок объекта отделён от даты; длинный текст переносится.</string>
+    <string name="info_news_star_sky" formatted="false">Исследуйте моделируемое небо с сохранением масштаба от 0,5× до 1×.</string>
+    <string name="info_news_texture_downloads" formatted="false">Погода/прозрачность и масштаб теперь занимают согласованные позиции в обоих режимах.</string>
+    <string name="info_news_weather" formatted="false">Кнопки 0°/90° и выбранных точек адаптируются к вертикальной и горизонтальной ориентации.</string>
+    <string name="info_news_viewer_zoom" formatted="false">Новые установки используют продольную ось телефона (0°).</string>
+    <string name="info_news_settings" formatted="false">Вращайте Землю на заставке; после 10 секунд без действий она плавно вернётся к обычному вращению.</string>
+    <string name="info_news_catalog" formatted="false">Дважды коснитесь любого места для выхода из заставки. Обучение масштабу обновлено на всех двадцати языках.</string>
 </resources>

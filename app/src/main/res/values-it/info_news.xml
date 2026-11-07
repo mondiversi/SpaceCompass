@@ -1,9 +1,9 @@
 <resources>
     <string name="info_news_title">Ultime novità · %1$s</string>
-    <string name="info_news_star_sky" formatted="false">Tocca il cielo libero per mostrare o nascondere insieme mirino e icone.</string>
-    <string name="info_news_texture_downloads" formatted="false">Tocca due volte il cielo libero per fermare o riprendere il tempo.</string>
-    <string name="info_news_weather" formatted="false">In pausa restano visibili data, ora e scarto UTC in arancione, con il simbolo di pausa.</string>
-    <string name="info_news_viewer_zoom" formatted="false">Il tempo reale riprende da adesso; data, ora o velocità personalizzate ripartono dall’istante fermato.</string>
-    <string name="info_news_settings" formatted="false">Nei fumetti ora e T sono affiancati con un puntino separatore, anche in foto e panoramiche.</string>
-    <string name="info_news_catalog" formatted="false">Nei confronti a data fissa, titolo dell’oggetto e data sono separati; i testi lunghi vanno a capo.</string>
+    <string name="info_news_star_sky" formatted="false">Regola lo zoom del cielo simulato da 0,5× a 1× e ritrova l’ultima scelta.</string>
+    <string name="info_news_texture_downloads" formatted="false">Meteo/trasparenza e zoom hanno posizioni coerenti nelle due modalità.</string>
+    <string name="info_news_weather" formatted="false">I comandi 0°/90° e punti selezionati si adattano alla disposizione verticale e orizzontale.</string>
+    <string name="info_news_viewer_zoom" formatted="false">Alla prima installazione il puntamento segue la lunghezza del telefono (0°).</string>
+    <string name="info_news_settings" formatted="false">Ruota la Terra del salvaschermo: dopo 10 secondi di inattività torna gradualmente alla rotazione normale.</string>
+    <string name="info_news_catalog" formatted="false">Tocca due volte un punto qualsiasi per tornare all’app. Tutorial dello zoom aggiornato nelle 20 lingue.</string>
 </resources>

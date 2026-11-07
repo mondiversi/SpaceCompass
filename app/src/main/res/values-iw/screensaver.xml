@@ -2,7 +2,7 @@
     <string name="screensaver_title">שומר מסך</string>
     <string name="screensaver_description">כשהאפליקציה אינה בשימוש, מציג את כדור הארץ המונפש ומשהה את המעקב לחיסכון באנרגיה.</string>
     <string name="screensaver_delay">הפעלה אחרי</string>
-    <string name="screensaver_dismiss">געו כדי לחזור לאפליקציה</string>
+    <string name="screensaver_dismiss">הקישו פעמיים במקום כלשהו כדי לחזור לאפליקציה</string>
     <string name="screensaver_seconds">%1$s שנ׳</string>
     <string name="screensaver_minutes">%1$s דק׳</string>
     <string name="screensaver_battery">סוללה: %1$s</string>

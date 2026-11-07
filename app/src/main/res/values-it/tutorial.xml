@@ -4,7 +4,7 @@
     <string name="tutorial_welcome_title" formatted="false">Benvenuto in Space Compass</string>
     <string name="tutorial_welcome_body" formatted="false">Esplora il cielo, segui le traiettorie degli astri e scopri come appaiono da altri luoghi e in altri momenti. Il tutorial interattivo ti presenta i comandi principali.</string>
     <string name="tutorial_instruction" formatted="false">Tocca un comando evidenziato o un punto dell’orbita per scoprirne la funzione. La guida spiega i comandi senza cambiare le tue impostazioni.</string>
-    <string name="tutorial_zoom_title" formatted="false">Zoom fotocamera</string>
+    <string name="tutorial_zoom_title" formatted="false">Zoom</string>
     <string name="tutorial_navigation_title" formatted="false">Oggetto selezionato</string>
     <string name="tutorial_points_title" formatted="false">Punti delle orbite</string>
     <string name="tutorial_info" formatted="false">Apri le informazioni sull’app, le novità e i crediti delle fonti.</string>
@@ -17,7 +17,7 @@
     <string name="tutorial_weather" formatted="false">Mostra o nascondi gli effetti meteo nel cielo simulato e nelle panoramiche. Il comando non è disponibile in modalità fotocamera.</string>
     <string name="tutorial_axis" formatted="false">Scegli l’asse della fotocamera (90°) o la lunghezza del telefono (0°) per puntare il cielo. La modalità fotocamera usa sempre il proprio asse.</string>
     <string name="tutorial_transparency" formatted="false">Rendi le immagini degli oggetti più traslucide per confrontarle con l’inquadratura reale. Lo scatto mantiene questa scelta.</string>
-    <string name="tutorial_zoom" formatted="false">Scegli il livello di zoom della fotocamera. Puoi anche ingrandire o ridurre con due dita sull’inquadratura.</string>
+    <string name="tutorial_zoom" formatted="false">Scegli lo zoom del cielo simulato da 0,5× a 1×. In modalità fotocamera usa lo zoom disponibile o due dita sull’inquadratura. Le due scelte vengono salvate separatamente.</string>
     <string name="tutorial_capture" formatted="false">Prepara una panoramica di tutto il cielo oppure uno scatto dell’inquadratura con le sovrapposizioni astronomiche. Esporta dall’anteprima. Nell’anteprima, tocca l’immagine per mostrare o nascondere i comandi.</string>
     <string name="tutorial_panels" formatted="false">Compatta o espandi le isole dell’oggetto e della bussola per lasciare più spazio al cielo.</string>
     <string name="tutorial_antipodes" formatted="false">Tocca per mostrare o nascondere la direzione opposta dei punti selezionati: azimut +180° e altezza di segno opposto. Tieni premuto per deselezionare tutti i punti.</string>

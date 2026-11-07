@@ -1,9 +1,9 @@
 <resources>
     <string name="info_news_title">हाल के बदलाव · %1$s</string>
-    <string name="info_news_star_sky" formatted="false">निशाना और आइकन साथ दिखाने या छिपाने के लिए खाली आकाश पर टैप करें।</string>
-    <string name="info_news_texture_downloads" formatted="false">समय रोकने या फिर चलाने के लिए खाली आकाश पर दो बार टैप करें।</string>
-    <string name="info_news_weather" formatted="false">रुकने पर तारीख, समय और UTC अंतर नारंगी रंग में विराम चिह्न के साथ दिखते रहते हैं।</string>
-    <string name="info_news_viewer_zoom" formatted="false">वास्तविक समय वर्तमान क्षण पर लौटता है; कस्टम तारीख, समय या गति रुके हुए क्षण से आगे चलती है।</string>
-    <string name="info_news_settings" formatted="false">लेबल में समय और T मध्य बिंदु से अलग होकर साथ दिखते हैं, फ़ोटो और पैनोरमा में भी।</string>
-    <string name="info_news_catalog" formatted="false">तय तारीख वाली तुलनाओं में वस्तु का शीर्षक और तारीख अलग हैं; लंबा पाठ अगली पंक्ति में जाता है।</string>
+    <string name="info_news_star_sky" formatted="false">सिम्युलेटेड आकाश को 0.5× से 1× तक सहेजे गए ज़ूम के साथ देखें।</string>
+    <string name="info_news_texture_downloads" formatted="false">मौसम/पारदर्शिता और ज़ूम अब दोनों मोड में समान स्थानों पर हैं।</string>
+    <string name="info_news_weather" formatted="false">0°/90° और चयनित बिंदुओं के नियंत्रण लंबवत और क्षैतिज लेआउट के अनुसार बदलते हैं।</string>
+    <string name="info_news_viewer_zoom" formatted="false">नई स्थापना में फ़ोन की लंबाई वाला अक्ष (0°) डिफ़ॉल्ट है।</string>
+    <string name="info_news_settings" formatted="false">स्क्रीनसेवर की पृथ्वी घुमाएँ; 10 सेकंड तक कोई गतिविधि न होने पर वह धीरे से सामान्य घूर्णन पर लौटती है।</string>
+    <string name="info_news_catalog" formatted="false">स्क्रीनसेवर से बाहर आने के लिए कहीं भी दो बार टैप करें। ज़ूम ट्यूटोरियल सभी बीस भाषाओं में अपडेट किया गया है।</string>
 </resources>

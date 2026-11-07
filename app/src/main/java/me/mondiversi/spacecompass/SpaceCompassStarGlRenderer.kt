@@ -57,7 +57,7 @@ internal class SpaceCompassStarGlRenderer(context: Context) {
         glUniform2f(locations[0], width.toFloat(), height.toFloat())
         val frame = drawing.frame
         glUniform3f(locations[1], (frame.left + frame.width / 2).toFloat(),
-            (frame.top + frame.height / 2).toFloat(), spaceCompassSunProjectionFocalLength(frame.height).toFloat())
+            (frame.top + frame.height / 2).toFloat(), spaceCompassVirtualFocalLength(frame.height, drawing.zoom).toFloat())
         fun vector(index: Int, vector: SpaceCompassViewVector) = glUniform3f(locations[index], vector.x.toFloat(), vector.y.toFloat(), vector.z.toFloat())
         vector(2, drawing.right); vector(3, drawing.screenUp); vector(4, drawing.forward); vector(5, drawing.worldUp)
         glUniform1f(locations[6], drawing.opacity)

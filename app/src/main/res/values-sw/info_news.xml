@@ -1,9 +1,9 @@
 <resources>
     <string name="info_news_title">Mambo mapya · %1$s</string>
-    <string name="info_news_star_sky" formatted="false">Gusa anga tupu kuonyesha au kuficha kilenga na aikoni pamoja.</string>
-    <string name="info_news_texture_downloads" formatted="false">Gusa anga tupu mara mbili kusitisha au kuendeleza muda.</string>
-    <string name="info_news_weather" formatted="false">Muda ukisitishwa, tarehe, saa na tofauti ya UTC hubaki za machungwa zikiwa na alama ya kusitisha.</string>
-    <string name="info_news_viewer_zoom" formatted="false">Muda halisi hurudi sasa; tarehe, saa au kasi maalumu huendelea kutoka wakati uliosimamishwa.</string>
-    <string name="info_news_settings" formatted="false">Lebo huonyesha saa na T pamoja zikitenganishwa na nukta ya kati, pia kwenye picha na panorama.</string>
-    <string name="info_news_catalog" formatted="false">Milinganisho ya tarehe hutenganisha kichwa cha kitu na tarehe; maandishi marefu huvunjwa mistari.</string>
+    <string name="info_news_star_sky" formatted="false">Chunguza anga iliyoigwa kwa ukuzaji unaohifadhiwa kutoka 0.5× hadi 1×.</string>
+    <string name="info_news_texture_downloads" formatted="false">Hali ya hewa/uwazi na ukuzaji sasa vina nafasi zinazolingana katika hali zote mbili.</string>
+    <string name="info_news_weather" formatted="false">Vitufe vya 0°/90° na pointi zilizochaguliwa hulingana na mpangilio wa wima na mlalo.</string>
+    <string name="info_news_viewer_zoom" formatted="false">Usakinishaji mpya huanza kwa kutumia mhimili wa urefu wa simu (0°).</string>
+    <string name="info_news_settings" formatted="false">Buruta Dunia kwenye kihifadhi skrini; baada ya sekunde 10 bila mwingiliano hurudi taratibu kwenye mzunguko wa kawaida.</string>
+    <string name="info_news_catalog" formatted="false">Gusa mara mbili popote ili kuondoka kwenye kihifadhi skrini. Mafunzo ya ukuzaji yamesasishwa katika lugha zote ishirini.</string>
 </resources>

@@ -4,7 +4,7 @@
     <string name="tutorial_welcome_title" formatted="false">Space Compass’a hoş geldiniz</string>
     <string name="tutorial_welcome_body" formatted="false">Farklı yer ve zamanlarda gökyüzünü ve gök cisimlerinin yollarını keşfedin. Etkileşimli öğreticiyle kontrolleri öğrenin.</string>
     <string name="tutorial_instruction" formatted="false">Ayarları değiştirmeden işlevini öğrenmek için vurgulanan bir kontrole veya yörünge noktasına dokunun.</string>
-    <string name="tutorial_zoom_title" formatted="false">Kamera yakınlaştırma</string>
+    <string name="tutorial_zoom_title" formatted="false">Yakınlaştırma</string>
     <string name="tutorial_navigation_title" formatted="false">Seçili nesne</string>
     <string name="tutorial_points_title" formatted="false">Yörünge noktaları</string>
     <string name="tutorial_info" formatted="false">Uygulama bilgilerini, yenilikleri ve kaynakları açın.</string>
@@ -17,7 +17,7 @@
     <string name="tutorial_weather" formatted="false">Sanal gökyüzü ve panoramalardaki hava efektlerini gösterin veya gizleyin. Kamera modunda kullanılamaz.</string>
     <string name="tutorial_axis" formatted="false">Kamera eksenini (90°) veya telefonun uzunluk eksenini (0°) seçin. Kamera her zaman kendi eksenini kullanır.</string>
     <string name="tutorial_transparency" formatted="false">Kamera görüntüsüyle karşılaştırmak için nesneleri yarı saydam yapın. Çekim bu seçimi korur.</string>
-    <string name="tutorial_zoom" formatted="false">Kamera yakınlaştırmasını seçin veya görüntüde iki parmağınızı kullanın.</string>
+    <string name="tutorial_zoom" formatted="false">Simüle gökyüzü yakınlaştırmasını 0,5× ile 1× arasında seçin. Kamera modunda mevcut yakınlaştırmayı veya iki parmağınızı kullanın. İki ayar ayrı kaydedilir.</string>
     <string name="tutorial_capture" formatted="false">Tüm gökyüzü panoraması veya astronomik katmanlı kamera fotoğrafı hazırlayın. Önizlemeden dışa aktarın. Önizlemede kontrolleri göstermek veya gizlemek için görüntüye dokunun.</string>
     <string name="tutorial_panels" formatted="false">Gökyüzünü açmak için nesne ve pusula panellerini daraltın veya genişletin.</string>
     <string name="tutorial_antipodes" formatted="false">Seçili noktaların karşıt yönünü göstermek veya gizlemek için dokun: azimut +180° olur ve yüksekliğin işareti tersine döner. Tüm noktaların seçimini kaldırmak için basılı tut.</string>

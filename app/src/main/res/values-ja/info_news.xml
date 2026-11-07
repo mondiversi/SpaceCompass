@@ -1,9 +1,9 @@
 <resources>
     <string name="info_news_title">最近の変更 · %1$s</string>
-    <string name="info_news_star_sky" formatted="false">何もない空をタップすると照準とアイコンをまとめて表示または非表示にします。</string>
-    <string name="info_news_texture_downloads" formatted="false">何もない空をダブルタップすると時間を一時停止または再開します。</string>
-    <string name="info_news_weather" formatted="false">一時停止中は日付、時刻、UTCオフセットを一時停止マーク付きのオレンジ色で表示します。</string>
-    <string name="info_news_viewer_zoom" formatted="false">実時間は現在に戻り、日付・時刻・速度を変更した場合は停止した瞬間から再開します。</string>
-    <string name="info_news_settings" formatted="false">写真やパノラマも含め、ラベルの時刻とTを中点で区切って並べて表示します。</string>
-    <string name="info_news_catalog" formatted="false">日時を指定した比較では天体名と日付を分け、長い文章を折り返します。</string>
+    <string name="info_news_star_sky" formatted="false">シミュレーションの空を0.5×～1×で拡大・縮小でき、設定が保存されます。</string>
+    <string name="info_news_texture_downloads" formatted="false">天気・透明度とズームの操作位置を両モードで統一しました。</string>
+    <string name="info_news_weather" formatted="false">0°/90°と選択ポイントのボタンは縦向き・横向きの配置に対応します。</string>
+    <string name="info_news_viewer_zoom" formatted="false">新規インストールでは電話の長さ方向の軸（0°）を使用します。</string>
+    <string name="info_news_settings" formatted="false">スクリーンセーバーの地球をドラッグで回せます。10秒間操作しないと通常の回転に滑らかに戻ります。</string>
+    <string name="info_news_catalog" formatted="false">任意の場所をダブルタップしてスクリーンセーバーを終了します。ズームの説明を全20言語で更新しました。</string>
 </resources>

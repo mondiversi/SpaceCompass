@@ -1,9 +1,9 @@
 <resources>
     <string name="info_news_title">最新变化 · %1$s</string>
-    <string name="info_news_star_sky" formatted="false">轻触空白天空可同时显示或隐藏准星和图标。</string>
-    <string name="info_news_texture_downloads" formatted="false">双击空白天空可暂停或继续时间。</string>
-    <string name="info_news_weather" formatted="false">暂停时，日期、时间和 UTC 时差始终以橙色显示，并带有暂停标记。</string>
-    <string name="info_news_viewer_zoom" formatted="false">实时时间会返回当前时刻；自定义日期、时间或速度则从暂停的时刻继续。</string>
-    <string name="info_news_settings" formatted="false">轨道点标签将时间和 T 用中点分隔并排显示，照片和全景图也保持一致。</string>
-    <string name="info_news_catalog" formatted="false">固定日期对比的标签将天体标题与日期分开，长文本自动换行。</string>
+    <string name="info_news_star_sky" formatted="false">模拟天空支持0.5×至1×缩放，并记住上次选择。</string>
+    <string name="info_news_texture_downloads" formatted="false">天气/透明度与缩放按钮在两种模式中采用一致的位置。</string>
+    <string name="info_news_weather" formatted="false">0°/90°与已选轨道点按钮会适应竖屏和横屏布局。</string>
+    <string name="info_news_viewer_zoom" formatted="false">新安装默认使用手机长轴方向（0°）进行指向。</string>
+    <string name="info_news_settings" formatted="false">拖动屏幕保护程序中的地球即可旋转；停止操作10秒后，会平滑恢复正常旋转。</string>
+    <string name="info_news_catalog" formatted="false">双击任意位置退出屏幕保护程序。缩放教程已更新为全部20种语言。</string>
 </resources>

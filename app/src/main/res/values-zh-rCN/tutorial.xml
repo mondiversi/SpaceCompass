@@ -4,7 +4,7 @@
     <string name="tutorial_welcome_title" formatted="false">欢迎使用 Space Compass</string>
     <string name="tutorial_welcome_body" formatted="false">探索不同地点和时刻的天空与天体轨迹。通过交互式教程了解主要操作。</string>
     <string name="tutorial_instruction" formatted="false">轻触高亮的控件或轨道点即可了解其功能，不会更改设置。</string>
-    <string name="tutorial_zoom_title" formatted="false">相机缩放</string>
+    <string name="tutorial_zoom_title" formatted="false">缩放</string>
     <string name="tutorial_navigation_title" formatted="false">选中天体</string>
     <string name="tutorial_points_title" formatted="false">轨道点</string>
     <string name="tutorial_info" formatted="false">打开应用信息、更新内容和来源说明。</string>
@@ -17,7 +17,7 @@
     <string name="tutorial_weather" formatted="false">显示或隐藏模拟天空和全景中的天气效果。相机模式下不可用。</string>
     <string name="tutorial_axis" formatted="false">选择相机轴（90°）或手机长轴（0°）。相机始终使用自身的轴。</string>
     <string name="tutorial_transparency" formatted="false">让天体图像更透明，以便与相机画面比较。拍摄会保留此选择。</string>
-    <string name="tutorial_zoom" formatted="false">选择相机缩放倍率，也可以在画面上用双指缩放。</string>
+    <string name="tutorial_zoom" formatted="false">选择模拟天空的缩放比例，范围为0.5×至1×。相机模式下可使用支持的变焦或双指缩放。两种设置分别保存。</string>
     <string name="tutorial_capture" formatted="false">生成全天全景或带有天文叠加层的相机照片。从预览中导出。 在预览中轻触图像可显示或隐藏操作按钮。</string>
     <string name="tutorial_panels" formatted="false">收起或展开天体与指南针面板，为天空留出更多空间。</string>
     <string name="tutorial_antipodes" formatted="false">点击可显示或隐藏已选点的相反方向：方位角+180°，高度角符号相反。长按可取消所有点的选择。</string>

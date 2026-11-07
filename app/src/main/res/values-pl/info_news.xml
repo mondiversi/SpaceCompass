@@ -1,9 +1,9 @@
 <resources>
     <string name="info_news_title">Ostatnie nowości · %1$s</string>
-    <string name="info_news_star_sky" formatted="false">Dotknij pustego nieba, aby pokazać lub ukryć razem celownik i ikony.</string>
-    <string name="info_news_texture_downloads" formatted="false">Stuknij dwukrotnie puste niebo, aby wstrzymać lub wznowić czas.</string>
-    <string name="info_news_weather" formatted="false">Podczas pauzy data, godzina i przesunięcie UTC pozostają pomarańczowe, z symbolem pauzy.</string>
-    <string name="info_news_viewer_zoom" formatted="false">Czas rzeczywisty wraca do teraz; własne daty, godziny lub prędkości są wznawiane od zatrzymanej chwili.</string>
-    <string name="info_news_settings" formatted="false">Etykiety pokazują godzinę i T obok siebie z kropką środkową, także na zdjęciach i panoramach.</string>
-    <string name="info_news_catalog" formatted="false">Porównania z datą rozdzielają tytuł obiektu i datę; długie teksty są zawijane.</string>
+    <string name="info_news_star_sky" formatted="false">Oglądaj symulowane niebo z zapamiętanym powiększeniem od 0,5× do 1×.</string>
+    <string name="info_news_texture_downloads" formatted="false">Pogoda/przezroczystość i powiększenie mają teraz spójne położenie w obu trybach.</string>
+    <string name="info_news_weather" formatted="false">Przyciski 0°/90° i wybranych punktów dostosowują się do układu pionowego i poziomego.</string>
+    <string name="info_news_viewer_zoom" formatted="false">Nowe instalacje domyślnie używają osi wzdłuż telefonu (0°).</string>
+    <string name="info_news_settings" formatted="false">Obracaj Ziemię na wygaszaczu; po 10 sekundach bez interakcji płynnie wróci do normalnego obrotu.</string>
+    <string name="info_news_catalog" formatted="false">Dotknij dwukrotnie dowolnego miejsca, aby opuścić wygaszacz. Samouczek powiększenia zaktualizowano we wszystkich dwudziestu językach.</string>
 </resources>

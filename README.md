@@ -8,8 +8,8 @@ paths, inspect reference facts and view textured models. Space Compass is a stan
 
 ## Download and install
 
-Download **space-compass-1.8.7.apk** from the
-[Space Compass 1.8.7 release](https://github.com/mondiversi/SpaceCompass/releases/tag/v1.8.7).
+Download **space-compass-1.8.8.apk** from the
+[Space Compass 1.8.8 release](https://github.com/mondiversi/SpaceCompass/releases/tag/v1.8.8).
 Android 8.0 or newer is required. Open the APK and follow Android's installation
 prompts; allow installation for your browser or file manager if requested.
 
@@ -91,6 +91,7 @@ See Space Compass in portrait and landscape, by day and by night. These English 
 - **Find objects in the sky.** Point your phone to see where the Sun, Moon, planets and other objects are, including those below the horizon.
 - **See the sky through your camera.** Overlay objects and their paths on your surroundings. Zoom in or out and fade the object images to compare their predicted positions with what you see.
 - **Control the view with a tap.** Tap empty sky to show or hide the reticle and controls; double-tap to pause or resume sky time. Tap a photo or panorama preview to toggle its overlay controls.
+- **Choose your field of view.** Adjust and remember virtual-sky zoom from 0.5× to 1×, with separate camera zoom for the lenses available on your device.
 - **Follow daily paths.** See when an object rises, reaches its highest point and sets. Choose today's full path or the next 24 hours, select points of interest and check how long until they happen.
 - **Explore other places and times.** Create a Location with a different place, date or time. Pause, speed up or reverse time by up to one day per second. Set up changes at your own pace and apply them when you return to the sky, then save or share the place and time settings independently.
 - **Plan your observations.** Compare the current sky with dated paths from Key Heights, Key Events or your own Personal Moments. Save or share Personal Moments separately, or include active comparisons when exporting a Scene. Future path points can also be sent to Android's Clock or Calendar.
@@ -100,7 +101,7 @@ See Space Compass in portrait and landscape, by day and by night. These English 
 - **Browse 9,999 objects.** Discover planets, moons, stars, constellations, galaxies, spacecraft and more. Search, filter and sort the catalogue, mark favourites and choose what appears in your sky.
 - **Take a closer look in the Observatory.** Explore images and interactive models, lunar phases, object facts and spatial context. Compare estimated travel times at different speeds, from walking to light speed and fictional warp speeds.
 - **Add reference points.** Show celestial guide lines, the poles, zenith and nadir, or display the opposite directions of your selected points with Antipodes.
-- **Make it comfortable to use.** Choose light or dark mode, your preferred units and one of twenty interface languages. Follow the built-in tutorial, adjust sky smoothness, enjoy optional ambient music or relax with the animated Earth screensaver, which pauses live tracking while active.
+- **Make it comfortable to use.** Choose light or dark mode, your preferred units and one of twenty interface languages. Follow the built-in tutorial, adjust sky smoothness, enjoy optional ambient music or relax with the animated Earth screensaver, which pauses live tracking while active. Drag the globe to explore; after ten idle seconds it returns smoothly to its normal rotation. Double-tap to return to the app.
 
 Sun, Moon and major-planet calculations work offline, and downloaded images stay
 available on your device. Weather, satellites and some other objects need online
@@ -113,7 +114,7 @@ safety or navigation instrument.
 ## Build and checks
 
 The application ID is `me.mondiversi.spacecompass`. This source builds version
-**1.8.7**, with Android/update identity `1.8.7` and version code **73**.
+**1.8.8**, with Android/update identity `1.8.8` and version code **74**.
 This preserves the three-part update protocol used by existing preview installations.
 The app stores its preferences and caches privately.
 
@@ -169,7 +170,7 @@ Launcher/loading artwork and original illustrations are project assets.
 
 ## Data and graphics packages
 
-Release 1.8.7 includes **9,999 selectable objects**, and an optional reference-information archive.
+Release 1.8.8 includes **9,999 selectable objects**, and an optional reference-information archive.
 All descriptive data and translations remain inside the APK. Scientific limits and provenance are in the
 [catalogue sources](docs/CATALOG_9999.md) and [canonical source catalogue](catalogue/README.md).
 

@@ -4,7 +4,7 @@
     <string name="tutorial_welcome_title" formatted="false">Welkom bij Space Compass</string>
     <string name="tutorial_welcome_body" formatted="false">Verken de hemel en de banen van hemellichamen op andere plaatsen en tijden. Ontdek de bediening met de interactieve tutorial.</string>
     <string name="tutorial_instruction" formatted="false">Tik op een gemarkeerde knop of baanpunt voor uitleg, zonder instellingen te wijzigen.</string>
-    <string name="tutorial_zoom_title" formatted="false">Camerazoom</string>
+    <string name="tutorial_zoom_title" formatted="false">Zoom</string>
     <string name="tutorial_navigation_title" formatted="false">Geselecteerd object</string>
     <string name="tutorial_points_title" formatted="false">Baanpunten</string>
     <string name="tutorial_info" formatted="false">Open appinformatie, nieuws en bronvermeldingen.</string>
@@ -17,7 +17,7 @@
     <string name="tutorial_weather" formatted="false">Toon of verberg weer in de gesimuleerde hemel en panorama’s. Niet beschikbaar in cameramodus.</string>
     <string name="tutorial_axis" formatted="false">Kies de camera-as (90°) of de lengteas van de telefoon (0°). De camera gebruikt altijd haar eigen as.</string>
     <string name="tutorial_transparency" formatted="false">Maak objectafbeeldingen doorschijnend om ze met de camera te vergelijken. De opname bewaart deze keuze.</string>
-    <string name="tutorial_zoom" formatted="false">Kies de camerazoom of knijp met twee vingers op het beeld.</string>
+    <string name="tutorial_zoom" formatted="false">Kies de zoom van de gesimuleerde hemel van 0,5× tot 1×. Gebruik in cameramodus de beschikbare zoom of twee vingers op het beeld. Beide instellingen worden apart opgeslagen.</string>
     <string name="tutorial_capture" formatted="false">Maak een hemelpanorama of camerafoto met astronomische overlays. Exporteer vanuit het voorbeeld. Tik in het voorbeeld op de afbeelding om de bediening te tonen of te verbergen.</string>
     <string name="tutorial_panels" formatted="false">Klap object- en kompaspanelen in of uit voor meer hemelruimte.</string>
     <string name="tutorial_antipodes" formatted="false">Tik om de tegengestelde richting van geselecteerde punten te tonen of te verbergen: azimut +180° en hoogte met omgekeerd teken. Houd ingedrukt om alle punten te deselecteren.</string>

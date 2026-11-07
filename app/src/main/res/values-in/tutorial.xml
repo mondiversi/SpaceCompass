@@ -4,7 +4,7 @@
     <string name="tutorial_welcome_title" formatted="false">Selamat datang di Space Compass</string>
     <string name="tutorial_welcome_body" formatted="false">Jelajahi langit dan lintasan benda langit dari tempat dan waktu lain. Kenali kontrol melalui tutorial interaktif.</string>
     <string name="tutorial_instruction" formatted="false">Sentuh kontrol yang disorot atau titik orbit untuk memahami fungsinya tanpa mengubah pengaturan.</string>
-    <string name="tutorial_zoom_title" formatted="false">Zoom kamera</string>
+    <string name="tutorial_zoom_title" formatted="false">Zoom</string>
     <string name="tutorial_navigation_title" formatted="false">Objek terpilih</string>
     <string name="tutorial_points_title" formatted="false">Titik orbit</string>
     <string name="tutorial_info" formatted="false">Buka informasi aplikasi, pembaruan dan kredit sumber.</string>
@@ -17,7 +17,7 @@
     <string name="tutorial_weather" formatted="false">Tampilkan atau sembunyikan cuaca di langit simulasi dan panorama. Tidak tersedia dalam mode kamera.</string>
     <string name="tutorial_axis" formatted="false">Pilih sumbu kamera (90°) atau panjang ponsel (0°). Kamera selalu memakai sumbunya sendiri.</string>
     <string name="tutorial_transparency" formatted="false">Buat gambar objek lebih transparan untuk membandingkan dengan kamera. Hasil foto menyimpan pilihan ini.</string>
-    <string name="tutorial_zoom" formatted="false">Pilih zoom kamera atau gunakan dua jari pada tampilan kamera.</string>
+    <string name="tutorial_zoom" formatted="false">Pilih zoom langit simulasi dari 0,5× hingga 1×. Dalam mode kamera, gunakan zoom yang tersedia atau dua jari pada tampilan. Kedua pengaturan disimpan terpisah.</string>
     <string name="tutorial_capture" formatted="false">Siapkan panorama langit atau foto kamera dengan lapisan astronomi. Ekspor dari pratinjau. Pada pratinjau, ketuk gambar untuk menampilkan atau menyembunyikan kontrol.</string>
     <string name="tutorial_panels" formatted="false">Ciutkan atau perluas panel objek dan kompas untuk membuka ruang langit.</string>
     <string name="tutorial_antipodes" formatted="false">Ketuk untuk menampilkan atau menyembunyikan arah berlawanan titik terpilih: azimut +180° dan tanda elevasi berlawanan. Tekan dan tahan untuk membatalkan pilihan semua titik.</string>

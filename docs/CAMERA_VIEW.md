@@ -1,17 +1,24 @@
 # Live rear-camera view
 
-The camera toggle is the first circular action above the sky, outside the title
-toolbar. A slash indicates off; the ordinary camera indicates on. It starts off
-on each cold app start. The adjoining action is weather in virtual mode and object
-transparency in camera mode. References, scenario and object selection retain
-their existing corner group. Default object selection remains Sun and Moon;
-updates retain the user's saved selection.
+The camera switch stays beside Capture in portrait and expanded landscape, and
+above it in compact landscape. Muted grey indicates off. It starts off on each
+cold app start. Weather in the virtual view becomes object transparency in camera
+mode, followed by the shared-position zoom selector. Compact landscape uses the
+same order in a side column. References, Location and object selection retain
+their navigation group. Updates retain saved object selections.
 
-The camera zoom-ratio selector appears immediately before the capture button in
-the bottom capture group. Its menu is anchored to that button and opens into the
-available space above it. Both controls keep their existing sizes, margins,
-viewport exclusions and portrait/landscape placement. The sky's optical frame
-and camera calibration do not change when controls appear or disappear.
+The virtual zoom selector offers 0.5×, 0.6×, 0.7×, 0.8×, 0.9× and 1×, initially 1×.
+Virtual and physical camera zoom are saved separately. The camera starts from its
+saved choice or 0.5×/the widest available lens and respects hardware limits.
+Menus use the available space around the selector. The optical axis stays fixed
+when the controls appear or disappear.
+
+The axis control is beside the panel chevron in portrait/compact landscape and
+below Menu in expanded landscape. New installations use the phone-length axis
+(0°); existing preferences remain. Camera mode disables this choice and uses its
+real optical axis. Point/Antipodes controls occupy the sky column's lower-right
+corner in expanded landscape, above Capture in portrait and beside it in compact
+landscape.
 
 When camera mode is off it generates the synthetic 360-degree panorama. When on,
 it requests a still rear-camera JPEG and draws frozen celestial overlays on it.
@@ -45,7 +52,7 @@ to the pointing viewport's reticle, including the split landscape layout.
 The same density-independent horizontal and vertical focal ratios are passed to
 body projection, paths, direction arrows, event markers, hit/focus targets, floating
 point captions and horizon clipping. Camera overlays wait for capture metadata
-instead of using the virtual sky's wide-angle projection. The virtual view uses 0.95x the original 60-degree vertical lens focal length (about 62.6 degrees vertically); camera mode always uses the actual lens and crop, independently of that virtual scale.
+instead of using the virtual sky's wide-angle projection. The virtual selector scales the original 60-degree vertical lens from 0.5× to 1× (approximately 98.2 to 60 degrees vertically). Objects, paths, stars and terrain use the same selected lens. Camera mode always uses the actual lens and crop, independently of that virtual scale.
 
 This is sensor-based sky pointing, not visual SLAM or an astrometrically calibrated
 camera. Absolute direction still depends on the handset's compass/declination and

@@ -4,7 +4,7 @@
     <string name="tutorial_welcome_title" formatted="false">مرحبًا بك في Space Compass</string>
     <string name="tutorial_welcome_body" formatted="false">استكشف السماء ومسارات الأجرام من أماكن وأوقات مختلفة. تعرّف على عناصر التحكم عبر الدليل التفاعلي.</string>
     <string name="tutorial_instruction" formatted="false">المس عنصرًا مضاءً أو نقطة مدارية لمعرفة وظيفته دون تغيير الإعدادات.</string>
-    <string name="tutorial_zoom_title" formatted="false">تكبير الكاميرا</string>
+    <string name="tutorial_zoom_title" formatted="false">التكبير</string>
     <string name="tutorial_navigation_title" formatted="false">الجسم المحدد</string>
     <string name="tutorial_points_title" formatted="false">نقاط المدار</string>
     <string name="tutorial_info" formatted="false">افتح معلومات التطبيق والمستجدات ومصادر البيانات.</string>
@@ -17,7 +17,7 @@
     <string name="tutorial_weather" formatted="false">أظهر أو أخفِ الطقس في السماء المحاكاة والبانوراما. غير متاح في وضع الكاميرا.</string>
     <string name="tutorial_axis" formatted="false">اختر محور الكاميرا (90°) أو طول الهاتف (0°). تستخدم الكاميرا محورها دائمًا.</string>
     <string name="tutorial_transparency" formatted="false">اجعل صور الأجسام شبه شفافة لمقارنتها بالكاميرا. تحتفظ اللقطة بهذا الاختيار.</string>
-    <string name="tutorial_zoom" formatted="false">اختر تكبير الكاميرا أو استخدم إصبعين على الصورة.</string>
+    <string name="tutorial_zoom" formatted="false">اختر تكبير السماء المحاكية من 0.5× إلى 1×. في وضع الكاميرا، استخدم التكبير المتاح أو إصبعين على الصورة. يُحفظ الإعدادان بشكل منفصل.</string>
     <string name="tutorial_capture" formatted="false">جهّز بانوراما للسماء أو صورة كاميرا بطبقات فلكية. صدّر من المعاينة. في المعاينة، انقر على الصورة لإظهار أدوات التحكم أو إخفائها.</string>
     <string name="tutorial_panels" formatted="false">اطوِ أو وسّع لوحتي الجسم والبوصلة لإظهار مساحة أكبر من السماء.</string>
     <string name="tutorial_antipodes" formatted="false">المس لإظهار أو إخفاء الاتجاه المعاكس للنقاط المحددة: السمت +180° والارتفاع بعلامة معاكسة. اضغط مطولاً لإلغاء تحديد جميع النقاط.</string>

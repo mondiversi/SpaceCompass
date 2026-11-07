@@ -2,7 +2,7 @@
     <string name="screensaver_title">Wygaszacz ekranu</string>
     <string name="screensaver_description">Gdy aplikacja jest bezczynna, pokazuje animowaną Ziemię i wstrzymuje śledzenie, by oszczędzać energię.</string>
     <string name="screensaver_delay">Uruchom po</string>
-    <string name="screensaver_dismiss">Dotknij, aby wrócić do aplikacji</string>
+    <string name="screensaver_dismiss">Dotknij dwukrotnie dowolnego miejsca, aby wrócić do aplikacji</string>
     <string name="screensaver_seconds">%1$s s</string>
     <string name="screensaver_minutes">%1$s min</string>
     <string name="screensaver_battery">Bateria: %1$s</string>

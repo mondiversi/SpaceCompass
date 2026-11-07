@@ -4,6 +4,8 @@ import android.content.Context
 import android.graphics.Color
 import android.graphics.Typeface
 import android.util.Base64
+import android.view.GestureDetector
+import android.view.ViewConfiguration
 import android.view.MotionEvent
 import android.view.View
 import android.view.Gravity
@@ -59,6 +61,30 @@ internal class SpaceCompassScreensaverView(context: Context, dark: Boolean, ligh
                 applySunlight()
             }
         }
+    }
+
+    private val touchSlop = ViewConfiguration.get(context).scaledTouchSlop
+    private var downX = 0f
+    private var downY = 0f
+    private var lastX = 0f
+    private var lastY = 0f
+    private var draggingGlobe = false
+    private var singlePointer = false
+    private var doubleTap = false
+    private val gestures = GestureDetector(context, object : GestureDetector.SimpleOnGestureListener() {
+        override fun onDown(event: MotionEvent) = true
+        override fun onSingleTapConfirmed(event: MotionEvent): Boolean {
+            globeCommand("window.resumeNativeGlobeRotation()")
+            return true
+        }
+        override fun onDoubleTap(event: MotionEvent): Boolean { doubleTap = true; return true }
+        override fun onDoubleTapEvent(event: MotionEvent) = true
+    }).apply { setIsLongpressEnabled(false) }
+
+    private fun globeCommand(script: String) { if (loaded) web.evaluateJavascript(script, null) }
+    private fun endGlobeDrag() {
+        if (draggingGlobe) globeCommand("window.endNativeGlobeDrag()")
+        draggingGlobe = false
     }
 
     private val footer = SpaceCompassScreensaverFooter(context)
@@ -148,7 +174,35 @@ internal class SpaceCompassScreensaverView(context: Context, dark: Boolean, ligh
 
     override fun onInterceptTouchEvent(event: MotionEvent?) = true
     override fun onTouchEvent(event: MotionEvent): Boolean {
-        if (event.actionMasked == MotionEvent.ACTION_UP) performClick()
+        if (event.actionMasked == MotionEvent.ACTION_DOWN) {
+            downX = event.x; downY = event.y; lastX = event.x; lastY = event.y
+            singlePointer = true; doubleTap = false
+        }
+        gestures.onTouchEvent(event)
+        when (event.actionMasked) {
+            MotionEvent.ACTION_POINTER_DOWN -> { endGlobeDrag(); singlePointer = false; doubleTap = false }
+            MotionEvent.ACTION_MOVE -> if (singlePointer && loaded) {
+                val dx = event.x - downX; val dy = event.y - downY
+                if (!draggingGlobe && dx * dx + dy * dy > touchSlop * touchSlop) {
+                    draggingGlobe = true; doubleTap = false
+                    globeCommand("window.beginNativeGlobeDrag()")
+                }
+                if (draggingGlobe) {
+                    val diameter = minOf(width, height).coerceAtLeast(1) * .66f
+                    val x = (event.x - lastX) / diameter
+                    val y = (event.y - lastY) / diameter
+                    globeCommand("window.rotateNativeGlobe($x,$y)")
+                    lastX = event.x; lastY = event.y
+                }
+            }
+            MotionEvent.ACTION_UP -> {
+                val dismiss = singlePointer && doubleTap && !draggingGlobe
+                endGlobeDrag(); singlePointer = false; doubleTap = false
+                // Complete the second tap before removing the cover: no click can reach the page below.
+                if (dismiss) performClick()
+            }
+            MotionEvent.ACTION_CANCEL -> { endGlobeDrag(); singlePointer = false; doubleTap = false }
+        }
         return true
     }
     override fun performClick(): Boolean { super.performClick(); return true }

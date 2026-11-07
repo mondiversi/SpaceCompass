@@ -2,7 +2,7 @@
     <string name="screensaver_title">Bildschirmschoner</string>
     <string name="screensaver_description">Zeigt bei inaktiver App die animierte Erde und pausiert das Tracking, um Energie zu sparen.</string>
     <string name="screensaver_delay">Starten nach</string>
-    <string name="screensaver_dismiss">Tippen, um zur App zurückzukehren</string>
+    <string name="screensaver_dismiss">Tippe zweimal auf eine beliebige Stelle, um zur App zurückzukehren</string>
     <string name="screensaver_seconds">%1$s s</string>
     <string name="screensaver_minutes">%1$s Min.</string>
     <string name="screensaver_battery">Akku: %1$s</string>

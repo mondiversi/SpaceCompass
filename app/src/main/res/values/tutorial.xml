@@ -4,7 +4,7 @@
     <string name="tutorial_welcome_title" formatted="false">Welcome to Space Compass</string>
     <string name="tutorial_welcome_body" formatted="false">Explore the sky, follow celestial paths and preview other places and times. Discover the main controls with the interactive tutorial.</string>
     <string name="tutorial_instruction" formatted="false">Touch a highlighted control or an orbit point to learn what it does. Controls are explained without changing your settings.</string>
-    <string name="tutorial_zoom_title" formatted="false">Camera zoom</string>
+    <string name="tutorial_zoom_title" formatted="false">Zoom</string>
     <string name="tutorial_navigation_title" formatted="false">Selected object</string>
     <string name="tutorial_points_title" formatted="false">Orbit points</string>
     <string name="tutorial_info" formatted="false">Open app information, release notes and source credits.</string>
@@ -17,7 +17,7 @@
     <string name="tutorial_weather" formatted="false">Show or hide weather effects in the simulated sky and panoramas. This control is unavailable in camera mode.</string>
     <string name="tutorial_axis" formatted="false">Choose the camera axis (90°) or the phone length axis (0°) for pointing. Camera mode always uses the camera axis.</string>
     <string name="tutorial_transparency" formatted="false">Make object images more translucent to compare them with the camera view. The capture keeps this choice.</string>
-    <string name="tutorial_zoom" formatted="false">Choose a camera zoom level. You can also pinch the camera view to zoom.</string>
+    <string name="tutorial_zoom" formatted="false">Choose the simulated sky zoom from 0.5× to 1×. In camera mode, use the available lens zoom or pinch the view. The two settings are saved separately.</string>
     <string name="tutorial_capture" formatted="false">Prepare a full-sky panorama, or capture the current camera view with celestial overlays. Export from the preview. In the preview, tap the image to show or hide the controls.</string>
     <string name="tutorial_panels" formatted="false">Collapse or expand the object and compass islands to gain sky space.</string>
     <string name="tutorial_antipodes" formatted="false">Tap to show or hide the opposite direction of selected points: azimuth +180° and elevation with the opposite sign. Hold to deselect all points.</string>

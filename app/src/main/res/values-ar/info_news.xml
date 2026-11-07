@@ -1,9 +1,9 @@
 <resources>
     <string name="info_news_title">آخر المستجدات · %1$s</string>
-    <string name="info_news_star_sky" formatted="false">المس السماء الخالية لإظهار مؤشر التصويب والأيقونات أو إخفائها معًا.</string>
-    <string name="info_news_texture_downloads" formatted="false">انقر مرتين على السماء الخالية لإيقاف الوقت مؤقتًا أو استئنافه.</string>
-    <string name="info_news_weather" formatted="false">عند التوقف يبقى التاريخ والوقت وفرق UTC ظاهرًا بالبرتقالي مع رمز التوقف المؤقت.</string>
-    <string name="info_news_viewer_zoom" formatted="false">يعود الوقت الحقيقي إلى الآن؛ وتستأنف التواريخ أو الأوقات أو السرعات المخصصة من اللحظة المتوقفة.</string>
-    <string name="info_news_settings" formatted="false">تظهر الساعة وT متجاورين بنقطة وسطية في التسميات، بما فيها الصور والبانوراما.</string>
-    <string name="info_news_catalog" formatted="false">تفصل المقارنات المؤرخة عنوان الجسم عن التاريخ، وتلتف النصوص الطويلة إلى أسطر.</string>
+    <string name="info_news_star_sky" formatted="false">استكشف السماء المحاكية بتكبير محفوظ من 0.5× إلى 1×.</string>
+    <string name="info_news_texture_downloads" formatted="false">أصبحت أدوات الطقس/الشفافية والتكبير في مواضع متناسقة في الوضعين.</string>
+    <string name="info_news_weather" formatted="false">تتكيف أدوات 0°/90° والنقاط المحددة مع العرض الرأسي والأفقي.</string>
+    <string name="info_news_viewer_zoom" formatted="false">تبدأ التثبيتات الجديدة بمحور الهاتف الطولي (0°).</string>
+    <string name="info_news_settings" formatted="false">أدر الأرض في شاشة التوقف؛ بعد 10 ثوانٍ دون تفاعل تعود بسلاسة إلى دورانها العادي.</string>
+    <string name="info_news_catalog" formatted="false">انقر مرتين في أي مكان لمغادرة شاشة التوقف. تم تحديث شرح التكبير باللغات العشرين.</string>
 </resources>

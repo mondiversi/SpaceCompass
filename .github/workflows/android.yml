@@ -33,6 +33,8 @@ jobs:
           python3 scripts/GenerateBodyIdentities.py --check
           python3 scripts/GenerateExpandedCatalog.py --check
           python3 scripts/GenerateExpandedCatalogResources.py --check
+      - name: Verify screensaver navigation
+        run: node scripts/CheckScreensaverNavigation.cjs
       - name: Build app and run checks
         run: ./gradlew --no-daemon --stacktrace :app:assembleDebug :app:testDebugUnitTest :app:compileDebugAndroidTestKotlin :app:assembleRelease :app:lintRelease
       - name: Upload development APK and test reports

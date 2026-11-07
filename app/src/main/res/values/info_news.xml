@@ -1,9 +1,9 @@
 <resources>
     <string name="info_news_title">Latest news · %1$s</string>
-    <string name="info_news_star_sky" formatted="false">Tap empty sky to show or hide the reticle and icons together.</string>
-    <string name="info_news_texture_downloads" formatted="false">Double-tap empty sky to pause or resume time.</string>
-    <string name="info_news_weather" formatted="false">Paused time always shows an orange date, clock and UTC offset, with a pause symbol.</string>
-    <string name="info_news_viewer_zoom" formatted="false">Live time resumes at now; custom dates, times or speeds continue from the held instant.</string>
-    <string name="info_news_settings" formatted="false">Point bubbles place time and T together with a middle dot, including photos and panoramas.</string>
-    <string name="info_news_catalog" formatted="false">Dated comparison bubbles separate the object heading from the date, with wrapped long text.</string>
+    <string name="info_news_star_sky" formatted="false">Explore the simulated sky with saved zoom from 0.5× to 1×.</string>
+    <string name="info_news_texture_downloads" formatted="false">Weather/transparency and zoom now share consistent control positions.</string>
+    <string name="info_news_weather" formatted="false">0°/90° and selected-point controls adapt to portrait and landscape layouts.</string>
+    <string name="info_news_viewer_zoom" formatted="false">New installations start with the phone-length pointing axis (0°).</string>
+    <string name="info_news_settings" formatted="false">Drag the screensaver Earth; after 10 idle seconds it returns smoothly to its normal rotation.</string>
+    <string name="info_news_catalog" formatted="false">Double-tap anywhere to leave the screensaver. Updated zoom tutorial in all twenty languages.</string>
 </resources>
