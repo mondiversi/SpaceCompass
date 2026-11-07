@@ -18,7 +18,7 @@
     <string name="tutorial_axis" formatted="false">בחרו בציר המצלמה (90°) או בציר אורך הטלפון (0°). המצלמה תמיד משתמשת בציר שלה.</string>
     <string name="tutorial_transparency" formatted="false">הפכו תמונות עצמים לשקופות חלקית להשוואה למצלמה. הצילום שומר את הבחירה.</string>
     <string name="tutorial_zoom" formatted="false">בחרו את זום השמיים המדומים בין 0.5× ל־1×. במצב מצלמה השתמשו בזום הזמין או בשתי אצבעות על התמונה. שתי ההגדרות נשמרות בנפרד.</string>
-    <string name="tutorial_capture" formatted="false">הכינו פנורמת שמיים או צילום עם שכבות אסטרונומיות. יצאו מהתצוגה המקדימה. בתצוגה המקדימה, הקישו על התמונה כדי להציג או להסתיר את הפקדים.</string>
+    <string name="tutorial_capture" formatted="false">הכינו פנורמת שמיים או צילום עם שכבות אסטרונומיות. יצאו מהתצוגה המקדימה. בתצוגה המקדימה, הקישו פעמיים על התמונה כדי להציג או להסתיר את הפקדים.</string>
     <string name="tutorial_panels" formatted="false">כווצו או הרחיבו את לוחות העצם והמצפן כדי לפנות מקום לשמיים.</string>
     <string name="tutorial_antipodes" formatted="false">יש להקיש כדי להציג או להסתיר את הכיוון הנגדי לנקודות שנבחרו: אזימוט +180° וגובה בסימן הפוך. לחיצה ממושכת מבטלת את בחירת כל הנקודות.</string>
     <string name="tutorial_navigation" formatted="false">דפדפו בין העצמים הנבחרים. הלוח מציג את העצם הפעיל וצבעי מסלולו.</string>
@@ -27,7 +27,7 @@
     <string name="tutorial_gps" formatted="false">צפו במיקום האמיתי, בגובה GPS, בכיוון ובמזג האוויר, בנפרד מ-Location.</string>
     <string name="tutorial_points" formatted="false">בחרו נקודת מסלול. כוונו אליה לקריאת העצם, השעה, T, האזימוט והגובה. גבול העצם מקבל את צבע המסלול שלו; בחירת המיקום הנוכחי משנה אותו לכחול או לתכלת.</string>
     <string name="tutorial_reticle_title" formatted="false">זמן וסמלים</string>
-    <string name="tutorial_reticle" formatted="false">געו בשמיים פנויים כדי להציג או להסתיר את הכוונת והסמלים. הקישו פעמיים כדי להשהות או להמשיך את הזמן.</string>
+    <string name="tutorial_reticle" formatted="false">געו בשמיים פנויים כדי להשהות או להמשיך את הזמן. הקישו פעמיים כדי להציג או להסתיר את הכוונת והסמלים.</string>
     <string name="tutorial_reminder" formatted="false">פתחו שעון מעורר או יומן Android לאירוע עתידי מתאים. לא לאירועי עבר או לנקודה הנוכחית.</string>
     <string name="tutorial_status_title" formatted="false">מצב ושחזור</string>
     <string name="tutorial_status" formatted="false">קראו את המצב הנוכחי. הפעולה יכולה לבקש הרשאה, להפעיל מיקום או לנסות שוב נתוני מסלול ומזג אוויר. המדריך אינו מבצע אותה.</string>

@@ -13,8 +13,8 @@ saved choice or 0.5×/the widest available lens and respects hardware limits.
 Menus use the available space around the selector. The optical axis stays fixed
 when the controls appear or disappear.
 
-The axis control is beside the panel chevron in portrait/compact landscape and
-below Menu in expanded landscape. New installations use the phone-length axis
+The axis control is beside the panel chevron in portrait and below Menu in both
+compact and expanded landscape. New installations use the phone-length axis
 (0°); existing preferences remain. Camera mode disables this choice and uses its
 real optical axis. Point/Antipodes controls occupy the sky column's lower-right
 corner in expanded landscape, above Capture in portrait and beside it in compact

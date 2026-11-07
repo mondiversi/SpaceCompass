@@ -18,7 +18,7 @@
     <string name="tutorial_axis" formatted="false">Elige el eje de la cámara (90°) o la longitud del teléfono (0°). La cámara siempre usa su propio eje.</string>
     <string name="tutorial_transparency" formatted="false">Haz translúcidas las imágenes de los objetos para compararlas con la cámara. La captura conserva esta opción.</string>
     <string name="tutorial_zoom" formatted="false">Elige el zoom del cielo simulado entre 0,5× y 1×. En modo cámara, usa el zoom disponible o dos dedos sobre la imagen. Ambas opciones se guardan por separado.</string>
-    <string name="tutorial_capture" formatted="false">Prepara una panorámica del cielo o una foto con superposiciones astronómicas. Exporta desde la vista previa. En la vista previa, toca la imagen para mostrar u ocultar los controles.</string>
+    <string name="tutorial_capture" formatted="false">Prepara una panorámica del cielo o una foto con superposiciones astronómicas. Exporta desde la vista previa. En la vista previa, toca dos veces la imagen para mostrar u ocultar los controles.</string>
     <string name="tutorial_panels" formatted="false">Contrae o expande los paneles del objeto y la brújula para despejar el cielo.</string>
     <string name="tutorial_antipodes" formatted="false">Toca para mostrar u ocultar la dirección opuesta de los puntos seleccionados: acimut +180° y elevación de signo contrario. Mantén pulsado para deseleccionar todos los puntos.</string>
     <string name="tutorial_navigation" formatted="false">Recorre los objetos seleccionados. El panel muestra el objeto activo y los colores de su trayectoria.</string>
@@ -27,7 +27,7 @@
     <string name="tutorial_gps" formatted="false">Consulta la posición real, altitud GPS, orientación y meteorología, independientemente de la Location.</string>
     <string name="tutorial_points" formatted="false">Selecciona o deselecciona un punto. Apúntalo para leer objeto, hora, T, azimut y elevación. El borde del objeto sigue el color de su trayectoria; se vuelve azul o celeste al seleccionar su posición actual.</string>
     <string name="tutorial_reticle_title" formatted="false">Tiempo e iconos</string>
-    <string name="tutorial_reticle" formatted="false">Toca el cielo vacío para mostrar u ocultar la retícula y los iconos. Toca dos veces para pausar o reanudar el tiempo.</string>
+    <string name="tutorial_reticle" formatted="false">Toca el cielo vacío para pausar o reanudar el tiempo. Toca dos veces para mostrar u ocultar la mira y los iconos.</string>
     <string name="tutorial_reminder" formatted="false">Abre la alarma o el calendario de Android para un evento futuro válido. No se pueden programar eventos pasados ni el punto actual.</string>
     <string name="tutorial_status_title" formatted="false">Estado y recuperación</string>
     <string name="tutorial_status" formatted="false">Consulta el estado. La acción puede pedir permiso, activar la ubicación o reintentar los datos orbitales o meteorológicos. El tutorial no ejecuta la acción.</string>

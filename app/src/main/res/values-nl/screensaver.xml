@@ -2,7 +2,7 @@
     <string name="screensaver_title">Schermbeveiliging</string>
     <string name="screensaver_description">Toont een geanimeerde aarde als de app inactief is en pauzeert tracking om energie te besparen.</string>
     <string name="screensaver_delay">Starten na</string>
-    <string name="screensaver_dismiss">Tik twee keer ergens om terug te keren naar de app</string>
+    <string name="screensaver_dismiss">Tik twee keer om terug te keren naar de app</string>
     <string name="screensaver_seconds">%1$s s</string>
     <string name="screensaver_minutes">%1$s min</string>
     <string name="screensaver_battery">Batterij: %1$s</string>

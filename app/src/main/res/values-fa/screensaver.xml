@@ -2,7 +2,7 @@
     <string name="screensaver_title">محافظ صفحه</string>
     <string name="screensaver_description">هنگام بی‌کاری برنامه، زمین متحرک را نمایش می‌دهد و برای صرفه‌جویی در انرژی، ردیابی را موقتاً متوقف می‌کند.</string>
     <string name="screensaver_delay">شروع پس از</string>
-    <string name="screensaver_dismiss">برای بازگشت به برنامه، روی هر نقطه دو بار بزنید</string>
+    <string name="screensaver_dismiss">برای بازگشت به برنامه دو بار بزنید</string>
     <string name="screensaver_seconds">%1$s ثانیه</string>
     <string name="screensaver_minutes">%1$s دقیقه</string>
     <string name="screensaver_battery">باتری: %1$s</string>

@@ -2,7 +2,7 @@
     <string name="screensaver_title">Προφύλαξη οθόνης</string>
     <string name="screensaver_description">Όταν η εφαρμογή είναι ανενεργή, δείχνει τη Γη σε κίνηση και διακόπτει την παρακολούθηση για εξοικονόμηση ενέργειας.</string>
     <string name="screensaver_delay">Έναρξη μετά από</string>
-    <string name="screensaver_dismiss">Αγγίξτε δύο φορές οπουδήποτε για επιστροφή στην εφαρμογή</string>
+    <string name="screensaver_dismiss">Αγγίξτε δύο φορές για επιστροφή στην εφαρμογή</string>
     <string name="screensaver_seconds">%1$s δευτ.</string>
     <string name="screensaver_minutes">%1$s λεπ.</string>
     <string name="screensaver_battery">Μπαταρία: %1$s</string>

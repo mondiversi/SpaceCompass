@@ -131,8 +131,8 @@ translated event names keep their existing content.
 
 ## Main-sky playback
 
-A double tap on empty sky pauses or resumes the effective observation clock. Point
-targets, controls and islands retain their own actions; single tap only toggles the
+A single tap on empty sky pauses or resumes the effective observation clock. Point
+targets, controls and islands retain their own actions; double tap toggles the
 reticle and floating controls together; the islands retain their separate chevron. The fully visible reticle follows that visibility. Paused time is
 always labelled with a monochrome pause symbol, date, time and UTC offset, even on the current day and when
 controls are hidden. Running times on a different civil day are labelled in either

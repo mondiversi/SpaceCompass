@@ -24,7 +24,7 @@ import org.junit.Test
 class SpaceCompassReticleVisibilityUiTest {
     @get:Rule val compose = createComposeRule()
 
-    @Test fun singleTapTogglesReticleAndControlsAndDoubleTapPausesTime() {
+    @Test fun singleTapPausesTimeAndDoubleTapTogglesReticleAndControls() {
         val now=Instant.parse("2026-11-07T10:00:00Z").toEpochMilli()
         val point=SpaceCompassSunPathPoint(now+3_600_000,SpaceCompassSunPosition(180.0,25.0))
         val path=SpaceCompassSunDailyPath(LocalDate.parse("2026-11-07"),ZoneId.of("UTC"),
@@ -41,17 +41,19 @@ class SpaceCompassReticleVisibilityUiTest {
                 topStartActions={ Box(it.size(40.dp).testTag("fixture-floating-control")) })
         } }
         tapEmptySky()
-        compose.onNodeWithTag("fixture-floating-control").assertDoesNotExist()
-        compose.onNodeWithTag("sun-finder-reticle").assertDoesNotExist()
-        compose.runOnIdle { assertFalse(observer.playbackPaused);assertTrue(selection.isSelected(path,point)) }
-        tapEmptySky(twice=true)
-        compose.runOnIdle { assertTrue(observer.playbackPaused) }
-        compose.onNodeWithTag("sun-finder-reticle").assertDoesNotExist()
-        tapEmptySky()
         compose.onNodeWithTag("fixture-floating-control").assertExists()
         compose.onNodeWithTag("sun-finder-reticle").assertExists()
-        compose.runOnIdle { assertTrue(observer.playbackPaused) }
+        compose.runOnIdle { assertTrue(observer.playbackPaused);assertTrue(selection.isSelected(path,point)) }
         tapEmptySky(twice=true)
+        compose.onNodeWithTag("fixture-floating-control").assertDoesNotExist()
+        compose.onNodeWithTag("sun-finder-reticle").assertDoesNotExist()
+        compose.runOnIdle { assertTrue(observer.playbackPaused) }
+        tapEmptySky()
+        compose.onNodeWithTag("sun-finder-reticle").assertDoesNotExist()
+        compose.runOnIdle { assertFalse(observer.playbackPaused) }
+        tapEmptySky(twice=true)
+        compose.onNodeWithTag("fixture-floating-control").assertExists()
+        compose.onNodeWithTag("sun-finder-reticle").assertExists()
         compose.runOnIdle { assertFalse(observer.playbackPaused);assertTrue(selection.isSelected(path,point)) }
     }
 
@@ -87,11 +89,11 @@ class SpaceCompassReticleVisibilityUiTest {
             androidx.compose.ui.geometry.Offset(width*.15f,height*.85f),
             androidx.compose.ui.geometry.Offset(width*.85f,height*.85f)) }
         compose.runOnIdle { assertFalse(paused.value) }
-        tapEmptySky(twice=true)
+        tapEmptySky()
         compose.runOnIdle { assertTrue(paused.value) }
         scene.performTouchInput { click(center) }
         compose.runOnIdle { assertFalse(state.isSelected(path,point));assertTrue(paused.value) }
-        tapEmptySky(twice=true)
+        tapEmptySky()
         compose.runOnIdle { assertFalse(paused.value) }
     }
 

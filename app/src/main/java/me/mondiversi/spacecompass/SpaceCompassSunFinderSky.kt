@@ -293,8 +293,8 @@ internal fun SpaceCompassSunPointingViewport(
                 // Captions paint above celestial locators; moving them must not flip a caption's side.
                 primaryText, secondaryText, backgroundColor, exclusions,
                 scenePerspective, paths, pinnedTargets = pinned, hitExclusions = titleTouchExclusions,
-                showCaptions = showReticle, onEmptySpaceTap = onToggleFloatingControls,
-                onEmptySpaceDoubleTap = onToggleTime,
+                showCaptions = showReticle, onEmptySpaceTap = onToggleTime,
+                onEmptySpaceDoubleTap = onToggleFloatingControls,
                 antipodeTargets = antipodes, drawAntipodeMarkers = drawScene) {
                 // Only thumbnails have small local targets; they never intercept another path's whole viewport.
                 SpaceCompassTemporalComparisonLayer(comparisonOverlays, orientation.takeIf { compassReliable }, scenePerspective,

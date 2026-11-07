@@ -2,7 +2,7 @@
     <string name="screensaver_title">स्क्रीनसेवर</string>
     <string name="screensaver_description">ऐप निष्क्रिय होने पर पृथ्वी का एनीमेशन दिखाता है और ऊर्जा बचाने के लिए ट्रैकिंग रोकता है।</string>
     <string name="screensaver_delay">इसके बाद शुरू करें</string>
-    <string name="screensaver_dismiss">ऐप पर लौटने के लिए कहीं भी दो बार टैप करें</string>
+    <string name="screensaver_dismiss">ऐप पर लौटने के लिए दो बार टैप करें</string>
     <string name="screensaver_seconds">%1$s सेकंड</string>
     <string name="screensaver_minutes">%1$s मिनट</string>
     <string name="screensaver_battery">बैटरी: %1$s</string>

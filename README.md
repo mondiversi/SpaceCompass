@@ -90,7 +90,7 @@ See Space Compass in portrait and landscape, by day and by night. These English 
 
 - **Find objects in the sky.** Point your phone to see where the Sun, Moon, planets and other objects are, including those below the horizon.
 - **See the sky through your camera.** Overlay objects and their paths on your surroundings. Zoom in or out and fade the object images to compare their predicted positions with what you see.
-- **Control the view with a tap.** Tap empty sky to show or hide the reticle and controls; double-tap to pause or resume sky time. Tap a photo or panorama preview to toggle its overlay controls.
+- **Control the view with a tap.** Tap empty sky to pause or resume sky time; double-tap to show or hide the reticle and controls. Double-tap a photo or panorama preview to toggle its overlay controls.
 - **Choose your field of view.** Adjust and remember virtual-sky zoom from 0.5× to 1×, with separate camera zoom for the lenses available on your device.
 - **Follow daily paths.** See when an object rises, reaches its highest point and sets. Choose today's full path or the next 24 hours, select points of interest and check how long until they happen.
 - **Explore other places and times.** Create a Location with a different place, date or time. Pause, speed up or reverse time by up to one day per second. Set up changes at your own pace and apply them when you return to the sky, then save or share the place and time settings independently.

@@ -2,7 +2,7 @@
     <string name="screensaver_title">スクリーンセーバー</string>
     <string name="screensaver_description">操作しない間は動く地球を表示し、追跡を一時停止して節電します。</string>
     <string name="screensaver_delay">開始までの時間</string>
-    <string name="screensaver_dismiss">任意の場所をダブルタップしてアプリに戻る</string>
+    <string name="screensaver_dismiss">ダブルタップしてアプリに戻る</string>
     <string name="screensaver_seconds">%1$s秒</string>
     <string name="screensaver_minutes">%1$s分</string>
     <string name="screensaver_battery">バッテリー：%1$s</string>
