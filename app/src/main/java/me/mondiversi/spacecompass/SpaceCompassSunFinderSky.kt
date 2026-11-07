@@ -94,7 +94,8 @@ internal fun SpaceCompassSunPointingViewport(
     drawScene: Boolean = true, objectOpacity: Float = 1f,
     approachOverlays: Map<SpaceCompassCelestialBody,SpaceCompassCelestialOverlay> = overlays,
     showReticle: Boolean = true,
-    onToggleReticle: (() -> Unit)? = null,
+    onToggleTime: (() -> Unit)? = null,
+    timePaused: Boolean = false,
     topControlSpacing: androidx.compose.ui.unit.Dp = 8.dp,
     opticalFrame: SpaceCompassSunSceneFrame? = null,
     showAntipodes: Boolean = false,
@@ -103,12 +104,12 @@ internal fun SpaceCompassSunPointingViewport(
     scenarioMomentLabel: String? = null,
     onToggleFloatingControls: (() -> Unit)? = null
 ) {
-    val reticleAction = stringResource(if (showReticle) R.string.reticle_disable else R.string.reticle_enable)
+    val timeAction = stringResource(if (timePaused) R.string.sky_time_resume else R.string.sky_time_pause)
     val controlsAction = stringResource(if (showFloatingControls) R.string.sky_controls_hide else R.string.sky_controls_show)
     BoxWithConstraints(modifier.testTag("sun-finder-sky").spaceCompassTutorialViewport().semantics {
         contentDescription = description
         customActions = buildList {
-            if (onToggleReticle != null) add(CustomAccessibilityAction(reticleAction) { onToggleReticle(); true })
+            if (onToggleTime != null) add(CustomAccessibilityAction(timeAction) { onToggleTime(); true })
             if (onToggleFloatingControls != null) add(CustomAccessibilityAction(controlsAction) { onToggleFloatingControls(); true })
         }
     }) {
@@ -292,8 +293,8 @@ internal fun SpaceCompassSunPointingViewport(
                 // Captions paint above celestial locators; moving them must not flip a caption's side.
                 primaryText, secondaryText, backgroundColor, exclusions,
                 scenePerspective, paths, pinnedTargets = pinned, hitExclusions = titleTouchExclusions,
-                showCaptions = showReticle, onEmptySpaceTap = onToggleReticle,
-                onEmptySpaceDoubleTap = onToggleFloatingControls,
+                showCaptions = showReticle, onEmptySpaceTap = onToggleFloatingControls,
+                onEmptySpaceDoubleTap = onToggleTime,
                 antipodeTargets = antipodes, drawAntipodeMarkers = drawScene) {
                 // Only thumbnails have small local targets; they never intercept another path's whole viewport.
                 SpaceCompassTemporalComparisonLayer(comparisonOverlays, orientation.takeIf { compassReliable }, scenePerspective,
@@ -375,7 +376,7 @@ internal fun SpaceCompassSunPointingViewport(
                     contentAlignment = Alignment.TopCenter) {
                     SpaceCompassScenarioMomentText(label,
                         foreground = spaceCompassScenarioAccentColor(backgroundColor.luminance() < .4f),
-                        outline = primaryText.copy(alpha = .35f),
+                        outline = Color(0xff40464d),
                         modifier = Modifier.widthIn(max = 360.dp).onSizeChanged { scenarioMomentSize = it }
                             .padding(horizontal = 4.dp, vertical = 2.dp).testTag("main-scenario-moment"))
                 }

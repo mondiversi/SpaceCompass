@@ -1,0 +1,4 @@
+<resources>
+    <string name="sky_time_pause">時間を一時停止</string>
+    <string name="sky_time_resume">時間を再開</string>
+</resources>

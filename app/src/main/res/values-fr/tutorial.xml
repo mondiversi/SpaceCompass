@@ -18,7 +18,7 @@
     <string name="tutorial_axis" formatted="false">Pointez selon l’axe de la caméra (90°) ou la longueur du téléphone (0°). La caméra conserve son propre axe.</string>
     <string name="tutorial_transparency" formatted="false">Rendez les objets translucides pour les comparer à la caméra. Ce choix est conservé dans la capture.</string>
     <string name="tutorial_zoom" formatted="false">Choisissez le zoom de la caméra, ou pincez l’image avec deux doigts.</string>
-    <string name="tutorial_capture" formatted="false">Préparez un panorama du ciel ou une photo avec les superpositions astronomiques. Exportez depuis l’aperçu. Dans l’aperçu, touchez deux fois l’image pour afficher ou masquer les commandes.</string>
+    <string name="tutorial_capture" formatted="false">Préparez un panorama du ciel ou une photo avec les superpositions astronomiques. Exportez depuis l’aperçu. Dans l’aperçu, touchez l’image pour afficher ou masquer les commandes.</string>
     <string name="tutorial_panels" formatted="false">Repliez ou dépliez les panneaux de l’objet et de la boussole pour dégager le ciel.</string>
     <string name="tutorial_antipodes" formatted="false">Touche pour afficher ou masquer la direction opposée des points sélectionnés : azimut +180° et élévation de signe opposé. Maintiens le bouton enfoncé pour tout désélectionner.</string>
     <string name="tutorial_navigation" formatted="false">Parcourez les objets sélectionnés. Le panneau indique l’objet actif et les couleurs de sa trajectoire.</string>
@@ -26,8 +26,8 @@
     <string name="tutorial_daily" formatted="false">Consultez la trajectoire, les heures, les élévations et les points sélectionnables. Les événements futurs peuvent avoir un rappel.</string>
     <string name="tutorial_gps" formatted="false">Consultez la position réelle, l’altitude GPS, l’orientation et la météo, indépendamment de la Location.</string>
     <string name="tutorial_points" formatted="false">Sélectionnez un point de trajectoire. Visez-le pour lire l’objet, l’heure, T, l’azimut et l’élévation. Le bord de l’objet reprend la couleur de sa trajectoire ; il devient bleu ou cyan si tu sélectionnes sa position actuelle.</string>
-    <string name="tutorial_reticle_title" formatted="false">Afficher le réticule et les icônes</string>
-    <string name="tutorial_reticle" formatted="false">Touchez le ciel vide pour afficher ou masquer le réticule et les informations. Touchez deux fois une zone vide du ciel pour afficher ou masquer les commandes.</string>
+    <string name="tutorial_reticle_title" formatted="false">Temps et icônes</string>
+    <string name="tutorial_reticle" formatted="false">Touchez le ciel vide pour afficher ou masquer le réticule et les icônes. Touchez deux fois pour mettre le temps en pause ou le reprendre.</string>
     <string name="tutorial_reminder" formatted="false">Ouvrez une alarme ou le calendrier Android pour un événement futur admissible. Pas d’alarme pour le passé ou le point actuel.</string>
     <string name="tutorial_status_title" formatted="false">État et récupération</string>
     <string name="tutorial_status" formatted="false">Consultez l’état actuel. Son action peut demander une autorisation, activer la position ou réessayer les données orbitales ou météo. Le tutoriel ne l’exécute pas.</string>

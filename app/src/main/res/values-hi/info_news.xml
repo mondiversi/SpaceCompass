@@ -1,9 +1,9 @@
 <resources>
     <string name="info_news_title">हाल के बदलाव · %1$s</string>
-    <string name="info_news_star_sky" formatted="false">नई समय-सीढ़ी से समय रोकें, पीछे चलाएँ या एक सेकंड में एक दिन तक तेज़ करें।</string>
-    <string name="info_news_texture_downloads" formatted="false">Location के बदलाव मुख्य आकाश पर लौटने पर लागू होते हैं; सेटिंग करते समय समय रुका रहता है।</string>
-    <string name="info_news_weather" formatted="false">Location की भविष्य की तारीख और समय UTC अंतर के साथ आकाश के ऊपर दिखाई देते रहते हैं।</string>
-    <string name="info_news_viewer_zoom" formatted="false">समय फिर चालू करने पर पिछली गति लौटती है, जिसमें विराम और उलटी दिशा भी शामिल हैं।</string>
-    <string name="info_news_settings" formatted="false">नया दिन वर्तमान पथों के चुने बिंदु हटाता है; तय तारीख वाली तुलनाएँ चुनी रहती हैं।</string>
-    <string name="info_news_catalog" formatted="false">दिगंश और उन्नयन के अधिक संक्षिप्त लेबल; फ़ोटो और पैनोरमा में समय और T विपरीत किनारों पर दिखते हैं।</string>
+    <string name="info_news_star_sky" formatted="false">निशाना और आइकन साथ दिखाने या छिपाने के लिए खाली आकाश पर टैप करें।</string>
+    <string name="info_news_texture_downloads" formatted="false">समय रोकने या फिर चलाने के लिए खाली आकाश पर दो बार टैप करें।</string>
+    <string name="info_news_weather" formatted="false">रुकने पर तारीख, समय और UTC अंतर नारंगी रंग में विराम चिह्न के साथ दिखते रहते हैं।</string>
+    <string name="info_news_viewer_zoom" formatted="false">वास्तविक समय वर्तमान क्षण पर लौटता है; कस्टम तारीख, समय या गति रुके हुए क्षण से आगे चलती है।</string>
+    <string name="info_news_settings" formatted="false">लेबल में समय और T मध्य बिंदु से अलग होकर साथ दिखते हैं, फ़ोटो और पैनोरमा में भी।</string>
+    <string name="info_news_catalog" formatted="false">तय तारीख वाली तुलनाओं में वस्तु का शीर्षक और तारीख अलग हैं; लंबा पाठ अगली पंक्ति में जाता है।</string>
 </resources>

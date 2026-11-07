@@ -18,7 +18,7 @@
     <string name="tutorial_axis" formatted="false">Выберите ось камеры (90°) или продольную ось телефона (0°). Камера всегда использует свою ось.</string>
     <string name="tutorial_transparency" formatted="false">Сделайте объекты полупрозрачными для сравнения с камерой. Снимок сохраняет этот выбор.</string>
     <string name="tutorial_zoom" formatted="false">Выберите масштаб камеры или используйте жест двумя пальцами.</string>
-    <string name="tutorial_capture" formatted="false">Создайте панораму неба или фото с астрономическими наложениями. Экспортируйте из предпросмотра. В режиме предпросмотра дважды коснитесь изображения, чтобы показать или скрыть элементы управления.</string>
+    <string name="tutorial_capture" formatted="false">Создайте панораму неба или фото с астрономическими наложениями. Экспортируйте из предпросмотра. В режиме предпросмотра коснитесь изображения, чтобы показать или скрыть элементы управления.</string>
     <string name="tutorial_panels" formatted="false">Сверните или разверните панели объекта и компаса, чтобы освободить небо.</string>
     <string name="tutorial_antipodes" formatted="false">Коснись, чтобы показать или скрыть противоположное направление выбранных точек: азимут +180°, высота с обратным знаком. Удерживай кнопку, чтобы снять выбор всех точек.</string>
     <string name="tutorial_navigation" formatted="false">Листайте выбранные объекты. Панель показывает активный объект и цвета его траектории.</string>
@@ -26,8 +26,8 @@
     <string name="tutorial_daily" formatted="false">Смотрите траекторию, время, высоту и выбираемые точки. Будущим событиям можно назначить напоминания.</string>
     <string name="tutorial_gps" formatted="false">Смотрите реальное положение, высоту GPS, ориентацию и погоду независимо от Location.</string>
     <string name="tutorial_points" formatted="false">Выберите точку орбиты. Наведите прицел, чтобы увидеть объект, время, T, азимут и высоту. Контур объекта имеет цвет его траектории; при выборе текущей позиции он становится синим или голубым.</string>
-    <string name="tutorial_reticle_title" formatted="false">Показать прицел и значки</string>
-    <string name="tutorial_reticle" formatted="false">Нажмите пустое небо, чтобы показать или скрыть прицел и сведения. Дважды коснитесь пустого участка неба, чтобы показать или скрыть элементы управления.</string>
+    <string name="tutorial_reticle_title" formatted="false">Время и значки</string>
+    <string name="tutorial_reticle" formatted="false">Коснитесь пустого неба, чтобы показать или скрыть прицел и значки. Двойное касание останавливает или продолжает время.</string>
     <string name="tutorial_reminder" formatted="false">Откройте будильник или календарь Android для подходящего будущего события. Прошлые события и текущая точка исключены.</string>
     <string name="tutorial_status_title" formatted="false">Состояние и восстановление</string>
     <string name="tutorial_status" formatted="false">Прочитайте состояние. Действие может запросить разрешение, включить геолокацию или повторить загрузку орбитальных данных и погоды. Обучение его не выполняет.</string>

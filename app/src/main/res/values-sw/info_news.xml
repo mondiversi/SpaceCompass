@@ -1,9 +1,9 @@
 <resources>
     <string name="info_news_title">Mambo mapya · %1$s</string>
-    <string name="info_news_star_sky" formatted="false">Sitisha, rudisha nyuma au ongeza kasi ya muda hadi siku moja kwa sekunde kwa kipimo kipya.</string>
-    <string name="info_news_texture_downloads" formatted="false">Mabadiliko ya Location yanatumika unaporudi kwenye anga kuu; muda husimama wakati wa usanidi.</string>
-    <string name="info_news_weather" formatted="false">Tarehe na saa za baadaye za Location hubaki juu ya anga, pamoja na tofauti ya UTC.</string>
-    <string name="info_news_viewer_zoom" formatted="false">Kuwasha muda tena hurejesha kasi ya mwisho, ikiwemo kusitisha na kurudi nyuma.</string>
-    <string name="info_news_settings" formatted="false">Siku mpya huondoa uteuzi wa nukta za njia za sasa; milinganisho yenye tarehe maalumu hubaki imechaguliwa.</string>
-    <string name="info_news_catalog" formatted="false">Lebo fupi zaidi za azimuthi na mwinuko; picha na panorama huonyesha saa na T kwenye kingo zinazokabiliana.</string>
+    <string name="info_news_star_sky" formatted="false">Gusa anga tupu kuonyesha au kuficha kilenga na aikoni pamoja.</string>
+    <string name="info_news_texture_downloads" formatted="false">Gusa anga tupu mara mbili kusitisha au kuendeleza muda.</string>
+    <string name="info_news_weather" formatted="false">Muda ukisitishwa, tarehe, saa na tofauti ya UTC hubaki za machungwa zikiwa na alama ya kusitisha.</string>
+    <string name="info_news_viewer_zoom" formatted="false">Muda halisi hurudi sasa; tarehe, saa au kasi maalumu huendelea kutoka wakati uliosimamishwa.</string>
+    <string name="info_news_settings" formatted="false">Lebo huonyesha saa na T pamoja zikitenganishwa na nukta ya kati, pia kwenye picha na panorama.</string>
+    <string name="info_news_catalog" formatted="false">Milinganisho ya tarehe hutenganisha kichwa cha kitu na tarehe; maandishi marefu huvunjwa mistari.</string>
 </resources>

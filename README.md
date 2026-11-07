@@ -8,8 +8,8 @@ paths, inspect reference facts and view textured models. Space Compass is a stan
 
 ## Download and install
 
-Download **space-compass-1.8.6.apk** from the
-[Space Compass 1.8.6 release](https://github.com/mondiversi/SpaceCompass/releases/tag/v1.8.6).
+Download **space-compass-1.8.7.apk** from the
+[Space Compass 1.8.7 release](https://github.com/mondiversi/SpaceCompass/releases/tag/v1.8.7).
 Android 8.0 or newer is required. Open the APK and follow Android's installation
 prompts; allow installation for your browser or file manager if requested.
 
@@ -90,6 +90,7 @@ See Space Compass in portrait and landscape, by day and by night. These English 
 
 - **Find objects in the sky.** Point your phone to see where the Sun, Moon, planets and other objects are, including those below the horizon.
 - **See the sky through your camera.** Overlay objects and their paths on your surroundings. Zoom in or out and fade the object images to compare their predicted positions with what you see.
+- **Control the view with a tap.** Tap empty sky to show or hide the reticle and controls; double-tap to pause or resume sky time. Tap a photo or panorama preview to toggle its overlay controls.
 - **Follow daily paths.** See when an object rises, reaches its highest point and sets. Choose today's full path or the next 24 hours, select points of interest and check how long until they happen.
 - **Explore other places and times.** Create a Location with a different place, date or time. Pause, speed up or reverse time by up to one day per second. Set up changes at your own pace and apply them when you return to the sky, then save or share the place and time settings independently.
 - **Plan your observations.** Compare the current sky with dated paths from Key Heights, Key Events or your own Personal Moments. Save or share Personal Moments separately, or include active comparisons when exporting a Scene. Future path points can also be sent to Android's Clock or Calendar.
@@ -112,7 +113,7 @@ safety or navigation instrument.
 ## Build and checks
 
 The application ID is `me.mondiversi.spacecompass`. This source builds version
-**1.8.6**, with Android/update identity `1.8.6` and version code **72**.
+**1.8.7**, with Android/update identity `1.8.7` and version code **73**.
 This preserves the three-part update protocol used by existing preview installations.
 The app stores its preferences and caches privately.
 
@@ -168,7 +169,7 @@ Launcher/loading artwork and original illustrations are project assets.
 
 ## Data and graphics packages
 
-Release 1.8.6 includes **9,999 selectable objects**, and an optional reference-information archive.
+Release 1.8.7 includes **9,999 selectable objects**, and an optional reference-information archive.
 All descriptive data and translations remain inside the APK. Scientific limits and provenance are in the
 [catalogue sources](docs/CATALOG_9999.md) and [canonical source catalogue](catalogue/README.md).
 

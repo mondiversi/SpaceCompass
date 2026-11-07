@@ -1,9 +1,9 @@
 <resources>
     <string name="info_news_title">Perubahan terbaru · %1$s</string>
-    <string name="info_news_star_sky" formatted="false">Jeda, putar mundur, atau percepat waktu hingga satu hari per detik dengan skala baru.</string>
-    <string name="info_news_texture_downloads" formatted="false">Perubahan Location diterapkan saat kembali ke langit utama; waktu dijeda selama pengaturan.</string>
-    <string name="info_news_weather" formatted="false">Tanggal dan waktu Location di masa depan tetap terlihat di atas langit, beserta selisih UTC.</string>
-    <string name="info_news_viewer_zoom" formatted="false">Mengaktifkan waktu kembali memulihkan kecepatan terakhir, termasuk jeda dan mundur.</string>
-    <string name="info_news_settings" formatted="false">Hari baru menghapus pilihan titik pada lintasan saat ini; perbandingan bertanggal tetap tetap dipilih.</string>
-    <string name="info_news_catalog" formatted="false">Label azimut dan elevasi lebih ringkas; foto dan panorama menampilkan waktu dan T di sisi berlawanan.</string>
+    <string name="info_news_star_sky" formatted="false">Ketuk langit kosong untuk menampilkan atau menyembunyikan bidikan dan ikon bersamaan.</string>
+    <string name="info_news_texture_downloads" formatted="false">Ketuk dua kali langit kosong untuk menjeda atau melanjutkan waktu.</string>
+    <string name="info_news_weather" formatted="false">Saat dijeda, tanggal, waktu, dan selisih UTC tetap terlihat dalam warna oranye dengan simbol jeda.</string>
+    <string name="info_news_viewer_zoom" formatted="false">Waktu nyata kembali ke saat ini; tanggal, waktu, atau kecepatan khusus berlanjut dari saat dihentikan.</string>
+    <string name="info_news_settings" formatted="false">Label menempatkan waktu dan T berdampingan dengan titik tengah, juga pada foto dan panorama.</string>
+    <string name="info_news_catalog" formatted="false">Perbandingan bertanggal memisahkan judul objek dari tanggal; teks panjang berpindah baris.</string>
 </resources>

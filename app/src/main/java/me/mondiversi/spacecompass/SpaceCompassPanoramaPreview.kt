@@ -248,7 +248,7 @@ private fun SpaceCompassPanoramaZoomImage(bitmap: android.graphics.Bitmap, modif
             offset = bound(offset * ratio + (centroid - center) * (1 - ratio) + pan, next)
             zoom = next
         } }.pointerInput(bitmap) {
-            detectTapGestures(onDoubleTap = { toggleControls() })
+            detectTapGestures(onTap = { toggleControls() })
         }) {
         Image(image, stringResource(R.string.panorama_preview), Modifier.fillMaxSize()
             .graphicsLayer {

@@ -18,7 +18,7 @@
     <string name="tutorial_axis" formatted="false">Wähle Kameraachse (90°) oder Telefonlängsachse (0°). Die Kamera verwendet immer ihre eigene Achse.</string>
     <string name="tutorial_transparency" formatted="false">Mache Objektbilder durchscheinend, um sie mit dem Kamerabild zu vergleichen. Die Aufnahme übernimmt diese Wahl.</string>
     <string name="tutorial_zoom" formatted="false">Wähle den Kamerazoom oder zoome mit zwei Fingern im Kamerabild.</string>
-    <string name="tutorial_capture" formatted="false">Erstelle ein Himmelspanorama oder ein Kamerafoto mit astronomischen Einblendungen. Exportiere aus der Vorschau. Tippe in der Vorschau doppelt auf das Bild, um die Bedienelemente ein- oder auszublenden.</string>
+    <string name="tutorial_capture" formatted="false">Erstelle ein Himmelspanorama oder ein Kamerafoto mit astronomischen Einblendungen. Exportiere aus der Vorschau. Tippe in der Vorschau auf das Bild, um die Bedienelemente ein- oder auszublenden.</string>
     <string name="tutorial_panels" formatted="false">Klappe Objekt- und Kompassfelder ein oder aus, um mehr Himmel zu sehen.</string>
     <string name="tutorial_antipodes" formatted="false">Tippe, um die Gegenrichtung ausgewählter Punkte anzuzeigen oder auszublenden: Azimut +180° und Höhe mit umgekehrtem Vorzeichen. Halte die Taste gedrückt, um alle Punkte abzuwählen.</string>
     <string name="tutorial_navigation" formatted="false">Blättere durch ausgewählte Objekte. Das Feld zeigt das aktive Objekt und seine Bahnfarben.</string>
@@ -26,8 +26,8 @@
     <string name="tutorial_daily" formatted="false">Sieh Bahn, Zeiten, Höhen und auswählbare Punkte. Für zukünftige Ereignisse sind Erinnerungen möglich.</string>
     <string name="tutorial_gps" formatted="false">Zeige tatsächlichen Standort, GPS-Höhe, Ausrichtung und Wetter, unabhängig von der Location.</string>
     <string name="tutorial_points" formatted="false">Wähle einen Bahnpunkt. Ziele darauf, um Objekt, Uhrzeit, T, Azimut und Höhe zu lesen. Der Objektrand hat die Farbe seiner Bahn; bei Auswahl der aktuellen Position wird er blau oder hellblau.</string>
-    <string name="tutorial_reticle_title" formatted="false">Fadenkreuz und Symbole anzeigen</string>
-    <string name="tutorial_reticle" formatted="false">Tippe auf freien Himmel, um Fadenkreuz und Punktinformationen umzuschalten. Tippe doppelt auf den freien Himmel, um die Bedienelemente ein- oder auszublenden.</string>
+    <string name="tutorial_reticle_title" formatted="false">Zeit und Symbole</string>
+    <string name="tutorial_reticle" formatted="false">Tippe auf freien Himmel, um Fadenkreuz und Symbole ein- oder auszublenden. Tippe doppelt, um die Zeit anzuhalten oder fortzusetzen.</string>
     <string name="tutorial_reminder" formatted="false">Öffne Android-Wecker oder Kalender für ein gültiges zukünftiges Ereignis. Vergangene Ereignisse und der aktuelle Punkt sind ausgeschlossen.</string>
     <string name="tutorial_status_title" formatted="false">Status und Wiederherstellung</string>
     <string name="tutorial_status" formatted="false">Lies den aktuellen Status. Die Aktion kann Berechtigungen anfordern, den Standort aktivieren oder Bahn- und Wetterdaten erneut laden. Das Tutorial führt sie nicht aus.</string>

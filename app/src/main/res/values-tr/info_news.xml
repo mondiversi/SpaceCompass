@@ -1,9 +1,9 @@
 <resources>
     <string name="info_news_title">Son yenilikler · %1$s</string>
-    <string name="info_news_star_sky" formatted="false">Yenilenen zaman ölçeğiyle zamanı duraklatın, geri sarın veya saniyede bir güne kadar hızlandırın.</string>
-    <string name="info_news_texture_downloads" formatted="false">Location değişiklikleri ana gökyüzüne dönünce uygulanır; yapılandırma sırasında zaman duraklatılır.</string>
-    <string name="info_news_weather" formatted="false">Location için gelecekteki tarih ve saat, UTC farkıyla birlikte gökyüzünün üstünde görünür kalır.</string>
-    <string name="info_news_viewer_zoom" formatted="false">Zamanı yeniden etkinleştirmek duraklatma ve geri akış dâhil son hızı geri yükler.</string>
-    <string name="info_news_settings" formatted="false">Yeni bir gün, güncel yollardaki seçili noktaları temizler; sabit tarihli karşılaştırmalar seçili kalır.</string>
-    <string name="info_news_catalog" formatted="false">Daha kompakt azimut ve yükseklik etiketleri; fotoğraf ve panoramalarda saat ile T karşılıklı kenarlarda gösterilir.</string>
+    <string name="info_news_star_sky" formatted="false">Nişangâhı ve simgeleri birlikte göstermek veya gizlemek için boş gökyüzüne dokunun.</string>
+    <string name="info_news_texture_downloads" formatted="false">Zamanı duraklatmak veya sürdürmek için boş gökyüzüne çift dokunun.</string>
+    <string name="info_news_weather" formatted="false">Duraklatıldığında tarih, saat ve UTC farkı duraklatma simgesiyle turuncu görünür kalır.</string>
+    <string name="info_news_viewer_zoom" formatted="false">Gerçek zaman şu ana döner; özel tarih, saat veya hızlar durdurulan andan devam eder.</string>
+    <string name="info_news_settings" formatted="false">Nokta etiketleri saati ve T değerini orta noktayla yan yana gösterir; fotoğraf ve panoramalarda da geçerlidir.</string>
+    <string name="info_news_catalog" formatted="false">Tarihli karşılaştırmalarda nesne başlığı ve tarih ayrıdır; uzun metinler alt satıra geçer.</string>
 </resources>

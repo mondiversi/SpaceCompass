@@ -1,9 +1,9 @@
 <resources>
     <string name="info_news_title">Τελευταία νέα · %1$s</string>
-    <string name="info_news_star_sky" formatted="false">Παύση, αντίστροφη ροή ή επιτάχυνση του χρόνου έως μία ημέρα ανά δευτερόλεπτο με τη νέα κλίμακα.</string>
-    <string name="info_news_texture_downloads" formatted="false">Οι αλλαγές Location εφαρμόζονται όταν επιστρέφετε στον κύριο ουρανό· ο χρόνος παγώνει κατά τη ρύθμιση.</string>
-    <string name="info_news_weather" formatted="false">Η μελλοντική ημερομηνία και ώρα της Location παραμένουν ορατές ψηλά στον ουρανό, με τη διαφορά UTC.</string>
-    <string name="info_news_viewer_zoom" formatted="false">Η επανενεργοποίηση του χρόνου επαναφέρει την τελευταία ταχύτητα, μαζί με παύση και αντίστροφη ροή.</string>
-    <string name="info_news_settings" formatted="false">Μια νέα ημέρα καθαρίζει τα επιλεγμένα σημεία των τρεχουσών τροχιών· οι συγκρίσεις σταθερής ημερομηνίας διατηρούνται.</string>
-    <string name="info_news_catalog" formatted="false">Πιο συμπαγείς ετικέτες αζιμουθίου και ύψους· φωτογραφίες και πανοράματα δείχνουν ώρα και T σε αντίθετες πλευρές.</string>
+    <string name="info_news_star_sky" formatted="false">Αγγίξτε κενό ουρανό για εμφάνιση ή απόκρυψη στόχαστρου και εικονιδίων μαζί.</string>
+    <string name="info_news_texture_downloads" formatted="false">Πατήστε δύο φορές σε κενό ουρανό για παύση ή συνέχιση του χρόνου.</string>
+    <string name="info_news_weather" formatted="false">Στην παύση παραμένουν ορατές με πορτοκαλί η ημερομηνία, η ώρα και η διαφορά UTC, με σύμβολο παύσης.</string>
+    <string name="info_news_viewer_zoom" formatted="false">Ο πραγματικός χρόνος επιστρέφει στο τώρα· προσαρμοσμένη ημερομηνία, ώρα ή ταχύτητα συνεχίζει από τη σταματημένη στιγμή.</string>
+    <string name="info_news_settings" formatted="false">Οι ετικέτες δείχνουν ώρα και T δίπλα δίπλα με μεσαία τελεία, και σε φωτογραφίες και πανοράματα.</string>
+    <string name="info_news_catalog" formatted="false">Οι συγκρίσεις ημερομηνίας χωρίζουν τίτλο αντικειμένου και ημερομηνία· τα μεγάλα κείμενα αναδιπλώνονται.</string>
 </resources>

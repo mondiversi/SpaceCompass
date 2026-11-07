@@ -1,0 +1,4 @@
+<resources>
+    <string name="sky_time_pause">Παύση χρόνου</string>
+    <string name="sky_time_resume">Συνέχιση χρόνου</string>
+</resources>

@@ -11,12 +11,12 @@ class SpaceCompassScenarioMomentLabelTest {
     private val zone = ZoneId.of("Europe/Rome")
     private val plan = spaceCompassObserverPlan(45.0, 9.0, 100.0, now, zone.id)!!
 
-    @Test fun onlyAnActiveScenarioOnAFutureCivilDayShowsTheLabel() {
+    @Test fun aDifferentCivilDayShowsTheLabelForEitherDirection() {
         assertFalse(spaceCompassShowScenarioMoment(null, now + 86_400_000L, now, zone))
         assertFalse(spaceCompassShowScenarioMoment(plan.copy(simulatePosition = false, simulateAltitude = false,
             simulateZone = false, simulateDate = false, simulateTime = false), now + 86_400_000L, now, zone))
         assertFalse(spaceCompassShowScenarioMoment(plan, now + 3_600_000L, now, zone))
-        assertFalse(spaceCompassShowScenarioMoment(plan, now - 86_400_000L, now, zone))
+        assertTrue(spaceCompassShowScenarioMoment(plan, now - 86_400_000L, now, zone))
         assertTrue(spaceCompassShowScenarioMoment(plan, now + 86_400_000L, now, zone))
     }
 
@@ -35,6 +35,15 @@ class SpaceCompassScenarioMomentLabelTest {
         val simulated = Instant.parse("2026-11-08T00:30:00Z").toEpochMilli()
         assertTrue(spaceCompassShowScenarioMoment(plan, simulated, real, ZoneId.of("UTC")))
         assertFalse(spaceCompassShowScenarioMoment(plan, simulated, real, ZoneId.of("America/Los_Angeles")))
+    }
+
+    @Test fun pauseSymbolPrecedesTheDateOnlyWhenTimeIsPaused() {
+        val formatting = SpaceCompassPanoramaFormatting(locale = Locale.ITALIAN,
+            date = SpaceCompassDateFormat.EUROPEAN, time = SpaceCompassTimeFormat.H24)
+        val moving = formatSpaceCompassScenarioMoment(now, zone, formatting)
+        val paused = formatSpaceCompassScenarioMoment(now, zone, formatting, paused = true)
+        assertEquals("⏸ $moving", paused)
+        assertFalse(moving.startsWith("⏸"))
     }
 
     @Test fun selectedDateTimeFormatsAndTheOffsetAtTheSimulatedMomentArePreserved() {

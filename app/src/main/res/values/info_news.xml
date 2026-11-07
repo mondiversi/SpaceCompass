@@ -1,9 +1,9 @@
 <resources>
     <string name="info_news_title">Latest news · %1$s</string>
-    <string name="info_news_star_sky" formatted="false">Pause, rewind or speed up time to one day per second with the revised time scale.</string>
-    <string name="info_news_texture_downloads" formatted="false">Location changes take effect when you return to the main sky; time stays paused while you configure them.</string>
-    <string name="info_news_weather" formatted="false">Future Location dates and times stay visible at the top of the sky, with their UTC offset.</string>
-    <string name="info_news_viewer_zoom" formatted="false">Re-enabling time restores your last speed, including pause and reverse.</string>
-    <string name="info_news_settings" formatted="false">A new day clears selected points on live paths, while fixed dated comparisons remain selected.</string>
-    <string name="info_news_catalog" formatted="false">More compact azimuth and elevation labels; photos and panoramas show time and T at opposite edges.</string>
+    <string name="info_news_star_sky" formatted="false">Tap empty sky to show or hide the reticle and icons together.</string>
+    <string name="info_news_texture_downloads" formatted="false">Double-tap empty sky to pause or resume time.</string>
+    <string name="info_news_weather" formatted="false">Paused time always shows an orange date, clock and UTC offset, with a pause symbol.</string>
+    <string name="info_news_viewer_zoom" formatted="false">Live time resumes at now; custom dates, times or speeds continue from the held instant.</string>
+    <string name="info_news_settings" formatted="false">Point bubbles place time and T together with a middle dot, including photos and panoramas.</string>
+    <string name="info_news_catalog" formatted="false">Dated comparison bubbles separate the object heading from the date, with wrapped long text.</string>
 </resources>

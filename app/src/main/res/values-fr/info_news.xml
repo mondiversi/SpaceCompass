@@ -1,9 +1,9 @@
 <resources>
     <string name="info_news_title">Dernières nouveautés · %1$s</string>
-    <string name="info_news_star_sky" formatted="false">Mettez le temps en pause, remontez-le ou accélérez-le jusqu’à un jour par seconde grâce à la nouvelle échelle.</string>
-    <string name="info_news_texture_downloads" formatted="false">Les modifications de Location prennent effet au retour au ciel principal ; le temps reste en pause pendant la configuration.</string>
-    <string name="info_news_weather" formatted="false">La date et l’heure futures de la Location restent visibles en haut du ciel, avec leur décalage UTC.</string>
-    <string name="info_news_viewer_zoom" formatted="false">La réactivation du temps rétablit la dernière vitesse, y compris la pause et le retour en arrière.</string>
-    <string name="info_news_settings" formatted="false">Un nouveau jour efface les points sélectionnés des trajectoires courantes ; les comparaisons à date fixe sont conservées.</string>
-    <string name="info_news_catalog" formatted="false">Azimut et élévation plus compacts ; les photos et panoramas affichent l’heure et T aux extrémités opposées.</string>
+    <string name="info_news_star_sky" formatted="false">Touchez le ciel vide pour afficher ou masquer ensemble le réticule et les icônes.</string>
+    <string name="info_news_texture_downloads" formatted="false">Touchez deux fois le ciel vide pour mettre le temps en pause ou le reprendre.</string>
+    <string name="info_news_weather" formatted="false">En pause, la date, l’heure et le décalage UTC restent orange avec le symbole de pause.</string>
+    <string name="info_news_viewer_zoom" formatted="false">Le temps réel revient à maintenant ; les dates, heures ou vitesses personnalisées reprennent à l’instant arrêté.</string>
+    <string name="info_news_settings" formatted="false">Les bulles affichent l’heure et T côte à côte avec un point médian, aussi dans les photos et panoramas.</string>
+    <string name="info_news_catalog" formatted="false">Les comparaisons datées séparent le titre de l’objet et la date ; les longs textes passent à la ligne.</string>
 </resources>

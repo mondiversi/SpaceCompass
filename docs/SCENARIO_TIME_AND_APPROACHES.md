@@ -121,13 +121,30 @@ selections. Scene loading establishes the incoming Location day before restoring
 its pins, so imported live points survive loading and expire at the next date
 change. An already generated image/export remains its original frozen snapshot.
 
-## Capture clock columns
+## Capture clock row
 
-Photo and panorama bubbles share the same drawing/layout routine. Their clock
-row places the observation time at the left edge and T at the right edge without
-a visible separator, matching the main sky. Labels measure both fields and a
-font-relative minimum gap before placement; wider event titles or angle rows
-naturally spread the columns further apart. Angle rows keep their middle dot and
-icons. Canonical label strings retain their clock/countdown boundary for internal
-compatibility; only the clock row is rendered as columns, leaving personal titles
-and translated event names untouched.
+Photo and panorama bubbles share the same drawing/layout routine. The clock and T
+are rendered together with a middle-dot separator, just as in the main sky. Wider
+titles do not spread those values apart. Caption widths include the separator;
+angle rows retain their own icons and middle dot. Canonical label strings and
+translated event names keep their existing content.
+
+## Main-sky playback
+
+A double tap on empty sky pauses or resumes the effective observation clock. Point
+targets, controls and islands retain their own actions; single tap only toggles the
+reticle and floating controls together; the islands retain their separate chevron. The fully visible reticle follows that visibility. Paused time is
+always labelled with a monochrome pause symbol, date, time and UTC offset, even on the current day and when
+controls are hidden. Running times on a different civil day are labelled in either
+direction, using the Location zone.
+
+This playback session does not overwrite the configured Location or its last speed.
+Resuming returns to the real current instant unless a custom date, time or non-1× enabled speed is configured. Temporal overrides continue from the held instant at the preceding rate; a configured zero
+rate can be previewed at normal speed without overwriting that zero. Lifecycle and
+listener reattachment retain the session. Returning from Location management or loading a Location replaces
+it, and a cold launch uses the saved Location's clock policy.
+
+Main-sky point captions separate the object/event heading from a dated comparison's
+description. Titles and dates wrap inside the existing width cap; the event is not
+ellipsized. A Personal Moment's name is not repeated beside its date when it already
+identifies the anchor event. Clock and T share a compact row separated by a middle dot, in the main sky and captures; compact angle values retain their existing layout, and the reminder button remains vertically centred on the caption.

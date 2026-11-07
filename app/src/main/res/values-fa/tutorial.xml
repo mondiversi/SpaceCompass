@@ -18,7 +18,7 @@
     <string name="tutorial_axis" formatted="false">محور دوربین (90°) یا طول گوشی (0°) را انتخاب کنید. دوربین همیشه محور خودش را به کار می‌برد.</string>
     <string name="tutorial_transparency" formatted="false">تصاویر اجرام را نیمه‌شفاف کنید تا با دوربین مقایسه شوند. عکس این انتخاب را حفظ می‌کند.</string>
     <string name="tutorial_zoom" formatted="false">بزرگ‌نمایی دوربین را انتخاب کنید یا از دو انگشت روی تصویر استفاده کنید.</string>
-    <string name="tutorial_capture" formatted="false">پانورامای آسمان یا عکس دوربین با لایه‌های نجومی بسازید. از پیش‌نمایش خروجی بگیرید. در پیش‌نمایش، برای نمایش یا پنهان کردن کنترل‌ها دو بار روی تصویر بزنید.</string>
+    <string name="tutorial_capture" formatted="false">پانورامای آسمان یا عکس دوربین با لایه‌های نجومی بسازید. از پیش‌نمایش خروجی بگیرید. در پیش‌نمایش، برای نمایش یا پنهان کردن کنترل‌ها روی تصویر بزنید.</string>
     <string name="tutorial_panels" formatted="false">پنل‌های جرم و قطب‌نما را جمع یا باز کنید تا آسمان بیشتری ببینید.</string>
     <string name="tutorial_antipodes" formatted="false">برای نمایش یا پنهان کردن جهت مخالف نقاط انتخاب‌شده لمس کنید: سمت +۱۸۰ درجه و ارتفاع با علامت معکوس. برای لغو انتخاب همه نقاط نگه دارید.</string>
     <string name="tutorial_navigation" formatted="false">میان اجرام انتخاب‌شده حرکت کنید. پنل جرم فعال و رنگ مسیر آن را نشان می‌دهد.</string>
@@ -26,8 +26,8 @@
     <string name="tutorial_daily" formatted="false">مسیر، ساعت‌ها، ارتفاع‌ها و نقاط قابل انتخاب را ببینید. رویدادهای آینده می‌توانند یادآور داشته باشند.</string>
     <string name="tutorial_gps" formatted="false">مکان واقعی، ارتفاع GPS، جهت و آب‌وهوا را مستقل از Location ببینید.</string>
     <string name="tutorial_points" formatted="false">یک نقطه مداری را انتخاب کنید. برای دیدن جرم، ساعت، T، سمت و ارتفاع به آن نشانه بروید. حاشیه جرم هم‌رنگ مسیر آن است؛ با انتخاب موقعیت فعلی، آبی یا فیروزه‌ای می‌شود.</string>
-    <string name="tutorial_reticle_title" formatted="false">نمایش نشانه و نمادها</string>
-    <string name="tutorial_reticle" formatted="false">آسمان خالی را لمس کنید تا نشانه و اطلاعات نقاط نمایش یا پنهان شوند. برای نمایش یا پنهان کردن کنترل‌ها، دو بار روی بخش خالی آسمان بزنید.</string>
+    <string name="tutorial_reticle_title" formatted="false">زمان و نمادها</string>
+    <string name="tutorial_reticle" formatted="false">آسمان خالی را لمس کنید تا نشانه و نمادها نمایش یا پنهان شوند. برای توقف یا ادامهٔ زمان، دو بار بزنید.</string>
     <string name="tutorial_reminder" formatted="false">برای رویداد آینده مجاز، زنگ یا تقویم Android را باز کنید. رویدادهای گذشته و نقطه فعلی شامل نمی‌شوند.</string>
     <string name="tutorial_status_title" formatted="false">وضعیت و بازیابی</string>
     <string name="tutorial_status" formatted="false">وضعیت فعلی را بخوانید. عملکرد می‌تواند مجوز بخواهد، مکان را فعال کند یا بارگیری داده‌های مداری و هوا را تکرار کند. آموزش آن را اجرا نمی‌کند.</string>

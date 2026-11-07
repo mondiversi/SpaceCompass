@@ -1,0 +1,4 @@
+<resources>
+    <string name="sky_time_pause">Pausar el tiempo</string>
+    <string name="sky_time_resume">Reanudar el tiempo</string>
+</resources>

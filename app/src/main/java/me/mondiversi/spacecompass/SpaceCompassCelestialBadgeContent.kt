@@ -19,14 +19,15 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.rememberTextMeasurer
-import androidx.compose.ui.text.style.TextOverflow
 import java.time.ZoneId
 
 /** The object heading, clock/countdown and compact angle row remain visible together. */
+@OptIn(ExperimentalLayoutApi::class)
 @Composable
 internal fun SpaceCompassCelestialBadgeContent(timeMs: Long, nowMs: Long, zone: ZoneId,
     position: SpaceCompassSunPosition, primaryText: Color, secondaryText: Color, backgroundColor: Color,
-    pointName: String, bodyName: String, pinned: Boolean = false, modifier: Modifier = Modifier) {
+    pointName: String, bodyName: String, pinned: Boolean = false, modifier: Modifier = Modifier,
+    comparisonDescription: String? = null) {
     val locale = LocalConfiguration.current.locales[0]
     val numeric = LocalSpaceCompassNumericFormat.current
     val deviceLocale = LocalSpaceCompassDeviceLocale.current
@@ -52,15 +53,18 @@ internal fun SpaceCompassCelestialBadgeContent(timeMs: Long, nowMs: Long, zone: 
         .border(if (pinned) 1.dp else 0.5.dp,
             if (pinned) MaterialTheme.colorScheme.primary else secondaryText.copy(alpha = 0.3f), shape)
         .padding(horizontal = 8.dp, vertical = 4.dp)) {
-        Row(Modifier.fillMaxWidth().testTag("celestial-badge-title"),
-            verticalAlignment = androidx.compose.ui.Alignment.CenterVertically) {
-            Text(bodyName, Modifier.weight(1f, fill = false).testTag("celestial-badge-body"),
+        FlowRow(Modifier.fillMaxWidth().testTag("celestial-badge-title")) {
+            Text(bodyName, Modifier.testTag("celestial-badge-body"),
                 color = primaryText, style = titleStyle, fontWeight = FontWeight.Bold)
-            if (pointName.isNotBlank()) {
+            if (pointName.isNotBlank()) Row {
                 Text(" · ", color = primaryText, style = titleStyle)
                 Text(pointName, Modifier.testTag("celestial-badge-event"), color = primaryText,
-                    style = titleStyle, maxLines = 1, overflow = TextOverflow.Ellipsis)
+                    style = titleStyle)
             }
+        }
+        comparisonDescription?.takeIf { it.isNotBlank() }?.let { description ->
+            Text(description, Modifier.fillMaxWidth().testTag("celestial-badge-comparison"),
+                color = secondaryText, fontSize = 10.sp, lineHeight = 13.sp)
         }
         SpaceCompassPointTimeCaption(moment, timeMs, nowMs, primaryText,
             if (pinned) 10.sp else 11.sp, if (pinned) 12.sp else 14.sp,

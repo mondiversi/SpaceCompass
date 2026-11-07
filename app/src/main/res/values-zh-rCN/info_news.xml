@@ -1,9 +1,9 @@
 <resources>
     <string name="info_news_title">最新变化 · %1$s</string>
-    <string name="info_news_star_sky" formatted="false">使用新的时间刻度暂停、倒流或加速时间，最高每秒前进一天。</string>
-    <string name="info_news_texture_downloads" formatted="false">Location 更改在返回主天空视图时生效；配置期间时间保持暂停。</string>
-    <string name="info_news_weather" formatted="false">Location 的未来日期和时间会显示在天空顶部，并附带 UTC 时差。</string>
-    <string name="info_news_viewer_zoom" formatted="false">重新启用时间时恢复上次速度，包括暂停和倒流。</string>
-    <string name="info_news_settings" formatted="false">进入新的一天时清除当前轨迹上选中的点，固定日期的对比仍保持选中。</string>
-    <string name="info_news_catalog" formatted="false">方位角和高度标签更加紧凑；照片和全景图的时间与 T 分别显示在两侧。</string>
+    <string name="info_news_star_sky" formatted="false">轻触空白天空可同时显示或隐藏准星和图标。</string>
+    <string name="info_news_texture_downloads" formatted="false">双击空白天空可暂停或继续时间。</string>
+    <string name="info_news_weather" formatted="false">暂停时，日期、时间和 UTC 时差始终以橙色显示，并带有暂停标记。</string>
+    <string name="info_news_viewer_zoom" formatted="false">实时时间会返回当前时刻；自定义日期、时间或速度则从暂停的时刻继续。</string>
+    <string name="info_news_settings" formatted="false">轨道点标签将时间和 T 用中点分隔并排显示，照片和全景图也保持一致。</string>
+    <string name="info_news_catalog" formatted="false">固定日期对比的标签将天体标题与日期分开，长文本自动换行。</string>
 </resources>

@@ -1,9 +1,9 @@
 <resources>
     <string name="info_news_title">最近の変更 · %1$s</string>
-    <string name="info_news_star_sky" formatted="false">新しい時間スケールで、一時停止、逆再生、毎秒最大1日の早送りができます。</string>
-    <string name="info_news_texture_downloads" formatted="false">Locationの変更はメインの空に戻ると適用され、設定中は時間が停止します。</string>
-    <string name="info_news_weather" formatted="false">Locationの未来の日付と時刻を、UTCオフセットとともに空の上部に表示します。</string>
-    <string name="info_news_viewer_zoom" formatted="false">時間を再び有効にすると、一時停止や逆方向も含めて最後の速度が復元されます。</string>
-    <string name="info_news_settings" formatted="false">日付が変わると現在の経路の選択点を解除し、固定日時の比較は選択したまま保持します。</string>
-    <string name="info_news_catalog" formatted="false">方位角と高度のラベルをコンパクトにし、写真とパノラマでは時刻とTを左右に分けて表示します。</string>
+    <string name="info_news_star_sky" formatted="false">何もない空をタップすると照準とアイコンをまとめて表示または非表示にします。</string>
+    <string name="info_news_texture_downloads" formatted="false">何もない空をダブルタップすると時間を一時停止または再開します。</string>
+    <string name="info_news_weather" formatted="false">一時停止中は日付、時刻、UTCオフセットを一時停止マーク付きのオレンジ色で表示します。</string>
+    <string name="info_news_viewer_zoom" formatted="false">実時間は現在に戻り、日付・時刻・速度を変更した場合は停止した瞬間から再開します。</string>
+    <string name="info_news_settings" formatted="false">写真やパノラマも含め、ラベルの時刻とTを中点で区切って並べて表示します。</string>
+    <string name="info_news_catalog" formatted="false">日時を指定した比較では天体名と日付を分け、長い文章を折り返します。</string>
 </resources>

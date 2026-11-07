@@ -1,9 +1,9 @@
 <resources>
     <string name="info_news_title">Ostatnie nowości · %1$s</string>
-    <string name="info_news_star_sky" formatted="false">Wstrzymaj, cofnij lub przyspiesz czas do jednej doby na sekundę dzięki nowej skali.</string>
-    <string name="info_news_texture_downloads" formatted="false">Zmiany Location są stosowane po powrocie do głównego nieba; podczas konfiguracji czas jest zatrzymany.</string>
-    <string name="info_news_weather" formatted="false">Przyszła data i godzina Location pozostają widoczne u góry nieba wraz z przesunięciem UTC.</string>
-    <string name="info_news_viewer_zoom" formatted="false">Ponowne włączenie czasu przywraca ostatnią prędkość, także pauzę i bieg wstecz.</string>
-    <string name="info_news_settings" formatted="false">Nowy dzień usuwa zaznaczone punkty bieżących torów; porównania z ustaloną datą pozostają zaznaczone.</string>
-    <string name="info_news_catalog" formatted="false">Zwięźlejsze etykiety azymutu i wysokości; na zdjęciach i panoramach godzina i T znajdują się po przeciwnych stronach.</string>
+    <string name="info_news_star_sky" formatted="false">Dotknij pustego nieba, aby pokazać lub ukryć razem celownik i ikony.</string>
+    <string name="info_news_texture_downloads" formatted="false">Stuknij dwukrotnie puste niebo, aby wstrzymać lub wznowić czas.</string>
+    <string name="info_news_weather" formatted="false">Podczas pauzy data, godzina i przesunięcie UTC pozostają pomarańczowe, z symbolem pauzy.</string>
+    <string name="info_news_viewer_zoom" formatted="false">Czas rzeczywisty wraca do teraz; własne daty, godziny lub prędkości są wznawiane od zatrzymanej chwili.</string>
+    <string name="info_news_settings" formatted="false">Etykiety pokazują godzinę i T obok siebie z kropką środkową, także na zdjęciach i panoramach.</string>
+    <string name="info_news_catalog" formatted="false">Porównania z datą rozdzielają tytuł obiektu i datę; długie teksty są zawijane.</string>
 </resources>

@@ -1,9 +1,9 @@
 <resources>
     <string name="info_news_title">Laatste nieuws · %1$s</string>
-    <string name="info_news_star_sky" formatted="false">Pauzeer, spoel terug of versnel de tijd tot één dag per seconde met de vernieuwde tijdschaal.</string>
-    <string name="info_news_texture_downloads" formatted="false">Location-wijzigingen gelden zodra je terugkeert naar de hemel; tijdens het instellen staat de tijd stil.</string>
-    <string name="info_news_weather" formatted="false">Toekomstige datum en tijd van de Location blijven bovenaan de hemel zichtbaar, met UTC-afwijking.</string>
-    <string name="info_news_viewer_zoom" formatted="false">Bij opnieuw inschakelen keert de laatste snelheid terug, inclusief pauze en achteruit.</string>
-    <string name="info_news_settings" formatted="false">Een nieuwe dag wist geselecteerde punten op actuele banen; vergelijkingen met een vaste datum blijven geselecteerd.</string>
-    <string name="info_news_catalog" formatted="false">Compactere azimut- en hoogtelabels; op foto’s en panorama’s staan tijd en T aan tegenoverliggende kanten.</string>
+    <string name="info_news_star_sky" formatted="false">Tik op lege hemel om richtkruis en pictogrammen samen te tonen of verbergen.</string>
+    <string name="info_news_texture_downloads" formatted="false">Dubbeltik op lege hemel om de tijd te pauzeren of hervatten.</string>
+    <string name="info_news_weather" formatted="false">Tijdens de pauze blijven datum, tijd en UTC-afwijking oranje zichtbaar, met een pauzesymbool.</string>
+    <string name="info_news_viewer_zoom" formatted="false">Live-tijd keert terug naar nu; aangepaste datums, tijden of snelheden gaan verder vanaf het gepauzeerde moment.</string>
+    <string name="info_news_settings" formatted="false">Puntlabels tonen tijd en T naast elkaar met een middelpunt, ook op foto’s en panorama’s.</string>
+    <string name="info_news_catalog" formatted="false">Gedateerde vergelijkingen scheiden objecttitel en datum; lange teksten lopen door op een nieuwe regel.</string>
 </resources>

@@ -1,0 +1,4 @@
+<resources>
+    <string name="sky_time_pause">Zamanı duraklat</string>
+    <string name="sky_time_resume">Zamanı sürdür</string>
+</resources>

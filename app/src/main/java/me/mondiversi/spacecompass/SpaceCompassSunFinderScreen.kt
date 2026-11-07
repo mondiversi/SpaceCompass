@@ -299,13 +299,10 @@ internal fun SpaceCompassSunFinderContent(
         mutableStateOf(scenePreferences.getBoolean(SPACE_COMPASS_FORWARD_PATH_KEY,false))
     }
     val showAntipodes = dailyPathUiState.antipodesVisible
-    var reticleVisible by remember(scenePreferences) {
-        mutableStateOf(readSpaceCompassReticleVisible(scenePreferences))
-    }
     var skyControlsVisible by remember(scenePreferences) {
         mutableStateOf(scenePreferences.getBoolean(SPACE_COMPASS_SKY_CONTROLS_VISIBLE_KEY, true))
     }
-    val showReticle = reticleVisible || tutorialActive
+    val showReticle = skyControlsVisible || tutorialActive
     val showSkyControls = skyControlsVisible || tutorialActive
     var pointingTopEdge by remember(scenePreferences) {
         mutableStateOf(scenePreferences.getBoolean(SPACE_COMPASS_POINTING_TOP_EDGE_KEY, false))
@@ -360,7 +357,8 @@ internal fun SpaceCompassSunFinderContent(
     LaunchedEffect(resumed, cameraEnabled) {
         if (resumed && cameraEnabled && !hasSpaceCompassCameraPermission(cameraContext)) requestedCameraEnabled = false
     }
-    val observerPlan = LocalSpaceCompassObserver.current?.plan
+    val skyObserver = LocalSpaceCompassObserver.current
+    val observerPlan = skyObserver?.plan
     // Pins are reprojected from refreshed curves for the effective observer; navigating Location must not erase comparisons.
     var showEnvironment by rememberSaveable { mutableStateOf(false) }
     var showViewer by rememberSaveable { mutableStateOf(false) }
@@ -398,7 +396,7 @@ internal fun SpaceCompassSunFinderContent(
     }
     SideEffect { publishSolarObserver(solarObserver) }
     val zone = spaceCompassObservationZone()
-    val scenarioMomentLabel = spaceCompassScenarioMomentLabel(observerPlan, timeMs, deviceTimeMs, zone)
+    val scenarioMomentLabel = spaceCompassScenarioMomentLabel(observerPlan, timeMs, deviceTimeMs, zone, skyObserver?.playbackPaused == true)
     val date = Instant.ofEpochMilli(timeMs).atZone(zone).toLocalDate()
     // Use the Location clock/zone, including accelerated forward/rewind, rather than device midnight.
     SideEffect { dailyPathUiState.refreshObservationDate(date) }
@@ -699,11 +697,8 @@ internal fun SpaceCompassSunFinderContent(
                     drawScene = false, objectOpacity = cameraObjectOpacity, showReticle = showReticle,
                     showFloatingControls = showSkyControls, showAntipodes = showAntipodes,
                     scenarioMomentLabel = scenarioMomentLabel,
-                    onToggleReticle = if (tutorialActive) null else ({
-                        reticleVisible = !reticleVisible
-                        saveSpaceCompassReticleVisible(scenePreferences, reticleVisible)
-                        notifyControl(if (reticleVisible) R.string.scene_reticle_on else R.string.scene_reticle_off)
-                    }),
+                    timePaused = skyObserver?.playbackPaused == true,
+                    onToggleTime = if (tutorialActive) null else ({ skyObserver?.togglePlayback() }),
                     onToggleFloatingControls = if (tutorialActive) null else ({
                         skyControlsVisible = !skyControlsVisible
                         scenePreferences.edit().putBoolean(SPACE_COMPASS_SKY_CONTROLS_VISIBLE_KEY, skyControlsVisible).apply()

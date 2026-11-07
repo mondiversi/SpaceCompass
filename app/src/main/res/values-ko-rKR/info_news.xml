@@ -1,9 +1,9 @@
 <resources>
     <string name="info_news_title">최근 변경 사항 · %1$s</string>
-    <string name="info_news_star_sky" formatted="false">새 시간 배율로 시간을 일시 정지하거나 되돌리고, 초당 최대 하루까지 빠르게 진행하세요.</string>
-    <string name="info_news_texture_downloads" formatted="false">Location 변경은 기본 하늘로 돌아갈 때 적용되며 설정 중에는 시간이 멈춥니다.</string>
-    <string name="info_news_weather" formatted="false">Location의 미래 날짜와 시간을 UTC 차이와 함께 하늘 상단에 계속 표시합니다.</string>
-    <string name="info_news_viewer_zoom" formatted="false">시간을 다시 켜면 일시 정지와 역방향을 포함한 마지막 속도가 복원됩니다.</string>
-    <string name="info_news_settings" formatted="false">새 날짜가 되면 현재 경로의 선택 지점은 해제되고 고정 날짜 비교는 선택 상태로 유지됩니다.</string>
-    <string name="info_news_catalog" formatted="false">방위각과 고도 레이블을 더 간결하게 하고 사진과 파노라마의 시각과 T를 양쪽 끝에 표시합니다.</string>
+    <string name="info_news_star_sky" formatted="false">빈 하늘을 탭하면 조준점과 아이콘을 함께 표시하거나 숨깁니다.</string>
+    <string name="info_news_texture_downloads" formatted="false">빈 하늘을 두 번 탭하면 시간을 일시 정지하거나 재개합니다.</string>
+    <string name="info_news_weather" formatted="false">일시 정지 중에는 날짜, 시각, UTC 차이가 일시 정지 기호와 함께 주황색으로 표시됩니다.</string>
+    <string name="info_news_viewer_zoom" formatted="false">실시간은 현재로 돌아가며 날짜, 시각, 속도를 따로 설정한 경우 멈춘 순간부터 재개합니다.</string>
+    <string name="info_news_settings" formatted="false">사진과 파노라마를 포함한 지점 레이블에서 시각과 T를 가운데 점으로 구분해 나란히 표시합니다.</string>
+    <string name="info_news_catalog" formatted="false">날짜를 지정한 비교에서는 천체 제목과 날짜를 분리하고 긴 문장을 줄바꿈합니다.</string>
 </resources>
