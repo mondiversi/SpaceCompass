@@ -739,7 +739,7 @@ internal fun SpaceCompassSunFinderContent(
                                 detailsExpanded = !detailsExpanded
                                 scenePreferences.edit().putBoolean(SPACE_COMPASS_MAIN_DETAILS_KEY, detailsExpanded).apply()
                             }, primaryText, backgroundColor, landscape = landscape)
-                            if (!landscape) pointingAxisControl()
+                            if (!landscape || detailsExpanded) pointingAxisControl()
                         }
                     },
                     bottomCenterActions = { modifier ->
@@ -791,7 +791,7 @@ internal fun SpaceCompassSunFinderContent(
                             verticalArrangement = Arrangement.spacedBy(8.dp)) {
                             if (onDismissRequest != null)
                                 SpaceCompassMainMenuControl(primaryText, backgroundColor)
-                            if (landscape) pointingAxisControl()
+                            if (landscape && !detailsExpanded) pointingAxisControl()
                         }
                     },
                     topCenterActions = { modifier ->

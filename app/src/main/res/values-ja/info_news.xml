@@ -1,9 +1,9 @@
 <resources>
     <string name="info_news_title">最近の変更 · %1$s</string>
-    <string name="info_news_star_sky" formatted="false">シミュレーションの空を0.5×～1×で拡大・縮小でき、設定が保存されます。</string>
-    <string name="info_news_texture_downloads" formatted="false">天気・透明度とズームの操作位置を両モードで統一しました。</string>
-    <string name="info_news_weather" formatted="false">0°/90°と選択ポイントのボタンは縦向き・横向きの配置に対応します。</string>
-    <string name="info_news_viewer_zoom" formatted="false">新規インストールでは電話の長さ方向の軸（0°）を使用します。</string>
-    <string name="info_news_settings" formatted="false">スクリーンセーバーの地球をドラッグで回せます。10秒間操作しないと通常の回転に滑らかに戻ります。</string>
-    <string name="info_news_catalog" formatted="false">任意の場所をダブルタップしてスクリーンセーバーを終了します。ズームの説明を全20言語で更新しました。</string>
+    <string name="info_news_star_sky" formatted="false">シミュレーションの空とカメラのズーム説明をわかりやすくしました。</string>
+    <string name="info_news_texture_downloads" formatted="false">どちらの表示モードでも2本の指でズームを調整できます。</string>
+    <string name="info_news_weather" formatted="false">カメラのチュートリアルでも0°/90°ボタンが表示され、説明を確認できます。</string>
+    <string name="info_news_viewer_zoom" formatted="false">横向きではチュートリアルの説明が軸ボタンを隠さなくなりました。</string>
+    <string name="info_news_settings" formatted="false">横向きでパネルが表示されているときは0°/90°が矢印の隣に、閉じているときはメニューの下に表示されます。</string>
+    <string name="info_news_catalog" formatted="false">チュートリアルと更新情報を全20言語で更新しました。</string>
 </resources>

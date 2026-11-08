@@ -21,12 +21,13 @@ import androidx.compose.ui.unit.dp
 @Composable
 internal fun SpaceCompassPointingAxisButton(checked: Boolean, onCheckedChange: (Boolean) -> Unit,
     color: Color, background: Color, enabled: Boolean = true) {
+    // Keep this disabled configuration visible and explainable in the camera tutorial.
     SpaceCompassFloatingControlHitRegion {
         Surface(Modifier.spaceCompassFloatingControlVisual().size(48.dp), shape = CircleShape,
             color = background.copy(alpha = 1f), contentColor = color.copy(alpha = if (enabled) 1f else .38f),
             border = BorderStroke(1.dp, color.copy(alpha = if (enabled) .35f else .13f)), shadowElevation = 3.dp) {
             Box(contentAlignment = Alignment.Center) {
-                IconToggleButton(checked, onCheckedChange, enabled = enabled, modifier = Modifier.fillMaxSize().testTag("toggle-pointing-axis").spaceCompassTutorialTarget(SpaceCompassTutorialFeature.AXIS, enabled = enabled),
+                IconToggleButton(checked, onCheckedChange, enabled = enabled, modifier = Modifier.fillMaxSize().testTag("toggle-pointing-axis").spaceCompassTutorialTarget(SpaceCompassTutorialFeature.AXIS),
                     colors = IconButtonDefaults.iconToggleButtonColors(contentColor = color, checkedContentColor = color,
                         disabledContentColor = color.copy(alpha = .38f))) {
                     SpaceCompassPointingAxisGlyph(checked,

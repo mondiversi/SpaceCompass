@@ -1,9 +1,9 @@
 <resources>
     <string name="info_news_title">Son yenilikler · %1$s</string>
-    <string name="info_news_star_sky" formatted="false">Simüle gökyüzünü, kaydedilen 0,5×–1× yakınlaştırmayla keşfedin.</string>
-    <string name="info_news_texture_downloads" formatted="false">Hava durumu/saydamlık ve yakınlaştırma, iki modda da tutarlı konumlardadır.</string>
-    <string name="info_news_weather" formatted="false">0°/90° ve seçili nokta düğmeleri dikey ve yatay düzene uyum sağlar.</string>
-    <string name="info_news_viewer_zoom" formatted="false">Yeni kurulumlar telefonun uzun ekseniyle (0°) başlar.</string>
-    <string name="info_news_settings" formatted="false">Ekran koruyucudaki Dünya’yı döndürün; 10 saniye işlem yapılmadığında normal dönüşüne yumuşakça döner.</string>
-    <string name="info_news_catalog" formatted="false">Ekran koruyucudan çıkmak için herhangi bir yere iki kez dokunun. Yakınlaştırma öğreticisi yirmi dilde güncellendi.</string>
+    <string name="info_news_star_sky" formatted="false">Simüle gökyüzü ve kamera için daha anlaşılır yakınlaştırma açıklaması.</string>
+    <string name="info_news_texture_downloads" formatted="false">Her iki görünüm modunda da yakınlaştırmayı iki parmakla ayarlayın.</string>
+    <string name="info_news_weather" formatted="false">0°/90° düğmesi kamera öğreticisinde görünür kalır ve açıklamasına erişilebilir.</string>
+    <string name="info_news_viewer_zoom" formatted="false">Yatay görünümde öğretici açıklamaları eksen düğmesini kapatmaz.</string>
+    <string name="info_news_settings" formatted="false">Yatay görünümde paneller açıkken 0°/90° ok düğmesinin yanında, paneller kapalıyken Menü altında kalır.</string>
+    <string name="info_news_catalog" formatted="false">Öğretici ve yenilikler yirmi dilin tamamında güncellendi.</string>
 </resources>

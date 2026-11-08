@@ -1,9 +1,9 @@
 <resources>
     <string name="info_news_title">Laatste nieuws · %1$s</string>
-    <string name="info_news_star_sky" formatted="false">Verken de gesimuleerde hemel met opgeslagen zoom van 0,5× tot 1×.</string>
-    <string name="info_news_texture_downloads" formatted="false">Weer/transparantie en zoom staan nu op vaste, herkenbare plekken in beide modi.</string>
-    <string name="info_news_weather" formatted="false">De knoppen voor 0°/90° en geselecteerde punten passen zich aan staande en liggende weergave aan.</string>
-    <string name="info_news_viewer_zoom" formatted="false">Nieuwe installaties gebruiken de lengteas van de telefoon (0°).</string>
-    <string name="info_news_settings" formatted="false">Draai de aarde in de schermbeveiliging; na 10 seconden zonder invoer keert deze soepel terug naar de normale rotatie.</string>
-    <string name="info_news_catalog" formatted="false">Tik twee keer ergens om de schermbeveiliging te verlaten. Zoomuitleg bijgewerkt in alle twintig talen.</string>
+    <string name="info_news_star_sky" formatted="false">Duidelijkere zoomuitleg voor de gesimuleerde hemel en de camera.</string>
+    <string name="info_news_texture_downloads" formatted="false">Pas de zoom in beide weergavemodi met twee vingers aan.</string>
+    <string name="info_news_weather" formatted="false">De knop 0°/90° blijft zichtbaar en de uitleg blijft beschikbaar in de camerahandleiding.</string>
+    <string name="info_news_viewer_zoom" formatted="false">In liggende stand bedekt de uitleg de asknop niet.</string>
+    <string name="info_news_settings" formatted="false">In liggende stand staat 0°/90° naast de pijl bij zichtbare panelen en onder Menu bij ingeklapte panelen.</string>
+    <string name="info_news_catalog" formatted="false">Handleiding en versienieuws bijgewerkt in alle twintig talen.</string>
 </resources>

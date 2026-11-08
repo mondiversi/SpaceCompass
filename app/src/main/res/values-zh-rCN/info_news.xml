@@ -1,9 +1,9 @@
 <resources>
     <string name="info_news_title">最新变化 · %1$s</string>
-    <string name="info_news_star_sky" formatted="false">模拟天空支持0.5×至1×缩放，并记住上次选择。</string>
-    <string name="info_news_texture_downloads" formatted="false">天气/透明度与缩放按钮在两种模式中采用一致的位置。</string>
-    <string name="info_news_weather" formatted="false">0°/90°与已选轨道点按钮会适应竖屏和横屏布局。</string>
-    <string name="info_news_viewer_zoom" formatted="false">新安装默认使用手机长轴方向（0°）进行指向。</string>
-    <string name="info_news_settings" formatted="false">拖动屏幕保护程序中的地球即可旋转；停止操作10秒后，会平滑恢复正常旋转。</string>
-    <string name="info_news_catalog" formatted="false">双击任意位置退出屏幕保护程序。缩放教程已更新为全部20种语言。</string>
+    <string name="info_news_star_sky" formatted="false">模拟天空和相机的缩放说明更加清晰。</string>
+    <string name="info_news_texture_downloads" formatted="false">两种显示模式都可用双指调整缩放。</string>
+    <string name="info_news_weather" formatted="false">相机教程中仍显示0°/90°按钮，并可查看其说明。</string>
+    <string name="info_news_viewer_zoom" formatted="false">横屏时，教程说明不再遮挡指向轴按钮。</string>
+    <string name="info_news_settings" formatted="false">横屏时，面板显示则0°/90°位于箭头旁，面板收起则位于菜单下方。</string>
+    <string name="info_news_catalog" formatted="false">教程和更新内容已更新为全部20种语言。</string>
 </resources>

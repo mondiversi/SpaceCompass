@@ -15,10 +15,13 @@ internal fun spaceCompassTutorialCardHeightLimit(viewportHeightDp: Float): Float
 /** Center the explanation in the actual gap between control groups, not the whole sky. */
 internal fun spaceCompassTutorialCardBand(viewport: Rect, targets: List<SpaceCompassTutorialTarget>): Rect {
     val controls = targets.filter { it.circular && !it.point && it.bounds.right > viewport.left && it.bounds.left < viewport.right }
-    val upper = controls.filter { it.feature in setOf(SpaceCompassTutorialFeature.INFO,
+    // The axis sits beside the bottom chevron, or below Menu with landscape islands collapsed.
+    val upperAxis = controls.filter { it.feature == SpaceCompassTutorialFeature.AXIS &&
+        it.bounds.center.y < viewport.center.y }.toSet()
+    val upper = controls.filter { it in upperAxis || it.feature in setOf(SpaceCompassTutorialFeature.INFO,
         SpaceCompassTutorialFeature.MENU, SpaceCompassTutorialFeature.FORWARD, SpaceCompassTutorialFeature.GUIDES,
         SpaceCompassTutorialFeature.LOCATION, SpaceCompassTutorialFeature.OBJECTS) }
-    val lower = controls.filter { it.feature in setOf(SpaceCompassTutorialFeature.PANELS,
+    val lower = controls.filter { it !in upperAxis && it.feature in setOf(SpaceCompassTutorialFeature.PANELS,
         SpaceCompassTutorialFeature.ANTIPODES, SpaceCompassTutorialFeature.CAMERA, SpaceCompassTutorialFeature.CAPTURE,
         SpaceCompassTutorialFeature.WEATHER, SpaceCompassTutorialFeature.AXIS,
         SpaceCompassTutorialFeature.TRANSPARENCY, SpaceCompassTutorialFeature.ZOOM) }

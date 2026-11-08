@@ -17,7 +17,7 @@
     <string name="tutorial_weather" formatted="false">Onyesha au ficha hali ya hewa kwenye anga la kuigwa na panorama. Haipatikani katika hali ya kamera.</string>
     <string name="tutorial_axis" formatted="false">Chagua mhimili wa kamera (90°) au urefu wa simu (0°). Kamera hutumia mhimili wake daima.</string>
     <string name="tutorial_transparency" formatted="false">Fanya picha za vitu zipitishe mwanga ili kulinganisha na kamera. Picha huhifadhi chaguo hili.</string>
-    <string name="tutorial_zoom" formatted="false">Chagua ukuzaji wa anga iliyoigwa kutoka 0.5× hadi 1×. Katika hali ya kamera, tumia ukuzaji unaopatikana au vidole viwili kwenye picha. Mipangilio hii miwili huhifadhiwa kando.</string>
+    <string name="tutorial_zoom" formatted="false">Katika anga iliyoigwa, chagua ukuzaji kutoka 0.5× hadi 1×; ukiwa na kamera, tumia ukuzaji unaopatikana. Katika hali zote mbili, unaweza kukuza au kupunguza kwa vidole viwili.</string>
     <string name="tutorial_capture" formatted="false">Andaa panorama ya anga au picha ya kamera yenye tabaka za anga. Hamisha kutoka hakiki. Katika hakiki, gusa picha mara mbili ili kuonyesha au kuficha vidhibiti.</string>
     <string name="tutorial_panels" formatted="false">Funga au panua paneli za kitu na dira ili kuongeza nafasi ya anga.</string>
     <string name="tutorial_antipodes" formatted="false">Gusa kuonyesha au kuficha mwelekeo wa kinyume wa nukta zilizochaguliwa: azimuthi +180° na ishara ya mwinuko inageuka. Shikilia ili kuondoa chaguo la nukta zote.</string>

@@ -1,9 +1,9 @@
 <resources>
     <string name="info_news_title">Dernières nouveautés · %1$s</string>
-    <string name="info_news_star_sky" formatted="false">Explorez le ciel simulé avec un zoom mémorisé de 0,5× à 1×.</string>
-    <string name="info_news_texture_downloads" formatted="false">Météo/transparence et zoom occupent des positions cohérentes dans les deux modes.</string>
-    <string name="info_news_weather" formatted="false">Les commandes 0°/90° et points sélectionnés s’adaptent aux dispositions portrait et paysage.</string>
-    <string name="info_news_viewer_zoom" formatted="false">Les nouvelles installations utilisent l’axe longitudinal du téléphone (0°).</string>
-    <string name="info_news_settings" formatted="false">Faites tourner la Terre de l’économiseur d’écran ; après 10 secondes sans interaction, elle reprend doucement sa rotation normale.</string>
-    <string name="info_news_catalog" formatted="false">Touchez deux fois n’importe où pour quitter l’économiseur d’écran. Tutoriel du zoom actualisé dans les vingt langues.</string>
+    <string name="info_news_star_sky" formatted="false">Une explication du zoom plus claire pour le ciel simulé et l’appareil photo.</string>
+    <string name="info_news_texture_downloads" formatted="false">Réglez le zoom avec deux doigts dans les deux modes.</string>
+    <string name="info_news_weather" formatted="false">Le bouton 0°/90° reste visible et son explication reste accessible dans le tutoriel photo.</string>
+    <string name="info_news_viewer_zoom" formatted="false">En paysage, les explications du tutoriel ne couvrent plus le bouton d’axe.</string>
+    <string name="info_news_settings" formatted="false">En paysage, 0°/90° reste à côté du chevron si les panneaux sont visibles et sous Menu s’ils sont repliés.</string>
+    <string name="info_news_catalog" formatted="false">Tutoriel et nouveautés mis à jour dans les vingt langues.</string>
 </resources>

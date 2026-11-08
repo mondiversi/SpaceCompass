@@ -17,7 +17,7 @@
     <string name="tutorial_weather" formatted="false">仮想の空とパノラマの天気効果を表示または非表示にします。カメラ使用中は無効です。</string>
     <string name="tutorial_axis" formatted="false">カメラ軸（90°）または端末の長軸（0°）を選びます。カメラは常に自身の軸を使います。</string>
     <string name="tutorial_transparency" formatted="false">天体画像を半透明にしてカメラ映像と比較します。撮影画像にも反映されます。</string>
-    <string name="tutorial_zoom" formatted="false">シミュレーションの空のズームを0.5×～1×から選びます。カメラモードでは利用可能なズームやピンチ操作を使えます。2つの設定は別々に保存されます。</string>
+    <string name="tutorial_zoom" formatted="false">シミュレーションの空では0.5×～1×のズームを選び、カメラでは利用可能なズームを使えます。どちらのモードでも2本の指で拡大・縮小できます。</string>
     <string name="tutorial_capture" formatted="false">全天パノラマまたは天体表示付きのカメラ写真を作成します。プレビューから出力できます。 プレビュー画像をダブルタップすると、操作ボタンを表示または非表示にできます。</string>
     <string name="tutorial_panels" formatted="false">天体とコンパスのパネルを開閉して空の表示領域を広げます。</string>
     <string name="tutorial_antipodes" formatted="false">タップすると選択した点の反対方向を表示・非表示にします。方位角は+180°、高度の符号は反転します。長押しですべての点の選択を解除します。</string>

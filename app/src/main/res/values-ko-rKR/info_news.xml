@@ -1,9 +1,9 @@
 <resources>
     <string name="info_news_title">최근 변경 사항 · %1$s</string>
-    <string name="info_news_star_sky" formatted="false">시뮬레이션 하늘의 배율을 0.5×~1×로 조절하고 설정을 저장합니다.</string>
-    <string name="info_news_texture_downloads" formatted="false">날씨/투명도와 줌 버튼을 두 모드에서 일관된 위치에 배치했습니다.</string>
-    <string name="info_news_weather" formatted="false">0°/90°와 선택한 지점 버튼은 세로 및 가로 배치에 맞춰 이동합니다.</string>
-    <string name="info_news_viewer_zoom" formatted="false">새로 설치하면 휴대폰의 긴 축(0°)을 기본으로 사용합니다.</string>
-    <string name="info_news_settings" formatted="false">화면 보호기의 지구를 드래그하여 회전하세요. 10초간 조작하지 않으면 정상 회전으로 부드럽게 돌아갑니다.</string>
-    <string name="info_news_catalog" formatted="false">아무 곳이나 두 번 탭하면 화면 보호기를 종료합니다. 줌 안내를 20개 언어 모두에서 업데이트했습니다.</string>
+    <string name="info_news_star_sky" formatted="false">시뮬레이션 하늘과 카메라의 줌 설명을 더 명확하게 했습니다.</string>
+    <string name="info_news_texture_downloads" formatted="false">두 보기 모드 모두 두 손가락으로 줌을 조절할 수 있습니다.</string>
+    <string name="info_news_weather" formatted="false">카메라 튜토리얼에서도 0°/90° 버튼이 보이며 설명을 확인할 수 있습니다.</string>
+    <string name="info_news_viewer_zoom" formatted="false">가로 모드에서 튜토리얼 설명이 축 버튼을 가리지 않습니다.</string>
+    <string name="info_news_settings" formatted="false">가로 모드에서 패널이 보이면 0°/90°는 화살표 옆에, 패널을 접으면 메뉴 아래에 표시됩니다.</string>
+    <string name="info_news_catalog" formatted="false">튜토리얼과 새 소식을 20개 언어 모두에서 업데이트했습니다.</string>
 </resources>

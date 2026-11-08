@@ -17,7 +17,7 @@
     <string name="tutorial_weather" formatted="false">הציגו או הסתירו מזג אוויר בשמיים המדומים ובפנורמות. לא זמין במצב מצלמה.</string>
     <string name="tutorial_axis" formatted="false">בחרו בציר המצלמה (90°) או בציר אורך הטלפון (0°). המצלמה תמיד משתמשת בציר שלה.</string>
     <string name="tutorial_transparency" formatted="false">הפכו תמונות עצמים לשקופות חלקית להשוואה למצלמה. הצילום שומר את הבחירה.</string>
-    <string name="tutorial_zoom" formatted="false">בחרו את זום השמיים המדומים בין 0.5× ל־1×. במצב מצלמה השתמשו בזום הזמין או בשתי אצבעות על התמונה. שתי ההגדרות נשמרות בנפרד.</string>
+    <string name="tutorial_zoom" formatted="false">בשמיים המדומים בחרו זום בין 0.5× ל־1×; במצלמה השתמשו בזום הזמין. בשני המצבים ניתן להגדיל או להקטין בשתי אצבעות.</string>
     <string name="tutorial_capture" formatted="false">הכינו פנורמת שמיים או צילום עם שכבות אסטרונומיות. יצאו מהתצוגה המקדימה. בתצוגה המקדימה, הקישו פעמיים על התמונה כדי להציג או להסתיר את הפקדים.</string>
     <string name="tutorial_panels" formatted="false">כווצו או הרחיבו את לוחות העצם והמצפן כדי לפנות מקום לשמיים.</string>
     <string name="tutorial_antipodes" formatted="false">יש להקיש כדי להציג או להסתיר את הכיוון הנגדי לנקודות שנבחרו: אזימוט +180° וגובה בסימן הפוך. לחיצה ממושכת מבטלת את בחירת כל הנקודות.</string>

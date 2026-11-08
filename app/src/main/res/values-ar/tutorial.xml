@@ -17,7 +17,7 @@
     <string name="tutorial_weather" formatted="false">أظهر أو أخفِ الطقس في السماء المحاكاة والبانوراما. غير متاح في وضع الكاميرا.</string>
     <string name="tutorial_axis" formatted="false">اختر محور الكاميرا (90°) أو طول الهاتف (0°). تستخدم الكاميرا محورها دائمًا.</string>
     <string name="tutorial_transparency" formatted="false">اجعل صور الأجسام شبه شفافة لمقارنتها بالكاميرا. تحتفظ اللقطة بهذا الاختيار.</string>
-    <string name="tutorial_zoom" formatted="false">اختر تكبير السماء المحاكية من 0.5× إلى 1×. في وضع الكاميرا، استخدم التكبير المتاح أو إصبعين على الصورة. يُحفظ الإعدادان بشكل منفصل.</string>
+    <string name="tutorial_zoom" formatted="false">في السماء المحاكية، اختر التكبير من 0.5× إلى 1×؛ ومع الكاميرا، استخدم التكبير المتاح. في كلا الوضعين يمكنك التكبير والتصغير بإصبعين.</string>
     <string name="tutorial_capture" formatted="false">جهّز بانوراما للسماء أو صورة كاميرا بطبقات فلكية. صدّر من المعاينة. في المعاينة، انقر مرتين على الصورة لإظهار أدوات التحكم أو إخفائها.</string>
     <string name="tutorial_panels" formatted="false">اطوِ أو وسّع لوحتي الجسم والبوصلة لإظهار مساحة أكبر من السماء.</string>
     <string name="tutorial_antipodes" formatted="false">المس لإظهار أو إخفاء الاتجاه المعاكس للنقاط المحددة: السمت +180° والارتفاع بعلامة معاكسة. اضغط مطولاً لإلغاء تحديد جميع النقاط.</string>

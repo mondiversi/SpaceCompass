@@ -1,9 +1,9 @@
 <resources>
     <string name="info_news_title">Últimas novedades · %1$s</string>
-    <string name="info_news_star_sky" formatted="false">Explora el cielo simulado con zoom guardado de 0,5× a 1×.</string>
-    <string name="info_news_texture_downloads" formatted="false">Tiempo atmosférico/transparencia y zoom mantienen posiciones coherentes en ambos modos.</string>
-    <string name="info_news_weather" formatted="false">Los controles de 0°/90° y puntos seleccionados se adaptan a la orientación vertical y horizontal.</string>
-    <string name="info_news_viewer_zoom" formatted="false">Las nuevas instalaciones empiezan con el eje longitudinal del teléfono (0°).</string>
-    <string name="info_news_settings" formatted="false">Gira la Tierra del salvapantallas; tras 10 segundos sin interacción vuelve suavemente a su rotación normal.</string>
-    <string name="info_news_catalog" formatted="false">Toca dos veces en cualquier punto para salir del salvapantallas. Tutorial de zoom actualizado en los veinte idiomas.</string>
+    <string name="info_news_star_sky" formatted="false">Ayuda de zoom más clara para el cielo simulado y la cámara.</string>
+    <string name="info_news_texture_downloads" formatted="false">Usa dos dedos para ajustar el zoom en ambos modos.</string>
+    <string name="info_news_weather" formatted="false">El botón 0°/90° sigue visible y permite consultar su explicación en el tutorial de cámara.</string>
+    <string name="info_news_viewer_zoom" formatted="false">En horizontal, las explicaciones del tutorial no tapan el botón del eje.</string>
+    <string name="info_news_settings" formatted="false">En horizontal, 0°/90° queda junto a la flecha con los paneles visibles y debajo de Menú con los paneles plegados.</string>
+    <string name="info_news_catalog" formatted="false">Tutorial y novedades actualizados en los veinte idiomas.</string>
 </resources>

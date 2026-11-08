@@ -17,7 +17,7 @@
     <string name="tutorial_weather" formatted="false">Toon of verberg weer in de gesimuleerde hemel en panorama’s. Niet beschikbaar in cameramodus.</string>
     <string name="tutorial_axis" formatted="false">Kies de camera-as (90°) of de lengteas van de telefoon (0°). De camera gebruikt altijd haar eigen as.</string>
     <string name="tutorial_transparency" formatted="false">Maak objectafbeeldingen doorschijnend om ze met de camera te vergelijken. De opname bewaart deze keuze.</string>
-    <string name="tutorial_zoom" formatted="false">Kies de zoom van de gesimuleerde hemel van 0,5× tot 1×. Gebruik in cameramodus de beschikbare zoom of twee vingers op het beeld. Beide instellingen worden apart opgeslagen.</string>
+    <string name="tutorial_zoom" formatted="false">Kies in de gesimuleerde hemel een zoom van 0,5× tot 1×; gebruik met de camera de beschikbare zoom. In beide modi kun je met twee vingers in- of uitzoomen.</string>
     <string name="tutorial_capture" formatted="false">Maak een hemelpanorama of camerafoto met astronomische overlays. Exporteer vanuit het voorbeeld. Dubbeltik in het voorbeeld op de afbeelding om de bediening te tonen of te verbergen.</string>
     <string name="tutorial_panels" formatted="false">Klap object- en kompaspanelen in of uit voor meer hemelruimte.</string>
     <string name="tutorial_antipodes" formatted="false">Tik om de tegengestelde richting van geselecteerde punten te tonen of te verbergen: azimut +180° en hoogte met omgekeerd teken. Houd ingedrukt om alle punten te deselecteren.</string>

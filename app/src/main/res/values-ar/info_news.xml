@@ -1,9 +1,9 @@
 <resources>
     <string name="info_news_title">آخر المستجدات · %1$s</string>
-    <string name="info_news_star_sky" formatted="false">استكشف السماء المحاكية بتكبير محفوظ من 0.5× إلى 1×.</string>
-    <string name="info_news_texture_downloads" formatted="false">أصبحت أدوات الطقس/الشفافية والتكبير في مواضع متناسقة في الوضعين.</string>
-    <string name="info_news_weather" formatted="false">تتكيف أدوات 0°/90° والنقاط المحددة مع العرض الرأسي والأفقي.</string>
-    <string name="info_news_viewer_zoom" formatted="false">تبدأ التثبيتات الجديدة بمحور الهاتف الطولي (0°).</string>
-    <string name="info_news_settings" formatted="false">أدر الأرض في شاشة التوقف؛ بعد 10 ثوانٍ دون تفاعل تعود بسلاسة إلى دورانها العادي.</string>
-    <string name="info_news_catalog" formatted="false">انقر مرتين في أي مكان لمغادرة شاشة التوقف. تم تحديث شرح التكبير باللغات العشرين.</string>
+    <string name="info_news_star_sky" formatted="false">شرح أوضح للتكبير في السماء المحاكية والكاميرا.</string>
+    <string name="info_news_texture_downloads" formatted="false">استخدم إصبعين لضبط التكبير في كلا وضعي العرض.</string>
+    <string name="info_news_weather" formatted="false">يبقى زر 0°/90° ظاهرًا ويمكن عرض شرحه في دليل الكاميرا.</string>
+    <string name="info_news_viewer_zoom" formatted="false">في العرض الأفقي لا تغطي شروحات الدليل زر المحور.</string>
+    <string name="info_news_settings" formatted="false">في العرض الأفقي يكون 0°/90° بجانب السهم عند ظهور اللوحات، وأسفل القائمة عند طيها.</string>
+    <string name="info_news_catalog" formatted="false">تم تحديث الدليل والمستجدات باللغات العشرين.</string>
 </resources>

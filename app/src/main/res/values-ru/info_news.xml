@@ -1,9 +1,9 @@
 <resources>
     <string name="info_news_title">Последние новости · %1$s</string>
-    <string name="info_news_star_sky" formatted="false">Исследуйте моделируемое небо с сохранением масштаба от 0,5× до 1×.</string>
-    <string name="info_news_texture_downloads" formatted="false">Погода/прозрачность и масштаб теперь занимают согласованные позиции в обоих режимах.</string>
-    <string name="info_news_weather" formatted="false">Кнопки 0°/90° и выбранных точек адаптируются к вертикальной и горизонтальной ориентации.</string>
-    <string name="info_news_viewer_zoom" formatted="false">Новые установки используют продольную ось телефона (0°).</string>
-    <string name="info_news_settings" formatted="false">Вращайте Землю на заставке; после 10 секунд без действий она плавно вернётся к обычному вращению.</string>
-    <string name="info_news_catalog" formatted="false">Дважды коснитесь любого места для выхода из заставки. Обучение масштабу обновлено на всех двадцати языках.</string>
+    <string name="info_news_star_sky" formatted="false">Более понятное описание масштаба для моделируемого неба и камеры.</string>
+    <string name="info_news_texture_downloads" formatted="false">Регулируйте масштаб двумя пальцами в обоих режимах просмотра.</string>
+    <string name="info_news_weather" formatted="false">Кнопка 0°/90° остаётся видимой, а её описание доступно в обучении камере.</string>
+    <string name="info_news_viewer_zoom" formatted="false">В горизонтальном режиме пояснения обучения не закрывают кнопку оси.</string>
+    <string name="info_news_settings" formatted="false">В горизонтальном режиме 0°/90° находится рядом со стрелкой при видимых панелях и под Меню при свёрнутых панелях.</string>
+    <string name="info_news_catalog" formatted="false">Обучение и новости обновлены на всех двадцати языках.</string>
 </resources>

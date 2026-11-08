@@ -1,9 +1,9 @@
 <resources>
     <string name="info_news_title">Τελευταία νέα · %1$s</string>
-    <string name="info_news_star_sky" formatted="false">Εξερευνήστε τον προσομοιωμένο ουρανό με αποθηκευμένο ζουμ από 0,5× έως 1×.</string>
-    <string name="info_news_texture_downloads" formatted="false">Ο καιρός/η διαφάνεια και το ζουμ έχουν συνεπείς θέσεις και στις δύο λειτουργίες.</string>
-    <string name="info_news_weather" formatted="false">Τα χειριστήρια 0°/90° και επιλεγμένων σημείων προσαρμόζονται στην κατακόρυφη και οριζόντια διάταξη.</string>
-    <string name="info_news_viewer_zoom" formatted="false">Οι νέες εγκαταστάσεις ξεκινούν με τον διαμήκη άξονα του τηλεφώνου (0°).</string>
-    <string name="info_news_settings" formatted="false">Περιστρέψτε τη Γη στην προφύλαξη οθόνης· μετά από 10 δευτερόλεπτα αδράνειας επιστρέφει ομαλά στην κανονική περιστροφή.</string>
-    <string name="info_news_catalog" formatted="false">Αγγίξτε δύο φορές οπουδήποτε για έξοδο από την προφύλαξη οθόνης. Ο οδηγός ζουμ ενημερώθηκε και στις είκοσι γλώσσες.</string>
+    <string name="info_news_star_sky" formatted="false">Πιο σαφείς οδηγίες ζουμ για τον προσομοιωμένο ουρανό και την κάμερα.</string>
+    <string name="info_news_texture_downloads" formatted="false">Ρυθμίστε το ζουμ με δύο δάχτυλα και στις δύο λειτουργίες προβολής.</string>
+    <string name="info_news_weather" formatted="false">Το κουμπί 0°/90° παραμένει ορατό και η εξήγησή του είναι διαθέσιμη στον οδηγό της κάμερας.</string>
+    <string name="info_news_viewer_zoom" formatted="false">Στην οριζόντια προβολή οι εξηγήσεις του οδηγού δεν καλύπτουν το κουμπί άξονα.</string>
+    <string name="info_news_settings" formatted="false">Στην οριζόντια προβολή το 0°/90° βρίσκεται δίπλα στο βέλος όταν τα πλαίσια είναι ορατά και κάτω από το Μενού όταν είναι κλειστά.</string>
+    <string name="info_news_catalog" formatted="false">Ο οδηγός και τα νέα ενημερώθηκαν και στις είκοσι γλώσσες.</string>
 </resources>

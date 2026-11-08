@@ -1,5 +1,13 @@
 # Changelog
 
+## 1.8.9 — 2026-11-08
+
+- Clarify the zoom tutorial: two-finger zoom works in both the simulated sky and the real camera view. Remove the unnecessary explanation about separate saved choices.
+- Keep the disabled 0°/90° control highlighted and explainable in the camera tutorial without activating the real camera or changing the saved pointing axis.
+- Keep the tutorial explanation clear of the axis control in landscape, including the collapsed-island layout.
+- Place 0°/90° immediately beside the chevron when landscape islands are visible; keep it below Menu when the islands are collapsed. Apply the same layout to the tutorial.
+- Update tutorial text and in-app News in all twenty languages; keep astronomical calculations, saved selections and the graphics collection unchanged.
+
 ## 1.8.8 — 2026-11-07
 
 - Add remembered virtual-sky zoom from 0.5× to 1× in six steps, defaulting to 1×. Use one perspective for objects, paths, stars, terrain, targets and guide labels.

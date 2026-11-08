@@ -1,9 +1,9 @@
 <resources>
     <string name="info_news_title">تازه‌ترین تغییرات · %1$s</string>
-    <string name="info_news_star_sky" formatted="false">آسمان شبیه‌سازی‌شده را با بزرگ‌نمایی ذخیره‌شده از 0.5× تا 1× بررسی کنید.</string>
-    <string name="info_news_texture_downloads" formatted="false">آب‌وهوا/شفافیت و بزرگ‌نمایی در هر دو حالت جایگاه هماهنگی دارند.</string>
-    <string name="info_news_weather" formatted="false">کنترل‌های 0°/90° و نقاط انتخاب‌شده با چیدمان عمودی و افقی سازگار می‌شوند.</string>
-    <string name="info_news_viewer_zoom" formatted="false">نصب‌های جدید با محور طولی تلفن (0°) شروع می‌شوند.</string>
-    <string name="info_news_settings" formatted="false">زمین محافظ صفحه را بچرخانید؛ پس از 10 ثانیه بدون تعامل، به‌آرامی به چرخش عادی بازمی‌گردد.</string>
-    <string name="info_news_catalog" formatted="false">برای خروج از محافظ صفحه روی هر نقطه دو بار بزنید. راهنمای بزرگ‌نمایی در هر بیست زبان به‌روز شد.</string>
+    <string name="info_news_star_sky" formatted="false">توضیح روشن‌تر بزرگ‌نمایی برای آسمان شبیه‌سازی‌شده و دوربین.</string>
+    <string name="info_news_texture_downloads" formatted="false">در هر دو حالت نمایش، بزرگ‌نمایی را با دو انگشت تنظیم کنید.</string>
+    <string name="info_news_weather" formatted="false">دکمهٔ 0°/90° در راهنمای دوربین نمایان می‌ماند و توضیح آن در دسترس است.</string>
+    <string name="info_news_viewer_zoom" formatted="false">در حالت افقی، توضیحات راهنما دکمهٔ محور را نمی‌پوشانند.</string>
+    <string name="info_news_settings" formatted="false">در حالت افقی، 0°/90° با پنل‌های باز کنار پیکان و با پنل‌های بسته زیر منو قرار دارد.</string>
+    <string name="info_news_catalog" formatted="false">راهنما و تازه‌ها در هر بیست زبان به‌روز شدند.</string>
 </resources>

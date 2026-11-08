@@ -1,9 +1,9 @@
 <resources>
     <string name="info_news_title">Ultime novità · %1$s</string>
-    <string name="info_news_star_sky" formatted="false">Regola lo zoom del cielo simulato da 0,5× a 1× e ritrova l’ultima scelta.</string>
-    <string name="info_news_texture_downloads" formatted="false">Meteo/trasparenza e zoom hanno posizioni coerenti nelle due modalità.</string>
-    <string name="info_news_weather" formatted="false">I comandi 0°/90° e punti selezionati si adattano alla disposizione verticale e orizzontale.</string>
-    <string name="info_news_viewer_zoom" formatted="false">Alla prima installazione il puntamento segue la lunghezza del telefono (0°).</string>
-    <string name="info_news_settings" formatted="false">Ruota la Terra del salvaschermo: dopo 10 secondi di inattività torna gradualmente alla rotazione normale.</string>
-    <string name="info_news_catalog" formatted="false">Tocca due volte un punto qualsiasi per tornare all’app. Tutorial dello zoom aggiornato nelle 20 lingue.</string>
+    <string name="info_news_star_sky" formatted="false">Spiegazione dello zoom più chiara per cielo simulato e fotocamera.</string>
+    <string name="info_news_texture_downloads" formatted="false">Usa due dita per regolare lo zoom in entrambe le modalità.</string>
+    <string name="info_news_weather" formatted="false">Il pulsante 0°/90° resta visibile e consultabile nel tutorial fotocamera.</string>
+    <string name="info_news_viewer_zoom" formatted="false">In orizzontale il riquadro del tutorial lascia libero il pulsante asse.</string>
+    <string name="info_news_settings" formatted="false">In orizzontale, con le isole visibili 0°/90° è accanto al chevron; con le isole chiuse è sotto Menu.</string>
+    <string name="info_news_catalog" formatted="false">Tutorial e Novità aggiornati in tutte le 20 lingue.</string>
 </resources>

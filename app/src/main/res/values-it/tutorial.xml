@@ -17,7 +17,7 @@
     <string name="tutorial_weather" formatted="false">Mostra o nascondi gli effetti meteo nel cielo simulato e nelle panoramiche. Il comando non è disponibile in modalità fotocamera.</string>
     <string name="tutorial_axis" formatted="false">Scegli l’asse della fotocamera (90°) o la lunghezza del telefono (0°) per puntare il cielo. La modalità fotocamera usa sempre il proprio asse.</string>
     <string name="tutorial_transparency" formatted="false">Rendi le immagini degli oggetti più traslucide per confrontarle con l’inquadratura reale. Lo scatto mantiene questa scelta.</string>
-    <string name="tutorial_zoom" formatted="false">Scegli lo zoom del cielo simulato da 0,5× a 1×. In modalità fotocamera usa lo zoom disponibile o due dita sull’inquadratura. Le due scelte vengono salvate separatamente.</string>
+    <string name="tutorial_zoom" formatted="false">Nel cielo simulato scegli lo zoom da 0,5× a 1×; con la fotocamera usa lo zoom disponibile. In entrambe le modalità puoi ingrandire o ridurre con due dita.</string>
     <string name="tutorial_capture" formatted="false">Prepara una panoramica di tutto il cielo oppure uno scatto dell’inquadratura con le sovrapposizioni astronomiche. Esporta dall’anteprima. Nell’anteprima, tocca due volte l’immagine per mostrare o nascondere i comandi.</string>
     <string name="tutorial_panels" formatted="false">Compatta o espandi le isole dell’oggetto e della bussola per lasciare più spazio al cielo.</string>
     <string name="tutorial_antipodes" formatted="false">Tocca per mostrare o nascondere la direzione opposta dei punti selezionati: azimut +180° e altezza di segno opposto. Tieni premuto per deselezionare tutti i punti.</string>

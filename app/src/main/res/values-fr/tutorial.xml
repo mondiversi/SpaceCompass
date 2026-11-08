@@ -17,7 +17,7 @@
     <string name="tutorial_weather" formatted="false">Affichez ou masquez la météo du ciel simulé et des panoramas. Indisponible en mode caméra.</string>
     <string name="tutorial_axis" formatted="false">Pointez selon l’axe de la caméra (90°) ou la longueur du téléphone (0°). La caméra conserve son propre axe.</string>
     <string name="tutorial_transparency" formatted="false">Rendez les objets translucides pour les comparer à la caméra. Ce choix est conservé dans la capture.</string>
-    <string name="tutorial_zoom" formatted="false">Choisissez le zoom du ciel simulé de 0,5× à 1×. En mode appareil photo, utilisez le zoom disponible ou deux doigts sur l’image. Les deux réglages sont enregistrés séparément.</string>
+    <string name="tutorial_zoom" formatted="false">Dans le ciel simulé, choisissez le zoom de 0,5× à 1× ; avec l’appareil photo, utilisez le zoom disponible. Dans les deux modes, vous pouvez agrandir ou réduire avec deux doigts.</string>
     <string name="tutorial_capture" formatted="false">Préparez un panorama du ciel ou une photo avec les superpositions astronomiques. Exportez depuis l’aperçu. Dans l’aperçu, touchez deux fois l’image pour afficher ou masquer les commandes.</string>
     <string name="tutorial_panels" formatted="false">Repliez ou dépliez les panneaux de l’objet et de la boussole pour dégager le ciel.</string>
     <string name="tutorial_antipodes" formatted="false">Touche pour afficher ou masquer la direction opposée des points sélectionnés : azimut +180° et élévation de signe opposé. Maintiens le bouton enfoncé pour tout désélectionner.</string>

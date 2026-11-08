@@ -1,9 +1,9 @@
 <resources>
     <string name="info_news_title">Latest news · %1$s</string>
-    <string name="info_news_star_sky" formatted="false">Explore the simulated sky with saved zoom from 0.5× to 1×.</string>
-    <string name="info_news_texture_downloads" formatted="false">Weather/transparency and zoom now share consistent control positions.</string>
-    <string name="info_news_weather" formatted="false">0°/90° and selected-point controls adapt to portrait and landscape layouts.</string>
-    <string name="info_news_viewer_zoom" formatted="false">New installations start with the phone-length pointing axis (0°).</string>
-    <string name="info_news_settings" formatted="false">Drag the screensaver Earth; after 10 idle seconds it returns smoothly to its normal rotation.</string>
-    <string name="info_news_catalog" formatted="false">Double-tap anywhere to leave the screensaver. Updated zoom tutorial in all twenty languages.</string>
+    <string name="info_news_star_sky" formatted="false">Clearer zoom help for the simulated sky and camera.</string>
+    <string name="info_news_texture_downloads" formatted="false">Use two fingers to zoom in either viewing mode.</string>
+    <string name="info_news_weather" formatted="false">The 0°/90° control stays visible and explainable in the camera tutorial.</string>
+    <string name="info_news_viewer_zoom" formatted="false">Tutorial explanations leave the axis control clear in landscape.</string>
+    <string name="info_news_settings" formatted="false">With landscape islands visible, 0°/90° stays beside the chevron; with islands collapsed, it stays below Menu.</string>
+    <string name="info_news_catalog" formatted="false">Tutorial and release notes updated in all twenty languages.</string>
 </resources>

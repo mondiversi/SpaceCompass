@@ -1,9 +1,9 @@
 <resources>
     <string name="info_news_title">Ostatnie nowości · %1$s</string>
-    <string name="info_news_star_sky" formatted="false">Oglądaj symulowane niebo z zapamiętanym powiększeniem od 0,5× do 1×.</string>
-    <string name="info_news_texture_downloads" formatted="false">Pogoda/przezroczystość i powiększenie mają teraz spójne położenie w obu trybach.</string>
-    <string name="info_news_weather" formatted="false">Przyciski 0°/90° i wybranych punktów dostosowują się do układu pionowego i poziomego.</string>
-    <string name="info_news_viewer_zoom" formatted="false">Nowe instalacje domyślnie używają osi wzdłuż telefonu (0°).</string>
-    <string name="info_news_settings" formatted="false">Obracaj Ziemię na wygaszaczu; po 10 sekundach bez interakcji płynnie wróci do normalnego obrotu.</string>
-    <string name="info_news_catalog" formatted="false">Dotknij dwukrotnie dowolnego miejsca, aby opuścić wygaszacz. Samouczek powiększenia zaktualizowano we wszystkich dwudziestu językach.</string>
+    <string name="info_news_star_sky" formatted="false">Jaśniejszy opis powiększenia dla symulowanego nieba i aparatu.</string>
+    <string name="info_news_texture_downloads" formatted="false">Reguluj powiększenie dwoma palcami w obu trybach widoku.</string>
+    <string name="info_news_weather" formatted="false">Przycisk 0°/90° pozostaje widoczny, a jego opis jest dostępny w samouczku aparatu.</string>
+    <string name="info_news_viewer_zoom" formatted="false">W poziomie objaśnienia samouczka nie zasłaniają przycisku osi.</string>
+    <string name="info_news_settings" formatted="false">W poziomie 0°/90° znajduje się obok strzałki przy widocznych panelach i pod Menu przy zwiniętych panelach.</string>
+    <string name="info_news_catalog" formatted="false">Samouczek i nowości zaktualizowane we wszystkich dwudziestu językach.</string>
 </resources>

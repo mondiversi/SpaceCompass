@@ -1,9 +1,9 @@
 <resources>
     <string name="info_news_title">Perubahan terbaru · %1$s</string>
-    <string name="info_news_star_sky" formatted="false">Jelajahi langit simulasi dengan zoom tersimpan dari 0,5× hingga 1×.</string>
-    <string name="info_news_texture_downloads" formatted="false">Cuaca/transparansi dan zoom kini memiliki posisi yang konsisten di kedua mode.</string>
-    <string name="info_news_weather" formatted="false">Kontrol 0°/90° dan titik terpilih menyesuaikan tata letak potret dan lanskap.</string>
-    <string name="info_news_viewer_zoom" formatted="false">Instalasi baru dimulai dengan sumbu panjang ponsel (0°).</string>
-    <string name="info_news_settings" formatted="false">Putar Bumi pada screensaver; setelah 10 detik tanpa interaksi, Bumi kembali mulus ke rotasi normal.</string>
-    <string name="info_news_catalog" formatted="false">Ketuk dua kali di mana saja untuk keluar dari screensaver. Tutorial zoom diperbarui dalam kedua puluh bahasa.</string>
+    <string name="info_news_star_sky" formatted="false">Penjelasan zoom lebih jelas untuk langit simulasi dan kamera.</string>
+    <string name="info_news_texture_downloads" formatted="false">Gunakan dua jari untuk mengatur zoom di kedua mode tampilan.</string>
+    <string name="info_news_weather" formatted="false">Tombol 0°/90° tetap terlihat dan penjelasannya tersedia dalam tutorial kamera.</string>
+    <string name="info_news_viewer_zoom" formatted="false">Dalam mode lanskap, penjelasan tutorial tidak menutupi tombol sumbu.</string>
+    <string name="info_news_settings" formatted="false">Dalam mode lanskap, 0°/90° berada di samping panah saat panel terlihat dan di bawah Menu saat panel diciutkan.</string>
+    <string name="info_news_catalog" formatted="false">Tutorial dan kabar versi diperbarui dalam kedua puluh bahasa.</string>
 </resources>

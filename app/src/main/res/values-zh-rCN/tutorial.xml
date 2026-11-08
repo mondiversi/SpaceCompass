@@ -17,7 +17,7 @@
     <string name="tutorial_weather" formatted="false">显示或隐藏模拟天空和全景中的天气效果。相机模式下不可用。</string>
     <string name="tutorial_axis" formatted="false">选择相机轴（90°）或手机长轴（0°）。相机始终使用自身的轴。</string>
     <string name="tutorial_transparency" formatted="false">让天体图像更透明，以便与相机画面比较。拍摄会保留此选择。</string>
-    <string name="tutorial_zoom" formatted="false">选择模拟天空的缩放比例，范围为0.5×至1×。相机模式下可使用支持的变焦或双指缩放。两种设置分别保存。</string>
+    <string name="tutorial_zoom" formatted="false">模拟天空可选择0.5×至1×的缩放比例；相机使用镜头支持的变焦。两种模式都可以用双指放大或缩小。</string>
     <string name="tutorial_capture" formatted="false">生成全天全景或带有天文叠加层的相机照片。从预览中导出。 在预览中双击图像可显示或隐藏操作按钮。</string>
     <string name="tutorial_panels" formatted="false">收起或展开天体与指南针面板，为天空留出更多空间。</string>
     <string name="tutorial_antipodes" formatted="false">点击可显示或隐藏已选点的相反方向：方位角+180°，高度角符号相反。长按可取消所有点的选择。</string>

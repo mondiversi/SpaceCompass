@@ -17,7 +17,7 @@
     <string name="tutorial_weather" formatted="false">Zeige oder verberge Wettereffekte im simulierten Himmel und in Panoramen. Im Kameramodus nicht verfügbar.</string>
     <string name="tutorial_axis" formatted="false">Wähle Kameraachse (90°) oder Telefonlängsachse (0°). Die Kamera verwendet immer ihre eigene Achse.</string>
     <string name="tutorial_transparency" formatted="false">Mache Objektbilder durchscheinend, um sie mit dem Kamerabild zu vergleichen. Die Aufnahme übernimmt diese Wahl.</string>
-    <string name="tutorial_zoom" formatted="false">Wähle den Zoom des simulierten Himmels von 0,5× bis 1×. Im Kameramodus nutze den verfügbaren Zoom oder zwei Finger. Beide Einstellungen werden getrennt gespeichert.</string>
+    <string name="tutorial_zoom" formatted="false">Wähle im simulierten Himmel einen Zoom von 0,5× bis 1×; mit der Kamera nutze den verfügbaren Zoom. In beiden Modi kannst du mit zwei Fingern hinein- oder herauszoomen.</string>
     <string name="tutorial_capture" formatted="false">Erstelle ein Himmelspanorama oder ein Kamerafoto mit astronomischen Einblendungen. Exportiere aus der Vorschau. Tippe in der Vorschau zweimal auf das Bild, um die Bedienelemente ein- oder auszublenden.</string>
     <string name="tutorial_panels" formatted="false">Klappe Objekt- und Kompassfelder ein oder aus, um mehr Himmel zu sehen.</string>
     <string name="tutorial_antipodes" formatted="false">Tippe, um die Gegenrichtung ausgewählter Punkte anzuzeigen oder auszublenden: Azimut +180° und Höhe mit umgekehrtem Vorzeichen. Halte die Taste gedrückt, um alle Punkte abzuwählen.</string>

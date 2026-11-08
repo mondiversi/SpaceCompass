@@ -1,9 +1,9 @@
 <resources>
     <string name="info_news_title">החידושים האחרונים · %1$s</string>
-    <string name="info_news_star_sky" formatted="false">סיירו בשמיים המדומים עם זום שמור מ־0.5× עד 1×.</string>
-    <string name="info_news_texture_downloads" formatted="false">מזג אוויר/שקיפות וזום נמצאים כעת במיקומים עקביים בשני המצבים.</string>
-    <string name="info_news_weather" formatted="false">פקדי 0°/90° והנקודות שנבחרו מותאמים לתצוגה אנכית ואופקית.</string>
-    <string name="info_news_viewer_zoom" formatted="false">התקנות חדשות מתחילות עם ציר האורך של הטלפון (0°).</string>
-    <string name="info_news_settings" formatted="false">סובבו את כדור הארץ בשומר המסך; אחרי 10 שניות ללא פעולה הוא חוזר בהדרגה לסיבוב הרגיל.</string>
-    <string name="info_news_catalog" formatted="false">הקישו פעמיים בכל מקום כדי לצאת משומר המסך. מדריך הזום עודכן בכל עשרים השפות.</string>
+    <string name="info_news_star_sky" formatted="false">הסבר זום ברור יותר לשמיים המדומים ולמצלמה.</string>
+    <string name="info_news_texture_downloads" formatted="false">כוונו את הזום בשתי אצבעות בשני מצבי התצוגה.</string>
+    <string name="info_news_weather" formatted="false">כפתור 0°/90° נשאר גלוי וההסבר שלו זמין במדריך המצלמה.</string>
+    <string name="info_news_viewer_zoom" formatted="false">בתצוגה אופקית הסברי המדריך אינם מכסים את כפתור הציר.</string>
+    <string name="info_news_settings" formatted="false">בתצוגה אופקית 0°/90° נמצא לצד החץ כשהלוחות גלויים ומתחת לתפריט כשהלוחות מכווצים.</string>
+    <string name="info_news_catalog" formatted="false">המדריך והחידושים עודכנו בכל עשרים השפות.</string>
 </resources>

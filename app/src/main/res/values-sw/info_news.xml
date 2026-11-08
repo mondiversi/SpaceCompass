@@ -1,9 +1,9 @@
 <resources>
     <string name="info_news_title">Mambo mapya · %1$s</string>
-    <string name="info_news_star_sky" formatted="false">Chunguza anga iliyoigwa kwa ukuzaji unaohifadhiwa kutoka 0.5× hadi 1×.</string>
-    <string name="info_news_texture_downloads" formatted="false">Hali ya hewa/uwazi na ukuzaji sasa vina nafasi zinazolingana katika hali zote mbili.</string>
-    <string name="info_news_weather" formatted="false">Vitufe vya 0°/90° na pointi zilizochaguliwa hulingana na mpangilio wa wima na mlalo.</string>
-    <string name="info_news_viewer_zoom" formatted="false">Usakinishaji mpya huanza kwa kutumia mhimili wa urefu wa simu (0°).</string>
-    <string name="info_news_settings" formatted="false">Buruta Dunia kwenye kihifadhi skrini; baada ya sekunde 10 bila mwingiliano hurudi taratibu kwenye mzunguko wa kawaida.</string>
-    <string name="info_news_catalog" formatted="false">Gusa mara mbili popote ili kuondoka kwenye kihifadhi skrini. Mafunzo ya ukuzaji yamesasishwa katika lugha zote ishirini.</string>
+    <string name="info_news_star_sky" formatted="false">Maelezo yaliyo wazi zaidi ya ukuzaji kwa anga iliyoigwa na kamera.</string>
+    <string name="info_news_texture_downloads" formatted="false">Tumia vidole viwili kurekebisha ukuzaji katika hali zote mbili za mwonekano.</string>
+    <string name="info_news_weather" formatted="false">Kitufe cha 0°/90° kinabaki kuonekana na maelezo yake yanapatikana katika mafunzo ya kamera.</string>
+    <string name="info_news_viewer_zoom" formatted="false">Katika mwonekano wa mlalo, maelezo ya mafunzo hayafuniki kitufe cha mhimili.</string>
+    <string name="info_news_settings" formatted="false">Katika mwonekano wa mlalo, 0°/90° huwa kando ya mshale wakati paneli zinaonekana na chini ya Menyu wakati paneli zimekunjwa.</string>
+    <string name="info_news_catalog" formatted="false">Mafunzo na habari za toleo zimesasishwa katika lugha zote ishirini.</string>
 </resources>
