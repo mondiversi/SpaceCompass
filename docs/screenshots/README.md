@@ -52,6 +52,20 @@ Explore the live sky, the Observatory, daily paths, Locations and export tools. 
       <a href="full/13-general-portrait.webp"><img src="thumbs/13-general-portrait.webp" width="220" alt="General settings in Space Compass"></a><br>
       <sub>General settings</sub>
     </td>
+    <td align="center">
+      <a href="full/15-globe-day-portrait.webp"><img src="thumbs/15-globe-day-portrait.webp" width="220" alt="Interactive Globe in Space Compass"></a><br>
+      <sub>Interactive Globe</sub>
+    </td>
+    <td align="center">
+      <a href="full/16-globe-labels-portrait.webp"><img src="thumbs/16-globe-labels-portrait.webp" width="220" alt="Globe label options in Space Compass"></a><br>
+      <sub>Globe label options</sub>
+    </td>
+  </tr>
+  <tr>
+    <td align="center">
+      <a href="full/17-tutorial-globe-portrait.webp"><img src="thumbs/17-tutorial-globe-portrait.webp" width="220" alt="Interactive tutorial in Space Compass"></a><br>
+      <sub>Interactive tutorial</sub>
+    </td>
   </tr>
 </table>
 
@@ -78,27 +92,21 @@ Explore the live sky, the Observatory, daily paths, Locations and export tools. 
       <sub>Landscape daily path</sub>
     </td>
   </tr>
-</table>
-
-## New in 1.9.0
-
-Explore the interactive Globe, captured views and the updated tutorial. These new English screenshots use the same public London demonstration.
-
-<table>
   <tr>
-    <td align="center"><a href="full/15-globe-day-portrait.webp"><img src="thumbs/15-globe-day-portrait.webp" width="220" alt="Interactive Globe in Space Compass 1.9.0"></a><br><sub>Interactive Globe</sub></td>
-    <td align="center"><a href="full/16-globe-labels-portrait.webp"><img src="thumbs/16-globe-labels-portrait.webp" width="220" alt="Globe label options in Space Compass 1.9.0"></a><br><sub>Globe label options</sub></td>
-    <td align="center"><a href="full/17-tutorial-globe-portrait.webp"><img src="thumbs/17-tutorial-globe-portrait.webp" width="220" alt="Interactive tutorial in Space Compass 1.9.0"></a><br><sub>Interactive tutorial</sub></td>
-  </tr>
-</table>
-
-<table>
-  <tr>
-    <td align="center"><a href="full/18-globe-night-landscape.webp"><img src="thumbs/18-globe-night-landscape.webp" width="350" alt="Globe in landscape in Space Compass 1.9.0"></a><br><sub>Globe in landscape</sub></td>
-    <td align="center"><a href="full/19-globe-capture-landscape.webp"><img src="thumbs/19-globe-capture-landscape.webp" width="350" alt="Landscape Globe capture in Space Compass 1.9.0"></a><br><sub>Landscape Globe capture</sub></td>
+    <td align="center">
+      <a href="full/18-globe-night-landscape.webp"><img src="thumbs/18-globe-night-landscape.webp" width="380" alt="Globe in landscape in Space Compass"></a><br>
+      <sub>Globe in landscape</sub>
+    </td>
+    <td align="center">
+      <a href="full/19-globe-capture-landscape.webp"><img src="thumbs/19-globe-capture-landscape.webp" width="380" alt="Landscape Globe capture in Space Compass"></a><br>
+      <sub>Landscape Globe capture</sub>
+    </td>
   </tr>
   <tr>
-    <td align="center"><a href="full/20-view-modes-landscape.webp"><img src="thumbs/20-view-modes-landscape.webp" width="350" alt="Three viewing modes in Space Compass 1.9.0"></a><br><sub>Three viewing modes</sub></td>
+    <td align="center">
+      <a href="full/20-view-modes-landscape.webp"><img src="thumbs/20-view-modes-landscape.webp" width="380" alt="Three viewing modes in Space Compass"></a><br>
+      <sub>Three viewing modes</sub>
+    </td>
   </tr>
 </table>
 
@@ -120,7 +128,6 @@ The presentation cards add an English heading and a decorative frame around genu
 - [Data export](raw/12-export-portrait.webp)
 - [General settings](raw/13-general-portrait.webp)
 - [Landscape daily path](raw/14-daily-path-landscape.webp)
-
 - [Interactive Globe](raw/15-globe-day-portrait.webp)
 - [Globe label options](raw/16-globe-labels-portrait.webp)
 - [Interactive tutorial](raw/17-tutorial-globe-portrait.webp)
@@ -133,7 +140,7 @@ The presentation cards add an English heading and a decorative frame around genu
 - **Language:** English, with metric units.
 - **Location:** a public London, United Kingdom demonstration. No personal location, account information, notifications or private camera images were used.
 - **Environment:** an isolated Android 15 emulator, with portrait and landscape layouts, light and dark themes, and illustrative dates and times.
-- **Build:** Original gallery: Space Compass 1.7.6. New in 1.9.0: Space Compass 1.9.0. The interface was captured from the matching debug build; the published APK uses the distribution signature.
+- **Build:** Space Compass 1.7.6 and 1.9.0. The interface was captured from the matching debug build; the published APK uses the distribution signature.
 - **Dimensions:** 1080 × 1920 for portrait cards; 1920 × 1080 for landscape cards. Full-size cards and unframed captures use lossless WebP; the README uses smaller WebP previews.
 - **Astronomy:** planetary appearances are reconstructed by the app from maps and calculated viewing geometry. Dates, paths, heights and events are examples for the selected Location and moment.
 

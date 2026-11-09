@@ -57,6 +57,40 @@ See Space Compass in portrait and landscape, by day and by night. These English 
       <sub>Location management</sub>
     </td>
   </tr>
+  <tr>
+    <td align="center">
+      <a href="docs/screenshots/full/07-key-heights-portrait.webp"><img src="docs/screenshots/thumbs/07-key-heights-portrait.webp" width="220" alt="Key heights in Space Compass"></a><br>
+      <sub>Key heights</sub>
+    </td>
+    <td align="center">
+      <a href="docs/screenshots/full/08-key-events-portrait.webp"><img src="docs/screenshots/thumbs/08-key-events-portrait.webp" width="220" alt="Key events in Space Compass"></a><br>
+      <sub>Key events</sub>
+    </td>
+    <td align="center">
+      <a href="docs/screenshots/full/12-export-portrait.webp"><img src="docs/screenshots/thumbs/12-export-portrait.webp" width="220" alt="Data export in Space Compass"></a><br>
+      <sub>Data export</sub>
+    </td>
+  </tr>
+  <tr>
+    <td align="center">
+      <a href="docs/screenshots/full/13-general-portrait.webp"><img src="docs/screenshots/thumbs/13-general-portrait.webp" width="220" alt="General settings in Space Compass"></a><br>
+      <sub>General settings</sub>
+    </td>
+    <td align="center">
+      <a href="docs/screenshots/full/15-globe-day-portrait.webp"><img src="docs/screenshots/thumbs/15-globe-day-portrait.webp" width="220" alt="Interactive Globe in Space Compass"></a><br>
+      <sub>Interactive Globe</sub>
+    </td>
+    <td align="center">
+      <a href="docs/screenshots/full/16-globe-labels-portrait.webp"><img src="docs/screenshots/thumbs/16-globe-labels-portrait.webp" width="220" alt="Globe label options in Space Compass"></a><br>
+      <sub>Globe label options</sub>
+    </td>
+  </tr>
+  <tr>
+    <td align="center">
+      <a href="docs/screenshots/full/17-tutorial-globe-portrait.webp"><img src="docs/screenshots/thumbs/17-tutorial-globe-portrait.webp" width="220" alt="Interactive tutorial in Space Compass"></a><br>
+      <sub>Interactive tutorial</sub>
+    </td>
+  </tr>
 </table>
 
 <table>
@@ -80,41 +114,35 @@ See Space Compass in portrait and landscape, by day and by night. These English 
       <sub>Landscape daily path</sub>
     </td>
   </tr>
+  <tr>
+    <td align="center">
+      <a href="docs/screenshots/full/18-globe-night-landscape.webp"><img src="docs/screenshots/thumbs/18-globe-night-landscape.webp" width="350" alt="Globe in landscape in Space Compass"></a><br>
+      <sub>Globe in landscape</sub>
+    </td>
+    <td align="center">
+      <a href="docs/screenshots/full/19-globe-capture-landscape.webp"><img src="docs/screenshots/thumbs/19-globe-capture-landscape.webp" width="350" alt="Landscape Globe capture in Space Compass"></a><br>
+      <sub>Landscape Globe capture</sub>
+    </td>
+  </tr>
+  <tr>
+    <td align="center">
+      <a href="docs/screenshots/full/20-view-modes-landscape.webp"><img src="docs/screenshots/thumbs/20-view-modes-landscape.webp" width="350" alt="Three viewing modes in Space Compass"></a><br>
+      <sub>Three viewing modes</sub>
+    </td>
+  </tr>
 </table>
 
 [Explore all 20 screenshots and unframed app captures](docs/screenshots/README.md).
-
-### New in 1.9.0
-
-Explore the interactive Globe, captured views and the updated tutorial. These new English screenshots use the same public London demonstration.
-
-<table>
-  <tr>
-    <td align="center"><a href="docs/screenshots/full/15-globe-day-portrait.webp"><img src="docs/screenshots/thumbs/15-globe-day-portrait.webp" width="220" alt="Interactive Globe in Space Compass 1.9.0"></a><br><sub>Interactive Globe</sub></td>
-    <td align="center"><a href="docs/screenshots/full/16-globe-labels-portrait.webp"><img src="docs/screenshots/thumbs/16-globe-labels-portrait.webp" width="220" alt="Globe label options in Space Compass 1.9.0"></a><br><sub>Globe label options</sub></td>
-    <td align="center"><a href="docs/screenshots/full/17-tutorial-globe-portrait.webp"><img src="docs/screenshots/thumbs/17-tutorial-globe-portrait.webp" width="220" alt="Interactive tutorial in Space Compass 1.9.0"></a><br><sub>Interactive tutorial</sub></td>
-  </tr>
-</table>
-
-<table>
-  <tr>
-    <td align="center"><a href="docs/screenshots/full/18-globe-night-landscape.webp"><img src="docs/screenshots/thumbs/18-globe-night-landscape.webp" width="350" alt="Globe in landscape in Space Compass 1.9.0"></a><br><sub>Globe in landscape</sub></td>
-    <td align="center"><a href="docs/screenshots/full/19-globe-capture-landscape.webp"><img src="docs/screenshots/thumbs/19-globe-capture-landscape.webp" width="350" alt="Landscape Globe capture in Space Compass 1.9.0"></a><br><sub>Landscape Globe capture</sub></td>
-  </tr>
-  <tr>
-    <td align="center"><a href="docs/screenshots/full/20-view-modes-landscape.webp"><img src="docs/screenshots/thumbs/20-view-modes-landscape.webp" width="350" alt="Three viewing modes in Space Compass 1.9.0"></a><br><sub>Three viewing modes</sub></td>
-  </tr>
-</table>
 
 <!-- app-gallery:end -->
 
 ## Features
 
 - **Find objects in the sky.** Point your phone to see where the Sun, Moon, planets and other objects are, including those below the horizon.
-- **See the sky through your camera.** Overlay objects and their paths on your surroundings. Zoom in or out and fade the object images to compare their predicted positions with what you see.
+- **See the sky through your camera.** Overlay objects and their paths on your surroundings. Zoom in or out, toggle the angular grid and fade the object images to compare their predicted positions with what you see.
 - **Control the view with a tap.** Tap empty sky to pause or resume sky time; double-tap to show or hide the reticle and controls. Double-tap a photo or panorama preview to toggle its overlay controls.
 - **Choose your field of view.** Adjust and remember virtual-sky zoom from 0.5× to 1×, with separate camera zoom for the lenses available on your device.
-- **Explore an interactive Earth.** Switch to Globe to rotate Earth, inspect paths and key points, select points and generate a Globe image. Earth satellites use Earth-centred orbits; distant objects show apparent directions.
+- **Explore an interactive Earth.** Switch to Globe, rotate around Earth’s axis or freely, inspect paths and key points, and generate a Globe image. Choose which labels follow the object selected in the island. Earth satellites use Earth-centred orbits; distant objects show apparent directions.
 - **Follow daily paths.** See when an object rises, reaches its highest point and sets. Choose today's full path or the next 24 hours, select points of interest and check how long until they happen.
 - **Explore other places and times.** Create a Location with a different place, date or time. Pause, speed up or reverse time by up to fifteen days per second. Set up changes at your own pace and apply them when you return to the sky, then save or share the place and time settings independently.
 - **Plan your observations.** Compare the current sky with dated paths from Key Heights, Key Events or your own Personal Moments. Save or share Personal Moments separately, or include active comparisons when exporting a Scene. Future path points can also be sent to Android's Clock or Calendar.
