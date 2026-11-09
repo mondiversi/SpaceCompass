@@ -1,0 +1,4 @@
+<resources>
+    <string name="tutorial_globe_labels" formatted="false">表示する天体や地点のラベルを選びます。</string>
+    <string name="tutorial_globe_rotation" formatted="false">地軸を中心とする回転と自由な回転を切り替えます。</string>
+</resources>

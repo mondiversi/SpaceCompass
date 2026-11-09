@@ -1,9 +1,9 @@
 <resources>
     <string name="info_news_title">Latest news · %1$s</string>
-    <string name="info_news_star_sky" formatted="false">Clearer zoom help for the simulated sky and camera.</string>
-    <string name="info_news_texture_downloads" formatted="false">Use two fingers to zoom in either viewing mode.</string>
-    <string name="info_news_weather" formatted="false">The 0°/90° control stays visible and explainable in the camera tutorial.</string>
-    <string name="info_news_viewer_zoom" formatted="false">Tutorial explanations leave the axis control clear in landscape.</string>
-    <string name="info_news_settings" formatted="false">With landscape islands visible, 0°/90° stays beside the chevron; with islands collapsed, it stays below Menu.</string>
-    <string name="info_news_catalog" formatted="false">Tutorial and release notes updated in all twenty languages.</string>
+    <string name="info_news_star_sky" formatted="false">Explore the interactive Globe with paths, key points and current object images.</string>
+    <string name="info_news_texture_downloads" formatted="false">Switch between Panorama, Camera and Globe; adjust zoom, rotation and labels.</string>
+    <string name="info_news_weather" formatted="false">Capture the Globe with a starry day/night background and configurable labels.</string>
+    <string name="info_news_viewer_zoom" formatted="false">Show or hide the angular grid in the live camera view.</string>
+    <string name="info_news_settings" formatted="false">Move time forward or backward by up to fifteen days per second.</string>
+    <string name="info_news_catalog" formatted="false">Updated tutorial, clearer controls, brighter Earth oceans and an expanded screenshot gallery.</string>
 </resources>

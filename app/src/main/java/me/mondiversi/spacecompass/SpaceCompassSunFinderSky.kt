@@ -102,7 +102,8 @@ internal fun SpaceCompassSunPointingViewport(
     sideControls: Boolean = false, activeComparisonId: String? = null,
     showFloatingControls: Boolean = true,
     scenarioMomentLabel: String? = null,
-    onToggleFloatingControls: (() -> Unit)? = null
+    onToggleFloatingControls: (() -> Unit)? = null,
+    sceneContent: (@Composable (Modifier, List<SpaceCompassSunSceneFrame>,SpaceCompassSunSceneFrame,androidx.compose.ui.unit.Dp) -> Unit)? = null
 ) {
     val timeAction = stringResource(if (timePaused) R.string.sky_time_resume else R.string.sky_time_pause)
     val controlsAction = stringResource(if (showFloatingControls) R.string.sky_controls_hide else R.string.sky_controls_show)
@@ -143,7 +144,7 @@ internal fun SpaceCompassSunPointingViewport(
         val scenarioMomentTop = if (showFloatingControls && !sideControls && topCenterActions != null) {
             val controlHeight = with(density) { centerActionsSize.height.toDp() }
                 .coerceAtLeast(spaceCompassFloatingControlSize + 8.dp)
-            centerActionsTop + controlHeight + 6.dp
+            centerActionsTop + controlHeight + SpaceCompassMainCaptionControlGap
         } else topContentInset
         val scenarioMomentFrame = if (scenarioMomentLabel != null && scenarioMomentSize.width > 0)
             SpaceCompassSunSceneFrame((width - scenarioMomentSize.width) / 2,
@@ -266,8 +267,23 @@ internal fun SpaceCompassSunPointingViewport(
         // Guide names stay continuous across moving objects, orbit dots and transient captions.
         // Keep the measured fixed controls/header as exclusions.
         val guideExclusions = exclusions.filterNot { it in timeBadgeExclusions }
+        if(sceneContent != null) {
+            val upper=if(!showFloatingControls) 0.0 else maxOf(topStartActionsSize.height.toDouble(),topEndActionsSize.height.toDouble(),
+                if(sideControls) 0.0 else with(density) { centerActionsTop.toPx().toDouble() }+centerActionsSize.height)
+            // Temporary point/antipode controls must not move or resize the globe.
+            val stableBottom=with(density) { (spaceCompassFloatingControlBaseSize*SPACE_COMPASS_COMPACT_CONTROL_MULTIPLIER+8.dp).toPx().toDouble() }
+            val lower=if(!showFloatingControls) 0.0 else maxOf(stableBottom,bottomStartActionsSize.height.toDouble())
+            // Mirror the paused clock's gap against the measured central control row.
+            val noteBottom=if(showFloatingControls && !sideControls) with(density) {
+                maxOf(bottomStartActionsSize.height.toDouble(),bottomCenterActionsSize.height+bottomCenterLift)
+                    .toFloat().toDp()
+            }+SpaceCompassMainCaptionControlGap else topContentInset
+            sceneContent(Modifier.fillMaxSize(),exclusions+titleTouchExclusions,
+                spaceCompassGlobeViewport(width,height,upper,lower),noteBottom)
+        }
         SpaceCompassSkyReferenceLayer(observerLatitude, timeMs, orientation.takeIf { compassReliable }, scenePerspective,
             guideExclusions, enabled = showSkyReferences && drawScene, observerAltitude = observerAltitude) {
+            if(sceneContent == null) {
             SpaceCompassTemporalComparisonLayer(comparisonOverlays, orientation.takeIf { compassReliable }, scenePerspective,
                 dailyPathUiState, primaryText, secondaryText, backgroundColor, focused,
                 width / density.density, height / density.density, objectOpacity, drawPaths = drawScene, drawMarkers = false)
@@ -322,6 +338,7 @@ internal fun SpaceCompassSunPointingViewport(
                 if (drawScene) SpaceCompassApproachPathLayer(paths, orientation.takeIf { compassReliable },
                     scenePerspective, dailyPathUiState, focused)
                 SpaceCompassCurrentApproachLayer(approachOverlays, orientation.takeIf { compassReliable }, scenePerspective, width, height)
+            }
             }
             if (showFloatingControls) {
                 if (showActions) SpaceCompassCelestialSkyActions(body, onVisualize,

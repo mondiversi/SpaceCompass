@@ -1,0 +1,6 @@
+<resources>
+    <string name="camera_grid" formatted="false">각도 격자</string>
+    <string name="camera_grid_on" formatted="false">각도 격자 표시</string>
+    <string name="camera_grid_off" formatted="false">각도 격자 숨김</string>
+    <string name="tutorial_camera_grid" formatted="false">카메라 화면에서 방위각과 고도 격자를 표시하거나 숨깁니다.</string>
+</resources>

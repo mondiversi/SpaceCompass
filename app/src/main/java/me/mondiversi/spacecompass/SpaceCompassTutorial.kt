@@ -36,9 +36,12 @@ internal enum class SpaceCompassTutorialFeature(val title: Int, val description:
     LOCATION(R.string.observer_management_title, R.string.tutorial_location),
     GUIDES(R.string.sky_references_show, R.string.tutorial_guides),
     FORWARD(R.string.path_interval_title, R.string.tutorial_forward),
-    CAMERA(R.string.camera_enable, R.string.tutorial_camera),
+    CAMERA(R.string.view_mode_choose, R.string.tutorial_camera),
     WEATHER(R.string.sky_weather_enable, R.string.tutorial_weather),
     AXIS(R.string.pointing_axis_camera, R.string.tutorial_axis),
+    CAMERA_GRID(R.string.camera_grid, R.string.tutorial_camera_grid),
+    GLOBE_LABELS(R.string.panorama_point_labels, R.string.tutorial_globe_labels),
+    GLOBE_ROTATION(R.string.globe_rotation_axis, R.string.tutorial_globe_rotation),
     TRANSPARENCY(R.string.camera_object_transparency, R.string.tutorial_transparency),
     ZOOM(R.string.tutorial_zoom_title, R.string.tutorial_zoom),
     CAPTURE(R.string.panorama_capture, R.string.tutorial_capture),
@@ -57,20 +60,36 @@ internal enum class SpaceCompassTutorialFeature(val title: Int, val description:
 
 @Stable
 internal class SpaceCompassTutorialState(activeState: MutableState<Boolean>, welcomeState: MutableState<Boolean>,
-    cameraPreviewState: MutableState<Boolean>) {
+    cameraPreviewState: MutableState<Boolean>, globePreviewState: MutableState<Boolean> = mutableStateOf(false)) {
     var active by activeState
     var welcome by welcomeState
     var cameraPreview by cameraPreviewState
         private set
+    var globePreview by globePreviewState
+        private set
+    var modeMenuOpen by mutableStateOf(false)
+        private set
+    val previewMode: SpaceCompassViewMode get()=when {
+        cameraPreview -> SpaceCompassViewMode.CAMERA
+        globePreview -> SpaceCompassViewMode.GLOBE
+        else -> SpaceCompassViewMode.PANORAMA
+    }
+    fun chooseMode(mode: SpaceCompassViewMode) {
+        if(!active) return
+        cameraPreview=mode==SpaceCompassViewMode.CAMERA
+        globePreview=mode==SpaceCompassViewMode.GLOBE
+        modeMenuOpen=false
+    }
+    fun dismissModeMenu() { modeMenuOpen=false }
     var skyViewport by mutableStateOf<Rect?>(null)
     val targets = mutableStateMapOf<Any, SpaceCompassTutorialTarget>()
-    fun start() { targets.clear(); skyViewport = null; cameraPreview = false; active = true }
-    fun close() { active = false; cameraPreview = false; targets.clear(); skyViewport = null }
+    fun start() { targets.clear(); skyViewport = null; cameraPreview = false; globePreview = false; modeMenuOpen=false; active = true }
+    fun close() { active = false; cameraPreview = false; globePreview = false; modeMenuOpen=false; targets.clear(); skyViewport = null }
     fun explore(feature: SpaceCompassTutorialFeature) {
         if (!active) return
         when (feature) {
             SpaceCompassTutorialFeature.MENU -> close()
-            SpaceCompassTutorialFeature.CAMERA -> cameraPreview = !cameraPreview
+            SpaceCompassTutorialFeature.CAMERA -> modeMenuOpen=true
             else -> Unit
         }
     }
@@ -98,7 +117,8 @@ internal fun rememberSpaceCompassTutorialState(): SpaceCompassTutorialState {
     // Read the durable first-display marker on a new composition, never restore an old popup.
     val welcomeState = remember(preferences) { mutableStateOf(preferences?.getBoolean(welcomeSeenKey, false) != true) }
     val cameraPreviewState = rememberSaveable { mutableStateOf(false) }
-    return remember { SpaceCompassTutorialState(activeState, welcomeState, cameraPreviewState) }
+    val globePreviewState = rememberSaveable { mutableStateOf(false) }
+    return remember { SpaceCompassTutorialState(activeState, welcomeState, cameraPreviewState, globePreviewState) }
 }
 
 @Composable
@@ -140,15 +160,18 @@ private fun SpaceCompassTutorialOverlay(state: SpaceCompassTutorialState) {
     var selected by remember { mutableStateOf<SpaceCompassTutorialFeature?>(null) }
     var cardBounds by remember { mutableStateOf(Rect.Zero) }
     val cardScroll = rememberScrollState()
-    LaunchedEffect(selected, state.cameraPreview) { cardScroll.scrollTo(0) }
+    LaunchedEffect(selected, state.cameraPreview, state.globePreview) { cardScroll.scrollTo(0) }
     val targets = state.targets.values.map { it.translated(-origin) }
     val currentTargets by rememberUpdatedState(targets)
     val pointRadius = with(density) { 24.dp.toPx() }
     // A visible antipode marker shares the feature, but the button owns its current title.
     fun titleResource(feature: SpaceCompassTutorialFeature): Int =
         targets.firstOrNull { it.feature == feature && !it.point }?.title ?: feature.title
-    val title = stringResource(selected?.let(::titleResource) ?: R.string.tutorial_title)
-    val description = stringResource(selected?.description ?: R.string.tutorial_instruction)
+    val explainingMode=selected==SpaceCompassTutorialFeature.CAMERA&&!state.modeMenuOpen
+    val title = stringResource(if(explainingMode) state.previewMode.labelResource
+        else selected?.let(::titleResource) ?: R.string.tutorial_title)
+    val description = stringResource(if(explainingMode) state.previewMode.tutorialDescriptionResource
+        else selected?.description ?: R.string.tutorial_instruction)
     val close = stringResource(R.string.close)
     fun explain(feature: SpaceCompassTutorialFeature) {
         state.explore(feature)
@@ -240,6 +263,15 @@ private fun SpaceCompassTutorialOverlay(state: SpaceCompassTutorialState) {
             fixedHeight = if (height > 0) height else minOf(maximumHeight,
                 (sky.height - with(density) { 16.dp.toPx() }).coerceAtLeast(0f))
             fixedArea = if (height > 0) area else sky
+        }
+        targets.firstOrNull { it.feature==SpaceCompassTutorialFeature.CAMERA }?.bounds?.let { anchor ->
+            Box(Modifier.absoluteOffset { IntOffset(anchor.left.roundToInt(),anchor.top.roundToInt()) }
+                .size(with(density) { anchor.width.toDp() },with(density) { anchor.height.toDp() })) {
+                SpaceCompassViewModeMenu(state.modeMenuOpen,state.previewMode,state::dismissModeMenu) { mode ->
+                    state.chooseMode(mode)
+                    selected=SpaceCompassTutorialFeature.CAMERA
+                }
+            }
         }
         val area = fixedArea ?: return@BoxWithConstraints
         val width = minOf(360.dp, (with(density) { area.width.toDp() } - 16.dp).coerceAtLeast(1.dp))

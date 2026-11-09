@@ -1,0 +1,4 @@
+<resources>
+    <string name="tutorial_globe_labels" formatted="false">Wähle die anzuzeigenden Objekt- und Punktbeschriftungen.</string>
+    <string name="tutorial_globe_rotation" formatted="false">Wechsle zwischen Drehung um die Erdachse und freier Drehung.</string>
+</resources>

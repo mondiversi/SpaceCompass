@@ -65,13 +65,10 @@ class SpaceCompassSunDailyPathPopupTest {
     }
 
     private fun openDailyPath() {
-        if (compose.onAllNodesWithTag("celestial-body-island-title").fetchSemanticsNodes().isNotEmpty())
-            compose.onNodeWithTag("celestial-body-island-title").performClick()
-        compose.onNodeWithTag("observatory-menu").performClick()
         compose.waitUntil(10_000) {
-            compose.onAllNodes(hasTestTag("observatory-path") and isEnabled()).fetchSemanticsNodes().isNotEmpty()
+            compose.onAllNodesWithTag("celestial-body-daily-path").fetchSemanticsNodes().isNotEmpty()
         }
-        compose.onNodeWithTag("observatory-path").performClick()
+        compose.onNodeWithTag("celestial-body-daily-path").performClick()
     }
 
     private fun closeObjectPages() {

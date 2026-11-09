@@ -30,7 +30,7 @@ internal fun SpaceCompassScenarioSpeedControls(observer: SpaceCompassObserverSta
     val settings = observer.timeSettings
     val title = stringResource(R.string.scenario_speed)
     var index by remember(enabled, settings.rate, inactiveRate) {
-        val shown = if (enabled) settings.normalized().rate else inactiveRate
+        val shown = if (enabled) settings.normalized().rate else SpaceCompassScenarioTimeSettings(rate=inactiveRate).normalized().rate
         mutableFloatStateOf(spaceCompassScenarioRates.indexOf(shown).coerceAtLeast(0).toFloat())
     }
     SpaceCompassSettingsDescription(stringResource(R.string.scenario_speed_description))

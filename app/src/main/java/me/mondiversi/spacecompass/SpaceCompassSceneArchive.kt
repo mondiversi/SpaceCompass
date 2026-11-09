@@ -9,7 +9,8 @@ internal const val SPACE_COMPASS_SCENE_EXTENSION = ".spacecompass-scene"
 
 /** Only scene switches travel: device, camera, favorites and application preferences stay local. */
 internal data class SpaceCompassSceneDisplay(val guides: Boolean, val forward24Hours: Boolean,
-    val weather: Boolean, val translucentObjects: Boolean)
+    val weather: Boolean, val translucentObjects: Boolean, val globe: Boolean = false,
+    val globeLabels: Boolean = false,val globeAxisLocked: Boolean = true,val globeLabelMode: String? = null)
 
 /** A distinct envelope prevents old Location readers from applying an absent observer configuration. */
 internal data class SpaceCompassSceneArchive(val contents: SpaceCompassScenarioArchive,
@@ -23,6 +24,13 @@ internal data class SpaceCompassSceneArchive(val contents: SpaceCompassScenarioA
         display?.let {
             values["guides"] = it.guides.toString(); values["forward24Hours"] = it.forward24Hours.toString()
             values["weather"] = it.weather.toString(); values["translucentObjects"] = it.translucentObjects.toString()
+            if(it.globe) values["globe"] = "true"
+            it.globeLabelMode?.let { mode ->
+                require(SpaceCompassPanoramaLabelMode.entries.any { it.key==mode })
+                values["globeLabelMode"]=mode
+            }
+            if(it.globeLabels)values["globeLabels"]="true"
+            if(!it.globeAxisLocked)values["globeAxisLocked"]="false"
         }
         return values.entries.joinToString("\n", postfix="\n") { "${it.key}=${it.value}" }.also {
             require(it.toByteArray(Charsets.UTF_8).size <= SPACE_COMPASS_SCENARIO_FILE_LIMIT)
@@ -46,8 +54,10 @@ internal data class SpaceCompassSceneArchive(val contents: SpaceCompassScenarioA
             val include=bool("locationIncluded")
             if (!include) require(archive == archive.withoutLocation())
             val display=if (p.getProperty("guides")==null) {
-                require(listOf("forward24Hours","weather","translucentObjects").none(p::containsKey));null
-            } else SpaceCompassSceneDisplay(bool("guides"),bool("forward24Hours"),bool("weather"),bool("translucentObjects"))
+                require(listOf("forward24Hours","weather","translucentObjects","globe","globeLabels","globeAxisLocked","globeLabelMode").none(p::containsKey));null
+            } else SpaceCompassSceneDisplay(bool("guides"),bool("forward24Hours"),bool("weather"),bool("translucentObjects"),p.getProperty("globe")?.toBooleanStrict() ?: false,
+                p.getProperty("globeLabels")?.toBooleanStrict() ?: false,p.getProperty("globeAxisLocked")?.toBooleanStrict() ?: true,
+                p.getProperty("globeLabelMode")?.also { mode -> require(SpaceCompassPanoramaLabelMode.entries.any { it.key==mode }) })
             return SpaceCompassSceneArchive(archive,include,display,requireNotNull(p.getProperty("capturedAtMs")).toLong())
         }
     }

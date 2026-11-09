@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="view_mode_choose" formatted="false">Режим просмотра</string>
+    <string name="view_mode_camera" formatted="false">Камера</string>
+    <string name="view_mode_globe" formatted="false">Глобус</string>
+    <string name="globe_direction_note" formatted="false">Спутники: орбиты Земли · Другие объекты: видимые направления</string>
+    <string name="globe_rotation_axis" formatted="false">Вращение вокруг оси Земли</string>
+    <string name="globe_rotation_free" formatted="false">Свободное вращение</string>
+    <string name="globe_labels_selected_object" formatted="false">Выбранный объект</string>
+    <string name="globe_labels_all_objects" formatted="false">Все объекты</string>
+</resources>

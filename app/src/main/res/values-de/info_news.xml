@@ -1,9 +1,9 @@
 <resources>
     <string name="info_news_title">Neuigkeiten · %1$s</string>
-    <string name="info_news_star_sky" formatted="false">Klarere Zoom-Erklärung für den simulierten Himmel und die Kamera.</string>
-    <string name="info_news_texture_downloads" formatted="false">Passe den Zoom in beiden Ansichtsmodi mit zwei Fingern an.</string>
-    <string name="info_news_weather" formatted="false">Die 0°/90°-Taste bleibt im Kamera-Tutorial sichtbar und erklärbar.</string>
-    <string name="info_news_viewer_zoom" formatted="false">Im Querformat verdecken die Tutorial-Erklärungen die Achsentaste nicht.</string>
-    <string name="info_news_settings" formatted="false">Im Querformat steht 0°/90° bei sichtbaren Bereichen neben dem Pfeil, bei eingeklappten Bereichen unter Menü.</string>
-    <string name="info_news_catalog" formatted="false">Tutorial und Versionshinweise in allen zwanzig Sprachen aktualisiert.</string>
+    <string name="info_news_star_sky" formatted="false">Erkunde den interaktiven Globus mit Bahnen, wichtigen Punkten und aktuellen Objektbildern.</string>
+    <string name="info_news_texture_downloads" formatted="false">Wechsle zwischen Panorama, Kamera und Globus; passe Zoom, Drehung und Beschriftungen an.</string>
+    <string name="info_news_weather" formatted="false">Erstelle Globusbilder mit Sternenhintergrund für Tag und Nacht und wählbaren Beschriftungen.</string>
+    <string name="info_news_viewer_zoom" formatted="false">Blende das Winkelraster in der Live-Kameraansicht ein oder aus.</string>
+    <string name="info_news_settings" formatted="false">Lasse die Zeit um bis zu fünfzehn Tage pro Sekunde vorwärts oder rückwärts laufen.</string>
+    <string name="info_news_catalog" formatted="false">Aktualisierte Anleitung, klarere Bedienelemente, hellere Ozeane und eine erweiterte Bildergalerie.</string>
 </resources>

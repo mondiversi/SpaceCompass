@@ -28,13 +28,29 @@
       "source_embedded_sha256": "89b5f1d228fb90ccb7da5c99c55bb8aaf8e7bc8af481984e99dda88dfa6f13e7"
     }
   ],
-  "renderer_bytes": 22409,
+  "renderer_bytes": 23421,
   "no_network_or_audio": true,
-  "renderer_sha256": "7ffe2f0b21460a700ff63b1a491811e2a70a20e8907a31fd5e9a6f141038157b",
+  "renderer_sha256": "681640c952acfc0c261bda9272155130b550bccb617ad93e635fc30247058499",
   "lighting_uses_observer_solar_elevation": false,
   "earth_texture_orientation_and_orbit_geometry_preserved": true,
   "earth_lighting_uses_real_utc_sun": true,
   "marker_source": "last_valid_real_device_gps",
   "far_side_marker": "grey_translucent",
-  "solar_refresh_seconds": 60
+  "solar_refresh_seconds": 60,
+  "earth_specular_highlight": false,
+  "space_background_uses_interface_theme": true,
+  "space_background_day_palette": [
+    "#30465f",
+    "#1b2d45",
+    "#0e1b2d"
+  ],
+  "space_background_night_palette": [
+    "#172037",
+    "#080e1c",
+    "#02050c"
+  ],
+  "ocean_albedo_gain": 1.6,
+  "ocean_adjustment_before_solar_shading": true,
+  "ocean_adjustment_uses_interface_theme": false,
+  "software_ocean_colours_cached": true
 }

@@ -8,21 +8,21 @@
     <string name="tutorial_navigation_title" formatted="false">Selected object</string>
     <string name="tutorial_points_title" formatted="false">Orbit points</string>
     <string name="tutorial_info" formatted="false">Open app information, release notes and source credits.</string>
-    <string name="tutorial_menu" formatted="false">Open General, Language, Units, Tutorial and Info and credits.</string>
+    <string name="tutorial_menu" formatted="false">Open settings, saved scenes and the tutorial.</string>
     <string name="tutorial_objects" formatted="false">Choose the objects to display. Search, filter and save favorites in the catalog.</string>
     <string name="tutorial_location" formatted="false">Preview another position, altitude, time zone, date or time, and adjust how time advances.</string>
     <string name="tutorial_guides" formatted="false">Show celestial reference circles, poles, zenith and nadir. These are sky projections, not routes on the ground.</string>
     <string name="tutorial_forward" formatted="false">0–24 shows the whole calendar day, from midnight to midnight. +24h shows the next 24 hours from the displayed time, including a simulated time. Daily path, captures and exports use the same interval.</string>
-    <string name="tutorial_camera" formatted="false">Switch between the simulated sky and the rear camera. The camera uses the real pointing axis. Here you can explore Zoom and Transparency without using the camera. Tap again to return to the normal view.</string>
+    <string name="tutorial_camera" formatted="false">Choose Panorama, Camera or Globe. Tap here to explore their controls.</string>
     <string name="tutorial_weather" formatted="false">Show or hide weather effects in the simulated sky and panoramas. This control is unavailable in camera mode.</string>
     <string name="tutorial_axis" formatted="false">Choose the camera axis (90°) or the phone length axis (0°) for pointing. Camera mode always uses the camera axis.</string>
     <string name="tutorial_transparency" formatted="false">Make object images more translucent to compare them with the camera view. The capture keeps this choice.</string>
-    <string name="tutorial_zoom" formatted="false">In the simulated sky, choose zoom from 0.5× to 1×; with the camera, use the available lens zoom. In both modes, you can zoom in or out with two fingers.</string>
-    <string name="tutorial_capture" formatted="false">Prepare a full-sky panorama, or capture the current camera view with celestial overlays. Export from the preview. In the preview, double-tap the image to show or hide the controls.</string>
+    <string name="tutorial_zoom" formatted="false">Zoom in or out with this button or two fingers.</string>
+    <string name="tutorial_capture" formatted="false">Prepare an image of the view and export it from the preview.</string>
     <string name="tutorial_panels" formatted="false">Collapse or expand the object and compass islands to gain sky space.</string>
     <string name="tutorial_antipodes" formatted="false">Tap to show or hide the opposite direction of selected points: azimuth +180° and elevation with the opposite sign. Hold to deselect all points.</string>
     <string name="tutorial_navigation" formatted="false">Move through the selected objects. The island shows the active object and its trajectory colors.</string>
-    <string name="tutorial_observatory" formatted="false">Tap the object name to open the Observatory: model, scientific details, travel time, key heights and events. Its top bar contains Daily path, Export and Favorites, in that order.</string>
+    <string name="tutorial_observatory" formatted="false">Open object data, paths, key heights, events and personal moments.</string>
     <string name="tutorial_daily" formatted="false">Open the active object’s trajectory, times, elevations and selectable points. Future events can have reminders.</string>
     <string name="tutorial_gps" formatted="false">Open details of your real position, GPS altitude, orientation and weather. These values are independent of the Location.</string>
     <string name="tutorial_points" formatted="false">Select or deselect an orbit point. Aim the reticle at a point to read its object, time, T, azimuth and elevation. The object border follows its trajectory colour; selecting its current position changes the border to blue or cyan.</string>

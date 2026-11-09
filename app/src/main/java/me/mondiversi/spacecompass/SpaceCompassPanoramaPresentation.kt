@@ -54,6 +54,7 @@ internal fun spaceCompassPanoramaPresentation(snapshot: SpaceCompassPanoramaSnap
         SpaceCompassSkyReference.ARCTIC to R.string.sky_reference_arctic,
         SpaceCompassSkyReference.ANTARCTIC to R.string.sky_reference_antarctic).mapValues { resources.getString(it.value) }
     return SpaceCompassPanoramaPresentation(snapshot.copy(objects = objects, formatting = formatting,
+        globe = snapshot.globe?.copy(directionNote=resources.getString(R.string.globe_direction_note)),
         bodyNames = snapshot.objects.map { it.body }.associateWith { resources.getString(it.nameResource) },
         currentPointName = resources.getString(R.string.celestial_point_current),
         referencePointName = resources.getString(R.string.comparison_reference_point),

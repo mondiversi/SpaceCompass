@@ -1,0 +1,6 @@
+<resources>
+    <string name="camera_grid" formatted="false">Gradnetz</string>
+    <string name="camera_grid_on" formatted="false">Gradnetz sichtbar</string>
+    <string name="camera_grid_off" formatted="false">Gradnetz ausgeblendet</string>
+    <string name="tutorial_camera_grid" formatted="false">Blende das Azimut- und Höhengradnetz in der Kameraansicht ein oder aus.</string>
+</resources>

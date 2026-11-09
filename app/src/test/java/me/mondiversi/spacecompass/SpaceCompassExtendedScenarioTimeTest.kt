@@ -9,13 +9,13 @@ class SpaceCompassExtendedScenarioTimeTest {
     private val wall = Instant.parse("2026-11-07T12:00:00Z").toEpochMilli()
     private val start = Instant.parse("2028-01-01T00:30:00Z").toEpochMilli()
 
-    @Test fun maximumSpeedTraversesOneDayInBothDirectionsForEveryResumePolicy() {
-        for (mode in SpaceCompassScenarioResume.entries) for (rate in listOf(-86400, 86400)) {
+    @Test fun maximumSpeedTraversesFifteenDaysInBothDirectionsForEveryResumePolicy() {
+        for (mode in SpaceCompassScenarioResume.entries) for (rate in listOf(-1296000, 1296000)) {
             val clock = SpaceCompassScenarioClock(SpaceCompassScenarioTimeSettings(true, rate, mode),
                 "day", start, wall, 0L) { 0L }
             clock.setActive(true, wall, 0L)
             assertEquals(start + rate * 1000L, clock.at(wall + 1000L, 1000L))
-            // A minute of real time spans 60 days, exceeding a signed Int in milliseconds.
+            // A minute of real time spans 900 days, exceeding a signed Int in milliseconds.
             assertEquals(start + rate * 60_000L, clock.at(wall + 60_000L, 60_000L))
             assertEquals(start + rate * 500L,
                 clock.atWallTime(wall + 500L, wall + 1000L, 1000L))
@@ -46,7 +46,7 @@ class SpaceCompassExtendedScenarioTimeTest {
 
     @Test fun newSpeedsRoundTripAndResumeWithoutAddingTheAgeOfAnArchive() {
         val plan = spaceCompassObserverPlan(45.0, 9.0, 100.0, start, "UTC")!!
-        for (rate in listOf(-86400, -43200, -21600, -7200, -900, -5, 5, 900, 7200, 21600, 43200, 86400)) {
+        for (rate in spaceCompassScenarioRates) {
             val settings = SpaceCompassScenarioTimeSettings(true, rate, SpaceCompassScenarioResume.ALWAYS)
             val archive = SpaceCompassScenarioArchive("Time", plan, settings)
             val decoded = SpaceCompassScenarioArchive.decode(archive.encode())
@@ -61,7 +61,7 @@ class SpaceCompassExtendedScenarioTimeTest {
 
     @Test fun legacyArchivesKeepTheirDirectionWithoutIncreasingSpeed() {
         val plan = spaceCompassObserverPlan(45.0, 9.0, 100.0, start, "UTC")!!
-        val migrated = mapOf(2 to 1, 3 to 1, 6 to 5, 120 to 60, 600 to 300, 1800 to 900)
+        val migrated = mapOf(2 to 1, 3 to 1, 5 to 1, 6 to 1, 120 to 60, 600 to 300, 1800 to 900, 7200 to 3600)
         for ((old, next) in migrated) for (sign in listOf(-1, 1))
         for (enabled in listOf(false, true)) for (mode in SpaceCompassScenarioResume.entries) {
             val settings = SpaceCompassScenarioTimeSettings(enabled, sign * old, mode)
@@ -79,7 +79,7 @@ class SpaceCompassExtendedScenarioTimeTest {
     }
 
     @Test fun maximumSpeedClampsAtBothSupportedTimelineBoundaries() {
-        for ((rate, expected) in listOf(-86400 to "1900-01-01T00:00:00Z", 86400 to "2100-12-31T23:59:59.999Z")) {
+        for ((rate, expected) in listOf(-1296000 to "1900-01-01T00:00:00Z", 1296000 to "2100-12-31T23:59:59.999Z")) {
             val clock = SpaceCompassScenarioClock(SpaceCompassScenarioTimeSettings(true, rate,
                 SpaceCompassScenarioResume.ALWAYS), "limit", start, wall, 0L) { 0L }
             assertEquals(Instant.parse(expected).toEpochMilli(), clock.at(Long.MAX_VALUE / 2, 0L))

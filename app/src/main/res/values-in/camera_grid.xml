@@ -1,0 +1,6 @@
+<resources>
+    <string name="camera_grid" formatted="false">Kisi sudut</string>
+    <string name="camera_grid_on" formatted="false">Kisi sudut terlihat</string>
+    <string name="camera_grid_off" formatted="false">Kisi sudut tersembunyi</string>
+    <string name="tutorial_camera_grid" formatted="false">Tampilkan atau sembunyikan kisi azimut dan ketinggian di tampilan kamera.</string>
+</resources>

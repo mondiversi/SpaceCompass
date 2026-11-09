@@ -1,9 +1,9 @@
 <resources>
     <string name="info_news_title">हाल के बदलाव · %1$s</string>
-    <string name="info_news_star_sky" formatted="false">सिम्युलेटेड आकाश और कैमरे के लिए ज़ूम का अधिक स्पष्ट विवरण।</string>
-    <string name="info_news_texture_downloads" formatted="false">दोनों दृश्य मोड में दो उंगलियों से ज़ूम समायोजित करें।</string>
-    <string name="info_news_weather" formatted="false">कैमरा ट्यूटोरियल में 0°/90° बटन दिखाई देता रहता है और उसका विवरण उपलब्ध रहता है।</string>
-    <string name="info_news_viewer_zoom" formatted="false">क्षैतिज मोड में ट्यूटोरियल के विवरण अक्ष बटन को नहीं ढकते।</string>
-    <string name="info_news_settings" formatted="false">क्षैतिज मोड में पैनल दिखाई देने पर 0°/90° तीर के पास और पैनल बंद होने पर मेनू के नीचे रहता है।</string>
-    <string name="info_news_catalog" formatted="false">ट्यूटोरियल और नई सुविधाओं का विवरण सभी बीस भाषाओं में अपडेट किया गया है।</string>
+    <string name="info_news_star_sky" formatted="false">पथों, मुख्य बिंदुओं और पिंडों की वर्तमान छवियों के साथ इंटरैक्टिव ग्लोब देखें।</string>
+    <string name="info_news_texture_downloads" formatted="false">पैनोरमा, कैमरा और ग्लोब के बीच बदलें; ज़ूम, घुमाव और लेबल समायोजित करें।</string>
+    <string name="info_news_weather" formatted="false">दिन या रात की तारों वाली पृष्ठभूमि और चुने हुए लेबल के साथ ग्लोब की छवि बनाएँ।</string>
+    <string name="info_news_viewer_zoom" formatted="false">लाइव कैमरा दृश्य में कोणीय ग्रिड दिखाएँ या छिपाएँ।</string>
+    <string name="info_news_settings" formatted="false">समय को प्रति सेकंड पंद्रह दिन तक आगे या पीछे चलाएँ।</string>
+    <string name="info_news_catalog" formatted="false">अपडेट किया गया ट्यूटोरियल, स्पष्ट नियंत्रण, अधिक चमकीले महासागर और विस्तृत गैलरी।</string>
 </resources>

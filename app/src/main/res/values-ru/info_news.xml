@@ -1,9 +1,9 @@
 <resources>
     <string name="info_news_title">Последние новости · %1$s</string>
-    <string name="info_news_star_sky" formatted="false">Более понятное описание масштаба для моделируемого неба и камеры.</string>
-    <string name="info_news_texture_downloads" formatted="false">Регулируйте масштаб двумя пальцами в обоих режимах просмотра.</string>
-    <string name="info_news_weather" formatted="false">Кнопка 0°/90° остаётся видимой, а её описание доступно в обучении камере.</string>
-    <string name="info_news_viewer_zoom" formatted="false">В горизонтальном режиме пояснения обучения не закрывают кнопку оси.</string>
-    <string name="info_news_settings" formatted="false">В горизонтальном режиме 0°/90° находится рядом со стрелкой при видимых панелях и под Меню при свёрнутых панелях.</string>
-    <string name="info_news_catalog" formatted="false">Обучение и новости обновлены на всех двадцати языках.</string>
+    <string name="info_news_star_sky" formatted="false">Исследуйте интерактивный глобус с траекториями, ключевыми точками и текущими изображениями объектов.</string>
+    <string name="info_news_texture_downloads" formatted="false">Переключайте Панораму, Камеру и Глобус; настраивайте масштаб, вращение и подписи.</string>
+    <string name="info_news_weather" formatted="false">Создавайте снимки глобуса со звёздным дневным или ночным фоном и выбранными подписями.</string>
+    <string name="info_news_viewer_zoom" formatted="false">Показывайте или скрывайте угловую сетку в режиме камеры.</string>
+    <string name="info_news_settings" formatted="false">Перемещайте время вперёд или назад до пятнадцати дней за секунду.</string>
+    <string name="info_news_catalog" formatted="false">Обновлённое обучение, более понятные кнопки, светлые океаны и расширенная галерея.</string>
 </resources>

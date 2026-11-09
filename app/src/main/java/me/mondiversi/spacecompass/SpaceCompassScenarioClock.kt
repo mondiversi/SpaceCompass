@@ -5,9 +5,9 @@ internal enum class SpaceCompassScenarioResume {
     RESTART, ACTIVE, ALWAYS;
     companion object { val DEFAULT = RESTART }
 }
-private val spaceCompassScenarioRateMagnitudes = listOf(1, 5, 10, 30, 60, 300, 900, 3600, 7200, 21600, 43200, 86400)
+private val spaceCompassScenarioRateMagnitudes = listOf(1, 10, 30, 60, 300, 900, 3600, 21600, 43200, 86400, 1296000)
 // Accept older saved settings and archives without silently increasing their speed.
-private val spaceCompassLegacyScenarioRates = setOf(2, 3, 6, 120, 600, 1800)
+private val spaceCompassLegacyScenarioRates = setOf(2, 3, 5, 6, 120, 600, 1800, 7200)
     .flatMap { listOf(it, -it) }.toSet()
 internal fun spaceCompassSupportedScenarioRate(rate: Int): Boolean =
     rate in spaceCompassScenarioRates || rate in spaceCompassLegacyScenarioRates

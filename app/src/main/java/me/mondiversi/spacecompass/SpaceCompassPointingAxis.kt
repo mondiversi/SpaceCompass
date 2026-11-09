@@ -1,7 +1,7 @@
 package me.mondiversi.spacecompass
 
 internal const val SPACE_COMPASS_POINTING_TOP_EDGE_KEY = "sky_pointing_top_edge"
-internal const val SPACE_COMPASS_POINTING_TOP_EDGE_DEFAULT = true
+internal const val SPACE_COMPASS_POINTING_TOP_EDGE_DEFAULT = false
 
 /** A virtual view along the physical top edge; camera calibration always keeps the optical axis. */
 internal fun spaceCompassSunViewOrientation(orientation: SpaceCompassSunOrientation?, topEdge: Boolean,

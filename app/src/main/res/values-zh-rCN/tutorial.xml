@@ -8,21 +8,21 @@
     <string name="tutorial_navigation_title" formatted="false">选中天体</string>
     <string name="tutorial_points_title" formatted="false">轨道点</string>
     <string name="tutorial_info" formatted="false">打开应用信息、更新内容和来源说明。</string>
-    <string name="tutorial_menu" formatted="false">打开常规、语言、单位、教程及信息与致谢。</string>
+    <string name="tutorial_menu" formatted="false">打开设置、已保存场景和教程。</string>
     <string name="tutorial_objects" formatted="false">选择显示的天体。可以搜索、筛选和保存收藏。</string>
     <string name="tutorial_location" formatted="false">自定义位置、海拔、时区、日期、时间和时间流速。</string>
     <string name="tutorial_guides" formatted="false">显示天球参考圈、两极、天顶和天底。这些是天空投影，不是地面路线。</string>
     <string name="tutorial_forward" formatted="false">0–24显示从午夜到次日午夜的整个日历日。+24h显示从当前显示时刻起的24小时，也适用于模拟时刻。每日轨迹、拍摄和导出使用相同时间范围。</string>
-    <string name="tutorial_camera" formatted="false">切换模拟天空和后置相机。相机使用真实拍摄轴。 在这里无需使用相机即可了解缩放和透明度操作。再次轻触可返回普通视图。</string>
+    <string name="tutorial_camera" formatted="false">选择全景、相机或地球仪。点按此处了解各模式的操作。</string>
     <string name="tutorial_weather" formatted="false">显示或隐藏模拟天空和全景中的天气效果。相机模式下不可用。</string>
     <string name="tutorial_axis" formatted="false">选择相机轴（90°）或手机长轴（0°）。相机始终使用自身的轴。</string>
     <string name="tutorial_transparency" formatted="false">让天体图像更透明，以便与相机画面比较。拍摄会保留此选择。</string>
-    <string name="tutorial_zoom" formatted="false">模拟天空可选择0.5×至1×的缩放比例；相机使用镜头支持的变焦。两种模式都可以用双指放大或缩小。</string>
-    <string name="tutorial_capture" formatted="false">生成全天全景或带有天文叠加层的相机照片。从预览中导出。 在预览中双击图像可显示或隐藏操作按钮。</string>
+    <string name="tutorial_zoom" formatted="false">通过按钮或双指放大或缩小。</string>
+    <string name="tutorial_capture" formatted="false">生成当前视图的图像，并从预览中导出。</string>
     <string name="tutorial_panels" formatted="false">收起或展开天体与指南针面板，为天空留出更多空间。</string>
     <string name="tutorial_antipodes" formatted="false">点击可显示或隐藏已选点的相反方向：方位角+180°，高度角符号相反。长按可取消所有点的选择。</string>
     <string name="tutorial_navigation" formatted="false">浏览已选天体。面板显示当前天体及其轨迹颜色。</string>
-    <string name="tutorial_observatory" formatted="false">点击天体名称打开观测台，查看模型、科学数据、旅行时间、关键高度和事件。顶部工具栏依次为“每日轨迹”“导出”和“收藏”。</string>
+    <string name="tutorial_observatory" formatted="false">打开天体数据、轨迹、关键高度、事件和个人时刻。</string>
     <string name="tutorial_daily" formatted="false">查看轨迹、时刻、高度及可选轨道点。未来事件可以设置提醒。</string>
     <string name="tutorial_gps" formatted="false">查看真实位置、GPS海拔、朝向和天气，与Location设置无关。</string>
     <string name="tutorial_points" formatted="false">选择或取消轨道点。将准星对准它可查看天体、时间、T、方位角和高度。 天体边框采用轨迹的颜色；选择当前位置时，边框会变为蓝色或青色。</string>

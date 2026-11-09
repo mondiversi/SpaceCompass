@@ -1,0 +1,6 @@
+<resources>
+    <string name="camera_grid" formatted="false">Grille angulaire</string>
+    <string name="camera_grid_on" formatted="false">Grille angulaire visible</string>
+    <string name="camera_grid_off" formatted="false">Grille angulaire masquée</string>
+    <string name="tutorial_camera_grid" formatted="false">Affiche ou masque la grille d’azimut et de hauteur dans la vue caméra.</string>
+</resources>

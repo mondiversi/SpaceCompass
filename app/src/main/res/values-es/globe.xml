@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="view_mode_choose" formatted="false">Visualización</string>
+    <string name="view_mode_camera" formatted="false">Cámara</string>
+    <string name="view_mode_globe" formatted="false">Globo terráqueo</string>
+    <string name="globe_direction_note" formatted="false">Satélites: órbitas terrestres · Otros objetos: direcciones aparentes</string>
+    <string name="globe_rotation_axis" formatted="false">Rotación sobre el eje terrestre</string>
+    <string name="globe_rotation_free" formatted="false">Rotación libre</string>
+    <string name="globe_labels_selected_object" formatted="false">Objeto seleccionado</string>
+    <string name="globe_labels_all_objects" formatted="false">Todos los objetos</string>
+</resources>

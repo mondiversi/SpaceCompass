@@ -1,9 +1,9 @@
 <resources>
     <string name="info_news_title">Laatste nieuws · %1$s</string>
-    <string name="info_news_star_sky" formatted="false">Duidelijkere zoomuitleg voor de gesimuleerde hemel en de camera.</string>
-    <string name="info_news_texture_downloads" formatted="false">Pas de zoom in beide weergavemodi met twee vingers aan.</string>
-    <string name="info_news_weather" formatted="false">De knop 0°/90° blijft zichtbaar en de uitleg blijft beschikbaar in de camerahandleiding.</string>
-    <string name="info_news_viewer_zoom" formatted="false">In liggende stand bedekt de uitleg de asknop niet.</string>
-    <string name="info_news_settings" formatted="false">In liggende stand staat 0°/90° naast de pijl bij zichtbare panelen en onder Menu bij ingeklapte panelen.</string>
-    <string name="info_news_catalog" formatted="false">Handleiding en versienieuws bijgewerkt in alle twintig talen.</string>
+    <string name="info_news_star_sky" formatted="false">Verken de interactieve wereldbol met banen, belangrijke punten en actuele objectbeelden.</string>
+    <string name="info_news_texture_downloads" formatted="false">Wissel tussen Panorama, Camera en Wereldbol; pas zoom, rotatie en labels aan.</string>
+    <string name="info_news_weather" formatted="false">Leg de wereldbol vast met een sterrenachtergrond voor dag en nacht en instelbare labels.</string>
+    <string name="info_news_viewer_zoom" formatted="false">Toon of verberg het hoekraster in de livecamera.</string>
+    <string name="info_news_settings" formatted="false">Laat de tijd maximaal vijftien dagen per seconde vooruit of achteruit lopen.</string>
+    <string name="info_news_catalog" formatted="false">Bijgewerkte handleiding, duidelijkere bediening, helderdere oceanen en een uitgebreide galerij.</string>
 </resources>

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="view_mode_choose" formatted="false">दृश्य मोड</string>
+    <string name="view_mode_camera" formatted="false">कैमरा</string>
+    <string name="view_mode_globe" formatted="false">पृथ्वी ग्लोब</string>
+    <string name="globe_direction_note" formatted="false">उपग्रह: पृथ्वी की कक्षाएँ · अन्य पिंड: आभासी दिशाएँ</string>
+    <string name="globe_rotation_axis" formatted="false">पृथ्वी की धुरी पर घुमाव</string>
+    <string name="globe_rotation_free" formatted="false">स्वतंत्र घुमाव</string>
+    <string name="globe_labels_selected_object" formatted="false">चयनित पिंड</string>
+    <string name="globe_labels_all_objects" formatted="false">सभी पिंड</string>
+</resources>

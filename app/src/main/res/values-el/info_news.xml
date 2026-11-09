@@ -1,9 +1,9 @@
 <resources>
     <string name="info_news_title">Τελευταία νέα · %1$s</string>
-    <string name="info_news_star_sky" formatted="false">Πιο σαφείς οδηγίες ζουμ για τον προσομοιωμένο ουρανό και την κάμερα.</string>
-    <string name="info_news_texture_downloads" formatted="false">Ρυθμίστε το ζουμ με δύο δάχτυλα και στις δύο λειτουργίες προβολής.</string>
-    <string name="info_news_weather" formatted="false">Το κουμπί 0°/90° παραμένει ορατό και η εξήγησή του είναι διαθέσιμη στον οδηγό της κάμερας.</string>
-    <string name="info_news_viewer_zoom" formatted="false">Στην οριζόντια προβολή οι εξηγήσεις του οδηγού δεν καλύπτουν το κουμπί άξονα.</string>
-    <string name="info_news_settings" formatted="false">Στην οριζόντια προβολή το 0°/90° βρίσκεται δίπλα στο βέλος όταν τα πλαίσια είναι ορατά και κάτω από το Μενού όταν είναι κλειστά.</string>
-    <string name="info_news_catalog" formatted="false">Ο οδηγός και τα νέα ενημερώθηκαν και στις είκοσι γλώσσες.</string>
+    <string name="info_news_star_sky" formatted="false">Εξερευνήστε τη διαδραστική υδρόγειο με τροχιές, βασικά σημεία και τρέχουσες εικόνες αντικειμένων.</string>
+    <string name="info_news_texture_downloads" formatted="false">Εναλλάξτε Πανόραμα, Κάμερα και Υδρόγειο· ρυθμίστε ζουμ, περιστροφή και ετικέτες.</string>
+    <string name="info_news_weather" formatted="false">Αποτυπώστε την υδρόγειο με έναστρο φόντο ημέρας ή νύχτας και επιλεγμένες ετικέτες.</string>
+    <string name="info_news_viewer_zoom" formatted="false">Εμφανίστε ή κρύψτε το γωνιακό πλέγμα στη ζωντανή κάμερα.</string>
+    <string name="info_news_settings" formatted="false">Μετακινήστε τον χρόνο εμπρός ή πίσω έως δεκαπέντε ημέρες ανά δευτερόλεπτο.</string>
+    <string name="info_news_catalog" formatted="false">Ενημερωμένος οδηγός, σαφέστερα χειριστήρια, φωτεινότεροι ωκεανοί και διευρυμένη συλλογή εικόνων.</string>
 </resources>

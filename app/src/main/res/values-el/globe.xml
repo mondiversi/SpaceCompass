@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="view_mode_choose" formatted="false">Προβολή</string>
+    <string name="view_mode_camera" formatted="false">Κάμερα</string>
+    <string name="view_mode_globe" formatted="false">Υδρόγειος</string>
+    <string name="globe_direction_note" formatted="false">Δορυφόροι: γήινες τροχιές · Άλλα αντικείμενα: φαινόμενες διευθύνσεις</string>
+    <string name="globe_rotation_axis" formatted="false">Περιστροφή γύρω από τον άξονα της Γης</string>
+    <string name="globe_rotation_free" formatted="false">Ελεύθερη περιστροφή</string>
+    <string name="globe_labels_selected_object" formatted="false">Επιλεγμένο αντικείμενο</string>
+    <string name="globe_labels_all_objects" formatted="false">Όλα τα αντικείμενα</string>
+</resources>

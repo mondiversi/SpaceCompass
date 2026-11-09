@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="view_mode_choose" formatted="false">显示模式</string>
+    <string name="view_mode_camera" formatted="false">相机</string>
+    <string name="view_mode_globe" formatted="false">地球仪</string>
+    <string name="globe_direction_note" formatted="false">卫星：地球轨道 · 其他天体：视方向</string>
+    <string name="globe_rotation_axis" formatted="false">绕地轴旋转</string>
+    <string name="globe_rotation_free" formatted="false">自由旋转</string>
+    <string name="globe_labels_selected_object" formatted="false">所选天体</string>
+    <string name="globe_labels_all_objects" formatted="false">所有天体</string>
+</resources>

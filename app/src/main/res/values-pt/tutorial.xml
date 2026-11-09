@@ -8,21 +8,21 @@
     <string name="tutorial_navigation_title" formatted="false">Objeto selecionado</string>
     <string name="tutorial_points_title" formatted="false">Pontos orbitais</string>
     <string name="tutorial_info" formatted="false">Abra informações, novidades e créditos das fontes.</string>
-    <string name="tutorial_menu" formatted="false">Abra Geral, Idioma, Unidades, Tutorial e Informações e créditos.</string>
+    <string name="tutorial_menu" formatted="false">Abre definições, cenas guardadas e o tutorial.</string>
     <string name="tutorial_objects" formatted="false">Escolha os objetos visíveis. Pesquise, filtre e guarde favoritos.</string>
     <string name="tutorial_location" formatted="false">Personalize posição, altitude, fuso horário, data, hora e velocidade do tempo.</string>
     <string name="tutorial_guides" formatted="false">Mostre círculos celestes, polos, zénite e nadir. São projeções no céu, não percursos no solo.</string>
     <string name="tutorial_forward" formatted="false">0–24 mostra o dia inteiro, de meia-noite a meia-noite. +24h mostra as 24 horas após o momento apresentado, mesmo que simulado. Trajetórias, capturas e exportações usam o mesmo intervalo.</string>
-    <string name="tutorial_camera" formatted="false">Alterne entre o céu simulado e a câmara traseira com o seu eixo real. Aqui pode explorar Zoom e Transparência sem usar a câmara. Toque novamente para voltar à vista normal.</string>
+    <string name="tutorial_camera" formatted="false">Escolhe Panorama, Câmara ou Globo. Toca aqui para explorar os comandos.</string>
     <string name="tutorial_weather" formatted="false">Mostre ou oculte o tempo atmosférico no céu simulado e panoramas. Indisponível com a câmara.</string>
     <string name="tutorial_axis" formatted="false">Escolha o eixo da câmara (90°) ou o comprimento do telefone (0°). A câmara usa sempre o seu próprio eixo.</string>
     <string name="tutorial_transparency" formatted="false">Torne as imagens dos objetos translúcidas para comparar com a câmara. A captura mantém a escolha.</string>
-    <string name="tutorial_zoom" formatted="false">No céu simulado, escolha o zoom de 0,5× a 1×; com a câmera, use o zoom disponível. Nos dois modos, você pode ampliar ou reduzir com dois dedos.</string>
-    <string name="tutorial_capture" formatted="false">Prepare um panorama do céu ou uma foto com sobreposições astronómicas. Exporte a partir da pré-visualização. Na pré-visualização, toque duas vezes na imagem para mostrar ou ocultar os controlos.</string>
+    <string name="tutorial_zoom" formatted="false">Amplia ou reduz com o botão ou com dois dedos.</string>
+    <string name="tutorial_capture" formatted="false">Prepara uma imagem da vista e exporta-a a partir da pré-visualização.</string>
     <string name="tutorial_panels" formatted="false">Recolha ou expanda os painéis do objeto e da bússola para libertar espaço.</string>
     <string name="tutorial_antipodes" formatted="false">Toca para mostrar ou ocultar a direção oposta dos pontos selecionados: azimute +180° e elevação de sinal contrário. Mantém premido para desmarcar todos os pontos.</string>
     <string name="tutorial_navigation" formatted="false">Percorra os objetos selecionados. O painel mostra o objeto ativo e as cores da trajetória.</string>
-    <string name="tutorial_observatory" formatted="false">Toca no nome do objeto para abrir o Observatório: modelo, dados científicos, tempo de viagem, alturas e eventos principais. Na barra superior aparecem Percurso diário, Exportar e Favoritos, por esta ordem.</string>
+    <string name="tutorial_observatory" formatted="false">Abre dados, trajetórias, alturas, eventos e momentos pessoais do objeto.</string>
     <string name="tutorial_daily" formatted="false">Consulte trajetória, horários, elevações e pontos selecionáveis. Eventos futuros podem ter alertas.</string>
     <string name="tutorial_gps" formatted="false">Consulte posição real, altitude GPS, orientação e meteorologia, independentemente da Location.</string>
     <string name="tutorial_points" formatted="false">Selecione um ponto. Aponte para ler objeto, hora, T, azimute e elevação. O contorno do objeto segue a cor da sua trajetória; fica azul ou azul-claro ao selecionar a posição atual.</string>

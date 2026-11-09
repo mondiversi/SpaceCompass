@@ -70,6 +70,26 @@ internal fun SpaceCompassSettingsMenuIcon(
                 drawPath(aperture, tint, style = Stroke(strokeWidth, join = StrokeJoin.Round))
                 drawCircle(tint, outerRadius, style = Stroke(strokeWidth))
             }
+            "panorama-image" -> {
+                // A curved landscape frame distinguishes the all-sky capture from the camera shutter.
+                val frame = Path().apply {
+                    moveTo(size.width * .10f, size.height * .25f)
+                    quadraticTo(center.x, size.height * .10f, size.width * .90f, size.height * .25f)
+                    lineTo(size.width * .90f, size.height * .75f)
+                    quadraticTo(center.x, size.height * .90f, size.width * .10f, size.height * .75f)
+                    close()
+                }
+                drawPath(frame, tint, style = Stroke(strokeWidth, join = StrokeJoin.Round))
+                val hills = Path().apply {
+                    moveTo(size.width * .10f, size.height * .65f)
+                    lineTo(size.width * .30f, size.height * .40f)
+                    lineTo(size.width * .55f, size.height * .65f)
+                    lineTo(size.width * .70f, size.height * .50f)
+                    lineTo(size.width * .90f, size.height * .70f)
+                }
+                drawPath(hills, tint, style = Stroke(strokeWidth, cap = StrokeCap.Round, join = StrokeJoin.Round))
+                drawCircle(tint, size.minDimension * .055f, Offset(size.width * .65f, size.height * .33f))
+            }
             "panorama" -> {
                 // A central crest and low endpoints suggest an unrolled orbital arc.
                 // A lighter dashed horizon separates the above/below portions of the track.

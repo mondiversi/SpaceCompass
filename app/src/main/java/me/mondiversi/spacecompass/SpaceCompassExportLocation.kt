@@ -22,6 +22,7 @@ internal fun spaceCompassSnapshotForDisclosure(snapshot: SpaceCompassPanoramaSna
             snapshot.bodyNames[item.body] ?: item.name.substringBefore(" · "), snapshot.formatting)) } ?: item
     }
     return snapshot.copy(displayZoneId=zoneId, positionHidden=hidden, objects=objects,
+        globeLocationVisible = position == SpaceCompassPanoramaPosition.COMPLETE,
         currentTime=formatSpaceCompassPanoramaExportTime(snapshot.timeMs,zone,snapshot.formatting),
         markerTimes=times.associateWith { formatSpaceCompassPanoramaMarkerTime(it,snapshot.timeMs,zone,snapshot.formatting) })
 }

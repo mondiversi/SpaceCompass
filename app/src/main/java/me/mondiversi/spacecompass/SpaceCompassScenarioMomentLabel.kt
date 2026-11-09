@@ -32,6 +32,8 @@ import java.time.ZoneId
 import java.util.TimeZone
 
 /** Paused time is always explicit; moving time is labelled whenever its civil day differs from today. */
+internal val SpaceCompassMainCaptionControlGap = 6.dp
+
 internal fun spaceCompassShowScenarioMoment(plan: SpaceCompassObserverPlan?, scenarioMs: Long,
     realMs: Long, zone: ZoneId, paused: Boolean = false): Boolean = paused ||
     plan?.scenarioClock?.settings?.multiplier == 0 ||

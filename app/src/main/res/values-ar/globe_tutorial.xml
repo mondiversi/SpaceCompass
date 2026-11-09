@@ -1,0 +1,4 @@
+<resources>
+    <string name="tutorial_globe_labels" formatted="false">اختر تسميات الأجرام والنقاط التي تريد إظهارها.</string>
+    <string name="tutorial_globe_rotation" formatted="false">بدّل بين الدوران حول محور الأرض والدوران الحر.</string>
+</resources>

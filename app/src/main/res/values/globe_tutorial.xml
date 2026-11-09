@@ -1,0 +1,4 @@
+<resources>
+    <string name="tutorial_globe_labels" formatted="false">Choose which object and point labels to show.</string>
+    <string name="tutorial_globe_rotation" formatted="false">Switch between rotation around the Earth’s axis and free rotation.</string>
+</resources>

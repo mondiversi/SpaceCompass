@@ -12,6 +12,23 @@ import org.junit.Assert.*
 import org.junit.Test
 
 class SpaceCompassSceneArchiveTest {
+    @Test fun fiveGlobeLabelScopesRoundTripAlongsideLegacySwitches() {
+        for(mode in SpaceCompassPanoramaLabelMode.entries) {
+            val settings=SpaceCompassSceneDisplay(true,false,true,false,true,
+                mode!=SpaceCompassPanoramaLabelMode.NONE,true,mode.key)
+            val original=scene().copy(display=settings)
+            assertEquals(original,SpaceCompassSceneArchive.decode(original.encode()))
+            val store=Store();store.preferences.edit().putSpaceCompassSceneDisplay(settings).apply()
+            assertEquals(settings,readSpaceCompassSceneDisplay(store.preferences))
+            store.preferences.edit().putSpaceCompassSceneDisplay(display).apply()
+            assertFalse(store.preferences.contains(SPACE_COMPASS_GLOBE_LABEL_MODE_KEY))
+            assertEquals(display,readSpaceCompassSceneDisplay(store.preferences))
+        }
+        assertThrows(IllegalArgumentException::class.java) {
+            SpaceCompassSceneArchive.decode(scene().encode()+"globeLabelMode=unknown\n")
+        }
+    }
+
     private val now=Instant.parse("2027-06-21T12:00:00Z").toEpochMilli()
     private val zone=ZoneId.of("Atlantic/Canary")
     private val sun=SpaceCompassCelestialBody.SUN
@@ -41,6 +58,17 @@ class SpaceCompassSceneArchiveTest {
             val value=scene(include).copy(display=d)
             assertEquals(value,SpaceCompassSceneArchive.decode(value.encode()))
         }
+    }
+    @Test fun globeModeRoundTripsWithoutChangingLegacySceneFiles() {
+        val old=scene();assertFalse(old.encode().contains("globe="))
+        assertFalse(requireNotNull(SpaceCompassSceneArchive.decode(old.encode()).display).globe)
+        val globe=old.copy(display=display.copy(globe=true))
+        assertEquals(globe,SpaceCompassSceneArchive.decode(globe.encode()))
+        for(labels in listOf(false,true))for(locked in listOf(false,true)) {
+            val configured=globe.copy(display=requireNotNull(globe.display).copy(globeLabels=labels,globeAxisLocked=locked))
+            assertEquals(configured,SpaceCompassSceneArchive.decode(configured.encode()))
+        }
+        assertThrows(IllegalArgumentException::class.java) { SpaceCompassSceneArchive.decode(old.encode()+"globe=invalid\n") }
     }
     @Test fun locationOnlyStripsAllCelestialExtensionsFromLegacyMixedDocuments() {
         val legacy=SpaceCompassScenarioArchive.decode(contents().encode())
@@ -267,6 +295,7 @@ class SpaceCompassSceneArchiveTest {
             } } as SharedPreferences.Editor
         val preferences=Proxy.newProxyInstance(SharedPreferences::class.java.classLoader,arrayOf(SharedPreferences::class.java)) { _,method,args -> when(method.name) {
             "getString","getStringSet","getBoolean","getInt" -> values[args!![0] as String] ?: args[1]
+            "contains" -> values.containsKey(args!![0] as String)
             "edit" -> editor
             else -> error(method.name)
         } } as SharedPreferences

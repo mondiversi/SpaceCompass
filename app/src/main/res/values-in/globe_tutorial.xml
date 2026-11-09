@@ -1,0 +1,4 @@
+<resources>
+    <string name="tutorial_globe_labels" formatted="false">Pilih label objek dan titik yang ingin ditampilkan.</string>
+    <string name="tutorial_globe_rotation" formatted="false">Beralih antara putaran pada sumbu Bumi dan putaran bebas.</string>
+</resources>

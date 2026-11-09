@@ -1,0 +1,6 @@
+<resources>
+    <string name="camera_grid" formatted="false">الشبكة الزاوية</string>
+    <string name="camera_grid_on" formatted="false">الشبكة الزاوية ظاهرة</string>
+    <string name="camera_grid_off" formatted="false">الشبكة الزاوية مخفية</string>
+    <string name="tutorial_camera_grid" formatted="false">إظهار أو إخفاء شبكة السمت والارتفاع في عرض الكاميرا.</string>
+</resources>

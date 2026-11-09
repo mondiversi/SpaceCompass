@@ -1,6 +1,7 @@
 package me.mondiversi.spacecompass
 
 import kotlin.math.*
+import java.util.concurrent.ConcurrentHashMap
 
 internal enum class SpaceCompassCameraGridAxis { AZIMUTH, ELEVATION }
 internal enum class SpaceCompassCameraGridEdge { TOP, BOTTOM, LEFT, RIGHT }
@@ -43,16 +44,30 @@ internal fun spaceCompassCameraGridClip(segment: SpaceCompassSunPathSegment,
     return segment.copy(start = point(low), end = point(high))
 }
 
-/** Curves use the same shutter-time projection as objects/orbits; back-facing rays never create ticks. */
+private data class SpaceCompassCameraGridCurve(val axis: SpaceCompassCameraGridAxis,val degrees: Double,
+    val rays: List<SpaceCompassSunVector>)
+private val cameraGridCurves=ConcurrentHashMap<Int,List<SpaceCompassCameraGridCurve>>()
+
+/** Immutable directions are shared by live frames and captures; no repeated trigonometry per sensor sample. */
+private fun cameraGridCurves(step: Int)=cameraGridCurves.getOrPut(step) {
+    fun direction(az: Double,el: Double): SpaceCompassSunVector {
+        val a=Math.toRadians(az);val e=Math.toRadians(el)
+        return SpaceCompassSunVector(cos(e)*sin(a),cos(e)*cos(a),sin(e))
+    }
+    buildList {
+        for(az in 0 until 360 step step) add(SpaceCompassCameraGridCurve(SpaceCompassCameraGridAxis.AZIMUTH,
+            az.toDouble(),(-90..90 step 2).map { direction(az.toDouble(),it.toDouble()) }))
+        for(el in -90..90 step step) if(abs(el)<90) add(SpaceCompassCameraGridCurve(SpaceCompassCameraGridAxis.ELEVATION,
+            el.toDouble(),(0..360 step 2).map { direction(it.toDouble(),el.toDouble()) }))
+    }
+}
+
+/** Live and shutter-time curves share a projection; live drawing can skip photographic border labels. */
 internal fun spaceCompassCameraAngularGrid(orientation: SpaceCompassSunOrientation,
     perspective: SpaceCompassPerspective, width: Double, height: Double,
-    frame: SpaceCompassSunSceneFrame, step: Int = 10): SpaceCompassCameraAngularGrid {
+    frame: SpaceCompassSunSceneFrame, step: Int = 10, includeBorderTicks: Boolean = true): SpaceCompassCameraAngularGrid {
     require(width > 0 && height > 0 && frame.width > 0 && frame.height > 0 && step in listOf(5, 10, 15, 30))
     val lines = mutableListOf<SpaceCompassCameraGridLine>()
-    fun direction(az: Double, el: Double): SpaceCompassSunVector {
-        val a = Math.toRadians(az); val e = Math.toRadians(el)
-        return SpaceCompassSunVector(cos(e) * sin(a), cos(e) * cos(a), sin(e))
-    }
     fun line(axis: SpaceCompassCameraGridAxis, degrees: Double, rays: List<SpaceCompassSunVector>) {
         val segments = rays.zipWithNext().mapNotNull { (a, b) ->
             projectSpaceCompassSunPathSegment(a, b, orientation, width, height, (a.up + b.up) < 0, perspective)
@@ -62,9 +77,7 @@ internal fun spaceCompassCameraAngularGrid(orientation: SpaceCompassSunOrientati
         lines += SpaceCompassCameraGridLine(axis, degrees, segments)
 
     }
-    for (az in 0 until 360 step step) line(SpaceCompassCameraGridAxis.AZIMUTH, az.toDouble(),
-        (-90..90 step 2).map { direction(az.toDouble(), it.toDouble()) })
-    for (el in -90..90 step step) if (abs(el) < 90) line(SpaceCompassCameraGridAxis.ELEVATION, el.toDouble(),
-        (0..360 step 2).map { direction(it.toDouble(), el.toDouble()) })
-    return SpaceCompassCameraAngularGrid(lines, spaceCompassCameraBorderTicks(orientation, perspective, width, height, frame))
+    cameraGridCurves(step).forEach { line(it.axis,it.degrees,it.rays) }
+    return SpaceCompassCameraAngularGrid(lines,if(includeBorderTicks)
+        spaceCompassCameraBorderTicks(orientation,perspective,width,height,frame) else emptyList())
 }

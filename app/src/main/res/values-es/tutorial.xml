@@ -8,21 +8,21 @@
     <string name="tutorial_navigation_title" formatted="false">Objeto seleccionado</string>
     <string name="tutorial_points_title" formatted="false">Puntos orbitales</string>
     <string name="tutorial_info" formatted="false">Abre la información, las novedades y los créditos.</string>
-    <string name="tutorial_menu" formatted="false">Abre General, Idioma, Unidades, Tutorial e Información y créditos.</string>
+    <string name="tutorial_menu" formatted="false">Abre ajustes, escenas guardadas y el tutorial.</string>
     <string name="tutorial_objects" formatted="false">Elige los objetos visibles. Busca, filtra y guarda favoritos en el catálogo.</string>
     <string name="tutorial_location" formatted="false">Personaliza posición, altitud, zona horaria, fecha, hora y velocidad del tiempo.</string>
     <string name="tutorial_guides" formatted="false">Muestra círculos celestes, polos, cenit y nadir. Son proyecciones en el cielo, no rutas terrestres.</string>
     <string name="tutorial_forward" formatted="false">0–24 muestra el día completo, de medianoche a medianoche. +24h muestra las 24 horas posteriores al momento mostrado, aunque sea simulado. Trayectorias, capturas y exportaciones usan el mismo intervalo.</string>
-    <string name="tutorial_camera" formatted="false">Alterna entre el cielo simulado y la cámara trasera, que usa su eje real. Aquí puedes explorar Zoom y Transparencia sin usar la cámara. Toca de nuevo para volver a la vista normal.</string>
+    <string name="tutorial_camera" formatted="false">Elige Panorámica, Cámara o Globo. Toca aquí para explorar sus controles.</string>
     <string name="tutorial_weather" formatted="false">Muestra u oculta el tiempo atmosférico en el cielo simulado y las panorámicas. No está disponible con la cámara.</string>
     <string name="tutorial_axis" formatted="false">Elige el eje de la cámara (90°) o la longitud del teléfono (0°). La cámara siempre usa su propio eje.</string>
     <string name="tutorial_transparency" formatted="false">Haz translúcidas las imágenes de los objetos para compararlas con la cámara. La captura conserva esta opción.</string>
-    <string name="tutorial_zoom" formatted="false">En el cielo simulado, elige el zoom entre 0,5× y 1×; con la cámara, usa el zoom disponible. En ambos modos puedes ampliar o reducir con dos dedos.</string>
-    <string name="tutorial_capture" formatted="false">Prepara una panorámica del cielo o una foto con superposiciones astronómicas. Exporta desde la vista previa. En la vista previa, toca dos veces la imagen para mostrar u ocultar los controles.</string>
+    <string name="tutorial_zoom" formatted="false">Amplía o reduce con el botón o con dos dedos.</string>
+    <string name="tutorial_capture" formatted="false">Prepara una imagen de la vista y expórtala desde la vista previa.</string>
     <string name="tutorial_panels" formatted="false">Contrae o expande los paneles del objeto y la brújula para despejar el cielo.</string>
     <string name="tutorial_antipodes" formatted="false">Toca para mostrar u ocultar la dirección opuesta de los puntos seleccionados: acimut +180° y elevación de signo contrario. Mantén pulsado para deseleccionar todos los puntos.</string>
     <string name="tutorial_navigation" formatted="false">Recorre los objetos seleccionados. El panel muestra el objeto activo y los colores de su trayectoria.</string>
-    <string name="tutorial_observatory" formatted="false">Toca el nombre del objeto para abrir el Observatorio: modelo, datos científicos, tiempo de viaje, alturas y eventos clave. Arriba aparecen Recorrido diario, Exportar y Favoritos, en ese orden.</string>
+    <string name="tutorial_observatory" formatted="false">Abre datos, trayectorias, alturas, eventos y momentos personales del objeto.</string>
     <string name="tutorial_daily" formatted="false">Consulta la trayectoria, horarios, elevaciones y puntos seleccionables. Los eventos futuros admiten avisos.</string>
     <string name="tutorial_gps" formatted="false">Consulta la posición real, altitud GPS, orientación y meteorología, independientemente de la Location.</string>
     <string name="tutorial_points" formatted="false">Selecciona o deselecciona un punto. Apúntalo para leer objeto, hora, T, azimut y elevación. El borde del objeto sigue el color de su trayectoria; se vuelve azul o celeste al seleccionar su posición actual.</string>

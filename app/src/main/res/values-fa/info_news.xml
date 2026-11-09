@@ -1,9 +1,9 @@
 <resources>
     <string name="info_news_title">تازه‌ترین تغییرات · %1$s</string>
-    <string name="info_news_star_sky" formatted="false">توضیح روشن‌تر بزرگ‌نمایی برای آسمان شبیه‌سازی‌شده و دوربین.</string>
-    <string name="info_news_texture_downloads" formatted="false">در هر دو حالت نمایش، بزرگ‌نمایی را با دو انگشت تنظیم کنید.</string>
-    <string name="info_news_weather" formatted="false">دکمهٔ 0°/90° در راهنمای دوربین نمایان می‌ماند و توضیح آن در دسترس است.</string>
-    <string name="info_news_viewer_zoom" formatted="false">در حالت افقی، توضیحات راهنما دکمهٔ محور را نمی‌پوشانند.</string>
-    <string name="info_news_settings" formatted="false">در حالت افقی، 0°/90° با پنل‌های باز کنار پیکان و با پنل‌های بسته زیر منو قرار دارد.</string>
-    <string name="info_news_catalog" formatted="false">راهنما و تازه‌ها در هر بیست زبان به‌روز شدند.</string>
+    <string name="info_news_star_sky" formatted="false">کرهٔ تعاملی زمین را با مسیرها، نقاط کلیدی و تصاویر فعلی اجرام کاوش کنید.</string>
+    <string name="info_news_texture_downloads" formatted="false">بین پانوراما، دوربین و کرهٔ زمین جابه‌جا شوید و بزرگ‌نمایی، چرخش و برچسب‌ها را تنظیم کنید.</string>
+    <string name="info_news_weather" formatted="false">از کرهٔ زمین با پس‌زمینهٔ پرستارهٔ روز یا شب و برچسب‌های قابل تنظیم تصویر بگیرید.</string>
+    <string name="info_news_viewer_zoom" formatted="false">شبکهٔ زاویه‌ای را در نمای زندهٔ دوربین نمایش دهید یا پنهان کنید.</string>
+    <string name="info_news_settings" formatted="false">زمان را تا پانزده روز در هر ثانیه به جلو یا عقب ببرید.</string>
+    <string name="info_news_catalog" formatted="false">راهنمای به‌روز، کنترل‌های روشن‌تر، اقیانوس‌های درخشان‌تر و گالری گسترده‌تر.</string>
 </resources>

@@ -1,6 +1,6 @@
 {
   "language": "en",
-  "capture_build": "1.7.6",
+  "capture_build": "1.7.6 and 1.9.0",
   "capture_variant": "debug",
   "demonstration_locations": [
     "London, United Kingdom"
@@ -23,7 +23,8 @@
         1857
       ],
       "full_bytes": 295390,
-      "sha256": "17878bf3d0c7272610c32bb478e75164428e13fb21ff138bfb1a7f9ad727ec09"
+      "sha256": "17878bf3d0c7272610c32bb478e75164428e13fb21ff138bfb1a7f9ad727ec09",
+      "capture_build": "1.7.6"
     },
     {
       "id": "02-night-sky-portrait",
@@ -39,7 +40,8 @@
         1857
       ],
       "full_bytes": 420816,
-      "sha256": "c5407258345647ed5aef560b407a7753afe7fc155afb0a9985a0094339049f7b"
+      "sha256": "c5407258345647ed5aef560b407a7753afe7fc155afb0a9985a0094339049f7b",
+      "capture_build": "1.7.6"
     },
     {
       "id": "03-observatory-portrait",
@@ -55,7 +57,8 @@
         1857
       ],
       "full_bytes": 204890,
-      "sha256": "88294a2060c3d661200b13237868c941bec8adb708a8bd8c146a559ad8a7f29c"
+      "sha256": "88294a2060c3d661200b13237868c941bec8adb708a8bd8c146a559ad8a7f29c",
+      "capture_build": "1.7.6"
     },
     {
       "id": "04-daily-path-portrait",
@@ -71,7 +74,8 @@
         1857
       ],
       "full_bytes": 120022,
-      "sha256": "72f745e550052ab5e50a4a8479fa72dba574495379474929419eb5b46ddcbce2"
+      "sha256": "72f745e550052ab5e50a4a8479fa72dba574495379474929419eb5b46ddcbce2",
+      "capture_build": "1.7.6"
     },
     {
       "id": "05-catalogue-portrait",
@@ -87,7 +91,8 @@
         1857
       ],
       "full_bytes": 186310,
-      "sha256": "df019823387f8ae83ac150003ac986fe394503ebfb2b9219b542661342e7474b"
+      "sha256": "df019823387f8ae83ac150003ac986fe394503ebfb2b9219b542661342e7474b",
+      "capture_build": "1.7.6"
     },
     {
       "id": "06-location-portrait",
@@ -103,7 +108,8 @@
         1857
       ],
       "full_bytes": 125152,
-      "sha256": "6025b28193af3d82e90f58cbf87a9e683eb1c9d1eb299a8a5a5c96017221ad0b"
+      "sha256": "6025b28193af3d82e90f58cbf87a9e683eb1c9d1eb299a8a5a5c96017221ad0b",
+      "capture_build": "1.7.6"
     },
     {
       "id": "07-key-heights-portrait",
@@ -119,7 +125,8 @@
         1857
       ],
       "full_bytes": 148734,
-      "sha256": "36b57a905751f858050219baf2fe8654e6efa20659fa8414040d63393963ab3f"
+      "sha256": "36b57a905751f858050219baf2fe8654e6efa20659fa8414040d63393963ab3f",
+      "capture_build": "1.7.6"
     },
     {
       "id": "08-key-events-portrait",
@@ -135,7 +142,8 @@
         1857
       ],
       "full_bytes": 148474,
-      "sha256": "8c4dc64fd34bfb7084f96667ecf0f399b3a26cd825f622f0e1f6ad374c6ee48b"
+      "sha256": "8c4dc64fd34bfb7084f96667ecf0f399b3a26cd825f622f0e1f6ad374c6ee48b",
+      "capture_build": "1.7.6"
     },
     {
       "id": "09-observatory-landscape",
@@ -151,7 +159,8 @@
         1017
       ],
       "full_bytes": 189440,
-      "sha256": "2f509d27f0e980e04aa4735aa02dabe9ec3894f36bd040c8f39855155e56ed1f"
+      "sha256": "2f509d27f0e980e04aa4735aa02dabe9ec3894f36bd040c8f39855155e56ed1f",
+      "capture_build": "1.7.6"
     },
     {
       "id": "10-sunrise-landscape",
@@ -167,7 +176,8 @@
         1017
       ],
       "full_bytes": 289756,
-      "sha256": "e6a7cbd3ea42e06e005f829ebdcc70e50564df21feee5880969d150bae9a636e"
+      "sha256": "e6a7cbd3ea42e06e005f829ebdcc70e50564df21feee5880969d150bae9a636e",
+      "capture_build": "1.7.6"
     },
     {
       "id": "11-panorama-landscape",
@@ -183,7 +193,8 @@
         1017
       ],
       "full_bytes": 366078,
-      "sha256": "65f0dd5add6caf66ce21a07183e6b9d6cd0860e5e6b481fb50e908aced7878d1"
+      "sha256": "65f0dd5add6caf66ce21a07183e6b9d6cd0860e5e6b481fb50e908aced7878d1",
+      "capture_build": "1.7.6"
     },
     {
       "id": "12-export-portrait",
@@ -199,7 +210,8 @@
         2097
       ],
       "full_bytes": 147566,
-      "sha256": "612cb38378b51132346e1f4d1d5a0bba28a7dff4219b23c6cd8390a1f8f0c3d5"
+      "sha256": "612cb38378b51132346e1f4d1d5a0bba28a7dff4219b23c6cd8390a1f8f0c3d5",
+      "capture_build": "1.7.6"
     },
     {
       "id": "13-general-portrait",
@@ -215,7 +227,8 @@
         2097
       ],
       "full_bytes": 129454,
-      "sha256": "cc8878c86cd0ccb99704c972fb12792445d1014556076e90a1727dfb35b57fa6"
+      "sha256": "cc8878c86cd0ccb99704c972fb12792445d1014556076e90a1727dfb35b57fa6",
+      "capture_build": "1.7.6"
     },
     {
       "id": "14-daily-path-landscape",
@@ -231,7 +244,110 @@
         1017
       ],
       "full_bytes": 83422,
-      "sha256": "8591b2c0333e12b49f239d775c4f48e17c1fcddde5ba7b54d7c11d0bdff23ada"
+      "sha256": "8591b2c0333e12b49f239d775c4f48e17c1fcddde5ba7b54d7c11d0bdff23ada",
+      "capture_build": "1.7.6"
+    },
+    {
+      "id": "15-globe-day-portrait",
+      "title": "Earth, in your hands",
+      "caption": "Interactive Globe",
+      "orientation": "portrait",
+      "width": 1080,
+      "height": 1920,
+      "native_crop": [
+        0,
+        95,
+        1080,
+        1857
+      ],
+      "full_bytes": 580464,
+      "sha256": "f545097ae1548ce2b9a2ee19e6372f21cbe4e4363f9a937ea852903f99b56eba",
+      "capture_build": "1.9.0"
+    },
+    {
+      "id": "16-globe-labels-portrait",
+      "title": "Focus on your target",
+      "caption": "Globe label options",
+      "orientation": "portrait",
+      "width": 1080,
+      "height": 1920,
+      "native_crop": [
+        0,
+        95,
+        1080,
+        1857
+      ],
+      "full_bytes": 271102,
+      "sha256": "2d19beacc9ee1d830d23043e6247da8570f513ef2fc42bf924e162142c8ec9d0",
+      "capture_build": "1.9.0"
+    },
+    {
+      "id": "17-tutorial-globe-portrait",
+      "title": "Learn by exploring",
+      "caption": "Interactive tutorial",
+      "orientation": "portrait",
+      "width": 1080,
+      "height": 1920,
+      "native_crop": [
+        0,
+        95,
+        1080,
+        1857
+      ],
+      "full_bytes": 216794,
+      "sha256": "ec716735892c54adaaa3c06cb1cb957930d5580f8ca19d6090db60f76f4c35fc",
+      "capture_build": "1.9.0"
+    },
+    {
+      "id": "18-globe-night-landscape",
+      "title": "Explore Earth after dark",
+      "caption": "Globe in landscape",
+      "orientation": "landscape",
+      "width": 1920,
+      "height": 1080,
+      "native_crop": [
+        0,
+        95,
+        1920,
+        1017
+      ],
+      "full_bytes": 453000,
+      "sha256": "5eec77f60567380d5f04458248b8ecaa308827c28e22db6fc5f1ce9bb094a63c",
+      "capture_build": "1.9.0"
+    },
+    {
+      "id": "19-globe-capture-landscape",
+      "title": "Share your view of Earth",
+      "caption": "Landscape Globe capture",
+      "orientation": "landscape",
+      "width": 1920,
+      "height": 1080,
+      "native_crop": [
+        0,
+        95,
+        1920,
+        1017
+      ],
+      "full_bytes": 250174,
+      "sha256": "b063b9dc21360830652855918f36a1c500f99fa71e320a57a6a30031aab5733c",
+      "capture_build": "1.9.0"
+    },
+    {
+      "id": "20-view-modes-landscape",
+      "title": "Choose your perspective",
+      "caption": "Three viewing modes",
+      "orientation": "landscape",
+      "width": 1920,
+      "height": 1080,
+      "native_crop": [
+        0,
+        95,
+        1920,
+        1017
+      ],
+      "full_bytes": 400360,
+      "sha256": "df36a3662d62c9865b4e45f4095b57c9c9deab87552feb54394b9d09799bde83",
+      "capture_build": "1.9.0"
     }
   ]
 }

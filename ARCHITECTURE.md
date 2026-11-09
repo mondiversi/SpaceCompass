@@ -738,3 +738,22 @@ override the default heading. Loading vocabulary changes resource values without
 renaming canonical archive fields, routes or formats. AudioTrack follows Android's
 media route without treating headphone removal as permanent focus loss; foreground,
 volume and real focus-loss policies are unchanged.
+
+
+## Interactive Globe (1.9.0)
+
+The view-mode selector owns Panorama, Camera and Globe without changing the
+observer or astronomical providers. Globe builds Earth-fixed vectors from the
+shared daily paths: finite Earth satellites retain Earth-centred positions;
+distant objects use apparent directions on a display shell. The bundled offline
+WebView adapter renders and picks this model; the native software capture freezes
+the same geometry, point selection, Antipodes and observer disclosure policy.
+Earth maps are reused from the screensaver and celestial sprites keep the external
+resource/cache pipeline. No new celestial bitmap is embedded.
+
+Live label scopes apply to the active island track; captured images retain the
+five ordinary scopes. The captured default inherits the live choice, and preview
+edits are isolated. The tutorial selects demonstration controls through the shared
+mode menu, without starting Camera or mutating the real scene. Overlay gesture
+guards exclude a margin around controls before handling empty-space gestures.
+See docs/GLOBE_VIEW.md for projection, integrity pins and limitations.

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="view_mode_choose" formatted="false">מצב תצוגה</string>
+    <string name="view_mode_camera" formatted="false">מצלמה</string>
+    <string name="view_mode_globe" formatted="false">כדור הארץ</string>
+    <string name="globe_direction_note" formatted="false">לוויינים: מסלולים סביב הארץ · עצמים אחרים: כיוונים נראים</string>
+    <string name="globe_rotation_axis" formatted="false">סיבוב סביב ציר כדור הארץ</string>
+    <string name="globe_rotation_free" formatted="false">סיבוב חופשי</string>
+    <string name="globe_labels_selected_object" formatted="false">העצם שנבחר</string>
+    <string name="globe_labels_all_objects" formatted="false">כל העצמים</string>
+</resources>

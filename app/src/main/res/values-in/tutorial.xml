@@ -8,21 +8,21 @@
     <string name="tutorial_navigation_title" formatted="false">Objek terpilih</string>
     <string name="tutorial_points_title" formatted="false">Titik orbit</string>
     <string name="tutorial_info" formatted="false">Buka informasi aplikasi, pembaruan dan kredit sumber.</string>
-    <string name="tutorial_menu" formatted="false">Buka Umum, Bahasa, Satuan, Tutorial serta Info dan kredit.</string>
+    <string name="tutorial_menu" formatted="false">Buka pengaturan, adegan tersimpan, dan tutorial.</string>
     <string name="tutorial_objects" formatted="false">Pilih objek yang ditampilkan. Cari, filter dan simpan favorit.</string>
     <string name="tutorial_location" formatted="false">Sesuaikan lokasi, ketinggian, zona waktu, tanggal, jam dan kecepatan waktu.</string>
     <string name="tutorial_guides" formatted="false">Tampilkan lingkaran langit, kutub, zenit dan nadir. Ini proyeksi langit, bukan jalur di daratan.</string>
     <string name="tutorial_forward" formatted="false">0–24 menampilkan seluruh hari kalender dari tengah malam hingga tengah malam. +24h menampilkan 24 jam setelah waktu yang ditampilkan, termasuk waktu simulasi. Lintasan, foto dan ekspor memakai rentang yang sama.</string>
-    <string name="tutorial_camera" formatted="false">Beralih antara langit simulasi dan kamera belakang dengan sumbu sebenarnya. Di sini Anda dapat menjelajahi Zoom dan Transparansi tanpa memakai kamera. Ketuk lagi untuk kembali ke tampilan biasa.</string>
+    <string name="tutorial_camera" formatted="false">Pilih Panorama, Kamera, atau Globe. Ketuk di sini untuk menjelajahi kontrolnya.</string>
     <string name="tutorial_weather" formatted="false">Tampilkan atau sembunyikan cuaca di langit simulasi dan panorama. Tidak tersedia dalam mode kamera.</string>
     <string name="tutorial_axis" formatted="false">Pilih sumbu kamera (90°) atau panjang ponsel (0°). Kamera selalu memakai sumbunya sendiri.</string>
     <string name="tutorial_transparency" formatted="false">Buat gambar objek lebih transparan untuk membandingkan dengan kamera. Hasil foto menyimpan pilihan ini.</string>
-    <string name="tutorial_zoom" formatted="false">Di langit simulasi, pilih zoom dari 0,5× hingga 1×; dengan kamera, gunakan zoom yang tersedia. Di kedua mode, Anda dapat memperbesar atau memperkecil dengan dua jari.</string>
-    <string name="tutorial_capture" formatted="false">Siapkan panorama langit atau foto kamera dengan lapisan astronomi. Ekspor dari pratinjau. Pada pratinjau, ketuk dua kali gambar untuk menampilkan atau menyembunyikan kontrol.</string>
+    <string name="tutorial_zoom" formatted="false">Perbesar atau perkecil dengan tombol atau dua jari.</string>
+    <string name="tutorial_capture" formatted="false">Siapkan gambar tampilan dan ekspor dari pratinjau.</string>
     <string name="tutorial_panels" formatted="false">Ciutkan atau perluas panel objek dan kompas untuk membuka ruang langit.</string>
     <string name="tutorial_antipodes" formatted="false">Ketuk untuk menampilkan atau menyembunyikan arah berlawanan titik terpilih: azimut +180° dan tanda elevasi berlawanan. Tekan dan tahan untuk membatalkan pilihan semua titik.</string>
     <string name="tutorial_navigation" formatted="false">Telusuri objek terpilih. Panel menampilkan objek aktif dan warna lintasannya.</string>
-    <string name="tutorial_observatory" formatted="false">Ketuk nama objek untuk membuka Observatorium: model, data ilmiah, waktu perjalanan, ketinggian dan peristiwa penting. Bilah atas berisi Lintasan harian, Ekspor dan Favorit, dalam urutan tersebut.</string>
+    <string name="tutorial_observatory" formatted="false">Buka data objek, lintasan, ketinggian penting, peristiwa, dan momen pribadi.</string>
     <string name="tutorial_daily" formatted="false">Lihat lintasan, waktu, elevasi dan titik yang dapat dipilih. Peristiwa mendatang dapat diberi pengingat.</string>
     <string name="tutorial_gps" formatted="false">Lihat posisi nyata, ketinggian GPS, orientasi dan cuaca, terpisah dari Location.</string>
     <string name="tutorial_points" formatted="false">Pilih titik orbit. Arahkan bidikan untuk membaca objek, jam, T, azimut dan elevasi. Tepi objek mengikuti warna lintasannya; memilih posisi saat ini mengubahnya menjadi biru atau sian.</string>

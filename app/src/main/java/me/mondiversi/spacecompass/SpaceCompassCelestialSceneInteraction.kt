@@ -56,8 +56,9 @@ internal fun SpaceCompassCelestialSceneInteraction(targets: List<SpaceCompassCel
         val emptySpaceDoubleTap by rememberUpdatedState(onEmptySpaceDoubleTap)
         val zone by rememberUpdatedState(spaceCompassObservationZone())
         val radius = with(LocalDensity.current) { SPACE_COMPASS_SUN_PATH_TOUCH_RADIUS_DP.dp.toPx().toDouble() }
+        val gestureMargin=with(density) { SPACE_COMPASS_OVERLAY_GESTURE_MARGIN_DP.dp.toPx().toDouble() }
         val accent = MaterialTheme.colorScheme.primary
-        Canvas(Modifier.fillMaxSize().testTag("celestial-scene-input").pointerInput(radius) {
+        Canvas(Modifier.fillMaxSize().testTag("celestial-scene-input").pointerInput(radius,gestureMargin) {
             fun handleTap(press: Offset, tap: Offset): Boolean {
                 val point = SpaceCompassSunScenePoint(tap.x.toDouble(), tap.y.toDouble())
                 val target = tappedSpaceCompassCelestialSceneTarget(currentTargets, point, radius, blockedRegions)
@@ -67,7 +68,9 @@ internal fun SpaceCompassCelestialSceneInteraction(targets: List<SpaceCompassCel
                 }
                 return (tap - press).getDistance() <= viewConfiguration.touchSlop &&
                     !spaceCompassScenePointIsCovered(point, blockedRegions) &&
-                    !spaceCompassScenePointIsCovered(point, emptyTapExclusions)
+                    spaceCompassOverlayGestureAllowed(point,emptyTapExclusions,gestureMargin) &&
+                    spaceCompassOverlayGestureAllowed(SpaceCompassSunScenePoint(press.x.toDouble(),press.y.toDouble()),
+                        emptyTapExclusions,gestureMargin)
             }
             awaitEachGesture {
                 val firstDown = awaitFirstDown().also { it.consume() }
@@ -89,7 +92,7 @@ internal fun SpaceCompassCelestialSceneInteraction(targets: List<SpaceCompassCel
                 val secondUp = waitForUpOrCancellation()?.also { it.consume() }
                 if (secondUp != null && handleTap(secondDown.position, secondUp.position)) {
                     emptySpaceDoubleTap?.invoke()
-                } else emptySpaceTap?.invoke()
+                }
             }
         }) {
             historical.forEach {

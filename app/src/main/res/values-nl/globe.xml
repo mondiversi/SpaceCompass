@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="view_mode_choose" formatted="false">Weergave</string>
+    <string name="view_mode_camera" formatted="false">Camera</string>
+    <string name="view_mode_globe" formatted="false">Wereldbol</string>
+    <string name="globe_direction_note" formatted="false">Satellieten: aardbanen · Andere objecten: schijnbare richtingen</string>
+    <string name="globe_rotation_axis" formatted="false">Rotatie om de aardas</string>
+    <string name="globe_rotation_free" formatted="false">Vrije rotatie</string>
+    <string name="globe_labels_selected_object" formatted="false">Geselecteerd object</string>
+    <string name="globe_labels_all_objects" formatted="false">Alle objecten</string>
+</resources>

@@ -36,7 +36,8 @@ internal fun rememberSpaceCompassPanoramaAction(timeMs: Long, latitude: Double?,
     solarLighting: SpaceCompassSolarLighting? = null,
     selectedPoints: List<SpaceCompassSelectedOrbitPoint> = emptyList(),
     activeBody: SpaceCompassCelestialBody? = null, activeComparisonId: String? = null,
-    forward24Hours: Boolean = false, showAntipodes: Boolean = false): SpaceCompassPanoramaAction {
+    forward24Hours: Boolean = false, showAntipodes: Boolean = false,
+    globe: SpaceCompassGlobeCapture? = null): SpaceCompassPanoramaAction {
     val comparisonOverlays = LocalSpaceCompassComparisonOverlays.current
     val selectionTint = MaterialTheme.colorScheme.primary.toArgb()
     val context = LocalContext.current
@@ -69,7 +70,7 @@ internal fun rememberSpaceCompassPanoramaAction(timeMs: Long, latitude: Double?,
             else if (!cameraEnabled && (latitude == null || longitude == null || bodies.isEmpty() && comparisonOverlays.isEmpty())) notify(R.string.panorama_not_ready)
             else {
                 val position = SpaceCompassPanoramaPosition.fromStored(preferences?.getString(SPACE_COMPASS_PANORAMA_POSITION_KEY, null))
-                val labelMode = SpaceCompassPanoramaLabelMode.fromStored(
+                val labelMode = globe?.labelMode ?: SpaceCompassPanoramaLabelMode.fromStored(
                     preferences?.getString(SPACE_COMPASS_PANORAMA_LABEL_MODE_KEY, null),
                     preferences?.takeIf { it.contains(SPACE_COMPASS_PANORAMA_POINT_LABELS_KEY) }
                         ?.getBoolean(SPACE_COMPASS_PANORAMA_POINT_LABELS_KEY, true))
@@ -83,17 +84,19 @@ internal fun rememberSpaceCompassPanoramaAction(timeMs: Long, latitude: Double?,
                     SpaceCompassPanoramaObject(c.body, exportResources.getString(c.body.nameResource), overlay.path, c)
                 }
                 // Real photographs keep actual weather; the virtual sky can explicitly suppress effects.
-                val captureWeather = weather.takeIf { cameraEnabled || showWeather }
+                val captureWeather = weather.takeIf { globe == null && (cameraEnabled || showWeather) }
                 val credits = "NASA/GSFC/ASU; NASA/VTAD; NASA/JPL/USGS; Solar System Scope / INOVE; solarsystemscope.com/textures/; " +
                     "CC BY 4.0 (creativecommons.org/licenses/by/4.0/)" +
                     (if (!cameraEnabled) "; NASA/Goddard SVS, Deep Star Maps 2020; ESA/Gaia/DPAC; Ernie Wright (USRA)" else "") +
+                    (if(globe!=null) "; Earth: NASA Blue Marble; NASA/NOAA Black Marble" else "") +
                     (if (objects.any { it.body.isFictional }) "; Fictional references: original AI illustrations, not observed objects" else "") + if (captureWeather != null) "; Open-Meteo (CC BY 4.0)" else ""
                 val snapshot = SpaceCompassPanoramaSnapshot(timeMs, latitude ?: 0.0, longitude ?: 0.0, altitude ?: 0.0, phase, captureWeather,
                     objects, remote, "", emptyList(), emptyList(), labelMode = labelMode,
                     observerPositionKnown = latitude != null && longitude != null, showSkyReferences = showSkyReferences, center = center,
-                    weatherEffectsEnabled = cameraEnabled || showWeather, solarLighting = solarLighting,
+                    weatherEffectsEnabled = globe == null && (cameraEnabled || showWeather), solarLighting = solarLighting,
                     selectedPoints = selectedPoints.toList(), showAntipodes = showAntipodes, selectionTint = selectionTint, zoneId = observationZone.id,
-                    activeBody = activeBody?.takeIf { it in bodies },forward24Hours = forward24Hours, activeComparisonId = activeComparisonId)
+                    activeBody = activeBody?.takeIf { it in bodies },forward24Hours = forward24Hours, activeComparisonId = activeComparisonId,
+                    globe = globe, globeLocationVisible = position == SpaceCompassPanoramaPosition.COMPLETE)
                 busy = true
                 val preparingNotice = showSpaceCompassBottomMessage(application,
                     resources.getString(R.string.panorama_preparing))

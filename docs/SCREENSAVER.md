@@ -25,6 +25,14 @@ per idle minute, independently of GPS, system time zone, interface theme and any
 scenario clock. Surface normals and sunlight share the same view transform, so
 visual globe rotation does not move daylight to the wrong continents. Decorative
 orbits, clouds and accelerated spin remain illustrative. Scene time survives rotation.
+The globe uses diffuse surface lighting without the artificial white ocean glint.
+Blue-dominant ocean colours receive up to 60% more diffuse albedo before solar
+shading, identically in both interface themes. Land, neutral ice, city lights and
+the solar terminator retain their existing treatment. The software fallback adjusts
+its cached small day map once, with no additional per-frame colour-processing loop.
+The interface theme selects only the space backdrop: lighter blue in day mode,
+with the existing dark gradient retained at night. Geographic daylight, seasonal
+tilt, city lights and the real-position marker keep the same real-UTC inputs.
 
 The HTML and two 2048 x 1024 WebP maps are bundled for offline first use, at quality
 90/method 6 with pins in SCREENSAVER_ASSETS.json. Its isolated WebView has no network,

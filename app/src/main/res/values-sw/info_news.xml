@@ -1,9 +1,9 @@
 <resources>
     <string name="info_news_title">Mambo mapya · %1$s</string>
-    <string name="info_news_star_sky" formatted="false">Maelezo yaliyo wazi zaidi ya ukuzaji kwa anga iliyoigwa na kamera.</string>
-    <string name="info_news_texture_downloads" formatted="false">Tumia vidole viwili kurekebisha ukuzaji katika hali zote mbili za mwonekano.</string>
-    <string name="info_news_weather" formatted="false">Kitufe cha 0°/90° kinabaki kuonekana na maelezo yake yanapatikana katika mafunzo ya kamera.</string>
-    <string name="info_news_viewer_zoom" formatted="false">Katika mwonekano wa mlalo, maelezo ya mafunzo hayafuniki kitufe cha mhimili.</string>
-    <string name="info_news_settings" formatted="false">Katika mwonekano wa mlalo, 0°/90° huwa kando ya mshale wakati paneli zinaonekana na chini ya Menyu wakati paneli zimekunjwa.</string>
-    <string name="info_news_catalog" formatted="false">Mafunzo na habari za toleo zimesasishwa katika lugha zote ishirini.</string>
+    <string name="info_news_star_sky" formatted="false">Gundua dunia shirikishi yenye njia, nukta muhimu na picha za sasa za vitu vya angani.</string>
+    <string name="info_news_texture_downloads" formatted="false">Badili kati ya Panorama, Kamera na Dunia; rekebisha ukuzaji, mzunguko na lebo.</string>
+    <string name="info_news_weather" formatted="false">Tengeneza picha za dunia zenye mandharinyuma ya nyota ya mchana au usiku na lebo unazochagua.</string>
+    <string name="info_news_viewer_zoom" formatted="false">Onyesha au ficha gridi ya pembe katika kamera ya moja kwa moja.</string>
+    <string name="info_news_settings" formatted="false">Sogeza muda mbele au nyuma hadi siku kumi na tano kwa sekunde.</string>
+    <string name="info_news_catalog" formatted="false">Mafunzo yaliyosasishwa, vidhibiti wazi zaidi, bahari angavu zaidi na matunzio yaliyopanuliwa.</string>
 </resources>

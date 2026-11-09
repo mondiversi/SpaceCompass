@@ -49,7 +49,7 @@ private data class SpaceCompassObservatoryFrame(val timeMs: Long, val latitude: 
 internal fun SpaceCompassCelestialObservatoryPage(body: SpaceCompassCelestialBody, timeMs: Long,
     latitude: Double?, longitude: Double?, altitude: Double, remote: SpaceCompassCelestialRemoteData,
     primaryText: Color, secondaryText: Color, backgroundColor: Color,
-    onDailyPath: (() -> Unit)? = null, onBack: () -> Unit) {
+    onBack: () -> Unit) {
     val context = LocalContext.current
     val observationZone = spaceCompassObservationZone()
     val observationYear = remember(timeMs, observationZone) { Instant.ofEpochMilli(timeMs).atZone(observationZone).year }
@@ -338,7 +338,7 @@ internal fun SpaceCompassCelestialObservatoryPage(body: SpaceCompassCelestialBod
             modifier = Modifier.testTag("celestial-view-toolbar"),
             titleModifier = Modifier.testTag("celestial-view-title"), titleColor = primaryText) {
             SpaceCompassCelestialFavoriteAction(body, enabled = !export.saving)
-            SpaceCompassObservatoryMenu(enabled = !export.saving, onDailyPath = onDailyPath,
+            SpaceCompassObservatoryMenu(enabled = !export.saving,
                 onHeights = { heightsVisible = true }, onEvents = { eventsVisible = true },
                 onPersonalMoments = { personalMomentsVisible = true }, onExport = export.open)
         }

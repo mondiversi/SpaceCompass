@@ -8,21 +8,21 @@
     <string name="tutorial_navigation_title" formatted="false">جرم انتخاب‌شده</string>
     <string name="tutorial_points_title" formatted="false">نقاط مدار</string>
     <string name="tutorial_info" formatted="false">اطلاعات برنامه، تازه‌ها و منابع را باز کنید.</string>
-    <string name="tutorial_menu" formatted="false">تنظیمات عمومی، زبان، واحدها، آموزش و اطلاعات را باز کنید.</string>
+    <string name="tutorial_menu" formatted="false">تنظیمات، صحنه‌های ذخیره‌شده و راهنما را باز می‌کند.</string>
     <string name="tutorial_objects" formatted="false">اجرام نمایان را انتخاب کنید. جستجو و فیلتر کنید و موارد دلخواه را ذخیره کنید.</string>
     <string name="tutorial_location" formatted="false">مکان، ارتفاع، منطقه زمانی، تاریخ، ساعت و سرعت زمان را تنظیم کنید.</string>
     <string name="tutorial_guides" formatted="false">دایره‌های آسمانی، قطب‌ها، سمت‌الرأس و سمت‌القدم را نمایش دهید. این‌ها تصویر آسمانی‌اند، نه مسیر زمینی.</string>
     <string name="tutorial_forward" formatted="false">0–24 تمام روز تقویمی را از نیمه‌شب تا نیمه‌شب نشان می‌دهد. +24h بیست‌وچهار ساعت پس از زمان نمایش‌داده‌شده، حتی زمان شبیه‌سازی‌شده، را نشان می‌دهد. مسیرها، تصاویر و خروجی‌ها از همین بازه استفاده می‌کنند.</string>
-    <string name="tutorial_camera" formatted="false">بین آسمان شبیه‌سازی‌شده و دوربین پشتی با محور واقعی آن جابه‌جا شوید. اینجا بزرگ‌نمایی و شفافیت را بدون استفاده از دوربین بررسی کنید. برای بازگشت به نمای عادی دوباره لمس کنید.</string>
+    <string name="tutorial_camera" formatted="false">پانوراما، دوربین یا کرهٔ زمین را انتخاب کن. برای آشنایی با کنترل‌ها اینجا بزن.</string>
     <string name="tutorial_weather" formatted="false">آب‌وهوا را در آسمان شبیه‌سازی‌شده و پانوراما نمایش دهید یا پنهان کنید. در حالت دوربین فعال نیست.</string>
     <string name="tutorial_axis" formatted="false">محور دوربین (90°) یا طول گوشی (0°) را انتخاب کنید. دوربین همیشه محور خودش را به کار می‌برد.</string>
     <string name="tutorial_transparency" formatted="false">تصاویر اجرام را نیمه‌شفاف کنید تا با دوربین مقایسه شوند. عکس این انتخاب را حفظ می‌کند.</string>
-    <string name="tutorial_zoom" formatted="false">در آسمان شبیه‌سازی‌شده، بزرگ‌نمایی را از 0.5× تا 1× انتخاب کنید؛ با دوربین از بزرگ‌نمایی موجود استفاده کنید. در هر دو حالت می‌توانید با دو انگشت تصویر را بزرگ یا کوچک کنید.</string>
-    <string name="tutorial_capture" formatted="false">پانورامای آسمان یا عکس دوربین با لایه‌های نجومی بسازید. از پیش‌نمایش خروجی بگیرید. در پیش‌نمایش، برای نمایش یا پنهان کردن کنترل‌ها روی تصویر دو بار بزنید.</string>
+    <string name="tutorial_zoom" formatted="false">با دکمه یا دو انگشت بزرگ‌نمایی یا کوچک‌نمایی کن.</string>
+    <string name="tutorial_capture" formatted="false">تصویری از نما آماده کن و از پیش‌نمایش خروجی بگیر.</string>
     <string name="tutorial_panels" formatted="false">پنل‌های جرم و قطب‌نما را جمع یا باز کنید تا آسمان بیشتری ببینید.</string>
     <string name="tutorial_antipodes" formatted="false">برای نمایش یا پنهان کردن جهت مخالف نقاط انتخاب‌شده لمس کنید: سمت +۱۸۰ درجه و ارتفاع با علامت معکوس. برای لغو انتخاب همه نقاط نگه دارید.</string>
     <string name="tutorial_navigation" formatted="false">میان اجرام انتخاب‌شده حرکت کنید. پنل جرم فعال و رنگ مسیر آن را نشان می‌دهد.</string>
-    <string name="tutorial_observatory" formatted="false">برای باز کردن رصدخانه، نام جرم را لمس کنید: مدل، اطلاعات علمی، زمان سفر، ارتفاع‌ها و رویدادهای مهم. در نوار بالا به‌ترتیب مسیر روزانه، برون‌بری و علاقه‌مندی‌ها قرار دارند.</string>
+    <string name="tutorial_observatory" formatted="false">داده‌ها، مسیرها، ارتفاع‌های مهم، رویدادها و لحظه‌های شخصی جرم را باز می‌کند.</string>
     <string name="tutorial_daily" formatted="false">مسیر، ساعت‌ها، ارتفاع‌ها و نقاط قابل انتخاب را ببینید. رویدادهای آینده می‌توانند یادآور داشته باشند.</string>
     <string name="tutorial_gps" formatted="false">مکان واقعی، ارتفاع GPS، جهت و آب‌وهوا را مستقل از Location ببینید.</string>
     <string name="tutorial_points" formatted="false">یک نقطه مداری را انتخاب کنید. برای دیدن جرم، ساعت، T، سمت و ارتفاع به آن نشانه بروید. حاشیه جرم هم‌رنگ مسیر آن است؛ با انتخاب موقعیت فعلی، آبی یا فیروزه‌ای می‌شود.</string>

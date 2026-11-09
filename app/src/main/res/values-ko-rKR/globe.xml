@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="view_mode_choose" formatted="false">보기 모드</string>
+    <string name="view_mode_camera" formatted="false">카메라</string>
+    <string name="view_mode_globe" formatted="false">지구본</string>
+    <string name="globe_direction_note" formatted="false">위성: 지구 궤도 · 다른 천체: 겉보기 방향</string>
+    <string name="globe_rotation_axis" formatted="false">지구 자전축 중심 회전</string>
+    <string name="globe_rotation_free" formatted="false">자유 회전</string>
+    <string name="globe_labels_selected_object" formatted="false">선택한 천체</string>
+    <string name="globe_labels_all_objects" formatted="false">모든 천체</string>
+</resources>

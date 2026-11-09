@@ -1,9 +1,9 @@
 <resources>
     <string name="info_news_title">Últimas novidades · %1$s</string>
-    <string name="info_news_star_sky" formatted="false">Explicação do zoom mais clara para o céu simulado e a câmera.</string>
-    <string name="info_news_texture_downloads" formatted="false">Use dois dedos para ajustar o zoom nos dois modos.</string>
-    <string name="info_news_weather" formatted="false">O botão 0°/90° continua visível e sua explicação fica acessível no tutorial da câmera.</string>
-    <string name="info_news_viewer_zoom" formatted="false">Na horizontal, as explicações do tutorial não cobrem o botão do eixo.</string>
-    <string name="info_news_settings" formatted="false">Na horizontal, 0°/90° fica ao lado da seta com os painéis visíveis e abaixo de Menu com os painéis recolhidos.</string>
-    <string name="info_news_catalog" formatted="false">Tutorial e novidades atualizados nos vinte idiomas.</string>
+    <string name="info_news_star_sky" formatted="false">Explore o globo interativo com trajetórias, pontos principais e imagens atuais dos objetos.</string>
+    <string name="info_news_texture_downloads" formatted="false">Alterne entre Panorama, Câmera e Globo; ajuste zoom, rotação e etiquetas.</string>
+    <string name="info_news_weather" formatted="false">Capture o globo com fundo estrelado diurno ou noturno e etiquetas configuráveis.</string>
+    <string name="info_news_viewer_zoom" formatted="false">Mostre ou oculte a grade angular na câmera ao vivo.</string>
+    <string name="info_news_settings" formatted="false">Avance ou recue o tempo em até quinze dias por segundo.</string>
+    <string name="info_news_catalog" formatted="false">Tutorial atualizado, controles mais claros, oceanos mais luminosos e galeria ampliada.</string>
 </resources>

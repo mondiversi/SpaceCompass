@@ -34,10 +34,12 @@ internal data class SpaceCompassPanoramaSnapshot(val timeMs: Long, val latitude:
     val displayZoneId: String? = null, val activeBody: SpaceCompassCelestialBody? = null,
     val bodyNames: Map<SpaceCompassCelestialBody,String> = emptyMap(),val forward24Hours: Boolean = false,
     val showAntipodes: Boolean = false, val activeComparisonId: String? = null, val positionHidden: Boolean = false, val referencePointName: String = "Reference",
-    val comparisonPointNames: Map<String, String> = emptyMap())
+    val comparisonPointNames: Map<String, String> = emptyMap(),
+    val globe: SpaceCompassGlobeCapture? = null, val globeLocationVisible: Boolean = false)
 
 internal fun renderSpaceCompassPanorama(snapshot: SpaceCompassPanoramaSnapshot, width: Int = 4096, context: android.content.Context? = null): Bitmap {
     require(width in 512..4096 && snapshot.objects.isNotEmpty())
+    if (snapshot.globe != null) return renderSpaceCompassGlobe(snapshot,width,requireNotNull(context))
     val scale = width / 4096f
     val sceneWidth = width
     val centerAzimuth = snapshot.center.azimuth

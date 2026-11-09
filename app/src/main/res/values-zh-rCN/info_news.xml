@@ -1,9 +1,9 @@
 <resources>
     <string name="info_news_title">最新变化 · %1$s</string>
-    <string name="info_news_star_sky" formatted="false">模拟天空和相机的缩放说明更加清晰。</string>
-    <string name="info_news_texture_downloads" formatted="false">两种显示模式都可用双指调整缩放。</string>
-    <string name="info_news_weather" formatted="false">相机教程中仍显示0°/90°按钮，并可查看其说明。</string>
-    <string name="info_news_viewer_zoom" formatted="false">横屏时，教程说明不再遮挡指向轴按钮。</string>
-    <string name="info_news_settings" formatted="false">横屏时，面板显示则0°/90°位于箭头旁，面板收起则位于菜单下方。</string>
-    <string name="info_news_catalog" formatted="false">教程和更新内容已更新为全部20种语言。</string>
+    <string name="info_news_star_sky" formatted="false">探索交互式地球仪，查看轨迹、关键点和天体当前位置图像。</string>
+    <string name="info_news_texture_downloads" formatted="false">切换全景、相机和地球仪，调整缩放、旋转和标签。</string>
+    <string name="info_news_weather" formatted="false">生成带有昼夜星空背景和可选标签的地球仪图像。</string>
+    <string name="info_news_viewer_zoom" formatted="false">在实时相机中显示或隐藏角度网格。</string>
+    <string name="info_news_settings" formatted="false">让时间向前或向后流动，最高每秒十五天。</string>
+    <string name="info_news_catalog" formatted="false">更新教程、改进控件、提亮海洋并扩充截图库。</string>
 </resources>

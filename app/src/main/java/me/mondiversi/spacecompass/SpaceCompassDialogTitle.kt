@@ -134,6 +134,7 @@ internal fun SpaceCompassAlertDialog(
             LocalSpaceCompassSettingsActionButtons provides false,
             LocalSpaceCompassActionGlyphStrokeScale provides 1f
         ) {
+            SpaceCompassDialogSystemBars()
             SpaceCompassDialogOrientation(rotateContent) {
                 Surface(
                     modifier = modifier

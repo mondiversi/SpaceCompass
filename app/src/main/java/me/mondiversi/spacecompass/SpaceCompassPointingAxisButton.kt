@@ -10,6 +10,9 @@ import androidx.compose.material3.IconButtonDefaults
 import androidx.compose.material3.IconToggleButton
 import androidx.compose.material3.Surface
 import androidx.compose.runtime.Composable
+import androidx.compose.ui.draw.drawWithContent
+import androidx.compose.ui.geometry.Offset
+import androidx.compose.ui.graphics.StrokeCap
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
@@ -17,11 +20,10 @@ import androidx.compose.ui.platform.testTag
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
 
-/** Both pointing references share a neutral color; the real camera disables this configuration. */
+/** Both panorama pointing references share a neutral configuration color. */
 @Composable
 internal fun SpaceCompassPointingAxisButton(checked: Boolean, onCheckedChange: (Boolean) -> Unit,
     color: Color, background: Color, enabled: Boolean = true) {
-    // Keep this disabled configuration visible and explainable in the camera tutorial.
     SpaceCompassFloatingControlHitRegion {
         Surface(Modifier.spaceCompassFloatingControlVisual().size(48.dp), shape = CircleShape,
             color = background.copy(alpha = 1f), contentColor = color.copy(alpha = if (enabled) 1f else .38f),
@@ -32,7 +34,13 @@ internal fun SpaceCompassPointingAxisButton(checked: Boolean, onCheckedChange: (
                         disabledContentColor = color.copy(alpha = .38f))) {
                     SpaceCompassPointingAxisGlyph(checked,
                         stringResource(if (checked) R.string.pointing_axis_top_edge else R.string.pointing_axis_camera),
-                        LocalContentColor.current, Modifier.size(30.dp))
+                        LocalContentColor.current, Modifier.size(30.dp).drawWithContent {
+                            drawContent()
+                            if(!enabled) drawLine(color.copy(alpha=.38f),
+                                Offset(size.width*-.02f,size.height*-.02f),
+                                Offset(size.width*1.02f,size.height*1.02f),
+                                SpaceCompassFloatingIconStrokeWidth.toPx(),StrokeCap.Round)
+                        })
                 }
             }
         }

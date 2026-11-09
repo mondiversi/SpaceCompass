@@ -1,0 +1,4 @@
+<resources>
+    <string name="tutorial_globe_labels" formatted="false">Scegli le etichette degli oggetti e dei punti da mostrare.</string>
+    <string name="tutorial_globe_rotation" formatted="false">Alterna la rotazione sull’asse terrestre e quella libera.</string>
+</resources>

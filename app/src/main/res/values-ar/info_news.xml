@@ -1,9 +1,9 @@
 <resources>
     <string name="info_news_title">آخر المستجدات · %1$s</string>
-    <string name="info_news_star_sky" formatted="false">شرح أوضح للتكبير في السماء المحاكية والكاميرا.</string>
-    <string name="info_news_texture_downloads" formatted="false">استخدم إصبعين لضبط التكبير في كلا وضعي العرض.</string>
-    <string name="info_news_weather" formatted="false">يبقى زر 0°/90° ظاهرًا ويمكن عرض شرحه في دليل الكاميرا.</string>
-    <string name="info_news_viewer_zoom" formatted="false">في العرض الأفقي لا تغطي شروحات الدليل زر المحور.</string>
-    <string name="info_news_settings" formatted="false">في العرض الأفقي يكون 0°/90° بجانب السهم عند ظهور اللوحات، وأسفل القائمة عند طيها.</string>
-    <string name="info_news_catalog" formatted="false">تم تحديث الدليل والمستجدات باللغات العشرين.</string>
+    <string name="info_news_star_sky" formatted="false">استكشف الكرة الأرضية التفاعلية مع المسارات والنقاط الرئيسية وصور الأجرام الحالية.</string>
+    <string name="info_news_texture_downloads" formatted="false">بدّل بين البانوراما والكاميرا والكرة الأرضية واضبط التكبير والدوران والتسميات.</string>
+    <string name="info_news_weather" formatted="false">التقط الكرة الأرضية بخلفية نجمية نهارية أو ليلية وتسميات قابلة للضبط.</string>
+    <string name="info_news_viewer_zoom" formatted="false">أظهر الشبكة الزاوية أو أخفها في عرض الكاميرا المباشر.</string>
+    <string name="info_news_settings" formatted="false">حرّك الزمن إلى الأمام أو الخلف حتى خمسة عشر يومًا في الثانية.</string>
+    <string name="info_news_catalog" formatted="false">دليل محدّث وأزرار أوضح ومحيطات أكثر إشراقًا ومعرض صور موسّع.</string>
 </resources>

@@ -1,0 +1,6 @@
+<resources>
+    <string name="camera_grid" formatted="false">Retícula</string>
+    <string name="camera_grid_on" formatted="false">Retícula visible</string>
+    <string name="camera_grid_off" formatted="false">Retícula oculta</string>
+    <string name="tutorial_camera_grid" formatted="false">Muestra u oculta la retícula de acimut y altura en la vista de cámara.</string>
+</resources>

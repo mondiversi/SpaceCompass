@@ -1,0 +1,6 @@
+<resources>
+    <string name="camera_grid" formatted="false">Angular grid</string>
+    <string name="camera_grid_on" formatted="false">Angular grid visible</string>
+    <string name="camera_grid_off" formatted="false">Angular grid hidden</string>
+    <string name="tutorial_camera_grid" formatted="false">Show or hide the azimuth and elevation grid in the camera view.</string>
+</resources>

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="view_mode_choose" formatted="false">表示モード</string>
+    <string name="view_mode_camera" formatted="false">カメラ</string>
+    <string name="view_mode_globe" formatted="false">地球儀</string>
+    <string name="globe_direction_note" formatted="false">衛星：地球周回軌道 · その他の天体：見かけの方向</string>
+    <string name="globe_rotation_axis" formatted="false">地軸を中心に回転</string>
+    <string name="globe_rotation_free" formatted="false">自由回転</string>
+    <string name="globe_labels_selected_object" formatted="false">選択中の天体</string>
+    <string name="globe_labels_all_objects" formatted="false">すべての天体</string>
+</resources>

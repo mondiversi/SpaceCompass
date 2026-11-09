@@ -1,9 +1,9 @@
 <resources>
     <string name="info_news_title">Ultime novità · %1$s</string>
-    <string name="info_news_star_sky" formatted="false">Spiegazione dello zoom più chiara per cielo simulato e fotocamera.</string>
-    <string name="info_news_texture_downloads" formatted="false">Usa due dita per regolare lo zoom in entrambe le modalità.</string>
-    <string name="info_news_weather" formatted="false">Il pulsante 0°/90° resta visibile e consultabile nel tutorial fotocamera.</string>
-    <string name="info_news_viewer_zoom" formatted="false">In orizzontale il riquadro del tutorial lascia libero il pulsante asse.</string>
-    <string name="info_news_settings" formatted="false">In orizzontale, con le isole visibili 0°/90° è accanto al chevron; con le isole chiuse è sotto Menu.</string>
-    <string name="info_news_catalog" formatted="false">Tutorial e Novità aggiornati in tutte le 20 lingue.</string>
+    <string name="info_news_star_sky" formatted="false">Esplora il Mappamondo interattivo con traiettorie, punti chiave e immagini attuali degli oggetti.</string>
+    <string name="info_news_texture_downloads" formatted="false">Passa tra Panoramica, Fotocamera e Mappamondo; regola zoom, rotazione ed etichette.</string>
+    <string name="info_news_weather" formatted="false">Acquisisci il Mappamondo con sfondo stellato giorno/notte ed etichette configurabili.</string>
+    <string name="info_news_viewer_zoom" formatted="false">Mostra o nascondi il reticolo angolare nella vista fotocamera.</string>
+    <string name="info_news_settings" formatted="false">Fai avanzare o retrocedere il tempo fino a quindici giorni al secondo.</string>
+    <string name="info_news_catalog" formatted="false">Tutorial aggiornato, comandi più chiari, oceani terrestri più luminosi e galleria immagini ampliata.</string>
 </resources>

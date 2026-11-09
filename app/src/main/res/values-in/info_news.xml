@@ -1,9 +1,9 @@
 <resources>
     <string name="info_news_title">Perubahan terbaru · %1$s</string>
-    <string name="info_news_star_sky" formatted="false">Penjelasan zoom lebih jelas untuk langit simulasi dan kamera.</string>
-    <string name="info_news_texture_downloads" formatted="false">Gunakan dua jari untuk mengatur zoom di kedua mode tampilan.</string>
-    <string name="info_news_weather" formatted="false">Tombol 0°/90° tetap terlihat dan penjelasannya tersedia dalam tutorial kamera.</string>
-    <string name="info_news_viewer_zoom" formatted="false">Dalam mode lanskap, penjelasan tutorial tidak menutupi tombol sumbu.</string>
-    <string name="info_news_settings" formatted="false">Dalam mode lanskap, 0°/90° berada di samping panah saat panel terlihat dan di bawah Menu saat panel diciutkan.</string>
-    <string name="info_news_catalog" formatted="false">Tutorial dan kabar versi diperbarui dalam kedua puluh bahasa.</string>
+    <string name="info_news_star_sky" formatted="false">Jelajahi globe interaktif dengan lintasan, titik penting dan gambar objek saat ini.</string>
+    <string name="info_news_texture_downloads" formatted="false">Beralih antara Panorama, Kamera dan Globe; atur zoom, rotasi dan label.</string>
+    <string name="info_news_weather" formatted="false">Tangkap globe dengan latar berbintang siang atau malam dan label yang dapat diatur.</string>
+    <string name="info_news_viewer_zoom" formatted="false">Tampilkan atau sembunyikan kisi sudut pada kamera langsung.</string>
+    <string name="info_news_settings" formatted="false">Majukan atau mundurkan waktu hingga lima belas hari per detik.</string>
+    <string name="info_news_catalog" formatted="false">Tutorial diperbarui, kontrol lebih jelas, lautan lebih cerah dan galeri diperluas.</string>
 </resources>

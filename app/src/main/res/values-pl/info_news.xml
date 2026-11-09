@@ -1,9 +1,9 @@
 <resources>
     <string name="info_news_title">Ostatnie nowości · %1$s</string>
-    <string name="info_news_star_sky" formatted="false">Jaśniejszy opis powiększenia dla symulowanego nieba i aparatu.</string>
-    <string name="info_news_texture_downloads" formatted="false">Reguluj powiększenie dwoma palcami w obu trybach widoku.</string>
-    <string name="info_news_weather" formatted="false">Przycisk 0°/90° pozostaje widoczny, a jego opis jest dostępny w samouczku aparatu.</string>
-    <string name="info_news_viewer_zoom" formatted="false">W poziomie objaśnienia samouczka nie zasłaniają przycisku osi.</string>
-    <string name="info_news_settings" formatted="false">W poziomie 0°/90° znajduje się obok strzałki przy widocznych panelach i pod Menu przy zwiniętych panelach.</string>
-    <string name="info_news_catalog" formatted="false">Samouczek i nowości zaktualizowane we wszystkich dwudziestu językach.</string>
+    <string name="info_news_star_sky" formatted="false">Odkrywaj interaktywny glob z torami, kluczowymi punktami i aktualnymi obrazami obiektów.</string>
+    <string name="info_news_texture_downloads" formatted="false">Przełączaj Panoramę, Aparat i Glob; zmieniaj powiększenie, obrót i etykiety.</string>
+    <string name="info_news_weather" formatted="false">Zapisuj glob z gwiaździstym tłem dziennym lub nocnym i wybranymi etykietami.</string>
+    <string name="info_news_viewer_zoom" formatted="false">Pokazuj lub ukrywaj siatkę kątową w widoku aparatu.</string>
+    <string name="info_news_settings" formatted="false">Przewijaj czas do przodu lub do tyłu o maksymalnie piętnaście dni na sekundę.</string>
+    <string name="info_news_catalog" formatted="false">Zaktualizowany samouczek, czytelniejsze przyciski, jaśniejsze oceany i rozszerzona galeria.</string>
 </resources>

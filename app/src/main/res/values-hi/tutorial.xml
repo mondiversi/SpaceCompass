@@ -8,21 +8,21 @@
     <string name="tutorial_navigation_title" formatted="false">चुना गया पिंड</string>
     <string name="tutorial_points_title" formatted="false">कक्षा बिंदु</string>
     <string name="tutorial_info" formatted="false">ऐप की जानकारी, नई सुविधाएँ और स्रोत खोलें।</string>
-    <string name="tutorial_menu" formatted="false">सामान्य, भाषा, इकाइयाँ, ट्यूटोरियल और जानकारी व श्रेय खोलें।</string>
+    <string name="tutorial_menu" formatted="false">सेटिंग, सहेजे गए दृश्य और ट्यूटोरियल खोलें।</string>
     <string name="tutorial_objects" formatted="false">दिखने वाले पिंड चुनें। खोजें, फ़िल्टर करें और पसंदीदा सहेजें।</string>
     <string name="tutorial_location" formatted="false">स्थान, ऊँचाई, समय क्षेत्र, तारीख, समय और समय की गति बदलें।</string>
     <string name="tutorial_guides" formatted="false">खगोलीय वृत्त, ध्रुव, शिरोबिंदु और अधोबिंदु दिखाएँ। ये आकाशीय प्रक्षेपण हैं, ज़मीनी रास्ते नहीं।</string>
     <string name="tutorial_forward" formatted="false">0–24 आधी रात से आधी रात तक पूरा कैलेंडर दिन दिखाता है। +24h दिखाए गए समय से अगले 24 घंटे दिखाता है, भले ही समय सिमुलेटेड हो। पथ, चित्र और निर्यात इसी अंतराल का उपयोग करते हैं।</string>
-    <string name="tutorial_camera" formatted="false">सिमुलेटेड आकाश और असली अक्ष वाले पिछले कैमरे के बीच बदलें। यहाँ कैमरा उपयोग किए बिना ज़ूम और पारदर्शिता जान सकते हैं। सामान्य दृश्य पर लौटने के लिए फिर टैप करें।</string>
+    <string name="tutorial_camera" formatted="false">पैनोरमा, कैमरा या ग्लोब चुनें। उनके नियंत्रण देखने के लिए यहाँ टैप करें।</string>
     <string name="tutorial_weather" formatted="false">सिमुलेटेड आकाश और पैनोरमा में मौसम दिखाएँ या छिपाएँ। कैमरा मोड में उपलब्ध नहीं।</string>
     <string name="tutorial_axis" formatted="false">कैमरे का अक्ष (90°) या फ़ोन की लंबाई का अक्ष (0°) चुनें। कैमरा हमेशा अपना अक्ष उपयोग करता है।</string>
     <string name="tutorial_transparency" formatted="false">कैमरे से मिलान के लिए पिंडों के चित्र पारदर्शी बनाएँ। चित्र यह चुनाव बनाए रखता है।</string>
-    <string name="tutorial_zoom" formatted="false">सिम्युलेटेड आकाश में 0.5× से 1× तक ज़ूम चुनें; कैमरे में उपलब्ध ज़ूम का उपयोग करें। दोनों मोड में दो उंगलियों से ज़ूम इन या आउट कर सकते हैं।</string>
-    <string name="tutorial_capture" formatted="false">आकाश का पैनोरमा या खगोलीय परतों वाला कैमरा चित्र बनाएँ। पूर्वावलोकन से निर्यात करें। पूर्वावलोकन में नियंत्रण दिखाने या छिपाने के लिए चित्र पर दो बार टैप करें।</string>
+    <string name="tutorial_zoom" formatted="false">बटन या दो उँगलियों से ज़ूम बढ़ाएँ या घटाएँ।</string>
+    <string name="tutorial_capture" formatted="false">दृश्य की छवि तैयार करें और पूर्वावलोकन से निर्यात करें।</string>
     <string name="tutorial_panels" formatted="false">आकाश के लिए जगह बनाने को पिंड और कंपास पैनल समेटें या फैलाएँ।</string>
     <string name="tutorial_antipodes" formatted="false">चुने हुए बिंदुओं की विपरीत दिशा दिखाने या छिपाने के लिए टैप करें: दिगंश +180° और उन्नतांश का चिह्न उलट जाता है। सभी बिंदुओं का चयन हटाने के लिए दबाकर रखें।</string>
     <string name="tutorial_navigation" formatted="false">चुने पिंडों में आगे-पीछे जाएँ। पैनल सक्रिय पिंड और पथ के रंग दिखाता है।</string>
-    <string name="tutorial_observatory" formatted="false">वेधशाला खोलने के लिए पिंड के नाम पर टैप करें: मॉडल, वैज्ञानिक विवरण, यात्रा का समय, प्रमुख ऊँचाइयाँ और घटनाएँ। ऊपर की पट्टी में क्रम से दैनिक पथ, निर्यात और पसंदीदा हैं।</string>
+    <string name="tutorial_observatory" formatted="false">पिंड के डेटा, पथ, मुख्य ऊँचाइयाँ, घटनाएँ और व्यक्तिगत क्षण खोलें।</string>
     <string name="tutorial_daily" formatted="false">पथ, समय, ऊँचाई और चुनने योग्य बिंदु देखें। भविष्य की घटनाओं में अनुस्मारक लगाया जा सकता है।</string>
     <string name="tutorial_gps" formatted="false">Location से स्वतंत्र वास्तविक स्थान, GPS ऊँचाई, दिशा और मौसम देखें।</string>
     <string name="tutorial_points" formatted="false">कक्षा बिंदु चुनें। पिंड, समय, T, दिगंश और ऊँचाई पढ़ने के लिए उस पर निशाना लगाएँ। वस्तु के किनारे का रंग उसकी कक्षा के रंग जैसा होता है; वर्तमान स्थिति चुनने पर वह नीला या आसमानी हो जाता है।</string>

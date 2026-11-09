@@ -1,9 +1,9 @@
 <resources>
     <string name="info_news_title">最近の変更 · %1$s</string>
-    <string name="info_news_star_sky" formatted="false">シミュレーションの空とカメラのズーム説明をわかりやすくしました。</string>
-    <string name="info_news_texture_downloads" formatted="false">どちらの表示モードでも2本の指でズームを調整できます。</string>
-    <string name="info_news_weather" formatted="false">カメラのチュートリアルでも0°/90°ボタンが表示され、説明を確認できます。</string>
-    <string name="info_news_viewer_zoom" formatted="false">横向きではチュートリアルの説明が軸ボタンを隠さなくなりました。</string>
-    <string name="info_news_settings" formatted="false">横向きでパネルが表示されているときは0°/90°が矢印の隣に、閉じているときはメニューの下に表示されます。</string>
-    <string name="info_news_catalog" formatted="false">チュートリアルと更新情報を全20言語で更新しました。</string>
+    <string name="info_news_star_sky" formatted="false">軌道、主要な点、天体の現在の画像を表示するインタラクティブな地球儀を探索できます。</string>
+    <string name="info_news_texture_downloads" formatted="false">パノラマ、カメラ、地球儀を切り替え、ズーム、回転、ラベルを調整できます。</string>
+    <string name="info_news_weather" formatted="false">昼夜の星空背景と選択したラベル付きで地球儀の画像を作成できます。</string>
+    <string name="info_news_viewer_zoom" formatted="false">ライブカメラの角度グリッドを表示または非表示にできます。</string>
+    <string name="info_news_settings" formatted="false">時間を1秒につき最大15日進めたり戻したりできます。</string>
+    <string name="info_news_catalog" formatted="false">チュートリアルの更新、わかりやすい操作、明るい海とギャラリーの拡充。</string>
 </resources>

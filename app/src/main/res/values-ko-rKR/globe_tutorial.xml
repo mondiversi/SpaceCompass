@@ -1,0 +1,4 @@
+<resources>
+    <string name="tutorial_globe_labels" formatted="false">표시할 천체와 지점의 라벨을 선택합니다.</string>
+    <string name="tutorial_globe_rotation" formatted="false">지구 자전축 회전과 자유 회전을 전환합니다.</string>
+</resources>

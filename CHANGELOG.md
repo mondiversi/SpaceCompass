@@ -1,5 +1,15 @@
 # Changelog
 
+## 1.9.0 — 2026-11-09
+
+- Add interactive Globe mode alongside Panorama and Camera, with Earth-centred satellite tracks and apparent directions for distant objects.
+- Add axis-locked/free rotation, saved zoom, current-object images, point selection, Antipodes and theme-aware space backgrounds.
+- Let live Globe labels follow the active island object. Offer four main-view scopes and all five capture scopes, with the main choice inherited at capture.
+- Generate Globe images with frozen geometry, star backgrounds, rear-side labels, privacy-aware location pins and the existing image/table exports.
+- Add a saved live-camera angular grid; refine controls, optical alignment and gesture exclusion margins.
+- Extend positive and negative simulated time to fifteen days per second; refine Earth screensaver lighting and ocean visibility.
+- Update the tutorial and twenty-language News; expand the English portrait/landscape README gallery without personal location data.
+
 ## 1.8.9 — 2026-11-08
 
 - Clarify the zoom tutorial: two-finger zoom works in both the simulated sky and the real camera view. Remove the unnecessary explanation about separate saved choices.

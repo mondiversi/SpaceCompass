@@ -1,0 +1,4 @@
+<resources>
+    <string name="tutorial_globe_labels" formatted="false">Elige qué etiquetas de objetos y puntos mostrar.</string>
+    <string name="tutorial_globe_rotation" formatted="false">Alterna entre girar sobre el eje terrestre y girar libremente.</string>
+</resources>

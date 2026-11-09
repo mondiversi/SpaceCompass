@@ -1,0 +1,4 @@
+<resources>
+    <string name="tutorial_globe_labels" formatted="false">Wybierz etykiety obiektów i punktów do wyświetlenia.</string>
+    <string name="tutorial_globe_rotation" formatted="false">Przełączaj między obrotem wokół osi Ziemi a swobodnym obracaniem.</string>
+</resources>

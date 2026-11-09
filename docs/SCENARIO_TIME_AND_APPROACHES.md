@@ -13,13 +13,13 @@ All existing observation, capture, weather and screen-saver consumers resolve
 time through `observationTimeMs`, so acceleration also crosses civil midnights,
 month/year boundaries and daylight-saving transitions in either direction.
 
-The discrete slider has 25 positions and is symmetric: -86400× through -1× on the
-left, a paused 0× at the exact centre, and +1× through +86400× on the right. Both
-directions use the reviewed magnitudes 1, 5, 10, 30, 60, 300, 900, 3600, 7200,
-21600, 43200 and 86400. The maximum corresponds to one elapsed 24-hour day per
+The discrete slider has 23 positions and is symmetric: -1296000× through -1× on the
+left, a paused 0× at the exact centre, and +1× through +1296000× on the right. Both
+directions use the reviewed magnitudes 1, 10, 30, 60, 300, 900, 3600,
+21600, 43200, 86400 and 1296000. The maximum corresponds to 15 elapsed 24-hour days per
 real second; local civil days still follow the selected zone's daylight-saving rules.
-Older saved or imported rates that no longer have a slider step (2, 3, 6, 120, 600,
-1800, with either sign) migrate to the nearest slower magnitude, preserving the
+Older saved or imported rates that no longer have a slider step (2, 3, 5, 6, 120, 600,
+1800 and 7200, with either sign) migrate to the nearest slower magnitude, preserving the
 direction, enabled flag and resumption policy. Unknown rates remain invalid in
 archives. Physical
 left/right direction is retained in RTL locales. A centre-origin track and compact

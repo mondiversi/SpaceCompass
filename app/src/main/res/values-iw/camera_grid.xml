@@ -1,0 +1,6 @@
+<resources>
+    <string name="camera_grid" formatted="false">רשת זוויתית</string>
+    <string name="camera_grid_on" formatted="false">הרשת הזוויתית מוצגת</string>
+    <string name="camera_grid_off" formatted="false">הרשת הזוויתית מוסתרת</string>
+    <string name="tutorial_camera_grid" formatted="false">הצגה או הסתרה של רשת האזימוט והגובה בתצוגת המצלמה.</string>
+</resources>

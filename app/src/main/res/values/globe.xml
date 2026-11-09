@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="view_mode_choose" formatted="false">View mode</string>
+    <string name="view_mode_camera" formatted="false">Camera</string>
+    <string name="view_mode_globe" formatted="false">Globe</string>
+    <string name="globe_direction_note" formatted="false">Satellites: Earth orbits · Other objects: apparent directions</string>
+    <string name="globe_rotation_axis" formatted="false">Rotation around Earth’s axis</string>
+    <string name="globe_rotation_free" formatted="false">Free rotation</string>
+    <string name="globe_labels_selected_object" formatted="false">Selected object</string>
+    <string name="globe_labels_all_objects" formatted="false">All objects</string>
+</resources>

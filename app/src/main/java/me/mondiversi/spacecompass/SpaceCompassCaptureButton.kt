@@ -1,10 +1,5 @@
 package me.mondiversi.spacecompass
 
-import android.animation.ValueAnimator
-import androidx.compose.animation.core.RepeatMode
-import androidx.compose.animation.core.animateFloat
-import androidx.compose.animation.core.infiniteRepeatable
-import androidx.compose.animation.core.rememberInfiniteTransition
 import androidx.compose.animation.animateColorAsState
 import androidx.compose.animation.core.tween
 import androidx.compose.foundation.clickable
@@ -19,13 +14,11 @@ import androidx.compose.material3.Surface
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.remember
-import androidx.compose.runtime.rememberUpdatedState
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.draw.drawWithContent
 import androidx.compose.ui.graphics.drawscope.Stroke
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
-import androidx.compose.ui.graphics.compositeOver
 import androidx.compose.ui.graphics.lerp
 import androidx.compose.ui.platform.testTag
 import androidx.compose.ui.res.stringResource
@@ -35,31 +28,19 @@ import androidx.compose.ui.unit.dp
 internal fun SpaceCompassCaptureButton(
     onCapture: () -> Unit,
     enabled: Boolean,
-    modifier: Modifier = Modifier,
-    cameraEnabled: Boolean = false,
-    animateBorder: Boolean = true
+    borderColor: Color,
+    modifier: Modifier = Modifier
 ) {
     val label = stringResource(R.string.panorama_capture)
     val haptics = rememberSpaceCompassHapticController()
     val background = MaterialTheme.colorScheme.primary
     val night = isSystemInDarkTheme()
     val foreground = spaceCompassCounterTextColor(night)
-    // Match the neutral controls' 35% outline over their opaque page surface.
-    val borderNeutral = MaterialTheme.colorScheme.onSurface.copy(alpha = .35f)
-        .compositeOver(MaterialTheme.colorScheme.background)
-    // Balance the denser shutter/orbit artwork with the neighboring open symbols.
+    // Keep the same optically balanced shutter in all three view modes.
     val glyphStroke = SpaceCompassFloatingIconStrokeWidth * .8f
     val interaction = remember { MutableInteractionSource() }
     val pressed by interaction.collectIsPressedAsState()
     val restingBackground = background.copy(alpha = 1f)
-    // Read the colour blend only while drawing, keeping layout and scene composition stable.
-    val borderProgress = if (enabled && animateBorder && ValueAnimator.areAnimatorsEnabled()) {
-        rememberInfiniteTransition(label = "captureBorderPulse").animateFloat(
-            initialValue = 0f, targetValue = 1f,
-            animationSpec = infiniteRepeatable(tween(1_600), RepeatMode.Reverse),
-            label = "captureBorderProgress"
-        )
-    } else rememberUpdatedState(1f)
     // Animate the circular surface itself instead of a platform ripple mask.
     val containerColor by animateColorAsState(
         targetValue = if (enabled && pressed) lerp(restingBackground, Color.White, .12f) else restingBackground,
@@ -80,10 +61,8 @@ internal fun SpaceCompassCaptureButton(
                 .testTag("capture-panorama").spaceCompassTutorialTarget(SpaceCompassTutorialFeature.CAPTURE, enabled = enabled)
                 .drawWithContent {
                     drawContent()
-                    val edge = 2.dp.toPx()
-                    drawCircle(lerp(background, borderNeutral, borderProgress.value)
-                        .copy(alpha = if (enabled) 1f else .12f),
-                        radius = (size.minDimension - edge) / 2, style = Stroke(edge))
+                    val edge = 1.dp.toPx()
+                    drawCircle(borderColor, radius = (size.minDimension - edge) / 2, style = Stroke(edge))
                 }
                 .clickable(interactionSource = interaction, indication = null, enabled = enabled, onClick = capture)
                 .spaceCompassAccessibleAction(label, enabled = enabled, onClick = capture),
@@ -94,15 +73,10 @@ internal fun SpaceCompassCaptureButton(
             shadowElevation = 0.dp
         ) {
             Box(contentAlignment = Alignment.Center) {
-                SpaceCompassFloatingGlyph(if (cameraEnabled) spaceCompassFloatingInk(26f, .11f, .11f, .89f, .89f, glyphStroke.value)
-                    else spaceCompassFloatingInk(26f, .12f, .22f, .88f, .76f, glyphStroke.value * 2.5f),
+                SpaceCompassFloatingGlyph(spaceCompassFloatingInk(26f, .11f, .11f, .89f, .89f, glyphStroke.value),
                     circleSide = 48.dp) {
-                    SpaceCompassSettingsMenuIcon(
-                        if (cameraEnabled) "capture" else "panorama",
-                        foreground.copy(alpha = if (enabled) 1f else .38f),
-                        modifier = Modifier.size(26.dp),
-                        iconStrokeWidth = glyphStroke
-                    )
+                    SpaceCompassSettingsMenuIcon("capture",foreground.copy(alpha = if (enabled) 1f else .38f),
+                        modifier = Modifier.size(26.dp),iconStrokeWidth = glyphStroke)
                 }
             }
         }

@@ -1,5 +1,14 @@
 package me.mondiversi.spacecompass
 
+import androidx.activity.compose.BackHandler
+import androidx.compose.foundation.background
+import androidx.compose.foundation.layout.*
+import androidx.compose.material3.*
+import androidx.compose.ui.Alignment
+import androidx.compose.ui.Modifier
+import androidx.compose.ui.platform.testTag
+import androidx.compose.ui.res.stringResource
+import androidx.compose.ui.unit.dp
 import androidx.compose.runtime.*
 import androidx.compose.runtime.saveable.rememberSaveable
 import androidx.compose.runtime.saveable.rememberSaveableStateHolder
@@ -46,10 +55,31 @@ internal fun SpaceCompassCelestialViewerScreen(body: SpaceCompassCelestialBody, 
     if (!pathVisible) {
         pages.SaveableStateProvider(viewComparisonId ?: body.name) {
             SpaceCompassCelestialObservatoryPage(body, timeMs, latitude, longitude, altitude, remote,
-                primaryText, secondaryText, backgroundColor, onDailyPath = path?.let { ready -> {
-                    state.openMenu(ready, current)
-                    pathVisible = true
-                } }, onBack = onBack)
+                primaryText, secondaryText, backgroundColor, onBack = onBack)
+        }
+        return
+    }
+    fun closePath() {
+        state.closeMenu()
+        if (startWithPath) onBack() else pathVisible = false
+    }
+    // Direct island navigation can arrive before its Location-based path is ready.
+    if (path == null) {
+        BackHandler(onBack = ::closePath)
+        Surface(Modifier.fillMaxSize().testTag("sun-path-pending-page"),
+            color = spaceCompassPageBackground(), contentColor = primaryText) {
+            Column(Modifier.fillMaxSize()) {
+                SpaceCompassPageToolbar(stringResource(R.string.celestial_daily_path), ::closePath)
+                Column(Modifier.fillMaxWidth().weight(1f).padding(18.dp),
+                    verticalArrangement = Arrangement.spacedBy(12.dp, Alignment.CenterVertically),
+                    horizontalAlignment = Alignment.CenterHorizontally) {
+                    val loading = remote.loading || (latitude != null && longitude != null && available == null)
+                    if (loading) CircularProgressIndicator(Modifier.size(32.dp))
+                    Text(if (loading) stringResource(R.string.celestial_loading)
+                        else stringResource(R.string.celestial_unavailable, stringResource(body.nameResource)),
+                        color = secondaryText)
+                }
+            }
         }
         return
     }
@@ -62,9 +92,6 @@ internal fun SpaceCompassCelestialViewerScreen(body: SpaceCompassCelestialBody, 
     } }
     CompositionLocalProvider(LocalSpaceCompassObservationZoneOverride provides zone) {
     SpaceCompassSunDailyPathPage(state, primaryText, secondaryText, backgroundColor,
-        nowMs = dailyTimeMs, location = location, onBack = {
-            state.closeMenu()
-            if (startWithPath) onBack() else pathVisible = false
-        })
+        nowMs = dailyTimeMs, location = location, onBack = ::closePath)
     }
 }

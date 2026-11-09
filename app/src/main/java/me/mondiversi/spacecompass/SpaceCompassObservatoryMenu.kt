@@ -18,7 +18,7 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
 
 @Composable
-internal fun SpaceCompassObservatoryMenu(enabled: Boolean, onDailyPath: (() -> Unit)?,
+internal fun SpaceCompassObservatoryMenu(enabled: Boolean,
     onHeights: () -> Unit, onEvents: () -> Unit, onPersonalMoments: () -> Unit, onExport: () -> Unit) {
     var expanded by remember { mutableStateOf(false) }
     val dividerColor = MaterialTheme.colorScheme.onSurface.copy(alpha = .10f)
@@ -32,14 +32,6 @@ internal fun SpaceCompassObservatoryMenu(enabled: Boolean, onDailyPath: (() -> U
         SpaceCompassAdaptiveDropdownMenu(expanded, { expanded = false },
             Modifier.testTag("observatory-menu-items"), containerColor = spaceCompassSettingsCardColor(),
             shape = RoundedCornerShape(16.dp)) {
-            SpaceCompassNavigationMenuItem(stringResource(R.string.celestial_daily_path),
-                { expanded = false; onDailyPath?.invoke() }, Modifier.testTag("observatory-path"),
-                enabled = onDailyPath != null) { tint ->
-                CompositionLocalProvider(LocalContentColor provides tint) {
-                    SpaceCompassDailyPathIcon(SpaceCompassMenuIconSize, SpaceCompassMenuIconStrokeWidth)
-                }
-            }
-            HorizontalDivider(color = dividerColor)
             SpaceCompassNavigationMenuItem(stringResource(R.string.observation_heights_title),
                 { expanded = false; onHeights() }, Modifier.testTag("observatory-heights")) { tint ->
                 SpaceCompassSettingsGroupIcon("sky_heights", tint)

@@ -6,6 +6,9 @@ cold app start. Weather in the virtual view becomes object transparency in camer
 mode, followed by the shared-position zoom selector. Compact landscape uses the
 same order in a side column. References, Location and object selection retain
 their navigation group. Updates retain saved object selections.
+Camera-object translucency starts enabled when no preference has been saved, with
+50% object opacity in camera mode. Explicit user choices remain unchanged and are
+included in Scene exports. The virtual sky is unaffected by this camera-only aid.
 
 The virtual zoom selector offers 0.5×, 0.6×, 0.7×, 0.8×, 0.9× and 1×, initially 1×.
 Virtual and physical camera zoom are saved separately. The camera starts from its
@@ -14,8 +17,9 @@ Menus use the available space around the selector. The optical axis stays fixed
 when the controls appear or disappear.
 
 The axis control is immediately beside the panel chevron in portrait and expanded
-landscape (islands visible), and below Menu in compact landscape (islands collapsed). New installations use the phone-length axis
-(0°); existing preferences remain. Camera mode disables this choice and uses its
+landscape (islands visible), and below Menu in compact landscape (islands collapsed).
+New installations use the camera pointing axis (90°); existing preferences remain.
+Camera mode disables this choice and uses its
 real optical axis. Point/Antipodes controls occupy the sky column's lower-right
 corner in expanded landscape, above Capture in portrait and beside it in compact
 landscape.

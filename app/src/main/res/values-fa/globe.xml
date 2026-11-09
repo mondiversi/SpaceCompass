@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="view_mode_choose" formatted="false">حالت نمایش</string>
+    <string name="view_mode_camera" formatted="false">دوربین</string>
+    <string name="view_mode_globe" formatted="false">کرهٔ زمین</string>
+    <string name="globe_direction_note" formatted="false">ماهواره‌ها: مدار زمین · دیگر اجرام: جهت‌های ظاهری</string>
+    <string name="globe_rotation_axis" formatted="false">چرخش حول محور زمین</string>
+    <string name="globe_rotation_free" formatted="false">چرخش آزاد</string>
+    <string name="globe_labels_selected_object" formatted="false">جرم انتخاب‌شده</string>
+    <string name="globe_labels_all_objects" formatted="false">همهٔ اجرام</string>
+</resources>

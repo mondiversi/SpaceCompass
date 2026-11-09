@@ -29,7 +29,7 @@ class SpaceCompassSkyPlaybackTest {
     }
 
     @Test fun acceleratedAndReversePlaybackRetainTheirConfiguredRate() {
-        for (rate in listOf(-86400, 5, 86400)) {
+        for (rate in listOf(-1296000, 10, 1296000)) {
             var elapsed = 0L
             val state = SpaceCompassObserverState(null, elapsedClock = { elapsed })
             val location = spaceCompassObserverPlan(45.0, 9.0, 100.0, now, "Europe/Rome")!!
@@ -115,7 +115,7 @@ class SpaceCompassSkyPlaybackTest {
     }
 
     @Test fun aCustomSpeedAloneResumesFromTheHeldInstant() {
-        for (rate in listOf(-5, 86400)) {
+        for (rate in listOf(-10, 1296000)) {
             var elapsed = 0L
             val state = SpaceCompassObserverState(null, elapsedClock = { elapsed })
             state.configureTime(SpaceCompassScenarioTimeSettings(true, rate, SpaceCompassScenarioResume.ACTIVE))

@@ -62,7 +62,7 @@ internal fun SpaceCompassAppPages(content: @Composable () -> Unit) {
         LocalSpaceCompassObserver provides observer, LocalSpaceCompassObjectPageScrollSession provides objectScrollSession,
         LocalSpaceCompassOrbitSelection provides orbitSelection, LocalSpaceCompassComparisons provides comparisons,
         LocalSpaceCompassMainVisible provides (route == null && !screensaverActive && !sceneExportVisible)) {
-        SpaceCompassDropdownDimmingHost {
+        Box(Modifier.fillMaxSize()) {
             // Keep remember/effects/caches alive. An unplaced layer has no drawing,
             // touch targets or accessibility nodes behind the foreground page.
             Box(Modifier.fillMaxSize().layout { measurable, constraints ->

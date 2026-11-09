@@ -1,0 +1,6 @@
+<resources>
+    <string name="camera_grid" formatted="false">角度网格</string>
+    <string name="camera_grid_on" formatted="false">角度网格已显示</string>
+    <string name="camera_grid_off" formatted="false">角度网格已隐藏</string>
+    <string name="tutorial_camera_grid" formatted="false">显示或隐藏相机视图中的方位角和高度角网格。</string>
+</resources>

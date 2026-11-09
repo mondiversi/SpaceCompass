@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="view_mode_choose" formatted="false">Mwonekano</string>
+    <string name="view_mode_camera" formatted="false">Kamera</string>
+    <string name="view_mode_globe" formatted="false">Tufe la Dunia</string>
+    <string name="globe_direction_note" formatted="false">Satelaiti: obiti za Dunia · Vitu vingine: mielekeo inayoonekana</string>
+    <string name="globe_rotation_axis" formatted="false">Mzunguko kwenye mhimili wa Dunia</string>
+    <string name="globe_rotation_free" formatted="false">Mzunguko huru</string>
+    <string name="globe_labels_selected_object" formatted="false">Kitu kilichochaguliwa</string>
+    <string name="globe_labels_all_objects" formatted="false">Vitu vyote</string>
+</resources>

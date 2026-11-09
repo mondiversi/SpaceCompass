@@ -8,8 +8,8 @@ paths, inspect reference facts and view textured models. Space Compass is a stan
 
 ## Download and install
 
-Download **space-compass-1.8.9.apk** from the
-[Space Compass 1.8.9 release](https://github.com/mondiversi/SpaceCompass/releases/tag/v1.8.9).
+Download **space-compass-1.9.0.apk** from the
+[Space Compass 1.9.0 release](https://github.com/mondiversi/SpaceCompass/releases/tag/v1.9.0).
 Android 8.0 or newer is required. Open the APK and follow Android's installation
 prompts; allow installation for your browser or file manager if requested.
 
@@ -82,7 +82,29 @@ See Space Compass in portrait and landscape, by day and by night. These English 
   </tr>
 </table>
 
-[Explore all 14 screenshots and unframed app captures](docs/screenshots/README.md).
+[Explore all 20 screenshots and unframed app captures](docs/screenshots/README.md).
+
+### New in 1.9.0
+
+Explore the interactive Globe, captured views and the updated tutorial. These new English screenshots use the same public London demonstration.
+
+<table>
+  <tr>
+    <td align="center"><a href="docs/screenshots/full/15-globe-day-portrait.webp"><img src="docs/screenshots/thumbs/15-globe-day-portrait.webp" width="220" alt="Interactive Globe in Space Compass 1.9.0"></a><br><sub>Interactive Globe</sub></td>
+    <td align="center"><a href="docs/screenshots/full/16-globe-labels-portrait.webp"><img src="docs/screenshots/thumbs/16-globe-labels-portrait.webp" width="220" alt="Globe label options in Space Compass 1.9.0"></a><br><sub>Globe label options</sub></td>
+    <td align="center"><a href="docs/screenshots/full/17-tutorial-globe-portrait.webp"><img src="docs/screenshots/thumbs/17-tutorial-globe-portrait.webp" width="220" alt="Interactive tutorial in Space Compass 1.9.0"></a><br><sub>Interactive tutorial</sub></td>
+  </tr>
+</table>
+
+<table>
+  <tr>
+    <td align="center"><a href="docs/screenshots/full/18-globe-night-landscape.webp"><img src="docs/screenshots/thumbs/18-globe-night-landscape.webp" width="350" alt="Globe in landscape in Space Compass 1.9.0"></a><br><sub>Globe in landscape</sub></td>
+    <td align="center"><a href="docs/screenshots/full/19-globe-capture-landscape.webp"><img src="docs/screenshots/thumbs/19-globe-capture-landscape.webp" width="350" alt="Landscape Globe capture in Space Compass 1.9.0"></a><br><sub>Landscape Globe capture</sub></td>
+  </tr>
+  <tr>
+    <td align="center"><a href="docs/screenshots/full/20-view-modes-landscape.webp"><img src="docs/screenshots/thumbs/20-view-modes-landscape.webp" width="350" alt="Three viewing modes in Space Compass 1.9.0"></a><br><sub>Three viewing modes</sub></td>
+  </tr>
+</table>
 
 <!-- app-gallery:end -->
 
@@ -92,10 +114,11 @@ See Space Compass in portrait and landscape, by day and by night. These English 
 - **See the sky through your camera.** Overlay objects and their paths on your surroundings. Zoom in or out and fade the object images to compare their predicted positions with what you see.
 - **Control the view with a tap.** Tap empty sky to pause or resume sky time; double-tap to show or hide the reticle and controls. Double-tap a photo or panorama preview to toggle its overlay controls.
 - **Choose your field of view.** Adjust and remember virtual-sky zoom from 0.5× to 1×, with separate camera zoom for the lenses available on your device.
+- **Explore an interactive Earth.** Switch to Globe to rotate Earth, inspect paths and key points, select points and generate a Globe image. Earth satellites use Earth-centred orbits; distant objects show apparent directions.
 - **Follow daily paths.** See when an object rises, reaches its highest point and sets. Choose today's full path or the next 24 hours, select points of interest and check how long until they happen.
-- **Explore other places and times.** Create a Location with a different place, date or time. Pause, speed up or reverse time by up to one day per second. Set up changes at your own pace and apply them when you return to the sky, then save or share the place and time settings independently.
+- **Explore other places and times.** Create a Location with a different place, date or time. Pause, speed up or reverse time by up to fifteen days per second. Set up changes at your own pace and apply them when you return to the sky, then save or share the place and time settings independently.
 - **Plan your observations.** Compare the current sky with dated paths from Key Heights, Key Events or your own Personal Moments. Save or share Personal Moments separately, or include active comparisons when exporting a Scene. Future path points can also be sent to Android's Clock or Calendar.
-- **Capture the view.** Take a camera photo with celestial overlays or generate a full 360° sky panorama. Choose which labels to show and use the colour legend to identify each object's path.
+- **Capture the view.** Take a camera photo with celestial overlays or generate a full 360° sky panorama or Globe image. Choose which labels to show and use the colour legend to identify each object's path.
 - **Share your sky setup.** Export a Scene with selected objects, dated comparisons, orbit points and Antipodes. Include Location when needed, and choose whether automatic place and time values should be fixed at export. Load it to restore the view.
 - **Save and share your findings.** Export images, CSV spreadsheets and readable tables from captures, daily paths and the Observatory. Choose your language and units or international formatting, and control how much location information to include.
 - **Browse 9,999 objects.** Discover planets, moons, stars, constellations, galaxies, spacecraft and more. Search, filter and sort the catalogue, mark favourites and choose what appears in your sky.
@@ -114,7 +137,7 @@ safety or navigation instrument.
 ## Build and checks
 
 The application ID is `me.mondiversi.spacecompass`. This source builds version
-**1.8.9**, with Android/update identity `1.8.9` and version code **75**.
+**1.9.0**, with Android/update identity `1.9.0` and version code **76**.
 This preserves the three-part update protocol used by existing preview installations.
 The app stores its preferences and caches privately.
 
@@ -170,7 +193,7 @@ Launcher/loading artwork and original illustrations are project assets.
 
 ## Data and graphics packages
 
-Release 1.8.9 includes **9,999 selectable objects**, and an optional reference-information archive.
+Release 1.9.0 includes **9,999 selectable objects**, and an optional reference-information archive.
 All descriptive data and translations remain inside the APK. Scientific limits and provenance are in the
 [catalogue sources](docs/CATALOG_9999.md) and [canonical source catalogue](catalogue/README.md).
 

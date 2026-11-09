@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="view_mode_choose" formatted="false">Widok</string>
+    <string name="view_mode_camera" formatted="false">Aparat</string>
+    <string name="view_mode_globe" formatted="false">Globus</string>
+    <string name="globe_direction_note" formatted="false">Satelity: orbity Ziemi · Inne obiekty: kierunki pozorne</string>
+    <string name="globe_rotation_axis" formatted="false">Obrót wokół osi Ziemi</string>
+    <string name="globe_rotation_free" formatted="false">Swobodny obrót</string>
+    <string name="globe_labels_selected_object" formatted="false">Wybrany obiekt</string>
+    <string name="globe_labels_all_objects" formatted="false">Wszystkie obiekty</string>
+</resources>

@@ -8,21 +8,21 @@
     <string name="tutorial_navigation_title" formatted="false">עצם נבחר</string>
     <string name="tutorial_points_title" formatted="false">נקודות מסלול</string>
     <string name="tutorial_info" formatted="false">פתחו מידע על היישום, חידושים ומקורות.</string>
-    <string name="tutorial_menu" formatted="false">פתחו כללי, שפה, יחידות, מדריך ומידע וקרדיטים.</string>
+    <string name="tutorial_menu" formatted="false">פתיחת הגדרות, סצנות שמורות ומדריך.</string>
     <string name="tutorial_objects" formatted="false">בחרו עצמים להצגה. חפשו, סננו ושמרו מועדפים.</string>
     <string name="tutorial_location" formatted="false">התאימו מיקום, גובה, אזור זמן, תאריך, שעה ומהירות זמן.</string>
     <string name="tutorial_guides" formatted="false">הציגו מעגלים שמימיים, קטבים, זנית ונדיר. אלו הקרנות שמימיות ולא מסלולים על הקרקע.</string>
     <string name="tutorial_forward" formatted="false">0–24 מציג את היום הקלנדרי כולו מחצות עד חצות. +24h מציג את 24 השעות מהזמן המוצג, גם בסימולציה. המסלולים, הצילומים והייצוא משתמשים באותו טווח.</string>
-    <string name="tutorial_camera" formatted="false">החליפו בין שמיים מדומים למצלמה האחורית עם הציר האמיתי שלה. כאן ניתן להכיר את הזום והשקיפות בלי להשתמש במצלמה. הקישו שוב כדי לחזור לתצוגה הרגילה.</string>
+    <string name="tutorial_camera" formatted="false">בחרו פנורמה, מצלמה או גלובוס. געו כאן כדי להכיר את הפקדים.</string>
     <string name="tutorial_weather" formatted="false">הציגו או הסתירו מזג אוויר בשמיים המדומים ובפנורמות. לא זמין במצב מצלמה.</string>
     <string name="tutorial_axis" formatted="false">בחרו בציר המצלמה (90°) או בציר אורך הטלפון (0°). המצלמה תמיד משתמשת בציר שלה.</string>
     <string name="tutorial_transparency" formatted="false">הפכו תמונות עצמים לשקופות חלקית להשוואה למצלמה. הצילום שומר את הבחירה.</string>
-    <string name="tutorial_zoom" formatted="false">בשמיים המדומים בחרו זום בין 0.5× ל־1×; במצלמה השתמשו בזום הזמין. בשני המצבים ניתן להגדיל או להקטין בשתי אצבעות.</string>
-    <string name="tutorial_capture" formatted="false">הכינו פנורמת שמיים או צילום עם שכבות אסטרונומיות. יצאו מהתצוגה המקדימה. בתצוגה המקדימה, הקישו פעמיים על התמונה כדי להציג או להסתיר את הפקדים.</string>
+    <string name="tutorial_zoom" formatted="false">הגדילו או הקטינו באמצעות הכפתור או שתי אצבעות.</string>
+    <string name="tutorial_capture" formatted="false">הכינו תמונה של התצוגה וייצאו אותה מהתצוגה המקדימה.</string>
     <string name="tutorial_panels" formatted="false">כווצו או הרחיבו את לוחות העצם והמצפן כדי לפנות מקום לשמיים.</string>
     <string name="tutorial_antipodes" formatted="false">יש להקיש כדי להציג או להסתיר את הכיוון הנגדי לנקודות שנבחרו: אזימוט +180° וגובה בסימן הפוך. לחיצה ממושכת מבטלת את בחירת כל הנקודות.</string>
     <string name="tutorial_navigation" formatted="false">דפדפו בין העצמים הנבחרים. הלוח מציג את העצם הפעיל וצבעי מסלולו.</string>
-    <string name="tutorial_observatory" formatted="false">הקש על שם העצם לפתיחת המצפה: מודל, נתונים מדעיים, זמן נסיעה, גבהים ואירועים חשובים. בסרגל העליון נמצאים מסלול יומי, ייצוא ומועדפים, בסדר הזה.</string>
+    <string name="tutorial_observatory" formatted="false">פתיחת נתוני העצם, מסלולים, גבהים חשובים, אירועים ורגעים אישיים.</string>
     <string name="tutorial_daily" formatted="false">צפו במסלול, בשעות, בגבהים ובנקודות לבחירה. אפשר להוסיף תזכורת לאירועים עתידיים.</string>
     <string name="tutorial_gps" formatted="false">צפו במיקום האמיתי, בגובה GPS, בכיוון ובמזג האוויר, בנפרד מ-Location.</string>
     <string name="tutorial_points" formatted="false">בחרו נקודת מסלול. כוונו אליה לקריאת העצם, השעה, T, האזימוט והגובה. גבול העצם מקבל את צבע המסלול שלו; בחירת המיקום הנוכחי משנה אותו לכחול או לתכלת.</string>

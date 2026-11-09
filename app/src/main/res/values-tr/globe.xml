@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="view_mode_choose" formatted="false">Görünüm</string>
+    <string name="view_mode_camera" formatted="false">Kamera</string>
+    <string name="view_mode_globe" formatted="false">Dünya küresi</string>
+    <string name="globe_direction_note" formatted="false">Uydular: Dünya yörüngeleri · Diğer cisimler: görünür yönler</string>
+    <string name="globe_rotation_axis" formatted="false">Dünya ekseni etrafında dönüş</string>
+    <string name="globe_rotation_free" formatted="false">Serbest dönüş</string>
+    <string name="globe_labels_selected_object" formatted="false">Seçili cisim</string>
+    <string name="globe_labels_all_objects" formatted="false">Tüm cisimler</string>
+</resources>

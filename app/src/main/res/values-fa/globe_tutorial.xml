@@ -1,0 +1,4 @@
+<resources>
+    <string name="tutorial_globe_labels" formatted="false">برچسب‌های جرم‌ها و نقطه‌هایی را که می‌خواهی ببینی انتخاب کن.</string>
+    <string name="tutorial_globe_rotation" formatted="false">بین چرخش حول محور زمین و چرخش آزاد جابه‌جا شو.</string>
+</resources>

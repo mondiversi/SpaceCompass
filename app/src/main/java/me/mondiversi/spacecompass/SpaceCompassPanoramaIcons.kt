@@ -172,3 +172,11 @@ internal fun SpaceCompassPanoramaCompassIcon() {
         drawLine(tint, Offset(size.width*.42f,size.height*.42f), Offset(size.width*.57f,size.height*.57f), visualStroke.toPx())
     }
 }
+
+
+/** The same optical placement and stroke compensation in the main view and capture preview. */
+@Composable
+internal fun SpaceCompassPanoramaLabelsGlyph() {
+    SpaceCompassFloatingGlyph(spaceCompassFloatingInk(24f,.16f,.16f,.86f,.86f),
+        opticalOffset=Offset(2.1f,2.1f)) { SpaceCompassPanoramaLabelsIcon() }
+}

@@ -1,0 +1,6 @@
+<resources>
+    <string name="camera_grid" formatted="false">角度グリッド</string>
+    <string name="camera_grid_on" formatted="false">角度グリッドを表示</string>
+    <string name="camera_grid_off" formatted="false">角度グリッドを非表示</string>
+    <string name="tutorial_camera_grid" formatted="false">カメラ表示の方位角と仰角のグリッドを表示または非表示にします。</string>
+</resources>

@@ -5,6 +5,35 @@ import org.junit.Assert.*
 import org.junit.Test
 
 class SpaceCompassCameraAngularGridTest {
+    @Test fun liveGridSharesThePhotoCurvesWithoutBorderLabels() {
+        for(roll in listOf(0.0,32.0,90.0)) {
+            val camera=orientation(125.0,20.0,roll)
+            val photo=spaceCompassCameraAngularGrid(camera,lens,width,height,frame)
+            val live=spaceCompassCameraAngularGrid(camera,lens,width,height,frame,includeBorderTicks=false)
+            assertTrue(live.lines.isNotEmpty());assertTrue(live.ticks.isEmpty())
+            assertEquals(photo.lines,live.lines)
+        }
+    }
+    @Test fun liveGridRaysRespectShiftedOpticsAndBothScreenOrientations() {
+        for((w,h) in listOf(1080.0 to 1920.0,1920.0 to 1080.0)) {
+            val camera=orientation(125.0,20.0,32.0)
+            val optics=requireNotNull(spaceCompassSceneFramePerspective(w,h,
+                SpaceCompassSunSceneFrame(20.0,100.0,w*.6,h*.75),SpaceCompassPerspective(.7,.9)))
+            val live=spaceCompassCameraAngularGrid(camera,optics,w,h,
+                SpaceCompassSunSceneFrame(0.0,0.0,w,h),includeBorderTicks=false)
+            assertTrue(live.lines.isNotEmpty())
+            for(line in live.lines) for(segment in line.segments) {
+                val ray=spaceCompassCameraPixelPosition(segment.start.x,segment.start.y,w,h,camera,optics)
+                // Azimuth is undefined at the exact zenith/nadir convergence.
+                if(line.axis==SpaceCompassCameraGridAxis.AZIMUTH&&abs(ray.elevationDegrees)>89.9) continue
+                val error=if(line.axis==SpaceCompassCameraGridAxis.AZIMUTH)
+                    wrapSpaceCompassSunDegrees(ray.azimuthDegrees-line.degrees+180)-180
+                    else ray.elevationDegrees-line.degrees
+                assertEquals(0.0,error,.1)
+            }
+        }
+    }
+
     private val width = 800.0
     private val height = 600.0
     private val lens = SpaceCompassPerspective(1.0, 1.2, .47, .54)

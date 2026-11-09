@@ -8,21 +8,21 @@
     <string name="tutorial_navigation_title" formatted="false">الجسم المحدد</string>
     <string name="tutorial_points_title" formatted="false">نقاط المدار</string>
     <string name="tutorial_info" formatted="false">افتح معلومات التطبيق والمستجدات ومصادر البيانات.</string>
-    <string name="tutorial_menu" formatted="false">افتح الإعدادات العامة واللغة والوحدات والدليل والمعلومات.</string>
+    <string name="tutorial_menu" formatted="false">افتح الإعدادات والمشاهد المحفوظة والدليل.</string>
     <string name="tutorial_objects" formatted="false">اختر الأجسام المعروضة. ابحث وصفِّ واحفظ المفضلة.</string>
     <string name="tutorial_location" formatted="false">خصّص الموقع والارتفاع والمنطقة الزمنية والتاريخ والوقت وسرعة الزمن.</string>
     <string name="tutorial_guides" formatted="false">أظهر الدوائر السماوية والقطبين والسمت والنظير. هذه إسقاطات سماوية وليست مسارات أرضية.</string>
     <string name="tutorial_forward" formatted="false">يعرض 0–24 اليوم التقويمي كاملًا من منتصف الليل إلى منتصف الليل. ويعرض +24h الساعات الأربع والعشرين التالية من الوقت المعروض، حتى لو كان محاكى. تستخدم المسارات واللقطات والتصدير الفترة نفسها.</string>
-    <string name="tutorial_camera" formatted="false">بدّل بين السماء المحاكاة والكاميرا الخلفية بمحورها الحقيقي. هنا يمكنك استكشاف التكبير والشفافية دون استخدام الكاميرا. المس مرة أخرى للعودة إلى العرض العادي.</string>
+    <string name="tutorial_camera" formatted="false">اختر بانوراما أو كاميرا أو كرة أرضية. انقر هنا لاستكشاف أدوات التحكم.</string>
     <string name="tutorial_weather" formatted="false">أظهر أو أخفِ الطقس في السماء المحاكاة والبانوراما. غير متاح في وضع الكاميرا.</string>
     <string name="tutorial_axis" formatted="false">اختر محور الكاميرا (90°) أو طول الهاتف (0°). تستخدم الكاميرا محورها دائمًا.</string>
     <string name="tutorial_transparency" formatted="false">اجعل صور الأجسام شبه شفافة لمقارنتها بالكاميرا. تحتفظ اللقطة بهذا الاختيار.</string>
-    <string name="tutorial_zoom" formatted="false">في السماء المحاكية، اختر التكبير من 0.5× إلى 1×؛ ومع الكاميرا، استخدم التكبير المتاح. في كلا الوضعين يمكنك التكبير والتصغير بإصبعين.</string>
-    <string name="tutorial_capture" formatted="false">جهّز بانوراما للسماء أو صورة كاميرا بطبقات فلكية. صدّر من المعاينة. في المعاينة، انقر مرتين على الصورة لإظهار أدوات التحكم أو إخفائها.</string>
+    <string name="tutorial_zoom" formatted="false">كبّر أو صغّر باستخدام الزر أو إصبعين.</string>
+    <string name="tutorial_capture" formatted="false">جهّز صورة للمشهد وصدّرها من المعاينة.</string>
     <string name="tutorial_panels" formatted="false">اطوِ أو وسّع لوحتي الجسم والبوصلة لإظهار مساحة أكبر من السماء.</string>
     <string name="tutorial_antipodes" formatted="false">المس لإظهار أو إخفاء الاتجاه المعاكس للنقاط المحددة: السمت +180° والارتفاع بعلامة معاكسة. اضغط مطولاً لإلغاء تحديد جميع النقاط.</string>
     <string name="tutorial_navigation" formatted="false">تنقّل بين الأجسام المحددة. تعرض اللوحة الجسم النشط وألوان مساره.</string>
-    <string name="tutorial_observatory" formatted="false">المس اسم الجسم لفتح المرصد: النموذج والمعلومات العلمية ومدة الرحلة والارتفاعات والأحداث المهمة. يحتوي الشريط العلوي على المسار اليومي ثم التصدير ثم المفضلة.</string>
+    <string name="tutorial_observatory" formatted="false">افتح بيانات الجرم ومساراته وارتفاعاته وأحداثه ولحظاته الشخصية.</string>
     <string name="tutorial_daily" formatted="false">اعرض المسار والأوقات والارتفاعات والنقاط القابلة للتحديد. يمكن تذكيرك بالأحداث المستقبلية.</string>
     <string name="tutorial_gps" formatted="false">اعرض موقعك الحقيقي وارتفاع GPS والاتجاه والطقس، بصورة مستقلة عن Location.</string>
     <string name="tutorial_points" formatted="false">حدّد نقطة مدارية. وجّه المؤشر إليها لقراءة الجسم والوقت وT والسمت والارتفاع. تتبع حدود الجرم لون مساره؛ وتصبح زرقاء أو سماوية عند تحديد موقعه الحالي.</string>
