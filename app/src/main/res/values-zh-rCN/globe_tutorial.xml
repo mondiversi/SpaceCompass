@@ -1,4 +1,4 @@
 <resources>
-    <string name="tutorial_globe_labels" formatted="false">选择要显示的天体和点位标签。</string>
+    <string name="tutorial_globe_labels" formatted="false">选择点的标签。根据缩放比例和可用空间自动调整详细程度。</string>
     <string name="tutorial_globe_rotation" formatted="false">在绕地轴旋转和自由旋转之间切换。</string>
 </resources>

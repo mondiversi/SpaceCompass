@@ -21,7 +21,26 @@ internal fun spaceCompassGlobeCaptureShowsLabel(mode: SpaceCompassPanoramaLabelM
     current: Boolean,antipode: Boolean,events: Set<SpaceCompassSunPathEvent>,selected: Boolean=false): Boolean =
     mode.showsPoint(selected,active,keyPoint=!antipode&&(current||events.any { it!=SpaceCompassSunPathEvent.HOUR }))
 
-/** The live picker describes points of the island's active object, including its fixed-date variant. */
+/** Active-track labels follow the picker; explicit selections remain visible across every track. */
 internal fun spaceCompassGlobeMainShowsLabel(mode: SpaceCompassPanoramaLabelMode,active: Boolean,
     current: Boolean,antipode: Boolean,events: Set<SpaceCompassSunPathEvent>,selected: Boolean=false): Boolean =
-    active && spaceCompassGlobeCaptureShowsLabel(mode,true,current,antipode,events,selected)
+    (active || selected) && spaceCompassGlobeCaptureShowsLabel(mode,active,current,antipode,events,selected)
+
+/** Every live Globe label retains clock and T± together, using its track's own reference moment. */
+internal fun formatSpaceCompassGlobeMainPointTime(timeMs: Long,referenceTimeMs: Long,
+    zone: java.util.TimeZone,formatting: SpaceCompassPanoramaFormatting): String {
+    val moment=formatSpaceCompassPanoramaMarkerTime(timeMs,referenceTimeMs,zone,formatting)
+    return moment+" · "+formatSpaceCompassPanoramaPointCountdown(timeMs,referenceTimeMs,formatting)
+}
+
+internal data class SpaceCompassGlobeLabelDetails(val full: String,val compact: String,val minimal: String)
+
+/** Detail reduction never loses the clock/T pair; angles and object headings return when space permits. */
+internal fun formatSpaceCompassGlobeMainLabelDetails(bodyName: String,eventName: String,moment: String,
+    position: SpaceCompassSunPosition,formatting: SpaceCompassPanoramaFormatting): SpaceCompassGlobeLabelDetails {
+    val title=listOf(bodyName,eventName).filter(String::isNotBlank).joinToString(" · ")
+    val minimal=listOf(eventName,moment).filter(String::isNotBlank).joinToString(" · ")
+    return SpaceCompassGlobeLabelDetails(
+        formatSpaceCompassPanoramaPointLabel(moment,position,formatting,title),
+        (eventName.ifBlank { bodyName })+"\n"+moment,minimal)
+}

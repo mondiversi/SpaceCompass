@@ -36,7 +36,10 @@ jobs:
       - name: Verify screensaver navigation
         run: node scripts/CheckScreensaverNavigation.cjs
       - name: Verify bundled renderer integrity
-        run: python3 scripts/CheckGlobeAssets.py
+        run: |
+          python3 scripts/CheckGlobeAssets.py
+          node scripts/CheckGlobeLabels.js
+          node scripts/CheckGlobeGeographicGuides.js
       - name: Build app and run checks
         run: ./gradlew --no-daemon --stacktrace :app:assembleDebug :app:testDebugUnitTest :app:compileDebugAndroidTestKotlin :app:assembleRelease :app:lintRelease
       - name: Upload development APK and test reports

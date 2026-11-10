@@ -13,12 +13,12 @@
     <string name="tutorial_location" formatted="false">Ρυθμίστε θέση, υψόμετρο, ζώνη ώρας, ημερομηνία, ώρα και ταχύτητα χρόνου.</string>
     <string name="tutorial_guides" formatted="false">Εμφανίστε ουράνιους κύκλους, πόλους, ζενίθ και ναδίρ. Είναι ουράνιες προβολές, όχι επίγειες διαδρομές.</string>
     <string name="tutorial_forward" formatted="false">0–24 δείχνει όλη την ημερολογιακή ημέρα από μεσάνυχτα σε μεσάνυχτα. +24h δείχνει τις επόμενες 24 ώρες από την εμφανιζόμενη, ακόμη και προσομοιωμένη, στιγμή. Τροχιές, λήψεις και εξαγωγές ακολουθούν το ίδιο διάστημα.</string>
-    <string name="tutorial_camera" formatted="false">Επίλεξε Πανόραμα, Κάμερα ή Υδρόγειο. Άγγιξε εδώ για να εξερευνήσεις τα χειριστήρια.</string>
+    <string name="tutorial_camera" formatted="false">Επιλέξτε Ουρανό, Κάμερα ή Υδρόγειο και γνωρίστε τα χειριστήρια.</string>
     <string name="tutorial_weather" formatted="false">Εμφανίστε ή κρύψτε καιρικά εφέ στον προσομοιωμένο ουρανό και τα πανοράματα. Δεν διατίθεται με κάμερα.</string>
     <string name="tutorial_axis" formatted="false">Επιλέξτε άξονα κάμερας (90°) ή μήκους τηλεφώνου (0°). Η κάμερα χρησιμοποιεί πάντα τον δικό της άξονα.</string>
     <string name="tutorial_transparency" formatted="false">Κάντε τα αντικείμενα ημιδιαφανή για σύγκριση με την κάμερα. Η λήψη διατηρεί την επιλογή.</string>
     <string name="tutorial_zoom" formatted="false">Κάνε μεγέθυνση ή σμίκρυνση με το κουμπί ή με δύο δάχτυλα.</string>
-    <string name="tutorial_capture" formatted="false">Ετοίμασε μια εικόνα της προβολής και εξάγαγέ τη από την προεπισκόπηση.</string>
+    <string name="tutorial_capture" formatted="false">Ετοιμάστε μια εικόνα. Στην προεπισκόπηση επιλέξτε πλέγμα, ετικέτες και θέση· σε Ουρανό και Υδρόγειο αλλάξτε μεταξύ κάδρου και πανοράματος.</string>
     <string name="tutorial_panels" formatted="false">Συμπτύξτε ή αναπτύξτε τα πλαίσια αντικειμένου και πυξίδας για περισσότερο ουρανό.</string>
     <string name="tutorial_antipodes" formatted="false">Άγγιξε για εμφάνιση ή απόκρυψη της αντίθετης κατεύθυνσης των επιλεγμένων σημείων: αζιμούθιο +180° και ύψος με αντίθετο πρόσημο. Πάτησε παρατεταμένα για αποεπιλογή όλων.</string>
     <string name="tutorial_navigation" formatted="false">Περιηγηθείτε στα επιλεγμένα αντικείμενα. Το πλαίσιο δείχνει το ενεργό αντικείμενο και τα χρώματα τροχιάς.</string>
@@ -27,7 +27,7 @@
     <string name="tutorial_gps" formatted="false">Δείτε πραγματική θέση, υψόμετρο GPS, προσανατολισμό και καιρό, ανεξάρτητα από τη Location.</string>
     <string name="tutorial_points" formatted="false">Επιλέξτε σημείο τροχιάς. Στοχεύστε το για αντικείμενο, ώρα, T, αζιμούθιο και ύψος. Το περίγραμμα του αντικειμένου ακολουθεί το χρώμα της τροχιάς του· όταν επιλέγεις την τρέχουσα θέση γίνεται μπλε ή γαλάζιο.</string>
     <string name="tutorial_reticle_title" formatted="false">Χρόνος και εικονίδια</string>
-    <string name="tutorial_reticle" formatted="false">Αγγίξτε τον κενό ουρανό για παύση ή συνέχιση του χρόνου. Αγγίξτε δύο φορές για εμφάνιση ή απόκρυψη του στόχαστρου και των εικονιδίων.</string>
+    <string name="tutorial_reticle" formatted="false">Αγγίξτε κενό χώρο για παύση ή συνέχιση του χρόνου. Το διπλό άγγιγμα εμφανίζει ή κρύβει στόχαστρο και εικονίδια· στον Ουρανό και την Κάμερα και το πλέγμα.</string>
     <string name="tutorial_reminder" formatted="false">Ανοίξτε ξυπνητήρι ή ημερολόγιο Android για κατάλληλο μελλοντικό γεγονός. Εξαιρούνται παρελθόν και τρέχον σημείο.</string>
     <string name="tutorial_status_title" formatted="false">Κατάσταση και επαναφορά</string>
     <string name="tutorial_status" formatted="false">Διαβάστε την κατάσταση. Η ενέργεια μπορεί να ζητήσει άδεια, να ενεργοποιήσει την τοποθεσία ή να επαναλάβει τη φόρτωση δεδομένων τροχιάς ή καιρού. Ο οδηγός δεν την εκτελεί.</string>

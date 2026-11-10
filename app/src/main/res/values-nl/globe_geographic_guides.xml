@@ -1,0 +1,9 @@
+<resources>
+    <string name="globe_reference_equator">Evenaar</string>
+    <string name="globe_reference_cancer">Kreeftskeerkring</string>
+    <string name="globe_reference_capricorn">Steenbokskeerkring</string>
+    <string name="globe_reference_arctic">Noordpoolcirkel</string>
+    <string name="globe_reference_antarctic">Zuidpoolcirkel</string>
+    <string name="globe_reference_north_pole">Noordpool</string>
+    <string name="globe_reference_south_pole">Zuidpool</string>
+</resources>

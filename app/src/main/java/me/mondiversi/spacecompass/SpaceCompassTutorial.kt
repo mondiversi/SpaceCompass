@@ -39,7 +39,6 @@ internal enum class SpaceCompassTutorialFeature(val title: Int, val description:
     CAMERA(R.string.view_mode_choose, R.string.tutorial_camera),
     WEATHER(R.string.sky_weather_enable, R.string.tutorial_weather),
     AXIS(R.string.pointing_axis_camera, R.string.tutorial_axis),
-    CAMERA_GRID(R.string.camera_grid, R.string.tutorial_camera_grid),
     GLOBE_LABELS(R.string.panorama_point_labels, R.string.tutorial_globe_labels),
     GLOBE_ROTATION(R.string.globe_rotation_axis, R.string.tutorial_globe_rotation),
     TRANSPARENCY(R.string.camera_object_transparency, R.string.tutorial_transparency),

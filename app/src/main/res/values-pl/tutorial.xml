@@ -13,12 +13,12 @@
     <string name="tutorial_location" formatted="false">Zmień pozycję, wysokość, strefę czasową, datę, godzinę i tempo czasu.</string>
     <string name="tutorial_guides" formatted="false">Pokaż okręgi niebieskie, bieguny, zenit i nadir. To projekcje na niebie, nie trasy naziemne.</string>
     <string name="tutorial_forward" formatted="false">0–24 pokazuje cały dzień kalendarzowy, od północy do północy. +24h pokazuje kolejne 24 godziny od wyświetlanej chwili, także symulowanej. Tory, zdjęcia i eksport używają tego samego przedziału.</string>
-    <string name="tutorial_camera" formatted="false">Wybierz Panoramę, Kamerę lub Globus. Dotknij tutaj, aby poznać sterowanie.</string>
+    <string name="tutorial_camera" formatted="false">Wybierz Niebo, Aparat lub Glob i poznaj ich przyciski.</string>
     <string name="tutorial_weather" formatted="false">Pokaż lub ukryj pogodę na symulowanym niebie i panoramach. Niedostępne w trybie aparatu.</string>
     <string name="tutorial_axis" formatted="false">Wybierz oś aparatu (90°) lub długości telefonu (0°). Aparat zawsze używa własnej osi.</string>
     <string name="tutorial_transparency" formatted="false">Zwiększ przezroczystość obiektów, aby porównać je z obrazem aparatu. Zdjęcie zachowa wybór.</string>
     <string name="tutorial_zoom" formatted="false">Przybliżaj lub oddalaj przyciskiem albo dwoma palcami.</string>
-    <string name="tutorial_capture" formatted="false">Przygotuj obraz widoku i wyeksportuj go z podglądu.</string>
+    <string name="tutorial_capture" formatted="false">Przygotuj obraz. W podglądzie wybierz siatkę, etykiety i pozycję; w Niebie i Globie przełączaj Kadr i Panoramę.</string>
     <string name="tutorial_panels" formatted="false">Zwiń lub rozwiń panele obiektu i kompasu, aby odsłonić niebo.</string>
     <string name="tutorial_antipodes" formatted="false">Dotknij, aby pokazać lub ukryć kierunek przeciwny do wybranych punktów: azymut +180° i wysokość o przeciwnym znaku. Przytrzymaj, aby odznaczyć wszystkie punkty.</string>
     <string name="tutorial_navigation" formatted="false">Przeglądaj wybrane obiekty. Panel pokazuje aktywny obiekt i kolory toru.</string>
@@ -27,7 +27,7 @@
     <string name="tutorial_gps" formatted="false">Zobacz rzeczywistą pozycję, wysokość GPS, orientację i pogodę, niezależnie od Location.</string>
     <string name="tutorial_points" formatted="false">Wybierz punkt orbity. Wyceluj w niego, aby odczytać obiekt, godzinę, T, azymut i wysokość. Obramowanie obiektu ma kolor jego toru; po wybraniu aktualnej pozycji zmienia się na niebieskie lub jasnoniebieskie.</string>
     <string name="tutorial_reticle_title" formatted="false">Czas i ikony</string>
-    <string name="tutorial_reticle" formatted="false">Dotknij pustego nieba, aby wstrzymać lub wznowić czas. Dotknij dwukrotnie, aby pokazać lub ukryć celownik i ikony.</string>
+    <string name="tutorial_reticle" formatted="false">Dotknij pustego miejsca, aby zatrzymać lub wznowić czas. Dwa dotknięcia pokazują lub ukrywają celownik i ikony; w Niebie i Aparacie także siatkę.</string>
     <string name="tutorial_reminder" formatted="false">Otwórz alarm lub kalendarz Androida dla przyszłego wydarzenia. Nie dotyczy przeszłości ani punktu aktualnego.</string>
     <string name="tutorial_status_title" formatted="false">Stan i przywracanie</string>
     <string name="tutorial_status" formatted="false">Odczytaj stan. Działanie może poprosić o uprawnienie, włączyć lokalizację lub ponowić pobieranie danych orbitalnych i pogody. Samouczek go nie wykonuje.</string>

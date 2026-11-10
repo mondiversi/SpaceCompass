@@ -1,9 +1,9 @@
 <resources>
     <string name="info_news_title">हाल के बदलाव · %1$s</string>
-    <string name="info_news_star_sky" formatted="false">पथों, मुख्य बिंदुओं और पिंडों की वर्तमान छवियों के साथ इंटरैक्टिव ग्लोब देखें।</string>
-    <string name="info_news_texture_downloads" formatted="false">पैनोरमा, कैमरा और ग्लोब के बीच बदलें; ज़ूम, घुमाव और लेबल समायोजित करें।</string>
-    <string name="info_news_weather" formatted="false">दिन या रात की तारों वाली पृष्ठभूमि और चुने हुए लेबल के साथ ग्लोब की छवि बनाएँ।</string>
-    <string name="info_news_viewer_zoom" formatted="false">लाइव कैमरा दृश्य में कोणीय ग्रिड दिखाएँ या छिपाएँ।</string>
-    <string name="info_news_settings" formatted="false">समय को प्रति सेकंड पंद्रह दिन तक आगे या पीछे चलाएँ।</string>
-    <string name="info_news_catalog" formatted="false">अपडेट किया गया ट्यूटोरियल, स्पष्ट नियंत्रण, अधिक चमकीले महासागर और विस्तृत गैलरी।</string>
+    <string name="info_news_star_sky" formatted="false">स्पष्ट नियंत्रण और अपडेट किए गए ट्यूटोरियल के साथ आकाश, कैमरा या ग्लोब चुनें।</string>
+    <string name="info_news_texture_downloads" formatted="false">आकाश या ग्लोब का दिखाई देने वाला फ्रेम लें या पूर्ण पैनोरमा चुनें।</string>
+    <string name="info_news_weather" formatted="false">कैप्चर के समय के स्थिर डेटा के साथ फ्रेम और पैनोरमा एक साथ निर्यात करें।</string>
+    <string name="info_news_viewer_zoom" formatted="false">आकाश और कैमरा की ग्रिड पृष्ठभूमि के अनुसार अपना हल्का या गहरा कंट्रास्ट बदलती हैं।</string>
+    <string name="info_news_settings" formatted="false">ग्लोब के लेबल, भौगोलिक वृत्त और ध्रुवों के नाम अधिक स्पष्ट पढ़ें।</string>
+    <string name="info_news_catalog" formatted="false">कैप्चर नियंत्रण, ज़ूम और पोर्ट्रेट व लैंडस्केप लेआउट में सुधार।</string>
 </resources>

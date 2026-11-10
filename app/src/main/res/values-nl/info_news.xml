@@ -1,9 +1,9 @@
 <resources>
     <string name="info_news_title">Laatste nieuws · %1$s</string>
-    <string name="info_news_star_sky" formatted="false">Verken de interactieve wereldbol met banen, belangrijke punten en actuele objectbeelden.</string>
-    <string name="info_news_texture_downloads" formatted="false">Wissel tussen Panorama, Camera en Wereldbol; pas zoom, rotatie en labels aan.</string>
-    <string name="info_news_weather" formatted="false">Leg de wereldbol vast met een sterrenachtergrond voor dag en nacht en instelbare labels.</string>
-    <string name="info_news_viewer_zoom" formatted="false">Toon of verberg het hoekraster in de livecamera.</string>
-    <string name="info_news_settings" formatted="false">Laat de tijd maximaal vijftien dagen per seconde vooruit of achteruit lopen.</string>
-    <string name="info_news_catalog" formatted="false">Bijgewerkte handleiding, duidelijkere bediening, helderdere oceanen en een uitgebreide galerij.</string>
+    <string name="info_news_star_sky" formatted="false">Kies Hemel, Camera of Wereldbol met duidelijkere bediening en een bijgewerkte handleiding.</string>
+    <string name="info_news_texture_downloads" formatted="false">Leg de zichtbare hemel of wereldbol vast of schakel naar het volledige panorama.</string>
+    <string name="info_news_weather" formatted="false">Exporteer de uitsnede en het panorama samen met gegevens van het opnamemoment.</string>
+    <string name="info_news_viewer_zoom" formatted="false">De rasters in Hemel en Camera passen hun licht-donkercontrast aan de achtergrond aan.</string>
+    <string name="info_news_settings" formatted="false">Lees wereldbollabels, geografische cirkels en poolnamen duidelijker.</string>
+    <string name="info_news_catalog" formatted="false">Verbeterde opnamebediening, zoom en indeling in staande en liggende stand.</string>
 </resources>

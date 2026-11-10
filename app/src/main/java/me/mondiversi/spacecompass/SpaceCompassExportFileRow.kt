@@ -63,6 +63,8 @@ private fun SpaceCompassExportFileIcon(type: SpaceCompassCaptureExportType) {
     val tint = LocalContentColor.current
     Box(Modifier.size(22.dp).clearAndSetSemantics {}, contentAlignment = Alignment.Center) {
         when (type) {
+            SpaceCompassCaptureExportType.FRAMED_IMAGE,
+            SpaceCompassCaptureExportType.PANORAMA_IMAGE,
             SpaceCompassCaptureExportType.IMAGE,
             SpaceCompassCaptureExportType.CURRENT_IMAGE,
             SpaceCompassCaptureExportType.ROTATION_IMAGE -> SpaceCompassPanoramaGalleryIcon()

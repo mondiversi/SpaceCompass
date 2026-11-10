@@ -1,4 +1,4 @@
 <resources>
-    <string name="tutorial_globe_labels" formatted="false">Επίλεξε ποιες ετικέτες αντικειμένων και σημείων εμφανίζονται.</string>
+    <string name="tutorial_globe_labels" formatted="false">Επιλέξτε τις ετικέτες σημείων. Το ζουμ και ο διαθέσιμος χώρος προσαρμόζουν τις λεπτομέρειες.</string>
     <string name="tutorial_globe_rotation" formatted="false">Εναλλάσσει περιστροφή γύρω από τον άξονα της Γης και ελεύθερη περιστροφή.</string>
 </resources>

@@ -13,12 +13,12 @@
     <string name="tutorial_location" formatted="false">Esplora un’altra posizione, quota, fuso orario, data o ora e regola lo scorrere del tempo.</string>
     <string name="tutorial_guides" formatted="false">Mostra i circoli di riferimento celesti, i poli, lo zenit e il nadir. Sono proiezioni nel cielo, non percorsi sul terreno.</string>
     <string name="tutorial_forward" formatted="false">0–24 mostra l’intera giornata, da mezzanotte a mezzanotte. +24h mostra le 24 ore successive al momento visualizzato, anche se simulato. Percorso giornaliero, scatti ed esportazioni seguono lo stesso intervallo.</string>
-    <string name="tutorial_camera" formatted="false">Scegli Panoramica, Fotocamera o Mappamondo. Tocca qui per esplorarne i comandi.</string>
+    <string name="tutorial_camera" formatted="false">Scegli Cielo, Fotocamera o Mappamondo e scopri i relativi comandi.</string>
     <string name="tutorial_weather" formatted="false">Mostra o nascondi gli effetti meteo nel cielo simulato e nelle panoramiche. Il comando non è disponibile in modalità fotocamera.</string>
     <string name="tutorial_axis" formatted="false">Scegli l’asse della fotocamera (90°) o la lunghezza del telefono (0°) per puntare il cielo. La modalità fotocamera usa sempre il proprio asse.</string>
     <string name="tutorial_transparency" formatted="false">Rendi le immagini degli oggetti più traslucide per confrontarle con l’inquadratura reale. Lo scatto mantiene questa scelta.</string>
     <string name="tutorial_zoom" formatted="false">Ingrandisci o riduci con il pulsante o con due dita.</string>
-    <string name="tutorial_capture" formatted="false">Prepara un’immagine della vista ed esportala dall’anteprima.</string>
+    <string name="tutorial_capture" formatted="false">Prepara un’immagine. Nell’anteprima scegli griglia, etichette e posizione; in Cielo e Mappamondo alterna Inquadratura e Panoramica.</string>
     <string name="tutorial_panels" formatted="false">Compatta o espandi le isole dell’oggetto e della bussola per lasciare più spazio al cielo.</string>
     <string name="tutorial_antipodes" formatted="false">Tocca per mostrare o nascondere la direzione opposta dei punti selezionati: azimut +180° e altezza di segno opposto. Tieni premuto per deselezionare tutti i punti.</string>
     <string name="tutorial_navigation" formatted="false">Scorri gli oggetti selezionati. L’isola mostra l’oggetto attivo e i colori della sua traiettoria.</string>
@@ -27,7 +27,7 @@
     <string name="tutorial_gps" formatted="false">Apri i dettagli della posizione reale, della quota GPS, dell’orientamento e del meteo. Questi valori sono indipendenti dalla Location.</string>
     <string name="tutorial_points" formatted="false">Seleziona o deseleziona un punto dell’orbita. Puntalo con il mirino per leggere oggetto, ora, T, azimut ed elevazione. Il bordo dell’oggetto segue il colore della traiettoria; diventa blu o azzurro quando selezioni la sua posizione attuale.</string>
     <string name="tutorial_reticle_title" formatted="false">Tempo e icone</string>
-    <string name="tutorial_reticle" formatted="false">Tocca il cielo libero per fermare o riprendere il tempo. Tocca due volte per mostrare o nascondere mirino e icone.</string>
+    <string name="tutorial_reticle" formatted="false">Tocca un’area libera per fermare o riprendere il tempo. Due tocchi mostrano o nascondono mirino e icone; in Cielo e Fotocamera anche la griglia.</string>
     <string name="tutorial_reminder" formatted="false">Apri la sveglia o il calendario Android per un evento futuro compatibile. Gli eventi passati e il punto attuale non possono avere una sveglia.</string>
     <string name="tutorial_status_title" formatted="false">Stato e ripristino</string>
     <string name="tutorial_status" formatted="false">Leggi lo stato attuale. L’azione può richiedere un permesso, attivare la posizione o riprovare il caricamento dei dati orbitali o meteo. Il tutorial non esegue l’azione.</string>

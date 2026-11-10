@@ -1,0 +1,9 @@
+<resources>
+    <string name="globe_reference_equator">赤道</string>
+    <string name="globe_reference_cancer">北回帰線</string>
+    <string name="globe_reference_capricorn">南回帰線</string>
+    <string name="globe_reference_arctic">北極圏</string>
+    <string name="globe_reference_antarctic">南極圏</string>
+    <string name="globe_reference_north_pole">北極</string>
+    <string name="globe_reference_south_pole">南極</string>
+</resources>

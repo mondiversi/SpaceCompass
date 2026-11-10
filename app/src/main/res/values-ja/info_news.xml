@@ -1,9 +1,9 @@
 <resources>
     <string name="info_news_title">最近の変更 · %1$s</string>
-    <string name="info_news_star_sky" formatted="false">軌道、主要な点、天体の現在の画像を表示するインタラクティブな地球儀を探索できます。</string>
-    <string name="info_news_texture_downloads" formatted="false">パノラマ、カメラ、地球儀を切り替え、ズーム、回転、ラベルを調整できます。</string>
-    <string name="info_news_weather" formatted="false">昼夜の星空背景と選択したラベル付きで地球儀の画像を作成できます。</string>
-    <string name="info_news_viewer_zoom" formatted="false">ライブカメラの角度グリッドを表示または非表示にできます。</string>
-    <string name="info_news_settings" formatted="false">時間を1秒につき最大15日進めたり戻したりできます。</string>
-    <string name="info_news_catalog" formatted="false">チュートリアルの更新、わかりやすい操作、明るい海とギャラリーの拡充。</string>
+    <string name="info_news_star_sky" formatted="false">空・カメラ・地球儀を、わかりやすい操作と更新されたチュートリアルで選べます。</string>
+    <string name="info_news_texture_downloads" formatted="false">空や地球儀の表示範囲を撮影するか、全体のパノラマに切り替えられます。</string>
+    <string name="info_news_weather" formatted="false">撮影時点のデータで、表示範囲とパノラマをまとめて書き出せます。</string>
+    <string name="info_news_viewer_zoom" formatted="false">空とカメラのグリッドが、背景に合わせて明暗のコントラストを調整します。</string>
+    <string name="info_news_settings" formatted="false">地球儀のラベル、地理上の円、極の名前を読みやすくしました。</string>
+    <string name="info_news_catalog" formatted="false">撮影操作、ズーム、縦向き・横向きの配置を改善しました。</string>
 </resources>

@@ -20,7 +20,7 @@ import androidx.compose.ui.unit.dp
 internal enum class SpaceCompassViewMode { PANORAMA, CAMERA, GLOBE }
 
 internal val SpaceCompassViewMode.labelResource: Int get()=when(this) {
-    SpaceCompassViewMode.PANORAMA -> R.string.panorama_preview_title
+    SpaceCompassViewMode.PANORAMA -> R.string.view_mode_sky
     SpaceCompassViewMode.CAMERA -> R.string.view_mode_camera
     SpaceCompassViewMode.GLOBE -> R.string.view_mode_globe
 }
@@ -58,7 +58,7 @@ internal fun SpaceCompassViewModeButton(mode: SpaceCompassViewMode,onChoose: (Sp
                     SpaceCompassFloatingVectorIcon(R.drawable.ic_camera)
                 }
                 SpaceCompassViewMode.PANORAMA -> SpaceCompassFloatingGlyph(spaceCompassFloatingInk(26f,.10f,.175f,.90f,.825f)) {
-                    SpaceCompassSettingsMenuIcon("panorama-image",LocalContentColor.current,Modifier.size(26.dp))
+                    SpaceCompassSkyModeIcon(LocalContentColor.current,26.dp,2.1.dp)
                 }
             }
         }
@@ -79,12 +79,27 @@ internal fun SpaceCompassViewModeMenu(expanded: Boolean,mode: SpaceCompassViewMo
                     Modifier.testTag("view-mode-${value.name.lowercase()}").semantics { selected=value==mode }) { tint ->
                     when(value) {
                         SpaceCompassViewMode.GLOBE -> SpaceCompassGlobeIcon(tint,SpaceCompassMenuIconSize,SpaceCompassMenuIconStrokeWidth)
-                        SpaceCompassViewMode.PANORAMA -> SpaceCompassSettingsMenuIcon("panorama-image",tint,
-                            Modifier.size(SpaceCompassMenuIconSize),iconStrokeWidth=SpaceCompassMenuIconStrokeWidth)
+                        SpaceCompassViewMode.PANORAMA -> SpaceCompassSkyModeIcon(tint,SpaceCompassMenuIconSize,SpaceCompassMenuIconStrokeWidth)
                         SpaceCompassViewMode.CAMERA -> Icon(androidx.compose.ui.res.painterResource(R.drawable.ic_camera),null,
                             Modifier.size(SpaceCompassMenuIconSize),tint=tint)
                     }
                 }
             }
         }
+}
+
+/** Horizon and a star distinguish observing the sky from a panoramic output format. */
+@Composable
+internal fun SpaceCompassSkyModeIcon(tint: Color,size: Dp,stroke: Dp) {
+    Canvas(Modifier.size(size)) {
+        val s=this.size.minDimension;val edge=stroke.toPx()
+        drawArc(tint,180f,180f,false,Offset(s*.12f,s*.19f),Size(s*.76f,s*1.18f),style=Stroke(edge))
+        drawLine(tint,Offset(s*.10f,s*.78f),Offset(s*.90f,s*.78f),edge)
+        val p=androidx.compose.ui.graphics.Path().apply {
+            moveTo(s*.61f,s*.10f);lineTo(s*.65f,s*.25f);lineTo(s*.80f,s*.29f)
+            lineTo(s*.65f,s*.33f);lineTo(s*.61f,s*.48f);lineTo(s*.57f,s*.33f)
+            lineTo(s*.42f,s*.29f);lineTo(s*.57f,s*.25f);close()
+        }
+        drawPath(p,tint)
+    }
 }

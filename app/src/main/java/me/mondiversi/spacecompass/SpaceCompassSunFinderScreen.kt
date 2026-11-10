@@ -278,6 +278,8 @@ internal fun SpaceCompassSunFinderContent(
     val controlResources = LocalResources.current
     fun notifyControl(id: Int, vararg arguments: Any) =
         showSpaceCompassBottomMessage(cameraContext, controlResources.getString(id, *arguments))
+    fun notifyViewMode(mode: SpaceCompassViewMode) = notifyControl(R.string.control_choice_message,
+        controlResources.getString(R.string.view_mode_choose),controlResources.getString(mode.labelResource))
     val tutorial = LocalSpaceCompassTutorial.current
     val tutorialActive = tutorial?.active == true
     // Camera is opt-in on every cold app start; never restore it from preferences or saved state.
@@ -407,7 +409,7 @@ internal fun SpaceCompassSunFinderContent(
     val cameraUnavailableMessage = stringResource(R.string.camera_unavailable)
     val cameraPermission = rememberLauncherForActivityResult(ActivityResultContracts.RequestPermission()) { granted ->
         requestedCameraEnabled = granted
-        if (granted) notifyControl(R.string.scene_mode_camera)
+        if (granted) notifyViewMode(SpaceCompassViewMode.CAMERA)
         else showSpaceCompassBottomMessage(cameraContext, cameraPermissionMessage)
     }
     val mainVisible = LocalSpaceCompassMainVisible.current
@@ -609,32 +611,6 @@ internal fun SpaceCompassSunFinderContent(
     val weatherRow = spaceCompassSunDataRow(stringResource(R.string.sun_weather_estimate,
         SPACE_COMPASS_SUN_DATA_MARKER), weatherValue, "celestial-environment-weather")
     val weatherText = if (currentDeviceWeather == null) weatherValue else weatherRow.announcement
-    val globeCapture = if(globeEnabled) SpaceCompassGlobeCapture(globeViewPose,
-        stringResource(R.string.globe_direction_note), androidx.compose.foundation.isSystemInDarkTheme(),globeLabelMode) else null
-    val panorama = rememberSpaceCompassPanoramaAction(timeMs, fix?.latitude, fix?.longitude, altitude,
-        phase, currentWeather, selectedBodies, selectedOverlays, remote,
-        gpsAccuracyMeters = fix?.takeIf { it.hasAccuracy() && it.accuracy.isFinite() && it.accuracy >= 0f }
-            ?.accuracy?.toDouble(), cameraEnabled = cameraEnabled, cameraCapture = cameraCapture, cameraObjectOpacity = cameraObjectOpacity, showSkyReferences = showSkyReferences, showWeather = showWeather, solarLighting = solarLighting,
-        selectedPoints = dailyPathUiState.selectedPoints, activeBody = sceneBody.takeIf { it in selectedBodies },
-        activeComparisonId = activeComparison?.id, forward24Hours = forward24Hours, showAntipodes = showAntipodes, globe = globeCapture)
-    panorama.preview?.let { preview ->
-        SpaceCompassPanoramaPreview(preview, panorama.closePreview)
-        return
-    }
-    if (showEnvironment) {
-        SpaceCompassSunFinderModelInfo(currentDeviceWeather != null, weatherRow, locationInfoRows,
-            primaryText, secondaryText, backgroundColor, latitude = deviceFix?.latitude, longitude = deviceFix?.longitude) { showEnvironment = false }
-        return
-    }
-    val locationActionLabel = (if (sun != null) null else when (readings.locationStatus) {
-        SpaceCompassSunLocationStatus.PERMISSION -> R.string.sun_finder_allow_location
-        SpaceCompassSunLocationStatus.DISABLED -> R.string.sun_finder_enable_location
-        SpaceCompassSunLocationStatus.ERROR -> R.string.sun_finder_retry
-        SpaceCompassSunLocationStatus.SEARCHING, SpaceCompassSunLocationStatus.READY -> null
-    })?.let { stringResource(it) }
-    val showWeatherFailure = spaceCompassWeatherFailureVisible(weather, showWeather, cameraEnabled,
-        remoteMessage != null || messageText != null && !isCompassMessage)
-    val weatherFailureMessage = if (showWeatherFailure) stringResource(R.string.sun_finder_weather_unavailable) else null
     var sceneCoordinates by remember { mutableStateOf<LayoutCoordinates?>(null) }
     var pointingCoordinates by remember { mutableStateOf<LayoutCoordinates?>(null) }
     var pointingFrame by remember { mutableStateOf<SpaceCompassSunSceneFrame?>(null) }
@@ -659,6 +635,36 @@ internal fun SpaceCompassSunFinderContent(
         pointingCoordinates = it
         refreshGroundFrame()
     }
+    var globeCaptureFraming by remember { mutableStateOf<SpaceCompassGlobeFraming?>(null) }
+    val skyCaptureFraming=if(!cameraEnabled&&!globeEnabled) pointingFrame?.let { visible -> groundFrame?.let { optical ->
+        sceneOrientation?.let { o -> scenePerspective?.let { spaceCompassSkyFraming(visible,optical,o,it) } }
+    } } else null
+    val globeCapture = if(globeEnabled) SpaceCompassGlobeCapture(globeViewPose,
+        stringResource(R.string.globe_direction_note), androidx.compose.foundation.isSystemInDarkTheme(),globeLabelMode,globeCaptureFraming) else null
+    val panorama = rememberSpaceCompassPanoramaAction(timeMs, fix?.latitude, fix?.longitude, altitude,
+        phase, currentWeather, selectedBodies, selectedOverlays, remote,
+        gpsAccuracyMeters = fix?.takeIf { it.hasAccuracy() && it.accuracy.isFinite() && it.accuracy >= 0f }
+            ?.accuracy?.toDouble(), cameraEnabled = cameraEnabled, cameraCapture = cameraCapture, cameraObjectOpacity = cameraObjectOpacity, showSkyReferences = showSkyReferences, showWeather = showWeather, solarLighting = solarLighting,
+        selectedPoints = dailyPathUiState.selectedPoints, activeBody = sceneBody.takeIf { it in selectedBodies },
+        activeComparisonId = activeComparison?.id, forward24Hours = forward24Hours, showAntipodes = showAntipodes, globe = globeCapture, skyFraming = skyCaptureFraming)
+    panorama.preview?.let { preview ->
+        SpaceCompassPanoramaPreview(preview, panorama.closePreview)
+        return
+    }
+    if (showEnvironment) {
+        SpaceCompassSunFinderModelInfo(currentDeviceWeather != null, weatherRow, locationInfoRows,
+            primaryText, secondaryText, backgroundColor, latitude = deviceFix?.latitude, longitude = deviceFix?.longitude) { showEnvironment = false }
+        return
+    }
+    val locationActionLabel = (if (sun != null) null else when (readings.locationStatus) {
+        SpaceCompassSunLocationStatus.PERMISSION -> R.string.sun_finder_allow_location
+        SpaceCompassSunLocationStatus.DISABLED -> R.string.sun_finder_enable_location
+        SpaceCompassSunLocationStatus.ERROR -> R.string.sun_finder_retry
+        SpaceCompassSunLocationStatus.SEARCHING, SpaceCompassSunLocationStatus.READY -> null
+    })?.let { stringResource(it) }
+    val showWeatherFailure = spaceCompassWeatherFailureVisible(weather, showWeather, cameraEnabled,
+        remoteMessage != null || messageText != null && !isCompassMessage)
+    val weatherFailureMessage = if (showWeatherFailure) stringResource(R.string.sun_finder_weather_unavailable) else null
     val skyDescription = stringResource(if(globeEnabled) R.string.view_mode_globe else if (cameraEnabled) R.string.camera_view_description else R.string.sun_finder_sky_description)
     val selection = remember(selectedBodies, sceneBody, hasActiveBody) {
         SpaceCompassCelestialSelection(selectedBodies, body.takeIf { it in selectedBodies } ?: selectedBodies.firstOrNull())
@@ -718,13 +724,7 @@ internal fun SpaceCompassSunFinderContent(
             notifyControl(if(globeAxisLocked) R.string.globe_rotation_axis else R.string.globe_rotation_free)
             }
         },primaryText,backgroundColor)
-        else if(cameraControlsMode) SpaceCompassCameraGridButton(cameraGridVisible,{
-            if(!tutorialActive) {
-                cameraGridVisible=!cameraGridVisible
-                scenePreferences.edit().putBoolean(SPACE_COMPASS_CAMERA_GRID_KEY,cameraGridVisible).apply()
-                notifyControl(if(cameraGridVisible) R.string.camera_grid_on else R.string.camera_grid_off)
-            }
-        },primaryText,backgroundColor)
+        else if(cameraControlsMode) Spacer(Modifier.size(spaceCompassFloatingControlSize))
         else SpaceCompassPointingAxisButton(pointingTopEdge, { topEdge ->
                 pointingTopEdge = topEdge
                 scenePreferences.edit().putBoolean(SPACE_COMPASS_POINTING_TOP_EDGE_KEY, topEdge).apply()
@@ -741,15 +741,23 @@ internal fun SpaceCompassSunFinderContent(
                     SpaceCompassViewModeButton(if(cameraControlsMode) SpaceCompassViewMode.CAMERA
                         else if(globeControlsMode) SpaceCompassViewMode.GLOBE else SpaceCompassViewMode.PANORAMA, { mode ->
                         if(tutorialActive) tutorial?.chooseMode(mode)
-                        else when(mode) {
+                        else if(mode != when {
+                            cameraEnabled -> SpaceCompassViewMode.CAMERA
+                            globeEnabled -> SpaceCompassViewMode.GLOBE
+                            else -> SpaceCompassViewMode.PANORAMA
+                        }) when(mode) {
                             SpaceCompassViewMode.CAMERA -> {
-                                if(hasSpaceCompassCameraPermission(cameraContext)) requestedCameraEnabled=true
+                                if(hasSpaceCompassCameraPermission(cameraContext)) {
+                                    requestedCameraEnabled=true
+                                    notifyViewMode(mode)
+                                }
                                 else cameraPermission.launch(Manifest.permission.CAMERA)
                             }
                             SpaceCompassViewMode.PANORAMA,SpaceCompassViewMode.GLOBE -> {
                                 requestedCameraEnabled=false
                                 globeRequested=mode==SpaceCompassViewMode.GLOBE
                                 scenePreferences.edit().putBoolean(SPACE_COMPASS_GLOBE_MODE_KEY,globeRequested).apply()
+                                notifyViewMode(mode)
                             }
                         }
                     },primaryText,backgroundColor,tutorialActive)
@@ -813,7 +821,7 @@ internal fun SpaceCompassSunFinderContent(
                             onTap={skyObserver?.togglePlayback()},onDoubleTap={
                                 skyControlsVisible=!skyControlsVisible
                                 scenePreferences.edit().putBoolean(SPACE_COMPASS_SKY_CONTROLS_VISIBLE_KEY,skyControlsVisible).apply()
-                            },modifier=modifier)
+                            },modifier=modifier,onCaptureFrame={ if(globeCaptureFraming!=it) globeCaptureFraming=it })
                     } else null,
                     scenarioMomentLabel = scenarioMomentLabel,
                     timePaused = skyObserver?.playbackPaused == true,
@@ -951,7 +959,7 @@ internal fun SpaceCompassSunFinderContent(
                 },
                     onZoomActual = { cameraZoomActual = it })
             }
-            SpaceCompassCameraHorizon(orientation, groundFrame, cameraPerspective, Modifier.fillMaxSize())
+            if(showSkyControls) SpaceCompassCameraHorizon(orientation, groundFrame, cameraPerspective, Modifier.fillMaxSize())
         } else {
             SpaceCompassSunSkyBackdrop(phase, sceneWeather, Modifier.fillMaxSize(), solarLighting) {
                 SpaceCompassStarField(timeMs, fix?.latitude, fix?.longitude, altitude ?: 0.0, sceneOrientation, groundFrame,
@@ -959,8 +967,9 @@ internal fun SpaceCompassSunFinderContent(
             }
             SpaceCompassSunGroundBackdrop(sceneOrientation, groundFrame, phase, Modifier.fillMaxSize(), solarLighting, scenePerspective)
         }
-        if(cameraEnabled && cameraGridVisible && resumed && mainVisible)
-            SpaceCompassCameraGridLayer(scenePointingOrientation,cameraPerspective,groundFrame,Modifier.fillMaxSize())
+        if(showSkyControls && !globeEnabled && (!cameraEnabled || cameraGridVisible) && resumed && mainVisible)
+            SpaceCompassCameraGridLayer(scenePointingOrientation,scenePerspective,groundFrame,Modifier.fillMaxSize(),
+                tag=if(cameraEnabled) "camera-angular-grid" else "sky-angular-grid")
         if(!globeEnabled) SpaceCompassCelestialSceneBackdrop(groundFrame, scenePerspective,
             scenePointingOrientation.takeIf { !cameraEnabled || cameraPerspective != null },
             overlays, sceneBody.takeIf { hasActiveBody && activeComparison == null }, livePath, liveTarget, timeMs,

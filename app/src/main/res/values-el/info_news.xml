@@ -1,9 +1,9 @@
 <resources>
     <string name="info_news_title">Τελευταία νέα · %1$s</string>
-    <string name="info_news_star_sky" formatted="false">Εξερευνήστε τη διαδραστική υδρόγειο με τροχιές, βασικά σημεία και τρέχουσες εικόνες αντικειμένων.</string>
-    <string name="info_news_texture_downloads" formatted="false">Εναλλάξτε Πανόραμα, Κάμερα και Υδρόγειο· ρυθμίστε ζουμ, περιστροφή και ετικέτες.</string>
-    <string name="info_news_weather" formatted="false">Αποτυπώστε την υδρόγειο με έναστρο φόντο ημέρας ή νύχτας και επιλεγμένες ετικέτες.</string>
-    <string name="info_news_viewer_zoom" formatted="false">Εμφανίστε ή κρύψτε το γωνιακό πλέγμα στη ζωντανή κάμερα.</string>
-    <string name="info_news_settings" formatted="false">Μετακινήστε τον χρόνο εμπρός ή πίσω έως δεκαπέντε ημέρες ανά δευτερόλεπτο.</string>
-    <string name="info_news_catalog" formatted="false">Ενημερωμένος οδηγός, σαφέστερα χειριστήρια, φωτεινότεροι ωκεανοί και διευρυμένη συλλογή εικόνων.</string>
+    <string name="info_news_star_sky" formatted="false">Επιλέξτε Ουρανό, Κάμερα ή Υδρόγειο με σαφέστερα χειριστήρια και ενημερωμένο οδηγό.</string>
+    <string name="info_news_texture_downloads" formatted="false">Αποτυπώστε το ορατό κάδρο ουρανού ή υδρογείου ή επιλέξτε πλήρες πανόραμα.</string>
+    <string name="info_news_weather" formatted="false">Εξαγάγετε μαζί κάδρο και πανόραμα με δεδομένα της στιγμής λήψης.</string>
+    <string name="info_news_viewer_zoom" formatted="false">Τα πλέγματα Ουρανού και Κάμερας προσαρμόζουν την αντίθεση φωτεινού και σκοτεινού στο φόντο.</string>
+    <string name="info_news_settings" formatted="false">Διαβάστε πιο καθαρές ετικέτες υδρογείου, γεωγραφικών κύκλων και πόλων.</string>
+    <string name="info_news_catalog" formatted="false">Βελτιωμένα χειριστήρια λήψης, ζουμ και κατακόρυφη και οριζόντια διάταξη.</string>
 </resources>

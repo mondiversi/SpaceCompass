@@ -1,0 +1,9 @@
+<resources>
+    <string name="globe_reference_equator">적도</string>
+    <string name="globe_reference_cancer">북회귀선</string>
+    <string name="globe_reference_capricorn">남회귀선</string>
+    <string name="globe_reference_arctic">북극권</string>
+    <string name="globe_reference_antarctic">남극권</string>
+    <string name="globe_reference_north_pole">북극</string>
+    <string name="globe_reference_south_pole">남극</string>
+</resources>

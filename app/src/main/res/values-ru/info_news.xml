@@ -1,9 +1,9 @@
 <resources>
     <string name="info_news_title">Последние новости · %1$s</string>
-    <string name="info_news_star_sky" formatted="false">Исследуйте интерактивный глобус с траекториями, ключевыми точками и текущими изображениями объектов.</string>
-    <string name="info_news_texture_downloads" formatted="false">Переключайте Панораму, Камеру и Глобус; настраивайте масштаб, вращение и подписи.</string>
-    <string name="info_news_weather" formatted="false">Создавайте снимки глобуса со звёздным дневным или ночным фоном и выбранными подписями.</string>
-    <string name="info_news_viewer_zoom" formatted="false">Показывайте или скрывайте угловую сетку в режиме камеры.</string>
-    <string name="info_news_settings" formatted="false">Перемещайте время вперёд или назад до пятнадцати дней за секунду.</string>
-    <string name="info_news_catalog" formatted="false">Обновлённое обучение, более понятные кнопки, светлые океаны и расширенная галерея.</string>
+    <string name="info_news_star_sky" formatted="false">Выбирайте Небо, Камеру или Глобус с понятными кнопками и обновлённым обучением.</string>
+    <string name="info_news_texture_downloads" formatted="false">Снимайте видимый участок неба или глобуса либо переключайтесь на полную панораму.</string>
+    <string name="info_news_weather" formatted="false">Экспортируйте кадр и панораму вместе с данными на момент съёмки.</string>
+    <string name="info_news_viewer_zoom" formatted="false">Сетки Неба и Камеры подстраивают светлый и тёмный контраст под фон.</string>
+    <string name="info_news_settings" formatted="false">Читайте более чёткие подписи глобуса, географических кругов и полюсов.</string>
+    <string name="info_news_catalog" formatted="false">Улучшены кнопки съёмки, масштабирование, портретная и альбомная компоновка.</string>
 </resources>

@@ -13,12 +13,12 @@
     <string name="tutorial_location" formatted="false">Personalize posição, altitude, fuso horário, data, hora e velocidade do tempo.</string>
     <string name="tutorial_guides" formatted="false">Mostre círculos celestes, polos, zénite e nadir. São projeções no céu, não percursos no solo.</string>
     <string name="tutorial_forward" formatted="false">0–24 mostra o dia inteiro, de meia-noite a meia-noite. +24h mostra as 24 horas após o momento apresentado, mesmo que simulado. Trajetórias, capturas e exportações usam o mesmo intervalo.</string>
-    <string name="tutorial_camera" formatted="false">Escolhe Panorama, Câmara ou Globo. Toca aqui para explorar os comandos.</string>
+    <string name="tutorial_camera" formatted="false">Escolha Céu, Câmera ou Globo e explore os controles.</string>
     <string name="tutorial_weather" formatted="false">Mostre ou oculte o tempo atmosférico no céu simulado e panoramas. Indisponível com a câmara.</string>
     <string name="tutorial_axis" formatted="false">Escolha o eixo da câmara (90°) ou o comprimento do telefone (0°). A câmara usa sempre o seu próprio eixo.</string>
     <string name="tutorial_transparency" formatted="false">Torne as imagens dos objetos translúcidas para comparar com a câmara. A captura mantém a escolha.</string>
     <string name="tutorial_zoom" formatted="false">Amplia ou reduz com o botão ou com dois dedos.</string>
-    <string name="tutorial_capture" formatted="false">Prepara uma imagem da vista e exporta-a a partir da pré-visualização.</string>
+    <string name="tutorial_capture" formatted="false">Prepare uma imagem. Na prévia, escolha grade, etiquetas e posição; em Céu e Globo, alterne Enquadramento e Panorama.</string>
     <string name="tutorial_panels" formatted="false">Recolha ou expanda os painéis do objeto e da bússola para libertar espaço.</string>
     <string name="tutorial_antipodes" formatted="false">Toca para mostrar ou ocultar a direção oposta dos pontos selecionados: azimute +180° e elevação de sinal contrário. Mantém premido para desmarcar todos os pontos.</string>
     <string name="tutorial_navigation" formatted="false">Percorra os objetos selecionados. O painel mostra o objeto ativo e as cores da trajetória.</string>
@@ -27,7 +27,7 @@
     <string name="tutorial_gps" formatted="false">Consulte posição real, altitude GPS, orientação e meteorologia, independentemente da Location.</string>
     <string name="tutorial_points" formatted="false">Selecione um ponto. Aponte para ler objeto, hora, T, azimute e elevação. O contorno do objeto segue a cor da sua trajetória; fica azul ou azul-claro ao selecionar a posição atual.</string>
     <string name="tutorial_reticle_title" formatted="false">Tempo e ícones</string>
-    <string name="tutorial_reticle" formatted="false">Toque no céu vazio para pausar ou retomar o tempo. Toque duas vezes para mostrar ou ocultar a mira e os ícones.</string>
+    <string name="tutorial_reticle" formatted="false">Toque numa área livre para pausar ou retomar o tempo. Dois toques mostram ou ocultam a mira e os ícones; em Céu e Câmera, também a grade.</string>
     <string name="tutorial_reminder" formatted="false">Abra o alarme ou calendário Android para um evento futuro válido. Não se aplica ao passado nem ao ponto atual.</string>
     <string name="tutorial_status_title" formatted="false">Estado e recuperação</string>
     <string name="tutorial_status" formatted="false">Consulte o estado. A ação pode pedir permissão, ativar a localização ou tentar carregar dados orbitais ou meteorológicos. O tutorial não executa a ação.</string>

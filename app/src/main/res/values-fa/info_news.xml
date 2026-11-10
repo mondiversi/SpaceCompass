@@ -1,9 +1,9 @@
 <resources>
     <string name="info_news_title">تازه‌ترین تغییرات · %1$s</string>
-    <string name="info_news_star_sky" formatted="false">کرهٔ تعاملی زمین را با مسیرها، نقاط کلیدی و تصاویر فعلی اجرام کاوش کنید.</string>
-    <string name="info_news_texture_downloads" formatted="false">بین پانوراما، دوربین و کرهٔ زمین جابه‌جا شوید و بزرگ‌نمایی، چرخش و برچسب‌ها را تنظیم کنید.</string>
-    <string name="info_news_weather" formatted="false">از کرهٔ زمین با پس‌زمینهٔ پرستارهٔ روز یا شب و برچسب‌های قابل تنظیم تصویر بگیرید.</string>
-    <string name="info_news_viewer_zoom" formatted="false">شبکهٔ زاویه‌ای را در نمای زندهٔ دوربین نمایش دهید یا پنهان کنید.</string>
-    <string name="info_news_settings" formatted="false">زمان را تا پانزده روز در هر ثانیه به جلو یا عقب ببرید.</string>
-    <string name="info_news_catalog" formatted="false">راهنمای به‌روز، کنترل‌های روشن‌تر، اقیانوس‌های درخشان‌تر و گالری گسترده‌تر.</string>
+    <string name="info_news_star_sky" formatted="false">آسمان، دوربین یا کرهٔ زمین را با کنترل‌های روشن‌تر و راهنمای به‌روز انتخاب کنید.</string>
+    <string name="info_news_texture_downloads" formatted="false">کادر قابل مشاهدهٔ آسمان یا کرهٔ زمین را ثبت کنید یا به پانورامای کامل بروید.</string>
+    <string name="info_news_weather" formatted="false">کادر و پانوراما را با داده‌های ثابت لحظهٔ ثبت، با هم صادر کنید.</string>
+    <string name="info_news_viewer_zoom" formatted="false">شبکه‌های آسمان و دوربین کنتراست روشن و تیره را با پس‌زمینه تطبیق می‌دهند.</string>
+    <string name="info_news_settings" formatted="false">برچسب‌های کرهٔ زمین، دایره‌های جغرافیایی و نام قطب‌ها را واضح‌تر بخوانید.</string>
+    <string name="info_news_catalog" formatted="false">کنترل‌های ثبت تصویر، بزرگ‌نمایی و چیدمان عمودی و افقی بهبود یافت.</string>
 </resources>

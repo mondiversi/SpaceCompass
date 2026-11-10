@@ -51,7 +51,7 @@ internal fun SpaceCompassGlobeView(snapshot: SpaceCompassPanoramaSnapshot, pose:
     onPose: (SpaceCompassGlobePose) -> Unit, state: SpaceCompassSunDailyPathUiState,
     exclusions: List<SpaceCompassSunSceneFrame>, viewport: SpaceCompassSunSceneFrame, noteBottomInset: androidx.compose.ui.unit.Dp, labelMode: SpaceCompassPanoramaLabelMode, axisLocked: Boolean,
     resumed: Boolean,
-    onTap: () -> Unit, onDoubleTap: () -> Unit, modifier: Modifier = Modifier) {
+    onTap: () -> Unit, onDoubleTap: () -> Unit, modifier: Modifier = Modifier, onCaptureFrame: (SpaceCompassGlobeFraming)->Unit = {}) {
     val context=LocalContext.current;val resources=LocalResources.current;val dark=isSystemInDarkTheme()
     val currentPose by rememberUpdatedState(pose)
     val changePose by rememberUpdatedState(onPose)
@@ -80,14 +80,44 @@ internal fun SpaceCompassGlobeView(snapshot: SpaceCompassPanoramaSnapshot, pose:
     }
     var native by remember { mutableStateOf<SpaceCompassGlobeWebView?>(null) }
     var noteFrame by remember { mutableStateOf<SpaceCompassSunSceneFrame?>(null) }
-    val density=androidx.compose.ui.platform.LocalDensity.current.density
+    val localDensity=androidx.compose.ui.platform.LocalDensity.current
+    val density=localDensity.density
+    val windowHeight=androidx.compose.ui.platform.LocalView.current.height.takeIf { it>0 }?.toFloat()
+        ?: (androidx.compose.ui.platform.LocalConfiguration.current.screenHeightDp*density)
+    val previewHeight=(windowHeight-WindowInsets.safeDrawing.getTop(localDensity)-
+        WindowInsets.safeDrawing.getBottom(localDensity)-48*density).coerceAtLeast(density)
+    val geographicGuideNames=mapOf(
+        SpaceCompassSkyReference.EQUATOR to R.string.globe_reference_equator,
+        SpaceCompassSkyReference.CANCER to R.string.globe_reference_cancer,
+        SpaceCompassSkyReference.CAPRICORN to R.string.globe_reference_capricorn,
+        SpaceCompassSkyReference.ARCTIC to R.string.globe_reference_arctic,
+        SpaceCompassSkyReference.ANTARCTIC to R.string.globe_reference_antarctic
+    ).mapValues { resources.getString(it.value) }
+    val geographicPoleNames=listOf(resources.getString(R.string.globe_reference_south_pole),
+        resources.getString(R.string.globe_reference_north_pole))
     val (sceneJson,targets)=remember(model,sun,dark,exclusions,noteFrame,viewport,labelMode,axisLocked,icons,fluidity,snapshot.timeMs/1000,
         snapshot.latitude,snapshot.longitude,snapshot.observerPositionKnown,
-        snapshot.objects.map { it.name },snapshot.activeBody,snapshot.activeComparisonId,snapshot.showSkyReferences,selection,snapshot.formatting,density) {
+        snapshot.objects.map { it.name },geographicGuideNames,geographicPoleNames,snapshot.activeBody,snapshot.activeComparisonId,snapshot.showSkyReferences,selection,snapshot.formatting,density) {
     val targets=mutableListOf<Pair<SpaceCompassGlobeTrack,SpaceCompassGlobeDot>>()
     val scene=JSONObject().apply {
         put("pose",pose.json());put("extent",model?.extent ?: 1.55);put("dark",dark)
         put("guides",snapshot.showSkyReferences);put("selection",globeColor(selection))
+        put("guideLabels",JSONArray().apply {
+            listOf(-66.56 to SpaceCompassSkyReference.ANTARCTIC,-23.44 to SpaceCompassSkyReference.CAPRICORN,
+                0.0 to SpaceCompassSkyReference.EQUATOR,23.44 to SpaceCompassSkyReference.CANCER,66.56 to SpaceCompassSkyReference.ARCTIC)
+                .forEach { (degrees,reference) -> put(JSONObject().apply {
+                    put("latitude",degrees);put("name",geographicGuideNames[reference].orEmpty())
+                    put("value",(if(degrees>0) "+" else "")+formatSpaceCompassNumber(degrees,1,
+                        snapshot.formatting.numeric,grouping=false,systemLocale=snapshot.formatting.deviceLocale)+"°")
+                }) }
+        })
+        put("poleLabels",JSONArray().apply {
+            listOf(-90,90).forEachIndexed { index,degrees -> put(JSONObject().apply {
+                put("latitude",degrees);put("name",geographicPoleNames[index])
+                put("value",(if(degrees>0) "+" else "")+formatSpaceCompassNumber(degrees.toDouble(),0,
+                    snapshot.formatting.numeric,grouping=false,systemLocale=snapshot.formatting.deviceLocale)+"°")
+            }) }
+        })
         put("labels",labelMode!=SpaceCompassPanoramaLabelMode.NONE);put("axisLocked",axisLocked);put("background",false)
         put("frameInterval",fluidity.minimumUpdateIntervalNs/1_000_000.0)
         put("viewport",JSONArray(listOf(viewport.left/density,viewport.top/density,viewport.width/density,viewport.height/density)))
@@ -96,6 +126,7 @@ internal fun SpaceCompassGlobeView(snapshot: SpaceCompassPanoramaSnapshot, pose:
         put("location",if(snapshot.observerPositionKnown) JSONArray(listOf(snapshot.latitude,snapshot.longitude)) else JSONObject.NULL)
         put("tracks",JSONArray().apply { model?.tracks?.forEach { track ->
             put(JSONObject().apply {
+                put("key",track.item.body.name+":"+track.item.comparison?.id)
                 put("color",globeColor(track.item.tint.toArgb()));put("comparison",track.item.comparison!=null)
                 put("belowColor",globeColor(spaceCompassCelestialPathLineTint(track.item.tint,true).toArgb()))
                 put("belowLabelColor",globeColor(spaceCompassCelestialPathVisibilityTint(track.item.tint,true).toArgb()))
@@ -106,18 +137,22 @@ internal fun SpaceCompassGlobeView(snapshot: SpaceCompassPanoramaSnapshot, pose:
                 put("dots",JSONArray().apply { track.dots.forEach { dot ->
                     val id=targets.size;targets+=track to dot
                     val event=dot.point.events.filter { it!=SpaceCompassSunPathEvent.HOUR }.mapNotNull { snapshot.pointEventNames[it] }.joinToString(" · ")
-                    val time=formatSpaceCompassPanoramaMarkerTime(dot.point.timeMs,track.item.referenceTime(snapshot.timeMs),snapshot.displayTimeZone,snapshot.formatting)
+                    val time=formatSpaceCompassGlobeMainPointTime(dot.point.timeMs,track.item.referenceTime(snapshot.timeMs),snapshot.displayTimeZone,snapshot.formatting)
                     put(JSONObject().apply {
                         put("v",dot.vector.json());put("current",dot.current);put("selected",dot.selected)
                         put("antipode",dot.antipode);put("id",id);put("below",dot.point.position.elevationDegrees<0)
                         put("event",dot.point.event.name)
                         if(dot.point.event==SpaceCompassSunPathEvent.SUNRISE||dot.point.event==SpaceCompassSunPathEvent.SUNSET)
                             put("glyph",JSONArray().apply { spaceCompassHorizonEventGlyph(dot.point.event,0f,0f,1f).forEach { (x,y) -> put(JSONArray(listOf(x,y))) } })
-                        put("label",if(!spaceCompassGlobeMainShowsLabel(labelMode,active,dot.current,dot.antipode,dot.point.events,dot.selected)) "" else
-                            (if(dot.antipode) formatSpaceCompassPanoramaSelection(snapshot,SpaceCompassPanoramaSelectedPoint(
+                        if(!spaceCompassGlobeMainShowsLabel(labelMode,active,dot.current,dot.antipode,dot.point.events,dot.selected)) put("label","")
+                        else {
+                            val pointName=if(dot.antipode) formatSpaceCompassPanoramaSelection(snapshot,SpaceCompassPanoramaSelectedPoint(
                                 track.item.body,dot.point,track.item.path,dot.current,true,track.item.comparison)).lineSequence().first()
                                 else if(dot.current) track.item.comparison?.let(snapshot::comparisonPointName) ?: snapshot.currentPointName
-                                else event).let { if(it.isBlank()) time else "$it · $time" })
+                                else event
+                            val detail=formatSpaceCompassGlobeMainLabelDetails(track.item.name,pointName,time,dot.point.position,snapshot.formatting)
+                            put("label",detail.minimal);put("labelCompact",detail.compact);put("labelFull",detail.full)
+                        }
                     })
                 } })
             })
@@ -132,11 +167,16 @@ internal fun SpaceCompassGlobeView(snapshot: SpaceCompassPanoramaSnapshot, pose:
         contentDescription=globeLabel
         customActions=latestTargets.filter { (_,dot) -> dot.current || dot.selected }.filter { !it.second.antipode }
             .map { (track,dot) -> CustomAccessibilityAction(track.item.name+" · "+
-                formatSpaceCompassPanoramaMarkerTime(dot.point.timeMs,snapshot.timeMs,snapshot.displayTimeZone,snapshot.formatting)) {
+                formatSpaceCompassGlobeMainPointTime(dot.point.timeMs,track.item.referenceTime(snapshot.timeMs),snapshot.displayTimeZone,snapshot.formatting)) {
                 if(dot.current) state.toggleCurrent(track.item.body,dot.point,track.item.path)
                 else track.item.path?.let { state.togglePoint(it,dot.point) };true
             } }
     }) {
+        val frozenFrame=SpaceCompassGlobeFraming(constraints.maxWidth.toDouble(),constraints.maxHeight.toDouble(),
+            (viewport.top+viewport.height/2)/constraints.maxHeight,
+            spaceCompassGlobeFitRadius(viewport,model?.extent ?: 1.55,pose.zoom,24.0*density)/constraints.maxWidth,
+            guideTextSizeByHeight=12.0*density/previewHeight)
+        SideEffect { onCaptureFrame(frozenFrame) }
         AndroidView(factory={ SpaceCompassGlobeWebView(it).also { web -> native=web
             web.onPose={ value -> changePose(value) }
             web.pose={ currentPose }

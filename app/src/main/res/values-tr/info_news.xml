@@ -1,9 +1,9 @@
 <resources>
     <string name="info_news_title">Son yenilikler · %1$s</string>
-    <string name="info_news_star_sky" formatted="false">Yörüngeler, önemli noktalar ve güncel cisim görüntüleriyle etkileşimli küreyi keşfedin.</string>
-    <string name="info_news_texture_downloads" formatted="false">Panorama, Kamera ve Küre arasında geçin; yakınlaştırma, dönüş ve etiketleri ayarlayın.</string>
-    <string name="info_news_weather" formatted="false">Küreyi gündüz veya gece yıldızlı arka planı ve seçilebilir etiketlerle kaydedin.</string>
-    <string name="info_news_viewer_zoom" formatted="false">Canlı kamera görünümünde açısal ızgarayı gösterin veya gizleyin.</string>
-    <string name="info_news_settings" formatted="false">Zamanı saniyede on beş güne kadar ileri veya geri sarın.</string>
-    <string name="info_news_catalog" formatted="false">Güncellenen öğretici, daha anlaşılır kontroller, daha aydınlık okyanuslar ve genişletilmiş galeri.</string>
+    <string name="info_news_star_sky" formatted="false">Daha anlaşılır kontroller ve güncel öğreticiyle Gökyüzü, Kamera veya Küre seçin.</string>
+    <string name="info_news_texture_downloads" formatted="false">Görünen gökyüzü veya küre çerçevesini yakalayın ya da tam panoramaya geçin.</string>
+    <string name="info_news_weather" formatted="false">Çerçeveyi ve panoramayı çekim anındaki verilerle birlikte dışa aktarın.</string>
+    <string name="info_news_viewer_zoom" formatted="false">Gökyüzü ve Kamera ızgaraları açık-koyu kontrastını arka plana uyarlar.</string>
+    <string name="info_news_settings" formatted="false">Küre etiketlerini, coğrafi daireleri ve kutup adlarını daha net okuyun.</string>
+    <string name="info_news_catalog" formatted="false">Çekim kontrolleri, yakınlaştırma, dikey ve yatay düzenler iyileştirildi.</string>
 </resources>

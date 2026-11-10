@@ -12,6 +12,8 @@ import java.util.UUID
 internal enum class SpaceCompassCaptureExportType(val key: String, val extension: String, val mimeType: String,
     val labelResource: Int) {
     IMAGE("image","jpg","image/jpeg",R.string.capture_export_image),
+    FRAMED_IMAGE("framed-image","jpg","image/jpeg",R.string.capture_export_frame),
+    PANORAMA_IMAGE("panorama-image","jpg","image/jpeg",R.string.capture_export_panorama),
     TXT("txt","txt","text/plain",R.string.capture_export_txt),
     CSV("csv","csv","text/csv",R.string.capture_export_csv),
     CURRENT_IMAGE("current-image","jpg","image/jpeg",R.string.data_export_current_image),
@@ -33,11 +35,18 @@ internal data class SpaceCompassPreparedCaptureExport(val files: List<File>) {
 internal fun prepareSpaceCompassCaptureExport(context: Context, data: SpaceCompassPanoramaPreviewData,
     types: Set<SpaceCompassCaptureExportType>, position: SpaceCompassPanoramaPosition,
     labels: SpaceCompassPanoramaLabelMode, mode: SpaceCompassPanoramaExportMode,
-    center: SpaceCompassPanoramaCenter, profile: SpaceCompassDataExportProfile? = null): SpaceCompassPreparedCaptureExport {
+    center: SpaceCompassPanoramaCenter, profile: SpaceCompassDataExportProfile? = null,
+    showGrid: Boolean = data.snapshot?.showGrid ?: true): SpaceCompassPreparedCaptureExport {
     require(types.isNotEmpty())
-    val files = SpaceCompassCaptureExportType.entries.filter { it in types }.map { type ->
-        if (type == SpaceCompassCaptureExportType.IMAGE) {
-            prepareSpaceCompassPanoramaVariant(context,data,position,labels,mode,center)
+    val orderedTypes=SpaceCompassCaptureExportType.entries.filter { it in types }
+    val files = orderedTypes.map { type ->
+        if (type in setOf(SpaceCompassCaptureExportType.IMAGE,SpaceCompassCaptureExportType.FRAMED_IMAGE,SpaceCompassCaptureExportType.PANORAMA_IMAGE)) {
+            val projection=when(type) {
+                SpaceCompassCaptureExportType.FRAMED_IMAGE -> SpaceCompassCaptureProjection.FRAME
+                SpaceCompassCaptureExportType.PANORAMA_IMAGE -> SpaceCompassCaptureProjection.PANORAMA
+                else -> data.projection
+            }
+            prepareSpaceCompassPanoramaVariant(context,data,position,labels,mode,center,projection,showGrid)
         } else {
             val presentation = if (mode == SpaceCompassPanoramaExportMode.SELECTED) requireNotNull(data.selectedPresentation) else null
             val snapshot = spaceCompassSnapshotForDisclosure(presentation?.snapshot ?: requireNotNull(data.snapshot),position)
@@ -62,15 +71,23 @@ internal fun prepareSpaceCompassCaptureExport(context: Context, data: SpaceCompa
     }
     val snapshot = if (mode == SpaceCompassPanoramaExportMode.SELECTED) data.selectedPresentation?.snapshot else data.snapshot
     val formatting = snapshot?.formatting ?: profile?.formatting ?: spaceCompassPanoramaInternationalFormatting
-    val title = profile?.strings?.getString(if(snapshot?.globe != null) R.string.view_mode_globe else if (data.cameraPhoto == null) R.string.panorama_preview_title
+    val title = profile?.strings?.getString(if(snapshot?.globe != null) R.string.view_mode_globe else if (data.cameraPhoto == null) R.string.view_mode_sky
         else R.string.camera_capture_preview_title) ?: if(snapshot?.globe != null) "Globe" else if (data.cameraPhoto == null) "Panorama" else "Photo"
     val stem = spaceCompassExportFileStem(data.timeMs,formatting,
         if (position==SpaceCompassPanoramaPosition.HIDDEN) "UTC" else snapshot?.zoneId ?: "UTC",listOf(title))
-    val directory = File(data.file.parentFile,"named-exports/" + spaceCompassPanoramaVariantKey(position,labels,mode,center))
+    val directory = File(data.file.parentFile,"named-exports/" + spaceCompassPanoramaVariantKey(position,labels,mode,center)+"-grid-$showGrid")
     check(directory.isDirectory || directory.mkdirs())
     // Name delivery copies only: the frozen preview, render cache, EXIF privacy and image bytes stay intact.
-    return SpaceCompassPreparedCaptureExport(files.map { file ->
-        writeSpaceCompassPageExportFile(directory,"$stem.${file.extension}") { output ->
+    return SpaceCompassPreparedCaptureExport(files.mapIndexed { index,file ->
+        val type=orderedTypes[index]
+        val representation=when(type) {
+            SpaceCompassCaptureExportType.FRAMED_IMAGE -> profile?.strings?.getString(R.string.capture_projection_frame) ?: "Frame"
+            SpaceCompassCaptureExportType.PANORAMA_IMAGE -> profile?.strings?.getString(R.string.panorama_preview_title) ?: "Panorama"
+            else -> null
+        }
+        val name=if(representation==null) stem else spaceCompassExportFileStem(data.timeMs,formatting,
+            if(position==SpaceCompassPanoramaPosition.HIDDEN) "UTC" else snapshot?.zoneId ?: "UTC",listOf(title,representation))
+        writeSpaceCompassPageExportFile(directory,"$name.${file.extension}") { output ->
             file.inputStream().use { it.copyTo(output) }
         }
     })

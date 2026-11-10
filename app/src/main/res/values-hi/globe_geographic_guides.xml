@@ -1,0 +1,9 @@
+<resources>
+    <string name="globe_reference_equator">भूमध्य रेखा</string>
+    <string name="globe_reference_cancer">कर्क रेखा</string>
+    <string name="globe_reference_capricorn">मकर रेखा</string>
+    <string name="globe_reference_arctic">आर्कटिक वृत्त</string>
+    <string name="globe_reference_antarctic">अंटार्कटिक वृत्त</string>
+    <string name="globe_reference_north_pole">उत्तरी ध्रुव</string>
+    <string name="globe_reference_south_pole">दक्षिणी ध्रुव</string>
+</resources>

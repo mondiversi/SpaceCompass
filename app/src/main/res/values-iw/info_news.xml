@@ -1,9 +1,9 @@
 <resources>
     <string name="info_news_title">החידושים האחרונים · %1$s</string>
-    <string name="info_news_star_sky" formatted="false">גלו את כדור הארץ האינטראקטיבי עם מסלולים, נקודות מפתח ותמונות עדכניות של גרמי שמיים.</string>
-    <string name="info_news_texture_downloads" formatted="false">עברו בין פנורמה, מצלמה וגלובוס וכוונו זום, סיבוב ותוויות.</string>
-    <string name="info_news_weather" formatted="false">צרו תמונות גלובוס עם רקע כוכבים ביום ובלילה ותוויות לבחירה.</string>
-    <string name="info_news_viewer_zoom" formatted="false">הציגו או הסתירו את הרשת הזוויתית בתצוגת המצלמה החיה.</string>
-    <string name="info_news_settings" formatted="false">הקדימו או החזירו את הזמן עד חמישה עשר ימים בכל שנייה.</string>
-    <string name="info_news_catalog" formatted="false">מדריך מעודכן, פקדים ברורים יותר, אוקיינוסים בהירים יותר וגלריה מורחבת.</string>
+    <string name="info_news_star_sky" formatted="false">בחרו שמיים, מצלמה או גלובוס עם פקדים ברורים יותר ומדריך מעודכן.</string>
+    <string name="info_news_texture_downloads" formatted="false">צלמו את המסגרת הנראית של השמיים או הגלובוס, או עברו לפנורמה מלאה.</string>
+    <string name="info_news_weather" formatted="false">ייצאו יחד מסגרת ופנורמה עם נתונים קבועים מרגע הצילום.</string>
+    <string name="info_news_viewer_zoom" formatted="false">הרשתות בשמיים ובמצלמה מתאימות ניגודיות בהירה וכהה לרקע.</string>
+    <string name="info_news_settings" formatted="false">קראו תוויות גלובוס, מעגלים גאוגרפיים ושמות קטבים בצורה ברורה יותר.</string>
+    <string name="info_news_catalog" formatted="false">שיפורים בפקדי צילום, בזום ובפריסה לאורך ולרוחב.</string>
 </resources>

@@ -1,4 +1,4 @@
 <resources>
-    <string name="tutorial_globe_labels" formatted="false">Gösterilecek nesne ve nokta etiketlerini seç.</string>
+    <string name="tutorial_globe_labels" formatted="false">Nokta etiketlerini seçin. Yakınlaştırma ve boş alan ayrıntıları ayarlar.</string>
     <string name="tutorial_globe_rotation" formatted="false">Dünya ekseni etrafında dönme ile serbest dönme arasında geçiş yap.</string>
 </resources>

@@ -13,12 +13,12 @@
     <string name="tutorial_location" formatted="false">自定义位置、海拔、时区、日期、时间和时间流速。</string>
     <string name="tutorial_guides" formatted="false">显示天球参考圈、两极、天顶和天底。这些是天空投影，不是地面路线。</string>
     <string name="tutorial_forward" formatted="false">0–24显示从午夜到次日午夜的整个日历日。+24h显示从当前显示时刻起的24小时，也适用于模拟时刻。每日轨迹、拍摄和导出使用相同时间范围。</string>
-    <string name="tutorial_camera" formatted="false">选择全景、相机或地球仪。点按此处了解各模式的操作。</string>
+    <string name="tutorial_camera" formatted="false">选择天空、相机或地球仪，了解各自的控件。</string>
     <string name="tutorial_weather" formatted="false">显示或隐藏模拟天空和全景中的天气效果。相机模式下不可用。</string>
     <string name="tutorial_axis" formatted="false">选择相机轴（90°）或手机长轴（0°）。相机始终使用自身的轴。</string>
     <string name="tutorial_transparency" formatted="false">让天体图像更透明，以便与相机画面比较。拍摄会保留此选择。</string>
     <string name="tutorial_zoom" formatted="false">通过按钮或双指放大或缩小。</string>
-    <string name="tutorial_capture" formatted="false">生成当前视图的图像，并从预览中导出。</string>
+    <string name="tutorial_capture" formatted="false">生成图像后，可在预览中选择网格、标签和位置；天空和地球仪模式还可切换取景画面与全景。</string>
     <string name="tutorial_panels" formatted="false">收起或展开天体与指南针面板，为天空留出更多空间。</string>
     <string name="tutorial_antipodes" formatted="false">点击可显示或隐藏已选点的相反方向：方位角+180°，高度角符号相反。长按可取消所有点的选择。</string>
     <string name="tutorial_navigation" formatted="false">浏览已选天体。面板显示当前天体及其轨迹颜色。</string>
@@ -27,7 +27,7 @@
     <string name="tutorial_gps" formatted="false">查看真实位置、GPS海拔、朝向和天气，与Location设置无关。</string>
     <string name="tutorial_points" formatted="false">选择或取消轨道点。将准星对准它可查看天体、时间、T、方位角和高度。 天体边框采用轨迹的颜色；选择当前位置时，边框会变为蓝色或青色。</string>
     <string name="tutorial_reticle_title" formatted="false">时间和图标</string>
-    <string name="tutorial_reticle" formatted="false">轻触空白天空可暂停或继续时间。双击可显示或隐藏准星和图标。</string>
+    <string name="tutorial_reticle" formatted="false">轻触空白处可暂停或继续时间。双击可显示或隐藏准星和图标；天空和相机模式下也会同时切换网格。</string>
     <string name="tutorial_reminder" formatted="false">为适用的未来事件打开Android闹钟或日历。过去事件和当前位置不能设置闹钟。</string>
     <string name="tutorial_status_title" formatted="false">状态与恢复</string>
     <string name="tutorial_status" formatted="false">查看当前状态。操作可请求权限、开启定位或重新加载轨道和天气数据。教程不会执行该操作。</string>

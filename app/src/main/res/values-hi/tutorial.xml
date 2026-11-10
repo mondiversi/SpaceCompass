@@ -13,12 +13,12 @@
     <string name="tutorial_location" formatted="false">स्थान, ऊँचाई, समय क्षेत्र, तारीख, समय और समय की गति बदलें।</string>
     <string name="tutorial_guides" formatted="false">खगोलीय वृत्त, ध्रुव, शिरोबिंदु और अधोबिंदु दिखाएँ। ये आकाशीय प्रक्षेपण हैं, ज़मीनी रास्ते नहीं।</string>
     <string name="tutorial_forward" formatted="false">0–24 आधी रात से आधी रात तक पूरा कैलेंडर दिन दिखाता है। +24h दिखाए गए समय से अगले 24 घंटे दिखाता है, भले ही समय सिमुलेटेड हो। पथ, चित्र और निर्यात इसी अंतराल का उपयोग करते हैं।</string>
-    <string name="tutorial_camera" formatted="false">पैनोरमा, कैमरा या ग्लोब चुनें। उनके नियंत्रण देखने के लिए यहाँ टैप करें।</string>
+    <string name="tutorial_camera" formatted="false">आकाश, कैमरा या ग्लोब चुनें और उनके नियंत्रण जानें।</string>
     <string name="tutorial_weather" formatted="false">सिमुलेटेड आकाश और पैनोरमा में मौसम दिखाएँ या छिपाएँ। कैमरा मोड में उपलब्ध नहीं।</string>
     <string name="tutorial_axis" formatted="false">कैमरे का अक्ष (90°) या फ़ोन की लंबाई का अक्ष (0°) चुनें। कैमरा हमेशा अपना अक्ष उपयोग करता है।</string>
     <string name="tutorial_transparency" formatted="false">कैमरे से मिलान के लिए पिंडों के चित्र पारदर्शी बनाएँ। चित्र यह चुनाव बनाए रखता है।</string>
     <string name="tutorial_zoom" formatted="false">बटन या दो उँगलियों से ज़ूम बढ़ाएँ या घटाएँ।</string>
-    <string name="tutorial_capture" formatted="false">दृश्य की छवि तैयार करें और पूर्वावलोकन से निर्यात करें।</string>
+    <string name="tutorial_capture" formatted="false">एक चित्र तैयार करें। पूर्वावलोकन में ग्रिड, लेबल और स्थान चुनें; आकाश और ग्लोब में फ़्रेम और पैनोरमा बदलें।</string>
     <string name="tutorial_panels" formatted="false">आकाश के लिए जगह बनाने को पिंड और कंपास पैनल समेटें या फैलाएँ।</string>
     <string name="tutorial_antipodes" formatted="false">चुने हुए बिंदुओं की विपरीत दिशा दिखाने या छिपाने के लिए टैप करें: दिगंश +180° और उन्नतांश का चिह्न उलट जाता है। सभी बिंदुओं का चयन हटाने के लिए दबाकर रखें।</string>
     <string name="tutorial_navigation" formatted="false">चुने पिंडों में आगे-पीछे जाएँ। पैनल सक्रिय पिंड और पथ के रंग दिखाता है।</string>
@@ -27,7 +27,7 @@
     <string name="tutorial_gps" formatted="false">Location से स्वतंत्र वास्तविक स्थान, GPS ऊँचाई, दिशा और मौसम देखें।</string>
     <string name="tutorial_points" formatted="false">कक्षा बिंदु चुनें। पिंड, समय, T, दिगंश और ऊँचाई पढ़ने के लिए उस पर निशाना लगाएँ। वस्तु के किनारे का रंग उसकी कक्षा के रंग जैसा होता है; वर्तमान स्थिति चुनने पर वह नीला या आसमानी हो जाता है।</string>
     <string name="tutorial_reticle_title" formatted="false">समय और आइकन</string>
-    <string name="tutorial_reticle" formatted="false">समय रोकने या फिर चलाने के लिए खाली आकाश पर टैप करें। निशाना और आइकन दिखाने या छिपाने के लिए दो बार टैप करें।</string>
+    <string name="tutorial_reticle" formatted="false">समय रोकने या चलाने के लिए खाली जगह छुएँ। दो बार छूने से निशाना और आइकन दिखते या छिपते हैं; आकाश और कैमरे में ग्रिड भी।</string>
     <string name="tutorial_reminder" formatted="false">योग्य भविष्य की घटना के लिए Android अलार्म या कैलेंडर खोलें। बीती घटनाओं और वर्तमान बिंदु के लिए अलार्म नहीं।</string>
     <string name="tutorial_status_title" formatted="false">स्थिति और पुनर्प्राप्ति</string>
     <string name="tutorial_status" formatted="false">वर्तमान स्थिति पढ़ें। कार्रवाई अनुमति माँग सकती है, स्थान चालू कर सकती है या कक्षा और मौसम का डेटा फिर लोड कर सकती है। ट्यूटोरियल कार्रवाई नहीं करता।</string>

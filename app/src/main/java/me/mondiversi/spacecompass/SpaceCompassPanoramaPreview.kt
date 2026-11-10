@@ -3,6 +3,9 @@ package me.mondiversi.spacecompass
 import android.graphics.BitmapFactory
 import androidx.activity.compose.BackHandler
 import androidx.compose.foundation.Image
+import androidx.compose.foundation.isSystemInDarkTheme
+import androidx.compose.foundation.rememberScrollState
+import androidx.compose.foundation.verticalScroll
 import androidx.compose.foundation.background
 import androidx.compose.foundation.BorderStroke
 import androidx.compose.foundation.shape.CircleShape
@@ -25,6 +28,7 @@ import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.layout.onSizeChanged
 import androidx.compose.ui.layout.onGloballyPositioned
 import androidx.compose.ui.layout.boundsInRoot
+import androidx.compose.ui.platform.LocalConfiguration
 import androidx.compose.ui.platform.LocalDensity
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.platform.LocalResources
@@ -48,7 +52,9 @@ internal data class SpaceCompassPanoramaPreviewData(val file: File, val timeMs: 
     val credits: String? = null, val cameraPhoto: SpaceCompassCameraPhotoSnapshot? = null,
     val selectedPresentation: SpaceCompassPanoramaPresentation? = null,
     val fileExportMode: SpaceCompassPanoramaExportMode = SpaceCompassPanoramaExportMode.INTERNATIONAL,
-    val orbitTable: SpaceCompassCapturedOrbitTable? = null)
+    val orbitTable: SpaceCompassCapturedOrbitTable? = null,
+    val projection: SpaceCompassCaptureProjection = if(snapshot?.globe!=null||cameraPhoto!=null) SpaceCompassCaptureProjection.FRAME else SpaceCompassCaptureProjection.PANORAMA,
+    val renderSize: Int = 4096)
 
 // Match the main sky's 10 dp content inset plus 4 dp action inset, including pixel rounding.
 private fun Modifier.spaceCompassPanoramaControlSideInsets(): Modifier =
@@ -66,6 +72,8 @@ internal fun SpaceCompassPanoramaPreview(data: SpaceCompassPanoramaPreviewData, 
     val resources = LocalResources.current
     val preferences = LocalSpaceCompassPreferences.current
     val globePreview=data.snapshot?.globe!=null
+    val config=LocalConfiguration.current
+    val portrait=config.screenHeightDp>=config.screenWidthDp
     val previewMode = if (data.selectedPresentation != null) SpaceCompassPanoramaExportMode.SELECTED else data.fileExportMode
     var currentFile by remember(data.file) { mutableStateOf(data.file) }
     var currentPosition by remember(data.file) { mutableStateOf(data.position) }
@@ -77,24 +85,34 @@ internal fun SpaceCompassPanoramaPreview(data: SpaceCompassPanoramaPreviewData, 
     var choosePosition by remember { mutableStateOf(false) }
     var chooseLabels by remember { mutableStateOf(false) }
     var rightControlsFrame by remember { mutableStateOf<SpaceCompassSunSceneFrame?>(null) }
+    var projectionControlFrame by remember { mutableStateOf<SpaceCompassSunSceneFrame?>(null) }
     var chooseCenter by remember { mutableStateOf(false) }
     var controlsVisible by rememberSaveable(data.file.absolutePath) { mutableStateOf(true) }
+    var currentGrid by remember(data.file) { mutableStateOf(data.snapshot?.showGrid ?: true) }
+    var requestedGrid by rememberSaveable(data.file.absolutePath) { mutableStateOf(data.snapshot?.showGrid ?: true) }
+    var currentProjection by remember(data.file) { mutableStateOf(data.projection) }
+    var requestedProjection by rememberSaveable(data.file.absolutePath) { mutableStateOf(data.projection) }
+    val hasFraming=data.snapshot?.let { it.globe?.framing!=null||it.skyFraming!=null }==true
     var currentCenter by remember(data.file) { mutableStateOf(data.snapshot?.center ?: SpaceCompassPanoramaCenter.SOUTH) }
     var requestedCenter by remember(data.file) { mutableStateOf(data.snapshot?.center ?: SpaceCompassPanoramaCenter.SOUTH) }
-    LaunchedEffect(data, requestedPosition, requestedLabelMode, requestedCenter, revision) {
+    LaunchedEffect(data, requestedPosition, requestedLabelMode, requestedCenter, requestedProjection, requestedGrid, revision) {
         preparationFailed = false
-        if (requestedPosition != currentPosition || requestedLabelMode != currentLabelMode || requestedCenter != currentCenter) {
+        if (requestedPosition != currentPosition || requestedLabelMode != currentLabelMode || requestedCenter != currentCenter || requestedProjection != currentProjection || requestedGrid != currentGrid) {
             val targetPosition = requestedPosition
             val targetLabels = requestedLabelMode
             val targetCenter = requestedCenter
+            val targetProjection = requestedProjection
+            val targetGrid = requestedGrid
             try {
                 val file = withContext(Dispatchers.IO) {
-                    prepareSpaceCompassPanoramaVariant(context.applicationContext, data, targetPosition, targetLabels, previewMode, targetCenter)
+                    prepareSpaceCompassPanoramaVariant(context.applicationContext, data, targetPosition, targetLabels, previewMode, targetCenter, targetProjection, targetGrid)
                 }
                 currentFile = file
                 currentPosition = targetPosition
                 currentLabelMode = targetLabels
                 currentCenter = targetCenter
+                currentProjection = targetProjection
+                currentGrid = targetGrid
             } catch (cancelled: kotlinx.coroutines.CancellationException) { throw cancelled
             } catch (error: Exception) {
                 preparationFailed = true
@@ -128,9 +146,9 @@ internal fun SpaceCompassPanoramaPreview(data: SpaceCompassPanoramaPreviewData, 
     val background = spaceCompassPageBackground()
     val bitmap = decoded
     val positionReady = requestedPosition == currentPosition && requestedLabelMode == currentLabelMode &&
-        requestedCenter == currentCenter && !preparationFailed
+        requestedCenter == currentCenter && requestedProjection == currentProjection && requestedGrid == currentGrid && !preparationFailed
     val ready = positionReady && bitmap != null && !failed
-    val export = rememberSpaceCompassCaptureExport(data, requestedPosition, requestedLabelMode, requestedCenter, ready)
+    val export = rememberSpaceCompassCaptureExport(data, requestedPosition, requestedLabelMode, requestedCenter, ready, requestedGrid)
     BackHandler { if (export.visible) export.close() else if (!export.saving) onBack() }
     fun applyLabelMode(mode: SpaceCompassPanoramaLabelMode) {
         if(mode!=requestedLabelMode) {
@@ -165,8 +183,23 @@ internal fun SpaceCompassPanoramaPreview(data: SpaceCompassPanoramaPreviewData, 
     var toolbarHeightPx by remember { mutableIntStateOf(with(density) { 48.dp.roundToPx() }) }
     val topInset = with(density) { toolbarHeightPx.toDp() }
     val previewTitle = stringResource(if(data.snapshot?.globe != null) R.string.view_mode_globe
-        else if (data.cameraPhoto == null) R.string.panorama_preview_title else R.string.view_mode_camera)
-    Box(Modifier.fillMaxSize().background(background).testTag("panorama-preview")) {
+        else if (data.cameraPhoto == null) R.string.view_mode_sky else R.string.view_mode_camera)
+    val projectionControl: (@Composable () -> Unit)? = if(data.cameraPhoto==null&&data.snapshot!=null) {
+        {
+            SpaceCompassPanoramaCircleButton(stringResource(R.string.panorama_preview_title),{
+                val next=if(requestedProjection==SpaceCompassCaptureProjection.PANORAMA) SpaceCompassCaptureProjection.FRAME else SpaceCompassCaptureProjection.PANORAMA
+                requestedProjection=next
+                preferences?.edit()?.putBoolean(spaceCompassCaptureProjectionKey(globePreview),next==SpaceCompassCaptureProjection.PANORAMA)?.apply()
+                notify(if(next==SpaceCompassCaptureProjection.PANORAMA) R.string.capture_panorama_on else R.string.capture_panorama_off)
+            },Modifier.testTag("capture-projection-toggle"),
+                enabled=!export.saving&&hasFraming&&positionReady,checked=requestedProjection==SpaceCompassCaptureProjection.PANORAMA,filled=true,
+                glyphInk=spaceCompassFloatingInk(26f,.10f,.175f,.90f,.825f)) {
+                SpaceCompassSettingsMenuIcon("panorama-image",LocalContentColor.current,Modifier.size(26.dp),iconStrokeWidth=2.1.dp)
+            }
+        }
+    } else null
+    BoxWithConstraints(Modifier.fillMaxSize().background(background).testTag("panorama-preview")) {
+        val controlColumnHeight=(maxHeight-topInset-28.dp).coerceAtLeast(48.dp)
         // Retain image zoom and pan while the export page is open, without background touch/accessibility targets.
         Box(Modifier.fillMaxSize().layout { measurable, constraints ->
             val placeable = measurable.measure(constraints)
@@ -177,16 +210,12 @@ internal fun SpaceCompassPanoramaPreview(data: SpaceCompassPanoramaPreviewData, 
             if (bitmap == null || !positionReady) Box(Modifier.fillMaxSize(), contentAlignment = Alignment.Center) {
                 if (failed || preparationFailed) Text(stringResource(R.string.panorama_error)) else CircularProgressIndicator()
             } else SpaceCompassPanoramaZoomImage(bitmap, Modifier.fillMaxSize(), topInset, controlsVisible,
-                if(controlsVisible) listOfNotNull(rightControlsFrame) else emptyList()) {
+                if(controlsVisible) listOfNotNull(rightControlsFrame,projectionControlFrame.takeIf { projectionControl!=null }) else emptyList(),description=previewTitle,portrait=portrait) {
                 controlsVisible = !controlsVisible
             }
             val showCaptionOptions = data.snapshot != null && data.captionData != null
-            val showCenter = data.cameraPhoto == null && data.snapshot != null && data.snapshot.globe == null
-            if (controlsVisible) Column(Modifier.align(Alignment.TopEnd).spaceCompassPanoramaTopControlInsets(topInset)
-                .testTag("panorama-right-controls").onGloballyPositioned { coordinates ->
-                    val r=coordinates.boundsInRoot()
-                    rightControlsFrame=SpaceCompassSunSceneFrame(r.left.toDouble(),r.top.toDouble(),r.width.toDouble(),r.height.toDouble())
-                }, verticalArrangement = Arrangement.spacedBy(8.dp)) {
+            val showCenter = data.cameraPhoto == null && data.snapshot != null && data.snapshot.globe == null && requestedProjection==SpaceCompassCaptureProjection.PANORAMA
+            val captionControls: @Composable () -> Unit = {
                 if(showCaptionOptions) Box {
                     SpaceCompassPanoramaCircleButton(stringResource(R.string.panorama_point_labels),{chooseLabels=true},enabled=!export.saving,
                         active=requestedLabelMode!=SpaceCompassPanoramaLabelMode.NONE,stateText=stringResource(requestedLabelMode.labelResource),
@@ -207,6 +236,31 @@ internal fun SpaceCompassPanoramaPreview(data: SpaceCompassPanoramaPreviewData, 
                         glyphInk=spaceCompassFloatingInk(24f,.10f,.10f,.90f,.90f)) { SpaceCompassPanoramaCompassIcon() }
                     SpaceCompassPanoramaCenterDialog(chooseCenter,requestedCenter,::applyCenter,{chooseCenter=false})
                 }
+                if(data.snapshot!=null) SpaceCompassPanoramaCircleButton(stringResource(R.string.capture_grid),{
+                    requestedGrid=!requestedGrid
+                    preferences?.edit()?.putBoolean(SPACE_COMPASS_CAPTURE_GRID_KEY,requestedGrid)?.apply()
+                    notify(if(requestedGrid) R.string.capture_grid_on else R.string.capture_grid_off)
+                },modifier=Modifier.testTag("capture-grid-toggle"),enabled=!export.saving&&positionReady,
+                    checked=requestedGrid,glyphInk=spaceCompassFloatingInk(26f,.12f,.12f,.88f,.88f)) {
+                    SpaceCompassAngularGridIcon(LocalContentColor.current)
+                }
+            }
+            if(controlsVisible) {
+                val controlsModifier=Modifier.align(Alignment.TopEnd).spaceCompassPanoramaTopControlInsets(topInset)
+                    .then(if(portrait) Modifier else Modifier.heightIn(max=controlColumnHeight).verticalScroll(rememberScrollState()))
+                    .testTag("panorama-right-controls").onGloballyPositioned { coordinates ->
+                        val r=coordinates.boundsInRoot()
+                        rightControlsFrame=SpaceCompassSunSceneFrame(r.left.toDouble(),r.top.toDouble(),r.width.toDouble(),r.height.toDouble())
+                    }
+                if(portrait) Row(controlsModifier,horizontalArrangement=Arrangement.spacedBy(8.dp),
+                    verticalAlignment=Alignment.CenterVertically) { captionControls() }
+                else Column(controlsModifier,verticalArrangement=Arrangement.spacedBy(8.dp)) { captionControls() }
+                if(projectionControl!=null) Box(Modifier.align(Alignment.BottomEnd)
+                    .spaceCompassPanoramaControlSideInsets().padding(bottom=14.dp)
+                    .testTag("panorama-projection-controls").onGloballyPositioned { coordinates ->
+                        val r=coordinates.boundsInRoot()
+                        projectionControlFrame=SpaceCompassSunSceneFrame(r.left.toDouble(),r.top.toDouble(),r.width.toDouble(),r.height.toDouble())
+                    }) { projectionControl() }
             }
             SpaceCompassPageToolbar(previewTitle, { if (!export.saving) onBack() },
                 Modifier.align(Alignment.TopStart).testTag("panorama-toolbar")
@@ -225,11 +279,11 @@ internal fun SpaceCompassPanoramaPreview(data: SpaceCompassPanoramaPreviewData, 
 
 @Composable
 private fun SpaceCompassPanoramaZoomImage(bitmap: android.graphics.Bitmap, modifier: Modifier,
-    topInset: Dp, controlsVisible: Boolean, gestureExclusions: List<SpaceCompassSunSceneFrame>, onToggleControls: () -> Unit) {
+    topInset: Dp, controlsVisible: Boolean, gestureExclusions: List<SpaceCompassSunSceneFrame>, description: String, portrait: Boolean, onToggleControls: () -> Unit) {
     val image = remember(bitmap) { bitmap.asImageBitmap() }
     var size by remember { mutableStateOf(IntSize.Zero) }
-    var zoom by remember { mutableFloatStateOf(1f) }
-    var offset by remember { mutableStateOf(Offset.Zero) }
+    var zoom by remember(bitmap) { mutableFloatStateOf(1f) }
+    var offset by remember(bitmap) { mutableStateOf(Offset.Zero) }
     val topInsetPx = with(LocalDensity.current) { topInset.toPx() }
     val contentHeight = (size.height - topInsetPx).coerceAtLeast(1f)
     fun baseFit(): Float = min(size.width.toFloat() / bitmap.width, contentHeight / bitmap.height) *
@@ -267,7 +321,7 @@ private fun SpaceCompassPanoramaZoomImage(bitmap: android.graphics.Bitmap, modif
                     blockedGestures,gestureMargin)) toggleControls()
             })
         }) {
-        Image(image, stringResource(R.string.panorama_preview), Modifier.fillMaxSize()
+        Image(image, description, Modifier.fillMaxSize()
             .graphicsLayer {
                 // Fit below the toolbar; its opaque surface covers any zoomed image overflow.
                 val fullFit = min(size.width.toFloat() / bitmap.width, size.height.toFloat() / bitmap.height)
@@ -275,21 +329,28 @@ private fun SpaceCompassPanoramaZoomImage(bitmap: android.graphics.Bitmap, modif
                 scaleX = zoom * base; scaleY = zoom * base
                 translationX = offset.x; translationY = offset.y + topInsetPx / 2f },
             contentScale = ContentScale.Fit)
-        if (controlsVisible) Column(Modifier.align(Alignment.TopStart).spaceCompassPanoramaTopControlInsets(topInset)
-            .testTag("panorama-left-controls").onGloballyPositioned { coordinates ->
-                val r=coordinates.boundsInRoot()
-                leftControlsFrame=SpaceCompassSunSceneFrame(r.left.toDouble(),r.top.toDouble(),r.width.toDouble(),r.height.toDouble())
-            }, verticalArrangement = Arrangement.spacedBy(8.dp)) {
-            SpaceCompassPanoramaCircleButton(zoomOutLabel,
-                onClick = { zoom = (zoom / 1.5f).coerceAtLeast(1f); offset = bound(offset, zoom) },
-                enabled = zoom > 1f, modifier = Modifier.testTag("panorama-zoom-out"), glyphInk = spaceCompassFloatingInk(24f, .25f, .5f, .75f, .5f)) {
-                SpaceCompassPanoramaControlIcon(SpaceCompassPanoramaControl.ZOOM_OUT)
-            }
+        val zoomControls: @Composable () -> Unit = {
             SpaceCompassPanoramaCircleButton(zoomInLabel,
                 onClick = { zoom = (zoom * 1.5f).coerceAtMost(8f); offset = bound(offset, zoom) },
                 enabled = zoom < 8f, modifier = Modifier.testTag("panorama-zoom-in"), glyphInk = spaceCompassFloatingInk(24f, .25f, .25f, .75f, .75f)) {
                 SpaceCompassPanoramaControlIcon(SpaceCompassPanoramaControl.ZOOM_IN)
             }
+            SpaceCompassPanoramaCircleButton(zoomOutLabel,
+                onClick = { zoom = (zoom / 1.5f).coerceAtLeast(1f); offset = bound(offset, zoom) },
+                enabled = zoom > 1f, modifier = Modifier.testTag("panorama-zoom-out"), glyphInk = spaceCompassFloatingInk(24f, .25f, .5f, .75f, .5f)) {
+                SpaceCompassPanoramaControlIcon(SpaceCompassPanoramaControl.ZOOM_OUT)
+            }
+        }
+        if(controlsVisible) {
+            val controlsModifier=Modifier.align(Alignment.TopStart)
+                .spaceCompassPanoramaTopControlInsets(topInset).testTag("panorama-left-controls")
+                .onGloballyPositioned { coordinates ->
+                    val r=coordinates.boundsInRoot()
+                    leftControlsFrame=SpaceCompassSunSceneFrame(r.left.toDouble(),r.top.toDouble(),r.width.toDouble(),r.height.toDouble())
+                }
+            if(portrait) Row(controlsModifier,horizontalArrangement=Arrangement.spacedBy(8.dp),
+                verticalAlignment=Alignment.CenterVertically) { zoomControls() }
+            else Column(controlsModifier,verticalArrangement=Arrangement.spacedBy(8.dp)) { zoomControls() }
         }
     }
 }
@@ -299,19 +360,25 @@ private fun SpaceCompassPanoramaZoomImage(bitmap: android.graphics.Bitmap, modif
 private fun SpaceCompassPanoramaCircleButton(label: String, onClick: () -> Unit,
     modifier: Modifier = Modifier, enabled: Boolean = true, checked: Boolean? = null,
     active: Boolean? = checked, stateText: String? = null,
-    glyphInk: SpaceCompassFloatingInk? = null, opticalOffset: Offset = Offset.Zero,
+    glyphInk: SpaceCompassFloatingInk? = null, opticalOffset: Offset = Offset.Zero, filled: Boolean = false,
     content: @Composable () -> Unit) {
-    val foreground = spaceCompassFloatingControlTint(MaterialTheme.colorScheme.onSurface,
-        active = active, enabled = enabled)
+    val foreground = if(filled) spaceCompassCounterTextColor(isSystemInDarkTheme())
+        else spaceCompassFloatingControlTint(MaterialTheme.colorScheme.onSurface,active = active, enabled = enabled)
+    val surface = when {
+        filled && active == false -> spaceCompassFloatingControlTint(MaterialTheme.colorScheme.onSurface, active = false)
+        filled -> MaterialTheme.colorScheme.primary
+        else -> spaceCompassPageBackground()
+    }
+    val edge = if(filled) MaterialTheme.colorScheme.onSurface else foreground
     CompositionLocalProvider(LocalSpaceCompassFloatingControlMultiplier provides SPACE_COMPASS_COMPACT_CONTROL_MULTIPLIER) {
         SpaceCompassFloatingControlHitRegion {
             Surface(onClick = onClick, enabled = enabled,
                 modifier = modifier.spaceCompassFloatingControlVisual().size(48.dp).spaceCompassAccessibleAction(label, enabled = enabled,
                     role = if (checked == null) Role.Button else Role.Checkbox, checkedState = checked,
                     stateText = stateText, onClick = onClick),
-                shape = CircleShape, color = spaceCompassPageBackground().copy(alpha = 1f),
+                shape = CircleShape, color = surface.copy(alpha = 1f),
                 contentColor = foreground.copy(alpha = if (enabled) 1f else .38f),
-                border = BorderStroke(1.dp, foreground.copy(alpha = if (enabled) .35f else .16f)), shadowElevation = 3.dp) {
+                border = BorderStroke(1.dp, edge.copy(alpha = if (enabled) .35f else .16f)), shadowElevation = if(filled) 0.dp else 3.dp) {
                 Box(contentAlignment = Alignment.Center) {
                     if (glyphInk == null) content() else SpaceCompassFloatingGlyph(glyphInk,
                         opticalOffset = opticalOffset, content = content)

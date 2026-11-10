@@ -1,9 +1,9 @@
 <resources>
     <string name="info_news_title">Latest news · %1$s</string>
-    <string name="info_news_star_sky" formatted="false">Explore the interactive Globe with paths, key points and current object images.</string>
-    <string name="info_news_texture_downloads" formatted="false">Switch between Panorama, Camera and Globe; adjust zoom, rotation and labels.</string>
-    <string name="info_news_weather" formatted="false">Capture the Globe with a starry day/night background and configurable labels.</string>
-    <string name="info_news_viewer_zoom" formatted="false">Show or hide the angular grid in the live camera view.</string>
-    <string name="info_news_settings" formatted="false">Move time forward or backward by up to fifteen days per second.</string>
-    <string name="info_news_catalog" formatted="false">Updated tutorial, clearer controls, brighter Earth oceans and an expanded screenshot gallery.</string>
+    <string name="info_news_star_sky" formatted="false">Choose Sky, Camera or Globe, with clearer controls and an updated tutorial.</string>
+    <string name="info_news_texture_downloads" formatted="false">Capture the visible Sky or Globe frame, or switch to a complete panorama.</string>
+    <string name="info_news_weather" formatted="false">Export the frame and panorama together, with data frozen at capture time.</string>
+    <string name="info_news_viewer_zoom" formatted="false">Live Sky and Camera grids adapt their light/dark contrast to the background.</string>
+    <string name="info_news_settings" formatted="false">Read clearer Globe labels, geographic circles and pole names.</string>
+    <string name="info_news_catalog" formatted="false">Improved capture controls, zoom and portrait/landscape layouts.</string>
 </resources>

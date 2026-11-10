@@ -1,4 +1,4 @@
 <resources>
-    <string name="tutorial_globe_labels" formatted="false">दिखाने के लिए पिंडों और बिंदुओं के लेबल चुनें।</string>
+    <string name="tutorial_globe_labels" formatted="false">बिंदुओं के लेबल चुनें। ज़ूम और उपलब्ध जगह के अनुसार विवरण बदलता है।</string>
     <string name="tutorial_globe_rotation" formatted="false">पृथ्वी की धुरी पर घुमाने और स्वतंत्र घुमाव के बीच बदलें।</string>
 </resources>

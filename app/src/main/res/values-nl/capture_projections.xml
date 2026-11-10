@@ -1,0 +1,11 @@
+<resources>
+    <string name="view_mode_sky" formatted="false">Hemel</string>
+    <string name="capture_projection_frame" formatted="false">Beelduitsnede</string>
+    <string name="capture_export_frame" formatted="false">Beelduitsnede (JPG)</string>
+    <string name="capture_export_panorama" formatted="false">Panorama (JPG)</string>
+    <string name="capture_panorama_on">Panoramaweergave ingeschakeld</string>
+    <string name="capture_panorama_off">Panoramaweergave uitgeschakeld</string>
+    <string name="capture_grid">Raster</string>
+    <string name="capture_grid_on">Raster zichtbaar</string>
+    <string name="capture_grid_off">Raster verborgen</string>
+</resources>

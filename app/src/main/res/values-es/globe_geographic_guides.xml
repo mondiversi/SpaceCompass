@@ -1,0 +1,9 @@
+<resources>
+    <string name="globe_reference_equator">Ecuador</string>
+    <string name="globe_reference_cancer">Trópico de Cáncer</string>
+    <string name="globe_reference_capricorn">Trópico de Capricornio</string>
+    <string name="globe_reference_arctic">Círculo polar ártico</string>
+    <string name="globe_reference_antarctic">Círculo polar antártico</string>
+    <string name="globe_reference_north_pole">Polo Norte</string>
+    <string name="globe_reference_south_pole">Polo Sur</string>
+</resources>

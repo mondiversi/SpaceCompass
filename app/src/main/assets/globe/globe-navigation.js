@@ -5,7 +5,7 @@ scheduleWorldAnimation=function(){};
 let globeScene={tracks:[],pose:[0,.3,1],extent:1.55,guides:false};
 const orbitCanvas=document.createElement('canvas');document.body.appendChild(orbitCanvas);
 const orbitInk=orbitCanvas.getContext('2d');let globeHits=[],globeLabelSegments=[];
-const globeLabelSides=new Map();
+const globeLabelSides=new Map(),globeLabelDetails=new Map();
 earthPose=function(){return {rotation:globeScene.pose[0],orientation:[globeScene.pose[3]||0,globeScene.pose[1]]}};
 window.spaceCompassGlobeCenter=function(w,h){const v=globeScene.viewport||[0,0,w,h];return [w/2,v[1]+v[3]/2];};
 // 1x fits the entire rotation-invariant trajectory envelope inside the available frame.
@@ -47,20 +47,37 @@ function globeText(label,point,color,selected,key,radius){if(!label)return null;
  }
  const cached=globeLabelSides.get(key),order=cached===undefined?[]:[cached];
  order.push(...candidates.map((_,i)=>i).filter(i=>i!==cached));
- for(const index of order){const [cx,cy]=candidates[index];
+ for(const relaxed of (selected?[false,true]:[false]))for(const index of order){const [cx,cy]=candidates[index];
   const box={x:Math.max(4,Math.min(viewWidth-w-4,cx-w/2)),y:Math.max(4,Math.min(viewHeight-h-4,cy-h/2)),w,h};
   const nearestX=Math.max(box.x,Math.min(box.x+w,point.x)),nearestY=Math.max(box.y,Math.min(box.y+h,point.y));
   if(Math.hypot(nearestX-point.x,nearestY-point.y)<radius+24)continue;
   if(globeScene.exclusions?.some(e=>box.x<e[0]+e[2]+4&&box.x+w>e[0]-4&&box.y<e[1]+e[3]+4&&box.y+h>e[1]-4))continue;
   if(globeText.boxes.some(b=>box.x<b.x+b.w+6&&box.x+w>b.x-6&&box.y<b.y+b.h+6&&box.y+h>b.y-6))continue;
-  if(globeHits.some(p=>{const x=Math.max(box.x,Math.min(box.x+w,p.x)),y=Math.max(box.y,Math.min(box.y+h,p.y));
+  if(!relaxed&&globeHits.some(p=>{const x=Math.max(box.x,Math.min(box.x+w,p.x)),y=Math.max(box.y,Math.min(box.y+h,p.y));
    return Math.hypot(x-p.x,y-p.y)<(p.current?16:7)+6;}))continue;
   // A small hysteresis keeps a clear side stable while the view moves by a few pixels.
-  if(globeLabelSegments.some(s=>globeLineTouchesBox(box,s,index===cached?6:10)))continue;
+  if(!relaxed&&globeLabelSegments.some(s=>globeLineTouchesBox(box,s,index===cached?6:10)))continue;
   globeText.boxes.push(box);globeLabelSides.set(key,index);
   if(globeLabelSides.size>128)globeLabelSides.delete(globeLabelSides.keys().next().value);
   return {box,point,color,selected,lines,radius};
  }return null;
+}
+// Keep a reduced level stable while the pose is unchanged; gestures and viewport changes recover detail.
+function globeAdaptiveText(dot,point,color,key,radius,count){
+ const variants=[dot.labelFull||dot.label,dot.labelCompact||dot.label,dot.label];
+ const view=globeScene.viewport||[0,0,viewWidth,viewHeight],diameter=earthDiameter(viewWidth,viewHeight);
+ const budget=Math.max(1,view[2]*view[3]*.45/Math.max(1,count));
+ const area=text=>Math.min(280,Math.max(...text.split('\n').map(line=>line.length*6))+12)*(text.split('\n').length*16+8);
+ let level=diameter>=(dot.selected?100:180)&&(dot.selected||area(variants[0])*1.3<=budget)?0:1;
+ if(!dot.selected&&area(variants[1])>budget)level=2;
+ const signature=[...view,viewWidth,viewHeight,...globeScene.pose.slice(0,3).map(v=>v.toFixed(2)),count,!!dot.selected].join(':');
+ const previous=globeLabelDetails.get(key);if(previous?.signature===signature)level=Math.max(level,previous.level);
+ const tried=new Set();for(let i=level;i<variants.length;i++){
+  const value=variants[i];if(!value||tried.has(value))continue;tried.add(value);
+  const label=globeText(value,point,color,!!dot.selected,key,radius);
+  if(label){globeLabelDetails.set(key,{level:i,signature});if(globeLabelDetails.size>256)globeLabelDetails.delete(globeLabelDetails.keys().next().value);return label;}
+ }
+ globeLabelDetails.set(key,{level:2,signature});return null;
 }
 function globeLabelLeader(label){const {box,point,color,radius}=label;
  const x=Math.max(box.x,Math.min(box.x+box.w,point.x)),y=Math.max(box.y,Math.min(box.y+box.h,point.y));
@@ -77,13 +94,137 @@ function drawGlobeText(label){const {box,color,selected,lines}=label,{x,y,w,h}=b
  orbitInk.lineTo(x,y+radius);orbitInk.quadraticCurveTo(x,y,x+radius,y);orbitInk.closePath();
  orbitInk.fill();orbitInk.strokeStyle=color;orbitInk.lineWidth=selected?1.5:1;orbitInk.stroke();
  orbitInk.font='600 12px sans-serif';orbitInk.fillStyle='#fff';orbitInk.textAlign='center';
- lines.forEach((line,i)=>orbitInk.fillText(line,x+w/2,y+17+i*16,w-8));
+ lines.forEach((line,i)=>{orbitInk.font=(i===0?'600':'400')+' 12px sans-serif';orbitInk.fillText(line,x+w/2,y+17+i*16,w-8);});
 }
+// Clip visible front-face arcs to the actual scene, including segments whose samples are off screen.
+// Guide names are shaped as whole strings before bending the raster along their parallel (also for RTL).
+const globeGuideAnchors=new Map(),globeGuideRasters=new Map();
+function globeGuideViewport(){const v=globeScene.viewport||[0,0,viewWidth,viewHeight];
+ return {x:Math.max(8,v[0]+8),y:Math.max(20,v[1]+20),right:Math.min(viewWidth-8,v[0]+v[2]-8),bottom:Math.min(viewHeight-8,v[1]+v[3]-8)};
+}
+function globeGuideRuns(points){const view=globeGuideViewport(),runs=[];let run=[];
+ const mix=(a,b,t)=>({x:a.x+(b.x-a.x)*t,y:a.y+(b.y-a.y)*t,u:a.u+(b.u-a.u)*t});
+ const finish=()=>{if(run.length>1)runs.push(run);run=[];};
+ for(let i=1;i<points.length;i++){let a=points[i-1],b=points[i];
+  if(a.depth<0&&b.depth<0){finish();continue;}
+  if(a.depth<0)a=mix(a,b,-a.depth/(b.depth-a.depth));
+  else if(b.depth<0)b=mix(a,b,a.depth/(a.depth-b.depth));
+  const dx=b.x-a.x,dy=b.y-a.y;let first=0,last=1,visible=true;
+  for(const [p,q] of [[-dx,a.x-view.x],[dx,view.right-a.x],[-dy,a.y-view.y],[dy,view.bottom-a.y]]){
+   if(Math.abs(p)<1e-9){if(q<0)visible=false;continue;}
+   const t=q/p;if(p<0)first=Math.max(first,t);else last=Math.min(last,t);
+  }
+  if(!visible||first>last){finish();continue;}
+  const start=mix(a,b,first),end=mix(a,b,last),previous=run.at(-1);
+  if(previous&&Math.hypot(start.x-previous.x,start.y-previous.y)>1)finish();
+  if(!run.length)run.push(start);run.push(end);
+  if(last<1)finish();
+ }
+ finish();if(runs.length>1){const first=runs[0],last=runs.at(-1);
+  if(Math.hypot(last.at(-1).x-first[0].x,last.at(-1).y-first[0].y)<1){runs[0]=last.concat(first.slice(1));runs.pop();}}
+ return runs;
+}
+function globeGuidePath(points){if(points.at(-1).x<points[0].x)points=[...points].reverse();
+ const distances=[0];for(let i=1;i<points.length;i++)distances.push(distances.at(-1)+Math.hypot(points[i].x-points[i-1].x,points[i].y-points[i-1].y));
+ return {points,distances,length:distances.at(-1)};
+}
+function globeGuidePoint(path,distance){const {points,distances}=path;let i=1;
+ while(i<distances.length-1&&distances[i]<distance)i++;
+ const a=points[i-1],b=points[i],t=Math.max(0,Math.min(1,(distance-distances[i-1])/Math.max(.001,distances[i]-distances[i-1])));
+ return {x:a.x+(b.x-a.x)*t,y:a.y+(b.y-a.y)*t,u:a.u+(b.u-a.u)*t,angle:Math.atan2(b.y-a.y,b.x-a.x)};
+}
+function globeGuideLayout(info,points){const paths=globeGuideRuns(points).map(globeGuidePath).sort((a,b)=>b.length-a.length),view=globeGuideViewport();
+ const overlaps=(a,b)=>a.x<b.x+b.w+3&&a.x+a.w>b.x-3&&a.y<b.y+b.h+3&&a.y+a.h>b.y-3;
+ const exclusions=(globeScene.exclusions||[]).map(([x,y,w,h])=>({x,y,w,h}));
+ const cached=globeGuideAnchors.get(info.latitude);
+ for(const avoidDots of [true,false])for(const size of [12,11,10])for(const text of [info.name+'  '+info.value,info.name]){
+  orbitInk.font='600 '+size+'px sans-serif';const width=orbitInk.measureText(text).width+6;
+  for(const path of paths){if(path.length<width+12)continue;
+   const low=width/2+5,high=path.length-low,centers=[];
+   if(cached!==undefined){for(let i=1;i<path.points.length;i++){const a=path.points[i-1].u,b=path.points[i].u;
+    if(Math.abs(b-a)<.1&&cached>=Math.min(a,b)&&cached<=Math.max(a,b)){
+     centers.push(Math.max(low,Math.min(high,path.distances[i-1]+(path.distances[i]-path.distances[i-1])*(cached-a)/(b-a||1))));break;}}}
+   centers.push(path.length/2);for(let step=32;step<path.length/2;step+=32)centers.push(path.length/2-step,path.length/2+step);
+   for(const center of centers){if(center<low||center>high)continue;
+    const samples=[],boxes=[],middle=globeGuidePoint(path,center),reverse=Math.cos(middle.angle)<0;let clear=true;
+    for(let x=0;x<width;x+=8){const slice=Math.min(8,width-x),offset=-width/2+x+slice/2,p=globeGuidePoint(path,center+(reverse?-offset:offset));
+     const turn=Math.atan2(Math.sin(p.angle-middle.angle),Math.cos(p.angle-middle.angle));
+     if(Math.abs(turn)>Math.PI/3){clear=false;break;}
+     if(reverse)p.angle+=Math.PI;const c=Math.cos(p.angle),s=Math.sin(p.angle);
+     const cy=-(size/2+8),cx=p.x-s*cy,y=p.y+c*cy,halfW=Math.abs(c)*slice/2+Math.abs(s)*(size/2+3),halfH=Math.abs(s)*slice/2+Math.abs(c)*(size/2+3);
+     const box={x:cx-halfW,y:y-halfH,w:halfW*2,h:halfH*2};
+     if(box.x<view.x||box.x+box.w>view.right||box.y<view.y||box.y+box.h>view.bottom||
+        exclusions.some(b=>overlaps(box,b))||globeText.boxes.some(b=>overlaps(box,b))||
+        boxes.slice(0,-2).some(b=>overlaps(box,b))||
+        globeHits.some(p=>{if(!avoidDots&&!p.current)return false;const x=Math.max(box.x,Math.min(box.x+box.w,p.x)),y=Math.max(box.y,Math.min(box.y+box.h,p.y));return Math.hypot(x-p.x,y-p.y)<(p.current?19:p.selected?11:4);})){clear=false;break;}
+     boxes.push(box);samples.push({x,slice,p});
+    }
+    if(clear){globeText.boxes.push(...boxes);globeGuideAnchors.set(info.latitude,globeGuidePoint(path,center).u);return {text,size,width,samples};}
+   }
+  }
+ }
+ return null;
+}
+function drawGlobeGuideName(label){const {text,size,width,samples}=label,key=size+':'+text;
+ let raster=globeGuideRasters.get(key);
+ if(!raster){const canvas=document.createElement('canvas'),scale=pixelRatio;canvas.width=Math.ceil(width*scale);canvas.height=Math.ceil((size+10)*scale);
+  const ink=canvas.getContext('2d');ink.scale(scale,scale);ink.font='600 '+size+'px sans-serif';ink.textAlign='center';ink.textBaseline='alphabetic';
+  ink.lineJoin='round';ink.strokeStyle='#101418';ink.lineWidth=3;ink.strokeText(text,width/2,size+2);ink.fillStyle='#d8e7f2';ink.fillText(text,width/2,size+2);
+  raster={canvas,scale};globeGuideRasters.set(key,raster);if(globeGuideRasters.size>32)globeGuideRasters.delete(globeGuideRasters.keys().next().value);
+ }
+ orbitInk.globalAlpha=1;orbitInk.setLineDash([]);
+ for(const {x,slice,p} of samples){orbitInk.save();orbitInk.translate(p.x,p.y);orbitInk.rotate(p.angle);
+  orbitInk.drawImage(raster.canvas,x*raster.scale,0,slice*raster.scale,raster.canvas.height,-slice/2,-size-10,slice,size+10);orbitInk.restore();}
+}
+
+// Geographic poles are the ends of Earth's rotation axis, not the celestial-pole sky directions.
+const globePoleSides=new Map();
+function globePoleLayout(info,point){const view=globeGuideViewport();
+ if(point.depth< -1e-6||point.x<view.x||point.x>view.right||point.y<view.y||point.y>view.bottom)return null;
+ const overlaps=(a,b)=>a.x<b.x+b.w+3&&a.x+a.w>b.x-3&&a.y<b.y+b.h+3&&a.y+a.h>b.y-3;
+ orbitInk.font='600 12px sans-serif';
+ for(const text of [info.name+'  '+info.value,info.name]){const w=orbitInk.measureText(text).width+8,h=20;
+  const candidates=[{x:point.x-w/2,y:point.y-h-10,w,h},{x:point.x-w/2,y:point.y+10,w,h},
+   {x:point.x+10,y:point.y-h/2,w,h},{x:point.x-w-10,y:point.y-h/2,w,h}];
+  const cached=globePoleSides.get(info.latitude),order=cached===undefined?[]:[cached];
+  order.push(...candidates.map((_,i)=>i).filter(i=>i!==cached));
+  for(const index of order){const b=candidates[index];b.x=Math.max(view.x,Math.min(view.right-w,b.x));
+   if(b.x<view.x||b.x+w>view.right||b.y<view.y||b.y+h>view.bottom)continue;
+   if((globeScene.exclusions||[]).some(([x,y,w,h])=>overlaps(b,{x,y,w,h}))||globeText.boxes.some(a=>overlaps(b,a)))continue;
+   if(globeHits.some(p=>p.current&&Math.hypot(Math.max(b.x,Math.min(b.x+w,p.x))-p.x,Math.max(b.y,Math.min(b.y+h,p.y))-p.y)<19))continue;
+   globeText.boxes.push(b);globePoleSides.set(info.latitude,index);return {text,box:b};
+  }
+ }
+ return null;
+}
+function globePoleGuides(){if(!globeScene.guides)return [];
+ return (globeScene.poleLabels||[]).map(info=>{const point=globePoint([0,info.latitude>0?1:-1,0]),view=globeGuideViewport();
+  if(point.depth< -1e-6||point.x<view.x||point.x>view.right||point.y<view.y||point.y>view.bottom)return null;
+  const label=globePoleLayout(info,point);globeText.boxes.push({x:point.x-6,y:point.y-6,w:12,h:12});
+  return {point,label};
+ }).filter(Boolean);
+}
+function drawGlobePoleGuide({point,label}){orbitInk.globalAlpha=1;orbitInk.setLineDash([]);
+ orbitInk.beginPath();orbitInk.moveTo(point.x-4,point.y);orbitInk.lineTo(point.x+4,point.y);
+ orbitInk.moveTo(point.x,point.y-4);orbitInk.lineTo(point.x,point.y+4);
+ orbitInk.strokeStyle='#101418';orbitInk.lineWidth=3.5;orbitInk.stroke();
+ orbitInk.strokeStyle='#d8e7f2';orbitInk.lineWidth=1.2;orbitInk.stroke();
+ if(label){const {text,box}=label;orbitInk.font='600 12px sans-serif';orbitInk.textAlign='center';orbitInk.textBaseline='alphabetic';
+  orbitInk.lineJoin='round';orbitInk.strokeStyle='#101418';orbitInk.lineWidth=3;orbitInk.strokeText(text,box.x+box.w/2,box.y+14);
+  orbitInk.fillStyle='#d8e7f2';orbitInk.fillText(text,box.x+box.w/2,box.y+14);}
+}
+
 function drawGlobeOverlays(){const d=pixelRatio;if(orbitCanvas.width!==Math.round(viewWidth*d)||orbitCanvas.height!==Math.round(viewHeight*d)){orbitCanvas.width=Math.round(viewWidth*d);orbitCanvas.height=Math.round(viewHeight*d);}
  orbitInk.setTransform(d,0,0,d,0,0);orbitInk.clearRect(0,0,viewWidth,viewHeight);globeHits=[];globeText.boxes=[];globeLabelSegments=[];orbitInk.lineCap='round';
- if(globeScene.guides){for(const lat of [-66.56,-23.44,0,23.44,66.56]){const phi=lat*Math.PI/180;let last=null;
-  for(let i=0;i<=120;i++){const lon=i*Math.PI/60,v=[Math.cos(phi)*Math.sin(lon),Math.sin(phi),Math.cos(phi)*Math.cos(lon)];
-   if(last)globeStroke(last,v,'#a8bdd0',.8,false);last=v;}}
+ const guideCurves=[];
+ if(globeScene.guides){for(const lat of [-66.56,-23.44,0,23.44,66.56]){const phi=lat*Math.PI/180;let last=null;const points=[];
+  for(let i=0;i<=240;i++){const lon=i*Math.PI/120,v=[Math.cos(phi)*Math.sin(lon),Math.sin(phi),Math.cos(phi)*Math.cos(lon)];
+   if(last)globeStroke(last,v,'#a8bdd0',.8,false);last=v;
+   points.push({...globePoint(v),u:i/240});
+  }
+  const info=globeScene.guideLabels?.find(g=>Math.abs(g.latitude-lat)<.01);
+  if(info?.name)guideCurves.push({info,points});
+ }
   for(let lon=0;lon<180;lon+=30){const l=lon*Math.PI/180;let last=null;for(let i=0;i<=120;i++){
    const phi=i*Math.PI/60,v=[Math.cos(phi)*Math.sin(l),Math.sin(phi),Math.cos(phi)*Math.cos(l)];
    if(last)globeStroke(last,v,'#7892ab',.5,false);last=v;}}}
@@ -104,16 +245,24 @@ function drawGlobeOverlays(){const d=pixelRatio;if(orbitCanvas.width!==Math.roun
    if(dot.selected&&!dot.current){orbitInk.beginPath();orbitInk.arc(p.x,p.y,9,0,Math.PI*2);orbitInk.stroke();}
    if(dot.id>=0)globeHits.push({id:dot.id,x:p.x,y:p.y,depth:p.depth,current:dot.current});
   }}
- // Place every label before drawing any leader, then paint all pills above the connectors.
+ // Geographic names follow the visible parallel, independently of point-label scope and curve collisions.
+ const poleGuides=globePoleGuides();
+ const guideNames=guideCurves.map(({info,points})=>globeGuideLayout(info,points)).filter(Boolean);
+ // Place every point label before drawing any leader, then paint all pills above the connectors.
  const placed=[];
- if(globeScene.labels)for(const track of globeScene.tracks)for(const dot of [...track.dots].sort((a,b)=>Number(b.selected)-Number(a.selected)||Number(b.current)-Number(a.current))){
-  const p=globePoint(dot.v);if(!dot.label)continue;
+ const pointLabels=globeScene.labels?globeScene.tracks.flatMap(track=>track.dots.filter(dot=>!!dot.label)
+  .map(dot=>({track,dot:{...dot,p:globePoint(dot.v)}})))
+  .filter(({dot})=>dot.selected||(dot.p.x>=-20&&dot.p.x<=viewWidth+20&&dot.p.y>=-20&&dot.p.y<=viewHeight+20)):[];
+ const labelDots=pointLabels.sort((a,b)=>(b.dot.selected?4:b.dot.current?3:b.dot.guide?2:1)-(a.dot.selected?4:a.dot.current?3:a.dot.guide?2:1));
+ for(const {track,dot} of labelDots){
+  const p=dot.p||globePoint(dot.v);if(!dot.label)continue;
   const below=track.belowLabelColor||track.belowColor||track.color;
   const tint=p.hidden?below:dot.selected?globeScene.selection:dot.below?below:track.color;
-  const label=globeText(dot.label,p,tint,dot.selected,track.color+':'+dot.id,dot.current?16:7);
+  const key=(track.key||track.color)+':'+dot.id;
+  const label=globeAdaptiveText(dot,p,tint,key,dot.current?16:dot.guide?3:7,labelDots.length);
   if(label){label.behind=p.hidden;placed.push(label);}
  }
- placed.forEach(globeLabelLeader);placed.forEach(drawGlobeText);
+ placed.forEach(globeLabelLeader);guideNames.forEach(drawGlobeGuideName);placed.forEach(drawGlobeText);poleGuides.forEach(drawGlobePoleGuide);
  orbitInk.globalAlpha=1;
 }
 paintWorld=function(time){lastGlobePaint=performance.now();globeFrameNow=performance.now();applyGlobeLayout();const w=viewWidth,h=viewHeight;if(!w||!h)return;

@@ -1,0 +1,9 @@
+<resources>
+    <string name="globe_reference_equator">Äquator</string>
+    <string name="globe_reference_cancer">Wendekreis des Krebses</string>
+    <string name="globe_reference_capricorn">Wendekreis des Steinbocks</string>
+    <string name="globe_reference_arctic">Nördlicher Polarkreis</string>
+    <string name="globe_reference_antarctic">Südlicher Polarkreis</string>
+    <string name="globe_reference_north_pole">Nordpol</string>
+    <string name="globe_reference_south_pole">Südpol</string>
+</resources>

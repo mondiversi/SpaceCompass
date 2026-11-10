@@ -13,12 +13,12 @@
     <string name="tutorial_location" formatted="false">Passe Ort, Höhe, Zeitzone, Datum, Uhrzeit und Zeitgeschwindigkeit an.</string>
     <string name="tutorial_guides" formatted="false">Zeige Himmelskreise, Pole, Zenit und Nadir. Dies sind Himmelsprojektionen und keine Wege am Boden.</string>
     <string name="tutorial_forward" formatted="false">0–24 zeigt den ganzen Kalendertag von Mitternacht bis Mitternacht. +24h zeigt die nächsten 24 Stunden ab dem angezeigten, auch simulierten Zeitpunkt. Tagesbahn, Aufnahmen und Exporte nutzen denselben Zeitraum.</string>
-    <string name="tutorial_camera" formatted="false">Wähle Panorama, Kamera oder Globus. Tippe hier, um ihre Bedienelemente zu erkunden.</string>
+    <string name="tutorial_camera" formatted="false">Wähle Himmel, Kamera oder Globus und erkunde ihre Bedienelemente.</string>
     <string name="tutorial_weather" formatted="false">Zeige oder verberge Wettereffekte im simulierten Himmel und in Panoramen. Im Kameramodus nicht verfügbar.</string>
     <string name="tutorial_axis" formatted="false">Wähle Kameraachse (90°) oder Telefonlängsachse (0°). Die Kamera verwendet immer ihre eigene Achse.</string>
     <string name="tutorial_transparency" formatted="false">Mache Objektbilder durchscheinend, um sie mit dem Kamerabild zu vergleichen. Die Aufnahme übernimmt diese Wahl.</string>
     <string name="tutorial_zoom" formatted="false">Vergrößere oder verkleinere mit der Taste oder zwei Fingern.</string>
-    <string name="tutorial_capture" formatted="false">Erstelle ein Bild der Ansicht und exportiere es aus der Vorschau.</string>
+    <string name="tutorial_capture" formatted="false">Erstelle ein Bild. Wähle in der Vorschau Raster, Beschriftungen und Position; bei Himmel und Globus wechselst du zwischen Bildausschnitt und Panorama.</string>
     <string name="tutorial_panels" formatted="false">Klappe Objekt- und Kompassfelder ein oder aus, um mehr Himmel zu sehen.</string>
     <string name="tutorial_antipodes" formatted="false">Tippe, um die Gegenrichtung ausgewählter Punkte anzuzeigen oder auszublenden: Azimut +180° und Höhe mit umgekehrtem Vorzeichen. Halte die Taste gedrückt, um alle Punkte abzuwählen.</string>
     <string name="tutorial_navigation" formatted="false">Blättere durch ausgewählte Objekte. Das Feld zeigt das aktive Objekt und seine Bahnfarben.</string>
@@ -27,7 +27,7 @@
     <string name="tutorial_gps" formatted="false">Zeige tatsächlichen Standort, GPS-Höhe, Ausrichtung und Wetter, unabhängig von der Location.</string>
     <string name="tutorial_points" formatted="false">Wähle einen Bahnpunkt. Ziele darauf, um Objekt, Uhrzeit, T, Azimut und Höhe zu lesen. Der Objektrand hat die Farbe seiner Bahn; bei Auswahl der aktuellen Position wird er blau oder hellblau.</string>
     <string name="tutorial_reticle_title" formatted="false">Zeit und Symbole</string>
-    <string name="tutorial_reticle" formatted="false">Tippe auf freien Himmel, um die Zeit anzuhalten oder fortzusetzen. Doppeltippen zeigt oder verbirgt Fadenkreuz und Symbole.</string>
+    <string name="tutorial_reticle" formatted="false">Tippe auf eine freie Stelle, um die Zeit anzuhalten oder fortzusetzen. Doppeltippen zeigt oder verbirgt Fadenkreuz und Symbole; bei Himmel und Kamera auch das Raster.</string>
     <string name="tutorial_reminder" formatted="false">Öffne Android-Wecker oder Kalender für ein gültiges zukünftiges Ereignis. Vergangene Ereignisse und der aktuelle Punkt sind ausgeschlossen.</string>
     <string name="tutorial_status_title" formatted="false">Status und Wiederherstellung</string>
     <string name="tutorial_status" formatted="false">Lies den aktuellen Status. Die Aktion kann Berechtigungen anfordern, den Standort aktivieren oder Bahn- und Wetterdaten erneut laden. Das Tutorial führt sie nicht aus.</string>

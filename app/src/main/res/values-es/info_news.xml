@@ -1,9 +1,9 @@
 <resources>
     <string name="info_news_title">Últimas novedades · %1$s</string>
-    <string name="info_news_star_sky" formatted="false">Explora el globo interactivo con trayectorias, puntos clave e imágenes actuales de los objetos.</string>
-    <string name="info_news_texture_downloads" formatted="false">Cambia entre Panorama, Cámara y Globo; ajusta el zoom, la rotación y las etiquetas.</string>
-    <string name="info_news_weather" formatted="false">Captura el globo con fondo estrellado de día o noche y etiquetas configurables.</string>
-    <string name="info_news_viewer_zoom" formatted="false">Muestra u oculta la cuadrícula angular en la vista de cámara.</string>
-    <string name="info_news_settings" formatted="false">Avanza o retrocede el tiempo hasta quince días por segundo.</string>
-    <string name="info_news_catalog" formatted="false">Tutorial actualizado, controles más claros, océanos más luminosos y galería ampliada.</string>
+    <string name="info_news_star_sky" formatted="false">Elige Cielo, Cámara o Globo con controles más claros y un tutorial actualizado.</string>
+    <string name="info_news_texture_downloads" formatted="false">Captura el encuadre visible del cielo o del globo, o cambia a la panorámica completa.</string>
+    <string name="info_news_weather" formatted="false">Exporta encuadre y panorámica juntos con los datos del momento de la captura.</string>
+    <string name="info_news_viewer_zoom" formatted="false">Las cuadrículas de Cielo y Cámara adaptan su contraste claro u oscuro al fondo.</string>
+    <string name="info_news_settings" formatted="false">Lee mejor las etiquetas del globo, los círculos geográficos y los nombres de los polos.</string>
+    <string name="info_news_catalog" formatted="false">Mejoras en controles de captura, zoom y disposición vertical y horizontal.</string>
 </resources>

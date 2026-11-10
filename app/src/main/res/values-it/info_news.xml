@@ -1,9 +1,9 @@
 <resources>
     <string name="info_news_title">Ultime novità · %1$s</string>
-    <string name="info_news_star_sky" formatted="false">Esplora il Mappamondo interattivo con traiettorie, punti chiave e immagini attuali degli oggetti.</string>
-    <string name="info_news_texture_downloads" formatted="false">Passa tra Panoramica, Fotocamera e Mappamondo; regola zoom, rotazione ed etichette.</string>
-    <string name="info_news_weather" formatted="false">Acquisisci il Mappamondo con sfondo stellato giorno/notte ed etichette configurabili.</string>
-    <string name="info_news_viewer_zoom" formatted="false">Mostra o nascondi il reticolo angolare nella vista fotocamera.</string>
-    <string name="info_news_settings" formatted="false">Fai avanzare o retrocedere il tempo fino a quindici giorni al secondo.</string>
-    <string name="info_news_catalog" formatted="false">Tutorial aggiornato, comandi più chiari, oceani terrestri più luminosi e galleria immagini ampliata.</string>
+    <string name="info_news_star_sky" formatted="false">Scegli Cielo, Fotocamera o Mappamondo, con comandi più chiari e tutorial aggiornato.</string>
+    <string name="info_news_texture_downloads" formatted="false">Acquisisci l’inquadratura di Cielo o Mappamondo, oppure passa alla panoramica completa.</string>
+    <string name="info_news_weather" formatted="false">Esporta insieme inquadratura e panoramica, con dati fermi al momento dell’acquisizione.</string>
+    <string name="info_news_viewer_zoom" formatted="false">Le griglie di Cielo e Fotocamera adattano il contrasto chiaro/scuro allo sfondo.</string>
+    <string name="info_news_settings" formatted="false">Leggi meglio le etichette del Mappamondo, i circoli geografici e i nomi dei poli.</string>
+    <string name="info_news_catalog" formatted="false">Comandi di acquisizione, zoom e disposizione verticale e orizzontale migliorati.</string>
 </resources>

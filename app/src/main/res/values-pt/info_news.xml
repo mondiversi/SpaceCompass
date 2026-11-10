@@ -1,9 +1,9 @@
 <resources>
     <string name="info_news_title">Últimas novidades · %1$s</string>
-    <string name="info_news_star_sky" formatted="false">Explore o globo interativo com trajetórias, pontos principais e imagens atuais dos objetos.</string>
-    <string name="info_news_texture_downloads" formatted="false">Alterne entre Panorama, Câmera e Globo; ajuste zoom, rotação e etiquetas.</string>
-    <string name="info_news_weather" formatted="false">Capture o globo com fundo estrelado diurno ou noturno e etiquetas configuráveis.</string>
-    <string name="info_news_viewer_zoom" formatted="false">Mostre ou oculte a grade angular na câmera ao vivo.</string>
-    <string name="info_news_settings" formatted="false">Avance ou recue o tempo em até quinze dias por segundo.</string>
-    <string name="info_news_catalog" formatted="false">Tutorial atualizado, controles mais claros, oceanos mais luminosos e galeria ampliada.</string>
+    <string name="info_news_star_sky" formatted="false">Escolha Céu, Câmera ou Globo com controles mais claros e tutorial atualizado.</string>
+    <string name="info_news_texture_downloads" formatted="false">Capture o enquadramento visível do céu ou do globo, ou mude para o panorama completo.</string>
+    <string name="info_news_weather" formatted="false">Exporte enquadramento e panorama juntos com os dados do momento da captura.</string>
+    <string name="info_news_viewer_zoom" formatted="false">As grades de Céu e Câmera adaptam o contraste claro ou escuro ao fundo.</string>
+    <string name="info_news_settings" formatted="false">Leia melhor as etiquetas do globo, os círculos geográficos e os nomes dos polos.</string>
+    <string name="info_news_catalog" formatted="false">Controles de captura, zoom e disposição vertical e horizontal melhorados.</string>
 </resources>

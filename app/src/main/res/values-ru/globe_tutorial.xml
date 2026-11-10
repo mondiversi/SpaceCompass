@@ -1,4 +1,4 @@
 <resources>
-    <string name="tutorial_globe_labels" formatted="false">Выбери, какие подписи объектов и точек показывать.</string>
+    <string name="tutorial_globe_labels" formatted="false">Выберите подписи точек. Масштаб и свободное место определяют подробность.</string>
     <string name="tutorial_globe_rotation" formatted="false">Переключает вращение вокруг оси Земли и свободное вращение.</string>
 </resources>

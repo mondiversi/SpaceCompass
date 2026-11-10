@@ -1,9 +1,9 @@
 <resources>
     <string name="info_news_title">Dernières nouveautés · %1$s</string>
-    <string name="info_news_star_sky" formatted="false">Explorez le globe interactif avec trajectoires, points clés et images actuelles des objets.</string>
-    <string name="info_news_texture_downloads" formatted="false">Passez entre Panorama, Appareil photo et Globe ; réglez le zoom, la rotation et les étiquettes.</string>
-    <string name="info_news_weather" formatted="false">Capturez le globe avec un fond étoilé jour/nuit et des étiquettes configurables.</string>
-    <string name="info_news_viewer_zoom" formatted="false">Affichez ou masquez la grille angulaire dans la vue photo en direct.</string>
-    <string name="info_news_settings" formatted="false">Avancez ou reculez le temps jusqu’à quinze jours par seconde.</string>
-    <string name="info_news_catalog" formatted="false">Tutoriel actualisé, commandes plus claires, océans plus lumineux et galerie enrichie.</string>
+    <string name="info_news_star_sky" formatted="false">Choisissez Ciel, Appareil photo ou Globe avec des commandes plus claires et un tutoriel actualisé.</string>
+    <string name="info_news_texture_downloads" formatted="false">Capturez le cadrage visible du ciel ou du globe, ou passez au panorama complet.</string>
+    <string name="info_news_weather" formatted="false">Exportez cadrage et panorama ensemble avec les données figées au moment de la capture.</string>
+    <string name="info_news_viewer_zoom" formatted="false">Les grilles de Ciel et Appareil photo adaptent leur contraste clair ou sombre au fond.</string>
+    <string name="info_news_settings" formatted="false">Lisez mieux les étiquettes du globe, les cercles géographiques et les noms des pôles.</string>
+    <string name="info_news_catalog" formatted="false">Commandes de capture, zoom et dispositions portrait et paysage améliorés.</string>
 </resources>

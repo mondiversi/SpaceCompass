@@ -1,9 +1,9 @@
 <resources>
     <string name="info_news_title">آخر المستجدات · %1$s</string>
-    <string name="info_news_star_sky" formatted="false">استكشف الكرة الأرضية التفاعلية مع المسارات والنقاط الرئيسية وصور الأجرام الحالية.</string>
-    <string name="info_news_texture_downloads" formatted="false">بدّل بين البانوراما والكاميرا والكرة الأرضية واضبط التكبير والدوران والتسميات.</string>
-    <string name="info_news_weather" formatted="false">التقط الكرة الأرضية بخلفية نجمية نهارية أو ليلية وتسميات قابلة للضبط.</string>
-    <string name="info_news_viewer_zoom" formatted="false">أظهر الشبكة الزاوية أو أخفها في عرض الكاميرا المباشر.</string>
-    <string name="info_news_settings" formatted="false">حرّك الزمن إلى الأمام أو الخلف حتى خمسة عشر يومًا في الثانية.</string>
-    <string name="info_news_catalog" formatted="false">دليل محدّث وأزرار أوضح ومحيطات أكثر إشراقًا ومعرض صور موسّع.</string>
+    <string name="info_news_star_sky" formatted="false">اختر السماء أو الكاميرا أو الكرة الأرضية مع أزرار أوضح ودليل محدّث.</string>
+    <string name="info_news_texture_downloads" formatted="false">التقط الإطار المرئي للسماء أو الكرة الأرضية أو انتقل إلى بانوراما كاملة.</string>
+    <string name="info_news_weather" formatted="false">صدّر الإطار والبانوراما معًا ببيانات ثابتة من لحظة الالتقاط.</string>
+    <string name="info_news_viewer_zoom" formatted="false">تتكيف شبكات السماء والكاميرا مع الخلفية بتباين فاتح أو داكن.</string>
+    <string name="info_news_settings" formatted="false">اقرأ تسميات الكرة الأرضية والدوائر الجغرافية وأسماء القطبين بوضوح أكبر.</string>
+    <string name="info_news_catalog" formatted="false">تحسين أزرار الالتقاط والتكبير والتخطيطات الرأسية والأفقية.</string>
 </resources>

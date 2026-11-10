@@ -1,4 +1,4 @@
 <resources>
-    <string name="tutorial_globe_labels" formatted="false">Kies welke object- en puntlabels je wilt tonen.</string>
+    <string name="tutorial_globe_labels" formatted="false">Kies de puntlabels. Zoom en beschikbare ruimte bepalen de details.</string>
     <string name="tutorial_globe_rotation" formatted="false">Wissel tussen draaien om de aardas en vrij draaien.</string>
 </resources>

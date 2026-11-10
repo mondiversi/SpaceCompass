@@ -1,0 +1,11 @@
+<resources>
+    <string name="view_mode_sky" formatted="false">Sky</string>
+    <string name="capture_projection_frame" formatted="false">Framed view</string>
+    <string name="capture_export_frame" formatted="false">Framed view (JPG)</string>
+    <string name="capture_export_panorama" formatted="false">Panorama (JPG)</string>
+    <string name="capture_panorama_on">Panoramic view enabled</string>
+    <string name="capture_panorama_off">Panoramic view disabled</string>
+    <string name="capture_grid">Grid</string>
+    <string name="capture_grid_on">Grid visible</string>
+    <string name="capture_grid_off">Grid hidden</string>
+</resources>

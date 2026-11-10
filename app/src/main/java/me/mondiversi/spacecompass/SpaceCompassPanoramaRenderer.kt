@@ -35,7 +35,8 @@ internal data class SpaceCompassPanoramaSnapshot(val timeMs: Long, val latitude:
     val bodyNames: Map<SpaceCompassCelestialBody,String> = emptyMap(),val forward24Hours: Boolean = false,
     val showAntipodes: Boolean = false, val activeComparisonId: String? = null, val positionHidden: Boolean = false, val referencePointName: String = "Reference",
     val comparisonPointNames: Map<String, String> = emptyMap(),
-    val globe: SpaceCompassGlobeCapture? = null, val globeLocationVisible: Boolean = false)
+    val globe: SpaceCompassGlobeCapture? = null, val globeLocationVisible: Boolean = false,
+    val skyFraming: SpaceCompassSkyFraming? = null, val showGrid: Boolean = true)
 
 internal fun renderSpaceCompassPanorama(snapshot: SpaceCompassPanoramaSnapshot, width: Int = 4096, context: android.content.Context? = null): Bitmap {
     require(width in 512..4096 && snapshot.objects.isNotEmpty())
@@ -92,18 +93,24 @@ internal fun renderSpaceCompassPanorama(snapshot: SpaceCompassPanoramaSnapshot, 
             text.clearShadowLayer()
         }
         // A complete 360° × 180° angular reference, including zenith/nadir and intercardinals.
-        paint.color = 0x30FFFFFF; paint.strokeWidth = scale
-        for (i in 0..12) canvas.drawLine(sceneWidth * i / 12f, 0f, sceneWidth * i / 12f, sceneHeight.toFloat(), paint)
-        for (i in 0..6) canvas.drawLine(0f, sceneHeight * i / 6f, sceneWidth.toFloat(), sceneHeight * i / 6f, paint)
-        paint.color = 0x99FFFFFF.toInt(); paint.strokeWidth = 2 * scale
-        canvas.drawLine(0f, sceneHeight / 2f, sceneWidth.toFloat(), sceneHeight / 2f, paint)
+        if(snapshot.showGrid) {
+            fun gridLine(x1: Float,y1: Float,x2: Float,y2: Float,major: Boolean=false) {
+                val edge=SpaceCompassAngularGridAppearance.lineWidth(width,sceneHeight)*(if(major) 1.5f else 1f)
+                paint.color=SpaceCompassAngularGridAppearance.shadowArgb;paint.strokeWidth=edge*2
+                canvas.drawLine(x1,y1,x2,y2,paint)
+                paint.color=if(major) SpaceCompassAngularGridAppearance.majorArgb else SpaceCompassAngularGridAppearance.lineArgb
+                paint.strokeWidth=edge;canvas.drawLine(x1,y1,x2,y2,paint)
+            }
+            for(i in 0..12) gridLine(sceneWidth*i/12f,0f,sceneWidth*i/12f,sceneHeight.toFloat())
+            for(i in 0..6) gridLine(0f,sceneHeight*i/6f,sceneWidth.toFloat(),sceneHeight*i/6f,major=i==3)
+        }
         val cardinalCount = snapshot.cardinalNames.size
         val cardinalSymbols = when (cardinalCount) {
             8 -> listOf("N", "NE", "E", "SE", "S", "SW", "W", "NW")
             4 -> listOf("N", "E", "S", "W")
             else -> snapshot.cardinalNames
         }
-        for (i in 0..cardinalCount) {
+        if(snapshot.showGrid) for (i in 0..cardinalCount) {
             val x = sceneWidth * i / cardinalCount.toFloat()
             paint.style = Paint.Style.FILL; paint.color = 0xdd101923.toInt()
             canvas.drawCircle(x, sceneHeight / 2f, 9 * scale, paint)
@@ -115,6 +122,7 @@ internal fun renderSpaceCompassPanorama(snapshot: SpaceCompassPanoramaSnapshot, 
                 sceneHeight / 2f + 42 * scale, 28 * scale)
         }
         fun drawAngularScales() {
+            if(!snapshot.showGrid) return
             val elevations = if (snapshot.elevationNames.size == 7) snapshot.elevationNames else
                 listOf("+90°") + snapshot.elevationNames + "−90°"
             elevations.forEachIndexed { i, value ->
@@ -130,13 +138,14 @@ internal fun renderSpaceCompassPanorama(snapshot: SpaceCompassPanoramaSnapshot, 
                 textAt(value, sceneWidth * i / 12f, sceneHeight - 16 * scale, 25 * scale)
             }
         }
-        val occupied = mutableListOf(captionBounds,
+        val occupied = mutableListOf(captionBounds)
+        if(snapshot.showGrid) occupied += listOf(
             RectF(0f, -SPACE_COMPASS_PANORAMA_TOP_AXIS_HEIGHT * scale, sceneWidth.toFloat(), 0f),
             RectF(0f, sceneHeight - 58 * scale, sceneWidth.toFloat(), sceneHeight.toFloat()),
             RectF(0f, 0f, 125 * scale, sceneHeight.toFloat()),
             RectF(sceneWidth - 125 * scale, 0f, sceneWidth.toFloat(), sceneHeight.toFloat()))
         text.textSize = 32 * scale
-        for (i in 0..cardinalCount) {
+        if(snapshot.showGrid) for (i in 0..cardinalCount) {
             val half = text.measureText(snapshot.cardinalNames[spaceCompassPanoramaGridIndex(i, cardinalCount, snapshot.center)]) / 2
             val x = (sceneWidth * i / cardinalCount.toFloat()).coerceIn(half + 12 * scale, sceneWidth - half - 12 * scale)
             occupied += RectF(x - half - 8 * scale, sceneHeight / 2f - 58 * scale,

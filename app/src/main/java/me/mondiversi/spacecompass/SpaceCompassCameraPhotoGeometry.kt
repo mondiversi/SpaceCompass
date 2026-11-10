@@ -59,9 +59,9 @@ internal fun spaceCompassCameraScreenOrientation(device: SpaceCompassSunOrientat
     }
 }
 
-/** Portrait starts filled and pannable; landscape starts fitted, without changing orientation. */
+/** Fill the available preview height without distortion; horizontal overflow remains pannable. */
 internal fun spaceCompassCaptureBaseScale(viewWidth: Float, viewHeight: Float, imageWidth: Int, imageHeight: Int): Float {
     if (viewWidth<=0 || viewHeight<=0 || imageWidth<=0 || imageHeight<=0) return 1f
     val fit=min(viewWidth/imageWidth,viewHeight/imageHeight)
-    return if (viewHeight>viewWidth) max(viewWidth/imageWidth,viewHeight/imageHeight)/fit else 1f
+    return (viewHeight/imageHeight)/fit
 }

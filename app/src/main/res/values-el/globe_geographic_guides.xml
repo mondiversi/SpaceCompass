@@ -1,0 +1,9 @@
+<resources>
+    <string name="globe_reference_equator">Ισημερινός</string>
+    <string name="globe_reference_cancer">Τροπικός του Καρκίνου</string>
+    <string name="globe_reference_capricorn">Τροπικός του Αιγόκερω</string>
+    <string name="globe_reference_arctic">Αρκτικός κύκλος</string>
+    <string name="globe_reference_antarctic">Ανταρκτικός κύκλος</string>
+    <string name="globe_reference_north_pole">Βόρειος πόλος</string>
+    <string name="globe_reference_south_pole">Νότιος πόλος</string>
+</resources>

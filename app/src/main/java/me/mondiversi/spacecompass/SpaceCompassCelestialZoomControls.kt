@@ -28,12 +28,12 @@ private val celestialZoomLeadingOffset = (-7.2).dp
 internal fun SpaceCompassCelestialZoomControls(viewport: SpaceCompassCelestialViewportState,
     onZoom: (Double) -> Unit, modifier: Modifier = Modifier, enabled: Boolean = true) {
     Row(modifier.testTag("celestial-view-zoom-controls"), verticalAlignment = Alignment.CenterVertically) {
-        CelestialZoomButton(false, stringResource(R.string.celestial_view_zoom_out),
-            enabled && viewport.zoom > SPACE_COMPASS_CELESTIAL_MIN_ZOOM,
-            Modifier.testTag("celestial-view-zoom-out"), iconOffset = celestialZoomIconInset + celestialZoomLeadingOffset) { onZoom(.8) }
         CelestialZoomButton(true, stringResource(R.string.celestial_view_zoom_in),
             enabled && viewport.zoom < SPACE_COMPASS_CELESTIAL_MAX_ZOOM,
-            Modifier.testTag("celestial-view-zoom-in"), iconOffset = -celestialZoomIconInset + celestialZoomLeadingOffset) { onZoom(1.25) }
+            Modifier.testTag("celestial-view-zoom-in"), iconOffset = celestialZoomIconInset + celestialZoomLeadingOffset) { onZoom(1.25) }
+        CelestialZoomButton(false, stringResource(R.string.celestial_view_zoom_out),
+            enabled && viewport.zoom > SPACE_COMPASS_CELESTIAL_MIN_ZOOM,
+            Modifier.testTag("celestial-view-zoom-out"), iconOffset = -celestialZoomIconInset + celestialZoomLeadingOffset) { onZoom(.8) }
     }
 }
 

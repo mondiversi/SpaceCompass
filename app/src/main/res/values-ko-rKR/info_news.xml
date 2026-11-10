@@ -1,9 +1,9 @@
 <resources>
     <string name="info_news_title">최근 변경 사항 · %1$s</string>
-    <string name="info_news_star_sky" formatted="false">경로, 주요 지점과 천체의 현재 이미지가 있는 대화형 지구본을 탐색하세요.</string>
-    <string name="info_news_texture_downloads" formatted="false">파노라마, 카메라와 지구본을 전환하고 줌, 회전과 라벨을 조절하세요.</string>
-    <string name="info_news_weather" formatted="false">낮과 밤의 별 배경 및 선택한 라벨로 지구본 이미지를 만드세요.</string>
-    <string name="info_news_viewer_zoom" formatted="false">실시간 카메라의 각도 격자를 표시하거나 숨기세요.</string>
-    <string name="info_news_settings" formatted="false">시간을 초당 최대 15일까지 앞으로 또는 뒤로 이동하세요.</string>
-    <string name="info_news_catalog" formatted="false">업데이트된 튜토리얼, 명확한 조작, 밝아진 바다와 확장된 갤러리.</string>
+    <string name="info_news_star_sky" formatted="false">더 명확한 조작과 업데이트된 튜토리얼로 하늘, 카메라 또는 지구본을 선택하세요.</string>
+    <string name="info_news_texture_downloads" formatted="false">보이는 하늘이나 지구본 프레임을 촬영하거나 전체 파노라마로 전환하세요.</string>
+    <string name="info_news_weather" formatted="false">촬영 시점의 고정된 데이터로 프레임과 파노라마를 함께 내보내세요.</string>
+    <string name="info_news_viewer_zoom" formatted="false">하늘과 카메라 격자가 배경에 맞춰 밝고 어두운 대비를 조절합니다.</string>
+    <string name="info_news_settings" formatted="false">지구본 라벨, 지리적 원과 극 이름을 더 선명하게 읽으세요.</string>
+    <string name="info_news_catalog" formatted="false">촬영 조작, 줌, 세로 및 가로 배치를 개선했습니다.</string>
 </resources>

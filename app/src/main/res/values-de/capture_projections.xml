@@ -1,0 +1,11 @@
+<resources>
+    <string name="view_mode_sky" formatted="false">Himmel</string>
+    <string name="capture_projection_frame" formatted="false">Bildausschnitt</string>
+    <string name="capture_export_frame" formatted="false">Bildausschnitt (JPG)</string>
+    <string name="capture_export_panorama" formatted="false">Panorama (JPG)</string>
+    <string name="capture_panorama_on">Panoramaansicht aktiviert</string>
+    <string name="capture_panorama_off">Panoramaansicht deaktiviert</string>
+    <string name="capture_grid">Raster</string>
+    <string name="capture_grid_on">Raster sichtbar</string>
+    <string name="capture_grid_off">Raster ausgeblendet</string>
+</resources>

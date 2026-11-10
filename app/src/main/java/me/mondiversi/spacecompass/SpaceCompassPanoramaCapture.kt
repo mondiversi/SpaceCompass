@@ -37,7 +37,7 @@ internal fun rememberSpaceCompassPanoramaAction(timeMs: Long, latitude: Double?,
     selectedPoints: List<SpaceCompassSelectedOrbitPoint> = emptyList(),
     activeBody: SpaceCompassCelestialBody? = null, activeComparisonId: String? = null,
     forward24Hours: Boolean = false, showAntipodes: Boolean = false,
-    globe: SpaceCompassGlobeCapture? = null): SpaceCompassPanoramaAction {
+    globe: SpaceCompassGlobeCapture? = null, skyFraming: SpaceCompassSkyFraming? = null): SpaceCompassPanoramaAction {
     val comparisonOverlays = LocalSpaceCompassComparisonOverlays.current
     val selectionTint = MaterialTheme.colorScheme.primary.toArgb()
     val context = LocalContext.current
@@ -69,6 +69,8 @@ internal fun rememberSpaceCompassPanoramaAction(timeMs: Long, latitude: Double?,
             if (cameraEnabled && cameraCapture == null) notify(R.string.camera_unavailable)
             else if (!cameraEnabled && (latitude == null || longitude == null || bodies.isEmpty() && comparisonOverlays.isEmpty())) notify(R.string.panorama_not_ready)
             else {
+                val projection=if(cameraEnabled) SpaceCompassCaptureProjection.FRAME else spaceCompassCaptureProjection(
+                    preferences?.getBoolean(spaceCompassCaptureProjectionKey(globe!=null),globe==null) ?: (globe==null))
                 val position = SpaceCompassPanoramaPosition.fromStored(preferences?.getString(SPACE_COMPASS_PANORAMA_POSITION_KEY, null))
                 val labelMode = globe?.labelMode ?: SpaceCompassPanoramaLabelMode.fromStored(
                     preferences?.getString(SPACE_COMPASS_PANORAMA_LABEL_MODE_KEY, null),
@@ -96,7 +98,8 @@ internal fun rememberSpaceCompassPanoramaAction(timeMs: Long, latitude: Double?,
                     weatherEffectsEnabled = globe == null && (cameraEnabled || showWeather), solarLighting = solarLighting,
                     selectedPoints = selectedPoints.toList(), showAntipodes = showAntipodes, selectionTint = selectionTint, zoneId = observationZone.id,
                     activeBody = activeBody?.takeIf { it in bodies },forward24Hours = forward24Hours, activeComparisonId = activeComparisonId,
-                    globe = globe, globeLocationVisible = position == SpaceCompassPanoramaPosition.COMPLETE)
+                    globe = globe, globeLocationVisible = position == SpaceCompassPanoramaPosition.COMPLETE, skyFraming = skyFraming,
+                    showGrid = preferences?.getBoolean(SPACE_COMPASS_CAPTURE_GRID_KEY,true) ?: true)
                 busy = true
                 val preparingNotice = showSpaceCompassBottomMessage(application,
                     resources.getString(R.string.panorama_preparing))
@@ -161,12 +164,12 @@ internal fun rememberSpaceCompassPanoramaAction(timeMs: Long, latitude: Double?,
                                     international.cameraWarning, objectOpacity = cameraObjectOpacity)
                             }
                             val bitmap = cameraPhoto?.let { renderSpaceCompassCameraPhoto(application, it.copy(warning = selected.cameraWarning), previewSnapshot) }
-                                ?: renderSpaceCompassPanorama(previewSnapshot, if (memory >= 192) 4096 else 3072, application)
+                                ?: renderSpaceCompassCaptureView(application, previewSnapshot, if (memory >= 192) 4096 else 3072, projection)
                             try { target.outputStream().use { check(bitmap.compress(Bitmap.CompressFormat.JPEG, 95, it)) } }
                             finally { bitmap.recycle() }
                             stampSpaceCompassPanoramaFile(target, captureTime, credits)
                             SpaceCompassPanoramaPreviewData(target, captureTime, position, resolvedSnapshot, international.caption, credits,
-                                cameraPhoto, selected, fileExportMode = SpaceCompassPanoramaExportMode.SELECTED, orbitTable = orbitTable)
+                                cameraPhoto, selected, fileExportMode = SpaceCompassPanoramaExportMode.SELECTED, orbitTable = orbitTable, projection = projection, renderSize = if(memory>=192) 4096 else 3072)
                         }
                         preview = result
                     } catch (cancelled: CancellationException) { file?.delete(); cameraSource?.delete(); throw cancelled

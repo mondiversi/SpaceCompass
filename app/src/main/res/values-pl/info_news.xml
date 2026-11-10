@@ -1,9 +1,9 @@
 <resources>
     <string name="info_news_title">Ostatnie nowości · %1$s</string>
-    <string name="info_news_star_sky" formatted="false">Odkrywaj interaktywny glob z torami, kluczowymi punktami i aktualnymi obrazami obiektów.</string>
-    <string name="info_news_texture_downloads" formatted="false">Przełączaj Panoramę, Aparat i Glob; zmieniaj powiększenie, obrót i etykiety.</string>
-    <string name="info_news_weather" formatted="false">Zapisuj glob z gwiaździstym tłem dziennym lub nocnym i wybranymi etykietami.</string>
-    <string name="info_news_viewer_zoom" formatted="false">Pokazuj lub ukrywaj siatkę kątową w widoku aparatu.</string>
-    <string name="info_news_settings" formatted="false">Przewijaj czas do przodu lub do tyłu o maksymalnie piętnaście dni na sekundę.</string>
-    <string name="info_news_catalog" formatted="false">Zaktualizowany samouczek, czytelniejsze przyciski, jaśniejsze oceany i rozszerzona galeria.</string>
+    <string name="info_news_star_sky" formatted="false">Wybierz Niebo, Aparat lub Glob z czytelniejszymi przyciskami i nowym samouczkiem.</string>
+    <string name="info_news_texture_downloads" formatted="false">Zapisz widoczny kadr nieba lub globu albo przełącz na pełną panoramę.</string>
+    <string name="info_news_weather" formatted="false">Eksportuj kadr i panoramę razem z danymi z chwili wykonania obrazu.</string>
+    <string name="info_news_viewer_zoom" formatted="false">Siatki Nieba i Aparatu dostosowują jasny lub ciemny kontrast do tła.</string>
+    <string name="info_news_settings" formatted="false">Czytaj wyraźniejsze etykiety globu, równoleżników i biegunów.</string>
+    <string name="info_news_catalog" formatted="false">Ulepszone przyciski, powiększenie oraz układy pionowy i poziomy.</string>
 </resources>

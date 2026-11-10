@@ -9,11 +9,24 @@ import kotlin.math.roundToInt
 /** Reproject onto the whole JPEG; controls, notices and main-page columns never cover the photo. */
 internal fun renderSpaceCompassCameraPhoto(context: Context, photo: SpaceCompassCameraPhotoSnapshot,
     snapshot: SpaceCompassPanoramaSnapshot): Bitmap {
-    val raw = requireNotNull(BitmapFactory.decodeFile(photo.source.absolutePath))
-    val geometry = spaceCompassCameraPhotoGeometry(photo.lens, raw.width, raw.height, photo.displayRotation)
-    var image: Bitmap? = null
+    val raw=requireNotNull(BitmapFactory.decodeFile(photo.source.absolutePath))
     try {
-        val width=geometry.width; val height=geometry.height
+        val geometry=spaceCompassCameraPhotoGeometry(photo.lens,raw.width,raw.height,photo.displayRotation)
+        val rotated=if(geometry.rotation==0) raw else Bitmap.createBitmap(raw,0,0,raw.width,raw.height,
+            Matrix().apply { postRotate(geometry.rotation.toFloat()) },true)
+        try { return renderSpaceCompassProjectedCapture(context,rotated,geometry.perspective,photo.attitude?.orientation,
+            photo.attitude?.usable==true,snapshot,photo.objectOpacity,photo.warning) }
+        finally { if(rotated!==raw) rotated.recycle() }
+    } finally { raw.recycle() }
+}
+
+/** Shared angular overlays: photo pixels and virtual-sky pixels keep their own frozen optical frame. */
+internal fun renderSpaceCompassProjectedCapture(context: Context,background: Bitmap,perspective: SpaceCompassPerspective,
+    orientation: SpaceCompassSunOrientation?,usable: Boolean,snapshot: SpaceCompassPanoramaSnapshot,
+    objectOpacity: Float=1f,warning: String?=null): Bitmap {
+    var image: Bitmap?=null
+    try {
+        val width=background.width;val height=background.height
         val scale=(minOf(width,height)/1080f).coerceAtLeast(.45f)
         val bandStyle=spaceCompassCaptureBandStyle(width,height)
         val caption=prepareSpaceCompassCaptureCaption(snapshot.caption,width,bandStyle,context)
@@ -25,38 +38,29 @@ internal fun renderSpaceCompassCameraPhoto(context: Context, photo: SpaceCompass
         val legend=prepareSpaceCompassPanoramaLegend(snapshot.objects.filter {
             it.path != null || observations[it] != null
         },width,bandStyle)
-        val rotated = if (geometry.rotation==0) raw else Bitmap.createBitmap(raw,0,0,raw.width,raw.height,
-            Matrix().apply { postRotate(geometry.rotation.toFloat()) },true)
-        try {
-            image=Bitmap.createBitmap(width,caption.height+height+legend.height,Bitmap.Config.ARGB_8888).apply {
-                density=rotated.density
-            }
-            Canvas(requireNotNull(image)).drawBitmap(rotated,null,Rect(0,caption.height,width,caption.height+height),null)
-        } finally { if (rotated !== raw) rotated.recycle() }
+        image=Bitmap.createBitmap(width,caption.height+height+legend.height,Bitmap.Config.ARGB_8888).apply { density=background.density }
+        Canvas(requireNotNull(image)).drawBitmap(background,0f,caption.height.toFloat(),null)
         val result=requireNotNull(image)
         val canvas=Canvas(result)
         // Metadata and legend have their own space; every lens ray stays inside the unchanged photo frame.
         canvas.save(); canvas.translate(0f,caption.height.toFloat()); canvas.clipRect(0,0,width,height)
         val header=0f
-        val perspective=geometry.perspective
-        val attitude=photo.attitude
-        val orientation=attitude?.orientation
         val paint=Paint(Paint.ANTI_ALIAS_FLAG).apply { strokeCap=Paint.Cap.ROUND; strokeJoin=Paint.Join.ROUND }
         val text=spaceCompassOrbitTextPaint(25*scale)
         val orbitNamePlacement=SpaceCompassCurveCaptionPlacementState()
         val occupied=mutableListOf<RectF>()
-        if (orientation!=null) {
+        if (orientation!=null && snapshot.showGrid) {
             val horizon=projectSpaceCompassSunGround(orientation,SpaceCompassSunSceneFrame(0.0,0.0,width.toDouble(),height.toDouble()),
                 width.toDouble(),height.toDouble(),perspective)?.horizon
             if (horizon?.size==2) {
-                paint.color=0x99000000.toInt(); paint.strokeWidth=3*scale
+                paint.color=SpaceCompassAngularGridAppearance.shadowArgb; paint.strokeWidth=3*SpaceCompassAngularGridAppearance.lineWidth(width,height)
                 canvas.drawLine(horizon[0].x.toFloat(),horizon[0].y.toFloat(),horizon[1].x.toFloat(),horizon[1].y.toFloat(),paint)
-                paint.color=0xddffffff.toInt(); paint.strokeWidth=scale
+                paint.color=SpaceCompassAngularGridAppearance.majorArgb; paint.strokeWidth=1.5f*SpaceCompassAngularGridAppearance.lineWidth(width,height)
                 canvas.drawLine(horizon[0].x.toFloat(),horizon[0].y.toFloat(),horizon[1].x.toFloat(),horizon[1].y.toFloat(),paint)
             }
         }
-        val pointing=orientation.takeIf { attitude?.usable==true }
-        if (pointing != null) drawSpaceCompassCameraAngularGrid(canvas, width, height,
+        val pointing=orientation.takeIf { usable }
+        if (pointing != null && snapshot.showGrid) drawSpaceCompassCameraAngularGrid(canvas, width, height,
             pointing, perspective, snapshot, scale, header, occupied)
         fun projection(position: SpaceCompassSunPosition) = pointing?.let {
             projectSpaceCompassSun(position,it,width.toDouble(),height.toDouble(),perspective).takeIf { p->p.visible }
@@ -159,9 +163,9 @@ internal fun renderSpaceCompassCameraPhoto(context: Context, photo: SpaceCompass
             val x=p.x.toFloat(); val y=p.y.toFloat(); val radius=35*scale
             if (item.body.constellationPattern == null) {
             // Composite the image, plate and rim once, matching the live thumbnail's alpha layer.
-            val layer = if (photo.objectOpacity < 1f) canvas.saveLayerAlpha(
+            val layer = if (objectOpacity < 1f) canvas.saveLayerAlpha(
                 x-radius-3*scale,y-radius-3*scale,x+radius+3*scale,y+radius+3*scale,
-                (photo.objectOpacity*255).roundToInt()) else canvas.save()
+                (objectOpacity*255).roundToInt()) else canvas.save()
             try {
             paint.style=Paint.Style.FILL; paint.color=0xcc07101b.toInt(); canvas.drawCircle(x,y,radius,paint)
             paint.style=Paint.Style.STROKE; paint.strokeWidth=2*scale; paint.color=item.tint.toArgb()
@@ -185,14 +189,14 @@ internal fun renderSpaceCompassCameraPhoto(context: Context, photo: SpaceCompass
                 SpaceCompassSunScenePoint(it.x,it.y) } }
         drawSpaceCompassPanoramaSelections(canvas,snapshot,selections,scale,35f,
             { position -> projection(position)?.let { SpaceCompassSunScenePoint(it.x,it.y) } })
-        if (pointing==null && photo.warning!=null) {
+        if (pointing==null && warning!=null) {
             text.textSize=20*scale; text.color=Color.WHITE; text.textAlign=Paint.Align.CENTER
-            canvas.drawText(photo.warning,width/2f,header+28*scale,text)
+            canvas.drawText(warning,width/2f,header+28*scale,text)
         }
         canvas.restore()
         caption.draw(canvas)
         legend.draw(canvas,(caption.height+height).toFloat(),0xff101418.toInt())
         image=null
         return result
-    } finally { raw.recycle(); image?.recycle() }
+    } finally { image?.recycle() }
 }

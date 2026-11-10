@@ -1,0 +1,11 @@
+<resources>
+    <string name="view_mode_sky" formatted="false">Ουρανός</string>
+    <string name="capture_projection_frame" formatted="false">Κάδρο</string>
+    <string name="capture_export_frame" formatted="false">Κάδρο (JPG)</string>
+    <string name="capture_export_panorama" formatted="false">Πανόραμα (JPG)</string>
+    <string name="capture_panorama_on">Η πανοραμική προβολή ενεργοποιήθηκε</string>
+    <string name="capture_panorama_off">Η πανοραμική προβολή απενεργοποιήθηκε</string>
+    <string name="capture_grid">Πλέγμα</string>
+    <string name="capture_grid_on">Το πλέγμα εμφανίζεται</string>
+    <string name="capture_grid_off">Το πλέγμα αποκρύπτεται</string>
+</resources>

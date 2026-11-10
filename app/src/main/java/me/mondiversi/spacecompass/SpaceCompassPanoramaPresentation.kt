@@ -48,11 +48,11 @@ internal fun spaceCompassPanoramaPresentation(snapshot: SpaceCompassPanoramaSnap
     val objects = snapshot.objects.map { item -> item.copy(name = item.comparison?.let {
         spaceCompassComparisonName(it, resources.getString(item.body.nameResource), formatting)
     } ?: resources.getString(item.body.nameResource)) }
-    val names = mapOf(SpaceCompassSkyReference.EQUATOR to R.string.sky_reference_equator,
-        SpaceCompassSkyReference.CANCER to R.string.sky_reference_cancer,
-        SpaceCompassSkyReference.CAPRICORN to R.string.sky_reference_capricorn,
-        SpaceCompassSkyReference.ARCTIC to R.string.sky_reference_arctic,
-        SpaceCompassSkyReference.ANTARCTIC to R.string.sky_reference_antarctic).mapValues { resources.getString(it.value) }
+    val names = mapOf(SpaceCompassSkyReference.EQUATOR to (if(snapshot.globe!=null) R.string.globe_reference_equator else R.string.sky_reference_equator),
+        SpaceCompassSkyReference.CANCER to (if(snapshot.globe!=null) R.string.globe_reference_cancer else R.string.sky_reference_cancer),
+        SpaceCompassSkyReference.CAPRICORN to (if(snapshot.globe!=null) R.string.globe_reference_capricorn else R.string.sky_reference_capricorn),
+        SpaceCompassSkyReference.ARCTIC to (if(snapshot.globe!=null) R.string.globe_reference_arctic else R.string.sky_reference_arctic),
+        SpaceCompassSkyReference.ANTARCTIC to (if(snapshot.globe!=null) R.string.globe_reference_antarctic else R.string.sky_reference_antarctic)).mapValues { resources.getString(it.value) }
     return SpaceCompassPanoramaPresentation(snapshot.copy(objects = objects, formatting = formatting,
         globe = snapshot.globe?.copy(directionNote=resources.getString(R.string.globe_direction_note)),
         bodyNames = snapshot.objects.map { it.body }.associateWith { resources.getString(it.nameResource) },
@@ -74,8 +74,8 @@ internal fun spaceCompassPanoramaPresentation(snapshot: SpaceCompassPanoramaSnap
         azimuthNames = (0..12).map { angle(it * 30.0) },
         markerTimes = objects.flatMap { it.path?.markers.orEmpty() }.associate { point ->
             point.timeMs to formatSpaceCompassPanoramaMarkerTime(point.timeMs, snapshot.timeMs, zone, formatting) },
-        referenceNames = names, poleNames = resources.getString(R.string.sky_reference_north_pole) to
-            resources.getString(R.string.sky_reference_south_pole),
+        referenceNames = names, poleNames = resources.getString((if(snapshot.globe!=null) R.string.globe_reference_north_pole else R.string.sky_reference_north_pole)) to
+            resources.getString((if(snapshot.globe!=null) R.string.globe_reference_south_pole else R.string.sky_reference_south_pole)),
         observerPointNames = resources.getString(R.string.sky_reference_nadir) to
             resources.getString(R.string.sky_reference_zenith),
         orbitExportVocabulary = spaceCompassOrbitExportVocabulary(resources.spaceCompassTextResources())), caption, resources.getString(R.string.pc_compass_approximate))

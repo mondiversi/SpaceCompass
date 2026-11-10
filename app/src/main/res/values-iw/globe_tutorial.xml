@@ -1,4 +1,4 @@
 <resources>
-    <string name="tutorial_globe_labels" formatted="false">בחרו אילו תוויות של עצמים ונקודות להציג.</string>
+    <string name="tutorial_globe_labels" formatted="false">בחרו תוויות לנקודות. התקריב והמקום הפנוי קובעים את רמת הפירוט.</string>
     <string name="tutorial_globe_rotation" formatted="false">מעבר בין סיבוב סביב ציר כדור הארץ לסיבוב חופשי.</string>
 </resources>

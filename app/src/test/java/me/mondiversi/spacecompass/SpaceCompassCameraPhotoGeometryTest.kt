@@ -112,4 +112,18 @@ class SpaceCompassCameraPhotoGeometryTest {
         assertEquals(1.5f,factor,1e-6f)
         assertEquals(1f,spaceCompassCaptureBaseScale(0f,800f,1200,1600),0f)
     }
+    @Test fun everyPreviewAspectFillsAvailableHeightWithoutChangingImageProportions() {
+        for ((view, image) in listOf(
+            (400f to 800f) to (4096 to 2048),
+            (900f to 300f) to (4096 to 1024),
+            (900f to 300f) to (1200 to 1600),
+            (400f to 800f) to (1200 to 4096))) {
+            val (vw,vh)=view;val (iw,ih)=image
+            val fit=min(vw/iw,vh/ih)
+            val scale=fit*spaceCompassCaptureBaseScale(vw,vh,iw,ih)
+            assertEquals(vh,ih*scale,.001f)
+            assertEquals(iw.toFloat()/ih,(iw*scale)/(ih*scale),.00001f)
+        }
+    }
+
 }

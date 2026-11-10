@@ -1,0 +1,11 @@
+<resources>
+    <string name="view_mode_sky" formatted="false">天空</string>
+    <string name="capture_projection_frame" formatted="false">取景画面</string>
+    <string name="capture_export_frame" formatted="false">取景画面 (JPG)</string>
+    <string name="capture_export_panorama" formatted="false">全景 (JPG)</string>
+    <string name="capture_panorama_on">全景视图已开启</string>
+    <string name="capture_panorama_off">全景视图已关闭</string>
+    <string name="capture_grid">网格</string>
+    <string name="capture_grid_on">网格已显示</string>
+    <string name="capture_grid_off">网格已隐藏</string>
+</resources>

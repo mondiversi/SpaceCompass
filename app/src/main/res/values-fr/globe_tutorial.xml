@@ -1,4 +1,4 @@
 <resources>
-    <string name="tutorial_globe_labels" formatted="false">Choisis les étiquettes des objets et des points à afficher.</string>
+    <string name="tutorial_globe_labels" formatted="false">Choisissez les étiquettes des points. Le zoom et l’espace disponible adaptent leurs détails.</string>
     <string name="tutorial_globe_rotation" formatted="false">Alterne entre la rotation sur l’axe terrestre et la rotation libre.</string>
 </resources>

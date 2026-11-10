@@ -1,0 +1,9 @@
+<resources>
+    <string name="globe_reference_equator">Ekvator</string>
+    <string name="globe_reference_cancer">Yengeç Dönencesi</string>
+    <string name="globe_reference_capricorn">Oğlak Dönencesi</string>
+    <string name="globe_reference_arctic">Kuzey Kutup Dairesi</string>
+    <string name="globe_reference_antarctic">Güney Kutup Dairesi</string>
+    <string name="globe_reference_north_pole">Kuzey Kutbu</string>
+    <string name="globe_reference_south_pole">Güney Kutbu</string>
+</resources>

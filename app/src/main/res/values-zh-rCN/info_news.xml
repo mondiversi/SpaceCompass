@@ -1,9 +1,9 @@
 <resources>
     <string name="info_news_title">最新变化 · %1$s</string>
-    <string name="info_news_star_sky" formatted="false">探索交互式地球仪，查看轨迹、关键点和天体当前位置图像。</string>
-    <string name="info_news_texture_downloads" formatted="false">切换全景、相机和地球仪，调整缩放、旋转和标签。</string>
-    <string name="info_news_weather" formatted="false">生成带有昼夜星空背景和可选标签的地球仪图像。</string>
-    <string name="info_news_viewer_zoom" formatted="false">在实时相机中显示或隐藏角度网格。</string>
-    <string name="info_news_settings" formatted="false">让时间向前或向后流动，最高每秒十五天。</string>
-    <string name="info_news_catalog" formatted="false">更新教程、改进控件、提亮海洋并扩充截图库。</string>
+    <string name="info_news_star_sky" formatted="false">选择天空、相机或地球仪，使用更清晰的控件和更新后的教程。</string>
+    <string name="info_news_texture_downloads" formatted="false">截取天空或地球仪的可见画面，或切换到完整全景。</string>
+    <string name="info_news_weather" formatted="false">将画面和全景一起导出，数据固定在拍摄时刻。</string>
+    <string name="info_news_viewer_zoom" formatted="false">天空和相机网格会根据背景调整明暗对比。</string>
+    <string name="info_news_settings" formatted="false">更清晰地阅读地球仪标签、地理圈线和两极名称。</string>
+    <string name="info_news_catalog" formatted="false">改进拍摄控件、缩放及横竖屏布局。</string>
 </resources>

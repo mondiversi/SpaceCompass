@@ -1,0 +1,11 @@
+<resources>
+    <string name="view_mode_sky" formatted="false">하늘</string>
+    <string name="capture_projection_frame" formatted="false">프레임 보기</string>
+    <string name="capture_export_frame" formatted="false">프레임 보기 (JPG)</string>
+    <string name="capture_export_panorama" formatted="false">파노라마 (JPG)</string>
+    <string name="capture_panorama_on">파노라마 보기 켜짐</string>
+    <string name="capture_panorama_off">파노라마 보기 꺼짐</string>
+    <string name="capture_grid">격자</string>
+    <string name="capture_grid_on">격자 표시</string>
+    <string name="capture_grid_off">격자 숨김</string>
+</resources>

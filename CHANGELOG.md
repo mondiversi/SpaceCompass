@@ -1,5 +1,14 @@
 # Changelog
 
+## 1.9.1 — 2026-11-10
+
+- Rename the virtual view to Sky and add a remembered Frame/Panorama switch for Sky and Globe captures. Camera keeps its single photographed frame.
+- Freeze the visible framing, pose and observation data; export either or both image projections alongside the same captured CSV/readable tables.
+- Add a persistent capture Grid control and consistent fine angular/geographic grids. Main Sky/Camera grids follow overlay visibility and adapt locally to background brightness, with a two-tone fallback on Android 8/9.
+- Improve live Globe label details, selected-point priority and T± values; draw terrestrial parallels and pole captions in captured frames and flat maps, with balanced text sizes and collision handling.
+- Refine compact capture controls: portrait zoom at upper left, caption options in an upper-right row, and a filled Panorama switch at lower right. Preserve landscape columns and accessible controls.
+- Update the tutorial, in-app News in all twenty languages and the README. Keep the 9,999-object catalogue and individual-download graphics collection unchanged.
+
 ## 1.9.0 — 2026-11-09
 
 - Add interactive Globe mode alongside Panorama and Camera, with Earth-centred satellite tracks and apparent directions for distant objects.

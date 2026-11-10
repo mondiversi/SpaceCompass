@@ -6,13 +6,16 @@ import kotlin.math.*
 import androidx.compose.ui.graphics.toArgb
 
 internal data class SpaceCompassGlobeCapture(val pose: SpaceCompassGlobePose,
-    val directionNote: String, val dark: Boolean = true, val labelMode: SpaceCompassPanoramaLabelMode = SpaceCompassPanoramaLabelMode.KEY_SELECTED)
+    val directionNote: String, val dark: Boolean = true, val labelMode: SpaceCompassPanoramaLabelMode = SpaceCompassPanoramaLabelMode.KEY_SELECTED,
+    val framing: SpaceCompassGlobeFraming? = null)
 
 /** Frozen geometry, independent of the WebView and later gestures. Reuses the standard caption/legend/export policy. */
-internal fun renderSpaceCompassGlobe(snapshot: SpaceCompassPanoramaSnapshot,width: Int,context: Context): Bitmap {
+internal fun renderSpaceCompassGlobe(snapshot: SpaceCompassPanoramaSnapshot,maxEdge: Int,context: Context,flat: Boolean=false): Bitmap {
     val capture=requireNotNull(snapshot.globe)
     val model=buildSpaceCompassGlobeModel(snapshot)
-    val h=(width*.8).toInt();val style=spaceCompassCaptureBandStyle(width,h)
+    val frame=capture.framing
+    val (width,h)=if(flat) maxEdge to maxEdge/2 else frame?.let { spaceCompassCaptureSize(it.width,it.height,maxEdge) } ?: (maxEdge to (maxEdge*.8).toInt())
+    val style=spaceCompassCaptureBandStyle(width,h)
     val caption=prepareSpaceCompassCaptureCaption(snapshot.caption,width,style,context)
     val heading=spaceCompassPanoramaSceneTop(caption,width).toInt()
     val legend=prepareSpaceCompassPanoramaLegend(snapshot.objects,width,style)
@@ -22,30 +25,69 @@ internal fun renderSpaceCompassGlobe(snapshot: SpaceCompassPanoramaSnapshot,widt
         canvas.save();canvas.translate(0f,heading.toFloat());canvas.clipRect(0,0,width,h)
         val paint=Paint(Paint.ANTI_ALIAS_FLAG)
         drawSpaceCompassGlobeUniverse(canvas,width,h,capture.dark)
-        val r=spaceCompassGlobeFitRadius(SpaceCompassSunSceneFrame(0.0,0.0,width.toDouble(),h.toDouble()),model.extent,capture.pose.zoom,width/80.0)
-        val earth=renderSpaceCompassGlobeEarth(context,(r*2).roundToInt().coerceIn(64,2048),capture.pose,snapshot.timeMs)
-        try { canvas.drawBitmap(earth,null,RectF((width/2-r).toFloat(),(h/2-r).toFloat(),(width/2+r).toFloat(),(h/2+r).toFloat()),paint) }
+        val r=if(!flat&&frame!=null) frame.radiusByWidth*width else spaceCompassGlobeFitRadius(SpaceCompassSunSceneFrame(0.0,0.0,width.toDouble(),h.toDouble()),model.extent,capture.pose.zoom,width/80.0)
+        val cy=spaceCompassGlobeCaptureCenterY(h,heading,legend.height)
+        val earth=if(flat) renderSpaceCompassGlobeMapEarth(context,snapshot.timeMs) else renderSpaceCompassGlobeEarth(context,(r*2).roundToInt().coerceIn(64,2048),capture.pose,snapshot.timeMs)
+        try { canvas.drawBitmap(earth,null,if(flat) RectF(0f,0f,width.toFloat(),h.toFloat()) else RectF((width/2-r).toFloat(),(cy-r).toFloat(),(width/2+r).toFloat(),(cy+r).toFloat()),paint) }
         finally { earth.recycle() }
+        val gridEdges = if(flat && snapshot.showGrid) drawSpaceCompassGlobeMapGrid(canvas,width,h,snapshot) else emptyList()
         val text=Paint(Paint.ANTI_ALIAS_FLAG).apply { textSize=width/100f;typeface=Typeface.create(Typeface.DEFAULT,Typeface.BOLD);textAlign=Paint.Align.CENTER }
-        fun projected(v: SpaceCompassGlobeVector)=spaceCompassGlobeView(v,capture.pose)
-        fun hidden(v: SpaceCompassGlobeVector)=v.z<0&&v.x*v.x+v.y*v.y<1
-        fun xy(v: SpaceCompassGlobeVector)=PointF((width/2+v.x*r).toFloat(),(h/2-v.y*r).toFloat())
+        fun projected(v: SpaceCompassGlobeVector)=if(flat) v else spaceCompassGlobeView(v,capture.pose)
+        fun hidden(v: SpaceCompassGlobeVector)=!flat&&v.z<0&&v.x*v.x+v.y*v.y<1
+        fun xy(v: SpaceCompassGlobeVector)=if(flat) spaceCompassGlobeMapPoint(v,width.toDouble(),h.toDouble()).let { PointF(it.x.toFloat(),it.y.toFloat()) }
+            else PointF((width/2+v.x*r).toFloat(),(cy-v.y*r).toFloat())
         fun segment(a: SpaceCompassGlobeVector,b: SpaceCompassGlobeVector,tint: Int,dashed: Boolean) {
             val av=projected(a);val bv=projected(b);val p=xy(av);val q=xy(bv)
             paint.color=tint;paint.alpha=if(hidden(av)&&hidden(bv)) 42 else 255;paint.strokeWidth=width/650f
             paint.pathEffect=if(dashed||hidden(av)&&hidden(bv)) DashPathEffect(floatArrayOf(width/180f,width/200f),0f) else null
-            canvas.drawLine(p.x,p.y,q.x,q.y,paint);paint.alpha=255;paint.pathEffect=null
+            if(flat) spaceCompassGlobeMapSegments(SpaceCompassSunScenePoint(p.x.toDouble(),p.y.toDouble()),
+                SpaceCompassSunScenePoint(q.x.toDouble(),q.y.toDouble()),width.toDouble()).forEach { (a,b) ->
+                canvas.drawLine(a.x.toFloat(),a.y.toFloat(),b.x.toFloat(),b.y.toFloat(),paint)
+            } else canvas.drawLine(p.x,p.y,q.x,q.y,paint)
+            paint.alpha=255;paint.pathEffect=null
         }
-        if(snapshot.showSkyReferences) for(latitude in listOf(-66.56,-23.44,0.0,23.44,66.56)) {
-            val phi=Math.toRadians(latitude)
-            fun v(i: Int)=Math.toRadians(i*3.0).let { SpaceCompassGlobeVector(cos(phi)*sin(it),sin(phi),cos(phi)*cos(it)) }
-            for(i in 1..120) segment(v(i-1),v(i),0xff869bab.toInt(),false)
+        if(!flat && snapshot.showGrid) {
+            val gridPaint=Paint(Paint.ANTI_ALIAS_FLAG).apply {
+                color=SpaceCompassAngularGridAppearance.lineArgb
+                strokeWidth=SpaceCompassAngularGridAppearance.lineWidth(width,h)
+            }
+            fun gridLine(a: SpaceCompassGlobeVector,b: SpaceCompassGlobeVector,major: Boolean) {
+                val av=projected(a);val bv=projected(b)
+                if(av.z<0 || bv.z<0) return
+                val p=xy(av);val q=xy(bv)
+                val edge=SpaceCompassAngularGridAppearance.lineWidth(width,h)*(if(major) 1.5f else 1f)
+                gridPaint.color=SpaceCompassAngularGridAppearance.shadowArgb;gridPaint.strokeWidth=edge*2
+                canvas.drawLine(p.x,p.y,q.x,q.y,gridPaint)
+                gridPaint.color=if(major) SpaceCompassAngularGridAppearance.majorArgb else SpaceCompassAngularGridAppearance.lineArgb
+                gridPaint.strokeWidth=edge;canvas.drawLine(p.x,p.y,q.x,q.y,gridPaint)
+            }
+            for(latitude in -60..60 step 30) {
+                val phi=Math.toRadians(latitude.toDouble())
+                fun v(i: Int)=Math.toRadians(i*3.0).let { SpaceCompassGlobeVector(cos(phi)*sin(it),sin(phi),cos(phi)*cos(it)) }
+                for(i in 1..120) gridLine(v(i-1),v(i),latitude==0)
+            }
+            for(longitude in -180 until 180 step 30) {
+                val theta=Math.toRadians(longitude.toDouble())
+                fun v(i: Int)=Math.toRadians(i*3.0-90).let { SpaceCompassGlobeVector(cos(it)*sin(theta),sin(it),cos(it)*cos(theta)) }
+                for(i in 1..60) gridLine(v(i-1),v(i),longitude==0)
+            }
         }
         model.tracks.forEach { track -> track.curve.zipWithNext().forEach { (a,b) ->
             segment(a.first,b.first,track.item.tint.toArgb(),b.second||track.item.comparison!=null)
         } }
         val unit=width/1920f
-        val obstacles=mutableListOf<SpaceCompassSunSceneFrame>()
+        val guideReserved=gridEdges+model.tracks.flatMap { track -> track.dots.filter { it.current&&!it.antipode }.mapNotNull { dot ->
+            val v=projected(dot.vector)
+            if(hidden(v)) null else xy(v).let { p -> val radius=width/120.0
+                SpaceCompassSunSceneFrame(p.x-radius,p.y-radius,radius*2,radius*2) }
+        } }
+        val guideTextSize=spaceCompassGlobeGuideTextSize(width,h,frame)
+        val geographicDrawing=if(snapshot.showSkyReferences) drawSpaceCompassGlobeGeographicGuides(canvas,snapshot,
+            width,h,r,cy,flat,guideReserved) else SpaceCompassSkyReferenceDrawing(emptyList(),emptyList())
+        val obstacles=(gridEdges+geographicDrawing.curveLabels.flatMap { it.layout.collisionFrames }+
+            geographicDrawing.labels.map { SpaceCompassSunSceneFrame(it.bounds.left.toDouble(),it.bounds.top.toDouble(),
+                it.bounds.width().toDouble(),it.bounds.height().toDouble()) }+
+            geographicDrawing.poles.map { SpaceCompassSunSceneFrame(it.x-guideTextSize*.5,it.y-guideTextSize*.5,guideTextSize.toDouble(),guideTextSize.toDouble()) }).toMutableList()
         // Reuse panorama placement, reserving the projected curves and every visible marker first.
         fun reserve(x: Float,y: Float,w: Float,h: Float,padding: Float) {
             obstacles+=SpaceCompassSunSceneFrame((x-padding).toDouble(),(y-padding).toDouble(),
@@ -56,7 +98,7 @@ internal fun renderSpaceCompassGlobe(snapshot: SpaceCompassPanoramaSnapshot,widt
                 val av=projected(a.first);val bv=projected(b.first)
                 if(!hidden(av)||!hidden(bv)) {
                     val p=xy(av);val q=xy(bv)
-                    reserve(min(p.x,q.x),min(p.y,q.y),abs(p.x-q.x),abs(p.y-q.y),6*unit)
+                    if(!flat||abs(p.x-q.x)<=width/2) reserve(min(p.x,q.x),min(p.y,q.y),abs(p.x-q.x),abs(p.y-q.y),6*unit)
                 }
             }
             track.dots.forEach { dot -> val v=projected(dot.vector)
@@ -132,14 +174,15 @@ internal fun renderSpaceCompassGlobe(snapshot: SpaceCompassPanoramaSnapshot,widt
             text.color=Color.WHITE
             lines.forEachIndexed { i,line -> canvas.drawText(line,bounds.centerX(),bounds.top+width/160f+text.textSize*(1+i*1.35f),text) }
         }
+        drawSpaceCompassGlobeGeographicCaptions(canvas,geographicDrawing,guideTextSize)
         paint.style=Paint.Style.FILL
         // Location marker is itself precise position metadata: omit it in Area and Hidden exports.
         if(!snapshot.positionHidden&&snapshot.globeLocationVisible&&snapshot.observerPositionKnown) {
             val lat=Math.toRadians(snapshot.latitude);val lon=Math.toRadians(snapshot.longitude)
-            val p=spaceCompassGlobeView(SpaceCompassGlobeVector(cos(lat)*sin(lon),sin(lat),cos(lat)*cos(lon)),capture.pose)
+            val p=projected(SpaceCompassGlobeVector(cos(lat)*sin(lon),sin(lat),cos(lat)*cos(lon)))
             val anchor=xy(p)
             val pinWidth=(r*2*.06).toFloat().coerceIn(16*unit,22*unit)
-            drawSpaceCompassGlobeLocationMarker(canvas,anchor.x,anchor.y,pinWidth,p.z)
+            drawSpaceCompassGlobeLocationMarker(canvas,anchor.x,anchor.y,pinWidth,if(flat) 1.0 else p.z)
         }
         text.color=0xffb5c3d0.toInt();text.typeface=Typeface.DEFAULT;text.textSize=width/120f
         val noteWidth=text.measureText(capture.directionNote)
@@ -170,14 +213,7 @@ internal fun renderSpaceCompassGlobeEarth(context: Context,size: Int,pose: Space
         val vx=ax*c+az*s;val vz=-ax*s+az*c
         val u=((atan2(vx,vz)/(2*PI)+.5)%1+1)%1;val v=.5-asin(ay.coerceIn(-1.0,1.0))/PI
         val idx=(v*mh).toInt().coerceIn(0,mh-1)*mw+(u*mw).toInt().coerceIn(0,mw-1)
-        val color=day[idx];val city=night[idx]
-        val lit=nx*sun.x+ny*sun.y+nz*sun.z;val diffuse=max(0.0,lit)
-        val t=((lit+.13)/.26).coerceIn(0.0,1.0);val dark=1-t*t*(3-2*t)
-        val red=Color.red(color);val green=Color.green(color);val blue=Color.blue(color)
-        val mask=(((blue-max(red,green)).toDouble()/max(blue,1)-.12)/.33).coerceIn(0.0,1.0)
-        val gain=1+.6*mask*mask*(3-2*mask)
-        fun channel(value: Int,lights: Int)=(min(255.0,value*gain)*(.075+diffuse*.98)+(lights/255.0).pow(1.5)*dark*1.7*255).toInt().coerceIn(0,255)
-        out[y*size+x]=Color.rgb(channel(red,Color.red(city)),channel(green,Color.green(city)),channel(blue,Color.blue(city)))
+        out[y*size+x]=spaceCompassGlobeSurfaceColor(day[idx],night[idx],nx*sun.x+ny*sun.y+nz*sun.z)
     }
     return Bitmap.createBitmap(out,size,size,Bitmap.Config.ARGB_8888)
 }
@@ -195,4 +231,35 @@ internal fun drawSpaceCompassGlobeUniverse(canvas: Canvas,width: Int,height: Int
     SpaceCompassGlobeUniverse.stars.forEach { star ->
         canvas.drawCircle(width*star.x,height*star.y,star.radius*scale,paint)
     }
+}
+
+private fun spaceCompassGlobeSurfaceColor(color: Int,city: Int,lit: Double): Int {
+    val diffuse=max(0.0,lit)
+        val t=((lit+.13)/.26).coerceIn(0.0,1.0);val dark=1-t*t*(3-2*t)
+        val red=Color.red(color);val green=Color.green(color);val blue=Color.blue(color)
+        val mask=(((blue-max(red,green)).toDouble()/max(blue,1)-.12)/.33).coerceIn(0.0,1.0)
+        val gain=1+.6*mask*mask*(3-2*mask)
+        fun channel(value: Int,lights: Int)=(min(255.0,value*gain)*(.075+diffuse*.98)+(lights/255.0).pow(1.5)*dark*1.7*255).toInt().coerceIn(0,255)
+        return Color.rgb(channel(red,Color.red(city)),channel(green,Color.green(city)),channel(blue,Color.blue(city)))
+}
+
+/** Geographic plate-carree map, with real UTC sunlight and no invented orbital distances. */
+internal fun renderSpaceCompassGlobeMapEarth(context: Context,timeMs: Long): Bitmap {
+    fun map(name: String)=context.assets.open("screensaver/$name.webp").use { requireNotNull(BitmapFactory.decodeStream(it)) }
+    val day=map("earth-day");val night=map("earth-night")
+    try {
+        val width=day.width;val height=day.height
+        val light=spaceCompassScreensaverSunlight(timeMs)
+        val pixels=IntArray(width*height);val cities=IntArray(width*height)
+        day.getPixels(pixels,0,width,0,0,width,height);night.getPixels(cities,0,width,0,0,width,height)
+        val sine=DoubleArray(width) { sin((it+.5)/width*2*PI-PI) }
+        val cosine=DoubleArray(width) { cos((it+.5)/width*2*PI-PI) }
+        for(y in 0 until height) {
+            val lat=PI/2-(y+.5)/height*PI;val c=cos(lat);val n=sin(lat)
+            for(x in 0 until width) { val i=y*width+x
+                pixels[i]=spaceCompassGlobeSurfaceColor(pixels[i],cities[i],c*sine[x]*light.x+n*light.y+c*cosine[x]*light.z)
+            }
+        }
+        return Bitmap.createBitmap(pixels,width,height,Bitmap.Config.ARGB_8888)
+    } finally { day.recycle();night.recycle() }
 }

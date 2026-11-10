@@ -1,9 +1,9 @@
 <resources>
     <string name="info_news_title">Perubahan terbaru · %1$s</string>
-    <string name="info_news_star_sky" formatted="false">Jelajahi globe interaktif dengan lintasan, titik penting dan gambar objek saat ini.</string>
-    <string name="info_news_texture_downloads" formatted="false">Beralih antara Panorama, Kamera dan Globe; atur zoom, rotasi dan label.</string>
-    <string name="info_news_weather" formatted="false">Tangkap globe dengan latar berbintang siang atau malam dan label yang dapat diatur.</string>
-    <string name="info_news_viewer_zoom" formatted="false">Tampilkan atau sembunyikan kisi sudut pada kamera langsung.</string>
-    <string name="info_news_settings" formatted="false">Majukan atau mundurkan waktu hingga lima belas hari per detik.</string>
-    <string name="info_news_catalog" formatted="false">Tutorial diperbarui, kontrol lebih jelas, lautan lebih cerah dan galeri diperluas.</string>
+    <string name="info_news_star_sky" formatted="false">Pilih Langit, Kamera atau Globe dengan kontrol lebih jelas dan tutorial terbaru.</string>
+    <string name="info_news_texture_downloads" formatted="false">Tangkap bingkai langit atau globe yang terlihat, atau beralih ke panorama penuh.</string>
+    <string name="info_news_weather" formatted="false">Ekspor bingkai dan panorama bersama dengan data tetap dari saat pengambilan.</string>
+    <string name="info_news_viewer_zoom" formatted="false">Kisi Langit dan Kamera menyesuaikan kontras terang dan gelap dengan latar.</string>
+    <string name="info_news_settings" formatted="false">Baca label globe, lingkaran geografis dan nama kutub dengan lebih jelas.</string>
+    <string name="info_news_catalog" formatted="false">Kontrol pengambilan, zoom serta tata letak potret dan lanskap ditingkatkan.</string>
 </resources>

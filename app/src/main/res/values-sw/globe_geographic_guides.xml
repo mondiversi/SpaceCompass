@@ -1,0 +1,9 @@
+<resources>
+    <string name="globe_reference_equator">Ikweta</string>
+    <string name="globe_reference_cancer">Tropiki ya Kansa</string>
+    <string name="globe_reference_capricorn">Tropiki ya Kaprikoni</string>
+    <string name="globe_reference_arctic">Duara la Aktiki</string>
+    <string name="globe_reference_antarctic">Duara la Antaktiki</string>
+    <string name="globe_reference_north_pole">Ncha ya Kaskazini</string>
+    <string name="globe_reference_south_pole">Ncha ya Kusini</string>
+</resources>
