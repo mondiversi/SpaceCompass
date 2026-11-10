@@ -4,8 +4,6 @@ import androidx.compose.foundation.Canvas
 import androidx.compose.runtime.*
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clipToBounds
-import androidx.compose.ui.graphics.BlendMode
-import androidx.compose.ui.graphics.isSupported
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.Path
 import androidx.compose.ui.graphics.drawscope.Stroke
@@ -26,7 +24,6 @@ private data class SpaceCompassLiveCameraGrid(val size: IntSize,val paths: List<
 internal fun SpaceCompassCameraGridLayer(orientation: SpaceCompassSunOrientation?,
     lens: SpaceCompassPerspective?,opticalFrame: SpaceCompassSunSceneFrame?,modifier: Modifier,tag: String="camera-angular-grid") {
     if(orientation==null||lens==null||opticalFrame==null) return
-    val adaptiveContrast=remember { BlendMode.Difference.isSupported() && BlendMode.Saturation.isSupported() }
     var viewport by remember { mutableStateOf(IntSize.Zero) }
     val currentOrientation by rememberUpdatedState(orientation)
     val drawing by produceState<SpaceCompassLiveCameraGrid?>(null,lens,opticalFrame,viewport) {
@@ -56,17 +53,9 @@ internal fun SpaceCompassCameraGridLayer(orientation: SpaceCompassSunOrientation
     }
     Canvas(modifier.clipToBounds().onSizeChanged { viewport=it }.testTag(tag)) {
         drawing?.takeIf { it.size==viewport }?.paths?.forEach { path ->
-            // Blend against the already drawn sky/TextureView, without isolating a transparent layer.
-            // A dark hairline also protects middle-grey regions where simple inversion loses contrast.
-            drawPath(path,Color.Black.copy(alpha=.32f),style=Stroke(.9.dp.toPx()))
-            if(adaptiveContrast) {
-                drawPath(path,Color.White,style=Stroke(SpaceCompassAngularGridAppearance.liveLineDp.dp.toPx()),blendMode=BlendMode.Difference)
-                // Remove complementary hues: only the local light/dark contrast should change.
-                drawPath(path,Color.Black,style=Stroke(SpaceCompassAngularGridAppearance.liveLineDp.dp.toPx()),blendMode=BlendMode.Saturation)
-            } else {
-                // Android 8/9 do not implement these blend modes; preserve a contrasting two-tone grid.
-                drawPath(path,Color.White.copy(alpha=.72f),style=Stroke(SpaceCompassAngularGridAppearance.liveLineDp.dp.toPx()))
-            }
+            // Both tones remain available on mid-tones where inversion can match the background.
+            drawPath(path,Color(SpaceCompassAngularGridAppearance.liveShadowArgb),style=Stroke(SpaceCompassAngularGridAppearance.liveShadowDp.dp.toPx()))
+            drawPath(path,Color(SpaceCompassAngularGridAppearance.liveLineArgb),style=Stroke(SpaceCompassAngularGridAppearance.liveLineDp.dp.toPx()))
         }
     }
 }
