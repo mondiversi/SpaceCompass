@@ -57,7 +57,7 @@ internal fun SpaceCompassSunFinderDataPanel(
     Column(modifier.testTag("sun-finder-details")
         // Normally fits without scrolling. Keep a fallback for large accessibility fonts/windows.
         .scrollbarOverlay(scroll, secondaryText.copy(alpha = 0.46f))
-        .verticalScroll(scroll), verticalArrangement = Arrangement.spacedBy(8.dp)) {
+        .verticalScroll(scroll), verticalArrangement = Arrangement.spacedBy(5.dp)) {
         if (rows.isNotEmpty()) SpaceCompassCelestialBodyDataIsland(bodyName, primaryText, backgroundColor, compact, bodyNavigation, bodyNameColor = bodyNameColor, onBodyNameClick = onBodyNameClick, onDailyPath = onDailyPath) {
             val angles = rows.filter { it.tag == "sun-data-azimuth" || it.tag == "sun-data-elevation" }
             Column(Modifier.fillMaxWidth().testTag("sun-finder-pointing-data")) {

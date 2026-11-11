@@ -3,8 +3,8 @@
     <string name="capture_projection_frame" formatted="false">Bingkai tampilan</string>
     <string name="capture_export_frame" formatted="false">Bingkai tampilan (JPG)</string>
     <string name="capture_export_panorama" formatted="false">Panorama (JPG)</string>
-    <string name="capture_panorama_on">Tampilan panorama diaktifkan</string>
-    <string name="capture_panorama_off">Tampilan panorama dinonaktifkan</string>
+    <string name="capture_panorama_on">Mode panorama</string>
+    <string name="capture_panorama_off">Mode bingkai</string>
     <string name="capture_grid">Kisi</string>
     <string name="capture_grid_on">Kisi ditampilkan</string>
     <string name="capture_grid_off">Kisi disembunyikan</string>

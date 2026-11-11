@@ -1,9 +1,9 @@
 <resources>
     <string name="info_news_title">最近の変更 · %1$s</string>
-    <string name="info_news_star_sky" formatted="false">空・カメラ・地球儀を、わかりやすい操作と更新されたチュートリアルで選べます。</string>
-    <string name="info_news_texture_downloads" formatted="false">空や地球儀の表示範囲を撮影するか、全体のパノラマに切り替えられます。</string>
-    <string name="info_news_weather" formatted="false">撮影時点のデータで、表示範囲とパノラマをまとめて書き出せます。</string>
-    <string name="info_news_viewer_zoom" formatted="false">空とカメラのグリッドが、背景に合わせて明暗のコントラストを調整します。</string>
-    <string name="info_news_settings" formatted="false">地球儀のラベル、地理上の円、極の名前を読みやすくしました。</string>
-    <string name="info_news_catalog" formatted="false">撮影操作、ズーム、縦向き・横向きの配置を改善しました。</string>
+    <string name="info_news_star_sky" formatted="false">空とカメラのグリッドを軽量化し、角度の精度は維持しました。</string>
+    <string name="info_news_texture_downloads" formatted="false">縦向きでも横向きでも、横並びのスイッチでフレームとパノラマを選べます。</string>
+    <string name="info_news_weather" formatted="false">地球儀のキャプチャに15°間隔の細かい地理グリッドを表示します。</string>
+    <string name="info_news_viewer_zoom" formatted="false">上下の矢印で空・カメラ・地球儀のモード選択を分かりやすくしました。</string>
+    <string name="info_news_settings" formatted="false">情報パネルをコンパクトにし、間隔を統一しました。</string>
+    <string name="info_news_catalog" formatted="false">コンパスのリンク名を「実際の位置の詳細」に変更しました。</string>
 </resources>

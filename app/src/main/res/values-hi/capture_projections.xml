@@ -3,8 +3,8 @@
     <string name="capture_projection_frame" formatted="false">दृश्य का फ़्रेम</string>
     <string name="capture_export_frame" formatted="false">दृश्य का फ़्रेम (JPG)</string>
     <string name="capture_export_panorama" formatted="false">पैनोरमा (JPG)</string>
-    <string name="capture_panorama_on">पैनोरमिक दृश्य चालू</string>
-    <string name="capture_panorama_off">पैनोरमिक दृश्य बंद</string>
+    <string name="capture_panorama_on">पैनोरमा मोड</string>
+    <string name="capture_panorama_off">फ़्रेम मोड</string>
     <string name="capture_grid">ग्रिड</string>
     <string name="capture_grid_on">ग्रिड दिखाई दे रहा है</string>
     <string name="capture_grid_off">ग्रिड छिपा है</string>

@@ -3,8 +3,8 @@
     <string name="capture_projection_frame" formatted="false">Inquadratura</string>
     <string name="capture_export_frame" formatted="false">Inquadratura (JPG)</string>
     <string name="capture_export_panorama" formatted="false">Panoramica (JPG)</string>
-    <string name="capture_panorama_on">Vista panoramica attivata</string>
-    <string name="capture_panorama_off">Vista panoramica disattivata</string>
+    <string name="capture_panorama_on">Modalità panoramica</string>
+    <string name="capture_panorama_off">Modalità inquadratura</string>
     <string name="capture_grid">Griglia</string>
     <string name="capture_grid_on">Griglia visibile</string>
     <string name="capture_grid_off">Griglia nascosta</string>

@@ -3,8 +3,8 @@
     <string name="capture_projection_frame" formatted="false">מסגרת התצוגה</string>
     <string name="capture_export_frame" formatted="false">מסגרת התצוגה (JPG)</string>
     <string name="capture_export_panorama" formatted="false">פנורמה (JPG)</string>
-    <string name="capture_panorama_on">התצוגה הפנורמית הופעלה</string>
-    <string name="capture_panorama_off">התצוגה הפנורמית כובתה</string>
+    <string name="capture_panorama_on">מצב פנורמה</string>
+    <string name="capture_panorama_off">מצב מסגרת</string>
     <string name="capture_grid">רשת</string>
     <string name="capture_grid_on">הרשת מוצגת</string>
     <string name="capture_grid_off">הרשת מוסתרת</string>

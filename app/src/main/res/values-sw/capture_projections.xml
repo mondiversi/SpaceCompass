@@ -3,8 +3,8 @@
     <string name="capture_projection_frame" formatted="false">Mwonekano wa fremu</string>
     <string name="capture_export_frame" formatted="false">Mwonekano wa fremu (JPG)</string>
     <string name="capture_export_panorama" formatted="false">Panorama (JPG)</string>
-    <string name="capture_panorama_on">Mwonekano wa panorama umewashwa</string>
-    <string name="capture_panorama_off">Mwonekano wa panorama umezimwa</string>
+    <string name="capture_panorama_on">Hali ya panorama</string>
+    <string name="capture_panorama_off">Hali ya fremu</string>
     <string name="capture_grid">Gridi</string>
     <string name="capture_grid_on">Gridi inaonekana</string>
     <string name="capture_grid_off">Gridi imefichwa</string>

@@ -1006,7 +1006,7 @@ internal fun SpaceCompassSunFinderContent(
                 .onSizeChanged { landscapeCaptureSize = it }, !detailsExpanded, true)
             }
         } else Box(Modifier.fillMaxSize().clipToBounds()) {
-            Column(Modifier.fillMaxSize().padding(start = 10.dp, end = 10.dp, bottom = 10.dp)) {
+            Column(Modifier.fillMaxSize().padding(start = 10.dp, end = 10.dp, bottom = 5.dp)) {
                 Box(Modifier.weight(1f).fillMaxWidth().testTag("celestial-pointing-area")) {
                     pointing(false)
                 }

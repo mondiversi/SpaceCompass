@@ -3,8 +3,8 @@
     <string name="capture_projection_frame" formatted="false">کادر</string>
     <string name="capture_export_frame" formatted="false">کادر (JPG)</string>
     <string name="capture_export_panorama" formatted="false">پانوراما (JPG)</string>
-    <string name="capture_panorama_on">نمای پانوراما فعال شد</string>
-    <string name="capture_panorama_off">نمای پانوراما غیرفعال شد</string>
+    <string name="capture_panorama_on">حالت پانوراما</string>
+    <string name="capture_panorama_off">حالت کادر</string>
     <string name="capture_grid">شبکه</string>
     <string name="capture_grid_on">شبکه نمایان است</string>
     <string name="capture_grid_off">شبکه پنهان است</string>

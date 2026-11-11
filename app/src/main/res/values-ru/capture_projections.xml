@@ -3,8 +3,8 @@
     <string name="capture_projection_frame" formatted="false">Кадр</string>
     <string name="capture_export_frame" formatted="false">Кадр (JPG)</string>
     <string name="capture_export_panorama" formatted="false">Панорама (JPG)</string>
-    <string name="capture_panorama_on">Панорамный вид включён</string>
-    <string name="capture_panorama_off">Панорамный вид выключен</string>
+    <string name="capture_panorama_on">Панорамный режим</string>
+    <string name="capture_panorama_off">Режим кадра</string>
     <string name="capture_grid">Сетка</string>
     <string name="capture_grid_on">Сетка видна</string>
     <string name="capture_grid_off">Сетка скрыта</string>

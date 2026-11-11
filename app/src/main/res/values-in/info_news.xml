@@ -1,9 +1,9 @@
 <resources>
     <string name="info_news_title">Perubahan terbaru · %1$s</string>
-    <string name="info_news_star_sky" formatted="false">Pilih Langit, Kamera atau Globe dengan kontrol lebih jelas dan tutorial terbaru.</string>
-    <string name="info_news_texture_downloads" formatted="false">Tangkap bingkai langit atau globe yang terlihat, atau beralih ke panorama penuh.</string>
-    <string name="info_news_weather" formatted="false">Ekspor bingkai dan panorama bersama dengan data tetap dari saat pengambilan.</string>
-    <string name="info_news_viewer_zoom" formatted="false">Kisi Langit dan Kamera menyesuaikan kontras terang dan gelap dengan latar.</string>
-    <string name="info_news_settings" formatted="false">Baca label globe, lingkaran geografis dan nama kutub dengan lebih jelas.</string>
-    <string name="info_news_catalog" formatted="false">Kontrol pengambilan, zoom serta tata letak potret dan lanskap ditingkatkan.</string>
+    <string name="info_news_star_sky" formatted="false">Kisi Langit dan Kamera lebih ringan dengan ketelitian sudut yang sama.</string>
+    <string name="info_news_texture_downloads" formatted="false">Pilih Bingkai atau Panorama dengan pengalih horizontal di kedua orientasi.</string>
+    <string name="info_news_weather" formatted="false">Tangkapan Globe menampilkan kisi geografis lebih rinci setiap 15°.</string>
+    <string name="info_news_viewer_zoom" formatted="false">Panah atas dan bawah memperjelas pilihan Langit, Kamera, dan Globe.</string>
+    <string name="info_news_settings" formatted="false">Panel informasi lebih ringkas dengan jarak yang seragam.</string>
+    <string name="info_news_catalog" formatted="false">Tautan kompas kini bernama Detail posisi sebenarnya.</string>
 </resources>

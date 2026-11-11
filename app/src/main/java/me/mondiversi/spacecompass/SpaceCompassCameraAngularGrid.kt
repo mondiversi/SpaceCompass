@@ -44,9 +44,15 @@ internal fun spaceCompassCameraGridClip(segment: SpaceCompassSunPathSegment,
     return segment.copy(start = point(low), end = point(high))
 }
 
-private data class SpaceCompassCameraGridCurve(val axis: SpaceCompassCameraGridAxis,val degrees: Double,
+internal data class SpaceCompassCameraGridCurve(val axis: SpaceCompassCameraGridAxis,val degrees: Double,
     val rays: List<SpaceCompassSunVector>)
 private val cameraGridCurves=ConcurrentHashMap<Int,List<SpaceCompassCameraGridCurve>>()
+
+/** Shared immutable samples let the live projector retain the exact capture geometry. */
+internal fun spaceCompassCameraGridCurves(step: Int): List<SpaceCompassCameraGridCurve> {
+    require(step in listOf(5,10,15,30))
+    return cameraGridCurves(step)
+}
 
 /** Immutable directions are shared by live frames and captures; no repeated trigonometry per sensor sample. */
 private fun cameraGridCurves(step: Int)=cameraGridCurves.getOrPut(step) {

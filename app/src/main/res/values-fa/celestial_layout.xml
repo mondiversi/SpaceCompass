@@ -6,7 +6,7 @@
     <string name="celestial_environment_info_action">اطلاعات جهت و محیط</string>
     <string name="celestial_environment_orientation_note">جهت و شیب نشان می‌دهند تلفن به کجا نشانه رفته است. اشیای مغناطیسی می‌توانند بر قطب‌نما اثر بگذارند. دقت GPS عدم قطعیت تخمینی موقعیت را نشان می‌دهد.</string>
     <string name="celestial_altitude">ارتفاع: %1$s</string>
-    <string name="celestial_details_compact">مختصات GPS و جزئیات</string>
+    <string name="celestial_details_compact">جزئیات موقعیت واقعی</string>
     <string name="celestial_gps_coordinates">مختصات GPS: %1$s</string>
     <string name="celestial_gps_coordinate_accuracy">دقت مختصات: ±%1$s</string>
 </resources>

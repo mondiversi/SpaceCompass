@@ -1,9 +1,9 @@
 <resources>
     <string name="info_news_title">החידושים האחרונים · %1$s</string>
-    <string name="info_news_star_sky" formatted="false">בחרו שמיים, מצלמה או גלובוס עם פקדים ברורים יותר ומדריך מעודכן.</string>
-    <string name="info_news_texture_downloads" formatted="false">צלמו את המסגרת הנראית של השמיים או הגלובוס, או עברו לפנורמה מלאה.</string>
-    <string name="info_news_weather" formatted="false">ייצאו יחד מסגרת ופנורמה עם נתונים קבועים מרגע הצילום.</string>
-    <string name="info_news_viewer_zoom" formatted="false">הרשתות בשמיים ובמצלמה מתאימות ניגודיות בהירה וכהה לרקע.</string>
-    <string name="info_news_settings" formatted="false">קראו תוויות גלובוס, מעגלים גאוגרפיים ושמות קטבים בצורה ברורה יותר.</string>
-    <string name="info_news_catalog" formatted="false">שיפורים בפקדי צילום, בזום ובפריסה לאורך ולרוחב.</string>
+    <string name="info_news_star_sky" formatted="false">רשתות השמיים והמצלמה קלות יותר, תוך שמירה על הדיוק הזוויתי.</string>
+    <string name="info_news_texture_downloads" formatted="false">בחרו מסגרת או פנורמה באמצעות מתג אופקי בשני כיווני המסך.</string>
+    <string name="info_news_weather" formatted="false">צילומי הגלובוס מציגים רשת גאוגרפית מפורטת יותר במרווחים של 15°.</string>
+    <string name="info_news_viewer_zoom" formatted="false">חצים למעלה ולמטה מבהירים את בחירת שמיים, מצלמה וגלובוס.</string>
+    <string name="info_news_settings" formatted="false">לוחות מידע קומפקטיים יותר עם מרווחים אחידים.</string>
+    <string name="info_news_catalog" formatted="false">קישור המצפן נקרא כעת פרטי המיקום האמיתי.</string>
 </resources>

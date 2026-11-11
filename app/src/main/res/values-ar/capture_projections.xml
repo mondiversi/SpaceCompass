@@ -3,8 +3,8 @@
     <string name="capture_projection_frame" formatted="false">الإطار</string>
     <string name="capture_export_frame" formatted="false">الإطار (JPG)</string>
     <string name="capture_export_panorama" formatted="false">صورة بانورامية (JPG)</string>
-    <string name="capture_panorama_on">تم تفعيل العرض البانورامي</string>
-    <string name="capture_panorama_off">تم إيقاف العرض البانورامي</string>
+    <string name="capture_panorama_on">وضع البانوراما</string>
+    <string name="capture_panorama_off">وضع الإطار</string>
     <string name="capture_grid">الشبكة</string>
     <string name="capture_grid_on">الشبكة ظاهرة</string>
     <string name="capture_grid_off">الشبكة مخفية</string>

@@ -61,12 +61,12 @@ internal fun renderSpaceCompassGlobe(snapshot: SpaceCompassPanoramaSnapshot,maxE
                 gridPaint.color=if(major) SpaceCompassAngularGridAppearance.majorArgb else SpaceCompassAngularGridAppearance.lineArgb
                 gridPaint.strokeWidth=edge;canvas.drawLine(p.x,p.y,q.x,q.y,gridPaint)
             }
-            for(latitude in -60..60 step 30) {
+            for(latitude in -75..75 step 15) {
                 val phi=Math.toRadians(latitude.toDouble())
                 fun v(i: Int)=Math.toRadians(i*3.0).let { SpaceCompassGlobeVector(cos(phi)*sin(it),sin(phi),cos(phi)*cos(it)) }
                 for(i in 1..120) gridLine(v(i-1),v(i),latitude==0)
             }
-            for(longitude in -180 until 180 step 30) {
+            for(longitude in -180 until 180 step 15) {
                 val theta=Math.toRadians(longitude.toDouble())
                 fun v(i: Int)=Math.toRadians(i*3.0-90).let { SpaceCompassGlobeVector(cos(it)*sin(theta),sin(it),cos(it)*cos(theta)) }
                 for(i in 1..60) gridLine(v(i-1),v(i),longitude==0)

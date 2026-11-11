@@ -1,9 +1,9 @@
 <resources>
     <string name="info_news_title">Dernières nouveautés · %1$s</string>
-    <string name="info_news_star_sky" formatted="false">Choisissez Ciel, Appareil photo ou Globe avec des commandes plus claires et un tutoriel actualisé.</string>
-    <string name="info_news_texture_downloads" formatted="false">Capturez le cadrage visible du ciel ou du globe, ou passez au panorama complet.</string>
-    <string name="info_news_weather" formatted="false">Exportez cadrage et panorama ensemble avec les données figées au moment de la capture.</string>
-    <string name="info_news_viewer_zoom" formatted="false">Les grilles de Ciel et Appareil photo adaptent leur contraste clair ou sombre au fond.</string>
-    <string name="info_news_settings" formatted="false">Lisez mieux les étiquettes du globe, les cercles géographiques et les noms des pôles.</string>
-    <string name="info_news_catalog" formatted="false">Commandes de capture, zoom et dispositions portrait et paysage améliorés.</string>
+    <string name="info_news_star_sky" formatted="false">Grilles de Ciel et Appareil photo allégées, avec la même précision angulaire.</string>
+    <string name="info_news_texture_downloads" formatted="false">Choisissez Cadrage ou Panorama avec un sélecteur horizontal dans les deux orientations.</string>
+    <string name="info_news_weather" formatted="false">Les captures du Globe affichent une grille géographique tous les 15°.</string>
+    <string name="info_news_viewer_zoom" formatted="false">Des flèches en haut et en bas clarifient le sélecteur Ciel, Appareil photo et Globe.</string>
+    <string name="info_news_settings" formatted="false">Panneaux d’information plus compacts et espacements uniformisés.</string>
+    <string name="info_news_catalog" formatted="false">Le lien de la boussole devient Détails de la position réelle.</string>
 </resources>

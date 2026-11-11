@@ -5,13 +5,18 @@ import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.*
 import androidx.compose.runtime.*
+import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.geometry.Offset
 import androidx.compose.ui.geometry.Size
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.graphics.Path
+import androidx.compose.ui.graphics.StrokeCap
+import androidx.compose.ui.graphics.StrokeJoin
 import androidx.compose.ui.graphics.drawscope.Stroke
 import androidx.compose.ui.platform.testTag
 import androidx.compose.ui.res.stringResource
+import androidx.compose.ui.semantics.clearAndSetSemantics
 import androidx.compose.ui.semantics.semantics
 import androidx.compose.ui.semantics.selected
 import androidx.compose.ui.unit.Dp
@@ -49,7 +54,23 @@ internal fun SpaceCompassViewModeButton(mode: SpaceCompassViewMode,onChoose: (Sp
     Box {
         SpaceCompassFloatingActionButton(stringResource(R.string.view_mode_choose)+": "+stringResource(mode.labelResource),
             { if(tutorial) guide?.explore(SpaceCompassTutorialFeature.CAMERA) else expanded=true },color,background,
-            Modifier.testTag("toggle-camera").spaceCompassTutorialTarget(SpaceCompassTutorialFeature.CAMERA)) {
+            Modifier.testTag("toggle-camera").spaceCompassTutorialTarget(SpaceCompassTutorialFeature.CAMERA),
+            overlay={
+                // Symmetric menu cues preserve the fitted mode glyph and the existing touch target.
+                for(up in listOf(true,false)) {
+                    Canvas(Modifier.align(if(up) Alignment.TopCenter else Alignment.BottomCenter)
+                        .padding(vertical=4.dp).size(10.dp,5.dp).clearAndSetSemantics {}) {
+                        val outerY=if(up) .80f else .20f
+                        val tipY=if(up) .25f else .75f
+                        val path=Path().apply {
+                            moveTo(size.width*.15f,size.height*outerY)
+                            lineTo(size.width*.50f,size.height*tipY)
+                            lineTo(size.width*.85f,size.height*outerY)
+                        }
+                        drawPath(path,color,style=Stroke(1.5.dp.toPx(),cap=StrokeCap.Round,join=StrokeJoin.Round))
+                    }
+                }
+            }) {
             when(mode) {
                 SpaceCompassViewMode.GLOBE -> SpaceCompassFloatingGlyph(spaceCompassFloatingVectorInk(R.drawable.ic_globe_view)) {
                     SpaceCompassFloatingVectorIcon(R.drawable.ic_globe_view)

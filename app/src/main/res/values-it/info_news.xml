@@ -1,9 +1,9 @@
 <resources>
     <string name="info_news_title">Ultime novità · %1$s</string>
-    <string name="info_news_star_sky" formatted="false">Scegli Cielo, Fotocamera o Mappamondo, con comandi più chiari e tutorial aggiornato.</string>
-    <string name="info_news_texture_downloads" formatted="false">Acquisisci l’inquadratura di Cielo o Mappamondo, oppure passa alla panoramica completa.</string>
-    <string name="info_news_weather" formatted="false">Esporta insieme inquadratura e panoramica, con dati fermi al momento dell’acquisizione.</string>
-    <string name="info_news_viewer_zoom" formatted="false">Le griglie di Cielo e Fotocamera adattano il contrasto chiaro/scuro allo sfondo.</string>
-    <string name="info_news_settings" formatted="false">Leggi meglio le etichette del Mappamondo, i circoli geografici e i nomi dei poli.</string>
-    <string name="info_news_catalog" formatted="false">Comandi di acquisizione, zoom e disposizione verticale e orizzontale migliorati.</string>
+    <string name="info_news_star_sky" formatted="false">Griglie di Cielo e Fotocamera più leggere, con la stessa precisione angolare.</string>
+    <string name="info_news_texture_downloads" formatted="false">Scegli Modalità inquadratura o Modalità panoramica con lo switch sempre orizzontale.</string>
+    <string name="info_news_weather" formatted="false">Griglia del Mappamondo a intervalli di 15° nelle acquisizioni.</string>
+    <string name="info_news_viewer_zoom" formatted="false">Freccine in alto e in basso rendono più chiaro il selettore Cielo, Fotocamera e Mappamondo.</string>
+    <string name="info_news_settings" formatted="false">Isole informative più compatte e distanze uniformate.</string>
+    <string name="info_news_catalog" formatted="false">Il collegamento della bussola ora si chiama Dettagli posizione reale.</string>
 </resources>

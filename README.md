@@ -8,8 +8,8 @@ paths, inspect reference facts and view textured models. Space Compass is a stan
 
 ## Download and install
 
-Download **space-compass-1.9.1.apk** from the
-[Space Compass 1.9.1 release](https://github.com/mondiversi/SpaceCompass/releases/tag/v1.9.1).
+Download **space-compass-1.9.2.apk** from the
+[Space Compass 1.9.2 release](https://github.com/mondiversi/SpaceCompass/releases/tag/v1.9.2).
 Android 8.0 or newer is required. Open the APK and follow Android's installation
 prompts; allow installation for your browser or file manager if requested.
 
@@ -139,7 +139,7 @@ See Space Compass in portrait and landscape, by day and by night. These English 
 ## Features
 
 - **Find objects in the sky.** Point your phone to see where the Sun, Moon, planets and other objects are, including those below the horizon.
-- **See the sky through your camera.** Overlay objects and their paths on your surroundings. Zoom in or out and fade the object images to compare their predicted positions with what you see. The live grid adapts its contrast to the background.
+- **See the sky through your camera.** Overlay objects and their paths on your surroundings. Zoom in or out and fade the object images to compare their predicted positions with what you see. A lightweight two-tone grid stays readable against light and dark backgrounds.
 - **Control the view with a tap.** Tap empty sky to pause or resume sky time; double-tap to show or hide the reticle and controls. Double-tap a photo or panorama preview to toggle its overlay controls.
 - **Choose your field of view.** Adjust and remember virtual-sky zoom from 0.5× to 1×, with separate camera zoom for the lenses available on your device.
 - **Explore an interactive Earth.** Switch to Globe, rotate around Earth’s axis or freely, inspect paths and key points, and generate a Globe image. Choose which labels follow the object selected in the island. Earth satellites use Earth-centred orbits; distant objects show apparent directions.
@@ -165,7 +165,7 @@ safety or navigation instrument.
 ## Build and checks
 
 The application ID is `me.mondiversi.spacecompass`. This source builds version
-**1.9.1**, with Android/update identity `1.9.1` and version code **77**.
+**1.9.2**, with Android/update identity `1.9.2` and version code **78**.
 This preserves the three-part update protocol used by existing preview installations.
 The app stores its preferences and caches privately.
 
@@ -219,11 +219,11 @@ Third-party SGP4 code and image maps retain their respective licenses/credits;
 Astronomy Engine uses MIT, AndroidX uses Apache-2.0 and Leaflet uses BSD-2-Clause.
 Launcher/loading artwork and original illustrations are project assets.
 
-Capture the visible frame in **Sky** or **Globe**, or switch to a complete panorama (a flat map for Globe). Export either image or both together, alongside tables frozen at capture time. Capture grids and labels remain configurable. Live Sky/Camera grids adapt their light/dark contrast to the background, with a two-tone fallback on Android 8/9. See [capture projections](docs/CAPTURE_PROJECTIONS.md).
+Capture the visible frame in **Sky** or **Globe**, or switch to a complete panorama (a flat map for Globe). Export either image or both together, alongside tables frozen at capture time. Capture grids and labels remain configurable. Live Sky/Camera grids use fine light and dark strokes, with lighter calculations for smoother navigation. Frame and Panorama choices stay side by side in either orientation; Globe capture grids use 15° intervals. See [capture projections](docs/CAPTURE_PROJECTIONS.md).
 
 ## Data and graphics packages
 
-Release 1.9.1 includes **9,999 selectable objects**, and an optional reference-information archive.
+Release 1.9.2 includes **9,999 selectable objects**, and an optional reference-information archive.
 All descriptive data and translations remain inside the APK. Scientific limits and provenance are in the
 [catalogue sources](docs/CATALOG_9999.md) and [canonical source catalogue](catalogue/README.md).
 

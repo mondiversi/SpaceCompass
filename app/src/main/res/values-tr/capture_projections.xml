@@ -3,8 +3,8 @@
     <string name="capture_projection_frame" formatted="false">Kadraj</string>
     <string name="capture_export_frame" formatted="false">Kadraj (JPG)</string>
     <string name="capture_export_panorama" formatted="false">Panorama (JPG)</string>
-    <string name="capture_panorama_on">Panoramik görünüm açıldı</string>
-    <string name="capture_panorama_off">Panoramik görünüm kapatıldı</string>
+    <string name="capture_panorama_on">Panorama modu</string>
+    <string name="capture_panorama_off">Kadraj modu</string>
     <string name="capture_grid">Izgara</string>
     <string name="capture_grid_on">Izgara görünür</string>
     <string name="capture_grid_off">Izgara gizli</string>

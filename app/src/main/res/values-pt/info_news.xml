@@ -1,9 +1,9 @@
 <resources>
     <string name="info_news_title">Últimas novidades · %1$s</string>
-    <string name="info_news_star_sky" formatted="false">Escolha Céu, Câmera ou Globo com controles mais claros e tutorial atualizado.</string>
-    <string name="info_news_texture_downloads" formatted="false">Capture o enquadramento visível do céu ou do globo, ou mude para o panorama completo.</string>
-    <string name="info_news_weather" formatted="false">Exporte enquadramento e panorama juntos com os dados do momento da captura.</string>
-    <string name="info_news_viewer_zoom" formatted="false">As grades de Céu e Câmera adaptam o contraste claro ou escuro ao fundo.</string>
-    <string name="info_news_settings" formatted="false">Leia melhor as etiquetas do globo, os círculos geográficos e os nomes dos polos.</string>
-    <string name="info_news_catalog" formatted="false">Controles de captura, zoom e disposição vertical e horizontal melhorados.</string>
+    <string name="info_news_star_sky" formatted="false">Grades de Céu e Câmera mais leves, com a mesma precisão angular.</string>
+    <string name="info_news_texture_downloads" formatted="false">Escolha Enquadramento ou Panorama com um seletor horizontal nas duas orientações.</string>
+    <string name="info_news_weather" formatted="false">As capturas do Globo mostram uma grade geográfica a cada 15°.</string>
+    <string name="info_news_viewer_zoom" formatted="false">Setas para cima e para baixo tornam mais claro o seletor Céu, Câmera e Globo.</string>
+    <string name="info_news_settings" formatted="false">Painéis de informações mais compactos e espaçamento uniforme.</string>
+    <string name="info_news_catalog" formatted="false">O link da bússola agora se chama Detalhes da posição real.</string>
 </resources>

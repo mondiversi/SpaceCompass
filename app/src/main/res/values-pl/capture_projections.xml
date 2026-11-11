@@ -3,8 +3,8 @@
     <string name="capture_projection_frame" formatted="false">Kadr</string>
     <string name="capture_export_frame" formatted="false">Kadr (JPG)</string>
     <string name="capture_export_panorama" formatted="false">Panorama (JPG)</string>
-    <string name="capture_panorama_on">Widok panoramiczny włączony</string>
-    <string name="capture_panorama_off">Widok panoramiczny wyłączony</string>
+    <string name="capture_panorama_on">Tryb panoramy</string>
+    <string name="capture_panorama_off">Tryb kadru</string>
     <string name="capture_grid">Siatka</string>
     <string name="capture_grid_on">Siatka widoczna</string>
     <string name="capture_grid_off">Siatka ukryta</string>

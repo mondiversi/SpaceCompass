@@ -6,7 +6,7 @@
     <string name="celestial_environment_info_action">معلومات الاتجاه والبيئة</string>
     <string name="celestial_environment_orientation_note">يصف الاتجاه والميل جهة توجيه الهاتف. قد تؤثر الأجسام المغناطيسية في البوصلة. تشير دقة GPS إلى عدم اليقين المقدّر في الموقع.</string>
     <string name="celestial_altitude">الارتفاع: %1$s</string>
-    <string name="celestial_details_compact">إحداثيات GPS والتفاصيل</string>
+    <string name="celestial_details_compact">تفاصيل الموقع الفعلي</string>
     <string name="celestial_gps_coordinates">إحداثيات GPS: %1$s</string>
     <string name="celestial_gps_coordinate_accuracy">دقة الإحداثيات: ±%1$s</string>
 </resources>

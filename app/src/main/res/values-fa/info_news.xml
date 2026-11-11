@@ -1,9 +1,9 @@
 <resources>
     <string name="info_news_title">تازه‌ترین تغییرات · %1$s</string>
-    <string name="info_news_star_sky" formatted="false">آسمان، دوربین یا کرهٔ زمین را با کنترل‌های روشن‌تر و راهنمای به‌روز انتخاب کنید.</string>
-    <string name="info_news_texture_downloads" formatted="false">کادر قابل مشاهدهٔ آسمان یا کرهٔ زمین را ثبت کنید یا به پانورامای کامل بروید.</string>
-    <string name="info_news_weather" formatted="false">کادر و پانوراما را با داده‌های ثابت لحظهٔ ثبت، با هم صادر کنید.</string>
-    <string name="info_news_viewer_zoom" formatted="false">شبکه‌های آسمان و دوربین کنتراست روشن و تیره را با پس‌زمینه تطبیق می‌دهند.</string>
-    <string name="info_news_settings" formatted="false">برچسب‌های کرهٔ زمین، دایره‌های جغرافیایی و نام قطب‌ها را واضح‌تر بخوانید.</string>
-    <string name="info_news_catalog" formatted="false">کنترل‌های ثبت تصویر، بزرگ‌نمایی و چیدمان عمودی و افقی بهبود یافت.</string>
+    <string name="info_news_star_sky" formatted="false">شبکه‌های آسمان و دوربین سبک‌تر شده‌اند و دقت زاویه‌ای حفظ شده است.</string>
+    <string name="info_news_texture_downloads" formatted="false">در هر دو جهت صفحه، کادر یا پانوراما را با کلید افقی انتخاب کنید.</string>
+    <string name="info_news_weather" formatted="false">تصاویر کره زمین شبکه جغرافیایی دقیق‌تری با فاصله‌های ۱۵ درجه دارند.</string>
+    <string name="info_news_viewer_zoom" formatted="false">پیکان‌های بالا و پایین انتخاب آسمان، دوربین و کره زمین را روشن‌تر می‌کنند.</string>
+    <string name="info_news_settings" formatted="false">پنل‌های اطلاعات فشرده‌تر با فاصله‌های هماهنگ.</string>
+    <string name="info_news_catalog" formatted="false">نام پیوند قطب‌نما اکنون جزئیات موقعیت واقعی است.</string>
 </resources>

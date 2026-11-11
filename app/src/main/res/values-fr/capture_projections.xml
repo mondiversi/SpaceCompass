@@ -3,8 +3,8 @@
     <string name="capture_projection_frame" formatted="false">Cadrage</string>
     <string name="capture_export_frame" formatted="false">Cadrage (JPG)</string>
     <string name="capture_export_panorama" formatted="false">Panorama (JPG)</string>
-    <string name="capture_panorama_on">Vue panoramique activée</string>
-    <string name="capture_panorama_off">Vue panoramique désactivée</string>
+    <string name="capture_panorama_on">Mode panoramique</string>
+    <string name="capture_panorama_off">Mode cadrage</string>
     <string name="capture_grid">Grille</string>
     <string name="capture_grid_on">Grille visible</string>
     <string name="capture_grid_off">Grille masquée</string>

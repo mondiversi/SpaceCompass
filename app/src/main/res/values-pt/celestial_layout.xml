@@ -6,7 +6,7 @@
     <string name="celestial_environment_info_action">Informações sobre orientação e ambiente</string>
     <string name="celestial_environment_orientation_note">A direção e a inclinação descrevem para onde o telefone aponta. Objetos magnéticos podem afetar a bússola. A precisão GPS indica a incerteza estimada da posição.</string>
     <string name="celestial_altitude">Altitude: %1$s</string>
-    <string name="celestial_details_compact">Coordenadas GPS e detalhes</string>
+    <string name="celestial_details_compact">Detalhes da posição real</string>
     <string name="celestial_gps_coordinates">Coordenadas GPS: %1$s</string>
     <string name="celestial_gps_coordinate_accuracy">Precisão das coordenadas: ±%1$s</string>
 </resources>

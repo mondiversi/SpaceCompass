@@ -1,9 +1,9 @@
 <resources>
     <string name="info_news_title">Laatste nieuws · %1$s</string>
-    <string name="info_news_star_sky" formatted="false">Kies Hemel, Camera of Wereldbol met duidelijkere bediening en een bijgewerkte handleiding.</string>
-    <string name="info_news_texture_downloads" formatted="false">Leg de zichtbare hemel of wereldbol vast of schakel naar het volledige panorama.</string>
-    <string name="info_news_weather" formatted="false">Exporteer de uitsnede en het panorama samen met gegevens van het opnamemoment.</string>
-    <string name="info_news_viewer_zoom" formatted="false">De rasters in Hemel en Camera passen hun licht-donkercontrast aan de achtergrond aan.</string>
-    <string name="info_news_settings" formatted="false">Lees wereldbollabels, geografische cirkels en poolnamen duidelijker.</string>
-    <string name="info_news_catalog" formatted="false">Verbeterde opnamebediening, zoom en indeling in staande en liggende stand.</string>
+    <string name="info_news_star_sky" formatted="false">Lichtere rasters in Hemel en Camera met dezelfde hoeknauwkeurigheid.</string>
+    <string name="info_news_texture_downloads" formatted="false">Kies Kader of Panorama met een horizontale schakelaar in beide schermstanden.</string>
+    <string name="info_news_weather" formatted="false">Globe-opnamen tonen een fijner geografisch raster met stappen van 15°.</string>
+    <string name="info_news_viewer_zoom" formatted="false">Pijltjes boven en onder verduidelijken de keuze tussen Hemel, Camera en Globe.</string>
+    <string name="info_news_settings" formatted="false">Compactere informatiepanelen met gelijke tussenruimten.</string>
+    <string name="info_news_catalog" formatted="false">De kompaslink heet nu Details van de werkelijke positie.</string>
 </resources>

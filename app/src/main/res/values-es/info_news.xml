@@ -1,9 +1,9 @@
 <resources>
     <string name="info_news_title">Últimas novedades · %1$s</string>
-    <string name="info_news_star_sky" formatted="false">Elige Cielo, Cámara o Globo con controles más claros y un tutorial actualizado.</string>
-    <string name="info_news_texture_downloads" formatted="false">Captura el encuadre visible del cielo o del globo, o cambia a la panorámica completa.</string>
-    <string name="info_news_weather" formatted="false">Exporta encuadre y panorámica juntos con los datos del momento de la captura.</string>
-    <string name="info_news_viewer_zoom" formatted="false">Las cuadrículas de Cielo y Cámara adaptan su contraste claro u oscuro al fondo.</string>
-    <string name="info_news_settings" formatted="false">Lee mejor las etiquetas del globo, los círculos geográficos y los nombres de los polos.</string>
-    <string name="info_news_catalog" formatted="false">Mejoras en controles de captura, zoom y disposición vertical y horizontal.</string>
+    <string name="info_news_star_sky" formatted="false">Cuadrículas de Cielo y Cámara más ligeras, con la misma precisión angular.</string>
+    <string name="info_news_texture_downloads" formatted="false">Elige Encuadre o Panorama con un selector horizontal en ambas orientaciones.</string>
+    <string name="info_news_weather" formatted="false">Las capturas del Globo muestran una cuadrícula geográfica cada 15°.</string>
+    <string name="info_news_viewer_zoom" formatted="false">Las flechas arriba y abajo aclaran el selector Cielo, Cámara y Globo.</string>
+    <string name="info_news_settings" formatted="false">Paneles informativos más compactos con espacios uniformes.</string>
+    <string name="info_news_catalog" formatted="false">El enlace de la brújula ahora se llama Detalles de la posición real.</string>
 </resources>

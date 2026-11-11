@@ -1,9 +1,9 @@
 <resources>
     <string name="info_news_title">Последние новости · %1$s</string>
-    <string name="info_news_star_sky" formatted="false">Выбирайте Небо, Камеру или Глобус с понятными кнопками и обновлённым обучением.</string>
-    <string name="info_news_texture_downloads" formatted="false">Снимайте видимый участок неба или глобуса либо переключайтесь на полную панораму.</string>
-    <string name="info_news_weather" formatted="false">Экспортируйте кадр и панораму вместе с данными на момент съёмки.</string>
-    <string name="info_news_viewer_zoom" formatted="false">Сетки Неба и Камеры подстраивают светлый и тёмный контраст под фон.</string>
-    <string name="info_news_settings" formatted="false">Читайте более чёткие подписи глобуса, географических кругов и полюсов.</string>
-    <string name="info_news_catalog" formatted="false">Улучшены кнопки съёмки, масштабирование, портретная и альбомная компоновка.</string>
+    <string name="info_news_star_sky" formatted="false">Облегчены сетки Неба и Камеры с сохранением угловой точности.</string>
+    <string name="info_news_texture_downloads" formatted="false">Выбирайте Кадр или Панораму горизонтальным переключателем в обеих ориентациях.</string>
+    <string name="info_news_weather" formatted="false">На снимках Глобуса географическая сетка показана с шагом 15°.</string>
+    <string name="info_news_viewer_zoom" formatted="false">Стрелки сверху и снизу делают выбор Неба, Камеры и Глобуса понятнее.</string>
+    <string name="info_news_settings" formatted="false">Информационные панели стали компактнее, а отступы — равномернее.</string>
+    <string name="info_news_catalog" formatted="false">Ссылка компаса теперь называется Данные реального положения.</string>
 </resources>

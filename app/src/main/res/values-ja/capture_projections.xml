@@ -3,8 +3,8 @@
     <string name="capture_projection_frame" formatted="false">フレーム表示</string>
     <string name="capture_export_frame" formatted="false">フレーム表示 (JPG)</string>
     <string name="capture_export_panorama" formatted="false">パノラマ (JPG)</string>
-    <string name="capture_panorama_on">パノラマ表示を有効にしました</string>
-    <string name="capture_panorama_off">パノラマ表示を無効にしました</string>
+    <string name="capture_panorama_on">パノラマモード</string>
+    <string name="capture_panorama_off">フレームモード</string>
     <string name="capture_grid">グリッド</string>
     <string name="capture_grid_on">グリッドを表示しました</string>
     <string name="capture_grid_off">グリッドを非表示にしました</string>

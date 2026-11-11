@@ -15,47 +15,42 @@ import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.conflate
 import kotlinx.coroutines.ensureActive
 import kotlinx.coroutines.withContext
-import kotlin.math.hypot
 
-private data class SpaceCompassLiveCameraGrid(val size: IntSize,val paths: List<Path>)
+private data class SpaceCompassLiveCameraGrid(val size: IntSize,val path: Path)
 
-/** Decorative only: reuse camera rays, retain the last frame while Default prepares the next one. */
+/** Decorative only: one worker owns reusable projection buffers; drawing keeps an immutable frame. */
 @Composable
 internal fun SpaceCompassCameraGridLayer(orientation: SpaceCompassSunOrientation?,
     lens: SpaceCompassPerspective?,opticalFrame: SpaceCompassSunSceneFrame?,modifier: Modifier,tag: String="camera-angular-grid") {
     if(orientation==null||lens==null||opticalFrame==null) return
     var viewport by remember { mutableStateOf(IntSize.Zero) }
     val currentOrientation by rememberUpdatedState(orientation)
-    val drawing by produceState<SpaceCompassLiveCameraGrid?>(null,lens,opticalFrame,viewport) {
+    val drawing = produceState<SpaceCompassLiveCameraGrid?>(null,lens,opticalFrame,viewport) {
         val requestedSize=viewport
         if(requestedSize.width<=0||requestedSize.height<=0) { value=null;return@produceState }
-        // One worker consumes the latest pose, without cancelling every frame during a steady pan.
+        val width=requestedSize.width.toDouble();val height=requestedSize.height.toDouble()
+        val perspective=requireNotNull(spaceCompassSceneFramePerspective(width,height,opticalFrame,lens))
+        val projector=withContext(Dispatchers.Default) { SpaceCompassLiveGridProjector(width,height,perspective) }
+        // Conflate pending sensor samples, without cancelling a calculation during a steady pan.
         snapshotFlow { currentOrientation }.conflate().collect { pointing ->
             value=withContext(Dispatchers.Default) {
-                val width=requestedSize.width.toDouble();val height=requestedSize.height.toDouble()
-                val perspective=requireNotNull(spaceCompassSceneFramePerspective(width,height,opticalFrame,lens))
-                val grid=spaceCompassCameraAngularGrid(pointing,perspective,width,height,
-                    SpaceCompassSunSceneFrame(0.0,0.0,width,height),includeBorderTicks=false)
+                val path=Path()
+                projector.project(pointing,object : SpaceCompassLiveGridSink {
+                    override fun moveTo(x: Double,y: Double) { path.moveTo(x.toFloat(),y.toFloat()) }
+                    override fun lineTo(x: Double,y: Double) { path.lineTo(x.toFloat(),y.toFloat()) }
+                })
                 ensureActive()
-                val paths=grid.lines.map { line ->
-                    Path().apply {
-                        var end: SpaceCompassSunScenePoint?=null
-                        line.segments.forEach { segment ->
-                            if(end==null||hypot(end!!.x-segment.start.x,end!!.y-segment.start.y)>.2)
-                                moveTo(segment.start.x.toFloat(),segment.start.y.toFloat())
-                            lineTo(segment.end.x.toFloat(),segment.end.y.toFloat());end=segment.end
-                        }
-                    }
-                }
-                SpaceCompassLiveCameraGrid(requestedSize,paths)
+                SpaceCompassLiveCameraGrid(requestedSize,path)
             }
         }
     }
     Canvas(modifier.clipToBounds().onSizeChanged { viewport=it }.testTag(tag)) {
-        drawing?.takeIf { it.size==viewport }?.paths?.forEach { path ->
-            // Both tones remain available on mid-tones where inversion can match the background.
-            drawPath(path,Color(SpaceCompassAngularGridAppearance.liveShadowArgb),style=Stroke(SpaceCompassAngularGridAppearance.liveShadowDp.dp.toPx()))
-            drawPath(path,Color(SpaceCompassAngularGridAppearance.liveLineArgb),style=Stroke(SpaceCompassAngularGridAppearance.liveLineDp.dp.toPx()))
+        // Read the frame only in drawing, so publishing it never invalidates composition/layout.
+        drawing.value?.takeIf { it.size==viewport }?.let { grid ->
+            drawPath(grid.path,Color(SpaceCompassAngularGridAppearance.liveShadowArgb),
+                style=Stroke(SpaceCompassAngularGridAppearance.liveShadowDp.dp.toPx()))
+            drawPath(grid.path,Color(SpaceCompassAngularGridAppearance.liveLineArgb),
+                style=Stroke(SpaceCompassAngularGridAppearance.liveLineDp.dp.toPx()))
         }
     }
 }

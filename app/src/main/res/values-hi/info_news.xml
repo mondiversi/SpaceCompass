@@ -1,9 +1,9 @@
 <resources>
     <string name="info_news_title">हाल के बदलाव · %1$s</string>
-    <string name="info_news_star_sky" formatted="false">स्पष्ट नियंत्रण और अपडेट किए गए ट्यूटोरियल के साथ आकाश, कैमरा या ग्लोब चुनें।</string>
-    <string name="info_news_texture_downloads" formatted="false">आकाश या ग्लोब का दिखाई देने वाला फ्रेम लें या पूर्ण पैनोरमा चुनें।</string>
-    <string name="info_news_weather" formatted="false">कैप्चर के समय के स्थिर डेटा के साथ फ्रेम और पैनोरमा एक साथ निर्यात करें।</string>
-    <string name="info_news_viewer_zoom" formatted="false">आकाश और कैमरा की ग्रिड पृष्ठभूमि के अनुसार अपना हल्का या गहरा कंट्रास्ट बदलती हैं।</string>
-    <string name="info_news_settings" formatted="false">ग्लोब के लेबल, भौगोलिक वृत्त और ध्रुवों के नाम अधिक स्पष्ट पढ़ें।</string>
-    <string name="info_news_catalog" formatted="false">कैप्चर नियंत्रण, ज़ूम और पोर्ट्रेट व लैंडस्केप लेआउट में सुधार।</string>
+    <string name="info_news_star_sky" formatted="false">आकाश और कैमरा की ग्रिड अब हल्की हैं और कोणीय सटीकता समान है।</string>
+    <string name="info_news_texture_downloads" formatted="false">दोनों स्क्रीन दिशाओं में क्षैतिज स्विच से फ़्रेम या पैनोरमा चुनें।</string>
+    <string name="info_news_weather" formatted="false">ग्लोब की तस्वीरों में 15° अंतराल पर अधिक विस्तृत भौगोलिक ग्रिड दिखती है।</string>
+    <string name="info_news_viewer_zoom" formatted="false">ऊपर और नीचे के तीर आकाश, कैमरा और ग्लोब का चयन स्पष्ट करते हैं।</string>
+    <string name="info_news_settings" formatted="false">सूचना पैनल अधिक सघन हैं और उनके बीच समान दूरी है।</string>
+    <string name="info_news_catalog" formatted="false">कंपास लिंक अब वास्तविक स्थान का विवरण कहलाता है।</string>
 </resources>

@@ -1,9 +1,9 @@
 <resources>
     <string name="info_news_title">최근 변경 사항 · %1$s</string>
-    <string name="info_news_star_sky" formatted="false">더 명확한 조작과 업데이트된 튜토리얼로 하늘, 카메라 또는 지구본을 선택하세요.</string>
-    <string name="info_news_texture_downloads" formatted="false">보이는 하늘이나 지구본 프레임을 촬영하거나 전체 파노라마로 전환하세요.</string>
-    <string name="info_news_weather" formatted="false">촬영 시점의 고정된 데이터로 프레임과 파노라마를 함께 내보내세요.</string>
-    <string name="info_news_viewer_zoom" formatted="false">하늘과 카메라 격자가 배경에 맞춰 밝고 어두운 대비를 조절합니다.</string>
-    <string name="info_news_settings" formatted="false">지구본 라벨, 지리적 원과 극 이름을 더 선명하게 읽으세요.</string>
-    <string name="info_news_catalog" formatted="false">촬영 조작, 줌, 세로 및 가로 배치를 개선했습니다.</string>
+    <string name="info_news_star_sky" formatted="false">하늘과 카메라 격자를 가볍게 개선하면서 각도 정확도를 유지했습니다.</string>
+    <string name="info_news_texture_downloads" formatted="false">세로와 가로 방향 모두에서 나란한 스위치로 프레임과 파노라마를 선택합니다.</string>
+    <string name="info_news_weather" formatted="false">지구본 캡처에 15° 간격의 더 촘촘한 지리 격자를 표시합니다.</string>
+    <string name="info_news_viewer_zoom" formatted="false">위아래 화살표로 하늘, 카메라, 지구본 모드 선택을 더 명확히 했습니다.</string>
+    <string name="info_news_settings" formatted="false">정보 패널을 더 간결하게 만들고 간격을 통일했습니다.</string>
+    <string name="info_news_catalog" formatted="false">나침반 링크 이름이 실제 위치 세부 정보로 변경되었습니다.</string>
 </resources>

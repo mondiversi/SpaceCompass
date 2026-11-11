@@ -1,9 +1,9 @@
 <resources>
     <string name="info_news_title">Son yenilikler · %1$s</string>
-    <string name="info_news_star_sky" formatted="false">Daha anlaşılır kontroller ve güncel öğreticiyle Gökyüzü, Kamera veya Küre seçin.</string>
-    <string name="info_news_texture_downloads" formatted="false">Görünen gökyüzü veya küre çerçevesini yakalayın ya da tam panoramaya geçin.</string>
-    <string name="info_news_weather" formatted="false">Çerçeveyi ve panoramayı çekim anındaki verilerle birlikte dışa aktarın.</string>
-    <string name="info_news_viewer_zoom" formatted="false">Gökyüzü ve Kamera ızgaraları açık-koyu kontrastını arka plana uyarlar.</string>
-    <string name="info_news_settings" formatted="false">Küre etiketlerini, coğrafi daireleri ve kutup adlarını daha net okuyun.</string>
-    <string name="info_news_catalog" formatted="false">Çekim kontrolleri, yakınlaştırma, dikey ve yatay düzenler iyileştirildi.</string>
+    <string name="info_news_star_sky" formatted="false">Gökyüzü ve Kamera ızgaraları aynı açısal doğrulukla daha hafif çalışır.</string>
+    <string name="info_news_texture_downloads" formatted="false">Her iki ekran yönünde yatay anahtarla Kadraj veya Panorama seçin.</string>
+    <string name="info_news_weather" formatted="false">Küre çekimleri 15° aralıklı daha ayrıntılı coğrafi ızgara gösterir.</string>
+    <string name="info_news_viewer_zoom" formatted="false">Üst ve alt oklar Gökyüzü, Kamera ve Küre seçimini daha anlaşılır kılar.</string>
+    <string name="info_news_settings" formatted="false">Bilgi panelleri daha kompakt, aralıkları daha tutarlı.</string>
+    <string name="info_news_catalog" formatted="false">Pusula bağlantısının adı artık Gerçek konum ayrıntıları.</string>
 </resources>

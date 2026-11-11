@@ -186,16 +186,14 @@ internal fun SpaceCompassPanoramaPreview(data: SpaceCompassPanoramaPreviewData, 
         else if (data.cameraPhoto == null) R.string.view_mode_sky else R.string.view_mode_camera)
     val projectionControl: (@Composable () -> Unit)? = if(data.cameraPhoto==null&&data.snapshot!=null) {
         {
-            SpaceCompassPanoramaCircleButton(stringResource(R.string.panorama_preview_title),{
-                val next=if(requestedProjection==SpaceCompassCaptureProjection.PANORAMA) SpaceCompassCaptureProjection.FRAME else SpaceCompassCaptureProjection.PANORAMA
-                requestedProjection=next
-                preferences?.edit()?.putBoolean(spaceCompassCaptureProjectionKey(globePreview),next==SpaceCompassCaptureProjection.PANORAMA)?.apply()
-                notify(if(next==SpaceCompassCaptureProjection.PANORAMA) R.string.capture_panorama_on else R.string.capture_panorama_off)
-            },Modifier.testTag("capture-projection-toggle"),
-                enabled=!export.saving&&hasFraming&&positionReady,checked=requestedProjection==SpaceCompassCaptureProjection.PANORAMA,filled=true,
-                glyphInk=spaceCompassFloatingInk(26f,.10f,.175f,.90f,.825f)) {
-                SpaceCompassSettingsMenuIcon("panorama-image",LocalContentColor.current,Modifier.size(26.dp),iconStrokeWidth=2.1.dp)
-            }
+            SpaceCompassCaptureProjectionSwitch(requestedProjection,
+                enabled=!export.saving&&hasFraming&&positionReady,onSelect={ next ->
+                    if(next!=requestedProjection) {
+                        requestedProjection=next
+                        preferences?.edit()?.putBoolean(spaceCompassCaptureProjectionKey(globePreview),next==SpaceCompassCaptureProjection.PANORAMA)?.apply()
+                        notify(if(next==SpaceCompassCaptureProjection.PANORAMA) R.string.capture_panorama_on else R.string.capture_panorama_off)
+                    }
+                })
         }
     } else null
     BoxWithConstraints(Modifier.fillMaxSize().background(background).testTag("panorama-preview")) {

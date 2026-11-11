@@ -1,9 +1,9 @@
 <resources>
     <string name="info_news_title">Latest news · %1$s</string>
-    <string name="info_news_star_sky" formatted="false">Choose Sky, Camera or Globe, with clearer controls and an updated tutorial.</string>
-    <string name="info_news_texture_downloads" formatted="false">Capture the visible Sky or Globe frame, or switch to a complete panorama.</string>
-    <string name="info_news_weather" formatted="false">Export the frame and panorama together, with data frozen at capture time.</string>
-    <string name="info_news_viewer_zoom" formatted="false">Live Sky and Camera grids adapt their light/dark contrast to the background.</string>
-    <string name="info_news_settings" formatted="false">Read clearer Globe labels, geographic circles and pole names.</string>
-    <string name="info_news_catalog" formatted="false">Improved capture controls, zoom and portrait/landscape layouts.</string>
+    <string name="info_news_star_sky" formatted="false">Lighter Sky and Camera grids with unchanged angular precision.</string>
+    <string name="info_news_texture_downloads" formatted="false">Choose Frame or Panorama with a side-by-side switch in both orientations.</string>
+    <string name="info_news_weather" formatted="false">Globe captures show a finer geographic grid at 15° intervals.</string>
+    <string name="info_news_viewer_zoom" formatted="false">Up/down arrows make the Sky, Camera and Globe mode selector clearer.</string>
+    <string name="info_news_settings" formatted="false">More compact information panels with matching spacing.</string>
+    <string name="info_news_catalog" formatted="false">The compass link is now called Real position details.</string>
 </resources>

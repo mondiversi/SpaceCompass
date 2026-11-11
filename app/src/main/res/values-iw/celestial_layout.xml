@@ -6,7 +6,7 @@
     <string name="celestial_environment_info_action">מידע על כיוון וסביבה</string>
     <string name="celestial_environment_orientation_note">הכיוון וההטיה מתארים לאן הטלפון מצביע. עצמים מגנטיים עלולים להשפיע על המצפן. דיוק GPS מציין את אי הוודאות המשוערת של המיקום.</string>
     <string name="celestial_altitude">גובה: %1$s</string>
-    <string name="celestial_details_compact">קואורדינטות GPS ופרטים</string>
+    <string name="celestial_details_compact">פרטי המיקום האמיתי</string>
     <string name="celestial_gps_coordinates">קואורדינטות GPS: %1$s</string>
     <string name="celestial_gps_coordinate_accuracy">דיוק הקואורדינטות: ±%1$s</string>
 </resources>

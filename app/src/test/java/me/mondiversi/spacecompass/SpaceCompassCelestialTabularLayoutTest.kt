@@ -116,7 +116,7 @@ class SpaceCompassCelestialTabularLayoutTest {
         val panel = source("SpaceCompassSunFinderDataPanel.kt")
         assertTrue(source("SpaceCompassCelestialBodyDataIsland.kt").contains("sun-finder-body-data"))
         assertTrue(panel.contains("sun-finder-environment-data"))
-        assertTrue(panel.contains("verticalArrangement = Arrangement.spacedBy(8.dp)"))
+        assertTrue(panel.contains("verticalArrangement = Arrangement.spacedBy(5.dp)"))
         assertTrue(panel.contains(".verticalScroll(scroll)"))
         assertTrue(panel.contains("textAlign = TextAlign.End"))
         assertTrue(panel.contains("fontFeatureSettings = \"tnum\""))

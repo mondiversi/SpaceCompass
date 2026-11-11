@@ -3,8 +3,8 @@
     <string name="capture_projection_frame" formatted="false">Enquadramento</string>
     <string name="capture_export_frame" formatted="false">Enquadramento (JPG)</string>
     <string name="capture_export_panorama" formatted="false">Panorama (JPG)</string>
-    <string name="capture_panorama_on">Vista panorâmica ativada</string>
-    <string name="capture_panorama_off">Vista panorâmica desativada</string>
+    <string name="capture_panorama_on">Modo panorâmico</string>
+    <string name="capture_panorama_off">Modo enquadramento</string>
     <string name="capture_grid">Grade</string>
     <string name="capture_grid_on">Grade visível</string>
     <string name="capture_grid_off">Grade oculta</string>

@@ -1,9 +1,9 @@
 <resources>
     <string name="info_news_title">Mambo mapya · %1$s</string>
-    <string name="info_news_star_sky" formatted="false">Chagua Anga, Kamera au Dunia kwa vidhibiti wazi zaidi na mafunzo yaliyosasishwa.</string>
-    <string name="info_news_texture_downloads" formatted="false">Nasa sehemu inayoonekana ya anga au dunia, au badili hadi panorama kamili.</string>
-    <string name="info_news_weather" formatted="false">Hamisha sehemu na panorama pamoja kwa data ya wakati wa kunasa.</string>
-    <string name="info_news_viewer_zoom" formatted="false">Gridi za Anga na Kamera hurekebisha utofauti wa mwanga na giza kulingana na mandharinyuma.</string>
-    <string name="info_news_settings" formatted="false">Soma kwa uwazi lebo za dunia, miduara ya kijiografia na majina ya ncha.</string>
-    <string name="info_news_catalog" formatted="false">Vidhibiti vya kunasa, ukuzaji na mpangilio wima na mlalo vimeboreshwa.</string>
+    <string name="info_news_star_sky" formatted="false">Gridi za Anga na Kamera ni nyepesi zaidi huku usahihi wa pembe ukibaki uleule.</string>
+    <string name="info_news_texture_downloads" formatted="false">Chagua Fremu au Panorama kwa swichi ya mlalo katika mielekeo yote miwili ya skrini.</string>
+    <string name="info_news_weather" formatted="false">Picha za Globu zina gridi ya kijiografia iliyo na vipindi vya 15°.</string>
+    <string name="info_news_viewer_zoom" formatted="false">Vishale vya juu na chini hufafanua chaguo la Anga, Kamera na Globu.</string>
+    <string name="info_news_settings" formatted="false">Paneli za taarifa zimebanwa zaidi na nafasi kati yake zinalingana.</string>
+    <string name="info_news_catalog" formatted="false">Kiungo cha dira sasa kinaitwa Maelezo ya mahali halisi.</string>
 </resources>

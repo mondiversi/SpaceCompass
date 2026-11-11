@@ -1,9 +1,9 @@
 <resources>
     <string name="info_news_title">آخر المستجدات · %1$s</string>
-    <string name="info_news_star_sky" formatted="false">اختر السماء أو الكاميرا أو الكرة الأرضية مع أزرار أوضح ودليل محدّث.</string>
-    <string name="info_news_texture_downloads" formatted="false">التقط الإطار المرئي للسماء أو الكرة الأرضية أو انتقل إلى بانوراما كاملة.</string>
-    <string name="info_news_weather" formatted="false">صدّر الإطار والبانوراما معًا ببيانات ثابتة من لحظة الالتقاط.</string>
-    <string name="info_news_viewer_zoom" formatted="false">تتكيف شبكات السماء والكاميرا مع الخلفية بتباين فاتح أو داكن.</string>
-    <string name="info_news_settings" formatted="false">اقرأ تسميات الكرة الأرضية والدوائر الجغرافية وأسماء القطبين بوضوح أكبر.</string>
-    <string name="info_news_catalog" formatted="false">تحسين أزرار الالتقاط والتكبير والتخطيطات الرأسية والأفقية.</string>
+    <string name="info_news_star_sky" formatted="false">شبكات السماء والكاميرا أخف مع الحفاظ على الدقة الزاوية.</string>
+    <string name="info_news_texture_downloads" formatted="false">اختر الإطار أو البانوراما بمفتاح أفقي في كلا اتجاهي الشاشة.</string>
+    <string name="info_news_weather" formatted="false">تعرض لقطات الكرة الأرضية شبكة جغرافية أدق بفواصل 15°.</string>
+    <string name="info_news_viewer_zoom" formatted="false">سهمان في الأعلى والأسفل يوضحان اختيار السماء والكاميرا والكرة الأرضية.</string>
+    <string name="info_news_settings" formatted="false">لوحات معلومات أكثر إحكامًا بمسافات متناسقة.</string>
+    <string name="info_news_catalog" formatted="false">أصبح رابط البوصلة باسم تفاصيل الموقع الفعلي.</string>
 </resources>

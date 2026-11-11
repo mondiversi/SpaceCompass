@@ -1,5 +1,14 @@
 # Changelog
 
+## 1.9.2 — 2026-11-11
+
+- Reduce live Sky/Camera grid work with a dedicated projector, reusable buffers, early rejection of invisible segments and two draw calls, retaining angular precision, stroke style and existing capture/export geometry.
+- Replace the capture projection toggle with explicit Frame/Panorama choices side by side in portrait and landscape; show the selected mode in localized status messages.
+- Refine spherical and flat Globe capture graticules to 15° latitude/longitude intervals.
+- Add small up/down chevrons to the Sky/Camera/Globe selector without changing the active icon or touch target.
+- Match the information-panel gap and portrait bottom inset at 5 dp; rename the compass link to Real position details.
+- Update in-app News in all twenty languages and release documentation. Keep the catalogue and individual-download graphics collection unchanged.
+
 ## 1.9.1 — 2026-11-10
 
 - Rename the virtual view to Sky and add a remembered Frame/Panorama switch for Sky and Globe captures. Camera keeps its single photographed frame.
