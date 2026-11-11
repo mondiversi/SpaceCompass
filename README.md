@@ -35,19 +35,15 @@ See Space Compass in portrait and landscape, by day and by night. These English 
       <sub>Daylight sky</sub>
     </td>
     <td align="center">
-      <a href="docs/screenshots/full/02-night-sky-portrait.webp"><img src="docs/screenshots/thumbs/02-night-sky-portrait.webp" width="220" alt="Night sky in Space Compass"></a><br>
-      <sub>Night sky</sub>
-    </td>
-    <td align="center">
       <a href="docs/screenshots/full/03-observatory-portrait.webp"><img src="docs/screenshots/thumbs/03-observatory-portrait.webp" width="220" alt="Saturn Observatory in Space Compass"></a><br>
       <sub>Saturn Observatory</sub>
     </td>
-  </tr>
-  <tr>
     <td align="center">
       <a href="docs/screenshots/full/04-daily-path-portrait.webp"><img src="docs/screenshots/thumbs/04-daily-path-portrait.webp" width="220" alt="Daily path in Space Compass"></a><br>
       <sub>Daily path</sub>
     </td>
+  </tr>
+  <tr>
     <td align="center">
       <a href="docs/screenshots/full/05-catalogue-portrait.webp"><img src="docs/screenshots/thumbs/05-catalogue-portrait.webp" width="220" alt="Catalogue and filters in Space Compass"></a><br>
       <sub>Catalogue and filters</sub>
@@ -56,39 +52,9 @@ See Space Compass in portrait and landscape, by day and by night. These English 
       <a href="docs/screenshots/full/06-location-portrait.webp"><img src="docs/screenshots/thumbs/06-location-portrait.webp" width="220" alt="Location management in Space Compass"></a><br>
       <sub>Location management</sub>
     </td>
-  </tr>
-  <tr>
-    <td align="center">
-      <a href="docs/screenshots/full/07-key-heights-portrait.webp"><img src="docs/screenshots/thumbs/07-key-heights-portrait.webp" width="220" alt="Key heights in Space Compass"></a><br>
-      <sub>Key heights</sub>
-    </td>
-    <td align="center">
-      <a href="docs/screenshots/full/08-key-events-portrait.webp"><img src="docs/screenshots/thumbs/08-key-events-portrait.webp" width="220" alt="Key events in Space Compass"></a><br>
-      <sub>Key events</sub>
-    </td>
-    <td align="center">
-      <a href="docs/screenshots/full/12-export-portrait.webp"><img src="docs/screenshots/thumbs/12-export-portrait.webp" width="220" alt="Data export in Space Compass"></a><br>
-      <sub>Data export</sub>
-    </td>
-  </tr>
-  <tr>
-    <td align="center">
-      <a href="docs/screenshots/full/13-general-portrait.webp"><img src="docs/screenshots/thumbs/13-general-portrait.webp" width="220" alt="General settings in Space Compass"></a><br>
-      <sub>General settings</sub>
-    </td>
     <td align="center">
       <a href="docs/screenshots/full/15-globe-day-portrait.webp"><img src="docs/screenshots/thumbs/15-globe-day-portrait.webp" width="220" alt="Interactive Globe in Space Compass"></a><br>
       <sub>Interactive Globe</sub>
-    </td>
-    <td align="center">
-      <a href="docs/screenshots/full/16-globe-labels-portrait.webp"><img src="docs/screenshots/thumbs/16-globe-labels-portrait.webp" width="220" alt="Globe label options in Space Compass"></a><br>
-      <sub>Globe label options</sub>
-    </td>
-  </tr>
-  <tr>
-    <td align="center">
-      <a href="docs/screenshots/full/17-tutorial-globe-portrait.webp"><img src="docs/screenshots/thumbs/17-tutorial-globe-portrait.webp" width="220" alt="Interactive tutorial in Space Compass"></a><br>
-      <sub>Interactive tutorial</sub>
     </td>
   </tr>
 </table>
@@ -122,12 +88,6 @@ See Space Compass in portrait and landscape, by day and by night. These English 
     <td align="center">
       <a href="docs/screenshots/full/19-globe-capture-landscape.webp"><img src="docs/screenshots/thumbs/19-globe-capture-landscape.webp" width="350" alt="Landscape Globe capture in Space Compass"></a><br>
       <sub>Landscape Globe capture</sub>
-    </td>
-  </tr>
-  <tr>
-    <td align="center">
-      <a href="docs/screenshots/full/20-view-modes-landscape.webp"><img src="docs/screenshots/thumbs/20-view-modes-landscape.webp" width="350" alt="Three viewing modes in Space Compass"></a><br>
-      <sub>Three viewing modes</sub>
     </td>
   </tr>
 </table>
