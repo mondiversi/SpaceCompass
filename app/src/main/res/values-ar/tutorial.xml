@@ -11,25 +11,25 @@
     <string name="tutorial_menu" formatted="false">افتح الإعدادات والمشاهد المحفوظة والدليل.</string>
     <string name="tutorial_objects" formatted="false">اختر الأجسام المعروضة. ابحث وصفِّ واحفظ المفضلة.</string>
     <string name="tutorial_location" formatted="false">خصّص الموقع والارتفاع والمنطقة الزمنية والتاريخ والوقت وسرعة الزمن.</string>
-    <string name="tutorial_guides" formatted="false">أظهر الدوائر السماوية والقطبين والسمت والنظير. هذه إسقاطات سماوية وليست مسارات أرضية.</string>
-    <string name="tutorial_forward" formatted="false">يعرض 0–24 اليوم التقويمي كاملًا من منتصف الليل إلى منتصف الليل. ويعرض +24h الساعات الأربع والعشرين التالية من الوقت المعروض، حتى لو كان محاكى. تستخدم المسارات واللقطات والتصدير الفترة نفسها.</string>
-    <string name="tutorial_camera" formatted="false">اختر السماء أو الكاميرا أو الكرة الأرضية واستكشف أدوات التحكم.</string>
-    <string name="tutorial_weather" formatted="false">أظهر أو أخفِ الطقس في السماء المحاكاة والبانوراما. غير متاح في وضع الكاميرا.</string>
-    <string name="tutorial_axis" formatted="false">اختر محور الكاميرا (90°) أو طول الهاتف (0°). تستخدم الكاميرا محورها دائمًا.</string>
-    <string name="tutorial_transparency" formatted="false">اجعل صور الأجسام شبه شفافة لمقارنتها بالكاميرا. تحتفظ اللقطة بهذا الاختيار.</string>
+    <string name="tutorial_guides" formatted="false">اختر الشبكة وأرقامها وخطوط الكوكب، ثم اضغط تطبيق.</string>
+    <string name="tutorial_forward" formatted="false">يعرض 0–24 اليوم الكامل، و+24h الساعات الأربع والعشرين من الوقت المعروض.</string>
+    <string name="tutorial_camera" formatted="false">اختر الوضع والعرض ثم اضغط تطبيق. إغلاق يُبقي الخيارات الحالية.</string>
+    <string name="tutorial_weather" formatted="false">أظهر أو أخفِ الطقس في السماء المحاكاة والبانوراما.</string>
+    <string name="tutorial_axis" formatted="false">اختر محور الكاميرا (90°) أو طول الهاتف (0°).</string>
+    <string name="tutorial_transparency" formatted="false">اجعل صور الأجسام شبه شفافة لمقارنتها بالكاميرا.</string>
     <string name="tutorial_zoom" formatted="false">كبّر أو صغّر باستخدام الزر أو إصبعين.</string>
     <string name="tutorial_capture" formatted="false">جهّز صورة. اختر الشبكة والتسميات والموقع في المعاينة؛ وفي السماء والكرة الأرضية بدّل بين الإطار والبانوراما.</string>
     <string name="tutorial_panels" formatted="false">اطوِ أو وسّع لوحتي الجسم والبوصلة لإظهار مساحة أكبر من السماء.</string>
-    <string name="tutorial_antipodes" formatted="false">المس لإظهار أو إخفاء الاتجاه المعاكس للنقاط المحددة: السمت +180° والارتفاع بعلامة معاكسة. اضغط مطولاً لإلغاء تحديد جميع النقاط.</string>
+    <string name="tutorial_antipodes" formatted="false">اضغط لإظهار النقاط المقابلة أو إخفائها. اضغط مطولاً لإلغاء تحديد جميع النقاط.</string>
     <string name="tutorial_navigation" formatted="false">تنقّل بين الأجسام المحددة. تعرض اللوحة الجسم النشط وألوان مساره.</string>
     <string name="tutorial_observatory" formatted="false">افتح بيانات الجرم ومساراته وارتفاعاته وأحداثه ولحظاته الشخصية.</string>
     <string name="tutorial_daily" formatted="false">اعرض المسار والأوقات والارتفاعات والنقاط القابلة للتحديد. يمكن تذكيرك بالأحداث المستقبلية.</string>
     <string name="tutorial_gps" formatted="false">اعرض موقعك الحقيقي وارتفاع GPS والاتجاه والطقس، بصورة مستقلة عن Location.</string>
-    <string name="tutorial_points" formatted="false">حدّد نقطة مدارية. وجّه المؤشر إليها لقراءة الجسم والوقت وT والسمت والارتفاع. تتبع حدود الجرم لون مساره؛ وتصبح زرقاء أو سماوية عند تحديد موقعه الحالي.</string>
-    <string name="tutorial_reticle_title" formatted="false">الوقت والأيقونات</string>
-    <string name="tutorial_reticle" formatted="false">المس مساحة فارغة لإيقاف الوقت أو استئنافه. اللمس مرتين يظهر أو يخفي المؤشر والأيقونات؛ وفي السماء والكاميرا الشبكة أيضًا.</string>
+    <string name="tutorial_points" formatted="false">حدد نقطة أو ألغِ تحديدها. وجّه المؤشر لقراءة الوقت وT والسمت والارتفاع.</string>
+    <string name="tutorial_reticle_title" formatted="false">الوقت والواجهة</string>
+    <string name="tutorial_reticle" formatted="false">المس مساحة فارغة لإيقاف الوقت أو استئنافه. انقر مرتين لإظهار الواجهة واللوحات أو إخفائها.</string>
     <string name="tutorial_reminder" formatted="false">افتح منبه Android أو التقويم لحدث مستقبلي مناسب. لا يشمل الأحداث الماضية أو النقطة الحالية.</string>
     <string name="tutorial_status_title" formatted="false">الحالة والاستعادة</string>
-    <string name="tutorial_status" formatted="false">اقرأ الحالة الحالية. قد يطلب الإجراء إذنًا أو يفعّل الموقع أو يعيد تحميل بيانات المدار أو الطقس. لا ينفّذ الدليل الإجراء.</string>
-    <string name="tutorial_remove" formatted="false">أزل الجسم النشط من الأجسام المحددة بعد التأكيد. يبقى الجسم متاحًا في الكتالوج.</string>
+    <string name="tutorial_status" formatted="false">تحقق من الحالة والإجراءات المتاحة للموقع والطقس والبيانات المدارية.</string>
+    <string name="tutorial_remove" formatted="false">أزل الجسم النشط من الأجسام المحددة بعد التأكيد.</string>
 </resources>

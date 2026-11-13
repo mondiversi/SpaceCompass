@@ -1,0 +1,7 @@
+<resources>
+    <string name="tutorial_mode_sky_frame" formatted="false">휴대전화를 움직여 하늘을 살펴봅니다. 보기 모드에서 날씨를 선택합니다.</string>
+    <string name="tutorial_mode_sky_panorama" formatted="false">드래그하여 하늘을 탐색합니다. 라벨 버튼으로 라벨을, 보기 모드에서 날씨를 선택합니다.</string>
+    <string name="tutorial_mode_camera" formatted="false">카메라로 비춘 하늘 위에 천체를 겹쳐 봅니다.</string>
+    <string name="tutorial_mode_globe_frame" formatted="false">지구를 회전해 궤적과 지점을 확인합니다.</string>
+    <string name="tutorial_mode_globe_panorama" formatted="false">평면 지구 지도에서 궤적을 탐색합니다.</string>
+</resources>

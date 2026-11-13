@@ -1,0 +1,4 @@
+<resources>
+    <string name="view_mode_weather" formatted="false">Wetter</string>
+    <string name="tutorial_sky_labels" formatted="false">Wähle Beschriftungen im Panorama. Nutze im Bildausschnitt das Fadenkreuz.</string>
+</resources>

@@ -1,9 +1,9 @@
 <resources>
     <string name="info_news_title">Neuigkeiten · %1$s</string>
-    <string name="info_news_star_sky" formatted="false">Leichtere Raster in Himmel und Kamera bei gleicher Winkelgenauigkeit.</string>
-    <string name="info_news_texture_downloads" formatted="false">Bildausschnitt und Panorama stehen in beiden Ausrichtungen nebeneinander zur Wahl.</string>
-    <string name="info_news_weather" formatted="false">Globus-Aufnahmen zeigen ein feineres geografisches Raster in 15°-Schritten.</string>
-    <string name="info_news_viewer_zoom" formatted="false">Pfeile nach oben und unten verdeutlichen die Auswahl von Himmel, Kamera und Globus.</string>
-    <string name="info_news_settings" formatted="false">Kompaktere Informationsbereiche mit einheitlichen Abständen.</string>
-    <string name="info_news_catalog" formatted="false">Der Kompass-Link heißt jetzt Details zur realen Position.</string>
+    <string name="info_news_star_sky" formatted="false">Erkunde Himmel und Globus als Bildausschnitt oder Panorama mit gespeicherten Anzeigeoptionen.</string>
+    <string name="info_news_texture_downloads" formatted="false">Flüssigere Globusnavigation, stabiler Bildausschnitt und kompakte Objektauswahl.</string>
+    <string name="info_news_weather" formatted="false">Wähle Referenzgitter, Zahlen und Planetenlinien gemeinsam; Aufnahmen übernehmen deine Auswahl.</string>
+    <string name="info_news_viewer_zoom" formatted="false">Wähle Beschriftungen in Himmelspanoramen und Globusansichten; Wetter steht jetzt unter Ansicht.</string>
+    <string name="info_news_settings" formatted="false">Kompakte Zoommenüs sind zur Taste zentriert und heben den gewählten Wert hervor.</string>
+    <string name="info_news_catalog" formatted="false">Aktualisierte Anleitung, klarere Dialoge und Szenenexporte mit gespeichertem Pausenzeitpunkt.</string>
 </resources>

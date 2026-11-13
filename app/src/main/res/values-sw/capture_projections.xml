@@ -8,4 +8,8 @@
     <string name="capture_grid">Gridi</string>
     <string name="capture_grid_on">Gridi inaonekana</string>
     <string name="capture_grid_off">Gridi imefichwa</string>
+    <string name="view_mode_sky_frame" formatted="false">Anga (Mwonekano wa fremu)</string>
+    <string name="view_mode_sky_panorama" formatted="false">Anga (Panorama)</string>
+    <string name="view_mode_globe_frame" formatted="false">Tufe la Dunia (Mwonekano wa fremu)</string>
+    <string name="view_mode_globe_panorama" formatted="false">Tufe la Dunia (Panorama)</string>
 </resources>

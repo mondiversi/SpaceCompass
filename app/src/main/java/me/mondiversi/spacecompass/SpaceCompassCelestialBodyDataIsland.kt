@@ -26,6 +26,7 @@ import androidx.compose.ui.semantics.Role
 import androidx.compose.ui.semantics.clearAndSetSemantics
 import androidx.compose.ui.semantics.heading
 import androidx.compose.ui.semantics.semantics
+import androidx.compose.ui.text.rememberTextMeasurer
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.text.style.TextOverflow
@@ -44,8 +45,16 @@ internal data class SpaceCompassCelestialBodyNavigation(val previousLabel: Strin
 internal fun SpaceCompassCelestialBodyDataIsland(bodyName: String?, primaryText: Color, background: Color,
     compact: Boolean, navigation: SpaceCompassCelestialBodyNavigation?,
     bodyNameColor: Color = primaryText, onBodyNameClick: (() -> Unit)? = null,
-    onDailyPath: (() -> Unit)? = null,
+    onDailyPath: (() -> Unit)? = null, headerOnly: Boolean = false,
+    dailyPathLeading: Boolean = false, markerRotation: Float = 0f, dailyPathRotation: Float = 0f,
     content: @Composable ColumnScope.() -> Unit) {
+    val nameFontSize = if (compact) 12.sp else 14.sp
+    val nameStyle = LocalTextStyle.current.copy(shadow = null, fontSize = nameFontSize, fontWeight = FontWeight.Medium)
+    val nameMeasurer = rememberTextMeasurer()
+    val measuredNameHeight = remember(bodyName, nameStyle, nameMeasurer) {
+        nameMeasurer.measure(bodyName.orEmpty(), nameStyle, maxLines = 1, softWrap = false).size.height
+    }
+    val headerContentHeight = maxOf(measuredNameHeight, with(LocalDensity.current) { 20.dp.roundToPx() })
     val shape = RoundedCornerShape(20.dp)
     val nameTutorial = rememberSpaceCompassTutorialAnchor(SpaceCompassTutorialFeature.OBSERVATORY,
         enabled = onBodyNameClick != null)
@@ -53,22 +62,47 @@ internal fun SpaceCompassCelestialBodyDataIsland(bodyName: String?, primaryText:
     // Absorb blank-surface taps; child navigation and details actions keep priority.
     Column(Modifier.fillMaxWidth().testTag("sun-finder-body-data").clip(shape)
         .spaceCompassSceneInputShield().background(spaceCompassSettingsCardColor().copy(alpha = SPACE_COMPASS_MAIN_OVERLAY_ALPHA))
-        .padding(horizontal = 10.dp)) {
+    ) {
         if (bodyName != null || navigation != null) {
             // Compact only the title bar; retain the normal insets around the data below it.
-            Row(Modifier.fillMaxWidth().testTag("celestial-body-header")
-                // Bring the divider into the unused lower touch inset; targets retain their full height.
+            Row(Modifier.fillMaxWidth().testTag("celestial-body-header").padding(horizontal = 16.dp)
+                // Halve empty space around the unchanged text/glyphs; action children retain their full targets.
                 .layout { measurable, constraints ->
                     val header = measurable.measure(constraints)
-                    layout(header.width, (header.height - 3.dp.roundToPx()).coerceAtLeast(0)) {
-                        header.placeRelative(0, 0)
+                    val previousHeight = header.height - if (headerOnly) 0 else 3.dp.roundToPx()
+                    val visibleHeight = (headerContentHeight + (previousHeight-headerContentHeight).coerceAtLeast(0)/2)
+                        .coerceAtMost(header.height)
+                    layout(header.width, visibleHeight) {
+                        header.placeRelative(0, (visibleHeight-header.height)/2)
                     }
                 }
                 .padding(vertical = 1.dp), verticalAlignment = Alignment.CenterVertically) {
+                // Match the actual painted outer edge to the opposite chevron, not the canvas edge.
+                val dailyAction: @Composable () -> Unit = {
+                    if (onDailyPath != null) {
+                        val pathTutorial = rememberSpaceCompassTutorialAnchor(SpaceCompassTutorialFeature.DAILY)
+                        val ink = spaceCompassExportIconInkSize(1.4.dp, 20.dp)
+                        val axisInk = if (dailyPathRotation % 180f == 0f) ink.width else ink.height
+                        // Retain the established inner gap independently of the outer island inset.
+                        val halfGap = (2.dp + 34.dp - ink.width) / 2
+                        val slotWidth = axisInk + halfGap - 1.dp
+                        val edgeCorrection = (slotWidth - axisInk) / 2
+                        if (!dailyPathLeading) Spacer(Modifier.width(1.dp))
+                        SpaceCompassCelestialIconControl(false, stringResource(R.string.celestial_daily_path), onDailyPath,
+                            Modifier.width(slotWidth).offset(x = if (dailyPathLeading) -edgeCorrection else edgeCorrection)
+                                .testTag("celestial-body-daily-path").then(pathTutorial?.touchModifier ?: Modifier),
+                            role = Role.Button, plainTint = primaryText) {
+                            SpaceCompassTutorialIconHighlight(pathTutorial) {
+                                Box(Modifier.rotate(dailyPathRotation)) { SpaceCompassDailyPathIcon(20.dp, 1.4.dp) }
+                            }
+                        }
+                        if (dailyPathLeading) Spacer(Modifier.width(1.dp))
+                    }
+                }
+                if (dailyPathLeading) dailyAction()
                 // Fit the name between the unfilled glyphs, retaining 48 dp navigation targets.
                 Box(Modifier.weight(1f).heightIn(min = 48.dp)) {
                     val nameInteraction = remember { MutableInteractionSource() }
-                    val nameFontSize = if (compact) 12.sp else 14.sp
                     // Match visible letter height rather than the full line box, including font scaling.
                     val markerSize = with(LocalDensity.current) { (nameFontSize * .75f).toDp() }
                     Row(Modifier.fillMaxWidth().align(Alignment.Center)
@@ -92,11 +126,11 @@ internal fun SpaceCompassCelestialBodyDataIsland(bodyName: String?, primaryText:
                             horizontalArrangement = Arrangement.spacedBy(6.dp),
                             verticalAlignment = Alignment.CenterVertically) {
                             if (!bodyName.isNullOrEmpty()) SpaceCompassCelestialColorDot(
-                                bodyNameColor, primaryText, Modifier.size(markerSize)
+                                bodyNameColor, primaryText, Modifier.size(markerSize).rotate(markerRotation)
                                     .testTag("celestial-body-color-dot").clearAndSetSemantics {})
                             // The non-weighted dot is measured first; only the trailing name can truncate.
                             Text(bodyName.orEmpty(), Modifier.weight(1f, fill = false).testTag("celestial-body-name"),
-                                color = primaryText, style = LocalTextStyle.current.copy(shadow = null),
+                                color = primaryText, style = nameStyle,
                                 fontSize = nameFontSize, fontWeight = FontWeight.Medium,
                                 textAlign = TextAlign.Start, maxLines = 1, overflow = TextOverflow.Ellipsis)
                         }
@@ -110,25 +144,12 @@ internal fun SpaceCompassCelestialBodyDataIsland(bodyName: String?, primaryText:
                         modifier = Modifier.size(48.dp).testTag("celestial-body-next").align(Alignment.CenterEnd),
                         tutorialHighlightHeightPx = tutorialNameHeightPx?.intValue ?: 0)
                 }
-                if (onDailyPath != null) {
-                    Spacer(Modifier.width(2.dp))
-                    val pathTutorial = rememberSpaceCompassTutorialAnchor(SpaceCompassTutorialFeature.DAILY)
-                    SpaceCompassCelestialIconControl(false, stringResource(R.string.celestial_daily_path), onDailyPath,
-                        // Halve the glyph's side insets from 14 to 7 dp; retain its 48 dp height.
-                        // Compose expands the unfilled action's minimum touch target independently.
-                        Modifier.width(34.dp).testTag("celestial-body-daily-path")
-                            .then(pathTutorial?.touchModifier ?: Modifier),
-                        role = Role.Button, plainTint = primaryText) {
-                        SpaceCompassTutorialIconHighlight(pathTutorial) {
-                            SpaceCompassDailyPathIcon(20.dp, 1.4.dp)
-                        }
-                    }
-                }
+                if (!dailyPathLeading) dailyAction()
             }
-            HorizontalDivider(color = primaryText.copy(alpha = 0.12f))
+            if (!headerOnly) HorizontalDivider(color = primaryText.copy(alpha = 0.12f),modifier = Modifier.padding(horizontal = 8.dp))
         }
-        Column(Modifier.fillMaxWidth().testTag("celestial-body-content")
-            .padding(vertical = if (compact) 6.dp else 8.dp),
+        if (!headerOnly) Column(Modifier.fillMaxWidth().testTag("celestial-body-content").padding(horizontal = 8.dp)
+            .padding(vertical = if (compact) 3.dp else 4.dp),
             verticalArrangement = Arrangement.spacedBy(if (compact) 3.dp else 4.dp), content = content)
     }
 }

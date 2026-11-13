@@ -1,9 +1,9 @@
 <resources>
     <string name="info_news_title">Últimas novedades · %1$s</string>
-    <string name="info_news_star_sky" formatted="false">Cuadrículas de Cielo y Cámara más ligeras, con la misma precisión angular.</string>
-    <string name="info_news_texture_downloads" formatted="false">Elige Encuadre o Panorama con un selector horizontal en ambas orientaciones.</string>
-    <string name="info_news_weather" formatted="false">Las capturas del Globo muestran una cuadrícula geográfica cada 15°.</string>
-    <string name="info_news_viewer_zoom" formatted="false">Las flechas arriba y abajo aclaran el selector Cielo, Cámara y Globo.</string>
-    <string name="info_news_settings" formatted="false">Paneles informativos más compactos con espacios uniformes.</string>
-    <string name="info_news_catalog" formatted="false">El enlace de la brújula ahora se llama Detalles de la posición real.</string>
+    <string name="info_news_star_sky" formatted="false">Explora Cielo y Globo en encuadre o panorámica, con opciones de visualización guardadas.</string>
+    <string name="info_news_texture_downloads" formatted="false">Navegación del Globo más fluida, encuadre estable y selector de objetos compacto.</string>
+    <string name="info_news_weather" formatted="false">Elige cuadrícula de referencia, números y líneas planetarias; las capturas heredan tus opciones.</string>
+    <string name="info_news_viewer_zoom" formatted="false">Elige etiquetas en panorámicas del Cielo y vistas del Globo; el tiempo está ahora en Visualización.</string>
+    <string name="info_news_settings" formatted="false">Menús de zoom compactos, centrados en su botón y con el valor seleccionado resaltado.</string>
+    <string name="info_news_catalog" formatted="false">Tutorial actualizado, diálogos más claros y exportaciones de Escena que conservan el instante en pausa.</string>
 </resources>

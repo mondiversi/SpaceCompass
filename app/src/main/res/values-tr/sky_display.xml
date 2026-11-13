@@ -1,0 +1,4 @@
+<resources>
+    <string name="view_mode_weather" formatted="false">Hava durumu</string>
+    <string name="tutorial_sky_labels" formatted="false">Panoramada etiketleri seçin. Kadrajda nişangâhı kullanın.</string>
+</resources>

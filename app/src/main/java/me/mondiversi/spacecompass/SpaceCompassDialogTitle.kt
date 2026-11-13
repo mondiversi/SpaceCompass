@@ -70,6 +70,11 @@ internal fun SpaceCompassAlertDialog(
     rotateContent: Boolean = false,
     confirmButtonFirst: Boolean = false
 ) {
+    // Choice/information dialogs without actions always expose the same themed Close footer.
+    val footerConfirmButton: (@Composable () -> Unit)? = confirmButton ?: if (dismissButton == null) {
+        { SpaceCompassDialogActionButton(stringResource(R.string.close), onDismissRequest,
+            Modifier.testTag("dialog-close")) }
+    } else null
     // A Dialog owns another Android Compose view. Restore the host's density
     // AND logical configuration inside that window, before measuring anything.
     val hostDensity = LocalDensity.current
@@ -132,6 +137,7 @@ internal fun SpaceCompassAlertDialog(
             LocalDensity provides hostDensity,
             LocalConfiguration provides hostConfiguration,
             LocalSpaceCompassSettingsActionButtons provides false,
+            LocalSpaceCompassTrailingChoiceControl provides true,
             LocalSpaceCompassActionGlyphStrokeScale provides 1f
         ) {
             SpaceCompassDialogSystemBars()
@@ -170,21 +176,21 @@ internal fun SpaceCompassAlertDialog(
                                 LocalTextStyle provides MaterialTheme.typography.bodyMedium
                             ) {
                                 Box(Modifier.weight(1f, fill = false).padding(
-                                    bottom = if (confirmButton != null || dismissButton != null) 24.dp else 0.dp
+                                    bottom = if (footerConfirmButton != null || dismissButton != null) 24.dp else 0.dp
                                 )) {
                                     displayedText()
                                 }
                             }
                         }
-                        if (confirmButton != null || dismissButton != null) {
+                        if (footerConfirmButton != null || dismissButton != null) {
                             CompositionLocalProvider(
                                 LocalContentColor provides MaterialTheme.colorScheme.primary,
                                 LocalTextStyle provides MaterialTheme.typography.labelLarge
                             ) {
                                 SpaceCompassDialogActionFlow(Modifier.align(Alignment.End)) {
-                                    if (confirmButtonFirst) confirmButton?.invoke()
+                                    if (confirmButtonFirst) footerConfirmButton?.invoke()
                                     dismissButton?.invoke()
-                                    if (!confirmButtonFirst) confirmButton?.invoke()
+                                    if (!confirmButtonFirst) footerConfirmButton?.invoke()
                                 }
                             }
                         }

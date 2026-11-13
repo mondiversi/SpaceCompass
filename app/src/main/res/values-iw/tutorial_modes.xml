@@ -1,0 +1,7 @@
+<resources>
+    <string name="tutorial_mode_sky_frame" formatted="false">עקוב אחר השמיים בהזזת הטלפון. בחר מזג אוויר בתצוגה.</string>
+    <string name="tutorial_mode_sky_panorama" formatted="false">חקור את השמיים בגרירה. בחר תוויות בלחצן שלהן ומזג אוויר בתצוגה.</string>
+    <string name="tutorial_mode_camera" formatted="false">הציגו גרמי שמיים מעל תמונת השמיים מהמצלמה.</string>
+    <string name="tutorial_mode_globe_frame" formatted="false">סובבו את כדור הארץ כדי לעקוב אחר מסלולים ונקודות.</string>
+    <string name="tutorial_mode_globe_panorama" formatted="false">חקרו מסלולים על מפה שטוחה של כדור הארץ.</string>
+</resources>

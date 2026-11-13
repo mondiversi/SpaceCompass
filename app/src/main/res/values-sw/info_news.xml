@@ -1,9 +1,9 @@
 <resources>
     <string name="info_news_title">Mambo mapya · %1$s</string>
-    <string name="info_news_star_sky" formatted="false">Gridi za Anga na Kamera ni nyepesi zaidi huku usahihi wa pembe ukibaki uleule.</string>
-    <string name="info_news_texture_downloads" formatted="false">Chagua Fremu au Panorama kwa swichi ya mlalo katika mielekeo yote miwili ya skrini.</string>
-    <string name="info_news_weather" formatted="false">Picha za Globu zina gridi ya kijiografia iliyo na vipindi vya 15°.</string>
-    <string name="info_news_viewer_zoom" formatted="false">Vishale vya juu na chini hufafanua chaguo la Anga, Kamera na Globu.</string>
-    <string name="info_news_settings" formatted="false">Paneli za taarifa zimebanwa zaidi na nafasi kati yake zinalingana.</string>
-    <string name="info_news_catalog" formatted="false">Kiungo cha dira sasa kinaitwa Maelezo ya mahali halisi.</string>
+    <string name="info_news_star_sky" formatted="false">Chunguza Anga na Globu katika Fremu au Panorama, huku chaguo za mwonekano zikihifadhiwa.</string>
+    <string name="info_news_texture_downloads" formatted="false">Urambazaji wa Globu laini zaidi, fremu thabiti na kichagua kitu kifupi.</string>
+    <string name="info_news_weather" formatted="false">Chagua gridi ya marejeo, namba na mistari ya sayari pamoja; picha hufuata chaguo zako.</string>
+    <string name="info_news_viewer_zoom" formatted="false">Chagua lebo katika panorama za Anga na Globu; hali ya hewa sasa iko katika Mwonekano.</string>
+    <string name="info_news_settings" formatted="false">Menyu fupi za kukuza huwekwa katikati ya kitufe na kuangazia thamani iliyochaguliwa.</string>
+    <string name="info_news_catalog" formatted="false">Mafunzo yamesasishwa, madirisha wazi zaidi na uhamishaji wa Tukio unaohifadhi muda uliositishwa.</string>
 </resources>

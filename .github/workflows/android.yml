@@ -40,6 +40,9 @@ jobs:
           python3 scripts/CheckGlobeAssets.py
           node scripts/CheckGlobeLabels.js
           node scripts/CheckGlobeGeographicGuides.js
+          node scripts/CheckGlobeViewport.js
+          node scripts/CheckGlobeUpdates.js
+          node scripts/CheckLiveProjections.js
       - name: Build app and run checks
         run: ./gradlew --no-daemon --stacktrace :app:assembleDebug :app:testDebugUnitTest :app:compileDebugAndroidTestKotlin :app:assembleRelease :app:lintRelease
       - name: Upload development APK and test reports

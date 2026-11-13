@@ -3,7 +3,7 @@
     <string name="tutorial_title" formatted="false">Tutorial</string>
     <string name="tutorial_welcome_title" formatted="false">Welcome to Space Compass</string>
     <string name="tutorial_welcome_body" formatted="false">Explore the sky, follow celestial paths and preview other places and times. Discover the main controls with the interactive tutorial.</string>
-    <string name="tutorial_instruction" formatted="false">Touch a highlighted control or an orbit point to learn what it does. Controls are explained without changing your settings.</string>
+    <string name="tutorial_instruction" formatted="false">Touch a highlighted control or an orbit point to learn what it does.</string>
     <string name="tutorial_zoom_title" formatted="false">Zoom</string>
     <string name="tutorial_navigation_title" formatted="false">Selected object</string>
     <string name="tutorial_points_title" formatted="false">Orbit points</string>
@@ -11,25 +11,25 @@
     <string name="tutorial_menu" formatted="false">Open settings, saved scenes and the tutorial.</string>
     <string name="tutorial_objects" formatted="false">Choose the objects to display. Search, filter and save favorites in the catalog.</string>
     <string name="tutorial_location" formatted="false">Preview another position, altitude, time zone, date or time, and adjust how time advances.</string>
-    <string name="tutorial_guides" formatted="false">Show celestial reference circles, poles, zenith and nadir. These are sky projections, not routes on the ground.</string>
-    <string name="tutorial_forward" formatted="false">0–24 shows the whole calendar day, from midnight to midnight. +24h shows the next 24 hours from the displayed time, including a simulated time. Daily path, captures and exports use the same interval.</string>
-    <string name="tutorial_camera" formatted="false">Choose Sky, Camera or Globe and explore their controls.</string>
-    <string name="tutorial_weather" formatted="false">Show or hide weather effects in the simulated sky and panoramas. This control is unavailable in camera mode.</string>
-    <string name="tutorial_axis" formatted="false">Choose the camera axis (90°) or the phone length axis (0°) for pointing. Camera mode always uses the camera axis.</string>
-    <string name="tutorial_transparency" formatted="false">Make object images more translucent to compare them with the camera view. The capture keeps this choice.</string>
+    <string name="tutorial_guides" formatted="false">Choose the grid, its numbers and planetary lines, then Apply.</string>
+    <string name="tutorial_forward" formatted="false">0–24 shows the calendar day; +24h shows 24 hours from the displayed time.</string>
+    <string name="tutorial_camera" formatted="false">Choose a mode and view, then Apply. Close keeps your current choices.</string>
+    <string name="tutorial_weather" formatted="false">Show or hide weather effects in the simulated sky and panoramas.</string>
+    <string name="tutorial_axis" formatted="false">Choose the camera axis (90°) or the phone length axis (0°) for pointing.</string>
+    <string name="tutorial_transparency" formatted="false">Make object images more translucent to compare them with the camera view.</string>
     <string name="tutorial_zoom" formatted="false">Zoom in or out with this button or two fingers.</string>
     <string name="tutorial_capture" formatted="false">Prepare an image. In the preview, choose grid, labels and position; in Sky and Globe, switch between Framed view and Panorama.</string>
     <string name="tutorial_panels" formatted="false">Collapse or expand the object and compass islands to gain sky space.</string>
-    <string name="tutorial_antipodes" formatted="false">Tap to show or hide the opposite direction of selected points: azimuth +180° and elevation with the opposite sign. Hold to deselect all points.</string>
+    <string name="tutorial_antipodes" formatted="false">Tap to show or hide antipodes. Hold to deselect all points.</string>
     <string name="tutorial_navigation" formatted="false">Move through the selected objects. The island shows the active object and its trajectory colors.</string>
     <string name="tutorial_observatory" formatted="false">Open object data, paths, key heights, events and personal moments.</string>
     <string name="tutorial_daily" formatted="false">Open the active object’s trajectory, times, elevations and selectable points. Future events can have reminders.</string>
     <string name="tutorial_gps" formatted="false">Open details of your real position, GPS altitude, orientation and weather. These values are independent of the Location.</string>
-    <string name="tutorial_points" formatted="false">Select or deselect an orbit point. Aim the reticle at a point to read its object, time, T, azimuth and elevation. The object border follows its trajectory colour; selecting its current position changes the border to blue or cyan.</string>
-    <string name="tutorial_reticle_title" formatted="false">Time and icons</string>
-    <string name="tutorial_reticle" formatted="false">Tap empty space to pause or resume time. Double-tap to show or hide the reticle and icons; in Sky and Camera, the grid too.</string>
+    <string name="tutorial_points" formatted="false">Select or deselect a point. Aim the reticle to read time, T, azimuth and elevation.</string>
+    <string name="tutorial_reticle_title" formatted="false">Time and interface</string>
+    <string name="tutorial_reticle" formatted="false">Tap empty space to pause or resume time. Double-tap to hide or show the interface and panels.</string>
     <string name="tutorial_reminder" formatted="false">Open Android’s alarm or calendar for an eligible future event. Past events and the current point cannot have an alarm.</string>
     <string name="tutorial_status_title" formatted="false">Status and recovery</string>
-    <string name="tutorial_status" formatted="false">Read the current status. Its action can request permission, enable location or retry unavailable orbital or weather data. The tutorial does not execute the action.</string>
-    <string name="tutorial_remove" formatted="false">Remove the active object from the selected objects after confirmation. The object remains available in the catalog.</string>
+    <string name="tutorial_status" formatted="false">Check status and available actions for position, weather and orbital data.</string>
+    <string name="tutorial_remove" formatted="false">Remove the active object from the selected objects after confirmation.</string>
 </resources>

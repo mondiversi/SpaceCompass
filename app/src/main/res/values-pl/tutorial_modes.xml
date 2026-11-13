@@ -1,0 +1,7 @@
+<resources>
+    <string name="tutorial_mode_sky_frame" formatted="false">Śledź niebo, poruszając telefonem. Wybierz pogodę w Widoku.</string>
+    <string name="tutorial_mode_sky_panorama" formatted="false">Przeglądaj niebo, przeciągając. Wybierz etykiety ich przyciskiem, a pogodę w Widoku.</string>
+    <string name="tutorial_mode_camera" formatted="false">Nałóż obiekty na obraz nieba z aparatu.</string>
+    <string name="tutorial_mode_globe_frame" formatted="false">Obracaj Ziemię, aby śledzić trasy i punkty.</string>
+    <string name="tutorial_mode_globe_panorama" formatted="false">Przeglądaj trasy na płaskiej mapie Ziemi.</string>
+</resources>

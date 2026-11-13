@@ -8,4 +8,8 @@
     <string name="capture_grid">ग्रिड</string>
     <string name="capture_grid_on">ग्रिड दिखाई दे रहा है</string>
     <string name="capture_grid_off">ग्रिड छिपा है</string>
+    <string name="view_mode_sky_frame" formatted="false">आकाश (दृश्य का फ़्रेम)</string>
+    <string name="view_mode_sky_panorama" formatted="false">आकाश (पैनोरमा)</string>
+    <string name="view_mode_globe_frame" formatted="false">पृथ्वी ग्लोब (दृश्य का फ़्रेम)</string>
+    <string name="view_mode_globe_panorama" formatted="false">पृथ्वी ग्लोब (पैनोरमा)</string>
 </resources>

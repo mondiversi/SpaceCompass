@@ -1,0 +1,4 @@
+<resources>
+    <string name="view_mode_weather" formatted="false">Weer</string>
+    <string name="tutorial_sky_labels" formatted="false">Kies labels in panorama. Gebruik in kaderweergave het dradenkruis.</string>
+</resources>

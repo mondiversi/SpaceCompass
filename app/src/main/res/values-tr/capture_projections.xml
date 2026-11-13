@@ -8,4 +8,8 @@
     <string name="capture_grid">Izgara</string>
     <string name="capture_grid_on">Izgara görünür</string>
     <string name="capture_grid_off">Izgara gizli</string>
+    <string name="view_mode_sky_frame" formatted="false">Gökyüzü (Kadraj)</string>
+    <string name="view_mode_sky_panorama" formatted="false">Gökyüzü (Panorama)</string>
+    <string name="view_mode_globe_frame" formatted="false">Dünya küresi (Kadraj)</string>
+    <string name="view_mode_globe_panorama" formatted="false">Dünya küresi (Panorama)</string>
 </resources>

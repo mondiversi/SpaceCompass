@@ -20,6 +20,7 @@ import androidx.compose.ui.platform.testTag
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.semantics.Role
 import androidx.compose.ui.unit.dp
+import androidx.compose.ui.unit.Dp
 
 /** One mutually exclusive, themed projection selector; its full capsule is a gesture exclusion. */
 @Composable
@@ -32,20 +33,12 @@ internal fun SpaceCompassCaptureProjectionSwitch(projection: SpaceCompassCapture
         ProjectionChoice(projection==SpaceCompassCaptureProjection.FRAME,
             stringResource(R.string.capture_panorama_off),enabled,foreground,primary,activeInk,
             { onSelect(SpaceCompassCaptureProjection.FRAME) },"capture-projection-frame") { tint ->
-            Canvas(Modifier.size(26.dp)) {
-                val low=size.minDimension*.13f;val high=size.minDimension*.87f
-                val arm=size.minDimension*.22f;val stroke=2.1.dp.toPx()
-                for(x in listOf(low,high)) for(y in listOf(low,high)) {
-                    val dx=if(x==low) arm else -arm;val dy=if(y==low) arm else -arm
-                    drawLine(tint,Offset(x,y),Offset(x+dx,y),stroke,StrokeCap.Round)
-                    drawLine(tint,Offset(x,y),Offset(x,y+dy),stroke,StrokeCap.Round)
-                }
-            }
+            SpaceCompassCaptureProjectionIcon(SpaceCompassCaptureProjection.FRAME,tint)
         }
         ProjectionChoice(projection==SpaceCompassCaptureProjection.PANORAMA,
             stringResource(R.string.capture_panorama_on),enabled,foreground,primary,activeInk,
             { onSelect(SpaceCompassCaptureProjection.PANORAMA) },"capture-projection-panorama") { tint ->
-            SpaceCompassSettingsMenuIcon("panorama-image",tint,Modifier.size(26.dp),iconStrokeWidth=2.1.dp)
+            SpaceCompassCaptureProjectionIcon(SpaceCompassCaptureProjection.PANORAMA,tint)
         }
     }
     CompositionLocalProvider(LocalSpaceCompassFloatingControlMultiplier provides SPACE_COMPASS_COMPACT_CONTROL_MULTIPLIER) {
@@ -55,6 +48,23 @@ internal fun SpaceCompassCaptureProjectionSwitch(projection: SpaceCompassCapture
                 border=BorderStroke(1.dp,foreground.copy(alpha=.35f)),shadowElevation=3.dp) {
                 Row(Modifier.padding(3.dp).selectableGroup()) { choices() }
             }
+        }
+    }
+}
+
+/** Shared projection glyphs keep the chooser and capture switch visually identical. */
+@Composable
+internal fun SpaceCompassCaptureProjectionIcon(projection: SpaceCompassCaptureProjection,tint: Color,
+    size: Dp = 26.dp,stroke: Dp = 2.1.dp) {
+    if(projection==SpaceCompassCaptureProjection.PANORAMA) {
+        SpaceCompassSettingsMenuIcon("panorama-image",tint,Modifier.size(size),iconStrokeWidth=stroke)
+    } else Canvas(Modifier.size(size)) {
+        val low=this.size.minDimension*.13f;val high=this.size.minDimension*.87f
+        val arm=this.size.minDimension*.22f;val edge=stroke.toPx()
+        for(x in listOf(low,high)) for(y in listOf(low,high)) {
+            val dx=if(x==low) arm else -arm;val dy=if(y==low) arm else -arm
+            drawLine(tint,Offset(x,y),Offset(x+dx,y),edge,StrokeCap.Round)
+            drawLine(tint,Offset(x,y),Offset(x,y+dy),edge,StrokeCap.Round)
         }
     }
 }

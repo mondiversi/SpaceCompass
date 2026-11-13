@@ -1,0 +1,7 @@
+<resources>
+    <string name="tutorial_mode_sky_frame" formatted="false">Siga o céu movendo o telefone. Escolha a meteorologia em Visualização.</string>
+    <string name="tutorial_mode_sky_panorama" formatted="false">Explore o céu arrastando. Escolha etiquetas pelo botão e meteorologia em Visualização.</string>
+    <string name="tutorial_mode_camera" formatted="false">Sobreponha os objetos ao céu captado pela câmara.</string>
+    <string name="tutorial_mode_globe_frame" formatted="false">Rode a Terra para seguir trajetórias e pontos.</string>
+    <string name="tutorial_mode_globe_panorama" formatted="false">Explore as trajetórias num mapa plano da Terra.</string>
+</resources>

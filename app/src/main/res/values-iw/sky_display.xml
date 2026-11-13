@@ -1,0 +1,4 @@
+<resources>
+    <string name="view_mode_weather" formatted="false">מזג אוויר</string>
+    <string name="tutorial_sky_labels" formatted="false">בחר תוויות בפנורמה. בתצוגת מסגרת השתמש בכוונת.</string>
+</resources>

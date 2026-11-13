@@ -1,0 +1,4 @@
+<resources>
+    <string name="view_mode_weather" formatted="false">الطقس</string>
+    <string name="tutorial_sky_labels" formatted="false">اختر التسميات في العرض البانورامي. استخدم مؤشر التصويب في عرض الإطار.</string>
+</resources>

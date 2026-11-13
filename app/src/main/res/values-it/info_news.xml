@@ -1,9 +1,9 @@
 <resources>
     <string name="info_news_title">Ultime novità · %1$s</string>
-    <string name="info_news_star_sky" formatted="false">Griglie di Cielo e Fotocamera più leggere, con la stessa precisione angolare.</string>
-    <string name="info_news_texture_downloads" formatted="false">Scegli Modalità inquadratura o Modalità panoramica con lo switch sempre orizzontale.</string>
-    <string name="info_news_weather" formatted="false">Griglia del Mappamondo a intervalli di 15° nelle acquisizioni.</string>
-    <string name="info_news_viewer_zoom" formatted="false">Freccine in alto e in basso rendono più chiaro il selettore Cielo, Fotocamera e Mappamondo.</string>
-    <string name="info_news_settings" formatted="false">Isole informative più compatte e distanze uniformate.</string>
-    <string name="info_news_catalog" formatted="false">Il collegamento della bussola ora si chiama Dettagli posizione reale.</string>
+    <string name="info_news_star_sky" formatted="false">Esplora Cielo e Mappamondo in Inquadratura o Panoramica, con le scelte memorizzate.</string>
+    <string name="info_news_texture_downloads" formatted="false">Mappamondo più fluido, inquadratura stabile e selettore oggetto compatto.</string>
+    <string name="info_news_weather" formatted="false">Scegli griglia di riferimento, numerazione e linee del pianeta; gli scatti ereditano le scelte.</string>
+    <string name="info_news_viewer_zoom" formatted="false">Scegli le etichette in Cielo panoramico e Mappamondo; il meteo è ora in Visualizzazione.</string>
+    <string name="info_news_settings" formatted="false">Menu zoom compatti, centrati sul pulsante e con il valore selezionato evidenziato.</string>
+    <string name="info_news_catalog" formatted="false">Tutorial aggiornato, popup più chiari ed esportazioni Scenario che conservano il momento in pausa.</string>
 </resources>

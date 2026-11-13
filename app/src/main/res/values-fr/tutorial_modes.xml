@@ -1,0 +1,7 @@
+<resources>
+    <string name="tutorial_mode_sky_frame" formatted="false">Suivez le ciel en bougeant le téléphone. Choisissez la météo dans Affichage.</string>
+    <string name="tutorial_mode_sky_panorama" formatted="false">Explorez le ciel en faisant glisser. Choisissez les étiquettes avec leur bouton et la météo dans Affichage.</string>
+    <string name="tutorial_mode_camera" formatted="false">Superposez les objets au ciel filmé par la caméra.</string>
+    <string name="tutorial_mode_globe_frame" formatted="false">Faites tourner la Terre pour suivre trajectoires et points.</string>
+    <string name="tutorial_mode_globe_panorama" formatted="false">Explorez les trajectoires sur une carte plane de la Terre.</string>
+</resources>

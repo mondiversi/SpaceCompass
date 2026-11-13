@@ -1,0 +1,4 @@
+<resources>
+    <string name="view_mode_weather" formatted="false">Meteo</string>
+    <string name="tutorial_sky_labels" formatted="false">Scegli le etichette in panoramica. In inquadratura usa il mirino.</string>
+</resources>

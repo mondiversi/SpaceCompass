@@ -7,6 +7,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.testTag
 import androidx.compose.ui.res.stringResource
+import androidx.compose.ui.unit.dp
 
 internal val SpaceCompassPanoramaPosition.labelResource: Int get() = when (this) {
     SpaceCompassPanoramaPosition.COMPLETE -> R.string.panorama_position_complete
@@ -21,7 +22,7 @@ internal val SpaceCompassPanoramaPosition.detailResource: Int get() = when (this
 }
 
 
-private data class SpaceCompassOverlayChoice(val key: String,val label: Int)
+private data class SpaceCompassOverlayChoice(val key: String,val label: Int, val icon: SpaceCompassOverlayChoiceIcon? = null)
 
 /** Shared radio choices use the standard modal, including its scrolling and close action. */
 @Composable
@@ -34,6 +35,10 @@ private fun SpaceCompassOverlayChoiceDialog(visible: Boolean,title: Int,selected
                 choices.forEach { choice ->
                     SpaceCompassSettingsRadioRow(choice.key==selectedKey,{onChoose(choice.key)},
                         Modifier.fillMaxWidth().testTag("$tag-${choice.key}")) {
+                        choice.icon?.let {
+                            SpaceCompassOverlayChoiceGlyph(it)
+                            Spacer(Modifier.width(10.dp))
+                        }
                         Text(stringResource(choice.label),Modifier.weight(1f))
                     }
                 }
@@ -46,14 +51,24 @@ internal fun SpaceCompassPanoramaLabelsDialog(visible: Boolean,selected: SpaceCo
     onChoose: (SpaceCompassPanoramaLabelMode)->Unit,onDismiss: ()->Unit,
     modes: List<SpaceCompassPanoramaLabelMode> = SpaceCompassPanoramaLabelMode.entries) =
     SpaceCompassOverlayChoiceDialog(visible,R.string.panorama_point_labels,selected.key,
-        modes.map { SpaceCompassOverlayChoice(it.key,it.labelResource) },
+        modes.map { SpaceCompassOverlayChoice(it.key,it.labelResource,when(it) {
+            SpaceCompassPanoramaLabelMode.ALL -> SpaceCompassOverlayChoiceIcon.ALL_LABELS
+            SpaceCompassPanoramaLabelMode.OBJECTS_SELECTED -> SpaceCompassOverlayChoiceIcon.OBJECT_LABELS
+            SpaceCompassPanoramaLabelMode.KEY_SELECTED -> SpaceCompassOverlayChoiceIcon.KEY_LABELS
+            SpaceCompassPanoramaLabelMode.SELECTED -> SpaceCompassOverlayChoiceIcon.SELECTED_LABELS
+            SpaceCompassPanoramaLabelMode.NONE -> SpaceCompassOverlayChoiceIcon.NO_LABELS
+        }) },
         "panorama-labels-dialog",{ key -> onChoose(SpaceCompassPanoramaLabelMode.entries.first { it.key==key }) },onDismiss)
 
 @Composable
 internal fun SpaceCompassPanoramaPositionDialog(visible: Boolean,selected: SpaceCompassPanoramaPosition,
     onChoose: (SpaceCompassPanoramaPosition)->Unit,onDismiss: ()->Unit) =
     SpaceCompassOverlayChoiceDialog(visible,R.string.panorama_position,selected.key,
-        SpaceCompassPanoramaPosition.entries.map { SpaceCompassOverlayChoice(it.key,it.labelResource) },
+        SpaceCompassPanoramaPosition.entries.map { SpaceCompassOverlayChoice(it.key,it.labelResource,when(it) {
+            SpaceCompassPanoramaPosition.COMPLETE -> SpaceCompassOverlayChoiceIcon.COMPLETE_POSITION
+            SpaceCompassPanoramaPosition.AREA -> SpaceCompassOverlayChoiceIcon.AREA_POSITION
+            SpaceCompassPanoramaPosition.HIDDEN -> SpaceCompassOverlayChoiceIcon.NO_POSITION
+        }) },
         "panorama-position-dialog",{ key -> onChoose(SpaceCompassPanoramaPosition.entries.first { it.key==key }) },onDismiss)
 
 @Composable

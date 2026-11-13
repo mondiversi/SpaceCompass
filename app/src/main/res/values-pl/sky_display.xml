@@ -1,0 +1,4 @@
+<resources>
+    <string name="view_mode_weather" formatted="false">Pogoda</string>
+    <string name="tutorial_sky_labels" formatted="false">Wybierz etykiety w panoramie. W kadrze użyj celownika.</string>
+</resources>

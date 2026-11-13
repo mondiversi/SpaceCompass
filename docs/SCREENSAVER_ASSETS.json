@@ -28,16 +28,16 @@
       "source_embedded_sha256": "89b5f1d228fb90ccb7da5c99c55bb8aaf8e7bc8af481984e99dda88dfa6f13e7"
     }
   ],
-  "renderer_bytes": 23421,
+  "renderer_bytes": 24025,
   "no_network_or_audio": true,
-  "renderer_sha256": "681640c952acfc0c261bda9272155130b550bccb617ad93e635fc30247058499",
+  "renderer_sha256": "547e64c0e9c2870e305ada6576cd3e3106214ebb965ff99f7e8e90b1d4efe415",
   "lighting_uses_observer_solar_elevation": false,
   "earth_texture_orientation_and_orbit_geometry_preserved": true,
   "earth_lighting_uses_real_utc_sun": true,
   "marker_source": "last_valid_real_device_gps",
   "far_side_marker": "grey_translucent",
   "solar_refresh_seconds": 60,
-  "earth_specular_highlight": false,
+  "earth_specular_highlight": true,
   "space_background_uses_interface_theme": true,
   "space_background_day_palette": [
     "#30465f",

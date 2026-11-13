@@ -8,4 +8,8 @@
     <string name="capture_grid">Grade</string>
     <string name="capture_grid_on">Grade visível</string>
     <string name="capture_grid_off">Grade oculta</string>
+    <string name="view_mode_sky_frame" formatted="false">Céu (Enquadramento)</string>
+    <string name="view_mode_sky_panorama" formatted="false">Céu (Panorâmica)</string>
+    <string name="view_mode_globe_frame" formatted="false">Globo (Enquadramento)</string>
+    <string name="view_mode_globe_panorama" formatted="false">Globo (Panorâmica)</string>
 </resources>

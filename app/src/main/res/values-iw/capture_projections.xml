@@ -8,4 +8,8 @@
     <string name="capture_grid">רשת</string>
     <string name="capture_grid_on">הרשת מוצגת</string>
     <string name="capture_grid_off">הרשת מוסתרת</string>
+    <string name="view_mode_sky_frame" formatted="false">שמיים (מסגרת התצוגה)</string>
+    <string name="view_mode_sky_panorama" formatted="false">שמיים (פנורמה)</string>
+    <string name="view_mode_globe_frame" formatted="false">כדור הארץ (מסגרת התצוגה)</string>
+    <string name="view_mode_globe_panorama" formatted="false">כדור הארץ (פנורמה)</string>
 </resources>

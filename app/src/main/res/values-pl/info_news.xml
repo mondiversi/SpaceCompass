@@ -1,9 +1,9 @@
 <resources>
     <string name="info_news_title">Ostatnie nowości · %1$s</string>
-    <string name="info_news_star_sky" formatted="false">Lżejsze siatki Nieba i Aparatu z zachowaniem dokładności kątowej.</string>
-    <string name="info_news_texture_downloads" formatted="false">Wybierz Kadr lub Panoramę poziomym przełącznikiem w obu orientacjach.</string>
-    <string name="info_news_weather" formatted="false">Ujęcia Globu pokazują dokładniejszą siatkę geograficzną co 15°.</string>
-    <string name="info_news_viewer_zoom" formatted="false">Strzałki u góry i u dołu ułatwiają rozpoznanie wyboru Niebo, Aparat i Glob.</string>
-    <string name="info_news_settings" formatted="false">Bardziej zwarte panele informacji z równymi odstępami.</string>
-    <string name="info_news_catalog" formatted="false">Łącze kompasu nazywa się teraz Szczegóły rzeczywistej pozycji.</string>
+    <string name="info_news_star_sky" formatted="false">Oglądaj Niebo i Glob w kadrze lub panoramie z zapamiętanymi ustawieniami widoku.</string>
+    <string name="info_news_texture_downloads" formatted="false">Płynniejsza nawigacja Globu, stabilny kadr i kompaktowy wybór obiektu.</string>
+    <string name="info_news_weather" formatted="false">Wybierz siatkę odniesienia, numerację i linie planety; ujęcia przejmują te ustawienia.</string>
+    <string name="info_news_viewer_zoom" formatted="false">Wybierz etykiety w panoramie Nieba i widokach Globu; pogoda jest teraz w Widoku.</string>
+    <string name="info_news_settings" formatted="false">Kompaktowe menu zoomu są wyśrodkowane przy przycisku i wyróżniają wybraną wartość.</string>
+    <string name="info_news_catalog" formatted="false">Odświeżony samouczek, czytelniejsze okna i eksport Sceny zachowujący chwilę pauzy.</string>
 </resources>

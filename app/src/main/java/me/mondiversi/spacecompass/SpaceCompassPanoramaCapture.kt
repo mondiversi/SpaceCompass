@@ -37,7 +37,10 @@ internal fun rememberSpaceCompassPanoramaAction(timeMs: Long, latitude: Double?,
     selectedPoints: List<SpaceCompassSelectedOrbitPoint> = emptyList(),
     activeBody: SpaceCompassCelestialBody? = null, activeComparisonId: String? = null,
     forward24Hours: Boolean = false, showAntipodes: Boolean = false,
-    globe: SpaceCompassGlobeCapture? = null, skyFraming: SpaceCompassSkyFraming? = null): SpaceCompassPanoramaAction {
+    globe: SpaceCompassGlobeCapture? = null, skyFraming: SpaceCompassSkyFraming? = null,
+    initialProjection: SpaceCompassCaptureProjection? = null,
+    liveLabelMode: SpaceCompassPanoramaLabelMode? = null,
+    showGrid: Boolean = SPACE_COMPASS_MAIN_GRID_DEFAULT, showGridNumbers: Boolean = SPACE_COMPASS_GRID_NUMBERS_DEFAULT): SpaceCompassPanoramaAction {
     val comparisonOverlays = LocalSpaceCompassComparisonOverlays.current
     val selectionTint = MaterialTheme.colorScheme.primary.toArgb()
     val context = LocalContext.current
@@ -69,10 +72,10 @@ internal fun rememberSpaceCompassPanoramaAction(timeMs: Long, latitude: Double?,
             if (cameraEnabled && cameraCapture == null) notify(R.string.camera_unavailable)
             else if (!cameraEnabled && (latitude == null || longitude == null || bodies.isEmpty() && comparisonOverlays.isEmpty())) notify(R.string.panorama_not_ready)
             else {
-                val projection=if(cameraEnabled) SpaceCompassCaptureProjection.FRAME else spaceCompassCaptureProjection(
+                val projection=if(cameraEnabled) SpaceCompassCaptureProjection.FRAME else initialProjection ?: spaceCompassCaptureProjection(
                     preferences?.getBoolean(spaceCompassCaptureProjectionKey(globe!=null),globe==null) ?: (globe==null))
                 val position = SpaceCompassPanoramaPosition.fromStored(preferences?.getString(SPACE_COMPASS_PANORAMA_POSITION_KEY, null))
-                val labelMode = globe?.labelMode ?: SpaceCompassPanoramaLabelMode.fromStored(
+                val labelMode = globe?.labelMode ?: liveLabelMode ?: SpaceCompassPanoramaLabelMode.fromStored(
                     preferences?.getString(SPACE_COMPASS_PANORAMA_LABEL_MODE_KEY, null),
                     preferences?.takeIf { it.contains(SPACE_COMPASS_PANORAMA_POINT_LABELS_KEY) }
                         ?.getBoolean(SPACE_COMPASS_PANORAMA_POINT_LABELS_KEY, true))
@@ -99,7 +102,7 @@ internal fun rememberSpaceCompassPanoramaAction(timeMs: Long, latitude: Double?,
                     selectedPoints = selectedPoints.toList(), showAntipodes = showAntipodes, selectionTint = selectionTint, zoneId = observationZone.id,
                     activeBody = activeBody?.takeIf { it in bodies },forward24Hours = forward24Hours, activeComparisonId = activeComparisonId,
                     globe = globe, globeLocationVisible = position == SpaceCompassPanoramaPosition.COMPLETE, skyFraming = skyFraming,
-                    showGrid = preferences?.getBoolean(SPACE_COMPASS_CAPTURE_GRID_KEY,true) ?: true)
+                    showGrid = showGrid, showGridNumbers = showGridNumbers)
                 busy = true
                 val preparingNotice = showSpaceCompassBottomMessage(application,
                     resources.getString(R.string.panorama_preparing))

@@ -8,4 +8,8 @@
     <string name="capture_grid">Grille</string>
     <string name="capture_grid_on">Grille visible</string>
     <string name="capture_grid_off">Grille masquée</string>
+    <string name="view_mode_sky_frame" formatted="false">Ciel (Cadrage)</string>
+    <string name="view_mode_sky_panorama" formatted="false">Ciel (Panorama)</string>
+    <string name="view_mode_globe_frame" formatted="false">Globe (Cadrage)</string>
+    <string name="view_mode_globe_panorama" formatted="false">Globe (Panorama)</string>
 </resources>

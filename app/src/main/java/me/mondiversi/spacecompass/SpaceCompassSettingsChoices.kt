@@ -9,6 +9,7 @@ import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.*
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.CompositionLocalProvider
+import androidx.compose.runtime.staticCompositionLocalOf
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
@@ -26,6 +27,9 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 
 internal val SpaceCompassSettingsCheckboxLineHeight = 18.sp
+
+/** Dialogs place their choice control at the logical end; page settings keep their layout. */
+internal val LocalSpaceCompassTrailingChoiceControl = staticCompositionLocalOf { false }
 
 @Composable
 internal fun SpaceCompassSettingsIsland(title: String? = null, iconKey: String? = null,
@@ -109,11 +113,8 @@ internal fun SpaceCompassSettingsRadioRow(checked: Boolean, onClick: () -> Unit,
     modifier: Modifier = Modifier, enabled: Boolean = true,
     content: @Composable RowScope.() -> Unit) {
     val foreground = MaterialTheme.colorScheme.onSurface
-    Row(modifier.spaceCompassSettingsChoiceSurface(checked)
-        .selectable(checked, enabled = enabled, role = Role.RadioButton, onClick = onClick)
-        .padding(horizontal = SpaceCompassSettingsChoiceHorizontalPadding,
-            vertical = SpaceCompassSettingsChoiceVerticalPadding),
-        verticalAlignment = Alignment.CenterVertically) {
+    val trailingControl = LocalSpaceCompassTrailingChoiceControl.current
+    val control: @Composable () -> Unit = {
         CompositionLocalProvider(LocalMinimumInteractiveComponentSize provides 0.dp) {
             RadioButton(checked, onClick = null, enabled = enabled,
                 modifier = Modifier.size(SpaceCompassSettingsControlSize),
@@ -122,8 +123,21 @@ internal fun SpaceCompassSettingsRadioRow(checked: Boolean, onClick: () -> Unit,
                     disabledSelectedColor = foreground.copy(alpha = .72f * .62f),
                     disabledUnselectedColor = foreground.copy(alpha = .72f * .62f)))
         }
-        Spacer(Modifier.width(10.dp))
-        content()
+    }
+    Row(modifier.spaceCompassSettingsChoiceSurface(checked)
+        .selectable(checked, enabled = enabled, role = Role.RadioButton, onClick = onClick)
+        .padding(horizontal = SpaceCompassSettingsChoiceHorizontalPadding,
+            vertical = SpaceCompassSettingsChoiceVerticalPadding),
+        verticalAlignment = Alignment.CenterVertically) {
+        if (trailingControl) {
+            Row(Modifier.weight(1f), verticalAlignment = Alignment.CenterVertically, content = content)
+            Spacer(Modifier.width(10.dp))
+            control()
+        } else {
+            control()
+            Spacer(Modifier.width(10.dp))
+            content()
+        }
     }
 }
 
@@ -171,20 +185,32 @@ internal fun SpaceCompassSettingsChoices(spec: SpaceCompassSettingSpec, language
 
 @Composable
 internal fun SpaceCompassSettingsCheckbox(label: String, checked: Boolean, onCheckedChange: (Boolean) -> Unit,
-    modifier: Modifier = Modifier, enabled: Boolean = true, compact: Boolean = false) {
+    modifier: Modifier = Modifier, enabled: Boolean = true, compact: Boolean = false,
+    leadingIcon: (@Composable () -> Unit)? = null) {
     val foreground = MaterialTheme.colorScheme.onSurface
+    val trailingControl = LocalSpaceCompassTrailingChoiceControl.current
+    val control: @Composable () -> Unit = {
+        CompositionLocalProvider(LocalMinimumInteractiveComponentSize provides 0.dp) {
+            Checkbox(checked, onCheckedChange = null, enabled = enabled, modifier = Modifier.size(SpaceCompassSettingsControlSize),
+                colors = spaceCompassCheckboxColors(uncheckedColor = foreground.copy(alpha = .72f)))
+        }
+    }
     // Grouped options use the same vertical padding as settings choices.
     Row(modifier.fillMaxWidth().then(if (compact) Modifier else Modifier.heightIn(min = 48.dp))
         .toggleable(checked, enabled = enabled, role = Role.Checkbox, onValueChange = onCheckedChange)
         .then(if (compact) Modifier.padding(vertical = SpaceCompassSettingsChoiceVerticalPadding) else Modifier),
         verticalAlignment = Alignment.CenterVertically) {
-        CompositionLocalProvider(LocalMinimumInteractiveComponentSize provides 0.dp) {
-            Checkbox(checked, onCheckedChange = null, enabled = enabled, modifier = Modifier.size(SpaceCompassSettingsControlSize),
-                colors = spaceCompassCheckboxColors(uncheckedColor = foreground.copy(alpha = .72f)))
+        if (!trailingControl) {
+            control()
+            Spacer(Modifier.width(6.dp))
         }
-        Spacer(Modifier.width(6.dp))
+        leadingIcon?.let { it(); Spacer(Modifier.width(10.dp)) }
         SpaceCompassSettingsChoiceLabel(label, Modifier.weight(1f), enabled = enabled, weight = FontWeight.Normal,
             lineHeight = SpaceCompassSettingsCheckboxLineHeight)
+        if (trailingControl) {
+            Spacer(Modifier.width(10.dp))
+            control()
+        }
     }
 }
 

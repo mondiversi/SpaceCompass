@@ -127,7 +127,7 @@ internal fun SpaceCompassSunPointingViewport(
         val reticleCenter = SpaceCompassSunScenePoint(width * (scenePerspective?.principalX ?: .5),
             height * (scenePerspective?.principalY ?: .5))
         var menuSize by remember(showFloatingControls) { mutableStateOf(IntSize.Zero) }
-        var noticeSize by remember { mutableStateOf(IntSize.Zero) }
+        var noticeSize by remember(showFloatingControls) { mutableStateOf(IntSize.Zero) }
         var bottomActionsSize by remember(showFloatingControls) { mutableStateOf(IntSize.Zero) }
         var bottomStartActionsSize by remember(showFloatingControls) { mutableStateOf(IntSize.Zero) }
         var bottomCenterActionsSize by remember(showFloatingControls) { mutableStateOf(IntSize.Zero) }
@@ -268,18 +268,19 @@ internal fun SpaceCompassSunPointingViewport(
         // Keep the measured fixed controls/header as exclusions.
         val guideExclusions = exclusions.filterNot { it in timeBadgeExclusions }
         if(sceneContent != null) {
-            val upper=if(!showFloatingControls) 0.0 else maxOf(topStartActionsSize.height.toDouble(),topEndActionsSize.height.toDouble(),
-                if(sideControls) 0.0 else with(density) { centerActionsTop.toPx().toDouble() }+centerActionsSize.height)
-            // Temporary point/antipode controls must not move or resize the globe.
-            val stableBottom=with(density) { (spaceCompassFloatingControlBaseSize*SPACE_COMPASS_COMPACT_CONTROL_MULTIPLIER+8.dp).toPx().toDouble() }
-            val lower=if(!showFloatingControls) 0.0 else maxOf(stableBottom,bottomStartActionsSize.height.toDouble())
+            // Optical fit follows the pointing area, never the visibility or measured size of its controls.
+            val sceneInset=with(density) { topContentInset.toPx().toDouble() }
             // Mirror the paused clock's gap against the measured central control row.
             val noteBottom=if(showFloatingControls && !sideControls) with(density) {
                 maxOf(bottomStartActionsSize.height.toDouble(),bottomCenterActionsSize.height+bottomCenterLift)
                     .toFloat().toDp()
             }+SpaceCompassMainCaptionControlGap else topContentInset
-            sceneContent(Modifier.fillMaxSize(),exclusions+titleTouchExclusions,
-                spaceCompassGlobeViewport(width,height,upper,lower),noteBottom)
+            val globeViewport=spaceCompassGlobeViewport(width,height,sceneInset,sceneInset)
+            // The pointing host has its own bottom padding. Use the shared landscape optical axis
+            // so that this layout inset cannot leave the globe slightly above the screen centre.
+            val fittedViewport=if(sideControls && opticalFrame!=null) globeViewport.copy(
+                top=opticalFrame.top+(opticalFrame.height-globeViewport.height)/2) else globeViewport
+            sceneContent(Modifier.fillMaxSize(),exclusions+titleTouchExclusions,fittedViewport,noteBottom)
         }
         SpaceCompassSkyReferenceLayer(observerLatitude, timeMs, orientation.takeIf { compassReliable }, scenePerspective,
             guideExclusions, enabled = showSkyReferences && drawScene, observerAltitude = observerAltitude) {

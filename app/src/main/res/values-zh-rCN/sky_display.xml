@@ -1,0 +1,4 @@
+<resources>
+    <string name="view_mode_weather" formatted="false">天气</string>
+    <string name="tutorial_sky_labels" formatted="false">在全景中选择标签。在取景中使用准星。</string>
+</resources>

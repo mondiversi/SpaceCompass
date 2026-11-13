@@ -26,7 +26,7 @@ internal fun SpaceCompassMainNavigationControls(vertical: Boolean, modifier: Mod
     }
 }
 
-/** Weather becomes transparency in camera mode; both views keep zoom in the second slot. */
+/** Centre the contextual controls as a group; framed Sky has only Zoom. */
 @Composable
 internal fun SpaceCompassMainViewModeControls(vertical: Boolean, modifier: Modifier,
     maximumHeight: Dp, content: @Composable () -> Unit) {

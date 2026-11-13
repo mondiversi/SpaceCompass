@@ -8,4 +8,8 @@
     <string name="capture_grid">Сетка</string>
     <string name="capture_grid_on">Сетка видна</string>
     <string name="capture_grid_off">Сетка скрыта</string>
+    <string name="view_mode_sky_frame" formatted="false">Небо (Кадр)</string>
+    <string name="view_mode_sky_panorama" formatted="false">Небо (Панорама)</string>
+    <string name="view_mode_globe_frame" formatted="false">Глобус (Кадр)</string>
+    <string name="view_mode_globe_panorama" formatted="false">Глобус (Панорама)</string>
 </resources>

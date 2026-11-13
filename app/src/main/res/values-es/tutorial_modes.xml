@@ -1,0 +1,7 @@
+<resources>
+    <string name="tutorial_mode_sky_frame" formatted="false">Sigue el cielo moviendo el teléfono. Elige el tiempo en Visualización.</string>
+    <string name="tutorial_mode_sky_panorama" formatted="false">Explora el cielo arrastrando. Elige etiquetas con su botón y el tiempo en Visualización.</string>
+    <string name="tutorial_mode_camera" formatted="false">Superpón los objetos al cielo captado por la cámara.</string>
+    <string name="tutorial_mode_globe_frame" formatted="false">Gira la Tierra para seguir trayectorias y puntos.</string>
+    <string name="tutorial_mode_globe_panorama" formatted="false">Explora las trayectorias en un mapa plano de la Tierra.</string>
+</resources>

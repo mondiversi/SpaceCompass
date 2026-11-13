@@ -8,4 +8,8 @@
     <string name="capture_grid">Raster</string>
     <string name="capture_grid_on">Raster sichtbar</string>
     <string name="capture_grid_off">Raster ausgeblendet</string>
+    <string name="view_mode_sky_frame" formatted="false">Himmel (Bildausschnitt)</string>
+    <string name="view_mode_sky_panorama" formatted="false">Himmel (Panorama)</string>
+    <string name="view_mode_globe_frame" formatted="false">Globus (Bildausschnitt)</string>
+    <string name="view_mode_globe_panorama" formatted="false">Globus (Panorama)</string>
 </resources>

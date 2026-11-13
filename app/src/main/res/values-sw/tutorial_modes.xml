@@ -1,0 +1,7 @@
+<resources>
+    <string name="tutorial_mode_sky_frame" formatted="false">Fuata anga kwa kusogeza simu. Chagua hali ya hewa katika Mwonekano.</string>
+    <string name="tutorial_mode_sky_panorama" formatted="false">Chunguza anga kwa kuburuta. Chagua lebo kwa kitufe chake na hali ya hewa katika Mwonekano.</string>
+    <string name="tutorial_mode_camera" formatted="false">Onyesha vitu juu ya anga linaloonekana kupitia kamera.</string>
+    <string name="tutorial_mode_globe_frame" formatted="false">Zungusha Dunia kufuata njia na nukta.</string>
+    <string name="tutorial_mode_globe_panorama" formatted="false">Chunguza njia kwenye ramani tambarare ya Dunia.</string>
+</resources>

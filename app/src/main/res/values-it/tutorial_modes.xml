@@ -1,0 +1,7 @@
+<resources>
+    <string name="tutorial_mode_sky_frame" formatted="false">Segui il cielo muovendo il telefono. Scegli il meteo in Visualizzazione.</string>
+    <string name="tutorial_mode_sky_panorama" formatted="false">Esplora il cielo trascinando. Scegli le etichette dal loro pulsante e il meteo in Visualizzazione.</string>
+    <string name="tutorial_mode_camera" formatted="false">Sovrapponi gli oggetti al cielo ripreso dalla fotocamera.</string>
+    <string name="tutorial_mode_globe_frame" formatted="false">Ruota la Terra per seguire traiettorie e punti.</string>
+    <string name="tutorial_mode_globe_panorama" formatted="false">Esplora le traiettorie sulla mappa piana della Terra.</string>
+</resources>

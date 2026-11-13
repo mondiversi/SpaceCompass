@@ -8,4 +8,8 @@
     <string name="capture_grid">Kisi</string>
     <string name="capture_grid_on">Kisi ditampilkan</string>
     <string name="capture_grid_off">Kisi disembunyikan</string>
+    <string name="view_mode_sky_frame" formatted="false">Langit (Bingkai tampilan)</string>
+    <string name="view_mode_sky_panorama" formatted="false">Langit (Panorama)</string>
+    <string name="view_mode_globe_frame" formatted="false">Globe (Bingkai tampilan)</string>
+    <string name="view_mode_globe_panorama" formatted="false">Globe (Panorama)</string>
 </resources>

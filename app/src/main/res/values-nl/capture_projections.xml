@@ -8,4 +8,8 @@
     <string name="capture_grid">Raster</string>
     <string name="capture_grid_on">Raster zichtbaar</string>
     <string name="capture_grid_off">Raster verborgen</string>
+    <string name="view_mode_sky_frame" formatted="false">Hemel (Beelduitsnede)</string>
+    <string name="view_mode_sky_panorama" formatted="false">Hemel (Panorama)</string>
+    <string name="view_mode_globe_frame" formatted="false">Wereldbol (Beelduitsnede)</string>
+    <string name="view_mode_globe_panorama" formatted="false">Wereldbol (Panorama)</string>
 </resources>

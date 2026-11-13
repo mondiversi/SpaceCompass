@@ -1,0 +1,6 @@
+<resources>
+    <string name="main_grid_references" formatted="false">Πλέγμα και γραμμές αναφοράς</string>
+    <string name="main_grid_enable" formatted="false">Πλέγμα αναφοράς</string>
+    <string name="main_references_enable" formatted="false">Γραμμές του πλανήτη</string>
+    <string name="main_grid_numbers" formatted="false">Αρίθμηση πλέγματος</string>
+</resources>

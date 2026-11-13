@@ -8,4 +8,8 @@
     <string name="capture_grid">Πλέγμα</string>
     <string name="capture_grid_on">Το πλέγμα εμφανίζεται</string>
     <string name="capture_grid_off">Το πλέγμα αποκρύπτεται</string>
+    <string name="view_mode_sky_frame" formatted="false">Ουρανός (Κάδρο)</string>
+    <string name="view_mode_sky_panorama" formatted="false">Ουρανός (Πανόραμα)</string>
+    <string name="view_mode_globe_frame" formatted="false">Υδρόγειος (Κάδρο)</string>
+    <string name="view_mode_globe_panorama" formatted="false">Υδρόγειος (Πανόραμα)</string>
 </resources>

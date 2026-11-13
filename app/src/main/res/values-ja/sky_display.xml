@@ -1,0 +1,4 @@
+<resources>
+    <string name="view_mode_weather" formatted="false">天気</string>
+    <string name="tutorial_sky_labels" formatted="false">パノラマではラベルを選択できます。フレーム表示では照準を使います。</string>
+</resources>

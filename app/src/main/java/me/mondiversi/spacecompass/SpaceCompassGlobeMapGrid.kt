@@ -24,24 +24,22 @@ internal fun drawSpaceCompassGlobeMapGrid(canvas: Canvas, width: Int, height: In
         val y = (90-latitude)/180f*height
         line(0f,y,width.toFloat(),y,latitude==0)
     }
+    if (!snapshot.showGridNumbers) return emptyList()
     val text = spaceCompassOrbitTextPaint(25*scale).apply { color=Color.WHITE }
-    fun number(degrees: Int) = (if(degrees>0) "+" else "") +
-        formatSpaceCompassNumber(degrees.toDouble(),0,snapshot.formatting.numeric,
-            grouping=false,systemLocale=snapshot.formatting.deviceLocale) + "°"
     fun label(value: String, x: Float, baseline: Float) {
         text.setShadowLayer(3*scale,0f,scale,Color.BLACK)
         canvas.drawText(value,x,baseline,text);text.clearShadowLayer()
     }
     for (longitude in -180..180 step 15) {
-        val value=number(longitude);text.textAlign=Paint.Align.CENTER
+        val value=spaceCompassGeographicGridLabel(longitude,false,snapshot.formatting,snapshot.geographicDirections);text.textAlign=Paint.Align.CENTER
         val half=text.measureText(value)/2
         val x=((longitude+180)/360f*width).coerceIn(half+12*scale,width-half-12*scale)
         label(value,x,32*scale);label(value,x,height-100*scale)
     }
     for (latitude in -90..90 step 15) {
         val baseline=((90-latitude)/180f*height-text.fontMetrics.ascent/2).coerceIn(70*scale,height-140*scale)
-        text.textAlign=Paint.Align.LEFT;label(number(latitude),12*scale,baseline)
-        text.textAlign=Paint.Align.RIGHT;label(number(latitude),width-12*scale,baseline)
+        text.textAlign=Paint.Align.LEFT;label(spaceCompassGeographicGridLabel(latitude,true,snapshot.formatting,snapshot.geographicDirections),12*scale,baseline)
+        text.textAlign=Paint.Align.RIGHT;label(spaceCompassGeographicGridLabel(latitude,true,snapshot.formatting,snapshot.geographicDirections),width-12*scale,baseline)
     }
     return listOf(
         SpaceCompassSunSceneFrame(0.0,0.0,width.toDouble(),(80*scale).toDouble()),

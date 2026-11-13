@@ -12,7 +12,7 @@ internal fun drawSpaceCompassCameraAngularGrid(canvas: Canvas, width: Int, heigh
     val right = width - 96f * scale; val bottom = height - 42f * scale
     if (right - left < 80f * scale || bottom - top < 80f * scale) return
     val frame = SpaceCompassSunSceneFrame(left.toDouble(), top.toDouble(), (right-left).toDouble(), (bottom-top).toDouble())
-    val grid = spaceCompassCameraAngularGrid(orientation, perspective, width.toDouble(), height.toDouble(), frame)
+    val grid = spaceCompassCameraAngularGrid(orientation, perspective, width.toDouble(), height.toDouble(), frame, includeBorderTicks = snapshot.showGridNumbers)
     val paint = Paint(Paint.ANTI_ALIAS_FLAG).apply { style = Paint.Style.STROKE; strokeWidth = scale }
     val gridWidth = SpaceCompassAngularGridAppearance.lineWidth(width,height)
     for (line in grid.lines) {
@@ -29,6 +29,7 @@ internal fun drawSpaceCompassCameraAngularGrid(canvas: Canvas, width: Int, heigh
     }
     paint.color = SpaceCompassAngularGridAppearance.majorArgb; paint.strokeWidth = gridWidth
     canvas.drawRect(left, top, right, bottom, paint)
+    if (!snapshot.showGridNumbers) return
     val text = spaceCompassOrbitTextPaint(21 * scale).apply { color = Color.WHITE; textAlign = Paint.Align.CENTER }
     val axisBounds = mutableListOf<RectF>()
     fun value(degrees: Double, elevation: Boolean, decimals: Int): String =

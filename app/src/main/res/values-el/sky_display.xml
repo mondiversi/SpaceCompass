@@ -1,0 +1,4 @@
+<resources>
+    <string name="view_mode_weather" formatted="false">Καιρός</string>
+    <string name="tutorial_sky_labels" formatted="false">Επίλεξε ετικέτες στο πανόραμα. Στο κάδρο χρησιμοποίησε το στόχαστρο.</string>
+</resources>

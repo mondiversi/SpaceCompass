@@ -1,9 +1,9 @@
 <resources>
     <string name="info_news_title">تازه‌ترین تغییرات · %1$s</string>
-    <string name="info_news_star_sky" formatted="false">شبکه‌های آسمان و دوربین سبک‌تر شده‌اند و دقت زاویه‌ای حفظ شده است.</string>
-    <string name="info_news_texture_downloads" formatted="false">در هر دو جهت صفحه، کادر یا پانوراما را با کلید افقی انتخاب کنید.</string>
-    <string name="info_news_weather" formatted="false">تصاویر کره زمین شبکه جغرافیایی دقیق‌تری با فاصله‌های ۱۵ درجه دارند.</string>
-    <string name="info_news_viewer_zoom" formatted="false">پیکان‌های بالا و پایین انتخاب آسمان، دوربین و کره زمین را روشن‌تر می‌کنند.</string>
-    <string name="info_news_settings" formatted="false">پنل‌های اطلاعات فشرده‌تر با فاصله‌های هماهنگ.</string>
-    <string name="info_news_catalog" formatted="false">نام پیوند قطب‌نما اکنون جزئیات موقعیت واقعی است.</string>
+    <string name="info_news_star_sky" formatted="false">آسمان و کرهٔ زمین را در کادر یا پانوراما با انتخاب‌های ذخیره‌شدهٔ نمایش کاوش کنید.</string>
+    <string name="info_news_texture_downloads" formatted="false">حرکت روان‌تر کرهٔ زمین، کادربندی پایدار و انتخاب‌گر فشردهٔ اجرام.</string>
+    <string name="info_news_weather" formatted="false">شبکهٔ مرجع، شماره‌ها و خطوط سیاره را با هم انتخاب کنید؛ تصاویر انتخاب‌های شما را به ارث می‌برند.</string>
+    <string name="info_news_viewer_zoom" formatted="false">برچسب‌ها را در پانورامای آسمان و کرهٔ زمین انتخاب کنید؛ آب‌وهوا اکنون در حالت نمایش است.</string>
+    <string name="info_news_settings" formatted="false">فهرست‌های فشردهٔ بزرگ‌نمایی در مرکز دکمه قرار می‌گیرند و مقدار انتخاب‌شده را برجسته می‌کنند.</string>
+    <string name="info_news_catalog" formatted="false">آموزش به‌روز، پنجره‌های روشن‌تر و خروجی صحنه که لحظهٔ توقف را حفظ می‌کند.</string>
 </resources>

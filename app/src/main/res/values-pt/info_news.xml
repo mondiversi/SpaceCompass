@@ -1,9 +1,9 @@
 <resources>
     <string name="info_news_title">Últimas novidades · %1$s</string>
-    <string name="info_news_star_sky" formatted="false">Grades de Céu e Câmera mais leves, com a mesma precisão angular.</string>
-    <string name="info_news_texture_downloads" formatted="false">Escolha Enquadramento ou Panorama com um seletor horizontal nas duas orientações.</string>
-    <string name="info_news_weather" formatted="false">As capturas do Globo mostram uma grade geográfica a cada 15°.</string>
-    <string name="info_news_viewer_zoom" formatted="false">Setas para cima e para baixo tornam mais claro o seletor Céu, Câmera e Globo.</string>
-    <string name="info_news_settings" formatted="false">Painéis de informações mais compactos e espaçamento uniforme.</string>
-    <string name="info_news_catalog" formatted="false">O link da bússola agora se chama Detalhes da posição real.</string>
+    <string name="info_news_star_sky" formatted="false">Explore Céu e Globo em enquadramento ou panorama, com escolhas de visualização guardadas.</string>
+    <string name="info_news_texture_downloads" formatted="false">Navegação do Globo mais fluida, enquadramento estável e seletor de objetos compacto.</string>
+    <string name="info_news_weather" formatted="false">Escolha grelha de referência, numeração e linhas planetárias; as capturas herdam as escolhas.</string>
+    <string name="info_news_viewer_zoom" formatted="false">Escolha etiquetas nos panoramas do Céu e nas vistas do Globo; a meteorologia está em Visualização.</string>
+    <string name="info_news_settings" formatted="false">Menus de zoom compactos, centrados no botão e com o valor selecionado realçado.</string>
+    <string name="info_news_catalog" formatted="false">Tutorial atualizado, janelas mais claras e exportações de Cena que preservam o instante em pausa.</string>
 </resources>

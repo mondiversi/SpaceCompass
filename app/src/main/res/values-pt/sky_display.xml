@@ -1,0 +1,4 @@
+<resources>
+    <string name="view_mode_weather" formatted="false">Meteorologia</string>
+    <string name="tutorial_sky_labels" formatted="false">Escolha etiquetas no panorama. No enquadramento, use a mira.</string>
+</resources>

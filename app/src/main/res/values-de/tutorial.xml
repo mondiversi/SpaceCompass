@@ -3,7 +3,7 @@
     <string name="tutorial_title" formatted="false">Tutorial</string>
     <string name="tutorial_welcome_title" formatted="false">Willkommen bei Space Compass</string>
     <string name="tutorial_welcome_body" formatted="false">Erkunde den Himmel und die Bahnen der Himmelskörper von anderen Orten und zu anderen Zeiten. Das interaktive Tutorial erklärt die Bedienung.</string>
-    <string name="tutorial_instruction" formatted="false">Tippe auf ein hervorgehobenes Bedienelement oder einen Bahnpunkt, um seine Funktion kennenzulernen. Einstellungen bleiben unverändert.</string>
+    <string name="tutorial_instruction" formatted="false">Tippe auf ein hervorgehobenes Bedienelement oder einen Bahnpunkt, um seine Funktion kennenzulernen.</string>
     <string name="tutorial_zoom_title" formatted="false">Zoom</string>
     <string name="tutorial_navigation_title" formatted="false">Ausgewähltes Objekt</string>
     <string name="tutorial_points_title" formatted="false">Bahnpunkte</string>
@@ -11,25 +11,25 @@
     <string name="tutorial_menu" formatted="false">Öffne Einstellungen, gespeicherte Szenen und das Tutorial.</string>
     <string name="tutorial_objects" formatted="false">Wähle sichtbare Objekte. Suche, filtere und speichere Favoriten im Katalog.</string>
     <string name="tutorial_location" formatted="false">Passe Ort, Höhe, Zeitzone, Datum, Uhrzeit und Zeitgeschwindigkeit an.</string>
-    <string name="tutorial_guides" formatted="false">Zeige Himmelskreise, Pole, Zenit und Nadir. Dies sind Himmelsprojektionen und keine Wege am Boden.</string>
-    <string name="tutorial_forward" formatted="false">0–24 zeigt den ganzen Kalendertag von Mitternacht bis Mitternacht. +24h zeigt die nächsten 24 Stunden ab dem angezeigten, auch simulierten Zeitpunkt. Tagesbahn, Aufnahmen und Exporte nutzen denselben Zeitraum.</string>
-    <string name="tutorial_camera" formatted="false">Wähle Himmel, Kamera oder Globus und erkunde ihre Bedienelemente.</string>
-    <string name="tutorial_weather" formatted="false">Zeige oder verberge Wettereffekte im simulierten Himmel und in Panoramen. Im Kameramodus nicht verfügbar.</string>
-    <string name="tutorial_axis" formatted="false">Wähle Kameraachse (90°) oder Telefonlängsachse (0°). Die Kamera verwendet immer ihre eigene Achse.</string>
-    <string name="tutorial_transparency" formatted="false">Mache Objektbilder durchscheinend, um sie mit dem Kamerabild zu vergleichen. Die Aufnahme übernimmt diese Wahl.</string>
+    <string name="tutorial_guides" formatted="false">Wähle Gitter, Beschriftung und Planetenlinien und tippe auf Anwenden.</string>
+    <string name="tutorial_forward" formatted="false">0–24 zeigt den Kalendertag; +24h zeigt 24 Stunden ab dem angezeigten Zeitpunkt.</string>
+    <string name="tutorial_camera" formatted="false">Wähle Modus und Ansicht, dann Anwenden. Schließen behält die bisherigen Einstellungen.</string>
+    <string name="tutorial_weather" formatted="false">Zeige oder verberge Wettereffekte im simulierten Himmel und in Panoramen.</string>
+    <string name="tutorial_axis" formatted="false">Wähle Kameraachse (90°) oder Telefonlängsachse (0°).</string>
+    <string name="tutorial_transparency" formatted="false">Mache Objektbilder durchscheinend, um sie mit dem Kamerabild zu vergleichen.</string>
     <string name="tutorial_zoom" formatted="false">Vergrößere oder verkleinere mit der Taste oder zwei Fingern.</string>
     <string name="tutorial_capture" formatted="false">Erstelle ein Bild. Wähle in der Vorschau Raster, Beschriftungen und Position; bei Himmel und Globus wechselst du zwischen Bildausschnitt und Panorama.</string>
     <string name="tutorial_panels" formatted="false">Klappe Objekt- und Kompassfelder ein oder aus, um mehr Himmel zu sehen.</string>
-    <string name="tutorial_antipodes" formatted="false">Tippe, um die Gegenrichtung ausgewählter Punkte anzuzeigen oder auszublenden: Azimut +180° und Höhe mit umgekehrtem Vorzeichen. Halte die Taste gedrückt, um alle Punkte abzuwählen.</string>
+    <string name="tutorial_antipodes" formatted="false">Tippe, um Antipoden ein- oder auszublenden. Gedrückt halten wählt alle Punkte ab.</string>
     <string name="tutorial_navigation" formatted="false">Blättere durch ausgewählte Objekte. Das Feld zeigt das aktive Objekt und seine Bahnfarben.</string>
     <string name="tutorial_observatory" formatted="false">Öffne Objektdaten, Bahnen, wichtige Höhen, Ereignisse und persönliche Zeitpunkte.</string>
     <string name="tutorial_daily" formatted="false">Sieh Bahn, Zeiten, Höhen und auswählbare Punkte. Für zukünftige Ereignisse sind Erinnerungen möglich.</string>
     <string name="tutorial_gps" formatted="false">Zeige tatsächlichen Standort, GPS-Höhe, Ausrichtung und Wetter, unabhängig von der Location.</string>
-    <string name="tutorial_points" formatted="false">Wähle einen Bahnpunkt. Ziele darauf, um Objekt, Uhrzeit, T, Azimut und Höhe zu lesen. Der Objektrand hat die Farbe seiner Bahn; bei Auswahl der aktuellen Position wird er blau oder hellblau.</string>
-    <string name="tutorial_reticle_title" formatted="false">Zeit und Symbole</string>
-    <string name="tutorial_reticle" formatted="false">Tippe auf eine freie Stelle, um die Zeit anzuhalten oder fortzusetzen. Doppeltippen zeigt oder verbirgt Fadenkreuz und Symbole; bei Himmel und Kamera auch das Raster.</string>
+    <string name="tutorial_points" formatted="false">Wähle einen Punkt aus oder ab. Im Fadenkreuz liest du Zeit, T, Azimut und Höhe.</string>
+    <string name="tutorial_reticle_title" formatted="false">Zeit und Oberfläche</string>
+    <string name="tutorial_reticle" formatted="false">Tippe auf eine freie Stelle, um die Zeit anzuhalten oder fortzusetzen. Doppeltippen blendet Oberfläche und Infobereiche ein oder aus.</string>
     <string name="tutorial_reminder" formatted="false">Öffne Android-Wecker oder Kalender für ein gültiges zukünftiges Ereignis. Vergangene Ereignisse und der aktuelle Punkt sind ausgeschlossen.</string>
     <string name="tutorial_status_title" formatted="false">Status und Wiederherstellung</string>
-    <string name="tutorial_status" formatted="false">Lies den aktuellen Status. Die Aktion kann Berechtigungen anfordern, den Standort aktivieren oder Bahn- und Wetterdaten erneut laden. Das Tutorial führt sie nicht aus.</string>
-    <string name="tutorial_remove" formatted="false">Entferne das aktive Objekt nach Bestätigung aus den ausgewählten Objekten. Das Objekt bleibt im Katalog verfügbar.</string>
+    <string name="tutorial_status" formatted="false">Prüfe Status und verfügbare Aktionen für Position, Wetter und Bahndaten.</string>
+    <string name="tutorial_remove" formatted="false">Entferne das aktive Objekt nach Bestätigung aus den ausgewählten Objekten.</string>
 </resources>

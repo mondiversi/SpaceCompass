@@ -11,25 +11,25 @@
     <string name="tutorial_menu" formatted="false">تنظیمات، صحنه‌های ذخیره‌شده و راهنما را باز می‌کند.</string>
     <string name="tutorial_objects" formatted="false">اجرام نمایان را انتخاب کنید. جستجو و فیلتر کنید و موارد دلخواه را ذخیره کنید.</string>
     <string name="tutorial_location" formatted="false">مکان، ارتفاع، منطقه زمانی، تاریخ، ساعت و سرعت زمان را تنظیم کنید.</string>
-    <string name="tutorial_guides" formatted="false">دایره‌های آسمانی، قطب‌ها، سمت‌الرأس و سمت‌القدم را نمایش دهید. این‌ها تصویر آسمانی‌اند، نه مسیر زمینی.</string>
-    <string name="tutorial_forward" formatted="false">0–24 تمام روز تقویمی را از نیمه‌شب تا نیمه‌شب نشان می‌دهد. +24h بیست‌وچهار ساعت پس از زمان نمایش‌داده‌شده، حتی زمان شبیه‌سازی‌شده، را نشان می‌دهد. مسیرها، تصاویر و خروجی‌ها از همین بازه استفاده می‌کنند.</string>
-    <string name="tutorial_camera" formatted="false">آسمان، دوربین یا کرهٔ زمین را انتخاب کنید و کنترل‌های آن را بشناسید.</string>
-    <string name="tutorial_weather" formatted="false">آب‌وهوا را در آسمان شبیه‌سازی‌شده و پانوراما نمایش دهید یا پنهان کنید. در حالت دوربین فعال نیست.</string>
-    <string name="tutorial_axis" formatted="false">محور دوربین (90°) یا طول گوشی (0°) را انتخاب کنید. دوربین همیشه محور خودش را به کار می‌برد.</string>
-    <string name="tutorial_transparency" formatted="false">تصاویر اجرام را نیمه‌شفاف کنید تا با دوربین مقایسه شوند. عکس این انتخاب را حفظ می‌کند.</string>
+    <string name="tutorial_guides" formatted="false">شبکه، شماره‌ها و خطوط سیاره را انتخاب کنید، سپس اعمال را بزنید.</string>
+    <string name="tutorial_forward" formatted="false">0–24 کل روز را نشان می‌دهد؛ +24h از زمان نمایش‌داده‌شده ۲۴ ساعت را نشان می‌دهد.</string>
+    <string name="tutorial_camera" formatted="false">حالت و نما را انتخاب کنید، سپس اعمال را بزنید. بستن تنظیمات فعلی را حفظ می‌کند.</string>
+    <string name="tutorial_weather" formatted="false">آب‌وهوا را در آسمان شبیه‌سازی‌شده و پانوراما نمایش دهید یا پنهان کنید.</string>
+    <string name="tutorial_axis" formatted="false">محور دوربین (90°) یا طول گوشی (0°) را انتخاب کنید.</string>
+    <string name="tutorial_transparency" formatted="false">تصاویر اجرام را نیمه‌شفاف کنید تا با دوربین مقایسه شوند.</string>
     <string name="tutorial_zoom" formatted="false">با دکمه یا دو انگشت بزرگ‌نمایی یا کوچک‌نمایی کن.</string>
     <string name="tutorial_capture" formatted="false">تصویری آماده کنید. در پیش‌نمایش، شبکه، برچسب‌ها و موقعیت را انتخاب کنید؛ در آسمان و کرهٔ زمین بین کادر و پانوراما جابه‌جا شوید.</string>
     <string name="tutorial_panels" formatted="false">پنل‌های جرم و قطب‌نما را جمع یا باز کنید تا آسمان بیشتری ببینید.</string>
-    <string name="tutorial_antipodes" formatted="false">برای نمایش یا پنهان کردن جهت مخالف نقاط انتخاب‌شده لمس کنید: سمت +۱۸۰ درجه و ارتفاع با علامت معکوس. برای لغو انتخاب همه نقاط نگه دارید.</string>
+    <string name="tutorial_antipodes" formatted="false">برای نمایش یا پنهان کردن نقاط مقابل ضربه بزنید. برای لغو انتخاب همهٔ نقاط نگه دارید.</string>
     <string name="tutorial_navigation" formatted="false">میان اجرام انتخاب‌شده حرکت کنید. پنل جرم فعال و رنگ مسیر آن را نشان می‌دهد.</string>
     <string name="tutorial_observatory" formatted="false">داده‌ها، مسیرها، ارتفاع‌های مهم، رویدادها و لحظه‌های شخصی جرم را باز می‌کند.</string>
     <string name="tutorial_daily" formatted="false">مسیر، ساعت‌ها، ارتفاع‌ها و نقاط قابل انتخاب را ببینید. رویدادهای آینده می‌توانند یادآور داشته باشند.</string>
     <string name="tutorial_gps" formatted="false">مکان واقعی، ارتفاع GPS، جهت و آب‌وهوا را مستقل از Location ببینید.</string>
-    <string name="tutorial_points" formatted="false">یک نقطه مداری را انتخاب کنید. برای دیدن جرم، ساعت، T، سمت و ارتفاع به آن نشانه بروید. حاشیه جرم هم‌رنگ مسیر آن است؛ با انتخاب موقعیت فعلی، آبی یا فیروزه‌ای می‌شود.</string>
-    <string name="tutorial_reticle_title" formatted="false">زمان و نمادها</string>
-    <string name="tutorial_reticle" formatted="false">برای توقف یا ادامهٔ زمان، فضای خالی را لمس کنید. دو بار لمس، نشانه و نمادها و در آسمان و دوربین، شبکه را نیز نشان می‌دهد یا پنهان می‌کند.</string>
+    <string name="tutorial_points" formatted="false">نقطه‌ای را انتخاب یا لغو انتخاب کنید. نشانه را روی آن ببرید تا زمان، T، سمت و ارتفاع را ببینید.</string>
+    <string name="tutorial_reticle_title" formatted="false">زمان و رابط کاربری</string>
+    <string name="tutorial_reticle" formatted="false">برای توقف یا ادامهٔ زمان، فضای خالی را لمس کنید. با دو بار لمس، رابط کاربری و پنل‌ها را نمایش دهید یا پنهان کنید.</string>
     <string name="tutorial_reminder" formatted="false">برای رویداد آینده مجاز، زنگ یا تقویم Android را باز کنید. رویدادهای گذشته و نقطه فعلی شامل نمی‌شوند.</string>
     <string name="tutorial_status_title" formatted="false">وضعیت و بازیابی</string>
-    <string name="tutorial_status" formatted="false">وضعیت فعلی را بخوانید. عملکرد می‌تواند مجوز بخواهد، مکان را فعال کند یا بارگیری داده‌های مداری و هوا را تکرار کند. آموزش آن را اجرا نمی‌کند.</string>
-    <string name="tutorial_remove" formatted="false">پس از تأیید، جرم فعال را از اجرام انتخاب‌شده حذف کنید. جرم همچنان در فهرست اجرام در دسترس است.</string>
+    <string name="tutorial_status" formatted="false">وضعیت و اقدامات موجود برای موقعیت، هواشناسی و داده‌های مداری را بررسی کنید.</string>
+    <string name="tutorial_remove" formatted="false">پس از تأیید، جرم فعال را از اجرام انتخاب‌شده حذف کنید.</string>
 </resources>

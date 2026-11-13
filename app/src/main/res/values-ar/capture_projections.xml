@@ -8,4 +8,8 @@
     <string name="capture_grid">الشبكة</string>
     <string name="capture_grid_on">الشبكة ظاهرة</string>
     <string name="capture_grid_off">الشبكة مخفية</string>
+    <string name="view_mode_sky_frame" formatted="false">السماء (الإطار)</string>
+    <string name="view_mode_sky_panorama" formatted="false">السماء (بانوراما)</string>
+    <string name="view_mode_globe_frame" formatted="false">الكرة الأرضية (الإطار)</string>
+    <string name="view_mode_globe_panorama" formatted="false">الكرة الأرضية (بانوراما)</string>
 </resources>

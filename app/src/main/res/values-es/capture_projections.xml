@@ -8,4 +8,8 @@
     <string name="capture_grid">Cuadrícula</string>
     <string name="capture_grid_on">Cuadrícula visible</string>
     <string name="capture_grid_off">Cuadrícula oculta</string>
+    <string name="view_mode_sky_frame" formatted="false">Cielo (Encuadre)</string>
+    <string name="view_mode_sky_panorama" formatted="false">Cielo (Panorámica)</string>
+    <string name="view_mode_globe_frame" formatted="false">Globo terráqueo (Encuadre)</string>
+    <string name="view_mode_globe_panorama" formatted="false">Globo terráqueo (Panorámica)</string>
 </resources>

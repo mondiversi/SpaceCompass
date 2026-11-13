@@ -1,0 +1,7 @@
+<resources>
+    <string name="tutorial_mode_sky_frame" formatted="false">Telefonu hareket ettirerek gökyüzünü izleyin. Görünümde hava durumunu seçin.</string>
+    <string name="tutorial_mode_sky_panorama" formatted="false">Sürükleyerek gökyüzünü keşfedin. Etiketleri düğmesinden, hava durumunu Görünümden seçin.</string>
+    <string name="tutorial_mode_camera" formatted="false">Gök cisimlerini kameranın gösterdiği gökyüzünün üzerine yerleştirin.</string>
+    <string name="tutorial_mode_globe_frame" formatted="false">Yörüngeleri ve noktaları takip etmek için Dünya’yı döndürün.</string>
+    <string name="tutorial_mode_globe_panorama" formatted="false">Düz Dünya haritasında yörüngeleri keşfedin.</string>
+</resources>

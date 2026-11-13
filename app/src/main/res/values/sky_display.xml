@@ -1,0 +1,4 @@
+<resources>
+    <string name="view_mode_weather" formatted="false">Weather</string>
+    <string name="tutorial_sky_labels" formatted="false">Choose labels in panorama. In framed view, use the reticle.</string>
+</resources>

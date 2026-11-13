@@ -1,0 +1,7 @@
+<resources>
+    <string name="tutorial_mode_sky_frame" formatted="false">با حرکت تلفن آسمان را دنبال کنید. آب‌وهوا را در نمایش انتخاب کنید.</string>
+    <string name="tutorial_mode_sky_panorama" formatted="false">با کشیدن آسمان را کاوش کنید. برچسب‌ها را با دکمهٔ آن‌ها و آب‌وهوا را در نمایش انتخاب کنید.</string>
+    <string name="tutorial_mode_camera" formatted="false">اجرام را روی تصویر آسمان دوربین نمایش دهید.</string>
+    <string name="tutorial_mode_globe_frame" formatted="false">زمین را بچرخانید تا مسیرها و نقاط را دنبال کنید.</string>
+    <string name="tutorial_mode_globe_panorama" formatted="false">مسیرها را روی نقشهٔ مسطح زمین کاوش کنید.</string>
+</resources>

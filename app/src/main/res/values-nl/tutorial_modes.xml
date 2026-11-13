@@ -1,0 +1,7 @@
+<resources>
+    <string name="tutorial_mode_sky_frame" formatted="false">Volg de hemel door je telefoon te bewegen. Kies weer bij Weergave.</string>
+    <string name="tutorial_mode_sky_panorama" formatted="false">Verken de hemel door te slepen. Kies labels via hun knop en weer bij Weergave.</string>
+    <string name="tutorial_mode_camera" formatted="false">Toon objecten over het camerabeeld van de hemel.</string>
+    <string name="tutorial_mode_globe_frame" formatted="false">Draai de aarde om banen en punten te volgen.</string>
+    <string name="tutorial_mode_globe_panorama" formatted="false">Verken banen op een platte kaart van de aarde.</string>
+</resources>

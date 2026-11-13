@@ -25,7 +25,9 @@ per idle minute, independently of GPS, system time zone, interface theme and any
 scenario clock. Surface normals and sunlight share the same view transform, so
 visual globe rotation does not move daylight to the wrong continents. Decorative
 orbits, clouds and accelerated spin remain illustrative. Scene time survives rotation.
-The globe uses diffuse surface lighting without the artificial white ocean glint.
+The globe combines diffuse lighting with a white ocean glint aligned with the
+real Sun and viewing direction. Both WebGL and the software fallback restrict it
+to illuminated blue-dominant water; the night hemisphere receives no glint.
 Blue-dominant ocean colours receive up to 60% more diffuse albedo before solar
 shading, identically in both interface themes. Land, neutral ice, city lights and
 the solar terminator retain their existing treatment. The software fallback adjusts

@@ -24,13 +24,16 @@ internal const val SPACE_COMPASS_GLOBE_ZOOM_VERSION_KEY="globe_zoom_scale_versio
 
 @Composable
 internal fun SpaceCompassGlobeLabelsButton(mode: SpaceCompassPanoramaLabelMode,
-    onChoose: (SpaceCompassPanoramaLabelMode)->Unit,color: Color,background: Color) {
+    onChoose: (SpaceCompassPanoramaLabelMode)->Unit,color: Color,background: Color,
+    sky: Boolean=false) {
     var expanded by remember { mutableStateOf(false) }
     val tutorialActive=LocalSpaceCompassTutorial.current?.active==true
     val tint=spaceCompassFloatingControlTint(color,mode!=SpaceCompassPanoramaLabelMode.NONE)
     Box {
         SpaceCompassFloatingActionButton(stringResource(R.string.panorama_point_labels),{if(!tutorialActive) expanded=true},tint,background,
-            Modifier.testTag("globe-labels").spaceCompassTutorialTarget(SpaceCompassTutorialFeature.GLOBE_LABELS),selectedState=mode!=SpaceCompassPanoramaLabelMode.NONE,
+            Modifier.testTag(if(sky) "sky-labels" else "globe-labels").spaceCompassTutorialTarget(
+                if(sky) SpaceCompassTutorialFeature.SKY_LABELS else SpaceCompassTutorialFeature.GLOBE_LABELS),
+            selectedState=mode!=SpaceCompassPanoramaLabelMode.NONE,
             stateText=stringResource(mode.labelResource)) {
             SpaceCompassPanoramaLabelsGlyph()
         }

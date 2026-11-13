@@ -1,0 +1,4 @@
+<resources>
+    <string name="view_mode_weather" formatted="false">Hali ya hewa</string>
+    <string name="tutorial_sky_labels" formatted="false">Chagua lebo katika panorama. Katika fremu, tumia shabaha.</string>
+</resources>

@@ -5,7 +5,8 @@ import org.junit.Test
 
 class SpaceCompassGlobeCaptureContextTest {
     @Test fun globeScopesRetainDefaultsAndMigrateOldStoredChoices() {
-        assertEquals(SpaceCompassPanoramaLabelMode.KEY_SELECTED,spaceCompassGlobeLabelMode(null))
+        assertEquals(SpaceCompassPanoramaLabelMode.SELECTED,spaceCompassGlobeLabelMode(null))
+        assertEquals(SpaceCompassPanoramaLabelMode.KEY_SELECTED,spaceCompassGlobeLabelMode(null,true))
         assertEquals(SpaceCompassPanoramaLabelMode.NONE,spaceCompassGlobeLabelMode(null,false))
         assertEquals(SpaceCompassPanoramaLabelMode.ALL,spaceCompassGlobeLabelMode("all-objects"))
         assertEquals(SpaceCompassPanoramaLabelMode.KEY_SELECTED,spaceCompassGlobeLabelMode("selected-object"))

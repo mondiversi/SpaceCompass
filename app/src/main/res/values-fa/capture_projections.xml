@@ -8,4 +8,8 @@
     <string name="capture_grid">شبکه</string>
     <string name="capture_grid_on">شبکه نمایان است</string>
     <string name="capture_grid_off">شبکه پنهان است</string>
+    <string name="view_mode_sky_frame" formatted="false">آسمان (کادر)</string>
+    <string name="view_mode_sky_panorama" formatted="false">آسمان (پانوراما)</string>
+    <string name="view_mode_globe_frame" formatted="false">کرهٔ زمین (کادر)</string>
+    <string name="view_mode_globe_panorama" formatted="false">کرهٔ زمین (پانوراما)</string>
 </resources>

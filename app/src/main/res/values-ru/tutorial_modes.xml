@@ -1,0 +1,7 @@
+<resources>
+    <string name="tutorial_mode_sky_frame" formatted="false">Следите за небом, перемещая телефон. Выберите погоду в режиме просмотра.</string>
+    <string name="tutorial_mode_sky_panorama" formatted="false">Исследуйте небо перетаскиванием. Выберите подписи их кнопкой, а погоду в режиме просмотра.</string>
+    <string name="tutorial_mode_camera" formatted="false">Наложите объекты на изображение неба с камеры.</string>
+    <string name="tutorial_mode_globe_frame" formatted="false">Вращайте Землю, чтобы следить за траекториями и точками.</string>
+    <string name="tutorial_mode_globe_panorama" formatted="false">Исследуйте траектории на плоской карте Земли.</string>
+</resources>

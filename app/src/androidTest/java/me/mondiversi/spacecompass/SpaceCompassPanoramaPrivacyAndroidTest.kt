@@ -41,6 +41,31 @@ class SpaceCompassPanoramaPrivacyAndroidTest {
         }
         return SpaceCompassPanoramaPreviewData(file, time, SpaceCompassPanoramaPosition.COMPLETE, snapshot, caption, "Fixture credit")
     }
+    @Test fun exportedGridAndReferenceCombinationsNeverReuseTheWrongImage() {
+        val context = InstrumentationRegistry.getInstrumentation().targetContext
+        val root = File(context.cacheDir, "capture-overlays-" + UUID.randomUUID()).apply { check(mkdirs()) }
+        try {
+            val data = fixture(root)
+            val variants = mutableMapOf<SpaceCompassCaptureOverlays, File>()
+            for (grid in listOf(false, true)) for (references in listOf(false, true)) {
+                val overlays = SpaceCompassCaptureOverlays(grid, references)
+                val file = prepareSpaceCompassPanoramaVariant(context, data, SpaceCompassPanoramaPosition.AREA,
+                    showGrid = grid, showReferences = references)
+                variants[overlays] = file
+                assertEquals(file, prepareSpaceCompassPanoramaVariant(context, data, SpaceCompassPanoramaPosition.AREA,
+                    showGrid = grid, showReferences = references))
+                val delivered = prepareSpaceCompassCaptureExport(context, data, setOf(SpaceCompassCaptureExportType.IMAGE),
+                    SpaceCompassPanoramaPosition.AREA, SpaceCompassPanoramaLabelMode.DEFAULT,
+                    SpaceCompassPanoramaExportMode.INTERNATIONAL, SpaceCompassPanoramaCenter.SOUTH,
+                    showGrid = grid, showReferences = references).files.single()
+                assertArrayEquals(file.readBytes(), delivered.readBytes())
+            }
+            assertEquals(4, variants.values.toSet().size)
+            assertFalse(variants.getValue(SpaceCompassCaptureOverlays(false, false)).readBytes()
+                .contentEquals(variants.getValue(SpaceCompassCaptureOverlays(false, true)).readBytes()))
+        } finally { root.deleteRecursively() }
+    }
+
     @Test fun privateVariantsDoNotInheritGpsAndRetainFrozenTimestampAndCredits() {
         val context = InstrumentationRegistry.getInstrumentation().targetContext
         val root = File(context.cacheDir, "panorama-privacy-test-" + UUID.randomUUID()).apply { check(mkdirs()) }

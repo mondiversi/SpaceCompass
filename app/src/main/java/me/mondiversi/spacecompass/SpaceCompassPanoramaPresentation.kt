@@ -70,6 +70,8 @@ internal fun spaceCompassPanoramaPresentation(snapshot: SpaceCompassPanoramaSnap
         cardinalNames = listOf(R.string.panorama_north, R.string.panorama_northeast, R.string.panorama_east,
             R.string.panorama_southeast, R.string.panorama_south, R.string.panorama_southwest,
             R.string.panorama_west, R.string.panorama_northwest).map(resources::getString),
+        geographicDirections = listOf(R.string.geographic_north_symbol,R.string.geographic_east_symbol,
+            R.string.geographic_south_symbol,R.string.geographic_west_symbol).map(resources::getString),
         elevationNames = listOf(90.0, 60.0, 30.0, 0.0, -30.0, -60.0, -90.0).map { "${if (it > 0) "+" else ""}${angle(it)}" },
         azimuthNames = (0..12).map { angle(it * 30.0) },
         markerTimes = objects.flatMap { it.path?.markers.orEmpty() }.associate { point ->

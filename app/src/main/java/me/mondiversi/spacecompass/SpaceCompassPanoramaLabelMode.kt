@@ -2,6 +2,11 @@ package me.mondiversi.spacecompass
 
 internal const val SPACE_COMPASS_PANORAMA_LABEL_MODE_KEY = "panorama_label_mode"
 
+internal const val SPACE_COMPASS_SKY_LABEL_MODE_KEY = "sky_panorama_label_mode"
+
+/** The same live scopes and first-install default as the Globe, saved independently. */
+internal fun spaceCompassSkyLabelMode(value: String?) = spaceCompassGlobeLabelMode(value)
+
 /** Two instances of one body retain independent selected-only curve labels. */
 internal fun SpaceCompassPanoramaSnapshot.showsOrbitName(item: SpaceCompassPanoramaObject,
     selections: List<SpaceCompassPanoramaSelectedPoint>): Boolean = labelMode.showsOrbitName(isActive(item),

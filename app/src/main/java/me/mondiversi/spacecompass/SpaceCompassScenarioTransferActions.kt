@@ -45,6 +45,7 @@ internal fun <T> rememberSpaceCompassConfigurationTransfer(scene: Boolean, obser
     var configuredText by rememberSaveable { mutableStateOf<String?>(null) }
     var completeText by rememberSaveable { mutableStateOf<String?>(null) }
     var instant by rememberSaveable { mutableLongStateOf(0L) }
+    var paused by rememberSaveable { mutableStateOf(false) }
     var displayText by rememberSaveable { mutableStateOf<String?>(null) }
     var include by rememberSaveable { mutableStateOf(true) }
     var completeAutomatic by rememberSaveable { mutableStateOf(true) }
@@ -57,8 +58,9 @@ internal fun <T> rememberSpaceCompassConfigurationTransfer(scene: Boolean, obser
     val invalid=if (scene) R.string.scene_file_invalid else R.string.scenario_file_invalid
     fun filename(value: String)=if (scene) spaceCompassSceneFileName(value) else spaceCompassScenarioFileName(value)
     fun stage(snapshot: SpaceCompassConfigurationExport) {
-        configuredText=snapshot.configured.encode();completeText=snapshot.complete?.encode();instant=snapshot.capturedAtMs
-        displayText=snapshot.display?.let { listOf(it.guides,it.forward24Hours,it.weather,it.translucentObjects).joinToString(",") }
+        configuredText=snapshot.configured.encode();completeText=snapshot.complete?.encode();instant=snapshot.capturedAtMs;paused=snapshot.paused
+        displayText=snapshot.display?.let { listOf(it.guides,it.forward24Hours,it.weather,it.translucentObjects,it.globe,it.globeLabels,
+            it.globeAxisLocked,it.globeLabelMode.orEmpty(),it.grid,it.gridNumbers,it.skyLabelMode.orEmpty()).joinToString(",") }
     }
     val save=rememberLauncherForActivityResult(ActivityResultContracts.CreateDocument(SPACE_COMPASS_SCENARIO_MIME)) { uri ->
         val text=pendingSave;pendingSave=null
@@ -101,9 +103,12 @@ internal fun <T> rememberSpaceCompassConfigurationTransfer(scene: Boolean, obser
             }
             val base=remember(text) { SpaceCompassScenarioArchive.decode(text) }
             val complete=remember(completeText) { completeText?.let { SpaceCompassScenarioArchive.decode(it) } }
-            val display=remember(displayText) { displayText?.split(',')?.map(String::toBooleanStrict)?.let {
-                SpaceCompassSceneDisplay(it[0],it[1],it[2],it[3]) } }
-            val snapshot=SpaceCompassConfigurationExport(base,complete,instant,display)
+            val display=remember(displayText) { displayText?.split(',')?.let {
+                SpaceCompassSceneDisplay(it[0].toBooleanStrict(),it[1].toBooleanStrict(),it[2].toBooleanStrict(),it[3].toBooleanStrict(),
+                    it.getOrNull(4)?.toBooleanStrict() ?: false,it.getOrNull(5)?.toBooleanStrict() ?: false,
+                    it.getOrNull(6)?.toBooleanStrict() ?: true,it.getOrNull(7)?.takeIf(String::isNotEmpty),
+                    it.getOrNull(8)?.toBooleanStrict() ?: true,it.getOrNull(9)?.toBooleanStrict() ?: false,it.getOrNull(10)?.takeIf(String::isNotEmpty)) } }
+            val snapshot=SpaceCompassConfigurationExport(base,complete,instant,display,paused)
             val selected=if (scene) snapshot.scene(include,completeAutomatic)?.contents else snapshot.location(include)
             val valid=selected!=null && (scene || selected.custom || selected.timeSettings.enabled)
             LaunchedEffect(exportMode.mode,selected,include) {

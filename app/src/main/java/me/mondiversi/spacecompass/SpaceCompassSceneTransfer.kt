@@ -13,10 +13,18 @@ internal fun readSpaceCompassSceneDisplay(p: SharedPreferences) = SpaceCompassSc
     p.getBoolean(SPACE_COMPASS_WEATHER_VISIBLE_KEY,SPACE_COMPASS_WEATHER_VISIBLE_DEFAULT),
     p.getBoolean(SPACE_COMPASS_CAMERA_OBJECT_TRANSLUCENCY_KEY,SPACE_COMPASS_CAMERA_OBJECT_TRANSLUCENCY_DEFAULT),
     p.getBoolean(SPACE_COMPASS_GLOBE_MODE_KEY,false),p.getBoolean(SPACE_COMPASS_GLOBE_LABELS_KEY,SPACE_COMPASS_GLOBE_LABELS_DEFAULT),
-    p.getBoolean(SPACE_COMPASS_GLOBE_AXIS_KEY,true),p.getString(SPACE_COMPASS_GLOBE_LABEL_MODE_KEY,null))
+    p.getBoolean(SPACE_COMPASS_GLOBE_AXIS_KEY,true),p.getString(SPACE_COMPASS_GLOBE_LABEL_MODE_KEY,null)
+        ?: if(!p.contains(SPACE_COMPASS_GLOBE_LABELS_KEY)) SpaceCompassPanoramaLabelMode.SELECTED.key else null,
+    p.getBoolean(SPACE_COMPASS_MAIN_GRID_KEY,SPACE_COMPASS_MAIN_GRID_DEFAULT),
+    p.getBoolean(SPACE_COMPASS_GRID_NUMBERS_KEY,SPACE_COMPASS_GRID_NUMBERS_DEFAULT),
+    p.getString(SPACE_COMPASS_SKY_LABEL_MODE_KEY,null))
 
 internal fun SharedPreferences.Editor.putSpaceCompassSceneDisplay(display: SpaceCompassSceneDisplay) = apply {
     putBoolean(SPACE_COMPASS_SKY_REFERENCES_KEY,display.guides)
+    putBoolean(SPACE_COMPASS_MAIN_GRID_KEY,display.grid)
+    putBoolean(SPACE_COMPASS_GRID_NUMBERS_KEY,display.gridNumbers)
+    if(display.skyLabelMode==null) remove(SPACE_COMPASS_SKY_LABEL_MODE_KEY)
+    else putString(SPACE_COMPASS_SKY_LABEL_MODE_KEY,display.skyLabelMode)
     putBoolean(SPACE_COMPASS_FORWARD_PATH_KEY,display.forward24Hours)
     putBoolean(SPACE_COMPASS_WEATHER_VISIBLE_KEY,display.weather)
     putBoolean(SPACE_COMPASS_CAMERA_OBJECT_TRANSLUCENCY_KEY,display.translucentObjects)
@@ -35,6 +43,7 @@ internal fun importSpaceCompassScene(archive: SpaceCompassSceneArchive, observer
     val scene=checked.contents
     scene.personalMoments?.let { spaceCompassScenePersonalMoments(comparisons.personalMoments,it) }
     if (checked.locationIncluded) observer.importArchive(scene.locationOnly())
+    if (checked.paused) observer.restoreScenePause(checked.capturedAtMs)
     // Expire the previous scene before restoring the incoming pins, which already belong to this day.
     val realNow = System.currentTimeMillis()
     val deviceZone = java.time.ZoneId.systemDefault()
@@ -58,7 +67,7 @@ internal fun rememberSpaceCompassSceneTransfer(observer: SpaceCompassObserverSta
         context.getSharedPreferences(SPACE_COMPASS_PREFERENCES_NAME,android.content.Context.MODE_PRIVATE)
     }
     return rememberSpaceCompassConfigurationTransfer(scene=true,observer=observer,capture={
-        val base=spaceCompassCaptureLocationExport(observer,resources.getString(R.string.scene_title))
+        val base=spaceCompassCaptureSceneExport(observer,resources.getString(R.string.scene_title))
         fun SpaceCompassScenarioArchive.objects()=withCelestialObjects(readSpaceCompassCelestialSelection(preferences),
             points.selectedPoints,comparisons.entries,comparisons.activeId,points.antipodesVisible,comparisons.personalMoments)
         base.copy(configured=base.configured.objects(),complete=base.complete?.objects(),display=readSpaceCompassSceneDisplay(preferences))

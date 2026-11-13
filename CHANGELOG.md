@@ -1,5 +1,16 @@
 # Changelog
 
+## 1.10.0 — 2026-11-13
+
+- Explore live Sky and Globe in Frame or Panorama, with independent saved zoom and drag positions. Keep wide panoramas edge to edge in landscape and remove the reticle from panoramic views.
+- Smooth Globe rendering by separating scene data, viewport updates and pose changes; improve centring, clipping and zoom while rotating the device, folding information panels or hiding the interface.
+- Retain a compact object selector when information panels are folded, including a dedicated landscape rail and balanced edge spacing. Hiding the interface frees the full viewing area while reference grids remain visible.
+- Choose the reference grid, optional coordinate numbers and planetary lines independently. Captures inherit main-view choices; preview edits remain local and the geographic capture grid uses 15° intervals, aligned latitude labels and visible poles.
+- Add remembered label choices to Sky panoramas, initially Selected points only, matching the live Globe default. Framed Sky keeps reticle-driven point details and only a centred Zoom control. Move Weather into View mode, visible but disabled outside Sky.
+- Refine modal selectors with icons, trailing radio buttons/checkboxes, themed Close actions and Apply for multiple choices. Keep zoom menus compact, centred on their button and highlighting the current value.
+- Preserve a paused instant in Scene exports and imports, including when Location is omitted; keep older Scene files compatible with optional grid and label settings.
+- Update compact, isolated tutorial previews for all display modes, restore the Earth screensaver sunlight reflection, and update in-app News in all twenty languages. Keep the 9,999-object catalogue and external graphics collection unchanged.
+
 ## 1.9.2 — 2026-11-11
 
 - Reduce live Sky/Camera grid work with a dedicated projector, reusable buffers, early rejection of invisible segments and two draw calls, retaining angular precision, stroke style and existing capture/export geometry.

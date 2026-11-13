@@ -1,9 +1,9 @@
 <resources>
     <string name="info_news_title">آخر المستجدات · %1$s</string>
-    <string name="info_news_star_sky" formatted="false">شبكات السماء والكاميرا أخف مع الحفاظ على الدقة الزاوية.</string>
-    <string name="info_news_texture_downloads" formatted="false">اختر الإطار أو البانوراما بمفتاح أفقي في كلا اتجاهي الشاشة.</string>
-    <string name="info_news_weather" formatted="false">تعرض لقطات الكرة الأرضية شبكة جغرافية أدق بفواصل 15°.</string>
-    <string name="info_news_viewer_zoom" formatted="false">سهمان في الأعلى والأسفل يوضحان اختيار السماء والكاميرا والكرة الأرضية.</string>
-    <string name="info_news_settings" formatted="false">لوحات معلومات أكثر إحكامًا بمسافات متناسقة.</string>
-    <string name="info_news_catalog" formatted="false">أصبح رابط البوصلة باسم تفاصيل الموقع الفعلي.</string>
+    <string name="info_news_star_sky" formatted="false">استكشف السماء والكرة الأرضية في إطار أو بانوراما، مع حفظ اختيارات العرض.</string>
+    <string name="info_news_texture_downloads" formatted="false">تنقل أكثر سلاسة في الكرة الأرضية، وتأطير ثابت، ومحدد أجرام مدمج.</string>
+    <string name="info_news_weather" formatted="false">اختر الشبكة المرجعية وأرقامها وخطوط الكوكب معًا؛ تَرِث اللقطات اختياراتك.</string>
+    <string name="info_news_viewer_zoom" formatted="false">اختر التسميات في بانوراما السماء والكرة الأرضية؛ الطقس الآن ضمن وضع العرض.</string>
+    <string name="info_news_settings" formatted="false">قوائم تكبير مدمجة تتوسط زرها وتبرز القيمة المحددة.</string>
+    <string name="info_news_catalog" formatted="false">دليل محدّث ونوافذ أوضح وتصدير مشاهد يحفظ اللحظة المتوقفة.</string>
 </resources>

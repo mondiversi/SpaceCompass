@@ -11,7 +11,11 @@ internal fun spaceCompassGlobeLabelMode(value: String?,legacyEnabled: Boolean?=n
     val mode = SpaceCompassPanoramaLabelMode.entries.firstOrNull { it.key==value } ?: when(value) {
         "all-objects" -> SpaceCompassPanoramaLabelMode.ALL
         "selected-object" -> SpaceCompassPanoramaLabelMode.OBJECTS_SELECTED
-        else -> if(legacyEnabled==false) SpaceCompassPanoramaLabelMode.NONE else SpaceCompassPanoramaLabelMode.KEY_SELECTED
+        else -> when(legacyEnabled) {
+            false -> SpaceCompassPanoramaLabelMode.NONE
+            true -> SpaceCompassPanoramaLabelMode.KEY_SELECTED
+            null -> SpaceCompassPanoramaLabelMode.SELECTED
+        }
     }
     return if(mode==SpaceCompassPanoramaLabelMode.OBJECTS_SELECTED) SpaceCompassPanoramaLabelMode.KEY_SELECTED else mode
 }

@@ -10,20 +10,32 @@ internal const val SPACE_COMPASS_SCENE_EXTENSION = ".spacecompass-scene"
 /** Only scene switches travel: device, camera, favorites and application preferences stay local. */
 internal data class SpaceCompassSceneDisplay(val guides: Boolean, val forward24Hours: Boolean,
     val weather: Boolean, val translucentObjects: Boolean, val globe: Boolean = false,
-    val globeLabels: Boolean = false,val globeAxisLocked: Boolean = true,val globeLabelMode: String? = null)
+    val globeLabels: Boolean = false,val globeAxisLocked: Boolean = true,val globeLabelMode: String? = null,
+    val grid: Boolean = true, val gridNumbers: Boolean = false, val skyLabelMode: String? = null)
 
 /** A distinct envelope prevents old Location readers from applying an absent observer configuration. */
 internal data class SpaceCompassSceneArchive(val contents: SpaceCompassScenarioArchive,
-    val locationIncluded: Boolean, val display: SpaceCompassSceneDisplay?, val capturedAtMs: Long) {
+    val locationIncluded: Boolean, val display: SpaceCompassSceneDisplay?, val capturedAtMs: Long,
+    val paused: Boolean = false) {
+    init {
+        if (paused) require(java.time.Instant.ofEpochMilli(capturedAtMs).atZone(ZoneId.of("UTC")).year in 1900..2100)
+    }
     fun encode(): String {
         require(contents.celestialSelection != null)
         val canonical = if (locationIncluded) contents else contents.withoutLocation()
         val values = sortedMapOf("format" to "space-compass-scene", "version" to "1",
             "locationIncluded" to locationIncluded.toString(), "capturedAtMs" to capturedAtMs.toString(),
             "contents" to Base64.getEncoder().encodeToString(canonical.encode().toByteArray(Charsets.UTF_8)))
+        if (paused) values["paused"] = "true"
         display?.let {
             values["guides"] = it.guides.toString(); values["forward24Hours"] = it.forward24Hours.toString()
             values["weather"] = it.weather.toString(); values["translucentObjects"] = it.translucentObjects.toString()
+            if(!it.grid) values["grid"] = "false"
+            if(it.gridNumbers) values["gridNumbers"] = "true"
+            it.skyLabelMode?.let { mode ->
+                require(SpaceCompassPanoramaLabelMode.entries.any { it.key==mode })
+                values["skyLabelMode"]=mode
+            }
             if(it.globe) values["globe"] = "true"
             it.globeLabelMode?.let { mode ->
                 require(SpaceCompassPanoramaLabelMode.entries.any { it.key==mode })
@@ -54,11 +66,15 @@ internal data class SpaceCompassSceneArchive(val contents: SpaceCompassScenarioA
             val include=bool("locationIncluded")
             if (!include) require(archive == archive.withoutLocation())
             val display=if (p.getProperty("guides")==null) {
-                require(listOf("forward24Hours","weather","translucentObjects","globe","globeLabels","globeAxisLocked","globeLabelMode").none(p::containsKey));null
+                require(listOf("forward24Hours","weather","translucentObjects","globe","globeLabels","globeAxisLocked","globeLabelMode","grid","gridNumbers","skyLabelMode").none(p::containsKey));null
             } else SpaceCompassSceneDisplay(bool("guides"),bool("forward24Hours"),bool("weather"),bool("translucentObjects"),p.getProperty("globe")?.toBooleanStrict() ?: false,
                 p.getProperty("globeLabels")?.toBooleanStrict() ?: false,p.getProperty("globeAxisLocked")?.toBooleanStrict() ?: true,
-                p.getProperty("globeLabelMode")?.also { mode -> require(SpaceCompassPanoramaLabelMode.entries.any { it.key==mode }) })
-            return SpaceCompassSceneArchive(archive,include,display,requireNotNull(p.getProperty("capturedAtMs")).toLong())
+                p.getProperty("globeLabelMode")?.also { mode -> require(SpaceCompassPanoramaLabelMode.entries.any { it.key==mode }) },
+                p.getProperty("grid")?.toBooleanStrict() ?: true,
+                p.getProperty("gridNumbers")?.toBooleanStrict() ?: false,
+                p.getProperty("skyLabelMode")?.also { mode -> require(SpaceCompassPanoramaLabelMode.entries.any { it.key==mode }) })
+            return SpaceCompassSceneArchive(archive,include,display,requireNotNull(p.getProperty("capturedAtMs")).toLong(),
+                p.getProperty("paused")?.toBooleanStrict() ?: false)
         }
     }
 }
@@ -79,7 +95,8 @@ internal fun spaceCompassSceneFileName(name: String) =
 
 /** Resolve automatic values once; subsequent export checkbox/profile changes reuse that same instant. */
 internal data class SpaceCompassConfigurationExport(val configured: SpaceCompassScenarioArchive,
-    val complete: SpaceCompassScenarioArchive?, val capturedAtMs: Long, val display: SpaceCompassSceneDisplay? = null) {
+    val complete: SpaceCompassScenarioArchive?, val capturedAtMs: Long, val display: SpaceCompassSceneDisplay? = null,
+    val paused: Boolean = false) {
     fun location(includeAutomatic: Boolean) = if (includeAutomatic) complete else configured
     fun scene(includeLocation: Boolean, includeAutomatic: Boolean = true): SpaceCompassSceneArchive? {
         val value=when {
@@ -87,7 +104,7 @@ internal data class SpaceCompassConfigurationExport(val configured: SpaceCompass
             includeAutomatic -> complete ?: return null
             else -> configured
         }
-        return SpaceCompassSceneArchive(value,includeLocation,display,capturedAtMs)
+        return SpaceCompassSceneArchive(value,includeLocation,display,capturedAtMs,paused)
     }
 }
 
@@ -97,6 +114,11 @@ internal fun spaceCompassCaptureLocationExport(observer: SpaceCompassObserverSta
     val effective=spaceCompassScenarioCurrentValues(observer.plan,observer.devicePlace,observer.timeSettings,now,zone)
     return SpaceCompassConfigurationExport(configured,configured.withAutomaticValues(effective),effective.instant)
 }
+
+/** A scene may carry a held instant even when its spatial Location is intentionally omitted. */
+internal fun spaceCompassCaptureSceneExport(observer: SpaceCompassObserverState, name: String,
+    now: Long = System.currentTimeMillis(), zone: ZoneId = ZoneId.systemDefault()): SpaceCompassConfigurationExport =
+    spaceCompassCaptureLocationExport(observer, name, now, zone).copy(paused = observer.playbackPaused)
 
 /** Incoming checked moments win; unshared definitions remain available, but unchecked, on this device. */
 internal fun spaceCompassScenePersonalMoments(local: List<SpaceCompassPersonalMoment>,

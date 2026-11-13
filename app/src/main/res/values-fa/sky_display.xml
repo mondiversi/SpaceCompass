@@ -1,0 +1,4 @@
+<resources>
+    <string name="view_mode_weather" formatted="false">آب‌وهوا</string>
+    <string name="tutorial_sky_labels" formatted="false">برچسب‌ها را در پانوراما انتخاب کنید. در نمای کادری از نشانه‌گیر استفاده کنید.</string>
+</resources>

@@ -1,0 +1,4 @@
+<resources>
+    <string name="view_mode_weather" formatted="false">Tiempo</string>
+    <string name="tutorial_sky_labels" formatted="false">Elige etiquetas en panorámica. En encuadre, usa la retícula.</string>
+</resources>

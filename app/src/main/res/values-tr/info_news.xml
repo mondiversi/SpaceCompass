@@ -1,9 +1,9 @@
 <resources>
     <string name="info_news_title">Son yenilikler · %1$s</string>
-    <string name="info_news_star_sky" formatted="false">Gökyüzü ve Kamera ızgaraları aynı açısal doğrulukla daha hafif çalışır.</string>
-    <string name="info_news_texture_downloads" formatted="false">Her iki ekran yönünde yatay anahtarla Kadraj veya Panorama seçin.</string>
-    <string name="info_news_weather" formatted="false">Küre çekimleri 15° aralıklı daha ayrıntılı coğrafi ızgara gösterir.</string>
-    <string name="info_news_viewer_zoom" formatted="false">Üst ve alt oklar Gökyüzü, Kamera ve Küre seçimini daha anlaşılır kılar.</string>
-    <string name="info_news_settings" formatted="false">Bilgi panelleri daha kompakt, aralıkları daha tutarlı.</string>
-    <string name="info_news_catalog" formatted="false">Pusula bağlantısının adı artık Gerçek konum ayrıntıları.</string>
+    <string name="info_news_star_sky" formatted="false">Kaydedilen görünüm seçimleriyle Gökyüzü ve Küreyi Kadraj veya Panoramada keşfedin.</string>
+    <string name="info_news_texture_downloads" formatted="false">Daha akıcı Küre gezinmesi, kararlı kadraj ve kompakt nesne seçici.</string>
+    <string name="info_news_weather" formatted="false">Referans ızgarası, sayılar ve gezegen çizgilerini birlikte seçin; çekimler seçimleri devralır.</string>
+    <string name="info_news_viewer_zoom" formatted="false">Gökyüzü panoramaları ve Kürede etiket seçin; hava durumu artık Görünümde.</string>
+    <string name="info_news_settings" formatted="false">Kompakt yakınlaştırma menüleri düğmeye ortalanır ve seçili değeri vurgular.</string>
+    <string name="info_news_catalog" formatted="false">Güncel öğretici, daha açık pencereler ve duraklatılan anı koruyan Sahne dışa aktarımları.</string>
 </resources>

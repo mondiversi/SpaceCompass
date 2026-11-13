@@ -1,0 +1,7 @@
+<resources>
+    <string name="tutorial_mode_sky_frame" formatted="false">Folge dem Himmel durch Bewegen des Telefons. Wähle Wetter unter Ansicht.</string>
+    <string name="tutorial_mode_sky_panorama" formatted="false">Erkunde den Himmel durch Ziehen. Wähle Beschriftungen über ihre Taste und Wetter unter Ansicht.</string>
+    <string name="tutorial_mode_camera" formatted="false">Blende Objekte über dem Kamerabild des Himmels ein.</string>
+    <string name="tutorial_mode_globe_frame" formatted="false">Drehe die Erde, um Bahnen und Punkte zu verfolgen.</string>
+    <string name="tutorial_mode_globe_panorama" formatted="false">Erkunde Bahnen auf einer flachen Erdkarte.</string>
+</resources>

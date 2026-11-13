@@ -1,0 +1,7 @@
+<resources>
+    <string name="tutorial_mode_sky_frame" formatted="false">Follow the sky by moving your phone. Choose weather in View mode.</string>
+    <string name="tutorial_mode_sky_panorama" formatted="false">Explore the full sky by dragging. Choose labels with the label button and weather in View mode.</string>
+    <string name="tutorial_mode_camera" formatted="false">Overlay objects on the sky seen through the camera.</string>
+    <string name="tutorial_mode_globe_frame" formatted="false">Rotate Earth to follow paths and points.</string>
+    <string name="tutorial_mode_globe_panorama" formatted="false">Explore paths on a flat map of Earth.</string>
+</resources>

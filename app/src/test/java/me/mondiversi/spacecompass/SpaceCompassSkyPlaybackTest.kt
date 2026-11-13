@@ -8,6 +8,39 @@ import org.junit.Test
 class SpaceCompassSkyPlaybackTest {
     private val now = Instant.parse("2026-11-07T12:00:00Z").toEpochMilli()
 
+    @Test fun importedHoldResumesCustomForwardAndReverseRatesWithoutRewritingThem() {
+        for (rate in listOf(-1296000, 10, 1296000)) {
+            var elapsed = 0L
+            val state = SpaceCompassObserverState(null, elapsedClock = { elapsed })
+            val location = spaceCompassObserverPlan(45.0, 9.0, 100.0, now, "Europe/Rome")!!
+            state.apply(location)
+            val settings = SpaceCompassScenarioTimeSettings(true, rate, SpaceCompassScenarioResume.ACTIVE)
+            state.configureTime(settings); state.active(true)
+            state.restoreScenePause(now, now + 86_400_000L, elapsed)
+            elapsed += 60_000L
+            assertEquals(now, state.plan!!.scenarioClock!!.at(now + 86_460_000L, elapsed))
+            state.togglePlayback(now + 86_460_000L, elapsed)
+            elapsed += 1000L
+            assertEquals(now + rate * 1000L, state.plan!!.scenarioClock!!.at(now + 86_461_000L, elapsed))
+            assertEquals(settings, state.timeSettings)
+            assertEquals(location, state.savedPlan)
+        }
+    }
+
+    @Test fun importingAHoldReplacesAnEarlierTemporaryPause() {
+        var elapsed = 0L
+        val state = SpaceCompassObserverState(null, elapsedClock = { elapsed })
+        state.active(true); state.togglePlayback(now, elapsed)
+        elapsed += 5000L
+        state.restoreScenePause(now + 86_400_000L, now + 5000L, elapsed)
+        elapsed += 5000L
+        assertTrue(state.playbackPaused)
+        assertEquals(now + 86_400_000L, state.plan!!.scenarioClock!!.at(now + 10_000L, elapsed))
+        state.togglePlayback(now + 10_000L, elapsed)
+        assertFalse(state.playbackPaused)
+        assertNull(state.plan)
+    }
+
     @Test fun liveTimePausesAndResumesAtTheActualInstantWithoutChangingLocation() {
         var elapsed = 0L
         val state = SpaceCompassObserverState(null, elapsedClock = { elapsed })

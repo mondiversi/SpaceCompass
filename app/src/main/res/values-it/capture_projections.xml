@@ -8,4 +8,8 @@
     <string name="capture_grid">Griglia</string>
     <string name="capture_grid_on">Griglia visibile</string>
     <string name="capture_grid_off">Griglia nascosta</string>
+    <string name="view_mode_sky_frame" formatted="false">Cielo (Inquadratura)</string>
+    <string name="view_mode_sky_panorama" formatted="false">Cielo (Panoramica)</string>
+    <string name="view_mode_globe_frame" formatted="false">Mappamondo (Inquadratura)</string>
+    <string name="view_mode_globe_panorama" formatted="false">Mappamondo (Panoramica)</string>
 </resources>

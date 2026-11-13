@@ -1,0 +1,4 @@
+<resources>
+    <string name="view_mode_weather" formatted="false">Météo</string>
+    <string name="tutorial_sky_labels" formatted="false">Choisissez les étiquettes en panorama. En cadrage, utilisez le réticule.</string>
+</resources>

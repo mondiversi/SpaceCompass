@@ -2,6 +2,7 @@ package me.mondiversi.spacecompass
 
 /** A write-only destination: published drawing paths are never mutated by the next frame. */
 internal interface SpaceCompassLiveGridSink {
+    fun beginCurve(axis: SpaceCompassCameraGridAxis, degrees: Double) {}
     fun moveTo(x: Double, y: Double)
     fun lineTo(x: Double, y: Double)
 }
@@ -33,6 +34,7 @@ internal class SpaceCompassLiveGridProjector(private val width: Double, private 
         var visible = 0
         val right = orientation.right; val up = orientation.screenUp; val forward = orientation.forward
         for(curve in curves) {
+            sink.beginCurve(curve.axis,curve.degrees)
             val rays = curve.rays
             for(i in rays.indices) {
                 val ray = rays[i]; val j = i * 3

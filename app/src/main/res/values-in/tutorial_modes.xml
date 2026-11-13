@@ -1,0 +1,7 @@
+<resources>
+    <string name="tutorial_mode_sky_frame" formatted="false">Ikuti langit dengan menggerakkan ponsel. Pilih cuaca di Tampilan.</string>
+    <string name="tutorial_mode_sky_panorama" formatted="false">Jelajahi langit dengan menyeret. Pilih label lewat tombolnya dan cuaca di Tampilan.</string>
+    <string name="tutorial_mode_camera" formatted="false">Tampilkan objek di atas langit yang terlihat melalui kamera.</string>
+    <string name="tutorial_mode_globe_frame" formatted="false">Putar Bumi untuk mengikuti lintasan dan titik.</string>
+    <string name="tutorial_mode_globe_panorama" formatted="false">Jelajahi lintasan di peta datar Bumi.</string>
+</resources>

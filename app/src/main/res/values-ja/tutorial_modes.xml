@@ -1,0 +1,7 @@
+<resources>
+    <string name="tutorial_mode_sky_frame" formatted="false">スマートフォンを動かして空を追います。「表示モード」で天気を選択できます。</string>
+    <string name="tutorial_mode_sky_panorama" formatted="false">ドラッグして空を探索します。ラベルは専用ボタン、天気は「表示モード」で選択します。</string>
+    <string name="tutorial_mode_camera" formatted="false">カメラで映した空に天体を重ねます。</string>
+    <string name="tutorial_mode_globe_frame" formatted="false">地球を回して軌跡と点を確認します。</string>
+    <string name="tutorial_mode_globe_panorama" formatted="false">平面の地球地図で軌跡を探索します。</string>
+</resources>

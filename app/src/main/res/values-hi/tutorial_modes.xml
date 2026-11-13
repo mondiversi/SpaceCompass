@@ -1,0 +1,7 @@
+<resources>
+    <string name="tutorial_mode_sky_frame" formatted="false">फ़ोन घुमाकर आकाश देखें। दृश्य मोड में मौसम चुनें।</string>
+    <string name="tutorial_mode_sky_panorama" formatted="false">खींचकर आकाश देखें। लेबल उनके बटन से और मौसम दृश्य मोड में चुनें।</string>
+    <string name="tutorial_mode_camera" formatted="false">कैमरे से दिख रहे आकाश पर खगोलीय पिंड दिखाएँ।</string>
+    <string name="tutorial_mode_globe_frame" formatted="false">पथ और बिंदु देखने के लिए पृथ्वी को घुमाएँ।</string>
+    <string name="tutorial_mode_globe_panorama" formatted="false">पृथ्वी के समतल मानचित्र पर पथ देखें।</string>
+</resources>

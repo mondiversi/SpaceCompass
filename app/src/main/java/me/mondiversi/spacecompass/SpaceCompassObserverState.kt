@@ -80,6 +80,23 @@ internal class SpaceCompassObserverState(private val preferences: SharedPreferen
         }
         navigationPaused = pause
     }
+    /** Restore an exported hold without rewriting the recipient's configured Location or speed. */
+    fun restoreScenePause(instant: Long, wallNow: Long = System.currentTimeMillis(), elapsedNow: Long = elapsedClock()) {
+        if (editorPreview || applyingDeferred) return
+        require(java.time.Instant.ofEpochMilli(instant).atZone(ZoneId.of("UTC")).year in 1900..2100)
+        val base = configuredPlan ?: SpaceCompassObserverPlan(0.0, 0.0, 0.0, wallNow, ZoneId.systemDefault().id,
+            simulatePosition = false, simulateTime = false, simulateAltitude = false, simulateZone = false, simulateDate = false)
+        val previous = base.scenarioClock?.settings ?: timeSettings
+        val settings = previous.copy(rate = previous.rate.takeUnless { it == 0 } ?: 1)
+        val playback = SpaceCompassScenarioClock(settings, "navigation-playback", instant, wallNow, elapsedNow,
+            elapsed = elapsedClock).also {
+                it.setActive(active, wallNow, elapsedNow)
+                it.hold(wallNow, elapsedNow)
+            }
+        navigationConfiguration = Triple(savedPlan, timeSettings, configuredCustomMode())
+        navigationPlan = base.copy().also { it.scenarioClock = playback }
+        navigationPaused = true
+    }
     var savedPlan by mutableStateOf<SpaceCompassObserverPlan?>(null)
         private set
     var editorGeneration by mutableIntStateOf(0); private set

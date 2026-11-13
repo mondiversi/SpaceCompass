@@ -1,5 +1,7 @@
 package me.mondiversi.spacecompass
 
+import androidx.compose.animation.animateContentSize
+import androidx.compose.animation.core.tween
 import androidx.activity.compose.BackHandler
 import android.content.res.Configuration
 import android.content.Intent
@@ -47,25 +49,25 @@ internal fun SpaceCompassSunFinderDataPanel(
     onDailyPath: (() -> Unit)? = null,
     orientationRows: List<SpaceCompassSunDataRow> = emptyList(),
     locationInfoRows: List<SpaceCompassSunDataRow> = emptyList(),
-    onInfo: () -> Unit = {}
+    detailsExpanded: Boolean = true, onInfo: () -> Unit = {}
 ) {
     val scroll = rememberScrollState()
     val landscape = LocalConfiguration.current.orientation == Configuration.ORIENTATION_LANDSCAPE
     val style = TextStyle(fontSize = if (landscape || compact) 11.sp else 12.sp,
         lineHeight = if (compact) 14.sp else 16.sp, fontFeatureSettings = "tnum")
     val detailsLabel = stringResource(R.string.celestial_details_compact)
-    Column(modifier.testTag("sun-finder-details")
+    Column(modifier.animateContentSize(tween(300)).testTag("sun-finder-details")
         // Normally fits without scrolling. Keep a fallback for large accessibility fonts/windows.
         .scrollbarOverlay(scroll, secondaryText.copy(alpha = 0.46f))
         .verticalScroll(scroll), verticalArrangement = Arrangement.spacedBy(5.dp)) {
-        if (rows.isNotEmpty()) SpaceCompassCelestialBodyDataIsland(bodyName, primaryText, backgroundColor, compact, bodyNavigation, bodyNameColor = bodyNameColor, onBodyNameClick = onBodyNameClick, onDailyPath = onDailyPath) {
+        if (rows.isNotEmpty() || !detailsExpanded) SpaceCompassCelestialBodyDataIsland(bodyName, primaryText, backgroundColor, compact, bodyNavigation, bodyNameColor = bodyNameColor, onBodyNameClick = onBodyNameClick, onDailyPath = onDailyPath, headerOnly = !detailsExpanded) {
             val angles = rows.filter { it.tag == "sun-data-azimuth" || it.tag == "sun-data-elevation" }
             Column(Modifier.fillMaxWidth().testTag("sun-finder-pointing-data")) {
                 SpaceCompassSunFinderDataTable(rows - angles.toSet(),
                     style, primaryText, secondaryText, compact, Modifier.fillMaxWidth(), angleRows = angles)
             }
         }
-        SpaceCompassSunFinderDataIsland(primaryText, backgroundColor, compact, "sun-finder-environment-data") {
+        if (detailsExpanded) SpaceCompassSunFinderDataIsland(primaryText, backgroundColor, compact, "sun-finder-environment-data") {
             Row(Modifier.fillMaxWidth().testTag("sun-finder-environment-content"), verticalAlignment = Alignment.CenterVertically,
                 horizontalArrangement = Arrangement.spacedBy(6.dp)) {
                 val compassSize = if (compact) 68.dp else 80.dp

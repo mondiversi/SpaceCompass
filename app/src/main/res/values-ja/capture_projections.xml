@@ -8,4 +8,8 @@
     <string name="capture_grid">グリッド</string>
     <string name="capture_grid_on">グリッドを表示しました</string>
     <string name="capture_grid_off">グリッドを非表示にしました</string>
+    <string name="view_mode_sky_frame" formatted="false">空 (フレーム表示)</string>
+    <string name="view_mode_sky_panorama" formatted="false">空 (パノラマ)</string>
+    <string name="view_mode_globe_frame" formatted="false">地球儀 (フレーム表示)</string>
+    <string name="view_mode_globe_panorama" formatted="false">地球儀 (パノラマ)</string>
 </resources>

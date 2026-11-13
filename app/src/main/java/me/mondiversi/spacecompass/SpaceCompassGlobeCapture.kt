@@ -46,32 +46,15 @@ internal fun renderSpaceCompassGlobe(snapshot: SpaceCompassPanoramaSnapshot,maxE
             } else canvas.drawLine(p.x,p.y,q.x,q.y,paint)
             paint.alpha=255;paint.pathEffect=null
         }
-        if(!flat && snapshot.showGrid) {
-            val gridPaint=Paint(Paint.ANTI_ALIAS_FLAG).apply {
-                color=SpaceCompassAngularGridAppearance.lineArgb
-                strokeWidth=SpaceCompassAngularGridAppearance.lineWidth(width,h)
-            }
-            fun gridLine(a: SpaceCompassGlobeVector,b: SpaceCompassGlobeVector,major: Boolean) {
-                val av=projected(a);val bv=projected(b)
-                if(av.z<0 || bv.z<0) return
-                val p=xy(av);val q=xy(bv)
-                val edge=SpaceCompassAngularGridAppearance.lineWidth(width,h)*(if(major) 1.5f else 1f)
-                gridPaint.color=SpaceCompassAngularGridAppearance.shadowArgb;gridPaint.strokeWidth=edge*2
-                canvas.drawLine(p.x,p.y,q.x,q.y,gridPaint)
-                gridPaint.color=if(major) SpaceCompassAngularGridAppearance.majorArgb else SpaceCompassAngularGridAppearance.lineArgb
-                gridPaint.strokeWidth=edge;canvas.drawLine(p.x,p.y,q.x,q.y,gridPaint)
-            }
-            for(latitude in -75..75 step 15) {
-                val phi=Math.toRadians(latitude.toDouble())
-                fun v(i: Int)=Math.toRadians(i*3.0).let { SpaceCompassGlobeVector(cos(phi)*sin(it),sin(phi),cos(phi)*cos(it)) }
-                for(i in 1..120) gridLine(v(i-1),v(i),latitude==0)
-            }
-            for(longitude in -180 until 180 step 15) {
-                val theta=Math.toRadians(longitude.toDouble())
-                fun v(i: Int)=Math.toRadians(i*3.0-90).let { SpaceCompassGlobeVector(cos(it)*sin(theta),sin(it),cos(it)*cos(theta)) }
-                for(i in 1..60) gridLine(v(i-1),v(i),longitude==0)
-            }
-        }
+        val coordinateMarkerFrames=model.tracks.flatMap { track -> track.dots.filter { it.current&&!it.antipode }.mapNotNull { dot ->
+            val v=projected(dot.vector)
+            if(hidden(v)) null else xy(v).let { p -> val radius=width/100.0
+                SpaceCompassSunSceneFrame(p.x-radius,p.y-radius,radius*2,radius*2) }
+        } }
+        val coordinateDrawing=if(!flat && snapshot.showGrid)
+            drawSpaceCompassGlobeCoordinateGrid(canvas,width,h,r,cy,capture.pose,snapshot,coordinateMarkerFrames)
+            else SpaceCompassGlobeCoordinateDrawing()
+        val sphericalGridLabels=coordinateDrawing.bounds
         model.tracks.forEach { track -> track.curve.zipWithNext().forEach { (a,b) ->
             segment(a.first,b.first,track.item.tint.toArgb(),b.second||track.item.comparison!=null)
         } }
@@ -84,7 +67,7 @@ internal fun renderSpaceCompassGlobe(snapshot: SpaceCompassPanoramaSnapshot,maxE
         val guideTextSize=spaceCompassGlobeGuideTextSize(width,h,frame)
         val geographicDrawing=if(snapshot.showSkyReferences) drawSpaceCompassGlobeGeographicGuides(canvas,snapshot,
             width,h,r,cy,flat,guideReserved) else SpaceCompassSkyReferenceDrawing(emptyList(),emptyList())
-        val obstacles=(gridEdges+geographicDrawing.curveLabels.flatMap { it.layout.collisionFrames }+
+        val obstacles=(gridEdges+sphericalGridLabels+geographicDrawing.curveLabels.flatMap { it.layout.collisionFrames }+
             geographicDrawing.labels.map { SpaceCompassSunSceneFrame(it.bounds.left.toDouble(),it.bounds.top.toDouble(),
                 it.bounds.width().toDouble(),it.bounds.height().toDouble()) }+
             geographicDrawing.poles.map { SpaceCompassSunSceneFrame(it.x-guideTextSize*.5,it.y-guideTextSize*.5,guideTextSize.toDouble(),guideTextSize.toDouble()) }).toMutableList()
@@ -174,6 +157,7 @@ internal fun renderSpaceCompassGlobe(snapshot: SpaceCompassPanoramaSnapshot,maxE
             text.color=Color.WHITE
             lines.forEachIndexed { i,line -> canvas.drawText(line,bounds.centerX(),bounds.top+width/160f+text.textSize*(1+i*1.35f),text) }
         }
+        drawSpaceCompassGlobeCoordinateLabels(canvas,coordinateDrawing)
         drawSpaceCompassGlobeGeographicCaptions(canvas,geographicDrawing,guideTextSize)
         paint.style=Paint.Style.FILL
         // Location marker is itself precise position metadata: omit it in Area and Hidden exports.

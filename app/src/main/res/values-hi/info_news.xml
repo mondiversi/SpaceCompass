@@ -1,9 +1,9 @@
 <resources>
     <string name="info_news_title">हाल के बदलाव · %1$s</string>
-    <string name="info_news_star_sky" formatted="false">आकाश और कैमरा की ग्रिड अब हल्की हैं और कोणीय सटीकता समान है।</string>
-    <string name="info_news_texture_downloads" formatted="false">दोनों स्क्रीन दिशाओं में क्षैतिज स्विच से फ़्रेम या पैनोरमा चुनें।</string>
-    <string name="info_news_weather" formatted="false">ग्लोब की तस्वीरों में 15° अंतराल पर अधिक विस्तृत भौगोलिक ग्रिड दिखती है।</string>
-    <string name="info_news_viewer_zoom" formatted="false">ऊपर और नीचे के तीर आकाश, कैमरा और ग्लोब का चयन स्पष्ट करते हैं।</string>
-    <string name="info_news_settings" formatted="false">सूचना पैनल अधिक सघन हैं और उनके बीच समान दूरी है।</string>
-    <string name="info_news_catalog" formatted="false">कंपास लिंक अब वास्तविक स्थान का विवरण कहलाता है।</string>
+    <string name="info_news_star_sky" formatted="false">सहेजे गए दृश्य विकल्पों के साथ आकाश और ग्लोब को फ़्रेम या पैनोरमा में देखें।</string>
+    <string name="info_news_texture_downloads" formatted="false">ग्लोब में अधिक सहज नेविगेशन, स्थिर फ़्रेम और छोटा पिंड चयनकर्ता।</string>
+    <string name="info_news_weather" formatted="false">संदर्भ ग्रिड, उसके अंक और ग्रह रेखाएँ साथ चुनें; कैप्चर वही विकल्प अपनाते हैं।</string>
+    <string name="info_news_viewer_zoom" formatted="false">आकाश पैनोरमा और ग्लोब में लेबल चुनें; मौसम अब दृश्य मोड में है।</string>
+    <string name="info_news_settings" formatted="false">छोटे ज़ूम मेनू अपने बटन के केंद्र में रहते हैं और चुना मान दिखाते हैं।</string>
+    <string name="info_news_catalog" formatted="false">अपडेट किया ट्यूटोरियल, स्पष्ट पॉपअप और रुका हुआ क्षण सहेजने वाले दृश्य निर्यात।</string>
 </resources>

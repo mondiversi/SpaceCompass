@@ -88,31 +88,34 @@ internal fun SpaceCompassPanoramaPreview(data: SpaceCompassPanoramaPreviewData, 
     var projectionControlFrame by remember { mutableStateOf<SpaceCompassSunSceneFrame?>(null) }
     var chooseCenter by remember { mutableStateOf(false) }
     var controlsVisible by rememberSaveable(data.file.absolutePath) { mutableStateOf(true) }
-    var currentGrid by remember(data.file) { mutableStateOf(data.snapshot?.showGrid ?: true) }
-    var requestedGrid by rememberSaveable(data.file.absolutePath) { mutableStateOf(data.snapshot?.showGrid ?: true) }
+    var chooseOverlays by remember { mutableStateOf(false) }
+    var currentOverlays by remember(data.file) { mutableStateOf(SpaceCompassCaptureOverlays.fromSnapshot(data.snapshot)) }
+    var requestedOverlays by rememberSaveable(data.file.absolutePath, stateSaver = spaceCompassCaptureOverlaysSaver) {
+        mutableStateOf(SpaceCompassCaptureOverlays.fromSnapshot(data.snapshot))
+    }
     var currentProjection by remember(data.file) { mutableStateOf(data.projection) }
     var requestedProjection by rememberSaveable(data.file.absolutePath) { mutableStateOf(data.projection) }
     val hasFraming=data.snapshot?.let { it.globe?.framing!=null||it.skyFraming!=null }==true
     var currentCenter by remember(data.file) { mutableStateOf(data.snapshot?.center ?: SpaceCompassPanoramaCenter.SOUTH) }
     var requestedCenter by remember(data.file) { mutableStateOf(data.snapshot?.center ?: SpaceCompassPanoramaCenter.SOUTH) }
-    LaunchedEffect(data, requestedPosition, requestedLabelMode, requestedCenter, requestedProjection, requestedGrid, revision) {
+    LaunchedEffect(data, requestedPosition, requestedLabelMode, requestedCenter, requestedProjection, requestedOverlays, revision) {
         preparationFailed = false
-        if (requestedPosition != currentPosition || requestedLabelMode != currentLabelMode || requestedCenter != currentCenter || requestedProjection != currentProjection || requestedGrid != currentGrid) {
+        if (requestedPosition != currentPosition || requestedLabelMode != currentLabelMode || requestedCenter != currentCenter || requestedProjection != currentProjection || requestedOverlays != currentOverlays) {
             val targetPosition = requestedPosition
             val targetLabels = requestedLabelMode
             val targetCenter = requestedCenter
             val targetProjection = requestedProjection
-            val targetGrid = requestedGrid
+            val targetOverlays = requestedOverlays
             try {
                 val file = withContext(Dispatchers.IO) {
-                    prepareSpaceCompassPanoramaVariant(context.applicationContext, data, targetPosition, targetLabels, previewMode, targetCenter, targetProjection, targetGrid)
+                    prepareSpaceCompassPanoramaVariant(context.applicationContext, data, targetPosition, targetLabels, previewMode, targetCenter, targetProjection, targetOverlays.grid, targetOverlays.references, targetOverlays.numbers)
                 }
                 currentFile = file
                 currentPosition = targetPosition
                 currentLabelMode = targetLabels
                 currentCenter = targetCenter
                 currentProjection = targetProjection
-                currentGrid = targetGrid
+                currentOverlays = targetOverlays
             } catch (cancelled: kotlinx.coroutines.CancellationException) { throw cancelled
             } catch (error: Exception) {
                 preparationFailed = true
@@ -146,9 +149,9 @@ internal fun SpaceCompassPanoramaPreview(data: SpaceCompassPanoramaPreviewData, 
     val background = spaceCompassPageBackground()
     val bitmap = decoded
     val positionReady = requestedPosition == currentPosition && requestedLabelMode == currentLabelMode &&
-        requestedCenter == currentCenter && requestedProjection == currentProjection && requestedGrid == currentGrid && !preparationFailed
+        requestedCenter == currentCenter && requestedProjection == currentProjection && requestedOverlays == currentOverlays && !preparationFailed
     val ready = positionReady && bitmap != null && !failed
-    val export = rememberSpaceCompassCaptureExport(data, requestedPosition, requestedLabelMode, requestedCenter, ready, requestedGrid)
+    val export = rememberSpaceCompassCaptureExport(data, requestedPosition, requestedLabelMode, requestedCenter, ready, requestedOverlays.grid, requestedOverlays.references, requestedOverlays.numbers)
     BackHandler { if (export.visible) export.close() else if (!export.saving) onBack() }
     fun applyLabelMode(mode: SpaceCompassPanoramaLabelMode) {
         if(mode!=requestedLabelMode) {
@@ -234,13 +237,21 @@ internal fun SpaceCompassPanoramaPreview(data: SpaceCompassPanoramaPreviewData, 
                         glyphInk=spaceCompassFloatingInk(24f,.10f,.10f,.90f,.90f)) { SpaceCompassPanoramaCompassIcon() }
                     SpaceCompassPanoramaCenterDialog(chooseCenter,requestedCenter,::applyCenter,{chooseCenter=false})
                 }
-                if(data.snapshot!=null) SpaceCompassPanoramaCircleButton(stringResource(R.string.capture_grid),{
-                    requestedGrid=!requestedGrid
-                    preferences?.edit()?.putBoolean(SPACE_COMPASS_CAPTURE_GRID_KEY,requestedGrid)?.apply()
-                    notify(if(requestedGrid) R.string.capture_grid_on else R.string.capture_grid_off)
-                },modifier=Modifier.testTag("capture-grid-toggle"),enabled=!export.saving&&positionReady,
-                    checked=requestedGrid,glyphInk=spaceCompassFloatingInk(26f,.12f,.12f,.88f,.88f)) {
-                    SpaceCompassAngularGridIcon(LocalContentColor.current)
+                if(data.snapshot!=null) Box {
+                    SpaceCompassPanoramaCircleButton(stringResource(R.string.main_grid_references), { chooseOverlays = true },
+                        modifier=Modifier.testTag("capture-grid-toggle"), enabled=!export.saving&&positionReady,
+                        active=requestedOverlays.enabled, glyphInk=spaceCompassFloatingInk(26f,.12f,.12f,.88f,.88f)) {
+                        SpaceCompassAngularGridIcon(LocalContentColor.current)
+                    }
+                    SpaceCompassGridReferencesDialog(chooseOverlays, requestedOverlays.grid, requestedOverlays.references, requestedOverlays.numbers,
+                        { chooseOverlays = false }) { grid, references, numbers ->
+                        chooseOverlays = false
+                        val next = SpaceCompassCaptureOverlays(grid, references, numbers)
+                        if (next != requestedOverlays) {
+                            requestedOverlays = next
+                            revision++
+                        }
+                    }
                 }
             }
             if(controlsVisible) {

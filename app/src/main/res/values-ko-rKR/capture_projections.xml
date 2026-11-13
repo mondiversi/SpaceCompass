@@ -8,4 +8,8 @@
     <string name="capture_grid">격자</string>
     <string name="capture_grid_on">격자 표시</string>
     <string name="capture_grid_off">격자 숨김</string>
+    <string name="view_mode_sky_frame" formatted="false">하늘 (프레임 보기)</string>
+    <string name="view_mode_sky_panorama" formatted="false">하늘 (파노라마)</string>
+    <string name="view_mode_globe_frame" formatted="false">지구본 (프레임 보기)</string>
+    <string name="view_mode_globe_panorama" formatted="false">지구본 (파노라마)</string>
 </resources>

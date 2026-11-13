@@ -1,0 +1,4 @@
+<resources>
+    <string name="view_mode_weather" formatted="false">Cuaca</string>
+    <string name="tutorial_sky_labels" formatted="false">Pilih label dalam panorama. Dalam bingkai, gunakan bidikan.</string>
+</resources>

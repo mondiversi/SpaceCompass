@@ -34,11 +34,12 @@ internal enum class SpaceCompassTutorialFeature(val title: Int, val description:
     MENU(R.string.pc_settings, R.string.tutorial_menu),
     OBJECTS(R.string.celestial_select, R.string.tutorial_objects),
     LOCATION(R.string.observer_management_title, R.string.tutorial_location),
-    GUIDES(R.string.sky_references_show, R.string.tutorial_guides),
+    GUIDES(R.string.main_grid_references, R.string.tutorial_guides),
     FORWARD(R.string.path_interval_title, R.string.tutorial_forward),
     CAMERA(R.string.view_mode_choose, R.string.tutorial_camera),
     WEATHER(R.string.sky_weather_enable, R.string.tutorial_weather),
     AXIS(R.string.pointing_axis_camera, R.string.tutorial_axis),
+    SKY_LABELS(R.string.panorama_point_labels, R.string.tutorial_sky_labels),
     GLOBE_LABELS(R.string.panorama_point_labels, R.string.tutorial_globe_labels),
     GLOBE_ROTATION(R.string.globe_rotation_axis, R.string.tutorial_globe_rotation),
     TRANSPARENCY(R.string.camera_object_transparency, R.string.tutorial_transparency),
@@ -59,36 +60,43 @@ internal enum class SpaceCompassTutorialFeature(val title: Int, val description:
 
 @Stable
 internal class SpaceCompassTutorialState(activeState: MutableState<Boolean>, welcomeState: MutableState<Boolean>,
-    cameraPreviewState: MutableState<Boolean>, globePreviewState: MutableState<Boolean> = mutableStateOf(false)) {
+    cameraPreviewState: MutableState<Boolean>, globePreviewState: MutableState<Boolean> = mutableStateOf(false),
+    panoramaPreviewState: MutableState<Boolean> = mutableStateOf(false)) {
     var active by activeState
     var welcome by welcomeState
     var cameraPreview by cameraPreviewState
         private set
     var globePreview by globePreviewState
         private set
+    var panoramaPreview by panoramaPreviewState
+        private set
     var modeMenuOpen by mutableStateOf(false)
         private set
     val previewMode: SpaceCompassViewMode get()=when {
         cameraPreview -> SpaceCompassViewMode.CAMERA
-        globePreview -> SpaceCompassViewMode.GLOBE
-        else -> SpaceCompassViewMode.PANORAMA
+        else -> spaceCompassLiveViewMode(globePreview,panoramaPreview)
     }
     fun chooseMode(mode: SpaceCompassViewMode) {
         if(!active) return
         cameraPreview=mode==SpaceCompassViewMode.CAMERA
-        globePreview=mode==SpaceCompassViewMode.GLOBE
+        globePreview=mode.globe
+        panoramaPreview=mode.panoramic
         modeMenuOpen=false
     }
     fun dismissModeMenu() { modeMenuOpen=false }
+    var gridMenuOpen by mutableStateOf(false)
+        private set
+    fun dismissGridMenu() { gridMenuOpen = false }
     var skyViewport by mutableStateOf<Rect?>(null)
     val targets = mutableStateMapOf<Any, SpaceCompassTutorialTarget>()
-    fun start() { targets.clear(); skyViewport = null; cameraPreview = false; globePreview = false; modeMenuOpen=false; active = true }
-    fun close() { active = false; cameraPreview = false; globePreview = false; modeMenuOpen=false; targets.clear(); skyViewport = null }
+    fun start() { targets.clear(); skyViewport = null; cameraPreview = false; globePreview = false; panoramaPreview=false; modeMenuOpen=false; gridMenuOpen=false; active = true }
+    fun close() { active = false; cameraPreview = false; globePreview = false; panoramaPreview=false; modeMenuOpen=false; gridMenuOpen=false; targets.clear(); skyViewport = null }
     fun explore(feature: SpaceCompassTutorialFeature) {
         if (!active) return
         when (feature) {
             SpaceCompassTutorialFeature.MENU -> close()
             SpaceCompassTutorialFeature.CAMERA -> modeMenuOpen=true
+            SpaceCompassTutorialFeature.GUIDES -> gridMenuOpen=true
             else -> Unit
         }
     }
@@ -117,7 +125,8 @@ internal fun rememberSpaceCompassTutorialState(): SpaceCompassTutorialState {
     val welcomeState = remember(preferences) { mutableStateOf(preferences?.getBoolean(welcomeSeenKey, false) != true) }
     val cameraPreviewState = rememberSaveable { mutableStateOf(false) }
     val globePreviewState = rememberSaveable { mutableStateOf(false) }
-    return remember { SpaceCompassTutorialState(activeState, welcomeState, cameraPreviewState, globePreviewState) }
+    val panoramaPreviewState = rememberSaveable { mutableStateOf(false) }
+    return remember { SpaceCompassTutorialState(activeState, welcomeState, cameraPreviewState, globePreviewState, panoramaPreviewState) }
 }
 
 @Composable
@@ -159,7 +168,7 @@ private fun SpaceCompassTutorialOverlay(state: SpaceCompassTutorialState) {
     var selected by remember { mutableStateOf<SpaceCompassTutorialFeature?>(null) }
     var cardBounds by remember { mutableStateOf(Rect.Zero) }
     val cardScroll = rememberScrollState()
-    LaunchedEffect(selected, state.cameraPreview, state.globePreview) { cardScroll.scrollTo(0) }
+    LaunchedEffect(selected, state.cameraPreview, state.globePreview, state.panoramaPreview) { cardScroll.scrollTo(0) }
     val targets = state.targets.values.map { it.translated(-origin) }
     val currentTargets by rememberUpdatedState(targets)
     val pointRadius = with(density) { 24.dp.toPx() }
@@ -263,14 +272,14 @@ private fun SpaceCompassTutorialOverlay(state: SpaceCompassTutorialState) {
                 (sky.height - with(density) { 16.dp.toPx() }).coerceAtLeast(0f))
             fixedArea = if (height > 0) area else sky
         }
-        targets.firstOrNull { it.feature==SpaceCompassTutorialFeature.CAMERA }?.bounds?.let { anchor ->
-            Box(Modifier.absoluteOffset { IntOffset(anchor.left.roundToInt(),anchor.top.roundToInt()) }
-                .size(with(density) { anchor.width.toDp() },with(density) { anchor.height.toDp() })) {
-                SpaceCompassViewModeMenu(state.modeMenuOpen,state.previewMode,state::dismissModeMenu) { mode ->
-                    state.chooseMode(mode)
-                    selected=SpaceCompassTutorialFeature.CAMERA
-                }
-            }
+        // Tutorial choices are isolated; Apply demonstrates the dialog without editing the live view.
+        SpaceCompassGridReferencesDialog(state.gridMenuOpen, true, false, false, state::dismissGridMenu) { _, _, _ ->
+            state.dismissGridMenu()
+            selected = SpaceCompassTutorialFeature.GUIDES
+        }
+        SpaceCompassViewModeDialog(state.modeMenuOpen,state.previewMode,state::dismissModeMenu) { mode, _ ->
+            state.chooseMode(mode)
+            selected=SpaceCompassTutorialFeature.CAMERA
         }
         val area = fixedArea ?: return@BoxWithConstraints
         val width = minOf(360.dp, (with(density) { area.width.toDp() } - 16.dp).coerceAtLeast(1.dp))

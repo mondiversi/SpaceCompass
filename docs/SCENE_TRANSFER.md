@@ -42,3 +42,17 @@ moment-library capacity and both export profiles. Isolated Android tests cover t
 menu, default and alternate export options in day/night themes, edited names and
 actual FileProvider/content-resolver reads. Execution results are reported separately
 from compilation; no test needs the user's saved Location or celestial selections.
+
+A main-view scene exported while playback is paused includes an optional `paused=true`
+flag. Its existing `capturedAtMs` is the held observation instant, not the wall-clock
+export time. Import restores that instant in session-only pause before restoring
+selected points, so midnight rollover cannot discard incoming pins. The held moment
+also travels when Location is excluded, without coordinates or configured Location
+clock fields. The recipient's saved Location and time-rate choices remain intact;
+resuming follows the existing live/custom-time playback rules. Location-only files
+and ordinary running-scene imports retain their prior behavior. Older scene documents
+omit the optional flag and continue to load normally.
+
+Scene display extensions also preserve independent Sky panorama labels and optional
+grid numbers. Missing fields retain legacy defaults; loading a Scene never applies
+preview-only capture edits to main-view preferences.

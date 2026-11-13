@@ -1,9 +1,9 @@
 <resources>
     <string name="info_news_title">Τελευταία νέα · %1$s</string>
-    <string name="info_news_star_sky" formatted="false">Ελαφρύτερα πλέγματα Ουρανού και Κάμερας με την ίδια γωνιακή ακρίβεια.</string>
-    <string name="info_news_texture_downloads" formatted="false">Επιλέξτε Κάδρο ή Πανόραμα με οριζόντιο διακόπτη και στους δύο προσανατολισμούς.</string>
-    <string name="info_news_weather" formatted="false">Οι λήψεις της Υδρογείου δείχνουν πυκνότερο γεωγραφικό πλέγμα ανά 15°.</string>
-    <string name="info_news_viewer_zoom" formatted="false">Βελάκια πάνω και κάτω διευκρινίζουν την επιλογή Ουρανού, Κάμερας και Υδρογείου.</string>
-    <string name="info_news_settings" formatted="false">Πιο συμπαγή πλαίσια πληροφοριών με ομοιόμορφα διαστήματα.</string>
-    <string name="info_news_catalog" formatted="false">Ο σύνδεσμος της πυξίδας ονομάζεται πλέον Στοιχεία πραγματικής θέσης.</string>
+    <string name="info_news_star_sky" formatted="false">Εξερεύνησε Ουρανό και Υδρόγειο σε κάδρο ή πανόραμα, με αποθηκευμένες επιλογές προβολής.</string>
+    <string name="info_news_texture_downloads" formatted="false">Ομαλότερη πλοήγηση στην Υδρόγειο, σταθερό κάδρο και συμπαγής επιλογή αντικειμένου.</string>
+    <string name="info_news_weather" formatted="false">Επίλεξε πλέγμα αναφοράς, αρίθμηση και γραμμές πλανήτη μαζί· οι λήψεις κληρονομούν τις επιλογές.</string>
+    <string name="info_news_viewer_zoom" formatted="false">Επίλεξε ετικέτες σε πανόραμα Ουρανού και Υδρόγειο· ο καιρός βρίσκεται πλέον στην Προβολή.</string>
+    <string name="info_news_settings" formatted="false">Συμπαγή μενού ζουμ, κεντραρισμένα στο κουμπί τους, με επισήμανση της επιλεγμένης τιμής.</string>
+    <string name="info_news_catalog" formatted="false">Ενημερωμένος οδηγός, σαφέστερα παράθυρα και εξαγωγή Σκηνής που διατηρεί τη στιγμή παύσης.</string>
 </resources>

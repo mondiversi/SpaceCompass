@@ -1,9 +1,9 @@
 <resources>
     <string name="info_news_title">最新变化 · %1$s</string>
-    <string name="info_news_star_sky" formatted="false">优化天空和相机网格的性能，保持原有角度精度。</string>
-    <string name="info_news_texture_downloads" formatted="false">横屏和竖屏均可通过水平排列的开关选择取景或全景。</string>
-    <string name="info_news_weather" formatted="false">地球仪截图显示间隔为15°的更细地理网格。</string>
-    <string name="info_news_viewer_zoom" formatted="false">上下箭头让天空、相机和地球仪的模式选择更加清晰。</string>
-    <string name="info_news_settings" formatted="false">信息面板更加紧凑，间距更加统一。</string>
-    <string name="info_news_catalog" formatted="false">指南针链接现名为“实际位置详情”。</string>
+    <string name="info_news_star_sky" formatted="false">以取景或全景探索天空和地球，并记住显示选项。</string>
+    <string name="info_news_texture_downloads" formatted="false">地球导航更流畅，取景更稳定，天体选择器更紧凑。</string>
+    <string name="info_news_weather" formatted="false">集中选择参考网格、刻度数字和行星参考线；拍摄会继承这些选项。</string>
+    <string name="info_news_viewer_zoom" formatted="false">选择天空全景和地球视图中的标签；天气现已移至显示模式。</string>
+    <string name="info_news_settings" formatted="false">紧凑的缩放菜单以按钮为中心，并突出显示所选数值。</string>
+    <string name="info_news_catalog" formatted="false">更新教程，改进弹窗，并在场景导出中保留暂停时刻。</string>
 </resources>

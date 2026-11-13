@@ -169,6 +169,18 @@ class SpaceCompassSceneOpticsTest {
         }
     }
 
+    @Test fun cleanInterfaceCentersTheFullSafeFrameRegardlessOfPreviousPanelState() {
+        for ((width,height) in listOf(1080.0 to 1998.0,2280.0 to 906.0)) for (expanded in listOf(false,true)) {
+            val full=SpaceCompassSunSceneFrame(0.0,0.0,width,height)
+            val optical=spaceCompassMainReticleOpticalFrame(full,height,width>height,expanded,34.0,interfaceVisible=false)
+            assertEquals(full,optical)
+            val lens=spaceCompassSceneFramePerspective(width,height,optical,null)!!
+            val centre=projectSpaceCompassSun(SpaceCompassSunPosition(0.0,0.0),facingNorth,width,height,lens)
+            assertEquals(width/2,centre.x,1e-8)
+            assertEquals(height/2,centre.y,1e-8)
+        }
+    }
+
     private data class MainReticleFixture(val viewport: SpaceCompassSunSceneFrame, val height: Double,
         val landscape: Boolean, val open: Boolean)
 }

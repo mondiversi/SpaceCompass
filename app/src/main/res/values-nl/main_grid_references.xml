@@ -1,0 +1,6 @@
+<resources>
+    <string name="main_grid_references" formatted="false">Raster en referenties</string>
+    <string name="main_grid_enable" formatted="false">Referentieraster</string>
+    <string name="main_references_enable" formatted="false">Planeetlijnen</string>
+    <string name="main_grid_numbers" formatted="false">Rasternummering</string>
+</resources>

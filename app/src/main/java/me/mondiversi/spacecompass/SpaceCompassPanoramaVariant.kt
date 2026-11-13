@@ -12,13 +12,16 @@ internal fun prepareSpaceCompassPanoramaVariant(context: Context, data: SpaceCom
     exportMode: SpaceCompassPanoramaExportMode = SpaceCompassPanoramaExportMode.INTERNATIONAL,
     center: SpaceCompassPanoramaCenter = data.snapshot?.center ?: SpaceCompassPanoramaCenter.SOUTH,
     projection: SpaceCompassCaptureProjection = data.projection,
-    showGrid: Boolean = data.snapshot?.showGrid ?: true): File {
-    if (showGrid == (data.snapshot?.showGrid ?: true) && projection == data.projection && exportMode == data.fileExportMode && position == data.position &&
+    showGrid: Boolean = data.snapshot?.showGrid ?: SPACE_COMPASS_MAIN_GRID_DEFAULT,
+    showReferences: Boolean = data.snapshot?.showSkyReferences ?: SPACE_COMPASS_SKY_REFERENCES_DEFAULT,
+    showGridNumbers: Boolean = data.snapshot?.showGridNumbers ?: SPACE_COMPASS_GRID_NUMBERS_DEFAULT): File {
+    val overlays = SpaceCompassCaptureOverlays(showGrid, showReferences, showGridNumbers)
+    if (overlays == SpaceCompassCaptureOverlays.fromSnapshot(data.snapshot) && projection == data.projection && exportMode == data.fileExportMode && position == data.position &&
         labelMode == (data.snapshot?.labelMode ?: SpaceCompassPanoramaLabelMode.DEFAULT) && center == (data.snapshot?.center ?: SpaceCompassPanoramaCenter.SOUTH)) return data.file
     val selected = if (exportMode == SpaceCompassPanoramaExportMode.SELECTED) requireNotNull(data.selectedPresentation) else null
     val snapshot = selected?.snapshot ?: requireNotNull(data.snapshot)
     val caption = selected?.caption ?: requireNotNull(data.captionData)
-    val directory = File(data.file.parentFile, spaceCompassPanoramaVariantKey(position, labelMode, exportMode, center)+"-${projection.key}-grid-$showGrid")
+    val directory = File(data.file.parentFile, spaceCompassPanoramaVariantKey(position, labelMode, exportMode, center)+"-${projection.key}-${overlays.cacheKey}")
     check(directory.isDirectory || directory.mkdirs())
     val target = File(directory, data.file.name)
     if (target.isFile && target.length() > 0L) return target
@@ -27,7 +30,7 @@ internal fun prepareSpaceCompassPanoramaVariant(context: Context, data: SpaceCom
     BitmapFactory.decodeFile(data.file.absolutePath, size)
     require(size.outWidth in 128..4096)
     try {
-        val variant = spaceCompassSnapshotForDisclosure(snapshot,position).copy(caption = spaceCompassPanoramaCaptionForPosition(caption, position), labelMode = labelMode, center = center, showGrid = showGrid)
+        val variant = overlays.applyTo(spaceCompassSnapshotForDisclosure(snapshot,position)).copy(caption = spaceCompassPanoramaCaptionForPosition(caption, position), labelMode = labelMode, center = center)
         val bitmap = data.cameraPhoto?.let { renderSpaceCompassCameraPhoto(context, if (selected != null) it.copy(warning = selected.cameraWarning) else it, variant) }
             ?: renderSpaceCompassCaptureView(context, variant, data.renderSize, projection)
         try { temporary.outputStream().use { check(bitmap.compress(Bitmap.CompressFormat.JPEG, 95, it)) } }

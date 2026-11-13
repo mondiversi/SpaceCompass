@@ -26,6 +26,7 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.Shape
 import androidx.compose.ui.platform.LocalConfiguration
 import androidx.compose.ui.platform.LocalDensity
+import androidx.compose.ui.platform.LocalView
 import androidx.compose.ui.platform.LocalLayoutDirection
 import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.IntOffset
@@ -49,6 +50,7 @@ internal fun SpaceCompassAdaptiveDropdownMenu(
     tonalElevation: Dp = MenuDefaults.TonalElevation,
     scrollbarColor: Color = spaceCompassNeutralContentColor().copy(alpha = 0.45f),
     centerOnAnchor: Boolean = false,
+    centerVerticallyOnAnchor: Boolean = false,
     content: @Composable ColumnScope.() -> Unit
 ) {
     if (!expanded) return
@@ -56,7 +58,10 @@ internal fun SpaceCompassAdaptiveDropdownMenu(
     val configuration = LocalConfiguration.current
     val direction = LocalLayoutDirection.current
     val margin = with(density) { 8.dp.roundToPx() }
-    val position = remember(margin, centerOnAnchor) { SpaceCompassDropdownPositionProvider(margin, centerOnAnchor) }
+    val visibleWindow = if (centerVerticallyOnAnchor) spaceCompassDropdownWindowBounds() else null
+    val position = remember(margin, centerOnAnchor, centerVerticallyOnAnchor, visibleWindow) {
+        SpaceCompassDropdownPositionProvider(margin, centerOnAnchor, centerVerticallyOnAnchor, visibleWindow)
+    }
     Popup(onDismissRequest = onDismissRequest, popupPositionProvider = position,
         properties = PopupProperties(focusable = true)) {
         SpaceCompassPopupWindowDimming()
@@ -90,22 +95,44 @@ internal fun SpaceCompassNavigationMenuItem(title: String, onClick: () -> Unit,
     }, onClick = onClick, modifier = modifier, enabled = enabled)
 }
 
-/** Prefer below/above the anchor, clamp to the visible window, and mirror the start edge in RTL. */
+/** Match anchor coordinates to the visible window origin, including offset Android system bars. */
+@Composable
+internal fun spaceCompassDropdownWindowBounds(): IntRect {
+    val configuration=LocalConfiguration.current
+    val density=LocalDensity.current
+    val view=LocalView.current
+    val frame=android.graphics.Rect()
+    view.getWindowVisibleDisplayFrame(frame)
+    val origin=IntArray(2)
+    view.rootView.getLocationOnScreen(origin)
+    if(frame.width()>0&&frame.height()>0) return IntRect(frame.left-origin[0],frame.top-origin[1],
+        frame.right-origin[0],frame.bottom-origin[1])
+    return with(density) { IntRect(0,0,configuration.screenWidthDp.dp.roundToPx(),configuration.screenHeightDp.dp.roundToPx()) }
+}
+
+/** Ordinary menus prefer below/above; centered selectors stay on the anchor within the visible window. */
 internal class SpaceCompassDropdownPositionProvider(private val margin: Int,
-    private val centerOnAnchor: Boolean = false) : PopupPositionProvider {
+    private val centerOnAnchor: Boolean = false,
+    private val centerVerticallyOnAnchor: Boolean = false,
+    private val visibleWindow: IntRect? = null) : PopupPositionProvider {
     override fun calculatePosition(anchorBounds: IntRect, windowSize: IntSize,
         layoutDirection: LayoutDirection, popupContentSize: IntSize): IntOffset {
-        val maxX = (windowSize.width - margin - popupContentSize.width).coerceAtLeast(margin)
-        val maxY = (windowSize.height - margin - popupContentSize.height).coerceAtLeast(margin)
+        val bounds = visibleWindow ?: IntRect(0,0,windowSize.width,windowSize.height)
+        val minX = bounds.left + margin
+        val minY = bounds.top + margin
+        val maxX = (bounds.right - margin - popupContentSize.width).coerceAtLeast(minX)
+        val maxY = (bounds.bottom - margin - popupContentSize.height).coerceAtLeast(minY)
         val start = if (layoutDirection == LayoutDirection.Ltr) anchorBounds.left
             else anchorBounds.right - popupContentSize.width
         val end = if (layoutDirection == LayoutDirection.Ltr) anchorBounds.right - popupContentSize.width
             else anchorBounds.left
         val x = if (centerOnAnchor) {
-            (anchorBounds.left + (anchorBounds.width - popupContentSize.width) / 2).coerceIn(margin, maxX)
-        } else listOf(start, end).firstOrNull { it in margin..maxX } ?: start.coerceIn(margin, maxX)
-        val y = listOf(anchorBounds.bottom, anchorBounds.top - popupContentSize.height)
-            .firstOrNull { it in margin..maxY } ?: anchorBounds.bottom.coerceIn(margin, maxY)
+            (anchorBounds.left + (anchorBounds.width - popupContentSize.width) / 2).coerceIn(minX, maxX)
+        } else listOf(start, end).firstOrNull { it in minX..maxX } ?: start.coerceIn(minX, maxX)
+        val y = if (centerVerticallyOnAnchor) {
+            (anchorBounds.top + (anchorBounds.height - popupContentSize.height) / 2).coerceIn(minY, maxY)
+        } else listOf(anchorBounds.bottom, anchorBounds.top - popupContentSize.height)
+            .firstOrNull { it in minY..maxY } ?: anchorBounds.bottom.coerceIn(minY, maxY)
         return IntOffset(x, y)
     }
 }

@@ -1,0 +1,4 @@
+<resources>
+    <string name="view_mode_weather" formatted="false">मौसम</string>
+    <string name="tutorial_sky_labels" formatted="false">पैनोरमा में लेबल चुनें। फ़्रेम दृश्य में निशाने का उपयोग करें।</string>
+</resources>

@@ -1,0 +1,7 @@
+<resources>
+    <string name="tutorial_mode_sky_frame" formatted="false">Ακολούθησε τον ουρανό κινώντας το τηλέφωνο. Επίλεξε καιρό στην Προβολή.</string>
+    <string name="tutorial_mode_sky_panorama" formatted="false">Εξερεύνησε τον ουρανό σύροντας. Επίλεξε ετικέτες από το κουμπί τους και καιρό στην Προβολή.</string>
+    <string name="tutorial_mode_camera" formatted="false">Προβάλετε τα αντικείμενα πάνω στον ουρανό της κάμερας.</string>
+    <string name="tutorial_mode_globe_frame" formatted="false">Περιστρέψτε τη Γη για να δείτε τροχιές και σημεία.</string>
+    <string name="tutorial_mode_globe_panorama" formatted="false">Εξερευνήστε τροχιές σε επίπεδο χάρτη της Γης.</string>
+</resources>

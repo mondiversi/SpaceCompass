@@ -12,6 +12,39 @@ import org.junit.Assert.*
 import org.junit.Test
 
 class SpaceCompassSceneArchiveTest {
+    @Test fun skyLabelsRoundTripIndependentlyOfGlobeLabelsAndLegacyFiles() {
+        for(mode in SPACE_COMPASS_GLOBE_MAIN_LABEL_MODES) {
+            val settings=display.copy(globeLabelMode="none",skyLabelMode=mode.key)
+            val value=scene().copy(display=settings)
+            assertEquals(value,SpaceCompassSceneArchive.decode(value.encode()))
+            val store=Store();store.preferences.edit().putSpaceCompassSceneDisplay(settings).apply()
+            assertEquals(settings,readSpaceCompassSceneDisplay(store.preferences))
+            assertEquals(SpaceCompassPanoramaLabelMode.NONE,spaceCompassGlobeLabelMode(
+                store.preferences.getString(SPACE_COMPASS_GLOBE_LABEL_MODE_KEY,null)))
+            assertEquals(mode,spaceCompassSkyLabelMode(store.preferences.getString(SPACE_COMPASS_SKY_LABEL_MODE_KEY,null)))
+            store.preferences.edit().putSpaceCompassSceneDisplay(display).apply()
+            assertFalse(store.preferences.contains(SPACE_COMPASS_SKY_LABEL_MODE_KEY))
+            assertEquals(SpaceCompassPanoramaLabelMode.SELECTED,spaceCompassSkyLabelMode(
+                readSpaceCompassSceneDisplay(store.preferences).skyLabelMode))
+        }
+        assertEquals(SpaceCompassPanoramaLabelMode.SELECTED,spaceCompassSkyLabelMode(
+            SpaceCompassSceneArchive.decode(scene().encode()).display?.skyLabelMode))
+        assertThrows(IllegalArgumentException::class.java) {
+            SpaceCompassSceneArchive.decode(scene().encode()+"skyLabelMode=unknown\n")
+        }
+    }
+
+    @Test fun skyFirstInstallScopeMatchesGlobeAndShowsOnlyExplicitSelections() {
+        val mode=spaceCompassSkyLabelMode(null)
+        assertEquals(spaceCompassGlobeLabelMode(null),mode)
+        for(event in SpaceCompassSunPathEvent.entries) {
+            assertFalse(spaceCompassGlobeMainShowsLabel(mode,true,false,false,setOf(event)))
+            assertTrue(spaceCompassGlobeMainShowsLabel(mode,false,false,false,setOf(event),selected=true))
+        }
+        assertFalse(spaceCompassGlobeMainShowsLabel(mode,true,true,false,emptySet()))
+        assertEquals(SpaceCompassPanoramaLabelMode.KEY_SELECTED,spaceCompassSkyLabelMode("objects-selected"))
+    }
+
     @Test fun fiveGlobeLabelScopesRoundTripAlongsideLegacySwitches() {
         for(mode in SpaceCompassPanoramaLabelMode.entries) {
             val settings=SpaceCompassSceneDisplay(true,false,true,false,true,
@@ -27,6 +60,19 @@ class SpaceCompassSceneArchiveTest {
         assertThrows(IllegalArgumentException::class.java) {
             SpaceCompassSceneArchive.decode(scene().encode()+"globeLabelMode=unknown\n")
         }
+    }
+
+    @Test fun gridNumberingRoundTripsWithDisplaySettingsAndLegacyDefaults() {
+        for(grid in listOf(false,true)) for(numbers in listOf(false,true)) {
+            val settings=display.copy(grid=grid,gridNumbers=numbers)
+            val value=scene().copy(display=settings)
+            assertEquals(settings,SpaceCompassSceneArchive.decode(value.encode()).display)
+            val store=Store();store.preferences.edit().putSpaceCompassSceneDisplay(settings).apply()
+            assertEquals(settings,readSpaceCompassSceneDisplay(store.preferences))
+        }
+        val legacy=scene().encode().lineSequence().filterNot { it.startsWith("gridNumbers=") }.joinToString("\n")
+        assertFalse(requireNotNull(SpaceCompassSceneArchive.decode(legacy).display).gridNumbers)
+        assertThrows(IllegalArgumentException::class.java) { SpaceCompassSceneArchive.decode(scene().encode()+"gridNumbers=invalid\n") }
     }
 
     private val now=Instant.parse("2027-06-21T12:00:00Z").toEpochMilli()
@@ -51,6 +97,98 @@ class SpaceCompassSceneArchiveTest {
     private fun scene(include: Boolean=true)=SpaceCompassSceneArchive(
         contents().let { if(include) it else it.withoutLocation() },include,display,now)
     private fun state()=SpaceCompassSunDailyPathUiState()
+
+    @Test fun pausedCaptureKeepsTheHeldInstantAcrossEveryLocationExportChoice() {
+        var elapsed = 0L
+        val observer = SpaceCompassObserverState(null, elapsedClock = { elapsed })
+        observer.devicePlace = SpaceCompassDevicePlace(45.0, 9.0, 100.0)
+        observer.active(true)
+        observer.togglePlayback(now, elapsed)
+        elapsed += 120_000L
+        val snapshot = spaceCompassCaptureSceneExport(observer, "Paused", now + 120_000L, zone)
+        assertEquals(now, snapshot.capturedAtMs)
+        assertTrue(snapshot.paused)
+        assertFalse(spaceCompassCaptureLocationExport(observer, "Location", now + 120_000L, zone).paused)
+        for (include in listOf(false, true)) for (automatic in listOf(false, true)) {
+            val source = snapshot.copy(configured = snapshot.configured.withCelestialObjects(selection, emptyList()),
+                complete = snapshot.complete?.withCelestialObjects(selection, emptyList()))
+            val exported = requireNotNull(source.scene(include, automatic))
+            val decoded = SpaceCompassSceneArchive.decode(exported.encode())
+            assertTrue(decoded.paused)
+            assertEquals(now, decoded.capturedAtMs)
+            assertEquals(include, decoded.locationIncluded)
+            if (!include) assertEquals(0L, decoded.contents.configuration.timeMs)
+        }
+    }
+
+    @Test fun pauseIsOptionalForOldFilesAndMalformedHoldsAreRejected() {
+        val ordinary = scene(false)
+        assertFalse(ordinary.encode().contains("paused="))
+        assertFalse(SpaceCompassSceneArchive.decode(ordinary.encode()).paused)
+        val paused = ordinary.copy(paused = true)
+        assertEquals(paused, SpaceCompassSceneArchive.decode(paused.encode()))
+        for (bad in listOf(paused.encode().replace("paused=true", "paused=invalid"),
+            paused.encode().replace("capturedAtMs=$now", "capturedAtMs=-5364662400000"))) {
+            assertThrows(IllegalArgumentException::class.java) { SpaceCompassSceneArchive.decode(bad) }
+        }
+    }
+
+    @Test fun pausedSceneWithoutLocationKeepsRecipientSettingsAndIncomingPinsAtItsHeldDate() {
+        var elapsed = 0L
+        val store = Store()
+        val observer = SpaceCompassObserverState(store.preferences, elapsedClock = { elapsed })
+        val spatial = plan.copy(latitude = 44.0, zoneId = "Europe/Rome", simulateDate = false, simulateTime = false)
+        observer.apply(spatial); observer.active(true)
+        val settings = observer.timeSettings
+        val previousPreferences = store.values.toMap()
+        val points = state()
+        points.refreshObservationDate(LocalDate.of(2026, 1, 1))
+        val comparisons = SpaceCompassTemporalComparisonState(points)
+        importSpaceCompassScene(scene(false).copy(paused = true), observer, comparisons, points, store.preferences)
+        assertTrue(observer.playbackPaused)
+        assertEquals(spatial, observer.savedPlan)
+        assertEquals(settings, observer.timeSettings)
+        assertEquals(44.0, observer.plan!!.latitude, 0.0)
+        for ((key, value) in previousPreferences) assertEquals(value, store.values[key])
+        elapsed += 120_000L
+        assertEquals(now, observer.plan!!.observationTimeMs(now + 120_000L))
+        val heldDate = Instant.ofEpochMilli(now).atZone(ZoneId.of("Europe/Rome")).toLocalDate()
+        points.refreshObservationDate(heldDate)
+        assertEquals(contents().selectedOrbitPoints!!.toSet(), points.selectedPoints.toSet())
+        observer.reload() // Lifecycle/pref listener reattachment must preserve the restored hold.
+        assertTrue(observer.playbackPaused)
+        observer.togglePlayback(now + 120_000L, elapsed)
+        assertFalse(observer.playbackPaused)
+        assertEquals(now + 120_000L, observer.plan!!.observationTimeMs(now + 120_000L))
+    }
+
+    @Test fun pausedSceneWithLocationRestoresBothConfigurationAndExactHeldTime() {
+        val store = Store()
+        val observer = SpaceCompassObserverState(store.preferences, elapsedClock = { 0L })
+        observer.active(true)
+        importSpaceCompassScene(scene().copy(paused = true), observer,
+            SpaceCompassTemporalComparisonState(state()), state(), store.preferences)
+        assertTrue(observer.playbackPaused)
+        assertEquals(plan, observer.savedPlan)
+        assertEquals(contents().timeSettings, observer.timeSettings)
+        assertEquals(now, observer.plan!!.observationTimeMs(now + 86_400_000L))
+    }
+
+    @Test fun gridAndReferenceLinesRemainIndependentInSceneFilesAndPreferences() {
+        for (grid in listOf(false, true)) for (guides in listOf(false, true)) {
+            val chosen = display.copy(grid = grid, guides = guides, globe = true,
+                globeLabels = true, globeAxisLocked = false, globeLabelMode = SpaceCompassPanoramaLabelMode.SELECTED.key)
+            val archive = scene().copy(display = chosen)
+            assertEquals(archive, SpaceCompassSceneArchive.decode(archive.encode()))
+            val store = Store()
+            store.preferences.edit().putSpaceCompassSceneDisplay(chosen).apply()
+            assertEquals(chosen, readSpaceCompassSceneDisplay(store.preferences))
+        }
+        assertTrue(requireNotNull(SpaceCompassSceneArchive.decode(scene().encode()).display).grid)
+        assertThrows(IllegalArgumentException::class.java) {
+            SpaceCompassSceneArchive.decode(scene().encode() + "grid=invalid\n")
+        }
+    }
 
     @Test fun fullSceneRoundTripsLiveAndDatedObjectsPinsAntipodesAndAllDisplaySwitches() {
         for(include in listOf(false,true)) for(mask in 0..15) {

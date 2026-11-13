@@ -8,4 +8,8 @@
     <string name="capture_grid">Siatka</string>
     <string name="capture_grid_on">Siatka widoczna</string>
     <string name="capture_grid_off">Siatka ukryta</string>
+    <string name="view_mode_sky_frame" formatted="false">Niebo (Kadr)</string>
+    <string name="view_mode_sky_panorama" formatted="false">Niebo (Panorama)</string>
+    <string name="view_mode_globe_frame" formatted="false">Globus (Kadr)</string>
+    <string name="view_mode_globe_panorama" formatted="false">Globus (Panorama)</string>
 </resources>

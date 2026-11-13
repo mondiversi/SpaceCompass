@@ -11,8 +11,8 @@ internal data class SpaceCompassGlobeVector(val x: Double, val y: Double, val z:
 
 internal data class SpaceCompassGlobePose(val longitude: Double = 0.0, val latitude: Double = 0.0,
     val zoom: Double = 1.0, val roll: Double = 0.0) {
-    fun normalized() = SpaceCompassGlobePose((longitude.takeIf(Double::isFinite) ?: 0.0).let { atan2(sin(it),cos(it)) },
-        (latitude.takeIf(Double::isFinite) ?: 0.0).coerceIn(-PI/2,PI/2),(zoom.takeIf(Double::isFinite) ?: 1.0).coerceIn(.5,3.0),roll.takeIf(Double::isFinite) ?: 0.0)
+    fun normalized(maximumZoom: Double = 3.0) = SpaceCompassGlobePose((longitude.takeIf(Double::isFinite) ?: 0.0).let { atan2(sin(it),cos(it)) },
+        (latitude.takeIf(Double::isFinite) ?: 0.0).coerceIn(-PI/2,PI/2),(zoom.takeIf(Double::isFinite) ?: 1.0).coerceIn(.5,maximumZoom),roll.takeIf(Double::isFinite) ?: 0.0)
 }
 
 /** Same Earth-fixed axes and inverse texture rotation as the offline screensaver. */
@@ -59,10 +59,11 @@ internal data class SpaceCompassGlobeModel(val tracks: List<SpaceCompassGlobeTra
  */
 internal fun buildSpaceCompassGlobeModel(snapshot: SpaceCompassPanoramaSnapshot,
     curveCache: MutableMap<SpaceCompassSunDailyPath,List<Pair<SpaceCompassGlobeVector,Boolean>>>? = null,
-    checkCancelled: () -> Unit = {}): SpaceCompassGlobeModel {
+    sky: Boolean = false, checkCancelled: () -> Unit = {}): SpaceCompassGlobeModel {
     if(!snapshot.observerPositionKnown) return SpaceCompassGlobeModel(emptyList(),1.55)
     fun vector(body: SpaceCompassCelestialBody, p: SpaceCompassSunPathPoint): SpaceCompassGlobeVector? {
         checkCancelled()
+        if(sky) return spaceCompassSkyPanoramaVector(p.position)
         val observation=runCatching { calculateSpaceCompassCelestialObservation(body,p.timeMs,
             snapshot.latitude,snapshot.longitude,snapshot.altitude,snapshot.remote) }.getOrNull()
         // Missing orbit/ephemeris data must never create a fictitious current or trajectory.
@@ -141,4 +142,38 @@ internal fun spaceCompassGlobeKeyEvent(event: SpaceCompassSunPathEvent): Boolean
     SpaceCompassSunPathEvent.SUNRISE,SpaceCompassSunPathEvent.CULMINATION,
     SpaceCompassSunPathEvent.SUNSET,SpaceCompassSunPathEvent.MINIMUM -> true
     else -> false
+}
+
+/** Tight rectangular envelope, stable through longitude rotation. The Earth's own disc always fits.
+ * A flattened apparent daily path need not reserve a full 3-D sphere's height in landscape. */
+internal data class SpaceCompassGlobeFitBounds(val horizontal: Double,val vertical: Double)
+internal fun spaceCompassGlobeFitBounds(model: SpaceCompassGlobeModel?,pose: SpaceCompassGlobePose): SpaceCompassGlobeFitBounds {
+    if(model==null) return SpaceCompassGlobeFitBounds(1.55,1.55)
+    val horizontalAxis=cos(pose.latitude)*sin(pose.roll)
+    val verticalAxis=cos(pose.latitude)*cos(pose.roll)
+    val horizontalRing=sqrt((1-horizontalAxis*horizontalAxis).coerceAtLeast(0.0))
+    val verticalRing=sqrt((1-verticalAxis*verticalAxis).coerceAtLeast(0.0))
+    var horizontal=1.0;var vertical=1.0
+    fun include(v: SpaceCompassGlobeVector) {
+        val ring=hypot(v.x,v.z)
+        horizontal=max(horizontal,abs(v.y*horizontalAxis)+ring*horizontalRing)
+        vertical=max(vertical,abs(v.y*verticalAxis)+ring*verticalRing)
+    }
+    model.tracks.forEach { track -> track.curve.forEach { include(it.first) };track.dots.forEach { include(it.vector) } }
+    return SpaceCompassGlobeFitBounds(horizontal,vertical)
+}
+internal fun spaceCompassGlobeFitRadius(frame: SpaceCompassSunSceneFrame,bounds: SpaceCompassGlobeFitBounds,
+    zoom: Double,margin: Double=24.0): Double = min(
+    (frame.width/2-margin).coerceAtLeast(1.0)/bounds.horizontal.coerceAtLeast(1.0),
+    (frame.height/2-margin).coerceAtLeast(1.0)/bounds.vertical.coerceAtLeast(1.0))*zoom
+
+/** A compact object strip is a real lower boundary, even when floating controls are hidden. */
+internal fun spaceCompassGlobeViewportAboveFooter(frame: SpaceCompassSunSceneFrame,footerTop: Double,gap: Double): SpaceCompassSunSceneFrame =
+    frame.copy(height=(min(frame.top+frame.height,footerTop-gap.coerceAtLeast(0.0))-frame.top).coerceAtLeast(1.0))
+
+/** ENU angular shell only: no geographic coordinates or artificial distance. */
+internal fun spaceCompassSkyPanoramaVector(position: SpaceCompassSunPosition): SpaceCompassGlobeVector? {
+    if(!position.azimuthDegrees.isFinite() || !position.elevationDegrees.isFinite() || position.elevationDegrees !in -90.0..90.0) return null
+    val az=Math.toRadians(position.azimuthDegrees);val el=Math.toRadians(position.elevationDegrees)
+    return SpaceCompassGlobeVector(cos(el)*sin(az),sin(el),cos(el)*cos(az))
 }

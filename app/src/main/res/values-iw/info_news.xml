@@ -1,9 +1,9 @@
 <resources>
     <string name="info_news_title">החידושים האחרונים · %1$s</string>
-    <string name="info_news_star_sky" formatted="false">רשתות השמיים והמצלמה קלות יותר, תוך שמירה על הדיוק הזוויתי.</string>
-    <string name="info_news_texture_downloads" formatted="false">בחרו מסגרת או פנורמה באמצעות מתג אופקי בשני כיווני המסך.</string>
-    <string name="info_news_weather" formatted="false">צילומי הגלובוס מציגים רשת גאוגרפית מפורטת יותר במרווחים של 15°.</string>
-    <string name="info_news_viewer_zoom" formatted="false">חצים למעלה ולמטה מבהירים את בחירת שמיים, מצלמה וגלובוס.</string>
-    <string name="info_news_settings" formatted="false">לוחות מידע קומפקטיים יותר עם מרווחים אחידים.</string>
-    <string name="info_news_catalog" formatted="false">קישור המצפן נקרא כעת פרטי המיקום האמיתי.</string>
+    <string name="info_news_star_sky" formatted="false">חקור את השמיים והגלובוס במסגרת או בפנורמה, עם אפשרויות תצוגה שמורות.</string>
+    <string name="info_news_texture_downloads" formatted="false">ניווט חלק יותר בגלובוס, מסגור יציב ובורר עצמים קומפקטי.</string>
+    <string name="info_news_weather" formatted="false">בחר יחד רשת ייחוס, מספור וקווי כוכב לכת; הצילומים מקבלים את הבחירות.</string>
+    <string name="info_news_viewer_zoom" formatted="false">בחר תוויות בפנורמת השמיים ובגלובוס; מזג האוויר נמצא כעת במצב תצוגה.</string>
+    <string name="info_news_settings" formatted="false">תפריטי זום קומפקטיים ממורכזים לכפתור ומדגישים את הערך הנבחר.</string>
+    <string name="info_news_catalog" formatted="false">מדריך מעודכן, חלונות ברורים יותר וייצוא סצנה ששומר את רגע ההשהיה.</string>
 </resources>

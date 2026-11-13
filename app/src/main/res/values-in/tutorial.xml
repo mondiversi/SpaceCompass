@@ -11,25 +11,25 @@
     <string name="tutorial_menu" formatted="false">Buka pengaturan, adegan tersimpan, dan tutorial.</string>
     <string name="tutorial_objects" formatted="false">Pilih objek yang ditampilkan. Cari, filter dan simpan favorit.</string>
     <string name="tutorial_location" formatted="false">Sesuaikan lokasi, ketinggian, zona waktu, tanggal, jam dan kecepatan waktu.</string>
-    <string name="tutorial_guides" formatted="false">Tampilkan lingkaran langit, kutub, zenit dan nadir. Ini proyeksi langit, bukan jalur di daratan.</string>
-    <string name="tutorial_forward" formatted="false">0–24 menampilkan seluruh hari kalender dari tengah malam hingga tengah malam. +24h menampilkan 24 jam setelah waktu yang ditampilkan, termasuk waktu simulasi. Lintasan, foto dan ekspor memakai rentang yang sama.</string>
-    <string name="tutorial_camera" formatted="false">Pilih Langit, Kamera atau Globe dan jelajahi kontrolnya.</string>
-    <string name="tutorial_weather" formatted="false">Tampilkan atau sembunyikan cuaca di langit simulasi dan panorama. Tidak tersedia dalam mode kamera.</string>
-    <string name="tutorial_axis" formatted="false">Pilih sumbu kamera (90°) atau panjang ponsel (0°). Kamera selalu memakai sumbunya sendiri.</string>
-    <string name="tutorial_transparency" formatted="false">Buat gambar objek lebih transparan untuk membandingkan dengan kamera. Hasil foto menyimpan pilihan ini.</string>
+    <string name="tutorial_guides" formatted="false">Pilih kisi, angka dan garis planet, lalu ketuk Terapkan.</string>
+    <string name="tutorial_forward" formatted="false">0–24 menampilkan satu hari; +24h menampilkan 24 jam dari waktu yang ditampilkan.</string>
+    <string name="tutorial_camera" formatted="false">Pilih mode dan tampilan, lalu Terapkan. Tutup mempertahankan pilihan saat ini.</string>
+    <string name="tutorial_weather" formatted="false">Tampilkan atau sembunyikan cuaca di langit simulasi dan panorama.</string>
+    <string name="tutorial_axis" formatted="false">Pilih sumbu kamera (90°) atau panjang ponsel (0°).</string>
+    <string name="tutorial_transparency" formatted="false">Buat gambar objek lebih transparan untuk membandingkan dengan kamera.</string>
     <string name="tutorial_zoom" formatted="false">Perbesar atau perkecil dengan tombol atau dua jari.</string>
     <string name="tutorial_capture" formatted="false">Siapkan gambar. Pilih kisi, label, dan posisi di pratinjau; di Langit dan Globe, beralih antara Bingkai tampilan dan Panorama.</string>
     <string name="tutorial_panels" formatted="false">Ciutkan atau perluas panel objek dan kompas untuk membuka ruang langit.</string>
-    <string name="tutorial_antipodes" formatted="false">Ketuk untuk menampilkan atau menyembunyikan arah berlawanan titik terpilih: azimut +180° dan tanda elevasi berlawanan. Tekan dan tahan untuk membatalkan pilihan semua titik.</string>
+    <string name="tutorial_antipodes" formatted="false">Ketuk untuk menampilkan atau menyembunyikan antipoda. Tahan untuk membatalkan pilihan semua titik.</string>
     <string name="tutorial_navigation" formatted="false">Telusuri objek terpilih. Panel menampilkan objek aktif dan warna lintasannya.</string>
     <string name="tutorial_observatory" formatted="false">Buka data objek, lintasan, ketinggian penting, peristiwa, dan momen pribadi.</string>
     <string name="tutorial_daily" formatted="false">Lihat lintasan, waktu, elevasi dan titik yang dapat dipilih. Peristiwa mendatang dapat diberi pengingat.</string>
     <string name="tutorial_gps" formatted="false">Lihat posisi nyata, ketinggian GPS, orientasi dan cuaca, terpisah dari Location.</string>
-    <string name="tutorial_points" formatted="false">Pilih titik orbit. Arahkan bidikan untuk membaca objek, jam, T, azimut dan elevasi. Tepi objek mengikuti warna lintasannya; memilih posisi saat ini mengubahnya menjadi biru atau sian.</string>
-    <string name="tutorial_reticle_title" formatted="false">Waktu dan ikon</string>
-    <string name="tutorial_reticle" formatted="false">Ketuk ruang kosong untuk menjeda atau melanjutkan waktu. Ketuk dua kali untuk menampilkan atau menyembunyikan bidikan dan ikon; di Langit dan Kamera, juga kisi.</string>
+    <string name="tutorial_points" formatted="false">Pilih atau batalkan pilihan titik. Arahkan bidikan untuk membaca waktu, T, azimut dan elevasi.</string>
+    <string name="tutorial_reticle_title" formatted="false">Waktu dan antarmuka</string>
+    <string name="tutorial_reticle" formatted="false">Ketuk ruang kosong untuk menjeda atau melanjutkan waktu. Ketuk dua kali untuk menampilkan atau menyembunyikan antarmuka dan panel.</string>
     <string name="tutorial_reminder" formatted="false">Buka alarm atau kalender Android untuk peristiwa mendatang yang sesuai. Tidak untuk peristiwa lampau atau titik saat ini.</string>
     <string name="tutorial_status_title" formatted="false">Status dan pemulihan</string>
-    <string name="tutorial_status" formatted="false">Baca status saat ini. Tindakan dapat meminta izin, mengaktifkan lokasi atau mengulangi pemuatan data orbit dan cuaca. Tutorial tidak menjalankannya.</string>
-    <string name="tutorial_remove" formatted="false">Hapus objek aktif dari objek terpilih setelah konfirmasi. Objek tetap tersedia dalam katalog.</string>
+    <string name="tutorial_status" formatted="false">Periksa status dan tindakan yang tersedia untuk posisi, cuaca dan data orbit.</string>
+    <string name="tutorial_remove" formatted="false">Hapus objek aktif dari objek terpilih setelah konfirmasi.</string>
 </resources>

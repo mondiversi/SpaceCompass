@@ -1,0 +1,4 @@
+<resources>
+    <string name="view_mode_weather" formatted="false">Погода</string>
+    <string name="tutorial_sky_labels" formatted="false">Выберите подписи в панораме. В кадре используйте прицел.</string>
+</resources>

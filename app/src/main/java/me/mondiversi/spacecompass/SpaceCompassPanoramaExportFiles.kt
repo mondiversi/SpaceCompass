@@ -36,7 +36,10 @@ internal fun prepareSpaceCompassCaptureExport(context: Context, data: SpaceCompa
     types: Set<SpaceCompassCaptureExportType>, position: SpaceCompassPanoramaPosition,
     labels: SpaceCompassPanoramaLabelMode, mode: SpaceCompassPanoramaExportMode,
     center: SpaceCompassPanoramaCenter, profile: SpaceCompassDataExportProfile? = null,
-    showGrid: Boolean = data.snapshot?.showGrid ?: true): SpaceCompassPreparedCaptureExport {
+    showGrid: Boolean = data.snapshot?.showGrid ?: SPACE_COMPASS_MAIN_GRID_DEFAULT,
+    showReferences: Boolean = data.snapshot?.showSkyReferences ?: SPACE_COMPASS_SKY_REFERENCES_DEFAULT,
+    showGridNumbers: Boolean = data.snapshot?.showGridNumbers ?: SPACE_COMPASS_GRID_NUMBERS_DEFAULT): SpaceCompassPreparedCaptureExport {
+    val overlays = SpaceCompassCaptureOverlays(showGrid, showReferences, showGridNumbers)
     require(types.isNotEmpty())
     val orderedTypes=SpaceCompassCaptureExportType.entries.filter { it in types }
     val files = orderedTypes.map { type ->
@@ -46,7 +49,7 @@ internal fun prepareSpaceCompassCaptureExport(context: Context, data: SpaceCompa
                 SpaceCompassCaptureExportType.PANORAMA_IMAGE -> SpaceCompassCaptureProjection.PANORAMA
                 else -> data.projection
             }
-            prepareSpaceCompassPanoramaVariant(context,data,position,labels,mode,center,projection,showGrid)
+            prepareSpaceCompassPanoramaVariant(context,data,position,labels,mode,center,projection,showGrid,showReferences,showGridNumbers)
         } else {
             val presentation = if (mode == SpaceCompassPanoramaExportMode.SELECTED) requireNotNull(data.selectedPresentation) else null
             val snapshot = spaceCompassSnapshotForDisclosure(presentation?.snapshot ?: requireNotNull(data.snapshot),position)
@@ -75,7 +78,7 @@ internal fun prepareSpaceCompassCaptureExport(context: Context, data: SpaceCompa
         else R.string.camera_capture_preview_title) ?: if(snapshot?.globe != null) "Globe" else if (data.cameraPhoto == null) "Panorama" else "Photo"
     val stem = spaceCompassExportFileStem(data.timeMs,formatting,
         if (position==SpaceCompassPanoramaPosition.HIDDEN) "UTC" else snapshot?.zoneId ?: "UTC",listOf(title))
-    val directory = File(data.file.parentFile,"named-exports/" + spaceCompassPanoramaVariantKey(position,labels,mode,center)+"-grid-$showGrid")
+    val directory = File(data.file.parentFile,"named-exports/" + spaceCompassPanoramaVariantKey(position,labels,mode,center)+"-${overlays.cacheKey}")
     check(directory.isDirectory || directory.mkdirs())
     // Name delivery copies only: the frozen preview, render cache, EXIF privacy and image bytes stay intact.
     return SpaceCompassPreparedCaptureExport(files.mapIndexed { index,file ->

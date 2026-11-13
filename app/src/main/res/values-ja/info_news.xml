@@ -1,9 +1,9 @@
 <resources>
     <string name="info_news_title">最近の変更 · %1$s</string>
-    <string name="info_news_star_sky" formatted="false">空とカメラのグリッドを軽量化し、角度の精度は維持しました。</string>
-    <string name="info_news_texture_downloads" formatted="false">縦向きでも横向きでも、横並びのスイッチでフレームとパノラマを選べます。</string>
-    <string name="info_news_weather" formatted="false">地球儀のキャプチャに15°間隔の細かい地理グリッドを表示します。</string>
-    <string name="info_news_viewer_zoom" formatted="false">上下の矢印で空・カメラ・地球儀のモード選択を分かりやすくしました。</string>
-    <string name="info_news_settings" formatted="false">情報パネルをコンパクトにし、間隔を統一しました。</string>
-    <string name="info_news_catalog" formatted="false">コンパスのリンク名を「実際の位置の詳細」に変更しました。</string>
+    <string name="info_news_star_sky" formatted="false">空と地球をフレームまたはパノラマで探索。表示の選択を保存します。</string>
+    <string name="info_news_texture_downloads" formatted="false">地球の操作がより滑らかに。安定したフレームとコンパクトな天体選択。</string>
+    <string name="info_news_weather" formatted="false">基準グリッド、目盛り、惑星の基準線をまとめて選択。撮影にも引き継ぎます。</string>
+    <string name="info_news_viewer_zoom" formatted="false">空のパノラマと地球でラベルを選択。天気は表示モードに移動しました。</string>
+    <string name="info_news_settings" formatted="false">コンパクトなズームメニューをボタンの中央に配置し、選択値を強調します。</string>
+    <string name="info_news_catalog" formatted="false">チュートリアルとダイアログを改善。一時停止した時刻をシーンの書き出しで保持します。</string>
 </resources>

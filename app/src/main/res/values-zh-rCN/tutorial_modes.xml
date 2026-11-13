@@ -1,0 +1,7 @@
+<resources>
+    <string name="tutorial_mode_sky_frame" formatted="false">移动手机跟随天空。在显示模式中选择天气。</string>
+    <string name="tutorial_mode_sky_panorama" formatted="false">拖动探索天空。通过标签按钮选择标签，在显示模式中选择天气。</string>
+    <string name="tutorial_mode_camera" formatted="false">将天体叠加在相机拍摄的天空上。</string>
+    <string name="tutorial_mode_globe_frame" formatted="false">旋转地球以查看轨迹和点。</string>
+    <string name="tutorial_mode_globe_panorama" formatted="false">在地球平面地图上探索轨迹。</string>
+</resources>

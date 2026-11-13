@@ -1,9 +1,9 @@
 <resources>
     <string name="info_news_title">Perubahan terbaru · %1$s</string>
-    <string name="info_news_star_sky" formatted="false">Kisi Langit dan Kamera lebih ringan dengan ketelitian sudut yang sama.</string>
-    <string name="info_news_texture_downloads" formatted="false">Pilih Bingkai atau Panorama dengan pengalih horizontal di kedua orientasi.</string>
-    <string name="info_news_weather" formatted="false">Tangkapan Globe menampilkan kisi geografis lebih rinci setiap 15°.</string>
-    <string name="info_news_viewer_zoom" formatted="false">Panah atas dan bawah memperjelas pilihan Langit, Kamera, dan Globe.</string>
-    <string name="info_news_settings" formatted="false">Panel informasi lebih ringkas dengan jarak yang seragam.</string>
-    <string name="info_news_catalog" formatted="false">Tautan kompas kini bernama Detail posisi sebenarnya.</string>
+    <string name="info_news_star_sky" formatted="false">Jelajahi Langit dan Globe dalam Bingkai atau Panorama, dengan pilihan tampilan tersimpan.</string>
+    <string name="info_news_texture_downloads" formatted="false">Navigasi Globe lebih mulus, bingkai stabil, dan pemilih objek ringkas.</string>
+    <string name="info_news_weather" formatted="false">Pilih kisi referensi, angka, dan garis planet bersama; tangkapan mengikuti pilihan Anda.</string>
+    <string name="info_news_viewer_zoom" formatted="false">Pilih label dalam panorama Langit dan Globe; cuaca kini ada di Mode tampilan.</string>
+    <string name="info_news_settings" formatted="false">Menu zoom ringkas terpusat pada tombolnya dan menyorot nilai yang dipilih.</string>
+    <string name="info_news_catalog" formatted="false">Tutorial diperbarui, dialog lebih jelas, dan ekspor Adegan mempertahankan waktu saat dijeda.</string>
 </resources>
