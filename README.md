@@ -8,8 +8,8 @@ paths, inspect reference facts and view textured models. Space Compass is a stan
 
 ## Download and install
 
-Download **space-compass-1.10.0.apk** from the
-[Space Compass 1.10.0 release](https://github.com/mondiversi/SpaceCompass/releases/tag/v1.10.0).
+Download **space-compass-1.10.1.apk** from the
+[Space Compass 1.10.1 release](https://github.com/mondiversi/SpaceCompass/releases/tag/v1.10.1).
 Android 8.0 or newer is required. Open the APK and follow Android's installation
 prompts; allow installation for your browser or file manager if requested.
 
@@ -125,7 +125,7 @@ safety or navigation instrument.
 ## Build and checks
 
 The application ID is `me.mondiversi.spacecompass`. This source builds version
-**1.10.0**, with Android/update identity `1.10.0` and version code **79**.
+**1.10.1**, with Android/update identity `1.10.1` and version code **80**.
 This preserves the three-part update protocol used by existing preview installations.
 The app stores its preferences and caches privately.
 
@@ -183,7 +183,7 @@ Capture the visible frame in **Sky** or **Globe**, or switch to a complete panor
 
 ## Data and graphics packages
 
-Release 1.10.0 includes **9,999 selectable objects**, and an optional reference-information archive.
+Release 1.10.1 includes **9,999 selectable objects**, and an optional reference-information archive.
 All descriptive data and translations remain inside the APK. Scientific limits and provenance are in the
 [catalogue sources](docs/CATALOG_9999.md) and [canonical source catalogue](catalogue/README.md).
 

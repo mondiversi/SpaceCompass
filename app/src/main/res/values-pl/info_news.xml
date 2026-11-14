@@ -1,9 +1,9 @@
 <resources>
     <string name="info_news_title">Ostatnie nowości · %1$s</string>
-    <string name="info_news_star_sky" formatted="false">Oglądaj Niebo i Glob w kadrze lub panoramie z zapamiętanymi ustawieniami widoku.</string>
-    <string name="info_news_texture_downloads" formatted="false">Płynniejsza nawigacja Globu, stabilny kadr i kompaktowy wybór obiektu.</string>
-    <string name="info_news_weather" formatted="false">Wybierz siatkę odniesienia, numerację i linie planety; ujęcia przejmują te ustawienia.</string>
-    <string name="info_news_viewer_zoom" formatted="false">Wybierz etykiety w panoramie Nieba i widokach Globu; pogoda jest teraz w Widoku.</string>
-    <string name="info_news_settings" formatted="false">Kompaktowe menu zoomu są wyśrodkowane przy przycisku i wyróżniają wybraną wartość.</string>
-    <string name="info_news_catalog" formatted="false">Odświeżony samouczek, czytelniejsze okna i eksport Sceny zachowujący chwilę pauzy.</string>
+    <string name="info_news_star_sky" formatted="false">Współrzędne w panoramach Nieba i Globu pozostają widoczne przy powiększaniu.</string>
+    <string name="info_news_texture_downloads" formatted="false">Etykiety szerokości są bliżej wolnych krawędzi, także poziomo z panelami informacji.</string>
+    <string name="info_news_weather" formatted="false">Liczby siatki pozostają wyrównane do linii i omijają przyciski oraz panele.</string>
+    <string name="info_news_viewer_zoom" formatted="false">Zamknij i Później używają teraz zwykłego koloru tekstu motywu dziennego i nocnego.</string>
+    <string name="info_news_settings" formatted="false">Potwierdzenia pozostają niebieskie lub turkusowe; odrzucanie zmian i usuwanie czerwone.</string>
+    <string name="info_news_catalog" formatted="false">Anuluj przy potwierdzeniu usunięcia ma neutralny kolor, aby wyraźniej odróżnić działania.</string>
 </resources>

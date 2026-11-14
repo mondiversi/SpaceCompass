@@ -1,9 +1,9 @@
 <resources>
     <string name="info_news_title">Perubahan terbaru · %1$s</string>
-    <string name="info_news_star_sky" formatted="false">Jelajahi Langit dan Globe dalam Bingkai atau Panorama, dengan pilihan tampilan tersimpan.</string>
-    <string name="info_news_texture_downloads" formatted="false">Navigasi Globe lebih mulus, bingkai stabil, dan pemilih objek ringkas.</string>
-    <string name="info_news_weather" formatted="false">Pilih kisi referensi, angka, dan garis planet bersama; tangkapan mengikuti pilihan Anda.</string>
-    <string name="info_news_viewer_zoom" formatted="false">Pilih label dalam panorama Langit dan Globe; cuaca kini ada di Mode tampilan.</string>
-    <string name="info_news_settings" formatted="false">Menu zoom ringkas terpusat pada tombolnya dan menyorot nilai yang dipilih.</string>
-    <string name="info_news_catalog" formatted="false">Tutorial diperbarui, dialog lebih jelas, dan ekspor Adegan mempertahankan waktu saat dijeda.</string>
+    <string name="info_news_star_sky" formatted="false">Angka koordinat panorama Langit dan Globe tetap terlihat saat diperbesar.</string>
+    <string name="info_news_texture_downloads" formatted="false">Label lintang lebih dekat ke tepi bebas, juga saat mendatar dengan panel informasi.</string>
+    <string name="info_news_weather" formatted="false">Angka kisi tetap sejajar dengan garisnya dan menghindari tombol serta panel.</string>
+    <string name="info_news_viewer_zoom" formatted="false">Tutup dan Nanti kini memakai warna teks normal pada tema siang dan malam.</string>
+    <string name="info_news_settings" formatted="false">Konfirmasi tetap biru atau sian; membuang perubahan dan menghapus item tetap merah.</string>
+    <string name="info_news_catalog" formatted="false">Batal dalam konfirmasi penghapusan berwarna netral agar setiap tindakan lebih jelas.</string>
 </resources>

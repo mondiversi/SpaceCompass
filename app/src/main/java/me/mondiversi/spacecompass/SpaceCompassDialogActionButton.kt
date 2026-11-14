@@ -9,14 +9,17 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.LocalResources
 
-/** Dialog actions share locale-aware capitals and the existing destructive palette. */
+/** Tone describes the action, independently of its localized caption. */
+internal enum class SpaceCompassDialogActionTone { PRIMARY, NEUTRAL, DESTRUCTIVE }
+
+/** Dialog actions share locale-aware capitals, normal text and the existing accent palettes. */
 @Composable
 internal fun SpaceCompassDialogActionButton(
     label: String,
     onClick: () -> Unit,
     modifier: Modifier = Modifier,
     enabled: Boolean = true,
-    destructive: Boolean = false,
+    tone: SpaceCompassDialogActionTone = SpaceCompassDialogActionTone.PRIMARY,
     contentPadding: PaddingValues = ButtonDefaults.TextButtonContentPadding
 ) {
     val locale = LocalResources.current.configuration.locales[0]
@@ -26,8 +29,11 @@ internal fun SpaceCompassDialogActionButton(
         enabled = enabled,
         contentPadding = contentPadding,
         colors = ButtonDefaults.textButtonColors(
-            contentColor = if (destructive) SpaceCompassDestructiveActionColor
-                else MaterialTheme.colorScheme.primary
+            contentColor = when (tone) {
+                SpaceCompassDialogActionTone.PRIMARY -> MaterialTheme.colorScheme.primary
+                SpaceCompassDialogActionTone.NEUTRAL -> spaceCompassDialogContentColor()
+                SpaceCompassDialogActionTone.DESTRUCTIVE -> SpaceCompassDestructiveActionColor
+            }
         )
     ) {
         Text(label.uppercase(locale))

@@ -1,9 +1,9 @@
 <resources>
     <string name="info_news_title">Neuigkeiten · %1$s</string>
-    <string name="info_news_star_sky" formatted="false">Erkunde Himmel und Globus als Bildausschnitt oder Panorama mit gespeicherten Anzeigeoptionen.</string>
-    <string name="info_news_texture_downloads" formatted="false">Flüssigere Globusnavigation, stabiler Bildausschnitt und kompakte Objektauswahl.</string>
-    <string name="info_news_weather" formatted="false">Wähle Referenzgitter, Zahlen und Planetenlinien gemeinsam; Aufnahmen übernehmen deine Auswahl.</string>
-    <string name="info_news_viewer_zoom" formatted="false">Wähle Beschriftungen in Himmelspanoramen und Globusansichten; Wetter steht jetzt unter Ansicht.</string>
-    <string name="info_news_settings" formatted="false">Kompakte Zoommenüs sind zur Taste zentriert und heben den gewählten Wert hervor.</string>
-    <string name="info_news_catalog" formatted="false">Aktualisierte Anleitung, klarere Dialoge und Szenenexporte mit gespeichertem Pausenzeitpunkt.</string>
+    <string name="info_news_star_sky" formatted="false">Koordinatenzahlen in Himmel- und Globuspanoramen bleiben beim Vergrößern sichtbar.</string>
+    <string name="info_news_texture_downloads" formatted="false">Breitenbeschriftungen liegen näher an freien Rändern, auch quer mit Infobereichen.</string>
+    <string name="info_news_weather" formatted="false">Gitterzahlen bleiben an ihren Linien ausgerichtet und meiden Tasten und Bereiche.</string>
+    <string name="info_news_viewer_zoom" formatted="false">Schließen und Später verwenden jetzt die normale Textfarbe im Tag- und Nachtmodus.</string>
+    <string name="info_news_settings" formatted="false">Bestätigungen bleiben blau oder türkis; Änderungen verwerfen und Entfernen bleiben rot.</string>
+    <string name="info_news_catalog" formatted="false">Abbrechen bei einer Löschbestätigung ist neutral, damit Aktionen klar unterscheidbar sind.</string>
 </resources>

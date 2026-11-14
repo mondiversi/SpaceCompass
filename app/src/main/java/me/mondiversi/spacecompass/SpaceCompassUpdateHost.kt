@@ -82,7 +82,7 @@ internal fun SpaceCompassUpdateDialog(state: SpaceCompassUpdateState, onDismiss:
         },
         dismissButton = {
             SpaceCompassDialogActionButton(stringResource(R.string.update_later),
-                onClick = onDismiss, enabled = !state.busy)
+                onClick = onDismiss, enabled = !state.busy, tone = SpaceCompassDialogActionTone.NEUTRAL)
         }
     )
 }

@@ -92,7 +92,7 @@ Other saved choices and legacy off switches are retained.
 Every Globe capture freezes the main-view scope;
 preview edits affect that image, while the next capture starts from the main view.
 Labels, compass, position and the view selector use the shared modal
-radio picker. The view selector separates Sky/Camera/Globe from Frame/Panorama radio choices. Projection choices are disabled for Camera. Apply commits the draft; Close, Back and the close icon discard it. Close uses the primary day/night colour and precedes Apply. Live and captured labels share one glyph
+radio picker. The view selector separates Sky/Camera/Globe from Frame/Panorama radio choices. Projection choices are disabled for Camera. Apply commits the draft; Close, Back and the close icon discard it. Close uses normal day/night text colour and precedes Apply. Live and captured labels share one glyph
 component and optical offset. Back-side labels follow the selected scope, use the
 below-horizon border tint and a dashed connector, and do not make occluded markers
 pickable. This visual distinction does not change their astronomical coordinates.
@@ -182,3 +182,12 @@ Weather is a checkbox below the projection choices in Display. It remains visibl
 and is disabled for Camera and Globe. It shares the
 mode/projection draft: Apply saves it, while Close and Back discard changes.
 The weather preference remains enabled initially and is retained across modes.
+
+Live flat-map grid numbers keep longitude/azimuth values aligned with their meridians.
+When fixed controls block the edge row, use the nearest clear row within that half of
+the visible map. At most one value appears per coordinate and edge; object labels and
+markers retain their exclusion priority. Latitude/elevation text uses its measured
+width to keep equal, small margins at both edges, independent of the number length.
+Native safety bands and side panels move them to the nearest free column on the
+same parallel, rather than silently removing the values.
+Spherical views and frozen-image grid numbering retain their existing placement.

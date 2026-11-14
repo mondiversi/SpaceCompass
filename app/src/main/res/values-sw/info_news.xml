@@ -1,9 +1,9 @@
 <resources>
     <string name="info_news_title">Mambo mapya · %1$s</string>
-    <string name="info_news_star_sky" formatted="false">Chunguza Anga na Globu katika Fremu au Panorama, huku chaguo za mwonekano zikihifadhiwa.</string>
-    <string name="info_news_texture_downloads" formatted="false">Urambazaji wa Globu laini zaidi, fremu thabiti na kichagua kitu kifupi.</string>
-    <string name="info_news_weather" formatted="false">Chagua gridi ya marejeo, namba na mistari ya sayari pamoja; picha hufuata chaguo zako.</string>
-    <string name="info_news_viewer_zoom" formatted="false">Chagua lebo katika panorama za Anga na Globu; hali ya hewa sasa iko katika Mwonekano.</string>
-    <string name="info_news_settings" formatted="false">Menyu fupi za kukuza huwekwa katikati ya kitufe na kuangazia thamani iliyochaguliwa.</string>
-    <string name="info_news_catalog" formatted="false">Mafunzo yamesasishwa, madirisha wazi zaidi na uhamishaji wa Tukio unaohifadhi muda uliositishwa.</string>
+    <string name="info_news_star_sky" formatted="false">Namba za viwianishi katika panorama za Anga na Globu zinaendelea kuonekana ukikuza.</string>
+    <string name="info_news_texture_downloads" formatted="false">Lebo za latitudo ziko karibu na kingo huru, hata mlalo huku paneli za taarifa zikiwa wazi.</string>
+    <string name="info_news_weather" formatted="false">Namba za gridi hubaki sambamba na mistari na huepuka vitufe na paneli.</string>
+    <string name="info_news_viewer_zoom" formatted="false">Funga na Baadaye sasa hutumia rangi ya kawaida ya maandishi ya mandhari ya mchana na usiku.</string>
+    <string name="info_news_settings" formatted="false">Uthibitisho unabaki bluu au samawati; kutupa mabadiliko na kuondoa vipengee kunabaki nyekundu.</string>
+    <string name="info_news_catalog" formatted="false">Ghairi kwenye uthibitisho wa kuondoa ina rangi ya kawaida ili kutofautisha vitendo.</string>
 </resources>

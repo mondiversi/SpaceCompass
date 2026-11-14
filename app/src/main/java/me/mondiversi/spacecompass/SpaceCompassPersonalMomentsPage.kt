@@ -105,12 +105,12 @@ internal fun SpaceCompassPersonalMomentsPage(body: SpaceCompassCelestialBody, ti
     moments.firstOrNull { it.id == deleteId }?.let { moment ->
         SpaceCompassAlertDialog(onDismissRequest = { deleteId = null },
             title = { Text(stringResource(R.string.personal_moment_delete)) }, text = { Text(moment.name) },
-            dismissButton = { SpaceCompassDialogActionButton(stringResource(R.string.celestial_remove_cancel), { deleteId = null }) },
+            dismissButton = { SpaceCompassDialogActionButton(stringResource(R.string.celestial_remove_cancel), { deleteId = null }, tone = SpaceCompassDialogActionTone.NEUTRAL) },
             confirmButton = {
                 SpaceCompassDialogActionButton(stringResource(R.string.celestial_remove_action), {
                     state?.deletePersonalMoment(moment.id)
                     deleteId = null
-                }, Modifier.testTag("personal-moment-delete-confirm"), destructive = true)
+                }, Modifier.testTag("personal-moment-delete-confirm"), tone = SpaceCompassDialogActionTone.DESTRUCTIVE)
             })
     }
 }
@@ -158,7 +158,7 @@ private fun SpaceCompassPersonalMomentEditor(body: SpaceCompassCelestialBody, ti
                     })
             }
         }, dismissButton = {
-            SpaceCompassDialogActionButton(stringResource(R.string.celestial_remove_cancel), onDismiss, destructive = true)
+            SpaceCompassDialogActionButton(stringResource(R.string.celestial_remove_cancel), onDismiss, tone = SpaceCompassDialogActionTone.DESTRUCTIVE)
         }, confirmButton = {
             SpaceCompassDialogActionButton(stringResource(R.string.panorama_save_phone), {
                 moment?.let(state::addPersonalMoment)

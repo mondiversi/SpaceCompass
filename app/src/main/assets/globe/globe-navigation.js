@@ -287,6 +287,24 @@ function drawFlatCoordinateGrid(){const r=globeFlatRect();orbitInk.beginPath();
  orbitInk.strokeStyle='#ffffff66';orbitInk.lineWidth=.30;orbitInk.stroke();
 }
 
+// Keep longitude/azimuth values on their meridian, using a clear row below/above fixed controls.
+function globeFlatGridNumberRows(x,width,view,rect){
+ const top=Math.max(view.y,rect.y)+9,bottom=Math.min(view.bottom,rect.y+rect.h)-9,middle=(top+bottom)/2;
+ const blocks=(globeScene.exclusions||[]).filter(([left,y,w,h])=>x-width/2-2<left+w+3&&x+width/2+2>left-3);
+ const upper=[top,...blocks.map(([left,y,w,h])=>y+h+10)].filter(y=>y>=top&&y<middle).sort((a,b)=>a-b);
+ const lower=[bottom,...blocks.map(([left,y,w,h])=>y-10)].filter(y=>y<=bottom&&y>middle).sort((a,b)=>b-a);
+ return [...new Set(upper)].map(y=>({x,y,edge:'top'})).concat([...new Set(lower)].map(y=>({x,y,edge:'bottom'})));
+}
+
+// Use the nearest free column beside a parallel, including native inset/panel exclusions.
+function globeFlatGridNumberColumns(y,width,view,rect){
+ const half=width/2,left=Math.max(view.x,rect.x+8)+half+2,right=Math.min(view.right,rect.x+rect.w-8)-half-2;
+ const blocks=(globeScene.exclusions||[]).filter(([x,top,w,h])=>top<=view.y&&top+h>=view.bottom&&(x<=view.x||x+w>=view.right));
+ const leading=[left,...blocks.map(([x,top,w,h])=>x+w+half+6)].filter(x=>x>=left&&x<=right).sort((a,b)=>a-b);
+ const trailing=[right,...blocks.map(([x,top,w,h])=>x-half-6)].filter(x=>x<=right&&x>=left).sort((a,b)=>b-a);
+ return [...new Set(leading)].map(x=>({x,y,edge:'left'})).concat([...new Set(trailing)].map(x=>({x,y,edge:'right'})));
+}
+
 // Small coordinate numbers are independent of object-label scope and named reference lines.
 function drawGlobeGridNumbers(){
  if(globeScene.grid===false||globeScene.gridNumbers!==true)return;
@@ -295,25 +313,28 @@ function drawGlobeGridNumbers(){
   return [Math.cos(b)*Math.sin(a),Math.sin(b),Math.cos(b)*Math.cos(a)];};
  const overlaps=(a,b)=>a.x<b.x+b.w+3&&a.x+a.w>b.x-3&&a.y<b.y+b.h+3&&a.y+a.h>b.y-3;
  orbitInk.save();orbitInk.font='400 9px sans-serif';orbitInk.textAlign='center';orbitInk.textBaseline='middle';
- for(const info of globeScene.coordinateLabels||[]){const candidates=[];
+ for(const info of globeScene.coordinateLabels||[]){const candidates=[],placedEdges=new Set();
+  const width=orbitInk.measureText(info.text).width;
   if(flat){
    if(info.latitude){const y=globePoint(direction(0,info.degrees)).y;
-    if(y>=view.y-5&&y<=view.bottom+5)candidates.push({x:Math.max(view.x,rect.x)+24,y:Math.max(view.y+6,Math.min(view.bottom-6,y))},
-     {x:Math.min(view.right,rect.x+rect.w)-24,y:Math.max(view.y+6,Math.min(view.bottom-6,y))});
+    if(y>=view.y-5&&y<=view.bottom+5)candidates.push(...globeFlatGridNumberColumns(
+     Math.max(view.y+6,Math.min(view.bottom-6,y)),width,view,rect));
    }else{const p=globePoint(direction(info.degrees,0));
-    candidates.push({x:p.x,y:Math.max(view.y,rect.y)+9},{x:p.x,y:Math.min(view.bottom,rect.y+rect.h)-9});}
+    candidates.push(...globeFlatGridNumberRows(p.x,width,view,rect));}
   }else if(info.latitude){
    if(Math.abs(info.degrees)===90){const p=globePoint(direction(0,info.degrees));if(p.depth>=0)candidates.push({x:p.x,y:p.y+9},{x:p.x,y:p.y-9});}
    else{const curve=globeCoordinateCurves.find(c=>c.latitude&&c.degrees===info.degrees);
     if(curve)for(const run of globeGuideRuns(curve.vertices.map((v,i)=>({...globePoint(v),u:i/(curve.vertices.length-1)})))){
      for(const p of [run[0],run.at(-1)])candidates.push({x:p.x+(p.x<(view.x+view.right)/2?22:-22),y:p.y});}}
   }else{const p=globePoint(direction(info.degrees,0));if(p.depth>=0)candidates.push({x:p.x,y:p.y+9},{x:p.x,y:p.y-9});}
-  for(const p of candidates){const width=orbitInk.measureText(info.text).width,box={x:p.x-width/2-2,y:p.y-6,w:width+4,h:12};
+  for(const p of candidates){if(flat&&placedEdges.has(p.edge))continue;
+   const box={x:p.x-width/2-2,y:p.y-6,w:width+4,h:12};
    if(box.x<view.x||box.x+box.w>view.right||box.y<view.y||box.y+box.h>view.bottom)continue;
    if((globeScene.exclusions||[]).some(([x,y,w,h])=>overlaps(box,{x,y,w,h}))||globeText.boxes.some(b=>overlaps(box,b)))continue;
    if(globeHits.some(dot=>Math.hypot(dot.x-p.x,dot.y-p.y)<(dot.current?24:12)))continue;
    orbitInk.globalAlpha=.85;orbitInk.strokeStyle='#101418';orbitInk.lineWidth=2;orbitInk.strokeText(info.text,p.x,p.y);
    orbitInk.fillStyle='#fff';orbitInk.fillText(info.text,p.x,p.y);globeText.boxes.push(box);
+   if(flat)placedEdges.add(p.edge);
    if(!flat&&(!info.latitude||Math.abs(info.degrees)===90))break;
   }
  }

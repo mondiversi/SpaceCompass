@@ -39,6 +39,7 @@ jobs:
         run: |
           python3 scripts/CheckGlobeAssets.py
           node scripts/CheckGlobeLabels.js
+          node scripts/CheckGlobeGridNumbers.js
           node scripts/CheckGlobeGeographicGuides.js
           node scripts/CheckGlobeViewport.js
           node scripts/CheckGlobeUpdates.js

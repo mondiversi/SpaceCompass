@@ -1,7 +1,7 @@
 {
   "adapter": "app/src/main/assets/globe/globe-navigation.js",
-  "bytes": 36600,
-  "sha256": "1a2f576d343e434bd797c8555587807c1ed5ccd467f4f4d8041dbbf65a8bf63f",
+  "bytes": 38019,
+  "sha256": "511f687c1e56e48a92c254182cb27def3576d23ac38c7162e20ececa49ff81b4",
   "texture_source": "screensaver/earth-day.webp and screensaver/earth-night.webp",
   "texture_manifest": "SCREENSAVER_ASSETS.json",
   "new_texture_bytes": 0

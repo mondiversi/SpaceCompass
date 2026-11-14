@@ -126,7 +126,7 @@ internal fun SpaceCompassViewModeDialog(expanded: Boolean,mode: SpaceCompassView
                 else spaceCompassLiveViewMode(family.globe,panoramic),draftWeather)
         },Modifier.testTag("view-mode-apply")) },
         dismissButton={ SpaceCompassDialogActionButton(stringResource(R.string.close),onDismiss,
-            Modifier.testTag("view-mode-cancel")) },
+            Modifier.testTag("view-mode-cancel"), tone = SpaceCompassDialogActionTone.NEUTRAL) },
         modifier=Modifier.testTag("view-mode-dialog"),
         title={Text(stringResource(R.string.view_mode_choose))},text={
             Column(Modifier.fillMaxWidth()) {

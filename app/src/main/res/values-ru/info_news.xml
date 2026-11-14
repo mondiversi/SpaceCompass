@@ -1,9 +1,9 @@
 <resources>
     <string name="info_news_title">Последние новости · %1$s</string>
-    <string name="info_news_star_sky" formatted="false">Исследуйте Небо и Глобус в кадре или панораме с сохранением настроек вида.</string>
-    <string name="info_news_texture_downloads" formatted="false">Более плавная навигация по Глобусу, стабильный кадр и компактный выбор объекта.</string>
-    <string name="info_news_weather" formatted="false">Выбирайте координатную сетку, её числа и линии планеты вместе; снимки наследуют настройки.</string>
-    <string name="info_news_viewer_zoom" formatted="false">Выбирайте подписи в панораме Неба и на Глобусе; погода теперь в режиме просмотра.</string>
-    <string name="info_news_settings" formatted="false">Компактные меню масштаба центрируются на кнопке и выделяют выбранное значение.</string>
-    <string name="info_news_catalog" formatted="false">Обновлённое обучение, понятные окна и экспорт Сцены с сохранением момента паузы.</string>
+    <string name="info_news_star_sky" formatted="false">Числа координат в панорамах Неба и Глобуса остаются видимыми при увеличении.</string>
+    <string name="info_news_texture_downloads" formatted="false">Подписи широт ближе к свободным краям, в том числе в альбомном виде с панелями.</string>
+    <string name="info_news_weather" formatted="false">Числа сетки выровнены по линиям и не перекрывают кнопки и панели.</string>
+    <string name="info_news_viewer_zoom" formatted="false">Закрыть и Позже используют обычный цвет текста дневной и ночной темы.</string>
+    <string name="info_news_settings" formatted="false">Подтверждения остаются синими или голубыми; отмена изменений и удаление — красными.</string>
+    <string name="info_news_catalog" formatted="false">Отмена в подтверждении удаления нейтральна, чтобы яснее различать действия.</string>
 </resources>

@@ -1,9 +1,9 @@
 <resources>
     <string name="info_news_title">Últimas novidades · %1$s</string>
-    <string name="info_news_star_sky" formatted="false">Explore Céu e Globo em enquadramento ou panorama, com escolhas de visualização guardadas.</string>
-    <string name="info_news_texture_downloads" formatted="false">Navegação do Globo mais fluida, enquadramento estável e seletor de objetos compacto.</string>
-    <string name="info_news_weather" formatted="false">Escolha grelha de referência, numeração e linhas planetárias; as capturas herdam as escolhas.</string>
-    <string name="info_news_viewer_zoom" formatted="false">Escolha etiquetas nos panoramas do Céu e nas vistas do Globo; a meteorologia está em Visualização.</string>
-    <string name="info_news_settings" formatted="false">Menus de zoom compactos, centrados no botão e com o valor selecionado realçado.</string>
-    <string name="info_news_catalog" formatted="false">Tutorial atualizado, janelas mais claras e exportações de Cena que preservam o instante em pausa.</string>
+    <string name="info_news_star_sky" formatted="false">Os números de coordenadas dos panoramas do Céu e Globo mantêm-se visíveis ao ampliar.</string>
+    <string name="info_news_texture_downloads" formatted="false">As latitudes ficam mais perto das margens livres, também na horizontal com painéis.</string>
+    <string name="info_news_weather" formatted="false">Os números da grelha mantêm-se alinhados com as linhas e evitam botões e painéis.</string>
+    <string name="info_news_viewer_zoom" formatted="false">Fechar e Mais tarde usam agora a cor normal do texto nos temas de dia e noite.</string>
+    <string name="info_news_settings" formatted="false">As confirmações continuam azuis ou ciano; descartar alterações e remover continua vermelho.</string>
+    <string name="info_news_catalog" formatted="false">Cancelar numa confirmação de remoção é neutro para distinguir melhor cada ação.</string>
 </resources>

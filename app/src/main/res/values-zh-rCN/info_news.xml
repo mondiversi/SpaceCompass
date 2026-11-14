@@ -1,9 +1,9 @@
 <resources>
     <string name="info_news_title">最新变化 · %1$s</string>
-    <string name="info_news_star_sky" formatted="false">以取景或全景探索天空和地球，并记住显示选项。</string>
-    <string name="info_news_texture_downloads" formatted="false">地球导航更流畅，取景更稳定，天体选择器更紧凑。</string>
-    <string name="info_news_weather" formatted="false">集中选择参考网格、刻度数字和行星参考线；拍摄会继承这些选项。</string>
-    <string name="info_news_viewer_zoom" formatted="false">选择天空全景和地球视图中的标签；天气现已移至显示模式。</string>
-    <string name="info_news_settings" formatted="false">紧凑的缩放菜单以按钮为中心，并突出显示所选数值。</string>
-    <string name="info_news_catalog" formatted="false">更新教程，改进弹窗，并在场景导出中保留暂停时刻。</string>
+    <string name="info_news_star_sky" formatted="false">放大天空和地球全景时，坐标数字仍保持可见。</string>
+    <string name="info_news_texture_downloads" formatted="false">纬度标签更靠近空闲边缘，横屏且显示信息面板时也如此。</string>
+    <string name="info_news_weather" formatted="false">网格数字保持与线条对齐，并避开按钮和面板。</string>
+    <string name="info_news_viewer_zoom" formatted="false">关闭和稍后现在使用日间和夜间主题的普通文字颜色。</string>
+    <string name="info_news_settings" formatted="false">确认仍为蓝色或青色；放弃修改和删除项目仍为红色。</string>
+    <string name="info_news_catalog" formatted="false">删除确认中的取消使用中性色，更易区分各项操作。</string>
 </resources>

@@ -46,7 +46,7 @@ internal fun SpaceCompassGridReferencesDialog(expanded: Boolean, grid: Boolean, 
         confirmButton = { SpaceCompassDialogActionButton(stringResource(R.string.view_mode_apply),
             { onApply(draftGrid, draftReferences, draftNumbers) }, Modifier.testTag("grid-references-apply")) },
         dismissButton = { SpaceCompassDialogActionButton(stringResource(R.string.close),
-            onDismiss, Modifier.testTag("grid-references-cancel")) },
+            onDismiss, Modifier.testTag("grid-references-cancel"), tone = SpaceCompassDialogActionTone.NEUTRAL) },
         text = {
             Column(Modifier.fillMaxWidth()) {
                 SpaceCompassSettingsCheckbox(stringResource(R.string.main_grid_enable), draftGrid, { draftGrid = it },

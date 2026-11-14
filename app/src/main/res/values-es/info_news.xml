@@ -1,9 +1,9 @@
 <resources>
     <string name="info_news_title">Últimas novedades · %1$s</string>
-    <string name="info_news_star_sky" formatted="false">Explora Cielo y Globo en encuadre o panorámica, con opciones de visualización guardadas.</string>
-    <string name="info_news_texture_downloads" formatted="false">Navegación del Globo más fluida, encuadre estable y selector de objetos compacto.</string>
-    <string name="info_news_weather" formatted="false">Elige cuadrícula de referencia, números y líneas planetarias; las capturas heredan tus opciones.</string>
-    <string name="info_news_viewer_zoom" formatted="false">Elige etiquetas en panorámicas del Cielo y vistas del Globo; el tiempo está ahora en Visualización.</string>
-    <string name="info_news_settings" formatted="false">Menús de zoom compactos, centrados en su botón y con el valor seleccionado resaltado.</string>
-    <string name="info_news_catalog" formatted="false">Tutorial actualizado, diálogos más claros y exportaciones de Escena que conservan el instante en pausa.</string>
+    <string name="info_news_star_sky" formatted="false">Los números de coordenadas de las panorámicas de Cielo y Globo siguen visibles al ampliar.</string>
+    <string name="info_news_texture_downloads" formatted="false">Las latitudes quedan más cerca de los bordes libres, también en horizontal con paneles.</string>
+    <string name="info_news_weather" formatted="false">Los números de la cuadrícula se alinean con sus líneas y evitan botones y paneles.</string>
+    <string name="info_news_viewer_zoom" formatted="false">Cerrar y Más tarde usan ahora el color normal del texto en los temas de día y noche.</string>
+    <string name="info_news_settings" formatted="false">Las confirmaciones siguen azules o cian; descartar cambios y eliminar elementos sigue rojo.</string>
+    <string name="info_news_catalog" formatted="false">Cancelar en una confirmación de eliminación es neutro para distinguir mejor cada acción.</string>
 </resources>

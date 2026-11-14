@@ -1,9 +1,9 @@
 <resources>
     <string name="info_news_title">Son yenilikler · %1$s</string>
-    <string name="info_news_star_sky" formatted="false">Kaydedilen görünüm seçimleriyle Gökyüzü ve Küreyi Kadraj veya Panoramada keşfedin.</string>
-    <string name="info_news_texture_downloads" formatted="false">Daha akıcı Küre gezinmesi, kararlı kadraj ve kompakt nesne seçici.</string>
-    <string name="info_news_weather" formatted="false">Referans ızgarası, sayılar ve gezegen çizgilerini birlikte seçin; çekimler seçimleri devralır.</string>
-    <string name="info_news_viewer_zoom" formatted="false">Gökyüzü panoramaları ve Kürede etiket seçin; hava durumu artık Görünümde.</string>
-    <string name="info_news_settings" formatted="false">Kompakt yakınlaştırma menüleri düğmeye ortalanır ve seçili değeri vurgular.</string>
-    <string name="info_news_catalog" formatted="false">Güncel öğretici, daha açık pencereler ve duraklatılan anı koruyan Sahne dışa aktarımları.</string>
+    <string name="info_news_star_sky" formatted="false">Gökyüzü ve Küre panoramalarındaki koordinat sayıları yakınlaştırmada görünür kalır.</string>
+    <string name="info_news_texture_downloads" formatted="false">Enlem etiketleri boş kenarlara daha yakındır; bilgi panelli yatay görünümde de geçerlidir.</string>
+    <string name="info_news_weather" formatted="false">Izgara sayıları çizgileriyle hizalı kalır, düğme ve panellerle çakışmaz.</string>
+    <string name="info_news_viewer_zoom" formatted="false">Kapat ve Daha sonra artık gündüz ve gece temalarının normal metin rengini kullanır.</string>
+    <string name="info_news_settings" formatted="false">Onaylar mavi veya camgöbeği; değişiklikleri iptal etmek ve öğeleri kaldırmak kırmızı kalır.</string>
+    <string name="info_news_catalog" formatted="false">Silme onayındaki İptal, eylemleri daha kolay ayırt etmek için nötr renktedir.</string>
 </resources>

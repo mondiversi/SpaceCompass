@@ -73,7 +73,7 @@ internal fun SpaceCompassAlertDialog(
     // Choice/information dialogs without actions always expose the same themed Close footer.
     val footerConfirmButton: (@Composable () -> Unit)? = confirmButton ?: if (dismissButton == null) {
         { SpaceCompassDialogActionButton(stringResource(R.string.close), onDismissRequest,
-            Modifier.testTag("dialog-close")) }
+            Modifier.testTag("dialog-close"), tone = SpaceCompassDialogActionTone.NEUTRAL) }
     } else null
     // A Dialog owns another Android Compose view. Restore the host's density
     // AND logical configuration inside that window, before measuring anything.

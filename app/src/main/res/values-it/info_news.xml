@@ -1,9 +1,9 @@
 <resources>
     <string name="info_news_title">Ultime novità · %1$s</string>
-    <string name="info_news_star_sky" formatted="false">Esplora Cielo e Mappamondo in Inquadratura o Panoramica, con le scelte memorizzate.</string>
-    <string name="info_news_texture_downloads" formatted="false">Mappamondo più fluido, inquadratura stabile e selettore oggetto compatto.</string>
-    <string name="info_news_weather" formatted="false">Scegli griglia di riferimento, numerazione e linee del pianeta; gli scatti ereditano le scelte.</string>
-    <string name="info_news_viewer_zoom" formatted="false">Scegli le etichette in Cielo panoramico e Mappamondo; il meteo è ora in Visualizzazione.</string>
-    <string name="info_news_settings" formatted="false">Menu zoom compatti, centrati sul pulsante e con il valore selezionato evidenziato.</string>
-    <string name="info_news_catalog" formatted="false">Tutorial aggiornato, popup più chiari ed esportazioni Scenario che conservano il momento in pausa.</string>
+    <string name="info_news_star_sky" formatted="false">I numeri delle coordinate nelle panoramiche di Cielo e Mappamondo restano visibili aumentando lo zoom.</string>
+    <string name="info_news_texture_downloads" formatted="false">Le latitudini sono più vicine ai bordi liberi, anche in orizzontale con le isole aperte.</string>
+    <string name="info_news_weather" formatted="false">I numeri della griglia restano allineati alle linee ed evitano pulsanti e isole.</string>
+    <string name="info_news_viewer_zoom" formatted="false">Chiudi e Più tardi usano ora il colore normale del testo nei temi giorno e notte.</string>
+    <string name="info_news_settings" formatted="false">Le conferme restano blu o azzurre; annullare modifiche ed eliminare elementi resta rosso.</string>
+    <string name="info_news_catalog" formatted="false">Annulla nelle conferme di eliminazione è neutro, per distinguere meglio ogni azione.</string>
 </resources>

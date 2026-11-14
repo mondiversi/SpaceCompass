@@ -1,9 +1,9 @@
 <resources>
     <string name="info_news_title">החידושים האחרונים · %1$s</string>
-    <string name="info_news_star_sky" formatted="false">חקור את השמיים והגלובוס במסגרת או בפנורמה, עם אפשרויות תצוגה שמורות.</string>
-    <string name="info_news_texture_downloads" formatted="false">ניווט חלק יותר בגלובוס, מסגור יציב ובורר עצמים קומפקטי.</string>
-    <string name="info_news_weather" formatted="false">בחר יחד רשת ייחוס, מספור וקווי כוכב לכת; הצילומים מקבלים את הבחירות.</string>
-    <string name="info_news_viewer_zoom" formatted="false">בחר תוויות בפנורמת השמיים ובגלובוס; מזג האוויר נמצא כעת במצב תצוגה.</string>
-    <string name="info_news_settings" formatted="false">תפריטי זום קומפקטיים ממורכזים לכפתור ומדגישים את הערך הנבחר.</string>
-    <string name="info_news_catalog" formatted="false">מדריך מעודכן, חלונות ברורים יותר וייצוא סצנה ששומר את רגע ההשהיה.</string>
+    <string name="info_news_star_sky" formatted="false">מספרי הקואורדינטות בפנורמות השמיים והגלובוס נשארים גלויים בהגדלה.</string>
+    <string name="info_news_texture_downloads" formatted="false">תוויות הרוחב קרובות יותר לשוליים הפנויים, גם לרוחב עם לוחות מידע.</string>
+    <string name="info_news_weather" formatted="false">מספרי הרשת נשארים מיושרים לקווים ונמנעים מכפתורים ומלוחות.</string>
+    <string name="info_news_viewer_zoom" formatted="false">סגירה ומאוחר יותר משתמשים כעת בצבע הטקסט הרגיל בערכות היום והלילה.</string>
+    <string name="info_news_settings" formatted="false">אישורים נשארים כחולים או בצבע ציאן; ביטול שינויים והסרת פריטים נשארים אדומים.</string>
+    <string name="info_news_catalog" formatted="false">ביטול באישור הסרה הוא בצבע ניטרלי כדי להבחין טוב יותר בין הפעולות.</string>
 </resources>

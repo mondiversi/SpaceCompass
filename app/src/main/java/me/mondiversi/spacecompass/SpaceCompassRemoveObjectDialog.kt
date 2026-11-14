@@ -46,9 +46,9 @@ internal fun SpaceCompassRemoveObjectDialog(body: SpaceCompassCelestialBody,
         text = { Text(stringResource(R.string.celestial_remove_message, name)) },
         confirmButton = {
             SpaceCompassDialogActionButton(stringResource(R.string.celestial_remove_action),
-                onClick = onConfirm, modifier = Modifier.testTag("celestial-remove-confirm"), destructive = true)
+                onClick = onConfirm, modifier = Modifier.testTag("celestial-remove-confirm"), tone = SpaceCompassDialogActionTone.DESTRUCTIVE)
         }, dismissButton = {
             SpaceCompassDialogActionButton(stringResource(R.string.celestial_remove_cancel),
-                onClick = onDismiss, modifier = Modifier.testTag("celestial-remove-cancel"))
+                onClick = onDismiss, modifier = Modifier.testTag("celestial-remove-cancel"), tone = SpaceCompassDialogActionTone.NEUTRAL)
         })
 }

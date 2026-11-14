@@ -1,9 +1,9 @@
 <resources>
     <string name="info_news_title">最近の変更 · %1$s</string>
-    <string name="info_news_star_sky" formatted="false">空と地球をフレームまたはパノラマで探索。表示の選択を保存します。</string>
-    <string name="info_news_texture_downloads" formatted="false">地球の操作がより滑らかに。安定したフレームとコンパクトな天体選択。</string>
-    <string name="info_news_weather" formatted="false">基準グリッド、目盛り、惑星の基準線をまとめて選択。撮影にも引き継ぎます。</string>
-    <string name="info_news_viewer_zoom" formatted="false">空のパノラマと地球でラベルを選択。天気は表示モードに移動しました。</string>
-    <string name="info_news_settings" formatted="false">コンパクトなズームメニューをボタンの中央に配置し、選択値を強調します。</string>
-    <string name="info_news_catalog" formatted="false">チュートリアルとダイアログを改善。一時停止した時刻をシーンの書き出しで保持します。</string>
+    <string name="info_news_star_sky" formatted="false">空と地球のパノラマで拡大しても座標の数値が表示されます。</string>
+    <string name="info_news_texture_downloads" formatted="false">緯度のラベルを空いている端に近づけ、情報パネル付きの横画面にも対応しました。</string>
+    <string name="info_news_weather" formatted="false">グリッドの数値は線に沿い、ボタンやパネルとの重なりを避けます。</string>
+    <string name="info_news_viewer_zoom" formatted="false">閉じると後では、昼夜のテーマの通常の文字色を使います。</string>
+    <string name="info_news_settings" formatted="false">確認操作は青またはシアン、変更の破棄と削除は赤のままです。</string>
+    <string name="info_news_catalog" formatted="false">削除確認のキャンセルを通常の文字色にし、各操作を区別しやすくしました。</string>
 </resources>

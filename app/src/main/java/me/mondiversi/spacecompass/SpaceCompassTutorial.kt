@@ -151,10 +151,10 @@ internal fun SpaceCompassTutorialHost(tutorial: SpaceCompassTutorialState, conte
             onDismissRequest = { dismissWelcome() },
             title = { Text(stringResource(R.string.tutorial_welcome_title)) },
             text = { Text(stringResource(R.string.tutorial_welcome_body)) },
-            dismissButton = { TextButton(onClick = { dismissWelcome() }, Modifier.testTag("welcome-close")) {
-                Text(stringResource(R.string.close)) } },
-            confirmButton = { TextButton(onClick = { dismissWelcome(); tutorial.start() },
-                Modifier.testTag("welcome-tutorial")) { Text(stringResource(R.string.tutorial_title).uppercase(LocalConfiguration.current.locales[0])) } },
+            dismissButton = { SpaceCompassDialogActionButton(stringResource(R.string.close),
+                { dismissWelcome() }, Modifier.testTag("welcome-close"), tone = SpaceCompassDialogActionTone.NEUTRAL) },
+            confirmButton = { SpaceCompassDialogActionButton(stringResource(R.string.tutorial_title),
+                { dismissWelcome(); tutorial.start() }, Modifier.testTag("welcome-tutorial")) },
             modifier = Modifier.testTag("tutorial-welcome"))
     }
 }

@@ -1,9 +1,9 @@
 <resources>
     <string name="info_news_title">최근 변경 사항 · %1$s</string>
-    <string name="info_news_star_sky" formatted="false">저장된 보기 설정으로 하늘과 지구본을 프레임 또는 파노라마로 탐색합니다.</string>
-    <string name="info_news_texture_downloads" formatted="false">더 부드러운 지구본 탐색, 안정적인 프레임, 간결한 천체 선택기.</string>
-    <string name="info_news_weather" formatted="false">기준 격자, 눈금 숫자, 행성 기준선을 함께 선택하며 촬영에도 적용됩니다.</string>
-    <string name="info_news_viewer_zoom" formatted="false">하늘 파노라마와 지구본의 라벨을 선택합니다. 날씨는 보기 모드로 이동했습니다.</string>
-    <string name="info_news_settings" formatted="false">간결한 줌 메뉴가 버튼 중앙에 표시되고 선택한 값을 강조합니다.</string>
-    <string name="info_news_catalog" formatted="false">튜토리얼과 팝업을 개선하고 장면 내보내기에 일시 정지 시점을 보존합니다.</string>
+    <string name="info_news_star_sky" formatted="false">하늘과 지구본 파노라마의 좌표 숫자가 확대해도 계속 표시됩니다.</string>
+    <string name="info_news_texture_downloads" formatted="false">위도 라벨이 빈 가장자리에 더 가까워지며 정보 패널이 있는 가로 화면도 지원합니다.</string>
+    <string name="info_news_weather" formatted="false">격자 숫자가 선에 맞춰 정렬되고 버튼과 패널을 피합니다.</string>
+    <string name="info_news_viewer_zoom" formatted="false">닫기와 나중에는 이제 주간 및 야간 테마의 일반 글자색을 사용합니다.</string>
+    <string name="info_news_settings" formatted="false">확인은 파란색 또는 청록색, 변경 취소와 항목 삭제는 빨간색을 유지합니다.</string>
+    <string name="info_news_catalog" formatted="false">삭제 확인의 취소는 중립색으로 표시하여 각 동작을 쉽게 구분합니다.</string>
 </resources>

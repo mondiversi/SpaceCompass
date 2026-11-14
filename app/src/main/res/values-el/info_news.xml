@@ -1,9 +1,9 @@
 <resources>
     <string name="info_news_title">Τελευταία νέα · %1$s</string>
-    <string name="info_news_star_sky" formatted="false">Εξερεύνησε Ουρανό και Υδρόγειο σε κάδρο ή πανόραμα, με αποθηκευμένες επιλογές προβολής.</string>
-    <string name="info_news_texture_downloads" formatted="false">Ομαλότερη πλοήγηση στην Υδρόγειο, σταθερό κάδρο και συμπαγής επιλογή αντικειμένου.</string>
-    <string name="info_news_weather" formatted="false">Επίλεξε πλέγμα αναφοράς, αρίθμηση και γραμμές πλανήτη μαζί· οι λήψεις κληρονομούν τις επιλογές.</string>
-    <string name="info_news_viewer_zoom" formatted="false">Επίλεξε ετικέτες σε πανόραμα Ουρανού και Υδρόγειο· ο καιρός βρίσκεται πλέον στην Προβολή.</string>
-    <string name="info_news_settings" formatted="false">Συμπαγή μενού ζουμ, κεντραρισμένα στο κουμπί τους, με επισήμανση της επιλεγμένης τιμής.</string>
-    <string name="info_news_catalog" formatted="false">Ενημερωμένος οδηγός, σαφέστερα παράθυρα και εξαγωγή Σκηνής που διατηρεί τη στιγμή παύσης.</string>
+    <string name="info_news_star_sky" formatted="false">Οι αριθμοί συντεταγμένων στα πανοράματα Ουρανού και Υδρογείου παραμένουν ορατοί στο ζουμ.</string>
+    <string name="info_news_texture_downloads" formatted="false">Οι ετικέτες πλάτους πλησιάζουν τα ελεύθερα άκρα, και οριζόντια με πλαίσια πληροφοριών.</string>
+    <string name="info_news_weather" formatted="false">Οι αριθμοί πλέγματος ευθυγραμμίζονται με τις γραμμές και αποφεύγουν κουμπιά και πλαίσια.</string>
+    <string name="info_news_viewer_zoom" formatted="false">Το Κλείσιμο και το Αργότερα έχουν το κανονικό χρώμα κειμένου στα θέματα ημέρας και νύχτας.</string>
+    <string name="info_news_settings" formatted="false">Οι επιβεβαιώσεις παραμένουν μπλε ή κυανές· η απόρριψη αλλαγών και η αφαίρεση κόκκινες.</string>
+    <string name="info_news_catalog" formatted="false">Η Ακύρωση σε επιβεβαίωση αφαίρεσης είναι ουδέτερη για σαφέστερη διάκριση ενεργειών.</string>
 </resources>

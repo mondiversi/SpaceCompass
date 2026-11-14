@@ -1,9 +1,9 @@
 <resources>
     <string name="info_news_title">تازه‌ترین تغییرات · %1$s</string>
-    <string name="info_news_star_sky" formatted="false">آسمان و کرهٔ زمین را در کادر یا پانوراما با انتخاب‌های ذخیره‌شدهٔ نمایش کاوش کنید.</string>
-    <string name="info_news_texture_downloads" formatted="false">حرکت روان‌تر کرهٔ زمین، کادربندی پایدار و انتخاب‌گر فشردهٔ اجرام.</string>
-    <string name="info_news_weather" formatted="false">شبکهٔ مرجع، شماره‌ها و خطوط سیاره را با هم انتخاب کنید؛ تصاویر انتخاب‌های شما را به ارث می‌برند.</string>
-    <string name="info_news_viewer_zoom" formatted="false">برچسب‌ها را در پانورامای آسمان و کرهٔ زمین انتخاب کنید؛ آب‌وهوا اکنون در حالت نمایش است.</string>
-    <string name="info_news_settings" formatted="false">فهرست‌های فشردهٔ بزرگ‌نمایی در مرکز دکمه قرار می‌گیرند و مقدار انتخاب‌شده را برجسته می‌کنند.</string>
-    <string name="info_news_catalog" formatted="false">آموزش به‌روز، پنجره‌های روشن‌تر و خروجی صحنه که لحظهٔ توقف را حفظ می‌کند.</string>
+    <string name="info_news_star_sky" formatted="false">شماره‌های مختصات در پانورامای آسمان و کرهٔ زمین هنگام بزرگ‌نمایی نمایان می‌مانند.</string>
+    <string name="info_news_texture_downloads" formatted="false">برچسب‌های عرض به لبه‌های آزاد نزدیک‌ترند، حتی در حالت افقی با پنل‌های اطلاعات.</string>
+    <string name="info_news_weather" formatted="false">شماره‌های شبکه با خطوط هم‌راستا می‌مانند و از دکمه‌ها و پنل‌ها دوری می‌کنند.</string>
+    <string name="info_news_viewer_zoom" formatted="false">بستن و بعداً اکنون از رنگ معمول متن در پوسته‌های روز و شب استفاده می‌کنند.</string>
+    <string name="info_news_settings" formatted="false">تأییدها آبی یا فیروزه‌ای می‌مانند؛ کنارگذاشتن تغییرات و حذف موارد قرمز می‌مانند.</string>
+    <string name="info_news_catalog" formatted="false">لغو در تأیید حذف رنگ خنثی دارد تا کارکرد هر اقدام روشن‌تر باشد.</string>
 </resources>

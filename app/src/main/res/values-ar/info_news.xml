@@ -1,9 +1,9 @@
 <resources>
     <string name="info_news_title">آخر المستجدات · %1$s</string>
-    <string name="info_news_star_sky" formatted="false">استكشف السماء والكرة الأرضية في إطار أو بانوراما، مع حفظ اختيارات العرض.</string>
-    <string name="info_news_texture_downloads" formatted="false">تنقل أكثر سلاسة في الكرة الأرضية، وتأطير ثابت، ومحدد أجرام مدمج.</string>
-    <string name="info_news_weather" formatted="false">اختر الشبكة المرجعية وأرقامها وخطوط الكوكب معًا؛ تَرِث اللقطات اختياراتك.</string>
-    <string name="info_news_viewer_zoom" formatted="false">اختر التسميات في بانوراما السماء والكرة الأرضية؛ الطقس الآن ضمن وضع العرض.</string>
-    <string name="info_news_settings" formatted="false">قوائم تكبير مدمجة تتوسط زرها وتبرز القيمة المحددة.</string>
-    <string name="info_news_catalog" formatted="false">دليل محدّث ونوافذ أوضح وتصدير مشاهد يحفظ اللحظة المتوقفة.</string>
+    <string name="info_news_star_sky" formatted="false">تبقى أرقام الإحداثيات في بانوراما السماء والكرة الأرضية مرئية عند التكبير.</string>
+    <string name="info_news_texture_downloads" formatted="false">أصبحت تسميات خطوط العرض أقرب إلى الحواف الحرة، حتى أفقيًا مع لوحات المعلومات.</string>
+    <string name="info_news_weather" formatted="false">تبقى أرقام الشبكة محاذية لخطوطها وتتجنب الأزرار واللوحات.</string>
+    <string name="info_news_viewer_zoom" formatted="false">يستخدم إغلاق ولاحقًا الآن لون النص العادي في المظهرين النهاري والليلي.</string>
+    <string name="info_news_settings" formatted="false">تبقى التأكيدات زرقاء أو سماوية؛ وإلغاء التعديلات وإزالة العناصر باللون الأحمر.</string>
+    <string name="info_news_catalog" formatted="false">أصبح إلغاء في تأكيد الإزالة بلون محايد لتمييز الإجراءات بوضوح.</string>
 </resources>

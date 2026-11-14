@@ -1,9 +1,9 @@
 <resources>
     <string name="info_news_title">Latest news · %1$s</string>
-    <string name="info_news_star_sky" formatted="false">Explore Sky and Globe in Frame or Panorama, with remembered display choices.</string>
-    <string name="info_news_texture_downloads" formatted="false">Smoother Globe navigation, steadier framing and a compact object selector.</string>
-    <string name="info_news_weather" formatted="false">Choose the reference grid, its numbers and planetary lines together; captures inherit your choices.</string>
-    <string name="info_news_viewer_zoom" formatted="false">Choose labels in Sky panoramas and Globe views; weather is now in View mode.</string>
-    <string name="info_news_settings" formatted="false">Compact zoom menus stay centred on their button and highlight the selected value.</string>
-    <string name="info_news_catalog" formatted="false">Updated tutorial, clearer popups and Scene exports that preserve a paused moment.</string>
+    <string name="info_news_star_sky" formatted="false">Coordinate numbers in Sky and Globe panoramas stay visible when zooming in.</string>
+    <string name="info_news_texture_downloads" formatted="false">Latitude labels sit closer to free edges, also in landscape with information panels.</string>
+    <string name="info_news_weather" formatted="false">Grid numbers stay aligned with their lines and avoid buttons and panels.</string>
+    <string name="info_news_viewer_zoom" formatted="false">Close and Later now use normal text colours for the day and night themes.</string>
+    <string name="info_news_settings" formatted="false">Confirmations stay blue or cyan; discarding changes and removing items stay red.</string>
+    <string name="info_news_catalog" formatted="false">Cancel in a removal confirmation is neutral, making each action easier to distinguish.</string>
 </resources>

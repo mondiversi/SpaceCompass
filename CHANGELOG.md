@@ -1,5 +1,11 @@
 # Changelog
 
+## 1.10.1 — 2026-11-14
+
+- Keep coordinate numbers visible at high zoom in Sky and Globe panoramas. Place latitude labels closer to the free edges, accounting for landscape information panels without losing alignment or overlapping controls.
+- Distinguish popup actions consistently across day and night themes: Close, Later and simple dismissals use normal text colours; confirmations retain blue/cyan; discarding edits and destructive actions retain red. Cancel in a removal confirmation is neutral.
+- Update in-app News in all twenty languages. Keep the 9,999-object catalogue, saved preferences, grid defaults and external graphics collection unchanged.
+
 ## 1.10.0 — 2026-11-13
 
 - Explore live Sky and Globe in Frame or Panorama, with independent saved zoom and drag positions. Keep wide panoramas edge to edge in landscape and remove the reticle from panoramic views.

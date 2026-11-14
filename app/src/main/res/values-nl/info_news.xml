@@ -1,9 +1,9 @@
 <resources>
     <string name="info_news_title">Laatste nieuws · %1$s</string>
-    <string name="info_news_star_sky" formatted="false">Verken Hemel en Globe in Kader of Panorama, met bewaarde weergavekeuzes.</string>
-    <string name="info_news_texture_downloads" formatted="false">Vloeiendere Globe-navigatie, stabiele kadrering en compacte objectkiezer.</string>
-    <string name="info_news_weather" formatted="false">Kies referentieraster, cijfers en planeetlijnen samen; opnamen nemen je keuzes over.</string>
-    <string name="info_news_viewer_zoom" formatted="false">Kies labels in hemelpanorama’s en Globe-weergaven; weer staat nu bij Weergave.</string>
-    <string name="info_news_settings" formatted="false">Compacte zoommenu’s staan gecentreerd op hun knop en markeren de gekozen waarde.</string>
-    <string name="info_news_catalog" formatted="false">Bijgewerkte uitleg, duidelijkere vensters en Scène-export met het gepauzeerde tijdstip.</string>
+    <string name="info_news_star_sky" formatted="false">Coördinaatcijfers in Hemel- en Globepanorama’s blijven zichtbaar bij inzoomen.</string>
+    <string name="info_news_texture_downloads" formatted="false">Breedtelabels staan dichter bij vrije randen, ook liggend met informatiepanelen.</string>
+    <string name="info_news_weather" formatted="false">Rastercijfers blijven uitgelijnd op hun lijnen en vermijden knoppen en panelen.</string>
+    <string name="info_news_viewer_zoom" formatted="false">Sluiten en Later gebruiken nu de normale tekstkleur van het dag- en nachtthema.</string>
+    <string name="info_news_settings" formatted="false">Bevestigingen blijven blauw of cyaan; wijzigingen verwerpen en verwijderen blijven rood.</string>
+    <string name="info_news_catalog" formatted="false">Annuleren bij een verwijderbevestiging is neutraal om acties beter te onderscheiden.</string>
 </resources>
