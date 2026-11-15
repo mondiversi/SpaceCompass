@@ -1,9 +1,9 @@
 <resources>
     <string name="info_news_title">Latest news · %1$s</string>
-    <string name="info_news_star_sky" formatted="false">Coordinate numbers in Sky and Globe panoramas stay visible when zooming in.</string>
-    <string name="info_news_texture_downloads" formatted="false">Latitude labels sit closer to free edges, also in landscape with information panels.</string>
-    <string name="info_news_weather" formatted="false">Grid numbers stay aligned with their lines and avoid buttons and panels.</string>
-    <string name="info_news_viewer_zoom" formatted="false">Close and Later now use normal text colours for the day and night themes.</string>
-    <string name="info_news_settings" formatted="false">Confirmations stay blue or cyan; discarding changes and removing items stay red.</string>
-    <string name="info_news_catalog" formatted="false">Cancel in a removal confirmation is neutral, making each action easier to distinguish.</string>
+    <string name="info_news_star_sky" formatted="false">Explore the framed Globe with zoom up to 8×.</string>
+    <string name="info_news_texture_downloads" formatted="false">Earth uses the full detail of the existing day and night maps.</string>
+    <string name="info_news_weather" formatted="false">The live Globe looks sharper on high-density screens.</string>
+    <string name="info_news_viewer_zoom" formatted="false">Detail stays lighter while dragging and refines automatically when you stop.</string>
+    <string name="info_news_settings" formatted="false">Rotation is more precise when exploring the Globe at high zoom.</string>
+    <string name="info_news_catalog" formatted="false">The Earth screensaver keeps its lightweight rendering to limit consumption.</string>
 </resources>

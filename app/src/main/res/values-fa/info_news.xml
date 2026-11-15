@@ -1,9 +1,9 @@
 <resources>
     <string name="info_news_title">تازه‌ترین تغییرات · %1$s</string>
-    <string name="info_news_star_sky" formatted="false">شماره‌های مختصات در پانورامای آسمان و کرهٔ زمین هنگام بزرگ‌نمایی نمایان می‌مانند.</string>
-    <string name="info_news_texture_downloads" formatted="false">برچسب‌های عرض به لبه‌های آزاد نزدیک‌ترند، حتی در حالت افقی با پنل‌های اطلاعات.</string>
-    <string name="info_news_weather" formatted="false">شماره‌های شبکه با خطوط هم‌راستا می‌مانند و از دکمه‌ها و پنل‌ها دوری می‌کنند.</string>
-    <string name="info_news_viewer_zoom" formatted="false">بستن و بعداً اکنون از رنگ معمول متن در پوسته‌های روز و شب استفاده می‌کنند.</string>
-    <string name="info_news_settings" formatted="false">تأییدها آبی یا فیروزه‌ای می‌مانند؛ کنارگذاشتن تغییرات و حذف موارد قرمز می‌مانند.</string>
-    <string name="info_news_catalog" formatted="false">لغو در تأیید حذف رنگ خنثی دارد تا کارکرد هر اقدام روشن‌تر باشد.</string>
+    <string name="info_news_star_sky" formatted="false">کرهٔ زمین را در نمای کادر با بزرگ‌نمایی تا 8× کاوش کنید.</string>
+    <string name="info_news_texture_downloads" formatted="false">زمین از تمام جزئیات نقشه‌های روز و شب موجود استفاده می‌کند.</string>
+    <string name="info_news_weather" formatted="false">کرهٔ زمین زنده در نمایشگرهای با تراکم بالا واضح‌تر است.</string>
+    <string name="info_news_viewer_zoom" formatted="false">هنگام کشیدن، جزئیات سبک‌تر می‌شوند و پس از توقف خودکار بهبود می‌یابند.</string>
+    <string name="info_news_settings" formatted="false">چرخش کرهٔ زمین در بزرگ‌نمایی زیاد دقیق‌تر است.</string>
+    <string name="info_news_catalog" formatted="false">محافظ صفحهٔ زمین برای کاهش مصرف، ترسیم سبک خود را حفظ می‌کند.</string>
 </resources>

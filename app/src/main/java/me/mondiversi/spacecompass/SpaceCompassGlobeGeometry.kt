@@ -2,6 +2,8 @@ package me.mondiversi.spacecompass
 
 import kotlin.math.*
 
+internal const val SPACE_COMPASS_GLOBE_MAX_ZOOM=8.0
+
 internal data class SpaceCompassGlobeVector(val x: Double, val y: Double, val z: Double) {
     val length: Double get() = sqrt(x*x+y*y+z*z)
     fun times(scale: Double) = SpaceCompassGlobeVector(x*scale,y*scale,z*scale)
@@ -11,7 +13,7 @@ internal data class SpaceCompassGlobeVector(val x: Double, val y: Double, val z:
 
 internal data class SpaceCompassGlobePose(val longitude: Double = 0.0, val latitude: Double = 0.0,
     val zoom: Double = 1.0, val roll: Double = 0.0) {
-    fun normalized(maximumZoom: Double = 3.0) = SpaceCompassGlobePose((longitude.takeIf(Double::isFinite) ?: 0.0).let { atan2(sin(it),cos(it)) },
+    fun normalized(maximumZoom: Double = SPACE_COMPASS_GLOBE_MAX_ZOOM) = SpaceCompassGlobePose((longitude.takeIf(Double::isFinite) ?: 0.0).let { atan2(sin(it),cos(it)) },
         (latitude.takeIf(Double::isFinite) ?: 0.0).coerceIn(-PI/2,PI/2),(zoom.takeIf(Double::isFinite) ?: 1.0).coerceIn(.5,maximumZoom),roll.takeIf(Double::isFinite) ?: 0.0)
 }
 
@@ -47,6 +49,10 @@ internal fun spaceCompassGlobeEarthFixed(position: SpaceCompassSunPosition, lati
     return SpaceCompassGlobeVector(y,z,x)
 }
 
+/** Share the drawn radius with the onboard camera; direction shells are display scale only. */
+internal fun spaceCompassGlobeDisplayVector(body: SpaceCompassCelestialBody,fixed: SpaceCompassGlobeVector)=
+    if(body.isEarthSatellite) fixed.times(1/6378.137) else fixed.direction()
+
 internal data class SpaceCompassGlobeDot(val vector: SpaceCompassGlobeVector,
     val point: SpaceCompassSunPathPoint, val current: Boolean = false, val selected: Boolean = false,
     val antipode: Boolean = false)
@@ -59,7 +65,7 @@ internal data class SpaceCompassGlobeModel(val tracks: List<SpaceCompassGlobeTra
  */
 internal fun buildSpaceCompassGlobeModel(snapshot: SpaceCompassPanoramaSnapshot,
     curveCache: MutableMap<SpaceCompassSunDailyPath,List<Pair<SpaceCompassGlobeVector,Boolean>>>? = null,
-    sky: Boolean = false, checkCancelled: () -> Unit = {}): SpaceCompassGlobeModel {
+    sky: Boolean = false, surface: Boolean = false, checkCancelled: () -> Unit = {}): SpaceCompassGlobeModel {
     if(!snapshot.observerPositionKnown) return SpaceCompassGlobeModel(emptyList(),1.55)
     fun vector(body: SpaceCompassCelestialBody, p: SpaceCompassSunPathPoint): SpaceCompassGlobeVector? {
         checkCancelled()
@@ -70,7 +76,7 @@ internal fun buildSpaceCompassGlobeModel(snapshot: SpaceCompassPanoramaSnapshot,
         if ((body.isEarthSatellite || body.usesHorizons) && observation == null) return null
         val fixed=spaceCompassGlobeEarthFixed(p.position,snapshot.latitude,snapshot.longitude,snapshot.altitude,
             observation?.distanceKm) ?: return null
-        return if (body.isEarthSatellite) fixed.times(1/6378.137) else fixed.direction()
+        return if(surface) fixed.direction(1.002) else spaceCompassGlobeDisplayVector(body,fixed)
     }
     val tracks=snapshot.objects.map { item ->
         val path=item.path
@@ -120,12 +126,13 @@ internal fun spaceCompassGlobeEffectivePose(base: SpaceCompassGlobePose,season: 
 internal fun spaceCompassGlobeDrag(pose: SpaceCompassGlobePose,dx: Double,dy: Double,width: Double,height: Double,
     axisLocked: Boolean): SpaceCompassGlobePose {
     if(width<=0||height<=0)return pose
-    return pose.copy(longitude=pose.longitude+dx/width*PI*2,
-        latitude=if(axisLocked) pose.latitude else pose.latitude-dy/height*PI).normalized()
+    val sensitivity=pose.zoom.coerceAtLeast(1.0)
+    return pose.copy(longitude=pose.longitude+dx/width*PI*2/sensitivity,
+        latitude=if(axisLocked) pose.latitude else pose.latitude-dy/height*PI/sensitivity).normalized()
 }
 /** Decode the legacy stored multiplier; the renderer defines 1x as the complete trajectory envelope. */
 internal fun spaceCompassGlobeZoom(stored: Double,oldScale: Boolean)=
-    ((if(stored.isFinite()&&stored>0) stored else if(oldScale) 1.4 else 1.0)/(if(oldScale) 1.4 else 1.0)).coerceIn(.5,3.0)
+    ((if(stored.isFinite()&&stored>0) stored else if(oldScale) 1.4 else 1.0)/(if(oldScale) 1.4 else 1.0)).coerceIn(.5,SPACE_COMPASS_GLOBE_MAX_ZOOM)
 internal fun spaceCompassGlobeViewport(width: Double,height: Double,top: Double,bottom: Double): SpaceCompassSunSceneFrame {
     val first=top.coerceIn(0.0,height*.45);val last=(height-bottom).coerceIn(first+height*.1,height)
     return SpaceCompassSunSceneFrame(0.0,first,width,last-first)

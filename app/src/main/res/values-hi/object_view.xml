@@ -1,0 +1,6 @@
+<resources>
+    <string name="view_mode_object" formatted="false">पिंड</string>
+    <string name="object_view_note" formatted="false">कक्षीय दृश्य · आभासी पथ</string>
+    <string name="object_view_unavailable" formatted="false">उपलब्ध स्थिति डेटा वाला पिंड चुनें।</string>
+    <string name="tutorial_mode_object" formatted="false">आभासी कक्षा का अनुसरण करें। पृथ्वी को घुमाने के लिए खींचें; दृश्य आगे की ओर रहता है।</string>
+</resources>

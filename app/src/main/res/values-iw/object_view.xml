@@ -1,0 +1,6 @@
+<resources>
+    <string name="view_mode_object" formatted="false">עצם</string>
+    <string name="object_view_note" formatted="false">מבט מסלולי · מסלולים נראים</string>
+    <string name="object_view_unavailable" formatted="false">בחר עצם עם נתוני מיקום זמינים.</string>
+    <string name="tutorial_mode_object" formatted="false">עקוב אחר המסלול הנראה. גרור כדי לסובב את כדור הארץ; המבט נשאר קדימה.</string>
+</resources>

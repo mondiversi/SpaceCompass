@@ -191,3 +191,13 @@ width to keep equal, small margins at both edges, independent of the number leng
 Native safety bands and side panels move them to the nearest free column on the
 same parallel, rather than silently removing the values.
 Spherical views and frozen-image grid numbering retain their existing placement.
+
+## Object viewpoint (disabled local experiment)
+
+Object is currently hidden from Display and the tutorial. Existing Object preferences and imported experimental scenes fall back to Globe (Frame), without changing Location or celestial selections. Its implementation remains available for future work. The onboard eye follows the same vector and radius drawn by Globe: physical Earth-fixed positions for Earth satellites, and the existing 1.55-Earth-radius apparent shell for other objects. Display shells are not measured astronomical ranges. A forward tangent is derived from neighbouring ephemerides; geographic east provides a viewing reference if that direction is unavailable. The camera aims at the geometric terrestrial limb ahead, putting the horizon at the centre of its available viewport with local nadir beneath the eye. Dragging rotates the complete Earth reference frame (surface, grids, location and apparent tracks) beneath the camera. The forward eye and optical target remain fixed in view coordinates, so the horizon cannot drift during a drag. The manual orientation starts at zero in new dedicated preferences, independent of previous camera-look experiments. No target/axis button appears beside the panel chevron in Object mode. Labels keep their previous independent scopes.
+
+Live/capture paths share Globe geometry. Markers coinciding with or lying behind the camera are omitted from the onboard image. Ground position, dates, event definitions, colour rules, selected points and Scene archive compatibility keep their existing calculations. Object has Frame only. Globe, Object and their image previews have an 8x maximum zoom.
+
+## Interactive Earth detail
+
+The active Globe main view retains its 8x zoom limit and improved detail independently of the disabled Object experiment. The interactive host alone upgrades the existing 2048x1024 day/night texture sampling. Software rendering uses a cached 640px raster while settled and 256px during touch/viewport motion, with one deferred refinement; GPU backing canvases use up to 2x device density. No new textures are introduced. The standalone screensaver HTML, its 256px/512x256 low-power renderer and all texture bytes remain unchanged.

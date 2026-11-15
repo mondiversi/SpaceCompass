@@ -1,5 +1,12 @@
 # Changelog
 
+## 1.10.2 — 2026-11-15
+
+- Explore the framed Globe with zoom up to 8× and finer rotation control at high magnification.
+- Improve interactive Earth detail using the full resolution of the existing day and night maps and a sharper display on high-density screens. Use lighter detail during interaction and refine it automatically after movement stops.
+- Preserve the Earth screensaver’s lightweight rendering and the existing external graphics collection. No additional texture download is required for these improvements.
+- Update News in all twenty app languages, preserving the 9,999-object catalogue, saved preferences and selections.
+
 ## 1.10.1 — 2026-11-14
 
 - Keep coordinate numbers visible at high zoom in Sky and Globe panoramas. Place latitude labels closer to the free edges, accounting for landscape information panels without losing alignment or overlapping controls.

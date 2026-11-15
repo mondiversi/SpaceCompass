@@ -1,0 +1,6 @@
+<resources>
+    <string name="view_mode_object" formatted="false">Objeto</string>
+    <string name="object_view_note" formatted="false">Vista orbital · Trajetórias aparentes</string>
+    <string name="object_view_unavailable" formatted="false">Selecione um objeto com dados de posição disponíveis.</string>
+    <string name="tutorial_mode_object" formatted="false">Siga a órbita aparente. Arraste para rodar a Terra; a vista mantém-se para a frente.</string>
+</resources>

@@ -1,9 +1,9 @@
 <resources>
     <string name="info_news_title">Dernières nouveautés · %1$s</string>
-    <string name="info_news_star_sky" formatted="false">Les coordonnées des panoramas Ciel et Globe restent visibles lors du zoom.</string>
-    <string name="info_news_texture_downloads" formatted="false">Les latitudes se rapprochent des bords libres, même en paysage avec les panneaux.</string>
-    <string name="info_news_weather" formatted="false">Les nombres de la grille restent alignés sur leurs lignes et évitent boutons et panneaux.</string>
-    <string name="info_news_viewer_zoom" formatted="false">Fermer et Plus tard utilisent la couleur normale du texte des thèmes jour et nuit.</string>
-    <string name="info_news_settings" formatted="false">Les confirmations restent bleues ou cyan ; abandonner les modifications et supprimer reste rouge.</string>
-    <string name="info_news_catalog" formatted="false">Annuler dans une confirmation de suppression est neutre pour mieux distinguer les actions.</string>
+    <string name="info_news_star_sky" formatted="false">Explorez le Globe en cadrage avec un zoom allant jusqu’à 8×.</string>
+    <string name="info_news_texture_downloads" formatted="false">La Terre exploite tous les détails des cartes de jour et de nuit existantes.</string>
+    <string name="info_news_weather" formatted="false">Le Globe en direct est plus net sur les écrans à haute densité.</string>
+    <string name="info_news_viewer_zoom" formatted="false">Le détail est allégé pendant le déplacement et s’affine automatiquement à l’arrêt.</string>
+    <string name="info_news_settings" formatted="false">La rotation est plus précise lors de l’exploration du Globe à fort zoom.</string>
+    <string name="info_news_catalog" formatted="false">L’économiseur d’écran de la Terre conserve son rendu léger pour limiter la consommation.</string>
 </resources>

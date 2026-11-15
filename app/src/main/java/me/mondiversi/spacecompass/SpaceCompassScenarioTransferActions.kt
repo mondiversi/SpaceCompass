@@ -60,7 +60,7 @@ internal fun <T> rememberSpaceCompassConfigurationTransfer(scene: Boolean, obser
     fun stage(snapshot: SpaceCompassConfigurationExport) {
         configuredText=snapshot.configured.encode();completeText=snapshot.complete?.encode();instant=snapshot.capturedAtMs;paused=snapshot.paused
         displayText=snapshot.display?.let { listOf(it.guides,it.forward24Hours,it.weather,it.translucentObjects,it.globe,it.globeLabels,
-            it.globeAxisLocked,it.globeLabelMode.orEmpty(),it.grid,it.gridNumbers,it.skyLabelMode.orEmpty()).joinToString(",") }
+            it.globeAxisLocked,it.globeLabelMode.orEmpty(),it.grid,it.gridNumbers,it.skyLabelMode.orEmpty(),it.objectView,it.objectAimObserver,it.objectLabelMode.orEmpty()).joinToString(",") }
     }
     val save=rememberLauncherForActivityResult(ActivityResultContracts.CreateDocument(SPACE_COMPASS_SCENARIO_MIME)) { uri ->
         val text=pendingSave;pendingSave=null
@@ -107,7 +107,7 @@ internal fun <T> rememberSpaceCompassConfigurationTransfer(scene: Boolean, obser
                 SpaceCompassSceneDisplay(it[0].toBooleanStrict(),it[1].toBooleanStrict(),it[2].toBooleanStrict(),it[3].toBooleanStrict(),
                     it.getOrNull(4)?.toBooleanStrict() ?: false,it.getOrNull(5)?.toBooleanStrict() ?: false,
                     it.getOrNull(6)?.toBooleanStrict() ?: true,it.getOrNull(7)?.takeIf(String::isNotEmpty),
-                    it.getOrNull(8)?.toBooleanStrict() ?: true,it.getOrNull(9)?.toBooleanStrict() ?: false,it.getOrNull(10)?.takeIf(String::isNotEmpty)) } }
+                    it.getOrNull(8)?.toBooleanStrict() ?: true,it.getOrNull(9)?.toBooleanStrict() ?: false,it.getOrNull(10)?.takeIf(String::isNotEmpty),it.getOrNull(11)?.toBooleanStrict() ?: false,it.getOrNull(12)?.toBooleanStrict() ?: false,it.getOrNull(13)?.takeIf(String::isNotEmpty)) } }
             val snapshot=SpaceCompassConfigurationExport(base,complete,instant,display,paused)
             val selected=if (scene) snapshot.scene(include,completeAutomatic)?.contents else snapshot.location(include)
             val valid=selected!=null && (scene || selected.custom || selected.timeSettings.enabled)

@@ -12,7 +12,7 @@ internal data class SpaceCompassGlobeGuideSegments(val front: List<SpaceCompassS
 
 /** Geographic, clipped arc fragments: captions cannot bridge the dateline or the hidden hemisphere. */
 internal fun spaceCompassGlobeGuideSegments(latitude: Double, pose: SpaceCompassGlobePose, flat: Boolean,
-    width: Double, height: Double, radius: Double, centerY: Double): SpaceCompassGlobeGuideSegments {
+    width: Double, height: Double, radius: Double, centerY: Double,objectCamera: SpaceCompassObjectCamera? = null): SpaceCompassGlobeGuideSegments {
     val front=mutableListOf<SpaceCompassSunPathSegment>();val back=mutableListOf<SpaceCompassSunPathSegment>()
     val frame=SpaceCompassSunSceneFrame(0.0,0.0,width,height)
     val phi=Math.toRadians(latitude)
@@ -30,7 +30,8 @@ internal fun spaceCompassGlobeGuideSegments(latitude: Double, pose: SpaceCompass
                 front+=SpaceCompassSunPathSegment(a,b,false)
             }
         } else {
-            val a=spaceCompassGlobeView(vector(i-1),pose);val b=spaceCompassGlobeView(vector(i),pose)
+            if(objectCamera?.let { !it.inFront(vector(i-1))||!it.inFront(vector(i)) }==true)continue
+            val a=objectCamera?.project(vector(i-1)) ?: spaceCompassGlobeView(vector(i-1),pose);val b=objectCamera?.project(vector(i)) ?: spaceCompassGlobeView(vector(i),pose)
             if((a.z<0)==(b.z<0)) add(a,b,a.z<0)
             else {
                 val t=a.z/(a.z-b.z);val limb=SpaceCompassGlobeVector(a.x+(b.x-a.x)*t,a.y+(b.y-a.y)*t,0.0)

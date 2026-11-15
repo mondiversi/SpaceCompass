@@ -72,12 +72,17 @@ internal class SpaceCompassTutorialState(activeState: MutableState<Boolean>, wel
         private set
     var modeMenuOpen by mutableStateOf(false)
         private set
+    var objectPreview by mutableStateOf(false)
+        private set
     val previewMode: SpaceCompassViewMode get()=when {
+        objectPreview&&SPACE_COMPASS_OBJECT_VIEW_AVAILABLE -> SpaceCompassViewMode.OBJECT
         cameraPreview -> SpaceCompassViewMode.CAMERA
         else -> spaceCompassLiveViewMode(globePreview,panoramaPreview)
     }
-    fun chooseMode(mode: SpaceCompassViewMode) {
+    fun chooseMode(requestedMode: SpaceCompassViewMode) {
         if(!active) return
+        val mode=spaceCompassAvailableViewMode(requestedMode)
+        objectPreview=mode==SpaceCompassViewMode.OBJECT
         cameraPreview=mode==SpaceCompassViewMode.CAMERA
         globePreview=mode.globe
         panoramaPreview=mode.panoramic
@@ -89,8 +94,8 @@ internal class SpaceCompassTutorialState(activeState: MutableState<Boolean>, wel
     fun dismissGridMenu() { gridMenuOpen = false }
     var skyViewport by mutableStateOf<Rect?>(null)
     val targets = mutableStateMapOf<Any, SpaceCompassTutorialTarget>()
-    fun start() { targets.clear(); skyViewport = null; cameraPreview = false; globePreview = false; panoramaPreview=false; modeMenuOpen=false; gridMenuOpen=false; active = true }
-    fun close() { active = false; cameraPreview = false; globePreview = false; panoramaPreview=false; modeMenuOpen=false; gridMenuOpen=false; targets.clear(); skyViewport = null }
+    fun start() { targets.clear(); skyViewport = null; cameraPreview = false; objectPreview=false; globePreview = false; panoramaPreview=false; modeMenuOpen=false; gridMenuOpen=false; active = true }
+    fun close() { active = false; cameraPreview = false; objectPreview=false; globePreview = false; panoramaPreview=false; modeMenuOpen=false; gridMenuOpen=false; targets.clear(); skyViewport = null }
     fun explore(feature: SpaceCompassTutorialFeature) {
         if (!active) return
         when (feature) {
@@ -168,7 +173,7 @@ private fun SpaceCompassTutorialOverlay(state: SpaceCompassTutorialState) {
     var selected by remember { mutableStateOf<SpaceCompassTutorialFeature?>(null) }
     var cardBounds by remember { mutableStateOf(Rect.Zero) }
     val cardScroll = rememberScrollState()
-    LaunchedEffect(selected, state.cameraPreview, state.globePreview, state.panoramaPreview) { cardScroll.scrollTo(0) }
+    LaunchedEffect(selected, state.cameraPreview, state.globePreview, state.panoramaPreview,state.objectPreview) { cardScroll.scrollTo(0) }
     val targets = state.targets.values.map { it.translated(-origin) }
     val currentTargets by rememberUpdatedState(targets)
     val pointRadius = with(density) { 24.dp.toPx() }

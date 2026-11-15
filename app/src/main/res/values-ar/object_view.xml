@@ -1,0 +1,6 @@
+<resources>
+    <string name="view_mode_object" formatted="false">الجسم</string>
+    <string name="object_view_note" formatted="false">منظر مداري · مسارات ظاهرية</string>
+    <string name="object_view_unavailable" formatted="false">اختر جسمًا تتوفر بيانات موقعه.</string>
+    <string name="tutorial_mode_object" formatted="false">اتبع المدار الظاهري. اسحب لتدوير الأرض؛ يبقى المنظر متجهاً إلى الأمام.</string>
+</resources>

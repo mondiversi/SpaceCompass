@@ -56,24 +56,27 @@ internal fun SpaceCompassGlobeView(snapshot: SpaceCompassPanoramaSnapshot, pose:
     exclusions: List<SpaceCompassSunSceneFrame>, viewport: SpaceCompassSunSceneFrame, noteBottomInset: androidx.compose.ui.unit.Dp, labelMode: SpaceCompassPanoramaLabelMode, axisLocked: Boolean,
     resumed: Boolean,
     onTap: () -> Unit, onDoubleTap: () -> Unit, modifier: Modifier = Modifier, onCaptureFrame: (SpaceCompassGlobeFraming)->Unit = {}, showDirectionNote: Boolean = true, pointingFrame: SpaceCompassSunSceneFrame? = null,
-    flat: Boolean = false, sky: Boolean = false, reticle: SpaceCompassGlobeVector? = null, capturePose: SpaceCompassGlobePose = pose, captureViewport: SpaceCompassSunSceneFrame = viewport) {
+    flat: Boolean = false, sky: Boolean = false, objectCamera: SpaceCompassObjectCamera? = null, noteResource: Int = R.string.globe_direction_note, reticle: SpaceCompassGlobeVector? = null, capturePose: SpaceCompassGlobePose = pose, captureViewport: SpaceCompassSunSceneFrame = viewport,
+    onObjectRotation: ((Double,Double,Double,Double)->Unit)? = null,onObjectRotationEnd: (()->Unit)? = null) {
     val context=LocalContext.current;val resources=LocalResources.current;val dark=isSystemInDarkTheme()
     val currentPose by rememberUpdatedState(pose)
     val changePose by rememberUpdatedState(onPose)
+    val changeObjectRotation by rememberUpdatedState(onObjectRotation)
+    val endObjectRotation by rememberUpdatedState(onObjectRotationEnd)
     val tap by rememberUpdatedState(onTap);val doubleTap by rememberUpdatedState(onDoubleTap)
     val currentZone by rememberUpdatedState(snapshot.zoneId)
     val paths=snapshot.objects.map { it.path }
     val bodyKeys=snapshot.objects.map { it.body to it.comparison?.id }
-    val curveCache=remember(sky,snapshot.latitude,snapshot.longitude,snapshot.altitude,snapshot.remote) {
+    val curveCache=remember(sky,objectCamera!=null,snapshot.latitude,snapshot.longitude,snapshot.altitude,snapshot.remote) {
         java.util.concurrent.ConcurrentHashMap<SpaceCompassSunDailyPath,List<Pair<SpaceCompassGlobeVector,Boolean>>>()
     }
     val model by produceState<SpaceCompassGlobeModel?>(null,paths,bodyKeys,snapshot.timeMs/1000,
-        snapshot.latitude,snapshot.longitude,snapshot.altitude,snapshot.selectedPoints,snapshot.showAntipodes,snapshot.remote,sky) {
+        snapshot.latitude,snapshot.longitude,snapshot.altitude,snapshot.selectedPoints,snapshot.showAntipodes,snapshot.remote,sky,objectCamera!=null) {
         val job=kotlin.coroutines.coroutineContext
-        value=withContext(Dispatchers.Default) { buildSpaceCompassGlobeModel(snapshot,curveCache,sky=sky) { job.ensureActive() } }
+        value=withContext(Dispatchers.Default) { buildSpaceCompassGlobeModel(snapshot,curveCache,sky=sky,surface=false) { job.ensureActive() } }
     }
-    val fitBounds=remember(model,pose.latitude,pose.roll) { spaceCompassGlobeFitBounds(model,pose) }
-    val captureBounds=remember(model,capturePose.latitude,capturePose.roll) { spaceCompassGlobeFitBounds(model,capturePose) }
+    val fitBounds=remember(model,pose.latitude,pose.roll,objectCamera!=null) { if(objectCamera!=null) SpaceCompassGlobeFitBounds(1.0,1.0) else spaceCompassGlobeFitBounds(model,pose) }
+    val captureBounds=remember(model,capturePose.latitude,capturePose.roll,objectCamera!=null) { if(objectCamera!=null) SpaceCompassGlobeFitBounds(1.0,1.0) else spaceCompassGlobeFitBounds(model,capturePose) }
     val iconKeys=snapshot.objects.map { spaceCompassGlobeSpriteKey(it,snapshot.timeMs) }
     val icons by produceState<Map<String,String>>(emptyMap(),iconKeys) {
         value=withContext(Dispatchers.Default) { spaceCompassGlobeSprites(context.applicationContext,snapshot.objects,snapshot.timeMs) }
@@ -217,7 +220,7 @@ internal fun SpaceCompassGlobeView(snapshot: SpaceCompassPanoramaSnapshot, pose:
         }
     }
     val latestTargets by rememberUpdatedState(document.targets)
-    val globeLabel=stringResource(if(sky) R.string.view_mode_sky_panorama else if(flat) R.string.view_mode_globe_panorama else R.string.view_mode_globe_frame)
+    val globeLabel=stringResource(if(objectCamera!=null) R.string.view_mode_object else if(sky) R.string.view_mode_sky_panorama else if(flat) R.string.view_mode_globe_panorama else R.string.view_mode_globe_frame)
     BoxWithConstraints(modifier.testTag(if(sky) "sky-panorama-view" else "earth-orbit-view").semantics {
         contentDescription=globeLabel
         customActions=latestTargets.filter { (_,dot) -> dot.current || dot.selected }.filter { !it.second.antipode }
@@ -228,8 +231,11 @@ internal fun SpaceCompassGlobeView(snapshot: SpaceCompassPanoramaSnapshot, pose:
             } }
     }) {
         val frameExclusions=remember(exclusions,noteFrame) { exclusions+listOfNotNull(noteFrame) }
-        val frameJson=remember(constraints.maxWidth,constraints.maxHeight,density,viewport,frameExclusions,fitBounds,fluidity,flat,reticle) {
+        val frameJson=remember(constraints.maxWidth,constraints.maxHeight,density,viewport,frameExclusions,fitBounds,fluidity,flat,reticle,objectCamera) {
             JSONObject().apply {
+                put("objectCamera",objectCamera?.let { camera -> JSONObject().apply {
+                    put("eye",camera.eye?.json() ?: JSONObject.NULL);put("target",camera.target.json());put("focal",camera.focal);put("framing",camera.framing.json())
+                } } ?: JSONObject.NULL)
                 put("flat",flat);put("reticle",reticle?.json() ?: JSONObject.NULL)
                 put("canvasSize",JSONArray(listOf(constraints.maxWidth/density,constraints.maxHeight/density)))
                 put("viewport",JSONArray(listOf(viewport.left/density,viewport.top/density,viewport.width/density,viewport.height/density)))
@@ -246,6 +252,8 @@ internal fun SpaceCompassGlobeView(snapshot: SpaceCompassPanoramaSnapshot, pose:
         SideEffect { onCaptureFrame(frozenFrame) }
         AndroidView(factory={ SpaceCompassGlobeWebView(it,flat,sky).also { web -> native=web
             web.onPose={ value -> changePose(value) }
+            web.onObjectRotation={ dx,dy,w,h -> changeObjectRotation?.invoke(dx,dy,w,h) }
+            web.onObjectRotationEnd={ endObjectRotation?.invoke() }
             web.pose={ currentPose }
             web.onTap={ id ->
                 val target=latestTargets.getOrNull(id)
@@ -260,13 +268,13 @@ internal fun SpaceCompassGlobeView(snapshot: SpaceCompassPanoramaSnapshot, pose:
                 }
             }
             web.onDoubleTap={ doubleTap() }
-        } },modifier=Modifier.fillMaxSize(),update={ it.interactionFrame=if(flat) viewport else pointingFrame; it.setScene(document.json,frameJson,resumed,pose,axisLocked,frameExclusions.map { e ->
+        } },modifier=Modifier.fillMaxSize(),update={ it.fixedCamera=onObjectRotation!=null;it.interactionFrame=if(flat) viewport else pointingFrame; it.setScene(document.json,frameJson,resumed,pose,axisLocked,frameExclusions.map { e ->
             SpaceCompassSunSceneFrame(e.left/density,e.top/density,e.width/density,e.height/density) },flatMap=flat) },onRelease={ it.dispose() })
         if (showDirectionNote) Layout(content = {
             SpaceCompassGlobeDirectionNote(Modifier.onGloballyPositioned {
                 val rect=it.boundsInParent()
                 noteFrame=SpaceCompassSunSceneFrame(rect.left.toDouble(),rect.top.toDouble(),rect.width.toDouble(),rect.height.toDouble())
-            })
+            },noteResource)
         },modifier=Modifier.fillMaxSize()) { children, limits ->
             val captionWidth=(pointingFrame?.width ?: limits.maxWidth.toDouble()).roundToInt()
                 .coerceIn(1,limits.maxWidth.coerceAtLeast(1))
@@ -284,8 +292,8 @@ internal fun SpaceCompassGlobeView(snapshot: SpaceCompassPanoramaSnapshot, pose:
 
 /** Shared single-line caption; its placement never changes the Earth's optical frame. */
 @Composable
-internal fun SpaceCompassGlobeDirectionNote(modifier: Modifier = Modifier) {
-    val note=stringResource(R.string.globe_direction_note)
+internal fun SpaceCompassGlobeDirectionNote(modifier: Modifier = Modifier,resource: Int = R.string.globe_direction_note) {
+    val note=stringResource(resource)
     val measurer=rememberTextMeasurer()
     BoxWithConstraints(modifier) {
         val density=LocalDensity.current
@@ -317,6 +325,9 @@ internal class SpaceCompassGlobeWebView(context: Context,initialFlat: Boolean=fa
     private fun gestureAllowed(event: MotionEvent)=spaceCompassOverlayGestureAllowed(
         SpaceCompassSunScenePoint((event.x/resources.displayMetrics.density).toDouble(),
             (event.y/resources.displayMetrics.density).toDouble()),gestureExclusions,SPACE_COMPASS_OVERLAY_GESTURE_MARGIN_DP)
+    var fixedCamera=false
+    var onObjectRotation: (Double,Double,Double,Double)->Unit = { _,_,_,_ -> }
+    var onObjectRotationEnd: ()->Unit = {}
     var interactionFrame: SpaceCompassSunSceneFrame? = null
     private var axisLocked=true
     private var framePose=SpaceCompassGlobePose();private var sentPose="";private var activeView=true
@@ -333,7 +344,8 @@ internal class SpaceCompassGlobeWebView(context: Context,initialFlat: Boolean=fa
         override fun onScroll(e1: MotionEvent?,e2: MotionEvent,dx: Float,dy: Float): Boolean {
             if(!scaling&&e2.pointerCount==1) {
                 val w=interactionFrame?.width ?: width.toDouble();val h=interactionFrame?.height ?: height.toDouble()
-                onPose(if(flatMap) spaceCompassGlobeMapDrag(pose(),dx.toDouble(),dy.toDouble(),w,h)
+                if(fixedCamera) onObjectRotation(dx.toDouble(),dy.toDouble(),w,h)
+                else onPose(if(flatMap) spaceCompassGlobeMapDrag(pose(),dx.toDouble(),dy.toDouble(),w,h)
                     else spaceCompassGlobeDrag(pose(),dx.toDouble(),dy.toDouble(),w,h,axisLocked))
             }
             return true
@@ -377,7 +389,7 @@ internal class SpaceCompassGlobeWebView(context: Context,initialFlat: Boolean=fa
         val embedded=html.replace("width*.5*dpr,height*.5*dpr","(window.spaceCompassGlobeCenter?window.spaceCompassGlobeCenter(width,height):[width*.5,height*.5])[0]*dpr,(height-(window.spaceCompassGlobeCenter?window.spaceCompassGlobeCenter(width,height):[width*.5,height*.5])[1])*dpr")
             .replace("x=width*.5+point.x*diameter*.5,y=height*.5-point.y*diameter*.5",
                 "x=(window.spaceCompassGlobeCenter?window.spaceCompassGlobeCenter(width,height):[width*.5,height*.5])[0]+point.x*diameter*.5,y=(window.spaceCompassGlobeCenter?window.spaceCompassGlobeCenter(width,height):[width*.5,height*.5])[1]-point.y*diameter*.5")
-        loadDataWithBaseURL("https://spacecompass.invalid/globe/",embedded,"text/html","UTF-8",null)
+        loadDataWithBaseURL("https://spacecompass.invalid/globe/",spaceCompassObjectRendererHtml(embedded),"text/html","UTF-8",null)
     }
     private fun scheduleSend() {
         if(ready&&!disposed&&activeView&&!sendScheduled) { sendScheduled=true;postOnAnimation(sendFrame) }
@@ -398,8 +410,14 @@ internal class SpaceCompassGlobeWebView(context: Context,initialFlat: Boolean=fa
         scheduleSend()
     }
     override fun onTouchEvent(event: MotionEvent): Boolean {
-        if(event.actionMasked==MotionEvent.ACTION_DOWN) scaling=false
-        scale.onTouchEvent(event);gestures.onTouchEvent(event);return true
+        if(event.actionMasked==MotionEvent.ACTION_DOWN) {
+            scaling=false;if(ready&&!disposed)evaluateJavascript("window.setGlobeInteracting?.(true)",null)
+        }
+        if(ready&&!disposed&&(event.actionMasked==MotionEvent.ACTION_UP||event.actionMasked==MotionEvent.ACTION_CANCEL))
+            evaluateJavascript("window.setGlobeInteracting?.(false)",null)
+        scale.onTouchEvent(event);gestures.onTouchEvent(event)
+        if(fixedCamera&&(event.actionMasked==MotionEvent.ACTION_UP||event.actionMasked==MotionEvent.ACTION_CANCEL))onObjectRotationEnd()
+        return true
     }
     fun dispose() { if(!disposed) { disposed=true;removeCallbacks(sendFrame);sendScheduled=false;stopLoading();onPause();destroy() } }
 }

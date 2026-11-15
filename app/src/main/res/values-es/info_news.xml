@@ -1,9 +1,9 @@
 <resources>
     <string name="info_news_title">Últimas novedades · %1$s</string>
-    <string name="info_news_star_sky" formatted="false">Los números de coordenadas de las panorámicas de Cielo y Globo siguen visibles al ampliar.</string>
-    <string name="info_news_texture_downloads" formatted="false">Las latitudes quedan más cerca de los bordes libres, también en horizontal con paneles.</string>
-    <string name="info_news_weather" formatted="false">Los números de la cuadrícula se alinean con sus líneas y evitan botones y paneles.</string>
-    <string name="info_news_viewer_zoom" formatted="false">Cerrar y Más tarde usan ahora el color normal del texto en los temas de día y noche.</string>
-    <string name="info_news_settings" formatted="false">Las confirmaciones siguen azules o cian; descartar cambios y eliminar elementos sigue rojo.</string>
-    <string name="info_news_catalog" formatted="false">Cancelar en una confirmación de eliminación es neutro para distinguir mejor cada acción.</string>
+    <string name="info_news_star_sky" formatted="false">Explora el Globo en encuadre con un zoom de hasta 8×.</string>
+    <string name="info_news_texture_downloads" formatted="false">La Tierra aprovecha todos los detalles de los mapas de día y noche existentes.</string>
+    <string name="info_news_weather" formatted="false">El Globo en directo se ve más nítido en pantallas de alta densidad.</string>
+    <string name="info_news_viewer_zoom" formatted="false">El detalle se reduce al arrastrar y mejora automáticamente al detenerte.</string>
+    <string name="info_news_settings" formatted="false">La rotación es más precisa al explorar el Globo con mucho zoom.</string>
+    <string name="info_news_catalog" formatted="false">El salvapantallas de la Tierra conserva su dibujo ligero para limitar el consumo.</string>
 </resources>

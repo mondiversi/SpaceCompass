@@ -1,0 +1,6 @@
+<resources>
+    <string name="view_mode_object" formatted="false">天体</string>
+    <string name="object_view_note" formatted="false">軌道ビュー · 見かけの軌跡</string>
+    <string name="object_view_unavailable" formatted="false">位置データが利用できる天体を選択してください。</string>
+    <string name="tutorial_mode_object" formatted="false">見かけの軌道を進みます。ドラッグで地球が回転し、視線は前方を向いたままです。</string>
+</resources>

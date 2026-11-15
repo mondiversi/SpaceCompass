@@ -11,7 +11,7 @@ internal const val SPACE_COMPASS_SCENE_EXTENSION = ".spacecompass-scene"
 internal data class SpaceCompassSceneDisplay(val guides: Boolean, val forward24Hours: Boolean,
     val weather: Boolean, val translucentObjects: Boolean, val globe: Boolean = false,
     val globeLabels: Boolean = false,val globeAxisLocked: Boolean = true,val globeLabelMode: String? = null,
-    val grid: Boolean = true, val gridNumbers: Boolean = false, val skyLabelMode: String? = null)
+    val grid: Boolean = true, val gridNumbers: Boolean = false, val skyLabelMode: String? = null,val objectView: Boolean = false,val objectAimObserver: Boolean = false,val objectLabelMode: String? = null)
 
 /** A distinct envelope prevents old Location readers from applying an absent observer configuration. */
 internal data class SpaceCompassSceneArchive(val contents: SpaceCompassScenarioArchive,
@@ -37,6 +37,12 @@ internal data class SpaceCompassSceneArchive(val contents: SpaceCompassScenarioA
                 values["skyLabelMode"]=mode
             }
             if(it.globe) values["globe"] = "true"
+            if(it.objectView) values["objectView"]="true"
+            if(it.objectAimObserver) values["objectAimObserver"]="true"
+            it.objectLabelMode?.let { mode ->
+                require(SpaceCompassPanoramaLabelMode.entries.any { it.key==mode })
+                values["objectLabelMode"]=mode
+            }
             it.globeLabelMode?.let { mode ->
                 require(SpaceCompassPanoramaLabelMode.entries.any { it.key==mode })
                 values["globeLabelMode"]=mode
@@ -66,13 +72,15 @@ internal data class SpaceCompassSceneArchive(val contents: SpaceCompassScenarioA
             val include=bool("locationIncluded")
             if (!include) require(archive == archive.withoutLocation())
             val display=if (p.getProperty("guides")==null) {
-                require(listOf("forward24Hours","weather","translucentObjects","globe","globeLabels","globeAxisLocked","globeLabelMode","grid","gridNumbers","skyLabelMode").none(p::containsKey));null
+                require(listOf("forward24Hours","weather","translucentObjects","globe","globeLabels","globeAxisLocked","globeLabelMode","grid","gridNumbers","skyLabelMode","objectView","objectAimObserver","objectLabelMode").none(p::containsKey));null
             } else SpaceCompassSceneDisplay(bool("guides"),bool("forward24Hours"),bool("weather"),bool("translucentObjects"),p.getProperty("globe")?.toBooleanStrict() ?: false,
                 p.getProperty("globeLabels")?.toBooleanStrict() ?: false,p.getProperty("globeAxisLocked")?.toBooleanStrict() ?: true,
                 p.getProperty("globeLabelMode")?.also { mode -> require(SpaceCompassPanoramaLabelMode.entries.any { it.key==mode }) },
                 p.getProperty("grid")?.toBooleanStrict() ?: true,
                 p.getProperty("gridNumbers")?.toBooleanStrict() ?: false,
-                p.getProperty("skyLabelMode")?.also { mode -> require(SpaceCompassPanoramaLabelMode.entries.any { it.key==mode }) })
+                p.getProperty("skyLabelMode")?.also { mode -> require(SpaceCompassPanoramaLabelMode.entries.any { it.key==mode }) },
+                p.getProperty("objectView")?.toBooleanStrict() ?: false,p.getProperty("objectAimObserver")?.toBooleanStrict() ?: false,
+                p.getProperty("objectLabelMode")?.also { mode -> require(SpaceCompassPanoramaLabelMode.entries.any { it.key==mode }) })
             return SpaceCompassSceneArchive(archive,include,display,requireNotNull(p.getProperty("capturedAtMs")).toLong(),
                 p.getProperty("paused")?.toBooleanStrict() ?: false)
         }

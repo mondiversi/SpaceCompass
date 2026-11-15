@@ -12,7 +12,7 @@ internal fun rememberSpaceCompassCaptureExport(data: SpaceCompassPanoramaPreview
     showGridNumbers: Boolean = data.snapshot?.showGridNumbers ?: SPACE_COMPASS_GRID_NUMBERS_DEFAULT): SpaceCompassCaptureExportState {
     val overlays = SpaceCompassCaptureOverlays(showGrid, showReferences, showGridNumbers)
     val profiles = rememberSpaceCompassDataExportProfiles()
-    val images=spaceCompassCaptureImageTypes(data.cameraPhoto!=null)
+    val images=if(data.snapshot?.globe?.objectCamera!=null) listOf(SpaceCompassCaptureExportType.FRAMED_IMAGE) else spaceCompassCaptureImageTypes(data.cameraPhoto!=null)
     return rememberSpaceCompassDataExport(data.file.absolutePath,
         images+listOf(SpaceCompassCaptureExportType.TXT,SpaceCompassCaptureExportType.CSV),
         previewReady,

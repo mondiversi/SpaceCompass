@@ -12,9 +12,29 @@ window.spaceCompassGlobeCenter=function(w,h){const v=globeScene.viewport||[0,0,w
 // Keep the Earth centre fixed and reserve room for current-object miniatures at the edge.
 earthDiameter=function(w,h){const v=globeScene.viewport||[0,0,w,h],b=globeScene.fitBounds||[globeScene.extent,globeScene.extent];
  return Math.min(Math.max(1,v[2]/2-24)/Math.max(1,b[0]),Math.max(1,v[3]/2-24)/Math.max(1,b[1]))*2*globeScene.pose[2]};
-function globePoint(v){ if(globeScene.flat)return globeFlatPoint(v);const p=earthViewVector(v,globeScene.pose[0],[globeScene.pose[3]||0,globeScene.pose[1]]),r=earthDiameter(viewWidth,viewHeight)/2,center=spaceCompassGlobeCenter(viewWidth,viewHeight);
+function globeObjectPoint(v){
+ const camera=globeScene.objectCamera,p=earthViewVector(v,globeScene.pose[0],[globeScene.pose[3]||0,globeScene.pose[1]]);
+ const length=Math.hypot(v[0],v[1],v[2]),eye=camera.eye;
+ const factor=eye?camera.focal/Math.max(.000001,eye[2]-p.depth):1;
+ const framing=camera.framing||[0,0,1];
+ const x=eye?((p.x-eye[0])*factor-framing[0])*framing[2]:p.x-camera.target[0],y=eye?((p.y-eye[1])*factor-framing[1])*framing[2]:p.y-camera.target[1];
+ const depth=eye?Math.min((p.x*eye[0]+p.y*eye[1]+p.depth*eye[2])/length-1,eye[2]-p.depth):p.depth;
+ const radius=earthDiameter(viewWidth,viewHeight)/2,center=spaceCompassGlobeCenter(viewWidth,viewHeight);
+ return {x:center[0]+x*radius,y:center[1]-y*radius,depth,hidden:depth<0,behindEye:!!eye&&eye[2]-p.depth<=.000001};
+}
+window.spaceCompassObjectCamera=()=>globeScene.objectCamera||null;
+window.spaceCompassObjectNormal=function(x,y){
+ const c=globeScene.objectCamera;if(!c)return null;
+ if(!c.eye){const a=x+c.target[0],b=y+c.target[1],h=1-a*a-b*b;return h<0?[0,0,NaN]:[a,b,Math.sqrt(h)];}
+ const framing=c.framing||[0,0,1];x=x/framing[2]+framing[0];y=y/framing[2]+framing[1];
+ const length=Math.hypot(x/c.focal,y/c.focal,1),ray=[x/c.focal/length,y/c.focal/length,-1/length],e=c.eye;
+ const t=-(e[0]*ray[0]+e[1]*ray[1]+e[2]*ray[2]);if(t<=0)return [0,0,NaN];
+ const p=e.map((v,i)=>v+t*ray[i]),h=1-p.reduce((v,x)=>v+x*x,0);return h< -1e-10?[0,0,NaN]:p.map((v,i)=>v-ray[i]*Math.sqrt(Math.max(0,h)));
+};
+function globePoint(v){ if(globeScene.objectCamera)return globeObjectPoint(v);if(globeScene.flat)return globeFlatPoint(v);const p=earthViewVector(v,globeScene.pose[0],[globeScene.pose[3]||0,globeScene.pose[1]]),r=earthDiameter(viewWidth,viewHeight)/2,center=spaceCompassGlobeCenter(viewWidth,viewHeight);
  return {x:center[0]+p.x*r,y:center[1]-p.y*r,depth:p.depth,hidden:p.depth<0&&p.x*p.x+p.y*p.y<1};}
 function globeStroke(a,b,color,width,dashed){const p=globePoint(a),q=globePoint(b);
+ if(globeScene.objectCamera&&(p.behindEye||q.behindEye))return;
  if(globeScene.labels&&(!p.hidden||!q.hidden))globeLabelSegments.push(...(globeScene.flat?globeFlatSegment(p,q):[[p,q]]));
  orbitInk.globalAlpha=p.hidden&&q.hidden ? .17 : 1;orbitInk.strokeStyle=color;orbitInk.lineWidth=width;
  orbitInk.setLineDash(dashed||p.hidden&&q.hidden?[4,4]:[]);orbitInk.beginPath();
@@ -359,7 +379,7 @@ function drawGlobeOverlays(){const d=pixelRatio;if(orbitCanvas.width!==Math.roun
  }
  }
  for(const track of globeScene.tracks){for(let i=1;i<track.curve.length;i++)globeStroke(track.curve[i-1][0],track.curve[i][0],track.curve[i][1]?(track.belowColor||track.color):track.color,1.6,track.curve[i][1]||!!track.comparison);
-  for(const dot of [...track.dots].sort((a,b)=>Number(a.current)-Number(b.current))){const p=globePoint(dot.v);if(p.hidden)continue;
+  for(const dot of [...track.dots].sort((a,b)=>Number(a.current)-Number(b.current))){const p=globePoint(dot.v);if(p.hidden||p.behindEye)continue;
    const tint=dot.selected?globeScene.selection:dot.below?(track.belowColor||track.color):track.color;
    orbitInk.globalAlpha=1;orbitInk.setLineDash([]);orbitInk.strokeStyle=tint;orbitInk.lineWidth=dot.selected?1.8:1;
    if(dot.current&&!dot.antipode){
@@ -387,7 +407,7 @@ function drawGlobeOverlays(){const d=pixelRatio;if(orbitCanvas.width!==Math.roun
   .filter(({dot})=>dot.selected||(dot.p.x>=-20&&dot.p.x<=viewWidth+20&&dot.p.y>=-20&&dot.p.y<=viewHeight+20)):[];
  const labelDots=pointLabels.sort((a,b)=>(b.dot.selected?4:b.dot.current?3:b.dot.guide?2:1)-(a.dot.selected?4:a.dot.current?3:a.dot.guide?2:1));
  for(const {track,dot} of labelDots){
-  const p=dot.p||globePoint(dot.v);if(!dot.label)continue;
+  const p=dot.p||globePoint(dot.v);if(!dot.label||p.behindEye)continue;
   const below=track.belowLabelColor||track.belowColor||track.color;
   const tint=p.hidden?below:dot.selected?globeScene.selection:dot.below?below:track.color;
   const key=(track.key||track.color)+':'+dot.id;
@@ -453,14 +473,21 @@ function globeEventMarker(dot,p,tint){
  }else if(dot.glyph){orbitInk.beginPath();dot.glyph.forEach(([x,y],i)=>{if(i)orbitInk.lineTo(p.x+x*d,p.y+y*d);else orbitInk.moveTo(p.x+x*d,p.y+y*d);});orbitInk.closePath();orbitInk.fill();}
  else if(dot.event==='APPROACH'){orbitInk.beginPath();orbitInk.arc(p.x-1.5,p.y,2.5,0,Math.PI*2);orbitInk.stroke();orbitInk.beginPath();orbitInk.arc(p.x+1.5,p.y,2.5,0,Math.PI*2);orbitInk.stroke();}
 }
+// More detail only in the interactive Earth views. Motion/layout use the light raster;
+// one quiet repaint refines the existing full-resolution textures without a render loop.
+let globeDetailUntil=0,globeDetailTouch=false,globeDetailTimer=0;
+window.spaceCompassGlobeDetailSize=()=>globeScene.sky?256:(globeDetailTouch||performance.now()<globeDetailUntil?256:640);
+window.spaceCompassGlobeDetailActivity=function(){globeDetailUntil=performance.now()+180;
+ clearTimeout(globeDetailTimer);globeDetailTimer=setTimeout(()=>{globeDetailTimer=0;if(!document.hidden)requestGlobePaint();},190);};
+window.setGlobeInteracting=function(active){globeDetailTouch=!!active;window.spaceCompassGlobeDetailActivity();requestGlobePaint();};
 let globeCanvasLayout="",globeFallbackLayout="";
 function applyGlobeLayout(){
  // Native measured bounds are authoritative. Fixed old pixel CSS widths can otherwise keep a
  // mobile WebView's layout viewport enlarged after rotation or opening the information column.
  const size=globeScene.canvasSize||[innerWidth,innerHeight],w=size[0],h=size[1];
- viewWidth=w;viewHeight=h;pixelRatio=Math.min(devicePixelRatio||1,1.5);
+ viewWidth=w;viewHeight=h;pixelRatio=Math.min(devicePixelRatio||1,globeScene.sky?1.5:2);
  const layout=[w,h,pixelRatio].join(':');
- if(layout!==globeCanvasLayout){globeCanvasLayout=layout;
+ if(layout!==globeCanvasLayout){window.spaceCompassGlobeDetailActivity?.();globeCanvasLayout=layout;
  document.documentElement.style.width='100%';document.body.style.width='100%';
  document.documentElement.style.height=h+'px';document.body.style.height=h+'px';
  for(const canvas of [worldCanvas,document.getElementById('earth-canvas'),orbitCanvas]){
@@ -469,11 +496,32 @@ function applyGlobeLayout(){
   if(canvas.width!==width||canvas.height!==height){canvas.width=width;canvas.height=height;}
  }
  }
- const diameter=earthDiameter(w,h),center=spaceCompassGlobeCenter(w,h),fallbackLayout=[...center,diameter].join(':');
- if(fallbackLayout!==globeFallbackLayout){globeFallbackLayout=fallbackLayout;
+ const diameter=earthDiameter(w,h),center=spaceCompassGlobeCenter(w,h),fallbackLayout=[w,h,...center,diameter,!!globeScene.objectCamera].join(':');
+ if(fallbackLayout!==globeFallbackLayout){window.spaceCompassGlobeDetailActivity?.();globeFallbackLayout=fallbackLayout;
   const fallback=document.getElementById('earth-fallback');
-  fallback.style.left=center[0]+'px';fallback.style.top=center[1]+'px';fallback.style.width=diameter+'px';fallback.style.height=diameter+'px';
+  const objectView=!!globeScene.objectCamera;
+  fallback.style.left=(objectView?w/2:center[0])+'px';fallback.style.top=(objectView?h/2:center[1])+'px';
+  fallback.style.width=(objectView?w:diameter)+'px';fallback.style.height=(objectView?h:diameter)+'px';
+  fallback.style.borderRadius=objectView?'0':'50%';fallback.style.boxShadow=objectView?'none':'';
  }
 }
 resizeWorld=function(){applyGlobeLayout();requestGlobePaint();};
 resizeWorld();
+
+const globeStandardLocation=drawEarthLocation;
+drawEarthLocation=function(time,w,h,pose){
+ if(!globeScene.objectCamera)return globeStandardLocation(time,w,h,pose);
+ const marker=document.getElementById('earth-location');
+ if(!nativeLocation){marker.style.display='none';return;}
+ const lat=nativeLocation[0]*Math.PI/180,lon=nativeLocation[1]*Math.PI/180;
+ const p=globePoint([Math.cos(lat)*Math.sin(lon),Math.sin(lat),Math.cos(lat)*Math.cos(lon)]),style=earthMarkerStyle(p.depth);
+ if(p.behindEye){marker.style.display='none';return;}
+ marker.style.display='block';marker.style.opacity=String(style.opacity);marker.style.filter=`grayscale(${style.greyscale}) drop-shadow(0 1px 2px #000b)`;
+ marker.style.width=Math.min(22,Math.max(16,earthDiameter(w,h)*.06))+'px';marker.style.transform=`translate(${p.x}px,${p.y}px) translate(-50%,-100%)`;
+};
+
+window.spaceCompassObjectSoftwareNormal=function(x,y){
+ if(!globeScene.objectCamera)return null;
+ const center=spaceCompassGlobeCenter(viewWidth,viewHeight),radius=earthDiameter(viewWidth,viewHeight)/2;
+ return window.spaceCompassObjectNormal(((1+x)*viewWidth/2-center[0])/radius,(center[1]-(1-y)*viewHeight/2)/radius);
+};

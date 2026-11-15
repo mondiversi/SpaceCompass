@@ -21,10 +21,18 @@ import androidx.compose.ui.semantics.clearAndSetSemantics
 import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
 
-internal enum class SpaceCompassViewMode { PANORAMA, SKY_PANORAMA, CAMERA, GLOBE, GLOBE_PANORAMA;
-    val globe: Boolean get() = this == GLOBE || this == GLOBE_PANORAMA
+internal enum class SpaceCompassViewMode { PANORAMA, SKY_PANORAMA, CAMERA, GLOBE, GLOBE_PANORAMA, OBJECT;
+    val globe: Boolean get() = this == GLOBE || this == GLOBE_PANORAMA || this == OBJECT
     val panoramic: Boolean get() = this == SKY_PANORAMA || this == GLOBE_PANORAMA
 }
+// Availability switch for the local orbital-view preview.
+internal const val SPACE_COMPASS_OBJECT_VIEW_AVAILABLE=false
+internal fun spaceCompassObjectViewEnabled(requested: Boolean)=SPACE_COMPASS_OBJECT_VIEW_AVAILABLE&&requested
+internal fun spaceCompassAvailableViewMode(mode: SpaceCompassViewMode)=
+    if(mode==SpaceCompassViewMode.OBJECT&&!SPACE_COMPASS_OBJECT_VIEW_AVAILABLE) SpaceCompassViewMode.GLOBE else mode
+internal val SPACE_COMPASS_VIEW_MODE_FAMILIES=listOf(SpaceCompassViewMode.PANORAMA,SpaceCompassViewMode.CAMERA,
+    SpaceCompassViewMode.GLOBE,SpaceCompassViewMode.OBJECT).filter { spaceCompassAvailableViewMode(it)==it }
+
 internal const val SPACE_COMPASS_LIVE_PROJECTION_KEY = "main_live_projection_v2"
 internal fun spaceCompassLiveViewMode(globe: Boolean, panoramic: Boolean) = when {
     globe && panoramic -> SpaceCompassViewMode.GLOBE_PANORAMA
@@ -39,6 +47,7 @@ internal val SpaceCompassViewMode.labelResource: Int get()=when(this) {
     SpaceCompassViewMode.CAMERA -> R.string.view_mode_camera
     SpaceCompassViewMode.GLOBE -> R.string.view_mode_globe_frame
     SpaceCompassViewMode.GLOBE_PANORAMA -> R.string.view_mode_globe_panorama
+    SpaceCompassViewMode.OBJECT -> R.string.view_mode_object
 }
 internal val SpaceCompassViewMode.tutorialDescriptionResource: Int get()=when(this) {
     SpaceCompassViewMode.PANORAMA -> R.string.tutorial_mode_sky_frame
@@ -46,6 +55,7 @@ internal val SpaceCompassViewMode.tutorialDescriptionResource: Int get()=when(th
     SpaceCompassViewMode.CAMERA -> R.string.tutorial_mode_camera
     SpaceCompassViewMode.GLOBE -> R.string.tutorial_mode_globe_frame
     SpaceCompassViewMode.GLOBE_PANORAMA -> R.string.tutorial_mode_globe_panorama
+    SpaceCompassViewMode.OBJECT -> R.string.tutorial_mode_object
 }
 
 @Composable
@@ -86,6 +96,9 @@ internal fun SpaceCompassViewModeButton(mode: SpaceCompassViewMode,onChoose: (Sp
                 }
             }) {
             when(mode) {
+                SpaceCompassViewMode.OBJECT -> SpaceCompassFloatingGlyph(spaceCompassFloatingInk(26f,.08f,.08f,.92f,.92f)) {
+                    SpaceCompassObjectModeIcon(LocalContentColor.current,26.dp,2.1.dp)
+                }
                 SpaceCompassViewMode.GLOBE -> SpaceCompassFloatingGlyph(spaceCompassFloatingVectorInk(R.drawable.ic_globe_view)) {
                     SpaceCompassFloatingVectorIcon(R.drawable.ic_globe_view)
                 }
@@ -113,16 +126,19 @@ internal fun SpaceCompassViewModeButton(mode: SpaceCompassViewMode,onChoose: (Sp
 internal fun SpaceCompassViewModeDialog(expanded: Boolean,mode: SpaceCompassViewMode,
     onDismiss: ()->Unit,weather: Boolean=true,onChoose: (SpaceCompassViewMode,Boolean)->Unit) {
     if(!expanded) return
-    var family by rememberSaveable(mode) { mutableStateOf(
-        if(mode==SpaceCompassViewMode.CAMERA) SpaceCompassViewMode.CAMERA
+    var storedFamily by rememberSaveable(mode) { mutableStateOf(
+        if(mode==SpaceCompassViewMode.OBJECT) SpaceCompassViewMode.OBJECT
+        else if(mode==SpaceCompassViewMode.CAMERA) SpaceCompassViewMode.CAMERA
         else if(mode.globe) SpaceCompassViewMode.GLOBE else SpaceCompassViewMode.PANORAMA) }
+    val family=spaceCompassAvailableViewMode(storedFamily)
     var panoramic by rememberSaveable(mode) { mutableStateOf(mode.panoramic) }
     var draftWeather by rememberSaveable(weather) { mutableStateOf(weather) }
-    val projectionEnabled=family!=SpaceCompassViewMode.CAMERA
+    val projectionEnabled=family!=SpaceCompassViewMode.CAMERA&&family!=SpaceCompassViewMode.OBJECT
     val selectedPanorama=projectionEnabled&&panoramic
     SpaceCompassAlertDialog(onDismissRequest=onDismiss,
         confirmButton={ SpaceCompassDialogActionButton(stringResource(R.string.view_mode_apply),{
-            onChoose(if(family==SpaceCompassViewMode.CAMERA) SpaceCompassViewMode.CAMERA
+            onChoose(if(family==SpaceCompassViewMode.OBJECT) SpaceCompassViewMode.OBJECT
+                else if(family==SpaceCompassViewMode.CAMERA) SpaceCompassViewMode.CAMERA
                 else spaceCompassLiveViewMode(family.globe,panoramic),draftWeather)
         },Modifier.testTag("view-mode-apply")) },
         dismissButton={ SpaceCompassDialogActionButton(stringResource(R.string.close),onDismiss,
@@ -131,12 +147,13 @@ internal fun SpaceCompassViewModeDialog(expanded: Boolean,mode: SpaceCompassView
         title={Text(stringResource(R.string.view_mode_choose))},text={
             Column(Modifier.fillMaxWidth()) {
                 Column(Modifier.fillMaxWidth().selectableGroup().testTag("view-mode-options")) {
-                    listOf(SpaceCompassViewMode.PANORAMA,SpaceCompassViewMode.CAMERA,SpaceCompassViewMode.GLOBE).forEach { value ->
+                    SPACE_COMPASS_VIEW_MODE_FAMILIES.forEach { value ->
                         val checked=value==family
-                        SpaceCompassSettingsRadioRow(checked,{family=value},
+                        SpaceCompassSettingsRadioRow(checked,{storedFamily=value},
                             Modifier.fillMaxWidth().testTag("view-mode-${value.name.lowercase()}")) {
                             val tint=if(checked) MaterialTheme.colorScheme.primary else LocalContentColor.current
                             when(value) {
+                                SpaceCompassViewMode.OBJECT -> SpaceCompassObjectModeIcon(tint,SpaceCompassMenuIconSize,SpaceCompassMenuIconStrokeWidth)
                                 SpaceCompassViewMode.GLOBE -> SpaceCompassGlobeIcon(tint,SpaceCompassMenuIconSize,SpaceCompassMenuIconStrokeWidth)
                                 SpaceCompassViewMode.CAMERA -> Icon(androidx.compose.ui.res.painterResource(R.drawable.ic_camera),null,
                                     Modifier.size(SpaceCompassMenuIconSize),tint=tint)
@@ -146,6 +163,7 @@ internal fun SpaceCompassViewModeDialog(expanded: Boolean,mode: SpaceCompassView
                             Text(stringResource(when(value) {
                                 SpaceCompassViewMode.CAMERA -> R.string.view_mode_camera
                                 SpaceCompassViewMode.GLOBE -> R.string.view_mode_globe
+                                SpaceCompassViewMode.OBJECT -> R.string.view_mode_object
                                 else -> R.string.view_mode_sky
                             }),Modifier.weight(1f))
                         }

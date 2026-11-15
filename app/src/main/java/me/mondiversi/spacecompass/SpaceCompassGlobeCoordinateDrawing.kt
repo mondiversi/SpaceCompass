@@ -24,7 +24,7 @@ internal fun drawSpaceCompassGlobeCoordinateGrid(canvas: Canvas,width: Int,heigh
     val labels=mutableListOf<SpaceCompassGlobeCoordinateLabel>()
     fun point(v: SpaceCompassGlobeVector)=SpaceCompassSunScenePoint(width/2+v.x*radius,centerY-v.y*radius)
     spaceCompassGeographicGrid.forEach { curve ->
-        curve.vertices.map { spaceCompassGlobeView(it,pose) }.zipWithNext().forEach { (a,b) ->
+        curve.vertices.map { snapshot.globe?.let { capture -> spaceCompassGlobeCapturePoint(it,capture) } ?: spaceCompassGlobeView(it,pose) }.zipWithNext().forEach { (a,b) ->
             if(a.z>=-1e-9 && b.z>=-1e-9) {
                 val p=point(a);val q=point(b)
                 paint.color=SpaceCompassAngularGridAppearance.shadowArgb;paint.strokeWidth=edge*2
@@ -37,7 +37,7 @@ internal fun drawSpaceCompassGlobeCoordinateGrid(canvas: Canvas,width: Int,heigh
     if (!snapshot.showGridNumbers) return SpaceCompassGlobeCoordinateDrawing()
     val padding=textSize*.45;val gap=textSize*.55
     val lineHeight=(text.fontMetrics.descent-text.fontMetrics.ascent).toDouble()
-    val anchors=spaceCompassGlobeCoordinateAnchors(pose)
+    val anchors=snapshot.globe?.objectCamera?.let(::spaceCompassObjectCoordinateAnchors) ?: spaceCompassGlobeCoordinateAnchors(pose)
     val ordered=anchors.filter { it.latitude&&abs(it.degrees)==90 }+
         anchors.filter { it.latitude&&abs(it.degrees)!=90 }.sortedByDescending { it.rim.y }+
         anchors.filterNot { it.latitude }.sortedByDescending { it.point.z }

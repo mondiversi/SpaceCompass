@@ -5,10 +5,10 @@ import org.junit.Assert.*
 import org.junit.Test
 
 class SpaceCompassGlobeMapGeometryTest {
-    @Test fun flatZoomExtendsPastTheSphericalLimitWithoutChangingIt() {
+    @Test fun sphericalAndFlatZoomReachEightTimes() {
         val input = SpaceCompassGlobePose(0.2, 0.0, 20.0, 1.0)
         assertEquals(8.0, spaceCompassGlobeMapPose(input).zoom, 0.0)
-        assertEquals(3.0, input.normalized().zoom, 0.0)
+        assertEquals(8.0, input.normalized().zoom, 0.0)
         assertEquals(0.0, spaceCompassGlobeMapPose(input).roll, 0.0)
     }
     @Test fun mapsShorterThanTheViewportStayVerticallyCentered() {

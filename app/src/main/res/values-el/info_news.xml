@@ -1,9 +1,9 @@
 <resources>
     <string name="info_news_title">Τελευταία νέα · %1$s</string>
-    <string name="info_news_star_sky" formatted="false">Οι αριθμοί συντεταγμένων στα πανοράματα Ουρανού και Υδρογείου παραμένουν ορατοί στο ζουμ.</string>
-    <string name="info_news_texture_downloads" formatted="false">Οι ετικέτες πλάτους πλησιάζουν τα ελεύθερα άκρα, και οριζόντια με πλαίσια πληροφοριών.</string>
-    <string name="info_news_weather" formatted="false">Οι αριθμοί πλέγματος ευθυγραμμίζονται με τις γραμμές και αποφεύγουν κουμπιά και πλαίσια.</string>
-    <string name="info_news_viewer_zoom" formatted="false">Το Κλείσιμο και το Αργότερα έχουν το κανονικό χρώμα κειμένου στα θέματα ημέρας και νύχτας.</string>
-    <string name="info_news_settings" formatted="false">Οι επιβεβαιώσεις παραμένουν μπλε ή κυανές· η απόρριψη αλλαγών και η αφαίρεση κόκκινες.</string>
-    <string name="info_news_catalog" formatted="false">Η Ακύρωση σε επιβεβαίωση αφαίρεσης είναι ουδέτερη για σαφέστερη διάκριση ενεργειών.</string>
+    <string name="info_news_star_sky" formatted="false">Εξερευνήστε την Υδρόγειο σε προβολή κάδρου με ζουμ έως 8×.</string>
+    <string name="info_news_texture_downloads" formatted="false">Η Γη αξιοποιεί όλες τις λεπτομέρειες των υπαρχόντων χαρτών ημέρας και νύχτας.</string>
+    <string name="info_news_weather" formatted="false">Η ζωντανή Υδρόγειος είναι πιο ευκρινής σε οθόνες υψηλής πυκνότητας.</string>
+    <string name="info_news_viewer_zoom" formatted="false">Η λεπτομέρεια μειώνεται κατά τη μεταφορά και βελτιώνεται αυτόματα όταν σταματάτε.</string>
+    <string name="info_news_settings" formatted="false">Η περιστροφή είναι ακριβέστερη όταν εξερευνάτε την Υδρόγειο με υψηλό ζουμ.</string>
+    <string name="info_news_catalog" formatted="false">Η προφύλαξη οθόνης της Γης διατηρεί την ελαφριά σχεδίαση για περιορισμό της κατανάλωσης.</string>
 </resources>

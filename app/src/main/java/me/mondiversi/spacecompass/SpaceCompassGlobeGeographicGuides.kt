@@ -16,7 +16,7 @@ internal fun drawSpaceCompassGlobeGeographicGuides(canvas: Canvas,snapshot: Spac
         snapshot.formatting.numeric,grouping=false,systemLocale=snapshot.formatting.deviceLocale)+"°"
     val poles=mutableListOf<SpaceCompassSunScenePoint>();val poleLabels=mutableListOf<SpaceCompassSkyReferenceLabel>()
     for(latitude in listOf(90.0,-90.0)) {
-        val v=spaceCompassGlobeView(SpaceCompassGlobeVector(0.0,latitude/90,0.0),pose)
+        val v=spaceCompassGlobeCapturePoint(SpaceCompassGlobeVector(0.0,latitude/90,0.0),capture)
         if(!flat && v.z< -1e-6) continue
         val p=if(flat) SpaceCompassSunScenePoint(width/2.0,if(latitude>0) 0.0 else height.toDouble())
             else SpaceCompassSunScenePoint(width/2+v.x*radius,centerY-v.y*radius)
@@ -37,7 +37,7 @@ internal fun drawSpaceCompassGlobeGeographicGuides(canvas: Canvas,snapshot: Spac
             (bounds.left+bounds.width).toFloat(),(bounds.top+bounds.height).toFloat()),p,0xffd8e7f2.toInt())
     }
     spaceCompassGlobeGeographicParallels.forEach { (latitude,reference) ->
-        val geometry=spaceCompassGlobeGuideSegments(latitude,pose,flat,width.toDouble(),height.toDouble(),radius,centerY)
+        val geometry=spaceCompassGlobeGuideSegments(latitude,pose,flat,width.toDouble(),height.toDouble(),radius,centerY,capture.objectCamera)
         for((segments,alpha) in listOf(geometry.front to 210,geometry.back to 42)) {
             paint.color=0xffa8bdd0.toInt();paint.alpha=alpha
             segments.forEach { canvas.drawLine(it.start.x.toFloat(),it.start.y.toFloat(),it.end.x.toFloat(),it.end.y.toFloat(),paint) }

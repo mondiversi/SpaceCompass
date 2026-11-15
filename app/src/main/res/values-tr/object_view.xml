@@ -1,0 +1,6 @@
+<resources>
+    <string name="view_mode_object" formatted="false">Nesne</string>
+    <string name="object_view_note" formatted="false">Yörünge görünümü · Görünür yollar</string>
+    <string name="object_view_unavailable" formatted="false">Konum verileri kullanılabilir bir nesne seçin.</string>
+    <string name="tutorial_mode_object" formatted="false">Görünür yörüngeyi izleyin. Dünya’yı döndürmek için sürükleyin; bakış ileriye dönük kalır.</string>
+</resources>

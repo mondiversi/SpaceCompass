@@ -1,9 +1,9 @@
 <resources>
     <string name="info_news_title">हाल के बदलाव · %1$s</string>
-    <string name="info_news_star_sky" formatted="false">आकाश और ग्लोब पैनोरमा में ज़ूम बढ़ाने पर भी निर्देशांक अंक दिखाई देते हैं।</string>
-    <string name="info_news_texture_downloads" formatted="false">अक्षांश लेबल खाली किनारों के पास रहते हैं, लैंडस्केप में सूचना पैनल खुले होने पर भी।</string>
-    <string name="info_news_weather" formatted="false">ग्रिड अंक अपनी रेखाओं से संरेखित रहते हैं और बटन तथा पैनल से नहीं टकराते।</string>
-    <string name="info_news_viewer_zoom" formatted="false">बंद करें और बाद में अब दिन और रात की थीम का सामान्य टेक्स्ट रंग अपनाते हैं।</string>
-    <string name="info_news_settings" formatted="false">पुष्टि नीली या सियान रहती है; बदलाव छोड़ना और आइटम हटाना लाल रहता है।</string>
-    <string name="info_news_catalog" formatted="false">हटाने की पुष्टि में रद्द करें तटस्थ रंग में है, ताकि हर कार्रवाई स्पष्ट हो।</string>
+    <string name="info_news_star_sky" formatted="false">फ़्रेम दृश्य में ग्लोब को 8× तक ज़ूम करके देखें।</string>
+    <string name="info_news_texture_downloads" formatted="false">पृथ्वी मौजूदा दिन और रात के मानचित्रों का पूरा विवरण इस्तेमाल करती है।</string>
+    <string name="info_news_weather" formatted="false">उच्च घनत्व वाली स्क्रीन पर लाइव ग्लोब अधिक स्पष्ट दिखता है।</string>
+    <string name="info_news_viewer_zoom" formatted="false">खींचते समय विवरण हल्का रहता है और रुकने पर अपने आप बेहतर हो जाता है।</string>
+    <string name="info_news_settings" formatted="false">ग्लोब को अधिक ज़ूम पर घुमाना अब अधिक सटीक है।</string>
+    <string name="info_news_catalog" formatted="false">ऊर्जा खपत सीमित रखने के लिए पृथ्वी का स्क्रीनसेवर हल्का चित्रण बनाए रखता है।</string>
 </resources>

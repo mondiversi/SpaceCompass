@@ -1,9 +1,9 @@
 <resources>
     <string name="info_news_title">Son yenilikler · %1$s</string>
-    <string name="info_news_star_sky" formatted="false">Gökyüzü ve Küre panoramalarındaki koordinat sayıları yakınlaştırmada görünür kalır.</string>
-    <string name="info_news_texture_downloads" formatted="false">Enlem etiketleri boş kenarlara daha yakındır; bilgi panelli yatay görünümde de geçerlidir.</string>
-    <string name="info_news_weather" formatted="false">Izgara sayıları çizgileriyle hizalı kalır, düğme ve panellerle çakışmaz.</string>
-    <string name="info_news_viewer_zoom" formatted="false">Kapat ve Daha sonra artık gündüz ve gece temalarının normal metin rengini kullanır.</string>
-    <string name="info_news_settings" formatted="false">Onaylar mavi veya camgöbeği; değişiklikleri iptal etmek ve öğeleri kaldırmak kırmızı kalır.</string>
-    <string name="info_news_catalog" formatted="false">Silme onayındaki İptal, eylemleri daha kolay ayırt etmek için nötr renktedir.</string>
+    <string name="info_news_star_sky" formatted="false">Küreyi çerçeve görünümünde 8× yakınlaştırmaya kadar keşfedin.</string>
+    <string name="info_news_texture_downloads" formatted="false">Dünya, mevcut gündüz ve gece haritalarının tüm ayrıntılarını kullanır.</string>
+    <string name="info_news_weather" formatted="false">Canlı Küre, yüksek yoğunluklu ekranlarda daha keskin görünür.</string>
+    <string name="info_news_viewer_zoom" formatted="false">Sürüklerken ayrıntı hafifletilir ve durduğunuzda otomatik olarak iyileşir.</string>
+    <string name="info_news_settings" formatted="false">Küreyi yüksek yakınlaştırmada keşfederken döndürme daha hassastır.</string>
+    <string name="info_news_catalog" formatted="false">Dünya ekran koruyucusu tüketimi sınırlamak için hafif çizimini korur.</string>
 </resources>

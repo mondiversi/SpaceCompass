@@ -1,0 +1,6 @@
+<resources>
+    <string name="view_mode_object" formatted="false">Object</string>
+    <string name="object_view_note" formatted="false">Orbital view · Apparent paths</string>
+    <string name="object_view_unavailable" formatted="false">Select an object with available position data.</string>
+    <string name="tutorial_mode_object" formatted="false">Follow the apparent orbit. Drag to rotate Earth; the view keeps facing forward.</string>
+</resources>

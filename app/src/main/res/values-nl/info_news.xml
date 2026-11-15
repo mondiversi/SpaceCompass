@@ -1,9 +1,9 @@
 <resources>
     <string name="info_news_title">Laatste nieuws · %1$s</string>
-    <string name="info_news_star_sky" formatted="false">Coördinaatcijfers in Hemel- en Globepanorama’s blijven zichtbaar bij inzoomen.</string>
-    <string name="info_news_texture_downloads" formatted="false">Breedtelabels staan dichter bij vrije randen, ook liggend met informatiepanelen.</string>
-    <string name="info_news_weather" formatted="false">Rastercijfers blijven uitgelijnd op hun lijnen en vermijden knoppen en panelen.</string>
-    <string name="info_news_viewer_zoom" formatted="false">Sluiten en Later gebruiken nu de normale tekstkleur van het dag- en nachtthema.</string>
-    <string name="info_news_settings" formatted="false">Bevestigingen blijven blauw of cyaan; wijzigingen verwerpen en verwijderen blijven rood.</string>
-    <string name="info_news_catalog" formatted="false">Annuleren bij een verwijderbevestiging is neutraal om acties beter te onderscheiden.</string>
+    <string name="info_news_star_sky" formatted="false">Verken de Globe in kaderweergave met zoom tot 8×.</string>
+    <string name="info_news_texture_downloads" formatted="false">De aarde gebruikt alle details van de bestaande dag- en nachtkaarten.</string>
+    <string name="info_news_weather" formatted="false">De live Globe is scherper op schermen met een hoge pixeldichtheid.</string>
+    <string name="info_news_viewer_zoom" formatted="false">Tijdens slepen blijft de weergave lichter; bij stoppen wordt deze automatisch verfijnd.</string>
+    <string name="info_news_settings" formatted="false">Draaien is nauwkeuriger wanneer je de Globe sterk vergroot.</string>
+    <string name="info_news_catalog" formatted="false">De aardeschermbeveiliging behoudt de lichte weergave om energie te besparen.</string>
 </resources>

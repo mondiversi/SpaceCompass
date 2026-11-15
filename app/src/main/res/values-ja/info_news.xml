@@ -1,9 +1,9 @@
 <resources>
     <string name="info_news_title">最近の変更 · %1$s</string>
-    <string name="info_news_star_sky" formatted="false">空と地球のパノラマで拡大しても座標の数値が表示されます。</string>
-    <string name="info_news_texture_downloads" formatted="false">緯度のラベルを空いている端に近づけ、情報パネル付きの横画面にも対応しました。</string>
-    <string name="info_news_weather" formatted="false">グリッドの数値は線に沿い、ボタンやパネルとの重なりを避けます。</string>
-    <string name="info_news_viewer_zoom" formatted="false">閉じると後では、昼夜のテーマの通常の文字色を使います。</string>
-    <string name="info_news_settings" formatted="false">確認操作は青またはシアン、変更の破棄と削除は赤のままです。</string>
-    <string name="info_news_catalog" formatted="false">削除確認のキャンセルを通常の文字色にし、各操作を区別しやすくしました。</string>
+    <string name="info_news_star_sky" formatted="false">フレーム表示の地球を最大8×のズームで探索できます。</string>
+    <string name="info_news_texture_downloads" formatted="false">既存の昼と夜の地図の細部をすべて活用します。</string>
+    <string name="info_news_weather" formatted="false">高密度ディスプレイでライブ地球がより鮮明になります。</string>
+    <string name="info_news_viewer_zoom" formatted="false">ドラッグ中は描画を軽くし、止めると自動的に細部を改善します。</string>
+    <string name="info_news_settings" formatted="false">高倍率で地球を探索するときの回転がより正確になります。</string>
+    <string name="info_news_catalog" formatted="false">地球のスクリーンセーバーは消費電力を抑える軽量描画を維持します。</string>
 </resources>

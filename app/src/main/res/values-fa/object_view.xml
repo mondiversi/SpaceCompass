@@ -1,0 +1,6 @@
+<resources>
+    <string name="view_mode_object" formatted="false">جرم</string>
+    <string name="object_view_note" formatted="false">نمای مداری · مسیرهای ظاهری</string>
+    <string name="object_view_unavailable" formatted="false">جرمی با داده‌های موقعیت موجود انتخاب کنید.</string>
+    <string name="tutorial_mode_object" formatted="false">مدار ظاهری را دنبال کنید. برای چرخاندن زمین بکشید؛ نما همچنان رو به جلو می‌ماند.</string>
+</resources>

@@ -185,9 +185,9 @@ internal fun SpaceCompassPanoramaPreview(data: SpaceCompassPanoramaPreviewData, 
     val density = LocalDensity.current
     var toolbarHeightPx by remember { mutableIntStateOf(with(density) { 48.dp.roundToPx() }) }
     val topInset = with(density) { toolbarHeightPx.toDp() }
-    val previewTitle = stringResource(if(data.snapshot?.globe != null) R.string.view_mode_globe
+    val previewTitle = stringResource(if(data.snapshot?.globe?.objectCamera!=null) R.string.view_mode_object else if(data.snapshot?.globe != null) R.string.view_mode_globe
         else if (data.cameraPhoto == null) R.string.view_mode_sky else R.string.view_mode_camera)
-    val projectionControl: (@Composable () -> Unit)? = if(data.cameraPhoto==null&&data.snapshot!=null) {
+    val projectionControl: (@Composable () -> Unit)? = if(data.cameraPhoto==null&&data.snapshot!=null&&data.snapshot.globe?.objectCamera==null) {
         {
             SpaceCompassCaptureProjectionSwitch(requestedProjection,
                 enabled=!export.saving&&hasFraming&&positionReady,onSelect={ next ->

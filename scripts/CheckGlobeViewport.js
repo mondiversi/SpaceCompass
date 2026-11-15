@@ -7,7 +7,7 @@ const context={Math,innerWidth:711,innerHeight:634,devicePixelRatio:2.75,viewWid
  worldCanvas,orbitCanvas,window:{},document:{documentElement:{style:{}},body:{style:{}},
   getElementById:id=>id==='earth-canvas'?earth:fallback},
  globeScene:{pose:[0,.4,1,0],extent:1.55,fitBounds:[1.55,1.13],canvasSize:[382.4,341.3],viewport:[0,50,382.4,246]},
- requestGlobePaint(){}};
+ requestGlobePaint(){},drawEarthLocation(){}};
 vm.createContext(context);
 vm.runInContext(source.slice(source.indexOf('window.spaceCompassGlobeCenter='),source.indexOf('function globePoint(')),context);
 context.spaceCompassGlobeCenter=context.window.spaceCompassGlobeCenter;
@@ -15,13 +15,13 @@ vm.runInContext(source.slice(source.indexOf('let globeCanvasLayout=')),context);
 // A shrunken native pane must win over a stale/enlarged mobile CSS viewport.
 assert.equal(context.viewWidth,382.4);assert.equal(context.viewHeight,341.3);
 assert.equal(worldCanvas.style.width,'100%');assert.equal(earth.style.height,'341.3px');
-assert.equal(worldCanvas.width,Math.round(382.4*1.5));assert.equal(orbitCanvas.height,Math.round(341.3*1.5));
+assert.equal(worldCanvas.width,Math.round(382.4*2));assert.equal(orbitCanvas.height,Math.round(341.3*2));
 const radius=Math.min((382.4/2-24)/1.55,(246/2-24)/1.13);
 assert.ok(Math.abs(context.earthDiameter(382.4,341.3)-radius*2)<1e-9);
 context.globeScene.canvasSize=[711.6,341.3];context.globeScene.viewport=[0,30,711.6,240];
 context.globeScene.pose[2]=1.5;context.resizeWorld();
 assert.equal(context.viewWidth,711.6);assert.equal(context.viewHeight,341.3);
-assert.equal(worldCanvas.width,Math.round(711.6*1.5));
+assert.equal(worldCanvas.width,Math.round(711.6*2));
 assert.equal(context.spaceCompassGlobeCenter(711.6,341.3)[0],355.8);
 assert.equal(context.spaceCompassGlobeCenter(711.6,341.3)[1],150);
 const oldHeight=context.innerHeight;
@@ -37,3 +37,12 @@ assert.equal(context.spaceCompassGlobeCenter(900,700)[0],260);
 assert.equal(context.spaceCompassGlobeCenter(900,700)[1],210);
 assert.ok(Math.abs(context.earthDiameter(900,700)-Math.min((500/2-24)/1.55,(320/2-24)/1.13)*2*1.5)<1e-9);
 console.log('Globe viewport: native bounds, responsive canvases, rotation/column resizing, fit and zoom passed.');
+
+// Object's off-axis perspective needs the entire software canvas, not a circular fallback crop.
+context.globeScene.objectCamera={eye:null,target:[0,0,0],focal:1};
+context.globeScene.canvasSize=[390,720];context.resizeWorld();
+assert.equal(fallback.style.width,'390px');assert.equal(fallback.style.height,'720px');assert.equal(fallback.style.borderRadius,'0');
+context.globeScene.canvasSize=[720,390];context.resizeWorld();
+assert.equal(fallback.style.width,'720px');assert.equal(fallback.style.height,'390px');
+context.globeScene.objectCamera=null;context.resizeWorld();assert.equal(fallback.style.borderRadius,'50%');
+console.log('Object software viewport: complete portrait/landscape frame without circular clipping passed.');

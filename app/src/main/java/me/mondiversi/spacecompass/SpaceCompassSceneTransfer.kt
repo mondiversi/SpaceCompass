@@ -12,12 +12,13 @@ internal fun readSpaceCompassSceneDisplay(p: SharedPreferences) = SpaceCompassSc
     p.getBoolean(SPACE_COMPASS_FORWARD_PATH_KEY,false),
     p.getBoolean(SPACE_COMPASS_WEATHER_VISIBLE_KEY,SPACE_COMPASS_WEATHER_VISIBLE_DEFAULT),
     p.getBoolean(SPACE_COMPASS_CAMERA_OBJECT_TRANSLUCENCY_KEY,SPACE_COMPASS_CAMERA_OBJECT_TRANSLUCENCY_DEFAULT),
-    p.getBoolean(SPACE_COMPASS_GLOBE_MODE_KEY,false),p.getBoolean(SPACE_COMPASS_GLOBE_LABELS_KEY,SPACE_COMPASS_GLOBE_LABELS_DEFAULT),
+    (p.getBoolean(SPACE_COMPASS_GLOBE_MODE_KEY,false)||
+        (!SPACE_COMPASS_OBJECT_VIEW_AVAILABLE&&p.getBoolean(SPACE_COMPASS_OBJECT_VIEW_KEY,false))),p.getBoolean(SPACE_COMPASS_GLOBE_LABELS_KEY,SPACE_COMPASS_GLOBE_LABELS_DEFAULT),
     p.getBoolean(SPACE_COMPASS_GLOBE_AXIS_KEY,true),p.getString(SPACE_COMPASS_GLOBE_LABEL_MODE_KEY,null)
         ?: if(!p.contains(SPACE_COMPASS_GLOBE_LABELS_KEY)) SpaceCompassPanoramaLabelMode.SELECTED.key else null,
     p.getBoolean(SPACE_COMPASS_MAIN_GRID_KEY,SPACE_COMPASS_MAIN_GRID_DEFAULT),
     p.getBoolean(SPACE_COMPASS_GRID_NUMBERS_KEY,SPACE_COMPASS_GRID_NUMBERS_DEFAULT),
-    p.getString(SPACE_COMPASS_SKY_LABEL_MODE_KEY,null))
+    p.getString(SPACE_COMPASS_SKY_LABEL_MODE_KEY,null),spaceCompassObjectViewEnabled(p.getBoolean(SPACE_COMPASS_OBJECT_VIEW_KEY,false)),false,p.getString(SPACE_COMPASS_OBJECT_LABEL_MODE_KEY,null))
 
 internal fun SharedPreferences.Editor.putSpaceCompassSceneDisplay(display: SpaceCompassSceneDisplay) = apply {
     putBoolean(SPACE_COMPASS_SKY_REFERENCES_KEY,display.guides)
@@ -28,7 +29,12 @@ internal fun SharedPreferences.Editor.putSpaceCompassSceneDisplay(display: Space
     putBoolean(SPACE_COMPASS_FORWARD_PATH_KEY,display.forward24Hours)
     putBoolean(SPACE_COMPASS_WEATHER_VISIBLE_KEY,display.weather)
     putBoolean(SPACE_COMPASS_CAMERA_OBJECT_TRANSLUCENCY_KEY,display.translucentObjects)
-    putBoolean(SPACE_COMPASS_GLOBE_MODE_KEY,display.globe)
+    putBoolean(SPACE_COMPASS_GLOBE_MODE_KEY,display.globe||display.objectView)
+    putBoolean(SPACE_COMPASS_OBJECT_VIEW_KEY,spaceCompassObjectViewEnabled(display.objectView))
+    remove(SPACE_COMPASS_OBJECT_AIM_KEY)
+    if(display.objectLabelMode==null) remove(SPACE_COMPASS_OBJECT_LABEL_MODE_KEY)
+    else putString(SPACE_COMPASS_OBJECT_LABEL_MODE_KEY,display.objectLabelMode)
+    if(display.objectView) putBoolean(SPACE_COMPASS_LIVE_PROJECTION_KEY,false)
     putBoolean(SPACE_COMPASS_GLOBE_LABELS_KEY,display.globeLabels)
     putBoolean(SPACE_COMPASS_GLOBE_AXIS_KEY,display.globeAxisLocked)
     if(display.globeLabelMode==null) remove(SPACE_COMPASS_GLOBE_LABEL_MODE_KEY)

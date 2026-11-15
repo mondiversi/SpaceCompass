@@ -74,8 +74,8 @@ internal fun prepareSpaceCompassCaptureExport(context: Context, data: SpaceCompa
     }
     val snapshot = if (mode == SpaceCompassPanoramaExportMode.SELECTED) data.selectedPresentation?.snapshot else data.snapshot
     val formatting = snapshot?.formatting ?: profile?.formatting ?: spaceCompassPanoramaInternationalFormatting
-    val title = profile?.strings?.getString(if(snapshot?.globe != null) R.string.view_mode_globe else if (data.cameraPhoto == null) R.string.view_mode_sky
-        else R.string.camera_capture_preview_title) ?: if(snapshot?.globe != null) "Globe" else if (data.cameraPhoto == null) "Panorama" else "Photo"
+    val title = profile?.strings?.getString(if(snapshot?.globe?.objectCamera!=null) R.string.view_mode_object else if(snapshot?.globe != null) R.string.view_mode_globe else if (data.cameraPhoto == null) R.string.view_mode_sky
+        else R.string.camera_capture_preview_title) ?: if(snapshot?.globe?.objectCamera!=null) "Object" else if(snapshot?.globe != null) "Globe" else if (data.cameraPhoto == null) "Panorama" else "Photo"
     val stem = spaceCompassExportFileStem(data.timeMs,formatting,
         if (position==SpaceCompassPanoramaPosition.HIDDEN) "UTC" else snapshot?.zoneId ?: "UTC",listOf(title))
     val directory = File(data.file.parentFile,"named-exports/" + spaceCompassPanoramaVariantKey(position,labels,mode,center)+"-${overlays.cacheKey}")

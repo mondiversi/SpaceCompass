@@ -12,6 +12,29 @@ import org.junit.Assert.*
 import org.junit.Test
 
 class SpaceCompassSceneArchiveTest {
+    @Test fun objectLabelsRoundTripIndependentlyFromGlobeAndLegacyDefaults() {
+        for(mode in SPACE_COMPASS_GLOBE_MAIN_LABEL_MODES) {
+            val settings=display.copy(objectLabelMode=mode.key,globeLabelMode="none")
+            val value=scene().copy(display=settings)
+            assertEquals(value,SpaceCompassSceneArchive.decode(value.encode()))
+            val store=Store();store.preferences.edit().putSpaceCompassSceneDisplay(settings).apply()
+            assertEquals(settings,readSpaceCompassSceneDisplay(store.preferences))
+        }
+        assertNull(SpaceCompassSceneArchive.decode(scene().encode()).display!!.objectLabelMode)
+        assertEquals(SpaceCompassPanoramaLabelMode.SELECTED,spaceCompassGlobeLabelMode(null))
+    }
+
+    @Test fun legacyObjectAimStaysReadableButCannotReactivateTheRemovedChoice() {
+        val settings=display.copy(globe=true,objectView=true,objectAimObserver=true)
+        val value=scene().copy(display=settings)
+        assertEquals(value,SpaceCompassSceneArchive.decode(value.encode()))
+        val store=Store();store.preferences.edit().putSpaceCompassSceneDisplay(settings).apply()
+        assertEquals(settings.copy(objectView=false,objectAimObserver=false),readSpaceCompassSceneDisplay(store.preferences))
+        store.preferences.edit().putSpaceCompassSceneDisplay(display).apply()
+        assertFalse(readSpaceCompassSceneDisplay(store.preferences).objectView)
+        assertFalse(SpaceCompassSceneArchive.decode(scene().encode()).display!!.objectView)
+    }
+
     @Test fun skyLabelsRoundTripIndependentlyOfGlobeLabelsAndLegacyFiles() {
         for(mode in SPACE_COMPASS_GLOBE_MAIN_LABEL_MODES) {
             val settings=display.copy(globeLabelMode="none",skyLabelMode=mode.key)

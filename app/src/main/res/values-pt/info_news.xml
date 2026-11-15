@@ -1,9 +1,9 @@
 <resources>
     <string name="info_news_title">Últimas novidades · %1$s</string>
-    <string name="info_news_star_sky" formatted="false">Os números de coordenadas dos panoramas do Céu e Globo mantêm-se visíveis ao ampliar.</string>
-    <string name="info_news_texture_downloads" formatted="false">As latitudes ficam mais perto das margens livres, também na horizontal com painéis.</string>
-    <string name="info_news_weather" formatted="false">Os números da grelha mantêm-se alinhados com as linhas e evitam botões e painéis.</string>
-    <string name="info_news_viewer_zoom" formatted="false">Fechar e Mais tarde usam agora a cor normal do texto nos temas de dia e noite.</string>
-    <string name="info_news_settings" formatted="false">As confirmações continuam azuis ou ciano; descartar alterações e remover continua vermelho.</string>
-    <string name="info_news_catalog" formatted="false">Cancelar numa confirmação de remoção é neutro para distinguir melhor cada ação.</string>
+    <string name="info_news_star_sky" formatted="false">Explore o Globo em enquadramento com zoom até 8×.</string>
+    <string name="info_news_texture_downloads" formatted="false">A Terra aproveita todos os detalhes dos mapas de dia e noite existentes.</string>
+    <string name="info_news_weather" formatted="false">O Globo em direto fica mais nítido em ecrãs de alta densidade.</string>
+    <string name="info_news_viewer_zoom" formatted="false">O detalhe é reduzido ao arrastar e melhora automaticamente quando para.</string>
+    <string name="info_news_settings" formatted="false">A rotação é mais precisa ao explorar o Globo com uma ampliação elevada.</string>
+    <string name="info_news_catalog" formatted="false">O protetor de ecrã da Terra mantém o desenho leve para limitar o consumo.</string>
 </resources>

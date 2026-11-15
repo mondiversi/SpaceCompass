@@ -7,12 +7,12 @@ import androidx.compose.ui.graphics.toArgb
 
 internal data class SpaceCompassGlobeCapture(val pose: SpaceCompassGlobePose,
     val directionNote: String, val dark: Boolean = true, val labelMode: SpaceCompassPanoramaLabelMode = SpaceCompassPanoramaLabelMode.KEY_SELECTED,
-    val framing: SpaceCompassGlobeFraming? = null)
+    val framing: SpaceCompassGlobeFraming? = null, val objectCamera: SpaceCompassObjectCamera? = null)
 
 /** Frozen geometry, independent of the WebView and later gestures. Reuses the standard caption/legend/export policy. */
 internal fun renderSpaceCompassGlobe(snapshot: SpaceCompassPanoramaSnapshot,maxEdge: Int,context: Context,flat: Boolean=false): Bitmap {
     val capture=requireNotNull(snapshot.globe)
-    val model=buildSpaceCompassGlobeModel(snapshot)
+    val model=buildSpaceCompassGlobeModel(snapshot,surface=false)
     val frame=capture.framing
     val (width,h)=if(flat) maxEdge to maxEdge/2 else frame?.let { spaceCompassCaptureSize(it.width,it.height,maxEdge) } ?: (maxEdge to (maxEdge*.8).toInt())
     val style=spaceCompassCaptureBandStyle(width,h)
@@ -27,16 +27,19 @@ internal fun renderSpaceCompassGlobe(snapshot: SpaceCompassPanoramaSnapshot,maxE
         drawSpaceCompassGlobeUniverse(canvas,width,h,capture.dark)
         val r=if(!flat&&frame!=null) frame.radiusByWidth*width else spaceCompassGlobeFitRadius(SpaceCompassSunSceneFrame(0.0,0.0,width.toDouble(),h.toDouble()),model.extent,capture.pose.zoom,width/80.0)
         val cy=spaceCompassGlobeCaptureCenterY(h,heading,legend.height)
-        val earth=if(flat) renderSpaceCompassGlobeMapEarth(context,snapshot.timeMs) else renderSpaceCompassGlobeEarth(context,(r*2).roundToInt().coerceIn(64,2048),capture.pose,snapshot.timeMs)
-        try { canvas.drawBitmap(earth,null,if(flat) RectF(0f,0f,width.toFloat(),h.toFloat()) else RectF((width/2-r).toFloat(),(cy-r).toFloat(),(width/2+r).toFloat(),(cy+r).toFloat()),paint) }
+        val earth=if(flat) renderSpaceCompassGlobeMapEarth(context,snapshot.timeMs) else renderSpaceCompassGlobeEarth(context,(r*(if(capture.objectCamera!=null) 4 else 2)).roundToInt().coerceIn(64,2048),capture.pose,snapshot.timeMs,capture.objectCamera,
+            if(capture.objectCamera!=null) SpaceCompassObjectEarthFrame(width,h,r,cy) else null)
+        val earthRadius=r
+        try { canvas.drawBitmap(earth,null,if(flat||capture.objectCamera!=null) RectF(0f,0f,width.toFloat(),h.toFloat()) else RectF((width/2-earthRadius).toFloat(),(cy-earthRadius).toFloat(),(width/2+earthRadius).toFloat(),(cy+earthRadius).toFloat()),paint) }
         finally { earth.recycle() }
         val gridEdges = if(flat && snapshot.showGrid) drawSpaceCompassGlobeMapGrid(canvas,width,h,snapshot) else emptyList()
         val text=Paint(Paint.ANTI_ALIAS_FLAG).apply { textSize=width/100f;typeface=Typeface.create(Typeface.DEFAULT,Typeface.BOLD);textAlign=Paint.Align.CENTER }
-        fun projected(v: SpaceCompassGlobeVector)=if(flat) v else spaceCompassGlobeView(v,capture.pose)
-        fun hidden(v: SpaceCompassGlobeVector)=!flat&&v.z<0&&v.x*v.x+v.y*v.y<1
+        fun projected(v: SpaceCompassGlobeVector)=if(flat) v else spaceCompassGlobeCapturePoint(v,capture)
+        fun hidden(v: SpaceCompassGlobeVector)=!flat&&v.z<0&&(capture.objectCamera!=null||v.x*v.x+v.y*v.y<1)
         fun xy(v: SpaceCompassGlobeVector)=if(flat) spaceCompassGlobeMapPoint(v,width.toDouble(),h.toDouble()).let { PointF(it.x.toFloat(),it.y.toFloat()) }
             else PointF((width/2+v.x*r).toFloat(),(cy-v.y*r).toFloat())
         fun segment(a: SpaceCompassGlobeVector,b: SpaceCompassGlobeVector,tint: Int,dashed: Boolean) {
+            if(capture.objectCamera?.let { !it.inFront(a)||!it.inFront(b) }==true)return
             val av=projected(a);val bv=projected(b);val p=xy(av);val q=xy(bv)
             paint.color=tint;paint.alpha=if(hidden(av)&&hidden(bv)) 42 else 255;paint.strokeWidth=width/650f
             paint.pathEffect=if(dashed||hidden(av)&&hidden(bv)) DashPathEffect(floatArrayOf(width/180f,width/200f),0f) else null
@@ -98,7 +101,8 @@ internal fun renderSpaceCompassGlobe(snapshot: SpaceCompassPanoramaSnapshot,maxE
         model.tracks.forEach { track ->
             val active=if(snapshot.activeComparisonId!=null) snapshot.activeComparisonId==track.item.comparison?.id
                     else snapshot.activeBody==track.item.body&&track.item.comparison==null
-            track.dots.sortedWith(compareBy<SpaceCompassGlobeDot> { it.current }.thenBy { it.selected }).forEach { dot ->
+            track.dots.sortedWith(compareBy<SpaceCompassGlobeDot> { it.current }.thenBy { it.selected }).forEach dotLoop@ { dot ->
+                if(capture.objectCamera?.inFront(dot.vector)==false)return@dotLoop
                 val v=projected(dot.vector);val behind=hidden(v)
                 val p=xy(v);val tint=if(dot.selected) snapshot.selectionTint else track.item.tint.toArgb()
                 val radius=if(dot.current) width/120f else width/260f
@@ -163,10 +167,13 @@ internal fun renderSpaceCompassGlobe(snapshot: SpaceCompassPanoramaSnapshot,maxE
         // Location marker is itself precise position metadata: omit it in Area and Hidden exports.
         if(!snapshot.positionHidden&&snapshot.globeLocationVisible&&snapshot.observerPositionKnown) {
             val lat=Math.toRadians(snapshot.latitude);val lon=Math.toRadians(snapshot.longitude)
-            val p=projected(SpaceCompassGlobeVector(cos(lat)*sin(lon),sin(lat),cos(lat)*cos(lon)))
+            val world=SpaceCompassGlobeVector(cos(lat)*sin(lon),sin(lat),cos(lat)*cos(lon))
+            if(capture.objectCamera?.inFront(world)!=false) {
+            val p=projected(world)
             val anchor=xy(p)
             val pinWidth=(r*2*.06).toFloat().coerceIn(16*unit,22*unit)
             drawSpaceCompassGlobeLocationMarker(canvas,anchor.x,anchor.y,pinWidth,if(flat) 1.0 else p.z)
+            }
         }
         text.color=0xffb5c3d0.toInt();text.typeface=Typeface.DEFAULT;text.textSize=width/120f
         val noteWidth=text.measureText(capture.directionNote)
@@ -178,7 +185,7 @@ internal fun renderSpaceCompassGlobe(snapshot: SpaceCompassPanoramaSnapshot,maxE
 }
 
 /** Offline software capture of the shared Blue/Black Marble maps. No new texture is bundled. */
-internal fun renderSpaceCompassGlobeEarth(context: Context,size: Int,pose: SpaceCompassGlobePose,timeMs: Long): Bitmap {
+internal fun renderSpaceCompassGlobeEarth(context: Context,size: Int,pose: SpaceCompassGlobePose,timeMs: Long,objectCamera: SpaceCompassObjectCamera? = null,objectFrame: SpaceCompassObjectEarthFrame? = null): Bitmap {
     fun map(name: String): Pair<IntArray,Pair<Int,Int>> {
         val bitmap=context.assets.open("screensaver/$name.webp").use { BitmapFactory.decodeStream(it) }
         try { val pixels=IntArray(bitmap.width*bitmap.height);bitmap.getPixels(pixels,0,bitmap.width,0,0,bitmap.width,bitmap.height)
@@ -188,18 +195,30 @@ internal fun renderSpaceCompassGlobeEarth(context: Context,size: Int,pose: Space
     val (day,dim)=map("earth-day");val (night,_)=map("earth-night");val (mw,mh)=dim
     val sunlight=spaceCompassScreensaverSunlight(timeMs)
     val sun=spaceCompassGlobeView(SpaceCompassGlobeVector(sunlight.x,sunlight.y,sunlight.z),pose)
-    val out=IntArray(size*size);val cp=cos(pose.latitude);val sp=sin(pose.latitude);val c=cos(pose.longitude);val s=sin(pose.longitude);val cr=cos(pose.roll);val sr=sin(pose.roll)
-    for(y in 0 until size)for(x in 0 until size) {
-        val nx=(x+.5)*2/size-1;val ny=1-(y+.5)*2/size;val d=nx*nx+ny*ny
-        if(d>1)continue
-        val nz=sqrt(1-d);val ax=nx*cr-ny*sr;val by=nx*sr+ny*cr
+    val outputWidth=objectFrame?.width ?: size;val outputHeight=objectFrame?.height ?: size
+    val result=Bitmap.createBitmap(outputWidth,outputHeight,Bitmap.Config.ARGB_8888)
+    val out=IntArray(outputWidth);val cp=cos(pose.latitude);val sp=sin(pose.latitude);val c=cos(pose.longitude);val s=sin(pose.longitude);val cr=cos(pose.roll);val sr=sin(pose.roll)
+    try {
+    for(y in 0 until outputHeight) {
+        out.fill(0)
+        for(x in 0 until outputWidth) {
+        val qx=objectFrame?.let { (x+.5-it.width/2.0)/it.radius } ?: ((x+.5)*2/size-1)
+        val qy=objectFrame?.let { (it.centerY-y-.5)/it.radius } ?: (1-(y+.5)*2/size)
+        val normal=objectCamera?.normal(qx,qy)
+        if(objectCamera!=null&&normal==null)continue
+        val nx=normal?.x ?: qx;val ny=normal?.y ?: qy;val d=nx*nx+ny*ny
+        if(objectCamera==null&&d>1)continue
+        val nz=normal?.z ?: sqrt((1-d).coerceAtLeast(0.0));val ax=nx*cr-ny*sr;val by=nx*sr+ny*cr
         val ay=by*cp+nz*sp;val az=-by*sp+nz*cp
         val vx=ax*c+az*s;val vz=-ax*s+az*c
         val u=((atan2(vx,vz)/(2*PI)+.5)%1+1)%1;val v=.5-asin(ay.coerceIn(-1.0,1.0))/PI
         val idx=(v*mh).toInt().coerceIn(0,mh-1)*mw+(u*mw).toInt().coerceIn(0,mw-1)
-        out[y*size+x]=spaceCompassGlobeSurfaceColor(day[idx],night[idx],nx*sun.x+ny*sun.y+nz*sun.z)
+        out[x]=spaceCompassGlobeSurfaceColor(day[idx],night[idx],nx*sun.x+ny*sun.y+nz*sun.z)
     }
-    return Bitmap.createBitmap(out,size,size,Bitmap.Config.ARGB_8888)
+        result.setPixels(out,0,outputWidth,0,y,outputWidth,1)
+    }
+    return result
+    } catch(error: Throwable) { result.recycle();throw error }
 }
 
 /** Full image backdrop is drawn before Earth, paths and labels; caption and legend remain black. */

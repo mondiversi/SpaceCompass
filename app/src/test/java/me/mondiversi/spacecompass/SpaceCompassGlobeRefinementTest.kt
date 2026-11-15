@@ -6,6 +6,14 @@ import java.time.Instant
 import kotlin.math.*
 
 class SpaceCompassGlobeRefinementTest {
+    @Test fun highZoomDraggingKeepsFineControlAndAxialLock() {
+        val start=SpaceCompassGlobePose(.3,.4,1.0)
+        val base=spaceCompassGlobeDrag(start,20.0,20.0,400.0,600.0,true)
+        val close=spaceCompassGlobeDrag(start.copy(zoom=8.0),20.0,20.0,400.0,600.0,true)
+        assertTrue(kotlin.math.abs(close.longitude-start.longitude)<kotlin.math.abs(base.longitude-start.longitude))
+        assertEquals(start.latitude,close.latitude,0.0);assertEquals(8.0,close.zoom,0.0)
+    }
+
     private val dates=listOf("2026-03-20T12:00:00Z","2026-06-21T12:00:00Z","2026-12-21T12:00:00Z")
     @Test fun seasonalEarthTransformAndItsInverseStayIdenticalForTextureAndOrbitPoints() {
         for(date in dates)for(lon in listOf(-3.0,0.0,2.0)) {

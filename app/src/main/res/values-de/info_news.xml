@@ -1,9 +1,9 @@
 <resources>
     <string name="info_news_title">Neuigkeiten · %1$s</string>
-    <string name="info_news_star_sky" formatted="false">Koordinatenzahlen in Himmel- und Globuspanoramen bleiben beim Vergrößern sichtbar.</string>
-    <string name="info_news_texture_downloads" formatted="false">Breitenbeschriftungen liegen näher an freien Rändern, auch quer mit Infobereichen.</string>
-    <string name="info_news_weather" formatted="false">Gitterzahlen bleiben an ihren Linien ausgerichtet und meiden Tasten und Bereiche.</string>
-    <string name="info_news_viewer_zoom" formatted="false">Schließen und Später verwenden jetzt die normale Textfarbe im Tag- und Nachtmodus.</string>
-    <string name="info_news_settings" formatted="false">Bestätigungen bleiben blau oder türkis; Änderungen verwerfen und Entfernen bleiben rot.</string>
-    <string name="info_news_catalog" formatted="false">Abbrechen bei einer Löschbestätigung ist neutral, damit Aktionen klar unterscheidbar sind.</string>
+    <string name="info_news_star_sky" formatted="false">Erkunde den Globus im Bildausschnitt mit bis zu 8× Zoom.</string>
+    <string name="info_news_texture_downloads" formatted="false">Die Erde nutzt alle Details der vorhandenen Tag- und Nachtkarten.</string>
+    <string name="info_news_weather" formatted="false">Der interaktive Globus ist auf hochauflösenden Displays schärfer.</string>
+    <string name="info_news_viewer_zoom" formatted="false">Beim Ziehen werden weniger Details dargestellt; beim Anhalten werden sie automatisch verfeinert.</string>
+    <string name="info_news_settings" formatted="false">Die Drehung ist bei starker Vergrößerung des Globus präziser.</string>
+    <string name="info_news_catalog" formatted="false">Der Erd-Bildschirmschoner behält seine sparsame Darstellung bei.</string>
 </resources>

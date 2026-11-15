@@ -1,9 +1,9 @@
 <resources>
     <string name="info_news_title">Ostatnie nowości · %1$s</string>
-    <string name="info_news_star_sky" formatted="false">Współrzędne w panoramach Nieba i Globu pozostają widoczne przy powiększaniu.</string>
-    <string name="info_news_texture_downloads" formatted="false">Etykiety szerokości są bliżej wolnych krawędzi, także poziomo z panelami informacji.</string>
-    <string name="info_news_weather" formatted="false">Liczby siatki pozostają wyrównane do linii i omijają przyciski oraz panele.</string>
-    <string name="info_news_viewer_zoom" formatted="false">Zamknij i Później używają teraz zwykłego koloru tekstu motywu dziennego i nocnego.</string>
-    <string name="info_news_settings" formatted="false">Potwierdzenia pozostają niebieskie lub turkusowe; odrzucanie zmian i usuwanie czerwone.</string>
-    <string name="info_news_catalog" formatted="false">Anuluj przy potwierdzeniu usunięcia ma neutralny kolor, aby wyraźniej odróżnić działania.</string>
+    <string name="info_news_star_sky" formatted="false">Odkrywaj Glob w widoku kadru z powiększeniem do 8×.</string>
+    <string name="info_news_texture_downloads" formatted="false">Ziemia korzysta ze wszystkich szczegółów istniejących map dnia i nocy.</string>
+    <string name="info_news_weather" formatted="false">Glob na żywo jest ostrzejszy na ekranach o dużej gęstości pikseli.</string>
+    <string name="info_news_viewer_zoom" formatted="false">Podczas przeciągania szczegółowość jest mniejsza i poprawia się automatycznie po zatrzymaniu.</string>
+    <string name="info_news_settings" formatted="false">Obracanie Globu przy dużym powiększeniu jest dokładniejsze.</string>
+    <string name="info_news_catalog" formatted="false">Wygaszacz ekranu Ziemi zachowuje lekkie renderowanie, aby ograniczyć zużycie energii.</string>
 </resources>

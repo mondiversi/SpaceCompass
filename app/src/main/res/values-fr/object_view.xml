@@ -1,0 +1,6 @@
+<resources>
+    <string name="view_mode_object" formatted="false">Objet</string>
+    <string name="object_view_note" formatted="false">Vue orbitale · Trajectoires apparentes</string>
+    <string name="object_view_unavailable" formatted="false">Sélectionnez un objet dont la position est disponible.</string>
+    <string name="tutorial_mode_object" formatted="false">Suivez l’orbite apparente. Faites glisser pour tourner la Terre; la vue reste vers l’avant.</string>
+</resources>

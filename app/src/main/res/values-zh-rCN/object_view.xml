@@ -1,0 +1,6 @@
+<resources>
+    <string name="view_mode_object" formatted="false">天体</string>
+    <string name="object_view_note" formatted="false">轨道视图 · 视路径</string>
+    <string name="object_view_unavailable" formatted="false">请选择有可用位置数据的天体。</string>
+    <string name="tutorial_mode_object" formatted="false">沿视运动轨迹前进。拖动可旋转地球，视角始终朝向前方。</string>
+</resources>

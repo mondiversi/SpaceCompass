@@ -1,9 +1,9 @@
 <resources>
     <string name="info_news_title">Perubahan terbaru · %1$s</string>
-    <string name="info_news_star_sky" formatted="false">Angka koordinat panorama Langit dan Globe tetap terlihat saat diperbesar.</string>
-    <string name="info_news_texture_downloads" formatted="false">Label lintang lebih dekat ke tepi bebas, juga saat mendatar dengan panel informasi.</string>
-    <string name="info_news_weather" formatted="false">Angka kisi tetap sejajar dengan garisnya dan menghindari tombol serta panel.</string>
-    <string name="info_news_viewer_zoom" formatted="false">Tutup dan Nanti kini memakai warna teks normal pada tema siang dan malam.</string>
-    <string name="info_news_settings" formatted="false">Konfirmasi tetap biru atau sian; membuang perubahan dan menghapus item tetap merah.</string>
-    <string name="info_news_catalog" formatted="false">Batal dalam konfirmasi penghapusan berwarna netral agar setiap tindakan lebih jelas.</string>
+    <string name="info_news_star_sky" formatted="false">Jelajahi Globe dalam tampilan bingkai dengan zoom hingga 8×.</string>
+    <string name="info_news_texture_downloads" formatted="false">Bumi memakai seluruh detail peta siang dan malam yang sudah tersedia.</string>
+    <string name="info_news_weather" formatted="false">Globe langsung tampak lebih tajam pada layar berkepadatan tinggi.</string>
+    <string name="info_news_viewer_zoom" formatted="false">Detail dibuat lebih ringan saat diseret dan diperhalus otomatis saat berhenti.</string>
+    <string name="info_news_settings" formatted="false">Rotasi lebih presisi saat menjelajahi Globe dengan zoom tinggi.</string>
+    <string name="info_news_catalog" formatted="false">Screensaver Bumi mempertahankan tampilan ringan untuk membatasi konsumsi daya.</string>
 </resources>

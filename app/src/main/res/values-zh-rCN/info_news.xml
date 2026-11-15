@@ -1,9 +1,9 @@
 <resources>
     <string name="info_news_title">最新变化 · %1$s</string>
-    <string name="info_news_star_sky" formatted="false">放大天空和地球全景时，坐标数字仍保持可见。</string>
-    <string name="info_news_texture_downloads" formatted="false">纬度标签更靠近空闲边缘，横屏且显示信息面板时也如此。</string>
-    <string name="info_news_weather" formatted="false">网格数字保持与线条对齐，并避开按钮和面板。</string>
-    <string name="info_news_viewer_zoom" formatted="false">关闭和稍后现在使用日间和夜间主题的普通文字颜色。</string>
-    <string name="info_news_settings" formatted="false">确认仍为蓝色或青色；放弃修改和删除项目仍为红色。</string>
-    <string name="info_news_catalog" formatted="false">删除确认中的取消使用中性色，更易区分各项操作。</string>
+    <string name="info_news_star_sky" formatted="false">在取景模式中以最高8×缩放探索地球。</string>
+    <string name="info_news_texture_downloads" formatted="false">地球充分利用现有昼夜地图的全部细节。</string>
+    <string name="info_news_weather" formatted="false">实时地球在高像素密度屏幕上更加清晰。</string>
+    <string name="info_news_viewer_zoom" formatted="false">拖动时降低细节以保持轻量，停止后自动改善细节。</string>
+    <string name="info_news_settings" formatted="false">高倍率探索地球时，旋转更加精确。</string>
+    <string name="info_news_catalog" formatted="false">地球屏幕保护程序保留轻量绘制以降低能耗。</string>
 </resources>
