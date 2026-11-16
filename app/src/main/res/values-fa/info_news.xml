@@ -1,9 +1,9 @@
 <resources>
     <string name="info_news_title">تازه‌ترین تغییرات · %1$s</string>
-    <string name="info_news_star_sky" formatted="false">کرهٔ زمین را در نمای کادر با بزرگ‌نمایی تا 8× کاوش کنید.</string>
-    <string name="info_news_texture_downloads" formatted="false">زمین از تمام جزئیات نقشه‌های روز و شب موجود استفاده می‌کند.</string>
-    <string name="info_news_weather" formatted="false">کرهٔ زمین زنده در نمایشگرهای با تراکم بالا واضح‌تر است.</string>
-    <string name="info_news_viewer_zoom" formatted="false">هنگام کشیدن، جزئیات سبک‌تر می‌شوند و پس از توقف خودکار بهبود می‌یابند.</string>
-    <string name="info_news_settings" formatted="false">چرخش کرهٔ زمین در بزرگ‌نمایی زیاد دقیق‌تر است.</string>
-    <string name="info_news_catalog" formatted="false">محافظ صفحهٔ زمین برای کاهش مصرف، ترسیم سبک خود را حفظ می‌کند.</string>
+    <string name="info_news_star_sky" formatted="false">آموزش از نمای فعال آسمان، دوربین یا کرهٔ زمین پیروی می‌کند.</string>
+    <string name="info_news_texture_downloads" formatted="false">آموزش کنترل‌ها را بدون بازکردن منو یا پنجرهٔ بازشو توضیح می‌دهد.</string>
+    <string name="info_news_weather" formatted="false">نما و بزرگ‌نمایی فعلی در طول آموزش حفظ می‌شوند.</string>
+    <string name="info_news_viewer_zoom" formatted="false">پانوراماهای آسمان و کرهٔ زمین میان کنترل‌های بالا و پایین متعادل‌اند.</string>
+    <string name="info_news_settings" formatted="false">پانوراماهای افقی در ناحیهٔ دید آزاد مرکز می‌شوند و پهنای کامل صحنه را حفظ می‌کنند.</string>
+    <string name="info_news_catalog" formatted="false">ورود به پانوراما یا چرخاندن تلفن، نما را بدون بازنشانی بزرگ‌نمایی در مرکز قرار می‌دهد.</string>
 </resources>

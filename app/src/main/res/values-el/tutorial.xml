@@ -13,7 +13,7 @@
     <string name="tutorial_location" formatted="false">Ρυθμίστε θέση, υψόμετρο, ζώνη ώρας, ημερομηνία, ώρα και ταχύτητα χρόνου.</string>
     <string name="tutorial_guides" formatted="false">Επίλεξε πλέγμα, αρίθμηση και γραμμές πλανήτη και πάτησε Εφαρμογή.</string>
     <string name="tutorial_forward" formatted="false">Το 0–24 δείχνει την ημέρα· το +24h δείχνει 24 ώρες από την εμφανιζόμενη στιγμή.</string>
-    <string name="tutorial_camera" formatted="false">Επιλέξτε λειτουργία και προβολή και πατήστε Εφαρμογή. Το Κλείσιμο διατηρεί τις τρέχουσες επιλογές.</string>
+    <string name="tutorial_camera" formatted="false">Εναλλάξτε Ουρανό, Κάμερα και Υδρόγειο. Ο Ουρανός και η Υδρόγειος προσφέρουν Κάδρο και Πανόραμα.</string>
     <string name="tutorial_weather" formatted="false">Εμφανίστε ή κρύψτε καιρικά εφέ στον προσομοιωμένο ουρανό και τα πανοράματα.</string>
     <string name="tutorial_axis" formatted="false">Επιλέξτε άξονα κάμερας (90°) ή μήκους τηλεφώνου (0°).</string>
     <string name="tutorial_transparency" formatted="false">Κάντε τα αντικείμενα ημιδιαφανή για σύγκριση με την κάμερα.</string>

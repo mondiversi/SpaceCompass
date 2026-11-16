@@ -13,7 +13,7 @@
     <string name="tutorial_location" formatted="false">Personaliza posición, altitud, zona horaria, fecha, hora y velocidad del tiempo.</string>
     <string name="tutorial_guides" formatted="false">Elige cuadrícula, numeración y líneas planetarias y pulsa Aplicar.</string>
     <string name="tutorial_forward" formatted="false">0–24 muestra el día; +24h muestra las 24 horas desde el momento visualizado.</string>
-    <string name="tutorial_camera" formatted="false">Elige modo y vista y pulsa Aplicar. Cerrar conserva las opciones actuales.</string>
+    <string name="tutorial_camera" formatted="false">Alterna Cielo, Cámara y Globo. Cielo y Globo ofrecen Encuadre y Panorama.</string>
     <string name="tutorial_weather" formatted="false">Muestra u oculta el tiempo atmosférico en el cielo simulado y las panorámicas.</string>
     <string name="tutorial_axis" formatted="false">Elige el eje de la cámara (90°) o la longitud del teléfono (0°).</string>
     <string name="tutorial_transparency" formatted="false">Haz translúcidas las imágenes de los objetos para compararlas con la cámara.</string>

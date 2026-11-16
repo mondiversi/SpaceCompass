@@ -1,9 +1,9 @@
 <resources>
     <string name="info_news_title">Perubahan terbaru · %1$s</string>
-    <string name="info_news_star_sky" formatted="false">Jelajahi Globe dalam tampilan bingkai dengan zoom hingga 8×.</string>
-    <string name="info_news_texture_downloads" formatted="false">Bumi memakai seluruh detail peta siang dan malam yang sudah tersedia.</string>
-    <string name="info_news_weather" formatted="false">Globe langsung tampak lebih tajam pada layar berkepadatan tinggi.</string>
-    <string name="info_news_viewer_zoom" formatted="false">Detail dibuat lebih ringan saat diseret dan diperhalus otomatis saat berhenti.</string>
-    <string name="info_news_settings" formatted="false">Rotasi lebih presisi saat menjelajahi Globe dengan zoom tinggi.</string>
-    <string name="info_news_catalog" formatted="false">Screensaver Bumi mempertahankan tampilan ringan untuk membatasi konsumsi daya.</string>
+    <string name="info_news_star_sky" formatted="false">Tutorial mengikuti tampilan Langit, Kamera, atau Globe yang aktif.</string>
+    <string name="info_news_texture_downloads" formatted="false">Tutorial menjelaskan kontrol tanpa membuka menu atau pop-up.</string>
+    <string name="info_news_weather" formatted="false">Tampilan dan zoom saat ini dipertahankan selama tutorial.</string>
+    <string name="info_news_viewer_zoom" formatted="false">Panorama Langit dan Globe seimbang di antara kontrol atas dan bawah.</string>
+    <string name="info_news_settings" formatted="false">Panorama mendatar berpusat pada area bebas sambil mempertahankan lebar penuh adegan.</string>
+    <string name="info_news_catalog" formatted="false">Membuka panorama atau memutar ponsel memusatkan kembali tampilan tanpa mengatur ulang zoom.</string>
 </resources>

@@ -279,9 +279,9 @@ function globeMapEarth(){const image=document.querySelector('.earth-day'),night=
    for(let k=0;k<3;k++)d[i+k]=Math.min(255,globeMapDay[i+k]*(.075+diffuse*.98)+Math.pow(globeMapNight[i+k]/255,1.5)*dark*1.7*255);d[i+3]=255;}}
  ctx.putImageData(out,0,0);globeMapSun=key;return globeMapTexture;
 }
-function drawGlobeFlatBackground(){const r=globeFlatRect();world.save();world.beginPath();world.rect(r.x,r.y,r.w,r.h);world.clip();
+function drawGlobeFlatBackground(){const r=globeFlatRect(),full=r.w>=viewWidth;world.save();world.beginPath();world.rect(full?0:r.x,r.y,full?viewWidth:r.w,r.h);world.clip();
  if(globeScene.sky){const colors=globeScene.skyColors||['#15253b','#45596f','#516d3b','#334225'],gradient=world.createLinearGradient(0,r.y,0,r.y+r.h);
-  gradient.addColorStop(0,colors[0]);gradient.addColorStop(.4999,colors[1]);gradient.addColorStop(.5,colors[2]);gradient.addColorStop(1,colors[3]);world.fillStyle=gradient;world.fillRect(r.x,r.y,r.w,r.h);
+  gradient.addColorStop(0,colors[0]);gradient.addColorStop(.4999,colors[1]);gradient.addColorStop(.5,colors[2]);gradient.addColorStop(1,colors[3]);world.fillStyle=gradient;world.fillRect(0,r.y,viewWidth,r.h);
   const starMap=globeImage(globeScene.starMap);if(starMap){const shift=globeScene.pose[0]/(2*Math.PI)*r.w;for(let i=-1;i<=1;i++)world.drawImage(starMap,r.x-shift+i*r.w,r.y,r.w,r.h);}
  }else{const image=globeMapEarth();if(image){const shift=globeScene.pose[0]/(2*Math.PI)*r.w;
   for(let i=-1;i<=1;i++)world.drawImage(image,r.x-shift+i*r.w,r.y,r.w,r.h);}}

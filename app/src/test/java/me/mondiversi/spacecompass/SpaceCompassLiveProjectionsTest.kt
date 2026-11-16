@@ -51,7 +51,7 @@ class SpaceCompassLiveProjectionsTest {
         SpaceCompassTutorialState(active,welcome,camera,globe,panoramic).chooseMode(SpaceCompassViewMode.GLOBE_PANORAMA)
         val restored=SpaceCompassTutorialState(active,welcome,camera,globe,panoramic)
         assertEquals(SpaceCompassViewMode.GLOBE_PANORAMA,restored.previewMode)
-        assertFalse(spaceCompassTutorialCameraEnabled(true,restored.active));assertFalse(restored.modeMenuOpen)
+        assertFalse(spaceCompassTutorialCameraEnabled(true,restored.active))
         restored.close();assertFalse(panoramic.value);assertFalse(globe.value)
     }
 

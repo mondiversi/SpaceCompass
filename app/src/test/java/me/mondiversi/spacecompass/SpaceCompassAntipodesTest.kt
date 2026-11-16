@@ -126,7 +126,7 @@ class SpaceCompassAntipodesTest {
             assertEquals(visible, selected.antipodesVisible)
             assertEquals(before, selected.selectedPoints)
             guide.explore(SpaceCompassTutorialFeature.CAMERA)
-            assertTrue(guide.modeMenuOpen)
+            assertEquals(SpaceCompassViewMode.PANORAMA,guide.previewMode)
             assertFalse(guide.cameraPreview)
             guide.chooseMode(SpaceCompassViewMode.CAMERA)
             guide.explore(SpaceCompassTutorialFeature.ANTIPODES)

@@ -1,5 +1,12 @@
 # Changelog
 
+## 1.10.3 — 2026-11-16
+
+- Make the tutorial follow the current Sky, Camera or Globe view. Highlighted controls only update their explanation, without opening menus or pickers or changing scene settings. The menu remains the close control; camera tutorials keep the real camera protected.
+- Centre live Sky and Globe panoramas between the measured upper and lower control groups, including expanded/compact panels and mirrored layouts. Keep full-scene landscape width while centring on the uncovered viewing column, and remove uneven portrait padding from the horizontal centre.
+- Re-entering a live panorama or rotating the device clears translation while preserving its independent zoom. Manual panning remains available during the visit; spherical Globe framing and astronomical calculations are unchanged.
+- Update News and the compact mode-selector explanation in all twenty languages. Preserve saved selections, the 9,999-object catalogue and the existing external graphics collection.
+
 ## 1.10.2 — 2026-11-15
 
 - Explore the framed Globe with zoom up to 8× and finer rotation control at high magnification.

@@ -1,9 +1,9 @@
 <resources>
     <string name="info_news_title">Latest news · %1$s</string>
-    <string name="info_news_star_sky" formatted="false">Explore the framed Globe with zoom up to 8×.</string>
-    <string name="info_news_texture_downloads" formatted="false">Earth uses the full detail of the existing day and night maps.</string>
-    <string name="info_news_weather" formatted="false">The live Globe looks sharper on high-density screens.</string>
-    <string name="info_news_viewer_zoom" formatted="false">Detail stays lighter while dragging and refines automatically when you stop.</string>
-    <string name="info_news_settings" formatted="false">Rotation is more precise when exploring the Globe at high zoom.</string>
-    <string name="info_news_catalog" formatted="false">The Earth screensaver keeps its lightweight rendering to limit consumption.</string>
+    <string name="info_news_star_sky" formatted="false">The tutorial follows the active Sky, Camera or Globe view.</string>
+    <string name="info_news_texture_downloads" formatted="false">The tutorial explains controls without opening menus or pop-ups.</string>
+    <string name="info_news_weather" formatted="false">Your current view and zoom are preserved during the tutorial.</string>
+    <string name="info_news_viewer_zoom" formatted="false">Sky and Globe panoramas sit evenly between the upper and lower controls.</string>
+    <string name="info_news_settings" formatted="false">Landscape panoramas centre on the free viewing area while keeping full-scene width.</string>
+    <string name="info_news_catalog" formatted="false">Entering a panorama or rotating the phone recentres it without resetting zoom.</string>
 </resources>

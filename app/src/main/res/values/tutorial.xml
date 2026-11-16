@@ -13,7 +13,7 @@
     <string name="tutorial_location" formatted="false">Preview another position, altitude, time zone, date or time, and adjust how time advances.</string>
     <string name="tutorial_guides" formatted="false">Choose the grid, its numbers and planetary lines, then Apply.</string>
     <string name="tutorial_forward" formatted="false">0–24 shows the calendar day; +24h shows 24 hours from the displayed time.</string>
-    <string name="tutorial_camera" formatted="false">Choose a mode and view, then Apply. Close keeps your current choices.</string>
+    <string name="tutorial_camera" formatted="false">Switch between Sky, Camera and Globe. Sky and Globe offer Frame and Panorama.</string>
     <string name="tutorial_weather" formatted="false">Show or hide weather effects in the simulated sky and panoramas.</string>
     <string name="tutorial_axis" formatted="false">Choose the camera axis (90°) or the phone length axis (0°) for pointing.</string>
     <string name="tutorial_transparency" formatted="false">Make object images more translucent to compare them with the camera view.</string>

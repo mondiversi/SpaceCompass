@@ -1,9 +1,9 @@
 <resources>
     <string name="info_news_title">Mambo mapya · %1$s</string>
-    <string name="info_news_star_sky" formatted="false">Chunguza Globu katika mwonekano wa fremu kwa kukuza hadi 8×.</string>
-    <string name="info_news_texture_downloads" formatted="false">Dunia hutumia maelezo yote ya ramani zilizopo za mchana na usiku.</string>
-    <string name="info_news_weather" formatted="false">Globu ya moja kwa moja inaonekana wazi zaidi kwenye skrini zenye msongamano mkubwa.</string>
-    <string name="info_news_viewer_zoom" formatted="false">Maelezo hupunguzwa unapoburuta na kuboreshwa kiotomatiki unaposimama.</string>
-    <string name="info_news_settings" formatted="false">Mzunguko ni sahihi zaidi unapochunguza Globu kwa ukuzaji mkubwa.</string>
-    <string name="info_news_catalog" formatted="false">Kihifadhi skrini cha Dunia kinadumisha uchoraji mwepesi ili kupunguza matumizi ya nishati.</string>
+    <string name="info_news_star_sky" formatted="false">Mafunzo yanafuata mwonekano wa Anga, Kamera au Globu unaotumika.</string>
+    <string name="info_news_texture_downloads" formatted="false">Mafunzo yanaeleza vidhibiti bila kufungua menyu au madirisha ibukizi.</string>
+    <string name="info_news_weather" formatted="false">Mwonekano na ukuzaji wa sasa huhifadhiwa wakati wa mafunzo.</string>
+    <string name="info_news_viewer_zoom" formatted="false">Panorama za Anga na Globu zimesawazishwa kati ya vidhibiti vya juu na chini.</string>
+    <string name="info_news_settings" formatted="false">Panorama za mlalo hujikita katika eneo huru huku zikihifadhi upana wote wa mandhari.</string>
+    <string name="info_news_catalog" formatted="false">Kufungua panorama au kuzungusha simu huweka mwonekano katikati bila kuweka upya ukuzaji.</string>
 </resources>

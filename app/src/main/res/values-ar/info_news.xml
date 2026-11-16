@@ -1,9 +1,9 @@
 <resources>
     <string name="info_news_title">آخر المستجدات · %1$s</string>
-    <string name="info_news_star_sky" formatted="false">استكشف الكرة الأرضية في عرض الإطار مع تكبير يصل إلى 8×.</string>
-    <string name="info_news_texture_downloads" formatted="false">تستفيد الأرض من كامل تفاصيل خرائط النهار والليل الموجودة.</string>
-    <string name="info_news_weather" formatted="false">تظهر الكرة الأرضية المباشرة بوضوح أكبر على الشاشات عالية الكثافة.</string>
-    <string name="info_news_viewer_zoom" formatted="false">تقل التفاصيل أثناء السحب وتتحسن تلقائيًا عند التوقف.</string>
-    <string name="info_news_settings" formatted="false">أصبح الدوران أدق عند استكشاف الكرة الأرضية بتكبير عالٍ.</string>
-    <string name="info_news_catalog" formatted="false">تحافظ شاشة توقف الأرض على رسم خفيف للحد من استهلاك الطاقة.</string>
+    <string name="info_news_star_sky" formatted="false">يتبع البرنامج التعليمي عرض السماء أو الكاميرا أو الكرة الأرضية المستخدم.</string>
+    <string name="info_news_texture_downloads" formatted="false">يشرح البرنامج التعليمي عناصر التحكم دون فتح قوائم أو نوافذ منبثقة.</string>
+    <string name="info_news_weather" formatted="false">يتم الحفاظ على العرض والتكبير الحاليين أثناء البرنامج التعليمي.</string>
+    <string name="info_news_viewer_zoom" formatted="false">تتوازن بانوراما السماء والكرة الأرضية بين عناصر التحكم العلوية والسفلية.</string>
+    <string name="info_news_settings" formatted="false">تتمركز البانوراما الأفقية في منطقة العرض الحرة مع الاحتفاظ بعرض المشهد الكامل.</string>
+    <string name="info_news_catalog" formatted="false">يؤدي الدخول إلى البانوراما أو تدوير الهاتف إلى إعادة التوسيط دون إعادة ضبط التكبير.</string>
 </resources>

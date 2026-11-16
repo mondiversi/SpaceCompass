@@ -1,9 +1,9 @@
 <resources>
     <string name="info_news_title">Ostatnie nowości · %1$s</string>
-    <string name="info_news_star_sky" formatted="false">Odkrywaj Glob w widoku kadru z powiększeniem do 8×.</string>
-    <string name="info_news_texture_downloads" formatted="false">Ziemia korzysta ze wszystkich szczegółów istniejących map dnia i nocy.</string>
-    <string name="info_news_weather" formatted="false">Glob na żywo jest ostrzejszy na ekranach o dużej gęstości pikseli.</string>
-    <string name="info_news_viewer_zoom" formatted="false">Podczas przeciągania szczegółowość jest mniejsza i poprawia się automatycznie po zatrzymaniu.</string>
-    <string name="info_news_settings" formatted="false">Obracanie Globu przy dużym powiększeniu jest dokładniejsze.</string>
-    <string name="info_news_catalog" formatted="false">Wygaszacz ekranu Ziemi zachowuje lekkie renderowanie, aby ograniczyć zużycie energii.</string>
+    <string name="info_news_star_sky" formatted="false">Samouczek podąża za aktywnym widokiem Nieba, Aparatu lub Globu.</string>
+    <string name="info_news_texture_downloads" formatted="false">Samouczek wyjaśnia elementy sterujące bez otwierania menu i okien.</string>
+    <string name="info_news_weather" formatted="false">Bieżący widok i powiększenie są zachowane podczas samouczka.</string>
+    <string name="info_news_viewer_zoom" formatted="false">Panoramy Nieba i Globu są równomiernie rozmieszczone między górnymi i dolnymi przyciskami.</string>
+    <string name="info_news_settings" formatted="false">Panoramy poziome są wyśrodkowane w wolnym obszarze, zachowując pełną szerokość sceny.</string>
+    <string name="info_news_catalog" formatted="false">Otwarcie panoramy lub obrócenie telefonu centruje widok bez resetowania powiększenia.</string>
 </resources>

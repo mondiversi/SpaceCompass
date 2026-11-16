@@ -1,9 +1,9 @@
 <resources>
     <string name="info_news_title">Últimas novidades · %1$s</string>
-    <string name="info_news_star_sky" formatted="false">Explore o Globo em enquadramento com zoom até 8×.</string>
-    <string name="info_news_texture_downloads" formatted="false">A Terra aproveita todos os detalhes dos mapas de dia e noite existentes.</string>
-    <string name="info_news_weather" formatted="false">O Globo em direto fica mais nítido em ecrãs de alta densidade.</string>
-    <string name="info_news_viewer_zoom" formatted="false">O detalhe é reduzido ao arrastar e melhora automaticamente quando para.</string>
-    <string name="info_news_settings" formatted="false">A rotação é mais precisa ao explorar o Globo com uma ampliação elevada.</string>
-    <string name="info_news_catalog" formatted="false">O protetor de ecrã da Terra mantém o desenho leve para limitar o consumo.</string>
+    <string name="info_news_star_sky" formatted="false">O tutorial acompanha a vista Céu, Câmara ou Globo ativa.</string>
+    <string name="info_news_texture_downloads" formatted="false">O tutorial explica os controlos sem abrir menus ou janelas.</string>
+    <string name="info_news_weather" formatted="false">A vista e o zoom atuais são mantidos durante o tutorial.</string>
+    <string name="info_news_viewer_zoom" formatted="false">Os panoramas do Céu e Globo ficam equilibrados entre os controlos superiores e inferiores.</string>
+    <string name="info_news_settings" formatted="false">Na horizontal, os panoramas centram-se na área livre, mantendo toda a largura da cena.</string>
+    <string name="info_news_catalog" formatted="false">Abrir um panorama ou rodar o telefone centra a vista sem repor o zoom.</string>
 </resources>

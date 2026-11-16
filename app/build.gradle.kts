@@ -49,9 +49,9 @@ android {
         applicationId = "me.mondiversi.spacecompass"
         minSdk = 26
         targetSdk = 37
-        versionCode = 81
-        versionName = "1.10.2"
-        buildConfigField("String", "DISPLAY_VERSION", "\"1.10.2\"")
+        versionCode = 82
+        versionName = "1.10.3"
+        buildConfigField("String", "DISPLAY_VERSION", "\"1.10.3\"")
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
     }
     signingConfigs {

@@ -1,9 +1,9 @@
 <resources>
     <string name="info_news_title">החידושים האחרונים · %1$s</string>
-    <string name="info_news_star_sky" formatted="false">גלו את הגלובוס בתצוגת מסגרת עם זום עד 8×.</string>
-    <string name="info_news_texture_downloads" formatted="false">כדור הארץ משתמש בכל פרטי מפות היום והלילה הקיימות.</string>
-    <string name="info_news_weather" formatted="false">הגלובוס החי חד יותר במסכים בעלי צפיפות גבוהה.</string>
-    <string name="info_news_viewer_zoom" formatted="false">רמת הפירוט מופחתת בזמן גרירה ומשתפרת אוטומטית בעת עצירה.</string>
-    <string name="info_news_settings" formatted="false">הסיבוב מדויק יותר בעת חקירת הגלובוס בזום גבוה.</string>
-    <string name="info_news_catalog" formatted="false">שומר המסך של כדור הארץ שומר על ציור קל כדי להגביל את צריכת האנרגיה.</string>
+    <string name="info_news_star_sky" formatted="false">המדריך עוקב אחר תצוגת השמיים, המצלמה או הגלובוס הפעילה.</string>
+    <string name="info_news_texture_downloads" formatted="false">המדריך מסביר את הפקדים בלי לפתוח תפריטים או חלונות קופצים.</string>
+    <string name="info_news_weather" formatted="false">התצוגה והזום הנוכחיים נשמרים במהלך המדריך.</string>
+    <string name="info_news_viewer_zoom" formatted="false">פנורמות השמיים והגלובוס מאוזנות בין הפקדים העליונים והתחתונים.</string>
+    <string name="info_news_settings" formatted="false">בתצוגה לרוחב הפנורמות ממורכזות באזור הפנוי תוך שמירה על רוחב הסצנה המלא.</string>
+    <string name="info_news_catalog" formatted="false">כניסה לפנורמה או סיבוב הטלפון ממרכזים את התצוגה בלי לאפס את הזום.</string>
 </resources>

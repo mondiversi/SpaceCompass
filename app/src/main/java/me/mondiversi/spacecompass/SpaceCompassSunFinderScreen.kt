@@ -317,10 +317,13 @@ internal fun SpaceCompassSunFinderContent(
         scenePreferences.getFloat(SPACE_COMPASS_OBJECT_EARTH_PITCH_KEY,0f).toDouble()).normalized()) }
     var objectZoom by remember(scenePreferences) { mutableStateOf(scenePreferences.getFloat(SPACE_COMPASS_OBJECT_ZOOM_KEY,1f).coerceIn(.5f,SPACE_COMPASS_GLOBE_MAX_ZOOM.toFloat())) }
     val objectEnabled=objectRequested&&!cameraEnabled&&!tutorialActive
-    val globeEnabled = globeRequested && !cameraEnabled && !tutorialActive
-    val skyPanoramaEnabled=livePanoramic && !globeEnabled && !cameraEnabled && !tutorialActive
+    val globeEnabled = globeRequested && !requestedCameraEnabled
+    val skyPanoramaEnabled=livePanoramic && !globeEnabled && !requestedCameraEnabled
     val liveMapEnabled=globeEnabled || skyPanoramaEnabled
     val liveMode=if(cameraEnabled) SpaceCompassViewMode.CAMERA else if(objectRequested) SpaceCompassViewMode.OBJECT else spaceCompassLiveViewMode(globeRequested,livePanoramic)
+    SideEffect { tutorial?.observeMode(if(requestedCameraEnabled) SpaceCompassViewMode.CAMERA
+        else if(objectRequested) SpaceCompassViewMode.OBJECT else spaceCompassLiveViewMode(globeRequested,livePanoramic)) }
+    val projectionOrientation=androidx.compose.ui.platform.LocalConfiguration.current.orientation
     val controlsMode=if(tutorialActive) tutorial?.previewMode ?: SpaceCompassViewMode.PANORAMA else liveMode
     var skyPanoramaPose by rememberSaveable(stateSaver=androidx.compose.runtime.saveable.listSaver<SpaceCompassGlobePose,Double>(
         save={listOf(it.longitude,it.latitude,it.zoom)},restore={spaceCompassGlobeMapPose(SpaceCompassGlobePose(it[0],it[1],it[2]))})) {
@@ -329,6 +332,9 @@ internal fun SpaceCompassSunFinderContent(
     }
     fun updateSkyPanoramaPose(value: SpaceCompassGlobePose) {
         skyPanoramaPose=spaceCompassGlobeMapPose(value,skyPanoramaFrame?.width,skyPanoramaFrame?.height)
+    }
+    LaunchedEffect(skyPanoramaEnabled,projectionOrientation) {
+        if(skyPanoramaEnabled) skyPanoramaPose=spaceCompassGlobeMapCenteredPose(skyPanoramaPose)
     }
     val savedSkyPanoramaPose by rememberUpdatedState(skyPanoramaPose)
     fun saveSkyPanoramaPose() { scenePreferences.edit().putFloat("sky_panorama_longitude",savedSkyPanoramaPose.longitude.toFloat())
@@ -354,6 +360,9 @@ internal fun SpaceCompassSunFinderContent(
     }
     fun updateGlobeMapPose(value: SpaceCompassGlobePose) {
         globeMapPose = spaceCompassGlobeMapPose(value, globeMapFrame?.width, globeMapFrame?.height)
+    }
+    LaunchedEffect(globeEnabled,livePanoramic,projectionOrientation) {
+        if(globeEnabled&&livePanoramic) globeMapPose=spaceCompassGlobeMapCenteredPose(globeMapPose)
     }
     val savedGlobeMapPose by rememberUpdatedState(globeMapPose)
     fun saveGlobeMapPose() { scenePreferences.edit()
@@ -943,7 +952,7 @@ internal fun SpaceCompassSunFinderContent(
                     } },
                     drawScene = false, objectOpacity = cameraObjectOpacity, showReticle = showReticle,
                     showFloatingControls = showSkyControls, showAntipodes = showAntipodes,
-                    sceneContent = if(globeSnapshot != null) { modifier,excluded,viewport,noteBottom ->
+                    sceneContent = if(globeSnapshot != null) { modifier,excluded,viewport,noteBottom,panoramaViewport ->
                         val footer = if (!detailsExpanded && !landscape) compactHeaderFrame?.let { frame ->
                             SpaceCompassSunSceneFrame(frame.left-(pointingFrame?.left ?: 0.0),
                                 frame.top-(pointingFrame?.top ?: 0.0),frame.width,frame.height)
@@ -960,7 +969,8 @@ internal fun SpaceCompassSunFinderContent(
                             val placement=SpaceCompassGlobeScenePlacement(frame,available,
                                 excluded+listOfNotNull(footer,externalNote),
                                 with(density) { noteInset.toPx().toDouble() },
-                                globeEnabled && showSkyControls && !(landscape && detailsExpanded && globeCaptionArea != null))
+                                globeEnabled && showSkyControls && !(landscape && detailsExpanded && globeCaptionArea != null),
+                                panoramaViewport)
                             SideEffect { globePlacement=placement }
                         }
                     } else null,
@@ -1122,7 +1132,9 @@ internal fun SpaceCompassSunFinderContent(
                 val mapPose=if(objectEnabled) objectPose else if(skyPanoramaEnabled) skyPanoramaPose else if(livePanoramic) globeMapPose else globeViewPose
                 val mapViewport = if(livePanoramic) spaceCompassGlobeMapViewport(
                     placement.pointing,sceneWidth,sceneHeight,with(density) { 10.dp.toPx().toDouble() },
-                    compactHeaderFrame?.top?.takeIf { showSkyControls && !detailsExpanded && viewportHeight>=viewportWidth })
+                    compactHeaderFrame?.top?.takeIf { showSkyControls && !detailsExpanded && viewportHeight>=viewportWidth },
+                    placement.panoramaViewport.copy(left=placement.panoramaViewport.left+placement.pointing.left,
+                        top=placement.panoramaViewport.top+placement.pointing.top))
                     else placement.sceneViewport()
                 SideEffect { if(skyPanoramaEnabled) skyPanoramaFrame=mapViewport else if(livePanoramic) globeMapFrame=mapViewport }
                 SpaceCompassGlobeView(snapshot,mapPose,{ value -> if(objectEnabled) updateObjectZoom(value.zoom) else if(skyPanoramaEnabled) updateSkyPanoramaPose(value) else if(livePanoramic) updateGlobeMapPose(value) else updateGlobePose(value) },dailyPathUiState,

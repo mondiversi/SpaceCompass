@@ -13,7 +13,7 @@
     <string name="tutorial_location" formatted="false">位置、標高、タイムゾーン、日付、時刻、時間の速さを変更します。</string>
     <string name="tutorial_guides" formatted="false">グリッド、数値、惑星の基準線を選び、適用を押します。</string>
     <string name="tutorial_forward" formatted="false">0–24は暦日全体、+24hは表示時刻から24時間を表示します。</string>
-    <string name="tutorial_camera" formatted="false">モードと表示を選んで「適用」をタップします。「閉じる」は現在の設定を保ちます。</string>
+    <string name="tutorial_camera" formatted="false">空、カメラ、地球を切り替えます。空と地球ではフレームとパノラマを選べます。</string>
     <string name="tutorial_weather" formatted="false">仮想の空とパノラマの天気効果を表示または非表示にします。</string>
     <string name="tutorial_axis" formatted="false">カメラ軸（90°）または端末の長軸（0°）を選びます。</string>
     <string name="tutorial_transparency" formatted="false">天体画像を半透明にしてカメラ映像と比較します。</string>

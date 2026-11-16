@@ -98,10 +98,11 @@ below-horizon border tint and a dashed connector, and do not make occluded marke
 pickable. This visual distinction does not change their astronomical coordinates.
 A complete-position capture uses the same light-azure geographic pin as the live
 Earth. Area/Hidden exports omit the precise pin entirely. Scene files preserve the
-canonical main-view label mode with a legacy Boolean for older readers. Tutorial
-previews select all five views and their three control sets through the same modal as the real view,
-without changing the real scene or starting the camera. Explanations follow the
-selected mode and the control actually touched.
+canonical main-view label mode with a legacy Boolean for older readers. The tutorial
+inherits the actual live mode and its matching controls. Every highlighted target only
+updates its explanation; no view/grid/label/zoom picker opens and no scene setting changes.
+The menu becomes the close control. A camera tutorial uses a safe preview without
+starting the real camera; leaving restores the previous request.
 The first-install main mode remains Panorama; an explicit saved Globe choice is retained.
 
 
@@ -157,8 +158,14 @@ independent of spherical tilt and zoom. At 1x, the map fits the viewport width
 while preserving its 2:1 proportions. Landscape panoramas use the complete scene
 width behind both expanded and compact panels; portrait panels and the compact
 footer still bound the viewport. Tall maps can be panned vertically to the poles,
-and short maps stay vertically centred. Resizing and rotation recompute the pan
-limit in rendered map pixels. The spherical view and frozen capture framing retain their existing behaviour.
+and short maps stay vertically centred. The optical frame uses equal clearance from
+the measured upper and lower control groups, rather than the full canvas height.
+Landscape width is preserved behind the panels while the optical centre follows the
+uncovered pointing column, including mirrored layouts. Background tiles cover the
+full scene. Entering either live panorama or rotating the device clears translation
+while preserving its independent zoom; dragging within that visit remains available.
+Resizing recomputes the pan limit in rendered map pixels. The spherical view and frozen
+capture framing retain their existing behaviour.
 
 Sky panoramas now share the Globe panorama width fit, viewport boundaries, 0.5–8x
 zoom and bounded vertical pan, while retaining their own saved pose and angular

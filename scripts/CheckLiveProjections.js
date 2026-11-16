@@ -60,3 +60,28 @@ context.globeScene.viewport=[0,0,1000,400];context.globeScene.pose=[0,0,1,0];
 context.globeScene.sky=true;near(context.globeFlatRect().w,1000);
 context.globeScene.sky=false;near(context.globeFlatRect().w,1000);
 console.log('Shared Globe/Sky panorama width fit passed.');
+
+// A panorama may span the full scene while its optical centre follows the uncovered column.
+for(const sky of [false,true])for(const zoom of [.5,1,1.25,2,8]) {
+ context.globeScene.sky=sky;context.globeScene.skyCenter=180;
+ for(const v of [[0,80,400,400],[-202.5,80,900,240],[202.5,80,900,240]]) {
+  context.globeScene.viewport=v;context.globeScene.pose=[0,0,zoom,0];
+  const rect=context.globeFlatRect();near(rect.x+rect.w/2,v[0]+v[2]/2);
+  near(rect.y+rect.h/2,v[1]+v[3]/2);
+  if(sky)near(context.globeFlatPoint([0,0,-1]).x,v[0]+v[2]/2);
+ }
+}
+console.log('Flat panorama optical alignment: equal control gaps, full-width inset columns, both hemispheres and retained zoom passed.');
+
+// At a reduced zoom, keep one centred map instead of repeating it across the entire scene.
+let flatClip=null;
+context.world={save(){},beginPath(){},rect(...r){flatClip=r},clip(){},restore(){},drawImage(){},fillRect(){},
+ createLinearGradient(){return {addColorStop(){}}}};
+context.globeImage=()=>null;context.globeMapEarth=()=>({});
+vm.runInContext(source.slice(source.indexOf('function drawGlobeFlatBackground('),source.indexOf('function drawGlobeFlatReticle(')),context);
+context.viewWidth=900;context.globeScene.viewport=[-200,80,900,240];
+for(const sky of [false,true])for(const zoom of [.5,.8,1,2,8]) {
+ context.globeScene.sky=sky;context.globeScene.pose=[0,0,zoom,0];context.drawGlobeFlatBackground();
+ const rect=context.globeFlatRect();near(flatClip[0],zoom>=1?0:rect.x);near(flatClip[2],zoom>=1?900:rect.w);
+}
+console.log('Panorama background: full-width panel coverage and a single reduced map passed.');

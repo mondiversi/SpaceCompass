@@ -13,7 +13,7 @@
     <string name="tutorial_location" formatted="false">自定义位置、海拔、时区、日期、时间和时间流速。</string>
     <string name="tutorial_guides" formatted="false">选择网格、数值和行星参考线，然后点按应用。</string>
     <string name="tutorial_forward" formatted="false">0–24显示整个日历日；+24h显示从当前显示时刻开始的24小时。</string>
-    <string name="tutorial_camera" formatted="false">选择模式和视图，然后点按应用。关闭会保留当前设置。</string>
+    <string name="tutorial_camera" formatted="false">切换天空、相机和地球。天空和地球提供取景与全景。</string>
     <string name="tutorial_weather" formatted="false">显示或隐藏模拟天空和全景中的天气效果。</string>
     <string name="tutorial_axis" formatted="false">选择相机轴（90°）或手机长轴（0°）。</string>
     <string name="tutorial_transparency" formatted="false">让天体图像更透明，以便与相机画面比较。</string>

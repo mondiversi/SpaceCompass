@@ -13,7 +13,7 @@
     <string name="tutorial_location" formatted="false">Настройте место, высоту, часовой пояс, дату, время и скорость времени.</string>
     <string name="tutorial_guides" formatted="false">Выберите сетку, нумерацию и линии планеты, затем нажмите Применить.</string>
     <string name="tutorial_forward" formatted="false">0–24 показывает календарный день; +24h — 24 часа от отображаемого момента.</string>
-    <string name="tutorial_camera" formatted="false">Выберите режим и вид, затем «Применить». «Закрыть» сохраняет текущие настройки.</string>
+    <string name="tutorial_camera" formatted="false">Переключайте Небо, Камеру и Глобус. Для Неба и Глобуса доступны Кадр и Панорама.</string>
     <string name="tutorial_weather" formatted="false">Покажите или скройте погоду на виртуальном небе и панорамах.</string>
     <string name="tutorial_axis" formatted="false">Выберите ось камеры (90°) или продольную ось телефона (0°).</string>
     <string name="tutorial_transparency" formatted="false">Сделайте объекты полупрозрачными для сравнения с камерой.</string>

@@ -103,7 +103,7 @@ internal fun SpaceCompassSunPointingViewport(
     showFloatingControls: Boolean = true,
     scenarioMomentLabel: String? = null,
     onToggleFloatingControls: (() -> Unit)? = null,
-    sceneContent: (@Composable (Modifier, List<SpaceCompassSunSceneFrame>,SpaceCompassSunSceneFrame,androidx.compose.ui.unit.Dp) -> Unit)? = null
+    sceneContent: (@Composable (Modifier, List<SpaceCompassSunSceneFrame>,SpaceCompassSunSceneFrame,androidx.compose.ui.unit.Dp,SpaceCompassSunSceneFrame) -> Unit)? = null
 ) {
     val timeAction = stringResource(if (timePaused) R.string.sky_time_resume else R.string.sky_time_pause)
     val controlsAction = stringResource(if (showFloatingControls) R.string.sky_controls_hide else R.string.sky_controls_show)
@@ -280,7 +280,17 @@ internal fun SpaceCompassSunPointingViewport(
             // so that this layout inset cannot leave the globe slightly above the screen centre.
             val fittedViewport=if(sideControls && opticalFrame!=null) globeViewport.copy(
                 top=opticalFrame.top+(opticalFrame.height-globeViewport.height)/2) else globeViewport
-            sceneContent(Modifier.fillMaxSize(),exclusions+titleTouchExclusions,fittedViewport,noteBottom)
+            // Panoramas use the measured clear band, not a full-height canvas centre.
+            val gap=sceneInset
+            val upper=if(showFloatingControls) maxOf(topStartActionsSize.height.toDouble(),
+                topEndActionsSize.height.toDouble(),
+                if(!sideControls&&centerActionsSize.height>0) with(density) { centerActionsTop.toPx().toDouble() }+centerActionsSize.height else 0.0,
+                scenarioMomentFrame?.let { it.top+it.height } ?: 0.0) else 0.0
+            val lower=if(showFloatingControls) minOf(height-bottomStartActionsSize.height,
+                height-bottomActionsSize.height,
+                if(!sideControls) height-bottomCenterLift-bottomCenterActionsSize.height else height) else height
+            val panoramaViewport=spaceCompassGlobeMapClearBand(width,height,upper,lower,gap)
+            sceneContent(Modifier.fillMaxSize(),exclusions+titleTouchExclusions,fittedViewport,noteBottom,panoramaViewport)
         }
         SpaceCompassSkyReferenceLayer(observerLatitude, timeMs, orientation.takeIf { compassReliable }, scenePerspective,
             guideExclusions, enabled = showSkyReferences && drawScene, observerAltitude = observerAltitude) {

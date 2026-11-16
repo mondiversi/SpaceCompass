@@ -13,7 +13,7 @@
     <string name="tutorial_location" formatted="false">Personnalisez le lieu, l’altitude, le fuseau, la date, l’heure et la vitesse du temps.</string>
     <string name="tutorial_guides" formatted="false">Choisis la grille, sa numérotation et les lignes planétaires, puis Appliquer.</string>
     <string name="tutorial_forward" formatted="false">0–24 montre la journée ; +24h montre les 24 heures à partir du moment affiché.</string>
-    <string name="tutorial_camera" formatted="false">Choisissez le mode et la vue, puis Appliquer. Fermer conserve vos choix actuels.</string>
+    <string name="tutorial_camera" formatted="false">Alternez Ciel, Appareil photo et Globe. Ciel et Globe proposent Cadrage et Panorama.</string>
     <string name="tutorial_weather" formatted="false">Affichez ou masquez la météo du ciel simulé et des panoramas.</string>
     <string name="tutorial_axis" formatted="false">Pointez selon l’axe de la caméra (90°) ou la longueur du téléphone (0°).</string>
     <string name="tutorial_transparency" formatted="false">Rendez les objets translucides pour les comparer à la caméra.</string>

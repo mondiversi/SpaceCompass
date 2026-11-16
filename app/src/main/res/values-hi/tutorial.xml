@@ -13,7 +13,7 @@
     <string name="tutorial_location" formatted="false">स्थान, ऊँचाई, समय क्षेत्र, तारीख, समय और समय की गति बदलें।</string>
     <string name="tutorial_guides" formatted="false">ग्रिड, संख्याएँ और ग्रह रेखाएँ चुनें, फिर लागू करें दबाएँ।</string>
     <string name="tutorial_forward" formatted="false">0–24 पूरा दिन दिखाता है; +24h दिख रहे समय से अगले 24 घंटे दिखाता है।</string>
-    <string name="tutorial_camera" formatted="false">मोड और व्यू चुनें, फिर लागू करें पर टैप करें। बंद करें मौजूदा विकल्प रखता है।</string>
+    <string name="tutorial_camera" formatted="false">आकाश, कैमरा और ग्लोब के बीच बदलें। आकाश और ग्लोब में फ़्रेम और पैनोरमा मिलते हैं।</string>
     <string name="tutorial_weather" formatted="false">सिमुलेटेड आकाश और पैनोरमा में मौसम दिखाएँ या छिपाएँ।</string>
     <string name="tutorial_axis" formatted="false">कैमरे का अक्ष (90°) या फ़ोन की लंबाई का अक्ष (0°) चुनें।</string>
     <string name="tutorial_transparency" formatted="false">कैमरे से मिलान के लिए पिंडों के चित्र पारदर्शी बनाएँ।</string>

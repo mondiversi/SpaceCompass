@@ -13,7 +13,7 @@
     <string name="tutorial_location" formatted="false">התאימו מיקום, גובה, אזור זמן, תאריך, שעה ומהירות זמן.</string>
     <string name="tutorial_guides" formatted="false">בחרו רשת, מספור וקווי כוכב לכת ולחצו על החל.</string>
     <string name="tutorial_forward" formatted="false">0–24 מציג יום שלם; +24h מציג 24 שעות מהרגע המוצג.</string>
-    <string name="tutorial_camera" formatted="false">בחרו מצב ותצוגה והקישו על החל. סגירה שומרת על ההגדרות הקיימות.</string>
+    <string name="tutorial_camera" formatted="false">החליפו בין שמיים, מצלמה וגלובוס. שמיים וגלובוס מציעים מסגרת ופנורמה.</string>
     <string name="tutorial_weather" formatted="false">הציגו או הסתירו מזג אוויר בשמיים המדומים ובפנורמות.</string>
     <string name="tutorial_axis" formatted="false">בחרו בציר המצלמה (90°) או בציר אורך הטלפון (0°).</string>
     <string name="tutorial_transparency" formatted="false">הפכו תמונות עצמים לשקופות חלקית להשוואה למצלמה.</string>

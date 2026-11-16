@@ -1,9 +1,9 @@
 <resources>
     <string name="info_news_title">Последние новости · %1$s</string>
-    <string name="info_news_star_sky" formatted="false">Исследуйте Глобус в режиме кадра с увеличением до 8×.</string>
-    <string name="info_news_texture_downloads" formatted="false">Земля использует все детали существующих дневных и ночных карт.</string>
-    <string name="info_news_weather" formatted="false">Интерактивный Глобус стал чётче на экранах с высокой плотностью пикселей.</string>
-    <string name="info_news_viewer_zoom" formatted="false">При перетаскивании детализация снижена и автоматически улучшается после остановки.</string>
-    <string name="info_news_settings" formatted="false">Вращение стало точнее при исследовании Глобуса с большим увеличением.</string>
-    <string name="info_news_catalog" formatted="false">Заставка Земли сохраняет лёгкую отрисовку для снижения энергопотребления.</string>
+    <string name="info_news_star_sky" formatted="false">Учебник следует активному виду Неба, Камеры или Глобуса.</string>
+    <string name="info_news_texture_downloads" formatted="false">Учебник объясняет элементы управления без открытия меню и всплывающих окон.</string>
+    <string name="info_news_weather" formatted="false">Текущий вид и масштаб сохраняются во время обучения.</string>
+    <string name="info_news_viewer_zoom" formatted="false">Панорамы Неба и Глобуса равномерно расположены между верхними и нижними кнопками.</string>
+    <string name="info_news_settings" formatted="false">Горизонтальные панорамы центрируются в свободной области, сохраняя полную ширину сцены.</string>
+    <string name="info_news_catalog" formatted="false">Открытие панорамы или поворот телефона центрирует вид без сброса масштаба.</string>
 </resources>

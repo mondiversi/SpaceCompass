@@ -1,9 +1,9 @@
 <resources>
     <string name="info_news_title">हाल के बदलाव · %1$s</string>
-    <string name="info_news_star_sky" formatted="false">फ़्रेम दृश्य में ग्लोब को 8× तक ज़ूम करके देखें।</string>
-    <string name="info_news_texture_downloads" formatted="false">पृथ्वी मौजूदा दिन और रात के मानचित्रों का पूरा विवरण इस्तेमाल करती है।</string>
-    <string name="info_news_weather" formatted="false">उच्च घनत्व वाली स्क्रीन पर लाइव ग्लोब अधिक स्पष्ट दिखता है।</string>
-    <string name="info_news_viewer_zoom" formatted="false">खींचते समय विवरण हल्का रहता है और रुकने पर अपने आप बेहतर हो जाता है।</string>
-    <string name="info_news_settings" formatted="false">ग्लोब को अधिक ज़ूम पर घुमाना अब अधिक सटीक है।</string>
-    <string name="info_news_catalog" formatted="false">ऊर्जा खपत सीमित रखने के लिए पृथ्वी का स्क्रीनसेवर हल्का चित्रण बनाए रखता है।</string>
+    <string name="info_news_star_sky" formatted="false">ट्यूटोरियल सक्रिय आकाश, कैमरा या ग्लोब दृश्य के अनुसार चलता है।</string>
+    <string name="info_news_texture_downloads" formatted="false">ट्यूटोरियल मेनू या पॉप-अप खोले बिना नियंत्रण समझाता है।</string>
+    <string name="info_news_weather" formatted="false">ट्यूटोरियल के दौरान मौजूदा दृश्य और ज़ूम बने रहते हैं।</string>
+    <string name="info_news_viewer_zoom" formatted="false">आकाश और ग्लोब के पैनोरमा ऊपर और नीचे के नियंत्रणों के बीच संतुलित रहते हैं।</string>
+    <string name="info_news_settings" formatted="false">लैंडस्केप में पैनोरमा दृश्य की पूरी चौड़ाई रखते हुए खाली क्षेत्र में केंद्रित होते हैं।</string>
+    <string name="info_news_catalog" formatted="false">पैनोरमा खोलने या फोन घुमाने पर ज़ूम रीसेट किए बिना दृश्य केंद्रित होता है।</string>
 </resources>

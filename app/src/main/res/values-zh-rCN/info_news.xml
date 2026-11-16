@@ -1,9 +1,9 @@
 <resources>
     <string name="info_news_title">最新变化 · %1$s</string>
-    <string name="info_news_star_sky" formatted="false">在取景模式中以最高8×缩放探索地球。</string>
-    <string name="info_news_texture_downloads" formatted="false">地球充分利用现有昼夜地图的全部细节。</string>
-    <string name="info_news_weather" formatted="false">实时地球在高像素密度屏幕上更加清晰。</string>
-    <string name="info_news_viewer_zoom" formatted="false">拖动时降低细节以保持轻量，停止后自动改善细节。</string>
-    <string name="info_news_settings" formatted="false">高倍率探索地球时，旋转更加精确。</string>
-    <string name="info_news_catalog" formatted="false">地球屏幕保护程序保留轻量绘制以降低能耗。</string>
+    <string name="info_news_star_sky" formatted="false">教程跟随当前使用的天空、相机或地球视图。</string>
+    <string name="info_news_texture_downloads" formatted="false">教程仅说明控件功能，不打开菜单或弹窗。</string>
+    <string name="info_news_weather" formatted="false">教程期间保留当前视图和缩放。</string>
+    <string name="info_news_viewer_zoom" formatted="false">天空和地球全景均匀居中于上下控件之间。</string>
+    <string name="info_news_settings" formatted="false">横屏全景在空闲显示区域内居中，同时保持整个场景的宽度。</string>
+    <string name="info_news_catalog" formatted="false">进入全景或旋转手机时重新居中，不重置缩放。</string>
 </resources>

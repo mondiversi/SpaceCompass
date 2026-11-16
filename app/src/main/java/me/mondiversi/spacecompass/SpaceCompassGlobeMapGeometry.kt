@@ -23,9 +23,31 @@ internal fun spaceCompassGlobeMapDrag(pose: SpaceCompassGlobePose, dx: Double, d
         latitude = base.latitude - dy / (mapWidth / 2) * PI), width, height)
 }
 
-/** Landscape panoramas span the scene behind panels; portrait panels still bound the map. */
+/** Enter a flat view centred without discarding the user's chosen magnification. */
+internal fun spaceCompassGlobeMapCenteredPose(value: SpaceCompassGlobePose): SpaceCompassGlobePose =
+    spaceCompassGlobeMapPose(value.copy(longitude=0.0,latitude=0.0))
+
+/** Symmetric breathing room within the measured upper/lower control gap. */
+internal fun spaceCompassGlobeMapClearBand(width: Double,height: Double,upper: Double,lower: Double,
+    gap: Double): SpaceCompassSunSceneFrame {
+    val top=upper.coerceIn(0.0,height)
+    val bottom=lower.coerceIn(top,height)
+    val inset=gap.coerceIn(0.0,((bottom-top-1.0)/2).coerceAtLeast(0.0))
+    return SpaceCompassSunSceneFrame(0.0,top+inset,width,(bottom-top-inset*2).coerceAtLeast(1.0))
+}
+
+/** Preserve full-scene panoramic width while centring on the unobstructed pointing area. */
 internal fun spaceCompassGlobeMapViewport(pointing: SpaceCompassSunSceneFrame, sceneWidth: Double,
-    sceneHeight: Double, gutter: Double, footerTop: Double? = null): SpaceCompassSunSceneFrame {
+    sceneHeight: Double, gutter: Double, footerTop: Double? = null,
+    optical: SpaceCompassSunSceneFrame? = null): SpaceCompassSunSceneFrame {
+    if(optical!=null) {
+        val fitWidth=if(sceneWidth>sceneHeight) sceneWidth else
+            (min(sceneWidth,pointing.left+pointing.width+gutter)-max(0.0,pointing.left-gutter)).coerceAtLeast(1.0)
+        val bottom=min(optical.top+optical.height,footerTop?.minus(gutter) ?: sceneHeight)
+        val centreX=if(sceneWidth>sceneHeight) optical.left+optical.width/2 else sceneWidth/2
+        return SpaceCompassSunSceneFrame(centreX-fitWidth/2,optical.top,
+            fitWidth,(bottom-optical.top).coerceAtLeast(1.0))
+    }
     if (sceneWidth > sceneHeight) return SpaceCompassSunSceneFrame(0.0, 0.0, sceneWidth, sceneHeight)
     val left = (pointing.left - gutter).coerceAtLeast(0.0)
     val right = (pointing.left + pointing.width + gutter).coerceAtMost(sceneWidth)

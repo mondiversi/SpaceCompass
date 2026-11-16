@@ -13,7 +13,7 @@
     <string name="tutorial_location" formatted="false">Esplora un’altra posizione, quota, fuso orario, data o ora e regola lo scorrere del tempo.</string>
     <string name="tutorial_guides" formatted="false">Scegli griglia, numerazione e linee del pianeta, poi premi Applica.</string>
     <string name="tutorial_forward" formatted="false">0–24 mostra la giornata; +24h le 24 ore dal momento visualizzato.</string>
-    <string name="tutorial_camera" formatted="false">Scegli modalità e vista, poi Applica. Chiudi lascia tutto invariato.</string>
+    <string name="tutorial_camera" formatted="false">Alterna Cielo, Fotocamera e Mappamondo. Per Cielo e Mappamondo scegli Inquadratura o Panoramica.</string>
     <string name="tutorial_weather" formatted="false">Mostra o nascondi gli effetti meteo nel cielo simulato e nelle panoramiche.</string>
     <string name="tutorial_axis" formatted="false">Scegli l’asse della fotocamera (90°) o la lunghezza del telefono (0°) per puntare il cielo.</string>
     <string name="tutorial_transparency" formatted="false">Rendi le immagini degli oggetti più traslucide per confrontarle con l’inquadratura reale.</string>

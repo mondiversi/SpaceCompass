@@ -13,7 +13,7 @@
     <string name="tutorial_location" formatted="false">Sesuaikan lokasi, ketinggian, zona waktu, tanggal, jam dan kecepatan waktu.</string>
     <string name="tutorial_guides" formatted="false">Pilih kisi, angka dan garis planet, lalu ketuk Terapkan.</string>
     <string name="tutorial_forward" formatted="false">0–24 menampilkan satu hari; +24h menampilkan 24 jam dari waktu yang ditampilkan.</string>
-    <string name="tutorial_camera" formatted="false">Pilih mode dan tampilan, lalu Terapkan. Tutup mempertahankan pilihan saat ini.</string>
+    <string name="tutorial_camera" formatted="false">Beralih antara Langit, Kamera, dan Globe. Langit dan Globe menyediakan Bingkai dan Panorama.</string>
     <string name="tutorial_weather" formatted="false">Tampilkan atau sembunyikan cuaca di langit simulasi dan panorama.</string>
     <string name="tutorial_axis" formatted="false">Pilih sumbu kamera (90°) atau panjang ponsel (0°).</string>
     <string name="tutorial_transparency" formatted="false">Buat gambar objek lebih transparan untuk membandingkan dengan kamera.</string>

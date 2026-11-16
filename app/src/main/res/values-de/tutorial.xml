@@ -13,7 +13,7 @@
     <string name="tutorial_location" formatted="false">Passe Ort, Höhe, Zeitzone, Datum, Uhrzeit und Zeitgeschwindigkeit an.</string>
     <string name="tutorial_guides" formatted="false">Wähle Gitter, Beschriftung und Planetenlinien und tippe auf Anwenden.</string>
     <string name="tutorial_forward" formatted="false">0–24 zeigt den Kalendertag; +24h zeigt 24 Stunden ab dem angezeigten Zeitpunkt.</string>
-    <string name="tutorial_camera" formatted="false">Wähle Modus und Ansicht, dann Anwenden. Schließen behält die bisherigen Einstellungen.</string>
+    <string name="tutorial_camera" formatted="false">Wechsle zwischen Himmel, Kamera und Globus. Himmel und Globus bieten Bildausschnitt und Panorama.</string>
     <string name="tutorial_weather" formatted="false">Zeige oder verberge Wettereffekte im simulierten Himmel und in Panoramen.</string>
     <string name="tutorial_axis" formatted="false">Wähle Kameraachse (90°) oder Telefonlängsachse (0°).</string>
     <string name="tutorial_transparency" formatted="false">Mache Objektbilder durchscheinend, um sie mit dem Kamerabild zu vergleichen.</string>

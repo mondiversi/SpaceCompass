@@ -13,7 +13,7 @@
     <string name="tutorial_location" formatted="false">خصّص الموقع والارتفاع والمنطقة الزمنية والتاريخ والوقت وسرعة الزمن.</string>
     <string name="tutorial_guides" formatted="false">اختر الشبكة وأرقامها وخطوط الكوكب، ثم اضغط تطبيق.</string>
     <string name="tutorial_forward" formatted="false">يعرض 0–24 اليوم الكامل، و+24h الساعات الأربع والعشرين من الوقت المعروض.</string>
-    <string name="tutorial_camera" formatted="false">اختر الوضع والعرض ثم اضغط تطبيق. إغلاق يُبقي الخيارات الحالية.</string>
+    <string name="tutorial_camera" formatted="false">بدّل بين السماء والكاميرا والكرة الأرضية. توفر السماء والكرة الأرضية عرض الإطار والبانوراما.</string>
     <string name="tutorial_weather" formatted="false">أظهر أو أخفِ الطقس في السماء المحاكاة والبانوراما.</string>
     <string name="tutorial_axis" formatted="false">اختر محور الكاميرا (90°) أو طول الهاتف (0°).</string>
     <string name="tutorial_transparency" formatted="false">اجعل صور الأجسام شبه شفافة لمقارنتها بالكاميرا.</string>

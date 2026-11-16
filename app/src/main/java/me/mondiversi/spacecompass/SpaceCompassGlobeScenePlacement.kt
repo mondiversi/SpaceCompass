@@ -6,7 +6,8 @@ internal data class SpaceCompassGlobeScenePlacement(
     val viewport: SpaceCompassSunSceneFrame,
     val exclusions: List<SpaceCompassSunSceneFrame>,
     val noteBottomPixels: Double,
-    val showDirectionNote: Boolean
+    val showDirectionNote: Boolean,
+    val panoramaViewport: SpaceCompassSunSceneFrame = viewport
 ) {
     fun sceneViewport() = viewport.copy(left=viewport.left+pointing.left,top=viewport.top+pointing.top)
 

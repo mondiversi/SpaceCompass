@@ -1,9 +1,9 @@
 <resources>
     <string name="info_news_title">Son yenilikler · %1$s</string>
-    <string name="info_news_star_sky" formatted="false">Küreyi çerçeve görünümünde 8× yakınlaştırmaya kadar keşfedin.</string>
-    <string name="info_news_texture_downloads" formatted="false">Dünya, mevcut gündüz ve gece haritalarının tüm ayrıntılarını kullanır.</string>
-    <string name="info_news_weather" formatted="false">Canlı Küre, yüksek yoğunluklu ekranlarda daha keskin görünür.</string>
-    <string name="info_news_viewer_zoom" formatted="false">Sürüklerken ayrıntı hafifletilir ve durduğunuzda otomatik olarak iyileşir.</string>
-    <string name="info_news_settings" formatted="false">Küreyi yüksek yakınlaştırmada keşfederken döndürme daha hassastır.</string>
-    <string name="info_news_catalog" formatted="false">Dünya ekran koruyucusu tüketimi sınırlamak için hafif çizimini korur.</string>
+    <string name="info_news_star_sky" formatted="false">Öğretici, etkin Gökyüzü, Kamera veya Küre görünümünü izler.</string>
+    <string name="info_news_texture_downloads" formatted="false">Öğretici, menü veya açılır pencere açmadan kontrolleri açıklar.</string>
+    <string name="info_news_weather" formatted="false">Öğretici sırasında mevcut görünüm ve yakınlaştırma korunur.</string>
+    <string name="info_news_viewer_zoom" formatted="false">Gökyüzü ve Küre panoramaları üst ve alt kontroller arasında dengeli yerleşir.</string>
+    <string name="info_news_settings" formatted="false">Yatay panoramalar, tam sahne genişliğini koruyarak boş görüntüleme alanında ortalanır.</string>
+    <string name="info_news_catalog" formatted="false">Panorama açmak veya telefonu döndürmek, yakınlaştırmayı sıfırlamadan görünümü ortalar.</string>
 </resources>

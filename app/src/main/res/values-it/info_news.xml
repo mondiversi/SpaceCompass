@@ -1,9 +1,9 @@
 <resources>
     <string name="info_news_title">Ultime novità · %1$s</string>
-    <string name="info_news_star_sky" formatted="false">Esplora il Mappamondo inquadratura con uno zoom fino a 8×.</string>
-    <string name="info_news_texture_downloads" formatted="false">La Terra sfrutta tutto il dettaglio delle mappe giorno e notte già presenti.</string>
-    <string name="info_news_weather" formatted="false">Il Mappamondo nella vista principale è più nitido sugli schermi ad alta densità.</string>
-    <string name="info_news_viewer_zoom" formatted="false">Il dettaglio si alleggerisce mentre trascini e aumenta automaticamente quando ti fermi.</string>
-    <string name="info_news_settings" formatted="false">La rotazione del Mappamondo è più precisa quando usi ingrandimenti elevati.</string>
-    <string name="info_news_catalog" formatted="false">Il salvaschermo mantiene il disegno leggero per contenere i consumi.</string>
+    <string name="info_news_star_sky" formatted="false">Il tutorial segue la vista Cielo, Fotocamera o Mappamondo in uso.</string>
+    <string name="info_news_texture_downloads" formatted="false">Il tutorial spiega i comandi senza aprire menu o pop-up.</string>
+    <string name="info_news_weather" formatted="false">La vista e lo zoom attuali vengono mantenuti durante il tutorial.</string>
+    <string name="info_news_viewer_zoom" formatted="false">Le panoramiche di Cielo e Mappamondo sono bilanciate fra i comandi superiori e inferiori.</string>
+    <string name="info_news_settings" formatted="false">In orizzontale le panoramiche si centrano nell’area libera mantenendo la larghezza della scena.</string>
+    <string name="info_news_catalog" formatted="false">Entrare in panoramica o ruotare il telefono ricentra la vista senza azzerare lo zoom.</string>
 </resources>

@@ -13,7 +13,7 @@
     <string name="tutorial_location" formatted="false">Konumu, yüksekliği, saat dilimini, tarihi, saati ve zaman hızını özelleştirin.</string>
     <string name="tutorial_guides" formatted="false">Izgarayı, numaraları ve gezegen çizgilerini seçip Uygula’ya dokun.</string>
     <string name="tutorial_forward" formatted="false">0–24 takvim gününü, +24h gösterilen andan itibaren 24 saati gösterir.</string>
-    <string name="tutorial_camera" formatted="false">Modu ve görünümü seçip Uygula’ya dokunun. Kapat mevcut seçimleri korur.</string>
+    <string name="tutorial_camera" formatted="false">Gökyüzü, Kamera ve Küre arasında geçiş yapın. Gökyüzü ve Küre, Çerçeve ve Panorama sunar.</string>
     <string name="tutorial_weather" formatted="false">Sanal gökyüzü ve panoramalardaki hava efektlerini gösterin veya gizleyin.</string>
     <string name="tutorial_axis" formatted="false">Kamera eksenini (90°) veya telefonun uzunluk eksenini (0°) seçin.</string>
     <string name="tutorial_transparency" formatted="false">Kamera görüntüsüyle karşılaştırmak için nesneleri yarı saydam yapın.</string>

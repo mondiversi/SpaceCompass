@@ -13,7 +13,7 @@
     <string name="tutorial_location" formatted="false">Weka eneo, kimo, ukanda wa saa, tarehe, saa na kasi ya muda.</string>
     <string name="tutorial_guides" formatted="false">Chagua gridi, namba na mistari ya sayari, kisha Gusa Tumia.</string>
     <string name="tutorial_forward" formatted="false">0–24 huonyesha siku nzima; +24h huonyesha saa 24 kuanzia wakati unaoonyeshwa.</string>
-    <string name="tutorial_camera" formatted="false">Chagua hali na mwonekano, kisha Tekeleza. Funga huhifadhi chaguo za sasa.</string>
+    <string name="tutorial_camera" formatted="false">Badili kati ya Anga, Kamera na Globu. Anga na Globu zina Fremu na Panorama.</string>
     <string name="tutorial_weather" formatted="false">Onyesha au ficha hali ya hewa kwenye anga la kuigwa na panorama.</string>
     <string name="tutorial_axis" formatted="false">Chagua mhimili wa kamera (90°) au urefu wa simu (0°).</string>
     <string name="tutorial_transparency" formatted="false">Fanya picha za vitu zipitishe mwanga ili kulinganisha na kamera.</string>

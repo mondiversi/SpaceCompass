@@ -8,8 +8,8 @@ paths, inspect reference facts and view textured models. Space Compass is a stan
 
 ## Download and install
 
-Download **space-compass-1.10.2.apk** from the
-[Space Compass 1.10.2 release](https://github.com/mondiversi/SpaceCompass/releases/tag/v1.10.2).
+Download **space-compass-1.10.3.apk** from the
+[Space Compass 1.10.3 release](https://github.com/mondiversi/SpaceCompass/releases/tag/v1.10.3).
 Android 8.0 or newer is required. Open the APK and follow Android's installation
 prompts; allow installation for your browser or file manager if requested.
 
@@ -112,7 +112,7 @@ See Space Compass in portrait and landscape, by day and by night. These English 
 - **Browse 9,999 objects.** Discover planets, moons, stars, constellations, galaxies, spacecraft and more. Search, filter and sort the catalogue, mark favourites and choose what appears in your sky.
 - **Take a closer look in the Observatory.** Explore images and interactive models, lunar phases, object facts and spatial context. Compare estimated travel times at different speeds, from walking to light speed and fictional warp speeds.
 - **Add reference points.** Show celestial guide lines, the poles, zenith and nadir, or display the opposite directions of your selected points with Antipodes.
-- **Make it comfortable to use.** Choose light or dark mode, your preferred units and one of twenty interface languages. Follow the built-in tutorial, adjust sky smoothness, enjoy optional ambient music or relax with the animated Earth screensaver, which pauses live tracking while active. Drag the globe to explore; after ten idle seconds it returns smoothly to its normal rotation. Double-tap to return to the app.
+- **Make it comfortable to use.** Choose light or dark mode, your preferred units and one of twenty interface languages. Follow the built-in tutorial, which explains the controls of your current view without opening other windows, adjust sky smoothness, enjoy optional ambient music or relax with the animated Earth screensaver, which pauses live tracking while active. Drag the globe to explore; after ten idle seconds it returns smoothly to its normal rotation. Double-tap to return to the app.
 
 Sun, Moon and major-planet calculations work offline, and downloaded images stay
 available on your device. Weather, satellites and some other objects need online
@@ -125,7 +125,7 @@ safety or navigation instrument.
 ## Build and checks
 
 The application ID is `me.mondiversi.spacecompass`. This source builds version
-**1.10.2**, with Android/update identity `1.10.2` and version code **81**.
+**1.10.3**, with Android/update identity `1.10.3` and version code **82**.
 This preserves the three-part update protocol used by existing preview installations.
 The app stores its preferences and caches privately.
 
@@ -183,7 +183,7 @@ Capture the visible frame in **Sky** or **Globe**, or switch to a complete panor
 
 ## Data and graphics packages
 
-Release 1.10.2 includes **9,999 selectable objects**, and an optional reference-information archive.
+Release 1.10.3 includes **9,999 selectable objects**, and an optional reference-information archive.
 All descriptive data and translations remain inside the APK. Scientific limits and provenance are in the
 [catalogue sources](docs/CATALOG_9999.md) and [canonical source catalogue](catalogue/README.md).
 

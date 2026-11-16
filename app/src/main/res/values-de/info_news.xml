@@ -1,9 +1,9 @@
 <resources>
     <string name="info_news_title">Neuigkeiten · %1$s</string>
-    <string name="info_news_star_sky" formatted="false">Erkunde den Globus im Bildausschnitt mit bis zu 8× Zoom.</string>
-    <string name="info_news_texture_downloads" formatted="false">Die Erde nutzt alle Details der vorhandenen Tag- und Nachtkarten.</string>
-    <string name="info_news_weather" formatted="false">Der interaktive Globus ist auf hochauflösenden Displays schärfer.</string>
-    <string name="info_news_viewer_zoom" formatted="false">Beim Ziehen werden weniger Details dargestellt; beim Anhalten werden sie automatisch verfeinert.</string>
-    <string name="info_news_settings" formatted="false">Die Drehung ist bei starker Vergrößerung des Globus präziser.</string>
-    <string name="info_news_catalog" formatted="false">Der Erd-Bildschirmschoner behält seine sparsame Darstellung bei.</string>
+    <string name="info_news_star_sky" formatted="false">Die Anleitung folgt der aktiven Himmel-, Kamera- oder Globusansicht.</string>
+    <string name="info_news_texture_downloads" formatted="false">Die Anleitung erklärt Bedienelemente, ohne Menüs oder Dialoge zu öffnen.</string>
+    <string name="info_news_weather" formatted="false">Die aktuelle Ansicht und der Zoom bleiben während der Anleitung erhalten.</string>
+    <string name="info_news_viewer_zoom" formatted="false">Himmel- und Globuspanoramen liegen gleichmäßig zwischen oberen und unteren Bedienelementen.</string>
+    <string name="info_news_settings" formatted="false">Querformatpanoramen zentrieren sich im freien Sichtbereich und behalten die volle Szenenbreite.</string>
+    <string name="info_news_catalog" formatted="false">Beim Öffnen eines Panoramas oder Drehen des Telefons wird die Ansicht ohne Zoomverlust zentriert.</string>
 </resources>

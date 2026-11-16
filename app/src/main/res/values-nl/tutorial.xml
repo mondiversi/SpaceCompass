@@ -13,7 +13,7 @@
     <string name="tutorial_location" formatted="false">Pas positie, hoogte, tijdzone, datum, tijd en tijdsnelheid aan.</string>
     <string name="tutorial_guides" formatted="false">Kies raster, nummering en planeetlijnen en tik op Toepassen.</string>
     <string name="tutorial_forward" formatted="false">0–24 toont de kalenderdag; +24h toont 24 uur vanaf het weergegeven tijdstip.</string>
-    <string name="tutorial_camera" formatted="false">Kies een modus en weergave en tik op Toepassen. Sluiten behoudt de huidige keuzes.</string>
+    <string name="tutorial_camera" formatted="false">Wissel tussen Hemel, Camera en Globe. Hemel en Globe bieden Kader en Panorama.</string>
     <string name="tutorial_weather" formatted="false">Toon of verberg weer in de gesimuleerde hemel en panorama’s.</string>
     <string name="tutorial_axis" formatted="false">Kies de camera-as (90°) of de lengteas van de telefoon (0°).</string>
     <string name="tutorial_transparency" formatted="false">Maak objectafbeeldingen doorschijnend om ze met de camera te vergelijken.</string>

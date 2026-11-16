@@ -1,9 +1,9 @@
 <resources>
     <string name="info_news_title">最近の変更 · %1$s</string>
-    <string name="info_news_star_sky" formatted="false">フレーム表示の地球を最大8×のズームで探索できます。</string>
-    <string name="info_news_texture_downloads" formatted="false">既存の昼と夜の地図の細部をすべて活用します。</string>
-    <string name="info_news_weather" formatted="false">高密度ディスプレイでライブ地球がより鮮明になります。</string>
-    <string name="info_news_viewer_zoom" formatted="false">ドラッグ中は描画を軽くし、止めると自動的に細部を改善します。</string>
-    <string name="info_news_settings" formatted="false">高倍率で地球を探索するときの回転がより正確になります。</string>
-    <string name="info_news_catalog" formatted="false">地球のスクリーンセーバーは消費電力を抑える軽量描画を維持します。</string>
+    <string name="info_news_star_sky" formatted="false">チュートリアルは使用中の空、カメラ、地球の表示に合わせて動作します。</string>
+    <string name="info_news_texture_downloads" formatted="false">チュートリアルはメニューやポップアップを開かずに操作を説明します。</string>
+    <string name="info_news_weather" formatted="false">チュートリアル中も現在の表示とズームが維持されます。</string>
+    <string name="info_news_viewer_zoom" formatted="false">空と地球のパノラマが上下の操作ボタンの間に均等に配置されます。</string>
+    <string name="info_news_settings" formatted="false">横画面のパノラマはシーン全幅を保ちながら空いている表示領域の中央に配置されます。</string>
+    <string name="info_news_catalog" formatted="false">パノラマを開いたときや端末を回転したとき、ズームをリセットせずに表示を中央に戻します。</string>
 </resources>

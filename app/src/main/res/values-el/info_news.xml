@@ -1,9 +1,9 @@
 <resources>
     <string name="info_news_title">Τελευταία νέα · %1$s</string>
-    <string name="info_news_star_sky" formatted="false">Εξερευνήστε την Υδρόγειο σε προβολή κάδρου με ζουμ έως 8×.</string>
-    <string name="info_news_texture_downloads" formatted="false">Η Γη αξιοποιεί όλες τις λεπτομέρειες των υπαρχόντων χαρτών ημέρας και νύχτας.</string>
-    <string name="info_news_weather" formatted="false">Η ζωντανή Υδρόγειος είναι πιο ευκρινής σε οθόνες υψηλής πυκνότητας.</string>
-    <string name="info_news_viewer_zoom" formatted="false">Η λεπτομέρεια μειώνεται κατά τη μεταφορά και βελτιώνεται αυτόματα όταν σταματάτε.</string>
-    <string name="info_news_settings" formatted="false">Η περιστροφή είναι ακριβέστερη όταν εξερευνάτε την Υδρόγειο με υψηλό ζουμ.</string>
-    <string name="info_news_catalog" formatted="false">Η προφύλαξη οθόνης της Γης διατηρεί την ελαφριά σχεδίαση για περιορισμό της κατανάλωσης.</string>
+    <string name="info_news_star_sky" formatted="false">Το μάθημα ακολουθεί την ενεργή προβολή Ουρανού, Κάμερας ή Υδρογείου.</string>
+    <string name="info_news_texture_downloads" formatted="false">Το μάθημα εξηγεί τα χειριστήρια χωρίς να ανοίγει μενού ή αναδυόμενα παράθυρα.</string>
+    <string name="info_news_weather" formatted="false">Η τρέχουσα προβολή και το ζουμ διατηρούνται κατά το μάθημα.</string>
+    <string name="info_news_viewer_zoom" formatted="false">Τα πανοράματα Ουρανού και Υδρογείου ισορροπούν ανάμεσα στα πάνω και κάτω χειριστήρια.</string>
+    <string name="info_news_settings" formatted="false">Σε οριζόντια προβολή τα πανοράματα κεντράρονται στην ελεύθερη περιοχή, διατηρώντας όλο το πλάτος της σκηνής.</string>
+    <string name="info_news_catalog" formatted="false">Η είσοδος σε πανόραμα ή η περιστροφή του τηλεφώνου κεντράρει την προβολή χωρίς επαναφορά του ζουμ.</string>
 </resources>

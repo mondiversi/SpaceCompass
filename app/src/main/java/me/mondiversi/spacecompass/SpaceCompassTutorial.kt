@@ -70,7 +70,7 @@ internal class SpaceCompassTutorialState(activeState: MutableState<Boolean>, wel
         private set
     var panoramaPreview by panoramaPreviewState
         private set
-    var modeMenuOpen by mutableStateOf(false)
+    var liveMode by mutableStateOf(SpaceCompassViewMode.PANORAMA)
         private set
     var objectPreview by mutableStateOf(false)
         private set
@@ -86,24 +86,21 @@ internal class SpaceCompassTutorialState(activeState: MutableState<Boolean>, wel
         cameraPreview=mode==SpaceCompassViewMode.CAMERA
         globePreview=mode.globe
         panoramaPreview=mode.panoramic
-        modeMenuOpen=false
     }
-    fun dismissModeMenu() { modeMenuOpen=false }
-    var gridMenuOpen by mutableStateOf(false)
-        private set
-    fun dismissGridMenu() { gridMenuOpen = false }
+    fun observeMode(mode: SpaceCompassViewMode) {
+        liveMode=spaceCompassAvailableViewMode(mode)
+        if(active) chooseMode(liveMode)
+    }
     var skyViewport by mutableStateOf<Rect?>(null)
     val targets = mutableStateMapOf<Any, SpaceCompassTutorialTarget>()
-    fun start() { targets.clear(); skyViewport = null; cameraPreview = false; objectPreview=false; globePreview = false; panoramaPreview=false; modeMenuOpen=false; gridMenuOpen=false; active = true }
-    fun close() { active = false; cameraPreview = false; objectPreview=false; globePreview = false; panoramaPreview=false; modeMenuOpen=false; gridMenuOpen=false; targets.clear(); skyViewport = null }
+    fun start() {
+        targets.clear(); skyViewport=null; active=true; chooseMode(liveMode)
+    }
+    fun close() { active = false; cameraPreview = false; objectPreview=false; globePreview = false; panoramaPreview=false; targets.clear(); skyViewport = null }
     fun explore(feature: SpaceCompassTutorialFeature) {
         if (!active) return
-        when (feature) {
-            SpaceCompassTutorialFeature.MENU -> close()
-            SpaceCompassTutorialFeature.CAMERA -> modeMenuOpen=true
-            SpaceCompassTutorialFeature.GUIDES -> gridMenuOpen=true
-            else -> Unit
-        }
+        // Every target only explains its function; the close control is the sole action.
+        if(feature==SpaceCompassTutorialFeature.MENU) close()
     }
 }
 internal val LocalSpaceCompassTutorial = staticCompositionLocalOf<SpaceCompassTutorialState?> { null }
@@ -180,11 +177,8 @@ private fun SpaceCompassTutorialOverlay(state: SpaceCompassTutorialState) {
     // A visible antipode marker shares the feature, but the button owns its current title.
     fun titleResource(feature: SpaceCompassTutorialFeature): Int =
         targets.firstOrNull { it.feature == feature && !it.point }?.title ?: feature.title
-    val explainingMode=selected==SpaceCompassTutorialFeature.CAMERA&&!state.modeMenuOpen
-    val title = stringResource(if(explainingMode) state.previewMode.labelResource
-        else selected?.let(::titleResource) ?: R.string.tutorial_title)
-    val description = stringResource(if(explainingMode) state.previewMode.tutorialDescriptionResource
-        else selected?.description ?: R.string.tutorial_instruction)
+    val title = stringResource(selected?.let(::titleResource) ?: R.string.tutorial_title)
+    val description = stringResource(selected?.description ?: R.string.tutorial_instruction)
     val close = stringResource(R.string.close)
     fun explain(feature: SpaceCompassTutorialFeature) {
         state.explore(feature)
@@ -276,15 +270,6 @@ private fun SpaceCompassTutorialOverlay(state: SpaceCompassTutorialState) {
             fixedHeight = if (height > 0) height else minOf(maximumHeight,
                 (sky.height - with(density) { 16.dp.toPx() }).coerceAtLeast(0f))
             fixedArea = if (height > 0) area else sky
-        }
-        // Tutorial choices are isolated; Apply demonstrates the dialog without editing the live view.
-        SpaceCompassGridReferencesDialog(state.gridMenuOpen, true, false, false, state::dismissGridMenu) { _, _, _ ->
-            state.dismissGridMenu()
-            selected = SpaceCompassTutorialFeature.GUIDES
-        }
-        SpaceCompassViewModeDialog(state.modeMenuOpen,state.previewMode,state::dismissModeMenu) { mode, _ ->
-            state.chooseMode(mode)
-            selected=SpaceCompassTutorialFeature.CAMERA
         }
         val area = fixedArea ?: return@BoxWithConstraints
         val width = minOf(360.dp, (with(density) { area.width.toDp() } - 16.dp).coerceAtLeast(1.dp))
