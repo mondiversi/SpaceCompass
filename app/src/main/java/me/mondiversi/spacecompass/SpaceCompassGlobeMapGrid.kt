@@ -8,12 +8,13 @@ import android.graphics.Paint
 internal fun drawSpaceCompassGlobeMapGrid(canvas: Canvas, width: Int, height: Int,
     snapshot: SpaceCompassPanoramaSnapshot): List<SpaceCompassSunSceneFrame> {
     val scale = width / 4096f
+    val gridPalette=spaceCompassGridPalette(snapshot)
     val paint = Paint(Paint.ANTI_ALIAS_FLAG)
     fun line(x1: Float, y1: Float, x2: Float, y2: Float, major: Boolean) {
         val thickness = SpaceCompassAngularGridAppearance.lineWidth(width,height) * if(major) 1.5f else 1f
-        paint.color = SpaceCompassAngularGridAppearance.shadowArgb; paint.strokeWidth = thickness * 2
+        paint.color = gridPalette.shadowArgb; paint.strokeWidth = thickness * 2
         canvas.drawLine(x1,y1,x2,y2,paint)
-        paint.color = if(major) SpaceCompassAngularGridAppearance.majorArgb else SpaceCompassAngularGridAppearance.lineArgb
+        paint.color = if(major) gridPalette.majorArgb else gridPalette.lineArgb
         paint.strokeWidth = thickness; canvas.drawLine(x1,y1,x2,y2,paint)
     }
     for (longitude in -180..180 step 15) {

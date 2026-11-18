@@ -1,9 +1,9 @@
 <resources>
     <string name="info_news_title">Neuigkeiten · %1$s</string>
-    <string name="info_news_star_sky" formatted="false">Die Anleitung folgt der aktiven Himmel-, Kamera- oder Globusansicht.</string>
-    <string name="info_news_texture_downloads" formatted="false">Die Anleitung erklärt Bedienelemente, ohne Menüs oder Dialoge zu öffnen.</string>
-    <string name="info_news_weather" formatted="false">Die aktuelle Ansicht und der Zoom bleiben während der Anleitung erhalten.</string>
-    <string name="info_news_viewer_zoom" formatted="false">Himmel- und Globuspanoramen liegen gleichmäßig zwischen oberen und unteren Bedienelementen.</string>
-    <string name="info_news_settings" formatted="false">Querformatpanoramen zentrieren sich im freien Sichtbereich und behalten die volle Szenenbreite.</string>
-    <string name="info_news_catalog" formatted="false">Beim Öffnen eines Panoramas oder Drehen des Telefons wird die Ansicht ohne Zoomverlust zentriert.</string>
+    <string name="info_news_star_sky" formatted="false">Die Grautöne des Gitters folgen der Sonne am gewählten Ort und Zeitpunkt.</string>
+    <string name="info_news_texture_downloads" formatted="false">Morgendämmerung, Tag und Abenddämmerung nutzen Tagesgrau; nachts gilt ein eigener Grauton.</string>
+    <string name="info_news_weather" formatted="false">Die Gitterdeckkraft lässt sich schrittweise einstellen: jeweils 10%.</string>
+    <string name="info_news_viewer_zoom" formatted="false">Das Gitter startet aktiv mit 80%; Zahlen und Planetenlinien sind anfangs aus.</string>
+    <string name="info_news_settings" formatted="false">Aufnahmen übernehmen die Gittereinstellungen; Vorschauänderungen gelten nur für dieses Bild.</string>
+    <string name="info_news_catalog" formatted="false">Gittereinstellungen bleiben gespeichert und werden mit exportierten Szenen geteilt.</string>
 </resources>

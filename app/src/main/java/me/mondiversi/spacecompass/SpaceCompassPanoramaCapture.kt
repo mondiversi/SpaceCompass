@@ -40,7 +40,8 @@ internal fun rememberSpaceCompassPanoramaAction(timeMs: Long, latitude: Double?,
     globe: SpaceCompassGlobeCapture? = null, skyFraming: SpaceCompassSkyFraming? = null,
     initialProjection: SpaceCompassCaptureProjection? = null,
     liveLabelMode: SpaceCompassPanoramaLabelMode? = null,
-    showGrid: Boolean = SPACE_COMPASS_MAIN_GRID_DEFAULT, showGridNumbers: Boolean = SPACE_COMPASS_GRID_NUMBERS_DEFAULT): SpaceCompassPanoramaAction {
+    showGrid: Boolean = SPACE_COMPASS_MAIN_GRID_DEFAULT, showGridNumbers: Boolean = SPACE_COMPASS_GRID_NUMBERS_DEFAULT,
+    gridOpacityPercent: Int = SPACE_COMPASS_GRID_OPACITY_DEFAULT): SpaceCompassPanoramaAction {
     val comparisonOverlays = LocalSpaceCompassComparisonOverlays.current
     val selectionTint = MaterialTheme.colorScheme.primary.toArgb()
     val context = LocalContext.current
@@ -102,7 +103,7 @@ internal fun rememberSpaceCompassPanoramaAction(timeMs: Long, latitude: Double?,
                     selectedPoints = selectedPoints.toList(), showAntipodes = showAntipodes, selectionTint = selectionTint, zoneId = observationZone.id,
                     activeBody = activeBody?.takeIf { it in bodies },forward24Hours = forward24Hours, activeComparisonId = activeComparisonId,
                     globe = globe, globeLocationVisible = position == SpaceCompassPanoramaPosition.COMPLETE, skyFraming = skyFraming,
-                    showGrid = showGrid, showGridNumbers = showGridNumbers)
+                    showGrid = showGrid, showGridNumbers = showGridNumbers, gridOpacityPercent = gridOpacityPercent)
                 busy = true
                 val preparingNotice = showSpaceCompassBottomMessage(application,
                     resources.getString(R.string.panorama_preparing))

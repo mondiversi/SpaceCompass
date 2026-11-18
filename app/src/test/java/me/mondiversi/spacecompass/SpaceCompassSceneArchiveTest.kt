@@ -12,6 +12,21 @@ import org.junit.Assert.*
 import org.junit.Test
 
 class SpaceCompassSceneArchiveTest {
+    @Test fun gridOpacityRoundTripsThroughSceneAndPreferencesWithLegacyDefault() {
+        for(percent in 0..100 step 10) {
+            val settings=display.copy(gridOpacityPercent=percent)
+            val value=scene().copy(display=settings)
+            assertEquals(value,SpaceCompassSceneArchive.decode(value.encode()))
+            val store=Store();store.preferences.edit().putSpaceCompassSceneDisplay(settings).apply()
+            assertEquals(settings,readSpaceCompassSceneDisplay(store.preferences))
+        }
+        val legacy=scene().encode().lineSequence().filterNot { it.startsWith("gridOpacityPercent=") }.joinToString("\n")
+        assertEquals(80,SpaceCompassSceneArchive.decode(legacy).display!!.gridOpacityPercent)
+        for(value in listOf("-10","110","45","NaN")) assertThrows(IllegalArgumentException::class.java) {
+            SpaceCompassSceneArchive.decode(legacy+"\ngridOpacityPercent=$value\n")
+        }
+    }
+
     @Test fun objectLabelsRoundTripIndependentlyFromGlobeAndLegacyDefaults() {
         for(mode in SPACE_COMPASS_GLOBE_MAIN_LABEL_MODES) {
             val settings=display.copy(objectLabelMode=mode.key,globeLabelMode="none")

@@ -248,8 +248,9 @@ function drawGlobeCoordinateGrid(){if(globeScene.grid===false)return;if(globeSce
  orbitInk.beginPath();for(const curve of globeCoordinateCurves){let previous=null;
   for(const vertex of curve.vertices){const point=globePoint(vertex);
    if(previous&&previous.depth>=0&&point.depth>=0){orbitInk.moveTo(previous.x,previous.y);orbitInk.lineTo(point.x,point.y);}previous=point;}}
- orbitInk.globalAlpha=1;orbitInk.setLineDash([]);orbitInk.strokeStyle='#00000059';orbitInk.lineWidth=.60;orbitInk.stroke();
- orbitInk.strokeStyle='#ffffff66';orbitInk.lineWidth=.30;orbitInk.stroke();
+ const ink=globeScene.gridStyle||['#9c9c9ccc','#00000047'];
+ orbitInk.globalAlpha=1;orbitInk.setLineDash([]);orbitInk.strokeStyle=ink[1];orbitInk.lineWidth=.60;orbitInk.stroke();
+ orbitInk.strokeStyle=ink[0];orbitInk.lineWidth=.30;orbitInk.stroke();
 }
 // Plate-carree maps share the native angular/geographic vectors and hit IDs.
 function globeFlatRect(){const v=globeScene.viewport||[0,0,viewWidth,viewHeight],w=v[2]*globeScene.pose[2],h=w/2;
@@ -303,8 +304,9 @@ function drawFlatCoordinateGrid(){const r=globeFlatRect();orbitInk.beginPath();
   orbitInk.moveTo(p.x,r.y);orbitInk.lineTo(p.x,r.y+r.h);}
  for(let latitude=-90;latitude<=90;latitude+=15){const y=r.y+(90-latitude)/180*r.h;
   orbitInk.moveTo(r.x,y);orbitInk.lineTo(r.x+r.w,y);}
- orbitInk.globalAlpha=1;orbitInk.setLineDash([]);orbitInk.strokeStyle='#00000059';orbitInk.lineWidth=.60;orbitInk.stroke();
- orbitInk.strokeStyle='#ffffff66';orbitInk.lineWidth=.30;orbitInk.stroke();
+ const ink=globeScene.gridStyle||['#9c9c9ccc','#00000047'];
+ orbitInk.globalAlpha=1;orbitInk.setLineDash([]);orbitInk.strokeStyle=ink[1];orbitInk.lineWidth=.60;orbitInk.stroke();
+ orbitInk.strokeStyle=ink[0];orbitInk.lineWidth=.30;orbitInk.stroke();
 }
 
 // Keep longitude/azimuth values on their meridian, using a clear row below/above fixed controls.

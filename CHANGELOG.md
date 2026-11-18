@@ -1,5 +1,12 @@
 # Changelog
 
+## 1.10.4 — 2026-11-18
+
+- Make reference-grid greys follow the Sun at the active Location and instant instead of the app theme. Use daytime grey from civil dawn through daylight and civil dusk (solar elevation at least -6 degrees), switching immediately to a separate night grey below that threshold.
+- Add a saved grid-opacity slider with eleven stops from 0 to 100 percent. Start with the reference grid enabled at 80 percent; keep coordinate numbers and planetary lines off by default and independently selectable. Preserve stroke widths and astronomical calculations.
+- Share the same grid palette and opacity across live Sky, Camera and Globe views and their framed/panoramic captures. Freeze capture choices, keep preview changes separate from main-view preferences and distinguish image caches by opacity.
+- Include grid opacity in Scene display settings, preserving older files and saved choices. Update in-app News in all twenty languages and refresh release documentation. The catalogue and external graphics collection are unchanged.
+
 ## 1.10.3 — 2026-11-16
 
 - Make the tutorial follow the current Sky, Camera or Globe view. Highlighted controls only update their explanation, without opening menus or pickers or changing scene settings. The menu remains the close control; camera tutorials keep the real camera protected.

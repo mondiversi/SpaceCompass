@@ -1,9 +1,9 @@
 <resources>
     <string name="info_news_title">تازه‌ترین تغییرات · %1$s</string>
-    <string name="info_news_star_sky" formatted="false">آموزش از نمای فعال آسمان، دوربین یا کرهٔ زمین پیروی می‌کند.</string>
-    <string name="info_news_texture_downloads" formatted="false">آموزش کنترل‌ها را بدون بازکردن منو یا پنجرهٔ بازشو توضیح می‌دهد.</string>
-    <string name="info_news_weather" formatted="false">نما و بزرگ‌نمایی فعلی در طول آموزش حفظ می‌شوند.</string>
-    <string name="info_news_viewer_zoom" formatted="false">پانوراماهای آسمان و کرهٔ زمین میان کنترل‌های بالا و پایین متعادل‌اند.</string>
-    <string name="info_news_settings" formatted="false">پانوراماهای افقی در ناحیهٔ دید آزاد مرکز می‌شوند و پهنای کامل صحنه را حفظ می‌کنند.</string>
-    <string name="info_news_catalog" formatted="false">ورود به پانوراما یا چرخاندن تلفن، نما را بدون بازنشانی بزرگ‌نمایی در مرکز قرار می‌دهد.</string>
+    <string name="info_news_star_sky" formatted="false">خاکستری‌های شبکه از خورشید در مکان و زمان انتخابی پیروی می‌کنند.</string>
+    <string name="info_news_texture_downloads" formatted="false">سپیده‌دم، روز و غروب خاکستری روزانه دارند؛ شب خاکستری جداگانه‌ای دارد.</string>
+    <string name="info_news_weather" formatted="false">کدری شبکه را با گام‌های 10% تنظیم کنید.</string>
+    <string name="info_news_viewer_zoom" formatted="false">شبکه در آغاز با کدری 80% فعال است؛ اعداد و خطوط سیاره خاموش‌اند.</string>
+    <string name="info_news_settings" formatted="false">تصاویر ثبت‌شده تنظیمات شبکه را می‌گیرند؛ تغییرات پیش‌نمایش فقط بر همان تصویر اثر دارد.</string>
+    <string name="info_news_catalog" formatted="false">تنظیمات شبکه ذخیره می‌شوند و با صحنه‌های صادرشده قابل اشتراک‌اند.</string>
 </resources>

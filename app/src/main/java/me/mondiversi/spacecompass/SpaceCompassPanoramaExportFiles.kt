@@ -38,8 +38,9 @@ internal fun prepareSpaceCompassCaptureExport(context: Context, data: SpaceCompa
     center: SpaceCompassPanoramaCenter, profile: SpaceCompassDataExportProfile? = null,
     showGrid: Boolean = data.snapshot?.showGrid ?: SPACE_COMPASS_MAIN_GRID_DEFAULT,
     showReferences: Boolean = data.snapshot?.showSkyReferences ?: SPACE_COMPASS_SKY_REFERENCES_DEFAULT,
-    showGridNumbers: Boolean = data.snapshot?.showGridNumbers ?: SPACE_COMPASS_GRID_NUMBERS_DEFAULT): SpaceCompassPreparedCaptureExport {
-    val overlays = SpaceCompassCaptureOverlays(showGrid, showReferences, showGridNumbers)
+    showGridNumbers: Boolean = data.snapshot?.showGridNumbers ?: SPACE_COMPASS_GRID_NUMBERS_DEFAULT,
+    gridOpacityPercent: Int = data.snapshot?.gridOpacityPercent ?: SPACE_COMPASS_GRID_OPACITY_DEFAULT): SpaceCompassPreparedCaptureExport {
+    val overlays = SpaceCompassCaptureOverlays(showGrid, showReferences, showGridNumbers, spaceCompassGridOpacity(gridOpacityPercent))
     require(types.isNotEmpty())
     val orderedTypes=SpaceCompassCaptureExportType.entries.filter { it in types }
     val files = orderedTypes.map { type ->
@@ -49,7 +50,7 @@ internal fun prepareSpaceCompassCaptureExport(context: Context, data: SpaceCompa
                 SpaceCompassCaptureExportType.PANORAMA_IMAGE -> SpaceCompassCaptureProjection.PANORAMA
                 else -> data.projection
             }
-            prepareSpaceCompassPanoramaVariant(context,data,position,labels,mode,center,projection,showGrid,showReferences,showGridNumbers)
+            prepareSpaceCompassPanoramaVariant(context,data,position,labels,mode,center,projection,showGrid,showReferences,showGridNumbers,gridOpacityPercent)
         } else {
             val presentation = if (mode == SpaceCompassPanoramaExportMode.SELECTED) requireNotNull(data.selectedPresentation) else null
             val snapshot = spaceCompassSnapshotForDisclosure(presentation?.snapshot ?: requireNotNull(data.snapshot),position)

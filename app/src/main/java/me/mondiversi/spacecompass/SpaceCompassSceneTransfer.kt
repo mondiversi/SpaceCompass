@@ -18,10 +18,12 @@ internal fun readSpaceCompassSceneDisplay(p: SharedPreferences) = SpaceCompassSc
         ?: if(!p.contains(SPACE_COMPASS_GLOBE_LABELS_KEY)) SpaceCompassPanoramaLabelMode.SELECTED.key else null,
     p.getBoolean(SPACE_COMPASS_MAIN_GRID_KEY,SPACE_COMPASS_MAIN_GRID_DEFAULT),
     p.getBoolean(SPACE_COMPASS_GRID_NUMBERS_KEY,SPACE_COMPASS_GRID_NUMBERS_DEFAULT),
-    p.getString(SPACE_COMPASS_SKY_LABEL_MODE_KEY,null),spaceCompassObjectViewEnabled(p.getBoolean(SPACE_COMPASS_OBJECT_VIEW_KEY,false)),false,p.getString(SPACE_COMPASS_OBJECT_LABEL_MODE_KEY,null))
+    p.getString(SPACE_COMPASS_SKY_LABEL_MODE_KEY,null),spaceCompassObjectViewEnabled(p.getBoolean(SPACE_COMPASS_OBJECT_VIEW_KEY,false)),false,p.getString(SPACE_COMPASS_OBJECT_LABEL_MODE_KEY,null),
+    spaceCompassGridOpacity(p.getInt(SPACE_COMPASS_GRID_OPACITY_KEY,SPACE_COMPASS_GRID_OPACITY_DEFAULT)))
 
 internal fun SharedPreferences.Editor.putSpaceCompassSceneDisplay(display: SpaceCompassSceneDisplay) = apply {
     putBoolean(SPACE_COMPASS_SKY_REFERENCES_KEY,display.guides)
+    putInt(SPACE_COMPASS_GRID_OPACITY_KEY,spaceCompassGridOpacity(display.gridOpacityPercent))
     putBoolean(SPACE_COMPASS_MAIN_GRID_KEY,display.grid)
     putBoolean(SPACE_COMPASS_GRID_NUMBERS_KEY,display.gridNumbers)
     if(display.skyLabelMode==null) remove(SPACE_COMPASS_SKY_LABEL_MODE_KEY)

@@ -1,9 +1,9 @@
 <resources>
     <string name="info_news_title">آخر المستجدات · %1$s</string>
-    <string name="info_news_star_sky" formatted="false">يتبع البرنامج التعليمي عرض السماء أو الكاميرا أو الكرة الأرضية المستخدم.</string>
-    <string name="info_news_texture_downloads" formatted="false">يشرح البرنامج التعليمي عناصر التحكم دون فتح قوائم أو نوافذ منبثقة.</string>
-    <string name="info_news_weather" formatted="false">يتم الحفاظ على العرض والتكبير الحاليين أثناء البرنامج التعليمي.</string>
-    <string name="info_news_viewer_zoom" formatted="false">تتوازن بانوراما السماء والكرة الأرضية بين عناصر التحكم العلوية والسفلية.</string>
-    <string name="info_news_settings" formatted="false">تتمركز البانوراما الأفقية في منطقة العرض الحرة مع الاحتفاظ بعرض المشهد الكامل.</string>
-    <string name="info_news_catalog" formatted="false">يؤدي الدخول إلى البانوراما أو تدوير الهاتف إلى إعادة التوسيط دون إعادة ضبط التكبير.</string>
+    <string name="info_news_star_sky" formatted="false">تتبع درجات رمادي الشبكة الشمس في موقعك ووقتك.</string>
+    <string name="info_news_texture_downloads" formatted="false">يستخدم الفجر والنهار والغسق رمادي النهار؛ ويستخدم الليل رمادياً منفصلاً.</string>
+    <string name="info_news_weather" formatted="false">اضبط عتامة الشبكة بخطوات 10%.</string>
+    <string name="info_news_viewer_zoom" formatted="false">تبدأ الشبكة مفعّلة بعتامة 80%؛ وتبدأ الأرقام وخطوط الكوكب معطّلة.</string>
+    <string name="info_news_settings" formatted="false">ترث اللقطات إعدادات الشبكة؛ وتؤثر تغييرات المعاينة في تلك الصورة فقط.</string>
+    <string name="info_news_catalog" formatted="false">تبقى إعدادات الشبكة محفوظة ويمكن مشاركتها مع المشاهد المصدّرة.</string>
 </resources>

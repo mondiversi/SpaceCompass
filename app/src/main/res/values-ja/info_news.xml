@@ -1,9 +1,9 @@
 <resources>
     <string name="info_news_title">最近の変更 · %1$s</string>
-    <string name="info_news_star_sky" formatted="false">チュートリアルは使用中の空、カメラ、地球の表示に合わせて動作します。</string>
-    <string name="info_news_texture_downloads" formatted="false">チュートリアルはメニューやポップアップを開かずに操作を説明します。</string>
-    <string name="info_news_weather" formatted="false">チュートリアル中も現在の表示とズームが維持されます。</string>
-    <string name="info_news_viewer_zoom" formatted="false">空と地球のパノラマが上下の操作ボタンの間に均等に配置されます。</string>
-    <string name="info_news_settings" formatted="false">横画面のパノラマはシーン全幅を保ちながら空いている表示領域の中央に配置されます。</string>
-    <string name="info_news_catalog" formatted="false">パノラマを開いたときや端末を回転したとき、ズームをリセットせずに表示を中央に戻します。</string>
+    <string name="info_news_star_sky" formatted="false">グリッドのグレーは選んだ場所と時刻の太陽に合わせて変わります。</string>
+    <string name="info_news_texture_downloads" formatted="false">夜明け、昼、夕暮れは昼用のグレーを使い、夜は別のグレーになります。</string>
+    <string name="info_news_weather" formatted="false">グリッドの不透明度を10%刻みで調整できます。</string>
+    <string name="info_news_viewer_zoom" formatted="false">グリッドは初期状態で80%で有効になり、数値と惑星の線は無効です。</string>
+    <string name="info_news_settings" formatted="false">キャプチャはグリッド設定を引き継ぎ、プレビューでの変更はその画像だけに適用されます。</string>
+    <string name="info_news_catalog" formatted="false">グリッド設定は保存され、書き出したシーンと一緒に共有できます。</string>
 </resources>

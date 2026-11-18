@@ -3,4 +3,5 @@
     <string name="main_grid_enable" formatted="false">Referentieraster</string>
     <string name="main_references_enable" formatted="false">Planeetlijnen</string>
     <string name="main_grid_numbers" formatted="false">Rasternummering</string>
+    <string name="main_grid_opacity" formatted="false">Dekking van het raster</string>
 </resources>

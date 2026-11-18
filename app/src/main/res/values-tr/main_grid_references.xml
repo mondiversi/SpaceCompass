@@ -3,4 +3,5 @@
     <string name="main_grid_enable" formatted="false">Referans ızgarası</string>
     <string name="main_references_enable" formatted="false">Gezegen çizgileri</string>
     <string name="main_grid_numbers" formatted="false">Izgara numaraları</string>
+    <string name="main_grid_opacity" formatted="false">Izgara opaklığı</string>
 </resources>

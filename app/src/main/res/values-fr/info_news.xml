@@ -1,9 +1,9 @@
 <resources>
     <string name="info_news_title">Dernières nouveautés · %1$s</string>
-    <string name="info_news_star_sky" formatted="false">Le tutoriel suit la vue Ciel, Appareil photo ou Globe active.</string>
-    <string name="info_news_texture_downloads" formatted="false">Le tutoriel explique les commandes sans ouvrir de menus ni de fenêtres.</string>
-    <string name="info_news_weather" formatted="false">La vue et le zoom actuels sont conservés pendant le tutoriel.</string>
-    <string name="info_news_viewer_zoom" formatted="false">Les panoramas Ciel et Globe sont équilibrés entre les commandes du haut et du bas.</string>
-    <string name="info_news_settings" formatted="false">En paysage, les panoramas sont centrés sur la zone libre tout en gardant la largeur de la scène.</string>
-    <string name="info_news_catalog" formatted="false">Ouvrir un panorama ou tourner le téléphone recentre la vue sans réinitialiser le zoom.</string>
+    <string name="info_news_star_sky" formatted="false">Les gris de la grille suivent le Soleil au lieu et à l’heure choisis.</string>
+    <string name="info_news_texture_downloads" formatted="false">Aube, journée et crépuscule utilisent le gris diurne ; la nuit a un gris distinct.</string>
+    <string name="info_news_weather" formatted="false">Réglez l’opacité de la grille par paliers de 10%.</string>
+    <string name="info_news_viewer_zoom" formatted="false">La grille démarre activée à 80% ; les nombres et lignes planétaires sont désactivés au départ.</string>
+    <string name="info_news_settings" formatted="false">Les captures reprennent la grille ; les changements de l’aperçu concernent uniquement cette image.</string>
+    <string name="info_news_catalog" formatted="false">Les réglages de la grille restent enregistrés et se partagent avec les scènes exportées.</string>
 </resources>

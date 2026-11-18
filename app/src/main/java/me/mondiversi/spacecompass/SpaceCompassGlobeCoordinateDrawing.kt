@@ -18,6 +18,7 @@ internal fun drawSpaceCompassGlobeCoordinateGrid(canvas: Canvas,width: Int,heigh
     reserved: List<SpaceCompassSunSceneFrame> = emptyList()): SpaceCompassGlobeCoordinateDrawing {
     val paint=Paint(Paint.ANTI_ALIAS_FLAG)
     val edge=SpaceCompassAngularGridAppearance.lineWidth(width,height)
+    val gridPalette=spaceCompassGridPalette(snapshot)
     val textSize=spaceCompassGlobeGuideTextSize(width,height,snapshot.globe?.framing)*.75f
     val text=Paint(Paint.ANTI_ALIAS_FLAG).apply { this.textSize=textSize }
     val occupied=reserved.toMutableList()
@@ -27,9 +28,9 @@ internal fun drawSpaceCompassGlobeCoordinateGrid(canvas: Canvas,width: Int,heigh
         curve.vertices.map { snapshot.globe?.let { capture -> spaceCompassGlobeCapturePoint(it,capture) } ?: spaceCompassGlobeView(it,pose) }.zipWithNext().forEach { (a,b) ->
             if(a.z>=-1e-9 && b.z>=-1e-9) {
                 val p=point(a);val q=point(b)
-                paint.color=SpaceCompassAngularGridAppearance.shadowArgb;paint.strokeWidth=edge*2
+                paint.color=gridPalette.shadowArgb;paint.strokeWidth=edge*2
                 canvas.drawLine(p.x.toFloat(),p.y.toFloat(),q.x.toFloat(),q.y.toFloat(),paint)
-                paint.color=SpaceCompassAngularGridAppearance.lineArgb;paint.strokeWidth=edge
+                paint.color=gridPalette.lineArgb;paint.strokeWidth=edge
                 canvas.drawLine(p.x.toFloat(),p.y.toFloat(),q.x.toFloat(),q.y.toFloat(),paint)
             }
         }

@@ -3,4 +3,5 @@
     <string name="main_grid_enable" formatted="false">Grelha de referência</string>
     <string name="main_references_enable" formatted="false">Linhas do planeta</string>
     <string name="main_grid_numbers" formatted="false">Numeração da grelha</string>
+    <string name="main_grid_opacity" formatted="false">Opacidade da grelha</string>
 </resources>

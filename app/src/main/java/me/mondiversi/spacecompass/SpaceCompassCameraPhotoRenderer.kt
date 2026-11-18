@@ -27,6 +27,7 @@ internal fun renderSpaceCompassProjectedCapture(context: Context,background: Bit
     var image: Bitmap?=null
     try {
         val width=background.width;val height=background.height
+        val gridPalette=spaceCompassGridPalette(snapshot)
         val scale=(minOf(width,height)/1080f).coerceAtLeast(.45f)
         val bandStyle=spaceCompassCaptureBandStyle(width,height)
         val caption=prepareSpaceCompassCaptureCaption(snapshot.caption,width,bandStyle,context)
@@ -53,9 +54,9 @@ internal fun renderSpaceCompassProjectedCapture(context: Context,background: Bit
             val horizon=projectSpaceCompassSunGround(orientation,SpaceCompassSunSceneFrame(0.0,0.0,width.toDouble(),height.toDouble()),
                 width.toDouble(),height.toDouble(),perspective)?.horizon
             if (horizon?.size==2) {
-                paint.color=SpaceCompassAngularGridAppearance.shadowArgb; paint.strokeWidth=3*SpaceCompassAngularGridAppearance.lineWidth(width,height)
+                paint.color=gridPalette.shadowArgb; paint.strokeWidth=3*SpaceCompassAngularGridAppearance.lineWidth(width,height)
                 canvas.drawLine(horizon[0].x.toFloat(),horizon[0].y.toFloat(),horizon[1].x.toFloat(),horizon[1].y.toFloat(),paint)
-                paint.color=SpaceCompassAngularGridAppearance.majorArgb; paint.strokeWidth=1.5f*SpaceCompassAngularGridAppearance.lineWidth(width,height)
+                paint.color=gridPalette.majorArgb; paint.strokeWidth=1.5f*SpaceCompassAngularGridAppearance.lineWidth(width,height)
                 canvas.drawLine(horizon[0].x.toFloat(),horizon[0].y.toFloat(),horizon[1].x.toFloat(),horizon[1].y.toFloat(),paint)
             }
         }

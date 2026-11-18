@@ -208,3 +208,22 @@ Live/capture paths share Globe geometry. Markers coinciding with or lying behind
 ## Interactive Earth detail
 
 The active Globe main view retains its 8x zoom limit and improved detail independently of the disabled Object experiment. The interactive host alone upgrades the existing 2048x1024 day/night texture sampling. Software rendering uses a cached 640px raster while settled and 256px during touch/viewport motion, with one deferred refinement; GPU backing canvases use up to 2x device density. No new textures are introduced. The standalone screensaver HTML, its 256px/512x256 low-power renderer and all texture bytes remain unchanged.
+
+## Scenario-driven reference-grid ink
+
+Reference grids use geometric solar elevation at the active scenario position and
+instant, independent of the app theme and selected object. Below -6 degrees,
+the night ink is neutral grey (#9c9c9c); at civil dawn (-6 degrees), throughout
+the day and through civil dusk, daytime grey (#707070) applies immediately.
+There are no intermediate blends. The reference grid starts enabled at 80% opacity; named planetary lines
+remain an independent choice, disabled by default. Grid and references offers eleven
+opacity stops (0–100%, default 80%), with the same slider colours as volume.
+Opacity scales both strokes, not coordinate text or named planetary guides.
+Main-view choices persist and enter the frozen capture; preview changes stay
+local to that capture, including image export caches. Scene documents include
+the optional opacity value; older documents default to 80%. Stroke widths,
+coordinate labels and named equator/tropic/polar-circle guides are unchanged.
+Missing solar/location data uses the night ink. Native Sky/Camera and WebView spherical/flat grids share
+this palette. Frozen Sky/Camera/Globe captures derive it from their own snapshot,
+so changing the live scenario, theme or location disclosure cannot recolour a
+previous capture. Colour changes do not invalidate cached grid geometry.

@@ -9,8 +9,9 @@ internal fun rememberSpaceCompassCaptureExport(data: SpaceCompassPanoramaPreview
     center: SpaceCompassPanoramaCenter, previewReady: Boolean,
     showGrid: Boolean = data.snapshot?.showGrid ?: SPACE_COMPASS_MAIN_GRID_DEFAULT,
     showReferences: Boolean = data.snapshot?.showSkyReferences ?: SPACE_COMPASS_SKY_REFERENCES_DEFAULT,
-    showGridNumbers: Boolean = data.snapshot?.showGridNumbers ?: SPACE_COMPASS_GRID_NUMBERS_DEFAULT): SpaceCompassCaptureExportState {
-    val overlays = SpaceCompassCaptureOverlays(showGrid, showReferences, showGridNumbers)
+    showGridNumbers: Boolean = data.snapshot?.showGridNumbers ?: SPACE_COMPASS_GRID_NUMBERS_DEFAULT,
+    gridOpacityPercent: Int = data.snapshot?.gridOpacityPercent ?: SPACE_COMPASS_GRID_OPACITY_DEFAULT): SpaceCompassCaptureExportState {
+    val overlays = SpaceCompassCaptureOverlays(showGrid, showReferences, showGridNumbers, spaceCompassGridOpacity(gridOpacityPercent))
     val profiles = rememberSpaceCompassDataExportProfiles()
     val images=if(data.snapshot?.globe?.objectCamera!=null) listOf(SpaceCompassCaptureExportType.FRAMED_IMAGE) else spaceCompassCaptureImageTypes(data.cameraPhoto!=null)
     return rememberSpaceCompassDataExport(data.file.absolutePath,
@@ -25,7 +26,7 @@ internal fun rememberSpaceCompassCaptureExport(data: SpaceCompassPanoramaPreview
                 SpaceCompassCaptureExportType.CSV to if (data.orbitTable?.bodies?.isNotEmpty()==true) 1 else 0,
                 SpaceCompassCaptureExportType.TXT to if (data.orbitTable?.bodies?.isNotEmpty()==true) 1 else 0),
             initialPosition = position) { context,types,mode,disclosure ->
-            prepareSpaceCompassCaptureExport(context,data,types,disclosure,labels,mode,center,profiles.forMode(mode),showGrid,showReferences,showGridNumbers)
+            prepareSpaceCompassCaptureExport(context,data,types,disclosure,labels,mode,center,profiles.forMode(mode),showGrid,showReferences,showGridNumbers,gridOpacityPercent)
         }
     }
 }

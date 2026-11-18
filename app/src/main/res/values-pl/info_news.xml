@@ -1,9 +1,9 @@
 <resources>
     <string name="info_news_title">Ostatnie nowości · %1$s</string>
-    <string name="info_news_star_sky" formatted="false">Samouczek podąża za aktywnym widokiem Nieba, Aparatu lub Globu.</string>
-    <string name="info_news_texture_downloads" formatted="false">Samouczek wyjaśnia elementy sterujące bez otwierania menu i okien.</string>
-    <string name="info_news_weather" formatted="false">Bieżący widok i powiększenie są zachowane podczas samouczka.</string>
-    <string name="info_news_viewer_zoom" formatted="false">Panoramy Nieba i Globu są równomiernie rozmieszczone między górnymi i dolnymi przyciskami.</string>
-    <string name="info_news_settings" formatted="false">Panoramy poziome są wyśrodkowane w wolnym obszarze, zachowując pełną szerokość sceny.</string>
-    <string name="info_news_catalog" formatted="false">Otwarcie panoramy lub obrócenie telefonu centruje widok bez resetowania powiększenia.</string>
+    <string name="info_news_star_sky" formatted="false">Odcienie siatki podążają za Słońcem w wybranym miejscu i czasie.</string>
+    <string name="info_news_texture_downloads" formatted="false">Świt, dzień i zmierzch korzystają z dziennej szarości; noc ma osobny odcień.</string>
+    <string name="info_news_weather" formatted="false">Dostosuj krycie siatki krokami co 10%.</string>
+    <string name="info_news_viewer_zoom" formatted="false">Siatka jest początkowo włączona z kryciem 80%; liczby i linie planetarne są wyłączone.</string>
+    <string name="info_news_settings" formatted="false">Ujęcia przejmują siatkę; zmiany podglądu dotyczą tylko tego obrazu.</string>
+    <string name="info_news_catalog" formatted="false">Ustawienia siatki są zapisywane i udostępniane z eksportowanymi scenami.</string>
 </resources>

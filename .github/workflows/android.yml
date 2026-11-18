@@ -46,6 +46,7 @@ jobs:
           node scripts/CheckObjectView.js
           node scripts/CheckGlobeUpdates.js
           node scripts/CheckLiveProjections.js
+          node scripts/CheckGridLighting.js
       - name: Build app and run checks
         run: ./gradlew --no-daemon --stacktrace :app:assembleDebug :app:testDebugUnitTest :app:compileDebugAndroidTestKotlin :app:assembleRelease :app:lintRelease
       - name: Upload development APK and test reports

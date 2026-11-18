@@ -3,4 +3,5 @@
     <string name="main_grid_enable" formatted="false">Siatka odniesienia</string>
     <string name="main_references_enable" formatted="false">Linie planety</string>
     <string name="main_grid_numbers" formatted="false">Numeracja siatki</string>
+    <string name="main_grid_opacity" formatted="false">Krycie siatki</string>
 </resources>

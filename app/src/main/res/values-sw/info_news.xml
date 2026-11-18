@@ -1,9 +1,9 @@
 <resources>
     <string name="info_news_title">Mambo mapya · %1$s</string>
-    <string name="info_news_star_sky" formatted="false">Mafunzo yanafuata mwonekano wa Anga, Kamera au Globu unaotumika.</string>
-    <string name="info_news_texture_downloads" formatted="false">Mafunzo yanaeleza vidhibiti bila kufungua menyu au madirisha ibukizi.</string>
-    <string name="info_news_weather" formatted="false">Mwonekano na ukuzaji wa sasa huhifadhiwa wakati wa mafunzo.</string>
-    <string name="info_news_viewer_zoom" formatted="false">Panorama za Anga na Globu zimesawazishwa kati ya vidhibiti vya juu na chini.</string>
-    <string name="info_news_settings" formatted="false">Panorama za mlalo hujikita katika eneo huru huku zikihifadhi upana wote wa mandhari.</string>
-    <string name="info_news_catalog" formatted="false">Kufungua panorama au kuzungusha simu huweka mwonekano katikati bila kuweka upya ukuzaji.</string>
+    <string name="info_news_star_sky" formatted="false">Kijivu cha gridi hufuata Jua katika eneo na wakati uliochaguliwa.</string>
+    <string name="info_news_texture_downloads" formatted="false">Alfajiri, mchana na jioni hutumia kijivu cha mchana; usiku una kijivu tofauti.</string>
+    <string name="info_news_weather" formatted="false">Rekebisha kutopenyeza kwa gridi kwa hatua za 10%.</string>
+    <string name="info_news_viewer_zoom" formatted="false">Gridi huanza ikiwa imewashwa kwa 80%; namba na mistari ya sayari huanza ikiwa imezimwa.</string>
+    <string name="info_news_settings" formatted="false">Picha hurithi gridi; mabadiliko ya hakiki huathiri picha hiyo pekee.</string>
+    <string name="info_news_catalog" formatted="false">Mipangilio ya gridi huhifadhiwa na kushirikiwa na Mandhari zilizohamishwa.</string>
 </resources>

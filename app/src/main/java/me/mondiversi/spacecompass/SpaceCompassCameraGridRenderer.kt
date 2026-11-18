@@ -15,6 +15,7 @@ internal fun drawSpaceCompassCameraAngularGrid(canvas: Canvas, width: Int, heigh
     val grid = spaceCompassCameraAngularGrid(orientation, perspective, width.toDouble(), height.toDouble(), frame, includeBorderTicks = snapshot.showGridNumbers)
     val paint = Paint(Paint.ANTI_ALIAS_FLAG).apply { style = Paint.Style.STROKE; strokeWidth = scale }
     val gridWidth = SpaceCompassAngularGridAppearance.lineWidth(width,height)
+    val gridPalette=spaceCompassGridPalette(snapshot)
     for (line in grid.lines) {
         // The shared photo renderer paints the zero-elevation horizon once, with the major-line style.
         if(line.axis==SpaceCompassCameraGridAxis.ELEVATION && kotlin.math.abs(line.degrees)<1e-9) continue
@@ -24,10 +25,10 @@ internal fun drawSpaceCompassCameraAngularGrid(canvas: Canvas, width: Int, heigh
                 path.moveTo(segment.start.x.toFloat(), segment.start.y.toFloat())
             path.lineTo(segment.end.x.toFloat(), segment.end.y.toFloat()); end = segment.end
         }
-        paint.color = SpaceCompassAngularGridAppearance.shadowArgb; paint.strokeWidth = 2f * gridWidth; canvas.drawPath(path, paint)
-        paint.color = SpaceCompassAngularGridAppearance.lineArgb; paint.strokeWidth = gridWidth; canvas.drawPath(path, paint)
+        paint.color = gridPalette.shadowArgb; paint.strokeWidth = 2f * gridWidth; canvas.drawPath(path, paint)
+        paint.color = gridPalette.lineArgb; paint.strokeWidth = gridWidth; canvas.drawPath(path, paint)
     }
-    paint.color = SpaceCompassAngularGridAppearance.majorArgb; paint.strokeWidth = gridWidth
+    paint.color = gridPalette.majorArgb; paint.strokeWidth = gridWidth
     canvas.drawRect(left, top, right, bottom, paint)
     if (!snapshot.showGridNumbers) return
     val text = spaceCompassOrbitTextPaint(21 * scale).apply { color = Color.WHITE; textAlign = Paint.Align.CENTER }

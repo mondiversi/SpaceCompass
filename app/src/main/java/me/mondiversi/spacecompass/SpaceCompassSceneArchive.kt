@@ -11,7 +11,8 @@ internal const val SPACE_COMPASS_SCENE_EXTENSION = ".spacecompass-scene"
 internal data class SpaceCompassSceneDisplay(val guides: Boolean, val forward24Hours: Boolean,
     val weather: Boolean, val translucentObjects: Boolean, val globe: Boolean = false,
     val globeLabels: Boolean = false,val globeAxisLocked: Boolean = true,val globeLabelMode: String? = null,
-    val grid: Boolean = true, val gridNumbers: Boolean = false, val skyLabelMode: String? = null,val objectView: Boolean = false,val objectAimObserver: Boolean = false,val objectLabelMode: String? = null)
+    val grid: Boolean = true, val gridNumbers: Boolean = false, val skyLabelMode: String? = null,val objectView: Boolean = false,val objectAimObserver: Boolean = false,val objectLabelMode: String? = null,
+    val gridOpacityPercent: Int = SPACE_COMPASS_GRID_OPACITY_DEFAULT)
 
 /** A distinct envelope prevents old Location readers from applying an absent observer configuration. */
 internal data class SpaceCompassSceneArchive(val contents: SpaceCompassScenarioArchive,
@@ -32,6 +33,8 @@ internal data class SpaceCompassSceneArchive(val contents: SpaceCompassScenarioA
             values["weather"] = it.weather.toString(); values["translucentObjects"] = it.translucentObjects.toString()
             if(!it.grid) values["grid"] = "false"
             if(it.gridNumbers) values["gridNumbers"] = "true"
+            require(it.gridOpacityPercent in 0..100 && it.gridOpacityPercent % 10 == 0)
+            if(it.gridOpacityPercent != SPACE_COMPASS_GRID_OPACITY_DEFAULT) values["gridOpacityPercent"] = it.gridOpacityPercent.toString()
             it.skyLabelMode?.let { mode ->
                 require(SpaceCompassPanoramaLabelMode.entries.any { it.key==mode })
                 values["skyLabelMode"]=mode
@@ -72,7 +75,7 @@ internal data class SpaceCompassSceneArchive(val contents: SpaceCompassScenarioA
             val include=bool("locationIncluded")
             if (!include) require(archive == archive.withoutLocation())
             val display=if (p.getProperty("guides")==null) {
-                require(listOf("forward24Hours","weather","translucentObjects","globe","globeLabels","globeAxisLocked","globeLabelMode","grid","gridNumbers","skyLabelMode","objectView","objectAimObserver","objectLabelMode").none(p::containsKey));null
+                require(listOf("forward24Hours","weather","translucentObjects","globe","globeLabels","globeAxisLocked","globeLabelMode","grid","gridNumbers","gridOpacityPercent","skyLabelMode","objectView","objectAimObserver","objectLabelMode").none(p::containsKey));null
             } else SpaceCompassSceneDisplay(bool("guides"),bool("forward24Hours"),bool("weather"),bool("translucentObjects"),p.getProperty("globe")?.toBooleanStrict() ?: false,
                 p.getProperty("globeLabels")?.toBooleanStrict() ?: false,p.getProperty("globeAxisLocked")?.toBooleanStrict() ?: true,
                 p.getProperty("globeLabelMode")?.also { mode -> require(SpaceCompassPanoramaLabelMode.entries.any { it.key==mode }) },
@@ -80,7 +83,9 @@ internal data class SpaceCompassSceneArchive(val contents: SpaceCompassScenarioA
                 p.getProperty("gridNumbers")?.toBooleanStrict() ?: false,
                 p.getProperty("skyLabelMode")?.also { mode -> require(SpaceCompassPanoramaLabelMode.entries.any { it.key==mode }) },
                 p.getProperty("objectView")?.toBooleanStrict() ?: false,p.getProperty("objectAimObserver")?.toBooleanStrict() ?: false,
-                p.getProperty("objectLabelMode")?.also { mode -> require(SpaceCompassPanoramaLabelMode.entries.any { it.key==mode }) })
+                p.getProperty("objectLabelMode")?.also { mode -> require(SpaceCompassPanoramaLabelMode.entries.any { it.key==mode }) },
+                p.getProperty("gridOpacityPercent")?.toInt()?.also { require(it in 0..100 && it % 10 == 0) }
+                    ?: SPACE_COMPASS_GRID_OPACITY_DEFAULT)
             return SpaceCompassSceneArchive(archive,include,display,requireNotNull(p.getProperty("capturedAtMs")).toLong(),
                 p.getProperty("paused")?.toBooleanStrict() ?: false)
         }

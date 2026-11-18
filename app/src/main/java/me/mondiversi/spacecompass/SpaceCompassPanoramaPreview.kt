@@ -108,7 +108,7 @@ internal fun SpaceCompassPanoramaPreview(data: SpaceCompassPanoramaPreviewData, 
             val targetOverlays = requestedOverlays
             try {
                 val file = withContext(Dispatchers.IO) {
-                    prepareSpaceCompassPanoramaVariant(context.applicationContext, data, targetPosition, targetLabels, previewMode, targetCenter, targetProjection, targetOverlays.grid, targetOverlays.references, targetOverlays.numbers)
+                    prepareSpaceCompassPanoramaVariant(context.applicationContext, data, targetPosition, targetLabels, previewMode, targetCenter, targetProjection, targetOverlays.grid, targetOverlays.references, targetOverlays.numbers, targetOverlays.opacityPercent)
                 }
                 currentFile = file
                 currentPosition = targetPosition
@@ -151,7 +151,7 @@ internal fun SpaceCompassPanoramaPreview(data: SpaceCompassPanoramaPreviewData, 
     val positionReady = requestedPosition == currentPosition && requestedLabelMode == currentLabelMode &&
         requestedCenter == currentCenter && requestedProjection == currentProjection && requestedOverlays == currentOverlays && !preparationFailed
     val ready = positionReady && bitmap != null && !failed
-    val export = rememberSpaceCompassCaptureExport(data, requestedPosition, requestedLabelMode, requestedCenter, ready, requestedOverlays.grid, requestedOverlays.references, requestedOverlays.numbers)
+    val export = rememberSpaceCompassCaptureExport(data, requestedPosition, requestedLabelMode, requestedCenter, ready, requestedOverlays.grid, requestedOverlays.references, requestedOverlays.numbers, requestedOverlays.opacityPercent)
     BackHandler { if (export.visible) export.close() else if (!export.saving) onBack() }
     fun applyLabelMode(mode: SpaceCompassPanoramaLabelMode) {
         if(mode!=requestedLabelMode) {
@@ -243,10 +243,10 @@ internal fun SpaceCompassPanoramaPreview(data: SpaceCompassPanoramaPreviewData, 
                         active=requestedOverlays.enabled, glyphInk=spaceCompassFloatingInk(26f,.12f,.12f,.88f,.88f)) {
                         SpaceCompassAngularGridIcon(LocalContentColor.current)
                     }
-                    SpaceCompassGridReferencesDialog(chooseOverlays, requestedOverlays.grid, requestedOverlays.references, requestedOverlays.numbers,
-                        { chooseOverlays = false }) { grid, references, numbers ->
+                    SpaceCompassGridReferencesDialog(chooseOverlays, requestedOverlays.grid, requestedOverlays.references, requestedOverlays.numbers, requestedOverlays.opacityPercent,
+                        { chooseOverlays = false }) { grid, references, numbers, opacity ->
                         chooseOverlays = false
-                        val next = SpaceCompassCaptureOverlays(grid, references, numbers)
+                        val next = SpaceCompassCaptureOverlays(grid, references, numbers, opacity)
                         if (next != requestedOverlays) {
                             requestedOverlays = next
                             revision++

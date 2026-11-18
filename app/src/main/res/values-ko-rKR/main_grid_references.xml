@@ -3,4 +3,5 @@
     <string name="main_grid_enable" formatted="false">기준 격자</string>
     <string name="main_references_enable" formatted="false">행성 기준선</string>
     <string name="main_grid_numbers" formatted="false">격자 숫자</string>
+    <string name="main_grid_opacity" formatted="false">격자 불투명도</string>
 </resources>

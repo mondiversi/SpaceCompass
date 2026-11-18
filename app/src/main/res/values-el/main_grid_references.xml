@@ -3,4 +3,5 @@
     <string name="main_grid_enable" formatted="false">Πλέγμα αναφοράς</string>
     <string name="main_references_enable" formatted="false">Γραμμές του πλανήτη</string>
     <string name="main_grid_numbers" formatted="false">Αρίθμηση πλέγματος</string>
+    <string name="main_grid_opacity" formatted="false">Αδιαφάνεια πλέγματος</string>
 </resources>

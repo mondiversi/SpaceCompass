@@ -10,9 +10,26 @@ class SpaceCompassCaptureOverlaysTest {
         null, listOf(SpaceCompassPanoramaObject(SpaceCompassCelestialBody.SUN, "Sun", null)),
         SpaceCompassCelestialRemoteData(), "Frozen caption", emptyList(), emptyList(), zoneId = "Europe/Rome",showGridNumbers = false)
 
+    @Test fun opacitySurvivesPreviewRotationAndChangesEveryImageCacheIdentity() {
+        val source=snapshot().copy(gridOpacityPercent=40)
+        val original=SpaceCompassCaptureOverlays.fromSnapshot(source)
+        assertEquals(40,original.opacityPercent)
+        assertEquals(original,spaceCompassCaptureOverlaysSaver.restore(listOf(original.grid,original.references,original.numbers,40)))
+        val keys=mutableSetOf<String>()
+        for(percent in 0..100 step 10) {
+            val choice=original.copy(opacityPercent=percent)
+            assertTrue(keys.add(choice.cacheKey))
+            val edited=choice.applyTo(source)
+            assertEquals(percent,edited.gridOpacityPercent)
+            assertEquals(source,edited.copy(gridOpacityPercent=40))
+        }
+        assertEquals(11,keys.size)
+        assertEquals(80,spaceCompassCaptureOverlaysSaver.restore(listOf(true,false,false))!!.opacityPercent)
+    }
     @Test fun firstInstallEnablesOnlyTheGrid() {
         val defaults = SpaceCompassCaptureOverlays.fromSnapshot(null)
         assertTrue(defaults.grid)
+        assertEquals(80,defaults.opacityPercent)
         assertFalse(defaults.references)
         assertEquals(SpaceCompassCaptureOverlays(), defaults)
     }

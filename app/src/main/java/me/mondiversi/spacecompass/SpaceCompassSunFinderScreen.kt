@@ -296,6 +296,9 @@ internal fun SpaceCompassSunFinderContent(
     var mainGridVisible by remember(scenePreferences) {
         mutableStateOf(scenePreferences.getBoolean(SPACE_COMPASS_MAIN_GRID_KEY,SPACE_COMPASS_MAIN_GRID_DEFAULT))
     }
+    var gridOpacityPercent by remember(scenePreferences) {
+        mutableIntStateOf(spaceCompassGridOpacity(scenePreferences.getInt(SPACE_COMPASS_GRID_OPACITY_KEY,SPACE_COMPASS_GRID_OPACITY_DEFAULT)))
+    }
     var gridNumbersVisible by remember(scenePreferences) {
         mutableStateOf(scenePreferences.getBoolean(SPACE_COMPASS_GRID_NUMBERS_KEY,SPACE_COMPASS_GRID_NUMBERS_DEFAULT))
     }
@@ -433,6 +436,7 @@ internal fun SpaceCompassSunFinderContent(
         val listener = android.content.SharedPreferences.OnSharedPreferenceChangeListener { _, key ->
             when (key) {
                 SPACE_COMPASS_MAIN_GRID_KEY -> mainGridVisible=scenePreferences.getBoolean(key,SPACE_COMPASS_MAIN_GRID_DEFAULT)
+                SPACE_COMPASS_GRID_OPACITY_KEY -> gridOpacityPercent=spaceCompassGridOpacity(scenePreferences.getInt(key,SPACE_COMPASS_GRID_OPACITY_DEFAULT))
                 SPACE_COMPASS_GRID_NUMBERS_KEY -> gridNumbersVisible=scenePreferences.getBoolean(key,SPACE_COMPASS_GRID_NUMBERS_DEFAULT)
                 SPACE_COMPASS_GLOBE_LABELS_KEY,SPACE_COMPASS_GLOBE_LABEL_MODE_KEY -> globeLabelMode=spaceCompassGlobeLabelMode(
                     scenePreferences.getString(SPACE_COMPASS_GLOBE_LABEL_MODE_KEY,null),
@@ -765,7 +769,7 @@ internal fun SpaceCompassSunFinderContent(
     val panorama = rememberSpaceCompassPanoramaAction(timeMs, fix?.latitude, fix?.longitude, altitude,
         phase, currentWeather, selectedBodies, selectedOverlays, remote,
         gpsAccuracyMeters = fix?.takeIf { it.hasAccuracy() && it.accuracy.isFinite() && it.accuracy >= 0f }
-            ?.accuracy?.toDouble(), cameraEnabled = cameraEnabled, cameraCapture = cameraCapture, cameraObjectOpacity = cameraObjectOpacity, showSkyReferences = showSkyReferences, showGrid = mainGridVisible, showGridNumbers = gridNumbersVisible, showWeather = showWeather, solarLighting = solarLighting,
+            ?.accuracy?.toDouble(), cameraEnabled = cameraEnabled, cameraCapture = cameraCapture, cameraObjectOpacity = cameraObjectOpacity, showSkyReferences = showSkyReferences, showGrid = mainGridVisible, showGridNumbers = gridNumbersVisible, gridOpacityPercent = gridOpacityPercent, showWeather = showWeather, solarLighting = solarLighting,
         selectedPoints = dailyPathUiState.selectedPoints, activeBody = sceneBody.takeIf { it in selectedBodies },
         activeComparisonId = activeComparison?.id, forward24Hours = forward24Hours, showAntipodes = showAntipodes, globe = globeCapture, skyFraming = skyCaptureFraming, liveLabelMode = skyLabelMode.takeIf { skyPanoramaEnabled }, initialProjection = if(livePanoramic) SpaceCompassCaptureProjection.PANORAMA else SpaceCompassCaptureProjection.FRAME)
     panorama.preview?.let { preview ->
@@ -907,7 +911,7 @@ internal fun SpaceCompassSunFinderContent(
     val globeSnapshot = if(liveMapEnabled) rememberSpaceCompassGlobeScene(timeMs,fix?.latitude,fix?.longitude,
         altitude ?: 0.0,phase,selectedBodies,selectedOverlays,comparisonOverlays,remote,dailyPathUiState,
         showSkyReferences,sceneBody.takeIf { it in selectedBodies },activeComparison?.id,zone,forward24Hours,observerPlan!=null).let { snapshot ->
-        val liveSnapshot=snapshot.copy(showGrid=mainGridVisible,showGridNumbers=gridNumbersVisible)
+        val liveSnapshot=snapshot.copy(showGrid=mainGridVisible,showGridNumbers=gridNumbersVisible,gridOpacityPercent=gridOpacityPercent)
         if(skyPanoramaEnabled) liveSnapshot.copy(weather=sceneWeather,solarLighting=solarLighting,
             center=SpaceCompassPanoramaCenter.fromStored(scenePreferences.getString(SPACE_COMPASS_PANORAMA_CENTER_KEY,null),fix?.latitude)) else liveSnapshot
     } else null
@@ -1090,11 +1094,12 @@ internal fun SpaceCompassSunFinderContent(
                                 }
                             },
                             guides = {
-                                SpaceCompassSkyReferenceButton(mainGridVisible, showSkyReferences, gridNumbersVisible, { grid, references, numbers ->
+                                SpaceCompassSkyReferenceButton(mainGridVisible, showSkyReferences, gridNumbersVisible, gridOpacityPercent, { grid, references, numbers, opacity ->
+                                    gridOpacityPercent = opacity
                                     mainGridVisible = grid
                                     gridNumbersVisible = numbers
                                     showSkyReferences = references
-                                    scenePreferences.edit().putBoolean(SPACE_COMPASS_MAIN_GRID_KEY, grid).putBoolean(SPACE_COMPASS_GRID_NUMBERS_KEY,numbers)
+                                    scenePreferences.edit().putInt(SPACE_COMPASS_GRID_OPACITY_KEY, opacity).putBoolean(SPACE_COMPASS_MAIN_GRID_KEY, grid).putBoolean(SPACE_COMPASS_GRID_NUMBERS_KEY,numbers)
                                         .putBoolean(SPACE_COMPASS_SKY_REFERENCES_KEY, references).apply()
                                 }, primaryText, backgroundColor)
                             },
@@ -1176,7 +1181,7 @@ internal fun SpaceCompassSunFinderContent(
         }
         if(!liveMapEnabled && mainGridVisible && resumed && mainVisible)
             SpaceCompassCameraGridLayer(scenePointingOrientation,scenePerspective,groundFrame,Modifier.fillMaxSize(),
-                tag=if(cameraEnabled) "camera-angular-grid" else "sky-angular-grid", showNumbers=gridNumbersVisible)
+                tag=if(cameraEnabled) "camera-angular-grid" else "sky-angular-grid", showNumbers=gridNumbersVisible, solarElevation=sun?.elevationDegrees, opacityPercent=gridOpacityPercent)
         if(!liveMapEnabled) SpaceCompassCelestialSceneBackdrop(groundFrame, scenePerspective,
             scenePointingOrientation.takeIf { !cameraEnabled || cameraPerspective != null },
             overlays, sceneBody.takeIf { hasActiveBody && activeComparison == null }, livePath, liveTarget, timeMs,

@@ -1,9 +1,9 @@
 <resources>
     <string name="info_news_title">Ultime novità · %1$s</string>
-    <string name="info_news_star_sky" formatted="false">Il tutorial segue la vista Cielo, Fotocamera o Mappamondo in uso.</string>
-    <string name="info_news_texture_downloads" formatted="false">Il tutorial spiega i comandi senza aprire menu o pop-up.</string>
-    <string name="info_news_weather" formatted="false">La vista e lo zoom attuali vengono mantenuti durante il tutorial.</string>
-    <string name="info_news_viewer_zoom" formatted="false">Le panoramiche di Cielo e Mappamondo sono bilanciate fra i comandi superiori e inferiori.</string>
-    <string name="info_news_settings" formatted="false">In orizzontale le panoramiche si centrano nell’area libera mantenendo la larghezza della scena.</string>
-    <string name="info_news_catalog" formatted="false">Entrare in panoramica o ruotare il telefono ricentra la vista senza azzerare lo zoom.</string>
+    <string name="info_news_star_sky" formatted="false">I grigi della griglia seguono il Sole nella Location e nell’ora in uso.</string>
+    <string name="info_news_texture_downloads" formatted="false">Alba, giorno e tramonto usano il grigio diurno; la notte ha un grigio distinto.</string>
+    <string name="info_news_weather" formatted="false">Regola l’opacità della griglia a passi del 10%.</string>
+    <string name="info_news_viewer_zoom" formatted="false">La griglia parte attiva all’80%; numerazione e linee del pianeta partono spente.</string>
+    <string name="info_news_settings" formatted="false">Gli scatti ereditano la griglia; le modifiche nell’anteprima valgono solo per quell’immagine.</string>
+    <string name="info_news_catalog" formatted="false">Le impostazioni della griglia restano salvate e si condividono con gli scenari esportati.</string>
 </resources>

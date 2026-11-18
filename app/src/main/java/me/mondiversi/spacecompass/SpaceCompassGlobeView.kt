@@ -122,12 +122,14 @@ internal fun SpaceCompassGlobeView(snapshot: SpaceCompassPanoramaSnapshot, pose:
     // Keep this work off the presentation thread, including the once-per-second clock update.
     val document by produceState(SpaceCompassGlobeDocument("{\"tracks\":[],\"background\":false}",emptyList()),
         model,sun,dark,labelMode,icons,starMap,snapshot.timeMs/1000,sky,snapshot.phase,snapshot.weather,snapshot.solarLighting,
-        snapshot.latitude,snapshot.longitude,snapshot.observerPositionKnown,
+        snapshot.latitude,snapshot.longitude,snapshot.altitude,snapshot.observerPositionKnown,
         snapshot.objects.map { it.name },geographicGuideNames,geographicPoleNames,snapshot.activeBody,
-        snapshot.activeComparisonId,snapshot.showSkyReferences,snapshot.showGrid,snapshot.showGridNumbers,selection,snapshot.formatting) {
+        snapshot.activeComparisonId,snapshot.showSkyReferences,snapshot.showGrid,snapshot.showGridNumbers,snapshot.gridOpacityPercent,selection,snapshot.formatting) {
         value=withContext(Dispatchers.Default) {
             val targets=mutableListOf<Pair<SpaceCompassGlobeTrack,SpaceCompassGlobeDot>>()
+            val gridPalette=spaceCompassGridPalette(snapshot)
             val scene=JSONObject().apply {
+                put("gridStyle",JSONArray(listOf(spaceCompassGridCss(gridPalette.liveLineArgb),spaceCompassGridCss(gridPalette.liveShadowArgb))))
                 put("extent",model?.extent ?: 1.55);put("dark",dark)
                 put("sky",sky);put("skyCenter",snapshot.center.azimuth)
                 put("starMap",starMap ?: "")

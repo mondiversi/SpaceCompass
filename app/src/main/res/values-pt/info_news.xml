@@ -1,9 +1,9 @@
 <resources>
     <string name="info_news_title">Últimas novidades · %1$s</string>
-    <string name="info_news_star_sky" formatted="false">O tutorial acompanha a vista Céu, Câmara ou Globo ativa.</string>
-    <string name="info_news_texture_downloads" formatted="false">O tutorial explica os controlos sem abrir menus ou janelas.</string>
-    <string name="info_news_weather" formatted="false">A vista e o zoom atuais são mantidos durante o tutorial.</string>
-    <string name="info_news_viewer_zoom" formatted="false">Os panoramas do Céu e Globo ficam equilibrados entre os controlos superiores e inferiores.</string>
-    <string name="info_news_settings" formatted="false">Na horizontal, os panoramas centram-se na área livre, mantendo toda a largura da cena.</string>
-    <string name="info_news_catalog" formatted="false">Abrir um panorama ou rodar o telefone centra a vista sem repor o zoom.</string>
+    <string name="info_news_star_sky" formatted="false">Os cinzentos da grelha seguem o Sol no local e hora escolhidos.</string>
+    <string name="info_news_texture_downloads" formatted="false">Amanhecer, dia e crepúsculo usam o cinzento diurno; a noite tem outro cinzento.</string>
+    <string name="info_news_weather" formatted="false">Ajuste a opacidade da grelha em passos de 10%.</string>
+    <string name="info_news_viewer_zoom" formatted="false">A grelha começa ativa a 80%; números e linhas planetárias começam desativados.</string>
+    <string name="info_news_settings" formatted="false">As capturas herdam a grelha; as alterações na pré-visualização afetam apenas essa imagem.</string>
+    <string name="info_news_catalog" formatted="false">As definições da grelha ficam guardadas e são partilhadas com cenas exportadas.</string>
 </resources>

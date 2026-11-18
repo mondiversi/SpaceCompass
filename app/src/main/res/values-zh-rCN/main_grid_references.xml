@@ -3,4 +3,5 @@
     <string name="main_grid_enable" formatted="false">参考网格</string>
     <string name="main_references_enable" formatted="false">行星参考线</string>
     <string name="main_grid_numbers" formatted="false">网格数值</string>
+    <string name="main_grid_opacity" formatted="false">网格不透明度</string>
 </resources>

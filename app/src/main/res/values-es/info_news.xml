@@ -1,9 +1,9 @@
 <resources>
     <string name="info_news_title">Últimas novedades · %1$s</string>
-    <string name="info_news_star_sky" formatted="false">El tutorial sigue la vista activa de Cielo, Cámara o Globo.</string>
-    <string name="info_news_texture_downloads" formatted="false">El tutorial explica los controles sin abrir menús ni ventanas emergentes.</string>
-    <string name="info_news_weather" formatted="false">La vista y el zoom actuales se conservan durante el tutorial.</string>
-    <string name="info_news_viewer_zoom" formatted="false">Las panorámicas de Cielo y Globo quedan equilibradas entre los controles superiores e inferiores.</string>
-    <string name="info_news_settings" formatted="false">En horizontal, las panorámicas se centran en la zona libre y mantienen todo el ancho de la escena.</string>
-    <string name="info_news_catalog" formatted="false">Entrar en una panorámica o girar el teléfono centra la vista sin restablecer el zoom.</string>
+    <string name="info_news_star_sky" formatted="false">Los grises de la cuadrícula siguen al Sol en tu ubicación y hora.</string>
+    <string name="info_news_texture_downloads" formatted="false">Amanecer, día y crepúsculo usan el gris diurno; la noche usa otro gris.</string>
+    <string name="info_news_weather" formatted="false">Ajusta la opacidad de la cuadrícula en pasos del 10%.</string>
+    <string name="info_news_viewer_zoom" formatted="false">La cuadrícula empieza activada al 80%; los números y las líneas planetarias empiezan desactivados.</string>
+    <string name="info_news_settings" formatted="false">Las capturas heredan la cuadrícula; los cambios de vista previa solo afectan a esa imagen.</string>
+    <string name="info_news_catalog" formatted="false">Los ajustes de la cuadrícula se guardan y se comparten con las escenas exportadas.</string>
 </resources>

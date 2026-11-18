@@ -1,9 +1,9 @@
 <resources>
     <string name="info_news_title">Perubahan terbaru · %1$s</string>
-    <string name="info_news_star_sky" formatted="false">Tutorial mengikuti tampilan Langit, Kamera, atau Globe yang aktif.</string>
-    <string name="info_news_texture_downloads" formatted="false">Tutorial menjelaskan kontrol tanpa membuka menu atau pop-up.</string>
-    <string name="info_news_weather" formatted="false">Tampilan dan zoom saat ini dipertahankan selama tutorial.</string>
-    <string name="info_news_viewer_zoom" formatted="false">Panorama Langit dan Globe seimbang di antara kontrol atas dan bawah.</string>
-    <string name="info_news_settings" formatted="false">Panorama mendatar berpusat pada area bebas sambil mempertahankan lebar penuh adegan.</string>
-    <string name="info_news_catalog" formatted="false">Membuka panorama atau memutar ponsel memusatkan kembali tampilan tanpa mengatur ulang zoom.</string>
+    <string name="info_news_star_sky" formatted="false">Warna abu-abu kisi mengikuti Matahari di lokasi dan waktu pilihan.</string>
+    <string name="info_news_texture_downloads" formatted="false">Fajar, siang, dan senja memakai abu-abu siang; malam memakai abu-abu berbeda.</string>
+    <string name="info_news_weather" formatted="false">Atur opasitas kisi dalam langkah 10%.</string>
+    <string name="info_news_viewer_zoom" formatted="false">Kisi awalnya aktif pada 80%; angka dan garis planet awalnya nonaktif.</string>
+    <string name="info_news_settings" formatted="false">Tangkapan mewarisi kisi; perubahan pratinjau hanya berlaku pada gambar itu.</string>
+    <string name="info_news_catalog" formatted="false">Pengaturan kisi tersimpan dan dibagikan bersama Adegan yang diekspor.</string>
 </resources>

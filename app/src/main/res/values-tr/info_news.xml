@@ -1,9 +1,9 @@
 <resources>
     <string name="info_news_title">Son yenilikler · %1$s</string>
-    <string name="info_news_star_sky" formatted="false">Öğretici, etkin Gökyüzü, Kamera veya Küre görünümünü izler.</string>
-    <string name="info_news_texture_downloads" formatted="false">Öğretici, menü veya açılır pencere açmadan kontrolleri açıklar.</string>
-    <string name="info_news_weather" formatted="false">Öğretici sırasında mevcut görünüm ve yakınlaştırma korunur.</string>
-    <string name="info_news_viewer_zoom" formatted="false">Gökyüzü ve Küre panoramaları üst ve alt kontroller arasında dengeli yerleşir.</string>
-    <string name="info_news_settings" formatted="false">Yatay panoramalar, tam sahne genişliğini koruyarak boş görüntüleme alanında ortalanır.</string>
-    <string name="info_news_catalog" formatted="false">Panorama açmak veya telefonu döndürmek, yakınlaştırmayı sıfırlamadan görünümü ortalar.</string>
+    <string name="info_news_star_sky" formatted="false">Izgara grileri seçilen konum ve zamandaki Güneş’i izler.</string>
+    <string name="info_news_texture_downloads" formatted="false">Şafak, gündüz ve alacakaranlık gündüz grisini, gece ise ayrı bir griyi kullanır.</string>
+    <string name="info_news_weather" formatted="false">Izgara opaklığını yüzde onluk adımlarla ayarlayın.</string>
+    <string name="info_news_viewer_zoom" formatted="false">Izgara başlangıçta yüzde seksen opaklıkla açıktır; sayılar ve gezegen çizgileri kapalıdır.</string>
+    <string name="info_news_settings" formatted="false">Çekimler ızgara ayarlarını devralır; önizleme değişiklikleri yalnızca o görüntüyü etkiler.</string>
+    <string name="info_news_catalog" formatted="false">Izgara ayarları saklanır ve dışa aktarılan Sahnelerle paylaşılır.</string>
 </resources>

@@ -14,8 +14,9 @@ internal fun prepareSpaceCompassPanoramaVariant(context: Context, data: SpaceCom
     projection: SpaceCompassCaptureProjection = data.projection,
     showGrid: Boolean = data.snapshot?.showGrid ?: SPACE_COMPASS_MAIN_GRID_DEFAULT,
     showReferences: Boolean = data.snapshot?.showSkyReferences ?: SPACE_COMPASS_SKY_REFERENCES_DEFAULT,
-    showGridNumbers: Boolean = data.snapshot?.showGridNumbers ?: SPACE_COMPASS_GRID_NUMBERS_DEFAULT): File {
-    val overlays = SpaceCompassCaptureOverlays(showGrid, showReferences, showGridNumbers)
+    showGridNumbers: Boolean = data.snapshot?.showGridNumbers ?: SPACE_COMPASS_GRID_NUMBERS_DEFAULT,
+    gridOpacityPercent: Int = data.snapshot?.gridOpacityPercent ?: SPACE_COMPASS_GRID_OPACITY_DEFAULT): File {
+    val overlays = SpaceCompassCaptureOverlays(showGrid, showReferences, showGridNumbers, spaceCompassGridOpacity(gridOpacityPercent))
     if (overlays == SpaceCompassCaptureOverlays.fromSnapshot(data.snapshot) && projection == data.projection && exportMode == data.fileExportMode && position == data.position &&
         labelMode == (data.snapshot?.labelMode ?: SpaceCompassPanoramaLabelMode.DEFAULT) && center == (data.snapshot?.center ?: SpaceCompassPanoramaCenter.SOUTH)) return data.file
     val selected = if (exportMode == SpaceCompassPanoramaExportMode.SELECTED) requireNotNull(data.selectedPresentation) else null

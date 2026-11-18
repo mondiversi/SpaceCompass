@@ -3,4 +3,5 @@
     <string name="main_grid_enable" formatted="false">संदर्भ ग्रिड</string>
     <string name="main_references_enable" formatted="false">ग्रह की रेखाएँ</string>
     <string name="main_grid_numbers" formatted="false">ग्रिड संख्याएँ</string>
+    <string name="main_grid_opacity" formatted="false">ग्रिड की अपारदर्शिता</string>
 </resources>

@@ -3,4 +3,5 @@
     <string name="main_grid_enable" formatted="false">شبکهٔ مرجع</string>
     <string name="main_references_enable" formatted="false">خطوط سیاره</string>
     <string name="main_grid_numbers" formatted="false">شماره‌های شبکه</string>
+    <string name="main_grid_opacity" formatted="false">تیرگی شبکه</string>
 </resources>
