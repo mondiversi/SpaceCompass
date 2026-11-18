@@ -27,9 +27,9 @@ private data class SpaceCompassLiveCameraGrid(val size: IntSize,val path: Path,v
 /** Decorative only: one worker owns reusable projection buffers; drawing keeps an immutable frame. */
 @Composable
 internal fun SpaceCompassCameraGridLayer(orientation: SpaceCompassSunOrientation?,
-    lens: SpaceCompassPerspective?,opticalFrame: SpaceCompassSunSceneFrame?,modifier: Modifier,tag: String="camera-angular-grid",showNumbers: Boolean = false,solarElevation: Double? = null, opacityPercent: Int = SPACE_COMPASS_GRID_OPACITY_DEFAULT) {
+    lens: SpaceCompassPerspective?,opticalFrame: SpaceCompassSunSceneFrame?,modifier: Modifier,tag: String="camera-angular-grid",showNumbers: Boolean = false,solarElevation: Double? = null,opacityPercent: Int = SPACE_COMPASS_GRID_OPACITY_DEFAULT) {
     if(orientation==null||lens==null||opticalFrame==null) return
-    val gridPalette=remember(solarElevation, opacityPercent) { spaceCompassGridPalette(solarElevation, opacityPercent) }
+    val gridPalette=remember(spaceCompassGridUsesDayInk(solarElevation),opacityPercent) { spaceCompassGridPalette(solarElevation,opacityPercent) }
     var viewport by remember { mutableStateOf(IntSize.Zero) }
     val currentOrientation by rememberUpdatedState(orientation)
     val numeric=LocalSpaceCompassNumericFormat.current

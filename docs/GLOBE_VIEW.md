@@ -209,21 +209,26 @@ Live/capture paths share Globe geometry. Markers coinciding with or lying behind
 
 The active Globe main view retains its 8x zoom limit and improved detail independently of the disabled Object experiment. The interactive host alone upgrades the existing 2048x1024 day/night texture sampling. Software rendering uses a cached 640px raster while settled and 256px during touch/viewport motion, with one deferred refinement; GPU backing canvases use up to 2x device density. No new textures are introduced. The standalone screensaver HTML, its 256px/512x256 low-power renderer and all texture bytes remain unchanged.
 
-## Scenario-driven reference-grid ink
+## Reference-grid ink
 
-Reference grids use geometric solar elevation at the active scenario position and
-instant, independent of the app theme and selected object. Below -6 degrees,
-the night ink is neutral grey (#9c9c9c); at civil dawn (-6 degrees), throughout
-the day and through civil dusk, daytime grey (#707070) applies immediately.
-There are no intermediate blends. The reference grid starts enabled at 80% opacity; named planetary lines
-remain an independent choice, disabled by default. Grid and references offers eleven
-opacity stops (0–100%, default 80%), with the same slider colours as volume.
-Opacity scales both strokes, not coordinate text or named planetary guides.
-Main-view choices persist and enter the frozen capture; preview changes stay
-local to that capture, including image export caches. Scene documents include
-the optional opacity value; older documents default to 80%. Stroke widths,
-coordinate labels and named equator/tropic/polar-circle guides are unchanged.
-Missing solar/location data uses the night ink. Native Sky/Camera and WebView spherical/flat grids share
-this palette. Frozen Sky/Camera/Globe captures derive it from their own snapshot,
-so changing the live scenario, theme or location disclosure cannot recolour a
-previous capture. Colour changes do not invalidate cached grid geometry.
+Reference grids share a bright daytime grey (#ffffff), also used throughout
+dawn and dusk, and the reviewed night grey (#bdbdbd). The choice follows the Sun
+at the active Location's time and position, independent of app theme and selected
+object. Daytime ink starts as soon as solar elevation is above -18 degrees,
+matching the first twilight in the existing backdrop, and remains until that
+boundary is crossed again after sunset. At or below -18 degrees, night ink applies.
+The switch is immediate, with no colour blend; each grid keeps one colour on
+both sides of the horizon. Unknown or invalid observer data falls back to night ink.
+
+Native Sky/Camera, live spherical/flat views and captures share this palette.
+Live Sky/Camera reuses the existing solar position and only updates its palette
+when the brightness band changes. Cached grid geometry is unaffected. Captures
+use their frozen time, position and opacity, independently of later live settings
+or whether position is disclosed in the exported image.
+
+The reference grid starts enabled at 80% opacity. Grid and references keeps
+eleven opacity stops from 0 to 100 percent, using the volume slider styling.
+Coordinate numbers and named planetary lines are independent and start off.
+Existing stroke widths and dark outlines remain unchanged. Preview edits affect
+that image and its export caches only. Scene documents retain the opacity field
+and older files use the default.

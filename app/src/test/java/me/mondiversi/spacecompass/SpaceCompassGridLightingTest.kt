@@ -5,100 +5,114 @@ import org.junit.Test
 import java.time.Instant
 
 class SpaceCompassGridLightingTest {
-    private fun snapshot(instant: String="2026-03-20T12:00:00Z",longitude: Double=0.0)=
-        SpaceCompassPanoramaSnapshot(Instant.parse(instant).toEpochMilli(),0.0,longitude,0.0,
-            SpaceCompassSunSkyPhase.NIGHT,null,emptyList(),SpaceCompassCelestialRemoteData(),"",emptyList(),emptyList())
+    private fun snapshot()=SpaceCompassPanoramaSnapshot(Instant.parse("2026-03-20T12:00:00Z").toEpochMilli(),
+        0.0,0.0,0.0,SpaceCompassSunSkyPhase.NIGHT,null,emptyList(),SpaceCompassCelestialRemoteData(),"",emptyList(),emptyList())
 
-    @Test fun nightUsesOneFixedGreyBelowMinusSixDegrees() {
-        for(h in listOf(-90.0,-18.0,-6.0001)) {
-            val p=spaceCompassGridPalette(h,100)
-            assertEquals(SpaceCompassAngularGridAppearance.lineArgb,p.lineArgb)
-            assertEquals(SpaceCompassAngularGridAppearance.majorArgb,p.majorArgb)
-            assertEquals(SpaceCompassAngularGridAppearance.liveLineArgb,p.liveLineArgb)
-            assertEquals(SpaceCompassAngularGridAppearance.shadowArgb,p.shadowArgb)
-            assertEquals(SpaceCompassAngularGridAppearance.liveShadowArgb,p.liveShadowArgb)
-            assertFalse(spaceCompassGridUsesDayInk(h))
+    @Test fun dawnTwilightAndDayUseTheSameBrightInkInLiveAndImages() {
+        for(elevation in listOf(-17.999999,-12.0,-6.0,-0.833,0.0,6.0,8.0,20.0,90.0)) {
+            val ink=spaceCompassGridPalette(elevation)
+            assertEquals(0xccffffff.toInt(),ink.lineArgb)
+            assertEquals(ink.lineArgb,ink.majorArgb)
+            assertEquals(ink.lineArgb,ink.liveLineArgb)
+            assertEquals(0xffffffff.toInt(),spaceCompassGridPalette(elevation,100).lineArgb)
+            assertTrue((ink.lineArgb and 255)>0xbd)
         }
     }
-    @Test fun civilDawnDayAndDuskUseOneLighterDayGrey() {
-        for(h in listOf(-6.0,-5.0,0.0,8.0,20.0,90.0)) {
-            val p=spaceCompassGridPalette(h)
-            assertEquals(0xcc707070.toInt(),p.lineArgb);assertEquals(0xcc707070.toInt(),p.majorArgb)
-            assertEquals(0xcc707070.toInt(),p.liveLineArgb)
-            assertTrue(spaceCompassGridUsesDayInk(h))
+    @Test fun onlyNightRetainsPreviousGreyWithAnImmediateSwitch() {
+        for(elevation in listOf(null,Double.NaN,Double.NEGATIVE_INFINITY,Double.POSITIVE_INFINITY,
+            -90.0,-30.0,-18.000001,-18.0)) {
+            val ink=spaceCompassGridPalette(elevation)
+            assertEquals(0xccbdbdbd.toInt(),ink.lineArgb)
+            assertEquals(ink.lineArgb,ink.majorArgb)
+            assertEquals(ink.lineArgb,ink.liveLineArgb)
+        }
+        for(h in listOf(-90.0,-30.0,-18.000001,-18.0,-17.999999,-12.0,-6.0,0.0,6.0,8.0,45.0,90.0)) {
+            val lighting=spaceCompassSolarLighting(h)
+            assertEquals(lighting.from!=SpaceCompassSolarLightBand.NIGHT || lighting.to!=SpaceCompassSolarLightBand.NIGHT,
+                spaceCompassGridUsesDayInk(h))
+        }
+        assertEquals(spaceCompassGridPalette(-90.0),spaceCompassGridPalette(-18.0))
+        assertEquals(spaceCompassGridPalette(90.0),spaceCompassGridPalette(-17.999999))
+    }
+    @Test fun eightyPercentDefaultAndAllElevenStopsAreRetained() {
+        assertEquals(80,SPACE_COMPASS_GRID_OPACITY_DEFAULT)
+        for(percent in 0..100 step 10) assertEquals(percent,spaceCompassGridOpacity(percent))
+        assertEquals(0,spaceCompassGridOpacity(-20));assertEquals(100,spaceCompassGridOpacity(150))
+        assertEquals(40,spaceCompassGridOpacity(44));assertEquals(50,spaceCompassGridOpacity(45))
+    }
+    @Test fun halfOpacityScalesStrokesAndOutlinesWithoutRecolouring() {
+        for(elevation in listOf(-20.0,-12.0,0.0,20.0)) {
+            val ink=spaceCompassGridPalette(elevation,50)
+            for(core in listOf(ink.lineArgb,ink.majorArgb,ink.liveLineArgb)) {
+                assertEquals(128,core ushr 24)
+                assertEquals(if(elevation> -18.0) 0xffffff else 0xbdbdbd,core and 0xffffff)
+            }
+            assertEquals(32,ink.shadowArgb ushr 24);assertEquals(45,ink.liveShadowArgb ushr 24)
         }
     }
-    @Test fun theSwitchHasNoIntermediateGreyAndTheDayToneRemainsLighterThanTheFirstTrial() {
-        val day=spaceCompassGridPalette(90.0)
-        assertFalse(spaceCompassGridUsesDayInk(-6.000001))
-        assertTrue(spaceCompassGridUsesDayInk(-6.0))
-        for(i in 0..28) assertEquals(day,spaceCompassGridPalette(-6.0+i*.5))
-        assertEquals(spaceCompassGridPalette(-90.0),spaceCompassGridPalette(-6.000001))
-        val grey=day.liveLineArgb and 255
-        assertTrue(grey>0x48);assertTrue(grey<0xff)
-        assertEquals("#707070cc",spaceCompassGridCss(day.liveLineArgb))
-    }
-    @Test fun opacityAndShadowStayUnchangedAtEverySolarHeight() {
-        val night=spaceCompassGridPalette(-90.0)
-        for(h in listOf(-6.0,-2.0,0.0,2.0,5.0,8.0)) {
-            val p=spaceCompassGridPalette(h)
-            assertEquals(night.lineArgb ushr 24,p.lineArgb ushr 24)
-            assertEquals(night.liveLineArgb ushr 24,p.liveLineArgb ushr 24)
-            assertEquals(night.majorArgb ushr 24,p.majorArgb ushr 24)
-            assertEquals(night.shadowArgb,p.shadowArgb);assertEquals(night.liveShadowArgb,p.liveShadowArgb)
+    @Test fun zeroOpacityHidesCoreAndOutlinesTogether() {
+        for(elevation in listOf(-20.0,-12.0,0.0,20.0)) {
+            val ink=spaceCompassGridPalette(elevation,0)
+            for(value in listOf(ink.lineArgb,ink.majorArgb,ink.liveLineArgb,ink.shadowArgb,ink.liveShadowArgb))
+                assertEquals(0,value ushr 24)
         }
     }
-    @Test fun invalidOrUnavailableSolarDataKeepsTheExistingNightGrid() {
-        for(h in listOf(null,Double.NaN,Double.POSITIVE_INFINITY,Double.NEGATIVE_INFINITY))
-            assertEquals(spaceCompassGridPalette(-90.0),spaceCompassGridPalette(h))
-        assertEquals(spaceCompassGridPalette(-90.0),spaceCompassGridPalette(snapshot().copy(observerPositionKnown=false)))
-        assertEquals(spaceCompassGridPalette(-90.0),spaceCompassGridPalette(snapshot().copy(latitude=100.0)))
-    }
-    @Test fun capturesUseTheirScenarioInstantAndPlaceRatherThanDeviceThemeOrSelectedObject() {
-        val day=snapshot();val night=snapshot("2026-03-20T00:00:00Z")
-        assertEquals(spaceCompassGridPalette(90.0),spaceCompassGridPalette(day))
-        assertEquals(spaceCompassGridPalette(-90.0),spaceCompassGridPalette(night))
-        assertEquals(spaceCompassGridPalette(night),spaceCompassGridPalette(day.copy(longitude=180.0)))
-        for(body in listOf(SpaceCompassCelestialBody.SUN,SpaceCompassCelestialBody.MOON,SpaceCompassCelestialBody.ISS))
-            assertEquals(spaceCompassGridPalette(day),spaceCompassGridPalette(day.copy(objects=listOf(SpaceCompassPanoramaObject(body,"Object",null)))))
-    }
-    @Test fun appLightDarkCaptureThemeAndFallbackPhaseNeverOverrideScenarioSunlight() {
-        val original=snapshot()
-        for(dark in listOf(false,true)) {
-            val view=original.copy(globe=SpaceCompassGlobeCapture(SpaceCompassGlobePose(),"",dark=dark))
-            assertEquals(spaceCompassGridPalette(original),spaceCompassGridPalette(view))
+    @Test fun backgroundBlendingAndPhaseLabelsCannotOverrideFrozenSun() {
+        for(hour in listOf("00","12")) {
+            val source=snapshot().copy(timeMs=Instant.parse("2026-03-20T"+hour+":00:00Z").toEpochMilli())
+            val expected=spaceCompassGridPalette(source)
+            for(phase in SpaceCompassSunSkyPhase.entries) for(band in SpaceCompassSolarLightBand.entries)
+                for(mix in listOf(0f,.5f,1f)) assertEquals(expected,spaceCompassGridPalette(source.copy(phase=phase,
+                    solarLighting=SpaceCompassSolarLighting(band,SpaceCompassSolarLightBand.DAY,mix))))
         }
-        for(phase in SpaceCompassSunSkyPhase.entries)
-            assertEquals(spaceCompassGridPalette(original),spaceCompassGridPalette(original.copy(phase=phase)))
     }
-    @Test fun frozenImageDisclosureAndTimezoneDoNotAlterItsGridLighting() {
-        val original=snapshot()
+    @Test fun activeObserverDeterminesSunAndUnavailableDataKeepsNightGrey() {
+        val source=snapshot()
+        assertEquals(spaceCompassGridPalette(90.0),spaceCompassGridPalette(source))
+        assertEquals(spaceCompassGridPalette(-90.0),spaceCompassGridPalette(source.copy(longitude=180.0)))
+        assertEquals(spaceCompassGridPalette(source),spaceCompassGridPalette(source.copy(altitude=20_000.0)))
+        for(view in listOf(source.copy(observerPositionKnown=false),source.copy(latitude=100.0),
+            source.copy(longitude=Double.NaN),source.copy(altitude=Double.NaN)))
+            assertEquals(spaceCompassGridPalette(),spaceCompassGridPalette(view))
+    }
+    @Test fun applicationThemeAndObjectSelectionDoNotChangeGrey() {
+        val source=snapshot();val expected=spaceCompassGridPalette(source)
+        for(dark in listOf(false,true)) for(body in listOf(SpaceCompassCelestialBody.SUN,SpaceCompassCelestialBody.MOON,SpaceCompassCelestialBody.ISS)) {
+            val view=source.copy(globe=SpaceCompassGlobeCapture(SpaceCompassGlobePose(),"",dark=dark),
+                objects=listOf(SpaceCompassPanoramaObject(body,"Object",null)))
+            assertEquals(expected,spaceCompassGridPalette(view))
+        }
+    }
+    @Test fun frozenTimeChangesSunButTimezoneAndDisclosureDoNot() {
+        val source=snapshot();val day=spaceCompassGridPalette(source)
+        val night=spaceCompassGridPalette(source.copy(timeMs=Instant.parse("2026-03-20T00:00:00Z").toEpochMilli()))
+        assertNotEquals(day,night)
+        assertEquals(spaceCompassGridPalette(-90.0),night)
+        for(time in listOf("2026-03-20T05:30:00Z","2026-03-20T18:30:00Z")) {
+            val twilight=source.copy(timeMs=Instant.parse(time).toEpochMilli())
+            val elevation=calculateSpaceCompassSunPosition(twilight.timeMs,twilight.latitude,twilight.longitude,twilight.altitude).elevationDegrees
+            assertTrue(elevation> -18.0 && elevation<0.0)
+            assertEquals(day,spaceCompassGridPalette(twilight))
+        }
         for(position in SpaceCompassPanoramaPosition.entries)
-            assertEquals(spaceCompassGridPalette(original),spaceCompassGridPalette(spaceCompassSnapshotForDisclosure(original,position)))
-        assertEquals(spaceCompassGridPalette(original),spaceCompassGridPalette(original.copy(zoneId="Pacific/Honolulu")))
+            assertEquals(day,spaceCompassGridPalette(spaceCompassSnapshotForDisclosure(source,position)))
+        assertEquals(day,spaceCompassGridPalette(source.copy(zoneId="Pacific/Honolulu")))
     }
-    @Test fun opacityHasElevenStopsAndDefaultsToEightyPercent() {
-        assertEquals(80, SPACE_COMPASS_GRID_OPACITY_DEFAULT)
-        for(percent in 0..100 step 10) assertEquals(percent, spaceCompassGridOpacity(percent))
-        assertEquals(0, spaceCompassGridOpacity(-20)); assertEquals(100, spaceCompassGridOpacity(150))
-        assertEquals(40, spaceCompassGridOpacity(44)); assertEquals(50, spaceCompassGridOpacity(45))
-        for(h in listOf(-18.0, -6.0, 20.0)) {
-            assertEquals(204, spaceCompassGridPalette(h).liveLineArgb ushr 24)
-            assertEquals(255, spaceCompassGridPalette(h,100).liveLineArgb ushr 24)
-        }
-        assertEquals("#70707080",spaceCompassGridCss(spaceCompassGridPalette(20.0,50).liveLineArgb))
-    }
-    @Test fun zeroOpacityHidesBothStrokesAndCapturesFreezeTheirOwnOpacity() {
-        val zero=spaceCompassGridPalette(20.0,0)
-        for(ink in listOf(zero.lineArgb,zero.majorArgb,zero.liveLineArgb,zero.shadowArgb,zero.liveShadowArgb)) assertEquals(0,ink ushr 24)
+    @Test fun frozenCaptureKeepsItsOwnOpacityInsteadOfCurrentLiveChoice() {
         val source=snapshot().copy(gridOpacityPercent=30)
-        assertEquals(spaceCompassGridPalette(90.0,30),spaceCompassGridPalette(source))
-        for(position in SpaceCompassPanoramaPosition.entries)
-            assertEquals(spaceCompassGridPalette(source),spaceCompassGridPalette(spaceCompassSnapshotForDisclosure(source,position)))
+        val frozen=spaceCompassGridPalette(source)
+        assertEquals(spaceCompassGridPalette(90.0,30),frozen)
+        assertNotEquals(spaceCompassGridPalette(90.0,80),frozen)
+        assertEquals(frozen,spaceCompassGridPalette(source.copy(positionHidden=true)))
     }
-    @Test fun webCanvasUsesTheSameLiveRgbaInkAsNativeViews() {
-        assertEquals("#9c9c9ccc",spaceCompassGridCss(spaceCompassGridPalette(-6.0001).liveLineArgb))
-        assertEquals("#707070cc",spaceCompassGridCss(spaceCompassGridPalette(8.0).liveLineArgb))
-        assertEquals("#00000047",spaceCompassGridCss(spaceCompassGridPalette(8.0).liveShadowArgb))
+    @Test fun webRgbaMatchesNativeGreysForEveryOpacityStop() {
+        for(percent in 0..100 step 10) for(elevation in listOf(-20.0,-12.0,0.0,20.0)) {
+            val rgba=spaceCompassGridCss(spaceCompassGridPalette(elevation,percent).liveLineArgb)
+            assertEquals(if(elevation> -18.0) "ffffff" else "bdbdbd",rgba.substring(1,7))
+        }
+        assertEquals("#bdbdbdcc",spaceCompassGridCss(spaceCompassGridPalette().liveLineArgb))
+        assertEquals("#ffffffcc",spaceCompassGridCss(spaceCompassGridPalette(20.0).liveLineArgb))
+        assertEquals("#ffffff80",spaceCompassGridCss(spaceCompassGridPalette(20.0,50).liveLineArgb))
+        assertEquals("#00000047",spaceCompassGridCss(spaceCompassGridPalette().liveShadowArgb))
     }
 }
