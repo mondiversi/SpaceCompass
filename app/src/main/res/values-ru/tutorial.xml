@@ -27,7 +27,7 @@
     <string name="tutorial_gps" formatted="false">Смотрите реальное положение, высоту GPS, ориентацию и погоду независимо от Location.</string>
     <string name="tutorial_points" formatted="false">Выберите точку или снимите выбор. Наведите прицел, чтобы увидеть время, T, азимут и высоту.</string>
     <string name="tutorial_reticle_title" formatted="false">Время и интерфейс</string>
-    <string name="tutorial_reticle" formatted="false">Коснитесь свободного места, чтобы остановить или продолжить время. Двойное касание показывает или скрывает интерфейс и панели.</string>
+    <string name="tutorial_reticle" formatted="false">Коснитесь свободного места, чтобы остановить или продолжить время. Двойное касание показывает или скрывает интерфейс и панели. Прицел остаётся видимым.</string>
     <string name="tutorial_reminder" formatted="false">Откройте будильник или календарь Android для подходящего будущего события. Прошлые события и текущая точка исключены.</string>
     <string name="tutorial_status_title" formatted="false">Состояние и восстановление</string>
     <string name="tutorial_status" formatted="false">Проверьте состояние и доступные действия для позиции, погоды и орбитальных данных.</string>

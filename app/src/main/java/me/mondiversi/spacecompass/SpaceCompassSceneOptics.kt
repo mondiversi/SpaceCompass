@@ -36,10 +36,10 @@ internal fun spaceCompassMainReticleOpticalFrame(viewport: SpaceCompassSunSceneF
         !viewport.top.isFinite()) return viewport
     val gap = detailsGap.takeIf { it.isFinite() && it > 0 } ?: 0.0
     val centerY = when {
-        !interfaceVisible -> sceneHeight / 2
         landscape -> sceneHeight / 2
-        detailsExpanded -> (viewport.top + viewport.height + gap) / 2
-        else -> sceneHeight * .40
+        // A clean portrait view shares the compact panels' raised optical axis.
+        !interfaceVisible || !detailsExpanded -> sceneHeight * .40
+        else -> (viewport.top + viewport.height + gap) / 2
     }.coerceIn(0.0, sceneHeight)
     return viewport.copy(top = centerY - viewport.height / 2)
 }

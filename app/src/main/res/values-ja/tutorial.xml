@@ -27,7 +27,7 @@
     <string name="tutorial_gps" formatted="false">Locationと無関係に、実際の位置、GPS標高、向き、天気を確認します。</string>
     <string name="tutorial_points" formatted="false">点を選択・解除します。照準を合わせると時刻、T、方位角、高度を確認できます。</string>
     <string name="tutorial_reticle_title" formatted="false">時間と画面表示</string>
-    <string name="tutorial_reticle" formatted="false">空いている場所をタップすると時間を停止・再開します。ダブルタップで操作ボタンとパネルを表示・非表示にします。</string>
+    <string name="tutorial_reticle" formatted="false">空いている場所をタップすると時間を停止・再開します。ダブルタップで操作ボタンとパネルを表示・非表示にします。照準は表示されたままです。</string>
     <string name="tutorial_reminder" formatted="false">対象となる未来のイベントをAndroidのアラームまたはカレンダーで開きます。過去や現在の点には設定できません。</string>
     <string name="tutorial_status_title" formatted="false">状態と復旧</string>
     <string name="tutorial_status" formatted="false">位置、天気、軌道データの状態と利用できる操作を確認します。</string>

@@ -1,9 +1,9 @@
 <resources>
     <string name="info_news_title">Latest news · %1$s</string>
-    <string name="info_news_star_sky" formatted="false">Grid greys follow the Sun at your Location and time.</string>
-    <string name="info_news_texture_downloads" formatted="false">Dawn, daylight and dusk use the daytime grey; night uses a separate grey.</string>
-    <string name="info_news_weather" formatted="false">Adjust grid opacity in steps of 10%.</string>
-    <string name="info_news_viewer_zoom" formatted="false">The reference grid starts enabled at 80%; numbers and planetary lines start off.</string>
-    <string name="info_news_settings" formatted="false">Captures inherit grid settings; preview changes affect only that image.</string>
-    <string name="info_news_catalog" formatted="false">Grid settings stay saved and can be shared with exported Scenes.</string>
+    <string name="info_news_star_sky" formatted="false">Transparency of the white reticle is now 50%.</string>
+    <string name="info_news_texture_downloads" formatted="false">Double-tap hides icons and panels while keeping the reticle visible.</string>
+    <string name="info_news_weather" formatted="false">In portrait, hiding the interface keeps the reticle raised, as with compact panels.</string>
+    <string name="info_news_viewer_zoom" formatted="false">More space below the last object-panel row, matching the compass panel.</string>
+    <string name="info_news_settings" formatted="false">Position details is now called Real position and still shows your actual position.</string>
+    <string name="info_news_catalog" formatted="false">The tutorial explains the updated interface gesture.</string>
 </resources>

@@ -169,15 +169,26 @@ class SpaceCompassSceneOpticsTest {
         }
     }
 
-    @Test fun cleanInterfaceCentersTheFullSafeFrameRegardlessOfPreviousPanelState() {
+    @Test fun cleanInterfaceSharesCompactPortraitAxisAndKeepsLandscapeCentered() {
         for ((width,height) in listOf(1080.0 to 1998.0,2280.0 to 906.0)) for (expanded in listOf(false,true)) {
             val full=SpaceCompassSunSceneFrame(0.0,0.0,width,height)
             val optical=spaceCompassMainReticleOpticalFrame(full,height,width>height,expanded,34.0,interfaceVisible=false)
-            assertEquals(full,optical)
+            val expectedY=height*if(width>height) .50 else .40
+            assertEquals(full.width,optical.width,0.0);assertEquals(full.height,optical.height,0.0)
+            assertEquals(full.left,optical.left,0.0)
+            val compact=spaceCompassMainReticleOpticalFrame(full,height,width>height,false,34.0)
+            assertEquals(compact,optical)
             val lens=spaceCompassSceneFramePerspective(width,height,optical,null)!!
             val centre=projectSpaceCompassSun(SpaceCompassSunPosition(0.0,0.0),facingNorth,width,height,lens)
             assertEquals(width/2,centre.x,1e-8)
-            assertEquals(height/2,centre.y,1e-8)
+            assertEquals(expectedY,centre.y,1e-8)
+            assertEquals(1.0,spaceCompassStarViewRay(centre.x,centre.y,facingNorth,optical).dot(facingNorth.forward),1e-8)
+            for(sensor in listOf(0,90,180,270)) for(display in listOf(0,90,180,270)) {
+                val cameraLens=SpaceCompassCameraLens(0.0,0.0,4000.0,3000.0,3000.0,3000.0,2000.0,1500.0,sensor)
+                val camera=spaceCompassCameraGeometry(cameraLens,1280.0,960.0,display,width,height,optical)!!
+                assertEquals(centre.x,camera.destination.map { it.x }.average(),1e-8)
+                assertEquals(centre.y,camera.destination.map { it.y }.average(),1e-8)
+            }
         }
     }
 

@@ -1,9 +1,9 @@
 <resources>
     <string name="info_news_title">हाल के बदलाव · %1$s</string>
-    <string name="info_news_star_sky" formatted="false">ग्रिड के धूसर रंग चुने हुए स्थान और समय के सूर्य के अनुसार बदलते हैं।</string>
-    <string name="info_news_texture_downloads" formatted="false">भोर, दिन और संध्या में दिन वाला धूसर रंग होता है; रात का रंग अलग है।</string>
-    <string name="info_news_weather" formatted="false">ग्रिड की अपारदर्शिता 10% के चरणों में बदलें।</string>
-    <string name="info_news_viewer_zoom" formatted="false">ग्रिड शुरुआत में 80% पर चालू होता है; संख्याएँ और ग्रह की रेखाएँ बंद होती हैं।</string>
-    <string name="info_news_settings" formatted="false">कैप्चर ग्रिड की सेटिंग लेते हैं; पूर्वावलोकन के बदलाव केवल उसी चित्र पर लागू होते हैं।</string>
-    <string name="info_news_catalog" formatted="false">ग्रिड की सेटिंग सहेजी रहती हैं और निर्यात किए गए दृश्य के साथ साझा होती हैं।</string>
+    <string name="info_news_star_sky" formatted="false">सफ़ेद निशाने की पारदर्शिता अब 50% है।</string>
+    <string name="info_news_texture_downloads" formatted="false">दो बार छूने से आइकन और पैनल छिपते हैं, लेकिन निशाना दिखाई देता रहता है।</string>
+    <string name="info_news_weather" formatted="false">पोर्ट्रेट में इंटरफ़ेस छिपाने पर निशाना ऊपर रहता है, जैसे संकुचित पैनल के साथ।</string>
+    <string name="info_news_viewer_zoom" formatted="false">वस्तु पैनल की अंतिम पंक्ति के नीचे अधिक जगह, कम्पास पैनल के अनुरूप।</string>
+    <string name="info_news_settings" formatted="false">स्थान का विवरण अब वास्तविक स्थान कहलाता है और आपका असली स्थान दिखाता रहता है।</string>
+    <string name="info_news_catalog" formatted="false">ट्यूटोरियल इंटरफ़ेस के नए स्पर्श संकेत को समझाता है।</string>
 </resources>

@@ -27,7 +27,7 @@
     <string name="tutorial_gps" formatted="false">Zobacz rzeczywistą pozycję, wysokość GPS, orientację i pogodę, niezależnie od Location.</string>
     <string name="tutorial_points" formatted="false">Zaznacz lub odznacz punkt. Wyceluj, aby odczytać czas, T, azymut i wysokość.</string>
     <string name="tutorial_reticle_title" formatted="false">Czas i interfejs</string>
-    <string name="tutorial_reticle" formatted="false">Dotknij pustego miejsca, aby zatrzymać lub wznowić czas. Dwa dotknięcia pokazują lub ukrywają interfejs i panele.</string>
+    <string name="tutorial_reticle" formatted="false">Dotknij pustego miejsca, aby zatrzymać lub wznowić czas. Dwa dotknięcia pokazują lub ukrywają interfejs i panele. Celownik pozostaje widoczny.</string>
     <string name="tutorial_reminder" formatted="false">Otwórz alarm lub kalendarz Androida dla przyszłego wydarzenia. Nie dotyczy przeszłości ani punktu aktualnego.</string>
     <string name="tutorial_status_title" formatted="false">Stan i przywracanie</string>
     <string name="tutorial_status" formatted="false">Sprawdź stan i dostępne działania dla pozycji, pogody i danych orbitalnych.</string>

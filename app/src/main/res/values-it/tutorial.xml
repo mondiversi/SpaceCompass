@@ -27,7 +27,7 @@
     <string name="tutorial_gps" formatted="false">Apri i dettagli della posizione reale, della quota GPS, dell’orientamento e del meteo. Questi valori sono indipendenti dalla Location.</string>
     <string name="tutorial_points" formatted="false">Seleziona o deseleziona un punto. Nel mirino leggi ora, T, azimut ed elevazione.</string>
     <string name="tutorial_reticle_title" formatted="false">Tempo e interfaccia</string>
-    <string name="tutorial_reticle" formatted="false">Tocca un’area libera per fermare o riprendere il tempo. Due tocchi mostrano o nascondono interfaccia e isole.</string>
+    <string name="tutorial_reticle" formatted="false">Tocca un’area libera per fermare o riprendere il tempo. Due tocchi mostrano o nascondono interfaccia e isole. Il mirino resta visibile.</string>
     <string name="tutorial_reminder" formatted="false">Apri la sveglia o il calendario Android per un evento futuro compatibile. Gli eventi passati e il punto attuale non possono avere una sveglia.</string>
     <string name="tutorial_status_title" formatted="false">Stato e ripristino</string>
     <string name="tutorial_status" formatted="false">Controlla lo stato e le azioni disponibili per posizione, meteo e dati orbitali.</string>

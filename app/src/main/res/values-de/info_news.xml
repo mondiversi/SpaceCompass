@@ -1,9 +1,9 @@
 <resources>
     <string name="info_news_title">Neuigkeiten · %1$s</string>
-    <string name="info_news_star_sky" formatted="false">Die Grautöne des Gitters folgen der Sonne am gewählten Ort und Zeitpunkt.</string>
-    <string name="info_news_texture_downloads" formatted="false">Morgendämmerung, Tag und Abenddämmerung nutzen Tagesgrau; nachts gilt ein eigener Grauton.</string>
-    <string name="info_news_weather" formatted="false">Die Gitterdeckkraft lässt sich schrittweise einstellen: jeweils 10%.</string>
-    <string name="info_news_viewer_zoom" formatted="false">Das Gitter startet aktiv mit 80%; Zahlen und Planetenlinien sind anfangs aus.</string>
-    <string name="info_news_settings" formatted="false">Aufnahmen übernehmen die Gittereinstellungen; Vorschauänderungen gelten nur für dieses Bild.</string>
-    <string name="info_news_catalog" formatted="false">Gittereinstellungen bleiben gespeichert und werden mit exportierten Szenen geteilt.</string>
+    <string name="info_news_star_sky" formatted="false">Die Transparenz des weißen Fadenkreuzes beträgt jetzt 50%.</string>
+    <string name="info_news_texture_downloads" formatted="false">Doppeltippen blendet Symbole und Infobereiche aus; das Fadenkreuz bleibt sichtbar.</string>
+    <string name="info_news_weather" formatted="false">Im Hochformat bleibt das Fadenkreuz bei ausgeblendeter Oberfläche erhöht, wie bei kompakten Infobereichen.</string>
+    <string name="info_news_viewer_zoom" formatted="false">Mehr Abstand unter der letzten Zeile des Objektbereichs, passend zum Kompassbereich.</string>
+    <string name="info_news_settings" formatted="false">Standortdetails heißt jetzt Reale Position und zeigt weiterhin deinen tatsächlichen Standort.</string>
+    <string name="info_news_catalog" formatted="false">Das Tutorial erklärt die aktualisierte Bediengeste.</string>
 </resources>

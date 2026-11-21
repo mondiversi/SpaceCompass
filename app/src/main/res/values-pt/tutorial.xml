@@ -27,7 +27,7 @@
     <string name="tutorial_gps" formatted="false">Consulte posição real, altitude GPS, orientação e meteorologia, independentemente da Location.</string>
     <string name="tutorial_points" formatted="false">Selecione ou desmarque um ponto. Aponte para ler hora, T, azimute e elevação.</string>
     <string name="tutorial_reticle_title" formatted="false">Tempo e interface</string>
-    <string name="tutorial_reticle" formatted="false">Toque numa área livre para pausar ou retomar o tempo. Dois toques mostram ou ocultam a interface e os painéis.</string>
+    <string name="tutorial_reticle" formatted="false">Toque numa área livre para pausar ou retomar o tempo. Dois toques mostram ou ocultam a interface e os painéis. A mira permanece visível.</string>
     <string name="tutorial_reminder" formatted="false">Abra o alarme ou calendário Android para um evento futuro válido. Não se aplica ao passado nem ao ponto atual.</string>
     <string name="tutorial_status_title" formatted="false">Estado e recuperação</string>
     <string name="tutorial_status" formatted="false">Consulte o estado e as ações disponíveis para posição, meteorologia e dados orbitais.</string>

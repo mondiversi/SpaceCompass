@@ -1,9 +1,9 @@
 <resources>
     <string name="info_news_title">Τελευταία νέα · %1$s</string>
-    <string name="info_news_star_sky" formatted="false">Οι γκρι αποχρώσεις του πλέγματος ακολουθούν τον Ήλιο στην επιλεγμένη τοποθεσία και ώρα.</string>
-    <string name="info_news_texture_downloads" formatted="false">Αυγή, ημέρα και σούρουπο χρησιμοποιούν ημερήσιο γκρι· η νύχτα ξεχωριστό γκρι.</string>
-    <string name="info_news_weather" formatted="false">Ρύθμισε την αδιαφάνεια του πλέγματος με βήματα 10%.</string>
-    <string name="info_news_viewer_zoom" formatted="false">Το πλέγμα ξεκινά ενεργό στο 80%· αριθμοί και πλανητικές γραμμές ξεκινούν ανενεργά.</string>
-    <string name="info_news_settings" formatted="false">Οι λήψεις κληρονομούν το πλέγμα· οι αλλαγές προεπισκόπησης αφορούν μόνο αυτή την εικόνα.</string>
-    <string name="info_news_catalog" formatted="false">Οι ρυθμίσεις πλέγματος αποθηκεύονται και κοινοποιούνται με εξαγόμενες σκηνές.</string>
+    <string name="info_news_star_sky" formatted="false">Η διαφάνεια του λευκού στόχαστρου είναι πλέον 50%.</string>
+    <string name="info_news_texture_downloads" formatted="false">Το διπλό άγγιγμα κρύβει εικονίδια και πλαίσια, διατηρώντας ορατό το στόχαστρο.</string>
+    <string name="info_news_weather" formatted="false">Σε κατακόρυφη προβολή, το στόχαστρο παραμένει ψηλότερα όταν κρύβεται η διεπαφή, όπως με τα συμπτυγμένα πλαίσια.</string>
+    <string name="info_news_viewer_zoom" formatted="false">Περισσότερο κενό κάτω από την τελευταία γραμμή του πλαισίου αντικειμένου, όπως στο πλαίσιο πυξίδας.</string>
+    <string name="info_news_settings" formatted="false">Οι Λεπτομέρειες θέσης ονομάζονται πλέον Πραγματική θέση και συνεχίζουν να δείχνουν την πραγματική σας θέση.</string>
+    <string name="info_news_catalog" formatted="false">Το εκπαιδευτικό εξηγεί τη νέα χειρονομία της διεπαφής.</string>
 </resources>

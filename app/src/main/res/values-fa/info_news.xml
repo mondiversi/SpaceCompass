@@ -1,9 +1,9 @@
 <resources>
     <string name="info_news_title">تازه‌ترین تغییرات · %1$s</string>
-    <string name="info_news_star_sky" formatted="false">خاکستری‌های شبکه از خورشید در مکان و زمان انتخابی پیروی می‌کنند.</string>
-    <string name="info_news_texture_downloads" formatted="false">سپیده‌دم، روز و غروب خاکستری روزانه دارند؛ شب خاکستری جداگانه‌ای دارد.</string>
-    <string name="info_news_weather" formatted="false">کدری شبکه را با گام‌های 10% تنظیم کنید.</string>
-    <string name="info_news_viewer_zoom" formatted="false">شبکه در آغاز با کدری 80% فعال است؛ اعداد و خطوط سیاره خاموش‌اند.</string>
-    <string name="info_news_settings" formatted="false">تصاویر ثبت‌شده تنظیمات شبکه را می‌گیرند؛ تغییرات پیش‌نمایش فقط بر همان تصویر اثر دارد.</string>
-    <string name="info_news_catalog" formatted="false">تنظیمات شبکه ذخیره می‌شوند و با صحنه‌های صادرشده قابل اشتراک‌اند.</string>
+    <string name="info_news_star_sky" formatted="false">شفافیت نشانه‌گیر سفید اکنون برابر است با 50%.</string>
+    <string name="info_news_texture_downloads" formatted="false">دو بار لمس، نمادها و پنل‌ها را پنهان می‌کند و نشانه‌گیر را نمایان نگه می‌دارد.</string>
+    <string name="info_news_weather" formatted="false">در حالت عمودی، با پنهان شدن رابط کاربری نشانه‌گیر مانند حالت پنل‌های جمع‌شده بالاتر می‌ماند.</string>
+    <string name="info_news_viewer_zoom" formatted="false">فاصلهٔ زیر آخرین ردیف پنل جرم بیشتر شده و با پنل قطب‌نما هماهنگ است.</string>
+    <string name="info_news_settings" formatted="false">جزئیات موقعیت اکنون «موقعیت واقعی» نام دارد و همچنان موقعیت واقعی شما را نشان می‌دهد.</string>
+    <string name="info_news_catalog" formatted="false">آموزش، حرکت لمسی جدید رابط کاربری را توضیح می‌دهد.</string>
 </resources>

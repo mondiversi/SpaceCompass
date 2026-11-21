@@ -1,9 +1,9 @@
 <resources>
     <string name="info_news_title">آخر المستجدات · %1$s</string>
-    <string name="info_news_star_sky" formatted="false">تتبع درجات رمادي الشبكة الشمس في موقعك ووقتك.</string>
-    <string name="info_news_texture_downloads" formatted="false">يستخدم الفجر والنهار والغسق رمادي النهار؛ ويستخدم الليل رمادياً منفصلاً.</string>
-    <string name="info_news_weather" formatted="false">اضبط عتامة الشبكة بخطوات 10%.</string>
-    <string name="info_news_viewer_zoom" formatted="false">تبدأ الشبكة مفعّلة بعتامة 80%؛ وتبدأ الأرقام وخطوط الكوكب معطّلة.</string>
-    <string name="info_news_settings" formatted="false">ترث اللقطات إعدادات الشبكة؛ وتؤثر تغييرات المعاينة في تلك الصورة فقط.</string>
-    <string name="info_news_catalog" formatted="false">تبقى إعدادات الشبكة محفوظة ويمكن مشاركتها مع المشاهد المصدّرة.</string>
+    <string name="info_news_star_sky" formatted="false">أصبحت شفافية علامة التصويب البيضاء 50%.</string>
+    <string name="info_news_texture_downloads" formatted="false">يخفي النقر المزدوج الأيقونات واللوحات مع إبقاء علامة التصويب ظاهرة.</string>
+    <string name="info_news_weather" formatted="false">في الوضع العمودي تبقى علامة التصويب مرتفعة عند إخفاء الواجهة، كما مع اللوحات المصغّرة.</string>
+    <string name="info_news_viewer_zoom" formatted="false">مساحة أكبر أسفل آخر صف في لوحة الجرم، بما يتوافق مع لوحة البوصلة.</string>
+    <string name="info_news_settings" formatted="false">أصبح اسم تفاصيل الموقع «الموقع الفعلي» ويظل يعرض موقعك الحقيقي.</string>
+    <string name="info_news_catalog" formatted="false">يشرح الدليل التعليمي سلوك الواجهة الجديد.</string>
 </resources>

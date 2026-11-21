@@ -24,7 +24,7 @@ import org.junit.Test
 class SpaceCompassReticleVisibilityUiTest {
     @get:Rule val compose = createComposeRule()
 
-    @Test fun singleTapPausesTimeAndDoubleTapTogglesReticleAndControls() {
+    @Test fun singleTapPausesTimeAndDoubleTapTogglesControlsButKeepsReticle() {
         val now=Instant.parse("2026-11-07T10:00:00Z").toEpochMilli()
         val point=SpaceCompassSunPathPoint(now+3_600_000,SpaceCompassSunPosition(180.0,25.0))
         val path=SpaceCompassSunDailyPath(LocalDate.parse("2026-11-07"),ZoneId.of("UTC"),
@@ -35,7 +35,7 @@ class SpaceCompassReticleVisibilityUiTest {
             var controlsVisible by remember { mutableStateOf(true) }
             SpaceCompassSunPointingViewport(null,facing(point.position),Modifier.size(340.dp,420.dp),
                 "synthetic sky",selection,dailyPath=path,body=path.body,timeMs=now,
-                showActions=false,showReticle=controlsVisible,showFloatingControls=controlsVisible,
+                showActions=false,showReticle=true,showFloatingControls=controlsVisible,
                 timePaused=observer.playbackPaused,onToggleTime={observer.togglePlayback(now,0L)},
                 onToggleFloatingControls={controlsVisible=!controlsVisible},
                 topStartActions={ Box(it.size(40.dp).testTag("fixture-floating-control")) })
@@ -46,10 +46,10 @@ class SpaceCompassReticleVisibilityUiTest {
         compose.runOnIdle { assertTrue(observer.playbackPaused);assertTrue(selection.isSelected(path,point)) }
         tapEmptySky(twice=true)
         compose.onNodeWithTag("fixture-floating-control").assertDoesNotExist()
-        compose.onNodeWithTag("sun-finder-reticle").assertDoesNotExist()
+        compose.onNodeWithTag("sun-finder-reticle").assertExists()
         compose.runOnIdle { assertTrue(observer.playbackPaused) }
         tapEmptySky()
-        compose.onNodeWithTag("sun-finder-reticle").assertDoesNotExist()
+        compose.onNodeWithTag("sun-finder-reticle").assertExists()
         compose.runOnIdle { assertFalse(observer.playbackPaused) }
         tapEmptySky(twice=true)
         compose.onNodeWithTag("fixture-floating-control").assertExists()

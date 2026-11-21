@@ -27,7 +27,7 @@
     <string name="tutorial_gps" formatted="false">Consultez la position réelle, l’altitude GPS, l’orientation et la météo, indépendamment de la Location.</string>
     <string name="tutorial_points" formatted="false">Sélectionnez un point ou désélectionnez-le. Visez pour lire heure, T, azimut et hauteur.</string>
     <string name="tutorial_reticle_title" formatted="false">Temps et interface</string>
-    <string name="tutorial_reticle" formatted="false">Touchez une zone libre pour arrêter ou reprendre le temps. Un double appui affiche ou masque l’interface et les panneaux.</string>
+    <string name="tutorial_reticle" formatted="false">Touchez une zone libre pour arrêter ou reprendre le temps. Un double appui affiche ou masque l’interface et les panneaux. Le réticule reste visible.</string>
     <string name="tutorial_reminder" formatted="false">Ouvrez une alarme ou le calendrier Android pour un événement futur admissible. Pas d’alarme pour le passé ou le point actuel.</string>
     <string name="tutorial_status_title" formatted="false">État et récupération</string>
     <string name="tutorial_status" formatted="false">Consultez l’état et les actions disponibles pour la position, la météo et les données orbitales.</string>

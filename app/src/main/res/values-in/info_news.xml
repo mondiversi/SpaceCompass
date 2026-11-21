@@ -1,9 +1,9 @@
 <resources>
     <string name="info_news_title">Perubahan terbaru · %1$s</string>
-    <string name="info_news_star_sky" formatted="false">Warna abu-abu kisi mengikuti Matahari di lokasi dan waktu pilihan.</string>
-    <string name="info_news_texture_downloads" formatted="false">Fajar, siang, dan senja memakai abu-abu siang; malam memakai abu-abu berbeda.</string>
-    <string name="info_news_weather" formatted="false">Atur opasitas kisi dalam langkah 10%.</string>
-    <string name="info_news_viewer_zoom" formatted="false">Kisi awalnya aktif pada 80%; angka dan garis planet awalnya nonaktif.</string>
-    <string name="info_news_settings" formatted="false">Tangkapan mewarisi kisi; perubahan pratinjau hanya berlaku pada gambar itu.</string>
-    <string name="info_news_catalog" formatted="false">Pengaturan kisi tersimpan dan dibagikan bersama Adegan yang diekspor.</string>
+    <string name="info_news_star_sky" formatted="false">Transparansi bidikan putih kini 50%.</string>
+    <string name="info_news_texture_downloads" formatted="false">Ketuk dua kali untuk menyembunyikan ikon dan panel sambil menjaga bidikan tetap terlihat.</string>
+    <string name="info_news_weather" formatted="false">Dalam orientasi potret, bidikan tetap lebih tinggi saat antarmuka disembunyikan, seperti pada panel ringkas.</string>
+    <string name="info_news_viewer_zoom" formatted="false">Ruang di bawah baris terakhir panel objek ditambah agar selaras dengan panel kompas.</string>
+    <string name="info_news_settings" formatted="false">Detail posisi kini bernama Posisi sebenarnya dan tetap menampilkan posisi nyata Anda.</string>
+    <string name="info_news_catalog" formatted="false">Tutorial menjelaskan gerakan antarmuka yang diperbarui.</string>
 </resources>

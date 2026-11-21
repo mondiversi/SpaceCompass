@@ -27,7 +27,7 @@
     <string name="tutorial_gps" formatted="false">مکان واقعی، ارتفاع GPS، جهت و آب‌وهوا را مستقل از Location ببینید.</string>
     <string name="tutorial_points" formatted="false">نقطه‌ای را انتخاب یا لغو انتخاب کنید. نشانه را روی آن ببرید تا زمان، T، سمت و ارتفاع را ببینید.</string>
     <string name="tutorial_reticle_title" formatted="false">زمان و رابط کاربری</string>
-    <string name="tutorial_reticle" formatted="false">برای توقف یا ادامهٔ زمان، فضای خالی را لمس کنید. با دو بار لمس، رابط کاربری و پنل‌ها را نمایش دهید یا پنهان کنید.</string>
+    <string name="tutorial_reticle" formatted="false">برای توقف یا ادامهٔ زمان، فضای خالی را لمس کنید. با دو بار لمس، رابط کاربری و پنل‌ها را نمایش دهید یا پنهان کنید. نشانه‌گیر نمایان می‌ماند.</string>
     <string name="tutorial_reminder" formatted="false">برای رویداد آینده مجاز، زنگ یا تقویم Android را باز کنید. رویدادهای گذشته و نقطه فعلی شامل نمی‌شوند.</string>
     <string name="tutorial_status_title" formatted="false">وضعیت و بازیابی</string>
     <string name="tutorial_status" formatted="false">وضعیت و اقدامات موجود برای موقعیت، هواشناسی و داده‌های مداری را بررسی کنید.</string>

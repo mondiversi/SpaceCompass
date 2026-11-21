@@ -27,7 +27,7 @@
     <string name="tutorial_gps" formatted="false">Δείτε πραγματική θέση, υψόμετρο GPS, προσανατολισμό και καιρό, ανεξάρτητα από τη Location.</string>
     <string name="tutorial_points" formatted="false">Επιλέξτε ή αποεπιλέξτε ένα σημείο. Στοχεύστε για να δείτε ώρα, T, αζιμούθιο και ύψος.</string>
     <string name="tutorial_reticle_title" formatted="false">Χρόνος και διεπαφή</string>
-    <string name="tutorial_reticle" formatted="false">Αγγίξτε κενό χώρο για παύση ή συνέχιση του χρόνου. Το διπλό άγγιγμα εμφανίζει ή κρύβει τη διεπαφή και τα πλαίσια.</string>
+    <string name="tutorial_reticle" formatted="false">Αγγίξτε κενό χώρο για παύση ή συνέχιση του χρόνου. Το διπλό άγγιγμα εμφανίζει ή κρύβει τη διεπαφή και τα πλαίσια. Το στόχαστρο παραμένει ορατό.</string>
     <string name="tutorial_reminder" formatted="false">Ανοίξτε ξυπνητήρι ή ημερολόγιο Android για κατάλληλο μελλοντικό γεγονός. Εξαιρούνται παρελθόν και τρέχον σημείο.</string>
     <string name="tutorial_status_title" formatted="false">Κατάσταση και επαναφορά</string>
     <string name="tutorial_status" formatted="false">Δείτε την κατάσταση και τις διαθέσιμες ενέργειες για θέση, καιρό και τροχιακά δεδομένα.</string>

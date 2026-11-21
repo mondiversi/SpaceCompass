@@ -1,9 +1,9 @@
 <resources>
     <string name="info_news_title">Ultime novità · %1$s</string>
-    <string name="info_news_star_sky" formatted="false">I grigi della griglia seguono il Sole nella Location e nell’ora in uso.</string>
-    <string name="info_news_texture_downloads" formatted="false">Alba, giorno e tramonto usano il grigio diurno; la notte ha un grigio distinto.</string>
-    <string name="info_news_weather" formatted="false">Regola l’opacità della griglia a passi del 10%.</string>
-    <string name="info_news_viewer_zoom" formatted="false">La griglia parte attiva all’80%; numerazione e linee del pianeta partono spente.</string>
-    <string name="info_news_settings" formatted="false">Gli scatti ereditano la griglia; le modifiche nell’anteprima valgono solo per quell’immagine.</string>
-    <string name="info_news_catalog" formatted="false">Le impostazioni della griglia restano salvate e si condividono con gli scenari esportati.</string>
+    <string name="info_news_star_sky" formatted="false">Il mirino bianco ha ora una trasparenza del 50%.</string>
+    <string name="info_news_texture_downloads" formatted="false">Il doppio tocco nasconde icone e isole mantenendo il mirino visibile.</string>
+    <string name="info_news_weather" formatted="false">In verticale, il mirino resta rialzato anche con l’interfaccia nascosta, come con le isole compatte.</string>
+    <string name="info_news_viewer_zoom" formatted="false">Più spazio sotto l’ultima riga dell’isola oggetto, in linea con la bussola.</string>
+    <string name="info_news_settings" formatted="false">Dettagli posizione diventa Posizione reale e continua a mostrare la posizione effettiva.</string>
+    <string name="info_news_catalog" formatted="false">Il tutorial spiega il nuovo comportamento dell’interfaccia.</string>
 </resources>

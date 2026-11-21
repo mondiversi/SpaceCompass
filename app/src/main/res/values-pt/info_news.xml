@@ -1,9 +1,9 @@
 <resources>
     <string name="info_news_title">Últimas novidades · %1$s</string>
-    <string name="info_news_star_sky" formatted="false">Os cinzentos da grelha seguem o Sol no local e hora escolhidos.</string>
-    <string name="info_news_texture_downloads" formatted="false">Amanhecer, dia e crepúsculo usam o cinzento diurno; a noite tem outro cinzento.</string>
-    <string name="info_news_weather" formatted="false">Ajuste a opacidade da grelha em passos de 10%.</string>
-    <string name="info_news_viewer_zoom" formatted="false">A grelha começa ativa a 80%; números e linhas planetárias começam desativados.</string>
-    <string name="info_news_settings" formatted="false">As capturas herdam a grelha; as alterações na pré-visualização afetam apenas essa imagem.</string>
-    <string name="info_news_catalog" formatted="false">As definições da grelha ficam guardadas e são partilhadas com cenas exportadas.</string>
+    <string name="info_news_star_sky" formatted="false">A transparência da mira branca passa a 50%.</string>
+    <string name="info_news_texture_downloads" formatted="false">Dois toques ocultam ícones e painéis, mantendo a mira visível.</string>
+    <string name="info_news_weather" formatted="false">Na vertical, a mira permanece elevada ao ocultar a interface, como com os painéis compactos.</string>
+    <string name="info_news_viewer_zoom" formatted="false">Mais espaço abaixo da última linha do painel do objeto, em linha com o painel da bússola.</string>
+    <string name="info_news_settings" formatted="false">Detalhes da posição passa a chamar-se Posição real e continua a mostrar a posição efetiva.</string>
+    <string name="info_news_catalog" formatted="false">O tutorial explica o novo gesto da interface.</string>
 </resources>

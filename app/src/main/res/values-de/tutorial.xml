@@ -27,7 +27,7 @@
     <string name="tutorial_gps" formatted="false">Zeige tatsächlichen Standort, GPS-Höhe, Ausrichtung und Wetter, unabhängig von der Location.</string>
     <string name="tutorial_points" formatted="false">Wähle einen Punkt aus oder ab. Im Fadenkreuz liest du Zeit, T, Azimut und Höhe.</string>
     <string name="tutorial_reticle_title" formatted="false">Zeit und Oberfläche</string>
-    <string name="tutorial_reticle" formatted="false">Tippe auf eine freie Stelle, um die Zeit anzuhalten oder fortzusetzen. Doppeltippen blendet Oberfläche und Infobereiche ein oder aus.</string>
+    <string name="tutorial_reticle" formatted="false">Tippe auf eine freie Stelle, um die Zeit anzuhalten oder fortzusetzen. Doppeltippen blendet Oberfläche und Infobereiche ein oder aus. Das Fadenkreuz bleibt sichtbar.</string>
     <string name="tutorial_reminder" formatted="false">Öffne Android-Wecker oder Kalender für ein gültiges zukünftiges Ereignis. Vergangene Ereignisse und der aktuelle Punkt sind ausgeschlossen.</string>
     <string name="tutorial_status_title" formatted="false">Status und Wiederherstellung</string>
     <string name="tutorial_status" formatted="false">Prüfe Status und verfügbare Aktionen für Position, Wetter und Bahndaten.</string>

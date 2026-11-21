@@ -1,9 +1,9 @@
 <resources>
     <string name="info_news_title">最近の変更 · %1$s</string>
-    <string name="info_news_star_sky" formatted="false">グリッドのグレーは選んだ場所と時刻の太陽に合わせて変わります。</string>
-    <string name="info_news_texture_downloads" formatted="false">夜明け、昼、夕暮れは昼用のグレーを使い、夜は別のグレーになります。</string>
-    <string name="info_news_weather" formatted="false">グリッドの不透明度を10%刻みで調整できます。</string>
-    <string name="info_news_viewer_zoom" formatted="false">グリッドは初期状態で80%で有効になり、数値と惑星の線は無効です。</string>
-    <string name="info_news_settings" formatted="false">キャプチャはグリッド設定を引き継ぎ、プレビューでの変更はその画像だけに適用されます。</string>
-    <string name="info_news_catalog" formatted="false">グリッド設定は保存され、書き出したシーンと一緒に共有できます。</string>
+    <string name="info_news_star_sky" formatted="false">白い照準の透明度は50%になりました。</string>
+    <string name="info_news_texture_downloads" formatted="false">ダブルタップでアイコンとパネルを隠しても、照準は表示されたままです。</string>
+    <string name="info_news_weather" formatted="false">縦向きで画面操作を隠すと、パネルを折りたたんだときと同じ高めの位置に照準が残ります。</string>
+    <string name="info_news_viewer_zoom" formatted="false">天体パネルの最終行の下に、コンパスパネルに合わせた余白を追加しました。</string>
+    <string name="info_news_settings" formatted="false">「位置の詳細」は「実際の位置」に変わり、引き続き実際の位置を表示します。</string>
+    <string name="info_news_catalog" formatted="false">チュートリアルで新しい画面操作を説明します。</string>
 </resources>

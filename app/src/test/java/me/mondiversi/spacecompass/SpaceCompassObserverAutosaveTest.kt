@@ -223,15 +223,17 @@ class SpaceCompassObserverAutosaveTest {
         state.configureTime(state.timeSettings.copy(resume=SpaceCompassScenarioResume.ACTIVE))
         state.active(true)
         state.apply(original)
-        val start=state.plan!!.observationTimeMs(System.currentTimeMillis())
+        // Check lifecycle timing against the injected monotonic clock, not the exposure-time
+        // lookup whose wall-clock default can advance between two real millisecond reads.
+        val start=state.plan!!.scenarioClock!!.at(now,elapsed)
         elapsed+=1000
         state.active(false)
         elapsed+=100_000
-        assertEquals(start+1000,state.plan!!.observationTimeMs(System.currentTimeMillis()))
+        assertEquals(start+1000,state.plan!!.scenarioClock!!.at(now,elapsed))
         elapsed=0
         val reopened=SpaceCompassObserverState(store.preferences,elapsedClock={ elapsed })
         reopened.active(true); elapsed+=500
-        assertEquals(start+1500,reopened.plan!!.observationTimeMs(System.currentTimeMillis()))
+        assertEquals(start+1500,reopened.plan!!.scenarioClock!!.at(now,elapsed))
     }
 
     @Test fun newScenarioRestartsAtItsConfiguredMomentAfterProcessRecreationByDefault() {

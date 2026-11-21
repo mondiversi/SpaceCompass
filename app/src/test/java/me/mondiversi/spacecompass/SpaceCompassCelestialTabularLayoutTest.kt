@@ -255,7 +255,7 @@ class SpaceCompassCelestialTabularLayoutTest {
         val header = island.substringAfter("testTag(\"celestial-body-header\")").substringBefore("HorizontalDivider")
         assertTrue(header.contains(".padding(vertical = 1.dp)"))
         val content = island.substringAfter("testTag(\"celestial-body-content\")")
-        assertTrue(content.contains(".padding(vertical = if (compact) 3.dp else 4.dp)"))
+        assertTrue(content.contains(".padding(top = if (compact) 3.dp else 4.dp, bottom = if (compact) 6.dp else 8.dp)"))
         assertFalse(island.contains(".padding(horizontal = 10.dp, vertical = if (compact) 3.dp else 4.dp)"))
         assertTrue(island.contains("Modifier.size(48.dp).testTag(\"celestial-body-previous\")"))
         assertTrue(island.contains("Modifier.size(48.dp).testTag(\"celestial-body-next\")"))

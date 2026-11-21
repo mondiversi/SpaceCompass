@@ -1,9 +1,9 @@
 <resources>
     <string name="info_news_title">Mambo mapya · %1$s</string>
-    <string name="info_news_star_sky" formatted="false">Kijivu cha gridi hufuata Jua katika eneo na wakati uliochaguliwa.</string>
-    <string name="info_news_texture_downloads" formatted="false">Alfajiri, mchana na jioni hutumia kijivu cha mchana; usiku una kijivu tofauti.</string>
-    <string name="info_news_weather" formatted="false">Rekebisha kutopenyeza kwa gridi kwa hatua za 10%.</string>
-    <string name="info_news_viewer_zoom" formatted="false">Gridi huanza ikiwa imewashwa kwa 80%; namba na mistari ya sayari huanza ikiwa imezimwa.</string>
-    <string name="info_news_settings" formatted="false">Picha hurithi gridi; mabadiliko ya hakiki huathiri picha hiyo pekee.</string>
-    <string name="info_news_catalog" formatted="false">Mipangilio ya gridi huhifadhiwa na kushirikiwa na Mandhari zilizohamishwa.</string>
+    <string name="info_news_star_sky" formatted="false">Uwazi wa alama nyeupe ya kulenga sasa ni 50%.</string>
+    <string name="info_news_texture_downloads" formatted="false">Kugusa mara mbili huficha aikoni na paneli huku alama ya kulenga ikibaki kuonekana.</string>
+    <string name="info_news_weather" formatted="false">Katika mkao wa wima, alama ya kulenga hubaki juu zaidi kiolesura kinapofichwa, kama paneli zinapokunjwa.</string>
+    <string name="info_news_viewer_zoom" formatted="false">Nafasi zaidi chini ya mstari wa mwisho wa paneli ya kitu, ikilingana na paneli ya dira.</string>
+    <string name="info_news_settings" formatted="false">Maelezo ya mahali sasa yanaitwa Mahali halisi na yanaendelea kuonyesha mahali ulipo kweli.</string>
+    <string name="info_news_catalog" formatted="false">Mafunzo yanaeleza mguso mpya wa kiolesura.</string>
 </resources>

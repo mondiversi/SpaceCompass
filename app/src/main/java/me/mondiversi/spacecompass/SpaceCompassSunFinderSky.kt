@@ -201,7 +201,7 @@ internal fun SpaceCompassSunPointingViewport(
             if (!showAntipodes) emptyList() else projectSpaceCompassSelectedOrbitTargets(selectedPoints,
                 paths, current, orientation.takeIf { compassReliable }, width, height, scenePerspective, antipodes = true, comparisons = comparisonOverlays)
         }
-        val focused = if (showReticle) focusedSpaceCompassCelestialSceneTarget(targets + antipodes, width, height,
+        val focused = if (showReticle && showFloatingControls) focusedSpaceCompassCelestialSceneTarget(targets + antipodes, width, height,
             with(density) { SPACE_COMPASS_CELESTIAL_RETICLE_RADIUS_DP.dp.toPx().toDouble() }, scenePerspective) else null
         val padding = with(density) { 4.dp.toPx().toDouble() }
         // The reticle's outer arms end at 32 dp; keep an eight-dp gap before notices.
@@ -307,7 +307,7 @@ internal fun SpaceCompassSunPointingViewport(
             } }
             if (showReticle) Canvas(Modifier.fillMaxSize().testTag("sun-finder-reticle")) {
                 val aim = Offset(reticleCenter.x.toFloat(), reticleCenter.y.toFloat())
-                val reticle = Color.White
+                val reticle = Color.White.copy(alpha = 0.50f)
                 drawCircle(Color.Black.copy(alpha = 0.30f), SPACE_COMPASS_CELESTIAL_RETICLE_RADIUS_DP.dp.toPx(), aim, style = Stroke(1.92.dp.toPx()))
                 drawCircle(reticle, SPACE_COMPASS_CELESTIAL_RETICLE_RADIUS_DP.dp.toPx(), aim, style = Stroke(0.96.dp.toPx()))
                 val inner = 24.dp.toPx(); val outer = 32.dp.toPx()
@@ -320,7 +320,7 @@ internal fun SpaceCompassSunPointingViewport(
                 // Captions paint above celestial locators; moving them must not flip a caption's side.
                 primaryText, secondaryText, backgroundColor, exclusions,
                 scenePerspective, paths, pinnedTargets = pinned, hitExclusions = titleTouchExclusions,
-                showCaptions = showReticle, onEmptySpaceTap = onToggleTime,
+                showCaptions = showReticle && showFloatingControls, onEmptySpaceTap = onToggleTime,
                 onEmptySpaceDoubleTap = onToggleFloatingControls,
                 antipodeTargets = antipodes, drawAntipodeMarkers = drawScene) {
                 // Only thumbnails have small local targets; they never intercept another path's whole viewport.

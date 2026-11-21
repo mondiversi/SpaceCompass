@@ -27,7 +27,7 @@
     <string name="tutorial_gps" formatted="false">查看真实位置、GPS海拔、朝向和天气，与Location设置无关。</string>
     <string name="tutorial_points" formatted="false">选择或取消选择一个点。对准后可查看时间、T、方位角和高度。</string>
     <string name="tutorial_reticle_title" formatted="false">时间与界面</string>
-    <string name="tutorial_reticle" formatted="false">轻触空白处可暂停或继续时间。双击可显示或隐藏界面和面板；网格保持可见。</string>
+    <string name="tutorial_reticle" formatted="false">轻触空白处可暂停或继续时间。双击可显示或隐藏界面和面板。准星保持可见。</string>
     <string name="tutorial_reminder" formatted="false">为适用的未来事件打开Android闹钟或日历。过去事件和当前位置不能设置闹钟。</string>
     <string name="tutorial_status_title" formatted="false">状态与恢复</string>
     <string name="tutorial_status" formatted="false">查看位置、天气和轨道数据的状态及可用操作。</string>

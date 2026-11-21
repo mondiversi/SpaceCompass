@@ -1,9 +1,9 @@
 <resources>
     <string name="info_news_title">Последние новости · %1$s</string>
-    <string name="info_news_star_sky" formatted="false">Оттенки сетки следуют за Солнцем в выбранном месте и времени.</string>
-    <string name="info_news_texture_downloads" formatted="false">На рассвете, днём и в сумерках используется дневной серый; ночью — отдельный.</string>
-    <string name="info_news_weather" formatted="false">Настраивайте непрозрачность сетки с шагом 10%.</string>
-    <string name="info_news_viewer_zoom" formatted="false">Сетка по умолчанию включена с непрозрачностью 80%; числа и планетарные линии выключены.</string>
-    <string name="info_news_settings" formatted="false">Снимки наследуют сетку; изменения предпросмотра касаются только этого изображения.</string>
-    <string name="info_news_catalog" formatted="false">Настройки сетки сохраняются и передаются с экспортированными сценами.</string>
+    <string name="info_news_star_sky" formatted="false">Прозрачность белого прицела теперь составляет 50%.</string>
+    <string name="info_news_texture_downloads" formatted="false">Двойное касание скрывает значки и панели, оставляя прицел видимым.</string>
+    <string name="info_news_weather" formatted="false">В портретном режиме прицел остаётся выше при скрытом интерфейсе, как со свёрнутыми панелями.</string>
+    <string name="info_news_viewer_zoom" formatted="false">Увеличен отступ под последней строкой панели объекта, как у панели компаса.</string>
+    <string name="info_news_settings" formatted="false">Сведения о положении теперь называются Реальное положение и по-прежнему показывают фактическое положение.</string>
+    <string name="info_news_catalog" formatted="false">Учебник объясняет обновлённый жест интерфейса.</string>
 </resources>

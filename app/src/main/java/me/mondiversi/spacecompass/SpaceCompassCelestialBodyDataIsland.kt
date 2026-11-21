@@ -149,7 +149,8 @@ internal fun SpaceCompassCelestialBodyDataIsland(bodyName: String?, primaryText:
             if (!headerOnly) HorizontalDivider(color = primaryText.copy(alpha = 0.12f),modifier = Modifier.padding(horizontal = 8.dp))
         }
         if (!headerOnly) Column(Modifier.fillMaxWidth().testTag("celestial-body-content").padding(horizontal = 8.dp)
-            .padding(vertical = if (compact) 3.dp else 4.dp),
+            // Match the compass island bottom inset, retaining existing top/row spacing.
+            .padding(top = if (compact) 3.dp else 4.dp, bottom = if (compact) 6.dp else 8.dp),
             verticalArrangement = Arrangement.spacedBy(if (compact) 3.dp else 4.dp), content = content)
     }
 }

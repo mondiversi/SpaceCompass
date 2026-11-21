@@ -1,9 +1,9 @@
 <resources>
     <string name="info_news_title">Laatste nieuws · %1$s</string>
-    <string name="info_news_star_sky" formatted="false">De grijstinten van het raster volgen de zon op de gekozen locatie en tijd.</string>
-    <string name="info_news_texture_downloads" formatted="false">Dageraad, dag en schemering gebruiken daggrijs; de nacht heeft een aparte grijstint.</string>
-    <string name="info_news_weather" formatted="false">Pas de rasterdekking aan in stappen van 10%.</string>
-    <string name="info_news_viewer_zoom" formatted="false">Het raster staat standaard aan op 80%; getallen en planeetlijnen staan aanvankelijk uit.</string>
-    <string name="info_news_settings" formatted="false">Opnamen nemen de rasterinstellingen over; voorbeeldwijzigingen gelden alleen voor dat beeld.</string>
-    <string name="info_news_catalog" formatted="false">Rasterinstellingen blijven bewaard en worden gedeeld met geëxporteerde scènes.</string>
+    <string name="info_news_star_sky" formatted="false">De transparantie van het witte dradenkruis is nu 50%.</string>
+    <string name="info_news_texture_downloads" formatted="false">Dubbeltikken verbergt pictogrammen en panelen, terwijl het dradenkruis zichtbaar blijft.</string>
+    <string name="info_news_weather" formatted="false">In portretstand blijft het dradenkruis hoger staan bij een verborgen interface, net als bij compacte panelen.</string>
+    <string name="info_news_viewer_zoom" formatted="false">Meer ruimte onder de laatste rij van het objectpaneel, passend bij het kompaspaneel.</string>
+    <string name="info_news_settings" formatted="false">Positiedetails heet nu Werkelijke positie en toont nog steeds je echte positie.</string>
+    <string name="info_news_catalog" formatted="false">De tutorial legt het bijgewerkte interfacegebaar uit.</string>
 </resources>

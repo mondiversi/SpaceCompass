@@ -1,9 +1,9 @@
 <resources>
     <string name="info_news_title">Son yenilikler · %1$s</string>
-    <string name="info_news_star_sky" formatted="false">Izgara grileri seçilen konum ve zamandaki Güneş’i izler.</string>
-    <string name="info_news_texture_downloads" formatted="false">Şafak, gündüz ve alacakaranlık gündüz grisini, gece ise ayrı bir griyi kullanır.</string>
-    <string name="info_news_weather" formatted="false">Izgara opaklığını yüzde onluk adımlarla ayarlayın.</string>
-    <string name="info_news_viewer_zoom" formatted="false">Izgara başlangıçta yüzde seksen opaklıkla açıktır; sayılar ve gezegen çizgileri kapalıdır.</string>
-    <string name="info_news_settings" formatted="false">Çekimler ızgara ayarlarını devralır; önizleme değişiklikleri yalnızca o görüntüyü etkiler.</string>
-    <string name="info_news_catalog" formatted="false">Izgara ayarları saklanır ve dışa aktarılan Sahnelerle paylaşılır.</string>
+    <string name="info_news_star_sky" formatted="false">Beyaz nişangâhın saydamlığı artık yüzde elli.</string>
+    <string name="info_news_texture_downloads" formatted="false">Çift dokunma simgeleri ve panelleri gizlerken nişangâh görünür kalır.</string>
+    <string name="info_news_weather" formatted="false">Dikey kullanımda arayüz gizlendiğinde nişangâh, daraltılmış panellerdeki gibi yukarıda kalır.</string>
+    <string name="info_news_viewer_zoom" formatted="false">Nesne panelinin son satırının altındaki boşluk pusula paneliyle uyumlu olarak artırıldı.</string>
+    <string name="info_news_settings" formatted="false">Konum ayrıntıları artık Gerçek konum adını taşır ve gerçek konumunuzu göstermeye devam eder.</string>
+    <string name="info_news_catalog" formatted="false">Öğretici güncellenen arayüz hareketini açıklar.</string>
 </resources>

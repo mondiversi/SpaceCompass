@@ -1,9 +1,9 @@
 <resources>
     <string name="info_news_title">Últimas novedades · %1$s</string>
-    <string name="info_news_star_sky" formatted="false">Los grises de la cuadrícula siguen al Sol en tu ubicación y hora.</string>
-    <string name="info_news_texture_downloads" formatted="false">Amanecer, día y crepúsculo usan el gris diurno; la noche usa otro gris.</string>
-    <string name="info_news_weather" formatted="false">Ajusta la opacidad de la cuadrícula en pasos del 10%.</string>
-    <string name="info_news_viewer_zoom" formatted="false">La cuadrícula empieza activada al 80%; los números y las líneas planetarias empiezan desactivados.</string>
-    <string name="info_news_settings" formatted="false">Las capturas heredan la cuadrícula; los cambios de vista previa solo afectan a esa imagen.</string>
-    <string name="info_news_catalog" formatted="false">Los ajustes de la cuadrícula se guardan y se comparten con las escenas exportadas.</string>
+    <string name="info_news_star_sky" formatted="false">La transparencia de la retícula blanca es ahora del 50%.</string>
+    <string name="info_news_texture_downloads" formatted="false">El doble toque oculta iconos y paneles y mantiene la retícula visible.</string>
+    <string name="info_news_weather" formatted="false">En vertical, la retícula permanece elevada al ocultar la interfaz, como con los paneles compactos.</string>
+    <string name="info_news_viewer_zoom" formatted="false">Más espacio bajo la última fila del panel del objeto, como en el panel de la brújula.</string>
+    <string name="info_news_settings" formatted="false">Detalles de ubicación pasa a llamarse Posición real y sigue mostrando tu posición efectiva.</string>
+    <string name="info_news_catalog" formatted="false">El tutorial explica el nuevo gesto de la interfaz.</string>
 </resources>

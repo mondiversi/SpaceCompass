@@ -424,7 +424,8 @@ internal fun SpaceCompassSunFinderContent(
     var skyControlsVisible by remember(scenePreferences) {
         mutableStateOf(scenePreferences.getBoolean(SPACE_COMPASS_SKY_CONTROLS_VISIBLE_KEY, true))
     }
-    val showReticle = skyControlsVisible || tutorialActive
+    // The optical reticle belongs to framed Sky/Camera, independently of hidden chrome.
+    val showReticle = !liveMapEnabled
     val showSkyControls = skyControlsVisible || tutorialActive
     var pointingTopEdge by remember(scenePreferences) {
         mutableStateOf(scenePreferences.getBoolean(SPACE_COMPASS_POINTING_TOP_EDGE_KEY, SPACE_COMPASS_POINTING_TOP_EDGE_DEFAULT))
@@ -1188,7 +1189,7 @@ internal fun SpaceCompassSunFinderContent(
             dailyPathUiState, primaryText, secondaryText, backgroundColor,
             fix?.latitude, fix?.takeIf { it.hasAltitude() }?.altitude ?: 0.0, showSkyReferences,
             0.0, Modifier.fillMaxSize(), longitude = fix?.longitude, objectOpacity = cameraObjectOpacity,
-            showReticle = showReticle, showAntipodes = showAntipodes)
+            showReticle = showReticle && showSkyControls, showAntipodes = showAntipodes)
         // Retain the readability fallback when the 45% information pane is too narrow.
         val minimumPanelWidth = if (largeText) 280.dp else 210.dp
         val detailsWidth = viewportWidth * 0.45f

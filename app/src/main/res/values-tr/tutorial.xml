@@ -27,7 +27,7 @@
     <string name="tutorial_gps" formatted="false">Location’dan bağımsız gerçek konumu, GPS yüksekliğini, yönelimi ve hava durumunu görün.</string>
     <string name="tutorial_points" formatted="false">Bir noktayı seçin veya seçimini kaldırın. Zaman, T, azimut ve yüksekliği görmek için nişan alın.</string>
     <string name="tutorial_reticle_title" formatted="false">Zaman ve arayüz</string>
-    <string name="tutorial_reticle" formatted="false">Zamanı duraklatmak veya sürdürmek için boş bir yere dokunun. Çift dokunma arayüzü ve panelleri gösterir veya gizler.</string>
+    <string name="tutorial_reticle" formatted="false">Zamanı duraklatmak veya sürdürmek için boş bir yere dokunun. Çift dokunma arayüzü ve panelleri gösterir veya gizler. Nişangâh görünür kalır.</string>
     <string name="tutorial_reminder" formatted="false">Uygun gelecek olay için Android alarmını veya takvimini açın. Geçmiş olaylar ve mevcut nokta için alarm kurulamaz.</string>
     <string name="tutorial_status_title" formatted="false">Durum ve kurtarma</string>
     <string name="tutorial_status" formatted="false">Konum, hava durumu ve yörünge verileri için durumu ve kullanılabilir işlemleri kontrol edin.</string>

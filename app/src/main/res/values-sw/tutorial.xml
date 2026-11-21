@@ -27,7 +27,7 @@
     <string name="tutorial_gps" formatted="false">Tazama eneo halisi, kimo cha GPS, mwelekeo na hali ya hewa, tofauti na Location.</string>
     <string name="tutorial_points" formatted="false">Chagua nukta au ondoa uteuzi wake. Lenga kusoma wakati, T, azimuthi na mwinuko.</string>
     <string name="tutorial_reticle_title" formatted="false">Muda na kiolesura</string>
-    <string name="tutorial_reticle" formatted="false">Gusa sehemu tupu kusimamisha au kuendeleza muda. Gusa mara mbili kuonyesha au kuficha kiolesura na paneli.</string>
+    <string name="tutorial_reticle" formatted="false">Gusa sehemu tupu kusimamisha au kuendeleza muda. Gusa mara mbili kuonyesha au kuficha kiolesura na paneli. Alama ya kulenga hubaki kuonekana.</string>
     <string name="tutorial_reminder" formatted="false">Fungua kengele au kalenda ya Android kwa tukio lijalo linalofaa. Si kwa yaliyopita au nukta ya sasa.</string>
     <string name="tutorial_status_title" formatted="false">Hali na urejeshaji</string>
     <string name="tutorial_status" formatted="false">Angalia hali na hatua zinazopatikana kwa mahali, hali ya hewa na data za obiti.</string>

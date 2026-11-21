@@ -27,7 +27,7 @@
     <string name="tutorial_gps" formatted="false">اعرض موقعك الحقيقي وارتفاع GPS والاتجاه والطقس، بصورة مستقلة عن Location.</string>
     <string name="tutorial_points" formatted="false">حدد نقطة أو ألغِ تحديدها. وجّه المؤشر لقراءة الوقت وT والسمت والارتفاع.</string>
     <string name="tutorial_reticle_title" formatted="false">الوقت والواجهة</string>
-    <string name="tutorial_reticle" formatted="false">المس مساحة فارغة لإيقاف الوقت أو استئنافه. انقر مرتين لإظهار الواجهة واللوحات أو إخفائها.</string>
+    <string name="tutorial_reticle" formatted="false">المس مساحة فارغة لإيقاف الوقت أو استئنافه. انقر مرتين لإظهار الواجهة واللوحات أو إخفائها. تبقى علامة التصويب ظاهرة.</string>
     <string name="tutorial_reminder" formatted="false">افتح منبه Android أو التقويم لحدث مستقبلي مناسب. لا يشمل الأحداث الماضية أو النقطة الحالية.</string>
     <string name="tutorial_status_title" formatted="false">الحالة والاستعادة</string>
     <string name="tutorial_status" formatted="false">تحقق من الحالة والإجراءات المتاحة للموقع والطقس والبيانات المدارية.</string>

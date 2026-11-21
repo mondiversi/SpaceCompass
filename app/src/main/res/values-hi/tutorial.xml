@@ -27,7 +27,7 @@
     <string name="tutorial_gps" formatted="false">Location से स्वतंत्र वास्तविक स्थान, GPS ऊँचाई, दिशा और मौसम देखें।</string>
     <string name="tutorial_points" formatted="false">बिंदु चुनें या चयन हटाएँ। समय, T, दिगंश और उन्नयन देखने के लिए निशाना लगाएँ।</string>
     <string name="tutorial_reticle_title" formatted="false">समय और इंटरफ़ेस</string>
-    <string name="tutorial_reticle" formatted="false">समय रोकने या चलाने के लिए खाली जगह छुएँ। दो बार छूने से इंटरफ़ेस और पैनल दिखते या छिपते हैं।</string>
+    <string name="tutorial_reticle" formatted="false">समय रोकने या चलाने के लिए खाली जगह छुएँ। दो बार छूने से इंटरफ़ेस और पैनल दिखते या छिपते हैं। निशाना दिखाई देता रहेगा।</string>
     <string name="tutorial_reminder" formatted="false">योग्य भविष्य की घटना के लिए Android अलार्म या कैलेंडर खोलें। बीती घटनाओं और वर्तमान बिंदु के लिए अलार्म नहीं।</string>
     <string name="tutorial_status_title" formatted="false">स्थिति और पुनर्प्राप्ति</string>
     <string name="tutorial_status" formatted="false">स्थिति, मौसम और कक्षीय डेटा की स्थिति व उपलब्ध कार्रवाइयाँ देखें।</string>

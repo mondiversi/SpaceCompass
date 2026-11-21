@@ -1,9 +1,9 @@
 <resources>
     <string name="info_news_title">最新变化 · %1$s</string>
-    <string name="info_news_star_sky" formatted="false">网格灰度根据所选位置和时间的太阳变化。</string>
-    <string name="info_news_texture_downloads" formatted="false">黎明、白天和黄昏使用日间灰色，夜间使用另一种灰色。</string>
-    <string name="info_news_weather" formatted="false">可按10%的步长调整网格不透明度。</string>
-    <string name="info_news_viewer_zoom" formatted="false">网格默认开启，不透明度为80%；数值和行星参考线默认关闭。</string>
-    <string name="info_news_settings" formatted="false">拍摄继承网格设置，预览中的更改仅影响该图像。</string>
-    <string name="info_news_catalog" formatted="false">网格设置会保存，也可随导出的场景一起分享。</string>
+    <string name="info_news_star_sky" formatted="false">白色准星的透明度现为50%。</string>
+    <string name="info_news_texture_downloads" formatted="false">双击可隐藏图标和面板，同时保持准星可见。</string>
+    <string name="info_news_weather" formatted="false">竖屏隐藏界面后，准星仍保持与收起面板时相同的较高位置。</string>
+    <string name="info_news_viewer_zoom" formatted="false">增大天体面板最后一行下方的留白，与指南针面板保持一致。</string>
+    <string name="info_news_settings" formatted="false">“位置详情”更名为“实际位置”，仍显示您的真实位置。</string>
+    <string name="info_news_catalog" formatted="false">教程说明了更新后的界面手势。</string>
 </resources>

@@ -1,9 +1,9 @@
 <resources>
     <string name="info_news_title">החידושים האחרונים · %1$s</string>
-    <string name="info_news_star_sky" formatted="false">גווני האפור של הרשת עוקבים אחר השמש במיקום ובזמן שנבחרו.</string>
-    <string name="info_news_texture_downloads" formatted="false">שחר, יום ודמדומים משתמשים באפור יום; בלילה יש גוון נפרד.</string>
-    <string name="info_news_weather" formatted="false">אפשר לכוון את אטימות הרשת בצעדים של 10%.</string>
-    <string name="info_news_viewer_zoom" formatted="false">הרשת מתחילה פעילה באטימות 80%; המספרים וקווי כוכב הלכת מתחילים כבויים.</string>
-    <string name="info_news_settings" formatted="false">צילומים מקבלים את הגדרות הרשת; שינויי התצוגה המקדימה חלים רק על אותה תמונה.</string>
-    <string name="info_news_catalog" formatted="false">הגדרות הרשת נשמרות ומשותפות עם סצנות מיוצאות.</string>
+    <string name="info_news_star_sky" formatted="false">שקיפות הכוונת הלבנה היא כעת 50%.</string>
+    <string name="info_news_texture_downloads" formatted="false">הקשה כפולה מסתירה סמלים ולוחות ומשאירה את הכוונת גלויה.</string>
+    <string name="info_news_weather" formatted="false">בתצוגה אנכית הכוונת נשארת מוגבהת גם כשהממשק מוסתר, כמו עם לוחות מכווצים.</string>
+    <string name="info_news_viewer_zoom" formatted="false">נוסף מרווח מתחת לשורה האחרונה בלוח העצם, בהתאמה ללוח המצפן.</string>
+    <string name="info_news_settings" formatted="false">פרטי מיקום נקראים כעת המיקום האמיתי וממשיכים להציג את מיקומך בפועל.</string>
+    <string name="info_news_catalog" formatted="false">המדריך מסביר את מחוות הממשק המעודכנת.</string>
 </resources>

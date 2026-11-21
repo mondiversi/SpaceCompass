@@ -27,7 +27,7 @@
     <string name="tutorial_gps" formatted="false">Location과 별도로 실제 위치, GPS 고도, 방향과 날씨를 확인합니다.</string>
     <string name="tutorial_points" formatted="false">지점을 선택하거나 해제합니다. 조준하면 시각, T, 방위각, 고도를 확인할 수 있습니다.</string>
     <string name="tutorial_reticle_title" formatted="false">시간과 인터페이스</string>
-    <string name="tutorial_reticle" formatted="false">빈 공간을 누르면 시간이 멈추거나 다시 흐릅니다. 두 번 누르면 인터페이스와 패널이 표시되거나 숨겨집니다.</string>
+    <string name="tutorial_reticle" formatted="false">빈 공간을 누르면 시간이 멈추거나 다시 흐릅니다. 두 번 누르면 인터페이스와 패널이 표시되거나 숨겨집니다. 조준점은 계속 표시됩니다.</string>
     <string name="tutorial_reminder" formatted="false">해당하는 미래 이벤트를 Android 알람 또는 캘린더로 엽니다. 과거나 현재 지점에는 알람을 설정할 수 없습니다.</string>
     <string name="tutorial_status_title" formatted="false">상태 및 복구</string>
     <string name="tutorial_status" formatted="false">위치, 날씨, 궤도 데이터의 상태와 가능한 작업을 확인합니다.</string>

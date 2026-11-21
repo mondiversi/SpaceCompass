@@ -1,5 +1,14 @@
 # Changelog
 
+## 1.10.5 — 2026-11-21
+
+- Keep the optical reticle visible in Sky (Frame) and Camera when double-tap hides the interface and information panels. Retain the absence of a reticle in Globe and panoramic Sky, and keep point captions and focus highlighting tied to interface visibility.
+- Make the white reticle 50 percent transparent while retaining the existing black outline, stroke widths and touch geometry.
+- Use the compact portrait optical axis, 40 percent down the system-bar safe area, when the interface is hidden. Keep landscape at 50 percent and preserve the visible expanded-panel layout. Camera framing, sky objects, terrain, stars and grid share the same optical ray.
+- Align the object panel's bottom inset with the compass panel (8 dp normally, 6 dp in the compact style), retaining title, row spacing and action targets. Rename Position details to Real position in all twenty interface languages.
+- Update the compact tutorial and News in all twenty languages, README and current capture documentation. Make the active-only lifecycle checkpoint test use its injected monotonic clock directly, avoiding an unrelated real-wall-clock millisecond race without changing production time logic.
+- Preserve astronomical calculations, saved Locations, selections and the 9,999-object catalogue. The external graphics collection is unchanged and needs no new download.
+
 ## 1.10.4 — 2026-11-18
 
 - Make reference-grid greys follow the Sun at the active Location and instant instead of the app theme. Use daytime grey from civil dawn through daylight and civil dusk (solar elevation at least -6 degrees), switching immediately to a separate night grey below that threshold.

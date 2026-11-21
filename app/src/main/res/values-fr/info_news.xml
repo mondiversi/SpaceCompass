@@ -1,9 +1,9 @@
 <resources>
     <string name="info_news_title">Dernières nouveautés · %1$s</string>
-    <string name="info_news_star_sky" formatted="false">Les gris de la grille suivent le Soleil au lieu et à l’heure choisis.</string>
-    <string name="info_news_texture_downloads" formatted="false">Aube, journée et crépuscule utilisent le gris diurne ; la nuit a un gris distinct.</string>
-    <string name="info_news_weather" formatted="false">Réglez l’opacité de la grille par paliers de 10%.</string>
-    <string name="info_news_viewer_zoom" formatted="false">La grille démarre activée à 80% ; les nombres et lignes planétaires sont désactivés au départ.</string>
-    <string name="info_news_settings" formatted="false">Les captures reprennent la grille ; les changements de l’aperçu concernent uniquement cette image.</string>
-    <string name="info_news_catalog" formatted="false">Les réglages de la grille restent enregistrés et se partagent avec les scènes exportées.</string>
+    <string name="info_news_star_sky" formatted="false">La transparence du réticule blanc passe à 50%.</string>
+    <string name="info_news_texture_downloads" formatted="false">Le double appui masque les icônes et les panneaux en gardant le réticule visible.</string>
+    <string name="info_news_weather" formatted="false">En mode portrait, le réticule reste surélevé lorsque l’interface est masquée, comme avec les panneaux compacts.</string>
+    <string name="info_news_viewer_zoom" formatted="false">Plus d’espace sous la dernière ligne du panneau de l’objet, comme dans le panneau de la boussole.</string>
+    <string name="info_news_settings" formatted="false">Détails de position devient Position réelle et affiche toujours votre position effective.</string>
+    <string name="info_news_catalog" formatted="false">Le tutoriel explique le nouveau geste de l’interface.</string>
 </resources>
