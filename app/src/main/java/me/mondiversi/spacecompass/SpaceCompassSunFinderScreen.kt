@@ -1189,7 +1189,7 @@ internal fun SpaceCompassSunFinderContent(
             dailyPathUiState, primaryText, secondaryText, backgroundColor,
             fix?.latitude, fix?.takeIf { it.hasAltitude() }?.altitude ?: 0.0, showSkyReferences,
             0.0, Modifier.fillMaxSize(), longitude = fix?.longitude, objectOpacity = cameraObjectOpacity,
-            showReticle = showReticle && showSkyControls, showAntipodes = showAntipodes)
+            showReticle = showReticle, showAntipodes = showAntipodes)
         // Retain the readability fallback when the 45% information pane is too narrow.
         val minimumPanelWidth = if (largeText) 280.dp else 210.dp
         val detailsWidth = viewportWidth * 0.45f

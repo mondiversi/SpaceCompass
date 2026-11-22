@@ -201,7 +201,8 @@ internal fun SpaceCompassSunPointingViewport(
             if (!showAntipodes) emptyList() else projectSpaceCompassSelectedOrbitTargets(selectedPoints,
                 paths, current, orientation.takeIf { compassReliable }, width, height, scenePerspective, antipodes = true, comparisons = comparisonOverlays)
         }
-        val focused = if (showReticle && showFloatingControls) focusedSpaceCompassCelestialSceneTarget(targets + antipodes, width, height,
+        // A visible reticle keeps its target and caption even when application chrome is hidden.
+        val focused = if (showReticle) focusedSpaceCompassCelestialSceneTarget(targets + antipodes, width, height,
             with(density) { SPACE_COMPASS_CELESTIAL_RETICLE_RADIUS_DP.dp.toPx().toDouble() }, scenePerspective) else null
         val padding = with(density) { 4.dp.toPx().toDouble() }
         // The reticle's outer arms end at 32 dp; keep an eight-dp gap before notices.
@@ -320,7 +321,7 @@ internal fun SpaceCompassSunPointingViewport(
                 // Captions paint above celestial locators; moving them must not flip a caption's side.
                 primaryText, secondaryText, backgroundColor, exclusions,
                 scenePerspective, paths, pinnedTargets = pinned, hitExclusions = titleTouchExclusions,
-                showCaptions = showReticle && showFloatingControls, onEmptySpaceTap = onToggleTime,
+                showCaptions = showReticle, onEmptySpaceTap = onToggleTime,
                 onEmptySpaceDoubleTap = onToggleFloatingControls,
                 antipodeTargets = antipodes, drawAntipodeMarkers = drawScene) {
                 // Only thumbnails have small local targets; they never intercept another path's whole viewport.
