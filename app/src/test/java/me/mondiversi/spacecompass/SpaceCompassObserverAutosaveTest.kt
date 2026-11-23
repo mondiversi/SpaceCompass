@@ -244,13 +244,14 @@ class SpaceCompassObserverAutosaveTest {
         assertEquals(SpaceCompassScenarioResume.RESTART, SpaceCompassObserverState(null).timeSettings.resume)
         state.active(true)
         state.apply(original)
-        val start = state.plan!!.observationTimeMs(System.currentTimeMillis())
+        // Lifecycle persistence uses the injected monotonic clock; exposure wall-time mapping is tested separately.
+        val start = state.plan!!.scenarioClock!!.at(now, elapsed)
         elapsed += 1000
         state.active(false)
-        assertEquals(start + 1000, state.plan!!.observationTimeMs(System.currentTimeMillis()))
+        assertEquals(start + 1000, state.plan!!.scenarioClock!!.at(now, elapsed))
         assertNull(store.values["scenario_clock_checkpoint"])
         val reopened = SpaceCompassObserverState(store.preferences, elapsedClock = { 0L })
-        assertEquals(start, reopened.plan!!.observationTimeMs(System.currentTimeMillis()))
+        assertEquals(start, reopened.plan!!.scenarioClock!!.at(now, elapsed))
     }
 
     @Test fun anExplicitResumptionChoiceSurvivesReloadForAllThreeModes() {
@@ -280,18 +281,19 @@ class SpaceCompassObserverAutosaveTest {
         state.apply(original)
         state.active(true)
         state.configureTime(state.timeSettings.copy(rate = -3600))
-        val start = state.plan!!.observationTimeMs(System.currentTimeMillis())
+        // Lifecycle persistence uses the injected monotonic clock; exposure wall-time mapping is tested separately.
+        val start = state.plan!!.scenarioClock!!.at(now, elapsed)
         elapsed += 1000
-        assertEquals(start - 3_600_000, state.plan!!.observationTimeMs(System.currentTimeMillis()))
+        assertEquals(start - 3_600_000, state.plan!!.scenarioClock!!.at(now, elapsed))
         state.active(false)
         elapsed = 0L
         val reopened = SpaceCompassObserverState(store.preferences, elapsedClock = { elapsed })
         assertEquals(-3600, reopened.timeSettings.rate)
         assertTrue(reopened.timeSettings.accelerated)
-        assertEquals(start - 3_600_000, reopened.plan!!.observationTimeMs(System.currentTimeMillis()))
+        assertEquals(start - 3_600_000, reopened.plan!!.scenarioClock!!.at(now, elapsed))
         reopened.active(true)
         elapsed += 1000
-        assertEquals(start - 7_200_000, reopened.plan!!.observationTimeMs(System.currentTimeMillis()))
+        assertEquals(start - 7_200_000, reopened.plan!!.scenarioClock!!.at(now, elapsed))
         assertEquals(original, reopened.savedPlan)
     }
 

@@ -8,6 +8,7 @@
 - Keep the white reticle at 80 percent opacity without an outline. Halve the camera horizon's original core and halo thickness and apply the same relative reduction to camera captures, retaining opacity and projection geometry.
 - Make portrait dialog action spacing more compact. In landscape, place actions beside the title and retain the close icon while omitting redundant Close text. Keep modal content and draft selections through rotation, including View mode and grid opacity.
 - Mark a fixed free touch area in the tutorial, shared by expanded and hidden panels. Keep tutorials explanatory and isolated from live settings; refresh guidance and News in all twenty interface languages.
+- Make forward/reverse lifecycle checkpoint tests use their injected monotonic clock consistently, avoiding millisecond wall-clock races while keeping exact persistence assertions and production timing unchanged.
 - Preserve the 9,999-object catalogue, celestial calculations, Locations, personal moments, selected points and individual graphics downloads. The external graphics collection is unchanged and needs no new release or download.
 
 ## 1.10.5 — 2026-11-21
