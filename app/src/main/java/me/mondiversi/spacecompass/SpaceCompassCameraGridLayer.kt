@@ -27,9 +27,9 @@ private data class SpaceCompassLiveCameraGrid(val size: IntSize,val path: Path,v
 /** Decorative only: one worker owns reusable projection buffers; drawing keeps an immutable frame. */
 @Composable
 internal fun SpaceCompassCameraGridLayer(orientation: SpaceCompassSunOrientation?,
-    lens: SpaceCompassPerspective?,opticalFrame: SpaceCompassSunSceneFrame?,modifier: Modifier,tag: String="camera-angular-grid",showNumbers: Boolean = false,solarElevation: Double? = null,opacityPercent: Int = SPACE_COMPASS_GRID_OPACITY_DEFAULT) {
+    lens: SpaceCompassPerspective?,opticalFrame: SpaceCompassSunSceneFrame?,modifier: Modifier,tag: String="camera-angular-grid",showNumbers: Boolean = false,opacityPercent: Int = SPACE_COMPASS_GRID_OPACITY_DEFAULT, darkGrid: Boolean = false) {
     if(orientation==null||lens==null||opticalFrame==null) return
-    val gridPalette=remember(spaceCompassGridUsesDayInk(solarElevation),opacityPercent) { spaceCompassGridPalette(solarElevation,opacityPercent) }
+    val gridPalette=remember(opacityPercent,darkGrid) { spaceCompassAngularGridPalette(darkGrid,opacityPercent) }
     var viewport by remember { mutableStateOf(IntSize.Zero) }
     val currentOrientation by rememberUpdatedState(orientation)
     val numeric=LocalSpaceCompassNumericFormat.current
@@ -65,8 +65,6 @@ internal fun SpaceCompassCameraGridLayer(orientation: SpaceCompassSunOrientation
     Canvas(modifier.clipToBounds().onSizeChanged { viewport=it }.testTag(tag)) {
         // Read the frame only in drawing, so publishing it never invalidates composition/layout.
         drawing.value?.takeIf { it.size==viewport }?.let { grid ->
-            drawPath(grid.path,Color(gridPalette.liveShadowArgb),
-                style=Stroke(SpaceCompassAngularGridAppearance.liveShadowDp.dp.toPx()))
             drawPath(grid.path,Color(gridPalette.liveLineArgb),
                 style=Stroke(SpaceCompassAngularGridAppearance.liveLineDp.dp.toPx()))
             if(showNumbers) drawIntoCanvas { canvas ->

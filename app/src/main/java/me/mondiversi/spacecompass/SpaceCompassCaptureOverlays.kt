@@ -24,4 +24,5 @@ internal val spaceCompassCaptureOverlaysSaver = listSaver<SpaceCompassCaptureOve
     save = { listOf(it.grid, it.references, it.numbers, spaceCompassGridOpacity(it.opacityPercent)) },
     restore = { SpaceCompassCaptureOverlays(it[0] as Boolean, it[1] as Boolean,
         it.getOrNull(2) as? Boolean ?: SPACE_COMPASS_GRID_NUMBERS_DEFAULT,
-        spaceCompassGridOpacity(it.getOrNull(3) as? Int ?: SPACE_COMPASS_GRID_OPACITY_DEFAULT)) })
+        // Saved previews without the opacity field used the historical 80% default.
+        spaceCompassGridOpacity(it.getOrNull(3) as? Int ?: 80)) })

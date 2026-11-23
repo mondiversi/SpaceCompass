@@ -1,9 +1,9 @@
 <resources>
     <string name="info_news_title">Τελευταία νέα · %1$s</string>
-    <string name="info_news_star_sky" formatted="false">Η διαφάνεια του λευκού στόχαστρου είναι πλέον 50%.</string>
-    <string name="info_news_texture_downloads" formatted="false">Το διπλό άγγιγμα κρύβει εικονίδια και πλαίσια, διατηρώντας ορατό το στόχαστρο.</string>
-    <string name="info_news_weather" formatted="false">Σε κατακόρυφη προβολή, το στόχαστρο παραμένει ψηλότερα όταν κρύβεται η διεπαφή, όπως με τα συμπτυγμένα πλαίσια.</string>
-    <string name="info_news_viewer_zoom" formatted="false">Περισσότερο κενό κάτω από την τελευταία γραμμή του πλαισίου αντικειμένου, όπως στο πλαίσιο πυξίδας.</string>
-    <string name="info_news_settings" formatted="false">Οι Λεπτομέρειες θέσης ονομάζονται πλέον Πραγματική θέση και συνεχίζουν να δείχνουν την πραγματική σας θέση.</string>
-    <string name="info_news_catalog" formatted="false">Το εκπαιδευτικό εξηγεί τη νέα χειρονομία της διεπαφής.</string>
+    <string name="info_news_star_sky" formatted="false">Αγγίξτε δύο φορές μια ελεύθερη περιοχή για απόκρυψη ή εμφάνιση των πλαισίων αντικειμένου και πυξίδας, μαζί με το όνομα του αντικειμένου. Τα χειριστήρια και το στόχαστρο παραμένουν ορατά.</string>
+    <string name="info_news_texture_downloads" formatted="false">Αναδιάταξη χειριστηρίων και γραμμή ορίζοντα κάμερας με το μισό προηγούμενο πάχος.</string>
+    <string name="info_news_weather" formatted="false">Η προεπιλεγμένη αδιαφάνεια πλέγματος είναι 50%. Ο ολισθητής ενημερώνει αμέσως την τιμή. Πλέγμα και στόχαστρο δεν έχουν περίγραμμα· η αδιαφάνεια του στόχαστρου είναι 80%.</string>
+    <string name="info_news_viewer_zoom" formatted="false">Σε ομίχλη, συννεφιά και χιόνι την ημέρα, οι γραμμές πλέγματος είναι μαύρες πάνω και κάτω από τον ορίζοντα.</string>
+    <string name="info_news_settings" formatted="false">Πιο συμπαγή αναδυόμενα παράθυρα, ενέργειες στη γραμμή τίτλου και εικονίδιο κλεισίματος σε οριζόντια προβολή. Οι επιλογές διατηρούνται κατά την περιστροφή.</string>
+    <string name="info_news_catalog" formatted="false">Τα μενού μεγέθυνσης παραμένουν ευανάγνωστα πάνω από τα πλαίσια. Το εκπαιδευτικό επισημαίνει μια σταθερή ελεύθερη περιοχή και εξηγεί τα τρέχοντα χειριστήρια.</string>
 </resources>

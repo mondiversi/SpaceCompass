@@ -3,7 +3,7 @@
     <string name="tutorial_title" formatted="false">Обучение</string>
     <string name="tutorial_welcome_title" formatted="false">Добро пожаловать в Space Compass</string>
     <string name="tutorial_welcome_body" formatted="false">Исследуйте небо и траектории небесных тел в разных местах и в разное время. Изучите управление в интерактивном обучении.</string>
-    <string name="tutorial_instruction" formatted="false">Нажмите подсвеченную кнопку или точку орбиты, чтобы узнать её функцию без изменения настроек.</string>
+    <string name="tutorial_instruction" formatted="false">Нажмите кнопку, круг или точку орбиты, чтобы узнать её функцию.</string>
     <string name="tutorial_zoom_title" formatted="false">Масштаб</string>
     <string name="tutorial_navigation_title" formatted="false">Выбранный объект</string>
     <string name="tutorial_points_title" formatted="false">Точки орбит</string>
@@ -19,15 +19,15 @@
     <string name="tutorial_transparency" formatted="false">Сделайте объекты полупрозрачными для сравнения с камерой.</string>
     <string name="tutorial_zoom" formatted="false">Приближай или отдаляй кнопкой либо двумя пальцами.</string>
     <string name="tutorial_capture" formatted="false">Подготовьте изображение. В просмотре выберите сетку, подписи и позицию; в Небе и Глобусе переключайте кадр и панораму.</string>
-    <string name="tutorial_panels" formatted="false">Сверните или разверните панели объекта и компаса, чтобы освободить небо.</string>
+    <string name="tutorial_panels" formatted="false">Дважды коснитесь свободного места, чтобы скрыть или показать панели объекта и компаса вместе с названием объекта.</string>
     <string name="tutorial_antipodes" formatted="false">Нажмите, чтобы показать или скрыть антиподы. Удерживайте, чтобы снять выбор всех точек.</string>
     <string name="tutorial_navigation" formatted="false">Листайте выбранные объекты. Панель показывает активный объект и цвета его траектории.</string>
     <string name="tutorial_observatory" formatted="false">Открывает данные объекта, траектории, важные высоты, события и личные моменты.</string>
     <string name="tutorial_daily" formatted="false">Смотрите траекторию, время, высоту и выбираемые точки. Будущим событиям можно назначить напоминания.</string>
     <string name="tutorial_gps" formatted="false">Смотрите реальное положение, высоту GPS, ориентацию и погоду независимо от Location.</string>
     <string name="tutorial_points" formatted="false">Выберите точку или снимите выбор. Наведите прицел, чтобы увидеть время, T, азимут и высоту.</string>
-    <string name="tutorial_reticle_title" formatted="false">Время и интерфейс</string>
-    <string name="tutorial_reticle" formatted="false">Коснитесь свободного места, чтобы остановить или продолжить время. Двойное касание показывает или скрывает интерфейс и панели. Прицел остаётся видимым.</string>
+    <string name="tutorial_reticle_title" formatted="false">Время и панели</string>
+    <string name="tutorial_reticle" formatted="false">Нажмите свободную область, чтобы остановить или возобновить время. Двойное касание скрывает или показывает панели.</string>
     <string name="tutorial_reminder" formatted="false">Откройте будильник или календарь Android для подходящего будущего события. Прошлые события и текущая точка исключены.</string>
     <string name="tutorial_status_title" formatted="false">Состояние и восстановление</string>
     <string name="tutorial_status" formatted="false">Проверьте состояние и доступные действия для позиции, погоды и орбитальных данных.</string>

@@ -9,6 +9,8 @@ import androidx.compose.ui.graphics.StrokeCap
 import androidx.compose.ui.platform.testTag
 import androidx.compose.ui.unit.dp
 
+internal const val SPACE_COMPASS_CAMERA_HORIZON_STROKE_SCALE = .50f
+
 /** Only the gravity horizon is added to the real scene: no virtual terrain/weather/grid. */
 @Composable
 internal fun SpaceCompassCameraHorizon(orientation: SpaceCompassSunOrientation?, frame: SpaceCompassSunSceneFrame?,
@@ -19,7 +21,7 @@ internal fun SpaceCompassCameraHorizon(orientation: SpaceCompassSunOrientation?,
         if (horizon?.size != 2) return@Canvas
         val start = Offset(horizon[0].x.toFloat(), horizon[0].y.toFloat())
         val end = Offset(horizon[1].x.toFloat(), horizon[1].y.toFloat())
-        drawLine(Color.Black.copy(alpha = .55f), start, end, 3.dp.toPx(), StrokeCap.Round)
-        drawLine(Color.White.copy(alpha = .85f), start, end, 1.dp.toPx(), StrokeCap.Round)
+        drawLine(Color.Black.copy(alpha = .55f), start, end, 3.dp.toPx() * SPACE_COMPASS_CAMERA_HORIZON_STROKE_SCALE, StrokeCap.Round)
+        drawLine(Color.White.copy(alpha = .85f), start, end, 1.dp.toPx() * SPACE_COMPASS_CAMERA_HORIZON_STROKE_SCALE, StrokeCap.Round)
     }
 }

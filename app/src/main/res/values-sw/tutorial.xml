@@ -3,7 +3,7 @@
     <string name="tutorial_title" formatted="false">Mafunzo</string>
     <string name="tutorial_welcome_title" formatted="false">Karibu Space Compass</string>
     <string name="tutorial_welcome_body" formatted="false">Chunguza anga na njia za vitu vya angani katika maeneo na nyakati tofauti. Jifunze vidhibiti kupitia mafunzo shirikishi.</string>
-    <string name="tutorial_instruction" formatted="false">Gusa kidhibiti kilichoangaziwa au nukta ya obiti ili kujua kazi yake bila kubadili mipangilio.</string>
+    <string name="tutorial_instruction" formatted="false">Gusa kidhibiti, duara au nukta ya obiti ili kujua kazi yake.</string>
     <string name="tutorial_zoom_title" formatted="false">Ukuzaji</string>
     <string name="tutorial_navigation_title" formatted="false">Kitu kilichochaguliwa</string>
     <string name="tutorial_points_title" formatted="false">Nukta za obiti</string>
@@ -19,15 +19,15 @@
     <string name="tutorial_transparency" formatted="false">Fanya picha za vitu zipitishe mwanga ili kulinganisha na kamera.</string>
     <string name="tutorial_zoom" formatted="false">Kuza au punguza kwa kitufe au vidole viwili.</string>
     <string name="tutorial_capture" formatted="false">Andaa picha. Katika hakikisho chagua gridi, lebo na mahali; katika Anga na Dunia badili kati ya fremu na panorama.</string>
-    <string name="tutorial_panels" formatted="false">Funga au panua paneli za kitu na dira ili kuongeza nafasi ya anga.</string>
+    <string name="tutorial_panels" formatted="false">Gusa eneo tupu mara mbili kuficha au kuonyesha paneli za kitu na dira pamoja na jina la kitu.</string>
     <string name="tutorial_antipodes" formatted="false">Gusa kuonyesha au kuficha antipodi. Shikilia kuondoa uteuzi wa nukta zote.</string>
     <string name="tutorial_navigation" formatted="false">Pitia vitu vilivyochaguliwa. Paneli huonyesha kitu hai na rangi za njia yake.</string>
     <string name="tutorial_observatory" formatted="false">Fungua data ya kitu, njia, miinuko muhimu, matukio na nyakati binafsi.</string>
     <string name="tutorial_daily" formatted="false">Tazama njia, saa, miinuko na nukta zinazochagulika. Matukio yajayo yanaweza kupewa vikumbusho.</string>
     <string name="tutorial_gps" formatted="false">Tazama eneo halisi, kimo cha GPS, mwelekeo na hali ya hewa, tofauti na Location.</string>
     <string name="tutorial_points" formatted="false">Chagua nukta au ondoa uteuzi wake. Lenga kusoma wakati, T, azimuthi na mwinuko.</string>
-    <string name="tutorial_reticle_title" formatted="false">Muda na kiolesura</string>
-    <string name="tutorial_reticle" formatted="false">Gusa sehemu tupu kusimamisha au kuendeleza muda. Gusa mara mbili kuonyesha au kuficha kiolesura na paneli. Alama ya kulenga hubaki kuonekana.</string>
+    <string name="tutorial_reticle_title" formatted="false">Muda na paneli</string>
+    <string name="tutorial_reticle" formatted="false">Gusa eneo tupu ili kusitisha au kuendeleza muda. Gusa mara mbili kuficha au kuonyesha paneli.</string>
     <string name="tutorial_reminder" formatted="false">Fungua kengele au kalenda ya Android kwa tukio lijalo linalofaa. Si kwa yaliyopita au nukta ya sasa.</string>
     <string name="tutorial_status_title" formatted="false">Hali na urejeshaji</string>
     <string name="tutorial_status" formatted="false">Angalia hali na hatua zinazopatikana kwa mahali, hali ya hewa na data za obiti.</string>

@@ -3,7 +3,7 @@
     <string name="tutorial_title" formatted="false">Samouczek</string>
     <string name="tutorial_welcome_title" formatted="false">Witaj w Space Compass</string>
     <string name="tutorial_welcome_body" formatted="false">Odkrywaj niebo i tory ciał niebieskich w różnych miejscach i chwilach. Poznaj sterowanie w interaktywnym samouczku.</string>
-    <string name="tutorial_instruction" formatted="false">Dotknij wyróżnionego przycisku lub punktu orbity, aby poznać funkcję bez zmiany ustawień.</string>
+    <string name="tutorial_instruction" formatted="false">Dotknij przycisku, okręgu lub punktu orbity, aby poznać jego funkcję.</string>
     <string name="tutorial_zoom_title" formatted="false">Powiększenie</string>
     <string name="tutorial_navigation_title" formatted="false">Wybrany obiekt</string>
     <string name="tutorial_points_title" formatted="false">Punkty orbity</string>
@@ -19,15 +19,15 @@
     <string name="tutorial_transparency" formatted="false">Zwiększ przezroczystość obiektów, aby porównać je z obrazem aparatu.</string>
     <string name="tutorial_zoom" formatted="false">Przybliżaj lub oddalaj przyciskiem albo dwoma palcami.</string>
     <string name="tutorial_capture" formatted="false">Przygotuj obraz. W podglądzie wybierz siatkę, etykiety i pozycję; w Niebie i Globie przełączaj Kadr i Panoramę.</string>
-    <string name="tutorial_panels" formatted="false">Zwiń lub rozwiń panele obiektu i kompasu, aby odsłonić niebo.</string>
+    <string name="tutorial_panels" formatted="false">Dotknij dwukrotnie wolnego miejsca, aby ukryć lub pokazać panele obiektu i kompasu wraz z nazwą obiektu.</string>
     <string name="tutorial_antipodes" formatted="false">Dotknij, aby pokazać lub ukryć antypody. Przytrzymaj, aby odznaczyć wszystkie punkty.</string>
     <string name="tutorial_navigation" formatted="false">Przeglądaj wybrane obiekty. Panel pokazuje aktywny obiekt i kolory toru.</string>
     <string name="tutorial_observatory" formatted="false">Otwórz dane obiektu, tory, ważne wysokości, wydarzenia i własne momenty.</string>
     <string name="tutorial_daily" formatted="false">Zobacz tor, godziny, wysokości i wybieralne punkty. Przyszłe wydarzenia mogą mieć przypomnienia.</string>
     <string name="tutorial_gps" formatted="false">Zobacz rzeczywistą pozycję, wysokość GPS, orientację i pogodę, niezależnie od Location.</string>
     <string name="tutorial_points" formatted="false">Zaznacz lub odznacz punkt. Wyceluj, aby odczytać czas, T, azymut i wysokość.</string>
-    <string name="tutorial_reticle_title" formatted="false">Czas i interfejs</string>
-    <string name="tutorial_reticle" formatted="false">Dotknij pustego miejsca, aby zatrzymać lub wznowić czas. Dwa dotknięcia pokazują lub ukrywają interfejs i panele. Celownik pozostaje widoczny.</string>
+    <string name="tutorial_reticle_title" formatted="false">Czas i panele</string>
+    <string name="tutorial_reticle" formatted="false">Dotknij wolnego miejsca, aby wstrzymać lub wznowić czas. Dotknij dwukrotnie, aby ukryć lub pokazać panele.</string>
     <string name="tutorial_reminder" formatted="false">Otwórz alarm lub kalendarz Androida dla przyszłego wydarzenia. Nie dotyczy przeszłości ani punktu aktualnego.</string>
     <string name="tutorial_status_title" formatted="false">Stan i przywracanie</string>
     <string name="tutorial_status" formatted="false">Sprawdź stan i dostępne działania dla pozycji, pogody i danych orbitalnych.</string>

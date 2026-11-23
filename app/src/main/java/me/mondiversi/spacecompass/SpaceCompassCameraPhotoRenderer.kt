@@ -23,11 +23,11 @@ internal fun renderSpaceCompassCameraPhoto(context: Context, photo: SpaceCompass
 /** Shared angular overlays: photo pixels and virtual-sky pixels keep their own frozen optical frame. */
 internal fun renderSpaceCompassProjectedCapture(context: Context,background: Bitmap,perspective: SpaceCompassPerspective,
     orientation: SpaceCompassSunOrientation?,usable: Boolean,snapshot: SpaceCompassPanoramaSnapshot,
-    objectOpacity: Float=1f,warning: String?=null): Bitmap {
+    objectOpacity: Float=1f,warning: String?=null,simulatedSky: Boolean=false): Bitmap {
     var image: Bitmap?=null
     try {
         val width=background.width;val height=background.height
-        val gridPalette=spaceCompassGridPalette(snapshot)
+        val gridPalette=spaceCompassWeatherGridPalette(snapshot,enabled=simulatedSky)
         val scale=(minOf(width,height)/1080f).coerceAtLeast(.45f)
         val bandStyle=spaceCompassCaptureBandStyle(width,height)
         val caption=prepareSpaceCompassCaptureCaption(snapshot.caption,width,bandStyle,context)
@@ -54,15 +54,15 @@ internal fun renderSpaceCompassProjectedCapture(context: Context,background: Bit
             val horizon=projectSpaceCompassSunGround(orientation,SpaceCompassSunSceneFrame(0.0,0.0,width.toDouble(),height.toDouble()),
                 width.toDouble(),height.toDouble(),perspective)?.horizon
             if (horizon?.size==2) {
-                paint.color=gridPalette.shadowArgb; paint.strokeWidth=3*SpaceCompassAngularGridAppearance.lineWidth(width,height)
-                canvas.drawLine(horizon[0].x.toFloat(),horizon[0].y.toFloat(),horizon[1].x.toFloat(),horizon[1].y.toFloat(),paint)
-                paint.color=gridPalette.majorArgb; paint.strokeWidth=1.5f*SpaceCompassAngularGridAppearance.lineWidth(width,height)
+                paint.color=gridPalette.majorArgb; paint.strokeWidth=1.5f*SpaceCompassAngularGridAppearance.lineWidth(width,height)*
+                    (if(simulatedSky) 1f else SPACE_COMPASS_CAMERA_HORIZON_STROKE_SCALE)
                 canvas.drawLine(horizon[0].x.toFloat(),horizon[0].y.toFloat(),horizon[1].x.toFloat(),horizon[1].y.toFloat(),paint)
             }
         }
         val pointing=orientation.takeIf { usable }
         if (pointing != null && snapshot.showGrid) drawSpaceCompassCameraAngularGrid(canvas, width, height,
-            pointing, perspective, snapshot, scale, header, occupied)
+            pointing, perspective, snapshot, scale, header, occupied,
+                darkGrid=simulatedSky && spaceCompassWeatherGridBlack(snapshot.phase, snapshot.weather, snapshot.weatherEffectsEnabled))
         fun projection(position: SpaceCompassSunPosition) = pointing?.let {
             projectSpaceCompassSun(position,it,width.toDouble(),height.toDouble(),perspective).takeIf { p->p.visible }
         }

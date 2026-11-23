@@ -49,16 +49,13 @@ internal fun SpaceCompassGridReferencesDialog(expanded: Boolean, grid: Boolean, 
     var draftNumbers by rememberSaveable(grid, references, numbers) { mutableStateOf(numbers) }
     var draftOpacity by rememberSaveable(grid, references, numbers, opacity) { mutableIntStateOf(spaceCompassGridOpacity(opacity)) }
     val opacityTitle = stringResource(R.string.main_grid_opacity)
-    val opacityValue = stringResource(R.string.music_volume_value,
-        formatSpaceCompassNumber(draftOpacity.toDouble(), 0, LocalSpaceCompassNumericFormat.current,
-            systemLocale = LocalSpaceCompassDeviceLocale.current))
     SpaceCompassAlertDialog(onDismissRequest = onDismiss,
         modifier = Modifier.testTag("grid-references-dialog"),
         title = { Text(stringResource(R.string.main_grid_references)) },
         confirmButton = { SpaceCompassDialogActionButton(stringResource(R.string.view_mode_apply),
             { onApply(draftGrid, draftReferences, draftNumbers, draftOpacity) }, Modifier.testTag("grid-references-apply")) },
         dismissButton = { SpaceCompassDialogActionButton(stringResource(R.string.close),
-            onDismiss, Modifier.testTag("grid-references-cancel"), tone = SpaceCompassDialogActionTone.NEUTRAL) },
+            onDismiss, Modifier.testTag("grid-references-cancel"), tone = SpaceCompassDialogActionTone.NEUTRAL, closeAction = true) },
         text = {
             // The shared dialog owns scrolling, including short landscape windows.
             Column(Modifier.fillMaxWidth()) {
@@ -70,6 +67,10 @@ internal fun SpaceCompassGridReferencesDialog(expanded: Boolean, grid: Boolean, 
                     val foreground = MaterialTheme.colorScheme.onSurface.copy(alpha = if(draftGrid) 1f else .38f)
                     Row(Modifier.fillMaxWidth(), horizontalArrangement = Arrangement.SpaceBetween) {
                         Text(opacityTitle, Modifier.weight(1f).padding(end = 8.dp), fontSize = 13.sp, fontWeight = FontWeight.Medium, color = foreground)
+                        // Read the draft inside the popup, alongside the slider, on every change.
+                        val opacityValue = stringResource(R.string.music_volume_value,
+                            formatSpaceCompassNumber(draftOpacity.toDouble(), 0, LocalSpaceCompassNumericFormat.current,
+                                systemLocale = LocalSpaceCompassDeviceLocale.current))
                         Text(opacityValue, Modifier.testTag("grid-opacity-value"), fontSize = 11.sp,
                             color = foreground.copy(alpha = if(draftGrid) .72f else .38f),
                             style = TextStyle(textDirection = TextDirection.ContentOrLtr))

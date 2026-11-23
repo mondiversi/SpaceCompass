@@ -216,7 +216,7 @@ internal fun SpaceCompassPanoramaPreview(data: SpaceCompassPanoramaPreviewData, 
             }
             val showCaptionOptions = data.snapshot != null && data.captionData != null
             val showCenter = data.cameraPhoto == null && data.snapshot != null && data.snapshot.globe == null && requestedProjection==SpaceCompassCaptureProjection.PANORAMA
-            val captionControls: @Composable () -> Unit = {
+            val captionControls = rememberSpaceCompassMovableContent {
                 if(showCaptionOptions) Box {
                     SpaceCompassPanoramaCircleButton(stringResource(R.string.panorama_point_labels),{chooseLabels=true},enabled=!export.saving,
                         active=requestedLabelMode!=SpaceCompassPanoramaLabelMode.NONE,stateText=stringResource(requestedLabelMode.labelResource),

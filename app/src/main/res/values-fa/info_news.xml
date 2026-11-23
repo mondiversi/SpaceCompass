@@ -1,9 +1,9 @@
 <resources>
     <string name="info_news_title">تازه‌ترین تغییرات · %1$s</string>
-    <string name="info_news_star_sky" formatted="false">شفافیت نشانه‌گیر سفید اکنون برابر است با 50%.</string>
-    <string name="info_news_texture_downloads" formatted="false">دو بار لمس، نمادها و پنل‌ها را پنهان می‌کند و نشانه‌گیر را نمایان نگه می‌دارد.</string>
-    <string name="info_news_weather" formatted="false">در حالت عمودی، با پنهان شدن رابط کاربری نشانه‌گیر مانند حالت پنل‌های جمع‌شده بالاتر می‌ماند.</string>
-    <string name="info_news_viewer_zoom" formatted="false">فاصلهٔ زیر آخرین ردیف پنل جرم بیشتر شده و با پنل قطب‌نما هماهنگ است.</string>
-    <string name="info_news_settings" formatted="false">جزئیات موقعیت اکنون «موقعیت واقعی» نام دارد و همچنان موقعیت واقعی شما را نشان می‌دهد.</string>
-    <string name="info_news_catalog" formatted="false">آموزش، حرکت لمسی جدید رابط کاربری را توضیح می‌دهد.</string>
+    <string name="info_news_star_sky" formatted="false">برای پنهان یا نمایان کردن پنل‌های جرم و قطب‌نما، همراه با نام جرم، یک ناحیهٔ خالی را دو بار لمس کنید. کنترل‌ها و نشانه‌گیر نمایان می‌مانند.</string>
+    <string name="info_news_texture_downloads" formatted="false">چیدمان کنترل‌ها بهبود یافته و ضخامت خط افق دوربین نصف مقدار قبلی شده است.</string>
+    <string name="info_news_weather" formatted="false">تیرگی پیش‌فرض شبکه برابر است با 50%. لغزنده مقدار را بلافاصله به‌روز می‌کند. شبکه و نشانه‌گیر حاشیه ندارند؛ تیرگی نشانه‌گیر برابر است با 80%.</string>
+    <string name="info_news_viewer_zoom" formatted="false">در مه، آسمان ابری و برف روزانه، خطوط شبکه در بالا و پایین افق سیاه هستند.</string>
+    <string name="info_news_settings" formatted="false">پنجره‌های فشرده‌تر با کنترل‌ها کنار عنوان و نماد بستن در حالت افقی. انتخاب‌ها هنگام چرخاندن صفحه حفظ می‌شوند.</string>
+    <string name="info_news_catalog" formatted="false">منوهای بزرگ‌نمایی روی پنل‌ها خوانا می‌مانند. آموزش یک ناحیهٔ خالی ثابت را مشخص و کنترل‌های فعلی را توضیح می‌دهد.</string>
 </resources>

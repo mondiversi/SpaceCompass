@@ -1,9 +1,9 @@
 <resources>
     <string name="info_news_title">Son yenilikler · %1$s</string>
-    <string name="info_news_star_sky" formatted="false">Beyaz nişangâhın saydamlığı artık yüzde elli.</string>
-    <string name="info_news_texture_downloads" formatted="false">Çift dokunma simgeleri ve panelleri gizlerken nişangâh görünür kalır.</string>
-    <string name="info_news_weather" formatted="false">Dikey kullanımda arayüz gizlendiğinde nişangâh, daraltılmış panellerdeki gibi yukarıda kalır.</string>
-    <string name="info_news_viewer_zoom" formatted="false">Nesne panelinin son satırının altındaki boşluk pusula paneliyle uyumlu olarak artırıldı.</string>
-    <string name="info_news_settings" formatted="false">Konum ayrıntıları artık Gerçek konum adını taşır ve gerçek konumunuzu göstermeye devam eder.</string>
-    <string name="info_news_catalog" formatted="false">Öğretici güncellenen arayüz hareketini açıklar.</string>
+    <string name="info_news_star_sky" formatted="false">Nesne adı dahil nesne ve pusula panellerini gizlemek veya göstermek için boş bir alana çift dokunun. Kontroller ve nişangâh görünür kalır.</string>
+    <string name="info_news_texture_downloads" formatted="false">Görünüm kontrolleri yeniden düzenlendi ve kamera ufuk çizgisi önceki kalınlığının yarısına indirildi.</string>
+    <string name="info_news_weather" formatted="false">Varsayılan ızgara opaklığı yüzde 50’dir. Kaydırıcı değeri hemen günceller. Izgara ve nişangâhın dış çizgisi yoktur; nişangâh opaklığı yüzde 80’dir.</string>
+    <string name="info_news_viewer_zoom" formatted="false">Gündüz sis, kapalı hava ve karda ufkun üstünde ve altında siyah ızgara çizgileri kullanılır.</string>
+    <string name="info_news_settings" formatted="false">Daha küçük açılır pencereler, yatayda başlık yanındaki işlemler ve kapatma simgesi. Ekran döndürülünce seçimler korunur.</string>
+    <string name="info_news_catalog" formatted="false">Yakınlaştırma menüleri panellerin üzerinde okunabilir. Eğitim sabit bir boş alanı vurgular ve kullanılan kontrolleri açıklar.</string>
 </resources>

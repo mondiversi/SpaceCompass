@@ -3,7 +3,7 @@
     <string name="tutorial_title" formatted="false">Οδηγός</string>
     <string name="tutorial_welcome_title" formatted="false">Καλώς ήρθατε στο Space Compass</string>
     <string name="tutorial_welcome_body" formatted="false">Εξερευνήστε τον ουρανό και τις τροχιές από διαφορετικούς τόπους και χρόνους. Γνωρίστε τα χειριστήρια με τον διαδραστικό οδηγό.</string>
-    <string name="tutorial_instruction" formatted="false">Αγγίξτε ένα φωτισμένο χειριστήριο ή σημείο τροχιάς για εξήγηση, χωρίς αλλαγή ρυθμίσεων.</string>
+    <string name="tutorial_instruction" formatted="false">Αγγίξτε ένα χειριστήριο, τον κύκλο ή ένα σημείο τροχιάς για να μάθετε τη λειτουργία του.</string>
     <string name="tutorial_zoom_title" formatted="false">Ζουμ</string>
     <string name="tutorial_navigation_title" formatted="false">Επιλεγμένο αντικείμενο</string>
     <string name="tutorial_points_title" formatted="false">Σημεία τροχιάς</string>
@@ -19,15 +19,15 @@
     <string name="tutorial_transparency" formatted="false">Κάντε τα αντικείμενα ημιδιαφανή για σύγκριση με την κάμερα.</string>
     <string name="tutorial_zoom" formatted="false">Κάνε μεγέθυνση ή σμίκρυνση με το κουμπί ή με δύο δάχτυλα.</string>
     <string name="tutorial_capture" formatted="false">Ετοιμάστε μια εικόνα. Στην προεπισκόπηση επιλέξτε πλέγμα, ετικέτες και θέση· σε Ουρανό και Υδρόγειο αλλάξτε μεταξύ κάδρου και πανοράματος.</string>
-    <string name="tutorial_panels" formatted="false">Συμπτύξτε ή αναπτύξτε τα πλαίσια αντικειμένου και πυξίδας για περισσότερο ουρανό.</string>
+    <string name="tutorial_panels" formatted="false">Αγγίξτε δύο φορές μια ελεύθερη περιοχή για απόκρυψη ή εμφάνιση των πλαισίων αντικειμένου και πυξίδας, μαζί με το όνομα του αντικειμένου.</string>
     <string name="tutorial_antipodes" formatted="false">Πατήστε για εμφάνιση ή απόκρυψη αντιπόδων. Κρατήστε πατημένο για αποεπιλογή όλων των σημείων.</string>
     <string name="tutorial_navigation" formatted="false">Περιηγηθείτε στα επιλεγμένα αντικείμενα. Το πλαίσιο δείχνει το ενεργό αντικείμενο και τα χρώματα τροχιάς.</string>
     <string name="tutorial_observatory" formatted="false">Ανοίγει δεδομένα, τροχιές, σημαντικά ύψη, συμβάντα και προσωπικές στιγμές του αντικειμένου.</string>
     <string name="tutorial_daily" formatted="false">Δείτε τροχιά, ώρες, ύψη και επιλέξιμα σημεία. Τα μελλοντικά γεγονότα μπορούν να έχουν υπενθύμιση.</string>
     <string name="tutorial_gps" formatted="false">Δείτε πραγματική θέση, υψόμετρο GPS, προσανατολισμό και καιρό, ανεξάρτητα από τη Location.</string>
     <string name="tutorial_points" formatted="false">Επιλέξτε ή αποεπιλέξτε ένα σημείο. Στοχεύστε για να δείτε ώρα, T, αζιμούθιο και ύψος.</string>
-    <string name="tutorial_reticle_title" formatted="false">Χρόνος και διεπαφή</string>
-    <string name="tutorial_reticle" formatted="false">Αγγίξτε κενό χώρο για παύση ή συνέχιση του χρόνου. Το διπλό άγγιγμα εμφανίζει ή κρύβει τη διεπαφή και τα πλαίσια. Το στόχαστρο παραμένει ορατό.</string>
+    <string name="tutorial_reticle_title" formatted="false">Χρόνος και πλαίσια</string>
+    <string name="tutorial_reticle" formatted="false">Αγγίξτε μια ελεύθερη περιοχή για παύση ή συνέχιση του χρόνου. Το διπλό άγγιγμα κρύβει ή εμφανίζει τα πλαίσια.</string>
     <string name="tutorial_reminder" formatted="false">Ανοίξτε ξυπνητήρι ή ημερολόγιο Android για κατάλληλο μελλοντικό γεγονός. Εξαιρούνται παρελθόν και τρέχον σημείο.</string>
     <string name="tutorial_status_title" formatted="false">Κατάσταση και επαναφορά</string>
     <string name="tutorial_status" formatted="false">Δείτε την κατάσταση και τις διαθέσιμες ενέργειες για θέση, καιρό και τροχιακά δεδομένα.</string>

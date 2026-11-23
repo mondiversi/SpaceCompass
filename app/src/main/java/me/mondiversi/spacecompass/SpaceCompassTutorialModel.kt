@@ -15,16 +15,22 @@ internal fun spaceCompassTutorialCardHeightLimit(viewportHeightDp: Float): Float
 /** Center the explanation in the actual gap between control groups, not the whole sky. */
 internal fun spaceCompassTutorialCardBand(viewport: Rect, targets: List<SpaceCompassTutorialTarget>): Rect {
     val controls = targets.filter { it.circular && !it.point && it.bounds.right > viewport.left && it.bounds.left < viewport.right }
-    // The axis sits beside the bottom chevron, or below Menu with landscape islands collapsed.
-    val upperAxis = controls.filter { it.feature == SpaceCompassTutorialFeature.AXIS &&
-        it.bounds.center.y < viewport.center.y }.toSet()
-    val upper = controls.filter { it in upperAxis || it.feature in setOf(SpaceCompassTutorialFeature.INFO,
+    // Context controls occupy the upper trailing edge in compact landscape; Menu sits below the logo.
+    // Require a measured header before reclassifying controls during an incomplete layout pass.
+    val headerMeasured = controls.any { it.feature == SpaceCompassTutorialFeature.MENU }
+    val upperSlot = controls.filter { it.feature in setOf(SpaceCompassTutorialFeature.WEATHER,
+        SpaceCompassTutorialFeature.SKY_LABELS, SpaceCompassTutorialFeature.GLOBE_LABELS,
+        SpaceCompassTutorialFeature.AXIS, SpaceCompassTutorialFeature.GLOBE_ROTATION,
+        SpaceCompassTutorialFeature.ANTIPODES, SpaceCompassTutorialFeature.TRANSPARENCY) &&
+        headerMeasured && it.bounds.center.y < viewport.center.y }.toSet()
+    val upper = controls.filter { it in upperSlot || it.feature in setOf(SpaceCompassTutorialFeature.INFO,
         SpaceCompassTutorialFeature.MENU, SpaceCompassTutorialFeature.FORWARD, SpaceCompassTutorialFeature.GUIDES,
         SpaceCompassTutorialFeature.LOCATION, SpaceCompassTutorialFeature.OBJECTS) }
-    val lower = controls.filter { it !in upperAxis && it.feature in setOf(SpaceCompassTutorialFeature.PANELS,
+    val lower = controls.filter { it !in upperSlot && it.feature in setOf(SpaceCompassTutorialFeature.PANELS,
         SpaceCompassTutorialFeature.ANTIPODES, SpaceCompassTutorialFeature.CAMERA, SpaceCompassTutorialFeature.CAPTURE,
-        SpaceCompassTutorialFeature.WEATHER, SpaceCompassTutorialFeature.AXIS,
-        SpaceCompassTutorialFeature.TRANSPARENCY, SpaceCompassTutorialFeature.ZOOM) }
+        SpaceCompassTutorialFeature.WEATHER, SpaceCompassTutorialFeature.AXIS, SpaceCompassTutorialFeature.SKY_LABELS,
+        SpaceCompassTutorialFeature.TRANSPARENCY, SpaceCompassTutorialFeature.GLOBE_LABELS,
+        SpaceCompassTutorialFeature.GLOBE_ROTATION, SpaceCompassTutorialFeature.ZOOM) }
     val top = upper.maxOfOrNull { it.bounds.bottom } ?: viewport.top
     val bottom = lower.minOfOrNull { it.bounds.top } ?: viewport.bottom
     return if (bottom > top) Rect(viewport.left, top, viewport.right, bottom) else viewport
@@ -71,3 +77,66 @@ internal fun spaceCompassTutorialHit(targets: List<SpaceCompassTutorialTarget>, 
     // Fixed controls take precedence over nearby orbit dots; smaller nested links win.
     .minWithOrNull(compareBy<SpaceCompassTutorialTarget> { it.point }
         .thenBy { if (it.point) (position - it.bounds.center).getDistance() else it.bounds.width * it.bounds.height })
+
+/** Find a real blank circle without covering controls, orbit touch targets or the explanation. */
+internal fun spaceCompassTutorialFreeArea(viewport: Rect, blocked: List<Rect>, preferredRadius: Float): Rect? {
+    if (preferredRadius <= 0 || viewport.width <= 0 || viewport.height <= 0) return null
+    for (scale in listOf(1f, .83f, .67f)) {
+        val radius = preferredRadius * scale
+        val left = viewport.left + radius + 4f
+        val top = viewport.top + radius + 4f
+        val right = viewport.right - radius - 4f
+        val bottom = viewport.bottom - radius - 4f
+        if (right < left || bottom < top) continue
+        val columns = ((right - left) / radius).toInt().coerceAtLeast(1)
+        val rows = ((bottom - top) / radius).toInt().coerceAtLeast(1)
+        val candidates = (0..rows).flatMap { y -> (0..columns).map { x ->
+            val center = Offset(left + (right-left)*x/columns, top + (bottom-top)*y/rows)
+            Rect(center.x-radius, center.y-radius, center.x+radius, center.y+radius)
+        } }
+        candidates.filter { candidate -> blocked.none(candidate::overlaps) }
+            .minByOrNull { (it.center - viewport.center).getDistance() }?.let { return it }
+    }
+    return null
+}
+
+/** One reserved anchor below the top icon row, independent of island visibility and orbit points. */
+internal fun spaceCompassTutorialFixedFreeArea(viewport: Rect, radius: Float, topInset: Float): Rect {
+    val r = minOf(radius, (viewport.width / 2 - 4f).coerceAtLeast(1f),
+        (viewport.height / 4).coerceAtLeast(1f))
+    val top = (viewport.top + topInset).coerceIn(viewport.top,
+        (viewport.bottom - r * 2).coerceAtLeast(viewport.top))
+    return Rect(viewport.center.x-r, top, viewport.center.x+r, top+r*2)
+}
+
+internal data class SpaceCompassTutorialExplanationLayout(val area: Rect, val height: Float)
+
+/** Reserve the circle first; short landscape windows can place readable explanations beside it. */
+internal fun spaceCompassTutorialExplanationLayout(sky: Rect, targets: List<SpaceCompassTutorialTarget>,
+    circle: Rect, desiredWidth: Float, maximumHeight: Float, gap: Float,
+    minimumSideWidth: Float): SpaceCompassTutorialExplanationLayout {
+    val controls = targets.filter { it.circular && !it.point && it.feature !in setOf(
+        SpaceCompassTutorialFeature.REMINDER, SpaceCompassTutorialFeature.OBSERVATORY,
+        SpaceCompassTutorialFeature.DAILY) }.map { it.bounds }
+    val band = spaceCompassTutorialCardBand(sky, targets)
+    val below = Rect(band.left, maxOf(band.top, circle.bottom+gap).coerceAtMost(band.bottom), band.right, band.bottom)
+    fun layout(area: Rect): SpaceCompassTutorialExplanationLayout {
+        val width = minOf(desiredWidth, (area.width-gap*2).coerceAtLeast(1f))
+        return SpaceCompassTutorialExplanationLayout(area, spaceCompassTutorialCardClearHeight(area, width,
+            controls+circle, gap, maximumHeight))
+    }
+    val lower = layout(below)
+    if (lower.height >= maximumHeight * .5f) return lower
+    val edgeBand = circle.width
+    val left = maxOf(sky.left, (controls.filter { it.center.x < sky.left+edgeBand }
+        .maxOfOrNull { it.right+gap } ?: sky.left))
+    val right = minOf(sky.right, (controls.filter { it.center.x > sky.right-edgeBand }
+        .minOfOrNull { it.left-gap } ?: sky.right))
+    val sideAreas = listOf(
+        Rect(left,sky.top,maxOf(left,minOf(right,circle.left-gap)),sky.bottom),
+        Rect(minOf(right,maxOf(left,circle.right+gap)),sky.top,right,sky.bottom))
+    val sides = sideAreas.filter { it.width-gap*2 >= minimumSideWidth }.map(::layout)
+    return (sides+lower).filter { it.height > 0 }.maxByOrNull {
+        minOf(desiredWidth,it.area.width-gap*2)*it.height
+    } ?: lower.copy(height = (below.height-gap*2).coerceAtLeast(1f))
+}

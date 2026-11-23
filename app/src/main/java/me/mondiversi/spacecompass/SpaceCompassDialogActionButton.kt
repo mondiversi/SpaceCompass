@@ -6,11 +6,15 @@ import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
 import androidx.compose.material3.TextButton
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.staticCompositionLocalOf
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.LocalResources
 
 /** Tone describes the action, independently of its localized caption. */
 internal enum class SpaceCompassDialogActionTone { PRIMARY, NEUTRAL, DESTRUCTIVE }
+
+// Landscape dialogs use their X instead of a duplicate passive Close action.
+internal val LocalSpaceCompassDialogHideCloseAction = staticCompositionLocalOf { false }
 
 /** Dialog actions share locale-aware capitals, normal text and the existing accent palettes. */
 @Composable
@@ -20,8 +24,10 @@ internal fun SpaceCompassDialogActionButton(
     modifier: Modifier = Modifier,
     enabled: Boolean = true,
     tone: SpaceCompassDialogActionTone = SpaceCompassDialogActionTone.PRIMARY,
-    contentPadding: PaddingValues = ButtonDefaults.TextButtonContentPadding
+    contentPadding: PaddingValues = ButtonDefaults.TextButtonContentPadding,
+    closeAction: Boolean = false
 ) {
+    if (closeAction && LocalSpaceCompassDialogHideCloseAction.current) return
     val locale = LocalResources.current.configuration.locales[0]
     TextButton(
         onClick = onClick,

@@ -1,9 +1,9 @@
 <resources>
     <string name="info_news_title">Neuigkeiten · %1$s</string>
-    <string name="info_news_star_sky" formatted="false">Die Transparenz des weißen Fadenkreuzes beträgt jetzt 50%.</string>
-    <string name="info_news_texture_downloads" formatted="false">Doppeltippen blendet Symbole und Infobereiche aus; das Fadenkreuz bleibt sichtbar.</string>
-    <string name="info_news_weather" formatted="false">Im Hochformat bleibt das Fadenkreuz bei ausgeblendeter Oberfläche erhöht, wie bei kompakten Infobereichen.</string>
-    <string name="info_news_viewer_zoom" formatted="false">Mehr Abstand unter der letzten Zeile des Objektbereichs, passend zum Kompassbereich.</string>
-    <string name="info_news_settings" formatted="false">Standortdetails heißt jetzt Reale Position und zeigt weiterhin deinen tatsächlichen Standort.</string>
-    <string name="info_news_catalog" formatted="false">Das Tutorial erklärt die aktualisierte Bediengeste.</string>
+    <string name="info_news_star_sky" formatted="false">Tippe doppelt auf eine freie Stelle, um Objekt- und Kompassbereiche samt Objektname aus- oder einzublenden. Bedienelemente und Fadenkreuz bleiben sichtbar.</string>
+    <string name="info_news_texture_downloads" formatted="false">Neu angeordnete Bedienelemente und eine Kamerahorizontlinie mit halber bisheriger Stärke.</string>
+    <string name="info_news_weather" formatted="false">Die Standarddeckkraft des Gitters beträgt 50%. Der Regler zeigt Änderungen sofort. Gitter und Fadenkreuz haben keine Kontur; die Deckkraft des Fadenkreuzes beträgt 80%.</string>
+    <string name="info_news_viewer_zoom" formatted="false">Bei Nebel, bedecktem Himmel und Schnee am Tag werden die Gitterlinien oberhalb und unterhalb des Horizonts schwarz.</string>
+    <string name="info_news_settings" formatted="false">Kompaktere Dialoge mit Aktionen in der Titelleiste und Schließen-Symbol im Querformat. Die Auswahl bleibt beim Drehen erhalten.</string>
+    <string name="info_news_catalog" formatted="false">Zoommenüs bleiben über den Infobereichen lesbar. Das Tutorial markiert eine feste freie Fläche und erklärt die aktuellen Bedienelemente.</string>
 </resources>

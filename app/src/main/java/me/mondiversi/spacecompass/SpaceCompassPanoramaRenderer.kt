@@ -44,7 +44,7 @@ internal fun renderSpaceCompassPanorama(snapshot: SpaceCompassPanoramaSnapshot, 
     require(width in 512..4096 && snapshot.objects.isNotEmpty())
     if (snapshot.globe != null) return renderSpaceCompassGlobe(snapshot,width,requireNotNull(context))
     val scale = width / 4096f
-    val gridPalette=spaceCompassGridPalette(snapshot)
+    val gridPalette=spaceCompassWeatherGridPalette(snapshot)
     val sceneWidth = width
     val centerAzimuth = snapshot.center.azimuth
     val observations = snapshot.objects.associateWith { item ->
@@ -99,8 +99,6 @@ internal fun renderSpaceCompassPanorama(snapshot: SpaceCompassPanoramaSnapshot, 
         if(snapshot.showGrid) {
             fun gridLine(x1: Float,y1: Float,x2: Float,y2: Float,major: Boolean=false) {
                 val edge=SpaceCompassAngularGridAppearance.lineWidth(width,sceneHeight)*(if(major) 1.5f else 1f)
-                paint.color=gridPalette.shadowArgb;paint.strokeWidth=edge*2
-                canvas.drawLine(x1,y1,x2,y2,paint)
                 paint.color=if(major) gridPalette.majorArgb else gridPalette.lineArgb
                 paint.strokeWidth=edge;canvas.drawLine(x1,y1,x2,y2,paint)
             }

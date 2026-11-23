@@ -26,36 +26,20 @@ internal fun SpaceCompassMainNavigationControls(vertical: Boolean, modifier: Mod
     }
 }
 
-/** Centre the contextual controls as a group; framed Sky has only Zoom. */
-@Composable
-internal fun SpaceCompassMainViewModeControls(vertical: Boolean, modifier: Modifier,
-    maximumHeight: Dp, content: @Composable () -> Unit) {
-    val target = modifier.testTag("celestial-bottom-center-controls").spaceCompassSceneInputShield()
-    if (vertical) Column(target.heightIn(max = maximumHeight).verticalScroll(rememberScrollState()).padding(4.dp),
-        horizontalAlignment = Alignment.CenterHorizontally, verticalArrangement = Arrangement.spacedBy(8.dp)) {
-        content()
-    } else Row(target.padding(4.dp), verticalAlignment = Alignment.Bottom,
-        horizontalArrangement = Arrangement.spacedBy(8.dp)) { content() }
-}
-
-/** Pin antipodes above the shutter in portrait and beside it in landscape. */
+/** Keep Zoom before the mode selector and shutter; compact landscape stacks all three. */
 @Composable
 internal fun SpaceCompassMainCaptureControls(vertical: Boolean, modifier: Modifier,
-    antipodes: @Composable () -> Unit, landscape: Boolean,
-    camera: @Composable () -> Unit, capture: @Composable () -> Unit) {
+    landscape: Boolean,
+    zoom: @Composable () -> Unit, camera: @Composable () -> Unit, capture: @Composable () -> Unit) {
     val target = modifier.padding(4.dp).testTag("celestial-capture-controls")
     Row(target, verticalAlignment = Alignment.Bottom, horizontalArrangement = Arrangement.spacedBy(8.dp)) {
         if (landscape && vertical) {
-            antipodes()
             Column(horizontalAlignment = Alignment.End, verticalArrangement = Arrangement.spacedBy(8.dp)) {
-                camera(); capture()
+                zoom(); camera(); capture()
             }
         } else {
-            camera()
-            if (landscape) { antipodes(); capture() }
-            else Column(horizontalAlignment = Alignment.End, verticalArrangement = Arrangement.spacedBy(8.dp)) {
-                antipodes(); capture()
-            }
+            zoom(); camera()
+            capture()
         }
     }
 }

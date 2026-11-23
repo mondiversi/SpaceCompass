@@ -37,7 +37,7 @@ let strokes=0;
 context.orbitInk={beginPath(){},moveTo(){},lineTo(){},setLineDash(){},stroke(){strokes++;}};
 for(const flat of [false,true])for(const guides of [false,true])for(const grid of [false,true]){
  context.globeScene.flat=flat;context.globeScene.guides=guides;context.globeScene.grid=grid;strokes=0;
- context.drawGlobeCoordinateGrid();assert.equal(strokes,grid?2:0,'Grid must not follow named-reference visibility');
+ context.drawGlobeCoordinateGrid();assert.equal(strokes,grid?1:0,'The single grid stroke must not follow named-reference visibility');
 }
 console.log('Independent grid/reference visibility passed in spherical and flat projections.');
 

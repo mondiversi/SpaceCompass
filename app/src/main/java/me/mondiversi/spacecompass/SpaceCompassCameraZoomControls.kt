@@ -9,10 +9,6 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.platform.testTag
-import androidx.compose.ui.platform.LocalConfiguration
-import androidx.compose.ui.platform.LocalDensity
-import androidx.compose.ui.layout.boundsInWindow
-import androidx.compose.ui.layout.onGloballyPositioned
 import androidx.compose.ui.layout.onSizeChanged
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.semantics.*
@@ -35,17 +31,7 @@ internal fun SpaceCompassCameraZoomControls(range: SpaceCompassCameraZoomRange?,
         val nominal = range?.displayRatio(ratio) ?: ratio
         return formatSpaceCompassNumber(nominal.toDouble(), spaceCompassCameraZoomDigits(nominal), numeric, grouping = false) + "×"
     }
-    val density = LocalDensity.current
-    val configuration = LocalConfiguration.current
-    var anchorTop by remember { mutableFloatStateOf(0f) }
-    var anchorBottom by remember { mutableFloatStateOf(0f) }
-    // Reserve equal room around the anchor so the scrolling list stays centered even near an edge.
-    val visibleWindow = if (expanded) spaceCompassDropdownWindowBounds() else null
-    val anchorCenter = with(density) { ((anchorTop + anchorBottom) / 2).toDp() }
-    val visibleTop = with(density) { (visibleWindow?.top ?: 0).toDp() }
-    val visibleBottom = visibleWindow?.let { with(density) { it.bottom.toDp() } } ?: configuration.screenHeightDp.dp
-    val menuHeight = (minOf(anchorCenter - visibleTop - 8.dp, visibleBottom - anchorCenter - 8.dp) * 2)
-        .coerceAtLeast(64.dp)
+    // The popup can cover the scene and information islands; its window bounds limit the height.
     val menuScroll = remember(expanded) { ScrollState(0) }
     var menuRowHeight by remember(expanded) { mutableIntStateOf(0) }
     LaunchedEffect(expanded, presets, requested, menuScroll) {
@@ -63,17 +49,13 @@ internal fun SpaceCompassCameraZoomControls(range: SpaceCompassCameraZoomRange?,
     Box {
         SpaceCompassFloatingActionButton(accessibilityLabel, open, color, background,
             enabled = canChoose,
-            modifier = Modifier.onGloballyPositioned {
-                val anchor = it.boundsInWindow()
-                anchorTop = anchor.top
-                anchorBottom = anchor.bottom
-            }
+            modifier = Modifier
                 .testTag("$tag-value").spaceCompassTutorialTarget(SpaceCompassTutorialFeature.ZOOM, enabled = canChoose)) {
             Text(value, Modifier.padding(2.dp), fontSize = 14.sp, fontWeight = FontWeight.SemiBold,
                 textAlign = TextAlign.Center, maxLines = 1)
         }
         SpaceCompassAdaptiveDropdownMenu(expanded, onDismissRequest = { expanded = false },
-            modifier = Modifier.widthIn(min = 48.dp).heightIn(max = menuHeight).testTag("$tag-menu"),
+            modifier = Modifier.widthIn(min = 48.dp).testTag("$tag-menu"),
             containerColor = spaceCompassSettingsCardColor(), scrollState = menuScroll, centerOnAnchor = true, centerVerticallyOnAnchor = true) {
             presets.forEach { preset ->
                 val checked = abs(preset - requested) < .005f

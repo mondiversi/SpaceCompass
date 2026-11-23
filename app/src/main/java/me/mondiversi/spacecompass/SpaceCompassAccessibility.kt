@@ -161,8 +161,9 @@ internal fun Modifier.spaceCompassAccessibleAction(
                 }
             }
     }
-    return if (preserveChildActions) semantics(mergeDescendants = false, properties = properties)
-        else clearAndSetSemantics(properties)
+    val control = spaceCompassMainGestureControl()
+    return if (preserveChildActions) control.semantics(mergeDescendants = false, properties = properties)
+        else control.clearAndSetSemantics(properties)
 }
 
 /** Adds state to a parent that intentionally contains another independent accessible action. */

@@ -1,9 +1,9 @@
 <resources>
     <string name="info_news_title">最新变化 · %1$s</string>
-    <string name="info_news_star_sky" formatted="false">白色准星的透明度现为50%。</string>
-    <string name="info_news_texture_downloads" formatted="false">双击可隐藏图标和面板，同时保持准星可见。</string>
-    <string name="info_news_weather" formatted="false">竖屏隐藏界面后，准星仍保持与收起面板时相同的较高位置。</string>
-    <string name="info_news_viewer_zoom" formatted="false">增大天体面板最后一行下方的留白，与指南针面板保持一致。</string>
-    <string name="info_news_settings" formatted="false">“位置详情”更名为“实际位置”，仍显示您的真实位置。</string>
-    <string name="info_news_catalog" formatted="false">教程说明了更新后的界面手势。</string>
+    <string name="info_news_star_sky" formatted="false">双击空白区域可隐藏或显示天体和指南针面板，包括天体名称。按钮和准星保持可见。</string>
+    <string name="info_news_texture_downloads" formatted="false">重新排列视图按钮，并将相机地平线粗细减为原来的一半。</string>
+    <string name="info_news_weather" formatted="false">网格默认不透明度为50%。滑块会立即更新数值。网格和准星均无描边；准星不透明度为80%。</string>
+    <string name="info_news_viewer_zoom" formatted="false">白天出现雾、阴天或雪时，地平线上下的网格线均为黑色。</string>
+    <string name="info_news_settings" formatted="false">弹窗更加紧凑，横屏时操作按钮和关闭图标位于标题栏。旋转屏幕后仍保留选择。</string>
+    <string name="info_news_catalog" formatted="false">缩放菜单可在面板上方清晰显示。教程标出固定的空白区域，并说明当前按钮的功能。</string>
 </resources>

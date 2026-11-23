@@ -1,9 +1,9 @@
 <resources>
     <string name="info_news_title">آخر المستجدات · %1$s</string>
-    <string name="info_news_star_sky" formatted="false">أصبحت شفافية علامة التصويب البيضاء 50%.</string>
-    <string name="info_news_texture_downloads" formatted="false">يخفي النقر المزدوج الأيقونات واللوحات مع إبقاء علامة التصويب ظاهرة.</string>
-    <string name="info_news_weather" formatted="false">في الوضع العمودي تبقى علامة التصويب مرتفعة عند إخفاء الواجهة، كما مع اللوحات المصغّرة.</string>
-    <string name="info_news_viewer_zoom" formatted="false">مساحة أكبر أسفل آخر صف في لوحة الجرم، بما يتوافق مع لوحة البوصلة.</string>
-    <string name="info_news_settings" formatted="false">أصبح اسم تفاصيل الموقع «الموقع الفعلي» ويظل يعرض موقعك الحقيقي.</string>
-    <string name="info_news_catalog" formatted="false">يشرح الدليل التعليمي سلوك الواجهة الجديد.</string>
+    <string name="info_news_star_sky" formatted="false">انقر مرتين على مساحة فارغة لإخفاء لوحتي الجرم والبوصلة أو إظهارهما، بما في ذلك اسم الجرم. تبقى الأزرار وعلامة التصويب ظاهرة.</string>
+    <string name="info_news_texture_downloads" formatted="false">أُعيد ترتيب أزرار العرض وأصبح خط الأفق في الكاميرا بنصف سمكه السابق.</string>
+    <string name="info_news_weather" formatted="false">عتامة الشبكة الافتراضية 50%. يعرض شريط التمرير القيمة فورًا. لا توجد حواف للشبكة وعلامة التصويب؛ عتامة علامة التصويب 80%.</string>
+    <string name="info_news_viewer_zoom" formatted="false">يستخدم الضباب والسماء الملبدة والثلج نهارًا خطوط شبكة سوداء، فوق الأفق وتحته.</string>
+    <string name="info_news_settings" formatted="false">نوافذ أكثر اختصارًا مع إجراءات بجوار العنوان وأيقونة إغلاق في الوضع الأفقي. تُحفظ الخيارات عند تدوير الشاشة.</string>
+    <string name="info_news_catalog" formatted="false">تبقى قوائم التكبير مقروءة فوق اللوحات. يبرز الدليل مساحة فارغة ثابتة ويشرح الأزرار المستخدمة.</string>
 </resources>

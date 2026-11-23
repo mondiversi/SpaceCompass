@@ -3,7 +3,7 @@
     <string name="tutorial_title" formatted="false">Öğretici</string>
     <string name="tutorial_welcome_title" formatted="false">Space Compass’a hoş geldiniz</string>
     <string name="tutorial_welcome_body" formatted="false">Farklı yer ve zamanlarda gökyüzünü ve gök cisimlerinin yollarını keşfedin. Etkileşimli öğreticiyle kontrolleri öğrenin.</string>
-    <string name="tutorial_instruction" formatted="false">Ayarları değiştirmeden işlevini öğrenmek için vurgulanan bir kontrole veya yörünge noktasına dokunun.</string>
+    <string name="tutorial_instruction" formatted="false">İşlevini öğrenmek için bir kontrole, daireye veya yörünge noktasına dokunun.</string>
     <string name="tutorial_zoom_title" formatted="false">Yakınlaştırma</string>
     <string name="tutorial_navigation_title" formatted="false">Seçili nesne</string>
     <string name="tutorial_points_title" formatted="false">Yörünge noktaları</string>
@@ -19,15 +19,15 @@
     <string name="tutorial_transparency" formatted="false">Kamera görüntüsüyle karşılaştırmak için nesneleri yarı saydam yapın.</string>
     <string name="tutorial_zoom" formatted="false">Düğmeyle veya iki parmakla yakınlaştır ya da uzaklaştır.</string>
     <string name="tutorial_capture" formatted="false">Bir görüntü hazırlayın. Önizlemede ızgara, etiket ve konumu seçin; Gökyüzü ve Kürede Kadraj ile Panorama arasında geçiş yapın.</string>
-    <string name="tutorial_panels" formatted="false">Gökyüzünü açmak için nesne ve pusula panellerini daraltın veya genişletin.</string>
+    <string name="tutorial_panels" formatted="false">Nesne adı dahil nesne ve pusula panellerini gizlemek veya göstermek için boş bir alana çift dokunun.</string>
     <string name="tutorial_antipodes" formatted="false">Karşıt noktaları göstermek veya gizlemek için dokunun. Tüm noktaların seçimini kaldırmak için basılı tutun.</string>
     <string name="tutorial_navigation" formatted="false">Seçili nesneler arasında gezinin. Panel etkin nesneyi ve yol renklerini gösterir.</string>
     <string name="tutorial_observatory" formatted="false">Nesne verilerini, yolları, önemli yükseklikleri, olayları ve kişisel anları açar.</string>
     <string name="tutorial_daily" formatted="false">Yolu, saatleri, yükseklikleri ve seçilebilir noktaları görün. Gelecek olaylara hatırlatıcı eklenebilir.</string>
     <string name="tutorial_gps" formatted="false">Location’dan bağımsız gerçek konumu, GPS yüksekliğini, yönelimi ve hava durumunu görün.</string>
     <string name="tutorial_points" formatted="false">Bir noktayı seçin veya seçimini kaldırın. Zaman, T, azimut ve yüksekliği görmek için nişan alın.</string>
-    <string name="tutorial_reticle_title" formatted="false">Zaman ve arayüz</string>
-    <string name="tutorial_reticle" formatted="false">Zamanı duraklatmak veya sürdürmek için boş bir yere dokunun. Çift dokunma arayüzü ve panelleri gösterir veya gizler. Nişangâh görünür kalır.</string>
+    <string name="tutorial_reticle_title" formatted="false">Zaman ve paneller</string>
+    <string name="tutorial_reticle" formatted="false">Zamanı duraklatmak veya sürdürmek için boş bir alana dokunun. Panelleri gizlemek veya göstermek için çift dokunun.</string>
     <string name="tutorial_reminder" formatted="false">Uygun gelecek olay için Android alarmını veya takvimini açın. Geçmiş olaylar ve mevcut nokta için alarm kurulamaz.</string>
     <string name="tutorial_status_title" formatted="false">Durum ve kurtarma</string>
     <string name="tutorial_status" formatted="false">Konum, hava durumu ve yörünge verileri için durumu ve kullanılabilir işlemleri kontrol edin.</string>

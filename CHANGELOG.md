@@ -1,5 +1,15 @@
 # Changelog
 
+## 1.10.6 — 2026-11-23
+
+- Double-tap any free main-view area to hide or restore both information panels, including the complete object header in portrait and landscape. Keep controls, reference grids, the reticle and reticle-driven point details available. Retain the previous compact object header behind a source-level compatibility flag, without changing selections or astronomical calculations.
+- Reorganize contextual main controls and independent zoom menus. Keep zoom lists over the whole usable window rather than constraining them to a narrow information column; highlight the saved value without a radio control. Capture preview overlay gestures remain separate.
+- Use fine reference-grid strokes without outlines, with a 50 percent default opacity and a percentage readout that updates while dragging. Keep saved values and older Scene documents compatible. Use black grid lines throughout the simulated Sky in daytime fog, overcast conditions and snow; use white in other conditions, on real camera backgrounds and on geographic Globe views. Named planetary references keep their own styles.
+- Keep the white reticle at 80 percent opacity without an outline. Halve the camera horizon's original core and halo thickness and apply the same relative reduction to camera captures, retaining opacity and projection geometry.
+- Make portrait dialog action spacing more compact. In landscape, place actions beside the title and retain the close icon while omitting redundant Close text. Keep modal content and draft selections through rotation, including View mode and grid opacity.
+- Mark a fixed free touch area in the tutorial, shared by expanded and hidden panels. Keep tutorials explanatory and isolated from live settings; refresh guidance and News in all twenty interface languages.
+- Preserve the 9,999-object catalogue, celestial calculations, Locations, personal moments, selected points and individual graphics downloads. The external graphics collection is unchanged and needs no new release or download.
+
 ## 1.10.5 — 2026-11-21
 
 - Keep the optical reticle visible in Sky (Frame) and Camera when double-tap hides the interface and information panels. Retain the absence of a reticle in Globe and panoramic Sky, and keep point captions and focus highlighting tied to interface visibility.

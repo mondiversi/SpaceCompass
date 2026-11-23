@@ -1,9 +1,9 @@
 <resources>
     <string name="info_news_title">Últimas novidades · %1$s</string>
-    <string name="info_news_star_sky" formatted="false">A transparência da mira branca passa a 50%.</string>
-    <string name="info_news_texture_downloads" formatted="false">Dois toques ocultam ícones e painéis, mantendo a mira visível.</string>
-    <string name="info_news_weather" formatted="false">Na vertical, a mira permanece elevada ao ocultar a interface, como com os painéis compactos.</string>
-    <string name="info_news_viewer_zoom" formatted="false">Mais espaço abaixo da última linha do painel do objeto, em linha com o painel da bússola.</string>
-    <string name="info_news_settings" formatted="false">Detalhes da posição passa a chamar-se Posição real e continua a mostrar a posição efetiva.</string>
-    <string name="info_news_catalog" formatted="false">O tutorial explica o novo gesto da interface.</string>
+    <string name="info_news_star_sky" formatted="false">Toque duas vezes numa área livre para ocultar ou mostrar os painéis do objeto e da bússola, incluindo o nome do objeto. Os controlos e a mira continuam visíveis.</string>
+    <string name="info_news_texture_downloads" formatted="false">Controlos reorganizados e linha do horizonte da câmara com metade da espessura anterior.</string>
+    <string name="info_news_weather" formatted="false">A opacidade predefinida da grelha é de 50%. O cursor atualiza imediatamente o valor. Grelha e mira não têm contorno; a opacidade da mira é de 80%.</string>
+    <string name="info_news_viewer_zoom" formatted="false">Com nevoeiro, céu encoberto e neve durante o dia, as linhas da grelha são pretas acima e abaixo do horizonte.</string>
+    <string name="info_news_settings" formatted="false">Janelas mais compactas, ações junto ao título e ícone de fechar na horizontal. As escolhas mantêm-se ao rodar o ecrã.</string>
+    <string name="info_news_catalog" formatted="false">Os menus de zoom mantêm-se legíveis sobre os painéis. O tutorial destaca uma área livre fixa e explica os controlos atuais.</string>
 </resources>

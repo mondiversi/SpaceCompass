@@ -3,7 +3,7 @@
     <string name="tutorial_title" formatted="false">מדריך</string>
     <string name="tutorial_welcome_title" formatted="false">ברוכים הבאים ל-Space Compass</string>
     <string name="tutorial_welcome_body" formatted="false">גלו את השמיים ואת מסלולי גרמי השמיים במקומות ובזמנים אחרים. הכירו את הפקדים במדריך האינטראקטיבי.</string>
-    <string name="tutorial_instruction" formatted="false">געו בפקד מואר או בנקודת מסלול כדי ללמוד את תפקידם בלי לשנות הגדרות.</string>
+    <string name="tutorial_instruction" formatted="false">געו בפקד, בעיגול או בנקודת מסלול כדי ללמוד את תפקידם.</string>
     <string name="tutorial_zoom_title" formatted="false">זום</string>
     <string name="tutorial_navigation_title" formatted="false">עצם נבחר</string>
     <string name="tutorial_points_title" formatted="false">נקודות מסלול</string>
@@ -19,15 +19,15 @@
     <string name="tutorial_transparency" formatted="false">הפכו תמונות עצמים לשקופות חלקית להשוואה למצלמה.</string>
     <string name="tutorial_zoom" formatted="false">הגדילו או הקטינו באמצעות הכפתור או שתי אצבעות.</string>
     <string name="tutorial_capture" formatted="false">הכינו תמונה. בתצוגה המקדימה בחרו רשת, תוויות ומיקום; בשמיים ובגלובוס החליפו בין מסגרת התצוגה לפנורמה.</string>
-    <string name="tutorial_panels" formatted="false">כווצו או הרחיבו את לוחות העצם והמצפן כדי לפנות מקום לשמיים.</string>
+    <string name="tutorial_panels" formatted="false">הקישו פעמיים באזור פנוי כדי להסתיר או להציג את לוחות העצם והמצפן, כולל שם העצם.</string>
     <string name="tutorial_antipodes" formatted="false">הקישו להצגה או הסתרה של נקודות נגדיות. לחצו לחיצה ארוכה לביטול בחירת כל הנקודות.</string>
     <string name="tutorial_navigation" formatted="false">דפדפו בין העצמים הנבחרים. הלוח מציג את העצם הפעיל וצבעי מסלולו.</string>
     <string name="tutorial_observatory" formatted="false">פתיחת נתוני העצם, מסלולים, גבהים חשובים, אירועים ורגעים אישיים.</string>
     <string name="tutorial_daily" formatted="false">צפו במסלול, בשעות, בגבהים ובנקודות לבחירה. אפשר להוסיף תזכורת לאירועים עתידיים.</string>
     <string name="tutorial_gps" formatted="false">צפו במיקום האמיתי, בגובה GPS, בכיוון ובמזג האוויר, בנפרד מ-Location.</string>
     <string name="tutorial_points" formatted="false">בחרו נקודה או בטלו את בחירתה. כוונו אליה לקריאת שעה, T, אזימוט וגובה.</string>
-    <string name="tutorial_reticle_title" formatted="false">זמן וממשק</string>
-    <string name="tutorial_reticle" formatted="false">געו במקום פנוי כדי לעצור או להמשיך את הזמן. הקשה כפולה מציגה או מסתירה את הממשק והלוחות. הכוונת נשארת גלויה.</string>
+    <string name="tutorial_reticle_title" formatted="false">זמן ולוחות</string>
+    <string name="tutorial_reticle" formatted="false">געו באזור פנוי כדי להשהות או להמשיך את הזמן. הקישו פעמיים כדי להסתיר או להציג את הלוחות.</string>
     <string name="tutorial_reminder" formatted="false">פתחו שעון מעורר או יומן Android לאירוע עתידי מתאים. לא לאירועי עבר או לנקודה הנוכחית.</string>
     <string name="tutorial_status_title" formatted="false">מצב ושחזור</string>
     <string name="tutorial_status" formatted="false">בדקו מצב ופעולות זמינות עבור מיקום, מזג אוויר ונתוני מסלול.</string>

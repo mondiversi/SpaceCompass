@@ -24,21 +24,21 @@ import org.junit.Test
 class SpaceCompassReticleVisibilityUiTest {
     @get:Rule val compose = createComposeRule()
 
-    @Test fun singleTapPausesTimeAndDoubleTapKeepsReticleAndItsFocusedCaption() {
+    @Test fun singleTapPausesTimeAndDoubleTapTogglesPanelsButKeepsControlsAndReticle() {
         val now=Instant.parse("2026-11-07T10:00:00Z").toEpochMilli()
         val point=SpaceCompassSunPathPoint(now+3_600_000,SpaceCompassSunPosition(180.0,25.0))
         val path=SpaceCompassSunDailyPath(LocalDate.parse("2026-11-07"),ZoneId.of("UTC"),
             listOf(point),listOf(point),SpaceCompassCelestialBody.MOON)
+        val expanded=mutableStateOf(true)
         val pointing=mutableStateOf(facing(point.position))
         val selection=SpaceCompassSunDailyPathUiState().apply { select(path,point) }
         val observer=SpaceCompassObserverState(null, elapsedClock = { 0L }).apply { active(true) }
         compose.setContent { MaterialTheme {
-            var controlsVisible by remember { mutableStateOf(true) }
             SpaceCompassSunPointingViewport(null,pointing.value,Modifier.size(340.dp,420.dp),
                 "synthetic sky",selection,dailyPath=path,body=path.body,timeMs=now,
-                showActions=false,showReticle=true,showFloatingControls=controlsVisible,
+                showActions=false,showReticle=true,panelsExpanded=expanded.value,
                 timePaused=observer.playbackPaused,onToggleTime={observer.togglePlayback(now,0L)},
-                onToggleFloatingControls={controlsVisible=!controlsVisible},
+                onTogglePanels={expanded.value=!expanded.value},
                 topStartActions={ Box(it.size(40.dp).testTag("fixture-floating-control")) })
         } }
         tapEmptySky()
@@ -46,11 +46,11 @@ class SpaceCompassReticleVisibilityUiTest {
         compose.onNodeWithTag("sun-finder-reticle").assertExists()
         compose.runOnIdle { assertTrue(observer.playbackPaused);assertTrue(selection.isSelected(path,point)) }
         tapEmptySky(twice=true)
-        compose.onNodeWithTag("fixture-floating-control").assertDoesNotExist()
+        compose.onNodeWithTag("fixture-floating-control").assertExists()
         compose.onNodeWithTag("sun-finder-reticle").assertExists()
         compose.onNodeWithTag("celestial-pinned-badge").assertIsDisplayed()
         compose.runOnIdle {
-            assertTrue(observer.playbackPaused)
+            assertTrue(observer.playbackPaused);assertFalse(expanded.value)
             pointing.value=facing(SpaceCompassSunPosition(0.0,-25.0))
         }
         compose.onNodeWithTag("celestial-pinned-badge").assertDoesNotExist()
@@ -60,14 +60,14 @@ class SpaceCompassReticleVisibilityUiTest {
             pointing.value=facing(point.position)
         }
         compose.onNodeWithTag("celestial-pinned-badge").assertIsDisplayed()
-        compose.onNodeWithTag("fixture-floating-control").assertDoesNotExist()
+        compose.onNodeWithTag("fixture-floating-control").assertExists()
         tapEmptySky()
         compose.onNodeWithTag("sun-finder-reticle").assertExists()
         compose.runOnIdle { assertFalse(observer.playbackPaused) }
         tapEmptySky(twice=true)
         compose.onNodeWithTag("fixture-floating-control").assertExists()
         compose.onNodeWithTag("sun-finder-reticle").assertExists()
-        compose.runOnIdle { assertFalse(observer.playbackPaused);assertTrue(selection.isSelected(path,point)) }
+        compose.runOnIdle { assertFalse(observer.playbackPaused);assertTrue(expanded.value);assertTrue(selection.isSelected(path,point)) }
     }
 
     private fun tapEmptySky(twice: Boolean = false) {

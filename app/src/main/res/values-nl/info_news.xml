@@ -1,9 +1,9 @@
 <resources>
     <string name="info_news_title">Laatste nieuws · %1$s</string>
-    <string name="info_news_star_sky" formatted="false">De transparantie van het witte dradenkruis is nu 50%.</string>
-    <string name="info_news_texture_downloads" formatted="false">Dubbeltikken verbergt pictogrammen en panelen, terwijl het dradenkruis zichtbaar blijft.</string>
-    <string name="info_news_weather" formatted="false">In portretstand blijft het dradenkruis hoger staan bij een verborgen interface, net als bij compacte panelen.</string>
-    <string name="info_news_viewer_zoom" formatted="false">Meer ruimte onder de laatste rij van het objectpaneel, passend bij het kompaspaneel.</string>
-    <string name="info_news_settings" formatted="false">Positiedetails heet nu Werkelijke positie en toont nog steeds je echte positie.</string>
-    <string name="info_news_catalog" formatted="false">De tutorial legt het bijgewerkte interfacegebaar uit.</string>
+    <string name="info_news_star_sky" formatted="false">Dubbeltik op een vrije plek om de object- en kompaspanelen inclusief objectnaam te verbergen of tonen. Knoppen en dradenkruis blijven zichtbaar.</string>
+    <string name="info_news_texture_downloads" formatted="false">Opnieuw ingedeelde knoppen en een camerahorizon die half zo dik is als voorheen.</string>
+    <string name="info_news_weather" formatted="false">De standaarddekking van het raster is 50%. De schuifregelaar werkt de waarde direct bij. Raster en dradenkruis hebben geen omtrek; de dekking van het dradenkruis is 80%.</string>
+    <string name="info_news_viewer_zoom" formatted="false">Bij mist, bewolking en sneeuw overdag worden rasterlijnen boven en onder de horizon zwart.</string>
+    <string name="info_news_settings" formatted="false">Compactere pop-ups, acties naast de titel en een sluitpictogram in liggende stand. Keuzes blijven behouden bij draaien.</string>
+    <string name="info_news_catalog" formatted="false">Zoommenu’s blijven leesbaar boven de panelen. De tutorial markeert een vaste vrije plek en legt de huidige knoppen uit.</string>
 </resources>

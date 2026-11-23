@@ -6,11 +6,11 @@ without its decorative Solar System, automatic spin, footer or exit gestures.
 One-finger drag rotates around the seasonal Earth axis by default. The former
 pointing-axis control switches between axial and free rotation; both modes preserve
 the same seasonal tilt and the shader/trajectory coordinate transform. Pinch and the
-zoom selector share a saved 0.5–3x zoom. At 1x, the complete trajectory envelope
+zoom selector share a saved 0.5–8x zoom. At 1x, the complete trajectory envelope
 fits inside the free frame with a 24 CSS-pixel marker margin. A rotation-invariant
 3D extent avoids resizing while the user rotates Earth. Captures use the same
-fitting rule with an output-scaled margin; higher zoom intentionally permits cropping. Single tap on empty space pauses/resumes the observer clock; double tap toggles
-floating controls. Globe and Sky panoramas have no central reticle; framed Sky and Camera retain theirs. Earth sunlight follows the effective Location
+fitting rule with an output-scaled margin; higher zoom intentionally permits cropping. Single tap on empty space pauses/resumes the observer clock; double tap hides or restores
+the information panels, including the object header, while floating controls stay visible. Globe and Sky panoramas have no central reticle; framed Sky and Camera retain theirs. Earth sunlight follows the effective Location
 instant, including frozen and accelerated time. The screensaver remains independent.
 
 ## Coordinate and distance contract
@@ -179,16 +179,28 @@ segments rather than running a second sensor-frame projection.
 ## Sky label and weather controls
 
 Sky (Panorama) shares the live Globe label choices and selected-points-only initial
-scope, with an independent saved preference. Sky (Frame) hides the label button, centres Zoom on its own, and uses the
-existing reticle-driven point details. Camera keeps its
-object-transparency button. Sky panorama captures inherit the live label choice;
-preview changes remain local to that image. Scene archives optionally carry
-`skyLabelMode`; older archives fall back to the first-install live scope.
+scope, with an independent saved preference. Its label button occupies the Sky
+axis slot: at the leading bottom edge in portrait or expanded landscape, and below
+Menu in compact landscape. Sky panorama has no 0/90-degree axis control. Sky
+(Frame) retains the axis control and reticle-driven point details, without a label
+button. Camera keeps its object-transparency button. Sky panorama captures inherit
+the live label choice; preview changes remain local to that image. Scene archives
+optionally carry `skyLabelMode`; older archives retain their initial live scope.
 
-Weather is a checkbox below the projection choices in Display. It remains visible
-and is disabled for Camera and Globe. It shares the
-mode/projection draft: Apply saves it, while Close and Back discard changes.
-The weather preference remains enabled initially and is retained across modes.
+All mode-specific controls share the leading group: the axis then Weather in Sky
+Frame, Labels then Weather in Sky Panorama, object transparency in Camera, rotation
+then Labels in Globe Frame, and Labels alone in Globe Panorama. Selected points /
+Antipodes is appended last in every mode while points are selected or in the
+tutorial, retaining its tap toggle and hold-to-clear behavior. Portrait and
+expanded landscape place this group at the bottom-leading edge. Compact landscape
+places mode-specific controls at the upper trailing edge, Menu below the leading
+logo, and the Objects/Location/Guides/Interval navigation column at the bottom-leading
+edge. The middle group is empty. Zoom sits immediately before the mode selector in
+the capture group, followed by the shutter; compact landscape stacks Zoom, selector
+and shutter from top to bottom. Saved mode,
+label, weather, transparency, axis and zoom choices retain their previous behavior.
+The expanded Globe caption uses the free gap between the leading controls and Zoom.
+Tutorial placement follows both corner groups.
 
 Live flat-map grid numbers keep longitude/azimuth values aligned with their meridians.
 When fixed controls block the edge row, use the nearest clear row within that half of
@@ -201,7 +213,7 @@ Spherical views and frozen-image grid numbering retain their existing placement.
 
 ## Object viewpoint (disabled local experiment)
 
-Object is currently hidden from Display and the tutorial. Existing Object preferences and imported experimental scenes fall back to Globe (Frame), without changing Location or celestial selections. Its implementation remains available for future work. The onboard eye follows the same vector and radius drawn by Globe: physical Earth-fixed positions for Earth satellites, and the existing 1.55-Earth-radius apparent shell for other objects. Display shells are not measured astronomical ranges. A forward tangent is derived from neighbouring ephemerides; geographic east provides a viewing reference if that direction is unavailable. The camera aims at the geometric terrestrial limb ahead, putting the horizon at the centre of its available viewport with local nadir beneath the eye. Dragging rotates the complete Earth reference frame (surface, grids, location and apparent tracks) beneath the camera. The forward eye and optical target remain fixed in view coordinates, so the horizon cannot drift during a drag. The manual orientation starts at zero in new dedicated preferences, independent of previous camera-look experiments. No target/axis button appears beside the panel chevron in Object mode. Labels keep their previous independent scopes.
+Object is currently hidden from Display and the tutorial. Existing Object preferences and imported experimental scenes fall back to Globe (Frame), without changing Location or celestial selections. Its implementation remains available for future work. The onboard eye follows the same vector and radius drawn by Globe: physical Earth-fixed positions for Earth satellites, and the existing 1.55-Earth-radius apparent shell for other objects. Display shells are not measured astronomical ranges. A forward tangent is derived from neighbouring ephemerides; geographic east provides a viewing reference if that direction is unavailable. The camera aims at the geometric terrestrial limb ahead, putting the horizon at the centre of its available viewport with local nadir beneath the eye. Dragging rotates the complete Earth reference frame (surface, grids, location and apparent tracks) beneath the camera. The forward eye and optical target remain fixed in view coordinates, so the horizon cannot drift during a drag. The manual orientation starts at zero in new dedicated preferences, independent of previous camera-look experiments. No target/axis button appears in Object mode. Labels keep their previous independent scopes.
 
 Live/capture paths share Globe geometry. Markers coinciding with or lying behind the camera are omitted from the onboard image. Ground position, dates, event definitions, colour rules, selected points and Scene archive compatibility keep their existing calculations. Object has Frame only. Globe, Object and their image previews have an 8x maximum zoom.
 
@@ -211,24 +223,29 @@ The active Globe main view retains its 8x zoom limit and improved detail indepen
 
 ## Reference-grid ink
 
-Reference grids share a bright daytime grey (#ffffff), also used throughout
-dawn and dusk, and the reviewed night grey (#bdbdbd). The choice follows the Sun
-at the active Location's time and position, independent of app theme and selected
-object. Daytime ink starts as soon as solar elevation is above -18 degrees,
-matching the first twilight in the existing backdrop, and remains until that
-boundary is crossed again after sunset. At or below -18 degrees, night ink applies.
-The switch is immediate, with no colour blend; each grid keeps one colour on
-both sides of the horizon. Unknown or invalid observer data falls back to night ink.
+Reference grids have a 50 percent default opacity and no outline. The live slider
+shows its percentage immediately and retains the existing eleven stops from zero
+to 100 percent. Existing saved preferences are not reset; zero makes the grid
+invisible. Coordinate numbers and named planetary lines remain independent and
+start off.
 
-Native Sky/Camera, live spherical/flat views and captures share this palette.
-Live Sky/Camera reuses the existing solar position and only updates its palette
-when the brightness band changes. Cached grid geometry is unaffected. Captures
-use their frozen time, position and opacity, independently of later live settings
-or whether position is disclosed in the exported image.
+Simulated Sky uses black grid lines on both sides of the horizon for visible fog,
+overcast sky or snow in the MORNING and AFTERNOON solar phases. Other sky conditions
+use white. Real camera backgrounds and geographic Globe views explicitly retain
+white grid lines. The app uses its existing effective Location/time/weather;
+no extra astronomical calculation is requested just for the grid colour.
 
-The reference grid starts enabled at 80% opacity. Grid and references keeps
-eleven opacity stops from 0 to 100 percent, using the volume slider styling.
-Coordinate numbers and named planetary lines are independent and start off.
-Existing stroke widths and dark outlines remain unchanged. Preview edits affect
-that image and its export caches only. Scene documents retain the opacity field
-and older files use the default.
+Captures freeze their grid opacity and Sky weather policy; preview edits affect
+only that image and its export caches. Older Scene documents and saved captures
+without the opacity field retain the legacy 80 percent fallback. Newly exported
+documents write their actual opacity explicitly for cross-version compatibility.
+
+The white Sky/Camera reticle has 80 percent opacity and no outline. The separate
+camera horizon uses half its original width: 0.5 dp for the white core and 1.5 dp
+for the dark halo, retaining their 85/55 percent opacities. Camera capture horizons
+use the same relative thickness reduction without changing projection geometry.
+
+Double-tap free main-view space hides/restores both panels and their object header
+in portrait and landscape. Controls, grid and reticle-driven point details remain
+available. The old compact object strip/rail and its viewport rules are retained
+behind `SPACE_COMPASS_KEEP_COLLAPSED_OBJECT_HEADER` for a reversible layout trial.

@@ -3,7 +3,7 @@
     <string name="tutorial_title" formatted="false">Tutorial</string>
     <string name="tutorial_welcome_title" formatted="false">Willkommen bei Space Compass</string>
     <string name="tutorial_welcome_body" formatted="false">Erkunde den Himmel und die Bahnen der Himmelskörper von anderen Orten und zu anderen Zeiten. Das interaktive Tutorial erklärt die Bedienung.</string>
-    <string name="tutorial_instruction" formatted="false">Tippe auf ein hervorgehobenes Bedienelement oder einen Bahnpunkt, um seine Funktion kennenzulernen.</string>
+    <string name="tutorial_instruction" formatted="false">Tippe auf ein Bedienelement, den Kreis oder einen Bahnpunkt, um seine Funktion kennenzulernen.</string>
     <string name="tutorial_zoom_title" formatted="false">Zoom</string>
     <string name="tutorial_navigation_title" formatted="false">Ausgewähltes Objekt</string>
     <string name="tutorial_points_title" formatted="false">Bahnpunkte</string>
@@ -19,15 +19,15 @@
     <string name="tutorial_transparency" formatted="false">Mache Objektbilder durchscheinend, um sie mit dem Kamerabild zu vergleichen.</string>
     <string name="tutorial_zoom" formatted="false">Vergrößere oder verkleinere mit der Taste oder zwei Fingern.</string>
     <string name="tutorial_capture" formatted="false">Erstelle ein Bild. Wähle in der Vorschau Raster, Beschriftungen und Position; bei Himmel und Globus wechselst du zwischen Bildausschnitt und Panorama.</string>
-    <string name="tutorial_panels" formatted="false">Klappe Objekt- und Kompassfelder ein oder aus, um mehr Himmel zu sehen.</string>
+    <string name="tutorial_panels" formatted="false">Tippe doppelt auf eine freie Stelle, um Objekt- und Kompassbereiche samt Objektname aus- oder einzublenden.</string>
     <string name="tutorial_antipodes" formatted="false">Tippe, um Antipoden ein- oder auszublenden. Gedrückt halten wählt alle Punkte ab.</string>
     <string name="tutorial_navigation" formatted="false">Blättere durch ausgewählte Objekte. Das Feld zeigt das aktive Objekt und seine Bahnfarben.</string>
     <string name="tutorial_observatory" formatted="false">Öffne Objektdaten, Bahnen, wichtige Höhen, Ereignisse und persönliche Zeitpunkte.</string>
     <string name="tutorial_daily" formatted="false">Sieh Bahn, Zeiten, Höhen und auswählbare Punkte. Für zukünftige Ereignisse sind Erinnerungen möglich.</string>
     <string name="tutorial_gps" formatted="false">Zeige tatsächlichen Standort, GPS-Höhe, Ausrichtung und Wetter, unabhängig von der Location.</string>
     <string name="tutorial_points" formatted="false">Wähle einen Punkt aus oder ab. Im Fadenkreuz liest du Zeit, T, Azimut und Höhe.</string>
-    <string name="tutorial_reticle_title" formatted="false">Zeit und Oberfläche</string>
-    <string name="tutorial_reticle" formatted="false">Tippe auf eine freie Stelle, um die Zeit anzuhalten oder fortzusetzen. Doppeltippen blendet Oberfläche und Infobereiche ein oder aus. Das Fadenkreuz bleibt sichtbar.</string>
+    <string name="tutorial_reticle_title" formatted="false">Zeit und Infobereiche</string>
+    <string name="tutorial_reticle" formatted="false">Tippe auf eine freie Fläche, um die Zeit anzuhalten oder fortzusetzen. Doppeltippen blendet die Infobereiche aus oder ein.</string>
     <string name="tutorial_reminder" formatted="false">Öffne Android-Wecker oder Kalender für ein gültiges zukünftiges Ereignis. Vergangene Ereignisse und der aktuelle Punkt sind ausgeschlossen.</string>
     <string name="tutorial_status_title" formatted="false">Status und Wiederherstellung</string>
     <string name="tutorial_status" formatted="false">Prüfe Status und verfügbare Aktionen für Position, Wetter und Bahndaten.</string>

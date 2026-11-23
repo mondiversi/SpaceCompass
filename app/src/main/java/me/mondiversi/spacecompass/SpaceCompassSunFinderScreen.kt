@@ -411,6 +411,7 @@ internal fun SpaceCompassSunFinderContent(
     var detailsExpanded by remember(scenePreferences) {
         mutableStateOf(scenePreferences.getBoolean(SPACE_COMPASS_MAIN_DETAILS_KEY, true))
     }
+    val compactObjectHeaderVisible = !detailsExpanded && SPACE_COMPASS_KEEP_COLLAPSED_OBJECT_HEADER
     var showSkyReferences by remember(scenePreferences) {
         mutableStateOf(scenePreferences.getBoolean(SPACE_COMPASS_SKY_REFERENCES_KEY, SPACE_COMPASS_SKY_REFERENCES_DEFAULT))
     }
@@ -421,12 +422,14 @@ internal fun SpaceCompassSunFinderContent(
         mutableStateOf(scenePreferences.getBoolean(SPACE_COMPASS_FORWARD_PATH_KEY,false))
     }
     val showAntipodes = dailyPathUiState.antipodesVisible
-    var skyControlsVisible by remember(scenePreferences) {
-        mutableStateOf(scenePreferences.getBoolean(SPACE_COMPASS_SKY_CONTROLS_VISIBLE_KEY, true))
-    }
-    // The optical reticle belongs to framed Sky/Camera, independently of hidden chrome.
+    // Main controls stay visible; double-tap only changes the saved panel layout.
     val showReticle = !liveMapEnabled
-    val showSkyControls = skyControlsVisible || tutorialActive
+    fun toggleInformationPanels() {
+        if(!tutorialActive) {
+            detailsExpanded=!detailsExpanded
+            scenePreferences.edit().putBoolean(SPACE_COMPASS_MAIN_DETAILS_KEY,detailsExpanded).apply()
+        }
+    }
     var pointingTopEdge by remember(scenePreferences) {
         mutableStateOf(scenePreferences.getBoolean(SPACE_COMPASS_POINTING_TOP_EDGE_KEY, SPACE_COMPASS_POINTING_TOP_EDGE_DEFAULT))
     }
@@ -705,7 +708,7 @@ internal fun SpaceCompassSunFinderContent(
     var compactHeaderCoordinates by remember { mutableStateOf<LayoutCoordinates?>(null) }
     var compactHeaderFrame by remember { mutableStateOf<SpaceCompassSunSceneFrame?>(null) }
     var globeZoomCoordinates by remember { mutableStateOf<LayoutCoordinates?>(null) }
-    var viewModeCoordinates by remember { mutableStateOf<LayoutCoordinates?>(null) }
+    var leadingControlCoordinates by remember { mutableStateOf<LayoutCoordinates?>(null) }
     var globeCaptionArea by remember { mutableStateOf<SpaceCompassSunSceneFrame?>(null) }
     var globeCaptionFrame by remember { mutableStateOf<SpaceCompassSunSceneFrame?>(null) }
     var groundFrame by remember { mutableStateOf<SpaceCompassSunSceneFrame?>(null) }
@@ -718,28 +721,28 @@ internal fun SpaceCompassSunFinderContent(
         val viewport = SpaceCompassSunSceneFrame(bounds.left.toDouble(), bounds.top.toDouble(),
             bounds.width.toDouble(), bounds.height.toDouble())
         pointingFrame = viewport
-        globeCaptionArea = if (showSkyControls && detailsExpanded && scene.size.width > scene.size.height) {
+        globeCaptionArea = if (detailsExpanded && scene.size.width > scene.size.height) {
             val zoom = globeZoomCoordinates?.takeIf { it.isAttached }
-            val mode = viewModeCoordinates?.takeIf { it.isAttached }
-            if (zoom != null && mode != null) {
+            val leading = leadingControlCoordinates?.takeIf { it.isAttached }
+            if (zoom != null && leading != null) {
                 val zoomBounds = scene.localBoundingBoxOf(zoom, clipBounds = false)
-                val modeBounds = scene.localBoundingBoxOf(mode, clipBounds = false)
+                val leadingBounds = scene.localBoundingBoxOf(leading, clipBounds = false)
                 val gap = with(density) { 8.dp.toPx() }
-                val left = minOf(zoomBounds.right, modeBounds.right) + gap
-                val right = maxOf(zoomBounds.left, modeBounds.left) - gap
-                val top = minOf(zoomBounds.top, modeBounds.top)
-                val bottom = maxOf(zoomBounds.bottom, modeBounds.bottom)
+                val left = minOf(zoomBounds.right, leadingBounds.right) + gap
+                val right = maxOf(zoomBounds.left, leadingBounds.left) - gap
+                val top = minOf(zoomBounds.top, leadingBounds.top)
+                val bottom = maxOf(zoomBounds.bottom, leadingBounds.bottom)
                 if (right > left) SpaceCompassSunSceneFrame(left.toDouble(), top.toDouble(),
                     (right-left).toDouble(), (bottom-top).toDouble()) else null
             } else null
         } else null
-        compactHeaderFrame = if (showSkyControls && !detailsExpanded) compactHeaderCoordinates?.takeIf { it.isAttached }?.let {
+        compactHeaderFrame = if (compactObjectHeaderVisible) compactHeaderCoordinates?.takeIf { it.isAttached }?.let {
             val rect = scene.localBoundingBoxOf(it, clipBounds = false)
             SpaceCompassSunSceneFrame(rect.left.toDouble(), rect.top.toDouble(), rect.width.toDouble(), rect.height.toDouble())
         } else null
         groundFrame = spaceCompassMainReticleOpticalFrame(viewport, scene.size.height.toDouble(),
             landscape = scene.size.width > scene.size.height, detailsExpanded = detailsExpanded,
-            detailsGap = with(density) { 10.dp.toPx().toDouble() }, interfaceVisible = showSkyControls)
+            detailsGap = with(density) { 10.dp.toPx().toDouble() })
     }
     val scenePerspective = if (cameraEnabled) cameraPerspective else groundFrame?.let {
         spaceCompassVirtualPerspective(it.width, it.height, virtualZoom)
@@ -853,17 +856,27 @@ internal fun SpaceCompassSunFinderContent(
                 }
             })
     }
-    val pointingAxisControl: @Composable () -> Unit = {
-        if(!objectControlsMode) {
-        if(globeControlsMode) SpaceCompassGlobeRotationButton(globeAxisLocked,{
-            if(!tutorialActive) {
-            globeAxisLocked=!globeAxisLocked
-            scenePreferences.edit().putBoolean(SPACE_COMPASS_GLOBE_AXIS_KEY,globeAxisLocked).apply()
-            notifyControl(if(globeAxisLocked) R.string.globe_rotation_axis else R.string.globe_rotation_free)
+    val skyLabelsControl = rememberSpaceCompassMovableContent {
+        SpaceCompassGlobeLabelsButton(skyLabelMode,{ mode ->
+            if(!tutorialActive&&mode!=skyLabelMode) {
+                skyLabelMode=mode
+                scenePreferences.edit().putString(SPACE_COMPASS_SKY_LABEL_MODE_KEY,mode.key).apply()
+                notifyControl(R.string.control_choice_message,controlResources.getString(R.string.panorama_point_labels),
+                    controlResources.getString(mode.labelResource))
             }
-        },primaryText,backgroundColor)
-        else if(cameraControlsMode) Spacer(Modifier.size(spaceCompassFloatingControlSize))
-        else SpaceCompassPointingAxisButton(pointingTopEdge, { topEdge ->
+        },primaryText,backgroundColor,sky=true)
+    }
+    val skyWeatherControl: @Composable () -> Unit = {
+        SpaceCompassWeatherToggleButton(showWeather,{ enabled ->
+                                if(!tutorialActive&&enabled!=showWeather) {
+                                    showWeather=enabled
+                                    scenePreferences.edit().putBoolean(SPACE_COMPASS_WEATHER_VISIBLE_KEY,enabled).apply()
+                                    notifyControl(if(enabled) R.string.scene_weather_on else R.string.scene_weather_off)
+                                }
+                            },primaryText,backgroundColor,enabled=!panorama.busy)
+    }
+    val skyAxisControl: @Composable () -> Unit = {
+        SpaceCompassPointingAxisButton(pointingTopEdge, { topEdge ->
                 pointingTopEdge = topEdge
                 scenePreferences.edit().putBoolean(SPACE_COMPASS_POINTING_TOP_EDGE_KEY, topEdge).apply()
                 notifyControl(R.string.control_choice_message, controlResources.getString(
@@ -871,34 +884,115 @@ internal fun SpaceCompassSunFinderContent(
                     formatSpaceCompassNumber(if (topEdge) 0.0 else 90.0, 0, numeric,
                         grouping = false, systemLocale = controlLocale) + "°")
             }, primaryText, backgroundColor, enabled = !cameraControlsMode && !globeEnabled)
+    }
+    val cameraTransparencyControl: @Composable () -> Unit = {
+        SpaceCompassCameraObjectTransparencyButton(translucentCameraObjects, { enabled ->
+                                    if (!tutorialActive && translucentCameraObjects != enabled) {
+                                        translucentCameraObjects = enabled
+                                        scenePreferences.edit().putBoolean(SPACE_COMPASS_CAMERA_OBJECT_TRANSLUCENCY_KEY, enabled).apply()
+                                        notifyControl(R.string.control_choice_message,
+                                            controlResources.getString(R.string.camera_object_transparency),
+                                            controlResources.getString(if (enabled) R.string.camera_objects_translucent else R.string.camera_objects_opaque))
+                                    }
+                                }, primaryText, backgroundColor, enabled = !panorama.busy)
+    }
+    val globeLabelsControl = rememberSpaceCompassMovableContent {
+        SpaceCompassGlobeLabelsButton(globeLabelMode,{ mode ->
+                                if(!tutorialActive&&mode!=globeLabelMode) {
+                                    globeLabelMode=mode
+                                    scenePreferences.edit().putString(SPACE_COMPASS_GLOBE_LABEL_MODE_KEY,mode.key)
+                                        .putBoolean(SPACE_COMPASS_GLOBE_LABELS_KEY,mode!=SpaceCompassPanoramaLabelMode.NONE).apply()
+                                    notifyControl(R.string.control_choice_message,controlResources.getString(R.string.panorama_point_labels),
+                                        controlResources.getString(mode.labelResource))
+                                }
+                            },primaryText,backgroundColor)
+    }
+    val globeRotationControl: @Composable () -> Unit = {
+        SpaceCompassGlobeRotationButton(globeAxisLocked,{
+            if(!tutorialActive) {
+            globeAxisLocked=!globeAxisLocked
+            scenePreferences.edit().putBoolean(SPACE_COMPASS_GLOBE_AXIS_KEY,globeAxisLocked).apply()
+            notifyControl(if(globeAxisLocked) R.string.globe_rotation_axis else R.string.globe_rotation_free)
+            }
+        },primaryText,backgroundColor)
+    }
+    val objectLabelsControl = rememberSpaceCompassMovableContent {
+        SpaceCompassGlobeLabelsButton(objectLabelMode,{ mode ->
+            if(!tutorialActive&&mode!=objectLabelMode) {
+                objectLabelMode=mode
+                scenePreferences.edit().putString(SPACE_COMPASS_OBJECT_LABEL_MODE_KEY,mode.key).apply()
+                notifyControl(R.string.control_choice_message,controlResources.getString(R.string.panorama_point_labels),controlResources.getString(mode.labelResource))
+            }
+        },primaryText,backgroundColor,objectView=true)
+    }
+    val zoomControl = rememberSpaceCompassMovableContent {
+        if(tutorialActive) SpaceCompassTutorialCameraZoom(primaryText,backgroundColor)
+        else if(globeEnabled) Box(Modifier.onGloballyPositioned { globeZoomCoordinates = it; refreshGroundFrame() }) {
+            val map = livePanoramic
+            val shownPose = if(objectEnabled) objectPose else if(map) globeMapPose else globePose
+            SpaceCompassCameraZoomControls(SpaceCompassCameraZoomRange(.5f,if(map) SPACE_COMPASS_GLOBE_MAP_MAX_ZOOM.toFloat() else SPACE_COMPASS_GLOBE_MAX_ZOOM.toFloat()),
+                shownPose.zoom.toFloat(),shownPose.zoom.toFloat(),!panorama.busy,
+                { if(objectEnabled) updateObjectZoom(it.toDouble()) else if(map) updateGlobeMapPose(globeMapPose.copy(zoom=it.toDouble()))
+                    else globePose=globePose.copy(zoom=it.toDouble()).normalized() },primaryText,backgroundColor,camera=false)
         }
+        else if (skyPanoramaEnabled) SpaceCompassCameraZoomControls(SpaceCompassCameraZoomRange(.5f,SPACE_COMPASS_GLOBE_MAP_MAX_ZOOM.toFloat()),
+            skyPanoramaPose.zoom.toFloat(),skyPanoramaPose.zoom.toFloat(),!panorama.busy,
+            {updateSkyPanoramaPose(skyPanoramaPose.copy(zoom=it.toDouble()))},primaryText,backgroundColor,camera=false)
+        else if (cameraEnabled) SpaceCompassCameraZoomControls(cameraZoomRange, cameraZoomRequest, cameraZoomActual,
+            !panorama.busy && cameraCapture != null, ::updateCameraZoom, primaryText, backgroundColor)
+        else SpaceCompassCameraZoomControls(spaceCompassVirtualZoomRange, virtualZoom, virtualZoom,
+            !panorama.busy, ::updateVirtualZoom, primaryText, backgroundColor, camera = false)
+    }
+    val pointingSlotControl: @Composable () -> Unit = {
+        when {
+            objectControlsMode -> objectLabelsControl()
+            cameraControlsMode -> cameraTransparencyControl()
+            globeControlsMode -> {
+                if(controlsMode==SpaceCompassViewMode.GLOBE) globeRotationControl()
+                globeLabelsControl()
+            }
+            else -> {
+                if(controlsMode==SpaceCompassViewMode.SKY_PANORAMA) skyLabelsControl()
+                else skyAxisControl()
+                skyWeatherControl()
+            }
+        }
+        antipodesControl()
+    }
+    // Keep the dialog composition alive while portrait/landscape relocate its button.
+    val viewModeControl = rememberSpaceCompassMovableContent {
+        SpaceCompassViewModeButton(controlsMode, { requestedMode ->
+            val mode=spaceCompassAvailableViewMode(requestedMode)
+            if(tutorialActive) tutorial?.chooseMode(mode)
+            else if(mode != liveMode) {
+                if(mode==SpaceCompassViewMode.CAMERA) {
+                    if(hasSpaceCompassCameraPermission(cameraContext)) { requestedCameraEnabled=true;notifyViewMode(mode) }
+                    else cameraPermission.launch(Manifest.permission.CAMERA)
+                } else {
+                    requestedCameraEnabled=false;globeRequested=mode.globe;livePanoramic=mode.panoramic;objectRequested=mode==SpaceCompassViewMode.OBJECT
+                    scenePreferences.edit().putBoolean(SPACE_COMPASS_OBJECT_VIEW_KEY,objectRequested).putBoolean(SPACE_COMPASS_GLOBE_MODE_KEY,globeRequested)
+                        .putBoolean(SPACE_COMPASS_LIVE_PROJECTION_KEY,livePanoramic).apply()
+                    notifyViewMode(mode)
+                }
+            }
+        },primaryText,backgroundColor,tutorialActive)
+    }
+    val gridControl = rememberSpaceCompassMovableContent {
+        SpaceCompassSkyReferenceButton(mainGridVisible, showSkyReferences, gridNumbersVisible, gridOpacityPercent, { grid, references, numbers, opacity ->
+            gridOpacityPercent = opacity
+            mainGridVisible = grid
+            gridNumbersVisible = numbers
+            showSkyReferences = references
+            scenePreferences.edit().putInt(SPACE_COMPASS_GRID_OPACITY_KEY, opacity).putBoolean(SPACE_COMPASS_MAIN_GRID_KEY, grid).putBoolean(SPACE_COMPASS_GRID_NUMBERS_KEY,numbers)
+                .putBoolean(SPACE_COMPASS_SKY_REFERENCES_KEY, references).apply()
+        }, primaryText, backgroundColor)
     }
     val captureControls: @Composable (Modifier, Boolean, Boolean) -> Unit = { modifier, vertical, landscape ->
         CompositionLocalProvider(LocalSpaceCompassFloatingControlMultiplier provides SPACE_COMPASS_COMPACT_CONTROL_MULTIPLIER) {
-            SpaceCompassMainCaptureControls(vertical, modifier,
-                antipodes = { if (!landscape || vertical) antipodesControl() }, landscape = landscape, camera = {
-                    Box(Modifier.onGloballyPositioned { viewModeCoordinates = it; refreshGroundFrame() }) {
-                    SpaceCompassViewModeButton(controlsMode, { requestedMode ->
-                        val mode=spaceCompassAvailableViewMode(requestedMode)
-                        if(tutorialActive) tutorial?.chooseMode(mode)
-                        else if(mode != liveMode) {
-                            if(mode==SpaceCompassViewMode.CAMERA) {
-                                if(hasSpaceCompassCameraPermission(cameraContext)) { requestedCameraEnabled=true;notifyViewMode(mode) }
-                                else cameraPermission.launch(Manifest.permission.CAMERA)
-                            } else {
-                                requestedCameraEnabled=false;globeRequested=mode.globe;livePanoramic=mode.panoramic;objectRequested=mode==SpaceCompassViewMode.OBJECT
-                                scenePreferences.edit().putBoolean(SPACE_COMPASS_OBJECT_VIEW_KEY,objectRequested).putBoolean(SPACE_COMPASS_GLOBE_MODE_KEY,globeRequested)
-                                    .putBoolean(SPACE_COMPASS_LIVE_PROJECTION_KEY,livePanoramic).apply()
-                                notifyViewMode(mode)
-                            }
-                        }
-                    },primaryText,backgroundColor,tutorialActive,showWeather) { enabled ->
-                        if(!tutorialActive&&enabled!=showWeather) {
-                            showWeather=enabled
-                            scenePreferences.edit().putBoolean(SPACE_COMPASS_WEATHER_VISIBLE_KEY,enabled).apply()
-                            notifyControl(if(enabled) R.string.scene_weather_on else R.string.scene_weather_off)
-                        }
-                    }
+            SpaceCompassMainCaptureControls(vertical, modifier, landscape = landscape,
+                zoom = { zoomControl() }, camera = {
+                    Box(Modifier.onGloballyPositioned { refreshGroundFrame() }) {
+                    viewModeControl()
                     }
                 },
                 capture = {
@@ -934,13 +1028,13 @@ internal fun SpaceCompassSunFinderContent(
                     Modifier.fillMaxSize().then(pointingPlacement), skyDescription, dailyPathUiState, rising,
                     readings.compassUsable, livePath, primaryText, secondaryText, backgroundColor, sceneBody, timeMs,
                     onVisualize = ::openViewer,
-                    compassWarning = messageText.takeIf { showSkyControls && isCompassMessage && resumed && mainVisible },
+                    compassWarning = messageText.takeIf { isCompassMessage && resumed && mainVisible },
                     compassAccurate = readings.compassReliable,
-                    statusMessage = (remoteMessage ?: messageText.takeUnless { isCompassMessage } ?: weatherFailureMessage).takeIf { showSkyControls },
+                    statusMessage = remoteMessage ?: messageText.takeUnless { isCompassMessage } ?: weatherFailureMessage,
                     compassWarningAttention = message == R.string.sun_finder_compass_accuracy ||
                         message == R.string.sun_finder_compass_calibrate,
                     statusAttention = (remoteMessageId ?: message) == R.string.celestial_satellite_old,
-                    statusActionLabel = if (!showSkyControls) null else if (showWeatherFailure) stringResource(R.string.sun_finder_retry)
+                    statusActionLabel = if (showWeatherFailure) stringResource(R.string.sun_finder_retry)
                         else if (pointingUnavailable && sun != null && !remote.loading)
                         stringResource(R.string.sun_finder_retry) else locationActionLabel,
                     onStatusAction = if (showWeatherFailure) weather.onRetry
@@ -956,9 +1050,9 @@ internal fun SpaceCompassSunFinderContent(
                         optical.copy(left = optical.left - viewport.left, top = optical.top - viewport.top)
                     } },
                     drawScene = false, objectOpacity = cameraObjectOpacity, showReticle = showReticle,
-                    showFloatingControls = showSkyControls, showAntipodes = showAntipodes,
+                    showAntipodes = showAntipodes,
                     sceneContent = if(globeSnapshot != null) { modifier,excluded,viewport,noteBottom,panoramaViewport ->
-                        val footer = if (!detailsExpanded && !landscape) compactHeaderFrame?.let { frame ->
+                        val footer = if (compactObjectHeaderVisible && !landscape) compactHeaderFrame?.let { frame ->
                             SpaceCompassSunSceneFrame(frame.left-(pointingFrame?.left ?: 0.0),
                                 frame.top-(pointingFrame?.top ?: 0.0),frame.width,frame.height)
                         } else null
@@ -967,89 +1061,32 @@ internal fun SpaceCompassSunFinderContent(
                         val noteInset = footer?.let { with(density) {
                             ((pointingFrame?.height ?: 0.0)-it.top).coerceAtLeast(0.0).toFloat().toDp()+SpaceCompassMainCaptionControlGap
                         }.coerceAtLeast(noteBottom) } ?: noteBottom
-                        val externalNote = if (landscape && detailsExpanded && showSkyControls && globeCaptionArea != null)
+                        val externalNote = if (landscape && detailsExpanded && globeCaptionArea != null)
                             globeCaptionFrame?.let { frame -> frame.copy(left=frame.left-(pointingFrame?.left ?: 0.0),
                                 top=frame.top-(pointingFrame?.top ?: 0.0)) } else null
                         pointingFrame?.takeIf { it.width>0 && it.height>0 }?.let { frame ->
                             val placement=SpaceCompassGlobeScenePlacement(frame,available,
                                 excluded+listOfNotNull(footer,externalNote),
                                 with(density) { noteInset.toPx().toDouble() },
-                                globeEnabled && showSkyControls && !(landscape && detailsExpanded && globeCaptionArea != null),
+                                globeEnabled && !(landscape && detailsExpanded && globeCaptionArea != null),
                                 panoramaViewport)
                             SideEffect { globePlacement=placement }
                         }
                     } else null,
-                    scenarioMomentLabel = scenarioMomentLabel.takeIf { showSkyControls },
+                    scenarioMomentLabel = scenarioMomentLabel,
                     timePaused = skyObserver?.playbackPaused == true,
                     onToggleTime = if (tutorialActive) null else ({ skyObserver?.togglePlayback() }),
-                    onToggleFloatingControls = if (tutorialActive) null else ({
-                        skyControlsVisible = !skyControlsVisible
-                        scenePreferences.edit().putBoolean(SPACE_COMPASS_SKY_CONTROLS_VISIBLE_KEY, skyControlsVisible).apply()
-                    }),
+                    panelsExpanded = detailsExpanded,
+                    onTogglePanels = if (tutorialActive) null else (::toggleInformationPanels),
                     bottomStartActions = { modifier ->
-                        // Keep panel and point-selection actions together at the bottom edge.
-                        FlowRow(modifier.padding(4.dp).testTag("celestial-bottom-start-controls"),
-                            horizontalArrangement = Arrangement.spacedBy(8.dp),
-                            verticalArrangement = Arrangement.spacedBy(8.dp)) {
-                            SpaceCompassMainDetailsToggleButton(detailsExpanded, {
-                                detailsExpanded = !detailsExpanded
-                                scenePreferences.edit().putBoolean(SPACE_COMPASS_MAIN_DETAILS_KEY, detailsExpanded).apply()
-                            }, primaryText, backgroundColor, landscape = landscape)
-                            if (!landscape || detailsExpanded) pointingAxisControl()
-                        }
-                    },
-                    bottomCenterActions = { modifier ->
-                        SpaceCompassMainViewModeControls(sideControls, modifier, sideControlsMaxHeight) {
-                            if(objectControlsMode) SpaceCompassGlobeLabelsButton(objectLabelMode,{ mode ->
-                                if(!tutorialActive&&mode!=objectLabelMode) {
-                                    objectLabelMode=mode
-                                    scenePreferences.edit().putString(SPACE_COMPASS_OBJECT_LABEL_MODE_KEY,mode.key).apply()
-                                    notifyControl(R.string.control_choice_message,controlResources.getString(R.string.panorama_point_labels),controlResources.getString(mode.labelResource))
-                                }
-                            },primaryText,backgroundColor,objectView=true)
-                            else if(globeControlsMode) SpaceCompassGlobeLabelsButton(globeLabelMode,{ mode ->
-                                if(!tutorialActive&&mode!=globeLabelMode) {
-                                    globeLabelMode=mode
-                                    scenePreferences.edit().putString(SPACE_COMPASS_GLOBE_LABEL_MODE_KEY,mode.key)
-                                        .putBoolean(SPACE_COMPASS_GLOBE_LABELS_KEY,mode!=SpaceCompassPanoramaLabelMode.NONE).apply()
-                                    notifyControl(R.string.control_choice_message,controlResources.getString(R.string.panorama_point_labels),
-                                        controlResources.getString(mode.labelResource))
-                                }
-                            },primaryText,backgroundColor)
-                            else if (cameraControlsMode) {
-                                SpaceCompassCameraObjectTransparencyButton(translucentCameraObjects, { enabled ->
-                                    if (!tutorialActive && translucentCameraObjects != enabled) {
-                                        translucentCameraObjects = enabled
-                                        scenePreferences.edit().putBoolean(SPACE_COMPASS_CAMERA_OBJECT_TRANSLUCENCY_KEY, enabled).apply()
-                                        notifyControl(R.string.control_choice_message,
-                                            controlResources.getString(R.string.camera_object_transparency),
-                                            controlResources.getString(if (enabled) R.string.camera_objects_translucent else R.string.camera_objects_opaque))
-                                    }
-                                }, primaryText, backgroundColor, enabled = !panorama.busy)
-                            } else if(controlsMode==SpaceCompassViewMode.SKY_PANORAMA) SpaceCompassGlobeLabelsButton(skyLabelMode,{ mode ->
-                                if(!tutorialActive&&mode!=skyLabelMode) {
-                                    skyLabelMode=mode
-                                    scenePreferences.edit().putString(SPACE_COMPASS_SKY_LABEL_MODE_KEY,mode.key).apply()
-                                    notifyControl(R.string.control_choice_message,controlResources.getString(R.string.panorama_point_labels),
-                                        controlResources.getString(mode.labelResource))
-                                }
-                            },primaryText,backgroundColor,sky=true)
-                            if(tutorialActive) SpaceCompassTutorialCameraZoom(primaryText,backgroundColor)
-                            else if(globeEnabled) Box(Modifier.onGloballyPositioned { globeZoomCoordinates = it; refreshGroundFrame() }) {
-                                val map = livePanoramic
-                                val shownPose = if(objectEnabled) objectPose else if(map) globeMapPose else globePose
-                                SpaceCompassCameraZoomControls(SpaceCompassCameraZoomRange(.5f,if(map) SPACE_COMPASS_GLOBE_MAP_MAX_ZOOM.toFloat() else SPACE_COMPASS_GLOBE_MAX_ZOOM.toFloat()),
-                                    shownPose.zoom.toFloat(),shownPose.zoom.toFloat(),!panorama.busy,
-                                    { if(objectEnabled) updateObjectZoom(it.toDouble()) else if(map) updateGlobeMapPose(globeMapPose.copy(zoom=it.toDouble()))
-                                        else globePose=globePose.copy(zoom=it.toDouble()).normalized() },primaryText,backgroundColor,camera=false)
+                        // All contextual controls use the leading group; Zoom belongs to the capture group.
+                        if (!landscape || detailsExpanded) {
+                            FlowRow(modifier.padding(4.dp).testTag("celestial-bottom-start-controls")
+                                .onGloballyPositioned { leadingControlCoordinates = it; refreshGroundFrame() },
+                                horizontalArrangement = Arrangement.spacedBy(8.dp),
+                                verticalArrangement = Arrangement.spacedBy(8.dp)) {
+                                pointingSlotControl()
                             }
-                            else if (skyPanoramaEnabled) SpaceCompassCameraZoomControls(SpaceCompassCameraZoomRange(.5f,SPACE_COMPASS_GLOBE_MAP_MAX_ZOOM.toFloat()),
-                                skyPanoramaPose.zoom.toFloat(),skyPanoramaPose.zoom.toFloat(),!panorama.busy,
-                                {updateSkyPanoramaPose(skyPanoramaPose.copy(zoom=it.toDouble()))},primaryText,backgroundColor,camera=false)
-                            else if (cameraEnabled) SpaceCompassCameraZoomControls(cameraZoomRange, cameraZoomRequest, cameraZoomActual,
-                                !panorama.busy && cameraCapture != null, ::updateCameraZoom, primaryText, backgroundColor)
-                            else SpaceCompassCameraZoomControls(spaceCompassVirtualZoomRange, virtualZoom, virtualZoom,
-                                !panorama.busy, ::updateVirtualZoom, primaryText, backgroundColor, camera = false)
                         }
                     },
                     bottomActions = { modifier ->
@@ -1058,26 +1095,25 @@ internal fun SpaceCompassSunFinderContent(
                             // Keep labels and edge locators clear of the capture overlay after expansion.
                             Spacer(modifier.size(with(density) { landscapeCaptureSize.width.toDp() },
                                 with(density) { landscapeCaptureSize.height.toDp() }))
-                        } else if (dailyPathUiState.selectedPoints.isNotEmpty() || tutorialActive) {
-                            Box(modifier.padding(4.dp).testTag("celestial-expanded-landscape-points")) {
-                                antipodesControl()
-                            }
                         }
                     },
                     topStartActions = { modifier ->
-                        Box(modifier.padding(if (onDismissRequest != null) 4.dp else 0.dp)
-                            .testTag("celestial-top-start-controls")) {
-                            if (onDismissRequest != null)
+                        Column(modifier.padding(if (onDismissRequest != null) 4.dp else 0.dp)
+                            .testTag("celestial-top-start-controls"), horizontalAlignment = Alignment.Start,
+                            verticalArrangement = Arrangement.spacedBy(8.dp)) {
+                            if (onDismissRequest != null) {
                                 SpaceCompassMainInfoControl(primaryText, backgroundColor)
+                                if (sideControls) SpaceCompassMainMenuControl(primaryText, backgroundColor)
+                            }
                         }
                     },
                     topEndActions = { modifier ->
                         Column(modifier.padding(if (onDismissRequest != null) 4.dp else 0.dp)
                             .testTag("celestial-top-end-controls"), horizontalAlignment = Alignment.End,
                             verticalArrangement = Arrangement.spacedBy(8.dp)) {
-                            if (onDismissRequest != null)
+                            if (onDismissRequest != null && !sideControls)
                                 SpaceCompassMainMenuControl(primaryText, backgroundColor)
-                            if (landscape && !detailsExpanded) pointingAxisControl()
+                            if (sideControls) pointingSlotControl()
                         }
                     },
                     topCenterActions = { modifier ->
@@ -1095,14 +1131,7 @@ internal fun SpaceCompassSunFinderContent(
                                 }
                             },
                             guides = {
-                                SpaceCompassSkyReferenceButton(mainGridVisible, showSkyReferences, gridNumbersVisible, gridOpacityPercent, { grid, references, numbers, opacity ->
-                                    gridOpacityPercent = opacity
-                                    mainGridVisible = grid
-                                    gridNumbersVisible = numbers
-                                    showSkyReferences = references
-                                    scenePreferences.edit().putInt(SPACE_COMPASS_GRID_OPACITY_KEY, opacity).putBoolean(SPACE_COMPASS_MAIN_GRID_KEY, grid).putBoolean(SPACE_COMPASS_GRID_NUMBERS_KEY,numbers)
-                                        .putBoolean(SPACE_COMPASS_SKY_REFERENCES_KEY, references).apply()
-                                }, primaryText, backgroundColor)
+                                gridControl()
                             },
                             interval = {
                                 SpaceCompassForwardPathButton(forward24Hours, { enabled ->
@@ -1116,7 +1145,12 @@ internal fun SpaceCompassSunFinderContent(
             }
         }
     }
-    BoxWithConstraints(Modifier.fillMaxSize().testTag("sun-finder-content").onGloballyPositioned {
+    val gestureRegions = remember { SpaceCompassMainGestureRegions() }
+    CompositionLocalProvider(LocalSpaceCompassMainGestureRegions provides gestureRegions) {
+    BoxWithConstraints(Modifier.fillMaxSize().testTag("sun-finder-content")
+        .spaceCompassMainFreeAreaGestures(gestureRegions, { pointingFrame }, !tutorialActive,
+            onTap = { skyObserver?.togglePlayback() }, onDoubleTap = ::toggleInformationPanels)
+        .onGloballyPositioned {
         sceneCoordinates = it
         refreshGroundFrame()
     }) {
@@ -1138,7 +1172,7 @@ internal fun SpaceCompassSunFinderContent(
                 val mapPose=if(objectEnabled) objectPose else if(skyPanoramaEnabled) skyPanoramaPose else if(livePanoramic) globeMapPose else globeViewPose
                 val mapViewport = if(livePanoramic) spaceCompassGlobeMapViewport(
                     placement.pointing,sceneWidth,sceneHeight,with(density) { 10.dp.toPx().toDouble() },
-                    compactHeaderFrame?.top?.takeIf { showSkyControls && !detailsExpanded && viewportHeight>=viewportWidth },
+                    compactHeaderFrame?.top?.takeIf { compactObjectHeaderVisible && viewportHeight>=viewportWidth },
                     placement.panoramaViewport.copy(left=placement.panoramaViewport.left+placement.pointing.left,
                         top=placement.panoramaViewport.top+placement.pointing.top))
                     else placement.sceneViewport()
@@ -1147,10 +1181,8 @@ internal fun SpaceCompassSunFinderContent(
                     placement.sceneExclusions(sceneWidth,sceneHeight),mapViewport,noteInset,
                     if(objectEnabled) objectLabelMode else if(skyPanoramaEnabled) skyLabelMode else globeLabelMode,
                     if(skyPanoramaEnabled) false else globeAxisLocked,resumed && mainVisible,
-                    onTap={skyObserver?.togglePlayback()},onDoubleTap={
-                        skyControlsVisible=!skyControlsVisible
-                        scenePreferences.edit().putBoolean(SPACE_COMPASS_SKY_CONTROLS_VISIBLE_KEY,skyControlsVisible).apply()
-                    },modifier=Modifier.fillMaxSize(),onCaptureFrame={ frame ->
+                    onTap={skyObserver?.togglePlayback()},onDoubleTap=::toggleInformationPanels,
+                    modifier=Modifier.fillMaxSize(),onCaptureFrame={ frame ->
                         val local=frame.inPointingFrame(placement.pointing)
                         if(globeCaptureFraming!=local) globeCaptureFraming=local
                     },showDirectionNote=placement.showDirectionNote,noteResource=if(objectEnabled) R.string.object_view_note else R.string.globe_direction_note,pointingFrame=placement.pointing,
@@ -1182,7 +1214,8 @@ internal fun SpaceCompassSunFinderContent(
         }
         if(!liveMapEnabled && mainGridVisible && resumed && mainVisible)
             SpaceCompassCameraGridLayer(scenePointingOrientation,scenePerspective,groundFrame,Modifier.fillMaxSize(),
-                tag=if(cameraEnabled) "camera-angular-grid" else "sky-angular-grid", showNumbers=gridNumbersVisible, solarElevation=sun?.elevationDegrees, opacityPercent=gridOpacityPercent)
+                tag=if(cameraEnabled) "camera-angular-grid" else "sky-angular-grid", showNumbers=gridNumbersVisible, opacityPercent=gridOpacityPercent,
+                darkGrid=!cameraEnabled && spaceCompassWeatherGridBlack(phase,sceneWeather))
         if(!liveMapEnabled) SpaceCompassCelestialSceneBackdrop(groundFrame, scenePerspective,
             scenePointingOrientation.takeIf { !cameraEnabled || cameraPerspective != null },
             overlays, sceneBody.takeIf { hasActiveBody && activeComparison == null }, livePath, liveTarget, timeMs,
@@ -1195,12 +1228,7 @@ internal fun SpaceCompassSunFinderContent(
         val detailsWidth = viewportWidth * 0.45f
         // Keep the islands at their regular size when the available height changes.
         val compactPanel = false
-        if (!showSkyControls) {
-            // A clean view reclaims panel space without changing the saved expanded/compact choice.
-            Box(Modifier.fillMaxSize().testTag("celestial-pointing-area")) {
-                pointing(viewportWidth > viewportHeight)
-            }
-        } else if (viewportWidth > viewportHeight && detailsWidth - 20.dp >= minimumPanelWidth) {
+        if (viewportWidth > viewportHeight && detailsWidth - 20.dp >= minimumPanelWidth) {
             // Floating navigation stays in the sky column beside the full-height data column.
             Box(Modifier.fillMaxSize().testTag("celestial-landscape-layout")) {
             Row(Modifier.fillMaxSize()) {
@@ -1219,16 +1247,16 @@ internal fun SpaceCompassSunFinderContent(
                     }
                 }
                 // A real side rail reserves horizontal space; the sky/globe keeps all its height.
-                if (!detailsExpanded) compactHeader(Modifier.padding(top = 10.dp, bottom = 10.dp, end = 10.dp)
+                if (compactObjectHeaderVisible) compactHeader(Modifier.padding(top = 10.dp, bottom = 10.dp, end = 10.dp)
                     .width(35.dp).fillMaxHeight())
             }
             // One stable overlay stays outside the information panels' transition and changing sky width.
-            if (showSkyControls) captureControls(Modifier.align(Alignment.BottomEnd)
+            captureControls(Modifier.align(Alignment.BottomEnd)
                 .padding(start = 10.dp, top = 10.dp, bottom = 10.dp,
-                    end = if (detailsExpanded) 10.dp else 55.dp)
+                    end = if (compactObjectHeaderVisible) 55.dp else 10.dp)
                 .onSizeChanged { landscapeCaptureSize = it }, !detailsExpanded, true)
             // The expanded caption spans the actual bottom control gap, outside the narrow scene column.
-            if (showSkyControls && globeEnabled && detailsExpanded) globeCaptionArea?.let { area ->
+            if (globeEnabled && detailsExpanded) globeCaptionArea?.let { area ->
                 Box(Modifier.align(AbsoluteAlignment.TopLeft)
                     .absoluteOffset { IntOffset(area.left.toInt(), area.top.toInt()) }
                     .size(with(density) { area.width.toFloat().toDp() }, with(density) { area.height.toFloat().toDp() }),
@@ -1248,13 +1276,18 @@ internal fun SpaceCompassSunFinderContent(
                 Box(Modifier.weight(1f).fillMaxWidth().testTag("celestial-pointing-area")) {
                     pointing(false)
                 }
-                Column(Modifier.onGloballyPositioned {
-                    compactHeaderCoordinates = if (!detailsExpanded) it else null; refreshGroundFrame()
-                }) {
-                    Spacer(Modifier.height(10.dp))
-                    details(Modifier.fillMaxWidth().heightIn(max = viewportHeight * 0.56f), compactPanel, detailsExpanded)
+                SpaceCompassMainDetailsVisibility(detailsExpanded || compactObjectHeaderVisible, landscape = false) {
+                    Column(Modifier.onGloballyPositioned {
+                        compactHeaderCoordinates = if (compactObjectHeaderVisible) it else null; refreshGroundFrame()
+                    }) {
+                        Spacer(Modifier.height(10.dp))
+                        // Keep the full island during its exit; the retained opt-in restores header-only mode.
+                        details(Modifier.fillMaxWidth().heightIn(max = viewportHeight * 0.56f), compactPanel,
+                            if (SPACE_COMPASS_KEEP_COLLAPSED_OBJECT_HEADER) detailsExpanded else true)
+                    }
                 }
             }
         }
+    }
     }
 }

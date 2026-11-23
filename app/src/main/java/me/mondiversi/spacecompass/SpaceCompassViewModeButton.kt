@@ -71,8 +71,7 @@ internal fun SpaceCompassGlobeIcon(tint: Color = LocalContentColor.current,size:
 
 @Composable
 internal fun SpaceCompassViewModeButton(mode: SpaceCompassViewMode,onChoose: (SpaceCompassViewMode)->Unit,
-    color: Color,background: Color,tutorial: Boolean=false,weather: Boolean=true,
-    onWeatherChoose: (Boolean)->Unit={}) {
+    color: Color,background: Color,tutorial: Boolean=false) {
     var expanded by remember { mutableStateOf(false) }
     val guide=LocalSpaceCompassTutorial.current
     Box {
@@ -114,8 +113,8 @@ internal fun SpaceCompassViewModeButton(mode: SpaceCompassViewMode,onChoose: (Sp
                 }
             }
         }
-        SpaceCompassViewModeDialog(expanded,mode,{expanded=false},weather) { value, weatherValue ->
-            expanded=false;onWeatherChoose(weatherValue);onChoose(value)
+        SpaceCompassViewModeDialog(expanded,mode,{expanded=false}) { value ->
+            expanded=false;onChoose(value)
         }
     }
 }
@@ -124,27 +123,28 @@ internal fun SpaceCompassViewModeButton(mode: SpaceCompassViewMode,onChoose: (Sp
 /** Mode and projection remain a draft until Apply; dismissing never changes the live view. */
 @Composable
 internal fun SpaceCompassViewModeDialog(expanded: Boolean,mode: SpaceCompassViewMode,
-    onDismiss: ()->Unit,weather: Boolean=true,onChoose: (SpaceCompassViewMode,Boolean)->Unit) {
+    onDismiss: ()->Unit,onChoose: (SpaceCompassViewMode)->Unit) {
     if(!expanded) return
     var storedFamily by rememberSaveable(mode) { mutableStateOf(
         if(mode==SpaceCompassViewMode.OBJECT) SpaceCompassViewMode.OBJECT
         else if(mode==SpaceCompassViewMode.CAMERA) SpaceCompassViewMode.CAMERA
         else if(mode.globe) SpaceCompassViewMode.GLOBE else SpaceCompassViewMode.PANORAMA) }
-    val family=spaceCompassAvailableViewMode(storedFamily)
     var panoramic by rememberSaveable(mode) { mutableStateOf(mode.panoramic) }
-    var draftWeather by rememberSaveable(weather) { mutableStateOf(weather) }
-    val projectionEnabled=family!=SpaceCompassViewMode.CAMERA&&family!=SpaceCompassViewMode.OBJECT
-    val selectedPanorama=projectionEnabled&&panoramic
     SpaceCompassAlertDialog(onDismissRequest=onDismiss,
         confirmButton={ SpaceCompassDialogActionButton(stringResource(R.string.view_mode_apply),{
+            val family=spaceCompassAvailableViewMode(storedFamily)
             onChoose(if(family==SpaceCompassViewMode.OBJECT) SpaceCompassViewMode.OBJECT
                 else if(family==SpaceCompassViewMode.CAMERA) SpaceCompassViewMode.CAMERA
-                else spaceCompassLiveViewMode(family.globe,panoramic),draftWeather)
+                else spaceCompassLiveViewMode(family.globe,panoramic))
         },Modifier.testTag("view-mode-apply")) },
         dismissButton={ SpaceCompassDialogActionButton(stringResource(R.string.close),onDismiss,
-            Modifier.testTag("view-mode-cancel"), tone = SpaceCompassDialogActionTone.NEUTRAL) },
+            Modifier.testTag("view-mode-cancel"), tone = SpaceCompassDialogActionTone.NEUTRAL, closeAction = true) },
         modifier=Modifier.testTag("view-mode-dialog"),
         title={Text(stringResource(R.string.view_mode_choose))},text={
+            // Observe the live draft inside the dialog window, including retained rotations.
+            val family=spaceCompassAvailableViewMode(storedFamily)
+            val projectionEnabled=family!=SpaceCompassViewMode.CAMERA&&family!=SpaceCompassViewMode.OBJECT
+            val selectedPanorama=projectionEnabled&&panoramic
             Column(Modifier.fillMaxWidth()) {
                 Column(Modifier.fillMaxWidth().selectableGroup().testTag("view-mode-options")) {
                     SPACE_COMPASS_VIEW_MODE_FAMILIES.forEach { value ->
@@ -188,13 +188,6 @@ internal fun SpaceCompassViewModeDialog(expanded: Boolean,mode: SpaceCompassView
                         }
                     }
                 }
-                Spacer(Modifier.height(8.dp))
-                SpaceCompassSettingsCheckbox(stringResource(R.string.view_mode_weather),draftWeather,{draftWeather=it},
-                    Modifier.padding(horizontal=SpaceCompassSettingsChoiceHorizontalPadding).testTag("view-mode-weather"),
-                    enabled=family==SpaceCompassViewMode.PANORAMA,compact=true,leadingIcon={
-                        Icon(androidx.compose.ui.res.painterResource(R.drawable.ic_weather),null,
-                            Modifier.size(SpaceCompassMenuIconSize),tint=LocalContentColor.current.copy(alpha=if(family==SpaceCompassViewMode.PANORAMA) 1f else .45f))
-                    })
             }
         })
 }

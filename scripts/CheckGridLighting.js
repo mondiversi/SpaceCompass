@@ -7,18 +7,33 @@ const context={Math,globeScene:{grid:true,flat:false},globeCoordinateCurves:[],g
 vm.createContext(context);
 vm.runInContext(source.slice(source.indexOf('function drawGlobeCoordinateGrid('),source.indexOf('// Plate-carree maps')),context);
 vm.runInContext(source.slice(source.indexOf('function drawFlatCoordinateGrid('),source.indexOf('// Keep longitude/azimuth')),context);
-for(const flat of [false,true])for(const ink of [undefined,['#ffffffff','#00000059'],['#bdbdbdff','#00000059'],['#ffffff80','#0000002d'],['#bdbdbd80','#0000002d'],['#ffffff00','#00000000']]) {
+for(const flat of [false,true])for(const ink of [undefined,['#ffffffff'],['#ffffffcc'],['#ffffff80'],['#ffffff00']]) {
  context.globeScene.flat=flat;context.globeScene.gridStyle=ink;strokes.length=0;context.drawGlobeCoordinateGrid();
- assert.deepEqual(strokes,[[ink?.[1]||'#00000047',.60],[ink?.[0]||'#bdbdbdcc',.30]]);
+ assert.deepEqual(strokes,[[ink?.[0]||'#ffffff80',.30]]);
 }
 for(const name of ['SpaceCompassCameraGridRenderer.kt','SpaceCompassCameraPhotoRenderer.kt','SpaceCompassGlobeCoordinateDrawing.kt','SpaceCompassGlobeMapGrid.kt','SpaceCompassPanoramaRenderer.kt']) {
- const s=fs.readFileSync(path.join(main,name),'utf8');assert.ok(s.includes('gridPalette=spaceCompassGridPalette(snapshot)'),name);
+ const s=fs.readFileSync(path.join(main,name),'utf8');assert.ok(s.includes('gridPalette=spaceCompassGridPalette(snapshot)')||s.includes('spaceCompassWeatherGridPalette(snapshot,enabled=simulatedSky)')||s.includes('spaceCompassWeatherGridPalette(snapshot)')||s.includes('spaceCompassAngularGridPalette(darkGrid,snapshot.gridOpacityPercent)'),name);
  assert.ok(!/SpaceCompassAngularGridAppearance\.(lineArgb|majorArgb|shadowArgb)/.test(s),name+' bypasses scenario palette');
 }
 const host=fs.readFileSync(path.join(main,'SpaceCompassGlobeView.kt'),'utf8');
-assert.ok(host.includes('put("gridStyle",JSONArray(listOf(spaceCompassGridCss(gridPalette.liveLineArgb),spaceCompassGridCss(gridPalette.liveShadowArgb))))'));
+assert.ok(host.includes('put("gridStyle",JSONArray(listOf(spaceCompassGridCss(gridPalette.liveLineArgb))))'));
 const live=fs.readFileSync(path.join(main,'SpaceCompassSunFinderScreen.kt'),'utf8');
-assert.ok(live.includes('solarElevation=sun?.elevationDegrees'),'live grid must use the active Location Sun');
+assert.ok(live.includes('opacityPercent=gridOpacityPercent'),'live grid retains its saved opacity');
 const palette=fs.readFileSync(path.join(main,'SpaceCompassAngularGridAppearance.kt'),'utf8');
-assert.ok(palette.includes('calculateSpaceCompassSunPosition(snapshot.timeMs,snapshot.latitude,snapshot.longitude,snapshot.altitude)'),'capture must use its frozen Sun');
-console.log('Grid lighting: native/frozen/web paths share bright dawn/day/dusk ink, unchanged night ink, adjustable opacity and fine strokes passed.');
+assert.ok(palette.includes('spaceCompassGridPalette(snapshot.gridOpacityPercent)'),'capture must retain its frozen opacity');
+assert.ok(!palette.includes('calculateSpaceCompassSunPosition'),'grid colour must not request solar data');
+// A single weather ink covers the complete sky grid, above and below its horizon.
+const paths=[];let points=[];
+context.orbitInk.beginPath=()=>{points=[]};
+context.orbitInk.moveTo=(x,y)=>points.push([x,y]);
+context.orbitInk.lineTo=(x,y)=>points.push([x,y]);
+context.orbitInk.stroke=function(){paths.push({ink:this.strokeStyle,points:[...points]})};
+for(const horizon of [-150,0,100,550]) {
+ context.globeFlatRect=()=>({x:-50,y:horizon-100,w:400,h:200});
+ context.globeScene={flat:true,sky:true,grid:true,gridStyle:['#00000080']};
+ paths.length=0;context.drawFlatCoordinateGrid();
+ assert.equal(paths.length,1);assert.equal(paths[0].ink,'#00000080');
+ assert.ok(paths[0].points.some(p=>p[1]<horizon));assert.ok(paths[0].points.some(p=>p[1]>horizon));
+}
+assert.ok(host.includes('spaceCompassWeatherGridPalette(snapshot,enabled=sky)'),'geographic Globe must not use forecast sky ink');
+console.log('Grid colours, opacity and fine widths passed: the weather ink covers the whole sky, while geographic maps and real camera backgrounds stay independent.');

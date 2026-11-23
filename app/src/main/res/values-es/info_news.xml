@@ -1,9 +1,9 @@
 <resources>
     <string name="info_news_title">Últimas novedades · %1$s</string>
-    <string name="info_news_star_sky" formatted="false">La transparencia de la retícula blanca es ahora del 50%.</string>
-    <string name="info_news_texture_downloads" formatted="false">El doble toque oculta iconos y paneles y mantiene la retícula visible.</string>
-    <string name="info_news_weather" formatted="false">En vertical, la retícula permanece elevada al ocultar la interfaz, como con los paneles compactos.</string>
-    <string name="info_news_viewer_zoom" formatted="false">Más espacio bajo la última fila del panel del objeto, como en el panel de la brújula.</string>
-    <string name="info_news_settings" formatted="false">Detalles de ubicación pasa a llamarse Posición real y sigue mostrando tu posición efectiva.</string>
-    <string name="info_news_catalog" formatted="false">El tutorial explica el nuevo gesto de la interfaz.</string>
+    <string name="info_news_star_sky" formatted="false">Toca dos veces una zona libre para ocultar o mostrar los paneles del objeto y la brújula, incluido el nombre del objeto. Los controles y la retícula siguen visibles.</string>
+    <string name="info_news_texture_downloads" formatted="false">Controles reorganizados y línea del horizonte de la cámara con la mitad del grosor anterior.</string>
+    <string name="info_news_weather" formatted="false">La opacidad predeterminada de la cuadrícula es del 50%. El deslizador actualiza el valor al instante. Cuadrícula y retícula no tienen contorno; la opacidad de la retícula es del 80%.</string>
+    <string name="info_news_viewer_zoom" formatted="false">Con niebla, cielo cubierto o nieve de día, las líneas de la cuadrícula son negras por encima y por debajo del horizonte.</string>
+    <string name="info_news_settings" formatted="false">Ventanas más compactas, acciones junto al título e icono de cierre en horizontal. Las opciones se conservan al girar la pantalla.</string>
+    <string name="info_news_catalog" formatted="false">Los menús de zoom se leen sobre los paneles. El tutorial destaca una zona libre fija y explica los controles en uso.</string>
 </resources>

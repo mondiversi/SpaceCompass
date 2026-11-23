@@ -34,7 +34,8 @@ internal data class SpaceCompassSceneArchive(val contents: SpaceCompassScenarioA
             if(!it.grid) values["grid"] = "false"
             if(it.gridNumbers) values["gridNumbers"] = "true"
             require(it.gridOpacityPercent in 0..100 && it.gridOpacityPercent % 10 == 0)
-            if(it.gridOpacityPercent != SPACE_COMPASS_GRID_OPACITY_DEFAULT) values["gridOpacityPercent"] = it.gridOpacityPercent.toString()
+            // Write the opacity explicitly: an omitted v1 field historically meant 80%.
+            values["gridOpacityPercent"] = it.gridOpacityPercent.toString()
             it.skyLabelMode?.let { mode ->
                 require(SpaceCompassPanoramaLabelMode.entries.any { it.key==mode })
                 values["skyLabelMode"]=mode
@@ -85,7 +86,7 @@ internal data class SpaceCompassSceneArchive(val contents: SpaceCompassScenarioA
                 p.getProperty("objectView")?.toBooleanStrict() ?: false,p.getProperty("objectAimObserver")?.toBooleanStrict() ?: false,
                 p.getProperty("objectLabelMode")?.also { mode -> require(SpaceCompassPanoramaLabelMode.entries.any { it.key==mode }) },
                 p.getProperty("gridOpacityPercent")?.toInt()?.also { require(it in 0..100 && it % 10 == 0) }
-                    ?: SPACE_COMPASS_GRID_OPACITY_DEFAULT)
+                    ?: 80)
             return SpaceCompassSceneArchive(archive,include,display,requireNotNull(p.getProperty("capturedAtMs")).toLong(),
                 p.getProperty("paused")?.toBooleanStrict() ?: false)
         }

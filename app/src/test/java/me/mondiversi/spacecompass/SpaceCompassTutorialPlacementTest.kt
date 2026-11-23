@@ -53,18 +53,24 @@ class SpaceCompassTutorialPlacementTest {
         assertEquals(200f, position.y + 120f, .01f)
     }
 
-    @Test fun landscapeExplanationClearsAxisBelowMenu() {
-        val sky = Rect(0f, 0f, 480f, 400f)
-        val controls = listOf(
-            target(SpaceCompassTutorialFeature.MENU, Rect(420f, 20f, 460f, 60f)),
-            target(SpaceCompassTutorialFeature.AXIS, Rect(420f, 80f, 460f, 120f)),
-            target(SpaceCompassTutorialFeature.WEATHER, Rect(180f, 340f, 220f, 380f)),
-            target(SpaceCompassTutorialFeature.ZOOM, Rect(240f, 340f, 280f, 380f)))
-        val area = spaceCompassTutorialCardBand(sky, controls)
-        val height = spaceCompassTutorialCardClearHeight(area, 360f, controls.map { it.bounds }, 8f, 240f)
-        assertTrue("Explanation retains reading space", height > 80f)
-        val size = Size(360f, height)
-        val card = Rect(spaceCompassTutorialCardPosition(area, size, 8f), size)
-        assertTrue(controls.none { it.bounds.inflate(8f).overlaps(card) })
+    @Test fun landscapeExplanationClearsLeadingModeControlsBelowMenu() {
+        for(feature in listOf(SpaceCompassTutorialFeature.WEATHER, SpaceCompassTutorialFeature.GLOBE_LABELS,
+            SpaceCompassTutorialFeature.SKY_LABELS, SpaceCompassTutorialFeature.TRANSPARENCY,
+            SpaceCompassTutorialFeature.AXIS, SpaceCompassTutorialFeature.GLOBE_ROTATION,
+            SpaceCompassTutorialFeature.ANTIPODES)) {
+            val sky = Rect(0f, 0f, 480f, 400f)
+            val controls = listOf(
+                target(SpaceCompassTutorialFeature.MENU, Rect(420f, 20f, 460f, 60f)),
+                target(feature, Rect(420f, 80f, 460f, 120f)),
+                target(SpaceCompassTutorialFeature.AXIS, Rect(180f, 340f, 220f, 380f)),
+                target(SpaceCompassTutorialFeature.ZOOM, Rect(240f, 340f, 280f, 380f)))
+            val area = spaceCompassTutorialCardBand(sky, controls)
+            assertEquals(120f, area.top, .01f)
+            val height = spaceCompassTutorialCardClearHeight(area, 360f, controls.map { it.bounds }, 8f, 240f)
+            assertTrue("Explanation retains reading space", height > 80f)
+            val size = Size(360f, height)
+            val card = Rect(spaceCompassTutorialCardPosition(area, size, 8f), size)
+            assertTrue(controls.none { it.bounds.inflate(8f).overlaps(card) })
+        }
     }
 }

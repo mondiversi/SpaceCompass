@@ -28,8 +28,6 @@ internal fun drawSpaceCompassGlobeCoordinateGrid(canvas: Canvas,width: Int,heigh
         curve.vertices.map { snapshot.globe?.let { capture -> spaceCompassGlobeCapturePoint(it,capture) } ?: spaceCompassGlobeView(it,pose) }.zipWithNext().forEach { (a,b) ->
             if(a.z>=-1e-9 && b.z>=-1e-9) {
                 val p=point(a);val q=point(b)
-                paint.color=gridPalette.shadowArgb;paint.strokeWidth=edge*2
-                canvas.drawLine(p.x.toFloat(),p.y.toFloat(),q.x.toFloat(),q.y.toFloat(),paint)
                 paint.color=gridPalette.lineArgb;paint.strokeWidth=edge
                 canvas.drawLine(p.x.toFloat(),p.y.toFloat(),q.x.toFloat(),q.y.toFloat(),paint)
             }

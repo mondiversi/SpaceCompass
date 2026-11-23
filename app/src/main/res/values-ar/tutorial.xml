@@ -3,7 +3,7 @@
     <string name="tutorial_title" formatted="false">البرنامج التعليمي</string>
     <string name="tutorial_welcome_title" formatted="false">مرحبًا بك في Space Compass</string>
     <string name="tutorial_welcome_body" formatted="false">استكشف السماء ومسارات الأجرام من أماكن وأوقات مختلفة. تعرّف على عناصر التحكم عبر الدليل التفاعلي.</string>
-    <string name="tutorial_instruction" formatted="false">المس عنصرًا مضاءً أو نقطة مدارية لمعرفة وظيفته دون تغيير الإعدادات.</string>
+    <string name="tutorial_instruction" formatted="false">المس عنصر تحكم أو الدائرة أو نقطة مدارية لمعرفة وظيفته.</string>
     <string name="tutorial_zoom_title" formatted="false">التكبير</string>
     <string name="tutorial_navigation_title" formatted="false">الجسم المحدد</string>
     <string name="tutorial_points_title" formatted="false">نقاط المدار</string>
@@ -19,15 +19,15 @@
     <string name="tutorial_transparency" formatted="false">اجعل صور الأجسام شبه شفافة لمقارنتها بالكاميرا.</string>
     <string name="tutorial_zoom" formatted="false">كبّر أو صغّر باستخدام الزر أو إصبعين.</string>
     <string name="tutorial_capture" formatted="false">جهّز صورة. اختر الشبكة والتسميات والموقع في المعاينة؛ وفي السماء والكرة الأرضية بدّل بين الإطار والبانوراما.</string>
-    <string name="tutorial_panels" formatted="false">اطوِ أو وسّع لوحتي الجسم والبوصلة لإظهار مساحة أكبر من السماء.</string>
+    <string name="tutorial_panels" formatted="false">انقر مرتين على مساحة فارغة لإخفاء لوحتي الجرم والبوصلة أو إظهارهما، بما في ذلك اسم الجرم.</string>
     <string name="tutorial_antipodes" formatted="false">اضغط لإظهار النقاط المقابلة أو إخفائها. اضغط مطولاً لإلغاء تحديد جميع النقاط.</string>
     <string name="tutorial_navigation" formatted="false">تنقّل بين الأجسام المحددة. تعرض اللوحة الجسم النشط وألوان مساره.</string>
     <string name="tutorial_observatory" formatted="false">افتح بيانات الجرم ومساراته وارتفاعاته وأحداثه ولحظاته الشخصية.</string>
     <string name="tutorial_daily" formatted="false">اعرض المسار والأوقات والارتفاعات والنقاط القابلة للتحديد. يمكن تذكيرك بالأحداث المستقبلية.</string>
     <string name="tutorial_gps" formatted="false">اعرض موقعك الحقيقي وارتفاع GPS والاتجاه والطقس، بصورة مستقلة عن Location.</string>
     <string name="tutorial_points" formatted="false">حدد نقطة أو ألغِ تحديدها. وجّه المؤشر لقراءة الوقت وT والسمت والارتفاع.</string>
-    <string name="tutorial_reticle_title" formatted="false">الوقت والواجهة</string>
-    <string name="tutorial_reticle" formatted="false">المس مساحة فارغة لإيقاف الوقت أو استئنافه. انقر مرتين لإظهار الواجهة واللوحات أو إخفائها. تبقى علامة التصويب ظاهرة.</string>
+    <string name="tutorial_reticle_title" formatted="false">الوقت واللوحات</string>
+    <string name="tutorial_reticle" formatted="false">المس مساحة فارغة لإيقاف الوقت أو استئنافه. انقر مرتين لإخفاء اللوحات أو إظهارها.</string>
     <string name="tutorial_reminder" formatted="false">افتح منبه Android أو التقويم لحدث مستقبلي مناسب. لا يشمل الأحداث الماضية أو النقطة الحالية.</string>
     <string name="tutorial_status_title" formatted="false">الحالة والاستعادة</string>
     <string name="tutorial_status" formatted="false">تحقق من الحالة والإجراءات المتاحة للموقع والطقس والبيانات المدارية.</string>

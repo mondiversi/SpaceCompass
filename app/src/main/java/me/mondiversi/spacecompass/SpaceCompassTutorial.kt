@@ -154,7 +154,7 @@ internal fun SpaceCompassTutorialHost(tutorial: SpaceCompassTutorialState, conte
             title = { Text(stringResource(R.string.tutorial_welcome_title)) },
             text = { Text(stringResource(R.string.tutorial_welcome_body)) },
             dismissButton = { SpaceCompassDialogActionButton(stringResource(R.string.close),
-                { dismissWelcome() }, Modifier.testTag("welcome-close"), tone = SpaceCompassDialogActionTone.NEUTRAL) },
+                { dismissWelcome() }, Modifier.testTag("welcome-close"), tone = SpaceCompassDialogActionTone.NEUTRAL, closeAction = true) },
             confirmButton = { SpaceCompassDialogActionButton(stringResource(R.string.tutorial_title),
                 { dismissWelcome(); tutorial.start() }, Modifier.testTag("welcome-tutorial")) },
             modifier = Modifier.testTag("tutorial-welcome"))
@@ -169,10 +169,14 @@ private fun SpaceCompassTutorialOverlay(state: SpaceCompassTutorialState) {
     var origin by remember { mutableStateOf(Offset.Zero) }
     var selected by remember { mutableStateOf<SpaceCompassTutorialFeature?>(null) }
     var cardBounds by remember { mutableStateOf(Rect.Zero) }
+    var freeArea by remember { mutableStateOf<Rect?>(null) }
     val cardScroll = rememberScrollState()
     LaunchedEffect(selected, state.cameraPreview, state.globePreview, state.panoramaPreview,state.objectPreview) { cardScroll.scrollTo(0) }
     val targets = state.targets.values.map { it.translated(-origin) }
-    val currentTargets by rememberUpdatedState(targets)
+    val highlightedTargets = targets + listOfNotNull(freeArea?.let {
+        SpaceCompassTutorialTarget(SpaceCompassTutorialFeature.RETICLE, it)
+    })
+    val currentTargets by rememberUpdatedState(highlightedTargets)
     val pointRadius = with(density) { 24.dp.toPx() }
     // A visible antipode marker shares the feature, but the button owns its current title.
     fun titleResource(feature: SpaceCompassTutorialFeature): Int =
@@ -184,7 +188,7 @@ private fun SpaceCompassTutorialOverlay(state: SpaceCompassTutorialState) {
         state.explore(feature)
         selected = feature
     }
-    val accessibleFeatures = targets.map { it.feature }.distinct()
+    val accessibleFeatures = (targets.map { it.feature } + SpaceCompassTutorialFeature.RETICLE).distinct()
         .filterNot { it == SpaceCompassTutorialFeature.MENU }.map { feature ->
         val label = stringResource(titleResource(feature))
         CustomAccessibilityAction(label) {
@@ -219,13 +223,22 @@ private fun SpaceCompassTutorialOverlay(state: SpaceCompassTutorialState) {
                 }
                 if (released && isTap && !cardBounds.contains(position)) {
                     val hit = spaceCompassTutorialHit(currentTargets, position, pointRadius)
-                    explain(hit?.feature ?: SpaceCompassTutorialFeature.RETICLE)
+                    val blocked = currentTargets.filter { !it.point && it.feature != SpaceCompassTutorialFeature.RETICLE }
+                        .any { it.bounds.inflate(with(density) { SPACE_COMPASS_OVERLAY_GESTURE_MARGIN_DP.dp.toPx() }).contains(position) }
+                    if (hit != null || !blocked) explain(hit?.feature ?: SpaceCompassTutorialFeature.RETICLE)
                 }
             }
         }) {
+        val rootBounds = with(density) { Rect(0f, 0f, maxWidth.toPx(), maxHeight.toPx()) }
+        // The anchor depends only on the app window, never on the expanded/compact sky frame.
+        val gestureCircle = remember(rootBounds, density.density) {
+            spaceCompassTutorialFixedFreeArea(rootBounds, with(density) { 24.dp.toPx() },
+                with(density) { (14.dp + spaceCompassFloatingControlBaseSize * SPACE_COMPASS_COMPACT_CONTROL_MULTIPLIER + 12.dp).toPx() })
+        }
+        SideEffect { freeArea = gestureCircle }
         Canvas(Modifier.fillMaxSize().graphicsLayer { compositingStrategy = CompositingStrategy.Offscreen }) {
             drawRect(Color.Black.copy(alpha = .84f))
-            targets.forEach { target ->
+            highlightedTargets.forEach { target ->
                 val r = target.highlightBounds.inflate(2.dp.toPx())
                 if (target.circular) drawOval(Color.Transparent, r.topLeft, r.size, blendMode = BlendMode.Clear)
                 else drawRoundRect(Color.Transparent, r.topLeft, r.size, CornerRadius(8.dp.toPx()), blendMode = BlendMode.Clear)
@@ -233,11 +246,21 @@ private fun SpaceCompassTutorialOverlay(state: SpaceCompassTutorialState) {
         }
         val accent = MaterialTheme.colorScheme.primary
         Canvas(Modifier.fillMaxSize()) {
-            targets.filter { it.feature == selected && !it.point }.forEach { target ->
+            highlightedTargets.filter { !it.point && (it.feature == selected || it.feature == SpaceCompassTutorialFeature.RETICLE) }.forEach { target ->
                 val r = target.highlightBounds.inflate(3.dp.toPx())
                 if (target.circular) drawOval(accent, r.topLeft, r.size, style = Stroke(2.dp.toPx()))
                 else drawRoundRect(accent, r.topLeft, r.size, CornerRadius(8.dp.toPx()), style = Stroke(2.dp.toPx()))
             }
+        }
+        val gestureTitle = stringResource(R.string.tutorial_reticle_title)
+        freeArea?.let { circle ->
+            Box(Modifier.absoluteOffset { IntOffset(circle.left.roundToInt(), circle.top.roundToInt()) }
+                .size(with(density) { circle.width.toDp() }, with(density) { circle.height.toDp() })
+                .testTag("tutorial-free-area").semantics {
+                    contentDescription = gestureTitle
+                    role = Role.Button
+                    onClick { explain(SpaceCompassTutorialFeature.RETICLE); true }
+                })
         }
         val viewport = with(density) { Size(maxWidth.toPx(), maxHeight.toPx()) }
         var fixedArea by remember(viewport, density.density, density.fontScale) { mutableStateOf<Rect?>(null) }
@@ -255,21 +278,16 @@ private fun SpaceCompassTutorialOverlay(state: SpaceCompassTutorialState) {
             val sky = skyBounds?.translate(-origin)?.intersect(root)
                 ?.takeIf { it.width > 0 && it.height > 0 } ?: root
             val controls = registeredTargets.map { it.translated(-origin) }
-            val area = spaceCompassTutorialCardBand(sky, controls)
-            val width = minOf(with(density) { 360.dp.toPx() },
-                (area.width - with(density) { 16.dp.toPx() }).coerceAtLeast(1f))
+            val circle = spaceCompassTutorialFixedFreeArea(root, with(density) { 24.dp.toPx() },
+                with(density) { (14.dp + spaceCompassFloatingControlBaseSize * SPACE_COMPASS_COMPACT_CONTROL_MULTIPLIER + 12.dp).toPx() })
             val maximumHeight = with(density) {
                 spaceCompassTutorialCardHeightLimit(sky.height.toDp().value).dp.toPx()
             }
-            val height = spaceCompassTutorialCardClearHeight(area, width,
-                controls.filter { it.circular && !it.point && it.feature !in setOf(
-                    SpaceCompassTutorialFeature.REMINDER, SpaceCompassTutorialFeature.OBSERVATORY,
-                    SpaceCompassTutorialFeature.DAILY) }.map { it.bounds },
-                with(density) { 8.dp.toPx() }, maximumHeight)
-            // Discard incomplete geometry rather than freezing an invisible, zero-height card.
-            fixedHeight = if (height > 0) height else minOf(maximumHeight,
-                (sky.height - with(density) { 16.dp.toPx() }).coerceAtLeast(0f))
-            fixedArea = if (height > 0) area else sky
+            val layout = spaceCompassTutorialExplanationLayout(sky, controls, circle,
+                desiredWidth = with(density) { 360.dp.toPx() }, maximumHeight = maximumHeight,
+                gap = with(density) { 8.dp.toPx() }, minimumSideWidth = with(density) { 150.dp.toPx() })
+            fixedHeight = layout.height
+            fixedArea = layout.area
         }
         val area = fixedArea ?: return@BoxWithConstraints
         val width = minOf(360.dp, (with(density) { area.width.toDp() } - 16.dp).coerceAtLeast(1.dp))

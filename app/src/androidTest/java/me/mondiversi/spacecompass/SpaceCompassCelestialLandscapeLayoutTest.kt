@@ -50,8 +50,11 @@ class SpaceCompassCelestialLandscapeLayoutTest {
         val menuNavigation = compose.onNodeWithTag("celestial-main-menu-navigation").fetchSemanticsNode().boundsInRoot
         val start = compose.onNodeWithTag("celestial-top-start-controls").fetchSemanticsNode().boundsInRoot
         val end = compose.onNodeWithTag("celestial-top-end-controls").fetchSemanticsNode().boundsInRoot
+        val compactLandscape = width.value > height.value &&
+            compose.onAllNodesWithTag("sun-finder-environment-data").fetchSemanticsNodes().isEmpty()
+        val menuHost = if (compactLandscape) start else end
         assertTrue(infoNavigation.left >= start.left && infoNavigation.right <= start.right)
-        assertTrue(menuNavigation.left >= end.left && menuNavigation.right <= end.right)
+        assertTrue(menuNavigation.left >= menuHost.left && menuNavigation.right <= menuHost.right)
         val logo = compose.onNodeWithTag("main-info").fetchSemanticsNode().boundsInRoot
         val menu = compose.onNodeWithTag("app-settings").fetchSemanticsNode().boundsInRoot
         val objects = compose.onNodeWithTag("celestial-select").fetchSemanticsNode().boundsInRoot
@@ -60,6 +63,32 @@ class SpaceCompassCelestialLandscapeLayoutTest {
         val forward = compose.onNodeWithTag("toggle-forward-path").fetchSemanticsNode().boundsInRoot
         val topCentre = compose.onNodeWithTag("celestial-top-center-controls").fetchSemanticsNode().boundsInRoot
         val sky = compose.onNodeWithTag("sun-finder-sky").fetchSemanticsNode().boundsInRoot
+        if (compactLandscape) {
+            val location = compose.onNodeWithTag("open-scenario").fetchSemanticsNode().boundsInRoot
+            val camera = compose.onNodeWithTag("toggle-camera").fetchSemanticsNode().boundsInRoot
+            val capture = compose.onNodeWithTag("capture-panorama").fetchSemanticsNode().boundsInRoot
+            val zoom = compose.onNodeWithTag("virtual-zoom-value").fetchSemanticsNode().boundsInRoot
+            val axis = compose.onNodeWithTag("toggle-pointing-axis").fetchSemanticsNode().boundsInRoot
+            val weather = compose.onNodeWithTag("toggle-weather").fetchSemanticsNode().boundsInRoot
+            assertEquals(logo.center.x, menu.center.x, 1f)
+            assertTrue(logo.bottom < menu.top)
+            assertTrue(menu.bottom < topCentre.top)
+            assertEquals(sky.bottom, topCentre.bottom, 1f)
+            assertEquals(logo.center.x, objects.center.x, 1f)
+            assertTrue(objects.bottom < location.top)
+            assertTrue(location.bottom < references.top)
+            assertTrue(references.bottom < forward.top)
+            assertEquals(forward.bottom, capture.bottom, 1f)
+            assertEquals(zoom.center.x, camera.center.x, 1f)
+            assertEquals(camera.center.x, capture.center.x, 1f)
+            assertTrue(zoom.bottom < camera.top)
+            assertTrue(camera.bottom < capture.top)
+            assertEquals(axis.center.x, weather.center.x, 1f)
+            assertTrue(axis.bottom < weather.top)
+            compose.onNodeWithTag("toggle-main-details").assertDoesNotExist()
+            compose.onNodeWithTag("celestial-bottom-center-controls").assertDoesNotExist()
+            return
+        }
         assertEquals(sky.center.x, topCentre.center.x, 1f)
         assertEquals(logo.center.y, menu.center.y, 1f)
         assertEquals(logo.center.y, references.center.y, 1f)
@@ -82,40 +111,51 @@ class SpaceCompassCelestialLandscapeLayoutTest {
             assertTrue(forward.right < references.left)
         }
         val axis = compose.onNodeWithTag("toggle-pointing-axis").fetchSemanticsNode().boundsInRoot
-        val chevron = compose.onNodeWithTag("toggle-main-details").fetchSemanticsNode().boundsInRoot
+        compose.onNodeWithTag("toggle-main-details").assertDoesNotExist()
         val weather = compose.onNodeWithTag("toggle-weather").fetchSemanticsNode().boundsInRoot
         val camera = compose.onNodeWithTag("toggle-camera").fetchSemanticsNode().boundsInRoot
         compose.onNodeWithTag("celestial-center-start-controls").assertDoesNotExist()
         compose.onNodeWithTag("celestial-center-end-controls").assertDoesNotExist()
         compose.onNodeWithTag("celestial-top-end-primary-controls").assertDoesNotExist()
         compose.onNodeWithTag("celestial-top-end-secondary-controls").assertDoesNotExist()
-        val centre = compose.onNodeWithTag("celestial-bottom-center-controls").fetchSemanticsNode().boundsInRoot
+        compose.onNodeWithTag("celestial-bottom-center-controls").assertDoesNotExist()
         val capture = compose.onNodeWithTag("capture-panorama").fetchSemanticsNode().boundsInRoot
         val captureGroup = compose.onNodeWithTag("celestial-capture-controls").fetchSemanticsNode().boundsInRoot
         val zoom = compose.onNodeWithTag("virtual-zoom-value").fetchSemanticsNode().boundsInRoot
-        assertEquals(weather.center.y, zoom.center.y, 1f)
+        assertEquals(zoom.center.y, camera.center.y, 1f)
+        assertTrue(zoom.left >= captureGroup.left && zoom.right <= captureGroup.right)
         assertEquals(capture.bottom, camera.bottom, 1f)
         assertTrue(camera.left >= captureGroup.left && camera.right <= captureGroup.right)
         assertTrue(capture.left >= captureGroup.left && capture.right <= captureGroup.right)
-        assertEquals(sky.center.x, centre.center.x, 1f)
-        if (width.value > height.value) {
-            assertEquals(menu.center.x, axis.center.x, 1f)
-            assertTrue(axis.top > menu.bottom)
-        } else assertEquals(chevron.bottom, axis.bottom, 1f)
-        assertTrue(topCentre.bottom < centre.top)
-        listOf(camera, weather, axis, chevron, capture).forEach { bounds ->
+        val sideControls = width.value > height.value &&
+            compose.onAllNodesWithTag("sun-finder-environment-data").fetchSemanticsNodes().isEmpty()
+        if (sideControls) {
+            assertEquals(menu.center.x, weather.center.x, 1f)
+            assertTrue(weather.top > menu.bottom)
+            assertEquals(axis.center.x, weather.center.x, 1f)
+            assertTrue(weather.top > axis.bottom)
+        } else {
+            assertTrue(weather.bottom <= sky.bottom)
+            assertEquals(axis.center.y, weather.center.y, 1f)
+        }
+        assertTrue(topCentre.bottom < captureGroup.top)
+        listOf(camera, weather, axis, capture).forEach { bounds ->
             assertEquals(logo.width, bounds.width, 1f)
         }
         if (direction.value == LayoutDirection.Rtl) {
-            assertEquals(logo.right, chevron.right, 1f)
-            assertTrue(zoom.right < weather.left)
-            assertTrue(axis.right < chevron.left)
+            if (!sideControls) {
+                assertEquals(logo.right, axis.right, 1f)
+                assertTrue(weather.right < axis.left)
+            }
             assertTrue(capture.right < camera.left)
+            assertTrue(camera.right < zoom.left)
         } else {
-            assertEquals(logo.left, chevron.left, 1f)
-            assertTrue(weather.right < zoom.left)
-            assertTrue(chevron.right < axis.left)
+            if (!sideControls) {
+                assertEquals(logo.left, axis.left, 1f)
+                assertTrue(axis.right < weather.left)
+            }
             assertTrue(camera.right < capture.left)
+            assertTrue(zoom.right < camera.left)
         }
     }
 

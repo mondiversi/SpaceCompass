@@ -3,7 +3,7 @@
     <string name="tutorial_title" formatted="false">آموزش</string>
     <string name="tutorial_welcome_title" formatted="false">به Space Compass خوش آمدید</string>
     <string name="tutorial_welcome_body" formatted="false">آسمان و مسیر اجرام را در مکان‌ها و زمان‌های دیگر ببینید. با آموزش تعاملی کنترل‌ها را بشناسید.</string>
-    <string name="tutorial_instruction" formatted="false">برای شناخت عملکرد، کنترل روشن یا نقطه مداری را لمس کنید؛ تنظیمات تغییر نمی‌کنند.</string>
+    <string name="tutorial_instruction" formatted="false">برای شناخت عملکرد، کنترل، دایره یا نقطهٔ مداری را لمس کنید.</string>
     <string name="tutorial_zoom_title" formatted="false">بزرگ‌نمایی</string>
     <string name="tutorial_navigation_title" formatted="false">جرم انتخاب‌شده</string>
     <string name="tutorial_points_title" formatted="false">نقاط مدار</string>
@@ -19,15 +19,15 @@
     <string name="tutorial_transparency" formatted="false">تصاویر اجرام را نیمه‌شفاف کنید تا با دوربین مقایسه شوند.</string>
     <string name="tutorial_zoom" formatted="false">با دکمه یا دو انگشت بزرگ‌نمایی یا کوچک‌نمایی کن.</string>
     <string name="tutorial_capture" formatted="false">تصویری آماده کنید. در پیش‌نمایش، شبکه، برچسب‌ها و موقعیت را انتخاب کنید؛ در آسمان و کرهٔ زمین بین کادر و پانوراما جابه‌جا شوید.</string>
-    <string name="tutorial_panels" formatted="false">پنل‌های جرم و قطب‌نما را جمع یا باز کنید تا آسمان بیشتری ببینید.</string>
+    <string name="tutorial_panels" formatted="false">برای پنهان یا نمایان کردن پنل‌های جرم و قطب‌نما، همراه با نام جرم، یک ناحیهٔ خالی را دو بار لمس کنید.</string>
     <string name="tutorial_antipodes" formatted="false">برای نمایش یا پنهان کردن نقاط مقابل ضربه بزنید. برای لغو انتخاب همهٔ نقاط نگه دارید.</string>
     <string name="tutorial_navigation" formatted="false">میان اجرام انتخاب‌شده حرکت کنید. پنل جرم فعال و رنگ مسیر آن را نشان می‌دهد.</string>
     <string name="tutorial_observatory" formatted="false">داده‌ها، مسیرها، ارتفاع‌های مهم، رویدادها و لحظه‌های شخصی جرم را باز می‌کند.</string>
     <string name="tutorial_daily" formatted="false">مسیر، ساعت‌ها، ارتفاع‌ها و نقاط قابل انتخاب را ببینید. رویدادهای آینده می‌توانند یادآور داشته باشند.</string>
     <string name="tutorial_gps" formatted="false">مکان واقعی، ارتفاع GPS، جهت و آب‌وهوا را مستقل از Location ببینید.</string>
     <string name="tutorial_points" formatted="false">نقطه‌ای را انتخاب یا لغو انتخاب کنید. نشانه را روی آن ببرید تا زمان، T، سمت و ارتفاع را ببینید.</string>
-    <string name="tutorial_reticle_title" formatted="false">زمان و رابط کاربری</string>
-    <string name="tutorial_reticle" formatted="false">برای توقف یا ادامهٔ زمان، فضای خالی را لمس کنید. با دو بار لمس، رابط کاربری و پنل‌ها را نمایش دهید یا پنهان کنید. نشانه‌گیر نمایان می‌ماند.</string>
+    <string name="tutorial_reticle_title" formatted="false">زمان و پنل‌ها</string>
+    <string name="tutorial_reticle" formatted="false">برای توقف یا ادامهٔ زمان، ناحیه‌ای خالی را لمس کنید. برای پنهان یا نمایان کردن پنل‌ها دو بار لمس کنید.</string>
     <string name="tutorial_reminder" formatted="false">برای رویداد آینده مجاز، زنگ یا تقویم Android را باز کنید. رویدادهای گذشته و نقطه فعلی شامل نمی‌شوند.</string>
     <string name="tutorial_status_title" formatted="false">وضعیت و بازیابی</string>
     <string name="tutorial_status" formatted="false">وضعیت و اقدامات موجود برای موقعیت، هواشناسی و داده‌های مداری را بررسی کنید.</string>

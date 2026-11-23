@@ -127,9 +127,9 @@ internal fun SpaceCompassGlobeView(snapshot: SpaceCompassPanoramaSnapshot, pose:
         snapshot.activeComparisonId,snapshot.showSkyReferences,snapshot.showGrid,snapshot.showGridNumbers,snapshot.gridOpacityPercent,selection,snapshot.formatting) {
         value=withContext(Dispatchers.Default) {
             val targets=mutableListOf<Pair<SpaceCompassGlobeTrack,SpaceCompassGlobeDot>>()
-            val gridPalette=spaceCompassGridPalette(snapshot)
+            val gridPalette=spaceCompassWeatherGridPalette(snapshot,enabled=sky)
             val scene=JSONObject().apply {
-                put("gridStyle",JSONArray(listOf(spaceCompassGridCss(gridPalette.liveLineArgb),spaceCompassGridCss(gridPalette.liveShadowArgb))))
+                put("gridStyle",JSONArray(listOf(spaceCompassGridCss(gridPalette.liveLineArgb))))
                 put("extent",model?.extent ?: 1.55);put("dark",dark)
                 put("sky",sky);put("skyCenter",snapshot.center.azimuth)
                 put("starMap",starMap ?: "")

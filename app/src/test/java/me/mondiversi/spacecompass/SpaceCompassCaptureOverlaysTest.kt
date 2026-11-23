@@ -29,7 +29,7 @@ class SpaceCompassCaptureOverlaysTest {
     @Test fun firstInstallEnablesOnlyTheGrid() {
         val defaults = SpaceCompassCaptureOverlays.fromSnapshot(null)
         assertTrue(defaults.grid)
-        assertEquals(80,defaults.opacityPercent)
+        assertEquals(50,defaults.opacityPercent)
         assertFalse(defaults.references)
         assertEquals(SpaceCompassCaptureOverlays(), defaults)
     }
@@ -60,7 +60,7 @@ class SpaceCompassCaptureOverlaysTest {
 
     @Test fun rotatingThePreviewRestoresBothAppliedChoicesTogether() {
         val original = SpaceCompassCaptureOverlays(false, true)
-        val restored = spaceCompassCaptureOverlaysSaver.restore(listOf(original.grid, original.references))
+        val restored = spaceCompassCaptureOverlaysSaver.restore(listOf(original.grid, original.references, original.numbers, original.opacityPercent))
         assertEquals(original, restored)
     }
 
@@ -69,7 +69,7 @@ class SpaceCompassCaptureOverlaysTest {
             val source=snapshot().copy(showGrid=grid,showSkyReferences=references,showGridNumbers=numbers)
             val captured=SpaceCompassCaptureOverlays.fromSnapshot(source)
             assertEquals(numbers,captured.numbers)
-            assertEquals(captured,spaceCompassCaptureOverlaysSaver.restore(listOf(grid,references,numbers)))
+            assertEquals(captured,spaceCompassCaptureOverlaysSaver.restore(listOf(grid,references,numbers,captured.opacityPercent)))
             val edited=captured.copy(numbers=!numbers).applyTo(source)
             assertEquals(!numbers,edited.showGridNumbers)
             assertEquals(source,edited.copy(showGridNumbers=numbers))

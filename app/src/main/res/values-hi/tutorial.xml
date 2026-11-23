@@ -3,7 +3,7 @@
     <string name="tutorial_title" formatted="false">ट्यूटोरियल</string>
     <string name="tutorial_welcome_title" formatted="false">Space Compass में आपका स्वागत है</string>
     <string name="tutorial_welcome_body" formatted="false">अलग स्थानों और समयों से आकाश और खगोलीय पिंडों के पथ देखें। इंटरैक्टिव ट्यूटोरियल में मुख्य नियंत्रण जानें।</string>
-    <string name="tutorial_instruction" formatted="false">बिना सेटिंग बदले उसका काम जानने के लिए किसी उभरे नियंत्रण या कक्षा बिंदु को छुएँ।</string>
+    <string name="tutorial_instruction" formatted="false">उसका काम जानने के लिए किसी नियंत्रण, वृत्त या कक्षा बिंदु को छुएँ।</string>
     <string name="tutorial_zoom_title" formatted="false">ज़ूम</string>
     <string name="tutorial_navigation_title" formatted="false">चुना गया पिंड</string>
     <string name="tutorial_points_title" formatted="false">कक्षा बिंदु</string>
@@ -19,15 +19,15 @@
     <string name="tutorial_transparency" formatted="false">कैमरे से मिलान के लिए पिंडों के चित्र पारदर्शी बनाएँ।</string>
     <string name="tutorial_zoom" formatted="false">बटन या दो उँगलियों से ज़ूम बढ़ाएँ या घटाएँ।</string>
     <string name="tutorial_capture" formatted="false">एक चित्र तैयार करें। पूर्वावलोकन में ग्रिड, लेबल और स्थान चुनें; आकाश और ग्लोब में फ़्रेम और पैनोरमा बदलें।</string>
-    <string name="tutorial_panels" formatted="false">आकाश के लिए जगह बनाने को पिंड और कंपास पैनल समेटें या फैलाएँ।</string>
+    <string name="tutorial_panels" formatted="false">वस्तु के नाम सहित वस्तु और कम्पास पैनल छिपाने या दिखाने के लिए खाली जगह दो बार छुएँ।</string>
     <string name="tutorial_antipodes" formatted="false">प्रतिमुख बिंदु दिखाने या छिपाने के लिए टैप करें। सभी बिंदुओं का चयन हटाने के लिए दबाए रखें।</string>
     <string name="tutorial_navigation" formatted="false">चुने पिंडों में आगे-पीछे जाएँ। पैनल सक्रिय पिंड और पथ के रंग दिखाता है।</string>
     <string name="tutorial_observatory" formatted="false">पिंड के डेटा, पथ, मुख्य ऊँचाइयाँ, घटनाएँ और व्यक्तिगत क्षण खोलें।</string>
     <string name="tutorial_daily" formatted="false">पथ, समय, ऊँचाई और चुनने योग्य बिंदु देखें। भविष्य की घटनाओं में अनुस्मारक लगाया जा सकता है।</string>
     <string name="tutorial_gps" formatted="false">Location से स्वतंत्र वास्तविक स्थान, GPS ऊँचाई, दिशा और मौसम देखें।</string>
     <string name="tutorial_points" formatted="false">बिंदु चुनें या चयन हटाएँ। समय, T, दिगंश और उन्नयन देखने के लिए निशाना लगाएँ।</string>
-    <string name="tutorial_reticle_title" formatted="false">समय और इंटरफ़ेस</string>
-    <string name="tutorial_reticle" formatted="false">समय रोकने या चलाने के लिए खाली जगह छुएँ। दो बार छूने से इंटरफ़ेस और पैनल दिखते या छिपते हैं। निशाना दिखाई देता रहेगा।</string>
+    <string name="tutorial_reticle_title" formatted="false">समय और पैनल</string>
+    <string name="tutorial_reticle" formatted="false">समय रोकने या फिर चलाने के लिए खाली जगह छुएँ। पैनल छिपाने या दिखाने के लिए दो बार छुएँ।</string>
     <string name="tutorial_reminder" formatted="false">योग्य भविष्य की घटना के लिए Android अलार्म या कैलेंडर खोलें। बीती घटनाओं और वर्तमान बिंदु के लिए अलार्म नहीं।</string>
     <string name="tutorial_status_title" formatted="false">स्थिति और पुनर्प्राप्ति</string>
     <string name="tutorial_status" formatted="false">स्थिति, मौसम और कक्षीय डेटा की स्थिति व उपलब्ध कार्रवाइयाँ देखें।</string>

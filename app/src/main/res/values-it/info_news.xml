@@ -1,9 +1,9 @@
 <resources>
     <string name="info_news_title">Ultime novità · %1$s</string>
-    <string name="info_news_star_sky" formatted="false">Il mirino bianco ha ora una trasparenza del 50%.</string>
-    <string name="info_news_texture_downloads" formatted="false">Il doppio tocco nasconde icone e isole mantenendo il mirino visibile.</string>
-    <string name="info_news_weather" formatted="false">In verticale, il mirino resta rialzato anche con l’interfaccia nascosta, come con le isole compatte.</string>
-    <string name="info_news_viewer_zoom" formatted="false">Più spazio sotto l’ultima riga dell’isola oggetto, in linea con la bussola.</string>
-    <string name="info_news_settings" formatted="false">Dettagli posizione diventa Posizione reale e continua a mostrare la posizione effettiva.</string>
-    <string name="info_news_catalog" formatted="false">Il tutorial spiega il nuovo comportamento dell’interfaccia.</string>
+    <string name="info_news_star_sky" formatted="false">Tocca due volte un’area libera per nascondere o mostrare le isole oggetto e bussola, incluso il nome dell’oggetto. Comandi e mirino restano visibili.</string>
+    <string name="info_news_texture_downloads" formatted="false">Comandi della vista riorganizzati e linea dell’orizzonte in fotocamera sottile la metà rispetto a prima.</string>
+    <string name="info_news_weather" formatted="false">L’opacità predefinita della griglia è del 50%. Il cursore aggiorna subito il valore. Griglia e mirino non hanno contorno; l’opacità del mirino è dell’80%.</string>
+    <string name="info_news_viewer_zoom" formatted="false">Nebbia, nuvoloso e neve di giorno usano la griglia nera, sopra e sotto l’orizzonte.</string>
+    <string name="info_news_settings" formatted="false">Pop-up più compatti, azioni nella barra del titolo in orizzontale e icona di chiusura. Le scelte restano anche ruotando lo schermo.</string>
+    <string name="info_news_catalog" formatted="false">Le liste dello zoom restano leggibili sopra le isole. Il tutorial evidenzia un’area libera fissa e spiega i comandi in uso.</string>
 </resources>

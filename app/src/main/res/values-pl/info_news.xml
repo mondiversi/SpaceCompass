@@ -1,9 +1,9 @@
 <resources>
     <string name="info_news_title">Ostatnie nowości · %1$s</string>
-    <string name="info_news_star_sky" formatted="false">Przezroczystość białego celownika wynosi teraz 50%.</string>
-    <string name="info_news_texture_downloads" formatted="false">Dwa dotknięcia ukrywają ikony i panele, pozostawiając widoczny celownik.</string>
-    <string name="info_news_weather" formatted="false">W pionie celownik pozostaje wyżej po ukryciu interfejsu, jak przy zwiniętych panelach.</string>
-    <string name="info_news_viewer_zoom" formatted="false">Więcej miejsca pod ostatnim wierszem panelu obiektu, tak jak w panelu kompasu.</string>
-    <string name="info_news_settings" formatted="false">Szczegóły położenia noszą teraz nazwę Rzeczywista pozycja i nadal pokazują faktyczne położenie.</string>
-    <string name="info_news_catalog" formatted="false">Samouczek wyjaśnia nowy gest interfejsu.</string>
+    <string name="info_news_star_sky" formatted="false">Dotknij dwukrotnie wolnego miejsca, aby ukryć lub pokazać panele obiektu i kompasu wraz z nazwą obiektu. Przyciski i celownik pozostają widoczne.</string>
+    <string name="info_news_texture_downloads" formatted="false">Nowy układ przycisków oraz linia horyzontu aparatu o połowę cieńsza niż wcześniej.</string>
+    <string name="info_news_weather" formatted="false">Domyślne krycie siatki wynosi 50%. Suwak natychmiast aktualizuje wartość. Siatka i celownik nie mają obrysu; krycie celownika wynosi 80%.</string>
+    <string name="info_news_viewer_zoom" formatted="false">Mgła, zachmurzenie i śnieg w dzień powodują wyświetlanie czarnych linii siatki nad i pod horyzontem.</string>
+    <string name="info_news_settings" formatted="false">Mniejsze okna, przyciski obok tytułu i ikona zamknięcia w poziomie. Wybory pozostają zachowane po obróceniu ekranu.</string>
+    <string name="info_news_catalog" formatted="false">Menu powiększenia pozostają czytelne nad panelami. Samouczek wskazuje stałe wolne miejsce i objaśnia aktualne przyciski.</string>
 </resources>

@@ -6,7 +6,7 @@ import kotlin.math.hypot
 /** A quiet angular frame over the full JPEG; no image crop, rotation or invented 360-degree axis. */
 internal fun drawSpaceCompassCameraAngularGrid(canvas: Canvas, width: Int, height: Int,
     orientation: SpaceCompassSunOrientation, perspective: SpaceCompassPerspective,
-    snapshot: SpaceCompassPanoramaSnapshot, scale: Float, captionHeight: Float, occupied: MutableList<RectF>) {
+    snapshot: SpaceCompassPanoramaSnapshot, scale: Float, captionHeight: Float, occupied: MutableList<RectF>, darkGrid: Boolean = false) {
     // Reserve the complete top-axis glyph (ascent, padding and shadow) below the caption.
     val left = 96f * scale; val top = captionHeight + 42f * scale
     val right = width - 96f * scale; val bottom = height - 42f * scale
@@ -15,7 +15,7 @@ internal fun drawSpaceCompassCameraAngularGrid(canvas: Canvas, width: Int, heigh
     val grid = spaceCompassCameraAngularGrid(orientation, perspective, width.toDouble(), height.toDouble(), frame, includeBorderTicks = snapshot.showGridNumbers)
     val paint = Paint(Paint.ANTI_ALIAS_FLAG).apply { style = Paint.Style.STROKE; strokeWidth = scale }
     val gridWidth = SpaceCompassAngularGridAppearance.lineWidth(width,height)
-    val gridPalette=spaceCompassGridPalette(snapshot)
+    val gridPalette=spaceCompassAngularGridPalette(darkGrid,snapshot.gridOpacityPercent)
     for (line in grid.lines) {
         // The shared photo renderer paints the zero-elevation horizon once, with the major-line style.
         if(line.axis==SpaceCompassCameraGridAxis.ELEVATION && kotlin.math.abs(line.degrees)<1e-9) continue
@@ -25,7 +25,6 @@ internal fun drawSpaceCompassCameraAngularGrid(canvas: Canvas, width: Int, heigh
                 path.moveTo(segment.start.x.toFloat(), segment.start.y.toFloat())
             path.lineTo(segment.end.x.toFloat(), segment.end.y.toFloat()); end = segment.end
         }
-        paint.color = gridPalette.shadowArgb; paint.strokeWidth = 2f * gridWidth; canvas.drawPath(path, paint)
         paint.color = gridPalette.lineArgb; paint.strokeWidth = gridWidth; canvas.drawPath(path, paint)
     }
     paint.color = gridPalette.majorArgb; paint.strokeWidth = gridWidth

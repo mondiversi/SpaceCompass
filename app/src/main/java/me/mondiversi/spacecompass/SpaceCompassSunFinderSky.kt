@@ -102,16 +102,17 @@ internal fun SpaceCompassSunPointingViewport(
     sideControls: Boolean = false, activeComparisonId: String? = null,
     showFloatingControls: Boolean = true,
     scenarioMomentLabel: String? = null,
-    onToggleFloatingControls: (() -> Unit)? = null,
+    panelsExpanded: Boolean = true,
+    onTogglePanels: (() -> Unit)? = null,
     sceneContent: (@Composable (Modifier, List<SpaceCompassSunSceneFrame>,SpaceCompassSunSceneFrame,androidx.compose.ui.unit.Dp,SpaceCompassSunSceneFrame) -> Unit)? = null
 ) {
     val timeAction = stringResource(if (timePaused) R.string.sky_time_resume else R.string.sky_time_pause)
-    val controlsAction = stringResource(if (showFloatingControls) R.string.sky_controls_hide else R.string.sky_controls_show)
+    val panelsAction = stringResource(if (panelsExpanded) R.string.main_details_hide else R.string.main_details_show)
     BoxWithConstraints(modifier.testTag("sun-finder-sky").spaceCompassTutorialViewport().semantics {
         contentDescription = description
         customActions = buildList {
             if (onToggleTime != null) add(CustomAccessibilityAction(timeAction) { onToggleTime(); true })
-            if (onToggleFloatingControls != null) add(CustomAccessibilityAction(controlsAction) { onToggleFloatingControls(); true })
+            if (onTogglePanels != null) add(CustomAccessibilityAction(panelsAction) { onTogglePanels(); true })
         }
     }) {
         val comparisonOverlays = LocalSpaceCompassComparisonOverlays.current
@@ -138,8 +139,8 @@ internal fun SpaceCompassSunPointingViewport(
         var scenarioMomentSize by remember(scenarioMomentLabel != null) { mutableStateOf(IntSize.Zero) }
         val sideControlsCenterY = (topStartActionsSize.height + height - bottomStartActionsSize.height) / 2
         val centerActionsTop = if (sideControls) with(density) {
-            // Centre the column in the actual gap between logo and panel chevron.
-            (sideControlsCenterY - centerActionsSize.height / 2).coerceAtLeast(0.0).toFloat().toDp()
+            // Bottom-anchor compact navigation; the same frame also shields scene gestures/captions.
+            (height - centerActionsSize.height).coerceAtLeast(0.0).toFloat().toDp()
         } else topContentInset
         val scenarioMomentTop = if (showFloatingControls && !sideControls && topCenterActions != null) {
             val controlHeight = with(density) { centerActionsSize.height.toDp() }
@@ -308,12 +309,10 @@ internal fun SpaceCompassSunPointingViewport(
             } }
             if (showReticle) Canvas(Modifier.fillMaxSize().testTag("sun-finder-reticle")) {
                 val aim = Offset(reticleCenter.x.toFloat(), reticleCenter.y.toFloat())
-                val reticle = Color.White.copy(alpha = 0.50f)
-                drawCircle(Color.Black.copy(alpha = 0.30f), SPACE_COMPASS_CELESTIAL_RETICLE_RADIUS_DP.dp.toPx(), aim, style = Stroke(1.92.dp.toPx()))
+                val reticle = Color.White.copy(alpha = 0.80f)
                 drawCircle(reticle, SPACE_COMPASS_CELESTIAL_RETICLE_RADIUS_DP.dp.toPx(), aim, style = Stroke(0.96.dp.toPx()))
                 val inner = 24.dp.toPx(); val outer = 32.dp.toPx()
                 listOf(Offset(1f, 0f), Offset(-1f, 0f), Offset(0f, 1f), Offset(0f, -1f)).forEach {
-                    drawLine(Color.Black.copy(alpha = 0.30f), aim + it * inner, aim + it * outer, 1.92.dp.toPx(), StrokeCap.Round)
                     drawLine(reticle, aim + it * inner, aim + it * outer, 0.96.dp.toPx(), StrokeCap.Round)
                 }
             }
@@ -322,7 +321,7 @@ internal fun SpaceCompassSunPointingViewport(
                 primaryText, secondaryText, backgroundColor, exclusions,
                 scenePerspective, paths, pinnedTargets = pinned, hitExclusions = titleTouchExclusions,
                 showCaptions = showReticle, onEmptySpaceTap = onToggleTime,
-                onEmptySpaceDoubleTap = onToggleFloatingControls,
+                onEmptySpaceDoubleTap = onTogglePanels,
                 antipodeTargets = antipodes, drawAntipodeMarkers = drawScene) {
                 // Only thumbnails have small local targets; they never intercept another path's whole viewport.
                 SpaceCompassTemporalComparisonLayer(comparisonOverlays, orientation.takeIf { compassReliable }, scenePerspective,

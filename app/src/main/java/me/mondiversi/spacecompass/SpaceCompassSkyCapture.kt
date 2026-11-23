@@ -44,7 +44,7 @@ internal fun renderSpaceCompassSkyFrame(context: Context,snapshot: SpaceCompassP
     }
     val small=Bitmap.createBitmap(pixels,smallW,smallH,Bitmap.Config.ARGB_8888)
     val background=Bitmap.createScaledBitmap(small,width,height,true)
-    try { return renderSpaceCompassProjectedCapture(context,background,frame.perspective,frame.orientation,true,snapshot) }
+    try { return renderSpaceCompassProjectedCapture(context,background,frame.perspective,frame.orientation,true,snapshot,simulatedSky=true) }
     finally { if(background!==small) background.recycle();small.recycle() }
 }
 

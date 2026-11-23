@@ -4,6 +4,7 @@ import android.content.res.Configuration
 import androidx.compose.foundation.isSystemInDarkTheme
 import androidx.compose.foundation.Canvas
 import androidx.compose.foundation.layout.Box
+import androidx.compose.foundation.layout.BoxWithConstraints
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
@@ -12,6 +13,7 @@ import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.width
+import androidx.compose.foundation.layout.widthIn
 import androidx.compose.foundation.verticalScroll
 import androidx.compose.material3.AlertDialogDefaults
 import androidx.compose.material3.LocalContentColor
@@ -70,10 +72,10 @@ internal fun SpaceCompassAlertDialog(
     rotateContent: Boolean = false,
     confirmButtonFirst: Boolean = false
 ) {
-    // Choice/information dialogs without actions always expose the same themed Close footer.
+    // Choice/information dialogs expose a Close footer in portrait and the header X in landscape.
     val footerConfirmButton: (@Composable () -> Unit)? = confirmButton ?: if (dismissButton == null) {
         { SpaceCompassDialogActionButton(stringResource(R.string.close), onDismissRequest,
-            Modifier.testTag("dialog-close"), tone = SpaceCompassDialogActionTone.NEUTRAL) }
+            Modifier.testTag("dialog-close"), tone = SpaceCompassDialogActionTone.NEUTRAL, closeAction = true) }
     } else null
     // A Dialog owns another Android Compose view. Restore the host's density
     // AND logical configuration inside that window, before measuring anything.
@@ -87,6 +89,9 @@ internal fun SpaceCompassAlertDialog(
             }
         }
     }
+    val landscapeLayout = hostConfiguration.screenWidthDp > hostConfiguration.screenHeightDp
+    val maximumDialogHeight = (hostConfiguration.screenHeightDp.dp -
+        if (landscapeLayout) 16.dp else 48.dp).coerceAtLeast(1.dp)
     // Use the full available window width on every device, without platform side margins.
     val windowProperties = DialogProperties(
         dismissOnBackPress = properties.dismissOnBackPress,
@@ -99,12 +104,30 @@ internal fun SpaceCompassAlertDialog(
     // All popup bodies share one bounded scroll viewport. Titles and actions
     // stay fixed, and the scrollbar is drawn at the window edge only on overflow.
     val scrollbar = rememberSpaceCompassDialogScrollbar(textContentColor.copy(alpha = 0.58f),
-        maximumHeight = (hostConfiguration.screenHeightDp.dp - 48.dp).coerceAtLeast(1.dp))
+        maximumHeight = maximumDialogHeight)
+    val displayedActions: @Composable (Modifier) -> Unit = { actionModifier ->
+        CompositionLocalProvider(
+            LocalContentColor provides MaterialTheme.colorScheme.primary,
+            LocalTextStyle provides MaterialTheme.typography.labelLarge,
+            LocalSpaceCompassDialogHideCloseAction provides landscapeLayout
+        ) {
+            SpaceCompassDialogActionFlow(actionModifier) {
+                if (confirmButtonFirst) footerConfirmButton?.invoke()
+                dismissButton?.invoke()
+                if (!confirmButtonFirst) footerConfirmButton?.invoke()
+            }
+        }
+    }
     val displayedTitle: @Composable () -> Unit = {
-        SpaceCompassClosableDialogTitleContent(
-            onDismiss = onDismissRequest,
-            title = title ?: {}
-        )
+        if (landscapeLayout) {
+            SpaceCompassLandscapeDialogTitleContent(title = title ?: {},
+                actions = { displayedActions(Modifier) }, onDismiss = onDismissRequest)
+        } else {
+            SpaceCompassClosableDialogTitleContent(
+                onDismiss = onDismissRequest,
+                title = title ?: {}
+            )
+        }
     }
     val displayedText: (@Composable () -> Unit)? = text?.let { body ->
         {
@@ -146,17 +169,22 @@ internal fun SpaceCompassAlertDialog(
                     modifier = modifier
                         .fillMaxWidth()
                         .then(if (scrollContent) scrollbar.dialogModifier else Modifier.heightIn(
-                            max = (hostConfiguration.screenHeightDp.dp - 48.dp).coerceAtLeast(1.dp))),
+                            max = maximumDialogHeight)),
                     shape = shape,
                     color = containerColor,
                     contentColor = textContentColor,
                     tonalElevation = tonalElevation
                 ) {
-                    // Keep the original content inset inside the full-width window.
-                    // Host density scales it on tablets without changing touch targets.
-                    Column(Modifier.padding(24.dp)) {
+                    // Landscape uses the available width and puts actions in the title row.
+                    // Portrait keeps its top inset; the action footer uses compact bottom spacing.
+                    Column(Modifier.padding(
+                        start = if (landscapeLayout) 16.dp else 24.dp,
+                        end = if (landscapeLayout) 16.dp else 24.dp,
+                        top = if (landscapeLayout) 8.dp else 24.dp,
+                        bottom = if (landscapeLayout) 8.dp else 12.dp
+                    )) {
                         if (icon != null) {
-                            Box(Modifier.align(Alignment.CenterHorizontally).padding(bottom = 16.dp)) {
+                            Box(Modifier.align(Alignment.CenterHorizontally).padding(bottom = if (landscapeLayout) 8.dp else 16.dp)) {
                                 CompositionLocalProvider(LocalContentColor provides iconContentColor) {
                                     icon()
                                 }
@@ -166,7 +194,7 @@ internal fun SpaceCompassAlertDialog(
                             LocalContentColor provides titleContentColor,
                             LocalTextStyle provides MaterialTheme.typography.headlineSmall
                         ) {
-                            Box(Modifier.fillMaxWidth().padding(bottom = 16.dp)) {
+                            Box(Modifier.fillMaxWidth().padding(bottom = if (landscapeLayout) 8.dp else 16.dp)) {
                                 displayedTitle()
                             }
                         }
@@ -176,27 +204,36 @@ internal fun SpaceCompassAlertDialog(
                                 LocalTextStyle provides MaterialTheme.typography.bodyMedium
                             ) {
                                 Box(Modifier.weight(1f, fill = false).padding(
-                                    bottom = if (footerConfirmButton != null || dismissButton != null) 24.dp else 0.dp
+                                    bottom = if (!landscapeLayout && (footerConfirmButton != null || dismissButton != null)) 12.dp else 0.dp
                                 )) {
                                     displayedText()
                                 }
                             }
                         }
-                        if (footerConfirmButton != null || dismissButton != null) {
-                            CompositionLocalProvider(
-                                LocalContentColor provides MaterialTheme.colorScheme.primary,
-                                LocalTextStyle provides MaterialTheme.typography.labelLarge
-                            ) {
-                                SpaceCompassDialogActionFlow(Modifier.align(Alignment.End)) {
-                                    if (confirmButtonFirst) footerConfirmButton?.invoke()
-                                    dismissButton?.invoke()
-                                    if (!confirmButtonFirst) footerConfirmButton?.invoke()
-                                }
-                            }
+                        if (!landscapeLayout && (footerConfirmButton != null || dismissButton != null)) {
+                            displayedActions(Modifier.align(Alignment.End))
                         }
                     }
                 }
             }
+        }
+    }
+}
+
+/** Measure actions first so long titles wrap while every action remains reachable. */
+@Composable
+private fun SpaceCompassLandscapeDialogTitleContent(
+    title: @Composable () -> Unit,
+    actions: @Composable () -> Unit,
+    onDismiss: () -> Unit
+) {
+    BoxWithConstraints(Modifier.fillMaxWidth().testTag("dialog-landscape-header")) {
+        val maximumActionsWidth = (maxWidth * .6f).coerceAtLeast(48.dp)
+        Row(Modifier.fillMaxWidth(), verticalAlignment = Alignment.CenterVertically) {
+            Box(Modifier.weight(1f).padding(end = 12.dp)) { title() }
+            Box(Modifier.widthIn(max = maximumActionsWidth)) { actions() }
+            Spacer(Modifier.width(6.dp))
+            SpaceCompassDialogCloseIcon(onDismiss)
         }
     }
 }
@@ -257,45 +294,30 @@ private fun SpaceCompassClosableDialogTitleContent(
     onDismiss: () -> Unit,
     title: @Composable () -> Unit
 ) {
+    Row(Modifier.fillMaxWidth(), verticalAlignment = Alignment.CenterVertically) {
+        Row(Modifier.weight(1f)) { title() }
+        Spacer(Modifier.width(6.dp))
+        SpaceCompassDialogCloseIcon(onDismiss)
+    }
+}
+
+/** Keep the close affordance identical in portrait and landscape headers. */
+@Composable
+private fun SpaceCompassDialogCloseIcon(onDismiss: () -> Unit) {
     val closeDescription = stringResource(R.string.close)
     val iconColor = LocalContentColor.current
-    Row(
-        modifier = Modifier.fillMaxWidth(),
-        verticalAlignment = Alignment.CenterVertically
+    SpaceCompassAccessibleIconButton(
+        contentDescription = closeDescription,
+        onClick = onDismiss,
+        modifier = Modifier.size(36.dp)
     ) {
-        Row(modifier = Modifier.weight(1f)) {
-            title()
-        }
-        Spacer(Modifier.width(6.dp))
-        SpaceCompassAccessibleIconButton(
-            contentDescription = closeDescription,
-            onClick = onDismiss,
-            modifier =
-                Modifier
-                    .size(36.dp)
-        ) {
-            Canvas(
-                Modifier
-                    .size(18.dp)
-                    .graphicsLayer(alpha = iconColor.alpha)
-            ) {
-                val iconColor = iconColor.copy(alpha = 1f)
-                val stroke = 2.2.dp.toPx()
-                drawLine(
-                    color = iconColor,
-                    start = Offset(size.width * 0.22f, size.height * 0.22f),
-                    end = Offset(size.width * 0.78f, size.height * 0.78f),
-                    strokeWidth = stroke,
-                    cap = StrokeCap.Round
-                )
-                drawLine(
-                    color = iconColor,
-                    start = Offset(size.width * 0.78f, size.height * 0.22f),
-                    end = Offset(size.width * 0.22f, size.height * 0.78f),
-                    strokeWidth = stroke,
-                    cap = StrokeCap.Round
-                )
-            }
+        Canvas(Modifier.size(18.dp).graphicsLayer(alpha = iconColor.alpha)) {
+            val ink = iconColor.copy(alpha = 1f)
+            val stroke = 2.2.dp.toPx()
+            drawLine(ink, Offset(size.width * .22f, size.height * .22f),
+                Offset(size.width * .78f, size.height * .78f), stroke, StrokeCap.Round)
+            drawLine(ink, Offset(size.width * .78f, size.height * .22f),
+                Offset(size.width * .22f, size.height * .78f), stroke, StrokeCap.Round)
         }
     }
 }

@@ -1,9 +1,9 @@
 <resources>
     <string name="info_news_title">हाल के बदलाव · %1$s</string>
-    <string name="info_news_star_sky" formatted="false">सफ़ेद निशाने की पारदर्शिता अब 50% है।</string>
-    <string name="info_news_texture_downloads" formatted="false">दो बार छूने से आइकन और पैनल छिपते हैं, लेकिन निशाना दिखाई देता रहता है।</string>
-    <string name="info_news_weather" formatted="false">पोर्ट्रेट में इंटरफ़ेस छिपाने पर निशाना ऊपर रहता है, जैसे संकुचित पैनल के साथ।</string>
-    <string name="info_news_viewer_zoom" formatted="false">वस्तु पैनल की अंतिम पंक्ति के नीचे अधिक जगह, कम्पास पैनल के अनुरूप।</string>
-    <string name="info_news_settings" formatted="false">स्थान का विवरण अब वास्तविक स्थान कहलाता है और आपका असली स्थान दिखाता रहता है।</string>
-    <string name="info_news_catalog" formatted="false">ट्यूटोरियल इंटरफ़ेस के नए स्पर्श संकेत को समझाता है।</string>
+    <string name="info_news_star_sky" formatted="false">वस्तु के नाम सहित वस्तु और कम्पास पैनल छिपाने या दिखाने के लिए खाली जगह दो बार छुएँ। नियंत्रण और निशाना दिखाई देते रहते हैं।</string>
+    <string name="info_news_texture_downloads" formatted="false">नियंत्रणों का नया क्रम और कैमरे में क्षितिज रेखा की मोटाई पहले की आधी।</string>
+    <string name="info_news_weather" formatted="false">ग्रिड की डिफ़ॉल्ट अपारदर्शिता 50% है। स्लाइडर तुरंत मान दिखाता है। ग्रिड और निशाने का बाहरी किनारा नहीं है; निशाने की अपारदर्शिता 80% है।</string>
+    <string name="info_news_viewer_zoom" formatted="false">दिन में कोहरा, बादल या बर्फ़ होने पर क्षितिज के ऊपर और नीचे ग्रिड रेखाएँ काली होती हैं।</string>
+    <string name="info_news_settings" formatted="false">छोटे पॉप-अप, लैंडस्केप में शीर्षक के पास कार्रवाई बटन और बंद करने का आइकन। स्क्रीन घुमाने पर विकल्प बने रहते हैं।</string>
+    <string name="info_news_catalog" formatted="false">ज़ूम मेनू पैनल के ऊपर साफ़ दिखते हैं। ट्यूटोरियल एक निश्चित खाली जगह दिखाता है और वर्तमान नियंत्रण समझाता है।</string>
 </resources>

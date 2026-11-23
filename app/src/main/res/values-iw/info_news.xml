@@ -1,9 +1,9 @@
 <resources>
     <string name="info_news_title">החידושים האחרונים · %1$s</string>
-    <string name="info_news_star_sky" formatted="false">שקיפות הכוונת הלבנה היא כעת 50%.</string>
-    <string name="info_news_texture_downloads" formatted="false">הקשה כפולה מסתירה סמלים ולוחות ומשאירה את הכוונת גלויה.</string>
-    <string name="info_news_weather" formatted="false">בתצוגה אנכית הכוונת נשארת מוגבהת גם כשהממשק מוסתר, כמו עם לוחות מכווצים.</string>
-    <string name="info_news_viewer_zoom" formatted="false">נוסף מרווח מתחת לשורה האחרונה בלוח העצם, בהתאמה ללוח המצפן.</string>
-    <string name="info_news_settings" formatted="false">פרטי מיקום נקראים כעת המיקום האמיתי וממשיכים להציג את מיקומך בפועל.</string>
-    <string name="info_news_catalog" formatted="false">המדריך מסביר את מחוות הממשק המעודכנת.</string>
+    <string name="info_news_star_sky" formatted="false">הקישו פעמיים באזור פנוי כדי להסתיר או להציג את לוחות העצם והמצפן, כולל שם העצם. הפקדים והכוונת נשארים גלויים.</string>
+    <string name="info_news_texture_downloads" formatted="false">הפקדים סודרו מחדש ועובי קו האופק במצלמה הוא מחצית מהעובי הקודם.</string>
+    <string name="info_news_weather" formatted="false">אטימות הרשת כברירת מחדל היא 50%. המחוון מעדכן את הערך מיד. לרשת ולכוונת אין קו מתאר; אטימות הכוונת היא 80%.</string>
+    <string name="info_news_viewer_zoom" formatted="false">בערפל, שמיים מעוננים ושלג ביום, קווי הרשת שחורים מעל האופק ומתחתיו.</string>
+    <string name="info_news_settings" formatted="false">חלונות קומפקטיים יותר, פעולות ליד הכותרת וסמל סגירה בתצוגה אופקית. הבחירות נשמרות בעת סיבוב המסך.</string>
+    <string name="info_news_catalog" formatted="false">תפריטי הזום נשארים קריאים מעל הלוחות. המדריך מסמן אזור פנוי קבוע ומסביר את הפקדים הנוכחיים.</string>
 </resources>

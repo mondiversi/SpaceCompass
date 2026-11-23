@@ -1,6 +1,6 @@
 <resources>
-    <string name="tutorial_mode_sky_frame" formatted="false">تابع السماء بتحريك الهاتف. اختر الطقس في العرض.</string>
-    <string name="tutorial_mode_sky_panorama" formatted="false">استكشف السماء بالسحب. اختر التسميات من زرها والطقس في العرض.</string>
+    <string name="tutorial_mode_sky_frame" formatted="false">تابع السماء بتحريك هاتفك. أظهر الطقس أو أخفه بزر الطقس.</string>
+    <string name="tutorial_mode_sky_panorama" formatted="false">استكشف السماء كاملة بالسحب. استخدم زري التسميات والطقس.</string>
     <string name="tutorial_mode_camera" formatted="false">ضع الأجرام فوق صورة السماء من الكاميرا.</string>
     <string name="tutorial_mode_globe_frame" formatted="false">أدر الأرض لتتبع المسارات والنقاط.</string>
     <string name="tutorial_mode_globe_panorama" formatted="false">استكشف المسارات على خريطة مسطحة للأرض.</string>

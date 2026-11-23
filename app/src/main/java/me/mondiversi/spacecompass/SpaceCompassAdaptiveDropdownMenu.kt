@@ -58,7 +58,9 @@ internal fun SpaceCompassAdaptiveDropdownMenu(
     val configuration = LocalConfiguration.current
     val direction = LocalLayoutDirection.current
     val margin = with(density) { 8.dp.roundToPx() }
-    val visibleWindow = if (centerVerticallyOnAnchor) spaceCompassDropdownWindowBounds() else null
+    val visibleWindow = spaceCompassDropdownWindowBounds()
+    val maximumWidth = with(density) { (visibleWindow.width - margin * 2).coerceAtLeast(1).toDp() }
+    val maximumHeight = with(density) { (visibleWindow.height - margin * 2).coerceAtLeast(1).toDp() }
     val position = remember(margin, centerOnAnchor, centerVerticallyOnAnchor, visibleWindow) {
         SpaceCompassDropdownPositionProvider(margin, centerOnAnchor, centerVerticallyOnAnchor, visibleWindow)
     }
@@ -69,8 +71,9 @@ internal fun SpaceCompassAdaptiveDropdownMenu(
             LocalLayoutDirection provides direction) {
             Surface(
                 modifier = Modifier
-                    .widthIn(max = (configuration.screenWidthDp.dp - 16.dp).coerceAtLeast(1.dp))
-                    .heightIn(max = (configuration.screenHeightDp.dp - 48.dp).coerceAtLeast(1.dp)),
+                    // Popup windows overlay every island, bounded only by the usable app window.
+                    .widthIn(max = maximumWidth)
+                    .heightIn(max = maximumHeight),
                 shape = shape, color = containerColor,
                 tonalElevation = tonalElevation, shadowElevation = MenuDefaults.ShadowElevation
             ) {

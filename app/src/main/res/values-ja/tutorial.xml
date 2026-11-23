@@ -3,7 +3,7 @@
     <string name="tutorial_title" formatted="false">チュートリアル</string>
     <string name="tutorial_welcome_title" formatted="false">Space Compassへようこそ</string>
     <string name="tutorial_welcome_body" formatted="false">さまざまな場所や時刻の空と天体の軌跡を探索できます。対話式チュートリアルで主な操作を確認しましょう。</string>
-    <string name="tutorial_instruction" formatted="false">強調された操作や軌道上の点をタップすると、設定を変えずに機能を確認できます。</string>
+    <string name="tutorial_instruction" formatted="false">操作、円、軌道上の点をタップすると、その機能を確認できます。</string>
     <string name="tutorial_zoom_title" formatted="false">ズーム</string>
     <string name="tutorial_navigation_title" formatted="false">選択中の天体</string>
     <string name="tutorial_points_title" formatted="false">軌道上の点</string>
@@ -19,15 +19,15 @@
     <string name="tutorial_transparency" formatted="false">天体画像を半透明にしてカメラ映像と比較します。</string>
     <string name="tutorial_zoom" formatted="false">ボタンまたは2本の指で拡大・縮小します。</string>
     <string name="tutorial_capture" formatted="false">画像を作成します。プレビューでグリッド、ラベル、位置を選び、空と地球儀ではフレーム表示とパノラマを切り替えます。</string>
-    <string name="tutorial_panels" formatted="false">天体とコンパスのパネルを開閉して空の表示領域を広げます。</string>
+    <string name="tutorial_panels" formatted="false">空いている場所をダブルタップすると、天体名を含む天体とコンパスのパネルを非表示・表示にできます。</string>
     <string name="tutorial_antipodes" formatted="false">タップで対蹠点を表示・非表示にします。長押しですべての点の選択を解除します。</string>
     <string name="tutorial_navigation" formatted="false">選択した天体を切り替えます。パネルには表示中の天体と軌跡の色が表示されます。</string>
     <string name="tutorial_observatory" formatted="false">天体のデータ、軌跡、重要な高度、イベント、個人の時点を開きます。</string>
     <string name="tutorial_daily" formatted="false">軌道、時刻、高度、選択できる点を確認します。未来のイベントには通知を設定できます。</string>
     <string name="tutorial_gps" formatted="false">Locationと無関係に、実際の位置、GPS標高、向き、天気を確認します。</string>
     <string name="tutorial_points" formatted="false">点を選択・解除します。照準を合わせると時刻、T、方位角、高度を確認できます。</string>
-    <string name="tutorial_reticle_title" formatted="false">時間と画面表示</string>
-    <string name="tutorial_reticle" formatted="false">空いている場所をタップすると時間を停止・再開します。ダブルタップで操作ボタンとパネルを表示・非表示にします。照準は表示されたままです。</string>
+    <string name="tutorial_reticle_title" formatted="false">時間とパネル</string>
+    <string name="tutorial_reticle" formatted="false">空いている場所をタップすると時間を一時停止・再開します。 ダブルタップでパネルを非表示・表示にできます。</string>
     <string name="tutorial_reminder" formatted="false">対象となる未来のイベントをAndroidのアラームまたはカレンダーで開きます。過去や現在の点には設定できません。</string>
     <string name="tutorial_status_title" formatted="false">状態と復旧</string>
     <string name="tutorial_status" formatted="false">位置、天気、軌道データの状態と利用できる操作を確認します。</string>
