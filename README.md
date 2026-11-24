@@ -180,7 +180,7 @@ Third-party SGP4 code and image maps retain their respective licenses/credits;
 Astronomy Engine uses MIT, AndroidX uses Apache-2.0 and Leaflet uses BSD-2-Clause.
 Launcher/loading artwork and original illustrations are project assets.
 
-Capture the visible frame in **Sky** or **Globe**, or switch to a complete panorama (a flat map for Globe). Export either image or both together, alongside tables frozen at capture time. Capture grids and labels remain configurable. Live grids use fine unoutlined lines and adjustable opacity, initially 50 percent. Sky uses black lines in the morning and afternoon regardless of weather; other solar phases, real camera backgrounds and geographic Globe views use white lines. Frame and Panorama choices stay side by side in either orientation; Globe capture grids use 15° intervals. See [capture projections](docs/CAPTURE_PROJECTIONS.md).
+Capture the visible frame in **Sky** or **Globe**, or switch to a complete panorama (a flat map for Globe). Export either image or both together, alongside tables frozen at capture time. Capture grids and labels remain configurable. Live grids use fine lines and adjustable opacity, initially 70 percent. The real camera adds a thin black grid outline at the same opacity as the white core, including in photo captures. Sky uses black lines in the morning and afternoon regardless of weather; other solar phases, real camera backgrounds and geographic Globe views use white lines. Frame and Panorama choices stay side by side in either orientation; Globe capture grids use 15° intervals. See [capture projections](docs/CAPTURE_PROJECTIONS.md).
 
 ## Data and graphics packages
 

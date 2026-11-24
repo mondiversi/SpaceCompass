@@ -3,7 +3,7 @@
 ## 1.10.7 — 2026-11-24
 
 - Add ordinary point numbers to live and captured point bubbles, matching Daily path. Retain key-point and fixed-date comparison names; antipodes inherit the original point's number.
-- Use black reference grids in simulated Sky during the morning and afternoon, above and below the horizon, independently of weather. Keep white grids in the other solar phases, on real camera backgrounds and on geographic Globe views. Preserve the saved opacity and the 50 percent initial value.
+- Use black reference grids in simulated Sky during the morning and afternoon, above and below the horizon, independently of weather. Keep white grids in the other solar phases, on real camera backgrounds and on geographic Globe views. Preserve saved opacity choices and use 70 percent by default. Add a fine black camera-grid outline with the same selected opacity as the white core, in the live view and photo captures.
 - Add compass icons to the Panorama centre choices, with international N/E/S/W letters and translated direction names.
 - Reduce repeated work in Sky and Globe panoramas: reuse unchanged projections and text measurements, batch consecutive paths of the same style and skip offscreen segments. Preserve seams, dash patterns, label priorities, selections and geometry. These changes reduce renderer work; they do not promise uniform frame-rate gains on every phone.
 - Share label-clearance calculations and remove unused WebView fields. Add geometry, cache-boundary and label-clearance regressions to the renderer checks and continuous integration.

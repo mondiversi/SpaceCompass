@@ -12,9 +12,9 @@ import org.junit.Assert.*
 import org.junit.Test
 
 class SpaceCompassSceneArchiveTest {
-    @Test fun defaultOpacityIsExplicitSoOlderReadersKeepTheNewFiftyPercentChoice() {
-        assertTrue(scene().encode().contains("gridOpacityPercent=50\n"))
-        assertEquals(50, SpaceCompassSceneArchive.decode(scene().encode()).display!!.gridOpacityPercent)
+    @Test fun defaultOpacityIsExplicitSoOlderReadersKeepTheNewSeventyPercentChoice() {
+        assertTrue(scene().encode().contains("gridOpacityPercent=70\n"))
+        assertEquals(70, SpaceCompassSceneArchive.decode(scene().encode()).display!!.gridOpacityPercent)
     }
 
     @Test fun gridOpacityRoundTripsThroughSceneAndPreferencesWithLegacyDefault() {

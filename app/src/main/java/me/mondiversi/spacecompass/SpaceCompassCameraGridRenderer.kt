@@ -6,7 +6,7 @@ import kotlin.math.hypot
 /** A quiet angular frame over the full JPEG; no image crop, rotation or invented 360-degree axis. */
 internal fun drawSpaceCompassCameraAngularGrid(canvas: Canvas, width: Int, height: Int,
     orientation: SpaceCompassSunOrientation, perspective: SpaceCompassPerspective,
-    snapshot: SpaceCompassPanoramaSnapshot, scale: Float, captionHeight: Float, occupied: MutableList<RectF>, darkGrid: Boolean = false) {
+    snapshot: SpaceCompassPanoramaSnapshot, scale: Float, captionHeight: Float, occupied: MutableList<RectF>, darkGrid: Boolean = false, cameraOutline: Boolean = false) {
     // Reserve the complete top-axis glyph (ascent, padding and shadow) below the caption.
     val left = 96f * scale; val top = captionHeight + 42f * scale
     val right = width - 96f * scale; val bottom = height - 42f * scale
@@ -16,6 +16,14 @@ internal fun drawSpaceCompassCameraAngularGrid(canvas: Canvas, width: Int, heigh
     val paint = Paint(Paint.ANTI_ALIAS_FLAG).apply { style = Paint.Style.STROKE; strokeWidth = scale }
     val gridWidth = SpaceCompassAngularGridAppearance.lineWidth(width,height)
     val gridPalette=spaceCompassAngularGridPalette(darkGrid,snapshot.gridOpacityPercent)
+    fun gridStroke(draw: () -> Unit) {
+        if(cameraOutline) {
+            paint.color=gridPalette.cameraOutlineArgb
+            paint.strokeWidth=gridWidth*SpaceCompassAngularGridAppearance.cameraOutlineWidthScale
+            draw()
+        }
+        paint.color=gridPalette.lineArgb;paint.strokeWidth=gridWidth;draw()
+    }
     for (line in grid.lines) {
         // The shared photo renderer paints the zero-elevation horizon once, with the major-line style.
         if(line.axis==SpaceCompassCameraGridAxis.ELEVATION && kotlin.math.abs(line.degrees)<1e-9) continue
@@ -25,10 +33,9 @@ internal fun drawSpaceCompassCameraAngularGrid(canvas: Canvas, width: Int, heigh
                 path.moveTo(segment.start.x.toFloat(), segment.start.y.toFloat())
             path.lineTo(segment.end.x.toFloat(), segment.end.y.toFloat()); end = segment.end
         }
-        paint.color = gridPalette.lineArgb; paint.strokeWidth = gridWidth; canvas.drawPath(path, paint)
+        gridStroke { canvas.drawPath(path,paint) }
     }
-    paint.color = gridPalette.majorArgb; paint.strokeWidth = gridWidth
-    canvas.drawRect(left, top, right, bottom, paint)
+    gridStroke { canvas.drawRect(left,top,right,bottom,paint) }
     if (!snapshot.showGridNumbers) return
     val text = spaceCompassOrbitTextPaint(21 * scale).apply { color = Color.WHITE; textAlign = Paint.Align.CENTER }
     val axisBounds = mutableListOf<RectF>()
@@ -57,19 +64,19 @@ internal fun drawSpaceCompassCameraAngularGrid(canvas: Canvas, width: Int, heigh
             val x = tick.point.x.toFloat(); val y = tick.point.y.toFloat()
             when (edge) {
                 SpaceCompassCameraGridEdge.TOP -> {
-                    canvas.drawLine(x, top, x, top+6*scale, paint)
+                    gridStroke { canvas.drawLine(x, top, x, top+6*scale,paint) }
                     label(value(tick.degrees, false, tick.decimals), x, top-8*scale)
                 }
                 SpaceCompassCameraGridEdge.BOTTOM -> {
-                    canvas.drawLine(x, bottom-6*scale, x, bottom, paint)
+                    gridStroke { canvas.drawLine(x, bottom-6*scale, x, bottom,paint) }
                     label(value(tick.degrees, false, tick.decimals), x, bottom+28*scale)
                 }
                 SpaceCompassCameraGridEdge.LEFT -> {
-                    canvas.drawLine(left, y, left+6*scale, y, paint)
+                    gridStroke { canvas.drawLine(left, y, left+6*scale, y,paint) }
                     label(value(tick.degrees, true, tick.decimals), left-48*scale, y-text.fontMetrics.ascent/2)
                 }
                 SpaceCompassCameraGridEdge.RIGHT -> {
-                    canvas.drawLine(right-6*scale, y, right, y, paint)
+                    gridStroke { canvas.drawLine(right-6*scale, y, right, y,paint) }
                     label(value(tick.degrees, true, tick.decimals), right+48*scale, y-text.fontMetrics.ascent/2)
                 }
             }

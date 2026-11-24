@@ -223,7 +223,7 @@ The active Globe main view retains its 8x zoom limit and improved detail indepen
 
 ## Reference-grid ink
 
-Reference grids have a 50 percent default opacity and no outline. The live slider
+Reference grids have a 70 percent default opacity. Camera grids add a black outline at the same opacity as the white core; Sky and geographic Globe grids have no outline. The live slider
 shows its percentage immediately and retains the existing eleven stops from zero
 to 100 percent. Existing saved preferences are not reset; zero makes the grid
 invisible. Coordinate numbers and named planetary lines remain independent and

@@ -27,7 +27,7 @@ private data class SpaceCompassLiveCameraGrid(val size: IntSize,val path: Path,v
 /** Decorative only: one worker owns reusable projection buffers; drawing keeps an immutable frame. */
 @Composable
 internal fun SpaceCompassCameraGridLayer(orientation: SpaceCompassSunOrientation?,
-    lens: SpaceCompassPerspective?,opticalFrame: SpaceCompassSunSceneFrame?,modifier: Modifier,tag: String="camera-angular-grid",showNumbers: Boolean = false,opacityPercent: Int = SPACE_COMPASS_GRID_OPACITY_DEFAULT, darkGrid: Boolean = false) {
+    lens: SpaceCompassPerspective?,opticalFrame: SpaceCompassSunSceneFrame?,modifier: Modifier,tag: String="camera-angular-grid",showNumbers: Boolean = false,opacityPercent: Int = SPACE_COMPASS_GRID_OPACITY_DEFAULT, darkGrid: Boolean = false, cameraOutline: Boolean = false) {
     if(orientation==null||lens==null||opticalFrame==null) return
     val gridPalette=remember(opacityPercent,darkGrid) { spaceCompassAngularGridPalette(darkGrid,opacityPercent) }
     var viewport by remember { mutableStateOf(IntSize.Zero) }
@@ -65,8 +65,10 @@ internal fun SpaceCompassCameraGridLayer(orientation: SpaceCompassSunOrientation
     Canvas(modifier.clipToBounds().onSizeChanged { viewport=it }.testTag(tag)) {
         // Read the frame only in drawing, so publishing it never invalidates composition/layout.
         drawing.value?.takeIf { it.size==viewport }?.let { grid ->
-            drawPath(grid.path,Color(gridPalette.liveLineArgb),
-                style=Stroke(SpaceCompassAngularGridAppearance.liveLineDp.dp.toPx()))
+            val lineWidth=SpaceCompassAngularGridAppearance.liveLineDp.dp.toPx()
+            if(cameraOutline) drawPath(grid.path,Color(gridPalette.cameraOutlineArgb),
+                style=Stroke(lineWidth*SpaceCompassAngularGridAppearance.cameraOutlineWidthScale))
+            drawPath(grid.path,Color(gridPalette.liveLineArgb),style=Stroke(lineWidth))
             if(showNumbers) drawIntoCanvas { canvas ->
                 val occupied=mutableListOf<RectF>()
                 for(tick in grid.ticks) {

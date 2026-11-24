@@ -5,7 +5,7 @@ import org.junit.Test
 
 class SpaceCompassWeatherGridTest {
     private fun snapshot(phase: SpaceCompassSunSkyPhase,weather: SpaceCompassSunWeatherSnapshot?=null,
-        weatherEnabled: Boolean=true,opacity: Int=50)=SpaceCompassPanoramaSnapshot(
+        weatherEnabled: Boolean=true,opacity: Int=SPACE_COMPASS_GRID_OPACITY_DEFAULT)=SpaceCompassPanoramaSnapshot(
         0L,0.0,0.0,0.0,phase,weather,emptyList(),SpaceCompassCelestialRemoteData(),"",emptyList(),emptyList(),
         gridOpacityPercent=opacity,weatherEffectsEnabled=weatherEnabled)
 

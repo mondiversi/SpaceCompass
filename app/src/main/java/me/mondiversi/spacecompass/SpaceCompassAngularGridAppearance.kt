@@ -1,19 +1,23 @@
 package me.mondiversi.spacecompass
 
-/** Constant white reference lines without an outline. */
+/** Fine reference strokes; real-camera grids add a matching-opacity black outline. */
 internal object SpaceCompassAngularGridAppearance {
     const val lineArgb = 0xffffffff.toInt()
     const val majorArgb = lineArgb
     const val liveLineArgb = lineArgb
     const val liveLineDp = .30f
+    const val cameraOutlineWidthScale = 2f
     fun lineWidth(width: Int, height: Int) = minOf(2f * width, height.toFloat()) / 4096f
 }
 
 /** Coordinate numbers and named planetary guides keep their independent presentation. */
-internal data class SpaceCompassGridPalette(val lineArgb: Int,val majorArgb: Int,val liveLineArgb: Int)
+internal data class SpaceCompassGridPalette(val lineArgb: Int,val majorArgb: Int,val liveLineArgb: Int) {
+    /** Derive the camera guard from the same opacity, including a fully hidden grid. */
+    val cameraOutlineArgb: Int get() = lineArgb and 0xff000000.toInt()
+}
 
 internal const val SPACE_COMPASS_GRID_OPACITY_KEY = "reference_grid_opacity_percent"
-internal const val SPACE_COMPASS_GRID_OPACITY_DEFAULT = 50
+internal const val SPACE_COMPASS_GRID_OPACITY_DEFAULT = 70
 
 /** The same eleven stops serve preferences, captures and scene documents. */
 internal fun spaceCompassGridOpacity(percent: Int): Int = (percent.coerceIn(0, 100) + 5) / 10 * 10

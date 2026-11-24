@@ -62,7 +62,7 @@ internal fun renderSpaceCompassProjectedCapture(context: Context,background: Bit
         val pointing=orientation.takeIf { usable }
         if (pointing != null && snapshot.showGrid) drawSpaceCompassCameraAngularGrid(canvas, width, height,
             pointing, perspective, snapshot, scale, header, occupied,
-                darkGrid=simulatedSky && spaceCompassSkyGridBlack(snapshot.phase))
+                darkGrid=simulatedSky && spaceCompassSkyGridBlack(snapshot.phase),cameraOutline=!simulatedSky)
         fun projection(position: SpaceCompassSunPosition) = pointing?.let {
             projectSpaceCompassSun(position,it,width.toDouble(),height.toDouble(),perspective).takeIf { p->p.visible }
         }

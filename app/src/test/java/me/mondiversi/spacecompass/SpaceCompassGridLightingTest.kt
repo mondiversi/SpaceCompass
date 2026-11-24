@@ -10,9 +10,10 @@ class SpaceCompassGridLightingTest {
 
     @Test fun defaultGridIsWhiteInLiveAndImages() {
         val ink=spaceCompassGridPalette()
-        assertEquals(0x80ffffff.toInt(),ink.lineArgb)
+        assertEquals(0xb3ffffff.toInt(),ink.lineArgb)
         assertEquals(ink.lineArgb,ink.majorArgb)
         assertEquals(ink.lineArgb,ink.liveLineArgb)
+        assertEquals(0xb3000000.toInt(),ink.cameraOutlineArgb)
     }
     @Test fun solarBandsNeverRecolourOrBlendTheGrid() {
         val source=snapshot();val expected=spaceCompassGridPalette()
@@ -21,9 +22,14 @@ class SpaceCompassGridLightingTest {
             assertEquals(expected,spaceCompassGridPalette(source.copy(timeMs=time)))
         }
     }
-    @Test fun fiftyPercentDefaultAndAllElevenStopsAreRetained() {
-        assertEquals(50,SPACE_COMPASS_GRID_OPACITY_DEFAULT)
-        for(percent in 0..100 step 10) assertEquals(percent,spaceCompassGridOpacity(percent))
+    @Test fun seventyPercentDefaultAndAllElevenStopsAreRetained() {
+        assertEquals(70,SPACE_COMPASS_GRID_OPACITY_DEFAULT)
+        for(percent in 0..100 step 10) {
+            assertEquals(percent,spaceCompassGridOpacity(percent))
+            val ink=spaceCompassGridPalette(percent)
+            assertEquals(ink.lineArgb ushr 24,ink.cameraOutlineArgb ushr 24)
+            assertEquals(0,ink.cameraOutlineArgb and 0xffffff)
+        }
         assertEquals(0,spaceCompassGridOpacity(-20));assertEquals(100,spaceCompassGridOpacity(150))
         assertEquals(40,spaceCompassGridOpacity(44));assertEquals(50,spaceCompassGridOpacity(45))
     }
@@ -37,7 +43,7 @@ class SpaceCompassGridLightingTest {
     }
     @Test fun zeroOpacityHidesTheGrid() {
         val ink=spaceCompassGridPalette(0)
-        for(value in listOf(ink.lineArgb,ink.majorArgb,ink.liveLineArgb))
+        for(value in listOf(ink.lineArgb,ink.majorArgb,ink.liveLineArgb,ink.cameraOutlineArgb))
             assertEquals(0,value ushr 24)
     }
     @Test fun backgroundBlendingAndPhaseLabelsCannotOverrideWhiteInk() {
@@ -83,7 +89,7 @@ class SpaceCompassGridLightingTest {
             assertEquals("ffffff",rgba.substring(1,7))
             assertEquals(ink.lineArgb,ink.liveLineArgb)
         }
-        assertEquals("#ffffff80",spaceCompassGridCss(spaceCompassGridPalette().liveLineArgb))
+        assertEquals("#ffffffb3",spaceCompassGridCss(spaceCompassGridPalette().liveLineArgb))
         assertEquals("#ffffffcc",spaceCompassGridCss(spaceCompassGridPalette(80).liveLineArgb))
         assertEquals("#ffffff80",spaceCompassGridCss(spaceCompassGridPalette(50).liveLineArgb))
     }

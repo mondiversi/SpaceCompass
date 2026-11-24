@@ -9,7 +9,7 @@ vm.runInContext(source.slice(source.indexOf('function drawGlobeCoordinateGrid(')
 vm.runInContext(source.slice(source.indexOf('function drawFlatCoordinateGrid('),source.indexOf('// Keep longitude/azimuth')),context);
 for(const flat of [false,true])for(const ink of [undefined,['#ffffffff'],['#ffffffcc'],['#ffffff80'],['#ffffff00']]) {
  context.globeScene.flat=flat;context.globeScene.gridStyle=ink;strokes.length=0;context.drawGlobeCoordinateGrid();
- assert.deepEqual(strokes,[[ink?.[0]||'#ffffff80',.30]]);
+ assert.deepEqual(strokes,[[ink?.[0]||'#ffffffb3',.30]]);
 }
 for(const name of ['SpaceCompassCameraGridRenderer.kt','SpaceCompassCameraPhotoRenderer.kt','SpaceCompassGlobeCoordinateDrawing.kt','SpaceCompassGlobeMapGrid.kt','SpaceCompassPanoramaRenderer.kt']) {
  const s=fs.readFileSync(path.join(main,name),'utf8');assert.ok(s.includes('gridPalette=spaceCompassGridPalette(snapshot)')||s.includes('spaceCompassSkyGridPalette(snapshot)')||s.includes('spaceCompassSkyGridPalette(snapshot,enabled=simulatedSky)')||s.includes('spaceCompassAngularGridPalette(darkGrid,snapshot.gridOpacityPercent)'),name);
