@@ -22,7 +22,8 @@ internal val SpaceCompassPanoramaPosition.detailResource: Int get() = when (this
 }
 
 
-private data class SpaceCompassOverlayChoice(val key: String,val label: Int, val icon: SpaceCompassOverlayChoiceIcon? = null)
+private data class SpaceCompassOverlayChoice(val key: String,val label: Int, val icon: SpaceCompassOverlayChoiceIcon? = null,
+    val cardinal: SpaceCompassPanoramaCenter? = null)
 
 /** Shared radio choices use the standard modal, including its scrolling and close action. */
 @Composable
@@ -35,7 +36,10 @@ private fun SpaceCompassOverlayChoiceDialog(visible: Boolean,title: Int,selected
                 choices.forEach { choice ->
                     SpaceCompassSettingsRadioRow(choice.key==selectedKey,{onChoose(choice.key)},
                         Modifier.fillMaxWidth().testTag("$tag-${choice.key}")) {
-                        choice.icon?.let {
+                        if(choice.cardinal!=null) {
+                            SpaceCompassPanoramaCenterIcon(choice.cardinal)
+                            Spacer(Modifier.width(10.dp))
+                        } else choice.icon?.let {
                             SpaceCompassOverlayChoiceGlyph(it)
                             Spacer(Modifier.width(10.dp))
                         }
@@ -75,5 +79,5 @@ internal fun SpaceCompassPanoramaPositionDialog(visible: Boolean,selected: Space
 internal fun SpaceCompassPanoramaCenterDialog(visible: Boolean,selected: SpaceCompassPanoramaCenter,
     onChoose: (SpaceCompassPanoramaCenter)->Unit,onDismiss: ()->Unit) =
     SpaceCompassOverlayChoiceDialog(visible,R.string.panorama_center,selected.key,
-        SpaceCompassPanoramaCenter.entries.map { SpaceCompassOverlayChoice(it.key,it.labelResource) },
+        SpaceCompassPanoramaCenter.entries.map { SpaceCompassOverlayChoice(it.key,it.labelResource,cardinal=it) },
         "panorama-center-dialog",{ key -> onChoose(SpaceCompassPanoramaCenter.entries.first { it.key==key }) },onDismiss)

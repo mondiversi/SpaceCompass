@@ -27,7 +27,7 @@ internal fun renderSpaceCompassProjectedCapture(context: Context,background: Bit
     var image: Bitmap?=null
     try {
         val width=background.width;val height=background.height
-        val gridPalette=spaceCompassWeatherGridPalette(snapshot,enabled=simulatedSky)
+        val gridPalette=spaceCompassSkyGridPalette(snapshot,enabled=simulatedSky)
         val scale=(minOf(width,height)/1080f).coerceAtLeast(.45f)
         val bandStyle=spaceCompassCaptureBandStyle(width,height)
         val caption=prepareSpaceCompassCaptureCaption(snapshot.caption,width,bandStyle,context)
@@ -62,7 +62,7 @@ internal fun renderSpaceCompassProjectedCapture(context: Context,background: Bit
         val pointing=orientation.takeIf { usable }
         if (pointing != null && snapshot.showGrid) drawSpaceCompassCameraAngularGrid(canvas, width, height,
             pointing, perspective, snapshot, scale, header, occupied,
-                darkGrid=simulatedSky && spaceCompassWeatherGridBlack(snapshot.phase, snapshot.weather, snapshot.weatherEffectsEnabled))
+                darkGrid=simulatedSky && spaceCompassSkyGridBlack(snapshot.phase))
         fun projection(position: SpaceCompassSunPosition) = pointing?.let {
             projectSpaceCompassSun(position,it,width.toDouble(),height.toDouble(),perspective).takeIf { p->p.visible }
         }
@@ -97,6 +97,7 @@ internal fun renderSpaceCompassProjectedCapture(context: Context,background: Bit
         val points=mutableListOf<Triple<SpaceCompassSunPathPoint,SpaceCompassSunScenePoint,Int>>()
         val labels=mutableListOf<SpaceCompassPanoramaTimeLabel>()
         if (pointing!=null) snapshot.objects.forEach { item -> item.path?.let { path ->
+            val pointNames=spaceCompassPanoramaPathPointNames(snapshot,path)
             val tint=item.tint
             val segments=projectSpaceCompassSunDailyPath(path,pointing,width.toDouble(),height.toDouble(),perspective)
             for (below in listOf(false,true)) {
@@ -133,7 +134,7 @@ internal fun renderSpaceCompassProjectedCapture(context: Context,background: Bit
                     val time=(if (item.comparison == null) snapshot.markerTimes[marker.timeMs] else null) ?: formatSpaceCompassPanoramaMarkerTime(marker.timeMs,item.referenceTime(snapshot.timeMs),
                         item.displayTimeZone(snapshot),snapshot.formatting)
                     labels += SpaceCompassPanoramaTimeLabel(formatSpaceCompassPanoramaPathPointLabel(time,marker,
-                        snapshot.formatting,snapshot.pointEventNames,item.referenceTime(snapshot.timeMs),snapshot.bodyNames),point,markerTint,
+                        snapshot.formatting,snapshot.pointEventNames,item.referenceTime(snapshot.timeMs),snapshot.bodyNames,pointNames),point,markerTint,
                         marker.events.any { it != SpaceCompassSunPathEvent.HOUR })
                 }
             } }

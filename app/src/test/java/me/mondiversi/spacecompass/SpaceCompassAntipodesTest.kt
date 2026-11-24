@@ -110,7 +110,7 @@ class SpaceCompassAntipodesTest {
             assertTrue(variant.showAntipodes)
             val pin = resolveSpaceCompassPanoramaSelections(variant, emptyMap()).single { it.isAntipode }
             val label = formatSpaceCompassPanoramaSelection(variant, pin)
-            assertTrue(label.startsWith("Antipodo\n"))
+            assertTrue(label.startsWith("Antipodo · Point "))
             assertTrue(label.contains("210.0°")); assertTrue(label.contains("-20.0°"))
         }
     }

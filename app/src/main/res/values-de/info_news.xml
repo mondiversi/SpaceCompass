@@ -1,9 +1,9 @@
 <resources>
     <string name="info_news_title">Neuigkeiten · %1$s</string>
-    <string name="info_news_star_sky" formatted="false">Tippe doppelt auf eine freie Stelle, um Objekt- und Kompassbereiche samt Objektname aus- oder einzublenden. Bedienelemente und Fadenkreuz bleiben sichtbar.</string>
-    <string name="info_news_texture_downloads" formatted="false">Neu angeordnete Bedienelemente und eine Kamerahorizontlinie mit halber bisheriger Stärke.</string>
-    <string name="info_news_weather" formatted="false">Die Standarddeckkraft des Gitters beträgt 50%. Der Regler zeigt Änderungen sofort. Gitter und Fadenkreuz haben keine Kontur; die Deckkraft des Fadenkreuzes beträgt 80%.</string>
-    <string name="info_news_viewer_zoom" formatted="false">Bei Nebel, bedecktem Himmel und Schnee am Tag werden die Gitterlinien oberhalb und unterhalb des Horizonts schwarz.</string>
-    <string name="info_news_settings" formatted="false">Kompaktere Dialoge mit Aktionen in der Titelleiste und Schließen-Symbol im Querformat. Die Auswahl bleibt beim Drehen erhalten.</string>
-    <string name="info_news_catalog" formatted="false">Zoommenüs bleiben über den Infobereichen lesbar. Das Tutorial markiert eine feste freie Fläche und erklärt die aktuellen Bedienelemente.</string>
+    <string name="info_news_star_sky" formatted="false">Sprechblasen gewöhnlicher Punkte zeigen jetzt „Punkt N“, passend zum Tagesverlauf.</string>
+    <string name="info_news_texture_downloads" formatted="false">Antipoden behalten den Namen und die Nummer des ursprünglichen Punkts, auch in Aufnahmen.</string>
+    <string name="info_news_weather" formatted="false">Himmelsraster sind vormittags und nachmittags bei jedem Wetter schwarz, in anderen Sonnenphasen weiß.</string>
+    <string name="info_news_viewer_zoom" formatted="false">Die Auswahl der Panoramamitte hat Kompasssymbole mit den internationalen Buchstaben N, E, S, W.</string>
+    <string name="info_news_settings" formatted="false">Leichtere Himmels- und Globuspanoramen beim Verschieben und Zoomen.</string>
+    <string name="info_news_catalog" formatted="false">Optimierte Beschriftungen bei unveränderten Sichtbarkeits- und Auswahlregeln.</string>
 </resources>

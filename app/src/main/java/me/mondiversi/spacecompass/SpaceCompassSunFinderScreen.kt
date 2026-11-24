@@ -1215,7 +1215,7 @@ internal fun SpaceCompassSunFinderContent(
         if(!liveMapEnabled && mainGridVisible && resumed && mainVisible)
             SpaceCompassCameraGridLayer(scenePointingOrientation,scenePerspective,groundFrame,Modifier.fillMaxSize(),
                 tag=if(cameraEnabled) "camera-angular-grid" else "sky-angular-grid", showNumbers=gridNumbersVisible, opacityPercent=gridOpacityPercent,
-                darkGrid=!cameraEnabled && spaceCompassWeatherGridBlack(phase,sceneWeather))
+                darkGrid=!cameraEnabled && spaceCompassSkyGridBlack(phase))
         if(!liveMapEnabled) SpaceCompassCelestialSceneBackdrop(groundFrame, scenePerspective,
             scenePointingOrientation.takeIf { !cameraEnabled || cameraPerspective != null },
             overlays, sceneBody.takeIf { hasActiveBody && activeComparison == null }, livePath, liveTarget, timeMs,

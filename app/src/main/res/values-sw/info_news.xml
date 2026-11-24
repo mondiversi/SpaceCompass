@@ -1,9 +1,9 @@
 <resources>
     <string name="info_news_title">Mambo mapya · %1$s</string>
-    <string name="info_news_star_sky" formatted="false">Gusa eneo tupu mara mbili kuficha au kuonyesha paneli za kitu na dira pamoja na jina la kitu. Vitufe na shabaha hubaki kuonekana.</string>
-    <string name="info_news_texture_downloads" formatted="false">Mpangilio mpya wa vitufe na mstari wa upeo wa kamera wenye nusu ya unene wa awali.</string>
-    <string name="info_news_weather" formatted="false">Kiwango cha kutopenya mwanga cha gridi kwa chaguo-msingi ni 50%. Kitelezi husasisha thamani mara moja. Gridi na shabaha hazina ukingo; kiwango cha kutopenya mwanga cha shabaha ni 80%.</string>
-    <string name="info_news_viewer_zoom" formatted="false">Ukungu, mawingu mazito na theluji wakati wa mchana hutumia mistari myeusi ya gridi juu na chini ya upeo.</string>
-    <string name="info_news_settings" formatted="false">Madirisha madogo zaidi, vitendo kando ya kichwa na aikoni ya kufunga katika mlalo. Machaguo hubaki skrini inapozungushwa.</string>
-    <string name="info_news_catalog" formatted="false">Menyu za kukuza husomeka juu ya paneli. Mafunzo huonyesha eneo tupu lisilohama na kueleza vitufe vya sasa.</string>
+    <string name="info_news_star_sky" formatted="false">Vibubujiko vya alama za kawaida sasa vinaonyesha “Alama N”, kama katika njia ya kila siku.</string>
+    <string name="info_news_texture_downloads" formatted="false">Antipodi huhifadhi jina na nambari ya alama ya awali, hata kwenye picha.</string>
+    <string name="info_news_weather" formatted="false">Gridi ya anga ni nyeusi asubuhi na alasiri katika hali yoyote ya hewa, na nyeupe katika awamu nyingine za jua.</string>
+    <string name="info_news_viewer_zoom" formatted="false">Chaguo za kitovu cha panorama zina aikoni za dira zenye herufi za kimataifa N, E, S, W.</string>
+    <string name="info_news_settings" formatted="false">Panorama nyepesi zaidi za Anga na Globu wakati wa kusogeza na kukuza.</string>
+    <string name="info_news_catalog" formatted="false">Ushughulikiaji wa lebo umeboreshwa bila kubadili kanuni za mwonekano na uteuzi.</string>
 </resources>

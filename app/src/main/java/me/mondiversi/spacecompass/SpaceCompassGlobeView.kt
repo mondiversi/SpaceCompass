@@ -127,7 +127,7 @@ internal fun SpaceCompassGlobeView(snapshot: SpaceCompassPanoramaSnapshot, pose:
         snapshot.activeComparisonId,snapshot.showSkyReferences,snapshot.showGrid,snapshot.showGridNumbers,snapshot.gridOpacityPercent,selection,snapshot.formatting) {
         value=withContext(Dispatchers.Default) {
             val targets=mutableListOf<Pair<SpaceCompassGlobeTrack,SpaceCompassGlobeDot>>()
-            val gridPalette=spaceCompassWeatherGridPalette(snapshot,enabled=sky)
+            val gridPalette=spaceCompassSkyGridPalette(snapshot,enabled=sky)
             val scene=JSONObject().apply {
                 put("gridStyle",JSONArray(listOf(spaceCompassGridCss(gridPalette.liveLineArgb))))
                 put("extent",model?.extent ?: 1.55);put("dark",dark)
@@ -184,6 +184,7 @@ internal fun SpaceCompassGlobeView(snapshot: SpaceCompassPanoramaSnapshot, pose:
                 put("location",if(!sky && snapshot.observerPositionKnown) JSONArray(listOf(snapshot.latitude,snapshot.longitude)) else JSONObject.NULL)
                 put("tracks",JSONArray().apply { model?.tracks?.forEach { track ->
                     ensureActive()
+                    val pointNames=track.item.path?.let { spaceCompassPanoramaPathPointNames(snapshot,it) }
                     put(JSONObject().apply {
                         put("key",track.item.body.name+":"+track.item.comparison?.id)
                         put("color",globeColor(track.item.tint.toArgb()));put("comparison",track.item.comparison!=null)
@@ -195,7 +196,7 @@ internal fun SpaceCompassGlobeView(snapshot: SpaceCompassPanoramaSnapshot, pose:
                             else snapshot.activeBody==track.item.body&&track.item.comparison==null
                         put("dots",JSONArray().apply { track.dots.forEach { dot ->
                             val id=targets.size;targets+=track to dot
-                            val event=dot.point.events.filter { it!=SpaceCompassSunPathEvent.HOUR }.mapNotNull { snapshot.pointEventNames[it] }.joinToString(" · ")
+                            val event=spaceCompassPanoramaPathPointName(dot.point,snapshot.formatting,snapshot.pointEventNames,snapshot.bodyNames,pointNames)
                             val time=formatSpaceCompassGlobeMainPointTime(dot.point.timeMs,track.item.referenceTime(snapshot.timeMs),snapshot.displayTimeZone,snapshot.formatting)
                             put(JSONObject().apply {
                                 put("v",dot.vector.json());put("current",dot.current);put("selected",dot.selected)
@@ -206,7 +207,7 @@ internal fun SpaceCompassGlobeView(snapshot: SpaceCompassPanoramaSnapshot, pose:
                                 if(!spaceCompassGlobeMainShowsLabel(labelMode,active,dot.current,dot.antipode,dot.point.events,dot.selected)) put("label","")
                                 else {
                                     val pointName=if(dot.antipode) formatSpaceCompassPanoramaSelection(snapshot,SpaceCompassPanoramaSelectedPoint(
-                                        track.item.body,dot.point,track.item.path,dot.current,true,track.item.comparison)).lineSequence().first()
+                                        track.item.body,dot.point,track.item.path,dot.current,true,track.item.comparison),pointNames).lineSequence().first()
                                         else if(dot.current) track.item.comparison?.let(snapshot::comparisonPointName) ?: snapshot.currentPointName
                                         else event
                                     val detail=formatSpaceCompassGlobeMainLabelDetails(track.item.name,pointName,time,dot.point.position,snapshot.formatting)
@@ -332,7 +333,7 @@ internal class SpaceCompassGlobeWebView(context: Context,initialFlat: Boolean=fa
     var onObjectRotationEnd: ()->Unit = {}
     var interactionFrame: SpaceCompassSunSceneFrame? = null
     private var axisLocked=true
-    private var framePose=SpaceCompassGlobePose();private var sentPose="";private var activeView=true
+    private var activeView=true
     private val scale=ScaleGestureDetector(context,object: ScaleGestureDetector.SimpleOnScaleGestureListener() {
         override fun onScale(detector: ScaleGestureDetector): Boolean {
             scaling=true

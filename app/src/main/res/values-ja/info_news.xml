@@ -1,9 +1,9 @@
 <resources>
     <string name="info_news_title">最近の変更 · %1$s</string>
-    <string name="info_news_star_sky" formatted="false">空いている場所をダブルタップすると、天体名を含む天体とコンパスのパネルを非表示・表示にできます。操作ボタンと照準は表示されたままです。</string>
-    <string name="info_news_texture_downloads" formatted="false">操作ボタンを再配置し、カメラの地平線を従来の半分の太さにしました。</string>
-    <string name="info_news_weather" formatted="false">グリッドの初期不透明度は50%です。スライダーの値はすぐ更新されます。グリッドと照準に縁取りはなく、照準の不透明度は80%です。</string>
-    <string name="info_news_viewer_zoom" formatted="false">日中の霧、曇り、雪では、地平線の上も下もグリッドが黒くなります。</string>
-    <string name="info_news_settings" formatted="false">ダイアログをコンパクト化し、横向きではタイトル横に操作と閉じるアイコンを配置。画面を回転しても選択内容が維持されます。</string>
-    <string name="info_news_catalog" formatted="false">ズームメニューはパネルの上でも読みやすくなりました。チュートリアルは固定の空き領域を示し、現在の操作を説明します。</string>
+    <string name="info_news_star_sky" formatted="false">通常の点の吹き出しに、日周経路と同じ「ポイント N」を表示するようになりました。</string>
+    <string name="info_news_texture_downloads" formatted="false">対蹠点は、キャプチャでも元の点の名前と番号を保持します。</string>
+    <string name="info_news_weather" formatted="false">空のグリッドは天候に関係なく午前と午後は黒、それ以外の太陽の段階では白になります。</string>
+    <string name="info_news_viewer_zoom" formatted="false">パノラマの中心の選択肢に、国際表記 N・E・S・W のコンパスアイコンを追加しました。</string>
+    <string name="info_news_settings" formatted="false">移動やズーム時の空と地球儀のパノラマ処理を軽量化しました。</string>
+    <string name="info_news_catalog" formatted="false">表示と選択のルールを保ちながら、ラベル処理を最適化しました。</string>
 </resources>

@@ -1,9 +1,9 @@
 <resources>
     <string name="info_news_title">Последние новости · %1$s</string>
-    <string name="info_news_star_sky" formatted="false">Дважды коснитесь свободного места, чтобы скрыть или показать панели объекта и компаса вместе с названием объекта. Кнопки и прицел остаются видимыми.</string>
-    <string name="info_news_texture_downloads" formatted="false">Обновлено расположение кнопок; линия горизонта камеры стала вдвое тоньше.</string>
-    <string name="info_news_weather" formatted="false">Непрозрачность сетки по умолчанию составляет 50%. Ползунок сразу обновляет значение. Сетка и прицел без обводки; непрозрачность прицела составляет 80%.</string>
-    <string name="info_news_viewer_zoom" formatted="false">При дневном тумане, облачности и снеге линии сетки становятся чёрными над и под горизонтом.</string>
-    <string name="info_news_settings" formatted="false">Более компактные окна, действия рядом с заголовком и значок закрытия в альбомном режиме. Выбор сохраняется при повороте экрана.</string>
-    <string name="info_news_catalog" formatted="false">Меню масштаба остаются читаемыми поверх панелей. Обучение выделяет фиксированную свободную область и объясняет текущие кнопки.</string>
+    <string name="info_news_star_sky" formatted="false">Подсказки обычных точек теперь показывают «Точка N», как в суточном пути.</string>
+    <string name="info_news_texture_downloads" formatted="false">Антиподы сохраняют название и номер исходной точки, в том числе на снимках.</string>
+    <string name="info_news_weather" formatted="false">Сетка неба чёрная утром и днём при любой погоде и белая в остальные солнечные фазы.</string>
+    <string name="info_news_viewer_zoom" formatted="false">Варианты центра панорамы имеют значки компаса с международными буквами N, E, S, W.</string>
+    <string name="info_news_settings" formatted="false">Облегчены панорамы неба и глобуса при перемещении и масштабировании.</string>
+    <string name="info_news_catalog" formatted="false">Оптимизированы подписи с сохранением правил видимости и выбора.</string>
 </resources>

@@ -1,9 +1,9 @@
 <resources>
     <string name="info_news_title">Perubahan terbaru · %1$s</string>
-    <string name="info_news_star_sky" formatted="false">Ketuk dua kali area kosong untuk menyembunyikan atau menampilkan panel objek dan kompas, termasuk nama objek. Kontrol dan bidikan tetap terlihat.</string>
-    <string name="info_news_texture_downloads" formatted="false">Susunan kontrol diperbarui dan garis cakrawala kamera kini setengah ketebalan sebelumnya.</string>
-    <string name="info_news_weather" formatted="false">Opasitas kisi bawaan adalah 50%. Penggeser langsung memperbarui nilainya. Kisi dan bidikan tanpa garis tepi; opasitas bidikan adalah 80%.</string>
-    <string name="info_news_viewer_zoom" formatted="false">Kabut, langit mendung, dan salju pada siang hari memakai garis kisi hitam di atas dan di bawah cakrawala.</string>
-    <string name="info_news_settings" formatted="false">Dialog lebih ringkas dengan tindakan di bilah judul dan ikon tutup dalam orientasi lanskap. Pilihan tetap tersimpan saat layar diputar.</string>
-    <string name="info_news_catalog" formatted="false">Menu zoom tetap terbaca di atas panel. Tutorial menyoroti area kosong tetap dan menjelaskan kontrol yang digunakan.</string>
+    <string name="info_news_star_sky" formatted="false">Balon titik biasa kini menampilkan “Titik N”, seperti pada lintasan harian.</string>
+    <string name="info_news_texture_downloads" formatted="false">Antipoda mempertahankan nama dan nomor titik asal, termasuk dalam tangkapan.</string>
+    <string name="info_news_weather" formatted="false">Kisi langit berwarna hitam pada pagi dan sore dalam segala cuaca, serta putih pada fase Matahari lainnya.</string>
+    <string name="info_news_viewer_zoom" formatted="false">Pilihan pusat panorama memiliki ikon kompas dengan huruf internasional N, E, S, W.</string>
+    <string name="info_news_settings" formatted="false">Panorama Langit dan Globe lebih ringan saat digeser dan diperbesar.</string>
+    <string name="info_news_catalog" formatted="false">Penanganan label dioptimalkan dengan aturan visibilitas dan pemilihan yang tetap sama.</string>
 </resources>

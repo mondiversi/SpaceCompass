@@ -33,16 +33,11 @@ internal fun spaceCompassGridPalette(snapshot: SpaceCompassPanoramaSnapshot): Sp
 /** Canvas expects RRGGBBAA, whereas the shared Android palette stores AARRGGBB. */
 internal fun spaceCompassGridCss(argb: Int)="#%06x%02x".format(argb and 0xffffff,argb ushr 24)
 
-/** The rendered daytime sky uses dark grid lines over bright fog, cloud cover and snow. */
-internal fun spaceCompassWeatherGridBlack(phase: SpaceCompassSunSkyPhase,
-    weather: SpaceCompassSunWeatherSnapshot?, enabled: Boolean = true): Boolean = enabled &&
-    (phase==SpaceCompassSunSkyPhase.MORNING || phase==SpaceCompassSunSkyPhase.AFTERNOON) &&
-    when(weather?.kind) {
-        SpaceCompassSunWeatherKind.FOG,SpaceCompassSunWeatherKind.CLOUDY,SpaceCompassSunWeatherKind.SNOW -> true
-        else -> false
-    }
+/** The effective Location's solar phase controls Sky ink, independently of weather and phone theme. */
+internal fun spaceCompassSkyGridBlack(phase: SpaceCompassSunSkyPhase): Boolean =
+    phase==SpaceCompassSunSkyPhase.MORNING || phase==SpaceCompassSunSkyPhase.AFTERNOON
 
-/** One colour for the whole grid; the saved opacity and fine line width do not change. */
+/** One ink across the complete grid, preserving the chosen opacity and fine widths. */
 internal fun spaceCompassAngularGridPalette(dark: Boolean,
     opacityPercent: Int = SPACE_COMPASS_GRID_OPACITY_DEFAULT): SpaceCompassGridPalette {
     val white=spaceCompassGridPalette(opacityPercent)
@@ -50,7 +45,6 @@ internal fun spaceCompassAngularGridPalette(dark: Boolean,
     return if(dark) SpaceCompassGridPalette(black,black,black) else white
 }
 
-/** Geographic maps and real camera backgrounds do not render synthetic sky weather. */
-internal fun spaceCompassWeatherGridPalette(snapshot: SpaceCompassPanoramaSnapshot, enabled: Boolean = true) =
-    spaceCompassAngularGridPalette(spaceCompassWeatherGridBlack(snapshot.phase,snapshot.weather,
-        enabled && snapshot.weatherEffectsEnabled),snapshot.gridOpacityPercent)
+/** Only synthetic Sky follows this policy; real camera and geographic Globe grids stay white. */
+internal fun spaceCompassSkyGridPalette(snapshot: SpaceCompassPanoramaSnapshot, enabled: Boolean = true) =
+    spaceCompassAngularGridPalette(enabled && spaceCompassSkyGridBlack(snapshot.phase),snapshot.gridOpacityPercent)

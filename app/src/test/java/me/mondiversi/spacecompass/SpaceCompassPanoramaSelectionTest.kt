@@ -69,14 +69,14 @@ class SpaceCompassPanoramaSelectionTest {
         assertTrue(spaceCompassPanoramaPointSelected(listOf(resolved), initial.body, refreshedPoint))
     }
 
-    @Test fun rollingSatelliteWindowsRetainThePreviouslyPinnedMarkerWithoutAddingAnHourlyName() {
+    @Test fun rollingSatelliteWindowsKeepTheOriginalPathNumberForAPreviouslyPinnedMarker() {
         val initial = path(SpaceCompassCelestialBody.ISS)
         val state = SpaceCompassSunDailyPathUiState(); state.select(initial, point(1))
         val refreshed = initial.copy(markers = listOf(point(12), point(23)))
         val captured = snapshot(listOf(refreshed), state)
         val resolved = resolveSpaceCompassPanoramaSelections(captured, emptyMap()).single()
         assertEquals(point(1), resolved.point); assertEquals(initial, resolved.path)
-        assertEquals("01:00 · T+11h0m\n↔ 123.5° · ↕ +20.8°", formatSpaceCompassPanoramaSelection(captured, resolved))
+        assertEquals("Point 0\n01:00 · T+11h0m\n↔ 123.5° · ↕ +20.8°", formatSpaceCompassPanoramaSelection(captured, resolved))
     }
 
     @Test fun scientificAndUserPresentationsKeepPinsWhileFormattingTheirOwnCaptions() {
@@ -86,8 +86,8 @@ class SpaceCompassPanoramaSelectionTest {
         val italian = captured.copy(objects = captured.objects.map { it.copy(name = "Luna") },
             formatting = SpaceCompassPanoramaFormatting(locale = Locale.ITALIAN, numeric = SpaceCompassNumericFormat.SYSTEM,
                 deviceLocale = Locale.ITALIAN))
-        assertEquals("23:00 · T−11h0m\n↔ 123,5° · ↕ +20,8°", formatSpaceCompassPanoramaSelection(italian, resolved))
-        assertEquals("23:00 · T−11h0m\n↔ 123.5° · ↕ +20.8°", formatSpaceCompassPanoramaSelection(captured, resolved))
+        assertEquals("Point 23\n23:00 · T−11h0m\n↔ 123,5° · ↕ +20,8°", formatSpaceCompassPanoramaSelection(italian, resolved))
+        assertEquals("Point 23\n23:00 · T−11h0m\n↔ 123.5° · ↕ +20.8°", formatSpaceCompassPanoramaSelection(captured, resolved))
         assertEquals(captured.selectedPoints, italian.selectedPoints)
         assertEquals(captured.selectionTint, italian.selectionTint)
     }
@@ -117,12 +117,12 @@ class SpaceCompassPanoramaSelectionTest {
             resolveSpaceCompassPanoramaSelections(modified, emptyMap()))
     }
 
-    @Test fun selectedAndOrdinaryHourlyPointsShareTheSameTwoLinesWithBothAngles() {
+    @Test fun selectedAndOrdinaryHourlyPointsShareTheSameNumberAndBothAngles() {
         val moon = path(); val state = SpaceCompassSunDailyPathUiState(); state.select(moon, point(1))
         val captured = snapshot(listOf(moon), state)
         val resolved = resolveSpaceCompassPanoramaSelections(captured, emptyMap()).single()
         assertEquals(formatSpaceCompassPanoramaPathPointLabel("01:00", resolved.point, captured.formatting,
-            captured.pointEventNames, captured.timeMs), formatSpaceCompassPanoramaSelection(captured, resolved))
+            captured.pointEventNames, captured.timeMs, pointNames=spaceCompassPanoramaPathPointNames(captured,moon)), formatSpaceCompassPanoramaSelection(captured, resolved))
     }
 
     @Test fun selectedCurrentAndNamedEventsKeepTheirSpecialNameOnItsOwnTitleLine() {

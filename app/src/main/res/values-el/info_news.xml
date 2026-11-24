@@ -1,9 +1,9 @@
 <resources>
     <string name="info_news_title">Τελευταία νέα · %1$s</string>
-    <string name="info_news_star_sky" formatted="false">Αγγίξτε δύο φορές μια ελεύθερη περιοχή για απόκρυψη ή εμφάνιση των πλαισίων αντικειμένου και πυξίδας, μαζί με το όνομα του αντικειμένου. Τα χειριστήρια και το στόχαστρο παραμένουν ορατά.</string>
-    <string name="info_news_texture_downloads" formatted="false">Αναδιάταξη χειριστηρίων και γραμμή ορίζοντα κάμερας με το μισό προηγούμενο πάχος.</string>
-    <string name="info_news_weather" formatted="false">Η προεπιλεγμένη αδιαφάνεια πλέγματος είναι 50%. Ο ολισθητής ενημερώνει αμέσως την τιμή. Πλέγμα και στόχαστρο δεν έχουν περίγραμμα· η αδιαφάνεια του στόχαστρου είναι 80%.</string>
-    <string name="info_news_viewer_zoom" formatted="false">Σε ομίχλη, συννεφιά και χιόνι την ημέρα, οι γραμμές πλέγματος είναι μαύρες πάνω και κάτω από τον ορίζοντα.</string>
-    <string name="info_news_settings" formatted="false">Πιο συμπαγή αναδυόμενα παράθυρα, ενέργειες στη γραμμή τίτλου και εικονίδιο κλεισίματος σε οριζόντια προβολή. Οι επιλογές διατηρούνται κατά την περιστροφή.</string>
-    <string name="info_news_catalog" formatted="false">Τα μενού μεγέθυνσης παραμένουν ευανάγνωστα πάνω από τα πλαίσια. Το εκπαιδευτικό επισημαίνει μια σταθερή ελεύθερη περιοχή και εξηγεί τα τρέχοντα χειριστήρια.</string>
+    <string name="info_news_star_sky" formatted="false">Τα πλαίσια των συνηθισμένων σημείων εμφανίζουν πλέον «Σημείο N», όπως στην ημερήσια διαδρομή.</string>
+    <string name="info_news_texture_downloads" formatted="false">Οι αντίποδες διατηρούν το όνομα και τον αριθμό του αρχικού σημείου, ακόμη και στις λήψεις.</string>
+    <string name="info_news_weather" formatted="false">Το πλέγμα ουρανού είναι μαύρο το πρωί και το απόγευμα με κάθε καιρό και λευκό στις άλλες ηλιακές φάσεις.</string>
+    <string name="info_news_viewer_zoom" formatted="false">Οι επιλογές κέντρου πανοράματος έχουν εικονίδια πυξίδας με τα διεθνή γράμματα N, E, S, W.</string>
+    <string name="info_news_settings" formatted="false">Ελαφρύτερα πανοράματα ουρανού και υδρογείου κατά τη μετακίνηση και το ζουμ.</string>
+    <string name="info_news_catalog" formatted="false">Βελτιστοποιημένη διαχείριση ετικετών με τους ίδιους κανόνες ορατότητας και επιλογής.</string>
 </resources>

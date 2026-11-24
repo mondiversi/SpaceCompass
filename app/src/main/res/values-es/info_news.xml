@@ -1,9 +1,9 @@
 <resources>
     <string name="info_news_title">Últimas novedades · %1$s</string>
-    <string name="info_news_star_sky" formatted="false">Toca dos veces una zona libre para ocultar o mostrar los paneles del objeto y la brújula, incluido el nombre del objeto. Los controles y la retícula siguen visibles.</string>
-    <string name="info_news_texture_downloads" formatted="false">Controles reorganizados y línea del horizonte de la cámara con la mitad del grosor anterior.</string>
-    <string name="info_news_weather" formatted="false">La opacidad predeterminada de la cuadrícula es del 50%. El deslizador actualiza el valor al instante. Cuadrícula y retícula no tienen contorno; la opacidad de la retícula es del 80%.</string>
-    <string name="info_news_viewer_zoom" formatted="false">Con niebla, cielo cubierto o nieve de día, las líneas de la cuadrícula son negras por encima y por debajo del horizonte.</string>
-    <string name="info_news_settings" formatted="false">Ventanas más compactas, acciones junto al título e icono de cierre en horizontal. Las opciones se conservan al girar la pantalla.</string>
-    <string name="info_news_catalog" formatted="false">Los menús de zoom se leen sobre los paneles. El tutorial destaca una zona libre fija y explica los controles en uso.</string>
+    <string name="info_news_star_sky" formatted="false">Los globos de los puntos normales ahora muestran «Punto N», como en el recorrido diario.</string>
+    <string name="info_news_texture_downloads" formatted="false">Las antípodas conservan el nombre y el número del punto original, también en las capturas.</string>
+    <string name="info_news_weather" formatted="false">La cuadrícula del cielo es negra por la mañana y la tarde con cualquier tiempo, y blanca en las demás fases solares.</string>
+    <string name="info_news_viewer_zoom" formatted="false">Las opciones del centro panorámico tienen iconos de brújula con las letras internacionales N, E, S, W.</string>
+    <string name="info_news_settings" formatted="false">Panorámicas del cielo y del globo más ligeras al desplazar y ampliar.</string>
+    <string name="info_news_catalog" formatted="false">Gestión de etiquetas optimizada, conservando las reglas de visibilidad y selección.</string>
 </resources>

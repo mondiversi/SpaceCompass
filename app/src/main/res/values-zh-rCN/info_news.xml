@@ -1,9 +1,9 @@
 <resources>
     <string name="info_news_title">最新变化 · %1$s</string>
-    <string name="info_news_star_sky" formatted="false">双击空白区域可隐藏或显示天体和指南针面板，包括天体名称。按钮和准星保持可见。</string>
-    <string name="info_news_texture_downloads" formatted="false">重新排列视图按钮，并将相机地平线粗细减为原来的一半。</string>
-    <string name="info_news_weather" formatted="false">网格默认不透明度为50%。滑块会立即更新数值。网格和准星均无描边；准星不透明度为80%。</string>
-    <string name="info_news_viewer_zoom" formatted="false">白天出现雾、阴天或雪时，地平线上下的网格线均为黑色。</string>
-    <string name="info_news_settings" formatted="false">弹窗更加紧凑，横屏时操作按钮和关闭图标位于标题栏。旋转屏幕后仍保留选择。</string>
-    <string name="info_news_catalog" formatted="false">缩放菜单可在面板上方清晰显示。教程标出固定的空白区域，并说明当前按钮的功能。</string>
+    <string name="info_news_star_sky" formatted="false">普通点的气泡现在也显示“点 N”，与每日轨迹一致。</string>
+    <string name="info_news_texture_downloads" formatted="false">对跖点保留原始点的名称和编号，包括在截图中。</string>
+    <string name="info_news_weather" formatted="false">天空网格在上午和下午始终为黑色，不受天气影响；其他太阳阶段为白色。</string>
+    <string name="info_news_viewer_zoom" formatted="false">全景中心选项新增罗盘图标，使用国际字母 N、E、S、W。</string>
+    <string name="info_news_settings" formatted="false">减轻平移和缩放时天空与地球仪全景的处理负担。</string>
+    <string name="info_news_catalog" formatted="false">优化标签处理，同时保留原有的可见性与选择规则。</string>
 </resources>

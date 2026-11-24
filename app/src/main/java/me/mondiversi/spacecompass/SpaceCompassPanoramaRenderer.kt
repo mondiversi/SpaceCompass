@@ -44,7 +44,7 @@ internal fun renderSpaceCompassPanorama(snapshot: SpaceCompassPanoramaSnapshot, 
     require(width in 512..4096 && snapshot.objects.isNotEmpty())
     if (snapshot.globe != null) return renderSpaceCompassGlobe(snapshot,width,requireNotNull(context))
     val scale = width / 4096f
-    val gridPalette=spaceCompassWeatherGridPalette(snapshot)
+    val gridPalette=spaceCompassSkyGridPalette(snapshot)
     val sceneWidth = width
     val centerAzimuth = snapshot.center.azimuth
     val observations = snapshot.objects.associateWith { item ->
@@ -187,6 +187,7 @@ internal fun renderSpaceCompassPanorama(snapshot: SpaceCompassPanoramaSnapshot, 
         // Draw every curve before live markers, keeping the selected set frozen throughout export.
         snapshot.objects.forEach { item ->
             val path = item.path ?: return@forEach
+            val pointNames=spaceCompassPanoramaPathPointNames(snapshot,path)
             val segments = spaceCompassPanoramaSegments(path, sceneWidth.toDouble(), sceneHeight.toDouble(), centerAzimuth)
             val tint = item.tint
             for (below in listOf(false, true)) {
@@ -243,7 +244,7 @@ internal fun renderSpaceCompassPanorama(snapshot: SpaceCompassPanoramaSnapshot, 
                 val time = (if (item.comparison == null) snapshot.markerTimes[marker.timeMs] else null) ?: formatSpaceCompassPanoramaMarkerTime(marker.timeMs,item.referenceTime(snapshot.timeMs),
                     item.displayTimeZone(snapshot),snapshot.formatting)
                 // Read elevation from this object's marker, not the timestamp shared by other paths.
-                val label = formatSpaceCompassPanoramaPathPointLabel(time, marker, snapshot.formatting, snapshot.pointEventNames, item.referenceTime(snapshot.timeMs), snapshot.bodyNames)
+                val label = formatSpaceCompassPanoramaPathPointLabel(time, marker, snapshot.formatting, snapshot.pointEventNames, item.referenceTime(snapshot.timeMs), snapshot.bodyNames, pointNames)
                 pointLabels += SpaceCompassPanoramaTimeLabel(label, p, markerTint,
                     marker.events.any { it != SpaceCompassSunPathEvent.HOUR })
             }

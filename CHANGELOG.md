@@ -1,5 +1,15 @@
 # Changelog
 
+## 1.10.7 — 2026-11-24
+
+- Add ordinary point numbers to live and captured point bubbles, matching Daily path. Retain key-point and fixed-date comparison names; antipodes inherit the original point's number.
+- Use black reference grids in simulated Sky during the morning and afternoon, above and below the horizon, independently of weather. Keep white grids in the other solar phases, on real camera backgrounds and on geographic Globe views. Preserve the saved opacity and the 50 percent initial value.
+- Add compass icons to the Panorama centre choices, with international N/E/S/W letters and translated direction names.
+- Reduce repeated work in Sky and Globe panoramas: reuse unchanged projections and text measurements, batch consecutive paths of the same style and skip offscreen segments. Preserve seams, dash patterns, label priorities, selections and geometry. These changes reduce renderer work; they do not promise uniform frame-rate gains on every phone.
+- Share label-clearance calculations and remove unused WebView fields. Add geometry, cache-boundary and label-clearance regressions to the renderer checks and continuous integration.
+- Review translation-key and formatting parity in all twenty interface languages, refresh News and align current documentation. Preserve Locations, Scenes, personal moments, selected points and astronomical calculations.
+- Keep the external graphics collection unchanged, with individual downloads and offline caches. No new graphics release or complete texture archive is required.
+
 ## 1.10.6 — 2026-11-23
 
 - Double-tap any free main-view area to hide or restore both information panels, including the complete object header in portrait and landscape. Keep controls, reference grids, the reticle and reticle-driven point details available. Retain the previous compact object header behind a source-level compatibility flag, without changing selections or astronomical calculations.

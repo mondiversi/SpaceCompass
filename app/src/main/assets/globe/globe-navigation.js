@@ -39,6 +39,23 @@ function globeStroke(a,b,color,width,dashed){const p=globePoint(a),q=globePoint(
  orbitInk.globalAlpha=p.hidden&&q.hidden ? .17 : 1;orbitInk.strokeStyle=color;orbitInk.lineWidth=width;
  orbitInk.setLineDash(dashed||p.hidden&&q.hidden?[4,4]:[]);orbitInk.beginPath();
  const segments=globeScene.flat?globeFlatSegment(p,q):[[p,q]];for(const [a,b] of segments){orbitInk.moveTo(a.x,a.y);orbitInk.lineTo(b.x,b.y);}orbitInk.stroke();}
+// Flat curves batch equal styles without joining their subpaths or changing dash origins.
+function drawGlobeFlatTrack(track){let color=null,dashed=false,pending=false;
+ const flush=()=>{if(pending){orbitInk.stroke();pending=false;}};
+ for(let i=1;i<track.curve.length;i++){
+  const p=globePoint(track.curve[i-1][0]),q=globePoint(track.curve[i][0]);
+  const segments=globeFlatSegment(p,q).filter(([a,b])=>Math.max(a.x,b.x)>=-16&&Math.min(a.x,b.x)<=viewWidth+16&&
+   Math.max(a.y,b.y)>=-16&&Math.min(a.y,b.y)<=viewHeight+16);
+  // Labels are clamped inside the view and use at most 10px collision padding.
+  if(globeScene.labels)globeLabelSegments.push(...segments);
+  if(!segments.length)continue;
+  const below=track.curve[i][1],nextColor=below?(track.belowColor||track.color):track.color,nextDash=!!(below||track.comparison);
+  if(pending&&(color!==nextColor||dashed!==nextDash))flush();
+  if(!pending){color=nextColor;dashed=nextDash;orbitInk.globalAlpha=1;orbitInk.strokeStyle=color;orbitInk.lineWidth=1.6;
+   orbitInk.setLineDash(dashed?[4,4]:[]);orbitInk.beginPath();pending=true;}
+  for(const [a,b] of segments){orbitInk.moveTo(a.x,a.y);orbitInk.lineTo(b.x,b.y);}
+ }
+ flush();}
 // Clip a segment against a padded label rectangle, after a cheap bounding-box rejection.
 function globeLineTouchesBox(box,segment,pad){
  const [a,b]=segment,l=box.x-pad,r=box.x+box.w+pad,t=box.y-pad,bottom=box.y+box.h+pad;
@@ -49,12 +66,22 @@ function globeLineTouchesBox(box,segment,pad){
   const v=q/p;if(p<0){if(v>last)return false;first=Math.max(first,v)}else{if(v<first)return false;last=Math.min(last,v)}
  }return true;
 }
-function globeText(label,point,color,selected,key,radius){if(!label)return null;
+// Squared distance preserves strict label clearance without repeated square roots.
+function globePointNearBox(point,box,radius){
+ const dx=point.x-Math.max(box.x,Math.min(box.x+box.w,point.x)),dy=point.y-Math.max(box.y,Math.min(box.y+box.h,point.y));
+ return radius>0&&dx*dx+dy*dy<radius*radius;
+}
+// Font/width/text determine wrapping, independently of pan, colours or label placement.
+const globeTextLayouts=new Map();
+function globeTextLayout(label){const key=viewWidth+':'+label,previous=globeTextLayouts.get(key);if(previous)return previous;
  orbitInk.font='600 12px sans-serif';const limit=Math.min(280,viewWidth-24),lines=[];
  for(const paragraph of label.split('\n')){let line='';for(const word of paragraph.split(/\s+/)){
   const next=line?line+' '+word:word;if(orbitInk.measureText(next).width>limit-12&&line){lines.push(line);line=word}else line=next;
  }lines.push(line);}
- const w=Math.min(Math.max(...lines.map(v=>orbitInk.measureText(v).width))+12,viewWidth-16),h=lines.length*16+8;
+ const layout={lines,w:Math.min(Math.max(...lines.map(v=>orbitInk.measureText(v).width))+12,viewWidth-16),h:lines.length*16+8};
+ globeTextLayouts.set(key,layout);if(globeTextLayouts.size>256)globeTextLayouts.delete(globeTextLayouts.keys().next().value);return layout;}
+function globeText(label,point,color,selected,key,radius){if(!label)return null;
+ const {lines,w,h}=globeTextLayout(label);
  if(h>viewHeight-8)return null;
  const candidates=[];
  for(const extra of [28,44,64,88,116,148]){
@@ -70,12 +97,10 @@ function globeText(label,point,color,selected,key,radius){if(!label)return null;
  order.push(...candidates.map((_,i)=>i).filter(i=>i!==cached));
  for(const relaxed of (selected?[false,true]:[false]))for(const index of order){const [cx,cy]=candidates[index];
   const box={x:Math.max(4,Math.min(viewWidth-w-4,cx-w/2)),y:Math.max(4,Math.min(viewHeight-h-4,cy-h/2)),w,h};
-  const nearestX=Math.max(box.x,Math.min(box.x+w,point.x)),nearestY=Math.max(box.y,Math.min(box.y+h,point.y));
-  if(Math.hypot(nearestX-point.x,nearestY-point.y)<radius+24)continue;
+  if(globePointNearBox(point,box,radius+24))continue;
   if(globeScene.exclusions?.some(e=>box.x<e[0]+e[2]+4&&box.x+w>e[0]-4&&box.y<e[1]+e[3]+4&&box.y+h>e[1]-4))continue;
   if(globeText.boxes.some(b=>box.x<b.x+b.w+6&&box.x+w>b.x-6&&box.y<b.y+b.h+6&&box.y+h>b.y-6))continue;
-  if(!relaxed&&globeHits.some(p=>{const x=Math.max(box.x,Math.min(box.x+w,p.x)),y=Math.max(box.y,Math.min(box.y+h,p.y));
-   return Math.hypot(x-p.x,y-p.y)<(p.current?16:7)+6;}))continue;
+  if(!relaxed&&globeHits.some(p=>globePointNearBox(p,box,(p.current?16:7)+6)))continue;
   // A small hysteresis keeps a clear side stable while the view moves by a few pixels.
   if(!relaxed&&globeLabelSegments.some(s=>globeLineTouchesBox(box,s,index===cached?6:10)))continue;
   globeText.boxes.push(box);globeLabelSides.set(key,index);
@@ -178,7 +203,7 @@ function globeGuideLayout(info,points){const paths=globeGuideRuns(points).map(gl
      if(box.x<view.x||box.x+box.w>view.right||box.y<view.y||box.y+box.h>view.bottom||
         exclusions.some(b=>overlaps(box,b))||globeText.boxes.some(b=>overlaps(box,b))||
         boxes.slice(0,-2).some(b=>overlaps(box,b))||
-        globeHits.some(p=>{if(!avoidDots&&!p.current)return false;const x=Math.max(box.x,Math.min(box.x+box.w,p.x)),y=Math.max(box.y,Math.min(box.y+box.h,p.y));return Math.hypot(x-p.x,y-p.y)<(p.current?19:p.selected?11:4);})){clear=false;break;}
+        globeHits.some(p=>(avoidDots||p.current)&&globePointNearBox(p,box,p.current?19:p.selected?11:4))){clear=false;break;}
      boxes.push(box);samples.push({x,slice,p});
     }
     if(clear){globeText.boxes.push(...boxes);globeGuideAnchors.set(info.latitude,globeGuidePoint(path,center).u);return {text,size,width,samples};}
@@ -213,7 +238,7 @@ function globePoleLayout(info,point){const view=globeGuideViewport();
   for(const index of order){const b=candidates[index];b.x=Math.max(view.x,Math.min(view.right-w,b.x));
    if(b.x<view.x||b.x+w>view.right||b.y<view.y||b.y+h>view.bottom)continue;
    if((globeScene.exclusions||[]).some(([x,y,w,h])=>overlaps(b,{x,y,w,h}))||globeText.boxes.some(a=>overlaps(b,a)))continue;
-   if(globeHits.some(p=>p.current&&Math.hypot(Math.max(b.x,Math.min(b.x+w,p.x))-p.x,Math.max(b.y,Math.min(b.y+h,p.y))-p.y)<19))continue;
+   if(globeHits.some(p=>p.current&&globePointNearBox(p,{x:b.x,y:b.y,w,h},19)))continue;
    globeText.boxes.push(b);globePoleSides.set(info.latitude,index);return {text,box:b};
   }
  }
@@ -253,15 +278,22 @@ function drawGlobeCoordinateGrid(){if(globeScene.grid===false)return;if(globeSce
  orbitInk.strokeStyle=ink[0];orbitInk.lineWidth=.30;orbitInk.stroke();
 }
 // Plate-carree maps share the native angular/geographic vectors and hit IDs.
-function globeFlatRect(){const v=globeScene.viewport||[0,0,viewWidth,viewHeight],w=v[2]*globeScene.pose[2],h=w/2;
+function globeFlatRect(){const v=globeScene.viewport||[0,0,viewWidth,viewHeight],zoom=globeScene.pose[2],latitude=globeScene.pose[1],memo=globeFlatRect.memo;
+ if(memo&&memo.left===v[0]&&memo.top===v[1]&&memo.width===v[2]&&memo.height===v[3]&&memo.zoom===zoom&&memo.latitude===latitude)return memo.rect;
  // Globe maps fit the full width at 1x, preserving 2:1 proportions. Vertical pan stops at the poles.
- const wanted=globeScene.pose[1]/Math.PI*h,limit=Math.max(0,(h-v[3])/2);
- const offset=Math.max(-limit,Math.min(limit,wanted));
- return {x:v[0]+(v[2]-w)/2,y:v[1]+(v[3]-h)/2+offset,w,h};}
-function globeFlatPoint(v){const r=globeFlatRect(),length=Math.hypot(...v)||1,center=globeScene.sky?(globeScene.skyCenter||0)*Math.PI/180:0;
- const angle=Math.atan2(v[0],v[2])-globeScene.pose[0]-center;
- const u=((angle+Math.PI)%(2*Math.PI)+2*Math.PI)%(2*Math.PI)/(2*Math.PI);
- return {x:r.x+u*r.w,y:r.y+(Math.PI/2-Math.asin(Math.max(-1,Math.min(1,v[1]/length))))/Math.PI*r.h,depth:1,hidden:false};}
+ const w=v[2]*zoom,h=w/2,wanted=latitude/Math.PI*h,limit=Math.max(0,(h-v[3])/2);
+ const offset=Math.max(-limit,Math.min(limit,wanted)),rect={x:v[0]+(v[2]-w)/2,y:v[1]+(v[3]-h)/2+offset,w,h};
+ globeFlatRect.memo={left:v[0],top:v[1],width:v[2],height:v[3],zoom,latitude,rect};return rect;}
+function globeFlatPoint(v){const r=globeFlatRect(),longitude=globeScene.pose[0],center=globeScene.sky?(globeScene.skyCenter||0)*Math.PI/180:0;
+ let frame=globeFlatPoint.frame;
+ if(!frame||frame.rect!==r||frame.longitude!==longitude||frame.center!==center)
+  globeFlatPoint.frame=frame={rect:r,longitude,center,points:new WeakMap()};
+ const previous=frame.points.get(v);if(previous)return previous;
+ const angles=globeFlatPoint.angles||(globeFlatPoint.angles=new WeakMap());let coordinate=angles.get(v);
+ if(!coordinate){const length=Math.hypot(...v)||1;
+  coordinate={longitude:Math.atan2(v[0],v[2]),latitude:(Math.PI/2-Math.asin(Math.max(-1,Math.min(1,v[1]/length))))/Math.PI};angles.set(v,coordinate);}
+ const angle=coordinate.longitude-longitude-center,u=((angle+Math.PI)%(2*Math.PI)+2*Math.PI)%(2*Math.PI)/(2*Math.PI);
+ const point={x:r.x+u*r.w,y:r.y+coordinate.latitude*r.h,depth:1,hidden:false};frame.points.set(v,point);return point;}
 function globeFlatSegment(p,q){const r=globeFlatRect();if(Math.abs(p.x-q.x)<=r.w/2)return [[p,q]];
  const end={...q,x:q.x+(q.x>p.x?-r.w:r.w)},edge=end.x<r.x?r.x:r.x+r.w;
  const t=(edge-p.x)/(end.x-p.x),at={x:edge,y:p.y+(end.y-p.y)*t},shift=end.x<r.x?r.w:-r.w;
@@ -380,7 +412,8 @@ function drawGlobeOverlays(){const d=pixelRatio;if(orbitCanvas.width!==Math.roun
   if(info?.name)guideCurves.push({info,points});
  }
  }
- for(const track of globeScene.tracks){for(let i=1;i<track.curve.length;i++)globeStroke(track.curve[i-1][0],track.curve[i][0],track.curve[i][1]?(track.belowColor||track.color):track.color,1.6,track.curve[i][1]||!!track.comparison);
+ for(const track of globeScene.tracks){if(globeScene.flat&&!globeScene.objectCamera)drawGlobeFlatTrack(track);
+  else for(let i=1;i<track.curve.length;i++)globeStroke(track.curve[i-1][0],track.curve[i][0],track.curve[i][1]?(track.belowColor||track.color):track.color,1.6,track.curve[i][1]||!!track.comparison);
   for(const dot of [...track.dots].sort((a,b)=>Number(a.current)-Number(b.current))){const p=globePoint(dot.v);if(p.hidden||p.behindEye)continue;
    const tint=dot.selected?globeScene.selection:dot.below?(track.belowColor||track.color):track.color;
    orbitInk.globalAlpha=1;orbitInk.setLineDash([]);orbitInk.strokeStyle=tint;orbitInk.lineWidth=dot.selected?1.8:1;

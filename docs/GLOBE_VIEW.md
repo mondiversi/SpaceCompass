@@ -229,13 +229,13 @@ to 100 percent. Existing saved preferences are not reset; zero makes the grid
 invisible. Coordinate numbers and named planetary lines remain independent and
 start off.
 
-Simulated Sky uses black grid lines on both sides of the horizon for visible fog,
-overcast sky or snow in the MORNING and AFTERNOON solar phases. Other sky conditions
-use white. Real camera backgrounds and geographic Globe views explicitly retain
-white grid lines. The app uses its existing effective Location/time/weather;
-no extra astronomical calculation is requested just for the grid colour.
+Simulated Sky uses black grid lines above and below the horizon in the MORNING
+and AFTERNOON solar phases, independently of weather, missing forecasts or the
+weather toggle. Dawn, sunset, evening and night use white. Real camera backgrounds
+and geographic Globe views explicitly retain white grid lines. The app reuses the
+effective Location's solar phase; the phone theme and clock do not choose the ink.
 
-Captures freeze their grid opacity and Sky weather policy; preview edits affect
+Captures freeze their grid opacity and Sky solar phase; preview edits affect
 only that image and its export caches. Older Scene documents and saved captures
 without the opacity field retain the legacy 80 percent fallback. Newly exported
 documents write their actual opacity explicitly for cross-version compatibility.
@@ -249,3 +249,24 @@ Double-tap free main-view space hides/restores both panels and their object head
 in portrait and landscape. Controls, grid and reticle-driven point details remain
 available. The old compact object strip/rail and its viewport rules are retained
 behind `SPACE_COMPASS_KEEP_COLLAPSED_OBJECT_HEADER` for a reversible layout trial.
+
+
+## Flat panorama rendering work
+
+Live Sky and Globe panoramas cache the angular coordinates of immutable native
+vectors and reuse projected points within an exact pose/viewport frame. New
+longitude, vertical pan, zoom, centre or viewport dimensions invalidate the
+pixel projection; incoming scene vectors remain weakly held. Text wrapping and
+metrics use a bounded 256-entry cache keyed by text and viewport width, keeping
+Unicode strings and the existing placement/collision rules.
+
+Flat trajectories submit contiguous runs of the same colour/dash style together.
+Every original segment remains its own subpath, retaining round caps and dash
+origins, including fragments on both sides of the map seam. Only segments wholly
+outside a 16-CSS-pixel padded viewport are culled; label boxes stay inside the view
+and their largest segment-collision margin is 10 pixels. Spherical occlusion,
+native gesture ownership, frame-rate preferences, time, ephemerides and capture
+rendering are unchanged. Run `scripts/CheckGlobePanoramaPerformance.js` alongside
+the existing projection, label, hit-test, viewport and integrity checks.
+
+Label clearance uses a shared squared-distance check with strict boundaries; regression checks compare it with the previous distance test, including edge cases. Unused WebView pose fields have been removed.

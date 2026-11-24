@@ -38,9 +38,10 @@ internal fun spaceCompassPanoramaPointSelected(selected: List<SpaceCompassPanora
     body: SpaceCompassCelestialBody, point: SpaceCompassSunPathPoint, comparisonId: String? = null): Boolean =
     selected.any { !it.isAntipode && !it.isCurrent && it.body == body && it.comparison?.id == comparisonId && it.point == point }
 
-/** Selected dots use the same one-row label as ordinary dots, preserving only special event names. */
+/** Selected dots and their antipodes share the ordinary/key point vocabulary of their original path. */
 internal fun formatSpaceCompassPanoramaSelection(snapshot: SpaceCompassPanoramaSnapshot,
-    selected: SpaceCompassPanoramaSelectedPoint): String {
+    selected: SpaceCompassPanoramaSelectedPoint,
+    pointNames: SpaceCompassSunPathPointNames? = selected.path?.let { spaceCompassPanoramaPathPointNames(snapshot,it) }): String {
     val referenceTime = selected.comparison?.timeMs ?: snapshot.timeMs
     val anchor = selected.isCurrent || selected.comparison?.let { c ->
         c.source == SpaceCompassComparisonSource.HEIGHT && SpaceCompassSunPathEvent.CULMINATION in selected.point.events &&
@@ -53,7 +54,7 @@ internal fun formatSpaceCompassPanoramaSelection(snapshot: SpaceCompassPanoramaS
         displayZone, snapshot.formatting)
     if (selected.isAntipode) {
         val event = if (anchor) currentName else
-            spaceCompassPanoramaPointEventName(selected.point, snapshot)
+            spaceCompassPanoramaPathPointName(selected.point,snapshot.formatting,snapshot.pointEventNames,snapshot.bodyNames,pointNames)
         val name = listOf(snapshot.orbitExportVocabulary.antipode, event).filter { it.isNotBlank() }.joinToString(" · ")
         return formatSpaceCompassPanoramaPointLabel(time, selected.point.position, snapshot.formatting, name,
             formatSpaceCompassPanoramaPointCountdown(selected.point.timeMs, referenceTime, snapshot.formatting))
@@ -62,9 +63,5 @@ internal fun formatSpaceCompassPanoramaSelection(snapshot: SpaceCompassPanoramaS
         snapshot.formatting, currentName,
         formatSpaceCompassPanoramaPointCountdown(selected.point.timeMs, referenceTime, snapshot.formatting))
     else formatSpaceCompassPanoramaPathPointLabel(time, selected.point, snapshot.formatting,
-        snapshot.pointEventNames, referenceTime, snapshot.bodyNames)
+        snapshot.pointEventNames, referenceTime, snapshot.bodyNames, pointNames)
 }
-
-private fun spaceCompassPanoramaPointEventName(point: SpaceCompassSunPathPoint,
-    snapshot: SpaceCompassPanoramaSnapshot): String = point.events.filter { it != SpaceCompassSunPathEvent.HOUR }
-    .sortedBy { it.ordinal }.mapNotNull { snapshot.pointEventNames[it] }.joinToString(" · ")

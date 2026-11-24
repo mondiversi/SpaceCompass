@@ -1,9 +1,9 @@
 <resources>
     <string name="info_news_title">Latest news · %1$s</string>
-    <string name="info_news_star_sky" formatted="false">Double-tap a free area to hide or show the object and compass panels, including the object name. Controls and reticle stay visible.</string>
-    <string name="info_news_texture_downloads" formatted="false">Reorganized view controls and a camera horizon half as thick as before.</string>
-    <string name="info_news_weather" formatted="false">Grid opacity defaults to 50%. Its slider updates immediately. Grid and reticle have no outline; reticle opacity is 80%.</string>
-    <string name="info_news_viewer_zoom" formatted="false">Daytime fog, overcast skies and snow use black grid lines, above and below the horizon.</string>
-    <string name="info_news_settings" formatted="false">More compact popups, landscape title-bar actions and a close icon. Choices are retained when the screen rotates.</string>
-    <string name="info_news_catalog" formatted="false">Zoom menus stay readable over the panels. The tutorial highlights a fixed free area and explains the controls in use.</string>
+    <string name="info_news_star_sky" formatted="false">Ordinary point bubbles now show “Point N”, matching the Daily path.</string>
+    <string name="info_news_texture_downloads" formatted="false">Antipodes keep the original point’s name and number, including in captures.</string>
+    <string name="info_news_weather" formatted="false">Sky grids are black in the morning and afternoon in any weather, and white in other solar phases.</string>
+    <string name="info_news_viewer_zoom" formatted="false">Panorama centre choices have compass icons with international N, E, S, W letters.</string>
+    <string name="info_news_settings" formatted="false">Lighter Sky and Globe panoramas when panning and zooming.</string>
+    <string name="info_news_catalog" formatted="false">Optimized label handling, preserving visibility and selection rules.</string>
 </resources>

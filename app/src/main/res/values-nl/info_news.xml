@@ -1,9 +1,9 @@
 <resources>
     <string name="info_news_title">Laatste nieuws · %1$s</string>
-    <string name="info_news_star_sky" formatted="false">Dubbeltik op een vrije plek om de object- en kompaspanelen inclusief objectnaam te verbergen of tonen. Knoppen en dradenkruis blijven zichtbaar.</string>
-    <string name="info_news_texture_downloads" formatted="false">Opnieuw ingedeelde knoppen en een camerahorizon die half zo dik is als voorheen.</string>
-    <string name="info_news_weather" formatted="false">De standaarddekking van het raster is 50%. De schuifregelaar werkt de waarde direct bij. Raster en dradenkruis hebben geen omtrek; de dekking van het dradenkruis is 80%.</string>
-    <string name="info_news_viewer_zoom" formatted="false">Bij mist, bewolking en sneeuw overdag worden rasterlijnen boven en onder de horizon zwart.</string>
-    <string name="info_news_settings" formatted="false">Compactere pop-ups, acties naast de titel en een sluitpictogram in liggende stand. Keuzes blijven behouden bij draaien.</string>
-    <string name="info_news_catalog" formatted="false">Zoommenu’s blijven leesbaar boven de panelen. De tutorial markeert een vaste vrije plek en legt de huidige knoppen uit.</string>
+    <string name="info_news_star_sky" formatted="false">Tekstballonnen van gewone punten tonen nu ‘Punt N’, zoals in het dagelijkse pad.</string>
+    <string name="info_news_texture_downloads" formatted="false">Antipoden behouden de naam en het nummer van het oorspronkelijke punt, ook in opnamen.</string>
+    <string name="info_news_weather" formatted="false">Hemelrasters zijn ’s ochtends en ’s middags bij elk weer zwart en in andere zonnefasen wit.</string>
+    <string name="info_news_viewer_zoom" formatted="false">De keuzes voor het panoramamidden hebben kompaspictogrammen met de internationale letters N, E, S, W.</string>
+    <string name="info_news_settings" formatted="false">Lichtere hemel- en globepanorama’s bij verschuiven en zoomen.</string>
+    <string name="info_news_catalog" formatted="false">Geoptimaliseerde labels met behoud van de regels voor zichtbaarheid en selectie.</string>
 </resources>

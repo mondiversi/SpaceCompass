@@ -8,8 +8,8 @@ paths, inspect reference facts and view textured models. Space Compass is a stan
 
 ## Download and install
 
-Download **space-compass-1.10.6.apk** from the
-[Space Compass 1.10.6 release](https://github.com/mondiversi/SpaceCompass/releases/tag/v1.10.6).
+Download **space-compass-1.10.7.apk** from the
+[Space Compass 1.10.7 release](https://github.com/mondiversi/SpaceCompass/releases/tag/v1.10.7).
 Android 8.0 or newer is required. Open the APK and follow Android's installation
 prompts; allow installation for your browser or file manager if requested.
 
@@ -100,12 +100,13 @@ See Space Compass in portrait and landscape, by day and by night. These English 
 
 - **Find objects in the sky.** Point your phone to see where the Sun, Moon, planets and other objects are, including those below the horizon.
 - **See the sky through your camera.** Overlay objects and their paths on your surroundings. Zoom in or out and fade the object images to compare their predicted positions with what you see. Adjust a fine reference grid to suit the scene at any time; the camera horizon is now thinner.
-- **Control the view with a tap.** Tap empty sky to pause or resume sky time; double-tap to hide or show the object and compass panels, including the object name. Controls, the available reticle and grids stay visible, and aiming at a point still shows its details. The white reticle stays readable without an outline; Sky uses black grid lines with daytime fog, overcast weather and snow. The panel layout is remembered. Double-tap a photo or panorama preview to toggle its overlay controls.
+- **Control the view with a tap.** Tap empty sky to pause or resume sky time; double-tap to hide or show the object and compass panels, including the object name. Controls, the available reticle and grids stay visible, and aiming at a point still shows its details. The white reticle stays readable without an outline; Sky uses black grid lines in the morning and afternoon, and white lines during the other solar phases, regardless of weather. The panel layout is remembered. Double-tap a photo or panorama preview to toggle its overlay controls.
 - **Choose your field of view.** Adjust and remember virtual-sky zoom from 0.5× to 1×, with separate camera zoom for the lenses available on your device.
 - **Explore an interactive Earth.** Switch to Globe, rotate around Earth’s axis or freely, zoom up to 8× in Frame, inspect paths and key points, and generate a Globe image. Earth looks sharper, with detail adapting while you move and refining when you stop. A discreet latitude/longitude grid provides geographic context. Choose Frame or Panorama, show coordinate numbers when useful, and keep grid and planetary lines independent. Choose which labels follow the object selected in the island. Earth satellites use Earth-centred orbits; distant objects show apparent directions.
 - **Follow daily paths.** See when an object rises, reaches its highest point and sets. Choose today's full path or the next 24 hours, select points of interest and check how long until they happen.
 - **Explore other places and times.** Create a Location with a different place, date or time. Pause, speed up or reverse time by up to fifteen days per second. Set up changes at your own pace and apply them when you return to the sky, then save or share the place and time settings independently.
 - **Plan your observations.** Compare the current sky with dated paths from Key Heights, Key Events or your own Personal Moments. Save or share Personal Moments separately, or include active comparisons when exporting a Scene. Future path points can also be sent to Android's Clock or Calendar.
+- **Recognize points and directions.** Ordinary bubbles show the same Point N numbers as Daily path; antipodes keep their original point names. Choose a panorama centre using compass icons with international N/E/S/W letters. Sky and Globe panoramas reuse unchanged drawing work during navigation.
 - **Capture the view.** Take a camera photo with celestial overlays, capture the visible Sky or Globe, or generate a complete panorama. Export the frame, panorama or both; choose grids, opacity and labels and use the colour legend to identify each object's path.
 - **Share your sky setup.** Export a Scene with selected objects, dated comparisons, orbit points and Antipodes. Include Location when needed, and choose whether automatic place and time values should be fixed at export. Load it to restore the view. A paused Scene preserves the held date and time.
 - **Save and share your findings.** Export images, CSV spreadsheets and readable tables from captures, daily paths and the Observatory. Choose your language and units or international formatting, and control how much location information to include.
@@ -125,7 +126,7 @@ safety or navigation instrument.
 ## Build and checks
 
 The application ID is `me.mondiversi.spacecompass`. This source builds version
-**1.10.6**, with Android/update identity `1.10.6` and version code **85**.
+**1.10.7**, with Android/update identity `1.10.7` and version code **86**.
 This preserves the three-part update protocol used by existing preview installations.
 The app stores its preferences and caches privately.
 
@@ -179,11 +180,11 @@ Third-party SGP4 code and image maps retain their respective licenses/credits;
 Astronomy Engine uses MIT, AndroidX uses Apache-2.0 and Leaflet uses BSD-2-Clause.
 Launcher/loading artwork and original illustrations are project assets.
 
-Capture the visible frame in **Sky** or **Globe**, or switch to a complete panorama (a flat map for Globe). Export either image or both together, alongside tables frozen at capture time. Capture grids and labels remain configurable. Live grids use fine unoutlined lines and adjustable opacity, initially 50 percent. Sky uses black lines with daytime fog, overcast skies and snow; other Sky conditions, real camera backgrounds and geographic Globe views use white lines. Frame and Panorama choices stay side by side in either orientation; Globe capture grids use 15° intervals. See [capture projections](docs/CAPTURE_PROJECTIONS.md).
+Capture the visible frame in **Sky** or **Globe**, or switch to a complete panorama (a flat map for Globe). Export either image or both together, alongside tables frozen at capture time. Capture grids and labels remain configurable. Live grids use fine unoutlined lines and adjustable opacity, initially 50 percent. Sky uses black lines in the morning and afternoon regardless of weather; other solar phases, real camera backgrounds and geographic Globe views use white lines. Frame and Panorama choices stay side by side in either orientation; Globe capture grids use 15° intervals. See [capture projections](docs/CAPTURE_PROJECTIONS.md).
 
 ## Data and graphics packages
 
-Release 1.10.6 includes **9,999 selectable objects**, and an optional reference-information archive.
+Release 1.10.7 includes **9,999 selectable objects**, and an optional reference-information archive.
 All descriptive data and translations remain inside the APK. Scientific limits and provenance are in the
 [catalogue sources](docs/CATALOG_9999.md) and [canonical source catalogue](catalogue/README.md).
 

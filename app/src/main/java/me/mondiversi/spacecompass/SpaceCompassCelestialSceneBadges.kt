@@ -40,7 +40,6 @@ internal fun SpaceCompassCelestialSceneBadges(pinned: List<SpaceCompassCelestial
                     ?.let { spaceCompassComparisonAnchorMatches(c, it, target.point) } == true } == true
             val eventName = if (comparisonAnchor) spaceCompassComparisonPointName(requireNotNull(target.comparison))
                 else if (target.isCurrent) stringResource(R.string.celestial_point_current)
-                else if (target.point.event == SpaceCompassSunPathEvent.HOUR) ""
                 else labels?.name?.invoke(target.point).orEmpty()
             val name = if (target.isAntipode) listOf(stringResource(R.string.scene_antipode), eventName)
                 .filter { it.isNotBlank() }.joinToString(" · ") else eventName

@@ -3,7 +3,7 @@ const root=require('node:path').resolve(__dirname,'..');
 const source=fs.readFileSync(root+'/app/src/main/assets/globe/globe-navigation.js','utf8');
 function context(){const c={viewWidth:800,viewHeight:600,globeScene:{viewport:[0,0,800,600],exclusions:[]},
  orbitInk:{measureText:s=>({width:s.length*6})},globeText:{boxes:[]},globeHits:[]};
- vm.createContext(c);vm.runInContext(source.slice(source.indexOf('const globeGuideAnchors='),source.indexOf('function drawGlobeOverlays(')),c);return c;}
+ vm.createContext(c);vm.runInContext(source.slice(source.indexOf('function globePointNearBox('),source.indexOf('// Font/width/text')),c);vm.runInContext(source.slice(source.indexOf('const globeGuideAnchors='),source.indexOf('function drawGlobeOverlays(')),c);return c;}
 const line=(y=300)=>[{x:-1000,y,depth:1,u:0},{x:1600,y,depth:1,u:1}];
 const info={latitude:23.44,name:'Tropic of Cancer',value:'+23.4°'};
 {

@@ -1,9 +1,9 @@
 <resources>
     <string name="info_news_title">Son yenilikler · %1$s</string>
-    <string name="info_news_star_sky" formatted="false">Nesne adı dahil nesne ve pusula panellerini gizlemek veya göstermek için boş bir alana çift dokunun. Kontroller ve nişangâh görünür kalır.</string>
-    <string name="info_news_texture_downloads" formatted="false">Görünüm kontrolleri yeniden düzenlendi ve kamera ufuk çizgisi önceki kalınlığının yarısına indirildi.</string>
-    <string name="info_news_weather" formatted="false">Varsayılan ızgara opaklığı yüzde 50’dir. Kaydırıcı değeri hemen günceller. Izgara ve nişangâhın dış çizgisi yoktur; nişangâh opaklığı yüzde 80’dir.</string>
-    <string name="info_news_viewer_zoom" formatted="false">Gündüz sis, kapalı hava ve karda ufkun üstünde ve altında siyah ızgara çizgileri kullanılır.</string>
-    <string name="info_news_settings" formatted="false">Daha küçük açılır pencereler, yatayda başlık yanındaki işlemler ve kapatma simgesi. Ekran döndürülünce seçimler korunur.</string>
-    <string name="info_news_catalog" formatted="false">Yakınlaştırma menüleri panellerin üzerinde okunabilir. Eğitim sabit bir boş alanı vurgular ve kullanılan kontrolleri açıklar.</string>
+    <string name="info_news_star_sky" formatted="false">Sıradan nokta balonları artık günlük yoldaki gibi “Nokta N” gösterir.</string>
+    <string name="info_news_texture_downloads" formatted="false">Karşıt noktalar, çekimler dahil özgün noktanın adını ve numarasını korur.</string>
+    <string name="info_news_weather" formatted="false">Gökyüzü ızgarası sabah ve öğleden sonra her havada siyah, diğer güneş evrelerinde beyazdır.</string>
+    <string name="info_news_viewer_zoom" formatted="false">Panorama merkezi seçeneklerinde uluslararası N, E, S, W harfli pusula simgeleri bulunur.</string>
+    <string name="info_news_settings" formatted="false">Kaydırma ve yakınlaştırma sırasında daha hafif Gökyüzü ve Küre panoramaları.</string>
+    <string name="info_news_catalog" formatted="false">Görünürlük ve seçim kuralları korunarak etiket işleme optimize edildi.</string>
 </resources>

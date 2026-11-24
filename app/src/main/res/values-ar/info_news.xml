@@ -1,9 +1,9 @@
 <resources>
     <string name="info_news_title">آخر المستجدات · %1$s</string>
-    <string name="info_news_star_sky" formatted="false">انقر مرتين على مساحة فارغة لإخفاء لوحتي الجرم والبوصلة أو إظهارهما، بما في ذلك اسم الجرم. تبقى الأزرار وعلامة التصويب ظاهرة.</string>
-    <string name="info_news_texture_downloads" formatted="false">أُعيد ترتيب أزرار العرض وأصبح خط الأفق في الكاميرا بنصف سمكه السابق.</string>
-    <string name="info_news_weather" formatted="false">عتامة الشبكة الافتراضية 50%. يعرض شريط التمرير القيمة فورًا. لا توجد حواف للشبكة وعلامة التصويب؛ عتامة علامة التصويب 80%.</string>
-    <string name="info_news_viewer_zoom" formatted="false">يستخدم الضباب والسماء الملبدة والثلج نهارًا خطوط شبكة سوداء، فوق الأفق وتحته.</string>
-    <string name="info_news_settings" formatted="false">نوافذ أكثر اختصارًا مع إجراءات بجوار العنوان وأيقونة إغلاق في الوضع الأفقي. تُحفظ الخيارات عند تدوير الشاشة.</string>
-    <string name="info_news_catalog" formatted="false">تبقى قوائم التكبير مقروءة فوق اللوحات. يبرز الدليل مساحة فارغة ثابتة ويشرح الأزرار المستخدمة.</string>
+    <string name="info_news_star_sky" formatted="false">تعرض فقاعات النقاط العادية الآن «نقطة N»، كما في المسار اليومي.</string>
+    <string name="info_news_texture_downloads" formatted="false">تحتفظ النقاط المقابلة باسم النقطة الأصلية ورقمها، بما في ذلك اللقطات.</string>
+    <string name="info_news_weather" formatted="false">تكون شبكة السماء سوداء صباحًا وبعد الظهر في جميع الأحوال الجوية، وبيضاء في المراحل الشمسية الأخرى.</string>
+    <string name="info_news_viewer_zoom" formatted="false">تتضمن خيارات مركز البانوراما رموز بوصلة بالأحرف الدولية N وE وS وW.</string>
+    <string name="info_news_settings" formatted="false">بانوراما أخف للسماء والكرة الأرضية عند التحريك والتكبير.</string>
+    <string name="info_news_catalog" formatted="false">تحسين معالجة التسميات مع الحفاظ على قواعد الظهور والتحديد.</string>
 </resources>

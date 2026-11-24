@@ -1,9 +1,9 @@
 <resources>
     <string name="info_news_title">Últimas novidades · %1$s</string>
-    <string name="info_news_star_sky" formatted="false">Toque duas vezes numa área livre para ocultar ou mostrar os painéis do objeto e da bússola, incluindo o nome do objeto. Os controlos e a mira continuam visíveis.</string>
-    <string name="info_news_texture_downloads" formatted="false">Controlos reorganizados e linha do horizonte da câmara com metade da espessura anterior.</string>
-    <string name="info_news_weather" formatted="false">A opacidade predefinida da grelha é de 50%. O cursor atualiza imediatamente o valor. Grelha e mira não têm contorno; a opacidade da mira é de 80%.</string>
-    <string name="info_news_viewer_zoom" formatted="false">Com nevoeiro, céu encoberto e neve durante o dia, as linhas da grelha são pretas acima e abaixo do horizonte.</string>
-    <string name="info_news_settings" formatted="false">Janelas mais compactas, ações junto ao título e ícone de fechar na horizontal. As escolhas mantêm-se ao rodar o ecrã.</string>
-    <string name="info_news_catalog" formatted="false">Os menus de zoom mantêm-se legíveis sobre os painéis. O tutorial destaca uma área livre fixa e explica os controlos atuais.</string>
+    <string name="info_news_star_sky" formatted="false">Os balões dos pontos comuns mostram agora «Ponto N», como no percurso diário.</string>
+    <string name="info_news_texture_downloads" formatted="false">Os antípodas mantêm o nome e o número do ponto original, também nas capturas.</string>
+    <string name="info_news_weather" formatted="false">A grelha do céu é preta de manhã e à tarde com qualquer tempo, e branca nas outras fases solares.</string>
+    <string name="info_news_viewer_zoom" formatted="false">As opções do centro panorâmico têm ícones de bússola com as letras internacionais N, E, S, W.</string>
+    <string name="info_news_settings" formatted="false">Panoramas do céu e do globo mais leves ao deslocar e ampliar.</string>
+    <string name="info_news_catalog" formatted="false">Gestão de etiquetas otimizada, mantendo as regras de visibilidade e seleção.</string>
 </resources>

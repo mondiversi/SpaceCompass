@@ -4,19 +4,21 @@ import org.junit.Assert.*
 import org.junit.Test
 
 class SpaceCompassWeatherGridTest {
-    private fun weather(kind: SpaceCompassSunWeatherKind)=SpaceCompassSunWeatherSnapshot(kind,1f,0L)
+    private fun snapshot(phase: SpaceCompassSunSkyPhase,weather: SpaceCompassSunWeatherSnapshot?=null,
+        weatherEnabled: Boolean=true,opacity: Int=50)=SpaceCompassPanoramaSnapshot(
+        0L,0.0,0.0,0.0,phase,weather,emptyList(),SpaceCompassCelestialRemoteData(),"",emptyList(),emptyList(),
+        gridOpacityPercent=opacity,weatherEffectsEnabled=weatherEnabled)
 
-    @Test fun onlyTheThreeRequestedConditionsChangeTheDaytimeSky() {
-        for(phase in SpaceCompassSunSkyPhase.entries) for(kind in SpaceCompassSunWeatherKind.entries) {
-            val wanted=phase in setOf(SpaceCompassSunSkyPhase.MORNING,SpaceCompassSunSkyPhase.AFTERNOON) &&
-                kind in setOf(SpaceCompassSunWeatherKind.FOG,SpaceCompassSunWeatherKind.CLOUDY,SpaceCompassSunWeatherKind.SNOW)
-            assertEquals(wanted,spaceCompassWeatherGridBlack(phase,weather(kind)))
-            assertFalse(spaceCompassWeatherGridBlack(phase,weather(kind),enabled=false))
+    @Test fun morningAndAfternoonAreBlackForEveryWeatherIncludingMissingOrHiddenForecasts() {
+        val weather=SpaceCompassSunWeatherKind.entries.map { SpaceCompassSunWeatherSnapshot(it,1f,0L) }+null
+        for(phase in SpaceCompassSunSkyPhase.entries) for(condition in weather) for(enabled in listOf(false,true)) {
+            val wanted=phase==SpaceCompassSunSkyPhase.MORNING || phase==SpaceCompassSunSkyPhase.AFTERNOON
+            assertEquals(wanted,spaceCompassSkyGridBlack(phase))
+            assertEquals(spaceCompassAngularGridPalette(wanted),spaceCompassSkyGridPalette(snapshot(phase,condition,enabled)))
         }
-        assertFalse(spaceCompassWeatherGridBlack(SpaceCompassSunSkyPhase.MORNING,null))
     }
 
-    @Test fun wholeGridUsesOneInkAndKeepsTheChosenOpacity() {
+    @Test fun oneInkCoversTheCompleteGridAndKeepsTheChosenOpacity() {
         for(percent in 0..100 step 10) {
             val black=spaceCompassAngularGridPalette(true,percent)
             val white=spaceCompassGridPalette(percent)
@@ -28,12 +30,12 @@ class SpaceCompassWeatherGridTest {
         }
     }
 
-    @Test fun frozenCaptureUsesItsOwnWeatherTimeAndOpacity() {
-        val base=SpaceCompassPanoramaSnapshot(0L,0.0,0.0,0.0,SpaceCompassSunSkyPhase.MORNING,
-            weather(SpaceCompassSunWeatherKind.FOG),emptyList(),SpaceCompassCelestialRemoteData(),"",emptyList(),emptyList(),gridOpacityPercent=30)
-        assertEquals(spaceCompassAngularGridPalette(true,30),spaceCompassWeatherGridPalette(base))
-        assertEquals(spaceCompassGridPalette(30),spaceCompassWeatherGridPalette(base,enabled=false))
-        assertEquals(spaceCompassGridPalette(30),spaceCompassWeatherGridPalette(base.copy(weatherEffectsEnabled=false)))
-        assertEquals(spaceCompassGridPalette(30),spaceCompassWeatherGridPalette(base.copy(phase=SpaceCompassSunSkyPhase.NIGHT)))
+    @Test fun captureFreezesItsSolarPhaseAndOpacityWhileCameraAndGlobeRemainIndependent() {
+        val capture=snapshot(SpaceCompassSunSkyPhase.MORNING,opacity=30)
+        assertEquals(spaceCompassAngularGridPalette(true,30),spaceCompassSkyGridPalette(capture))
+        assertEquals(spaceCompassGridPalette(30),spaceCompassSkyGridPalette(capture,enabled=false))
+        assertEquals(spaceCompassAngularGridPalette(true,30),spaceCompassSkyGridPalette(capture.copy(weatherEffectsEnabled=false)))
+        for(phase in listOf(SpaceCompassSunSkyPhase.DAWN,SpaceCompassSunSkyPhase.SUNSET,SpaceCompassSunSkyPhase.EVENING,SpaceCompassSunSkyPhase.NIGHT))
+            assertEquals(spaceCompassGridPalette(30),spaceCompassSkyGridPalette(capture.copy(phase=phase)))
     }
 }

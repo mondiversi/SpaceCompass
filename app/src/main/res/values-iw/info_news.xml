@@ -1,9 +1,9 @@
 <resources>
     <string name="info_news_title">החידושים האחרונים · %1$s</string>
-    <string name="info_news_star_sky" formatted="false">הקישו פעמיים באזור פנוי כדי להסתיר או להציג את לוחות העצם והמצפן, כולל שם העצם. הפקדים והכוונת נשארים גלויים.</string>
-    <string name="info_news_texture_downloads" formatted="false">הפקדים סודרו מחדש ועובי קו האופק במצלמה הוא מחצית מהעובי הקודם.</string>
-    <string name="info_news_weather" formatted="false">אטימות הרשת כברירת מחדל היא 50%. המחוון מעדכן את הערך מיד. לרשת ולכוונת אין קו מתאר; אטימות הכוונת היא 80%.</string>
-    <string name="info_news_viewer_zoom" formatted="false">בערפל, שמיים מעוננים ושלג ביום, קווי הרשת שחורים מעל האופק ומתחתיו.</string>
-    <string name="info_news_settings" formatted="false">חלונות קומפקטיים יותר, פעולות ליד הכותרת וסמל סגירה בתצוגה אופקית. הבחירות נשמרות בעת סיבוב המסך.</string>
-    <string name="info_news_catalog" formatted="false">תפריטי הזום נשארים קריאים מעל הלוחות. המדריך מסמן אזור פנוי קבוע ומסביר את הפקדים הנוכחיים.</string>
+    <string name="info_news_star_sky" formatted="false">בועות של נקודות רגילות מציגות כעת „נקודה N”, כמו במסלול היומי.</string>
+    <string name="info_news_texture_downloads" formatted="false">נקודות נגדיות שומרות על השם והמספר של הנקודה המקורית, גם בצילומים.</string>
+    <string name="info_news_weather" formatted="false">רשת השמיים שחורה בבוקר ואחר הצוהריים בכל מזג אוויר, ולבנה בשלבי השמש האחרים.</string>
+    <string name="info_news_viewer_zoom" formatted="false">אפשרויות מרכז הפנורמה כוללות סמלי מצפן עם האותיות הבינלאומיות N, E, S, W.</string>
+    <string name="info_news_settings" formatted="false">פנורמות שמיים וכדור ארץ קלות יותר בעת הזזה והגדלה.</string>
+    <string name="info_news_catalog" formatted="false">טיפול משופר בתוויות, תוך שמירה על כללי התצוגה והבחירה.</string>
 </resources>
