@@ -1,9 +1,9 @@
 <resources>
     <string name="info_news_title">Последние новости · %1$s</string>
-    <string name="info_news_star_sky" formatted="false">Подсказки обычных точек теперь показывают «Точка N», как в суточном пути.</string>
-    <string name="info_news_texture_downloads" formatted="false">Антиподы сохраняют название и номер исходной точки, в том числе на снимках.</string>
-    <string name="info_news_weather" formatted="false">Сетка неба чёрная утром и днём при любой погоде и белая в остальные солнечные фазы.</string>
-    <string name="info_news_viewer_zoom" formatted="false">Варианты центра панорамы имеют значки компаса с международными буквами N, E, S, W.</string>
-    <string name="info_news_settings" formatted="false">Облегчены панорамы неба и глобуса при перемещении и масштабировании.</string>
-    <string name="info_news_catalog" formatted="false">Оптимизированы подписи с сохранением правил видимости и выбора.</string>
+    <string name="info_news_star_sky" formatted="false">Нажатие на название объекта открывает Обсерваторию без приостановки времени.</string>
+    <string name="info_news_texture_downloads" formatted="false">Кнопки и ссылки состояния в главном виде выполняют свои действия, не включая паузу.</string>
+    <string name="info_news_weather" formatted="false">Главный логотип стал лаконичнее; версия доступна в разделе информации и благодарностей.</string>
+    <string name="info_news_viewer_zoom" formatted="false">Координатная сетка по умолчанию включена во всех видах с непрозрачностью 50 процентов.</string>
+    <string name="info_news_settings" formatted="false">Снимки наследуют настройки сетки; изменения в предпросмотре не влияют на главный вид.</string>
+    <string name="info_news_catalog" formatted="false">Сохранённые настройки сетки, местоположения, сцены и выбранные объекты сохраняются.</string>
 </resources>

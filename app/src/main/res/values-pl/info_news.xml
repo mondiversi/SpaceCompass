@@ -1,9 +1,9 @@
 <resources>
     <string name="info_news_title">Ostatnie nowości · %1$s</string>
-    <string name="info_news_star_sky" formatted="false">Dymki zwykłych punktów pokazują teraz „Punkt N”, tak jak na trasie dziennej.</string>
-    <string name="info_news_texture_downloads" formatted="false">Antypody zachowują nazwę i numer pierwotnego punktu, również na ujęciach.</string>
-    <string name="info_news_weather" formatted="false">Siatka nieba jest czarna rano i po południu przy każdej pogodzie, a biała w pozostałych fazach słonecznych.</string>
-    <string name="info_news_viewer_zoom" formatted="false">Opcje środka panoramy mają ikony kompasu z międzynarodowymi literami N, E, S, W.</string>
-    <string name="info_news_settings" formatted="false">Lżejsze panoramy nieba i globu podczas przesuwania i powiększania.</string>
-    <string name="info_news_catalog" formatted="false">Zoptymalizowano etykiety, zachowując zasady widoczności i zaznaczania.</string>
+    <string name="info_news_star_sky" formatted="false">Dotknięcie nazwy obiektu otwiera Obserwatorium bez zatrzymywania czasu.</string>
+    <string name="info_news_texture_downloads" formatted="false">Przyciski i łącza stanu w widoku głównym wykonują własne działania zamiast włączać pauzę.</string>
+    <string name="info_news_weather" formatted="false">Prostsze logo główne; wersja pozostaje dostępna w Informacjach i podziękowaniach.</string>
+    <string name="info_news_viewer_zoom" formatted="false">Siatka odniesienia jest domyślnie włączona we wszystkich widokach z kryciem 50 procent.</string>
+    <string name="info_news_settings" formatted="false">Ujęcia przejmują ustawienia siatki; zmiany w podglądzie są niezależne od widoku głównego.</string>
+    <string name="info_news_catalog" formatted="false">Zapisane ustawienia siatki, lokalizacje, sceny i wybory obiektów zostają zachowane.</string>
 </resources>

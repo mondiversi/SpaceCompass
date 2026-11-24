@@ -1,9 +1,9 @@
 <resources>
     <string name="info_news_title">آخر المستجدات · %1$s</string>
-    <string name="info_news_star_sky" formatted="false">تعرض فقاعات النقاط العادية الآن «نقطة N»، كما في المسار اليومي.</string>
-    <string name="info_news_texture_downloads" formatted="false">تحتفظ النقاط المقابلة باسم النقطة الأصلية ورقمها، بما في ذلك اللقطات.</string>
-    <string name="info_news_weather" formatted="false">تكون شبكة السماء سوداء صباحًا وبعد الظهر في جميع الأحوال الجوية، وبيضاء في المراحل الشمسية الأخرى.</string>
-    <string name="info_news_viewer_zoom" formatted="false">تتضمن خيارات مركز البانوراما رموز بوصلة بالأحرف الدولية N وE وS وW.</string>
-    <string name="info_news_settings" formatted="false">بانوراما أخف للسماء والكرة الأرضية عند التحريك والتكبير.</string>
-    <string name="info_news_catalog" formatted="false">تحسين معالجة التسميات مع الحفاظ على قواعد الظهور والتحديد.</string>
+    <string name="info_news_star_sky" formatted="false">يؤدي لمس اسم جرم إلى فتح المرصد دون إيقاف الوقت مؤقتًا.</string>
+    <string name="info_news_texture_downloads" formatted="false">تنفّذ أزرار العرض الرئيسي وروابط الحالة وظائفها دون تفعيل الإيقاف المؤقت.</string>
+    <string name="info_news_weather" formatted="false">شعار رئيسي أبسط، مع بقاء معلومات الإصدار في قسم المعلومات والاعتمادات.</string>
+    <string name="info_news_viewer_zoom" formatted="false">تكون الشبكة المرجعية مفعّلة افتراضيًا بعتامة 50 بالمئة في جميع طرق العرض.</string>
+    <string name="info_news_settings" formatted="false">ترث اللقطات إعدادات الشبكة، وتبقى تعديلات المعاينة مستقلة عن العرض الرئيسي.</string>
+    <string name="info_news_catalog" formatted="false">تُحفظ خيارات الشبكة والمواقع والمشاهد واختيارات الأجرام المحفوظة.</string>
 </resources>

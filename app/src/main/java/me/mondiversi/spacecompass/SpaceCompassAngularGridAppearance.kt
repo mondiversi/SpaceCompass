@@ -17,7 +17,7 @@ internal data class SpaceCompassGridPalette(val lineArgb: Int,val majorArgb: Int
 }
 
 internal const val SPACE_COMPASS_GRID_OPACITY_KEY = "reference_grid_opacity_percent"
-internal const val SPACE_COMPASS_GRID_OPACITY_DEFAULT = 70
+internal const val SPACE_COMPASS_GRID_OPACITY_DEFAULT = 50
 
 /** The same eleven stops serve preferences, captures and scene documents. */
 internal fun spaceCompassGridOpacity(percent: Int): Int = (percent.coerceIn(0, 100) + 5) / 10 * 10

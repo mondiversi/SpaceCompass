@@ -32,17 +32,17 @@ class SpaceCompassObjectIslandActionsUiTest {
     @Test fun objectNameOpensObservatoryAndDailyPathHasItsOwnIslandAction() {
         show()
         compose.onNodeWithTag("celestial-body-remove").assertDoesNotExist()
-        compose.onNodeWithTag("celestial-body-island-title").performClick()
+        compose.onNodeWithTag("celestial-body-island-title").performTouchInput { click() }
         compose.onNodeWithTag("celestial-viewer").assertIsDisplayed()
         compose.onNodeWithContentDescription(resources.getString(R.string.navigate_back)).performClick()
-        compose.onNodeWithTag("celestial-body-daily-path").performClick()
+        compose.onNodeWithTag("celestial-body-daily-path").performTouchInput { click() }
         compose.onNodeWithTag("sun-path-page").assertIsDisplayed()
         compose.onNodeWithContentDescription(resources.getString(R.string.navigate_back)).performClick()
         compose.onNodeWithTag("celestial-body-island-title").assertIsDisplayed()
     }
     @Test fun observatoryOrdersItsRemainingMenuItemsWithoutDailyPath() {
         show()
-        compose.onNodeWithTag("celestial-body-island-title").performClick()
+        compose.onNodeWithTag("celestial-body-island-title").performTouchInput { click() }
         val inToolbar = hasAnyAncestor(hasTestTag("celestial-view-toolbar"))
         val favorite = compose.onNodeWithTag("observatory-favorite").assert(inToolbar).assertIsDisplayed()
         val menu = compose.onNodeWithTag("observatory-menu").assert(inToolbar).assertIsDisplayed()

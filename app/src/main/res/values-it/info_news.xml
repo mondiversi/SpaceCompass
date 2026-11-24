@@ -1,9 +1,9 @@
 <resources>
     <string name="info_news_title">Ultime novità · %1$s</string>
-    <string name="info_news_star_sky" formatted="false">I fumetti dei punti ordinari mostrano anche “Punto N”, come nel Percorso giornaliero.</string>
-    <string name="info_news_texture_downloads" formatted="false">Gli antipodi mantengono il nome e il numero del punto originale, anche nelle immagini.</string>
-    <string name="info_news_weather" formatted="false">In Cielo, la griglia è nera al mattino e al pomeriggio in qualsiasi meteo; resta bianca nelle altre fasi.</string>
-    <string name="info_news_viewer_zoom" formatted="false">Centro panoramica ha icone della bussola con le sigle internazionali N, E, S, W.</string>
-    <string name="info_news_settings" formatted="false">Panoramiche di Cielo e Mappamondo più leggere durante spostamenti e zoom.</string>
-    <string name="info_news_catalog" formatted="false">Ottimizzata la gestione delle etichette, con le stesse regole di visibilità e selezione.</string>
+    <string name="info_news_star_sky" formatted="false">Toccando il nome di un oggetto si apre l’Osservatorio senza mettere in pausa il tempo.</string>
+    <string name="info_news_texture_downloads" formatted="false">I pulsanti principali e i collegamenti di stato eseguono la propria azione senza attivare la pausa.</string>
+    <string name="info_news_weather" formatted="false">Logo principale più pulito, con la versione consultabile in Info e crediti.</string>
+    <string name="info_news_viewer_zoom" formatted="false">Griglia di riferimento attiva di default al 50 per cento di opacità in tutte le visualizzazioni.</string>
+    <string name="info_news_settings" formatted="false">Gli scatti ereditano le impostazioni della griglia; le modifiche nell’anteprima restano separate dalla vista principale.</string>
+    <string name="info_news_catalog" formatted="false">Vengono mantenute le scelte salvate della griglia, le Location, gli scenari e le selezioni degli astri.</string>
 </resources>

@@ -30,6 +30,7 @@ class SpaceCompassMainNavigationStateUiTest {
                 }
             }
         } }
+        compose.onNodeWithTag("main-logo-version", useUnmergedTree = true).assertDoesNotExist()
         repeat(3) {
             compose.onNodeWithTag("loaded-main").assertTextEquals("Loaded 1")
             compose.onNodeWithTag("main-info").performClick()

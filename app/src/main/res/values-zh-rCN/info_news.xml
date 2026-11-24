@@ -1,9 +1,9 @@
 <resources>
     <string name="info_news_title">最新变化 · %1$s</string>
-    <string name="info_news_star_sky" formatted="false">普通点的气泡现在也显示“点 N”，与每日轨迹一致。</string>
-    <string name="info_news_texture_downloads" formatted="false">对跖点保留原始点的名称和编号，包括在截图中。</string>
-    <string name="info_news_weather" formatted="false">天空网格在上午和下午始终为黑色，不受天气影响；其他太阳阶段为白色。</string>
-    <string name="info_news_viewer_zoom" formatted="false">全景中心选项新增罗盘图标，使用国际字母 N、E、S、W。</string>
-    <string name="info_news_settings" formatted="false">减轻平移和缩放时天空与地球仪全景的处理负担。</string>
-    <string name="info_news_catalog" formatted="false">优化标签处理，同时保留原有的可见性与选择规则。</string>
+    <string name="info_news_star_sky" formatted="false">点击天体名称可打开观测台，不会暂停时间。</string>
+    <string name="info_news_texture_downloads" formatted="false">主视图按钮和状态链接执行各自的操作，不会触发暂停。</string>
+    <string name="info_news_weather" formatted="false">主标志更简洁，版本信息仍可在信息与鸣谢中查看。</string>
+    <string name="info_news_viewer_zoom" formatted="false">参考网格在所有视图中默认开启，不透明度为百分之50。</string>
+    <string name="info_news_settings" formatted="false">截图继承网格设置；预览中的修改与主视图相互独立。</string>
+    <string name="info_news_catalog" formatted="false">保留已保存的网格选项、位置、场景和天体选择。</string>
 </resources>

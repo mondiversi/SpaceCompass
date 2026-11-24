@@ -1,9 +1,9 @@
 <resources>
     <string name="info_news_title">Dernières nouveautés · %1$s</string>
-    <string name="info_news_star_sky" formatted="false">Les bulles des points ordinaires affichent désormais « Point N », comme dans le parcours quotidien.</string>
-    <string name="info_news_texture_downloads" formatted="false">Les antipodes conservent le nom et le numéro du point d’origine, y compris dans les captures.</string>
-    <string name="info_news_weather" formatted="false">La grille du ciel est noire le matin et l’après-midi par tous les temps, et blanche dans les autres phases solaires.</string>
-    <string name="info_news_viewer_zoom" formatted="false">Le choix du centre panoramique dispose d’icônes de boussole avec les lettres internationales N, E, S, W.</string>
-    <string name="info_news_settings" formatted="false">Panoramas du ciel et du globe plus légers lors des déplacements et du zoom.</string>
-    <string name="info_news_catalog" formatted="false">Gestion des étiquettes optimisée, avec les mêmes règles de visibilité et de sélection.</string>
+    <string name="info_news_star_sky" formatted="false">Toucher le nom d’un objet ouvre l’Observatoire sans mettre le temps en pause.</string>
+    <string name="info_news_texture_downloads" formatted="false">Les boutons et liens d’état de la vue principale gardent leur action sans déclencher la pause.</string>
+    <string name="info_news_weather" formatted="false">Logo principal épuré, avec la version disponible dans Infos et crédits.</string>
+    <string name="info_news_viewer_zoom" formatted="false">Grille de référence activée par défaut à 50 pour cent d’opacité dans toutes les vues.</string>
+    <string name="info_news_settings" formatted="false">Les captures reprennent les réglages de grille ; les modifications de l’aperçu restent distinctes de la vue principale.</string>
+    <string name="info_news_catalog" formatted="false">Les choix de grille, lieux, scènes et sélections d’objets enregistrés sont conservés.</string>
 </resources>

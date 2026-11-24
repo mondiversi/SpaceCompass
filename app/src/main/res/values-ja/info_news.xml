@@ -1,9 +1,9 @@
 <resources>
     <string name="info_news_title">最近の変更 · %1$s</string>
-    <string name="info_news_star_sky" formatted="false">通常の点の吹き出しに、日周経路と同じ「ポイント N」を表示するようになりました。</string>
-    <string name="info_news_texture_downloads" formatted="false">対蹠点は、キャプチャでも元の点の名前と番号を保持します。</string>
-    <string name="info_news_weather" formatted="false">空のグリッドは天候に関係なく午前と午後は黒、それ以外の太陽の段階では白になります。</string>
-    <string name="info_news_viewer_zoom" formatted="false">パノラマの中心の選択肢に、国際表記 N・E・S・W のコンパスアイコンを追加しました。</string>
-    <string name="info_news_settings" formatted="false">移動やズーム時の空と地球儀のパノラマ処理を軽量化しました。</string>
-    <string name="info_news_catalog" formatted="false">表示と選択のルールを保ちながら、ラベル処理を最適化しました。</string>
+    <string name="info_news_star_sky" formatted="false">天体名をタップすると、時間を一時停止せずに観測所を開きます。</string>
+    <string name="info_news_texture_downloads" formatted="false">メイン画面のボタンと状態リンクは、一時停止を起動せずにそれぞれの操作を実行します。</string>
+    <string name="info_news_weather" formatted="false">メインのロゴをすっきりさせました。バージョン情報は情報とクレジットで確認できます。</string>
+    <string name="info_news_viewer_zoom" formatted="false">基準グリッドは、すべての表示で不透明度50パーセントで初期状態から有効です。</string>
+    <string name="info_news_settings" formatted="false">キャプチャはグリッド設定を引き継ぎます。プレビューの変更はメイン画面とは別に保持されます。</string>
+    <string name="info_news_catalog" formatted="false">保存済みのグリッド設定、場所、シーン、天体の選択は維持されます。</string>
 </resources>

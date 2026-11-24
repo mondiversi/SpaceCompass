@@ -29,7 +29,7 @@ class SpaceCompassCaptureOverlaysTest {
     @Test fun firstInstallEnablesOnlyTheGrid() {
         val defaults = SpaceCompassCaptureOverlays.fromSnapshot(null)
         assertTrue(defaults.grid)
-        assertEquals(70,defaults.opacityPercent)
+        assertEquals(50,defaults.opacityPercent)
         assertFalse(defaults.references)
         assertEquals(SpaceCompassCaptureOverlays(), defaults)
     }

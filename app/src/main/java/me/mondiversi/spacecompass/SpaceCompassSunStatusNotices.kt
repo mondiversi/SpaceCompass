@@ -46,7 +46,8 @@ internal fun SpaceCompassSunStatusNotices(
         if (!hasStatus && simulationLabel != null) {
             Text(simulationLabel, color = warningOrange, fontSize = 10.sp, lineHeight = 13.sp,
                 modifier = Modifier.testTag("observer-simulation-banner")
-                    .background(noticeBackground, shape).clickable(role = Role.Button, onClick = onSimulation)
+                    .background(noticeBackground, shape).spaceCompassMainGestureControl()
+                    .clickable(role = Role.Button, onClick = onSimulation)
                     .padding(noticePadding))
         }
         if (!hasStatus && compassWarning != null) Text(spaceCompassStatusSentence(compassWarning),
@@ -71,7 +72,10 @@ internal fun SpaceCompassSunStatusNotices(
             }
             Text(text, color = if (messageAttention) warningOrange else primaryText,
                 fontSize = 10.sp, lineHeight = 13.sp,
-                modifier = Modifier.testTag("sun-finder-status-island").spaceCompassTutorialTarget(SpaceCompassTutorialFeature.STATUS,
+                // Protect the compact linked notice from blank-area gestures without changing its link semantics.
+                modifier = Modifier.testTag("sun-finder-status-island")
+                    .then(if (!actionLabel.isNullOrBlank()) Modifier.spaceCompassMainGestureControl() else Modifier)
+                    .spaceCompassTutorialTarget(SpaceCompassTutorialFeature.STATUS,
                         enabled = !actionLabel.isNullOrBlank(), circular = false)
                     .semantics { liveRegion = LiveRegionMode.Polite }
                     .background(noticeBackground, shape).padding(noticePadding))

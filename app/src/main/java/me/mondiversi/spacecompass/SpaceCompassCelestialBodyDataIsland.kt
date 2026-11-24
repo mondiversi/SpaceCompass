@@ -112,6 +112,7 @@ internal fun SpaceCompassCelestialBodyDataIsland(bodyName: String?, primaryText:
                             end = if (navigation == null) 0.dp else
                                 SpaceCompassObjectHeaderGlyph.CHEVRON.width + SpaceCompassObjectNameChevronGap)
                         .then(if (onBodyNameClick != null) Modifier.heightIn(min = 48.dp)
+                            .spaceCompassMainGestureControl()
                             .clickable(interactionSource = nameInteraction, indication = null,
                                 role = Role.Button, onClickLabel = stringResource(R.string.celestial_details_title),
                                 onClick = onBodyNameClick).wrapContentHeight() else Modifier)

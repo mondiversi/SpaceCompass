@@ -1,9 +1,9 @@
 <resources>
     <string name="info_news_title">Mambo mapya · %1$s</string>
-    <string name="info_news_star_sky" formatted="false">Vibubujiko vya alama za kawaida sasa vinaonyesha “Alama N”, kama katika njia ya kila siku.</string>
-    <string name="info_news_texture_downloads" formatted="false">Antipodi huhifadhi jina na nambari ya alama ya awali, hata kwenye picha.</string>
-    <string name="info_news_weather" formatted="false">Gridi ya anga ni nyeusi asubuhi na alasiri katika hali yoyote ya hewa, na nyeupe katika awamu nyingine za jua.</string>
-    <string name="info_news_viewer_zoom" formatted="false">Chaguo za kitovu cha panorama zina aikoni za dira zenye herufi za kimataifa N, E, S, W.</string>
-    <string name="info_news_settings" formatted="false">Panorama nyepesi zaidi za Anga na Globu wakati wa kusogeza na kukuza.</string>
-    <string name="info_news_catalog" formatted="false">Ushughulikiaji wa lebo umeboreshwa bila kubadili kanuni za mwonekano na uteuzi.</string>
+    <string name="info_news_star_sky" formatted="false">Kugusa jina la kitu hufungua Uchunguzi bila kusitisha muda.</string>
+    <string name="info_news_texture_downloads" formatted="false">Vitufe na viungo vya hali kwenye mwonekano mkuu hutekeleza kazi zao bila kusitisha muda.</string>
+    <string name="info_news_weather" formatted="false">Nembo kuu imekuwa safi zaidi; taarifa ya toleo inapatikana kwenye Taarifa na Shukrani.</string>
+    <string name="info_news_viewer_zoom" formatted="false">Gridi ya marejeleo imewashwa kwa chaguo-msingi kwa kiwango cha kutopitisha mwanga cha asilimia 50 katika mionekano yote.</string>
+    <string name="info_news_settings" formatted="false">Picha hurithi mipangilio ya gridi; mabadiliko ya hakikisho yanabaki tofauti na mwonekano mkuu.</string>
+    <string name="info_news_catalog" formatted="false">Chaguo za gridi, maeneo, mandhari na uteuzi wa vitu vilivyohifadhiwa vinahifadhiwa.</string>
 </resources>

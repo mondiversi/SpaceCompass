@@ -1,9 +1,9 @@
 <resources>
     <string name="info_news_title">Τελευταία νέα · %1$s</string>
-    <string name="info_news_star_sky" formatted="false">Τα πλαίσια των συνηθισμένων σημείων εμφανίζουν πλέον «Σημείο N», όπως στην ημερήσια διαδρομή.</string>
-    <string name="info_news_texture_downloads" formatted="false">Οι αντίποδες διατηρούν το όνομα και τον αριθμό του αρχικού σημείου, ακόμη και στις λήψεις.</string>
-    <string name="info_news_weather" formatted="false">Το πλέγμα ουρανού είναι μαύρο το πρωί και το απόγευμα με κάθε καιρό και λευκό στις άλλες ηλιακές φάσεις.</string>
-    <string name="info_news_viewer_zoom" formatted="false">Οι επιλογές κέντρου πανοράματος έχουν εικονίδια πυξίδας με τα διεθνή γράμματα N, E, S, W.</string>
-    <string name="info_news_settings" formatted="false">Ελαφρύτερα πανοράματα ουρανού και υδρογείου κατά τη μετακίνηση και το ζουμ.</string>
-    <string name="info_news_catalog" formatted="false">Βελτιστοποιημένη διαχείριση ετικετών με τους ίδιους κανόνες ορατότητας και επιλογής.</string>
+    <string name="info_news_star_sky" formatted="false">Το άγγιγμα του ονόματος ενός αντικειμένου ανοίγει το Παρατηρητήριο χωρίς παύση του χρόνου.</string>
+    <string name="info_news_texture_downloads" formatted="false">Τα κουμπιά και οι σύνδεσμοι κατάστασης της κύριας προβολής εκτελούν τη δική τους ενέργεια χωρίς να ενεργοποιούν την παύση.</string>
+    <string name="info_news_weather" formatted="false">Πιο καθαρό κύριο λογότυπο, με την έκδοση διαθέσιμη στις πληροφορίες και συντελεστές.</string>
+    <string name="info_news_viewer_zoom" formatted="false">Το πλέγμα αναφοράς είναι ενεργό από προεπιλογή με αδιαφάνεια 50 τοις εκατό σε όλες τις προβολές.</string>
+    <string name="info_news_settings" formatted="false">Οι λήψεις κληρονομούν τις ρυθμίσεις πλέγματος· οι αλλαγές στην προεπισκόπηση παραμένουν ανεξάρτητες από την κύρια προβολή.</string>
+    <string name="info_news_catalog" formatted="false">Διατηρούνται οι αποθηκευμένες επιλογές πλέγματος, τοποθεσίες, σκηνές και επιλογές ουράνιων σωμάτων.</string>
 </resources>

@@ -20,9 +20,6 @@ import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import androidx.compose.ui.text.TextStyle
-import androidx.compose.ui.text.PlatformTextStyle
-import androidx.compose.ui.text.font.FontWeight
 
 internal val LocalSpaceCompassMainVisible = staticCompositionLocalOf { true }
 
@@ -88,16 +85,8 @@ internal fun SpaceCompassMainInfoButton(color: Color, background: Color) {
     SpaceCompassFloatingActionButton(stringResource(R.string.pc_info), { navigate("info") },
         color, background, Modifier.testTag("main-info").spaceCompassTutorialTarget(SpaceCompassTutorialFeature.INFO),
         border = BorderStroke(2.dp, Color.White.copy(alpha = .35f))) {
-        Box(Modifier.fillMaxSize()) {
-            Image(painterResource(R.drawable.ic_space_compass_button), contentDescription = null,
-                modifier = Modifier.fillMaxSize())
-            Text(BuildConfig.DISPLAY_VERSION,
-                modifier = Modifier.align(Alignment.BottomCenter).padding(bottom = 2.dp)
-                    .testTag("main-logo-version"),
-                color = Color.White, fontSize = 8.sp, lineHeight = 9.sp,
-                fontWeight = FontWeight.SemiBold, maxLines = 1, softWrap = false,
-                style = TextStyle(platformStyle = PlatformTextStyle(includeFontPadding = false)))
-        }
+        Image(painterResource(R.drawable.ic_space_compass_button), contentDescription = null,
+            modifier = Modifier.fillMaxSize())
     }
 }
 

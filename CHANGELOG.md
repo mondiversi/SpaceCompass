@@ -1,5 +1,14 @@
 # Changelog
 
+## 1.10.8 — 2026-11-24
+
+- Keep object-name taps routed to the Observatory instead of allowing the parent blank-area pause gesture to intercept them. Protect the compact linked status notices as well; retain the existing safety gap around controls and intentional pause/resume on free surfaces.
+- Remove the version overlay from the main-view logo, preserving its Info & credits action and version information elsewhere in the app.
+- Enable the reference grid by default at 50 percent opacity across Sky, Camera and Globe, including native and WebView fallbacks. Preserve existing saved choices, independent coordinate-number and planetary-reference switches, camera outlines and stroke widths.
+- Keep capture grids inherited from the main view and preview edits isolated. Preserve the historical opacity of older saved previews and Scene files, and write new Scene opacity values explicitly for older readers.
+- Exercise object actions with pointer events rather than semantic-only clicks. Add touch-priority regressions for names, navigation, Daily path, real-position links and status actions; compile instrumentation sources separately from device execution.
+- Refresh News in all twenty languages, current documentation, the signed update index and the optional information archive. Preserve the catalogue, astronomical calculations, saved Locations, Scenes, favourites and selections. The external graphics collection is unchanged.
+
 ## 1.10.7 — 2026-11-24
 
 - Keep live point selections and antipodes through midnight, accelerated date skips and rewind. Follow the same displayed point number or event occurrence on the refreshed path, including rolling satellite and +24h windows. Keep unavailable events dormant, preserve fixed-date comparisons, and carry logical identity in optional backward-compatible Scene metadata. Resolve the same coordinates in Sky, Camera, Globe, daily tables and captures.

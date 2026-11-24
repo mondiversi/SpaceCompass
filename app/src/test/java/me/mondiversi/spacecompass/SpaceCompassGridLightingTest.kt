@@ -10,10 +10,10 @@ class SpaceCompassGridLightingTest {
 
     @Test fun defaultGridIsWhiteInLiveAndImages() {
         val ink=spaceCompassGridPalette()
-        assertEquals(0xb3ffffff.toInt(),ink.lineArgb)
+        assertEquals(0x80ffffff.toInt(),ink.lineArgb)
         assertEquals(ink.lineArgb,ink.majorArgb)
         assertEquals(ink.lineArgb,ink.liveLineArgb)
-        assertEquals(0xb3000000.toInt(),ink.cameraOutlineArgb)
+        assertEquals(0x80000000.toInt(),ink.cameraOutlineArgb)
     }
     @Test fun solarBandsNeverRecolourOrBlendTheGrid() {
         val source=snapshot();val expected=spaceCompassGridPalette()
@@ -22,8 +22,8 @@ class SpaceCompassGridLightingTest {
             assertEquals(expected,spaceCompassGridPalette(source.copy(timeMs=time)))
         }
     }
-    @Test fun seventyPercentDefaultAndAllElevenStopsAreRetained() {
-        assertEquals(70,SPACE_COMPASS_GRID_OPACITY_DEFAULT)
+    @Test fun fiftyPercentDefaultAndAllElevenStopsAreRetained() {
+        assertEquals(50,SPACE_COMPASS_GRID_OPACITY_DEFAULT)
         for(percent in 0..100 step 10) {
             assertEquals(percent,spaceCompassGridOpacity(percent))
             val ink=spaceCompassGridPalette(percent)
@@ -89,7 +89,7 @@ class SpaceCompassGridLightingTest {
             assertEquals("ffffff",rgba.substring(1,7))
             assertEquals(ink.lineArgb,ink.liveLineArgb)
         }
-        assertEquals("#ffffffb3",spaceCompassGridCss(spaceCompassGridPalette().liveLineArgb))
+        assertEquals("#ffffff80",spaceCompassGridCss(spaceCompassGridPalette().liveLineArgb))
         assertEquals("#ffffffcc",spaceCompassGridCss(spaceCompassGridPalette(80).liveLineArgb))
         assertEquals("#ffffff80",spaceCompassGridCss(spaceCompassGridPalette(50).liveLineArgb))
     }

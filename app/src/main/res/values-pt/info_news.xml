@@ -1,9 +1,9 @@
 <resources>
     <string name="info_news_title">Últimas novidades · %1$s</string>
-    <string name="info_news_star_sky" formatted="false">Os balões dos pontos comuns mostram agora «Ponto N», como no percurso diário.</string>
-    <string name="info_news_texture_downloads" formatted="false">Os antípodas mantêm o nome e o número do ponto original, também nas capturas.</string>
-    <string name="info_news_weather" formatted="false">A grelha do céu é preta de manhã e à tarde com qualquer tempo, e branca nas outras fases solares.</string>
-    <string name="info_news_viewer_zoom" formatted="false">As opções do centro panorâmico têm ícones de bússola com as letras internacionais N, E, S, W.</string>
-    <string name="info_news_settings" formatted="false">Panoramas do céu e do globo mais leves ao deslocar e ampliar.</string>
-    <string name="info_news_catalog" formatted="false">Gestão de etiquetas otimizada, mantendo as regras de visibilidade e seleção.</string>
+    <string name="info_news_star_sky" formatted="false">Tocar no nome de um objeto abre o Observatório sem pausar o tempo.</string>
+    <string name="info_news_texture_downloads" formatted="false">Os botões e ligações de estado da vista principal executam a sua própria ação sem ativar a pausa.</string>
+    <string name="info_news_weather" formatted="false">Logótipo principal mais limpo, com a versão disponível em Informações e créditos.</string>
+    <string name="info_news_viewer_zoom" formatted="false">Grelha de referência ativada por predefinição com 50 por cento de opacidade em todas as vistas.</string>
+    <string name="info_news_settings" formatted="false">As capturas herdam as definições da grelha; as alterações na pré-visualização são independentes da vista principal.</string>
+    <string name="info_news_catalog" formatted="false">As opções da grelha, localizações, cenas e seleções de objetos guardadas são mantidas.</string>
 </resources>

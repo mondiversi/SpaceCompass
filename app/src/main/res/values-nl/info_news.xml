@@ -1,9 +1,9 @@
 <resources>
     <string name="info_news_title">Laatste nieuws · %1$s</string>
-    <string name="info_news_star_sky" formatted="false">Tekstballonnen van gewone punten tonen nu ‘Punt N’, zoals in het dagelijkse pad.</string>
-    <string name="info_news_texture_downloads" formatted="false">Antipoden behouden de naam en het nummer van het oorspronkelijke punt, ook in opnamen.</string>
-    <string name="info_news_weather" formatted="false">Hemelrasters zijn ’s ochtends en ’s middags bij elk weer zwart en in andere zonnefasen wit.</string>
-    <string name="info_news_viewer_zoom" formatted="false">De keuzes voor het panoramamidden hebben kompaspictogrammen met de internationale letters N, E, S, W.</string>
-    <string name="info_news_settings" formatted="false">Lichtere hemel- en globepanorama’s bij verschuiven en zoomen.</string>
-    <string name="info_news_catalog" formatted="false">Geoptimaliseerde labels met behoud van de regels voor zichtbaarheid en selectie.</string>
+    <string name="info_news_star_sky" formatted="false">Tik op een objectnaam om het Observatorium te openen zonder de tijd te pauzeren.</string>
+    <string name="info_news_texture_downloads" formatted="false">Knoppen en statuslinks in de hoofdweergave voeren hun eigen actie uit zonder de tijd te pauzeren.</string>
+    <string name="info_news_weather" formatted="false">Een rustiger hoofdlogo; de versie blijft beschikbaar bij Info en credits.</string>
+    <string name="info_news_viewer_zoom" formatted="false">Het referentieraster is in alle weergaven standaard ingeschakeld met 50 procent dekking.</string>
+    <string name="info_news_settings" formatted="false">Opnamen nemen de rasterinstellingen over; wijzigingen in het voorbeeld staan los van de hoofdweergave.</string>
+    <string name="info_news_catalog" formatted="false">Opgeslagen rasterkeuzes, locaties, scènes en objectselecties blijven behouden.</string>
 </resources>

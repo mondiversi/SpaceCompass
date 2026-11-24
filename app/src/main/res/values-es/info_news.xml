@@ -1,9 +1,9 @@
 <resources>
     <string name="info_news_title">Últimas novedades · %1$s</string>
-    <string name="info_news_star_sky" formatted="false">Los globos de los puntos normales ahora muestran «Punto N», como en el recorrido diario.</string>
-    <string name="info_news_texture_downloads" formatted="false">Las antípodas conservan el nombre y el número del punto original, también en las capturas.</string>
-    <string name="info_news_weather" formatted="false">La cuadrícula del cielo es negra por la mañana y la tarde con cualquier tiempo, y blanca en las demás fases solares.</string>
-    <string name="info_news_viewer_zoom" formatted="false">Las opciones del centro panorámico tienen iconos de brújula con las letras internacionales N, E, S, W.</string>
-    <string name="info_news_settings" formatted="false">Panorámicas del cielo y del globo más ligeras al desplazar y ampliar.</string>
-    <string name="info_news_catalog" formatted="false">Gestión de etiquetas optimizada, conservando las reglas de visibilidad y selección.</string>
+    <string name="info_news_star_sky" formatted="false">Tocar el nombre de un objeto abre el Observatorio sin pausar el tiempo.</string>
+    <string name="info_news_texture_downloads" formatted="false">Los botones y enlaces de estado de la vista principal ejecutan su propia acción sin activar la pausa.</string>
+    <string name="info_news_weather" formatted="false">Logotipo principal más limpio, con la versión disponible en Información y créditos.</string>
+    <string name="info_news_viewer_zoom" formatted="false">Cuadrícula de referencia activada por defecto con un 50 por ciento de opacidad en todas las vistas.</string>
+    <string name="info_news_settings" formatted="false">Las capturas heredan la configuración de la cuadrícula; los cambios en la vista previa son independientes de la vista principal.</string>
+    <string name="info_news_catalog" formatted="false">Se conservan las opciones de cuadrícula, ubicaciones, escenas y selecciones de objetos guardadas.</string>
 </resources>

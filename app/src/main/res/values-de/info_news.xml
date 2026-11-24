@@ -1,9 +1,9 @@
 <resources>
     <string name="info_news_title">Neuigkeiten · %1$s</string>
-    <string name="info_news_star_sky" formatted="false">Sprechblasen gewöhnlicher Punkte zeigen jetzt „Punkt N“, passend zum Tagesverlauf.</string>
-    <string name="info_news_texture_downloads" formatted="false">Antipoden behalten den Namen und die Nummer des ursprünglichen Punkts, auch in Aufnahmen.</string>
-    <string name="info_news_weather" formatted="false">Himmelsraster sind vormittags und nachmittags bei jedem Wetter schwarz, in anderen Sonnenphasen weiß.</string>
-    <string name="info_news_viewer_zoom" formatted="false">Die Auswahl der Panoramamitte hat Kompasssymbole mit den internationalen Buchstaben N, E, S, W.</string>
-    <string name="info_news_settings" formatted="false">Leichtere Himmels- und Globuspanoramen beim Verschieben und Zoomen.</string>
-    <string name="info_news_catalog" formatted="false">Optimierte Beschriftungen bei unveränderten Sichtbarkeits- und Auswahlregeln.</string>
+    <string name="info_news_star_sky" formatted="false">Ein Tippen auf einen Objektnamen öffnet das Observatorium, ohne die Zeit anzuhalten.</string>
+    <string name="info_news_texture_downloads" formatted="false">Schaltflächen und Statuslinks in der Hauptansicht führen ihre eigene Aktion aus, statt die Zeit anzuhalten.</string>
+    <string name="info_news_weather" formatted="false">Aufgeräumtes Hauptlogo; die Versionsangabe bleibt unter Info und Mitwirkende verfügbar.</string>
+    <string name="info_news_viewer_zoom" formatted="false">Das Referenzraster ist in allen Ansichten standardmäßig mit 50 Prozent Deckkraft aktiviert.</string>
+    <string name="info_news_settings" formatted="false">Aufnahmen übernehmen die Rastereinstellungen; Änderungen in der Vorschau bleiben von der Hauptansicht getrennt.</string>
+    <string name="info_news_catalog" formatted="false">Gespeicherte Rastereinstellungen, Standorte, Szenen und die Objektauswahl bleiben erhalten.</string>
 </resources>
