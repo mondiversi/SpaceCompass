@@ -351,7 +351,7 @@ class SpaceCompassSceneArchiveTest {
         assertEquals(plan,observer.savedPlan);assertEquals(contents().timeSettings,observer.timeSettings)
         assertEquals(selection,readSpaceCompassCelestialSelection(store.preferences))
     }
-    @Test fun loadingADifferentDayRestoresIncomingLivePinsBeforeTheNextRollover() {
+    @Test fun loadingADifferentDayKeepsIncomingLivePinsThroughLaterRollovers() {
         val store = Store()
         val observer = SpaceCompassObserverState(store.preferences, elapsedClock = { 0L })
         observer.apply(plan.copy(timeMs = now - 86_400_000L))
@@ -364,8 +364,8 @@ class SpaceCompassSceneArchiveTest {
         assertEquals(contents().selectedOrbitPoints!!.toSet(), points.selectedPoints.toSet())
         assertTrue(points.antipodesVisible)
         points.refreshObservationDate(oldDate.plusDays(2))
-        assertEquals(contents().selectedOrbitPoints!!.filter { it.key.comparisonId != null }.toSet(),
-            points.selectedPoints.toSet())
+        assertEquals(contents().selectedOrbitPoints!!.toSet(), points.selectedPoints.toSet())
+        assertTrue(points.antipodesVisible)
     }
 
     @Test fun legacyLocationImportCannotReplaceTheRecipientsObjectsOrPoints() {

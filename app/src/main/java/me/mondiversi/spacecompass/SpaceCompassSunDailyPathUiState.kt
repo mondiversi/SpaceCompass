@@ -93,7 +93,9 @@ internal class SpaceCompassSunDailyPathUiState(
 
     fun isSelected(path: SpaceCompassSunDailyPath,point: SpaceCompassSunPathPoint,current: Boolean = false): Boolean =
         if(current) matchingKey(spaceCompassOrbitPointKey(path,point,true))!=null else selection.values.any {
-            !it.key.isCurrent && spaceCompassResolveOrbitSelection(it,path)?.point==point
+            if(it.key.isCurrent) false else spaceCompassResolveOrbitSelection(it,path)?.let { resolved ->
+                resolved.point==point || spaceCompassOrbitPointKeysMatch(resolved.key,spaceCompassOrbitPointKey(path,point))
+            } == true
         }
 
     fun isCurrentSelected(body: SpaceCompassCelestialBody,point: SpaceCompassSunPathPoint,zone: ZoneId,comparisonId: String? = null): Boolean =

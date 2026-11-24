@@ -104,13 +104,15 @@ class SpaceCompassOrbitTableExportTest {
         assertTrue(grid.drop(5).all { it.drop(1).all { value -> value=="—" } })
     }
 
-    @Test fun historicalPinnedSatellitePointStaysInTheExport() {
+    @Test fun logicalSatellitePinMovesToItsNewNumberedRowWithoutAHistoricalDuplicate() {
         val original=path(SpaceCompassCelestialBody.ISS)
         val state=SpaceCompassSunDailyPathUiState(); state.select(original,point(1))
         val refreshed=original.copy(markers=listOf(point(12),point(23)))
         val table=captureSpaceCompassOrbitTable(snapshot(listOf(refreshed),state))
-        val saved=table.rows.single { it.kind==SpaceCompassOrbitExportRowKind.SELECTED }.cells.values.single()
-        assertTrue(saved.selected); assertEquals(point(1),saved.point)
+        val saved=table.rows.filter { it.kind==SpaceCompassOrbitExportRowKind.POINT }.flatMap { it.cells.values }
+            .single { it.point==point(23) }
+        assertTrue(saved.selected)
+        assertTrue(table.rows.none { it.kind==SpaceCompassOrbitExportRowKind.SELECTED })
     }
 
     @Test fun moonIlluminationIsRetainedAlongsideBothAngles() {
