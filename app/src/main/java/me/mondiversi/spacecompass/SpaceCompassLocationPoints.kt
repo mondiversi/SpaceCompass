@@ -14,6 +14,12 @@ private val locationPointBodies by lazy { spaceCompassAllCelestialOrder.associat
 internal fun spaceCompassCheckLocationPoint(saved: SpaceCompassSelectedOrbitPoint) {
     val key = saved.key
     val point = saved.point
+    key.daily?.let {
+        require(!key.isCurrent && key.comparisonId==null && it.occurrence in 0..9_999)
+        require(it.event in point.events)
+        if(it.event==SpaceCompassSunPathEvent.HOUR) require(it.number!=null && it.number in 0..9_999)
+        else require(it.number==null)
+    }
     val zone = ZoneId.of(key.zoneId)
     val date = Instant.ofEpochMilli(point.timeMs).atZone(zone).toLocalDate()
     require(key.body.name in locationPointBodies && key.date.year in 1899..2101 && date.year in 1899..2101)
@@ -25,7 +31,7 @@ internal fun spaceCompassCheckLocationPoint(saved: SpaceCompassSelectedOrbitPoin
         require(it.other.name in locationPointBodies && it.other != key.body &&
             it.separationDegrees.isFinite() && it.separationDegrees in 0.0..180.0)
     }
-    require(key == spaceCompassOrbitPointKey(key.body, point, zone, key.date, current = key.isCurrent, comparisonId = key.comparisonId))
+    require(key.copy(daily=null) == spaceCompassOrbitPointKey(key.body, point, zone, key.date, current = key.isCurrent, comparisonId = key.comparisonId))
 }
 
 /** Optional v1 extension: earlier apps ignore these properties and retain the original Location schema. */
@@ -40,6 +46,9 @@ internal fun Properties.putSpaceCompassLocationPoints(points: List<SpaceCompassS
     points.forEachIndexed { index, saved ->
         spaceCompassCheckLocationPoint(saved)
         require(saved.key.body in selection.selected)
+        saved.key.daily?.let {
+            setProperty("pointIdentity.$index",listOf(it.event.name,it.number?.toString().orEmpty(),it.occurrence.toString()).joinToString(","))
+        }
         val p = saved.point
         setProperty("point.$index", listOf(saved.key.body.name, saved.key.date.toString(), saved.key.zoneId,
             p.timeMs.toString(), p.position.azimuthDegrees.toString(), p.position.elevationDegrees.toString(),
@@ -75,7 +84,11 @@ internal fun Properties.readSpaceCompassLocationPoints(selection: SpaceCompassCe
         val point = SpaceCompassSunPathPoint(f[3].toLong(), SpaceCompassSunPosition(f[4].toDouble(), f[5].toDouble()),
             SpaceCompassSunPathEvent.valueOf(f[7]), phase,
             f[8].takeIf { it.isNotEmpty() }?.split('+')?.map { SpaceCompassSunPathEvent.valueOf(it) }?.toSet().orEmpty(), approach)
-        SpaceCompassSelectedOrbitPoint(spaceCompassOrbitPointKey(body, point, zone, date, current), point, null)
+        val daily=getProperty("pointIdentity.$index")?.let { text ->
+            require(text.length<=128);val parts=text.split(',');require(parts.size==3)
+            SpaceCompassDailyPointIdentity(SpaceCompassSunPathEvent.valueOf(parts[0]),parts[1].takeIf { it.isNotEmpty() }?.toInt(),parts[2].toInt())
+        }
+        SpaceCompassSelectedOrbitPoint(spaceCompassOrbitPointKey(body, point, zone, date, current).copy(daily=daily), point, null)
             .also(::spaceCompassCheckLocationPoint)
     }
     require(points.map { it.key }.toSet().size == points.size)

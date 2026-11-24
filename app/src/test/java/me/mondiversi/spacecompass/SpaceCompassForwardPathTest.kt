@@ -64,7 +64,7 @@ class SpaceCompassForwardPathTest {
             Instant.ofEpochMilli(now).atZone(ZoneId.of("UTC")).toLocalDate(),ZoneId.of("UTC"),now,45.0,9.0,120.0,remote,true))
     }
 
-    @Test fun futureSelectionSurvivesMidnightButPastPinsLeaveTheWindow() {
+    @Test fun futureSelectionFollowsItsNumberAfterTheOriginalInstantLeavesTheWindow() {
         val first=path("2026-11-02T22:27:35Z")
         val selected=first.markers.first { it.event==SpaceCompassSunPathEvent.HOUR && it.timeMs >= first.samples.first().timeMs+3*3_600_000L &&
             Instant.ofEpochMilli(it.timeMs).atZone(first.zone).toLocalDate()>first.date }
@@ -73,7 +73,10 @@ class SpaceCompassForwardPathTest {
         assertTrue(state.isSelected(later,selected))
         assertTrue(spaceCompassPathAcceptsSelection(later,state.selectedPoints.single()))
         val past=path("2026-11-03T03:10:00Z")
-        assertFalse(spaceCompassPathAcceptsSelection(past,state.selectedPoints.single()))
+        assertTrue(spaceCompassPathAcceptsSelection(past,state.selectedPoints.single()))
+        val rebound=spaceCompassResolveOrbitSelection(state.selectedPoints.single(),past)!!
+        assertTrue(rebound.point.timeMs>=past.samples.first().timeMs)
+        assertEquals(state.selectedPoints.single().key.daily,rebound.key.daily)
         assertEquals(1,state.selectedPoints.size)
         assertTrue(spaceCompassSelectedDailyPathEntries(past,past.samples.first(),state.selectedPoints).all {
             it.point.timeMs>=past.samples.first().timeMs

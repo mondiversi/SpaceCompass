@@ -29,21 +29,17 @@ class SpaceCompassCelestialLiveSelectionTest {
         assertEquals(updated, projected.single().point); assertEquals(170.0, projected.single().projection.x, 0.000001); assertEquals(200.0, projected.single().projection.y, 0.000001)
         assertTrue(projectSpaceCompassSelectedOrbitTargets(state.selectedPoints, emptyMap(), emptyMap(), facing, 340.0, 400.0).isEmpty())
     }
-    @Test fun renewingASatelliteTimeWindowRetainsTheSelectedHistoricalPointAndItsOriginalLabelPath() {
-        val historical = point.copy(position = SpaceCompassSunPosition(180.0, 0.0))
-        val satellitePath = path.copy(body = SpaceCompassCelestialBody.ISS, markers = listOf(historical))
-        val state = SpaceCompassSunDailyPathUiState(); state.select(satellitePath, historical)
-        val newerWindow = satellitePath.copy(markers = listOf(historical.copy(timeMs = historical.timeMs + 300_000)))
-        val projected = projectSpaceCompassSelectedOrbitTargets(state.selectedPoints,
-            mapOf(satellitePath.body to newerWindow), emptyMap(), facing, 340.0, 400.0)
-        assertEquals(historical, projected.single().point); assertSame(satellitePath, projected.single().path)
-        val entries = spaceCompassSelectedDailyPathEntries(newerWindow, null, state.selectedPoints)
-        val retained = entries.single { it.sourcePath != null }
-        assertFalse(retained.isCurrent); assertEquals(historical, retained.point)
-        assertEquals("saved-${historical.timeMs}-${historical.event.name}", retained.pointId)
-        state.openMenu(newerWindow); assertEquals(retained.pointId, state.menuFocusPointId)
-        state.toggleScenePoint(projected.single(), zone)
-        assertTrue(state.selectedPoints.isEmpty())
+    @Test fun renewingASatelliteWindowFollowsTheSameNumberWithoutAHistoricalDuplicate() {
+        val historical=point.copy(position=SpaceCompassSunPosition(180.0,0.0))
+        val satellitePath=path.copy(body=SpaceCompassCelestialBody.ISS,markers=listOf(historical))
+        val state=SpaceCompassSunDailyPathUiState();state.select(satellitePath,historical)
+        val newerWindow=satellitePath.copy(markers=listOf(historical.copy(timeMs=historical.timeMs+300_000)))
+        val projected=projectSpaceCompassSelectedOrbitTargets(state.selectedPoints,mapOf(satellitePath.body to newerWindow),emptyMap(),facing,340.0,400.0)
+        assertEquals(newerWindow.markers.single(),projected.single().point);assertSame(newerWindow,projected.single().path)
+        val entries=spaceCompassSelectedDailyPathEntries(newerWindow,null,state.selectedPoints)
+        assertEquals(1,entries.size);assertNull(entries.single().sourcePath)
+        state.openMenu(newerWindow);assertEquals("0",state.menuFocusPointId)
+        state.toggleScenePoint(projected.single(),zone);assertTrue(state.selectedPoints.isEmpty())
     }
     @Test fun selectedMarkersProjectTheirRefreshedPositionWithoutOverwritingOtherPins() {
         val state = SpaceCompassSunDailyPathUiState(); state.select(path, path.markers.single())

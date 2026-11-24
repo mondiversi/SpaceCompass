@@ -69,14 +69,14 @@ class SpaceCompassPanoramaSelectionTest {
         assertTrue(spaceCompassPanoramaPointSelected(listOf(resolved), initial.body, refreshedPoint))
     }
 
-    @Test fun rollingSatelliteWindowsKeepTheOriginalPathNumberForAPreviouslyPinnedMarker() {
+    @Test fun rollingSatelliteWindowsKeepTheNumberAndUpdateItsCapturedPosition() {
         val initial = path(SpaceCompassCelestialBody.ISS)
         val state = SpaceCompassSunDailyPathUiState(); state.select(initial, point(1))
         val refreshed = initial.copy(markers = listOf(point(12), point(23)))
         val captured = snapshot(listOf(refreshed), state)
         val resolved = resolveSpaceCompassPanoramaSelections(captured, emptyMap()).single()
-        assertEquals(point(1), resolved.point); assertEquals(initial, resolved.path)
-        assertEquals("Point 0\n01:00 · T+11h0m\n↔ 123.5° · ↕ +20.8°", formatSpaceCompassPanoramaSelection(captured, resolved))
+        assertEquals(point(12), resolved.point); assertEquals(refreshed, resolved.path)
+        assertEquals("Point 0\n12:00 · T+0h0m\n↔ 123.5° · ↕ +20.8°", formatSpaceCompassPanoramaSelection(captured, resolved))
     }
 
     @Test fun scientificAndUserPresentationsKeepPinsWhileFormattingTheirOwnCaptions() {

@@ -58,7 +58,7 @@ internal fun rememberSpaceCompassCelestialOverlays(bodies: Set<SpaceCompassCeles
         }
         val observation = timedObservation?.second
         SpaceCompassCelestialOverlay(body, observation, if (body.usesLiveDistance) observation?.distanceKm else noonDistance,
-            speed, path?.takeIf { it.forward24Hours == forward24Hours }, timedObservation?.first)
+            speed, path?.takeIf { it.forward24Hours == forward24Hours && it.date==date && it.zone==zone }, timedObservation?.first)
     } }
 }
 

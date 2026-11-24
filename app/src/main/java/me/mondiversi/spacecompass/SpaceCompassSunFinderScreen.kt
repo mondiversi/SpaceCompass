@@ -572,6 +572,9 @@ internal fun SpaceCompassSunFinderContent(
         spaceCompassSelectedCelestialEntries(allOverlays, selectedBodies), pathLatitude, pathLongitude, pathAltitude, remote, timeMs)
     val selectedOverlays = rememberSpaceCompassForwardOverlays(approachOverlays,forward24Hours,timeMs,
         pathLatitude,pathLongitude,pathAltitude,remote)
+    LaunchedEffect(selectedOverlays,zone,dailyPathUiState.selectedPoints) {
+        dailyPathUiState.refreshLivePaths(selectedOverlays,zone)
+    }
     val currentWeather = weather.snapshot?.takeIf { sun != null && spaceCompassSunWeatherSnapshotUsable(it, timeMs) }
     val sceneWeather = currentWeather.takeIf { showWeather }
     // Data producers stay composed while a child page is visible: returning reuses their caches.

@@ -270,3 +270,5 @@ rendering are unchanged. Run `scripts/CheckGlobePanoramaPerformance.js` alongsid
 the existing projection, label, hit-test, viewport and integrity checks.
 
 Label clearance uses a shared squared-distance check with strict boundaries; regression checks compare it with the previous distance test, including edge cases. Unused WebView pose fields have been removed.
+
+Live and captured Globe selections share the logical daily-point resolver with Sky and Camera. Selected dots and antipodes move to their refreshed number/event rather than retaining historical coordinates. Missing events are dormant and do not add old extra dots.

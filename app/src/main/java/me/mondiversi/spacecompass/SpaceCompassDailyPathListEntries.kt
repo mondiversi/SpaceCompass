@@ -35,14 +35,14 @@ internal fun spaceCompassDailyPathListEntries(path: SpaceCompassSunDailyPath,
     return (listOf(SpaceCompassDailyPathListEntry(live)) + entries).sortedBy { it.point.timeMs }
 }
 
-/** Preserve historical selections when a satellite replaces its rolling marker window. */
+/** Logical selections follow refreshed markers; only legacy arbitrary instants need an extra row. */
 internal fun spaceCompassSelectedDailyPathEntries(path: SpaceCompassSunDailyPath,
     current: SpaceCompassSunPathPoint?, selected: List<SpaceCompassSelectedOrbitPoint>): List<SpaceCompassDailyPathListEntry> {
     val entries = spaceCompassDailyPathListEntries(path, current)
-    val historical = selected.filter { saved -> !saved.key.isCurrent && saved.key.body == path.body &&
+    val historical = selected.mapNotNull { spaceCompassResolveOrbitSelection(it,path,current) }.filter { saved -> !saved.key.isCurrent && saved.key.body == path.body &&
         spaceCompassPathAcceptsSelection(path,saved) &&
         entries.none { !it.isCurrent && spaceCompassOrbitPointKeysMatch(saved.key,
-            spaceCompassOrbitPointKey(path.body, it.point, path.zone, spaceCompassPathSelectionDate(path,it.point), comparisonId = path.comparison?.id)) }
+            spaceCompassOrbitPointKey(path,it.point)) }
     }.map { SpaceCompassDailyPathListEntry(it.point, sourcePath = it.path ?: path) }
     return (entries + historical).sortedBy { it.point.timeMs }
 }

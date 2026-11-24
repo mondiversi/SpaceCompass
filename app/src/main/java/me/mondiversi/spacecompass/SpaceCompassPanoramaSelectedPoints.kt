@@ -13,21 +13,13 @@ internal fun resolveSpaceCompassPanoramaSelections(snapshot: SpaceCompassPanoram
     val objects = snapshot.objects.associateBy { it.body to it.comparison?.id }
     val originals = snapshot.selectedPoints.mapNotNull { saved ->
         val item = objects[saved.key.body to saved.key.comparisonId] ?: return@mapNotNull null
-        val path = item.path?.takeIf { spaceCompassPathAcceptsSelection(it,saved) }
-        if (saved.key.isCurrent) {
-            val point = spaceCompassCurrentPathPoint(item.body, item.referenceTime(snapshot.timeMs), if (item.comparison == null) current[item.body] else if (snapshot.observerPositionKnown) item.currentPosition(snapshot) else item.currentPoint?.position) ?: return@mapNotNull null
-            if (spaceCompassOrbitPointKey(item.body, point, item.comparison?.zone ?: ZoneId.of(snapshot.zoneId), current = true, comparisonId = item.comparison?.id) != saved.key)
-                return@mapNotNull null
-            SpaceCompassPanoramaSelectedPoint(item.body, point, path, true, comparison = item.comparison)
-        } else {
-            path ?: return@mapNotNull null
-            val refreshed = path.markers.firstOrNull { spaceCompassOrbitPointKeysMatch(saved.key,
-                spaceCompassOrbitPointKey(item.body, it, path.zone, spaceCompassPathSelectionDate(path,it), comparisonId = item.comparison?.id)) }
-            val point = refreshed ?: saved.point
-            if (!point.position.azimuthDegrees.isFinite() || !point.position.elevationDegrees.isFinite() ||
-                point.position.elevationDegrees !in -90.0..90.0) return@mapNotNull null
-            SpaceCompassPanoramaSelectedPoint(item.body, point, if (refreshed == null) saved.path ?: path else path, false, comparison = item.comparison)
-        }
+        val position=if(item.comparison==null) current[item.body] else
+            if(snapshot.observerPositionKnown) item.currentPosition(snapshot) else item.currentPoint?.position
+        val currentPoint=spaceCompassCurrentPathPoint(item.body,item.referenceTime(snapshot.timeMs),position)
+        val resolved=spaceCompassResolveOrbitSelection(saved,item.path,currentPoint,
+            item.comparison?.zone ?: ZoneId.of(snapshot.zoneId)) ?: return@mapNotNull null
+        SpaceCompassPanoramaSelectedPoint(item.body,resolved.point,resolved.path,saved.key.isCurrent,comparison=item.comparison)
+
     }.distinctBy { listOf(it.body, it.comparison?.id, it.isCurrent, it.point) }
     return originals + if (snapshot.showAntipodes) originals.map {
         it.copy(point = it.point.antipodalDirection(), isAntipode = true)

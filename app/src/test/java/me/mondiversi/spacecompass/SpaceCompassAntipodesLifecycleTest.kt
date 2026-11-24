@@ -51,6 +51,6 @@ class SpaceCompassAntipodesLifecycleTest {
         assertTrue(state.isCurrentSelected(moon.body,first.copy(timeMs=now+60_000,
             position=SpaceCompassSunPosition(181.0,31.0)),zone))
         assertFalse(state.isCurrentSelected(SpaceCompassCelestialBody.SUN,first,zone))
-        assertFalse(state.isCurrentSelected(moon.body,first,ZoneId.of("Europe/Rome")))
+        assertTrue(state.isCurrentSelected(moon.body,first,ZoneId.of("Europe/Rome")))
     }
 }

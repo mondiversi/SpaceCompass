@@ -73,3 +73,5 @@ small leaders and anchor ticks disambiguate necessary horizontal offsets. Longit
 numbers stay beside their visible equator crossings. Each visible geographic pole
 is marked at its projected position and labelled 90 degrees N/S. Main-view numbering
 remains disabled, and flat-map top/bottom longitude scales retain their existing layout.
+
+Live selections resolve against each refreshed path by displayed number or event occurrence before capture, including their antipodes. Missing events produce no stale pills or coordinates; the selection remains stored. Each captured image/table then freezes its resolved points at shutter time.

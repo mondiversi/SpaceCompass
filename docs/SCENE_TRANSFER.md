@@ -56,3 +56,5 @@ omit the optional flag and continue to load normally.
 Scene display extensions also preserve independent Sky panorama labels and optional
 grid numbers. Missing fields retain legacy defaults; loading a Scene never applies
 preview-only capture edits to main-view preferences.
+
+The optional v1 `pointIdentity.<index>` property stores the logical event, displayed point number when applicable, and occurrence. The original thirteen-field point record is unchanged for older readers. New readers retain numbered/event selections through date changes even without an in-memory path; fixed-date comparison pins keep absolute identity. Legacy files remain readable.

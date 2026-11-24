@@ -29,7 +29,9 @@ internal data class SpaceCompassSunDailyPath(
     val issPass: List<SpaceCompassSunPathPoint> = emptyList(),
     val forward24Hours: Boolean = false,
     val comparison: SpaceCompassTemporalComparison? = null
-)
+) {
+    val pointIdentities by lazy(LazyThreadSafetyMode.PUBLICATION) { SpaceCompassDailyPointIndex(this) }
+}
 
 /** UTC solar calculations, local civil-day bounds. DST days correctly contain 23/25 hourly markers.
  * Sunrise/set use the conventional -0.833° geometric centre altitude (ideal unobstructed horizon).

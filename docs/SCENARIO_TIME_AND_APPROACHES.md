@@ -110,16 +110,17 @@ then show azimuth and elevation together on one row. Shared horizontal/vertical
 double-arrow icons identify the two values; translated accessibility descriptions
 remain complete.
 
-The selection owner tracks the effective civil date in the Location zone. A date
-change (real midnight, simulated progression, rewind or a different configured day)
-clears all pins belonging to live tracks, including current positions, hourly and
-key-event markers. This also applies in the forward-24-hour mode. Pins attached to
-fixed height/event/personal comparisons keep their identity and remain selected.
-The reset is silent; count badges update and antipodes turn off only if no pins
-remain. Merely reopening a page or refreshing data within the same day preserves
-selections. Scene loading establishes the incoming Location day before restoring
-its pins, so imported live points survive loading and expire at the next date
-change. An already generated image/export remains its original frozen snapshot.
+Live-track selections follow a logical point identity through real midnight, simulated
+progression, rewind and arbitrary date skips. Numbered markers keep their displayed
+number; named events keep their event type and occurrence. Repeated DST hours and
+multiple satellite passes remain distinct. Forward-24-hour markers follow the same
+rule when their original timestamp leaves the moving window. Antipodes follow the
+resolved source coordinates and stay enabled until explicitly switched off or all
+selections are removed. Missing events remain selected but invisible until real data
+is available again; no previous-day position is substituted. Fixed height, event and
+personal comparisons keep their own dates. Refreshes are silent. Scene documents
+include an optional logical-identity extension; old readers retain their absolute
+point representation. Already generated images/exports remain frozen snapshots.
 
 ## Capture clock row
 

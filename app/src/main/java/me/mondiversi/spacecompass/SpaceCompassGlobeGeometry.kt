@@ -85,20 +85,19 @@ internal fun buildSpaceCompassGlobeModel(snapshot: SpaceCompassPanoramaSnapshot,
             samples.filterIndexed { i,_ -> i%step==0 || i==samples.lastIndex }
         }.mapNotNull { point -> vector(item.body,point)?.let { it to (point.position.elevationDegrees<0) } }
         if(path!=null && curveCache!=null) { if(curveCache.size>64)curveCache.clear();curveCache[path]=curve }
-        val markers=path?.markers.orEmpty().mapNotNull { p -> vector(item.body,p)?.let { v ->
-            val selected=snapshot.selectedPoints.any { saved -> saved.key.comparisonId==item.comparison?.id &&
-                saved.key.body==item.body && !saved.key.isCurrent && spaceCompassOrbitPointKeysMatch(saved.key,
-                    spaceCompassOrbitPointKey(item.body,p,path!!.zone,spaceCompassPathSelectionDate(path,p),comparisonId=item.comparison?.id)) }
-            SpaceCompassGlobeDot(v,p,selected=selected)
-        } }
         val now=if(item.comparison?.hasReference==false) null else runCatching {
             calculateSpaceCompassCelestialObservation(item.body,item.referenceTime(snapshot.timeMs),snapshot.latitude,
                 snapshot.longitude,snapshot.altitude,snapshot.remote)
         }.getOrNull()?.let { spaceCompassCurrentPathPoint(item.body,item.referenceTime(snapshot.timeMs),it.position) }
+        val resolved=snapshot.selectedPoints.filter { it.key.body==item.body && it.key.comparisonId==item.comparison?.id }
+            .mapNotNull { spaceCompassResolveOrbitSelection(it,path,now,item.comparison?.zone ?: java.time.ZoneId.of(snapshot.zoneId)) }
+        val markers=path?.markers.orEmpty().mapNotNull { p -> vector(item.body,p)?.let { v ->
+            SpaceCompassGlobeDot(v,p,selected=resolved.any { !it.key.isCurrent && it.point==p })
+        } }
         val current=now?.let { p -> vector(item.body,p)?.let { v -> SpaceCompassGlobeDot(v,p,current=true,
             selected=snapshot.selectedPoints.any { it.key.body==item.body && it.key.comparisonId==item.comparison?.id && it.key.isCurrent }) } }
         // Arbitrary selected instants can be absent from the hourly/event marker list.
-        val extra=snapshot.selectedPoints.filter { it.key.body==item.body && it.key.comparisonId==item.comparison?.id && !it.key.isCurrent }
+        val extra=resolved.filter { !it.key.isCurrent }
             .filter { saved -> markers.none { abs(it.point.timeMs-saved.point.timeMs)<120_000 } }
             .mapNotNull { saved -> vector(item.body,saved.point)?.let { SpaceCompassGlobeDot(it,saved.point,selected=true) } }
         val dots=listOfNotNull(current)+markers+extra
