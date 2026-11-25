@@ -1226,9 +1226,9 @@ internal fun SpaceCompassSunFinderContent(
             fix?.latitude, fix?.takeIf { it.hasAltitude() }?.altitude ?: 0.0, showSkyReferences,
             0.0, Modifier.fillMaxSize(), longitude = fix?.longitude, objectOpacity = cameraObjectOpacity,
             showReticle = showReticle, showAntipodes = showAntipodes)
-        // Retain the readability fallback when the 45% information pane is too narrow.
+        // Retain the readability fallback when the 40% information pane is too narrow.
         val minimumPanelWidth = if (largeText) 280.dp else 210.dp
-        val detailsWidth = viewportWidth * 0.45f
+        val detailsWidth = viewportWidth * 0.40f
         // Keep the islands at their regular size when the available height changes.
         val compactPanel = false
         if (viewportWidth > viewportHeight && detailsWidth - 20.dp >= minimumPanelWidth) {

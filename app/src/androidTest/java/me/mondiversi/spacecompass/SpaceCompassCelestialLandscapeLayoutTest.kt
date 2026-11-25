@@ -173,12 +173,12 @@ class SpaceCompassCelestialLandscapeLayoutTest {
                 val island = compose.onNodeWithTag("sun-finder-body-data").fetchSemanticsNode().boundsInRoot
                 val sky = compose.onNodeWithTag("celestial-pointing-area").fetchSemanticsNode().boundsInRoot
                 val capture = compose.onNodeWithTag("celestial-capture-controls").fetchSemanticsNode().boundsInRoot
-                assertEquals(root.width * .55f - 10f, sky.width, 1f)
+                assertEquals(root.width * .60f - 10f, sky.width, 1f)
                 assertEquals(root.top, sky.top, 1f)
                 assertEquals(root.top + 5f, details.top, 1f)
                 assertTrue(capture.top >= details.bottom)
                 assertTrue(capture.bottom <= root.bottom - 5f)
-                val boundary = if (rtl) root.right - root.width * .55f else root.left + root.width * .55f
+                val boundary = if (rtl) root.right - root.width * .60f else root.left + root.width * .60f
                 if (rtl) assertTrue(capture.right <= boundary + 1f)
                 else assertTrue(capture.left >= boundary - 1f)
                 val innerGap = if (rtl) boundary - island.right else island.left - boundary
