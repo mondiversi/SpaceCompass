@@ -1,9 +1,9 @@
 <resources>
     <string name="info_news_title">Últimas novedades · %1$s</string>
-    <string name="info_news_star_sky" formatted="false">Tocar el nombre de un objeto abre el Observatorio sin pausar el tiempo.</string>
-    <string name="info_news_texture_downloads" formatted="false">Los botones y enlaces de estado de la vista principal ejecutan su propia acción sin activar la pausa.</string>
-    <string name="info_news_weather" formatted="false">Logotipo principal más limpio, con la versión disponible en Información y créditos.</string>
-    <string name="info_news_viewer_zoom" formatted="false">Cuadrícula de referencia activada por defecto con un 50 por ciento de opacidad en todas las vistas.</string>
-    <string name="info_news_settings" formatted="false">Las capturas heredan la configuración de la cuadrícula; los cambios en la vista previa son independientes de la vista principal.</string>
-    <string name="info_news_catalog" formatted="false">Se conservan las opciones de cuadrícula, ubicaciones, escenas y selecciones de objetos guardadas.</string>
+    <string name="info_news_star_sky" formatted="false">El tiempo sigue en pausa al volver de la gestión de ubicaciones, el Observatorio y otras pantallas.</string>
+    <string name="info_news_texture_downloads" formatted="false">Las antípodas heredan los símbolos del punto original: salida, puesta, máximo, mínimo y puntos normales.</string>
+    <string name="info_news_weather" formatted="false">Las antípodas de la posición actual usan la miniatura del objeto, incluida la fase de la Luna.</string>
+    <string name="info_news_viewer_zoom" formatted="false">Bocadillos más compactos muestran los nombres del objeto y del punto con un símbolo de antípoda en vistas, capturas y panorámicas.</string>
+    <string name="info_news_settings" formatted="false">Los archivos CSV y las tablas legibles identifican cada antípoda con los nombres del objeto y del punto original.</string>
+    <string name="info_news_catalog" formatted="false">Al volver de la edición de la ubicación se conservan el instante en pausa y la velocidad configurada, hacia delante o hacia atrás.</string>
 </resources>

@@ -1,9 +1,9 @@
 <resources>
     <string name="info_news_title">Mambo mapya · %1$s</string>
-    <string name="info_news_star_sky" formatted="false">Kugusa jina la kitu hufungua Uchunguzi bila kusitisha muda.</string>
-    <string name="info_news_texture_downloads" formatted="false">Vitufe na viungo vya hali kwenye mwonekano mkuu hutekeleza kazi zao bila kusitisha muda.</string>
-    <string name="info_news_weather" formatted="false">Nembo kuu imekuwa safi zaidi; taarifa ya toleo inapatikana kwenye Taarifa na Shukrani.</string>
-    <string name="info_news_viewer_zoom" formatted="false">Gridi ya marejeleo imewashwa kwa chaguo-msingi kwa kiwango cha kutopitisha mwanga cha asilimia 50 katika mionekano yote.</string>
-    <string name="info_news_settings" formatted="false">Picha hurithi mipangilio ya gridi; mabadiliko ya hakikisho yanabaki tofauti na mwonekano mkuu.</string>
-    <string name="info_news_catalog" formatted="false">Chaguo za gridi, maeneo, mandhari na uteuzi wa vitu vilivyohifadhiwa vinahifadhiwa.</string>
+    <string name="info_news_star_sky" formatted="false">Muda unabaki umesitishwa unaporudi kutoka usimamizi wa eneo, Kituo cha uchunguzi na kurasa nyingine.</string>
+    <string name="info_news_texture_downloads" formatted="false">Nukta za upande wa pili hurithi alama za nukta asili: kuchomoza, kuzama, kiwango cha juu, kiwango cha chini na nukta za kawaida.</string>
+    <string name="info_news_weather" formatted="false">Nukta za upande wa pili za nafasi ya sasa hutumia kijipicha cha kitu, pamoja na awamu ya Mwezi.</string>
+    <string name="info_news_viewer_zoom" formatted="false">Viputo vifupi zaidi huonyesha jina la kitu na nukta pamoja na alama ya nukta ya upande wa pili katika mionekano, picha na panorama.</string>
+    <string name="info_news_settings" formatted="false">Faili za CSV na majedwali yanayosomeka hutambulisha kila nukta ya upande wa pili kwa jina la kitu na nukta asili.</string>
+    <string name="info_news_catalog" formatted="false">Unaporudi kutoka kuhariri eneo, wakati uliositishwa na kasi iliyowekwa ya muda kwenda mbele au nyuma huhifadhiwa.</string>
 </resources>

@@ -1,9 +1,9 @@
 <resources>
     <string name="info_news_title">Neuigkeiten · %1$s</string>
-    <string name="info_news_star_sky" formatted="false">Ein Tippen auf einen Objektnamen öffnet das Observatorium, ohne die Zeit anzuhalten.</string>
-    <string name="info_news_texture_downloads" formatted="false">Schaltflächen und Statuslinks in der Hauptansicht führen ihre eigene Aktion aus, statt die Zeit anzuhalten.</string>
-    <string name="info_news_weather" formatted="false">Aufgeräumtes Hauptlogo; die Versionsangabe bleibt unter Info und Mitwirkende verfügbar.</string>
-    <string name="info_news_viewer_zoom" formatted="false">Das Referenzraster ist in allen Ansichten standardmäßig mit 50 Prozent Deckkraft aktiviert.</string>
-    <string name="info_news_settings" formatted="false">Aufnahmen übernehmen die Rastereinstellungen; Änderungen in der Vorschau bleiben von der Hauptansicht getrennt.</string>
-    <string name="info_news_catalog" formatted="false">Gespeicherte Rastereinstellungen, Standorte, Szenen und die Objektauswahl bleiben erhalten.</string>
+    <string name="info_news_star_sky" formatted="false">Die Zeit bleibt beim Zurückkehren aus der Standortverwaltung, dem Observatorium und anderen Seiten angehalten.</string>
+    <string name="info_news_texture_downloads" formatted="false">Antipoden übernehmen die Symbole ihres Ursprungspunkts: Aufgang, Untergang, Maximum, Minimum und normale Punkte.</string>
+    <string name="info_news_weather" formatted="false">Antipoden der aktuellen Position verwenden das Objektvorschaubild, einschließlich der Mondphase.</string>
+    <string name="info_news_viewer_zoom" formatted="false">Kompaktere Sprechblasen zeigen Objekt- und Punktnamen mit einem Antipodensymbol in Ansichten, Aufnahmen und Panoramen.</string>
+    <string name="info_news_settings" formatted="false">CSV-Dateien und lesbare Tabellen kennzeichnen jeden Antipoden mit Objekt- und Ursprungspunktnamen.</string>
+    <string name="info_news_catalog" formatted="false">Beim Zurückkehren aus der Standortbearbeitung bleiben der angehaltene Zeitpunkt und die eingestellte Vorwärts- oder Rückwärtsgeschwindigkeit erhalten.</string>
 </resources>

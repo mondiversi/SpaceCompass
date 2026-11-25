@@ -1,9 +1,9 @@
 <resources>
     <string name="info_news_title">Dernières nouveautés · %1$s</string>
-    <string name="info_news_star_sky" formatted="false">Toucher le nom d’un objet ouvre l’Observatoire sans mettre le temps en pause.</string>
-    <string name="info_news_texture_downloads" formatted="false">Les boutons et liens d’état de la vue principale gardent leur action sans déclencher la pause.</string>
-    <string name="info_news_weather" formatted="false">Logo principal épuré, avec la version disponible dans Infos et crédits.</string>
-    <string name="info_news_viewer_zoom" formatted="false">Grille de référence activée par défaut à 50 pour cent d’opacité dans toutes les vues.</string>
-    <string name="info_news_settings" formatted="false">Les captures reprennent les réglages de grille ; les modifications de l’aperçu restent distinctes de la vue principale.</string>
-    <string name="info_news_catalog" formatted="false">Les choix de grille, lieux, scènes et sélections d’objets enregistrés sont conservés.</string>
+    <string name="info_news_star_sky" formatted="false">Le temps reste en pause au retour de la gestion des lieux, de l’Observatoire et des autres pages.</string>
+    <string name="info_news_texture_downloads" formatted="false">Les antipodes reprennent les symboles de leur point d’origine : lever, coucher, maximum, minimum et points ordinaires.</string>
+    <string name="info_news_weather" formatted="false">Les antipodes de la position actuelle utilisent la miniature de l’objet, y compris la phase de la Lune.</string>
+    <string name="info_news_viewer_zoom" formatted="false">Des bulles plus compactes affichent les noms de l’objet et du point avec un symbole d’antipode dans les vues, captures et panoramas.</string>
+    <string name="info_news_settings" formatted="false">Les fichiers CSV et les tableaux lisibles identifient chaque antipode par les noms de l’objet et du point d’origine.</string>
+    <string name="info_news_catalog" formatted="false">Au retour de la modification du lieu, l’instant en pause et la vitesse choisie, en avant ou en arrière, sont conservés.</string>
 </resources>

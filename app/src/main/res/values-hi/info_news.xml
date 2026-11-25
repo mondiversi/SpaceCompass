@@ -1,9 +1,9 @@
 <resources>
     <string name="info_news_title">हाल के बदलाव · %1$s</string>
-    <string name="info_news_star_sky" formatted="false">किसी खगोलीय पिंड के नाम पर टैप करने से समय रोके बिना वेधशाला खुलती है।</string>
-    <string name="info_news_texture_downloads" formatted="false">मुख्य दृश्य के बटन और स्थिति लिंक समय रोके बिना अपना काम करते हैं।</string>
-    <string name="info_news_weather" formatted="false">मुख्य लोगो अधिक साफ़ है; संस्करण की जानकारी सूचना और श्रेय में उपलब्ध है।</string>
-    <string name="info_news_viewer_zoom" formatted="false">संदर्भ ग्रिड सभी दृश्यों में डिफ़ॉल्ट रूप से 50 प्रतिशत अपारदर्शिता पर चालू रहती है।</string>
-    <string name="info_news_settings" formatted="false">कैप्चर ग्रिड की सेटिंग लेते हैं; पूर्वावलोकन के बदलाव मुख्य दृश्य से अलग रहते हैं।</string>
-    <string name="info_news_catalog" formatted="false">सहेजे गए ग्रिड विकल्प, स्थान, दृश्य और खगोलीय पिंडों के चयन सुरक्षित रहते हैं।</string>
+    <string name="info_news_star_sky" formatted="false">स्थान प्रबंधन, वेधशाला और अन्य पृष्ठों से लौटने पर समय रुका रहता है।</string>
+    <string name="info_news_texture_downloads" formatted="false">प्रतिमुख बिंदु अपने मूल बिंदु के चिह्न अपनाते हैं: उदय, अस्त, अधिकतम, न्यूनतम और सामान्य बिंदु।</string>
+    <string name="info_news_weather" formatted="false">वर्तमान स्थिति के प्रतिमुख बिंदु पिंड का थंबनेल दिखाते हैं, जिसमें चंद्रमा की कला भी शामिल है।</string>
+    <string name="info_news_viewer_zoom" formatted="false">अधिक संक्षिप्त बुलबुले दृश्यों, चित्रों और पैनोरामा में पिंड तथा बिंदु के नाम के साथ प्रतिमुख चिह्न दिखाते हैं।</string>
+    <string name="info_news_settings" formatted="false">CSV और पठनीय तालिकाएँ प्रत्येक प्रतिमुख बिंदु को पिंड तथा मूल बिंदु के नाम से पहचानती हैं।</string>
+    <string name="info_news_catalog" formatted="false">स्थान संपादन से लौटने पर रुका हुआ क्षण और समय की चुनी गई आगे या पीछे की गति बनी रहती है।</string>
 </resources>

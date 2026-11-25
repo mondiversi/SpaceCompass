@@ -1,9 +1,6 @@
 package me.mondiversi.spacecompass
 
-import androidx.compose.foundation.Canvas
 import androidx.compose.foundation.layout.BoxWithConstraints
-import androidx.compose.material3.MaterialTheme
-import androidx.compose.ui.geometry.Offset
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.key
@@ -86,12 +83,7 @@ internal fun SpaceCompassCelestialSceneBackdrop(opticalFrame: SpaceCompassSunSce
             if (showAntipodes) projectSpaceCompassSelectedOrbitTargets(selected, paths, current, orientation,
                 width, height, perspective, antipodes = true, comparisons = comparisonOverlays) else emptyList()
         }
-        val accent = MaterialTheme.colorScheme.primary
-        Canvas(Modifier.fillMaxSize().testTag("celestial-full-scene-antipodes")) {
-            antipodes.forEach { target ->
-                drawSpaceCompassAntipode(Offset(target.projection.x.toFloat(), target.projection.y.toFloat()),
-                    7.dp.toPx(), accent, 1.8.dp.toPx())
-            }
-        }
+        SpaceCompassAntipodeMarkers(antipodes, state,
+            Modifier.fillMaxSize().testTag("celestial-full-scene-antipodes"), objectOpacity)
     }
 }

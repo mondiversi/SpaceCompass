@@ -108,7 +108,7 @@ internal fun renderSpaceCompassGlobe(snapshot: SpaceCompassPanoramaSnapshot,maxE
                 val radius=if(dot.current) width/120f else width/260f
                 if(!behind) {
                 paint.color=tint;paint.style=Paint.Style.FILL;paint.strokeWidth=width/850f
-                if(dot.current&&!dot.antipode) {
+                if(dot.current) {
                     val marker=renderSpaceCompassPanoramaMarker(context,track.item.body,track.item.referenceTime(snapshot.timeMs))
                     try {
                         canvas.save();canvas.clipPath(Path().apply { addCircle(p.x,p.y,radius,Path.Direction.CW) })
@@ -116,9 +116,9 @@ internal fun renderSpaceCompassGlobe(snapshot: SpaceCompassPanoramaSnapshot,maxE
                     } finally { marker.recycle() }
                     paint.style=Paint.Style.STROKE;paint.strokeWidth=if(dot.selected) width/600f else width/1500f
                     canvas.drawCircle(p.x,p.y,radius,paint)
-                } else if(!dot.antipode&&dot.point.event!=SpaceCompassSunPathEvent.HOUR) {
+                } else if(dot.point.event!=SpaceCompassSunPathEvent.HOUR) {
                     drawSpaceCompassPanoramaEventMarker(canvas,dot.point.event,
-                        SpaceCompassSunScenePoint(p.x.toDouble(),p.y.toDouble()),width/4096f,tint)
+                        SpaceCompassSunScenePoint(p.x.toDouble(),p.y.toDouble()),width/4096f,tint,outlined=dot.antipode)
                 } else {
                     paint.style=if(dot.antipode) Paint.Style.STROKE else Paint.Style.FILL
                     canvas.drawCircle(p.x,p.y,radius,paint)
@@ -132,13 +132,13 @@ internal fun renderSpaceCompassGlobe(snapshot: SpaceCompassPanoramaSnapshot,maxE
                     val selection=SpaceCompassPanoramaSelectedPoint(track.item.body,point,track.item.path,dot.current,dot.antipode,track.item.comparison)
                     val borderTint=if(dot.selected&&!behind) snapshot.selectionTint else
                         spaceCompassCelestialPathVisibilityTint(track.item.tint,behind||dot.point.position.elevationDegrees<0).toArgb()
-                    label(formatSpaceCompassPanoramaSelection(snapshot,selection),p,borderTint,radius,dot.selected,dot.current,behind)
+                    label(formatSpaceCompassPanoramaSelection(snapshot,selection,visualAntipode=true),p,borderTint,radius,dot.selected,dot.current,behind)
                 }
             }
         }
         data class PlacedLabel(val label: PendingLabel,val lines: List<String>,val bounds: RectF)
         val placed=pending.sortedWith(compareByDescending<PendingLabel> { it.selected }.thenByDescending { it.current }).mapNotNull { label ->
-            val lines=label.value.lines();val w=minOf(width*.44f,lines.maxOf { text.measureText(it) }+width/80f)
+            val lines=label.value.lines();val w=minOf(width*.44f,lines.maxOf { measureSpaceCompassCaptureLabelLine(it,text) }+width/80f)
             val height=lines.size*text.textSize*1.35f+width/100f
             val bounds=spaceCompassPanoramaLabelBounds(SpaceCompassSunScenePoint(label.point.x.toDouble(),label.point.y.toDouble()),
                 w.toDouble(),height.toDouble(),width.toDouble(),h.toDouble(),unit.toDouble(),obstacles,
@@ -159,7 +159,8 @@ internal fun renderSpaceCompassGlobe(snapshot: SpaceCompassPanoramaSnapshot,maxE
             paint.color=0xd9101418.toInt();paint.style=Paint.Style.FILL;canvas.drawRoundRect(bounds,4*unit,4*unit,paint)
             paint.color=label.tint;paint.style=Paint.Style.STROKE;paint.strokeWidth=width/1100f;canvas.drawRoundRect(bounds,4*unit,4*unit,paint)
             text.color=Color.WHITE
-            lines.forEachIndexed { i,line -> canvas.drawText(line,bounds.centerX(),bounds.top+width/160f+text.textSize*(1+i*1.35f),text) }
+            lines.forEachIndexed { i,line -> drawSpaceCompassCaptureLabelLine(canvas,line,bounds.centerX(),
+                bounds.top+width/160f+text.textSize*(1+i*1.35f),text) }
         }
         drawSpaceCompassGlobeCoordinateLabels(canvas,coordinateDrawing)
         drawSpaceCompassGlobeGeographicCaptions(canvas,geographicDrawing,guideTextSize)

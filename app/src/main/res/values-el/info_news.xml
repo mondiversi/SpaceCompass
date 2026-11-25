@@ -1,9 +1,9 @@
 <resources>
     <string name="info_news_title">Τελευταία νέα · %1$s</string>
-    <string name="info_news_star_sky" formatted="false">Το άγγιγμα του ονόματος ενός αντικειμένου ανοίγει το Παρατηρητήριο χωρίς παύση του χρόνου.</string>
-    <string name="info_news_texture_downloads" formatted="false">Τα κουμπιά και οι σύνδεσμοι κατάστασης της κύριας προβολής εκτελούν τη δική τους ενέργεια χωρίς να ενεργοποιούν την παύση.</string>
-    <string name="info_news_weather" formatted="false">Πιο καθαρό κύριο λογότυπο, με την έκδοση διαθέσιμη στις πληροφορίες και συντελεστές.</string>
-    <string name="info_news_viewer_zoom" formatted="false">Το πλέγμα αναφοράς είναι ενεργό από προεπιλογή με αδιαφάνεια 50 τοις εκατό σε όλες τις προβολές.</string>
-    <string name="info_news_settings" formatted="false">Οι λήψεις κληρονομούν τις ρυθμίσεις πλέγματος· οι αλλαγές στην προεπισκόπηση παραμένουν ανεξάρτητες από την κύρια προβολή.</string>
-    <string name="info_news_catalog" formatted="false">Διατηρούνται οι αποθηκευμένες επιλογές πλέγματος, τοποθεσίες, σκηνές και επιλογές ουράνιων σωμάτων.</string>
+    <string name="info_news_star_sky" formatted="false">Ο χρόνος παραμένει σε παύση κατά την επιστροφή από τη διαχείριση τοποθεσίας, το Παρατηρητήριο και άλλες σελίδες.</string>
+    <string name="info_news_texture_downloads" formatted="false">Οι αντίποδες κληρονομούν τα σύμβολα του αρχικού σημείου: ανατολή, δύση, μέγιστο, ελάχιστο και κανονικά σημεία.</string>
+    <string name="info_news_weather" formatted="false">Οι αντίποδες της τρέχουσας θέσης χρησιμοποιούν τη μικρογραφία του αντικειμένου, μαζί με τη φάση της Σελήνης.</string>
+    <string name="info_news_viewer_zoom" formatted="false">Πιο μικρές ετικέτες εμφανίζουν το όνομα αντικειμένου και σημείου με σύμβολο αντίποδα σε προβολές, λήψεις και πανοράματα.</string>
+    <string name="info_news_settings" formatted="false">Τα αρχεία CSV και οι ευανάγνωστοι πίνακες προσδιορίζουν κάθε αντίποδα με το όνομα αντικειμένου και αρχικού σημείου.</string>
+    <string name="info_news_catalog" formatted="false">Μετά την επεξεργασία τοποθεσίας διατηρούνται η στιγμή παύσης και η επιλεγμένη ταχύτητα χρόνου προς τα εμπρός ή πίσω.</string>
 </resources>

@@ -1,9 +1,9 @@
 <resources>
     <string name="info_news_title">Последние новости · %1$s</string>
-    <string name="info_news_star_sky" formatted="false">Нажатие на название объекта открывает Обсерваторию без приостановки времени.</string>
-    <string name="info_news_texture_downloads" formatted="false">Кнопки и ссылки состояния в главном виде выполняют свои действия, не включая паузу.</string>
-    <string name="info_news_weather" formatted="false">Главный логотип стал лаконичнее; версия доступна в разделе информации и благодарностей.</string>
-    <string name="info_news_viewer_zoom" formatted="false">Координатная сетка по умолчанию включена во всех видах с непрозрачностью 50 процентов.</string>
-    <string name="info_news_settings" formatted="false">Снимки наследуют настройки сетки; изменения в предпросмотре не влияют на главный вид.</string>
-    <string name="info_news_catalog" formatted="false">Сохранённые настройки сетки, местоположения, сцены и выбранные объекты сохраняются.</string>
+    <string name="info_news_star_sky" formatted="false">Время остаётся на паузе при возвращении из управления местоположением, Обсерватории и других экранов.</string>
+    <string name="info_news_texture_downloads" formatted="false">Антиподы наследуют символы исходной точки: восхода, захода, максимума, минимума и обычных точек.</string>
+    <string name="info_news_weather" formatted="false">Антиподы текущего положения используют миниатюру объекта с учётом фазы Луны.</string>
+    <string name="info_news_viewer_zoom" formatted="false">Более компактные подписи показывают название объекта и точки со значком антипода в видах, снимках и панорамах.</string>
+    <string name="info_news_settings" formatted="false">В CSV и читаемых таблицах каждый антипод обозначается названием объекта и исходной точки.</string>
+    <string name="info_news_catalog" formatted="false">После редактирования местоположения сохраняются момент паузы и выбранная скорость времени вперёд или назад.</string>
 </resources>

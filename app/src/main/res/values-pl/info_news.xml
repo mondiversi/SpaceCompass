@@ -1,9 +1,9 @@
 <resources>
     <string name="info_news_title">Ostatnie nowości · %1$s</string>
-    <string name="info_news_star_sky" formatted="false">Dotknięcie nazwy obiektu otwiera Obserwatorium bez zatrzymywania czasu.</string>
-    <string name="info_news_texture_downloads" formatted="false">Przyciski i łącza stanu w widoku głównym wykonują własne działania zamiast włączać pauzę.</string>
-    <string name="info_news_weather" formatted="false">Prostsze logo główne; wersja pozostaje dostępna w Informacjach i podziękowaniach.</string>
-    <string name="info_news_viewer_zoom" formatted="false">Siatka odniesienia jest domyślnie włączona we wszystkich widokach z kryciem 50 procent.</string>
-    <string name="info_news_settings" formatted="false">Ujęcia przejmują ustawienia siatki; zmiany w podglądzie są niezależne od widoku głównego.</string>
-    <string name="info_news_catalog" formatted="false">Zapisane ustawienia siatki, lokalizacje, sceny i wybory obiektów zostają zachowane.</string>
+    <string name="info_news_star_sky" formatted="false">Czas pozostaje wstrzymany po powrocie z zarządzania lokalizacją, Obserwatorium i innych ekranów.</string>
+    <string name="info_news_texture_downloads" formatted="false">Antypody dziedziczą symbole punktu źródłowego: wschodu, zachodu, maksimum, minimum i zwykłych punktów.</string>
+    <string name="info_news_weather" formatted="false">Antypody bieżącej pozycji używają miniatury obiektu, z uwzględnieniem fazy Księżyca.</string>
+    <string name="info_news_viewer_zoom" formatted="false">Mniejsze dymki pokazują nazwę obiektu i punktu oraz symbol antypodu w widokach, zdjęciach i panoramach.</string>
+    <string name="info_news_settings" formatted="false">Pliki CSV i czytelne tabele identyfikują każdy antypod nazwą obiektu i punktu źródłowego.</string>
+    <string name="info_news_catalog" formatted="false">Po powrocie z edycji lokalizacji zachowane są wstrzymana chwila oraz ustawiona prędkość odtwarzania do przodu lub wstecz.</string>
 </resources>

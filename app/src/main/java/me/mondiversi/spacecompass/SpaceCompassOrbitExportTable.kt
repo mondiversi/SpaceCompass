@@ -5,7 +5,8 @@ import java.time.ZoneId
 
 internal enum class SpaceCompassOrbitExportRowKind { POINT, CURRENT, EVENT, SELECTED, PASS, ANTIPODE }
 
-internal data class SpaceCompassOrbitExportCell(val point: SpaceCompassSunPathPoint, val selected: Boolean)
+internal data class SpaceCompassOrbitExportCell(val point: SpaceCompassSunPathPoint, val selected: Boolean,
+    val antipodeSource: SpaceCompassPanoramaSelectedPoint? = null)
 
 internal data class SpaceCompassOrbitExportRow(
     val kind: SpaceCompassOrbitExportRowKind,
@@ -52,13 +53,13 @@ internal fun captureSpaceCompassOrbitTable(snapshot: SpaceCompassPanoramaSnapsho
     val rows = linkedMapOf<Triple<SpaceCompassOrbitExportRowKind, Int, Int>, SpaceCompassOrbitExportRow>()
     fun add(kind: SpaceCompassOrbitExportRowKind, index: Int, occurrence: Int,
         body: SpaceCompassCelestialBody, point: SpaceCompassSunPathPoint, event: SpaceCompassSunPathEvent? = null,
-        comparisonId: String? = null,
+        comparisonId: String? = null, antipodeSource: SpaceCompassPanoramaSelectedPoint? = null,
         selected: Boolean = pins.any { it.body == body && it.comparison?.id == comparisonId && it.point == point && it.isCurrent == (kind == SpaceCompassOrbitExportRowKind.CURRENT) }) {
         if (!point.position.azimuthDegrees.isFinite() || !point.position.elevationDegrees.isFinite() ||
             point.position.elevationDegrees !in -90.0..90.0) return
         val key = Triple(kind, index, occurrence)
         val row = rows[key] ?: SpaceCompassOrbitExportRow(kind, index, occurrence, event)
-        val cell = SpaceCompassOrbitExportCell(point.copy(coincidentEvents = point.coincidentEvents.toSet()), selected)
+        val cell = SpaceCompassOrbitExportCell(point.copy(coincidentEvents = point.coincidentEvents.toSet()), selected, antipodeSource)
         rows[key] = if (comparisonId == null) row.copy(cells = row.cells + (body to cell))
             else row.copy(comparisonCells = row.comparisonCells + (comparisonId to cell))
     }
@@ -106,7 +107,7 @@ internal fun captureSpaceCompassOrbitTable(snapshot: SpaceCompassPanoramaSnapsho
     }
     resolved.filter { it.isAntipode }.groupBy { it.body to it.comparison?.id }.forEach { (identity, mirrors) ->
         mirrors.sortedBy { it.point.timeMs }.forEachIndexed { index, mirror ->
-            add(SpaceCompassOrbitExportRowKind.ANTIPODE, index, 0, identity.first, mirror.point, comparisonId = identity.second, selected = true)
+            add(SpaceCompassOrbitExportRowKind.ANTIPODE, index, 0, identity.first, mirror.point, comparisonId = identity.second, antipodeSource = mirror, selected = true)
         }
     }
     val sorted = spaceCompassChronologicalOrbitExportRows(rows.values.toList())

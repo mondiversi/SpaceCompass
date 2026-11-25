@@ -1,9 +1,9 @@
 <resources>
     <string name="info_news_title">Perubahan terbaru · %1$s</string>
-    <string name="info_news_star_sky" formatted="false">Mengetuk nama objek membuka Observatorium tanpa menjeda waktu.</string>
-    <string name="info_news_texture_downloads" formatted="false">Tombol dan tautan status pada tampilan utama menjalankan tindakannya tanpa memicu jeda.</string>
-    <string name="info_news_weather" formatted="false">Logo utama lebih bersih, dengan informasi versi tetap tersedia di Info dan kredit.</string>
-    <string name="info_news_viewer_zoom" formatted="false">Kisi referensi aktif secara bawaan dengan opasitas 50 persen di semua tampilan.</string>
-    <string name="info_news_settings" formatted="false">Tangkapan mewarisi pengaturan kisi; perubahan pratinjau tetap terpisah dari tampilan utama.</string>
-    <string name="info_news_catalog" formatted="false">Pilihan kisi, lokasi, adegan, dan pilihan objek yang tersimpan tetap dipertahankan.</string>
+    <string name="info_news_star_sky" formatted="false">Waktu tetap dijeda saat kembali dari pengelolaan lokasi, Observatorium, dan halaman lain.</string>
+    <string name="info_news_texture_downloads" formatted="false">Antipoda mewarisi simbol titik asal: terbit, terbenam, maksimum, minimum, dan titik biasa.</string>
+    <string name="info_news_weather" formatted="false">Antipoda posisi saat ini menggunakan gambar mini objek, termasuk fase Bulan.</string>
+    <string name="info_news_viewer_zoom" formatted="false">Balon yang lebih ringkas menampilkan nama objek dan titik dengan simbol antipoda pada tampilan, tangkapan, dan panorama.</string>
+    <string name="info_news_settings" formatted="false">CSV dan tabel yang mudah dibaca mengidentifikasi setiap antipoda dengan nama objek dan titik asal.</string>
+    <string name="info_news_catalog" formatted="false">Saat kembali dari penyuntingan lokasi, waktu yang dijeda dan kecepatan maju atau mundur yang diatur tetap dipertahankan.</string>
 </resources>

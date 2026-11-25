@@ -38,6 +38,7 @@ internal fun SpaceCompassCelestialSceneInteraction(targets: List<SpaceCompassCel
     onEmptySpaceDoubleTap: (() -> Unit)? = null,
     antipodeTargets: List<SpaceCompassCelestialSceneTarget> = emptyList(),
     drawAntipodeMarkers: Boolean = true,
+    objectOpacity: Float = 1f,
     liveMarkers: @Composable () -> Unit = {}) {
     androidx.compose.foundation.layout.BoxWithConstraints(Modifier.fillMaxSize()) {
         val density = LocalDensity.current
@@ -106,12 +107,8 @@ internal fun SpaceCompassCelestialSceneInteraction(targets: List<SpaceCompassCel
         SpaceCompassTutorialScene(currentTargets, excluded + hitExclusions)
         // Local marker controls retain their direct tap and accessibility actions.
         liveMarkers()
-        if (drawAntipodeMarkers) Canvas(Modifier.fillMaxSize().testTag("celestial-antipodes")) {
-            antipodeTargets.forEach { target ->
-                drawSpaceCompassAntipode(Offset(target.projection.x.toFloat(), target.projection.y.toFloat()),
-                    7.dp.toPx(), accent, 1.8.dp.toPx())
-            }
-        }
+        if (drawAntipodeMarkers) SpaceCompassAntipodeMarkers(antipodeTargets, state,
+            Modifier.fillMaxSize().testTag("celestial-antipodes"), objectOpacity)
         if (showCaptions && nowMs != null) {
             SpaceCompassCelestialSceneBadges(pinned, focused, nowMs, primaryText, secondaryText, backgroundColor, excluded)
         }

@@ -190,7 +190,8 @@ internal fun renderSpaceCompassProjectedCapture(context: Context,background: Bit
             position?.takeIf { item.comparison == null }?.let { item.body to it } }.toMap(),scale) { position -> projection(position)?.let {
                 SpaceCompassSunScenePoint(it.x,it.y) } }
         drawSpaceCompassPanoramaSelections(canvas,snapshot,selections,scale,35f,
-            { position -> projection(position)?.let { SpaceCompassSunScenePoint(it.x,it.y) } })
+            { position -> projection(position)?.let { SpaceCompassSunScenePoint(it.x,it.y) } },
+            context = context, objectOpacity = objectOpacity)
         if (pointing==null && warning!=null) {
             text.textSize=20*scale; text.color=Color.WHITE; text.textAlign=Paint.Align.CENTER
             canvas.drawText(warning,width/2f,header+28*scale,text)

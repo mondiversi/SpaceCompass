@@ -71,14 +71,31 @@ function globePointNearBox(point,box,radius){
  const dx=point.x-Math.max(box.x,Math.min(box.x+box.w,point.x)),dy=point.y-Math.max(box.y,Math.min(box.y+box.h,point.y));
  return radius>0&&dx*dx+dy*dy<radius*radius;
 }
+// One em holds the same antipode vector used by the Android captions; CSV/TXT remain descriptive.
+function globeCaptionWidth(line){const parts=line.split('\ufffc'),em=parseFloat(orbitInk.font.match(/[\d.]+px/)?.[0])||12;
+ return parts.reduce((width,part)=>width+orbitInk.measureText(part).width,0)+(parts.length-1)*em;}
+function globeCaptionLine(line,x,baseline,maxWidth){
+ if(!line.includes('\ufffc')){orbitInk.fillText(line,x,baseline,maxWidth);return;}
+ const parts=line.split('\ufffc'),em=parseFloat(orbitInk.font.match(/[\d.]+px/)?.[0])||12,total=globeCaptionWidth(line),scale=Math.min(1,maxWidth/Math.max(1,total));
+ const first=line.match(/[A-Za-z\u00c0-\u02ff\u0370-\u052f\u0590-\u08ff\u0900-\u0dff\u3040-\u30ff\u3400-\u9fff]/)?.[0]||'';
+ if(/[\u0590-\u08ff]/.test(first))parts.reverse();
+ const metrics=orbitInk.measureText('Hg'),cy=((metrics.actualBoundingBoxDescent??em*.2)-(metrics.actualBoundingBoxAscent??em*.8))/2;
+ orbitInk.save();orbitInk.translate(x-total*scale/2,baseline);orbitInk.scale(scale,1);orbitInk.textAlign='left';
+ let cursor=0;for(let i=0;i<parts.length;i++){const part=parts[i];orbitInk.fillText(part,cursor,0);cursor+=orbitInk.measureText(part).width;
+  if(i<parts.length-1){const cx=cursor+em/2,r=em*.37,delta=r*.48;
+   orbitInk.strokeStyle=orbitInk.fillStyle;orbitInk.lineWidth=em*.08;
+   orbitInk.beginPath();orbitInk.arc(cx,cy,r,0,Math.PI*2);orbitInk.moveTo(cx-delta,cy+delta);orbitInk.lineTo(cx+delta,cy-delta);orbitInk.stroke();
+   for(const direction of [-1,1]){orbitInk.beginPath();orbitInk.arc(cx+direction*delta,cy-direction*delta,r*.22,0,Math.PI*2);orbitInk.fill();}
+   cursor+=em;}}
+ orbitInk.restore();}
 // Font/width/text determine wrapping, independently of pan, colours or label placement.
 const globeTextLayouts=new Map();
 function globeTextLayout(label){const key=viewWidth+':'+label,previous=globeTextLayouts.get(key);if(previous)return previous;
  orbitInk.font='600 12px sans-serif';const limit=Math.min(280,viewWidth-24),lines=[];
  for(const paragraph of label.split('\n')){let line='';for(const word of paragraph.split(/\s+/)){
-  const next=line?line+' '+word:word;if(orbitInk.measureText(next).width>limit-12&&line){lines.push(line);line=word}else line=next;
+  const next=line?line+' '+word:word;if(globeCaptionWidth(next)>limit-12&&line){lines.push(line);line=word}else line=next;
  }lines.push(line);}
- const layout={lines,w:Math.min(Math.max(...lines.map(v=>orbitInk.measureText(v).width))+12,viewWidth-16),h:lines.length*16+8};
+ const layout={lines,w:Math.min(Math.max(...lines.map(globeCaptionWidth))+12,viewWidth-16),h:lines.length*16+8};
  globeTextLayouts.set(key,layout);if(globeTextLayouts.size>256)globeTextLayouts.delete(globeTextLayouts.keys().next().value);return layout;}
 function globeText(label,point,color,selected,key,radius){if(!label)return null;
  const {lines,w,h}=globeTextLayout(label);
@@ -140,7 +157,7 @@ function drawGlobeText(label){const {box,color,selected,lines}=label,{x,y,w,h}=b
  orbitInk.lineTo(x,y+radius);orbitInk.quadraticCurveTo(x,y,x+radius,y);orbitInk.closePath();
  orbitInk.fill();orbitInk.strokeStyle=color;orbitInk.lineWidth=selected?1.5:1;orbitInk.stroke();
  orbitInk.font='600 12px sans-serif';orbitInk.fillStyle='#fff';orbitInk.textAlign='center';
- lines.forEach((line,i)=>{orbitInk.font=(i===0?'600':'400')+' 12px sans-serif';orbitInk.fillText(line,x+w/2,y+17+i*16,w-8);});
+ lines.forEach((line,i)=>{orbitInk.font=(i===0?'600':'400')+' 12px sans-serif';globeCaptionLine(line,x+w/2,y+17+i*16,w-8);});
 }
 // Clip visible front-face arcs to the actual scene, including segments whose samples are off screen.
 // Guide names are shaped as whole strings before bending the raster along their parallel (also for RTL).
@@ -417,14 +434,14 @@ function drawGlobeOverlays(){const d=pixelRatio;if(orbitCanvas.width!==Math.roun
   for(const dot of [...track.dots].sort((a,b)=>Number(a.current)-Number(b.current))){const p=globePoint(dot.v);if(p.hidden||p.behindEye)continue;
    const tint=dot.selected?globeScene.selection:dot.below?(track.belowColor||track.color):track.color;
    orbitInk.globalAlpha=1;orbitInk.setLineDash([]);orbitInk.strokeStyle=tint;orbitInk.lineWidth=dot.selected?1.8:1;
-   if(dot.current&&!dot.antipode){
+   if(dot.current){
     const image=globeImage(track.icon),radius=16;
     orbitInk.save();orbitInk.beginPath();orbitInk.arc(p.x,p.y,radius,0,Math.PI*2);orbitInk.clip();
-    orbitInk.fillStyle='#000b';orbitInk.fillRect(p.x-radius,p.y-radius,radius*2,radius*2);
+    if(!dot.antipode){orbitInk.fillStyle='#000b';orbitInk.fillRect(p.x-radius,p.y-radius,radius*2,radius*2);}
     if(image){orbitInk.globalAlpha=dot.below ? .7 : 1;orbitInk.filter=dot.below?'grayscale(1)':'none';orbitInk.drawImage(image,p.x-radius,p.y-radius,radius*2,radius*2);}
     orbitInk.restore();orbitInk.strokeStyle=tint;orbitInk.lineWidth=dot.selected?1.8:.8;
     orbitInk.beginPath();orbitInk.arc(p.x,p.y,radius,0,Math.PI*2);orbitInk.stroke();
-   }else if(dot.event&&dot.event!=='HOUR'&&!dot.antipode){globeEventMarker(dot,p,tint)}
+   }else if(dot.event&&dot.event!=='HOUR'){globeEventMarker(dot,p,tint)}
    else {orbitInk.fillStyle=dot.antipode?'transparent':tint;
     orbitInk.beginPath();orbitInk.arc(p.x,p.y,dot.selected?5:2.8,0,Math.PI*2);if(!dot.antipode)orbitInk.fill();orbitInk.stroke();}
    if(dot.selected&&!dot.current){orbitInk.beginPath();orbitInk.arc(p.x,p.y,9,0,Math.PI*2);orbitInk.stroke();}
@@ -499,9 +516,11 @@ function globeImage(source){if(!source)return null;let image=globeImages.get(sou
  image=new Image();globeImages.set(source,image);if(globeImages.size>128)globeImages.delete(globeImages.keys().next().value);image.onload=requestGlobePaint;image.src=source;
 }return image.complete&&image.naturalWidth?image:null;}
 function globeEventMarker(dot,p,tint){
- const radius=7;orbitInk.fillStyle='#0007';orbitInk.beginPath();orbitInk.arc(p.x,p.y,radius+1,0,Math.PI*2);orbitInk.fill();
- orbitInk.fillStyle=tint;orbitInk.beginPath();orbitInk.arc(p.x,p.y,radius,0,Math.PI*2);orbitInk.fill();
- orbitInk.fillStyle='#111';orbitInk.strokeStyle='#111';orbitInk.lineWidth=1.2;const d=3;
+ const radius=7,hollow=!!dot.antipode;
+ if(!hollow){orbitInk.fillStyle='#0007';orbitInk.beginPath();orbitInk.arc(p.x,p.y,radius+1,0,Math.PI*2);orbitInk.fill();}
+ orbitInk.fillStyle=tint;orbitInk.strokeStyle=tint;orbitInk.beginPath();orbitInk.arc(p.x,p.y,radius,0,Math.PI*2);
+ if(hollow)orbitInk.stroke();else orbitInk.fill();
+ orbitInk.fillStyle=hollow?tint:'#111';orbitInk.strokeStyle=hollow?tint:'#111';orbitInk.lineWidth=1.2;const d=3;
  if(dot.event==='CULMINATION'||dot.event==='MINIMUM'){
   orbitInk.beginPath();orbitInk.moveTo(p.x-d,p.y);orbitInk.lineTo(p.x+d,p.y);
   if(dot.event==='CULMINATION'){orbitInk.moveTo(p.x,p.y-d);orbitInk.lineTo(p.x,p.y+d);}orbitInk.stroke();

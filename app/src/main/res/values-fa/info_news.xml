@@ -1,9 +1,9 @@
 <resources>
     <string name="info_news_title">تازه‌ترین تغییرات · %1$s</string>
-    <string name="info_news_star_sky" formatted="false">با لمس نام یک جرم، رصدخانه بدون توقف زمان باز می‌شود.</string>
-    <string name="info_news_texture_downloads" formatted="false">دکمه‌ها و پیوندهای وضعیت در نمای اصلی، بدون فعال‌کردن توقف زمان، کار خود را انجام می‌دهند.</string>
-    <string name="info_news_weather" formatted="false">نشان اصلی ساده‌تر شده است؛ اطلاعات نسخه در بخش اطلاعات و قدردانی‌ها در دسترس است.</string>
-    <string name="info_news_viewer_zoom" formatted="false">شبکه مرجع به‌طور پیش‌فرض با کدری 50 درصد در همه نماها فعال است.</string>
-    <string name="info_news_settings" formatted="false">تصاویر ثبت‌شده تنظیمات شبکه را به ارث می‌برند؛ تغییرات پیش‌نمایش مستقل از نمای اصلی باقی می‌ماند.</string>
-    <string name="info_news_catalog" formatted="false">انتخاب‌های ذخیره‌شده شبکه، مکان‌ها، صحنه‌ها و اجرام حفظ می‌شوند.</string>
+    <string name="info_news_star_sky" formatted="false">هنگام بازگشت از مدیریت مکان، رصدخانه و صفحه‌های دیگر، زمان در حالت مکث می‌ماند.</string>
+    <string name="info_news_texture_downloads" formatted="false">نقاط مقابل نمادهای نقطهٔ اصلی را به ارث می‌برند: طلوع، غروب، بیشینه، کمینه و نقاط عادی.</string>
+    <string name="info_news_weather" formatted="false">نقاط مقابل موقعیت فعلی از تصویر بندانگشتی جرم، از جمله فاز ماه، استفاده می‌کنند.</string>
+    <string name="info_news_viewer_zoom" formatted="false">حباب‌های فشرده‌تر نام جرم و نقطه را با نماد نقطهٔ مقابل در نماها، عکس‌ها و پانوراماها نشان می‌دهند.</string>
+    <string name="info_news_settings" formatted="false">فایل‌های CSV و جدول‌های خوانا هر نقطهٔ مقابل را با نام جرم و نقطهٔ اصلی مشخص می‌کنند.</string>
+    <string name="info_news_catalog" formatted="false">پس از ویرایش مکان، لحظهٔ مکث و سرعت تنظیم‌شدهٔ زمان رو به جلو یا عقب حفظ می‌شود.</string>
 </resources>

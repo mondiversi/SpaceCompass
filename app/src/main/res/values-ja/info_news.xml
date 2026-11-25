@@ -1,9 +1,9 @@
 <resources>
     <string name="info_news_title">最近の変更 · %1$s</string>
-    <string name="info_news_star_sky" formatted="false">天体名をタップすると、時間を一時停止せずに観測所を開きます。</string>
-    <string name="info_news_texture_downloads" formatted="false">メイン画面のボタンと状態リンクは、一時停止を起動せずにそれぞれの操作を実行します。</string>
-    <string name="info_news_weather" formatted="false">メインのロゴをすっきりさせました。バージョン情報は情報とクレジットで確認できます。</string>
-    <string name="info_news_viewer_zoom" formatted="false">基準グリッドは、すべての表示で不透明度50パーセントで初期状態から有効です。</string>
-    <string name="info_news_settings" formatted="false">キャプチャはグリッド設定を引き継ぎます。プレビューの変更はメイン画面とは別に保持されます。</string>
-    <string name="info_news_catalog" formatted="false">保存済みのグリッド設定、場所、シーン、天体の選択は維持されます。</string>
+    <string name="info_news_star_sky" formatted="false">位置管理、観測所、その他の画面から戻っても時間の一時停止が維持されます。</string>
+    <string name="info_news_texture_downloads" formatted="false">対蹠点に元の点の記号を表示します。出、入り、最高、最低、通常の点に対応します。</string>
+    <string name="info_news_weather" formatted="false">現在位置の対蹠点には天体のサムネイルを使用し、月の位相も反映します。</string>
+    <string name="info_news_viewer_zoom" formatted="false">画面、撮影画像、パノラマの吹き出しを簡潔にし、天体名と点の名前に対蹠点の記号を添えます。</string>
+    <string name="info_news_settings" formatted="false">CSVと読みやすい表では、各対蹠点を天体名と元の点の名前で識別できます。</string>
+    <string name="info_news_catalog" formatted="false">位置の編集から戻っても、一時停止した時刻と設定済みの早送り・巻き戻し速度が維持されます。</string>
 </resources>

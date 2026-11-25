@@ -9,10 +9,10 @@ internal fun spaceCompassPanoramaSelectionLabels(snapshot: SpaceCompassPanoramaS
     projection: (SpaceCompassSunPosition) -> SpaceCompassSunScenePoint?, occupied: MutableList<RectF>
 ): List<SpaceCompassPanoramaTimeLabel> = spaceCompassUniqueComparisonCaptionPins(selected).mapNotNull { pin ->
     val point = projection(pin.point.position) ?: return@mapNotNull null
-    val radius = if (pin.isAntipode) 12f else if (pin.isCurrent) currentRadius else if (pin.point.event == SpaceCompassSunPathEvent.HOUR) 10f else 20f
+    val radius = if (pin.isCurrent) currentRadius else if (pin.point.event == SpaceCompassSunPathEvent.HOUR) 10f else 20f
     occupied += RectF(point.x.toFloat() - radius * scale, point.y.toFloat() - radius * scale,
         point.x.toFloat() + radius * scale, point.y.toFloat() + radius * scale)
-    val caption = formatSpaceCompassPanoramaSelection(snapshot, pin)
+    val caption = formatSpaceCompassPanoramaSelection(snapshot, pin, visualAntipode = true)
     SpaceCompassPanoramaTimeLabel(caption, point, snapshot.selectionTint, principal = true,
         pointRadius = radius, current = pin.isCurrent && !pin.isAntipode, selected = true)
 }
@@ -20,11 +20,12 @@ internal fun spaceCompassPanoramaSelectionLabels(snapshot: SpaceCompassPanoramaS
 /** Rings remain visible with labels hidden; camera projection naturally excludes points outside the JPEG. */
 internal fun drawSpaceCompassPanoramaSelections(canvas: Canvas, snapshot: SpaceCompassPanoramaSnapshot,
     selected: List<SpaceCompassPanoramaSelectedPoint>, scale: Float, currentRadius: Float,
-    projection: (SpaceCompassSunPosition) -> SpaceCompassSunScenePoint?, wrapWidth: Float? = null) {
+    projection: (SpaceCompassSunPosition) -> SpaceCompassSunScenePoint?, wrapWidth: Float? = null,
+    context: android.content.Context? = null, objectOpacity: Float = 1f) {
     val paint = Paint(Paint.ANTI_ALIAS_FLAG).apply { color = snapshot.selectionTint; strokeWidth = 2.5f * scale }
     selected.forEach { pin ->
         val point = projection(pin.point.position) ?: return@forEach
-        val radius = if (pin.isAntipode) 12f else if (pin.isCurrent) currentRadius else if (pin.point.event == SpaceCompassSunPathEvent.HOUR) 10f else 20f
+        val radius = if (pin.isCurrent) currentRadius else if (pin.point.event == SpaceCompassSunPathEvent.HOUR) 10f else 20f
         val centers = buildList {
             add(point)
             if (wrapWidth != null) {
@@ -33,9 +34,19 @@ internal fun drawSpaceCompassPanoramaSelections(canvas: Canvas, snapshot: SpaceC
             }
         }
         centers.forEach {
-            if (pin.isAntipode) drawSpaceCompassAntipode(canvas, it.x.toFloat(), it.y.toFloat(),
-                8f * scale, snapshot.selectionTint, 2f * scale)
-            else if (!pin.isCurrent) drawSpaceCompassPanoramaEventMarker(canvas, pin.point.event, it, scale, snapshot.selectionTint)
+            if (pin.isAntipode && pin.isCurrent) {
+                val bitmap = renderSpaceCompassPanoramaMarker(context, pin.body, pin.comparison?.timeMs ?: snapshot.timeMs)
+                try {
+                    canvas.save()
+                    try {
+                        val x = it.x.toFloat(); val y = it.y.toFloat(); val r = currentRadius * scale
+                        canvas.clipPath(android.graphics.Path().apply { addCircle(x, y, r, android.graphics.Path.Direction.CW) })
+                        paint.alpha = (objectOpacity.coerceIn(0f, 1f) * 255).toInt()
+                        canvas.drawBitmap(bitmap, null, RectF(x-r, y-r, x+r, y+r), paint)
+                    } finally { canvas.restore(); paint.alpha = 255 }
+                } finally { bitmap.recycle() }
+            } else if (!pin.isCurrent) drawSpaceCompassPanoramaEventMarker(canvas, pin.point.event, it, scale,
+                snapshot.selectionTint, outlined = pin.isAntipode)
             paint.style = Paint.Style.STROKE
             canvas.drawCircle(it.x.toFloat(), it.y.toFloat(), radius * scale, paint)
         }

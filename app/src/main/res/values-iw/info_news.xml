@@ -1,9 +1,9 @@
 <resources>
     <string name="info_news_title">החידושים האחרונים · %1$s</string>
-    <string name="info_news_star_sky" formatted="false">נגיעה בשם של עצם פותחת את המצפה בלי להשהות את הזמן.</string>
-    <string name="info_news_texture_downloads" formatted="false">הלחצנים וקישורי המצב בתצוגה הראשית מבצעים את פעולתם בלי להפעיל השהיה.</string>
-    <string name="info_news_weather" formatted="false">סמל ראשי נקי יותר; פרטי הגרסה נשארים זמינים במידע וקרדיטים.</string>
-    <string name="info_news_viewer_zoom" formatted="false">רשת הייחוס מופעלת כברירת מחדל באטימות של 50 אחוז בכל התצוגות.</string>
-    <string name="info_news_settings" formatted="false">הצילומים מקבלים את הגדרות הרשת; השינויים בתצוגה המקדימה נפרדים מהתצוגה הראשית.</string>
-    <string name="info_news_catalog" formatted="false">הגדרות הרשת, המיקומים, הסצנות ובחירות העצמים השמורים נשמרים.</string>
+    <string name="info_news_star_sky" formatted="false">הזמן נשאר מושהה בחזרה מניהול המיקום, מהמצפה וממסכים אחרים.</string>
+    <string name="info_news_texture_downloads" formatted="false">הנקודות הנגדיות מקבלות את סמלי נקודת המקור: זריחה, שקיעה, מקסימום, מינימום ונקודות רגילות.</string>
+    <string name="info_news_weather" formatted="false">הנקודות הנגדיות למיקום הנוכחי משתמשות בתמונה הממוזערת של העצם, כולל מופע הירח.</string>
+    <string name="info_news_viewer_zoom" formatted="false">בועות קומפקטיות יותר מציגות את שם העצם והנקודה עם סמל נקודה נגדית בתצוגות, בצילומים ובפנורמות.</string>
+    <string name="info_news_settings" formatted="false">קובצי CSV וטבלאות קריאות מזהים כל נקודה נגדית באמצעות שם העצם ונקודת המקור.</string>
+    <string name="info_news_catalog" formatted="false">בחזרה מעריכת המיקום נשמרים רגע ההשהיה ומהירות הזמן שנקבעה, קדימה או אחורה.</string>
 </resources>

@@ -1,5 +1,14 @@
 # Changelog
 
+## 1.10.9 — 2026-11-25
+
+- Preserve a manually paused moment when returning from Location management, the Observatory or other pages. Keep edited spatial settings compatible with the hold; newly edited dates and times stay paused at their new preview instant. Preserve forward/reverse playback rates and the live-time resume rules.
+- Give projected antipodes their source point symbols for rise, set, culmination, minimum, approaches and ordinary points. Current-position antipodes reuse the object thumbnail and the source Moon phase, without an extra opaque backing plate.
+- Make visual captions more compact: show the object and point name followed by the existing antipode vector icon. Share the icon across the main view, Camera/Sky captures, Globe frames and panoramas; preserve localized spoken alternatives and RTL ordering.
+- Keep structured CSV and readable-table exports descriptive, with object and source-point names followed by the localized antipode suffix. Freeze the source identity so current, hourly, event and fixed-date references remain distinguishable without changing their coordinates.
+- Add pause/navigation and antipode-caption regressions, including shared vector geometry, transparent markers, measured caption spacing and RTL placement. Refresh News in all twenty languages and update the README, optional information archive and signed update index.
+- Preserve the 9,999-object catalogue, astronomical calculations, saved Locations, Scenes, favourites and comparison selections. The external graphics collection is unchanged.
+
 ## 1.10.8 — 2026-11-24
 
 - Keep object-name taps routed to the Observatory instead of allowing the parent blank-area pause gesture to intercept them. Protect the compact linked status notices as well; retain the existing safety gap around controls and intentional pause/resume on free surfaces.

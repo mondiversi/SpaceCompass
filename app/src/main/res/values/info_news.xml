@@ -1,9 +1,9 @@
 <resources>
     <string name="info_news_title">Latest news · %1$s</string>
-    <string name="info_news_star_sky" formatted="false">Tapping an object name opens the Observatory without pausing time.</string>
-    <string name="info_news_texture_downloads" formatted="false">Main-view buttons and status links keep their own actions instead of triggering pause.</string>
-    <string name="info_news_weather" formatted="false">Cleaner main logo, with version information kept in Info &amp; credits.</string>
-    <string name="info_news_viewer_zoom" formatted="false">Reference grid enabled by default at 50 percent opacity across all views.</string>
-    <string name="info_news_settings" formatted="false">Captures inherit grid settings; preview changes stay separate from the main view.</string>
-    <string name="info_news_catalog" formatted="false">Saved grid choices, Locations, Scenes and celestial selections are preserved.</string>
+    <string name="info_news_star_sky" formatted="false">Paused time stays paused when returning from Location management, the Observatory and other pages.</string>
+    <string name="info_news_texture_downloads" formatted="false">Antipodes inherit their source point symbols: rise, set, maximum, minimum and ordinary points.</string>
+    <string name="info_news_weather" formatted="false">Antipodes of the current position use the object thumbnail, including the Moon’s phase.</string>
+    <string name="info_news_viewer_zoom" formatted="false">More compact bubbles show the object and point name with an antipode symbol in views, captures and panoramas.</string>
+    <string name="info_news_settings" formatted="false">CSV and readable tables identify each antipode with the object and original point names.</string>
+    <string name="info_news_catalog" formatted="false">Returning from Location editing preserves the paused moment and the configured forward or reverse playback speed.</string>
 </resources>

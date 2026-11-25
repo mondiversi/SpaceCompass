@@ -1,9 +1,9 @@
 <resources>
     <string name="info_news_title">Últimas novidades · %1$s</string>
-    <string name="info_news_star_sky" formatted="false">Tocar no nome de um objeto abre o Observatório sem pausar o tempo.</string>
-    <string name="info_news_texture_downloads" formatted="false">Os botões e ligações de estado da vista principal executam a sua própria ação sem ativar a pausa.</string>
-    <string name="info_news_weather" formatted="false">Logótipo principal mais limpo, com a versão disponível em Informações e créditos.</string>
-    <string name="info_news_viewer_zoom" formatted="false">Grelha de referência ativada por predefinição com 50 por cento de opacidade em todas as vistas.</string>
-    <string name="info_news_settings" formatted="false">As capturas herdam as definições da grelha; as alterações na pré-visualização são independentes da vista principal.</string>
-    <string name="info_news_catalog" formatted="false">As opções da grelha, localizações, cenas e seleções de objetos guardadas são mantidas.</string>
+    <string name="info_news_star_sky" formatted="false">O tempo permanece em pausa ao regressar da gestão de localizações, do Observatório e de outras páginas.</string>
+    <string name="info_news_texture_downloads" formatted="false">Os antípodas herdam os símbolos do ponto original: nascer, pôr, máximo, mínimo e pontos normais.</string>
+    <string name="info_news_weather" formatted="false">Os antípodas da posição atual usam a miniatura do objeto, incluindo a fase da Lua.</string>
+    <string name="info_news_viewer_zoom" formatted="false">Balões mais compactos mostram os nomes do objeto e do ponto com um símbolo de antípoda nas vistas, capturas e panoramas.</string>
+    <string name="info_news_settings" formatted="false">Os ficheiros CSV e as tabelas legíveis identificam cada antípoda com os nomes do objeto e do ponto original.</string>
+    <string name="info_news_catalog" formatted="false">Ao regressar da edição da localização, mantêm-se o instante em pausa e a velocidade definida, para a frente ou para trás.</string>
 </resources>

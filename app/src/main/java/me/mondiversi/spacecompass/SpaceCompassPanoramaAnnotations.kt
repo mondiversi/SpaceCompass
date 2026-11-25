@@ -20,7 +20,7 @@ internal fun drawSpaceCompassPanoramaTimeLabels(canvas: Canvas, labels: List<Spa
     }
     val placed = labels.sortedBy { if (it.selected) 0 else if (it.current) 1 else if (it.principal) 2 else 3 }.mapNotNull { label ->
         val lines = label.text.lines()
-        val labelWidth = (lines.maxOfOrNull(text::measureText) ?: 0f) + 18 * scale
+        val labelWidth = (lines.maxOfOrNull { measureSpaceCompassCaptureLabelLine(it,text) } ?: 0f) + 18 * scale
         val heightForLabel = maxOf(34 * scale, lineHeight * lines.size + 10 * scale)
         val nearby = spaceCompassPanoramaLabelBounds(label.point, labelWidth.toDouble(), heightForLabel.toDouble(),
             width.toDouble(), height.toDouble(), scale.toDouble(), obstacles, label.pointRadius.toDouble())
@@ -76,24 +76,32 @@ internal fun spaceCompassPanoramaCurrentLabel(snapshot: SpaceCompassPanoramaSnap
 
 /** The live orbit's event vocabulary: rise/set semicircles, culmination plus and minimum bar. */
 internal fun drawSpaceCompassPanoramaEventMarker(canvas: Canvas, event: SpaceCompassSunPathEvent,
-    point: SpaceCompassSunScenePoint, scale: Float, tint: Int) {
+    point: SpaceCompassSunScenePoint, scale: Float, tint: Int, outlined: Boolean = false) {
     val x = point.x.toFloat(); val y = point.y.toFloat()
-    val paint = Paint(Paint.ANTI_ALIAS_FLAG).apply { color = tint }
+    val paint = Paint(Paint.ANTI_ALIAS_FLAG).apply {
+        color = tint; strokeWidth = 2.4f * scale
+        if (outlined) style = Paint.Style.STROKE
+    }
     if (event == SpaceCompassSunPathEvent.HOUR) {
         canvas.drawCircle(x, y, 6 * scale, paint)
         return
     }
     if (event == SpaceCompassSunPathEvent.APPROACH) {
-        paint.color = 0xcc07101b.toInt()
-        canvas.drawCircle(x, y, 18 * scale, paint)
+        if (!outlined) {
+            paint.color = 0xcc07101b.toInt()
+            canvas.drawCircle(x, y, 18 * scale, paint)
+        }
         drawSpaceCompassApproachGlyph(canvas, x, y, 12 * scale, tint, 2.6f * scale)
         return
     }
-    paint.color = 0x73000000
-    canvas.drawCircle(x, y, 15.5f * scale, paint)
+    if (!outlined) {
+        paint.color = 0x73000000
+        canvas.drawCircle(x, y, 15.5f * scale, paint)
+    }
     paint.color = tint
     canvas.drawCircle(x, y, 14 * scale, paint)
-    paint.color = 0xdd000000.toInt()
+    paint.style = Paint.Style.FILL
+    paint.color = if (outlined) tint else 0xdd000000.toInt()
     val d = 6 * scale
     if (event == SpaceCompassSunPathEvent.MINIMUM || event == SpaceCompassSunPathEvent.CULMINATION) {
         paint.strokeWidth = 2.4f * scale; paint.strokeCap = Paint.Cap.ROUND

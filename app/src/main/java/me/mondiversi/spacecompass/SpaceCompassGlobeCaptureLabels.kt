@@ -41,10 +41,12 @@ internal data class SpaceCompassGlobeLabelDetails(val full: String,val compact: 
 
 /** Detail reduction never loses the clock/T pair; angles and object headings return when space permits. */
 internal fun formatSpaceCompassGlobeMainLabelDetails(bodyName: String,eventName: String,moment: String,
-    position: SpaceCompassSunPosition,formatting: SpaceCompassPanoramaFormatting): SpaceCompassGlobeLabelDetails {
+    position: SpaceCompassSunPosition,formatting: SpaceCompassPanoramaFormatting,
+    keepBodyName: Boolean = false): SpaceCompassGlobeLabelDetails {
     val title=listOf(bodyName,eventName).filter(String::isNotBlank).joinToString(" · ")
-    val minimal=listOf(eventName,moment).filter(String::isNotBlank).joinToString(" · ")
+    val compactName=if(keepBodyName) title else eventName.ifBlank { bodyName }
+    val minimal=listOf(if(keepBodyName) title else eventName,moment).filter(String::isNotBlank).joinToString(" · ")
     return SpaceCompassGlobeLabelDetails(
         formatSpaceCompassPanoramaPointLabel(moment,position,formatting,title),
-        (eventName.ifBlank { bodyName })+"\n"+moment,minimal)
+        compactName+"\n"+moment,minimal)
 }

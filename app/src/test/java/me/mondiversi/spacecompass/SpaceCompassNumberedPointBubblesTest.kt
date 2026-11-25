@@ -47,7 +47,7 @@ class SpaceCompassNumberedPointBubblesTest {
         val pin=SpaceCompassPanoramaSelectedPoint(path.body,point,path,false)
         assertTrue(formatSpaceCompassPanoramaSelection(snapshot,pin).startsWith("Punto 0\n"))
         assertTrue(formatSpaceCompassPanoramaSelection(snapshot,pin.copy(point=point.antipodalDirection(),isAntipode=true))
-            .startsWith("Antipodo · Punto 0\n"))
+            .startsWith("Sole · Punto 0 (Antipodo)\n"))
         assertTrue(formatSpaceCompassPanoramaSelection(snapshot,pin.copy(isCurrent=true)).startsWith("Attuale\n"))
         val key=path.markers.first { it.event==SpaceCompassSunPathEvent.CULMINATION }
         assertTrue(formatSpaceCompassPanoramaSelection(snapshot,pin.copy(point=key)).startsWith("Culmine\n"))

@@ -58,8 +58,8 @@ internal fun SpaceCompassCelestialBadgeContent(timeMs: Long, nowMs: Long, zone: 
                 color = primaryText, style = titleStyle, fontWeight = FontWeight.Bold)
             if (pointName.isNotBlank()) Row {
                 Text(" · ", color = primaryText, style = titleStyle)
-                Text(pointName, Modifier.testTag("celestial-badge-event"), color = primaryText,
-                    style = titleStyle)
+                SpaceCompassAntipodeCaptionText(pointName, Modifier.testTag("celestial-badge-event"),
+                    color = primaryText, style = titleStyle)
             }
         }
         comparisonDescription?.takeIf { it.isNotBlank() }?.let { description ->

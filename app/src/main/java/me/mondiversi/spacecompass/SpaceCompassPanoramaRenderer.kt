@@ -299,7 +299,7 @@ internal fun renderSpaceCompassPanorama(snapshot: SpaceCompassPanoramaSnapshot, 
         drawSpaceCompassCurrentApproaches(canvas,snapshot, observations.mapNotNull { (item,obs) ->
             obs?.position?.takeIf { item.comparison == null }?.let { item.body to it } }.toMap(),scale,::projection)
         drawSpaceCompassPanoramaSelections(canvas, snapshot, selections, scale, 38f, ::projection,
-            wrapWidth = sceneWidth.toFloat())
+            wrapWidth = sceneWidth.toFloat(), context = context)
         drawAngularScales()
         canvas.restore()
         legend.draw(canvas, (sceneTop.toInt() + sceneHeight).toFloat(), ground.nearArgb)

@@ -10,3 +10,13 @@ internal fun spaceCompassAntipode(position: SpaceCompassSunPosition): SpaceCompa
 
 /** Preserve the source instant and event identity separately from the mirrored direction. */
 internal fun SpaceCompassSunPathPoint.antipodalDirection() = copy(position = spaceCompassAntipode(position))
+
+/** Keep the original point name first in every localized antipode caption. */
+internal fun spaceCompassAntipodePointName(pointName: String, antipodeName: String): String =
+    if (pointName.isBlank()) antipodeName else "$pointName ($antipodeName)"
+
+/** Object replacement character: visual captions draw the shared vector, never a font-dependent emoji. */
+internal const val SPACE_COMPASS_ANTIPODE_CAPTION_ICON = "\uFFFC"
+
+internal fun spaceCompassAntipodeCaptionName(pointName: String): String =
+    listOf(pointName, SPACE_COMPASS_ANTIPODE_CAPTION_ICON).filter(String::isNotBlank).joinToString(" ")

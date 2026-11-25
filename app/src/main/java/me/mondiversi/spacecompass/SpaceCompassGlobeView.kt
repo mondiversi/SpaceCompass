@@ -206,11 +206,12 @@ internal fun SpaceCompassGlobeView(snapshot: SpaceCompassPanoramaSnapshot, pose:
                                     put("glyph",JSONArray().apply { spaceCompassHorizonEventGlyph(dot.point.event,0f,0f,1f).forEach { (x,y) -> put(JSONArray(listOf(x,y))) } })
                                 if(!spaceCompassGlobeMainShowsLabel(labelMode,active,dot.current,dot.antipode,dot.point.events,dot.selected)) put("label","")
                                 else {
-                                    val pointName=if(dot.antipode) formatSpaceCompassPanoramaSelection(snapshot,SpaceCompassPanoramaSelectedPoint(
-                                        track.item.body,dot.point,track.item.path,dot.current,true,track.item.comparison),pointNames).lineSequence().first()
+                                    val pointName=if(dot.antipode) spaceCompassPanoramaSelectionName(snapshot,SpaceCompassPanoramaSelectedPoint(
+                                        track.item.body,dot.point,track.item.path,dot.current,true,track.item.comparison),pointNames,visualAntipode=true)
                                         else if(dot.current) track.item.comparison?.let(snapshot::comparisonPointName) ?: snapshot.currentPointName
                                         else event
-                                    val detail=formatSpaceCompassGlobeMainLabelDetails(track.item.name,pointName,time,dot.point.position,snapshot.formatting)
+                                    val detail=formatSpaceCompassGlobeMainLabelDetails(track.item.name,pointName,time,dot.point.position,snapshot.formatting,
+                                        keepBodyName=dot.antipode)
                                     put("label",detail.minimal);put("labelCompact",detail.compact);put("labelFull",detail.full)
                                 }
                             })

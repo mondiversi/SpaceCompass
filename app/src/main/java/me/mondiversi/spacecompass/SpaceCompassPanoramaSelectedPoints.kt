@@ -30,30 +30,37 @@ internal fun spaceCompassPanoramaPointSelected(selected: List<SpaceCompassPanora
     body: SpaceCompassCelestialBody, point: SpaceCompassSunPathPoint, comparisonId: String? = null): Boolean =
     selected.any { !it.isAntipode && !it.isCurrent && it.body == body && it.comparison?.id == comparisonId && it.point == point }
 
-/** Selected dots and their antipodes share the ordinary/key point vocabulary of their original path. */
-internal fun formatSpaceCompassPanoramaSelection(snapshot: SpaceCompassPanoramaSnapshot,
+/** Share source point names between adaptive globe captions and captured/exported labels. */
+internal fun spaceCompassPanoramaSelectionName(snapshot: SpaceCompassPanoramaSnapshot,
     selected: SpaceCompassPanoramaSelectedPoint,
-    pointNames: SpaceCompassSunPathPointNames? = selected.path?.let { spaceCompassPanoramaPathPointNames(snapshot,it) }): String {
-    val referenceTime = selected.comparison?.timeMs ?: snapshot.timeMs
+    pointNames: SpaceCompassSunPathPointNames? = selected.path?.let { spaceCompassPanoramaPathPointNames(snapshot,it) },
+    visualAntipode: Boolean = false): String {
     val anchor = selected.isCurrent || selected.comparison?.let { c ->
         c.source == SpaceCompassComparisonSource.HEIGHT && SpaceCompassSunPathEvent.CULMINATION in selected.point.events &&
             kotlin.math.abs(selected.point.timeMs - c.timeMs) <= 120_000L
     } == true
-    val currentName = selected.comparison?.let { snapshot.comparisonPointName(it) } ?: snapshot.currentPointName
+    val name = if (anchor) selected.comparison?.let { snapshot.comparisonPointName(it) } ?: snapshot.currentPointName
+        else spaceCompassPanoramaPathPointName(selected.point,snapshot.formatting,snapshot.pointEventNames,snapshot.bodyNames,pointNames)
+    return if (!selected.isAntipode) name else if (visualAntipode) spaceCompassAntipodeCaptionName(name)
+        else spaceCompassAntipodePointName(name,snapshot.orbitExportVocabulary.antipode)
+}
+
+/** Antipodes identify both the original object and point, with a localized parenthetical suffix. */
+internal fun formatSpaceCompassPanoramaSelection(snapshot: SpaceCompassPanoramaSnapshot,
+    selected: SpaceCompassPanoramaSelectedPoint,
+    pointNames: SpaceCompassSunPathPointNames? = selected.path?.let { spaceCompassPanoramaPathPointNames(snapshot,it) },
+    visualAntipode: Boolean = false): String {
+    val referenceTime = selected.comparison?.timeMs ?: snapshot.timeMs
     val displayZone = selected.comparison?.let { TimeZone.getTimeZone(snapshot.comparisonDisplayZoneId(it)) } ?: snapshot.displayTimeZone
     val moment = if (selected.comparison != null) null else if (selected.isCurrent) snapshot.currentTime else snapshot.markerTimes[selected.point.timeMs]
     val time = moment ?: formatSpaceCompassPanoramaMarkerTime(selected.point.timeMs,referenceTime,
         displayZone, snapshot.formatting)
-    if (selected.isAntipode) {
-        val event = if (anchor) currentName else
-            spaceCompassPanoramaPathPointName(selected.point,snapshot.formatting,snapshot.pointEventNames,snapshot.bodyNames,pointNames)
-        val name = listOf(snapshot.orbitExportVocabulary.antipode, event).filter { it.isNotBlank() }.joinToString(" · ")
-        return formatSpaceCompassPanoramaPointLabel(time, selected.point.position, snapshot.formatting, name,
-            formatSpaceCompassPanoramaPointCountdown(selected.point.timeMs, referenceTime, snapshot.formatting))
-    }
-    return if (anchor) formatSpaceCompassPanoramaPointLabel(time, selected.point.position,
-        snapshot.formatting, currentName,
-        formatSpaceCompassPanoramaPointCountdown(selected.point.timeMs, referenceTime, snapshot.formatting))
-    else formatSpaceCompassPanoramaPathPointLabel(time, selected.point, snapshot.formatting,
-        snapshot.pointEventNames, referenceTime, snapshot.bodyNames, pointNames)
+    val name = spaceCompassPanoramaSelectionName(snapshot,selected,pointNames,visualAntipode)
+    val title = if (selected.isAntipode) {
+        val objectName = snapshot.objects.firstOrNull { it.body == selected.body && it.comparison?.id == selected.comparison?.id }?.name
+            ?: snapshot.bodyNames[selected.body] ?: selected.body.name
+        listOf(objectName,name).filter(String::isNotBlank).joinToString(" · ")
+    } else name
+    return formatSpaceCompassPanoramaPointLabel(time,selected.point.position,snapshot.formatting,title,
+        formatSpaceCompassPanoramaPointCountdown(selected.point.timeMs,referenceTime,snapshot.formatting))
 }

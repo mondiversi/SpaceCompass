@@ -1,9 +1,9 @@
 <resources>
     <string name="info_news_title">Son yenilikler · %1$s</string>
-    <string name="info_news_star_sky" formatted="false">Bir nesnenin adına dokunmak, zamanı duraklatmadan Gözlemevini açar.</string>
-    <string name="info_news_texture_downloads" formatted="false">Ana görünümdeki düğmeler ve durum bağlantıları, duraklatmayı tetiklemeden kendi işlemlerini gerçekleştirir.</string>
-    <string name="info_news_weather" formatted="false">Ana logo sadeleştirildi; sürüm bilgisi Bilgi ve katkılar bölümünde bulunur.</string>
-    <string name="info_news_viewer_zoom" formatted="false">Referans ızgarası tüm görünümlerde varsayılan olarak yüzde 50 opaklıkla açıktır.</string>
-    <string name="info_news_settings" formatted="false">Çekimler ızgara ayarlarını devralır; önizleme değişiklikleri ana görünümden bağımsızdır.</string>
-    <string name="info_news_catalog" formatted="false">Kayıtlı ızgara tercihleri, konumlar, sahneler ve gök cismi seçimleri korunur.</string>
+    <string name="info_news_star_sky" formatted="false">Konum yönetiminden, Gözlemevinden ve diğer sayfalardan dönüldüğünde zaman duraklatılmış kalır.</string>
+    <string name="info_news_texture_downloads" formatted="false">Antipotlar kaynak noktanın simgelerini kullanır: doğuş, batış, maksimum, minimum ve normal noktalar.</string>
+    <string name="info_news_weather" formatted="false">Güncel konumun antipotları, Ay’ın evresi de dâhil olmak üzere nesnenin küçük resmini kullanır.</string>
+    <string name="info_news_viewer_zoom" formatted="false">Daha küçük bilgi balonları, görünümlerde, çekimlerde ve panoramalarda nesne ve nokta adlarını bir antipot simgesiyle gösterir.</string>
+    <string name="info_news_settings" formatted="false">CSV dosyaları ve okunabilir tablolar her antipotu nesnenin ve kaynak noktanın adıyla belirtir.</string>
+    <string name="info_news_catalog" formatted="false">Konum düzenlemesinden dönüldüğünde duraklatılan an ve ayarlanan ileri veya geri zaman hızı korunur.</string>
 </resources>

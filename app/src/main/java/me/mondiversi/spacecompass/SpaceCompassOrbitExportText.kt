@@ -24,7 +24,9 @@ private fun spaceCompassOrbitExportRowName(row: SpaceCompassOrbitExportRow, snap
             snapshot.objects.mapNotNull { item -> item.comparison?.takeIf { it.id in row.comparisonCells }?.let {
                 snapshot.comparisonPointName(it)
             } }).distinct().joinToString(" / ")
-        SpaceCompassOrbitExportRowKind.ANTIPODE -> vocabulary.antipode
+        SpaceCompassOrbitExportRowKind.ANTIPODE -> row.allCells.mapNotNull { cell -> cell.antipodeSource?.let {
+            formatSpaceCompassPanoramaSelection(snapshot,it).lineSequence().first()
+        } }.distinct().joinToString(" / ").ifBlank { vocabulary.antipode }
         SpaceCompassOrbitExportRowKind.EVENT -> snapshot.pointEventNames[row.event] ?: row.event!!.name
         SpaceCompassOrbitExportRowKind.SELECTED -> "${vocabulary.selected} · ${String.format(snapshot.formatting.locale,vocabulary.point,number)}"
         SpaceCompassOrbitExportRowKind.PASS -> "${vocabulary.pass} · " +
@@ -42,7 +44,9 @@ private fun spaceCompassOrbitExportCellValues(cell: SpaceCompassOrbitExportCell?
     val formatting = snapshot.formatting
     val zone = snapshot.displayTimeZone
     val moment = formatSpaceCompassPanoramaExportTimestamp(point.timeMs,zone,formatting).removePrefix("Space Compass · ")
-    val events = if (row.kind == SpaceCompassOrbitExportRowKind.ANTIPODE) snapshot.orbitExportVocabulary.antipode
+    val events = if (row.kind == SpaceCompassOrbitExportRowKind.ANTIPODE) cell.antipodeSource?.let {
+        formatSpaceCompassPanoramaSelection(snapshot,it).lineSequence().first()
+    } ?: snapshot.orbitExportVocabulary.antipode
         else point.events.filter { it != SpaceCompassSunPathEvent.HOUR }.sortedBy { it.ordinal }
         .mapNotNull { event -> snapshot.pointEventNames[event]?.let {
             if (event == SpaceCompassSunPathEvent.APPROACH)

@@ -1,9 +1,9 @@
 <resources>
     <string name="info_news_title">Laatste nieuws · %1$s</string>
-    <string name="info_news_star_sky" formatted="false">Tik op een objectnaam om het Observatorium te openen zonder de tijd te pauzeren.</string>
-    <string name="info_news_texture_downloads" formatted="false">Knoppen en statuslinks in de hoofdweergave voeren hun eigen actie uit zonder de tijd te pauzeren.</string>
-    <string name="info_news_weather" formatted="false">Een rustiger hoofdlogo; de versie blijft beschikbaar bij Info en credits.</string>
-    <string name="info_news_viewer_zoom" formatted="false">Het referentieraster is in alle weergaven standaard ingeschakeld met 50 procent dekking.</string>
-    <string name="info_news_settings" formatted="false">Opnamen nemen de rasterinstellingen over; wijzigingen in het voorbeeld staan los van de hoofdweergave.</string>
-    <string name="info_news_catalog" formatted="false">Opgeslagen rasterkeuzes, locaties, scènes en objectselecties blijven behouden.</string>
+    <string name="info_news_star_sky" formatted="false">De tijd blijft gepauzeerd bij terugkeer uit locatiebeheer, het Observatorium en andere pagina’s.</string>
+    <string name="info_news_texture_downloads" formatted="false">Antipoden nemen de symbolen van hun bronpunt over: opkomst, ondergang, maximum, minimum en gewone punten.</string>
+    <string name="info_news_weather" formatted="false">Antipoden van de huidige positie gebruiken de objectminiatuur, inclusief de maanfase.</string>
+    <string name="info_news_viewer_zoom" formatted="false">Compactere tekstballonnen tonen de object- en puntnaam met een antipodensymbool in weergaven, opnamen en panorama’s.</string>
+    <string name="info_news_settings" formatted="false">CSV-bestanden en leesbare tabellen vermelden bij elke antipode de naam van het object en het oorspronkelijke punt.</string>
+    <string name="info_news_catalog" formatted="false">Bij terugkeer uit de locatiebewerking blijven het gepauzeerde moment en de ingestelde voorwaartse of achterwaartse snelheid behouden.</string>
 </resources>

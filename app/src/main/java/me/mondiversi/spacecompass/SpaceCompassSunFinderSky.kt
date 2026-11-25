@@ -322,7 +322,7 @@ internal fun SpaceCompassSunPointingViewport(
                 scenePerspective, paths, pinnedTargets = pinned, hitExclusions = titleTouchExclusions,
                 showCaptions = showReticle, onEmptySpaceTap = onToggleTime,
                 onEmptySpaceDoubleTap = onTogglePanels,
-                antipodeTargets = antipodes, drawAntipodeMarkers = drawScene) {
+                antipodeTargets = antipodes, drawAntipodeMarkers = drawScene, objectOpacity = objectOpacity) {
                 // Only thumbnails have small local targets; they never intercept another path's whole viewport.
                 SpaceCompassTemporalComparisonLayer(comparisonOverlays, orientation.takeIf { compassReliable }, scenePerspective,
                     dailyPathUiState, primaryText, secondaryText, backgroundColor, focused,

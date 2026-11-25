@@ -1,9 +1,9 @@
 <resources>
     <string name="info_news_title">最新变化 · %1$s</string>
-    <string name="info_news_star_sky" formatted="false">点击天体名称可打开观测台，不会暂停时间。</string>
-    <string name="info_news_texture_downloads" formatted="false">主视图按钮和状态链接执行各自的操作，不会触发暂停。</string>
-    <string name="info_news_weather" formatted="false">主标志更简洁，版本信息仍可在信息与鸣谢中查看。</string>
-    <string name="info_news_viewer_zoom" formatted="false">参考网格在所有视图中默认开启，不透明度为百分之50。</string>
-    <string name="info_news_settings" formatted="false">截图继承网格设置；预览中的修改与主视图相互独立。</string>
-    <string name="info_news_catalog" formatted="false">保留已保存的网格选项、位置、场景和天体选择。</string>
+    <string name="info_news_star_sky" formatted="false">从位置管理、观测站及其他页面返回时，时间仍保持暂停。</string>
+    <string name="info_news_texture_downloads" formatted="false">对跖点沿用原始点的符号，包括升起、落下、最高、最低和普通点。</string>
+    <string name="info_news_weather" formatted="false">当前位置的对跖点使用天体缩略图，并反映月相。</string>
+    <string name="info_news_viewer_zoom" formatted="false">视图、拍摄图像和全景中的气泡更加紧凑，在天体名称和点名称旁显示对跖点符号。</string>
+    <string name="info_news_settings" formatted="false">CSV和易读表格使用天体名称及原始点名称标识每个对跖点。</string>
+    <string name="info_news_catalog" formatted="false">从位置编辑返回时，暂停的时刻及已设置的正向或反向时间速度都会保留。</string>
 </resources>

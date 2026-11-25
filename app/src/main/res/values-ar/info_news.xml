@@ -1,9 +1,9 @@
 <resources>
     <string name="info_news_title">آخر المستجدات · %1$s</string>
-    <string name="info_news_star_sky" formatted="false">يؤدي لمس اسم جرم إلى فتح المرصد دون إيقاف الوقت مؤقتًا.</string>
-    <string name="info_news_texture_downloads" formatted="false">تنفّذ أزرار العرض الرئيسي وروابط الحالة وظائفها دون تفعيل الإيقاف المؤقت.</string>
-    <string name="info_news_weather" formatted="false">شعار رئيسي أبسط، مع بقاء معلومات الإصدار في قسم المعلومات والاعتمادات.</string>
-    <string name="info_news_viewer_zoom" formatted="false">تكون الشبكة المرجعية مفعّلة افتراضيًا بعتامة 50 بالمئة في جميع طرق العرض.</string>
-    <string name="info_news_settings" formatted="false">ترث اللقطات إعدادات الشبكة، وتبقى تعديلات المعاينة مستقلة عن العرض الرئيسي.</string>
-    <string name="info_news_catalog" formatted="false">تُحفظ خيارات الشبكة والمواقع والمشاهد واختيارات الأجرام المحفوظة.</string>
+    <string name="info_news_star_sky" formatted="false">يبقى الوقت متوقفًا مؤقتًا عند العودة من إدارة الموقع والمرصد والصفحات الأخرى.</string>
+    <string name="info_news_texture_downloads" formatted="false">ترث النقاط المقابلة رموز نقاطها الأصلية: الشروق والغروب والحد الأقصى والحد الأدنى والنقاط العادية.</string>
+    <string name="info_news_weather" formatted="false">تستخدم النقاط المقابلة للموضع الحالي صورة الجرم المصغرة، بما في ذلك طور القمر.</string>
+    <string name="info_news_viewer_zoom" formatted="false">تعرض فقاعات أصغر اسم الجرم واسم النقطة مع رمز النقطة المقابلة في المشاهد واللقطات والصور البانورامية.</string>
+    <string name="info_news_settings" formatted="false">تحدد ملفات CSV والجداول المقروءة كل نقطة مقابلة باسم الجرم والنقطة الأصلية.</string>
+    <string name="info_news_catalog" formatted="false">عند العودة من تعديل الموقع، تُحفظ لحظة التوقف المؤقت وسرعة الوقت المحددة إلى الأمام أو الخلف.</string>
 </resources>

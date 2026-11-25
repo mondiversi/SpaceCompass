@@ -1,9 +1,9 @@
 <resources>
     <string name="info_news_title">최근 변경 사항 · %1$s</string>
-    <string name="info_news_star_sky" formatted="false">천체 이름을 누르면 시간을 일시 정지하지 않고 관측소가 열립니다.</string>
-    <string name="info_news_texture_downloads" formatted="false">기본 화면의 버튼과 상태 링크는 일시 정지를 실행하지 않고 각자의 동작을 수행합니다.</string>
-    <string name="info_news_weather" formatted="false">기본 로고가 간결해졌으며 버전 정보는 정보 및 크레딧에서 확인할 수 있습니다.</string>
-    <string name="info_news_viewer_zoom" formatted="false">기준 격자는 모든 보기에서 기본적으로 불투명도 50퍼센트로 켜집니다.</string>
-    <string name="info_news_settings" formatted="false">캡처는 격자 설정을 이어받으며 미리보기의 변경 사항은 기본 화면과 별도로 유지됩니다.</string>
-    <string name="info_news_catalog" formatted="false">저장된 격자 설정, 위치, 장면 및 천체 선택은 유지됩니다.</string>
+    <string name="info_news_star_sky" formatted="false">위치 관리, 관측소 및 다른 화면에서 돌아와도 시간 일시 정지가 유지됩니다.</string>
+    <string name="info_news_texture_downloads" formatted="false">대척점이 원래 지점의 기호를 사용합니다. 뜨기, 지기, 최고, 최저 및 일반 지점이 포함됩니다.</string>
+    <string name="info_news_weather" formatted="false">현재 위치의 대척점은 천체의 미리보기 이미지를 사용하며 달의 위상도 반영합니다.</string>
+    <string name="info_news_viewer_zoom" formatted="false">화면, 촬영 이미지 및 파노라마의 말풍선이 더 간결해지고 천체명과 지점명 옆에 대척점 기호가 표시됩니다.</string>
+    <string name="info_news_settings" formatted="false">CSV와 읽기 쉬운 표는 천체명과 원래 지점명으로 각 대척점을 식별합니다.</string>
+    <string name="info_news_catalog" formatted="false">위치 편집에서 돌아와도 일시 정지된 시각과 설정한 정방향 또는 역방향 시간 배속이 유지됩니다.</string>
 </resources>

@@ -46,4 +46,18 @@ function context(){
  vm.runInContext('(()=>{'+source.slice(a,b)+'})()',c);
  assert.deepEqual(order,['selected-other-object','current','ordinary']);
 }
+{
+ const c=context(),arcs=[],words=[];let strokes=0,fills=0;
+ Object.assign(c.orbitInk,{font:'600 12px sans-serif',fillStyle:'#fff',save(){},restore(){},translate(){},scale(){},beginPath(){},
+  moveTo(){},lineTo(){},arc(...args){arcs.push(args);},stroke(){strokes++;},fill(){fills++;},fillText(value){words.push(value);}});
+ const title='Sun · Culmination \ufffc';
+ assert.equal(c.globeCaptionWidth(title),('Sun · Culmination '.length*6)+12,'The vector reserves exactly one em');
+ c.globeCaptionLine(title,200,20,280);
+ assert.equal(arcs.length,3,'Shared antipode shape: circle and two solid endpoints');assert.equal(strokes,1);assert.equal(fills,2);
+ assert.ok(words.includes('Sun · Culmination '));assert.ok(words.every(word=>!word.includes('\ufffc')),'No replacement-box glyph is painted');
+ assert.equal(arcs[0][2],12*.37);
+ arcs.length=0;words.length=0;c.globeCaptionLine('القمر · القمة \ufffc',200,20,280);
+ assert.equal(arcs[0][0],6,'RTL headings place the trailing icon at their visual left');
+ assert.ok(words.includes('القمر · القمة '));
+}
 console.log('Globe labels: selected-point fallback, control exclusion, stable placement, adaptive detail recovery and cross-track priority passed.');

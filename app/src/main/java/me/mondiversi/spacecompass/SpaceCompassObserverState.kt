@@ -183,6 +183,8 @@ internal class SpaceCompassObserverState(private val preferences: SharedPreferen
         val draft = editor
         if (draft == null && preferences?.getString(scenarioPreparedClockKey, null) == null) return
         val now = System.currentTimeMillis()
+        val wasPaused = playbackPaused
+        val heldInstant = plan?.scenarioClock?.at(now, elapsedClock())
         if (draft != null) {
             val instant = draft.clock?.at(now, elapsedClock())
             val saved = draft.savedPlan?.let { value ->
@@ -201,9 +203,16 @@ internal class SpaceCompassObserverState(private val preferences: SharedPreferen
             archiveName = draft.archiveName ?: archiveName
         }
         applyingDeferred = false; editor = null
-        resetNavigationPlayback()
+        // reload retains the navigation clock when its configuration is unchanged.
         reload()
-        clock?.release(now, elapsedClock())
+        if (wasPaused) {
+            // A changed date/time uses the editor's new instant; spatial-only edits retain the hold.
+            val instant = preparedClock?.instant ?: heldInstant
+            if (!playbackPaused && instant != null) restoreScenePause(instant, now, elapsedClock())
+        } else {
+            clock?.release(now, elapsedClock())
+            navigationPlan?.scenarioClock?.release(now, elapsedClock())
+        }
         preparedClock = null
         preferences?.edit()?.remove(scenarioPreparedClockKey)?.apply()
         checkpoint(sync = true)

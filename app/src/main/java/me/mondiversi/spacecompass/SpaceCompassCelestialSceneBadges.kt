@@ -41,8 +41,7 @@ internal fun SpaceCompassCelestialSceneBadges(pinned: List<SpaceCompassCelestial
             val eventName = if (comparisonAnchor) spaceCompassComparisonPointName(requireNotNull(target.comparison))
                 else if (target.isCurrent) stringResource(R.string.celestial_point_current)
                 else labels?.name?.invoke(target.point).orEmpty()
-            val name = if (target.isAntipode) listOf(stringResource(R.string.scene_antipode), eventName)
-                .filter { it.isNotBlank() }.joinToString(" · ") else eventName
+            val name = if (target.isAntipode) spaceCompassAntipodeCaptionName(eventName) else eventName
             Row(Modifier.width(IntrinsicSize.Max).spaceCompassSceneInputShield(),
                 verticalAlignment = Alignment.CenterVertically, horizontalArrangement = Arrangement.spacedBy(reminderGap)) {
                 SpaceCompassCelestialBadgeContent(target.point.timeMs, target.comparison?.timeMs ?: nowMs, zone, target.point.position,
